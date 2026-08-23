@@ -1955,3 +1955,21 @@ Todo verificado en el navegador (sin errores de consola).
   - *No tocado:* `XP_POR_NIVEL` (cosmético) y la propiedad muerta `bonoMult:2` del desafío (queda por
     decidir: implementarla como bono ×2 o eliminarla).
 - **Pendiente (Roberto):** aprobación pedagógica de los 2 bancos de apoyo (sin cambios).
+
+### Sesión 34 (2026-08-23) — Informe de estado v0.99 y ejecutivo para el colegio
+Sesión de documentación; **sin cambios en el juego** (`index.html`/`profesor.html` intactos). Único
+archivo nuevo en el repo: `docs/informe-v0.99.md`.
+- **Informe integral v0.99 (`docs/informe-v0.99.md`):** documento de estado con datos **verificados
+  contra el repositorio** (no de memoria): banco de **2.536** preguntas (Historia 663 / Ciencias 534 /
+  Lenguaje 514 / Matemáticas 603 / Vocabulario 150 / Ana Frank 72), **69 OA**, tienda **9.830🪙** (19
+  skins), 4 Jefes Finales, las 9 bugs de la S33, etc. Lleva la mascota Vulpi y una tira de 3 skins
+  (científico/karateka/ciclista) con rutas relativas a `assets/`. Publicado también como **artefacto
+  privado de Claude** (fuera del repo): `https://claude.ai/code/artifact/775a6046-b767-4cf7-9ae3-72b4edefcb75`.
+- **Ejecutivo para enviar (profesor/apoderado/director):** una carilla en tono **no técnico**, con
+  tronco común + **secciones por rol**, ilustraciones de Vulpi (hero + tira de skins) y contacto
+  **vulpochile.app@gmail.com / +569 7668 4967**. Entregado como **artefacto HTML**
+  (`https://claude.ai/code/artifact/208dd6cb-b155-408e-9b47-4d72b81e63b5`) **+ PDF** de 2 páginas A4
+  (generado con Chrome headless; vive fuera del repo). *Contacto oficial del proyecto:* correo
+  `vulpochile.app@gmail.com`, teléfono `+569 7668 4967`.
+- **Pendiente (Roberto):** aprobación pedagógica de los 2 bancos de apoyo (sin cambios). Opcional de
+  código sigue igual: decidir sobre `bonoMult:2`.
