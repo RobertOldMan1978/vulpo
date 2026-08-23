@@ -85,10 +85,10 @@ backend Supabase para el duelo en línea. Historia de v0 al detalle en la Bitác
   con 3 etapas cuando su unidad tiene 3 OA). Cada asignatura tiene, además, un **banco de
   año completo** (todos sus OA oficiales); con las 4 campañas activas ya casi no queda
   contenido de reserva sin usar.
-- Quiz: 6 preguntas al azar/etapa, timer 20 s, pasa con 66%, 3 estrellas. Al
+- Quiz: 10 preguntas al azar/etapa, timer 20 s, pasa con 66%, 3 estrellas. Al
   fallar revela la respuesta correcta + explicación y botón "Continuar". Vulpi
   comenta un dato al iniciar la ruta.
-- **Modo Difícil** desbloqueable (8 preguntas, 15 s, 80%, tema oscuro/carmesí).
+- **Modo Difícil** desbloqueable (10 preguntas, 15 s, 80%, tema oscuro/carmesí).
 - Persistencia (localStorage), **tienda de skins** (precios escalonados 80–900;
   emojis baratos de entrada + skins ilustradas premium, incluidas **7 deportivas**:
   karate, fútbol, básquetbol, vóleibol, ciclismo, tenis, skate), animación de subida
@@ -433,7 +433,7 @@ el sesgo de posición), asigna IDs por OA y escribe `preguntas.json`.
 - **Estructura estándar de una expedición: 4 etapas + 1 jefe final (5 nodos).**
   Cada etapa mapea un OA; el jefe mezcla los 4 OA de la ruta. Regla para todas
   las asignaturas (Historia, Ciencias, y las próximas Matemáticas y Lenguaje).
-- Cada etapa saca **6 preguntas al azar** del pool (jefe final: 8, mezcla de OA).
+- Cada etapa saca **10 preguntas al azar** del pool (jefe final: 15, mezcla de OA).
 - **Pasa con ≥66%** de aciertos (4 de 6). Si no, repite la etapa con preguntas
   nuevas. Estrellas: 3★ = 100%, 2★ ≥ 80%, 1★ ≥ 66%.
 - XP, monedas, combos y timer (20 s; 15 s en Difícil) se mantienen.
@@ -442,7 +442,7 @@ el sesgo de posición), asigna IDs por OA y escribe `preguntas.json`.
 
 ### Modo Difícil (desbloqueable)
 - Se **desbloquea** al vencer al Jefe Final en Normal.
-- Mismo mapa, pero: **8 preguntas** por etapa (jefe **10**), **15 s** por pregunta,
+- Mismo mapa, pero: **10 preguntas** por etapa (jefe **15**), **15 s** por pregunta,
   se pasa con **≥80%**. Estrellas: 3★ = 100%, 2★ ≥ 90%, 1★ ≥ 80%.
 - Progreso y estrellas **separados** del Normal (`S.progresoDificil`); se elige con
   el selector Normal/Difícil del mapa (variable global `MODO`).
@@ -1866,8 +1866,32 @@ revisor por tarea + revisión final). Spec y plan en
   limpiar las 4 expediciones (por diseño; quien ya la venció conserva su corona).
 - **Reparto disparejo de OA (evaluado, se deja como está):** Ciencias U1 (~50 preg/OA) y varios OA
   de Lenguaje (~47) sobresalen del piso de 30, pero **son `revisada:true`** y el desajuste es
-  **invisible** en el juego (saca 6 al azar) y en el tablero (topa la cobertura). Se decidió **no
+  **invisible** en el juego (saca 10 al azar) y en el tablero (topa la cobertura). Se decidió **no
   tocarlos**: recortar borraría preguntas ya aprobadas y bajaría la variedad del pool.
 - **Estado:** todo en `main` (commits hasta `0877600`). **Pendiente (Roberto):** aprobación
   pedagógica de los 2 bancos de apoyo (`vocabulario` 150 y `lectura-anafrank` 72, `revisada:false`)
   → flujo tablero → `aplicar-revisadas`.
+
+### Sesión 32 (2026-08-22) — Más preguntas por etapa, Lectura con look propio y presentación v1
+Preparando la v1. Se registró la Sesión 31 en la bitácora (commit aparte) y luego:
+- **Más preguntas por etapa (afinamiento de dificultad):** las etapas de campaña pasan de **6 a
+  10 preguntas** por OA (Historia, Ciencias, Lenguaje y las 4 `mate-exp-*`), así una expedición
+  es **40 preguntas + jefe**. El **jefe de cada expedición** pasa de **8 a 15**. El **Modo Difícil**
+  se iguala a **10 / 15** (la dificultad la dan el tiempo 15 s y el umbral 80%). Umbrales y estrellas
+  se calculan por **ratio**, así que se ajustan solos (66% ahora = 7/10). Cambios en `EXPEDICIONES`
+  (`n:6→10`, `n:8→15`) y en `nPreguntas` (Difícil `?15:10`).
+- **No se tocaron:** Vocabulario (sigue **15** al azar por ronda) ni **Ana Frank** (solo **9**
+  preguntas por tramo → no alcanza para 10; queda en 6). El sorteo `pickN` hace *clamp* con
+  `slice(0,n)`, así que pedir de más nunca rompe. Todas las OA de los 4 bancos tienen **≥28**
+  preguntas, holgura para sacar 10. **Los Jefes Finales de campaña multi-fase** (El Guardián, La
+  Entropía, El Borrón, La Incógnita = 4 fases × 4) **no cambiaron**: son otra estructura; solo se
+  tocó el jefe del 5.º nodo de cada expedición.
+- **Lectura con apariencia propia (juego + presentación):** la biblioteca (`#scr-biblioteca`) deja
+  el cosmos violeta y estrena un **tema de papel cálido** (crema/sepia, título marrón, tarjetas tipo
+  libro con **lomo** café); el acceso "📖 Lectura" de la lista lleva un lomo cálido (`.bib-entry`)
+  para distinguirse de las asignaturas. Verificado por estilos computados y sin errores de consola.
+- **Presentación ejecutiva (artefacto):** dossier visual de la v1 (asignaturas, expediciones,
+  tiempos, banco de 2.536 preguntas, estilo de jefes, y capítulos especiales de Matemáticas y
+  Lectura), en el mundo visual del juego. Vive como artefacto de Claude (privado), fuera del repo.
+- **Pendiente (Roberto):** confirmar si los Jefes Finales de campaña también suben de tamaño; sigue
+  la aprobación pedagógica de los 2 bancos de apoyo (sin cambios).

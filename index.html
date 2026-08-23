@@ -375,6 +375,24 @@ body.en-dificil .nav button.on{color:#ff6b6b;background:#ff2d551a}
 .exp-card.soon{opacity:.62}
 .exp-card.soon img{filter:grayscale(.55)}
 .exp-card.camp-done{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold) inset,0 0 18px #ffc93c55}
+/* --- Lectura: acceso con lomo cálido para distinguirlo de las asignaturas --- */
+.exp-card.bib-entry{border-left:7px solid #c98a4a}
+/* --- Módulo Lectura / biblioteca: tema cálido de papel (se diferencia del cosmos) --- */
+#scr-biblioteca{background:linear-gradient(180deg,#f7efda,#ecdcbb);border:1px solid #d9c399;
+  border-radius:20px;padding:14px 16px 22px;margin-top:10px;color:#4a3b23;
+  box-shadow:0 12px 34px #0a061f66, inset 0 1px 0 #fffaf0}
+#scr-biblioteca::before{content:"";display:block;height:6px;margin:-4px -6px 12px;border-radius:6px;
+  background:repeating-linear-gradient(90deg,#c99a55 0 22px,#b5813f 22px 44px)}
+#scr-biblioteca .logo{margin:6px 0 10px}
+#scr-biblioteca .logo .badge{filter:sepia(.3)}
+#scr-biblioteca .logo h1{background:linear-gradient(90deg,#8a5320,#b5762f);-webkit-background-clip:text;background-clip:text;color:transparent}
+#scr-biblioteca .logo p{color:#8a6c3f}
+#scr-biblioteca .exp-card{background:#fffdf5;border:1px solid #e2d2ab;border-left:7px solid #9a6a3a;color:#4a3b23}
+#scr-biblioteca .exp-card:not(.soon){border-color:#e2d2ab;border-left-color:#9a6a3a}
+#scr-biblioteca .exp-card .exp-info b{color:#3f2d16}
+#scr-biblioteca .exp-card .exp-info small{color:#8a7350}
+#scr-biblioteca .exp-card .exp-go{color:#9a6a3a}
+#scr-biblioteca .btn.sec{background:#e7d5ac;border-color:#cbb489;color:#5b3a1e}
 /* --- Mapa de campaña (nodos de capítulo / desafío / jefe) --- */
 .camp-nodos{display:flex;flex-direction:column;gap:12px}
 .camp-nodo{display:flex;align-items:center;gap:14px;background:var(--panel);border:2px solid #ffffff14;
@@ -936,59 +954,59 @@ const EXPEDICIONES=[
    portada:'assets/portada-historia.png', mapaImg:'assets/kimun-conquistador.png',
    contenido:'contenido/historia-8basico/preguntas.json', activa:true, campaña:'hist',
    etapas:[
-     {oa:"HI08 OA 01",nombre:"El ser humano al centro",icono:"🧑‍🎨",n:6},
-     {oa:"HI08 OA 02",nombre:"De lo medieval a lo moderno",icono:"⛪",n:6},
-     {oa:"HI08 OA 03",nombre:"El Estado moderno",icono:"👑",n:6},
-     {oa:"HI08 OA 04",nombre:"La economía mercantilista",icono:"⚖️",n:6},
-     {oa:"BOSS",nombre:"⚡ JEFE: La modernidad",icono:"🐲",n:8,oas:["HI08 OA 01","HI08 OA 02","HI08 OA 03","HI08 OA 04"]},
+     {oa:"HI08 OA 01",nombre:"El ser humano al centro",icono:"🧑‍🎨",n:10},
+     {oa:"HI08 OA 02",nombre:"De lo medieval a lo moderno",icono:"⛪",n:10},
+     {oa:"HI08 OA 03",nombre:"El Estado moderno",icono:"👑",n:10},
+     {oa:"HI08 OA 04",nombre:"La economía mercantilista",icono:"⚖️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: La modernidad",icono:"🐲",n:15,oas:["HI08 OA 01","HI08 OA 02","HI08 OA 03","HI08 OA 04"]},
    ]},
  { id:'hist-cap2', asignatura:'Historia', nivel:'8° Básico · Los europeos llegan a América',
    portada:'assets/portada-historia.png', mapaImg:'assets/kimun-conquistador.png',
    contenido:'contenido/historia-8basico/preguntas.json', activa:true, campaña:'hist',
    etapas:[
-     {oa:"HI08 OA 05",nombre:"El encuentro de dos mundos",icono:"🌎",n:6},
-     {oa:"HI08 OA 06",nombre:"La rapidez de la conquista",icono:"⚔️",n:6},
-     {oa:"HI08 OA 07",nombre:"El impacto en Europa",icono:"🌍",n:6},
-     {oa:"HI08 OA 08",nombre:"Ciudades y administración",icono:"🏛️",n:6},
-     {oa:"BOSS",nombre:"⚡ JEFE: La conquista",icono:"🐲",n:8,oas:["HI08 OA 05","HI08 OA 06","HI08 OA 07","HI08 OA 08"]},
+     {oa:"HI08 OA 05",nombre:"El encuentro de dos mundos",icono:"🌎",n:10},
+     {oa:"HI08 OA 06",nombre:"La rapidez de la conquista",icono:"⚔️",n:10},
+     {oa:"HI08 OA 07",nombre:"El impacto en Europa",icono:"🌍",n:10},
+     {oa:"HI08 OA 08",nombre:"Ciudades y administración",icono:"🏛️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: La conquista",icono:"🐲",n:15,oas:["HI08 OA 05","HI08 OA 06","HI08 OA 07","HI08 OA 08"]},
    ]},
  { id:'hist-cap3', asignatura:'Historia', nivel:'8° Básico · El mundo colonial',
    portada:'assets/portada-historia.png', contenido:'contenido/historia-8basico/preguntas.json',
    activa:true, campaña:'hist',
    etapas:[
-     {oa:"HI08 OA 09",nombre:"El barroco colonial",icono:"🎭",n:6},
-     {oa:"HI08 OA 10",nombre:"Mercados y comercio atlántico",icono:"⛵",n:6},
-     {oa:"HI08 OA 11",nombre:"La sociedad colonial",icono:"👥",n:6},
-     {oa:"HI08 OA 12",nombre:"Convivencia y conflictos",icono:"🤝",n:6},
-     {oa:"BOSS",nombre:"⚡ JEFE: El mundo colonial",icono:"🐲",n:8,oas:["HI08 OA 09","HI08 OA 10","HI08 OA 11","HI08 OA 12"]},
+     {oa:"HI08 OA 09",nombre:"El barroco colonial",icono:"🎭",n:10},
+     {oa:"HI08 OA 10",nombre:"Mercados y comercio atlántico",icono:"⛵",n:10},
+     {oa:"HI08 OA 11",nombre:"La sociedad colonial",icono:"👥",n:10},
+     {oa:"HI08 OA 12",nombre:"Convivencia y conflictos",icono:"🤝",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: El mundo colonial",icono:"🐲",n:15,oas:["HI08 OA 09","HI08 OA 10","HI08 OA 11","HI08 OA 12"]},
    ]},
  { id:'hist-cap4', asignatura:'Historia', nivel:'8° Básico · Chile colonial y las nuevas ideas',
    portada:'assets/portada-historia.png', contenido:'contenido/historia-8basico/preguntas.json',
    activa:true, campaña:'hist',
    etapas:[
-     {oa:"HI08 OA 13",nombre:"La hacienda",icono:"🌾",n:6},
-     {oa:"HI08 OA 14",nombre:"La Ilustración",icono:"💡",n:6},
-     {oa:"HI08 OA 15",nombre:"Ideas y revoluciones",icono:"🔥",n:6},
-     {oa:"HI08 OA 16",nombre:"Independencia americana",icono:"🏴",n:6},
-     {oa:"BOSS",nombre:"⚡ JEFE: Nuevas ideas",icono:"🐲",n:8,oas:["HI08 OA 13","HI08 OA 14","HI08 OA 15","HI08 OA 16"]},
+     {oa:"HI08 OA 13",nombre:"La hacienda",icono:"🌾",n:10},
+     {oa:"HI08 OA 14",nombre:"La Ilustración",icono:"💡",n:10},
+     {oa:"HI08 OA 15",nombre:"Ideas y revoluciones",icono:"🔥",n:10},
+     {oa:"HI08 OA 16",nombre:"Independencia americana",icono:"🏴",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Nuevas ideas",icono:"🐲",n:15,oas:["HI08 OA 13","HI08 OA 14","HI08 OA 15","HI08 OA 16"]},
    ]},
  { id:'hist-cap5', asignatura:'Historia', nivel:'8° Básico · Independencia y ciudadanía',
    portada:'assets/portada-historia.png', contenido:'contenido/historia-8basico/preguntas.json',
    activa:true, campaña:'hist',
    etapas:[
-     {oa:"HI08 OA 17",nombre:"Legitimidad de la conquista",icono:"⚖️",n:6},
-     {oa:"HI08 OA 18",nombre:"Los derechos del hombre",icono:"📜",n:6},
-     {oa:"HI08 OA 19",nombre:"Independencia de Chile",icono:"🇨🇱",n:6},
-     {oa:"BOSS",nombre:"⚡ JEFE: Independencia",icono:"🐲",n:8,oas:["HI08 OA 17","HI08 OA 18","HI08 OA 19"]},
+     {oa:"HI08 OA 17",nombre:"Legitimidad de la conquista",icono:"⚖️",n:10},
+     {oa:"HI08 OA 18",nombre:"Los derechos del hombre",icono:"📜",n:10},
+     {oa:"HI08 OA 19",nombre:"Independencia de Chile",icono:"🇨🇱",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Independencia",icono:"🐲",n:15,oas:["HI08 OA 17","HI08 OA 18","HI08 OA 19"]},
    ]},
  { id:'hist-desafio', asignatura:'Historia', nivel:'8° Básico · Desafío: Chile hoy',
    portada:'assets/portada-historia.png', contenido:'contenido/historia-8basico/preguntas.json',
    activa:true, campaña:'hist', desafio:true, bonoMult:2,
    etapas:[
-     {oa:"HI08 OA 20",nombre:"¿Qué es una región?",icono:"🗺️",n:6},
-     {oa:"HI08 OA 21",nombre:"Problemas de las regiones",icono:"⚠️",n:6},
-     {oa:"HI08 OA 22",nombre:"Desarrollo y regiones",icono:"📈",n:6},
-     {oa:"BOSS",nombre:"⭐ DESAFÍO: Chile hoy",icono:"🌟",n:8,oas:["HI08 OA 20","HI08 OA 21","HI08 OA 22"]},
+     {oa:"HI08 OA 20",nombre:"¿Qué es una región?",icono:"🗺️",n:10},
+     {oa:"HI08 OA 21",nombre:"Problemas de las regiones",icono:"⚠️",n:10},
+     {oa:"HI08 OA 22",nombre:"Desarrollo y regiones",icono:"📈",n:10},
+     {oa:"BOSS",nombre:"⭐ DESAFÍO: Chile hoy",icono:"🌟",n:15,oas:["HI08 OA 20","HI08 OA 21","HI08 OA 22"]},
    ]},
  // Nota: el banco de Álgebra (contenido/matematicas-8basico) queda de reserva; en el
  // juego Matemáticas se juega como Reto de Cálculo (procedural), no como expedición.
@@ -996,73 +1014,73 @@ const EXPEDICIONES=[
  { id:'cien-celula', asignatura:'Ciencias', nivel:'8° Básico · La célula',
    portada:'assets/portada-ciencias.png', contenido:'contenido/ciencias-8basico/preguntas.json', activa:true, campaña:'cien',
    etapas:[
-     {oa:"CN08 OA 01", nombre:"La teoría celular", icono:"🔬", n:6},
-     {oa:"CN08 OA 02", nombre:"Estructura de la célula", icono:"🧫", n:6},
-     {oa:"CN08 OA 03", nombre:"Difusión y osmosis", icono:"💧", n:6},
-     {oa:"CN08 OA 04", nombre:"Las plantas", icono:"🌱", n:6},
-     {oa:"BOSS", nombre:"⚡ JEFE: La célula", icono:"🧬", n:8, oas:["CN08 OA 01","CN08 OA 02","CN08 OA 03","CN08 OA 04"]},
+     {oa:"CN08 OA 01", nombre:"La teoría celular", icono:"🔬", n:10},
+     {oa:"CN08 OA 02", nombre:"Estructura de la célula", icono:"🧫", n:10},
+     {oa:"CN08 OA 03", nombre:"Difusión y osmosis", icono:"💧", n:10},
+     {oa:"CN08 OA 04", nombre:"Las plantas", icono:"🌱", n:10},
+     {oa:"BOSS", nombre:"⚡ JEFE: La célula", icono:"🧬", n:15, oas:["CN08 OA 01","CN08 OA 02","CN08 OA 03","CN08 OA 04"]},
    ]},
  { id:'cien-cuerpo', asignatura:'Ciencias', nivel:'8° Básico · Cuerpo humano y salud',
    portada:'assets/portada-ciencias.png', contenido:'contenido/ciencias-8basico/preguntas.json', activa:true, campaña:'cien',
    etapas:[
-     {oa:"CN08 OA 05", nombre:"Sistemas del cuerpo", icono:"🫀", n:6},
-     {oa:"CN08 OA 06", nombre:"Los nutrientes", icono:"🥗", n:6},
-     {oa:"CN08 OA 07", nombre:"Vida saludable", icono:"🏃", n:6},
-     {oa:"BOSS", nombre:"⚡ JEFE: Cuerpo y salud", icono:"🧠", n:8, oas:["CN08 OA 05","CN08 OA 06","CN08 OA 07"]},
+     {oa:"CN08 OA 05", nombre:"Sistemas del cuerpo", icono:"🫀", n:10},
+     {oa:"CN08 OA 06", nombre:"Los nutrientes", icono:"🥗", n:10},
+     {oa:"CN08 OA 07", nombre:"Vida saludable", icono:"🏃", n:10},
+     {oa:"BOSS", nombre:"⚡ JEFE: Cuerpo y salud", icono:"🧠", n:15, oas:["CN08 OA 05","CN08 OA 06","CN08 OA 07"]},
    ]},
  { id:'cien-electricidad', asignatura:'Ciencias', nivel:'8° Básico · Electricidad y calor',
    portada:'assets/portada-ciencias.png', contenido:'contenido/ciencias-8basico/preguntas.json', activa:true, campaña:'cien',
    etapas:[
-     {oa:"CN08 OA 08", nombre:"Fuerzas eléctricas", icono:"⚡", n:6},
-     {oa:"CN08 OA 09", nombre:"Generación de energía", icono:"🔋", n:6},
-     {oa:"CN08 OA 10", nombre:"Circuitos eléctricos", icono:"💡", n:6},
-     {oa:"CN08 OA 11", nombre:"El calor", icono:"🔥", n:6},
-     {oa:"BOSS", nombre:"⚡ JEFE: Electricidad y calor", icono:"🌡️", n:8, oas:["CN08 OA 08","CN08 OA 09","CN08 OA 10","CN08 OA 11"]},
+     {oa:"CN08 OA 08", nombre:"Fuerzas eléctricas", icono:"⚡", n:10},
+     {oa:"CN08 OA 09", nombre:"Generación de energía", icono:"🔋", n:10},
+     {oa:"CN08 OA 10", nombre:"Circuitos eléctricos", icono:"💡", n:10},
+     {oa:"CN08 OA 11", nombre:"El calor", icono:"🔥", n:10},
+     {oa:"BOSS", nombre:"⚡ JEFE: Electricidad y calor", icono:"🌡️", n:15, oas:["CN08 OA 08","CN08 OA 09","CN08 OA 10","CN08 OA 11"]},
    ]},
  { id:'cien-materia', asignatura:'Ciencias', nivel:'8° Básico · La materia y el átomo',
    portada:'assets/portada-ciencias.png', contenido:'contenido/ciencias-8basico/preguntas.json', activa:true, campaña:'cien',
    etapas:[
-     {oa:"CN08 OA 12", nombre:"Modelos del átomo", icono:"⚛️", n:6},
-     {oa:"CN08 OA 13", nombre:"Átomos y sustancias", icono:"🧪", n:6},
-     {oa:"CN08 OA 14", nombre:"La tabla periódica", icono:"📋", n:6},
-     {oa:"CN08 OA 15", nombre:"Elementos de la vida", icono:"🌍", n:6},
-     {oa:"BOSS", nombre:"⚡ JEFE: La materia", icono:"🔬", n:8, oas:["CN08 OA 12","CN08 OA 13","CN08 OA 14","CN08 OA 15"]},
+     {oa:"CN08 OA 12", nombre:"Modelos del átomo", icono:"⚛️", n:10},
+     {oa:"CN08 OA 13", nombre:"Átomos y sustancias", icono:"🧪", n:10},
+     {oa:"CN08 OA 14", nombre:"La tabla periódica", icono:"📋", n:10},
+     {oa:"CN08 OA 15", nombre:"Elementos de la vida", icono:"🌍", n:10},
+     {oa:"BOSS", nombre:"⚡ JEFE: La materia", icono:"🔬", n:15, oas:["CN08 OA 12","CN08 OA 13","CN08 OA 14","CN08 OA 15"]},
    ]},
  // --- Campaña Lenguaje (capítulos = las 3 unidades del año; la U1 se parte en 2) ---
  { id:'leng-lectura', asignatura:'Lenguaje', nivel:'8° Básico · Leer y comprender',
    portada:'assets/portada-lenguaje.png', contenido:'contenido/lenguaje-8basico/preguntas.json', activa:true, campaña:'leng',
    etapas:[
-     {oa:"LE08 OA 01", nombre:"El hábito de leer", icono:"📚", n:6},
-     {oa:"LE08 OA 02", nombre:"La experiencia humana", icono:"💭", n:6},
-     {oa:"LE08 OA 03", nombre:"El texto narrativo", icono:"📖", n:6},
-     {oa:"LE08 OA 08", nombre:"Interpretar la obra", icono:"🔎", n:6},
-     {oa:"BOSS", nombre:"⚡ JEFE: Leer y comprender", icono:"✒️", n:8, oas:["LE08 OA 01","LE08 OA 02","LE08 OA 03","LE08 OA 08"]},
+     {oa:"LE08 OA 01", nombre:"El hábito de leer", icono:"📚", n:10},
+     {oa:"LE08 OA 02", nombre:"La experiencia humana", icono:"💭", n:10},
+     {oa:"LE08 OA 03", nombre:"El texto narrativo", icono:"📖", n:10},
+     {oa:"LE08 OA 08", nombre:"Interpretar la obra", icono:"🔎", n:10},
+     {oa:"BOSS", nombre:"⚡ JEFE: Leer y comprender", icono:"✒️", n:15, oas:["LE08 OA 01","LE08 OA 02","LE08 OA 03","LE08 OA 08"]},
    ]},
  { id:'leng-literarios', asignatura:'Lenguaje', nivel:'8° Básico · Mundos literarios',
    portada:'assets/portada-lenguaje.png', contenido:'contenido/lenguaje-8basico/preguntas.json', activa:true, campaña:'leng',
    etapas:[
-     {oa:"LE08 OA 04", nombre:"Poesía", icono:"🎵", n:6},
-     {oa:"LE08 OA 05", nombre:"Teatro", icono:"🎭", n:6},
-     {oa:"LE08 OA 06", nombre:"Epopeya", icono:"🛡️", n:6},
-     {oa:"LE08 OA 07", nombre:"Comedia", icono:"😄", n:6},
-     {oa:"BOSS", nombre:"⚡ JEFE: Mundos literarios", icono:"✒️", n:8, oas:["LE08 OA 04","LE08 OA 05","LE08 OA 06","LE08 OA 07"]},
+     {oa:"LE08 OA 04", nombre:"Poesía", icono:"🎵", n:10},
+     {oa:"LE08 OA 05", nombre:"Teatro", icono:"🎭", n:10},
+     {oa:"LE08 OA 06", nombre:"Epopeya", icono:"🛡️", n:10},
+     {oa:"LE08 OA 07", nombre:"Comedia", icono:"😄", n:10},
+     {oa:"BOSS", nombre:"⚡ JEFE: Mundos literarios", icono:"✒️", n:15, oas:["LE08 OA 04","LE08 OA 05","LE08 OA 06","LE08 OA 07"]},
    ]},
  { id:'leng-textos', asignatura:'Lenguaje', nivel:'8° Básico · Textos y medios',
    portada:'assets/portada-lenguaje.png', contenido:'contenido/lenguaje-8basico/preguntas.json', activa:true, campaña:'leng',
    etapas:[
-     {oa:"LE08 OA 09", nombre:"Argumentar y opinar", icono:"💬", n:6},
-     {oa:"LE08 OA 10", nombre:"Medios y publicidad", icono:"📣", n:6},
-     {oa:"LE08 OA 11", nombre:"Textos informativos", icono:"📰", n:6},
-     {oa:"LE08 OA 12", nombre:"Estrategias de comprensión", icono:"🧩", n:6},
-     {oa:"BOSS", nombre:"⚡ JEFE: Textos y medios", icono:"✒️", n:8, oas:["LE08 OA 09","LE08 OA 10","LE08 OA 11","LE08 OA 12"]},
+     {oa:"LE08 OA 09", nombre:"Argumentar y opinar", icono:"💬", n:10},
+     {oa:"LE08 OA 10", nombre:"Medios y publicidad", icono:"📣", n:10},
+     {oa:"LE08 OA 11", nombre:"Textos informativos", icono:"📰", n:10},
+     {oa:"LE08 OA 12", nombre:"Estrategias de comprensión", icono:"🧩", n:10},
+     {oa:"BOSS", nombre:"⚡ JEFE: Textos y medios", icono:"✒️", n:15, oas:["LE08 OA 09","LE08 OA 10","LE08 OA 11","LE08 OA 12"]},
    ]},
  { id:'leng-escritura', asignatura:'Lenguaje', nivel:'8° Básico · Escritura',
    portada:'assets/portada-lenguaje.png', contenido:'contenido/lenguaje-8basico/preguntas.json', activa:true, campaña:'leng',
    etapas:[
-     {oa:"LE08 OA 13", nombre:"Escritura creativa", icono:"✍️", n:6},
-     {oa:"LE08 OA 14", nombre:"Escribir para explicar", icono:"📝", n:6},
-     {oa:"LE08 OA 15", nombre:"Escribir para persuadir", icono:"📢", n:6},
-     {oa:"BOSS", nombre:"⚡ JEFE: Escritura", icono:"✒️", n:8, oas:["LE08 OA 13","LE08 OA 14","LE08 OA 15"]},
+     {oa:"LE08 OA 13", nombre:"Escritura creativa", icono:"✍️", n:10},
+     {oa:"LE08 OA 14", nombre:"Escribir para explicar", icono:"📝", n:10},
+     {oa:"LE08 OA 15", nombre:"Escribir para persuadir", icono:"📢", n:10},
+     {oa:"BOSS", nombre:"⚡ JEFE: Escritura", icono:"✒️", n:15, oas:["LE08 OA 13","LE08 OA 14","LE08 OA 15"]},
    ]},
  // --- Vocabulario (dentro de Lenguaje): palabras de todo el curso. OA de apoyo VOC-* ---
  { id:'voc-general', asignatura:'Vocabulario', nivel:'8° Básico · Vocabulario del curso',
@@ -1091,39 +1109,39 @@ const EXPEDICIONES=[
  { id:'mate-exp-numeros', asignatura:'Matemáticas', nivel:'8° Básico · Números',
    portada:'assets/portada-mate-numeros.png', contenido:'contenido/matematicas-8basico/preguntas.json', activa:true, campaña:'mate',
    etapas:[
-     {oa:"MA08 OA 01", nombre:"Enteros", icono:"🔢", n:6},
-     {oa:"MA08 OA 02", nombre:"Fracciones y decimales", icono:"➗", n:6},
-     {oa:"MA08 OA 03", nombre:"Potencias", icono:"✖️", n:6},
-     {oa:"MA08 OA 04", nombre:"Raíces cuadradas", icono:"√", n:6},
-     {oa:"MA08 OA 05", nombre:"Porcentajes", icono:"％", n:6},
-     {oa:"BOSS", nombre:"⚡ JEFE: Números", icono:"🧮", n:8, oas:["MA08 OA 01","MA08 OA 02","MA08 OA 03","MA08 OA 04","MA08 OA 05"]},
+     {oa:"MA08 OA 01", nombre:"Enteros", icono:"🔢", n:10},
+     {oa:"MA08 OA 02", nombre:"Fracciones y decimales", icono:"➗", n:10},
+     {oa:"MA08 OA 03", nombre:"Potencias", icono:"✖️", n:10},
+     {oa:"MA08 OA 04", nombre:"Raíces cuadradas", icono:"√", n:10},
+     {oa:"MA08 OA 05", nombre:"Porcentajes", icono:"％", n:10},
+     {oa:"BOSS", nombre:"⚡ JEFE: Números", icono:"🧮", n:15, oas:["MA08 OA 01","MA08 OA 02","MA08 OA 03","MA08 OA 04","MA08 OA 05"]},
    ]},
  { id:'mate-exp-algebra', asignatura:'Matemáticas', nivel:'8° Básico · Álgebra y funciones',
    portada:'assets/portada-mate-algebra.png', contenido:'contenido/matematicas-8basico/preguntas.json', activa:true, campaña:'mate',
    etapas:[
-     {oa:"MA08 OA 06", nombre:"Lenguaje algebraico", icono:"✏️", n:6},
-     {oa:"MA08 OA 07", nombre:"Función lineal", icono:"📈", n:6},
-     {oa:"MA08 OA 08", nombre:"Ecuaciones", icono:"⚖️", n:6},
-     {oa:"MA08 OA 09", nombre:"Inecuaciones", icono:"🚦", n:6},
-     {oa:"MA08 OA 10", nombre:"Función afín", icono:"📉", n:6},
-     {oa:"BOSS", nombre:"⚡ JEFE: Álgebra", icono:"🧮", n:8, oas:["MA08 OA 06","MA08 OA 07","MA08 OA 08","MA08 OA 09","MA08 OA 10"]},
+     {oa:"MA08 OA 06", nombre:"Lenguaje algebraico", icono:"✏️", n:10},
+     {oa:"MA08 OA 07", nombre:"Función lineal", icono:"📈", n:10},
+     {oa:"MA08 OA 08", nombre:"Ecuaciones", icono:"⚖️", n:10},
+     {oa:"MA08 OA 09", nombre:"Inecuaciones", icono:"🚦", n:10},
+     {oa:"MA08 OA 10", nombre:"Función afín", icono:"📉", n:10},
+     {oa:"BOSS", nombre:"⚡ JEFE: Álgebra", icono:"🧮", n:15, oas:["MA08 OA 06","MA08 OA 07","MA08 OA 08","MA08 OA 09","MA08 OA 10"]},
    ]},
  { id:'mate-exp-geometria', asignatura:'Matemáticas', nivel:'8° Básico · Geometría',
    portada:'assets/portada-mate-geometria.png', contenido:'contenido/matematicas-8basico/preguntas.json', activa:true, campaña:'mate',
    etapas:[
-     {oa:"MA08 OA 11", nombre:"Área y volumen", icono:"📦", n:6},
-     {oa:"MA08 OA 12", nombre:"Teorema de Pitágoras", icono:"📐", n:6},
-     {oa:"MA08 OA 13", nombre:"Movimientos en el plano", icono:"🔃", n:6},
-     {oa:"MA08 OA 14", nombre:"Simetría", icono:"🔷", n:6},
-     {oa:"BOSS", nombre:"⚡ JEFE: Geometría", icono:"🧮", n:8, oas:["MA08 OA 11","MA08 OA 12","MA08 OA 13","MA08 OA 14"]},
+     {oa:"MA08 OA 11", nombre:"Área y volumen", icono:"📦", n:10},
+     {oa:"MA08 OA 12", nombre:"Teorema de Pitágoras", icono:"📐", n:10},
+     {oa:"MA08 OA 13", nombre:"Movimientos en el plano", icono:"🔃", n:10},
+     {oa:"MA08 OA 14", nombre:"Simetría", icono:"🔷", n:10},
+     {oa:"BOSS", nombre:"⚡ JEFE: Geometría", icono:"🧮", n:15, oas:["MA08 OA 11","MA08 OA 12","MA08 OA 13","MA08 OA 14"]},
    ]},
  { id:'mate-exp-datos', asignatura:'Matemáticas', nivel:'8° Básico · Probabilidad y estadística',
    portada:'assets/portada-mate-datos.png', contenido:'contenido/matematicas-8basico/preguntas.json', activa:true, campaña:'mate',
    etapas:[
-     {oa:"MA08 OA 15", nombre:"Cuartiles y cajón", icono:"📊", n:6},
-     {oa:"MA08 OA 16", nombre:"Gráficos honestos", icono:"📈", n:6},
-     {oa:"MA08 OA 17", nombre:"Principio multiplicativo", icono:"🎲", n:6},
-     {oa:"BOSS", nombre:"⚡ JEFE: Datos y azar", icono:"🧮", n:8, oas:["MA08 OA 15","MA08 OA 16","MA08 OA 17"]},
+     {oa:"MA08 OA 15", nombre:"Cuartiles y cajón", icono:"📊", n:10},
+     {oa:"MA08 OA 16", nombre:"Gráficos honestos", icono:"📈", n:10},
+     {oa:"MA08 OA 17", nombre:"Principio multiplicativo", icono:"🎲", n:10},
+     {oa:"BOSS", nombre:"⚡ JEFE: Datos y azar", icono:"🧮", n:15, oas:["MA08 OA 15","MA08 OA 16","MA08 OA 17"]},
    ]},
 ];
 
@@ -1288,7 +1306,7 @@ let Q={lvl:0,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock
 let MODO='normal';
 function esJefeLvl(lvl){return lvl===N_ETAPAS-1;}
 function progAct(){return MODO==='dificil'?S.progresoDificil:S.progreso;}
-function nPreguntas(lvl){if(MODO==='dificil')return esJefeLvl(lvl)?10:8;return EXPEDICION[lvl].n;}
+function nPreguntas(lvl){if(MODO==='dificil')return esJefeLvl(lvl)?15:10;return EXPEDICION[lvl].n;}
 function tiempoInicial(){return MODO==='dificil'?15:20;}
 
 const $=id=>document.getElementById(id);
@@ -2444,7 +2462,7 @@ function renderExpediciones(){
   g.appendChild(card);
  });
  // Módulo Lectura (biblioteca): fuera de las asignaturas, crece con más libros.
- const bib=document.createElement('div'); bib.className='exp-card';
+ const bib=document.createElement('div'); bib.className='exp-card bib-entry';
  bib.innerHTML=`<img src="assets/portada-lectura.png" alt="Lectura"><div class="exp-info"><b>📖 Lectura</b><small>Lecturas del colegio · ${LIBROS.length} libro${LIBROS.length===1?'':'s'}</small></div><span class="exp-go">▶</span>`;
  bib.onclick=()=>{SND.tap();abrirBiblioteca();};
  g.appendChild(bib);
