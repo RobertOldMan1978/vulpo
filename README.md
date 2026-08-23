@@ -24,9 +24,11 @@ explicación, **diagramas interactivos** (recta, fracciones, potencias, plano ca
 función, balanza de ecuaciones, triángulo de Pitágoras, sólidos, transformaciones en el plano,
 diagrama de cajón, gráficos de barras y árbol de posibilidades) y práctica; aprender cada tema
 **desbloquea** el **Reto de Cálculo** (cálculo mental rápido, por niveles, con su Jefe "El
-Autómata"). Cada asignatura tiene un banco de preguntas de año completo (todos sus OA del
-currículum).
-Además hay un **📚 Vocabulario** (dentro de Lenguaje): ~100 palabras de todo el curso en un
+Autómata"). Cada unidad **intercala clase y expedición** —primero se aprende y luego se enfrenta
+un desafío con el banco de año completo— y la campaña culmina en su **Jefe Final "La Incógnita"**,
+con las mismas recompensas que las demás asignaturas. Cada asignatura tiene un banco de preguntas
+de año completo (todos sus OA del currículum).
+Además hay un **📚 Vocabulario** (dentro de Lenguaje): ~150 palabras de todo el curso en un
 quiz de opción múltiple, y una **📖 Lectura** del colegio (biblioteca; primer libro *El diario
 de Ana Frank*) con un camino de preguntas de comprensión por tramos.
 También hay **Duelo 1v1** en el mismo teléfono y en línea (Supabase), una **tienda de

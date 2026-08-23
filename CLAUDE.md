@@ -62,31 +62,33 @@ backend Supabase para el duelo en línea. Historia de v0 al detalle en la Bitác
     skin "Vulpi Escritor"; insignia "Maestro de las Letras".
   Capa `CAMPAÑAS` data-driven; el motor de campañas es **genérico** (Desafío Extra
   opcional, jefe con título dinámico).
-- **Matemáticas · campaña "camino de aprendizaje" (Sesión 29) + "Reto de Cálculo"
-  (Sesión 15):** al entrar a Matemáticas se abre su **campaña** con 4 capítulos = las 4
-  unidades del año (Números jugable; Álgebra, Geometría y Estadística en "🔒 Pronto").
-  Cada lección es una **mini-clase guiada**: explicación breve + **diagramas SVG
-  interactivos** (recta arrastrable, barras de fracciones/%, cuadrículas de
-  potencias/raíces) + ejemplo resuelto paso a paso + práctica del banco revisado, que
-  **mide dominio por OA** (por fin Matemáticas entra al mapa del profesor). El **Reto de
-  Cálculo** —cálculo mental rápido, **5 niveles × 3 etapas** + Jefe "El Autómata" +
-  **Modo Sin Fin**— se conserva idéntico, pero ahora **cada nivel se desbloquea al
-  completar su lección** ("aprender desbloquea el Reto"). En el **Duelo**, Matemáticas
-  ofrece los 5 niveles del Reto (operaciones al vuelo), ver Sesión 16. El banco de
-  álgebra queda de reserva. **Matemáticas está completa:** las 4 unidades del año (Números,
-  Álgebra y funciones, Geometría, y Probabilidad y estadística) con 17 lecciones para los 17
-  OA y 11 widgets de diagrama interactivos, **más el Jefe Final "La Incógnita"** (villano
-  encapuchado hecho de ecuaciones; 4 fases × 4 preguntas, se abre al completar las 4
-  unidades) que entrega la skin **"Vulpi Matemático"** + insignia **"Maestro de las
-  Matemáticas"** + corona + bono. Es la asignatura más completa del juego.
+- **Matemáticas · campaña "enseña→desafío" (Sesiones 29 y 31) + "Reto de Cálculo"
+  (Sesión 15):** al entrar a Matemáticas se abre su **campaña** con las 4 unidades del año
+  (Números, Álgebra y funciones, Geometría, y Probabilidad y estadística), y el mapa
+  **intercala por unidad lección → expedición**: primero la **mini-clase guiada**
+  (explicación breve + **diagramas SVG interactivos** —recta arrastrable, barras de
+  fracciones/%, cuadrículas de potencias/raíces— + ejemplo resuelto paso a paso + **10
+  preguntas** de práctica del banco revisado, que **mide dominio por OA**), y a continuación
+  su **expedición** (`mate-exp-numeros`, `-algebra`, `-geometria`, `-datos`), que pone a
+  prueba lo aprendido usando el **banco de año completo (603)**. El **Reto de Cálculo**
+  —cálculo mental rápido, **5 niveles × 3 etapas** + Jefe "El Autómata" + **Modo Sin Fin**—
+  se conserva, con **cada nivel desbloqueado al completar su lección** ("aprender desbloquea
+  el Reto"); sus tiempos son **fijos** (nivel y Sin Fin 20 s, El Autómata 15 s) y no bajan
+  con la dificultad. En el **Duelo**, Matemáticas ofrece los 5 niveles del Reto (operaciones
+  al vuelo), ver Sesión 16. **Jefe Final "La Incógnita"** (villano encapuchado hecho de
+  ecuaciones; 4 fases × 4 preguntas) que **se abre al vencer las 4 expediciones** y entrega
+  la skin **"Vulpi Matemático"** + insignia **"Maestro de las Matemáticas"** + corona + bono.
+  Vencer las 4 expediciones en **Modo Difícil** suma la insignia 🔥 **"Matemáticas · Difícil"**
+  (`dif-matematicas`); la **Maestría Total no cambia** (sigue exigiendo Historia + Ciencias +
+  Lenguaje en Difícil + El Autómata). Es la asignatura más completa del juego.
 - Regla de cada capítulo/expedición: **4 etapas + 1 jefe (5 nodos)** (algunos capítulos
   con 3 etapas cuando su unidad tiene 3 OA). Cada asignatura tiene, además, un **banco de
   año completo** (todos sus OA oficiales); con las 4 campañas activas ya casi no queda
   contenido de reserva sin usar.
-- Quiz: 6 preguntas al azar/etapa, timer 15 s, pasa con 66%, 3 estrellas. Al
+- Quiz: 6 preguntas al azar/etapa, timer 20 s, pasa con 66%, 3 estrellas. Al
   fallar revela la respuesta correcta + explicación y botón "Continuar". Vulpi
   comenta un dato al iniciar la ruta.
-- **Modo Difícil** desbloqueable (8 preguntas, 10 s, 80%, tema oscuro/carmesí).
+- **Modo Difícil** desbloqueable (8 preguntas, 15 s, 80%, tema oscuro/carmesí).
 - Persistencia (localStorage), **tienda de skins** (precios escalonados 80–900;
   emojis baratos de entrada + skins ilustradas premium, incluidas **7 deportivas**:
   karate, fútbol, básquetbol, vóleibol, ciclismo, tenis, skate), animación de subida
@@ -434,13 +436,13 @@ el sesgo de posición), asigna IDs por OA y escribe `preguntas.json`.
 - Cada etapa saca **6 preguntas al azar** del pool (jefe final: 8, mezcla de OA).
 - **Pasa con ≥66%** de aciertos (4 de 6). Si no, repite la etapa con preguntas
   nuevas. Estrellas: 3★ = 100%, 2★ ≥ 80%, 1★ ≥ 66%.
-- XP, monedas, combos y timer (15 s) se mantienen.
+- XP, monedas, combos y timer (20 s; 15 s en Difícil) se mantienen.
 - Expedición piloto "Los europeos llegan a América": etapas OA04, OA05, OA06,
   OA07 + jefe final. El juego lee las preguntas de `preguntas.json` (fetch).
 
 ### Modo Difícil (desbloqueable)
 - Se **desbloquea** al vencer al Jefe Final en Normal.
-- Mismo mapa, pero: **8 preguntas** por etapa (jefe **10**), **10 s** por pregunta,
+- Mismo mapa, pero: **8 preguntas** por etapa (jefe **10**), **15 s** por pregunta,
   se pasa con **≥80%**. Estrellas: 3★ = 100%, 2★ ≥ 90%, 1★ ≥ 80%.
 - Progreso y estrellas **separados** del Normal (`S.progresoDificil`); se elige con
   el selector Normal/Difícil del mapa (variable global `MODO`).
@@ -1837,3 +1839,35 @@ data-driven sobre el motor de quiz existente (no se tocó el motor).
   mascota** por el tema). Las primeras versiones desentonaban (estilos mezclados / realista).
 - **Pendientes:** **aprobación pedagógica** de los 2 bancos nuevos (nacen `revisada:false`);
   sin cambios en el resto respecto a la Sesión 29.
+
+### Sesión 31 (2026-08-22) — Capa de expedición para Matemáticas, tiempos y barajado
+Tres frentes; el grande con flujo brainstorming → spec → plan → subagentes (implementador +
+revisor por tarea + revisión final). Spec y plan en
+`docs/superpowers/{specs,plans}/2026-08-22-matematicas-expedicion*`.
+- **Capa de expedición para Matemáticas (Opción B):** Matemáticas deja de ser solo "camino de
+  aprendizaje". El mapa de campaña ahora **intercala por unidad enseña→desafío**: la lección
+  (mini-clase) y a continuación su **expedición** (`mate-exp-numeros`, `-algebra`, `-geometria`,
+  `-datos`), que reta lo aprendido usando el **banco de año completo (603)**. El **Jefe Final
+  "La Incógnita"** ya **no se abre al completar las lecciones sino al vencer las 4 expediciones**;
+  conserva sus recompensas (skin "Vulpi Matemático" + insignia "Maestro de las Matemáticas" +
+  corona + bono). Nueva insignia 🔥 **`dif-matematicas`** por vencer las 4 expediciones en **Modo
+  Difícil**. La **Maestría Total no cambia**: sigue siendo Historia + Ciencias + Lenguaje (en
+  Difícil) + El Autómata. Portadas: las expediciones **reutilizan la portada de su unidad**
+  (`assets/portada-<cap>.png`) para no pedir un asset inexistente (evita el 404 de
+  `portada-<exp.id>.png`).
+- **Ajustes de tiempo y longitud:** quiz Normal **15→20 s**, Difícil **10→15 s**
+  (`tiempoInicial`). Reto de Cálculo con **tiempo fijo de 20 s** que **no baja con la dificultad**
+  (`calcTiempo(){return 20}`) y **Sin Fin 20 s**; Jefe de Cálculo **El Autómata 6→15 s**. Las
+  **lecciones de Matemáticas pasan de 6 a 10 preguntas** de práctica.
+- **Barajado de los bancos de apoyo:** Vocabulario (**150**) y Ana Frank (**72**) se barajaron con
+  colocación **balanceada** (respuesta correcta ~25% en cada posición), preservando `revisada:false`.
+- **Cuidado con saves existentes:** como La Incógnita ahora exige las 4 expediciones, un alumno que
+  tenía todas las lecciones pero no había vencido a La Incógnita la verá **re-bloqueada** hasta
+  limpiar las 4 expediciones (por diseño; quien ya la venció conserva su corona).
+- **Reparto disparejo de OA (evaluado, se deja como está):** Ciencias U1 (~50 preg/OA) y varios OA
+  de Lenguaje (~47) sobresalen del piso de 30, pero **son `revisada:true`** y el desajuste es
+  **invisible** en el juego (saca 6 al azar) y en el tablero (topa la cobertura). Se decidió **no
+  tocarlos**: recortar borraría preguntas ya aprobadas y bajaría la variedad del pool.
+- **Estado:** todo en `main` (commits hasta `0877600`). **Pendiente (Roberto):** aprobación
+  pedagógica de los 2 bancos de apoyo (`vocabulario` 150 y `lectura-anafrank` 72, `revisada:false`)
+  → flujo tablero → `aplicar-revisadas`.
