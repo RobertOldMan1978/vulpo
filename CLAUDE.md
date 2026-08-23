@@ -1907,5 +1907,21 @@ Preparando la v1. Se registró la Sesión 31 en la bitácora (commit aparte) y l
   además su **frase de derrota propia** (campo `derrota` en su `jefeFinal`, en su voz). El Autómata
   del Reto de Cálculo ya tenía su propia pantalla (sin cambios). Verificado en el navegador con los
   4 villanos (imágenes cargan, barra anima, sin errores de consola).
-- **Pendiente (Roberto):** confirmar si los Jefes Finales de campaña también suben de tamaño de
-  preguntas; sigue la aprobación pedagógica de los 2 bancos de apoyo (sin cambios).
+- **Victoria épica contra el Jefe Final (brainstorm → spec → plan → ejecución):** al vencer un
+  Jefe Final, en vez de saltar directo a las recompensas se intercala una **mini-cinemática de 2
+  tiempos**. **Tiempo 1** (overlay `#jefe-caida`, ~3 s, carmesí): el villano hace *swap* de su
+  imagen de combate a su **arte "derrotado"** con destello + temblor, cae y se apaga, texto
+  "¡{villano} ha sido derrotado/a!" (concuerda en género), y arranca la **música de victoria**;
+  auto-avanza y es saltable con tap. **Tiempo 2** (`scr-jefe-win`): confeti dorado + recompensas
+  que aparecen escalonadas, con la música siguiendo. Datos: campo `villanoImgDerrotado` por villano
+  y pista `victoria` en `MUSIC` (con `scr-jefe-win`→`victoria` en `contexto`; el volver retoma
+  `menu`). *Fallback*: sin arte derrotado → imagen normal atenuada; sin música → silencio. Respeta
+  `prefers-reduced-motion`. Spec/plan en `docs/superpowers/{specs,plans}/2026-08-22-victoria-jefe-final*`.
+- **Assets de la victoria (Roberto generó, Claude procesó):** 4 imágenes `villano-{historia,ciencias,
+  lenguaje,matematicas}-derrotado.png` (512px, originales crudos en `assets/originales/`), y la
+  música **`musica-victoria.mp3`** = "Hero Theme" de **Kevin MacLeod** (Incompetech, CC BY 4.0),
+  recortada a mono 96 kbps / 216 KB. Verificado en el navegador (arte real sin fallback, música
+  carga, confeti, sin errores).
+- **Jefes Finales de campaña: quedan igual** (decisión de Roberto) — su tamaño de preguntas
+  (4 fases × 4) NO cambió con el ajuste general a 10/15 de las etapas/jefes de expedición.
+- **Pendiente (Roberto):** aprobación pedagógica de los 2 bancos de apoyo (sin cambios).

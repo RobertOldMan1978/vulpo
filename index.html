@@ -455,6 +455,40 @@ body.jefe-hit{animation:jefeShake .26s}
 .jl-dmg-top{display:flex;justify-content:space-between;font-weight:900;font-size:13px;color:#ffb3c1;margin-bottom:7px}
 .jl-dmgbar{height:14px}
 .jl-fase{margin-top:9px;font-weight:900;font-size:12px;color:var(--gold)}
+/* Jefe Final · overlay de caída del villano (Tiempo 1 de la victoria) */
+#jefe-caida{position:fixed;inset:0;z-index:100000;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:18px;background:radial-gradient(circle at 50% 0%,#3d0a16,#0a0410 70%);
+  cursor:pointer;padding:20px;text-align:center}
+#jefe-caida[hidden]{display:none}
+.jc-flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:2}
+.jc-flash.go{animation:jcFlash .5s ease-out}
+@keyframes jcFlash{0%{opacity:0}18%{opacity:.9}100%{opacity:0}}
+.jc-villano{width:220px;height:220px;display:grid;place-items:center;font-size:120px;position:relative;z-index:1}
+.jc-villano img{width:220px;height:220px;object-fit:contain;filter:drop-shadow(0 0 22px #ff4d6a)}
+.jc-villano.jc-shake{animation:jefeShake .26s}
+.jc-villano.caido{animation:jcCaida 1.1s cubic-bezier(.5,0,.7,1) forwards}
+@keyframes jcCaida{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(26px) rotate(8deg)}}
+/* solo el fallback (imagen normal) se atenúa para leerse como "derrotado" */
+.jc-villano.jc-fallback.caido img{filter:grayscale(.85) brightness(.6) drop-shadow(0 0 22px #ff4d6a);transition:filter 1.1s ease}
+.jc-texto{color:#fff;font-size:26px;opacity:0;z-index:1}
+.jc-texto.show{animation:jcTexto .5s ease-out forwards}
+@keyframes jcTexto{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .jc-flash.go{animation:none}
+  .jc-villano.caido{animation:none;transform:translateY(26px) rotate(8deg)}
+  .jc-texto.show{animation:none;opacity:1}
+}
+/* Jefe Final · Tiempo 2: confeti y aparición escalonada de recompensas */
+.confeti{position:fixed;top:-16px;width:9px;height:14px;border-radius:2px;opacity:.95;z-index:100002;
+  pointer-events:none;animation:confetiCae 2.2s linear forwards}
+@keyframes confetiCae{0%{transform:translateY(0) translateX(0) rotate(0);opacity:1}
+  100%{transform:translateY(105vh) translateX(var(--dx,0)) rotate(540deg);opacity:.9}}
+.jw-item{opacity:0;animation:jwItemIn .45s ease forwards}
+@keyframes jwItemIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .confeti{display:none}
+  .jw-item{opacity:1;animation:none}
+}
 /* --- Perfil: logros e insignias --- */
 .logros-grid,.insignias-grid{display:flex;flex-direction:column;gap:10px;margin-top:10px}
 .logro{display:flex;align-items:center;gap:12px;background:var(--panel);border:2px solid #ffffff14;border-radius:14px;padding:12px;font-weight:800}
@@ -539,6 +573,12 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
 <div id="maestroOverlay" hidden>
   <video id="maestroVid" src="assets/maestro.mp4" playsinline preload="auto"></video>
   <button id="maestroSkip">Saltar ▸</button>
+</div>
+
+<div id="jefe-caida" hidden>
+  <div id="jcFlash" class="jc-flash"></div>
+  <div id="jcVillano" class="jc-villano"></div>
+  <h2 id="jcTexto" class="jc-texto disp"></h2>
 </div>
 
 <div id="creditosModal" class="cred-modal" hidden>
@@ -1184,6 +1224,7 @@ const CAMPAÑAS=[{
     villano:'El Guardián del Tiempo', villanoIc:'🐉', villanoImg:'assets/villano-historia.png',
     dialogo:'Nadie ha recorrido toda la historia... ¿crees que tú puedes?',
     derrota:'El tiempo siempre vuelve a mi favor. Repasa las eras y vuelve cuando la historia esté de tu lado.',
+    villanoImgDerrotado:'assets/villano-historia-derrotado.png',
     vidasJugador:3, nPorFase:4,
     fases:[
       {nombre:'La modernidad',        oas:['HI08 OA 01','HI08 OA 02','HI08 OA 03','HI08 OA 04']},
@@ -1201,6 +1242,7 @@ const CAMPAÑAS=[{
     villano:'La Entropía', villanoIc:'🌀', villanoImg:'assets/villano-ciencias.png',
     dialogo:'Todo en el universo tiende al desorden... ¿crees que tu ciencia puede descifrarme?',
     derrota:'El desorden gana esta ronda. Ordena tus ideas y regresa a desafiarme.',
+    villanoImgDerrotado:'assets/villano-ciencias-derrotado.png',
     vidasJugador:3, nPorFase:4,
     fases:[
       {nombre:'La célula',             oas:['CN08 OA 01','CN08 OA 02','CN08 OA 03','CN08 OA 04']},
@@ -1218,6 +1260,7 @@ const CAMPAÑAS=[{
     villano:'El Borrón', villanoIc:'✒️', villanoImg:'assets/villano-lenguaje.png',
     dialogo:'Mancho las páginas y borro las palabras... ¿crees que tus letras pueden vencerme?',
     derrota:'Otra página en blanco para mi colección. Afila tus palabras y vuelve a escribir tu final.',
+    villanoImgDerrotado:'assets/villano-lenguaje-derrotado.png',
     vidasJugador:3, nPorFase:4,
     fases:[
       {nombre:'Leer y comprender', oas:['LE08 OA 01','LE08 OA 02','LE08 OA 03','LE08 OA 08']},
@@ -1242,6 +1285,7 @@ const CAMPAÑAS=[{
     villano:'La Incógnita', villanoIc:'❓', villanoImg:'assets/villano-matematicas.png',
     dialogo:'Soy la x que nadie despeja… ¿crees que tus números pueden encontrarme?',
     derrota:'Sigo sin despejar. Repasa tus fórmulas y vuelve a buscar mi valor.',
+    villanoImgDerrotado:'assets/villano-matematicas-derrotado.png',
     vidasJugador:3, nPorFase:4,
     fases:[
       {nombre:'Números',      oas:['MA08 OA 01','MA08 OA 02','MA08 OA 03','MA08 OA 04','MA08 OA 05']},
@@ -1385,7 +1429,7 @@ const MUSIC={
    aventura:['assets/audio/musica-aventura.mp3','assets/audio/musica-aventura2.mp3'],  // se alternan
    jefe:['assets/audio/musica-jefe.mp3','assets/audio/musica-jefe2.mp3'],              // se alternan
    jefeCalc:'assets/audio/musica-jefe-calc.mp3', duelo:'assets/audio/musica-duelo.mp3',
-   sinfin:'assets/audio/musica-sinfin.mp3' },
+   sinfin:'assets/audio/musica-sinfin.mp3', victoria:'assets/audio/musica-victoria.mp3' },
  el:null, actual:null, _ctx:'menu',
  init(){ if(this.el)return; try{ this.el=new Audio(); this.el.loop=true; this.el.volume=this.vol;
    this.el.addEventListener('error',()=>{ this.actual=null; }); }catch(e){} },
@@ -1400,7 +1444,8 @@ const MUSIC={
  setVol(v){ this.vol=v; localStorage.setItem('kimun_music_vol',String(v)); if(this.el)this.el.volume=v; },
  contexto(id){
    let n='menu';
-   if(id==='scr-jefe-intro'||id==='scr-jefe'||id==='scr-jefe-win') n='jefe';       // jefes de campaña
+   if(id==='scr-jefe-intro'||id==='scr-jefe') n='jefe';                            // combate del jefe
+   else if(id==='scr-jefe-win') n='victoria';                                      // triunfo
    else if(id==='scr-calc') n=(typeof RC!=='undefined' && RC)?(RC.modo==='jefe'?'jefeCalc':RC.modo==='sinfin'?'sinfin':'aventura'):'aventura'; // Reto: etapas=aventura, jefe=jefeCalc, sin fin=sinfin
    else if(id==='scr-quiz') n='aventura';                                          // quiz de expedición
    else if(id && (id.indexOf('scr-duelo')===0 || id.indexOf('scr-od')===0)) n='duelo'; // Duelo 1v1
@@ -2787,11 +2832,42 @@ function renderJefeDerrota(){
  $('jlRetry').onclick=()=>{SND.tap();iniciarJefeFinal(camp);};   // reintento con preguntas nuevas
  $('jlBack').onclick=()=>{SND.tap();document.body.classList.remove('en-jefe');go('scr-campana');renderCampaña();};
 }
+let JC_LOCK=false;
 function jefeVictoria(){
  SND.win();
- document.body.classList.remove('en-jefe');
  otorgarRecompensasCampaña(JF.camp); // Fase 4
- renderJefeVictoria();               // pantalla de celebración
+ renderCaidaVillano(JF.camp, ()=>{   // Tiempo 1: caída; luego recompensas
+  document.body.classList.remove('en-jefe');   // el carmesí se conserva hasta aquí
+  renderJefeVictoria();
+ });
+}
+// Tiempo 1: overlay a pantalla completa donde el villano cae y arranca la música de victoria.
+function renderCaidaVillano(camp, alTerminar){
+ const jf=camp.jefeFinal;
+ const ov=$('jefe-caida'), vic=$('jcVillano'), txt=$('jcTexto'), fl=$('jcFlash');
+ JC_LOCK=false;
+ vic.className='jc-villano';                     // estado inicial: imagen de combate
+ vic.innerHTML=jf.villanoImg?`<img src="${jf.villanoImg}" alt="${jf.villano}">`:jf.villanoIc;
+ const fem=/^la\b/i.test(jf.villano);   // "La Entropía"/"La Incógnita" → derrotada
+ txt.className='jc-texto disp'; txt.textContent='¡'+jf.villano+' ha sido derrotad'+(fem?'a':'o')+'!';
+ fl.classList.remove('go');
+ ov.hidden=false;
+ MUSIC.play('victoria');
+ const avanzar=()=>{ if(JC_LOCK)return; JC_LOCK=true; ov.hidden=true; alTerminar(); };
+ ov.onclick=avanzar;
+ setTimeout(()=>{ fl.classList.add('go'); vic.classList.add('jc-shake'); }, 300);
+ setTimeout(()=>{
+  const usarFallback=!jf.villanoImgDerrotado;
+  const src=jf.villanoImgDerrotado||jf.villanoImg;
+  vic.classList.remove('jc-shake');
+  vic.innerHTML=jf.villanoImg
+   ? `<img src="${src}" alt="${jf.villano}" onerror="this.onerror=null;this.src='${jf.villanoImg}';this.closest('.jc-villano').classList.add('jc-fallback')">`
+   : jf.villanoIc;
+  if(usarFallback) vic.classList.add('jc-fallback');
+  vic.classList.add('caido');
+  txt.classList.add('show');
+ }, 550);
+ setTimeout(avanzar, 3000);
 }
 
 /* ===== Recompensas de campaña (Fase 4) ===== */
@@ -2812,14 +2888,29 @@ function renderJefeVictoria(){
  const sk=SKINS.find(s=>s.id===r.skin), ins=INSIGNIAS.find(i=>i.id===r.insignia);
  $('jwTitulo').textContent='¡'+camp.asignatura+' dominada!';
  const items=[];
+ const it=(ic,titulo,sub)=>`<div class="jw-item" style="animation-delay:${(items.length*0.15).toFixed(2)}s"><span class="jw-ic">${ic}</span><div><b>${titulo}</b><small>${sub}</small></div></div>`;
  if(sk){const ic=sk.img?`<img src="${sk.img}" alt="${sk.nombre}">`:sk.e;
-  items.push(`<div class="jw-item"><span class="jw-ic">${ic}</span><div><b>Skin exclusiva</b><small>${sk.nombre} — ya equipable en la tienda</small></div></div>`);}
- if(ins) items.push(`<div class="jw-item"><span class="jw-ic">${ins.ic}</span><div><b>Insignia</b><small>${ins.tx}</small></div></div>`);
- items.push(`<div class="jw-item"><span class="jw-ic">👑</span><div><b>Corona dorada</b><small>en la tarjeta de ${camp.asignatura}</small></div></div>`);
- items.push(`<div class="jw-item"><span class="jw-ic">🎁</span><div><b>Bono</b><small>+${r.bonoMonedas||0} monedas · +${r.bonoXP||0} XP</small></div></div>`);
+  items.push(it(ic,'Skin exclusiva',`${sk.nombre} — ya equipable en la tienda`));}
+ if(ins) items.push(it(ins.ic,'Insignia',ins.tx));
+ items.push(it('👑','Corona dorada',`en la tarjeta de ${camp.asignatura}`));
+ items.push(it('🎁','Bono',`+${r.bonoMonedas||0} monedas · +${r.bonoXP||0} XP`));
  $('jwRecompensas').innerHTML=items.join('');
  enviarDominio();
  go('scr-jefe-win');
+ confetiVictoria();
+}
+function confetiVictoria(){
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const cols=['#ffc93c','#ff4d8d','#4dd8ff','#3ee089','#8f6bff'];
+ for(let i=0;i<26;i++){
+  const c=document.createElement('span'); c.className='confeti';
+  c.style.left=(Math.random()*100)+'%';
+  c.style.background=cols[i%cols.length];
+  c.style.animationDelay=(Math.random()*0.6).toFixed(2)+'s';
+  c.style.setProperty('--dx',Math.round(Math.random()*60-30)+'px');
+  document.body.appendChild(c);
+  setTimeout(()=>c.remove(),2900);
+ }
 }
 $('jwBack').onclick=()=>{SND.tap();go('scr-campana');renderCampaña();};
 

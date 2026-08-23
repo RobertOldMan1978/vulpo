@@ -13,15 +13,17 @@ El juego reproduce música de fondo en loop según el contexto. Los archivos son
 | `musica-jefe-calc.mp3` | Jefe del Reto ("El Autómata") | 45 s |
 | `musica-sinfin.mp3` | Modo Sin Fin del Reto (Voxel Revolution) | 60 s |
 | `musica-duelo.mp3` | Duelo 1v1 | 45 s |
+| `musica-victoria.mp3` | Victoria contra un Jefe Final de campaña (loop) | 18 s |
 
 Un contexto con **varias pistas** (arreglo en `MUSIC.srcs`) elige una al azar cada vez
 que se entra a esa pantalla, para dar variedad.
 
 ## Créditos (licencia)
 
-Los temas de **aventura, jefes, Autómata y duelo** son de **Kevin MacLeod**
+Los temas de **aventura, jefes, Autómata, duelo y victoria** son de **Kevin MacLeod**
 (incompetech.com), licencia **CC BY 4.0** — el crédito se muestra en la pantalla de
-inicio del juego. El tema de **menú** es aparte (provisto por el autor del juego).
+inicio del juego. El tema de **victoria** es "Hero Theme". El tema de **menú** es aparte
+(provisto por el autor del juego).
 
 Todas están en **mono 96 kbps** (livianas) y se reproducen en **loop**. El ruteo por
 pantalla está en `MUSIC.contexto()` dentro de `index.html`. Para re-comprimir/recortar
