@@ -174,6 +174,12 @@ Orden tentativo, sujeto a prioridad de "verlo funcionar y atractivo" primero:
   del procedimiento, antes de subir hay que: (1) agregar a la bitácora de abajo lo
   avanzado y lo pendiente de la sesión, y (2) revisar que `CLAUDE.md` y `README.md`
   reflejen el estado real (estado, roadmap, decisiones). Recién entonces commit + push.
+- **Después del push, informar los cambios en el AI Brain (NotebookLM) de Roberto.**
+  Es parte de la orden 66: escribir un resumen breve de la sesión (lo avanzado y lo
+  pendiente) y subirlo al notebook con el CLI:
+  `C:\Users\Rodrigo\.notebooklm-venv\Scripts\notebooklm.exe source add '<ruta-del-resumen>' --notebook '19408e05-1f37-48b6-b398-644519ac019e'`.
+  Si la sesión del CLI caducó, avisar a Roberto para que corra `notebooklm.exe login`
+  en su terminal (el login interactivo no se puede lanzar desde el asistente).
 - **Respaldo automático a las 18:00:** cualquier día en que haya cambios sin
   guardar, una Tarea Programada de Windows ejecuta `scripts/auto-commit.ps1`,
   que hace commit y push solo si detecta cambios. Así no se pierde trabajo
