@@ -89,7 +89,7 @@ backend Supabase para el duelo en línea. Historia de v0 al detalle en la Bitác
   fallar revela la respuesta correcta + explicación y botón "Continuar". Vulpi
   comenta un dato al iniciar la ruta.
 - **Modo Difícil** desbloqueable (10 preguntas, 15 s, 80%, tema oscuro/carmesí).
-- Persistencia (localStorage), **tienda de skins** (precios escalonados 80–900;
+- Persistencia (localStorage), **tienda de skins** (precios escalonados 110–1250;
   emojis baratos de entrada + skins ilustradas premium, incluidas **7 deportivas**:
   karate, fútbol, básquetbol, vóleibol, ciclismo, tenis, skate), animación de subida
   de nivel, logros, ranking (aún simulado).
@@ -1924,4 +1924,34 @@ Preparando la v1. Se registró la Sesión 31 en la bitácora (commit aparte) y l
   carga, confeti, sin errores).
 - **Jefes Finales de campaña: quedan igual** (decisión de Roberto) — su tamaño de preguntas
   (4 fases × 4) NO cambió con el ajuste general a 10/15 de las etapas/jefes de expedición.
+- **Pendiente (Roberto):** aprobación pedagógica de los 2 bancos de apoyo (sin cambios).
+
+### Sesión 33 (2026-08-23) — Revisión profunda multi-agente: 9 bugs + reequilibrio de economía
+Se lanzó una **revisión estática con 7 agentes** (workflow: 6 revisores por dimensión —navegación,
+progresión, motor, economía, datos, robustez— + 1 senior que dedupe/verifica contra el código).
+Reportó **9 bugs confirmados, 0 descartados**. Se arreglaron los 9, más el reequilibrio de economía.
+Todo verificado en el navegador (sin errores de consola).
+- **Bug reportado por Roberto (volver desde Matemáticas salía a Historia): CONFIRMADO y arreglado.**
+  El ✕ del quiz (`btnBack`) solo distinguía `Q.desafio` y caía en `scr-mapa`, que se dibuja según
+  `EXP_ACT` (que quedaba "pegado" en la última expedición, por defecto Historia). Ahora enruta por
+  `Q.leccion` → `volverAlCapituloMate()`.
+- **Otros 8 bugs:** (2) la **barra inferior** dejaba el timer del quiz corriendo de fondo → nuevo
+  `detenerTimersActivos()` en su handler; (3) **re-vencer el Jefe Final** re-otorgaba +500🪙/+300XP →
+  bono solo la primera vez; (4) el **Duelo local** se rompía tras jugar otra asignatura (dependía del
+  POOL global) → ahora carga su **propio banco de Historia** (`cargarPoolDuelo`); (5) el ✕ tras
+  acertar no cancelaba el `setTimeout(avanzar)` → se guarda/cancela `Q._avanzarT` + guard de pantalla
+  en `avanzar`; (6) **Reto de Cálculo** dejaba un `setTimeout` huérfano al salir → `RC._resolveT`
+  guardado/cancelado + guard de pantalla; (7) el **Modo Difícil se desbloqueaba en Lectura/Vocabulario**
+  → ahora solo si la última etapa es un **BOSS real** (`oa==='BOSS'`); (8) el **Jefe Final** crasheaba
+  si el banco no cargó → valida el POOL antes de arrancar; (9) volver del **Reto de Cálculo** iba a
+  Expediciones → ahora a la campaña de Matemáticas.
+- **Economía reequilibrada (con el cambio 6→10/8→15, las monedas subieron +33-50%):**
+  - **Precios de tienda +~38%** (`SKINS`): total **7.140 → 9.830🪙**, la más barata 80→**110**. Vuelve a
+    exigir terminar el contenido para "comprarlo todo".
+  - **Guard de primera vez (anti-farmeo):** repetir una etapa/lección ya superada paga **+1🪙 / ~25% XP**
+    (vs. +5🪙 / XP completo la primera vez); el bono de estrellas no se paga en repeticiones. Frena el
+    farmeo de monedas y la inflación del XP del ranking. El primer clear en Modo Difícil paga completo.
+    (`Q.repetida` en `startQuiz`/`iniciarPracticaLeccion`; aplicado en `responder`/`terminarNivel`.)
+  - *No tocado:* `XP_POR_NIVEL` (cosmético) y la propiedad muerta `bonoMult:2` del desafío (queda por
+    decidir: implementarla como bono ×2 o eliminarla).
 - **Pendiente (Roberto):** aprobación pedagógica de los 2 bancos de apoyo (sin cambios).

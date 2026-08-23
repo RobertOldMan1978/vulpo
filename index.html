@@ -1864,7 +1864,7 @@ async function iniciarPracticaLeccion(leccion){
  const preguntas = await preguntasDeOA(fb.oa, fb.n||3);
  if(!preguntas.length){ terminarLeccion(); return; }  // sin banco: se marca completa igual
  Q={lvl:0,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock:false,
-    preguntas, leccion:{id:leccion.id, titulo:leccion.titulo}};
+    preguntas, leccion:{id:leccion.id, titulo:leccion.titulo}, repetida:!!S.mateLecciones[leccion.id]};
  MODO='normal';
  go('scr-quiz'); pintaPregunta();
 }
@@ -2093,7 +2093,8 @@ function responderCalc(i,btn){
    else { SND.correct(); kimReact('feliz','kimBuddyCalc'); }
  }
  else { (RC.modo==='jefe'?SND.hurt():SND.wrong()); RC.combo=0; if(btn)btn.classList.add('bad'); if(RC.modo==='jefe')RC.corazones--; kimReact('triste','kimBuddyCalc'); }
- setTimeout(()=>{
+ RC._resolveT=setTimeout(()=>{
+  if(!$('scr-calc').classList.contains('on'))return;   // el usuario salió del Reto durante la animación
   if(RC.modo==='nivel'){ RC.idx++; return RC.idx>=RC_N?terminarEtapaCalc():pintaOpCalc(); }
   if(RC.modo==='jefe'){ if(RC.vida<=0)return jefeCalcVictoria(); if(RC.corazones<=0)return jefeCalcDerrota(); return pintaOpCalc(); }
   return correcto?pintaOpCalc():terminarSinFin();
@@ -2149,8 +2150,8 @@ function terminarSinFin(){
  const next=$('calcResNext'); next.textContent='Otra vez ➜'; next.style.display='block'; next.onclick=()=>{SND.tap();iniciarSinFin();};
  go('scr-calc-res');
 }
-$('btnCalcBack').onclick=()=>{SND.tap();go('scr-expediciones');};
-$('calcSalir').onclick=()=>{clearInterval(RC.timer);SND.tap();renderNivelesCalc();go('scr-calc-mapa');};
+$('btnCalcBack').onclick=()=>{SND.tap();if(CAMP_ACT){renderCampaña();go('scr-campana');}else{go('scr-expediciones');}};
+$('calcSalir').onclick=()=>{clearInterval(RC.timer);clearTimeout(RC._resolveT);SND.tap();renderNivelesCalc();go('scr-calc-mapa');};
 $('calcResMapa').onclick=()=>{SND.tap();renderNivelesCalc();go('scr-calc-mapa');};
 
 function refreshHud(){
@@ -2337,19 +2338,19 @@ function guardarPendiente(datos){
 }
 
 /* ================= TIENDA DE SKINS ================= */
-const SKINS=[{e:"🐲",p:120},{e:"🦄",p:150},{e:"🦖",p:180},{e:"🐙",p:100},{e:"🦉",p:80},{e:"🚀",p:220},{e:"🧙",p:260},{e:"👑",p:350},
- {e:"🌠",img:'assets/skin-kimun-astronauta.png',nombre:'Vulpi Astronauta',p:450},
- {e:"🪄",img:'assets/skin-kimun-mago.png',nombre:'Vulpi Mago',p:550},
- {e:"🥷",img:'assets/skin-kimun-ninja.png',nombre:'Vulpi Ninja',p:700},
- {e:"🦸",img:'assets/skin-kimun-superheroe.png',nombre:'Vulpi Superhéroe',p:900},
+const SKINS=[{e:"🐲",p:160},{e:"🦄",p:200},{e:"🦖",p:240},{e:"🐙",p:140},{e:"🦉",p:110},{e:"🚀",p:300},{e:"🧙",p:360},{e:"👑",p:480},
+ {e:"🌠",img:'assets/skin-kimun-astronauta.png',nombre:'Vulpi Astronauta',p:620},
+ {e:"🪄",img:'assets/skin-kimun-mago.png',nombre:'Vulpi Mago',p:760},
+ {e:"🥷",img:'assets/skin-kimun-ninja.png',nombre:'Vulpi Ninja',p:960},
+ {e:"🦸",img:'assets/skin-kimun-superheroe.png',nombre:'Vulpi Superhéroe',p:1250},
  // Skins deportivas (premium, ilustradas · lote 5).
- {e:"🥋",img:'assets/skin-kimun-karate.png',nombre:'Vulpi Karateka',p:320},
- {e:"⚽",img:'assets/skin-kimun-futbol.png',nombre:'Vulpi Futbolista',p:360},
- {e:"🏀",img:'assets/skin-kimun-basquetbol.png',nombre:'Vulpi Basquetbolista',p:400},
- {e:"🏐",img:'assets/skin-kimun-voleibol.png',nombre:'Vulpi Voleibolista',p:440},
- {e:"🚴",img:'assets/skin-kimun-ciclismo.png',nombre:'Vulpi Ciclista',p:480},
- {e:"🎾",img:'assets/skin-kimun-tenis.png',nombre:'Vulpi Tenista',p:520},
- {e:"🛹",img:'assets/skin-kimun-skate.png',nombre:'Vulpi Skater',p:560},
+ {e:"🥋",img:'assets/skin-kimun-karate.png',nombre:'Vulpi Karateka',p:440},
+ {e:"⚽",img:'assets/skin-kimun-futbol.png',nombre:'Vulpi Futbolista',p:500},
+ {e:"🏀",img:'assets/skin-kimun-basquetbol.png',nombre:'Vulpi Basquetbolista',p:550},
+ {e:"🏐",img:'assets/skin-kimun-voleibol.png',nombre:'Vulpi Voleibolista',p:600},
+ {e:"🚴",img:'assets/skin-kimun-ciclismo.png',nombre:'Vulpi Ciclista',p:660},
+ {e:"🎾",img:'assets/skin-kimun-tenis.png',nombre:'Vulpi Tenista',p:720},
+ {e:"🛹",img:'assets/skin-kimun-skate.png',nombre:'Vulpi Skater',p:780},
  // Skin exclusiva de recompensa: visible pero bloqueada; se desbloquea al vencer al Jefe Final de Historia.
  // Marcador de arte: emoji 🎓 hasta que exista assets/kimun-historiador.png.
  {id:'kimun-historiador', e:"🎓", img:'assets/kimun-historiador.png', nombre:'Vulpi Historiador', bloqueada:true, desbloqueaCon:'hist', req:'Vence a Historia'},
@@ -2397,7 +2398,15 @@ function renderTienda(){
 /* ================= DUELO 1v1 ================= */
 const DUELO_AV=["🦁","🐉","🦊","🐺","🦄","🐲"], DUELO_ROUNDS=5;
 let D={j:[{n:"Jugador 1",em:DUELO_AV[0],pts:0},{n:"Jugador 2",em:DUELO_AV[1],pts:0}],pr:[],ronda:0,turno:0,lock:false,t:15,timer:null};
-function poolDuelo(){let all=[];['HI08 OA 04','HI08 OA 05','HI08 OA 06','HI08 OA 07'].forEach(oa=>all=all.concat(POOL[oa]||[]));return all;}
+let DUELO_POOL=null;
+async function cargarPoolDuelo(){
+ if(DUELO_POOL) return DUELO_POOL;
+ try{ const d=await (await fetch('contenido/historia-8basico/preguntas.json')).json();
+   const oas=['HI08 OA 04','HI08 OA 05','HI08 OA 06','HI08 OA 07'];
+   DUELO_POOL=(d.preguntas||[]).filter(q=>oas.includes(q.oa)); }catch(e){ DUELO_POOL=[]; }
+ return DUELO_POOL;
+}
+function poolDuelo(){return DUELO_POOL||[];}   // banco propio del duelo, independiente del POOL de expedición activa
 function initDueloSetup(){
  $('d1Name').value='';$('d2Name').value='';
  D.j[0].em=DUELO_AV[0];D.j[1].em=DUELO_AV[1];
@@ -2407,8 +2416,8 @@ function initDueloSetup(){
    g.appendChild(d);});});
  go('scr-duelo-setup');
 }
-function startDuelo(){
- const pool=poolDuelo();
+async function startDuelo(){
+ const pool=await cargarPoolDuelo();
  if(pool.length<DUELO_ROUNDS){alert('Cargando preguntas… intenta de nuevo en un momento.');return;}
  D.j[0].n=$('d1Name').value.trim()||"Jugador 1";
  D.j[1].n=$('d2Name').value.trim()||"Jugador 2";
@@ -2749,6 +2758,9 @@ async function cargarPoolMate(){
 function iniciarJefeFinal(camp){
  const arrancar=()=>{
   const jf=camp.jefeFinal, total=jf.fases.length*jf.nPorFase;
+  if(!jf.fases.every(f=>f.oas.every(oa=>(POOL[oa]||[]).length>0))){   // el banco no cargó (p. ej. sin conexión)
+   alert('Cargando preguntas… intenta de nuevo en un momento.'); renderCampaña(); go('scr-campana'); return;
+  }
   JF={camp,fase:0,idx:0,preguntas:[],vidaMax:total,vida:total,vidas:jf.vidasJugador,lock:false};
   renderJefeIntro();
  };
@@ -2873,13 +2885,14 @@ function renderCaidaVillano(camp, alTerminar){
 /* ===== Recompensas de campaña (Fase 4) ===== */
 function otorgarRecompensasCampaña(camp){
  const r=camp.recompensa||{};
+ const primera=!S.campañasCompletas.has(camp.id);   // el bono se paga UNA sola vez
  S.campañasCompletas.add(camp.id);
  if(r.insignia) S.insignias.add(r.insignia);
  if(r.skin){ // la skin exclusiva se identifica por id; guardamos su emoji (lo que usa el avatar)
   const sk=SKINS.find(s=>s.id===r.skin), val=sk?sk.e:r.skin;
   if(!S.skins.includes(val)) S.skins.push(val);
  }
- S.monedas+=(r.bonoMonedas||0); S.xp+=(r.bonoXP||0);
+ if(primera){ S.monedas+=(r.bonoMonedas||0); S.xp+=(r.bonoXP||0); }   // no re-otorgar al rejugar
  if(S.insigniaActiva===null && r.insignia) S.insigniaActiva=r.insignia; // luce la primera por defecto
  guardar(); refreshHud();
 }
@@ -3206,8 +3219,11 @@ function pintarSinCurso(){
      Pide tu código para entrar al ranking de tu curso.</p>
    <button class="btn sec" onclick="SND.tap();abrirCanje()">🎟️ Tengo un código</button>`;
 }
+// Detiene cualquier temporizador/avance en curso (quiz, Reto de Cálculo, duelo) para que
+// no siga corriendo de fondo al cambiar de pantalla por la barra inferior u otro atajo.
+function detenerTimersActivos(){ clearInterval(Q.timer); clearTimeout(Q._avanzarT); clearInterval(RC.timer); clearTimeout(RC._resolveT); clearInterval(D.timer); }
 document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>{
- SND.tap();
+ SND.tap(); detenerTimersActivos();
  const dst=b.dataset.go;
  document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
  if(dst==='perfil'){renderPerfil();go('scr-perfil');}
@@ -3249,9 +3265,12 @@ function datoKimun(){
 /* ================= QUIZ ================= */
 function startQuiz(lvl){
  if(!poolListo(lvl)){alert('Cargando preguntas… intenta de nuevo en un momento.');return;}
- Q={lvl,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock:false,preguntas:buildPreguntas(lvl)};
+ const prg=progAct();
+ Q={lvl,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock:false,preguntas:buildPreguntas(lvl),
+    repetida:!!(prg&&prg[lvl]&&prg[lvl].est==='done')};   // ya superada antes en este modo → pago reducido
  go('scr-quiz');pintaPregunta();}
-$('btnBack').onclick=()=>{clearInterval(Q.timer);go(Q.desafio?'scr-rol':'scr-mapa');};
+$('btnBack').onclick=()=>{clearInterval(Q.timer);clearTimeout(Q._avanzarT);
+ if(Q.leccion){volverAlCapituloMate();}else{go(Q.desafio?'scr-rol':'scr-mapa');}};
 
 function pintaPregunta(){
  const N=EXPEDICION[Q.lvl],P=Q.preguntas[Q.idx];Q.lock=false;
@@ -3287,9 +3306,10 @@ function responder(el,ok,P,e){
  if(ok){
   Q.combo++;Q.comboMax=Math.max(Q.comboMax,Q.combo);Q.aciertos++;
   const bonus=Math.max(Q.t,3),pts=10+bonus+ (Q.combo>=2?Q.combo*2:0);
-  Q.xpGanado+=pts;S.xp+=pts;S.monedas+=5;
+  const xpGan=Q.repetida?Math.max(1,Math.round(pts*0.25)):pts, coinGan=Q.repetida?1:5;   // repeticiones pagan reducido (anti-farmeo)
+  Q.xpGanado+=xpGan;S.xp+=xpGan;S.monedas+=coinGan;
   el.classList.remove('off');el.classList.add('ok');
-  $('qFb').textContent=`✓ ¡Correcto! +${pts} XP`;$('qFb').classList.add('ok');
+  $('qFb').textContent=`✓ ¡Correcto! +${xpGan} XP`;$('qFb').classList.add('ok');
   const r=el.getBoundingClientRect();
   particulas(r.left+r.width/2,r.top,['✨','⭐','🪙','💥']);
   SND.correct();
@@ -3304,7 +3324,7 @@ function responder(el,ok,P,e){
   if(navigator.vibrate)navigator.vibrate(120);
  }
  refreshHud();
- if(ok){setTimeout(avanzar,1100);}
+ if(ok){Q._avanzarT=setTimeout(avanzar,1100);}
  else{
   // Revelar la respuesta correcta y una explicación más amplia; sin apuro (botón Continuar)
   const correcta=document.querySelector('#qOpts .opt[data-correcta]');
@@ -3374,6 +3394,7 @@ function reproducirMaestro(){
  const p=vid.play(); if(p&&p.catch)p.catch(()=>{vid.muted=true;const q=vid.play();if(q&&q.catch)q.catch(()=>cerrar());});
 }
 function avanzar(){if(!Q||!Q.preguntas)return;   // guard: evita reentrada (doble toque) tras resetear Q
+  if(!$('scr-quiz').classList.contains('on'))return;   // el usuario salió del quiz: no continuar
   Q.idx++;if(Q.idx<Q.preguntas.length)pintaPregunta();
   else if(Q.leccion)finPracticaLeccion();
   else if(Q.desafio)terminarDesafio();else terminarNivel();}
@@ -3392,8 +3413,8 @@ function terminarNivel(){
   toast('primera');
   if(estrellas===3)toast('perfecto');
   if(esJefe)toast('jefe');
-  S.monedas+=estrellas*10;
-  if(esJefe&&!dif&&!S.dificilDesbloqueado){S.dificilDesbloqueado=true;setTimeout(()=>toast('dificil'),700);}
+  S.monedas+=Q.repetida?0:estrellas*10;   // el bono de estrellas solo la primera vez (anti-farmeo)
+  if(esJefe&&EXPEDICION[Q.lvl]&&EXPEDICION[Q.lvl].oa==='BOSS'&&!dif&&!S.dificilDesbloqueado){S.dificilDesbloqueado=true;setTimeout(()=>toast('dificil'),700);}
  }
  if(paso)SND.win();else SND.lose();
  [1,2,3].forEach(i=>{if(i<=estrellas)setTimeout(()=>SND.star(i),350+i*260);});
@@ -3404,7 +3425,7 @@ function terminarNivel(){
  $('resTitle').textContent=paso?(esJefe?'¡EXPEDICIÓN COMPLETA!':'¡Nivel superado!'):('¡Casi! Necesitas '+(dif?'80%':'66%')+' para pasar');
  $('resStars').innerHTML=[1,2,3].map(i=>i<=estrellas?'<span class="g">★</span>':'<span class="w">★</span>').join('');
  $('resXp').textContent='+'+Q.xpGanado;
- $('resCoins').textContent='+'+(estrellas*10+Q.aciertos*5);
+ $('resCoins').textContent='+'+((Q.repetida?0:estrellas*10)+Q.aciertos*(Q.repetida?1:5));
  $('resCombo').textContent='x'+Q.comboMax;
  if(paso){
   $('btnNext').style.display=(Q.lvl<N_ETAPAS-1)?'block':'none';
