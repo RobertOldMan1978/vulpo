@@ -1973,3 +1973,24 @@ archivo nuevo en el repo: `docs/informe-v0.99.md`.
   `vulpochile.app@gmail.com`, teléfono `+569 7668 4967`.
 - **Pendiente (Roberto):** aprobación pedagógica de los 2 bancos de apoyo (sin cambios). Opcional de
   código sigue igual: decidir sobre `bonoMult:2`.
+
+### Sesión 35 (2026-08-23) — Correos a los profesores + nueva mascota Vulpi
+Continuación de la difusión; **sin cambios en el juego**. Único archivo nuevo en el repo:
+`assets/vulpi.png` (el resto —ejecutivo, correos, firmas— vive fuera del repo, en artefactos/PDF/PNG).
+- **Ejecutivo v2:** se le agregó una **banda de las 4 asignaturas** (Vulpi historiador/científico/
+  escritor/matemático) en la portada y la **firma Roberto Lorca · Creador de VULPO**; quedó en 2 págs
+  A4 (se quitó la tira de skins por espacio). Mismo artefacto/URL de la S34.
+- **4 correos a los profesores de las 4 asignaturas** (Historia—Jorge Arteaga, Ciencias—Rossy Pérez,
+  Lenguaje—Ana María Ganga, Matemática—Katherinne Rivas): invitación a probar + feedback, tono formal
+  (usted), datos por asignatura, **Vulpi temático junto al saludo** y **firma común**. Artefacto:
+  `https://claude.ai/code/artifact/19fca985-7d2c-4776-b53c-79f21008da88`. *Ojo:* el correo de Katherinne
+  venía con doble `@` en la planilla → se usó `katherinne.rivas@desales.cl` (verificar).
+- **Nueva mascota Vulpi (guardada en el repo):** zorro **adolescente/juvenil** con hoodie violeta-naranjo
+  y el nombre "Vulpi", generado con GPT-Image (referencia de identidad `kimun-feliz`), fondo transparente
+  1254×1254 → **`assets/vulpi.png`**. Se usa en la **firma** de los correos. Se preparó además una
+  **firma-imagen** (Vulpi + texto en la tipografía de marca) y PNGs sueltos para Gmail, todo fuera del repo
+  (carpeta `Escritorio/VULPO - correos profesores`).
+- **Cargo/identidad de marca:** Roberto usa el cargo **"Creador de VULPO"**; correo `vulpochile.app@gmail.com`,
+  teléfono `+569 7668 4967`.
+- **Pendiente (Roberto):** aprobación pedagógica de los 2 bancos de apoyo (sin cambios); enviar los 4
+  correos; trámites de lanzamiento (INAPI, vulpo.cl). Opcional de código: `bonoMult:2`.
