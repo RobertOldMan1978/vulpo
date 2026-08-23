@@ -446,6 +446,15 @@ body.jefe-hit{animation:jefeShake .26s}
 .jw-item .jw-ic{font-size:34px;flex-shrink:0}
 .jw-item b{display:block;font-size:14px}
 .jw-item small{color:var(--dim);font-weight:800;font-size:12px}
+/* Jefe Final · pantalla de derrota (mantiene la atmósfera carmesí) */
+.jefe-lose{min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;padding:20px}
+.jl-villano{filter:drop-shadow(0 0 26px #ff2d55) saturate(1.15)}
+.jl-taunt{font-weight:900;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ff7a93}
+.jl-dialogo{color:var(--cyan);font-style:italic;max-width:320px;font-size:15px;margin-top:-2px}
+.jl-progreso{width:100%;max-width:340px;background:#1c0910;border:2px solid #ff4d6a40;border-radius:16px;padding:14px 16px}
+.jl-dmg-top{display:flex;justify-content:space-between;font-weight:900;font-size:13px;color:#ffb3c1;margin-bottom:7px}
+.jl-dmgbar{height:14px}
+.jl-fase{margin-top:9px;font-weight:900;font-size:12px;color:var(--gold)}
 /* --- Perfil: logros e insignias --- */
 .logros-grid,.insignias-grid{display:flex;flex-direction:column;gap:10px;margin-top:10px}
 .logro{display:flex;align-items:center;gap:12px;background:var(--panel);border:2px solid #ffffff14;border-radius:14px;padding:12px;font-weight:800}
@@ -725,6 +734,23 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
       <h2 class="disp" id="jwTitulo">¡Historia dominada!</h2>
       <div id="jwRecompensas" class="jw-recompensas"></div>
       <button class="btn" id="jwBack">Volver a la campaña</button>
+    </div>
+  </section>
+
+  <!-- ============ JEFE FINAL · DERROTA ============ -->
+  <section class="screen" id="scr-jefe-lose">
+    <div class="jefe-lose">
+      <div id="jlVillano" class="ji-villano jl-villano"></div>
+      <div class="jl-taunt"><span id="jlTauntNom"></span> resistió</div>
+      <p id="jlDialogo" class="jl-dialogo"></p>
+      <h2 class="disp" id="jlTitulo"></h2>
+      <div class="jl-progreso">
+        <div class="jl-dmg-top"><span>Daño al jefe</span><span id="jlDmgPct"></span></div>
+        <div class="hpbar jl-dmgbar"><i id="jlDmgFill"></i></div>
+        <div id="jlFase" class="jl-fase"></div>
+      </div>
+      <button class="btn danger" id="jlRetry">⚔️ Reintentar el duelo</button>
+      <button class="btn sec" id="jlBack" style="margin-top:10px">← Volver a la campaña</button>
     </div>
   </section>
 
@@ -1157,6 +1183,7 @@ const CAMPAÑAS=[{
   jefeFinal:{
     villano:'El Guardián del Tiempo', villanoIc:'🐉', villanoImg:'assets/villano-historia.png',
     dialogo:'Nadie ha recorrido toda la historia... ¿crees que tú puedes?',
+    derrota:'El tiempo siempre vuelve a mi favor. Repasa las eras y vuelve cuando la historia esté de tu lado.',
     vidasJugador:3, nPorFase:4,
     fases:[
       {nombre:'La modernidad',        oas:['HI08 OA 01','HI08 OA 02','HI08 OA 03','HI08 OA 04']},
@@ -1173,6 +1200,7 @@ const CAMPAÑAS=[{
   jefeFinal:{
     villano:'La Entropía', villanoIc:'🌀', villanoImg:'assets/villano-ciencias.png',
     dialogo:'Todo en el universo tiende al desorden... ¿crees que tu ciencia puede descifrarme?',
+    derrota:'El desorden gana esta ronda. Ordena tus ideas y regresa a desafiarme.',
     vidasJugador:3, nPorFase:4,
     fases:[
       {nombre:'La célula',             oas:['CN08 OA 01','CN08 OA 02','CN08 OA 03','CN08 OA 04']},
@@ -1189,6 +1217,7 @@ const CAMPAÑAS=[{
   jefeFinal:{
     villano:'El Borrón', villanoIc:'✒️', villanoImg:'assets/villano-lenguaje.png',
     dialogo:'Mancho las páginas y borro las palabras... ¿crees que tus letras pueden vencerme?',
+    derrota:'Otra página en blanco para mi colección. Afila tus palabras y vuelve a escribir tu final.',
     vidasJugador:3, nPorFase:4,
     fases:[
       {nombre:'Leer y comprender', oas:['LE08 OA 01','LE08 OA 02','LE08 OA 03','LE08 OA 08']},
@@ -1212,6 +1241,7 @@ const CAMPAÑAS=[{
   jefeFinal:{
     villano:'La Incógnita', villanoIc:'❓', villanoImg:'assets/villano-matematicas.png',
     dialogo:'Soy la x que nadie despeja… ¿crees que tus números pueden encontrarme?',
+    derrota:'Sigo sin despejar. Repasa tus fórmulas y vuelve a buscar mi valor.',
     vidasJugador:3, nPorFase:4,
     fases:[
       {nombre:'Números',      oas:['MA08 OA 01','MA08 OA 02','MA08 OA 03','MA08 OA 04','MA08 OA 05']},
@@ -2741,9 +2771,21 @@ function responderJefe(el,ok){
 }
 function jefeDerrota(){
  SND.lose();
- document.body.classList.remove('en-jefe');
- alert(JF.camp.jefeFinal.villano+' te venció esta vez. ¡Inténtalo de nuevo!');
- iniciarJefeFinal(JF.camp); // reintento con preguntas nuevas
+ renderJefeDerrota();   // pantalla temática (mantiene en-jefe para la atmósfera carmesí)
+ go('scr-jefe-lose');
+}
+function renderJefeDerrota(){
+ const jf=JF.camp.jefeFinal, camp=JF.camp;
+ const dmg=Math.max(0,JF.vidaMax-JF.vida), pct=Math.round(dmg/JF.vidaMax*100);
+ $('jlVillano').innerHTML=jf.villanoImg?`<img src="${jf.villanoImg}" alt="${jf.villano}">`:jf.villanoIc;
+ $('jlTauntNom').textContent=jf.villano;
+ $('jlTitulo').textContent=pct>=70?'¡Casi lo logras!':'¡Buen intento!';
+ $('jlDialogo').textContent=jf.derrota?('«'+jf.derrota+'»'):'Aprende de esta ronda y vuelve más fuerte. ¡Tú puedes!';
+ $('jlDmgPct').textContent=pct+'%';
+ $('jlFase').textContent='Llegaste a la Fase '+(JF.fase+1)+' de '+jf.fases.length;
+ const fill=$('jlDmgFill'); fill.style.width='0%'; requestAnimationFrame(()=>{fill.style.width=pct+'%';});
+ $('jlRetry').onclick=()=>{SND.tap();iniciarJefeFinal(camp);};   // reintento con preguntas nuevas
+ $('jlBack').onclick=()=>{SND.tap();document.body.classList.remove('en-jefe');go('scr-campana');renderCampaña();};
 }
 function jefeVictoria(){
  SND.win();

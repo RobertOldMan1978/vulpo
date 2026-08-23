@@ -1899,5 +1899,13 @@ Preparando la v1. Se registró la Sesión 31 en la bitácora (commit aparte) y l
 - **Presentación ejecutiva (artefacto):** dossier visual de la v1 (asignaturas, expediciones,
   tiempos, banco de 2.536 preguntas, estilo de jefes, y capítulos especiales de Matemáticas y
   Lectura), en el mundo visual del juego. Vive como artefacto de Claude (privado), fuera del repo.
-- **Pendiente (Roberto):** confirmar si los Jefes Finales de campaña también suben de tamaño; sigue
-  la aprobación pedagógica de los 2 bancos de apoyo (sin cambios).
+- **Pantalla de derrota del Jefe Final:** la derrota contra un Jefe Final de campaña lanzaba un
+  **`alert()` nativo** (feo). Ahora hay una **pantalla temática** (`scr-jefe-lose` +
+  `renderJefeDerrota`) que conserva la atmósfera carmesí (`en-jefe`): villano ilustrado, titular
+  dinámico ("¡Casi lo logras!" si daño ≥70%, si no "¡Buen intento!"), **barra de daño al jefe** con
+  %, **fase alcanzada**, y botones **⚔️ Reintentar** / **← Volver a la campaña**. Cada villano tiene
+  además su **frase de derrota propia** (campo `derrota` en su `jefeFinal`, en su voz). El Autómata
+  del Reto de Cálculo ya tenía su propia pantalla (sin cambios). Verificado en el navegador con los
+  4 villanos (imágenes cargan, barra anima, sin errores de consola).
+- **Pendiente (Roberto):** confirmar si los Jefes Finales de campaña también suben de tamaño de
+  preguntas; sigue la aprobación pedagógica de los 2 bancos de apoyo (sin cambios).
