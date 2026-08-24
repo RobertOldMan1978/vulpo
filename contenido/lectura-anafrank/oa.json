@@ -1,0 +1,73 @@
+{
+  "asignatura": "Lectura · El diario de Ana Frank",
+  "nivel": "8° básico · Comprensión lectora",
+  "codigo_asignatura": "AF",
+  "nota_fidelidad": "Preguntas de comprensión originales; no reproducen el texto del libro (edición Nube de Tinta).",
+  "unidades": [
+    {
+      "id": "L1",
+      "titulo": "El diario de Ana Frank",
+      "descripcion": "Comprensión lectora por tramos del libro (lectura del colegio).",
+      "oa": [
+        "AF-T1",
+        "AF-T2",
+        "AF-T3",
+        "AF-T4",
+        "AF-T5",
+        "AF-T6",
+        "AF-T7",
+        "AF-T8"
+      ]
+    }
+  ],
+  "oa": [
+    {
+      "codigo": "AF-T1",
+      "eje": "Lectura",
+      "unidad": "L1",
+      "texto": "Antes del escondite — Ámsterdam, 1942: la vida de Ana, su cumpleaños, el diario y las leyes antijudías"
+    },
+    {
+      "codigo": "AF-T2",
+      "eje": "Lectura",
+      "unidad": "L1",
+      "texto": "Los primeros meses en el anexo — La mudanza al escondite y la rutina de los ocho"
+    },
+    {
+      "codigo": "AF-T3",
+      "eje": "Lectura",
+      "unidad": "L1",
+      "texto": "La convivencia y los roces — Tensiones entre los escondidos (los Van Daan, Dussel, la madre)"
+    },
+    {
+      "codigo": "AF-T4",
+      "eje": "Lectura",
+      "unidad": "L1",
+      "texto": "El miedo y las bombas — Robos, bombardeos, el peligro de ser descubiertos y los protectores"
+    },
+    {
+      "codigo": "AF-T5",
+      "eje": "Lectura",
+      "unidad": "L1",
+      "texto": "Crecer encerrada — Los cambios de Ana, su mundo interior y su relación con la madre"
+    },
+    {
+      "codigo": "AF-T6",
+      "eje": "Lectura",
+      "unidad": "L1",
+      "texto": "Peter y la amistad — El acercamiento a Peter van Daan y el primer amor"
+    },
+    {
+      "codigo": "AF-T7",
+      "eje": "Lectura",
+      "unidad": "L1",
+      "texto": "Esperanza y reflexión — Sus ideas sobre la humanidad, el futuro y la bondad"
+    },
+    {
+      "codigo": "AF-T8",
+      "eje": "Lectura",
+      "unidad": "L1",
+      "texto": "El final — La última entrada, la captura y la nota histórica (Ana muere en Bergen-Belsen; Otto publica el diario)"
+    }
+  ]
+}

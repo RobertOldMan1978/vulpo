@@ -121,7 +121,7 @@ def render_asignatura(oa_data, preg_data):
     partes.append('<section class="asig">')
     partes.append(
         f'<div class="asig-head">'
-        f'<div><h2>{escape(oa_data["asignatura"])}</h2>'
+        f'<div><h2><span class="a-caret">▾</span>{escape(oa_data["asignatura"])}</h2>'
         f'<div class="sub">{escape(oa_data["nivel"])} · meta {meta} preguntas por OA</div></div>'
         f'<div class="global"><div class="pct">{avance_global:.0f}%</div>'
         f'<div class="pct-lbl">cobertura</div></div>'
@@ -241,7 +241,7 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
 .top .lema{color:var(--dim);font-weight:800;margin-top:2px;font-size:14px}
 .gen{text-align:center;color:var(--dim);font-size:12px;margin-bottom:22px}
 .asig{background:var(--panel);border:1px solid #ffffff18;border-radius:var(--r);padding:20px;margin-bottom:24px;box-shadow:0 10px 30px #0004}
-.asig-head{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:12px}
+.asig-head{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:12px;cursor:pointer}
 .asig-head h2{font-size:20px}
 .sub{color:var(--dim);font-weight:800;font-size:13px;margin-top:2px}
 .global{text-align:center;flex-shrink:0}
@@ -257,6 +257,9 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
 .u-caret{display:inline-block;color:var(--dim);font-size:11px;margin-right:6px;transition:transform .15s}
 .unidad.cerrado .u-caret{transform:rotate(-90deg)}
 .unidad.cerrado .oa-list{display:none}
+.a-caret{display:inline-block;color:var(--cyan);font-size:15px;margin-right:8px;transition:transform .15s}
+.asig.cerrado .a-caret{transform:rotate(-90deg)}
+.asig.cerrado .unidad{display:none}
 .tb-controls{display:flex;gap:8px;margin:12px 0 4px;flex-wrap:wrap}
 .ctrl{background:var(--panel2);border:1px solid #ffffff2a;color:#fff;border-radius:8px;padding:6px 12px;font-family:inherit;font-weight:800;font-size:13px;cursor:pointer}
 .ctrl:hover{border-color:var(--gold)}
@@ -337,15 +340,24 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
     h.addEventListener('click',function(){h.closest('.unidad').classList.toggle('cerrado');});
   });
 
-  // Expandir todo: abre todas las unidades y todos los OA (ver todas las preguntas).
+  // Acordeon de ASIGNATURA: pincha el encabezado para contraer/expandir sus unidades.
+  document.querySelectorAll('.asig-head').forEach(function(h){
+    h.addEventListener('click',function(){h.closest('.asig').classList.toggle('cerrado');});
+  });
+
+  // Expandir todo: abre asignaturas, unidades y OA (ver todas las preguntas).
   var eTodo=document.getElementById('expandirTodo');
   if(eTodo)eTodo.onclick=function(){
+    document.querySelectorAll('.asig').forEach(function(a){a.classList.remove('cerrado');});
     document.querySelectorAll('.unidad').forEach(function(u){u.classList.remove('cerrado');});
     document.querySelectorAll('.oa.abrible').forEach(function(oa){oa.classList.add('abierto');});
   };
-  // Contraer todo: cierra las preguntas de todos los OA (las unidades quedan visibles).
+  // Contraer todo: deja solo las asignaturas (contrae cada asignatura). Al reabrir una,
+  // sus unidades aparecen con los OA cerrados.
   var cTodo=document.getElementById('contraerTodo');
   if(cTodo)cTodo.onclick=function(){
+    document.querySelectorAll('.asig').forEach(function(a){a.classList.add('cerrado');});
+    document.querySelectorAll('.unidad').forEach(function(u){u.classList.remove('cerrado');});
     document.querySelectorAll('.oa.abrible').forEach(function(oa){oa.classList.remove('abierto');});
   };
 
@@ -421,7 +433,7 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
         '    <span><span class="dot" style="background:var(--green)"></span>Listo (meta cumplida)</span>\n'
         '    <span><span class="dot" style="background:var(--pink)"></span>Revisadas por ti</span>\n'
         '  </div>\n'
-        '  <div class="gen" style="margin-top:18px">Pincha un OA para ver sus preguntas, o usa <b>Expandir todo</b> para verlas todas. Pincha el título de una unidad para contraerla. Marca la casilla de las que apruebes y usa "Exportar revisadas".</div>\n'
+        '  <div class="gen" style="margin-top:18px">Pincha un OA para ver sus preguntas, o usa <b>Expandir todo</b> para verlas todas. Pincha el encabezado de una asignatura o unidad para contraerla; <b>Contraer todo</b> deja solo las asignaturas. Marca la casilla de las que apruebes y usa "Exportar revisadas".</div>\n'
         '</div>\n'
         "<script>" + js + "</script>\n"
         "</body>\n</html>\n"

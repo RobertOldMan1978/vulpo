@@ -1,0 +1,51 @@
+{
+  "asignatura": "Vocabulario",
+  "nivel": "8° básico · Todo el curso",
+  "codigo_asignatura": "VOC",
+  "unidades": [
+    {
+      "id": "V1",
+      "titulo": "Vocabulario del curso",
+      "descripcion": "Palabras clave de todas las materias y las lecturas.",
+      "oa": [
+        "VOC-HIST",
+        "VOC-CIEN",
+        "VOC-MATE",
+        "VOC-LENG",
+        "VOC-LECT"
+      ]
+    }
+  ],
+  "oa": [
+    {
+      "codigo": "VOC-HIST",
+      "eje": "Historia",
+      "unidad": "V1",
+      "texto": "Palabras clave de Historia"
+    },
+    {
+      "codigo": "VOC-CIEN",
+      "eje": "Ciencias",
+      "unidad": "V1",
+      "texto": "Palabras clave de Ciencias"
+    },
+    {
+      "codigo": "VOC-MATE",
+      "eje": "Matemática",
+      "unidad": "V1",
+      "texto": "Palabras clave de Matemática"
+    },
+    {
+      "codigo": "VOC-LENG",
+      "eje": "Lenguaje",
+      "unidad": "V1",
+      "texto": "Palabras clave de Lenguaje"
+    },
+    {
+      "codigo": "VOC-LECT",
+      "eje": "Lectura",
+      "unidad": "V1",
+      "texto": "Palabras clave de las lecturas"
+    }
+  ]
+}

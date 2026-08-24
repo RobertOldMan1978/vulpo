@@ -2255,6 +2255,14 @@ el trabajo vive en `supabase/schema.sql` y `profesor.html`; el juego (`index.htm
   ancho. El **juego (`index.html`) NO se tocó**: los alumnos siguen en 480px mobile-first, a
   propósito (juegan en el teléfono en vertical). Verificado por medición del DOM (móvil 375→480 sin
   desborde; escritorio 1280→880).
+- **Tablero de avance mejorado (`scripts/generar-tablero.py`):** controles **"Expandir todo / Contraer
+  todo"** (Expandir todo muestra todas las preguntas de una vez; Contraer todo deja **solo las
+  asignaturas**), y ahora **asignaturas y unidades son plegables** (clic en su encabezado). Además, se
+  crearon `contenido/vocabulario/oa.json` y `contenido/lectura-anafrank/oa.json` para que los **2
+  bancos de apoyo aparezcan en el tablero** (antes no salían por no tener `oa.json`): Vocabulario
+  (5 áreas, 150) y Lectura·Ana Frank (8 tramos, 72), ambos con **0 revisadas** — así se pueden
+  revisar y cerrar su aprobación pedagógica. Esos `oa.json` solo los usa el tablero (el juego y el
+  panel no los leen). Regenerar con `python scripts/generar-tablero.py`.
 - **Pendiente (Roberto):** re-aplicar `schema.sql` en Supabase (incluye el cambio de firma de
   `kimun_prof_dominio_alumno` text→uuid, que los `drop` del archivo manejan). Quedan sin implementar
   (severidad baja) el rate-limit de `kimun_canjear` (fuerza bruta del `ALU-` impracticable, ~4.300
