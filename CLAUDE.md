@@ -2027,3 +2027,60 @@ Continuación de la difusión; **sin cambios en el juego**. Único archivo nuevo
   teléfono `+569 7668 4967`.
 - **Pendiente (Roberto):** aprobación pedagógica de los 2 bancos de apoyo (sin cambios); enviar los 4
   correos; trámites de lanzamiento (INAPI, vulpo.cl). Opcional de código: `bonoMult:2`.
+
+### Sesión 36 (2026-08-24) — Foto semanal del desempeño (implementada, sin aplicar) y spec de roles
+Sesión larga y de dos caras: **comercial** (precio, propuesta, guion) y **técnica** (dos diseños nuevos,
+uno de ellos ya implementado). **El juego no se tocó**: `index.html` y `profesor.html` quedaron intactos.
+
+- **Modelo de negocio y material comercial** (todo fuera del repo, en artefactos y en
+  `Escritorio/VULPO - correos profesores`):
+  - **Precio definido:** licencia anual **$10.000 por alumno**, con tarifa **Colegio Fundador $6.000**
+    para los primeros colegios, y **piloto gratis de un semestre**. Valores netos + IVA.
+  - **Propuesta comercial** para el **Colegio San Francisco de Sales** (el de Ignacio) y **guion de
+    reunión de 15 minutos** para la dirección/UTP, ambos en PDF.
+  - Forma legal recomendada para vender: **SpA** por Empresa en un Día, factura electrónica.
+- **Curso demo para mostrar el panel:** script `seed-curso-demo.sql` que puebla un curso con **26
+  alumnos** y ~1.270 filas de dominio, con OA flojos a propósito y participación realista (20 de 26
+  jugaron esta semana, 3 nunca entraron). Se sembró en el curso **CUR-BA04**, asignado a
+  `profe-prueba@vulpo.cl`. El script vive fuera del repo.
+- **Recuperación del acceso de administrador.** El enlace de recuperación de Supabase apunta a
+  `localhost:3000` (Site URL sin configurar), así que no sirve; la contraseña se fijó por SQL sobre
+  `auth.users`. **Cuenta admin: `vulpochile.app@gmail.com`.** El bloqueo suave del panel Admin del
+  juego sigue siendo `112358` (`scripts/generar-tablero.py`).
+- **Spec aprobado (sin implementar): roles por asignatura.**
+  `docs/superpowers/specs/2026-08-23-roles-por-asignatura-design.md`. Un curso pasa de tener **un**
+  profesor (`cursos.profesor_id`) a un **equipo**: tabla `curso_profesores` con rol (`jefe` /
+  `asignatura`) y un arreglo de asignaturas, más `kimun_prof_acceso` y `kimun_prof_asignaturas` en
+  reemplazo de `kimun_prof_es_mio`. Incluye ranking por asignatura (% de primer intento, mínimo 20
+  respuestas) y el mapa OA→asignatura (el vocabulario sigue a su materia; Ana Frank va a Lenguaje).
+  **Detectó dos bugs que ese trabajo arreglará:** no se puede lanzar refuerzo de **Matemática**
+  (`profesor.html:664` lista solo Historia/Ciencias/Lenguaje), y conviven **dos convenciones** de
+  asignatura (el filtro usa `HI08`, el botón de refuerzo manda `"Historia"`).
+  **Siguiente paso: escribir su plan de implementación.**
+- **Implementado: foto semanal del desempeño** (spec + plan + código, 6 commits).
+  `dominio` solo guarda acumulados, sin historial, así que hoy es imposible responder "¿cómo le fue al
+  curso la semana pasada?". Se agregaron `dominio_semanal` y `xp_semanal` (RLS activo, sin políticas),
+  la función `kimun_foto_semanal()` con retención de 2 años, el `revoke` de permisos y el trabajo
+  `foto-semanal` de **pg_cron** (lunes 04:05 UTC = 00:05/01:05 del lunes en Chile). Ver la sección
+  "Foto semanal del desempeño" más arriba en este archivo.
+  - **Una revisión final multi-agente cazó un bug crítico** que ninguna revisión por tarea podía ver,
+    porque nacía del cruce entre dos: los `delete` de retención calculaban el corte desde `s`
+    (controlado por quien llama), así que `kimun_foto_semanal('2030-01-01')` habría **borrado todo el
+    historial**. Corregido: el corte se calcula desde `now()`. También se amplió el `revoke` a `anon` y
+    `authenticated` (Supabase suele darles execute directo por default privileges).
+- **⚠️ PENDIENTE Y BLOQUEANTE: la foto semanal NO está aplicada ni verificada.** El código está en el
+  repo, pero nadie lo ha ejecutado contra Supabase. Para dejarlo andando hay que, en este orden:
+  1. Habilitar la extensión **`pg_cron`** (Supabase → Database → Extensions).
+  2. Pegar `supabase/schema.sql` **completo** en el SQL Editor y ejecutarlo.
+  3. Correr `verificar-foto-semanal.sql` (en `Escritorio/VULPO - correos profesores`). **El paso 9 es
+     obligatorio:** `select count(*) from cron.job where jobname='foto-semanal';` debe dar **1**. Si da
+     0, `pg_cron` no estaba habilitado y el trabajo no quedó agendado — y el pegado **no da ningún
+     error** que lo delate (es a propósito, para que una migración nunca falle a medias).
+  4. El lunes siguiente, confirmar que apareció una segunda semana sin intervención.
+  Mientras no se haga, **cada semana que pasa se pierde para siempre**: el historial no se puede
+  reconstruir hacia atrás.
+- **Menores diferidos de la foto semanal** (decisión consciente, no olvido): agregar una columna
+  `tomada timestamptz` para distinguir una semana saltada de una normal; un índice por `perfil_id` en
+  `xp_semanal`; y evaluar cambiar `security definer` por `invoker` en la función.
+- **Pendiente (Roberto):** aplicar y verificar la foto semanal (arriba); aprobación pedagógica de los 2
+  bancos de apoyo; enviar los 4 correos a los profesores; trámites de lanzamiento (INAPI, vulpo.cl).
