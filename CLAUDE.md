@@ -2246,6 +2246,13 @@ el trabajo vive en `supabase/schema.sql` y `profesor.html`; el juego (`index.htm
 - **Verificado:** backend por revisión de código (no se corre SQL desde el asistente); panel en el
   navegador con stub de `SB.rpc` (credencial oculta al profe de asignatura, ficha por id, reglas de
   revocar). Sin errores de consola.
+- **Panel responsivo en computador (solo `profesor.html`):** el panel del profesor se diseñó
+  mobile-first (480px), pero lo usan adultos en notebook y quedaba angosto. Ahora se ensancha a
+  **880px desde 760px de ancho** hacia arriba (bajo eso sigue en 480px); los campos y párrafos
+  largos se acotan (inputs 460px, texto ~70ch) y las tablas/acordeones/filas de avance usan todo el
+  ancho. El **juego (`index.html`) NO se tocó**: los alumnos siguen en 480px mobile-first, a
+  propósito (juegan en el teléfono en vertical). Verificado por medición del DOM (móvil 375→480 sin
+  desborde; escritorio 1280→880).
 - **Pendiente (Roberto):** re-aplicar `schema.sql` en Supabase (incluye el cambio de firma de
   `kimun_prof_dominio_alumno` text→uuid, que los `drop` del archivo manejan). Quedan sin implementar
   (severidad baja) el rate-limit de `kimun_canjear` (fuerza bruta del `ALU-` impracticable, ~4.300

@@ -13,6 +13,16 @@
 *{box-sizing:border-box}
 body{margin:0;background:#140f33;color:#fff;font-family:Nunito,sans-serif;font-weight:800;
  padding:16px;max-width:480px;margin:0 auto}
+/* El panel del profesor lo usan adultos, casi siempre en un computador. En pantallas
+   anchas se ensancha para que las tablas de avance respiren y se acorte el scroll; en
+   el teléfono sigue en 480px (mobile-first, por si un profe lo mira desde el móvil). */
+@media (min-width:760px){ body{max-width:880px} }
+/* Los campos y textos largos no deben estirarse a lo ancho de 880px: se leen mejor
+   acotados. Las tablas, acordeones y filas sí aprovechan todo el ancho. */
+@media (min-width:760px){
+  body input:not([type=checkbox]):not([type=radio]), body textarea{max-width:460px}
+  .card > p, #lista > p{max-width:70ch}
+}
 h1{font-family:'Titan One',cursive;color:var(--gold);font-size:28px;text-align:center;margin:12px 0}
 .card{background:var(--panel);border:2px solid #ffffff14;border-radius:16px;padding:16px;margin-bottom:14px}
 .card h3{margin:0 0 12px;font-size:16px;color:var(--cyan)}
