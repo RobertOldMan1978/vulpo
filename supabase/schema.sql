@@ -959,8 +959,15 @@ declare s date; n int; begin
 
   -- Retención: dos años. Suficiente para comparar contra el año anterior, y acota
   -- el crecimiento (cada curso aporta ~1.300 filas por semana, ~67.000 al año).
-  delete from public.dominio_semanal where semana < (s - interval '2 years')::date;
-  delete from public.xp_semanal      where semana < (s - interval '2 years')::date;
+  --
+  -- El corte se calcula desde HOY y NO desde `s`: `s` lo controla quien llama, y un
+  -- error de tipeo en el año al corregir el sello de una foto tardía
+  -- (kimun_foto_semanal('2030-01-01')) borraria todo el historial. Ese historial no
+  -- se puede reconstruir: es justo lo que estas tablas existen para evitar.
+  delete from public.dominio_semanal
+   where semana < (timezone('America/Santiago', now()) - interval '2 years')::date;
+  delete from public.xp_semanal
+   where semana < (timezone('America/Santiago', now()) - interval '2 years')::date;
 
   return n;
 end $$;
@@ -968,7 +975,11 @@ end $$;
 -- No se otorga a nadie: la llama pg_cron, que corre con permisos propios. Se revoca
 -- de public por lo mismo que kimun_prof_es_mio: ningún cliente —alumno o profesor—
 -- debe poder disparar el trabajo ni tocar el historial.
-revoke execute on function public.kimun_foto_semanal(date) from public;
+--
+-- Se nombran anon y authenticated ademas de public porque Supabase suele otorgarles
+-- EXECUTE directo por default privileges del proyecto, y en ese caso revocar solo de
+-- public no se los quita. Revocar un permiso inexistente es inofensivo.
+revoke execute on function public.kimun_foto_semanal(date) from public, anon, authenticated;
 
 grant execute on function
   public.kimun_perfil(text,text), public.kimun_buscar(text), public.kimun_jugadores(),

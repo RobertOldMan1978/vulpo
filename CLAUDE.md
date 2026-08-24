@@ -209,6 +209,17 @@ para siempre.
   semanas pasadas.
 - Retención de 2 años, limpiada por el mismo trabajo.
 - Es la base del informe semanal por correo, que se diseñará aparte.
+- El guard de `pg_cron` **falla en silencio**: si la extensión no está habilitada,
+  el `raise notice` no se ve en el panel de Supabase, el pegado termina "sin
+  errores" y el trabajo queda sin agendar. Por eso, después de pegar el archivo,
+  la comprobación obligatoria es
+  `select count(*) from cron.job where jobname='foto-semanal';`, que debe dar 1.
+  Si da 0, no quedó agendado y cada semana que pase se pierde.
+- Las tablas tienen `on delete cascade` sobre `perfiles`: **borrar un alumno
+  borra todas sus fotos pasadas**, así que un informe de una semana ya cerrada
+  puede cambiar retroactivamente. Es coherente con la privacidad del proyecto (se
+  va el niño, se van sus datos), pero hay que tenerlo presente cuando se
+  construya el informe semanal.
 
 ## Herramientas de desarrollo
 
