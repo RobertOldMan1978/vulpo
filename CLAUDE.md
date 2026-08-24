@@ -260,7 +260,9 @@ propia contraseña, definida en la constante `CLAVE_ADMIN` de
 > seguridad real: lo protege Supabase Auth desde `profesor.html`.
 
 **En el tablero:** al pinchar un OA se despliegan sus preguntas (solo el
-enunciado y la respuesta correcta).
+enunciado y la respuesta correcta). Los controles **"Expandir todo / Contraer
+todo"** (arriba) abren o cierran todas las preguntas de una vez, y cada
+**unidad se pliega** al pinchar su encabezado.
 
 **Para probar en local** (el navegador necesita servidor, no `file://` para el
 JavaScript): `python -m http.server 8765` y abrir `http://localhost:8765/`.

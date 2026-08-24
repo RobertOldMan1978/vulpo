@@ -147,7 +147,7 @@ def render_asignatura(oa_data, preg_data):
 
         partes.append('<div class="unidad">')
         partes.append(
-            f'<div class="u-head"><div class="u-tit">{escape(u["id"])} · {escape(u["titulo"])}</div>'
+            f'<div class="u-head"><div class="u-tit"><span class="u-caret">▾</span>{escape(u["id"])} · {escape(u["titulo"])}</div>'
             f'<div class="u-pct">{u_avance:.0f}%</div></div>'
         )
         partes.append(barra(u_avance, alto=8))
@@ -253,7 +253,13 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
 .chip{background:var(--panel2);border:1px solid #ffffff14;border-radius:99px;padding:6px 12px;font-weight:800;font-size:13px}
 .chip.ok{color:var(--green)} .chip.rev2{color:var(--pink)}
 .unidad{background:var(--panel2);border-radius:14px;padding:14px 14px 6px;margin-top:16px}
-.u-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.u-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;cursor:pointer}
+.u-caret{display:inline-block;color:var(--dim);font-size:11px;margin-right:6px;transition:transform .15s}
+.unidad.cerrado .u-caret{transform:rotate(-90deg)}
+.unidad.cerrado .oa-list{display:none}
+.tb-controls{display:flex;gap:8px;margin:12px 0 4px;flex-wrap:wrap}
+.ctrl{background:var(--panel2);border:1px solid #ffffff2a;color:#fff;border-radius:8px;padding:6px 12px;font-family:inherit;font-weight:800;font-size:13px;cursor:pointer}
+.ctrl:hover{border-color:var(--gold)}
 .u-tit{font-weight:900;font-size:15px}
 .u-pct{font-family:'Titan One',cursive;color:var(--gold);font-size:18px}
 .u-sub{color:var(--dim);font-size:12px;font-weight:800;margin:6px 0 10px}
@@ -326,6 +332,23 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
     });
   });
 
+  // Acordeon de UNIDAD: pincha el encabezado para contraer/expandir sus OA.
+  document.querySelectorAll('.u-head').forEach(function(h){
+    h.addEventListener('click',function(){h.closest('.unidad').classList.toggle('cerrado');});
+  });
+
+  // Expandir todo: abre todas las unidades y todos los OA (ver todas las preguntas).
+  var eTodo=document.getElementById('expandirTodo');
+  if(eTodo)eTodo.onclick=function(){
+    document.querySelectorAll('.unidad').forEach(function(u){u.classList.remove('cerrado');});
+    document.querySelectorAll('.oa.abrible').forEach(function(oa){oa.classList.add('abierto');});
+  };
+  // Contraer todo: cierra las preguntas de todos los OA (las unidades quedan visibles).
+  var cTodo=document.getElementById('contraerTodo');
+  if(cTodo)cTodo.onclick=function(){
+    document.querySelectorAll('.oa.abrible').forEach(function(oa){oa.classList.remove('abierto');});
+  };
+
   // Revisadas: casillas + exportar (persisten en el navegador)
   var LS='kimun_revisadas';
   var ov={};
@@ -387,6 +410,10 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
         '    <div class="lema">Panel de desarrollo · avance por materia y OA</div>\n'
         '  </div>\n'
         '  <div class="gen">Generado el ' + marca + ' · <code>python scripts/generar-tablero.py</code></div>\n'
+        '  <div class="tb-controls">\n'
+        '    <button class="ctrl" id="expandirTodo">▾ Expandir todo (ver todas las preguntas)</button>\n'
+        '    <button class="ctrl" id="contraerTodo">▸ Contraer todo</button>\n'
+        '  </div>\n'
         + cuerpo +
         '\n  <div class="leyenda">\n'
         '    <span><span class="dot" style="background:var(--dim)"></span>Pendiente</span>\n'
@@ -394,7 +421,7 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
         '    <span><span class="dot" style="background:var(--green)"></span>Listo (meta cumplida)</span>\n'
         '    <span><span class="dot" style="background:var(--pink)"></span>Revisadas por ti</span>\n'
         '  </div>\n'
-        '  <div class="gen" style="margin-top:18px">Pincha un OA para ver sus preguntas. Marca la casilla de las que apruebes y usa "Exportar revisadas".</div>\n'
+        '  <div class="gen" style="margin-top:18px">Pincha un OA para ver sus preguntas, o usa <b>Expandir todo</b> para verlas todas. Pincha el título de una unidad para contraerla. Marca la casilla de las que apruebes y usa "Exportar revisadas".</div>\n'
         '</div>\n'
         "<script>" + js + "</script>\n"
         "</body>\n</html>\n"
