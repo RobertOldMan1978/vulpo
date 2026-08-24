@@ -555,6 +555,23 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
   por asignatura: `kimun_prof_ranking_asignatura` (acierto de primer intento, mínimo 20 respuestas,
   sin `codigo_acceso`). Migración: cada dueño actual → Jefe, y `desafios.asignatura` se normaliza
   de nombre visible a código. Ver la Bitácora, Sesión 37.
+- **Jerarquía de roles (Sesión 38):** sobre lo anterior se agrega un cuarto rol. Jerarquía
+  **Admin ▸ SuperUsuario ▸ Profe Jefe ▸ Profe Asignatura**. Los dos primeros son globales de la
+  cuenta; los dos últimos, por curso (`curso_profesores.rol`). Modelo: columna nueva
+  `profesores.es_super boolean` (se conserva `es_admin`; **Admin = Roberto/dueño de la
+  plataforma**, **SuperUsuario = autoridad del colegio**, UTP/dirección). Portero nuevo
+  `kimun_prof_admin_colegio()` = `es_admin OR es_super` → gobierna **crear/borrar curso, nombrar
+  Jefe, autorizar y gestionar profesores**; `es_admin` a secas queda solo para **crear/quitar
+  SuperUsuarios** (`kimun_prof_super_fijar`, función nueva) y revocar a un Admin/Super.
+  `kimun_prof_es_mio` (destructivo dentro del curso: alumnos, XP, reiniciar, agregar profe de
+  asignatura) suma `es_super`. Cambios: `kimun_prof_curso_crear` exige `admin_colegio` y **ya no
+  auto-nombra Jefe al creador** (el curso nace sin Jefe); `_curso_quitar`, `_autorizar`,
+  `_profesores`, `_quitar` suben a `admin_colegio`; `_equipo_asignar`/`_quitar` exigen
+  `admin_colegio` para el rol Jefe y `es_mio` para asignatura; `kimun_prof_listar` agrega `mi_rol`
+  y `kimun_prof_profesores` agrega `es_super` (para el encabezado y el panel). **Sin entidad
+  "Colegio" todavía** (queda para cuando entre un segundo colegio): por ahora el SuperUsuario ve
+  todos los cursos. En `profesor.html`, el encabezado muestra **usuario · rango · cursos**. Ver la
+  Bitácora, Sesión 38.
 - **Cuidado al editar el esquema:** `gen_random_uuid()` es nativa de PostgreSQL y no
   necesita nada especial, pero si alguna función vuelve a usar pgcrypto (`crypt`,
   `gen_salt`) necesita `set search_path = public, extensions`, porque en Supabase esa
@@ -2142,5 +2159,43 @@ fase + revisión de spec y calidad). El juego (`index.html`) casi no se toca; el
   Editor y correr la prueba end-to-end del spec (Task 14, 9 pasos) con dos cuentas reales de
   profesor —aislamiento por asignatura, rechazo en el servidor de una asignatura ajena, rotación
   sin pérdida de datos, quitar al Jefe—. Es lo único que necesita credenciales de Supabase.
+- **Pendiente (arrastre):** la foto semanal (aún sin aplicar); aprobación pedagógica de los 2
+  bancos de apoyo; los 4 correos a los profesores; trámites de lanzamiento (INAPI, vulpo.cl).
+
+### Sesión 38 (2026-08-24) — Roles por asignatura aplicado + jerarquía de 4 roles
+Dos bloques: se **aplicó y verificó en producción** la feature de roles por asignatura de la
+Sesión 37, y sobre ella se diseñó e implementó una **jerarquía de cuatro roles**.
+- **Roles por asignatura, aplicado y probado end-to-end (Roberto + Claude).** Roberto pegó el
+  `schema.sql` en Supabase. Se verificó la estructura (tabla, migración dueños→Jefe, normalización
+  de `desafios.asignatura`, grants). Para la prueba se crearon cuentas de profesor de prueba
+  saltando el correo de confirmación (que a un `@vulpo.cl` falso nunca llega): se crean en
+  **Authentication → Users** (nacen confirmadas) o, si se usó el registro del panel, se confirman
+  por SQL (`update auth.users set email_confirmed_at = now()`). Se armó el equipo de `CUR-BA04`
+  (`profe-prueba` Jefe; prueba2/3/4/5 en Historia/Ciencias/Matemática/Lenguaje). **Aislamiento
+  confirmado desde el navegador:** como `profe-prueba4` (Matemática), `kimun_prof_refuerzo_lanzar`
+  y `kimun_prof_ranking_asignatura` sobre **HI08** devolvieron **400 `no_autorizado`**, y sobre
+  **MA08** (su materia) 200 con datos. El rechazo es del servidor, no cosmético. **Nota de
+  operación:** el correo de recuperación/confirmación de Supabase es poco fiable (apunta a
+  localhost y hay límite de 2/hora); crear/confirmar cuentas por el panel + SQL es el camino.
+- **Jerarquía de 4 roles (Admin ▸ SuperUsuario ▸ Profe Jefe ▸ Profe Asignatura).** A pedido de
+  Roberto tras probar el equipo. Flujo brainstorming → spec → plan → subagentes. Decisiones:
+  **Admin = Roberto** (dueño de la plataforma), **SuperUsuario = autoridad del colegio** (UTP/
+  dirección) que administra todos los cursos por ahora (**sin entidad "Colegio"**, que queda para
+  cuando entre un segundo colegio); solo Admin/Super crean cursos y nombran Jefes; el Jefe solo
+  agrega/edita profes de asignatura y ya **no puede borrar el curso**; un profe de asignatura **no
+  crea cursos**. Modelo: `profesores.es_super` + portero `kimun_prof_admin_colegio` +
+  `kimun_prof_super_fijar` (solo Admin). El encabezado del panel muestra **usuario · rango ·
+  cursos** (Profesor: "8°A (Jefe) · 8°B (Matemática, Ciencias)"). Detalle en la sección Backend y
+  en `docs/superpowers/specs/2026-08-24-jerarquia-roles-usuarios-design.md` /
+  `docs/superpowers/plans/2026-08-24-jerarquia-roles-usuarios.md`.
+  - **Verificado hasta donde se puede sin credenciales:** backend por revisión de código
+    (porteros con `es_super`, `curso_crear` sin auto-Jefe, `equipo_asignar`/`_quitar` con la
+    validación correcta de Jefe, `quitar` que protege a Admin/Super, `super_fijar` solo del Admin);
+    panel en el navegador con stub de `SB.rpc` (encabezado, ocultar crear/borrar curso al Jefe,
+    equipo sin opción "Jefe" ni ✕ del Jefe para un Jefe con ✎ que precarga, Administración para el
+    Super sin el toggle Super ni Limpiar).
+  - **Pendiente (Roberto):** aplicar el `schema.sql` nuevo y la prueba end-to-end (spec, Task 9):
+    nombrar Super a una cuenta, confirmar que el Jefe no ve crear/borrar/nombrar-Jefe, y que el
+    servidor rechaza a un Jefe intentando crear curso o nombrar Jefe.
 - **Pendiente (arrastre):** la foto semanal (aún sin aplicar); aprobación pedagógica de los 2
   bancos de apoyo; los 4 correos a los profesores; trámites de lanzamiento (INAPI, vulpo.cl).
