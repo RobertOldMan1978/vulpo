@@ -152,6 +152,52 @@ alter table public.cursos add column if not exists profesor_id uuid
 create index if not exists idx_cursos_profesor on public.cursos(profesor_id);
 
 -- ------------------------------------------------------------
+-- Roles por asignatura (Sesión 37). Un curso pasa de tener un dueño único a un
+-- equipo: un Profesor Jefe (ve todo) y profes de asignatura (ven lo suyo). El
+-- alcance es por (curso, profesor), no por profesor: un docente puede hacer
+-- Ciencias en 8°A e Historia en 8°B. Por eso es una tabla de membresías y no
+-- columnas en "profesores".
+-- ------------------------------------------------------------
+create table if not exists public.curso_profesores (
+  curso_id    uuid not null references public.cursos(id)     on delete cascade,
+  profesor_id uuid not null references public.profesores(id) on delete cascade,
+  rol         text not null default 'asignatura',   -- 'jefe' | 'asignatura'
+  asignaturas text[] not null default '{}',         -- {'MA08','CN08'}; el jefe lo ignora
+  creado      timestamptz not null default now(),
+  primary key (curso_id, profesor_id)
+);
+-- Un solo Profesor Jefe por curso, garantizado en la base (mismo patrón que
+-- idx_desafio_activo_curso). El jefe alcanza todas las asignaturas por definición,
+-- así que su columna asignaturas se guarda vacía.
+create unique index if not exists idx_curso_jefe_unico
+  on public.curso_profesores(curso_id) where rol = 'jefe';
+
+alter table public.curso_profesores enable row level security;
+-- Sin políticas, como el resto del esquema: nada se lee directo.
+
+-- Migración: cada dueño actual (cursos.profesor_id no nulo) se vuelve Profesor
+-- Jefe de su curso. Idempotente: si ya existe la membresía no la duplica ni la
+-- pisa. Nadie pierde acceso.
+insert into public.curso_profesores(curso_id, profesor_id, rol, asignaturas)
+select c.id, c.profesor_id, 'jefe', '{}'
+from public.cursos c
+where c.profesor_id is not null
+on conflict (curso_id, profesor_id) do nothing;
+
+-- Normaliza desafios.asignatura de nombre visible al código canónico. Los
+-- desafíos históricos se guardaron con "Historia"/"Ciencias"/"Lenguaje"
+-- (nunca Matemática, por el bug). Idempotente: solo toca las filas con el
+-- nombre viejo; re-ejecutar no cambia nada.
+update public.desafios set asignatura = case asignatura
+    when 'Historia'    then 'HI08'
+    when 'Ciencias'    then 'CN08'
+    when 'Lenguaje'    then 'LE08'
+    when 'Matemáticas' then 'MA08'
+    when 'Matematicas' then 'MA08'
+    else asignatura end
+where asignatura in ('Historia','Ciencias','Lenguaje','Matemáticas','Matematicas');
+
+-- ------------------------------------------------------------
 -- Alta de la primera cuenta de administrador (procedimiento manual)
 --
 -- Aquí NO se siembra ningún correo en profesores_autorizados, a propósito.
@@ -220,6 +266,23 @@ declare c text; begin
 create or replace function public.kimun_yo() returns uuid
 language sql security definer stable set search_path=public as $$
   select perfil_id from public.vinculos where auth_uid = auth.uid();
+$$;
+
+-- Traduce cualquier objetivo de aprendizaje a su asignatura (código de 4 letras).
+-- Es el ÚNICO lugar del sistema que conoce esta regla. immutable: el mismo OA
+-- siempre cae en la misma asignatura, así el planificador puede cachearla.
+-- Efecto lateral bienvenido: Vocabulario (VOC-*) y Lectura (VOC-LECT, AF-T*) hoy
+-- no calzan con los cuatro prefijos y por eso no aparecen en el filtro del panel;
+-- esta función los reparte por materia y los hace visibles.
+create or replace function public.kimun_oa_asignatura(p_oa text)
+returns text language sql immutable as $$
+  select case
+    when p_oa like 'HI08%' or p_oa = 'VOC-HIST' then 'HI08'
+    when p_oa like 'CN08%' or p_oa = 'VOC-CIEN' then 'CN08'
+    when p_oa like 'MA08%' or p_oa = 'VOC-MATE' then 'MA08'
+    when p_oa like 'LE08%' or p_oa in ('VOC-LENG','VOC-LECT')
+         or p_oa like 'AF-T%'                    then 'LE08'
+    else null end;
 $$;
 
 -- Migración: los jugadores que ya existen quedan vinculados a sí mismos.
@@ -494,13 +557,49 @@ declare mi_correo text; aut public.profesores_autorizados; r public.profesores; 
   update public.profesores_autorizados set usado = true where lower(correo) = lower(mi_correo);
   return r; end $$;
 
--- ¿Ese curso es mío? Los administradores pasan siempre.
+-- ¿Puedo hacer lo DESTRUCTIVO en este curso? Cambió de significado con los roles
+-- por asignatura (Sesión 37): antes era "admin o dueño"; ahora es "admin o
+-- Profesor Jefe". Todas las funciones destructivas ya la llaman, así que heredan
+-- la nueva regla sin tocar su cuerpo. Los administradores pasan siempre.
 create or replace function public.kimun_prof_es_mio(p_curso uuid)
 returns boolean language sql security definer stable set search_path=public as $$
-  select exists(
-    select 1 from public.cursos c, public.profesores p
-    where p.id = auth.uid() and c.id = p_curso
-      and (p.es_admin or c.profesor_id = p.id)); $$;
+  select exists(select 1 from public.profesores pr
+                where pr.id = auth.uid() and pr.es_admin)
+      or exists(select 1 from public.curso_profesores cp
+                where cp.curso_id = p_curso and cp.profesor_id = auth.uid()
+                  and cp.rol = 'jefe');
+$$;
+
+-- ¿Puedo ENTRAR a este curso (verlo, leer su avance)? Admin, jefe, o profe con al
+-- menos una asignatura asignada aquí. Una membresía sin asignaturas ('{}') da
+-- falso a propósito: significa "todavía no le asignan materias", y se evita el
+-- estado ambiguo de "entra pero no ve nada".
+create or replace function public.kimun_prof_acceso(p_curso uuid)
+returns boolean language sql security definer stable set search_path=public as $$
+  select exists(select 1 from public.profesores pr
+                where pr.id = auth.uid() and pr.es_admin)
+      or exists(select 1 from public.curso_profesores cp
+                where cp.curso_id = p_curso and cp.profesor_id = auth.uid()
+                  and (cp.rol = 'jefe' or coalesce(array_length(cp.asignaturas,1),0) >= 1));
+$$;
+
+-- ¿Sobre qué asignaturas puedo actuar en este curso? Admin y jefe reciben las
+-- cuatro; un profe de asignatura recibe las suyas; sin membresía, vacío.
+create or replace function public.kimun_prof_asignaturas(p_curso uuid)
+returns text[] language sql security definer stable set search_path=public as $$
+  select case
+    when exists(select 1 from public.profesores pr
+                where pr.id = auth.uid() and pr.es_admin)
+      then array['HI08','CN08','MA08','LE08']
+    when exists(select 1 from public.curso_profesores cp
+                where cp.curso_id = p_curso and cp.profesor_id = auth.uid()
+                  and cp.rol = 'jefe')
+      then array['HI08','CN08','MA08','LE08']
+    else coalesce((select cp.asignaturas from public.curso_profesores cp
+                   where cp.curso_id = p_curso and cp.profesor_id = auth.uid()),
+                  '{}'::text[])
+  end;
+$$;
 
 -- Mis cursos con sus alumnos. Un administrador ve todos, incluidos los huérfanos.
 -- El drop previo es el guardia de idempotencia que ya usa kimun_ranking: al ser
@@ -509,16 +608,24 @@ returns boolean language sql security definer stable set search_path=public as $
 drop function if exists public.kimun_prof_listar();
 create or replace function public.kimun_prof_listar()
 returns table(curso text, curso_codigo text, alumno text, avatar text,
-              codigo_acceso text, xp int, dificil int)
+              codigo_acceso text, xp int, dificil int,
+              puede_gestionar boolean, mis_asignaturas text[])
 language plpgsql security definer set search_path=public as $$
 declare yo public.profesores; begin
   select * into yo from public.profesores where id = auth.uid();
   if yo.id is null then raise exception 'no_autorizado'; end if;
   return query
-    select c.nombre, c.codigo, p.nombre, p.avatar, p.codigo_acceso, p.xp, p.dificil
+    select c.nombre, c.codigo, p.nombre, p.avatar, p.codigo_acceso, p.xp, p.dificil,
+           -- "Puedo gestionar" = soy jefe o admin de este curso: gobierna los
+           -- botones destructivos y el bloque de equipo en el panel.
+           public.kimun_prof_es_mio(c.id),
+           public.kimun_prof_asignaturas(c.id)
     from public.cursos c
     left join public.perfiles p on p.curso_id = c.id
-    where yo.es_admin or c.profesor_id = yo.id
+    where yo.es_admin
+       or exists(select 1 from public.curso_profesores cp
+                 where cp.curso_id = c.id and cp.profesor_id = yo.id
+                   and (cp.rol='jefe' or coalesce(array_length(cp.asignaturas,1),0) >= 1))
     order by c.nombre, p.xp desc nulls last, p.nombre;
 end $$;
 
@@ -530,6 +637,9 @@ declare yo public.profesores; r public.cursos; begin
   if coalesce(trim(p_nombre),'') = '' then raise exception 'nombre_vacio'; end if;
   insert into public.cursos(nombre, codigo, profesor_id)
   values (trim(p_nombre), public.kimun_gen_codigo_curso(), yo.id) returning * into r;
+  insert into public.curso_profesores(curso_id, profesor_id, rol, asignaturas)
+  values (r.id, yo.id, 'jefe', '{}')
+  on conflict (curso_id, profesor_id) do nothing;
   return r; end $$;
 
 -- Elimina un curso mío y sus alumnos (arrastra los duelos de esos alumnos).
@@ -599,9 +709,10 @@ create or replace function public.kimun_prof_dominio(p_curso_codigo text)
 returns table(oa text, respondidas bigint, correctas bigint, alumnos bigint,
               resp_1 bigint, ok_1 bigint, alumnos_1 bigint)
 language plpgsql security definer set search_path=public as $$
-declare cid uuid; begin
+declare cid uuid; asigs text[]; begin
   select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
-  if cid is null or not public.kimun_prof_es_mio(cid) then raise exception 'no_autorizado'; end if;
+  if cid is null or not public.kimun_prof_acceso(cid) then raise exception 'no_autorizado'; end if;
+  asigs := public.kimun_prof_asignaturas(cid);
   return query
     select d.oa, sum(d.respondidas), sum(d.correctas), count(distinct d.perfil_id),
            sum(d.resp_1), sum(d.ok_1),
@@ -611,6 +722,8 @@ declare cid uuid; begin
     from public.dominio d
     join public.perfiles p on p.id = d.perfil_id
     where p.curso_id = cid
+      -- Solo los objetivos de MIS asignaturas. Un profe de Ciencias no ve Historia.
+      and public.kimun_oa_asignatura(d.oa) = any(asigs)
     group by d.oa
     -- El orden se calcula sobre el primer intento, que es el número que se muestra.
     order by (sum(d.ok_1)::numeric / nullif(sum(d.resp_1),0)) asc nulls last, d.oa;
@@ -621,14 +734,16 @@ drop function if exists public.kimun_prof_dominio_alumno(text);
 create or replace function public.kimun_prof_dominio_alumno(p_codigo_acceso text)
 returns table(oa text, respondidas int, correctas int, resp_1 int, ok_1 int)
 language plpgsql security definer set search_path=public as $$
-declare cid uuid; pid uuid; begin
+declare cid uuid; pid uuid; asigs text[]; begin
   select id, curso_id into pid, cid from public.perfiles
    where codigo_acceso = upper(trim(p_codigo_acceso));
-  if pid is null or cid is null or not public.kimun_prof_es_mio(cid)
+  if pid is null or cid is null or not public.kimun_prof_acceso(cid)
     then raise exception 'no_autorizado'; end if;
+  asigs := public.kimun_prof_asignaturas(cid);
   return query
     select d.oa, d.respondidas, d.correctas, d.resp_1, d.ok_1 from public.dominio d
     where d.perfil_id = pid
+      and public.kimun_oa_asignatura(d.oa) = any(asigs)
     order by (d.ok_1::numeric / nullif(d.resp_1,0)) asc nulls last, d.oa;
 end $$;
 
@@ -640,7 +755,7 @@ returns table(alumno text, avatar text, visto timestamptz, vinculado boolean)
 language plpgsql security definer set search_path=public as $$
 declare cid uuid; begin
   select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
-  if cid is null or not public.kimun_prof_es_mio(cid) then raise exception 'no_autorizado'; end if;
+  if cid is null or not public.kimun_prof_acceso(cid) then raise exception 'no_autorizado'; end if;
   return query
     select p.nombre, p.avatar, p.visto,
            exists(select 1 from public.vinculos v where v.perfil_id = p.id)
@@ -662,7 +777,11 @@ returns table(alumno text, avatar text, resp_1 int, ok_1 int)
 language plpgsql security definer set search_path=public as $$
 declare cid uuid; begin
   select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
-  if cid is null or not public.kimun_prof_es_mio(cid) then raise exception 'no_autorizado'; end if;
+  if cid is null or not public.kimun_prof_acceso(cid) then raise exception 'no_autorizado'; end if;
+  -- El OA pedido debe pertenecer a una asignatura mía; si no, es como pedir un
+  -- curso ajeno. Mismo mensaje para no filtrar qué objetivos existen.
+  if not (public.kimun_oa_asignatura(p_oa) = any(public.kimun_prof_asignaturas(cid)))
+    then raise exception 'no_autorizado'; end if;
   return query
     select p.nombre, p.avatar, coalesce(d.resp_1,0), coalesce(d.ok_1,0)
     from public.perfiles p
@@ -755,6 +874,100 @@ declare yo public.profesores; cid uuid; pid uuid; r public.cursos; begin
   update public.cursos set profesor_id = pid where id = cid returning * into r;
   return r; end $$;
 
+-- ------------------------------------------------------------
+-- Gestión del equipo de un curso (Sesión 37). Exigen jefe o admin. El profesor
+-- debe existir ya en "profesores" (autorizado y registrado): no se crean cuentas
+-- desde aquí.
+-- ------------------------------------------------------------
+
+-- Lista el equipo del curso con el rol y las asignaturas de cada uno.
+drop function if exists public.kimun_prof_equipo(text);
+create or replace function public.kimun_prof_equipo(p_curso_codigo text)
+returns table(correo text, nombre text, rol text, asignaturas text[])
+language plpgsql security definer set search_path=public as $$
+declare cid uuid; begin
+  select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
+  if cid is null or not public.kimun_prof_es_mio(cid) then raise exception 'no_autorizado'; end if;
+  return query
+    select pr.correo, pr.nombre, cp.rol, cp.asignaturas
+    from public.curso_profesores cp
+    join public.profesores pr on pr.id = cp.profesor_id
+    where cp.curso_id = cid
+    order by (cp.rol='jefe') desc, pr.nombre;   -- el jefe primero
+end $$;
+
+-- Agrega o actualiza a un profesor en el curso. Si p_rol='jefe', el jefe anterior
+-- baja a 'asignatura' primero (el índice único no permite dos). Idempotente: sobre
+-- (curso, profesor) actualiza la fila existente.
+create or replace function public.kimun_prof_equipo_asignar(
+  p_curso_codigo text, p_correo text, p_rol text, p_asignaturas text[])
+returns void language plpgsql security definer set search_path=public as $$
+declare cid uuid; pid uuid; rol text; asigs text[]; begin
+  select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
+  if cid is null or not public.kimun_prof_es_mio(cid) then raise exception 'no_autorizado'; end if;
+  select id into pid from public.profesores where lower(correo) = lower(trim(coalesce(p_correo,'')));
+  if pid is null then raise exception 'profesor_invalido'; end if;
+  rol := case when p_rol = 'jefe' then 'jefe' else 'asignatura' end;
+  -- El jefe ignora asignaturas (alcanza todas); un profe de asignatura sin
+  -- materias queda sin acceso, pero es una fila válida ("aún no le asignan").
+  asigs := case when rol = 'jefe' then '{}'::text[] else coalesce(p_asignaturas,'{}'::text[]) end;
+  if rol = 'jefe' then
+    -- Solo puede haber un jefe: baja al actual (si es otro) antes de insertar.
+    update public.curso_profesores set rol='asignatura'
+     where curso_id = cid and rol='jefe' and profesor_id <> pid;
+  end if;
+  insert into public.curso_profesores(curso_id, profesor_id, rol, asignaturas)
+  values (cid, pid, rol, asigs)
+  on conflict (curso_id, profesor_id) do update
+    set rol = excluded.rol, asignaturas = excluded.asignaturas;
+end $$;
+
+-- Saca a un profesor del curso (incluido el jefe). No toca ningún dato de
+-- desempeño: borra solo la fila de membresía. Devuelve cuántas filas borró.
+create or replace function public.kimun_prof_equipo_quitar(p_curso_codigo text, p_correo text)
+returns int language plpgsql security definer set search_path=public as $$
+declare cid uuid; pid uuid; n int; begin
+  select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
+  if cid is null or not public.kimun_prof_es_mio(cid) then raise exception 'no_autorizado'; end if;
+  select id into pid from public.profesores where lower(correo) = lower(trim(coalesce(p_correo,'')));
+  if pid is null then raise exception 'profesor_invalido'; end if;
+  delete from public.curso_profesores where curso_id = cid and profesor_id = pid;
+  get diagnostics n = row_count; return n;
+end $$;
+
+-- Ranking de un curso en UNA asignatura, por acierto de primer intento. Requiere
+-- acceso al curso y que la asignatura sea mía. NO devuelve codigo_acceso (es la
+-- credencial del alumno; un ranking de consulta no la necesita), igual que
+-- kimun_prof_dominio_oa: identifica por nombre.
+drop function if exists public.kimun_prof_ranking_asignatura(text,text,int);
+create or replace function public.kimun_prof_ranking_asignatura(
+  p_curso_codigo text, p_asignatura text, p_minimo int default 20)
+returns table(alumno text, avatar text, resp_1 bigint, ok_1 bigint, pct numeric,
+              oa_tocados bigint, suficiente boolean)
+language plpgsql security definer set search_path=public as $$
+declare cid uuid; begin
+  select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
+  if cid is null or not public.kimun_prof_acceso(cid) then raise exception 'no_autorizado'; end if;
+  if not (p_asignatura = any(public.kimun_prof_asignaturas(cid)))
+    then raise exception 'no_autorizado'; end if;
+  return query
+    select p.nombre, p.avatar,
+           sum(d.resp_1), sum(d.ok_1),
+           -- pct = primer intento, el mismo criterio del mapa de OA.
+           round(sum(d.ok_1)::numeric / nullif(sum(d.resp_1),0) * 100, 0),
+           count(distinct d.oa) filter (where d.resp_1 > 0),
+           sum(d.resp_1) >= p_minimo
+    from public.perfiles p
+    join public.dominio d on d.perfil_id = p.id
+                          and public.kimun_oa_asignatura(d.oa) = p_asignatura
+    where p.curso_id = cid and p.codigo_acceso is not null
+    group by p.id, p.nombre, p.avatar
+    -- Los que no llegan al mínimo quedan al final; entre ellos, mejor primero.
+    order by (sum(d.resp_1) >= p_minimo) desc,
+             (sum(d.ok_1)::numeric / nullif(sum(d.resp_1),0)) desc nulls last,
+             p.nombre;
+end $$;
+
 -- Limpieza de perfiles de prueba. Cuenta con p_ejecutar=false y borra con true.
 create or replace function public.kimun_prof_limpiar_pruebas(p_ejecutar boolean)
 returns int language plpgsql security definer set search_path=public as $$
@@ -785,7 +998,8 @@ on conflict (codigo) do nothing;
 revoke execute on function
   public.kimun_gen_codigo(),
   public.kimun_gen_codigo_curso(), public.kimun_gen_codigo_alumno(),
-  public.kimun_prof_es_mio(uuid)
+  public.kimun_prof_es_mio(uuid),
+  public.kimun_prof_acceso(uuid), public.kimun_prof_asignaturas(uuid)
   from public;
 
 -- ------------------------------------------------------------
@@ -800,7 +1014,12 @@ create or replace function public.kimun_prof_refuerzo_lanzar(p_curso_codigo text
 returns uuid language plpgsql security definer set search_path=public as $$
 declare cid uuid; nid uuid; begin
   select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
-  if cid is null or not public.kimun_prof_es_mio(cid) then raise exception 'no_autorizado'; end if;
+  if cid is null or not public.kimun_prof_acceso(cid) then raise exception 'no_autorizado'; end if;
+  -- Solo puedo lanzar refuerzo de una asignatura que dicto en este curso. Esto
+  -- ES la defensa del servidor que el spec exige: aunque la interfaz oculte el
+  -- botón, la función igual rechaza una asignatura ajena.
+  if not (p_asignatura = any(public.kimun_prof_asignaturas(cid)))
+    then raise exception 'no_autorizado'; end if;
   if p_objetivos is null or array_length(p_objetivos,1) is null then raise exception 'sin_objetivos'; end if;
   update public.desafios set activo=false where curso_id=cid and activo;
   insert into public.desafios(curso_id, asignatura, objetivos)
@@ -811,9 +1030,14 @@ end $$;
 -- Cierra el desafío activo de un curso mío. Devuelve cuántos cerró (0 o 1).
 create or replace function public.kimun_prof_refuerzo_cerrar(p_curso_codigo text)
 returns int language plpgsql security definer set search_path=public as $$
-declare cid uuid; n int; begin
+declare cid uuid; asig text; n int; begin
   select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
-  if cid is null or not public.kimun_prof_es_mio(cid) then raise exception 'no_autorizado'; end if;
+  if cid is null or not public.kimun_prof_acceso(cid) then raise exception 'no_autorizado'; end if;
+  -- El profe de asignatura solo cierra el refuerzo si es de una materia suya. El
+  -- jefe/admin reciben las cuatro, así que pasan siempre.
+  select asignatura into asig from public.desafios where curso_id=cid and activo limit 1;
+  if asig is not null and not (asig = any(public.kimun_prof_asignaturas(cid)))
+    then raise exception 'no_autorizado'; end if;
   update public.desafios set activo=false where curso_id=cid and activo;
   get diagnostics n = row_count; return n;
 end $$;
@@ -829,7 +1053,7 @@ returns table(desafio_id uuid, asignatura text, objetivos text[], creado timesta
 language plpgsql security definer set search_path=public as $$
 declare cid uuid; begin
   select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
-  if cid is null or not public.kimun_prof_es_mio(cid) then raise exception 'no_autorizado'; end if;
+  if cid is null or not public.kimun_prof_acceso(cid) then raise exception 'no_autorizado'; end if;
   return query
    with d as (select * from public.desafios where curso_id = cid and activo limit 1)
    select d.id, d.asignatura, d.objetivos, d.creado,
@@ -1003,6 +1227,10 @@ grant execute on function
   , public.kimun_prof_refuerzo_estado(text)
   , public.kimun_refuerzo_activo()
   , public.kimun_refuerzo_completar(uuid,int,int)
+  , public.kimun_prof_equipo(text)
+  , public.kimun_prof_equipo_asignar(text,text,text,text[])
+  , public.kimun_prof_equipo_quitar(text,text)
+  , public.kimun_prof_ranking_asignatura(text,text,int)
   to anon, authenticated;
 
 -- ------------------------------------------------------------

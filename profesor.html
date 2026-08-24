@@ -50,7 +50,8 @@ code{color:var(--cyan);font-weight:900}
 .curso>summary{padding:10px}
 .curso>summary::-webkit-details-marker,
 .alumnos>summary::-webkit-details-marker,
-.masivo>summary::-webkit-details-marker{display:none}
+.masivo>summary::-webkit-details-marker,
+.equipo>summary::-webkit-details-marker{display:none}
 .cur-chevron{color:var(--dim);font-size:12px;transition:transform .15s}
 details[open]>summary>.cur-chevron{transform:rotate(90deg)}
 .cur-alu{font-size:12px;color:var(--dim);flex-basis:100%;order:4}
@@ -215,6 +216,7 @@ const OA_CARPETA = {HI08:'historia-8basico', MA08:'matematicas-8basico',
                     CN08:'ciencias-8basico', LE08:'lenguaje-8basico'};
 const OA_TEXTO = {};        // "HI08 OA 01" -> "Analizar, apoyándose en diversas fuentes…"
 const OA_CARGADA = {};      // carpetas ya pedidas
+const OA_TOTAL = {};        // 'HI08' -> cuántos OA tiene la asignatura (de oa.json)
 
 async function cargarTextosOA(codigos){
   const carpetas = [...new Set(codigos.map(c => OA_CARPETA[String(c).slice(0,4)]).filter(Boolean))];
@@ -225,7 +227,17 @@ async function cargarTextosOA(codigos){
       const r = await fetch('contenido/'+carpeta+'/oa.json');
       if(!r.ok) throw new Error('HTTP '+r.status);
       const d = await r.json();
-      (d.oa||[]).forEach(o => { if(o && o.codigo) OA_TEXTO[o.codigo] = o.texto || o.codigo; });
+      // Contar los OA de la asignatura para el denominador de cobertura del ranking. Sobre
+      // un Set por carpeta para ser idempotente: cada carpeta es exactamente una asignatura,
+      // así que vistos.size es su total de OA aunque se recargue.
+      const vistos = OA_TOTAL['_set_'+carpeta] || (OA_TOTAL['_set_'+carpeta]=new Set());
+      (d.oa||[]).forEach(o => {
+        if(o && o.codigo){
+          OA_TEXTO[o.codigo] = o.texto || o.codigo;
+          vistos.add(o.codigo);
+          OA_TOTAL[String(o.codigo).slice(0,4)] = vistos.size;
+        }
+      });
     }catch(e){
       // Si falla, se olvida la marca: de lo contrario un corte momentáneo dejaría a esa
       // asignatura mostrando códigos en vez de textos durante toda la sesión.
@@ -313,7 +325,8 @@ async function pintarLista(){
   if(error) throw error;
   const porCurso={};
   (data||[]).forEach(f=>{
-    porCurso[f.curso_codigo]=porCurso[f.curso_codigo]||{nombre:f.curso,alumnos:[]};
+    porCurso[f.curso_codigo]=porCurso[f.curso_codigo]||
+      {nombre:f.curso, alumnos:[], gestiono:f.puede_gestionar};
     if(f.codigo_acceso) porCurso[f.curso_codigo].alumnos.push(f);
   });
   const cursos=Object.entries(porCurso);
@@ -325,11 +338,11 @@ async function pintarLista(){
         <code>${esc(cod)}</code>
         <span class="cur-alu">${c.alumnos.length} alumno${c.alumnos.length===1?'':'s'}</span>
         <span class="cur-part" data-cod="${esc(cod)}">Participación · …</span>
-        <button class="ico ico-del delcurso" data-cod="${esc(cod)}" title="Eliminar curso">🗑️</button>
+        ${c.gestiono?`<button class="ico ico-del delcurso" data-cod="${esc(cod)}" title="Eliminar curso">🗑️</button>`:''}
       </summary>
       <div class="curso-cuerpo">
         <button class="btn-chip avance" data-cod="${esc(cod)}" data-nom="${esc(c.nombre)}"
-          >📊 Ver avance del curso</button>
+          data-gestiono="${c.gestiono?'1':''}">📊 Ver avance del curso</button>
         <details class="alumnos">
           <summary><span class="cur-chevron" aria-hidden="true">▸</span>👥 Alumnos (${c.alumnos.length})</summary>
           <div class="alumnos-cuerpo">
@@ -337,17 +350,17 @@ async function pintarLista(){
               <div class="alu">
                 <div class="alu-top">
                   <span>${esc(a.avatar)}</span><b class="alu-nom">${esc(a.alumno)}</b>
-                  <button class="ico xp" data-cod="${esc(a.codigo_acceso)}" data-xp="${esc(a.xp)}"
-                          title="Fijar XP" style="color:var(--gold)">✎</button>
+                  ${c.gestiono?`<button class="ico xp" data-cod="${esc(a.codigo_acceso)}" data-xp="${esc(a.xp)}"
+                          title="Fijar XP" style="color:var(--gold)">✎</button>`:''}
                   <button class="ico avalum" data-cod="${esc(a.codigo_acceso)}"
                           data-nom="${esc(a.alumno)}" title="Ver avance">📊</button>
-                  <button class="ico ico-del del" data-cod="${esc(a.codigo_acceso)}"
-                          title="Eliminar alumno">✕</button>
+                  ${c.gestiono?`<button class="ico ico-del del" data-cod="${esc(a.codigo_acceso)}"
+                          title="Eliminar alumno">✕</button>`:''}
                 </div>
                 <div class="alu-sub"><code>${esc(a.codigo_acceso)}</code> · ${esc(a.xp)} XP</div>
               </div>`).join('')
              : '<p style="color:var(--dim);font-size:12px">Sin alumnos todavía.</p>'}
-            <div style="margin-top:8px">
+            ${c.gestiono?`<div style="margin-top:8px">
               <input class="in-alumno" data-curso="${esc(cod)}" placeholder="Nombre del alumno nuevo">
               <button class="btn sec add-alumno" data-curso="${esc(cod)}">+ Agregar alumno</button>
             </div>
@@ -356,9 +369,15 @@ async function pintarLista(){
               <p style="color:var(--dim);font-size:12px;margin:6px 0">Pega un nombre por línea (como los copias de una lista).</p>
               <textarea class="in-masivo" data-curso="${esc(cod)}" rows="5" placeholder="Ana Pérez&#10;Benjamín Soto&#10;Catalina Rivas"></textarea>
               <button class="btn sec add-masivo" data-curso="${esc(cod)}">Agregar todos</button>
-            </details>
+            </details>`:''}
           </div>
         </details>
+        ${c.gestiono?`<details class="equipo" data-cod="${esc(cod)}" style="margin-top:6px">
+          <summary style="cursor:pointer;color:var(--violet);font-size:13px;font-weight:800;list-style:none">👥 Equipo del curso</summary>
+          <div class="equipo-cuerpo" data-cod="${esc(cod)}">
+            <p style="color:var(--dim);font-size:12px;margin:6px 0">Cargando…</p>
+          </div>
+        </details>`:''}
       </div>
     </details>`).join('')
    : '<p style="color:var(--dim);font-size:13px">Aún no tienes cursos.</p>')
@@ -373,6 +392,10 @@ async function pintarLista(){
     if(abiertos.has(cod)) d.open=true;
     if(aluAbiertos.has(cod)){ const a=d.querySelector('details.alumnos'); if(a) a.open=true; }
   });
+  // El equipo del curso se pide la primera vez que se abre su desplegable (carga perezosa).
+  document.querySelectorAll('details.equipo').forEach(det => det.addEventListener('toggle', () => {
+    if(det.open && !det.dataset.cargado){ det.dataset.cargado='1'; cargarEquipo(det.dataset.cod); }
+  }));
   cargarTitularesParticipacion(cursos.map(([cod])=>cod));
 
   if(YO.es_admin){
@@ -456,9 +479,72 @@ function conectarAcciones(){
     await accion(()=>SB.rpc('kimun_prof_curso_quitar',{p_curso_codigo:b.dataset.cod}), 'Curso eliminado');
   });
   document.querySelectorAll('.avance').forEach(
-    b=>b.onclick=()=>verAvance(b.dataset.cod, b.dataset.nom));
+    b=>b.onclick=()=>verAvance(b.dataset.cod, b.dataset.nom, b.dataset.gestiono==='1'));
   document.querySelectorAll('.avalum').forEach(
     b=>b.onclick=()=>verAvanceAlumno(b.dataset.cod, b.dataset.nom));
+}
+
+/* ===== Equipo del curso (jefe/admin) ===== */
+async function cargarEquipo(cursoCodigo){
+  const caja=document.querySelector('.equipo-cuerpo[data-cod="'+cursoCodigo+'"]');
+  if(!caja) return;
+  caja.innerHTML='<p style="color:var(--dim);font-size:12px">Cargando…</p>';
+  let equipo=[];
+  try{
+    const {data,error}=await SB.rpc('kimun_prof_equipo',{p_curso_codigo:cursoCodigo});
+    if(error) throw error; equipo=data||[];
+  }catch(e){ caja.innerHTML='<p style="color:var(--pink);font-size:12px">'+errorPanel(e)+'</p>'; return; }
+  const filas=equipo.map(m=>{
+    const asigs = m.rol==='jefe' ? 'todas las asignaturas'
+      : (m.asignaturas&&m.asignaturas.length ? m.asignaturas.map(a=>ASIG_NOMBRE[a]||a).join(', ')
+                                             : 'sin asignaturas');
+    return `<div class="equipo-fila" style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:4px 0;font-size:13px">
+      <b style="color:var(--gold)">${m.rol==='jefe'?'⭐ ':''}${esc(m.nombre||m.correo)}</b>
+      <span style="color:var(--dim)">${esc(asigs)}</span>
+      <button class="ico ico-del eq-quitar" data-cod="${esc(cursoCodigo)}" data-correo="${esc(m.correo)}"
+        title="Quitar del curso" style="margin-left:auto">✕</button>
+    </div>`;
+  }).join('');
+  // Casillas de las cuatro asignaturas + rol, para el alta.
+  const casillas=ASIG_ORDEN.map(a=>
+    `<label style="font-size:12px;margin-right:8px"><input type="checkbox" class="eq-asig" value="${a}"> ${ASIG_NOMBRE[a]}</label>`).join('');
+  caja.innerHTML=`${filas||'<p style="color:var(--dim);font-size:12px">Solo estás tú.</p>'}
+    <div style="margin-top:8px;border-top:1px solid #ffffff22;padding-top:8px">
+      <input class="eq-correo" type="email" placeholder="Correo del profesor (ya registrado)" style="width:100%">
+      <div style="margin:6px 0">
+        <label style="font-size:12px;margin-right:10px"><input type="radio" name="eqrol-${esc(cursoCodigo)}" class="eq-rol" value="asignatura" checked> Profe de asignatura</label>
+        <label style="font-size:12px"><input type="radio" name="eqrol-${esc(cursoCodigo)}" class="eq-rol" value="jefe"> Profesor Jefe</label>
+      </div>
+      <div class="eq-casillas" style="margin:0 0 6px">${casillas}</div>
+      <button class="btn sec eq-asignar" data-cod="${esc(cursoCodigo)}">+ Agregar al equipo</button>
+    </div>`;
+  caja.querySelectorAll('.eq-quitar').forEach(b=>b.onclick=()=>equipoQuitar(b.dataset.cod, b.dataset.correo));
+  caja.querySelector('.eq-asignar').onclick=()=>{
+    const correo=(caja.querySelector('.eq-correo').value||'').trim();
+    if(!correo){ aviso('Escribe el correo del profesor.'); return; }
+    const rol=caja.querySelector('.eq-rol:checked').value;
+    const asigs=[...caja.querySelectorAll('.eq-asig:checked')].map(c=>c.value);
+    if(rol==='asignatura' && !asigs.length){ aviso('Marca al menos una asignatura, o hazlo Profesor Jefe.'); return; }
+    equipoAsignar(cursoCodigo, correo, rol, asigs);
+  };
+}
+
+async function equipoAsignar(cursoCodigo, correo, rol, asigs){
+  try{
+    const {error}=await SB.rpc('kimun_prof_equipo_asignar',
+      {p_curso_codigo:cursoCodigo, p_correo:correo, p_rol:rol, p_asignaturas:asigs});
+    if(error) throw error; aviso('Profesor agregado al equipo','var(--green)');
+    cargarEquipo(cursoCodigo);
+  }catch(e){ aviso(errorPanel(e)); }
+}
+
+async function equipoQuitar(cursoCodigo, correo){
+  if(!confirm('¿Quitar a este profesor del curso?\n\nNo se borra ningún dato de los alumnos; solo pierde el acceso a este curso.')) return;
+  try{
+    const {error}=await SB.rpc('kimun_prof_equipo_quitar',{p_curso_codigo:cursoCodigo, p_correo:correo});
+    if(error) throw error; aviso('Profesor quitado del curso','var(--green)');
+    cargarEquipo(cursoCodigo);
+  }catch(e){ aviso(errorPanel(e)); }
 }
 
 /* ===== Avance por objetivo de aprendizaje ===== */
@@ -625,11 +711,12 @@ function conectarFilasOA(cursoCodigo){
 /* ===== Desafío de refuerzo (bloque en la vista de avance) ===== */
 
 // Objetivos flojos de una asignatura: primer intento < 70% con evidencia (>=4 alumnos de
-// primer intento), peores primero, tope 5. `filas` viene de kimun_prof_dominio.
-function objetivosFlojos(filas, asignatura){
-  const pref = {Historia:'HI08', Ciencias:'CN08', Lenguaje:'LE08'}[asignatura];
+// primer intento), peores primero, tope 5. `filas` viene de kimun_prof_dominio. La
+// asignatura llega como CÓDIGO de 4 letras (HI08…), la clave canónica del sistema.
+function objetivosFlojos(filas, asigCodigo){
   return (filas||[])
-    .filter(f => pref && String(f.oa).startsWith(pref) && f.resp_1 > 0 && f.alumnos_1 >= 4
+    .filter(f => asigCodigo && String(f.oa).slice(0,4) === asigCodigo
+                 && f.resp_1 > 0 && f.alumnos_1 >= 4
                  && (f.ok_1 / f.resp_1) < 0.70)
     .sort((a,b) => (a.ok_1/a.resp_1) - (b.ok_1/b.resp_1))
     .slice(0,5);
@@ -648,7 +735,7 @@ async function cargarRefuerzo(cursoCodigo, filasDominio){
     const acierto = est.total>0 ? Math.round(est.correctas/est.total*100) : 0;
     const pi = est.pi_resp>0 ? Math.round(est.pi_ok/est.pi_resp*100) : 0;
     cont.innerHTML = `
-      <h3 style="color:var(--gold);font-size:15px;margin:0 0 8px">📣 Refuerzo de ${esc(est.asignatura)} · activo</h3>
+      <h3 style="color:var(--gold);font-size:15px;margin:0 0 8px">📣 Refuerzo de ${esc(ASIG_NOMBRE[est.asignatura]||est.asignatura)} · activo</h3>
       <p style="font-size:13px;margin:0 0 8px">Lo completaron <b>${est.completaron}/${est.inscritos}</b> ·
         acierto del curso <b>${acierto}%</b> (primer intento era <b>${pi}%</b>).</p>
       <button class="btn sec" id="refCerrar">Cerrar desafío</button>`;
@@ -661,37 +748,108 @@ async function cargarRefuerzo(cursoCodigo, filasDominio){
     };
     return;
   }
-  const asigs=['Historia','Ciencias','Lenguaje'];
-  const bloques=asigs.map(a=>{
-    const objs=objetivosFlojos(filasDominio,a);
+  // Las cuatro asignaturas, por su código canónico. Antes faltaba Matemática (bug).
+  const ASIGS = [['HI08','Historia'],['CN08','Ciencias'],['LE08','Lenguaje'],['MA08','Matemáticas']];
+  const bloques=ASIGS.map(([cod,nom])=>{
+    const objs=objetivosFlojos(filasDominio,cod);
     if(!objs.length) return '';
     const lista=objs.map(o=>{
       const pct=Math.round(o.ok_1/o.resp_1*100);
       return `<li style="font-size:12px;color:var(--dim)">${esc(OA_TEXTO[o.oa]||o.oa)} · ${pct}%</li>`;
     }).join('');
     return `<div style="margin-bottom:12px">
-      <p style="font-size:13px;margin:0 0 4px"><b>${a}</b> · ${objs.length} objetivo${objs.length===1?'':'s'} para reforzar</p>
+      <p style="font-size:13px;margin:0 0 4px"><b>${nom}</b> · ${objs.length} objetivo${objs.length===1?'':'s'} para reforzar</p>
       <ul style="margin:0 0 6px 16px;padding:0">${lista}</ul>
-      <button class="btn-chip refLanzar" data-asig="${a}" data-oas="${esc(objs.map(o=>o.oa).join('|'))}"
-        >📣 Lanzar desafío de refuerzo de ${a}</button></div>`;
+      <button class="btn-chip refLanzar" data-asig="${cod}" data-nom="${esc(nom)}"
+        data-oas="${esc(objs.map(o=>o.oa).join('|'))}"
+        >📣 Lanzar desafío de refuerzo de ${esc(nom)}</button></div>`;
   }).filter(Boolean).join('');
   cont.innerHTML = bloques
     ? `<h3 style="color:var(--gold);font-size:15px;margin:0 0 8px">Refuerzo sugerido</h3>${bloques}`
     : '<p style="color:var(--dim);font-size:12px">No hay objetivos bajo el umbral para reforzar por ahora.</p>';
   cont.querySelectorAll('.refLanzar').forEach(b=>b.onclick=async ()=>{
     const oas=b.dataset.oas.split('|');
-    if(!confirm(`¿Lanzar el desafío de refuerzo de ${b.dataset.asig}?\n\nLes aparecerá a todos los alumnos del curso.`)) return;
+    if(!confirm(`¿Lanzar el desafío de refuerzo de ${b.dataset.nom}?\n\nLes aparecerá a todos los alumnos del curso.`)) return;
     try{ const {error}=await SB.rpc('kimun_prof_refuerzo_lanzar',
-      {p_curso_codigo:cursoCodigo,p_asignatura:b.dataset.asig,p_objetivos:oas});
+      {p_curso_codigo:cursoCodigo,p_asignatura:b.dataset.asig,p_objetivos:oas});  // p_asignatura = código
       if(error) throw error; aviso('Desafío lanzado','var(--green)'); }
     catch(e){ aviso(errorPanel(e)); }
     cargarRefuerzo(cursoCodigo, filasDominio);
   });
 }
 
+/* ===== Ranking por asignatura (bloque en la vista de avance) ===== */
+// Un ranking por cada asignatura presente en el mapa del curso. La asignatura se
+// deduce del mapa que ya tenemos (data de kimun_prof_dominio), que el servidor ya
+// filtró a las mías: si no aparece HI08 en el mapa, no pido su ranking.
+async function cargarRankingAsignatura(cursoCodigo, filasDominio){
+  const cont=document.getElementById('rankingBloque');
+  if(!cont) return;
+  // Asignaturas presentes en el mapa (código de 4 letras), en el orden fijo.
+  const presentes = ASIG_ORDEN.filter(a =>
+    (filasDominio||[]).some(f => String(f.oa).slice(0,4) === a
+                                 || SB_asigDe(f.oa) === a));
+  if(!presentes.length){ cont.innerHTML=''; return; }
+  cont.innerHTML = `<h3 style="color:var(--cyan);font-size:15px;margin:0 0 8px">Ranking por asignatura</h3>
+    <p style="color:var(--dim);font-size:12px;margin:0 0 8px">Acierto de primer intento. Necesita al menos 20 respuestas para contar; el resto queda en “aún sin datos suficientes”.</p>
+    <div id="rankAsigTabs" class="av-filtros"></div>
+    <div id="rankAsigCuerpo"></div>`;
+  const tabs=document.getElementById('rankAsigTabs');
+  tabs.innerHTML=presentes.map((a,i)=>
+    `<button class="av-chip${i===0?' on':''}" data-asig="${a}">${ASIG_NOMBRE[a]}</button>`).join('');
+  const pintar=async (asig)=>{
+    const cuerpo=document.getElementById('rankAsigCuerpo');
+    cuerpo.innerHTML='<p style="color:var(--dim);font-size:12px">Cargando…</p>';
+    try{
+      const {data,error}=await SB.rpc('kimun_prof_ranking_asignatura',
+        {p_curso_codigo:cursoCodigo, p_asignatura:asig, p_minimo:20});
+      if(error) throw error;
+      cuerpo.innerHTML=rankingHTML(data||[], asig);
+    }catch(e){ cuerpo.innerHTML='<p style="color:var(--pink);font-size:12px">'+errorPanel(e)+'</p>'; }
+  };
+  tabs.querySelectorAll('.av-chip').forEach(ch=>ch.onclick=()=>{
+    tabs.querySelectorAll('.av-chip').forEach(o=>o.classList.toggle('on',o===ch));
+    pintar(ch.dataset.asig);
+  });
+  pintar(presentes[0]);
+}
+
+// Devuelve la asignatura de un OA en el cliente, para saber qué rankings pedir.
+// Refleja la regla de kimun_oa_asignatura para los códigos que llegan al mapa.
+function SB_asigDe(oa){
+  const s=String(oa);
+  if(s.slice(0,4)==='HI08'||s==='VOC-HIST') return 'HI08';
+  if(s.slice(0,4)==='CN08'||s==='VOC-CIEN') return 'CN08';
+  if(s.slice(0,4)==='MA08'||s==='VOC-MATE') return 'MA08';
+  if(s.slice(0,4)==='LE08'||['VOC-LENG','VOC-LECT'].includes(s)||s.startsWith('AF-T')) return 'LE08';
+  return null;
+}
+
+function rankingHTML(filas, asig){
+  const total = OA_TOTAL[asig] || 0;
+  const conDatos = filas.filter(f => f.suficiente);
+  const sinDatos = filas.filter(f => !f.suficiente);
+  const fila = f => {
+    const cob = total ? ` · ${f.oa_tocados}/${total} objetivos` : '';
+    return `<div style="display:flex;gap:8px;align-items:center;padding:4px 0;font-size:13px">
+      <span>${esc(f.avatar||'🦊')}</span><b>${esc(f.alumno)}</b>
+      <span style="margin-left:auto;color:var(--gold)">${f.pct==null?'—':f.pct+'%'}</span>
+      <span style="color:var(--dim);font-size:11px">${f.resp_1} resp${cob}</span>
+    </div>`;
+  };
+  const bloqueConDatos = conDatos.length
+    ? conDatos.map(fila).join('')
+    : '<p style="color:var(--dim);font-size:12px">Nadie llega aún a 20 respuestas en esta asignatura.</p>';
+  const bloqueSin = sinDatos.length
+    ? `<details style="margin-top:8px"><summary style="cursor:pointer;color:var(--dim);font-size:12px;list-style:none">Aún sin datos suficientes (${sinDatos.length})</summary>
+         <div style="margin-top:6px">${sinDatos.map(fila).join('')}</div></details>`
+    : '';
+  return bloqueConDatos + bloqueSin;
+}
+
 // Tabla de dominio, ordenada de peor a mejor: lo que hay que reforzar queda arriba.
 // El servidor ya la devuelve en ese orden, así que no se reordena.
-async function verAvance(cursoCodigo, cursoNombre){
+async function verAvance(cursoCodigo, cursoNombre, gestiono){
   aviso('Cargando…','var(--dim)');
   try{
     const {data,error}=await SB.rpc('kimun_prof_dominio',{p_curso_codigo:cursoCodigo});
@@ -715,18 +873,19 @@ async function verAvance(cursoCodigo, cursoNombre){
         Porcentaje de acierto por objetivo, de menor a mayor. ${AVISO_NO_CALIFICA}</p>
       ${filtrosAsignatura(data)}
       <div id="avCuerpo"></div>
+      <div id="rankingBloque" style="margin-top:16px;border-top:1px solid #ffffff22;padding-top:12px"></div>
       <p style="color:var(--dim);font-size:11px;margin-top:12px">
         El camino de aprendizaje de Matemáticas sí aparece aquí cuando los alumnos juegan sus
         lecciones. El Reto de Cálculo no se mide: genera operaciones al momento, sin un objetivo
         del currículum asociado.</p>
       <div id="refuerzoBloque" style="margin-top:16px;border-top:1px solid #ffffff22;padding-top:12px"></div>
       <div style="margin-top:14px">
-        <button class="btn sec" id="btnReiniciarMed">🔄 Reiniciar mediciones</button>
+        ${gestiono?`<button class="btn sec" id="btnReiniciarMed">🔄 Reiniciar mediciones</button>`:''}
         <button class="btn sec" id="btnVolverPanel">← Volver</button>
       </div>`;
     $('btnVolverCab').onclick = volverAlPanel;
     $('btnVolverPanel').onclick = volverAlPanel;
-    $('btnReiniciarMed').onclick = () => reiniciarMediciones(cursoCodigo, cursoNombre);
+    const bReinit=$('btnReiniciarMed'); if(bReinit) bReinit.onclick=()=>reiniciarMediciones(cursoCodigo, cursoNombre, gestiono);
     cargarParticipacion(cursoCodigo);
 
     let filtro = '';                                  // '' = todas las asignaturas
@@ -738,6 +897,7 @@ async function verAvance(cursoCodigo, cursoNombre){
     conectarFiltros(a => { filtro = a; pintarCuerpo(); });
     pintarCuerpo();
     cargarRefuerzo(cursoCodigo, data);
+    cargarRankingAsignatura(cursoCodigo, data);
     irArriba();
     aviso('');
   }catch(e){ aviso(errorPanel(e)); }
@@ -899,7 +1059,7 @@ function bloquesAvance(data){
        + seccion('Todavía con pocos datos', sinBase, true);
 }
 
-async function reiniciarMediciones(cursoCodigo, cursoNombre){
+async function reiniciarMediciones(cursoCodigo, cursoNombre, gestiono){
   if(!confirm('¿Reiniciar las mediciones de este curso?\n\n'+
     'Los porcentajes vuelven a cero y se empieza a medir de nuevo. Sirve al comenzar una '+
     'unidad o un semestre. No se borra ningún alumno ni su XP, pero las mediciones '+
@@ -907,7 +1067,7 @@ async function reiniciarMediciones(cursoCodigo, cursoNombre){
   try{
     const {error}=await SB.rpc('kimun_prof_dominio_reiniciar',{p_curso_codigo:cursoCodigo});
     if(error) throw error;
-    await verAvance(cursoCodigo, cursoNombre);
+    await verAvance(cursoCodigo, cursoNombre, gestiono);
     aviso('Mediciones reiniciadas','var(--green)');
   }catch(e){ aviso(errorPanel(e)); }
 }

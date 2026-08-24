@@ -540,6 +540,21 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
   manda). El profesor lanza desde el bloque "Refuerzo" de la vista de avance; el alumno lo ve
   como banner en el inicio y lo juega como una cadena de ~12 preguntas (el juego reusa el motor
   de quiz con el flag `Q.desafio`). Ver la Bitácora, Sesión 28.
+- **Roles por asignatura (Sesión 37):** un curso pasa de tener un dueño único a un **equipo**.
+  Tabla `curso_profesores(curso_id, profesor_id, rol, asignaturas[])` con índice único parcial
+  `where rol='jefe'` (un solo Profesor Jefe por curso). `cursos.profesor_id` queda **deprecada**
+  (no se lee ni se borra; sirvió de semilla en la migración). Función `kimun_oa_asignatura(oa)`:
+  único lugar que traduce un OA a su asignatura (`HI08/CN08/MA08/LE08`), y de paso hace visibles
+  Vocabulario y Lectura en el filtro del panel. Porteros: **`kimun_prof_es_mio` cambió de
+  significado** —ahora es "admin o Jefe" (lo destructivo lo heredan sin tocar su cuerpo)—, más
+  `kimun_prof_acceso` (¿puede entrar?) y `kimun_prof_asignaturas` (¿sobre qué actúa?). Las
+  lecturas (`kimun_prof_dominio`, `_dominio_alumno`, `_dominio_oa`) filtran por asignatura; el
+  refuerzo (`_lanzar`/`_cerrar`) valida la asignatura en el servidor; `kimun_prof_listar` informa
+  rol y asignaturas por curso. Gestión de equipo: `kimun_prof_equipo` / `_equipo_asignar` (cambiar
+  de Jefe respeta el índice único) / `_equipo_quitar` (no toca ningún dato de desempeño). Ranking
+  por asignatura: `kimun_prof_ranking_asignatura` (acierto de primer intento, mínimo 20 respuestas,
+  sin `codigo_acceso`). Migración: cada dueño actual → Jefe, y `desafios.asignatura` se normaliza
+  de nombre visible a código. Ver la Bitácora, Sesión 37.
 - **Cuidado al editar el esquema:** `gen_random_uuid()` es nativa de PostgreSQL y no
   necesita nada especial, pero si alguna función vuelve a usar pgcrypto (`crypt`,
   `gen_salt`) necesita `set search_path = public, extensions`, porque en Supabase esa
@@ -2084,3 +2099,48 @@ uno de ellos ya implementado). **El juego no se tocó**: `index.html` y `profeso
   `xp_semanal`; y evaluar cambiar `security definer` por `invoker` en la función.
 - **Pendiente (Roberto):** aplicar y verificar la foto semanal (arriba); aprobación pedagógica de los 2
   bancos de apoyo; enviar los 4 correos a los profesores; trámites de lanzamiento (INAPI, vulpo.cl).
+
+### Sesión 37 (2026-08-24) — Roles por asignatura (backend + panel implementados)
+Un curso deja de tener un único profesor y pasa a tener un **equipo**: un Profesor Jefe (ve
+todo) y profes de asignatura (ven y refuerzan lo suyo). Se hizo con el flujo completo
+brainstorming (previo) → spec aprobado → plan → ejecución por subagentes (un implementador por
+fase + revisión de spec y calidad). El juego (`index.html`) casi no se toca; el trabajo vive en
+`supabase/schema.sql` y `profesor.html`.
+- **Sincronización de arranque:** este PC estaba en Sesión 29; `git pull` (orden 99) lo llevó a
+  Sesión 36 (foto semanal, mascota Vulpi, informe v0.99, specs de foto semanal y de roles).
+  Fast-forward limpio.
+- **Plan:** `docs/superpowers/plans/2026-08-24-roles-por-asignatura.md` (15 tareas, 3 fases).
+  Spec: `docs/superpowers/specs/2026-08-23-roles-por-asignatura-design.md`.
+- **Backend (`supabase/schema.sql`):** tabla `curso_profesores` (membresía por curso+profesor,
+  con `rol` y `asignaturas[]`) e índice único de Jefe; `kimun_oa_asignatura` (mapa OA→asignatura,
+  que hace visibles Vocabulario y Lectura); `kimun_prof_es_mio` redefinida a "admin o Jefe" (las
+  destructivas la heredan) más `kimun_prof_acceso` y `kimun_prof_asignaturas`; lecturas y refuerzo
+  ajustados para filtrar/validar por asignatura; `kimun_prof_listar` con rol y asignaturas por
+  curso; gestión de equipo (`kimun_prof_equipo`/`_asignar`/`_quitar`); ranking por asignatura
+  (`kimun_prof_ranking_asignatura`). Migración idempotente: dueños actuales → Jefe y
+  `desafios.asignatura` normalizada a código. Ver la sección Backend arriba.
+- **Panel (`profesor.html`):** asignatura canonizada al código de 4 letras, lo que arregla **dos
+  bugs reales**: no se podía lanzar refuerzo de Matemática (la lista y el mapa omitían `MA08`), y
+  convivían dos convenciones (el filtro usaba `HI08`, el botón mandaba `"Historia"`). Bloques
+  nuevos "Equipo del curso" (alta por correo con casillas de materias, cambio de Jefe, baja) y
+  "Ranking por asignatura" (con el grupo "aún sin datos suficientes" al final y la cobertura
+  OA leída de `oa.json`). Los botones destructivos (🗑️, ✎, ✕, agregar alumno, reiniciar
+  mediciones) **no se dibujan** para un profe de asignatura, y el servidor igual los rechaza.
+- **Regresión descubierta en revisión y corregida (`index.html`, 13 líneas):** el juego lee
+  `desafios.asignatura` para el banner y el título del refuerzo **y** para elegir el banco de
+  preguntas (`contenidoDeAsignatura`, que busca por NOMBRE). Al normalizar ese campo a código, el
+  refuerzo habría quedado **injugable** ("No se pudo cargar el desafío") para todas las
+  asignaturas, no solo con texto feo. Se agregó `ASIG_DESAFIO_NOMBRE` (código→nombre) y
+  `asigDesafioNombre()`, usados en `revisarDesafio`, `jugarDesafio` y `construirPreguntasDesafio`;
+  tolera también el nombre antiguo. Verificado en el navegador: las cuatro asignaturas resuelven a
+  su banco (incl. Matemática → `matematicas-8basico`) y un desafío de Matemática arma 12 preguntas
+  reales, sin errores de consola.
+- **Verificado hasta donde se puede sin credenciales:** backend por revisión de código
+  (coherencia, idempotencia, grants/revokes, split de porteros); panel en el navegador con stub de
+  `SB.rpc` (equipo, ranking, ocultar destructivo, sin desborde a 375 px); juego en el navegador.
+- **Pendiente (Roberto), lo BLOQUEANTE de esta feature:** aplicar `schema.sql` completo en el SQL
+  Editor y correr la prueba end-to-end del spec (Task 14, 9 pasos) con dos cuentas reales de
+  profesor —aislamiento por asignatura, rechazo en el servidor de una asignatura ajena, rotación
+  sin pérdida de datos, quitar al Jefe—. Es lo único que necesita credenciales de Supabase.
+- **Pendiente (arrastre):** la foto semanal (aún sin aplicar); aprobación pedagógica de los 2
+  bancos de apoyo; los 4 correos a los profesores; trámites de lanzamiento (INAPI, vulpo.cl).

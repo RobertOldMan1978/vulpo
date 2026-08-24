@@ -3444,6 +3444,13 @@ function terminarNivel(){
 }
 
 /* ===== Desafío de refuerzo (lado alumno) ===== */
+// El servidor guarda la asignatura del desafío con su código canónico de 4 letras
+// (HI08/CN08/MA08/LE08). El juego, en cambio, nombra las asignaturas en EXPEDICIONES
+// ("Historia"…), así que hay que traducir el código al nombre para mostrarlo y para
+// buscar su banco de preguntas. Tolera también el nombre antiguo por si llega un
+// desafío previo a la normalización.
+const ASIG_DESAFIO_NOMBRE={HI08:'Historia',CN08:'Ciencias',MA08:'Matemáticas',LE08:'Lenguaje'};
+function asigDesafioNombre(a){return ASIG_DESAFIO_NOMBRE[a]||a;}
 // Ruta del preguntas.json de una asignatura (cualquiera de sus expediciones sirve).
 function contenidoDeAsignatura(asig){
   const e=EXPEDICIONES.find(x=>x.asignatura===asig&&x.contenido);
@@ -3452,7 +3459,7 @@ function contenidoDeAsignatura(asig){
 // Arma ~12 preguntas de los objetivos del desafío, repartidas por OA. Hace su propio fetch
 // para no pisar el POOL de la expedición activa.
 async function construirPreguntasDesafio(asig, objetivos){
-  const url=contenidoDeAsignatura(asig); if(!url) return [];
+  const url=contenidoDeAsignatura(asigDesafioNombre(asig)); if(!url) return [];
   const pool={};
   try{ const d=await (await fetch(url)).json();
        (d.preguntas||[]).forEach(q=>{(pool[q.oa]=pool[q.oa]||[]).push(q);}); }
@@ -3467,7 +3474,7 @@ async function jugarDesafio(d){
   const preguntas=await construirPreguntasDesafio(d.asignatura, d.objetivos);
   if(!preguntas.length){ alert('No se pudo cargar el desafío. Intenta más tarde.'); return; }
   Q={lvl:0,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock:false,
-     preguntas, desafio:{id:d.desafio_id, asignatura:d.asignatura, titulo:'Refuerzo de '+d.asignatura}};
+     preguntas, desafio:{id:d.desafio_id, asignatura:d.asignatura, titulo:'Refuerzo de '+asigDesafioNombre(d.asignatura)}};
   MODO='normal';
   go('scr-quiz'); pintaPregunta();
 }
@@ -3481,7 +3488,7 @@ async function revisarDesafio(){
   try{ const {data}=await SB.rpc('kimun_refuerzo_activo'); d=(data&&data[0])||null; }catch(e){ return; }
   if(!d) return;
   cont.innerHTML=`<h4>📣 Desafío de tu profe</h4>
-    <p>Refuerzo de ${d.asignatura} · repasa lo que costó</p>
+    <p>Refuerzo de ${asigDesafioNombre(d.asignatura)} · repasa lo que costó</p>
     <button id="btnDesafio">¡Jugar ahora!</button>`;
   $('btnDesafio').onclick=()=>jugarDesafio(d);
   cont.hidden=false;
