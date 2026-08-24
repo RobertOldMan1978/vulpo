@@ -2273,6 +2273,11 @@ el trabajo vive en `supabase/schema.sql` y `profesor.html`; el juego (`index.htm
   re-pegar `schema.sql` → confirmar `select count(*) from cron.job where jobname='foto-semanal'` = 1
   → sembrar la primera foto → confirmar el lunes siguiente). No se aplicó a propósito: hoy todo es
   data de prueba (`CUR-BA04`, cuentas `profe-prueba*`).
+- **Aprobación de los 2 bancos de apoyo — HECHA.** Roberto aprobó Vocabulario (150) y
+  Lectura·Ana Frank (72): se marcó `revisada:true` en todas sus preguntas (y el contador de nivel
+  superior), y se regeneró el tablero (ambos 100% revisadas). Con esto el proyecto queda **2.536/2.536
+  de contenido real revisado** (las únicas 2 sin revisar son las de ejemplo de `contenido/_plantilla/`,
+  que no son contenido).
 - **Pendiente (arrastre):** la foto semanal (runbook listo, sin aplicar por ser datos de prueba);
-  aprobación pedagógica de los 2 bancos de apoyo; trámites de lanzamiento (INAPI, vulpo.cl). Los 4
-  correos a los profesores quedaron **hechos**.
+  trámites de lanzamiento (INAPI, vulpo.cl). Los 4 correos a los profesores y la aprobación de los 2
+  bancos de apoyo quedaron **hechos**.

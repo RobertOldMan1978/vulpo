@@ -2,7 +2,7 @@
   "asignatura": "Lectura · El diario de Ana Frank",
   "nivel": "8° básico",
   "total_preguntas": 72,
-  "revisadas": 0,
+  "revisadas": 72,
   "nota": "Preguntas de comprensión originales. No reproducen texto del libro. Opciones barajadas para evitar sesgo de posicion.",
   "preguntas": [
     {
@@ -17,7 +17,7 @@
       ],
       "correcta": 3,
       "tip": "Ana buscaba una confidente y encontró esa función en su cuaderno.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t1-002",
@@ -31,7 +31,7 @@
       ],
       "correcta": 2,
       "tip": "Fue un obsequio de cumpleaños que ella misma había pedido.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t1-003",
@@ -45,7 +45,7 @@
       ],
       "correcta": 2,
       "tip": "Ana se dirige a su diario como si conversara con una amiga imaginaria.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t1-004",
@@ -59,7 +59,7 @@
       ],
       "correcta": 3,
       "tip": "Las leyes antijudías limitaban dónde podían ir, estudiar o trabajar.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t1-005",
@@ -73,7 +73,7 @@
       ],
       "correcta": 1,
       "tip": "La familia huyó de Alemania buscando mayor seguridad.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t1-006",
@@ -87,7 +87,7 @@
       ],
       "correcta": 1,
       "tip": "Ana reconoce que le encanta conversar y destacar entre sus compañeros.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t1-007",
@@ -101,7 +101,7 @@
       ],
       "correcta": 3,
       "tip": "La citación a Margot obligó a adelantar los planes de esconderse.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t1-008",
@@ -115,7 +115,7 @@
       ],
       "correcta": 3,
       "tip": "Ana a veces se compara con Margot y siente que no está a su altura.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t1-009",
@@ -129,7 +129,7 @@
       ],
       "correcta": 2,
       "tip": "Esconderse era la manera de intentar salvar sus vidas frente a la persecución.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t2-001",
@@ -143,7 +143,7 @@
       ],
       "correcta": 1,
       "tip": "Con el tiempo se suman las familias Frank y Van Daan, además de un dentista.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t2-002",
@@ -157,7 +157,7 @@
       ],
       "correcta": 1,
       "tip": "El anexo secreto está escondido detrás de una estantería, encima de las oficinas.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t2-003",
@@ -171,7 +171,7 @@
       ],
       "correcta": 1,
       "tip": "Estos colaboradores arriesgaban su propia seguridad para ayudarlos.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t2-004",
@@ -185,7 +185,7 @@
       ],
       "correcta": 0,
       "tip": "Cualquier ruido durante el día podía delatarlos ante los empleados del edificio.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t2-005",
@@ -199,7 +199,7 @@
       ],
       "correcta": 2,
       "tip": "La radio era su principal fuente de noticias sobre el avance de la guerra.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t2-006",
@@ -213,7 +213,7 @@
       ],
       "correcta": 3,
       "tip": "El anexo estaba oculto justo encima de las oficinas de un negocio.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t2-007",
@@ -227,7 +227,7 @@
       ],
       "correcta": 3,
       "tip": "Los Van Daan se suman al anexo cuando los Frank ya llevaban un tiempo allí.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t2-008",
@@ -241,7 +241,7 @@
       ],
       "correcta": 3,
       "tip": "El encierro repentino le provoca inquietud mientras aprende a acostumbrarse.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t2-009",
@@ -255,7 +255,7 @@
       ],
       "correcta": 0,
       "tip": "Ser vistos por alguien desde la calle podía significar ser descubiertos.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t3-001",
@@ -269,7 +269,7 @@
       ],
       "correcta": 3,
       "tip": "Ana registra tensiones repetidas con su madre y con la señora Van Daan.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t3-002",
@@ -283,7 +283,7 @@
       ],
       "correcta": 1,
       "tip": "Dussel llega más tarde y ocupa habitación con Ana.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t3-003",
@@ -297,7 +297,7 @@
       ],
       "correcta": 1,
       "tip": "Compartir un espacio tan reducido genera fricciones cotidianas.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t3-004",
@@ -311,7 +311,7 @@
       ],
       "correcta": 0,
       "tip": "La convivencia forzada agudiza los conflictos por recursos escasos y crianza.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t3-005",
@@ -325,7 +325,7 @@
       ],
       "correcta": 3,
       "tip": "Ana la retrata como conflictiva y algo presumida.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t3-006",
@@ -339,7 +339,7 @@
       ],
       "correcta": 2,
       "tip": "Ana siente que su madre no logra entender su forma de ser.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t3-007",
@@ -353,7 +353,7 @@
       ],
       "correcta": 2,
       "tip": "Sin poder salir, la lectura y el estudio ocupan buena parte del día.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t3-008",
@@ -367,7 +367,7 @@
       ],
       "correcta": 2,
       "tip": "El diario funciona como su vía de desahogo frente a los roces diarios.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t3-009",
@@ -381,7 +381,7 @@
       ],
       "correcta": 2,
       "tip": "Otto suele actuar como pacificador ante los roces del grupo.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t4-001",
@@ -395,7 +395,7 @@
       ],
       "correcta": 2,
       "tip": "Tanto los ataques aéreos como los intentos de robo ponen en riesgo su escondite.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t4-002",
@@ -409,7 +409,7 @@
       ],
       "correcta": 2,
       "tip": "Cualquier movimiento o ruido podía delatar su presencia ante los intrusos.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t4-003",
@@ -423,7 +423,7 @@
       ],
       "correcta": 1,
       "tip": "Los protectores continúan ayudando pese al peligro que eso representaba.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t4-004",
@@ -437,7 +437,7 @@
       ],
       "correcta": 1,
       "tip": "Seguir el curso de la guerra les daba esperanza sobre un posible fin del encierro.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t4-005",
@@ -451,7 +451,7 @@
       ],
       "correcta": 3,
       "tip": "El miedo constante es a la deportación hacia los campos nazis.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t4-006",
@@ -465,7 +465,7 @@
       ],
       "correcta": 1,
       "tip": "Los bombardeos cercanos generan pánico entre los habitantes del escondite.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t4-007",
@@ -479,7 +479,7 @@
       ],
       "correcta": 3,
       "tip": "La escasez de alimentos se vuelve un problema cada vez más serio.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t4-008",
@@ -493,7 +493,7 @@
       ],
       "correcta": 1,
       "tip": "Las condiciones difíciles del encierro afectan el bienestar físico del grupo.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t4-009",
@@ -507,7 +507,7 @@
       ],
       "correcta": 3,
       "tip": "Las buenas noticias bélicas alimentan la esperanza de libertad.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t5-001",
@@ -521,7 +521,7 @@
       ],
       "correcta": 0,
       "tip": "El encierro coincide con su paso de niña a adolescente, con todos esos cambios.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t5-002",
@@ -535,7 +535,7 @@
       ],
       "correcta": 2,
       "tip": "Ana reconoce sentirse más cerca de Otto que de su madre.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t5-003",
@@ -549,7 +549,7 @@
       ],
       "correcta": 3,
       "tip": "La lectura y la escritura son claves en su crecimiento personal.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t5-004",
@@ -563,7 +563,7 @@
       ],
       "correcta": 3,
       "tip": "Ana reflexiona sobre la diferencia entre su lado externo y su lado más íntimo.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t5-005",
@@ -577,7 +577,7 @@
       ],
       "correcta": 0,
       "tip": "Ana confía especialmente en su padre entre los miembros de su familia.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t5-006",
@@ -591,7 +591,7 @@
       ],
       "correcta": 0,
       "tip": "Ana puede sentirse sola emocionalmente aunque esté acompañada físicamente.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t5-007",
@@ -605,7 +605,7 @@
       ],
       "correcta": 1,
       "tip": "Sus reflexiones se hacen cada vez más maduras conforme crece.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t5-008",
@@ -619,7 +619,7 @@
       ],
       "correcta": 0,
       "tip": "Ana sueña con que sus escritos algún día sean leídos por más personas.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t5-009",
@@ -633,7 +633,7 @@
       ],
       "correcta": 0,
       "tip": "El encierro y la falta de espacio propio complican esta etapa de cambios.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t6-001",
@@ -647,7 +647,7 @@
       ],
       "correcta": 1,
       "tip": "Peter es el hijo adolescente de los Van Daan, compañero de encierro.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t6-002",
@@ -661,7 +661,7 @@
       ],
       "correcta": 2,
       "tip": "Al inicio apenas interactuaban; el acercamiento llega después.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t6-003",
@@ -675,7 +675,7 @@
       ],
       "correcta": 1,
       "tip": "El tiempo compartido en el anexo los va acercando poco a poco.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t6-004",
@@ -689,7 +689,7 @@
       ],
       "correcta": 2,
       "tip": "Ana describe en su diario los sentimientos propios de un primer amor.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t6-005",
@@ -703,7 +703,7 @@
       ],
       "correcta": 0,
       "tip": "Sus conversaciones abordan temas personales y profundos para su edad.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t6-006",
@@ -717,7 +717,7 @@
       ],
       "correcta": 0,
       "tip": "La convivencia cercana hace que los adultos también noten y comenten esta relación.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t6-007",
@@ -731,7 +731,7 @@
       ],
       "correcta": 2,
       "tip": "El gato de Peter, Mouschi, convive con ellos en el escondite.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t6-008",
@@ -745,7 +745,7 @@
       ],
       "correcta": 3,
       "tip": "Ana reflexiona sobre si sus sentimientos nacen del aislamiento o son genuinos.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t6-009",
@@ -759,7 +759,7 @@
       ],
       "correcta": 0,
       "tip": "Esta relación la ayuda a conocerse mejor emocionalmente.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t7-001",
@@ -773,7 +773,7 @@
       ],
       "correcta": 0,
       "tip": "Una de sus reflexiones más conocidas es su fe en la bondad humana.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t7-002",
@@ -787,7 +787,7 @@
       ],
       "correcta": 2,
       "tip": "Ana manifiesta un fuerte anhelo de paz frente al horror de la guerra.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t7-003",
@@ -801,7 +801,7 @@
       ],
       "correcta": 1,
       "tip": "Ana imagina un futuro donde puede estudiar y compartir lo que escribe.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t7-004",
@@ -815,7 +815,7 @@
       ],
       "correcta": 2,
       "tip": "Escribir y soñar con el futuro son formas en que Ana sostiene su esperanza.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t7-005",
@@ -829,7 +829,7 @@
       ],
       "correcta": 0,
       "tip": "Ana cuestiona la discriminación y la violencia contra los judíos.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t7-006",
@@ -843,7 +843,7 @@
       ],
       "correcta": 1,
       "tip": "Escribir le permite procesar lo que vive y mantenerse firme emocionalmente.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t7-007",
@@ -857,7 +857,7 @@
       ],
       "correcta": 0,
       "tip": "Ana valora profundamente la bondad y mantener la esperanza pese a todo.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t7-008",
@@ -871,7 +871,7 @@
       ],
       "correcta": 3,
       "tip": "El encierro le hace valorar y añorar elementos simples de la naturaleza.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t7-009",
@@ -885,7 +885,7 @@
       ],
       "correcta": 0,
       "tip": "Su actitud transmite que la esperanza puede sostenerse incluso en tiempos duros.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t8-001",
@@ -899,7 +899,7 @@
       ],
       "correcta": 1,
       "tip": "El diario termina de forma abrupta, sin que Ana supiera lo que vendría.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t8-002",
@@ -913,7 +913,7 @@
       ],
       "correcta": 3,
       "tip": "El escondite es descubierto y todos son arrestados.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t8-003",
@@ -927,7 +927,7 @@
       ],
       "correcta": 2,
       "tip": "El origen exacto de la delación sigue siendo un tema debatido históricamente.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t8-004",
@@ -941,7 +941,7 @@
       ],
       "correcta": 0,
       "tip": "Tras el arresto, son deportados a distintos campos de concentración.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t8-005",
@@ -955,7 +955,7 @@
       ],
       "correcta": 0,
       "tip": "Ambas hermanas mueren por una enfermedad, muy cerca del fin de la guerra.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t8-006",
@@ -969,7 +969,7 @@
       ],
       "correcta": 2,
       "tip": "Otto Frank es el único sobreviviente entre los ocho del anexo.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t8-007",
@@ -983,7 +983,7 @@
       ],
       "correcta": 0,
       "tip": "Una de las protectoras rescata los escritos de Ana tras la detención.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t8-008",
@@ -997,7 +997,7 @@
       ],
       "correcta": 1,
       "tip": "Otto decide dar a conocer los escritos de Ana al mundo.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "af-t8-009",
@@ -1011,7 +1011,7 @@
       ],
       "correcta": 3,
       "tip": "El diario permite comprender de forma cercana el sufrimiento humano durante el Holocausto.",
-      "revisada": false
+      "revisada": true
     }
   ]
 }

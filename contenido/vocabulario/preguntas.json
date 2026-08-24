@@ -2,7 +2,7 @@
   "asignatura": "Vocabulario",
   "nivel": "8° básico",
   "total_preguntas": 150,
-  "revisadas": 0,
+  "revisadas": 150,
   "nota": "Palabras de todo el curso (4 asignaturas + lecturas). Apoyo de estudio, no OA oficial. Opciones barajadas para evitar sesgo de posicion.",
   "preguntas": [
     {
@@ -17,7 +17,7 @@
       ],
       "correcta": 2,
       "tip": "Piensa en 'humano' + centro de todo.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-002",
@@ -31,7 +31,7 @@
       ],
       "correcta": 1,
       "tip": "Antropo = ser humano; centrismo = en el centro.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-003",
@@ -45,7 +45,7 @@
       ],
       "correcta": 3,
       "tip": "'Re-nacer' de las ideas y el arte clásico.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-004",
@@ -59,7 +59,7 @@
       ],
       "correcta": 0,
       "tip": "Lutero cuestionó a la Iglesia y provocó una división religiosa.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-005",
@@ -73,7 +73,7 @@
       ],
       "correcta": 0,
       "tip": "Es la reacción católica 'contra' la Reforma.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-006",
@@ -87,7 +87,7 @@
       ],
       "correcta": 3,
       "tip": "Gutenberg la perfeccionó y cambió la difusión de las ideas.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-007",
@@ -101,7 +101,7 @@
       ],
       "correcta": 3,
       "tip": "Relaciónalo con 'mercader' y la acumulación de riqueza.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-008",
@@ -115,7 +115,7 @@
       ],
       "correcta": 1,
       "tip": "'Absoluta' significa sin límites ni controles.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-009",
@@ -129,7 +129,7 @@
       ],
       "correcta": 0,
       "tip": "Son los funcionarios que hacen funcionar la administración.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-010",
@@ -143,7 +143,7 @@
       ],
       "correcta": 2,
       "tip": "Un español 'encomendaba' su cuidado a cambio de trabajo indígena.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-011",
@@ -157,7 +157,7 @@
       ],
       "correcta": 0,
       "tip": "Trabajo forzado y rotativo, muy usado en minas como Potosí.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-012",
@@ -171,7 +171,7 @@
       ],
       "correcta": 3,
       "tip": "Piensa en 'mestizo', persona de mezcla de orígenes.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-013",
@@ -185,7 +185,7 @@
       ],
       "correcta": 2,
       "tip": "Ordenaba a la gente según su mezcla de 'razas'.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-014",
@@ -199,7 +199,7 @@
       ],
       "correcta": 3,
       "tip": "El virrey representaba al rey en América.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-015",
@@ -213,7 +213,7 @@
       ],
       "correcta": 1,
       "tip": "Era el 'municipio' de la época colonial.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-016",
@@ -227,7 +227,7 @@
       ],
       "correcta": 3,
       "tip": "Buscaba 'iluminar' con la razón las ideas antiguas.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-017",
@@ -241,7 +241,7 @@
       ],
       "correcta": 2,
       "tip": "El pueblo ('popular') es la fuente del poder.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-018",
@@ -255,7 +255,7 @@
       ],
       "correcta": 1,
       "tip": "Idea clave de Montesquieu para limitar el poder absoluto.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-019",
@@ -269,7 +269,7 @@
       ],
       "correcta": 1,
       "tip": "Fue un proceso continental de fines del siglo XVIII e inicios del XIX.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-020",
@@ -283,7 +283,7 @@
       ],
       "correcta": 0,
       "tip": "Busca equilibrio entre desarrollo y cuidado del medioambiente.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-001",
@@ -297,7 +297,7 @@
       ],
       "correcta": 1,
       "tip": "Todo ser vivo está formado por una o más de ellas.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-002",
@@ -311,7 +311,7 @@
       ],
       "correcta": 1,
       "tip": "Es la base de la biología moderna sobre las células.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-003",
@@ -325,7 +325,7 @@
       ],
       "correcta": 1,
       "tip": "Es como una 'puerta' selectiva de la célula.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-004",
@@ -339,7 +339,7 @@
       ],
       "correcta": 1,
       "tip": "Se le conoce como la 'central energética' de la célula.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-005",
@@ -353,7 +353,7 @@
       ],
       "correcta": 2,
       "tip": "Contiene clorofila y da el color verde a las plantas.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-006",
@@ -367,7 +367,7 @@
       ],
       "correcta": 2,
       "tip": "Las partículas se mueven de donde hay más a donde hay menos.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-007",
@@ -381,7 +381,7 @@
       ],
       "correcta": 2,
       "tip": "Es un tipo especial de difusión, pero solo de agua.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-008",
@@ -395,7 +395,7 @@
       ],
       "correcta": 2,
       "tip": "Ocurre en los cloroplastos gracias a la luz.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-009",
@@ -409,7 +409,7 @@
       ],
       "correcta": 0,
       "tip": "Es el 'equilibrio interno' del cuerpo.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-010",
@@ -423,7 +423,7 @@
       ],
       "correcta": 1,
       "tip": "Ejemplos: carbohidratos, proteínas, grasas, vitaminas.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-011",
@@ -437,7 +437,7 @@
       ],
       "correcta": 1,
       "tip": "El corazón y los vasos sanguíneos son sus protagonistas.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-012",
@@ -451,7 +451,7 @@
       ],
       "correcta": 3,
       "tip": "Puede ser positiva o negativa, y genera atracción o repulsión.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-013",
@@ -465,7 +465,7 @@
       ],
       "correcta": 3,
       "tip": "Necesita un camino cerrado para que la electricidad fluya.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-014",
@@ -479,7 +479,7 @@
       ],
       "correcta": 3,
       "tip": "Ocurre, por ejemplo, cuando tocas un metal caliente.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-015",
@@ -493,7 +493,7 @@
       ],
       "correcta": 0,
       "tip": "Ocurre en líquidos y gases que se mueven al calentarse.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-016",
@@ -507,7 +507,7 @@
       ],
       "correcta": 2,
       "tip": "Está formado por protones, neutrones y electrones.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-017",
@@ -521,7 +521,7 @@
       ],
       "correcta": 2,
       "tip": "Thomson, Rutherford y Bohr propusieron distintos modelos.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-018",
@@ -535,7 +535,7 @@
       ],
       "correcta": 2,
       "tip": "Organiza todos los elementos químicos conocidos.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-019",
@@ -549,7 +549,7 @@
       ],
       "correcta": 1,
       "tip": "Es lo que 'pega' los átomos entre sí.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-020",
@@ -563,7 +563,7 @@
       ],
       "correcta": 2,
       "tip": "Ejemplos: oxígeno, carbono, hidrógeno.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-001",
@@ -577,7 +577,7 @@
       ],
       "correcta": 0,
       "tip": "Incluye al cero y a los negativos, sin decimales.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-002",
@@ -591,7 +591,7 @@
       ],
       "correcta": 2,
       "tip": "Se puede escribir como fracción a/b.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-003",
@@ -605,7 +605,7 @@
       ],
       "correcta": 3,
       "tip": "Ejemplo: 2³ = 2×2×2.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-004",
@@ -619,7 +619,7 @@
       ],
       "correcta": 0,
       "tip": "La raíz cuadrada de 9 es 3, porque 3² = 9.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-005",
@@ -633,7 +633,7 @@
       ],
       "correcta": 3,
       "tip": "El símbolo % significa 'por cada cien'.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-006",
@@ -647,7 +647,7 @@
       ],
       "correcta": 3,
       "tip": "Ejemplo: 3x + 5, donde x es una variable.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-007",
@@ -661,7 +661,7 @@
       ],
       "correcta": 1,
       "tip": "Por ejemplo, 3x y 5x son semejantes; 3x y 5x² no lo son.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-008",
@@ -675,7 +675,7 @@
       ],
       "correcta": 0,
       "tip": "Su gráfico es una línea recta que pasa por el origen (0,0).",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-009",
@@ -689,7 +689,7 @@
       ],
       "correcta": 0,
       "tip": "Ejemplo: 2x + 3 = 7, se resuelve encontrando el valor de x.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-010",
@@ -703,7 +703,7 @@
       ],
       "correcta": 0,
       "tip": "A diferencia de una ecuación, su solución es un rango de valores.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-011",
@@ -717,7 +717,7 @@
       ],
       "correcta": 2,
       "tip": "Es como la función lineal, pero desplazada por el valor b.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-012",
@@ -731,7 +731,7 @@
       ],
       "correcta": 2,
       "tip": "Es el 'a' en la fórmula f(x) = ax + b.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-013",
@@ -745,7 +745,7 @@
       ],
       "correcta": 2,
       "tip": "Se resume en la fórmula a² + b² = c².",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-014",
@@ -759,7 +759,7 @@
       ],
       "correcta": 2,
       "tip": "Es el lado opuesto al ángulo de 90°.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-015",
@@ -773,7 +773,7 @@
       ],
       "correcta": 0,
       "tip": "Cada punto se ubica con un par de coordenadas (x, y).",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-016",
@@ -787,7 +787,7 @@
       ],
       "correcta": 0,
       "tip": "La figura se mueve en línea recta, sin girar ni rotar.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-017",
@@ -801,7 +801,7 @@
       ],
       "correcta": 0,
       "tip": "Piensa en 'rotar', como las manecillas de un reloj.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-018",
@@ -815,7 +815,7 @@
       ],
       "correcta": 2,
       "tip": "Piensa en una mariposa: sus dos alas son un reflejo.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-019",
@@ -829,7 +829,7 @@
       ],
       "correcta": 0,
       "tip": "Ordena los datos y busca el que queda justo al medio.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-020",
@@ -843,7 +843,7 @@
       ],
       "correcta": 1,
       "tip": "Indica qué porcentaje de datos queda por debajo de un valor.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-001",
@@ -857,7 +857,7 @@
       ],
       "correcta": 1,
       "tip": "Es quien 'narra' la historia, no siempre es el autor.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-002",
@@ -871,7 +871,7 @@
       ],
       "correcta": 3,
       "tip": "Es el problema central que mueve la trama.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-003",
@@ -885,7 +885,7 @@
       ],
       "correcta": 3,
       "tip": "Incluye metáforas, comparaciones y otras figuras literarias.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-004",
@@ -899,7 +899,7 @@
       ],
       "correcta": 1,
       "tip": "Ejemplo: 'sus ojos son dos luceros' (sin usar 'como').",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-005",
@@ -913,7 +913,7 @@
       ],
       "correcta": 0,
       "tip": "Ejemplo: 'el viento susurraba entre los árboles'.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-006",
@@ -927,7 +927,7 @@
       ],
       "correcta": 0,
       "tip": "Es la voz que 'habla' dentro del poema, no el poeta real.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-007",
@@ -941,7 +941,7 @@
       ],
       "correcta": 3,
       "tip": "Piensa en obras de teatro, con diálogos y acotaciones.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-008",
@@ -955,7 +955,7 @@
       ],
       "correcta": 1,
       "tip": "Suele ir entre paréntesis, indicando cómo actuar.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-009",
@@ -969,7 +969,7 @@
       ],
       "correcta": 2,
       "tip": "Ejemplo clásico: 'La Odisea'.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-010",
@@ -983,7 +983,7 @@
       ],
       "correcta": 0,
       "tip": "Busca hacer reír mientras cuenta una historia con final feliz.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-011",
@@ -997,7 +997,7 @@
       ],
       "correcta": 3,
       "tip": "Piensa en columnas de opinión o discursos.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-012",
@@ -1011,7 +1011,7 @@
       ],
       "correcta": 3,
       "tip": "Es la postura central que el autor quiere defender.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-013",
@@ -1025,7 +1025,7 @@
       ],
       "correcta": 2,
       "tip": "El hecho se puede verificar; la opinión depende del punto de vista.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-014",
@@ -1039,7 +1039,7 @@
       ],
       "correcta": 0,
       "tip": "Su objetivo principal es informar, no persuadir ni narrar.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-015",
@@ -1053,7 +1053,7 @@
       ],
       "correcta": 2,
       "tip": "Busca convencer o influir, a menudo de forma masiva.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-016",
@@ -1067,7 +1067,7 @@
       ],
       "correcta": 3,
       "tip": "Son generalizaciones, muchas veces injustas, sobre un grupo.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-017",
@@ -1081,7 +1081,7 @@
       ],
       "correcta": 3,
       "tip": "Es 'leer entre líneas', deducir algo no dicho directamente.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-018",
@@ -1095,7 +1095,7 @@
       ],
       "correcta": 3,
       "tip": "Es un género que mezcla información y narración, muy usado en periodismo.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-019",
@@ -1109,7 +1109,7 @@
       ],
       "correcta": 0,
       "tip": "Ejemplos: 'sin embargo', 'por lo tanto', 'además'.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-020",
@@ -1123,7 +1123,7 @@
       ],
       "correcta": 3,
       "tip": "Un texto coherente tiene ideas que 'se entienden' juntas, sin contradicciones.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-001",
@@ -1137,7 +1137,7 @@
       ],
       "correcta": 3,
       "tip": "La familia Frank se ocultó en un anexo, una parte añadida al edificio.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-002",
@@ -1151,7 +1151,7 @@
       ],
       "correcta": 0,
       "tip": "La familia Frank vivió de forma clandestina, escondida.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-003",
@@ -1165,7 +1165,7 @@
       ],
       "correcta": 3,
       "tip": "Los judíos sufrieron persecución bajo el régimen nazi.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-004",
@@ -1179,7 +1179,7 @@
       ],
       "correcta": 0,
       "tip": "Es el odio o discriminación específicamente contra el pueblo judío.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-005",
@@ -1193,7 +1193,7 @@
       ],
       "correcta": 0,
       "tip": "Los Países Bajos vivieron bajo ocupación alemana durante la guerra.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-006",
@@ -1207,7 +1207,7 @@
       ],
       "correcta": 0,
       "tip": "Muchas familias judías fueron deportadas a campos de concentración.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-007",
@@ -1221,7 +1221,7 @@
       ],
       "correcta": 1,
       "tip": "Es el tipo de texto que escribió Ana Frank.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-008",
@@ -1235,7 +1235,7 @@
       ],
       "correcta": 3,
       "tip": "El anexo funcionó como escondite para la familia Frank.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-009",
@@ -1249,7 +1249,7 @@
       ],
       "correcta": 2,
       "tip": "Se imponía para controlar los movimientos de la población durante la ocupación.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-010",
@@ -1263,7 +1263,7 @@
       ],
       "correcta": 1,
       "tip": "Los nazis confinaban a los judíos en estos barrios aislados.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-011",
@@ -1277,7 +1277,7 @@
       ],
       "correcta": 0,
       "tip": "Fue el régimen responsable de la persecución de los judíos.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-012",
@@ -1291,7 +1291,7 @@
       ],
       "correcta": 3,
       "tip": "Es el nombre que se da al genocidio judío durante el nazismo.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-013",
@@ -1305,7 +1305,7 @@
       ],
       "correcta": 2,
       "tip": "Auschwitz es uno de los campos de concentración más conocidos.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-014",
@@ -1319,7 +1319,7 @@
       ],
       "correcta": 1,
       "tip": "Se cree que un delator informó del escondite de la familia Frank.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-015",
@@ -1333,7 +1333,7 @@
       ],
       "correcta": 2,
       "tip": "Los nazis realizaban redadas para capturar a personas escondidas.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-016",
@@ -1347,7 +1347,7 @@
       ],
       "correcta": 0,
       "tip": "Servía para identificar y estigmatizar a los judíos ante toda la sociedad.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-017",
@@ -1361,7 +1361,7 @@
       ],
       "correcta": 1,
       "tip": "Muchas familias judías se convirtieron en refugiadas durante la guerra.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-018",
@@ -1375,7 +1375,7 @@
       ],
       "correcta": 3,
       "tip": "El régimen nazi es un ejemplo de gobierno totalitario.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-019",
@@ -1389,7 +1389,7 @@
       ],
       "correcta": 1,
       "tip": "Grupos de resistencia ayudaban a esconder a perseguidos por el nazismo.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-020",
@@ -1403,7 +1403,7 @@
       ],
       "correcta": 3,
       "tip": "Los Países Bajos fueron liberados al finalizar la Segunda Guerra Mundial.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-101",
@@ -1417,7 +1417,7 @@
       ],
       "correcta": 3,
       "tip": "Piensa en señores feudales y vasallos en la Edad Media.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-102",
@@ -1431,7 +1431,7 @@
       ],
       "correcta": 0,
       "tip": "Relación de lealtad a cambio de tierra o protección.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-103",
@@ -1445,7 +1445,7 @@
       ],
       "correcta": 0,
       "tip": "Tribunal eclesiástico ligado a la Contrarreforma.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-104",
@@ -1459,7 +1459,7 @@
       ],
       "correcta": 0,
       "tip": "Un país domina y explota otros territorios.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-105",
@@ -1473,7 +1473,7 @@
       ],
       "correcta": 1,
       "tip": "Nacido en América, de ascendencia española.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-106",
@@ -1487,7 +1487,7 @@
       ],
       "correcta": 1,
       "tip": "Gobierno provisional formado ante la crisis de la monarquía española.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-107",
@@ -1501,7 +1501,7 @@
       ],
       "correcta": 2,
       "tip": "Opuesta a la monarquía; autoridades elegidas por tiempo determinado.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-108",
@@ -1515,7 +1515,7 @@
       ],
       "correcta": 2,
       "tip": "Líder carismático y militar que domina la política, común tras la independencia.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-109",
@@ -1529,7 +1529,7 @@
       ],
       "correcta": 3,
       "tip": "Poner fin oficialmente a una institución injusta.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-hist-110",
@@ -1543,7 +1543,7 @@
       ],
       "correcta": 1,
       "tip": "Acuerdo escrito y oficial, por ejemplo para poner fin a una guerra.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-101",
@@ -1557,7 +1557,7 @@
       ],
       "correcta": 1,
       "tip": "Es el centro de control de la célula, guarda el ADN.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-102",
@@ -1571,7 +1571,7 @@
       ],
       "correcta": 2,
       "tip": "Molécula que guarda las instrucciones hereditarias.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-103",
@@ -1585,7 +1585,7 @@
       ],
       "correcta": 1,
       "tip": "Ejemplo: tejido muscular, tejido nervioso.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-104",
@@ -1599,7 +1599,7 @@
       ],
       "correcta": 1,
       "tip": "Es cómo las células se reproducen para crecer y reparar tejidos.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-105",
@@ -1613,7 +1613,7 @@
       ],
       "correcta": 2,
       "tip": "Es especialmente grande en las células vegetales.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-106",
@@ -1627,7 +1627,7 @@
       ],
       "correcta": 1,
       "tip": "Se mide en volts; es la 'fuerza' que empuja la corriente.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-107",
@@ -1641,7 +1641,7 @@
       ],
       "correcta": 2,
       "tip": "Se mide en ohms; a mayor resistencia, más difícil pasa la corriente.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-108",
@@ -1655,7 +1655,7 @@
       ],
       "correcta": 2,
       "tip": "Gira en torno al núcleo y tiene carga negativa.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-109",
@@ -1669,7 +1669,7 @@
       ],
       "correcta": 1,
       "tip": "Por ejemplo, el agua es una molécula formada por hidrógeno y oxígeno.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-cien-110",
@@ -1683,7 +1683,7 @@
       ],
       "correcta": 1,
       "tip": "Se rompen y forman nuevos enlaces entre átomos.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-101",
@@ -1697,7 +1697,7 @@
       ],
       "correcta": 1,
       "tip": "Ejemplo: el número pi (π).",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-102",
@@ -1711,7 +1711,7 @@
       ],
       "correcta": 1,
       "tip": "Se escribe entre barras verticales, por ejemplo |−5| = 5.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-103",
@@ -1725,7 +1725,7 @@
       ],
       "correcta": 0,
       "tip": "Por ejemplo, 12 = 2 × 2 × 3.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-104",
@@ -1739,7 +1739,7 @@
       ],
       "correcta": 3,
       "tip": "Si el doble de una cantidad da el doble de la otra, es directa.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-105",
@@ -1753,7 +1753,7 @@
       ],
       "correcta": 1,
       "tip": "Son los valores que puede tomar la variable independiente x.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-106",
@@ -1767,7 +1767,7 @@
       ],
       "correcta": 2,
       "tip": "En 5x, el 5 es el coeficiente.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-107",
@@ -1781,7 +1781,7 @@
       ],
       "correcta": 3,
       "tip": "Ejemplo: 3x² + 2x − 5.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-108",
@@ -1795,7 +1795,7 @@
       ],
       "correcta": 2,
       "tip": "Cambia el tamaño de la figura pero conserva su forma (semejanza).",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-109",
@@ -1809,7 +1809,7 @@
       ],
       "correcta": 0,
       "tip": "Se expresa entre 0 (imposible) y 1 (seguro).",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-mate-110",
@@ -1823,7 +1823,7 @@
       ],
       "correcta": 0,
       "tip": "Mide qué tan dispersos están los datos.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-101",
@@ -1837,7 +1837,7 @@
       ],
       "correcta": 2,
       "tip": "Es quien vive el conflicto central de la historia.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-102",
@@ -1851,7 +1851,7 @@
       ],
       "correcta": 1,
       "tip": "Es el rival o adversario del protagonista.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-103",
@@ -1865,7 +1865,7 @@
       ],
       "correcta": 3,
       "tip": "Es el punto culminante antes del desenlace.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-104",
@@ -1879,7 +1879,7 @@
       ],
       "correcta": 3,
       "tip": "Puede ser en primera, segunda o tercera persona.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-105",
@@ -1893,7 +1893,7 @@
       ],
       "correcta": 0,
       "tip": "Puede ser consonante o asonante.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-106",
@@ -1907,7 +1907,7 @@
       ],
       "correcta": 3,
       "tip": "Ejemplo: 'sus ojos son como estrellas'.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-107",
@@ -1921,7 +1921,7 @@
       ],
       "correcta": 1,
       "tip": "Ejemplo: 'te lo he dicho un millón de veces'.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-108",
@@ -1935,7 +1935,7 @@
       ],
       "correcta": 1,
       "tip": "Habla un único personaje, a menudo revelando sus sentimientos.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-109",
@@ -1949,7 +1949,7 @@
       ],
       "correcta": 2,
       "tip": "Es un texto reflexivo y argumentativo en prosa.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-leng-110",
@@ -1963,7 +1963,7 @@
       ],
       "correcta": 2,
       "tip": "Es el mensaje central alrededor del cual gira todo el texto.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-101",
@@ -1977,7 +1977,7 @@
       ],
       "correcta": 2,
       "tip": "Los regímenes totalitarios la usaban para manipular a la opinión pública.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-102",
@@ -1991,7 +1991,7 @@
       ],
       "correcta": 3,
       "tip": "Los regímenes autoritarios prohibían libros, prensa y opiniones contrarias.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-103",
@@ -2005,7 +2005,7 @@
       ],
       "correcta": 0,
       "tip": "Muchas personas debieron huir de su país por la persecución nazi.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-104",
@@ -2019,7 +2019,7 @@
       ],
       "correcta": 0,
       "tip": "El diario de Ana Frank es un testimonio de lo vivido durante la guerra.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-105",
@@ -2033,7 +2033,7 @@
       ],
       "correcta": 1,
       "tip": "Sirve para que hechos como el Holocausto no se olviden ni se repitan.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-106",
@@ -2047,7 +2047,7 @@
       ],
       "correcta": 0,
       "tip": "Es el valor opuesto al prejuicio y la discriminación.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-107",
@@ -2061,7 +2061,7 @@
       ],
       "correcta": 2,
       "tip": "Es una idea previa, generalmente injusta, sobre alguien.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-108",
@@ -2075,7 +2075,7 @@
       ],
       "correcta": 0,
       "tip": "Los nazis discriminaban y perseguían a los judíos y otros grupos.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-109",
@@ -2089,7 +2089,7 @@
       ],
       "correcta": 3,
       "tip": "Detiene los combates, aunque no siempre pone fin definitivo a la guerra.",
-      "revisada": false
+      "revisada": true
     },
     {
       "id": "voc-lect-110",
@@ -2103,7 +2103,7 @@
       ],
       "correcta": 3,
       "tip": "Así comenzó la ocupación de varios países durante la Segunda Guerra Mundial.",
-      "revisada": false
+      "revisada": true
     }
   ]
 }
