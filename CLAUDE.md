@@ -2258,5 +2258,11 @@ el trabajo vive en `supabase/schema.sql` y `profesor.html`; el juego (`index.htm
   (severidad baja) el rate-limit de `kimun_canjear` (fuerza bruta del `ALU-` impracticable, ~4.300
   millones) y otros límites conocidos del modelo (XP/dominio los reporta el teléfono; skins/campañas
   por dispositivo).
-- **Pendiente (arrastre):** la foto semanal (aún sin aplicar); aprobación pedagógica de los 2
-  bancos de apoyo; los 4 correos a los profesores; trámites de lanzamiento (INAPI, vulpo.cl).
+- **Runbook de la foto semanal (`docs/foto-semanal-aplicar.md`):** se dejó el procedimiento
+  autocontenido para aplicarla y verificarla cuando haya datos reales (habilitar `pg_cron` →
+  re-pegar `schema.sql` → confirmar `select count(*) from cron.job where jobname='foto-semanal'` = 1
+  → sembrar la primera foto → confirmar el lunes siguiente). No se aplicó a propósito: hoy todo es
+  data de prueba (`CUR-BA04`, cuentas `profe-prueba*`).
+- **Pendiente (arrastre):** la foto semanal (runbook listo, sin aplicar por ser datos de prueba);
+  aprobación pedagógica de los 2 bancos de apoyo; trámites de lanzamiento (INAPI, vulpo.cl). Los 4
+  correos a los profesores quedaron **hechos**.
