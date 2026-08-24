@@ -188,6 +188,28 @@ Orden tentativo, sujeto a prioridad de "verlo funcionar y atractivo" primero:
   `scripts/registrar-tarea.ps1`.
 - El registro de ejecuciones queda en `scripts/auto-commit.log` (ignorado por git).
 
+### Foto semanal del desempeño (Sesión 36)
+
+Cada **lunes a las 04:05 UTC** —00:05 o 01:05 del lunes en Chile según el cambio
+de hora— un trabajo de `pg_cron` llamado `foto-semanal` ejecuta
+`kimun_foto_semanal()`, que copia los contadores de `dominio` y el XP de los
+alumnos inscritos a `dominio_semanal` y `xp_semanal`, sellados con el domingo que
+cierra (calculado con `America/Santiago`, no con la fecha UTC).
+
+**Por qué existe:** `dominio` solo guarda acumulados, sin historial. Sin estas
+fotos es imposible responder "¿cómo le fue al curso la semana pasada?". El
+historial **no se puede reconstruir hacia atrás**: cada semana sin foto se pierde
+para siempre.
+
+**Cuidados:**
+- Requiere la extensión `pg_cron` habilitada en Supabase.
+- La función **no** está en el bloque `grant execute`: ningún cliente debe poder
+  dispararla.
+- El parámetro `p_semana` solo cambia la etiqueta de la foto, **no** reconstruye
+  semanas pasadas.
+- Retención de 2 años, limpiada por el mismo trabajo.
+- Es la base del informe semanal por correo, que se diseñará aparte.
+
 ## Herramientas de desarrollo
 
 ### Parámetros de URL (ocultos)
