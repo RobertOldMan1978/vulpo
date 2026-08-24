@@ -572,6 +572,15 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
   "Colegio" todavía** (queda para cuando entre un segundo colegio): por ahora el SuperUsuario ve
   todos los cursos. En `profesor.html`, el encabezado muestra **usuario · rango · cursos**. Ver la
   Bitácora, Sesión 38.
+- **Endurecimiento de seguridad (Sesión 39):** tras una auditoría, (1) `desafios` y
+  `desafio_resultados` ahora tienen **RLS** (antes se leían/escribían directo con la clave
+  pública); (2) el **`codigo_acceso`** (credencial del alumno) solo lo entrega `kimun_prof_listar`
+  a Jefe/Super/Admin, y `kimun_prof_dominio_alumno` **recibe el id de perfil** (`pid`), no la
+  credencial, para que el profe de asignatura abra la ficha sin verla; (3) **`kimun_jugadores`**
+  (lista del duelo) quedó acotada al **mismo curso** + bots, para no exponer los nombres de todos
+  los menores; (4) `kimun_prof_refuerzo_estado` filtra por asignatura; (5) `kimun_prof_curso_asignar`
+  ahora crea la membresía de Jefe (reasignar de verdad otorga acceso) y `kimun_prof_profesores`
+  cuenta cursos desde `curso_profesores`. Ver la Bitácora, Sesión 39.
 - **Cuidado al editar el esquema:** `gen_random_uuid()` es nativa de PostgreSQL y no
   necesita nada especial, pero si alguna función vuelve a usar pgcrypto (`crypt`,
   `gen_salt`) necesita `set search_path = public, extensions`, porque en Supabase esa
@@ -2197,5 +2206,50 @@ Sesión 37, y sobre ella se diseñó e implementó una **jerarquía de cuatro ro
   - **Pendiente (Roberto):** aplicar el `schema.sql` nuevo y la prueba end-to-end (spec, Task 9):
     nombrar Super a una cuenta, confirmar que el Jefe no ve crear/borrar/nombrar-Jefe, y que el
     servidor rechaza a un Jefe intentando crear curso o nombrar Jefe.
+- **Pendiente (arrastre):** la foto semanal (aún sin aplicar); aprobación pedagógica de los 2
+  bancos de apoyo; los 4 correos a los profesores; trámites de lanzamiento (INAPI, vulpo.cl).
+
+### Sesión 39 (2026-08-24) — Auditoría de identidad y permisos (pre-v1.0) + 8 correcciones
+Camino a la v1.0, se hizo una **auditoría general de usuarios, profesores y superusuarios** con
+tres revisores en paralelo (escalada de privilegios · fuga de datos/credenciales · consistencia
+cliente-servidor), y cada hallazgo se **verificó a mano contra el código** antes de actuar. Todo
+el trabajo vive en `supabase/schema.sql` y `profesor.html`; el juego (`index.html`) no se tocó.
+- **Lo que la auditoría confirmó sólido:** no hay escalada de privilegios (ni una sesión anónima
+  llega a profesor, ni un profe de asignatura a Jefe, ni un Jefe a Super, ni un Super toca a un
+  Admin); la interfaz nunca es el único guardia (cada acción oculta en el panel la rechaza también
+  el servidor); RLS sin políticas de lectura en el resto de las tablas; último-Admin blindado.
+- **8 correcciones aplicadas** (5 de correctitud/seguridad + 3 decisiones de Roberto):
+  1. **RLS ausente (ALTO):** `desafios` y `desafio_resultados` eran las únicas 2 de 14 tablas sin
+     `enable row level security` → con la clave pública se leían/escribían directo (puntajes de
+     menores, forjar/borrar resultados). Se activó RLS en ambas.
+  2. **`kimun_prof_curso_asignar` roto:** escribía `cursos.profesor_id` (columna deprecada que
+     ningún portero lee) → reasignar un curso huérfano no daba acceso. Ahora crea la membresía de
+     Jefe; portero a `admin_colegio`.
+  3. **Conteo de cursos obsoleto:** `kimun_prof_profesores` contaba por `profesor_id` (0 para todo
+     Jefe nuevo) → ahora cuenta membresías en `curso_profesores`.
+  4. **`kimun_prof_refuerzo_estado`** no filtraba por asignatura → un profe de asignatura veía el
+     estado agregado de un refuerzo de otra materia. Corregido.
+  5. **Enumeración por diferencia de error:** `kimun_prof_alumno_quitar`/`_xp_fijar` respondían
+     distinto si el `ALU-` existía; unificados a `no_autorizado`, como las funciones con código de
+     curso.
+  6. **`kimun_jugadores` (decisión):** acotada al **mismo curso** (+bots), no a toda la plataforma
+     → deja de exponer los nombres de todos los menores a cualquier cliente con la clave pública;
+     se sigue pudiendo retar por código de amigo.
+  7. **Credencial del alumno (decisión):** el `codigo_acceso` solo se entrega a Jefe/Super/Admin;
+     el profe de asignatura recibe `null`. El panel identifica al alumno por su **id de perfil**
+     (`kimun_prof_listar` agrega `pid`; `kimun_prof_dominio_alumno` pasa a recibir el id, no la
+     credencial). Verificado en el navegador que la lista y la ficha por alumno funcionan en los
+     dos roles.
+  8. **Gestión de profesores (decisión):** botón de **revocar profesor / cancelar invitación** en
+     Administración (Admin a cualquiera salvo Admins y él mismo; Super solo a profes normales). La
+     reasignación de un curso huérfano ya la cubría el bloque "Equipo del curso".
+- **Verificado:** backend por revisión de código (no se corre SQL desde el asistente); panel en el
+  navegador con stub de `SB.rpc` (credencial oculta al profe de asignatura, ficha por id, reglas de
+  revocar). Sin errores de consola.
+- **Pendiente (Roberto):** re-aplicar `schema.sql` en Supabase (incluye el cambio de firma de
+  `kimun_prof_dominio_alumno` text→uuid, que los `drop` del archivo manejan). Quedan sin implementar
+  (severidad baja) el rate-limit de `kimun_canjear` (fuerza bruta del `ALU-` impracticable, ~4.300
+  millones) y otros límites conocidos del modelo (XP/dominio los reporta el teléfono; skins/campañas
+  por dispositivo).
 - **Pendiente (arrastre):** la foto semanal (aún sin aplicar); aprobación pedagógica de los 2
   bancos de apoyo; los 4 correos a los profesores; trámites de lanzamiento (INAPI, vulpo.cl).

@@ -338,7 +338,7 @@ async function pintarLista(){
   (data||[]).forEach(f=>{
     porCurso[f.curso_codigo]=porCurso[f.curso_codigo]||
       {nombre:f.curso, alumnos:[], gestiono:f.puede_gestionar, miRol:f.mi_rol, misAsig:f.mis_asignaturas};
-    if(f.codigo_acceso) porCurso[f.curso_codigo].alumnos.push(f);
+    if(f.pid) porCurso[f.curso_codigo].alumnos.push(f);   // pid: id de perfil (siempre presente); codigo_acceso puede venir null para un profe de asignatura
   });
   const cursos=Object.entries(porCurso);
   // Cursos en el encabezado: Admin/Super → "Todos los cursos"; Profesor → sus cursos con su rol.
@@ -374,12 +374,12 @@ async function pintarLista(){
                   <span>${esc(a.avatar)}</span><b class="alu-nom">${esc(a.alumno)}</b>
                   ${c.gestiono?`<button class="ico xp" data-cod="${esc(a.codigo_acceso)}" data-xp="${esc(a.xp)}"
                           title="Fijar XP" style="color:var(--gold)">✎</button>`:''}
-                  <button class="ico avalum" data-cod="${esc(a.codigo_acceso)}"
+                  <button class="ico avalum" data-pid="${esc(a.pid)}"
                           data-nom="${esc(a.alumno)}" title="Ver avance">📊</button>
                   ${c.gestiono?`<button class="ico ico-del del" data-cod="${esc(a.codigo_acceso)}"
                           title="Eliminar alumno">✕</button>`:''}
                 </div>
-                <div class="alu-sub"><code>${esc(a.codigo_acceso)}</code> · ${esc(a.xp)} XP</div>
+                <div class="alu-sub">${a.codigo_acceso?`<code>${esc(a.codigo_acceso)}</code> · `:''}${esc(a.xp)} XP</div>
               </div>`).join('')
              : '<p style="color:var(--dim);font-size:12px">Sin alumnos todavía.</p>'}
             ${c.gestiono?`<div style="margin-top:8px">
@@ -448,11 +448,18 @@ async function pintarLista(){
         const btnSuper = (YO.es_admin && p.registrado && !p.es_admin)
           ? `<button class="btn-chip super-toggle" data-correo="${esc(p.correo)}" data-on="${p.es_super?'0':'1'}">${p.es_super?'Quitar Super':'Hacer Super'}</button>`
           : '';
+        // Revocar / cancelar invitación. Nunca a mí mismo ni a un Admin desde la UI;
+        // un SuperUsuario no puede revocar a otro SuperUsuario (el servidor igual lo rechaza).
+        const esYo = p.correo && (p.correo.toLowerCase() === (YO.correo||'').toLowerCase());
+        const btnRevocar = (!esYo && !p.es_admin && (YO.es_admin || !p.es_super))
+          ? `<button class="ico ico-del prof-quitar" data-correo="${esc(p.correo)}" data-reg="${p.registrado?'1':''}"
+               title="${p.registrado?'Revocar profesor':'Cancelar invitación'}">✕</button>`
+          : '';
         return `<div style="display:flex;gap:8px;align-items:center;padding:4px 0;font-size:13px;flex-wrap:wrap">
            <span class="pro-nom">${esc(p.correo)}</span>
            <span style="color:var(--dim)">${esc(rango)}</span>
            <span style="color:var(--cyan)">${p.cursos} curso${p.cursos===1?'':'s'}</span>
-           ${btnSuper}
+           ${btnSuper}${btnRevocar}
          </div>`;
       }).join('');
       document.querySelectorAll('.super-toggle').forEach(b=>b.onclick=async ()=>{
@@ -461,6 +468,14 @@ async function pintarLista(){
                          :'¿Quitarle el rol de SuperUsuario?')) return;
         await accion(()=>SB.rpc('kimun_prof_super_fijar',{p_correo:b.dataset.correo, p_es_super:hacer}),
                      hacer?'Ahora es SuperUsuario':'Ya no es SuperUsuario');
+      });
+      document.querySelectorAll('.prof-quitar').forEach(b=>b.onclick=async ()=>{
+        const reg=b.dataset.reg==='1';
+        if(!confirm(reg
+          ? '¿Revocar a este profesor?\n\nPierde el acceso y sale de la lista blanca; sus cursos NO se borran (quedan sin dueño hasta reasignarlos). No afecta el desempeño de los alumnos.'
+          : '¿Cancelar la invitación de este correo? Ya no podrá registrarse.')) return;
+        await accion(()=>SB.rpc('kimun_prof_quitar',{p_correo:b.dataset.correo}),
+                     reg?'Profesor revocado':'Invitación cancelada');
       });
     }
   }
@@ -520,7 +535,7 @@ function conectarAcciones(){
   document.querySelectorAll('.avance').forEach(
     b=>b.onclick=()=>verAvance(b.dataset.cod, b.dataset.nom, b.dataset.gestiono==='1'));
   document.querySelectorAll('.avalum').forEach(
-    b=>b.onclick=()=>verAvanceAlumno(b.dataset.cod, b.dataset.nom));
+    b=>b.onclick=()=>verAvanceAlumno(b.dataset.pid, b.dataset.nom));
 }
 
 /* ===== Equipo del curso (jefe/admin) ===== */
@@ -963,12 +978,12 @@ async function verAvance(cursoCodigo, cursoNombre, gestiono){
   }catch(e){ aviso(errorPanel(e)); }
 }
 
-async function verAvanceAlumno(codigoAcceso, alumnoNombre){
+async function verAvanceAlumno(perfilId, alumnoNombre){
   aviso('Cargando…','var(--dim)');
   try{
-    const {data,error}=await SB.rpc('kimun_prof_dominio_alumno',{p_codigo_acceso:codigoAcceso});
+    const {data,error}=await SB.rpc('kimun_prof_dominio_alumno',{p_perfil:perfilId});
     if(error) throw error;
-    const titulo = alumnoNombre || codigoAcceso;
+    const titulo = alumnoNombre || 'Alumno';
     if(!data || !data.length){
       $('lista').innerHTML = cabeceraAvance(titulo, 'Avance por objetivo') + `
         <p style="color:var(--dim);font-size:13px">
