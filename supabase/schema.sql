@@ -877,6 +877,46 @@ declare mi uuid; cid uuid; existe boolean; begin
   on conflict (desafio_id, perfil_id) do nothing;
 end $$;
 
+-- ------------------------------------------------------------
+-- Foto semanal del desempeño (Sesión 36).
+--
+-- `dominio` guarda contadores acumulados y no tiene historial: por diseño no se
+-- registra cuándo se respondió cada cosa. Eso hace imposible responder "¿cómo le
+-- fue al curso la semana pasada?", porque no existe la foto anterior contra la
+-- cual comparar. Estas tablas guardan esa foto, tomada al cerrar cada domingo.
+--
+-- Se copia al mismo detalle que `dominio` (alumno × objetivo) a propósito: con el
+-- detalle se puede calcular la diferencia por alumno, por objetivo, por asignatura
+-- o por curso. Guardar algo ya agregado cerraría esas puertas.
+-- ------------------------------------------------------------
+create table if not exists public.dominio_semanal (
+  semana      date not null,          -- domingo que cierra, en hora de Chile
+  perfil_id   uuid not null references public.perfiles(id) on delete cascade,
+  oa          text not null,
+  respondidas int  not null,
+  correctas   int  not null,
+  resp_1      int  not null,
+  ok_1        int  not null,
+  primary key (semana, perfil_id, oa)
+);
+create index if not exists idx_dominio_semanal_perfil
+  on public.dominio_semanal(perfil_id, semana);
+
+-- El XP va aparte porque es uno por alumno, no uno por objetivo. Sirve para decir
+-- cuánto avanzó, además de qué tan bien responde.
+create table if not exists public.xp_semanal (
+  semana    date not null,
+  perfil_id uuid not null references public.perfiles(id) on delete cascade,
+  xp        int  not null,
+  primary key (semana, perfil_id)
+);
+
+-- Ningún cliente lee estas tablas: las escribe un trabajo programado y las leerá
+-- el informe semanal desde el servidor. Con RLS activo y sin políticas, PostgREST
+-- no expone nada a los alumnos ni a los profesores.
+alter table public.dominio_semanal enable row level security;
+alter table public.xp_semanal      enable row level security;
+
 grant execute on function
   public.kimun_perfil(text,text), public.kimun_buscar(text), public.kimun_jugadores(),
   public.kimun_crear_duelo(text,text,jsonb,int,int), public.kimun_pendientes(),
