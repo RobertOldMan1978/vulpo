@@ -600,12 +600,19 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
    relevantes: software y educación. Conviene hacerlo con un abogado de marcas.
    Trámite: https://www.inapi.cl/marcas
 
-2. **Contratar el dominio propio `vulpo.cl`.** Hoy el juego vive en
-   `robertoldman1978.github.io/vulpo/`. **GitHub Pages NO redirige las direcciones
-   antiguas** —comprobado: la anterior devuelve 404—, así que cualquier cambio de nombre
-   del repositorio rompe todos los enlaces que estén circulando. Un dominio propio elimina
-   esa dependencia y da una dirección estable para colegios y apoderados.
-   Trámite: https://www.nic.cl/
+2. ✅ **Dominio propio `vulpo.cl` — CONTRATADO Y CONECTADO (Sesión 40).** El juego se sirve
+   ahora en **`https://vulpo.cl`** (panel del profesor en `https://vulpo.cl/profesor.html`). DNS
+   en **Cloudflare** (2 nameservers en NIC → 4 registros A a las IP de GitHub Pages
+   `185.199.108–111.153` + CNAME `www` → `robertoldman1978.github.io`, todos "Solo DNS"). El
+   dominio en GitHub Pages se fija con el archivo **`CNAME`** (contenido `vulpo.cl`) en la raíz
+   del repo. La URL vieja `robertoldman1978.github.io/vulpo/` **redirige** a `vulpo.cl`, así que
+   los enlaces ya repartidos siguen sirviendo. **Cuidado documentado:** el progreso *local* del
+   juego (skins, campañas, monedas, "intro vista") vive en `localStorage`, que es **por origen**,
+   así que NO se traspasa de `github.io` a `vulpo.cl` (no se borra, solo no se ve desde el nuevo
+   dominio); el XP/identidad del alumno se recupera re-canjeando el código `ALU-`. Los profesores
+   solo re-inician sesión (sus datos están en Supabase). Pendiente menor: activar **"Enforce
+   HTTPS"** en GitHub → Settings → Pages cuando el certificado quede emitido; opcional, activar el
+   proxy naranja de Cloudflare (CDN) más adelante.
 
 ## Bitácora de sesiones
 
@@ -2281,3 +2288,24 @@ el trabajo vive en `supabase/schema.sql` y `profesor.html`; el juego (`index.htm
 - **Pendiente (arrastre):** la foto semanal (runbook listo, sin aplicar por ser datos de prueba);
   trámites de lanzamiento (INAPI, vulpo.cl). Los 4 correos a los profesores y la aprobación de los 2
   bancos de apoyo quedaron **hechos**.
+
+### Sesión 40 (2026-08-24) — Dominio propio `vulpo.cl`, tablero y aprobación de bancos
+Sesión de producto/infraestructura, sin tocar el motor del juego (`index.html` solo suma el
+archivo `CNAME`).
+- **Dominio `vulpo.cl` conectado (el trámite más importante para "verse serio").** Se contrató en
+  NIC.cl y se apuntó a GitHub Pages vía **Cloudflare** (DNS gratis + CDN): en NIC se pusieron los 2
+  nameservers de Cloudflare; en Cloudflare, 4 registros **A** del dominio raíz a las IP de GitHub
+  (`185.199.108–111.153`) + **CNAME** `www` → `robertoldman1978.github.io`, todos en **"Solo DNS"**.
+  La delegación del `.cl` recién propagó **al completar el pago** en NIC (antes daba NXDOMAIN). En el
+  repo se agregó el archivo **`CNAME`** (`vulpo.cl`) para que GitHub Pages sirva el sitio en el
+  dominio. Ahora el juego vive en **`https://vulpo.cl`** y el panel en `vulpo.cl/profesor.html`; la
+  URL vieja redirige. **Pendiente menor de Roberto:** activar "Enforce HTTPS" en Settings → Pages
+  cuando el certificado se emita. Detalle y cuidados (progreso local por origen) en "Trámites
+  pendientes" arriba.
+- **Tablero de avance mejorado** (`scripts/generar-tablero.py`): controles **Expandir/Contraer todo**
+  (Contraer todo deja **solo las asignaturas**), asignaturas y unidades **plegables**, y se agregaron
+  los 2 bancos de apoyo creándoles su `oa.json` (Vocabulario 150, Ana Frank 72); orden fijo
+  Historia · Matemática · Ciencias · Lenguaje · Vocabulario · libros.
+- **Aprobación pedagógica de los 2 bancos de apoyo — HECHA:** Roberto aprobó Vocabulario y Ana
+  Frank (`revisada:true` en todas). Contenido real del proyecto: **2.536/2.536 revisado**.
+- **Panel del profesor responsivo en computador** (ensancha a 880px; el juego sigue mobile-first).
