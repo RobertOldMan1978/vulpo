@@ -917,6 +917,49 @@ create table if not exists public.xp_semanal (
 alter table public.dominio_semanal enable row level security;
 alter table public.xp_semanal      enable row level security;
 
+-- Toma la foto de la semana. La llama pg_cron los lunes de madrugada, y se puede
+-- correr a mano para probar.
+--
+-- OJO con p_semana: solo cambia la ETIQUETA de la foto, no de dónde salen los
+-- datos. Siempre copia el `dominio` actual. No puede reconstruir una semana
+-- pasada —esa información no existe—, así que pasar una fecha vieja guardaría los
+-- números de hoy con una etiqueta equivocada. Sirve para corregir el sello si el
+-- trabajo falló y se corre un día tarde, no para inventar historia.
+create or replace function public.kimun_foto_semanal(p_semana date default null)
+returns int language plpgsql security definer set search_path=public as $$
+declare s date; n int; begin
+  -- El último domingo cerrado, en hora de Chile. Dos detalles a propósito:
+  --   * America/Santiago y no UTC: el trabajo corre pasada la medianoche chilena,
+  --     cuando en UTC ya es lunes.
+  --   * date_trunc('week') y no "ayer": "ayer" solo cae en domingo si se corre un
+  --     lunes. El cron siempre corre lunes, pero esta función también se ejecuta a
+  --     mano para probar, y cualquier otro día quedaría mal sellada. date_trunc
+  --     devuelve el lunes de la semana en curso (ISO), así que restarle un día da
+  --     siempre el domingo que cerró.
+  s := coalesce(p_semana,
+                date_trunc('week', timezone('America/Santiago', now()))::date - 1);
+
+  -- Solo alumnos inscritos en un curso. Los perfiles sueltos que crea cada
+  -- teléfono al abrir el juego no son de nadie: incluirlos inflaría la tabla sin
+  -- aportar. Mismo criterio que usa el panel del profesor.
+  insert into public.dominio_semanal(semana, perfil_id, oa,
+                                     respondidas, correctas, resp_1, ok_1)
+  select s, d.perfil_id, d.oa, d.respondidas, d.correctas, d.resp_1, d.ok_1
+  from public.dominio d
+  join public.perfiles p on p.id = d.perfil_id
+  where p.curso_id is not null and p.codigo_acceso is not null
+  on conflict (semana, perfil_id, oa) do nothing;
+  get diagnostics n = row_count;
+
+  insert into public.xp_semanal(semana, perfil_id, xp)
+  select s, p.id, p.xp
+  from public.perfiles p
+  where p.curso_id is not null and p.codigo_acceso is not null
+  on conflict (semana, perfil_id) do nothing;
+
+  return n;
+end $$;
+
 grant execute on function
   public.kimun_perfil(text,text), public.kimun_buscar(text), public.kimun_jugadores(),
   public.kimun_crear_duelo(text,text,jsonb,int,int), public.kimun_pendientes(),
