@@ -957,6 +957,11 @@ declare s date; n int; begin
   where p.curso_id is not null and p.codigo_acceso is not null
   on conflict (semana, perfil_id) do nothing;
 
+  -- Retención: dos años. Suficiente para comparar contra el año anterior, y acota
+  -- el crecimiento (cada curso aporta ~1.300 filas por semana, ~67.000 al año).
+  delete from public.dominio_semanal where semana < (s - interval '2 years')::date;
+  delete from public.xp_semanal      where semana < (s - interval '2 years')::date;
+
   return n;
 end $$;
 
