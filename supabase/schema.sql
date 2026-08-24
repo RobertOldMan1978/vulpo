@@ -965,6 +965,11 @@ declare s date; n int; begin
   return n;
 end $$;
 
+-- No se otorga a nadie: la llama pg_cron, que corre con permisos propios. Se revoca
+-- de public por lo mismo que kimun_prof_es_mio: ningún cliente —alumno o profesor—
+-- debe poder disparar el trabajo ni tocar el historial.
+revoke execute on function public.kimun_foto_semanal(date) from public;
+
 grant execute on function
   public.kimun_perfil(text,text), public.kimun_buscar(text), public.kimun_jugadores(),
   public.kimun_crear_duelo(text,text,jsonb,int,int), public.kimun_pendientes(),
@@ -1025,3 +1030,33 @@ update public.perfiles p
    set visto = d.ult
   from (select perfil_id, max(actualizado) ult from public.dominio group by perfil_id) d
  where d.perfil_id = p.id and p.visto is null;
+
+-- ------------------------------------------------------------
+-- Agenda de la foto semanal.
+--
+-- pg_cron corre en UTC. "Domingo 23:59" en Santiago no es una hora fija en UTC:
+-- es lunes 02:59 en verano (UTC−3) y lunes 03:59 en invierno (UTC−4). Por eso el
+-- trabajo se agenda el lunes 04:05 UTC, que cae 00:05 o 01:05 del lunes en Chile
+-- según la época: en ambos casos ya cerró el domingo y no hay nadie jugando.
+-- La fecha de la foto la calcula la función con America/Santiago, no el cron.
+do $$
+begin
+  -- Si pg_cron no esta habilitado, NO se agenda pero tampoco se rompe el pegado del
+  -- archivo. schema.sql se re-pega entero en cada migracion y una llamada suelta a
+  -- cron.schedule sobre una base sin la extension abortaria todo el script.
+  if not exists (select 1 from pg_extension where extname = 'pg_cron') then
+    raise notice 'pg_cron no esta habilitado: la foto semanal NO quedo agendada.';
+    return;
+  end if;
+
+  -- El unschedule previo hace idempotente el re-pegado: sin el, volver a ejecutar
+  -- schema.sql podria dejar el trabajo duplicado en versiones antiguas de pg_cron.
+  -- El exception lo tolera cuando el trabajo todavia no existe.
+  begin
+    perform cron.unschedule('foto-semanal');
+  exception when others then null;
+  end;
+
+  perform cron.schedule('foto-semanal', '5 4 * * 1',
+                        'select public.kimun_foto_semanal()');
+end $$;
