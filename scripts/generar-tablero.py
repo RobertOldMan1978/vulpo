@@ -75,11 +75,25 @@ def barra(pct, alto=10, color=None):
     )
 
 
+# Orden en que se muestran las asignaturas en el tablero. Las que no estén en la
+# lista (por ejemplo libros de lectura, presentes y futuros) van al final, ordenadas
+# alfabéticamente entre sí.
+ORDEN_ASIGNATURAS = [
+    "historia-8basico", "matematicas-8basico", "ciencias-8basico",
+    "lenguaje-8basico", "vocabulario",
+]
+
+
+def _clave_orden(carpeta):
+    n = carpeta.name
+    return (ORDEN_ASIGNATURAS.index(n) if n in ORDEN_ASIGNATURAS else len(ORDEN_ASIGNATURAS), n)
+
+
 def recolectar_asignaturas():
     asignaturas = []
     if not CONTENIDO.exists():
         return asignaturas
-    for carpeta in sorted(CONTENIDO.iterdir()):
+    for carpeta in sorted(CONTENIDO.iterdir(), key=_clave_orden):
         if carpeta.name.startswith("_"):   # plantilla y auxiliares: no son asignaturas
             continue
         oa_path = carpeta / "oa.json"
