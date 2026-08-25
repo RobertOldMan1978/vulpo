@@ -94,6 +94,11 @@ img.captura{width:100%;border-radius:var(--r);border:1px solid #ffffff26;display
 .mock .barra i:nth-child(3){background:#28c840}
 .mock img.captura{border:0;border-radius:0;box-shadow:none;width:100%}
 .mock.marco-captura .simulado{top:auto;bottom:10px}
+/* Marco de teléfono para la captura vertical del juego. */
+.tel{max-width:280px;margin:0 auto;padding:11px 11px 14px;background:#0f0b26;border:1px solid #ffffff26;
+  border-radius:34px;box-shadow:0 16px 40px rgba(0,0,0,.45)}
+.tel::before{content:"";display:block;width:44px;height:5px;border-radius:3px;background:#ffffff33;margin:1px auto 9px}
+.tel img.captura{border-radius:22px;border:0;box-shadow:none;width:100%}
 
 /* Sección de fondo claro: rompe el muro oscuro y hace resaltar las capturas del panel.
    El texto se invierte a oscuro (los .dim y .kicker tienen su variante clara). */
@@ -245,8 +250,9 @@ footer a{color:var(--cyan)}
       </p>
       <a class="btn" href="/juego" style="margin-top:20px">Ver una muestra</a>
     </div>
-    <img class="captura" src="assets/web/juego-mapa.png" alt="Mapa de una expedición de Historia dentro del juego, con etapas completadas y estrellas"
-         style="max-width:300px;margin:0 auto">
+    <div class="tel">
+      <img class="captura" src="assets/web/juego-mapa.png" alt="Mapa de una expedición de Historia dentro del juego, con etapas completadas y estrellas">
+    </div>
   </div>
   <div class="marco-captura mock" style="margin-top:28px">
     <div class="barra"><i></i><i></i><i></i></div>

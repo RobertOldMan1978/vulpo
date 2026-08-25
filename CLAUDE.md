@@ -2835,6 +2835,9 @@ Cada hallazgo de seguridad se **verificó a mano contra el código** antes de ac
   oscuro con las variantes `.clara .dim`/`.kicker`, verificadas legibles), y las **3 capturas del
   panel** (dominio, refuerzo, ranking) van dentro de un **marco de ventana de navegador** (`.mock`
   con barra + 3 puntos), con variante clara/oscura según la sección. Verificado sin desborde
-  (375/1280) ni errores. **Pendiente (menor):** un enlace de agenda real (Calendly/Google) para el
-  CTA "Coordinemos una demo" —hoy WhatsApp— y, opcional, un marco de teléfono para la captura del
-  juego.
+  (375/1280) ni errores.
+- **Rediseño de la landing — marco de teléfono (aplicado):** la captura vertical del juego
+  (`juego-mapa`) va dentro de un **marco de teléfono** (`.tel`: cuerpo redondeado + pantalla con
+  esquinas), para combinar con los marcos de navegador del panel. Con esto el rediseño queda
+  bastante completo. **Único pendiente (necesita algo de Roberto):** reemplazar el CTA "Coordinemos
+  una demo" de WhatsApp por un **enlace de agenda real** (Calendly/Google Calendar).
