@@ -1359,7 +1359,7 @@ const VENCIDA=!!VENCE && hoyISO()>VENCE;
    Llegada la fecha el cierre ocurre solo, sin desplegar nada ese día.
    OJO: esto es un bloqueo BLANDO. Los bancos de preguntas son archivos públicos que
    cualquiera puede descargar (ver el spec). Detiene al 99%, no a quien sepa mirar. */
-const FECHA_PUERTA='';                  // <-- Roberto la fija cuando el lado comercial esté listo
+const FECHA_PUERTA='2026-09-01';        // fijada por Roberto el 25/08/2026 (7 dias de aviso)
 const PUERTA=!!FECHA_PUERTA && hoyISO()>=FECHA_PUERTA;
 const AVISO_PUERTA=!!FECHA_PUERTA && !PUERTA;
 const DEMO_LIBRE='hist-cap1';           // lo único jugable sin código

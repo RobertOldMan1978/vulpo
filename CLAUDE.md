@@ -278,11 +278,16 @@ código `ALU-` para jugar más allá de una demo. **Todo lo gobierna una sola co
 
 | Valor | Qué pasa |
 |---|---|
-| `''` (vacío) | **Nada cambia**: el juego sigue abierto. **Es el valor publicado hoy.** |
+| `''` (vacío) | **Nada cambia**: el juego sigue abierto. |
 | Fecha futura | **Aviso**: todo abierto, pero en la pantalla de inicio se anuncia el cierre. |
 | Fecha llegada (hoy incluido) | **Puerta cerrada**: sin código solo se juega la demo. |
 
 Llegada la fecha el cierre **ocurre solo**, sin desplegar nada ese día.
+
+> **ESTADO ACTUAL: `FECHA_PUERTA='2026-09-01'`.** Roberto la fijó el 25/08/2026, con 7 días de
+> aviso. Desde entonces la pantalla de inicio muestra la banda anunciando el cierre, y **el 1 de
+> septiembre de 2026 VULPO deja de ser gratuito**: sin código `ALU-` solo se juega `hist-cap1`.
+> Para posponerlo o cancelarlo, editar esa constante en `juego/index.html`.
 
 - **La demo es exactamente `hist-cap1`** ("Los inicios de la modernidad"): 4 etapas + jefe, ~55
   preguntas. La constante es `DEMO_LIBRE`.
@@ -2633,3 +2638,31 @@ a mano; el asistente preparó el terreno y verificó el resultado.
   en el repositorio. Era el pendiente de fondo que se arrastraba.
 - **Recordatorio permanente:** cada vez que se toque `supabase/schema.sql` hay que **volver a
   aplicarlo a mano**. El repositorio y la base no se sincronizan solos.
+
+### Sesión 47 (2026-08-25) — Enforce HTTPS activado y la puerta programada para el 1 de septiembre
+Dos acciones cortas, las dos con consecuencias reales.
+- **Enforce HTTPS activado en GitHub Pages.** `gh` estaba instalado pero sin autenticar (los
+  `push` van por el gestor de credenciales de Windows, que es otra cosa); Roberto corrió
+  `gh auth login` y desde ahí se hizo por API (`PUT repos/.../pages -F https_enforced=true`).
+  **Antes de activarlo se comprobó que el certificado estuviera emitido** (Let's Encrypt para
+  `vulpo.cl`, válido hasta el 22/11/2026, estado `approved`): activarlo sin certificado dejaría
+  el sitio inaccesible.
+  - **Hacía falta de verdad:** antes `http://vulpo.cl` respondía **200 directo**, sirviendo el
+    sitio sin cifrar. Ahora las tres entradas (apáice, `www` y las rutas internas) devuelven 301
+    a `https://`, verificado siguiendo la redirección completa hasta el destino final.
+  - **De paso se arregló la URL vieja de `github.io`**, que redirigía a `http://vulpo.cl` y era
+    la puerta de atrás para quien tuviera un enlace antiguo.
+  - El certificado lo renueva GitHub solo; no hay que agendarlo.
+- **La puerta quedó programada: `FECHA_PUERTA='2026-09-01'`.** Roberto eligió la fecha con 7
+  días de aviso. Desde el despliegue se ve la banda en la pantalla de inicio y **el 1 de
+  septiembre VULPO deja de ser gratuito**.
+  - **Verificado en los tres escenarios:** hoy sin código (todo abierto, solo el aviso, con la
+    fecha en castellano); el día 1 sin código (solo `hist-cap1`, el resto con "🔒 Necesitas un
+    código", barra reducida a Mapa); y el día 1 **con** código (todo abierto, sin candados).
+  - **Probado el límite** poniendo la constante en la fecha de hoy: **cierra el día 1, no el 2**,
+    que es lo que promete el aviso. La comparación es `hoyISO() >= FECHA_PUERTA`.
+- **Riesgo asumido y dicho:** quien empiece a jugar el 31 de agosto se topa con el candado al día
+  siguiente sin haber visto el aviso el tiempo suficiente. Es inevitable con cualquier fecha.
+- **Lo que ahora urge y no es técnico:** desde el 1 de septiembre cada persona que termine la
+  demo ve el WhatsApp y el correo de Roberto. Hace falta tener decidido qué cobrarle a un
+  colegio antes de que llegue el primer mensaje.
