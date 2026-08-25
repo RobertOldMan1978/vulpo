@@ -48,10 +48,9 @@ para calificar**.
 
 ## Cómo probarlo
 
-El juego está publicado en **https://vulpo.cl** y el panel del profesor en
-**https://vulpo.cl/profesor.html**. También puedes abrir `index.html` en cualquier
-navegador moderno (para desarrollo local conviene un servidor: `python -m http.server`,
-porque el JavaScript no funciona bien desde `file://`).
+La página de presentación está en **https://vulpo.cl**, el juego en
+**https://vulpo.cl/juego** y el panel del profesor en **https://vulpo.cl/profesor.html**. Para desarrollo local conviene un servidor
+(`python -m http.server 8765`), porque el JavaScript no funciona bien desde `file://`.
 
 ## Estado
 

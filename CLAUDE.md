@@ -240,7 +240,7 @@ para siempre.
   Oculta la barra inferior (Tienda/Logros), el botón "Volver" de la campaña, el Desafío
   Extra y el Jefe Final. Pensado para pasarle a un grupo de alumnos un enlace de
   práctica acotado a las unidades que están viendo.
-  Ejemplo: `https://vulpo.cl/?solo=hist-cap2,hist-cap3,hist-cap4`.
+  Ejemplo: `https://vulpo.cl/juego/?solo=hist-cap2,hist-cap3,hist-cap4`.
   Se puede **combinar con `?qa=1`** para revisar contenido acotado (manda QA: marca las
   respuestas, pero se sigue sin guardar). Ids inválidos se ignoran; si no queda ninguno
   válido, cae al juego normal.
@@ -2396,7 +2396,7 @@ Roberto necesitaba pasarle a un grupo de alumnos un enlace para **probar** tres 
 Historia (`hist-cap2`, `hist-cap3`, `hist-cap4`) sin jugarse antes el capítulo 1 y sin que la
 prueba dejara rastro. `?qa=1` no servía porque además marca las respuestas. Todo el trabajo
 es en `index.html`; no se tocó `profesor.html`, `schema.sql` ni el contenido.
-- **Enlace nuevo:** `https://vulpo.cl/?solo=hist-cap2,hist-cap3,hist-cap4`. Parámetro
+- **Enlace nuevo:** `https://vulpo.cl/juego/?solo=hist-cap2,hist-cap3,hist-cap4`. Parámetro
   genérico (lista de ids de `EXPEDICIONES`), no un alias fijo, para que Roberto arme
   cualquier combinación sin pedir cambios de código. Documentado arriba, en "Parámetros de
   URL (ocultos)".
@@ -2546,3 +2546,64 @@ no quiere que un colegio que no contrató tenga a sus alumnos jugando gratis. To
   correctos solo**, sin tocar código.
 - **Diseño y plan:** `docs/superpowers/specs/2026-08-24-puerta-de-acceso-design.md` y
   `docs/superpowers/plans/2026-08-24-puerta-de-acceso.md`.
+
+### Sesión 45 (2026-08-24) — Página de presentación en la raíz y el juego a `/juego`
+Para poder activar la puerta de la Sesión 44 hacía falta que un colegio interesado tuviera dónde
+contratar. Esta sesión construye esa página. **Herramienta: HTML y CSS a mano**, sin framework ni
+compilación — el proyecto entero funciona con `git push` y meter `node_modules` complicaría algo
+que hoy no tiene fricción.
+- **El juego se movió a `juego/index.html`** (URL `vulpo.cl/juego/`) y la raíz quedó para la
+  página. El traslado rompía **118 rutas relativas** (91 a `assets/`, 27 a `contenido/`); se
+  resolvió con **una línea, `<base href="/">`**, que lleva su propio comentario de "NO borrar".
+  Los 3 `href="#"` del archivo ya tenían `preventDefault`, así que no se vieron afectados.
+- **El armador no necesitó cambios:** construye los enlaces con `location.origin+location.pathname`,
+  así que desde `/juego/` los genera correctos solo. Verificado.
+- **En `profesor.html`** el botón del armador pasó a `/juego/?armar=1`.
+- **Los enlaces de muestra ya repartidos quedaron rotos a propósito** (apuntan a la raíz). Roberto
+  lo aceptó: el de Historia no sobrevivía la semana. No se construyó ningún reenvío.
+- **La página** (`index.html` en la raíz) habla a colegio → profesor → familia, en ese orden, sin
+  precios, con **WhatsApp** como llamada a la acción y el correo discreto en el pie. Misma paleta y
+  tipografías del juego. Metadatos Open Graph para que el enlace se vea como tarjeta en WhatsApp.
+- **Capturas reales, ninguna maqueta.** Como una captura headless no sabe hacer clics, se usó un
+  archivo temporal (`_cap.html`, borrado después) que sembraba una partida de demostración y
+  conducía el juego dentro de un marco del mismo origen; luego Chrome headless capturó a disco.
+  Quedaron en `assets/web/`: mapa de expedición, pantalla de pregunta y la imagen Open Graph.
+- **Dos fallos encontrados y corregidos al verificar:**
+  1. **`.seccion{padding:56px 0}` anulaba el `padding:0 20px` de `.envoltura`**, y en teléfono
+     todo el contenido quedaba pegado a los bordes. Se acotó a `padding-top/bottom`.
+  2. Antes de eso se había agregado una media query para un desborde que **no existía**: la
+     captura headless a 375px dibuja la página más ancha y la recorta, lo que simulaba texto
+     cortado. Medido en un navegador real no había desborde; la media query se retiró.
+     **Lección: para verificar responsive, medir el DOM en un navegador real, no fiarse de una
+     captura headless.**
+- **Verificado:** `/` muestra la página y `/juego/` el juego, sin 404 nuevos; los cuatro parámetros
+  ocultos funcionan desde la ruta nueva; el panel y el tablero siguen abriendo; sin desborde
+  horizontal a 375px ni a 1280px; imágenes con texto alternativo; consola limpia.
+- **Capturas del panel: resueltas.** No se podían tomar desde el entorno de desarrollo
+  (`profesor.html` exige sesión y simular sus llamadas encadenadas habría dado una pantalla a
+  medio dibujar), así que **las tomó Roberto** desde su cuenta con el curso de demostración
+  "8A Prueba". Quedaron tres: `panel-dominio.png`, `panel-refuerzo.png` y `panel-ranking.png`.
+  - **Todas llevan una etiqueta "DATOS SIMULADOS" superpuesta**, no un pie de foto: así la
+    advertencia viaja con la imagen si alguien la recorta o la reenvía suelta por WhatsApp.
+    Además la sección lo dice en texto.
+  - **A la del mapa de dominio se le recortó la franja de participación** ("0 de 26 jugaron esta
+    semana"), por decisión de Roberto: en una página de venta un colegio podría leerlo como que
+    nadie usa el producto, y esa franja no aporta al argumento de esa sección. Se cortaron 43px y
+    se pegaron las dos mitades, sin dejar hueco.
+  - **Reparto:** dominio y refuerzo en "Para el profesor"; el **ranking en "Para la familia"**,
+    porque ahí el texto habla de competir con los compañeros y subir puestos.
+- **Marca oficial incorporada.** Roberto entregó el logotipo de VULPO (zorro con capucha morada).
+  De tres versiones se eligió la única con **marca denominativa Y fondo transparente** (verificado
+  leyendo el canal alfa; otra tenía fondo negro sólido, que habría dejado un recuadro sobre el
+  violeta). Quedó en la portada de la página, el ícono de pestaña y la imagen Open Graph. Como el
+  logotipo ya trae la palabra "Vulpo", **se quitó el título de texto** que iba debajo: la imagen es
+  el `h1`, con el nombre en su `alt`.
+- **La pantalla inicial del juego** (`scr-rol`) usa ahora la versión **sin marca denominativa**
+  (`assets/vulpo-mascota.png`), porque esa pantalla ya tiene su propio título "VULPO" debajo.
+  Hubo que cambiar su estilo: `.logo .badge-img` recortaba en círculo con borde dorado y le
+  cortaba la capucha; ahora va suelta, con sombra y el mismo flotar. **Las expresiones de Vulpi
+  (75 imágenes: feliz, triste, skins, medallas) se dejaron como estaban**, por decisión de
+  Roberto — rehacerlas es un trabajo de diseño aparte.
+- **`FECHA_PUERTA` sigue vacía.** Esta página no activa la puerta.
+- **Diseño y plan:** `docs/superpowers/specs/2026-08-24-pagina-presentacion-design.md` y
+  `docs/superpowers/plans/2026-08-24-pagina-presentacion.md`.

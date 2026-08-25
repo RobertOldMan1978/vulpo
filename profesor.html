@@ -450,7 +450,7 @@ async function pintarLista(){
     // "Limpiar perfiles de prueba" y el armador son de plataforma: solo el Admin los ve.
     if(YO.es_admin){
       $('btnLimpiar').onclick=limpiarPruebas;
-      $('btnArmar').onclick=()=>{ window.location.href='index.html?armar=1'; };
+      $('btnArmar').onclick=()=>{ window.location.href='/juego/?armar=1'; };
     }
     const {data:profes,error:errProfes}=await SB.rpc('kimun_prof_profesores');
     if(errProfes){
