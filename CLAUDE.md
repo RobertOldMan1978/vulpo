@@ -2741,3 +2741,36 @@ rehizo el material para que calce con la realidad de agosto.
   vivían en la memoria del asistente y no viajan al cambiar de directorio de trabajo.
 - **Pendiente que bloquea cobrar:** con qué se factura (SpA por Empresa en un Día). Si un colegio
   acepta y no hay cómo emitir factura, la venta se cae en el último paso.
+
+### Sesión 49 (2026-08-25) — Ida y vuelta entre la página comercial y el juego
+Sesión corta de navegación. Hasta hoy la página de presentación y el juego eran **calles de un
+solo sentido**: desde `vulpo.cl` se entraba a `/juego`, pero desde el juego no había forma de
+volver, y el panel del profesor no se anunciaba en ninguna parte. Tres enlaces, 8 líneas, sin
+CSS nuevo (se reusaron los estilos que ya existían) y sin tocar nada del motor.
+- **Enlace al panel en el pie de la página comercial** (`index.html`): `vulpochile.app@gmail.com ·
+  Panel del profesor` → `/profesor.html`. Va en el pie **a propósito**: el panel es una
+  herramienta para quien ya tiene cuenta, no un argumento de venta; arriba competiría con
+  "Probar la demo" y el WhatsApp, y mandaría a un visitante nuevo a una pantalla de ingreso que
+  no puede usar. El pie es donde uno busca "iniciar sesión".
+- **Salida del juego hacia `vulpo.cl`** (`juego/index.html`), en **dos** pantallas:
+  1. **Inicio (`scr-rol`)**, bajo Créditos. Basta con esa: todo el juego desemboca ahí
+     (`btnExpBack` → `scr-rol`).
+  2. **Fin de la demo (`scr-demo-fin`)**, que **no tenía ningún botón de retorno**. Era un
+     callejón sin salida, y es donde cae un apoderado justo al terminar la demo — el momento
+     comercialmente más importante. Ese era el hallazgo de la sesión.
+- **Decisión registrada:** la salida **también se ve en modo prueba** (`?solo=`, `?m=`). En la
+  Sesión 41 se ocultó el "Volver" de la campaña porque era una fuga hacia el juego completo;
+  este enlace no lo es (lleva a la página de venta), y sin él un alumno con enlace de muestra
+  queda igual de atrapado. Revertirlo es una línea si alguna vez estorba.
+- **Verificado en el navegador**, no solo en el archivo: el juego arranca bien con el cambio (el
+  JS llena la banda de la puerta con "Desde el 1 de septiembre de 2026…", o sea que no se rompió
+  el arranque); capturas de las dos pantallas con el enlace visible; y **el clic navega de
+  verdad** — se condujo el juego desde un marco del mismo origen (la técnica del `_cap.html` de
+  la Sesión 45, con archivo temporal borrado después) y tras el clic la captura muestra la
+  página comercial. El servidor local confirma `/`, `/profesor.html` y `/juego/` en **200**.
+- **Recordatorio de método reconfirmado (Sesión 45):** las capturas de Chrome headless salen
+  **recortadas a la derecha** y eso NO es desborde. Se comprobó capturando `vulpo.cl/juego/` en
+  producción —sin el cambio— y sale idéntico de recortado. Para responsive, medir el DOM.
+- **Nota para capturar el juego en headless:** la intro en video tapa la pantalla de inicio (el
+  autoplay bloqueado deja "▶ Toca para comenzar"). Se salta con
+  `--force-prefers-reduced-motion=reduce`, porque la intro respeta esa preferencia.
