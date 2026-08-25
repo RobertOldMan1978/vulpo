@@ -4,72 +4,89 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VULPO · Aprende jugando — Plataforma educativa para 8° básico</title>
-<meta name="description" content="Juego educativo alineado al currículum chileno de 8° básico. Cuatro asignaturas, 2.536 preguntas revisadas, y un panel que le muestra al profesor qué le está costando a su curso.">
+<meta name="description" content="Plataforma educativa alineada al currículum chileno de 8° básico. Los alumnos repasan jugando y el profesor ve, objetivo por objetivo, qué le está costando a su curso.">
 <link rel="icon" type="image/png" href="assets/web/vulpo-logo-320.png">
 <link rel="apple-touch-icon" href="assets/web/vulpo-logo-320.png">
 <meta name="theme-color" content="#1e1747">
 <meta property="og:type" content="website">
 <meta property="og:title" content="VULPO · Aprende jugando">
-<meta property="og:description" content="Juego educativo alineado al currículum chileno de 8° básico, con panel para el profesor.">
+<meta property="og:description" content="Plataforma educativa alineada al currículum chileno de 8° básico, con panel para el profesor.">
 <meta property="og:image" content="https://vulpo.cl/assets/web/og.png">
 <meta property="og:url" content="https://vulpo.cl/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+<!-- Inter = registro formal para el sitio comercial (el juego conserva Nunito). Titan One
+     queda reservada solo para el nombre de marca y los números de estadística. -->
+<link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg1:#140f33; --bg2:#2a1b5e; --panel:#1e1747; --panel2:#271f56;
   --gold:#ffc93c; --cyan:#4dd8ff; --green:#3ee089; --pink:#ff4d8d; --violet:#8f6bff;
-  --txt:#f3f0ff; --dim:#a89fd6; --r:18px;
+  --txt:#f3f0ff; --dim:#a89fd6; --r:16px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Nunito',sans-serif;color:var(--txt);
+body{font-family:'Inter',system-ui,sans-serif;color:var(--txt);font-weight:400;
   background:linear-gradient(160deg,var(--bg1),var(--bg2));background-attachment:fixed;
-  min-height:100vh;line-height:1.6;overflow-x:hidden}
-/* Fondo de estrellas, igual que el juego. z-index:-1 para que quede DETRÁS del
-   contenido sin tener que ponerle z-index a cada sección; la capa es fija (no
-   scrollea) y decorativa (pointer-events:none, aria-hidden). */
+  min-height:100vh;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+/* Fondo de estrellas, igual que el juego. z-index:-1 para que quede DETRÁS del contenido. */
 .stars{position:fixed;inset:0;pointer-events:none;z-index:-1}
 .stars span{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.5;animation:tw 3s infinite alternate}
 @keyframes tw{from{opacity:.15}to{opacity:.7}}
-/* estrella fugaz ocasional, con cola violeta que cae en diagonal */
 .shoot{position:fixed;z-index:-1;width:3px;height:3px;border-radius:50%;pointer-events:none;
   background:#fff;box-shadow:0 0 6px 2px #fff,0 0 14px 5px #8f6bff88;animation:shootFall 1.3s ease-in forwards}
 .shoot::after{content:"";position:absolute;left:1px;top:1px;width:78px;height:2px;transform-origin:left center;
   transform:rotate(-48deg);border-radius:2px;background:linear-gradient(90deg,#ffffffdd,#8f6bff33,transparent)}
 @keyframes shootFall{0%{opacity:0;transform:translate(0,0)}12%{opacity:1}100%{opacity:0;transform:translate(var(--sx),var(--sy))}}
-/* Reducir movimiento: estrellas quietas y sin fugaces. */
 @media (prefers-reduced-motion: reduce){.stars span{animation:none;opacity:.45}.shoot{display:none}}
-.envoltura{max-width:1080px;margin:0 auto;padding:0 20px}
-h1,h2{font-family:'Titan One',cursive;font-weight:400;line-height:1.15;letter-spacing:.5px}
-h1{font-size:clamp(34px,7vw,58px);color:var(--gold)}
-h2{font-size:clamp(23px,4vw,36px);color:var(--cyan);margin-bottom:14px}
-p{font-weight:600}
-/* Solo vertical: 'padding:56px 0' anulaba el padding lateral de .envoltura y el contenido
-   quedaba pegado a los bordes de la pantalla en teléfono. */
-.seccion{padding-top:56px;padding-bottom:56px;border-top:1px solid #ffffff14}
-.tarjeta{background:var(--panel);border:2px solid #ffffff14;border-radius:var(--r);padding:22px}
-.rejilla{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.btn{display:inline-block;text-decoration:none;padding:15px 28px;border-radius:16px;
-  font-family:'Titan One',cursive;font-size:18px;color:#2a1400;
-  background:linear-gradient(180deg,var(--gold),#ff9d3c);box-shadow:0 6px 0 #b56a10;
-  transition:transform .08s, box-shadow .08s}
-.btn.wa{background:linear-gradient(180deg,var(--green),#1fa862);color:#04231a;box-shadow:0 6px 0 #14663c}
-.btn:active{transform:translateY(4px);box-shadow:none}
-img.captura{width:100%;border-radius:var(--r);border:2px solid #ffffff22;display:block}
-/* Las capturas del panel muestran un curso de demostración. La etiqueta va SOBRE la imagen
-   para que viaje con ella si alguien la recorta o la reenvía suelta. */
+
+.envoltura{max-width:1080px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:'Inter',system-ui,sans-serif;line-height:1.18;letter-spacing:-.015em}
+h1{font-size:clamp(30px,5.6vw,50px);font-weight:800;color:var(--txt)}
+h2{font-size:clamp(22px,3.4vw,32px);font-weight:800;color:var(--txt);margin-bottom:14px}
+h3{font-size:18px;font-weight:700}
+p{font-weight:400}
+.dim{color:var(--dim)}
+/* Etiqueta pequeña sobre cada sección (kicker), en dorado apagado: da jerarquía sin gritar. */
+.kicker{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--gold);opacity:.9;margin-bottom:10px}
+.seccion{padding-top:60px;padding-bottom:60px;border-top:1px solid #ffffff12}
+
+/* Franja de legitimidad bajo el hero */
+.franja{background:#ffffff08;border-top:1px solid #ffffff12;border-bottom:1px solid #ffffff12}
+.franja .in{display:flex;flex-wrap:wrap;gap:12px 30px;justify-content:center;align-items:center;
+  padding:16px 22px;max-width:1080px;margin:0 auto}
+.franja span{font-size:13px;font-weight:500;letter-spacing:.02em;color:var(--dim)}
+.franja b{color:var(--txt);font-weight:700}
+
+.tarjeta{background:var(--panel2);border:1px solid #ffffff1a;border-radius:var(--r);padding:22px;
+  transition:border-color .15s, transform .15s}
+.tarjeta:hover{border-color:#ffffff33;transform:translateY(-2px)}
+.rejilla{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;padding:14px 26px;border-radius:12px;
+  font-family:'Inter',sans-serif;font-weight:700;font-size:16px;color:#2a1400;
+  background:linear-gradient(180deg,var(--gold),#ff9d3c);box-shadow:0 4px 16px rgba(0,0,0,.35);
+  transition:transform .12s, box-shadow .12s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(0,0,0,.42)}
+.btn:active{transform:translateY(0)}
+.btn.wa{background:linear-gradient(180deg,var(--green),#1fa862);color:#04231a}
+.btn.sec{background:transparent;color:var(--txt);border:1.5px solid #ffffff30;box-shadow:none}
+.btn.sec:hover{border-color:var(--cyan);transform:translateY(-1px)}
+a{color:var(--cyan)}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:12px}
+
+img.captura{width:100%;border-radius:var(--r);border:1px solid #ffffff26;display:block;box-shadow:0 10px 30px rgba(0,0,0,.35)}
 .marco-captura{position:relative}
 .marco-captura .simulado{position:absolute;top:10px;right:10px;
   background:#000000b3;color:var(--gold);border:1px solid var(--gold);border-radius:999px;
-  padding:5px 12px;font-size:12px;font-weight:900;letter-spacing:.02em}
-.pie-captura{color:var(--dim);font-size:12px;font-weight:800;margin-top:8px;text-align:center}
+  padding:5px 12px;font-size:12px;font-weight:700;letter-spacing:.02em}
+.pie-captura{color:var(--dim);font-size:13px;font-weight:500;margin-top:8px;text-align:center}
 .dato{font-family:'Titan One',cursive;font-size:34px;color:var(--gold);display:block;line-height:1.1}
 ul{list-style:none}
 li{position:relative;padding-left:22px}
 li::before{content:"\2726";position:absolute;left:0;color:var(--gold)}
-footer{padding:34px 0;text-align:center;color:var(--dim);font-size:13px;font-weight:800}
+footer{padding:36px 0;text-align:center;color:var(--dim);font-size:13px;font-weight:500}
 footer a{color:var(--cyan)}
 @media (prefers-reduced-motion: reduce){*{transition:none!important}}
 </style>
@@ -78,58 +95,71 @@ footer a{color:var(--cyan)}
 
 <div class="stars" id="stars" aria-hidden="true"></div>
 
-<header class="envoltura" style="padding-top:52px;padding-bottom:30px;text-align:center">
-  <!-- El logotipo ya trae la palabra "Vulpo": repetirla en texto sería redundante, así que
-       la imagen ES el título. El h1 se conserva por semántica y el alt lleva el nombre. -->
-  <h1 style="margin:0"><img src="assets/web/vulpo-logo.png" alt="VULPO"
-      style="width:min(340px,72vw);height:auto;display:block;margin:0 auto"></h1>
-  <p style="font-size:clamp(17px,2.6vw,22px);color:var(--txt);max-width:640px;margin:12px auto 0">
-    Un juego que enseña el currículum chileno de 8° básico, y que le dice al profesor
-    exactamente qué le está costando a su curso.
+<header class="envoltura" style="padding-top:48px;padding-bottom:26px;text-align:center">
+  <img src="assets/web/vulpo-logo.png" alt="VULPO"
+       style="width:min(190px,46vw);height:auto;display:block;margin:0 auto 22px">
+  <h1 style="max-width:820px;margin:0 auto">Tus alumnos repasan jugando.<br>Tú ves exactamente qué les cuesta.</h1>
+  <p style="font-size:clamp(16px,2.2vw,20px);color:var(--dim);max-width:680px;margin:18px auto 0">
+    Plataforma educativa alineada al currículum chileno de 8° básico: cuatro asignaturas,
+    2.536 preguntas revisadas, y un panel que convierte lo que juegan tus alumnos en un
+    <b style="color:var(--txt)">mapa de aprendizaje objetivo por objetivo</b>.
   </p>
-  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px">
-    <a class="btn" href="/juego">🎮 Probar la demo</a>
-    <a class="btn wa" href="https://wa.me/56976684967?text=Hola%2C%20vi%20VULPO%20y%20quiero%20saber%20m%C3%A1s%20para%20mi%20colegio." target="_blank" rel="noopener">💬 Hablemos por WhatsApp</a>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px">
+    <a class="btn" href="/juego">Ver una muestra</a>
+    <a class="btn wa" href="https://wa.me/56976684967?text=Hola%2C%20vi%20VULPO%20y%20quiero%20saber%20m%C3%A1s%20para%20mi%20colegio." target="_blank" rel="noopener">Conversemos por WhatsApp</a>
   </div>
 </header>
 
+<!-- Franja de legitimidad: las señales que un director busca en los primeros segundos. -->
+<div class="franja">
+  <div class="in">
+    <span><b>Alineado a las Bases Curriculares</b> · MINEDUC</span>
+    <span><b>2.536 preguntas</b> revisadas una a una</span>
+    <span><b>Prueba sin costo</b> para tu colegio</span>
+    <span><b>Sin instalar nada</b></span>
+  </div>
+</div>
+
 <section class="seccion envoltura">
-  <h2>Para el colegio</h2>
-  <p style="max-width:720px">
-    VULPO no es un juego suelto: es contenido alineado a las Bases Curriculares
-    más un panel que convierte lo que juegan los alumnos en información útil para el profesor.
+  <span class="kicker">Para el colegio</span>
+  <h2>No es un juego suelto. Es evidencia de aprendizaje.</h2>
+  <p style="max-width:740px;color:var(--dim)">
+    Tu curso repasa el año jugando <b style="color:var(--txt)">y tú sabes, objetivo por objetivo,
+    qué reforzar antes de la próxima evaluación</b> — sin corregir una sola prueba. Contenido
+    alineado a las Bases Curriculares, más un panel que convierte el juego en información útil.
   </p>
   <div class="rejilla" style="margin-top:26px">
     <div class="tarjeta"><span class="dato">4</span>
-      <b>asignaturas</b>
-      <p style="color:var(--dim);font-size:14px;margin-top:6px">Historia, Matemática, Ciencias y Lenguaje, con los Objetivos de Aprendizaje del año completo.</p></div>
+      <h3>asignaturas</h3>
+      <p class="dim" style="font-size:14px;margin-top:6px">Historia, Matemática, Ciencias y Lenguaje, con los Objetivos de Aprendizaje del año completo.</p></div>
     <div class="tarjeta"><span class="dato">2.536</span>
-      <b>preguntas revisadas</b>
-      <p style="color:var(--dim);font-size:14px;margin-top:6px">Originales, alineadas al currículum de 8° básico, todas aprobadas una a una.</p></div>
-    <div class="tarjeta"><span class="dato">1</span>
-      <b>panel para el profesor</b>
-      <p style="color:var(--dim);font-size:14px;margin-top:6px">Ranking real por curso, participación semanal y mapa de dominio por objetivo de aprendizaje.</p></div>
+      <h3>preguntas revisadas</h3>
+      <p class="dim" style="font-size:14px;margin-top:6px">Originales, alineadas al currículum de 8° básico, todas aprobadas una a una.</p></div>
+    <div class="tarjeta"><span class="dato">69</span>
+      <h3>objetivos medidos</h3>
+      <p class="dim" style="font-size:14px;margin-top:6px">El panel mide el dominio de cada Objetivo de Aprendizaje del curso, no solo cuánto juegan.</p></div>
   </div>
-  <img class="captura" src="assets/web/juego-quiz.png" alt="Una pregunta de Historia dentro del juego, con sus cuatro alternativas" style="margin-top:26px;max-width:400px">
   <div class="tarjeta" style="margin-top:22px">
-    <b style="color:var(--cyan)">Cómo se implementa</b>
-    <p style="color:var(--dim);font-size:15px;margin-top:8px">
+    <h3 style="color:var(--cyan)">Cómo se implementa</h3>
+    <p class="dim" style="font-size:15px;margin-top:8px">
       El colegio crea sus cursos, el profesor inscribe a sus alumnos y cada uno recibe un código
-      personal. Los alumnos entran desde su teléfono. No hay que instalar nada.
+      personal. Los alumnos juegan <b style="color:var(--txt)">desde casa, en su teléfono</b> —como
+      una tarea que sí quieren hacer— y el profesor llega a clase sabiendo qué reforzar. No requiere
+      cambiar tu regla sobre el celular en la sala, y no hay que instalar nada.
     </p>
   </div>
 </section>
 
 <section class="seccion envoltura">
-  <h2>Para el profesor</h2>
-  <p style="max-width:720px">
+  <span class="kicker">Para el profesor</span>
+  <h2>El panel te dice qué reforzar, y con quién.</h2>
+  <p style="max-width:740px;color:var(--dim)">
     El mapa de dominio ordena los objetivos de aprendizaje de peor a mejor logro, y dice
     quiénes necesitan apoyo en cada uno. Es una brújula para decidir qué reforzar en clase:
-    <b>no sirve para calificar, y no está pensado para eso.</b>
+    <b style="color:var(--txt)">no sirve para calificar, y no está pensado para eso.</b>
   </p>
-  <p style="color:var(--dim);font-size:13px;margin-top:10px">
-    Las imágenes de esta sección corresponden a un <b>curso de demostración</b>:
-    los nombres y los porcentajes son simulados.
+  <p class="dim" style="font-size:13px;margin-top:10px">
+    Las imágenes de esta sección corresponden a un <b>curso de demostración</b>: los nombres y los porcentajes son simulados.
   </p>
   <div class="marco-captura" style="margin-top:20px">
     <img class="captura" src="assets/web/panel-dominio.png"
@@ -144,24 +174,34 @@ footer a{color:var(--cyan)}
   </div>
   <p class="pie-captura">El panel propone qué reforzar y lo lanza al curso en un clic.</p>
   <div class="rejilla" style="margin-top:26px">
-    <div class="tarjeta"><b>Desafíos de refuerzo</b>
-      <p style="color:var(--dim);font-size:14px;margin-top:6px">El profesor lanza un desafío sobre el objetivo que está flojo y le llega a todo el curso.</p></div>
-    <div class="tarjeta"><b>Participación</b>
-      <p style="color:var(--dim);font-size:14px;margin-top:6px">Quién jugó esta semana y quién no ha entrado nunca.</p></div>
-    <div class="tarjeta"><b>Ranking real</b>
-      <p style="color:var(--dim);font-size:14px;margin-top:6px">Los compañeros compiten con datos de verdad, por curso y por asignatura.</p></div>
+    <div class="tarjeta"><h3>Desafíos de refuerzo</h3>
+      <p class="dim" style="font-size:14px;margin-top:6px">El profesor lanza un desafío sobre el objetivo que está flojo y le llega a todo el curso.</p></div>
+    <div class="tarjeta"><h3>Participación</h3>
+      <p class="dim" style="font-size:14px;margin-top:6px">Quién jugó esta semana y quién no ha entrado nunca.</p></div>
+    <div class="tarjeta"><h3>Ranking real</h3>
+      <p class="dim" style="font-size:14px;margin-top:6px">Los compañeros compiten con datos de verdad, por curso y por asignatura.</p></div>
   </div>
 </section>
 
 <section class="seccion envoltura">
-  <h2>Para la familia</h2>
+  <span class="kicker">Privacidad</span>
+  <h2>Cuidamos los datos de tus alumnos.</h2>
+  <p style="max-width:740px;color:var(--dim)">
+    El alumno <b style="color:var(--txt)">no entrega correo, RUT ni datos personales</b>: entra con
+    un código anónimo que le da el colegio. Pedimos lo mínimo, no usamos sus datos para otra cosa,
+    y la información del curso es del colegio. Sin publicidad y sin rastreadores de terceros.
+  </p>
+</section>
+
+<section class="seccion envoltura">
+  <span class="kicker">Para la familia</span>
   <div class="rejilla" style="align-items:center">
     <div>
       <p>
         VULPO nació porque un papá chileno quiso ayudar a su hijo de 8° básico a estudiar
-        <b>con los medios que ellos ya usan</b>: el teléfono.
+        <b>con los medios que ellos ya usan</b>: el teléfono, en casa.
       </p>
-      <ul style="margin:16px 0 0 20px;font-weight:600">
+      <ul style="margin:16px 0 0 20px;font-weight:400">
         <li style="margin-bottom:10px"><b style="color:var(--gold)">Se hace suyo.</b>
           Gana monedas jugando y personaliza a su Vulpi con skins. Ningún zorro es igual a otro.</li>
         <li style="margin-bottom:10px"><b style="color:var(--gold)">Le pica.</b>
@@ -173,12 +213,13 @@ footer a{color:var(--cyan)}
         Y mientras tanto está repasando los objetivos de aprendizaje del año.
         <b style="color:var(--cyan)">Sin darse cuenta, está aprendiendo.</b>
       </p>
-      <p style="margin-top:12px;color:var(--dim);font-size:15px">
-        Se juega desde el teléfono, en vertical, y cada capítulo toma unos minutos.
+      <p class="dim" style="margin-top:12px;font-size:15px">
+        Se juega desde el teléfono en casa, en vertical, y cada capítulo toma unos minutos.
       </p>
-      <a class="btn" href="/juego" style="margin-top:20px">🎮 Probar la demo</a>
+      <a class="btn" href="/juego" style="margin-top:20px">Ver una muestra</a>
     </div>
-    <img class="captura" src="assets/web/juego-mapa.png" alt="Mapa de una expedición de Historia dentro del juego, con etapas completadas y estrellas">
+    <img class="captura" src="assets/web/juego-mapa.png" alt="Mapa de una expedición de Historia dentro del juego, con etapas completadas y estrellas"
+         style="max-width:300px;margin:0 auto">
   </div>
   <div class="marco-captura" style="margin-top:28px">
     <img class="captura" src="assets/web/panel-ranking.png"
@@ -186,18 +227,30 @@ footer a{color:var(--cyan)}
     <span class="simulado">DATOS SIMULADOS</span>
   </div>
   <p class="pie-captura">El ranking de su propio curso: eso es lo que los hace volver.</p>
+  <p class="dim" style="text-align:center;font-size:14px;margin-top:18px">
+    ¿Te gustaría que el colegio de tu hijo lo tuviera?
+    <a href="https://wa.me/56976684967?text=Hola%2C%20quiero%20proponer%20VULPO%20en%20el%20colegio%20de%20mi%20hijo." target="_blank" rel="noopener">Escríbenos y te ayudamos a proponérselo.</a>
+  </p>
 </section>
 
 <section class="seccion envoltura" style="text-align:center">
-  <h2 style="color:var(--gold)">¿Lo llevamos a tu colegio?</h2>
-  <p style="max-width:560px;margin:0 auto 24px">
-    Cuéntame de tu curso y vemos cómo implementarlo. Sin compromiso.
+  <span class="kicker">Sin riesgo</span>
+  <h2 style="max-width:640px;margin:0 auto 12px">Pruébalo en tu colegio, sin costo.</h2>
+  <p style="max-width:600px;margin:0 auto;color:var(--dim)">
+    Instalamos un curso de prueba. En pocas semanas el panel ya muestra el mapa de aprendizaje
+    de tu curso con datos reales, y decides con evidencia, no con una promesa.
   </p>
-  <a class="btn wa" href="https://wa.me/56976684967?text=Hola%2C%20vi%20VULPO%20y%20quiero%20saber%20m%C3%A1s%20para%20mi%20colegio." target="_blank" rel="noopener">💬 Hablemos por WhatsApp</a>
+  <p style="max-width:600px;margin:16px auto 0;font-size:17px">
+    <b style="color:var(--txt)">Cuesta menos que una hora de reforzamiento particular</b> por alumno
+    — y entrega el año completo, en cuatro asignaturas.
+  </p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px">
+    <a class="btn wa" href="https://wa.me/56976684967?text=Hola%2C%20vi%20VULPO%20y%20quiero%20coordinar%20una%20demo%20para%20mi%20colegio." target="_blank" rel="noopener">Coordinemos una demo de 15 minutos</a>
+  </div>
 </section>
 
 <footer class="envoltura">
-  VULPO · Creado por Roberto Lorca Pacheco, en Chile<br>
+  <b style="color:var(--txt)">VULPO</b> · Creado por Roberto Lorca, papá y desarrollador chileno.<br>
   <a href="mailto:vulpochile.app@gmail.com">vulpochile.app@gmail.com</a>
   ·
   <a href="/profesor.html">Panel del profesor</a>

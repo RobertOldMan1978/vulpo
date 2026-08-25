@@ -2820,3 +2820,15 @@ Cada hallazgo de seguridad se **verificó a mano contra el código** antes de ac
   falta franja de legitimidad MINEDUC + sección de privacidad de menores; reservar Titan One y usar una
   sans moderna; botones/tarjetas "pro" con `:focus-visible`; CTA agendable; hero que lidere con el
   beneficio; reencuadrar el celular como uso en casa). Se empieza a aplicar por lo de mayor impacto.
+- **Rediseño de la landing — primer incremento (aplicado):** se mantiene la identidad (violeta +
+  estrellas) pero subordinada a un registro formal. Tipografía **Inter** en todo (Titan One reservada
+  al nombre de marca y los números); `h2` blanco sobrio con un "kicker" dorado por sección; hero con el
+  logo achicado + **titular de beneficio** ("Tus alumnos repasan jugando. Tú ves exactamente qué les
+  cuesta"); **franja de legitimidad** (MINEDUC · 2.536 revisadas · prueba sin costo · sin instalar);
+  botones/tarjetas "pro" con hover y `:focus-visible`; **sección de privacidad de menores**; sección
+  **"Sin riesgo"** con el mensaje de valor sin números ("cuesta menos que una hora de reforzamiento
+  particular") y CTA "Coordinemos una demo de 15 minutos"; celular reencuadrado como **uso en casa**;
+  micro-CTA de apoderado. Verificado en el navegador (Inter aplicada, franja y secciones presentes,
+  sin desborde a 424/1280, sin errores). **Pendiente (siguiente incremento):** una sección de fondo
+  claro para romper el muro oscuro, marcos de dispositivo en las capturas, y un enlace de agenda real
+  (Calendly) — hoy el CTA usa WhatsApp con copy B2B.
