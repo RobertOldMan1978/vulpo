@@ -270,7 +270,50 @@ para siempre.
   su fecha. Revocar de verdad exigiría Supabase, y se descartó por costo.
   `?solo=` sigue existiendo y **nunca caduca** (es el formato del enlace ya repartido).
 
-### Tablero de avance (`dev/tablero.html`)
+#### Modelo de acceso (la "puerta")
+
+VULPO nació **completamente abierto**. Desde la Sesión 44 existe una **puerta** que exige el
+código `ALU-` para jugar más allá de una demo. **Todo lo gobierna una sola constante en
+`index.html`**, `FECHA_PUERTA` (formato `AAAA-MM-DD`):
+
+| Valor | Qué pasa |
+|---|---|
+| `''` (vacío) | **Nada cambia**: el juego sigue abierto. **Es el valor publicado hoy.** |
+| Fecha futura | **Aviso**: todo abierto, pero en la pantalla de inicio se anuncia el cierre. |
+| Fecha llegada (hoy incluido) | **Puerta cerrada**: sin código solo se juega la demo. |
+
+Llegada la fecha el cierre **ocurre solo**, sin desplegar nada ese día.
+
+- **La demo es exactamente `hist-cap1`** ("Los inicios de la modernidad"): 4 etapas + jefe, ~55
+  preguntas. La constante es `DEMO_LIBRE`.
+- **Se cierra:** el resto de Historia (con su Desafío Extra y Jefe Final), Matemáticas, Ciencias,
+  Lenguaje, Vocabulario, Lectura, la Tienda, los Logros y el **Duelo en línea**.
+- **Queda libre el Duelo local** en el mismo teléfono: es gancho, no producto. Con la puerta
+  cerrada, el botón ⚔️ DUELO lleva directo a él.
+- **La llave** es la identidad de alumno que ya existía (`S.alumno`, tras canjear el `ALU-`).
+  `tieneLicencia()` se consulta **en vivo**: canjear a mitad de sesión abre la puerta **sin
+  recargar**.
+- **El candado manda sobre el avance**, pero **no lo borra**: quien ya había completado cosas las
+  ve cerradas y las recupera intactas al canjear un código.
+- **Excepciones que nunca pasan por la puerta:** los enlaces de muestra (`?solo=`, `?m=`) y
+  `?qa=1`. Están incorporadas en `bloqueado()`.
+- **Al terminar la demo** aparece `scr-demo-fin` con "Tengo un código" y el contacto
+  (vulpochile.app@gmail.com · +569 7668 4967).
+
+> **Es un bloqueo BLANDO, y hay que saberlo antes de venderlo.** Verificado el 24/08/2026 contra
+> el sitio en vivo: **las 2.536 preguntas son descargables por cualquiera** pidiendo los archivos
+> directo (`contenido/<asignatura>/preguntas.json`): Historia 663, Matemáticas 603, Ciencias 534,
+> Lenguaje 514, Vocabulario 150, Ana Frank 72. Es cómo funciona un sitio estático. La puerta
+> detiene al apoderado, al alumno y al colegio que no pagó — el 99% real — pero no a quien sepa
+> pedir el archivo. Cerrar de verdad exige mover el contenido a Supabase y servirlo pregunta a
+> pregunta: proyecto aparte, de meses.
+
+> **VULPO NO funciona sin internet** (verificado 24/08/2026): no hay service worker ni manifiesto,
+> así que sin conexión el sitio ni carga, y cada banco de preguntas se pide con `fetch` al usarlo.
+> **No prometerle a un colegio que funciona sin conexión.** La cláusula de "sin internet vale la
+> última licencia confirmada" cubre **caídas a mitad de sesión**, no juego sin conexión.
+
+## Tablero de avance (`dev/tablero.html`)
 
 Pantalla para el desarrollador (no para estudiantes) que muestra, por asignatura,
 qué OA se están trabajando y el **% de avance por cobertura de preguntas**:
@@ -2465,3 +2508,41 @@ de que **una demostración no siga circulando meses después**.
   público en vulpo.cl; y **no hay revocación** (un enlace vive hasta su fecha).
 - **Diseño y plan:** `docs/superpowers/specs/2026-08-24-muestras-con-caducidad-design.md` y
   `docs/superpowers/plans/2026-08-24-muestras-con-caducidad.md`.
+
+### Sesión 44 (2026-08-24) — La puerta de acceso: VULPO deja de ser gratis (publicada apagada)
+Decisión de negocio de Roberto: el juego deja de ser gratuito. Ya reparte enlaces a apoderados y
+no quiere que un colegio que no contrató tenga a sus alumnos jugando gratis. Todo en `index.html`.
+- **Lo construido:** `FECHA_PUERTA` con tres fases (vacía / aviso / cerrada), demo acotada a
+  `hist-cap1`, candados en el resto, banda de aviso previo, y pantalla de fin de demo con el
+  contacto. Detalle completo en "Modelo de acceso (la puerta)" arriba.
+- **Se publicó APAGADA** (`FECHA_PUERTA=''`): desplegar no cambia nada para nadie. La activa
+  Roberto editando una línea, **cuando exista la página comercial** — si la puerta cierra y un
+  colegio interesado no tiene dónde contratar, se convierten visitas en frustración.
+- **El código `ALU-` pasó de premio a llave.** Antes era opcional (solo daba ranking); ahora es
+  lo que abre el juego. No hubo que inventar identidad: ya existía.
+- **Dos hallazgos verificados que cambian lo que se puede prometer:**
+  1. **Las 2.536 preguntas son descargables por cualquiera** desde el sitio en vivo. La puerta es
+     un bloqueo blando y así quedó documentado.
+  2. **El juego NO funciona sin internet.** No hay service worker y los bancos se piden con
+     `fetch`. Se había afirmado lo contrario en el spec y se corrigió.
+- **Decisiones de diseño:** el Duelo local queda libre (gancho); el candado tapa pero **no borra**
+  el avance; la licencia se consulta en vivo para que canjear abra la puerta sin recargar; y los
+  enlaces de muestra y `?qa=1` nunca pasan por la puerta.
+- **Corregido al implementar:** el mensaje del candado se escribió con saltos de línea literales
+  dentro de una cadena JavaScript — error de sintaxis que rompía el juego entero. Detectado y
+  arreglado antes de seguir.
+- **Verificado en el navegador**, consola limpia, en las tres fases: apagada (juego idéntico a
+  hoy, 7 nodos en Historia, barra completa, sin candados); aviso (todo abierto + banda con la
+  fecha en castellano); cerrada sin código (solo `hist-cap1`, resto "🔒 Necesitas un código",
+  barra solo Mapa, duelo local, pantalla de fin de demo con el contacto correcto); y las
+  excepciones (`?solo=`, `?m=`, `?qa=1`) pasando pese a la puerta cerrada. El enlace ya repartido
+  `?solo=hist-cap2,hist-cap3,hist-cap4` sigue intacto.
+- **Pendiente de Roberto (fuera del código):** la página comercial en `vulpo.cl`.
+  **Arquitectura decidida (24/08/2026):** la raíz `vulpo.cl` pasará a ser la **página de
+  presentación** y el juego se moverá a **`vulpo.cl/juego`**. Roberto descartó la preocupación por
+  los enlaces de muestra ya repartidos: **el de Historia no pasa de esta semana**, así que no hace
+  falta reenviar `?solo=`/`?m=` desde la raíz. Al mover el juego, recordar que el armador construye
+  los enlaces con `location.origin+location.pathname`, o sea que **desde `/juego` los generará
+  correctos solo**, sin tocar código.
+- **Diseño y plan:** `docs/superpowers/specs/2026-08-24-puerta-de-acceso-design.md` y
+  `docs/superpowers/plans/2026-08-24-puerta-de-acceso.md`.

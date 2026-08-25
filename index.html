@@ -608,6 +608,13 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
       <p id="rolSub">Aprende jugando · 8° Básico</p>
     </div>
     <div id="bannerDesafio" class="banner-desafio" hidden></div>
+    <div id="avisoPuerta" class="card" hidden
+         style="border:2px solid var(--gold);background:#2a1f00">
+      <p id="avisoPuertaTxt" style="font-weight:900;font-size:13px;margin:0 0 6px"></p>
+      <p style="color:var(--dim);font-weight:800;font-size:12px;margin:0">
+        Pídeselo a tu colegio · ¿Eres profesor? Escríbenos a vulpochile.app@gmail.com
+      </p>
+    </div>
     <div class="card">
       <h3>¿Cómo quieres entrar?</h3>
       <button class="btn" id="btnJugador">🎮 JUGADOR</button>
@@ -799,6 +806,22 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
         El juego completo sigue disponible para todos.
       </p>
       <button class="btn" id="vencidaIr">Ir al juego completo</button>
+    </div>
+  </section>
+
+  <!-- ====== FIN DE LA DEMO (puerta cerrada, sin código) ====== -->
+  <section class="screen" id="scr-demo-fin">
+    <div class="logo" style="margin:30px 0 10px">
+      <span class="badge">🎉</span>
+      <h1 style="font-size:24px">¡Terminaste la muestra de VULPO!</h1>
+      <p>El resto del juego —4 asignaturas, más de 2.500 preguntas— lo abre tu colegio.</p>
+    </div>
+    <div class="card">
+      <button class="btn" id="demoCodigo">🎟️ Tengo un código</button>
+      <button class="btn sec" id="demoProfe">🏫 Soy profesor, quiero VULPO para mi curso</button>
+      <p id="demoContacto" hidden style="text-align:center;font-weight:800;font-size:13px;margin-top:12px;color:var(--cyan)">
+        vulpochile.app@gmail.com<br>+569 7668 4967
+      </p>
     </div>
   </section>
 
@@ -1322,6 +1345,43 @@ const SIN_DISCO=PRUEBA||ARMAR;   // ni localStorage ni Supabase ni intro
 /* Vigencia inclusiva: un enlace con hasta=2026-09-15 sirve todo el 15 y muere el 16. */
 const VENCIDA=!!VENCE && hoyISO()>VENCE;
 
+/* ===== Puerta de acceso =====
+   Una sola constante gobierna las tres fases:
+     ''            -> no pasa nada, el juego sigue abierto (valor con que se publica)
+     fecha futura  -> AVISO: todo abierto, pero se anuncia el cierre
+     fecha llegada -> PUERTA: sin código solo se juega DEMO_LIBRE
+   Llegada la fecha el cierre ocurre solo, sin desplegar nada ese día.
+   OJO: esto es un bloqueo BLANDO. Los bancos de preguntas son archivos públicos que
+   cualquiera puede descargar (ver el spec). Detiene al 99%, no a quien sepa mirar. */
+const FECHA_PUERTA='';                  // <-- Roberto la fija cuando el lado comercial esté listo
+const PUERTA=!!FECHA_PUERTA && hoyISO()>=FECHA_PUERTA;
+const AVISO_PUERTA=!!FECHA_PUERTA && !PUERTA;
+const DEMO_LIBRE='hist-cap1';           // lo único jugable sin código
+/* La licencia se consulta EN VIVO (no se congela al arrancar): si el alumno canjea su
+   código a mitad de sesión, la puerta se abre sin recargar la página. */
+function tieneLicencia(){ return !!S.alumno; }
+/* Excepciones incorporadas: los enlaces de muestra y ?qa=1 nunca pasan por la puerta. */
+function bloqueado(){ return PUERTA && !PRUEBA && !QA && !tieneLicencia(); }
+function capAbierto(id){ return !bloqueado() || id===DEMO_LIBRE; }
+/* Mensaje único cuando se toca algo cerrado. */
+function avisoCandado(){ alert('🔒 Necesitas un código de tu profesor para abrir esta parte de VULPO.\n\n¿Eres profesor? Escríbenos a vulpochile.app@gmail.com'); }
+/* Remate de la demo: en vez del capítulo siguiente, la invitación a conseguir un código. */
+function mostrarFinDemo(){
+ $('demoContacto').hidden=true;
+ $('demoCodigo').onclick=()=>{SND.tap();abrirCanje();};
+ $('demoProfe').onclick=()=>{SND.tap();$('demoContacto').hidden=false;};
+ $('nav').style.display='none';
+ go('scr-demo-fin');
+}
+/* Con la puerta cerrada, la barra inferior deja solo el Mapa. */
+function ajustarNav(){
+ const cerrado=bloqueado();
+ document.querySelectorAll('#nav button').forEach(b=>{
+  const destino=b.dataset.go;
+  if(destino==='scr-tienda'||destino==='perfil') b.style.display=cerrado?'none':'';
+ });
+}
+
 /* ===== CAMPAÑAS (capa "asignatura completa" · data-driven) =====
    Una campaña agrupa expediciones (capítulos) en orden, con un Desafío Extra y un
    Jefe Final multi-fase. Los capítulos son objetos normales de EXPEDICIONES (5 nodos),
@@ -1575,7 +1635,13 @@ function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remo
 // Saluda al alumno por su nombre (mismas letras que VULPO) si canjeó un código.
 function pintarInicio(){const el=$('rolNombre'),sub=$('rolSub');if(!el)return;
  if(S.alumno){el.textContent='¡Hola, '+S.alumno+'!';el.hidden=false;if(sub)sub.hidden=true;}
- else{el.hidden=true;if(sub)sub.hidden=false;}}
+ else{el.hidden=true;if(sub)sub.hidden=false;}
+ const av=$('avisoPuerta');
+ if(av){
+  av.hidden=!AVISO_PUERTA;
+  if(AVISO_PUERTA) $('avisoPuertaTxt').textContent=
+    'Desde el '+fechaLarga(FECHA_PUERTA)+' necesitarás un código de tu profesor para seguir jugando.';
+ }}
 function toast(l){if(S.logros.has(l))return;S.logros.add(l);SND.unlock();
  $('toastIc').textContent=LOGROS[l].ic;$('toastTx').textContent=LOGROS[l].tx;
  $('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2600);}
@@ -2644,6 +2710,7 @@ function mapasDe(asig){return EXPEDICIONES.filter(e=>e.activa&&e.asignatura===as
 
 // NIVEL 1: un módulo por asignatura
 function renderExpediciones(){
+ ajustarNav();
  const g=$('expGrid');g.innerHTML='';
  ORDEN_ASIG.forEach(asig=>{
   if(asig==='Matemáticas'){                            // Matemáticas = campaña de lecciones + Reto
@@ -2652,7 +2719,8 @@ function renderExpediciones(){
    const nHechas=cap0.lecciones.filter(id=>S.mateLecciones[id]).length;
    const card=document.createElement('div');card.className='exp-card';
    card.innerHTML=`<img src="${ASIG_PORTADA['Matemáticas']}" alt="Matemáticas"><div class="exp-info"><b>Matemáticas</b><small>Aprende y practica · Números ${nHechas}/${cap0.lecciones.length}</small></div><span class="exp-go">▶</span>`;
-   card.onclick=()=>{SND.tap();abrirCampaña(camp);};
+   card.onclick=()=>{SND.tap(); if(bloqueado()){avisoCandado();return;} abrirCampaña(camp);};
+   if(bloqueado()) card.classList.add('lock');
    g.appendChild(card); return;
   }
   const camp=CAMPAÑAS.find(c=>c.asignatura===asig);
@@ -2665,13 +2733,18 @@ function renderExpediciones(){
   const card=document.createElement('div');card.className='exp-card'+(done?' camp-done':'');
   const subL=(asig==='Lenguaje')?'Campaña + Vocabulario':sub;
   card.innerHTML=`<img src="${portada}" alt="${asig}"><div class="exp-info"><b>${asig} ${done?'👑':''}</b><small>${subL}</small></div><span class="exp-go">▶</span>`;
-  card.onclick=()=>{SND.tap(); if(asig==='Lenguaje')abrirLenguaje(); else if(camp)abrirCampaña(camp); else abrirAsignatura(asig);};
+  card.onclick=()=>{SND.tap();
+   // Historia entra siempre: dentro se decide qué capítulo está abierto (la demo).
+   if(bloqueado() && asig!=='Historia'){avisoCandado();return;}
+   if(asig==='Lenguaje')abrirLenguaje(); else if(camp)abrirCampaña(camp); else abrirAsignatura(asig);};
+  if(bloqueado() && asig!=='Historia') card.classList.add('lock');
   g.appendChild(card);
  });
  // Módulo Lectura (biblioteca): fuera de las asignaturas, crece con más libros.
  const bib=document.createElement('div'); bib.className='exp-card bib-entry';
  bib.innerHTML=`<img src="assets/portada-lectura.png" alt="Lectura"><div class="exp-info"><b>📖 Lectura</b><small>Lecturas del colegio · ${LIBROS.length} libro${LIBROS.length===1?'':'s'}</small></div><span class="exp-go">▶</span>`;
- bib.onclick=()=>{SND.tap();abrirBiblioteca();};
+ bib.onclick=()=>{SND.tap(); if(bloqueado()){avisoCandado();return;} abrirBiblioteca();};
+ if(bloqueado()) bib.classList.add('lock');
  g.appendChild(bib);
 }
 // Biblioteca de lecturas (hoy: El diario de Ana Frank). Cada libro = una expedición de tramos.
@@ -2708,7 +2781,7 @@ function entrarExpedicion(exp){
  if(tienePartida && !PRUEBA) cargar();
  activarExpedicion(exp).then(()=>{
   if(tienePartida){refreshHud();renderMapa();renderRanking();
-   $('nav').style.display=PRUEBA?'none':'flex';go('scr-mapa');datoKimun();}
+   $('nav').style.display=PRUEBA?'none':'flex';ajustarNav();go('scr-mapa');datoKimun();}
   else go('scr-inicio');
  });
 }
@@ -2830,7 +2903,8 @@ function arrancarModoPrueba(){
 $('btnJugador').onclick=()=>{SND.init();SND.tap();$('nav').style.display='none';renderExpediciones();go('scr-expediciones');};
 // Acceso a la tienda desde Expediciones (la tienda recuerda de dónde se abrió para volver).
 let tiendaOrigen='scr-mapa';
-$('btnExpTienda').onclick=()=>{SND.tap();tiendaOrigen='scr-expediciones';$('nav').style.display='none';renderTienda();go('scr-tienda');};
+$('btnExpTienda').onclick=()=>{SND.tap(); if(bloqueado()){avisoCandado();return;}
+ tiendaOrigen='scr-expediciones';$('nav').style.display='none';renderTienda();go('scr-tienda');};
 $('btnTiendaBack').onclick=()=>{SND.tap();go(tiendaOrigen);};
 $('btnExpBack').onclick=()=>{SND.tap();go('scr-rol');};
 $('btnMapasBack').onclick=()=>{SND.tap();go('scr-expediciones');};
@@ -2909,25 +2983,28 @@ function renderCampaña(){
  // capítulos en orden
  c.capitulos.forEach((id,i)=>{
   const exp=EXPEDICIONES.find(e=>e.id===id);
-  const abierto=nodoCampDesbloqueado(c,i), hecho=expedicionCompleta(id);
+  const abierto=capAbierto(id) && nodoCampDesbloqueado(c,i), hecho=expedicionCompleta(id);
   const titulo=(exp.nivel.split('· ')[1]||exp.nivel);
   cont.appendChild(nodoCampañaEl(`${i+1}`, titulo, abierto, hecho,
-    abierto?()=>entrarExpedicion(exp):null, hecho?'Completado':(abierto?'¡Jugar!':'🔒 Bloqueado'),
+    abierto?()=>entrarExpedicion(exp):null,
+    hecho?'Completado':(abierto?'¡Jugar!':(capAbierto(id)?'🔒 Bloqueado':'🔒 Necesitas un código')),
     portadaMapa(exp), portadaFallback(exp)));
  });
- // desafío extra (solo si la campaña lo define)
- if(c.desafioExtra){
+ // desafío extra (solo si la campaña lo define). Con la puerta cerrada no se muestra.
+ if(c.desafioExtra && !bloqueado()){
   const de=EXPEDICIONES.find(e=>e.id===c.desafioExtra);
   const deAb=desafioDesbloqueado(c), deHecho=expedicionCompleta(c.desafioExtra);
   cont.appendChild(nodoCampañaEl('⭐','Desafío Extra: Chile hoy', deAb, deHecho,
     deAb?()=>entrarExpedicion(de):null, deHecho?'Completado':(deAb?'¡Desafío!':'🔒 Termina los capítulos'),
     portadaMapa(de), portadaFallback(de)));
  }
- // jefe final (luce al villano de la campaña)
- const jfAb=jefeFinalDesbloqueado(c), jfHecho=campañaCompleta(c);
- cont.appendChild(nodoCampañaEl('👑','JEFE FINAL DE '+c.asignatura.toUpperCase(), jfAb, jfHecho,
-   jfAb?()=>iniciarJefeFinal(c):null, jfHecho?'¡Vencido!':(jfAb?'¡Al 100%! Enfréntalo':'🔒 Completa todo'),
-   c.jefeFinal.villanoImg||''));
+ // jefe final (luce al villano de la campaña). Con la puerta cerrada no se muestra.
+ if(!bloqueado()){
+  const jfAb=jefeFinalDesbloqueado(c), jfHecho=campañaCompleta(c);
+  cont.appendChild(nodoCampañaEl('👑','JEFE FINAL DE '+c.asignatura.toUpperCase(), jfAb, jfHecho,
+    jfAb?()=>iniciarJefeFinal(c):null, jfHecho?'¡Vencido!':(jfAb?'¡Al 100%! Enfréntalo':'🔒 Completa todo'),
+    c.jefeFinal.villanoImg||''));
+ }
 }
 // Campaña de Matemáticas: capítulos = grupos de lecciones. Además, acceso al Reto.
 function renderCampañaMate(c){
@@ -3195,7 +3272,9 @@ function renderInsignias(){
 }
 
 /* ===== Duelo / reiniciar (eventos) ===== */
-$('btnDuelo').onclick=()=>{SND.init();SND.tap();$('nav').style.display='none';abrirDueloOnline();};
+$('btnDuelo').onclick=()=>{SND.init();SND.tap();$('nav').style.display='none';
+ if(bloqueado()){ initDueloSetup(); return; }   // el duelo local queda libre
+ abrirDueloOnline();};
 $('btnDueloBack').onclick=()=>{SND.tap();go('scr-rol');};
 $('btnDueloStart').onclick=()=>{SND.init();SND.tap();startDuelo();};
 $('btnDueloReady').onclick=()=>{SND.tap();pintaDuelo();};
@@ -3677,7 +3756,10 @@ function terminarNivel(){
   $('btnNext').textContent='🔁 REINTENTAR';
   $('btnNext').onclick=()=>startQuiz(Q.lvl);
  }
- $('btnMap').onclick=()=>{renderMapa();renderRanking();go('scr-mapa');};
+ $('btnMap').onclick=()=>{
+  // Terminó el jefe de la demo y no tiene código: se le ofrece el resto.
+  if(bloqueado() && EXP_ACT && EXP_ACT.id===DEMO_LIBRE && expedicionCompleta(DEMO_LIBRE)){ mostrarFinDemo(); return; }
+  renderMapa();renderRanking();go('scr-mapa');};
  refreshHud();guardar();enviarDominio();
  if(dif&&paso)revisarDificil();   // ¿completó una asignatura en Difícil? → insignia/skin + marca 🔥
  if(paso)particulas(window.innerWidth/2,window.innerHeight/3,['🎉','⭐','✨','🎊'],24);
