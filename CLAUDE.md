@@ -2908,3 +2908,30 @@ Flujo brainstorming → spec → plan → ejecución por tareas, verificando cad
   de `navigator.vibrate` al responder por script, preexistente).
 - **Pendientes de Roberto (fuera del código):** pegar el argumento de evaluación formativa en la
   propuesta/guion (otro PC); enlace de agenda real para el CTA de la landing.
+
+### Sesión 53 (2026-08-25) — Prueba de juego real de A/B/C + guard de `LEC`
+Sesión corta de verificación. Se probaron **jugando de verdad** (clics reales en el navegador, no
+solo por DOM) los tres grupos de retroalimentación de la Sesión 52, que hasta ahora solo se habían
+verificado por DOM. Todo pasó. Único cambio de código: 2 líneas de blindaje.
+- **Método:** el temporizador de 20 s expira entre acciones lentas y arruina las pruebas manuales,
+  así que se **congeló el reloj por pregunta** (`clearInterval(Q.timer)`) para inspeccionar con
+  calma, sin tocar la lógica de las features. Se recorrió Historia (etapa `hist-cap1` nº3) y
+  Matemática (`mate-exp-numeros` etapa 1).
+- **Grupo B — Meta de aprendizaje ✅:** tarjeta 🎯 la primera vez (Historia y Matemática), línea
+  fija 🎯 bajo el enunciado en el quiz, y la meta también en la pantalla de reprobado.
+- **Grupo A — Comodín 50/50 ✅:** clic real en "Ayuda (2)" elimina **dos** opciones incorrectas
+  (nunca la correcta), baja el contador a (1), y la pregunta asistida **no se mide** (`registrarOA`
+  no se llama; `asistidaActual=true`) pero sí cuenta para pasar.
+- **Grupo A — Siguiente paso al reprobar ✅ (las dos ramas):** Historia → "🧑‍🏫 Repasar sin
+  presión" (10 preguntas, sin cronómetro, sin medir, sin pagar); Matemática → "📘 Repasar la
+  mini-clase" (abre la lección del OA y "← Salir" regresa al reprobado vía `TRAS_LECCION`).
+- **Grupo C — Semáforo ✅:** clic real en 🔴 lo selecciona y muestra el mensaje que empuja al
+  repaso; se guarda **solo local** en `S.semaforo`, no se envía al profesor.
+- **Cambio de código — guard de `LEC` (2 líneas):** `avanzarBloque()` y `renderBloque()` ahora
+  hacen `if(!LEC||!LEC.leccion)return;`. En juego normal el crash era inalcanzable (la lección
+  siempre está activa cuando se ve `scr-leccion`); apareció solo al disparar el handler por
+  JavaScript inyectado durante la prueba (el `<anonymous>` en el stack lo delataba). Verificado:
+  con `LEC=null` los handlers retornan sin crashear y sin agregar error nuevo a la consola, y el
+  flujo normal de la mini-clase sigue avanzando bloques.
+- **Pendientes de Roberto (arrastre, fuera del código):** pegar el argumento de evaluación
+  formativa en la propuesta/guion (otro PC); enlace de agenda real para el CTA de la landing.

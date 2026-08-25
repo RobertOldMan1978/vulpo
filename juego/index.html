@@ -2129,6 +2129,7 @@ $('lecSalir').onclick=()=>{SND.tap(); volverAlCapituloMate();};
 $('lecCont').onclick=()=>{SND.tap(); avanzarBloque();};
 
 function renderBloque(){
+ if(!LEC||!LEC.leccion)return;   // guard: sin lección activa no hay bloque que pintar
  const b=LEC.leccion.bloques[LEC.idx], cuerpo=$('lecCuerpo');
  cuerpo.innerHTML=''; cuerpo.onclick=null;
  $('lecProgBar').style.width=(LEC.idx/LEC.leccion.bloques.length*100)+'%';
@@ -2155,6 +2156,7 @@ function renderBloque(){
 }
 
 function avanzarBloque(){
+ if(!LEC||!LEC.leccion)return;   // guard: la lección ya se cerró (evita crash si se avanza sin lección activa)
  const sig=LEC.leccion.bloques[LEC.idx+1];
  if(sig&&sig.t==='practica'){ iniciarPracticaLeccion(LEC.leccion); return; }
  LEC.idx++;
