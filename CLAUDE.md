@@ -163,6 +163,38 @@ Orden tentativo, sujeto a prioridad de "verlo funcionar y atractivo" primero:
 - **Cierre de sesión:** al pedirlo, actualizar este `CLAUDE.md` con lo avanzado
   y lo pendiente, luego commit y push.
 
+### ⚠️ El repositorio es PÚBLICO
+
+`github.com/RobertOldMan1978/vulpo` es público, y GitHub Pages sirve desde él. **Todo lo que se
+escriba aquí lo puede leer cualquiera**, incluidos `CLAUDE.md`, los `docs/` y los bancos de
+preguntas. Antes de escribir algo en el repo, preguntarse si molestaría que lo leyera un colegio
+o un competidor. **El análisis interno de estrategia, los números de ingreso y el estado de las
+conversaciones comerciales van FUERA del repo** (`Escritorio\VULPO - correos profesores\`).
+
+### Lado comercial
+
+El modelo de precios, la secuencia de venta, qué se promete y qué no, y dónde vive el material
+están en **`docs/comercial.md`**. Leerlo antes de tocar cualquier cosa que un colegio vaya a ver.
+
+### Gotchas del motor de expediciones
+
+Al agregar expediciones nuevas al arreglo `EXPEDICIONES` de `juego/index.html`:
+
+- **Portada del nodo:** `portadaMapa(exp)` devuelve `assets/portada-<id>.png`. Si ese PNG no
+  existe hay **404 en consola**, aunque el `onerror` tape el problema visualmente. Para nodos
+  pintados con `nodoCampañaEl(...)`, pasar una portada que SÍ exista (por ejemplo la de la
+  unidad) en vez de `portadaMapa(exp)`. De paso respeta la regla de no crear arte nuevo.
+- **Registrar una asignatura tiene efectos en cadena:** en cuanto una asignatura tiene una
+  expedición con campo `contenido`, `contenidoDeAsignatura(asig)` deja de devolver `null`. Eso
+  hace que (1) el **desafío de refuerzo del profesor** empiece a armar preguntas reales para esa
+  asignatura, y (2) sus etapas **alimenten el mapa de dominio** vía `registrarOA`, que solo
+  excluye los OA de apoyo con prefijo `VOC-` y `AF-`. Ambas cosas son deseables, pero conviene
+  saberlas.
+- **Modo Difícil y Maestría Total:** `asignaturaDificilCompleta(asig)` funciona genéricamente
+  para cualquier campaña con `capitulos`. Para NO alterar la Maestría —definida como Historia +
+  Ciencias + Lenguaje + El Autómata— dejar `DIF_ASIGS` en esos 3 y otorgar cualquier insignia
+  de Difícil adicional con un chequeo aparte, fuera de `asignaturasDificil()` y `esMaestro()`.
+
 ### Regla de commits (importante)
 
 - **"orden 99" = hacer `git pull`** de la rama `main` para traer lo último de
@@ -2666,3 +2698,46 @@ Dos acciones cortas, las dos con consecuencias reales.
 - **Lo que ahora urge y no es técnico:** desde el 1 de septiembre cada persona que termine la
   demo ve el WhatsApp y el correo de Roberto. Hace falta tener decidido qué cobrarle a un
   colegio antes de que llegue el primer mensaje.
+
+### Sesión 48 (2026-08-25) — Precio revisado, material comercial rehecho y traspaso a VS Code
+Sesión **comercial**, sin tocar código del juego. Se revisó el precio definido en la Sesión 36 y se
+rehizo el material para que calce con la realidad de agosto.
+- **El precio por alumno no era el problema; el techo por colegio sí.** VULPO cubre solo 8°
+  básico, así que un colegio no puede gastar más de **$630.000 al año** (tres 8°, tarifa
+  Fundador), y vender a un colegio cuesta lo mismo pague lo que pague. **La palanca real no es
+  subir el precio: es agregar 7° básico**, que duplicaría el techo sin duplicar el esfuerzo de
+  venta. Anotado como dirección, fuera de alcance por ahora.
+- **Tres arreglos al precio, aprobados por Roberto:**
+  1. **Licencia mínima de $250.000** al año. Al calcularlo apareció que a tarifa Fundador un
+     curso de 40 alumnos son $240.000, **por debajo del mínimo**, así que en la práctica
+     cualquier venta de un curso solo queda en $250.000. Se dice de frente en la propuesta en vez
+     de esconderlo en una nota: *un curso $250.000; desde dos cursos, $6.000 por alumno*.
+  2. **Tarifa Fundador acotada:** primeros **5 colegios**, hasta el **31 de diciembre de 2026**.
+     Antes decía "los primeros colegios", sin número ni fecha: no generaba urgencia y conveía
+     los $6.000 en el precio real.
+  3. **El 40% de rebaja se cobra:** testimonio por escrito, autorización para nombrar al colegio
+     y reunión de retroalimentación. De favor a intercambio.
+- **El calendario escolar cambió la estrategia.** El año termina en diciembre y Fiestas Patrias
+  parte a mediados de septiembre: un piloto de un semestre iniciado el 1 de septiembre se
+  interrumpía a los diez días y terminaba con el año. **La prueba pasó a 4 semanas** (última
+  semana de septiembre) y **la venta es para el año escolar 2027**, decidida a tiempo para el
+  presupuesto. La tarifa Fundador vence el 31/12 justamente porque coincide con esa decisión.
+- **Material rehecho** (fuera del repo, en `Escritorio\VULPO - correos profesores\`), generado
+  desde HTML con Chrome headless `--print-to-pdf`:
+  - `VULPO-propuesta-SanFranciscoDeSales-2026-08-25.pdf`: precios nuevos, mínimo, Fundador
+    acotado, condiciones del intercambio, secuencia de 3 pasos, `vulpo.cl`, y una sección nueva
+    "Qué necesita el colegio para partir" (la primera objeción de UTP).
+  - `VULPO-guion-reunion-2026-08-25.pdf`: objetivo cambiado a **cerrar la prueba, no la venta**;
+    tres objeciones nuevas ("¿por qué ahora si el año se acaba?", "¿qué otros colegios lo usan?"
+    —con la instrucción de responder la verdad—, "¿y si el próximo año no sirve?"); recordatorio
+    de llevar **el código `ALU-` ya canjeado** (desde el 1/9 ni el vendedor pasa del primer
+    capítulo); y un recuadro de **no prometer lo que no hay** (sin internet no funciona, solo 8°).
+  - Las versiones del 23/08 se conservan pero están desfasadas.
+- **`docs/comercial.md` (nuevo):** precio, condiciones, secuencia, calendario, límite estructural,
+  qué se promete y qué no, y dónde vive el material. Es la fuente de verdad comercial dentro del
+  repo.
+- **Se documentó que el repositorio es PÚBLICO** y qué no debe escribirse en él.
+- **Se pasaron al `CLAUDE.md` los gotchas del motor de expediciones**, que hasta ahora solo
+  vivían en la memoria del asistente y no viajan al cambiar de directorio de trabajo.
+- **Pendiente que bloquea cobrar:** con qué se factura (SpA por Empresa en un Día). Si un colegio
+  acepta y no hay cómo emitir factura, la venta se cae en el último paso.
