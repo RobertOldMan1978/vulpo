@@ -175,6 +175,8 @@ input.nm:focus{border-color:var(--cyan)}
 .btn-ayuda:disabled{opacity:.4;cursor:default;filter:grayscale(.4)}
 .btn-escuchar{display:block;margin:6px auto 10px;padding:8px 18px;border:0;border-radius:20px;background:var(--gold);color:#3a2a12;font-family:'Nunito',sans-serif;font-weight:900;font-size:15px;cursor:pointer}
 .q-visual{font-size:30px;text-align:center;line-height:1.5;margin:6px 0 10px;word-break:break-word}
+.q-visual.qv-grupos{font-size:22px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.qv-grupo{border:2px dashed var(--gold);border-radius:12px;padding:4px 8px;display:inline-block}
 .res-obj{color:var(--dim);font-weight:800;font-size:14px;margin:2px 0 8px}
 .qmeta{color:var(--dim);font-weight:800;font-size:12px;margin-top:6px}
 #scr-meta .meta-card{max-width:460px;margin:40px auto 0;background:var(--panel2);border:1px solid #ffffff1f;
@@ -1336,7 +1338,8 @@ function buildPreguntas(lvl){
   sel=pickN(sel,N);
  }else{sel=pickN(POOL[c.oa],N);}
  // Se conserva el `oa` de cada pregunta: lo necesita el mapa de dominio del profesor.
- return sel.map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa}));
+ // Y `visual`: lo necesita el apoyo visual de 3° (pintaPregunta lee P.visual).
+ return sel.map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,visual:q.visual}));
 }
 function poolListo(lvl){
  const c=EXPEDICION[lvl];
@@ -1408,14 +1411,115 @@ function leerEnVoz(texto){
  }catch(e){}
 }
 
-// Apoyo visual por código (liviano, infinito). Tipo "contar": grupos de emojis.
+/* Apoyo visual dibujado por código para la app de 3° (liviano, sin archivos ni librerías).
+   Cada pregunta puede traer un objeto `visual`; si el tipo no existe, se ignora en silencio
+   (la pregunta sigue siendo válida solo con texto). Lo consume pintaPregunta vía P.visual,
+   y los constructores de preguntas deben propagar el campo (ver `visual:q.visual`). */
+function svgEnvoltura(inner,alto){
+ return `<div class="q-visual"><svg viewBox="0 0 200 ${alto}" width="100%" height="${alto}" role="img" aria-hidden="true" style="max-width:280px">${inner}</svg></div>`;
+}
 function renderVisual(v){
- if(!v||v.tipo!=='contar') return '';
- const e=v.emoji||'🔵';
- const g1=e.repeat(Math.max(0,Math.abs(v.a)));
- const signo=(v.b<0)?'➖':'➕';
- const g2=e.repeat(Math.max(0,Math.abs(v.b)));
- return `<div class="q-visual">${g1} ${signo} ${g2}</div>`;
+ if(!v||!v.tipo) return '';
+ const T=v.tipo;
+
+ // Sumar y restar: dos grupos de emojis separados por el signo.
+ if(T==='contar'){
+  const e=v.emoji||'🔵';
+  const g1=e.repeat(Math.max(0,Math.abs(v.a)));
+  const signo=(v.b<0)?'➖':'➕';
+  const g2=e.repeat(Math.max(0,Math.abs(v.b)));
+  return `<div class="q-visual">${g1} ${signo} ${g2}</div>`;
+ }
+
+ // Multiplicar y dividir: `grupos` montones de `porGrupo` cada uno.
+ if(T==='agrupar'){
+  const e=v.emoji||'🔵';
+  const g=Math.max(0,Math.min(12,v.grupos|0)), n=Math.max(0,Math.min(12,v.porGrupo|0));
+  let out='';
+  for(let i=0;i<g;i++) out+=`<span class="qv-grupo">${e.repeat(n)}</span>`;
+  return `<div class="q-visual qv-grupos">${out}</div>`;
+ }
+
+ // Fracciones: barra partida en `partes`, con `pintadas` coloreadas.
+ if(T==='fraccion'){
+  const p=Math.max(1,Math.min(12,v.partes|0)), k=Math.max(0,Math.min(p,v.pintadas|0));
+  const w=180/p; let r='';
+  for(let i=0;i<p;i++){
+   r+=`<rect x="${10+i*w}" y="10" width="${w}" height="40" fill="${i<k?'#8f6bff':'#2a2350'}" stroke="#ffc93c" stroke-width="2"/>`;
+  }
+  return svgEnvoltura(r,60);
+ }
+
+ // Recta numérica: de `desde` a `hasta` cada `paso`, con una marca opcional.
+ if(T==='recta'){
+  const a=v.desde|0, b=v.hasta|0, s=Math.max(1,v.paso|0);
+  const n=Math.max(1,Math.floor((b-a)/s));
+  let r=`<line x1="10" y1="35" x2="190" y2="35" stroke="#4dd8ff" stroke-width="3"/>`;
+  for(let i=0;i<=n;i++){
+   const x=10+(180*i/n), val=a+i*s;
+   const marcado=(v.marca!==undefined && val===v.marca);
+   r+=`<line x1="${x}" y1="28" x2="${x}" y2="42" stroke="#4dd8ff" stroke-width="2"/>`;
+   r+=`<text x="${x}" y="58" font-size="11" fill="${marcado?'#ffc93c':'#cfc9ee'}" text-anchor="middle" font-weight="bold">${val}</text>`;
+   if(marcado) r+=`<circle cx="${x}" cy="35" r="6" fill="#ffc93c"/>`;
+  }
+  return svgEnvoltura(r,66);
+ }
+
+ // Reloj análogo: `hora` (1-12) y `minuto` (0-59).
+ if(T==='reloj'){
+  const h=((v.hora|0)%12), m=(v.minuto|0)%60;
+  const cx=100, cy=60, R=48;
+  let r=`<circle cx="${cx}" cy="${cy}" r="${R}" fill="#1a1430" stroke="#ffc93c" stroke-width="3"/>`;
+  for(let i=1;i<=12;i++){
+   const ang=(i/12)*2*Math.PI - Math.PI/2;
+   r+=`<text x="${cx+Math.cos(ang)*(R-11)}" y="${cy+Math.sin(ang)*(R-11)+4}" font-size="11" fill="#cfc9ee" text-anchor="middle" font-weight="bold">${i}</text>`;
+  }
+  const angH=((h+m/60)/12)*2*Math.PI - Math.PI/2;
+  const angM=(m/60)*2*Math.PI - Math.PI/2;
+  r+=`<line x1="${cx}" y1="${cy}" x2="${cx+Math.cos(angH)*24}" y2="${cy+Math.sin(angH)*24}" stroke="#ffc93c" stroke-width="5" stroke-linecap="round"/>`;
+  r+=`<line x1="${cx}" y1="${cy}" x2="${cx+Math.cos(angM)*36}" y2="${cy+Math.sin(angM)*36}" stroke="#4dd8ff" stroke-width="3" stroke-linecap="round"/>`;
+  r+=`<circle cx="${cx}" cy="${cy}" r="4" fill="#ff4d8d"/>`;
+  return svgEnvoltura(r,120);
+ }
+
+ // Gráfico de barras / pictograma numérico: `etiquetas` y `valores` (máximo 6 barras).
+ if(T==='barras'){
+  const et=(v.etiquetas||[]).slice(0,6), va=(v.valores||[]).slice(0,6);
+  if(!et.length||et.length!==va.length) return '';
+  const max=Math.max.apply(null,va.concat([1]));
+  const w=170/et.length; let r='';
+  et.forEach((e,i)=>{
+   const alt=Math.round(60*va[i]/max);
+   const x=15+i*w;
+   r+=`<rect x="${x}" y="${75-alt}" width="${w*0.62}" height="${alt}" fill="#3ee089"/>`;
+   r+=`<text x="${x+w*0.31}" y="${72-alt}" font-size="10" fill="#ffc93c" text-anchor="middle" font-weight="bold">${va[i]}</text>`;
+   r+=`<text x="${x+w*0.31}" y="90" font-size="10" fill="#cfc9ee" text-anchor="middle">${String(e).slice(0,8)}</text>`;
+  });
+  r+=`<line x1="10" y1="75" x2="190" y2="75" stroke="#cfc9ee" stroke-width="2"/>`;
+  return svgEnvoltura(r,98);
+ }
+
+ // Cuerpos geométricos: un dibujo simple por nombre.
+ if(T==='cuerpo'){
+  const n=(v.nombre||'').toLowerCase();
+  const st='fill="#2a2350" stroke="#4dd8ff" stroke-width="3"';
+  let r='';
+  if(n==='cubo'||n==='paralelepipedo'){
+   const an=(n==='cubo')?50:70;
+   r=`<rect x="${100-an/2}" y="35" width="${an}" height="50" ${st}/><polygon points="${100-an/2},35 ${100-an/2+18},18 ${100+an/2+18},18 ${100+an/2},35" ${st}/><polygon points="${100+an/2},35 ${100+an/2+18},18 ${100+an/2+18},68 ${100+an/2},85" ${st}/>`;
+  } else if(n==='esfera'){
+   r=`<circle cx="100" cy="55" r="34" ${st}/><ellipse cx="100" cy="55" rx="34" ry="11" fill="none" stroke="#4dd8ff" stroke-width="2" opacity=".6"/>`;
+  } else if(n==='cono'){
+   r=`<polygon points="100,18 66,78 134,78" ${st}/><ellipse cx="100" cy="78" rx="34" ry="11" ${st}/>`;
+  } else if(n==='cilindro'){
+   r=`<rect x="66" y="30" width="68" height="52" ${st}/><ellipse cx="100" cy="30" rx="34" ry="11" ${st}/><ellipse cx="100" cy="82" rx="34" ry="11" ${st}/>`;
+  } else if(n==='piramide'){
+   r=`<polygon points="100,18 64,80 136,80" ${st}/><polygon points="100,18 136,80 152,64" ${st}/>`;
+  } else return '';
+  return svgEnvoltura(r,100);
+ }
+
+ return '';   // tipo desconocido: la pregunta vale igual, solo con texto
 }
 
 const $=id=>document.getElementById(id);
@@ -1897,7 +2001,7 @@ async function preguntasDeOA(oa,n){
  let pool=[];
  try{ const d=await (await fetch(url)).json();
       pool=(d.preguntas||[]).filter(q=>q.oa===oa); }catch(e){ return []; }
- return pickN(pool,n).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa}));
+ return pickN(pool,n).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,visual:q.visual}));
 }
 
 // Lanza el quiz en modo lección (reusa el motor con el flag Q.leccion).
@@ -2491,7 +2595,7 @@ async function startDuelo(){
 }
 function nuevaRondaDuelo(){
  D.j[0].pts=0;D.j[1].pts=0;D.ronda=0;D.turno=0;
- D.pr=pickN(poolDuelo(),DUELO_ROUNDS).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip}));
+ D.pr=pickN(poolDuelo(),DUELO_ROUNDS).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,visual:q.visual}));
  dueloPass();
 }
 function dueloPass(){const jug=D.j[D.turno];$('dpEm').textContent=jug.em;$('dpMsg').textContent='Turno de '+jug.n;go('scr-duelo-pass');}
@@ -2930,7 +3034,7 @@ function jefePreguntasFase(camp,faseIdx){
  const f=camp.jefeFinal.fases[faseIdx], n=camp.jefeFinal.nPorFase, per=Math.max(1,Math.ceil(n/f.oas.length));
  let sel=[]; f.oas.forEach(oa=>{sel=sel.concat(pickN(POOL[oa]||[],per));});
  // Igual que en las etapas: se conserva el `oa` para el mapa de dominio.
- return pickN(sel,n).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa}));
+ return pickN(sel,n).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,visual:q.visual}));
 }
 // Carga el banco completo de Matemáticas en el POOL global (keyed por OA), para el jefe
 // de la campaña de lecciones (Matemáticas no tiene expedición de la cual tomar el POOL).
@@ -3487,7 +3591,7 @@ function iniciarRepaso(lvl, vistos){
  const set=new Set(vistos||[]);
  let disp=banco.filter(q=>!set.has(q.pregunta));
  if(disp.length<10) disp=banco;   // salvaguarda: si por alguna razón no alcanzan, usa todo el banco del OA
- const preguntas=pickN(disp,10).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa}));
+ const preguntas=pickN(disp,10).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,visual:q.visual}));
  if(!preguntas.length){ go('scr-res'); return; }
  Q={lvl,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock:false,preguntas,repaso:{lvl}};
  MODO='normal';
@@ -3764,7 +3868,7 @@ async function construirPreguntasDesafio(asig, objetivos){
   const per=Math.min(6,Math.max(2,Math.round(12/objetivos.length)));
   let sel=[]; objetivos.forEach(oa=>{ sel=sel.concat(pickN(pool[oa],per)); });
   sel=pickN(sel,12);
-  return sel.map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa}));
+  return sel.map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,visual:q.visual}));
 }
 // Arranca el quiz en modo desafío (reusa el motor con el flag Q.desafio).
 async function jugarDesafio(d){
