@@ -2935,3 +2935,51 @@ verificado por DOM. Todo pasó. Único cambio de código: 2 líneas de blindaje.
   flujo normal de la mini-clase sigue avanzando bloques.
 - **Pendientes de Roberto (arrastre, fuera del código):** pegar el argumento de evaluación
   formativa en la propuesta/guion (otro PC); enlace de agenda real para el CTA de la landing.
+
+### Sesión 54 (2026-08-25) — 3° básico: diseño + Plan 1 (app en `/3ro`, scaffold jugable)
+Roberto pidió agregar **3° básico** como producto real para colegios. Es un salto grande: son
+niños de 8-9 años, un público muy distinto. Flujo completo brainstorming (con companion visual)
+→ spec → plan → ejecución por subagentes. **El juego de 8° (`juego/index.html`) NO se tocó.**
+- **Decisiones (brainstorming):** producto para colegios; 3° completo (4 asignaturas) pero
+  **construido por etapas, partiendo por Matemática**; UX de niños = **lectura por voz**, texto
+  corto/grande, **apoyo visual mixto** (código para el grueso + pocas ilustraciones), **4 opciones**
+  (se mantiene), **sin reloj**; mismo esqueleto (campañas, **jefes, stickers**, tienda, ranking)
+  **sin Modo Difícil**; el **nivel es propiedad del curso** (`ALU-` lo fija). **Restricción clave de
+  Roberto:** 3° se construye **aislado en una app aparte `3ro/` servida en `vulpo.cl/3ro`**, sin
+  enlaces desde el sitio ni las muestras, y **no aparece hasta commitear**. Spec:
+  `docs/superpowers/specs/2026-08-25-3-basico-nivel-nuevo-design.md`.
+- **El feature se dividió en 3 planes secuenciales:** Plan 1 (app `/3ro` + UX de niños + Matemática
+  semilla), Plan 2 (contenido completo con agentes + revisión humana), Plan 3 (capa de nivel en el
+  backend + panel). Plan 1:
+  `docs/superpowers/plans/2026-08-25-3-basico-app-scaffold.md`.
+- **Plan 1 EJECUTADO (subagentes, verificación en navegador):**
+  - `3ro/index.html` = **fork** de `juego/index.html` (motor data-driven). Catálogos reemplazados por
+    una campaña de Matemática 3° (`mat3`): 2 capítulos semilla (`mat3-cap1` sumas/restas,
+    `mat3-cap2` contar de a saltos) con **etapas de 5 preguntas** + jefe de cap + **Jefe Final "El
+    Número Perdido"**. `META_OA` de niño; `DEMO_LIBRE='mat3-cap1'`; **`FECHA_PUERTA=''`** (WIP abierto).
+  - Contenido semilla a mano: `contenido/matematicas-3basico/` (`oa.json` + `preguntas.json`, 2 OA
+    `MA03 OA 01`/`OA 09`, 12 preguntas, `revisada:false`), con campo opcional `visual`.
+  - **UX de niños:** flag `SIN_RELOJ` (quiz sin cuenta regresiva, selector Normal/Difícil oculto);
+    función `leerEnVoz` + botón **🔊 Escuchar** (Web Speech API, fallback silencioso); `renderVisual`
+    + `#qVisual` (apoyo visual por código, tipo "contar" = grupos de emojis); `body.ninos` (texto
+    grande: enunciado 22px, opciones 18px).
+  - **Fix de integración no previsto en el plan (lo más valioso):** `renderExpediciones` (el menú)
+    **crasheaba** en 3° por el cableado de 8° (buscaba la campaña de lecciones `'mate'` →
+    `capitulosMate` de `undefined`) y agregaba la biblioteca de Ana Frank. Se adaptó:
+    `ORDEN_ASIG=['Matemática']` (singular, como el contenido), se quitó el bloque especial de
+    Matemáticas de 8° y la biblioteca, y se ocultó el botón **Duelo** (`#btnDuelo{display:none}`,
+    diferido). Detalle fino: `esMate` en `terminarNivel` compara con "Matemáticas" (plural), así que
+    3° "Matemática" (singular) cae —bien— en el **repaso** al fallar (3° no tiene mini-clases).
+  - **Verificado end-to-end en el navegador (por DOM/JS):** JUGADOR → menú (solo Matemática, sin
+    crash) → campaña (2 caps + jefe) → etapa con meta 🎯, sin reloj, 🔊 Escuchar (lee enunciado + 4
+    opciones), apoyo visual (6🍎➕7🍎), texto grande, 5 preguntas → **aprobar** ("¡Nivel superado!" +
+    semáforo) y **reprobar** ("Repasar sin presión" + semáforo). **8° intacto** (20 expediciones,
+    reloj, selector; `SIN_RELOJ` no existe en `/juego/`), **nada enlaza a `/3ro`**.
+- **Observaciones (no bloqueantes):** 3° hereda el umbral de **66%** (4/5) — afinable; la Tienda
+  muestra skins de 8° (sirven de stickers); Reto/Vocabulario/Lectura quedaron inalcanzables (bien,
+  diferidos); `/3ro` y `/juego` **comparten `localStorage`** (mismo origen) → XP/monedas/skins se
+  comparten, se resuelve en el Plan 3.
+- **Pendiente de este feature:** Plan 2 (contenido completo de Matemática 3°) y Plan 3 (backend de
+  nivel + panel). Roberto probará `/3ro` en el teléfono y decidirá ajustes (umbral, etc.).
+- **Pendientes de arrastre (fuera del código):** pegar el argumento de evaluación formativa en la
+  propuesta/guion (otro PC); enlace de agenda real para el CTA de la landing.

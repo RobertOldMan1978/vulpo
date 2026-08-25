@@ -1,0 +1,16 @@
+{
+  "preguntas": [
+    { "oa": "MA03 OA 09", "pregunta": "¿Cuánto es 6 + 7?", "opciones": ["12", "13", "14", "15"], "correcta": 1, "tip": "6 + 7 es 13.", "visual": {"tipo": "contar", "a": 6, "b": 7, "emoji": "🍎"}, "revisada": false },
+    { "oa": "MA03 OA 09", "pregunta": "¿Cuánto es 10 - 4?", "opciones": ["5", "6", "7", "8"], "correcta": 1, "tip": "10 quitando 4 son 6.", "visual": {"tipo": "contar", "a": 10, "b": -4, "emoji": "⭐"}, "revisada": false },
+    { "oa": "MA03 OA 09", "pregunta": "Ana tiene 8 lápices y le regalan 5. ¿Cuántos tiene?", "opciones": ["12", "13", "14", "11"], "correcta": 1, "tip": "8 + 5 son 13.", "revisada": false },
+    { "oa": "MA03 OA 09", "pregunta": "¿Cuánto es 9 + 9?", "opciones": ["16", "17", "18", "19"], "correcta": 2, "tip": "9 + 9 son 18.", "revisada": false },
+    { "oa": "MA03 OA 09", "pregunta": "Había 15 pájaros y volaron 6. ¿Cuántos quedan?", "opciones": ["8", "9", "10", "11"], "correcta": 1, "tip": "15 menos 6 son 9.", "revisada": false },
+    { "oa": "MA03 OA 09", "pregunta": "¿Cuánto es 7 + 8?", "opciones": ["14", "15", "16", "13"], "correcta": 1, "tip": "7 + 8 son 15.", "revisada": false },
+    { "oa": "MA03 OA 01", "pregunta": "Cuenta de 10 en 10: 10, 20, 30, ¿qué sigue?", "opciones": ["31", "40", "50", "35"], "correcta": 1, "tip": "Después de 30, de 10 en 10, viene 40.", "revisada": false },
+    { "oa": "MA03 OA 01", "pregunta": "Cuenta de 5 en 5: 5, 10, 15, ¿qué sigue?", "opciones": ["16", "20", "25", "18"], "correcta": 1, "tip": "Después de 15, de 5 en 5, viene 20.", "revisada": false },
+    { "oa": "MA03 OA 01", "pregunta": "Cuenta de 100 en 100: 100, 200, ¿qué sigue?", "opciones": ["250", "300", "210", "400"], "correcta": 1, "tip": "Después de 200, de 100 en 100, viene 300.", "revisada": false },
+    { "oa": "MA03 OA 01", "pregunta": "¿Qué número va entre 40 y 60 contando de 10 en 10?", "opciones": ["45", "50", "55", "70"], "correcta": 1, "tip": "Entre 40 y 60 está el 50.", "revisada": false },
+    { "oa": "MA03 OA 01", "pregunta": "Cuenta de 5 en 5: 20, 25, 30, ¿qué sigue?", "opciones": ["31", "35", "40", "45"], "correcta": 1, "tip": "Después de 30, de 5 en 5, viene 35.", "revisada": false },
+    { "oa": "MA03 OA 01", "pregunta": "Cuenta de 10 en 10 hacia atrás: 50, 40, 30, ¿qué sigue?", "opciones": ["25", "20", "15", "35"], "correcta": 1, "tip": "Después de 30, bajando de 10 en 10, viene 20.", "revisada": false }
+  ]
+}
