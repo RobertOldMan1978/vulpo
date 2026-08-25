@@ -1,0 +1,412 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "5 + ▢ = 12. ¿Cuánto vale ▢?",
+   "opciones": [
+    "7",
+    "6",
+    "17",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "Al 5 le falta llegar a 12. Cuenta desde 5 hasta 12 y avanzas 7.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "▢ + 4 = 10. ¿Cuánto vale ▢?",
+   "opciones": [
+    "14",
+    "6",
+    "5",
+    "7"
+   ],
+   "correcta": 1,
+   "tip": "Para saber cuánto falta, quita el 4 al total: 10 menos 4.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "9 + ▢ = 15. ¿Cuánto vale ▢?",
+   "opciones": [
+    "24",
+    "7",
+    "6",
+    "5"
+   ],
+   "correcta": 2,
+   "tip": "El 9 ya está puesto. Descuéntalo del 15 y ves lo que falta.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "▢ + 8 = 20. ¿Cuánto vale ▢?",
+   "opciones": [
+    "28",
+    "13",
+    "11",
+    "12"
+   ],
+   "correcta": 3,
+   "tip": "El total es 20 y una parte es 8. La otra parte se halla restando.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "14 - ▢ = 6. ¿Cuánto vale ▢?",
+   "opciones": [
+    "8",
+    "20",
+    "9",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "De 14 quedaron 6, así que lo que se fue es la diferencia entre ambos.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "▢ - 5 = 9. ¿Cuánto vale ▢?",
+   "opciones": [
+    "4",
+    "14",
+    "15",
+    "13"
+   ],
+   "correcta": 1,
+   "tip": "Aquí falta el número del comienzo: devuélvele los 5 que se quitaron.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "▢ - 7 = 13. ¿Cuánto vale ▢?",
+   "opciones": [
+    "6",
+    "19",
+    "20",
+    "21"
+   ],
+   "correcta": 2,
+   "tip": "Si le quitaron 7 y quedaron 13, al comienzo había 7 más que 13.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "20 - ▢ = 12. ¿Cuánto vale ▢?",
+   "opciones": [
+    "32",
+    "9",
+    "7",
+    "8"
+   ],
+   "correcta": 3,
+   "tip": "Lo que se quitó es lo que falta entre 12 y 20.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "25 + ▢ = 40. ¿Cuánto vale ▢?",
+   "opciones": [
+    "15",
+    "65",
+    "14",
+    "16"
+   ],
+   "correcta": 0,
+   "tip": "Desde 25 avanza de a 5 hasta 40 y cuenta cuánto avanzaste.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "▢ + 30 = 50. ¿Cuánto vale ▢?",
+   "opciones": [
+    "80",
+    "20",
+    "25",
+    "15"
+   ],
+   "correcta": 1,
+   "tip": "Quítale al total las 3 decenas que ya conoces y queda la parte que falta.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 100,
+    "paso": 10
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "45 - ▢ = 20. ¿Cuánto vale ▢?",
+   "opciones": [
+    "65",
+    "35",
+    "25",
+    "15"
+   ],
+   "correcta": 2,
+   "tip": "Lo que se sacó es el salto que hay entre 20 y 45.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "▢ - 10 = 40. ¿Cuánto vale ▢?",
+   "opciones": [
+    "30",
+    "45",
+    "60",
+    "50"
+   ],
+   "correcta": 3,
+   "tip": "Le quitaron una decena y quedaron 40, así que antes había una decena más.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "🔺 + 6 = 14. ¿Cuánto vale 🔺?",
+   "opciones": [
+    "8",
+    "20",
+    "7",
+    "9"
+   ],
+   "correcta": 0,
+   "tip": "El triángulo es la parte que falta: descuenta el 6 del total.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "🔷 - 9 = 11. ¿Cuánto vale 🔷?",
+   "opciones": [
+    "2",
+    "20",
+    "19",
+    "21"
+   ],
+   "correcta": 1,
+   "tip": "Al rombo le sacaron 9 y quedaron 11: devuélvele esos 9.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "18 + 🟡 = 30. ¿Cuánto vale 🟡?",
+   "opciones": [
+    "48",
+    "13",
+    "12",
+    "11"
+   ],
+   "correcta": 2,
+   "tip": "Desde 18 llega primero a 20 y luego a 30: son 2 y después 10.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "50 - ⬛ = 35. ¿Cuánto vale ⬛?",
+   "opciones": [
+    "85",
+    "25",
+    "5",
+    "15"
+   ],
+   "correcta": 3,
+   "tip": "Lo tapado es la distancia entre 35 y 50.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "Ana tenía 8 láminas, le dieron ▢ y ahora tiene 15. ¿Cuánto es ▢?",
+   "opciones": [
+    "8",
+    "23",
+    "6",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "Las láminas nuevas son las que faltan para pasar de 8 a 15.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "En el bus iban 20 niños, bajaron ▢ y quedaron 12. ¿Cuánto es ▢?",
+   "opciones": [
+    "32",
+    "8",
+    "9",
+    "7"
+   ],
+   "correcta": 1,
+   "tip": "Los que bajaron son la diferencia entre los que iban y los que quedaron.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "▢ + 7 = 7. ¿Cuánto vale ▢?",
+   "opciones": [
+    "1",
+    "7",
+    "0",
+    "14"
+   ],
+   "correcta": 2,
+   "tip": "Si el 7 solo ya llega al total, no hay que agregar nada más.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "60 + ▢ = 100. ¿Cuánto vale ▢?",
+   "opciones": [
+    "160",
+    "30",
+    "50",
+    "40"
+   ],
+   "correcta": 3,
+   "tip": "De 60 a 100 hay 4 decenas de distancia.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 100,
+    "paso": 10
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "▢ + 55 = 100. ¿Cuánto vale ▢?",
+   "opciones": [
+    "45",
+    "155",
+    "55",
+    "35"
+   ],
+   "correcta": 0,
+   "tip": "De 55 a 60 hay 5 y de 60 a 100 hay 40: junta los dos saltos.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "100 - ▢ = 70. ¿Cuánto vale ▢?",
+   "opciones": [
+    "170",
+    "30",
+    "20",
+    "40"
+   ],
+   "correcta": 1,
+   "tip": "Bajaste de 100 a 70, o sea 3 decenas.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 100,
+    "paso": 10
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "▢ - 25 = 25. ¿Cuánto vale ▢?",
+   "opciones": [
+    "0",
+    "45",
+    "50",
+    "75"
+   ],
+   "correcta": 2,
+   "tip": "Le sacaron 25 y quedaron 25, así que antes había 25 y 25 juntos.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "¿Qué cálculo sirve para hallar ▢ en 6 + ▢ = 14?",
+   "opciones": [
+    "6 + 14",
+    "6 - 14",
+    "14 + 6",
+    "14 - 6"
+   ],
+   "correcta": 3,
+   "tip": "Cuando falta un sumando, se resta la parte conocida del total.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "¿Qué cálculo sirve para hallar ▢ en ▢ - 9 = 21?",
+   "opciones": [
+    "21 + 9",
+    "21 - 9",
+    "9 - 21",
+    "21 x 9"
+   ],
+   "correcta": 0,
+   "tip": "Cuando falta el número del comienzo, se devuelve lo que se quitó sumando.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "Sofía tenía ▢ pesos, gastó 30 y le quedaron 20. ¿Cuánto es ▢?",
+   "opciones": [
+    "10",
+    "50",
+    "40",
+    "60"
+   ],
+   "correcta": 1,
+   "tip": "A la plata que le queda súmale la que gastó y sabrás con cuánta partió.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "Un libro tiene ▢ páginas. Leí 15 y faltan 35. ¿Cuánto es ▢?",
+   "opciones": [
+    "20",
+    "45",
+    "50",
+    "55"
+   ],
+   "correcta": 2,
+   "tip": "Las leídas y las que faltan, juntas, son todas las páginas del libro.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "35 + ▢ = 62. ¿Cuánto vale ▢?",
+   "opciones": [
+    "97",
+    "17",
+    "37",
+    "27"
+   ],
+   "correcta": 3,
+   "tip": "De 35 a 40 hay 5 y de 40 a 62 hay 22: junta los dos saltos.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "▢ - 14 = 26. ¿Cuánto vale ▢?",
+   "opciones": [
+    "40",
+    "12",
+    "30",
+    "42"
+   ],
+   "correcta": 0,
+   "tip": "Devuélvele los 14 que se quitaron a los 26 que quedaron.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 13",
+   "pregunta": "72 - ▢ = 50. ¿Cuánto vale ▢?",
+   "opciones": [
+    "122",
+    "22",
+    "32",
+    "12"
+   ],
+   "correcta": 1,
+   "tip": "Lo que se sacó es el salto que hay entre 50 y 72.",
+   "revisada": false
+  }
+ ]
+}

@@ -1,0 +1,474 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "¿Qué hora marca este reloj?",
+   "opciones": [
+    "12:15",
+    "3:00",
+    "3:30",
+    "4:00"
+   ],
+   "correcta": 1,
+   "tip": "La aguja corta está en el 3 y la larga en el 12: son las 3 en punto.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 3,
+    "minuto": 0
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "Ana mira el reloj del living. ¿Qué hora es?",
+   "opciones": [
+    "7:30",
+    "6:30",
+    "7:06",
+    "8:30"
+   ],
+   "correcta": 0,
+   "tip": "La aguja larga en el 6 marca 30 minutos, o sea las siete y media.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 7,
+    "minuto": 30
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "El reloj de la sala marca una hora. ¿Cuál es?",
+   "opciones": [
+    "9:03",
+    "3:45",
+    "9:15",
+    "10:15"
+   ],
+   "correcta": 2,
+   "tip": "Cada número vale 5 minutos: la aguja larga en el 3 marca 15 minutos.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 9,
+    "minuto": 15
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "¿Qué hora señalan las agujas del reloj?",
+   "opciones": [
+    "6:09",
+    "7:45",
+    "6:45",
+    "6:15"
+   ],
+   "correcta": 2,
+   "tip": "La aguja larga en el 9 marca 45 minutos y la corta ya pasó el 6.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 6,
+    "minuto": 45
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "Pedro despierta y ve este reloj. ¿Qué hora es?",
+   "opciones": [
+    "8:00",
+    "9:00",
+    "8:30",
+    "12:40"
+   ],
+   "correcta": 0,
+   "tip": "Cuando la aguja larga apunta al 12, la hora está en punto.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 8,
+    "minuto": 0
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "¿Qué hora marca el reloj del colegio?",
+   "opciones": [
+    "6:12",
+    "12:06",
+    "1:30",
+    "12:30"
+   ],
+   "correcta": 3,
+   "tip": "La aguja corta pasó el 12 y la larga está en el 6: media hora más.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 12,
+    "minuto": 30
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "El recreo empieza a la hora del reloj. ¿Cuál es?",
+   "opciones": [
+    "10:15",
+    "10:03",
+    "3:50",
+    "11:15"
+   ],
+   "correcta": 0,
+   "tip": "La aguja larga en el 3 son 3 veces 5, es decir 15 minutos.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 10,
+    "minuto": 15
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "Mira el reloj. ¿Qué hora está marcando?",
+   "opciones": [
+    "5:09",
+    "6:45",
+    "5:15",
+    "5:45"
+   ],
+   "correcta": 3,
+   "tip": "La aguja larga en el 9 son 45 minutos y la corta aún no llega al 6.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 5,
+    "minuto": 45
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "¿Cuántos minutos pasaron después de las 4?",
+   "opciones": [
+    "4 minutos",
+    "20 minutos",
+    "15 minutos",
+    "40 minutos"
+   ],
+   "correcta": 1,
+   "tip": "La aguja larga está en el 4 y cada número vale 5 minutos: 4 por 5.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 4,
+    "minuto": 20
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "¿Qué hora marca el reloj de la cocina?",
+   "opciones": [
+    "12:05",
+    "1:00",
+    "1:05",
+    "2:00"
+   ],
+   "correcta": 1,
+   "tip": "La aguja corta en el 1 y la larga en el 12 indican la hora en punto.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 1,
+    "minuto": 0
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "El reloj marca las once y algo. ¿Qué hora es?",
+   "opciones": [
+    "11:08",
+    "11:40",
+    "12:40",
+    "11:20"
+   ],
+   "correcta": 1,
+   "tip": "La aguja larga en el 8 son 8 veces 5, o sea 40 minutos.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 11,
+    "minuto": 40
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "¿Qué hora indica el reloj del gimnasio?",
+   "opciones": [
+    "3:10",
+    "2:03",
+    "2:15",
+    "2:45"
+   ],
+   "correcta": 2,
+   "tip": "La aguja larga en el 3 marca 15 minutos: un cuarto de hora.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 2,
+    "minuto": 15
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "¿Cómo se lee la hora que marca el reloj?",
+   "opciones": [
+    "cinco y media",
+    "seis y media",
+    "cinco y cuarto",
+    "cinco y seis"
+   ],
+   "correcta": 0,
+   "tip": "Media hora son 30 minutos, y la aguja larga en el 6 marca justo eso.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 5,
+    "minuto": 30
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "¿Cuánto falta para las 9 según el reloj?",
+   "opciones": [
+    "45 minutos",
+    "30 minutos",
+    "15 minutos",
+    "9 minutos"
+   ],
+   "correcta": 2,
+   "tip": "El reloj marca 8:45 y de 45 a 60 minutos faltan 15.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 8,
+    "minuto": 45
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "¿Qué hora muestra el reloj del pasillo?",
+   "opciones": [
+    "11:00",
+    "12:50",
+    "10:30",
+    "10:00"
+   ],
+   "correcta": 3,
+   "tip": "La aguja larga en el 12 avisa que la hora está en punto.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 10,
+    "minuto": 0
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "¿Qué hora marca el reloj del comedor?",
+   "opciones": [
+    "9:10",
+    "10:50",
+    "9:50",
+    "9:05"
+   ],
+   "correcta": 2,
+   "tip": "La aguja larga en el 10 son 50 minutos y la corta todavía no llega al 10.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 9,
+    "minuto": 50
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "El reloj digital marca 7:45. ¿Cómo se lee esa hora?",
+   "opciones": [
+    "siete quince",
+    "siete cuarenta y cinco",
+    "ocho cuarenta y cinco",
+    "siete cinco"
+   ],
+   "correcta": 1,
+   "tip": "En el digital, el número de la izquierda es la hora y el otro, los minutos.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "El reloj digital marca 6:30. ¿Cómo se dice esa hora?",
+   "opciones": [
+    "seis y cuarto",
+    "seis y media",
+    "siete y media",
+    "seis y seis"
+   ],
+   "correcta": 1,
+   "tip": "Treinta minutos son la mitad de una hora, por eso se dice y media.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "El reloj digital marca 4:15. ¿Cómo se lee?",
+   "opciones": [
+    "cuatro y cuarto",
+    "cuatro y media",
+    "cuatro y cinco",
+    "tres y cuarto"
+   ],
+   "correcta": 0,
+   "tip": "Quince minutos son la cuarta parte de la hora: un cuarto.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "¿Cómo se escribe nueve y media en un reloj digital?",
+   "opciones": [
+    "9:15",
+    "9:03",
+    "9:30",
+    "10:30"
+   ],
+   "correcta": 2,
+   "tip": "Media hora son 30 minutos, así que van después de los dos puntos.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "¿Cómo se escribe ocho y cuarto en un reloj digital?",
+   "opciones": [
+    "8:04",
+    "8:15",
+    "8:45",
+    "8:30"
+   ],
+   "correcta": 1,
+   "tip": "Un cuarto de hora son 15 minutos, no 4.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "El reloj digital marca 5:00. ¿Cuánto falta para las 5:30?",
+   "opciones": [
+    "15 minutos",
+    "5 minutos",
+    "60 minutos",
+    "30 minutos"
+   ],
+   "correcta": 3,
+   "tip": "De los 0 minutos a los 30 hay que avanzar media hora.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "El reloj digital marca 2:50. ¿Cuánto falta para las 3:00?",
+   "opciones": [
+    "10 minutos",
+    "50 minutos",
+    "20 minutos",
+    "5 minutos"
+   ],
+   "correcta": 0,
+   "tip": "Una hora tiene 60 minutos, y de 50 a 60 faltan 10.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "¿Cuántos minutos tiene media hora?",
+   "opciones": [
+    "15",
+    "30",
+    "60",
+    "50"
+   ],
+   "correcta": 1,
+   "tip": "Media hora es la mitad de 60 minutos.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "¿Cuántos minutos tiene un cuarto de hora?",
+   "opciones": [
+    "4",
+    "25",
+    "15",
+    "40"
+   ],
+   "correcta": 2,
+   "tip": "La hora se parte en 4 pedazos iguales y 60 dividido en 4 da 15.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "¿Cuántos minutos tiene una hora completa?",
+   "opciones": [
+    "100",
+    "30",
+    "50",
+    "60"
+   ],
+   "correcta": 3,
+   "tip": "El reloj tiene 12 números y cada uno vale 5 minutos: 12 por 5.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "El reloj digital marca 3:45. ¿Cómo se dice también esa hora?",
+   "opciones": [
+    "un cuarto para las 4",
+    "tres y cuarto",
+    "cuatro y cuarto",
+    "media hora para las 4"
+   ],
+   "correcta": 0,
+   "tip": "Para llegar a las 4 faltan 15 minutos, que son un cuarto de hora.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "La micro pasa a las 7:20. ¿Cuántos minutos son después de las 7?",
+   "opciones": [
+    "2 minutos",
+    "20 minutos",
+    "40 minutos",
+    "12 minutos"
+   ],
+   "correcta": 1,
+   "tip": "Los minutos del reloj digital se leen tal cual: veinte.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "El reloj digital marca 11:15. ¿Qué hora será 30 minutos después?",
+   "opciones": [
+    "11:30",
+    "12:15",
+    "11:45",
+    "11:35"
+   ],
+   "correcta": 2,
+   "tip": "A los 15 minutos se le suman 30 y quedan 45 minutos de la misma hora.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 20",
+   "pregunta": "La clase parte a las 10:00 y dura media hora. ¿A qué hora termina?",
+   "opciones": [
+    "10:15",
+    "11:00",
+    "10:50",
+    "10:30"
+   ],
+   "correcta": 3,
+   "tip": "Media hora después de una hora en punto son 30 minutos más.",
+   "revisada": false
+  }
+ ]
+}

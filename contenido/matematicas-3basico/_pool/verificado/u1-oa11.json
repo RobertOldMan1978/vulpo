@@ -1,0 +1,514 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "¿Qué fracción de la barra está pintada?",
+   "opciones": [
+    "1/4",
+    "1/3",
+    "1/2",
+    "3/4"
+   ],
+   "correcta": 0,
+   "tip": "El entero está partido en 4 partes iguales y hay 1 pintada: un cuarto.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 4,
+    "pintadas": 1
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "¿Qué fracción de la galleta está pintada?",
+   "opciones": [
+    "1/3",
+    "1/2",
+    "1/4",
+    "2/3"
+   ],
+   "correcta": 1,
+   "tip": "El entero tiene 2 partes iguales y 1 está pintada: un medio.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 2,
+    "pintadas": 1
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "¿Qué fracción de la cinta está pintada?",
+   "opciones": [
+    "1/2",
+    "1/4",
+    "1/3",
+    "2/3"
+   ],
+   "correcta": 2,
+   "tip": "Son 3 partes iguales y solo 1 pintada: abajo va el 3 y arriba el 1.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 3,
+    "pintadas": 1
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "¿Qué fracción del pan está pintada?",
+   "opciones": [
+    "2/3",
+    "1/3",
+    "3/2",
+    "2/4"
+   ],
+   "correcta": 0,
+   "tip": "Hay 3 partes iguales y 2 pintadas: arriba las pintadas, abajo el total.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 3,
+    "pintadas": 2
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "¿Qué fracción de la hoja está pintada?",
+   "opciones": [
+    "3/4",
+    "1/4",
+    "2/4",
+    "4/3"
+   ],
+   "correcta": 0,
+   "tip": "De las 4 partes iguales hay 3 pintadas, por eso 3 arriba y 4 abajo.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 4,
+    "pintadas": 3
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "¿Qué fracción de la barra NO está pintada?",
+   "opciones": [
+    "1/4",
+    "2/4",
+    "3/4",
+    "1/3"
+   ],
+   "correcta": 2,
+   "tip": "Si de 4 partes hay 1 pintada, quedan 3 sin pintar: tres cuartos.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 4,
+    "pintadas": 1
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "¿Qué parte de la torta está pintada?",
+   "opciones": [
+    "La mitad",
+    "Un tercio",
+    "Un cuarto",
+    "Dos tercios"
+   ],
+   "correcta": 0,
+   "tip": "3 de 6 partes iguales es justo la mitad del entero.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 6,
+    "pintadas": 3
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "¿Qué parte del chocolate está pintada?",
+   "opciones": [
+    "Un tercio",
+    "Un cuarto",
+    "La mitad",
+    "Dos tercios"
+   ],
+   "correcta": 1,
+   "tip": "2 de 8 partes iguales equivale a 1 de cada 4: un cuarto.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 8,
+    "pintadas": 2
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "¿Qué parte de la cinta está pintada?",
+   "opciones": [
+    "Un cuarto",
+    "La mitad",
+    "Un tercio",
+    "Dos tercios"
+   ],
+   "correcta": 2,
+   "tip": "2 de 6 partes iguales es lo mismo que 1 de cada 3: un tercio.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 6,
+    "pintadas": 2
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "¿Qué parte del papel está pintada?",
+   "opciones": [
+    "Un tercio",
+    "Dos tercios",
+    "Tres cuartos",
+    "La mitad"
+   ],
+   "correcta": 1,
+   "tip": "4 de 6 partes iguales es lo mismo que 2 de cada 3: dos tercios.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 6,
+    "pintadas": 4
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "¿Qué parte de la barra está pintada?",
+   "opciones": [
+    "Dos tercios",
+    "La mitad",
+    "Tres cuartos",
+    "Un cuarto"
+   ],
+   "correcta": 2,
+   "tip": "6 de 8 partes iguales es lo mismo que 3 de cada 4: tres cuartos.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 8,
+    "pintadas": 6
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "¿Qué parte del queque está pintada?",
+   "opciones": [
+    "La mitad",
+    "Un cuarto",
+    "Dos tercios",
+    "Un tercio"
+   ],
+   "correcta": 1,
+   "tip": "3 de 12 partes iguales es 1 de cada 4: un cuarto.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 12,
+    "pintadas": 3
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "¿Qué parte del cuadrado está pintada?",
+   "opciones": [
+    "Un tercio",
+    "La mitad",
+    "Un cuarto",
+    "Tres cuartos"
+   ],
+   "correcta": 0,
+   "tip": "3 de 9 partes iguales es lo mismo que 1 de cada 3: un tercio.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 9,
+    "pintadas": 3
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "¿Qué fracción del queque está pintada?",
+   "opciones": [
+    "3/4",
+    "4/4",
+    "1/4",
+    "4/1"
+   ],
+   "correcta": 1,
+   "tip": "Están pintadas las 4 partes de 4: el entero completo se escribe 4/4.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 4,
+    "pintadas": 4
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "¿Qué fracción del pan falta pintar?",
+   "opciones": [
+    "1/3",
+    "2/3",
+    "1/2",
+    "3/1"
+   ],
+   "correcta": 0,
+   "tip": "De 3 partes iguales hay 2 pintadas, así que falta 1 de 3.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 3,
+    "pintadas": 2
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "¿Cuál fracción es mayor: 3/4 o 1/4?",
+   "opciones": [
+    "3/4",
+    "1/4",
+    "1/2",
+    "1/3"
+   ],
+   "correcta": 0,
+   "tip": "Los cuartos son del mismo tamaño, así que 3 cuartos son más que 1 cuarto.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 4,
+    "pintadas": 3
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "¿Cuál fracción es menor: 1/3 o 2/3?",
+   "opciones": [
+    "2/3",
+    "1/3",
+    "3/3",
+    "1/2"
+   ],
+   "correcta": 1,
+   "tip": "Si los tercios son iguales, tener 1 es menos que tener 2.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 3,
+    "pintadas": 1
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "¿Cuál fracción es mayor: 2/4 o 3/4?",
+   "opciones": [
+    "2/4",
+    "3/4",
+    "1/4",
+    "4/4"
+   ],
+   "correcta": 1,
+   "tip": "Con el mismo denominador gana la que tiene más partes pintadas: 3.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "Ana comió 2/4 de pizza y Luis 3/4. ¿Quién comió más?",
+   "opciones": [
+    "Luis",
+    "Ana",
+    "Los dos igual",
+    "Nadie"
+   ],
+   "correcta": 0,
+   "tip": "Las porciones son del mismo tamaño y Luis tomó 3, uno más que Ana.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "Pía usó 1/3 de un pliego y Beto 2/3. ¿Quién usó menos?",
+   "opciones": [
+    "Beto",
+    "Pía",
+    "Los dos igual",
+    "Nadie"
+   ],
+   "correcta": 1,
+   "tip": "Los tercios miden lo mismo, y 1 tercio es menos que 2 tercios.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "¿Cuál fracción es mayor: 1/2 o 1/4 de la misma torta?",
+   "opciones": [
+    "1/4",
+    "1/2",
+    "Son iguales",
+    "Ninguna"
+   ],
+   "correcta": 1,
+   "tip": "Partir en 2 da trozos más grandes que partir en 4, así que 1/2 es mayor.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "Parto una manzana en 2 partes iguales. ¿Cómo se llama cada parte?",
+   "opciones": [
+    "Un tercio",
+    "Un cuarto",
+    "Un medio",
+    "Dos tercios"
+   ],
+   "correcta": 2,
+   "tip": "Cuando el entero se parte en 2 partes iguales, cada una es un medio.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 2,
+    "pintadas": 1
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "Parto un pan en 3 partes iguales. ¿Cómo se llama cada parte?",
+   "opciones": [
+    "Un tercio",
+    "Un medio",
+    "Un cuarto",
+    "Tres enteros"
+   ],
+   "correcta": 0,
+   "tip": "El nombre viene del total de partes: 3 partes iguales dan tercios.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 3,
+    "pintadas": 1
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "Parto una hoja en 4 partes iguales. ¿Cómo se llama cada parte?",
+   "opciones": [
+    "Un medio",
+    "Un tercio",
+    "Cuatro enteros",
+    "Un cuarto"
+   ],
+   "correcta": 3,
+   "tip": "Con 4 partes iguales cada una es un cuarto del entero.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 4,
+    "pintadas": 1
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "Una pizza se parte en 4 y me como 1. ¿Qué fracción comí?",
+   "opciones": [
+    "1/3",
+    "4/1",
+    "1/4",
+    "3/4"
+   ],
+   "correcta": 2,
+   "tip": "Arriba va lo que comí (1) y abajo en cuántas partes se partió (4).",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 4,
+    "pintadas": 1
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "Un chocolate tiene 3 trozos iguales y como 2. ¿Qué fracción comí?",
+   "opciones": [
+    "2/3",
+    "1/3",
+    "3/2",
+    "2/4"
+   ],
+   "correcta": 0,
+   "tip": "Comí 2 trozos de los 3 que había: se escribe 2 arriba y 3 abajo.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 3,
+    "pintadas": 2
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "¿Cuántos cuartos se necesitan para armar un entero?",
+   "opciones": [
+    "2",
+    "3",
+    "4",
+    "6"
+   ],
+   "correcta": 2,
+   "tip": "El entero se partió en 4 partes iguales, así que hacen falta las 4.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 4,
+    "pintadas": 4
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "¿Cuántos tercios se necesitan para armar un entero?",
+   "opciones": [
+    "3",
+    "2",
+    "4",
+    "1"
+   ],
+   "correcta": 0,
+   "tip": "Tercios significa 3 partes iguales, y juntas las 3 forman el entero.",
+   "visual": {
+    "tipo": "fraccion",
+    "partes": 3,
+    "pintadas": 3
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "Tengo 10 galletas y regalo la mitad. ¿Cuántas regalo?",
+   "opciones": [
+    "2",
+    "4",
+    "5",
+    "10"
+   ],
+   "correcta": 2,
+   "tip": "La mitad es repartir en 2 grupos iguales: 5 y 5.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 11",
+   "pregunta": "Tengo 8 lápices y presto un cuarto. ¿Cuántos presto?",
+   "opciones": [
+    "1",
+    "2",
+    "4",
+    "8"
+   ],
+   "correcta": 1,
+   "tip": "Un cuarto es repartir en 4 grupos iguales: 8 en 4 grupos da 2 en cada uno.",
+   "revisada": false
+  }
+ ]
+}

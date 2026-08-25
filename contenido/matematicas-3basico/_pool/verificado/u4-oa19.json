@@ -1,0 +1,401 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "El 1 de mayo es lunes. ¿Qué día es el 8 de mayo?",
+   "opciones": [
+    "domingo",
+    "lunes",
+    "martes",
+    "miércoles"
+   ],
+   "correcta": 1,
+   "tip": "Del 1 al 8 pasan 7 días, o sea una semana justa, y el día se repite.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "El 4 de junio es martes. ¿Qué día es el 18 de junio?",
+   "opciones": [
+    "lunes",
+    "miércoles",
+    "martes",
+    "jueves"
+   ],
+   "correcta": 2,
+   "tip": "Del 4 al 18 hay 14 días: 2 semanas exactas, así que cae el mismo día.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "El 18 de septiembre es viernes. ¿Qué día es el 19 de septiembre?",
+   "opciones": [
+    "jueves",
+    "sábado",
+    "domingo",
+    "viernes"
+   ],
+   "correcta": 1,
+   "tip": "El 19 viene justo después del 18, así que avanzas un día en la semana.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "El 10 de marzo es jueves. ¿Qué día fue el 3 de marzo?",
+   "opciones": [
+    "miércoles",
+    "viernes",
+    "jueves",
+    "martes"
+   ],
+   "correcta": 2,
+   "tip": "Retroceder 7 días es volver una semana atrás, y cae el mismo día.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "El 2 de agosto es domingo. ¿Qué día es el 5 de agosto?",
+   "opciones": [
+    "martes",
+    "miércoles",
+    "jueves",
+    "lunes"
+   ],
+   "correcta": 1,
+   "tip": "Cuenta 3 días desde el domingo: lunes, martes y miércoles.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "Un mes empieza el jueves 1. ¿Qué día de la semana es el 15?",
+   "opciones": [
+    "miércoles",
+    "jueves",
+    "viernes",
+    "sábado"
+   ],
+   "correcta": 1,
+   "tip": "Del 1 al 15 pasan 14 días, que son 2 semanas justas: mismo día.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "¿Cuántos días tiene el mes de julio?",
+   "opciones": [
+    "28",
+    "30",
+    "31",
+    "29"
+   ],
+   "correcta": 2,
+   "tip": "Julio es uno de los meses largos del año y llega hasta el día 31.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "¿Cuántos días tiene el mes de septiembre?",
+   "opciones": [
+    "29",
+    "30",
+    "31",
+    "28"
+   ],
+   "correcta": 1,
+   "tip": "Septiembre, abril, junio y noviembre son los meses de 30 días.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "¿Cuántos días tiene febrero en un año normal?",
+   "opciones": [
+    "28",
+    "29",
+    "30",
+    "31"
+   ],
+   "correcta": 0,
+   "tip": "Febrero es el mes más corto; solo en año bisiesto llega a 29 días.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "¿Cuántos días tiene el mes de diciembre?",
+   "opciones": [
+    "30",
+    "31",
+    "28",
+    "29"
+   ],
+   "correcta": 1,
+   "tip": "Diciembre cierra el año y es de los meses largos, de 31 días.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "¿Cuántos meses tiene un año?",
+   "opciones": [
+    "10",
+    "11",
+    "12",
+    "7"
+   ],
+   "correcta": 2,
+   "tip": "El año va de enero a diciembre; si los cuentas todos, son 12.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "¿Cuántos días tiene una semana?",
+   "opciones": [
+    "5",
+    "6",
+    "7",
+    "10"
+   ],
+   "correcta": 2,
+   "tip": "La semana va de lunes a domingo; al contarlos te dan 7 días.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "¿Qué mes viene después de agosto?",
+   "opciones": [
+    "julio",
+    "septiembre",
+    "octubre",
+    "junio"
+   ],
+   "correcta": 1,
+   "tip": "Agosto ocupa el lugar 8 del año, así que le sigue el mes 9.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "¿Qué mes viene justo antes de julio?",
+   "opciones": [
+    "mayo",
+    "agosto",
+    "junio",
+    "abril"
+   ],
+   "correcta": 2,
+   "tip": "Julio es el mes 7, entonces el mes anterior es el número 6.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "¿Qué lugar ocupa marzo en el año?",
+   "opciones": [
+    "segundo",
+    "tercero",
+    "cuarto",
+    "primero"
+   ],
+   "correcta": 1,
+   "tip": "Cuenta desde enero: enero, febrero y marzo. Marzo va en el lugar 3.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "Hoy es 14 de julio. ¿Qué fecha será en una semana más?",
+   "opciones": [
+    "20 de julio",
+    "21 de julio",
+    "22 de julio",
+    "28 de julio"
+   ],
+   "correcta": 1,
+   "tip": "Una semana son 7 días, así que sumas 14 + 7 en el calendario.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "Hoy es 8 de julio. ¿Qué fecha será 2 semanas después?",
+   "opciones": [
+    "15 de julio",
+    "21 de julio",
+    "22 de julio",
+    "16 de julio"
+   ],
+   "correcta": 2,
+   "tip": "Dos semanas son 14 días, entonces sumas 8 + 14 en el mismo mes.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "El 18 de septiembre es la fiesta. Desde el 10, ¿cuántos días faltan?",
+   "opciones": [
+    "7",
+    "8",
+    "9",
+    "10"
+   ],
+   "correcta": 1,
+   "tip": "Del 10 al 18 restas las fechas: 18 menos 10 te da los días que faltan.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "Hoy es 28 de septiembre. ¿Qué fecha será mañana?",
+   "opciones": [
+    "29 de septiembre",
+    "30 de septiembre",
+    "1 de octubre",
+    "27 de septiembre"
+   ],
+   "correcta": 0,
+   "tip": "Septiembre tiene 30 días, así que todavía queda mes por delante.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "Hoy es 30 de abril. ¿Qué fecha será mañana?",
+   "opciones": [
+    "31 de abril",
+    "1 de mayo",
+    "1 de abril",
+    "30 de mayo"
+   ],
+   "correcta": 1,
+   "tip": "Abril termina el día 30, así que el calendario pasa al mes siguiente.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "Hoy es 31 de agosto. ¿Qué fecha será mañana?",
+   "opciones": [
+    "32 de agosto",
+    "1 de septiembre",
+    "1 de agosto",
+    "30 de agosto"
+   ],
+   "correcta": 1,
+   "tip": "Agosto llega hasta el 31, entonces el día siguiente empieza otro mes.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "¿Cuántos días hay en 3 semanas?",
+   "opciones": [
+    "18",
+    "21",
+    "24",
+    "27"
+   ],
+   "correcta": 1,
+   "tip": "Cada semana tiene 7 días, así que sumas 7 + 7 + 7.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "Un taller dura 28 días. ¿Cuántas semanas son?",
+   "opciones": [
+    "3",
+    "4",
+    "5",
+    "7"
+   ],
+   "correcta": 1,
+   "tip": "Agrupa los días de 7 en 7 y cuenta cuántos grupos completos salen.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "Las vacaciones de invierno duran 2 semanas. ¿Cuántos días son?",
+   "opciones": [
+    "7",
+    "10",
+    "14",
+    "20"
+   ],
+   "correcta": 2,
+   "tip": "Dos semanas son 7 días más 7 días.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "En una línea de tiempo, ¿qué año va más a la izquierda?",
+   "opciones": [
+    "1990",
+    "1810",
+    "2010",
+    "2020"
+   ],
+   "correcta": 1,
+   "tip": "En la línea de tiempo los años van del más antiguo al más nuevo.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "En una línea de tiempo, ¿qué año va después de 2018?",
+   "opciones": [
+    "2015",
+    "2017",
+    "2020",
+    "2010"
+   ],
+   "correcta": 2,
+   "tip": "Los años más grandes son más nuevos y se dibujan hacia la derecha.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "Ana nació en 2015 y Luis en 2018. ¿En qué año nació la mayor?",
+   "opciones": [
+    "2015",
+    "2018",
+    "2016",
+    "2020"
+   ],
+   "correcta": 0,
+   "tip": "El mayor nació antes, y 2015 va antes que 2018 en la línea de tiempo.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "Una línea de tiempo avanza de 10 en 10. ¿Qué año sigue a 1930?",
+   "opciones": [
+    "1931",
+    "1935",
+    "1940",
+    "1950"
+   ],
+   "correcta": 2,
+   "tip": "Si cada salto vale 10 años, a 1930 le sumas 10.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 1900,
+    "hasta": 2000,
+    "paso": 10,
+    "marca": 1930
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "Un colegio se fundó en 1950 y otro en 1975. ¿Cuál es el más antiguo?",
+   "opciones": [
+    "1950",
+    "1975",
+    "1960",
+    "1980"
+   ],
+   "correcta": 0,
+   "tip": "El más antiguo es el que aparece primero en la línea de tiempo.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 19",
+   "pregunta": "Un hecho ocurrió en 1990 y otro en 2000. ¿Cuántos años pasaron?",
+   "opciones": [
+    "5",
+    "10",
+    "20",
+    "100"
+   ],
+   "correcta": 1,
+   "tip": "Para saber el tiempo entre dos años, restas el menor al mayor.",
+   "revisada": false
+  }
+ ]
+}

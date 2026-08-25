@@ -1,0 +1,716 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Qué color tuvo más votos en el curso?",
+   "opciones": [
+    "Rojo",
+    "Azul",
+    "Verde",
+    "Amarillo"
+   ],
+   "correcta": 1,
+   "tip": "En un gráfico de barras, el más votado es el de la barra más alta.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Rojo",
+     "Azul",
+     "Verde",
+     "Amarillo"
+    ],
+    "valores": [
+     4,
+     7,
+     3,
+     5
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Cuántos niños votaron por el verde?",
+   "opciones": [
+    "3",
+    "4",
+    "5",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "Buscas la barra del verde y lees hasta qué número llega.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Rojo",
+     "Azul",
+     "Verde",
+     "Amarillo"
+    ],
+    "valores": [
+     4,
+     7,
+     3,
+     5
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Cuántos votos suman el rojo y el amarillo?",
+   "opciones": [
+    "8",
+    "9",
+    "12",
+    "5"
+   ],
+   "correcta": 1,
+   "tip": "Lees cada barra y juntas las dos cantidades: 4 y 5.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Rojo",
+     "Azul",
+     "Verde",
+     "Amarillo"
+    ],
+    "valores": [
+     4,
+     7,
+     3,
+     5
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Cuál es la mascota menos elegida?",
+   "opciones": [
+    "Perro",
+    "Gato",
+    "Pez",
+    "Conejo"
+   ],
+   "correcta": 2,
+   "tip": "La menos elegida es la de la barra más baja del gráfico.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Perro",
+     "Gato",
+     "Pez",
+     "Conejo"
+    ],
+    "valores": [
+     8,
+     6,
+     2,
+     4
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Cuántos niños más eligieron perro que gato?",
+   "opciones": [
+    "14",
+    "2",
+    "6",
+    "8"
+   ],
+   "correcta": 1,
+   "tip": "Para comparar dos barras se restan sus alturas, no se suman.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Perro",
+     "Gato",
+     "Pez",
+     "Conejo"
+    ],
+    "valores": [
+     8,
+     6,
+     2,
+     4
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Cuántos niños contestaron la encuesta en total?",
+   "opciones": [
+    "18",
+    "19",
+    "20",
+    "22"
+   ],
+   "correcta": 2,
+   "tip": "El total de una encuesta se obtiene sumando todas las barras.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Perro",
+     "Gato",
+     "Pez",
+     "Conejo"
+    ],
+    "valores": [
+     8,
+     6,
+     2,
+     4
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Qué fruta prefieren más los niños?",
+   "opciones": [
+    "Manzana",
+    "Plátano",
+    "Uva",
+    "Ninguna"
+   ],
+   "correcta": 1,
+   "tip": "La preferida es la que tiene la barra más alta del gráfico.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Manzana",
+     "Plátano",
+     "Uva"
+    ],
+    "valores": [
+     5,
+     9,
+     6
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Cuántos niños eligieron uva?",
+   "opciones": [
+    "4",
+    "5",
+    "6",
+    "9"
+   ],
+   "correcta": 2,
+   "tip": "Sigues la barra de la uva hasta el número donde termina.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Manzana",
+     "Plátano",
+     "Uva"
+    ],
+    "valores": [
+     5,
+     9,
+     6
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Qué deporte eligieron 5 niños?",
+   "opciones": [
+    "Fútbol",
+    "Tenis",
+    "Nado",
+    "Básquet"
+   ],
+   "correcta": 2,
+   "tip": "Buscas la barra que llega justo al 5 y lees su nombre.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Fútbol",
+     "Tenis",
+     "Nado",
+     "Básquet"
+    ],
+    "valores": [
+     10,
+     3,
+     5,
+     6
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Cuántos niños eligieron fútbol y tenis juntos?",
+   "opciones": [
+    "7",
+    "12",
+    "13",
+    "30"
+   ],
+   "correcta": 2,
+   "tip": "Juntar dos grupos es sumar sus barras: 10 y 3.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Fútbol",
+     "Tenis",
+     "Nado",
+     "Básquet"
+    ],
+    "valores": [
+     10,
+     3,
+     5,
+     6
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Qué deporte tuvo menos votos?",
+   "opciones": [
+    "Fútbol",
+    "Tenis",
+    "Nado",
+    "Básquet"
+   ],
+   "correcta": 1,
+   "tip": "La barra más corta muestra la opción con menos votos.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Fútbol",
+     "Tenis",
+     "Nado",
+     "Básquet"
+    ],
+    "valores": [
+     10,
+     3,
+     5,
+     6
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Qué día se leyeron más cuentos?",
+   "opciones": [
+    "Lunes",
+    "Martes",
+    "Jueves",
+    "Viernes"
+   ],
+   "correcta": 1,
+   "tip": "Comparas la altura de las barras y eliges la mayor.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Lunes",
+     "Martes",
+     "Jueves",
+     "Viernes"
+    ],
+    "valores": [
+     2,
+     5,
+     4,
+     3
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Cuántos cuentos se leyeron en los cuatro días?",
+   "opciones": [
+    "12",
+    "13",
+    "14",
+    "15"
+   ],
+   "correcta": 2,
+   "tip": "Sumas las cuatro barras: 2 + 5 + 4 + 3.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Lunes",
+     "Martes",
+     "Jueves",
+     "Viernes"
+    ],
+    "valores": [
+     2,
+     5,
+     4,
+     3
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Cuántos niños eligieron helado de choco?",
+   "opciones": [
+    "4",
+    "7",
+    "9",
+    "16"
+   ],
+   "correcta": 2,
+   "tip": "Cada barra muestra su cantidad; no hay que sumarlas todas.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Frutilla",
+     "Choco",
+     "Vainilla"
+    ],
+    "valores": [
+     7,
+     9,
+     4
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Cuántos niños menos eligieron vainilla que frutilla?",
+   "opciones": [
+    "3",
+    "4",
+    "11",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "Comparar es restar: la barra mayor menos la barra menor.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Frutilla",
+     "Choco",
+     "Vainilla"
+    ],
+    "valores": [
+     7,
+     9,
+     4
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Qué útil escolar tuvo solo 2 votos?",
+   "opciones": [
+    "Lápiz",
+    "Goma",
+    "Regla",
+    "Tijera"
+   ],
+   "correcta": 2,
+   "tip": "Buscas la barra que llega al 2 y lees su etiqueta.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Lápiz",
+     "Goma",
+     "Regla",
+     "Tijera"
+    ],
+    "valores": [
+     6,
+     3,
+     2,
+     5
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Cuántos votos se contaron en toda la encuesta?",
+   "opciones": [
+    "14",
+    "15",
+    "16",
+    "17"
+   ],
+   "correcta": 2,
+   "tip": "El total sale de sumar todas las barras: 6 + 3 + 2 + 5.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Lápiz",
+     "Goma",
+     "Regla",
+     "Tijera"
+    ],
+    "valores": [
+     6,
+     3,
+     2,
+     5
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Cuál es el juego favorito de la plaza?",
+   "opciones": [
+    "Columpio",
+    "Resbalín",
+    "Arenero",
+    "Balancín"
+   ],
+   "correcta": 0,
+   "tip": "El favorito es el de la barra más alta del gráfico.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Columpio",
+     "Resbalín",
+     "Arenero",
+     "Balancín"
+    ],
+    "valores": [
+     8,
+     6,
+     4,
+     3
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Cuántos niños prefieren el arenero?",
+   "opciones": [
+    "3",
+    "4",
+    "6",
+    "8"
+   ],
+   "correcta": 1,
+   "tip": "Lees la altura de la barra del arenero, no la del columpio.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Columpio",
+     "Resbalín",
+     "Arenero",
+     "Balancín"
+    ],
+    "valores": [
+     8,
+     6,
+     4,
+     3
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Cuántos niños llegan al colegio en bicicleta?",
+   "opciones": [
+    "3",
+    "5",
+    "6",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "Cada barra guarda su propio dato; buscas la de la bici.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Micro",
+     "Auto",
+     "Bici",
+     "A pie"
+    ],
+    "valores": [
+     7,
+     5,
+     3,
+     6
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Qué medio usan más niños para ir al colegio?",
+   "opciones": [
+    "Auto",
+    "Micro",
+    "Bici",
+    "A pie"
+   ],
+   "correcta": 1,
+   "tip": "El medio más usado es el de la barra más alta.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Micro",
+     "Auto",
+     "Bici",
+     "A pie"
+    ],
+    "valores": [
+     7,
+     5,
+     3,
+     6
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Cuántos niños van a pie o en auto al colegio?",
+   "opciones": [
+    "6",
+    "10",
+    "11",
+    "12"
+   ],
+   "correcta": 2,
+   "tip": "Se suman las dos barras: 6 a pie y 5 en auto.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Micro",
+     "Auto",
+     "Bici",
+     "A pie"
+    ],
+    "valores": [
+     7,
+     5,
+     3,
+     6
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Qué se hace primero para hacer una encuesta?",
+   "opciones": [
+    "Preguntar a las personas",
+    "Dibujar las barras",
+    "Pintar la tabla",
+    "Contar los votos"
+   ],
+   "correcta": 0,
+   "tip": "Sin preguntar no hay datos, y sin datos no hay tabla ni gráfico.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "En un gráfico, ¿qué muestra la barra más alta?",
+   "opciones": [
+    "El primer dato",
+    "El último dato",
+    "El dato con menos votos",
+    "El dato con más votos"
+   ],
+   "correcta": 3,
+   "tip": "La altura de cada barra representa cuántos votos recibió.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "Ana anotó 7 marcas en azul. ¿Hasta qué número llega su barra?",
+   "opciones": [
+    "5",
+    "6",
+    "7",
+    "8"
+   ],
+   "correcta": 2,
+   "tip": "La barra se dibuja hasta el número de marcas contadas en la tabla.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "En la tabla, gato tiene 5 marcas y perro 8. ¿Qué barra es más alta?",
+   "opciones": [
+    "La del gato",
+    "La del perro",
+    "Las dos iguales",
+    "Ninguna"
+   ],
+   "correcta": 1,
+   "tip": "Más marcas en la tabla significa una barra más alta en el gráfico.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Para qué sirve hacer una encuesta?",
+   "opciones": [
+    "Para medir el largo",
+    "Para juntar datos de un grupo",
+    "Para dibujar figuras",
+    "Para contar hasta 100"
+   ],
+   "correcta": 1,
+   "tip": "Encuestar es preguntar a varias personas para reunir información.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "Luis preguntó a 10 amigos su color favorito. ¿Cuántos datos juntó?",
+   "opciones": [
+    "5",
+    "8",
+    "10",
+    "20"
+   ],
+   "correcta": 2,
+   "tip": "Cada persona que responde entrega un dato de la encuesta.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "Si nadie elige el verde, ¿cómo se ve su barra?",
+   "opciones": [
+    "Muy alta",
+    "Vacía, sin altura",
+    "Igual que las otras",
+    "No se puede saber"
+   ],
+   "correcta": 1,
+   "tip": "La barra crece con los votos; con cero votos no crece nada.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 23",
+   "pregunta": "¿Qué pregunta sirve para una encuesta de mascotas?",
+   "opciones": [
+    "¿Cuánto es 5 + 3?",
+    "¿Qué hora es?",
+    "¿Cuál es tu mascota favorita?",
+    "¿Cuánto mides?"
+   ],
+   "correcta": 2,
+   "tip": "Una pregunta de encuesta debe ser sobre el tema que se investiga.",
+   "revisada": false
+  }
+ ]
+}

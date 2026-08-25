@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Ana tiene 500 pesos y su mamá le da 300. ¿Cuánto dinero tiene ahora?",
+   "opciones": [
+    "200 pesos",
+    "700 pesos",
+    "800 pesos",
+    "900 pesos"
+   ],
+   "correcta": 2,
+   "tip": "Si le dan más dinero, hay que sumar: 500 + 300 = 800.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Un pan cuesta 200 pesos y la leche 600. ¿Cuánto cuestan los dos juntos?",
+   "opciones": [
+    "400 pesos",
+    "700 pesos",
+    "800 pesos",
+    "1.000 pesos"
+   ],
+   "correcta": 2,
+   "tip": "Para saber cuánto cuesta todo, se juntan los dos precios: 200 + 600.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Pedro juntó 450 pesos el lunes y 350 el martes. ¿Cuánto juntó en total?",
+   "opciones": [
+    "800 pesos",
+    "700 pesos",
+    "710 pesos",
+    "850 pesos"
+   ],
+   "correcta": 0,
+   "tip": "50 + 50 son 100, así que hay que llevar una decena más: 400 + 300 + 100 = 800.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Luisa gastó 250 pesos en jugo y 250 pesos en galletas. ¿Cuánto gastó?",
+   "opciones": [
+    "400 pesos",
+    "500 pesos",
+    "550 pesos",
+    "600 pesos"
+   ],
+   "correcta": 1,
+   "tip": "Gastó dos veces lo mismo, así que 250 + 250 = 500.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Un cuaderno vale 900 pesos y un lápiz vale 100. ¿Cuánto valen juntos?",
+   "opciones": [
+    "800 pesos",
+    "950 pesos",
+    "1.000 pesos",
+    "1.100 pesos"
+   ],
+   "correcta": 2,
+   "tip": "900 + 100 completa una unidad de mil: 1.000.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Javier tiene 120 pesos y encuentra 80 pesos más. ¿Cuánto tiene ahora?",
+   "opciones": [
+    "190 pesos",
+    "200 pesos",
+    "210 pesos",
+    "280 pesos"
+   ],
+   "correcta": 1,
+   "tip": "20 + 80 son 100, y ese 100 se junta con los otros 100: 200.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Un helado cuesta 350 pesos y un chocolate 150. ¿Cuánto cuestan juntos?",
+   "opciones": [
+    "400 pesos",
+    "450 pesos",
+    "550 pesos",
+    "500 pesos"
+   ],
+   "correcta": 3,
+   "tip": "50 + 50 forman 100, que se suma a 300 + 100: da 500.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Sofía ahorró 600 pesos en marzo y 300 pesos en abril. ¿Cuánto ahorró?",
+   "opciones": [
+    "300 pesos",
+    "800 pesos",
+    "960 pesos",
+    "900 pesos"
+   ],
+   "correcta": 3,
+   "tip": "Ahorrar en dos meses se suma: 600 + 300 = 900.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Camila tiene 1.000 pesos y gasta 400. ¿Cuánto dinero le queda?",
+   "opciones": [
+    "600 pesos",
+    "500 pesos",
+    "700 pesos",
+    "1.400 pesos"
+   ],
+   "correcta": 0,
+   "tip": "Cuando se gasta, el dinero disminuye: 1.000 - 400 = 600.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Un jugo cuesta 350 pesos y pago con 500. ¿Cuánto vuelto me dan?",
+   "opciones": [
+    "100 pesos",
+    "150 pesos",
+    "250 pesos",
+    "850 pesos"
+   ],
+   "correcta": 1,
+   "tip": "El vuelto es lo que sobra: 500 - 350 = 150.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Matías tenía 800 pesos y perdió 250. ¿Cuánto dinero le queda?",
+   "opciones": [
+    "450 pesos",
+    "550 pesos",
+    "650 pesos",
+    "1.050 pesos"
+   ],
+   "correcta": 1,
+   "tip": "Perder dinero es restar: 800 - 250 = 550.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Un lápiz vale 300 pesos y una goma vale 100. ¿Cuánto más vale el lápiz?",
+   "opciones": [
+    "100 pesos",
+    "300 pesos",
+    "200 pesos",
+    "400 pesos"
+   ],
+   "correcta": 2,
+   "tip": "Para comparar precios se resta el menor al mayor: 300 - 100.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Pago un pan de 250 pesos con una moneda de 500. ¿Cuánto me devuelven?",
+   "opciones": [
+    "150 pesos",
+    "250 pesos",
+    "350 pesos",
+    "750 pesos"
+   ],
+   "correcta": 1,
+   "tip": "El vuelto sale de restar el precio al dinero entregado: 500 - 250.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Rosa tiene 900 pesos y compra un cuaderno de 650. ¿Cuánto le queda?",
+   "opciones": [
+    "150 pesos",
+    "350 pesos",
+    "1.550 pesos",
+    "250 pesos"
+   ],
+   "correcta": 3,
+   "tip": "900 - 650: primero quita 600 y quedan 300, luego quita 50 y quedan 250.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Un helado cuesta 500 pesos y Ema solo tiene 200. ¿Cuánto le falta?",
+   "opciones": [
+    "300 pesos",
+    "200 pesos",
+    "400 pesos",
+    "700 pesos"
+   ],
+   "correcta": 0,
+   "tip": "Lo que falta es la diferencia entre el precio y lo que tiene: 500 - 200.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Diego tenía 1.000 pesos y gastó 750 en un jugo. ¿Cuánto le sobró?",
+   "opciones": [
+    "150 pesos",
+    "300 pesos",
+    "250 pesos",
+    "350 pesos"
+   ],
+   "correcta": 2,
+   "tip": "De 750 a 1.000 faltan 250, así que ese es el resto.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Tomás tiene 4 monedas de 100 pesos. ¿Cuánto dinero tiene en total?",
+   "opciones": [
+    "40 pesos",
+    "104 pesos",
+    "400 pesos",
+    "500 pesos"
+   ],
+   "correcta": 2,
+   "tip": "Son 4 grupos de 100, así que se multiplica: 4 x 100 = 400.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Un dulce cuesta 50 pesos. ¿Cuánto cuestan 6 dulces iguales?",
+   "opciones": [
+    "56 pesos",
+    "250 pesos",
+    "350 pesos",
+    "300 pesos"
+   ],
+   "correcta": 3,
+   "tip": "Seis veces 50 es lo mismo que 6 x 5 decenas: 300.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Sara compra 3 panes de 200 pesos cada uno. ¿Cuánto paga en total?",
+   "opciones": [
+    "203 pesos",
+    "600 pesos",
+    "500 pesos",
+    "900 pesos"
+   ],
+   "correcta": 1,
+   "tip": "Cada pan vale lo mismo, así que se multiplica: 3 x 200 = 600.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Cada entrada al cine vale 100 pesos. ¿Cuánto valen 8 entradas?",
+   "opciones": [
+    "80 pesos",
+    "108 pesos",
+    "880 pesos",
+    "800 pesos"
+   ],
+   "correcta": 3,
+   "tip": "Multiplicar por 100 agrega dos ceros: 8 x 100 = 800.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Un cuaderno vale 250 pesos. ¿Cuánto cuestan 2 cuadernos iguales?",
+   "opciones": [
+    "500 pesos",
+    "252 pesos",
+    "450 pesos",
+    "550 pesos"
+   ],
+   "correcta": 0,
+   "tip": "Dos veces 250 es 250 + 250, o sea 500.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Ana ahorra 100 pesos cada día. ¿Cuánto dinero ahorra en 7 días?",
+   "opciones": [
+    "107 pesos",
+    "700 pesos",
+    "600 pesos",
+    "710 pesos"
+   ],
+   "correcta": 1,
+   "tip": "Ahorra lo mismo cada día, así que 7 x 100 = 700.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Cinco amigos ponen 200 pesos cada uno. ¿Cuánto dinero juntan?",
+   "opciones": [
+    "205 pesos",
+    "800 pesos",
+    "900 pesos",
+    "1.000 pesos"
+   ],
+   "correcta": 3,
+   "tip": "Son 5 grupos de 200: 5 x 2 = 10, y con los ceros queda 1.000.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Un globo cuesta 150 pesos. ¿Cuánto cuestan 4 globos iguales?",
+   "opciones": [
+    "154 pesos",
+    "450 pesos",
+    "600 pesos",
+    "550 pesos"
+   ],
+   "correcta": 2,
+   "tip": "4 x 150 es 4 x 100 más 4 x 50, o sea 400 + 200 = 600.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Reparto 800 pesos entre 4 niños en partes iguales. ¿Cuánto recibe cada uno?",
+   "opciones": [
+    "100 pesos",
+    "200 pesos",
+    "400 pesos",
+    "804 pesos"
+   ],
+   "correcta": 1,
+   "tip": "Repartir en partes iguales es dividir: 800 : 4 = 200.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Con 600 pesos, ¿cuántos dulces de 100 pesos puedo comprar?",
+   "opciones": [
+    "6 dulces",
+    "5 dulces",
+    "7 dulces",
+    "60 dulces"
+   ],
+   "correcta": 0,
+   "tip": "Hay que ver cuántas veces cabe 100 en 600: 600 : 100 = 6.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Tres hermanos se reparten 900 pesos en partes iguales. ¿Cuánto le toca a cada uno?",
+   "opciones": [
+    "200 pesos",
+    "400 pesos",
+    "300 pesos",
+    "600 pesos"
+   ],
+   "correcta": 2,
+   "tip": "900 : 3 = 300, porque 3 x 300 vuelve a dar 900.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Con 1.000 pesos compro panes de 250 pesos. ¿Cuántos panes me llevo?",
+   "opciones": [
+    "3 panes",
+    "4 panes",
+    "5 panes",
+    "40 panes"
+   ],
+   "correcta": 1,
+   "tip": "250 cabe 4 veces en 1.000, porque 4 x 250 = 1.000.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Se reparten 500 pesos entre 5 niños en partes iguales. ¿Cuánto recibe cada uno?",
+   "opciones": [
+    "10 pesos",
+    "50 pesos",
+    "150 pesos",
+    "100 pesos"
+   ],
+   "correcta": 3,
+   "tip": "500 : 5 = 100, porque 5 x 100 vuelve a dar 500.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 10",
+   "pregunta": "Con 400 pesos, ¿cuántos jugos de 200 pesos alcanzo a comprar?",
+   "opciones": [
+    "2 jugos",
+    "3 jugos",
+    "4 jugos",
+    "20 jugos"
+   ],
+   "correcta": 0,
+   "tip": "200 cabe dos veces en 400, así que alcanzan 2 jugos.",
+   "revisada": false
+  }
+ ]
+}

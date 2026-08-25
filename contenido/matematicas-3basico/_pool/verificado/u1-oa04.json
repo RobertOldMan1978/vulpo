@@ -1,0 +1,93 @@
+{"preguntas":[
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 34 + 25?","opciones":["59","51","69","49"],"correcta":0,
+  "tip":"Descompón: 30 + 20 = 50 y 4 + 5 = 9. Junta 50 y 9.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 46 + 32?","opciones":["68","78","88","79"],"correcta":1,
+  "tip":"Suma primero las decenas: 40 + 30 = 70. Después las unidades: 6 + 2 = 8.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 57 − 23?","opciones":["24","44","34","30"],"correcta":2,
+  "tip":"Descompón el 23: quita primero 20 (queda 37) y después quita 3.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 68 − 35?","opciones":["23","43","37","33"],"correcta":3,
+  "tip":"Resta por partes: 60 − 30 = 30 y 8 − 5 = 3. Junta 30 y 3.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"Ana tiene 42 láminas y le regalan 26. ¿Cuántas tiene?","opciones":["58","68","78","62"],"correcta":1,
+  "tip":"Descompón el 26: 42 + 20 = 62 y luego 62 + 6.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"Hay 73 niños en el patio y 41 entran a la sala. ¿Cuántos quedan?","opciones":["32","42","22","34"],"correcta":0,
+  "tip":"Quita por partes: 73 − 40 = 33 y después 33 − 1.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 38 + 7?","opciones":["44","45","35","46"],"correcta":1,
+  "tip":"Completa hasta la decena: 38 + 2 = 40, y del 7 te quedan 5 para sumar.",
+  "visual":{"tipo":"recta","desde":30,"hasta":50,"paso":5,"marca":38},"revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 47 + 6?","opciones":["52","54","43","53"],"correcta":3,
+  "tip":"Completa hasta 50 con 3, y del 6 te quedan 3 más para sumar.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 65 + 8?","opciones":["73","72","63","74"],"correcta":0,
+  "tip":"Sube a la decena: 65 + 5 = 70, y del 8 quedan 3 para sumar.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 52 − 5?","opciones":["48","57","47","46"],"correcta":2,
+  "tip":"Baja a la decena: 52 − 2 = 50, y del 5 quedan 3 por quitar.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 84 + 9?","opciones":["92","93","83","94"],"correcta":1,
+  "tip":"Completa hasta 90 con 6, y del 9 quedan 3 para sumar.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"Un frasco tiene 29 dulces y le agregan 6. ¿Cuántos hay?","opciones":["34","36","25","35"],"correcta":3,
+  "tip":"Con 1 llegas a 30, que es la decena, y del 6 te quedan 5 para sumar.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 25 + 25?","opciones":["45","50","55","40"],"correcta":1,
+  "tip":"Es un doble: 25 y 25 son dos veces 25, o sea 20 + 20 y 5 + 5.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 16 + 17?","opciones":["32","34","33","23"],"correcta":2,
+  "tip":"Usa el doble de 16, que es 32, y súmale 1 porque 17 es uno más.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 35 + 35?","opciones":["60","75","65","70"],"correcta":3,
+  "tip":"Doble de 35: dobla las decenas (30 + 30) y las unidades (5 + 5).","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 24 + 23?","opciones":["46","47","48","49"],"correcta":1,
+  "tip":"El doble de 24 es 48, pero 23 es uno menos, así que quita 1.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"Dos cajas tienen 45 clavos cada una. ¿Cuántos son en total?","opciones":["80","95","90","85"],"correcta":2,
+  "tip":"Es el doble de 45: 40 + 40 = 80 y 5 + 5 = 10.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 18 + 19?","opciones":["36","38","27","37"],"correcta":3,
+  "tip":"El doble de 18 es 36, y 19 es uno más que 18, así que agrega 1.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 100 − 97?","opciones":["3","7","13","4"],"correcta":0,
+  "tip":"En vez de restar, pregunta: ¿cuánto le falta al 97 para llegar a 100?",
+  "visual":{"tipo":"recta","desde":90,"hasta":100,"paso":1,"marca":97},"revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 62 − 58?","opciones":["6","4","14","3"],"correcta":1,
+  "tip":"Suma en vez de restar: del 58 al 60 hay 2, y del 60 al 62 hay 2 más.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"Tomás tiene 45 pesos y necesita 50. ¿Cuánto le falta?","opciones":["15","4","10","5"],"correcta":3,
+  "tip":"Cuenta hacia adelante desde 45 hasta 50 en vez de restar.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 71 − 68?","opciones":["13","2","4","3"],"correcta":3,
+  "tip":"Como los números están cerca, cuenta del 68 al 71 hacia adelante.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"Hay 90 sillas y 84 están ocupadas. ¿Cuántas quedan libres?","opciones":["6","4","16","14"],"correcta":0,
+  "tip":"Pregunta cuánto le falta al 84 para llegar a 90, así sumas en vez de restar.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 83 − 79?","opciones":["3","14","4","6"],"correcta":2,
+  "tip":"Del 79 al 80 hay 1, y del 80 al 83 hay 3 más. Súmalos.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 7 + 8 + 3?","opciones":["17","18","19","16"],"correcta":1,
+  "tip":"Cambia el orden: junta 7 + 3 = 10, que es fácil, y agrega el 8.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 25 + 17 + 5?","opciones":["47","37","42","57"],"correcta":0,
+  "tip":"Junta primero 25 + 5 = 30 y después súmale 17.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 9 + 26 + 4?","opciones":["29","38","39","40"],"correcta":2,
+  "tip":"Agrupa 26 + 4 = 30, que es una decena justa, y súmale 9.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 12 + 38 + 20?","opciones":["60","70","72","68"],"correcta":1,
+  "tip":"Junta 12 + 38 = 50 porque da una decena justa, y agrega 20.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"Camila junta 15, 25 y 6 monedas. ¿Cuántas monedas tiene?","opciones":["45","36","46","56"],"correcta":2,
+  "tip":"Suma primero 15 + 25 = 40, que es más fácil, y después agrega 6.","revisada":false},
+
+ {"oa":"MA03 OA 04","pregunta":"¿Cuánto es 40 + 13 + 7?","opciones":["60","50","63","57"],"correcta":0,
+  "tip":"Junta 13 + 7 = 20 y después súmale 40.","revisada":false}
+]}

@@ -1,0 +1,465 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "Sobre el 3 hay 4 puntos. ¿Cuántos niños respondieron 3?",
+   "opciones": [
+    "4",
+    "3",
+    "5",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "Cada punto vale un dato, así que se cuentan los puntos de esa columna.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "Sobre el 5 hay 2 puntos y sobre el 6 hay 5. ¿Cuál se repite más?",
+   "opciones": [
+    "El 5",
+    "El 6",
+    "Los dos igual",
+    "Ninguno"
+   ],
+   "correcta": 1,
+   "tip": "Se repite más el número con la columna de puntos más alta.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "Sobre el 2 hay 6 puntos y sobre el 4 hay 1. ¿Cuál se repite menos?",
+   "opciones": [
+    "El 4",
+    "El 2",
+    "Los dos igual",
+    "El 6"
+   ],
+   "correcta": 0,
+   "tip": "El que se repite menos es el que tiene menos puntos apilados.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "En un diagrama de puntos, ¿qué representa cada punto?",
+   "opciones": [
+    "Diez datos",
+    "Un número",
+    "Un dato",
+    "Una tabla"
+   ],
+   "correcta": 2,
+   "tip": "Cada punto es un dato de la encuesta, por eso se cuentan de a uno.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "Sobre el 1 hay 2 puntos, sobre el 2 hay 3 y sobre el 3 hay 4. ¿Cuántos datos hay?",
+   "opciones": [
+    "7",
+    "8",
+    "10",
+    "9"
+   ],
+   "correcta": 3,
+   "tip": "Se juntan todos los puntos del diagrama: 2 + 3 + 4 = 9.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "Sobre el 8 hay 5 puntos y sobre el 9 hay 3. ¿Cuántos puntos más tiene el 8?",
+   "opciones": [
+    "1",
+    "2",
+    "3",
+    "8"
+   ],
+   "correcta": 1,
+   "tip": "Para saber cuántos más, se resta: 5 - 3 = 2.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "5 niños tienen 2 hermanos. ¿Cuántos puntos dibujas sobre el 2?",
+   "opciones": [
+    "2",
+    "5",
+    "3",
+    "7"
+   ],
+   "correcta": 1,
+   "tip": "El número 2 es la respuesta y los 5 niños son los puntos que se apilan ahí.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "El 7 no tiene ningún punto. ¿Cuántos niños eligieron el 7?",
+   "opciones": [
+    "1",
+    "7",
+    "0",
+    "10"
+   ],
+   "correcta": 2,
+   "tip": "Una columna vacía significa que nadie dio esa respuesta.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "Sobre el 4 hay 3 puntos y sobre el 5 hay 3. ¿Qué pasa entre el 4 y el 5?",
+   "opciones": [
+    "Se repiten igual",
+    "Gana el 4",
+    "Gana el 5",
+    "Están vacíos"
+   ],
+   "correcta": 0,
+   "tip": "Si las dos columnas tienen la misma altura, los datos empatan.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "Sobre el 6 hay 7 puntos. ¿Cuántos puntos faltan para llegar a 10?",
+   "opciones": [
+    "2",
+    "4",
+    "7",
+    "3"
+   ],
+   "correcta": 3,
+   "tip": "De 7 a 10 hay 3, porque 7 + 3 = 10.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "¿Qué número tiene más puntos en el diagrama?",
+   "opciones": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "correcta": 1,
+   "tip": "El número con la columna más alta es el que más se repite.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "1",
+     "2",
+     "3",
+     "4"
+    ],
+    "valores": [
+     2,
+     5,
+     3,
+     1
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "¿Cuántos datos hay en total en el diagrama?",
+   "opciones": [
+    "8",
+    "9",
+    "10",
+    "3"
+   ],
+   "correcta": 1,
+   "tip": "Se suman todos los puntos: 3 + 4 + 2 = 9.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "0",
+     "1",
+     "2"
+    ],
+    "valores": [
+     3,
+     4,
+     2
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "¿Qué número tiene menos puntos?",
+   "opciones": [
+    "8",
+    "7",
+    "6",
+    "5"
+   ],
+   "correcta": 2,
+   "tip": "El que se repite menos es el de la columna más baja.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "5",
+     "6",
+     "7",
+     "8"
+    ],
+    "valores": [
+     4,
+     1,
+     3,
+     2
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "Sobre el 10 hay 4 puntos y sobre el 11 hay 4. ¿Cuántos datos suman los dos?",
+   "opciones": [
+    "4",
+    "7",
+    "8",
+    "11"
+   ],
+   "correcta": 2,
+   "tip": "Se juntan las dos columnas: 4 + 4 = 8.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "En un diagrama de puntos, ¿dónde se apila cada punto?",
+   "opciones": [
+    "Sobre su número",
+    "En el título",
+    "A la izquierda",
+    "En cualquier parte"
+   ],
+   "correcta": 0,
+   "tip": "Cada punto va justo arriba del número al que corresponde ese dato.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "Ana anotó 3 veces el número 9. ¿Cuántos puntos van sobre el 9?",
+   "opciones": [
+    "1",
+    "9",
+    "12",
+    "3"
+   ],
+   "correcta": 3,
+   "tip": "Se dibuja un punto por cada vez que aparece el dato: 3 veces, 3 puntos.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "Sobre el 2 hay 4 puntos y sobre el 3 hay 6. ¿Cuántos niños hay en total?",
+   "opciones": [
+    "8",
+    "9",
+    "10",
+    "24"
+   ],
+   "correcta": 2,
+   "tip": "Se suman los puntos de las dos columnas: 4 + 6 = 10.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "¿Para qué sirve un diagrama de puntos?",
+   "opciones": [
+    "Para medir el largo",
+    "Para ver qué dato se repite más",
+    "Para dibujar figuras",
+    "Para ver la hora"
+   ],
+   "correcta": 1,
+   "tip": "Muestra de un vistazo cuántas veces aparece cada dato.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "Sobre el 1 hay 5 puntos y sobre el 2 hay 2. ¿Cuántos puntos de más tiene el 1?",
+   "opciones": [
+    "2",
+    "3",
+    "5",
+    "7"
+   ],
+   "correcta": 1,
+   "tip": "Para comparar columnas se resta: 5 - 2 = 3.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "12 niños contestaron y sobre el 4 hay 12 puntos. ¿Qué dijeron todos?",
+   "opciones": [
+    "Todos dijeron 4",
+    "Unos dijeron 5",
+    "Nadie contestó",
+    "Todos dijeron 12"
+   ],
+   "correcta": 0,
+   "tip": "Si todos los puntos están en una sola columna, todos dieron esa respuesta.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "El 3 tiene 2 puntos, el 4 tiene 5 y el 5 tiene 1. ¿Cuál es el más elegido?",
+   "opciones": [
+    "2",
+    "3",
+    "4",
+    "5"
+   ],
+   "correcta": 2,
+   "tip": "El más elegido es el que junta más puntos: el 4, con 5 puntos.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "Sobre el 6 había 3 puntos y llega un niño más. ¿Cuántos puntos quedan?",
+   "opciones": [
+    "3",
+    "5",
+    "6",
+    "4"
+   ],
+   "correcta": 3,
+   "tip": "Cada niño agrega un punto: 3 + 1 = 4.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "Sobre el 7 había 5 puntos y borras 2. ¿Cuántos puntos quedan sobre el 7?",
+   "opciones": [
+    "2",
+    "3",
+    "5",
+    "7"
+   ],
+   "correcta": 1,
+   "tip": "Al quitar datos se restan puntos: 5 - 2 = 3.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "¿Cuántos puntos más tiene el 3 que el 5?",
+   "opciones": [
+    "1",
+    "2",
+    "4",
+    "6"
+   ],
+   "correcta": 1,
+   "tip": "Se comparan las dos columnas restando: 6 - 4 = 2.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "3",
+     "4",
+     "5"
+    ],
+    "valores": [
+     6,
+     2,
+     4
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "Sobre el 0 hay 3 puntos. ¿Qué significa eso?",
+   "opciones": [
+    "Hay 30 niños",
+    "Nadie contestó",
+    "3 niños no tienen ninguno",
+    "Hay 0 niños"
+   ],
+   "correcta": 2,
+   "tip": "El 0 también es una respuesta: esos 3 niños contestaron cero.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "En un diagrama de puntos, ¿cómo van los números de abajo?",
+   "opciones": [
+    "Ordenados de menor a mayor",
+    "Al azar",
+    "Solo los pares",
+    "De mayor a menor siempre"
+   ],
+   "correcta": 0,
+   "tip": "Los números van en orden sobre una recta, para leer el diagrama fácil.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "Sobre el 2 hay 3 puntos y sobre el 8 hay 3. ¿Hay un número que gane?",
+   "opciones": [
+    "Sí, el 2",
+    "No, empatan",
+    "Sí, el 8",
+    "Faltan puntos"
+   ],
+   "correcta": 1,
+   "tip": "Con la misma cantidad de puntos ninguno se repite más que el otro.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "¿Cuántos niños eligieron el 4?",
+   "opciones": [
+    "2",
+    "3",
+    "5",
+    "1"
+   ],
+   "correcta": 2,
+   "tip": "Se cuentan los puntos que están sobre el 4.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "valores": [
+     1,
+     3,
+     5,
+     2
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "Sobre el 9 hay 6 puntos y sobre el 10 hay 4. ¿Cuántos datos hay en total?",
+   "opciones": [
+    "6",
+    "9",
+    "24",
+    "10"
+   ],
+   "correcta": 3,
+   "tip": "Se suman los puntos de las dos columnas: 6 + 4 = 10.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 26",
+   "pregunta": "Sobre el 5 hay 1 punto. ¿Cuántos niños dijeron 5?",
+   "opciones": [
+    "0",
+    "5",
+    "1",
+    "6"
+   ],
+   "correcta": 2,
+   "tip": "Un solo punto quiere decir que un solo niño dio esa respuesta.",
+   "revisada": false
+  }
+ ]
+}

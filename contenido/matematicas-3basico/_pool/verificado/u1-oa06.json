@@ -1,0 +1,430 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 8 + 6?",
+   "opciones": [
+    "14",
+    "13",
+    "15",
+    "12"
+   ],
+   "correcta": 0,
+   "tip": "Completa hasta 10: 8 + 2 = 10 y quedan 4 más.",
+   "revisada": false,
+   "visual": {
+    "tipo": "contar",
+    "a": 8,
+    "b": 6,
+    "emoji": "🍏"
+   }
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 12 - 5?",
+   "opciones": [
+    "6",
+    "7",
+    "8",
+    "9"
+   ],
+   "correcta": 1,
+   "tip": "Baja de 12 a 10 quitando 2, y luego quita los 3 que faltan.",
+   "revisada": false,
+   "visual": {
+    "tipo": "contar",
+    "a": 12,
+    "b": -5,
+    "emoji": "⭐"
+   }
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 11 + 9?",
+   "opciones": [
+    "19",
+    "21",
+    "20",
+    "18"
+   ],
+   "correcta": 2,
+   "tip": "Sumar 9 es sumar 10 y devolver 1: 11 + 10 = 21, menos 1.",
+   "revisada": false,
+   "visual": {
+    "tipo": "contar",
+    "a": 11,
+    "b": 9,
+    "emoji": "🔵"
+   }
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 12 + 12?",
+   "opciones": [
+    "22",
+    "23",
+    "26",
+    "24"
+   ],
+   "correcta": 3,
+   "tip": "Suma las decenas (10 + 10) y las unidades (2 + 2), y junta.",
+   "revisada": false,
+   "visual": {
+    "tipo": "contar",
+    "a": 12,
+    "b": 12,
+    "emoji": "🟢"
+   }
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 12 - 8?",
+   "opciones": [
+    "4",
+    "3",
+    "5",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Piensa qué le falta a 8 para llegar a 12.",
+   "revisada": false,
+   "visual": {
+    "tipo": "contar",
+    "a": 12,
+    "b": -8,
+    "emoji": "🍎"
+   }
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 9 + 7?",
+   "opciones": [
+    "15",
+    "16",
+    "17",
+    "14"
+   ],
+   "correcta": 1,
+   "tip": "Sumar 9 es sumar 10 y devolver 1: 7 + 10 = 17, menos 1.",
+   "revisada": false,
+   "visual": {
+    "tipo": "contar",
+    "a": 9,
+    "b": 7,
+    "emoji": "🟡"
+   }
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 25 + 17?",
+   "opciones": [
+    "32",
+    "41",
+    "42",
+    "52"
+   ],
+   "correcta": 2,
+   "tip": "25 + 10 = 35, y 35 + 7 = 42.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 34 + 28?",
+   "opciones": [
+    "52",
+    "63",
+    "72",
+    "62"
+   ],
+   "correcta": 3,
+   "tip": "8 + 4 son 12: escribes el 2 y llevas 1 a las decenas.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 46 + 39?",
+   "opciones": [
+    "85",
+    "75",
+    "84",
+    "95"
+   ],
+   "correcta": 0,
+   "tip": "Sumar 39 es sumar 40 y devolver 1: 46 + 40 = 86, menos 1.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 63 + 29?",
+   "opciones": [
+    "82",
+    "92",
+    "81",
+    "93"
+   ],
+   "correcta": 1,
+   "tip": "Sumar 29 es sumar 30 y devolver 1: 63 + 30 = 93, menos 1.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 145 + 30?",
+   "opciones": [
+    "148",
+    "165",
+    "175",
+    "185"
+   ],
+   "correcta": 2,
+   "tip": "Sumar 30 solo cambia las decenas: 4 decenas + 3 decenas.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 236 + 142?",
+   "opciones": [
+    "368",
+    "379",
+    "478",
+    "378"
+   ],
+   "correcta": 3,
+   "tip": "Suma por partes: 200+100, 30+40 y 6+2.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 158 + 264?",
+   "opciones": [
+    "422",
+    "312",
+    "412",
+    "432"
+   ],
+   "correcta": 0,
+   "tip": "8 + 4 son 12 y 5 + 6 son 11: hay que llevar dos veces.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 375 + 248?",
+   "opciones": [
+    "513",
+    "623",
+    "613",
+    "723"
+   ],
+   "correcta": 1,
+   "tip": "Las unidades dan 13 y las decenas 12: se lleva en las dos.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 407 + 195?",
+   "opciones": [
+    "592",
+    "612",
+    "602",
+    "502"
+   ],
+   "correcta": 2,
+   "tip": "Sumar 195 es sumar 200 y devolver 5.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 500 + 350?",
+   "opciones": [
+    "750",
+    "800",
+    "860",
+    "850"
+   ],
+   "correcta": 3,
+   "tip": "5 centenas más 3 centenas son 8, y quedan 5 decenas.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 620 + 380?",
+   "opciones": [
+    "1.000",
+    "900",
+    "990",
+    "1.010"
+   ],
+   "correcta": 0,
+   "tip": "Las decenas suman 100, así que se junta otra centena.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 84 - 37?",
+   "opciones": [
+    "43",
+    "47",
+    "53",
+    "57"
+   ],
+   "correcta": 1,
+   "tip": "Quitar 37 es quitar 40 y devolver 3: 84 - 40 = 44, y luego +3.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 72 - 45?",
+   "opciones": [
+    "33",
+    "37",
+    "27",
+    "23"
+   ],
+   "correcta": 2,
+   "tip": "Quita primero 40 (queda 32) y después los 5 que faltan.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 60 - 28?",
+   "opciones": [
+    "22",
+    "38",
+    "42",
+    "32"
+   ],
+   "correcta": 3,
+   "tip": "Quitar 28 es quitar 30 y devolver 2.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 156 - 42?",
+   "opciones": [
+    "114",
+    "104",
+    "118",
+    "124"
+   ],
+   "correcta": 0,
+   "tip": "Quita 40 (quedan 116) y luego 2 más.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 240 - 165?",
+   "opciones": [
+    "65",
+    "75",
+    "85",
+    "125"
+   ],
+   "correcta": 1,
+   "tip": "Cuenta de 165 a 200 (35) y de 200 a 240 (40).",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 503 - 178?",
+   "opciones": [
+    "335",
+    "425",
+    "325",
+    "375"
+   ],
+   "correcta": 2,
+   "tip": "Quitar 178 es quitar 200 y devolver 22.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 700 - 250?",
+   "opciones": [
+    "350",
+    "550",
+    "460",
+    "450"
+   ],
+   "correcta": 3,
+   "tip": "7 centenas menos 2 centenas son 5, y falta quitar 5 decenas.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "¿Cuánto es 918 - 609?",
+   "opciones": [
+    "309",
+    "209",
+    "311",
+    "319"
+   ],
+   "correcta": 0,
+   "tip": "Quita 600 (quedan 318) y después 9 más.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "En el colegio hay 128 niñas y 145 niños. ¿Cuántos son?",
+   "opciones": [
+    "263",
+    "273",
+    "283",
+    "373"
+   ],
+   "correcta": 1,
+   "tip": "Las unidades dan 13, así que se lleva 1 a las decenas.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "Un libro tiene 240 páginas y Ana leyó 165. ¿Cuántas faltan?",
+   "opciones": [
+    "65",
+    "85",
+    "75",
+    "105"
+   ],
+   "correcta": 2,
+   "tip": "Es una resta: al total le quitas lo ya leído.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "Había 500 galletas y se vendieron 265. ¿Cuántas quedan?",
+   "opciones": [
+    "245",
+    "335",
+    "135",
+    "235"
+   ],
+   "correcta": 3,
+   "tip": "Cuenta de 265 a 300 (35) y de 300 a 500 (200).",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "Suma 120 + 230 + 150. ¿Cuál es el total?",
+   "opciones": [
+    "500",
+    "400",
+    "490",
+    "510"
+   ],
+   "correcta": 0,
+   "tip": "Junta las centenas (100+200+100) y luego las decenas.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 06",
+   "pregunta": "Pedro juntó 175 y 225 pesos. ¿Cuánto tiene en total?",
+   "opciones": [
+    "300",
+    "400",
+    "390",
+    "410"
+   ],
+   "correcta": 1,
+   "tip": "Las unidades dan 10 y las decenas 100: se lleva dos veces.",
+   "revisada": false
+  }
+ ]
+}

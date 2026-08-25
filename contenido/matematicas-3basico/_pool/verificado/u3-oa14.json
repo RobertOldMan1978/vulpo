@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "El perro está en la fila 3, columna 4. ¿En qué fila está el perro?",
+   "opciones": [
+    "Fila 1",
+    "Fila 3",
+    "Fila 4",
+    "Fila 7"
+   ],
+   "correcta": 1,
+   "tip": "La fila se dice primero: fila 3. El 4 es la columna, o sea cuánto avanzas al lado.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "La casa está en la fila 2, columna 6. ¿En qué columna está la casa?",
+   "opciones": [
+    "Columna 2",
+    "Columna 4",
+    "Columna 6",
+    "Columna 8"
+   ],
+   "correcta": 2,
+   "tip": "La columna es el segundo dato: columna 6. El 2 solo dice en qué fila está.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "En el mapa, el árbol está en la casilla (B, 5). ¿Qué letra le toca?",
+   "opciones": [
+    "A",
+    "B",
+    "C",
+    "E"
+   ],
+   "correcta": 1,
+   "tip": "En (B, 5) la letra va primero, así que es la B. El 5 es el número de la fila.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "En el mapa, la escuela está en la casilla (D, 3). ¿Qué número le toca?",
+   "opciones": [
+    "2",
+    "3",
+    "4",
+    "5"
+   ],
+   "correcta": 1,
+   "tip": "En (D, 3) el número va después de la letra, así que es el 3.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "Ana está en la fila 2 y baja 3 filas. ¿A qué fila de la cuadrícula llega?",
+   "opciones": [
+    "Fila 1",
+    "Fila 4",
+    "Fila 5",
+    "Fila 6"
+   ],
+   "correcta": 2,
+   "tip": "Bajar filas es sumar: 2 + 3 = 5. Si restaras estarías subiendo, no bajando.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "Un gato está en la columna 4 y avanza 2 a la derecha. ¿A qué columna llega?",
+   "opciones": [
+    "Columna 2",
+    "Columna 5",
+    "Columna 6",
+    "Columna 8"
+   ],
+   "correcta": 2,
+   "tip": "Ir a la derecha es sumar columnas: 4 + 2 = 6. A la izquierda sería restar.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "La pelota está en la fila 5 y sube 2 filas. ¿A qué fila llega la pelota?",
+   "opciones": [
+    "Fila 2",
+    "Fila 3",
+    "Fila 4",
+    "Fila 7"
+   ],
+   "correcta": 1,
+   "tip": "Subir filas es restar: 5 - 2 = 3. La fila 1 es la de más arriba.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "El banco está en (C, 2) y la fuente en (C, 6). ¿Cuántas filas hay entre ellos?",
+   "opciones": [
+    "2",
+    "3",
+    "4",
+    "6"
+   ],
+   "correcta": 2,
+   "tip": "El número marca la fila: de la 2 a la 6 hay 6 - 2 = 4 filas de diferencia.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "La tienda está en la fila 1 y la plaza en la fila 4. ¿Cuántas filas bajas?",
+   "opciones": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "correcta": 2,
+   "tip": "De la fila 1 a la fila 4 avanzas 4 - 1 = 3 filas hacia abajo.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "En la casilla (A, 3) de la cuadrícula, ¿qué te indica la letra A?",
+   "opciones": [
+    "La columna",
+    "La fila",
+    "El color",
+    "El tamaño"
+   ],
+   "correcta": 0,
+   "tip": "En una cuadrícula la letra dice la columna y el número dice la fila.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "En la casilla (D, 2) de la cuadrícula, ¿qué te indica el número 2?",
+   "opciones": [
+    "La fila",
+    "La columna",
+    "La letra",
+    "El total"
+   ],
+   "correcta": 0,
+   "tip": "El número siempre marca la fila; la columna ya la dijo la letra D.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "El museo está en (B, 4) y se corre una columna a la derecha. ¿Dónde queda?",
+   "opciones": [
+    "(A, 4)",
+    "(C, 4)",
+    "(B, 5)",
+    "(C, 5)"
+   ],
+   "correcta": 1,
+   "tip": "Moverse de columna cambia la letra: de B pasa a C, y la fila 4 no cambia.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "La estatua está en (C, 3) y baja una fila. ¿En qué casilla queda ahora?",
+   "opciones": [
+    "(C, 2)",
+    "(C, 4)",
+    "(B, 3)",
+    "(D, 3)"
+   ],
+   "correcta": 1,
+   "tip": "Bajar suma 1 al número de la fila: 3 pasa a 4. La letra C se queda igual.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "El buzón está en (E, 5) y sube 2 filas. ¿En qué casilla queda el buzón?",
+   "opciones": [
+    "(E, 3)",
+    "(E, 7)",
+    "(C, 5)",
+    "(G, 5)"
+   ],
+   "correcta": 0,
+   "tip": "Subir resta filas: 5 - 2 = 3. La letra E no cambia porque no te mueves al lado.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "Dos casillas de la cuadrícula están en la misma fila. ¿Qué tienen igual?",
+   "opciones": [
+    "El número de fila",
+    "La columna",
+    "El color",
+    "El tamaño"
+   ],
+   "correcta": 0,
+   "tip": "Estar en la misma fila significa compartir el número; la columna puede ser otra.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "En una cuadrícula, ¿cómo se llama la línea de casillas que va hacia el lado?",
+   "opciones": [
+    "Fila",
+    "Columna",
+    "Recta",
+    "Borde"
+   ],
+   "correcta": 0,
+   "tip": "Las filas van acostadas, hacia el lado. Las columnas van paradas, hacia abajo.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "En una cuadrícula, ¿cómo se llama la línea de casillas que va hacia abajo?",
+   "opciones": [
+    "Fila",
+    "Columna",
+    "Borde",
+    "Punto"
+   ],
+   "correcta": 1,
+   "tip": "Las columnas van paradas, de arriba hacia abajo, como las de un edificio.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "La columna 4 de la cuadrícula es la D. ¿Cómo anotas la fila 2 de esa columna?",
+   "opciones": [
+    "(D, 2)",
+    "(2, D)",
+    "(C, 2)",
+    "(D, 4)"
+   ],
+   "correcta": 0,
+   "tip": "Primero la letra de la columna y después el número de la fila: (D, 2).",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "Un mapa cuadriculado tiene 5 filas y 6 columnas. ¿Cuántas casillas tiene?",
+   "opciones": [
+    "11",
+    "25",
+    "30",
+    "36"
+   ],
+   "correcta": 2,
+   "tip": "Las casillas se cuentan multiplicando filas por columnas: 5 x 6 = 30.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "Un mapa cuadriculado tiene 4 filas y 4 columnas. ¿Cuántas casillas tiene?",
+   "opciones": [
+    "8",
+    "12",
+    "16",
+    "20"
+   ],
+   "correcta": 2,
+   "tip": "Multiplicas filas por columnas: 4 x 4 = 16. Sumar 4 + 4 daría solo un borde.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "Pedro camina de la casilla (A, 2) a la casilla (A, 5). ¿Qué le cambió?",
+   "opciones": [
+    "Su fila",
+    "Su columna",
+    "Su letra",
+    "Nada"
+   ],
+   "correcta": 0,
+   "tip": "Cambió solo el número, que marca la fila. La letra A se mantuvo igual.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "Luis camina de la casilla (B, 3) a la casilla (E, 3). ¿Qué le cambió?",
+   "opciones": [
+    "Su fila",
+    "El color",
+    "Su columna",
+    "Nada"
+   ],
+   "correcta": 2,
+   "tip": "Cambió la letra, que marca la columna. El número 3 quedó igual: misma fila.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "El tesoro está 2 casillas a la derecha de (C, 4). ¿En qué casilla está?",
+   "opciones": [
+    "(A, 4)",
+    "(E, 4)",
+    "(C, 6)",
+    "(C, 2)"
+   ],
+   "correcta": 1,
+   "tip": "A la derecha cambia la letra: de C pasas a D y luego a E. La fila sigue en 4.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "El nido está 3 casillas más abajo de (B, 1). ¿En qué casilla está el nido?",
+   "opciones": [
+    "(B, 4)",
+    "(B, 3)",
+    "(E, 1)",
+    "(A, 1)"
+   ],
+   "correcta": 0,
+   "tip": "Bajar suma al número de la fila: 1 + 3 = 4. La columna B no cambia.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "Marta está en la fila 3. ¿Qué fila está justo arriba de la fila de Marta?",
+   "opciones": [
+    "Fila 1",
+    "Fila 2",
+    "Fila 4",
+    "Fila 5"
+   ],
+   "correcta": 1,
+   "tip": "Hacia arriba los números de fila se achican: justo arriba de la 3 está la 2.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "Juan está en la columna 5. ¿Qué columna está justo a su izquierda?",
+   "opciones": [
+    "Columna 3",
+    "Columna 4",
+    "Columna 6",
+    "Columna 7"
+   ],
+   "correcta": 1,
+   "tip": "A la izquierda las columnas se achican: justo antes de la 5 está la 4.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "En un mapa, el norte apunta hacia arriba. ¿Hacia dónde queda el sur?",
+   "opciones": [
+    "Hacia abajo",
+    "Hacia arriba",
+    "A la derecha",
+    "A la izquierda"
+   ],
+   "correcta": 0,
+   "tip": "El sur es lo contrario del norte, así que apunta al lado opuesto: hacia abajo.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "En un mapa con el norte hacia arriba, ¿a qué lado queda el este?",
+   "opciones": [
+    "A la izquierda",
+    "Hacia abajo",
+    "Hacia arriba",
+    "A la derecha"
+   ],
+   "correcta": 3,
+   "tip": "Con el norte arriba, el este queda a la derecha y el oeste a la izquierda.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "La panadería está 2 cuadras al oeste de la plaza. ¿Hacia dónde caminas?",
+   "opciones": [
+    "A la derecha",
+    "A la izquierda",
+    "Hacia arriba",
+    "Hacia abajo"
+   ],
+   "correcta": 1,
+   "tip": "Con el norte arriba, el oeste queda a la izquierda del mapa.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 14",
+   "pregunta": "Para ubicar una casilla necesitas la fila y un dato más. ¿Cuál falta?",
+   "opciones": [
+    "El color",
+    "El tamaño",
+    "La columna",
+    "La forma"
+   ],
+   "correcta": 2,
+   "tip": "Una casilla se ubica con dos datos: la fila y la columna. Con uno solo no basta.",
+   "revisada": false
+  }
+ ]
+}

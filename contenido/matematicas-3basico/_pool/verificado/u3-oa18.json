@@ -1,0 +1,434 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "¿Cuánto mide el ángulo de la esquina de una hoja?",
+   "opciones": [
+    "45°",
+    "60°",
+    "90°",
+    "180°"
+   ],
+   "correcta": 2,
+   "tip": "Las esquinas de una hoja son ángulos rectos: miden 90° cada una.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "Un ángulo que mide menos de 90° se llama:",
+   "opciones": [
+    "Recto",
+    "Agudo",
+    "Obtuso",
+    "Llano"
+   ],
+   "correcta": 1,
+   "tip": "Si el ángulo es más cerrado que la esquina de una hoja, es agudo.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "¿Qué ángulo forman las manecillas a las 3:00?",
+   "opciones": [
+    "30°",
+    "45°",
+    "90°",
+    "180°"
+   ],
+   "correcta": 2,
+   "tip": "A las 3:00 las manecillas forman una esquina, igual que la de una hoja.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 3,
+    "minuto": 0
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "¿Qué ángulo forman las manecillas a las 6:00?",
+   "opciones": [
+    "90°",
+    "120°",
+    "180°",
+    "360°"
+   ],
+   "correcta": 2,
+   "tip": "A las 6:00 las manecillas quedan en línea recta: es media vuelta.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 6,
+    "minuto": 0
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "Media vuelta mide:",
+   "opciones": [
+    "90°",
+    "180°",
+    "270°",
+    "360°"
+   ],
+   "correcta": 1,
+   "tip": "Media vuelta son dos ángulos rectos juntos: 90° + 90° = 180°.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "Una vuelta completa mide:",
+   "opciones": [
+    "90°",
+    "180°",
+    "270°",
+    "360°"
+   ],
+   "correcta": 3,
+   "tip": "Una vuelta completa son cuatro ángulos rectos: 90° cuatro veces da 360°.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "El ángulo de la esquina de una puerta se llama:",
+   "opciones": [
+    "Agudo",
+    "Recto",
+    "Obtuso",
+    "Llano"
+   ],
+   "correcta": 1,
+   "tip": "Los ángulos de 90°, como las esquinas de puertas y hojas, se llaman rectos.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "45° es la mitad de un ángulo de:",
+   "opciones": [
+    "30°",
+    "60°",
+    "90°",
+    "180°"
+   ],
+   "correcta": 2,
+   "tip": "Si partes en dos la esquina de una hoja, cada parte mide 45°.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "Un ángulo entre 90° y 180° se llama:",
+   "opciones": [
+    "Agudo",
+    "Recto",
+    "Obtuso",
+    "Completo"
+   ],
+   "correcta": 2,
+   "tip": "Si el ángulo es más abierto que la esquina de una hoja, es obtuso.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "¿Qué ángulo forman las manecillas a las 9:00?",
+   "opciones": [
+    "45°",
+    "90°",
+    "135°",
+    "180°"
+   ],
+   "correcta": 1,
+   "tip": "A las 9:00 las manecillas forman una esquina recta, igual que a las 3:00.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 9,
+    "minuto": 0
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "¿Qué ángulo forman las manecillas a las 12:00?",
+   "opciones": [
+    "0°",
+    "45°",
+    "90°",
+    "180°"
+   ],
+   "correcta": 0,
+   "tip": "A las 12:00 las dos manecillas están juntas, así que no abren nada.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 12,
+    "minuto": 0
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "Dos ángulos rectos juntos forman un ángulo de:",
+   "opciones": [
+    "90°",
+    "135°",
+    "180°",
+    "360°"
+   ],
+   "correcta": 2,
+   "tip": "90° + 90° = 180°, que es media vuelta.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "Cuatro ángulos rectos juntos forman:",
+   "opciones": [
+    "180°",
+    "270°",
+    "360°",
+    "450°"
+   ],
+   "correcta": 2,
+   "tip": "90° cuatro veces da 360°: una vuelta completa.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "¿Cuántos ángulos rectos tiene un cuadrado?",
+   "opciones": [
+    "2",
+    "3",
+    "4",
+    "6"
+   ],
+   "correcta": 2,
+   "tip": "Un cuadrado tiene cuatro esquinas y todas miden 90°.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "Un ángulo de 45° es:",
+   "opciones": [
+    "Menor que 90°",
+    "Igual a 90°",
+    "Mayor que 90°",
+    "Igual a 180°"
+   ],
+   "correcta": 0,
+   "tip": "45° es la mitad de 90°, así que es más cerrado que una esquina.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "La esquina de una baldosa cuadrada mide:",
+   "opciones": [
+    "45°",
+    "90°",
+    "180°",
+    "360°"
+   ],
+   "correcta": 1,
+   "tip": "Todas las esquinas de un cuadrado son ángulos rectos de 90°.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "Abres un libro y lo dejas plano sobre la mesa. El ángulo es de:",
+   "opciones": [
+    "45°",
+    "90°",
+    "180°",
+    "360°"
+   ],
+   "correcta": 2,
+   "tip": "Las dos tapas quedan en línea recta: eso es media vuelta, 180°.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "¿Cuál mide más: un ángulo de 45° o uno de 90°?",
+   "opciones": [
+    "El de 45°",
+    "El de 90°",
+    "Miden igual",
+    "No se puede saber"
+   ],
+   "correcta": 1,
+   "tip": "Mientras más abierto está el ángulo, más grados mide: 90° abre más que 45°.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "Girar un cuarto de vuelta es un ángulo de:",
+   "opciones": [
+    "45°",
+    "90°",
+    "180°",
+    "360°"
+   ],
+   "correcta": 1,
+   "tip": "La vuelta completa son 360° y su cuarta parte es 90°.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "Miras al norte y giras media vuelta. ¿A dónde miras?",
+   "opciones": [
+    "Al norte",
+    "Al sur",
+    "Al este",
+    "Al oeste"
+   ],
+   "correcta": 1,
+   "tip": "Media vuelta son 180°: quedas mirando justo al lado contrario.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "Miras al norte y giras un cuarto de vuelta a la derecha. ¿A dónde miras?",
+   "opciones": [
+    "Al norte",
+    "Al sur",
+    "Al este",
+    "Al oeste"
+   ],
+   "correcta": 2,
+   "tip": "Un cuarto de vuelta son 90°: girando a la derecha desde el norte llegas al este.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "¿Cuántos ángulos de 45° caben en uno de 90°?",
+   "opciones": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "correcta": 1,
+   "tip": "45° + 45° = 90°, así que caben dos.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "¿Cuántos ángulos rectos caben en media vuelta?",
+   "opciones": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "correcta": 1,
+   "tip": "Media vuelta son 180° y 90° + 90° = 180°.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "A las 2:00, ¿cómo es el ángulo de las manecillas?",
+   "opciones": [
+    "Menor que 90°",
+    "Igual a 90°",
+    "Mayor que 90°",
+    "Igual a 180°"
+   ],
+   "correcta": 0,
+   "tip": "A las 2:00 las manecillas abren menos que a las 3:00, y a las 3:00 son 90°.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 2,
+    "minuto": 0
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "A las 5:00, ¿cómo es el ángulo de las manecillas?",
+   "opciones": [
+    "Menor que 90°",
+    "Igual a 90°",
+    "Mayor que 90°",
+    "Igual a 180°"
+   ],
+   "correcta": 2,
+   "tip": "A las 5:00 abren más que a las 3:00, y a las 3:00 el ángulo es de 90°.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 5,
+    "minuto": 0
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "A las 4:00, las manecillas forman un ángulo:",
+   "opciones": [
+    "Agudo",
+    "Recto",
+    "Obtuso",
+    "Llano"
+   ],
+   "correcta": 2,
+   "tip": "A las 4:00 abren más que una esquina de 90°, así que el ángulo es obtuso.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 4,
+    "minuto": 0
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "A las 1:00, las manecillas forman un ángulo:",
+   "opciones": [
+    "Agudo",
+    "Recto",
+    "Obtuso",
+    "Llano"
+   ],
+   "correcta": 0,
+   "tip": "A la 1:00 las manecillas están muy juntas: el ángulo es más cerrado que 90°.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 1,
+    "minuto": 0
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "¿Qué ángulo es el más abierto?",
+   "opciones": [
+    "Uno de 30°",
+    "Uno de 45°",
+    "Uno de 90°",
+    "Uno de 180°"
+   ],
+   "correcta": 3,
+   "tip": "Mientras más grados tiene un ángulo, más abierto está: 180° es media vuelta.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "Unas tijeras casi cerradas forman un ángulo:",
+   "opciones": [
+    "Agudo",
+    "Recto",
+    "Obtuso",
+    "Llano"
+   ],
+   "correcta": 0,
+   "tip": "Casi cerradas abren muy poco, mucho menos que una esquina de 90°.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 18",
+   "pregunta": "Un ángulo que mide justo 180° se llama:",
+   "opciones": [
+    "Agudo",
+    "Recto",
+    "Obtuso",
+    "Llano"
+   ],
+   "correcta": 3,
+   "tip": "Cuando los dos lados quedan en línea recta, el ángulo se llama llano.",
+   "revisada": false
+  }
+ ]
+}

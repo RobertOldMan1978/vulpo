@@ -1,0 +1,427 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Cuenta de 5 en 5: 5, 10, 15, 20. ¿Qué número sigue?",
+   "opciones": [
+    "21",
+    "24",
+    "25",
+    "30"
+   ],
+   "correcta": 2,
+   "tip": "Al contar de 5 en 5 sumas 5 cada vez: 20 + 5 = 25.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Completa contando de 5 en 5: 35, 40, ___, 50.",
+   "opciones": [
+    "45",
+    "41",
+    "44",
+    "46"
+   ],
+   "correcta": 0,
+   "tip": "Entre 40 y 50 hay un salto de 5: 40 + 5 = 45.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Cuenta de 5 en 5 desde 23. ¿Qué número viene después de 33?",
+   "opciones": [
+    "34",
+    "35",
+    "38",
+    "43"
+   ],
+   "correcta": 2,
+   "tip": "Aunque partas de un número cualquiera, el salto sigue siendo de 5: 33 + 5 = 38.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Cuenta hacia atrás de 5 en 5: 40, 35, 30. ¿Qué sigue?",
+   "opciones": [
+    "29",
+    "20",
+    "26",
+    "25"
+   ],
+   "correcta": 3,
+   "tip": "Hacia atrás se resta 5 cada vez: 30 - 5 = 25.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "María cuenta de 5 en 5 desde 0. ¿Dirá el 47?",
+   "opciones": [
+    "Sí, porque está entre 45 y 50",
+    "No, porque no termina en 0 ni en 5",
+    "Sí, porque es impar",
+    "No, porque es mayor que 40"
+   ],
+   "correcta": 1,
+   "tip": "Contando de 5 en 5 desde 0, todos los números terminan en 0 o en 5.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Cuenta de 10 en 10: 30, 40, 50. ¿Qué número sigue?",
+   "opciones": [
+    "60",
+    "51",
+    "55",
+    "70"
+   ],
+   "correcta": 0,
+   "tip": "De 10 en 10 cambia la decena y la unidad queda igual: 50 + 10 = 60.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Completa de 10 en 10: 120, 130, ___, 150.",
+   "opciones": [
+    "140",
+    "131",
+    "135",
+    "145"
+   ],
+   "correcta": 0,
+   "tip": "Entre 130 y 150 falta un salto de 10: 130 + 10 = 140.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Cuenta de 10 en 10 desde 46. ¿Qué número sigue a 66?",
+   "opciones": [
+    "67",
+    "70",
+    "76",
+    "86"
+   ],
+   "correcta": 2,
+   "tip": "Suma 10 a la decena y deja el 6: 66 + 10 = 76.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Cuenta hacia atrás de 10 en 10: 90, 80, 70. ¿Qué sigue?",
+   "opciones": [
+    "69",
+    "65",
+    "50",
+    "60"
+   ],
+   "correcta": 3,
+   "tip": "Hacia atrás quitas una decena cada vez: 70 - 10 = 60.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Pedro cuenta de 10 en 10 desde 5: 5, 15, 25. ¿Qué sigue?",
+   "opciones": [
+    "35",
+    "26",
+    "30",
+    "45"
+   ],
+   "correcta": 0,
+   "tip": "El salto es de 10, no de 1 ni de 5: 25 + 10 = 35.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Cuenta de 100 en 100: 200, 300, 400. ¿Qué número sigue?",
+   "opciones": [
+    "401",
+    "410",
+    "450",
+    "500"
+   ],
+   "correcta": 3,
+   "tip": "De 100 en 100 cambia la centena: 400 + 100 = 500.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Completa de 100 en 100: 350, 450, ___, 650.",
+   "opciones": [
+    "550",
+    "460",
+    "500",
+    "560"
+   ],
+   "correcta": 0,
+   "tip": "Suma 100 a la centena y deja el 50: 450 + 100 = 550.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Cuenta hacia atrás de 100 en 100: 900, 800, 700. ¿Qué sigue?",
+   "opciones": [
+    "690",
+    "600",
+    "650",
+    "500"
+   ],
+   "correcta": 1,
+   "tip": "Hacia atrás quitas una centena cada vez: 700 - 100 = 600.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Cuenta de 100 en 100 desde 130. ¿Qué número sigue a 530?",
+   "opciones": [
+    "540",
+    "630",
+    "531",
+    "730"
+   ],
+   "correcta": 1,
+   "tip": "Cambia solo la centena y el 30 se mantiene: 530 + 100 = 630.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Cuenta de 3 en 3 desde 9: 9, 12, 15. ¿Qué número sigue?",
+   "opciones": [
+    "16",
+    "18",
+    "20",
+    "21"
+   ],
+   "correcta": 1,
+   "tip": "El salto es de 3, no de 1 ni de 5: 15 + 3 = 18.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Completa de 3 en 3: 21, 24, ___, 30.",
+   "opciones": [
+    "25",
+    "26",
+    "27",
+    "28"
+   ],
+   "correcta": 2,
+   "tip": "Entre 24 y 30 falta un salto de 3: 24 + 3 = 27.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Cuenta de 3 en 3 desde 30. ¿Qué número sigue a 39?",
+   "opciones": [
+    "42",
+    "40",
+    "41",
+    "43"
+   ],
+   "correcta": 0,
+   "tip": "Suma 3 al último número: 39 + 3 = 42.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Cuenta hacia atrás de 3 en 3: 18, 15, 12. ¿Qué sigue?",
+   "opciones": [
+    "11",
+    "10",
+    "9",
+    "8"
+   ],
+   "correcta": 2,
+   "tip": "Hacia atrás se resta 3 cada vez: 12 - 3 = 9.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Cuenta de 4 en 4 desde 8: 8, 12, 16. ¿Qué número sigue?",
+   "opciones": [
+    "17",
+    "20",
+    "18",
+    "24"
+   ],
+   "correcta": 1,
+   "tip": "El salto es de 4: 16 + 4 = 20.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Completa de 4 en 4: 24, 28, ___, 36.",
+   "opciones": [
+    "30",
+    "32",
+    "31",
+    "34"
+   ],
+   "correcta": 1,
+   "tip": "Entre 28 y 36 falta un salto de 4: 28 + 4 = 32.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Cuenta de 4 en 4 desde 40. ¿Qué número sigue a 52?",
+   "opciones": [
+    "56",
+    "53",
+    "54",
+    "60"
+   ],
+   "correcta": 0,
+   "tip": "Suma 4 al último número: 52 + 4 = 56.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Cuenta hacia atrás de 4 en 4: 20, 16, 12. ¿Qué sigue?",
+   "opciones": [
+    "11",
+    "10",
+    "9",
+    "8"
+   ],
+   "correcta": 3,
+   "tip": "Hacia atrás se resta 4 cada vez: 12 - 4 = 8.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "La recta cuenta de 10 en 10. ¿Qué número está marcado?",
+   "opciones": [
+    "4",
+    "40",
+    "14",
+    "50"
+   ],
+   "correcta": 1,
+   "tip": "Cuenta los saltos de 10 desde 0: 10, 20, 30, 40.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 100,
+    "paso": 10,
+    "marca": 40
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "La recta cuenta de 100 en 100. ¿Qué número está marcado?",
+   "opciones": [
+    "700",
+    "70",
+    "600",
+    "800"
+   ],
+   "correcta": 0,
+   "tip": "Cada salto vale 100, así que siete saltos desde 0 llegan a 700.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 1000,
+    "paso": 100,
+    "marca": 700
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "La recta cuenta de 5 en 5. ¿Qué número está marcado?",
+   "opciones": [
+    "5",
+    "20",
+    "30",
+    "25"
+   ],
+   "correcta": 3,
+   "tip": "Cuenta de 5 en 5 desde 0: 5, 10, 15, 20, 25.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 50,
+    "paso": 5,
+    "marca": 25
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "¿De cuánto en cuánto cuenta esta lista: 8, 12, 16, 20?",
+   "opciones": [
+    "De 2 en 2",
+    "De 4 en 4",
+    "De 3 en 3",
+    "De 5 en 5"
+   ],
+   "correcta": 1,
+   "tip": "Mira cuánto crece de un número al otro: de 8 a 12 hay 4.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "¿De cuánto en cuánto cuenta esta lista: 12, 15, 18, 21?",
+   "opciones": [
+    "De 2 en 2",
+    "De 3 en 3",
+    "De 4 en 4",
+    "De 6 en 6"
+   ],
+   "correcta": 1,
+   "tip": "De 12 a 15 hay 3, y el salto se repite igual.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "¿De cuánto en cuánto cuenta esta lista: 250, 350, 450?",
+   "opciones": [
+    "De 10 en 10",
+    "De 50 en 50",
+    "De 200 en 200",
+    "De 100 en 100"
+   ],
+   "correcta": 3,
+   "tip": "Cambia la centena y el 50 queda igual: el salto es de 100.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Ana pone 5 galletas en cada bolsa. Con 6 bolsas, ¿cuántas hay?",
+   "opciones": [
+    "30",
+    "11",
+    "25",
+    "35"
+   ],
+   "correcta": 0,
+   "tip": "Cuenta de 5 en 5 seis veces: 5, 10, 15, 20, 25, 30.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 6,
+    "porGrupo": 5,
+    "emoji": "🍪"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 01",
+   "pregunta": "Cada auto tiene 4 ruedas. ¿Cuántas ruedas hay en 5 autos?",
+   "opciones": [
+    "9",
+    "16",
+    "24",
+    "20"
+   ],
+   "correcta": 3,
+   "tip": "Cuenta de 4 en 4 cinco veces: 4, 8, 12, 16, 20.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 5,
+    "porGrupo": 4,
+    "emoji": "⚫"
+   },
+   "revisada": false
+  }
+ ]
+}

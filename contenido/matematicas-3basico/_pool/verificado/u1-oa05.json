@@ -1,0 +1,415 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "En el número 348, ¿qué cifra está en las decenas?",
+   "opciones": [
+    "3",
+    "4",
+    "8",
+    "34"
+   ],
+   "correcta": 1,
+   "tip": "En 348 hay 3 centenas, 4 decenas y 8 unidades: las decenas son la cifra del medio.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "¿Cuánto vale el 5 en el número 526?",
+   "opciones": [
+    "5",
+    "50",
+    "500",
+    "56"
+   ],
+   "correcta": 2,
+   "tip": "El 5 está en el lugar de las centenas, así que vale 5 grupos de 100.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "¿Qué número tiene 7 centenas, 2 decenas y 9 unidades?",
+   "opciones": [
+    "792",
+    "279",
+    "729",
+    "927"
+   ],
+   "correcta": 2,
+   "tip": "Se escriben en orden: primero las centenas, luego las decenas y al final las unidades.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "En el número 604, ¿qué cifra está en las decenas?",
+   "opciones": [
+    "0",
+    "4",
+    "6",
+    "60"
+   ],
+   "correcta": 0,
+   "tip": "El 0 avisa que no hay decenas, pero igual ocupa su lugar para no correr las cifras.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "¿Cuánto vale el 8 en el número 483?",
+   "opciones": [
+    "8",
+    "80",
+    "800",
+    "83"
+   ],
+   "correcta": 1,
+   "tip": "El 8 está en las decenas, o sea 8 grupos de 10.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "¿A qué número es igual 300 + 40 + 6?",
+   "opciones": [
+    "346",
+    "364",
+    "436",
+    "3406"
+   ],
+   "correcta": 0,
+   "tip": "Cada sumando ocupa un lugar: 300 son las centenas, 40 las decenas y 6 las unidades.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "¿Cómo se descompone el número 815?",
+   "opciones": [
+    "800 + 10 + 5",
+    "800 + 100 + 5",
+    "800 + 50 + 1",
+    "8 + 1 + 5"
+   ],
+   "correcta": 0,
+   "tip": "El 1 está en las decenas, así que aporta 10 y no 100.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "En el número 907, ¿qué cifra está en las centenas?",
+   "opciones": [
+    "9",
+    "0",
+    "7",
+    "90"
+   ],
+   "correcta": 0,
+   "tip": "En un número de tres cifras, las centenas son la primera cifra de la izquierda.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "Ana tiene 5 bolsas con 100 galletas cada una. ¿Cuántas galletas son?",
+   "opciones": [
+    "50",
+    "150",
+    "500",
+    "1000"
+   ],
+   "correcta": 2,
+   "tip": "Cinco grupos de 100 forman 5 centenas, y 5 centenas se escriben como 500.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "¿Qué número es una centena más que 250?",
+   "opciones": [
+    "251",
+    "260",
+    "350",
+    "1250"
+   ],
+   "correcta": 2,
+   "tip": "Sumar una centena cambia solo la cifra de las centenas: el 2 pasa a 3.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "¿Qué número es una decena más que 493?",
+   "opciones": [
+    "483",
+    "494",
+    "503",
+    "593"
+   ],
+   "correcta": 2,
+   "tip": "493 tiene 9 decenas; al sumar una se completan 10 decenas, que forman una centena nueva.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "En el número 700, ¿qué cifra está en las unidades?",
+   "opciones": [
+    "0",
+    "7",
+    "70",
+    "700"
+   ],
+   "correcta": 0,
+   "tip": "700 son 7 centenas justas: no sobran decenas ni unidades, por eso van dos ceros.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "¿Cuántas centenas tiene el número 462?",
+   "opciones": [
+    "2",
+    "4",
+    "6",
+    "40"
+   ],
+   "correcta": 1,
+   "tip": "La cifra de las centenas es el 4, así que 462 tiene 4 centenas completas.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "¿Qué número se forma con 3 decenas y 5 unidades?",
+   "opciones": [
+    "35",
+    "53",
+    "305",
+    "350"
+   ],
+   "correcta": 0,
+   "tip": "Las decenas van antes que las unidades: 30 más 5.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "¿Qué número se forma con 9 centenas y 9 unidades?",
+   "opciones": [
+    "99",
+    "909",
+    "990",
+    "999"
+   ],
+   "correcta": 1,
+   "tip": "No hay decenas, así que en ese lugar se escribe un 0 para no correr las cifras.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "¿Cuál es el valor del 2 en el número 328?",
+   "opciones": [
+    "2",
+    "20",
+    "200",
+    "28"
+   ],
+   "correcta": 1,
+   "tip": "El 2 está en el lugar de las decenas, o sea 2 grupos de 10.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "¿A cuánto son iguales 8 centenas?",
+   "opciones": [
+    "8",
+    "80",
+    "800",
+    "880"
+   ],
+   "correcta": 2,
+   "tip": "Cada centena vale 100, así que 8 centenas son 8 grupos de 100.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "¿Cuántas decenas hay en 100?",
+   "opciones": [
+    "1",
+    "10",
+    "100",
+    "110"
+   ],
+   "correcta": 1,
+   "tip": "Diez grupos de 10 completan 100: por eso 10 decenas forman una centena.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 100,
+    "paso": 10,
+    "marca": 100
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "¿Cómo se descompone el número 570?",
+   "opciones": [
+    "500 + 7",
+    "50 + 70",
+    "5 + 70",
+    "500 + 70"
+   ],
+   "correcta": 3,
+   "tip": "El 5 vale 500 y el 7 vale 70, porque está en las decenas. No quedan unidades.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "¿Qué número tiene 2 centenas, 0 decenas y 3 unidades?",
+   "opciones": [
+    "23",
+    "203",
+    "230",
+    "2003"
+   ],
+   "correcta": 1,
+   "tip": "El 0 guarda el lugar de las decenas para que el 2 siga siendo centena.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "En el número 736, ¿en qué lugar está el 3?",
+   "opciones": [
+    "Unidades",
+    "Decenas",
+    "Centenas",
+    "Miles"
+   ],
+   "correcta": 1,
+   "tip": "Contando desde la derecha: 6 unidades, 3 decenas y 7 centenas.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "En el número 812, ¿en qué lugar está el 8?",
+   "opciones": [
+    "Unidades",
+    "Decenas",
+    "Centenas",
+    "Miles"
+   ],
+   "correcta": 2,
+   "tip": "En un número de tres cifras, la primera de la izquierda siempre son las centenas.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "Pedro arma 4 barras de 10 y 6 cubos sueltos. ¿Qué número forma?",
+   "opciones": [
+    "46",
+    "64",
+    "406",
+    "410"
+   ],
+   "correcta": 0,
+   "tip": "Cada barra es una decena: 4 decenas son 40, más 6 unidades sueltas.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "Sofía arma 2 placas de 100 y 5 barras de 10. ¿Qué número forma?",
+   "opciones": [
+    "25",
+    "205",
+    "250",
+    "2050"
+   ],
+   "correcta": 2,
+   "tip": "2 centenas son 200 y 5 decenas son 50; no quedan cubos sueltos, por eso termina en 0.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "¿Cuál de estos números tiene un 7 en las decenas?",
+   "opciones": [
+    "714",
+    "471",
+    "147",
+    "107"
+   ],
+   "correcta": 1,
+   "tip": "Las decenas son la cifra del medio en un número de tres cifras.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "¿Cuál de estos números tiene un 3 en las centenas?",
+   "opciones": [
+    "132",
+    "313",
+    "231",
+    "123"
+   ],
+   "correcta": 1,
+   "tip": "Hay que mirar la primera cifra de la izquierda, no cualquier 3 del número.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "¿Cuánto vale el 0 en el número 405?",
+   "opciones": [
+    "0",
+    "10",
+    "40",
+    "400"
+   ],
+   "correcta": 0,
+   "tip": "El 0 indica que no hay decenas; solo guarda el lugar para que el 4 valga 400.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "Diez decenas juntas forman...",
+   "opciones": [
+    "10",
+    "100",
+    "110",
+    "1000"
+   ],
+   "correcta": 1,
+   "tip": "Cada decena vale 10, y diez veces 10 completa una centena.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "¿Qué número está marcado en la recta?",
+   "opciones": [
+    "4",
+    "40",
+    "400",
+    "4000"
+   ],
+   "correcta": 2,
+   "tip": "La recta avanza de 100 en 100, así que la cuarta marca son 4 centenas.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 1000,
+    "paso": 100,
+    "marca": 400
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 05",
+   "pregunta": "¿Qué número marca la flecha en esta recta?",
+   "opciones": [
+    "26",
+    "206",
+    "260",
+    "2600"
+   ],
+   "correcta": 2,
+   "tip": "La recta va de 10 en 10 desde 200, y la marca está 6 decenas más allá.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 200,
+    "hasta": 300,
+    "paso": 10,
+    "marca": 260
+   },
+   "revisada": false
+  }
+ ]
+}

@@ -1,0 +1,625 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "¿Qué color eligieron más niños?",
+   "opciones": [
+    "Rojo",
+    "Azul",
+    "Verde",
+    "Ninguno"
+   ],
+   "correcta": 1,
+   "tip": "En un gráfico de barras, la barra más alta es la que eligieron más veces.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Rojo",
+     "Azul",
+     "Verde"
+    ],
+    "valores": [
+     4,
+     7,
+     5
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "¿Cuántos niños eligieron el gato?",
+   "opciones": [
+    "3",
+    "5",
+    "6",
+    "8"
+   ],
+   "correcta": 2,
+   "tip": "Busca la barra del gato y lee hasta dónde llega en la escala.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Perro",
+     "Gato",
+     "Pez",
+     "Ave"
+    ],
+    "valores": [
+     8,
+     6,
+     3,
+     5
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "¿Qué día llovió menos?",
+   "opciones": [
+    "Lunes",
+    "Martes",
+    "Jueves",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "La barra más baja marca el día con menos lluvia.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Lunes",
+     "Martes",
+     "Jueves"
+    ],
+    "valores": [
+     2,
+     5,
+     3
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "¿Cuántos niños más eligen fútbol que tenis?",
+   "opciones": [
+    "3",
+    "4",
+    "5",
+    "13"
+   ],
+   "correcta": 2,
+   "tip": "Para comparar dos barras se restan sus valores: 9 - 4.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Fútbol",
+     "Tenis",
+     "Vóley"
+    ],
+    "valores": [
+     9,
+     4,
+     6
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "¿Cuántos libros leyeron entre los tres cursos?",
+   "opciones": [
+    "26",
+    "24",
+    "17",
+    "19"
+   ],
+   "correcta": 0,
+   "tip": "Para el total se suman todas las barras: 10 + 7 + 9.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "1°",
+     "2°",
+     "3°"
+    ],
+    "valores": [
+     10,
+     7,
+     9
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "¿Cuántos helados se vendieron en total?",
+   "opciones": [
+    "12",
+    "14",
+    "16",
+    "15"
+   ],
+   "correcta": 3,
+   "tip": "El total junta las tres barras: 7 + 5 + 3.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Choc.",
+     "Frutilla",
+     "Vainilla"
+    ],
+    "valores": [
+     7,
+     5,
+     3
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "¿Qué dos frutas tienen la misma cantidad?",
+   "opciones": [
+    "Manzana y pera",
+    "Pera y uva",
+    "Manzana y uva",
+    "Ninguna"
+   ],
+   "correcta": 0,
+   "tip": "Dos barras de la misma altura muestran la misma cantidad.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Manzana",
+     "Pera",
+     "Uva"
+    ],
+    "valores": [
+     6,
+     6,
+     9
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "¿Quién juntó más tapitas?",
+   "opciones": [
+    "Ana",
+    "Beto",
+    "Caro",
+    "Dani"
+   ],
+   "correcta": 1,
+   "tip": "La barra más alta señala a quien juntó más.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Ana",
+     "Beto",
+     "Caro",
+     "Dani"
+    ],
+    "valores": [
+     3,
+     8,
+     5,
+     2
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "¿Cuántas tapitas juntó Dani?",
+   "opciones": [
+    "2",
+    "3",
+    "5",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "Sigue la barra de Dani y lee el número donde termina.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Ana",
+     "Beto",
+     "Caro",
+     "Dani"
+    ],
+    "valores": [
+     3,
+     8,
+     5,
+     2
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "¿Cuántos cumpleaños hay en marzo?",
+   "opciones": [
+    "4",
+    "5",
+    "6",
+    "8"
+   ],
+   "correcta": 3,
+   "tip": "Ubica primero la barra de marzo y recién ahí lee su valor.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Enero",
+     "Marzo",
+     "Mayo"
+    ],
+    "valores": [
+     4,
+     8,
+     6
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "¿Cuál es el color menos elegido?",
+   "opciones": [
+    "Rojo",
+    "Azul",
+    "Verde",
+    "Café"
+   ],
+   "correcta": 2,
+   "tip": "La barra más corta muestra lo que se eligió menos veces.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Rojo",
+     "Azul",
+     "Verde",
+     "Café"
+    ],
+    "valores": [
+     5,
+     5,
+     2,
+     8
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "¿Cuántos más eligieron pan que fruta?",
+   "opciones": [
+    "4",
+    "6",
+    "18",
+    "5"
+   ],
+   "correcta": 1,
+   "tip": "Comparar es restar: al valor del pan le quitas el de la fruta.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Pan",
+     "Leche",
+     "Fruta"
+    ],
+    "valores": [
+     12,
+     9,
+     6
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "¿Cuántos niños respondieron en total?",
+   "opciones": [
+    "8",
+    "14",
+    "20",
+    "26"
+   ],
+   "correcta": 2,
+   "tip": "Suma las dos barras, porque cada niño respondió sí o no.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Sí",
+     "No"
+    ],
+    "valores": [
+     14,
+     6
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "¿Cómo llega la mayoría al colegio?",
+   "opciones": [
+    "Bus",
+    "Auto",
+    "A pie",
+    "Bici"
+   ],
+   "correcta": 2,
+   "tip": "La mayoría está donde la barra sube más alto.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Bus",
+     "Auto",
+     "A pie",
+     "Bici"
+    ],
+    "valores": [
+     7,
+     4,
+     9,
+     2
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "¿Cuántos niños llegan en bus o en bici?",
+   "opciones": [
+    "5",
+    "9",
+    "11",
+    "13"
+   ],
+   "correcta": 1,
+   "tip": "Junta las dos barras que te piden: 7 + 2.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Bus",
+     "Auto",
+     "A pie",
+     "Bici"
+    ],
+    "valores": [
+     7,
+     4,
+     9,
+     2
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "¿Cuántos peces menos que perros hay?",
+   "opciones": [
+    "2",
+    "3",
+    "4",
+    "8"
+   ],
+   "correcta": 2,
+   "tip": "Resta la barra chica a la grande: 6 - 2.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Perro",
+     "Gato",
+     "Pez"
+    ],
+    "valores": [
+     6,
+     4,
+     2
+    ]
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "Cada 🍎 vale 2 frutas. Ana dibujó 4 🍎. ¿Cuántas frutas tiene?",
+   "opciones": [
+    "4",
+    "8",
+    "6",
+    "10"
+   ],
+   "correcta": 1,
+   "tip": "Si cada dibujo vale 2, se cuenta de 2 en 2: 2, 4, 6, 8.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "Cada ⭐ vale 5 puntos. Luis dibujó 3 ⭐. ¿Cuántos puntos juntó?",
+   "opciones": [
+    "8",
+    "10",
+    "15",
+    "20"
+   ],
+   "correcta": 2,
+   "tip": "Con escala de 5 se cuenta de 5 en 5: 5, 10, 15.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "Cada 🚌 vale 10 niños. Hay 4 🚌. ¿Cuántos niños viajan?",
+   "opciones": [
+    "14",
+    "30",
+    "40",
+    "400"
+   ],
+   "correcta": 2,
+   "tip": "Cada dibujo vale 10, así que se cuenta de 10 en 10.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "Cada 📕 vale 2 libros. Sara leyó 6 libros. ¿Cuántos 📕 dibuja?",
+   "opciones": [
+    "3",
+    "4",
+    "6",
+    "12"
+   ],
+   "correcta": 0,
+   "tip": "Al construir el pictograma se reparte: 6 libros en grupos de 2.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "Cada 🍬 vale 5 dulces. Hay 20 dulces. ¿Cuántos 🍬 se dibujan?",
+   "opciones": [
+    "5",
+    "4",
+    "15",
+    "25"
+   ],
+   "correcta": 1,
+   "tip": "Reparte los 20 dulces en grupos de 5 para saber cuántos dibujos son.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "Cada ⚽ vale 3 goles. Hay 5 ⚽. ¿Cuántos goles son?",
+   "opciones": [
+    "8",
+    "10",
+    "12",
+    "15"
+   ],
+   "correcta": 3,
+   "tip": "Cinco grupos de 3 goles cada uno: se cuenta de 3 en 3.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "Cada 🐟 vale 2 peces. Beto dibujó 7 🐟. ¿Cuántos peces son?",
+   "opciones": [
+    "9",
+    "12",
+    "14",
+    "16"
+   ],
+   "correcta": 2,
+   "tip": "Siete grupos de 2: contar de 2 en 2 hasta el séptimo dibujo.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "Cada 🌻 vale 10 flores. Hay 2 🌻 y medio. ¿Cuántas flores son?",
+   "opciones": [
+    "12",
+    "20",
+    "25",
+    "30"
+   ],
+   "correcta": 2,
+   "tip": "Dos dibujos son 20 y el medio dibujo vale la mitad de 10, o sea 5.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "Cada 🚗 vale 5 autos. Ana dibujó 6 🚗 y Luis 4 🚗. ¿Cuántos autos más tiene Ana?",
+   "opciones": [
+    "1",
+    "2",
+    "10",
+    "20"
+   ],
+   "correcta": 2,
+   "tip": "Ana tiene 2 dibujos más y cada uno vale 5, entonces son 10 autos más.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "En un gráfico de barras, ¿qué muestra la barra más alta?",
+   "opciones": [
+    "Lo que menos se eligió",
+    "Lo que más se eligió",
+    "El total de todo",
+    "Nada especial"
+   ],
+   "correcta": 1,
+   "tip": "La altura de la barra indica la cantidad: mientras más alta, más cantidad.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "¿Para qué sirve la escala de un pictograma?",
+   "opciones": [
+    "Para decir cuánto vale cada dibujo",
+    "Para pintar más bonito",
+    "Para contar cuántos dibujos hay",
+    "Para escribir el título"
+   ],
+   "correcta": 0,
+   "tip": "Sin escala no se sabe si un dibujo vale 1, 2 o 10 cosas.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "Si cada 🍪 vale 4 galletas, ¿cuántas galletas valen 2 🍪?",
+   "opciones": [
+    "6",
+    "8",
+    "2",
+    "4"
+   ],
+   "correcta": 1,
+   "tip": "Dos grupos de 4 galletas: 4 y 4 más.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "Ana tiene 6 votos y Luis 9. ¿Quién tendrá la barra más alta?",
+   "opciones": [
+    "Ana",
+    "Luis",
+    "Las dos iguales",
+    "No se puede saber"
+   ],
+   "correcta": 1,
+   "tip": "La barra crece con la cantidad, y 9 es más que 6.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 25",
+   "pregunta": "¿Cuántos autos se contaron el viernes?",
+   "opciones": [
+    "4",
+    "6",
+    "7",
+    "9"
+   ],
+   "correcta": 1,
+   "tip": "Busca la columna del viernes y lee hasta dónde llega su barra.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Jueves",
+     "Viernes",
+     "Sábado"
+    ],
+    "valores": [
+     4,
+     6,
+     9
+    ]
+   },
+   "revisada": false
+  }
+ ]
+}

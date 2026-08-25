@@ -1,0 +1,409 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "Te miras en el espejo del baño. ¿Qué movimiento es ese?",
+   "opciones": [
+    "Traslación",
+    "Reflejo",
+    "Rotación",
+    "Repetición"
+   ],
+   "correcta": 1,
+   "tip": "El espejo devuelve la figura volteada, como si diera vuelta un lado por el otro.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "Mover una figura sin girarla ni voltearla se llama:",
+   "opciones": [
+    "Rotación",
+    "Reflejo",
+    "Traslación",
+    "Ampliación"
+   ],
+   "correcta": 2,
+   "tip": "Trasladar es solo cambiar de lugar: la figura viaja derecho y queda igual.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "Las manecillas del reloj se mueven alrededor del centro. ¿Qué hacen?",
+   "opciones": [
+    "Se trasladan",
+    "Rotan",
+    "Se reflejan",
+    "Se agrandan"
+   ],
+   "correcta": 1,
+   "tip": "Rotar es girar en torno a un punto fijo; aquí el punto fijo es el centro del reloj.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 3,
+    "minuto": 0
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "Empujas una silla derecho, sin girarla. ¿Qué hiciste con ella?",
+   "opciones": [
+    "Reflejarla",
+    "Rotarla",
+    "Agrandarla",
+    "Trasladarla"
+   ],
+   "correcta": 3,
+   "tip": "Si la figura solo cambia de lugar y mira para el mismo lado, es una traslación.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "Las baldosas iguales del piso se repiten en fila. Eso es una:",
+   "opciones": [
+    "Rotación",
+    "Traslación",
+    "Reflexión",
+    "División"
+   ],
+   "correcta": 1,
+   "tip": "Cada baldosa es la anterior corrida un poco, sin girar: eso es trasladar.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "Al reflejar una figura, ¿qué pasa con su tamaño?",
+   "opciones": [
+    "Se hace más grande",
+    "No cambia",
+    "Se hace más chica",
+    "Se pierde"
+   ],
+   "correcta": 1,
+   "tip": "Reflejar solo voltea la figura; el espejo no agranda ni achica nada.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "Giras la rueda de tu bicicleta. ¿Qué movimiento hace la rueda?",
+   "opciones": [
+    "Rotación",
+    "Traslación",
+    "Reflejo",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "La rueda gira en torno a su eje sin cambiar de lugar: eso es rotar.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "Frente a un espejo, la letra b se ve como la letra:",
+   "opciones": [
+    "d",
+    "b",
+    "a",
+    "o"
+   ],
+   "correcta": 0,
+   "tip": "El espejo cambia la derecha por la izquierda, y la pancita de la b pasa al otro lado.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "Un ascensor sube derecho, sin girar. ¿Qué movimiento hace?",
+   "opciones": [
+    "Rotación",
+    "Reflejo",
+    "Traslación",
+    "Giro de media vuelta"
+   ],
+   "correcta": 2,
+   "tip": "Sube en línea recta y sigue mirando igual: solo cambió de lugar.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "La puerta se mueve sobre sus bisagras. ¿Qué movimiento hace?",
+   "opciones": [
+    "Traslación",
+    "Reflejo",
+    "Rotación",
+    "Ninguno"
+   ],
+   "correcta": 2,
+   "tip": "La puerta gira apoyada en las bisagras, que son su punto fijo.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "El lago copia los cerros en el agua. ¿Qué transformación se ve?",
+   "opciones": [
+    "Rotación",
+    "Traslación",
+    "Reflejo",
+    "Aumento"
+   ],
+   "correcta": 2,
+   "tip": "El agua funciona como espejo: muestra los cerros volteados hacia abajo.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "Las dos alas de la mariposa son iguales, una frente a otra. Eso es un:",
+   "opciones": [
+    "Reflejo",
+    "Giro",
+    "Corrimiento",
+    "Aumento"
+   ],
+   "correcta": 0,
+   "tip": "Un ala es la otra volteada: si doblas por el medio, calzan justo.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "Las aspas del ventilador dan vueltas. ¿Qué movimiento hacen?",
+   "opciones": [
+    "Traslación",
+    "Rotación",
+    "Reflejo",
+    "Ninguno"
+   ],
+   "correcta": 1,
+   "tip": "Dan vueltas en torno al centro sin moverse de lugar: eso es rotar.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "¿Qué movimiento hace girar una figura alrededor de un punto?",
+   "opciones": [
+    "La traslación",
+    "El reflejo",
+    "La rotación",
+    "La copia"
+   ],
+   "correcta": 2,
+   "tip": "Rotar necesita un punto fijo; la figura da vueltas alrededor de él.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "Deslizas tu libro un poco hacia la derecha sobre la mesa. Haces una:",
+   "opciones": [
+    "Rotación",
+    "Traslación",
+    "Reflexión",
+    "Ampliación"
+   ],
+   "correcta": 1,
+   "tip": "El libro cambió de lugar pero sigue mirando igual: es una traslación.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "Reflejar una figura es como mirarla en:",
+   "opciones": [
+    "un espejo",
+    "una lupa",
+    "un reloj",
+    "una ventana abierta"
+   ],
+   "correcta": 0,
+   "tip": "El espejo entrega la figura volteada, del mismo tamaño y a la misma distancia.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "Al rotar una figura, ¿cambia su forma?",
+   "opciones": [
+    "No, sigue igual",
+    "Sí, se agranda",
+    "Sí, se achica",
+    "Sí, se parte"
+   ],
+   "correcta": 0,
+   "tip": "Girar solo cambia hacia dónde apunta la figura; sus lados siguen iguales.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "La aguja del reloj va del 12 al 6. ¿Cuánto giró?",
+   "opciones": [
+    "Un cuarto de vuelta",
+    "Media vuelta",
+    "Una vuelta entera",
+    "Nada"
+   ],
+   "correcta": 1,
+   "tip": "Del 12 al 6 recorre la mitad del reloj, o sea media vuelta.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 6,
+    "minuto": 0
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "La aguja del reloj va del 12 al 3. ¿Cuánto giró?",
+   "opciones": [
+    "Media vuelta",
+    "Una vuelta entera",
+    "Un cuarto de vuelta",
+    "Tres vueltas"
+   ],
+   "correcta": 2,
+   "tip": "Del 12 al 3 avanza una de las cuatro partes del reloj: un cuarto de vuelta.",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 3,
+    "minuto": 15
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "Un tren avanza por la vía recta. Sus vagones hacen una:",
+   "opciones": [
+    "Rotación",
+    "Traslación",
+    "Reflexión",
+    "Vuelta entera"
+   ],
+   "correcta": 1,
+   "tip": "Los vagones van derecho y siguen mirando al mismo lado: es traslación.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "¿En cuál de estos hay una rotación?",
+   "opciones": [
+    "La rueda que gira",
+    "El espejo del baño",
+    "El libro que se desliza",
+    "La foto pegada"
+   ],
+   "correcta": 0,
+   "tip": "La rueda da vueltas en torno a su centro; las otras no giran.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "¿En cuál de estos hay un reflejo?",
+   "opciones": [
+    "El trompo que gira",
+    "El agua que copia los árboles",
+    "El tren que avanza",
+    "El ascensor"
+   ],
+   "correcta": 1,
+   "tip": "El agua actúa como espejo y muestra los árboles volteados.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "¿En cuál de estos hay una traslación?",
+   "opciones": [
+    "La manecilla del reloj",
+    "El espejo del baño",
+    "El ascensor que sube",
+    "El trompo"
+   ],
+   "correcta": 2,
+   "tip": "El ascensor solo cambia de lugar, derecho y sin girar.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "Al trasladar una figura, ¿qué es lo único que cambia?",
+   "opciones": [
+    "Su tamaño",
+    "Su forma",
+    "Su color",
+    "Su lugar"
+   ],
+   "correcta": 3,
+   "tip": "La traslación mueve la figura, pero forma y tamaño quedan idénticos.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "Un cuadrado gira media vuelta sobre su centro. ¿Cómo queda?",
+   "opciones": [
+    "Igual que antes",
+    "Más grande",
+    "Con un lado menos",
+    "Torcido"
+   ],
+   "correcta": 0,
+   "tip": "El cuadrado tiene sus cuatro lados iguales, así que al girar se ve igual.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "Frente al espejo, la letra p se ve como la letra:",
+   "opciones": [
+    "q",
+    "b",
+    "p",
+    "o"
+   ],
+   "correcta": 0,
+   "tip": "El espejo cambia izquierda por derecha, así que la patita queda al otro lado.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "Copias una figura y la pegas más allá, sin girarla. Eso es una:",
+   "opciones": [
+    "Rotación",
+    "Reflexión",
+    "Traslación",
+    "Reducción"
+   ],
+   "correcta": 2,
+   "tip": "La copia mira igual que la original y solo está en otro lugar.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "El trompo da vueltas en el suelo. ¿Qué movimiento hace?",
+   "opciones": [
+    "Rotación",
+    "Traslación",
+    "Reflejo",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "El trompo gira apoyado en su punta, que se queda fija.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "En una guarda, un triángulo se repite hacia la derecha. Hay muchas:",
+   "opciones": [
+    "rotaciones",
+    "reflexiones",
+    "traslaciones",
+    "ampliaciones"
+   ],
+   "correcta": 2,
+   "tip": "Cada triángulo es el anterior corrido un poco, siempre mirando igual.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 17",
+   "pregunta": "¿Cuál movimiento voltea la figura, como si diera vuelta la hoja?",
+   "opciones": [
+    "La traslación",
+    "El reflejo",
+    "El aumento",
+    "El conteo"
+   ],
+   "correcta": 1,
+   "tip": "Reflejar cambia la derecha por la izquierda, igual que un espejo.",
+   "revisada": false
+  }
+ ]
+}

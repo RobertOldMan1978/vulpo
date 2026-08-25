@@ -1,0 +1,454 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "Hay 12 galletas para 3 platos iguales. ¿Cuántas van en cada plato?",
+   "opciones": [
+    "4",
+    "3",
+    "5",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Repartir 12 en 3 partes iguales es buscar 3 x ? = 12, y 3 x 4 = 12.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 3,
+    "porGrupo": 4,
+    "emoji": "🍪"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "Guardas 20 lápices en cajas de 5. ¿Cuántas cajas necesitas?",
+   "opciones": [
+    "5",
+    "4",
+    "15",
+    "25"
+   ],
+   "correcta": 1,
+   "tip": "Agrupar de 5 en 5 es buscar cuántos 5 caben en 20: 5 x 4 = 20.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 4,
+    "porGrupo": 5,
+    "emoji": "✏️"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "¿Cuánto es 18 : 6?",
+   "opciones": [
+    "2",
+    "4",
+    "3",
+    "12"
+   ],
+   "correcta": 2,
+   "tip": "Piensa en la tabla del 6: 6 x 3 = 18, así que 18 : 6 = 3.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "Reparte 15 láminas entre 3 niños en partes iguales. ¿Cuántas recibe cada uno?",
+   "opciones": [
+    "3",
+    "4",
+    "6",
+    "5"
+   ],
+   "correcta": 3,
+   "tip": "Buscas 3 x ? = 15. Como 3 x 5 = 15, a cada niño le tocan 5.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 3,
+    "porGrupo": 5,
+    "emoji": "⭐"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "¿Cuánto es 24 : 4?",
+   "opciones": [
+    "5",
+    "6",
+    "7",
+    "8"
+   ],
+   "correcta": 1,
+   "tip": "En la tabla del 4, 4 x 6 = 24, entonces 24 : 4 = 6.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "A 20 le vas restando 4 hasta llegar a 0. ¿Cuántas veces restas?",
+   "opciones": [
+    "4",
+    "6",
+    "5",
+    "16"
+   ],
+   "correcta": 2,
+   "tip": "Restar 4 varias veces es dividir: 20 : 4 = 5, porque 4 x 5 = 20.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "Sabes que 8 x 7 = 56. ¿Cuánto es 56 : 7?",
+   "opciones": [
+    "6",
+    "7",
+    "9",
+    "8"
+   ],
+   "correcta": 3,
+   "tip": "La división deshace la multiplicación: si 8 x 7 = 56, entonces 56 : 7 = 8.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "¿Cuánto es 30 : 5?",
+   "opciones": [
+    "6",
+    "5",
+    "7",
+    "25"
+   ],
+   "correcta": 0,
+   "tip": "Cuenta de 5 en 5 hasta 30: son 6 saltos, porque 5 x 6 = 30.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "Pones 18 pelotas en bolsas de 3. ¿Cuántas bolsas usas?",
+   "opciones": [
+    "3",
+    "5",
+    "6",
+    "9"
+   ],
+   "correcta": 2,
+   "tip": "Agrupas de 3 en 3: como 3 x 6 = 18, se llenan 6 bolsas.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 6,
+    "porGrupo": 3,
+    "emoji": "⚽"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "¿Cuánto es 42 : 6?",
+   "opciones": [
+    "6",
+    "36",
+    "8",
+    "7"
+   ],
+   "correcta": 3,
+   "tip": "En la tabla del 6, 6 x 7 = 42, así que 42 : 6 = 7.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "¿Qué multiplicación te ayuda a resolver 35 : 5?",
+   "opciones": [
+    "5 x 6 = 30",
+    "5 x 7 = 35",
+    "5 x 8 = 40",
+    "5 + 7 = 12"
+   ],
+   "correcta": 1,
+   "tip": "Para dividir busca el número que multiplicado por 5 da 35: es el 7.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "Si 9 x 4 = 36, ¿cuánto es 36 : 4?",
+   "opciones": [
+    "9",
+    "6",
+    "8",
+    "4"
+   ],
+   "correcta": 0,
+   "tip": "Dividir deshace multiplicar: 9 x 4 = 36, entonces 36 : 4 = 9.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "¿Cuánto es 28 : 7?",
+   "opciones": [
+    "3",
+    "21",
+    "5",
+    "4"
+   ],
+   "correcta": 3,
+   "tip": "En la tabla del 7, 7 x 4 = 28, así que 28 : 7 = 4.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "En el curso hay 10 niños y forman 2 equipos iguales. ¿Cuántos por equipo?",
+   "opciones": [
+    "5",
+    "4",
+    "2",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "Repartir 10 en 2 partes iguales: 2 x 5 = 10, entonces van 5 por equipo.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 2,
+    "porGrupo": 5,
+    "emoji": "🙂"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "¿Cuánto es 40 : 8?",
+   "opciones": [
+    "4",
+    "5",
+    "6",
+    "32"
+   ],
+   "correcta": 1,
+   "tip": "En la tabla del 8, 8 x 5 = 40, así que 40 : 8 = 5.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "Reparte 21 dulces entre 7 niños en partes iguales. ¿Cuántos le tocan a cada uno?",
+   "opciones": [
+    "2",
+    "4",
+    "3",
+    "14"
+   ],
+   "correcta": 2,
+   "tip": "Buscas 7 x ? = 21. Como 7 x 3 = 21, cada niño recibe 3.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 7,
+    "porGrupo": 3,
+    "emoji": "🍬"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "A 30 le restas 6 hasta llegar a 0. ¿Cuántas veces lo hiciste?",
+   "opciones": [
+    "5",
+    "4",
+    "6",
+    "24"
+   ],
+   "correcta": 0,
+   "tip": "Restar 6 hasta el 0 es hacer 30 : 6, y 6 x 5 = 30.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "¿Cuánto es 49 : 7?",
+   "opciones": [
+    "6",
+    "42",
+    "8",
+    "7"
+   ],
+   "correcta": 3,
+   "tip": "El 49 es 7 x 7, por eso 49 : 7 = 7.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "Ordenas 16 sillas en 4 filas iguales. ¿Cuántas sillas quedan por fila?",
+   "opciones": [
+    "3",
+    "5",
+    "4",
+    "12"
+   ],
+   "correcta": 2,
+   "tip": "Repartes 16 en 4 filas: 4 x 4 = 16, entonces van 4 sillas por fila.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 4,
+    "porGrupo": 4,
+    "emoji": "🪑"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "¿Cuánto es 54 : 9?",
+   "opciones": [
+    "5",
+    "6",
+    "7",
+    "45"
+   ],
+   "correcta": 1,
+   "tip": "En la tabla del 9, 9 x 6 = 54, así que 54 : 9 = 6.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "¿Cuánto es 32 : 8?",
+   "opciones": [
+    "3",
+    "24",
+    "6",
+    "4"
+   ],
+   "correcta": 3,
+   "tip": "Cuenta de 8 en 8: 8, 16, 24, 32. Son 4 saltos, porque 8 x 4 = 32.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "¿Qué operación sirve para repartir 24 panes en 6 bolsas iguales?",
+   "opciones": [
+    "24 + 6",
+    "24 - 6",
+    "24 : 6",
+    "24 x 6"
+   ],
+   "correcta": 2,
+   "tip": "Repartir en partes iguales se escribe como una división: 24 : 6.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "¿Cuánto es 25 : 5?",
+   "opciones": [
+    "5",
+    "4",
+    "6",
+    "20"
+   ],
+   "correcta": 0,
+   "tip": "El 25 es 5 x 5, por eso 25 : 5 = 5.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "¿Cuánto es 63 : 9?",
+   "opciones": [
+    "6",
+    "7",
+    "8",
+    "54"
+   ],
+   "correcta": 1,
+   "tip": "En la tabla del 9, 9 x 7 = 63, así que 63 : 9 = 7.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "Pones 12 flores en 4 floreros iguales. ¿Cuántas flores van en cada uno?",
+   "opciones": [
+    "2",
+    "4",
+    "3",
+    "8"
+   ],
+   "correcta": 2,
+   "tip": "Buscas 4 x ? = 12. Como 4 x 3 = 12, cada florero lleva 3 flores.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 4,
+    "porGrupo": 3,
+    "emoji": "🌻"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "¿Cuánto es 45 : 5?",
+   "opciones": [
+    "9",
+    "8",
+    "7",
+    "40"
+   ],
+   "correcta": 0,
+   "tip": "En la tabla del 5, 5 x 9 = 45, así que 45 : 5 = 9.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "Hay 9 galletas y 9 niños. Cada uno recibe lo mismo. ¿Cuántas le tocan?",
+   "opciones": [
+    "0",
+    "1",
+    "2",
+    "9"
+   ],
+   "correcta": 1,
+   "tip": "Cuando repartes entre tantos niños como cosas hay, a cada uno le toca 1.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 9,
+    "porGrupo": 1,
+    "emoji": "🍪"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "¿Cuánto es 36 : 6?",
+   "opciones": [
+    "5",
+    "30",
+    "7",
+    "6"
+   ],
+   "correcta": 3,
+   "tip": "El 36 es 6 x 6, por eso 36 : 6 = 6.",
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "Guardas 27 lápices en cajas de 9. ¿Cuántas cajas llenas?",
+   "opciones": [
+    "3",
+    "2",
+    "4",
+    "18"
+   ],
+   "correcta": 0,
+   "tip": "Agrupas de 9 en 9: 9 x 3 = 27, así que llenas 3 cajas.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 3,
+    "porGrupo": 9,
+    "emoji": "✏️"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 09",
+   "pregunta": "Completa: 6 x ? = 48. ¿Qué número falta?",
+   "opciones": [
+    "6",
+    "7",
+    "8",
+    "9"
+   ],
+   "correcta": 2,
+   "tip": "Para hallar el número que falta divide: 48 : 6 = 8.",
+   "revisada": false
+  }
+ ]
+}

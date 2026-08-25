@@ -1,0 +1,514 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "Con 6 cuadrados iguales, ¿qué cuerpo se arma?",
+   "opciones": [
+    "Cubo",
+    "Cono",
+    "Esfera",
+    "Cilindro"
+   ],
+   "correcta": 0,
+   "tip": "El cubo tiene 6 caras y todas son cuadrados del mismo tamaño.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cubo"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "Con 2 círculos y 1 rectángulo, ¿qué cuerpo se arma?",
+   "opciones": [
+    "Cono",
+    "Cubo",
+    "Cilindro",
+    "Pirámide"
+   ],
+   "correcta": 2,
+   "tip": "Los 2 círculos son las tapas y el rectángulo se enrolla como la parte curva.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cilindro"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "Con 1 círculo y 1 parte curva, ¿qué cuerpo se arma?",
+   "opciones": [
+    "Cono",
+    "Cilindro",
+    "Cubo",
+    "Esfera"
+   ],
+   "correcta": 0,
+   "tip": "El cono tiene una sola tapa redonda y su lado curvo termina en punta.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cono"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "Con 4 triángulos y 1 cuadrado, ¿qué cuerpo se arma?",
+   "opciones": [
+    "Cubo",
+    "Pirámide",
+    "Cono",
+    "Cilindro"
+   ],
+   "correcta": 1,
+   "tip": "El cuadrado es la base y los 4 triángulos suben hasta juntarse en la punta.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "piramide"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "Con 6 rectángulos, ¿qué cuerpo se arma?",
+   "opciones": [
+    "Esfera",
+    "Cono",
+    "Paralelepípedo",
+    "Pirámide"
+   ],
+   "correcta": 2,
+   "tip": "El paralelepípedo es como una caja: sus 6 caras son rectángulos.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "paralelepipedo"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "¿Qué cuerpo NO se puede desplegar en una red plana?",
+   "opciones": [
+    "Cubo",
+    "Esfera",
+    "Cono",
+    "Cilindro"
+   ],
+   "correcta": 1,
+   "tip": "La esfera es curva por todos lados, así que no tiene caras planas que abrir.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "esfera"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "Al desplegar un cubo, ¿cuántos cuadrados quedan?",
+   "opciones": [
+    "4",
+    "5",
+    "8",
+    "6"
+   ],
+   "correcta": 3,
+   "tip": "Un cubo tiene una cara arriba, una abajo y cuatro alrededor: en total 6.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cubo"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "Al desplegar un cilindro, ¿cuántos círculos quedan?",
+   "opciones": [
+    "1",
+    "2",
+    "3",
+    "0"
+   ],
+   "correcta": 1,
+   "tip": "El cilindro tiene dos tapas redondas: la de arriba y la de abajo.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cilindro"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "¿Qué figura 2D es cada cara de un cubo?",
+   "opciones": [
+    "Círculo",
+    "Triángulo",
+    "Cuadrado",
+    "Rombo"
+   ],
+   "correcta": 2,
+   "tip": "Todas las caras del cubo miden lo mismo por sus 4 lados: son cuadrados.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cubo"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "Al desplegar una pirámide de base cuadrada, ¿cuántos triángulos hay?",
+   "opciones": [
+    "3",
+    "4",
+    "5",
+    "6"
+   ],
+   "correcta": 1,
+   "tip": "Cada lado del cuadrado de la base sostiene un triángulo, y el cuadrado tiene 4 lados.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "piramide"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "¿Cuántas caras tiene la red de un paralelepípedo?",
+   "opciones": [
+    "3",
+    "4",
+    "8",
+    "6"
+   ],
+   "correcta": 3,
+   "tip": "Las caras van en pares: adelante y atrás, los dos lados, arriba y abajo.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "paralelepipedo"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "Además del círculo, ¿qué trae la red de un cono?",
+   "opciones": [
+    "Un cuadrado",
+    "Una parte curva",
+    "Un triángulo",
+    "Un rectángulo"
+   ],
+   "correcta": 1,
+   "tip": "El lado del cono no es plano ni recto: al abrirlo queda una pieza curva.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cono"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "Si miras la base de un cilindro, ¿qué figura 2D ves?",
+   "opciones": [
+    "Círculo",
+    "Cuadrado",
+    "Triángulo",
+    "Rectángulo"
+   ],
+   "correcta": 0,
+   "tip": "La tapa del cilindro es redonda, igual que el borde de un tarro.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cilindro"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "¿Qué figura 2D es la base de un cono?",
+   "opciones": [
+    "Triángulo",
+    "Cuadrado",
+    "Círculo",
+    "Rombo"
+   ],
+   "correcta": 2,
+   "tip": "El cono se apoya en una tapa redonda y sube hasta una punta.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cono"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "Ana pega 6 cuadrados iguales. ¿Qué cuerpo formó?",
+   "opciones": [
+    "Pirámide",
+    "Cubo",
+    "Cilindro",
+    "Cono"
+   ],
+   "correcta": 1,
+   "tip": "Seis cuadrados iguales cierran justo las 6 caras de un cubo.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cubo"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "Al abrir una caja de zapatos, ¿qué figuras quedan?",
+   "opciones": [
+    "Rectángulos",
+    "Círculos",
+    "Triángulos",
+    "Rombos"
+   ],
+   "correcta": 0,
+   "tip": "La caja es un paralelepípedo, y todas sus caras son rectángulos.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "paralelepipedo"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "La red de un cilindro tiene 3 piezas. ¿Cuáles son?",
+   "opciones": [
+    "2 círculos y 1 rectángulo",
+    "3 rectángulos",
+    "1 círculo y 2 triángulos",
+    "3 círculos"
+   ],
+   "correcta": 0,
+   "tip": "Dos piezas son las tapas redondas y la tercera se enrolla alrededor.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cilindro"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "Tomás tiene 5 cuadrados. ¿Le alcanzan para armar un cubo?",
+   "opciones": [
+    "Sí, sobra uno",
+    "No, falta uno",
+    "Sí, justo",
+    "No, faltan dos"
+   ],
+   "correcta": 1,
+   "tip": "El cubo necesita 6 cuadrados, así que con 5 queda un hueco sin tapar.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cubo"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "Al aplanar la cara curva de un cilindro, ¿qué figura queda?",
+   "opciones": [
+    "Círculo",
+    "Triángulo",
+    "Rectángulo",
+    "Rombo"
+   ],
+   "correcta": 2,
+   "tip": "Esa cara es como la etiqueta de un tarro: al despegarla queda un rectángulo.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cilindro"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "¿Cuántas figuras en total tiene la red de una pirámide cuadrada?",
+   "opciones": [
+    "4",
+    "6",
+    "8",
+    "5"
+   ],
+   "correcta": 3,
+   "tip": "Son 4 triángulos de los lados más 1 cuadrado de la base.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "piramide"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "¿Cuántos triángulos tiene la red de un cubo?",
+   "opciones": [
+    "0",
+    "4",
+    "6",
+    "2"
+   ],
+   "correcta": 0,
+   "tip": "En el cubo todas las caras son cuadrados, así que no hay ningún triángulo.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cubo"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "Vulpi despliega una esfera en el papel. ¿Qué pasa?",
+   "opciones": [
+    "Quedan 6 cuadrados",
+    "No se puede desplegar",
+    "Queda 1 círculo",
+    "Quedan 2 círculos"
+   ],
+   "correcta": 1,
+   "tip": "La esfera no tiene caras planas, por eso no se puede abrir sobre la mesa.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "esfera"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "Un dado se despliega en papel. ¿Qué figuras quedan?",
+   "opciones": [
+    "4 triángulos",
+    "2 círculos",
+    "6 círculos",
+    "6 cuadrados"
+   ],
+   "correcta": 3,
+   "tip": "El dado tiene forma de cubo, y el cubo se abre en 6 cuadrados iguales.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cubo"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "Tienes 8 cuadrados y armas un cubo. ¿Cuántos sobran?",
+   "opciones": [
+    "1",
+    "3",
+    "0",
+    "2"
+   ],
+   "correcta": 3,
+   "tip": "El cubo usa 6 cuadrados, y 8 menos 6 deja 2 sin usar.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cubo"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "En la red de un paralelepípedo, ¿cuántos pares de caras iguales hay?",
+   "opciones": [
+    "2",
+    "3",
+    "4",
+    "6"
+   ],
+   "correcta": 1,
+   "tip": "Las caras se repiten de a dos: adelante-atrás, lado-lado y arriba-abajo.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "paralelepipedo"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "¿Qué cuerpo se arma al enrollar un rectángulo y tapar con 2 círculos?",
+   "opciones": [
+    "Cono",
+    "Cubo",
+    "Cilindro",
+    "Esfera"
+   ],
+   "correcta": 2,
+   "tip": "El rectángulo enrollado forma el tubo y los círculos cierran sus dos puntas.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cilindro"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "La red de una pirámide tiene 1 cuadrado. ¿Qué es ese cuadrado?",
+   "opciones": [
+    "La base",
+    "Una arista",
+    "Un vértice",
+    "La punta"
+   ],
+   "correcta": 0,
+   "tip": "La pirámide se apoya en esa cara plana; los triángulos son sus lados.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "piramide"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "¿Cuántas piezas tiene la red de un cono?",
+   "opciones": [
+    "1",
+    "3",
+    "4",
+    "2"
+   ],
+   "correcta": 3,
+   "tip": "Una pieza es el círculo de la base y la otra es su lado curvo.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cono"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "Sofía pega 4 triángulos sobre un cuadrado. ¿Qué cuerpo hace?",
+   "opciones": [
+    "Cubo",
+    "Cono",
+    "Pirámide",
+    "Cilindro"
+   ],
+   "correcta": 2,
+   "tip": "Los triángulos se levantan y se juntan arriba en una sola punta.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "piramide"
+   },
+   "revisada": false
+  },
+  {
+   "oa": "MA03 OA 15",
+   "pregunta": "Al desplegar un cubo, ¿todas las caras son del mismo tamaño?",
+   "opciones": [
+    "Sí, las 6 son iguales",
+    "No, hay 2 más grandes",
+    "Sí, pero solo 4",
+    "No, todas distintas"
+   ],
+   "correcta": 0,
+   "tip": "Los lados del cubo miden lo mismo, así que sus 6 caras son idénticas.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cubo"
+   },
+   "revisada": false
+  }
+ ]
+}
