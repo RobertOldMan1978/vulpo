@@ -2,9 +2,67 @@
   "asignatura": "Matemática",
   "nivel": "3° básico",
   "codigo_asignatura": "MA03",
-  "fuente": "Bases Curriculares 1° a 6° básico — MINEDUC (curriculumnacional.cl) — SEMILLA, revisar textos oficiales en Plan 2",
+  "fuente": "Bases Curriculares 1° a 6° básico — MINEDUC",
+  "url_fuente": "https://www.curriculumnacional.cl/curriculum/1o-6o-basico/matematica/3-basico",
+  "nota_fidelidad": "Textos transcritos del portal oficial el 2026-08-25. Validar contra el PDF del MINEDUC antes de publicar material impreso.",
+  "unidades": [
+    {
+      "id": "U1",
+      "titulo": "Números y operaciones",
+      "descripcion": "Contar, leer y comparar hasta 1.000; valor posicional; las cuatro operaciones y fracciones de uso común.",
+      "oa": ["MA03 OA 01", "MA03 OA 02", "MA03 OA 03", "MA03 OA 04", "MA03 OA 05", "MA03 OA 06", "MA03 OA 07", "MA03 OA 08", "MA03 OA 09", "MA03 OA 10", "MA03 OA 11"]
+    },
+    {
+      "id": "U2",
+      "titulo": "Patrones y álgebra",
+      "descripcion": "Patrones numéricos y ecuaciones de un paso con un símbolo desconocido.",
+      "oa": ["MA03 OA 12", "MA03 OA 13"]
+    },
+    {
+      "id": "U3",
+      "titulo": "Geometría",
+      "descripcion": "Localización en cuadrícula, figuras 3D y 2D, cuerpos geométricos, transformaciones y ángulos.",
+      "oa": ["MA03 OA 14", "MA03 OA 15", "MA03 OA 16", "MA03 OA 17", "MA03 OA 18"]
+    },
+    {
+      "id": "U4",
+      "titulo": "Medición",
+      "descripcion": "Líneas de tiempo y calendarios, la hora, perímetro y peso.",
+      "oa": ["MA03 OA 19", "MA03 OA 20", "MA03 OA 21", "MA03 OA 22"]
+    },
+    {
+      "id": "U5",
+      "titulo": "Datos y probabilidades",
+      "descripcion": "Encuestas, tablas, gráficos de barra, pictogramas y diagramas de puntos.",
+      "oa": ["MA03 OA 23", "MA03 OA 24", "MA03 OA 25", "MA03 OA 26"]
+    }
+  ],
   "oa": [
-    { "codigo": "MA03 OA 01", "texto": "Contar números del 0 al 1000 de 5 en 5, de 10 en 10, de 100 en 100." },
-    { "codigo": "MA03 OA 09", "texto": "Sumar y restar números hasta 1000 en situaciones cotidianas." }
+    { "codigo": "MA03 OA 01", "texto": "Contar números del 0 al 1 000 de 5 en 5, de 10 en 10, de 100 en 100: empezando por cualquier número natural menor que 1 000 de 3 en 3, de 4 en 4, empezando por cualquier múltiplo del número correspondiente." },
+    { "codigo": "MA03 OA 02", "texto": "Leer números hasta 1000 y representarlos en forma concreta, pictórica y simbólica." },
+    { "codigo": "MA03 OA 03", "texto": "Comparar y ordenar números naturales hasta 1 000, utilizando la recta numérica o la tabla posicional de manera manual y/o por medio de software educativo." },
+    { "codigo": "MA03 OA 04", "texto": "Describir y aplicar estrategias de cálculo mental para las adiciones y sustracciones hasta 100: por descomposición; completar hasta la decena más cercana; usar dobles; sumar en vez de restar; aplicar la asociatividad." },
+    { "codigo": "MA03 OA 05", "texto": "Identificar y describir las unidades, decenas y centenas en números del 0 al 1000, representando las cantidades de acuerdo a su valor posicional, con material concreto, pictórico y simbólico." },
+    { "codigo": "MA03 OA 06", "texto": "Demostrar que comprenden la adición y la sustracción de números del 0 al 1 000: usando estrategias personales con y sin material concreto; creando y resolviendo problemas de adición y sustracción que involucren operaciones combinadas, en forma concreta, pictórica y simbólica, de manera manual y/o por medio de software educativo; aplicando los algoritmos con y sin reserva, progresivamente, en la adición de hasta cuatro sumandos y en la sustracción de hasta un sustraendo." },
+    { "codigo": "MA03 OA 07", "texto": "Demostrar que comprenden la relación entre la adición y la sustracción, usando la familia de operaciones en cálculos aritméticos y en la resolución de problemas." },
+    { "codigo": "MA03 OA 08", "texto": "Demostrar que comprenden las tablas de multiplicar hasta 10 de manera progresiva: usando representaciones concretas y pictóricas; expresando una multiplicación como una adición de sumandos iguales; usando la distributividad como estrategia para construir las tablas hasta el 10; aplicando los resultados de las tablas de multiplicación hasta 10x10, sin realizar cálculos; resolviendo problemas que involucren las tablas aprendidas hasta el 10." },
+    { "codigo": "MA03 OA 09", "texto": "Demostrar que comprenden la división en el contexto de las tablas de hasta 10x10: representando y explicando la división como repartición y agrupación en partes iguales, con material concreto y pictórico; creando y resolviendo problemas en contextos que incluyan la repartición y la agrupación; expresando la división como una sustracción repetida; describiendo y aplicando la relación inversa entre la división y la multiplicación; aplicando los resultados de las tablas de multiplicación hasta 10x10, sin realizar cálculos." },
+    { "codigo": "MA03 OA 10", "texto": "Resolver problemas rutinarios en contextos cotidianos, que incluyan dinero e involucren las cuatro operaciones (no combinadas)." },
+    { "codigo": "MA03 OA 11", "texto": "Demostrar que comprenden las fracciones de uso común 1/4, 1/3, 1/2, 2/3, 3/4: explicando que una fracción representa la parte de un todo, de manera concreta, pictórica, simbólica, de forma manual y/o con software educativo; describiendo situaciones en las cuales se puede usar fracciones; comparando fracciones de un mismo todo, de igual denominador." },
+    { "codigo": "MA03 OA 12", "texto": "Generar, describir y registrar patrones numéricos, usando una variedad de estrategias en tablas del 100, de manera manual y/o con software educativo." },
+    { "codigo": "MA03 OA 13", "texto": "Resolver ecuaciones de un paso que involucren adiciones y sustracciones y un símbolo geométrico que represente un número desconocido, en forma pictórica y simbólica del 0 al 100." },
+    { "codigo": "MA03 OA 14", "texto": "Describir la localización de un objeto en un mapa simple o cuadrícula." },
+    { "codigo": "MA03 OA 15", "texto": "Demostrar que comprenden la relación que existe entre figuras 3D y figuras 2D: construyendo una figura 3D a partir de una red (plantilla); desplegando la figura 3D." },
+    { "codigo": "MA03 OA 16", "texto": "Describir cubos, paralelepípedos, esferas, conos, cilindros y pirámides de acuerdo a la forma de sus caras y el número de aristas y vértices." },
+    { "codigo": "MA03 OA 17", "texto": "Reconocer en el entorno figuras 2D que están trasladadas, reflejadas y rotadas." },
+    { "codigo": "MA03 OA 18", "texto": "Demostrar que comprenden el concepto de ángulo: identificando ejemplos de ángulos en el entorno; estimando la medida de ángulos, usando como referente ángulos de 45º y de 90º." },
+    { "codigo": "MA03 OA 19", "texto": "Leer e interpretar líneas de tiempo y calendarios." },
+    { "codigo": "MA03 OA 20", "texto": "Leer y registrar el tiempo en horas, medias horas, cuartos de hora y minutos en relojes análogos y digitales." },
+    { "codigo": "MA03 OA 21", "texto": "Demostrar que comprenden el perímetro de una figura regular e irregular: midiendo y registrando el perímetro de figuras del entorno en el contexto de la resolución de problemas; determinando el perímetro de un cuadrado y de un rectángulo." },
+    { "codigo": "MA03 OA 22", "texto": "Demostrar que comprende la medición del peso (g y kg): comparando y ordenando dos o más objetos a partir de su peso de manera informal; usando modelos para explicar la relación que existe entre gramos y kilogramos; estimando el peso de objetos de uso cotidiano, usando referentes; midiendo y registrando el peso de objetos en números y en fracciones de uso común, en el contexto de la resolución de problemas." },
+    { "codigo": "MA03 OA 23", "texto": "Realizar encuestas y clasificar y organizar los datos obtenidos en tablas y visualizarlos en gráficos de barra." },
+    { "codigo": "MA03 OA 24", "texto": "Registrar y ordenar datos obtenidos de juegos aleatorios con dados y monedas, encontrando el menor, el mayor y estimando el punto medio entre ambos." },
+    { "codigo": "MA03 OA 25", "texto": "Construir, leer e interpretar pictogramas y gráficos de barra simple con escala, en base a información recolectada o dada." },
+    { "codigo": "MA03 OA 26", "texto": "Representar datos usando diagramas de puntos." }
   ]
 }
