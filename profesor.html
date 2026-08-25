@@ -439,6 +439,7 @@ async function pintarLista(){
         <div id="profes" style="margin:10px 0"></div>
         ${YO.es_admin?`<button class="btn sec" id="btnLimpiar">🧹 Limpiar perfiles de prueba</button>`:''}
         <button class="btn sec" id="btnTablero">📊 Tablero de avance</button>
+        ${YO.es_admin?`<button class="btn sec" id="btnArmar">🔗 Armar enlace de muestra</button>`:''}
       </div>`);
     $('btnAutorizar').onclick=async ()=>{
       const c=($('nuevoCorreo').value||'').trim();
@@ -446,8 +447,11 @@ async function pintarLista(){
       await accion(()=>SB.rpc('kimun_prof_autorizar',{p_correo:c}), 'Correo autorizado');
     };
     $('btnTablero').onclick=()=>{ window.location.href='dev/tablero.html'; };
-    // "Limpiar perfiles de prueba" es de plataforma: solo el Admin lo ve.
-    if(YO.es_admin){ $('btnLimpiar').onclick=limpiarPruebas; }
+    // "Limpiar perfiles de prueba" y el armador son de plataforma: solo el Admin los ve.
+    if(YO.es_admin){
+      $('btnLimpiar').onclick=limpiarPruebas;
+      $('btnArmar').onclick=()=>{ window.location.href='index.html?armar=1'; };
+    }
     const {data:profes,error:errProfes}=await SB.rpc('kimun_prof_profesores');
     if(errProfes){
       $('profes').innerHTML='<p style="color:var(--pink);font-size:12px">No se pudo cargar la lista de profesores.</p>';

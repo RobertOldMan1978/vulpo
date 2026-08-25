@@ -86,6 +86,10 @@ input.nm:focus{border-color:var(--cyan)}
 .btn:active{transform:translateY(4px);box-shadow:0 2px 0 #b56a10}
 .btn[hidden]{display:none}   /* .btn{display:block} anulaba el atributo hidden: botones ocultos seguían visibles */
 .btn.sec{background:linear-gradient(180deg,#6d5bff,#4a35d8);color:#fff;box-shadow:0 6px 0 #2b1e8f,0 12px 24px #00000055}
+/* Chips pequenos del armador de enlaces (?armar=1). */
+.chip{padding:7px 12px;border:2px solid var(--violet);border-radius:999px;background:#1a1440;
+  color:#fff;font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;cursor:pointer}
+.chip:active{transform:translateY(1px)}
 .btn.sec:active{box-shadow:0 2px 0 #2b1e8f}
 .btn:disabled{filter:grayscale(.8);opacity:.5;box-shadow:none;transform:none}
 
@@ -744,6 +748,60 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
     <button class="btn sec" id="btnCampBack" style="margin-top:18px">← Volver</button>
   </section>
 
+  <!-- ====== ARMADOR DE ENLACES DE MUESTRA (?armar=1) ====== -->
+  <section class="screen" id="scr-armar">
+    <div class="logo" style="margin:20px 0 4px">
+      <span class="badge">🔗</span>
+      <h1 style="font-size:24px">Armar enlace de muestra</h1>
+      <p>Marca los capítulos que quieres incluir.</p>
+    </div>
+    <div id="armarLista"></div>
+    <div class="card" style="margin-top:14px">
+      <p style="font-weight:900;font-size:13px;margin:0 0 6px">Caducidad</p>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
+        <button class="chip" id="armarSinFin">Sin caducidad</button>
+        <button class="chip" id="armarSemana">1 semana</button>
+        <button class="chip" id="armarMes">1 mes</button>
+      </div>
+      <input type="date" id="armarHasta"
+             style="width:100%;padding:10px;border-radius:12px;border:2px solid var(--violet);
+                    background:#1a1440;color:#fff;font-weight:800;font-size:13px;margin-bottom:10px">
+      <label style="display:flex;gap:8px;align-items:center;font-weight:800;font-size:13px">
+        <input type="checkbox" id="armarQA"> Mostrar las respuestas correctas
+      </label>
+      <input id="armarUrl" readonly
+             style="width:100%;padding:10px;border-radius:12px;border:2px solid var(--violet);
+                    background:#1a1440;color:#fff;font-weight:700;font-size:12px;margin:10px 0">
+      <button class="btn" id="armarCopiar">📋 Copiar</button>
+      <button class="btn sec" id="armarProbar">▶ Probar</button>
+      <p id="armarMsg" style="text-align:center;font-weight:800;font-size:12px;margin-top:8px;color:var(--dim)"></p>
+      <p id="armarResumen" style="text-align:center;font-weight:800;font-size:12px;margin-top:6px;color:var(--cyan)"></p>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <p style="font-weight:900;font-size:13px;margin:0 0 6px">¿Qué contiene un enlace?</p>
+      <input id="armarLeer" placeholder="Pega aquí un enlace de muestra"
+             style="width:100%;padding:10px;border-radius:12px;border:2px solid var(--violet);
+                    background:#1a1440;color:#fff;font-weight:700;font-size:12px;margin-bottom:8px">
+      <button class="btn sec" id="armarLeerBtn">🔍 Leer</button>
+      <p id="armarLeido" style="font-weight:800;font-size:12px;margin-top:8px;color:var(--dim)"></p>
+    </div>
+  </section>
+
+  <!-- ====== MUESTRA VENCIDA (?m= con fecha pasada) ====== -->
+  <section class="screen" id="scr-vencida">
+    <div class="logo" style="margin:40px 0 10px">
+      <span class="badge">⌛</span>
+      <h1 style="font-size:24px">Esta muestra ya no está disponible</h1>
+      <p id="vencidaFecha"></p>
+    </div>
+    <div class="card">
+      <p style="color:var(--dim);font-weight:800;font-size:13px;text-align:center">
+        El juego completo sigue disponible para todos.
+      </p>
+      <button class="btn" id="vencidaIr">Ir al juego completo</button>
+    </div>
+  </section>
+
   <!-- ============ JEFE FINAL · INTRO ============ -->
   <section class="screen" id="scr-jefe-intro">
     <div class="jefe-intro">
@@ -1021,10 +1079,40 @@ const AVATARES=["🦁","🐉","🦅","🐺","🦊","🤖","👽","🥷"];
      EFIMERO       no mide dominio por OA ni reporta refuerzos   (QA y prueba)
      PRUEBA        además, no escribe en disco ni usa Supabase   (solo prueba)
    Sin ningún parámetro, el juego se comporta exactamente como siempre. */
+/* base64url: base64 con +/ cambiados por -_ y sin = al final, para viajar limpio en la URL.
+   OJO: esto es un DISFRAZ, no un cifrado. Base64 es un formato público y reversible; sirve
+   para que la fecha no se vea en la barra de direcciones (y nadie sienta la invitación a
+   editarla), no para detener a quien sepa lo que mira. */
+function b64uCod(txt){ return btoa(txt).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,''); }
+function b64uDec(txt){
+ try{ return atob(String(txt).replace(/-/g,'+').replace(/_/g,'/')); }catch(e){ return ''; }
+}
+/* Token de muestra: "ids separados por coma | AAAA-MM-DD | 1 si respuestas".
+   Devuelve null si no se puede leer, y quien lo llama cae al juego normal. */
+function leerToken(t){
+ if(!t) return null;
+ const crudo=b64uDec(t); if(!crudo) return null;
+ const p=crudo.split('|');
+ // Se exige forma de id (letras, numeros y guiones). Sin esto, un texto cualquiera que
+ // por casualidad sea base64 valido ('xxxx') pasaba como token y devolvia basura.
+ const ids=(p[0]||'').split(',').map(s=>s.trim()).filter(x=>/^[a-z0-9-]+$/i.test(x));
+ if(!ids.length) return null;
+ const hasta=/^\d{4}-\d{2}-\d{2}$/.test(p[1]||'') ? p[1] : '';
+ return { ids:ids, hasta:hasta, qa:(p[2]||'')==='1' };
+}
+/* Fecha local del dispositivo como AAAA-MM-DD (no UTC: interesa el día del visitante). */
+function hoyISO(){
+ const d=new Date(), z=n=>String(n).padStart(2,'0');
+ return d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate());
+}
 const _PARAMS=new URLSearchParams(location.search);
-const QA=_PARAMS.has('qa');
+const _M=leerToken(_PARAMS.get('m'));   // null si no hay ?m= o si viene corrupto
+const QA=_PARAMS.has('qa')||!!(_M&&_M.qa);
 const QA_MARCA=QA;                     // solo QA pinta la respuesta correcta
-const _SOLO_PEDIDO=(_PARAMS.get('solo')||'').split(',').map(s=>s.trim()).filter(Boolean);
+const _SOLO_PEDIDO=_M ? _M.ids
+                      : (_PARAMS.get('solo')||'').split(',').map(s=>s.trim()).filter(Boolean);
+const VENCE=_M?_M.hasta:'';            // '' = no caduca. ?solo= nunca caduca.
+const ARMAR=_PARAMS.has('armar');      // pantalla para armar enlaces de muestra
 
 const EXPEDICIONES=[
  // --- Campaña Historia (capítulos = expediciones) ---
@@ -1230,6 +1318,9 @@ const SOLO=_SOLO_PEDIDO.filter(id=>EXPEDICIONES.some(e=>e.id===id));
 const PRUEBA=SOLO.length>0;
 const MODO_ABIERTO=QA||PRUEBA;   // ignora los candados de progresión
 const EFIMERO=QA||PRUEBA;        // no mide dominio por OA ni reporta refuerzos
+const SIN_DISCO=PRUEBA||ARMAR;   // ni localStorage ni Supabase ni intro
+/* Vigencia inclusiva: un enlace con hasta=2026-09-15 sirve todo el 15 y muere el 16. */
+const VENCIDA=!!VENCE && hoyISO()>VENCE;
 
 /* ===== CAMPAÑAS (capa "asignatura completa" · data-driven) =====
    Una campaña agrupa expediciones (capítulos) en orden, con un Desafío Extra y un
@@ -2234,7 +2325,7 @@ function guardar(){
  // (si no, al volver del mapa a la lista se perdería el avance dentro de la misma
  // sesión), pero NO se toca localStorage ni se sincroniza con Supabase.
  // Deliberadamente NO se usa EFIMERO aquí: ?qa=1 siempre guardó, y se deja igual.
- if(PRUEBA){ if(EXP_ACT) S.rutas[EXP_ACT.id]={progreso:S.progreso,progresoDificil:S.progresoDificil,dificilDesbloqueado:S.dificilDesbloqueado}; return; }
+ if(SIN_DISCO){ if(EXP_ACT) S.rutas[EXP_ACT.id]={progreso:S.progreso,progresoDificil:S.progresoDificil,dificilDesbloqueado:S.dificilDesbloqueado}; return; }
  try{
  if(EXP_ACT) S.rutas[EXP_ACT.id]={progreso:S.progreso,progresoDificil:S.progresoDificil,dificilDesbloqueado:S.dificilDesbloqueado};
  localStorage.setItem(SAVE_KEY,JSON.stringify({
@@ -2509,15 +2600,16 @@ function finDuelo(){
   document.body.appendChild(s);setTimeout(()=>s.remove(),1400);}
  (function agenda(){setTimeout(()=>{estrellaFugaz();agenda();},8000+Math.random()*14000);})();
  window.estrellaFugaz=estrellaFugaz;
- if(!PRUEBA) cargar();       // el modo prueba nunca lee la partida guardada del teléfono
+ if(!SIN_DISCO) cargar();    // el modo prueba y el armador no leen la partida del teléfono
  pintarInicio();
- if(PRUEBA) setTimeout(arrancarModoPrueba,0);   // tras montar la UI
+ if(PRUEBA) setTimeout(VENCIDA?mostrarVencida:arrancarModoPrueba,0);   // tras montar la UI
+ if(ARMAR)  setTimeout(arrancarArmador,0);
  aplicarMaestria();   // aura dorada si ya es maestro (no depende del servidor)
  // Perfil en el servidor desde el inicio (antes solo se creaba al entrar al duelo).
  // No bloquea: si falla, el juego funciona igual y se reintenta en la próxima sesión.
  // En modo prueba no se toca Supabase: el invitado no existe para el backend.
  // (?qa=1 sí sigue creando perfil, como siempre.)
- if(!PRUEBA) setTimeout(async ()=>{
+ if(!SIN_DISCO) setTimeout(async ()=>{
   const p = await conectarKimun();
   if(!p) return;
   if(p.codigo_acceso){ S.alumno = p.nombre; S.nombre = p.nombre; S.avatar = p.avatar; }
@@ -2620,15 +2712,120 @@ function entrarExpedicion(exp){
   else go('scr-inicio');
  });
 }
-/* Modo prueba (?solo=): entra como invitado y abre directamente la lista de capítulos
-   permitidos, saltándose "¿Cómo quieres entrar?" y la pantalla de nombre/avatar. */
+/* Lista propia del modo prueba: dibuja EXACTAMENTE los capítulos de ?solo=, vengan de la
+   asignatura que vengan. No se reutiliza la pantalla de campaña porque esa es de UNA
+   asignatura y, en Matemáticas, delega en renderCampañaMate (donde el filtro no llegaba:
+   ?solo=mate-* abría la campaña entera). Reusa scr-campana para no agregar marcado. */
+function renderListaPrueba(){
+ if($('btnCampBack')) $('btnCampBack').style.display='none';   // no hay a dónde volver
+ const exps=SOLO.map(id=>EXPEDICIONES.find(e=>e.id===id)).filter(Boolean);
+ const asigs=[...new Set(exps.map(e=>e.asignatura))];
+ $('campHead').innerHTML=`<h1 style="font-size:26px">Modo prueba</h1><p>${asigs.join(' · ')}</p>`;
+ const cont=$('campNodos'); cont.innerHTML='';
+ exps.forEach(exp=>{
+  const camp=exp.campaña?campañaPorId(exp.campaña):null;
+  const i=camp?camp.capitulos.indexOf(exp.id):-1;
+  const hecho=expedicionCompleta(exp.id);
+  cont.appendChild(nodoCampañaEl(i>=0?`${i+1}`:'📘', nombreMapa(exp), true, hecho,
+    ()=>entrarExpedicion(exp), hecho?'Completado':'¡Jugar!',
+    portadaMapa(exp), portadaFallback(exp)));
+ });
+ go('scr-campana');
+}
+/* ===== Armador de enlaces de muestra (?armar=1) =====
+   Vive aquí y no en profesor.html a propósito: el catálogo (EXPEDICIONES) ya está en este
+   archivo, así que una expedición nueva aparece sola, sin listas paralelas que mantener.
+   El panel solo abre esta pantalla, igual que hace con el Tablero de avance. */
+/* '2026-09-15' -> '15 de septiembre de 2026'. La usan el resumen y el lector. */
+function fechaLarga(iso){
+ const MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto',
+              'septiembre','octubre','noviembre','diciembre'];
+ const p=(iso||'').split('-');
+ if(p.length!==3) return iso||'';
+ return Number(p[2])+' de '+MESES[Number(p[1])-1]+' de '+p[0];
+}
+function armarUrl(){
+ const ids=[...document.querySelectorAll('#armarLista input[type=checkbox]:checked')].map(c=>c.value);
+ const hasta=$('armarHasta').value||'';
+ const qa=$('armarQA').checked;
+ const url=ids.length
+   ? location.origin+location.pathname+'?m='+b64uCod(ids.join(',')+'|'+hasta+'|'+(qa?'1':''))
+   : '';
+ $('armarUrl').value=url||'Marca al menos un capítulo';
+ $('armarCopiar').disabled=!url; $('armarProbar').disabled=!url;
+ $('armarResumen').textContent = url
+   ? ids.length+(ids.length===1?' capítulo':' capítulos')
+     +(hasta?' · vence el '+fechaLarga(hasta):' · sin caducidad')
+     +(qa?' · con respuestas':'')
+   : '';
+ return url;
+}
+function arrancarArmador(){
+ const cont=$('armarLista'); cont.innerHTML='';
+ const activas=EXPEDICIONES.filter(e=>e.activa);
+ const asigs=[...new Set(activas.map(e=>e.asignatura))]
+   .sort((a,b)=>((ORDEN_ASIG.indexOf(a)+1)||99)-((ORDEN_ASIG.indexOf(b)+1)||99));
+ asigs.forEach(asig=>{
+  const h=document.createElement('h3');
+  h.textContent=asig; h.style.cssText='color:var(--cyan);font-size:14px;margin:14px 0 6px';
+  cont.appendChild(h);
+  activas.filter(e=>e.asignatura===asig).forEach(exp=>{
+   const camp=exp.campaña?campañaPorId(exp.campaña):null;
+   const i=camp?camp.capitulos.indexOf(exp.id):-1;
+   const l=document.createElement('label');
+   l.style.cssText='display:flex;gap:8px;align-items:center;font-size:13px;font-weight:700;padding:4px 0';
+   l.innerHTML=`<input type="checkbox" value="${exp.id}"><span>${i>=0?(i+1)+'. ':''}${nombreMapa(exp)}</span>`;
+   cont.appendChild(l);
+  });
+ });
+ cont.addEventListener('change',armarUrl);
+ $('armarQA').onchange=armarUrl;
+ $('armarCopiar').onclick=()=>{
+  const u=armarUrl(); if(!u) return;
+  Promise.resolve(navigator.clipboard&&navigator.clipboard.writeText(u))
+   .then(()=>{ $('armarMsg').textContent='Enlace copiado.'; })
+   .catch(()=>{ $('armarUrl').select(); $('armarMsg').textContent='Selecciona y copia con Ctrl+C.'; });
+ };
+ $('armarProbar').onclick=()=>{ const u=armarUrl(); if(u) window.open(u,'_blank'); };
+ const enDias=n=>{ const d=new Date(); d.setDate(d.getDate()+n);
+   const z=x=>String(x).padStart(2,'0');
+   return d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate()); };
+ $('armarHasta').onchange=armarUrl;
+ $('armarSinFin').onclick=()=>{ $('armarHasta').value=''; armarUrl(); };
+ $('armarSemana').onclick=()=>{ $('armarHasta').value=enDias(7); armarUrl(); };
+ $('armarMes').onclick=()=>{ $('armarHasta').value=enDias(30); armarUrl(); };
+ $('armarHasta').min=hoyISO();          // no ofrecer fechas ya pasadas
+ $('armarLeerBtn').onclick=()=>{
+  const txt=($('armarLeer').value||'').trim();
+  const t=(txt.match(/[?&]m=([^&\s]+)/)||[])[1] || txt;   // acepta enlace completo o token suelto
+  const d=leerToken(t);
+  if(!d){ $('armarLeido').textContent='No pude leer ese enlace.'; return; }
+  const nombres=d.ids.map(id=>{const e=EXPEDICIONES.find(x=>x.id===id); return e?nombreMapa(e):id;});
+  const estado=!d.hasta ? 'Sin caducidad.'
+    : (hoyISO()>d.hasta ? 'VENCIÓ el '+fechaLarga(d.hasta)+'.' : 'Vence el '+fechaLarga(d.hasta)+'.');
+  $('armarLeido').textContent=nombres.join(' · ')+' — '+estado+(d.qa?' Con respuestas.':'');
+ };
+ armarUrl();
+ $('nav').style.display='none';
+ go('scr-armar');
+}
+/* Pantalla de muestra vencida. No da acceso a los capítulos, pero sí al juego completo:
+   VULPO es público, así que caducar el enlace apaga la muestra, no el juego. */
+function mostrarVencida(){
+ const MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto',
+              'septiembre','octubre','noviembre','diciembre'];
+ const p=VENCE.split('-');
+ $('vencidaFecha').textContent='Venció el '+Number(p[2])+' de '+MESES[Number(p[1])-1]+' de '+p[0]+'.';
+ $('vencidaIr').onclick=()=>{ location.href=location.origin+location.pathname; };
+ $('nav').style.display='none';
+ go('scr-vencida');
+}
+/* Modo prueba (?solo=): entra como invitado y abre su propia lista de capítulos,
+   saltándose "¿Cómo quieres entrar?" y la pantalla de nombre/avatar. */
 function arrancarModoPrueba(){
  S.nombre='Invitado'; S.avatar=AVATARES[4];   // 🦊, la mascota
- const exp=EXPEDICIONES.find(e=>e.id===SOLO[0]);
- const camp=exp&&exp.campaña?campañaPorId(exp.campaña):null;
  $('nav').style.display='none';
- if(camp){abrirCampaña(camp);return;}
- entrarExpedicion(exp);      // capítulo suelto (sin campaña): directo a su mapa
+ renderListaPrueba();
 }
 $('btnJugador').onclick=()=>{SND.init();SND.tap();$('nav').style.display='none';renderExpediciones();go('scr-expediciones');};
 // Acceso a la tienda desde Expediciones (la tienda recuerda de dónde se abrió para volver).
@@ -2699,22 +2896,18 @@ function abrirCampaña(c){CAMP_ACT=c; renderCampaña(); go('scr-campana');}
 $('btnCampBack').onclick=()=>{SND.tap();go('scr-expediciones');};
 // Volver desde el mapa de un capítulo a su campaña (refresca el desbloqueo)
 $('btnMapaCamp').onclick=()=>{SND.tap();
+ if(PRUEBA){renderListaPrueba();return;}   // modo prueba: vuelve a su propia lista
  if(EXP_ACT&&EXP_ACT.campaña){CAMP_ACT=campañaPorId(EXP_ACT.campaña);renderCampaña();go('scr-campana');return;}
  if(EXP_ACT&&EXP_ACT.id==='voc-general'){go('scr-lenguaje');return;}   // Vocabulario → landing de Lenguaje
  if(EXP_ACT&&EXP_ACT.asignatura==='Lectura'){go('scr-biblioteca');return;} // Lectura → biblioteca
  go('scr-expediciones');};
 function renderCampaña(){
  const c=CAMP_ACT; if(!c)return;
- // En modo prueba no hay a dónde volver: el botón llevaba a la pantalla completa
- // de Expediciones (todas las asignaturas + tienda), que es justo lo que se oculta.
- if($('btnCampBack')) $('btnCampBack').style.display=PRUEBA?'none':'';
  if(c.esLecciones){ renderCampañaMate(c); return; }
  $('campHead').innerHTML=`<h1 style="font-size:26px">${c.asignatura} ${campañaCompleta(c)?'👑':''}</h1><p>${c.intro}</p>`;
  const cont=$('campNodos'); cont.innerHTML='';
- // capítulos en orden. En modo prueba se muestran solo los pedidos por ?solo=,
- // conservando su número original (el capítulo 2 se sigue llamando 2, no 1).
+ // capítulos en orden
  c.capitulos.forEach((id,i)=>{
-  if(PRUEBA && !SOLO.includes(id)) return;
   const exp=EXPEDICIONES.find(e=>e.id===id);
   const abierto=nodoCampDesbloqueado(c,i), hecho=expedicionCompleta(id);
   const titulo=(exp.nivel.split('· ')[1]||exp.nivel);
@@ -2722,22 +2915,19 @@ function renderCampaña(){
     abierto?()=>entrarExpedicion(exp):null, hecho?'Completado':(abierto?'¡Jugar!':'🔒 Bloqueado'),
     portadaMapa(exp), portadaFallback(exp)));
  });
- // desafío extra (solo si la campaña lo define). En modo prueba no se muestra:
- // exige haber completado todos los capítulos, que aquí no están.
- if(c.desafioExtra && !PRUEBA){
+ // desafío extra (solo si la campaña lo define)
+ if(c.desafioExtra){
   const de=EXPEDICIONES.find(e=>e.id===c.desafioExtra);
   const deAb=desafioDesbloqueado(c), deHecho=expedicionCompleta(c.desafioExtra);
   cont.appendChild(nodoCampañaEl('⭐','Desafío Extra: Chile hoy', deAb, deHecho,
     deAb?()=>entrarExpedicion(de):null, deHecho?'Completado':(deAb?'¡Desafío!':'🔒 Termina los capítulos'),
     portadaMapa(de), portadaFallback(de)));
  }
- // jefe final (luce al villano de la campaña). Fuera del modo prueba, por lo mismo.
- if(!PRUEBA){
-  const jfAb=jefeFinalDesbloqueado(c), jfHecho=campañaCompleta(c);
-  cont.appendChild(nodoCampañaEl('👑','JEFE FINAL DE '+c.asignatura.toUpperCase(), jfAb, jfHecho,
-    jfAb?()=>iniciarJefeFinal(c):null, jfHecho?'¡Vencido!':(jfAb?'¡Al 100%! Enfréntalo':'🔒 Completa todo'),
-    c.jefeFinal.villanoImg||''));
- }
+ // jefe final (luce al villano de la campaña)
+ const jfAb=jefeFinalDesbloqueado(c), jfHecho=campañaCompleta(c);
+ cont.appendChild(nodoCampañaEl('👑','JEFE FINAL DE '+c.asignatura.toUpperCase(), jfAb, jfHecho,
+   jfAb?()=>iniciarJefeFinal(c):null, jfHecho?'¡Vencido!':(jfAb?'¡Al 100%! Enfréntalo':'🔒 Completa todo'),
+   c.jefeFinal.villanoImg||''));
 }
 // Campaña de Matemáticas: capítulos = grupos de lecciones. Además, acceso al Reto.
 function renderCampañaMate(c){
@@ -3575,14 +3765,14 @@ function terminarDesafio(){
 /* Aviso visible del modo QA (solo con ?qa=1). El del modo prueba se agrega aparte. */
 if(QA){const b=document.createElement('div');b.className='qa-badge';b.textContent='🧪 QA · respuestas marcadas · todo desbloqueado';document.body.appendChild(b);}
 /* Aviso del modo prueba (?solo=): deja claro que el avance no se guarda. */
-if(PRUEBA&&!QA){const b=document.createElement('div');b.className='qa-badge';b.style.background='var(--cyan)';b.style.color='#04231a';
+if(PRUEBA&&!QA&&!VENCIDA){const b=document.createElement('div');b.className='qa-badge';b.style.background='var(--cyan)';b.style.color='#04231a';
  b.textContent='🧪 Modo prueba · no se guarda tu avance';document.body.appendChild(b);}
 
 /* Intro de bienvenida: se ve una sola vez por dispositivo. ?intro=1 la fuerza a repetirse.
    Intenta reproducir CON sonido; si el navegador bloquea el autoplay, pide un toque. */
 (function(){
  const ov=$('introOverlay'); if(!ov) return;
- if(PRUEBA){ ov.remove(); return; }   // modo prueba: entrada directa, y no se escribe kimun_intro
+ if(SIN_DISCO){ ov.remove(); return; }   // prueba/armador: entrada directa, y no se escribe kimun_intro
  const vid=$('introVid'), skip=$('introSkip'), tap=$('introTap');
  const forzar=new URLSearchParams(location.search).has('intro');
  const visto=localStorage.getItem('kimun_intro');

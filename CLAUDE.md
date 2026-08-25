@@ -246,6 +246,29 @@ para siempre.
   válido, cae al juego normal.
   **No es un candado:** al ser un sitio estático, quien borre el parámetro llega al juego
   completo. Es acotamiento, no seguridad.
+- **`?armar=1` — Armador de enlaces de muestra (solo Admin):** pantalla oculta que lista
+  todos los capítulos activos agrupados por asignatura, con casillas, y construye el enlace
+  `?solo=…` correspondiente (con `&qa=1` opcional, casilla "Mostrar las respuestas
+  correctas"). Botones Copiar y Probar. El enlace se arma con `location.origin`, así que
+  abierto desde vulpo.cl genera enlaces de vulpo.cl y en local genera locales. Se llega
+  desde `profesor.html` → Administración → "🔗 Armar enlace de muestra", visible solo para
+  `YO.es_admin` (no lo ven los SuperUsuarios). **Vive en `index.html` a propósito:** el
+  catálogo (`EXPEDICIONES`) ya está ahí, así que una expedición nueva aparece sola, sin
+  listas paralelas que mantener. Como `?solo=`, **no es un candado**, pero tampoco expone
+  nada nuevo.
+- **`?m=<token>` — Muestra con caducidad:** misma experiencia que `?solo=`, pero los datos
+  viajan en un token **base64url** con el formato `ids|AAAA-MM-DD|1` (ids de capítulos, fecha
+  de caducidad, y `1` si se muestran las respuestas). Sin fecha, no caduca. La **vigencia es
+  inclusiva**: un enlace con `2026-09-15` sirve todo el 15 y muere el 16. Al vencer aparece
+  una pantalla sobria con la fecha y un botón al juego completo (VULPO es público: caducar el
+  enlace apaga la muestra, no el juego). Un token corrupto cae al juego normal. Lo genera el
+  armador (`?armar=1`), que además **sabe leer un enlace** y decir qué contiene y cuándo vence.
+  **El token es un DISFRAZ, no un cifrado:** base64 es público y reversible en un minuto.
+  Sirve para que la fecha no se vea en la barra de direcciones —y nadie sienta la invitación a
+  editarla—, no para detener a quien sepa lo que mira. Además se compara con el **reloj del
+  dispositivo**, que se puede atrasar. **No hay revocación:** un enlace repartido vive hasta
+  su fecha. Revocar de verdad exigiría Supabase, y se descartó por costo.
+  `?solo=` sigue existiendo y **nunca caduca** (es el formato del enlace ya repartido).
 
 ### Tablero de avance (`dev/tablero.html`)
 
@@ -2363,3 +2386,82 @@ es en `index.html`; no se tocó `profesor.html`, `schema.sql` ni el contenido.
   escribe `kimun_intro` en `localStorage` y eso contradecía el "no guardar nada".
 - **Diseño y plan:** `docs/superpowers/specs/2026-08-24-modo-prueba-enlace-acotado-design.md`
   y `docs/superpowers/plans/2026-08-24-modo-prueba-enlace-acotado.md`.
+
+### Sesión 42 (2026-08-24) — Armador de enlaces de muestra + lista propia del modo prueba
+Roberto pidió poder **armar los enlaces `?solo=` desde el panel**, sin recordar ids, para
+preparar **cuestionarios de muestra** (material de difusión). Al diseñarlo se descubrió que el
+modo prueba de la Sesión 41 tenía **cuatro agujeros** que el enlace de Historia nunca tocó,
+pero que el armador iba a destapar apenas se marcara otra casilla. Se corrigieron primero.
+- **Los cuatro agujeros (todos corregidos):**
+  1. **Matemáticas no se filtraba (grave):** su campaña tiene `esLecciones`, así que
+     `renderCampaña` delegaba en `renderCampañaMate`, donde el filtro por `SOLO` no existía.
+     `?solo=mate-exp-numeros` abría la campaña **entera** de Matemáticas: lecciones, Reto de
+     Cálculo y Jefe Final. El acotamiento simplemente no ocurría.
+  2. **Mezclar asignaturas descartaba capítulos en silencio** (`?solo=hist-cap2,cien-celula`
+     mostraba solo el de Historia).
+  3. **Capítulos sin campaña** (Vocabulario, Lectura): si se pedían varios, se abría solo el
+     primero.
+  4. **El botón "← Volver" del mapa** mandaba esos capítulos sin campaña a `scr-lenguaje` o
+     `scr-biblioteca`, otra fuga fuera del modo prueba.
+- **La corrección de fondo:** el modo prueba dejó de injertarse en la pantalla de campaña (que
+  por definición es de UNA asignatura) y tiene ahora **su propia lista**, `renderListaPrueba()`,
+  que dibuja exactamente los capítulos de `SOLO` vengan de donde vengan, con su número original
+  (o 📘 si no pertenecen a una campaña). Con eso **`renderCampaña` volvió a ser exactamente lo
+  que era antes de la Sesión 41** (sin filtros, con su Desafío Extra y su Jefe Final), y el
+  código quedó más simple que con el injerto.
+- **Armador `?armar=1`:** pantalla oculta en `index.html` con todos los capítulos activos
+  agrupados por asignatura, casillas, casilla "Mostrar las respuestas correctas" (`&qa=1`),
+  enlace armado en vivo con `location.origin`, y botones Copiar y Probar (Copiar cae a
+  "selecciona y copia con Ctrl+C" si el navegador bloquea el portapapeles). **Vive en el juego
+  y no en el panel a propósito:** el catálogo ya está ahí, así que no hay dos listas que
+  mantener y una expedición nueva aparece sola. Bandera `SIN_DISCO` (`PRUEBA||ARMAR`) para no
+  escribir en disco, no crear perfil y saltar la intro.
+- **Botón en el panel:** "🔗 Armar enlace de muestra" en Administración, junto al Tablero,
+  con el mismo candado que "Limpiar perfiles de prueba" (`YO.es_admin`): no lo ven los
+  SuperUsuarios.
+- **Verificado en el navegador**, consola limpia: los 3 capítulos de Historia siguen igual
+  (no-regresión del enlace ya repartido); `?solo=mate-exp-numeros` da **1 sola tarjeta**;
+  `?solo=hist-cap2,cien-celula` da **2, de dos asignaturas**; `?solo=voc-general,lect-anafrank`
+  da **2 con marca 📘** y su "Volver" regresa a la lista de prueba; el juego normal recupera
+  los 5 capítulos + Desafío + Jefe Final; `?qa=1` sigue desbloqueando, marcando y **guardando**;
+  el armador lista 20 capítulos en 6 grupos, arma las tres variantes de enlace, deshabilita
+  Copiar/Probar sin selección y **no agrega ni una clave a `localStorage`** (comprobado
+  comparando las claves antes y después).
+- **Diseño y plan:** `docs/superpowers/specs/2026-08-24-armador-enlaces-muestra-design.md` y
+  `docs/superpowers/plans/2026-08-24-armador-enlaces-muestra.md`.
+
+### Sesión 43 (2026-08-24) — Muestras con caducidad y token `?m=`
+Roberto pidió poder ponerle **clave y/o caducidad** a los enlaces de muestra, con el objetivo
+de que **una demostración no siga circulando meses después**.
+- **La clave se descartó, de común acuerdo.** No sirve al objetivo: viaja en el mismo mensaje
+  que el enlace, así que se reenvía con él. Una clave filtra *quién entra*; para que algo
+  *deje de estar vivo* la herramienta es la caducidad.
+- **Token `?m=`:** los datos (ids, fecha, respuestas) viajan codificados en base64url, sin
+  nada a la vista. Un enlace con caducidad y uno sin ella **se ven idénticos**. Alimenta las
+  mismas variables `SOLO` y `QA` de siempre, así que toda la maquinaria del modo prueba
+  funciona sin cambios.
+- **Es un DISFRAZ, no un cifrado, y se documentó así.** Base64 se revierte en un minuto. Lo
+  que consigue es quitar la invitación obvia: ver `&hasta=2026-09-15` prácticamente pide que
+  le cambien la fecha; ver `?m=aGlzdC1jYXAy…` no sugiere nada. Es proporcional al objetivo.
+- **Vigencia inclusiva:** un enlace con `2026-09-15` sirve todo el 15 y muere el 16.
+- **Pantalla de vencido:** sobria, con la fecha en castellano ("Venció el 1 de agosto de
+  2026.") y un botón al juego completo. Sin acceso a los capítulos por esa vía.
+- **El armador ganó tres cosas:** campo de fecha con atajos (Sin caducidad / 1 semana / 1 mes,
+  y `min` en hoy para no generar enlaces nacidos muertos); **resumen en castellano** bajo el
+  enlace ("1 capítulo · vence el 31 de agosto de 2026 · con respuestas"); y un **lector**:
+  se pega un enlace y dice qué contiene y si venció. El lector es el contrapeso de haber
+  ocultado los datos — sin él, un enlace viejo sería ilegible hasta para Roberto.
+- **Corregido al probar:** `leerToken('xxxx')` devolvía basura en vez de `null`, porque
+  `xxxx` resulta ser base64 válido. Ahora se exige forma de id (letras, números y guiones).
+  Y el aviso "🧪 Modo prueba" aparecía en la pantalla de vencido, donde no se juega nada.
+- **Verificado en el navegador**, consola limpia: token de ida y vuelta; `?m=` vigente abre
+  igual que el modo prueba; `?m=` con fecha de **hoy** abre (límite inclusivo); `?m=` vencido
+  muestra la pantalla con la fecha correcta y **sin agregar claves a `localStorage`**;
+  `?m=xxxx` cae al juego normal; `?solo=` sigue **sin caducidad**; `?qa=1` sigue
+  desbloqueando, marcando y guardando; el armador genera las tres variantes y el lector
+  responde a enlace completo, token suelto, enlace vencido y basura.
+- **Límites conocidos (aceptados):** el token es reversible; la fecha se compara con el reloj
+  del visitante, que se puede atrasar; caducar el enlace **no cierra el juego**, que es
+  público en vulpo.cl; y **no hay revocación** (un enlace vive hasta su fecha).
+- **Diseño y plan:** `docs/superpowers/specs/2026-08-24-muestras-con-caducidad-design.md` y
+  `docs/superpowers/plans/2026-08-24-muestras-con-caducidad.md`.
