@@ -14,7 +14,10 @@
 <meta name="theme-color" content="#1e1747">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<!-- supabase-js auto-hospedado (no desde CDN): elimina el riesgo de cadena de suministro
+     (un CDN comprometido correría código en el navegador del alumno/profesor). Versión fija
+     2.112.4; para actualizar, descargar la nueva y cambiar esta ruta. -->
+<script src="assets/vendor/supabase-js-2.112.4.min.js"></script>
 <style>
 :root{
   --bg1:#140f33; --bg2:#2a1b5e; --panel:#1e1747; --panel2:#271f56;
@@ -2660,7 +2663,7 @@ function finDuelo(){
  else{const w=a.pts>b.pts?a:b;ic=w.em;title='¡Gana '+w.n+'!';}
  SND.win();
  $('drIc').textContent=ic;$('drTitle').textContent=title;
- $('drScore').innerHTML=`${a.em} ${a.n}: <b style="color:var(--cyan)">${a.pts}</b> &nbsp;vs&nbsp; ${b.em} ${b.n}: <b style="color:var(--cyan)">${b.pts}</b>`;
+ $('drScore').innerHTML=`${escHtml(a.em)} ${escHtml(a.n)}: <b style="color:var(--cyan)">${a.pts}</b> &nbsp;vs&nbsp; ${escHtml(b.em)} ${escHtml(b.n)}: <b style="color:var(--cyan)">${b.pts}</b>`;
  go('scr-duelo-res');
 }
 
@@ -3313,7 +3316,7 @@ async function cargarPendientes(){
   if(!data||!data.length){cont.innerHTML='<p style="color:var(--dim);font-weight:800;font-size:13px">No tienes desafíos pendientes.</p>';return;}
   cont.innerHTML='';
   data.forEach(d=>{const it=document.createElement('div');it.className='pend-item';
-   it.innerHTML=`<div class="em">${d.retador_avatar}</div><div class="pi-body"><div class="pi-n">${d.retador_nombre} te desafió</div><div class="pi-t">⏳ ${restante(d.expira)}</div></div><div class="pi-go">▶</div>`;
+   it.innerHTML=`<div class="em">${escHtml(d.retador_avatar)}</div><div class="pi-body"><div class="pi-n">${escHtml(d.retador_nombre)} te desafió</div><div class="pi-t">⏳ ${restante(d.expira)}</div></div><div class="pi-go">▶</div>`;
    it.onclick=()=>{SND.tap();responderDesafio(d);};cont.appendChild(it);});
  }catch(e){cont.innerHTML='<p style="color:var(--pink);font-weight:800;font-size:13px">No se pudo cargar.</p>';}
 }
@@ -3367,7 +3370,7 @@ async function cargarJugadores(){
   if(!data||!data.length){cont.innerHTML='<p style="color:var(--dim);font-weight:800;font-size:13px">Aún no hay otros jugadores.</p>';return;}
   cont.innerHTML='';
   data.forEach(j=>{const b=document.createElement('button');
-   b.innerHTML=`<span style="font-size:22px">${j.avatar}</span> ${j.nombre}`+(j.es_bot?'<span class="jb-bot">🤖 práctica</span>':'<span class="jb-bot">👤 jugador</span>');
+   b.innerHTML=`<span style="font-size:22px">${escHtml(j.avatar)}</span> ${escHtml(j.nombre)}`+(j.es_bot?'<span class="jb-bot">🤖 práctica</span>':'<span class="jb-bot">👤 jugador</span>');
    b.onclick=()=>{SND.tap();$('odCodigo').value=j.codigo;cont.querySelectorAll('button').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');$('odSetupErr').textContent='';};
    cont.appendChild(b);});
  }catch(e){cont.innerHTML='<p style="color:var(--pink);font-weight:800;font-size:13px">No se pudo cargar la lista.</p>';}
@@ -3424,7 +3427,7 @@ async function odFin(){
     const gano=res.ganador==='yo',emp=res.ganador==='empate';
     $('odResIc').textContent=emp?'🤝':(gano?'🏆':'😿');
     $('odResTitle').textContent=emp?'¡Empate!':(gano?'¡Ganaste!':'Perdiste');
-    $('odResScore').innerHTML=`Tú: <b style="color:var(--cyan)">${res.mis_aciertos}/${res.total}</b> &nbsp;vs&nbsp; ${res.rival_avatar} ${res.rival_nombre}: <b style="color:var(--cyan)">${res.rival_aciertos}/${res.total}</b>`;
+    $('odResScore').innerHTML=`Tú: <b style="color:var(--cyan)">${res.mis_aciertos}/${res.total}</b> &nbsp;vs&nbsp; ${escHtml(res.rival_avatar)} ${escHtml(res.rival_nombre)}: <b style="color:var(--cyan)">${res.rival_aciertos}/${res.total}</b>`;
    }else{
     $('odResIc').textContent='📨';$('odResTitle').textContent='¡Desafío enviado!';
     $('odResScore').innerHTML=`Retaste a <b>${OD.rivalCodigo}</b>.<br>Hiciste <b style="color:var(--cyan)">${OD.aciertos}/8</b>.<br>Tiene 24 horas para responder.`;
@@ -3435,7 +3438,7 @@ async function odFin(){
    const gano=r.ganador==='yo',emp=r.ganador==='empate';
    $('odResIc').textContent=emp?'🤝':(gano?'🏆':'😿');
    $('odResTitle').textContent=emp?'¡Empate!':(gano?'¡Ganaste!':'Perdiste');
-   $('odResScore').innerHTML=`${insigniaIc()}Tú: <b style="color:var(--cyan)">${r.mis_aciertos}/8</b> &nbsp;vs&nbsp; ${r.retador_avatar} ${r.retador_nombre}: <b style="color:var(--cyan)">${r.retador_aciertos}/8</b>`;
+   $('odResScore').innerHTML=`${insigniaIc()}Tú: <b style="color:var(--cyan)">${r.mis_aciertos}/8</b> &nbsp;vs&nbsp; ${escHtml(r.retador_avatar)} ${escHtml(r.retador_nombre)}: <b style="color:var(--cyan)">${r.retador_aciertos}/8</b>`;
   }
  }catch(e){$('odResIc').textContent='⚠️';$('odResTitle').textContent='Ups, algo falló';$('odResScore').textContent=(e.message||'Error');}
  SND.win();go('scr-od-res');

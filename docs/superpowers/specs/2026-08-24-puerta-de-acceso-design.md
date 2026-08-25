@@ -118,12 +118,19 @@ El segundo botón muestra el contacto: **vulpochile.app@gmail.com · +569 7668 4
 Se reutiliza la identidad que ya existe, sin inventar nada:
 
 1. El alumno canjea su `ALU-` en "Tengo un código". Supabase lo valida y devuelve su perfil.
-2. Queda guardado que es un alumno identificado.
-3. **En cada arranque, con internet, se revalida contra Supabase.** Si el servidor ya no lo
-   reconoce (el profesor lo dio de baja, el colegio dejó de pagar), la licencia se apaga.
-4. **Si la revalidación falla por falta de conexión, vale lo último confirmado.** Es
-   deliberado: una señal intermitente en la sala de clases no debe expulsar a un alumno cuyo
-   colegio pagó.
+2. Queda guardado que es un alumno identificado (`S.alumno` en `localStorage`).
+
+> **Estado real (auditoría 25/08/2026): NO hay revalidación en cada arranque.** `tieneLicencia()`
+> solo lee `S.alumno` de `localStorage`; una vez canjeado el código, el acceso queda hasta que se
+> borren los datos del navegador. Es un **bloqueo blando** —consistente con que los bancos de
+> preguntas son públicos y descargables—, no un control real de licencia.
+>
+> **Por eso NO se debe prometer a un colegio que "el acceso se apaga si deja de pagar":** hoy no
+> ocurre. Si en el futuro se quiere esa revocación, hay que **implementarla**: una RPC al arrancar
+> (con internet) que confirme que el perfil sigue vinculado y limpie `S.alumno` si el servidor ya
+> no lo reconoce; si falla por falta de conexión, vale lo último confirmado (una señal intermitente
+> en la sala no debe expulsar a un alumno cuyo colegio pagó). Mientras no se implemente, el discurso
+> comercial no debe afirmar la revocación automática.
 
 > **Verificado el 24/08/2026:** VULPO **no funciona sin internet**. No hay service worker ni
 > manifiesto de aplicación, así que sin conexión el sitio ni siquiera carga; y cada banco de

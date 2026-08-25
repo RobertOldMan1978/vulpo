@@ -30,6 +30,12 @@ curso de 40 alumnos son $240.000, por debajo del costo de atender ese colegio du
 **Argumento de valor:** una sola hora de reforzamiento particular cuesta entre $8.000 y $15.000.
 VULPO entrega el año completo, en cuatro asignaturas, por menos que eso por alumno.
 
+> **Regla de comunicación pública (decisión de Roberto, 25/08/2026):** en la **cara pública**
+> —la landing `vulpo.cl` y el primer contacto— **NO se muestran valores en pesos.** Solo la
+> comparación: *"cuesta menos que una hora de reforzamiento particular"*. Los números concretos
+> (tabla de arriba, mínimo, Fundador) van en la **propuesta y en la reunión**, no en la web. La
+> tabla de precios de este documento es referencia interna para armar esa propuesta.
+
 ## La tarifa Fundador es un intercambio, no un descuento
 
 Está **reservada a los primeros 5 colegios que firmen antes del 31 de diciembre de 2026**, y a

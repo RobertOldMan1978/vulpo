@@ -2785,3 +2785,38 @@ respire el mismo mundo del juego. El motor del juego (`juego/index.html`) no se 
   Respeta `prefers-reduced-motion`: estrellas quietas y sin fugaces. Verificado por DOM (60
   estrellas, capa fija tras el contenido, sin errores de consola); el screenshot headless no
   renderiza si el panel del navegador no está a la vista, pero eso no es un problema de la página.
+
+### Sesión 51 (2026-08-25) — Auditoría web (seguridad + diseño + persuasión) y correcciones
+Se lanzaron **tres agentes en paralelo** sobre la cara web (landing `index.html`, `juego/index.html`,
+`profesor.html`, y las features nuevas de enlaces/puerta): seguridad, diseño visual y persuasión.
+Cada hallazgo de seguridad se **verificó a mano contra el código** antes de actuar.
+- **Seguridad — 2 arreglos aplicados y verificados:**
+  1. **XSS almacenado (ALTO) en el Duelo en línea:** el `nombre`/`avatar` de otro jugador (dato
+     controlado por el usuario, vía Supabase) se inyectaba con `innerHTML` **sin escapar** en 4
+     rutas del duelo (`juego/index.html` ~3316/3370/3427/3438) — un compañero del mismo curso podía
+     ejecutar código en el navegador de la víctima (menores). Se aplicó el `escHtml()` que ya
+     existía (y que el ranking sí usaba), más el duelo local (~2663). Verificado: un payload
+     `<img onerror>` ahora renderiza como texto.
+  2. **supabase-js desde CDN sin fijar versión ni SRI (MEDIO):** `juego/index.html` y `profesor.html`
+     cargaban `@supabase/supabase-js@2` (mutable, sin `integrity`). Se **auto-hospedó** la versión
+     fija **2.112.4** en `assets/vendor/supabase-js-2.112.4.min.js` y se quitó el CDN. Elimina el
+     riesgo de cadena de suministro (crítico en el panel del profesor, que maneja su sesión).
+     Verificado: juego y panel cargan supabase local, `createClient`/`SB` funcionan, cero CDN.
+  - *Confirmado sólido:* sin tabnabbing en la landing (`_blank` con `noopener`); las features de
+    token (`?m=`/`?solo=`/`?armar=1`) validan ids y usan `textContent`; `profesor.html` escapa todo;
+    **sin analytics/pixeles de terceros**; sin secretos indebidos.
+  - *Pendiente opcional (no urgente):* validar largo/caracteres del nombre en `kimun_perfil` (defensa
+    en profundidad; el escape ya cierra la vulnerabilidad).
+- **Texto comercial ajustado (decisión de Roberto):**
+  - La **puerta de acceso NO revalida la licencia** contra Supabase (es bloqueo blando: `tieneLicencia()`
+    solo lee `localStorage`). Se corrigió el spec `2026-08-24-puerta-de-acceso-design.md` para que lo
+    diga, y se anotó que **el discurso comercial no debe prometer que "el acceso se apaga si el colegio
+    deja de pagar"** (hoy no ocurre; queda descrito cómo implementarlo si se quisiera).
+  - **Precios en la cara pública:** regla nueva en `docs/comercial.md` — la **landing y el primer
+    contacto NO muestran valores en pesos**, solo *"cuesta menos que una hora de reforzamiento
+    particular"*; los números van en la propuesta/reunión. La tabla de precios interna se conserva.
+- **Diseño y persuasión — mapa de mejoras (pendiente de aplicar):** las otras dos revisiones dejaron
+  un plan de mejoras de la landing (el logo-mascota como titular se ve infantil → titular tipográfico;
+  falta franja de legitimidad MINEDUC + sección de privacidad de menores; reservar Titan One y usar una
+  sans moderna; botones/tarjetas "pro" con `:focus-visible`; CTA agendable; hero que lidere con el
+  beneficio; reencuadrar el celular como uso en casa). Se empieza a aplicar por lo de mayor impacto.
