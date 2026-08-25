@@ -1009,10 +1009,22 @@ const AVATARES=["🦁","🐉","🦅","🐺","🦊","🤖","👽","🥷"];
      2) agrega su portada en assets/,
      3) añade aquí un objeto con sus etapas (cada etapa mapea un OA; el jefe mezcla varios).
    El motor NO cambia: lee todo desde estos datos, con progreso independiente por ruta. */
-/* ===== Modo QA (oculto): añade ?qa=1 a la URL para pruebas manuales. Marca la
-   respuesta correcta en todas las preguntas y desbloquea todos los capítulos y
-   jefes. No cambia nada en el juego normal (sin el parámetro). ===== */
-const QA=new URLSearchParams(location.search).has('qa');
+/* ===== Modos ocultos por URL =====
+   ?qa=1        -> revisión de contenido: desbloquea todo Y marca la respuesta correcta.
+   ?solo=a,b,c  -> modo prueba: muestra SOLO esos capítulos (ids de EXPEDICIONES),
+                   todos abiertos, SIN marcar respuestas y sin guardar nada.
+   Las banderas de más abajo eran un solo booleano (QA) y se separaron a propósito,
+   porque "desbloquear", "marcar la respuesta" y "no reportar al servidor" son cosas
+   distintas y el modo prueba necesita unas sí y otras no:
+     MODO_ABIERTO  ignora los candados entre capítulos          (QA y prueba)
+     QA_MARCA      pinta la respuesta correcta                   (solo QA)
+     EFIMERO       no mide dominio por OA ni reporta refuerzos   (QA y prueba)
+     PRUEBA        además, no escribe en disco ni usa Supabase   (solo prueba)
+   Sin ningún parámetro, el juego se comporta exactamente como siempre. */
+const _PARAMS=new URLSearchParams(location.search);
+const QA=_PARAMS.has('qa');
+const QA_MARCA=QA;                     // solo QA pinta la respuesta correcta
+const _SOLO_PEDIDO=(_PARAMS.get('solo')||'').split(',').map(s=>s.trim()).filter(Boolean);
 
 const EXPEDICIONES=[
  // --- Campaña Historia (capítulos = expediciones) ---
@@ -1211,6 +1223,14 @@ const EXPEDICIONES=[
    ]},
 ];
 
+/* Ids de ?solo= que existen de verdad. Uno inventado se ignora en silencio; si no
+   queda ninguno válido, PRUEBA es falso y se cae al juego normal (mejor eso que
+   dejar al alumno en una pantalla vacía). */
+const SOLO=_SOLO_PEDIDO.filter(id=>EXPEDICIONES.some(e=>e.id===id));
+const PRUEBA=SOLO.length>0;
+const MODO_ABIERTO=QA||PRUEBA;   // ignora los candados de progresión
+const EFIMERO=QA||PRUEBA;        // no mide dominio por OA ni reporta refuerzos
+
 /* ===== CAMPAÑAS (capa "asignatura completa" · data-driven) =====
    Una campaña agrupa expediciones (capítulos) en orden, con un Desafío Extra y un
    Jefe Final multi-fase. Los capítulos son objetos normales de EXPEDICIONES (5 nodos),
@@ -1364,7 +1384,9 @@ const LOGROS={
 
 /* ================= ESTADO ================= */
 function nuevoProgreso(n){n=n||(EXPEDICION?EXPEDICION.length:5);
- return Array.from({length:n},(_,i)=>({est:i===0?"open":"lock",estrellas:0}));}
+ // En modo prueba (?solo=) la ruta nace con TODAS las etapas abiertas, jefe del
+ // capítulo incluido: el invitado entra a probar cualquiera, no a avanzar en orden.
+ return Array.from({length:n},(_,i)=>({est:(PRUEBA||i===0)?"open":"lock",estrellas:0}));}
 const S={nombre:"",avatar:AVATARES[0],xp:0,nivel:1,monedas:0,
  progreso:nuevoProgreso(), progresoDificil:nuevoProgreso(), dificilDesbloqueado:false,
  skins:[], logros:new Set(), rutas:{},
@@ -2018,13 +2040,13 @@ const RETO_REQUISITO=[
  ['ma-oa01','ma-oa02','ma-oa03','ma-oa04','ma-oa05'], // 4 Reto Relámpago: toda la unidad
 ];
 function nivelCalcDesbloqueado(i){
- if(QA)return true;
+ if(MODO_ABIERTO)return true;
  if(i===0)return true;
  if(calcEstado().etapas[i]>=1) return true;             // ya jugado antes → cortesía
  const req=RETO_REQUISITO[i]; if(!req) return true;
  return req.every(id=>S.mateLecciones[id]);
 }
-function jefeCalcDesbloqueado(){ return QA||calcEstado().etapas.every(e=>e>=RC_ETAPAS); }
+function jefeCalcDesbloqueado(){ return MODO_ABIERTO||calcEstado().etapas.every(e=>e>=RC_ETAPAS); }
 function calcTiempo(dif){ return 20; }  // tiempo fijo: no se acorta aunque suba la dificultad
 function abrirRetoCalculo(){ renderNivelesCalc(); go('scr-calc-mapa'); }
 function renderNivelesCalc(){
@@ -2076,7 +2098,7 @@ function pintaOpCalc(){
  $('calcCombo').textContent=RC.combo>=2?('🔥 COMBO x'+RC.combo):'';
  $('calcPreg').textContent=o.pregunta;
  const cont=$('calcOpts'); cont.innerHTML='';
- o.opciones.forEach((op,i)=>{const b=document.createElement('button');b.textContent=op;if(QA&&i===o.ok)b.classList.add('qa-ok');b.onclick=()=>responderCalc(i,b);cont.appendChild(b);});
+ o.opciones.forEach((op,i)=>{const b=document.createElement('button');b.textContent=op;if(QA_MARCA&&i===o.ok)b.classList.add('qa-ok');b.onclick=()=>responderCalc(i,b);cont.appendChild(b);});
  const tf=$('calcTimerFill'), bar=tf.parentElement; bar.classList.remove('low'); tf.style.width='100%';
  const t0=Date.now(), tMax=RC.tMax;
  RC.timer=setInterval(()=>{ const rest=Math.max(0,tMax-(Date.now()-t0)/1000);
@@ -2190,15 +2212,15 @@ function expedicionCompleta(id){
 function capsCompletos(camp){return camp.capitulos.filter(expedicionCompleta).length;}
 // ¿está desbloqueado el capítulo i de la campaña? (cap 1 siempre; cap N tras vencer N-1)
 function nodoCampDesbloqueado(camp,i){
- if(QA)return true;
+ if(MODO_ABIERTO)return true;
  if(i===0)return true;
  const exp=EXPEDICIONES.find(e=>e.id===camp.capitulos[i]);
  if(exp&&exp.libre)return true;   // capítulo marcado como libre (siempre abierto)
  if(i<camp.capitulos.length)return expedicionCompleta(camp.capitulos[i-1]);
  return false;
 }
-function desafioDesbloqueado(camp){return QA||camp.capitulos.every(expedicionCompleta);}
-function jefeFinalDesbloqueado(camp){return QA||(desafioDesbloqueado(camp)&&(!camp.desafioExtra||expedicionCompleta(camp.desafioExtra)));}
+function desafioDesbloqueado(camp){return MODO_ABIERTO||camp.capitulos.every(expedicionCompleta);}
+function jefeFinalDesbloqueado(camp){return MODO_ABIERTO||(desafioDesbloqueado(camp)&&(!camp.desafioExtra||expedicionCompleta(camp.desafioExtra)));}
 function campañaCompleta(camp){return S.campañasCompletas.has(camp.id);}
 /* Activa una expedición: fija etapas, carga su pool y apunta el progreso a esa ruta */
 function activarExpedicion(exp){
@@ -2207,7 +2229,13 @@ function activarExpedicion(exp){
  S.progreso=st.progreso; S.progresoDificil=st.progresoDificil; S.dificilDesbloqueado=st.dificilDesbloqueado;
  return cargarPool(exp);
 }
-function guardar(){try{
+function guardar(){
+ // Modo prueba: el avance vive solo en memoria. Se conserva el volcado a S.rutas
+ // (si no, al volver del mapa a la lista se perdería el avance dentro de la misma
+ // sesión), pero NO se toca localStorage ni se sincroniza con Supabase.
+ // Deliberadamente NO se usa EFIMERO aquí: ?qa=1 siempre guardó, y se deja igual.
+ if(PRUEBA){ if(EXP_ACT) S.rutas[EXP_ACT.id]={progreso:S.progreso,progresoDificil:S.progresoDificil,dificilDesbloqueado:S.dificilDesbloqueado}; return; }
+ try{
  if(EXP_ACT) S.rutas[EXP_ACT.id]={progreso:S.progreso,progresoDificil:S.progresoDificil,dificilDesbloqueado:S.dificilDesbloqueado};
  localStorage.setItem(SAVE_KEY,JSON.stringify({
   nombre:S.nombre,avatar:S.avatar,xp:S.xp,monedas:S.monedas,
@@ -2299,7 +2327,7 @@ let DOM_BUF = {};                       // { "HI08 OA 04": {n:6, ok:4} }
 const DOM_PEND = 'kimun_dom_pend';      // resúmenes que no se pudieron enviar
 
 function registrarOA(oa, ok){
- if(QA) return;                         // el modo QA marca las respuestas: no mide nada
+ if(EFIMERO) return;                    // QA marca las respuestas y el modo prueba no guarda: no se mide nada
  if(!oa) return;
  if(/^(AF-|VOC-)/.test(oa)) return;     // OA de apoyo (Vocabulario/Lectura): no van al mapa de dominio
  const d = DOM_BUF[oa] || (DOM_BUF[oa] = {n:0, ok:0});
@@ -2481,12 +2509,15 @@ function finDuelo(){
   document.body.appendChild(s);setTimeout(()=>s.remove(),1400);}
  (function agenda(){setTimeout(()=>{estrellaFugaz();agenda();},8000+Math.random()*14000);})();
  window.estrellaFugaz=estrellaFugaz;
- cargar();
+ if(!PRUEBA) cargar();       // el modo prueba nunca lee la partida guardada del teléfono
  pintarInicio();
+ if(PRUEBA) setTimeout(arrancarModoPrueba,0);   // tras montar la UI
  aplicarMaestria();   // aura dorada si ya es maestro (no depende del servidor)
  // Perfil en el servidor desde el inicio (antes solo se creaba al entrar al duelo).
  // No bloquea: si falla, el juego funciona igual y se reintenta en la próxima sesión.
- setTimeout(async ()=>{
+ // En modo prueba no se toca Supabase: el invitado no existe para el backend.
+ // (?qa=1 sí sigue creando perfil, como siempre.)
+ if(!PRUEBA) setTimeout(async ()=>{
   const p = await conectarKimun();
   if(!p) return;
   if(p.codigo_acceso){ S.alumno = p.nombre; S.nombre = p.nombre; S.avatar = p.avatar; }
@@ -2580,12 +2611,24 @@ function abrirAsignatura(asig){
 }
 function entrarExpedicion(exp){
  if(!exp.activa){alert('🚀 La expedición de '+exp.asignatura+' viene pronto. ¡Sigue explorando Historia!');return;}
- const tienePartida=hayPartida();
- if(tienePartida) cargar();
+ // En modo prueba el invitado ya tiene nombre y avatar: nunca pasa por scr-inicio.
+ const tienePartida=PRUEBA?true:hayPartida();
+ if(tienePartida && !PRUEBA) cargar();
  activarExpedicion(exp).then(()=>{
-  if(tienePartida){refreshHud();renderMapa();renderRanking();$('nav').style.display='flex';go('scr-mapa');datoKimun();}
+  if(tienePartida){refreshHud();renderMapa();renderRanking();
+   $('nav').style.display=PRUEBA?'none':'flex';go('scr-mapa');datoKimun();}
   else go('scr-inicio');
  });
+}
+/* Modo prueba (?solo=): entra como invitado y abre directamente la lista de capítulos
+   permitidos, saltándose "¿Cómo quieres entrar?" y la pantalla de nombre/avatar. */
+function arrancarModoPrueba(){
+ S.nombre='Invitado'; S.avatar=AVATARES[4];   // 🦊, la mascota
+ const exp=EXPEDICIONES.find(e=>e.id===SOLO[0]);
+ const camp=exp&&exp.campaña?campañaPorId(exp.campaña):null;
+ $('nav').style.display='none';
+ if(camp){abrirCampaña(camp);return;}
+ entrarExpedicion(exp);      // capítulo suelto (sin campaña): directo a su mapa
 }
 $('btnJugador').onclick=()=>{SND.init();SND.tap();$('nav').style.display='none';renderExpediciones();go('scr-expediciones');};
 // Acceso a la tienda desde Expediciones (la tienda recuerda de dónde se abrió para volver).
@@ -2662,11 +2705,16 @@ $('btnMapaCamp').onclick=()=>{SND.tap();
  go('scr-expediciones');};
 function renderCampaña(){
  const c=CAMP_ACT; if(!c)return;
+ // En modo prueba no hay a dónde volver: el botón llevaba a la pantalla completa
+ // de Expediciones (todas las asignaturas + tienda), que es justo lo que se oculta.
+ if($('btnCampBack')) $('btnCampBack').style.display=PRUEBA?'none':'';
  if(c.esLecciones){ renderCampañaMate(c); return; }
  $('campHead').innerHTML=`<h1 style="font-size:26px">${c.asignatura} ${campañaCompleta(c)?'👑':''}</h1><p>${c.intro}</p>`;
  const cont=$('campNodos'); cont.innerHTML='';
- // capítulos en orden
+ // capítulos en orden. En modo prueba se muestran solo los pedidos por ?solo=,
+ // conservando su número original (el capítulo 2 se sigue llamando 2, no 1).
  c.capitulos.forEach((id,i)=>{
+  if(PRUEBA && !SOLO.includes(id)) return;
   const exp=EXPEDICIONES.find(e=>e.id===id);
   const abierto=nodoCampDesbloqueado(c,i), hecho=expedicionCompleta(id);
   const titulo=(exp.nivel.split('· ')[1]||exp.nivel);
@@ -2674,19 +2722,22 @@ function renderCampaña(){
     abierto?()=>entrarExpedicion(exp):null, hecho?'Completado':(abierto?'¡Jugar!':'🔒 Bloqueado'),
     portadaMapa(exp), portadaFallback(exp)));
  });
- // desafío extra (solo si la campaña lo define)
- if(c.desafioExtra){
+ // desafío extra (solo si la campaña lo define). En modo prueba no se muestra:
+ // exige haber completado todos los capítulos, que aquí no están.
+ if(c.desafioExtra && !PRUEBA){
   const de=EXPEDICIONES.find(e=>e.id===c.desafioExtra);
   const deAb=desafioDesbloqueado(c), deHecho=expedicionCompleta(c.desafioExtra);
   cont.appendChild(nodoCampañaEl('⭐','Desafío Extra: Chile hoy', deAb, deHecho,
     deAb?()=>entrarExpedicion(de):null, deHecho?'Completado':(deAb?'¡Desafío!':'🔒 Termina los capítulos'),
     portadaMapa(de), portadaFallback(de)));
  }
- // jefe final (luce al villano de la campaña)
- const jfAb=jefeFinalDesbloqueado(c), jfHecho=campañaCompleta(c);
- cont.appendChild(nodoCampañaEl('👑','JEFE FINAL DE '+c.asignatura.toUpperCase(), jfAb, jfHecho,
-   jfAb?()=>iniciarJefeFinal(c):null, jfHecho?'¡Vencido!':(jfAb?'¡Al 100%! Enfréntalo':'🔒 Completa todo'),
-   c.jefeFinal.villanoImg||''));
+ // jefe final (luce al villano de la campaña). Fuera del modo prueba, por lo mismo.
+ if(!PRUEBA){
+  const jfAb=jefeFinalDesbloqueado(c), jfHecho=campañaCompleta(c);
+  cont.appendChild(nodoCampañaEl('👑','JEFE FINAL DE '+c.asignatura.toUpperCase(), jfAb, jfHecho,
+    jfAb?()=>iniciarJefeFinal(c):null, jfHecho?'¡Vencido!':(jfAb?'¡Al 100%! Enfréntalo':'🔒 Completa todo'),
+    c.jefeFinal.villanoImg||''));
+ }
 }
 // Campaña de Matemáticas: capítulos = grupos de lecciones. Además, acceso al Reto.
 function renderCampañaMate(c){
@@ -2705,7 +2756,7 @@ function renderCampañaMate(c){
   // Expedición de la unidad: se abre al completar sus lecciones (enseña → desafío)
   const exp=EXPEDICIONES.find(e=>e.id===c.capitulos[i]);
   if(exp){
-   const expAb=QA||capMateCompleto(cap), expHecho=expedicionCompleta(exp.id);
+   const expAb=MODO_ABIERTO||capMateCompleto(cap), expHecho=expedicionCompleta(exp.id);
    cont.appendChild(nodoCampañaEl('⚔️', 'Expedición · '+cap.titulo, expAb, expHecho,
      expAb?()=>entrarExpedicion(exp):null,
      expHecho?'Completada':(expAb?'¡Al desafío!':'🔒 Termina las lecciones'),
@@ -2724,7 +2775,7 @@ function renderCampañaMate(c){
    jfHecho?'¡Vencido!':(jfAb?'¡Al 100%! Enfréntalo':'🔒 Vence las 4 expediciones'),
    c.jefeFinal.villanoImg||''));
 }
-function jefeFinalMateDesbloqueado(c){ return QA || (c.capitulos.length>0 && c.capitulos.every(expedicionCompleta)); }
+function jefeFinalMateDesbloqueado(c){ return MODO_ABIERTO || (c.capitulos.length>0 && c.capitulos.every(expedicionCompleta)); }
 function capMateCompleto(cap){ if(!cap||!cap.lecciones||!cap.lecciones.length)return false;
  return cap.lecciones.every(id=>S.mateLecciones[id]); }
 // img/imgAlt: portada del capítulo (o villano del jefe). Sin imagen, el círculo lleva la marca.
@@ -2796,7 +2847,7 @@ function renderJefePregunta(){
  const ops=cont.querySelector('#jfOpts');
  orden.forEach((it,k)=>{const b=document.createElement('div');b.className='opt';
   if(it.i===p.ok)b.dataset.correcta='1';
-  if(QA&&it.i===p.ok)b.classList.add('qa-ok');
+  if(QA_MARCA&&it.i===p.ok)b.classList.add('qa-ok');
   b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${it.o}`;
   b.onclick=()=>responderJefe(b,it.i===p.ok);ops.appendChild(b);});
  JF.lock=false;
@@ -3068,7 +3119,7 @@ function odPinta(){
  const orden=P.opciones.map((o,i)=>({o,i})).sort(()=>Math.random()-.5);
  const box=$('odOpts');box.innerHTML='';
  orden.forEach((it,k)=>{const b=document.createElement('div');b.className='opt';
-  if(QA&&it.i===P.correcta)b.classList.add('qa-ok');
+  if(QA_MARCA&&it.i===P.correcta)b.classList.add('qa-ok');
   b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${it.o}`;b.onclick=()=>odResponder(b,it.i===P.correcta);box.appendChild(b);});
  clearInterval(OD.timer);OD.t=15;$('odTimer').textContent=OD.t;$('odTimer').className='timer';
  OD.timer=setInterval(()=>{OD.t--;$('odTimer').textContent=OD.t;if(OD.t<=5){$('odTimer').classList.add('low');if(OD.t>0)SND.tick();}
@@ -3289,7 +3340,7 @@ function pintaPregunta(){
  orden.forEach((it,k)=>{
   const b=document.createElement('div');b.className='opt';
   if(it.i===P.ok)b.dataset.correcta='1';
-  if(QA&&it.i===P.ok)b.classList.add('qa-ok');
+  if(QA_MARCA&&it.i===P.ok)b.classList.add('qa-ok');
   b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${it.o}`;
   b.onclick=e=>responder(b,it.i===P.ok,P,e);
   $('qOpts').appendChild(b);});
@@ -3503,7 +3554,7 @@ function terminarDesafio(){
   if(!S.insignias.has('mision-profe')){ S.insignias.add('mision-profe');
     if(!S.insigniaActiva)S.insigniaActiva='mision-profe'; insigniaNueva=true; }
   guardar(); refreshHud();
-  if(!QA && SB && MI_PERFIL){
+  if(!EFIMERO && SB && MI_PERFIL){
     try{ Promise.resolve(SB.rpc('kimun_refuerzo_completar',
       {p_desafio_id:Q.desafio.id,p_correctas:ac,p_total:tot})).catch(()=>{}); }catch(e){}
   }
@@ -3521,13 +3572,17 @@ function terminarDesafio(){
   particulas(window.innerWidth/2,window.innerHeight/3,['🎉','⭐','✨','📣'],24);
   go('scr-res');
 }
-/* Aviso visible del modo QA (solo con ?qa=1). */
+/* Aviso visible del modo QA (solo con ?qa=1). El del modo prueba se agrega aparte. */
 if(QA){const b=document.createElement('div');b.className='qa-badge';b.textContent='🧪 QA · respuestas marcadas · todo desbloqueado';document.body.appendChild(b);}
+/* Aviso del modo prueba (?solo=): deja claro que el avance no se guarda. */
+if(PRUEBA&&!QA){const b=document.createElement('div');b.className='qa-badge';b.style.background='var(--cyan)';b.style.color='#04231a';
+ b.textContent='🧪 Modo prueba · no se guarda tu avance';document.body.appendChild(b);}
 
 /* Intro de bienvenida: se ve una sola vez por dispositivo. ?intro=1 la fuerza a repetirse.
    Intenta reproducir CON sonido; si el navegador bloquea el autoplay, pide un toque. */
 (function(){
  const ov=$('introOverlay'); if(!ov) return;
+ if(PRUEBA){ ov.remove(); return; }   // modo prueba: entrada directa, y no se escribe kimun_intro
  const vid=$('introVid'), skip=$('introSkip'), tap=$('introTap');
  const forzar=new URLSearchParams(location.search).has('intro');
  const visto=localStorage.getItem('kimun_intro');

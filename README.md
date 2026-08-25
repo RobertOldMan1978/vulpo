@@ -48,8 +48,10 @@ para calificar**.
 
 ## Cómo probarlo
 
-Abre `index.html` en cualquier navegador moderno, o entra a la versión publicada
-en GitHub Pages (ver la URL en la configuración del repositorio, sección *Pages*).
+El juego está publicado en **https://vulpo.cl** y el panel del profesor en
+**https://vulpo.cl/profesor.html**. También puedes abrir `index.html` en cualquier
+navegador moderno (para desarrollo local conviene un servidor: `python -m http.server`,
+porque el JavaScript no funciona bien desde `file://`).
 
 ## Estado
 

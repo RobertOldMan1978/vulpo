@@ -231,6 +231,21 @@ para siempre.
   global `QA` y la clase CSS `.qa-ok`.
 - **`?intro=1`:** fuerza que la intro de bienvenida se reproduzca aunque ya se haya visto
   (por defecto se ve una sola vez por dispositivo; flag `kimun_intro` en localStorage).
+- **`?solo=id1,id2,…` — Modo prueba (enlace acotado):** muestra **solo** esos capítulos
+  (ids de `EXPEDICIONES`), **todos abiertos** — capitulos y las 5 etapas de cada uno,
+  jefe de capítulo incluido — y con **dificultad normal**: a diferencia de `?qa=1`, **NO**
+  marca las respuestas. **No guarda nada**: ni `localStorage` ni Supabase, y **no toca la
+  partida** que ya exista en ese teléfono (el alumno que ya jugaba conserva monedas,
+  skins y campañas). Entra como "Invitado", sin pedir código `ALU-` y sin la intro.
+  Oculta la barra inferior (Tienda/Logros), el botón "Volver" de la campaña, el Desafío
+  Extra y el Jefe Final. Pensado para pasarle a un grupo de alumnos un enlace de
+  práctica acotado a las unidades que están viendo.
+  Ejemplo: `https://vulpo.cl/?solo=hist-cap2,hist-cap3,hist-cap4`.
+  Se puede **combinar con `?qa=1`** para revisar contenido acotado (manda QA: marca las
+  respuestas, pero se sigue sin guardar). Ids inválidos se ignoran; si no queda ninguno
+  válido, cae al juego normal.
+  **No es un candado:** al ser un sitio estático, quien borre el parámetro llega al juego
+  completo. Es acotamiento, no seguridad.
 
 ### Tablero de avance (`dev/tablero.html`)
 
@@ -2309,3 +2324,42 @@ archivo `CNAME`).
 - **Aprobación pedagógica de los 2 bancos de apoyo — HECHA:** Roberto aprobó Vocabulario y Ana
   Frank (`revisada:true` en todas). Contenido real del proyecto: **2.536/2.536 revisado**.
 - **Panel del profesor responsivo en computador** (ensancha a 880px; el juego sigue mobile-first).
+
+### Sesión 41 (2026-08-24) — Modo prueba `?solo=`: enlace acotado a capítulos sueltos
+Roberto necesitaba pasarle a un grupo de alumnos un enlace para **probar** tres capítulos de
+Historia (`hist-cap2`, `hist-cap3`, `hist-cap4`) sin jugarse antes el capítulo 1 y sin que la
+prueba dejara rastro. `?qa=1` no servía porque además marca las respuestas. Todo el trabajo
+es en `index.html`; no se tocó `profesor.html`, `schema.sql` ni el contenido.
+- **Enlace nuevo:** `https://vulpo.cl/?solo=hist-cap2,hist-cap3,hist-cap4`. Parámetro
+  genérico (lista de ids de `EXPEDICIONES`), no un alias fijo, para que Roberto arme
+  cualquier combinación sin pedir cambios de código. Documentado arriba, en "Parámetros de
+  URL (ocultos)".
+- **La constante `QA` se partió en cuatro banderas.** Mezclaba cosas distintas en ~15 usos:
+  `MODO_ABIERTO` (ignora los candados entre capítulos, QA y prueba), `QA_MARCA` (pinta la
+  respuesta correcta, **solo** QA), `EFIMERO` (no mide dominio por OA ni reporta refuerzos,
+  QA y prueba) y `PRUEBA` (además no escribe en disco ni usa Supabase, **solo** prueba).
+  **`?qa=1` quedó idéntico a como estaba** — verificado: desbloquea, marca, guarda en disco
+  y crea perfil, igual que antes.
+- **Dos fallos que aparecieron recién al probar en el navegador** (no estaban en el plan):
+  1. Los capítulos se abrían, pero **las 5 etapas de adentro seguían encadenadas**:
+     `nuevoProgreso()` abre solo la primera y ninguna bandera lo tocaba. Ahora en modo prueba
+     la ruta nace con todas las etapas abiertas, jefe de capítulo incluido.
+  2. El botón **"← Volver" de la campaña era una fuga**: llevaba a la pantalla completa de
+     Expediciones (todas las asignaturas + tienda), justo lo que el modo prueba oculta. Se
+     oculta el botón cuando `PRUEBA`.
+- **Verificado en el navegador**, cinco modos con la consola limpia: juego normal (capítulo 1
+  abierto, 2–5 bloqueados, guarda); `?qa=1` (desbloquea + marca + guarda, sin cambios);
+  `?solo=` con los tres capítulos (2-3-4 abiertos, 5 etapas abiertas cada uno, **0 respuestas
+  marcadas**, sin barra inferior, badge celeste); `?solo=…&qa=1` (un capítulo, marcado, sin
+  guardar); e id inválido (cae al juego normal). **Prueba clave del no-guardado:** se sembró
+  un `kimun_save` ajeno, se jugó en modo prueba (el XP subió a 30 en memoria) y el archivo
+  quedó **byte a byte igual**; `guardar()` llamado a mano tampoco lo tocó; sin llamadas a
+  Supabase; al recargar, el avance del invitado se evapora.
+- **Límites conocidos (aceptados):** el enlace **no es un candado** (sitio estático: borrar el
+  parámetro devuelve el juego completo); el avance de estos alumnos **no llega al panel del
+  profesor** ni al ranking, por diseño; y la concurrencia no es problema (GitHub Pages sirve
+  estáticos y el modo prueba no toca el backend).
+- **Decisión tomada al implementar:** en modo prueba se **salta la intro** en video, porque
+  escribe `kimun_intro` en `localStorage` y eso contradecía el "no guardar nada".
+- **Diseño y plan:** `docs/superpowers/specs/2026-08-24-modo-prueba-enlace-acotado-design.md`
+  y `docs/superpowers/plans/2026-08-24-modo-prueba-enlace-acotado.md`.
