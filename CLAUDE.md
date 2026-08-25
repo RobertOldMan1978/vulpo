@@ -2829,6 +2829,12 @@ Cada hallazgo de seguridad se **verificó a mano contra el código** antes de ac
   **"Sin riesgo"** con el mensaje de valor sin números ("cuesta menos que una hora de reforzamiento
   particular") y CTA "Coordinemos una demo de 15 minutos"; celular reencuadrado como **uso en casa**;
   micro-CTA de apoderado. Verificado en el navegador (Inter aplicada, franja y secciones presentes,
-  sin desborde a 424/1280, sin errores). **Pendiente (siguiente incremento):** una sección de fondo
-  claro para romper el muro oscuro, marcos de dispositivo en las capturas, y un enlace de agenda real
-  (Calendly) — hoy el CTA usa WhatsApp con copy B2B.
+  sin desborde a 424/1280, sin errores).
+- **Rediseño de la landing — segundo incremento (aplicado):** la sección **"Para el profesor" pasa a
+  fondo claro** (rompe el muro oscuro y hace resaltar las capturas del panel; el texto se invierte a
+  oscuro con las variantes `.clara .dim`/`.kicker`, verificadas legibles), y las **3 capturas del
+  panel** (dominio, refuerzo, ranking) van dentro de un **marco de ventana de navegador** (`.mock`
+  con barra + 3 puntos), con variante clara/oscura según la sección. Verificado sin desborde
+  (375/1280) ni errores. **Pendiente (menor):** un enlace de agenda real (Calendly/Google) para el
+  CTA "Coordinemos una demo" —hoy WhatsApp— y, opcional, un marco de teléfono para la captura del
+  juego.

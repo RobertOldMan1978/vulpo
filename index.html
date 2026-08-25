@@ -83,6 +83,29 @@ img.captura{width:100%;border-radius:var(--r);border:1px solid #ffffff26;display
   padding:5px 12px;font-size:12px;font-weight:700;letter-spacing:.02em}
 .pie-captura{color:var(--dim);font-size:13px;font-weight:500;margin-top:8px;text-align:center}
 .dato{font-family:'Titan One',cursive;font-size:34px;color:var(--gold);display:block;line-height:1.1}
+
+/* Marco de "software": las capturas van dentro de una ventana con barra de navegador,
+   para que se lean como producto y no como recortes sueltos. */
+.mock{border-radius:14px;overflow:hidden;box-shadow:0 14px 36px rgba(0,0,0,.4);border:1px solid #ffffff1f}
+.mock .barra{display:flex;align-items:center;gap:7px;padding:10px 13px;background:#1a1440;border-bottom:1px solid #ffffff12}
+.mock .barra i{width:11px;height:11px;border-radius:50%;display:inline-block;background:#ffffff30}
+.mock .barra i:nth-child(1){background:#ff5f57}
+.mock .barra i:nth-child(2){background:#febc2e}
+.mock .barra i:nth-child(3){background:#28c840}
+.mock img.captura{border:0;border-radius:0;box-shadow:none;width:100%}
+.mock.marco-captura .simulado{top:auto;bottom:10px}
+
+/* Sección de fondo claro: rompe el muro oscuro y hace resaltar las capturas del panel.
+   El texto se invierte a oscuro (los .dim y .kicker tienen su variante clara). */
+.clara{background:#f5f3fb;color:#2b2450;border-top:1px solid #00000010}
+.clara h2,.clara h3{color:#1c1540}
+.clara .kicker{color:#6a4cff;opacity:1}
+.clara .dim{color:#5c5585}
+.clara .tarjeta{background:#fff;border-color:#00000012;box-shadow:0 6px 18px rgba(30,20,60,.07)}
+.clara .tarjeta:hover{border-color:#00000024}
+.clara .pie-captura{color:#6b6498}
+.clara .mock{border-color:#00000014;box-shadow:0 14px 34px rgba(30,20,60,.16)}
+.clara .mock .barra{background:#e9e6f4;border-bottom-color:#00000010}
 ul{list-style:none}
 li{position:relative;padding-left:22px}
 li::before{content:"\2726";position:absolute;left:0;color:var(--gold)}
@@ -150,24 +173,27 @@ footer a{color:var(--cyan)}
   </div>
 </section>
 
-<section class="seccion envoltura">
+<section class="seccion clara">
+ <div class="envoltura">
   <span class="kicker">Para el profesor</span>
   <h2>El panel te dice qué reforzar, y con quién.</h2>
-  <p style="max-width:740px;color:var(--dim)">
+  <p class="dim" style="max-width:740px">
     El mapa de dominio ordena los objetivos de aprendizaje de peor a mejor logro, y dice
     quiénes necesitan apoyo en cada uno. Es una brújula para decidir qué reforzar en clase:
-    <b style="color:var(--txt)">no sirve para calificar, y no está pensado para eso.</b>
+    <b style="color:#1c1540">no sirve para calificar, y no está pensado para eso.</b>
   </p>
   <p class="dim" style="font-size:13px;margin-top:10px">
     Las imágenes de esta sección corresponden a un <b>curso de demostración</b>: los nombres y los porcentajes son simulados.
   </p>
-  <div class="marco-captura" style="margin-top:20px">
+  <div class="marco-captura mock" style="margin-top:20px">
+    <div class="barra"><i></i><i></i><i></i></div>
     <img class="captura" src="assets/web/panel-dominio.png"
          alt="Panel del profesor: objetivos de aprendizaje ordenados de menor a mayor porcentaje de acierto, con la cantidad de alumnos y reintentos de cada uno">
     <span class="simulado">DATOS SIMULADOS</span>
   </div>
   <p class="pie-captura">Avance por objetivo: lo que está más flojo, primero.</p>
-  <div class="marco-captura" style="margin-top:24px">
+  <div class="marco-captura mock" style="margin-top:24px">
+    <div class="barra"><i></i><i></i><i></i></div>
     <img class="captura" src="assets/web/panel-refuerzo.png"
          alt="Refuerzo sugerido por asignatura, con un botón para lanzar el desafío al curso">
     <span class="simulado">DATOS SIMULADOS</span>
@@ -181,6 +207,7 @@ footer a{color:var(--cyan)}
     <div class="tarjeta"><h3>Ranking real</h3>
       <p class="dim" style="font-size:14px;margin-top:6px">Los compañeros compiten con datos de verdad, por curso y por asignatura.</p></div>
   </div>
+ </div>
 </section>
 
 <section class="seccion envoltura">
@@ -221,7 +248,8 @@ footer a{color:var(--cyan)}
     <img class="captura" src="assets/web/juego-mapa.png" alt="Mapa de una expedición de Historia dentro del juego, con etapas completadas y estrellas"
          style="max-width:300px;margin:0 auto">
   </div>
-  <div class="marco-captura" style="margin-top:28px">
+  <div class="marco-captura mock" style="margin-top:28px">
+    <div class="barra"><i></i><i></i><i></i></div>
     <img class="captura" src="assets/web/panel-ranking.png"
          alt="Ranking del curso por asignatura, con el porcentaje de acierto de cada alumno">
     <span class="simulado">DATOS SIMULADOS</span>
