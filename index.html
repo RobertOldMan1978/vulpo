@@ -111,6 +111,14 @@ img.captura{width:100%;border-radius:var(--r);border:1px solid #ffffff26;display
 .clara .pie-captura{color:#6b6498}
 .clara .mock{border-color:#00000014;box-shadow:0 14px 34px rgba(30,20,60,.16)}
 .clara .mock .barra{background:#e9e6f4;border-bottom-color:#00000010}
+/* Cita textual de una fuente oficial: barra dorada a la izquierda, para que se lea como
+   respaldo y no como texto de la página. Tiene variante clara para .clara. */
+.cita{border-left:3px solid var(--gold);background:#ffffff0a;border-radius:0 12px 12px 0;
+  padding:16px 20px;margin-top:20px;font-size:clamp(16px,2.4vw,20px);line-height:1.5;font-style:italic}
+.cita b{font-style:normal}
+.cita .fuente{display:block;margin-top:10px;font-size:13px;font-style:normal;color:var(--dim);letter-spacing:.01em}
+.clara .cita{background:#6a4cff0d}
+.clara .cita .fuente{color:#5c5585}
 ul{list-style:none}
 li{position:relative;padding-left:22px}
 li::before{content:"\2726";position:absolute;left:0;color:var(--gold)}
@@ -175,6 +183,30 @@ footer a{color:var(--cyan)}
       una tarea que sí quieren hacer— y el profesor llega a clase sabiendo qué reforzar. No requiere
       cambiar tu regla sobre el celular en la sala, y no hay que instalar nada.
     </p>
+  </div>
+</section>
+
+<section class="seccion envoltura">
+  <span class="kicker">Evaluación formativa</span>
+  <h2>No es un juego suelto: es la evaluación formativa que pide el MINEDUC.</h2>
+  <p style="max-width:760px;color:var(--dim)">
+    VULPO es un <b style="color:var(--txt)">cuestionario interactivo con reportes inmediatos</b>
+    — la misma familia de herramientas que el propio Ministerio de Educación reconoce como apoyo
+    válido de la evaluación formativa. Y va más allá: convierte cada respuesta en un
+    <b style="color:var(--txt)">mapa de dominio objetivo por objetivo</b> para el profesor.
+  </p>
+  <div class="cita">
+    "…aplicaciones o páginas web que permiten aplicar la evaluación formativa."
+    <span class="fuente">— MINEDUC, <i>Orientaciones de Evaluación y Retroalimentación</i> (2021),
+    apartado de herramientas digitales, que nombra los cuestionarios interactivos entre esos apoyos.</span>
+  </div>
+  <div class="rejilla" style="margin-top:26px">
+    <div class="tarjeta"><h3 style="color:var(--cyan)">Durante el proceso</h3>
+      <p class="dim" style="font-size:14px;margin-top:6px">La evaluación formativa acompaña el aprendizaje mientras ocurre, no al final. Tu curso repasa el año, clase a clase, desde casa.</p></div>
+    <div class="tarjeta"><h3 style="color:var(--cyan)">Sin poner notas</h3>
+      <p class="dim" style="font-size:14px;margin-top:6px">El Decreto 67 recomienda que la evaluación formativa no se califique. VULPO no pone notas: entrega información para reforzar, no para calificar.</p></div>
+    <div class="tarjeta"><h3 style="color:var(--cyan)">Donde más rinde</h3>
+      <p class="dim" style="font-size:14px;margin-top:6px">El MINEDUC destaca que la evaluación formativa ayuda especialmente a los estudiantes que necesitan más apoyo. El panel muestra justo a quiénes y en qué.</p></div>
   </div>
 </section>
 

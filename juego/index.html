@@ -168,6 +168,26 @@ input.nm:focus{border-color:var(--cyan)}
 .opt.ok{background:#128a56;border-color:var(--green);animation:bump .35s}
 .opt.bad{background:#8a1240;border-color:var(--pink);animation:shake .35s}
 .opt.off{opacity:.45;pointer-events:none}
+.opt.descartada{opacity:.22;pointer-events:none;text-decoration:line-through}
+.btn-ayuda{display:block;margin:10px auto 0;padding:8px 16px;border:0;border-radius:12px;
+  font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;cursor:pointer;
+  color:#2a1400;background:linear-gradient(180deg,var(--gold),#ff9d3c);box-shadow:0 3px 10px rgba(0,0,0,.3)}
+.btn-ayuda:disabled{opacity:.4;cursor:default;filter:grayscale(.4)}
+.res-obj{color:var(--dim);font-weight:800;font-size:14px;margin:2px 0 8px}
+.qmeta{color:var(--dim);font-weight:800;font-size:12px;margin-top:6px}
+#scr-meta .meta-card{max-width:460px;margin:40px auto 0;background:var(--panel2);border:1px solid #ffffff1f;
+  border-radius:18px;padding:26px 22px;text-align:center;box-shadow:0 12px 34px rgba(0,0,0,.4)}
+#scr-meta .meta-ic{font-size:44px;display:block;margin-bottom:8px}
+#scr-meta .meta-kick{color:var(--gold);font-weight:900;font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+#scr-meta .meta-frase{color:var(--txt);font-weight:800;font-size:20px;line-height:1.35;margin:10px 0 20px}
+.res-sem{margin:6px 0 12px}
+.res-sem-tit{display:block;color:var(--dim);font-weight:800;font-size:14px;margin-bottom:6px}
+#resSem{display:flex;gap:10px;justify-content:center}
+.sem{font-size:30px;line-height:1;background:transparent;border:2px solid transparent;border-radius:14px;
+  padding:4px 8px;cursor:pointer;opacity:.6;transition:.12s}
+.sem:hover{opacity:1}
+.sem.sel{opacity:1;border-color:var(--gold);background:#ffffff10;transform:scale(1.08)}
+.res-sem-msg{min-height:18px;color:var(--txt);font-weight:800;font-size:13px;margin-top:8px}
 @keyframes bump{50%{transform:scale(1.04)}}
 @keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 .feedback{min-height:22px;text-align:center;font-weight:900;margin-top:4px}
@@ -941,6 +961,16 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
     </div>
   </section>
 
+  <!-- ============ META DE LA ETAPA (primera vez) ============ -->
+  <section class="screen" id="scr-meta">
+    <div class="meta-card">
+      <span class="meta-ic">🎯</span>
+      <div class="meta-kick">Lo que vas a aprender</div>
+      <p class="meta-frase" id="metaTxt"></p>
+      <button class="btn" id="metaVamos" type="button">¡Vamos! ▶</button>
+    </div>
+  </section>
+
   <!-- ============ QUIZ ============ -->
   <section class="screen" id="scr-quiz">
     <div class="qtop">
@@ -952,8 +982,10 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
     <div class="qcard">
       <div class="tag" id="qTag">Nivel 1</div>
       <h2 id="qText">Pregunta…</h2>
+      <div id="qMeta" class="qmeta" hidden></div>
     </div>
     <div class="opts" id="qOpts"></div>
+    <button class="btn-ayuda" id="btnAyuda" type="button" hidden>💡 Ayuda (2)</button>
     <div class="feedback" id="qFb"></div>
     <div class="qexpl" id="qExpl" hidden></div>
     <button class="btn seguir" id="btnSeguir" hidden>Continuar ➜</button>
@@ -964,13 +996,24 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
     <div class="resbox">
       <img class="big kim-res" id="resKim" src="assets/kimun-oro.png" alt="Vulpi">
       <h2 id="resTitle">¡Nivel superado!</h2>
+      <p id="resObj" class="res-obj" hidden></p>
       <div class="starline" id="resStars"></div>
       <div class="statgrid">
         <div class="stat"><b id="resXp" style="color:var(--cyan)">+0</b><small>XP</small></div>
         <div class="stat"><b id="resCoins" style="color:var(--gold)">+0</b><small>Monedas</small></div>
         <div class="stat"><b id="resCombo" style="color:var(--pink)">x0</b><small>Combo máx</small></div>
       </div>
+      <div class="res-sem">
+        <span class="res-sem-tit">¿Cómo te fue?</span>
+        <div id="resSem">
+          <button class="sem" data-v="🟢" type="button">🟢</button>
+          <button class="sem" data-v="🟡" type="button">🟡</button>
+          <button class="sem" data-v="🔴" type="button">🔴</button>
+        </div>
+        <p id="resSemMsg" class="res-sem-msg"></p>
+      </div>
       <button class="btn" id="btnNext">SIGUIENTE ETAPA ➜</button>
+      <button class="btn" id="btnPaso" type="button" style="display:none;background:linear-gradient(180deg,var(--green),#1fa862);color:#04231a"></button>
       <button class="btn sec" id="btnMap">VOLVER AL MAPA</button>
     </div>
   </section>
@@ -1534,6 +1577,84 @@ function poolListo(lvl){
  const c=EXPEDICION[lvl];
  return c.oas?c.oas.every(oa=>(POOL[oa]||[]).length):(POOL[c.oa]||[]).length>0;
 }
+// Meta de aprendizaje en lenguaje de niño, por OA. Se completa por revisión (ver el plan del
+// marco de la etapa). La frase completa "Lo que vas a aprender: ‹…›", así que va sin "Vas a"
+// (p. ej. "Por qué los europeos cruzaron el océano."). Fallback al nombre de la etapa.
+const META_OA={
+ 'HI08 OA 01':'Cómo las personas se pusieron en el centro y transformaron el mundo con nuevas ideas.',
+ 'HI08 OA 02':'Por qué la imprenta, la ciencia y la fe dividida cambiaron Europa para siempre.',
+ 'HI08 OA 03':'Cómo los reyes juntaron todo el poder y crearon el Estado moderno.',
+ 'HI08 OA 04':'Por qué el oro y las nuevas rutas movieron la economía del mundo.',
+ 'HI08 OA 05':'Por qué el encuentro entre europeos y pueblos americanos fue un choque de mundos.',
+ 'HI08 OA 06':'Por qué unos pocos conquistadores vencieron a imperios enormes.',
+ 'HI08 OA 07':'Cómo América cambió la forma de ver el mundo en Europa.',
+ 'HI08 OA 08':'Cómo las ciudades organizaron y gobernaron el enorme imperio español.',
+ 'HI08 OA 09':'Qué era el arte barroco y cómo se mezcló en la vida colonial.',
+ 'HI08 OA 10':'Cómo funcionaba el gran comercio que cruzaba el océano Atlántico.',
+ 'HI08 OA 11':'Cómo se formó la sociedad colonial con su mezcla de pueblos y trabajos.',
+ 'HI08 OA 12':'Cómo mapuches y españoles pelearon y convivieron en la frontera de Arauco.',
+ 'HI08 OA 13':'Qué era la hacienda y cómo vivían el inquilino y el peón en el campo.',
+ 'HI08 OA 14':'Qué ideas nuevas trajo la Ilustración usando la razón.',
+ 'HI08 OA 15':'Cómo esas ideas encendieron grandes revoluciones al final del siglo XVIII.',
+ 'HI08 OA 16':'Por qué toda Hispanoamérica buscó su independencia casi al mismo tiempo.',
+ 'HI08 OA 17':'Distintas miradas sobre si la conquista de América fue justa.',
+ 'HI08 OA 18':'Qué son los derechos humanos y por qué nacieron con la Revolución francesa.',
+ 'HI08 OA 19':'Cómo la independencia de Chile creó la república y la ciudadanía.',
+ 'HI08 OA 20':'Qué hace que un lugar sea una región y qué tipos existen.',
+ 'HI08 OA 21':'Qué problemas viven las regiones de Chile y cómo solucionarlos.',
+ 'HI08 OA 22':'Qué significa desarrollarse cuidando el planeta y el medioambiente.',
+ 'CN08 OA 01':'Cómo el microscopio nos permitió descubrir y entender las células.',
+ 'CN08 OA 02':'Qué hay dentro de una célula y para qué sirve cada parte.',
+ 'CN08 OA 03':'Cómo entran y salen partículas de la célula.',
+ 'CN08 OA 04':'Cómo las plantas transportan agua y respiran por sus partes.',
+ 'CN08 OA 05':'Cómo trabajan juntos los sistemas de tu cuerpo.',
+ 'CN08 OA 06':'Qué nutrientes tienen los alimentos y cómo cuidan tu salud.',
+ 'CN08 OA 07':'Cómo mantener tu cuerpo sano cada día.',
+ 'CN08 OA 08':'Por qué algunas cosas se electrizan y se atraen.',
+ 'CN08 OA 09':'Cómo se genera la electricidad que usamos a diario.',
+ 'CN08 OA 10':'Cómo funcionan los circuitos en serie y en paralelo.',
+ 'CN08 OA 11':'Qué es el calor y cómo se propaga.',
+ 'CN08 OA 12':'Cómo cambió con el tiempo nuestra idea del átomo.',
+ 'CN08 OA 13':'Cómo los átomos se unen para formar todas las cosas.',
+ 'CN08 OA 14':'Cómo la tabla periódica predice las propiedades de los elementos.',
+ 'CN08 OA 15':'Qué elementos son más abundantes en la Tierra y en ti.',
+ 'LE08 OA 01':'Cómo elegir tus propias lecturas y disfrutar leyendo.',
+ 'LE08 OA 02':'Cómo la literatura te hace entender la vida de otros.',
+ 'LE08 OA 03':'Qué esconde una historia: su narrador, sus personajes y su conflicto.',
+ 'LE08 OA 04':'Cómo un poema crea imágenes y despierta tus sentidos.',
+ 'LE08 OA 05':'Cómo funciona una obra de teatro por dentro.',
+ 'LE08 OA 06':'Quiénes eran los héroes y sus hazañas en las epopeyas.',
+ 'LE08 OA 07':'Por qué una comedia teatral te hace reír.',
+ 'LE08 OA 08':'Cómo darle tu propio sentido a lo que lees.',
+ 'LE08 OA 09':'Cómo detectar la postura y los argumentos de quien opina.',
+ 'LE08 OA 10':'Cómo mirar con ojo crítico las noticias y la publicidad.',
+ 'LE08 OA 11':'Cómo buscar y entender información en textos reales.',
+ 'LE08 OA 12':'Trucos para comprender mejor lo que lees y ves.',
+ 'LE08 OA 13':'Cómo crear tus propios cuentos, poemas y relatos.',
+ 'LE08 OA 14':'Cómo escribir para explicar un tema con claridad.',
+ 'LE08 OA 15':'Cómo escribir para convencer con buenas razones.',
+ 'MA08 OA 01':'Cómo multiplicar y dividir números con signo sin equivocarte.',
+ 'MA08 OA 02':'Cómo operar con fracciones y decimales, aunque sean negativos.',
+ 'MA08 OA 03':'El truco para multiplicar y dividir potencias rápido.',
+ 'MA08 OA 04':'Qué es una raíz cuadrada y cómo estimarla tú mismo.',
+ 'MA08 OA 05':'Cómo calcular descuentos, aumentos e intereses en la vida real.',
+ 'MA08 OA 06':'Cómo traducir frases a lenguaje con letras y simplificarlas.',
+ 'MA08 OA 07':'Cómo funcionan las máquinas que convierten un número en otro.',
+ 'MA08 OA 08':'Cómo resolver ecuaciones y encontrar el número secreto.',
+ 'MA08 OA 09':'Cómo resolver desigualdades y dibujar su solución en la recta.',
+ 'MA08 OA 10':'Qué significan la pendiente y el punto de partida de una recta.',
+ 'MA08 OA 11':'Cómo calcular el área y el volumen de cajas y tarros.',
+ 'MA08 OA 12':'El teorema de Pitágoras para medir lo que no alcanzas.',
+ 'MA08 OA 13':'Cómo mover, girar y reflejar figuras en el plano.',
+ 'MA08 OA 14':'Cómo combinar giros y reflejos para crear patrones y simetrías.',
+ 'MA08 OA 15':'Cómo ordenar datos en cuartiles para comparar grupos.',
+ 'MA08 OA 16':'Cómo un gráfico puede engañarte y aprender a descubrirlo.',
+ 'MA08 OA 17':'Cómo contar todas las combinaciones posibles sin perder ninguna.',
+};
+// La meta de una etapa: la frase amable del OA, o el nombre de la etapa como respaldo.
+function metaDeEtapa(lvl){ const c=EXPEDICION[lvl]; if(!c) return ''; return META_OA[c.oa] || c.nombre || 'este objetivo'; }
+// ¿Corresponde mostrar meta para esta etapa? Sí salvo libros de apoyo (no son OA del currículum).
+function metaDisponible(lvl){ const c=EXPEDICION[lvl]; return !!(c && !/^(VOC-|AF-)/.test(c.oa||'')); }
 const LOGROS={
  primera:{ic:"🥇",tx:"Primera victoria"},
  combo3:{ic:"🔥",tx:"Combo x3 — ¡Imparable!"},
@@ -1561,7 +1682,9 @@ const S={nombre:"",avatar:AVATARES[0],xp:0,nivel:1,monedas:0,
  curso:null,        // {nombre} del curso al que pertenece el alumno
  alumno:null,       // nombre del perfil del servidor, si canjeó un código
  maestro:false,     // logró la Maestría Total (3 en Difícil + El Autómata) → ya celebrada
- mateLecciones:{}}; // { 'ma-oa01': true, ... } lecciones de Matemáticas completadas
+ mateLecciones:{}, // { 'ma-oa01': true, ... } lecciones de Matemáticas completadas
+ metasVistas:{},   // { 'exp:lvl': true } etapas cuya tarjeta de meta ya se vio
+ semaforo:{}};     // { 'exp:lvl': '🟢'|'🟡'|'🔴' } autoevaluación local por etapa
 let Q={lvl:0,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock:false};
 
 /* Modo de juego: 'normal' | 'dificil' */
@@ -2094,6 +2217,7 @@ function leccionPorId(id){ return (LECCIONES||[]).find(l=>l.id===id); }
 
 // Lista de lecciones de un capítulo de Matemáticas (reusa la pantalla scr-campana).
 let CAP_MATE=null;
+let TRAS_LECCION=null;   // si está seteada, la mini-clase vuelve aquí en vez de a la lista del capítulo
 function abrirCapituloMate(cap){ CAP_MATE=cap; renderLeccionesMate(); go('scr-campana'); }
 async function renderLeccionesMate(){
  await cargarLecciones();
@@ -2115,8 +2239,21 @@ async function renderLeccionesMate(){
 function tituloLeccion(id){ const l=leccionPorId(id); return l?l.titulo:id; }
 async function iniciarLeccionPorId(id){ await cargarLecciones(); const l=leccionPorId(id); if(l)abrirLeccion(l); }
 
-// Vuelve desde una lección a la lista de su capítulo (o a la campaña si no había capítulo).
-function volverAlCapituloMate(){ if(CAP_MATE)renderLeccionesMate(); else renderCampaña(); go('scr-campana'); }
+// Vuelve desde una lección a la lista de su capítulo (o a la campaña). Si TRAS_LECCION está
+// seteada (mini-clase abierta desde una etapa reprobada), la consume y va a ese destino.
+function volverAlCapituloMate(){
+ if(TRAS_LECCION){ const f=TRAS_LECCION; TRAS_LECCION=null; f(); return; }
+ if(CAP_MATE)renderLeccionesMate(); else renderCampaña(); go('scr-campana');
+}
+// Abre la mini-clase que enseña un OA (buscada por su fromBank.oa / oa). Al terminar o salir,
+// vuelve a la pantalla de reprobado (scr-res) para que el alumno reintente la etapa.
+async function abrirMiniClaseDeOA(oa){
+ await cargarLecciones();
+ const l=(LECCIONES||[]).find(x=>(x.fromBank&&x.fromBank.oa===oa) || x.oa===oa);
+ if(!l){ go('scr-res'); return; }   // sin mini-clase mapeable: no hay a dónde llevar; se queda en reprobado
+ TRAS_LECCION=()=>go('scr-res');
+ abrirLeccion(l);
+}
 
 /* ================= RETO DE CÁLCULO (Matemáticas) =================
    Genera operaciones al vuelo. genCalculo(cat, dif 1..5) -> {pregunta, opciones[4], ok}. */
@@ -2413,7 +2550,8 @@ function guardar(){
   nombre:S.nombre,avatar:S.avatar,xp:S.xp,monedas:S.monedas,
   skins:S.skins,logros:[...S.logros], rutaActual:EXP_ACT?EXP_ACT.id:null, rutas:S.rutas,
   campañasCompletas:[...S.campañasCompletas], insignias:[...S.insignias], insigniaActiva:S.insigniaActiva,
-  calc:S.calc, curso:S.curso, alumno:S.alumno, maestro:S.maestro, mateLecciones:S.mateLecciones}));sincronizarXP();}catch(e){}}
+  calc:S.calc, curso:S.curso, alumno:S.alumno, maestro:S.maestro, mateLecciones:S.mateLecciones,
+  metasVistas:S.metasVistas, semaforo:S.semaforo}));sincronizarXP();}catch(e){}}
 function cargar(){try{const d=JSON.parse(localStorage.getItem(SAVE_KEY)||'null');if(!d)return false;
  S.nombre=d.nombre||"";S.avatar=d.avatar||AVATARES[0];S.xp=d.xp||0;S.monedas=d.monedas||0;
  S.skins=Array.isArray(d.skins)?d.skins:[];S.logros=new Set(d.logros||[]);
@@ -2422,6 +2560,8 @@ function cargar(){try{const d=JSON.parse(localStorage.getItem(SAVE_KEY)||'null')
  S.insigniaActiva=d.insigniaActiva||null;
  if(d.calc&&Array.isArray(d.calc.etapas))S.calc=d.calc;
  if(d.mateLecciones&&typeof d.mateLecciones==='object')S.mateLecciones=d.mateLecciones;
+ if(d.metasVistas&&typeof d.metasVistas==='object')S.metasVistas=d.metasVistas;
+ if(d.semaforo&&typeof d.semaforo==='object')S.semaforo=d.semaforo;
  S.curso=d.curso||null; S.alumno=d.alumno||null; S.maestro=!!d.maestro;
  S.rutas=(d.rutas&&typeof d.rutas==='object')?d.rutas:{};
  if(!d.rutas && Array.isArray(d.progreso)){ // migrar partidas antiguas (Historia)
@@ -3600,22 +3740,75 @@ function datoKimun(){
 /* ================= QUIZ ================= */
 function startQuiz(lvl){
  if(!poolListo(lvl)){alert('Cargando preguntas… intenta de nuevo en un momento.');return;}
+ // Tarjeta de meta la primera vez (salvo libros de apoyo y modo efímero QA/prueba).
+ const c0=EXPEDICION[lvl];
+ const esLibro0=/^(VOC-|AF-)/.test(c0.oa||'');
+ const clave=(EXP_ACT?EXP_ACT.id:'')+':'+lvl;
+ if(!esLibro0 && !EFIMERO && !S.metasVistas[clave]){ mostrarMetaEtapa(lvl, clave); return; }
+ arrancarQuiz(lvl);
+}
+// La tarjeta de meta: se marca vista, se pinta y su botón arranca el quiz de verdad.
+function mostrarMetaEtapa(lvl, clave){
+ S.metasVistas[clave]=true; guardar();
+ $('metaTxt').textContent=metaDeEtapa(lvl);
+ $('metaVamos').onclick=()=>{ SND.tap(); arrancarQuiz(lvl); };
+ go('scr-meta');
+}
+// Arranque real del quiz de una etapa (lo que hacía startQuiz antes de la compuerta de meta).
+function arrancarQuiz(lvl){
  const prg=progAct();
+ const c=EXPEDICION[lvl];
+ const esLibro=/^(VOC-|AF-)/.test(c.oa||'');
+ // 2 comodines por etapa. Solo Normal, no en el nodo jefe (5.º) ni en los libros de apoyo.
+ const comodines=(MODO==='normal' && lvl!==N_ETAPAS-1 && !esLibro)?2:0;
  Q={lvl,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock:false,preguntas:buildPreguntas(lvl),
-    repetida:!!(prg&&prg[lvl]&&prg[lvl].est==='done')};   // ya superada antes en este modo → pago reducido
+    repetida:!!(prg&&prg[lvl]&&prg[lvl].est==='done'), comodines};   // ya superada antes en este modo → pago reducido
  go('scr-quiz');pintaPregunta();}
 $('btnBack').onclick=()=>{clearInterval(Q.timer);clearTimeout(Q._avanzarT);
  if(Q.leccion){volverAlCapituloMate();}else{go(Q.desafio?'scr-rol':'scr-mapa');}};
 
+// Modo repaso: 10 preguntas nuevas del OA de la etapa fallada (excluye las que ya salieron),
+// sin cronómetro, sin reprobar, sin medir dominio y sin pagar. Al terminar vuelve a scr-res.
+function iniciarRepaso(lvl, vistos){
+ const c=EXPEDICION[lvl];
+ const oas=c.oas||[c.oa];
+ let banco=[]; oas.forEach(oa=>{ banco=banco.concat(POOL[oa]||[]); });
+ const set=new Set(vistos||[]);
+ let disp=banco.filter(q=>!set.has(q.pregunta));
+ if(disp.length<10) disp=banco;   // salvaguarda: si por alguna razón no alcanzan, usa todo el banco del OA
+ const preguntas=pickN(disp,10).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa}));
+ if(!preguntas.length){ go('scr-res'); return; }
+ Q={lvl,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock:false,preguntas,repaso:{lvl}};
+ MODO='normal';
+ go('scr-quiz'); pintaPregunta();
+}
+// Fin del repaso: no mide, no premia. Vuelve a la pantalla de reprobado (con REINTENTAR intacto).
+function finRepaso(){
+ clearInterval(Q.timer);
+ Q={lvl:0,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock:false};
+ go('scr-res');
+}
+
 function pintaPregunta(){
  const N=EXPEDICION[Q.lvl],P=Q.preguntas[Q.idx];Q.lock=false;
  kimReact('neutral');
- $('qTag').textContent = Q.leccion
+ Q.asistidaActual=false;
+ // Botón de ayuda 50/50: visible solo si quedan comodines en esta etapa.
+ const ba=$('btnAyuda');
+ if(Q.comodines>0){ ba.hidden=false; ba.disabled=false; ba.textContent='💡 Ayuda ('+Q.comodines+')'; ba.onclick=usarComodin; }
+ else { ba.hidden=true; }
+ $('qTag').textContent = Q.repaso
+   ? `🧑‍🏫 Repaso · Pregunta ${Q.idx+1}/${Q.preguntas.length}`
+   : Q.leccion
    ? `📘 ${Q.leccion.titulo} · Pregunta ${Q.idx+1}/${Q.preguntas.length}`
    : Q.desafio
    ? `📣 ${Q.desafio.titulo} · Pregunta ${Q.idx+1}/${Q.preguntas.length}`
    : `${MODO==='dificil'?'🔥 ':''}${N.icono} ${N.nombre} · Pregunta ${Q.idx+1}/${Q.preguntas.length}`;
  $('qText').textContent=P.q;$('qFb').textContent='';$('qFb').className='feedback';
+ // Línea fija de meta: en etapa y repaso (mismo OA), no en lección/desafío/libros.
+ const qm=$('qMeta');
+ if(!Q.leccion && !Q.desafio && metaDisponible(Q.lvl)){ qm.textContent='🎯 '+metaDeEtapa(Q.lvl); qm.hidden=false; }
+ else { qm.hidden=true; }
  $('qExpl').hidden=true;$('btnSeguir').hidden=true;
  $('qProg').style.width=(Q.idx/Q.preguntas.length*100)+'%';
  // barajar opciones
@@ -3628,23 +3821,42 @@ function pintaPregunta(){
   b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${it.o}`;
   b.onclick=e=>responder(b,it.i===P.ok,P,e);
   $('qOpts').appendChild(b);});
- // timer
- clearInterval(Q.timer);Q.t=tiempoInicial();$('qTimer').textContent=Q.t;$('qTimer').className='timer';
- Q.timer=setInterval(()=>{Q.t--;$('qTimer').textContent=Q.t;
-  if(Q.t<=5){$('qTimer').classList.add('low');if(Q.t>0)SND.tick();}
-  if(Q.t<=0){clearInterval(Q.timer);responder(null,false,P);}},1000);
+ // timer (el repaso no tiene cronómetro: es estudio, no evaluación)
+ clearInterval(Q.timer);
+ if(Q.repaso){ $('qTimer').style.visibility='hidden'; }
+ else{
+  $('qTimer').style.visibility='visible';
+  Q.t=tiempoInicial();$('qTimer').textContent=Q.t;$('qTimer').className='timer';
+  Q.timer=setInterval(()=>{Q.t--;$('qTimer').textContent=Q.t;
+   if(Q.t<=5){$('qTimer').classList.add('low');if(Q.t>0)SND.tick();}
+   if(Q.t<=0){clearInterval(Q.timer);responder(null,false,P);}},1000);
+ }
+}
+// Comodín 50/50: elimina dos de las tres opciones incorrectas. Marca la pregunta como asistida
+// (no se mide en el mapa de dominio). Gratis, tope de Q.comodines por etapa.
+function usarComodin(){
+ if(Q.lock || !Q.comodines || Q.comodines<=0 || Q.asistidaActual) return;
+ const opts=[...document.querySelectorAll('#qOpts .opt')];
+ const malas=opts.filter(o=>!o.dataset.correcta);
+ // baraja las malas y descarta dos
+ for(let i=malas.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[malas[i],malas[j]]=[malas[j],malas[i]];}
+ malas.slice(0,2).forEach(o=>{o.classList.add('descartada');o.onclick=null;});
+ Q.comodines--; Q.asistidaActual=true; SND.tap();
+ const ba=$('btnAyuda');
+ if(Q.comodines>0){ ba.textContent='💡 Ayuda ('+Q.comodines+')'; }
+ else { ba.disabled=true; ba.textContent='💡 Sin ayudas'; }
 }
 function responder(el,ok,P,e){
  if(Q.lock)return;Q.lock=true;clearInterval(Q.timer);
- if(!Q.desafio) registrarOA(P&&P.oa, ok);   // el desafío mide aparte, no toca el mapa de dominio
+ if(!Q.desafio && !Q.repaso && !Q.asistidaActual) registrarOA(P&&P.oa, ok);   // desafío/repaso miden aparte; una pregunta con comodín no se mide
  document.querySelectorAll('.opt').forEach(o=>o.classList.add('off'));
  if(ok){
   Q.combo++;Q.comboMax=Math.max(Q.comboMax,Q.combo);Q.aciertos++;
   const bonus=Math.max(Q.t,3),pts=10+bonus+ (Q.combo>=2?Q.combo*2:0);
-  const xpGan=Q.repetida?Math.max(1,Math.round(pts*0.25)):pts, coinGan=Q.repetida?1:5;   // repeticiones pagan reducido (anti-farmeo)
+  const xpGan=Q.repaso?0:(Q.repetida?Math.max(1,Math.round(pts*0.25)):pts), coinGan=Q.repaso?0:(Q.repetida?1:5);   // repaso no paga; repeticiones pagan reducido (anti-farmeo)
   Q.xpGanado+=xpGan;S.xp+=xpGan;S.monedas+=coinGan;
   el.classList.remove('off');el.classList.add('ok');
-  $('qFb').textContent=`✓ ¡Correcto! +${xpGan} XP`;$('qFb').classList.add('ok');
+  $('qFb').textContent=Q.repaso?'✓ ¡Correcto!':`✓ ¡Correcto! +${xpGan} XP`;$('qFb').classList.add('ok');
   const r=el.getBoundingClientRect();
   particulas(r.left+r.width/2,r.top,['✨','⭐','🪙','💥']);
   SND.correct();
@@ -3731,8 +3943,23 @@ function reproducirMaestro(){
 function avanzar(){if(!Q||!Q.preguntas)return;   // guard: evita reentrada (doble toque) tras resetear Q
   if(!$('scr-quiz').classList.contains('on'))return;   // el usuario salió del quiz: no continuar
   Q.idx++;if(Q.idx<Q.preguntas.length)pintaPregunta();
+  else if(Q.repaso)finRepaso();
   else if(Q.leccion)finPracticaLeccion();
   else if(Q.desafio)terminarDesafio();else terminarNivel();}
+// Semáforo de autoevaluación (local, privado). No mide ni sincroniza: solo guarda en S.semaforo.
+// hayRepaso: si en esta pantalla se ofrece "Repasar", el mensaje empuja suave hacia él en 🟡/🔴.
+function montarSemaforo(clave, hayRepaso){
+ const msg=$('resSemMsg'); msg.textContent='';
+ const btns=[...document.querySelectorAll('#resSem .sem')];
+ btns.forEach(b=>b.classList.remove('sel'));
+ const textos={'🟢':'¡Genial, lo dominas! Sigue así.','🟡':'Vas bien. Un repasito y queda redondo.','🔴':'Te costó, y está bien. El repaso te va a ayudar.'};
+ btns.forEach(b=>{ b.onclick=()=>{
+   btns.forEach(x=>x.classList.remove('sel')); b.classList.add('sel');
+   const v=b.dataset.v;
+   msg.textContent=textos[v] + ((v!=='🟢' && hayRepaso)?' 👉 Toca “Repasar”.':'');
+   S.semaforo[clave]=v; guardar(); SND.tap();
+ };});
+}
 function terminarNivel(){
  const tot=Q.preguntas.length;
  const ratio=Q.aciertos/tot;
@@ -3741,6 +3968,10 @@ function terminarNivel(){
                     :(ratio>=1?3:(ratio>=0.80?2:(ratio>=0.66?1:0)));
  const paso=dif?ratio>=0.80:ratio>=0.66;   // Difícil pasa con 80%, Normal con 66%
  const esJefe=Q.lvl===N_ETAPAS-1;
+ const cFail=EXPEDICION[Q.lvl], lvlFail=Q.lvl, oaFail=cFail.oa||'';
+ const esLibro=/^(VOC-|AF-)/.test(oaFail);
+ const esMate=EXP_ACT && EXP_ACT.asignatura==='Matemáticas';
+ const vistos=Q.preguntas.map(p=>p.q);   // enunciados de la etapa fallada, para excluirlos en el repaso
  const prog=progAct();
  const p=prog[Q.lvl];
  if(paso){p.est='done';p.estrellas=Math.max(p.estrellas,estrellas);
@@ -3769,7 +4000,18 @@ function terminarNivel(){
  }else{
   $('btnNext').style.display='block';
   $('btnNext').textContent='🔁 REINTENTAR';
-  $('btnNext').onclick=()=>startQuiz(Q.lvl);
+  $('btnNext').onclick=()=>startQuiz(lvlFail);
+ }
+ // Siguiente paso al reprobar una etapa de un solo OA (no jefe, no libros).
+ if(!paso && !esJefe && !esLibro){
+  $('resObj').textContent='🎯 '+metaDeEtapa(lvlFail);
+  $('resObj').hidden=false;
+  $('btnPaso').style.display='block';
+  if(esMate){ $('btnPaso').textContent='📘 Repasar la mini-clase'; $('btnPaso').onclick=()=>abrirMiniClaseDeOA(oaFail); }
+  else      { $('btnPaso').textContent='🧑‍🏫 Repasar sin presión'; $('btnPaso').onclick=()=>iniciarRepaso(lvlFail,vistos); }
+ }else{
+  $('resObj').hidden=true;
+  $('btnPaso').style.display='none';
  }
  $('btnMap').onclick=()=>{
   // Terminó el jefe de la demo y no tiene código: se le ofrece el resto.
@@ -3778,6 +4020,7 @@ function terminarNivel(){
  refreshHud();guardar();enviarDominio();
  if(dif&&paso)revisarDificil();   // ¿completó una asignatura en Difícil? → insignia/skin + marca 🔥
  if(paso)particulas(window.innerWidth/2,window.innerHeight/3,['🎉','⭐','✨','🎊'],24);
+ montarSemaforo((EXP_ACT?EXP_ACT.id:'')+':'+lvlFail, !paso && !esJefe && !esLibro);
  go('scr-res');
 }
 

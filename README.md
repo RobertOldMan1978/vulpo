@@ -15,6 +15,11 @@ Un juego tipo aventura con mapa de niveles, quiz con temporizador, combos, XP,
 monedas, estrellas, logros y **ranking real por curso**. **Vulpi**, el zorro mascota,
 acompaña y reacciona a cada respuesta. Incluye **Modo Difícil** desbloqueable.
 
+Como **evaluación formativa** (alineada al enfoque del MINEDUC), cada etapa muestra su **meta
+de aprendizaje en lenguaje de niño** antes de jugar, ofrece un **comodín 50/50** de ayuda, y al
+fallar propone **el siguiente paso** —repasar el objetivo sin presión, o la mini-clase en
+Matemática— en vez de solo revelar la respuesta; al cerrar, un **semáforo** de autoevaluación.
+
 La pantalla principal ofrece un **módulo por asignatura**. **Historia**, **Ciencias** y
 **Lenguaje** se juegan como **campañas con hilo conductor**: capítulos en orden que cubren
 todos los OA del año, con **Jefe Final multi-fase** (barra de vida, 3 corazones) y

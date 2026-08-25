@@ -88,6 +88,16 @@ backend Supabase para el duelo en línea. Historia de v0 al detalle en la Bitác
 - Quiz: 10 preguntas al azar/etapa, timer 20 s, pasa con 66%, 3 estrellas. Al
   fallar revela la respuesta correcta + explicación y botón "Continuar". Vulpi
   comenta un dato al iniciar la ruta.
+- **Retroalimentación formativa (Sesión 52):** encuadre y andamiaje alineados al MINEDUC
+  (ver `docs/fundamento-evaluacion-formativa.md`). Antes de la etapa, la **meta de aprendizaje
+  en lenguaje de niño** (una frase amable por OA, `META_OA`): tarjeta 🎯 la primera vez +
+  línea fija en el quiz. Durante la pregunta, un **comodín 50/50** (2 por etapa, gratis, solo
+  Normal, nunca en jefes/duelo/desafío; la pregunta asistida no se mide). Al **reprobar** una
+  etapa de un OA, el **siguiente paso**: en Matemática abre la **mini-clase** de la unidad; en
+  Historia/Ciencias/Lenguaje, un **repaso sin reloj ni reprobar** (10 preguntas distintas de
+  las falladas, que no mide ni paga). Al cerrar, un **semáforo** 🟢🟡🔴 de autoevaluación
+  (local, no se envía al profesor). Specs/planes `2026-08-25-siguiente-paso-al-fallar*` y
+  `2026-08-25-marco-de-la-etapa*`.
 - **Modo Difícil** desbloqueable (10 preguntas, 15 s, 80%, tema oscuro/carmesí).
 - Persistencia (localStorage), **tienda de skins** (precios escalonados 110–1250;
   emojis baratos de entrada + skins ilustradas premium, incluidas **7 deportivas**:
@@ -2841,3 +2851,48 @@ Cada hallazgo de seguridad se **verificó a mano contra el código** antes de ac
   esquinas), para combinar con los marcos de navegador del panel. Con esto el rediseño queda
   bastante completo. **Único pendiente (necesita algo de Roberto):** reemplazar el CTA "Coordinemos
   una demo" de WhatsApp por un **enlace de agenda real** (Calendly/Google Calendar).
+
+### Sesión 52 (2026-08-25) — Fundamento MINEDUC y retroalimentación formativa (3 grupos)
+Sesión larga de dos caras: **mensaje** (fundamentar que VULPO es evaluación formativa según el
+MINEDUC) y **producto** (tres grupos de mejoras de retroalimentación que el MINEDUC subraya).
+Flujo brainstorming → spec → plan → ejecución por tareas, verificando cada una en el navegador.
+
+- **Rescate del material MINEDUC (que solo vivía en una conversación anterior):** se recuperaron
+  los 4 PDF oficiales y sus textos extraídos, y dos agentes sacaron las citas textuales con página.
+- **`docs/fundamento-evaluacion-formativa.md` (nuevo):** el hallazgo central es que el MINEDUC, en
+  *Orientaciones de Evaluación y Retroalimentación* (2021, p. 73), **nombra a Kahoot y Quizizz**
+  como apoyos válidos de la evaluación formativa — VULPO es de esa familia. El documento reúne la
+  definición oficial, el encaje con el Decreto 67 ("por lo general no se califica"), los beneficios,
+  y **advertencias de honestidad** para no exagerar ("primer intento" NO es término del MINEDUC;
+  Kahoot/Quizizz solo se nombran en el doc de 2021). Corrección de fuente: el doc del artículo 89342
+  es "Orientaciones para directivos", **no** el de implementación del Decreto 67.
+- **Landing + `comercial.md`:** sección nueva "Evaluación formativa" en la landing con cita
+  atribuida al MINEDUC; `comercial.md` suma el argumento y apunta al fundamento. Pendiente de
+  Roberto: pegar la sección en el HTML de la propuesta/guion (vive en el otro PC).
+- **Grupo A — El siguiente paso al fallar** (spec/plan `2026-08-25-siguiente-paso-al-fallar*`):
+  - **Comodín 50/50:** 2 por etapa, elimina dos opciones malas, gratis, contador "💡 Ayuda (N)".
+    Solo Modo Normal; **nunca en jefes** (5.º nodo ni Jefe Final), duelo, desafío, repaso ni libros.
+    La pregunta asistida cuenta para pasar/estrellas/XP pero **no llama a `registrarOA`** (no
+    contamina el primer intento del profesor). Flag `Q.asistidaActual`.
+  - **Siguiente paso al reprobar una etapa de un OA:** Matemática → **mini-clase** de la unidad
+    (buscada por `fromBank.oa`, con retorno vía `TRAS_LECCION`); Historia/Ciencias/Lenguaje →
+    **modo repaso** (`Q.repaso`): 10 preguntas **distintas de la etapa fallada**, sin cronómetro,
+    sin reprobar, sin medir ni pagar; vuelve a la pantalla de reprobado. El 5.º nodo (jefe, mezcla
+    OA) y los libros quedan solo con "Reintentar".
+- **Grupos B y C — El marco de la etapa** (spec/plan `2026-08-25-marco-de-la-etapa*`):
+  - **B · Meta de aprendizaje:** bloque `META_OA` con **una frase amable por OA (69 en total)**,
+    generada por 4 agentes desde el texto oficial de cada `oa.json` y **aprobada por Roberto**
+    (se corrigió un modismo). Tarjeta 🎯 "Lo que vas a aprender" la **primera vez** por etapa
+    (`scr-meta`, recordada en `S.metasVistas`), línea fija "🎯 ‹meta›" en el quiz (etapa y repaso;
+    no lección/desafío/libros), y el encabezado de reprobado del grupo A pasó a usar la meta.
+    Fallback al nombre de la etapa. `startQuiz` se partió en compuerta de meta + `arrancarQuiz`.
+  - **C · Cierre metacognitivo:** fila **"¿Cómo te fue?"** con 🟢🟡🔴 en la pantalla de resultado,
+    opcional, de un toque; mensaje contextual (en 🟡/🔴 con repaso disponible, empuja suave hacia
+    él). **Local y privado** (`S.semaforo`): no se envía al profesor ni toca el mapa de dominio.
+- **Sin backend nuevo.** Todo en `juego/index.html` (+ las 69 frases). Verificado en el navegador:
+  comodín 50/50 y su exclusión de la medición, repaso sin solapar/sin medir/sin pagar, mini-clase
+  con retorno, tarjeta 1.ª vez y directo después, línea de meta, semáforo local, y `?qa`/EFIMERO
+  sin medir; el juego normal (medición sin comodín) intacto. Consola limpia (solo el aviso benigno
+  de `navigator.vibrate` al responder por script, preexistente).
+- **Pendientes de Roberto (fuera del código):** pegar el argumento de evaluación formativa en la
+  propuesta/guion (otro PC); enlace de agenda real para el CTA de la landing.

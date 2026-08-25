@@ -82,11 +82,30 @@ lo mismo pague lo que pague.
 duplicaría el techo por colegio sin duplicar el esfuerzo de venta. Es un trabajo de contenido
 grande (otro banco de ~2.500 preguntas) y está fuera de alcance por ahora, pero es la dirección.
 
+## El argumento de evaluación formativa (el más fuerte ante UTP)
+
+VULPO **es una herramienta de evaluación formativa en el sentido exacto del MINEDUC**, y eso se
+puede respaldar con cita textual de documentos oficiales. El ministerio, en *Orientaciones de
+Evaluación y Retroalimentación* (2021), nombra los cuestionarios interactivos digitales —del
+tipo Kahoot y Quizizz— como apoyos válidos de la evaluación formativa; VULPO es de esa familia y
+además suma el mapa de dominio por OA. Encaja en el Decreto 67 (la formativa "por lo general no
+se califica"), y el MINEDUC afirma que reduce el tiempo de aprendizaje y ayuda especialmente a
+quien más lo necesita.
+
+**El fundamento completo, con las citas exactas y sus páginas, vive en el repo:**
+[`docs/fundamento-evaluacion-formativa.md`](fundamento-evaluacion-formativa.md). Es la base para
+la propuesta, el guion de reunión y la landing. **Léelo antes de una reunión con dirección/UTP.**
+
+> **Honestidad al citar (para no exagerar ante un director informado):** "primer intento" NO es
+> un término del MINEDUC (es diseño de VULPO); Kahoot/Quizizz se nombran solo en el documento de
+> 2021, no en los de docentes/directivos ni en el Decreto 67. Detalle en el fundamento, §6.
+
 ## Qué se le promete a un colegio, y qué no
 
 **Sí:** 4 asignaturas de 8° básico, 2.536 preguntas revisadas alineadas a las Bases del MINEDUC,
-panel del profesor con mapa de dominio por OA, desafíos de refuerzo, ranking por curso, soporte
-y actualizaciones. Funciona en cualquier celular con internet, sin instalar nada.
+**evaluación formativa alineada al Decreto 67/2018** (ver sección anterior), panel del profesor
+con mapa de dominio por OA, desafíos de refuerzo, ranking por curso, soporte y actualizaciones.
+Funciona en cualquier celular con internet, sin instalar nada.
 
 **No:**
 - ❌ **No funciona sin internet.** Verificado: no hay service worker y los bancos de preguntas se
