@@ -2607,3 +2607,29 @@ que hoy no tiene fricción.
 - **`FECHA_PUERTA` sigue vacía.** Esta página no activa la puerta.
 - **Diseño y plan:** `docs/superpowers/specs/2026-08-24-pagina-presentacion-design.md` y
   `docs/superpowers/plans/2026-08-24-pagina-presentacion.md`.
+
+### Sesión 46 (2026-08-25) — `schema.sql` aplicado en Supabase (cierra el pendiente de la Sesión 39)
+Roberto pidió aplicar el schema. **El asistente no ejecuta SQL contra la base de producción** y
+además no podía: no hay CLI de Supabase ni `psql` en el equipo, y las únicas credenciales del
+proyecto son la clave pública anónima, que por diseño no altera la estructura. Lo aplicó Roberto
+a mano; el asistente preparó el terreno y verificó el resultado.
+- **Revisión previa de seguridad del archivo** (1.391 líneas), antes de mandar a pegarlo en
+  producción: cero `drop table`, `truncate`, `drop column` y `drop schema`; los 12 `delete from`
+  están **dentro de cuerpos de función** (pegar el archivo solo las define), salvo uno
+  intencional que borra la clave de administrador obsoleta; y las 5 sentencias
+  `insert`/`update` de nivel superior son migraciones idempotentes (`on conflict do nothing` o
+  acotadas a filas antiguas). **Se puede re-pegar sin daño.**
+- **Runbook nuevo: `docs/aplicar-schema.md`** — pasos en el panel, consulta de verificación y
+  registro de aplicaciones con fecha.
+- **Gotcha del SQL Editor de Supabase:** ejecuta todas las sentencias pero **solo muestra el
+  resultado de la última**. La primera versión de la verificación eran 4 consultas separadas y
+  Roberto solo vio la cuarta. Se reescribió como **una sola consulta con `union all` que
+  devuelve 5 filas con una columna `estado`**. Queda anotado en el runbook.
+- **Verificado en producción**, las 5 filas en `ok`: **13 de 13 tablas con RLS** (incluidas
+  `desafios` y `desafio_resultados`, el hallazgo ALTO de la auditoría), ninguna sin RLS, la firma
+  de `kimun_prof_dominio_alumno` en **`uuid`** (así el profe de asignatura ya no recibe la
+  credencial `ALU-`), `admin_clave` en 0 filas, y 50 funciones `kimun_*`.
+- **Con esto la auditoría de identidad y permisos de la Sesión 39 está en producción**, no solo
+  en el repositorio. Era el pendiente de fondo que se arrastraba.
+- **Recordatorio permanente:** cada vez que se toque `supabase/schema.sql` hay que **volver a
+  aplicarlo a mano**. El repositorio y la base no se sincronizan solos.
