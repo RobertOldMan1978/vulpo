@@ -992,7 +992,7 @@
         "782",
         "728",
         "780",
-        "708"
+        "827"
       ],
       "correcta": 1,
       "tip": "Ambos tienen 7 centenas; gana el que tiene menos decenas: 2 decenas es menos que 8.",
@@ -1173,7 +1173,7 @@
         "617",
         "661",
         "671",
-        "607"
+        "716"
       ],
       "correcta": 0,
       "tip": "Si las centenas empatan, decide la decena: 1 decena es menos que 7 decenas.",
@@ -1556,7 +1556,7 @@
         "tipo": "recta",
         "desde": 30,
         "hasta": 50,
-        "paso": 5,
+        "paso": 1,
         "marca": 38
       },
       "revisada": false,
@@ -5330,7 +5330,7 @@
         "desde": 0,
         "hasta": 20,
         "paso": 2,
-        "marca": 10
+        "marca": 8
       },
       "revisada": false,
       "id": "mat3-oa12-1"
@@ -5351,7 +5351,7 @@
         "desde": 0,
         "hasta": 30,
         "paso": 5,
-        "marca": 25
+        "marca": 20
       },
       "revisada": false,
       "id": "mat3-oa12-2"
@@ -5372,7 +5372,7 @@
         "desde": 0,
         "hasta": 60,
         "paso": 10,
-        "marca": 50
+        "marca": 40
       },
       "revisada": false,
       "id": "mat3-oa12-3"
@@ -5421,7 +5421,7 @@
         "desde": 0,
         "hasta": 100,
         "paso": 10,
-        "marca": 60
+        "marca": 70
       },
       "revisada": false,
       "id": "mat3-oa12-6"
@@ -5483,8 +5483,8 @@
         "tipo": "recta",
         "desde": 0,
         "hasta": 12,
-        "paso": 1,
-        "marca": 9
+        "paso": 2,
+        "marca": 7
       },
       "revisada": false,
       "id": "mat3-oa12-10"
@@ -6638,10 +6638,6 @@
       ],
       "correcta": 0,
       "tip": "El cubo tiene 6 caras y todas son cuadrados del mismo tamaño.",
-      "visual": {
-        "tipo": "cuerpo",
-        "nombre": "cubo"
-      },
       "revisada": false,
       "id": "mat3-oa15-1"
     },
@@ -6656,10 +6652,6 @@
       ],
       "correcta": 1,
       "tip": "Los 2 círculos son las tapas y el rectángulo se enrolla como la parte curva.",
-      "visual": {
-        "tipo": "cuerpo",
-        "nombre": "cilindro"
-      },
       "revisada": false,
       "id": "mat3-oa15-2"
     },
@@ -6674,10 +6666,6 @@
       ],
       "correcta": 2,
       "tip": "El cono tiene una sola tapa redonda y su lado curvo termina en punta.",
-      "visual": {
-        "tipo": "cuerpo",
-        "nombre": "cono"
-      },
       "revisada": false,
       "id": "mat3-oa15-3"
     },
@@ -6692,10 +6680,6 @@
       ],
       "correcta": 3,
       "tip": "El cuadrado es la base y los 4 triángulos suben hasta juntarse en la punta.",
-      "visual": {
-        "tipo": "cuerpo",
-        "nombre": "piramide"
-      },
       "revisada": false,
       "id": "mat3-oa15-4"
     },
@@ -6710,10 +6694,6 @@
       ],
       "correcta": 0,
       "tip": "El paralelepípedo es como una caja: sus 6 caras son rectángulos.",
-      "visual": {
-        "tipo": "cuerpo",
-        "nombre": "paralelepipedo"
-      },
       "revisada": false,
       "id": "mat3-oa15-5"
     },
@@ -6728,10 +6708,6 @@
       ],
       "correcta": 1,
       "tip": "La esfera es curva por todos lados, así que no tiene caras planas que abrir.",
-      "visual": {
-        "tipo": "cuerpo",
-        "nombre": "esfera"
-      },
       "revisada": false,
       "id": "mat3-oa15-6"
     },
@@ -6890,10 +6866,6 @@
       ],
       "correcta": 2,
       "tip": "Seis cuadrados iguales cierran justo las 6 caras de un cubo.",
-      "visual": {
-        "tipo": "cuerpo",
-        "nombre": "cubo"
-      },
       "revisada": false,
       "id": "mat3-oa15-15"
     },
@@ -7088,10 +7060,6 @@
       ],
       "correcta": 1,
       "tip": "El rectángulo enrollado forma el tubo y los círculos cierran sus dos puntas.",
-      "visual": {
-        "tipo": "cuerpo",
-        "nombre": "cilindro"
-      },
       "revisada": false,
       "id": "mat3-oa15-26"
     },
@@ -7142,10 +7110,6 @@
       ],
       "correcta": 0,
       "tip": "Los triángulos se levantan y se juntan arriba en una sola punta.",
-      "visual": {
-        "tipo": "cuerpo",
-        "nombre": "piramide"
-      },
       "revisada": false,
       "id": "mat3-oa15-29"
     },
@@ -11319,17 +11283,6 @@
       ],
       "correcta": 0,
       "tip": "Los 20 lanzamientos se reparten entre cara y sello: 20 - 12 = 8.",
-      "visual": {
-        "tipo": "barras",
-        "etiquetas": [
-          "Cara",
-          "Sello"
-        ],
-        "valores": [
-          12,
-          8
-        ]
-      },
       "revisada": false,
       "id": "mat3-oa24-9"
     },
@@ -11631,8 +11584,7 @@
         "tipo": "recta",
         "desde": 0,
         "hasta": 20,
-        "paso": 5,
-        "marca": 10
+        "paso": 5
       },
       "revisada": false,
       "id": "mat3-oa24-23"

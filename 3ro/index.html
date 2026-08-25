@@ -1540,11 +1540,18 @@ function renderVisual(v){
   const a=v.desde|0, b=v.hasta|0, s=Math.max(1,v.paso|0);
   const n=Math.max(1,Math.floor((b-a)/s));
   let r=`<line x1="10" y1="35" x2="190" y2="35" stroke="#4dd8ff" stroke-width="3"/>`;
+  // Rotular solo cada `cadaK` marcas. Con 11 etiquetas de 4 dígitos (0..1000 de 100 en 100)
+  // los números se encimaban y la recta quedaba ilegible. Cada dígito ocupa ~6 unidades
+  // del viewBox a font-size 11. La marca destacada siempre se rotula.
+  const anchoTexto=Math.max(String(a).length,String(b).length)*5;
+  const cadaK=Math.max(1,Math.ceil(anchoTexto/(180/n)));
   for(let i=0;i<=n;i++){
    const x=10+(180*i/n), val=a+i*s;
    const marcado=(v.marca!==undefined && val===v.marca);
    r+=`<line x1="${x}" y1="28" x2="${x}" y2="42" stroke="#4dd8ff" stroke-width="2"/>`;
-   r+=`<text x="${x}" y="58" font-size="11" fill="${marcado?'#ffc93c':'#cfc9ee'}" text-anchor="middle" font-weight="bold">${val}</text>`;
+   if(marcado || i%cadaK===0 || i===n){
+    r+=`<text x="${x}" y="58" font-size="11" fill="${marcado?'#ffc93c':'#cfc9ee'}" text-anchor="middle" font-weight="bold">${val}</text>`;
+   }
    if(marcado) r+=`<circle cx="${x}" cy="35" r="6" fill="#ffc93c"/>`;
   }
   return svgEnvoltura(r,66);
