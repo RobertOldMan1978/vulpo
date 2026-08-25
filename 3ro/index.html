@@ -2427,9 +2427,27 @@ function levelUpFx(n){
 /* ================= PERSISTENCIA ================= */
 const SAVE_KEY='kimun_save';
 /* Almacén de progreso por ruta (id de expedición -> {progreso, progresoDificil, dificilDesbloqueado}) */
+// Ajusta un progreso guardado al número de etapas que tiene HOY el capítulo.
+// Hace falta porque los capítulos crecen: `mat3-cap1` pasó de 3 nodos a 5 al armar la campaña
+// de año completo, y un teléfono que ya había jugado la versión corta traía un arreglo de 3.
+// `renderMapa` recorre por índice y reventaba con "Cannot read properties of undefined".
+function reconciliarProgreso(arr,n){
+ const p=Array.isArray(arr)?arr.slice(0,n):[];
+ while(p.length<n) p.push({est:'lock',estrellas:0});
+ // Que no quede sin nodo jugable: el primero que no esté hecho se abre.
+ if(!p.some(x=>x.est==='open')){
+  const i=p.findIndex(x=>x.est!=='done');
+  if(i>=0) p[i].est='open';
+ }
+ return p;
+}
 function estadoRuta(exp){
- if(!S.rutas[exp.id]) S.rutas[exp.id]={progreso:nuevoProgreso(exp.etapas.length),progresoDificil:nuevoProgreso(exp.etapas.length),dificilDesbloqueado:false};
- return S.rutas[exp.id];
+ const n=exp.etapas.length;
+ if(!S.rutas[exp.id]) S.rutas[exp.id]={progreso:nuevoProgreso(n),progresoDificil:nuevoProgreso(n),dificilDesbloqueado:false};
+ const st=S.rutas[exp.id];
+ if(!Array.isArray(st.progreso)||st.progreso.length!==n) st.progreso=reconciliarProgreso(st.progreso,n);
+ if(!Array.isArray(st.progresoDificil)||st.progresoDificil.length!==n) st.progresoDificil=reconciliarProgreso(st.progresoDificil,n);
+ return st;
 }
 
 /* ===== Helpers de progreso de campaña ===== */
