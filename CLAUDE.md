@@ -218,10 +218,22 @@ Al agregar expediciones nuevas al arreglo `EXPEDICIONES` de `juego/index.html`:
   reflejen el estado real (estado, roadmap, decisiones). Recién entonces commit + push.
 - **Después del push, informar los cambios en el AI Brain (NotebookLM) de Roberto.**
   Es parte de la orden 66: escribir un resumen breve de la sesión (lo avanzado y lo
-  pendiente) y subirlo al notebook con el CLI:
-  `C:\Users\Rodrigo\.notebooklm-venv\Scripts\notebooklm.exe source add '<ruta-del-resumen>' --notebook '19408e05-1f37-48b6-b398-644519ac019e'`.
-  Si la sesión del CLI caducó, avisar a Roberto para que corra `notebooklm.exe login`
-  en su terminal (el login interactivo no se puede lanzar desde el asistente).
+  pendiente) y subirlo al notebook con el CLI de `notebooklm-py`:
+  `<venv>\Scripts\notebooklm.exe source add '<ruta-del-resumen>' --notebook '19408e05-1f37-48b6-b398-644519ac019e'`.
+  **La ruta del CLI depende del equipo** (el usuario de Windows cambia entre el PC de casa y
+  el de la oficina): venvs conocidos `C:\Users\Rodrigo\.notebooklm-venv\...` y
+  `C:\Users\rlorc\.notebooklm-venv\...`. Si no está instalado en ese PC:
+  `python -m venv ~/.notebooklm-venv && ~/.notebooklm-venv/Scripts/python.exe -m pip install "notebooklm-py[browser]"`.
+  La **autenticación** vive en `<perfil>\.notebooklm\storage_state.json`; mientras no caduque,
+  `source add` **no pide login** (usa las cookies, sin navegador).
+- **Si la auth caducó o no existe, hay que rehacer el login por navegador. GOTCHA verificado
+  (Sesión 52):** el Chromium empaquetado de playwright falla en este entorno con
+  `spawn UNKNOWN` (headful) o timeout (headless). **Usar el Google Chrome instalado**
+  (`channel="chrome"`, `headless=False`) para abrir la ventana; Roberto inicia sesión en Google
+  → notebooklm.google.com, y recién entonces se capturan las cookies a `storage_state.json`.
+  Con `channel="chrome"` el login interactivo **SÍ se puede lanzar desde el asistente** (se probó
+  y funcionó); lo que no funciona es `notebooklm login` (entrada interactiva en terminal) ni el
+  chromium de playwright.
 - **Respaldo automático a las 18:00:** cualquier día en que haya cambios sin
   guardar, una Tarea Programada de Windows ejecuta `scripts/auto-commit.ps1`,
   que hace commit y push solo si detecta cambios. Así no se pierde trabajo
