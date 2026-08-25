@@ -1208,9 +1208,9 @@ const EXPEDICIONES=[
    portada:'assets/portada-matematicas.png',
    contenido:'contenido/matematicas-3basico/preguntas.json', activa:true, campaña:'mat3',
    etapas:[
-     {oa:"MA03 OA 09",nombre:"Sumas hasta 20",icono:"➕",n:5},
-     {oa:"MA03 OA 09",nombre:"Restas hasta 20",icono:"➖",n:5},
-     {oa:"BOSS",nombre:"⚡ JEFE: Sumas y restas",icono:"🐲",n:6,oas:["MA03 OA 09"]},
+     {oa:"MA03 OA 06",nombre:"Sumas hasta 20",icono:"➕",n:5},
+     {oa:"MA03 OA 06",nombre:"Restas hasta 20",icono:"➖",n:5},
+     {oa:"BOSS",nombre:"⚡ JEFE: Sumas y restas",icono:"🐲",n:6,oas:["MA03 OA 06"]},
    ]},
  { id:'mat3-cap2', asignatura:'Matemática', nivel:'3° Básico · Contar de a saltos',
    portada:'assets/portada-matematicas.png',
@@ -1284,7 +1284,7 @@ const CAMPAÑAS=[{
     derrota:'¡Casi! Practica un poco más y vuelve a buscarme.',
     vidasJugador:3, nPorFase:3,
     fases:[
-      {nombre:'Sumas y restas', oas:['MA03 OA 09']},
+      {nombre:'Sumas y restas', oas:['MA03 OA 06']},
       {nombre:'Contar saltando', oas:['MA03 OA 01']},
     ],
   },
@@ -1346,7 +1346,7 @@ function poolListo(lvl){
 // marco de la etapa). La frase completa "Lo que vas a aprender: ‹…›", así que va sin "Vas a"
 // (p. ej. "Por qué los europeos cruzaron el océano."). Fallback al nombre de la etapa.
 const META_OA={
- 'MA03 OA 09':'Sumar y restar para resolver problemas del día a día.',
+ 'MA03 OA 06':'Sumar y restar para resolver problemas del día a día.',
  'MA03 OA 01':'Contar de a saltos: de 5 en 5, de 10 en 10 y de 100 en 100.',
 };
 // La meta de una etapa: la frase amable del OA, o el nombre de la etapa como respaldo.
