@@ -2774,3 +2774,14 @@ CSS nuevo (se reusaron los estilos que ya existían) y sin tocar nada del motor.
 - **Nota para capturar el juego en headless:** la intro en video tapa la pantalla de inicio (el
   autoplay bloqueado deja "▶ Toca para comenzar"). Se salta con
   `--force-prefers-reduced-motion=reduce`, porque la intro respeta esa preferencia.
+
+### Sesión 50 (2026-08-25) — Mejora visual de la landing
+Pasada estética a la página comercial (`index.html`, la landing en `vulpo.cl/`), para que
+respire el mismo mundo del juego. El motor del juego (`juego/index.html`) no se toca.
+- **Fondo de estrellas + estrella fugaz, portado del juego.** Capa `.stars` con 60 estrellas
+  titilando (`@keyframes tw`) fija al viewport y **detrás del contenido** (`z-index:-1`, para no
+  tener que ponerle z-index a cada sección) y decorativa (`pointer-events:none`, `aria-hidden`).
+  Estrella fugaz `.shoot` con cola violeta en diagonal cada 8–22 s (mismo CSS/JS que el juego).
+  Respeta `prefers-reduced-motion`: estrellas quietas y sin fugaces. Verificado por DOM (60
+  estrellas, capa fija tras el contenido, sin errores de consola); el screenshot headless no
+  renderiza si el panel del navegador no está a la vista, pero eso no es un problema de la página.
