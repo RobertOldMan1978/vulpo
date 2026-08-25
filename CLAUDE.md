@@ -2983,3 +2983,88 @@ niños de 8-9 años, un público muy distinto. Flujo completo brainstorming (con
   nivel + panel). Roberto probará `/3ro` en el teléfono y decidirá ajustes (umbral, etc.).
 - **Pendientes de arrastre (fuera del código):** pegar el argumento de evaluación formativa en la
   propuesta/guion (otro PC); enlace de agenda real para el CTA de la landing.
+
+### Sesión 55 (2026-08-25) — 3° básico · Plan 2: Matemática de año completo (26 OA, 792 preguntas)
+Se escribió y ejecutó el **Plan 2** de 3° básico
+(`docs/superpowers/plans/2026-08-25-3-basico-plan2-matematica-contenido.md`, 13 tareas), con
+26 agentes redactando el banco y 6 auditores revisándolo después. **`juego/index.html` (8°) NO se
+tocó en ningún paso** (verificado con `git diff` al cierre).
+
+- **Dos defectos que el plan encontró antes de empezar, y corrigió:**
+  1. **El tablero estaba ROTO.** `python scripts/generar-tablero.py` moría con
+     `KeyError: 'unidades'` porque el `oa.json` semilla de 3° no traía esa clave y el script
+     recorre todas las carpetas de `contenido/`. **No generaba nada, para ninguna asignatura**, y
+     nadie lo había notado porque nadie lo había regenerado desde la Sesión 54.
+  2. **El banco semilla estaba MAL ETIQUETADO.** Las 6 preguntas de sumas y restas llevaban
+     `MA03 OA 09`, que oficialmente es **división**; su código real es `MA03 OA 06`. Importaba
+     porque el mapa de dominio le reporta al profesor **por código de OA**: un profesor habría
+     visto "división" flojo cuando los niños practicaron sumas.
+- **El hallazgo mayor de la sesión: el apoyo visual era código muerto.** `pintaPregunta` hace
+  `renderVisual(P.visual)`, pero **ninguno de los 6 constructores de preguntas copiaba el campo
+  `visual`** (todos mapeaban `{q,ops,ok,tip,oa}`). Es **el mismo patrón del bug de la Sesión 23**,
+  cuando `buildPreguntas` descartaba el `oa` y el mapa de dominio habría quedado vacío para siempre
+  sin error visible. La Sesión 54 dio el apoyo visual por verificado, pero esa comprobación no pasó
+  por el juego real. Se agregó `visual:q.visual` a los seis.
+- **Catálogo de apoyos visuales ampliado de 1 a 7 tipos**, todos dibujados por código (SVG inline,
+  sin archivos ni librerías): `contar` (el que ya existía), `agrupar` (multiplicar y dividir),
+  `fraccion`, `recta`, `reloj` análogo, `barras` y `cuerpo` (los 6 cuerpos geométricos). Sin ellos,
+  Geometría, Medición y Datos habrían quedado preguntables solo de memoria.
+- **Banco de año completo:** los **26 OA oficiales** transcritos de curriculumnacional.cl con sus
+  5 ejes, y **30 preguntas por OA** generadas por 26 agentes en paralelo (uno por OA), cada uno
+  validando su archivo antes de entregar. Consolidado: **792 preguntas** (780 nuevas + 12 de la
+  semilla), deduplicadas y con las opciones barajadas repartiendo la correcta entre las 4
+  posiciones (**210/210/186/186**). Todas nacen `revisada:false`.
+- **Campaña de año completo:** 7 capítulos (Números y operaciones se parte en tres porque tiene 11
+  OA), **26 etapas de 10 preguntas** + 7 jefes de capítulo de 15 + el Jefe Final "El Número
+  Perdido" (4 fases × 4, cubriendo los 26 OA). Las 26 metas de aprendizaje en lenguaje de niño.
+  **Decisión de Roberto:** etapas de **10** preguntas, "misma extensión que 8°" — el spec §5 había
+  fijado 5-6 por la edad; queda anotado que es un campo de datos (`n:`) y se baja sin rehacer nada.
+- **Herramientas nuevas:** `scripts/validar-banco-3ro.py` (estructura, OA oficiales, duplicados,
+  largo de lector inicial, coherencia de los visuales) y `scripts/consolidar-pool-3ro.py`. El
+  `consolidar-pool.py` viejo **no servía**: está cableado a `historia-8basico`.
+
+**La auditoría (6 agentes) y lo que cambió por ella.** Los cinco auditores de contenido coinciden
+en lo que más importaba: **cero claves erróneas en las 792 preguntas**, verificadas con script y no
+a ojo (aritmética, datos de cuerpos geométricos, ángulos de reloj, calendario, conversiones g/kg,
+puntos medios). Ortografía y tildes limpias. Lo que sí encontraron, y se corrigió:
+
+- **17 preguntas donde el dibujo regalaba la respuesta.** 9 de OA15 (la pregunta describía la red
+  en palabras y el visual mostraba el cuerpo), 5 de OA12 (la marca dorada de la recta *era* el
+  número que había que deducir del patrón), `oa24-9` y `oa24-23`. Se les quitó el visual o se movió
+  la marca al último término dado. **`oa16-21` y `oa16-22` conservan el suyo a propósito**: dicen
+  "¿cómo se llama **este** cuerpo?", así que el dibujo es la pregunta, no la respuesta.
+- **6 rectas ilegibles.** Con 11 etiquetas de 4 dígitos (`0..1000` de 100 en 100, o los años
+  1900-2000) los números se encimaban. Se arregló **en el widget**, con rotulado adaptativo, para
+  que cubra también el contenido futuro. **Al calibrarlo se introdujo una regresión** —la recta
+  `0..100`, que se veía perfecta, pasó a mostrar 6 etiquetas de 11— detectada al comparar capturas
+  antes y después, y corregida bajando el ancho estimado por dígito de 6 a 5 unidades.
+- **2 distractores más correctos que la clave.** `oa03-2` preguntaba "¿cuál es menor: 728 o 782?"
+  y ofrecía **708** entre las opciones; `oa03-13` lo mismo con 607. Un niño que razonaba bien
+  quedaba sin salida. Reemplazados.
+- **`oa04-7`:** la marca 38 no caía en ninguna marca de una recta que saltaba de 5 en 5.
+
+> **Lección de método: tres de los seis auditores reportaron un "BLOQUEANTE" falso** —que el motor
+> no renderiza `visual`— porque grepearon **`juego/index.html`** (8°) en vez de `3ro/index.html`.
+> El encargo no les decía cuál era el motor. Al despachar auditores sobre una app que es un **fork**,
+> hay que nombrar el archivo explícitamente o revisan el gemelo equivocado.
+
+**Verificado en el navegador, jugando de verdad:** captura de una etapa real de Geometría con el
+paralelepípedo dibujado, la meta 🎯, sin reloj y texto grande; y recorrido completo de los **7
+capítulos (33 nodos): 365 preguntas servidas, 109 con apoyo visual, cero etapas vacías, consola
+limpia**. **8° intacto** (20 expediciones, con reloj) y **nada enlaza a `/3ro`**.
+
+- **Trampa latente anotada (no corregida, no rompe nada hoy):** las opciones se pintan con
+  `innerHTML` sin escapar, así que una opción que empiece con `<` seguido de **letra** perdería
+  texto en silencio. Caracterizado en el navegador: `<`, `<5` y `3 < 5` se ven bien; `a <b c` no.
+  **Ningún banco tiene hoy ese caso**, ni en 3° ni en 8°, pero el patrón está en las dos apps.
+- **Pendiente de Roberto (decisiones pedagógicas que no me corresponden):** 7 preguntas de OA11
+  exigen simplificar fracciones (3/6 = 1/2), que es de 4° básico; ~10 ítems de OA02 son en realidad
+  de OA03/OA05 y harían que el mapa de dominio mida dos objetivos con las mismas preguntas; las 5
+  preguntas de OA26 con visual usan barras donde el OA pide diagramas de puntos; y 8 de OA18 piden
+  clasificar agudo/obtuso/llano, que va más allá del OA. Nada de eso impide jugar.
+- **Pendiente que sigue igual:** la **aprobación pedagógica humana** del banco (792 preguntas,
+  todas `revisada:false`), por el flujo de siempre: tablero → "Exportar revisadas" →
+  `aplicar-revisadas.py`. Y el arte propio de los 7 capítulos y del villano (hoy todos caen a
+  `assets/portada-matematicas.png`). El **Plan 3** (capa de nivel en el backend, `MA03` en
+  `kimun_oa_asignatura`, panel consciente del nivel, y el `localStorage` compartido entre `/3ro` y
+  `/juego`) queda sin empezar.
