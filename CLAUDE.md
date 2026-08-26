@@ -3068,3 +3068,32 @@ limpia**. **8° intacto** (20 expediciones, con reloj) y **nada enlaza a `/3ro`*
   `assets/portada-matematicas.png`). El **Plan 3** (capa de nivel en el backend, `MA03` en
   `kimun_oa_asignatura`, panel consciente del nivel, y el `localStorage` compartido entre `/3ro` y
   `/juego`) queda sin empezar.
+
+**Continuación de la misma sesión — la lectura por voz.** Roberto probó `/3ro` y reportó que "la
+lectura no está sincronizada con las opciones y la voz es horrible". Las dos cosas eran ciertas, y
+la primera era un **bug serio**:
+
+- **La voz leía un orden distinto al de la pantalla.** `pintaPregunta` baraja las opciones y las
+  rotula A-D por su **posición en pantalla**, pero el botón 🔊 leía `P.ops` —el arreglo **original,
+  sin barajar**—, así que la pantalla mostraba "A. 6" y la voz decía "A. 4". Para un niño que
+  todavía no lee de corrido, que es exactamente el público del botón, **le dictaba la respuesta
+  equivocada**: peor que no tener la función. Ahora se lee el arreglo `orden`, el mismo que se
+  pinta. Verificado comparando opción por opción lo que se ve contra lo que se dice.
+- **`leerEnVoz` reescrita.** Tenía dos defectos: (1) `getVoices()` devuelve `[]` en la primera
+  llamada porque las voces cargan asíncronas, así que casi siempre caía a la voz por defecto del
+  sistema; ahora se engancha a `voiceschanged` y se cachea. (2) Tomaba "la primera que empiece con
+  es"; ahora prefiere **Chile → latinoamericano → España**.
+- **Lectura por partes con resaltado:** primero la pregunta, después cada opción como enunciado
+  propio, y **la opción que suena se ilumina** (`.opt.leyendo`). Cambiar de pregunta corta la
+  lectura anterior (`callarVoz()`), que antes se encimaba. `leerEnVoz(texto)` se conserva para
+  quien solo necesite leer un texto suelto.
+
+> **Límite verificado, y hay que decirlo antes de mostrar la app en el notebook:** en el PC de
+> Roberto **no hay ninguna voz latinoamericana instalada**. Chrome expone solo Helena, Laura y
+> Pablo (las tres `es-ES`), y Windows tiene registradas únicamente Helena (es-ES) y Zira (inglés).
+> Por buena que sea la selección, ahí se seguirá oyendo a Helena, robótica y con acento peninsular.
+> **Donde sí mejora es en el teléfono del alumno** (Android trae Google TTS con voces `es-US`/
+> `es-MX`, y la lógica nueva las prefiere). Para mejorarlo en Windows hay que agregar el idioma
+> **Español (México o Chile) con su paquete de voz** en Configuración → Hora e idioma; es un cambio
+> del sistema, no del código, y VULPO la elegirá sola.
+
