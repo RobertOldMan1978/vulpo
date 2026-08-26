@@ -50,13 +50,18 @@ def _fraccion(m):
 
 def _hora(m):
     h, mm = int(m.group(1)), int(m.group(2))
+    # El articulo solo se agrega si el texto no lo trae ya: muchos enunciados dicen
+    # "a las 3:00", y anteponerlo a ciegas daba "a las LAS 3 en punto".
+    antes = m.string[:m.start()].rstrip().lower()
+    art = "" if antes.endswith((" las", " la")) or antes in ("las", "la") else \
+          ("la " if h == 1 else "las ")
     if mm == 0:
-        return "las %d en punto" % h
+        return "%s%d en punto" % (art, h)
     if mm == 15:
-        return "las %d y cuarto" % h
+        return "%s%d y cuarto" % (art, h)
     if mm == 30:
-        return "las %d y media" % h
-    return "las %d %d" % (h, mm)
+        return "%s%d y media" % (art, h)
+    return "%s%d %d" % (art, h, mm)
 
 
 def _unidad(m, palabra):
@@ -71,10 +76,16 @@ def normalizar(texto, oa=""):
     for simbolo, palabra in _SIMBOLOS.items():
         t = t.replace(simbolo, " %s " % palabra)
 
+    # Los dos puntos tienen TRES usos en este banco, y se distinguen por los espacios:
+    #   division  -> "18 : 6"                 (espacio a los dos lados, siempre OA09)
+    #   hora      -> "7:45"                   (pegado a los dos lados)
+    #   listado   -> "de 10 en 10: 10, 20"    (pegado a la izquierda, espacio a la derecha)
+    # Exigir espacios a ambos lados para la division es lo que impide que un listado
+    # se lea "cuenta de diez en diez DIVIDIDO EN diez, veinte" — verificado sobre los
+    # 124 textos del banco que llevan dos puntos.
     if oa in _OA_HORA:
         t = re.sub(r"\b(\d{1,2}):(\d{2})\b", _hora, t)
-    else:
-        t = re.sub(r"(\d)\s*:\s*(\d)", r"\1 dividido en \2", t)
+    t = re.sub(r"(\d)\s+:\s+(\d)", r"\1 dividido en \2", t)
 
     t = re.sub(r"\b(\d+)/(\d+)\b", _fraccion, t)          # antes que la barra suelta
 
@@ -84,10 +95,20 @@ def normalizar(texto, oa=""):
     t = re.sub(r"(\d)\s*[x×]\s*(\d)", r"\1 por \2", t)
     t = t.replace("+", " mas ").replace("=", " es igual a ")
     t = re.sub(r"(\d)\s*[-−]\s*(\d)", r"\1 menos \2", t)
-    t = re.sub(r"_{2,}", " , ", t)                        # el blanco de "506 __ 560"
+    # El blanco a completar ("506 __ 560", "35, 40, ___, 50") hay que NOMBRARLO. Una
+    # simple pausa no sirve: "35, 40, 50" suena a que esa es la secuencia, y el nino
+    # que escucha en vez de leer se pierde justo el hueco que tiene que llenar.
+    t = re.sub(r"_{2,}", " el espacio en blanco ", t)
+    t = re.sub(r",(\s*,)+", ",", t)
     t = t.replace(" > ", " es mayor que ").replace(" < ", " es menor que ")
     t = re.sub(r"^\s*>\s*$", " mayor que ", t)
     t = re.sub(r"^\s*<\s*$", " menor que ", t)
+    # Una opcion que es UN solo signo hay que nombrarla, o el sintetizador devuelve
+    # silencio y el nino cree que el boton 🔊 esta roto. Paso al final, cuando las
+    # reglas de arriba ya convirtieron los signos que aparecen dentro de una frase.
+    t = re.sub(r"^\s*[-−]\s*$", " el signo menos ", t)
+    t = re.sub(r"^\s*mas\s*$", " el signo mas ", t)
+    t = re.sub(r"^\s*es igual a\s*$", " el signo igual ", t)
 
     # El punto final de la frase NO es parte del monto: "$90." es 90, no "90."
     t = re.sub(r"\$\s*(\d{1,3}(?:\.\d{3})*)", r"\1 pesos", t)
@@ -108,7 +129,10 @@ def _revisar_banco():
     from pathlib import Path
     banco = Path(__file__).resolve().parent.parent / "contenido" / "matematicas-3basico" / "preguntas.json"
     ps = json.load(io.open(banco, encoding="utf-8"))["preguntas"]
-    sospechoso = re.compile(r"[/:+=<>$°º▢\U0001f53a\U0001f537\U0001f7e1⬛]|_{2,}|\b\d+\s*(cm|kg|g|m)\b")
+    # El ":" NO se marca: en 107 textos del banco es un dos puntos de enumeracion
+    # ("cuenta de 10 en 10: 10, 20") que el sintetizador lee bien como pausa. Solo la
+    # division ("18 : 6", con espacios) se traduce, y eso ya no deja ":" atras.
+    sospechoso = re.compile(r"[/+=<>$°º▢\U0001f53a\U0001f537\U0001f7e1⬛]|_{2,}|\b\d+\s*(cm|kg|g|m)\b")
     quedan = []
     total = 0
     for p in ps:

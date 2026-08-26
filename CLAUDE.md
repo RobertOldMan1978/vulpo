@@ -3097,3 +3097,83 @@ la primera era un **bug serio**:
 > **Español (México o Chile) con su paquete de voz** en Configuración → Hora e idioma; es un cambio
 > del sistema, no del código, y VULPO la elegirá sola.
 
+
+### Sesión 56 (2026-08-26) — La voz chilena de 3° básico, grabada y en el repo
+Cierra el pendiente que quedó abierto en la Sesión 55: la lectura por voz de `/3ro` dependía de lo
+que el aparato tuviera instalado, y en el PC de Roberto eso es Helena, robótica y de España. Ahora
+la voz **viaja con el proyecto**. Plan: `docs/superpowers/plans/2026-08-25-voz-pregrabada-3ro.md`.
+**`juego/index.html` (8°) NO se tocó** (verificado al cierre).
+
+- **Voz elegida: `es-CL-CatalinaNeural` de Azure**, a **−10%** de velocidad y **48 kbps sin
+  recomprimir**. Las dos cosas las decidió Roberto escuchando: la velocidad porque son niños de 8
+  años que recién decodifican, y la calidad porque recomprimir a 24 kbps ahorraba la mitad del peso
+  pero dejaba la voz metálica. Quedaron documentadas **en el código con su porqué**, para que nadie
+  las "optimice" más adelante sin saber que se tomaron con el oído.
+- **Por qué Azure y no `edge-tts`:** da la misma voz gratis, pero sus términos no autorizan
+  claramente redistribuir el audio en un producto que se vende. Se descartaron también tres voces
+  de Piper (una con licencia limpia): Roberto las comparó y "sigue siendo mucho mejor Catalina".
+- **1.987 clips · 39,3 MB · US$1,07 en total** (US$0,82 la primera tanda + US$0,25 de correcciones).
+  El nombre de cada archivo es un **hash del texto mostrado**, así una opción repetida ("12",
+  "Cubo") comparte archivo y corregir una pregunta regenera solo su clip.
+- **La clave de Azure vive FUERA del repo** (que es público), y `.gitignore` la blinda por si acaso.
+
+**Tres defectos reales del audio, encontrados comparando qué se VE contra qué se DICE.** Ningún
+chequeo de bytes los habría visto; los tres estaban ya generados:
+1. **Un clip mudo de 0 bytes:** la opción `-` de una pregunta de signos. El normalizador convertía
+   el guion solo *entre dígitos*, así que llegó solo a Azure y no había nada que pronunciar. En
+   pantalla el niño toca 🔊 y no pasa nada: parece un botón roto. Ahora los signos sueltos se
+   nombran ("el signo menos").
+2. **El peor — `:` leído como "dividido en" en el conteo salteado:** Catalina decía *"cuenta de
+   diez en diez DIVIDIDO EN diez, veinte, treinta"*, un disparate y justo en el contenido que la
+   pregunta enseña. El criterio que lo resuelve es limpio y se verificó sobre los 124 textos con
+   dos puntos del banco: la **división siempre trae espacios a ambos lados** (`18 : 6`, todas de
+   OA09) y la **hora y el listado lo traen pegado** (`7:45`, `de 10 en 10: 10`).
+3. **"a las las 3 en punto"** en las 72 preguntas de reloj: la función de hora anteponía el
+   artículo sin mirar que el enunciado ya lo traía.
+
+> **Un error propio, corregido antes de generar:** al arreglar el punto 2 se colapsaron las comas
+> repetidas y eso **se comió el espacio en blanco**: "35, 40, ___, 50" quedaba como *"35, 40, 50"*,
+> que suena a que esa es la secuencia. Peor que el problema original, y peor justo para el niño que
+> escucha en vez de leer. El blanco ahora **se nombra**: "el espacio en blanco".
+
+Tras los arreglos se regeneraron **los 542 clips cuyo texto hablado difiere del mostrado** —el
+único conjunto que el normalizador puede haber tocado— en vez de adivinar cuáles quedaron mal.
+
+- **Reproductor (`3ro/index.html`):** `sonarClip()` busca el texto en el manifiesto y devuelve
+  `false` si no está, para **caer a la voz del navegador**; `callarVoz()` ahora también detiene el
+  MP3. La lectura es una **cola encadenada**, no una serie de llamadas seguidas: con
+  `speechSynthesis` bastaba encolar porque el navegador serializa solo, pero `Audio` es asíncrono de
+  verdad y sin encadenar sonarían los cinco clips encima. Cada clip arranca el siguiente en su
+  `onended` **y en su `onerror`**, para que un archivo roto no deje la cadena colgada.
+- **Se dejó de decir la letra ("A.", "B.")**: así el clip de "6" sirve en cualquier posición —si no,
+  habría que generar cuatro versiones de cada opción— y, más importante, el niño oye lo mismo suene
+  el MP3 o el respaldo.
+- **Voz también en la meta 🎯 y en el resultado.** Los dos botones leen el texto **en el momento del
+  clic**, no al cablearse: el titular del resultado lo pintan tres caminos distintos (etapa
+  aprobada, reprobada y refuerzo), así ninguno tiene que acordarse de la voz.
+- **Verificado.** En **Node** (determinista): orden exacto pregunta→4 opciones, **0 solapamientos**,
+  mezcla correcta de clip y respaldo en la misma cola, y al cambiar de pregunta la cola vieja se
+  corta. En el **navegador**: `VOZ_BASE` resuelve bien pese al `<base href="/">`, manifiesto HTTP
+  200 con 1.987 entradas, una pregunta real encontrada en el mapa (o sea las claves calzan exacto
+  con lo que se muestra) y los dos botones presentes. Banco sin errores y sintaxis JS OK.
+
+> **Gotcha de método (nuevo):** `--virtual-time-budget` de Chrome headless **se cuelga en `/3ro`**,
+> porque el audio del juego corre en tiempo real y el tiempo virtual no avanza. Por eso la cola se
+> probó en Node y en el navegador solo lo que Node no puede ver. Segundo gotcha: al inyectar un
+> bloque de prueba en el HTML desde Python, **las barras invertidas se colapsan** y dejan una
+> cadena JS sin cerrar que falla **en silencio** (el `<pre>` queda vacío y parece que "no corrió").
+> Escribir el bloque con un heredoc literal (`<<'HTML'`) lo evita.
+
+- **Observación pedagógica que queda para Roberto:** las **dos preguntas de "¿qué signo va aquí?"**
+  tienen un cuarto distractor de relleno (`-` en una, `+` en la otra). **No es corregible tocando
+  distractores: solo existen tres signos de comparación**, así que el formato de 4 opciones es
+  estructuralmente imposible ahí y el niño queda siempre en un 1-de-3. Arreglarlo es rediseñar el
+  ítem.
+- **Alcance decidido:** pregrabar la voz vale de **1° a 4° básico**. De 5° hacia arriba es
+  accesibilidad y basta la voz del navegador: **no gastar ahí**. Cada asignatura nueva de 3° genera
+  su audio corriendo el mismo script con su banco.
+- **Pendientes de arrastre:** aprobación pedagógica humana de las 792 preguntas de Matemática 3°;
+  arte de los 7 capítulos y del villano; **Plan 3** (capa de nivel en el backend y el
+  `localStorage` compartido entre `/3ro` y `/juego`); y fuera del código, la SpA para facturar,
+  INAPI, la foto semanal, el argumento de evaluación formativa en la propuesta y el enlace de
+  agenda real para el CTA de la landing.

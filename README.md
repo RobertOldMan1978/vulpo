@@ -64,9 +64,11 @@ manual antes de coronar la v1. Login, multiusuario y modelo de negocio quedan
 para más adelante.
 
 Aparte, hay una **app de 3° básico en construcción** en `3ro/`, adaptada a niños de
-8-9 años (lectura por voz, sin cronómetro, apoyo visual dibujado por código, texto
-grande). Por ahora solo tiene Matemática, con los 26 objetivos del año; **no está
-enlazada desde el sitio** y su banco todavía no pasa por revisión pedagógica.
+8-9 años (sin cronómetro, apoyo visual dibujado por código, texto grande y **lectura
+por voz con una voz chilena grabada** —los MP3 viajan en el repo, y si alguno no
+carga se lee con la voz del navegador). Por ahora solo tiene Matemática, con los 26
+objetivos del año; **no está enlazada desde el sitio** y su banco todavía no pasa por
+revisión pedagógica.
 
 Consulta [CLAUDE.md](CLAUDE.md) para el detalle de decisiones de diseño y el
 roadmap.

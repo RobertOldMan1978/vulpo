@@ -976,6 +976,7 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
       <span class="meta-ic">🎯</span>
       <div class="meta-kick">Lo que vas a aprender</div>
       <p class="meta-frase" id="metaTxt"></p>
+      <button class="btn-escuchar" id="btnEscucharMeta" type="button">🔊 Escuchar</button>
       <button class="btn" id="metaVamos" type="button">¡Vamos! ▶</button>
     </div>
   </section>
@@ -1007,6 +1008,7 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
     <div class="resbox">
       <img class="big kim-res" id="resKim" src="assets/kimun-oro.png" alt="Vulpi">
       <h2 id="resTitle">¡Nivel superado!</h2>
+      <button class="btn-escuchar" id="btnEscucharRes" type="button">🔊 Escuchar</button>
       <p id="resObj" class="res-obj" hidden></p>
       <div class="starline" id="resStars"></div>
       <div class="statgrid">
@@ -1514,8 +1516,38 @@ if(window.speechSynthesis){
  try{ speechSynthesis.onvoiceschanged=()=>{_VOZ_LISTA=false; elegirVoz();}; elegirVoz(); }catch(e){}
 }
 
+/* Audios pregrabados con la voz chilena de Catalina (ver scripts/generar-voz-3ro.py).
+   El manifiesto dice qué textos tienen clip; lo que no esté, lo lee el navegador.
+   Así la lectura suena igual en todos los aparatos, pero nunca se queda muda si los
+   MP3 no cargan (colegio con internet malo, por ejemplo). */
+const VOZ_BASE='assets/voz/mat3/';
+let VOZ_MAP=null;
+fetch(VOZ_BASE+'manifiesto.json')
+ .then(r=>r.ok?r.json():null)
+ .then(m=>{VOZ_MAP=m||{};})
+ .catch(()=>{VOZ_MAP={};});
+
+let _AUDIO=null;
+/* Reproduce el clip pregrabado de `texto`. Devuelve false si no existe, para que el
+   llamador caiga a la voz del navegador. `alTerminar` se llama también al fallar: sin
+   eso, un clip roto dejaría la cadena de lectura colgada a mitad. */
+function sonarClip(texto,alEmpezar,alTerminar){
+ const arch=VOZ_MAP&&VOZ_MAP[(texto||'').trim()];
+ if(!arch) return false;
+ try{
+  const a=new Audio(VOZ_BASE+arch);
+  _AUDIO=a;
+  a.onplay=()=>{ if(alEmpezar) alEmpezar(); };
+  a.onended=()=>{ if(alTerminar) alTerminar(); };
+  a.onerror=()=>{ if(alTerminar) alTerminar(); };
+  a.play().catch(()=>{ if(alTerminar) alTerminar(); });
+  return true;
+ }catch(e){ return false; }
+}
+
 function callarVoz(){
  try{ if(window.speechSynthesis) speechSynthesis.cancel(); }catch(e){}
+ try{ if(_AUDIO){ _AUDIO.pause(); _AUDIO=null; } }catch(e){}
  try{ document.querySelectorAll('.opt.leyendo').forEach(o=>o.classList.remove('leyendo')); }catch(e){}
 }
 
@@ -1533,20 +1565,49 @@ function decir(texto,alEmpezar,alTerminar){
 }
 
 // Compatibilidad: leer un texto suelto (lo usa cualquier pantalla sin opciones).
-function leerEnVoz(texto){ callarVoz(); decir(texto); }
+// Usa el clip pregrabado si existe; si no, la voz del navegador.
+function leerEnVoz(texto){ callarVoz(); if(!sonarClip(texto)) decir(texto); }
+
+let _COLA_ID=0;   // declarado ANTES de usarse: con `let` al revés queda en zona muerta
 
 /* Lee la pregunta y luego las opciones EN EL ORDEN EN QUE SE VEN, iluminando cada
-   una mientras suena. `opciones` debe venir ya barajada, igual que la pantalla. */
+   una mientras suena. `opciones` debe venir ya barajada, igual que la pantalla.
+
+   Es una COLA encadenada, no una serie de llamadas seguidas: el audio pregrabado es
+   asíncrono de verdad, y sin encadenar sonarían los cinco clips encima. Con
+   speechSynthesis bastaba encolar porque el navegador serializa solo.
+
+   NO se dice la letra ("A.", "B.") por dos razones: el clip pregrabado es del texto
+   solo —así el "6" sirve en cualquier posición y no hay que generar cuatro versiones
+   de cada opción—, y el resaltado ya muestra de cuál se trata. Si se dijera la letra
+   solo en el respaldo, el niño oiría cosas distintas según si el MP3 cargó o no. */
 function leerPreguntaEnVoz(pregunta,opciones,contenedor){
  callarVoz();
- decir(pregunta);
- (opciones||[]).forEach((txt,k)=>{
-  const nodo=contenedor?contenedor.children[k]:null;
-  decir('ABCD'[k]+'. '+txt,
-        ()=>{ if(nodo) nodo.classList.add('leyendo'); },
-        ()=>{ if(nodo) nodo.classList.remove('leyendo'); });
- });
+ const cola=[{txt:pregunta,nodo:null}];
+ (opciones||[]).forEach((txt,k)=>cola.push({
+   txt:String(txt),
+   nodo:contenedor?contenedor.children[k]:null
+ }));
+ let i=0;
+ _COLA_ID++; const miId=_COLA_ID;             // una cola nueva invalida la anterior
+ (function siguiente(){
+  if(miId!==_COLA_ID || i>=cola.length) return;
+  const it=cola[i++];
+  const enciende=()=>{ if(it.nodo) it.nodo.classList.add('leyendo'); };
+  const apaga=()=>{ if(it.nodo) it.nodo.classList.remove('leyendo'); siguiente(); };
+  if(!sonarClip(it.txt, enciende, apaga)) decir(it.txt, enciende, apaga);
+ })();
 }
+
+/* Los 🔊 de la meta y del resultado se cablean UNA vez y leen el texto en el momento
+   del clic, no al cablear: el titular del resultado lo pintan tres caminos distintos
+   (etapa aprobada, reprobada y refuerzo), y así ninguno tiene que acordarse de la voz. */
+document.addEventListener('DOMContentLoaded',()=>{
+ [['btnEscucharMeta','metaTxt'],['btnEscucharRes','resTitle']].forEach(([b,t])=>{
+  const bt=document.getElementById(b);
+  if(bt) bt.onclick=()=>leerEnVoz(document.getElementById(t).textContent);
+ });
+});
 
 /* Apoyo visual dibujado por código para la app de 3° (liviano, sin archivos ni librerías).
    Cada pregunta puede traer un objeto `visual`; si el tipo no existe, se ignora en silencio
@@ -3742,7 +3803,7 @@ function startQuiz(lvl){
 function mostrarMetaEtapa(lvl, clave){
  S.metasVistas[clave]=true; guardar();
  $('metaTxt').textContent=metaDeEtapa(lvl);
- $('metaVamos').onclick=()=>{ SND.tap(); arrancarQuiz(lvl); };
+ $('metaVamos').onclick=()=>{ SND.tap(); callarVoz(); arrancarQuiz(lvl); };
  go('scr-meta');
 }
 // Arranque real del quiz de una etapa (lo que hacía startQuiz antes de la compuerta de meta).
