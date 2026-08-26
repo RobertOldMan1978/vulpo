@@ -1406,6 +1406,13 @@ const PRUEBA=SOLO.length>0;
 /* Modo revisión de profesor (?rev=1 junto a ?solo= o ?m=). La maquinaria vive en
    assets/js/revision.js, compartida con los demás cursos: aquí solo se enciende. */
 const REVISION=PRUEBA && (_PARAMS.has('rev')||!!(_M&&_M.rev));
+/* Respaldo por si assets/js/revision.js no cargó (404 durante un despliegue, red
+   caída, bloqueador). Sin esto, REV.init lanzaría en el nivel superior y MATARÍA
+   todo el JavaScript del juego: una función accesoria de revisión dejaría la página
+   inservible para un alumno que no tiene nada que ver con ella. Pasó de verdad. */
+if(!window.REV) window.REV={activo:false,n:3,marcadas:[],
+  init:function(){return this;},barra:function(){},boton:function(){},
+  abrir:function(){},mensaje:function(){return '';},tipoAudio:function(){return '';}};
 REV.init({ activo:REVISION,
            titulo:'VULPO · Revisión de 8° básico',
            volver:function(){ go('scr-expediciones'); } });

@@ -351,6 +351,16 @@ para siempre.
     (incluir el script, `REV.init`, y engancharlo en `nPreguntas`, `pintaPregunta` y `go`). Con
     el modo apagado no inyecta nada. Ya está en **8° y en 3°**, y el armador (`?armar=1`) de
     ambos tiene su casilla.
+  - **⚠️ Al agregar un `<script src>` al juego, PROBAR SIEMPRE que pasa si NO carga.**
+    Sacar este módulo a un archivo aparte creó una **dependencia dura en el arranque**: la
+    llamada `REV.init(...)` vive en el nivel superior del script, así que un 404 de
+    `revision.js` **mataba todo el JavaScript del juego**. El síntoma es engañoso —la pantalla
+    inicial se ve igual, porque es HTML, pero **ningún botón responde**, ya que el juego murió
+    antes de cablearlos—. Pasó de verdad: al desplegar, el archivo tardó ~2 minutos en estar
+    disponible en `vulpo.cl`, y quien abriera en esa ventana veía el juego muerto. **El alcance
+    no era el modo revisión sino el juego entero**: cualquier alumno con red lenta o un
+    bloqueador de scripts. Ambas apps traen ahora un **respaldo vacío** (`if(!window.REV)
+    window.REV={...no-op...}`) antes de usarlo, verificado apuntando a un archivo inexistente.
   - **Requisito del motor:** las preguntas deben llevar `id`. Hubo que propagarlo en los **6
     constructores de cada app** — el mismo punto ciego que ya causó dos bugs silenciosos (el `oa`
     en la Sesión 23 y el `visual` en la 55). Al tocar un constructor, revisar que no se caiga un
@@ -3304,3 +3314,12 @@ corregible automáticamente y (2) montar la parte humana sobre el módulo de enl
   Roberto) y está activo en **8° y 3°**. Verificado en ambos, con y sin el modo, sin regresión.
   **Pendiente de Roberto: probar la grabación de voz en el teléfono** — un navegador sin interfaz
   no puede dar permiso de micrófono, así que esa parte no se pudo comprobar aquí.
+
+**Post scriptum de la Sesión 56 — el modo revisión podía matar el juego.** Roberto probó los dos
+enlaces: el de 8° funcionó y el de 3° no ("se veía la pantalla inicial pero al apretar no
+partía"). No era el enlace ni el token: era que `assets/js/revision.js` tardó ~2 minutos en
+propagar y, mientras tanto, `REV.init` reventaba en el nivel superior y se llevaba puesto todo el
+JavaScript del juego. Reproducido y corregido con un respaldo vacío; ver el detalle en `?rev=1`,
+arriba. **La lección, que es más grande que el bug:** el módulo se dio por verificado probándolo
+**con el archivo presente**, y nunca con el archivo ausente. Al mover código a un `<script src>`
+hay que probar los dos casos.

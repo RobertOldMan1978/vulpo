@@ -1312,6 +1312,13 @@ const SIN_DISCO=PRUEBA||ARMAR;   // ni localStorage ni Supabase ni intro
    Hereda todo lo demás del modo prueba: no guarda nada, no toca la partida del
    dispositivo y no mide dominio. */
 const REVISION=PRUEBA && (_PARAMS.has('rev')||!!(_M&&_M.rev));
+/* Respaldo por si assets/js/revision.js no cargó (404 durante un despliegue, red
+   caída, bloqueador). Sin esto, REV.init lanzaría en el nivel superior y MATARÍA
+   todo el JavaScript del juego: una función accesoria de revisión dejaría la página
+   inservible para un alumno que no tiene nada que ver con ella. Pasó de verdad. */
+if(!window.REV) window.REV={activo:false,n:3,marcadas:[],
+  init:function(){return this;},barra:function(){},boton:function(){},
+  abrir:function(){},mensaje:function(){return '';},tipoAudio:function(){return '';}};
 REV.init({ activo:REVISION,
            titulo:'VULPO · Revisión de Matemática 3° básico',
            volver:function(){ go('scr-mapas'); } });
