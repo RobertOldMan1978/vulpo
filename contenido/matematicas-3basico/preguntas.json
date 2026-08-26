@@ -244,7 +244,7 @@
       "opciones": [
         "500",
         "550",
-        "560",
+        "750",
         "460"
       ],
       "correcta": 1,
@@ -558,7 +558,7 @@
         "Quinientos setenta",
         "Quinientos siete",
         "Cincuenta y siete",
-        "Quinientos setenta y uno"
+        "Quinientos cero siete"
       ],
       "correcta": 1,
       "tip": "El 0 de las decenas no se nombra: quedan 5 centenas y 7 unidades.",
@@ -572,7 +572,7 @@
         "980",
         "9008",
         "908",
-        "98"
+        "809"
       ],
       "correcta": 2,
       "tip": "El ocho va en las unidades y, como no hay decenas, se escribe un 0 al medio.",
@@ -628,7 +628,7 @@
         "Sesenta y cuatro",
         "Seiscientos cuatro",
         "Seiscientos cuarenta",
-        "Seiscientos catorce"
+        "Cuatrocientos sesenta"
       ],
       "correcta": 2,
       "tip": "El 6 está en las centenas y el 4 en las decenas, así que son 600 y 40.",
@@ -669,7 +669,7 @@
       "opciones": [
         "6015",
         "615",
-        "165",
+        "650",
         "651"
       ],
       "correcta": 1,
@@ -738,7 +738,7 @@
       "pregunta": "¿Qué número señala la marca de la recta?",
       "opciones": [
         "7",
-        "17",
+        "80",
         "70",
         "60"
       ],
@@ -949,7 +949,7 @@
       "opciones": [
         "805",
         "850",
-        "85",
+        "508",
         "8005"
       ],
       "correcta": 0,
@@ -1464,7 +1464,7 @@
         "59",
         "69",
         "49",
-        "51"
+        "54"
       ],
       "correcta": 0,
       "tip": "Descompón: 30 + 20 = 50 y 4 + 5 = 9. Junta 50 y 9.",
@@ -1478,7 +1478,7 @@
         "68",
         "78",
         "88",
-        "79"
+        "76"
       ],
       "correcta": 1,
       "tip": "Suma primero las decenas: 40 + 30 = 70. Después las unidades: 6 + 2 = 8.",
@@ -1503,7 +1503,7 @@
       "oa": "MA03 OA 04",
       "pregunta": "¿Cuánto es 68 − 35?",
       "opciones": [
-        "37",
+        "30",
         "23",
         "43",
         "33"
@@ -1680,7 +1680,7 @@
       "opciones": [
         "46",
         "48",
-        "49",
+        "44",
         "47"
       ],
       "correcta": 3,
@@ -1694,7 +1694,7 @@
       "opciones": [
         "90",
         "80",
-        "95",
+        "100",
         "85"
       ],
       "correcta": 0,
@@ -1742,7 +1742,7 @@
       "pregunta": "¿Cuánto es 62 − 58?",
       "opciones": [
         "6",
-        "14",
+        "16",
         "3",
         "4"
       ],
@@ -1771,7 +1771,7 @@
       "opciones": [
         "4",
         "3",
-        "13",
+        "17",
         "2"
       ],
       "correcta": 1,
@@ -1798,7 +1798,7 @@
       "pregunta": "¿Cuánto es 83 − 79?",
       "opciones": [
         "3",
-        "14",
+        "16",
         "6",
         "4"
       ],
@@ -1814,7 +1814,7 @@
         "18",
         "17",
         "19",
-        "16"
+        "15"
       ],
       "correcta": 0,
       "tip": "Cambia el orden: junta 7 + 3 = 10, que es fácil, y agrega el 8.",
@@ -1839,7 +1839,7 @@
       "oa": "MA03 OA 04",
       "pregunta": "¿Cuánto es 9 + 26 + 4?",
       "opciones": [
-        "38",
+        "35",
         "40",
         "39",
         "29"
@@ -1854,7 +1854,7 @@
       "pregunta": "¿Cuánto es 12 + 38 + 20?",
       "opciones": [
         "60",
-        "72",
+        "50",
         "68",
         "70"
       ],
@@ -1869,7 +1869,7 @@
       "opciones": [
         "46",
         "45",
-        "36",
+        "40",
         "56"
       ],
       "correcta": 0,
@@ -1881,7 +1881,7 @@
       "oa": "MA03 OA 04",
       "pregunta": "¿Cuánto es 40 + 13 + 7?",
       "opciones": [
-        "57",
+        "53",
         "60",
         "50",
         "63"
@@ -2009,7 +2009,7 @@
       "opciones": [
         "500",
         "50",
-        "150",
+        "105",
         "1000"
       ],
       "correcta": 0,
@@ -2133,7 +2133,7 @@
       "oa": "MA03 OA 05",
       "pregunta": "¿Cuántas decenas hay en 100?",
       "opciones": [
-        "110",
+        "0",
         "10",
         "1",
         "100"
@@ -2681,7 +2681,7 @@
         "800",
         "850",
         "860",
-        "750"
+        "550"
       ],
       "correcta": 1,
       "tip": "5 centenas más 3 centenas son 8, y quedan 5 decenas.",
@@ -2790,7 +2790,7 @@
       "oa": "MA03 OA 06",
       "pregunta": "¿Cuánto es 700 - 250?",
       "opciones": [
-        "460",
+        "500",
         "450",
         "350",
         "550"
@@ -2834,7 +2834,7 @@
       "opciones": [
         "75",
         "85",
-        "105",
+        "125",
         "65"
       ],
       "correcta": 0,
@@ -2860,7 +2860,7 @@
       "oa": "MA03 OA 06",
       "pregunta": "Suma 120 + 230 + 150. ¿Cuál es el total?",
       "opciones": [
-        "400",
+        "350",
         "490",
         "500",
         "510"
@@ -2876,7 +2876,7 @@
       "opciones": [
         "390",
         "410",
-        "300",
+        "375",
         "400"
       ],
       "correcta": 3,
@@ -2929,7 +2929,7 @@
       "pregunta": "Si 9 + 4 = 13, ¿cuánto es 13 - 4?",
       "opciones": [
         "4",
-        "5",
+        "8",
         "9",
         "17"
       ],
@@ -2948,8 +2948,8 @@
       "oa": "MA03 OA 07",
       "pregunta": "Si 15 - 7 = 8, ¿cuánto es 8 + 7?",
       "opciones": [
-        "7",
-        "8",
+        "14",
+        "16",
         "22",
         "15"
       ],
@@ -2969,7 +2969,7 @@
       "pregunta": "Si 20 - 6 = 14, ¿cuánto es 14 + 6?",
       "opciones": [
         "20",
-        "14",
+        "21",
         "26",
         "8"
       ],
@@ -3016,8 +3016,8 @@
       "oa": "MA03 OA 07",
       "pregunta": "Si 46 - 18 = 28, ¿cuánto es 28 + 18?",
       "opciones": [
-        "18",
-        "28",
+        "36",
+        "45",
         "64",
         "46"
       ],
@@ -3033,7 +3033,7 @@
         "9",
         "7",
         "25",
-        "8"
+        "10"
       ],
       "correcta": 0,
       "tip": "Para hallar la parte que falta, resta: 17 - 8 da el número buscado.",
@@ -3301,7 +3301,7 @@
         "30",
         "100",
         "130",
-        "65"
+        "90"
       ],
       "correcta": 1,
       "tip": "Sumar devuelve lo que se quitó, así que se llega otra vez al total.",
@@ -3370,7 +3370,7 @@
       "opciones": [
         "12",
         "9",
-        "10",
+        "15",
         "7"
       ],
       "correcta": 0,
@@ -3567,9 +3567,9 @@
       "pregunta": "Si 10 x 6 = 60, ¿cuánto es 9 x 6?",
       "opciones": [
         "54",
-        "56",
+        "48",
         "50",
-        "64"
+        "66"
       ],
       "correcta": 0,
       "tip": "9 x 6 tiene un grupo de 6 menos que 10 x 6: 60 - 6 = 54.",
@@ -4387,7 +4387,7 @@
       "pregunta": "Pedro juntó 450 pesos el lunes y 350 el martes. ¿Cuánto juntó en total?",
       "opciones": [
         "700 pesos",
-        "710 pesos",
+        "750 pesos",
         "800 pesos",
         "850 pesos"
       ],
@@ -4458,7 +4458,7 @@
       "opciones": [
         "300 pesos",
         "800 pesos",
-        "960 pesos",
+        "630 pesos",
         "900 pesos"
       ],
       "correcta": 3,
@@ -4611,9 +4611,9 @@
       "pregunta": "Sara compra 3 panes de 200 pesos cada uno. ¿Cuánto paga en total?",
       "opciones": [
         "203 pesos",
-        "500 pesos",
+        "400 pesos",
         "600 pesos",
-        "900 pesos"
+        "800 pesos"
       ],
       "correcta": 2,
       "tip": "Cada pan vale lo mismo, así que se multiplica: 3 x 200 = 600.",
@@ -4655,7 +4655,7 @@
         "107 pesos",
         "700 pesos",
         "600 pesos",
-        "710 pesos"
+        "800 pesos"
       ],
       "correcta": 1,
       "tip": "Ahorra lo mismo cada día, así que 7 x 100 = 700.",
@@ -4667,7 +4667,7 @@
       "pregunta": "Cinco amigos ponen 200 pesos cada uno. ¿Cuánto dinero juntan?",
       "opciones": [
         "800 pesos",
-        "900 pesos",
+        "1.200 pesos",
         "1.000 pesos",
         "205 pesos"
       ],
@@ -4682,7 +4682,7 @@
       "opciones": [
         "154 pesos",
         "450 pesos",
-        "550 pesos",
+        "750 pesos",
         "600 pesos"
       ],
       "correcta": 3,
@@ -4723,7 +4723,7 @@
       "pregunta": "Tres hermanos se reparten 900 pesos en partes iguales. ¿Cuánto le toca a cada uno?",
       "opciones": [
         "200 pesos",
-        "400 pesos",
+        "450 pesos",
         "300 pesos",
         "600 pesos"
       ],
@@ -4753,7 +4753,7 @@
         "100 pesos",
         "10 pesos",
         "50 pesos",
-        "150 pesos"
+        "250 pesos"
       ],
       "correcta": 0,
       "tip": "500 : 5 = 100, porque 5 x 100 vuelve a dar 500.",
@@ -5064,8 +5064,8 @@
       "pregunta": "¿Cuál fracción es mayor: 3/4 o 1/4?",
       "opciones": [
         "1/4",
-        "1/2",
-        "1/3",
+        "4/4",
+        "4/3",
         "3/4"
       ],
       "correcta": 3,
@@ -5085,7 +5085,7 @@
         "1/3",
         "2/3",
         "3/3",
-        "1/2"
+        "3/1"
       ],
       "correcta": 0,
       "tip": "Si los tercios son iguales, tener 1 es menos que tener 2.",
@@ -5118,7 +5118,7 @@
         "Ana",
         "Los dos igual",
         "Luis",
-        "Nadie"
+        "No se puede saber"
       ],
       "correcta": 2,
       "tip": "Las porciones son del mismo tamaño y Luis tomó 3, uno más que Ana.",
@@ -5130,7 +5130,7 @@
       "pregunta": "Pía usó 1/3 de un pliego y Beto 2/3. ¿Quién usó menos?",
       "opciones": [
         "Los dos igual",
-        "Nadie",
+        "No se puede saber",
         "Beto",
         "Pía"
       ],
@@ -5144,7 +5144,7 @@
       "pregunta": "¿Cuál fracción es mayor: 1/2 o 1/4 de la misma torta?",
       "opciones": [
         "1/2",
-        "Ninguna",
+        "No se puede saber",
         "1/4",
         "Son iguales"
       ],
@@ -5179,7 +5179,7 @@
         "Un medio",
         "Un cuarto",
         "Un tercio",
-        "Tres enteros"
+        "Dos tercios"
       ],
       "correcta": 2,
       "tip": "El nombre viene del total de partes: 3 partes iguales dan tercios.",
@@ -5197,7 +5197,7 @@
       "opciones": [
         "Un medio",
         "Un tercio",
-        "Cuatro enteros",
+        "Dos cuartos",
         "Un cuarto"
       ],
       "correcta": 3,
@@ -5255,7 +5255,7 @@
         "2",
         "3",
         "4",
-        "6"
+        "1"
       ],
       "correcta": 2,
       "tip": "El entero se partió en 4 partes iguales, así que hacen falta las 4.",
@@ -5321,7 +5321,7 @@
         "10",
         "9",
         "12",
-        "11"
+        "6"
       ],
       "correcta": 0,
       "tip": "El patrón avanza de 2 en 2, así que después del 8 viene 8 + 2.",
@@ -5342,7 +5342,7 @@
         "21",
         "25",
         "30",
-        "24"
+        "15"
       ],
       "correcta": 1,
       "tip": "Se cuenta de 5 en 5, entonces al 20 le sumas 5 más.",
@@ -5460,7 +5460,7 @@
       "opciones": [
         "14",
         "8",
-        "17",
+        "20",
         "15"
       ],
       "correcta": 0,
@@ -5472,7 +5472,7 @@
       "oa": "MA03 OA 12",
       "pregunta": "Patrón: 1, 3, 5, 7, ... ¿Qué número sigue?",
       "opciones": [
-        "10",
+        "5",
         "9",
         "11",
         "8"
@@ -5494,9 +5494,9 @@
       "pregunta": "En la tabla del 100, bajas una fila. ¿Cuánto aumenta el número?",
       "opciones": [
         "1",
-        "5",
+        "11",
         "10",
-        "100"
+        "20"
       ],
       "correcta": 2,
       "tip": "Cada fila de la tabla del 100 tiene 10 números, por eso bajar una fila suma 10.",
@@ -5508,7 +5508,7 @@
       "pregunta": "En la tabla del 100 avanzas una casilla a la derecha. ¿Qué pasa?",
       "opciones": [
         "Baja 1",
-        "Aumenta 2",
+        "Aumenta 11",
         "Aumenta 10",
         "Aumenta 1"
       ],
@@ -5564,7 +5564,7 @@
       "pregunta": "Patrón: 9, 18, 27, 36, ... ¿Qué número sigue?",
       "opciones": [
         "46",
-        "40",
+        "37",
         "54",
         "45"
       ],
@@ -5594,7 +5594,7 @@
         "84",
         "80",
         "75",
-        "81"
+        "90"
       ],
       "correcta": 1,
       "tip": "Se resta 5 cada vez, entonces al 85 le quitas 5.",
@@ -5606,7 +5606,7 @@
       "pregunta": "Patrón: 30, ___, 50, 60. ¿Qué número falta?",
       "opciones": [
         "31",
-        "45",
+        "20",
         "40",
         "35"
       ],
@@ -5635,7 +5635,7 @@
       "opciones": [
         "22",
         "18",
-        "20",
+        "12",
         "27"
       ],
       "correcta": 0,
@@ -5662,7 +5662,7 @@
       "pregunta": "Patrón: 60, 54, 48, 42, ... ¿Qué número sigue?",
       "opciones": [
         "41",
-        "38",
+        "48",
         "36",
         "30"
       ],
@@ -5676,7 +5676,7 @@
       "pregunta": "Patrón: 12, 24, 36, ... ¿Qué número sigue?",
       "opciones": [
         "46",
-        "40",
+        "24",
         "72",
         "48"
       ],
@@ -5690,7 +5690,7 @@
       "pregunta": "Patrón: 33, 30, 27, 24, ... ¿Qué número sigue?",
       "opciones": [
         "21",
-        "20",
+        "27",
         "22",
         "23"
       ],
@@ -5933,7 +5933,7 @@
       "oa": "MA03 OA 13",
       "pregunta": "▢ - 10 = 40. ¿Cuánto vale ▢?",
       "opciones": [
-        "45",
+        "41",
         "60",
         "30",
         "50"
@@ -5990,7 +5990,7 @@
       "pregunta": "50 - ⬛ = 35. ¿Cuánto vale ⬛?",
       "opciones": [
         "25",
-        "5",
+        "14",
         "85",
         "15"
       ],
@@ -6008,7 +6008,7 @@
         "6",
         "7"
       ],
-      "correcta": 0,
+      "correcta": 3,
       "tip": "Las láminas nuevas son las que faltan para pasar de 8 a 15.",
       "revisada": false,
       "id": "mat3-oa13-17"
@@ -6158,7 +6158,7 @@
         "20",
         "45",
         "50",
-        "55"
+        "40"
       ],
       "correcta": 2,
       "tip": "Las leídas y las que faltan, juntas, son todas las páginas del libro.",
@@ -6213,7 +6213,7 @@
       "opciones": [
         "Fila 3",
         "Fila 7",
-        "Fila 1",
+        "Fila 2",
         "Fila 4"
       ],
       "correcta": 0,
@@ -6337,9 +6337,9 @@
       "oa": "MA03 OA 14",
       "pregunta": "En la casilla (A, 3) de la cuadrícula, ¿qué te indica la letra A?",
       "opciones": [
-        "El color",
+        "La diagonal",
         "La columna",
-        "El tamaño",
+        "El total de casillas",
         "La fila"
       ],
       "correcta": 1,
@@ -6351,7 +6351,7 @@
       "oa": "MA03 OA 14",
       "pregunta": "En la casilla (D, 2) de la cuadrícula, ¿qué te indica el número 2?",
       "opciones": [
-        "El total",
+        "La diagonal",
         "La columna",
         "La fila",
         "La letra"
@@ -6408,9 +6408,9 @@
       "pregunta": "Dos casillas de la cuadrícula están en la misma fila. ¿Qué tienen igual?",
       "opciones": [
         "La columna",
-        "El color",
+        "La letra",
         "El número de fila",
-        "El tamaño"
+        "La diagonal"
       ],
       "correcta": 2,
       "tip": "Estar en la misma fila significa compartir el número; la columna puede ser otra.",
@@ -6421,8 +6421,8 @@
       "oa": "MA03 OA 14",
       "pregunta": "En una cuadrícula, ¿cómo se llama la línea de casillas que va hacia el lado?",
       "opciones": [
-        "Recta",
-        "Borde",
+        "Diagonal",
+        "Casilla",
         "Columna",
         "Fila"
       ],
@@ -6437,8 +6437,8 @@
       "opciones": [
         "Columna",
         "Fila",
-        "Borde",
-        "Punto"
+        "Diagonal",
+        "Casilla"
       ],
       "correcta": 0,
       "tip": "Las columnas van paradas, de arriba hacia abajo, como las de un edificio.",
@@ -6493,7 +6493,7 @@
       "opciones": [
         "Su fila",
         "Su letra",
-        "Nada",
+        "Su fila y su columna",
         "Su columna"
       ],
       "correcta": 0,
@@ -6505,7 +6505,7 @@
       "oa": "MA03 OA 14",
       "pregunta": "Luis camina de la casilla (B, 3) a la casilla (E, 3). ¿Qué le cambió?",
       "opciones": [
-        "El color",
+        "Su fila y su columna",
         "Su columna",
         "Nada",
         "Su fila"
@@ -6549,7 +6549,7 @@
       "opciones": [
         "Fila 2",
         "Fila 4",
-        "Fila 5",
+        "Fila 3",
         "Fila 1"
       ],
       "correcta": 0,
@@ -6561,7 +6561,7 @@
       "oa": "MA03 OA 14",
       "pregunta": "Juan está en la columna 5. ¿Qué columna está justo a su izquierda?",
       "opciones": [
-        "Columna 7",
+        "Columna 5",
         "Columna 4",
         "Columna 3",
         "Columna 6"
@@ -6617,10 +6617,10 @@
       "oa": "MA03 OA 14",
       "pregunta": "Para ubicar una casilla necesitas la fila y un dato más. ¿Cuál falta?",
       "opciones": [
-        "El color",
+        "El número de filas",
         "La columna",
-        "El tamaño",
-        "La forma"
+        "El total de casillas",
+        "La diagonal"
       ],
       "correcta": 1,
       "tip": "Una casilla se ubica con dos datos: la fila y la columna. Con uno solo no basta.",
@@ -7156,7 +7156,7 @@
         "6",
         "12",
         "8",
-        "10"
+        "4"
       ],
       "correcta": 1,
       "tip": "Las aristas son los bordes donde se juntan dos caras: 4 arriba, 4 abajo y 4 de pie.",
@@ -7189,8 +7189,8 @@
       "oa": "MA03 OA 16",
       "pregunta": "¿Qué forma tienen las caras de un cubo?",
       "opciones": [
+        "Rectangular",
         "Circular",
-        "Ovalada",
         "Triangular",
         "Cuadrada"
       ],
@@ -7228,7 +7228,7 @@
         "6",
         "12",
         "8",
-        "10"
+        "4"
       ],
       "correcta": 1,
       "tip": "Tiene los mismos bordes que un cubo: 4 arriba, 4 abajo y 4 de pie.",
@@ -7282,7 +7282,7 @@
         "0",
         "1",
         "2",
-        "4"
+        "6"
       ],
       "correcta": 0,
       "tip": "La esfera es curva por todos lados, como una pelota, así que no tiene caras planas.",
@@ -7318,7 +7318,7 @@
         "0",
         "2",
         "1",
-        "3"
+        "5"
       ],
       "correcta": 2,
       "tip": "El cono tiene solo su base plana; el resto es una superficie curva que sube a la punta.",
@@ -7354,7 +7354,7 @@
         "1",
         "2",
         "0",
-        "4"
+        "5"
       ],
       "correcta": 0,
       "tip": "El cono termina arriba en una sola punta, y esa punta es su único vértice.",
@@ -7707,7 +7707,7 @@
         "Traslación",
         "Rotación",
         "Reflexión",
-        "División"
+        "Ampliación"
       ],
       "correcta": 0,
       "tip": "Cada baldosa es la anterior corrida un poco, sin girar: eso es trasladar.",
@@ -7721,7 +7721,7 @@
         "Se hace más grande",
         "No cambia",
         "Se hace más chica",
-        "Se pierde"
+        "Depende del espejo"
       ],
       "correcta": 1,
       "tip": "Reflejar solo voltea la figura; el espejo no agranda ni achica nada.",
@@ -7747,8 +7747,8 @@
       "pregunta": "Frente a un espejo, la letra b se ve como la letra:",
       "opciones": [
         "b",
-        "a",
-        "o",
+        "p",
+        "q",
         "d"
       ],
       "correcta": 3,
@@ -7860,7 +7860,7 @@
       "opciones": [
         "una lupa",
         "un reloj",
-        "una ventana abierta",
+        "una foto",
         "un espejo"
       ],
       "correcta": 3,
@@ -7875,7 +7875,7 @@
         "No, sigue igual",
         "Sí, se agranda",
         "Sí, se achica",
-        "Sí, se parte"
+        "Sí, se estira"
       ],
       "correcta": 0,
       "tip": "Girar solo cambia hacia dónde apunta la figura; sus lados siguen iguales.",
@@ -7889,7 +7889,7 @@
         "Un cuarto de vuelta",
         "Media vuelta",
         "Una vuelta entera",
-        "Nada"
+        "Tres cuartos de vuelta"
       ],
       "correcta": 1,
       "tip": "Del 12 al 6 recorre la mitad del reloj, o sea media vuelta.",
@@ -7908,7 +7908,7 @@
         "Media vuelta",
         "Una vuelta entera",
         "Un cuarto de vuelta",
-        "Tres vueltas"
+        "Tres cuartos de vuelta"
       ],
       "correcta": 2,
       "tip": "Del 12 al 3 avanza una de las cuatro partes del reloj: un cuarto de vuelta.",
@@ -7982,7 +7982,7 @@
       "opciones": [
         "Su tamaño",
         "Su forma",
-        "Su color",
+        "Su inclinación",
         "Su lugar"
       ],
       "correcta": 3,
@@ -7997,7 +7997,7 @@
         "Igual que antes",
         "Torcido",
         "Más grande",
-        "Con un lado menos"
+        "Como un rombo"
       ],
       "correcta": 0,
       "tip": "El cuadrado tiene sus cuatro lados iguales, así que al girar se ve igual.",
@@ -8010,7 +8010,7 @@
       "opciones": [
         "p",
         "q",
-        "o",
+        "d",
         "b"
       ],
       "correcta": 1,
@@ -8064,7 +8064,7 @@
       "oa": "MA03 OA 17",
       "pregunta": "¿Cuál movimiento voltea la figura, como si diera vuelta la hoja?",
       "opciones": [
-        "El conteo",
+        "La rotación",
         "El reflejo",
         "La traslación",
         "El aumento"
@@ -8269,7 +8269,7 @@
         "360°",
         "180°",
         "270°",
-        "450°"
+        "90°"
       ],
       "correcta": 0,
       "tip": "90° cuatro veces da 360°: una vuelta completa.",
@@ -8694,7 +8694,7 @@
       "opciones": [
         "5",
         "6",
-        "10",
+        "12",
         "7"
       ],
       "correcta": 3,
@@ -8862,7 +8862,7 @@
       "opciones": [
         "7",
         "10",
-        "20",
+        "21",
         "14"
       ],
       "correcta": 3,
@@ -9384,7 +9384,7 @@
         "15",
         "4",
         "25",
-        "40"
+        "30"
       ],
       "correcta": 0,
       "tip": "La hora se parte en 4 pedazos iguales y 60 dividido en 4 da 15.",
@@ -9425,7 +9425,7 @@
       "opciones": [
         "2 minutos",
         "40 minutos",
-        "12 minutos",
+        "4 minutos",
         "20 minutos"
       ],
       "correcta": 3,
@@ -9661,7 +9661,7 @@
       "oa": "MA03 OA 21",
       "pregunta": "Un triángulo tiene lados de 3 cm, 4 cm y 5 cm. ¿Cuál es su perímetro?",
       "opciones": [
-        "10 cm",
+        "8 cm",
         "7 cm",
         "12 cm",
         "9 cm"
@@ -9676,7 +9676,7 @@
       "pregunta": "Un triángulo tiene sus 3 lados de 6 cm. ¿Cuál es su perímetro?",
       "opciones": [
         "24 cm",
-        "9 cm",
+        "36 cm",
         "12 cm",
         "18 cm"
       ],
@@ -9692,7 +9692,7 @@
         "14 cm",
         "9 cm",
         "12 cm",
-        "15 cm"
+        "10 cm"
       ],
       "correcta": 0,
       "tip": "Aunque la figura sea irregular, el perímetro es la suma de todos sus lados.",
@@ -9845,7 +9845,7 @@
       "opciones": [
         "10 cm",
         "12 cm",
-        "16 cm",
+        "11 cm",
         "14 cm"
       ],
       "correcta": 3,
@@ -9982,7 +9982,7 @@
         "El arroz",
         "Pesan lo mismo",
         "El pan",
-        "Los dos pesan 500 g"
+        "No se pueden comparar"
       ],
       "correcta": 2,
       "tip": "Para comparar, usa la misma unidad: 1 kg son 1.000 g y 1.000 es más que 500.",
@@ -9995,7 +9995,7 @@
       "opciones": [
         "El azúcar",
         "Pesan lo mismo",
-        "Los dos pesan 1 kg",
+        "No se pueden comparar",
         "Las galletas"
       ],
       "correcta": 3,
@@ -10038,7 +10038,7 @@
         "1.050 g",
         "2.000 g",
         "1.500 g",
-        "600 g"
+        "501 g"
       ],
       "correcta": 2,
       "tip": "Pasa el kilo a gramos (1.000 g) y recién ahí suma los 500 g.",
@@ -10147,8 +10147,8 @@
       "oa": "MA03 OA 22",
       "pregunta": "¿Cuántos gramos son tres cuartos de kilo?",
       "opciones": [
-        "340 g",
-        "775 g",
+        "500 g",
+        "250 g",
         "750 g",
         "300 g"
       ],
@@ -10211,7 +10211,7 @@
         "900 g",
         "Pesan lo mismo",
         "1 kg",
-        "900 g es un kilo"
+        "No se pueden comparar"
       ],
       "correcta": 2,
       "tip": "1 kg son 1.000 g, y a 900 g le faltan 100 g para llegar al kilo.",
@@ -10520,7 +10520,7 @@
       "oa": "MA03 OA 23",
       "pregunta": "¿Qué fruta prefieren más los niños?",
       "opciones": [
-        "Ninguna",
+        "Las tres igual",
         "Manzana",
         "Plátano",
         "Uva"
@@ -10547,7 +10547,7 @@
       "oa": "MA03 OA 23",
       "pregunta": "¿Cuántos niños eligieron uva?",
       "opciones": [
-        "4",
+        "20",
         "5",
         "9",
         "6"
@@ -11032,10 +11032,10 @@
       "oa": "MA03 OA 23",
       "pregunta": "¿Para qué sirve hacer una encuesta?",
       "opciones": [
-        "Para contar hasta 100",
-        "Para medir el largo",
+        "Para saber lo que piensa una sola persona",
+        "Para ordenar números de menor a mayor",
         "Para juntar datos de un grupo",
-        "Para dibujar figuras"
+        "Para adivinar sin preguntarle a nadie"
       ],
       "correcta": 2,
       "tip": "Encuestar es preguntar a varias personas para reunir información.",
@@ -11751,7 +11751,7 @@
         "Azul",
         "Rojo",
         "Verde",
-        "Ninguno"
+        "Los tres igual"
       ],
       "correcta": 0,
       "tip": "En un gráfico de barras, la barra más alta es la que eligieron más veces.",
@@ -11807,7 +11807,7 @@
         "Martes",
         "Jueves",
         "Lunes",
-        "Ninguno"
+        "Los tres igual"
       ],
       "correcta": 2,
       "tip": "La barra más baja marca el día con menos lluvia.",
@@ -11999,7 +11999,7 @@
       "opciones": [
         "4",
         "8",
-        "5",
+        "18",
         "6"
       ],
       "correcta": 1,
@@ -12053,9 +12053,9 @@
       "oa": "MA03 OA 25",
       "pregunta": "¿Cuántos más eligieron pan que fruta?",
       "opciones": [
-        "4",
+        "3",
         "18",
-        "5",
+        "12",
         "6"
       ],
       "correcta": 3,
@@ -12083,7 +12083,7 @@
         "20",
         "8",
         "14",
-        "26"
+        "6"
       ],
       "correcta": 0,
       "tip": "Suma las dos barras, porque cada niño respondió sí o no.",
@@ -12164,7 +12164,7 @@
       "pregunta": "¿Cuántos peces menos que perros hay?",
       "opciones": [
         "2",
-        "3",
+        "6",
         "8",
         "4"
       ],
@@ -12303,7 +12303,7 @@
       "pregunta": "Cada 🚗 vale 5 autos. Ana dibujó 6 🚗 y Luis 4 🚗. ¿Cuántos autos más tiene Ana?",
       "opciones": [
         "10",
-        "1",
+        "30",
         "2",
         "20"
       ],
@@ -12333,7 +12333,7 @@
         "Para contar cuántos dibujos hay",
         "Para escribir el título",
         "Para decir cuánto vale cada dibujo",
-        "Para pintar más bonito"
+        "Para ordenar los dibujos de mayor a menor"
       ],
       "correcta": 2,
       "tip": "Sin escala no se sabe si un dibujo vale 1, 2 o 10 cosas.",
@@ -12374,7 +12374,7 @@
       "opciones": [
         "4",
         "6",
-        "7",
+        "10",
         "9"
       ],
       "correcta": 1,
@@ -12443,7 +12443,7 @@
       "opciones": [
         "Diez datos",
         "Un número",
-        "Una tabla",
+        "Cinco datos",
         "Un dato"
       ],
       "correcta": 3,
@@ -12469,7 +12469,7 @@
       "oa": "MA03 OA 26",
       "pregunta": "Sobre el 8 hay 5 puntos y sobre el 9 hay 3. ¿Cuántos puntos más tiene el 8?",
       "opciones": [
-        "1",
+        "5",
         "2",
         "3",
         "8"
@@ -12680,10 +12680,10 @@
       "oa": "MA03 OA 26",
       "pregunta": "¿Para qué sirve un diagrama de puntos?",
       "opciones": [
-        "Para medir el largo",
+        "Para ordenar los datos de mayor a menor",
         "Para ver qué dato se repite más",
-        "Para dibujar figuras",
-        "Para ver la hora"
+        "Para sumar todos los datos",
+        "Para anotar la fecha de cada dato"
       ],
       "correcta": 1,
       "tip": "Muestra de un vistazo cuántas veces aparece cada dato.",
@@ -12765,7 +12765,7 @@
       "pregunta": "¿Cuántos puntos más tiene el 3 que el 5?",
       "opciones": [
         "6",
-        "1",
+        "10",
         "4",
         "2"
       ],
