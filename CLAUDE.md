@@ -224,16 +224,26 @@ Al agregar expediciones nuevas al arreglo `EXPEDICIONES` de `juego/index.html`:
   el de la oficina): venvs conocidos `C:\Users\Rodrigo\.notebooklm-venv\...` y
   `C:\Users\rlorc\.notebooklm-venv\...`. Si no está instalado en ese PC:
   `python -m venv ~/.notebooklm-venv && ~/.notebooklm-venv/Scripts/python.exe -m pip install "notebooklm-py[browser]"`.
-  La **autenticación** vive en `<perfil>\.notebooklm\storage_state.json`; mientras no caduque,
-  `source add` **no pide login** (usa las cookies, sin navegador).
-- **Si la auth caducó o no existe, hay que rehacer el login por navegador. GOTCHA verificado
+  La **autenticación** vive en `<perfil>\.notebooklm\profiles\default\storage_state.json`;
+  mientras no caduque, `source add` **no pide login** (usa las cookies, sin navegador).
+- **Si el CLI dice "Authentication expired", PRIMERO probar esto — casi nunca hace falta molestar
+  a Roberto (verificado Sesión 56):** el CLI y el navegador guardan la sesión en **dos lugares
+  distintos**. Es habitual que `storage_state.json` caduque mientras el **perfil persistente**
+  (`profiles\default\browser_profile`) sigue con sesión viva. Se comprueba abriendo ese perfil
+  **headless** en `notebooklm.google.com`: si la URL final **no** es `accounts.google.com`, hay
+  sesión. En ese caso basta `ctx.storage_state(path=...)` para **regenerar el archivo del CLI
+  desde el perfil**, y `source add` vuelve a funcionar al instante. Respaldar el archivo anterior
+  antes de sobrescribirlo.
+- **Solo si el perfil TAMPOCO tiene sesión, rehacer el login por navegador. GOTCHA verificado
   (Sesión 52):** el Chromium empaquetado de playwright falla en este entorno con
   `spawn UNKNOWN` (headful) o timeout (headless). **Usar el Google Chrome instalado**
   (`channel="chrome"`, `headless=False`) para abrir la ventana; Roberto inicia sesión en Google
   → notebooklm.google.com, y recién entonces se capturan las cookies a `storage_state.json`.
   Con `channel="chrome"` el login interactivo **SÍ se puede lanzar desde el asistente** (se probó
   y funcionó); lo que no funciona es `notebooklm login` (entrada interactiva en terminal) ni el
-  chromium de playwright.
+  chromium de playwright. **Al esperar el login, NO esperar el evento `close` de la página**: la
+  pestaña inicial se cierra sola en la redirección de Google y el script termina creyendo que
+  Roberto ya entró (pasó en la Sesión 56). Esperar a que la URL sea la de los notebooks.
 - **Respaldo automático a las 18:00:** cualquier día en que haya cambios sin
   guardar, una Tarea Programada de Windows ejecuta `scripts/auto-commit.ps1`,
   que hace commit y push solo si detecta cambios. Así no se pierde trabajo
