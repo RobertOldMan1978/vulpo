@@ -174,6 +174,7 @@ input.nm:focus{border-color:var(--cyan)}
   color:#2a1400;background:linear-gradient(180deg,var(--gold),#ff9d3c);box-shadow:0 3px 10px rgba(0,0,0,.3)}
 .btn-ayuda:disabled{opacity:.4;cursor:default;filter:grayscale(.4)}
 .btn-escuchar{display:block;margin:6px auto 10px;padding:8px 18px;border:0;border-radius:20px;background:var(--gold);color:#3a2a12;font-family:'Nunito',sans-serif;font-weight:900;font-size:15px;cursor:pointer}
+.opt.leyendo{outline:3px solid var(--gold);outline-offset:2px;background:#3a2f6b}
 .q-visual{font-size:30px;text-align:center;line-height:1.5;margin:6px 0 10px;word-break:break-word}
 .q-visual.qv-grupos{font-size:22px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
 .qv-grupo{border:2px dashed var(--gold);border-radius:12px;padding:4px 8px;display:inline-block}
@@ -1484,16 +1485,62 @@ const SIN_RELOJ=true;
 
 // Lectura en voz alta con la voz del navegador (Web Speech API). Gratis, sin archivos.
 // Fallback silencioso si no hay soporte o voz en español. Necesita gesto del usuario en móvil.
-function leerEnVoz(texto){
- try{
-  if(!('speechSynthesis' in window) || !texto) return;
-  speechSynthesis.cancel();
-  const u=new SpeechSynthesisUtterance(texto);
-  u.lang='es-CL'; u.rate=0.95;
-  const v=(speechSynthesis.getVoices()||[]).find(x=>/^es/i.test(x.lang));
-  if(v) u.voice=v;
-  speechSynthesis.speak(u);
- }catch(e){}
+/* ================= LECTURA POR VOZ (app de 3°) =================
+   Pensada para quien todavía no lee de corrido, así que importa tanto QUÉ se lee
+   como CUÁNDO: la pregunta primero, después cada opción, y la opción que suena se
+   ilumina en pantalla. Si la voz leyera un orden distinto al de la pantalla, le
+   estaría dictando al niño la respuesta equivocada. */
+
+// Las voces del navegador cargan de forma asíncrona: la primera llamada a
+// getVoices() suele devolver [] y por eso antes caía siempre a la voz por defecto.
+let _VOZ=null, _VOZ_LISTA=false;
+function elegirVoz(){
+ if(_VOZ_LISTA) return _VOZ;
+ const vs=(window.speechSynthesis&&speechSynthesis.getVoices())||[];
+ if(!vs.length) return null;               // todavía no cargan; se reintenta luego
+ const es=vs.filter(v=>/^es/i.test(v.lang||''));
+ // Preferencia: español de Chile > latinoamericano > cualquier español.
+ const orden=[/es[-_]CL/i, /es[-_](MX|US|419|AR|CO|PE)/i, /^es/i];
+ for(const re of orden){ const v=es.find(x=>re.test(x.lang||'')); if(v){_VOZ=v;break;} }
+ _VOZ_LISTA=true;
+ return _VOZ;
+}
+if(window.speechSynthesis){
+ try{ speechSynthesis.onvoiceschanged=()=>{_VOZ_LISTA=false; elegirVoz();}; elegirVoz(); }catch(e){}
+}
+
+function callarVoz(){
+ try{ if(window.speechSynthesis) speechSynthesis.cancel(); }catch(e){}
+ try{ document.querySelectorAll('.opt.leyendo').forEach(o=>o.classList.remove('leyendo')); }catch(e){}
+}
+
+// Encola un texto. `alEmpezar`/`alTerminar` permiten sincronizar el resaltado.
+function decir(texto,alEmpezar,alTerminar){
+ if(!('speechSynthesis' in window) || !texto) { if(alTerminar) alTerminar(); return; }
+ const u=new SpeechSynthesisUtterance(texto);
+ const v=elegirVoz();
+ u.lang=(v&&v.lang)||'es-MX';
+ if(v) u.voice=v;
+ u.rate=0.9;                                // más pausado: son niños de 8 años
+ if(alEmpezar) u.onstart=alEmpezar;
+ if(alTerminar){ u.onend=alTerminar; u.onerror=alTerminar; }
+ speechSynthesis.speak(u);
+}
+
+// Compatibilidad: leer un texto suelto (lo usa cualquier pantalla sin opciones).
+function leerEnVoz(texto){ callarVoz(); decir(texto); }
+
+/* Lee la pregunta y luego las opciones EN EL ORDEN EN QUE SE VEN, iluminando cada
+   una mientras suena. `opciones` debe venir ya barajada, igual que la pantalla. */
+function leerPreguntaEnVoz(pregunta,opciones,contenedor){
+ callarVoz();
+ decir(pregunta);
+ (opciones||[]).forEach((txt,k)=>{
+  const nodo=contenedor?contenedor.children[k]:null;
+  decir('ABCD'[k]+'. '+txt,
+        ()=>{ if(nodo) nodo.classList.add('leyendo'); },
+        ()=>{ if(nodo) nodo.classList.remove('leyendo'); });
+ });
 }
 
 /* Apoyo visual dibujado por código para la app de 3° (liviano, sin archivos ni librerías).
@@ -3738,6 +3785,7 @@ function pintaPregunta(){
  else { qm.hidden=true; }
  $('qExpl').hidden=true;$('btnSeguir').hidden=true;
  $('qProg').style.width=(Q.idx/Q.preguntas.length*100)+'%';
+ callarVoz();   // corta la lectura de la pregunta anterior
  // barajar opciones
  const orden=P.ops.map((o,i)=>({o,i})).sort(()=>Math.random()-.5);
  $('qOpts').innerHTML='';
@@ -3750,7 +3798,9 @@ function pintaPregunta(){
   $('qOpts').appendChild(b);});
  // Botón de lectura: lee la pregunta y las 4 opciones en voz alta.
  const be=$('btnEscuchar');
- if(be){ be.onclick=()=>leerEnVoz(P.q+'. '+P.ops.map((o,i)=>('ABCD'[i]+'. '+o)).join('. ')); }
+ // Se lee `orden` (el barajado que se está mostrando), NO P.ops: si se leyera el
+ // arreglo original, la voz diría "A" señalando una opción distinta a la de pantalla.
+ if(be){ be.onclick=()=>leerPreguntaEnVoz(P.q, orden.map(it=>it.o), $('qOpts')); }
  // timer (el repaso no tiene cronómetro: es estudio, no evaluación)
  clearInterval(Q.timer);
  if(Q.repaso || SIN_RELOJ){ $('qTimer').style.visibility='hidden'; }
