@@ -177,7 +177,6 @@ input.nm:focus{border-color:var(--cyan)}
 .btn-ayuda:disabled{opacity:.4;cursor:default;filter:grayscale(.4)}
 .btn-escuchar{display:block;margin:6px auto 10px;padding:8px 18px;border:0;border-radius:20px;background:var(--gold);color:#3a2a12;font-family:'Nunito',sans-serif;font-weight:900;font-size:15px;cursor:pointer}
 .opt.leyendo{outline:3px solid var(--gold);outline-offset:2px;background:#3a2f6b}
- background:transparent;color:var(--pink);font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;cursor:pointer}
 .q-visual{font-size:30px;text-align:center;line-height:1.5;margin:6px 0 10px;word-break:break-word}
 .q-visual.qv-grupos{font-size:22px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
 .qv-grupo{border:2px dashed var(--gold);border-radius:12px;padding:4px 8px;display:inline-block}
@@ -1811,7 +1810,7 @@ function renderVisual(v){
 }
 
 const $=id=>document.getElementById(id);
-00;
+const XP_POR_NIVEL=100;
 
 /* ================= SONIDO (Web Audio, sintetizado) ================= */
 const SND={

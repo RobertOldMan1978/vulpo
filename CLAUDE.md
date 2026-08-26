@@ -3323,3 +3323,20 @@ JavaScript del juego. Reproducido y corregido con un respaldo vacío; ver el det
 arriba. **La lección, que es más grande que el bug:** el módulo se dio por verificado probándolo
 **con el archivo presente**, y nunca con el archivo ausente. Al mover código a un `<script src>`
 hay que probar los dos casos.
+
+**Post scriptum 2 — y el fallo real de 3°.** El respaldo del script no era toda la historia: al
+volver a probar, la lista de capítulos se veía pero **al tocar uno no pasaba nada**. Causa: al
+quitar de `3ro/index.html` el código de revisión que había inyectado antes de sacarlo al archivo
+compartido, un cálculo de índices cortó de más y dejó `const XP_POR_NIVEL=100;` convertida en
+`00;`. `refreshHud()` reventaba con *"XP_POR_NIVEL is not defined"* y **3° quedaba injugable en
+todos sus modos**, no solo en revisión. El mismo corte dejó además una línea huérfana de CSS que
+desbalanceaba el bloque (506 `{` contra 507 `}`) justo antes de `.q-visual`.
+> **Dos lecciones de método, las dos caras:**
+> 1. **Un error dentro de un `.then()` NO dispara `window.onerror`**: se convierte en un rechazo
+>    silencioso. Por eso las primeras pruebas no mostraron nada y parecía que la función "se salía
+>    sola". Al depurar el motor hay que escuchar **también** `unhandledrejection`.
+> 2. **Nunca borrar código con aritmética de índices ni con filtros por prefijo de línea.** Los dos
+>    métodos cortaron a la mitad cosas ajenas. Y las pruebas no lo vieron porque llamaban a
+>    `activarExpedicion`/`buildPreguntas` directamente, **sin pasar por `refreshHud`**: probar por
+>    funciones sueltas no equivale a recorrer la pantalla. Verificaciones nuevas que quedan:
+>    `git diff` contra la versión anterior filtrando lo esperado, y contar llaves del bloque CSS.
