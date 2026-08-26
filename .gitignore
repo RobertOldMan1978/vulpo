@@ -26,3 +26,7 @@ dev/*.pdf
 _fix_distractores/
 
 __pycache__/
+
+# Claves de servicios externos: NUNCA al repositorio (es publico).
+azure-tts.txt
+*.key
