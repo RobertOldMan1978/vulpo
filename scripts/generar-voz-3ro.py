@@ -19,7 +19,7 @@ Uso:
     python scripts/generar-voz-3ro.py              # genera lo que falte
     python scripts/generar-voz-3ro.py --rehacer    # regenera todo
 """
-import json, io, os, re, sys, time, hashlib, subprocess, importlib.util
+import json, io, re, sys, time, hashlib, importlib.util
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
@@ -27,9 +27,23 @@ BANCO = RAIZ / "contenido" / "matematicas-3basico" / "preguntas.json"
 JUEGO = RAIZ / "3ro" / "index.html"
 SALIDA = RAIZ / "assets" / "voz" / "mat3"
 MANIFIESTO = SALIDA / "manifiesto.json"
-CLAVE_ARCHIVO = Path.home() / "Escritorio" / "VULPO - correos profesores" / "azure-tts.txt"
+# La clave puede estar en varios lugares: el escritorio de Windows se llama "Desktop"
+# en disco aunque se muestre como "Escritorio", y con OneDrive activo vive dentro de
+# OneDrive. Se prueban todos en vez de exigir una ruta unica.
+CLAVE_CANDIDATAS = [
+    Path.home() / "OneDrive" / "Escritorio" / "azure-tts.txt",
+    Path.home() / "OneDrive" / "Desktop" / "azure-tts.txt",
+    Path.home() / "Escritorio" / "azure-tts.txt",
+    Path.home() / "Desktop" / "azure-tts.txt",
+    Path.home() / "OneDrive" / "Escritorio" / "VULPO - correos profesores" / "azure-tts.txt",
+    Path.home() / "Desktop" / "VULPO - correos profesores" / "azure-tts.txt",
+    Path.home() / "Escritorio" / "VULPO - correos profesores" / "azure-tts.txt",
+]
 VOZ = "es-CL-CatalinaNeural"
-RITMO = "-10%"                 # mas pausado: son ninos de 8 anos
+# Un 10% mas lento que el habla normal. Roberto comparo las dos velocidades con la
+# misma frase y prefirio esta: son ninos de 8 anos que recien decodifican, y medio
+# segundo por pregunta les da tiempo a seguir.
+RITMO = "-10%"
 PRECIO_POR_MILLON = 16.0
 
 _spec = importlib.util.spec_from_file_location("nv", str(RAIZ / "scripts" / "normalizar-voz-3ro.py"))
@@ -38,12 +52,15 @@ _spec.loader.exec_module(_nv)
 
 
 def credenciales():
-    if not CLAVE_ARCHIVO.exists():
-        sys.exit("No encuentro la clave en:\n  %s\n\n"
+    archivo = next((c for c in CLAVE_CANDIDATAS if c.exists()), None)
+    if archivo is None:
+        sys.exit("No encuentro azure-tts.txt. Lo busque en:\n  %s\n\n"
                  "Crea ese archivo con DOS lineas:\n"
                  "  linea 1: la clave (KEY 1 del recurso de Azure)\n"
-                 "  linea 2: la region (por ejemplo brazilsouth)" % CLAVE_ARCHIVO)
-    lineas = [l.strip() for l in io.open(CLAVE_ARCHIVO, encoding="utf-8") if l.strip()]
+                 "  linea 2: la region (por ejemplo brazilsouth)"
+                 % "\n  ".join(str(c) for c in CLAVE_CANDIDATAS))
+    # utf-8-sig: el Bloc de notas de Windows suele dejar un BOM al principio
+    lineas = [l.strip() for l in io.open(archivo, encoding="utf-8-sig") if l.strip()]
     if len(lineas) < 2:
         sys.exit("El archivo de la clave necesita 2 lineas: clave y region.")
     return lineas[0], lineas[1]
@@ -109,14 +126,10 @@ def sintetizar(texto, clave, region):
     sys.exit("Azure sigue limitando la tasa (429) despues de 4 intentos.")
 
 
-def ffmpeg():
-    import imageio_ffmpeg
-    return imageio_ffmpeg.get_ffmpeg_exe()
-
-
-def comprimir(ff, crudo, destino):
-    subprocess.run([ff, "-y", "-loglevel", "error", "-i", str(crudo),
-                    "-ac", "1", "-ar", "22050", "-b:a", "24k", str(destino)], check=True)
+# NO se recomprime. Azure entrega mp3 mono de 48 kbps a 24 kHz, y esa es la calidad
+# que Roberto eligio al comparar: recomprimir a 24 kbps ahorraba la mitad del peso
+# pero dejaba la voz metalica. El costo de conservarla son 39 MB en el repositorio
+# y 78 KB por pregunta para el nino, que en un celular no se notan.
 
 
 def main():
@@ -126,10 +139,7 @@ def main():
     if "--probar" in sys.argv:
         clave, region = credenciales()
         prueba = "Hola, soy Vulpi. Vamos a contar de diez en diez."
-        crudo = SALIDA / "_prueba.raw.mp3"
-        io.open(crudo, "wb").write(sintetizar(prueba, clave, region))
-        comprimir(ffmpeg(), crudo, SALIDA / "_prueba.mp3")
-        crudo.unlink()
+        io.open(SALIDA / "_prueba.mp3", "wb").write(sintetizar(prueba, clave, region))
         print("OK: clave y region funcionan.")
         print("Escucha %s y confirma que es la voz de Catalina." % (SALIDA / "_prueba.mp3"))
         return
@@ -151,13 +161,9 @@ def main():
         return
 
     clave, region = credenciales()
-    ff = ffmpeg()
     for i, (ve, dice) in enumerate(faltan, 1):
         arch = nombre(ve)
-        crudo = SALIDA / (arch + ".raw.mp3")
-        io.open(crudo, "wb").write(sintetizar(dice, clave, region))
-        comprimir(ff, crudo, SALIDA / arch)
-        crudo.unlink()
+        io.open(SALIDA / arch, "wb").write(sintetizar(dice, clave, region))
         manifiesto[ve] = arch
         if i % 50 == 0 or i == len(faltan):
             print("  %d/%d" % (i, len(faltan)), flush=True)
