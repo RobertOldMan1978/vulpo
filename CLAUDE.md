@@ -3504,3 +3504,19 @@ Salió más chico de lo previsto porque **ninguna de las dos cosas necesitaba un
 - **Lo que esto habilita:** un curso de 3° ya puede convivir con uno de 8° en el mismo panel. Para
   **vender** 3° siguen faltando la aprobación pedagógica de sus 792 preguntas, su arte propio y las
   otras tres asignaturas.
+
+**Continuación de la Sesión 58 — quién está a cargo, visible en el listado.** Roberto creó un
+curso de 3° y notó que el encabezado no dice qué profesor lo tiene asignado. Ahora, entre "N
+alumnos" y la participación, cada curso muestra **"👤 Profesor jefe: <nombre> · N de asignatura"**.
+- **El caso que lo hizo evidente es el suyo:** desde la Sesión 38 **un curso nace sin Jefe** (el
+  creador ya no se auto-nombra), así que su 3A recién creado no tenía a nadie a cargo. Eso antes
+  solo se veía abriendo el curso y entrando a "Equipo del curso"; ahora el listado lo dice con
+  **"⚠️ Sin profesor jefe"** en dorado, que es información accionable, no decoración.
+- **Sin SQL:** sale de `kimun_prof_equipo`, que ya existía, cargada en segundo plano igual que la
+  participación, y **capturando el nodo antes del `await`** para no repetir la carrera de la
+  Sesión 26 (la respuesta lenta de un curso escribiéndose bajo el encabezado de otro).
+- **A un profe de asignatura la línea le queda vacía**, no con un error: `kimun_prof_equipo` solo
+  responde a Admin/Super/Jefe, y quién está a cargo no es información suya.
+- Verificado con un doble de Supabase en los tres casos (sin jefe, con equipo completo, sin
+  permiso) y **a 375 px sin desborde**, que es donde este panel ya falló en la Sesión 26. De paso
+  `scripts/cdp.mjs` ganó emulación de teléfono (`ev.movil()`).

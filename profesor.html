@@ -69,7 +69,9 @@ code{color:var(--cyan);font-weight:900}
 .cur-chevron{color:var(--dim);font-size:12px;transition:transform .15s}
 details[open]>summary>.cur-chevron{transform:rotate(90deg)}
 .cur-alu{font-size:12px;color:var(--dim);flex-basis:100%;order:4}
-.cur-part{font-size:12px;color:var(--cyan);flex-basis:100%;order:5}
+.cur-jefe{font-size:12px;color:var(--dim);flex-basis:100%;order:5}
+.cur-jefe.sin{color:var(--gold)}
+.cur-part{font-size:12px;color:var(--cyan);flex-basis:100%;order:6}
 .curso-cuerpo{padding:0 10px 10px}
 .alumnos{margin-top:8px;border-top:1px solid #ffffff14}
 .alumnos>summary{padding:8px 0;color:var(--cyan);font-size:13px;font-weight:700}
@@ -374,6 +376,7 @@ async function pintarLista(){
         <b class="cur-nom" style="color:var(--gold)">${esc(c.nombre)}</b>
         <code>${esc(cod)}</code>
         <span class="cur-alu">${c.alumnos.length} alumno${c.alumnos.length===1?'':'s'}</span>
+        <span class="cur-jefe" data-cod="${esc(cod)}"></span>
         <span class="cur-part" data-cod="${esc(cod)}">Participación · …</span>
         ${window.ESADMINCOLEGIO?`<button class="ico ico-del delcurso" data-cod="${esc(cod)}" title="Eliminar curso">🗑️</button>`:''}
       </summary>
@@ -434,6 +437,7 @@ async function pintarLista(){
     if(det.open && !det.dataset.cargado){ det.dataset.cargado='1'; cargarEquipo(det.dataset.cod); }
   }));
   cargarTitularesParticipacion(cursos.map(([cod])=>cod));
+  cargarJefes(cursos.map(([cod])=>cod));
 
   if(window.ESADMINCOLEGIO){
     $('lista').insertAdjacentHTML('beforeend', `
@@ -771,6 +775,37 @@ function cargarTitularesParticipacion(codigos){
       nodo.textContent = `Participación · ${g.semana.length}/${total} jugaron esta semana`;
     }catch(e){
       nodo.textContent = 'Participación no disponible';
+    }
+  });
+}
+
+// Quién está a cargo de cada curso, en su encabezado. Sale de kimun_prof_equipo, que
+// solo responde a Admin/Super/Jefe: a un profe de asignatura le da no_autorizado y la
+// línea queda vacía, que es lo correcto (no es información suya).
+// Un curso recién creado NACE SIN JEFE (desde la Sesión 38 el creador ya no se auto-nombra),
+// así que decirlo en el encabezado es justo lo que hay que ver para acordarse de asignarlo.
+function cargarJefes(codigos){
+  (codigos||[]).forEach(async cod => {
+    // El nodo se captura ANTES del await: si no, la respuesta lenta de un curso podría
+    // escribirse bajo el encabezado de otro (la carrera de la Sesión 26).
+    const nodo = document.querySelector('.cur-jefe[data-cod="'+CSS.escape(cod)+'"]');
+    if(!nodo) return;
+    try{
+      const {data,error} = await SB.rpc('kimun_prof_equipo',{p_curso_codigo:cod});
+      if(error) throw error;
+      const equipo = data||[];
+      const jefe = equipo.find(m => m.rol==='jefe');
+      const otros = equipo.filter(m => m.rol!=='jefe').length;
+      const cola = otros ? ` · ${otros} de asignatura` : '';
+      if(jefe){
+        nodo.classList.remove('sin');
+        nodo.textContent = `👤 Profesor jefe: ${jefe.nombre || jefe.correo}${cola}`;
+      }else{
+        nodo.classList.add('sin');
+        nodo.textContent = `⚠️ Sin profesor jefe${cola}`;
+      }
+    }catch(e){
+      nodo.textContent = '';   // sin permiso para verlo: mejor nada que un error
     }
   });
 }

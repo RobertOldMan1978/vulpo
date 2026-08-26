@@ -75,6 +75,10 @@ export async function conducir(url, pasos, { puerto = 9333, mostrar = false } = 
   };
   ev.ir = async (u) => { await enviar('Page.navigate', { url: u }); await espera(1200); };
   ev.espera = espera;
+  // Ancho de teléfono: el panel es mobile-first y ya causó desbordes a 375 px (Sesión 26).
+  ev.movil = (ancho = 375, alto = 780) =>
+    enviar('Emulation.setDeviceMetricsOverride',
+           { width: ancho, height: alto, deviceScaleFactor: 2, mobile: true });
   ev.consola = consola;
   ev.fallos = fallos;      // peticiones con 4xx/5xx o que no cargaron
 
