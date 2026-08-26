@@ -63,13 +63,20 @@ Versión **v0.99**: completo y jugable de punta a punta, en vuelta de revisión
 manual antes de coronar la v1. Login, multiusuario y modelo de negocio quedan
 para más adelante.
 
+Aparte, hay una **app de 3° básico en construcción** en `3ro/`, adaptada a niños de
+8-9 años (lectura por voz, sin cronómetro, apoyo visual dibujado por código, texto
+grande). Por ahora solo tiene Matemática, con los 26 objetivos del año; **no está
+enlazada desde el sitio** y su banco todavía no pasa por revisión pedagógica.
+
 Consulta [CLAUDE.md](CLAUDE.md) para el detalle de decisiones de diseño y el
 roadmap.
 
 ## Tecnología
 
-HTML + CSS + JavaScript puro, sin framework. Dependencias externas por CDN:
-Google Fonts y `@supabase/supabase-js` (para el duelo 1v1 en línea).
+HTML + CSS + JavaScript puro, sin framework. La única dependencia externa por CDN
+son las Google Fonts; `@supabase/supabase-js` (duelo 1v1 en línea, ranking y panel del
+profesor) va **auto-hospedado** en `assets/vendor/`, con la versión fija, para no
+depender de un script de terceros que puede cambiar.
 Contenido de cada expedición en `contenido/<asignatura>/` (JSON). Mobile-first.
 
 ---
