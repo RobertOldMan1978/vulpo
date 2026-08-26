@@ -3340,3 +3340,17 @@ desbalanceaba el bloque (506 `{` contra 507 `}`) justo antes de `.q-visual`.
 >    `activarExpedicion`/`buildPreguntas` directamente, **sin pasar por `refreshHud`**: probar por
 >    funciones sueltas no equivale a recorrer la pantalla. Verificaciones nuevas que quedan:
 >    `git diff` contra la versión anterior filtrando lo esperado, y contar llaves del bloque CSS.
+
+**Post scriptum 3 — la voz no se callaba al responder.** Roberto: *"al seleccionar una opción el
+juego sigue hablando la pregunta"*. Cortaba solo al **pintar** la pregunta siguiente, y entre
+responder y esa pintura hay una pausa (o el botón Continuar, que puede tardar lo que el niño
+quiera): mientras tanto seguía leyendo las opciones que faltaban **encima del "¡Correcto!" y de la
+explicación**, que es justo cuando hay que escuchar otra cosa. Ahora `callarVoz()` se llama (1) al
+**responder**, y (2) en `go()`, de modo que **ninguna pantalla hereda la lectura de la anterior**.
+Aplica a todo el juego de 3°, no solo a los enlaces de muestra. 8° no tiene lectura por voz.
+> **Trampa que casi arruina el arreglo:** `speechSynthesis.cancel()` **dispara el evento `end`**
+> de la frase en curso en varios navegadores, y ese evento es justamente el que encadena el clip
+> siguiente. Sin invalidar la cola (`_COLA_ID++`) **lo primero** dentro de `callarVoz`, mandar
+> callar podía **adelantar** la lectura en vez de detenerla. Verificado con un doble de
+> `sonarClip`: leyendo 2 de 5 y respondiendo, no se pide ninguno más; sin interrumpir se leen los
+> 5; y cambiar de pantalla a mitad también corta.

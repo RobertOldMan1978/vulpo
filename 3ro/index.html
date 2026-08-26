@@ -1575,7 +1575,13 @@ function sonarClip(texto,alEmpezar,alTerminar){
  }catch(e){ return false; }
 }
 
+let _COLA_ID=0;   // declarado ANTES de usarse: con `let` al reves queda en zona muerta
 function callarVoz(){
+ // Invalidar la cola es lo PRIMERO y no es opcional: speechSynthesis.cancel() dispara
+ // el evento `end` de la frase en curso en varios navegadores, y ese evento es
+ // justamente el que encadena el clip siguiente. Sin esta linea, mandar callar podria
+ // ADELANTAR la lectura en vez de detenerla.
+ _COLA_ID++;
  try{ if(window.speechSynthesis) speechSynthesis.cancel(); }catch(e){}
  try{ if(_AUDIO){ _AUDIO.pause(); _AUDIO=null; } }catch(e){}
  try{ document.querySelectorAll('.opt.leyendo').forEach(o=>o.classList.remove('leyendo')); }catch(e){}
@@ -1598,7 +1604,6 @@ function decir(texto,alEmpezar,alTerminar){
 // Usa el clip pregrabado si existe; si no, la voz del navegador.
 function leerEnVoz(texto){ callarVoz(); if(!sonarClip(texto)) decir(texto); }
 
-let _COLA_ID=0;   // declarado ANTES de usarse: con `let` al revés queda en zona muerta
 
 /* Lee la pregunta y luego las opciones EN EL ORDEN EN QUE SE VEN, iluminando cada
    una mientras suena. `opciones` debe venir ya barajada, igual que la pantalla.
@@ -1884,6 +1889,7 @@ function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remo
  var enJuego=(id==='scr-mapa'||id==='scr-quiz'||id==='scr-res');
  document.body.classList.toggle('en-dificil', enJuego && MODO==='dificil');
  if(id==='scr-rol'){pintarInicio();revisarDesafio();}
+ callarVoz();   // ninguna pantalla hereda la lectura de la anterior
  REV.barra();   // modo revisión: la barra se oculta sola en su propia pantalla
  MUSIC.contexto(id);}
 // Saluda al alumno por su nombre (mismas letras que VULPO) si canjeó un código.
@@ -3983,6 +3989,11 @@ function usarComodin(){
 }
 function responder(el,ok,P,e){
  if(Q.lock)return;Q.lock=true;clearInterval(Q.timer);
+ // Corta la lectura APENAS responde. Antes seguia leyendo las opciones que faltaban
+ // encima del "¡Correcto!" y de la explicacion: ruido justo cuando hay que escuchar
+ // otra cosa. No basta con cortar al pintar la pregunta siguiente, porque entre
+ // responder y la siguiente hay una pausa (o el boton Continuar, que puede tardar).
+ callarVoz();
  if(!Q.desafio && !Q.repaso && !Q.asistidaActual) registrarOA(P&&P.oa, ok);   // desafío/repaso miden aparte; una pregunta con comodín no se mide
  document.querySelectorAll('.opt').forEach(o=>o.classList.add('off'));
  if(ok){
