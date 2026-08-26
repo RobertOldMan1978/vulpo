@@ -26,10 +26,52 @@ _DENOM = {1: ("entero", "enteros"), 2: ("medio", "medios"), 3: ("tercio", "terci
 _NUM = {1: "un", 2: "dos", 3: "tres", 4: "cuatro", 5: "cinco", 6: "seis",
         7: "siete", 8: "ocho", 9: "nueve", 10: "diez", 11: "once", 12: "doce"}
 
+# Numeros en palabras hasta 1000, que es todo lo que necesita 3 basico. Se usa para
+# desarmar "de 10 en 10", que el sintetizador lee como fecha (ver _en_en mas abajo).
+_U = ["cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve",
+      "diez", "once", "doce", "trece", "catorce", "quince", "dieciseis", "diecisiete",
+      "dieciocho", "diecinueve", "veinte", "veintiuno", "veintidos", "veintitres",
+      "veinticuatro", "veinticinco", "veintiseis", "veintisiete", "veintiocho", "veintinueve"]
+_D = {3: "treinta", 4: "cuarenta", 5: "cincuenta", 6: "sesenta", 7: "setenta",
+      8: "ochenta", 9: "noventa"}
+_C = {1: "ciento", 2: "doscientos", 3: "trescientos", 4: "cuatrocientos", 5: "quinientos",
+      6: "seiscientos", 7: "setecientos", 8: "ochocientos", 9: "novecientos"}
+
+
+def _en_palabras(n):
+    if n < 30:
+        return _U[n]
+    if n < 100:
+        d, u = divmod(n, 10)
+        return _D[d] + ("" if u == 0 else " y " + _U[u])
+    if n == 100:
+        return "cien"
+    if n < 1000:
+        c, r = divmod(n, 100)
+        return _C[c] + ("" if r == 0 else " " + _en_palabras(r))
+    if n == 1000:
+        return "mil"
+    return str(n)
+
 # Simbolos que el banco usa como incognita o como ficha.
 _SIMBOLOS = {"▢": "el cuadrito", "\U0001f53a": "el triangulo",
              "\U0001f537": "el rombo", "\U0001f7e1": "el circulo amarillo",
              "⬛": "el cuadrado negro"}
+
+# Emoji que el banco usa como OBJETO contable ("Cada 🍎 vale 2 frutas").
+# Sin esto el sintetizador los lee por su nombre Unicode y salen frases torpes:
+# "Cada LIBRO CERRADO vale dos libros", "cuatro MANZANA ROJA". Se guarda singular y
+# plural porque casi siempre vienen precedidos de una cantidad ("Ana dibujo 4 🍎").
+_EMOJI = {"\U0001f34e": ("manzana", "manzanas"),
+          "⭐":     ("estrella", "estrellas"),
+          "\U0001f68c": ("bus", "buses"),
+          "\U0001f4d5": ("libro", "libros"),
+          "\U0001f36c": ("dulce", "dulces"),
+          "⚽":     ("pelota", "pelotas"),
+          "\U0001f41f": ("pez", "peces"),
+          "\U0001f33b": ("girasol", "girasoles"),
+          "\U0001f36a": ("galleta", "galletas"),
+          "\U0001f697": ("auto", "autos")}
 
 # Unidades: singular cuando la cantidad es 1 ("1 kilo", no "1 kilos").
 _UNIDADES = [(r"(\d+)\s*cm\b", "centimetro"),
@@ -69,12 +111,28 @@ def _unidad(m, palabra):
     return "%s %s%s" % (n, palabra, "" if n == "1" else "s")
 
 
+def _emoji_objeto(t):
+    """Reemplaza los emoji contables por su palabra, concordando en numero."""
+    for e, (sing, plur) in _EMOJI.items():
+        if e not in t:
+            continue
+        # "4 🍎" -> "4 manzanas";  "1 🍎" -> "1 manzana";  "Cada 🍎" -> "cada manzana"
+        t = re.sub(r"(\d+)\s*" + re.escape(e),
+                   lambda m, s=sing, p=plur: "%s %s" % (m.group(1), s if m.group(1) == "1" else p), t)
+        # "¿Cuantos 📕 dibuja?" pide plural aunque no venga un numero delante.
+        t = re.sub(r"(?i)\b(cu[aá]nt[oa]s)\s*" + re.escape(e),
+                   lambda m, p=plur: "%s %s" % (m.group(1), p), t)
+        t = t.replace(e, " " + sing + " ")
+    return t
+
+
 def normalizar(texto, oa=""):
     """Texto listo para el sintetizador. `oa` desambigua los dos puntos."""
     t = " " + (texto or "").strip() + " "
 
     for simbolo, palabra in _SIMBOLOS.items():
         t = t.replace(simbolo, " %s " % palabra)
+    t = _emoji_objeto(t)
 
     # Los dos puntos tienen TRES usos en este banco, y se distinguen por los espacios:
     #   division  -> "18 : 6"                 (espacio a los dos lados, siempre OA09)
@@ -87,6 +145,14 @@ def normalizar(texto, oa=""):
         t = re.sub(r"\b(\d{1,2}):(\d{2})\b", _hora, t)
     t = re.sub(r"(\d)\s+:\s+(\d)", r"\1 dividido en \2", t)
 
+    # "de 10 en 10" el sintetizador lo lee como FECHA: "10 de ENERO de 10", porque "en"
+    # es la abreviatura de enero. Verificado sintetizando y transcribiendo de vuelta:
+    # con 10 falla, con 3/4/5/100 no, pero se desarma la construccion entera —escribir
+    # el numero con palabras la arregla— para no depender de que numero toque.
+    t = re.sub(r"\b(\d+)\s+en\s+(\d+)\b",
+               lambda m: "%s en %s" % (_en_palabras(int(m.group(1))),
+                                       _en_palabras(int(m.group(2)))), t)
+
     t = re.sub(r"\b(\d+)/(\d+)\b", _fraccion, t)          # antes que la barra suelta
 
     # El "+" y el "=" se convierten siempre: pueden venir despues de una palabra
@@ -95,6 +161,12 @@ def normalizar(texto, oa=""):
     t = re.sub(r"(\d)\s*[x×]\s*(\d)", r"\1 por \2", t)
     t = t.replace("+", " mas ").replace("=", " es igual a ")
     t = re.sub(r"(\d)\s*[-−]\s*(\d)", r"\1 menos \2", t)
+    # Un guion CON ESPACIOS a los dos lados siempre es una resta, aunque a un lado
+    # haya un simbolo y no un digito ("🔷 - 9 = 11", "20 - ___ = 12"). Sin esta regla
+    # el sintetizador se lo salta y el nino oye "el rombo nueve es igual a once": la
+    # operacion desaparece. Verificado transcribiendo el audio. Se comprobo que en las
+    # 792 preguntas NO hay ningun guion usado como puntuacion, asi que es seguro.
+    t = re.sub(r"(?<=\S)\s+[-−]\s+(?=\S)", " menos ", t)
     # El blanco a completar ("506 __ 560", "35, 40, ___, 50") hay que NOMBRARLO. Una
     # simple pausa no sirve: "35, 40, 50" suena a que esa es la secuencia, y el nino
     # que escucha en vez de leer se pierde justo el hueco que tiene que llenar.

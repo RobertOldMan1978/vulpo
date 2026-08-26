@@ -84,9 +84,14 @@ def textos():
     ini = h.index("const META_OA=")
     for m in re.findall(r"'MA03 OA \d\d':'([^']*)'", h[ini:h.index("};", ini)]):
         pares.append((m, _nv.normalizar(m)))
+    # Los nombres de etapa llevan emoji decorativo, y el sintetizador los lee por su
+    # nombre Unicode: "⚡ JEFE" sonaba "ALTO VOLTAJE jefe". Aqui el emoji no aporta
+    # nada hablado (es adorno de pantalla), asi que se quita antes de sintetizar.
+    adorno = re.compile("[\U0001F300-\U0001FAFF☀-➿⬀-⯿️⚡]")
     bloque = h[h.index("const EXPEDICIONES="):h.index("const CAMPAÑAS=")]
     for m in re.findall(r'nombre:"([^"]*)"', bloque):
-        pares.append((m, _nv.normalizar(m)))
+        limpio = adorno.sub("", m).strip()
+        pares.append((m, _nv.normalizar(limpio)))
     for m in ["¡Nivel superado!", "¿Cómo te fue?", "Lo que vas a aprender",
               "¡Muy bien!", "Inténtalo de nuevo", "Casi lo logras"]:
         pares.append((m, m))

@@ -3187,3 +3187,43 @@ Tras los arreglos se regeneraron **los 542 clips cuyo texto hablado difiere del 
   `localStorage` compartido entre `/3ro` y `/juego`); y fuera del código, la SpA para facturar,
   INAPI, la foto semanal, el argumento de evaluación formativa en la propuesta y el enlace de
   agenda real para el CTA de la landing.
+
+**Continuación de la Sesión 56 — la auditoría de cómo SUENA cada clip.** Roberto probó la voz y
+reportó que "de 3 en 3" se leía "tres **enero** tres". Era cierto, y al perseguirlo aparecieron dos
+defectos más que nadie había notado. Lo importante del episodio es el **método**: leer el texto
+normalizado NO basta —"de 10 en 10" se ve perfecto en texto— y escuchar 1.987 clips a mano no es
+viable.
+- **Herramienta nueva `scripts/auditar-voz-3ro.py`:** transcribe cada MP3 con el **reconocimiento de
+  voz** del mismo recurso de Azure y **reporta las palabras que se oyen y no estaban en el texto**.
+  Una intrusa que se repite —"enero"— delata un patrón mal leído. Compara **palabras y no textos
+  completos** a propósito: el transcriptor escribe los números a su manera (pega "9, 12, 15" como
+  "91215") y comparar frases enteras daría puro ruido. La transcripción de los 1.987 clips **se
+  versiona** en `dev/auditoria-voz-3ro.json` (~120 KB): es la evidencia de cómo suena cada uno y
+  permite revisar un cambio del banco **sin volver a pagar**. Costo de la pasada completa: ~US$2
+  (1,9 horas de audio).
+- **1 · El "enero" (43 clips).** `en` es la abreviatura de enero, así que "de 10 en 10:" se leía
+  "10 **de enero de** 10". El disparador resultó **específico del 10** (`3 en 3`, `4 en 4`, `5 en 5`
+  y `100 en 100` leen bien), pero se desarmó la construcción entera escribiendo el número con
+  palabras (`de diez en diez`) para no depender de qué número toque.
+- **2 · La resta desaparecía (17 preguntas) — peor que el anterior, porque no suena raro sino
+  coherente y equivocado.** La regla convertía el `-` solo **entre dígitos**, así que en
+  `🔷 - 9 = 11` o `20 - ___ = 12` el signo se perdía y el niño oía *"el rombo nueve es igual a
+  once"*: **la operación no estaba**. Antes de generalizar se verificó que en las 792 preguntas **no
+  hay un solo guion usado como puntuación**, lo que hace seguro convertir cualquier guion con
+  espacios.
+- **3 · Los emoji leídos por su nombre Unicode (21 preguntas).** `⚡ JEFE` sonaba "**alto voltaje**
+  jefe" y `Cada 📕 vale 2 libros` sonaba "cada **libro cerrado** vale dos libros". Ahora los 10
+  emoji contables tienen nombre propio y **concuerdan en número** ("Ana dibujó 4 manzanas", no
+  "cuatro manzana roja"), y el emoji **decorativo** de los nombres de etapa se quita antes de
+  sintetizar (ahí no aporta nada hablado).
+- **Una alarma falsa descartada, y vale registrarla:** la transcripción mostraba las listas pegadas
+  (`9, 12, 15` → "91215") y parecía otro defecto. Se sintetizó la misma frase escrita **con palabras
+  y con dígitos**: suenan **idéntico**. Era cómo el transcriptor escribe, no cómo la voz habla.
+- **Lo que el informe sigue marcando y NO es problema:** artefactos del transcriptor —escribe "cm"
+  donde se dice "centímetros", "Thomas" por "Tomás"— y **homófonos reales del castellano**
+  ("de a saltos"/"de asaltos", "esa hora"/"es ahora"). Al leer el informe hay que separar eso de un
+  defecto de verdad.
+- **Queda a criterio de Roberto:** `(D, 3)` se lee "la casilla **de**, tres", porque la letra D se
+  pronuncia así. Es correcto —un profesor diría lo mismo— pero al oído es ambiguo con "la casilla de
+  3". No se cambió; si molesta, la salida es decir "columna D, fila 3".
+- 130 clips regenerados y **re-auditados**. Costo de esta tanda: ~US$2,08.
