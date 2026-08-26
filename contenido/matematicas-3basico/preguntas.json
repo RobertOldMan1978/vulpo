@@ -1134,7 +1134,7 @@
         "450"
       ],
       "correcta": 1,
-      "tip": "Del 480 al 500 hay 20 pasos y del 500 al 530 hay 30, así que 480 queda más cerca.",
+      "tip": "De 480 a 500 hay 20 unidades y de 500 a 530 hay 30 unidades. Por eso 480 está más cerca de 500.",
       "visual": {
         "tipo": "recta",
         "desde": 400,
@@ -6318,7 +6318,7 @@
     },
     {
       "oa": "MA03 OA 14",
-      "pregunta": "El banco está en (C, 2) y la fuente en (C, 6). ¿Cuántas filas hay entre ellos?",
+      "pregunta": "El banco está en (C, 2) y la fuente en (C, 6). ¿Cuántas filas los separan?",
       "opciones": [
         "2",
         "3",
@@ -6640,7 +6640,7 @@
     },
     {
       "oa": "MA03 OA 15",
-      "pregunta": "Con 6 cuadrados iguales, ¿qué cuerpo se arma?",
+      "pregunta": "Con una red de 6 cuadrados iguales, ¿qué cuerpo se arma?",
       "opciones": [
         "Cubo",
         "Cono",
@@ -6682,7 +6682,7 @@
     },
     {
       "oa": "MA03 OA 15",
-      "pregunta": "Con 4 triángulos y 1 cuadrado, ¿qué cuerpo se arma?",
+      "pregunta": "Con una red de 4 triángulos y 1 cuadrado, ¿qué cuerpo se arma?",
       "opciones": [
         "Cubo",
         "Cono",
@@ -6696,7 +6696,7 @@
     },
     {
       "oa": "MA03 OA 15",
-      "pregunta": "Con 6 rectángulos, ¿qué cuerpo se arma?",
+      "pregunta": "Con una red de 6 rectángulos, ¿qué cuerpo se arma?",
       "opciones": [
         "Paralelepípedo",
         "Esfera",
@@ -6868,7 +6868,7 @@
     },
     {
       "oa": "MA03 OA 15",
-      "pregunta": "Ana pega 6 cuadrados iguales. ¿Qué cuerpo formó?",
+      "pregunta": "Ana pega 6 cuadrados iguales y forma una red. ¿Qué cuerpo armó?",
       "opciones": [
         "Pirámide",
         "Cilindro",
@@ -7112,7 +7112,7 @@
     },
     {
       "oa": "MA03 OA 15",
-      "pregunta": "Sofía pega 4 triángulos sobre un cuadrado. ¿Qué cuerpo hace?",
+      "pregunta": "Sofía pega 4 triángulos sobre un cuadrado y forma una red. ¿Qué cuerpo hace?",
       "opciones": [
         "Pirámide",
         "Cono",
@@ -7638,7 +7638,7 @@
     },
     {
       "oa": "MA03 OA 16",
-      "pregunta": "¿Quién tiene más vértices: un cubo o una pirámide?",
+      "pregunta": "¿Quién tiene más vértices: un cubo o una pirámide de base cuadrada?",
       "opciones": [
         "La pirámide, tiene 8",
         "El cubo, tiene 8",
@@ -8897,7 +8897,7 @@
     },
     {
       "oa": "MA03 OA 19",
-      "pregunta": "En una línea de tiempo, ¿qué año va después de 2018?",
+      "pregunta": "En una línea de tiempo, ¿cuál de estos años viene después de 2018?",
       "opciones": [
         "2015",
         "2020",

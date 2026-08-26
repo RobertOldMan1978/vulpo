@@ -30,3 +30,6 @@ __pycache__/
 # Claves de servicios externos: NUNCA al repositorio (es publico).
 azure-tts.txt
 *.key
+
+# Documentos de revision generados (se rehacen con generar-revision-preguntas.py)
+dev/revision-*.html

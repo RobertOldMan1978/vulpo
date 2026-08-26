@@ -333,6 +333,28 @@ para siempre.
   dispositivo**, que se puede atrasar. **No hay revocación:** un enlace repartido vive hasta
   su fecha. Revocar de verdad exigiría Supabase, y se descartó por costo.
   `?solo=` sigue existiendo y **nunca caduca** (es el formato del enlace ya repartido).
+- **`?rev=1` — Modo revisión de profesor (Sesión 56):** se agrega a un enlace de muestra
+  (`?solo=` o el 4.º campo del token `?m=`) y lo convierte en un recorrido para que un docente
+  revise el contenido y opine. Cambia tres cosas: **3 preguntas por etapa** en vez de 10 (un
+  capítulo pasa de 55 a 15; revisar 40 por capítulo agota a cualquiera, y quien se cansa deja de
+  mirar con atención), un **🚩 por pregunta** que guarda su **id** (`mat3-oa14-8`) y una
+  **pantalla final** para escribir o **grabar un mensaje de voz**. Hereda todo del modo prueba:
+  no guarda nada ni toca la partida del dispositivo.
+  - **El comentario llega por WhatsApp, no por un backend, a propósito.** El sitio es público:
+    una tabla escribible por cualquiera sería una puerta a basura, y el profesor ya conversa por
+    ahí. **La contra asumida es que si no completa el envío, ese comentario se pierde.** El audio
+    no se sube a ninguna parte: se comparte con el botón nativo del teléfono (en computador se
+    descarga y se explica qué hacer, en vez de dejar un botón que aparenta funcionar).
+  - **La maquinaria vive FUERA de los juegos, en `assets/js/revision.js`**, porque cada curso es
+    un fork y lo que se escribe adentro hay que reescribirlo en el siguiente. El módulo inyecta
+    su CSS, su pantalla y el botón 🚩 él solo; **integrarlo en un curso nuevo son 5 líneas**
+    (incluir el script, `REV.init`, y engancharlo en `nPreguntas`, `pintaPregunta` y `go`). Con
+    el modo apagado no inyecta nada. Ya está en **8° y en 3°**, y el armador (`?armar=1`) de
+    ambos tiene su casilla.
+  - **Requisito del motor:** las preguntas deben llevar `id`. Hubo que propagarlo en los **6
+    constructores de cada app** — el mismo punto ciego que ya causó dos bugs silenciosos (el `oa`
+    en la Sesión 23 y el `visual` en la 55). Al tocar un constructor, revisar que no se caiga un
+    campo.
 
 #### Modelo de acceso (la "puerta")
 
@@ -3227,3 +3249,58 @@ viable.
   pronuncia así. Es correcto —un profesor diría lo mismo— pero al oído es ambiguo con "la casilla de
   3". No se cambió; si molesta, la salida es decir "columna D, fila 3".
 - 130 clips regenerados y **re-auditados**. Costo de esta tanda: ~US$2,08.
+
+**Cierre de la Sesión 56 — informe pedagógico externo, revisión final y modo profesor.**
+Roberto encargó un informe de revisión del banco de Matemática 3° y pidió (1) corregir todo lo
+corregible automáticamente y (2) montar la parte humana sobre el módulo de enlaces de muestra.
+
+- **El informe externo, verificado uno por uno: 11 hallazgos correctos de 13.** Lo valioso no fue
+  aplicarlo sino contrastarlo, porque **dos de sus correcciones habrían METIDO errores**:
+  - `mat3-oa14-21` y `-22` **no tenían la clave mal**: el informe invirtió el convenio de la
+    cuadrícula, que este banco declara y usa igual en sus 15 preguntas del OA 14 (*"la letra dice
+    la columna y el número dice la fila"*). Aplicar su corrección habría dejado esas dos
+    contradiciendo a las otras trece.
+  - Pedía cambiar "Vulpi" por "Vulpo". Es al revés: **la plataforma es VULPO y la mascota Vulpi**.
+- **Corregido (9 preguntas, sin tocar ninguna respuesta correcta, con aserción en el script):** el
+  tip de `oa03-10` decía "20 pasos" donde son *unidades*; `oa14-8` preguntaba "¿cuántas filas hay
+  **entre** ellos?", que se lee literal como las intermedias (3) **y 3 era una de las opciones**;
+  `oa19-26` pedía 2019, que no estaba entre las opciones; `oa16-30` decía "una pirámide", que no
+  tiene un número fijo de vértices; y 5 preguntas del OA 15 omitían que las piezas deben formar
+  una **red** válida (término del OA oficial).
+- **No se corrigió, con razón:** "parte curva" → "sector circular" (el informe mismo lo condiciona
+  a que el término ya se haya enseñado, y **no es de 3° básico**); y `oa17-5`, cuya objeción es
+  válida pero académica para 8 años.
+- **El mejor hallazgo del informe era de accesibilidad y era cierto:** los dibujos iban con
+  `aria-hidden="true"`, así que **para un lector de pantalla no existían**. Ahora cada uno lleva
+  descripción (`textoVisual`), **cuidando no delatar la respuesta**: una marca `oculta` se
+  describe como "hay una marca en uno de los saltos, sin su número", y un cuerpo geométrico no se
+  nombra. Sus recomendaciones de voz (`$90`, `1/4`, emojis, `1.000`) **ya estaban hechas**: el
+  informe se escribió mirando el HTML, sin ver la capa de normalización.
+- **`scripts/generar-revision-preguntas.py` (nuevo):** documento de revisión agrupado por unidad →
+  OA → preguntas, con el texto oficial del OA, la clave marcada y casilla. **Incrusta el dibujo
+  real** reutilizando `renderVisual` del juego, porque 232 de las 792 preguntas llevan dibujo y sin
+  él son irrevisables en papel. No se usó `generar-pdf-preguntas.py`: agrupa solo por OA, no
+  muestra dibujos y su librería (fpdf2, ni siquiera instalada) no dibuja `▢ 🔺 🍎`.
+  > **Trampa que costó caro:** al agregar `textoVisual` antes de `svgEnvoltura`, el extractor del
+  > generador —que empezaba en `svgEnvoltura`— dejó fuera una dependencia y **los 232 dibujos
+  > desaparecieron sin ningún error**, porque el `catch` los reemplazaba por texto. Se detectó
+  > porque el PDF bajó de 172 a 146 páginas. Ahora el documento **grita en rojo** en su primera
+  > página si algún dibujo falla.
+- **`scripts/auditar-banco-3ro.py` (nuevo) — la capa automática.** Comprobaciones que antes se
+  hacían a mano una vez: clave aritmética, el dibujo que regala la respuesta, formato mezclado y
+  **sesgo de largo** (la correcta es la más larga en 32,8%, cuando al azar sería 25%). Resultado
+  sobre las 792: **0 errores**, con **85 claves verificadas por cálculo**. Ese 10% es el límite
+  real: el resto son problemas con enunciado que ningún script puede verificar, y por eso la capa
+  humana no es opcional.
+  > **Dos lecciones propias, porque la primera versión acusó 13 preguntas CORRECTAS:** (a) el
+  > punto final de "Suma 120 + 230 + 150." entraba en la clase del lookahead y cortaba la
+  > expresión en "120 + 230"; (b) en "Si 7 + 5 = 12, ¿cuánto es 12 − 5?" tomaba la primera
+  > operación y la comparaba con la clave de la segunda. Además se **retiró** la comprobación de
+  > "distractor fuera de escala": de 34 avisos, 31 eran distractores **buenos** (para
+  > "300 + 40 + 5", el `3405` es el error típico de escribir el numeral literal). Una comprobación
+  > que acusa lo correcto entrena a ignorar el informe.
+- **Modo revisión de profesor:** ver la sección de parámetros de URL arriba. Se montó **fuera de
+  los juegos** para no reescribirlo en cada curso, quedó en **3 preguntas por etapa** (decisión de
+  Roberto) y está activo en **8° y 3°**. Verificado en ambos, con y sin el modo, sin regresión.
+  **Pendiente de Roberto: probar la grabación de voz en el teléfono** — un navegador sin interfaz
+  no puede dar permiso de micrófono, así que esa parte no se pudo comprobar aquí.

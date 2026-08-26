@@ -17,6 +17,8 @@
 <!-- supabase-js auto-hospedado (no desde CDN): elimina el riesgo de cadena de suministro
      (un CDN comprometido correría código en el navegador del alumno/profesor). Versión fija
      2.112.4; para actualizar, descargar la nueva y cambiar esta ruta. -->
+<!-- Modo revisión de profesor, compartido por todos los cursos. -->
+<script src="assets/js/revision.js"></script>
 <script src="assets/vendor/supabase-js-2.112.4.min.js"></script>
 <style>
 :root{
@@ -175,6 +177,7 @@ input.nm:focus{border-color:var(--cyan)}
 .btn-ayuda:disabled{opacity:.4;cursor:default;filter:grayscale(.4)}
 .btn-escuchar{display:block;margin:6px auto 10px;padding:8px 18px;border:0;border-radius:20px;background:var(--gold);color:#3a2a12;font-family:'Nunito',sans-serif;font-weight:900;font-size:15px;cursor:pointer}
 .opt.leyendo{outline:3px solid var(--gold);outline-offset:2px;background:#3a2f6b}
+ background:transparent;color:var(--pink);font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;cursor:pointer}
 .q-visual{font-size:30px;text-align:center;line-height:1.5;margin:6px 0 10px;word-break:break-word}
 .q-visual.qv-grupos{font-size:22px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
 .qv-grupo{border:2px dashed var(--gold);border-radius:12px;padding:4px 8px;display:inline-block}
@@ -817,6 +820,9 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
       <label style="display:flex;gap:8px;align-items:center;font-weight:800;font-size:13px">
         <input type="checkbox" id="armarQA"> Mostrar las respuestas correctas
       </label>
+      <label style="display:flex;gap:8px;align-items:center;font-size:13px;font-weight:700;margin:8px 0">
+        <input type="checkbox" id="armarRev"> Modo revisión de profesor (3 preguntas por etapa + comentarios)
+      </label>
       <input id="armarUrl" readonly
              style="width:100%;padding:10px;border-radius:12px;border:2px solid var(--violet);
                     background:#1a1440;color:#fff;font-weight:700;font-size:12px;margin:10px 0">
@@ -1192,7 +1198,8 @@ function leerToken(t){
  const ids=(p[0]||'').split(',').map(s=>s.trim()).filter(x=>/^[a-z0-9-]+$/i.test(x));
  if(!ids.length) return null;
  const hasta=/^\d{4}-\d{2}-\d{2}$/.test(p[1]||'') ? p[1] : '';
- return { ids:ids, hasta:hasta, qa:(p[2]||'')==='1' };
+ // 4.º campo: modo revisión de profesor. Un token viejo no lo trae y sigue valiendo.
+ return { ids:ids, hasta:hasta, qa:(p[2]||'')==='1', rev:(p[3]||'')==='1' };
 }
 /* Fecha local del dispositivo como AAAA-MM-DD (no UTC: interesa el día del visitante). */
 function hoyISO(){
@@ -1294,6 +1301,20 @@ const PRUEBA=SOLO.length>0;
 const MODO_ABIERTO=QA||PRUEBA;   // ignora los candados de progresión
 const EFIMERO=QA||PRUEBA;        // no mide dominio por OA ni reporta refuerzos
 const SIN_DISCO=PRUEBA||ARMAR;   // ni localStorage ni Supabase ni intro
+
+/* ===== Modo revisión de profesor (?rev=1, siempre junto a ?solo= o ?m=) =====
+   Le pasamos a un profesor un enlace acotado para que revise el contenido y nos diga
+   qué está mal. Cambia tres cosas respecto del modo prueba normal:
+     - 5 preguntas por etapa en vez de 10 (revisar 40 preguntas por capítulo cansa a
+       cualquiera, y un profesor que se cansa deja de mirar con atención).
+     - un 🚩 en cada pregunta para marcarla sin interrumpir el recorrido.
+     - una pantalla al final para escribir o grabar sus comentarios.
+   Hereda todo lo demás del modo prueba: no guarda nada, no toca la partida del
+   dispositivo y no mide dominio. */
+const REVISION=PRUEBA && (_PARAMS.has('rev')||!!(_M&&_M.rev));
+REV.init({ activo:REVISION,
+           titulo:'VULPO · Revisión de Matemática 3° básico',
+           volver:function(){ go('scr-mapas'); } });
 /* Vigencia inclusiva: un enlace con hasta=2026-09-15 sirve todo el 15 y muere el 16. */
 const VENCIDA=!!VENCE && hoyISO()>VENCE;
 
@@ -1403,7 +1424,7 @@ function buildPreguntas(lvl){
  }else{sel=pickN(POOL[c.oa],N);}
  // Se conserva el `oa` de cada pregunta: lo necesita el mapa de dominio del profesor.
  // Y `visual`: lo necesita el apoyo visual de 3° (pintaPregunta lee P.visual).
- return sel.map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,visual:q.visual}));
+ return sel.map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,visual:q.visual,id:q.id}));
 }
 function poolListo(lvl){
  const c=EXPEDICION[lvl];
@@ -1485,7 +1506,10 @@ let Q={lvl:0,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock
 let MODO='normal';
 function esJefeLvl(lvl){return lvl===N_ETAPAS-1;}
 function progAct(){return MODO==='dificil'?S.progresoDificil:S.progreso;}
-function nPreguntas(lvl){if(MODO==='dificil')return esJefeLvl(lvl)?15:10;return EXPEDICION[lvl].n;}
+function nPreguntas(lvl){
+ if(REV.activo) return REV.n;           // revisión de profesor: pocas por etapa
+ if(MODO==='dificil')return esJefeLvl(lvl)?15:10;
+ return EXPEDICION[lvl].n;}
 function tiempoInicial(){return MODO==='dificil'?15:20;}
 // App de 3°: sin cuenta regresiva (el reloj estresa a los niños). Ver plan 3ro-app-scaffold.
 const SIN_RELOJ=true;
@@ -1613,11 +1637,47 @@ document.addEventListener('DOMContentLoaded',()=>{
    Cada pregunta puede traer un objeto `visual`; si el tipo no existe, se ignora en silencio
    (la pregunta sigue siendo válida solo con texto). Lo consume pintaPregunta vía P.visual,
    y los constructores de preguntas deben propagar el campo (ver `visual:q.visual`). */
-function svgEnvoltura(inner,alto){
- return `<div class="q-visual"><svg viewBox="0 0 200 ${alto}" width="100%" height="${alto}" role="img" aria-hidden="true" style="max-width:280px">${inner}</svg></div>`;
+/* Descripcion en palabras del dibujo, para quien no lo ve (lector de pantalla).
+   Antes el SVG iba con aria-hidden="true" y para esa persona simplemente no existia:
+   "¿Que numero esta marcado?" quedaba sin nada que responder.
+
+   CUIDADO — la descripcion NO puede delatar la respuesta. Una marca con `oculta`
+   esta oculta a proposito (la pregunta es justamente deducir su valor), asi que aqui
+   tampoco se dice: se describe la escala y donde cae la marca, no cuanto vale. Mismo
+   criterio con las barras, que se describen por categoria y no por el maximo. */
+function textoVisual(v){
+ if(!v||!v.tipo) return '';
+ const T=v.tipo;
+ if(T==='recta'){
+  const a=v.desde, b=v.hasta, s=v.paso||1;
+  let d=`Recta numerica de ${a} a ${b}, de ${s} en ${s}.`;
+  if(v.marca!==undefined){
+   d += v.oculta ? ` Hay una marca en uno de los saltos, sin su numero.`
+                 : ` La marca esta en ${v.marca}.`;
+  }
+  return d;
+ }
+ if(T==='contar')   return `Dibujo: ${v.a} y ${v.b} objetos iguales para juntar.`;
+ if(T==='agrupar')  return `Dibujo: ${v.grupos} grupos de ${v.porGrupo} objetos cada uno.`;
+ if(T==='fraccion') return `Barra dividida en ${v.partes} partes iguales, con ${v.pintadas} pintada${v.pintadas===1?'':'s'}.`;
+ if(T==='cuerpo')   return `Dibujo de un cuerpo geometrico.`;   // nombrarlo seria dar la respuesta
+ if(T==='reloj')    return `Reloj de agujas.`;                  // la hora es lo que se pregunta
+ if(T==='barras'){
+  const e=(v.etiquetas||[]).join(', ');
+  return `Grafico de barras con ${(v.valores||[]).length} barras: ${e}.`;
+ }
+ return 'Dibujo de apoyo.';
+}
+// renderVisual la deja lista antes de dibujar, para no tener que pasarla por las
+// ~15 llamadas a svgEnvoltura que hay adentro.
+let _DESC_VISUAL='';
+function svgEnvoltura(inner,alto,desc){
+ const d=(desc||_DESC_VISUAL||'').replace(/"/g,'&quot;');
+ return `<div class="q-visual"><svg viewBox="0 0 200 ${alto}" width="100%" height="${alto}" role="img" aria-label="${d}" style="max-width:280px">${inner}</svg></div>`;
 }
 function renderVisual(v){
  if(!v||!v.tipo) return '';
+ _DESC_VISUAL=textoVisual(v);
  const T=v.tipo;
 
  // Sumar y restar: dos grupos de emojis separados por el signo.
@@ -1626,7 +1686,9 @@ function renderVisual(v){
   const g1=e.repeat(Math.max(0,Math.abs(v.a)));
   const signo=(v.b<0)?'➖':'➕';
   const g2=e.repeat(Math.max(0,Math.abs(v.b)));
-  return `<div class="q-visual">${g1} ${signo} ${g2}</div>`;
+  // role/aria-label: el emoji repetido lo lee un lector de pantalla uno por uno
+  //  ("manzana manzana manzana..."), inservible. Mejor una descripcion y ocultar lo demas.
+  return `<div class="q-visual" role="img" aria-label="${_DESC_VISUAL}"><span aria-hidden="true">${g1} ${signo} ${g2}</span></div>`;
  }
 
  // Multiplicar y dividir: `grupos` montones de `porGrupo` cada uno.
@@ -1635,7 +1697,7 @@ function renderVisual(v){
   const g=Math.max(0,Math.min(12,v.grupos|0)), n=Math.max(0,Math.min(12,v.porGrupo|0));
   let out='';
   for(let i=0;i<g;i++) out+=`<span class="qv-grupo">${e.repeat(n)}</span>`;
-  return `<div class="q-visual qv-grupos">${out}</div>`;
+  return `<div class="q-visual qv-grupos" role="img" aria-label="${_DESC_VISUAL}"><span aria-hidden="true" style="display:contents">${out}</span></div>`;
  }
 
  // Fracciones: barra partida en `partes`, con `pintadas` coloreadas.
@@ -1742,7 +1804,7 @@ function renderVisual(v){
 }
 
 const $=id=>document.getElementById(id);
-const XP_POR_NIVEL=100;
+00;
 
 /* ================= SONIDO (Web Audio, sintetizado) ================= */
 const SND={
@@ -1816,6 +1878,7 @@ function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remo
  var enJuego=(id==='scr-mapa'||id==='scr-quiz'||id==='scr-res');
  document.body.classList.toggle('en-dificil', enJuego && MODO==='dificil');
  if(id==='scr-rol'){pintarInicio();revisarDesafio();}
+ REV.barra();   // modo revisión: la barra se oculta sola en su propia pantalla
  MUSIC.contexto(id);}
 // Saluda al alumno por su nombre (mismas letras que VULPO) si canjeó un código.
 function pintarInicio(){const el=$('rolNombre'),sub=$('rolSub');if(!el)return;
@@ -2220,7 +2283,7 @@ async function preguntasDeOA(oa,n){
  let pool=[];
  try{ const d=await (await fetch(url)).json();
       pool=(d.preguntas||[]).filter(q=>q.oa===oa); }catch(e){ return []; }
- return pickN(pool,n).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,visual:q.visual}));
+ return pickN(pool,n).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,visual:q.visual,id:q.id}));
 }
 
 // Lanza el quiz en modo lección (reusa el motor con el flag Q.leccion).
@@ -2832,7 +2895,7 @@ async function startDuelo(){
 }
 function nuevaRondaDuelo(){
  D.j[0].pts=0;D.j[1].pts=0;D.ronda=0;D.turno=0;
- D.pr=pickN(poolDuelo(),DUELO_ROUNDS).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,visual:q.visual}));
+ D.pr=pickN(poolDuelo(),DUELO_ROUNDS).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,visual:q.visual,id:q.id}));
  dueloPass();
 }
 function dueloPass(){const jug=D.j[D.turno];$('dpEm').textContent=jug.em;$('dpMsg').textContent='Turno de '+jug.n;go('scr-duelo-pass');}
@@ -3028,8 +3091,10 @@ function armarUrl(){
  const ids=[...document.querySelectorAll('#armarLista input[type=checkbox]:checked')].map(c=>c.value);
  const hasta=$('armarHasta').value||'';
  const qa=$('armarQA').checked;
+ const rev=$('armarRev').checked;
  const url=ids.length
-   ? location.origin+location.pathname+'?m='+b64uCod(ids.join(',')+'|'+hasta+'|'+(qa?'1':''))
+   ? location.origin+location.pathname+'?m='+b64uCod(
+       ids.join(',')+'|'+hasta+'|'+(qa?'1':'')+'|'+(rev?'1':''))
    : '';
  $('armarUrl').value=url||'Marca al menos un capítulo';
  $('armarCopiar').disabled=!url; $('armarProbar').disabled=!url;
@@ -3037,6 +3102,7 @@ function armarUrl(){
    ? ids.length+(ids.length===1?' capítulo':' capítulos')
      +(hasta?' · vence el '+fechaLarga(hasta):' · sin caducidad')
      +(qa?' · con respuestas':'')
+     +(rev?' · REVISIÓN de profesor (3 por etapa)':'')
    : '';
  return url;
 }
@@ -3060,6 +3126,7 @@ function arrancarArmador(){
  });
  cont.addEventListener('change',armarUrl);
  $('armarQA').onchange=armarUrl;
+ $('armarRev').onchange=armarUrl;
  $('armarCopiar').onclick=()=>{
   const u=armarUrl(); if(!u) return;
   Promise.resolve(navigator.clipboard&&navigator.clipboard.writeText(u))
@@ -3083,7 +3150,8 @@ function arrancarArmador(){
   const nombres=d.ids.map(id=>{const e=EXPEDICIONES.find(x=>x.id===id); return e?nombreMapa(e):id;});
   const estado=!d.hasta ? 'Sin caducidad.'
     : (hoyISO()>d.hasta ? 'VENCIÓ el '+fechaLarga(d.hasta)+'.' : 'Vence el '+fechaLarga(d.hasta)+'.');
-  $('armarLeido').textContent=nombres.join(' · ')+' — '+estado+(d.qa?' Con respuestas.':'');
+  $('armarLeido').textContent=nombres.join(' · ')+' — '+estado+(d.qa?' Con respuestas.':'')
+    +(d.rev?' MODO REVISIÓN de profesor.':'');
  };
  armarUrl();
  $('nav').style.display='none';
@@ -3271,7 +3339,7 @@ function jefePreguntasFase(camp,faseIdx){
  const f=camp.jefeFinal.fases[faseIdx], n=camp.jefeFinal.nPorFase, per=Math.max(1,Math.ceil(n/f.oas.length));
  let sel=[]; f.oas.forEach(oa=>{sel=sel.concat(pickN(POOL[oa]||[],per));});
  // Igual que en las etapas: se conserva el `oa` para el mapa de dominio.
- return pickN(sel,n).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,visual:q.visual}));
+ return pickN(sel,n).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,visual:q.visual,id:q.id}));
 }
 // Carga el banco completo de Matemáticas en el POOL global (keyed por OA), para el jefe
 // de la campaña de lecciones (Matemáticas no tiene expedición de la cual tomar el POOL).
@@ -3828,7 +3896,7 @@ function iniciarRepaso(lvl, vistos){
  const set=new Set(vistos||[]);
  let disp=banco.filter(q=>!set.has(q.pregunta));
  if(disp.length<10) disp=banco;   // salvaguarda: si por alguna razón no alcanzan, usa todo el banco del OA
- const preguntas=pickN(disp,10).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,visual:q.visual}));
+ const preguntas=pickN(disp,10).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,visual:q.visual,id:q.id}));
  if(!preguntas.length){ go('scr-res'); return; }
  Q={lvl,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock:false,preguntas,repaso:{lvl}};
  MODO='normal';
@@ -3881,6 +3949,7 @@ function pintaPregunta(){
  // Se lee `orden` (el barajado que se está mostrando), NO P.ops: si se leyera el
  // arreglo original, la voz diría "A" señalando una opción distinta a la de pantalla.
  if(be){ be.onclick=()=>leerPreguntaEnVoz(P.q, orden.map(it=>it.o), $('qOpts')); }
+ REV.boton(P);   // 🚩 del modo revisión (assets/js/revision.js)
  // timer (el repaso no tiene cronómetro: es estudio, no evaluación)
  clearInterval(Q.timer);
  if(Q.repaso || SIN_RELOJ){ $('qTimer').style.visibility='hidden'; }
@@ -4108,7 +4177,7 @@ async function construirPreguntasDesafio(asig, objetivos){
   const per=Math.min(6,Math.max(2,Math.round(12/objetivos.length)));
   let sel=[]; objetivos.forEach(oa=>{ sel=sel.concat(pickN(pool[oa],per)); });
   sel=pickN(sel,12);
-  return sel.map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,visual:q.visual}));
+  return sel.map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,visual:q.visual,id:q.id}));
 }
 // Arranca el quiz en modo desafío (reusa el motor con el flag Q.desafio).
 async function jugarDesafio(d){

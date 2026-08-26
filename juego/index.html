@@ -17,6 +17,8 @@
 <!-- supabase-js auto-hospedado (no desde CDN): elimina el riesgo de cadena de suministro
      (un CDN comprometido correría código en el navegador del alumno/profesor). Versión fija
      2.112.4; para actualizar, descargar la nueva y cambiar esta ruta. -->
+<!-- Modo revisión de profesor, compartido por todos los cursos. -->
+<script src="assets/js/revision.js"></script>
 <script src="assets/vendor/supabase-js-2.112.4.min.js"></script>
 <style>
 :root{
@@ -808,6 +810,9 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
       <label style="display:flex;gap:8px;align-items:center;font-weight:800;font-size:13px">
         <input type="checkbox" id="armarQA"> Mostrar las respuestas correctas
       </label>
+      <label style="display:flex;gap:8px;align-items:center;font-size:13px;font-weight:700;margin:8px 0">
+        <input type="checkbox" id="armarRev"> Modo revisión de profesor (3 preguntas por etapa + comentarios)
+      </label>
       <input id="armarUrl" readonly
              style="width:100%;padding:10px;border-radius:12px;border:2px solid var(--violet);
                     background:#1a1440;color:#fff;font-weight:700;font-size:12px;margin:10px 0">
@@ -1179,7 +1184,8 @@ function leerToken(t){
  const ids=(p[0]||'').split(',').map(s=>s.trim()).filter(x=>/^[a-z0-9-]+$/i.test(x));
  if(!ids.length) return null;
  const hasta=/^\d{4}-\d{2}-\d{2}$/.test(p[1]||'') ? p[1] : '';
- return { ids:ids, hasta:hasta, qa:(p[2]||'')==='1' };
+ // 4.º campo: modo revisión de profesor. Un token viejo no lo trae y sigue valiendo.
+ return { ids:ids, hasta:hasta, qa:(p[2]||'')==='1', rev:(p[3]||'')==='1' };
 }
 /* Fecha local del dispositivo como AAAA-MM-DD (no UTC: interesa el día del visitante). */
 function hoyISO(){
@@ -1397,6 +1403,12 @@ const EXPEDICIONES=[
    dejar al alumno en una pantalla vacía). */
 const SOLO=_SOLO_PEDIDO.filter(id=>EXPEDICIONES.some(e=>e.id===id));
 const PRUEBA=SOLO.length>0;
+/* Modo revisión de profesor (?rev=1 junto a ?solo= o ?m=). La maquinaria vive en
+   assets/js/revision.js, compartida con los demás cursos: aquí solo se enciende. */
+const REVISION=PRUEBA && (_PARAMS.has('rev')||!!(_M&&_M.rev));
+REV.init({ activo:REVISION,
+           titulo:'VULPO · Revisión de 8° básico',
+           volver:function(){ go('scr-expediciones'); } });
 const MODO_ABIERTO=QA||PRUEBA;   // ignora los candados de progresión
 const EFIMERO=QA||PRUEBA;        // no mide dominio por OA ni reporta refuerzos
 const SIN_DISCO=PRUEBA||ARMAR;   // ni localStorage ni Supabase ni intro
@@ -1571,7 +1583,7 @@ function buildPreguntas(lvl){
   sel=pickN(sel,N);
  }else{sel=pickN(POOL[c.oa],N);}
  // Se conserva el `oa` de cada pregunta: lo necesita el mapa de dominio del profesor.
- return sel.map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa}));
+ return sel.map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,id:q.id}));
 }
 function poolListo(lvl){
  const c=EXPEDICION[lvl];
@@ -1691,7 +1703,10 @@ let Q={lvl:0,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock
 let MODO='normal';
 function esJefeLvl(lvl){return lvl===N_ETAPAS-1;}
 function progAct(){return MODO==='dificil'?S.progresoDificil:S.progreso;}
-function nPreguntas(lvl){if(MODO==='dificil')return esJefeLvl(lvl)?15:10;return EXPEDICION[lvl].n;}
+function nPreguntas(lvl){
+ if(REV.activo) return REV.n;           // revisión de profesor: pocas por etapa
+ if(MODO==='dificil')return esJefeLvl(lvl)?15:10;
+ return EXPEDICION[lvl].n;}
 function tiempoInicial(){return MODO==='dificil'?15:20;}
 
 const $=id=>document.getElementById(id);
@@ -1769,6 +1784,7 @@ function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remo
  var enJuego=(id==='scr-mapa'||id==='scr-quiz'||id==='scr-res');
  document.body.classList.toggle('en-dificil', enJuego && MODO==='dificil');
  if(id==='scr-rol'){pintarInicio();revisarDesafio();}
+ REV.barra();   // modo revisión: la barra se oculta sola en su propia pantalla
  MUSIC.contexto(id);}
 // Saluda al alumno por su nombre (mismas letras que VULPO) si canjeó un código.
 function pintarInicio(){const el=$('rolNombre'),sub=$('rolSub');if(!el)return;
@@ -2173,7 +2189,7 @@ async function preguntasDeOA(oa,n){
  let pool=[];
  try{ const d=await (await fetch(url)).json();
       pool=(d.preguntas||[]).filter(q=>q.oa===oa); }catch(e){ return []; }
- return pickN(pool,n).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa}));
+ return pickN(pool,n).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,id:q.id}));
 }
 
 // Lanza el quiz en modo lección (reusa el motor con el flag Q.leccion).
@@ -2767,7 +2783,7 @@ async function startDuelo(){
 }
 function nuevaRondaDuelo(){
  D.j[0].pts=0;D.j[1].pts=0;D.ronda=0;D.turno=0;
- D.pr=pickN(poolDuelo(),DUELO_ROUNDS).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip}));
+ D.pr=pickN(poolDuelo(),DUELO_ROUNDS).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,id:q.id}));
  dueloPass();
 }
 function dueloPass(){const jug=D.j[D.turno];$('dpEm').textContent=jug.em;$('dpMsg').textContent='Turno de '+jug.n;go('scr-duelo-pass');}
@@ -2978,8 +2994,9 @@ function armarUrl(){
  const ids=[...document.querySelectorAll('#armarLista input[type=checkbox]:checked')].map(c=>c.value);
  const hasta=$('armarHasta').value||'';
  const qa=$('armarQA').checked;
+ const rev=$('armarRev').checked;
  const url=ids.length
-   ? location.origin+location.pathname+'?m='+b64uCod(ids.join(',')+'|'+hasta+'|'+(qa?'1':''))
+   ? location.origin+location.pathname+'?m='+b64uCod(ids.join(',')+'|'+hasta+'|'+(qa?'1':'')+'|'+(rev?'1':''))
    : '';
  $('armarUrl').value=url||'Marca al menos un capítulo';
  $('armarCopiar').disabled=!url; $('armarProbar').disabled=!url;
@@ -2987,6 +3004,7 @@ function armarUrl(){
    ? ids.length+(ids.length===1?' capítulo':' capítulos')
      +(hasta?' · vence el '+fechaLarga(hasta):' · sin caducidad')
      +(qa?' · con respuestas':'')
+     +(rev?' · REVISIÓN de profesor (3 por etapa)':'')
    : '';
  return url;
 }
@@ -3010,6 +3028,7 @@ function arrancarArmador(){
  });
  cont.addEventListener('change',armarUrl);
  $('armarQA').onchange=armarUrl;
+ $('armarRev').onchange=armarUrl;
  $('armarCopiar').onclick=()=>{
   const u=armarUrl(); if(!u) return;
   Promise.resolve(navigator.clipboard&&navigator.clipboard.writeText(u))
@@ -3033,7 +3052,8 @@ function arrancarArmador(){
   const nombres=d.ids.map(id=>{const e=EXPEDICIONES.find(x=>x.id===id); return e?nombreMapa(e):id;});
   const estado=!d.hasta ? 'Sin caducidad.'
     : (hoyISO()>d.hasta ? 'VENCIÓ el '+fechaLarga(d.hasta)+'.' : 'Vence el '+fechaLarga(d.hasta)+'.');
-  $('armarLeido').textContent=nombres.join(' · ')+' — '+estado+(d.qa?' Con respuestas.':'');
+  $('armarLeido').textContent=nombres.join(' · ')+' — '+estado+(d.qa?' Con respuestas.':'')
+    +(d.rev?' MODO REVISIÓN de profesor.':'');
  };
  armarUrl();
  $('nav').style.display='none';
@@ -3221,7 +3241,7 @@ function jefePreguntasFase(camp,faseIdx){
  const f=camp.jefeFinal.fases[faseIdx], n=camp.jefeFinal.nPorFase, per=Math.max(1,Math.ceil(n/f.oas.length));
  let sel=[]; f.oas.forEach(oa=>{sel=sel.concat(pickN(POOL[oa]||[],per));});
  // Igual que en las etapas: se conserva el `oa` para el mapa de dominio.
- return pickN(sel,n).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa}));
+ return pickN(sel,n).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,id:q.id}));
 }
 // Carga el banco completo de Matemáticas en el POOL global (keyed por OA), para el jefe
 // de la campaña de lecciones (Matemáticas no tiene expedición de la cual tomar el POOL).
@@ -3778,7 +3798,7 @@ function iniciarRepaso(lvl, vistos){
  const set=new Set(vistos||[]);
  let disp=banco.filter(q=>!set.has(q.pregunta));
  if(disp.length<10) disp=banco;   // salvaguarda: si por alguna razón no alcanzan, usa todo el banco del OA
- const preguntas=pickN(disp,10).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa}));
+ const preguntas=pickN(disp,10).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,id:q.id}));
  if(!preguntas.length){ go('scr-res'); return; }
  Q={lvl,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock:false,preguntas,repaso:{lvl}};
  MODO='normal';
@@ -3823,6 +3843,7 @@ function pintaPregunta(){
   b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${it.o}`;
   b.onclick=e=>responder(b,it.i===P.ok,P,e);
   $('qOpts').appendChild(b);});
+ REV.boton(P);   // 🚩 del modo revisión (assets/js/revision.js)
  // timer (el repaso no tiene cronómetro: es estudio, no evaluación)
  clearInterval(Q.timer);
  if(Q.repaso){ $('qTimer').style.visibility='hidden'; }
@@ -4050,7 +4071,7 @@ async function construirPreguntasDesafio(asig, objetivos){
   const per=Math.min(6,Math.max(2,Math.round(12/objetivos.length)));
   let sel=[]; objetivos.forEach(oa=>{ sel=sel.concat(pickN(pool[oa],per)); });
   sel=pickN(sel,12);
-  return sel.map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa}));
+  return sel.map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,id:q.id}));
 }
 // Arranca el quiz en modo desafío (reusa el motor con el flag Q.desafio).
 async function jugarDesafio(d){
