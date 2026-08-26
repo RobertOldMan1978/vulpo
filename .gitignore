@@ -24,3 +24,5 @@ dev/*.pdf
 
 # Parches intermedios de la revision de distractores (el resultado va al banco)
 _fix_distractores/
+
+__pycache__/
