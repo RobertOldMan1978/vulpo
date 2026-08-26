@@ -2804,7 +2804,7 @@ function pintaDuelo(){
  const orden=P.ops.map((o,i)=>({o,i})).sort(()=>Math.random()-.5);
  const box=$('dOpts');box.innerHTML='';
  orden.forEach((it,k)=>{const b=document.createElement('div');b.className='opt';
-  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${it.o}`;
+  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${escHtml(it.o)}`;
   b.onclick=()=>responderDuelo(b,it.i===P.ok,P);box.appendChild(b);});
  clearInterval(D.timer);D.t=15;$('dTimer').textContent=D.t;$('dTimer').className='timer';
  D.timer=setInterval(()=>{D.t--;$('dTimer').textContent=D.t;if(D.t<=5){$('dTimer').classList.add('low');if(D.t>0)SND.tick();}
@@ -3294,12 +3294,12 @@ function renderJefePregunta(){
  pintarHudJefe();
  const p=JF.preguntas[JF.idx], cont=$('jefePregunta');
  const orden=p.ops.map((o,i)=>({o,i})).sort(()=>Math.random()-.5);
- cont.innerHTML=`<div class="qcard"><div class="tag">👑 Jefe Final · Pregunta ${JF.idx+1}/${JF.preguntas.length}</div><h2>${p.q}</h2></div><div class="opts" id="jfOpts"></div>`;
+ cont.innerHTML=`<div class="qcard"><div class="tag">👑 Jefe Final · Pregunta ${JF.idx+1}/${JF.preguntas.length}</div><h2>${escHtml(p.q)}</h2></div><div class="opts" id="jfOpts"></div>`;
  const ops=cont.querySelector('#jfOpts');
  orden.forEach((it,k)=>{const b=document.createElement('div');b.className='opt';
   if(it.i===p.ok)b.dataset.correcta='1';
   if(QA_MARCA&&it.i===p.ok)b.classList.add('qa-ok');
-  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${it.o}`;
+  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${escHtml(it.o)}`;
   b.onclick=()=>responderJefe(b,it.i===p.ok);ops.appendChild(b);});
  JF.lock=false;
 }
@@ -3573,7 +3573,7 @@ function odPinta(){
  const box=$('odOpts');box.innerHTML='';
  orden.forEach((it,k)=>{const b=document.createElement('div');b.className='opt';
   if(QA_MARCA&&it.i===P.correcta)b.classList.add('qa-ok');
-  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${it.o}`;b.onclick=()=>odResponder(b,it.i===P.correcta);box.appendChild(b);});
+  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${escHtml(it.o)}`;b.onclick=()=>odResponder(b,it.i===P.correcta);box.appendChild(b);});
  clearInterval(OD.timer);OD.t=15;$('odTimer').textContent=OD.t;$('odTimer').className='timer';
  OD.timer=setInterval(()=>{OD.t--;$('odTimer').textContent=OD.t;if(OD.t<=5){$('odTimer').classList.add('low');if(OD.t>0)SND.tick();}
   if(OD.t<=0){clearInterval(OD.timer);odResponder(null,false);}},1000);
@@ -3847,7 +3847,7 @@ function pintaPregunta(){
   const b=document.createElement('div');b.className='opt';
   if(it.i===P.ok)b.dataset.correcta='1';
   if(QA_MARCA&&it.i===P.ok)b.classList.add('qa-ok');
-  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${it.o}`;
+  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${escHtml(it.o)}`;
   b.onclick=e=>responder(b,it.i===P.ok,P,e);
   $('qOpts').appendChild(b);});
  REV.boton(P);   // 🚩 del modo revisión (assets/js/revision.js)

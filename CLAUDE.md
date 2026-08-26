@@ -205,6 +205,46 @@ Al agregar expediciones nuevas al arreglo `EXPEDICIONES` de `juego/index.html`:
   Ciencias + Lenguaje + El Autómata— dejar `DIF_ASIGS` en esos 3 y otorgar cualquier insignia
   de Difícil adicional con un chequeo aparte, fuera de `asignaturasDificil()` y `esMaestro()`.
 
+### Verificar en un navegador de verdad (`scripts/cdp.mjs`)
+
+Durante mucho tiempo las comprobaciones se hacían con Chrome headless y `--dump-dom`, que
+**fotografía el DOM al `load`** —demasiado pronto para un juego que arma su pantalla después—
+y con `--virtual-time-budget`, que **se cuelga con estos juegos** porque su audio corre en
+tiempo real y el reloj virtual no avanza. Por eso muchas cosas se daban por verificadas
+llamando funciones sueltas, que es justo como se colaron los bugs de la Sesión 56.
+
+`scripts/cdp.mjs` es un conductor mínimo de Chrome por CDP (Node 22+ trae `WebSocket` nativo,
+sin dependencias). Navega, espera, **hace clic y evalúa JavaScript en la página**, y además
+**captura los 404** (que no llegan a la consola de forma fiable: hay que mirar la red).
+
+    node scripts/cdp.mjs about:blank <archivo-de-pasos.mjs>
+
+El archivo exporta `export default async (ev) => {...}`; `ev(expr)` evalúa una expresión en la
+página, `ev.ir(url)` navega, `ev.espera(ms)`, `ev.consola` y `ev.fallos`. **Ganó su lugar en la
+primera corrida:** delató que un cambio mío rompía todo el JavaScript de 3° (`NS` duplicado),
+exactamente el fallo silencioso que ya había costado dos sesiones.
+
+Cosas que ya sabemos y siguen valiendo: la pantalla activa es `.screen.on` (no `hidden`); el
+nodo del mapa recibe el clic en su `.orb`, no en el `div`; y las tarjetas de campaña son
+`.camp-nodo`.
+
+### Gotchas de 3° básico (`3ro/index.html`, que es un FORK de 8°)
+
+- **`localStorage` está separado por sufijo.** `/3ro` y `/juego` se sirven del mismo origen, así
+  que compartían `kimun_save`: un niño con los dos juegos abiertos compartía monedas, skins y
+  avance. En 3° las claves llevan `SUFIJO='_3ro'` (`kimun_save_3ro`, `kimun_dom_pend_3ro`,
+  `kimun_rank_3ro`, `kimun_intro_3ro`). Los **ajustes de audio se comparten a propósito**.
+  Ojo: `NS` ya está tomado por el namespace de SVG — de ahí el nombre `SUFIJO`.
+- **La portada de capítulo es EXPLÍCITA en 3°.** 8° usa la convención implícita
+  `assets/portada-<id>.png`; en 3° ningún capítulo tiene arte propio todavía y esa convención
+  pedía 7 archivos inexistentes (**404 verificados**; el `onerror` los tapaba a la vista, no en
+  la red). `portadaMapa` usa `exp.portadaMapa || exp.portada`. Cuando exista el arte de un
+  capítulo, se le agrega `portadaMapa:'…'`.
+- **Lo que 3° todavía comparte con 8° y NO está resuelto:** la sesión anónima de Supabase (mismo
+  origen → mismo `perfil`), así que el XP de los dos juegos se mezcla en el ranking, y
+  `kimun_oa_asignatura` no conoce `MA03`, de modo que el dominio de 3° no se puede filtrar por
+  asignatura en el panel. Es la **capa de nivel del Plan 3**, y necesita SQL.
+
 ### Regla de commits (importante)
 
 - **"orden 99" = hacer `git pull`** de la rama `main` para traer lo último de
@@ -315,8 +355,10 @@ para siempre.
   `?solo=…` correspondiente (con `&qa=1` opcional, casilla "Mostrar las respuestas
   correctas"). Botones Copiar y Probar. El enlace se arma con `location.origin`, así que
   abierto desde vulpo.cl genera enlaces de vulpo.cl y en local genera locales. Se llega
-  desde `profesor.html` → Administración → "🔗 Armar enlace de muestra", visible solo para
-  `YO.es_admin` (no lo ven los SuperUsuarios). **Vive en `index.html` a propósito:** el
+  desde `profesor.html` → Administración → "🔗 Armar enlace de muestra": un **selector de nivel**
+  (8° básico → `/juego/`, 3° básico → `/3ro/`) + "Abrir armador", visible solo para `YO.es_admin`
+  (no lo ven los SuperUsuarios). **Cada app tiene su propio armador** y lista solo sus capítulos;
+  agregar un curso nuevo al selector es **una línea** en `NIVELES_MUESTRA` (`profesor.html`). **Vive en `index.html` a propósito:** el
   catálogo (`EXPEDICIONES`) ya está ahí, así que una expedición nueva aparece sola, sin
   listas paralelas que mantener. Como `?solo=`, **no es un candado**, pero tampoco expone
   nada nuevo.
@@ -3354,3 +3396,55 @@ Aplica a todo el juego de 3°, no solo a los enlaces de muestra. 8° no tiene le
 > callar podía **adelantar** la lectura en vez de detenerla. Verificado con un doble de
 > `sonarClip`: leyendo 2 de 5 y respondiendo, no se pide ninguno más; sin interrumpir se leen los
 > 5; y cambiar de pantalla a mitad también corta.
+
+### Sesión 57 (2026-08-26) — Enviar pruebas de 3° desde el panel, y una barrida de defectos con navegador real
+Sesión corta de arreglos. Empezó con un reporte de Roberto —"en el panel de profes no puedo
+mandar pruebas desde 3ro"— y terminó con una herramienta de verificación que cambia cómo se
+comprueba todo lo demás. **No se tocó contenido**: ningún banco, ninguna pregunta, ningún audio.
+- **El panel no ofrecía 3°.** El botón "🔗 Armar enlace de muestra" llevaba **fijo** a
+  `/juego/?armar=1`, así que no era que 3° no apareciera: no existía como opción. Ahora hay un
+  **selector de nivel** alimentado por `NIVELES_MUESTRA`, y **agregar un curso futuro es una
+  línea**. Como cada app tiene su propio armador y lista su propio catálogo, no hay listas
+  paralelas que mantener. Verificado en pantalla con un doble de Supabase (el panel no se abre
+  sin sesión real): las dos opciones apuntan a `/juego/?armar=1` y `/3ro/?armar=1`, sin desborde.
+
+**La herramienta: `scripts/cdp.mjs`.** Node 22+ trae `WebSocket` nativo, así que se puede manejar
+Chrome por CDP sin instalar nada. Resuelve el problema que se arrastraba desde la Sesión 45:
+`--dump-dom` fotografía el DOM al `load` —demasiado pronto para un juego que arma su pantalla
+después— y `--virtual-time-budget` **se cuelga** con estos juegos porque su audio corre en tiempo
+real. Ahora se navega, se hace clic y se evalúa JavaScript de verdad, y además **se capturan los
+404**, que no llegan a la consola de forma fiable: hay que mirarlos en la red.
+> **Se pagó sola en la primera corrida:** delató que un cambio propio de esta misma sesión rompía
+> **todo el JavaScript de 3°** (declaré `NS`, que ya estaba tomado por el namespace de SVG). Es
+> exactamente el fallo silencioso que costó dos post scriptums en la Sesión 56 — y esta vez se vio
+> en el minuto uno en vez de después de desplegar.
+
+**Cuatro defectos arreglados, los tres primeros invisibles hasta ahora:**
+1. **3° y 8° compartían el archivo de guardado.** Las dos apps se sirven del mismo origen y las dos
+   escribían en `kimun_save`: un niño con los dos juegos compartía monedas, skins y avance de
+   campaña. En 3° las claves llevan `SUFIJO='_3ro'`. Los **ajustes de audio se comparten a
+   propósito**. Probado sembrando una partida de 8° (777 XP), jugando 3° y volviendo: 8° intacto.
+   **Consecuencia asumida: el avance local de 3° parte de cero**, porque estaba mezclado con el de
+   8° y desenredarlo no vale la pena (solo Roberto había jugado 3°).
+2. **Siete 404 en 3°.** Cada capítulo pedía `assets/portada-mat3-capN.png`, que no existe; el
+   `onerror` los tapaba a la vista, **no en la red**. Es el gotcha que este mismo archivo ya
+   advertía, cumpliéndose. La portada de capítulo pasó a ser **explícita** en 3°.
+3. **El escapado de las opciones**, la trampa latente anotada en la Sesión 55. Antes de tocar nada
+   se verificó que en las **19.980 cadenas** de los siete bancos no hay ni un `<` ni un `&`, así que
+   escapar no rompe ningún contenido. Con un `<img src=x onerror=alert(1)>` inyectado en una
+   pregunta real: sale como texto, **0 elementos creados**.
+4. **`profesor.html` no tenía favicon** (un 404 en cada carga).
+
+- **Verificado de punta a punta, con la consola limpia y cero 404:** etapa completa jugada hasta el
+  resultado en 3° y en 8°; **los dos enlaces de revisión** (3 preguntas por etapa, 🚩, sin fuga por
+  "Volver"); las 4 campañas, tienda, perfil, duelo, Reto de Cálculo y biblioteca. Los **1.987 clips
+  de voz**: ninguno falta, ninguno pesa 0 bytes. Los validadores del banco de 3°: 0 errores.
+- **Lección de método:** el barrido de referencias rotas **leyendo los archivos** dio puros falsos
+  positivos (expresiones de plantilla) y no habría encontrado ni uno de los siete 404 reales, porque
+  la ruta se arma en tiempo de ejecución. Los 404 hay que cazarlos **corriendo la página**.
+- **Pendientes que quedan y NO dependen del asistente:** los trámites (INAPI, SpA, enlace de agenda);
+  la aprobación pedagógica de las 792 preguntas de 3° y sus decisiones de contenido —dos de ellas
+  cuestan plata, porque rehacer las preguntas de signos obliga a regenerar sus clips de Azure—; el
+  arte de los 7 capítulos y del villano de 3°; **pegar el SQL de la foto semanal** (urge antes del
+  piloto); y el **Plan 3**, con sus dos agujeros ya documentados: 3° y 8° comparten la sesión anónima
+  de Supabase (el XP se mezcla en el ranking) y `kimun_oa_asignatura` no conoce `MA03`.

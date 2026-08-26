@@ -68,7 +68,8 @@ Aparte, hay una **app de 3° básico en construcción** en `3ro/`, adaptada a ni
 por voz con una voz chilena grabada** —los MP3 viajan en el repo, y si alguno no
 carga se lee con la voz del navegador). Por ahora solo tiene Matemática, con los 26
 objetivos del año; **no está enlazada desde el sitio** y su banco todavía no pasa por
-revisión pedagógica.
+revisión pedagógica. Guarda su avance aparte del de 8° aunque se sirvan del mismo
+dominio; lo que todavía comparte con 8° es la identidad en línea (ver CLAUDE.md).
 
 Consulta [CLAUDE.md](CLAUDE.md) para el detalle de decisiones de diseño y el
 roadmap.

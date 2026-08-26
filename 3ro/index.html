@@ -2627,7 +2627,12 @@ function levelUpFx(n){
  setTimeout(()=>el.classList.remove('show'),1900);}
 
 /* ================= PERSISTENCIA ================= */
-const SAVE_KEY='kimun_save';
+/* 3° y 8° se sirven desde el MISMO origen (vulpo.cl), así que comparten localStorage.
+   Sin un sufijo propio las dos apps escriben en 'kimun_save' y un niño que abre las dos
+   comparte monedas, skins y avance de campaña. Los ajustes de audio SÍ se comparten a
+   propósito (quien silenció la música espera que siga silenciada en el otro juego). */
+const SUFIJO='_3ro';   // NS ya lo usa el namespace de SVG (linea ~1922)
+const SAVE_KEY='kimun_save'+SUFIJO;
 /* Almacén de progreso por ruta (id de expedición -> {progreso, progresoDificil, dificilDesbloqueado}) */
 // Ajusta un progreso guardado al número de etapas que tiene HOY el capítulo.
 // Hace falta porque los capítulos crecen: `mat3-cap1` pasó de 3 nodos a 5 al armar la campaña
@@ -2778,7 +2783,7 @@ function sincronizarXP(){
    Se acumula en memoria durante la etapa y se envía un resumen al terminarla.
    El niño no ve nada de esto y nunca se le interrumpe el juego. */
 let DOM_BUF = {};                       // { "HI08 OA 04": {n:6, ok:4} }
-const DOM_PEND = 'kimun_dom_pend';      // resúmenes que no se pudieron enviar
+const DOM_PEND = 'kimun_dom_pend'+SUFIJO;      // resúmenes que no se pudieron enviar
 
 function registrarOA(oa, ok){
  if(EFIMERO) return;                    // QA marca las respuestas y el modo prueba no guarda: no se mide nada
@@ -2921,7 +2926,7 @@ function pintaDuelo(){
  const orden=P.ops.map((o,i)=>({o,i})).sort(()=>Math.random()-.5);
  const box=$('dOpts');box.innerHTML='';
  orden.forEach((it,k)=>{const b=document.createElement('div');b.className='opt';
-  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${it.o}`;
+  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${escHtml(it.o)}`;
   b.onclick=()=>responderDuelo(b,it.i===P.ok,P);box.appendChild(b);});
  clearInterval(D.timer);D.t=15;$('dTimer').textContent=D.t;$('dTimer').className='timer';
  D.timer=setInterval(()=>{D.t--;$('dTimer').textContent=D.t;if(D.t<=5){$('dTimer').classList.add('low');if(D.t>0)SND.tick();}
@@ -2999,7 +3004,11 @@ const ASIG_PORTADA={Historia:'assets/portada-historia.png',Matemáticas:'assets/
 /* Portada propia de cada mapa POR CONVENCIÓN: assets/portada-<id>.png.
    Pensado para el final: al crear el archivo aparece solo (sin tocar código);
    mientras no exista, el onerror cae a la portada de la asignatura. */
-function portadaMapa(exp){return `assets/portada-${exp.id}.png`;}
+/* Portada del capítulo. 8° usa la convención implícita `assets/portada-<id>.png`, pero en 3°
+   NINGÚN capítulo tiene arte propio todavía y esa convención pedía 7 archivos inexistentes:
+   404 verificados en el navegador (el `onerror` los tapaba a la vista, no en la red).
+   Aquí es EXPLÍCITA: cuando exista el arte de un capítulo, se le agrega `portadaMapa:'…'`. */
+function portadaMapa(exp){return exp.portadaMapa||exp.portada||portadaFallback(exp);}
 function portadaFallback(exp){return ASIG_PORTADA[exp.asignatura]||exp.portada||'';}
 // Nombre corto del mapa a partir del nivel ("8° Básico · La célula" -> "La célula")
 function nombreMapa(exp){const p=(exp.nivel||'').split('·');return p.length>1?p.slice(1).join('·').trim():(exp.nivel||exp.asignatura);}
@@ -3235,7 +3244,7 @@ $('btnCanjeOk').onclick=async ()=>{
   MI_PERFIL=p;
   S.alumno=p.nombre; S.nombre=p.nombre; S.avatar=p.avatar;
   await SB.rpc('kimun_xp',{p_xp:S.xp});        // conserva el avance local
-  localStorage.removeItem('kimun_rank');       // fuera el ranking del curso anterior
+  localStorage.removeItem('kimun_rank'+SUFIJO);       // fuera el ranking del curso anterior
   await cargarCurso();
   guardar(); refreshHud(); revisarDesafio();
   _rankUlt=0;                                  // el ranking debe volver a consultarse ya, sin esperar los 30 s
@@ -3397,12 +3406,12 @@ function renderJefePregunta(){
  pintarHudJefe();
  const p=JF.preguntas[JF.idx], cont=$('jefePregunta');
  const orden=p.ops.map((o,i)=>({o,i})).sort(()=>Math.random()-.5);
- cont.innerHTML=`<div class="qcard"><div class="tag">👑 Jefe Final · Pregunta ${JF.idx+1}/${JF.preguntas.length}</div><h2>${p.q}</h2></div><div class="opts" id="jfOpts"></div>`;
+ cont.innerHTML=`<div class="qcard"><div class="tag">👑 Jefe Final · Pregunta ${JF.idx+1}/${JF.preguntas.length}</div><h2>${escHtml(p.q)}</h2></div><div class="opts" id="jfOpts"></div>`;
  const ops=cont.querySelector('#jfOpts');
  orden.forEach((it,k)=>{const b=document.createElement('div');b.className='opt';
   if(it.i===p.ok)b.dataset.correcta='1';
   if(QA_MARCA&&it.i===p.ok)b.classList.add('qa-ok');
-  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${it.o}`;
+  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${escHtml(it.o)}`;
   b.onclick=()=>responderJefe(b,it.i===p.ok);ops.appendChild(b);});
  JF.lock=false;
 }
@@ -3676,7 +3685,7 @@ function odPinta(){
  const box=$('odOpts');box.innerHTML='';
  orden.forEach((it,k)=>{const b=document.createElement('div');b.className='opt';
   if(QA_MARCA&&it.i===P.correcta)b.classList.add('qa-ok');
-  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${it.o}`;b.onclick=()=>odResponder(b,it.i===P.correcta);box.appendChild(b);});
+  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${escHtml(it.o)}`;b.onclick=()=>odResponder(b,it.i===P.correcta);box.appendChild(b);});
  clearInterval(OD.timer);OD.t=15;$('odTimer').textContent=OD.t;$('odTimer').className='timer';
  OD.timer=setInterval(()=>{OD.t--;$('odTimer').textContent=OD.t;if(OD.t<=5){$('odTimer').classList.add('low');if(OD.t>0)SND.tick();}
   if(OD.t<=0){clearInterval(OD.timer);odResponder(null,false);}},1000);
@@ -3787,7 +3796,7 @@ function renderModoSel(){
 let _rankUlt=0;
 function renderRanking(){
  const el=$('ranking');
- const cache=JSON.parse(localStorage.getItem('kimun_rank')||'null');
+ const cache=JSON.parse(localStorage.getItem('kimun_rank'+SUFIJO)||'null');
  if(cache) pintarRanking(cache);                       // muestra lo último mientras carga
  if(!SB||!MI_PERFIL){ if(!cache) pintarSinCurso(); return; }
  // Como máximo una consulta cada 30 s, pero solo si ya hay algo pintado:
@@ -3796,8 +3805,8 @@ function renderRanking(){
  _rankUlt=Date.now();
  SB.rpc('kimun_ranking').then(({data,error})=>{
   if(error) throw error;
-  if(!data||!data.length){ pintarSinCurso(); localStorage.removeItem('kimun_rank'); return; }
-  localStorage.setItem('kimun_rank',JSON.stringify(data));
+  if(!data||!data.length){ pintarSinCurso(); localStorage.removeItem('kimun_rank'+SUFIJO); return; }
+  localStorage.setItem('kimun_rank'+SUFIJO,JSON.stringify(data));
   pintarRanking(data);
  }).catch(e=>{
   console.error('Ranking:',e.message||e);
@@ -3953,7 +3962,7 @@ function pintaPregunta(){
   const b=document.createElement('div');b.className='opt';
   if(it.i===P.ok)b.dataset.correcta='1';
   if(QA_MARCA&&it.i===P.ok)b.classList.add('qa-ok');
-  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${it.o}`;
+  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${escHtml(it.o)}`;
   b.onclick=e=>responder(b,it.i===P.ok,P,e);
   $('qOpts').appendChild(b);});
  // Botón de lectura: lee la pregunta y las 4 opciones en voz alta.
@@ -4261,10 +4270,10 @@ if(PRUEBA&&!QA&&!VENCIDA){const b=document.createElement('div');b.className='qa-
  if(SIN_DISCO){ ov.remove(); return; }   // prueba/armador: entrada directa, y no se escribe kimun_intro
  const vid=$('introVid'), skip=$('introSkip'), tap=$('introTap');
  const forzar=new URLSearchParams(location.search).has('intro');
- const visto=localStorage.getItem('kimun_intro');
+ const visto=localStorage.getItem('kimun_intro'+SUFIJO);
  const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
  if(!forzar && (visto || reduce)){ ov.remove(); return; }   // ya se vio o se prefiere sin animación
- try{ localStorage.setItem('kimun_intro','1'); }catch(e){}
+ try{ localStorage.setItem('kimun_intro'+SUFIJO,'1'); }catch(e){}
  let cerrado=false, guard=null;
  function ocultar(){ if(cerrado) return; cerrado=true; clearTimeout(guard); try{vid.pause();}catch(e){}
   ov.classList.add('fade'); setTimeout(()=>ov.remove(),480); }

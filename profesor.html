@@ -6,6 +6,8 @@
 <title>VULPO · Profesores</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&family=Titan+One&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/kimun-180.png">
 <!-- supabase-js auto-hospedado (no desde CDN): el panel maneja la sesión del profesor, así
      que un CDN comprometido podría exfiltrar su sesión. Versión fija 2.112.4. -->
 <script src="assets/vendor/supabase-js-2.112.4.min.js"></script>
@@ -28,7 +30,7 @@ body{margin:0;background:#140f33;color:#fff;font-family:Nunito,sans-serif;font-w
 h1{font-family:'Titan One',cursive;color:var(--gold);font-size:28px;text-align:center;margin:12px 0}
 .card{background:var(--panel);border:2px solid #ffffff14;border-radius:16px;padding:16px;margin-bottom:14px}
 .card h3{margin:0 0 12px;font-size:16px;color:var(--cyan)}
-input,textarea{width:100%;padding:12px;border-radius:12px;border:2px solid var(--violet);
+input,textarea,select{width:100%;padding:12px;border-radius:12px;border:2px solid var(--violet);
  background:#1a1440;color:#fff;font-weight:800;margin-bottom:10px;font-family:inherit}
 textarea{resize:vertical;line-height:1.4;font-weight:600}
 .btn{width:100%;padding:13px;border:0;border-radius:14px;background:var(--gold);color:#2a1c00;
@@ -441,7 +443,9 @@ async function pintarLista(){
         <div id="profes" style="margin:10px 0"></div>
         ${YO.es_admin?`<button class="btn sec" id="btnLimpiar">🧹 Limpiar perfiles de prueba</button>`:''}
         <button class="btn sec" id="btnTablero">📊 Tablero de avance</button>
-        ${YO.es_admin?`<button class="btn sec" id="btnArmar">🔗 Armar enlace de muestra</button>`:''}
+        ${YO.es_admin?`<label style="font-size:12px;color:var(--dim)">🔗 Armar enlace de muestra</label>
+        <select id="armarNivel">${NIVELES_MUESTRA.map(n=>`<option value="${n.ruta}">${n.nombre}</option>`).join('')}</select>
+        <button class="btn sec" id="btnArmar">Abrir armador</button>`:''}
       </div>`);
     $('btnAutorizar').onclick=async ()=>{
       const c=($('nuevoCorreo').value||'').trim();
@@ -452,7 +456,7 @@ async function pintarLista(){
     // "Limpiar perfiles de prueba" y el armador son de plataforma: solo el Admin los ve.
     if(YO.es_admin){
       $('btnLimpiar').onclick=limpiarPruebas;
-      $('btnArmar').onclick=()=>{ window.location.href='/juego/?armar=1'; };
+      $('btnArmar').onclick=()=>{ window.location.href=$('armarNivel').value+'?armar=1'; };
     }
     const {data:profes,error:errProfes}=await SB.rpc('kimun_prof_profesores');
     if(errProfes){
@@ -664,6 +668,12 @@ function cabeceraAvance(titulo, sub){
 
 const SIN_DATOS_ASIG =
   '<p style="color:var(--dim);font-size:13px">Esta asignatura todavía no tiene datos.</p>';
+// Niveles con armador de enlaces de muestra. Un curso nuevo = una linea mas aca;
+// la pantalla del armador (?armar=1) ya vive dentro de cada app.
+const NIVELES_MUESTRA = [
+  {nombre:'8° básico', ruta:'/juego/'},
+  {nombre:'3° básico', ruta:'/3ro/'}
+];
 const ASIG_NOMBRE = {HI08:'Historia', MA08:'Matemáticas', CN08:'Ciencias', LE08:'Lenguaje'};
 const ASIG_ORDEN  = ['HI08','MA08','CN08','LE08'];
 
