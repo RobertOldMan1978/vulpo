@@ -232,7 +232,8 @@ function irArriba(){ window.scrollTo(0,0); }
 /* Textos de los objetivos de aprendizaje. El código HI08 OA 01 no le dice nada a
    nadie: sin el texto real, la tabla es ilegible para un profesor. */
 const OA_CARPETA = {HI08:'historia-8basico', MA08:'matematicas-8basico',
-                    CN08:'ciencias-8basico', LE08:'lenguaje-8basico'};
+                    CN08:'ciencias-8basico', LE08:'lenguaje-8basico',
+                    MA03:'matematicas-3basico'};
 const OA_TEXTO = {};        // "HI08 OA 01" -> "Analizar, apoyándose en diversas fuentes…"
 const OA_CARGADA = {};      // carpetas ya pedidas
 const OA_TOTAL = {};        // 'HI08' -> cuántos OA tiene la asignatura (de oa.json)
@@ -674,8 +675,11 @@ const NIVELES_MUESTRA = [
   {nombre:'8° básico', ruta:'/juego/'},
   {nombre:'3° básico', ruta:'/3ro/'}
 ];
-const ASIG_NOMBRE = {HI08:'Historia', MA08:'Matemáticas', CN08:'Ciencias', LE08:'Lenguaje'};
-const ASIG_ORDEN  = ['HI08','MA08','CN08','LE08'];
+// El nivel va en el código, como en el servidor (kimun_oa_asignatura). Los cuatro
+// primeros son de 8°; a partir del segundo nivel el año se nombra en la etiqueta.
+const ASIG_NOMBRE = {HI08:'Historia', MA08:'Matemáticas', CN08:'Ciencias', LE08:'Lenguaje',
+                     MA03:'Matemática 3°'};
+const ASIG_ORDEN  = ['HI08','MA08','CN08','LE08','MA03'];
 
 // Filtro por asignatura. Con una sola asignatura no filtra nada y solo ocupa pantalla,
 // así que no se dibuja.
@@ -849,8 +853,9 @@ async function cargarRefuerzo(cursoCodigo, filasDominio){
     };
     return;
   }
-  // Las cuatro asignaturas, por su código canónico. Antes faltaba Matemática (bug).
-  const ASIGS = [['HI08','Historia'],['CN08','Ciencias'],['LE08','Lenguaje'],['MA08','Matemáticas']];
+  // Por su código canónico. Se lee del catálogo para no repetir la lista: cuando faltaba
+  // Matemática aquí, no se podía lanzar su refuerzo y nadie lo notó (bug de la Sesión 37).
+  const ASIGS = ASIG_ORDEN.map(c=>[c, ASIG_NOMBRE[c]||c]);
   const bloques=ASIGS.map(([cod,nom])=>{
     const objs=objetivosFlojos(filasDominio,cod);
     if(!objs.length) return '';
@@ -923,6 +928,7 @@ function SB_asigDe(oa){
   if(s.slice(0,4)==='CN08'||s==='VOC-CIEN') return 'CN08';
   if(s.slice(0,4)==='MA08'||s==='VOC-MATE') return 'MA08';
   if(s.slice(0,4)==='LE08'||['VOC-LENG','VOC-LECT'].includes(s)||s.startsWith('AF-T')) return 'LE08';
+  if(s.slice(0,4)==='MA03') return 'MA03';
   return null;
 }
 

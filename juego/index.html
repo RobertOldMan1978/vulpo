@@ -829,6 +829,11 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
       <button class="btn sec" id="armarLeerBtn">🔍 Leer</button>
       <p id="armarLeido" style="font-weight:800;font-size:12px;margin-top:8px;color:var(--dim)"></p>
     </div>
+    <!-- Al armador solo se llega desde el panel, así que sin esto es un callejón sin salida:
+         no hay barra inferior ni botón Volver (el modo armador los apaga). -->
+    <p style="text-align:center;margin:14px 0 24px">
+      <a href="/profesor.html" style="color:var(--dim);font-weight:800;font-size:12px">← Volver al panel del profesor</a>
+    </p>
   </section>
 
   <!-- ====== MUESTRA VENCIDA (?m= con fecha pasada) ====== -->

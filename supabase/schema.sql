@@ -290,6 +290,10 @@ returns text language sql immutable as $$
     when p_oa like 'HI08%' or p_oa = 'VOC-HIST' then 'HI08'
     when p_oa like 'CN08%' or p_oa = 'VOC-CIEN' then 'CN08'
     when p_oa like 'MA08%' or p_oa = 'VOC-MATE' then 'MA08'
+    -- 3° básico. El nivel viaja en el prefijo del código, que es como el modelo ya
+    -- distingue las asignaturas: no hace falta una columna "nivel" en cursos. Un curso
+    -- de 3° usa MA03 y uno de 8° usa MA08, y el aislamiento por asignatura los separa.
+    when p_oa like 'MA03%'                       then 'MA03'
     when p_oa like 'LE08%' or p_oa in ('VOC-LENG','VOC-LECT')
          or p_oa like 'AF-T%'                    then 'LE08'
     else null end;
@@ -605,18 +609,20 @@ returns boolean language sql security definer stable set search_path=public as $
                   and (cp.rol = 'jefe' or coalesce(array_length(cp.asignaturas,1),0) >= 1));
 $$;
 
--- ¿Sobre qué asignaturas puedo actuar en este curso? Admin y jefe reciben las
--- cuatro; un profe de asignatura recibe las suyas; sin membresía, vacío.
+-- ¿Sobre qué asignaturas puedo actuar en este curso? Admin y jefe reciben TODAS
+-- las que existen; un profe de asignatura recibe las suyas; sin membresía, vacío.
+-- Al agregar un nivel o una asignatura hay que sumar su código a las dos listas de
+-- abajo: si falta, ese contenido queda INVISIBLE para el Jefe, sin ningún error.
 create or replace function public.kimun_prof_asignaturas(p_curso uuid)
 returns text[] language sql security definer stable set search_path=public as $$
   select case
     when exists(select 1 from public.profesores pr
                 where pr.id = auth.uid() and (pr.es_admin or pr.es_super))
-      then array['HI08','CN08','MA08','LE08']
+      then array['HI08','CN08','MA08','LE08','MA03']
     when exists(select 1 from public.curso_profesores cp
                 where cp.curso_id = p_curso and cp.profesor_id = auth.uid()
                   and cp.rol = 'jefe')
-      then array['HI08','CN08','MA08','LE08']
+      then array['HI08','CN08','MA08','LE08','MA03']
     else coalesce((select cp.asignaturas from public.curso_profesores cp
                    where cp.curso_id = p_curso and cp.profesor_id = auth.uid()),
                   '{}'::text[])

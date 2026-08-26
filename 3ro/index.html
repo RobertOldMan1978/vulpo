@@ -838,6 +838,11 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
       <button class="btn sec" id="armarLeerBtn">🔍 Leer</button>
       <p id="armarLeido" style="font-weight:800;font-size:12px;margin-top:8px;color:var(--dim)"></p>
     </div>
+    <!-- Al armador solo se llega desde el panel, así que sin esto es un callejón sin salida:
+         no hay barra inferior ni botón Volver (el modo armador los apaga). -->
+    <p style="text-align:center;margin:14px 0 24px">
+      <a href="/profesor.html" style="color:var(--dim);font-weight:800;font-size:12px">← Volver al panel del profesor</a>
+    </p>
   </section>
 
   <!-- ====== MUESTRA VENCIDA (?m= con fecha pasada) ====== -->
@@ -2737,7 +2742,14 @@ function borrarPartida(){localStorage.removeItem(SAVE_KEY);}
 /* ================= SUPABASE (duelo online asíncrono) ================= */
 const SUPA_URL='https://bdgzpjzlqidcexdkjhzy.supabase.co';
 const SUPA_KEY='sb_publishable_I3FWEIOQf-_7ni_46PGSSQ_PLD3mQpM';
-const SB=(window.supabase&&window.supabase.createClient)?window.supabase.createClient(SUPA_URL,SUPA_KEY):null;
+/* storageKey propio, igual que profesor.html. Sin esto, 3° y 8° se sirven del mismo origen
+   y comparten la sesión anónima: el MISMO usuario de Supabase, o sea el mismo perfil, el
+   mismo XP en el ranking y el mismo vínculo con un código ALU-. Con su propia llave, 3° tiene
+   su identidad en línea, que es lo que permite que un curso de 3° y uno de 8° convivan. */
+const SB=(window.supabase&&window.supabase.createClient)
+  ? window.supabase.createClient(SUPA_URL,SUPA_KEY,
+      {auth:{storageKey:'kimun-3ro',persistSession:true,autoRefreshToken:true}})
+  : null;
 let MI_PERFIL=null;   // {id, nombre, avatar, codigo}
 async function conectarKimun(){
  if(!SB)return null;
@@ -4185,7 +4197,7 @@ function terminarNivel(){
 // ("Historia"…), así que hay que traducir el código al nombre para mostrarlo y para
 // buscar su banco de preguntas. Tolera también el nombre antiguo por si llega un
 // desafío previo a la normalización.
-const ASIG_DESAFIO_NOMBRE={HI08:'Historia',CN08:'Ciencias',MA08:'Matemáticas',LE08:'Lenguaje'};
+const ASIG_DESAFIO_NOMBRE={HI08:'Historia',CN08:'Ciencias',MA08:'Matemáticas',LE08:'Lenguaje',MA03:'Matemática'};
 function asigDesafioNombre(a){return ASIG_DESAFIO_NOMBRE[a]||a;}
 // Ruta del preguntas.json de una asignatura (cualquiera de sus expediciones sirve).
 function contenidoDeAsignatura(asig){

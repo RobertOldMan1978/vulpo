@@ -240,10 +240,18 @@ nodo del mapa recibe el clic en su `.orb`, no en el `div`; y las tarjetas de cam
   pedía 7 archivos inexistentes (**404 verificados**; el `onerror` los tapaba a la vista, no en
   la red). `portadaMapa` usa `exp.portadaMapa || exp.portada`. Cuando exista el arte de un
   capítulo, se le agrega `portadaMapa:'…'`.
-- **Lo que 3° todavía comparte con 8° y NO está resuelto:** la sesión anónima de Supabase (mismo
-  origen → mismo `perfil`), así que el XP de los dos juegos se mezcla en el ranking, y
-  `kimun_oa_asignatura` no conoce `MA03`, de modo que el dominio de 3° no se puede filtrar por
-  asignatura en el panel. Es la **capa de nivel del Plan 3**, y necesita SQL.
+- **La identidad en línea también está separada** (Sesión 58). 3° crea su cliente de Supabase con
+  `storageKey:'kimun-3ro'`, el mismo patrón que ya usaba `profesor.html`. Sin eso, 3° y 8° eran el
+  **mismo usuario anónimo**: el mismo perfil, el mismo XP en el ranking y el mismo vínculo con un
+  código `ALU-`. Verificado: 8° y 3° obtienen ids de perfil distintos y volver a 8° recupera el suyo.
+- **El nivel viaja en el prefijo del código de OA**, que es como el modelo ya distingue asignaturas
+  (`HI08`, `MA08`…). 3° usa **`MA03`**, sin columna `nivel` ni entidad "Colegio": un curso de 3° se
+  administra con la asignatura `MA03` y el aislamiento por asignatura que ya existía los separa.
+  Tocó cuatro listas —`kimun_oa_asignatura` y `kimun_prof_asignaturas` en el servidor, `OA_CARPETA`
+  / `ASIG_NOMBRE` / `ASIG_ORDEN` y el espejo `SB_asigDe` en el panel, y `ASIG_DESAFIO_NOMBRE` en el
+  juego de 3°— y de paso el bloque de refuerzo dejó de repetir la lista a mano (era la causa del bug
+  de la Sesión 37). **Si falta un código en `kimun_prof_asignaturas`, ese contenido queda INVISIBLE
+  para el Jefe sin ningún error**: por eso la función lleva ahora una advertencia encima.
 
 ### Regla de commits (importante)
 
@@ -807,6 +815,11 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
   los menores; (4) `kimun_prof_refuerzo_estado` filtra por asignatura; (5) `kimun_prof_curso_asignar`
   ahora crea la membresía de Jefe (reasignar de verdad otorga acceso) y `kimun_prof_profesores`
   cuenta cursos desde `curso_profesores`. Ver la Bitácora, Sesión 39.
+- **Niveles (Sesión 58):** el nivel es parte del **código de asignatura** (`MA03` = Matemática de
+  3°), no una columna nueva. `kimun_oa_asignatura` lo traduce y `kimun_prof_asignaturas` lo entrega
+  a Admin/Super/Jefe. Un curso de 3° y uno de 8° conviven porque el aislamiento por asignatura ya
+  los separa. ⚠️ **Requiere re-aplicar `supabase/schema.sql`** (ver `docs/aplicar-schema.md`);
+  mientras no se haga, el dominio de 3° **no aparece** en el panel.
 - **Cuidado al editar el esquema:** `gen_random_uuid()` es nativa de PostgreSQL y no
   necesita nada especial, pero si alguna función vuelve a usar pgcrypto (`crypt`,
   `gen_salt`) necesita `set search_path = public, extensions`, porque en Supabase esa
@@ -3448,3 +3461,46 @@ real. Ahora se navega, se hace clic y se evalúa JavaScript de verdad, y además
   arte de los 7 capítulos y del villano de 3°; **pegar el SQL de la foto semanal** (urge antes del
   piloto); y el **Plan 3**, con sus dos agujeros ya documentados: 3° y 8° comparten la sesión anónima
   de Supabase (el XP se mezcla en el ranking) y `kimun_oa_asignatura` no conoce `MA03`.
+
+### Sesión 58 (2026-08-26) — 3° deja de compartir identidad con 8°: el nivel entra al modelo
+Roberto pidió cerrar el punto que impedía conectar 3° a un curso real: 3° y 8° se sirven del
+mismo origen y compartían **la sesión anónima de Supabase**, o sea el mismo perfil, el mismo XP
+en el ranking y el mismo vínculo con un código `ALU-`; y el servidor no reconocía los objetivos
+`MA03`, así que el avance de 3° no era filtrable por asignatura en el panel. Era el **Plan 3**.
+Salió más chico de lo previsto porque **ninguna de las dos cosas necesitaba una entidad nueva**.
+- **La identidad, sin una línea de SQL.** El patrón ya existía en el proyecto: `profesor.html` usa
+  un `storageKey` propio justo para que un adulto que inicia sesión no le borre la identidad al
+  niño. 3° ahora crea su cliente con `storageKey:'kimun-3ro'`. **Verificado en el navegador:** 8°
+  obtiene un id de perfil, 3° crea otro distinto, y volver a 8° recupera el suyo.
+- **El nivel viaja en el código de asignatura, que ya lo codificaba.** Estuve por proponer una
+  columna `nivel` en `cursos` y el modelo ya lo resolvía: los códigos son cuatro letras que
+  incluyen el año (`HI08`, `MA08`…). 3° es simplemente **`MA03`**, una asignatura más, y el
+  aislamiento por asignatura que funciona desde la Sesión 37 separa solo un curso de 3° de uno de
+  8°. **Sin tabla, sin columna, sin migración, sin entidad "Colegio".**
+- **Cuatro listas que había que tocar** —`kimun_oa_asignatura` y `kimun_prof_asignaturas` en el
+  servidor; `OA_CARPETA`, `ASIG_NOMBRE`/`ASIG_ORDEN` y el espejo `SB_asigDe` en el panel; y
+  `ASIG_DESAFIO_NOMBRE` en el juego de 3°—. La segunda es la peligrosa: **si a
+  `kimun_prof_asignaturas` le falta un código, ese contenido queda INVISIBLE para el Profesor
+  Jefe sin ningún error**, así que la función lleva ahora una advertencia encima.
+- **De paso se cerró la causa del bug de la Sesión 37:** la lista de asignaturas del bloque de
+  refuerzo estaba escrita a mano —por eso una vez faltó Matemática y no se podía lanzar su
+  refuerzo— y ahora se lee del catálogo. Una lista paralela menos que mantener.
+- **Verificado en el panel** (con un doble de Supabase, porque no se abre sin sesión): `MA03 OA 07`
+  mapea a `MA03`, carga el **texto real del objetivo** desde `matematicas-3basico/oa.json`, cuenta
+  sus **26 OA** para el denominador del ranking, y aparece como "Matemática 3°" en el filtro, en el
+  refuerzo y en las casillas del equipo. Regresión: etapa completa jugada en 3° y en 8°, el enlace
+  de revisión de 3°, el guardado separado y la voz completa. Cero 404 y consola limpia.
+- **`supabase/schema.sql` aplicado por Roberto en producción.** El asistente no ejecuta SQL contra
+  la base; le dejó una consulta de verificación de **tres filas** (que `MA03` se reconoce, que
+  `MA08` sigue igual, y que `kimun_prof_asignaturas` incluye `MA03`).
+- **Callejón sin salida corregido:** al armador (`?armar=1`) solo se llega desde el panel, pero no
+  tenía forma de volver —el modo armador apaga la barra inferior y el botón Volver—, así que había
+  que escribir la dirección a mano. Los dos juegos tienen ahora "← Volver al panel del profesor".
+  Comprobado que el clic **navega de verdad**, no solo que el enlace exista. Es el mismo tipo de
+  callejón que se cerró en la Sesión 49 con la pantalla de fin de demo.
+- **Decisión asumida:** las casillas de "Equipo del curso" muestran ahora cinco asignaturas en
+  **todos** los cursos, incluidos los de 8°. Es el precio de no tener nivel en `cursos`, y se
+  prefirió a inventar una entidad para un solo colegio.
+- **Lo que esto habilita:** un curso de 3° ya puede convivir con uno de 8° en el mismo panel. Para
+  **vender** 3° siguen faltando la aprobación pedagógica de sus 792 preguntas, su arte propio y las
+  otras tres asignaturas.
