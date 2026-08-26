@@ -408,7 +408,8 @@
         "desde": 0,
         "hasta": 100,
         "paso": 10,
-        "marca": 40
+        "marca": 40,
+        "oculta": true
       },
       "revisada": false,
       "id": "mat3-oa01-29"
@@ -429,7 +430,8 @@
         "desde": 0,
         "hasta": 1000,
         "paso": 100,
-        "marca": 700
+        "marca": 700,
+        "oculta": true
       },
       "revisada": false,
       "id": "mat3-oa01-30"
@@ -450,7 +452,8 @@
         "desde": 0,
         "hasta": 50,
         "paso": 5,
-        "marca": 25
+        "marca": 25,
+        "oculta": true
       },
       "revisada": false,
       "id": "mat3-oa01-31"
@@ -749,7 +752,8 @@
         "desde": 0,
         "hasta": 100,
         "paso": 10,
-        "marca": 70
+        "marca": 70,
+        "oculta": true
       },
       "revisada": false,
       "id": "mat3-oa02-15"
@@ -770,7 +774,8 @@
         "desde": 0,
         "hasta": 1000,
         "paso": 100,
-        "marca": 300
+        "marca": 300,
+        "oculta": true
       },
       "revisada": false,
       "id": "mat3-oa02-16"
@@ -1015,7 +1020,8 @@
         "desde": 0,
         "hasta": 100,
         "paso": 10,
-        "marca": 40
+        "marca": 40,
+        "oculta": true
       },
       "revisada": false,
       "id": "mat3-oa03-3"
@@ -1036,7 +1042,8 @@
         "desde": 0,
         "hasta": 1000,
         "paso": 100,
-        "marca": 700
+        "marca": 700,
+        "oculta": true
       },
       "revisada": false,
       "id": "mat3-oa03-4"
@@ -1244,7 +1251,8 @@
         "desde": 200,
         "hasta": 300,
         "paso": 10,
-        "marca": 250
+        "marca": 250,
+        "oculta": true
       },
       "revisada": false,
       "id": "mat3-oa03-17"
@@ -1438,7 +1446,8 @@
         "desde": 500,
         "hasta": 600,
         "paso": 10,
-        "marca": 570
+        "marca": 570,
+        "oculta": true
       },
       "revisada": false,
       "id": "mat3-oa03-29"
@@ -2306,7 +2315,8 @@
         "desde": 0,
         "hasta": 1000,
         "paso": 100,
-        "marca": 400
+        "marca": 400,
+        "oculta": true
       },
       "revisada": false,
       "id": "mat3-oa05-29"
@@ -2327,7 +2337,8 @@
         "desde": 200,
         "hasta": 300,
         "paso": 10,
-        "marca": 260
+        "marca": 260,
+        "oculta": true
       },
       "revisada": false,
       "id": "mat3-oa05-30"

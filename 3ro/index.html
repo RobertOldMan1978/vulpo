@@ -1441,7 +1441,12 @@ const META_OA={
 // La meta de una etapa: la frase amable del OA, o el nombre de la etapa como respaldo.
 function metaDeEtapa(lvl){ const c=EXPEDICION[lvl]; if(!c) return ''; return META_OA[c.oa] || c.nombre || 'este objetivo'; }
 // ¿Corresponde mostrar meta para esta etapa? Sí salvo libros de apoyo (no son OA del currículum).
-function metaDisponible(lvl){ const c=EXPEDICION[lvl]; return !!(c && !/^(VOC-|AF-)/.test(c.oa||'')); }
+// ¿Corresponde mostrar meta para esta etapa? No en los libros de apoyo (no son OA del
+// currículum) ni en los JEFES: el jefe mezcla varios objetivos, así que no hay una meta
+// que enunciar, y `metaDeEtapa` caía al nombre de la etapa, repitiendo el encabezado
+// ("JEFE: Números hasta 1.000") y de paso soplando el rango de las respuestas.
+function metaDisponible(lvl){ const c=EXPEDICION[lvl];
+ return !!(c && c.oa!=='BOSS' && !/^(VOC-|AF-)/.test(c.oa||'')); }
 const LOGROS={
  primera:{ic:"🥇",tx:"Primera victoria"},
  combo3:{ic:"🔥",tx:"Combo x3 — ¡Imparable!"},
@@ -1587,17 +1592,31 @@ function renderVisual(v){
   const a=v.desde|0, b=v.hasta|0, s=Math.max(1,v.paso|0);
   const n=Math.max(1,Math.floor((b-a)/s));
   let r=`<line x1="10" y1="35" x2="190" y2="35" stroke="#4dd8ff" stroke-width="3"/>`;
-  // Rotular solo cada `cadaK` marcas. Con 11 etiquetas de 4 dígitos (0..1000 de 100 en 100)
-  // los números se encimaban y la recta quedaba ilegible. Cada dígito ocupa ~6 unidades
-  // del viewBox a font-size 11. La marca destacada siempre se rotula.
-  const anchoTexto=Math.max(String(a).length,String(b).length)*5;
-  const cadaK=Math.max(1,Math.ceil(anchoTexto/(180/n)));
+  /* Rótulos legibles: con 11 etiquetas de 3 o 4 dígitos (500..600 de 10 en 10, o los años
+     1900..2000) los números se encimaban y la recta quedaba ilegible. Primero se intenta
+     achicar la letra —así no se pierde ninguna etiqueta— y solo si ni con la letra más
+     chica caben, se rotula una marca sí y otra no. */
+  const digitos=Math.max(String(a).length,String(b+0).length,String(a+n*s).length);
+  const hueco=180/n;
+  let fuente=11, cadaK=1;
+  while(fuente>8 && digitos*fuente*0.55+2>hueco) fuente--;
+  const anchoRotulo=digitos*fuente*0.55+2;
+  if(anchoRotulo>hueco) cadaK=Math.ceil(anchoRotulo/hueco);
+  const iMarca=(v.marca!==undefined && s>0)?Math.round((v.marca-a)/s):-1;
   for(let i=0;i<=n;i++){
    const x=10+(180*i/n), val=a+i*s;
    const marcado=(v.marca!==undefined && val===v.marca);
    r+=`<line x1="${x}" y1="28" x2="${x}" y2="42" stroke="#4dd8ff" stroke-width="2"/>`;
-   if(marcado || i%cadaK===0 || i===n){
-    r+=`<text x="${x}" y="58" font-size="11" fill="${marcado?'#ffc93c':'#cfc9ee'}" text-anchor="middle" font-weight="bold">${val}</text>`;
+   // `oculta` tapa el número JUSTO en la marca: lo usan las preguntas del tipo
+   // "¿qué número está marcado?", donde imprimirlo regala la respuesta y el niño
+   // deja de leer la recta. En las demás la marca es una referencia y sí se rotula.
+   const tapar = marcado && v.oculta;
+   // Si la marca se rotula, sus vecinas se callan: si no, el número dorado choca
+   // con los de al lado (pasaba con los años 1920-1930-1940).
+   const pegadaAMarca = (iMarca>=0 && !v.oculta && i!==iMarca &&
+                         Math.abs(i-iMarca)*hueco < anchoRotulo);
+   if(!tapar && !pegadaAMarca && (marcado || i%cadaK===0 || i===n)){
+    r+=`<text x="${x}" y="58" font-size="${fuente}" fill="${marcado?'#ffc93c':'#cfc9ee'}" text-anchor="middle" font-weight="bold">${val}</text>`;
    }
    if(marcado) r+=`<circle cx="${x}" cy="35" r="6" fill="#ffc93c"/>`;
   }
