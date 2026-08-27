@@ -79,6 +79,14 @@ export async function conducir(url, pasos, { puerto = 9333, mostrar = false } = 
   ev.movil = (ancho = 375, alto = 780) =>
     enviar('Emulation.setDeviceMetricsOverride',
            { width: ancho, height: alto, deviceScaleFactor: 2, mobile: true });
+  // Captura de pantalla: hay cosas que solo se comprueban mirandolas (un globo tiene que
+  // PARECER un globo; ningun conteo de elementos SVG dice eso).
+  ev.foto = async (ruta) => {
+    const r = await enviar('Page.captureScreenshot', { format: 'png' });
+    if (!r.result?.data) return null;
+    (await import('node:fs')).writeFileSync(ruta, Buffer.from(r.result.data, 'base64'));
+    return ruta;
+  };
   ev.consola = consola;
   ev.fallos = fallos;      // peticiones con 4xx/5xx o que no cargaron
 

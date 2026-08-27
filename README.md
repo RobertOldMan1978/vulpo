@@ -66,9 +66,10 @@ para más adelante.
 Aparte, hay una **app de 3° básico en construcción** en `3ro/`, adaptada a niños de
 8-9 años (sin cronómetro, apoyo visual dibujado por código, texto grande y **lectura
 por voz con una voz chilena grabada** —los MP3 viajan en el repo, y si alguno no
-carga se lee con la voz del navegador). Por ahora solo tiene Matemática, con los 26
-objetivos del año; **no está enlazada desde el sitio** y su banco todavía no pasa por
-revisión pedagógica. Guarda su avance **y su identidad en línea aparte** de 8°, aunque
+carga se lee con la voz del navegador). Tiene **Matemática** (26 objetivos, 792 preguntas,
+con voz grabada) e **Historia, Geografía y Ciencias Sociales** (16 objetivos, 480 preguntas,
+todavía sin voz); **no está enlazada desde el sitio** y sus bancos aún no pasan por revisión
+pedagógica. Guarda su avance **y su identidad en línea aparte** de 8°, aunque
 los dos se sirvan del mismo dominio, así que un curso de 3° y uno de 8° pueden convivir
 en el panel del profesor.
 

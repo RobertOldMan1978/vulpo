@@ -294,6 +294,7 @@ returns text language sql immutable as $$
     -- distingue las asignaturas: no hace falta una columna "nivel" en cursos. Un curso
     -- de 3° usa MA03 y uno de 8° usa MA08, y el aislamiento por asignatura los separa.
     when p_oa like 'MA03%'                       then 'MA03'
+    when p_oa like 'HI03%'                       then 'HI03'
     when p_oa like 'LE08%' or p_oa in ('VOC-LENG','VOC-LECT')
          or p_oa like 'AF-T%'                    then 'LE08'
     else null end;
@@ -618,11 +619,11 @@ returns text[] language sql security definer stable set search_path=public as $$
   select case
     when exists(select 1 from public.profesores pr
                 where pr.id = auth.uid() and (pr.es_admin or pr.es_super))
-      then array['HI08','CN08','MA08','LE08','MA03']
+      then array['HI08','CN08','MA08','LE08','MA03','HI03']
     when exists(select 1 from public.curso_profesores cp
                 where cp.curso_id = p_curso and cp.profesor_id = auth.uid()
                   and cp.rol = 'jefe')
-      then array['HI08','CN08','MA08','LE08','MA03']
+      then array['HI08','CN08','MA08','LE08','MA03','HI03']
     else coalesce((select cp.asignaturas from public.curso_profesores cp
                    where cp.curso_id = p_curso and cp.profesor_id = auth.uid()),
                   '{}'::text[])

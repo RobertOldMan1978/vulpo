@@ -1,0 +1,424 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Ser honesto significa, sobre todo…",
+   "opciones": [
+    "decir la verdad",
+    "hablar muy fuerte",
+    "ganar los juegos",
+    "tener buenas notas"
+   ],
+   "correcta": 0,
+   "tip": "La honestidad es que lo que uno dice coincida con lo que pasó.",
+   "revisada": false,
+   "id": "hist3-oa13-1"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Pedro rompió un vaso sin querer. Lo honesto es que…",
+   "opciones": [
+    "cuente lo que pasó",
+    "diga que fue el gato",
+    "esconda los pedazos",
+    "se quede callado"
+   ],
+   "correcta": 0,
+   "tip": "Reconocer el error permite arreglarlo.",
+   "revisada": false,
+   "id": "hist3-oa13-2"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "En un juego de mesa, hacer trampa significa…",
+   "opciones": [
+    "no respetar las reglas",
+    "jugar muy despacio",
+    "perder varias veces",
+    "elegir mal la ficha"
+   ],
+   "correcta": 0,
+   "tip": "Las reglas son el acuerdo que hace posible el juego.",
+   "revisada": false,
+   "id": "hist3-oa13-3"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Josefa se dio cuenta de que ganó por un error del otro. Lo honesto es…",
+   "opciones": [
+    "avisar del error",
+    "guardar silencio",
+    "jugar otra partida",
+    "celebrar más fuerte"
+   ],
+   "correcta": 0,
+   "tip": "Ganar por un error ajeno no es ganar de verdad.",
+   "revisada": false,
+   "id": "hist3-oa13-4"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Copiar en una prueba es deshonesto porque…",
+   "opciones": [
+    "muestra un saber falso",
+    "toma mucho tiempo",
+    "molesta al compañero",
+    "está mal visto"
+   ],
+   "correcta": 0,
+   "tip": "La nota deja de mostrar lo que uno realmente aprendió.",
+   "revisada": false,
+   "id": "hist3-oa13-5"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Ignacio encontró un billete en el patio. Lo honesto sería…",
+   "opciones": [
+    "entregarlo en la oficina",
+    "guardárselo callado",
+    "repartirlo con un amigo",
+    "comprarse algo rápido"
+   ],
+   "correcta": 0,
+   "tip": "Lo perdido tiene dueño: devolverlo es lo correcto.",
+   "revisada": false,
+   "id": "hist3-oa13-6"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Reconocer un error propio es difícil, pero permite…",
+   "opciones": [
+    "arreglar lo que pasó",
+    "que nadie se entere",
+    "evitar la conversación",
+    "culpar a otra persona"
+   ],
+   "correcta": 0,
+   "tip": "Sin reconocerlo, el problema sigue ahí.",
+   "revisada": false,
+   "id": "hist3-oa13-7"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Si alguien acusa a otro de algo que él mismo hizo, está siendo…",
+   "opciones": [
+    "deshonesto",
+    "gracioso",
+    "valiente",
+    "solidario"
+   ],
+   "correcta": 0,
+   "tip": "Echar la culpa a otro es mentir dos veces.",
+   "revisada": false,
+   "id": "hist3-oa13-8"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Cumplir una promesa tiene que ver con la honestidad porque…",
+   "opciones": [
+    "la palabra dada vale",
+    "las promesas son juegos",
+    "así se consiguen cosas",
+    "los demás lo exigen"
+   ],
+   "correcta": 0,
+   "tip": "Prometer y no cumplir es una forma de mentir.",
+   "revisada": false,
+   "id": "hist3-oa13-9"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "En una carrera, partir antes del pito es…",
+   "opciones": [
+    "hacer trampa",
+    "ser muy rápido",
+    "estar bien atento",
+    "ganar con esfuerzo"
+   ],
+   "correcta": 0,
+   "tip": "Adelantarse rompe la igualdad de la competencia.",
+   "revisada": false,
+   "id": "hist3-oa13-10"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Si un amigo le pide a Clara que mienta por él, lo correcto es…",
+   "opciones": [
+    "no mentir y explicarle",
+    "mentir para ayudarlo",
+    "mentir solo esta vez",
+    "acusarlo de inmediato"
+   ],
+   "correcta": 0,
+   "tip": "Ayudar a alguien no incluye mentir por él.",
+   "revisada": false,
+   "id": "hist3-oa13-11"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Decir una parte de la verdad y esconder el resto es…",
+   "opciones": [
+    "también engañar",
+    "ser muy prudente",
+    "cuidar al otro",
+    "hablar poco"
+   ],
+   "correcta": 0,
+   "tip": "Ocultar lo importante engaña igual que mentir.",
+   "revisada": false,
+   "id": "hist3-oa13-12"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Cuando alguien es honesto de manera constante, los demás…",
+   "opciones": [
+    "confían en él",
+    "le tienen miedo",
+    "lo dejan de lado",
+    "lo copian siempre"
+   ],
+   "correcta": 0,
+   "tip": "La confianza se construye con el tiempo.",
+   "revisada": false,
+   "id": "hist3-oa13-13"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "La confianza es difícil de recuperar porque…",
+   "opciones": [
+    "se construye de a poco",
+    "no le importa a nadie",
+    "se compra con dinero",
+    "vuelve sola al rato"
+   ],
+   "correcta": 0,
+   "tip": "Una mentira puede deshacer meses de confianza.",
+   "revisada": false,
+   "id": "hist3-oa13-14"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Martina se equivocó en un trabajo grupal. Lo honesto es que…",
+   "opciones": [
+    "avise a su grupo",
+    "deje que lo entreguen",
+    "borre su nombre",
+    "culpe al que escribió"
+   ],
+   "correcta": 0,
+   "tip": "Avisar a tiempo permite corregir antes de entregar.",
+   "revisada": false,
+   "id": "hist3-oa13-15"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Usar el trabajo de otra persona y decir que es propio se llama…",
+   "opciones": [
+    "copiar",
+    "investigar",
+    "resumir",
+    "comparar"
+   ],
+   "correcta": 0,
+   "tip": "Hay que decir de dónde salió: eso es citar la fuente.",
+   "revisada": false,
+   "id": "hist3-oa13-16"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Si uno hizo algo mal y nadie lo vio, lo honesto sigue siendo…",
+   "opciones": [
+    "reconocerlo igual",
+    "callarlo para siempre",
+    "esperar a que pregunten",
+    "contarlo como broma"
+   ],
+   "correcta": 0,
+   "tip": "La honestidad no depende de que haya testigos.",
+   "revisada": false,
+   "id": "hist3-oa13-17"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "En un juego, respetar las reglas hace que…",
+   "opciones": [
+    "todos jueguen parejo",
+    "el juego se acabe antes",
+    "gane siempre el mayor",
+    "nadie se entretenga"
+   ],
+   "correcta": 0,
+   "tip": "Las reglas iguales para todos hacen justo el juego.",
+   "revisada": false,
+   "id": "hist3-oa13-18"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Si Benjamín ve a alguien haciendo trampa, lo mejor es…",
+   "opciones": [
+    "decirlo con respeto",
+    "hacer trampa también",
+    "reírse del asunto",
+    "abandonar el juego"
+   ],
+   "correcta": 0,
+   "tip": "Señalarlo con respeto cuida el juego y a la persona.",
+   "revisada": false,
+   "id": "hist3-oa13-19"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Cuando alguien reconoce su error, lo esperable de los demás es…",
+   "opciones": [
+    "darle otra oportunidad",
+    "recordárselo siempre",
+    "dejar de hablarle",
+    "contarlo a todo el curso"
+   ],
+   "correcta": 0,
+   "tip": "Reconocer un error merece una respuesta que no castigue la honestidad.",
+   "revisada": false,
+   "id": "hist3-oa13-20"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Prestar algo y decir que se perdió, cuando en realidad se guardó, es…",
+   "opciones": [
+    "una mentira",
+    "un descuido",
+    "un accidente",
+    "una broma"
+   ],
+   "correcta": 0,
+   "tip": "Es decir a propósito algo que no pasó.",
+   "revisada": false,
+   "id": "hist3-oa13-21"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Un ejemplo de honestidad en el colegio es…",
+   "opciones": [
+    "entregar lo encontrado",
+    "terminar rápido la prueba",
+    "levantar siempre la mano",
+    "sentarse muy derecho"
+   ],
+   "correcta": 0,
+   "tip": "Devolver lo ajeno es un acto honesto concreto.",
+   "revisada": false,
+   "id": "hist3-oa13-22"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "La honestidad ayuda a la convivencia del curso porque…",
+   "opciones": [
+    "evita malentendidos",
+    "hace ganar más juegos",
+    "acorta las clases",
+    "mejora las notas"
+   ],
+   "correcta": 0,
+   "tip": "Cuando todos dicen la verdad, los problemas se resuelven antes.",
+   "revisada": false,
+   "id": "hist3-oa13-23"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Si alguien miente para no meterse en problemas, lo más probable es que…",
+   "opciones": [
+    "el problema crezca",
+    "todo se solucione",
+    "nadie se dé cuenta",
+    "gane algún premio"
+   ],
+   "correcta": 0,
+   "tip": "Una mentira suele necesitar otra para sostenerse.",
+   "revisada": false,
+   "id": "hist3-oa13-24"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Devolver el vuelto que sobró en el kiosco es un acto de…",
+   "opciones": [
+    "honestidad",
+    "generosidad",
+    "obediencia",
+    "puntualidad"
+   ],
+   "correcta": 0,
+   "tip": "Ese dinero no era suyo.",
+   "revisada": false,
+   "id": "hist3-oa13-25"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Ser honesto también incluye ser honesto…",
+   "opciones": [
+    "con uno mismo",
+    "solo con los adultos",
+    "solo con los amigos",
+    "solo en el colegio"
+   ],
+   "correcta": 0,
+   "tip": "Reconocer los propios errores empieza por uno.",
+   "revisada": false,
+   "id": "hist3-oa13-26"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "¿Cuál de estas situaciones NO es deshonesta?",
+   "opciones": [
+    "Equivocarse sin querer",
+    "Copiar en una prueba",
+    "Hacer trampa jugando",
+    "Culpar a otro de lo propio"
+   ],
+   "correcta": 0,
+   "tip": "Equivocarse no es mentir: lo deshonesto sería esconderlo.",
+   "revisada": false,
+   "id": "hist3-oa13-27"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Si un compañero acusa a Sara de algo que no hizo, ella debería…",
+   "opciones": [
+    "explicar lo que pasó",
+    "acusarlo de otra cosa",
+    "quedarse enojada callada",
+    "mentir para defenderse"
+   ],
+   "correcta": 0,
+   "tip": "La verdad se defiende contando lo que ocurrió.",
+   "revisada": false,
+   "id": "hist3-oa13-28"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Reconocer que uno no sabe algo es una forma de…",
+   "opciones": [
+    "honestidad",
+    "debilidad",
+    "descuido",
+    "desobediencia"
+   ],
+   "correcta": 0,
+   "tip": "Fingir que se sabe impide aprender.",
+   "revisada": false,
+   "id": "hist3-oa13-29"
+  },
+  {
+   "oa": "HI03 OA 13",
+   "pregunta": "Las reglas de un juego se pueden cambiar…",
+   "opciones": [
+    "si todos están de acuerdo",
+    "cuando uno va perdiendo",
+    "si el mayor lo decide",
+    "cuando nadie está mirando"
+   ],
+   "correcta": 0,
+   "tip": "Cambiarlas a mitad del juego para ganar es hacer trampa.",
+   "revisada": false,
+   "id": "hist3-oa13-30"
+  }
+ ]
+}

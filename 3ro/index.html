@@ -1295,6 +1295,57 @@ const EXPEDICIONES=[
      {oa:"BOSS",nombre:"⚡ JEFE: Datos",icono:"🐲",n:15,
       oas:["MA03 OA 23","MA03 OA 24","MA03 OA 25","MA03 OA 26"]},
    ]},
+ { id:'hist3-cap1', asignatura:'Historia', nivel:'3° Básico · Nuestro planeta',
+   portada:'assets/portada-historia.png',
+   contenido:'contenido/historia-3basico/preguntas.json', activa:true, campaña:'hist3',
+   etapas:[
+     {oa:"HI03 OA 06",nombre:"Dónde está cada cosa",icono:"🧭",n:10},
+     {oa:"HI03 OA 07",nombre:"Las líneas del planeta",icono:"🌍",n:10},
+     {oa:"HI03 OA 08",nombre:"Climas y paisajes",icono:"🌦️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Nuestro planeta",icono:"🐲",n:15,
+      oas:["HI03 OA 06","HI03 OA 07","HI03 OA 08"]},
+   ] },
+ { id:'hist3-cap2', asignatura:'Historia', nivel:'3° Básico · La antigua Grecia',
+   portada:'assets/portada-historia.png',
+   contenido:'contenido/historia-3basico/preguntas.json', activa:true, campaña:'hist3',
+   etapas:[
+     {oa:"HI03 OA 01",nombre:"Vivir en Grecia",icono:"🏛️",n:10},
+     {oa:"HI03 OA 05",nombre:"Héroes, dioses y oficios",icono:"⚔️",n:10},
+     {oa:"HI03 OA 09",nombre:"El lugar donde vivieron",icono:"🗺️",n:10},
+     {oa:"HI03 OA 10",nombre:"Por qué ahí y no en otra parte",icono:"⛰️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: La antigua Grecia",icono:"🐲",n:15,
+      oas:["HI03 OA 01","HI03 OA 05","HI03 OA 09","HI03 OA 10"]},
+   ] },
+ { id:'hist3-cap3', asignatura:'Historia', nivel:'3° Básico · La antigua Roma',
+   portada:'assets/portada-historia.png',
+   contenido:'contenido/historia-3basico/preguntas.json', activa:true, campaña:'hist3',
+   etapas:[
+     {oa:"HI03 OA 02",nombre:"Vivir en Roma",icono:"🏟️",n:10},
+     {oa:"HI03 OA 03",nombre:"Todos necesitamos lo mismo",icono:"🍞",n:10},
+     {oa:"HI03 OA 04",nombre:"Antes y ahora",icono:"⏳",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: La antigua Roma",icono:"🐲",n:15,
+      oas:["HI03 OA 02","HI03 OA 03","HI03 OA 04"]},
+   ] },
+ { id:'hist3-cap4', asignatura:'Historia', nivel:'3° Básico · Mis deberes y mis derechos',
+   portada:'assets/portada-historia.png',
+   contenido:'contenido/historia-3basico/preguntas.json', activa:true, campaña:'hist3',
+   etapas:[
+     {oa:"HI03 OA 11",nombre:"Lo que me toca hacer",icono:"✅",n:10},
+     {oa:"HI03 OA 13",nombre:"Decir la verdad",icono:"🤝",n:10},
+     {oa:"HI03 OA 14",nombre:"Los derechos del niño",icono:"🧒",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Mis deberes y mis derechos",icono:"🐲",n:15,
+      oas:["HI03 OA 11","HI03 OA 13","HI03 OA 14"]},
+   ] },
+ { id:'hist3-cap5', asignatura:'Historia', nivel:'3° Básico · Vivir juntos',
+   portada:'assets/portada-historia.png',
+   contenido:'contenido/historia-3basico/preguntas.json', activa:true, campaña:'hist3',
+   etapas:[
+     {oa:"HI03 OA 12",nombre:"Respetar al que es distinto",icono:"💛",n:10},
+     {oa:"HI03 OA 15",nombre:"Quién ayuda en mi comuna",icono:"🏥",n:10},
+     {oa:"HI03 OA 16",nombre:"Participar y cumplir",icono:"🙌",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Vivir juntos",icono:"🐲",n:15,
+      oas:["HI03 OA 12","HI03 OA 15","HI03 OA 16"]},
+   ] },
 ];
 
 /* Ids de ?solo= que existen de verdad. Uno inventado se ignora en silencio; si no
@@ -1387,6 +1438,26 @@ const CAMPAÑAS=[{
     ],
   },
   recompensa:{ skin:'kimun-calculista', insignia:'maestro-matematica', bonoMonedas:200, bonoXP:100 },
+},{
+  id:'hist3', asignatura:'Historia', portada:'assets/portada-historia.png',
+  intro:'Viaja por el planeta y por el tiempo con Vulpi.',
+  capitulos:['hist3-cap1','hist3-cap2','hist3-cap3','hist3-cap4','hist3-cap5'],
+  jefeFinal:{
+    // PLACEHOLDER: el arte es el villano de Historia de 8°. Roberto tiene que generar
+    // "El Olvido" (una figura de niebla que va borrando estatuas y mapas) y su version
+    // derrotada; mientras tanto, esto evita un 404 y se ve decente.
+    villano:'El Olvido', villanoIc:'🌫️', villanoImg:'assets/villano-historia.png',
+    dialogo:'Nadie recordará nada... ¿o sí?',
+    derrota:'Se me escapa la memoria del mundo. Vuelve cuando sepas más.',
+    vidasJugador:3, nPorFase:4,
+    fases:[
+      {nombre:'El planeta',            oas:['HI03 OA 06','HI03 OA 07','HI03 OA 08']},
+      {nombre:'La Antigüedad',         oas:['HI03 OA 01','HI03 OA 02','HI03 OA 05']},
+      {nombre:'Cómo vivían',           oas:['HI03 OA 03','HI03 OA 04','HI03 OA 09','HI03 OA 10']},
+      {nombre:'Vivir juntos hoy',      oas:['HI03 OA 11','HI03 OA 12','HI03 OA 13','HI03 OA 14','HI03 OA 15','HI03 OA 16']},
+    ],
+  },
+  recompensa:{ skin:'kimun-historiador', insignia:'maestro-historia', bonoMonedas:200, bonoXP:100 },
 },];
 const INSIGNIAS=[
   {id:'maestro-historia', ic:'🏅', tx:'Maestro de Historia', asignatura:'Historia'},
@@ -1471,6 +1542,22 @@ const META_OA={
  'MA03 OA 24':'Ordenar datos de dados y monedas: el menor y el mayor.',
  'MA03 OA 25':'Leer gráficos de barras y pictogramas.',
  'MA03 OA 26':'Mostrar datos con diagramas de puntos.',
+ 'HI03 OA 01':'Cómo vivían los griegos y qué nos dejaron.',
+ 'HI03 OA 02':'Cómo vivían los romanos y qué nos dejaron.',
+ 'HI03 OA 03':'Todos los pueblos necesitan lo mismo, y lo resuelven distinto.',
+ 'HI03 OA 04':'En qué se parece y en qué cambió la vida de antes.',
+ 'HI03 OA 05':'Buscar información sobre lo que te da curiosidad y contarlo.',
+ 'HI03 OA 06':'Decir dónde está algo usando la cuadrícula y los puntos cardinales.',
+ 'HI03 OA 07':'Reconocer el Ecuador, los polos y los continentes en el globo.',
+ 'HI03 OA 08':'Las zonas de frío y de calor del planeta, y cómo vive la gente ahí.',
+ 'HI03 OA 09':'Describir un lugar con las palabras justas: isla, valle, montaña.',
+ 'HI03 OA 10':'Por qué el lugar donde vive un pueblo cambia su forma de vivir.',
+ 'HI03 OA 11':'Reconocer los deberes que a uno le toca cumplir.',
+ 'HI03 OA 12':'Tratar bien a los demás, aunque piensen distinto que tú.',
+ 'HI03 OA 13':'Decir la verdad y jugar sin hacer trampa.',
+ 'HI03 OA 14':'Los derechos que tienen todos los niños del mundo.',
+ 'HI03 OA 15':'Qué hacen las instituciones que ayudan a tu comunidad.',
+ 'HI03 OA 16':'Cumplir lo que uno se comprometió a hacer con los demás.',
 };
 // La meta de una etapa: la frase amable del OA, o el nombre de la etapa como respaldo.
 function metaDeEtapa(lvl){ const c=EXPEDICION[lvl]; if(!c) return ''; return META_OA[c.oa] || c.nombre || 'este objetivo'; }
@@ -1682,6 +1769,25 @@ function textoVisual(v){
   const e=(v.etiquetas||[]).join(', ');
   return `Grafico de barras con ${(v.valores||[]).length} barras: ${e}.`;
  }
+ if(T==='cuadricula'){
+  const c=v.cols||4, f=v.filas||4, n=(v.fichas||[]).length;
+  // No se dice EN QUE casilla esta cada objeto: esa suele ser la pregunta.
+  return `Cuadricula de ${c} columnas y ${f} filas`
+       + (n?`, con ${n} objeto${n===1?'':'s'} ubicado${n===1?'':'s'}.`:'.')
+       + (v.rosa?' Arriba se indica el norte.':'');
+ }
+ if(T==='globo'){
+  return 'Globo terraqueo con sus lineas imaginarias'
+       + (v.destacar?', una de ellas marcada.':'.');   // marcada, no nombrada
+ }
+ if(T==='zonas'){
+  return 'Esquema del planeta con sus franjas climaticas'
+       + (v.destacar?', una de ellas marcada.':'.');
+ }
+ if(T==='linea'){
+  const e=(v.hitos||[]).map(h=>h[0]).join(' y ');
+  return `Linea de tiempo con ${e}.`;
+ }
  return 'Dibujo de apoyo.';
 }
 // renderVisual la deja lista antes de dibujar, para no tener que pasarla por las
@@ -1814,6 +1920,99 @@ function renderVisual(v){
    r=`<polygon points="100,18 64,80 136,80" ${st}/><polygon points="100,18 136,80 152,64" ${st}/>`;
   } else return '';
   return svgEnvoltura(r,100);
+ }
+
+ // Cuadricula con letras arriba y numeros al costado (OA 06). La letra es la COLUMNA
+ // y el numero la FILA: el banco entero usa esa convencion y la declara en el enunciado.
+ if(T==='cuadricula'){
+  const c=Math.max(2,Math.min(6,v.cols||4)), f=Math.max(2,Math.min(6,v.filas||4));
+  const cell=Math.min(30,150/c), x0=34, y0=26, an=cell*c, al=cell*f;
+  let r='';
+  for(let i=0;i<=c;i++) r+=`<line x1="${x0+i*cell}" y1="${y0}" x2="${x0+i*cell}" y2="${y0+al}" stroke="#8f6bff" stroke-width="1.5"/>`;
+  for(let j=0;j<=f;j++) r+=`<line x1="${x0}" y1="${y0+j*cell}" x2="${x0+an}" y2="${y0+j*cell}" stroke="#8f6bff" stroke-width="1.5"/>`;
+  for(let i=0;i<c;i++) r+=`<text x="${x0+(i+0.5)*cell}" y="${y0-5}" font-size="10" fill="#ffc93c" text-anchor="middle" font-weight="bold">${'ABCDEF'[i]}</text>`;
+  for(let j=0;j<f;j++) r+=`<text x="${x0-7}" y="${y0+(j+0.5)*cell+4}" font-size="10" fill="#ffc93c" text-anchor="middle" font-weight="bold">${j+1}</text>`;
+  (v.fichas||[]).forEach(fi=>{
+   const cc=Math.max(1,Math.min(c,fi.col|0)), ff=Math.max(1,Math.min(f,fi.fila|0));
+   r+=`<text x="${x0+(cc-0.5)*cell}" y="${y0+(ff-0.5)*cell+6}" font-size="${Math.round(cell*0.62)}" text-anchor="middle">${fi.emoji||'⭐'}</text>`;
+  });
+  if(v.rosa!==false){
+   r+=`<line x1="14" y1="${y0+14}" x2="14" y2="${y0+2}" stroke="#4dd8ff" stroke-width="2"/>`
+     +`<polygon points="14,${y0-3} 10,${y0+3} 18,${y0+3}" fill="#4dd8ff"/>`
+     +`<text x="14" y="${y0+24}" font-size="9" fill="#4dd8ff" text-anchor="middle" font-weight="bold">N</text>`;
+  }
+  return svgEnvoltura(r, Math.round(y0+al+10));
+ }
+
+ // Globo con sus lineas imaginarias (OA 07). Nunca se rotulan: el nombre es la pregunta.
+ if(T==='globo'){
+  const cx=100, cy=58, R=44, D=(v.destacar||'');
+  const oro='#ffc93c', gris='#7d76a8';
+  const cuerda=dy=>Math.sqrt(Math.max(0,R*R-dy*dy));
+  const linea=(dy,id,grosor)=>{
+   const w=cuerda(dy), on=(D===id);
+   return `<line x1="${cx-w}" y1="${cy+dy}" x2="${cx+w}" y2="${cy+dy}" stroke="${on?oro:gris}" stroke-width="${on?3.5:(grosor||1.5)}"/>`;
+  };
+  let r=`<circle cx="${cx}" cy="${cy}" r="${R}" fill="#1d1740" stroke="#4dd8ff" stroke-width="2.5"/>`;
+  r+=`<ellipse cx="${cx}" cy="${cy}" rx="${R*0.42}" ry="${R}" fill="none" stroke="${gris}" stroke-width="1.2"/>`;
+  r+=linea(-R*0.72,'circulo-norte'); r+=linea(-R*0.36,'tropico-norte');
+  r+=linea(0,'ecuador',2.5);
+  r+=linea(R*0.36,'tropico-sur');   r+=linea(R*0.72,'circulo-sur');
+  r+=`<circle cx="${cx}" cy="${cy-R}" r="${D==='polo-norte'?5:3}" fill="${D==='polo-norte'?oro:'#4dd8ff'}"/>`;
+  r+=`<circle cx="${cx}" cy="${cy+R}" r="${D==='polo-sur'?5:3}" fill="${D==='polo-sur'?oro:'#4dd8ff'}"/>`;
+  return svgEnvoltura(r,118);
+ }
+
+ // Franjas climaticas (OA 08). Cinco bandas recortadas contra el circulo del planeta.
+ if(T==='zonas'){
+  const cx=100, cy=58, R=44, D=(v.destacar||'');
+  const BANDAS=[
+   ['fria-norte','fria','#9ad8ff',-1.00,-0.66],
+   ['templada-norte','templada','#7fe0a8',-0.66,-0.26],
+   ['calida','calida','#ffb35c',-0.26,0.26],
+   ['templada-sur','templada','#7fe0a8',0.26,0.66],
+   ['fria-sur','fria','#9ad8ff',0.66,1.00]];
+  const id='zc'+Math.floor(cx+cy+R);
+  let r=`<defs><clipPath id="${id}"><circle cx="${cx}" cy="${cy}" r="${R}"/></clipPath></defs>`;
+  // Base clara bajo las franjas: sin ella, los colores a media opacidad sobre el fondo
+  // violeta del juego quedan barrosos y la zona cálida se ve marrón (verificado mirando
+  // la captura, no el codigo).
+  r+=`<circle cx="${cx}" cy="${cy}" r="${R}" fill="#eceafa"/>`;
+  r+=`<g clip-path="url(#${id})">`;
+  BANDAS.forEach(b=>{
+   const y1=cy+b[3]*R, y2=cy+b[4]*R;
+   // Se puede destacar una banda concreta ("fria-sur") o su familia ("fria").
+   const on=(D===b[0]||D===b[1]);
+   r+=`<rect x="${cx-R}" y="${y1}" width="${2*R}" height="${y2-y1}" fill="${b[2]}" opacity="${on?1:0.5}"/>`;
+  });
+  // El realce va DESPUES de todas las franjas y solo con borde: si se dibuja franja por
+  // franja, el borde de una queda tapado por la siguiente y se lee como dos lineas sueltas.
+  BANDAS.forEach(b=>{
+   if(D!==b[0]&&D!==b[1]) return;
+   const y1=cy+b[3]*R, y2=cy+b[4]*R;
+   r+=`<rect x="${cx-R-2}" y="${y1}" width="${2*R+4}" height="${y2-y1}" fill="none" stroke="#e0a400" stroke-width="2.5"/>`;
+  });
+  r+='</g>';
+  r+=`<circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="#4dd8ff" stroke-width="2.5"/>`;
+  // El Ecuador, marcado suave: a trazo lleno y oscuro parecia una grieta partiendo el planeta.
+  r+=`<line x1="${cx-R}" y1="${cy}" x2="${cx+R}" y2="${cy}" stroke="#6b6396" stroke-width="1" stroke-dasharray="4 3" opacity="0.7"/>`;
+  return svgEnvoltura(r,118);
+ }
+
+ // Linea de tiempo (OA 01, 02 y 04): hitos como [etiqueta, posicion entre 0 y 1].
+ if(T==='linea'){
+  const H=(v.hitos||[]).slice(0,4);
+  if(!H.length) return '';
+  const x0=22, x1=178, y=34;
+  let r=`<line x1="${x0}" y1="${y}" x2="${x1}" y2="${y}" stroke="#cfc9ee" stroke-width="2.5"/>`
+       +`<polygon points="${x1},${y} ${x1-7},${y-4} ${x1-7},${y+4}" fill="#cfc9ee"/>`;
+  H.forEach(h=>{
+   const on=(v.destacar===h[0]);
+   const x=x0+Math.max(0,Math.min(1,h[1]))*(x1-x0-10);
+   r+=`<circle cx="${x}" cy="${y}" r="${on?6:4}" fill="${on?'#ffc93c':'#8f6bff'}"/>`;
+   r+=`<text x="${x}" y="${y+20}" font-size="10" fill="${on?'#ffc93c':'#cfc9ee'}" text-anchor="middle" font-weight="bold">${String(h[0]).slice(0,14)}</text>`;
+  });
+  return svgEnvoltura(r,58);
  }
 
  return '';   // tipo desconocido: la pregunta vale igual, solo con texto
@@ -2852,7 +3051,7 @@ const SKINS=[{e:"🐲",p:160},{e:"🦄",p:200},{e:"🦖",p:240},{e:"🐙",p:140}
  {e:"🛹",img:'assets/skin-kimun-skate.png',nombre:'Vulpi Skater',p:780},
  // Skin exclusiva de recompensa: visible pero bloqueada; se desbloquea al vencer al Jefe Final de Historia.
  // Marcador de arte: emoji 🎓 hasta que exista assets/kimun-historiador.png.
- {id:'kimun-historiador', e:"🎓", img:'assets/kimun-historiador.png', nombre:'Vulpi Historiador', bloqueada:true, desbloqueaCon:'hist', req:'Vence a Historia'},
+ {id:'kimun-historiador', e:"🎓", img:'assets/kimun-historiador.png', nombre:'Vulpi Historiador', bloqueada:true, desbloqueaCon:'hist3', req:'Vence a El Olvido'},
  {id:'kimun-cientifico', e:"🔬", img:'assets/kimun-cientifico.png', nombre:'Vulpi Científico', bloqueada:true, desbloqueaCon:'cien', req:'Vence a Ciencias'},
  {id:'kimun-calculista', e:"🧮", img:'assets/kimun-calculista.png', nombre:'Vulpi Calculista', bloqueada:true, req:'Vence a El Autómata'},
  {id:'kimun-escritor', e:"🖋️", img:'assets/kimun-escritor.png', nombre:'Vulpi Escritor', bloqueada:true, desbloqueaCon:'leng', req:'Vence a Lenguaje'},
@@ -3007,7 +3206,7 @@ function finDuelo(){
 /* ===== Selección de modo (Jugador / Duelo) ===== */
 /* Pantalla de expediciones: generada desde EXPEDICIONES (data-driven) */
 /* Orden fijo de los módulos por asignatura en la pantalla principal */
-const ORDEN_ASIG=['Matemática'];
+const ORDEN_ASIG=['Matemática','Historia'];
 /* Portada genérica por asignatura: la usa el módulo (nivel 1) y es el fallback
    de la portada propia de cada mapa/capítulo. */
 const ASIG_PORTADA={Historia:'assets/portada-historia.png',Matemáticas:'assets/portada-matematicas.png',
@@ -4197,7 +4396,7 @@ function terminarNivel(){
 // ("Historia"…), así que hay que traducir el código al nombre para mostrarlo y para
 // buscar su banco de preguntas. Tolera también el nombre antiguo por si llega un
 // desafío previo a la normalización.
-const ASIG_DESAFIO_NOMBRE={HI08:'Historia',CN08:'Ciencias',MA08:'Matemáticas',LE08:'Lenguaje',MA03:'Matemática'};
+const ASIG_DESAFIO_NOMBRE={HI08:'Historia',CN08:'Ciencias',MA08:'Matemáticas',LE08:'Lenguaje',MA03:'Matemática',HI03:'Historia'};
 function asigDesafioNombre(a){return ASIG_DESAFIO_NOMBRE[a]||a;}
 // Ruta del preguntas.json de una asignatura (cualquiera de sus expediciones sirve).
 function contenidoDeAsignatura(asig){

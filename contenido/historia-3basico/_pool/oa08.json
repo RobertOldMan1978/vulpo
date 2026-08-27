@@ -1,0 +1,459 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "¿Cuántas grandes zonas climáticas tiene el planeta?",
+   "opciones": [
+    "Tres: cálida, templada y fría",
+    "Dos: la del norte y la del sur",
+    "Cinco: una por cada océano",
+    "Seis: una por continente"
+   ],
+   "correcta": 0,
+   "tip": "Son tres: la cálida en el centro, y las templadas y frías hacia los extremos.",
+   "revisada": false,
+   "id": "hist3-oa08-1"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "¿Dónde está la zona cálida del planeta?",
+   "opciones": [
+    "Alrededor del Ecuador",
+    "Alrededor de los polos",
+    "Solamente en el hemisferio norte",
+    "Solamente en el hemisferio sur"
+   ],
+   "correcta": 0,
+   "tip": "La zona cálida rodea el Ecuador, entre los dos trópicos.",
+   "revisada": false,
+   "id": "hist3-oa08-2",
+   "visual": {
+    "tipo": "zonas",
+    "destacar": "calida",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "¿Dónde están las zonas frías del planeta?",
+   "opciones": [
+    "Cerca de los dos polos",
+    "Cerca del círculo del Ecuador",
+    "En el medio de los océanos",
+    "En las islas del Pacífico"
+   ],
+   "correcta": 0,
+   "tip": "Las zonas frías rodean el Polo Norte y el Polo Sur.",
+   "revisada": false,
+   "id": "hist3-oa08-3",
+   "visual": {
+    "tipo": "zonas",
+    "destacar": "fria",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "Las zonas templadas están entre…",
+   "opciones": [
+    "los trópicos y los polos",
+    "el Ecuador y los trópicos",
+    "los dos polos del planeta",
+    "los océanos y los mares"
+   ],
+   "correcta": 0,
+   "tip": "Quedan en el medio: ni tan calurosas ni tan heladas.",
+   "revisada": false,
+   "id": "hist3-oa08-4",
+   "visual": {
+    "tipo": "zonas",
+    "destacar": "templada",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "¿Por qué cerca del Ecuador hace más calor?",
+   "opciones": [
+    "Porque el sol llega más directo",
+    "Porque está más cerca del mar",
+    "Porque hay más gente viviendo",
+    "Porque tiene menos montañas"
+   ],
+   "correcta": 0,
+   "tip": "Cerca del Ecuador los rayos del sol caen casi derechos y calientan más.",
+   "revisada": false,
+   "id": "hist3-oa08-5"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "¿Por qué en los polos hace tanto frío?",
+   "opciones": [
+    "Porque el sol llega muy inclinado",
+    "Porque están lejos de los mares",
+    "Porque sopla viento del Ecuador",
+    "Porque casi no tienen montañas"
+   ],
+   "correcta": 0,
+   "tip": "Los rayos llegan muy inclinados y calientan poco.",
+   "revisada": false,
+   "id": "hist3-oa08-6"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "¿En qué zona climática está la mayor parte de Chile?",
+   "opciones": [
+    "En la zona templada",
+    "En la zona cálida",
+    "En la zona fría del sur",
+    "En la zona del Ecuador"
+   ],
+   "correcta": 0,
+   "tip": "Chile tiene varios climas, pero casi todo está en la zona templada.",
+   "revisada": false,
+   "id": "hist3-oa08-7"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "¿Qué zona climática está marcada en el dibujo?",
+   "opciones": [
+    "La zona cálida",
+    "La zona fría del norte",
+    "La zona fría del sur",
+    "La zona templada"
+   ],
+   "correcta": 0,
+   "tip": "Es la franja del medio, alrededor del Ecuador.",
+   "revisada": false,
+   "id": "hist3-oa08-8",
+   "visual": {
+    "tipo": "zonas",
+    "destacar": "calida",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "En la zona marcada en el dibujo, ¿qué paisaje es el más común?",
+   "opciones": [
+    "hielo y nieve",
+    "selva muy espesa",
+    "arena del desierto",
+    "praderas con flores"
+   ],
+   "correcta": 0,
+   "tip": "Es la franja de abajo, la del Polo Sur: ahí domina el hielo.",
+   "revisada": false,
+   "id": "hist3-oa08-9",
+   "visual": {
+    "tipo": "zonas",
+    "destacar": "fria-sur",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "La selva, con árboles altos y mucha lluvia, es un paisaje de la zona…",
+   "opciones": [
+    "cálida",
+    "fría",
+    "polar",
+    "helada"
+   ],
+   "correcta": 0,
+   "tip": "Las selvas crecen cerca del Ecuador, donde hace calor y llueve mucho.",
+   "revisada": false,
+   "id": "hist3-oa08-10"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "En el desierto de Atacama casi nunca…",
+   "opciones": [
+    "llueve",
+    "hay sol",
+    "sopla viento",
+    "hay piedras"
+   ],
+   "correcta": 0,
+   "tip": "Un desierto se define por la falta de lluvia, no por el calor.",
+   "revisada": false,
+   "id": "hist3-oa08-11"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "¿Qué paisaje es propio de las zonas frías?",
+   "opciones": [
+    "Llanuras cubiertas de hielo",
+    "Selvas de árboles muy altos",
+    "Playas de arena caliente",
+    "Campos llenos de flores"
+   ],
+   "correcta": 0,
+   "tip": "En las zonas frías el suelo suele estar cubierto de hielo y nieve.",
+   "revisada": false,
+   "id": "hist3-oa08-12",
+   "visual": {
+    "tipo": "zonas",
+    "destacar": "fria",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "En la zona templada es común encontrar…",
+   "opciones": [
+    "bosques y praderas verdes",
+    "selvas llenas de lianas",
+    "hielos que nunca se derriten",
+    "dunas de arena sin plantas"
+   ],
+   "correcta": 0,
+   "tip": "El clima templado permite bosques, praderas y cultivos.",
+   "revisada": false,
+   "id": "hist3-oa08-13",
+   "visual": {
+    "tipo": "zonas",
+    "destacar": "templada",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "¿Qué animal vive en la zona fría del planeta?",
+   "opciones": [
+    "El pingüino",
+    "El camello",
+    "El tucán",
+    "El koala"
+   ],
+   "correcta": 0,
+   "tip": "El pingüino vive en zonas heladas; el camello, en el desierto.",
+   "revisada": false,
+   "id": "hist3-oa08-14"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "¿Qué animal está adaptado a vivir en el desierto?",
+   "opciones": [
+    "El camello",
+    "El pingüino",
+    "La foca",
+    "El oso polar"
+   ],
+   "correcta": 0,
+   "tip": "El camello aguanta muchos días sin beber agua.",
+   "revisada": false,
+   "id": "hist3-oa08-15"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "La Antártica chilena es un ejemplo de paisaje…",
+   "opciones": [
+    "polar, cubierto de hielo",
+    "selvático y muy lluvioso",
+    "desértico y con mucha arena",
+    "templado y con praderas"
+   ],
+   "correcta": 0,
+   "tip": "La Antártica está cubierta de hielo casi todo el año.",
+   "revisada": false,
+   "id": "hist3-oa08-16"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "En Chile hay muchos climas distintos porque el país es muy…",
+   "opciones": [
+    "largo de norte a sur",
+    "ancho de este a oeste",
+    "alto sobre el nivel del mar",
+    "cercano al Ecuador"
+   ],
+   "correcta": 0,
+   "tip": "Chile mide más de 4.000 kilómetros de norte a sur y cruza varias zonas.",
+   "revisada": false,
+   "id": "hist3-oa08-17"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "En un lugar muy frío, ¿cómo conviene que sea la ropa?",
+   "opciones": [
+    "Gruesa y que abrigue mucho",
+    "Delgada y de colores claros",
+    "Corta y de género liviano",
+    "Suelta y con muchos agujeros"
+   ],
+   "correcta": 0,
+   "tip": "La ropa gruesa guarda el calor del cuerpo.",
+   "revisada": false,
+   "id": "hist3-oa08-18"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "En un lugar muy caluroso, ¿cómo conviene que sea la ropa?",
+   "opciones": [
+    "Liviana y de colores claros",
+    "Gruesa y de lana espesa",
+    "De cuero grueso y forrada",
+    "Con muchas capas encima"
+   ],
+   "correcta": 0,
+   "tip": "La ropa liviana y clara deja salir el calor y rebota el sol.",
+   "revisada": false,
+   "id": "hist3-oa08-19"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "El iglú era una vivienda hecha con bloques de…",
+   "opciones": [
+    "nieve",
+    "madera",
+    "adobe",
+    "totora"
+   ],
+   "correcta": 0,
+   "tip": "En un lugar de puro hielo, la nieve era el material que había a mano.",
+   "revisada": false,
+   "id": "hist3-oa08-20"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "¿Por qué en lugares de mucha nieve los techos son inclinados?",
+   "opciones": [
+    "Para que la nieve resbale",
+    "Para que entre más luz",
+    "Para que la casa se vea alta",
+    "Para poder subirse a jugar"
+   ],
+   "correcta": 0,
+   "tip": "Si el techo fuera plano, el peso de la nieve podría hundirlo.",
+   "revisada": false,
+   "id": "hist3-oa08-21"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "Las casas de adobe con muros gruesos sirven en climas…",
+   "opciones": [
+    "muy calurosos de día",
+    "de lluvia constante",
+    "con nieve todo el año",
+    "de viento muy fuerte"
+   ],
+   "correcta": 0,
+   "tip": "El muro grueso deja la casa fresca mientras afuera hace calor.",
+   "revisada": false,
+   "id": "hist3-oa08-22"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "Los palafitos son casas construidas…",
+   "opciones": [
+    "sobre pilotes de madera",
+    "enterradas bajo la tierra",
+    "con bloques de hielo duro",
+    "colgadas de los árboles"
+   ],
+   "correcta": 0,
+   "tip": "Los pilotes levantan la casa para que el agua no entre.",
+   "revisada": false,
+   "id": "hist3-oa08-23"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "En el desierto, ¿por qué la gente se instala cerca de un oasis?",
+   "opciones": [
+    "Porque ahí hay agua",
+    "Porque ahí hace menos sol",
+    "Porque ahí no sopla viento",
+    "Porque ahí la arena es firme"
+   ],
+   "correcta": 0,
+   "tip": "El oasis es el punto con agua, y sin agua no se puede vivir.",
+   "revisada": false,
+   "id": "hist3-oa08-24"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "¿Qué quiere decir que las personas se adaptan a su clima?",
+   "opciones": [
+    "Que cambian su forma de vivir",
+    "Que cambian el clima del lugar",
+    "Que se van a vivir a otro país",
+    "Que dejan de trabajar afuera"
+   ],
+   "correcta": 0,
+   "tip": "Adaptarse es acomodar la ropa, la casa y el trabajo a lo que hay.",
+   "revisada": false,
+   "id": "hist3-oa08-25"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "En el norte seco de Chile, para aprovechar el agua se cultiva en…",
+   "opciones": [
+    "terrazas en la ladera",
+    "casas sobre el agua",
+    "túneles bajo la arena",
+    "muros contra la nieve"
+   ],
+   "correcta": 0,
+   "tip": "Las terrazas retienen el agua en la ladera y evitan que se pierda.",
+   "revisada": false,
+   "id": "hist3-oa08-26"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "Quien vive en la zona fría necesita, sobre todo, una casa que…",
+   "opciones": [
+    "conserve el calor adentro",
+    "deje entrar mucho aire",
+    "tenga las paredes abiertas",
+    "esté hecha de puro vidrio"
+   ],
+   "correcta": 0,
+   "tip": "Lo primero es no perder el calor.",
+   "revisada": false,
+   "id": "hist3-oa08-27"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "¿Qué NO es una forma de adaptarse al clima?",
+   "opciones": [
+    "Quejarse de que hace frío",
+    "Ponerse ropa abrigada",
+    "Construir un techo firme",
+    "Guardar comida para el invierno"
+   ],
+   "correcta": 0,
+   "tip": "Adaptarse es hacer algo concreto para vivir mejor en ese lugar.",
+   "revisada": false,
+   "id": "hist3-oa08-28"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "En un mapa de zonas climáticas, los colores sirven para…",
+   "opciones": [
+    "distinguir cada zona",
+    "mostrar los países ricos",
+    "marcar dónde hay ciudades",
+    "indicar la hora del día"
+   ],
+   "correcta": 0,
+   "tip": "Cada color representa una zona climática distinta.",
+   "revisada": false,
+   "id": "hist3-oa08-29"
+  },
+  {
+   "oa": "HI03 OA 08",
+   "pregunta": "¿Por qué es útil saber en qué zona climática vive uno?",
+   "opciones": [
+    "Ayuda a prepararse mejor",
+    "Sirve para elegir el idioma",
+    "Indica cuánta gente hay",
+    "Muestra la edad del país"
+   ],
+   "correcta": 0,
+   "tip": "Conocer el clima ayuda a decidir la ropa, la casa y los cultivos.",
+   "revisada": false,
+   "id": "hist3-oa08-30"
+  }
+ ]
+}

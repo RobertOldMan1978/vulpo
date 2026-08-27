@@ -240,6 +240,19 @@ nodo del mapa recibe el clic en su `.orb`, no en el `div`; y las tarjetas de cam
   pedía 7 archivos inexistentes (**404 verificados**; el `onerror` los tapaba a la vista, no en
   la red). `portadaMapa` usa `exp.portadaMapa || exp.portada`. Cuando exista el arte de un
   capítulo, se le agrega `portadaMapa:'…'`.
+- **3° tiene dos asignaturas: Matemática (`MA03`) e Historia (`HI03`).** Historia son 16 OA
+  en 5 capítulos que siguen las **unidades oficiales del Programa de Estudio**, no un corte
+  inventado. Su banco (480 preguntas) nace `revisada:false`. Cuatro de sus OA (11, 12, 13 y
+  16) son **actitudinales** —"asumir", "mostrar actitudes", "mantener una conducta",
+  "participar"—: un quiz no puede medir conducta, solo si el niño **reconoce** la acción
+  correcta, y por eso sus preguntas plantean siempre la situación de otra persona. La
+  advertencia está escrita en `contenido/historia-3basico/oa.json` (`nota_evaluacion`),
+  porque el mapa de dominio va a mostrar un porcentaje junto a "conducta honesta" y eso se
+  puede leer como una nota de conducta.
+- **Los dibujos de 3° son once**, todos por código: `contar`, `agrupar`, `fraccion`, `recta`,
+  `reloj`, `barras`, `cuerpo` (Matemática) y `cuadricula`, `globo`, `zonas`, `linea`
+  (Historia). Regla al agregar uno: **no puede delatar la respuesta**, y su descripción para
+  lector de pantalla tampoco (dice "una línea marcada", nunca cómo se llama).
 - **La identidad en línea también está separada** (Sesión 58). 3° crea su cliente de Supabase con
   `storageKey:'kimun-3ro'`, el mismo patrón que ya usaba `profesor.html`. Sin eso, 3° y 8° eran el
   **mismo usuario anónimo**: el mismo perfil, el mismo XP en el ranking y el mismo vínculo con un
@@ -3520,3 +3533,84 @@ alumnos" y la participación, cada curso muestra **"👤 Profesor jefe: <nombre>
 - Verificado con un doble de Supabase en los tres casos (sin jefe, con equipo completo, sin
   permiso) y **a 375 px sin desborde**, que es donde este panel ya falló en la Sesión 26. De paso
   `scripts/cdp.mjs` ganó emulación de teléfono (`ev.movil()`).
+
+### Sesión 59 (2026-08-26) — Historia de 3° básico: 480 preguntas, campaña y cuatro dibujos nuevos
+Roberto pidió, con `/loop`, desarrollar Historia de 3° "hasta que quede a la par de Matemática".
+Se hizo en ocho vueltas autopautadas, con el flujo de siempre: currículum → diseño → plan →
+ejecución por fases, verificando en el navegador. **Matemática 3° y 8° no se tocaron** (las dos
+se jugaron completas al cierre).
+
+**El currículum, fijado antes de escribir una sola pregunta.** Son **16 OA con código `HI03`**
+—el mismo prefijo de cuatro letras que ya usa todo el sistema— en tres ejes, y el Programa de
+Estudio los reparte en **cuatro unidades**. Esa estructura oficial es mejor que la que se iba a
+inventar: es como un profesor chileno planifica el año. Los textos se transcribieron del portal
+del MINEDUC y se contrastaron con una segunda ficha del mismo portal antes de fijarlos.
+
+**El problema que Matemática no tenía.** Cuatro de los dieciséis objetivos son **actitudinales**
+—*asumir* deberes, *mostrar* actitudes, *mantener* conducta honesta, *participar*—. Un quiz de
+opción múltiple **no puede medir ninguna de esas cosas**: solo puede medir si el niño **reconoce**
+la acción correcta, que no es lo mismo. Importa porque el mapa de dominio le va a mostrar al
+profesor un porcentaje junto a "Mantener una conducta honesta", y **eso se lee como una nota de
+conducta**. Decisión: incluirlos, redactados siempre como la situación de otra persona con nombre
+("¿qué debería hacer Ana si…?") y **nunca** preguntando por la conducta del propio jugador; la
+advertencia quedó escrita en `oa.json` (`nota_evaluacion`).
+
+- **Banco: 480 preguntas** (16 OA × 30), cero duplicados, correcta repartida 125/104/122/129 entre
+  las cuatro posiciones. Nacen `revisada:false`. Consolidador propio
+  (`scripts/consolidar-pool-hist3.py`), que baraja: las tandas se escriben con la correcta siempre
+  primera, cómodo para redactar y desastroso para jugar.
+- **Campaña:** 5 capítulos siguiendo las unidades oficiales (Nuestro planeta · La antigua Grecia ·
+  La antigua Roma · Mis deberes y mis derechos · Vivir juntos) + Jefe Final **"El Olvido"**, y las
+  16 metas de aprendizaje en lenguaje de niño.
+- **Cuatro dibujos nuevos por código** (SVG, sin archivos ni librerías): `cuadricula`, `globo`,
+  `zonas` y `linea`. Sin ellos, tres OA quedaban preguntables solo de memoria. **33 preguntas**
+  llevan apoyo visual.
+- **El profesor ya ve `HI03`** por el mismo camino que `MA03` en la Sesión 58: una línea en
+  `kimun_oa_asignatura`, el código en las dos listas de `kimun_prof_asignaturas`, y las cuatro
+  entradas de catálogo del panel. ⚠️ **Requiere re-aplicar `supabase/schema.sql`.**
+
+**Herramienta nueva: `scripts/revisar-tanda.py`**, que revisa cada tanda antes de consolidarla.
+Cada comprobación nació de un defecto real, y **dos de ellas se corrigieron a sí mismas**:
+- **Sesgo de largo, bien medido.** La primera versión contaba empates (`(B, 2)` vs `(A, 2)`) y daba
+  57% donde no había ninguna pista. La medida buena exige que la correcta le saque margen a
+  **todas** las demás. Con eso apareció el patrón real: las preguntas de **definición y de
+  explicación** lo generan casi solas (OA 15 llegó a 30%), porque la respuesta verdadera necesita
+  ser precisa y los distractores salen sueltos. La corrección nunca fue acortar la correcta hasta
+  dejarla imprecisa, sino **darles cuerpo a los distractores**, que de paso quedaron más plausibles.
+- **Un chequeo que hubo que tirar.** Marcar palabras del tip ausentes de la pregunta disparó en
+  cientos de casos, porque un buen tip explica con vocabulario nuevo ("Zeus era el jefe de los
+  dioses del Olimpo"). Se reemplazó por detección de **casi-duplicados**, que apunta al defecto
+  real. Encontró 19 pares; se revisaron **uno por uno** y todos eran pares deliberados de contraste
+  (*opuesto al norte / opuesto al este*), así que quedó como **aviso, no error**: marcarlos como
+  error entrenaría a ignorar el informe, que es exactamente lo que pasó con una comprobación de la
+  Sesión 56.
+
+**El error propio más grave de la sesión, y cómo apareció.** Al acortar el enunciado de
+`hist3-oa06-27` (medía 114 caracteres) se le pegó encima el texto de la pregunta siguiente
+**dejando intactas sus opciones y su tip**. Quedó una pregunta sobre un río y un puente en la misma
+fila —cuya respuesta es "al este"— con la clave **"al sur"** y un tip que hablaba de una escuela
+inexistente: **un niño que razonaba bien quedaba marcado como equivocado**. No lo encontró ningún
+script: apareció al listar el banco para decidir dónde poner dibujos.
+> **Lección:** al cambiar el ENUNCIADO de una pregunta hay que releer su clave y su tip. Tocar solo
+> el campo `pregunta` fue lo que la rompió.
+
+**Verificar mirando, no contando.** Se le agregaron **captura de pantalla** y **emulación de
+teléfono** a `scripts/cdp.mjs`, y ahí apareció lo que ningún conteo de elementos SVG habría dicho:
+las franjas climáticas **no se leían como franjas climáticas** —los colores a media opacidad sobre
+el violeta del juego quedaban barrosos y la zona cálida se veía **marrón**—, el realce dorado
+parecía dos líneas sueltas, y la línea del Ecuador a trazo lleno **parecía una grieta partiendo el
+planeta**. Las tres se corrigieron mirando la imagen.
+
+**Tres dibujos descartados a propósito, y es la decisión más fina del trabajo.** En *"¿cuántos
+trópicos tiene el planeta?"* el globo dibuja **cinco** líneas (dos trópicos, dos círculos polares y
+el Ecuador): un niño contaría cinco y elegiría mal. Peor en *"¿cuántas zonas climáticas hay?"*,
+donde **"Cinco" es justo uno de los distractores**. Un dibujo que induce al error es peor que
+ninguno; los descartes quedaron comentados en el código para que nadie los "complete" después.
+
+- **Pendiente de Roberto:** autorizar la **voz** (~2.400 clips, del orden de **US$1,2** de su cuenta
+  Azure; es lo que hace usable 3° para quien aún no lee de corrido, y va al final porque cada
+  corrección posterior obliga a regenerar su clip); el **arte** (5 portadas de capítulo y "El
+  Olvido", que hoy usa prestado el villano de Historia de 8°); la **aprobación pedagógica** de las
+  480 preguntas; y **re-aplicar el esquema**.
+- Diseño: `docs/superpowers/specs/2026-08-26-historia-3basico-design.md`. Plan de 6 fases:
+  `docs/superpowers/plans/2026-08-26-historia-3basico.md`.

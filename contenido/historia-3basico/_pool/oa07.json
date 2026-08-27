@@ -1,0 +1,469 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "¿Cómo se llama la línea imaginaria que parte la Tierra en dos mitades iguales?",
+   "opciones": [
+    "El Ecuador",
+    "El meridiano",
+    "El trópico",
+    "La cordillera"
+   ],
+   "correcta": 0,
+   "tip": "El círculo del Ecuador divide el planeta en hemisferio norte y hemisferio sur.",
+   "revisada": false,
+   "id": "hist3-oa07-1",
+   "visual": {
+    "tipo": "globo",
+    "destacar": "ecuador",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "El Ecuador divide la Tierra en dos partes. ¿Cómo se llama cada una?",
+   "opciones": [
+    "Hemisferios",
+    "Continentes",
+    "Océanos",
+    "Trópicos"
+   ],
+   "correcta": 0,
+   "tip": "Cada mitad se llama hemisferio: el del norte y el del sur.",
+   "revisada": false,
+   "id": "hist3-oa07-2",
+   "visual": {
+    "tipo": "globo",
+    "destacar": "ecuador",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "¿En qué hemisferio está Chile?",
+   "opciones": [
+    "En el hemisferio sur",
+    "En el hemisferio norte",
+    "En los dos a la vez",
+    "En ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Chile está bajo el Ecuador, así que está en el hemisferio sur.",
+   "revisada": false,
+   "id": "hist3-oa07-3"
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "Un país que está sobre el Ecuador, hacia arriba en el mapa, está en el hemisferio…",
+   "opciones": [
+    "norte",
+    "sur",
+    "este",
+    "oeste"
+   ],
+   "correcta": 0,
+   "tip": "Sobre el Ecuador está el hemisferio norte; bajo el Ecuador, el sur.",
+   "revisada": false,
+   "id": "hist3-oa07-4"
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "¿Cómo se llama el punto que está más al norte de todo el planeta?",
+   "opciones": [
+    "El Polo Norte",
+    "El Polo Sur",
+    "El Ecuador",
+    "El trópico"
+   ],
+   "correcta": 0,
+   "tip": "El Polo Norte es el extremo de arriba y el Polo Sur, el de abajo.",
+   "revisada": false,
+   "id": "hist3-oa07-5",
+   "visual": {
+    "tipo": "globo",
+    "destacar": "polo-norte",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "¿Cómo se llama el punto que está más al sur de todo el planeta?",
+   "opciones": [
+    "El Polo Sur",
+    "El Polo Norte",
+    "El Ecuador",
+    "El meridiano"
+   ],
+   "correcta": 0,
+   "tip": "El Polo Sur está en el extremo de abajo, cerca de la Antártica.",
+   "revisada": false,
+   "id": "hist3-oa07-6",
+   "visual": {
+    "tipo": "globo",
+    "destacar": "polo-sur",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "El planeta tiene dos polos. ¿Cómo es el clima en ellos?",
+   "opciones": [
+    "Muy frío todo el año",
+    "Muy caluroso todo el año",
+    "Lluvioso y tibio",
+    "Igual que en Santiago"
+   ],
+   "correcta": 0,
+   "tip": "En los polos hace mucho frío porque el sol llega muy inclinado.",
+   "revisada": false,
+   "id": "hist3-oa07-7"
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "¿Cuántos trópicos tiene el planeta?",
+   "opciones": [
+    "Dos",
+    "Uno",
+    "Cuatro",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Son dos: el de Cáncer, al norte, y el de Capricornio, al sur.",
+   "revisada": false,
+   "id": "hist3-oa07-8"
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "¿Cómo se llama el trópico que está en el hemisferio norte?",
+   "opciones": [
+    "Trópico de Cáncer",
+    "Trópico de Capricornio",
+    "Trópico del Ecuador",
+    "Trópico Polar"
+   ],
+   "correcta": 0,
+   "tip": "El de Cáncer está al norte y el de Capricornio, al sur.",
+   "revisada": false,
+   "id": "hist3-oa07-9",
+   "visual": {
+    "tipo": "globo",
+    "destacar": "tropico-norte",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "¿Cómo se llama el trópico que está en el hemisferio sur?",
+   "opciones": [
+    "Trópico de Capricornio",
+    "Trópico de Cáncer",
+    "Círculo Polar Ártico",
+    "Círculo del Ecuador"
+   ],
+   "correcta": 0,
+   "tip": "El de Capricornio está al sur, y pasa por el norte de Chile.",
+   "revisada": false,
+   "id": "hist3-oa07-10",
+   "visual": {
+    "tipo": "globo",
+    "destacar": "tropico-sur",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "¿Qué línea está marcada en el dibujo?",
+   "opciones": [
+    "El Ecuador",
+    "El Polo Norte",
+    "El trópico de Cáncer",
+    "El meridiano"
+   ],
+   "correcta": 0,
+   "tip": "Es la línea del medio: el Ecuador.",
+   "revisada": false,
+   "id": "hist3-oa07-11",
+   "visual": {
+    "tipo": "globo",
+    "destacar": "ecuador",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "¿Cómo se llama la bola que representa a la Tierra y se puede girar?",
+   "opciones": [
+    "Un globo terráqueo",
+    "Un mapa planisferio",
+    "Una rosa de los vientos",
+    "Un atlas de países"
+   ],
+   "correcta": 0,
+   "tip": "El globo terráqueo muestra la Tierra con su forma redonda de verdad.",
+   "revisada": false,
+   "id": "hist3-oa07-12"
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "¿Qué muestra mejor un globo terráqueo que un mapa plano?",
+   "opciones": [
+    "La forma redonda del planeta",
+    "Los nombres de las ciudades",
+    "El camino entre dos países",
+    "La cantidad de habitantes"
+   ],
+   "correcta": 0,
+   "tip": "El planeta es redondo, así que el globo lo muestra sin deformar.",
+   "revisada": false,
+   "id": "hist3-oa07-13"
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "Las grandes extensiones de tierra del planeta se llaman…",
+   "opciones": [
+    "continentes",
+    "océanos",
+    "hemisferios",
+    "penínsulas"
+   ],
+   "correcta": 0,
+   "tip": "Son los continentes; las grandes extensiones de agua son los océanos.",
+   "revisada": false,
+   "id": "hist3-oa07-14"
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "¿En qué continente está Chile?",
+   "opciones": [
+    "En América",
+    "En Europa",
+    "En Asia",
+    "En África"
+   ],
+   "correcta": 0,
+   "tip": "Chile está en América del Sur, dentro del continente americano.",
+   "revisada": false,
+   "id": "hist3-oa07-15"
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "¿Cuál de estos es un continente?",
+   "opciones": [
+    "Oceanía",
+    "El Pacífico",
+    "El Ecuador",
+    "Los Andes"
+   ],
+   "correcta": 0,
+   "tip": "Oceanía es un continente; el Pacífico es un océano.",
+   "revisada": false,
+   "id": "hist3-oa07-16"
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "¿Cuál de estos NO es un continente?",
+   "opciones": [
+    "El océano Atlántico",
+    "El continente africano",
+    "El continente asiático",
+    "El continente europeo"
+   ],
+   "correcta": 0,
+   "tip": "El Atlántico es un océano, no un continente.",
+   "revisada": false,
+   "id": "hist3-oa07-17"
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "El continente helado que está más al sur del planeta se llama…",
+   "opciones": [
+    "Antártica",
+    "Oceanía",
+    "América",
+    "Groenlandia"
+   ],
+   "correcta": 0,
+   "tip": "La Antártica rodea el Polo Sur y está cubierta de hielo.",
+   "revisada": false,
+   "id": "hist3-oa07-18"
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "Las grandes extensiones de agua salada del planeta se llaman…",
+   "opciones": [
+    "océanos",
+    "continentes",
+    "hemisferios",
+    "cordilleras"
+   ],
+   "correcta": 0,
+   "tip": "Son los océanos, mucho más grandes que un lago o un río.",
+   "revisada": false,
+   "id": "hist3-oa07-19"
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "¿Qué océano baña las costas de Chile?",
+   "opciones": [
+    "El Pacífico",
+    "El Atlántico",
+    "El Índico",
+    "El Ártico"
+   ],
+   "correcta": 0,
+   "tip": "El Pacífico está al oeste de Chile y es el océano más grande.",
+   "revisada": false,
+   "id": "hist3-oa07-20"
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "¿Cuál es el océano más grande del planeta?",
+   "opciones": [
+    "El Pacífico",
+    "El Atlántico",
+    "El Índico",
+    "El Antártico"
+   ],
+   "correcta": 0,
+   "tip": "El Pacífico es el más grande de todos.",
+   "revisada": false,
+   "id": "hist3-oa07-21"
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "¿Cuál de estos es un océano?",
+   "opciones": [
+    "El Índico",
+    "Europa",
+    "La Antártica",
+    "El Ecuador"
+   ],
+   "correcta": 0,
+   "tip": "El Índico es un océano; los otros no lo son.",
+   "revisada": false,
+   "id": "hist3-oa07-22"
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "Un mapa plano de todo el planeta se llama…",
+   "opciones": [
+    "planisferio",
+    "globo terráqueo",
+    "cuadrícula",
+    "brújula"
+   ],
+   "correcta": 0,
+   "tip": "El planisferio muestra la Tierra entera estirada en una hoja.",
+   "revisada": false,
+   "id": "hist3-oa07-23"
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "Si viajas desde Chile hacia el Ecuador, ¿hacia dónde vas?",
+   "opciones": [
+    "Hacia el norte",
+    "Hacia el sur",
+    "Hacia el este",
+    "Hacia el oeste"
+   ],
+   "correcta": 0,
+   "tip": "Chile está al sur del Ecuador, así que hay que subir hacia el norte.",
+   "revisada": false,
+   "id": "hist3-oa07-24"
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "La Antártica está cerca de…",
+   "opciones": [
+    "el Polo Sur",
+    "el Polo Norte",
+    "el Ecuador",
+    "el trópico de Cáncer"
+   ],
+   "correcta": 0,
+   "tip": "La Antártica rodea el Polo Sur.",
+   "revisada": false,
+   "id": "hist3-oa07-25"
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "El Polo Norte está en el hemisferio…",
+   "opciones": [
+    "norte",
+    "sur",
+    "del este",
+    "del oeste"
+   ],
+   "correcta": 0,
+   "tip": "Está en el extremo del hemisferio norte.",
+   "revisada": false,
+   "id": "hist3-oa07-26",
+   "visual": {
+    "tipo": "globo",
+    "destacar": "polo-norte",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "¿Qué línea imaginaria pasa por el norte de Chile?",
+   "opciones": [
+    "El trópico de Capricornio",
+    "El trópico de Cáncer",
+    "El círculo del Ecuador",
+    "El Polo Sur"
+   ],
+   "correcta": 0,
+   "tip": "El de Capricornio cruza el norte de Chile, cerca del desierto.",
+   "revisada": false,
+   "id": "hist3-oa07-27"
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "¿Para qué sirven las líneas imaginarias del planeta?",
+   "opciones": [
+    "Para ubicar mejor los lugares",
+    "Para separar a los países",
+    "Para marcar dónde hay agua",
+    "Para saber qué hora es"
+   ],
+   "correcta": 0,
+   "tip": "No existen de verdad: son marcas que ayudan a ubicarse.",
+   "revisada": false,
+   "id": "hist3-oa07-28"
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "Australia es un país que está en el continente de…",
+   "opciones": [
+    "Oceanía",
+    "Asia",
+    "África",
+    "América"
+   ],
+   "correcta": 0,
+   "tip": "Australia es el país más grande de Oceanía.",
+   "revisada": false,
+   "id": "hist3-oa07-29"
+  },
+  {
+   "oa": "HI03 OA 07",
+   "pregunta": "Si un lugar está justo sobre la línea del Ecuador, ¿en qué hemisferio está?",
+   "opciones": [
+    "En el límite de los dos",
+    "Solo en el norte",
+    "Solo en el sur",
+    "En ninguno de los dos"
+   ],
+   "correcta": 0,
+   "tip": "El Ecuador es la frontera entre los dos hemisferios.",
+   "revisada": false,
+   "id": "hist3-oa07-30",
+   "visual": {
+    "tipo": "globo",
+    "destacar": "ecuador",
+    "etiquetas": false
+   }
+  }
+ ]
+}

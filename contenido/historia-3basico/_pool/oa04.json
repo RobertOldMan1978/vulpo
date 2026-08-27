@@ -1,0 +1,491 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "Los griegos y los romanos vivieron…",
+   "opciones": [
+    "hace miles de años",
+    "hace unos diez años",
+    "al mismo tiempo que hoy",
+    "en el futuro"
+   ],
+   "correcta": 0,
+   "tip": "Fue hace más de dos mil años.",
+   "revisada": false,
+   "id": "hist3-oa04-1",
+   "visual": {
+    "tipo": "linea",
+    "hitos": [
+     [
+      "Antigüedad",
+      0.15
+     ],
+     [
+      "Hoy",
+      0.9
+     ]
+    ],
+    "destacar": "Antigüedad"
+   }
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "A la época de griegos y romanos la llamamos…",
+   "opciones": [
+    "la Antigüedad",
+    "la Colonia",
+    "la actualidad",
+    "el futuro"
+   ],
+   "correcta": 0,
+   "tip": "La Antigüedad es el período de esas civilizaciones.",
+   "revisada": false,
+   "id": "hist3-oa04-2",
+   "visual": {
+    "tipo": "linea",
+    "hitos": [
+     [
+      "Antigüedad",
+      0.15
+     ],
+     [
+      "Hoy",
+      0.9
+     ]
+    ],
+    "destacar": null
+   }
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "Cuando comparamos la Antigüedad con hoy, buscamos qué cosas…",
+   "opciones": [
+    "cambiaron y cuáles no",
+    "eran mejores antes",
+    "eran peores antes",
+    "nadie recuerda ya"
+   ],
+   "correcta": 0,
+   "tip": "Se buscan continuidades y cambios, sin decidir qué era mejor.",
+   "revisada": false,
+   "id": "hist3-oa04-3"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "Un oficio muy común en la Antigüedad que casi no existe hoy es el de…",
+   "opciones": [
+    "alfarero de vasijas",
+    "conductor de micro",
+    "programador de juegos",
+    "piloto de avión"
+   ],
+   "correcta": 0,
+   "tip": "El alfarero hacía a mano las vasijas para guardar comida.",
+   "revisada": false,
+   "id": "hist3-oa04-4"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "En la Antigüedad, la mayoría de la gente trabajaba en…",
+   "opciones": [
+    "el campo",
+    "una oficina",
+    "una fábrica",
+    "un hospital"
+   ],
+   "correcta": 0,
+   "tip": "Casi todos cultivaban la tierra o criaban animales.",
+   "revisada": false,
+   "id": "hist3-oa04-5"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "¿Qué oficio de la Antigüedad todavía existe hoy?",
+   "opciones": [
+    "Panadero",
+    "Gladiador",
+    "Escriba de papiro",
+    "Cochero de carros"
+   ],
+   "correcta": 0,
+   "tip": "El pan se sigue amasando, aunque ahora con máquinas.",
+   "revisada": false,
+   "id": "hist3-oa04-6"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "El escriba antiguo escribía a mano. Hoy ese trabajo lo hacemos con…",
+   "opciones": [
+    "computadores",
+    "martillos",
+    "telescopios",
+    "balanzas"
+   ],
+   "correcta": 0,
+   "tip": "La necesidad de escribir sigue; la herramienta cambió.",
+   "revisada": false,
+   "id": "hist3-oa04-7"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "La ropa de griegos y romanos era, comparada con la nuestra, mucho más…",
+   "opciones": [
+    "suelta y sencilla",
+    "gruesa y pesada",
+    "colorida y brillante",
+    "ajustada y elástica"
+   ],
+   "correcta": 0,
+   "tip": "Usaban telas envueltas, sin cierres ni botones.",
+   "revisada": false,
+   "id": "hist3-oa04-8"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "Una diferencia clara entre su ropa y la nuestra es que ellos no tenían…",
+   "opciones": [
+    "cierres ni botones",
+    "telas de ningún tipo",
+    "sandalias ni zapatos",
+    "ropa para el frío"
+   ],
+   "correcta": 0,
+   "tip": "Sujetaban la tela con broches y cinturones.",
+   "revisada": false,
+   "id": "hist3-oa04-9"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "Su ropa era liviana sobre todo porque su clima era…",
+   "opciones": [
+    "cálido en verano",
+    "helado todo el año",
+    "lluvioso cada día",
+    "ventoso y nublado"
+   ],
+   "correcta": 0,
+   "tip": "El clima mediterráneo tiene veranos secos y calurosos.",
+   "revisada": false,
+   "id": "hist3-oa04-10"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "Comparada con una ciudad de hoy, una ciudad antigua tenía…",
+   "opciones": [
+    "muchos menos habitantes",
+    "muchos más habitantes",
+    "el mismo número exacto",
+    "ningún habitante fijo"
+   ],
+   "correcta": 0,
+   "tip": "Las ciudades de hoy son enormemente más grandes.",
+   "revisada": false,
+   "id": "hist3-oa04-11"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "En una ciudad antigua NO existía…",
+   "opciones": [
+    "el alumbrado eléctrico",
+    "la plaza central",
+    "el mercado de comida",
+    "el templo religioso"
+   ],
+   "correcta": 0,
+   "tip": "De noche se alumbraban con lámparas de aceite.",
+   "revisada": false,
+   "id": "hist3-oa04-12"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "Tanto una ciudad antigua como una de hoy tienen…",
+   "opciones": [
+    "un lugar de reunión",
+    "semáforos en las esquinas",
+    "edificios de veinte pisos",
+    "estacionamientos grandes"
+   ],
+   "correcta": 0,
+   "tip": "El ágora y el foro cumplían el papel de nuestras plazas.",
+   "revisada": false,
+   "id": "hist3-oa04-13"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "Para moverse dentro de la ciudad, en la Antigüedad la gente…",
+   "opciones": [
+    "caminaba casi siempre",
+    "tomaba el metro del centro",
+    "andaba en bicicleta propia",
+    "manejaba su propio auto"
+   ],
+   "correcta": 0,
+   "tip": "Solo los ricos usaban carros tirados por animales.",
+   "revisada": false,
+   "id": "hist3-oa04-14"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "¿Qué medio de transporte NO existía en la Antigüedad?",
+   "opciones": [
+    "El avión",
+    "El barco",
+    "El carro",
+    "El caballo"
+   ],
+   "correcta": 0,
+   "tip": "El avión es un invento de hace poco más de cien años.",
+   "revisada": false,
+   "id": "hist3-oa04-15"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "Una diferencia entre sus creencias y las de hoy es que ellos creían en…",
+   "opciones": [
+    "muchos dioses a la vez",
+    "un único dios",
+    "ningún dios en absoluto",
+    "dioses invisibles"
+   ],
+   "correcta": 0,
+   "tip": "Griegos y romanos eran politeístas.",
+   "revisada": false,
+   "id": "hist3-oa04-16"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "Para pedirle algo a sus dioses, los antiguos hacían…",
+   "opciones": [
+    "ofrendas en los templos",
+    "llamadas por teléfono",
+    "cartas por correo",
+    "reuniones en el colegio"
+   ],
+   "correcta": 0,
+   "tip": "Dejaban comida, flores o animales como ofrenda.",
+   "revisada": false,
+   "id": "hist3-oa04-17"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "Una fiesta de la Antigüedad que aún celebramos de otra forma son…",
+   "opciones": [
+    "los Juegos Olímpicos",
+    "las Fiestas Patrias",
+    "el Día del Niño",
+    "el Año Nuevo chino"
+   ],
+   "correcta": 0,
+   "tip": "Nacieron en Olimpia y hoy se hacen en todo el mundo.",
+   "revisada": false,
+   "id": "hist3-oa04-18"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "En la Antigüedad, ir a la escuela era algo que…",
+   "opciones": [
+    "solo hacían algunos niños",
+    "hacían todos los niños",
+    "no existía en absoluto",
+    "hacían solo los adultos"
+   ],
+   "correcta": 0,
+   "tip": "Muchos niños trabajaban, y las niñas casi no asistían.",
+   "revisada": false,
+   "id": "hist3-oa04-19"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "Hoy, en cambio, ir a la escuela es…",
+   "opciones": [
+    "un derecho de todos",
+    "un permiso especial",
+    "solo para los varones",
+    "algo prohibido"
+   ],
+   "correcta": 0,
+   "tip": "Todos los niños tienen derecho a la educación.",
+   "revisada": false,
+   "id": "hist3-oa04-20"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "Los niños antiguos escribían sobre tablillas de cera. Nosotros usamos…",
+   "opciones": [
+    "cuadernos",
+    "papiros",
+    "vasijas",
+    "murallas"
+   ],
+   "correcta": 0,
+   "tip": "El soporte cambió, pero escribir para aprender sigue igual.",
+   "revisada": false,
+   "id": "hist3-oa04-21"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "Un juego de la Antigüedad que todavía existe es…",
+   "opciones": [
+    "la pelota",
+    "el videojuego",
+    "el patinete eléctrico",
+    "el karting"
+   ],
+   "correcta": 0,
+   "tip": "Jugar con una pelota es tan antiguo como las civilizaciones.",
+   "revisada": false,
+   "id": "hist3-oa04-22"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "En la Antigüedad, la comida se guardaba sobre todo…",
+   "opciones": [
+    "en vasijas de arcilla",
+    "en el refrigerador",
+    "en bolsas plásticas",
+    "en tarros de lata"
+   ],
+   "correcta": 0,
+   "tip": "El frío artificial no existía: se salaba, secaba o guardaba en vasijas.",
+   "revisada": false,
+   "id": "hist3-oa04-23"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "Que algo siga igual desde la Antigüedad hasta hoy se llama una…",
+   "opciones": [
+    "continuidad",
+    "novedad",
+    "casualidad",
+    "curiosidad"
+   ],
+   "correcta": 0,
+   "tip": "Las continuidades son las cosas que se mantienen.",
+   "revisada": false,
+   "id": "hist3-oa04-24"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "Que algo sea distinto hoy respecto de la Antigüedad se llama un…",
+   "opciones": [
+    "cambio",
+    "error",
+    "invento",
+    "recuerdo"
+   ],
+   "correcta": 0,
+   "tip": "Los cambios y las continuidades se estudian juntos.",
+   "revisada": false,
+   "id": "hist3-oa04-25",
+   "visual": {
+    "tipo": "linea",
+    "hitos": [
+     [
+      "Antigüedad",
+      0.15
+     ],
+     [
+      "Hoy",
+      0.9
+     ]
+    ]
+   }
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "¿Cuál de estas es una continuidad entre la Antigüedad y hoy?",
+   "opciones": [
+    "Reunirse en una plaza",
+    "Alumbrarse con electricidad",
+    "Viajar en avión",
+    "Comunicarse por celular"
+   ],
+   "correcta": 0,
+   "tip": "La plaza como lugar de encuentro sigue existiendo.",
+   "revisada": false,
+   "id": "hist3-oa04-26",
+   "visual": {
+    "tipo": "linea",
+    "hitos": [
+     [
+      "Antigüedad",
+      0.15
+     ],
+     [
+      "Hoy",
+      0.9
+     ]
+    ]
+   }
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "¿Cuál de estas es un cambio entre la Antigüedad y hoy?",
+   "opciones": [
+    "La forma de viajar",
+    "La necesidad de comer",
+    "El deseo de jugar",
+    "La costumbre de reunirse"
+   ],
+   "correcta": 0,
+   "tip": "Viajar cambió por completo; las otras tres siguen igual.",
+   "revisada": false,
+   "id": "hist3-oa04-27",
+   "visual": {
+    "tipo": "linea",
+    "hitos": [
+     [
+      "Antigüedad",
+      0.15
+     ],
+     [
+      "Hoy",
+      0.9
+     ]
+    ]
+   }
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "Comparar nuestra vida con la de la Antigüedad sirve para…",
+   "opciones": [
+    "entender de dónde venimos",
+    "sentirnos superiores a ellos",
+    "criticar cómo vivían antes",
+    "copiar todo lo que hacían"
+   ],
+   "correcta": 0,
+   "tip": "Muchas cosas nuestras empezaron ahí.",
+   "revisada": false,
+   "id": "hist3-oa04-28"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "Cuando decimos que una costumbre cambió, queremos decir que…",
+   "opciones": [
+    "hoy se hace distinto",
+    "hoy ya nadie la hace",
+    "nunca existió antes",
+    "solo existe en libros"
+   ],
+   "correcta": 0,
+   "tip": "Cambiar no es desaparecer: puede hacerse de otra manera.",
+   "revisada": false,
+   "id": "hist3-oa04-29"
+  },
+  {
+   "oa": "HI03 OA 04",
+   "pregunta": "Si algo de hoy se parece mucho a algo de la Antigüedad, probablemente…",
+   "opciones": [
+    "lo heredamos de ellos",
+    "lo inventamos nosotros",
+    "es pura coincidencia",
+    "ellos nos copiaron"
+   ],
+   "correcta": 0,
+   "tip": "Eso es justamente un legado.",
+   "revisada": false,
+   "id": "hist3-oa04-30"
+  }
+ ]
+}
