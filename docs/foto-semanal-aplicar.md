@@ -22,7 +22,21 @@ reales (hoy el curso demo `CUR-BA04` y las cuentas `profe-prueba*` son de prueba
 
 ---
 
-## Procedimiento (en orden)
+## Camino corto (recomendado): un solo pegado
+
+Pega **`supabase/aplicar-foto-semanal.sql`** completo en el SQL Editor y ejecútalo.
+Ese archivo habilita `pg_cron`, agenda el trabajo y **se verifica solo**: devuelve
+cuatro filas que deben empezar con `ok`. Como habilita la extensión *antes* de
+agendar, la trampa del silencio (abajo) no puede ocurrir.
+
+Si alguna fila dice `FALTA: aplica primero supabase/schema.sql`, aplica el esquema y
+vuelve a pegar este archivo.
+
+El procedimiento largo de abajo queda como referencia, y sigue siendo válido.
+
+---
+
+## Procedimiento largo (paso a paso)
 
 ### 1. Habilitar la extensión `pg_cron`
 Supabase → **Database → Extensions** → busca **`pg_cron`** → **Enable**.

@@ -1642,12 +1642,23 @@ if(window.speechSynthesis){
    El manifiesto dice qué textos tienen clip; lo que no esté, lo lee el navegador.
    Así la lectura suena igual en todos los aparatos, pero nunca se queda muda si los
    MP3 no cargan (colegio con internet malo, por ejemplo). */
-const VOZ_BASE='assets/voz/mat3/';
+/* Una carpeta por asignatura: los clips se generan por banco y así agregar una
+   asignatura nueva no obliga a regenerar (ni volver a pagar) las anteriores. El mapa
+   guarda la RUTA COMPLETA, no solo el nombre, porque ya no hay una base única. */
+const VOZ_DIRS=['assets/voz/mat3/','assets/voz/hist3/'];
 let VOZ_MAP=null;
-fetch(VOZ_BASE+'manifiesto.json')
- .then(r=>r.ok?r.json():null)
- .then(m=>{VOZ_MAP=m||{};})
- .catch(()=>{VOZ_MAP={};});
+Promise.all(VOZ_DIRS.map(dir =>
+  fetch(dir+'manifiesto.json')
+   .then(r=>r.ok?r.json():null)
+   .then(m=>[dir, m||{}])
+   .catch(()=>[dir,{}])
+)).then(pares=>{
+  const mapa={};
+  // Un texto compartido (por ejemplo "¡Nivel superado!") existe en las dos carpetas;
+  // cualquiera de los dos clips sirve, así que gana el último y da lo mismo.
+  pares.forEach(([dir,m]) => Object.keys(m).forEach(t => { mapa[t]=dir+m[t]; }));
+  VOZ_MAP=mapa;
+}).catch(()=>{VOZ_MAP={};});
 
 let _AUDIO=null;
 /* Reproduce el clip pregrabado de `texto`. Devuelve false si no existe, para que el
@@ -1657,7 +1668,7 @@ function sonarClip(texto,alEmpezar,alTerminar){
  const arch=VOZ_MAP&&VOZ_MAP[(texto||'').trim()];
  if(!arch) return false;
  try{
-  const a=new Audio(VOZ_BASE+arch);
+  const a=new Audio(arch);   // `arch` ya viene con su carpeta
   _AUDIO=a;
   a.onplay=()=>{ if(alEmpezar) alEmpezar(); };
   a.onended=()=>{ if(alTerminar) alTerminar(); };

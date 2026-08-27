@@ -13,19 +13,42 @@ La clave de Azure vive FUERA del repositorio, que es publico. Formato del archiv
     linea 1: la clave (KEY 1)
     linea 2: la region (por ejemplo brazilsouth)
 
+Hay una carpeta de clips por asignatura (mat3, hist3). El primer argumento elige
+cual; sin argumento, mat3. Separarlas evita volver a pagar lo ya generado al agregar
+una asignatura nueva.
+
 Uso:
-    python scripts/generar-voz-3ro.py --recuento   # cuanto costaria (no gasta ni pide clave)
-    python scripts/generar-voz-3ro.py --probar     # UN clip, para validar clave y region
-    python scripts/generar-voz-3ro.py              # genera lo que falte
-    python scripts/generar-voz-3ro.py --rehacer    # regenera todo
+    python scripts/generar-voz-3ro.py --recuento         # cuanto costaria (no gasta ni pide clave)
+    python scripts/generar-voz-3ro.py --probar           # UN clip, para validar clave y region
+    python scripts/generar-voz-3ro.py                    # genera lo que falte de mat3
+    python scripts/generar-voz-3ro.py hist3              # genera lo que falte de Historia
+    python scripts/generar-voz-3ro.py hist3 --recuento
+    python scripts/generar-voz-3ro.py --rehacer          # regenera todo
+
+OJO al cambiar scripts/normalizar-voz-3ro.py: el manifiesto se indexa por el texto
+MOSTRADO, asi que cambiar como se PRONUNCIA algo no invalida ningun clip y los viejos
+quedan sonando como antes, en silencio. Hay que borrarlos a mano del manifiesto.
 """
 import json, io, re, sys, time, hashlib, importlib.util
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
-BANCO = RAIZ / "contenido" / "matematicas-3basico" / "preguntas.json"
 JUEGO = RAIZ / "3ro" / "index.html"
-SALIDA = RAIZ / "assets" / "voz" / "mat3"
+
+# Una carpeta de clips por asignatura. Separarlas no es cosmetico: agregar una
+# asignatura nueva NO obliga a regenerar las anteriores, y regenerar una no arriesga
+# las otras. El juego carga los dos manifiestos y los fusiona.
+ASIGS = {
+    "mat3":  {"banco": "matematicas-3basico", "oa": "MA03", "caps": "mat3-"},
+    "hist3": {"banco": "historia-3basico",    "oa": "HI03", "caps": "hist3-"},
+}
+ASIG = "mat3"
+for _a in sys.argv[1:]:
+    if _a in ASIGS:
+        ASIG = _a
+_CFG = ASIGS[ASIG]
+BANCO = RAIZ / "contenido" / _CFG["banco"] / "preguntas.json"
+SALIDA = RAIZ / "assets" / "voz" / ASIG
 MANIFIESTO = SALIDA / "manifiesto.json"
 # La clave puede estar en varios lugares: el escritorio de Windows se llama "Desktop"
 # en disco aunque se muestre como "Escritorio", y con OneDrive activo vive dentro de
@@ -82,16 +105,22 @@ def textos():
 
     h = io.open(JUEGO, encoding="utf-8").read()
     ini = h.index("const META_OA=")
-    for m in re.findall(r"'MA03 OA \d\d':'([^']*)'", h[ini:h.index("};", ini)]):
+    for m in re.findall(r"'%s OA \d\d':'([^']*)'" % _CFG["oa"], h[ini:h.index("};", ini)]):
         pares.append((m, _nv.normalizar(m)))
     # Los nombres de etapa llevan emoji decorativo, y el sintetizador los lee por su
     # nombre Unicode: "⚡ JEFE" sonaba "ALTO VOLTAJE jefe". Aqui el emoji no aporta
     # nada hablado (es adorno de pantalla), asi que se quita antes de sintetizar.
     adorno = re.compile("[\U0001F300-\U0001FAFF☀-➿⬀-⯿️⚡]")
     bloque = h[h.index("const EXPEDICIONES="):h.index("const CAMPAÑAS=")]
-    for m in re.findall(r'nombre:"([^"]*)"', bloque):
-        limpio = adorno.sub("", m).strip()
-        pares.append((m, _nv.normalizar(limpio)))
+    # Las expediciones de las DOS asignaturas viven en el mismo arreglo, asi que hay
+    # que quedarse solo con las de esta: si no, generar Historia volveria a pagar
+    # todos los nombres de etapa de Matematica.
+    for trozo in bloque.split("id:'")[1:]:
+        if not trozo.startswith(_CFG["caps"]):
+            continue
+        for m in re.findall(r'nombre:"([^"]*)"', trozo):
+            limpio = adorno.sub("", m).strip()
+            pares.append((m, _nv.normalizar(limpio)))
     for m in ["¡Nivel superado!", "¿Cómo te fue?", "Lo que vas a aprender",
               "¡Muy bien!", "Inténtalo de nuevo", "Casi lo logras"]:
         pares.append((m, m))

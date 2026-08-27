@@ -253,6 +253,14 @@ nodo del mapa recibe el clic en su `.orb`, no en el `div`; y las tarjetas de cam
   `reloj`, `barras`, `cuerpo` (Matemática) y `cuadricula`, `globo`, `zonas`, `linea`
   (Historia). Regla al agregar uno: **no puede delatar la respuesta**, y su descripción para
   lector de pantalla tampoco (dice "una línea marcada", nunca cómo se llama).
+- **La voz pregrabada va por asignatura, una carpeta cada una** (`assets/voz/mat3/`,
+  `assets/voz/hist3/`), y el juego **carga y fusiona los dos manifiestos**. Separarlas
+  evita volver a pagar Azure por lo ya generado al agregar una asignatura. El generador
+  recibe la asignatura como primer argumento (`python scripts/generar-voz-3ro.py hist3`).
+  ⚠️ **Gotcha caro:** el manifiesto se indexa por el texto **mostrado**, así que cambiar
+  `normalizar-voz-3ro.py` —o sea cambiar cómo se PRONUNCIA algo— **no invalida ningún
+  clip**: los viejos siguen sonando como antes, en silencio. Hay que borrarlos del
+  manifiesto a mano y regenerarlos.
 - **La identidad en línea también está separada** (Sesión 58). 3° crea su cliente de Supabase con
   `storageKey:'kimun-3ro'`, el mismo patrón que ya usaba `profesor.html`. Sin eso, 3° y 8° eran el
   **mismo usuario anónimo**: el mismo perfil, el mismo XP en el ranking y el mismo vínculo con un
@@ -334,6 +342,9 @@ para siempre.
   semanas pasadas.
 - Retención de 2 años, limpiada por el mismo trabajo.
 - Es la base del informe semanal por correo, que se diseñará aparte.
+- **Para aplicarla, pegar `supabase/aplicar-foto-semanal.sql`** (Sesión 60): habilita
+  `pg_cron`, agenda el trabajo y se verifica solo, devolviendo 4 filas que deben decir
+  `ok`. Existe justamente para que el guard de abajo no pueda morder.
 - El guard de `pg_cron` **falla en silencio**: si la extensión no está habilitada,
   el `raise notice` no se ve en el panel de Supabase, el pegado termina "sin
   errores" y el trabajo queda sin agendar. Por eso, después de pegar el archivo,
@@ -3614,3 +3625,67 @@ ninguno; los descartes quedaron comentados en el código para que nadie los "com
   480 preguntas; y **re-aplicar el esquema**.
 - Diseño: `docs/superpowers/specs/2026-08-26-historia-3basico-design.md`. Plan de 6 fases:
   `docs/superpowers/plans/2026-08-26-historia-3basico.md`.
+
+### Sesión 60 (2026-08-26) — La voz de Historia 3° y la foto semanal en un solo pegado
+Dos encargos de Roberto: aplicar la foto semanal y generar la voz de Historia de 3°.
+
+- **La foto semanal NO la aplicó el asistente, y no por prudencia sino por imposibilidad:**
+  no hay `psql` ni CLI de Supabase en el equipo, y la única credencial del proyecto es la
+  clave pública, que por diseño no toca la estructura. Lo que sí se hizo fue convertir los
+  seis pasos del runbook en **un solo pegado**, `supabase/aplicar-foto-semanal.sql`, que
+  habilita `pg_cron`, agenda el trabajo y **se verifica solo** (4 filas que deben decir
+  `ok`). La diferencia es de fondo: el bloque que agenda vive dentro de `schema.sql` y
+  **falla en silencio** cuando la extensión no está habilitada —a propósito, para que una
+  migración nunca aborte a medias—, y eso es exactamente por lo que esto llevaba meses sin
+  quedar hecho sin que nadie viera un error. El archivo nuevo habilita la extensión
+  **antes** de agendar, así que ese caso no puede ocurrir. El runbook quedó con el camino
+  corto arriba y el largo como referencia.
+- **Voz de Historia 3°: 2.287 clips, 36,8 MB, US$0,96.** Cobertura verificada contra el
+  banco (los 480 enunciados y sus 1.920 opciones tienen clip y el archivo existe) y
+  recorrido real en el navegador con `cdp.mjs`: enunciado y 4 opciones resuelven a un
+  archivo que responde 200, sin reloj, consola limpia y cero 404.
+- **Una carpeta de clips por asignatura** (`assets/voz/mat3/`, `assets/voz/hist3/`) y el
+  juego **fusiona los dos manifiestos**, guardando la ruta completa en vez del nombre. Así
+  agregar Historia no obligó a regenerar —ni volver a pagar— los 1.987 de Matemática. El
+  generador y el auditor reciben la asignatura como primer argumento.
+
+**Los dos defectos que aparecieron, y el método que los encontró.** Ninguno se ve leyendo
+el texto normalizado: los dos salieron de **escuchar** (449 clips transcritos con el
+reconocimiento de voz de Azure, ~US$0,45).
+1. **Las coordenadas.** Una opción que es solo `(A, 2)` se pronunciaba *"a, dos"* y
+   `(D, 3)` *"de, tres"*: la letra suena igual que una preposición, y en Historia hay
+   opciones que son **solo** la coordenada, así que el niño que escucha no tenía cómo
+   distinguirlas. Ahora dice **"columna B, fila 3"**, que además es como lo declara el
+   enunciado del banco y como lo diría un profesor. Se detectó **antes** de generar, al
+   revisar qué iba a decir el sintetizador en los 35 textos que el normalizador toca.
+2. **`I, V y X`** en *"Los números I, V y X que a veces vemos en los relojes son…"* se
+   sintetizaba corrido y volvía como `YVYX`. Y es justo la pregunta cuya respuesta es
+   "romanos". La regla nueva nombra cada letra de una **lista** de letras sueltas
+   ("i, ve y equis", "a, be, ce"), y solo listas: una letra sola casi siempre es una
+   coordenada ("columna A") y se pronuncia bien tal cual. Verificado que no toca
+   "rayos X" ni "la letra X".
+
+> **Gotcha caro y nuevo: cambiar `normalizar-voz-3ro.py` no invalida ningún clip.** El
+> manifiesto se indexa por el texto **mostrado**, así que cambiar cómo se PRONUNCIA algo
+> deja los MP3 viejos sonando como antes, en silencio. Hay que borrarlos del manifiesto a
+> mano. Por eso los 29 clips de coordenadas de Matemática se retiraron y regeneraron
+> explícitamente; si no, Matemática habría quedado con la pronunciación vieja y Historia
+> con la nueva, sin ninguna señal.
+
+> **Límite del método, dicho porque importa:** el transcriptor **no sirve para juzgar
+> nombres de letras** — convierte "a, be, ce" de vuelta en "a bi c". O sea que el clip de
+> los números romanos quedó **sin verificar**, y se dejó anotado para que Roberto lo
+> escuche. Es la contracara de la herramienta: caza patrones sistemáticos, no todo.
+
+- **Error propio registrado:** al re-auditar se olvidó el `--muestra=` y el auditor arrancó
+  a transcribir los 2.287 clips; alcanzó 449 antes de que un `head` cortara la tubería y lo
+  matara. Unos 20 centavos de más y la evidencia extra quedó guardada, pero es plata de
+  Roberto: el auditor gasta **siempre**, y hay que pasarle la muestra a propósito.
+- **`--muestra=N` (nuevo en el auditor):** audita primero los clips cuyo texto hablado
+  difiere del mostrado —los únicos que el normalizador pudo estropear— y rellena al azar.
+  Un defecto que afecte al 2% de los clips (como el "enero" de la Sesión 56, 43 de 1.987)
+  aparece en una muestra de 200 con ~99% de probabilidad, por US$0,20 en vez de US$2.
+- **Pendiente de Roberto:** pegar `aplicar-foto-semanal.sql`; escuchar el clip de los
+  números romanos; y lo de arrastre (re-aplicar `schema.sql` con `HI03`, arte de los 5
+  capítulos y de "El Olvido", aprobación pedagógica de las 480 preguntas de Historia y las
+  792 de Matemática, INAPI, la SpA, el enlace de agenda de la landing).

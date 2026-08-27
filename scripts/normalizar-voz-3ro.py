@@ -81,6 +81,13 @@ _UNIDADES = [(r"(\d+)\s*cm\b", "centimetro"),
 
 _OA_HORA = {"MA03 OA 18", "MA03 OA 20"}     # ahi ":" es hora, no division
 
+# Nombre hablado de cada letra, para las listas de letras sueltas (ver `normalizar`).
+_LETRA = {"A": "a", "B": "be", "C": "ce", "D": "de", "E": "e", "F": "efe", "G": "ge",
+          "H": "hache", "I": "i", "J": "jota", "K": "ka", "L": "ele", "M": "eme",
+          "N": "ene", "O": "o", "P": "pe", "Q": "cu", "R": "erre", "S": "ese",
+          "T": "te", "U": "u", "V": "ve", "W": "doble ve", "X": "equis", "Y": "ye",
+          "Z": "zeta"}
+
 
 def _fraccion(m):
     a, b = int(m.group(1)), int(m.group(2))
@@ -186,8 +193,23 @@ def normalizar(texto, oa=""):
     t = re.sub(r"\$\s*(\d{1,3}(?:\.\d{3})*)", r"\1 pesos", t)
     t = re.sub(r"(\d)\s*[º°]", r"\1 grados", t)
 
-    # Coordenadas de cuadricula: (C, 6) -> "C, 6"
-    t = re.sub(r"\(\s*([A-Z])\s*,\s*(\d+)\s*\)", lambda m: "%s, %s" % (m.group(1), m.group(2)), t)
+    # Una LISTA de letras sueltas ("los numeros I, V y X", "las letras A, B, C") se
+    # sintetiza corrida y sale ininteligible: verificado transcribiendo el audio, "I, V
+    # y X" volvio como "YVYX". Y es justo la pregunta cuya respuesta es "romanos", o sea
+    # que el nino que escucha se queda sin nada. Nombrar cada letra lo resuelve y es como
+    # las lee un profesor. Solo listas: una letra sola casi siempre es una coordenada
+    # ("columna A"), que se pronuncia bien tal cual.
+    t = re.sub(r"(?<![\(\w])([A-Z])((?:\s*,\s*[A-Z])+(?:\s+y\s+[A-Z])?|(?:\s+y\s+[A-Z]))(?![\w\)])",
+               lambda m: re.sub(r"[A-Z]", lambda l: _LETRA.get(l.group(0), l.group(0)),
+                                m.group(0)), t)
+
+    # Coordenadas de cuadricula: (C, 6) -> "columna C, fila 6".
+    # Decir solo la letra no sirve: "(D, 3)" suena "DE, tres" y "(A, 2)" suena "A dos",
+    # o sea igual que una preposicion, y en Historia hay opciones que son SOLO la
+    # coordenada — el nino que escucha no tendria como distinguirlas. Nombrar columna y
+    # fila es ademas como lo dice el enunciado del banco y como lo diria un profesor.
+    t = re.sub(r"\(\s*([A-Z])\s*,\s*(\d+)\s*\)",
+               lambda m: "columna %s, fila %s" % (m.group(1), m.group(2)), t)
 
     for rx, palabra in _UNIDADES:
         t = re.sub(rx, lambda m, w=palabra: _unidad(m, w), t)

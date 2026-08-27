@@ -21,12 +21,17 @@ from concurrent.futures import ThreadPoolExecutor
 import requests, imageio_ffmpeg
 
 RAIZ = Path(__file__).resolve().parent.parent
-S = RAIZ / "assets" / "voz" / "mat3"
+ASIGS = {"mat3": "matematicas-3basico", "hist3": "historia-3basico"}
+ASIG = next((a for a in sys.argv[1:] if a in ASIGS), "mat3")
+S = RAIZ / "assets" / "voz" / ASIG
 MANIFIESTO = S / "manifiesto.json"
 # La transcripcion SI se versiona (son ~120 KB): es la evidencia de como suena cada
 # clip, y permite revisar un cambio del banco sin volver a pagar el reconocimiento.
-SALIDA = RAIZ / "dev" / "auditoria-voz-3ro.json"
-BANCO = RAIZ / "contenido" / "matematicas-3basico" / "preguntas.json"
+# Matematica conserva el nombre historico del archivo: renombrarlo dejaria huerfana la
+# evidencia ya pagada de sus 1.987 clips.
+SALIDA = RAIZ / "dev" / ("auditoria-voz-3ro.json" if ASIG == "mat3"
+                         else "auditoria-voz-%s.json" % ASIG)
+BANCO = RAIZ / "contenido" / ASIGS[ASIG] / "preguntas.json"
 CAND = [Path.home()/"OneDrive"/"Escritorio"/"azure-tts.txt",
         Path.home()/"OneDrive"/"Desktop"/"azure-tts.txt",
         Path.home()/"Escritorio"/"azure-tts.txt",
@@ -92,6 +97,22 @@ def main():
     if "--informe" not in sys.argv:
         clave, region = credenciales()
         faltan = [t for t in M if t not in hecho]
+        # --muestra N: auditar solo una parte. Sirve cuando el banco es textualmente
+        # limpio y lo que se busca es un patron SISTEMATICO, no un clip suelto: un
+        # defecto que afecte al 2% de los clips (como el "enero" de Matematica, 43 de
+        # 1.987) aparece en una muestra de 200 con ~99% de probabilidad, por US$0,20 en
+        # vez de US$2. Van primero los clips cuyo texto HABLADO difiere del mostrado,
+        # que son los unicos que el normalizador pudo haber estropeado.
+        n = next((int(a.split("=")[1]) for a in sys.argv if a.startswith("--muestra=")), 0)
+        if n and len(faltan) > n:
+            import random
+            riesgo = [t for t in faltan
+                      if _nv.normalizar(t, oa_de.get(t.strip(), "")).strip() != t.strip()]
+            resto = [t for t in faltan if t not in set(riesgo)]
+            random.Random(42).shuffle(resto)
+            faltan = (riesgo + resto)[:max(n, len(riesgo))]
+            print("muestra: %d de %d clips (incluye los %d de mayor riesgo)"
+                  % (len(faltan), len(M), len(riesgo)))
         print("clips: %d | ya auditados: %d | faltan: %d" % (len(M), len(hecho), len(faltan)))
         def uno(t):
             return t, transcribir(S / M[t], clave, region)
