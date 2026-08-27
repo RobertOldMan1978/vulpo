@@ -41,6 +41,8 @@ JUEGO = RAIZ / "3ro" / "index.html"
 ASIGS = {
     "mat3":  {"banco": "matematicas-3basico", "oa": "MA03", "caps": "mat3-"},
     "hist3": {"banco": "historia-3basico",    "oa": "HI03", "caps": "hist3-"},
+    "cie3":  {"banco": "ciencias-3basico",    "oa": "CN03", "caps": "cie3-"},
+    "len3":  {"banco": "lenguaje-3basico",    "oa": "LE03", "caps": "len3-"},
 }
 ASIG = "mat3"
 for _a in sys.argv[1:]:

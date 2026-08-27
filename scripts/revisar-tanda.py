@@ -18,7 +18,7 @@ Qué mira:
 - Duplicados de enunciado dentro de la tanda y entre tandas.
 - OA declarado igual en todas, e ids únicos y correlativos.
 """
-import io, json, sys, glob, unicodedata
+import io, json, re, sys, glob, unicodedata
 from difflib import SequenceMatcher
 from collections import Counter
 
@@ -54,6 +54,25 @@ def revisar(ruta, vistos):
         if not isinstance(ok, int) or not 0 <= ok < 4:
             fallas.append("%s: 'correcta' fuera de rango" % pid); continue
         pos[ok] += 1
+        # El tip NO puede referirse a la POSICION de una opcion: las tandas se escriben
+        # con la correcta primera y el consolidador las baraja, asi que "solo la primera
+        # lleva signos de interrogacion" queda contradiciendo la pantalla. Paso de verdad
+        # (len3-oa01-14) y no se ve leyendo la tanda, porque ahi todavia es cierto.
+        # Lo que delata el defecto es que la posicion vaya seguida de un VERBO ("la
+        # primera LLEVA signos"): ahi el sujeto es la opcion. Si va seguida de un
+        # sustantivo ("la primera oracion", "la ultima letra") esta anclada al texto y
+        # es legitima. Excluir por lista de sustantivos daba 35 falsos positivos de 36,
+        # y una comprobacion que acusa lo correcto entrena a ignorar el informe.
+        if re.search(r"(la|el)\s+(primera?|segunda?|tercera?|cuarta?|[uú]ltima?)\s+"
+                     r"(es|son|est[aá]|est[aá]n|lleva|llevan|dice|dicen|tiene|tienen|"
+                     r"va|van|muestra|muestran|corresponde|corresponden|indica|se[nñ]ala|"
+                     r"sirve|queda|quedan|responde|contiene)",
+                     (p.get("tip") or ""), re.IGNORECASE):
+            # AVISO y no error: un chequeo lexico no puede distinguir "la primera
+            # LLEVA signos" (la opcion) de "si la primera ES igual" (la letra). Marca
+            # 3 en los cuatro bancos y solo 1 es real; es un puntero, no un veredicto.
+            avisos.append("%s: el tip dice 'la primera/última…' — revisa que NO se "
+                          "refiera a una opción, porque el barajado la mueve" % pid)
         if not (p.get("tip") or "").strip():
             fallas.append("%s: sin tip" % pid)
         elif pelado(p["tip"]) == pelado(ops[ok]):

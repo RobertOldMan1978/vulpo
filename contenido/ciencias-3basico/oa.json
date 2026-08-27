@@ -1,0 +1,117 @@
+{
+ "asignatura": "Ciencias Naturales",
+ "nivel": "3° básico",
+ "codigo_asignatura": "CN03",
+ "fuente": "Bases Curriculares 1° a 6° básico — MINEDUC",
+ "url_fuente": "https://www.curriculumnacional.cl/curriculum/1o-6o-basico/ciencias-naturales/3-basico",
+ "nota_fidelidad": "Textos transcritos del portal oficial el 2026-08-26 y contrastados con las fichas por OA de la sección Ejes y de Aprendo en Línea. El PDF del Programa de Estudio no se pudo abrir; la estructura de unidades viene de las páginas HTML oficiales de cada unidad, que sí listan sus códigos OA. Validar contra el PDF del MINEDUC antes de publicar material impreso. OJO en el OA 03: el 'y' repetido ('Observar y describir y algunos cambios') ESTÁ ASÍ en el texto oficial, verificado en dos páginas distintas del portal. Es una errata del MINEDUC y se transcribe literal.",
+ "nota_evaluacion": "ADVERTENCIA 1 — OA de conducta: el OA 07 pide 'ejercitar' buenas prácticas de higiene. Un quiz de opción múltiple NO puede medir si un niño se lava las manos: solo si reconoce cuál es la acción correcta. Sus preguntas plantean siempre la situación de otra persona con nombre, nunca la conducta del propio jugador, y el porcentaje del mapa de dominio debe leerse así. Lo mismo, en menor grado, para el OA 05 (proponer acciones y construir instrumentos). ADVERTENCIA 2 — verbos de acción: los OA 01, 09, 10 y 13 dicen 'investigar experimentalmente', 'diseñar y construir'. El banco pregunta por el RESULTADO o el CONCEPTO que el experimento o el modelo explican, nunca por lo que el niño haría o construiría: eso mediría creatividad y recursos del hogar, no ciencia. ADVERTENCIA 3 — habilidades y actitudes fuera del banco: los 6 OAH (a-f, habilidades de investigación) y los 6 OAA (A-F, actitudes) NO se etiquetan ni se miden. Miden desempeño observable (observar, medir con una regla, usar instrumentos 'de forma autónoma') que una pantalla no puede ver, y además sus códigos con letra no calzan con la validación del servidor (^[A-Z]{2}[0-9]{2} OA [0-9]{2}$), así que el backend los descartaría EN SILENCIO. Las habilidades se ejercitan dentro de las preguntas de contenido; simplemente no se miden aparte.",
+ "unidades": [
+  {
+   "id": "U1",
+   "titulo": "La luz y el sonido",
+   "descripcion": "Fuentes de luz naturales y artificiales, cómo se comporta la luz y cómo se comporta el sonido.",
+   "oa": ["CN03 OA 08", "CN03 OA 09", "CN03 OA 10"]
+  },
+  {
+   "id": "U2",
+   "titulo": "El Sistema Solar",
+   "descripcion": "Los componentes del Sistema Solar, los movimientos de la Tierra y los fenómenos que explican (día y noche, año, fases de la Luna, eclipses).",
+   "oa": ["CN03 OA 11", "CN03 OA 12", "CN03 OA 13"]
+  },
+  {
+   "id": "U3",
+   "titulo": "Importancia de las plantas",
+   "descripcion": "Qué necesitan las plantas, plantas de Chile, su ciclo de vida, para qué sirven y el cuidado de los recursos.",
+   "oa": ["CN03 OA 01", "CN03 OA 02", "CN03 OA 03", "CN03 OA 04", "CN03 OA 05"]
+  },
+  {
+   "id": "U4",
+   "titulo": "Vida saludable",
+   "descripcion": "Clasificación de los alimentos y sus efectos en la salud; higiene en la manipulación de alimentos.",
+   "oa": ["CN03 OA 06", "CN03 OA 07"]
+  }
+ ],
+ "nota_unidades": "El orden de las unidades del Programa NO sigue el orden de los OA: parte por Física (luz y sonido) y deja las plantas en la Unidad 3. Las 4 unidades cubren los 13 OA exactamente una vez cada uno, sin solapamiento. Quedan disparejas a propósito (3-3-5-2): se respeta el corte oficial en vez de inventar uno parejo.",
+ "ejes": [
+  {
+   "nombre": "Ciencias de la Vida",
+   "oa": ["CN03 OA 01", "CN03 OA 02", "CN03 OA 03", "CN03 OA 04", "CN03 OA 05", "CN03 OA 06", "CN03 OA 07"]
+  },
+  {
+   "nombre": "Ciencias Físicas y Químicas",
+   "oa": ["CN03 OA 08", "CN03 OA 09", "CN03 OA 10"]
+  },
+  {
+   "nombre": "Ciencias de la Tierra y el Universo",
+   "oa": ["CN03 OA 11", "CN03 OA 12", "CN03 OA 13"]
+  }
+ ],
+ "oa": [
+  {
+   "codigo": "CN03 OA 01",
+   "eje": "Ciencias de la Vida",
+   "texto": "Observar y describir, por medio de la investigación experimental, las necesidades de las plantas y su relación con la raíz, el tallo y las hojas."
+  },
+  {
+   "codigo": "CN03 OA 02",
+   "eje": "Ciencias de la Vida",
+   "texto": "Observar, registrar e identificar variadas plantas de nuestro país, incluyendo vegetales autóctonos y cultivos principales a nivel nacional y regional."
+  },
+  {
+   "codigo": "CN03 OA 03",
+   "eje": "Ciencias de la Vida",
+   "texto": "Observar y describir y algunos cambios de las plantas con flor durante su ciclo de vida (germinación, crecimiento, reproducción, formación de la flor y del fruto), reconociendo la importancia de la polinización y de la dispersión de la semilla."
+  },
+  {
+   "codigo": "CN03 OA 04",
+   "eje": "Ciencias de la Vida",
+   "texto": "Describir la importancia de las plantas para los seres vivos, el ser humano y el medio ambiente (por ejemplo: alimentación, aire para respirar, productos derivados, ornamentación, uso medicinal) proponiendo y comunicando medidas de cuidado."
+  },
+  {
+   "codigo": "CN03 OA 05",
+   "eje": "Ciencias de la Vida",
+   "texto": "Explicar la importancia de usar adecuadamente los recursos, proponiendo acciones y construyendo instrumentos tecnológicos para reutilizarlos, reducirlos y reciclarlos en la casa y en la escuela."
+  },
+  {
+   "codigo": "CN03 OA 06",
+   "eje": "Ciencias de la Vida",
+   "texto": "Clasificar los alimentos, distinguiendo sus efectos sobre la salud y proponer hábitos alimenticios saludables."
+  },
+  {
+   "codigo": "CN03 OA 07",
+   "eje": "Ciencias de la Vida",
+   "texto": "Proponer, comunicar y ejercitar buenas prácticas de higiene en la manipulación de alimentos para prevenir enfermedades."
+  },
+  {
+   "codigo": "CN03 OA 08",
+   "eje": "Ciencias Físicas y Químicas",
+   "texto": "Distinguir fuentes naturales y artificiales de luz, como el Sol, las ampolletas y el fuego, entre otras."
+  },
+  {
+   "codigo": "CN03 OA 09",
+   "eje": "Ciencias Físicas y Químicas",
+   "texto": "Investigar experimentalmente y explicar algunas características de la luz; por ejemplo: viaja en línea recta, se refleja, puede ser separada en colores."
+  },
+  {
+   "codigo": "CN03 OA 10",
+   "eje": "Ciencias Físicas y Químicas",
+   "texto": "Investigar experimentalmente y explicar las características del sonido; por ejemplo: viaja en todas las direcciones, se absorbe o se refleja, se transmite por medio de distintos materiales, tiene tono e intensidad."
+  },
+  {
+   "codigo": "CN03 OA 11",
+   "eje": "Ciencias de la Tierra y el Universo",
+   "texto": "Describir las características de algunos de los componentes del Sistema Solar (Sol, planetas, lunas, cometas y asteroides) en relación con su tamaño, localización, apariencia y distancia relativa a la Tierra, entre otros."
+  },
+  {
+   "codigo": "CN03 OA 12",
+   "eje": "Ciencias de la Tierra y el Universo",
+   "texto": "Explicar, por medio de modelos, los movimientos de rotación y traslación, considerando sus efectos en la Tierra."
+  },
+  {
+   "codigo": "CN03 OA 13",
+   "eje": "Ciencias de la Tierra y el Universo",
+   "texto": "Diseñar y construir modelos tecnológicos para explicar eventos del sistema solar, como la sucesión de las fases de la Luna y los eclipses de Luna y de Sol, entre otros."
+  }
+ ]
+}

@@ -240,21 +240,78 @@ nodo del mapa recibe el clic en su `.orb`, no en el `div`; y las tarjetas de cam
   pedía 7 archivos inexistentes (**404 verificados**; el `onerror` los tapaba a la vista, no en
   la red). `portadaMapa` usa `exp.portadaMapa || exp.portada`. Cuando exista el arte de un
   capítulo, se le agrega `portadaMapa:'…'`.
-- **3° tiene dos asignaturas: Matemática (`MA03`) e Historia (`HI03`).** Historia son 16 OA
-  en 5 capítulos que siguen las **unidades oficiales del Programa de Estudio**, no un corte
-  inventado. Su banco (480 preguntas) nace `revisada:false`. Cuatro de sus OA (11, 12, 13 y
+- **3° tiene sus cuatro asignaturas: Matemática (`MA03`, 26 OA / 792), Historia (`HI03`,
+  16 / 480), Ciencias Naturales (`CN03`, 13 / 390) y Lenguaje (`LE03`, 30 / 896).** Los
+  cuatro bancos nacen `revisada:false`.
+  - **Ciencias** son 4 capítulos = las **4 unidades oficiales** del Programa, y quedan
+    disparejas a propósito (3-3-5-2): el Programa parte por Física y deja las plantas en la
+    unidad 3. Sus **6 OAH (habilidades) y 6 OAA (actitudes) quedan FUERA del banco**: miden
+    desempeño observable que una pantalla no ve, y además sus códigos con letra
+    (`CN03 OAH a`) **no calzan** con la validación del servidor, así que el backend los
+    descartaría en silencio. Cuidados de precisión: `docs/cuidados-ciencias-3basico.md`.
+  - **Lenguaje** es la asignatura menos evaluable por quiz de todo el proyecto: **17 de sus
+    31 OA son de producción o de hábito**. Sus capítulos **NO siguen las unidades** del
+    Programa —que no tienen nombre temático, reparten el mismo OA en varias y hasta parten
+    OA por dentro—, sino temas reconocibles para un niño; los nombres son del juego y así
+    queda dicho en su `oa.json`. El **`LE03 OA 16` ("escribir con letra clara") está
+    EXCLUIDO del banco**: es caligrafía manuscrita y no admite ninguna pregunta honesta.
+    Qué se puede preguntar de cada OA: `docs/cuidados-lenguaje-3basico.md`.
+  - Historia son 16 OA en 5 capítulos que siguen las **unidades oficiales del Programa de
+    Estudio**, no un corte inventado. Cuatro de sus OA (11, 12, 13 y
   16) son **actitudinales** —"asumir", "mostrar actitudes", "mantener una conducta",
   "participar"—: un quiz no puede medir conducta, solo si el niño **reconoce** la acción
-  correcta, y por eso sus preguntas plantean siempre la situación de otra persona. La
-  advertencia está escrita en `contenido/historia-3basico/oa.json` (`nota_evaluacion`),
-  porque el mapa de dominio va a mostrar un porcentaje junto a "conducta honesta" y eso se
-  puede leer como una nota de conducta.
+    correcta, y por eso sus preguntas plantean siempre la situación de otra persona. La
+    advertencia está escrita en `contenido/historia-3basico/oa.json` (`nota_evaluacion`),
+    porque el mapa de dominio va a mostrar un porcentaje junto a "conducta honesta" y eso
+    se puede leer como una nota de conducta. La **misma regla vale en Ciencias** (OA 07,
+    higiene) y en **Lenguaje** (OA 01, 07, 08, 25, 26, 27, 28, 30 y 31).
 - **Los dibujos de 3° son once**, todos por código: `contar`, `agrupar`, `fraccion`, `recta`,
   `reloj`, `barras`, `cuerpo` (Matemática) y `cuadricula`, `globo`, `zonas`, `linea`
-  (Historia). Regla al agregar uno: **no puede delatar la respuesta**, y su descripción para
+  (Historia). **Ciencias y Lenguaje no tienen ninguno**: se les pidió a los redactores que
+  NO pusieran `visual` y que en cambio dijeran cuáles lo pedirían, y la respuesta más
+  repetida fue que el dibujo útil estaba a un paso de delatar la clave. El catálogo de
+  candidatos quedó en los informes de esos agentes. Regla al agregar uno: **no puede delatar la respuesta**, y su descripción para
   lector de pantalla tampoco (dice "una línea marcada", nunca cómo se llama).
+- **Al agregar una asignatura a 3°, revisar qué cableado de 8° hereda.** `3ro/index.html`
+  es un FORK, y el fork trae rutas que en 3° no existen. Pasó dos veces: en la Sesión 54
+  `renderExpediciones` crasheaba por buscar la campaña de lecciones de 8°, y en la Sesión
+  61 **tocar Lenguaje abría el landing "Campaña + Vocabulario" de 8°** — en 3° no hay
+  Vocabulario, así que la asignatura entera era inalcanzable. Lo delató jugar la pantalla,
+  no leer el código.
+- **Escribir el banco con agentes: el estándar vive en `docs/encargo-banco-3basico.md`**,
+  y las trampas propias de cada asignatura en `docs/cuidados-<asignatura>-3basico.md`. El
+  agente lee esos archivos; el encargo por agente son 6 líneas. Sirve además como criterio
+  de revisión después. **Validar el estándar con las primeras tandas antes de escalar:**
+  descubrir un defecto del encargo con 13 tandas escritas cuesta la mitad que con 43.
+- **Un OA que no admite pregunta honesta se deja FUERA del banco.** `LE03 OA 16`
+  ("escribir con letra clara") es caligrafía manuscrita: no hay versión preguntable, y se
+  documenta en su `oa.json` en vez de inventar un ítem que finja medirlo. A los agentes se
+  les pide explícitamente entregar **menos preguntas** antes que rellenar; el OA 07 de
+  Lenguaje entregó 26 de 30 y explicó por qué.
+- **`scripts/auditar-audible-3ro.py` — preguntas que no se pueden responder ESCUCHANDO.**
+  3° lee en voz alta y quien usa ese botón es el que peor lee. Una pregunta cuyas opciones
+  son *"Había / Havía / Abia / Habia"* tiene el JSON perfecto y es irresoluble por el oído.
+  El chequeo compara lo que se **pronuncia** (pasa por el normalizador de voz) y aplica la
+  fonética del español de Chile (hache muda, be=ve, seseo, yeísmo, ge/je). **Cuidados
+  aprendidos armándolo:** comparar el texto crudo acusa `15 + 9` contra `15 - 9`, que
+  suenan clarísimo distinto; y una **letra sola** se pronuncia por su nombre ("la ese",
+  "la zeta"), así que no se le aplica la fonética.
+  ⚠️ **No cubre** el caso en que la respuesta depende de ver la grafía sin que las opciones
+  sean homófonas (*"¿cuál se escribe con jota: girasol, gente, jirafa, gigante?"*). Eso hay
+  que cazarlo leyendo. Las dos vías se complementan.
+- **El `tip` NO puede nombrar la posición de una opción.** Las tandas se escriben con la
+  correcta primera y el consolidador **baraja**, así que *"solo la primera lleva signos de
+  interrogación"* termina contradiciendo la pantalla. No se ve revisando la tanda, porque
+  ahí todavía es cierto. `revisar-tanda.py` lo avisa (es aviso y no error: un chequeo
+  léxico no distingue "la primera **lleva**" —la opción— de "si la primera **es** igual"
+  —la letra—; marca 3 en los cuatro bancos y solo 1 es real).
+- **La voz se genera DESPUÉS de auditar, nunca en paralelo.** Cada texto corregido obliga a
+  regenerar su clip y a pagarlo de nuevo, y deja huérfano el anterior. En la Sesión 61 se
+  lanzó la voz de Ciencias junto con sus auditorías y hubo que rehacer los textos de 20
+  preguntas.
 - **La voz pregrabada va por asignatura, una carpeta cada una** (`assets/voz/mat3/`,
-  `assets/voz/hist3/`), y el juego **carga y fusiona los dos manifiestos**. Separarlas
+  `assets/voz/hist3/`, `assets/voz/cie3/`, `assets/voz/len3/`), y el juego **carga y fusiona
+  los manifiestos**. Separarlas
   evita volver a pagar Azure por lo ya generado al agregar una asignatura. El generador
   recibe la asignatura como primer argumento (`python scripts/generar-voz-3ro.py hist3`).
   ⚠️ **Gotcha caro:** el manifiesto se indexa por el texto **mostrado**, así que cambiar
@@ -3689,3 +3746,82 @@ reconocimiento de voz de Azure, ~US$0,45).
   números romanos; y lo de arrastre (re-aplicar `schema.sql` con `HI03`, arte de los 5
   capítulos y de "El Olvido", aprobación pedagógica de las 480 preguntas de Historia y las
   792 de Matemática, INAPI, la SpA, el enlace de agenda de la landing).
+
+### Sesión 61 (2026-08-27) — Ciencias y Lenguaje de 3° básico: 1.286 preguntas y su voz
+3° básico pasa de dos asignaturas a **las cuatro**. Se hizo con `/loop`, autopautado, con
+**43 agentes redactores** y **5 auditores**, siguiendo el flujo currículum oficial →
+estándar escrito → banco → validación → campaña → auditoría → corrección → voz.
+
+- **El currículum, antes que nada.** Dos investigadores transcribieron los OA oficiales
+  contrastando dos fuentes del portal del MINEDUC. Ciencias son **13 OA** en 4 unidades;
+  Lenguaje son **31** (no 30, como yo suponía). Detalle en "Gotchas de 3° básico".
+- **Dos hallazgos que cambiaron el alcance antes de escribir una sola pregunta:** en
+  Lenguaje **17 de los 31 OA son de producción o de hábito**, y el **OA 16 no admite
+  ninguna pregunta honesta** (es caligrafía manuscrita), así que se excluyó del banco en
+  vez de inventar un ítem que fingiera medirlo. En Ciencias quedaron fuera los 6 OAH y los
+  6 OAA, que además el backend habría descartado en silencio por el formato de su código.
+- **`docs/encargo-banco-3basico.md` (nuevo): el estándar del banco de 3°.** Cada regla
+  nació de un defecto real de Matemática o Historia. El agente lo lee y el encargo por
+  agente son 6 líneas. Se **validó con las primeras 13 tandas antes de escalar a 43**:
+  descubrir un defecto del encargo con 13 escritas cuesta la mitad que con 43.
+- **`docs/cuidados-ciencias-3basico.md` y `docs/cuidados-lenguaje-3basico.md` (nuevos):**
+  las 15 trampas de precisión científica y qué se puede preguntar de verdad en cada OA de
+  Lenguaje. Sirven para escribir y para revisar.
+- **Resultado:** Ciencias 390 preguntas en 4 capítulos (villano "El Apagón") y Lenguaje 896
+  en 9 capítulos (villano "El Borrón"), más 43 metas en lenguaje de niño, `LE03`/`CN03`
+  registrados en el servidor y el panel, y **6.279 clips de voz** nuevos. Verificado
+  jugando las cuatro asignaturas: sin errores de consola y sin un solo 404.
+
+**Las auditorías: 42 preguntas corregidas, ninguna clave equivocada.** Lo valioso no fue el
+recuento sino el tipo de defecto:
+- **Un error científico** que solo vio uno de los tres auditores: las manchas de colores de
+  un charco con aceite **no son dispersión** sino interferencia, y el `tip` enseñaba que
+  funcionan "igual que un prisma".
+- **Un sesgo que no se ve pregunta por pregunta sino mirando el patrón:** palta y almendras
+  como modelo de colación saludable y la sopaipilla como ejemplo de consumo ocasional.
+  Ninguna es culposa sola; juntas le dicen a un niño cuya colación es pan que lo suyo es lo
+  ocasional. Cambiado a maní.
+- **Dos auditores convergieron por separado** en el mismo ítem (el incendio forestal como
+  "fuego natural"), pero el segundo aportó el argumento decisivo: **contradecía a otras dos
+  preguntas del propio banco**, donde "natural porque su llama es fuego" está marcada
+  incorrecta para la vela. El niño que aplicaba la regla recién aprendida quedaba castigado.
+- **Contenido de 7°-8° metido en 3°:** ordenar la rapidez del sonido en sólido, líquido y
+  gas no se puede observar a esa edad, solo memorizar.
+- **Un duplicado literal entre dos OA** (misma oración, misma clave), que el consolidador
+  habría descartado en silencio dejando ese OA con 29 preguntas.
+- **Solapamiento entre objetivos** en Lenguaje (OA 10/19/29, 13/18, 18/22): dos OA medidos
+  con preguntas equivalentes. Se corrigió lo peor; **el resto queda anotado como límite
+  conocido**, porque deshacerlo del todo es rehacer decenas de ítems.
+
+**Lo que este proyecto aprendió sobre escribir para una voz** (ver "Gotchas de 3° básico"):
+- **`scripts/auditar-audible-3ro.py` (nuevo):** caza preguntas que **no se pueden responder
+  escuchando**. Armarlo enseñó tres cosas: comparar el texto crudo acusa `15 + 9` contra
+  `15 - 9`; hay que aplicar la **fonética del español de Chile** (la hache muda y la be/ve
+  hacían que *"Había / Havía / Abia / Habia"* fueran la misma opción cuatro veces); y una
+  **letra sola** se pronuncia por su nombre, así que no se le aplica esa fonética.
+- **17 preguntas reescritas para que funcionen igual leídas que escuchadas**, nombrando el
+  defecto en el enunciado en vez de mostrarlo. Una de ellas **la voz la regalaba**:
+  preguntaba cuál oración se lee con entonación de pregunta, y el sintetizador leía la
+  correcta con entonación de pregunta.
+- **El `tip` no puede nombrar la posición de una opción**, porque el consolidador baraja.
+  `revisar-tanda.py` lo avisa ahora.
+- **Un consolidador único** (`consolidar-pool-3ro.py`) en vez de uno por asignatura. Probado
+  contra Historia: reproduce su banco **byte a byte**.
+
+> **Dos límites del método, dichos porque importan.** El transcriptor de Azure **no sirve
+> para juzgar palabras que no conoce**: quedó sin resolver si la voz pronuncia bien
+> **copihue** (dice algo cercano a "copie", comiéndose el sonido /we/) y hay que
+> escucharlo. Y el chequeo de audibilidad **no cubre** el caso en que la respuesta depende
+> de ver la grafía sin que las opciones sean homófonas (*"¿cuál se escribe con jota?"*):
+> eso lo cazó un auditor leyendo. Las dos vías se complementan.
+
+- **Un bug real corregido:** tocar Lenguaje en 3° abría el landing "Campaña + Vocabulario"
+  heredado de 8°. En 3° no hay Vocabulario, así que **la asignatura entera era
+  inalcanzable**. Es la tercera vez que el fork trae cableado de 8° que en 3° no aplica.
+- **Costo de Azure:** unos **US$5,5** (generación de las dos voces + auditorías por muestra).
+- **Peso:** el audio de 3° suma ya **251 MB** en el repositorio, que iba en 247 MB de `.git`.
+  No bloquea (el límite blando de GitHub es 1 GB), pero conviene saberlo antes del quinto banco.
+- **Pendiente de Roberto:** escuchar el clip de **copihue** (`assets/voz/cie3/acb4dae9f7c13d0e.mp3`);
+  **re-aplicar `supabase/schema.sql`** (ahora con `LE03` y `CN03`, sin eso su dominio no
+  aparece en el panel); y la **aprobación pedagógica** de las 1.286 preguntas nuevas, con
+  los informes en `dev/revision-ciencias-3basico.pdf` y `dev/revision-lenguaje-3basico.pdf`.

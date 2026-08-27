@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "¿Cuál de estas palabras va primero en el diccionario?",
+   "opciones": [
+    "Árbol",
+    "Mesa",
+    "Pato",
+    "Tigre"
+   ],
+   "correcta": 0,
+   "tip": "El diccionario ordena las palabras por su primera letra, siguiendo el abecedario. La a viene antes que la eme, la pe y la te.",
+   "id": "len3-oa11-1"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "¿Cuál de estas palabras va al final en el diccionario?",
+   "opciones": [
+    "Zorro",
+    "Gato",
+    "Lápiz",
+    "Nube"
+   ],
+   "correcta": 0,
+   "tip": "La zeta es la última letra del abecedario, así que las palabras que empiezan con ella quedan al final del diccionario.",
+   "id": "len3-oa11-2"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Estas cuatro palabras empiezan con la misma letra. ¿Cuál va primero en el diccionario?",
+   "opciones": [
+    "Paloma",
+    "Pelota",
+    "Pluma",
+    "Puerta"
+   ],
+   "correcta": 0,
+   "tip": "Cuando la primera letra es igual, se compara la segunda. En paloma la segunda letra es a, y la a va antes que la e, la ele y la u.",
+   "id": "len3-oa11-3"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Ana ordena estas palabras como en el diccionario. ¿Cuál escribe primero?",
+   "opciones": [
+    "Sal",
+    "Ser",
+    "Sol",
+    "Sur"
+   ],
+   "correcta": 0,
+   "tip": "Las cuatro empiezan con ese, así que manda la segunda letra: la a de sal va antes que la e, la o y la u.",
+   "id": "len3-oa11-4"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Estas palabras empiezan con las mismas dos letras. ¿Cuál va primero en el diccionario?",
+   "opciones": [
+    "Caja",
+    "Cama",
+    "Carta",
+    "Casa"
+   ],
+   "correcta": 0,
+   "tip": "Si las dos primeras letras son iguales, se compara la tercera. La jota de caja va antes que la eme, la erre y la ese.",
+   "id": "len3-oa11-5"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Diego ordena estas palabras como en el diccionario. ¿Cuál queda al comienzo?",
+   "opciones": [
+    "Palo",
+    "Pared",
+    "Pasto",
+    "Pato"
+   ],
+   "correcta": 0,
+   "tip": "Todas empiezan con pa, así que decide la tercera letra: la ele de palo va antes que la erre, la ese y la te.",
+   "id": "len3-oa11-6"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Nieve y nube empiezan con las mismas dos letras. ¿Cuál va primero en el diccionario?",
+   "opciones": [
+    "Nieve, porque su segunda letra viene antes",
+    "Nube, porque su segunda letra viene antes",
+    "Nube, porque tiene menos letras que nieve",
+    "Las dos quedan siempre en la misma página"
+   ],
+   "correcta": 0,
+   "tip": "Las dos empiezan con ene, así que decide la segunda letra: la i de nieve va antes que la u de nube.",
+   "id": "len3-oa11-7"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Dos palabras empiezan con la misma letra. ¿Qué hay que mirar para saber cuál va primero?",
+   "opciones": [
+    "La segunda letra de cada palabra",
+    "Cuál de las dos palabras es más larga",
+    "Cuál de las dos palabras es más difícil",
+    "La última letra de cada palabra"
+   ],
+   "correcta": 0,
+   "tip": "El orden alfabético se compara letra por letra desde el comienzo: si la primera es igual, decide la segunda, y si esa también es igual, la tercera.",
+   "id": "len3-oa11-8"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "¿Qué son las palabras guía de un diccionario?",
+   "opciones": [
+    "Las dos palabras que se muestran arriba en cada página",
+    "Las palabras que van escritas con letra más grande",
+    "Las palabras difíciles que se juntan al final del libro",
+    "Las palabras que el profesor pide aprender de memoria"
+   ],
+   "correcta": 0,
+   "tip": "Las palabras guía van arriba de la página y sirven para saber de un vistazo si la palabra que buscas está ahí.",
+   "id": "len3-oa11-9"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "¿Qué indican las palabras guía que aparecen arriba de una página del diccionario?",
+   "opciones": [
+    "La primera y la última palabra de esa página",
+    "Las palabras más largas que hay en esa página",
+    "Las palabras que se repiten más en el diccionario",
+    "La cantidad de palabras que trae esa página"
+   ],
+   "correcta": 0,
+   "tip": "Si la palabra que buscas va entre esas dos en orden alfabético, está en esa página; si no, hay que dar vuelta la hoja.",
+   "id": "len3-oa11-10"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Las palabras guía de una página son manzana y marino. ¿Cuál de estas palabras está en esa página?",
+   "opciones": [
+    "Mapa",
+    "Madera",
+    "Martillo",
+    "Mesa"
+   ],
+   "correcta": 0,
+   "tip": "Mapa va después de manzana y antes de marino, porque la pe está entre la ene y la erre. Las otras tres quedan fuera de ese tramo.",
+   "id": "len3-oa11-11"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Las palabras guía de una página son casa y cerro. ¿Cuál de estas palabras está en esa página?",
+   "opciones": [
+    "Cebolla",
+    "Cama",
+    "Cielo",
+    "Cuna"
+   ],
+   "correcta": 0,
+   "tip": "Cebolla va después de casa y antes de cerro. Cama queda antes de las dos, y cielo y cuna quedan después.",
+   "id": "len3-oa11-12"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Las palabras guía de una página son árbol y avión. ¿Cuál de estas palabras está en esa página?",
+   "opciones": [
+    "Arena",
+    "Abeja",
+    "Ayuda",
+    "Azúcar"
+   ],
+   "correcta": 0,
+   "tip": "Arena va después de árbol y antes de avión. Abeja queda antes de las dos, y ayuda y azúcar quedan después.",
+   "id": "len3-oa11-13"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "En un diccionario, perro está en la página 88 y pluma en la página 92. ¿En qué página podría estar pino?",
+   "opciones": [
+    "En la página 90",
+    "En la página 84",
+    "En la página 95",
+    "En la página 100"
+   ],
+   "correcta": 0,
+   "tip": "Pino va después de perro y antes de pluma en orden alfabético, así que cae entre esas dos páginas.",
+   "id": "len3-oa11-14"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Sofía busca la palabra corrieron en el diccionario y no la encuentra. ¿Qué palabra debería buscar?",
+   "opciones": [
+    "Correr",
+    "Corrió",
+    "Corriendo",
+    "Corredor"
+   ],
+   "correcta": 0,
+   "tip": "Los verbos aparecen en el diccionario sin conjugar, en la forma que termina en ar, er o ir. Corrieron viene de correr.",
+   "id": "len3-oa11-15"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Diego quiere buscar en el diccionario la palabra jugaba. ¿Qué palabra tiene que buscar?",
+   "opciones": [
+    "Jugar",
+    "Jugaban",
+    "Juguete",
+    "Jugador"
+   ],
+   "correcta": 0,
+   "tip": "Las formas conjugadas de un verbo no salen una por una: hay que buscar el verbo sin conjugar, que aquí es jugar.",
+   "id": "len3-oa11-16"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Camila busca la palabra ratones en el diccionario. ¿Qué palabra debería buscar?",
+   "opciones": [
+    "Ratón",
+    "Ratonera",
+    "Ratita",
+    "Ratoncito"
+   ],
+   "correcta": 0,
+   "tip": "El diccionario trae los sustantivos en singular, así que para encontrar un plural hay que buscar la palabra en singular.",
+   "id": "len3-oa11-17"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Matías busca la palabra cariñosas en el diccionario. ¿Qué palabra tiene que buscar?",
+   "opciones": [
+    "Cariñoso",
+    "Cariñosa",
+    "Cariñito",
+    "Cariñosamente"
+   ],
+   "correcta": 0,
+   "tip": "Los adjetivos aparecen en masculino y en singular, así que cariñosas se busca como cariñoso.",
+   "id": "len3-oa11-18"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Sofía leyó: Nos sentamos en un banco de la plaza. ¿Qué significa banco en esa oración?",
+   "opciones": [
+    "Un asiento largo donde caben varias personas",
+    "Un lugar donde las personas guardan su dinero",
+    "Un grupo grande de peces que nadan juntos",
+    "Un montón de arena que se junta en el mar"
+   ],
+   "correcta": 0,
+   "tip": "Una palabra puede tener varios significados en el diccionario. Hay que elegir el que calza con el resto de la oración.",
+   "id": "len3-oa11-19"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Diego leyó: Se rompió una hoja de mi cuaderno. ¿Qué significa hoja en esa oración?",
+   "opciones": [
+    "Una lámina de papel donde se escribe",
+    "La parte verde y plana de una planta",
+    "La parte que corta de un cuchillo",
+    "Cada parte que se abre de una ventana"
+   ],
+   "correcta": 0,
+   "tip": "Las cuatro son significados reales de hoja. El contexto, que habla de un cuaderno, indica cuál corresponde.",
+   "id": "len3-oa11-20"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Ana leyó: Le escribí una carta a mi abuela. ¿Qué significa carta en esa oración?",
+   "opciones": [
+    "Un mensaje escrito que se le envía a alguien",
+    "La lista de comidas que ofrece un restaurante",
+    "Cada uno de los papeles de un juego de naipes",
+    "Un dibujo que muestra las calles de una ciudad"
+   ],
+   "correcta": 0,
+   "tip": "Cuando una palabra tiene varios significados, el diccionario los numera. Se elige el que tiene sentido en la oración.",
+   "id": "len3-oa11-21"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Además del significado, ¿qué información entrega el diccionario sobre una palabra?",
+   "opciones": [
+    "Si es sustantivo, verbo o adjetivo",
+    "Quién fue la persona que la inventó",
+    "Cuántas veces se dice cada día en Chile",
+    "En qué página de un cuento aparece"
+   ],
+   "correcta": 0,
+   "tip": "Junto a cada palabra el diccionario indica de qué tipo es, y muchas veces agrega un ejemplo de cómo se usa.",
+   "id": "len3-oa11-22"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "¿Qué tiene un diccionario ilustrado que los demás no tienen?",
+   "opciones": [
+    "Dibujos que ayudan a entender las palabras",
+    "Las palabras ordenadas de la última a la primera",
+    "Solamente palabras que empiezan con la misma letra",
+    "Cuentos completos entre una palabra y otra"
+   ],
+   "correcta": 0,
+   "tip": "El diccionario ilustrado acompaña muchas palabras con una imagen, lo que ayuda cuando la explicación sola cuesta.",
+   "id": "len3-oa11-23"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "¿Cómo están ordenadas las palabras dentro de un diccionario?",
+   "opciones": [
+    "En orden alfabético, como el abecedario",
+    "De la palabra más corta a la más larga",
+    "De la palabra más fácil a la más difícil",
+    "En el orden en que se fueron inventando"
+   ],
+   "correcta": 0,
+   "tip": "Ese orden es lo que permite encontrar cualquier palabra rápido, sin tener que revisar el libro entero.",
+   "id": "len3-oa11-24"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Ana busca la palabra elefante y el diccionario se le abrió en la palabra mono. ¿Qué le conviene hacer?",
+   "opciones": [
+    "Volver hacia las páginas de más atrás",
+    "Seguir avanzando hacia las páginas siguientes",
+    "Empezar de nuevo desde la última página",
+    "Buscar esa palabra en cualquier otro libro"
+   ],
+   "correcta": 0,
+   "tip": "Elefante va antes que mono en orden alfabético, así que está en una página anterior a la que abrió.",
+   "id": "len3-oa11-25"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Matías busca la palabra zapato y el diccionario se le abrió en la palabra loro. ¿Qué le conviene hacer?",
+   "opciones": [
+    "Seguir avanzando hacia las páginas siguientes",
+    "Volver hacia las páginas de más atrás",
+    "Revisar una por una todas las páginas del libro",
+    "Buscarla en el índice que está al comienzo"
+   ],
+   "correcta": 0,
+   "tip": "Zapato va después que loro en orden alfabético, porque la zeta viene mucho después que la ele.",
+   "id": "len3-oa11-26"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Camila ordena estas palabras como en el diccionario. ¿Cuál queda al final?",
+   "opciones": [
+    "Fruta",
+    "Feria",
+    "Fila",
+    "Flor"
+   ],
+   "correcta": 0,
+   "tip": "Las cuatro empiezan con efe, así que decide la segunda letra: la erre de fruta es la última de las cuatro.",
+   "id": "len3-oa11-27"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "¿Cuál de estas palabras va inmediatamente después de gato en el diccionario?",
+   "opciones": [
+    "Gente",
+    "Globo",
+    "Goma",
+    "Gallo"
+   ],
+   "correcta": 0,
+   "tip": "Gallo va antes que gato. De las que van después, gente es la más cercana, porque la e viene antes que la ele y la o.",
+   "id": "len3-oa11-28"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Sol y solar empiezan igual. ¿Cuál va primero en el diccionario?",
+   "opciones": [
+    "Sol, porque es más corta y termina antes",
+    "Solar, porque tiene más letras que sol",
+    "Solar, porque es una palabra más difícil",
+    "Solar, porque las palabras largas van primero"
+   ],
+   "correcta": 0,
+   "tip": "Cuando una palabra completa es el comienzo de otra más larga, la corta va primero: sol, solar, soldado.",
+   "id": "len3-oa11-29"
+  },
+  {
+   "oa": "LE03 OA 11",
+   "pregunta": "Matías está leyendo un cuento y no entiende la palabra tímido. ¿Qué le conviene hacer?",
+   "opciones": [
+    "Buscar esa palabra en el diccionario",
+    "Copiar esa palabra tres veces en su cuaderno",
+    "Cambiar ese cuento por otro más fácil",
+    "Contar cuántas veces aparece esa palabra"
+   ],
+   "correcta": 0,
+   "tip": "El diccionario existe justamente para eso: entrega el significado de las palabras que uno no conoce mientras lee.",
+   "id": "len3-oa11-30"
+  }
+ ]
+}

@@ -235,7 +235,8 @@ function irArriba(){ window.scrollTo(0,0); }
    nadie: sin el texto real, la tabla es ilegible para un profesor. */
 const OA_CARPETA = {HI08:'historia-8basico', MA08:'matematicas-8basico',
                     CN08:'ciencias-8basico', LE08:'lenguaje-8basico',
-                    MA03:'matematicas-3basico', HI03:'historia-3basico'};
+                    MA03:'matematicas-3basico', HI03:'historia-3basico',
+                    LE03:'lenguaje-3basico', CN03:'ciencias-3basico'};
 const OA_TEXTO = {};        // "HI08 OA 01" -> "Analizar, apoyándose en diversas fuentes…"
 const OA_CARGADA = {};      // carpetas ya pedidas
 const OA_TOTAL = {};        // 'HI08' -> cuántos OA tiene la asignatura (de oa.json)
@@ -682,8 +683,9 @@ const NIVELES_MUESTRA = [
 // El nivel va en el código, como en el servidor (kimun_oa_asignatura). Los cuatro
 // primeros son de 8°; a partir del segundo nivel el año se nombra en la etiqueta.
 const ASIG_NOMBRE = {HI08:'Historia', MA08:'Matemáticas', CN08:'Ciencias', LE08:'Lenguaje',
-                     MA03:'Matemática 3°', HI03:'Historia 3°'};
-const ASIG_ORDEN  = ['HI08','MA08','CN08','LE08','MA03','HI03'];
+                     MA03:'Matemática 3°', HI03:'Historia 3°',
+                     LE03:'Lenguaje 3°', CN03:'Ciencias 3°'};
+const ASIG_ORDEN  = ['HI08','MA08','CN08','LE08','MA03','HI03','LE03','CN03'];
 
 // Filtro por asignatura. Con una sola asignatura no filtra nada y solo ocupa pantalla,
 // así que no se dibuja.
@@ -965,6 +967,8 @@ function SB_asigDe(oa){
   if(s.slice(0,4)==='LE08'||['VOC-LENG','VOC-LECT'].includes(s)||s.startsWith('AF-T')) return 'LE08';
   if(s.slice(0,4)==='MA03') return 'MA03';
   if(s.slice(0,4)==='HI03') return 'HI03';
+  if(s.slice(0,4)==='LE03') return 'LE03';
+  if(s.slice(0,4)==='CN03') return 'CN03';
   return null;
 }
 

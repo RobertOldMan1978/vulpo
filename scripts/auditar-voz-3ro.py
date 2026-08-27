@@ -21,7 +21,8 @@ from concurrent.futures import ThreadPoolExecutor
 import requests, imageio_ffmpeg
 
 RAIZ = Path(__file__).resolve().parent.parent
-ASIGS = {"mat3": "matematicas-3basico", "hist3": "historia-3basico"}
+ASIGS = {"mat3": "matematicas-3basico", "hist3": "historia-3basico",
+         "cie3": "ciencias-3basico",    "len3": "lenguaje-3basico"}
 ASIG = next((a for a in sys.argv[1:] if a in ASIGS), "mat3")
 S = RAIZ / "assets" / "voz" / ASIG
 MANIFIESTO = S / "manifiesto.json"

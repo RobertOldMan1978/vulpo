@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "¿Por qué se forma una sombra cuando pones la mano frente a una linterna?",
+   "opciones": [
+    "Porque la luz viaja en línea recta y la mano la detiene",
+    "Porque la luz se va cansando y no alcanza a pasar la mano",
+    "Porque la mano se pone más oscura que la pared",
+    "Porque la luz da la vuelta alrededor de la mano"
+   ],
+   "correcta": 0,
+   "tip": "La luz viaja derecho. Si algo se le pone al frente y no la deja pasar, queda una zona sin luz: la sombra.",
+   "id": "cie3-oa09-1"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "Sofía pone un vaso de greda entre la linterna y la pared. ¿Qué aparece en la pared?",
+   "opciones": [
+    "Una zona oscura con la forma del vaso",
+    "Una zona más brillante con la forma del vaso",
+    "Una mancha de colores con la forma del vaso",
+    "Una zona oscura con la forma de la linterna"
+   ],
+   "correcta": 0,
+   "tip": "El objeto detiene la luz y deja sin iluminar la parte de la pared que queda detrás de él, con su misma forma.",
+   "id": "cie3-oa09-2"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "Matías acerca su mano a la linterna, sin mover la pared. ¿Qué pasa con la sombra?",
+   "opciones": [
+    "Se hace más grande",
+    "Se hace más pequeña",
+    "Se queda exactamente igual",
+    "Desaparece de la pared"
+   ],
+   "correcta": 0,
+   "tip": "Mientras más cerca de la linterna está el objeto, más luz tapa, y por eso su sombra se agranda.",
+   "id": "cie3-oa09-3"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "Camila aleja la mano de la linterna y la acerca a la pared. Su sombra ahora es...",
+   "opciones": [
+    "más pequeña que antes",
+    "más grande que antes",
+    "del mismo tamaño de siempre",
+    "de otro color que antes"
+   ],
+   "correcta": 0,
+   "tip": "Al acercar el objeto a la pared, la sombra se parece más al tamaño real del objeto: se achica.",
+   "id": "cie3-oa09-4"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "Diego mira una vela por un tubo derecho y la ve. Después dobla el tubo. ¿Qué pasa?",
+   "opciones": [
+    "Deja de ver la vela, porque la luz no dobla",
+    "Ve la vela más grande, porque el tubo la acerca",
+    "Ve la vela de colores, porque el tubo la separa",
+    "Ve la vela igual, porque la luz sigue el tubo"
+   ],
+   "correcta": 0,
+   "tip": "La luz viaja en línea recta. Si el camino se dobla, la luz no puede seguirlo y no llega a los ojos.",
+   "id": "cie3-oa09-5"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "En una pieza con polvo se ve el rayo de luz que entra por la ventana. ¿Qué muestra?",
+   "opciones": [
+    "Que la luz viaja en línea recta",
+    "Que la luz se guarda dentro del polvo",
+    "Que la luz cambia de color en el aire",
+    "Que la luz se mueve dando vueltas"
+   ],
+   "correcta": 0,
+   "tip": "El polvo se ilumina y deja ver el camino de la luz: siempre es derecho, como una línea.",
+   "id": "cie3-oa09-6"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "¿Qué hace un espejo con la luz que le llega?",
+   "opciones": [
+    "La refleja, o sea la devuelve hacia otro lado",
+    "La guarda adentro para usarla después",
+    "La deja pasar completa hacia la muralla",
+    "La convierte en calor y la hace desaparecer"
+   ],
+   "correcta": 0,
+   "tip": "Reflejar es devolver la luz. Por eso un espejo puede mandar la luz hacia donde tú lo apuntes.",
+   "id": "cie3-oa09-7"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "¿Por qué te puedes ver a ti mismo en un espejo?",
+   "opciones": [
+    "Porque la luz rebota en ti, llega al espejo y vuelve a tus ojos",
+    "Porque el espejo guarda tu imagen adentro del vidrio y te la muestra",
+    "Porque el espejo produce su propia luz con tu forma",
+    "Porque tus ojos lanzan luz que dibuja tu cara"
+   ],
+   "correcta": 0,
+   "tip": "El espejo no fabrica luz: devuelve la que le llega. Esa luz vuelve a tus ojos y ves tu imagen.",
+   "id": "cie3-oa09-8"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "Ana entra a una pieza sin nada de luz y hay un espejo. ¿Se ve en el espejo?",
+   "opciones": [
+    "No, porque sin luz el espejo no tiene nada que reflejar",
+    "Sí, porque los espejos brillan solos aunque no haya nada de luz",
+    "Sí, pero se ve de un color distinto al normal",
+    "No, porque en la oscuridad el espejo se pone negro"
+   ],
+   "correcta": 0,
+   "tip": "El espejo solo devuelve luz que le llega. Si no hay luz en la pieza, no hay nada que devolver.",
+   "id": "cie3-oa09-9"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "¿En cuál de estas superficies se refleja mejor la luz?",
+   "opciones": [
+    "En un espejo limpio y bien liso",
+    "En un pedazo de género negro",
+    "En un cartón corrugado y áspero",
+    "En una alfombra de lana gruesa"
+   ],
+   "correcta": 0,
+   "tip": "Las superficies lisas y brillantes devuelven la luz pareja. Las ásperas y oscuras la desordenan o la absorben.",
+   "id": "cie3-oa09-10"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "Diego ve los árboles reflejados en una laguna sin viento. ¿Por qué pasa eso?",
+   "opciones": [
+    "Porque el agua quieta refleja la luz como un espejo",
+    "Porque los árboles se hunden un poco en el agua",
+    "Porque el agua fabrica una imagen de los árboles",
+    "Porque el agua deja pasar la luz hasta el fondo"
+   ],
+   "correcta": 0,
+   "tip": "Una superficie de agua quieta es lisa, así que devuelve la luz ordenada y se ve la imagen, igual que un espejo.",
+   "id": "cie3-oa09-11"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "Sopla viento y la laguna se llena de olas. La imagen de los árboles ahora se ve...",
+   "opciones": [
+    "borrosa, porque el agua movida manda la luz para todos lados",
+    "más nítida, porque las olas juntan mejor la luz de los árboles",
+    "de otro color, porque las olas pintan la imagen",
+    "igual que antes, porque el agua siempre refleja igual"
+   ],
+   "correcta": 0,
+   "tip": "Sobre una superficie desordenada la luz se refleja en muchas direcciones, y la imagen se deshace.",
+   "id": "cie3-oa09-12"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "¿Qué pasa cuando la luz blanca pasa por un prisma de vidrio?",
+   "opciones": [
+    "Se separa en los colores del arcoíris",
+    "Se apaga por completo dentro del vidrio",
+    "Se vuelve más blanca todavía al salir",
+    "Se transforma en calor dentro del prisma"
+   ],
+   "correcta": 0,
+   "tip": "La luz blanca está hecha de muchos colores mezclados, y el prisma los separa para que los veamos.",
+   "id": "cie3-oa09-13"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "El prisma separa la luz blanca. ¿Qué nos enseña ese experimento?",
+   "opciones": [
+    "Que la luz blanca está formada por muchos colores mezclados",
+    "Que el vidrio del prisma trae los colores guardados adentro",
+    "Que la luz se ensucia cuando pasa por el vidrio",
+    "Que la luz blanca es el único color que existe"
+   ],
+   "correcta": 0,
+   "tip": "Los colores no salen del prisma: ya venían dentro de la luz blanca. El prisma solo los separa.",
+   "id": "cie3-oa09-14"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "Ana riega el pasto con la manguera y ve un arcoíris chico en las gotas. ¿Por qué?",
+   "opciones": [
+    "Porque las gotas de agua separan la luz en colores",
+    "Porque el agua de la manguera viene con colores",
+    "Porque el pasto le pasa su color a las gotas",
+    "Porque las gotas se pintan al tocar el suelo"
+   ],
+   "correcta": 0,
+   "tip": "Cada gotita funciona como un prisma pequeño: separa la luz en los colores del arcoíris.",
+   "id": "cie3-oa09-15"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "¿Cuándo aparece un arcoíris en el cielo?",
+   "opciones": [
+    "Cuando hay gotas de agua en el aire y además hay luz del Sol",
+    "Cuando hay nubes muy grandes y sopla viento frío desde el mar",
+    "Cuando llueve de noche y la calle queda mojada",
+    "Cuando hace mucho calor y el cielo está despejado"
+   ],
+   "correcta": 0,
+   "tip": "Se necesitan las dos cosas: la luz y las gotas que la separan. Por eso aparece justo después de la lluvia.",
+   "id": "cie3-oa09-16"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "En un arcoíris del cielo, los colores se ven...",
+   "opciones": [
+    "uno al lado del otro, mezclándose de a poco",
+    "separados por una línea negra bien marcada",
+    "todos revueltos, sin ningún orden entre ellos",
+    "en cuadraditos parejos, como un tablero"
+   ],
+   "correcta": 0,
+   "tip": "El arcoíris cambia de color poquito a poco. No hay líneas que los separen: un color se convierte en el otro.",
+   "id": "cie3-oa09-17"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "Matías apunta una linterna a un prisma frente a una pared blanca. ¿Qué va a ver?",
+   "opciones": [
+    "Una franja con los colores del arcoíris en la pared",
+    "Un punto blanco muy brillante en el centro de la pared",
+    "Una sombra negra con la forma del prisma",
+    "Nada, porque el prisma detiene toda la luz"
+   ],
+   "correcta": 0,
+   "tip": "El prisma deja pasar la luz y la separa. En la pared aparece la franja de colores que estaba mezclada.",
+   "id": "cie3-oa09-18"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "¿De qué depende la forma que tiene una sombra?",
+   "opciones": [
+    "De la forma del objeto que le tapa el paso a la luz",
+    "Del color con que está pintada la muralla del fondo",
+    "Del color que tiene la ampolleta de la linterna",
+    "Del tamaño que tiene la pieza donde uno está"
+   ],
+   "correcta": 0,
+   "tip": "La luz viaja derecho, así que la zona sin luz copia el contorno del objeto que la detuvo.",
+   "id": "cie3-oa09-19"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "Camila pone un vidrio bien transparente frente a la linterna. ¿Qué ocurre?",
+   "opciones": [
+    "Casi toda la luz pasa y casi no se ve sombra",
+    "La luz se detiene y se ve una sombra muy oscura",
+    "La luz se devuelve entera hacia la linterna",
+    "La luz se separa en los colores del arcoíris"
+   ],
+   "correcta": 0,
+   "tip": "Los materiales transparentes dejan pasar la luz, y por eso casi no dejan sombra.",
+   "id": "cie3-oa09-20"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "Sofía tapa la linterna con una hoja de papel de calco. ¿Cómo queda la sombra?",
+   "opciones": [
+    "Clarita, porque igual pasa una parte de la luz",
+    "Muy negra, porque el papel detiene toda la luz",
+    "De colores, porque el papel separa la luz",
+    "No queda sombra, porque el papel no tapa nada"
+   ],
+   "correcta": 0,
+   "tip": "El papel de calco es traslúcido: deja pasar algo de luz, así que su sombra es más clara que la de un libro.",
+   "id": "cie3-oa09-21"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "¿Cuál sombra es más oscura: la de un libro o la de una hoja de papel de calco?",
+   "opciones": [
+    "La del libro, porque no deja pasar nada de luz",
+    "La del calco, porque el papel es más delgado",
+    "Las dos quedan igual de oscuras siempre",
+    "La del calco, porque el papel es más liviano"
+   ],
+   "correcta": 0,
+   "tip": "El libro es opaco y detiene toda la luz. El calco deja pasar un poco, y por eso su sombra queda más clara.",
+   "id": "cie3-oa09-22"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "Diego apoya un espejo inclinado en el suelo y le apunta con la linterna. ¿Qué pasa?",
+   "opciones": [
+    "La luz se refleja y va a dar al techo",
+    "La luz se queda dando vueltas en el espejo",
+    "La luz atraviesa el espejo y sigue al suelo",
+    "La luz se separa en colores sobre el espejo"
+   ],
+   "correcta": 0,
+   "tip": "El espejo devuelve la luz hacia otro lado. Si está inclinado, la manda hacia arriba.",
+   "id": "cie3-oa09-23"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "Ana quiere iluminar un rincón oscuro sin apuntar la linterna hacia allá. ¿Qué le sirve?",
+   "opciones": [
+    "Poner un espejo que refleje la luz hacia el rincón",
+    "Poner una tela negra que junte la luz del rincón",
+    "Poner un cartón grueso que empuje la luz al rincón",
+    "Poner un vaso con agua que guarde luz para después"
+   ],
+   "correcta": 0,
+   "tip": "La luz se puede desviar reflejándola. Un espejo cambia su dirección y la manda donde uno quiere.",
+   "id": "cie3-oa09-24"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "Con dos espejos se puede ver lo que hay detrás de un muro. ¿Por qué funciona?",
+   "opciones": [
+    "Porque la luz se refleja en cada espejo y cambia de dirección",
+    "Porque los espejos hacen que la luz atraviese el muro",
+    "Porque los espejos fabrican una imagen de lo que hay al otro lado",
+    "Porque la luz se dobla sola cuando encuentra un muro"
+   ],
+   "correcta": 0,
+   "tip": "La luz no dobla sola, pero cada espejo la devuelve hacia otro lado y así llega hasta los ojos.",
+   "id": "cie3-oa09-25"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "Matías levanta la mano derecha frente al espejo. Su imagen levanta...",
+   "opciones": [
+    "la mano del lado contrario",
+    "las dos manos al mismo tiempo",
+    "también la mano derecha",
+    "ninguna de las dos manos"
+   ],
+   "correcta": 0,
+   "tip": "El espejo devuelve la imagen cambiando izquierda por derecha. Por eso las letras también se ven al revés.",
+   "id": "cie3-oa09-26"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "Sofía se para frente a una linterna en el patio. ¿Dónde queda su sombra?",
+   "opciones": [
+    "Al lado contrario de donde está la linterna",
+    "Al mismo lado en que está la linterna",
+    "Justo debajo de sus pies, siempre",
+    "Al lado hacia donde ella esté mirando"
+   ],
+   "correcta": 0,
+   "tip": "La luz llega derecho y el cuerpo la detiene. La zona sin luz queda siempre detrás, lejos de la fuente.",
+   "id": "cie3-oa09-27"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "Diego mira la luz del Sol a través del borde grueso de un vaso de vidrio y ve colores. ¿Por qué?",
+   "opciones": [
+    "Porque el vidrio grueso separa la luz en colores",
+    "Porque el vaso viene pintado de muchos colores",
+    "Porque el Sol cambia de color durante la mañana",
+    "Porque el vidrio fabrica su propia luz de colores"
+   ],
+   "correcta": 0,
+   "tip": "El borde grueso funciona como un prisma: separa la luz blanca en los colores que la forman.",
+   "id": "cie3-oa09-28"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "Diego pone un cartón con un agujero chico entre la vela y la muralla. ¿Qué ve?",
+   "opciones": [
+    "Una manchita de luz justo al frente del agujero",
+    "Manchitas de luz repartidas por toda la muralla",
+    "Una manchita de luz en un rincón de la muralla",
+    "Una franja de colores justo al frente del agujero"
+   ],
+   "correcta": 0,
+   "tip": "Solo pasa la luz que viaja derecho hacia el agujero, así que la manchita queda alineada con la vela.",
+   "id": "cie3-oa09-29"
+  },
+  {
+   "oa": "CN03 OA 09",
+   "pregunta": "¿Cuál de estas frases explica mejor cómo se mueve la luz?",
+   "opciones": [
+    "Viaja derecho hasta que algo la detiene o la refleja",
+    "Viaja dando curvas para poder rodear las cosas del camino",
+    "Viaja en zigzag y por eso llena toda la pieza",
+    "Viaja siempre hacia abajo, porque cae al suelo"
+   ],
+   "correcta": 0,
+   "tip": "La luz sigue una línea recta. Cuando encuentra algo puede detenerse, pasar o rebotar, pero nunca dobla sola.",
+   "id": "cie3-oa09-30"
+  }
+ ]
+}

@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "¿Qué es una obra de teatro?",
+   "opciones": [
+    "Un texto escrito para que unos actores lo representen",
+    "Un cuento largo que se lee en silencio en la casa",
+    "Una noticia que se publica cada mañana en el diario",
+    "Un poema que se aprende de memoria para una prueba"
+   ],
+   "correcta": 0,
+   "tip": "La obra de teatro no está hecha solo para leerla: está hecha para verla actuada frente a un público.",
+   "id": "len3-oa25-1"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "¿Cómo se llama la persona que escribe una obra de teatro?",
+   "opciones": [
+    "El dramaturgo",
+    "El escenógrafo",
+    "El director",
+    "El acomodador"
+   ],
+   "correcta": 0,
+   "tip": "El dramaturgo inventa la historia y escribe lo que dirá cada personaje. Después otros la llevan al escenario.",
+   "id": "len3-oa25-2"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "¿Qué hace el director de una obra de teatro?",
+   "opciones": [
+    "Guía a los actores y decide cómo se verá la obra",
+    "Escribe todos los diálogos que dirán los personajes",
+    "Vende las entradas en la boletería del teatro",
+    "Anota los nombres del público que va llegando"
+   ],
+   "correcta": 0,
+   "tip": "El director no escribe la obra: la monta. Les explica a los actores cómo moverse y cómo decir su texto.",
+   "id": "len3-oa25-3"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "¿De qué se encarga el escenógrafo en una obra?",
+   "opciones": [
+    "De armar el lugar donde ocurre la historia",
+    "De coser los trajes que usarán los actores",
+    "De escribir la historia que se representará",
+    "De recibir al público en la puerta del teatro"
+   ],
+   "correcta": 0,
+   "tip": "El escenógrafo construye el bosque, la cocina o el castillo que vemos en el escenario.",
+   "id": "len3-oa25-4"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "¿Qué es un parlamento en una obra de teatro?",
+   "opciones": [
+    "Lo que dice un personaje en voz alta",
+    "La ropa que se pone cada personaje",
+    "El lugar donde ocurre la historia",
+    "La persona que dirige a los actores"
+   ],
+   "correcta": 0,
+   "tip": "Parlamento viene de hablar. Es el texto que le toca decir a un personaje cuando le llega su turno.",
+   "id": "len3-oa25-5"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "¿Qué es una acotación en un guion de teatro?",
+   "opciones": [
+    "Una indicación de cómo debe actuar el personaje",
+    "Una frase que el personaje le dice al público",
+    "El nombre del personaje que habla en ese momento",
+    "El título que lleva cada parte de la obra"
+   ],
+   "correcta": 0,
+   "tip": "La acotación no se dice en voz alta: le avisa al actor cómo moverse, con qué tono hablar o dónde está.",
+   "id": "len3-oa25-6"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "Lee este trozo de guion. Camila dice, entre paréntesis, entrando muy apurada. Y después dice: ¡Se me hizo tarde otra vez! ¿Qué es la parte que va entre paréntesis?",
+   "opciones": [
+    "Una acotación",
+    "Un parlamento",
+    "El título de la obra",
+    "El nombre del teatro"
+   ],
+   "correcta": 0,
+   "tip": "Entre paréntesis se escriben las acotaciones. Ahí dice cómo entra Camila, no lo que ella dice.",
+   "id": "len3-oa25-7"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "Lee este trozo de guion. Diego dice: Mañana partimos al bosque. Y entre paréntesis dice: toma su mochila. ¿Cuál es el parlamento de Diego?",
+   "opciones": [
+    "Mañana partimos al bosque",
+    "Toma su mochila",
+    "Diego, que es su nombre",
+    "El bosque donde van a ir"
+   ],
+   "correcta": 0,
+   "tip": "El parlamento es lo que el actor dice en voz alta. Lo del paréntesis es una acotación: lo hace, no lo dice.",
+   "id": "len3-oa25-8"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "¿Cómo se llama el texto que tiene escritos todos los diálogos de una obra?",
+   "opciones": [
+    "El guion",
+    "El telón",
+    "El afiche",
+    "El escenario"
+   ],
+   "correcta": 0,
+   "tip": "El guion es el texto completo de la obra. Cada actor estudia de ahí la parte de su personaje.",
+   "id": "len3-oa25-9"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "¿Qué es un acto en una obra de teatro?",
+   "opciones": [
+    "Una parte grande de la obra, formada por varias escenas",
+    "Una frase muy larga que dice el personaje principal",
+    "El aplauso que hace el público cuando termina",
+    "El momento en que se prenden todas las luces"
+   ],
+   "correcta": 0,
+   "tip": "Los actos dividen la obra en partes grandes. Entre un acto y otro suele cerrarse el telón.",
+   "id": "len3-oa25-10"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "¿Qué es una escena en una obra de teatro?",
+   "opciones": [
+    "Una parte más pequeña que cambia cuando entra o sale un personaje",
+    "La sala grande donde todo el público se sienta a mirar la función",
+    "El traje completo que usa cada uno de los personajes",
+    "La pausa que se hace para que el público vaya a comer"
+   ],
+   "correcta": 0,
+   "tip": "Cada vez que entra o sale alguien del escenario, o cambia el lugar, comienza una escena nueva.",
+   "id": "len3-oa25-11"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "En una obra de teatro, ¿qué es más largo: un acto o una escena?",
+   "opciones": [
+    "El acto, porque adentro tiene varias escenas",
+    "La escena, porque adentro tiene varios actos",
+    "Los dos duran siempre exactamente lo mismo",
+    "La escena, porque incluye toda la obra entera"
+   ],
+   "correcta": 0,
+   "tip": "La obra se divide en actos, y cada acto se divide en escenas. Por eso el acto es la parte mayor.",
+   "id": "len3-oa25-12"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "¿Qué es el telón de un teatro?",
+   "opciones": [
+    "La tela grande que se abre y se cierra frente al escenario",
+    "La lista con los nombres de todos los actores que salen en la obra",
+    "La escalera por donde suben los actores al escenario",
+    "El cuaderno donde el director anota sus ideas"
+   ],
+   "correcta": 0,
+   "tip": "El telón tapa el escenario. Cuando se abre, el público ve la escena ya preparada.",
+   "id": "len3-oa25-13"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "En el teatro se abre el telón y se apagan las luces de la sala. ¿Qué está pasando?",
+   "opciones": [
+    "La función va a comenzar",
+    "El público tiene que salir de la sala",
+    "Los actores recién están ensayando",
+    "Se acabaron las entradas para hoy"
+   ],
+   "correcta": 0,
+   "tip": "Es la señal de que empieza la obra: la sala queda oscura y la luz se va al escenario.",
+   "id": "len3-oa25-14"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "¿Qué es el escenario de un teatro?",
+   "opciones": [
+    "El espacio donde los actores representan la obra",
+    "El pasillo por donde va entrando el público",
+    "El texto escrito con todos los diálogos de la obra",
+    "La ventanilla donde se compran las entradas"
+   ],
+   "correcta": 0,
+   "tip": "El escenario es la plataforma que el público mira. Ahí ocurre todo lo que se representa.",
+   "id": "len3-oa25-15"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "¿Qué es la utilería de una obra de teatro?",
+   "opciones": [
+    "Los objetos que los actores usan mientras actúan",
+    "Las luces de colores que alumbran el escenario",
+    "Los asientos en que se ubica todo el público",
+    "Las palabras que dice cada uno de los personajes"
+   ],
+   "correcta": 0,
+   "tip": "Una carta, una canasta o una espada de juguete son utilería: cosas que el actor toma y usa.",
+   "id": "len3-oa25-16"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "En una obra, un personaje escribe una carta usando una pluma. ¿Qué es esa pluma?",
+   "opciones": [
+    "Un objeto de utilería",
+    "Una parte del vestuario",
+    "Una acotación del guion",
+    "Un parlamento del personaje"
+   ],
+   "correcta": 0,
+   "tip": "La utilería son los objetos que el actor usa. El vestuario, en cambio, es lo que lleva puesto.",
+   "id": "len3-oa25-17"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "¿Qué es el vestuario en una obra de teatro?",
+   "opciones": [
+    "La ropa que usan los actores para verse como su personaje",
+    "Los objetos que los actores van tomando durante toda la función",
+    "La sala donde el público espera antes de entrar",
+    "Las indicaciones escritas que aparecen en el guion"
+   ],
+   "correcta": 0,
+   "tip": "El vestuario es lo que el actor lleva puesto. Ayuda a que el público reconozca de inmediato quién es.",
+   "id": "len3-oa25-18"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "Sofía ve entrar a un actor con corona y capa larga. ¿Qué le está diciendo el vestuario?",
+   "opciones": [
+    "Que ese personaje probablemente es un rey",
+    "Que la obra se va a terminar muy pronto",
+    "Que ese actor escribió la obra completa",
+    "Que el público debe ponerse de pie ahora"
+   ],
+   "correcta": 0,
+   "tip": "El vestuario da información sin palabras: por la ropa entendemos quién es cada personaje.",
+   "id": "len3-oa25-19"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "La obra ya empezó y suena el celular de Matías. ¿Qué debería hacer?",
+   "opciones": [
+    "Apagarlo de inmediato y seguir mirando en silencio",
+    "Contestar hablando en voz baja desde su propio asiento",
+    "Dejarlo sonar hasta que se corte solo",
+    "Salir corriendo por delante del escenario"
+   ],
+   "correcta": 0,
+   "tip": "Los ruidos del público desconcentran a los actores y molestan a los demás. El celular se apaga antes.",
+   "id": "len3-oa25-20"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "A Camila le dieron ganas de comentarle algo a su amiga mientras los actores hablan. ¿Qué le conviene hacer?",
+   "opciones": [
+    "Esperar a que termine la obra para conversarlo",
+    "Contárselo bajito al oído mientras dura la escena",
+    "Hacerle señas grandes desde su asiento",
+    "Levantarse y cambiarse al asiento del lado"
+   ],
+   "correcta": 0,
+   "tip": "Aunque se hable bajito, en una sala de teatro se escucha. El público guarda silencio mientras actúan.",
+   "id": "len3-oa25-21"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "¿En qué momento aplaude el público en el teatro?",
+   "opciones": [
+    "Cuando la obra termina y los actores salen a saludar",
+    "Cada vez que alguno de los actores se equivoca en su texto",
+    "Mientras los personajes conversan en el escenario",
+    "Justo antes de que se abra el telón por primera vez"
+   ],
+   "correcta": 0,
+   "tip": "El aplauso es la forma de agradecer al final. Aplaudir en medio de una escena tapa lo que están diciendo.",
+   "id": "len3-oa25-22"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "Diego llega al teatro cuando la obra ya comenzó. ¿Qué debería hacer?",
+   "opciones": [
+    "Entrar en silencio y sentarse lo antes posible",
+    "Caminar por delante del escenario hasta su fila",
+    "Pedir que repitan el comienzo de la obra",
+    "Llamar en voz alta a sus compañeros de curso"
+   ],
+   "correcta": 0,
+   "tip": "Quien llega tarde entra sin hacer ruido y busca su asiento rápido, para no interrumpir la función.",
+   "id": "len3-oa25-23"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "¿En qué se diferencia una obra de teatro de un cuento?",
+   "opciones": [
+    "El cuento se lee y la obra se representa con actores",
+    "El cuento tiene personajes y la obra no tiene ninguno",
+    "La obra se escribe en versos y el cuento en párrafos",
+    "El cuento siempre es más divertido que cualquier obra"
+   ],
+   "correcta": 0,
+   "tip": "Los dos cuentan historias, pero la obra está pensada para verse actuada sobre un escenario.",
+   "id": "len3-oa25-24"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "En un guion de teatro, ¿cómo se sabe qué personaje habla?",
+   "opciones": [
+    "Su nombre va escrito antes de lo que dice",
+    "Su nombre va entre paréntesis al final",
+    "Se sabe por el color que tiene la letra",
+    "Lo indica el título que lleva la obra"
+   ],
+   "correcta": 0,
+   "tip": "En el guion, primero va el nombre del personaje, después dos puntos y enseguida su parlamento.",
+   "id": "len3-oa25-25"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "Lee este trozo de guion. Ana: ¿Vamos al río? Tomás: Prefiero quedarme. Ana: Entonces te espero acá. ¿Cuántos personajes hablan?",
+   "opciones": [
+    "Dos personajes",
+    "Tres personajes",
+    "Un solo personaje",
+    "Cuatro personajes"
+   ],
+   "correcta": 0,
+   "tip": "Hay tres parlamentos, pero dos de ellos son de Ana. Los personajes que hablan son Ana y Tomás.",
+   "id": "len3-oa25-26"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "Lee este trozo de guion. Entre paréntesis dice: la cocina de una casa, es de noche. Después Camila dice: No encuentro las llaves. ¿Qué información da la parte entre paréntesis?",
+   "opciones": [
+    "Dónde y cuándo ocurre la escena",
+    "Qué piensa Camila de las llaves",
+    "Quién fue el autor de la obra",
+    "Cuánto dura la obra completa"
+   ],
+   "correcta": 0,
+   "tip": "Esa acotación sitúa la escena: dice el lugar, la cocina, y el momento, la noche.",
+   "id": "len3-oa25-27"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "¿Qué es un ensayo en el teatro?",
+   "opciones": [
+    "La práctica que hacen los actores antes de la función",
+    "La función que viene a ver el público el día del estreno",
+    "El aplauso que se hace cuando termina la obra",
+    "El texto que escribe el autor de la historia"
+   ],
+   "correcta": 0,
+   "tip": "En los ensayos los actores repiten la obra muchas veces para memorizar y corregir antes del estreno.",
+   "id": "len3-oa25-28"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "En una obra de teatro, ¿quiénes forman el público?",
+   "opciones": [
+    "Las personas que miran y escuchan la obra",
+    "Los actores que salen al final a saludar",
+    "Los trabajadores que arman el escenario",
+    "Las personas que escribieron la historia"
+   ],
+   "correcta": 0,
+   "tip": "Sin público no hay función: el teatro se hace para que alguien esté ahí mirando en vivo.",
+   "id": "len3-oa25-29"
+  },
+  {
+   "oa": "LE03 OA 25",
+   "pregunta": "Ana escribe una obra y quiere avisar que su personaje habla enojado. ¿Cómo lo anota?",
+   "opciones": [
+    "Con una acotación entre paréntesis",
+    "Con un parlamento mucho más largo",
+    "Con el nombre del personaje repetido",
+    "Con un dibujo al lado de la hoja"
+   ],
+   "correcta": 0,
+   "tip": "Las indicaciones para el actor van entre paréntesis, porque no se dicen en voz alta sobre el escenario.",
+   "id": "len3-oa25-30"
+  }
+ ]
+}
