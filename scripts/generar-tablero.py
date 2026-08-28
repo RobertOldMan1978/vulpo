@@ -106,6 +106,34 @@ def recolectar_asignaturas():
     return asignaturas
 
 
+# --- Tolerancia a los dialectos de oa.json -----------------------------------
+# Los oa.json se escribieron en tres generaciones y sus grupos de OA no usan las
+# mismas claves: 8 y 3 basico traen `unidades` con {id, titulo, descripcion}, y 7
+# las trae con {n, nombre}; ademas lenguaje-7basico no tiene `unidades` sino
+# `capitulos_del_juego` + `unidades_oficiales_del_programa`.
+#
+# Esto NO es cosmetico: `oa_data["unidades"]` y `u["id"]` son accesos duros, y
+# como este script recorre TODAS las carpetas, un solo banco con otro dialecto
+# **deja sin tablero a los quince**, o sea bloquea la aprobacion pedagogica
+# completa. Paso en la Sesion 55 (KeyError: 'unidades') y volvio a pasar en la 62
+# con 7 basico (KeyError: 'id'). Por eso ahora se lee con tolerancia en vez de
+# confiar en que todos los archivos esten alineados.
+def grupos_de(oa_data):
+    return (oa_data.get("unidades")
+            or oa_data.get("capitulos_del_juego")
+            or oa_data.get("unidades_oficiales_del_programa")
+            or [])
+
+
+def u_id(u):
+    v = u.get("id", u.get("n", ""))
+    return str(v) if v != "" else "-"
+
+
+def u_titulo(u):
+    return u.get("titulo") or u.get("nombre") or "(sin nombre)"
+
+
 def render_asignatura(oa_data, preg_data):
     meta = int(preg_data.get("meta_preguntas_por_oa", 8))
     preguntas = preg_data.get("preguntas", [])
@@ -141,6 +169,14 @@ def render_asignatura(oa_data, preg_data):
         f'<div class="pct-lbl">cobertura</div></div>'
         f"</div>"
     )
+    partes.append(
+        '<div class="asig-bulk">'
+        f'<button class="bulk asig-bulk-btn" title="Aprobar las {total_preg} preguntas de '
+        f'{escape(oa_data["asignatura"])} de una vez">✓ Aprobar toda la asignatura</button>'
+        '<button class="bulk sec asig-bulk-off" title="Quitar la marca a todas">✕ Quitar todas</button>'
+        '<span class="asig-bulk-info"></span>'
+        "</div>"
+    )
     partes.append(barra(avance_global, alto=14))
     partes.append(f'<div class="rev-lbl" style="margin-top:8px">🔍 Revisadas por ti: {total_rev}/{total_preg} ({rev_global:.0f}%)</div>')
     partes.append(barra(rev_global, alto=8, color="var(--pink)"))
@@ -153,15 +189,15 @@ def render_asignatura(oa_data, preg_data):
         "</div>"
     )
 
-    for u in oa_data["unidades"]:
-        codigos = u["oa"]
+    for u in grupos_de(oa_data):
+        codigos = u.get("oa", [])
         u_util = sum(min(conteo.get(c, 0), meta) for c in codigos)
         u_avance = (u_util / (meta * len(codigos)) * 100) if codigos else 0
         u_preg = sum(conteo.get(c, 0) for c in codigos)
 
         partes.append('<div class="unidad">')
         partes.append(
-            f'<div class="u-head"><div class="u-tit"><span class="u-caret">▾</span>{escape(u["id"])} · {escape(u["titulo"])}</div>'
+            f'<div class="u-head"><div class="u-tit"><span class="u-caret">▾</span>{escape(u_id(u))} · {escape(u_titulo(u))}</div>'
             f'<div class="u-pct">{u_avance:.0f}%</div></div>'
         )
         partes.append(barra(u_avance, alto=8))
@@ -206,7 +242,9 @@ def render_asignatura(oa_data, preg_data):
                 f'<span class="oa-badge" style="border-color:{col_eje};color:{col_eje}">{escape(eje)}</span>'
                 f'<span class="oa-count">{n}/{meta}</span>'
                 f'<span class="oa-estado" style="color:{color_avance(pct)}">{etiqueta_estado(pct)}</span>'
-                f"</div>"
+                + (f'<button class="bulk oa-bulk" title="Aprobar o quitar las {len(filas)} '
+                   f'preguntas de este OA de una vez">✓ todo el OA</button>' if filas else "")
+                + f"</div>"
                 f'<div class="oa-txt">{escape(oa["texto"])}</div>'
                 f'{barra(pct, alto=7)}'
                 f'<div class="rev-line"><span class="rev-lbl">🔍 revisadas {r}/{n}</span>{barra(rpct, alto=5, color="var(--pink)")}</div>'
@@ -304,6 +342,17 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
 .pq-a{color:var(--green);font-weight:800;font-size:12.5px;margin-top:2px}
 .pq-check{display:flex;align-items:center;padding-left:6px}
 .pq-check input{width:20px;height:20px;accent-color:var(--green);cursor:pointer}
+/* Aprobacion masiva. Existe porque con 12.800 preguntas en la v1, marcar de a una
+   son entre 18 y 36 horas de clic: el cuello de botella del proyecto no es escribir
+   el contenido sino aprobarlo. Ver docs/aprobacion-pedagogica.md. */
+.bulk{background:var(--panel2);border:1px solid #3ee08955;color:var(--green);font-weight:800;
+      font-size:11px;padding:5px 10px;border-radius:10px;cursor:pointer;white-space:nowrap}
+.bulk:hover{border-color:#3ee089;background:#3ee0891a}
+.bulk.sec{border-color:#ff4d8d55;color:var(--pink)}
+.bulk.sec:hover{border-color:#ff4d8d;background:#ff4d8d1a}
+.oa-bulk{margin-left:auto}
+.asig-bulk{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:10px 0 2px}
+.asig-bulk-info{font-size:11px;color:#9aa;font-weight:700}
 .vacio{text-align:center;color:var(--dim);padding:40px}
 .leyenda{display:flex;gap:16px;justify-content:center;color:var(--dim);font-size:12px;font-weight:800;margin-top:6px;flex-wrap:wrap}
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:middle}
@@ -379,9 +428,21 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
   var LS='kimun_revisadas';
   var ov={};
   try{ov=JSON.parse(localStorage.getItem(LS)||'{}');}catch(e){ov={};}
+  function idsMarcados(){
+    var s={};
+    document.querySelectorAll('.pq-check input:checked').forEach(function(cb){s[cb.dataset.id]=1;});
+    return Object.keys(s);
+  }
   function updateCount(){
-    var n=document.querySelectorAll('.pq-check input:checked').length;
-    var t=document.querySelectorAll('.pq-check input').length;
+    // Contar por id UNICO y no por casilla: un OA puede pertenecer a dos capitulos
+    // (pasa en Lenguaje de 3, con 9 OA en dos grupos), asi que 270 preguntas se
+    // dibujan dos veces y el total salia 7.944 donde el banco tiene 7.524.
+    var vistos={}, marc={};
+    document.querySelectorAll('.pq-check input').forEach(function(cb){
+      vistos[cb.dataset.id]=1; if(cb.checked) marc[cb.dataset.id]=1;
+    });
+    var n=Object.keys(marc).length;
+    var t=Object.keys(vistos).length;
     var el=document.getElementById('revCount');
     if(el)el.textContent='🔍 '+n+'/'+t+' marcadas';
   }
@@ -389,12 +450,62 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
     var id=cb.dataset.id, jsonRev=cb.dataset.rev==='1';
     cb.checked=(id in ov)?ov[id]:jsonRev;
     cb.addEventListener('click',function(e){e.stopPropagation();});
-    cb.addEventListener('change',function(){ov[id]=cb.checked;localStorage.setItem(LS,JSON.stringify(ov));updateCount();});
+    cb.addEventListener('change',function(){fijar([cb],cb.checked);});
   });
+  // --- Aprobacion masiva -------------------------------------------------
+  // Marcar de a una es inviable: en la v1 son ~12.800 preguntas, o sea entre 18 y 36
+  // horas de clic. Estos botones marcan un OA completo o una asignatura completa.
+  // Ojo: viven DENTRO de encabezados que ya son clicables para plegar/desplegar, asi
+  // que necesitan stopPropagation o cada clic ademas contrae la seccion.
+  function fijar(inputs, valor){
+    var tocados={};
+    inputs.forEach(function(cb){ tocados[cb.dataset.id]=1; ov[cb.dataset.id]=valor; });
+    // Sincronizar TODAS las casillas de esos ids, no solo las de la lista: una
+    // pregunta cuyo OA esta en dos capitulos se dibuja dos veces, y dejar la copia
+    // sin actualizar hace ver el OA como aprobado a medias.
+    document.querySelectorAll('.pq-check input').forEach(function(cb){
+      if(tocados[cb.dataset.id]) cb.checked=valor;
+    });
+    localStorage.setItem(LS,JSON.stringify(ov));
+    updateCount();
+  }
+  function inputsDe(raiz){
+    return Array.prototype.slice.call(raiz.querySelectorAll('.pq-check input'));
+  }
+  document.querySelectorAll('.oa-bulk').forEach(function(b){
+    b.addEventListener('click',function(e){
+      e.stopPropagation();
+      var oa=b.closest('.oa');
+      var ins=inputsDe(oa);
+      // Alterna: si ya estan todas marcadas, el boton las quita. Asi el mismo control
+      // sirve para corregir un OA aprobado por error, sin agregar un segundo boton.
+      var todas=ins.length>0&&ins.every(function(cb){return cb.checked;});
+      fijar(ins,!todas);
+      b.textContent=todas?'✓ todo el OA':'✕ quitar el OA';
+    });
+  });
+  document.querySelectorAll('.asig').forEach(function(sec){
+    var info=sec.querySelector('.asig-bulk-info');
+    var si=sec.querySelector('.asig-bulk-btn'), no=sec.querySelector('.asig-bulk-off');
+    function aviso(n,verbo){ if(info)info.textContent=n+' preguntas '+verbo+'.'; }
+    if(si)si.addEventListener('click',function(e){
+      e.stopPropagation();
+      var ins=inputsDe(sec);
+      // Confirmar: aprobar cientos de preguntas de un clic no debe poder pasar sin querer.
+      if(ins.length>60&&!confirm('Vas a marcar como revisadas '+ins.length+' preguntas de esta asignatura. ¿Seguro?'))return;
+      fijar(ins,true); aviso(ins.length,'marcadas');
+    });
+    if(no)no.addEventListener('click',function(e){
+      e.stopPropagation();
+      var ins=inputsDe(sec);
+      if(ins.length>60&&!confirm('Vas a QUITAR la marca a '+ins.length+' preguntas. ¿Seguro?'))return;
+      fijar(ins,false); aviso(ins.length,'sin marcar');
+    });
+  });
+
   var exp=document.getElementById('exportar');
   if(exp)exp.onclick=function(){
-    var ids=[];
-    document.querySelectorAll('.pq-check input:checked').forEach(function(cb){ids.push(cb.dataset.id);});
+    var ids=idsMarcados();
     var blob=new Blob([JSON.stringify({revisadas:ids},null,2)],{type:'application/json'});
     var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='revisadas.json';
     document.body.appendChild(a);a.click();a.remove();

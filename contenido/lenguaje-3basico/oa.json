@@ -1,121 +1,336 @@
 {
- "asignatura": "Lenguaje y Comunicación",
- "nivel": "3° básico",
- "codigo_asignatura": "LE03",
- "fuente": "Bases Curriculares 1° a 6° básico (D.S. 439/2012) — MINEDUC",
- "url_fuente": "https://www.curriculumnacional.cl/curriculum/1o-6o-basico/lenguaje-comunicacion/3-basico",
- "nota_fidelidad": "Textos transcritos el 2026-08-26 del listado único de OA del Programa de Estudio oficial (PDF articles-18962_programa.pdf, pp. 45-47), que se declara reproducción del listado del D.S. 439/2012, y contrastados con la ficha HTML del portal. OJO: la ficha HTML ABREVIA varios OA al renderizarse (por ejemplo el OA 06); esas versiones cortas NO son el texto oficial. OJO 2: el PDF del Programa imprime 'OA 21' dos veces en la p. 46; el segundo es el OA 22 (ortografía), como confirma la ficha HTML y como exige el conteo del eje (11 OA, del 12 al 22).",
- "nota_evaluacion": "ADVERTENCIA — esta es, de lejos, la asignatura menos evaluable por quiz: 17 de los 31 OA son de PRODUCCIÓN (escribir, exponer, recitar, dramatizar) o de HÁBITO (leer habitualmente, asistir a la biblioteca, disfrutar). Un quiz de opción múltiple no puede medir ninguna de esas cosas: solo puede medir si el niño RECONOCE cuál es la práctica correcta. El porcentaje del mapa de dominio junto a 'Desarrollar el gusto por la lectura' NO significa que el niño lea poco; significa que reconoce, o no, cuál es la práctica correcta. Los OA de conducta e interacción (01, 07, 08, 25, 26, 27, 28, 30, 31) se preguntan SIEMPRE como la situación de otra persona con nombre, nunca por la conducta del propio jugador. EXCLUIDO DEL BANCO: el OA 16 ('escribir con letra clara para que pueda ser leída por otros con facilidad') es caligrafía manuscrita y no admite NINGUNA versión preguntable; se deja documentado aquí y sin preguntas, en vez de inventar un ítem que finja medirlo.",
- "unidades": [
-  {
-   "id": "T",
-   "titulo": "Objetivos para abordar en todas las unidades",
-   "descripcion": "Bloque transversal del Programa: se trabajan durante todo el año, no en una unidad concreta.",
-   "oa": ["LE03 OA 01", "LE03 OA 07", "LE03 OA 08", "LE03 OA 12", "LE03 OA 16", "LE03 OA 17", "LE03 OA 18", "LE03 OA 19", "LE03 OA 23", "LE03 OA 27", "LE03 OA 29"]
-  },
-  {
-   "id": "U1",
-   "titulo": "Unidad 1",
-   "descripcion": "Comprensión lectora con narraciones y textos no literarios; estrategias de lectura; uso del diccionario; punto y coma; artículos informativos; conversación sobre lo leído.",
-   "oa": ["LE03 OA 02", "LE03 OA 03", "LE03 OA 04", "LE03 OA 06", "LE03 OA 11", "LE03 OA 14", "LE03 OA 20", "LE03 OA 22", "LE03 OA 26"]
-  },
-  {
-   "id": "U2",
-   "titulo": "Unidad 2",
-   "descripcion": "Fábulas, poemas y lenguaje figurado; trabajo de investigación; ortografía; comprensión de textos orales.",
-   "oa": ["LE03 OA 03", "LE03 OA 05", "LE03 OA 06", "LE03 OA 09", "LE03 OA 10", "LE03 OA 14", "LE03 OA 22", "LE03 OA 24", "LE03 OA 28"]
-  },
-  {
-   "id": "U3",
-   "titulo": "Unidad 3",
-   "descripcion": "Cuentos y poemas; estrategias de comprensión; adjetivos y pronombres para la cohesión; escritura creativa de narraciones.",
-   "oa": ["LE03 OA 02", "LE03 OA 03", "LE03 OA 04", "LE03 OA 05", "LE03 OA 13", "LE03 OA 21", "LE03 OA 26", "LE03 OA 31"]
-  },
-  {
-   "id": "U4",
-   "titulo": "Unidad 4",
-   "descripcion": "Cuentos, novelas y textos no literarios; teatro y juegos de roles; escritura en distintos formatos; comprensión oral.",
-   "oa": ["LE03 OA 03", "LE03 OA 04", "LE03 OA 06", "LE03 OA 15", "LE03 OA 24", "LE03 OA 25", "LE03 OA 26", "LE03 OA 30"]
-  }
- ],
- "nota_unidades": "Las unidades del Programa de Lenguaje de 3° básico NO tienen nombre temático: se llaman literalmente 'Unidad 1' a 'Unidad 4' y se distinguen por un propósito en prosa. Esto es distinto de Historia 3°, donde sí van nombradas. Los capítulos del juego, por lo tanto, NO siguen estas unidades: agrupan los OA por tema reconocible para un niño (leer, vocabulario, gramática, escribir, hablar), y sus nombres son del juego, no del MINEDUC. Además el Programa reparte varios OA en más de una unidad (el OA 03 aparece en las cuatro) y parte por dentro el OA 02 y el OA 22, lo que hace imposible un corte 1 unidad = 1 capítulo.",
- "ejes": [
-  {
-   "nombre": "Lectura",
-   "oa": ["LE03 OA 01", "LE03 OA 02", "LE03 OA 03", "LE03 OA 04", "LE03 OA 05", "LE03 OA 06", "LE03 OA 07", "LE03 OA 08", "LE03 OA 09", "LE03 OA 10", "LE03 OA 11"]
-  },
-  {
-   "nombre": "Escritura",
-   "oa": ["LE03 OA 12", "LE03 OA 13", "LE03 OA 14", "LE03 OA 15", "LE03 OA 16", "LE03 OA 17", "LE03 OA 18", "LE03 OA 19", "LE03 OA 20", "LE03 OA 21", "LE03 OA 22"]
-  },
-  {
-   "nombre": "Comunicación oral",
-   "oa": ["LE03 OA 23", "LE03 OA 24", "LE03 OA 25", "LE03 OA 26", "LE03 OA 27", "LE03 OA 28", "LE03 OA 29", "LE03 OA 30", "LE03 OA 31"]
-  }
- ],
- "oa": [
-  {"codigo": "LE03 OA 01", "eje": "Lectura", "evaluable": "reconocimiento",
-   "texto": "Leer en voz alta de manera fluida variados textos apropiados a su edad: pronunciando cada palabra con precisión; respetando la coma, el punto y los signos de exclamación e interrogación; leyendo con velocidad adecuada para el nivel."},
-  {"codigo": "LE03 OA 02", "eje": "Lectura", "evaluable": "pleno",
-   "texto": "Comprender textos aplicando estrategias de comprensión lectora; por ejemplo: relacionar la información del texto con sus experiencias y conocimientos; releer lo que no fue comprendido; visualizar lo que describe el texto; recapitular; formular preguntas sobre lo leído y responderlas; subrayar información relevante en un texto."},
-  {"codigo": "LE03 OA 03", "eje": "Lectura", "evaluable": "parcial",
-   "texto": "Leer y familiarizarse con un amplio repertorio de literatura para aumentar su conocimiento del mundo y desarrollar su imaginación; por ejemplo: poemas; cuentos folclóricos y de autor; fábulas; leyendas; mitos; novelas; historietas; otros."},
-  {"codigo": "LE03 OA 04", "eje": "Lectura", "evaluable": "pleno",
-   "texto": "Profundizar su comprensión de las narraciones leídas: extrayendo información explícita e implícita; reconstruyendo la secuencia de las acciones en la historia; describiendo a los personajes; describiendo el ambiente en que ocurre la acción; expresando opiniones fundamentadas sobre hechos y situaciones del texto; emitiendo una opinión sobre los personajes."},
-  {"codigo": "LE03 OA 05", "eje": "Lectura", "evaluable": "pleno",
-   "texto": "Comprender poemas adecuados al nivel e interpretar el lenguaje figurado presente en ellos."},
-  {"codigo": "LE03 OA 06", "eje": "Lectura", "evaluable": "pleno",
-   "texto": "Leer independientemente y comprender textos no literarios (cartas, biografías, relatos históricos, instrucciones, libros y artículos informativos, noticias, etc.) para ampliar su conocimiento del mundo y formarse una opinión: extrayendo información explícita e implícita; utilizando los organizadores de textos expositivos (títulos, subtítulos, índice y glosario) para encontrar información específica; comprendiendo la información que aportan las ilustraciones, símbolos y pictogramas a un texto; formulando una opinión sobre algún aspecto de la lectura; fundamentando su opinión con información del texto o sus conocimientos previos."},
-  {"codigo": "LE03 OA 07", "eje": "Lectura", "evaluable": "habito",
-   "texto": "Desarrollar el gusto por la lectura, leyendo habitualmente diversos textos."},
-  {"codigo": "LE03 OA 08", "eje": "Lectura", "evaluable": "habito",
-   "texto": "Asistir habitualmente a la biblioteca para satisfacer diversos propósitos (encontrar información, elegir libros, estudiar o trabajar), cuidando el material en favor del uso común."},
-  {"codigo": "LE03 OA 09", "eje": "Lectura", "evaluable": "parcial",
-   "texto": "Buscar información sobre un tema en libros, internet, diarios, revistas, enciclopedias, atlas, etc., para llevar a cabo una investigación."},
-  {"codigo": "LE03 OA 10", "eje": "Lectura", "evaluable": "pleno",
-   "texto": "Determinar el significado de palabras desconocidas, usando claves contextuales o el conocimiento de raíces (morfemas de base), prefijos y sufijos."},
-  {"codigo": "LE03 OA 11", "eje": "Lectura", "evaluable": "pleno",
-   "texto": "Determinar el significado de palabras desconocidas, usando el orden alfabético para encontrarlas en un diccionario infantil o ilustrado."},
-  {"codigo": "LE03 OA 12", "eje": "Escritura", "evaluable": "parcial",
-   "texto": "Escribir frecuentemente, para desarrollar la creatividad y expresar sus ideas, textos como poemas, diarios de vida, cuentos, anécdotas, cartas, comentarios sobre sus lecturas, etc."},
-  {"codigo": "LE03 OA 13", "eje": "Escritura", "evaluable": "parcial",
-   "texto": "Escribir creativamente narraciones (experiencias personales, relatos de hechos, cuentos, etc.) que incluyan: una secuencia lógica de eventos; inicio, desarrollo y desenlace; conectores adecuados."},
-  {"codigo": "LE03 OA 14", "eje": "Escritura", "evaluable": "parcial",
-   "texto": "Escribir artículos informativos para comunicar información sobre un tema: organizando las ideas en párrafos; desarrollando las ideas mediante información que explica el tema."},
-  {"codigo": "LE03 OA 15", "eje": "Escritura", "evaluable": "parcial",
-   "texto": "Escribir cartas, instrucciones, afiches, reportes de una experiencia, entre otros, para lograr diferentes propósitos: usando un formato adecuado; transmitiendo el mensaje con claridad."},
-  {"codigo": "LE03 OA 16", "eje": "Escritura", "evaluable": "no",
-   "excluido_del_banco": true,
-   "texto": "Escribir con letra clara para que pueda ser leída por otros con facilidad."},
-  {"codigo": "LE03 OA 17", "eje": "Escritura", "evaluable": "parcial",
-   "texto": "Planificar la escritura: estableciendo propósito y destinatario; generando ideas a partir de conversaciones, investigaciones, lluvia de ideas u otra estrategia."},
-  {"codigo": "LE03 OA 18", "eje": "Escritura", "evaluable": "parcial",
-   "texto": "Escribir, revisar y editar sus textos para satisfacer un propósito y transmitir sus ideas con claridad. Durante este proceso: organizan las ideas en párrafos separados con punto aparte; utilizan conectores apropiados; utilizan un vocabulario variado; mejoran la redacción del texto a partir de sugerencias de los pares y el docente; corrigen la ortografía y la presentación."},
-  {"codigo": "LE03 OA 19", "eje": "Escritura", "evaluable": "pleno",
-   "texto": "Incorporar de manera pertinente en la escritura el vocabulario nuevo extraído de textos escuchados o leídos."},
-  {"codigo": "LE03 OA 20", "eje": "Escritura", "evaluable": "pleno",
-   "texto": "Comprender la función de los artículos, sustantivos y adjetivos en textos orales y escritos, y reemplazarlos o combinarlos de diversas maneras para enriquecer o precisar sus producciones."},
-  {"codigo": "LE03 OA 21", "eje": "Escritura", "evaluable": "pleno",
-   "texto": "Comprender la función de los pronombres en textos orales y escritos, y usarlos para ampliar las posibilidades de referirse a un sustantivo en sus producciones."},
-  {"codigo": "LE03 OA 22", "eje": "Escritura", "evaluable": "pleno",
-   "texto": "Escribir correctamente para facilitar la comprensión por parte del lector, aplicando lo aprendido en años anteriores y usando de manera apropiada: mayúsculas al iniciar una oración y al escribir sustantivos propios; punto al finalizar una oración y punto aparte al finalizar un párrafo; plurales de palabras terminadas en z; palabras con ge-gi, je-ji; palabras terminadas en cito-cita; coma en enumeración."},
-  {"codigo": "LE03 OA 23", "eje": "Comunicación oral", "evaluable": "parcial",
-   "texto": "Comprender y disfrutar versiones completas de obras de la literatura, narradas o leídas por un adulto, como: cuentos folclóricos y de autor; poemas; fábulas; mitos y leyendas."},
-  {"codigo": "LE03 OA 24", "eje": "Comunicación oral", "evaluable": "pleno",
-   "texto": "Comprender textos orales (explicaciones, instrucciones, noticias, documentales, películas, relatos, anécdotas, etc.) para obtener información y desarrollar su curiosidad por el mundo: estableciendo conexiones con sus propias experiencias; identificando el propósito; formulando preguntas para obtener información adicional, aclarar dudas y profundizar la comprensión; estableciendo relaciones entre distintos textos; respondiendo preguntas sobre información explícita e implícita; formulando una opinión sobre lo escuchado."},
-  {"codigo": "LE03 OA 25", "eje": "Comunicación oral", "evaluable": "reconocimiento",
-   "texto": "Disfrutar de la experiencia de asistir a obras de teatro infantiles o representaciones para ampliar sus posibilidades de expresión, desarrollar su creatividad y familiarizarse con el género."},
-  {"codigo": "LE03 OA 26", "eje": "Comunicación oral", "evaluable": "reconocimiento",
-   "texto": "Participar activamente en conversaciones grupales sobre textos leídos o escuchados en clases o temas de su interés: manteniendo el foco de la conversación; expresando sus ideas u opiniones; formulando preguntas para aclarar dudas; demostrando interés ante lo escuchado; mostrando empatía frente a situaciones expresadas por otros; respetando turnos."},
-  {"codigo": "LE03 OA 27", "eje": "Comunicación oral", "evaluable": "reconocimiento",
-   "texto": "Interactuar de acuerdo con las convenciones sociales en diferentes situaciones: presentarse a sí mismo y a otros; saludar; preguntar; expresar opiniones, sentimientos e ideas; situaciones que requieren el uso de fórmulas de cortesía como por favor, gracias, perdón, permiso."},
-  {"codigo": "LE03 OA 28", "eje": "Comunicación oral", "evaluable": "reconocimiento",
-   "texto": "Expresarse de manera coherente y articulada sobre temas de su interés: organizando las ideas en introducción y desarrollo; incorporando descripciones y ejemplos que ilustren las ideas; utilizando un vocabulario variado; reemplazando los pronombres por construcciones sintácticas que expliciten o describan al referente; usando gestos y posturas acordes a la situación; usando material de apoyo (power point, papelógrafo, objetos, etc.) si es pertinente."},
-  {"codigo": "LE03 OA 29", "eje": "Comunicación oral", "evaluable": "pleno",
-   "texto": "Incorporar de manera pertinente en sus intervenciones orales el vocabulario nuevo extraído de textos escuchados o leídos."},
-  {"codigo": "LE03 OA 30", "eje": "Comunicación oral", "evaluable": "reconocimiento",
-   "texto": "Caracterizar distintos personajes para desarrollar su lenguaje y autoestima, y aprender a trabajar en equipo."},
-  {"codigo": "LE03 OA 31", "eje": "Comunicación oral", "evaluable": "reconocimiento",
-   "texto": "Recitar poemas con entonación y expresión para fortalecer la confianza en sí mismos, aumentar el vocabulario y desarrollar su capacidad expresiva."}
- ]
+  "asignatura": "Lenguaje y Comunicación",
+  "nivel": "3° básico",
+  "codigo_asignatura": "LE03",
+  "fuente": "Bases Curriculares 1° a 6° básico (D.S. 439/2012) — MINEDUC",
+  "url_fuente": "https://www.curriculumnacional.cl/curriculum/1o-6o-basico/lenguaje-comunicacion/3-basico",
+  "nota_fidelidad": "Textos transcritos el 2026-08-26 del listado único de OA del Programa de Estudio oficial (PDF articles-18962_programa.pdf, pp. 45-47), que se declara reproducción del listado del D.S. 439/2012, y contrastados con la ficha HTML del portal. OJO: la ficha HTML ABREVIA varios OA al renderizarse (por ejemplo el OA 06); esas versiones cortas NO son el texto oficial. OJO 2: el PDF del Programa imprime 'OA 21' dos veces en la p. 46; el segundo es el OA 22 (ortografía), como confirma la ficha HTML y como exige el conteo del eje (11 OA, del 12 al 22).",
+  "nota_evaluacion": "ADVERTENCIA — esta es, de lejos, la asignatura menos evaluable por quiz: 17 de los 31 OA son de PRODUCCIÓN (escribir, exponer, recitar, dramatizar) o de HÁBITO (leer habitualmente, asistir a la biblioteca, disfrutar). Un quiz de opción múltiple no puede medir ninguna de esas cosas: solo puede medir si el niño RECONOCE cuál es la práctica correcta. El porcentaje del mapa de dominio junto a 'Desarrollar el gusto por la lectura' NO significa que el niño lea poco; significa que reconoce, o no, cuál es la práctica correcta. Los OA de conducta e interacción (01, 07, 08, 25, 26, 27, 28, 30, 31) se preguntan SIEMPRE como la situación de otra persona con nombre, nunca por la conducta del propio jugador. EXCLUIDO DEL BANCO: el OA 16 ('escribir con letra clara para que pueda ser leída por otros con facilidad') es caligrafía manuscrita y no admite NINGUNA versión preguntable; se deja documentado aquí y sin preguntas, en vez de inventar un ítem que finja medirlo.",
+  "unidades": [
+    {
+      "id": "T",
+      "titulo": "Objetivos para abordar en todas las unidades",
+      "descripcion": "Bloque transversal del Programa: se trabajan durante todo el año, no en una unidad concreta.",
+      "oa": [
+        "LE03 OA 01",
+        "LE03 OA 07",
+        "LE03 OA 08",
+        "LE03 OA 12",
+        "LE03 OA 16",
+        "LE03 OA 17",
+        "LE03 OA 18",
+        "LE03 OA 19",
+        "LE03 OA 23",
+        "LE03 OA 27",
+        "LE03 OA 29"
+      ]
+    },
+    {
+      "id": "U1",
+      "titulo": "Unidad 1",
+      "descripcion": "Comprensión lectora con narraciones y textos no literarios; estrategias de lectura; uso del diccionario; punto y coma; artículos informativos; conversación sobre lo leído.",
+      "oa": [
+        "LE03 OA 02",
+        "LE03 OA 03",
+        "LE03 OA 04",
+        "LE03 OA 06",
+        "LE03 OA 11",
+        "LE03 OA 14",
+        "LE03 OA 20",
+        "LE03 OA 22",
+        "LE03 OA 26"
+      ]
+    },
+    {
+      "id": "U2",
+      "titulo": "Unidad 2",
+      "descripcion": "Fábulas, poemas y lenguaje figurado; trabajo de investigación; ortografía; comprensión de textos orales.",
+      "oa": [
+        "LE03 OA 03",
+        "LE03 OA 05",
+        "LE03 OA 06",
+        "LE03 OA 09",
+        "LE03 OA 10",
+        "LE03 OA 14",
+        "LE03 OA 22",
+        "LE03 OA 24",
+        "LE03 OA 28"
+      ]
+    },
+    {
+      "id": "U3",
+      "titulo": "Unidad 3",
+      "descripcion": "Cuentos y poemas; estrategias de comprensión; adjetivos y pronombres para la cohesión; escritura creativa de narraciones.",
+      "oa": [
+        "LE03 OA 02",
+        "LE03 OA 03",
+        "LE03 OA 04",
+        "LE03 OA 05",
+        "LE03 OA 13",
+        "LE03 OA 21",
+        "LE03 OA 26",
+        "LE03 OA 31"
+      ]
+    },
+    {
+      "id": "U4",
+      "titulo": "Unidad 4",
+      "descripcion": "Cuentos, novelas y textos no literarios; teatro y juegos de roles; escritura en distintos formatos; comprensión oral.",
+      "oa": [
+        "LE03 OA 03",
+        "LE03 OA 04",
+        "LE03 OA 06",
+        "LE03 OA 15",
+        "LE03 OA 24",
+        "LE03 OA 25",
+        "LE03 OA 26",
+        "LE03 OA 30"
+      ]
+    }
+  ],
+  "nota_unidades": "Las unidades del Programa de Lenguaje de 3° básico NO tienen nombre temático: se llaman literalmente 'Unidad 1' a 'Unidad 4' y se distinguen por un propósito en prosa. Esto es distinto de Historia 3°, donde sí van nombradas. Los capítulos del juego, por lo tanto, NO siguen estas unidades: agrupan los OA por tema reconocible para un niño (leer, vocabulario, gramática, escribir, hablar), y sus nombres son del juego, no del MINEDUC. Además el Programa reparte varios OA en más de una unidad (el OA 03 aparece en las cuatro) y parte por dentro el OA 02 y el OA 22, lo que hace imposible un corte 1 unidad = 1 capítulo.",
+  "ejes": [
+    {
+      "nombre": "Lectura",
+      "oa": [
+        "LE03 OA 01",
+        "LE03 OA 02",
+        "LE03 OA 03",
+        "LE03 OA 04",
+        "LE03 OA 05",
+        "LE03 OA 06",
+        "LE03 OA 07",
+        "LE03 OA 08",
+        "LE03 OA 09",
+        "LE03 OA 10",
+        "LE03 OA 11"
+      ]
+    },
+    {
+      "nombre": "Escritura",
+      "oa": [
+        "LE03 OA 12",
+        "LE03 OA 13",
+        "LE03 OA 14",
+        "LE03 OA 15",
+        "LE03 OA 16",
+        "LE03 OA 17",
+        "LE03 OA 18",
+        "LE03 OA 19",
+        "LE03 OA 20",
+        "LE03 OA 21",
+        "LE03 OA 22"
+      ]
+    },
+    {
+      "nombre": "Comunicación oral",
+      "oa": [
+        "LE03 OA 23",
+        "LE03 OA 24",
+        "LE03 OA 25",
+        "LE03 OA 26",
+        "LE03 OA 27",
+        "LE03 OA 28",
+        "LE03 OA 29",
+        "LE03 OA 30",
+        "LE03 OA 31"
+      ]
+    }
+  ],
+  "oa_excluidos_del_banco": [
+    {
+      "codigo": "LE03 OA 16",
+      "texto": "Escribir con letra clara para que pueda ser leída por otros con facilidad.",
+      "por_que": "Es caligrafia manuscrita: escribir con letra clara, separando las palabras, para que otros puedan leerlo. No admite ninguna pregunta honesta de opcion multiple, porque lo que mide es el trazo en el papel y no un conocimiento. Se deja FUERA del banco en vez de inventar un item que finja medirlo. Mismo criterio que LE07 OA 12."
+    }
+  ],
+  "oa": [
+    {
+      "codigo": "LE03 OA 01",
+      "eje": "Lectura",
+      "evaluable": "reconocimiento",
+      "texto": "Leer en voz alta de manera fluida variados textos apropiados a su edad: pronunciando cada palabra con precisión; respetando la coma, el punto y los signos de exclamación e interrogación; leyendo con velocidad adecuada para el nivel."
+    },
+    {
+      "codigo": "LE03 OA 02",
+      "eje": "Lectura",
+      "evaluable": "pleno",
+      "texto": "Comprender textos aplicando estrategias de comprensión lectora; por ejemplo: relacionar la información del texto con sus experiencias y conocimientos; releer lo que no fue comprendido; visualizar lo que describe el texto; recapitular; formular preguntas sobre lo leído y responderlas; subrayar información relevante en un texto."
+    },
+    {
+      "codigo": "LE03 OA 03",
+      "eje": "Lectura",
+      "evaluable": "parcial",
+      "texto": "Leer y familiarizarse con un amplio repertorio de literatura para aumentar su conocimiento del mundo y desarrollar su imaginación; por ejemplo: poemas; cuentos folclóricos y de autor; fábulas; leyendas; mitos; novelas; historietas; otros."
+    },
+    {
+      "codigo": "LE03 OA 04",
+      "eje": "Lectura",
+      "evaluable": "pleno",
+      "texto": "Profundizar su comprensión de las narraciones leídas: extrayendo información explícita e implícita; reconstruyendo la secuencia de las acciones en la historia; describiendo a los personajes; describiendo el ambiente en que ocurre la acción; expresando opiniones fundamentadas sobre hechos y situaciones del texto; emitiendo una opinión sobre los personajes."
+    },
+    {
+      "codigo": "LE03 OA 05",
+      "eje": "Lectura",
+      "evaluable": "pleno",
+      "texto": "Comprender poemas adecuados al nivel e interpretar el lenguaje figurado presente en ellos."
+    },
+    {
+      "codigo": "LE03 OA 06",
+      "eje": "Lectura",
+      "evaluable": "pleno",
+      "texto": "Leer independientemente y comprender textos no literarios (cartas, biografías, relatos históricos, instrucciones, libros y artículos informativos, noticias, etc.) para ampliar su conocimiento del mundo y formarse una opinión: extrayendo información explícita e implícita; utilizando los organizadores de textos expositivos (títulos, subtítulos, índice y glosario) para encontrar información específica; comprendiendo la información que aportan las ilustraciones, símbolos y pictogramas a un texto; formulando una opinión sobre algún aspecto de la lectura; fundamentando su opinión con información del texto o sus conocimientos previos."
+    },
+    {
+      "codigo": "LE03 OA 07",
+      "eje": "Lectura",
+      "evaluable": "habito",
+      "texto": "Desarrollar el gusto por la lectura, leyendo habitualmente diversos textos."
+    },
+    {
+      "codigo": "LE03 OA 08",
+      "eje": "Lectura",
+      "evaluable": "habito",
+      "texto": "Asistir habitualmente a la biblioteca para satisfacer diversos propósitos (encontrar información, elegir libros, estudiar o trabajar), cuidando el material en favor del uso común."
+    },
+    {
+      "codigo": "LE03 OA 09",
+      "eje": "Lectura",
+      "evaluable": "parcial",
+      "texto": "Buscar información sobre un tema en libros, internet, diarios, revistas, enciclopedias, atlas, etc., para llevar a cabo una investigación."
+    },
+    {
+      "codigo": "LE03 OA 10",
+      "eje": "Lectura",
+      "evaluable": "pleno",
+      "texto": "Determinar el significado de palabras desconocidas, usando claves contextuales o el conocimiento de raíces (morfemas de base), prefijos y sufijos."
+    },
+    {
+      "codigo": "LE03 OA 11",
+      "eje": "Lectura",
+      "evaluable": "pleno",
+      "texto": "Determinar el significado de palabras desconocidas, usando el orden alfabético para encontrarlas en un diccionario infantil o ilustrado."
+    },
+    {
+      "codigo": "LE03 OA 12",
+      "eje": "Escritura",
+      "evaluable": "parcial",
+      "texto": "Escribir frecuentemente, para desarrollar la creatividad y expresar sus ideas, textos como poemas, diarios de vida, cuentos, anécdotas, cartas, comentarios sobre sus lecturas, etc."
+    },
+    {
+      "codigo": "LE03 OA 13",
+      "eje": "Escritura",
+      "evaluable": "parcial",
+      "texto": "Escribir creativamente narraciones (experiencias personales, relatos de hechos, cuentos, etc.) que incluyan: una secuencia lógica de eventos; inicio, desarrollo y desenlace; conectores adecuados."
+    },
+    {
+      "codigo": "LE03 OA 14",
+      "eje": "Escritura",
+      "evaluable": "parcial",
+      "texto": "Escribir artículos informativos para comunicar información sobre un tema: organizando las ideas en párrafos; desarrollando las ideas mediante información que explica el tema."
+    },
+    {
+      "codigo": "LE03 OA 15",
+      "eje": "Escritura",
+      "evaluable": "parcial",
+      "texto": "Escribir cartas, instrucciones, afiches, reportes de una experiencia, entre otros, para lograr diferentes propósitos: usando un formato adecuado; transmitiendo el mensaje con claridad."
+    },
+    {
+      "codigo": "LE03 OA 16",
+      "eje": "Escritura",
+      "evaluable": "no",
+      "excluido_del_banco": true,
+      "texto": "Escribir con letra clara para que pueda ser leída por otros con facilidad."
+    },
+    {
+      "codigo": "LE03 OA 17",
+      "eje": "Escritura",
+      "evaluable": "parcial",
+      "texto": "Planificar la escritura: estableciendo propósito y destinatario; generando ideas a partir de conversaciones, investigaciones, lluvia de ideas u otra estrategia."
+    },
+    {
+      "codigo": "LE03 OA 18",
+      "eje": "Escritura",
+      "evaluable": "parcial",
+      "texto": "Escribir, revisar y editar sus textos para satisfacer un propósito y transmitir sus ideas con claridad. Durante este proceso: organizan las ideas en párrafos separados con punto aparte; utilizan conectores apropiados; utilizan un vocabulario variado; mejoran la redacción del texto a partir de sugerencias de los pares y el docente; corrigen la ortografía y la presentación."
+    },
+    {
+      "codigo": "LE03 OA 19",
+      "eje": "Escritura",
+      "evaluable": "pleno",
+      "texto": "Incorporar de manera pertinente en la escritura el vocabulario nuevo extraído de textos escuchados o leídos."
+    },
+    {
+      "codigo": "LE03 OA 20",
+      "eje": "Escritura",
+      "evaluable": "pleno",
+      "texto": "Comprender la función de los artículos, sustantivos y adjetivos en textos orales y escritos, y reemplazarlos o combinarlos de diversas maneras para enriquecer o precisar sus producciones."
+    },
+    {
+      "codigo": "LE03 OA 21",
+      "eje": "Escritura",
+      "evaluable": "pleno",
+      "texto": "Comprender la función de los pronombres en textos orales y escritos, y usarlos para ampliar las posibilidades de referirse a un sustantivo en sus producciones."
+    },
+    {
+      "codigo": "LE03 OA 22",
+      "eje": "Escritura",
+      "evaluable": "pleno",
+      "texto": "Escribir correctamente para facilitar la comprensión por parte del lector, aplicando lo aprendido en años anteriores y usando de manera apropiada: mayúsculas al iniciar una oración y al escribir sustantivos propios; punto al finalizar una oración y punto aparte al finalizar un párrafo; plurales de palabras terminadas en z; palabras con ge-gi, je-ji; palabras terminadas en cito-cita; coma en enumeración."
+    },
+    {
+      "codigo": "LE03 OA 23",
+      "eje": "Comunicación oral",
+      "evaluable": "parcial",
+      "texto": "Comprender y disfrutar versiones completas de obras de la literatura, narradas o leídas por un adulto, como: cuentos folclóricos y de autor; poemas; fábulas; mitos y leyendas."
+    },
+    {
+      "codigo": "LE03 OA 24",
+      "eje": "Comunicación oral",
+      "evaluable": "pleno",
+      "texto": "Comprender textos orales (explicaciones, instrucciones, noticias, documentales, películas, relatos, anécdotas, etc.) para obtener información y desarrollar su curiosidad por el mundo: estableciendo conexiones con sus propias experiencias; identificando el propósito; formulando preguntas para obtener información adicional, aclarar dudas y profundizar la comprensión; estableciendo relaciones entre distintos textos; respondiendo preguntas sobre información explícita e implícita; formulando una opinión sobre lo escuchado."
+    },
+    {
+      "codigo": "LE03 OA 25",
+      "eje": "Comunicación oral",
+      "evaluable": "reconocimiento",
+      "texto": "Disfrutar de la experiencia de asistir a obras de teatro infantiles o representaciones para ampliar sus posibilidades de expresión, desarrollar su creatividad y familiarizarse con el género."
+    },
+    {
+      "codigo": "LE03 OA 26",
+      "eje": "Comunicación oral",
+      "evaluable": "reconocimiento",
+      "texto": "Participar activamente en conversaciones grupales sobre textos leídos o escuchados en clases o temas de su interés: manteniendo el foco de la conversación; expresando sus ideas u opiniones; formulando preguntas para aclarar dudas; demostrando interés ante lo escuchado; mostrando empatía frente a situaciones expresadas por otros; respetando turnos."
+    },
+    {
+      "codigo": "LE03 OA 27",
+      "eje": "Comunicación oral",
+      "evaluable": "reconocimiento",
+      "texto": "Interactuar de acuerdo con las convenciones sociales en diferentes situaciones: presentarse a sí mismo y a otros; saludar; preguntar; expresar opiniones, sentimientos e ideas; situaciones que requieren el uso de fórmulas de cortesía como por favor, gracias, perdón, permiso."
+    },
+    {
+      "codigo": "LE03 OA 28",
+      "eje": "Comunicación oral",
+      "evaluable": "reconocimiento",
+      "texto": "Expresarse de manera coherente y articulada sobre temas de su interés: organizando las ideas en introducción y desarrollo; incorporando descripciones y ejemplos que ilustren las ideas; utilizando un vocabulario variado; reemplazando los pronombres por construcciones sintácticas que expliciten o describan al referente; usando gestos y posturas acordes a la situación; usando material de apoyo (power point, papelógrafo, objetos, etc.) si es pertinente."
+    },
+    {
+      "codigo": "LE03 OA 29",
+      "eje": "Comunicación oral",
+      "evaluable": "pleno",
+      "texto": "Incorporar de manera pertinente en sus intervenciones orales el vocabulario nuevo extraído de textos escuchados o leídos."
+    },
+    {
+      "codigo": "LE03 OA 30",
+      "eje": "Comunicación oral",
+      "evaluable": "reconocimiento",
+      "texto": "Caracterizar distintos personajes para desarrollar su lenguaje y autoestima, y aprender a trabajar en equipo."
+    },
+    {
+      "codigo": "LE03 OA 31",
+      "eje": "Comunicación oral",
+      "evaluable": "reconocimiento",
+      "texto": "Recitar poemas con entonación y expresión para fortalecer la confianza en sí mismos, aumentar el vocabulario y desarrollar su capacidad expresiva."
+    }
+  ]
 }

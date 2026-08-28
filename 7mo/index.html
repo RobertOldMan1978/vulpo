@@ -2966,16 +2966,23 @@ function renderExpediciones(){
   const sub=camp?`Campaña · ${capsCompletos(camp)}/${camp.capitulos.length} capítulos`
                 :`${exps.length} ${exps.length===1?'mapa':'mapas'}`;
   const card=document.createElement('div');card.className='exp-card'+(done?' camp-done':'');
-  card.innerHTML=`<img src="${portada}" alt="${asig}"><div class="exp-info"><b>${asig} ${done?'👑':''}</b><small>${sub}</small></div><span class="exp-go">▶</span>`;
+  const subL=(HAY_VOCABULARIO&&asig==='Lenguaje')?'Campaña + Vocabulario':sub;
+  card.innerHTML=`<img src="${portada}" alt="${asig}"><div class="exp-info"><b>${asig} ${done?'👑':''}</b><small>${subL}</small></div><span class="exp-go">▶</span>`;
   card.onclick=()=>{SND.tap();
    // Historia entra siempre: dentro se decide qué capítulo está abierto (la demo).
    if(bloqueado() && asig!=='Historia'){avisoCandado();return;}
-   /* 7° no tiene Vocabulario: el landing de 8° no aplica y dejaría la asignatura inalcanzable. */
-   if(camp)abrirCampaña(camp); else abrirAsignatura(asig);};
+   if(HAY_VOCABULARIO&&asig==='Lenguaje')abrirLenguaje(); else if(camp)abrirCampaña(camp); else abrirAsignatura(asig);};
   if(bloqueado() && asig!=='Historia') card.classList.add('lock');
   g.appendChild(card);
  });
- /* 7° no tiene biblioteca: «El diario de Ana Frank» es la lectura del colegio en 8°. */
+ // Módulo Lectura (biblioteca): fuera de las asignaturas, crece con más libros.
+ if(HAY_BIBLIOTECA){
+ const bib=document.createElement('div'); bib.className='exp-card bib-entry';
+ bib.innerHTML=`<img src="assets/portada-lectura.png" alt="Lectura"><div class="exp-info"><b>📖 Lectura</b><small>Lecturas del colegio · ${LIBROS.length} libro${LIBROS.length===1?'':'s'}</small></div><span class="exp-go">▶</span>`;
+ bib.onclick=()=>{SND.tap(); if(bloqueado()){avisoCandado();return;} abrirBiblioteca();};
+ if(bloqueado()) bib.classList.add('lock');
+ g.appendChild(bib);
+ }
 }
 // Biblioteca de lecturas (hoy: El diario de Ana Frank). Cada libro = una expedición de tramos.
 const LIBROS=[{id:'lect-anafrank', titulo:'El diario de Ana Frank', autor:'Ana Frank', tramos:8}];
@@ -3557,11 +3564,31 @@ function odPreguntasCalc(exp){const out=[],seen=new Set();let g=0;
   if(seen.has(q.pregunta))continue;seen.add(q.pregunta);
   out.push({pregunta:q.pregunta,opciones:q.opciones,correcta:q.ok,tip:''});}
  return out;}
+/* ¿Este nivel tiene el Reto de Cálculo? 7° NO tiene Reto de Cálculo: su Matemática es una campaña normal de 4 capítulos.
+   Se declara como DATO y no como un if suelto porque de esto dependen dos cosas del
+   Duelo. Con la bandera mal puesta, el Duelo ofrece como "Matemáticas" los 5 niveles
+   del Reto de 8° (Calentamiento, Enteros, Potencias...) en vez de los capítulos del
+   nivel, y genera las operaciones con genCalculo saltándose el banco propio. Estaba
+   pasando de verdad en 7° (Sesión 63). */
+/* ¿Este nivel tiene el camino de mini-clases de Matemática (su lecciones.json)?
+   Gobierna el "siguiente paso al reprobar": con mini-clases se ofrece repasar la clase,
+   y sin ellas hay que caer al repaso sin reloj, como las demás asignaturas. Con la
+   bandera mal puesta el botón dice "📘 Repasar la mini-clase", descarga las 17 lecciones
+   de 8° dentro de otro nivel y NO abre ninguna: el alumno toca y no pasa nada. Estaba
+   pasando en 7° (Sesión 63); 3° se salvaba solo porque escribe "Matemática" en singular. */
+const HAY_MINICLASES=false;
+/* ¿Este nivel tiene el módulo de Vocabulario, y la biblioteca de lecturas del colegio?
+   Son contenido de 8°. Antes se resolvían BORRANDO líneas del fork, y ese corte dejó
+   la asignatura Lenguaje inalcanzable en 3° (Sesión 61). Como banderas, las tres apps
+   comparten el mismo renderExpediciones y solo cambia el valor. */
+const HAY_VOCABULARIO=false;
+const HAY_BIBLIOTECA=false;
+const HAY_RETO_CALCULO=false;
 function odExpsDe(asig){return EXPEDICIONES.filter(e=>e.activa&&e.asignatura===asig);}
 // Matemáticas en el duelo = los niveles del Reto de Cálculo (mismo look que el mapa).
 function odMapasMate(){return NIVELES_CALC.map((n,i)=>({id:'calc-'+n.id,asignatura:'Matemáticas',
   nombre:(i+1)+'. '+n.nombre,sub:n.sub,icono:n.icono,calc:n.id,dif:Math.min(5,RC_BASE[i]+1)}));}
-function odNMapas(asig){return asig==='Matemáticas'?NIVELES_CALC.length:odExpsDe(asig).length;}
+function odNMapas(asig){return (HAY_RETO_CALCULO&&asig==='Matemáticas')?NIVELES_CALC.length:odExpsDe(asig).length;}
 // NIVEL 1 (duelo): un módulo por asignatura; al tocarlo se abren sus mapas.
 function renderODExp(){const cont=$('odExpSel');cont.innerHTML='';OD_EXP_SEL=null;
  ORDEN_ASIG.forEach(asig=>{const n=odNMapas(asig);if(!n)return;
@@ -3577,7 +3604,7 @@ function renderODExpMapas(asig){const cont=$('odExpSel');cont.innerHTML='';
  volver.innerHTML=`<span class="od-exp-tx"><b>← Materias</b></span>`;
  volver.onclick=()=>{SND.tap();renderODExp();};cont.appendChild(volver);
  // Matemáticas: niveles de cálculo (ícono emoji, mismo estilo que el mapa del Reto).
- const esMate=asig==='Matemáticas';
+ const esMate=HAY_RETO_CALCULO&&asig==='Matemáticas';
  const mapas=esMate?odMapasMate():odExpsDe(asig);
  mapas.forEach(e=>{const b=document.createElement('button');
   const ic=esMate?`<span class="od-exp-ic">${e.icono}</span>`
@@ -4058,7 +4085,7 @@ function terminarNivel(){
  const esJefe=Q.lvl===N_ETAPAS-1;
  const cFail=EXPEDICION[Q.lvl], lvlFail=Q.lvl, oaFail=cFail.oa||'';
  const esLibro=/^(VOC-|AF-)/.test(oaFail);
- const esMate=EXP_ACT && EXP_ACT.asignatura==='Matemáticas';
+ const esMate=HAY_MINICLASES && EXP_ACT && EXP_ACT.asignatura==='Matemáticas';
  const vistos=Q.preguntas.map(p=>p.q);   // enunciados de la etapa fallada, para excluirlos en el repaso
  const prog=progAct();
  const p=prog[Q.lvl];

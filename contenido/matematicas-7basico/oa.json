@@ -9,18 +9,60 @@
   "nota_unidades": "Las 4 unidades del Programa calzan EXACTAMENTE con los 4 ejes de las Bases y ningún OA se repite entre unidades. Es un reparto más limpio que el de las otras asignaturas del nivel. Los nombres de unidad son DESCRIPTIVOS: el Programa las llama solo «Unidad 1»…«Unidad 4», sin título temático.",
   "habilidades_excluidas": {
     "cuantas": 19,
-    "codigos": ["MA07 OAH a-m", "MA07 OA A-F"],
+    "codigos": [
+      "MA07 OAH a-m",
+      "MA07 OA A-F"
+    ],
     "por_que": "13 OA de habilidad transversales del ciclo (resolver problemas, argumentar y comunicar, modelar, representar), sin contenido propio evaluable por ítem, y 6 de actitud. Además sus códigos con letra no calzan con la validación del servidor. Ojo: el Programa rotula las actitudes como «OA A»…«OA F», con la misma forma que los numerados salvo por la letra."
   },
   "unidades": [
-    { "n": 1, "nombre": "Números enteros, fracciones, decimales, porcentaje y potencias", "eje": "Números",
-      "oa": ["MA07 OA 01", "MA07 OA 02", "MA07 OA 03", "MA07 OA 04", "MA07 OA 05"] },
-    { "n": 2, "nombre": "Lenguaje algebraico, proporcionalidad, ecuaciones e inecuaciones", "eje": "Álgebra y funciones",
-      "oa": ["MA07 OA 06", "MA07 OA 07", "MA07 OA 08", "MA07 OA 09"] },
-    { "n": 3, "nombre": "Ángulos, círculo, construcciones, áreas y plano cartesiano", "eje": "Geometría",
-      "oa": ["MA07 OA 10", "MA07 OA 11", "MA07 OA 12", "MA07 OA 13", "MA07 OA 14"] },
-    { "n": 4, "nombre": "Muestreo, datos, tendencia central y probabilidad", "eje": "Probabilidad y estadística",
-      "oa": ["MA07 OA 15", "MA07 OA 16", "MA07 OA 17", "MA07 OA 18", "MA07 OA 19"] }
+    {
+      "id": "U1",
+      "titulo": "Números enteros, fracciones, decimales, porcentaje y potencias",
+      "eje": "Números",
+      "oa": [
+        "MA07 OA 01",
+        "MA07 OA 02",
+        "MA07 OA 03",
+        "MA07 OA 04",
+        "MA07 OA 05"
+      ]
+    },
+    {
+      "id": "U2",
+      "titulo": "Lenguaje algebraico, proporcionalidad, ecuaciones e inecuaciones",
+      "eje": "Álgebra y funciones",
+      "oa": [
+        "MA07 OA 06",
+        "MA07 OA 07",
+        "MA07 OA 08",
+        "MA07 OA 09"
+      ]
+    },
+    {
+      "id": "U3",
+      "titulo": "Ángulos, círculo, construcciones, áreas y plano cartesiano",
+      "eje": "Geometría",
+      "oa": [
+        "MA07 OA 10",
+        "MA07 OA 11",
+        "MA07 OA 12",
+        "MA07 OA 13",
+        "MA07 OA 14"
+      ]
+    },
+    {
+      "id": "U4",
+      "titulo": "Muestreo, datos, tendencia central y probabilidad",
+      "eje": "Probabilidad y estadística",
+      "oa": [
+        "MA07 OA 15",
+        "MA07 OA 16",
+        "MA07 OA 17",
+        "MA07 OA 18",
+        "MA07 OA 19"
+      ]
+    }
   ],
   "oa": [
     {

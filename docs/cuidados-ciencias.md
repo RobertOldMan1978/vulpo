@@ -1,11 +1,22 @@
-# Cuidados de precisión científica — Ciencias Naturales 3° básico
+# Cuidados de precisión científica — Ciencias Naturales
 
-Lista de los puntos donde una pregunta mal redactada **le enseña algo falso a un niño de 8
-años**, ordenados por gravedad. Se armó al construir el banco de 3° y sirve para dos cosas:
-escribir las preguntas y **revisarlas** después.
+Lista de los puntos donde una pregunta mal redactada **le enseña algo falso**, ordenados por
+gravedad. Se armó construyendo el banco de 3° básico y sirve para dos cosas: escribir las
+preguntas y **revisarlas** después.
 
 La mayoría son errores que están instalados en la enseñanza básica y que después cuestan
 años desarmar. Un banco que los repite no es neutro: los refuerza.
+
+> **Vale para todo el ciclo básico, con una salvedad de alcance.** Los antipatrones de abajo
+> son los mismos en 3°, 4°, 5° y 6°: quien confunde respiración con fotosíntesis a los 8 años
+> la sigue confundiendo a los 11. Lo que cambia por nivel es **hasta dónde se puede profundizar**,
+> y eso va anotado en cada punto ("no preguntar qué pasa de noche: eso es de 7°"). Al usar este
+> documento en otro nivel, **relee esas notas contra el OA que te tocó**: lo que en 3° es "no
+> entrar ahí" puede ser justamente el contenido en 6°.
+>
+> Los `CN07 OA 01/02/03` de 7° (sexualidad, ciclo menstrual, métodos de control de la natalidad,
+> ITS) tienen además su propia advertencia en `contenido/ciencias-7basico/oa.json`
+> (`nota_contenido_sensible`), y **hay que conversarlos con el colegio antes de publicarlos**.
 
 ---
 

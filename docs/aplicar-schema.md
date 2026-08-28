@@ -10,6 +10,9 @@ puede ejecutar cambios de estructura).
 | Fecha | Qué traía | Verificado |
 |---|---|---|
 | **2026-08-25** | La auditoría de identidad y permisos de la Sesión 39: RLS en `desafios` y `desafio_resultados`, y el cambio de firma de `kimun_prof_dominio_alumno` (text → uuid) | Sí: las 5 filas en `ok` (13 de 13 con RLS, ninguna sin, firma `uuid`, 0 filas de `admin_clave`, 50 funciones) |
+| **2026-08-26** | `MA03` y `HI03` (Sesiones 58 y 59) | Sí, con la consulta de 3 filas de esa sesión |
+| **2026-08-27** | `LE03` y `CN03` (Sesión 61) | — |
+| **2026-08-27** | Los cuatro códigos de 7° básico: `HI07`, `MA07`, `CN07`, `LE07` (Sesión 62) | Sí: `kimun_oa_asignatura` resuelve los cuatro contra producción, y 8° y 3° siguen intactos |
 
 ## Antes de empezar: por qué es seguro
 
@@ -96,6 +99,39 @@ select * from (
 | 3 Firma | `p_perfil uuid` | Si dice `text`, quedó la versión antigua de la Sesión 39 |
 | 4 Clave admin | `0 filas` | No llegó al final del archivo |
 | 5 Funciones | ~50 | Muy por debajo: se cortó a medio camino |
+
+## Comprobación extra cuando el cambio trae un NIVEL nuevo
+
+Cuando lo que se aplica agrega un curso (`MA03`, `HI07`, y en la v1 vendrán 4°, 5° y 6°), la
+consulta general de arriba **no lo cubre**: sigue dando `ok` aunque el nivel no haya quedado
+registrado. Hay que mirar dos funciones distintas.
+
+**1. `kimun_oa_asignatura` — que el código se reconozca.** Esto lo puede comprobar el asistente
+sin credenciales, porque la función no está revocada y no toca datos: basta llamarla con la
+clave pública y ver que `'HI07 OA 01'` devuelva `'HI07'`. Un código inexistente debe dar `null`.
+
+**2. `kimun_prof_asignaturas` — que el código esté en los DOS arreglos.** Esta sí hay que
+mirarla desde el SQL Editor, y es la que importa: **si a un arreglo le falta un código, ese
+contenido queda invisible para el Profesor Jefe sin ningún error**. Tiene dos listas —una para
+Admin/SuperUsuario y otra para el Jefe de curso— y es fácil actualizar una sola.
+
+Cambiar los cuatro códigos por los del nivel que se acaba de aplicar:
+
+```sql
+select case when a=2 and b=2 and c=2 and d4=2
+            then 'ok - los 4 codigos estan en los DOS arreglos'
+            else 'REVISAR - cada uno deberia dar 2' end as estado,
+       a, b, c, d4
+from (
+  select (length(f)-length(replace(f,'MA07','')))/4 a,
+         (length(f)-length(replace(f,'HI07','')))/4 b,
+         (length(f)-length(replace(f,'CN07','')))/4 c,
+         (length(f)-length(replace(f,'LE07','')))/4 d4
+  from (select pg_get_functiondef('public.kimun_prof_asignaturas(uuid)'::regprocedure) f) x
+) y;
+```
+
+**Cada uno debe dar 2.** Si alguno da 1, falta en uno de los arreglos; si da 0, no se aplicó.
 
 ## Si algo sale mal
 

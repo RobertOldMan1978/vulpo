@@ -1,0 +1,27 @@
+# Configuración de GitHub Pages (Jekyll).
+#
+# POR QUÉ EXISTE (Sesión 63): `assets/originales/` son 70 archivos y 175 MB de arte
+# crudo —los PNG tal como salen de la generación, antes de recortarlos y optimizarlos—
+# que se guardan en el repositorio como respaldo y para sincronizar entre los dos
+# computadores. Pero GitHub Pages los estaba PUBLICANDO: verificado el 27/08/2026,
+# `https://vulpo.cl/assets/originales/<archivo>.png` respondía HTTP 200 con 2,4 MB.
+#
+# Nadie los pide: ningún HTML, JS ni CSS del sitio los referencia (solo los
+# `scripts/procesar-lote*.py`, que corren en local). Sacarlos del sitio publicado
+# libera 175 MB del techo de 1 GB que GitHub Pages impone al sitio, y ese margen es
+# justo el que necesita la voz pregrabada de 4° básico en la v1.
+#
+# Siguen en el repositorio: esto no los borra ni los deja de respaldar.
+exclude:
+  - assets/originales
+
+  # ⚠️ Declarar `exclude` REEMPLAZA la lista por defecto de Jekyll en vez de sumarse
+  # a ella, así que hay que repetir la de fábrica o se empezarían a publicar cosas
+  # que hoy no se publican.
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

@@ -130,12 +130,23 @@ def revisar(ruta, vistos):
 def main():
     rutas = []
     global LARGO_MAX
+    patrones = []
     for a in sys.argv[1:]:
         if a.startswith("--largo="):
             LARGO_MAX = int(a.split("=", 1)[1]); continue
+        patrones.append(a)
         rutas += sorted(glob.glob(a))
+    if not patrones:
+        sys.exit("uso: python scripts/revisar-tanda.py [--largo=N] <archivo.json> [...]")
     if not rutas:
-        sys.exit("uso: python scripts/revisar-tanda.py <archivo.json> [...]")
+        # Salir con codigo != 0 y decir POR QUE. Antes esto imprimia el modo de uso y
+        # salia con 0, o sea que revisar una carpeta entera sin tandas se veia igual que
+        # revisarla sin defectos. El caso real que lo destapa: matematicas-3basico guarda
+        # sus tandas en `_pool/verificado/`, asi que el `_pool/*.json` que documentan los
+        # planes no calza con nada ahi y el chequeo pasaba en silencio.
+        sys.exit("ningun archivo calza con: %s\n"
+                 "Si es una carpeta de tandas, prueba tambien con _pool/verificado/*.json"
+                 % " ".join(patrones))
     vistos, tf, ts = {}, 0, 0
     for r in rutas:
         f, s = revisar(r, vistos)

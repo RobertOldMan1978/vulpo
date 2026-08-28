@@ -9,33 +9,55 @@
   "nota_contenido_sensible": "Los OA 01, 02 y 03 son sexualidad, reproducción, control de la natalidad e infecciones de transmisión sexual. Son currículum oficial obligatorio, pero un colegio confesional puede tener criterio propio sobre cómo se abordan. Las preguntas se redactan de forma factual, sin promover ninguna postura, y siempre sobre la situación de un tercero, nunca sobre el cuerpo o la conducta del propio estudiante. CONVIENE AVISARLE AL COLEGIO ANTES DE PUBLICARLO.",
   "habilidades_excluidas": {
     "cuantas": 21,
-    "codigos": ["CN07 OAH a-m", "CN07 OAA A-H"],
+    "codigos": [
+      "CN07 OAH a-m",
+      "CN07 OAA A-H"
+    ],
     "por_que": "13 OA de habilidades de investigación científica (observar, planificar, ejecutar, analizar, evaluar y comunicar) y 8 de actitud. Todos son desempeño observable en laboratorio o disposiciones personales. Además sus códigos con letra no pasan la validación de OA del backend."
   },
   "unidades": [
     {
-      "n": 1,
-      "nombre": "Comportamiento de la materia y su clasificación",
+      "id": "U1",
+      "titulo": "Comportamiento de la materia y su clasificación",
       "eje": "Química",
-      "oa": ["CN07 OA 13", "CN07 OA 14", "CN07 OA 15"]
+      "oa": [
+        "CN07 OA 13",
+        "CN07 OA 14",
+        "CN07 OA 15"
+      ]
     },
     {
-      "n": 2,
-      "nombre": "Fuerza y ciencias de la Tierra",
+      "id": "U2",
+      "titulo": "Fuerza y ciencias de la Tierra",
       "eje": "Física",
-      "oa": ["CN07 OA 07", "CN07 OA 08", "CN07 OA 09", "CN07 OA 10", "CN07 OA 11", "CN07 OA 12"]
+      "oa": [
+        "CN07 OA 07",
+        "CN07 OA 08",
+        "CN07 OA 09",
+        "CN07 OA 10",
+        "CN07 OA 11",
+        "CN07 OA 12"
+      ]
     },
     {
-      "n": 3,
-      "nombre": "Microorganismos y barreras defensivas",
+      "id": "U3",
+      "titulo": "Microorganismos y barreras defensivas",
       "eje": "Biología",
-      "oa": ["CN07 OA 05", "CN07 OA 06", "CN07 OA 04"]
+      "oa": [
+        "CN07 OA 05",
+        "CN07 OA 06",
+        "CN07 OA 04"
+      ]
     },
     {
-      "n": 4,
-      "nombre": "Sexualidad y autocuidado",
+      "id": "U4",
+      "titulo": "Sexualidad y autocuidado",
       "eje": "Biología",
-      "oa": ["CN07 OA 01", "CN07 OA 02", "CN07 OA 03"]
+      "oa": [
+        "CN07 OA 01",
+        "CN07 OA 02",
+        "CN07 OA 03"
+      ]
     }
   ],
   "oa": [

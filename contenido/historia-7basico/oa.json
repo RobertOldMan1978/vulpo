@@ -8,29 +8,59 @@
   "nota_evaluacion": "Tres OA (19, 20 y 23) NO son medibles por un quiz de opción múltiple tal como están redactados: piden valorar, debatir o investigar. Sus preguntas plantean siempre la situación de un tercero o el contenido factual subyacente, nunca la conducta ni la opinión del propio estudiante. El mapa de dominio del profesor va a mostrar un porcentaje junto a textos como «reconocer el valor de la diversidad», y eso se puede leer como una nota de actitud: no lo es.",
   "habilidades_excluidas": {
     "cuantas": 20,
-    "codigos": ["HI07 OAH a-j", "HI07 OAA A-J"],
+    "codigos": [
+      "HI07 OAH a-j",
+      "HI07 OAA A-J"
+    ],
     "por_que": "10 OA de habilidad (pensamiento temporal y espacial, trabajo con fuentes, pensamiento crítico, comunicación) y 10 de actitud. Miden desempeño observable, investigación y debate. Además sus códigos con letra no calzan con la validación del servidor (^[A-Z]{2}[0-9]{2} OA [0-9]{2}$), así que el backend los descartaría en silencio."
   },
   "unidades": [
     {
-      "n": 1,
-      "nombre": "De la hominización al surgimiento de las civilizaciones",
-      "oa": ["HI07 OA 01", "HI07 OA 02", "HI07 OA 03", "HI07 OA 04", "HI07 OA 21", "HI07 OA 22", "HI07 OA 23"]
+      "id": "U1",
+      "titulo": "De la hominización al surgimiento de las civilizaciones",
+      "oa": [
+        "HI07 OA 01",
+        "HI07 OA 02",
+        "HI07 OA 03",
+        "HI07 OA 04",
+        "HI07 OA 21",
+        "HI07 OA 22",
+        "HI07 OA 23"
+      ]
     },
     {
-      "n": 2,
-      "nombre": "La Antigüedad y el canon cultural clásico",
-      "oa": ["HI07 OA 05", "HI07 OA 06", "HI07 OA 07", "HI07 OA 08", "HI07 OA 17"]
+      "id": "U2",
+      "titulo": "La Antigüedad y el canon cultural clásico",
+      "oa": [
+        "HI07 OA 05",
+        "HI07 OA 06",
+        "HI07 OA 07",
+        "HI07 OA 08",
+        "HI07 OA 17"
+      ]
     },
     {
-      "n": 3,
-      "nombre": "La Edad Media y el nacimiento de la civilización europea",
-      "oa": ["HI07 OA 09", "HI07 OA 10", "HI07 OA 11", "HI07 OA 12", "HI07 OA 18", "HI07 OA 19"]
+      "id": "U3",
+      "titulo": "La Edad Media y el nacimiento de la civilización europea",
+      "oa": [
+        "HI07 OA 09",
+        "HI07 OA 10",
+        "HI07 OA 11",
+        "HI07 OA 12",
+        "HI07 OA 18",
+        "HI07 OA 19"
+      ]
     },
     {
-      "n": 4,
-      "nombre": "Civilizaciones de América",
-      "oa": ["HI07 OA 13", "HI07 OA 14", "HI07 OA 15", "HI07 OA 16", "HI07 OA 20"]
+      "id": "U4",
+      "titulo": "Civilizaciones de América",
+      "oa": [
+        "HI07 OA 13",
+        "HI07 OA 14",
+        "HI07 OA 15",
+        "HI07 OA 16",
+        "HI07 OA 20"
+      ]
     }
   ],
   "oa": [

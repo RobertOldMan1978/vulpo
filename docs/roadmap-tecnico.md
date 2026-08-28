@@ -82,8 +82,11 @@ un motivo para desinstalar.
 **Reglas que se derivan, y que el documento no podía anticipar:**
 
 - La voz de 3° se cachea **bajo demanda, clip a clip, al reproducirse** — nunca en el `install`.
-- `assets/originales/` **no se cachea jamás**. De paso: hoy se está publicando en `vulpo.cl` sin
-  que nadie lo pida. Vale evaluar sacarlo del sitio desplegado, aparte de la PWA.
+- `assets/originales/` **no se cachea jamás**. **Resuelto en la Sesión 63:** se verificó que
+  GitHub Pages los estaba publicando (`https://vulpo.cl/assets/originales/<archivo>.png`
+  respondía HTTP 200 con 2,4 MB) y se excluyeron del sitio con `_config.yml`. **Siguen en el
+  repositorio**, porque son el respaldo del arte crudo y la forma de sincronizarlo entre los dos
+  computadores; lo que ya no ocurre es publicarlos. Libera 175 MB del techo de 1 GB.
 - `contenido/` (7,4 MB) sí es buen candidato a precarga, pero **por nivel**, no completo.
 - El `install` debe precargar solo el casco: HTML, CSS, JS, íconos y la mascota. Todo lo demás,
   a medida que se usa.

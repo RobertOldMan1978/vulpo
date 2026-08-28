@@ -240,6 +240,66 @@ Cosas que ya sabemos y siguen valiendo: la pantalla activa es `.screen.on` (no `
 nodo del mapa recibe el clic en su `.orb`, no en el `div`; y las tarjetas de campaña son
 `.camp-nodo`.
 
+### Banderas de nivel: las diferencias entre cursos van como DATO, no como `if`
+
+Cada curso es un fork, y lo que distingue a uno de otro **no es código de motor sino qué
+funcionalidades tiene**. Desde la Sesión 63 esas diferencias se declaran como constantes
+arriba del archivo, no como condiciones sueltas repartidas por el código.
+
+| Bandera | Qué gobierna | 8° | 7° | 3° |
+|---|---|---|---|---|
+| `HAY_RETO_CALCULO` | Si Matemática se juega como Reto de Cálculo. Afecta al **Duelo**: `odNMapas` y `odMapasMate` | ✅ | ❌ | ❌ |
+| `HAY_MINICLASES` | Si existe el camino de mini-clases. Afecta al **siguiente paso al reprobar** | ✅ | ❌ | ❌ |
+| `SIN_RELOJ` | Quiz sin cuenta regresiva y sin selector Normal/Difícil | ❌ | ❌ | ✅ |
+
+**Las dos primeras nacieron de dos defectos VIVOS en 7°**, encontrados jugando y no leyendo:
+
+1. **El Duelo ofrecía la Matemática equivocada.** Daba los **5 niveles del Reto de Cálculo de
+   8°** (Calentamiento, Enteros, Potencias y raíces…) en vez de los 4 capítulos de 7°, y
+   generaba las operaciones con `genCalculo` **saltándose el banco propio del nivel**.
+2. **El "siguiente paso al reprobar" ofrecía una mini-clase inexistente.** Al fallar una etapa
+   de Matemáticas, el botón decía "📘 Repasar la mini-clase", **descargaba las 17 lecciones de
+   8°** dentro de la app de 7° y no abría ninguna: el alumno tocaba y no pasaba nada.
+   **3° se salvaba por accidente**, porque escribe `'Matemática'` en singular y la comparación
+   era con el plural — o sea, la protección era una coincidencia de ortografía.
+
+> **Por qué importa la forma y no solo el arreglo:** los dos bugs eran `asig==='Matemáticas'`
+> escrito a mano en un archivo que se copió tres veces. Un `if` sobre el nombre de la asignatura
+> **no dice** si el nivel tiene esa funcionalidad, así que al forkear se copia con su suposición
+> adentro y nadie la vuelve a mirar. Una bandera con nombre obliga a responder la pregunta al
+> crear el nivel.
+
+**Al crear un curso nuevo, poner TODAS las banderas explícitamente**, aunque el valor sea el
+mismo que en el original.
+
+#### El bloque de lecciones NO se puede borrar del fork sin más
+
+Da la tentación: son ~693 líneas (catálogo de diagramas SVG + motor de lecciones + Reto de
+Cálculo) **byte a byte idénticas** en los tres forks e inalcanzables en 3° y 7°. Pero medido en
+la Sesión 63, el corte no es limpio:
+
+- **`refreshHud` y `levelUpFx` viven dentro de esa zona** por accidente de ubicación, y son del
+  HUD, no de las lecciones. El bloque real termina antes de ellas.
+- **3° necesita `NS`** (el namespace de SVG) que se declara ahí: lo usa su `renderVisual`.
+  Borrarlo deja sin dibujos los once widgets.
+- Quedan **11 referencias más** desde código vivo (`RC` en `detenerTimersActivos`, `CAP_MATE`,
+  `NIVELES_CALC`, `abrirRetoCalculo`…), idénticas en los tres archivos.
+
+El camino es **convertir primero las diferencias en banderas** y recién después extraer o
+sustituir el bloque, no al revés.
+
+### ⚠️ Un `*/` dentro de un comentario lo cierra antes de tiempo (y mata el juego entero)
+
+Pasó en la Sesión 63 escribiendo la documentación de una bandera: el comentario decía
+`(contenido/*/lecciones.json)`, y ese `*/` **cerró el bloque `/* … */`** dejando el resto del
+texto como JavaScript inválido. **Las tres apps quedaron muertas a la vez**
+(`ORDEN_ASIG is not defined`, ningún botón respondía) por un comentario.
+
+Es hermano del corte por índices de la Sesión 56: el archivo *parece* correcto al leerlo.
+**Nunca escribir una ruta con comodín, un glob ni una expresión regular dentro de un comentario
+de bloque.** Y por eso la verificación con `scripts/cdp.mjs` no es opcional: lo delató en el
+minuto uno.
+
 ### Gotchas de 7° básico (`7mo/index.html`, otro FORK de 8°)
 
 7° se sirve en `vulpo.cl/7mo/` y **no está enlazado desde el sitio**, igual que 3°. Es un
@@ -309,7 +369,8 @@ producción; el costo del fork está medido y es re-aplicar cada corrección en 
 
 #### Escribir el banco de 7°
 
-El estándar es **`docs/encargo-banco-7basico.md`**, hermano del de 3° pero para 12-13 años
+El estándar es **`docs/encargo-banco.md`** (único para todos los niveles; búscate en la tabla
+del §0), que para 7° fija 12-13 años
 **con cronómetro de 20 s** (el largo del enunciado es la restricción, no la edad) y **sin
 voz**: 7° no lleva audio pregrabado, y de 5° hacia arriba no vale la pena pagarlo.
 
@@ -346,7 +407,7 @@ voz**: 7° no lleva audio pregrabado, y de 5° hacia arriba no vale la pena paga
     unidad 3. Sus **6 OAH (habilidades) y 6 OAA (actitudes) quedan FUERA del banco**: miden
     desempeño observable que una pantalla no ve, y además sus códigos con letra
     (`CN03 OAH a`) **no calzan** con la validación del servidor, así que el backend los
-    descartaría en silencio. Cuidados de precisión: `docs/cuidados-ciencias-3basico.md`.
+    descartaría en silencio. Cuidados de precisión: `docs/cuidados-ciencias.md`.
   - **Lenguaje** es la asignatura menos evaluable por quiz de todo el proyecto: **17 de sus
     31 OA son de producción o de hábito**. Sus capítulos **NO siguen las unidades** del
     Programa —que no tienen nombre temático, reparten el mismo OA en varias y hasta parten
@@ -376,7 +437,7 @@ voz**: 7° no lleva audio pregrabado, y de 5° hacia arriba no vale la pena paga
   61 **tocar Lenguaje abría el landing "Campaña + Vocabulario" de 8°** — en 3° no hay
   Vocabulario, así que la asignatura entera era inalcanzable. Lo delató jugar la pantalla,
   no leer el código.
-- **Escribir el banco con agentes: el estándar vive en `docs/encargo-banco-3basico.md`**,
+- **Escribir el banco con agentes: el estándar vive en `docs/encargo-banco.md`**,
   y las trampas propias de cada asignatura en `docs/cuidados-<asignatura>-3basico.md`. El
   agente lee esos archivos; el encargo por agente son 6 líneas. Sirve además como criterio
   de revisión después. **Validar el estándar con las primeras tandas antes de escalar:**
@@ -658,6 +719,16 @@ Lee `contenido/<asignatura>/oa.json` y `preguntas.json`, y escribe
 `dev/tablero.html` (estático y autocontenido, se abre con doble clic). Regenerar
 cada vez que se agreguen o etiqueten preguntas. Está preparado para varias
 asignaturas: basta con crear otra carpeta en `contenido/` con esos dos archivos.
+
+> **⚠️ Un `oa.json` con otro dialecto deja sin tablero a TODOS los bancos, no solo al suyo,
+> y con eso bloquea la aprobación pedagógica entera.** El script recorre todas las carpetas
+> en una sola pasada, así que un `KeyError` en la última mata la generación completa. **Ya
+> pasó dos veces:** en la Sesión 55 por `unidades` ausente, y en la 62 por las unidades de 7°,
+> que usan `{n, nombre}` donde las demás usan `{id, titulo}` (`lenguaje-7basico` ni siquiera
+> tiene `unidades`: usa `capitulos_del_juego`). Desde la Sesión 63 los grupos se leen con los
+> helpers tolerantes `grupos_de` / `u_id` / `u_titulo`, pero la lección de fondo es otra: **el
+> tablero es la única puerta de aprobación, así que cualquier cosa que lo rompa detiene el
+> proyecto.** Después de agregar un banco, correr el script y confirmar que sale.
 
 **Cómo se llega al tablero (Sesión 22):** ya **no** se entra desde el juego. El
 tablero se abre desde el panel del administrador en `profesor.html` (botón
@@ -4114,3 +4185,102 @@ con meta**, 3° sigue en 85/85, 8° deja 13 sin meta que son los `VOC-*` y `AF-T
   4.988 preguntas de 3° y 7°; la conversación con el colegio sobre la unidad de sexualidad de
   Ciencias de 7°; escuchar el clip de **copihue**; pegar `aplicar-foto-semanal.sql`; y los trámites
   (INAPI, la SpA, el enlace de agenda de la landing).
+
+### Sesión 64 (2026-08-28) — Se cierra la Fase 0 y arranca la extracción del motor
+Continuación directa de la 63, ejecutando el plan de la v1. **No se escribió contenido:** todo es
+herramienta, estándar y motor. Al final del tramo, dos defectos vivos de 7° corregidos.
+
+#### Fase 0 — Ordenar las bases (COMPLETA)
+
+- **El tablero estaba CAÍDO y nadie podía aprobar nada.** `generar-tablero.py` moría con
+  `KeyError: 'id'` porque las unidades de 7° usan `{n, nombre}` y las de los otros once bancos
+  `{id, titulo}` —y `lenguaje-7basico` no tiene `unidades` sino `capitulos_del_juego`—. Como el
+  script recorre TODAS las carpetas en una pasada, **un banco con otro dialecto deja sin tablero
+  a los quince**, o sea bloquea la aprobación pedagógica completa. Es la segunda vez (Sesión 55,
+  `KeyError: 'unidades'`): esa vez se arregló el caso y no la clase. Ahora los grupos se leen con
+  `grupos_de` / `u_id` / `u_titulo`, y hay validador.
+- **`scripts/validar-oa-json.py` (nuevo) + `docs/esquema-oa-json.md`.** Declaran el contrato del
+  `oa.json` y lo comprueban en los quince bancos. Encontró **38 errores**, todos la deriva de 7°;
+  tras migrar, **0**. También destapó que la exclusión de `LE03 OA 16` (caligrafía) vivía solo en
+  prosa mientras la de `LE07 OA 12` estaba declarada: ninguna herramienta podía distinguir "lo
+  excluimos" de "se le olvidaron las preguntas". Migrados los cuatro `oa.json` de 7° al canon
+  `{id, titulo}` (26 grupos) y declarada la exclusión de 3°.
+- **`docs/encargo-banco.md`** funde los dos encargos por nivel en uno parametrizado (tabla del
+  §0: edad, cronómetro, largo, voz, `visual`). El de 3° **no tenía las trampas f, g, h e i**
+  descubiertas escribiendo 7°: cuatro defectos conocidos que se habrían repetido gratis en 4°, 5°
+  y 6°.
+- **`docs/cuidados-matematica.md` y `docs/cuidados-historia.md` (nuevos)**, y
+  `cuidados-ciencias-3basico.md` → **`cuidados-ciencias.md`** generalizado. El saber de Matemática
+  e Historia no estaba escrito: vivía **dentro de un script** y disperso en planes.
+- **`scripts/auditar-banco-nivel.py`** reemplaza a `validar-banco-3ro.py` y `auditar-banco-3ro.py`
+  (rutas fijas, `LARGO_MAX=90`, **7 widgets cuando los bancos usan 11**: los 33 ítems con `linea`,
+  `cuadricula`, `globo` y `zonas` salían como tipo desconocido).
+  > **Al estrenarlo dio 6 errores en Matemática y los SEIS eran del auditor, no del banco.** Tres
+  > en 3°, donde la respuesta es una *expresión* (`"6 x 2 es lo mismo que sumar…"` →
+  > `2+2+2+2+2+2`) y se comparaba contra el resultado numérico. Tres en 7°, por **números
+  > negativos**: en `-3 - 5` el regex emparejaba `3 - 5` = −2 y acusaba la clave correcta, −8 (el
+  > parser venía de 3°, que no tiene enteros). Las tres claves de 7° se verificaron por cálculo
+  > independiente antes de tocar nada. Corregido, **los catorce bancos quedan en 0 errores**.
+- **Aprobación masiva en el tablero** + `docs/aprobacion-pedagogica.md`: botón "✓ todo el OA" en
+  los 262 objetivos y "✓ Aprobar toda la asignatura" en las 14, con el criterio de **revisar 8 de
+  30 y aprobar el OA**. Probabilidades **hipergeométricas y calculadas**, no estimadas (96,5% de
+  detección si el OA está 30% defectuoso; **26,7% si tiene una sola mala**): el muestreo caza un
+  OA mal escrito, no una pregunta suelta, y eso se dice con todas sus letras.
+  > **Al probarlo apareció un defecto de siempre:** el contador decía **7.944 preguntas** donde el
+  > banco tiene **7.524**. Sobraban 420 porque **270 preguntas de Lenguaje de 3° se dibujan dos
+  > veces** (nueve de sus OA pertenecen a dos capítulos, lo cual es correcto en los datos).
+  > Marcar una copia dejaba la otra sin marcar —un OA aprobado que se ve a medias— y el export
+  > repetía ids. Ahora las copias se sincronizan y se cuenta por id único.
+- **`aplicar-revisadas.py`** recorre los quince bancos (antes uno fijo). Al reescribirlo apareció
+  algo peor que el cableado: **desmarcaba toda pregunta ausente del archivo exportado**, y las
+  marcas viven en el `localStorage` del navegador — una exportación hecha desde el otro PC habría
+  **desmarcado las 2.536 preguntas aprobadas de 8° sin avisar**. Por omisión ahora solo agrega.
+- **`revisar-tanda.py`** con un glob vacío imprimía el modo de uso y **salía con código 0**:
+  revisar una carpeta sin tandas se veía igual que revisarla sin defectos. Ahora dice por qué y
+  sale con 1.
+- **`_config.yml` (nuevo):** `assets/originales/` son **175 MB en 70 archivos** que GitHub Pages
+  estaba **publicando** (verificado: HTTP 200 con 2,4 MB por archivo). Excluidos del sitio y
+  **conservados en el repositorio**, que es el respaldo del arte crudo. Libera el margen que
+  necesita la voz de 4°. ⚠️ Declarar `exclude` **reemplaza** la lista por defecto de Jekyll, así
+  que hubo que repetir sus siete entradas. **Esto solo se puede verificar después del deploy.**
+
+#### Fase 1 — Banderas de nivel (en curso)
+
+El plan decía "extraer `lecciones.js` y compartirlo". **Medido, el corte no es limpio:**
+`refreshHud` y `levelUpFx` viven dentro de esa zona por accidente de ubicación; **3° necesita
+`NS`** (namespace SVG) que se declara ahí y lo usa su `renderVisual`; y quedan **11 referencias**
+más desde código vivo. El camino es convertir primero las diferencias en **datos**.
+
+**Cuatro banderas nuevas** (`HAY_RETO_CALCULO`, `HAY_MINICLASES`, `HAY_VOCABULARIO`,
+`HAY_BIBLIOTECA`), y **`renderExpediciones` quedó idéntica en las tres apps**. Detalle en la
+sección "Banderas de nivel" arriba.
+
+**Dos defectos VIVOS de 7°, encontrados jugando:**
+1. **El Duelo ofrecía la Matemática equivocada:** los 5 niveles del Reto de Cálculo de 8° en vez
+   de sus 4 capítulos, generando operaciones con `genCalculo` y **saltándose el banco de 7°**.
+2. **El "siguiente paso al reprobar" ofrecía una mini-clase inexistente:** el botón decía
+   "📘 Repasar la mini-clase", **descargaba las 17 lecciones de 8°** dentro de la app de 7° y no
+   abría ninguna. **3° se salvaba por accidente**, porque escribe "Matemática" en singular.
+
+**Dos errores propios en el camino, los dos atrapados por el navegador:**
+- Un comentario con `(contenido/*/lecciones.json)`: ese `*/` **cerró el bloque de comentario** y
+  **mató las tres apps a la vez**. Ver el gotcha arriba.
+- Mis escrituras convirtieron `7mo` y `3ro` de **CRLF a LF**, dejando el árbol inconsistente y
+  cualquier `diff` entre forks inútil. Restaurado.
+
+> **El diff bruto contra 8° creció (7°: 541 → 701 líneas) y NO es un retroceso:** antes el
+> `META_OA` de 7° era byte a byte el de 8° —ese era el bug de la Sesión 63— y ahora tiene sus 81
+> metas propias. Casi todo el archivo son datos, que deben diferir por nivel; lo que hay que
+> converger es el código.
+
+**Verificado con `scripts/cdp.mjs` en las tres apps:** se juega una etapa real, 8° sin regresión
+(conserva Lectura, "Campaña + Vocabulario" y sus 5 niveles del Reto), **el guardado de 8° queda
+intacto tras jugar 7° y 3°**, y **cero errores de consola y cero 404**.
+
+- **Pendiente inmediato:** el bloque de lecciones sigue duplicado (**693 líneas × 3 = 2.079**);
+  ahora que las funcionalidades son datos, el camino está despejado. Después, las Fases 2-4
+  (5°, 6° y 4°).
+- **Pendiente de Roberto:** comprobar el `_config.yml` en producción tras el deploy; la consulta
+  de `kimun_prof_asignaturas` (cada código debe dar **2**); pegar `aplicar-foto-semanal.sql`, que
+  **cada lunes sin foto se pierde para siempre**; empezar la aprobación pedagógica con la
+  herramienta nueva; y los de arrastre (copihue, INAPI, SpA, enlace de agenda).

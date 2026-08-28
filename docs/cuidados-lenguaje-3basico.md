@@ -6,7 +6,7 @@ habitualmente, ir a la biblioteca, disfrutar). Un quiz de opción múltiple no p
 ninguna de esas cosas: solo puede medir si el niño **reconoce cuál es la práctica correcta**.
 
 Este archivo dice, objetivo por objetivo, **qué versión honesta admite cada uno**. Se usa
-para escribir el banco y para revisarlo. Va junto con `docs/encargo-banco-3basico.md`, que
+para escribir el banco y para revisarlo. Va junto con `docs/encargo-banco.md`, que
 es el estándar general y manda sobre el formato.
 
 > **La regla que atraviesa todo el archivo:** los OA de conducta e interacción se preguntan
