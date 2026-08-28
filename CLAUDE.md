@@ -4597,6 +4597,13 @@ Sesión corta, de habilitación y documentación. Sin cambios en el juego ni en 
   transcriptor, no del audio). *Cómo verificar coincidencia audio↔texto:* el `manifiesto.json` de cada
   asignatura mapea **texto→clip**; una pregunta cuyo enunciado/opción no esté en el manifiesto quedó
   sin voz.
+- **Landing: acceso al panel del profesor arriba a la derecha.** El enlace "Panel del profesor" solo
+  estaba en el pie (`index.html` de la raíz). Se agregó un **botón fijo** `top-right` (`.prof-top`,
+  `position:fixed`) con ícono 🧑‍🏫 y el texto **"Profes"** (`aria-label="Panel del profesor"` para
+  lectores de pantalla) → `/profesor.html`, siempre visible sin bajar. Estilo acorde (pastilla violeta
+  translúcida, responsive ≤520px). El enlace del pie se conservó. *(Verificado en el archivo; el panel
+  del navegador integrado rechazó la raíz `localhost:8765/` esta sesión, así que no hubo captura en
+  vivo — se ve en vulpo.cl al desplegar.)*
 - **Pendiente (Roberto):** hacer A1 con los PDF/tablero (7-11 h, el camino crítico); cuando exporte
   el `revisadas.json`, se aplica con `aplicar-revisadas.py` y se regenera el tablero. Sigue en pie
   la reautenticación de NotebookLM (el paso del AI Brain de la orden 66 falla hasta rehacer el login
