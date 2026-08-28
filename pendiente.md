@@ -80,7 +80,7 @@ Para poder decir "tengo 3°, 7° y 8°". Es el hito más cercano y el de mejor r
 | A4 | Conversación con el colegio sobre `CN07 OA 01/02/03` (sexualidad, currículum obligatorio; el colegio piloto es salesiano) | — | Roberto |
 | ~~A5~~ | ~~Escuchar el clip de voz de **copihue**~~ ✅ **HECHO (28/08)**: Roberto eligió la pronunciación `ko.piˈwe` (IPA en `_FONEMAS`); los 2 clips regenerados y confirmados | — | — |
 | A6 | Confirmar el **lunes 31/08** que apareció la primera foto semanal | 1 min | Roberto |
-| A7 | **Marcar el contenido sensible en el armador y el enlace de venta**, con opt-in del usuario por categoría. Código de color de 5 categorías e inventario de 20 OA ya listos en [`docs/contenido-sensible.md`](docs/contenido-sensible.md). Falta diseñar (brainstorming) e implementar | ~1 sesión | código |
+| ~~A7~~ | ~~**Marcar el contenido sensible en el armador**~~ ✅ **HECHO (28/08, Sesión 67)**: `assets/js/sensible.js` (mapa de los 20 OA + 5 categorías) + leyenda/emojis/resumen en `arrancarArmador` de las tres apps. La decisión se toma al construir el enlace (la casilla por capítulo es el control); el enlace de venta no cambió. Verificado con `cdp.mjs`, cero consola / cero 404 | — | — |
 
 **Las portadas de capítulo siguen prestadas a propósito.** Son ~46 imágenes más para una
 diferencia que casi nadie mira; el Jefe Final es donde el préstamo chirría.

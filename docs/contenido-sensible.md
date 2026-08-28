@@ -69,8 +69,23 @@ avisar) · **BAJA** (mención menor).
 
 *(La suma es mayor que 20 porque varios OA llevan dos categorías.)*
 
-## Pendiente (feature)
+## Estado de la feature (implementada, Sesión 67)
 
-Falta implementar el marcado en el armador y en el enlace de venta, con el opt-in del usuario
-(activar/no cada categoría o cada capítulo sensible). Diseño por hacer (brainstorming). Los enlaces de
-muestra trabajan por **capítulo**, así que un capítulo hereda las categorías de los OA que contiene.
+El marcado **ya está implementado en el armador** (`?armar=1`). La decisión de qué contenido
+sensible entra se toma **al construir el enlace**: la casilla por capítulo que el armador ya tenía
+es el control, así que lo que no se marca no viaja y quien recibe abre solo lo aprobado. **El enlace
+de muestra/venta (`?solo=`, `?m=`) no cambió** — no hay opt-in en tiempo de apertura (VULPO es
+estático; sería blando). Los enlaces trabajan por **capítulo**, que hereda las categorías de los OA
+que contiene.
+
+Cómo se ve: el armador muestra una **leyenda** con solo las categorías presentes en ese nivel, un
+**emoji** por capítulo sensible (con `title` de la categoría), y el **resumen** dice "· incluye: …"
+según los capítulos marcados.
+
+- **`assets/js/sensible.js`** es el espejo-máquina de la tabla de OA de este documento: el mapa
+  `SENSIBLE.oa` de arriba y las 5 categorías de `SENSIBLE.cats`. **Al agregar o cambiar un OA
+  sensible aquí, actualizar también ese `.js`** (la severidad ALTA/MEDIA/BAJA vive solo aquí; la UI
+  no la usa). Lo lee `arrancarArmador` en las tres apps, con respaldo vacío por si el archivo no
+  carga.
+- Diseño y plan: `docs/superpowers/specs/2026-08-28-contenido-sensible-armador-design.md` y
+  `docs/superpowers/plans/2026-08-28-contenido-sensible-armador.md`.

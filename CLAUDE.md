@@ -4642,3 +4642,43 @@ Sesión corta, de habilitación y documentación. Sin cambios en el juego ni en 
   el `revisadas.json`, se aplica con `aplicar-revisadas.py` y se regenera el tablero. Sigue en pie
   la reautenticación de NotebookLM (el paso del AI Brain de la orden 66 falla hasta rehacer el login
   por Chrome).
+
+### Sesión 67 (2026-08-28) — A7: contenido sensible marcado en el armador
+Feature chica y acotada del Bloque A. **No se tocó contenido** (ningún banco, voz ni pregunta): solo
+el armador de enlaces de muestra (`?armar=1`). Flujo brainstorming → spec → plan → ejecución inline,
+verificando con `scripts/cdp.mjs`.
+- **La decisión de qué contenido sensible entra se toma AL CONSTRUIR el enlace, no al abrirlo.** La
+  casilla por capítulo que el armador ya tenía es el control: lo que no se marca no viaja, y quien
+  recibe abre solo lo aprobado. **El enlace de muestra/venta (`?solo=`, `?m=`) NO cambió** — no hay
+  opt-in en tiempo de apertura, que sería blando (VULPO es estático). Descartado por diseño, no por
+  falta de tiempo.
+- **`assets/js/sensible.js` (nuevo, compartido por las tres apps):** mapa de los 20 OA sensibles →
+  sus categorías + las 5 categorías del código de color (`SENSIBLE.cats`) + `deExpedicion(exp)` (las
+  categorías presentes en un capítulo, deduplicadas y en orden canónico, ignorando el BOSS). Es el
+  **espejo-máquina de `docs/contenido-sensible.md`**: al agregar un OA sensible hay que tocar los
+  dos (la severidad ALTA/MEDIA/BAJA vive solo en el doc; la UI no la usa).
+- **Lo lee solo `arrancarArmador`**, con **respaldo vacío** en cada `index.html` (patrón de
+  `revision.js`): si `sensible.js` no carga (404), el armador degrada a "sin marcas" y **no
+  crashea**. Verificado renombrando el archivo: en las tres apps la lista sigue viva y el único 404
+  es `sensible.js`.
+- **Qué se ve en el armador:** una **leyenda** con solo las categorías presentes en ese nivel (3°
+  muestra solo ⚔️; 7° incluye ❤️ Sexualidad por CN07; 8° tiene 🚭 pero no ❤️), un **emoji** por
+  capítulo sensible (con `title` de la categoría, fondo tenue de su color), y el **resumen** dice
+  "· incluye: …" según los capítulos marcados — útil directo para A4 (armar el enlace de CN07 para
+  el colegio salesiano y ver qué contiene).
+- **Emojis, no puntitos de color puros:** en el teléfono no hay hover y el emoji se lee solo; el
+  color va en la leyenda y como fondo del emoji. Es seguro para daltónicos. Única desviación del
+  "puntitos de color" del doc.
+- **Las tres apps recibieron el mismo Conjunto E** (5 ediciones byte a byte idénticas, anclas en las
+  mismas líneas), para que el fork no diverja. **CRLF preservado** (verificado con `file` y
+  `git diff --numstat`: 22/1 en cada `index.html`).
+- **Verificado jugando con `cdp.mjs`** en las tres apps: leyenda correcta por nivel, marcas en los
+  capítulos correctos, resumen que se actualiza al marcar, el respaldo vacío, y regresión (8° arranca
+  normal). Cierre: **cero errores de consola y cero 404** en las tres.
+- Spec y plan: `docs/superpowers/specs/2026-08-28-contenido-sensible-armador-design.md` y
+  `docs/superpowers/plans/2026-08-28-contenido-sensible-armador.md`. `docs/contenido-sensible.md`
+  actualizado (feature implementada + recordatorio de sincronizar el `.js`).
+- **Pendiente de arrastre (Roberto):** A1 (aprobación pedagógica de 3° y 7°, el camino crítico); A4
+  (conversar CN07 con el colegio — el armador ya se lo muestra); A6 (confirmar la foto del lunes
+  31/08); y la reautenticación de NotebookLM (el paso del AI Brain sigue cayendo hasta rehacer el
+  login por Chrome).

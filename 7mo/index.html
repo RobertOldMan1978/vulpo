@@ -19,6 +19,8 @@
      2.112.4; para actualizar, descargar la nueva y cambiar esta ruta. -->
 <!-- Modo revisión de profesor, compartido por todos los cursos. -->
 <script src="assets/js/revision.js"></script>
+<script src="assets/js/sensible.js"></script>
+<script>if(!window.SENSIBLE)window.SENSIBLE={cats:{},oa:{},deExpedicion:function(){return[];}};</script>
 <script src="assets/vendor/supabase-js-2.112.4.min.js"></script>
 <style>
 :root{
@@ -101,6 +103,9 @@ input.nm:focus{border-color:var(--cyan)}
 .chip{padding:7px 12px;border:2px solid var(--violet);border-radius:999px;background:#1a1440;
   color:#fff;font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;cursor:pointer}
 .chip:active{transform:translateY(1px)}
+/* Marca de contenido sensible en el armador (assets/js/sensible.js). */
+.sens-m{display:inline-block;margin-left:4px;padding:1px 5px;border-radius:6px;font-size:12px;line-height:1.4}
+.sens-leyenda{font-size:11px;font-weight:800;color:var(--dim);margin:2px 0 8px;line-height:1.9}
 .btn.sec:active{box-shadow:0 2px 0 #2b1e8f}
 .btn:disabled{filter:grayscale(.8);opacity:.5;box-shadow:none;transform:none}
 
@@ -2319,17 +2324,31 @@ function armarUrl(){
    : '';
  $('armarUrl').value=url||'Marca al menos un capítulo';
  $('armarCopiar').disabled=!url; $('armarProbar').disabled=!url;
+ // Categorías sensibles incluidas en los capítulos marcados (assets/js/sensible.js).
+ const scat=Object.keys(SENSIBLE.cats).filter(c=>
+   ids.some(id=>{const e=EXPEDICIONES.find(x=>x.id===id); return e&&SENSIBLE.deExpedicion(e).includes(c);}))
+   .map(c=>SENSIBLE.cats[c].icono+' '+SENSIBLE.cats[c].nombre).join(', ');
  $('armarResumen').textContent = url
    ? ids.length+(ids.length===1?' capítulo':' capítulos')
      +(hasta?' · vence el '+fechaLarga(hasta):' · sin caducidad')
      +(qa?' · con respuestas':'')
      +(rev?' · REVISIÓN de profesor (3 por etapa)':'')
+     +(scat?' · incluye: '+scat:'')
    : '';
  return url;
 }
 function arrancarArmador(){
  const cont=$('armarLista'); cont.innerHTML='';
  const activas=EXPEDICIONES.filter(e=>e.activa);
+ // Leyenda de contenido sensible: solo las categorías presentes en este nivel (assets/js/sensible.js).
+ const catsPresentes=Object.keys(SENSIBLE.cats).filter(c=>
+   activas.some(e=>SENSIBLE.deExpedicion(e).includes(c)));
+ if(catsPresentes.length){
+  const ley=document.createElement('div'); ley.className='sens-leyenda';
+  ley.innerHTML='<b>Contenido sensible:</b> '+catsPresentes.map(c=>
+    `<span style="color:${SENSIBLE.cats[c].color}">${SENSIBLE.cats[c].icono} ${SENSIBLE.cats[c].nombre}</span>`).join('&nbsp;&nbsp;&nbsp;');
+  cont.appendChild(ley);
+ }
  const asigs=[...new Set(activas.map(e=>e.asignatura))]
    .sort((a,b)=>((ORDEN_ASIG.indexOf(a)+1)||99)-((ORDEN_ASIG.indexOf(b)+1)||99));
  asigs.forEach(asig=>{
@@ -2341,7 +2360,9 @@ function arrancarArmador(){
    const i=camp?camp.capitulos.indexOf(exp.id):-1;
    const l=document.createElement('label');
    l.style.cssText='display:flex;gap:8px;align-items:center;font-size:13px;font-weight:700;padding:4px 0';
-   l.innerHTML=`<input type="checkbox" value="${exp.id}"><span>${i>=0?(i+1)+'. ':''}${nombreMapa(exp)}</span>`;
+   const sc=SENSIBLE.deExpedicion(exp);
+   const marcas=sc.map(c=>`<span class="sens-m" style="background:${SENSIBLE.cats[c].color}33" title="${SENSIBLE.cats[c].nombre}">${SENSIBLE.cats[c].icono}</span>`).join('');
+   l.innerHTML=`<input type="checkbox" value="${exp.id}"><span>${i>=0?(i+1)+'. ':''}${nombreMapa(exp)}</span>${marcas}`;
    cont.appendChild(l);
   });
  });
