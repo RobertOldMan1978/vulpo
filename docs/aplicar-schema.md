@@ -14,6 +14,18 @@ puede ejecutar cambios de estructura).
 | **2026-08-27** | `LE03` y `CN03` (Sesión 61) | — |
 | **2026-08-27** | Los cuatro códigos de 7° básico: `HI07`, `MA07`, `CN07`, `LE07` (Sesión 62) | Sí: `kimun_oa_asignatura` resuelve los cuatro contra producción, y 8° y 3° siguen intactos |
 
+> **`schema.sql` NO tiene nada pendiente de aplicar.** Su última modificación es del **27/08 a
+> las 10:41** (Sesión 62, los códigos de 7°) y se aplicó ese mismo día; las Sesiones 63, 64 y 65
+> **no tocaron el backend**. Re-confirmado en vivo contra producción el **28/08/2026** (ver abajo
+> cómo). Si el archivo sigue con esa fecha, es que está al día — no es un olvido.
+>
+> **Las dos comprobaciones están hechas.** La de `kimun_prof_asignaturas` (los dos arreglos) la
+> corrió Roberto el **28/08/2026** y devolvió `ok` con los cuatro códigos de 7° en **2 y 2**. Es
+> la que importa, porque **si a un arreglo le falta un código ese contenido queda invisible para
+> el Profesor Jefe sin ningún error**, y la consulta general de cinco filas no lo detecta.
+>
+> **El backend de VULPO está al día: no hay nada de `schema.sql` pendiente de aplicar.**
+
 ## Antes de empezar: por qué es seguro
 
 Verificado sobre el archivo (1.391 líneas) el 24/08/2026:
@@ -106,9 +118,24 @@ Cuando lo que se aplica agrega un curso (`MA03`, `HI07`, y en la v1 vendrán 4°
 consulta general de arriba **no lo cubre**: sigue dando `ok` aunque el nivel no haya quedado
 registrado. Hay que mirar dos funciones distintas.
 
-**1. `kimun_oa_asignatura` — que el código se reconozca.** Esto lo puede comprobar el asistente
-sin credenciales, porque la función no está revocada y no toca datos: basta llamarla con la
-clave pública y ver que `'HI07 OA 01'` devuelva `'HI07'`. Un código inexistente debe dar `null`.
+**1. `kimun_oa_asignatura` — que el código se reconozca.** Esto lo comprueba el asistente
+**sin credenciales de administrador**, porque la función no está revocada y no toca datos: se la
+llama con la clave pública que ya vive en `juego/index.html`. Un código inexistente debe dar
+`null`, que es lo que demuestra que la respuesta no es un eco.
+
+```bash
+KEY=$(grep -o "sb_publishable_[A-Za-z0-9_-]*" juego/index.html | head -1)
+URL="https://bdgzpjzlqidcexdkjhzy.supabase.co"
+for oa in "HI07 OA 01" "MA07 OA 05" "MA03 OA 01" "XX99 OA 01"; do
+  printf "%-14s -> " "$oa"
+  curl -s -X POST "$URL/rest/v1/rpc/kimun_oa_asignatura"     -H "apikey: $KEY" -H "Authorization: Bearer $KEY"     -H "Content-Type: application/json" -d "{\"p_oa\":\"$oa\"}"; echo
+done
+```
+
+Corrido el 28/08/2026: los cuatro códigos de 7°, más `HI08` y `MA03`, devuelven su asignatura, y
+`XX99` devuelve `null`. **Vale la pena hacerlo antes de pedirle nada a Roberto:** evita mandarlo
+a re-aplicar algo que ya está aplicado, que es exactamente lo que pasó por arrastre entre las
+Sesiones 63 y 65.
 
 **2. `kimun_prof_asignaturas` — que el código esté en los DOS arreglos.** Esta sí hay que
 mirarla desde el SQL Editor, y es la que importa: **si a un arreglo le falta un código, ese

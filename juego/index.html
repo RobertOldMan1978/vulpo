@@ -1259,7 +1259,7 @@ const EXPEDICIONES=[
    ]},
  { id:'hist-desafio', asignatura:'Historia', nivel:'8° Básico · Desafío: Chile hoy',
    portada:'assets/portada-historia.png', contenido:'contenido/historia-8basico/preguntas.json',
-   activa:true, campaña:'hist', desafio:true, bonoMult:2,
+   activa:true, campaña:'hist', desafio:true,
    etapas:[
      {oa:"HI08 OA 20",nombre:"¿Qué es una región?",icono:"🗺️",n:10},
      {oa:"HI08 OA 21",nombre:"Problemas de las regiones",icono:"⚠️",n:10},
@@ -1784,7 +1784,7 @@ const MUSIC={
    let n='menu';
    if(id==='scr-jefe-intro'||id==='scr-jefe') n='jefe';                            // combate del jefe
    else if(id==='scr-jefe-win') n='victoria';                                      // triunfo
-   else if(id==='scr-calc') n=(typeof RC!=='undefined' && RC)?(RC.modo==='jefe'?'jefeCalc':RC.modo==='sinfin'?'sinfin':'aventura'):'aventura'; // Reto: etapas=aventura, jefe=jefeCalc, sin fin=sinfin
+   else if(HAY_RETO_CALCULO && id==='scr-calc') n=(typeof RC!=='undefined' && RC)?(RC.modo==='jefe'?'jefeCalc':RC.modo==='sinfin'?'sinfin':'aventura'):'aventura'; // Reto: etapas=aventura, jefe=jefeCalc, sin fin=sinfin
    else if(id==='scr-quiz') n='aventura';                                          // quiz de expedición
    else if(id && (id.indexOf('scr-duelo')===0 || id.indexOf('scr-od')===0)) n='duelo'; // Duelo 1v1
    this._ctx=n; if(this.on)this.play(n);
@@ -3168,7 +3168,7 @@ $('btnMapaCamp').onclick=()=>{SND.tap();
  go('scr-expediciones');};
 function renderCampaña(){
  const c=CAMP_ACT; if(!c)return;
- if(c.esLecciones){ renderCampañaMate(c); return; }
+ if(HAY_MINICLASES&&c.esLecciones){ renderCampañaMate(c); return; }
  $('campHead').innerHTML=`<h1 style="font-size:26px">${c.asignatura} ${campañaCompleta(c)?'👑':''}</h1><p>${c.intro}</p>`;
  const cont=$('campNodos'); cont.innerHTML='';
  // capítulos en orden
@@ -3273,7 +3273,7 @@ function iniciarJefeFinal(camp){
   JF={camp,fase:0,idx:0,preguntas:[],vidaMax:total,vida:total,vidas:jf.vidasJugador,lock:false};
   renderJefeIntro();
  };
- if(camp.esLecciones){ cargarPoolMate().then(arrancar); }   // campaña de Matemáticas
+ if(HAY_MINICLASES&&camp.esLecciones){ cargarPoolMate().then(arrancar); }   // campaña de Matemáticas
  else { const capExp=EXPEDICIONES.find(e=>e.id===camp.capitulos[0]); activarExpedicion(capExp).then(arrancar); }
 }
 function renderJefeIntro(){
@@ -3513,6 +3513,7 @@ function odPreguntasCalc(exp){const out=[],seen=new Set();let g=0;
    del Reto de 8° (Calentamiento, Enteros, Potencias...) en vez de los capítulos del
    nivel, y genera las operaciones con genCalculo saltándose el banco propio. Estaba
    pasando de verdad en 7° (Sesión 63). */
+const HAY_RETO_CALCULO=true;
 /* ¿Este nivel tiene el camino de mini-clases de Matemática (su lecciones.json)?
    Gobierna el "siguiente paso al reprobar": con mini-clases se ofrece repasar la clase,
    y sin ellas hay que caer al repaso sin reloj, como las demás asignaturas. Con la
@@ -3526,7 +3527,6 @@ const HAY_MINICLASES=true;
    comparten el mismo renderExpediciones y solo cambia el valor. */
 const HAY_VOCABULARIO=true;
 const HAY_BIBLIOTECA=true;
-const HAY_RETO_CALCULO=true;
 function odExpsDe(asig){return EXPEDICIONES.filter(e=>e.activa&&e.asignatura===asig);}
 // Matemáticas en el duelo = los niveles del Reto de Cálculo (mismo look que el mapa).
 function odMapasMate(){return NIVELES_CALC.map((n,i)=>({id:'calc-'+n.id,asignatura:'Matemáticas',
@@ -3752,7 +3752,7 @@ function pintarSinCurso(){
 }
 // Detiene cualquier temporizador/avance en curso (quiz, Reto de Cálculo, duelo) para que
 // no siga corriendo de fondo al cambiar de pantalla por la barra inferior u otro atajo.
-function detenerTimersActivos(){ clearInterval(Q.timer); clearTimeout(Q._avanzarT); clearInterval(RC.timer); clearTimeout(RC._resolveT); clearInterval(D.timer); }
+function detenerTimersActivos(){ clearInterval(Q.timer); clearTimeout(Q._avanzarT); if(HAY_RETO_CALCULO){clearInterval(RC.timer); clearTimeout(RC._resolveT);} clearInterval(D.timer); }
 document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>{
  SND.tap(); detenerTimersActivos();
  const dst=b.dataset.go;
@@ -3821,7 +3821,7 @@ function arrancarQuiz(lvl){
     repetida:!!(prg&&prg[lvl]&&prg[lvl].est==='done'), comodines};   // ya superada antes en este modo → pago reducido
  go('scr-quiz');pintaPregunta();}
 $('btnBack').onclick=()=>{clearInterval(Q.timer);clearTimeout(Q._avanzarT);
- if(Q.leccion){volverAlCapituloMate();}else{go(Q.desafio?'scr-rol':'scr-mapa');}};
+ if(HAY_MINICLASES&&Q.leccion){volverAlCapituloMate();}else{go(Q.desafio?'scr-rol':'scr-mapa');}};
 
 // Modo repaso: 10 preguntas nuevas del OA de la etapa fallada (excluye las que ya salieron),
 // sin cronómetro, sin reprobar, sin medir dominio y sin pagar. Al terminar vuelve a scr-res.

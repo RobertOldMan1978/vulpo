@@ -116,7 +116,7 @@ humana de Roberto, ver Sesión 12). Los 3 bancos nuevos se llevaron a cobertura 
 año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron con ítems
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
 están hoy en una expedición jugable, el resto es reserva. **Herramientas dev:** tablero con clave
-(`dev/tablero.html`) y scripts (`consolidar-pool`, `aplicar-revisadas`,
+(`dev/tablero.html`) y scripts (`consolidar-pool-nivel`, `aplicar-revisadas`,
 `generar-pdf-preguntas` —por asignatura y con `--sin-revisar`—, `generar-tablero`).
 
 ## Decisiones de diseño
@@ -248,9 +248,15 @@ arriba del archivo, no como condiciones sueltas repartidas por el código.
 
 | Bandera | Qué gobierna | 8° | 7° | 3° |
 |---|---|---|---|---|
-| `HAY_RETO_CALCULO` | Si Matemática se juega como Reto de Cálculo. Afecta al **Duelo**: `odNMapas` y `odMapasMate` | ✅ | ❌ | ❌ |
-| `HAY_MINICLASES` | Si existe el camino de mini-clases. Afecta al **siguiente paso al reprobar** | ✅ | ❌ | ❌ |
+| `HAY_RETO_CALCULO` | Si Matemática se juega como Reto de Cálculo. Afecta al **Duelo** (`odNMapas`, `odMapasMate`, `odPreguntasCalc`), a `detenerTimersActivos` y a la música de `scr-calc` | ✅ | ❌ | ❌ |
+| `HAY_MINICLASES` | Si existe el camino de mini-clases. Afecta al **siguiente paso al reprobar**, a `renderCampaña`, al Jefe Final (`cargarPoolMate`) y al ✕ del quiz | ✅ | ❌ | ❌ |
+| `HAY_VOCABULARIO` | Si Lenguaje abre el landing "Campaña + Vocabulario" en vez de su campaña | ✅ | ❌ | ❌ |
+| `HAY_BIBLIOTECA` | Si la pantalla principal ofrece el módulo 📖 Lectura | ✅ | ❌ | ❌ |
 | `SIN_RELOJ` | Quiz sin cuenta regresiva y sin selector Normal/Difícil | ❌ | ❌ | ✅ |
+
+Cada bandera va **pegada a su comentario**, que explica qué pasa si se pone mal. Una bandera cuyo
+porqué vive catorce líneas más arriba no cumple su único propósito, que es **obligar a responder
+la pregunta al crear un nivel**.
 
 **Las dos primeras nacieron de dos defectos VIVOS en 7°**, encontrados jugando y no leyendo:
 
@@ -272,21 +278,61 @@ arriba del archivo, no como condiciones sueltas repartidas por el código.
 **Al crear un curso nuevo, poner TODAS las banderas explícitamente**, aunque el valor sea el
 mismo que en el original.
 
-#### El bloque de lecciones NO se puede borrar del fork sin más
+#### El bloque de lecciones ya NO está en los forks (Sesión 65)
 
-Da la tentación: son ~693 líneas (catálogo de diagramas SVG + motor de lecciones + Reto de
-Cálculo) **byte a byte idénticas** en los tres forks e inalcanzables en 3° y 7°. Pero medido en
-la Sesión 63, el corte no es limpio:
+Las **693 líneas** de 8° (catálogo de diagramas SVG + motor de mini-clases + Reto de Cálculo)
+**salieron de `3ro/` y `7mo/`**, donde eran inalcanzables. Siguen vivas y sin tocar en
+`juego/index.html`, que es donde se juegan. Con el HTML huérfano de sus cuatro pantallas y una
+segunda zona muerta que había fuera del bloque, son **792 líneas menos por fork**.
 
-- **`refreshHud` y `levelUpFx` viven dentro de esa zona** por accidente de ubicación, y son del
-  HUD, no de las lecciones. El bloque real termina antes de ellas.
-- **3° necesita `NS`** (el namespace de SVG) que se declara ahí: lo usa su `renderVisual`.
-  Borrarlo deja sin dibujos los once widgets.
-- Quedan **11 referencias más** desde código vivo (`RC` en `detenerTimersActivos`, `CAP_MATE`,
-  `NIVELES_CALC`, `abrirRetoCalculo`…), idénticas en los tres archivos.
+**Se pudo recién ahora, y el orden importa:** primero las diferencias entre cursos pasaron a ser
+**banderas** (Sesión 64) y solo después se cortó. Al revés no se podía, porque lo que sujetaba el
+bloque no era el bloque sino los `if` sobre el nombre de la asignatura repartidos por el archivo.
 
-El camino es **convertir primero las diferencias en banderas** y recién después extraer o
-sustituir el bloque, no al revés.
+**De los tres obstáculos que esta sección declaraba, uno era falso:**
+
+- ✅ **`refreshHud` y `levelUpFx` viven dentro de esa zona** por accidente de ubicación, y son del
+  HUD, no de las lecciones. Cierto: el bloque termina justo antes de ellas, y ahí se cortó.
+- ❌ **"3° necesita `NS`, y borrarlo lo deja sin dibujos"** — **es falso, y estuvo escrito acá
+  bloqueando el corte.** Medido en la Sesión 65, la única aparición de `NS` fuera del bloque
+  **está dentro de un comentario**: el `renderVisual` de 3° arma el SVG como **texto**
+  (`svgEnvoltura`), nunca con `createElementNS`. Comprobado renderizando los **once** widgets con
+  datos reales de los bancos después del corte.
+  > La lección es sobre esta bitácora, no sobre el código: **una advertencia que nadie vuelve a
+  > medir se vuelve un candado**. Esta llevaba dos sesiones impidiendo un trabajo que resultó ser
+  > barato.
+- ⚠️ **Las referencias desde código vivo eran reales, y una era peligrosa de verdad:**
+  `detenerTimersActivos` hace `clearInterval(RC.timer)` **y a esa función la llama la barra
+  inferior**, o sea un toque que cualquier alumno da. Sin guardarla antes, el corte habría dejado
+  las dos apps muertas al primer toque. Va guardada con `if(HAY_RETO_CALCULO){…}`.
+
+**Las referencias muertas que quedaron NO se borran: se guardan.** `odNMapas`, `renderODExpMapas`
+e `iniciarDesafio` siguen nombrando `NIVELES_CALC`, `odMapasMate` y `odPreguntasCalc`, que en 3° y
+7° ya no existen. Se dejan así **a propósito**: la bandera hace inalcanzable esa rama, y mantener
+esas tres funciones **byte a byte iguales en los tres forks** es justamente el objetivo. Borrarlas
+las haría divergir, que es el problema que se está resolviendo.
+
+**Y apareció otro caso del mismo defecto de fondo:** en 3° y 7°, `cargarPoolMate` descargaba
+`contenido/matematicas-8basico/preguntas.json` — **el banco de otro nivel dentro de esta app**. Es
+hermano del botón de mini-clase que bajaba las 17 lecciones de 8° (Sesión 64). Se fue con el corte.
+
+#### Cómo se corta código de un fork sin matarlo
+
+La Sesión 56 dejó dicho que **nunca se borra con aritmética de índices ni con filtros por prefijo
+de línea**: los dos métodos cortaron por la mitad `const XP_POR_NIVEL=100;` y dejaron 3° injugable
+en todos sus modos. Lo que sí funciona, y se usó en la Sesión 65:
+
+- **Anclas exactas**, no números de línea: el corte se ubica por la cadena de la primera y la
+  última línea, y **aborta si la ancla aparece más de una vez**.
+- **Aserciones antes de escribir**: que sean exactamente 693 líneas; que la última esté vacía; y
+  que el tramo **difiera del de 8° en a lo más una línea** (la del campo `visual`, que solo 3°
+  propaga). Si algo no calza, el script no toca el archivo.
+- **Balance de llaves** para las funciones sueltas intercaladas con código vivo, en vez de rangos.
+- **Antes de borrar HTML, comprobar que ningún `id` de adentro lo nombre el JavaScript.** Ese
+  chequeo frenó el primer intento (`scr-calc` seguía nombrado en `MUSIC.contexto`) y obligó a
+  guardar también esa línea.
+- Y **preservar CRLF** (escribir con `newline=""`). Convertir los forks a LF deja cualquier
+  comparación entre cursos inservible, que es la herramienta principal para mantenerlos.
 
 ### ⚠️ Un `*/` dentro de un comentario lo cierra antes de tiempo (y mata el juego entero)
 
@@ -343,7 +389,7 @@ producción; el costo del fork está medido y es re-aplicar cada corrección en 
   ese contenido queda **invisible para el Jefe sin ningún error**), y en `profesor.html` a
   `OA_CARPETA`, `ASIG_NOMBRE`, `ASIG_ORDEN`, `SB_asigDe` y `NIVELES_MUESTRA`.
   ⚠️ **Requiere re-aplicar `supabase/schema.sql`.**
-- **`FECHA_PUERTA=''`** (abierto, es trabajo en curso) y `DEMO_LIBRE='hist7-cap1'`.
+- **`FECHA_PUERTA='2026-09-01'`** (alineada con 8° en la Sesión 65) y `DEMO_LIBRE='hist7-cap1'`.
 - **Arte prestado de 8°, declarado en comentarios.** Los villanos sí tienen nombre propio:
   El Anacronismo (Historia), El Azar (Matemática), La Erosión (Ciencias) y El Silencio
   (Lenguaje).
@@ -492,6 +538,36 @@ voz**: 7° no lleva audio pregrabado, y de 5° hacia arriba no vale la pena paga
 
 ### Regla de commits (importante)
 
+> #### ⚠️ El mensaje de commit va SIEMPRE en un archivo, con `git commit -F`
+>
+> Pasó en la Sesión 65: el mensaje se pasó con una **here-string de PowerShell**
+> (`-m @'…'@`) desde la herramienta Bash, que es **Git Bash, no PowerShell**. Ahí esa
+> sintaxis no existe: el `@` se tomó como el primer renglón del mensaje, así que **el
+> asunto del commit quedó siendo un solo carácter `@`** y el título real bajó al cuerpo.
+> Cerró bien, sin error, y solo se vio mirando `git log`.
+>
+> Es hermano del `*/` dentro de un comentario (Sesión 63) y del corte por índices
+> (Sesión 56): **sintaxis del shell equivocado que no falla, solo deforma.** Y aquí duele
+> porque en este proyecto **el log de commits es parte del registro**, y arreglarlo obliga
+> a reescribir historia ya subida.
+>
+> **La regla, que evita el problema entero sin depender de qué shell corra:**
+>
+> ```bash
+> git commit -F <(cat <<'FIN'
+> Titulo en una linea
+>
+> Cuerpo…
+> FIN
+> )
+> ```
+>
+> o, más simple, escribir el mensaje a un archivo del scratchpad y pasarlo con `-F`.
+> **Nunca `-m` con varias líneas**, y nunca `@'…'@` en Bash.
+>
+> Cómo se comprueba antes de dar el commit por bueno: `git log -1 --format="%s"` tiene que
+> devolver el título de verdad, no un símbolo suelto.
+
 - **"orden 99" = hacer `git pull`** de la rama `main` para traer lo último de
   GitHub. Se usa al empezar a trabajar desde otro PC (típicamente al llegar a casa
   o a la oficina), para sincronizar antes de tocar nada.
@@ -558,9 +634,18 @@ para siempre.
   semanas pasadas.
 - Retención de 2 años, limpiada por el mismo trabajo.
 - Es la base del informe semanal por correo, que se diseñará aparte.
-- **Para aplicarla, pegar `supabase/aplicar-foto-semanal.sql`** (Sesión 60): habilita
-  `pg_cron`, agenda el trabajo y se verifica solo, devolviendo 4 filas que deben decir
-  `ok`. Existe justamente para que el guard de abajo no pueda morder.
+- **✅ APLICADA Y AGENDADA. Verificada el 28/08/2026:**
+  `select count(*) from cron.job where jobname='foto-semanal';` devuelve **1**. Roberto la
+  aplicó el 27/08 pegando `supabase/aplicar-foto-semanal.sql` (Sesión 60), que habilita
+  `pg_cron`, agenda el trabajo y **se verifica solo** devolviendo 4 filas en `ok`. Existe
+  justamente para que el guard de abajo no pueda morder — y no mordió.
+- **Todavía NO hay ninguna foto tomada, y está bien.** El archivo **solo agenda**; no siembra
+  (lo de sembrar a mano es un comentario, no una sentencia). La primera la toma el trabajo el
+  **lunes 31/08/2026 a las 04:05 UTC**, etiquetada con el domingo que cierra, **30/08**.
+  > ⚠️ **No sembrarla a mano antes del lunes.** Los dos `insert` llevan `on conflict do
+  > nothing`, así que una foto sembrada hoy —viernes 28— se etiquetaría igual, con el domingo
+  > 30, y **la corrida del lunes no haría nada**: la primera semana quedaría congelada con los
+  > datos del viernes en vez de los de la semana completa. Conviene dejarla correr sola.
 - El guard de `pg_cron` **falla en silencio**: si la extensión no está habilitada,
   el `raise notice` no se ve en el panel de Supabase, el pegado termina "sin
   errores" y el trabajo queda sin agendar. Por eso, después de pegar el archivo,
@@ -670,10 +755,15 @@ código `ALU-` para jugar más allá de una demo. **Todo lo gobierna una sola co
 
 Llegada la fecha el cierre **ocurre solo**, sin desplegar nada ese día.
 
-> **ESTADO ACTUAL: `FECHA_PUERTA='2026-09-01'`.** Roberto la fijó el 25/08/2026, con 7 días de
-> aviso. Desde entonces la pantalla de inicio muestra la banda anunciando el cierre, y **el 1 de
-> septiembre de 2026 VULPO deja de ser gratuito**: sin código `ALU-` solo se juega `hist-cap1`.
-> Para posponerlo o cancelarlo, editar esa constante en `juego/index.html`.
+> **ESTADO ACTUAL: `FECHA_PUERTA='2026-09-01'` en los TRES niveles.** Roberto la fijó en 8° el
+> 25/08/2026 con 7 días de aviso, y en la Sesión 65 se alineó **3° y 7°**, que estaban abiertos
+> (`''`) y por lo tanto eran gratis. Una plataforma, una fecha. Desde entonces los tres muestran
+> la banda que anuncia el cierre, y **el 1 de septiembre de 2026 VULPO deja de ser gratuito**:
+> sin código `ALU-` solo se juega la demo de cada nivel (`hist-cap1` en 8°, `hist7-cap1` en 7°,
+> `mat3-cap1` en 3°). Para posponerlo o cancelarlo, editar esa constante en cada `index.html`.
+>
+> **La puerta NO estorba la revisión de un profesor:** `bloqueado()` exige `!PRUEBA`, así que los
+> enlaces de muestra (`?solo=`, `?m=`) y el modo revisión (`?rev=1`) la esquivan por diseño.
 
 - **La demo es exactamente `hist-cap1`** ("Los inicios de la modernidad"): 4 etapas + jefe, ~55
   preguntas. La constante es `DEMO_LIBRE`.
@@ -935,10 +1025,15 @@ Diseño y plan: `docs/superpowers/specs/2026-08-18-mapa-dominio-oa-design.md` y
 `docs/superpowers/specs/2026-08-18-primer-intento-design.md` y
 `docs/superpowers/plans/2026-08-18-primer-intento.md`.
 
-### Consolidar el pool de preguntas (`scripts/consolidar-pool.py`)
+### Consolidar el pool de preguntas (`scripts/consolidar-pool-nivel.py <carpeta>`)
 
 Une los archivos verificados, elimina duplicados, **baraja las opciones** (evita
-el sesgo de posición), asigna IDs por OA y escribe `preguntas.json`.
+el sesgo de posición), asigna IDs por OA y escribe `preguntas.json`. Sirve para
+cualquier banco de cualquier nivel; la carpeta va como argumento.
+
+> El viejo `consolidar-pool.py` **se retiró en la Sesión 65**: estaba cableado a
+> `historia-8basico` y correrlo sobre otro banco no hacía nada visible. El genérico
+> se validó reproduciendo el banco de Historia **byte a byte** (Sesión 61).
 
 ### Flujo de revisión pedagógica (marcar preguntas como "revisadas")
 
@@ -4284,3 +4379,123 @@ intacto tras jugar 7° y 3°**, y **cero errores de consola y cero 404**.
   de `kimun_prof_asignaturas` (cada código debe dar **2**); pegar `aplicar-foto-semanal.sql`, que
   **cada lunes sin foto se pierde para siempre**; empezar la aprobación pedagógica con la
   herramienta nueva; y los de arrastre (copihue, INAPI, SpA, enlace de agenda).
+
+### Sesión 65 (2026-08-28) — El bloque de lecciones sale de los forks: 792 líneas menos por curso
+Continuación de la Fase 1. **No se escribió contenido ni se tocó ningún banco.** El trabajo es
+todo motor, y `juego/index.html` (8°) queda **funcionalmente intacto**: sus únicos 6 cambios son
+guardas que no alteran su comportamiento, porque ahí las banderas valen `true`.
+
+**El resultado:** `7mo/index.html` pasa de 4.257 a 3.465 líneas y `3ro/index.html` de 4.768 a
+3.976. **−792 líneas en cada fork, −1.584 en total**, y ninguna de ellas era alcanzable en su
+nivel. Con seis niveles, esas mismas líneas se habrían copiado cinco veces.
+
+**Qué salió, en cuatro tramos:**
+1. Las **693 líneas** del bloque (diagramas SVG + motor de mini-clases + Reto de Cálculo).
+2. Una **segunda zona muerta que nadie había medido**, fuera del bloque y **intercalada con código
+   vivo**: `renderCampañaMate`, `capMateCompleto`, `jefeFinalMateDesbloqueado`, `cargarPoolMate`,
+   `odPreguntasCalc` y `odMapasMate` (55 líneas).
+3. El **HTML huérfano** de sus cuatro pantallas (`scr-calc-mapa`, `scr-calc`, `scr-calc-res`,
+   `scr-leccion`), 53 líneas cuyos manejadores se habían ido con el bloque.
+4. Antes que todo eso, los **guardas** que lo hicieron posible.
+
+#### Lo que casi sale mal, y es lo que hay que recordar
+
+**`detenerTimersActivos` hace `clearInterval(RC.timer)`, y a esa función la llama la barra
+inferior.** O sea: cortar el bloque sin guardarla primero habría dejado 3° y 7° reventando al
+primer toque de la barra — un toque que cualquier alumno da, en el colegio piloto incluido. No lo
+delató leer el código sino **enumerar las referencias antes de tocar nada**, que es el paso que en
+la Sesión 56 se saltó y costó dos post scriptums.
+
+**Y una advertencia de este mismo archivo resultó falsa.** Decía que 3° necesita `NS` del bloque y
+que borrarlo lo deja sin dibujos. Medido: la única aparición de `NS` fuera del bloque **está
+dentro de un comentario**, y el `renderVisual` de 3° arma el SVG como texto. Se comprobó
+renderizando los **once widgets con datos reales de los bancos** después del corte: los once
+salen. Esa advertencia llevaba dos sesiones bloqueando un trabajo barato — **una nota que nadie
+vuelve a medir deja de ser conocimiento y pasa a ser un candado**.
+
+**Un tercer caso del defecto de fondo del fork:** en 3° y 7°, `cargarPoolMate` descargaba
+`contenido/matematicas-8basico/preguntas.json`, el banco de **otro nivel**, dentro de esta app. Es
+hermano del botón que bajaba las 17 lecciones de 8° (Sesión 64) y del Duelo que ofrecía el Reto de
+8° (Sesión 63). Los tres nacieron de lo mismo: copiar un archivo con sus suposiciones adentro.
+
+#### Decisión de diseño: las referencias muertas se GUARDAN, no se borran
+
+`odNMapas`, `renderODExpMapas` e `iniciarDesafio` siguen nombrando `NIVELES_CALC`, `odMapasMate` y
+`odPreguntasCalc`, que en 3° y 7° ya no existen. Se dejan **a propósito**: la bandera hace
+inalcanzable esa rama, y mantener esas funciones **byte a byte iguales en los tres forks** es el
+objetivo entero. Borrarlas las haría divergir, que es el problema que se está resolviendo.
+
+#### Verificación (con `scripts/cdp.mjs`, jugando)
+
+- Se **juega una etapa real** en las tres apps: meta 🎯 con el texto del OA correcto, quiz con 4
+  opciones, se responde y avanza. **Cero errores de consola y cero 404.**
+- **La prueba que cierra el caso del Duelo:** abriendo el módulo de Matemática del Duelo, 7° ofrece
+  **sus 4 capítulos**, 3° **sus 7** y 8° **sus 5 niveles del Reto**. Cada nivel su Matemática.
+- **8° sin regresión:** 12 diagramas, 5 niveles del Reto, `scr-calc-mapa` abre, 17 lecciones cargan.
+- **Los 11 dibujos de 3°** renderizan con preguntas reales de sus bancos.
+- **El guardado sigue aislado:** se sembró una partida en 8° (777 XP, 4.242 monedas), se jugó 7° y
+  3°, y volvió intacta; las tres claves conviven (`kimun_save`, `kimun_save_7mo`, `kimun_save_3ro`).
+- Aparecieron cuatro `429` de Supabase en `auth/v1/signup`. **No son del cambio**: es el límite de
+  altas anónimas (30/hora) que gastaron mis propias corridas headless, y se verificó que **ni una
+  línea del diff menciona auth, signup ni Supabase**.
+
+#### Método del corte (queda escrito arriba, en "Cómo se corta código de un fork sin matarlo")
+
+Anclas exactas en vez de números de línea, aserciones que abortan antes de escribir (693 líneas
+exactas, la última vacía, y a lo más una línea de diferencia con 8°), balance de llaves para las
+funciones intercaladas, comprobar que ningún `id` del HTML a borrar lo nombre el JavaScript —ese
+chequeo frenó el primer intento— y preservar CRLF.
+
+- **Pendiente inmediato:** las Fases 2-4 del plan de la v1 (5°, 6° y 4°). Los forks nuevos ya
+  nacerán sin el bloque si se clonan desde 7°.
+- **El backend quedó al día, y dos pendientes de arrastre se cerraron el 28/08:**
+  - **`schema.sql` NO tenía nada pendiente.** Se venía repitiendo "re-aplicar el esquema" desde la
+    Sesión 63 **sin volver a medirlo**, cuando ya se había aplicado el 27/08. Confirmado en vivo
+    llamando `kimun_oa_asignatura` con la clave pública: los cuatro códigos de 7°, más `HI08` y
+    `MA03`, devuelven su asignatura, y un código inventado devuelve `null`.
+    > Es el mismo defecto que el candado del `NS`: **un pendiente que nadie vuelve a medir se
+    > arrastra solo.** El `curl` que lo comprueba quedó escrito en `docs/aplicar-schema.md`, para
+    > que ninguna sesión futura mande a re-aplicar algo aplicado.
+  - **`kimun_prof_asignaturas` verificada:** los cuatro códigos de 7° están en **los dos** arreglos
+    (`2 2 2 2`). Era la comprobación que la consulta general de cinco filas **no** detecta.
+  - **La foto semanal está aplicada Y AGENDADA.** Roberto la pegó el 27/08 y el 28/08 se confirmó
+    con `select count(*) from cron.job where jobname='foto-semanal';` → **1**. Es la comprobación
+    obligatoria porque **el guard de `pg_cron` falla en silencio**: sin ella, el pegado termina
+    "sin errores" y el trabajo puede no haber quedado agendado. La primera foto la toma solo el
+    **lunes 31/08/2026**; hasta entonces las tablas están vacías y eso es lo correcto.
+  > **Las tres comprobaciones de este bloque tienen algo en común y conviene decirlo:** ninguna
+  > da error cuando falla. El código de 7° ausente de un arreglo, el trabajo de `pg_cron` sin
+  > agendar y el esquema sin aplicar **se ven exactamente igual que si estuvieran bien**. Por eso
+  > la regla del proyecto no es "aplicarlo" sino "aplicarlo y **mirar el número**".
+- **Pendiente de Roberto (lo que queda, y ya es todo caro):** **la aprobación pedagógica de 3° y
+  7°** —167 OA, 1.336 preguntas por muestreo, 7 a 11 horas—, que es el camino crítico de la v1;
+  los **8 villanos** (4 de 3° + 4 de 7°); la conversación con el colegio sobre la unidad de
+  sexualidad de 7°; escuchar el clip de copihue; y los trámites (INAPI, la SpA, el enlace de
+  agenda de la landing).
+
+**Cierre de la Sesión 65 — lo barato, cerrado.** Tras el corte del bloque se despacharon los
+pendientes que costaban minutos, para que solo queden tareas caras:
+
+- **La puerta quedó en los TRES niveles** (`FECHA_PUERTA='2026-09-01'`). 3° y 7° estaban en `''`,
+  o sea **abiertos y gratis**: si se venden tres niveles, no puede haber dos sin candado.
+  Verificado que los tres anuncian la banda, que su `DEMO_LIBRE` existe de verdad
+  (`hist-cap1` / `hist7-cap1` / `mat3-cap1`), que los tres tienen el remate `scr-demo-fin` con el
+  contacto, y que **los enlaces de muestra y de revisión la esquivan** (`bloqueado()` exige
+  `!PRUEBA`), así que el recorrido del profesor no se toca.
+- **El tablero se ordena por NIVEL y luego por asignatura**, deducido del nombre de la carpeta
+  (`historia-7basico` → nivel 7). Antes era una lista escrita a mano con las cinco carpetas de 8°
+  y los bancos de 3° y 7° quedaban revueltos alfabeticamente al final. Importa porque **la
+  aprobación se hace por nivel** y son 7 a 11 horas de clic: saltar entre bloques se paga caro.
+  Un nivel nuevo se ordena solo, sin tocar el script.
+- **`scripts/consolidar-pool.py` retirado.** Estaba cableado a `historia-8basico`, así que
+  correrlo sobre otro banco no hacía nada visible. Lo reemplaza `consolidar-pool-nivel.py`, que se
+  validó reproduciendo Historia byte a byte (Sesión 61).
+- **`bonoMult:2` eliminado** de `hist-desafio`: propiedad muerta desde la Sesión 33, nunca leída.
+- **Pendiente cerrado sin trabajo:** `assets/portada-mate-algebra.png` figuraba como huérfano
+  desde la Sesión 18 y **no lo está** — la usa el capítulo `mate-algebra` de la campaña. Estaba
+  resuelto y nadie lo había tachado.
+
+> **Lo que NO se hizo, y es a propósito: anunciar 3° y 7° en la landing.** El cambio son cinco
+> frases, pero la landing promete *"todas aprobadas una a una"* y de 3° y 7° **no hay ni una
+> aprobada**. Anunciarlos hoy contradice la regla de `docs/comercial.md` de no prometer lo que no
+> hay. Se hace **el día que se apruebe su banco**, no antes.

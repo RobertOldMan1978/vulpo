@@ -1,5 +1,16 @@
 # Runbook — Aplicar y verificar la foto semanal del desempeño
 
+## Registro
+
+| Fecha | Qué se hizo | Verificado |
+|---|---|---|
+| **2026-08-27** | Roberto pegó `supabase/aplicar-foto-semanal.sql` | — |
+| **2026-08-28** | Comprobación del agendamiento | **Sí: `count(*) from cron.job` = 1.** El trabajo está agendado. La primera foto la toma solo el lunes 31/08/2026 (etiquetada con el domingo 30/08); hasta entonces las tablas están vacías, y eso es lo esperado. |
+
+> **No sembrar la primera foto a mano.** Los `insert` llevan `on conflict do nothing`: una foto
+> sembrada antes del lunes se etiqueta con el mismo domingo y deja la corrida real sin efecto,
+> congelando la semana con datos parciales.
+
 **Qué es:** un trabajo de `pg_cron` (`foto-semanal`) que cada **lunes 04:05 UTC**
 (00:05 / 01:05 del lunes en Chile según el horario) ejecuta
 `kimun_foto_semanal()`, copiando los contadores de `dominio` y el XP de los

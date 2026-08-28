@@ -14,7 +14,7 @@ Copia esta carpeta `_plantilla/` a `contenido/<tu-asignatura>/` y completa:
   `{ "id", "oa", "pregunta", "opciones":[4], "correcta":<índice 0-3>, "tip", "revisada":false }`
 
 Puedes generarlas y verificarlas con el mismo flujo de Historia
-(ver `scripts/consolidar-pool.py` y el tablero `dev/tablero.html`).
+(ver `scripts/consolidar-pool-nivel.py` y el tablero `dev/tablero.html`).
 
 ### 2) Agrega la portada
 Una imagen cuadrada en `assets/portada-<asignatura>.png` (misma línea visual).

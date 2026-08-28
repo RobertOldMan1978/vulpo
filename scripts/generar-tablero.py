@@ -78,15 +78,27 @@ def barra(pct, alto=10, color=None):
 # Orden en que se muestran las asignaturas en el tablero. Las que no estén en la
 # lista (por ejemplo libros de lectura, presentes y futuros) van al final, ordenadas
 # alfabéticamente entre sí.
-ORDEN_ASIGNATURAS = [
-    "historia-8basico", "matematicas-8basico", "ciencias-8basico",
-    "lenguaje-8basico", "vocabulario",
-]
+# Se deduce del nombre de la carpeta (`historia-7basico` -> nivel 7, asignatura
+# historia), asi que un nivel nuevo se ordena solo, sin tocar este archivo. Antes era
+# una lista escrita a mano con las cinco carpetas de 8: con seis niveles habria sido
+# una lista paralela mas que mantener, y los bancos de 3 y 7 quedaban mezclados
+# alfabeticamente al final. Eso importa de verdad, porque la aprobacion pedagogica se
+# hace por nivel y tenerlos revueltos obliga a saltar entre bloques.
+ORDEN_ASIGNATURA = ["historia", "matematicas", "ciencias", "lenguaje"]
+SIN_NIVEL = 99   # vocabulario, libros de lectura: al final
 
 
 def _clave_orden(carpeta):
     n = carpeta.name
-    return (ORDEN_ASIGNATURAS.index(n) if n in ORDEN_ASIGNATURAS else len(ORDEN_ASIGNATURAS), n)
+    if "-" in n and n.rsplit("-", 1)[1].endswith("basico"):
+        asig, nivel = n.rsplit("-", 1)
+        try:
+            num = int(nivel.replace("basico", ""))
+        except ValueError:
+            num = SIN_NIVEL
+        pos = ORDEN_ASIGNATURA.index(asig) if asig in ORDEN_ASIGNATURA else len(ORDEN_ASIGNATURA)
+        return (num, pos, n)
+    return (SIN_NIVEL, 0, n)   # los de apoyo, alfabeticos entre si
 
 
 def recolectar_asignaturas():
