@@ -11,6 +11,9 @@ operativo —el formato exacto, los largos por nivel, y las trampas concretas ya
 - [`prompt-validador-preguntas.md`](prompt-validador-preguntas.md) — la **carta gemela**: el control
   de calidad que revisa, de forma independiente, lo que este generador produce. Generas pensando en
   cómo lo va a intentar rechazar el validador.
+- [`arquitectura-pipeline-preguntas.md`](arquitectura-pipeline-preguntas.md) — cómo se orquestarían
+  generador y validador en un pipeline (generar → validar → corregir → publicar → medir). Es diseño
+  objetivo, no lo que hoy existe.
 - [`encargo-banco.md`](encargo-banco.md) — el estándar del banco por nivel (parámetros, formato,
   trampas a–i). **Es de lectura obligatoria antes de escribir una tanda.**
 - [`esquema-oa-json.md`](esquema-oa-json.md) — cómo se declara el currículum.

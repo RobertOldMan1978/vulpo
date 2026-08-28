@@ -110,6 +110,8 @@ cascarón → códigos en el servidor y el panel → **tanda de validación de 6
 Estándar y trampas ya escritos, **no reinventarlos**:
 `docs/prompt-generador-preguntas.md` (criterio pedagógico y estándar de calidad del generador) ·
 `docs/prompt-validador-preguntas.md` (control de calidad independiente del banco) ·
+`docs/arquitectura-pipeline-preguntas.md` (diseño objetivo del pipeline por pregunta, NO implementado
+hoy) · `docs/arquitectura-construccion-etapas.md` (diseño objetivo OA→etapa, NO implementado hoy) ·
 `docs/encargo-banco.md` (parametrizado por curso) · `docs/cuidados-matematica.md` ·
 `docs/cuidados-historia.md` · `docs/cuidados-ciencias.md` · `docs/cuidados-lenguaje-3basico.md` ·
 `docs/esquema-oa-json.md`.

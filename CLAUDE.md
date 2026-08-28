@@ -4542,15 +4542,25 @@ Sesión corta, de habilitación y documentación. Sin cambios en el juego ni en 
   los **dibujos reales** incrustados. Viven en `dev/` (ignorados por git). *Gotcha de Chrome:*
   `--print-to-pdf` **no** resuelve rutas relativas para el archivo de salida; hay que darle la ruta
   **absoluta de Windows** (`C:\...\dev\...pdf`), si no falla en silencio.
-- **Documentado el pipeline de calidad del banco de preguntas** (docs nuevos, a pedido de Roberto):
-  - `docs/prompt-generador-preguntas.md` — la carta de rol y estándar de calidad del **generador**.
-  - `docs/prompt-validador-preguntas.md` — la carta gemela del **validador** (control de calidad
-    independiente; estados APROBADA/REVISAR/RECHAZADA, severidades, puntaje 0-100). Deja explícito
-    que **NO reemplaza la aprobación humana** (`aprobacion-pedagogica.md`): en VULPO una pregunta
-    solo llega a un alumno cuando Roberto firma `revisada:true`.
-  - Enlazados entre sí, desde `docs/encargo-banco.md` (nota arriba) y en la lista de estándares de
-    `pendiente.md` (Bloque B). El pipeline queda documentado de punta a punta: **generador →
-    scripts automáticos → validador → aprobación humana**.
+- **Documentado el pipeline de calidad del banco de preguntas** — cuatro "prompts maestros" que
+  Roberto fue entregando, formateados como docs y enlazados entre sí, desde `encargo-banco.md` y en la
+  lista de estándares de `pendiente.md` (Bloque B):
+  - `docs/prompt-generador-preguntas.md` — rol y estándar de calidad del **generador** (qué crear).
+  - `docs/prompt-validador-preguntas.md` — el **validador**, actualizado a **V2** (orden de
+    validación, códigos de error explícitos, pesos de puntaje, reglas de decisión numéricas y formato
+    JSON de salida). Deja explícito que **NO reemplaza la aprobación humana**.
+  - `docs/arquitectura-pipeline-preguntas.md` — arquitectura del pipeline a **nivel de pregunta**
+    (generar→validar→corregir→publicar, contrato de datos, códigos de error, estados, métricas).
+  - `docs/arquitectura-construccion-etapas.md` — arquitectura a **nivel de OA/etapa** (1 OA = 1
+    etapa, banco ~30, 10 por intento, selección/balance, construcción de la etapa ejecutable,
+    anti-memorización, registro de intentos).
+  - **Los dos docs de arquitectura llevan una tabla honesta de "qué existe hoy vs. qué no":** son
+    **diseño objetivo, no implementado**. Hoy VULPO usa bancos JSON estáticos + scripts + `pickN`
+    (azar puro, sin registrar lo visto) + aprobación humana; el pipeline con base de datos, estados,
+    versionado y aleatoriedad controlada es un proyecto grande que **no está en `pendiente.md`**, y
+    parte de él (registro de intentos, anti-memorización real) **depende del Bloque D** (progreso en
+    el servidor). El pipeline queda documentado de punta a punta: **generador → scripts automáticos →
+    validador → aprobación humana**.
 - **Pendiente (Roberto):** hacer A1 con los PDF/tablero (7-11 h, el camino crítico); cuando exporte
   el `revisadas.json`, se aplica con `aplicar-revisadas.py` y se regenera el tablero. Sigue en pie
   la reautenticación de NotebookLM (el paso del AI Brain de la orden 66 falla hasta rehacer el login
