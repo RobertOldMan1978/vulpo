@@ -4527,3 +4527,31 @@ pendientes que costaban minutos, para que solo queden tareas caras:
 > frases, pero la landing promete *"todas aprobadas una a una"* y de 3° y 7° **no hay ni una
 > aprobada**. Anunciarlos hoy contradice la regla de `docs/comercial.md` de no prometer lo que no
 > hay. Se hace **el día que se apruebe su banco**, no antes.
+
+### Sesión 66 (2026-08-28) — Habilitar A1 (revisión en papel) y documentar el pipeline de calidad
+Sesión corta, de habilitación y documentación. Sin cambios en el juego ni en el motor.
+- **Sincronización (orden 99):** este PC venía de la Sesión 54 (scaffold de `/3ro` recién nacido);
+  el `git pull` trajo las Sesiones 55-65 (3° completo con voz, 7° completo, la v1 pasa a 3°-8°,
+  Fase 0, el corte del bloque de lecciones fuera de los forks, y `pendiente.md`). Fast-forward
+  limpio; el contexto viejo quedó superado y se re-orientó desde `pendiente.md`.
+- **A1 habilitado (el bloqueo crítico, tarea de Roberto).** Se regeneró el tablero
+  (`dev/tablero.html`, clave `112358`, ya ordenado por nivel) y se verificó que refleja 3° (2.558,
+  0 aprobadas), 7° (2.430, 0) y 8° (2.314, todas). Se generaron los **8 informes de revisión en
+  papel** (PDF, uno por asignatura y curso de 3° y 7°) con
+  `scripts/generar-revision-preguntas.py` + Chrome `--print-to-pdf`, agrupados por unidad y OA y con
+  los **dibujos reales** incrustados. Viven en `dev/` (ignorados por git). *Gotcha de Chrome:*
+  `--print-to-pdf` **no** resuelve rutas relativas para el archivo de salida; hay que darle la ruta
+  **absoluta de Windows** (`C:\...\dev\...pdf`), si no falla en silencio.
+- **Documentado el pipeline de calidad del banco de preguntas** (docs nuevos, a pedido de Roberto):
+  - `docs/prompt-generador-preguntas.md` — la carta de rol y estándar de calidad del **generador**.
+  - `docs/prompt-validador-preguntas.md` — la carta gemela del **validador** (control de calidad
+    independiente; estados APROBADA/REVISAR/RECHAZADA, severidades, puntaje 0-100). Deja explícito
+    que **NO reemplaza la aprobación humana** (`aprobacion-pedagogica.md`): en VULPO una pregunta
+    solo llega a un alumno cuando Roberto firma `revisada:true`.
+  - Enlazados entre sí, desde `docs/encargo-banco.md` (nota arriba) y en la lista de estándares de
+    `pendiente.md` (Bloque B). El pipeline queda documentado de punta a punta: **generador →
+    scripts automáticos → validador → aprobación humana**.
+- **Pendiente (Roberto):** hacer A1 con los PDF/tablero (7-11 h, el camino crítico); cuando exporte
+  el `revisadas.json`, se aplica con `aplicar-revisadas.py` y se regenera el tablero. Sigue en pie
+  la reautenticación de NotebookLM (el paso del AI Brain de la orden 66 falla hasta rehacer el login
+  por Chrome).

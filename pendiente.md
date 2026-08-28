@@ -108,6 +108,8 @@ cascarón → códigos en el servidor y el panel → **tanda de validación de 6
 → banco por oleadas de agentes → campañas y villanos → auditoría → verificación en navegador.
 
 Estándar y trampas ya escritos, **no reinventarlos**:
+`docs/prompt-generador-preguntas.md` (criterio pedagógico y estándar de calidad del generador) ·
+`docs/prompt-validador-preguntas.md` (control de calidad independiente del banco) ·
 `docs/encargo-banco.md` (parametrizado por curso) · `docs/cuidados-matematica.md` ·
 `docs/cuidados-historia.md` · `docs/cuidados-ciencias.md` · `docs/cuidados-lenguaje-3basico.md` ·
 `docs/esquema-oa-json.md`.

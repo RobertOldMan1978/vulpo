@@ -4,6 +4,10 @@ Este archivo es **el estándar del banco de preguntas de todos los niveles**. Ca
 un defecto real encontrado en los bancos anteriores (8° ~2.300 preguntas, 3° ~2.500, 7° 2.430).
 Léelo completo antes de escribir la primera pregunta.
 
+> **El criterio pedagógico de fondo** (qué es una pregunta de calidad, el rol del generador, el
+> auto-control) vive en [`prompt-generador-preguntas.md`](prompt-generador-preguntas.md). Este
+> archivo es lo operativo (formato, largos por nivel, trampas); aquel es el porqué y el estándar.
+
 Antes existía uno por nivel (`encargo-banco-3basico.md` y `-7basico.md`). Se fundieron porque las
 reglas son casi todas las mismas y lo que cambia cabe en una tabla — y porque el de 3° **no tenía
 las trampas f, g, h e i**, que se descubrieron escribiendo 7°: cuatro defectos conocidos que se
