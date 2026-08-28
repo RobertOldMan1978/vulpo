@@ -4477,6 +4477,30 @@ chequeo frenó el primer intento— y preservar CRLF.
   sexualidad de 7°; escuchar el clip de copihue; y los trámites (INAPI, la SpA, el enlace de
   agenda de la landing).
 
+#### `pendiente.md` (nuevo, en la raíz): la lista viva de tareas
+
+Lo que falta estaba **disperso** entre esta bitácora, `docs/roadmap-tecnico.md` y el plan de la
+v1, y para saber qué tocaba había que releer los tres. Ahora hay **un solo archivo por el que se
+empieza** al retomar el proyecto o al abrir una rama, ordenado en seis bloques (A: cerrar 3°/7°/8°
+· B: 4°, 5° y 6° más la desduplicación del motor · C: PWA · D: progreso en el servidor · E:
+suscripción y pagos · F: Capacitor), cada tarea con su peso, quién la hace y en qué rama va.
+
+Tres decisiones al escribirlo, que conviene respetar al mantenerlo:
+
+- **El bloqueo va arriba y en rojo.** La aprobación pedagógica no es una tarea más de la lista:
+  es el camino crítico de todo lo demás, y ponerla entre las otras la hacía invisible.
+- **Sin números comerciales.** El repositorio es público, así que precios, ingresos y
+  estimaciones de inversión quedan fuera y el propio archivo lo dice en su encabezado. El único
+  costo que sí aparece es el de Azure para la voz de 4°, porque es infraestructura y no
+  estrategia.
+- **Cada regla lleva su porqué.** No dice "verifica con `cdp.mjs`" sino "verifica corriendo la
+  página **porque los 404 no llegan a la consola de forma fiable**". Una regla sin su motivo se
+  salta en cuanto aprieta el tiempo — que es exactamente cómo la advertencia del `NS` se
+  convirtió en un candado durante dos sesiones.
+
+**Se actualiza en cada orden 66**, y está enlazado desde `README.md` y desde el encabezado del
+roadmap de este archivo.
+
 **Cierre de la Sesión 65 — lo barato, cerrado.** Tras el corte del bloque se despacharon los
 pendientes que costaban minutos, para que solo queden tareas caras:
 
