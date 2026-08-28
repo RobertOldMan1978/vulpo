@@ -20,6 +20,8 @@
 <!-- Modo revisión de profesor, compartido por todos los cursos. -->
 <script src="assets/js/revision.js"></script>
 <script src="assets/js/sensible.js"></script>
+<!-- Reto Sin Fin de cálculo, compartido por todos los cursos. -->
+<script src="assets/js/calculo.js"></script>
 <script>if(!window.SENSIBLE)window.SENSIBLE={cats:{},oa:{},deExpedicion:function(){return[];}};</script>
 <script src="assets/vendor/supabase-js-2.112.4.min.js"></script>
 <style>
@@ -1510,6 +1512,7 @@ function ajustarNav(){
    así que reusan todo el motor (activarExpedicion, cargarPool, renderMapa, quiz). */
 const CAMPAÑAS=[{
   id:'mat3', asignatura:'Matemática', portada:'assets/portada-matematicas.png',
+  sinfin:true,   // ofrece el Reto Sin Fin (assets/js/calculo.js)
   intro:'Cuenta, suma, mide y descubre con Vulpi.',
   capitulos:['mat3-cap1','mat3-cap2','mat3-cap3','mat3-cap4','mat3-cap5','mat3-cap6','mat3-cap7'],
   jefeFinal:{
@@ -1758,6 +1761,7 @@ const S={nombre:"",avatar:AVATARES[0],xp:0,nivel:1,monedas:0,
  skins:[], logros:new Set(), rutas:{},
  campañasCompletas:new Set(), insignias:new Set(), insigniaActiva:null,
  calc:{etapas:[0,0,0,0,0], jefe:false, record:0},
+ sinfin:{record:0},   // Reto Sin Fin: solo la mejor racha
  curso:null,        // {nombre} del curso al que pertenece el alumno
  alumno:null,       // nombre del perfil del servidor, si canjeó un código
  maestro:false,     // logró la Maestría Total (3 en Difícil + El Autómata) → ya celebrada
@@ -3035,7 +3039,103 @@ function renderCampaña(){
     jfAb?()=>iniciarJefeFinal(c):null, jfHecho?'¡Vencido!':(jfAb?'¡Al 100%! Enfréntalo':'🔒 Completa todo'),
     c.jefeFinal.villanoImg||''));
  }
+ // Reto Sin Fin. Dos condiciones, y cada una responde algo distinto:
+ //  · CALC.activo  -> ¿está DISPONIBLE? Es false si assets/js/calculo.js no cargó. Con la
+ //    bandera del nivel a secas, un 404 dejaba el botón dibujado y muerto: el alumno toca y
+ //    no pasa nada, el mismo defecto del botón de mini-clase de la Sesión 64.
+ //  · c.sinfin     -> ¿esta CAMPAÑA lo ofrece? Va como campo de la campaña y NO como
+ //    comparación contra el nombre de la asignatura. Ese `if` sobre el nombre es el patrón
+ //    que causó los bugs de las Sesiones 63 y 64 —no dice si el nivel tiene la
+ //    funcionalidad— y encima se rompe solo entre forks: 3° escribe 'Matemática' en
+ //    singular, así que la comparación en plural nunca habría entrado.
+ // Con las dos, esta función queda byte a byte igual en los tres cursos.
+ if(CALC.activo && c.sinfin && !bloqueado()){
+  const sf=document.createElement('div'); sf.className='camp-nodo';
+  sf.innerHTML=`<div class="cn-marco"><div class="cn-circ" style="background:#8f6bff22">♾️</div></div>`+
+    `<div class="cn-body"><b>Reto Sin Fin</b><small>Récord: ${(S.sinfin&&S.sinfin.record)||0} seguidas</small></div>`;
+  sf.onclick=()=>{SND.tap();CALC.abrir();};
+  cont.appendChild(sf);
+ }
 }
+/* Operaciones del Reto Sin Fin de 3°. Salen de SUS objetivos, no de otro nivel:
+   sumas y restas hasta 20 y hasta 100 (MA03 OA 06 y OA 04), tablas de multiplicar
+   (OA 08), división dentro de las tablas (OA 09), conteo de a saltos (OA 01) y
+   ecuaciones de un paso con un símbolo (OA 13).
+   NADA de negativos, porcentajes ni potencias: eso es de cursos superiores, y meterlo
+   acá sería el error de contenido de otro año que documenta cuidados-matematica.md.
+   Devuelve {q, ops, ok}; el módulo baraja las opciones, así que aquí no se barajan. */
+function genCalc3(dif){
+ const ri=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+ /* Garantiza 4 opciones distintas y que ninguna empate con la clave. En 7° la primera
+    versión sin este guard produjo opciones repetidas en 889 de 1.500 casos, y no se
+    veía leyendo el código: lo cazó el verificador de aritmética. */
+ function armar(r, cands, rellenar){
+  const vistos=new Set([String(r)]), ops=[String(r)];
+  for(const c of cands){ const s=String(c);
+   if(!vistos.has(s)){ vistos.add(s); ops.push(s); if(ops.length===4) return {ops, ok:0}; } }
+  let i=1;
+  while(ops.length<4 && i<60){ for(const s of [rellenar(i), rellenar(-i)]){
+    const k=String(s); if(!vistos.has(k)){ vistos.add(k); ops.push(k); if(ops.length===4)break; } } i++; }
+  return {ops, ok:0};
+ }
+
+ const TIPOS={1:['suma20'], 2:['suma20','suma100'], 3:['suma100','tabla'],
+              4:['tabla','divide'], 5:['tabla','divide','salto','falta']};
+ const lista=TIPOS[Math.min(5,Math.max(1,dif))];
+ const tipo=lista[ri(0,lista.length-1)];
+
+ if(tipo==='suma20'){                                // MA03 OA 06 · hasta 20
+  const suma=ri(0,1)===0;
+  let a=ri(2,18), b=ri(1,18-Math.min(a,17));
+  if(!suma){ a=ri(5,20); b=ri(1,a-1); }
+  const r=suma?a+b:a-b;
+  const c=[Math.abs(a-b), r+1, Math.max(0,r-1), r+10];   // confundir la operación, errar por uno
+  const o=armar(r, c, k=>r+k);
+  return {q:a+(suma?' + ':' − ')+b, ops:o.ops, ok:o.ok};
+ }
+ if(tipo==='suma100'){                               // MA03 OA 04 · cálculo mental hasta 100
+  const suma=ri(0,1)===0;
+  let a=ri(11,89), b=ri(2,99-a);
+  if(!suma){ a=ri(20,99); b=ri(2,a-1); }
+  const r=suma?a+b:a-b;
+  const c=[Math.abs(a-b), r+10, Math.max(0,r-10), r+1];  // el error de la decena
+  const o=armar(r, c, k=>r+k);
+  return {q:a+(suma?' + ':' − ')+b, ops:o.ops, ok:o.ok};
+ }
+ if(tipo==='tabla'){                                 // MA03 OA 08 · tablas hasta 10
+  const a=ri(2,10), b=ri(2,10);
+  const r=a*b;
+  const c=[a+b, r+a, Math.max(0,r-a), a*(b+1)];      // sumar en vez de multiplicar, correrse una fila
+  const o=armar(r, c, k=>r+k*a);
+  return {q:a+' × '+b, ops:o.ops, ok:o.ok};
+ }
+ if(tipo==='divide'){                                // MA03 OA 09 · división en las tablas
+  const b=ri(2,10), r=ri(2,10), a=b*r;
+  const c=[Math.abs(a-b), b, r+1, a];                // restar en vez de dividir
+  const o=armar(r, c, k=>r+k);
+  return {q:a+' ÷ '+b, ops:o.ops, ok:o.ok};
+ }
+ if(tipo==='salto'){                                 // MA03 OA 01 · contar de a saltos
+  const paso=[5,10,100][ri(0,2)], ini=paso*ri(1,8);
+  const r=ini+paso*3;
+  const c=[ini+paso*2, ini+paso*4, r+paso*10, ini];
+  const o=armar(r, c, k=>r+k*paso);
+  return {q:ini+', '+(ini+paso)+', '+(ini+paso*2)+', ___', ops:o.ops, ok:o.ok};
+ }
+ /* MA03 OA 13 · ecuación de un paso con un símbolo. La incógnita es SIEMPRE ▢, así que
+    la clave es su valor y no el resultado de la derecha. La primera versión marcaba el
+    número de la derecha: en "▢ − 17 = 4" daba por buena la respuesta 4 cuando ▢ vale 21.
+    Una clave equivocada es el peor defecto posible —castiga justo al que razona bien— y
+    NO se veía leyendo el código: lo cazó el verificador de aritmética.
+    En la resta se fuerza ▢ > b para que el resultado nunca sea negativo. */
+ const suma=ri(0,1)===0, b=ri(2,20);
+ const x=suma?ri(2,20):ri(b+1,b+20);                 // x es la incógnita
+ const res=suma?x+b:x-b;
+ const c=[res, b, Math.abs(x-b), x+1];               // responder el total, o el otro número
+ const o=armar(x, c, k=>x+k);
+ return {q: (suma?'▢ + ':'▢ − ')+b+' = '+res, ops:o.ops, ok:o.ok};
+}
+
 // img/imgAlt: portada del capítulo (o villano del jefe). Sin imagen, el círculo lleva la marca.
 function nodoCampañaEl(marca,titulo,abierto,hecho,onClick,estado,img,imgAlt){
  const d=document.createElement('div');
@@ -3301,12 +3401,36 @@ function odPreguntas(exp){let all=[],seen=new Set();
    nivel, y genera las operaciones con genCalculo saltándose el banco propio. Estaba
    pasando de verdad en 7° (Sesión 63). */
 const HAY_RETO_CALCULO=false;
-/* ¿Este nivel tiene el Reto Sin Fin de cálculo? En 3° está apagado por ahora, y la
-   razón es de diseño, no de código: 3° juega SIN_RELOJ a propósito, porque a los 8-9
-   años el cronómetro estorba más de lo que motiva. Un Sin Fin es, por definición, un
-   juego de velocidad. Si se quiere para 3°, primero hay que decidir si se mide por
-   tiempo o solo por racha — y esa es una decisión de producto. */
-const HAY_SINFIN=false;
+/* ¿Este nivel tiene el Reto Sin Fin de cálculo? En 3° SÍ, y encaja mejor que en 7°:
+   acá no es un extra al lado del currículum sino la práctica de tres objetivos suyos
+   —MA03 OA 04 (estrategias de CÁLCULO MENTAL hasta 100), OA 08 (tablas) y OA 09
+   (división en las tablas)—.
+   ⚠️ Va SIN RELOJ (`sinReloj:true` en el init). No es una concesión: 3° juega
+   SIN_RELOJ en todo el curso a propósito, porque a los 8-9 años el cronómetro produce
+   ansiedad y no foco. Poner uno solo aquí contradiría esa decisión. Sigue siendo
+   infinito: lo que sostiene la tensión es la escalera de dificultad y el récord.
+   La voz no necesita clips nuevos: sonarClip cae a la voz del navegador cuando un
+   texto no está en el manifiesto, y "7 + 5" casi no tiene palabras que leer. */
+const HAY_SINFIN=true;
+/* Respaldo y encendido. Va AQUÍ, pegado a la bandera, y no arriba junto al de REV:
+   `const` no se puede leer antes de su declaración (zona muerta temporal), así que
+   llamar a CALC.init({activo:HAY_SINFIN}) mil líneas antes lanza ReferenceError y MATA
+   todo el JavaScript del juego. El síntoma es idéntico al del archivo que no carga
+   —la pantalla se ve bien y ningún botón responde—, y por eso costó verlo en 7°. */
+if(!window.CALC) window.CALC={activo:false,init:function(){},abrir:function(){},detener:function(){}};
+CALC.init({
+  activo: HAY_SINFIN,
+  sinReloj: true,
+  etiqueta: '🪜 Escalón',
+  generar: function(dif){ return genCalc3(dif); },
+  go: go,
+  volver: function(){ renderCampaña(campañaDe('Matemática')); go('scr-campana'); },
+  leerRecord: function(){ return (S.sinfin&&S.sinfin.record)||0; },
+  guardarRecord: function(n){ if(!S.sinfin)S.sinfin={record:0}; S.sinfin.record=n; guardar(); },
+  premiar: function(racha){ S.monedas+=racha; S.xp+=racha*4; guardar(); refreshHud(); },
+  snd: { ok:function(){SND.correct();}, mal:function(){SND.wrong();},
+         fin:function(){SND.lose();}, tap:function(){SND.tap();} },
+});
 /* ¿Este nivel tiene el camino de mini-clases de Matemática (su lecciones.json)?
    Gobierna el "siguiente paso al reprobar": con mini-clases se ofrece repasar la clase,
    y sin ellas hay que caer al repaso sin reloj, como las demás asignaturas. Con la

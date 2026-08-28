@@ -1482,6 +1482,7 @@ const CAMPAÑAS=[
   recompensa:{ skin:'kimun-historiador', insignia:'maestro-historia', bonoMonedas:500, bonoXP:300 },
 },{
   id:'mate7', asignatura:'Matemáticas', portada:'assets/portada-matematicas.png',
+  sinfin:true,   // ofrece el Reto Sin Fin (assets/js/calculo.js)
   intro:'Numeros, algebra, geometria y datos: el ano completo de Matematica de 7°.',
   capitulos:['mate7-cap1','mate7-cap2','mate7-cap3','mate7-cap4'],
   jefeFinal:{
@@ -2546,13 +2547,17 @@ function renderCampaña(){
     jfAb?()=>iniciarJefeFinal(c):null, jfHecho?'¡Vencido!':(jfAb?'¡Al 100%! Enfréntalo':'🔒 Completa todo'),
     c.jefeFinal.villanoImg||''));
  }
- // Reto Sin Fin: extra de velocidad dentro de Matemática. Se pregunta por CALC.activo y
- // NO por HAY_SINFIN: la bandera dice si el nivel LO QUIERE, pero CALC.activo dice si de
- // verdad está disponible — es false si assets/js/calculo.js no cargó. Con la bandera, un
- // 404 dejaba el botón dibujado y muerto: el alumno toca y no pasa nada, que es el mismo
- // defecto del botón de mini-clase de la Sesión 64. Además deja esta función byte a byte
- // igual en los tres forks, porque en 8° y 3° el respaldo vacío tiene activo:false.
- if(CALC.activo && c.asignatura==='Matemáticas' && !bloqueado()){
+ // Reto Sin Fin. Dos condiciones, y cada una responde algo distinto:
+ //  · CALC.activo  -> ¿está DISPONIBLE? Es false si assets/js/calculo.js no cargó. Con la
+ //    bandera del nivel a secas, un 404 dejaba el botón dibujado y muerto: el alumno toca y
+ //    no pasa nada, el mismo defecto del botón de mini-clase de la Sesión 64.
+ //  · c.sinfin     -> ¿esta CAMPAÑA lo ofrece? Va como campo de la campaña y NO como
+ //    comparación contra el nombre de la asignatura. Ese `if` sobre el nombre es el patrón
+ //    que causó los bugs de las Sesiones 63 y 64 —no dice si el nivel tiene la
+ //    funcionalidad— y encima se rompe solo entre forks: 3° escribe 'Matemática' en
+ //    singular, así que la comparación en plural nunca habría entrado.
+ // Con las dos, esta función queda byte a byte igual en los tres cursos.
+ if(CALC.activo && c.sinfin && !bloqueado()){
   const sf=document.createElement('div'); sf.className='camp-nodo';
   sf.innerHTML=`<div class="cn-marco"><div class="cn-circ" style="background:#8f6bff22">♾️</div></div>`+
     `<div class="cn-body"><b>Reto Sin Fin</b><small>Récord: ${(S.sinfin&&S.sinfin.record)||0} seguidas</small></div>`;

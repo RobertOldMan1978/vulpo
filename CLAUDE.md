@@ -4822,3 +4822,83 @@ regresión, y cero errores de consola y cero 404 en los tres.**
   propósito y un Sin Fin es por definición un juego de velocidad).
 - **Pendiente de Roberto:** sin cambios — **la aprobación pedagógica** sigue siendo el camino
   crítico, ahora con 171 objetivos.
+
+### Sesión 69 (2026-08-28) — El desafío de cálculo llega a 3°, sin reloj
+Sesión corta y de una sola pieza. **No se escribió contenido:** el Reto no consume banco.
+
+#### La medición invirtió lo que parecía obvio
+
+Roberto pidió ver la estructura del desafío y del Vocabulario para 3°, intuyendo que debían ser
+distintos. Medido, la respuesta **se invierte** respecto a 7°:
+
+- **El desafío encaja MEJOR en 3° que en 7°.** Allá era un extra al lado del currículum; acá es la
+  práctica de tres objetivos suyos: **`MA03 OA 04`** —*"estrategias de **cálculo mental** para las
+  adiciones y sustracciones hasta 100"*—, `OA 08` (tablas) y `OA 09` (división en las tablas).
+- **El Vocabulario encaja PEOR.** Lenguaje de 3° **ya cubre vocabulario en su propio currículum**:
+  `LE03 OA 10` (significado por contexto y raíces) y `OA 11` (diccionario) tienen **30 preguntas
+  cada uno**. En 7° y 8° eso no pasa, y por eso allá el módulo agrega algo. Además costaría ~120
+  preguntas + ~600 clips de voz + horas que se suman al cuello de botella.
+
+Decisión de Roberto: **solo el desafío**. El Vocabulario queda como **A14**, con el ángulo que sí
+serviría anotado —las palabras nuevas de Ciencias e Historia de 3°, que es distinto de *la
+estrategia* para deducirlas.
+
+#### Sin reloj, y no es una concesión
+
+3° juega `SIN_RELOJ` en todo el curso a propósito: a los 8-9 años el cronómetro produce ansiedad
+y no foco. **La salida no fue aflojar el reloj sino quitarlo.** El motor ganó `sinReloj:true`, que
+saca el contador y la barra **del DOM** —no los oculta— y nunca expira. Sigue siendo infinito:
+la tensión la da la escalera de dificultad y el récord. El rótulo es configurable y en 3° dice
+**🪜 Escalón** en vez de ♾️ Racha.
+
+**La voz se resolvió sola:** `sonarClip` ya cae a la voz del navegador cuando un texto no está en
+el manifiesto, y "7 + 5" casi no tiene palabras que leer. **Cero clips nuevos de Azure.**
+
+#### Dos defectos que cazó el verificador de aritmética, y el segundo era grave
+
+1. **Los distractores producían negativos** (`5 + 8` ofrecía `−3`). En 3° eso es contenido de otro
+   año: el niño lo descarta sin pensar, así que no mide nada.
+2. **⚠️ Una clave estaba MAL.** En `▢ − 17 = 4` la respuesta correcta es **21** y el generador
+   marcaba **4**. Es el peor defecto posible —castiga justo al que razona bien— y **no se veía
+   leyendo el código**.
+
+Los dos salieron de recalcular cada clave por un camino independiente, que es lo que exige
+`docs/cuidados-matematica.md`. Corregidos: **0 errores en 1.500 operaciones**, sin negativos, sin
+decimales, divisiones siempre exactas, multiplicaciones dentro de las tablas y sumas que no pasan
+de 100.
+
+#### Y se corrigió algo que la Sesión 68 había hecho mal en 7°
+
+El botón del Reto se guardaba con `c.asignatura==='Matemáticas'` — **justo el patrón que causó los
+bugs de las Sesiones 63 y 64**. Peor: en 3° la asignatura se escribe **`'Matemática'` en
+singular**, así que esa comparación **nunca habría entrado** y el defecto habría sido silencioso.
+
+Se movió al dato de la campaña (**`sinfin:true`**), y con eso **`renderCampaña` quedó byte a byte
+idéntica en los tres cursos** — comprobado por hash.
+
+> Vale la pena registrar el patrón, porque ya van tres veces: **un `if` sobre el nombre de la
+> asignatura no dice si el nivel tiene esa funcionalidad.** La pregunta correcta se responde con
+> un campo, no con una cadena de texto.
+
+#### La landing dice ahora "…y creciendo"
+
+En la tarjeta del **3**, que es justo el número que un colegio con 5° podría leer como "solo
+tres". En la franja o el titular quedaría suelta; ahí desarma la objeción.
+
+#### Verificación
+
+- **Jugado**: 9 aciertos seguidos con operaciones reales de `MA03`, récord guardado, monedas
+  pagadas. **Tras 8 segundos sin responder no terminó** — el modo sin reloj funciona.
+- **Sin el archivo `calculo.js`** los tres cursos siguen vivos y el botón no se dibuja (3° con 8
+  nodos, 7° con 5); con él aparece (9 y 6).
+- **8° sin regresión** (12 diagramas, 5 niveles del Reto, 17 lecciones) y 3° conserva `SIN_RELOJ`
+  en su quiz normal.
+- **Cero errores de consola y cero 404** en los tres.
+
+- **Pendiente inmediato:** ninguno de este trabajo. `docs/modulos-transversales.md` recoge el modo
+  sin reloj como parte del estándar.
+- **Abiertas en `pendiente.md`:** **A12** (migrar el Reto de Cálculo de 8° al motor compartido; hoy
+  hay solape y es un cambio sobre producción), **A14** (decidir si 3° lleva Vocabulario), **A8** y
+  **A10**.
+- **Pendiente de Roberto:** sin cambios — **la aprobación pedagógica** sigue siendo el camino
+  crítico.

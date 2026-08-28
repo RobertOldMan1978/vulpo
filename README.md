@@ -83,7 +83,9 @@ carga se lee con la voz del navegador). Tiene sus **cuatro asignaturas**: Matem�
 (26 objetivos, 792 preguntas), Historia, Geografía y Ciencias Sociales (16 objetivos, 480),
 Ciencias Naturales (13 objetivos, 390) y Lenguaje y Comunicación (30 objetivos, 896), todas
 con su voz grabada; **no está enlazada desde el sitio** y sus bancos aún no pasan por
-revisión pedagógica. Guarda su avance **y su identidad en línea aparte** de 8°, aunque
+revisión pedagógica. Dentro de Matemática lleva además un **Reto Sin Fin** de cálculo mental
+**sin cronómetro**, medido por escalones: practica sus objetivos de cálculo mental, tablas y
+división, y como genera las operaciones por código no consume banco de preguntas ni voz. Guarda su avance **y su identidad en línea aparte** de 8°, aunque
 los dos se sirvan del mismo dominio, así que un curso de 3° y uno de 8° pueden convivir
 en el panel del profesor.
 

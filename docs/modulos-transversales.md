@@ -79,9 +79,28 @@ Por eso es lo más barato que se le puede sumar a un nivel. Lo propio del curso 
 operaciones salen; todo lo demás —pantallas, reloj, racha, récord, premio— vive en
 `assets/js/calculo.js` y se comparte.
 
-> **Cuidado de diseño, no de código:** un Reto es por definición un juego de **velocidad**. En un
-> curso que juega `SIN_RELOJ` a propósito por la edad (hoy 3°), ponerlo tal cual contradice esa
-> decisión. Antes de llevarlo ahí hay que decidir si se mide por tiempo o solo por racha.
+### El modo sin reloj
+
+Un Reto es por definición un juego de **velocidad**, y eso choca con un curso que juega
+`SIN_RELOJ` a propósito por la edad. **La salida no fue aflojar el reloj sino quitarlo**
+(`sinReloj:true` en el `init`): el contador y la barra se sacan del DOM, y la partida termina
+solo al fallar. Sigue siendo infinito — lo que sostiene la tensión es la escalera de dificultad
+y el récord, no el tiempo.
+
+| | Con reloj (7°, 8°) | Sin reloj (3°) |
+|---|---|---|
+| Presión | 20 s por operación | ninguna |
+| Qué mide | racha contra el reloj | hasta dónde llegas |
+| Termina | al fallar o al agotarse | **solo al fallar** |
+| Rótulo | ♾️ Racha | 🪜 Escalón (`etiqueta`) |
+
+> **En 3° el Reto encaja MEJOR que en 7°, y conviene saberlo.** En 7° es un extra al lado del
+> currículum; en 3° es la práctica de tres objetivos suyos: `MA03 OA 04` (estrategias de **cálculo
+> mental** hasta 100), `OA 08` (tablas) y `OA 09` (división en las tablas).
+
+**La voz no necesita clips nuevos.** En los cursos con voz pregrabada, `sonarClip` cae a la voz
+del navegador cuando un texto no está en el manifiesto — y una operación como "7 + 5" casi no
+tiene palabras que leer. Generar audio para operaciones infinitas sería imposible de todos modos.
 
 ---
 

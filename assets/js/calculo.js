@@ -18,6 +18,8 @@
 
    LO QUE APORTA CADA CURSO (todo por `init`, nada por variable global):
      generar(dif) -> {q, ops, ok}   la operación, sus 4 opciones y el índice bueno
+     sinReloj                        true: sin cuenta regresiva (ver abajo)
+     etiqueta                        opcional, el rótulo del contador ("Racha", "Escalón")
      go(id)                          el conmutador de pantallas del juego
      volver()                        a dónde salir
      leerRecord() / guardarRecord(n) dónde vive el récord (el save del curso)
@@ -44,6 +46,13 @@ window.CALC = (function () {
      bien pero despacio. */
   const SEGUNDOS = 20;
 
+  /* SIN RELOJ. Un curso puede pedir el juego sin cuenta regresiva, y no es una
+     concesión: en 3° básico el quiz entero se juega sin cronómetro a propósito,
+     porque a los 8-9 años el reloj produce ansiedad y no foco. Poner uno solo en
+     este modo contradiría esa decisión de producto.
+     Sin reloj el juego sigue siendo infinito: lo que sostiene la tensión es la
+     escalera de dificultad y el récord, no el tiempo. Termina únicamente al fallar. */
+
   const CSS = [
     "#scr-sinfin .sf-hud{display:flex;align-items:center;gap:10px;margin:14px 0 8px}",
     "#scr-sinfin .sf-racha{flex:1;text-align:center;font-weight:900;color:var(--violet);font-size:15px}",
@@ -62,7 +71,7 @@ window.CALC = (function () {
   const HTML = [
     '<section class="screen" id="scr-sinfin">',
     '  <div class="sf-hud">',
-    '    <div class="sf-racha">♾️ Racha: <b id="sfRacha">0</b></div>',
+    '    <div class="sf-racha"><span id="sfRotulo">♾️ Racha</span>: <b id="sfRacha">0</b></div>',
     '    <div class="sf-t" id="sfTimer">20</div>',
     '  </div>',
     '  <div class="sf-barra"><i id="sfBarra" style="width:100%"></i></div>',
@@ -85,6 +94,7 @@ window.CALC = (function () {
 
   let cfg = null;
   let R = null;          // {racha, lock, timer, t0, ms}
+  const conReloj = () => !cfg.sinReloj;
   const $ = (id) => document.getElementById(id);
 
   function inyectar() {
@@ -98,6 +108,14 @@ window.CALC = (function () {
     const d = document.createElement("div");
     d.innerHTML = HTML;
     while (d.firstChild) cont.appendChild(d.firstChild);
+    if (cfg.etiqueta) {
+      const e = $("sfRotulo");
+      if (e) e.textContent = cfg.etiqueta;
+    }
+    if (!conReloj()) {                 // fuera el contador y la barra, no solo ocultos
+      const t = $("sfTimer"); if (t) t.remove();
+      const b = document.querySelector("#scr-sinfin .sf-barra"); if (b) b.remove();
+    }
   }
 
   function snd(n) { try { if (cfg.snd && cfg.snd[n]) cfg.snd[n](); } catch (e) {} }
@@ -130,7 +148,7 @@ window.CALC = (function () {
       box.appendChild(b);
     });
 
-    arrancarReloj();
+    if (conReloj()) arrancarReloj();
   }
 
   function arrancarReloj() {
@@ -155,7 +173,7 @@ window.CALC = (function () {
   function responder(el, ok) {
     if (R.lock) return;
     R.lock = true;
-    clearInterval(R.timer);
+    if (conReloj()) clearInterval(R.timer);
     document.querySelectorAll("#sfOpts .opt").forEach(function (o) { o.classList.add("off"); });
     if (ok) {
       R.racha++;
@@ -180,7 +198,7 @@ window.CALC = (function () {
   }
 
   function terminar() {
-    clearInterval(R.timer);
+    if (conReloj()) clearInterval(R.timer);
     const rec = cfg.leerRecord();
     const nuevo = R.racha > rec;
     if (nuevo) cfg.guardarRecord(R.racha);
