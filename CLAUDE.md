@@ -4572,6 +4572,21 @@ Sesión corta, de habilitación y documentación. Sin cambios en el juego ni en 
   (4 en 7°, 11 en 8°) a mirar. Conclusión: 7° y 8° **listos para la aprobación humana (A1) sin
   bloqueadores de contenido**; la firma sigue siendo humana. *(Un subagente dejó un `_sample_mate.json`
   suelto en la raíz; se eliminó.)*
+- **Validación COMPLETA de 3° básico (pregunta por pregunta) + correcciones**
+  (`docs/informe-validacion-3basico.md`): por ser para niños de 8-9 años se revisó **cada una de las
+  2.558 preguntas** (no muestreo): Nivel 2 (estructura + **audibilidad** propia de 3° + numérico +
+  solape) y Nivel 1 con **23 subagentes** (trozos de ~120, guía compartida). Resultado: **0 claves
+  equivocadas** en las 2.558 y **audibilidad perfecta** (0 opciones homófonas). Historia, Ciencias y
+  Lenguaje quedaron 100% aprobadas; los únicos hallazgos (12) estaban en Matemática. **Se corrigió
+  todo:** OA11 fracciones (7 preguntas `mat3-oa11-7…13` bajadas de denominadores 6/8/9/12 a 2/3/4, y
+  `mat3-oa11-16/-18/-14` con distractores/clave arreglados), 2 `tip` erróneos (`mat3-oa03-7/-18`),
+  sensibilidad por edad (`mat3-oa22-16` "niño de 8 años" → "perro grande"), contexto
+  (`mat3-oa26-25`) y 1 enunciado largo de Lenguaje (`len3-oa23-28`, 231→194 chars). Los 16
+  casi-duplicados entre OA se evaluaron como variedad de plantilla (sin cambios). Re-verificado el
+  Nivel 2: 0 errores, audibilidad intacta, 0 dobles-correctas. Solo datos (`revisada:false` intacto).
+  *Gotcha del formato:* `matematicas-3basico` usa JSON `indent=2` y `lenguaje-3basico` `indent=1`
+  (por `autocrlf`, en disco CRLF); re-dumpar con el indent equivocado reformatea el archivo entero —
+  hay que detectar el indent por archivo (round-trip) antes de escribir.
 - **Pendiente (Roberto):** hacer A1 con los PDF/tablero (7-11 h, el camino crítico); cuando exporte
   el `revisadas.json`, se aplica con `aplicar-revisadas.py` y se regenera el tablero. Sigue en pie
   la reautenticación de NotebookLM (el paso del AI Brain de la orden 66 falla hasta rehacer el login

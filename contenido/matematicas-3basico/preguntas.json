@@ -1092,7 +1092,7 @@
         "91"
       ],
       "correcta": 2,
-      "tip": "Con las mismas centenas manda la decena: 209 tiene 0 decenas, pero 199 solo tiene 1 centena.",
+      "tip": "209 tiene 2 centenas y los demás solo 1 o ninguna. La que tiene más centenas es la mayor: 209.",
       "revisada": false,
       "id": "mat3-oa03-7"
     },
@@ -1267,7 +1267,7 @@
         "98"
       ],
       "correcta": 1,
-      "tip": "88 tiene solo 2 cifras, así que es menor que cualquiera de 3 cifras.",
+      "tip": "108 y 180 tienen 3 cifras, así que son mayores. Entre 88 y 98, ambos de 2 cifras, 88 tiene menos decenas: es el menor.",
       "revisada": false,
       "id": "mat3-oa03-18"
     },
@@ -4909,11 +4909,11 @@
         "Dos tercios"
       ],
       "correcta": 2,
-      "tip": "3 de 6 partes iguales es justo la mitad del entero.",
+      "tip": "Está pintada 1 de 2 partes iguales: la mitad.",
       "visual": {
         "tipo": "fraccion",
-        "partes": 6,
-        "pintadas": 3
+        "partes": 2,
+        "pintadas": 1
       },
       "revisada": false,
       "id": "mat3-oa11-7"
@@ -4928,11 +4928,11 @@
         "Un cuarto"
       ],
       "correcta": 3,
-      "tip": "2 de 8 partes iguales equivale a 1 de cada 4: un cuarto.",
+      "tip": "Está pintada 1 de 4 partes iguales: un cuarto.",
       "visual": {
         "tipo": "fraccion",
-        "partes": 8,
-        "pintadas": 2
+        "partes": 4,
+        "pintadas": 1
       },
       "revisada": false,
       "id": "mat3-oa11-8"
@@ -4947,11 +4947,11 @@
         "La mitad"
       ],
       "correcta": 0,
-      "tip": "2 de 6 partes iguales es lo mismo que 1 de cada 3: un tercio.",
+      "tip": "Está pintada 1 de 3 partes iguales: un tercio.",
       "visual": {
         "tipo": "fraccion",
-        "partes": 6,
-        "pintadas": 2
+        "partes": 3,
+        "pintadas": 1
       },
       "revisada": false,
       "id": "mat3-oa11-9"
@@ -4966,11 +4966,11 @@
         "La mitad"
       ],
       "correcta": 1,
-      "tip": "4 de 6 partes iguales es lo mismo que 2 de cada 3: dos tercios.",
+      "tip": "Están pintadas 2 de 3 partes iguales: dos tercios.",
       "visual": {
         "tipo": "fraccion",
-        "partes": 6,
-        "pintadas": 4
+        "partes": 3,
+        "pintadas": 2
       },
       "revisada": false,
       "id": "mat3-oa11-10"
@@ -4985,11 +4985,11 @@
         "La mitad"
       ],
       "correcta": 2,
-      "tip": "6 de 8 partes iguales es lo mismo que 3 de cada 4: tres cuartos.",
+      "tip": "Están pintadas 3 de 4 partes iguales: tres cuartos.",
       "visual": {
         "tipo": "fraccion",
-        "partes": 8,
-        "pintadas": 6
+        "partes": 4,
+        "pintadas": 3
       },
       "revisada": false,
       "id": "mat3-oa11-11"
@@ -5004,11 +5004,11 @@
         "Un cuarto"
       ],
       "correcta": 3,
-      "tip": "3 de 12 partes iguales es 1 de cada 4: un cuarto.",
+      "tip": "Está pintada 1 de 4 partes iguales: un cuarto.",
       "visual": {
         "tipo": "fraccion",
-        "partes": 12,
-        "pintadas": 3
+        "partes": 4,
+        "pintadas": 1
       },
       "revisada": false,
       "id": "mat3-oa11-12"
@@ -5023,11 +5023,11 @@
         "Tres cuartos"
       ],
       "correcta": 0,
-      "tip": "3 de 9 partes iguales es lo mismo que 1 de cada 3: un tercio.",
+      "tip": "Está pintada 1 de 3 partes iguales: un tercio.",
       "visual": {
         "tipo": "fraccion",
-        "partes": 9,
-        "pintadas": 3
+        "partes": 3,
+        "pintadas": 1
       },
       "revisada": false,
       "id": "mat3-oa11-13"
@@ -5037,16 +5037,16 @@
       "pregunta": "¿Qué fracción del queque está pintada?",
       "opciones": [
         "3/4",
-        "4/4",
         "1/4",
-        "4/1"
+        "1/2",
+        "2/3"
       ],
-      "correcta": 1,
-      "tip": "Están pintadas las 4 partes de 4: el entero completo se escribe 4/4.",
+      "correcta": 0,
+      "tip": "Están pintadas 3 de 4 partes iguales: tres cuartos (3/4).",
       "visual": {
         "tipo": "fraccion",
         "partes": 4,
-        "pintadas": 4
+        "pintadas": 3
       },
       "revisada": false,
       "id": "mat3-oa11-14"
@@ -5075,8 +5075,8 @@
       "pregunta": "¿Cuál fracción es mayor: 3/4 o 1/4?",
       "opciones": [
         "1/4",
-        "4/4",
-        "4/3",
+        "2/4",
+        "1/3",
         "3/4"
       ],
       "correcta": 3,
@@ -5112,7 +5112,7 @@
       "oa": "MA03 OA 11",
       "pregunta": "¿Cuál fracción es mayor: 2/4 o 3/4?",
       "opciones": [
-        "4/4",
+        "1/3",
         "3/4",
         "2/4",
         "1/4"
@@ -10114,7 +10114,7 @@
     },
     {
       "oa": "MA03 OA 22",
-      "pregunta": "¿Cuánto pesa más o menos un niño de 8 años?",
+      "pregunta": "¿Cuánto pesa más o menos un perro grande?",
       "opciones": [
         "3 kg",
         "150 kg",
@@ -10122,7 +10122,7 @@
         "28 kg"
       ],
       "correcta": 3,
-      "tip": "3 kg es lo que pesa una guagua recién nacida; un niño de 8 años pesa mucho más.",
+      "tip": "Un perro grande pesa alrededor de 28 kg: mucho más que un gato (3 kg) y que 280 g.",
       "revisada": false,
       "id": "mat3-oa22-16"
     },
@@ -12800,7 +12800,7 @@
     },
     {
       "oa": "MA03 OA 26",
-      "pregunta": "Sobre el 0 hay 3 puntos. ¿Qué significa eso?",
+      "pregunta": "En un gráfico de puntos sobre las mascotas de cada niño, sobre el 0 hay 3 puntos. ¿Qué significa eso?",
       "opciones": [
         "3 niños no tienen ninguno",
         "Hay 30 niños",
@@ -12808,7 +12808,7 @@
         "Hay 0 niños"
       ],
       "correcta": 0,
-      "tip": "El 0 también es una respuesta: esos 3 niños contestaron cero.",
+      "tip": "El 0 también es un dato: esos 3 niños tienen cero mascotas.",
       "revisada": false,
       "id": "mat3-oa26-25"
     },
