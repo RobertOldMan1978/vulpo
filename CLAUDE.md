@@ -4627,6 +4627,17 @@ Sesión corta, de habilitación y documentación. Sin cambios en el juego ni en 
   que falta, así que hay que borrar el clip viejo para forzar la nueva pronunciación). Verificado por
   Roberto. *Gotcha:* al cambiar una pronunciación en `_FONEMAS`, borrar los mp3 afectados antes de
   regenerar; si no, el script los ve "ya generados" y no los toca.
+- **Contenido sensible: inventario, pool de CN07 y código de color (apoya A4 + feature nueva).**
+  A pedido de Roberto: (1) **pool de las 90 preguntas de CN07 OA 01/02/03** (sexualidad/reproducción/
+  ITS) en `docs/pool-cn07-sexualidad.md`, para mostrárselas al colegio con transparencia (A4). (2)
+  **Inventario de TODO el contenido sensible** de 3°/7°/8° (un subagente barrió los `oa.json` y los
+  `cuidados-*.md`): **20 OA sensibles** (Matemática ninguno), 9 ALTA; solo 5 estaban etiquetados antes,
+  15 son hallazgos nuevos. (3) **Código de color de 5 categorías** aprobado por Roberto —🔴 Sexualidad,
+  ⚫ Violencia y muerte, 🟡 Religión y creencias, 🟤 Pueblos originarios, 🔵 Sustancias— con el mapeo
+  OA→categoría(s) (multi-etiqueta) en **`docs/contenido-sensible.md`** (leyenda del armador + insumo de
+  la feature). **Feature pendiente de diseñar/implementar:** marcar lo sensible en el armador
+  (`?armar=1`) y en el enlace de venta, con opt-in del usuario por categoría/capítulo (los enlaces
+  trabajan por capítulo, que hereda las categorías de sus OA). Ver `pendiente.md`.
 - **Pendiente (Roberto):** hacer A1 con los PDF/tablero (7-11 h, el camino crítico); cuando exporte
   el `revisadas.json`, se aplica con `aplicar-revisadas.py` y se regenera el tablero. Sigue en pie
   la reautenticación de NotebookLM (el paso del AI Brain de la orden 66 falla hasta rehacer el login
