@@ -855,6 +855,13 @@ propia contraseña, definida en la constante `CLAVE_ADMIN` de
 > puede saltársela). El acceso a los datos de cursos y alumnos, en cambio, sí es
 > seguridad real: lo protege Supabase Auth desde `profesor.html`.
 
+**Aprobar por muestreo (Sesión 70).** El botón **"⚡ Aprobar por muestreo"** abre un modo de
+una pantalla por objetivo con **sus 8 preguntas ya elegidas** (sorteo estable, sembrado con el
+código del OA), teclado —**espacio** aprueba y avanza, **V** manda a ver las 30, **S** salta—,
+contador "vas en el N de 170" y **reanudar donde se quedó**. La cola son solo los OA con
+preguntas pendientes, así que 8° no aparece. Aprobar marca **las 30**, que es el criterio.
+Detalle en `docs/aprobacion-pedagogica.md`.
+
 **En el tablero:** al pinchar un OA se despliegan sus preguntas (solo el
 enunciado y la respuesta correcta). Los controles **"Expandir todo / Contraer
 todo"** (arriba) abren o cierran todas las preguntas de una vez, y cada
@@ -4902,3 +4909,83 @@ tres". En la franja o el titular quedaría suelta; ahí desarma la objeción.
   **A10**.
 - **Pendiente de Roberto:** sin cambios — **la aprobación pedagógica** sigue siendo el camino
   crítico.
+
+### Sesión 70 (2026-08-28) — El modo de aprobación por muestreo, y el desafío entra en los enlaces
+Roberto preguntó qué se podía hacer para avanzar hacia la v1. La respuesta, medida: **lo único
+que ataca el camino crítico es acortar sus 7-11 horas de aprobación.** Todo lo demás se apila
+detrás de eso.
+
+#### El hueco que tenía el tablero
+
+El criterio de `docs/aprobacion-pedagogica.md` es revisar **8 de las 30** preguntas de cada OA,
+pero **el tablero no lo implementaba**: dibujaba las ~8.000 preguntas y quedaba en manos de
+Roberto decidir cuáles mirar —o leerlas todas, que triplica el trabajo—. Sin teclado y sin forma
+de retomar.
+
+**Modo "⚡ Aprobar por muestreo":** una pantalla por objetivo con **sus 8 preguntas ya elegidas**.
+**Espacio** aprueba el OA completo y avanza, **V** manda a ver las 30, **S** salta, **Esc** sale.
+La cola son solo los OA con preguntas pendientes —**170**, porque 8° ya está aprobado— con
+contador y **reanudar donde se quedó**, aunque se cierre el navegador.
+
+Tres decisiones que conviene respetar:
+
+- **La muestra es estable**, sorteada con una semilla derivada del código del OA. Si cambiara al
+  recargar, uno podría aprobar un OA habiendo visto ocho preguntas y volver a verlo con otras
+  ocho, **sin saber cuál versión aprobó**.
+- **Aprobar marca las 30, no las 8 mostradas.** Eso es el criterio escrito, no un atajo.
+- **No guarda aparte:** reusa el mismo almacén y la misma función `fijar` del tablero, así que
+  las copias de un OA que pertenece a dos capítulos se sincronizan solas (el defecto de las 270
+  preguntas de Lenguaje de 3° que se dibujan dos veces).
+
+**Y se agregó el `tip` a la vista.** El tablero no lo mostraba, y es parte de lo que hay que
+aprobar: este proyecto ya tuvo tips equivocados —uno decía "20 pasos" donde eran unidades, otro
+contradecía su propia pregunta—. Suma ~1 MB al archivo y lo vale. De paso, favicon al tablero.
+
+#### El desafío de cálculo no se podía mostrar a un colegio
+
+Lo encontró Roberto: *"en el creador no veo los desafíos de mates ni los vocabularios"*. Medido,
+tenía razón a medias — y la mitad que tenía razón importaba.
+
+- **El Vocabulario sí estaba** en 7° y 8°, local y en producción. En 3° no aparece porque se
+  decidió no construirlo (Sesión 69).
+- **El desafío de cálculo no aparecía en NINGUNO.** El armador lista `EXPEDICIONES`, y ni el Reto
+  de Cálculo de 8° ni el Reto Sin Fin son expediciones: son módulos con pantalla propia. **Un
+  profesor con un enlace de muestra nunca veía esa parte del producto**, justo la más vistosa de
+  enseñar.
+
+**Catálogo `EXTRAS` por nivel:** módulos que no son expediciones pero sí pueden ir en un enlace.
+Va **como dato y no como `if` por curso**, así que el armador, el filtro de `?solo=` y la lista
+del modo prueba quedan iguales en los tres forks. El armador pasa de 20 a **21** casillas en 8°,
+de 23 a **24** en 7° y de 25 a **26** en 3°.
+
+#### ⚠️ Caí DOS VECES en la misma trampa, y la segunda ya estaba documentada
+
+Escribí `const EXTRAS = HAY_SINFIN ? [...]`, y ese bloque corre **mil líneas antes** de que se
+declare esa bandera: `ReferenceError` por zona muerta temporal, y **el juego muerto** con el
+síntoma de siempre —la pantalla se ve bien y ningún botón responde—.
+
+Es **exactamente** lo que la Sesión 69 dejó escrito en el código y en `docs/modulos-transversales.md`
+después de que pasara con `CALC.init`. La nota no bastó.
+
+> **La regla, ahora en forma de patrón y no de advertencia:** un literal que corre temprano **no
+> puede leer una bandera declarada después**. La condición va dentro de una **función**
+> (`disponible()`), que se evalúa recién al usarse. Y el filtro de `?solo=` mira **solo el id**,
+> porque tampoco puede consultar la disponibilidad todavía.
+
+#### Verificación
+
+- **Usando el modo:** 5 aprobaciones con el teclado dejaron el contador en **2.536 → 2.686**,
+  exactamente +150 (5 × 30). **V** abre el OA con sus 30 en el tablero. Recargar y reabrir vuelve
+  al mismo punto. La última pregunta **no queda tapada** por la barra de acciones (medido, no
+  supuesto).
+- **Enlaces de muestra:** `?solo=hist7-cap1,sinfin` dibuja las dos tarjetas y el Reto **abre y
+  genera** una operación real; 8° abre su `scr-calc-mapa`; **el token `?m=` también funciona**,
+  generado por el propio armador con caducidad; un enlace con solo el extra funciona; un id
+  inventado cae al juego normal; el **modo revisión** sigue bien.
+- Las tres apps juegan una etapa real. **Cero errores de consola y cero 404.**
+
+- **Pendiente inmediato:** **M4** (`niveles.js`), que es lo que abarata los tres cursos que
+  faltan: dar de alta un curso toca hoy **27 puntos de edición en tres archivos**, ocho de ellos
+  listas paralelas.
+- **Pendiente de Roberto:** la **aprobación pedagógica**, ahora con la herramienta hecha para
+  ella. Sigue siendo el camino crítico de la v1.

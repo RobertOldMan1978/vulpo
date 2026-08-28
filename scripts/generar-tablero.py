@@ -239,7 +239,10 @@ def render_asignatura(oa_data, preg_data):
                 filas.append(
                     f'<div class="pq"><span class="pq-n">{j}.</span>'
                     f'<div class="pq-body"><div class="pq-q">{escape(q.get("pregunta",""))}</div>'
-                    f'<div class="pq-a">✔ {escape(resp)}</div></div>'
+                    f'<div class="pq-a">✔ {escape(resp)}</div>'
+                    + (f'<div class="pq-tip">💡 {escape(q.get("tip",""))}</div>'
+                       if q.get("tip") else "")
+                    + '</div>'
                     f'<label class="pq-check" title="Marcar como revisada">'
                     f'<input type="checkbox" data-id="{escape(qid)}" data-rev="{rev}"></label>'
                     "</div>"
@@ -319,6 +322,41 @@ body{
 .wrap{max-width:900px;margin:0 auto}
 .grupo-tit{font-family:'Titan One',cursive;font-size:20px;color:var(--violet);margin:34px 0 4px;padding-top:20px;border-top:2px solid #ffffff1a}
 .grupo-sub{color:var(--dim);font-size:13px;font-weight:700;margin-bottom:16px;max-width:70ch}
+/* --- Modo de aprobacion por muestreo --- */
+#muestreo{position:fixed;inset:0;background:linear-gradient(160deg,#140f33,#241a52);z-index:60;
+  overflow-y:auto;padding:0 0 40px}
+/* La barra de acciones es sticky abajo, asi que se monta sobre el contenido. Sin este
+   aire, la ultima pregunta de la muestra queda tapada y no hay forma de leerla. */
+#muestreo .mz{padding-bottom:110px}
+#muestreo .mz{max-width:820px;margin:0 auto;padding:16px}
+.mz-top{position:sticky;top:0;background:#140f33f2;backdrop-filter:blur(6px);
+  padding:12px 0 10px;border-bottom:1px solid #ffffff18;margin-bottom:14px;z-index:2}
+.mz-fila{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.mz-cod{font-family:'Titan One',cursive;color:var(--violet);font-size:17px}
+.mz-pos{color:var(--dim);font-weight:800;font-size:12px;margin-left:auto}
+.mz-asig{color:var(--dim);font-weight:800;font-size:12px}
+.mz-txt{color:var(--txt);font-weight:700;font-size:14px;margin-top:6px;line-height:1.45}
+.mz-prog{height:6px;border-radius:99px;background:#ffffff1a;overflow:hidden;margin-top:10px}
+.mz-prog i{display:block;height:100%;background:linear-gradient(90deg,var(--violet),var(--cyan));
+  transition:width .2s ease}
+.mz-aviso{background:#ffc93c1a;border:1px solid #ffc93c44;color:var(--gold);font-weight:800;
+  font-size:12px;padding:8px 12px;border-radius:10px;margin-bottom:12px}
+.mz-q{background:var(--panel);border:1px solid #ffffff12;border-radius:12px;padding:12px 14px;margin-bottom:10px}
+.mz-q .n{color:var(--dim);font-weight:900;font-size:12px}
+.mz-q .q{font-weight:800;margin:4px 0 8px;line-height:1.45}
+.mz-q .a{color:var(--green);font-weight:800;font-size:14px}
+.mz-q .tip{color:var(--dim);font-size:13px;margin-top:6px}
+.mz-acc{position:sticky;bottom:0;background:#140f33f2;backdrop-filter:blur(6px);
+  padding:12px 0;border-top:1px solid #ffffff18;display:flex;gap:8px;flex-wrap:wrap}
+.mz-b{border:0;border-radius:12px;padding:12px 16px;font-weight:900;font-size:14px;cursor:pointer;
+  font-family:'Nunito',sans-serif}
+.mz-ok{background:linear-gradient(135deg,var(--green),#2bbf72);color:#08301c;flex:1;min-width:180px}
+.mz-no{background:var(--panel2);color:var(--pink);border:1px solid #ff4d8d55}
+.mz-sk{background:var(--panel2);color:var(--dim);border:1px solid #ffffff18}
+.mz-x{background:transparent;color:var(--dim);border:1px solid #ffffff18}
+.mz-teclas{color:var(--dim);font-size:11px;font-weight:800;margin-top:8px;text-align:center}
+.mz-fin{text-align:center;padding:60px 20px}
+.mz-fin h2{font-family:'Titan One',cursive;color:var(--green);font-size:26px;margin-bottom:10px}
 h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
 .topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
 .volver{display:inline-flex;align-items:center;gap:6px;background:var(--panel2);border:1px solid #ffffff18;
@@ -379,6 +417,7 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
 .pq-body{flex:1}
 .pq-q{font-weight:800;font-size:13px;line-height:1.3}
 .pq-a{color:var(--green);font-weight:800;font-size:12.5px;margin-top:2px}
+.pq-tip{color:var(--dim);font-weight:700;font-size:12px;margin-top:3px;line-height:1.35}
 .pq-check{display:flex;align-items:center;padding-left:6px}
 .pq-check input{width:20px;height:20px;accent-color:var(--green);cursor:pointer}
 /* Aprobacion masiva. Existe porque con 12.800 preguntas en la v1, marcar de a una
@@ -542,6 +581,151 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
     });
   });
 
+
+  // ====================================================================
+  // MODO DE APROBACION POR MUESTREO
+  //
+  // El criterio de docs/aprobacion-pedagogica.md es revisar 8 de las 30 preguntas de
+  // cada OA y aprobar el OA si la muestra pasa. El tablero no lo implementaba: dibuja
+  // las ~8.000 preguntas y quedaba en manos de quien revisa decidir cuales mirar, o
+  // leerlas todas -que triplica el trabajo-. Sin teclado y sin forma de retomar.
+  //
+  // Este modo NO guarda aparte: reusa `fijar`, asi que las marcas viven en el mismo
+  // localStorage y las copias de un OA que pertenece a dos capitulos se sincronizan
+  // solas (el defecto de las 270 preguntas dibujadas dos veces en Lenguaje de 3).
+  // --------------------------------------------------------------------
+  var MUESTRA = 8;                 // cuantas se muestran por OA (el criterio escrito)
+  var LS_POS  = 'kimun_muestreo_pos';
+  var MZ = { cola: [], i: 0 };
+
+  // PRNG determinista sembrado con el codigo del OA. La muestra tiene que ser ESTABLE:
+  // si cambiara al recargar, uno podria aprobar un OA habiendo visto ocho preguntas y
+  // volver a verlo con otras ocho, sin saber cual version aprobo.
+  function _sem(s){ var h=2166136261; for(var i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=Math.imul(h,16777619);} return h>>>0; }
+  function _rnd(estado){ estado.s^=estado.s<<13; estado.s>>>=0; estado.s^=estado.s>>17; estado.s^=estado.s<<5; estado.s>>>=0; return estado.s/4294967296; }
+  function muestraDe(codigo, n, total){
+    var e={s:_sem(codigo)||1}, idx=[], i;
+    for(i=0;i<total;i++) idx.push(i);
+    for(i=total-1;i>0;i--){ var j=Math.floor(_rnd(e)*(i+1)); var t=idx[i]; idx[i]=idx[j]; idx[j]=t; }
+    return idx.slice(0, Math.min(n,total)).sort(function(a,b){return a-b;});
+  }
+
+  // La cola son los OA con al menos una pregunta sin marcar. Un OA ya aprobado no
+  // aparece, asi que 8 basico -aprobado entero- se salta solo.
+  function armarCola(){
+    var vistos={}, cola=[];
+    document.querySelectorAll('.oa').forEach(function(oa){
+      var cod=(oa.querySelector('.oa-cod')||{}).textContent||'';
+      if(!cod || vistos[cod]) return;         // el mismo OA puede estar en dos capitulos
+      var ins=inputsDe(oa);
+      if(!ins.length) return;
+      var faltan=ins.filter(function(cb){return !cb.checked;}).length;
+      if(!faltan) return;
+      vistos[cod]=1;
+      cola.push({cod:cod, nodo:oa});
+    });
+    return cola;
+  }
+
+  function esc(s){ var d=document.createElement('div'); d.textContent=s==null?'':s; return d.innerHTML; }
+
+  function pintarMuestreo(){
+    var c=document.getElementById('mzCuerpo');
+    if(MZ.i>=MZ.cola.length){
+      c.innerHTML='<div class="mz-fin"><h2>¡No queda nada por revisar!</h2>'
+        +'<p style="color:var(--dim);font-weight:800">Todos los objetivos con preguntas pendientes están aprobados.</p>'
+        +'<button class="mz-b mz-x" id="mzCerrar2" style="margin-top:18px">← Volver al tablero</button></div>';
+      document.getElementById('mzCerrar2').onclick=cerrarMuestreo;
+      return;
+    }
+    var it=MZ.cola[MZ.i], oa=it.nodo;
+    var asig=(oa.closest('section.asig')||{}).querySelector ? (oa.closest('section.asig').querySelector('h2')||{}).textContent||'' : '';
+    var sub=(oa.closest('section.asig')||{}).querySelector ? (oa.closest('section.asig').querySelector('.sub')||{}).textContent||'' : '';
+    var txt=(oa.querySelector('.oa-txt')||{}).textContent||'';
+    var pqs=Array.prototype.slice.call(oa.querySelectorAll('.pq'));
+    var idx=muestraDe(it.cod, MUESTRA, pqs.length);
+
+    var h='<div class="mz-top">'
+      +'<div class="mz-fila"><span class="mz-cod">'+esc(it.cod)+'</span>'
+      +'<span class="mz-asig">'+esc(asig.split('▾').join('').trim())+' · '+esc(sub.split('·')[0].trim())+'</span>'
+      +'<span class="mz-pos">'+(MZ.i+1)+' de '+MZ.cola.length+'</span></div>'
+      +'<div class="mz-txt">'+esc(txt)+'</div>'
+      +'<div class="mz-prog"><i style="width:'+((MZ.i)/MZ.cola.length*100)+'%"></i></div></div>';
+
+    h+='<div class="mz-aviso">Muestra de '+idx.length+' de '+pqs.length+' preguntas. '
+      +'Si las '+idx.length+' están bien, se aprueba el OA completo. Si alguna falla, revisa las '+pqs.length+'.</div>';
+
+    idx.forEach(function(k,n){
+      var p=pqs[k];
+      var q=(p.querySelector('.pq-q')||{}).textContent||'';
+      var a=(p.querySelector('.pq-a')||{}).textContent||'';
+      var tip=(p.querySelector('.pq-tip')||{}).textContent||'';
+      h+='<div class="mz-q"><div class="n">'+(n+1)+' / '+idx.length+' &nbsp;·&nbsp; pregunta '+(k+1)+' de '+pqs.length+'</div>'
+        +'<div class="q">'+esc(q)+'</div><div class="a">'+esc(a)+'</div>'
+        +(tip?'<div class="tip">'+esc(tip)+'</div>':'')+'</div>';
+    });
+
+    h+='<div class="mz-acc">'
+      +'<button class="mz-b mz-ok" id="mzOk">✓ Aprobar el OA completo</button>'
+      +'<button class="mz-b mz-no" id="mzNo">✗ Ver las '+pqs.length+'</button>'
+      +'<button class="mz-b mz-sk" id="mzSk">Saltar</button>'
+      +'<button class="mz-b mz-x"  id="mzCerrar">Salir</button>'
+      +'</div>'
+      +'<div class="mz-teclas">espacio o Enter aprobar · V ver todas · S saltar · Esc salir</div>';
+    c.innerHTML=h;
+    c.parentNode.scrollTop=0;
+
+    document.getElementById('mzOk').onclick=aprobarActual;
+    document.getElementById('mzNo').onclick=verTodasActual;
+    document.getElementById('mzSk').onclick=function(){MZ.i++;guardarPos();pintarMuestreo();};
+    document.getElementById('mzCerrar').onclick=cerrarMuestreo;
+  }
+
+  function guardarPos(){ try{localStorage.setItem(LS_POS,String(MZ.i));}catch(e){} }
+
+  function aprobarActual(){
+    var it=MZ.cola[MZ.i];
+    if(it) fijar(inputsDe(it.nodo), true);   // marca las 30, no solo las 8 mostradas
+    MZ.i++; guardarPos(); pintarMuestreo();
+  }
+
+  // "Ver las 30": no se aprueba nada y se lleva al OA en el tablero, desplegado, para
+  // revisarlo pregunta por pregunta. Es la salida cuando la muestra falla.
+  function verTodasActual(){
+    var it=MZ.cola[MZ.i];
+    cerrarMuestreo();
+    if(!it) return;
+    var s=it.nodo.closest('section.asig'); if(s) s.classList.remove('cerrado');
+    var u=it.nodo.closest('.unidad');      if(u) u.classList.remove('cerrado');
+    it.nodo.classList.add('abierto');
+    it.nodo.scrollIntoView({block:'start'});
+  }
+
+  function cerrarMuestreo(){
+    document.getElementById('muestreo').style.display='none';
+    document.removeEventListener('keydown', teclasMuestreo);
+  }
+
+  function teclasMuestreo(e){
+    if(document.getElementById('muestreo').style.display==='none') return;
+    if(e.key===' '||e.key==='Enter'){ e.preventDefault(); aprobarActual(); }
+    else if(e.key==='v'||e.key==='V'){ e.preventDefault(); verTodasActual(); }
+    else if(e.key==='s'||e.key==='S'){ e.preventDefault(); MZ.i++; guardarPos(); pintarMuestreo(); }
+    else if(e.key==='Escape'){ e.preventDefault(); cerrarMuestreo(); }
+  }
+
+  var btnMz=document.getElementById('abrirMuestreo');
+  if(btnMz) btnMz.onclick=function(){
+    MZ.cola=armarCola();
+    // Retomar donde se quedo, pero sin pasarse: la cola se recalcula en cada apertura
+    // y encoge a medida que se aprueba, asi que la posicion guardada puede quedar fuera.
+    var g=0; try{ g=parseInt(localStorage.getItem(LS_POS)||'0',10)||0; }catch(e){}
+    MZ.i=Math.min(Math.max(0,g), MZ.cola.length);
+    document.getElementById('muestreo').style.display='block';
+    document.addEventListener('keydown', teclasMuestreo);
+    pintarMuestreo();
+  };
+
   var exp=document.getElementById('exportar');
   if(exp)exp.onclick=function(){
     var ids=idsMarcados();
@@ -558,6 +742,7 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
         '<meta charset="UTF-8">\n'
         '<meta name="viewport" content="width=device-width, initial-scale=1.0">\n'
         '<title>VULPO · Tablero de desarrollo</title>\n'
+        '<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">\n'
         '<link rel="preconnect" href="https://fonts.googleapis.com">\n'
         '<link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">\n'
         "<style>" + css + "</style>\n</head>\n<body>\n"
@@ -587,6 +772,8 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
         '  </div>\n'
         '  <div class="gen">Generado el ' + marca + ' · <code>python scripts/generar-tablero.py</code></div>\n'
         '  <div class="tb-controls">\n'
+        '    <button class="ctrl" id="abrirMuestreo" style="border-color:#3ee08966;color:var(--green)">'
+        '⚡ Aprobar por muestreo</button>\n'
         '    <button class="ctrl" id="expandirTodo">▾ Expandir todo (ver todas las preguntas)</button>\n'
         '    <button class="ctrl" id="contraerTodo">▸ Contraer todo</button>\n'
         '  </div>\n'
@@ -599,6 +786,7 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
         '  </div>\n'
         '  <div class="gen" style="margin-top:18px">Pincha un OA para ver sus preguntas, o usa <b>Expandir todo</b> para verlas todas. Pincha el encabezado de una asignatura o unidad para contraerla; <b>Contraer todo</b> deja solo las asignaturas. Marca la casilla de las que apruebes y usa "Exportar revisadas".</div>\n'
         '</div>\n'
+        '<div id="muestreo" style="display:none"><div class="mz" id="mzCuerpo"></div></div>\n'
         "<script>" + js + "</script>\n"
         "</body>\n</html>\n"
     )

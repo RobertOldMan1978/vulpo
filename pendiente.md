@@ -57,8 +57,12 @@ Es el camino crítico de todo lo demás: 3° y 7° llevan meses escritos y sin u
 firmada, y **anunciarlos antes de aprobarlos contradice la regla del proyecto de no prometer lo
 que no hay** (la landing dice "todas aprobadas una a una").
 
-- Herramienta: `dev/tablero.html`, ya ordenado por curso, con "✓ todo el OA" y "✓ aprobar la
-  asignatura". Se regenera con `python scripts/generar-tablero.py`.
+- Herramienta: `dev/tablero.html` → botón **"⚡ Aprobar por muestreo"** (Sesión 70). Una pantalla
+  por objetivo con **sus 8 preguntas ya elegidas**, teclado (**espacio** aprueba y avanza, **V**
+  manda a ver las 30, **S** salta), contador *"N de 170"* y **reanudar donde quedaste**. La cola
+  son solo los OA pendientes, así que 8° no aparece. Se regenera con
+  `python scripts/generar-tablero.py`. Siguen estando "✓ todo el OA" y "✓ aprobar la asignatura"
+  para corregirse o ir a un objetivo puntual.
 - Criterio: **8 de 30 por OA** — está en [`docs/aprobacion-pedagogica.md`](docs/aprobacion-pedagogica.md),
   con las probabilidades calculadas y el límite dicho de frente (el muestreo caza un OA mal
   escrito, no una pregunta suelta).

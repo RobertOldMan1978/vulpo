@@ -1411,7 +1411,24 @@ const EXPEDICIONES=[
 /* Ids de ?solo= que existen de verdad. Uno inventado se ignora en silencio; si no
    queda ninguno válido, PRUEBA es falso y se cae al juego normal (mejor eso que
    dejar al alumno en una pantalla vacía). */
-const SOLO=_SOLO_PEDIDO.filter(id=>EXPEDICIONES.some(e=>e.id===id));
+/* Módulos que NO son expediciones pero SÍ deben poder ir en un enlace de muestra.
+   El armador lista EXPEDICIONES, así que el reto de cálculo de este nivel no aparecía y
+   un profesor con un enlace de muestra nunca veía esa parte del producto — justo la más
+   vistosa de enseñar. Va como catálogo (un DATO) y no como un `if` por curso, para que el
+   armador, el filtro de ?solo= y la lista del modo prueba queden iguales en los tres forks.
+   No llevan preguntas que revisar: en ?rev=1 se muestran igual, pero no tienen 🚩 porque
+   sus operaciones se generan al vuelo y no hay id que marcar. */
+/* ⚠️ El literal NO puede leer la bandera del nivel. Este bloque corre mil líneas antes de
+   que se declare HAY_SINFIN / HAY_RETO_CALCULO, y un `const` leído antes de su declaración
+   lanza ReferenceError y MATA todo el JavaScript del juego (zona muerta temporal). Pasó al
+   escribir esto, que es la segunda vez en dos sesiones. Por eso la disponibilidad va en una
+   FUNCIÓN `disponible()`, que se evalúa recién al dibujar. */
+const EXTRAS = [
+  {id:'reto-calculo', asignatura:'Matemáticas', nombre:'Reto de Cálculo', icono:'⚡',
+   disponible:()=>HAY_RETO_CALCULO, abrir:()=>abrirRetoCalculo()},
+];
+function extraPorId(id){ const x=EXTRAS.find(e=>e.id===id); return (x&&x.disponible())?x:null; }
+const SOLO=_SOLO_PEDIDO.filter(id=>EXPEDICIONES.some(e=>e.id===id)||EXTRAS.some(x=>x.id===id));
 const PRUEBA=SOLO.length>0;
 /* Modo revisión de profesor (?rev=1 junto a ?solo= o ?m=). La maquinaria vive en
    assets/js/revision.js, compartida con los demás cursos: aquí solo se enciende. */
@@ -2985,7 +3002,8 @@ function entrarExpedicion(exp){
 function renderListaPrueba(){
  if($('btnCampBack')) $('btnCampBack').style.display='none';   // no hay a dónde volver
  const exps=SOLO.map(id=>EXPEDICIONES.find(e=>e.id===id)).filter(Boolean);
- const asigs=[...new Set(exps.map(e=>e.asignatura))];
+ const extras=SOLO.map(extraPorId).filter(Boolean);
+ const asigs=[...new Set(exps.map(e=>e.asignatura).concat(extras.map(x=>x.asignatura)))];
  $('campHead').innerHTML=`<h1 style="font-size:26px">Modo prueba</h1><p>${asigs.join(' · ')}</p>`;
  const cont=$('campNodos'); cont.innerHTML='';
  exps.forEach(exp=>{
@@ -2995,6 +3013,10 @@ function renderListaPrueba(){
   cont.appendChild(nodoCampañaEl(i>=0?`${i+1}`:'📘', nombreMapa(exp), true, hecho,
     ()=>entrarExpedicion(exp), hecho?'Completado':'¡Jugar!',
     portadaMapa(exp), portadaFallback(exp)));
+ });
+ extras.forEach(x=>{
+  cont.appendChild(nodoCampañaEl(x.icono, x.nombre, true, false,
+    ()=>x.abrir(), '¡Jugar!', ''));
  });
  go('scr-campana');
 }
@@ -3045,7 +3067,7 @@ function arrancarArmador(){
     `<span style="color:${SENSIBLE.cats[c].color}">${SENSIBLE.cats[c].icono} ${SENSIBLE.cats[c].nombre}</span>`).join('&nbsp;&nbsp;&nbsp;');
   cont.appendChild(ley);
  }
- const asigs=[...new Set(activas.map(e=>e.asignatura))]
+ const asigs=[...new Set(activas.map(e=>e.asignatura).concat(EXTRAS.filter(x=>x.disponible()).map(x=>x.asignatura)))]
    .sort((a,b)=>((ORDEN_ASIG.indexOf(a)+1)||99)-((ORDEN_ASIG.indexOf(b)+1)||99));
  asigs.forEach(asig=>{
   const h=document.createElement('h3');
@@ -3059,6 +3081,13 @@ function arrancarArmador(){
    const sc=SENSIBLE.deExpedicion(exp);
    const marcas=sc.map(c=>`<span class="sens-m" style="background:${SENSIBLE.cats[c].color}33" title="${SENSIBLE.cats[c].nombre}">${SENSIBLE.cats[c].icono}</span>`).join('');
    l.innerHTML=`<input type="checkbox" value="${exp.id}"><span>${i>=0?(i+1)+'. ':''}${nombreMapa(exp)}</span>${marcas}`;
+   cont.appendChild(l);
+  });
+  // Los módulos de esta asignatura que no son expediciones (ver EXTRAS).
+  EXTRAS.filter(x=>x.asignatura===asig && x.disponible()).forEach(x=>{
+   const l=document.createElement('label');
+   l.style.cssText='display:flex;gap:8px;align-items:center;font-size:13px;font-weight:700;padding:4px 0';
+   l.innerHTML=`<input type="checkbox" value="${x.id}"><span>${x.icono} ${x.nombre}</span>`;
    cont.appendChild(l);
   });
  });

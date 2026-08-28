@@ -90,12 +90,42 @@ Se revisan **las 30**, sin excepción, cuando:
 
 1. Regenerar el tablero: `python scripts/generar-tablero.py`
 2. Abrir `dev/tablero.html` y entrar con la contraseña.
-3. Por cada OA: desplegarlo, leer unas 8 preguntas repartidas, y pulsar **"✓ todo el OA"**.
-   El mismo botón vuelve a **"✕ quitar el OA"** si hay que corregirse.
-   También hay **"✓ Aprobar toda la asignatura"**, que pide confirmación sobre 60 preguntas.
+3. Pulsar **"⚡ Aprobar por muestreo"** y recorrer la cola (ver abajo).
 4. **"⬇ Exportar revisadas"** → descarga `revisadas.json`.
 5. `python scripts/aplicar-revisadas.py` → escribe `revisada:true` en los bancos.
 6. `python scripts/generar-tablero.py` → la barra rosada refleja el avance real.
+
+### El modo de aprobación por muestreo
+
+Hasta la Sesión 70 el criterio estaba escrito pero **el tablero no lo implementaba**: dibujaba
+las ~8.000 preguntas y quedaba en manos de quien revisa decidir cuáles mirar —o leerlas todas,
+que triplica el trabajo—. Sin teclado y sin forma de retomar.
+
+El modo cierra ese hueco. Una pantalla por objetivo, con **sus 8 preguntas ya elegidas**:
+
+| | |
+|---|---|
+| **espacio** o **Enter** | aprueba el OA completo y avanza |
+| **V** | "ver las 30" — no aprueba nada y lleva al OA desplegado en el tablero |
+| **S** | saltar, para volver después |
+| **Esc** | salir |
+
+- **La cola son solo los OA con preguntas pendientes.** 8°, aprobado entero, no aparece; hoy
+  quedan **170**, y el contador dice en cuál vas.
+- **Se retoma donde se quedó**, aunque se cierre el navegador.
+- **La muestra es estable**: se sortea con una semilla derivada del código del OA, así que las
+  mismas 8 salen siempre. Si cambiaran al recargar, uno podría aprobar un OA habiendo visto ocho
+  preguntas y volver a verlo con otras ocho, sin saber cuál versión aprobó.
+- **Aprobar marca las 30, no las 8 mostradas** — eso es el criterio, no un atajo.
+- **El `tip` se muestra junto a cada respuesta.** Se agregó a propósito: es parte de lo que hay
+  que aprobar, y este proyecto ya tuvo tips equivocados (uno decía "20 pasos" donde eran
+  unidades; otro contradecía su propia pregunta).
+- No guarda aparte: reusa el mismo almacén del tablero, así que las copias de un OA que
+  pertenece a dos capítulos se sincronizan solas.
+
+> **Los botones de antes siguen ahí** —"✓ todo el OA" y "✓ Aprobar toda la asignatura"— para
+> corregirse o para ir directo a un objetivo puntual. El modo es un camino más rápido, no un
+> reemplazo.
 
 ### Dos cuidados que ya mordieron
 
