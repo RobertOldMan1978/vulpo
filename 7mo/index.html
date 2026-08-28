@@ -20,6 +20,8 @@
 <!-- Modo revisión de profesor, compartido por todos los cursos. -->
 <script src="assets/js/revision.js"></script>
 <script src="assets/js/sensible.js"></script>
+<!-- Reto Sin Fin de cálculo, compartido por todos los cursos. -->
+<script src="assets/js/calculo.js"></script>
 <script>if(!window.SENSIBLE)window.SENSIBLE={cats:{},oa:{},deExpedicion:function(){return[];}};</script>
 <script src="assets/vendor/supabase-js-2.112.4.min.js"></script>
 <style>
@@ -1376,6 +1378,20 @@ const EXPEDICIONES=[
      {oa:"LE07 OA 24",nombre:"Investigar bien",icono:"🔎",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Hablar, dialogar e investigar",icono:"🤫",n:15,oas:["LE07 OA 21","LE07 OA 22","LE07 OA 23","LE07 OA 24"]},
    ]},
+ // --- Vocabulario (dentro de Lenguaje): palabras de las cuatro asignaturas del curso.
+ //     Son OA de apoyo VOC-*, NO del currículum: registrarOA los excluye por ese prefijo,
+ //     así que no ensucian el mapa de dominio del profesor. Cuatro áreas y no cinco como
+ //     8°, porque su quinta (VOC-LECT) son palabras de sus lecturas y 7° no tiene módulo
+ //     de Lectura. Portada prestada de 8°: el arte no depende del nivel. ---
+ { id:'voc-general', asignatura:'Vocabulario', nivel:'7° Básico · Vocabulario del curso',
+   portada:'assets/portada-voc-general.png', portadaMapa:'assets/portada-voc-general.png',
+   contenido:'contenido/vocabulario-7basico/preguntas.json', activa:true,
+   etapas:[
+     {oa:"VOC-HIST", nombre:"Palabras de Historia", icono:"📜", n:15},
+     {oa:"VOC-CIEN", nombre:"Palabras de Ciencias", icono:"🔬", n:15},
+     {oa:"VOC-MATE", nombre:"Palabras de Matemática", icono:"🔢", n:15},
+     {oa:"VOC-LENG", nombre:"Palabras de Lenguaje", icono:"📚", n:15},
+   ]},
 ];
 
 /* Ids de ?solo= que existen de verdad. Uno inventado se ignora en silencio; si no
@@ -1394,7 +1410,7 @@ if(!window.REV) window.REV={activo:false,n:3,marcadas:[],
   init:function(){return this;},barra:function(){},boton:function(){},
   abrir:function(){},mensaje:function(){return '';},tipoAudio:function(){return '';}};
 REV.init({ activo:REVISION,
-           titulo:'VULPO · Revisión de 8° básico',
+           titulo:'VULPO · Revisión de 7° básico',
            volver:function(){ go('scr-expediciones'); } });
 const MODO_ABIERTO=QA||PRUEBA;   // ignora los candados de progresión
 const EFIMERO=QA||PRUEBA;        // no mide dominio por OA ni reporta refuerzos
@@ -1690,6 +1706,7 @@ const S={nombre:"",avatar:AVATARES[0],xp:0,nivel:1,monedas:0,
  skins:[], logros:new Set(), rutas:{},
  campañasCompletas:new Set(), insignias:new Set(), insigniaActiva:null,
  calc:{etapas:[0,0,0,0,0], jefe:false, record:0},
+ sinfin:{record:0},   // Reto Sin Fin: solo la mejor racha
  curso:null,        // {nombre} del curso al que pertenece el alumno
  alumno:null,       // nombre del perfil del servidor, si canjeó un código
  maestro:false,     // logró la Maestría Total (3 en Difícil + El Autómata) → ya celebrada
@@ -2427,14 +2444,14 @@ $('btnExpBack').onclick=()=>{SND.tap();go('scr-rol');};
 $('btnMapasBack').onclick=()=>{SND.tap();go('scr-expediciones');};
 // Landing de Lenguaje
 $('btnLengCampana').onclick=()=>{SND.tap();abrirCampaña(campañaDe('Lenguaje'));};
-/* 7° NO tiene Vocabulario: la pantalla scr-lenguaje es herencia muerta del fork de 8°.
-   Este handler llamaba entrarExpedicion(EXPEDICIONES.find(e=>e.id==='voc-general')), y
-   'voc-general' no existe en este archivo -> entrarExpedicion(undefined) revienta. Hoy es
-   inalcanzable porque renderExpediciones ya no llama a abrirLenguaje(), pero quedaba armado
-   para el dia que alguien reconecte el landing. Se deja inofensivo en vez de borrar el boton:
-   quitar el <button> sin quitar esta linea haria que $('btnLengVocab') sea null y .onclick
-   mataria TODO el JavaScript del juego (la trampa de la Sesion 56). */
-$('btnLengVocab').onclick=()=>{SND.tap();go('scr-expediciones');};
+/* 7° SI tiene Vocabulario desde la Sesion 68: su banco es contenido/vocabulario-7basico.
+   Entre la Sesion 63 y la 68 este handler estuvo desactivado a proposito, porque apuntaba a
+   una expedicion 'voc-general' que en este archivo no existia: entrarExpedicion(undefined)
+   revienta. Se dejo inofensivo en vez de borrar el <button>, porque quitar el boton sin
+   quitar esta linea haria que $('btnLengVocab') sea null y .onclick mataria TODO el
+   JavaScript del juego (la trampa de la Sesion 56). Vale la advertencia al reves tambien:
+   si algun dia se apaga HAY_VOCABULARIO, hay que dejar el boton y su handler en paz. */
+$('btnLengVocab').onclick=()=>{SND.tap();entrarExpedicion(EXPEDICIONES.find(e=>e.id==='voc-general'));};
 $('btnLengBack').onclick=()=>{SND.tap();go('scr-expediciones');};
 // Biblioteca
 $('btnBiblioBack').onclick=()=>{SND.tap();go('scr-expediciones');};
@@ -2529,7 +2546,101 @@ function renderCampaña(){
     jfAb?()=>iniciarJefeFinal(c):null, jfHecho?'¡Vencido!':(jfAb?'¡Al 100%! Enfréntalo':'🔒 Completa todo'),
     c.jefeFinal.villanoImg||''));
  }
+ // Reto Sin Fin: extra de velocidad dentro de Matemática. Se pregunta por CALC.activo y
+ // NO por HAY_SINFIN: la bandera dice si el nivel LO QUIERE, pero CALC.activo dice si de
+ // verdad está disponible — es false si assets/js/calculo.js no cargó. Con la bandera, un
+ // 404 dejaba el botón dibujado y muerto: el alumno toca y no pasa nada, que es el mismo
+ // defecto del botón de mini-clase de la Sesión 64. Además deja esta función byte a byte
+ // igual en los tres forks, porque en 8° y 3° el respaldo vacío tiene activo:false.
+ if(CALC.activo && c.asignatura==='Matemáticas' && !bloqueado()){
+  const sf=document.createElement('div'); sf.className='camp-nodo';
+  sf.innerHTML=`<div class="cn-marco"><div class="cn-circ" style="background:#8f6bff22">♾️</div></div>`+
+    `<div class="cn-body"><b>Reto Sin Fin</b><small>Récord: ${(S.sinfin&&S.sinfin.record)||0} seguidas</small></div>`;
+  sf.onclick=()=>{SND.tap();CALC.abrir();};
+  cont.appendChild(sf);
+ }
 }
+/* Operaciones del Reto Sin Fin de 7°. Salen del temario del año, no de 8°: enteros
+   (MA07 OA01), porcentaje (OA04), fracción de una cantidad (OA02), potencias de base
+   10 (OA05), reducción de términos semejantes (OA07) y proporciones (OA08).
+   Devuelve {q, ops, ok}; el módulo baraja las opciones, así que aquí NO hay que
+   barajarlas (olvidarlo es el sesgo de posición más fácil de introducir).
+   Los distractores son errores típicos, no números al azar: el que se equivoca
+   debería reconocer su propio error al ver la respuesta. */
+function genCalc7(dif){
+ const ri=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+ /* Arma las 4 opciones garantizando que sean DISTINTAS y que ninguna empate con la
+    clave. Sin esto los distractores chocan solos: en "−2 − 9" dos candidatos daban
+    7, y con clave 0 el opuesto (−0) empata con ella. Lo detectó el verificador de
+    aritmética, no la lectura — que es exactamente lo que dice cuidados-matematica.md
+    sobre las claves de Matemática: se comprueban por cálculo, no a ojo.
+    `rellenar` produce vecinos hasta completar cuatro, así que nunca devuelve menos. */
+ function armar(r, cands, rellenar){
+  const vistos=new Set([String(r)]), ops=[String(r)];
+  for(const c of cands){ const s=String(c);
+   if(!vistos.has(s)){ vistos.add(s); ops.push(s); if(ops.length===4) return {ops, ok:0}; } }
+  let i=1;
+  while(ops.length<4 && i<60){ for(const s of [rellenar(i), rellenar(-i)]){
+    const k=String(s); if(!vistos.has(k)){ vistos.add(k); ops.push(k); if(ops.length===4)break; } } i++; }
+  return {ops, ok:0};
+ }
+
+ const TIPOS={1:['ent','porc'], 2:['ent','fcant'], 3:['pot10','porc'],
+              4:['fcant','alg'], 5:['ent','pot10','alg','prop','porc']};
+ const lista=TIPOS[Math.min(5,Math.max(1,dif))];
+ const tipo=lista[ri(0,lista.length-1)];
+
+ if(tipo==='ent'){                                   // MA07 OA01 · enteros
+  const n=dif<=2?12:dif===3?20:40;
+  const a=ri(-n,n), b=ri(-n,n), suma=ri(0,1)===0;
+  const r=suma?a+b:a-b;
+  // errores típicos: confundir la operación, equivocar el signo, ignorar el negativo
+  const c=[suma?a-b:a+b, -r, Math.abs(a)+Math.abs(b), Math.abs(a)-Math.abs(b)];
+  const o=armar(r, c, k=>r+k);
+  return {q:a+(suma?' + ':' − ')+(b<0?'('+b+')':b), ops:o.ops, ok:o.ok};
+ }
+ if(tipo==='porc'){                                  // MA07 OA04 · porcentaje
+  /* La base es múltiplo de 20 a propósito: 10, 20, 25, 50 y 75 por ciento de un
+     múltiplo de 20 siempre dan entero. Con bases sueltas salía "25% de 90 = 22,5",
+     que es correcto pero impropio de un juego de cálculo mental contra reloj. */
+  const p=[10,20,25,50,75][ri(0,dif<=2?2:4)], base=ri(1,dif<=2?10:24)*20;
+  const r=base*p/100;
+  const c=[base*p/10, base-r, base+r, p];            // olvidar un cero al dividir
+  const o=armar(r, c, k=>r+k*Math.max(1,Math.round(r/4)));
+  return {q:p+'% de '+base, ops:o.ops, ok:o.ok};
+ }
+ if(tipo==='fcant'){                                 // MA07 OA02 · fracción de una cantidad
+  const d=[2,3,4,5][ri(0,3)], nu=ri(1,d-1), k0=ri(2,dif<=3?8:14), base=d*k0;
+  const r=base/d*nu;
+  // Todos enteros a propósito: `base/nu` daba cosas como 5,333… y un distractor con
+  // seis decimales se descarta sin pensar, así que no mide nada.
+  const c=[base/d, base*nu, base-r, r+base/d];       // quedarse en 1/d, multiplicar sin dividir,
+  const o=armar(r, c, k=>r+k*(base/d));              // el complemento, una parte de más
+  return {q:nu+'/'+d+' de '+base, ops:o.ops, ok:o.ok};
+ }
+ if(tipo==='pot10'){                                 // MA07 OA05 · potencias de base 10
+  const e=ri(2,dif<=3?4:6), c0=ri(1,9);
+  const r=c0*Math.pow(10,e);
+  const c=[c0*Math.pow(10,e-1), c0*Math.pow(10,e+1), c0*e*10, Math.pow(10,e)];  // un cero de más o de menos
+  const o=armar(r, c, k=>r*(k>0?10*k:1)+Math.abs(k));
+  return {q:(c0===1?'':c0+' · ')+'10^'+e, ops:o.ops, ok:o.ok};
+ }
+ if(tipo==='alg'){                                   // MA07 OA07 · términos semejantes
+  const a=ri(2,9), b=ri(2,9), suma=ri(0,1)===0, L='xy'[ri(0,1)];
+  const r=suma?a+b:a-b;
+  // errores típicos: multiplicar en vez de sumar, subir el exponente, perder la letra
+  const c=[(suma?a*b:a+b)+L, r+L+'²', String(r), (suma?a+b:b-a)+L];
+  const o=armar(r+L, c, k=>(r+k)+L);
+  return {q:a+L+(suma?' + ':' − ')+b+L, ops:o.ops, ok:o.ok};
+ }
+ // MA07 OA08 · proporción directa: si a → b, entonces c → ?
+ const k=ri(2,dif<=3?5:9), a=ri(2,6), c0=a*ri(2,4);
+ const r=c0*k;
+ const c=[c0+k, a*k, r+k, c0*(k+1)];                 // sumar en vez de multiplicar
+ const o=armar(r, c, x=>r+x*k);
+ return {q:'Si '+a+' → '+(a*k)+',  '+c0+' → ?', ops:o.ops, ok:o.ok};
+}
+
 // img/imgAlt: portada del capítulo (o villano del jefe). Sin imagen, el círculo lleva la marca.
 function nodoCampañaEl(marca,titulo,abierto,hecho,onClick,estado,img,imgAlt){
  const d=document.createElement('div');
@@ -2795,6 +2906,37 @@ function odPreguntas(exp){let all=[],seen=new Set();
    nivel, y genera las operaciones con genCalculo saltándose el banco propio. Estaba
    pasando de verdad en 7° (Sesión 63). */
 const HAY_RETO_CALCULO=false;
+/* ¿Este nivel tiene el Reto Sin Fin de cálculo? Es el desafío de velocidad infinito,
+   medido por racha: genera las operaciones por código, así que NO consume banco de
+   preguntas, no pasa por aprobación pedagógica y no suma clips de voz. Va como extra
+   DENTRO de Matemática, sin reemplazar su campaña ni sumarle un segundo jefe.
+   El motor vive en assets/js/calculo.js y lo único propio del nivel es genCalc7().
+   En 8° va apagado: allá el cálculo mental ya es el Reto de Cálculo completo, con sus
+   5 niveles y su jefe, y tener los dos sería ofrecer lo mismo dos veces. */
+const HAY_SINFIN=true;
+/* Respaldo y encendido del Reto Sin Fin. Va AQUÍ, pegado a HAY_SINFIN, y no arriba
+   junto al de REV: `const` no se puede leer antes de su declaración (zona muerta
+   temporal), así que llamar a CALC.init({activo:HAY_SINFIN}) mil líneas antes lanza
+   ReferenceError y MATA todo el JavaScript del juego. El síntoma es idéntico al del
+   archivo que no carga —la pantalla inicial se ve bien y ningún botón responde—, y
+   por eso costó verlo: no es el 404, es el orden.
+   El respaldo sigue siendo obligatorio: si assets/js/calculo.js no carga, lo único
+   que debe pasar es que el Reto no aparezca, no que el curso quede inservible. */
+if(!window.CALC) window.CALC={activo:false,init:function(){},abrir:function(){},detener:function(){}};
+CALC.init({
+  activo: HAY_SINFIN,
+  generar: function(dif){ return genCalc7(dif); },
+  go: go,
+  volver: function(){ renderCampaña(campañaDe('Matemáticas')); go('scr-campana'); },
+  leerRecord: function(){ return (S.sinfin&&S.sinfin.record)||0; },
+  guardarRecord: function(n){ if(!S.sinfin)S.sinfin={record:0}; S.sinfin.record=n; guardar(); },
+  /* Paga como una etapa corta: la racha en monedas y cuatro veces eso en XP. Es
+     deliberadamente modesto — el Sin Fin no debe ser el camino rápido para inflar
+     el ranking, que es el defecto que la Sesión 33 tuvo que corregir. */
+  premiar: function(racha){ S.monedas+=racha; S.xp+=racha*4; guardar(); refreshHud(); },
+  snd: { ok:function(){SND.correct();}, mal:function(){SND.wrong();},
+         tic:function(){SND.tick();}, fin:function(){SND.lose();}, tap:function(){SND.tap();} },
+});
 /* ¿Este nivel tiene el camino de mini-clases de Matemática (su lecciones.json)?
    Gobierna el "siguiente paso al reprobar": con mini-clases se ofrece repasar la clase,
    y sin ellas hay que caer al repaso sin reloj, como las demás asignaturas. Con la
@@ -2806,7 +2948,7 @@ const HAY_MINICLASES=false;
    Son contenido de 8°. Antes se resolvían BORRANDO líneas del fork, y ese corte dejó
    la asignatura Lenguaje inalcanzable en 3° (Sesión 61). Como banderas, las tres apps
    comparten el mismo renderExpediciones y solo cambia el valor. */
-const HAY_VOCABULARIO=false;
+const HAY_VOCABULARIO=true;
 const HAY_BIBLIOTECA=false;
 function odExpsDe(asig){return EXPEDICIONES.filter(e=>e.activa&&e.asignatura===asig);}
 function odNMapas(asig){return (HAY_RETO_CALCULO&&asig==='Matemáticas')?NIVELES_CALC.length:odExpsDe(asig).length;}
@@ -3030,7 +3172,7 @@ function pintarSinCurso(){
 }
 // Detiene cualquier temporizador/avance en curso (quiz, Reto de Cálculo, duelo) para que
 // no siga corriendo de fondo al cambiar de pantalla por la barra inferior u otro atajo.
-function detenerTimersActivos(){ clearInterval(Q.timer); clearTimeout(Q._avanzarT); if(HAY_RETO_CALCULO){clearInterval(RC.timer); clearTimeout(RC._resolveT);} clearInterval(D.timer); }
+function detenerTimersActivos(){ clearInterval(Q.timer); clearTimeout(Q._avanzarT); if(HAY_RETO_CALCULO){clearInterval(RC.timer); clearTimeout(RC._resolveT);} clearInterval(D.timer); CALC.detener(); }
 document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>{
  SND.tap(); detenerTimersActivos();
  const dst=b.dataset.go;

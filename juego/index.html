@@ -1347,7 +1347,7 @@ const EXPEDICIONES=[
    ]},
  // --- Vocabulario (dentro de Lenguaje): palabras de todo el curso. OA de apoyo VOC-* ---
  { id:'voc-general', asignatura:'Vocabulario', nivel:'8° Básico · Vocabulario del curso',
-   portada:'assets/portada-voc-general.png', contenido:'contenido/vocabulario/preguntas.json', activa:true,
+   portada:'assets/portada-voc-general.png', contenido:'contenido/vocabulario-8basico/preguntas.json', activa:true,
    etapas:[
      {oa:"VOC-HIST", nombre:"Palabras de Historia", icono:"📜", n:15},
      {oa:"VOC-CIEN", nombre:"Palabras de Ciencias", icono:"🔬", n:15},
@@ -1420,6 +1420,7 @@ const REVISION=PRUEBA && (_PARAMS.has('rev')||!!(_M&&_M.rev));
    caída, bloqueador). Sin esto, REV.init lanzaría en el nivel superior y MATARÍA
    todo el JavaScript del juego: una función accesoria de revisión dejaría la página
    inservible para un alumno que no tiene nada que ver con ella. Pasó de verdad. */
+if(!window.CALC) window.CALC={activo:false,init:function(){},abrir:function(){},detener:function(){}};
 if(!window.REV) window.REV={activo:false,n:3,marcadas:[],
   init:function(){return this;},barra:function(){},boton:function(){},
   abrir:function(){},mensaje:function(){return '';},tipoAudio:function(){return '';}};
@@ -3535,6 +3536,12 @@ function odPreguntasCalc(exp){const out=[],seen=new Set();let g=0;
    nivel, y genera las operaciones con genCalculo saltándose el banco propio. Estaba
    pasando de verdad en 7° (Sesión 63). */
 const HAY_RETO_CALCULO=true;
+/* ¿Este nivel tiene el Reto Sin Fin de cálculo? En 8° NO, y no por falta de ganas:
+   acá el cálculo mental ya es el Reto de Cálculo completo, con sus 5 niveles, su jefe
+   "El Autómata" y su propio Modo Sin Fin. Tener los dos sería ofrecer lo mismo dos
+   veces. El motor compartido (assets/js/calculo.js) existe para los niveles que NO
+   tienen ese sub-producto. */
+const HAY_SINFIN=false;
 /* ¿Este nivel tiene el camino de mini-clases de Matemática (su lecciones.json)?
    Gobierna el "siguiente paso al reprobar": con mini-clases se ofrece repasar la clase,
    y sin ellas hay que caer al repaso sin reloj, como las demás asignaturas. Con la
@@ -3773,7 +3780,7 @@ function pintarSinCurso(){
 }
 // Detiene cualquier temporizador/avance en curso (quiz, Reto de Cálculo, duelo) para que
 // no siga corriendo de fondo al cambiar de pantalla por la barra inferior u otro atajo.
-function detenerTimersActivos(){ clearInterval(Q.timer); clearTimeout(Q._avanzarT); if(HAY_RETO_CALCULO){clearInterval(RC.timer); clearTimeout(RC._resolveT);} clearInterval(D.timer); }
+function detenerTimersActivos(){ clearInterval(Q.timer); clearTimeout(Q._avanzarT); if(HAY_RETO_CALCULO){clearInterval(RC.timer); clearTimeout(RC._resolveT);} clearInterval(D.timer); CALC.detener(); }
 document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>{
  SND.tap(); detenerTimersActivos();
  const dst=b.dataset.go;

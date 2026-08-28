@@ -46,7 +46,19 @@ RECOMENDADAS = ["nota_evaluacion"]
 AGRUPACIONES = ["unidades", "capitulos_del_juego", "unidades_oficiales_del_programa"]
 
 # Los bancos de apoyo no son currículum: no tienen OA oficiales ni fuente MINEDUC.
-APOYO = {"vocabulario", "lectura-anafrank"}
+# Se reconocen por la FORMA de su código, no por una lista de carpetas: un banco del
+# currículum lleva el nivel adentro (`HI07`, `MA03`), y uno de apoyo no (`VOC`, `AF`).
+#
+# Antes era el conjunto {"vocabulario", "lectura-anafrank"} escrito a mano, y eso se
+# rompe al primer banco de apoyo de otro nivel: `vocabulario-7basico` quedaba tratado
+# como currículum y el validador exigía fuente MINEDUC para palabras que no son OA.
+# Con seis niveles habría sido una lista paralela más que mantener, que es justo el
+# patrón que este proyecto ya pagó caro varias veces.
+CURRICULAR = re.compile(r"^[A-Z]{2}[0-9]{2}$")
+
+
+def es_apoyo(d):
+    return not CURRICULAR.match(d.get("codigo_asignatura") or "")
 
 
 def carpetas(args):
@@ -61,7 +73,7 @@ def revisar(carpeta):
     base = os.path.join(CONTENIDO, carpeta)
     d = json.load(io.open(os.path.join(base, "oa.json"), encoding="utf-8"))
     errores, avisos = [], []
-    apoyo = carpeta in APOYO
+    apoyo = es_apoyo(d)
 
     for k in OBLIGATORIAS:
         if k not in d:

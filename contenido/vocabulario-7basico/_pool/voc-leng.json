@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es el \"narrador\" de un relato?",
+   "opciones": [
+    "La voz que cuenta la historia dentro del mundo del relato",
+    "La persona real que escribió la obra y firma con su nombre",
+    "El personaje principal alrededor del cual gira toda la trama",
+    "El conjunto de hechos que se van sucediendo en la historia"
+   ],
+   "correcta": 0,
+   "tip": "No confundir con el autor: uno es real, el otro es de ficción.",
+   "id": "voc7-leng-1"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué caracteriza a un \"narrador omnisciente\"?",
+   "opciones": [
+    "Conoce todo, incluso lo que piensan y sienten los personajes",
+    "Cuenta la historia desde adentro, como uno de los personajes",
+    "Solo relata lo que se podría ver y oír desde afuera",
+    "Interviene en la trama corrigiendo lo que hacen los personajes"
+   ],
+   "correcta": 0,
+   "tip": "'Omni' es todo y 'sciente' es que sabe.",
+   "id": "voc7-leng-2"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es el \"ambiente\" de una narración?",
+   "opciones": [
+    "El entorno físico y social donde ocurren los hechos del relato",
+    "La sucesión ordenada de los acontecimientos que forman la historia",
+    "El problema central que deben enfrentar los personajes",
+    "La impresión que la obra deja en quien termina de leerla"
+   ],
+   "correcta": 0,
+   "tip": "Es el dónde y el en qué mundo, no el qué pasa.",
+   "id": "voc7-leng-3"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es el \"conflicto\" en una narración?",
+   "opciones": [
+    "La oposición o problema que mueve la acción de la historia",
+    "El momento final en que se resuelven todos los enredos",
+    "El lugar y la época en que se desarrollan los hechos",
+    "La forma en que el autor ordena los capítulos del texto"
+   ],
+   "correcta": 0,
+   "tip": "Sin él, no habría historia que contar.",
+   "id": "voc7-leng-4"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es el \"hablante lírico\"?",
+   "opciones": [
+    "La voz ficticia que expresa los sentimientos dentro de un poema",
+    "El poeta de carne y hueso que compuso realmente esos versos",
+    "La persona a quien el poema dirige sus palabras y sus versos",
+    "El conjunto de sentimientos que el poema busca transmitir"
+   ],
+   "correcta": 0,
+   "tip": "Es a la poesía lo que el narrador es al relato.",
+   "id": "voc7-leng-5"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "En poesía, ¿qué es una \"estrofa\"?",
+   "opciones": [
+    "Un conjunto de versos agrupados y separados de los demás",
+    "Cada una de las líneas que componen un poema completo",
+    "La repetición de sonidos al final de dos o más versos",
+    "El número de sílabas que contiene cada línea del poema"
+   ],
+   "correcta": 0,
+   "tip": "Es al poema lo que el párrafo es a la prosa.",
+   "id": "voc7-leng-6"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "En poesía, ¿qué es un \"verso\"?",
+   "opciones": [
+    "Cada una de las líneas en que se distribuye un poema",
+    "Cada bloque de líneas separado por un espacio en blanco",
+    "La coincidencia de sonidos entre los finales de dos líneas",
+    "El ritmo que se produce al leer el poema en voz alta"
+   ],
+   "correcta": 0,
+   "tip": "Es una línea; varias juntas forman una estrofa.",
+   "id": "voc7-leng-7"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es la \"rima\"?",
+   "opciones": [
+    "La coincidencia de sonidos desde la última vocal acentuada",
+    "La cantidad de sílabas que se cuentan en cada verso escrito",
+    "La agrupación de varios versos dentro de una misma estrofa",
+    "La emoción predominante que el poema logra transmitir"
+   ],
+   "correcta": 0,
+   "tip": "Se escucha al final de los versos.",
+   "id": "voc7-leng-8"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es una \"metáfora\"?",
+   "opciones": [
+    "Identificar una cosa con otra por un parecido, sin usar 'como'",
+    "Comparar dos cosas de forma explícita usando un nexo comparativo",
+    "Atribuir cualidades humanas a un animal o a un objeto inanimado",
+    "Exagerar de manera evidente una cualidad para dar más énfasis"
+   ],
+   "correcta": 0,
+   "tip": "'Sus ojos son dos luceros' no dice 'como': lo afirma directamente.",
+   "id": "voc7-leng-9"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es una \"personificación\"?",
+   "opciones": [
+    "Atribuir cualidades humanas a un objeto, animal o idea",
+    "Identificar dos elementos distintos por el parecido entre ambos",
+    "Repetir un mismo sonido varias veces dentro de un mismo verso",
+    "Exagerar de forma deliberada un rasgo para producir un efecto"
+   ],
+   "correcta": 0,
+   "tip": "'El viento susurraba' le presta al viento algo humano.",
+   "id": "voc7-leng-10"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es una \"hipérbole\"?",
+   "opciones": [
+    "Una exageración evidente empleada para reforzar una idea",
+    "Una comparación entre dos elementos unidos por un nexo",
+    "Una sustitución de una palabra por otra de sentido cercano",
+    "Una contradicción aparente que encierra un sentido profundo"
+   ],
+   "correcta": 0,
+   "tip": "'Te lo he dicho un millón de veces' no es literal.",
+   "id": "voc7-leng-11"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es un \"mito\"?",
+   "opciones": [
+    "Un relato tradicional que explica el origen del mundo o de un pueblo",
+    "Un relato breve cuyo propósito principal es dejar una enseñanza moral",
+    "Un relato de hechos reales narrados en el orden en que ocurrieron",
+    "Un relato inventado que busca únicamente entretener al lector"
+   ],
+   "correcta": 0,
+   "tip": "Suele involucrar dioses y responder un '¿por qué existe esto?'.",
+   "id": "voc7-leng-12"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es un \"romance\" en la poesía popular?",
+   "opciones": [
+    "Un poema narrativo de versos octosílabos con rima en los pares",
+    "Un poema breve que expresa un sentimiento amoroso del hablante",
+    "Una composición cantada que se acompaña siempre con guitarra",
+    "Un relato en prosa transmitido oralmente de una generación a otra"
+   ],
+   "correcta": 0,
+   "tip": "Cuenta una historia, y nació para ser recitado o cantado.",
+   "id": "voc7-leng-13"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "En un texto argumentativo, ¿qué es la \"tesis\"?",
+   "opciones": [
+    "La postura que el autor defiende a lo largo de todo el texto",
+    "La razón concreta con que se respalda esa postura defendida",
+    "El ejemplo que se entrega para ilustrar mejor lo que se afirma",
+    "La conclusión que se obtiene al final del razonamiento completo"
+   ],
+   "correcta": 0,
+   "tip": "Es lo que el autor quiere que aceptes.",
+   "id": "voc7-leng-14"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es un \"argumento\"?",
+   "opciones": [
+    "La razón que se entrega para sostener la postura defendida",
+    "La opinión central que se busca que el lector termine aceptando",
+    "La forma en que el texto ordena sus ideas en varios párrafos",
+    "El resumen de las ideas principales que aparece al comienzo"
+   ],
+   "correcta": 0,
+   "tip": "Responde a la pregunta '¿por qué debería creerte?'.",
+   "id": "voc7-leng-15"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es un \"contraargumento\"?",
+   "opciones": [
+    "Una razón que se opone a la postura que el texto defiende",
+    "Una razón adicional que refuerza aún más la tesis planteada",
+    "Un ejemplo tomado de la realidad para apoyar lo que se afirma",
+    "Una conclusión que cierra el texto retomando la idea inicial"
+   ],
+   "correcta": 0,
+   "tip": "Un buen texto los menciona y luego responde a ellos.",
+   "id": "voc7-leng-16"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es una \"columna de opinión\"?",
+   "opciones": [
+    "Un texto en que su autor expone y defiende su punto de vista",
+    "Un texto que informa sobre un hecho sin tomar ninguna postura",
+    "Un texto que investiga un tema en profundidad con varias fuentes",
+    "Un texto que un lector envía para responder a una publicación"
+   ],
+   "correcta": 0,
+   "tip": "Va firmada, y su gracia es justamente que opina.",
+   "id": "voc7-leng-17"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué caracteriza a una \"noticia\"?",
+   "opciones": [
+    "Informa sobre un hecho reciente respondiendo qué, quién, cuándo y dónde",
+    "Analiza un tema en profundidad entrevistando a varias fuentes distintas",
+    "Expresa la postura personal de quien la escribe sobre un asunto",
+    "Reúne cartas y comentarios enviados por los propios lectores"
+   ],
+   "correcta": 0,
+   "tip": "Su trabajo es informar, no opinar.",
+   "id": "voc7-leng-18"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es un \"reportaje\"?",
+   "opciones": [
+    "Un texto que profundiza en un tema con varias fuentes y contexto",
+    "Un texto breve que informa un hecho ocurrido en las últimas horas",
+    "Un texto en que el autor defiende abiertamente su propia postura",
+    "Un texto que resume las noticias más importantes de la semana"
+   ],
+   "correcta": 0,
+   "tip": "Va más allá del hecho puntual: investiga y contextualiza.",
+   "id": "voc7-leng-19"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "En una oración, ¿qué es el \"sujeto\"?",
+   "opciones": [
+    "La parte que indica de quién o de qué se dice algo",
+    "La parte que expresa la acción o el estado que se atribuye",
+    "La palabra que enlaza dos ideas dentro de una misma oración",
+    "El complemento que precisa el lugar o el momento de la acción"
+   ],
+   "correcta": 0,
+   "tip": "Responde a la pregunta '¿quién?' o '¿qué?' ante el verbo.",
+   "id": "voc7-leng-20"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "En una oración, ¿qué es el \"predicado\"?",
+   "opciones": [
+    "La parte que expresa lo que se dice acerca del sujeto",
+    "La parte que nombra a quien realiza o recibe la acción",
+    "El conjunto de palabras que modifican directamente al sustantivo",
+    "La palabra que introduce una oración dentro de otra mayor"
+   ],
+   "correcta": 0,
+   "tip": "Su núcleo es siempre el verbo.",
+   "id": "voc7-leng-21"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es la \"sustitución léxica\"?",
+   "opciones": [
+    "Reemplazar una palabra por un sinónimo para no repetirla",
+    "Reemplazar un sustantivo por un pronombre que lo representa",
+    "Suprimir una palabra que ya se entiende por el contexto previo",
+    "Cambiar el orden de las palabras para dar énfasis a una idea"
+   ],
+   "correcta": 0,
+   "tip": "En vez de repetir 'el perro', escribir 'el animal'.",
+   "id": "voc7-leng-22"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es la \"pronominalización\"?",
+   "opciones": [
+    "Reemplazar un elemento ya mencionado por un pronombre",
+    "Reemplazar una palabra por otra de significado equivalente",
+    "Repetir la misma palabra para dejar la idea bien marcada",
+    "Añadir un adjetivo que precise mejor de qué se está hablando"
+   ],
+   "correcta": 0,
+   "tip": "En vez de repetir 'María', escribir 'ella'.",
+   "id": "voc7-leng-23"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es \"parafrasear\" un texto?",
+   "opciones": [
+    "Decir lo mismo con palabras propias, conservando el sentido",
+    "Copiar el texto original indicando con comillas su procedencia",
+    "Reducir el texto dejando solo sus ideas más importantes",
+    "Comentar el texto agregando la opinión de quien lo lee"
+   ],
+   "correcta": 0,
+   "tip": "Cambian las palabras; el significado se mantiene.",
+   "id": "voc7-leng-24"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es \"sintetizar\" un texto?",
+   "opciones": [
+    "Reducirlo a sus ideas principales de forma breve y ordenada",
+    "Expresar su contenido con palabras propias sin acortarlo",
+    "Explicar el significado de las palabras difíciles que contiene",
+    "Comparar sus ideas con las de otro texto sobre el mismo tema"
+   ],
+   "correcta": 0,
+   "tip": "Lo esencial se queda; lo accesorio se va.",
+   "id": "voc7-leng-25"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es el \"propósito comunicativo\" de un texto?",
+   "opciones": [
+    "La intención con que fue escrito: informar, convencer o entretener",
+    "El tema general del cual el texto se ocupa a lo largo de sus partes",
+    "El público específico al que el texto dirige sus palabras",
+    "El tipo de lenguaje, formal o informal, que el texto emplea"
+   ],
+   "correcta": 0,
+   "tip": "Es el 'para qué' se escribió.",
+   "id": "voc7-leng-26"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es el \"registro formal\"?",
+   "opciones": [
+    "El uso de un lenguaje cuidado, adecuado a una situación seria",
+    "El uso de un lenguaje espontáneo, propio de la conversación",
+    "El conjunto de reglas de ortografía que se aplican al escribir",
+    "El tono emocional que el autor imprime a lo que está diciendo"
+   ],
+   "correcta": 0,
+   "tip": "Es el que usarías al escribirle al director del colegio.",
+   "id": "voc7-leng-27"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es un \"conector\" en un texto?",
+   "opciones": [
+    "Una palabra que enlaza ideas y muestra la relación entre ellas",
+    "Una palabra que reemplaza a un sustantivo ya mencionado antes",
+    "Una palabra que precisa alguna cualidad del sustantivo al que sigue",
+    "Una palabra que expresa la acción principal dentro de la oración"
+   ],
+   "correcta": 0,
+   "tip": "'Sin embargo', 'por lo tanto', 'además' son ejemplos.",
+   "id": "voc7-leng-28"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es \"editar\" un texto propio?",
+   "opciones": [
+    "Revisarlo y corregirlo para dejarlo listo antes de entregarlo",
+    "Escribir el primer borrador volcando todas las ideas de una vez",
+    "Decidir el tema y ordenar las ideas antes de empezar a escribir",
+    "Leerlo en voz alta frente a una audiencia para compartirlo"
+   ],
+   "correcta": 0,
+   "tip": "Es el último paso, después de escribir y revisar.",
+   "id": "voc7-leng-29"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es la \"audiencia\" de un texto?",
+   "opciones": [
+    "Las personas a quienes va dirigido lo que se está escribiendo",
+    "La finalidad concreta que persigue el autor al escribir el texto",
+    "El lugar donde el texto será publicado una vez terminado",
+    "El conjunto de fuentes que el autor consultó para escribirlo"
+   ],
+   "correcta": 0,
+   "tip": "No se le escribe igual a un amigo que a una autoridad.",
+   "id": "voc7-leng-30"
+  }
+ ]
+}

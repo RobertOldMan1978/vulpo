@@ -20,6 +20,7 @@ real (sitio estatico).
 """
 
 import json
+import re
 from datetime import datetime
 from pathlib import Path
 from html import escape
@@ -270,9 +271,33 @@ def render_asignatura(oa_data, preg_data):
     return "\n".join(partes)
 
 
+# Un banco es del CURRICULUM si su codigo lleva el nivel adentro (HI07, MA03). Los
+# transversales no (VOC, AF): acompanan al curso sin ser cobertura curricular, y por
+# eso van agrupados aparte. Mismo criterio que usa scripts/validar-oa-json.py: la
+# FORMA del codigo, no una lista de carpetas que haya que ir manteniendo.
+CURRICULAR_TAB = re.compile(r'^[A-Z]{2}[0-9]{2}$')
+
+
+def es_transversal(oa_data):
+    return not CURRICULAR_TAB.match(oa_data.get('codigo_asignatura') or '')
+
+
 def generar():
     asignaturas = recolectar_asignaturas()
-    cuerpo = "\n".join(render_asignatura(oa, pg) for _, oa, pg in asignaturas)
+    # Dos bloques porque son dos trabajos distintos: aprobar el curriculum de un curso
+    # es medir cobertura de sus OA oficiales; aprobar un modulo transversal es revisar
+    # un apoyo que no responde a ningun OA. Mezclados, el Vocabulario de 8 aparecia al
+    # final -despues de Ana Frank- mientras el de 7 se ordenaba entre las de 7.
+    curric = [(oa, pg) for _, oa, pg in asignaturas if not es_transversal(oa)]
+    trans = [(oa, pg) for _, oa, pg in asignaturas if es_transversal(oa)]
+    cuerpo = chr(10).join(render_asignatura(oa, pg) for oa, pg in curric)
+    if trans:
+        cuerpo += ('<div class="grupo-tit">Módulos transversales</div>'
+                   '<div class="grupo-sub">Acompañan al curso pero <b>no son cobertura'
+                   ' curricular</b>: sus códigos no son Objetivos de Aprendizaje del'
+                   ' MINEDUC y no entran al mapa de dominio del profesor. Se aprueban'
+                   ' igual, con el mismo criterio de muestreo.</div>')
+        cuerpo += chr(10).join(render_asignatura(oa, pg) for oa, pg in trans)
     if not cuerpo:
         cuerpo = '<p class="vacio">Aún no hay contenido en la carpeta <code>contenido/</code>.</p>'
     marca = datetime.now().strftime("%d-%m-%Y %H:%M")
@@ -292,6 +317,8 @@ body{
   padding:20px 16px 60px;
 }
 .wrap{max-width:900px;margin:0 auto}
+.grupo-tit{font-family:'Titan One',cursive;font-size:20px;color:var(--violet);margin:34px 0 4px;padding-top:20px;border-top:2px solid #ffffff1a}
+.grupo-sub{color:var(--dim);font-size:13px;font-weight:700;margin-bottom:16px;max-width:70ch}
 h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
 .topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
 .volver{display:inline-flex;align-items:center;gap:6px;background:var(--panel2);border:1px solid #ffffff18;

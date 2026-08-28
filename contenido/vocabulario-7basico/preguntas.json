@@ -1,0 +1,1684 @@
+{
+ "preguntas": [
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"microorganismo\"?",
+   "opciones": [
+    "Una sustancia que el cuerpo produce para defenderse de una infección",
+    "Una célula especializada que forma parte de un tejido animal",
+    "Un compuesto químico que se disuelve fácilmente en agua",
+    "Un ser vivo tan pequeño que solo se ve con microscopio"
+   ],
+   "correcta": 3,
+   "tip": "'Micro' es pequeño y 'organismo' es ser vivo.",
+   "revisada": false,
+   "id": "voc7-cien-1"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"patógeno\"?",
+   "opciones": [
+    "Un tejido que recubre y protege las superficies del cuerpo",
+    "Una sustancia que el cuerpo libera al subir la temperatura",
+    "Un agente capaz de provocar una enfermedad en el organismo",
+    "Una célula del sistema inmune que destruye microorganismos"
+   ],
+   "correcta": 2,
+   "tip": "'Pato' se relaciona con enfermedad, como en 'patología'.",
+   "revisada": false,
+   "id": "voc7-cien-2"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"anticuerpo\"?",
+   "opciones": [
+    "Una barrera física que impide la entrada de microorganismos al cuerpo",
+    "Una sustancia que los hongos liberan al descomponer materia",
+    "Una célula que transporta el oxígeno hacia todos los tejidos",
+    "Una proteína que el organismo produce para neutralizar a un invasor"
+   ],
+   "correcta": 3,
+   "tip": "Actúa 'contra' algo que entró al cuerpo.",
+   "revisada": false,
+   "id": "voc7-cien-3"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué hace una \"vacuna\"?",
+   "opciones": [
+    "Destruye directamente a las bacterias que ya están dentro del cuerpo",
+    "Reemplaza a las células dañadas por una infección prolongada",
+    "Prepara al sistema inmune para reconocer a un agente antes de enfermar",
+    "Baja la temperatura corporal cuando el organismo tiene fiebre"
+   ],
+   "correcta": 2,
+   "tip": "Actúa antes, entrenando; no cura una infección en curso.",
+   "revisada": false,
+   "id": "voc7-cien-4"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"virus\"?",
+   "opciones": [
+    "Un organismo unicelular capaz de reproducirse por sí solo",
+    "Un hongo microscópico que descompone la materia orgánica",
+    "Una proteína defensiva que circula por la sangre del organismo",
+    "Un agente que solo se reproduce dentro de una célula que infecta"
+   ],
+   "correcta": 3,
+   "tip": "Sin una célula que lo aloje, no puede multiplicarse.",
+   "revisada": false,
+   "id": "voc7-cien-5"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué caracteriza a una \"bacteria\"?",
+   "opciones": [
+    "Es un agente que necesita infectar una célula para reproducirse",
+    "Es una estructura hecha solo de material genético y proteínas",
+    "Es un organismo de varias células que se alimenta de restos",
+    "Es un organismo de una sola célula, sin núcleo definido"
+   ],
+   "correcta": 3,
+   "tip": "A diferencia de un virus, es un ser vivo completo.",
+   "revisada": false,
+   "id": "voc7-cien-6"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"fermentación\"?",
+   "opciones": [
+    "Un proceso en que una sustancia sólida se disuelve dentro de un líquido",
+    "Un proceso en que el calor descompone la materia orgánica del suelo",
+    "Un proceso en que microorganismos transforman una sustancia sin oxígeno",
+    "Un proceso en que dos elementos se combinan formando un compuesto"
+   ],
+   "correcta": 2,
+   "tip": "Es lo que ocurre al hacer pan, yogur o chucrut.",
+   "revisada": false,
+   "id": "voc7-cien-7"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"biotecnología\"?",
+   "opciones": [
+    "El estudio de los organismos que habitan los ambientes extremos",
+    "La clasificación de los seres vivos según sus rasgos compartidos",
+    "El uso de seres vivos o sus procesos para obtener productos útiles",
+    "La técnica que permite observar células con distintos microscopios"
+   ],
+   "correcta": 2,
+   "tip": "Une 'bio', vida, con 'tecnología', aplicación práctica.",
+   "revisada": false,
+   "id": "voc7-cien-8"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En Ciencias, ¿qué es la \"presión\"?",
+   "opciones": [
+    "La fuerza que actúa repartida sobre cada unidad de superficie",
+    "La resistencia que opone un cuerpo a cambiar su temperatura",
+    "La cantidad total de materia que contiene un cuerpo cualquiera",
+    "La rapidez con que un objeto recorre una distancia dada"
+   ],
+   "correcta": 0,
+   "tip": "Depende de la fuerza y también del área sobre la que se aplica.",
+   "revisada": false,
+   "id": "voc7-cien-9"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué explica la \"tectónica de placas\"?",
+   "opciones": [
+    "Que las rocas cambian de tipo según la presión y la temperatura",
+    "Que los continentes se desgastan por la acción del agua y el viento",
+    "Que la capa externa de la Tierra está partida en bloques que se mueven",
+    "Que el interior de la Tierra se enfría lentamente desde su formación"
+   ],
+   "correcta": 2,
+   "tip": "Explica por qué los sismos y volcanes no están repartidos al azar.",
+   "revisada": false,
+   "id": "voc7-cien-10"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"epicentro\" de un sismo?",
+   "opciones": [
+    "La zona donde se registran los daños más graves sobre las viviendas cercanas",
+    "El punto del interior de la Tierra donde se libera la energía",
+    "El lugar donde dos placas de la corteza terrestre se separan",
+    "El punto de la superficie situado justo sobre el origen del movimiento"
+   ],
+   "correcta": 3,
+   "tip": "Está en la superficie; el origen mismo está más abajo.",
+   "revisada": false,
+   "id": "voc7-cien-11"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Cuál es la diferencia entre \"magma\" y \"lava\"?",
+   "opciones": [
+    "El magma contiene gases y la lava no contiene ninguno de ellos",
+    "El magma proviene del manto y la lava se forma en la corteza",
+    "El magma es sólido y caliente, mientras que la lava es líquida",
+    "El magma está bajo la superficie y la lava ya salió al exterior"
+   ],
+   "correcta": 3,
+   "tip": "Es la misma materia; cambia el nombre al salir a la superficie.",
+   "revisada": false,
+   "id": "voc7-cien-12"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una roca \"ígnea\"?",
+   "opciones": [
+    "Una roca desgastada por la acción continua del agua y del viento",
+    "Una roca formada por capas de sedimentos comprimidos con el tiempo",
+    "Una roca formada al enfriarse y solidificarse el material fundido",
+    "Una roca transformada por efecto del calor y la presión del interior"
+   ],
+   "correcta": 2,
+   "tip": "'Ignis' en latín es fuego.",
+   "revisada": false,
+   "id": "voc7-cien-13"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una roca \"sedimentaria\"?",
+   "opciones": [
+    "Una roca modificada en profundidad por la presión y el calor intensos",
+    "Una roca expulsada por un volcán durante una erupción explosiva",
+    "Una roca originada por el enfriamiento del material fundido interno",
+    "Una roca formada por capas de partículas acumuladas y compactadas"
+   ],
+   "correcta": 3,
+   "tip": "Se forma por acumulación, capa sobre capa.",
+   "revisada": false,
+   "id": "voc7-cien-14"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una roca \"metamórfica\"?",
+   "opciones": [
+    "Una roca que cambió de forma por acción del calor y la presión",
+    "Una roca originada al solidificarse el magma dentro de la corteza",
+    "Una roca fragmentada por los cambios bruscos de temperatura exterior",
+    "Una roca compuesta por restos de seres vivos acumulados en el fondo"
+   ],
+   "correcta": 0,
+   "tip": "'Metamorfosis' es transformación.",
+   "revisada": false,
+   "id": "voc7-cien-15"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"meteorización\"?",
+   "opciones": [
+    "La transformación de una roca en otra por efecto de la presión",
+    "La fragmentación de las rocas en el mismo lugar donde se encuentran",
+    "La acumulación de sedimentos en el fondo de un lago o del mar",
+    "El traslado de partículas de roca hacia zonas más bajas del terreno"
+   ],
+   "correcta": 1,
+   "tip": "La roca se rompe, pero todavía no se mueve de su sitio.",
+   "revisada": false,
+   "id": "voc7-cien-16"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"erosión\"?",
+   "opciones": [
+    "La ruptura de una roca en fragmentos pequeños sin que estos se desplacen",
+    "El ascenso de material fundido desde el interior hacia la superficie",
+    "La formación de nuevas rocas a partir de sedimentos comprimidos",
+    "El desgaste y transporte de materiales por el agua, el viento o el hielo"
+   ],
+   "correcta": 3,
+   "tip": "Aquí el material sí se mueve de lugar.",
+   "revisada": false,
+   "id": "voc7-cien-17"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿En qué se diferencian \"tiempo atmosférico\" y \"clima\"?",
+   "opciones": [
+    "El tiempo se mide con instrumentos y el clima solo se estima",
+    "El tiempo describe la temperatura y el clima describe la humedad",
+    "El tiempo es el estado de hoy y el clima es el patrón de muchos años",
+    "El tiempo depende del lugar y el clima es igual en todo el planeta"
+   ],
+   "correcta": 2,
+   "tip": "Uno cambia de un día a otro; el otro se describe con promedios largos.",
+   "revisada": false,
+   "id": "voc7-cien-18"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"sustancia pura\"?",
+   "opciones": [
+    "Una materia cuyos componentes se distinguen a simple vista",
+    "Una materia que no reacciona al combinarse con otras sustancias",
+    "Una materia que se disuelve por completo al ponerla en agua",
+    "Una materia formada por un solo tipo de componente, sin mezclas"
+   ],
+   "correcta": 3,
+   "tip": "Tiene una sola clase de partícula en toda su extensión.",
+   "revisada": false,
+   "id": "voc7-cien-19"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"mezcla homogénea\"?",
+   "opciones": [
+    "Una mezcla en que los componentes no se distinguen a simple vista",
+    "Una mezcla en que cada componente se reconoce claramente por separado",
+    "Una mezcla formada solo por sustancias en estado líquido",
+    "Una mezcla que puede separarse únicamente aplicando calor"
+   ],
+   "correcta": 0,
+   "tip": "El agua con sal disuelta es el ejemplo típico.",
+   "revisada": false,
+   "id": "voc7-cien-20"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"mezcla heterogénea\"?",
+   "opciones": [
+    "Una mezcla en que se pueden distinguir sus componentes a la vista",
+    "Una mezcla que contiene siempre un sólido y un líquido combinados",
+    "Una mezcla cuyos componentes reaccionan formando otra sustancia",
+    "Una mezcla en que todo se ve uniforme en cualquier parte del volumen"
+   ],
+   "correcta": 0,
+   "tip": "El agua con arena es el ejemplo típico.",
+   "revisada": false,
+   "id": "voc7-cien-21"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En una disolución, ¿qué es el \"soluto\"?",
+   "opciones": [
+    "La sustancia que se disuelve y suele estar en menor cantidad",
+    "El residuo que queda en el fondo cuando ya no se disuelve más",
+    "La mezcla completa que resulta de combinar las dos sustancias",
+    "La sustancia que disuelve a la otra y está en mayor cantidad"
+   ],
+   "correcta": 0,
+   "tip": "En el agua con azúcar, es el azúcar.",
+   "revisada": false,
+   "id": "voc7-cien-22"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En una disolución, ¿qué es el \"solvente\"?",
+   "opciones": [
+    "La sustancia que se disuelve y aparece en menor proporción",
+    "La cantidad máxima de sustancia que es posible disolver en un líquido",
+    "El conjunto formado por las dos sustancias ya combinadas",
+    "La sustancia que disuelve a la otra y suele estar en mayor cantidad"
+   ],
+   "correcta": 3,
+   "tip": "En el agua con azúcar, es el agua.",
+   "revisada": false,
+   "id": "voc7-cien-23"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"cambio físico\"?",
+   "opciones": [
+    "Una transformación que solo ocurre al aplicar calor a un material",
+    "Una transformación que no puede revertirse de ninguna manera",
+    "Una transformación en que la sustancia sigue siendo la misma",
+    "Una transformación en que se forman una o más sustancias nuevas"
+   ],
+   "correcta": 2,
+   "tip": "El hielo que se derrite sigue siendo agua.",
+   "revisada": false,
+   "id": "voc7-cien-24"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"cambio químico\"?",
+   "opciones": [
+    "Una transformación en que un sólido se reparte dentro de un líquido",
+    "Una transformación en que se forman sustancias distintas de las iniciales",
+    "Una transformación en que la sustancia únicamente cambia su estado físico",
+    "Una transformación que siempre se puede deshacer enfriando la mezcla"
+   ],
+   "correcta": 1,
+   "tip": "Después del cambio, lo que hay ya no es lo mismo que había antes.",
+   "revisada": false,
+   "id": "voc7-cien-25"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"densidad\" de un material?",
+   "opciones": [
+    "La cantidad total de materia que un cuerpo contiene en su interior",
+    "La resistencia que ofrece un cuerpo al ser deformado por una fuerza",
+    "La relación entre la masa de un cuerpo y el volumen que ocupa",
+    "La fuerza con que la Tierra atrae a un cuerpo hacia su superficie"
+   ],
+   "correcta": 2,
+   "tip": "Por eso un kilo de plumas y uno de plomo ocupan espacios muy distintos.",
+   "revisada": false,
+   "id": "voc7-cien-26"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué significa que un gas sea \"compresible\"?",
+   "opciones": [
+    "Que ocupa siempre todo el espacio del recipiente que lo contiene",
+    "Que puede transformarse en líquido al enfriarse lo suficiente",
+    "Que sus partículas se mueven más rápido al subir la temperatura",
+    "Que su volumen puede reducirse bastante al aumentar la presión"
+   ],
+   "correcta": 3,
+   "tip": "Por eso cabe tanto aire dentro de un neumático.",
+   "revisada": false,
+   "id": "voc7-cien-27"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"barrera primaria\" de defensa?",
+   "opciones": [
+    "La respuesta que produce anticuerpos específicos contra un invasor",
+    "La memoria que permite responder más rápido a una segunda infección",
+    "La protección que impide la entrada del agente, como la piel",
+    "La reacción inflamatoria que aparece en la zona de una herida"
+   ],
+   "correcta": 2,
+   "tip": "Es la primera línea: evita que el agente entre siquiera.",
+   "revisada": false,
+   "id": "voc7-cien-28"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"antibiótico\"?",
+   "opciones": [
+    "Un preparado que entrena al sistema inmune antes de enfermarse",
+    "Un medicamento que alivia el dolor y baja la fiebre del enfermo",
+    "Un medicamento que actúa contra las bacterias, no contra los virus",
+    "Una sustancia que el propio cuerpo produce para atacar infecciones"
+   ],
+   "correcta": 2,
+   "tip": "Por eso no sirve para un resfrío, que es de origen viral.",
+   "revisada": false,
+   "id": "voc7-cien-29"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"placa tectónica\"?",
+   "opciones": [
+    "Un gran bloque rígido de la capa externa terrestre que se desplaza",
+    "Una capa de roca fundida que circula bajo la corteza del planeta",
+    "Una franja donde se acumulan los sedimentos del fondo marino",
+    "Una grieta profunda por donde asciende el material del interior"
+   ],
+   "correcta": 0,
+   "tip": "Encajan como piezas, y sus bordes son donde ocurre casi todo.",
+   "revisada": false,
+   "id": "voc7-cien-30"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué significa \"hominización\"?",
+   "opciones": [
+    "El paso de la caza y la recolección al cultivo de la tierra",
+    "El largo proceso de evolución que dio origen al ser humano actual",
+    "La mezcla de pueblos distintos dentro de un mismo territorio",
+    "La agrupación de varias aldeas hasta formar una ciudad amurallada"
+   ],
+   "correcta": 1,
+   "tip": "Viene de 'homo', que en latín significa ser humano.",
+   "revisada": false,
+   "id": "voc7-hist-1"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué significa \"bipedismo\"?",
+   "opciones": [
+    "La capacidad de caminar erguido sobre las dos piernas",
+    "La práctica de trasladarse siguiendo a los animales de caza",
+    "La costumbre de vivir en grupos de dos familias unidas",
+    "La habilidad de fabricar herramientas con piedras talladas"
+   ],
+   "correcta": 0,
+   "tip": "'Bi' es dos y 'pede' es pie: dos pies.",
+   "revisada": false,
+   "id": "voc7-hist-2"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué significa \"sedentarización\"?",
+   "opciones": [
+    "El paso de una vida errante a establecerse de forma permanente en un lugar",
+    "El abandono de una ciudad por falta de agua o de alimentos",
+    "La costumbre de recorrer largas distancias siguiendo el alimento disponible",
+    "La organización de un pueblo bajo el mando de un solo jefe"
+   ],
+   "correcta": 0,
+   "tip": "Piensa en alguien 'sedentario': se queda quieto en un lugar.",
+   "revisada": false,
+   "id": "voc7-hist-3"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es la \"domesticación\"?",
+   "opciones": [
+    "La construcción de viviendas de adobe dentro de una aldea",
+    "La división del trabajo entre hombres y mujeres de un grupo",
+    "El proceso de criar animales y plantas silvestres para uso humano",
+    "El intercambio de productos entre pueblos vecinos sin usar dinero"
+   ],
+   "correcta": 2,
+   "tip": "Tiene la misma raíz que 'doméstico', lo que se vuelve de casa.",
+   "revisada": false,
+   "id": "voc7-hist-4"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En Historia, ¿qué es un \"excedente\"?",
+   "opciones": [
+    "El territorio que un pueblo conquista más allá de sus fronteras",
+    "El impuesto que los campesinos entregaban al gobernante",
+    "Lo que sobra de la producción una vez cubiertas las necesidades",
+    "El grupo de personas que no participaba en las tareas agrícolas"
+   ],
+   "correcta": 2,
+   "tip": "Es lo que 'excede', lo que queda de más.",
+   "revisada": false,
+   "id": "voc7-hist-5"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué caracteriza a una \"civilización\"?",
+   "opciones": [
+    "Un grupo humano que se traslada según las estaciones y el clima del año",
+    "Una alianza militar entre varias aldeas para defenderse",
+    "Un conjunto de creencias religiosas compartidas por un pueblo",
+    "Una sociedad compleja con ciudades, escritura y un estado organizado"
+   ],
+   "correcta": 3,
+   "tip": "La palabra tiene la misma raíz que 'ciudad'.",
+   "revisada": false,
+   "id": "voc7-hist-6"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es la escritura \"cuneiforme\"?",
+   "opciones": [
+    "La escritura egipcia que representaba ideas y sonidos mediante dibujos",
+    "La escritura mesopotámica hecha con signos en forma de cuña sobre arcilla",
+    "El primer alfabeto que asignó una letra a cada sonido",
+    "El sistema de nudos con que los incas registraban cantidades"
+   ],
+   "correcta": 1,
+   "tip": "'Cuneus' en latín es cuña, la forma del punzón.",
+   "revisada": false,
+   "id": "voc7-hist-7"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"jeroglífico\"?",
+   "opciones": [
+    "Un signo de la escritura egipcia que representa objetos, sonidos o ideas",
+    "Una inscripción grabada en las columnas de un templo griego",
+    "Una tablilla de arcilla usada para llevar cuentas de granos",
+    "Un símbolo religioso que solo los sacerdotes del templo podían pronunciar"
+   ],
+   "correcta": 0,
+   "tip": "Significa 'grabado sagrado', y se asocia a Egipto.",
+   "revisada": false,
+   "id": "voc7-hist-8"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"teocracia\"?",
+   "opciones": [
+    "Un gobierno ejercido por los ciudadanos reunidos en asamblea",
+    "Un gobierno en que la autoridad se justifica por su vínculo con lo divino",
+    "Un gobierno militar impuesto sobre un pueblo tras una guerra de conquista",
+    "Un gobierno en manos de las familias más ricas de la ciudad"
+   ],
+   "correcta": 1,
+   "tip": "'Teo' significa dios, como en 'teología'.",
+   "revisada": false,
+   "id": "voc7-hist-9"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué era el \"ecúmene\" para los pueblos antiguos?",
+   "opciones": [
+    "La franja de tierra fértil que se extiende a orillas de un gran río",
+    "La zona desértica que ningún pueblo lograba cruzar",
+    "El mar interior que separaba a Europa de África",
+    "El conjunto del territorio conocido y habitado por el ser humano"
+   ],
+   "correcta": 3,
+   "tip": "Es 'el mundo habitado' tal como se lo imaginaban entonces.",
+   "revisada": false,
+   "id": "voc7-hist-10"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué era una \"polis\" en Grecia?",
+   "opciones": [
+    "Una asamblea donde se votaban las leyes de todo el territorio",
+    "Una alianza de varias ciudades unidas para enfrentar a los persas",
+    "Una ciudad-estado independiente, con sus propias leyes y gobierno",
+    "Un barrio de la ciudad donde vivían los extranjeros"
+   ],
+   "correcta": 2,
+   "tip": "De ahí vienen palabras como 'política' y 'metrópolis'.",
+   "revisada": false,
+   "id": "voc7-hist-11"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué era el \"ágora\" en una ciudad griega?",
+   "opciones": [
+    "El recinto amurallado donde se refugiaba la población en tiempos de guerra",
+    "El templo principal dedicado a la diosa protectora de la ciudad",
+    "La plaza pública donde se reunían los ciudadanos a debatir y comerciar",
+    "La escuela donde los jóvenes aprendían retórica y filosofía"
+   ],
+   "correcta": 2,
+   "tip": "Era el corazón de la vida pública, al aire libre.",
+   "revisada": false,
+   "id": "voc7-hist-12"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué significa \"democracia\"?",
+   "opciones": [
+    "Un sistema en que las decisiones las toman los sacerdotes",
+    "Un sistema en que gobiernan quienes tienen más riqueza",
+    "Un sistema en que el poder se hereda dentro de una familia",
+    "Un sistema en que el poder político reside en el pueblo"
+   ],
+   "correcta": 3,
+   "tip": "'Demos' es pueblo y 'cracia' es poder o gobierno.",
+   "revisada": false,
+   "id": "voc7-hist-13"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Quiénes eran los \"metecos\" en Atenas?",
+   "opciones": [
+    "Los jóvenes que aún no habían completado su servicio militar",
+    "Los extranjeros libres que vivían y trabajaban allí sin ser ciudadanos",
+    "Los magistrados encargados de vigilar el cumplimiento de las leyes",
+    "Los ciudadanos más pobres que recibían una paga por asistir a la asamblea"
+   ],
+   "correcta": 1,
+   "tip": "Vivían en la ciudad, pero no podían votar en la asamblea.",
+   "revisada": false,
+   "id": "voc7-hist-14"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué era el \"ostracismo\" en Atenas?",
+   "opciones": [
+    "El derecho de todo ciudadano a hablar en la asamblea",
+    "El destierro temporal de alguien considerado peligroso para la ciudad",
+    "La elección de los magistrados mediante un sorteo entre los ciudadanos",
+    "La multa que se aplicaba a quien no cumplía las leyes"
+   ],
+   "correcta": 1,
+   "tip": "La votación se hacía escribiendo el nombre en trozos de cerámica.",
+   "revisada": false,
+   "id": "voc7-hist-15"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué significaba \"república\" en Roma?",
+   "opciones": [
+    "Un sistema en que la ciudad era gobernada por sus sacerdotes",
+    "Un sistema en que los cargos se elegían y el poder no era de uno solo",
+    "Un sistema en que solo los soldados podían elegir a los dos cónsules",
+    "Un sistema en que un emperador concentraba todas las decisiones"
+   ],
+   "correcta": 1,
+   "tip": "Viene de 'res publica': la cosa pública, lo de todos.",
+   "revisada": false,
+   "id": "voc7-hist-16"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué era un \"cónsul\" en la República romana?",
+   "opciones": [
+    "El representante que defendía los intereses de los plebeyos",
+    "El jefe militar que dirigía las legiones en tiempos de guerra",
+    "El sacerdote encargado de interpretar la voluntad de los dioses",
+    "Uno de los dos magistrados que encabezaban el gobierno cada año"
+   ],
+   "correcta": 3,
+   "tip": "Eran dos a la vez, y duraban solo un año, para repartir el poder.",
+   "revisada": false,
+   "id": "voc7-hist-17"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Quiénes eran los \"patricios\" en Roma?",
+   "opciones": [
+    "Los campesinos que trabajaban las tierras cercanas a la ciudad",
+    "Los extranjeros que obtenían la ciudadanía por servicios prestados",
+    "Los miembros de las familias antiguas que concentraban privilegios",
+    "Los comerciantes enriquecidos con el tráfico por el Mediterráneo"
+   ],
+   "correcta": 2,
+   "tip": "Su nombre viene de 'pater', padre: los descendientes de los fundadores.",
+   "revisada": false,
+   "id": "voc7-hist-18"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Quiénes eran los \"plebeyos\" en Roma?",
+   "opciones": [
+    "Los soldados retirados a quienes se entregaba una parcela de tierra",
+    "La mayoría del pueblo libre, sin los privilegios de las familias antiguas",
+    "Las personas sometidas a servidumbre y obligadas a trabajar sin recibir paga",
+    "Los habitantes de las provincias conquistadas fuera de Italia"
+   ],
+   "correcta": 1,
+   "tip": "De ahí viene la palabra 'plebe'.",
+   "revisada": false,
+   "id": "voc7-hist-19"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Por qué se destaca el \"derecho romano\"?",
+   "opciones": [
+    "Porque permitía a cualquier habitante del imperio elegir a sus jueces",
+    "Porque castigaba todos los delitos con la misma pena para todos",
+    "Porque dejaba las decisiones judiciales en manos de los sacerdotes",
+    "Porque creó normas escritas que aún influyen en las leyes actuales"
+   ],
+   "correcta": 3,
+   "tip": "Buena parte del vocabulario legal de hoy viene del latín.",
+   "revisada": false,
+   "id": "voc7-hist-20"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué era el \"feudalismo\"?",
+   "opciones": [
+    "Una alianza militar entre reinos para defender la frontera",
+    "Una forma de gobierno en que la ciudad elegía libremente a sus autoridades",
+    "Un sistema de comercio entre puertos del Mediterráneo",
+    "Una organización basada en la tierra y en lazos de fidelidad personal"
+   ],
+   "correcta": 3,
+   "tip": "La palabra viene de 'feudo', la tierra que se entregaba a cambio de servicios.",
+   "revisada": false,
+   "id": "voc7-hist-21"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué era el \"vasallaje\"?",
+   "opciones": [
+    "El impuesto que las aldeas pagaban al rey una vez al año",
+    "El permiso para cruzar un territorio ajeno con mercancías",
+    "La obligación de trabajar la tierra del señor sin poder abandonarla nunca",
+    "El vínculo por el cual alguien servía a un señor a cambio de protección"
+   ],
+   "correcta": 3,
+   "tip": "Era un compromiso entre dos personas, sellado con un juramento.",
+   "revisada": false,
+   "id": "voc7-hist-22"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Quién era un \"siervo\" en la sociedad medieval?",
+   "opciones": [
+    "El campesino atado a la tierra que trabajaba para el señor del feudo",
+    "El encargado de administrar las cuentas y las cosechas de todo el feudo",
+    "El artesano que fabricaba herramientas dentro del castillo",
+    "El soldado que acompañaba al señor en sus campañas militares"
+   ],
+   "correcta": 0,
+   "tip": "No era esclavo, pero tampoco podía irse del lugar.",
+   "revisada": false,
+   "id": "voc7-hist-23"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué fue el \"cisma\" de 1054?",
+   "opciones": [
+    "La separación entre la Iglesia católica de Roma y la ortodoxa de Oriente",
+    "La caída definitiva del Imperio romano de Occidente",
+    "El acuerdo que repartió el territorio de Europa entre reinos cristianos",
+    "La expulsión de los musulmanes de la península ibérica"
+   ],
+   "correcta": 0,
+   "tip": "'Cisma' significa división o ruptura dentro de un mismo grupo.",
+   "revisada": false,
+   "id": "voc7-hist-24"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué fueron las \"Cruzadas\"?",
+   "opciones": [
+    "Migraciones de pueblos germanos hacia el interior del imperio romano",
+    "Expediciones militares cristianas hacia Tierra Santa en la Edad Media",
+    "Reuniones de obispos para decidir asuntos de la fe cristiana",
+    "Rutas comerciales que unían Europa con el lejano Oriente"
+   ],
+   "correcta": 1,
+   "tip": "Quienes participaban llevaban una cruz cosida en la ropa.",
+   "revisada": false,
+   "id": "voc7-hist-25"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es la \"burguesía\"?",
+   "opciones": [
+    "El grupo social de comerciantes y artesanos surgido en las ciudades",
+    "Los funcionarios que administraban los bienes de la Iglesia",
+    "El conjunto de familias nobles dueñas de grandes extensiones de tierra",
+    "Los campesinos que lograron comprar su libertad al señor feudal"
+   ],
+   "correcta": 0,
+   "tip": "Vivían en los 'burgos', los nuevos barrios de las ciudades.",
+   "revisada": false,
+   "id": "voc7-hist-26"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué era un \"gremio\" en la Edad Media?",
+   "opciones": [
+    "Una asociación de artesanos del mismo oficio que regulaba su trabajo",
+    "Un grupo de mercaderes que financiaba los viajes de exploración lejana",
+    "Una escuela donde se enseñaba a leer y escribir en latín",
+    "Un consejo de vecinos que elegía a las autoridades del burgo"
+   ],
+   "correcta": 0,
+   "tip": "Reunía a quienes hacían lo mismo: zapateros con zapateros.",
+   "revisada": false,
+   "id": "voc7-hist-27"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué era un \"quipu\" en el mundo inca?",
+   "opciones": [
+    "Un camino empedrado que unía las distintas regiones del imperio",
+    "Un depósito donde se guardaban alimentos para épocas de escasez",
+    "Un terreno en terrazas construido en la ladera de un cerro",
+    "Un conjunto de cuerdas con nudos usado para registrar información"
+   ],
+   "correcta": 3,
+   "tip": "La información estaba en los nudos: su posición y su cantidad.",
+   "revisada": false,
+   "id": "voc7-hist-28"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué era la \"mita\" en el Imperio Inca?",
+   "opciones": [
+    "Un ritual religioso celebrado al comienzo de la cosecha",
+    "Un mercado donde las comunidades intercambiaban sus productos",
+    "Un tributo en oro que las regiones entregaban al Inca cada año",
+    "Un turno de trabajo por el cual cada comunidad servía al Estado"
+   ],
+   "correcta": 3,
+   "tip": "Era trabajo por turnos, no un pago en objetos.",
+   "revisada": false,
+   "id": "voc7-hist-29"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué era un \"ayllu\" en el mundo andino?",
+   "opciones": [
+    "Una provincia gobernada por un funcionario designado por el propio Inca",
+    "Una comunidad de familias emparentadas que compartía tierras y trabajo",
+    "Un grupo de sacerdotes encargados del culto al Sol",
+    "Una fortaleza construida en lo alto para vigilar los caminos"
+   ],
+   "correcta": 1,
+   "tip": "La base era el parentesco: familias unidas por un antepasado común.",
+   "revisada": false,
+   "id": "voc7-hist-30"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es el \"narrador\" de un relato?",
+   "opciones": [
+    "La persona real que escribió la obra y firma con su nombre",
+    "El personaje principal alrededor del cual gira toda la trama",
+    "El conjunto de hechos que se van sucediendo en la historia",
+    "La voz que cuenta la historia dentro del mundo del relato"
+   ],
+   "correcta": 3,
+   "tip": "No confundir con el autor: uno es real, el otro es de ficción.",
+   "revisada": false,
+   "id": "voc7-leng-1"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué caracteriza a un \"narrador omnisciente\"?",
+   "opciones": [
+    "Interviene en la trama corrigiendo lo que hacen los personajes",
+    "Solo relata lo que se podría ver y oír desde afuera",
+    "Conoce todo, incluso lo que piensan y sienten los personajes",
+    "Cuenta la historia desde adentro, como uno de los personajes"
+   ],
+   "correcta": 2,
+   "tip": "'Omni' es todo y 'sciente' es que sabe.",
+   "revisada": false,
+   "id": "voc7-leng-2"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es el \"ambiente\" de una narración?",
+   "opciones": [
+    "La sucesión ordenada de los acontecimientos que forman la historia",
+    "La impresión que la obra deja en quien termina de leerla",
+    "El entorno físico y social donde ocurren los hechos del relato",
+    "El problema central que deben enfrentar los personajes"
+   ],
+   "correcta": 2,
+   "tip": "Es el dónde y el en qué mundo, no el qué pasa.",
+   "revisada": false,
+   "id": "voc7-leng-3"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es el \"conflicto\" en una narración?",
+   "opciones": [
+    "La oposición o problema que mueve la acción de la historia",
+    "El momento final en que se resuelven todos los enredos",
+    "La forma en que el autor ordena los capítulos del texto",
+    "El lugar y la época en que se desarrollan los hechos"
+   ],
+   "correcta": 0,
+   "tip": "Sin él, no habría historia que contar.",
+   "revisada": false,
+   "id": "voc7-leng-4"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es el \"hablante lírico\"?",
+   "opciones": [
+    "El conjunto de sentimientos que el poema busca transmitir",
+    "La voz ficticia que expresa los sentimientos dentro de un poema",
+    "La persona a quien el poema dirige sus palabras y sus versos",
+    "El poeta de carne y hueso que compuso realmente esos versos"
+   ],
+   "correcta": 1,
+   "tip": "Es a la poesía lo que el narrador es al relato.",
+   "revisada": false,
+   "id": "voc7-leng-5"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "En poesía, ¿qué es una \"estrofa\"?",
+   "opciones": [
+    "La repetición de sonidos al final de dos o más versos",
+    "Cada una de las líneas que componen un poema completo",
+    "Un conjunto de versos agrupados y separados de los demás",
+    "El número de sílabas que contiene cada línea del poema"
+   ],
+   "correcta": 2,
+   "tip": "Es al poema lo que el párrafo es a la prosa.",
+   "revisada": false,
+   "id": "voc7-leng-6"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "En poesía, ¿qué es un \"verso\"?",
+   "opciones": [
+    "Cada bloque de líneas separado por un espacio en blanco",
+    "La coincidencia de sonidos entre los finales de dos líneas",
+    "Cada una de las líneas en que se distribuye un poema",
+    "El ritmo que se produce al leer el poema en voz alta"
+   ],
+   "correcta": 2,
+   "tip": "Es una línea; varias juntas forman una estrofa.",
+   "revisada": false,
+   "id": "voc7-leng-7"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es la \"rima\"?",
+   "opciones": [
+    "La emoción predominante que el poema logra transmitir",
+    "La cantidad de sílabas que se cuentan en cada verso escrito",
+    "La agrupación de varios versos dentro de una misma estrofa",
+    "La coincidencia de sonidos desde la última vocal acentuada"
+   ],
+   "correcta": 3,
+   "tip": "Se escucha al final de los versos.",
+   "revisada": false,
+   "id": "voc7-leng-8"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es una \"metáfora\"?",
+   "opciones": [
+    "Identificar una cosa con otra por un parecido, sin usar 'como'",
+    "Exagerar de manera evidente una cualidad para dar más énfasis",
+    "Comparar dos cosas de forma explícita usando un nexo comparativo",
+    "Atribuir cualidades humanas a un animal o a un objeto inanimado"
+   ],
+   "correcta": 0,
+   "tip": "'Sus ojos son dos luceros' no dice 'como': lo afirma directamente.",
+   "revisada": false,
+   "id": "voc7-leng-9"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es una \"personificación\"?",
+   "opciones": [
+    "Identificar dos elementos distintos por el parecido entre ambos",
+    "Atribuir cualidades humanas a un objeto, animal o idea",
+    "Repetir un mismo sonido varias veces dentro de un mismo verso",
+    "Exagerar de forma deliberada un rasgo para producir un efecto"
+   ],
+   "correcta": 1,
+   "tip": "'El viento susurraba' le presta al viento algo humano.",
+   "revisada": false,
+   "id": "voc7-leng-10"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es una \"hipérbole\"?",
+   "opciones": [
+    "Una sustitución de una palabra por otra de sentido cercano",
+    "Una comparación entre dos elementos unidos por un nexo",
+    "Una contradicción aparente que encierra un sentido profundo",
+    "Una exageración evidente empleada para reforzar una idea"
+   ],
+   "correcta": 3,
+   "tip": "'Te lo he dicho un millón de veces' no es literal.",
+   "revisada": false,
+   "id": "voc7-leng-11"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es un \"mito\"?",
+   "opciones": [
+    "Un relato breve cuyo propósito principal es dejar una enseñanza moral",
+    "Un relato inventado que busca únicamente entretener al lector",
+    "Un relato tradicional que explica el origen del mundo o de un pueblo",
+    "Un relato de hechos reales narrados en el orden en que ocurrieron"
+   ],
+   "correcta": 2,
+   "tip": "Suele involucrar dioses y responder un '¿por qué existe esto?'.",
+   "revisada": false,
+   "id": "voc7-leng-12"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es un \"romance\" en la poesía popular?",
+   "opciones": [
+    "Una composición cantada que se acompaña siempre con guitarra",
+    "Un relato en prosa transmitido oralmente de una generación a otra",
+    "Un poema narrativo de versos octosílabos con rima en los pares",
+    "Un poema breve que expresa un sentimiento amoroso del hablante"
+   ],
+   "correcta": 2,
+   "tip": "Cuenta una historia, y nació para ser recitado o cantado.",
+   "revisada": false,
+   "id": "voc7-leng-13"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "En un texto argumentativo, ¿qué es la \"tesis\"?",
+   "opciones": [
+    "El ejemplo que se entrega para ilustrar mejor lo que se afirma",
+    "La postura que el autor defiende a lo largo de todo el texto",
+    "La conclusión que se obtiene al final del razonamiento completo",
+    "La razón concreta con que se respalda esa postura defendida"
+   ],
+   "correcta": 1,
+   "tip": "Es lo que el autor quiere que aceptes.",
+   "revisada": false,
+   "id": "voc7-leng-14"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es un \"argumento\"?",
+   "opciones": [
+    "El resumen de las ideas principales que aparece al comienzo",
+    "La razón que se entrega para sostener la postura defendida",
+    "La opinión central que se busca que el lector termine aceptando",
+    "La forma en que el texto ordena sus ideas en varios párrafos"
+   ],
+   "correcta": 1,
+   "tip": "Responde a la pregunta '¿por qué debería creerte?'.",
+   "revisada": false,
+   "id": "voc7-leng-15"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es un \"contraargumento\"?",
+   "opciones": [
+    "Un ejemplo tomado de la realidad para apoyar lo que se afirma",
+    "Una conclusión que cierra el texto retomando la idea inicial",
+    "Una razón adicional que refuerza aún más la tesis planteada",
+    "Una razón que se opone a la postura que el texto defiende"
+   ],
+   "correcta": 3,
+   "tip": "Un buen texto los menciona y luego responde a ellos.",
+   "revisada": false,
+   "id": "voc7-leng-16"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es una \"columna de opinión\"?",
+   "opciones": [
+    "Un texto que informa sobre un hecho sin tomar ninguna postura",
+    "Un texto que un lector envía para responder a una publicación",
+    "Un texto que investiga un tema en profundidad con varias fuentes",
+    "Un texto en que su autor expone y defiende su punto de vista"
+   ],
+   "correcta": 3,
+   "tip": "Va firmada, y su gracia es justamente que opina.",
+   "revisada": false,
+   "id": "voc7-leng-17"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué caracteriza a una \"noticia\"?",
+   "opciones": [
+    "Analiza un tema en profundidad entrevistando a varias fuentes distintas",
+    "Expresa la postura personal de quien la escribe sobre un asunto",
+    "Reúne cartas y comentarios enviados por los propios lectores",
+    "Informa sobre un hecho reciente respondiendo qué, quién, cuándo y dónde"
+   ],
+   "correcta": 3,
+   "tip": "Su trabajo es informar, no opinar.",
+   "revisada": false,
+   "id": "voc7-leng-18"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es un \"reportaje\"?",
+   "opciones": [
+    "Un texto que profundiza en un tema con varias fuentes y contexto",
+    "Un texto en que el autor defiende abiertamente su propia postura",
+    "Un texto breve que informa un hecho ocurrido en las últimas horas",
+    "Un texto que resume las noticias más importantes de la semana"
+   ],
+   "correcta": 0,
+   "tip": "Va más allá del hecho puntual: investiga y contextualiza.",
+   "revisada": false,
+   "id": "voc7-leng-19"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "En una oración, ¿qué es el \"sujeto\"?",
+   "opciones": [
+    "La palabra que enlaza dos ideas dentro de una misma oración",
+    "La parte que indica de quién o de qué se dice algo",
+    "El complemento que precisa el lugar o el momento de la acción",
+    "La parte que expresa la acción o el estado que se atribuye"
+   ],
+   "correcta": 1,
+   "tip": "Responde a la pregunta '¿quién?' o '¿qué?' ante el verbo.",
+   "revisada": false,
+   "id": "voc7-leng-20"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "En una oración, ¿qué es el \"predicado\"?",
+   "opciones": [
+    "El conjunto de palabras que modifican directamente al sustantivo",
+    "La parte que expresa lo que se dice acerca del sujeto",
+    "La palabra que introduce una oración dentro de otra mayor",
+    "La parte que nombra a quien realiza o recibe la acción"
+   ],
+   "correcta": 1,
+   "tip": "Su núcleo es siempre el verbo.",
+   "revisada": false,
+   "id": "voc7-leng-21"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es la \"sustitución léxica\"?",
+   "opciones": [
+    "Reemplazar una palabra por un sinónimo para no repetirla",
+    "Suprimir una palabra que ya se entiende por el contexto previo",
+    "Reemplazar un sustantivo por un pronombre que lo representa",
+    "Cambiar el orden de las palabras para dar énfasis a una idea"
+   ],
+   "correcta": 0,
+   "tip": "En vez de repetir 'el perro', escribir 'el animal'.",
+   "revisada": false,
+   "id": "voc7-leng-22"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es la \"pronominalización\"?",
+   "opciones": [
+    "Reemplazar un elemento ya mencionado por un pronombre",
+    "Añadir un adjetivo que precise mejor de qué se está hablando",
+    "Reemplazar una palabra por otra de significado equivalente",
+    "Repetir la misma palabra para dejar la idea bien marcada"
+   ],
+   "correcta": 0,
+   "tip": "En vez de repetir 'María', escribir 'ella'.",
+   "revisada": false,
+   "id": "voc7-leng-23"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es \"parafrasear\" un texto?",
+   "opciones": [
+    "Reducir el texto dejando solo sus ideas más importantes",
+    "Comentar el texto agregando la opinión de quien lo lee",
+    "Decir lo mismo con palabras propias, conservando el sentido",
+    "Copiar el texto original indicando con comillas su procedencia"
+   ],
+   "correcta": 2,
+   "tip": "Cambian las palabras; el significado se mantiene.",
+   "revisada": false,
+   "id": "voc7-leng-24"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es \"sintetizar\" un texto?",
+   "opciones": [
+    "Comparar sus ideas con las de otro texto sobre el mismo tema",
+    "Explicar el significado de las palabras difíciles que contiene",
+    "Reducirlo a sus ideas principales de forma breve y ordenada",
+    "Expresar su contenido con palabras propias sin acortarlo"
+   ],
+   "correcta": 2,
+   "tip": "Lo esencial se queda; lo accesorio se va.",
+   "revisada": false,
+   "id": "voc7-leng-25"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es el \"propósito comunicativo\" de un texto?",
+   "opciones": [
+    "El tema general del cual el texto se ocupa a lo largo de sus partes",
+    "El tipo de lenguaje, formal o informal, que el texto emplea",
+    "La intención con que fue escrito: informar, convencer o entretener",
+    "El público específico al que el texto dirige sus palabras"
+   ],
+   "correcta": 2,
+   "tip": "Es el 'para qué' se escribió.",
+   "revisada": false,
+   "id": "voc7-leng-26"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es el \"registro formal\"?",
+   "opciones": [
+    "El uso de un lenguaje espontáneo, propio de la conversación",
+    "El uso de un lenguaje cuidado, adecuado a una situación seria",
+    "El conjunto de reglas de ortografía que se aplican al escribir",
+    "El tono emocional que el autor imprime a lo que está diciendo"
+   ],
+   "correcta": 1,
+   "tip": "Es el que usarías al escribirle al director del colegio.",
+   "revisada": false,
+   "id": "voc7-leng-27"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es un \"conector\" en un texto?",
+   "opciones": [
+    "Una palabra que reemplaza a un sustantivo ya mencionado antes",
+    "Una palabra que expresa la acción principal dentro de la oración",
+    "Una palabra que precisa alguna cualidad del sustantivo al que sigue",
+    "Una palabra que enlaza ideas y muestra la relación entre ellas"
+   ],
+   "correcta": 3,
+   "tip": "'Sin embargo', 'por lo tanto', 'además' son ejemplos.",
+   "revisada": false,
+   "id": "voc7-leng-28"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es \"editar\" un texto propio?",
+   "opciones": [
+    "Leerlo en voz alta frente a una audiencia para compartirlo",
+    "Decidir el tema y ordenar las ideas antes de empezar a escribir",
+    "Revisarlo y corregirlo para dejarlo listo antes de entregarlo",
+    "Escribir el primer borrador volcando todas las ideas de una vez"
+   ],
+   "correcta": 2,
+   "tip": "Es el último paso, después de escribir y revisar.",
+   "revisada": false,
+   "id": "voc7-leng-29"
+  },
+  {
+   "oa": "VOC-LENG",
+   "pregunta": "¿Qué es la \"audiencia\" de un texto?",
+   "opciones": [
+    "El lugar donde el texto será publicado una vez terminado",
+    "Las personas a quienes va dirigido lo que se está escribiendo",
+    "El conjunto de fuentes que el autor consultó para escribirlo",
+    "La finalidad concreta que persigue el autor al escribir el texto"
+   ],
+   "correcta": 1,
+   "tip": "No se le escribe igual a un amigo que a una autoridad.",
+   "revisada": false,
+   "id": "voc7-leng-30"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué son los \"números enteros\"?",
+   "opciones": [
+    "Los números que se ubican solo a la derecha del cero",
+    "Los números naturales, sus opuestos negativos y el cero",
+    "Los números que resultan de dividir dos cantidades distintas",
+    "Los números que pueden escribirse como una fracción exacta"
+   ],
+   "correcta": 1,
+   "tip": "Incluyen los negativos, que los naturales no tienen.",
+   "revisada": false,
+   "id": "voc7-mate-1"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es el \"valor absoluto\" de un número?",
+   "opciones": [
+    "La cifra que ocupa la posición más a la izquierda del número",
+    "El resultado de multiplicar ese número por sí mismo una vez",
+    "El número que se obtiene al cambiarle el signo al original",
+    "Su distancia hasta el cero, sin considerar el signo"
+   ],
+   "correcta": 3,
+   "tip": "Por eso el de −5 y el de 5 dan lo mismo.",
+   "revisada": false,
+   "id": "voc7-mate-2"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué son dos números \"opuestos\"?",
+   "opciones": [
+    "Dos números que tienen las mismas cifras en distinto orden",
+    "Dos números cuyo producto da como resultado exactamente uno",
+    "Dos números que están a igual distancia del cero, con distinto signo",
+    "Dos números que al sumarse entre sí dan un resultado siempre positivo"
+   ],
+   "correcta": 2,
+   "tip": "Sumados dan cero: −7 y 7.",
+   "revisada": false,
+   "id": "voc7-mate-3"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En una fracción, ¿qué indica el \"denominador\"?",
+   "opciones": [
+    "En cuántas partes iguales se dividió el entero completo",
+    "El resultado que se obtiene al efectuar la división indicada",
+    "La cantidad de veces que la fracción cabe dentro del entero",
+    "Cuántas de esas partes se están tomando en total"
+   ],
+   "correcta": 0,
+   "tip": "Es el de abajo: dice en cuántos pedazos se partió.",
+   "revisada": false,
+   "id": "voc7-mate-4"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En una fracción, ¿qué indica el \"numerador\"?",
+   "opciones": [
+    "Cuántas de las partes iguales se están considerando",
+    "La diferencia entre el entero y la parte que se tomó",
+    "El número por el cual hay que multiplicar la fracción",
+    "En cuántas partes iguales quedó dividido el entero"
+   ],
+   "correcta": 0,
+   "tip": "Es el de arriba: dice cuántos pedazos se toman.",
+   "revisada": false,
+   "id": "voc7-mate-5"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es el \"recíproco\" de una fracción?",
+   "opciones": [
+    "La fracción con el mismo valor pero escrita como número decimal",
+    "La fracción que resulta de intercambiar numerador y denominador",
+    "La fracción equivalente que se obtiene al simplificarla del todo",
+    "La fracción que se obtiene al cambiarle el signo a sus términos"
+   ],
+   "correcta": 1,
+   "tip": "El de 2/3 es 3/2, y multiplicados dan uno.",
+   "revisada": false,
+   "id": "voc7-mate-6"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué significa un \"porcentaje\"?",
+   "opciones": [
+    "La diferencia entre dos cantidades medidas en momentos distintos",
+    "El resultado de dividir una cantidad por el número de partes",
+    "Una parte expresada respecto del total real de la cantidad",
+    "Una parte expresada respecto de un total de cien unidades"
+   ],
+   "correcta": 3,
+   "tip": "'Por ciento' significa literalmente 'de cada cien'.",
+   "revisada": false,
+   "id": "voc7-mate-7"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En una potencia, ¿qué es la \"base\"?",
+   "opciones": [
+    "El número que indica cuántas veces se hace la multiplicación",
+    "El número que se resta al exponente para simplificarla",
+    "El resultado final que se obtiene al desarrollar la potencia",
+    "El número que se multiplica por sí mismo varias veces"
+   ],
+   "correcta": 3,
+   "tip": "En 2⁵, es el 2.",
+   "revisada": false,
+   "id": "voc7-mate-8"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En una potencia, ¿qué es el \"exponente\"?",
+   "opciones": [
+    "El número que acompaña a la base en una suma algebraica",
+    "El número que se multiplica por sí mismo varias veces seguidas",
+    "El número que indica cuántas veces se repite la base",
+    "El valor que se obtiene después de efectuar la operación"
+   ],
+   "correcta": 2,
+   "tip": "En 2⁵, es el 5.",
+   "revisada": false,
+   "id": "voc7-mate-9"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es la \"notación científica\"?",
+   "opciones": [
+    "Una manera de ordenar números de mayor a menor en una tabla",
+    "Una forma de expresar cualquier número usando únicamente cifras enteras",
+    "Un método para redondear un resultado a la cifra más cercana",
+    "Una forma de escribir números muy grandes o muy pequeños con potencias"
+   ],
+   "correcta": 3,
+   "tip": "Sirve para no escribir una fila interminable de ceros.",
+   "revisada": false,
+   "id": "voc7-mate-10"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es el \"lenguaje algebraico\"?",
+   "opciones": [
+    "El vocabulario técnico que se emplea en geometría y en medición de figuras",
+    "El conjunto de reglas para resolver una ecuación paso a paso",
+    "El uso de letras para representar números o cantidades desconocidas",
+    "La forma de escribir un número usando cifras y no palabras"
+   ],
+   "correcta": 2,
+   "tip": "Permite decir 'el doble de un número' como 2x.",
+   "revisada": false,
+   "id": "voc7-mate-11"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué son \"términos semejantes\"?",
+   "opciones": [
+    "Términos que tienen exactamente el mismo coeficiente numérico delante",
+    "Términos que tienen la misma parte literal con el mismo exponente",
+    "Términos cuyo resultado final coincide al reemplazar la letra",
+    "Términos que aparecen del mismo lado del signo igual"
+   ],
+   "correcta": 1,
+   "tip": "3x y 5x lo son; 3x y 5x² no.",
+   "revisada": false,
+   "id": "voc7-mate-12"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es \"reducir\" una expresión algebraica?",
+   "opciones": [
+    "Reemplazar las letras por números y calcular el resultado",
+    "Juntar los términos semejantes para dejarla más simple",
+    "Cambiar el orden de sus términos según el signo que llevan",
+    "Dividir todos sus términos por el número más pequeño"
+   ],
+   "correcta": 1,
+   "tip": "4x + 3x se reduce a 7x.",
+   "revisada": false,
+   "id": "voc7-mate-13"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"coeficiente\"?",
+   "opciones": [
+    "El exponente al que está elevada la parte literal del término",
+    "El número que multiplica a la letra dentro de un término",
+    "El resultado que se obtiene al sumar todos los términos",
+    "La letra que representa el valor desconocido de la expresión"
+   ],
+   "correcta": 1,
+   "tip": "En 7x, es el 7.",
+   "revisada": false,
+   "id": "voc7-mate-14"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es una \"proporción directa\"?",
+   "opciones": [
+    "Una relación en que si una cantidad aumenta, la otra disminuye",
+    "Una relación en que el producto de las cantidades es constante",
+    "Una relación en que ambas cantidades se mantienen siempre iguales",
+    "Una relación en que si una cantidad aumenta, la otra también lo hace"
+   ],
+   "correcta": 3,
+   "tip": "Más kilos de pan, más pesos a pagar.",
+   "revisada": false,
+   "id": "voc7-mate-15"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es una \"proporción inversa\"?",
+   "opciones": [
+    "Una relación en que una cantidad no depende en nada de la otra",
+    "Una relación en que si una cantidad aumenta, la otra disminuye",
+    "Una relación en que ambas cantidades crecen en la misma medida",
+    "Una relación en que el cociente entre las cantidades es constante"
+   ],
+   "correcta": 1,
+   "tip": "Más trabajadores, menos días para terminar la obra.",
+   "revisada": false,
+   "id": "voc7-mate-16"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"polígono\"?",
+   "opciones": [
+    "Una figura formada por dos rectas que se cruzan en un punto",
+    "Una figura plana cuyo borde es una línea completamente curva",
+    "Una figura plana cerrada formada por segmentos de recta",
+    "Un cuerpo geométrico con caras planas y volumen definido"
+   ],
+   "correcta": 2,
+   "tip": "'Poli' es muchos y 'gono' es ángulo.",
+   "revisada": false,
+   "id": "voc7-mate-17"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"ángulo interior\" de un polígono?",
+   "opciones": [
+    "El ángulo que se mide entre dos vértices opuestos de la figura",
+    "El ángulo que forman dos lados consecutivos dentro de la figura",
+    "El ángulo que forma un lado con la prolongación del siguiente",
+    "El ángulo que resulta de dividir la figura en dos partes iguales"
+   ],
+   "correcta": 1,
+   "tip": "Queda adentro de la figura, entre dos lados que se tocan.",
+   "revisada": false,
+   "id": "voc7-mate-18"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En un círculo, ¿qué es el \"radio\"?",
+   "opciones": [
+    "La superficie total que queda encerrada dentro del contorno del círculo",
+    "El segmento que atraviesa el círculo pasando por su centro",
+    "La longitud completa del contorno que rodea al círculo",
+    "El segmento que va desde el centro hasta cualquier punto del borde"
+   ],
+   "correcta": 3,
+   "tip": "Del centro al borde: es la mitad del diámetro.",
+   "revisada": false,
+   "id": "voc7-mate-19"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En un círculo, ¿qué es el \"diámetro\"?",
+   "opciones": [
+    "El segmento que va desde el centro hasta un punto cualquiera del borde",
+    "La distancia más corta entre dos puntos del borde del círculo",
+    "El segmento que une dos puntos del borde pasando por el centro",
+    "La medida de todo el contorno que encierra a la figura"
+   ],
+   "correcta": 2,
+   "tip": "Mide exactamente el doble que el radio.",
+   "revisada": false,
+   "id": "voc7-mate-20"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es la \"circunferencia\"?",
+   "opciones": [
+    "La figura formada por un círculo y todos sus radios juntos",
+    "La superficie encerrada dentro de esa línea curva cerrada",
+    "La línea curva cerrada cuyos puntos equidistan de un centro",
+    "El segmento que une el centro con un punto del borde"
+   ],
+   "correcta": 2,
+   "tip": "Es la línea; lo de adentro es el círculo.",
+   "revisada": false,
+   "id": "voc7-mate-21"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué diferencia hay entre \"perímetro\" y \"área\"?",
+   "opciones": [
+    "El perímetro mide el contorno y el área mide la superficie",
+    "El perímetro se mide en unidades cuadradas y el área no",
+    "El perímetro se usa en figuras planas y el área en cuerpos",
+    "El perímetro mide la superficie y el área mide el contorno"
+   ],
+   "correcta": 0,
+   "tip": "Uno se recorre por el borde; el otro se cubre por dentro.",
+   "revisada": false,
+   "id": "voc7-mate-22"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"trapecio\"?",
+   "opciones": [
+    "Un cuadrilátero que tiene sus dos pares de lados paralelos",
+    "Un cuadrilátero que tiene solo un par de lados paralelos",
+    "Un cuadrilátero con los cuatro lados de la misma medida",
+    "Un cuadrilátero con sus cuatro ángulos interiores rectos"
+   ],
+   "correcta": 1,
+   "tip": "Se distingue del paralelogramo justamente por eso.",
+   "revisada": false,
+   "id": "voc7-mate-23"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"paralelogramo\"?",
+   "opciones": [
+    "Un cuadrilátero que tiene un solo par de lados paralelos entre sí",
+    "Un cuadrilátero cuyos ángulos interiores suman siempre lo mismo",
+    "Un cuadrilátero inscrito dentro de una circunferencia cualquiera",
+    "Un cuadrilátero con sus dos pares de lados opuestos paralelos"
+   ],
+   "correcta": 3,
+   "tip": "El cuadrado y el rombo son casos particulares de esta familia.",
+   "revisada": false,
+   "id": "voc7-mate-24"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"par ordenado\" en el plano cartesiano?",
+   "opciones": [
+    "Dos números que se suman para obtener la posición en un eje",
+    "Dos números que siempre deben tener el mismo signo entre sí",
+    "Dos números que representan la distancia entre dos puntos dados",
+    "Dos números que indican la posición de un punto, en cierto orden"
+   ],
+   "correcta": 3,
+   "tip": "El orden importa: (3, 5) no es lo mismo que (5, 3).",
+   "revisada": false,
+   "id": "voc7-mate-25"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En estadística, ¿qué es una \"muestra\"?",
+   "opciones": [
+    "El conjunto completo de todos los casos que interesa estudiar",
+    "El dato que más veces se repite dentro de un grupo de valores",
+    "Una parte del total que se estudia para estimar cómo es el conjunto",
+    "La diferencia entre el valor más alto y el más bajo de todo el grupo"
+   ],
+   "correcta": 2,
+   "tip": "Es un pedazo representativo, no el total.",
+   "revisada": false,
+   "id": "voc7-mate-26"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es la \"frecuencia absoluta\" de un dato?",
+   "opciones": [
+    "El promedio que se obtiene al sumar y dividir los valores",
+    "La cantidad de veces que ese dato aparece en el conjunto",
+    "La proporción que ese dato representa respecto del total",
+    "El valor que ocupa la posición central de todos los datos"
+   ],
+   "correcta": 1,
+   "tip": "Es un conteo directo: cuántas veces apareció.",
+   "revisada": false,
+   "id": "voc7-mate-27"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es la \"mediana\" de un conjunto de datos?",
+   "opciones": [
+    "El valor que se repite más veces dentro de todo el conjunto",
+    "La diferencia entre el dato mayor y el dato menor del grupo",
+    "El valor que queda al centro cuando los datos se ordenan",
+    "El resultado de sumar los datos y dividir por su cantidad"
+   ],
+   "correcta": 2,
+   "tip": "Hay que ordenar primero; después se busca el del medio.",
+   "revisada": false,
+   "id": "voc7-mate-28"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es la \"moda\" de un conjunto de datos?",
+   "opciones": [
+    "El valor que separa al conjunto en dos mitades del mismo tamaño",
+    "El valor promedio que resulta de repartir el total en partes iguales",
+    "El valor que ocupa la posición central al ordenar todos los datos",
+    "El valor que aparece la mayor cantidad de veces en el conjunto"
+   ],
+   "correcta": 3,
+   "tip": "Es el más 'popular': el que más se repite.",
+   "revisada": false,
+   "id": "voc7-mate-29"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es el \"rango\" de un conjunto de datos?",
+   "opciones": [
+    "El promedio entre los dos valores extremos de todo el conjunto",
+    "El valor central que queda al ordenar los datos de menor a mayor",
+    "La diferencia entre el valor más alto y el valor más bajo",
+    "La cantidad total de datos distintos que contiene el conjunto"
+   ],
+   "correcta": 2,
+   "tip": "Mide cuánto se estiran los datos, de un extremo al otro.",
+   "revisada": false,
+   "id": "voc7-mate-30"
+  }
+ ]
+}

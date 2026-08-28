@@ -244,6 +244,26 @@ Cosas que ya sabemos y siguen valiendo: la pantalla activa es `.screen.on` (no `
 nodo del mapa recibe el clic en su `.orb`, no en el `div`; y las tarjetas de campaña son
 `.camp-nodo`.
 
+### Módulos transversales: el cálculo, las lecturas y el vocabulario van aparte
+
+El **Reto de cálculo**, las **lecturas** y el **Vocabulario** tienen una asignatura asignada pero
+**no son esa asignatura**: son apoyos que acompañan al curso. Desde el 28/08/2026 se tratan como
+una categoría propia, agrupada e **independiente del nivel**, para que el motor se escriba una vez
+y lo único que cambie por curso sean los datos.
+
+Se reconocen por una propiedad objetiva y no por criterio: **su código no lleva el nivel adentro**
+(`VOC`, `AF` contra `HI07`, `MA03`). Esa forma es la que consultan `validar-oa-json.py` y
+`generar-tablero.py`, así que **no hay ninguna lista de carpetas que mantener** — antes sí la
+había, escrita a mano, y se rompió al primer módulo de otro nivel.
+
+**El estándar completo está en [`docs/modulos-transversales.md`](docs/modulos-transversales.md):**
+qué son, cómo se nombran (Vocabulario por nivel, Lectura por libro, el Reto sin carpeta), las
+reglas que comparten, cómo se agrega uno a un curso y las trampas ya pagadas.
+
+> **El Reto de cálculo es el único contenido del proyecto que no consume banco**: genera las
+> operaciones por código, así que no suma preguntas que escribir, ni horas de aprobación, ni
+> clips de voz. Agregarlo a un curso nuevo es un generador de ~45 líneas.
+
 ### Banderas de nivel: las diferencias entre cursos van como DATO, no como `if`
 
 Cada curso es un fork, y lo que distingue a uno de otro **no es código de motor sino qué
@@ -4682,3 +4702,123 @@ verificando con `scripts/cdp.mjs`.
   (conversar CN07 con el colegio — el armador ya se lo muestra); A6 (confirmar la foto del lunes
   31/08); y la reautenticación de NotebookLM (el paso del AI Brain sigue cayendo hasta rehacer el
   login por Chrome).
+
+### Sesión 68 (2026-08-28) — Vocabulario y Reto Sin Fin en 7°, y los módulos transversales se separan
+Tres frentes, y el tercero nació de una observación de Roberto que ordena el proyecto hacia
+adelante. **8° y 3° casi no se tocan**: sus únicos cambios son guardas y respaldos que ahí no
+hacen nada.
+
+#### A3 · La landing habla de tres cursos, sin mentir
+
+La tarea decía "solo después de A1", porque la página prometía *"todas aprobadas una a una"* y de
+3° y 7° no hay ninguna firmada. Se resolvió **diciendo el estado real** en vez de saltarse la
+regla o dejar la tarea sin hacer:
+
+> **7.524 preguntas originales** — Escritas objetivo por objetivo desde las Bases Curriculares.
+> Las **2.536 de 8° están aprobadas una a una**; los bancos de 3° y 7° están en revisión
+> pedagógica.
+
+Cambió el título, los metadatos (que es lo que ve Google y lo que se muestra al compartir por
+WhatsApp), el titular, la franja de legitimidad y las tres tarjetas de datos: **3 cursos ·
+7.524 preguntas · 236 objetivos**. `docs/comercial.md` suma dos prohibiciones nuevas, entre ellas
+**no decir que 3° y 7° están "revisados"**.
+
+> Tener un proceso de revisión documentado **es** la señal de credibilidad; prometer que todo está
+> aprobado se cae a la primera pregunta de una UTP. Queda **A8**: cuando A1 cierre, esa frase pasa
+> a "7.524 aprobadas una a una", que es un argumento bastante más fuerte.
+
+#### Vocabulario en 7° (A9)
+
+**El código ya estaba en el fork y solo faltaba el dato:** `scr-lenguaje` y `abrirLenguaje()`
+venían del fork de 8° y solo estaban apagados. El trabajo de código fueron tres líneas.
+
+**120 palabras en 4 áreas** (`contenido/vocabulario-7basico`), sacadas del temario real de 7°.
+120 términos distintos, ninguno repetido, sin solape entre áreas. Dos decisiones escritas en su
+`oa.json`: **4 áreas y no 5** —la quinta de 8° son palabras de sus lecturas y 7° no tiene módulo
+de Lectura—, y **fuera el vocabulario de los `CN07 OA 01/02/03`**, porque esos objetivos están
+cubiertos en la campaña de Ciencias, donde el armador **sí** los marca como sensibles.
+
+**La tanda de validación se ganó el sueldo, otra vez.** Historia salió con **18 de 30 (60%) de
+sesgo de largo**, escribiéndola tratando de evitarlo. Se corrigió **dándole cuerpo a los
+distractores, sin tocar ni una respuesta correcta**, y la lección se transfirió sola: Ciencias 5,
+Matemática 6, Lenguaje **2**. Todas quedaron en 0.
+
+#### Reto Sin Fin de cálculo en 7° (A11)
+
+Alcance decidido por Roberto: **solo el Modo Sin Fin**, como extra dentro de Matemática, sin
+reemplazar su campaña ni sumarle un segundo jefe. El motor quedó en **`assets/js/calculo.js`**
+(229 líneas, compartido); lo propio de 7° son 45 líneas de generador con su temario.
+
+**Tres defectos que solo aparecieron probando, ninguno leyendo:**
+
+1. **El generador producía opciones repetidas: 889 de 1.500.** En `−2 − 9` dos distractores daban
+   7, y con resultado 0 el opuesto empataba con la clave. Lo cazó el verificador de aritmética que
+   `cuidados-matematica.md` exige — recalcular cada clave por otro camino. Corregido con un guard
+   que garantiza cuatro valores distintos: **0 errores en 1.500**.
+2. **El juego quedó muerto, y NO era el 404.** Al hacer la prueba obligatoria salió
+   `ORDEN_ASIG is not defined`, pero estaba roto **también con el archivo presente**:
+   `CALC.init({activo:HAY_SINFIN})` estaba mil líneas antes de `const HAY_SINFIN`, y un `const`
+   leído antes de su declaración lanza `ReferenceError`.
+   > Es una trampa **nueva** para este proyecto: el síntoma es idéntico al del archivo que no
+   > carga —la pantalla se ve bien y ningún botón responde—, así que se diagnostica mal. **La
+   > llamada `init` va pegada a la declaración de su bandera.**
+3. **Con el archivo ausente el botón igual aparecía y no hacía nada** — el mismo defecto del botón
+   de mini-clase de la Sesión 64. Ahora se guarda por `CALC.activo`, que es false si el módulo no
+   cargó: sin archivo 5 nodos, con archivo 6.
+
+De paso: el modo revisión de 7° decía **"Revisión de 8° básico"**, otro resto del fork.
+
+`detenerTimersActivos` quedó **byte a byte idéntica en los tres forks**: 8° y 3° llevan el
+respaldo vacío de `CALC` aunque no tengan el módulo, que es lo que mantiene convergente el fork.
+
+#### Los módulos transversales se separan (decisión de Roberto)
+
+**El Reto de cálculo, las lecturas y el Vocabulario tienen asignatura asignada pero no son esa
+asignatura.** Pasan a ser una categoría propia, agrupada e **independiente del nivel**, para que
+el motor se escriba una vez y lo único que cambie por curso sean los datos.
+
+Lo importante es que la distinción **no quedó como criterio sino como propiedad objetiva**: un
+banco es del currículum si su código lleva el nivel adentro (`HI07`, `MA03`) y transversal si no
+(`VOC`, `AF`). Eso ya lo consultan `validar-oa-json.py` y `generar-tablero.py`, así que **no hay
+lista de carpetas que mantener** — antes sí la había, escrita a mano, y se rompió al primer módulo
+de otro nivel.
+
+- **`docs/modulos-transversales.md` (nuevo)** es su estándar: qué son, las reglas que comparten,
+  cómo se agrega uno y las trampas ya pagadas.
+- **`contenido/vocabulario/` → `contenido/vocabulario-8basico/`.** Esa inconsistencia era la que
+  descolocaba el tablero: el Vocabulario de 7° se ordenaba con 7° y el de 8° caía al final,
+  después de Ana Frank. Una sola referencia viva.
+- **El tablero los agrupa** bajo "Módulos transversales", tras los tres cursos, con una bajada que
+  aclara que **no son cobertura curricular**. Importa porque la aprobación son 7-11 horas ahí
+  dentro, y currículum y apoyo son dos trabajos distintos.
+- **Nombres que difieren a propósito:** Vocabulario por nivel; **Lectura por libro, sin nivel**
+  (un libro podría ir a dos cursos); el Reto sin carpeta, porque no consume banco.
+
+> **El Reto de cálculo es el único contenido del proyecto que no consume banco.** No suma
+> preguntas que escribir, ni horas de aprobación, ni clips de voz: agregarlo a un curso nuevo son
+> ~45 líneas. Es lo más barato que se le puede sumar a un nivel, y ahora está dicho donde se lee.
+
+#### Un defecto encontrado al llegar, antes de todo lo demás
+
+Tras el `git pull` el **tablero estaba desactualizado respecto al banco**: el otro PC corrigió 70
+líneas de Matemática de 3° y no lo regeneró, así que mostraba el texto viejo de una pregunta que
+ya no existe. Importa porque la aprobación se hace ahí: se habría firmado un texto ausente del
+banco, y la marca se aplica por id. **La corrección de un banco y `generar-tablero.py` van
+siempre juntas.**
+
+#### Verificación
+
+Con `scripts/cdp.mjs`, jugando: Vocabulario de 7° con sus 4 etapas de 30 y una pregunta real; el
+Sin Fin con **7 aciertos seguidos**, récord guardado y premio pagado; 1.500 operaciones sin un
+error de aritmética, sin opciones repetidas, sin empates de valor y **sin decimales**; el juego
+sobrevive si `calculo.js` no carga; la landing sin desborde a 375 y 1280 px. **8° y 3° sin
+regresión, y cero errores de consola y cero 404 en los tres.**
+
+- **Pendiente inmediato:** 3° básico (Vocabulario y, si se decide, su Sin Fin).
+- **Abiertas en `pendiente.md`:** **A8** (la frase de la landing cuando A1 cierre), **A10**
+  (Vocabulario en 3°, que suma voz y va después de cerrar su banco), **A12** (migrar el Reto de
+  Cálculo de 8° al motor compartido: hoy hay solape, y es un cambio sobre producción que merece su
+  propio paso) y **A13** (Sin Fin en 3°, que antes necesita una decisión: 3° juega `SIN_RELOJ` a
+  propósito y un Sin Fin es por definición un juego de velocidad).
+- **Pendiente de Roberto:** sin cambios — **la aprobación pedagógica** sigue siendo el camino
+  crítico, ahora con 171 objetivos.

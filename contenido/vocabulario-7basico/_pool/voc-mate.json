@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué son los \"números enteros\"?",
+   "opciones": [
+    "Los números naturales, sus opuestos negativos y el cero",
+    "Los números que pueden escribirse como una fracción exacta",
+    "Los números que resultan de dividir dos cantidades distintas",
+    "Los números que se ubican solo a la derecha del cero"
+   ],
+   "correcta": 0,
+   "tip": "Incluyen los negativos, que los naturales no tienen.",
+   "id": "voc7-mate-1"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es el \"valor absoluto\" de un número?",
+   "opciones": [
+    "Su distancia hasta el cero, sin considerar el signo",
+    "El número que se obtiene al cambiarle el signo al original",
+    "El resultado de multiplicar ese número por sí mismo una vez",
+    "La cifra que ocupa la posición más a la izquierda del número"
+   ],
+   "correcta": 0,
+   "tip": "Por eso el de −5 y el de 5 dan lo mismo.",
+   "id": "voc7-mate-2"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué son dos números \"opuestos\"?",
+   "opciones": [
+    "Dos números que están a igual distancia del cero, con distinto signo",
+    "Dos números cuyo producto da como resultado exactamente uno",
+    "Dos números que al sumarse entre sí dan un resultado siempre positivo",
+    "Dos números que tienen las mismas cifras en distinto orden"
+   ],
+   "correcta": 0,
+   "tip": "Sumados dan cero: −7 y 7.",
+   "id": "voc7-mate-3"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En una fracción, ¿qué indica el \"denominador\"?",
+   "opciones": [
+    "En cuántas partes iguales se dividió el entero completo",
+    "Cuántas de esas partes se están tomando en total",
+    "El resultado que se obtiene al efectuar la división indicada",
+    "La cantidad de veces que la fracción cabe dentro del entero"
+   ],
+   "correcta": 0,
+   "tip": "Es el de abajo: dice en cuántos pedazos se partió.",
+   "id": "voc7-mate-4"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En una fracción, ¿qué indica el \"numerador\"?",
+   "opciones": [
+    "Cuántas de las partes iguales se están considerando",
+    "En cuántas partes iguales quedó dividido el entero",
+    "El número por el cual hay que multiplicar la fracción",
+    "La diferencia entre el entero y la parte que se tomó"
+   ],
+   "correcta": 0,
+   "tip": "Es el de arriba: dice cuántos pedazos se toman.",
+   "id": "voc7-mate-5"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es el \"recíproco\" de una fracción?",
+   "opciones": [
+    "La fracción que resulta de intercambiar numerador y denominador",
+    "La fracción equivalente que se obtiene al simplificarla del todo",
+    "La fracción con el mismo valor pero escrita como número decimal",
+    "La fracción que se obtiene al cambiarle el signo a sus términos"
+   ],
+   "correcta": 0,
+   "tip": "El de 2/3 es 3/2, y multiplicados dan uno.",
+   "id": "voc7-mate-6"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué significa un \"porcentaje\"?",
+   "opciones": [
+    "Una parte expresada respecto de un total de cien unidades",
+    "Una parte expresada respecto del total real de la cantidad",
+    "La diferencia entre dos cantidades medidas en momentos distintos",
+    "El resultado de dividir una cantidad por el número de partes"
+   ],
+   "correcta": 0,
+   "tip": "'Por ciento' significa literalmente 'de cada cien'.",
+   "id": "voc7-mate-7"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En una potencia, ¿qué es la \"base\"?",
+   "opciones": [
+    "El número que se multiplica por sí mismo varias veces",
+    "El número que indica cuántas veces se hace la multiplicación",
+    "El resultado final que se obtiene al desarrollar la potencia",
+    "El número que se resta al exponente para simplificarla"
+   ],
+   "correcta": 0,
+   "tip": "En 2⁵, es el 2.",
+   "id": "voc7-mate-8"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En una potencia, ¿qué es el \"exponente\"?",
+   "opciones": [
+    "El número que indica cuántas veces se repite la base",
+    "El número que se multiplica por sí mismo varias veces seguidas",
+    "El valor que se obtiene después de efectuar la operación",
+    "El número que acompaña a la base en una suma algebraica"
+   ],
+   "correcta": 0,
+   "tip": "En 2⁵, es el 5.",
+   "id": "voc7-mate-9"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es la \"notación científica\"?",
+   "opciones": [
+    "Una forma de escribir números muy grandes o muy pequeños con potencias",
+    "Una forma de expresar cualquier número usando únicamente cifras enteras",
+    "Una manera de ordenar números de mayor a menor en una tabla",
+    "Un método para redondear un resultado a la cifra más cercana"
+   ],
+   "correcta": 0,
+   "tip": "Sirve para no escribir una fila interminable de ceros.",
+   "id": "voc7-mate-10"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es el \"lenguaje algebraico\"?",
+   "opciones": [
+    "El uso de letras para representar números o cantidades desconocidas",
+    "El conjunto de reglas para resolver una ecuación paso a paso",
+    "La forma de escribir un número usando cifras y no palabras",
+    "El vocabulario técnico que se emplea en geometría y en medición de figuras"
+   ],
+   "correcta": 0,
+   "tip": "Permite decir 'el doble de un número' como 2x.",
+   "id": "voc7-mate-11"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué son \"términos semejantes\"?",
+   "opciones": [
+    "Términos que tienen la misma parte literal con el mismo exponente",
+    "Términos que tienen exactamente el mismo coeficiente numérico delante",
+    "Términos que aparecen del mismo lado del signo igual",
+    "Términos cuyo resultado final coincide al reemplazar la letra"
+   ],
+   "correcta": 0,
+   "tip": "3x y 5x lo son; 3x y 5x² no.",
+   "id": "voc7-mate-12"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es \"reducir\" una expresión algebraica?",
+   "opciones": [
+    "Juntar los términos semejantes para dejarla más simple",
+    "Reemplazar las letras por números y calcular el resultado",
+    "Dividir todos sus términos por el número más pequeño",
+    "Cambiar el orden de sus términos según el signo que llevan"
+   ],
+   "correcta": 0,
+   "tip": "4x + 3x se reduce a 7x.",
+   "id": "voc7-mate-13"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"coeficiente\"?",
+   "opciones": [
+    "El número que multiplica a la letra dentro de un término",
+    "La letra que representa el valor desconocido de la expresión",
+    "El exponente al que está elevada la parte literal del término",
+    "El resultado que se obtiene al sumar todos los términos"
+   ],
+   "correcta": 0,
+   "tip": "En 7x, es el 7.",
+   "id": "voc7-mate-14"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es una \"proporción directa\"?",
+   "opciones": [
+    "Una relación en que si una cantidad aumenta, la otra también lo hace",
+    "Una relación en que si una cantidad aumenta, la otra disminuye",
+    "Una relación en que ambas cantidades se mantienen siempre iguales",
+    "Una relación en que el producto de las cantidades es constante"
+   ],
+   "correcta": 0,
+   "tip": "Más kilos de pan, más pesos a pagar.",
+   "id": "voc7-mate-15"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es una \"proporción inversa\"?",
+   "opciones": [
+    "Una relación en que si una cantidad aumenta, la otra disminuye",
+    "Una relación en que ambas cantidades crecen en la misma medida",
+    "Una relación en que el cociente entre las cantidades es constante",
+    "Una relación en que una cantidad no depende en nada de la otra"
+   ],
+   "correcta": 0,
+   "tip": "Más trabajadores, menos días para terminar la obra.",
+   "id": "voc7-mate-16"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"polígono\"?",
+   "opciones": [
+    "Una figura plana cerrada formada por segmentos de recta",
+    "Una figura plana cuyo borde es una línea completamente curva",
+    "Un cuerpo geométrico con caras planas y volumen definido",
+    "Una figura formada por dos rectas que se cruzan en un punto"
+   ],
+   "correcta": 0,
+   "tip": "'Poli' es muchos y 'gono' es ángulo.",
+   "id": "voc7-mate-17"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"ángulo interior\" de un polígono?",
+   "opciones": [
+    "El ángulo que forman dos lados consecutivos dentro de la figura",
+    "El ángulo que forma un lado con la prolongación del siguiente",
+    "El ángulo que se mide entre dos vértices opuestos de la figura",
+    "El ángulo que resulta de dividir la figura en dos partes iguales"
+   ],
+   "correcta": 0,
+   "tip": "Queda adentro de la figura, entre dos lados que se tocan.",
+   "id": "voc7-mate-18"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En un círculo, ¿qué es el \"radio\"?",
+   "opciones": [
+    "El segmento que va desde el centro hasta cualquier punto del borde",
+    "El segmento que atraviesa el círculo pasando por su centro",
+    "La longitud completa del contorno que rodea al círculo",
+    "La superficie total que queda encerrada dentro del contorno del círculo"
+   ],
+   "correcta": 0,
+   "tip": "Del centro al borde: es la mitad del diámetro.",
+   "id": "voc7-mate-19"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En un círculo, ¿qué es el \"diámetro\"?",
+   "opciones": [
+    "El segmento que une dos puntos del borde pasando por el centro",
+    "El segmento que va desde el centro hasta un punto cualquiera del borde",
+    "La medida de todo el contorno que encierra a la figura",
+    "La distancia más corta entre dos puntos del borde del círculo"
+   ],
+   "correcta": 0,
+   "tip": "Mide exactamente el doble que el radio.",
+   "id": "voc7-mate-20"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es la \"circunferencia\"?",
+   "opciones": [
+    "La línea curva cerrada cuyos puntos equidistan de un centro",
+    "La superficie encerrada dentro de esa línea curva cerrada",
+    "El segmento que une el centro con un punto del borde",
+    "La figura formada por un círculo y todos sus radios juntos"
+   ],
+   "correcta": 0,
+   "tip": "Es la línea; lo de adentro es el círculo.",
+   "id": "voc7-mate-21"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué diferencia hay entre \"perímetro\" y \"área\"?",
+   "opciones": [
+    "El perímetro mide el contorno y el área mide la superficie",
+    "El perímetro mide la superficie y el área mide el contorno",
+    "El perímetro se usa en figuras planas y el área en cuerpos",
+    "El perímetro se mide en unidades cuadradas y el área no"
+   ],
+   "correcta": 0,
+   "tip": "Uno se recorre por el borde; el otro se cubre por dentro.",
+   "id": "voc7-mate-22"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"trapecio\"?",
+   "opciones": [
+    "Un cuadrilátero que tiene solo un par de lados paralelos",
+    "Un cuadrilátero que tiene sus dos pares de lados paralelos",
+    "Un cuadrilátero con los cuatro lados de la misma medida",
+    "Un cuadrilátero con sus cuatro ángulos interiores rectos"
+   ],
+   "correcta": 0,
+   "tip": "Se distingue del paralelogramo justamente por eso.",
+   "id": "voc7-mate-23"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"paralelogramo\"?",
+   "opciones": [
+    "Un cuadrilátero con sus dos pares de lados opuestos paralelos",
+    "Un cuadrilátero que tiene un solo par de lados paralelos entre sí",
+    "Un cuadrilátero cuyos ángulos interiores suman siempre lo mismo",
+    "Un cuadrilátero inscrito dentro de una circunferencia cualquiera"
+   ],
+   "correcta": 0,
+   "tip": "El cuadrado y el rombo son casos particulares de esta familia.",
+   "id": "voc7-mate-24"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"par ordenado\" en el plano cartesiano?",
+   "opciones": [
+    "Dos números que indican la posición de un punto, en cierto orden",
+    "Dos números que representan la distancia entre dos puntos dados",
+    "Dos números que se suman para obtener la posición en un eje",
+    "Dos números que siempre deben tener el mismo signo entre sí"
+   ],
+   "correcta": 0,
+   "tip": "El orden importa: (3, 5) no es lo mismo que (5, 3).",
+   "id": "voc7-mate-25"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En estadística, ¿qué es una \"muestra\"?",
+   "opciones": [
+    "Una parte del total que se estudia para estimar cómo es el conjunto",
+    "El conjunto completo de todos los casos que interesa estudiar",
+    "El dato que más veces se repite dentro de un grupo de valores",
+    "La diferencia entre el valor más alto y el más bajo de todo el grupo"
+   ],
+   "correcta": 0,
+   "tip": "Es un pedazo representativo, no el total.",
+   "id": "voc7-mate-26"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es la \"frecuencia absoluta\" de un dato?",
+   "opciones": [
+    "La cantidad de veces que ese dato aparece en el conjunto",
+    "La proporción que ese dato representa respecto del total",
+    "El valor que ocupa la posición central de todos los datos",
+    "El promedio que se obtiene al sumar y dividir los valores"
+   ],
+   "correcta": 0,
+   "tip": "Es un conteo directo: cuántas veces apareció.",
+   "id": "voc7-mate-27"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es la \"mediana\" de un conjunto de datos?",
+   "opciones": [
+    "El valor que queda al centro cuando los datos se ordenan",
+    "El valor que se repite más veces dentro de todo el conjunto",
+    "El resultado de sumar los datos y dividir por su cantidad",
+    "La diferencia entre el dato mayor y el dato menor del grupo"
+   ],
+   "correcta": 0,
+   "tip": "Hay que ordenar primero; después se busca el del medio.",
+   "id": "voc7-mate-28"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es la \"moda\" de un conjunto de datos?",
+   "opciones": [
+    "El valor que aparece la mayor cantidad de veces en el conjunto",
+    "El valor que ocupa la posición central al ordenar todos los datos",
+    "El valor promedio que resulta de repartir el total en partes iguales",
+    "El valor que separa al conjunto en dos mitades del mismo tamaño"
+   ],
+   "correcta": 0,
+   "tip": "Es el más 'popular': el que más se repite.",
+   "id": "voc7-mate-29"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es el \"rango\" de un conjunto de datos?",
+   "opciones": [
+    "La diferencia entre el valor más alto y el valor más bajo",
+    "La cantidad total de datos distintos que contiene el conjunto",
+    "El valor central que queda al ordenar los datos de menor a mayor",
+    "El promedio entre los dos valores extremos de todo el conjunto"
+   ],
+   "correcta": 0,
+   "tip": "Mide cuánto se estiran los datos, de un extremo al otro.",
+   "id": "voc7-mate-30"
+  }
+ ]
+}

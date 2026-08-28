@@ -49,8 +49,9 @@ Es una app web mobile-first y se reutiliza. Ver `docs/roadmap-tecnico.md` §1.
 
 ## 🔴 El bloqueo real, y no es técnico
 
-**La aprobación pedagógica de 3° y 7°: 167 objetivos, 1.336 preguntas por muestreo, 7 a 11
-horas de Roberto.** Nadie puede hacerlo por él.
+**La aprobación pedagógica de 3° y 7°: 171 objetivos, 1.368 preguntas por muestreo, 7 a 11
+horas de Roberto.** Nadie puede hacerlo por él. (Eran 167 y 1.336 antes de que 7° sumara sus
+4 áreas de Vocabulario el 28/08.)
 
 Es el camino crítico de todo lo demás: 3° y 7° llevan meses escritos y sin una sola pregunta
 firmada, y **anunciarlos antes de aprobarlos contradice la regla del proyecto de no prometer lo
@@ -76,10 +77,16 @@ Para poder decir "tengo 3°, 7° y 8°". Es el hito más cercano y el de mejor r
 |---|---|---|---|
 | A1 | **Aprobación pedagógica de 3° y 7°** (arriba) | 7–11 h | Roberto |
 | ~~A2~~ | ~~**8 villanos** (4 de 3° + 4 de 7°)~~ ✅ **HECHO (28/08)**: 16 imágenes (normal + derrotado) generadas, procesadas (`procesar-lote8.py`) y cableadas; `PLACEHOLDER` fuera | — | — |
-| A3 | Landing y `docs/comercial.md` hablando de tres cursos — **solo después de A1** | ~½ sesión | código |
+| ~~A3~~ | ~~Landing y `docs/comercial.md` hablando de tres cursos~~ ✅ **HECHO (28/08)**: se hizo **antes** de A1 sin romper la regla, diciendo el estado real — la landing declara que las 2.536 de 8° están aprobadas una a una y que 3° y 7° están **en revisión pedagógica**. Ver A8 | — | — |
+| A8 | **Al cerrar A1, actualizar esa frase.** La tarjeta de la landing y `docs/comercial.md` dicen "los bancos de 3° y 7° están en revisión pedagógica"; cuando se aprueben pasa a "7.524 preguntas aprobadas una a una", que es un argumento de venta mucho más fuerte | 10 min | código |
 | A4 | Conversación con el colegio sobre `CN07 OA 01/02/03` (sexualidad, currículum obligatorio; el colegio piloto es salesiano) | — | Roberto |
 | ~~A5~~ | ~~Escuchar el clip de voz de **copihue**~~ ✅ **HECHO (28/08)**: Roberto eligió la pronunciación `ko.piˈwe` (IPA en `_FONEMAS`); los 2 clips regenerados y confirmados | — | — |
 | A6 | Confirmar el **lunes 31/08** que apareció la primera foto semanal | 1 min | Roberto |
+| ~~A9~~ | ~~**Vocabulario en 7°**~~ ✅ **HECHO (28/08)**: 120 palabras en 4 áreas (`contenido/vocabulario-7basico`), la bandera encendida y el handler restaurado. El código ya estaba en el fork: solo faltaba el dato | — | — |
+| A10 | **Vocabulario en 3°**, el mismo patrón. Ojo: 3° suma **voz** (~600 clips de Azure), así que va **después** de que su banco esté cerrado — la voz se genera al final, nunca en paralelo con las auditorías | ~1 sesión + Azure | código |
+| ~~A11~~ | ~~**Reto Sin Fin de cálculo en 7°**~~ ✅ **HECHO (28/08)**: motor compartido en `assets/js/calculo.js` + `genCalc7()` con el temario de 7°. **No consume banco de preguntas**: las operaciones se generan por código, así que no suma nada a la aprobación pedagógica ni a la voz | — | — |
+| A12 | **Migrar el Reto de Cálculo de 8° al motor compartido.** Hoy 8° tiene su propio motor inline (171 líneas) y `assets/js/calculo.js` existe aparte: hay solape. Es un cambio sobre la app en producción, así que va como paso propio y con su verificación | ~½ sesión | código |
+| A13 | **Reto Sin Fin en 3°** — pero antes hay una decisión de producto: 3° juega `SIN_RELOJ` a propósito por la edad, y un Sin Fin es por definición un juego de velocidad. Habría que decidir si se mide por tiempo o solo por racha | decisión + ~2 h | Roberto decide |
 | ~~A7~~ | ~~**Marcar el contenido sensible en el armador**~~ ✅ **HECHO (28/08, Sesión 67)**: `assets/js/sensible.js` (mapa de los 20 OA + 5 categorías) + leyenda/emojis/resumen en `arrancarArmador` de las tres apps. La decisión se toma al construir el enlace (la casilla por capítulo es el control); el enlace de venta no cambió. Verificado con `cdp.mjs`, cero consola / cero 404 | — | — |
 
 **Las portadas de capítulo siguen prestadas a propósito.** Son ~46 imágenes más para una
@@ -113,6 +120,8 @@ Estándar y trampas ya escritos, **no reinventarlos**:
 `docs/prompt-validador-preguntas.md` (control de calidad independiente del banco) ·
 `docs/arquitectura-pipeline-preguntas.md` (diseño objetivo del pipeline por pregunta, NO implementado
 hoy) · `docs/arquitectura-construccion-etapas.md` (diseño objetivo OA→etapa, NO implementado hoy) ·
+`docs/modulos-transversales.md` (el Reto de cálculo, las lecturas y el Vocabulario: son otra
+categoría y tienen su propio estándar) ·
 `docs/encargo-banco.md` (parametrizado por curso) · `docs/cuidados-matematica.md` ·
 `docs/cuidados-historia.md` · `docs/cuidados-ciencias.md` · `docs/cuidados-lenguaje-3basico.md` ·
 `docs/esquema-oa-json.md`.

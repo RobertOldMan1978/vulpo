@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"microorganismo\"?",
+   "opciones": [
+    "Un ser vivo tan pequeño que solo se ve con microscopio",
+    "Una célula especializada que forma parte de un tejido animal",
+    "Una sustancia que el cuerpo produce para defenderse de una infección",
+    "Un compuesto químico que se disuelve fácilmente en agua"
+   ],
+   "correcta": 0,
+   "tip": "'Micro' es pequeño y 'organismo' es ser vivo.",
+   "id": "voc7-cien-1"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"patógeno\"?",
+   "opciones": [
+    "Un agente capaz de provocar una enfermedad en el organismo",
+    "Una célula del sistema inmune que destruye microorganismos",
+    "Una sustancia que el cuerpo libera al subir la temperatura",
+    "Un tejido que recubre y protege las superficies del cuerpo"
+   ],
+   "correcta": 0,
+   "tip": "'Pato' se relaciona con enfermedad, como en 'patología'.",
+   "id": "voc7-cien-2"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"anticuerpo\"?",
+   "opciones": [
+    "Una proteína que el organismo produce para neutralizar a un invasor",
+    "Una barrera física que impide la entrada de microorganismos al cuerpo",
+    "Una célula que transporta el oxígeno hacia todos los tejidos",
+    "Una sustancia que los hongos liberan al descomponer materia"
+   ],
+   "correcta": 0,
+   "tip": "Actúa 'contra' algo que entró al cuerpo.",
+   "id": "voc7-cien-3"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué hace una \"vacuna\"?",
+   "opciones": [
+    "Prepara al sistema inmune para reconocer a un agente antes de enfermar",
+    "Destruye directamente a las bacterias que ya están dentro del cuerpo",
+    "Reemplaza a las células dañadas por una infección prolongada",
+    "Baja la temperatura corporal cuando el organismo tiene fiebre"
+   ],
+   "correcta": 0,
+   "tip": "Actúa antes, entrenando; no cura una infección en curso.",
+   "id": "voc7-cien-4"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"virus\"?",
+   "opciones": [
+    "Un agente que solo se reproduce dentro de una célula que infecta",
+    "Un organismo unicelular capaz de reproducirse por sí solo",
+    "Un hongo microscópico que descompone la materia orgánica",
+    "Una proteína defensiva que circula por la sangre del organismo"
+   ],
+   "correcta": 0,
+   "tip": "Sin una célula que lo aloje, no puede multiplicarse.",
+   "id": "voc7-cien-5"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué caracteriza a una \"bacteria\"?",
+   "opciones": [
+    "Es un organismo de una sola célula, sin núcleo definido",
+    "Es un agente que necesita infectar una célula para reproducirse",
+    "Es un organismo de varias células que se alimenta de restos",
+    "Es una estructura hecha solo de material genético y proteínas"
+   ],
+   "correcta": 0,
+   "tip": "A diferencia de un virus, es un ser vivo completo.",
+   "id": "voc7-cien-6"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"fermentación\"?",
+   "opciones": [
+    "Un proceso en que microorganismos transforman una sustancia sin oxígeno",
+    "Un proceso en que el calor descompone la materia orgánica del suelo",
+    "Un proceso en que una sustancia sólida se disuelve dentro de un líquido",
+    "Un proceso en que dos elementos se combinan formando un compuesto"
+   ],
+   "correcta": 0,
+   "tip": "Es lo que ocurre al hacer pan, yogur o chucrut.",
+   "id": "voc7-cien-7"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"biotecnología\"?",
+   "opciones": [
+    "El uso de seres vivos o sus procesos para obtener productos útiles",
+    "El estudio de los organismos que habitan los ambientes extremos",
+    "La técnica que permite observar células con distintos microscopios",
+    "La clasificación de los seres vivos según sus rasgos compartidos"
+   ],
+   "correcta": 0,
+   "tip": "Une 'bio', vida, con 'tecnología', aplicación práctica.",
+   "id": "voc7-cien-8"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En Ciencias, ¿qué es la \"presión\"?",
+   "opciones": [
+    "La fuerza que actúa repartida sobre cada unidad de superficie",
+    "La cantidad total de materia que contiene un cuerpo cualquiera",
+    "La resistencia que opone un cuerpo a cambiar su temperatura",
+    "La rapidez con que un objeto recorre una distancia dada"
+   ],
+   "correcta": 0,
+   "tip": "Depende de la fuerza y también del área sobre la que se aplica.",
+   "id": "voc7-cien-9"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué explica la \"tectónica de placas\"?",
+   "opciones": [
+    "Que la capa externa de la Tierra está partida en bloques que se mueven",
+    "Que el interior de la Tierra se enfría lentamente desde su formación",
+    "Que las rocas cambian de tipo según la presión y la temperatura",
+    "Que los continentes se desgastan por la acción del agua y el viento"
+   ],
+   "correcta": 0,
+   "tip": "Explica por qué los sismos y volcanes no están repartidos al azar.",
+   "id": "voc7-cien-10"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"epicentro\" de un sismo?",
+   "opciones": [
+    "El punto de la superficie situado justo sobre el origen del movimiento",
+    "El punto del interior de la Tierra donde se libera la energía",
+    "La zona donde se registran los daños más graves sobre las viviendas cercanas",
+    "El lugar donde dos placas de la corteza terrestre se separan"
+   ],
+   "correcta": 0,
+   "tip": "Está en la superficie; el origen mismo está más abajo.",
+   "id": "voc7-cien-11"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Cuál es la diferencia entre \"magma\" y \"lava\"?",
+   "opciones": [
+    "El magma está bajo la superficie y la lava ya salió al exterior",
+    "El magma es sólido y caliente, mientras que la lava es líquida",
+    "El magma proviene del manto y la lava se forma en la corteza",
+    "El magma contiene gases y la lava no contiene ninguno de ellos"
+   ],
+   "correcta": 0,
+   "tip": "Es la misma materia; cambia el nombre al salir a la superficie.",
+   "id": "voc7-cien-12"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una roca \"ígnea\"?",
+   "opciones": [
+    "Una roca formada al enfriarse y solidificarse el material fundido",
+    "Una roca formada por capas de sedimentos comprimidos con el tiempo",
+    "Una roca transformada por efecto del calor y la presión del interior",
+    "Una roca desgastada por la acción continua del agua y del viento"
+   ],
+   "correcta": 0,
+   "tip": "'Ignis' en latín es fuego.",
+   "id": "voc7-cien-13"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una roca \"sedimentaria\"?",
+   "opciones": [
+    "Una roca formada por capas de partículas acumuladas y compactadas",
+    "Una roca originada por el enfriamiento del material fundido interno",
+    "Una roca modificada en profundidad por la presión y el calor intensos",
+    "Una roca expulsada por un volcán durante una erupción explosiva"
+   ],
+   "correcta": 0,
+   "tip": "Se forma por acumulación, capa sobre capa.",
+   "id": "voc7-cien-14"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una roca \"metamórfica\"?",
+   "opciones": [
+    "Una roca que cambió de forma por acción del calor y la presión",
+    "Una roca originada al solidificarse el magma dentro de la corteza",
+    "Una roca compuesta por restos de seres vivos acumulados en el fondo",
+    "Una roca fragmentada por los cambios bruscos de temperatura exterior"
+   ],
+   "correcta": 0,
+   "tip": "'Metamorfosis' es transformación.",
+   "id": "voc7-cien-15"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"meteorización\"?",
+   "opciones": [
+    "La fragmentación de las rocas en el mismo lugar donde se encuentran",
+    "El traslado de partículas de roca hacia zonas más bajas del terreno",
+    "La acumulación de sedimentos en el fondo de un lago o del mar",
+    "La transformación de una roca en otra por efecto de la presión"
+   ],
+   "correcta": 0,
+   "tip": "La roca se rompe, pero todavía no se mueve de su sitio.",
+   "id": "voc7-cien-16"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"erosión\"?",
+   "opciones": [
+    "El desgaste y transporte de materiales por el agua, el viento o el hielo",
+    "La ruptura de una roca en fragmentos pequeños sin que estos se desplacen",
+    "La formación de nuevas rocas a partir de sedimentos comprimidos",
+    "El ascenso de material fundido desde el interior hacia la superficie"
+   ],
+   "correcta": 0,
+   "tip": "Aquí el material sí se mueve de lugar.",
+   "id": "voc7-cien-17"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿En qué se diferencian \"tiempo atmosférico\" y \"clima\"?",
+   "opciones": [
+    "El tiempo es el estado de hoy y el clima es el patrón de muchos años",
+    "El tiempo se mide con instrumentos y el clima solo se estima",
+    "El tiempo depende del lugar y el clima es igual en todo el planeta",
+    "El tiempo describe la temperatura y el clima describe la humedad"
+   ],
+   "correcta": 0,
+   "tip": "Uno cambia de un día a otro; el otro se describe con promedios largos.",
+   "id": "voc7-cien-18"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"sustancia pura\"?",
+   "opciones": [
+    "Una materia formada por un solo tipo de componente, sin mezclas",
+    "Una materia que se disuelve por completo al ponerla en agua",
+    "Una materia que no reacciona al combinarse con otras sustancias",
+    "Una materia cuyos componentes se distinguen a simple vista"
+   ],
+   "correcta": 0,
+   "tip": "Tiene una sola clase de partícula en toda su extensión.",
+   "id": "voc7-cien-19"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"mezcla homogénea\"?",
+   "opciones": [
+    "Una mezcla en que los componentes no se distinguen a simple vista",
+    "Una mezcla en que cada componente se reconoce claramente por separado",
+    "Una mezcla formada solo por sustancias en estado líquido",
+    "Una mezcla que puede separarse únicamente aplicando calor"
+   ],
+   "correcta": 0,
+   "tip": "El agua con sal disuelta es el ejemplo típico.",
+   "id": "voc7-cien-20"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"mezcla heterogénea\"?",
+   "opciones": [
+    "Una mezcla en que se pueden distinguir sus componentes a la vista",
+    "Una mezcla en que todo se ve uniforme en cualquier parte del volumen",
+    "Una mezcla que contiene siempre un sólido y un líquido combinados",
+    "Una mezcla cuyos componentes reaccionan formando otra sustancia"
+   ],
+   "correcta": 0,
+   "tip": "El agua con arena es el ejemplo típico.",
+   "id": "voc7-cien-21"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En una disolución, ¿qué es el \"soluto\"?",
+   "opciones": [
+    "La sustancia que se disuelve y suele estar en menor cantidad",
+    "La sustancia que disuelve a la otra y está en mayor cantidad",
+    "La mezcla completa que resulta de combinar las dos sustancias",
+    "El residuo que queda en el fondo cuando ya no se disuelve más"
+   ],
+   "correcta": 0,
+   "tip": "En el agua con azúcar, es el azúcar.",
+   "id": "voc7-cien-22"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En una disolución, ¿qué es el \"solvente\"?",
+   "opciones": [
+    "La sustancia que disuelve a la otra y suele estar en mayor cantidad",
+    "La sustancia que se disuelve y aparece en menor proporción",
+    "El conjunto formado por las dos sustancias ya combinadas",
+    "La cantidad máxima de sustancia que es posible disolver en un líquido"
+   ],
+   "correcta": 0,
+   "tip": "En el agua con azúcar, es el agua.",
+   "id": "voc7-cien-23"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"cambio físico\"?",
+   "opciones": [
+    "Una transformación en que la sustancia sigue siendo la misma",
+    "Una transformación en que se forman una o más sustancias nuevas",
+    "Una transformación que solo ocurre al aplicar calor a un material",
+    "Una transformación que no puede revertirse de ninguna manera"
+   ],
+   "correcta": 0,
+   "tip": "El hielo que se derrite sigue siendo agua.",
+   "id": "voc7-cien-24"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"cambio químico\"?",
+   "opciones": [
+    "Una transformación en que se forman sustancias distintas de las iniciales",
+    "Una transformación en que la sustancia únicamente cambia su estado físico",
+    "Una transformación en que un sólido se reparte dentro de un líquido",
+    "Una transformación que siempre se puede deshacer enfriando la mezcla"
+   ],
+   "correcta": 0,
+   "tip": "Después del cambio, lo que hay ya no es lo mismo que había antes.",
+   "id": "voc7-cien-25"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"densidad\" de un material?",
+   "opciones": [
+    "La relación entre la masa de un cuerpo y el volumen que ocupa",
+    "La cantidad total de materia que un cuerpo contiene en su interior",
+    "La fuerza con que la Tierra atrae a un cuerpo hacia su superficie",
+    "La resistencia que ofrece un cuerpo al ser deformado por una fuerza"
+   ],
+   "correcta": 0,
+   "tip": "Por eso un kilo de plumas y uno de plomo ocupan espacios muy distintos.",
+   "id": "voc7-cien-26"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué significa que un gas sea \"compresible\"?",
+   "opciones": [
+    "Que su volumen puede reducirse bastante al aumentar la presión",
+    "Que sus partículas se mueven más rápido al subir la temperatura",
+    "Que puede transformarse en líquido al enfriarse lo suficiente",
+    "Que ocupa siempre todo el espacio del recipiente que lo contiene"
+   ],
+   "correcta": 0,
+   "tip": "Por eso cabe tanto aire dentro de un neumático.",
+   "id": "voc7-cien-27"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"barrera primaria\" de defensa?",
+   "opciones": [
+    "La protección que impide la entrada del agente, como la piel",
+    "La respuesta que produce anticuerpos específicos contra un invasor",
+    "La reacción inflamatoria que aparece en la zona de una herida",
+    "La memoria que permite responder más rápido a una segunda infección"
+   ],
+   "correcta": 0,
+   "tip": "Es la primera línea: evita que el agente entre siquiera.",
+   "id": "voc7-cien-28"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"antibiótico\"?",
+   "opciones": [
+    "Un medicamento que actúa contra las bacterias, no contra los virus",
+    "Un medicamento que alivia el dolor y baja la fiebre del enfermo",
+    "Una sustancia que el propio cuerpo produce para atacar infecciones",
+    "Un preparado que entrena al sistema inmune antes de enfermarse"
+   ],
+   "correcta": 0,
+   "tip": "Por eso no sirve para un resfrío, que es de origen viral.",
+   "id": "voc7-cien-29"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"placa tectónica\"?",
+   "opciones": [
+    "Un gran bloque rígido de la capa externa terrestre que se desplaza",
+    "Una capa de roca fundida que circula bajo la corteza del planeta",
+    "Una franja donde se acumulan los sedimentos del fondo marino",
+    "Una grieta profunda por donde asciende el material del interior"
+   ],
+   "correcta": 0,
+   "tip": "Encajan como piezas, y sus bordes son donde ocurre casi todo.",
+   "id": "voc7-cien-30"
+  }
+ ]
+}

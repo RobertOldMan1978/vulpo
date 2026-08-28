@@ -78,7 +78,7 @@ El techo de lo que un colegio puede gastar no lo pone el precio: lo pone **cuán
 cubre VULPO**. Con solo 8° básico eran **$630.000 al año** a precio Fundador con los tres 8°, y
 vender a un colegio cuesta lo mismo pague lo que pague.
 
-**Por eso la palanca nunca fue subir el precio, sino agregar niveles.** Estado al 27/08/2026:
+**Por eso la palanca nunca fue subir el precio, sino agregar niveles.** Estado al 28/08/2026:
 
 | Nivel | Contenido | Estado |
 |---|---|---|
@@ -86,9 +86,17 @@ vender a un colegio cuesta lo mismo pague lo que pague.
 | **7° básico** (`/7mo/`) | 2.430 preguntas, 4 asignaturas | ⚠️ jugable, **sin aprobación pedagógica** |
 | **3° básico** (`/3ro/`) | 2.558 preguntas, 4 asignaturas + voz pregrabada | ⚠️ jugable, **sin aprobación pedagógica** |
 
-**Nada de 3° ni 7° se le ofrece a un colegio todavía**: ninguno de los dos está enlazado desde
-el sitio y sus bancos nacen `revisada:false`. Aprobarlos es lo que **triplica el techo por
-colegio** sin triplicar el esfuerzo de venta, y hoy es el trabajo de mayor retorno pendiente.
+Desde el 28/08/2026 los tres cursos **sí se nombran** en la landing, pero **con su estado real
+dicho de frente**: la página declara que las 2.536 preguntas de 8° están aprobadas una a una y
+que los bancos de 3° y 7° están en revisión pedagógica. No es un matiz de redacción, es la regla
+del proyecto: **no se promete lo que no hay**, y un director que pregunte "¿quién revisó esto?"
+merece la respuesta verdadera.
+
+**Qué se puede vender hoy, entonces:** 8° sin reservas. 3° y 7° **como piloto o con la revisión
+declarada**, nunca afirmando que su banco está aprobado.
+
+Terminar la aprobación de 3° y 7° es lo que **triplica el techo por colegio** sin triplicar el
+esfuerzo de venta, y sigue siendo el trabajo de mayor retorno pendiente.
 
 **En 7° hay además una conversación que ningún archivo resuelve:** los `CN07 OA 01/02/03` son
 sexualidad, ciclo menstrual, métodos de control de la natalidad e ITS. Es currículum obligatorio
@@ -163,7 +171,8 @@ la propuesta, el guion de reunión y la landing. **Léelo antes de una reunión 
 
 ## Qué se le promete a un colegio, y qué no
 
-**Sí:** 4 asignaturas de 8° básico, 2.536 preguntas revisadas alineadas a las Bases del MINEDUC,
+**Sí:** 4 asignaturas por curso en 3°, 7° y 8° básico —7.524 preguntas alineadas a las Bases del
+MINEDUC, de las cuales las 2.536 de 8° están aprobadas una a una—,
 **evaluación formativa alineada al Decreto 67/2018** (ver sección anterior), panel del profesor
 con mapa de dominio por OA, desafíos de refuerzo, ranking por curso, soporte y actualizaciones.
 Funciona en cualquier celular con internet, sin instalar nada.
@@ -171,7 +180,9 @@ Funciona en cualquier celular con internet, sin instalar nada.
 **No:**
 - ❌ **No funciona sin internet.** Verificado: no hay service worker y los bancos de preguntas se
   piden con `fetch`. **Nunca prometer uso sin conexión.**
-- ❌ **No cubre otros niveles.** Hoy solo 8° básico.
+- ❌ **No cubre todos los niveles.** Hoy 3°, 7° y 8° básico. Faltan 4°, 5° y 6°.
+- ❌ **No decir que 3° y 7° están "revisados".** Sus bancos están escritos y en revisión
+  pedagógica; afirmar lo contrario se cae a la primera pregunta de una UTP.
 - ❌ **No es una herramienta de calificación.** El panel es una brújula; así está descrito en el
   producto y así hay que venderlo.
 

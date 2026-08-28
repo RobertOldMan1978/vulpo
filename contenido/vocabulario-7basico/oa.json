@@ -1,0 +1,47 @@
+{
+ "asignatura": "Vocabulario",
+ "nivel": "7° básico · Todo el curso",
+ "codigo_asignatura": "VOC",
+ "nota_alcance": "Cuatro áreas y no cinco, a diferencia de 8°. La quinta de 8° es VOC-LECT, palabras de sus lecturas del colegio, y 7° no tiene módulo de Lectura: inventarle un área sin contenido detrás sería relleno. Si algún día 7° suma una lectura, se agrega su área aquí.",
+ "nota_codigos": "Los códigos son VOC-* igual que en 8°, a propósito. El guard que los excluye del mapa de dominio filtra por ese prefijo exacto (ver registrarOA), así que renombrarlos a VOC7-* haría que 7° empezara a enviar datos que el servidor descarta en silencio. Los bancos viven en archivos separados, así que no hay colisión; lo que sí distingue a 7° son los ids de las preguntas (voc7-*).",
+ "nota_evaluacion": "Vocabulario NO es una asignatura del currículum ni sus áreas son Objetivos de Aprendizaje del MINEDUC: son un apoyo transversal del juego. Por eso no aparece en el mapa de dominio del profesor y no debe presentarse a un colegio como cobertura curricular.",
+ "unidades": [
+  {
+   "id": "V1",
+   "titulo": "Vocabulario del curso",
+   "descripcion": "Palabras clave de las cuatro asignaturas de 7° básico.",
+   "oa": [
+    "VOC-HIST",
+    "VOC-CIEN",
+    "VOC-MATE",
+    "VOC-LENG"
+   ]
+  }
+ ],
+ "oa": [
+  {
+   "codigo": "VOC-HIST",
+   "eje": "Historia",
+   "unidad": "V1",
+   "texto": "Palabras clave de Historia, Geografía y Ciencias Sociales"
+  },
+  {
+   "codigo": "VOC-CIEN",
+   "eje": "Ciencias",
+   "unidad": "V1",
+   "texto": "Palabras clave de Ciencias Naturales"
+  },
+  {
+   "codigo": "VOC-MATE",
+   "eje": "Matemática",
+   "unidad": "V1",
+   "texto": "Palabras clave de Matemática"
+  },
+  {
+   "codigo": "VOC-LENG",
+   "eje": "Lenguaje",
+   "unidad": "V1",
+   "texto": "Palabras clave de Lengua y Literatura"
+  }
+ ]
+}
