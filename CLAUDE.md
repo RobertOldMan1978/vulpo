@@ -154,6 +154,10 @@ Orden tentativo, sujeto a prioridad de "verlo funcionar y atractivo" primero:
 
 ### Hacia dónde va el producto (acordado el 27/08/2026)
 
+**`pendiente.md` (en la raíz) es la lista viva de tareas** — qué falta, en qué orden, con su
+peso y en qué rama va cada cosa. Se actualiza en cada orden 66, y es por donde se empieza al
+retomar el proyecto o al abrir una rama nueva.
+
 **`docs/roadmap-tecnico.md` es el plan de mediano plazo:** web → **PWA** → piloto y métricas →
 **Capacitor** → Android → iOS, más el **modelo de suscripción anual por nivel escolar**. La
 decisión de fondo es **no reescribir en Flutter ni React Native**: VULPO ya es una app web
