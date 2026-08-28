@@ -4561,6 +4561,17 @@ Sesión corta, de habilitación y documentación. Sin cambios en el juego ni en 
     parte de él (registro de intentos, anti-memorización real) **depende del Bloque D** (progreso en
     el servidor). El pipeline queda documentado de punta a punta: **generador → scripts automáticos →
     validador → aprobación humana**.
+- **Validación de los bancos de 7° y 8° con el nuevo pipeline** (`docs/informe-validacion-bancos-7-8.md`):
+  se aplicó el Nivel 2 (scripts `auditar-banco-nivel`/`-numerico`/`-solape-oa` sobre las 4.744
+  preguntas) y el Nivel 1 (muestreo pedagógico con el validador V2: 8 subagentes, uno por asignatura
+  y curso, ~2 preguntas por OA, 328 en total, resolviendo cada una por su cuenta). **Resultado: 0
+  errores estructurales, 0 dobles-correctas, y 0 críticos / 0 mayores en las 328; 306 aprobadas y 22
+  hallazgos menores** (distractores flojos, algún ítem de nivel básico, matices historiográficos).
+  Los OA sensibles **CN07 01/02/03** salieron factualmente correctos y con trato apropiado (respalda
+  la conversación A4 con el colegio). `auditar-solape-oa` marcó 15 pares de casi-duplicados entre OA
+  (4 en 7°, 11 en 8°) a mirar. Conclusión: 7° y 8° **listos para la aprobación humana (A1) sin
+  bloqueadores de contenido**; la firma sigue siendo humana. *(Un subagente dejó un `_sample_mate.json`
+  suelto en la raíz; se eliminó.)*
 - **Pendiente (Roberto):** hacer A1 con los PDF/tablero (7-11 h, el camino crítico); cuando exporte
   el `revisadas.json`, se aplica con `aplicar-revisadas.py` y se regenera el tablero. Sigue en pie
   la reautenticación de NotebookLM (el paso del AI Brain de la orden 66 falla hasta rehacer el login
