@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "¿De qué depende la presión que un cuerpo ejerce sobre una superficie?",
+   "opciones": [
+    "De la fuerza que aplica y del tamaño del área en que esa fuerza se reparte",
+    "Solo de la fuerza aplicada, porque el tamaño de la superficie de apoyo no influye",
+    "Solo del material del cuerpo, porque los objetos metálicos siempre presionan más",
+    "Solo de la altura desde la que se apoya el cuerpo sobre la superficie"
+   ],
+   "correcta": 0,
+   "tip": "La presión es fuerza repartida en un área: con la misma fuerza, mientras más chica es el área de contacto, mayor es la presión.",
+   "id": "cie7-oa08-1"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "Camila apoya un ladrillo sobre arena, primero de canto y después acostado. ¿Qué observa?",
+   "opciones": [
+    "Que de canto se hunde más, porque la misma fuerza se reparte en menos área",
+    "Que acostado se hunde más, porque al tocar más arena empuja con más fuerza",
+    "Que se hunde igual en los dos casos, porque el ladrillo pesa siempre lo mismo",
+    "Que de canto se hunde menos, porque de canto el ladrillo pesa menos que acostado"
+   ],
+   "correcta": 0,
+   "tip": "El ladrillo pesa lo mismo en las dos posiciones: lo que cambia es el área de apoyo, y con menos área la presión sube y se hunde más.",
+   "id": "cie7-oa08-2"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "Matías aplasta un globo con la palma abierta y no revienta; con un dedo sí revienta. ¿Por qué?",
+   "opciones": [
+    "Porque el dedo concentra la fuerza en un área pequeña y la presión es mucho mayor",
+    "Porque el dedo aplica una fuerza mucho mayor que toda la palma de la mano",
+    "Porque la palma reparte el calor de la mano por todo el globo y eso vuelve más resistente su goma",
+    "Porque al usar un dedo el aire del globo se calienta y empuja hacia afuera"
+   ],
+   "correcta": 0,
+   "tip": "La fuerza puede ser parecida, pero repartida en un área pequeña la presión crece y el material cede.",
+   "id": "cie7-oa08-3"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "¿Por qué un cuchillo bien afilado corta mejor que uno sin filo?",
+   "opciones": [
+    "Porque el filo delgado concentra la fuerza en muy poca área y logra más presión",
+    "Porque el filo delgado permite aplicar una fuerza mucho mayor sobre el alimento",
+    "Porque un cuchillo afilado está hecho de un metal más duro que uno sin filo",
+    "Porque el filo elimina por completo el roce entre la hoja y el alimento"
+   ],
+   "correcta": 0,
+   "tip": "Afilar no aumenta tu fuerza: reduce el área de contacto, y la misma fuerza en menos área da mucha más presión.",
+   "id": "cie7-oa08-4"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "Un clavo tiene punta fina y cabeza ancha. ¿Para qué sirve la punta fina?",
+   "opciones": [
+    "Para concentrar la fuerza del martillo en poca área y penetrar la madera",
+    "Para que el clavo pese menos y así entre más rápido en la madera",
+    "Para repartir el golpe del martillo en toda la superficie de la madera",
+    "Para que el clavo se caliente al entrar y ablande la fibra de la madera"
+   ],
+   "correcta": 0,
+   "tip": "La punta reduce el área de contacto y multiplica la presión; la cabeza ancha existe para otra cosa: recibir bien el golpe del martillo.",
+   "id": "cie7-oa08-5"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "Javiera empuja una tachuela con el pulgar y entra en el corcho sin lastimarla. ¿Por qué?",
+   "opciones": [
+    "Porque la cabeza ancha reparte la fuerza en el dedo y la punta la concentra en el corcho",
+    "Porque la cabeza de la tachuela absorbe casi toda la fuerza que hace el pulgar y solo deja pasar una parte",
+    "Porque la punta de la tachuela aplica una fuerza mayor que la que hace el pulgar",
+    "Porque el corcho atrae al metal de la tachuela y ayuda a que entre sin esfuerzo"
+   ],
+   "correcta": 0,
+   "tip": "La misma fuerza produce dos presiones muy distintas: baja en la cabeza ancha, que apoya el dedo, y altísima en la punta fina.",
+   "id": "cie7-oa08-6"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "¿Por qué las tijeras se afilan cada cierto tiempo?",
+   "opciones": [
+    "Porque un filo delgado logra más presión sobre el papel con la misma fuerza de la mano",
+    "Porque el filo desgastado hace que las tijeras apliquen menos fuerza al cerrarse",
+    "Porque un filo nuevo aumenta el peso de la hoja y eso ayuda a cortar el papel",
+    "Porque afilar disminuye la presión que la hoja ejerce sobre el papel y así el corte queda más parejo"
+   ],
+   "correcta": 0,
+   "tip": "Con el filo gastado el área de contacto crece, así que la misma fuerza de la mano produce menos presión y cuesta cortar.",
+   "id": "cie7-oa08-7"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "Benjamín empuja una chinche contra un muro de concreto y no entra. ¿Cuál es la mejor explicación?",
+   "opciones": [
+    "Que la presión que logra no alcanza a superar la resistencia del concreto",
+    "Que en un material duro la punta de la chinche deja de concentrar la fuerza",
+    "Que el concreto no ejerce ninguna presión de vuelta sobre la punta de la chinche",
+    "Que la fuerza del dedo desaparece al aplicarse sobre un material tan duro"
+   ],
+   "correcta": 0,
+   "tip": "La punta sí concentra la fuerza y logra mucha presión, pero el concreto resiste más presión que el corcho o la madera.",
+   "id": "cie7-oa08-8"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "¿Por qué se usan raquetas de nieve para caminar sobre nieve blanda?",
+   "opciones": [
+    "Porque aumentan el área de apoyo, así baja la presión sobre la nieve y no se hunde",
+    "Porque reducen el peso de la persona que camina sobre la nieve blanda",
+    "Porque aumentan la presión sobre la nieve blanda y así la compactan bajo los pies antes de pisarla",
+    "Porque impiden que la nieve se derrita con el calor del cuerpo de la persona"
+   ],
+   "correcta": 0,
+   "tip": "Las raquetas no te hacen más liviano: reparten tu mismo peso en mucha más área, y con más área la presión baja.",
+   "id": "cie7-oa08-9"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "El camello tiene patas anchas y almohadilladas. ¿Qué ventaja le da eso en la arena?",
+   "opciones": [
+    "Que su peso se reparte en más área, baja la presión y por eso se hunde menos",
+    "Que su peso disminuye cuando camina sobre superficies sueltas como la arena",
+    "Que aumenta la presión sobre la arena y por eso avanza con más firmeza",
+    "Que la arena caliente no toca la piel del animal y así evita quemarse"
+   ],
+   "correcta": 0,
+   "tip": "Es el mismo principio de las raquetas de nieve: más área de apoyo con el mismo peso significa menos presión sobre el suelo.",
+   "id": "cie7-oa08-10"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "Un tractor pesado avanza sobre barro con orugas anchas sin hundirse. ¿Por qué?",
+   "opciones": [
+    "Porque las orugas reparten su peso en mucha área y la presión sobre el barro baja",
+    "Porque las orugas hacen que el tractor pese bastante menos que con ruedas comunes",
+    "Porque las orugas concentran el peso en pocos puntos y así el barro se endurece",
+    "Porque las orugas evitan que el barro se pegue a las ruedas del tractor"
+   ],
+   "correcta": 0,
+   "tip": "Con ruedas angostas el mismo peso cae en poca área y la presión hunde la máquina; las orugas amplían el área de apoyo.",
+   "id": "cie7-oa08-11"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "Una mochila cargada se lleva mejor con correas anchas que con cordeles delgados. ¿Por qué?",
+   "opciones": [
+    "Porque las correas anchas reparten la fuerza en más hombro y bajan la presión",
+    "Porque las correas anchas disminuyen el peso total que carga la mochila",
+    "Porque las correas anchas aumentan la presión y el hombro se acostumbra antes",
+    "Porque las correas anchas hacen que la mochila quede más cerca de la espalda"
+   ],
+   "correcta": 0,
+   "tip": "La mochila pesa lo mismo con cualquier correa; lo que cambia es el área del hombro donde se reparte esa fuerza.",
+   "id": "cie7-oa08-12"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "Sobre tierra blanda y con la misma persona, ¿qué calzado deja la marca más profunda?",
+   "opciones": [
+    "El zapato de taco aguja, porque apoya el peso en un área muy pequeña",
+    "La zapatilla plana, porque toca más tierra y por eso empuja con más fuerza",
+    "El zapato de taco aguja, porque una persona con tacos pesa más al caminar",
+    "Los dos dejan la misma marca, porque el peso de la persona no cambia"
+   ],
+   "correcta": 0,
+   "tip": "El peso es el mismo en los dos casos: el taco aguja lo concentra en poquísima área y por eso la presión es enorme.",
+   "id": "cie7-oa08-13"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "El cinturón de seguridad es una cinta ancha y no un cordel. ¿Por qué conviene así?",
+   "opciones": [
+    "Porque reparte la fuerza del frenazo en más superficie del cuerpo y baja la presión",
+    "Porque una cinta ancha resiste una fuerza mucho mayor que cualquier cordel",
+    "Porque una cinta ancha alcanza a frenar el auto antes que un cordel delgado",
+    "Porque una cinta ancha aumenta la presión sobre el pecho y por eso sujeta mejor a la persona"
+   ],
+   "correcta": 0,
+   "tip": "En un choque la fuerza es la misma; repartirla en más área baja la presión sobre el cuerpo y reduce el daño.",
+   "id": "cie7-oa08-14"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "Con la misma fuerza aplicada, ¿en qué caso la presión sobre el suelo es MAYOR?",
+   "opciones": [
+    "Cuando el área de contacto con el suelo es más pequeña",
+    "Cuando el área de contacto con el suelo es más grande",
+    "Cuando el objeto está hecho de un material más liviano",
+    "Cuando el objeto tiene un color oscuro y absorbe más calor"
+   ],
+   "correcta": 0,
+   "tip": "Con la fuerza fija, presión y área van al revés: si el área disminuye, la presión aumenta.",
+   "id": "cie7-oa08-15"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "Camila aprieta una bolsa con agua que tiene agujeros por todos lados. ¿Qué ocurre?",
+   "opciones": [
+    "Sale agua por todos los agujeros, porque el líquido transmite la presión en todas direcciones",
+    "Sale agua solo por los agujeros de abajo, porque la presión de un líquido siempre apunta hacia abajo",
+    "Sale agua solo por el agujero que está más cerca de donde aprieta la mano",
+    "No sale agua por ningún agujero, porque el líquido solo empuja las paredes de la bolsa"
+   ],
+   "correcta": 0,
+   "tip": "Un líquido encerrado transmite la presión que recibe hacia todos lados por igual; por eso salen chorros por cada agujero.",
+   "id": "cie7-oa08-16"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "En un gato hidráulico, ¿por qué basta poca fuerza en la palanca para levantar un auto?",
+   "opciones": [
+    "Porque la misma presión actúa sobre un área mayor y eso entrega más fuerza",
+    "Porque el aceite multiplica su cantidad al pasar al cilindro más grande",
+    "Porque en el pistón grande la presión del aceite es mucho mayor que en el chico",
+    "Porque el pistón grande es de un metal más liviano que el pistón pequeño"
+   ],
+   "correcta": 0,
+   "tip": "La presión es la misma en todo el líquido; lo que cambia es el área, y más área con la misma presión significa más fuerza.",
+   "id": "cie7-oa08-17"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "¿Por qué los frenos de un auto usan un líquido y no aire dentro de sus cañerías?",
+   "opciones": [
+    "Porque el líquido casi no se comprime y transmite al instante el pedal a las ruedas",
+    "Porque el líquido es mucho más pesado que el aire y por eso empuja con más fuerza las ruedas",
+    "Porque el aire se enfriaría demasiado al circular por las cañerías del auto",
+    "Porque solo los líquidos pueden moverse por cañerías delgadas y con curvas"
+   ],
+   "correcta": 0,
+   "tip": "El aire se comprime con facilidad y gran parte del recorrido del pedal se gastaría en achicarlo; el líquido, casi incompresible, transmite la presión de inmediato.",
+   "id": "cie7-oa08-18"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "Matías tapa la punta de una jeringa llena de agua y empuja el émbolo. ¿Qué siente?",
+   "opciones": [
+    "Que el émbolo casi no avanza, porque el agua no se comprime y devuelve la presión",
+    "Que el émbolo avanza sin resistencia, porque el agua se comprime con facilidad",
+    "Que el émbolo avanza de a poco, porque el agua se va convirtiendo en vapor",
+    "Que el émbolo se devuelve solo, porque el agua tapada pierde toda su presión"
+   ],
+   "correcta": 0,
+   "tip": "Los líquidos son prácticamente incompresibles: la presión aplicada se reparte en el agua encerrada y el émbolo queda casi fijo.",
+   "id": "cie7-oa08-19"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "Un buzo baja hasta el fondo de un lago y siente cada vez más presión. ¿Por qué?",
+   "opciones": [
+    "Porque sobre él hay cada vez más columna de agua empujando en todas direcciones",
+    "Porque en el fondo del lago el agua se vuelve más pesada que en la superficie",
+    "Porque en el fondo el agua está más fría y el frío aumenta siempre la presión",
+    "Porque a mayor profundidad hay menos oxígeno disuelto en el agua del lago"
+   ],
+   "correcta": 0,
+   "tip": "La presión en un líquido crece con la profundidad por el peso del agua que queda encima, y actúa sobre el buzo desde todos lados.",
+   "id": "cie7-oa08-20"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "El muro de una represa es mucho más grueso abajo que arriba. ¿Qué explica ese diseño?",
+   "opciones": [
+    "Que la presión del agua es mayor en el fondo y el muro debe resistir más ahí",
+    "Que el agua del fondo está más fría y por eso empuja con más fuerza el muro",
+    "Que el agua del fondo se mueve más rápido y desgasta antes esa parte del muro",
+    "Que abajo el muro debe sostener el peso de todo el resto del muro que está arriba"
+   ],
+   "correcta": 0,
+   "tip": "A más profundidad hay más columna de agua encima y más presión sobre la pared, así que la base se refuerza.",
+   "id": "cie7-oa08-21"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "Javiera dice que el agua de la piscina solo empuja hacia abajo. ¿Por qué se equivoca?",
+   "opciones": [
+    "Porque un líquido ejerce presión en todas las direcciones, incluidas las paredes",
+    "Porque el agua de la piscina solo empuja hacia los lados y nunca hacia el fondo",
+    "Porque el agua quieta no ejerce ninguna presión sobre el fondo ni las paredes",
+    "Porque el agua solo empuja hacia arriba, y por eso los cuerpos flotan en ella"
+   ],
+   "correcta": 0,
+   "tip": "Un líquido presiona el fondo, las paredes y cualquier objeto sumergido, desde todos lados a la vez.",
+   "id": "cie7-oa08-22"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "¿Por qué existe la presión atmosférica?",
+   "opciones": [
+    "Porque el aire tiene masa y la capa de aire que nos cubre empuja en todas direcciones",
+    "Porque el aire es tan liviano que no tiene masa y solo empuja hacia arriba",
+    "Porque el Sol calienta el suelo y ese calor empuja el aire hacia abajo, contra las personas y las cosas",
+    "Porque la rotación de la Tierra lanza el aire contra la superficie del planeta"
+   ],
+   "correcta": 0,
+   "tip": "La atmósfera pesa, y ese peso se traduce en una presión que actúa sobre todo lo que hay en la superficie, desde todos lados.",
+   "id": "cie7-oa08-23"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "Benjamín cree que la presión atmosférica solo empuja hacia abajo. ¿Cuál es el error?",
+   "opciones": [
+    "Que un gas ejerce presión en todas las direcciones, también hacia arriba y a los lados",
+    "Que la presión atmosférica solo empuja hacia arriba, y por eso se elevan los globos y el humo",
+    "Que la atmósfera no ejerce presión, porque el aire casi no toca la superficie",
+    "Que la presión atmosférica solo empuja hacia los lados y nunca en vertical"
+   ],
+   "correcta": 0,
+   "tip": "Como cualquier gas, el aire presiona en todas direcciones; por eso una ventosa pegada al techo también se sostiene.",
+   "id": "cie7-oa08-24"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "Al subir en auto a la cordillera, a Camila se le tapan los oídos. ¿Cuál es la causa?",
+   "opciones": [
+    "Que la presión del aire exterior baja con la altura y queda distinta a la del oído",
+    "Que la presión del aire exterior sube con la altura y aplasta el tímpano hacia adentro",
+    "Que el aire de la cordillera está más frío y eso contrae el conducto del oído",
+    "Que en altura hay más humedad en el aire y esta se acumula dentro del oído"
+   ],
+   "correcta": 0,
+   "tip": "Mientras más alto, menos aire queda encima y menor es la presión exterior; el aire atrapado en el oído queda con más presión y empuja el tímpano.",
+   "id": "cie7-oa08-25"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "¿Por qué en la cordillera el agua hierve a menor temperatura que en la playa?",
+   "opciones": [
+    "Porque la presión del aire es más baja y al agua le cuesta menos pasar a vapor",
+    "Porque en la cordillera el aire está más frío y eso acelera la ebullición del agua",
+    "Porque la presión del aire es más alta y empuja al agua a convertirse en vapor",
+    "Porque el agua de la cordillera es más pura y por eso hierve antes que la del mar"
+   ],
+   "correcta": 0,
+   "tip": "Menos presión atmosférica encima significa menos oposición al vapor que quiere escapar, así que el agua hierve a menor temperatura.",
+   "id": "cie7-oa08-26"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "Una olla a presión cocina los alimentos más rápido. ¿Por qué ocurre eso?",
+   "opciones": [
+    "Porque el vapor encerrado sube la presión y el agua hierve a mayor temperatura",
+    "Porque el vapor encerrado baja la presión y el agua alcanza a hervir mucho antes",
+    "Porque la tapa sellada impide que el calor de la cocina salga fuera de la olla",
+    "Porque el vapor encerrado transporta el sabor y así ablanda antes los alimentos"
+   ],
+   "correcta": 0,
+   "tip": "Al no dejar salir el vapor, la presión dentro sube y el agua hierve por sobre los 100 grados Celsius; con agua más caliente la cocción es más rápida.",
+   "id": "cie7-oa08-27"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "Una ventosa queda pegada al vidrio después de apretarla. ¿Qué la sostiene ahí?",
+   "opciones": [
+    "La presión del aire exterior, que la empuja contra el vidrio porque adentro quedó poco aire",
+    "El pegamento del plástico de la ventosa, que se activa con el calor de la mano",
+    "El vacío que queda en el interior, que tira de la goma hacia el vidrio como si fuera un imán",
+    "La presión del aire encerrado adentro, que empuja la goma contra el vidrio"
+   ],
+   "correcta": 0,
+   "tip": "Al apretarla se saca casi todo el aire de adentro: entonces el aire de afuera, que sí presiona, la mantiene apretada contra el vidrio.",
+   "id": "cie7-oa08-28"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "Matías toma jugo con una bombilla. ¿Qué hace subir el líquido por el tubo?",
+   "opciones": [
+    "La presión del aire sobre el vaso, que empuja el jugo hacia la zona de menor presión",
+    "La fuerza de succión de la boca, que tira del líquido hacia arriba como una cuerda",
+    "La presión del propio jugo, que es más liviano que el aire y por eso sube solo",
+    "El calor de la boca, que evapora el jugo y lo arrastra hacia arriba por el tubo"
+   ],
+   "correcta": 0,
+   "tip": "Al aspirar bajas la presión dentro de la bombilla y la presión atmosférica que actúa sobre el jugo del vaso lo empuja hacia arriba. Nada tira del líquido.",
+   "id": "cie7-oa08-29"
+  },
+  {
+   "oa": "CN07 OA 08",
+   "pregunta": "Una lata caliente y vacía se tapa y se deja enfriar: se aplasta sola. ¿Por qué?",
+   "opciones": [
+    "Porque baja la presión del aire de adentro y el aire exterior aplasta la lata",
+    "Porque el metal frío se contrae tanto que arruga por sí solo las paredes de la lata",
+    "Porque el aire de adentro aumenta su presión al enfriarse y empuja las paredes",
+    "Porque el frío crea un imán en el metal que atrae unas paredes contra las otras"
+   ],
+   "correcta": 0,
+   "tip": "El aire encerrado se enfría y su presión baja; la presión atmosférica exterior, que no cambió, ahora gana y aplasta la lata.",
+   "id": "cie7-oa08-30"
+  }
+ ]
+}

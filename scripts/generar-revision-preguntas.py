@@ -73,12 +73,18 @@ def main():
         H.append("<p class='aviso'>Estado actual: <b>%d de %d</b> marcadas como revisadas "
                  "en los datos.</p>" % (revisadas, total))
 
-    for u in oa_json.get("unidades", []):
+    # 3 basico usa "unidades"/"titulo"; 7 usa "unidades"/"nombre" y Lenguaje de 7
+    # usa "capitulos_del_juego", porque sus capitulos NO siguen las unidades del
+    # Programa (sus OA se repiten en casi todas). Se aceptan las tres formas para no
+    # deformar los oa.json, que son la fuente curricular.
+    grupos = oa_json.get("unidades") or oa_json.get("capitulos_del_juego") or []
+    for u in grupos:
         oas = [c for c in u["oa"] if c in por_oa]
         if not oas:
             continue
         n = sum(len(por_oa[c]) for c in oas)
-        H.append("<h2>%s · %s</h2>" % (esc(u.get("id", "")), esc(u["titulo"])))
+        H.append("<h2>%s · %s</h2>" % (esc(u.get("id", u.get("n", ""))),
+                                       esc(u.get("titulo") or u.get("nombre", ""))))
         H.append("<p class='sub'>%s · %d objetivos · %d preguntas</p>"
                  % (esc(u.get("descripcion", "")), len(oas), n))
         for c in sorted(oas):

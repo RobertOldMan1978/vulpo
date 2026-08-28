@@ -74,13 +74,74 @@ dominio poblado, y la decisión llega a tiempo para el presupuesto del año sigu
 
 ## Límite estructural, y por qué importa
 
-VULPO cubre **solo 8° básico**. Eso pone un techo a lo que un colegio puede gastar, por mucho
-que le guste: **$630.000 al año** a precio Fundador con los tres 8°. Vender a un colegio cuesta
-lo mismo pague lo que pague.
+El techo de lo que un colegio puede gastar no lo pone el precio: lo pone **cuántos niveles
+cubre VULPO**. Con solo 8° básico eran **$630.000 al año** a precio Fundador con los tres 8°, y
+vender a un colegio cuesta lo mismo pague lo que pague.
 
-**La palanca que más movería el negocio no es subir el precio: es agregar 7° básico**, que
-duplicaría el techo por colegio sin duplicar el esfuerzo de venta. Es un trabajo de contenido
-grande (otro banco de ~2.500 preguntas) y está fuera de alcance por ahora, pero es la dirección.
+**Por eso la palanca nunca fue subir el precio, sino agregar niveles.** Estado al 27/08/2026:
+
+| Nivel | Contenido | Estado |
+|---|---|---|
+| **8° básico** (`/juego/`) | 2.536 preguntas, 4 asignaturas + Vocabulario y Lectura | ✅ revisado y a la venta |
+| **7° básico** (`/7mo/`) | 2.430 preguntas, 4 asignaturas | ⚠️ jugable, **sin aprobación pedagógica** |
+| **3° básico** (`/3ro/`) | 2.558 preguntas, 4 asignaturas + voz pregrabada | ⚠️ jugable, **sin aprobación pedagógica** |
+
+**Nada de 3° ni 7° se le ofrece a un colegio todavía**: ninguno de los dos está enlazado desde
+el sitio y sus bancos nacen `revisada:false`. Aprobarlos es lo que **triplica el techo por
+colegio** sin triplicar el esfuerzo de venta, y hoy es el trabajo de mayor retorno pendiente.
+
+**En 7° hay además una conversación que ningún archivo resuelve:** los `CN07 OA 01/02/03` son
+sexualidad, ciclo menstrual, métodos de control de la natalidad e ITS. Es currículum obligatorio
+y el banco está escrito de forma factual, sin promover ninguna postura, pero **hay que avisarle
+al colegio antes de publicarlo** — el colegio piloto es salesiano.
+
+## Hacia dónde va el modelo (acordado el 27/08/2026, NO vigente)
+
+Todo lo de arriba describe **lo que se vende hoy: una licencia anual a un colegio**. A partir de
+un análisis externo del 27 de agosto de 2026 se acordó la dirección de mediano plazo. **Nada de
+esta sección está implementado ni se le ofrece a nadie todavía.**
+
+**El producto es el nivel escolar, con vigencia anual.** No "acceso a VULPO", sino
+*"VULPO 7° Básico — año escolar 2027"*, vigente del 01/03/2027 al 28/02/2028. Al pasar de curso,
+el alumno adquiere el nivel siguiente.
+
+**No se vende acceso permanente.** El contenido educativo cambia, el alumno avanza, se publican
+campañas nuevas y la plataforma necesita mantenimiento. Una compra única cobra una vez por algo
+que hay que sostener todos los años.
+
+**La cuenta es permanente; la suscripción es lo que cambia.** El alumno conserva su identidad,
+su historial y sus logros al pasar de 7° a 8°. Eso convierte el cambio de curso en el momento de
+**retención** —"terminaste 7°, tu próxima aventura es 8°"— en vez de en una baja. La renovación
+puede tener precio preferente para quien ya es usuario.
+
+**Qué incluiría una suscripción:** todas las asignaturas del nivel, campañas, preguntas, XP,
+monedas, estrellas, logros, ranking, duelos, skins, progreso, **y el contenido nuevo publicado
+durante la vigencia**.
+
+**Tres líneas comerciales posibles**, en orden de dificultad:
+
+| Línea | Alcance | Estado |
+|---|---|---|
+| **Colegio** | Licencias institucionales, panel docente, rankings por curso | ✅ es lo que existe hoy |
+| **Individual** | 1 alumno · 1 nivel · 1 año | Producto base a futuro |
+| **Familiar** | Varios hijos en distintos niveles | A evaluar después |
+
+### Lo que bloquea este modelo, y no es comercial
+
+1. **Hoy el progreso vive en el teléfono, no en la cuenta.** Monedas, skins, avance de campaña,
+   estrellas e insignias están en `localStorage`; solo el XP y el dominio por OA están en el
+   servidor. Prometerle a un apoderado que su hijo cambia de teléfono y recupera todo **sería
+   falso hoy**. Es trabajo de backend y es el primer requisito.
+2. **La puerta es un bloqueo blando.** El vencimiento de una suscripción heredaría el mismo
+   hueco que ya tiene el código `ALU-`.
+3. **Pagar en la web y pagar dentro de una app no son lo mismo.** Google Play y Apple tienen
+   políticas de compra in-app con comisión, así que el sistema de pagos no se diseña antes de
+   decidir cómo se distribuye en móvil.
+
+**El detalle técnico, el modelo de datos conceptual y el orden de construcción están en
+[`roadmap-tecnico.md`](roadmap-tecnico.md).** La prioridad inmediata **no es cobrar**: es
+estabilizar VULPO v1 y la PWA. Primero construir bien el producto, después cobrar por algo con
+valor claro.
 
 ## El argumento de evaluación formativa (el más fuerte ante UTP)
 

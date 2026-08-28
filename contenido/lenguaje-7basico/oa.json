@@ -1,0 +1,189 @@
+{
+  "asignatura": "Lengua y Literatura",
+  "nivel": "7° básico",
+  "codigo_asignatura": "LE07",
+  "fuente": "Bases Curriculares 7° básico a 2° medio · MINEDUC Chile (curriculumnacional.cl)",
+  "url_fuente": "https://www.curriculumnacional.cl/curriculum/7o-basico-2o-medio/lengua-literatura/7-basico",
+  "nota_fidelidad": "Los 25 textos se transcribieron contrastando el portal curriculumnacional.cl (ficha de la asignatura y fichas individuales de cada OA) con el Programa de Estudio en PDF. Las viñetas del currículum se conservan separadas por punto y coma.",
+  "nota_evaluacion": "ES LA ASIGNATURA MENOS EVALUABLE POR QUIZ DE TODO 7°: 10 de sus 25 OA son de producción o de hábito (01 hábito lector; 12, 13, 14, 15 escritura; 21, 22, 23 comunicación oral; 24, 25 investigación). Esos OA solo se pueden medir por RECONOCIMIENTO: si el estudiante identifica la práctica correcta, el criterio o el error típico, siempre planteado sobre el texto o la situación de un tercero, nunca sobre su propia conducta. El mapa de dominio del profesor va a mostrar un porcentaje junto a «Dialogar constructivamente» o «Expresarse frente a una audiencia»: eso NO es una medición de esa conducta.",
+  "nota_unidades": "Los capítulos del juego NO siguen las unidades del Programa, y es deliberado. El Programa tiene SIETE unidades temáticas y los OA se repiten fuertemente entre ellas: LE07 OA 01, 02, 07 y 15 aparecen en casi todas porque son transversales al año. Armar la campaña por unidades dejaría el mismo objetivo medido siete veces. Los capítulos de abajo son del juego, agrupados por tema reconocible, igual que se hizo en Lenguaje de 3° básico.",
+  "oa_excluidos_del_banco": [
+    {
+      "codigo": "LE07 OA 12",
+      "texto": "Expresarse en forma creativa por medio de la escritura de textos de diversos géneros, escogiendo libremente el tema, el género y el destinatario.",
+      "por_que": "Escritura creativa de tema, género y destinatario LIBRES. No admite ninguna pregunta honesta de opción múltiple: su indicador oficial es «Escriben al menos una vez a la semana». Se deja fuera del banco en vez de inventar un ítem que finja medirlo, igual que se hizo con el LE03 OA 16 (caligrafía) en 3° básico."
+    }
+  ],
+  "habilidades_excluidas": {
+    "cuantas": 8,
+    "codigos": ["LE07 OA A-H"],
+    "por_que": "Lengua y Literatura no tiene OAH separados (las habilidades van integradas en los OA numerados). Sí tiene 8 OA de actitudes (pensamiento propio, reflexión ética, interés por la lectura, valorar la diversidad de perspectivas, uso responsable de la información y las TIC, esfuerzo, respeto en el intercambio comunicativo). Miden disposiciones, no conocimiento, y sus códigos con letra no calzan con la validación del servidor."
+  },
+  "capitulos_del_juego": [
+    { "n": 1, "nombre": "Narraciones y héroes", "oa": ["LE07 OA 02", "LE07 OA 03", "LE07 OA 07"] },
+    { "n": 2, "nombre": "Poesía, mitos y relatos populares", "oa": ["LE07 OA 04", "LE07 OA 05", "LE07 OA 06"] },
+    { "n": 3, "nombre": "Argumentar y leer los medios", "oa": ["LE07 OA 08", "LE07 OA 09", "LE07 OA 20"] },
+    { "n": 4, "nombre": "Leer para aprender", "oa": ["LE07 OA 01", "LE07 OA 10", "LE07 OA 11", "LE07 OA 25"] },
+    { "n": 5, "nombre": "Las palabras por dentro", "oa": ["LE07 OA 16", "LE07 OA 17", "LE07 OA 18", "LE07 OA 19"] },
+    { "n": 6, "nombre": "Escribir con un propósito", "oa": ["LE07 OA 13", "LE07 OA 14", "LE07 OA 15"] },
+    { "n": 7, "nombre": "Hablar, dialogar e investigar", "oa": ["LE07 OA 21", "LE07 OA 22", "LE07 OA 23", "LE07 OA 24"] }
+  ],
+  "unidades_oficiales_del_programa": [
+    { "n": 1, "nombre": "El héroe en distintas épocas" },
+    { "n": 2, "nombre": "La solidaridad y la amistad" },
+    { "n": 3, "nombre": "Mitología y relatos de creación" },
+    { "n": 4, "nombre": "La identidad: quién soy, cómo me ven los demás" },
+    { "n": 5, "nombre": "El romancero y la poesía popular" },
+    { "n": 6, "nombre": "El terror y lo extraño" },
+    { "n": 7, "nombre": "Medios de comunicación" }
+  ],
+  "oa": [
+    {
+      "codigo": "LE07 OA 01",
+      "eje": "Lectura",
+      "texto": "Leer habitualmente para aprender y recrearse, y seleccionar textos de acuerdo con sus preferencias y propósitos.",
+      "produccion_o_habito": true,
+      "nota": "Hábito puro. Sus indicadores oficiales son conductuales («leen en su tiempo libre», «recomiendan los textos que les han gustado»). Solo se puede medir si el estudiante reconoce una buena práctica lectora."
+    },
+    {
+      "codigo": "LE07 OA 02",
+      "eje": "Lectura",
+      "texto": "Reflexionar sobre las diferentes dimensiones de la experiencia humana, propia y ajena, a partir de la lectura de obras literarias y otros textos que forman parte de nuestras herencias culturales, abordando los temas estipulados para el curso y las obras sugeridas para cada uno.",
+      "nota": "Depende de obras concretas leídas en clase, que varían por colegio: el Programa trae lecturas SUGERIDAS, no obligatorias. Preguntar por una obra que el curso no leyó mide el azar. Se pregunta sobre fragmentos incluidos en la pregunta misma."
+    },
+    {
+      "codigo": "LE07 OA 03",
+      "eje": "Lectura",
+      "texto": "Analizar las narraciones leídas para enriquecer su comprensión, considerando, cuando sea pertinente: el o los conflictos de la historia; el papel que juega cada personaje en el conflicto y cómo sus acciones afectan a otros personajes; el efecto de ciertas acciones en el desarrollo de la historia; cuándo habla el narrador y cuándo hablan los personajes; la disposición temporal de los hechos; elementos en común con otros textos leídos en el año.",
+      "nota": "Muy preguntable con un fragmento narrativo breve dentro de la pregunta. La última viñeta («elementos en común con otros textos leídos en el año») no es preguntable fuera del aula."
+    },
+    {
+      "codigo": "LE07 OA 04",
+      "eje": "Lectura",
+      "texto": "Analizar los poemas leídos para enriquecer su comprensión, considerando, cuando sea pertinente: cómo el lenguaje poético que emplea el autor apela a los sentidos, sugiere estados de ánimo y crea imágenes; el significado o el efecto que produce el uso de lenguaje figurado en el poema; el efecto que produce el ritmo y la sonoridad del poema al leerlo en voz alta; elementos en común con otros textos leídos en el año."
+    },
+    {
+      "codigo": "LE07 OA 05",
+      "eje": "Lectura",
+      "texto": "Leer y comprender romances y obras de la poesía popular, considerando sus características y el contexto en el que se enmarcan."
+    },
+    {
+      "codigo": "LE07 OA 06",
+      "eje": "Lectura",
+      "texto": "Leer y comprender relatos mitológicos, considerando sus características y el contexto en el que se enmarcan.",
+      "nota": "El OA más jugable de Lengua 7°: mitología clásica y universal, y características del mito, son conocimiento verificable."
+    },
+    {
+      "codigo": "LE07 OA 07",
+      "eje": "Lectura",
+      "texto": "Formular una interpretación de los textos literarios, considerando: su experiencia personal y sus conocimientos; un dilema presentado en el texto y su postura personal acerca del mismo; la relación de la obra con la visión de mundo y el contexto histórico en el que se ambienta y/o en el que fue creada.",
+      "nota": "OJO: «formular una interpretación» y «su postura personal» son respuestas abiertas: NO hay clave correcta. Un quiz solo puede medir la tercera viñeta (relación de la obra con su contexto) y si el estudiante distingue una interpretación fundada en el texto de una que no lo está. Es el OA de Lectura con más riesgo de escribir preguntas deshonestas."
+    },
+    {
+      "codigo": "LE07 OA 08",
+      "eje": "Lectura",
+      "texto": "Analizar y evaluar textos con finalidad argumentativa como columnas de opinión, cartas y discursos, considerando: la postura del autor y los argumentos e información que la sostienen; la diferencia entre hecho y opinión; su postura personal frente a lo leído y argumentos que la sustentan.",
+      "nota": "Las dos primeras viñetas son muy preguntables. La tercera («su postura personal») no tiene clave correcta."
+    },
+    {
+      "codigo": "LE07 OA 09",
+      "eje": "Lectura",
+      "texto": "Analizar y evaluar textos de los medios de comunicación, como noticias, reportajes, cartas al director, textos publicitarios o de las redes sociales, considerando: los propósitos explícitos e implícitos del texto; una distinción entre los hechos y las opiniones expresadas; presencia de estereotipos y prejuicios; el análisis e interpretación de imágenes, gráficos, tablas, mapas o diagramas, y su relación con el texto en el que están insertos; los efectos que puede tener la información divulgada en los hombres o las mujeres aludidos en el texto."
+    },
+    {
+      "codigo": "LE07 OA 10",
+      "eje": "Lectura",
+      "texto": "Leer y comprender textos no literarios para contextualizar y complementar las lecturas literarias realizadas en clases.",
+      "nota": "Definido por su FUNCIÓN dentro de la clase, no por un contenido propio. Solapa con OA 11 y OA 25: cuidado de no medir tres objetivos con las mismas preguntas."
+    },
+    {
+      "codigo": "LE07 OA 11",
+      "eje": "Lectura",
+      "texto": "Aplicar estrategias de comprensión de acuerdo con sus propósitos de lectura: resumir; formular preguntas; analizar los distintos tipos de relaciones que establecen las imágenes o el sonido con el texto escrito (en textos multimodales); identificar los elementos del texto que dificultan la comprensión (pérdida de los referentes, vocabulario desconocido, inconsistencias entre la información del texto y los propios conocimientos) y buscar soluciones."
+    },
+    {
+      "codigo": "LE07 OA 13",
+      "eje": "Escritura",
+      "texto": "Escribir, con el propósito de explicar un tema, textos de diversos géneros (por ejemplo, artículos, informes, reportajes, etc.), caracterizados por: una presentación clara del tema; la presencia de información de distintas fuentes; la inclusión de hechos, descripciones, ejemplos o explicaciones que desarrollen el tema; una progresión temática clara, con especial atención al empleo de recursos anafóricos; el uso de imágenes u otros recursos gráficos pertinentes; un cierre coherente con las características del género; el uso de referencias según un formato previamente acordado.",
+      "produccion_o_habito": true,
+      "nota": "Producción. Medible solo por reconocimiento: cuál texto tiene mejor progresión temática, qué recurso anafórico corresponde, qué le falta a este cierre."
+    },
+    {
+      "codigo": "LE07 OA 14",
+      "eje": "Escritura",
+      "texto": "Escribir, con el propósito de persuadir, textos breves de diversos géneros (por ejemplo, cartas al director, editoriales, críticas literarias, etc.), caracterizados por: la presentación de una afirmación referida a temas contingentes o literarios; la presencia de evidencias e información pertinente; la mantención de la coherencia temática.",
+      "produccion_o_habito": true,
+      "nota": "Producción. Medible solo por reconocimiento (identificar la afirmación, elegir la evidencia que la sostiene)."
+    },
+    {
+      "codigo": "LE07 OA 15",
+      "eje": "Escritura",
+      "texto": "Planificar, escribir, revisar, reescribir y editar sus textos en función del contexto, el destinatario y el propósito: recopilando información e ideas y organizándolas antes de escribir; adecuando el registro, específicamente el vocabulario, el uso de la persona gramatical y la estructura del texto al género discursivo, contexto y destinatario; incorporando información pertinente; asegurando la coherencia y la cohesión del texto; cuidando la organización a nivel oracional y textual; usando conectores adecuados para unir las secciones que componen el texto; usando un vocabulario variado y preciso; reconociendo y corrigiendo usos inadecuados, especialmente de pronombres personales y reflejos, conjugaciones verbales, participios irregulares, y concordancia sujeto-verbo, artículo-sustantivo y sustantivo-adjetivo; corrigiendo la ortografía y mejorando la presentación; usando eficazmente las herramientas del procesador de textos.",
+      "produccion_o_habito": true,
+      "nota": "Producción (el proceso completo de escritura), pero es el OA de producción más rescatable: sus viñetas de registro, conectores, concordancia y corrección de usos inadecuados se prestan muy bien a ítems de reconocimiento."
+    },
+    {
+      "codigo": "LE07 OA 16",
+      "eje": "Escritura",
+      "texto": "Aplicar los conceptos de oración, sujeto y predicado con el fin de revisar y mejorar sus textos: produciendo consistentemente oraciones completas; conservando la concordancia entre sujeto y predicado; ubicando el sujeto para determinar de qué o quién se habla.",
+      "nota": "Enunciado como escritura, pero su contenido es GRAMÁTICA plenamente preguntable. Uno de los mejores OA de este eje para un quiz."
+    },
+    {
+      "codigo": "LE07 OA 17",
+      "eje": "Escritura",
+      "texto": "Usar en sus textos recursos de correferencia léxica: empleando adecuadamente la sustitución léxica, la sinonimia y la hiperonimia; reflexionando sobre las relaciones de sinonimia e hiperonimia y su papel en la redacción de textos cohesivos y coherentes."
+    },
+    {
+      "codigo": "LE07 OA 18",
+      "eje": "Escritura",
+      "texto": "Utilizar adecuadamente, al narrar, los tiempos verbales del indicativo, manteniendo una adecuada secuencia de tiempos verbales."
+    },
+    {
+      "codigo": "LE07 OA 19",
+      "eje": "Escritura",
+      "texto": "Escribir correctamente para facilitar la comprensión al lector: aplicando todas las reglas de ortografía literal y acentual; verificando la escritura de las palabras cuya ortografía no está sujeta a reglas; usando correctamente punto, coma, raya y dos puntos.",
+      "nota": "Ortografía y puntuación: plenamente preguntable. AVISO: si algún día se le pone voz pregrabada a 7°, este OA es el caso que el chequeo de audibilidad no cubre — «haber/a ver», «halla/haya» suenan idénticos y la pregunta se vuelve irresoluble por el oído."
+    },
+    {
+      "codigo": "LE07 OA 20",
+      "eje": "Comunicación oral",
+      "texto": "Comprender, comparar y evaluar textos orales y audiovisuales tales como exposiciones, discursos, documentales, noticias, reportajes, etc., considerando: su postura personal frente a lo escuchado y argumentos que la sustenten; los temas, conceptos o hechos principales; una distinción entre los hechos y las opiniones expresadas; diferentes puntos de vista expresados en los textos; las relaciones que se establecen entre imágenes, texto y sonido; relaciones entre lo escuchado y otras manifestaciones artísticas; relaciones entre lo escuchado y los temas y obras estudiados durante el curso.",
+      "nota": "No es producción, pero requiere un estímulo oral o audiovisual que el juego NO entrega: 7° no tiene voz pregrabada. Cualquier pregunta escrita sobre «lo escuchado» tiene que transcribir el fragmento dentro de la pregunta y decirlo así."
+    },
+    {
+      "codigo": "LE07 OA 21",
+      "eje": "Comunicación oral",
+      "texto": "Dialogar constructivamente para debatir o explorar ideas: manteniendo el foco; demostrando comprensión de lo dicho por el interlocutor; fundamentando su postura de manera pertinente; formulando preguntas o comentarios que estimulen o hagan avanzar la discusión o profundicen un aspecto del tema; negociando acuerdos con los interlocutores; considerando al interlocutor para la toma de turnos.",
+      "produccion_o_habito": true,
+      "nota": "Producción oral / conducta observable. Solo se mide si el estudiante RECONOCE la intervención adecuada en un diálogo descrito, planteado siempre sobre otras personas."
+    },
+    {
+      "codigo": "LE07 OA 22",
+      "eje": "Comunicación oral",
+      "texto": "Expresarse frente a una audiencia de manera clara y adecuada a la situación, para comunicar temas de su interés: presentando información fidedigna y que denota una investigación previa; siguiendo una progresión temática clara; dando ejemplos y explicando algunos términos o conceptos clave para la comprensión de la información; usando un vocabulario variado y preciso y evitando el uso de muletillas; usando material visual que apoye lo dicho y se relacione directamente con lo que se explica.",
+      "produccion_o_habito": true,
+      "nota": "Producción oral pura. Solo reconocimiento de buenas prácticas expositivas."
+    },
+    {
+      "codigo": "LE07 OA 23",
+      "eje": "Comunicación oral",
+      "texto": "Usar conscientemente los elementos que influyen y configuran los textos orales: comparando textos orales y escritos para establecer las diferencias, considerando el contexto y el destinatario; demostrando dominio de los distintos registros y empleándolos adecuadamente según la situación; utilizando estrategias que permiten cuidar la relación con el otro, especialmente al mostrar desacuerdo; utilizando un volumen, una velocidad y una dicción adecuados al propósito y a la situación.",
+      "produccion_o_habito": true,
+      "nota": "Producción, pero las viñetas de diferencias entre lo oral y lo escrito y de registro sí son preguntables. Volumen, velocidad y dicción son inevaluables por pantalla."
+    },
+    {
+      "codigo": "LE07 OA 24",
+      "eje": "Investigación",
+      "texto": "Realizar investigaciones sobre diversos temas para complementar sus lecturas o responder interrogantes relacionadas con el lenguaje y la literatura: delimitando el tema de investigación; utilizando los principales sistemas de búsqueda de textos en la biblioteca e internet; usando los organizadores y la estructura textual para encontrar información de manera eficiente; evaluando si los textos entregan suficiente información para responder una determinada pregunta o cumplir un propósito; organizando en categorías la información encontrada en las fuentes investigadas; registrando la información bibliográfica de las fuentes consultadas; elaborando un texto oral o escrito bien estructurado que comunique sus hallazgos.",
+      "produccion_o_habito": true,
+      "nota": "Producción (un proyecto de investigación completo). Medible solo por reconocimiento: qué fuente es más confiable, cómo se cita, dónde buscar. El rótulo de eje «Investigación» es del portal; las Bases declaran tres ejes con la investigación integrada."
+    },
+    {
+      "codigo": "LE07 OA 25",
+      "eje": "Investigación",
+      "texto": "Sintetizar, registrar y ordenar las ideas principales de textos escuchados o leídos para satisfacer propósitos como estudiar, hacer una investigación, recordar detalles, etc.",
+      "produccion_o_habito": true,
+      "nota": "Producción (tomar apuntes, sintetizar), pero con una versión de reconocimiento muy honesta y clásica: cuál es la idea principal de este párrafo, cuál de estos resúmenes es el mejor."
+    }
+  ]
+}

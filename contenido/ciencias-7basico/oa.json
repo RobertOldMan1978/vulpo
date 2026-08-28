@@ -1,0 +1,135 @@
+{
+  "asignatura": "Ciencias Naturales",
+  "nivel": "7° básico",
+  "codigo_asignatura": "CN07",
+  "fuente": "Bases Curriculares 7° básico a 2° medio · MINEDUC Chile (curriculumnacional.cl)",
+  "url_fuente": "https://www.curriculumnacional.cl/curriculum/7o-basico-2o-medio/ciencias-naturales/7-basico",
+  "nota_fidelidad": "Los 15 textos se transcribieron contrastando la ficha web de la asignatura con el Programa de Estudio en PDF (articles-20720_programa.pdf). Las viñetas del currículum se conservan como oraciones separadas dentro del texto.",
+  "nota_evaluacion": "Varios OA tienen como verbo nuclear un proceso de laboratorio o de investigación («planificar y conducir», «investigar experimentalmente», «crear modelos», «desarrollar modelos»). Un quiz no mide ese desempeño: mide el conocimiento resultante. El caso extremo es el OA 07, cuyos dos verbos son ambos de desempeño experimental.",
+  "nota_contenido_sensible": "Los OA 01, 02 y 03 son sexualidad, reproducción, control de la natalidad e infecciones de transmisión sexual. Son currículum oficial obligatorio, pero un colegio confesional puede tener criterio propio sobre cómo se abordan. Las preguntas se redactan de forma factual, sin promover ninguna postura, y siempre sobre la situación de un tercero, nunca sobre el cuerpo o la conducta del propio estudiante. CONVIENE AVISARLE AL COLEGIO ANTES DE PUBLICARLO.",
+  "habilidades_excluidas": {
+    "cuantas": 21,
+    "codigos": ["CN07 OAH a-m", "CN07 OAA A-H"],
+    "por_que": "13 OA de habilidades de investigación científica (observar, planificar, ejecutar, analizar, evaluar y comunicar) y 8 de actitud. Todos son desempeño observable en laboratorio o disposiciones personales. Además sus códigos con letra no pasan la validación de OA del backend."
+  },
+  "unidades": [
+    {
+      "n": 1,
+      "nombre": "Comportamiento de la materia y su clasificación",
+      "eje": "Química",
+      "oa": ["CN07 OA 13", "CN07 OA 14", "CN07 OA 15"]
+    },
+    {
+      "n": 2,
+      "nombre": "Fuerza y ciencias de la Tierra",
+      "eje": "Física",
+      "oa": ["CN07 OA 07", "CN07 OA 08", "CN07 OA 09", "CN07 OA 10", "CN07 OA 11", "CN07 OA 12"]
+    },
+    {
+      "n": 3,
+      "nombre": "Microorganismos y barreras defensivas",
+      "eje": "Biología",
+      "oa": ["CN07 OA 05", "CN07 OA 06", "CN07 OA 04"]
+    },
+    {
+      "n": 4,
+      "nombre": "Sexualidad y autocuidado",
+      "eje": "Biología",
+      "oa": ["CN07 OA 01", "CN07 OA 02", "CN07 OA 03"]
+    }
+  ],
+  "oa": [
+    {
+      "codigo": "CN07 OA 01",
+      "eje": "Biología",
+      "texto": "Explicar los aspectos biológicos, afectivos y sociales que se integran en la sexualidad, considerando: Los cambios físicos que ocurren durante la pubertad. La relación afectiva entre dos personas en la intimidad y el respeto mutuo. La responsabilidad individual.",
+      "actitudinal": true,
+      "sensible": true,
+      "nota": "Parcialmente actitudinal. Lo evaluable es lo biológico (cambios físicos de la pubertad) y el reconocimiento de qué es una relación de respeto mutuo. Preguntar siempre sobre un tercero."
+    },
+    {
+      "codigo": "CN07 OA 02",
+      "eje": "Biología",
+      "texto": "Explicar la formación de un nuevo individuo, considerando: El ciclo menstrual (días fértiles, menstruación y ovulación). La participación de espermatozoides y ovocitos. Métodos de control de la natalidad. La paternidad y la maternidad responsables.",
+      "sensible": true,
+      "nota": "Redactar de forma factual y sin promover ninguna postura."
+    },
+    {
+      "codigo": "CN07 OA 03",
+      "eje": "Biología",
+      "texto": "Describir, por medio de la investigación, las características de infecciones de transmisión sexual (ITS), como sida y herpes, entre otras, considerando sus: Mecanismos de transmisión. Medidas de prevención. Síntomas generales. Consecuencias y posibles secuelas.",
+      "sensible": true,
+      "nota": "«Por medio de la investigación» es el método de trabajo; el conocimiento resultante sí es preguntable."
+    },
+    {
+      "codigo": "CN07 OA 04",
+      "eje": "Biología",
+      "texto": "Desarrollar modelos que expliquen las barreras defensivas (primaria, secundaria y terciaria) del cuerpo humano, considerando: Agentes patógenos como escherichia coli y el virus de la gripe. Uso de vacunas contra infecciones comunes (influenza y meningitis, entre otras). Alteraciones en sus respuestas como en las alergias, las enfermedades autoinmunes y los rechazos a trasplantes de órganos.",
+      "nota": "«Desarrollar modelos» es producción; el contenido conceptual sí es preguntable. El Programa lo ubica al final de la unidad 3, después de los OA 05 y 06."
+    },
+    {
+      "codigo": "CN07 OA 05",
+      "eje": "Biología",
+      "texto": "Comparar, usando modelos, microorganismos como virus, bacterias y hongos, en relación con: Características estructurales (tamaño, forma y estructuras). Características comunes de los seres vivos (alimentación, reproducción, respiración, etc.). Efectos sobre la salud humana (positivos y negativos).",
+      "nota": "Cuidado de precisión: los virus NO cumplen todas las características de los seres vivos, y el OA los compara justamente para que esa diferencia se note. No afirmar que «los virus son seres vivos»."
+    },
+    {
+      "codigo": "CN07 OA 06",
+      "eje": "Biología",
+      "texto": "Investigar y explicar el rol de microorganismos (bacterias y hongos) en la biotecnología, como en la: Descontaminación ambiental. Producción de alimentos y fármacos. Obtención del cobre. Generación de metano.",
+      "nota": "La biolixiviación del cobre es contenido con anclaje chileno."
+    },
+    {
+      "codigo": "CN07 OA 07",
+      "eje": "Física",
+      "texto": "Planificar y conducir una investigación experimental para proveer evidencias que expliquen los efectos de las fuerzas gravitacional, de roce y elástica, entre otras, en situaciones cotidianas.",
+      "actitudinal": true,
+      "nota": "El OA menos evaluable por quiz de los 15: sus dos verbos nucleares son desempeño de laboratorio. Se mide el conocimiento resultante: qué efecto produce cada fuerza en una situación cotidiana descrita."
+    },
+    {
+      "codigo": "CN07 OA 08",
+      "eje": "Física",
+      "texto": "Explorar y describir cualitativamente la presión, considerando sus efectos en: Sólidos, como en herramientas mecánicas. Líquidos, como en máquinas hidráulicas. Gases, como en la atmósfera.",
+      "nota": "El OA pide tratamiento CUALITATIVO: no exigir cálculos de presión ni la fórmula como contenido central."
+    },
+    {
+      "codigo": "CN07 OA 09",
+      "eje": "Física",
+      "texto": "Explicar, con el modelo de la tectónica de placas, los patrones de distribución de la actividad geológica (volcanes y sismos), los tipos de interacción entre las placas (convergente, divergente y transformante) y su importancia en la teoría de la deriva continental.",
+      "nota": "El Programa lo sitúa en el eje Física, dentro de «Fuerza y ciencias de la Tierra», pese a ser contenido de Ciencias de la Tierra. Confirmado en las dos fuentes."
+    },
+    {
+      "codigo": "CN07 OA 10",
+      "eje": "Física",
+      "texto": "Explicar, sobre la base de evidencias y por medio de modelos, la actividad volcánica y sus consecuencias en la naturaleza y la sociedad.",
+      "nota": "Contenido con fuerte anclaje chileno (Cinturón de Fuego del Pacífico)."
+    },
+    {
+      "codigo": "CN07 OA 11",
+      "eje": "Física",
+      "texto": "Crear modelos que expliquen el ciclo de las rocas, la formación y modificación de las rocas ígneas, metamórficas y sedimentarias, en función de la temperatura, la presión y la erosión."
+    },
+    {
+      "codigo": "CN07 OA 12",
+      "eje": "Física",
+      "texto": "Demostrar, por medio de modelos, que comprenden que el clima en la Tierra, tanto local como global, es dinámico y se produce por la interacción de múltiples variables, como la presión, la temperatura y la humedad atmosférica, la circulación de la atmósfera y del agua, la posición geográfica, la rotación y la traslación de la Tierra.",
+      "nota": "Cuidado de precisión: distinguir CLIMA de TIEMPO ATMOSFÉRICO, confusión habitual y fácil de introducir sin querer en un distractor."
+    },
+    {
+      "codigo": "CN07 OA 13",
+      "eje": "Química",
+      "texto": "Investigar experimentalmente y explicar el comportamiento de gases ideales en situaciones cotidianas, considerando: Factores como presión, volumen y temperatura. Las leyes que los modelan. La teoría cinético-molecular."
+    },
+    {
+      "codigo": "CN07 OA 14",
+      "eje": "Química",
+      "texto": "Investigar experimentalmente y explicar la clasificación de la materia en sustancias puras y mezclas (homogéneas y heterogéneas), los procedimientos de separación de mezclas (decantación, filtración, tamizado y destilación), considerando su aplicación industrial en la metalurgia, la minería y el tratamiento de aguas servidas, entre otros."
+    },
+    {
+      "codigo": "CN07 OA 15",
+      "eje": "Química",
+      "texto": "Investigar experimentalmente los cambios de la materia y argumentar con evidencia empírica que estos pueden ser físicos o químicos.",
+      "nota": "Cuidado de precisión: la disolución de sal en agua es cambio FÍSICO, error clásico en bancos de preguntas."
+    }
+  ]
+}

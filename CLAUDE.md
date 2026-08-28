@@ -152,9 +152,21 @@ Orden tentativo, sujeto a prioridad de "verlo funcionar y atractivo" primero:
 6. ✅ **Persistencia de progreso** (HECHO) — guarda nombre, avatar, XP,
    monedas, estrellas, skins y logros en localStorage; continúa al reabrir.
 
+### Hacia dónde va el producto (acordado el 27/08/2026)
+
+**`docs/roadmap-tecnico.md` es el plan de mediano plazo:** web → **PWA** → piloto y métricas →
+**Capacitor** → Android → iOS, más el **modelo de suscripción anual por nivel escolar**. La
+decisión de fondo es **no reescribir en Flutter ni React Native**: VULPO ya es una app web
+mobile-first y se reutiliza. Nada de eso está implementado.
+
+Antes de tocar `sw.js` hay que leer su §2, que corrige el análisis externo con hechos del
+repositorio: hoy hay **tres apps forkeadas** (`/juego/`, `/3ro/`, `/7mo/`), así que un manifiesto
+único abriría el curso equivocado; y **`assets/` pesa 459 MB** (251 MB solo de voz de 3°), así que
+la precarga `cache-first` que propone el análisis le bajaría 250 MB al teléfono de un niño en la
+primera apertura. El progreso local en `localStorage` es el requisito real del modelo de
+suscripción, y es trabajo de backend, no de PWA.
+
 ### Más adelante (fuera del alcance inmediato)
-- Login y multiusuario.
-- Modelo de negocio.
 - Múltiples asignaturas y niveles como expediciones independientes. **Motor
   data-driven listo:** el arreglo `EXPEDICIONES` (en `index.html`) define cada
   ruta (etapas → OA + contenido + portada) con progreso independiente por ruta;
@@ -227,6 +239,92 @@ exactamente el fallo silencioso que ya había costado dos sesiones.
 Cosas que ya sabemos y siguen valiendo: la pantalla activa es `.screen.on` (no `hidden`); el
 nodo del mapa recibe el clic en su `.orb`, no en el `div`; y las tarjetas de campaña son
 `.camp-nodo`.
+
+### Gotchas de 7° básico (`7mo/index.html`, otro FORK de 8°)
+
+7° se sirve en `vulpo.cl/7mo/` y **no está enlazado desde el sitio**, igual que 3°. Es un
+fork de 8° porque ya hay dos precedentes y unificarlos sería un refactor del producto en
+producción; el costo del fork está medido y es re-aplicar cada corrección en cada copia.
+
+- **`localStorage` con `SUFIJO='_7mo'`** y **`storageKey:'kimun-7mo'`** en el cliente de
+  Supabase. Sin lo primero, un alumno con 7° y 8° abiertos comparte monedas, skins y
+  avance; sin lo segundo, son el **mismo usuario anónimo** (mismo perfil, mismo XP, mismo
+  vínculo `ALU-`). Los ajustes de audio se comparten a propósito.
+- **Portadas EXPLÍCITAS** (`portadaMapa`), como en 3°: la convención implícita
+  `assets/portada-<id>.png` pediría 22 archivos que no existen y el `onerror` los tapa a la
+  vista, no en la red.
+- **⚠️ `META_OA` es lo primero que se olvida al forkear, y muere en silencio.** 7° se
+  publicó con el `META_OA` de 8° tal cual (los 69 códigos `HI08/CN08/MA08/LE08`, cero de
+  7°), así que la **meta de aprendizaje —la tarjeta 🎯 y la línea del quiz— estuvo muda en
+  todo el nivel** desde la Sesión 62 hasta la 63: `metaDeEtapa` cae a `c.nombre` y muestra
+  el nombre de la etapa, que se ve razonable, así que nada delata el fallo. **No hay error,
+  no hay 404, no hay nada que mirar.** Es el mismo punto ciego del `oa` (Sesión 23) y del
+  `visual` (Sesión 55): un campo que se pierde al copiar y solo degrada.
+  **La comprobación que lo caza, y que ahora va en toda verificación de nivel:**
+
+      EXPEDICIONES.flatMap(e=>e.etapas).flatMap(t=>t.oas||[t.oa])
+        .filter(o=>o&&o!=='BOSS').filter(o=>!META_OA[o])
+
+  Debe dar **arreglo vacío**. En 8° devuelve los 13 códigos `VOC-*` y `AF-T*`, y eso **está
+  bien**: Vocabulario y Ana Frank no son OA del currículum y no llevan meta a propósito.
+- **Lo que hubo que desconectar del fork** (la trampa que ya mordió tres veces en 3°): el
+  camino de lecciones de Matemática, el Reto de Cálculo, el landing de Vocabulario y la
+  biblioteca de Ana Frank. Todo eso es contenido de 8°.
+- **Matemática de 7° es campaña normal, no camino de lecciones.** El sub-producto de 8°
+  (17 mini-clases con diagramas SVG) costó varias sesiones; el motor sigue en el fork, así
+  que agregárselo después es solo datos.
+- **Las CUATRO asignaturas tienen Modo Difícil** y la Maestría Total exige las cuatro. En
+  8° Matemáticas queda fuera porque su dificultad es el Reto de Cálculo, que aquí no existe.
+- **Se quitaron la skin `kimun-calculista` y la insignia `maestro-calculo`**: su requisito
+  es El Autómata, que 7° no tiene, y habrían quedado bloqueadas para siempre en la tienda.
+  Una recompensa inalcanzable es peor que no ofrecerla.
+- **El nivel viaja en el código de OA**: `HI07`, `MA07`, `CN07`, `LE07`. Hay que sumarlos a
+  `kimun_oa_asignatura` y a **las dos** listas de `kimun_prof_asignaturas` (si falta uno,
+  ese contenido queda **invisible para el Jefe sin ningún error**), y en `profesor.html` a
+  `OA_CARPETA`, `ASIG_NOMBRE`, `ASIG_ORDEN`, `SB_asigDe` y `NIVELES_MUESTRA`.
+  ⚠️ **Requiere re-aplicar `supabase/schema.sql`.**
+- **`FECHA_PUERTA=''`** (abierto, es trabajo en curso) y `DEMO_LIBRE='hist7-cap1'`.
+- **Arte prestado de 8°, declarado en comentarios.** Los villanos sí tienen nombre propio:
+  El Anacronismo (Historia), El Azar (Matemática), La Erosión (Ciencias) y El Silencio
+  (Lenguaje).
+
+#### Cuidados del contenido de 7°
+
+- **⚠️ Ciencias trae contenido sensible obligatorio:** los `CN07 OA 01/02/03` son
+  sexualidad, ciclo menstrual, métodos de control de la natalidad e ITS. Es currículum
+  oficial, el banco está escrito de forma factual y sin promover ninguna postura, pero
+  **hay que avisarle al colegio antes de publicarlo** — el colegio piloto es salesiano.
+- **`LE07 OA 12` está FUERA del banco**: escritura creativa de tema, género y destinatario
+  libres, cuyo indicador oficial es "escriben al menos una vez a la semana". Mismo criterio
+  que el `LE03 OA 16` de 3°.
+- **Lenguaje NO sigue las 7 unidades del Programa.** Sus OA 01, 02, 07 y 15 aparecen en
+  casi todas: por unidades, el mismo objetivo quedaría medido siete veces. Los capítulos
+  son del juego, por tema, y así se declara en su `oa.json`.
+- **Historia parte la unidad 1 en dos y Ciencias parte la unidad 2 en dos**, por longitud;
+  queda declarado en el plan.
+- **Los OA de actitud y de producción se miden por reconocimiento y siempre sobre un
+  tercero con nombre**, nunca sobre la conducta del jugador. El mapa de dominio le va a
+  mostrar al profesor un porcentaje junto a "respeto y tolerancia", y eso se lee como nota
+  de conducta si no se cuida.
+
+#### Escribir el banco de 7°
+
+El estándar es **`docs/encargo-banco-7basico.md`**, hermano del de 3° pero para 12-13 años
+**con cronómetro de 20 s** (el largo del enunciado es la restricción, no la edad) y **sin
+voz**: 7° no lleva audio pregrabado, y de 5° hacia arriba no vale la pena pagarlo.
+
+- **El sesgo de largo aparece SIEMPRE en la primera pasada** y en una proporción que
+  sorprende: medido sobre las primeras tandas de 7°, la correcta era la más larga en **20 a
+  25 de cada 30**. El encargo pide ahora escribir los distractores con cuerpo **desde el
+  primer borrador**; corregirlo al final obliga a reescribir medio banco y es justo donde
+  el trabajo se cae si algo lo interrumpe.
+- **En Matemática, cada agente verifica la aritmética de sus 30 claves con un script y lo
+  reporta.** No es formalidad: los verificadores encontraron distractores cuya
+  justificación no producía su propio número (uno decía "se divide por 100" y mostraba otra
+  cifra), lo que convierte una pregunta de 4 opciones en una de 3. Ninguna revisión de
+  estilo caza eso.
+- **Herramientas ya generales, no clonar más:** `scripts/consolidar-pool-nivel.py <carpeta>`
+  (antes `-3ro`) y `scripts/revisar-tanda.py --largo=N` sirven para cualquier nivel.
 
 ### Gotchas de 3° básico (`3ro/index.html`, que es un FORK de 8°)
 
@@ -3198,7 +3296,7 @@ tocó en ningún paso** (verificado con `git diff` al cierre).
   **Decisión de Roberto:** etapas de **10** preguntas, "misma extensión que 8°" — el spec §5 había
   fijado 5-6 por la edad; queda anotado que es un campo de datos (`n:`) y se baja sin rehacer nada.
 - **Herramientas nuevas:** `scripts/validar-banco-3ro.py` (estructura, OA oficiales, duplicados,
-  largo de lector inicial, coherencia de los visuales) y `scripts/consolidar-pool-3ro.py`. El
+  largo de lector inicial, coherencia de los visuales) y `scripts/consolidar-pool-nivel.py`. El
   `consolidar-pool.py` viejo **no servía**: está cableado a `historia-8basico`.
 
 **La auditoría (6 agentes) y lo que cambió por ella.** Los cinco auditores de contenido coinciden
@@ -3747,6 +3845,99 @@ reconocimiento de voz de Azure, ~US$0,45).
   capítulos y de "El Olvido", aprobación pedagógica de las 480 preguntas de Historia y las
   792 de Matemática, INAPI, la SpA, el enlace de agenda de la landing).
 
+### Sesión 62 (2026-08-27) — 7° básico completo: 2.430 preguntas y el año operativo
+
+VULPO pasa de dos cursos a tres. 7° se sirve en `vulpo.cl/7mo/`, sin enlazar desde el sitio,
+y **sin voz pregrabada** (a los 12-13 años ya se lee de corrido; de 5° hacia arriba no vale la
+pena pagarla). Detalle en "Gotchas de 7° básico", arriba.
+
+**El resultado:** 81 objetivos oficiales, **30 preguntas en cada uno, 2.430 en total**, cero
+duplicados y la correcta repartida entre 22% y 28% en las cuatro posiciones.
+
+| Asignatura | Código | OA | Preguntas | Capítulos | Jefe Final |
+|---|---|---|---|---|---|
+| Historia, Geografía y Cs. Sociales | `HI07` | 23 | 690 | 6 | El Anacronismo |
+| Matemática | `MA07` | 19 | 570 | 4 | El Azar |
+| Ciencias Naturales | `CN07` | 15 | 450 | 5 | La Erosión |
+| Lengua y Literatura | `LE07` | 24 | 720 | 7 | El Silencio |
+
+**Verificado jugando en el navegador** con `scripts/cdp.mjs`, no leyendo código: las cuatro
+campañas abren con sus jefes, todas las etapas tienen banco, el quiz sirve 10 preguntas con 4
+opciones, **el guardado de 8° queda intacto** (se sembró una partida con 777 XP antes y seguía
+ahí después), y **cero errores de consola y cero 404**.
+
+#### Los tres defectos que la sesión encontró, y que valen más que el conteo
+
+- **Un error mío que el proyecto ya tenía documentado y en el que caí igual.** Escribí el campo
+  `portadaMapa` en las 22 expediciones, pero **no toqué la función del mismo nombre**, que en 8°
+  arma la ruta por convención e ignora el campo: 22 × 404 que el `onerror` tapa a la vista y no
+  en la red. Lo delató el navegador, no la lectura.
+- **Opciones que valen lo MISMO escritas distinto.** Un agente encontró en su propia entrega una
+  clave `1/6` con `2/12` entre los distractores: **dos respuestas correctas**, y castiga al que
+  reconoce que son el mismo número. El chequeo que existía compara TEXTO y no lo caza. De ahí
+  salió `scripts/auditar-numerico.py`, que además destapó un defecto **en el banco de 8°, en
+  producción y marcado como revisado desde hace un año**: la ecuación `x/4 = 5` ofrecía `1,25` y
+  `5/4`, o sea llevaba un año siendo de tres opciones y no de cuatro. Corregido sin tocar la
+  clave (ahora `9`, `1`, `5/4`, `20`: las cuatro operaciones entre 5 y 4).
+- **Dos objetivos midiéndose con las mismas preguntas**, que es el límite documentado de Lenguaje
+  desde 3° y que nadie chequeaba: `revisar-tanda.py` mira duplicados **dentro** de una tanda, o
+  sea dentro de un OA. `scripts/auditar-solape-oa.py` (nuevo) mira el cruce. Encontró **7 pares
+  reales en Historia** —el Canon de Avicena preguntado en dos OA, el Cisma de 1054, los metecos,
+  las terrazas andinas, *res publica*, los glaciares— y **1 en Lenguaje**. Los 8 se reescribieron
+  del lado cuyo OA cubre el tema con menos propiedad.
+
+> **Las dos herramientas nuevas acusaron primero lo correcto, y hubo que afinarlas.** El auditor
+> numérico daba «6 kg» igual a «6 g» y «3 rectángulos» igual a «3 círculos» (no comparaba la
+> unidad); el de solape daba 0,50 entre *"¿cuál es el resultado de −3 − 5?"* y *"¿cuál es el
+> resultado de 2/5 por 5/8?"*, porque con enunciados cortos queda una sola palabra útil. **Un
+> informe que marca lo correcto se deja de leer**, así que ambos llevan ahora su guarda —unidad
+> que debe coincidir, y piso de 5 palabras de contenido— con el porqué escrito en el código.
+
+#### Lo que cambió en las herramientas (ya no hay que clonarlas por nivel)
+
+- `consolidar-pool-3ro.py` → **`consolidar-pool-nivel.py`**: no tenía nada específico de 3°.
+- `revisar-tanda.py` acepta **`--largo=N`**: el límite del enunciado depende de la edad **y del
+  reloj** (3° no tiene cronómetro; 7° y 8° sí, y a 20 segundos un enunciado largo mide velocidad
+  de lectura).
+- `generar-revision-preguntas.py` acepta `unidades`/`titulo`, `unidades`/`nombre` y
+  `capitulos_del_juego`, para no deformar los `oa.json`, que son la fuente curricular.
+- **Nuevos:** `auditar-numerico.py` y `auditar-solape-oa.py`.
+
+#### Lecciones de método sobre escribir bancos con agentes
+
+- **El sesgo de largo aparece SIEMPRE en la primera pasada, y en una proporción que sorprende:**
+  medido en las primeras tandas de 7°, la correcta era la más larga en **20 a 25 de cada 30**.
+  Peor: corregirlo al final es donde el trabajo se cae si algo lo interrumpe — el límite de
+  sesión mató seis agentes justo mientras lo arreglaban. El encargo pide ahora escribir los
+  distractores **con cuerpo desde el primer borrador**, y las 13 tandas posteriores al cambio
+  salieron todas dentro del límite.
+- **En Matemática, cada agente verifica la aritmética de sus 30 claves con un script y lo
+  reporta.** No es formalidad: los verificadores encontraron distractores cuya justificación no
+  producía su propio número ("se divide por 100" mostrando otra cifra) y uno cuyo razonamiento
+  era *correcto* y solo fallaba la aritmética, o sea descartable de una. Un agente además
+  **probó su propio verificador rompiendo el archivo a propósito**, porque "pasar limpio a la
+  primera es sospechoso".
+- **Decirles a los agentes qué tandas vecinas leer funciona.** Varios recortaron su propio
+  alcance al descubrir que otro objetivo ya cubría algo; el de estrategias de comprensión dejó
+  fuera "resumir" porque el de síntesis ya lo medía.
+- **El límite de sesión mata agentes a mitad de trabajo, pero el archivo suele estar escrito.**
+  Antes de relanzar nada, mirar el disco: en las dos caídas de esta sesión, 18 y 13 tandas ya
+  existían y solo hacía falta terminarles la corrección.
+
+#### Pendiente de Roberto
+
+- **Re-aplicar `supabase/schema.sql`** (ahora con `HI07`, `MA07`, `CN07`, `LE07`). Sin eso el
+  dominio de 7° **no aparece en el panel**, y sin ningún error visible.
+- **Aprobación pedagógica de las 2.430 preguntas**, con los informes en
+  `dev/revision-{historia,matematicas,ciencias,lenguaje}-7basico.pdf`.
+- **⚠️ Conversar con el colegio la unidad de sexualidad de Ciencias** (`CN07 OA 01/02/03`): es
+  currículum obligatorio y el banco está escrito para poder mostrarse tal cual a un colegio
+  confesional —cero segunda persona, cero valoración moral, y el redactor descartó a propósito
+  la anticoncepción de emergencia y las eficacias comparadas—, pero **esa conversación no la
+  resuelve ningún archivo**.
+- **El arte propio de 7°** (22 portadas de capítulo y 4 villanos): hoy usa arte prestado de 8°,
+  declarado en comentarios.
+
 ### Sesión 61 (2026-08-27) — Ciencias y Lenguaje de 3° básico: 1.286 preguntas y su voz
 3° básico pasa de dos asignaturas a **las cuatro**. Se hizo con `/loop`, autopautado, con
 **43 agentes redactores** y **5 auditores**, siguiendo el flujo currículum oficial →
@@ -3805,7 +3996,7 @@ recuento sino el tipo de defecto:
   correcta con entonación de pregunta.
 - **El `tip` no puede nombrar la posición de una opción**, porque el consolidador baraja.
   `revisar-tanda.py` lo avisa ahora.
-- **Un consolidador único** (`consolidar-pool-3ro.py`) en vez de uno por asignatura. Probado
+- **Un consolidador único** (`consolidar-pool-nivel.py`, renombrado en la Sesion 62) en vez de uno por asignatura. Probado
   contra Historia: reproduce su banco **byte a byte**.
 
 > **Dos límites del método, dichos porque importan.** El transcriptor de Azure **no sirve
@@ -3825,3 +4016,101 @@ recuento sino el tipo de defecto:
   **re-aplicar `supabase/schema.sql`** (ahora con `LE03` y `CN03`, sin eso su dominio no
   aparece en el panel); y la **aprobación pedagógica** de las 1.286 preguntas nuevas, con
   los informes en `dev/revision-ciencias-3basico.pdf` y `dev/revision-lenguaje-3basico.pdf`.
+
+### Sesión 63 (2026-08-27) — La v1 pasa a ser 3° a 8°: se ordenan las bases
+Sesión de dirección y de orden, no de contenido: **no se escribió ni una pregunta**. Roberto
+entregó tres documentos de análisis externo (PWA, estrategia móvil y modelo de suscripción) y
+después definió que **la v1 de VULPO cubra de 3° a 8° básico**. El trabajo fue incorporar esa
+dirección al repositorio, medir el estado real y arreglar lo que ya estaba cobrando intereses.
+
+- **`docs/roadmap-tecnico.md` (nuevo).** Recoge los tres documentos y adopta su recomendación
+  central: **no rehacer VULPO en Flutter ni React Native**, sino web → PWA → piloto → Capacitor →
+  Android → iOS. Pero su §2 **corrige el análisis externo con hechos del repositorio**, que los
+  documentos no conocían:
+  1. **Ya no hay "un juego": hay tres forks.** El `start_url:/juego/` que proponen instalaría
+     "VULPO" y abriría 8°, el curso equivocado para dos de cada tres alumnos. Y choca con el
+     modelo de suscripción, donde el producto *es* el nivel. Se recomienda un manifiesto por nivel.
+  2. **El `cache-first` que proponen es inviable.** Medido: `assets/` son 459 MB, de los cuales
+     **251 MB son la voz de 3°**. Cachear "imágenes y audio" en el `install` le bajaría 250 MB al
+     teléfono de un niño la primera vez que abre 3°.
+  3. **`assets/originales/` son 175 MB en 70 archivos versionados y NO ignorados**, o sea que se
+     publican en `vulpo.cl` sin que nadie los pida.
+  4. El `<base href="/">` obliga a que el scope del service worker sea `/`, no `/juego/`.
+  5. **El requisito real de la suscripción no es la PWA: es subir el progreso al servidor.** Hoy
+     monedas, skins y avance de campaña viven en `localStorage`; solo XP y dominio están en
+     Supabase. Prometerle a un apoderado que su hijo cambia de teléfono y recupera todo sería falso.
+- **`docs/comercial.md`:** el modelo de suscripción anual por nivel, marcado como **acordado pero
+  NO vigente** (cuenta permanente, suscripción que cambia, líneas Colegio/Individual/Familiar). Se
+  corrigió además la sección "Límite estructural", que seguía diciendo que VULPO cubre solo 8°.
+  Las estimaciones de inversión en pesos **no se escribieron en el repo**, que es público.
+
+**El estado real, medido en disco y no de memoria** (tres agentes de inventario + verificación
+propia). Varias cosas no calzaban con la documentación:
+
+- **7.524 preguntas escritas, 2.536 aprobadas, 4.988 sin aprobar.** La cifra "2.536" que
+  `CLAUDE.md` repite como total del banco es en realidad solo el subconjunto aprobado.
+- **Tres dialectos de `oa.json`**, uno por generación de trabajo: 8° trae `actitudes` y
+  `habilidades_generales`; 3°, `ejes` y `nota_evaluacion`; 7°, `habilidades_excluidas`,
+  `oa_excluidos_del_banco` y `capitulos_del_juego`. **Solo 7 claves son universales.** El esquema
+  fue mejorando y nadie volvió a alinear los anteriores: la exclusión del `LE03 OA 16` vive en
+  prosa mientras la del `LE07 OA 12` está en una clave legible por máquina. Y
+  `matematicas-3basico/_pool/` usa `verificado/u1-oa01.json`, así que queda en cero ante cualquier
+  script que recorra `_pool/*.json`.
+- **El fork es 84% datos.** Entre 8° y 7° hay **16 líneas** de motor genuinamente distinto; entre
+  8° y 3°, ~65 de pegamento más 419 de una capa de banda etaria (voz + dibujos) que es una
+  *feature*, no divergencia. En cambio **cada fork arrastra ~691 líneas de motor muerto**
+  (diagramas SVG + camino de lecciones + Reto de Cálculo), verificadas **byte a byte idénticas** e
+  inalcanzables en 3° y 7°: 1.400 líneas duplicadas hoy, **2.800 con seis niveles**.
+- **Dar de alta un nivel toca ~24 puntos en 3 archivos**, 8 de ellos listas paralelas. `SB_asigDe`
+  de `profesor.html` es un **espejo escrito a mano de `kimun_oa_asignatura`** — el patrón que ya
+  causó el bug de la Sesión 37.
+- **Arte propio de 3° y 7°: cero.** Siete comentarios `PLACEHOLDER` declaran que los villanos son
+  los de 8°.
+
+**Plan aprobado para la v1** (guardado fuera del repo, en el archivo de planes de la sesión). Faltan
+**~260 objetivos y ~7.800 preguntas** de 4°, 5° y 6°: más de lo que el proyecto lleva escrito en
+todas sus sesiones juntas. Decisiones tomadas por Roberto:
+
+| Decisión | Elegida |
+|---|---|
+| Motor | **Extracción progresiva a `assets/js/`**, el patrón que `revision.js` ya validó en producción |
+| Orden | **5° → 6° → 4°**: los dos sin voz primero; 4° al final porque suma ~254 MB |
+| Aprobación | **Muestreo + aprobación masiva** (con la herramienta de hoy son 18–36 horas de clic) |
+| Arte | **Solo los 4 villanos por nivel** (20 imágenes); las portadas siguen prestadas |
+
+**Voz solo en 4°**, y no por preferencia: con voz en 4°, 5° y 6° el sitio publicado llegaría a
+**~1.260 MB y revienta el techo de 1 GB de GitHub Pages**. Con voz solo en 4°, y sacando
+`assets/originales`, queda en **577 MB**. La regla documentada (voz de 1° a 4°) resulta ser también
+la respuesta de infraestructura.
+
+**Fase 0.1 ejecutada — la deuda que ya estaba cobrando intereses.** Cuatro hallazgos, tres reales:
+
+1. **`aplicar-revisadas.py` estaba cableado a un solo banco** (`contenido/historia-8basico/…`, fijo
+   en la línea 26), así que **el circuito de aprobación que este archivo documenta no cerraba para
+   ninguno de los otros catorce**. Ahora recorre todos. Al reescribirlo apareció algo peor que el
+   cableado: **ponía `revisada = False` a toda pregunta ausente del archivo exportado**, y el
+   tablero guarda las marcas en el `localStorage` del navegador — una exportación hecha desde el
+   otro PC habría **desmarcado las 2.536 preguntas aprobadas de 8° sin avisar**. Por omisión ahora
+   solo agrega; desmarcar exige `--sincronizar`.
+2. **⚠️ El `META_OA` de 7° tenía los códigos de 8°**, así que la meta de aprendizaje estuvo **muda
+   en todo el nivel** desde que se publicó. Escritas las **81 metas** de 7° desde el texto oficial
+   de cada `oa.json`. Ver el gotcha de 7° arriba, que incluye la comprobación que lo caza.
+3. **`btnLengVocab` apuntaba a una expedición inexistente** en los dos forks
+   (`entrarExpedicion(undefined)`). Desactivado, sin borrar el botón: quitarlo sin quitar el
+   handler dejaría `$('btnLengVocab')` en null y `.onclick` mataría todo el JavaScript (Sesión 56).
+4. **La "divergencia" de `ASIG_DESAFIO_NOMBRE` NO era un defecto**, y se descartó: el desafío llega
+   del curso del alumno y un curso tiene un solo nivel, así que el mapa mínimo de 7° es correcto.
+
+**Verificado en el navegador** con `scripts/cdp.mjs`, las tres apps: 7° pasa de 0 a **81 de 81 OA
+con meta**, 3° sigue en 85/85, 8° deja 13 sin meta que son los `VOC-*` y `AF-T*` y **está bien**
+(no son OA del currículum). `btnLengVocab` vuelve a Expediciones y el JavaScript sigue vivo.
+**Cero errores de consola y cero 404.**
+
+- **Pendiente inmediato:** Fase 0.2, canonizar los `oa.json` sobre el esquema de 7° y migrar los
+  doce existentes; luego el resto de la Fase 0 (encargo único, `cuidados-` de Matemática e
+  Historia, aprobación masiva en el tablero, sacar `assets/originales` del sitio).
+- **Pendiente de Roberto (arrastre):** re-aplicar `supabase/schema.sql` (con `HI07/MA07/CN07/LE07`,
+  sin eso el dominio de 7° no aparece en el panel y sin ningún error); aprobación pedagógica de las
+  4.988 preguntas de 3° y 7°; la conversación con el colegio sobre la unidad de sexualidad de
+  Ciencias de 7°; escuchar el clip de **copihue**; pegar `aplicar-foto-semanal.sql`; y los trámites
+  (INAPI, la SpA, el enlace de agenda de la landing).

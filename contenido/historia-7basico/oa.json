@@ -1,0 +1,165 @@
+{
+  "asignatura": "Historia, Geografía y Ciencias Sociales",
+  "nivel": "7° básico",
+  "codigo_asignatura": "HI07",
+  "fuente": "Bases Curriculares 7° básico a 2° medio · MINEDUC Chile (curriculumnacional.cl)",
+  "url_fuente": "https://www.curriculumnacional.cl/curriculum/7o-basico-2o-medio/historia-geografia-ciencias-sociales/7-basico",
+  "nota_fidelidad": "Los 23 textos se transcribieron contrastando la ficha web de la asignatura con el Programa de Estudio en PDF (articles-34940_programa.pdf). Donde las dos fuentes discrepan se anota en la nota del OA y se adopta la forma coincidente entre la ficha web y la Visión global del Programa.",
+  "nota_evaluacion": "Tres OA (19, 20 y 23) NO son medibles por un quiz de opción múltiple tal como están redactados: piden valorar, debatir o investigar. Sus preguntas plantean siempre la situación de un tercero o el contenido factual subyacente, nunca la conducta ni la opinión del propio estudiante. El mapa de dominio del profesor va a mostrar un porcentaje junto a textos como «reconocer el valor de la diversidad», y eso se puede leer como una nota de actitud: no lo es.",
+  "habilidades_excluidas": {
+    "cuantas": 20,
+    "codigos": ["HI07 OAH a-j", "HI07 OAA A-J"],
+    "por_que": "10 OA de habilidad (pensamiento temporal y espacial, trabajo con fuentes, pensamiento crítico, comunicación) y 10 de actitud. Miden desempeño observable, investigación y debate. Además sus códigos con letra no calzan con la validación del servidor (^[A-Z]{2}[0-9]{2} OA [0-9]{2}$), así que el backend los descartaría en silencio."
+  },
+  "unidades": [
+    {
+      "n": 1,
+      "nombre": "De la hominización al surgimiento de las civilizaciones",
+      "oa": ["HI07 OA 01", "HI07 OA 02", "HI07 OA 03", "HI07 OA 04", "HI07 OA 21", "HI07 OA 22", "HI07 OA 23"]
+    },
+    {
+      "n": 2,
+      "nombre": "La Antigüedad y el canon cultural clásico",
+      "oa": ["HI07 OA 05", "HI07 OA 06", "HI07 OA 07", "HI07 OA 08", "HI07 OA 17"]
+    },
+    {
+      "n": 3,
+      "nombre": "La Edad Media y el nacimiento de la civilización europea",
+      "oa": ["HI07 OA 09", "HI07 OA 10", "HI07 OA 11", "HI07 OA 12", "HI07 OA 18", "HI07 OA 19"]
+    },
+    {
+      "n": 4,
+      "nombre": "Civilizaciones de América",
+      "oa": ["HI07 OA 13", "HI07 OA 14", "HI07 OA 15", "HI07 OA 16", "HI07 OA 20"]
+    }
+  ],
+  "oa": [
+    {
+      "codigo": "HI07 OA 01",
+      "eje": "Historia",
+      "texto": "Explicar el proceso de hominización, reconociendo las principales etapas de la evolución de la especie humana, la influencia de factores geográficos, su dispersión en el planeta y las distintas teorías del poblamiento americano."
+    },
+    {
+      "codigo": "HI07 OA 02",
+      "eje": "Historia",
+      "texto": "Explicar que el surgimiento de la agricultura, la domesticación de animales, la sedentarización, la acumulación de bienes y el desarrollo del comercio, fueron procesos de larga duración que revolucionaron la forma en que los seres humanos se relacionaron con el espacio geográfico."
+    },
+    {
+      "codigo": "HI07 OA 03",
+      "eje": "Historia",
+      "texto": "Explicar que en las primeras civilizaciones la formación de estados organizados y el ejercicio del poder estuvieron marcados por la centralización de la administración, la organización en torno a ciudades, la estratificación social, la formación de sistemas religiosos y el desarrollo de técnicas de contabilidad y escritura.",
+      "nota": "Discrepancia menor de puntuación dentro del propio Programa (Organizadores temáticos escriben «Explicar que, en las primeras civilizaciones, la formación...»). Se adopta la forma de la ficha web y la Visión global."
+    },
+    {
+      "codigo": "HI07 OA 04",
+      "eje": "Historia",
+      "texto": "Caracterizar el surgimiento de las primeras civilizaciones (por ejemplo, sumeria, egipcia, china, india, minoica, fenicia, olmeca y chavín, entre otras), reconociendo que procesos similares se desarrollaron en distintos lugares y tiempos."
+    },
+    {
+      "codigo": "HI07 OA 05",
+      "eje": "Historia",
+      "texto": "Caracterizar el mar Mediterráneo como ecúmene y como espacio de circulación e intercambio, e inferir cómo sus características geográficas (por ejemplo, clima, relieve, recursos naturales, entre otros) influyeron en el desarrollo de la ciudad Estado griega y de la república romana.",
+      "nota": "Dos discrepancias menores entre fuentes («e inferir de qué manera» en los Organizadores temáticos; «ciudad-estado» con guion en la ficha web). Se adopta la forma coincidente."
+    },
+    {
+      "codigo": "HI07 OA 06",
+      "eje": "Historia",
+      "texto": "Analizar las principales características de la democracia en Atenas, considerando el contraste con otras formas de gobierno del mundo antiguo, y su importancia para el desarrollo de la vida política actual y el reconocimiento de los derechos de los ciudadanos."
+    },
+    {
+      "codigo": "HI07 OA 07",
+      "eje": "Historia",
+      "texto": "Relacionar las principales características de la civilización romana (derecho, organización burocrática y militar, infraestructura, esclavitud, entre otros) con la extensión territorial de su Imperio, la relación con los pueblos conquistados, el proceso de romanización y la posterior expansión del cristianismo."
+    },
+    {
+      "codigo": "HI07 OA 08",
+      "eje": "Historia",
+      "texto": "Analizar, apoyándose en fuentes, el canon cultural que se constituyó en la Antigüedad clásica, considerando la centralidad del ser humano y la influencia de esta cultura en diversos aspectos de las sociedades del presente (por ejemplo, escritura alfabética, filosofía, ciencias, historia, noción de sujeto de derecho, relaciones de género, ideal de belleza, deporte, teatro, poesía y artes, entre otros).",
+      "nota": "El «apoyándose en fuentes» es trabajo con documentos: en quiz solo se mide el conocimiento del canon clásico y de sus huellas en el presente, no el manejo de fuentes."
+    },
+    {
+      "codigo": "HI07 OA 09",
+      "eje": "Historia",
+      "texto": "Explicar que la civilización europea se conforma a partir de la fragmentación de la unidad imperial de occidente y la confluencia de las tradiciones grecorromana, judeocristiana y germana, e identificar a la Iglesia Católica como el elemento que articuló esta síntesis y que legitimó el poder político.",
+      "nota": "Los Organizadores temáticos del Programa traen una errata («a partir de fragmentación»). Se adopta la forma de la ficha web y la Visión global."
+    },
+    {
+      "codigo": "HI07 OA 10",
+      "eje": "Historia",
+      "texto": "Caracterizar algunos rasgos distintivos de la sociedad medieval, como la visión cristiana del mundo, el orden estamental, las relaciones de fidelidad, los roles de género, la vida rural y el declive de la vida urbana."
+    },
+    {
+      "codigo": "HI07 OA 11",
+      "eje": "Historia",
+      "texto": "Analizar ejemplos de relaciones de influencia, convivencia y conflicto entre el mundo europeo, el bizantino y el islámico durante la Edad Media, considerando la división del cristianismo y las relaciones de frontera entre la cristiandad y el islam en la península ibérica, entre otros.",
+      "nota": "Tema sensible: involucra religiones vivas. Redactar sin juicio de valor sobre ninguna de ellas."
+    },
+    {
+      "codigo": "HI07 OA 12",
+      "eje": "Historia",
+      "texto": "Analizar las transformaciones que se producen en Europa a partir del siglo XII, considerando el renacimiento de la vida urbana, los cambios demográficos, las innovaciones tecnológicas, el desarrollo del comercio y el surgimiento de las universidades."
+    },
+    {
+      "codigo": "HI07 OA 13",
+      "eje": "Historia",
+      "texto": "Identificar las principales características de las civilizaciones maya y azteca, considerando las tecnologías utilizadas para transformar el territorio que habitaban (urbanización, canales, acueductos y calzadas, formas de cultivo, entre otros) y el desarrollo de una red comercial que vinculaba al área mesoamericana."
+    },
+    {
+      "codigo": "HI07 OA 14",
+      "eje": "Historia",
+      "texto": "Caracterizar el Imperio Inca, y analizar los factores que posibilitaron la dominación y unidad del Imperio (por ejemplo, red de caminos y sistema de comunicaciones, sistemas de cultivo, organización social, administración, ejército, mita y yanaconaje, sometimiento de pueblos y lengua oficial, entre otros)."
+    },
+    {
+      "codigo": "HI07 OA 15",
+      "eje": "Historia",
+      "texto": "Describir las principales características culturales de las civilizaciones maya, azteca e inca (por ejemplo, arte, lengua, tradiciones, relaciones de género, sistemas de medición del tiempo, ritos funerarios y creencias religiosas), e identificar aquellos elementos que persisten hasta el presente.",
+      "nota": "Tema sensible: pueblos originarios vivos. Evitar el pasado absoluto («los mayas eran») cuando existen comunidades actuales."
+    },
+    {
+      "codigo": "HI07 OA 16",
+      "eje": "Historia",
+      "texto": "Reconocer en expresiones culturales latinoamericanas del presente la confluencia del legado de múltiples civilizaciones como la maya, azteca, inca, griega, romana y europea."
+    },
+    {
+      "codigo": "HI07 OA 17",
+      "eje": "Formación ciudadana",
+      "texto": "Identificar los principios, mecanismos e instituciones que permitieron que en Atenas y en Roma se limitara el ejercicio del poder y se respetaran los derechos ciudadanos (por ejemplo, a través del equilibrio de poderes, del principio de elegibilidad, de la temporalidad de los cargos, de la ley y una cultura de la legalidad, de las magistraturas y del Senado romano, entre otros), reconociendo elementos de continuidad y de cambio con la actualidad."
+    },
+    {
+      "codigo": "HI07 OA 18",
+      "eje": "Formación ciudadana",
+      "texto": "Comparar los conceptos de ciudadanía, democracia, derecho, república, municipio y gremio del mundo clásico y medieval, con la sociedad contemporánea."
+    },
+    {
+      "codigo": "HI07 OA 19",
+      "eje": "Formación ciudadana",
+      "texto": "Reconocer el valor de la diversidad como una forma de enriquecer culturalmente a las sociedades, identificando, a modo de ejemplo, los aportes que las distintas culturas existentes en el mundo antiguo y medieval (árabes, judeocristianos, germanos, eslavos, etc.) hicieron a las sociedades europeas, considerando el lenguaje, la religión y las ciencias, entre otros.",
+      "actitudinal": true,
+      "nota": "Parcialmente valorativo. «Reconocer el valor» es una disposición; lo evaluable es la parte factual: qué aportes concretos hicieron esas culturas. Nunca preguntar por la valoración del propio estudiante."
+    },
+    {
+      "codigo": "HI07 OA 20",
+      "eje": "Formación ciudadana",
+      "texto": "Reconocer distintas formas de convivencia y conflicto entre culturas en las civilizaciones estudiadas, y debatir sobre la importancia que tienen el respeto, la tolerancia y las estrategias de resolución pacífica de conflictos, entre otros, para la convivencia entre distintos pueblos y culturas.",
+      "actitudinal": true,
+      "nota": "Actitudinal y de producción oral: «debatir» es desempeño observable. Solo se mide si el estudiante reconoce formas históricas de convivencia y conflicto, y cuál sería la respuesta respetuosa en una situación planteada sobre terceros."
+    },
+    {
+      "codigo": "HI07 OA 21",
+      "eje": "Geografía",
+      "texto": "Reconocer procesos de adaptación y transformación que se derivan de la relación entre el ser humano y el medio, e identificar factores que inciden en el asentamiento de las sociedades humanas (por ejemplo, disponibilidad de recursos, cercanía a zonas fértiles, fragilidad del medio ante la acción humana, o la vulnerabilidad de la población ante las amenazas del entorno)."
+    },
+    {
+      "codigo": "HI07 OA 22",
+      "eje": "Geografía",
+      "texto": "Reconocer y explicar formas en que la acción humana genera impactos en el medio y formas en las que el medio afecta a la población, y evaluar distintas medidas para propiciar efectos positivos y mitigar efectos negativos sobre ambos."
+    },
+    {
+      "codigo": "HI07 OA 23",
+      "eje": "Geografía",
+      "texto": "Investigar sobre problemáticas medioambientales relacionadas con fenómenos como el calentamiento global, los recursos energéticos, la sobrepoblación, entre otros, y analizar y evaluar su impacto a escala local.",
+      "actitudinal": true,
+      "nota": "De investigación: el verbo nuclear («investigar») es un proceso de trabajo, no un conocimiento preguntable. Lo evaluable es el contenido de las problemáticas y la lectura de datos a escala local. Es el único OA que el Programa repite en dos unidades (1 y 3); aquí se contabiliza en la unidad 1."
+    }
+  ]
+}

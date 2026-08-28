@@ -297,6 +297,11 @@ returns text language sql immutable as $$
     when p_oa like 'HI03%'                       then 'HI03'
     when p_oa like 'LE03%'                       then 'LE03'
     when p_oa like 'CN03%'                       then 'CN03'
+    -- 7° básico (Sesión 62). Mismo principio: el año va en el prefijo.
+    when p_oa like 'MA07%'                       then 'MA07'
+    when p_oa like 'HI07%'                       then 'HI07'
+    when p_oa like 'LE07%'                       then 'LE07'
+    when p_oa like 'CN07%'                       then 'CN07'
     when p_oa like 'LE08%' or p_oa in ('VOC-LENG','VOC-LECT')
          or p_oa like 'AF-T%'                    then 'LE08'
     else null end;
@@ -621,11 +626,13 @@ returns text[] language sql security definer stable set search_path=public as $$
   select case
     when exists(select 1 from public.profesores pr
                 where pr.id = auth.uid() and (pr.es_admin or pr.es_super))
-      then array['HI08','CN08','MA08','LE08','MA03','HI03','LE03','CN03']
+      then array['HI08','CN08','MA08','LE08','MA03','HI03','LE03','CN03',
+                 'MA07','HI07','LE07','CN07']
     when exists(select 1 from public.curso_profesores cp
                 where cp.curso_id = p_curso and cp.profesor_id = auth.uid()
                   and cp.rol = 'jefe')
-      then array['HI08','CN08','MA08','LE08','MA03','HI03','LE03','CN03']
+      then array['HI08','CN08','MA08','LE08','MA03','HI03','LE03','CN03',
+                 'MA07','HI07','LE07','CN07']
     else coalesce((select cp.asignaturas from public.curso_profesores cp
                    where cp.curso_id = p_curso and cp.profesor_id = auth.uid()),
                   '{}'::text[])

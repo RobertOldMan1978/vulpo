@@ -81,6 +81,23 @@ _UNIDADES = [(r"(\d+)\s*cm\b", "centimetro"),
 
 _OA_HORA = {"MA03 OA 18", "MA03 OA 20"}     # ahi ":" es hora, no division
 
+# Palabras que la voz NO sabe pronunciar, con su escritura fonetica.
+#
+# Por que un diccionario y NO una regla general "hue -> güe": el banco tiene quince
+# palabras con hu mas vocal y casi todas son comunes (huevo, hueso, hueco, huerto,
+# huella, huele, huir), que la voz dice bien. Aplicarles la regla las romperia todas, y
+# en Chile "güevo" no es una pronunciacion alternativa sino una groseria.
+#
+# OJO: **pehuén y pehuenche NO van aca**. Roberto los escucho y la voz ya los dice
+# bien; meterlos los habria roto el dia que alguno apareciera en un enunciado. Se
+# verifica escuchando antes de agregar, no por parecido con otra palabra.
+#
+# Se aplica sobre el texto que se PRONUNCIA. En pantalla el nino sigue leyendo la
+# palabra bien escrita, que es lo que tiene que aprender.
+_LEXICO = {}
+_RX_LEXICO = re.compile(r"(?!x)x") if not _LEXICO else re.compile(
+    r"(%s)" % "|".join(_LEXICO), re.IGNORECASE)
+
 # Nombre hablado de cada letra, para las listas de letras sueltas (ver `normalizar`).
 _LETRA = {"A": "a", "B": "be", "C": "ce", "D": "de", "E": "e", "F": "efe", "G": "ge",
           "H": "hache", "I": "i", "J": "jota", "K": "ka", "L": "ele", "M": "eme",
@@ -136,6 +153,10 @@ def _emoji_objeto(t):
 def normalizar(texto, oa=""):
     """Texto listo para el sintetizador. `oa` desambigua los dos puntos."""
     t = " " + (texto or "").strip() + " "
+
+    # Va primero: son palabras enteras y no deben verse afectadas por las reglas de
+    # simbolos ni por las de letras sueltas.
+    t = _RX_LEXICO.sub(lambda m: _LEXICO[m.group(0).lower()], t)
 
     for simbolo, palabra in _SIMBOLOS.items():
         t = t.replace(simbolo, " %s " % palabra)

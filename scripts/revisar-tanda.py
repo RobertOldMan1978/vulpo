@@ -24,7 +24,10 @@ from collections import Counter
 
 MARGEN = 3        # caracteres que la correcta puede sacarle a la segunda sin ser sospechosa
 PARECIDO = 0.82   # dos enunciados por encima de esto son casi la misma pregunta
-LARGO_MAX = 110   # enunciado; sobre esto, para 8 años, ya cansa
+LARGO_MAX = 110   # enunciado; sobre esto, para 8 anos, ya cansa
+# El limite depende de la edad Y del reloj: 3 basico no tiene cronometro, 7 y 8 si.
+# Con 20 segundos por pregunta, un enunciado largo mide velocidad de lectura.
+#     python scripts/revisar-tanda.py --largo=250 contenido/ciencias-7basico/_pool/*.json
 
 
 def pelado(t):
@@ -126,7 +129,10 @@ def revisar(ruta, vistos):
 
 def main():
     rutas = []
+    global LARGO_MAX
     for a in sys.argv[1:]:
+        if a.startswith("--largo="):
+            LARGO_MAX = int(a.split("=", 1)[1]); continue
         rutas += sorted(glob.glob(a))
     if not rutas:
         sys.exit("uso: python scripts/revisar-tanda.py <archivo.json> [...]")

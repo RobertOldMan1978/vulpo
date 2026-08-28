@@ -60,10 +60,20 @@ La página de presentación está en **https://vulpo.cl**, el juego en
 ## Estado
 
 Versión **v0.99**: completo y jugable de punta a punta, en vuelta de revisión
-manual antes de coronar la v1. Login, multiusuario y modelo de negocio quedan
-para más adelante.
+manual antes de coronar la v1.
 
-Aparte, hay una **app de 3° básico en construcción** en `3ro/`, adaptada a niños de
+**La v1 será VULPO de 3° a 8° básico**, seis cursos completos con sus cuatro
+asignaturas. Hoy existen tres (3°, 7° y 8°) y faltan 4°, 5° y 6°. El plan de
+organización y la programación están en
+[`docs/roadmap-tecnico.md`](docs/roadmap-tecnico.md), junto con la dirección de
+mediano plazo: web → PWA → Capacitor → Android → iOS, y el modelo de suscripción
+anual por nivel escolar. Nada de eso está implementado todavía.
+
+Aparte hay **dos cursos más en construcción**, cada uno como una app propia y **sin enlazar desde el sitio**.
+
+**7° básico** (`7mo/`) sigue las mismas bases que 8°: campañas por asignatura con capítulos en orden, jefe de capítulo y Jefe Final multi-fase, Modo Difícil, comodín 50/50, meta de aprendizaje y repaso al fallar. Sus cuatro asignaturas son Historia, Geografía y Ciencias Sociales (23 objetivos), Matemática (19), Ciencias Naturales (15) y Lengua y Literatura (25). No lleva lectura por voz: a los 12-13 años ya se lee de corrido. Guarda su avance y su identidad en línea aparte de 8° y de 3°.
+
+Y una **app de 3° básico** en `3ro/`, adaptada a niños de
 8-9 años (sin cronómetro, apoyo visual dibujado por código, texto grande y **lectura
 por voz con una voz chilena grabada** —los MP3 viajan en el repo, y si alguno no
 carga se lee con la voz del navegador). Tiene sus **cuatro asignaturas**: Matemática

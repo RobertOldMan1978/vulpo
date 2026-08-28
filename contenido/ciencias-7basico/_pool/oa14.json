@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "El agua de mar se ve pareja en todo el vaso. ¿Cómo se clasifica?",
+   "opciones": [
+    "Mezcla homogénea, porque las sales están disueltas y no se distinguen del agua",
+    "Sustancia pura, porque tiene un aspecto uniforme en toda su extensión",
+    "Mezcla heterogénea, porque contiene varias sales distintas mezcladas con el agua",
+    "Sustancia pura compuesta, porque el agua y la sal reaccionan entre sí"
+   ],
+   "correcta": 0,
+   "tip": "Que tenga varios componentes no la hace heterogénea: lo que decide es si se distinguen. En el agua de mar las sales están disueltas, así que hay una sola fase visible.",
+   "id": "cie7-oa14-1"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "El aire limpio está formado por nitrógeno, oxígeno y otros gases. ¿Qué tipo de materia es?",
+   "opciones": [
+    "Una mezcla homogénea, porque sus gases están repartidos de manera uniforme",
+    "Una sustancia pura, porque no se le ve ninguna partícula flotando",
+    "Una mezcla heterogénea, porque cada gas tiene propiedades diferentes",
+    "Un compuesto, porque sus gases se unieron químicamente al formarse la atmósfera"
+   ],
+   "correcta": 0,
+   "tip": "Los gases del aire están mezclados sin unirse químicamente y no se distinguen entre sí: es una sola fase, o sea una mezcla homogénea. Un compuesto exigiría unión química.",
+   "id": "cie7-oa14-2"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "Matías dice que el agua destilada no es pura porque tiene hidrógeno y oxígeno. ¿Tiene razón?",
+   "opciones": [
+    "No, porque una sustancia pura puede ser un compuesto formado por dos elementos",
+    "Sí, porque toda sustancia pura debe estar formada por un solo elemento químico",
+    "Sí, porque al tener dos elementos distintos se considera una mezcla homogénea",
+    "No, porque el hidrógeno y el oxígeno del agua se pueden separar filtrándola"
+   ],
+   "correcta": 0,
+   "tip": "Las sustancias puras se dividen en elementos (un solo tipo de átomo) y compuestos (átomos distintos unidos en proporción fija). El agua destilada es un compuesto puro.",
+   "id": "cie7-oa14-3"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "Un vaso con agua y alcohol se ve totalmente transparente. ¿Qué se puede afirmar?",
+   "opciones": [
+    "Que es una mezcla homogénea, porque sus componentes forman una sola fase",
+    "Que es una sustancia pura, porque la transparencia indica que no hay mezcla",
+    "Que es una mezcla heterogénea, porque son dos líquidos distintos",
+    "Que es un elemento químico, porque no se distingue nada en su interior"
+   ],
+   "correcta": 0,
+   "tip": "Ser transparente no es lo mismo que ser puro: muchas mezclas homogéneas son transparentes. Lo que define lo homogéneo es que haya una sola fase, no que se vea a través.",
+   "id": "cie7-oa14-4"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "Javiera deja reposar un vaso con agua y arena. ¿Qué método usa y por qué funciona?",
+   "opciones": [
+    "Decantación, porque la arena es más densa y se va al fondo del vaso",
+    "Filtración, porque el agua atraviesa la arena y queda limpia arriba",
+    "Tamizado, porque los granos de arena son más grandes que las gotas de agua",
+    "Destilación, porque el agua se evapora antes que la arena del fondo"
+   ],
+   "correcta": 0,
+   "tip": "La decantación aprovecha la diferencia de densidad: el componente más denso sedimenta y el otro se puede trasvasijar. No hace falta ningún filtro ni calentar la mezcla.",
+   "id": "cie7-oa14-5"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "¿Qué propiedad de los componentes aprovecha la filtración para separarlos?",
+   "opciones": [
+    "El tamaño de las partículas, ya que el sólido no pasa por los poros del filtro",
+    "La densidad de cada componente, ya que lo más pesado queda retenido sobre el papel",
+    "El punto de ebullición, ya que el líquido hierve al atravesar el papel",
+    "La solubilidad en agua, ya que solo lo disuelto queda atrapado en el filtro"
+   ],
+   "correcta": 0,
+   "tip": "El filtro tiene poros de cierto tamaño: retiene las partículas más grandes y deja pasar el líquido. Por eso no sirve con algo que ya está disuelto.",
+   "id": "cie7-oa14-6"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "En una planta de áridos separan grava, gravilla y arena con mallas de distinta abertura. ¿Qué método es?",
+   "opciones": [
+    "Tamizado, porque separa sólidos según el tamaño de sus partículas",
+    "Filtración, porque las mallas retienen el material más sucio de la mezcla",
+    "Decantación, porque los trozos más pesados quedan siempre en la malla de abajo",
+    "Destilación, porque el material se calienta al pasar por las mallas"
+   ],
+   "correcta": 0,
+   "tip": "El tamizado separa sólidos de distinto tamaño haciéndolos pasar por mallas. La filtración también usa el tamaño, pero separa un sólido de un líquido.",
+   "id": "cie7-oa14-7"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "¿Qué propiedad permite separar por destilación una mezcla de agua y alcohol?",
+   "opciones": [
+    "Que cada uno de los dos líquidos hierve a una temperatura distinta",
+    "Que el alcohol es menos denso que el agua y flota formando una capa sobre ella",
+    "Que las partículas de alcohol son más pequeñas que las de agua",
+    "Que el alcohol se disuelve en el agua y el agua no en el alcohol"
+   ],
+   "correcta": 0,
+   "tip": "En la destilación se calienta la mezcla: el componente de menor punto de ebullición se evapora primero y luego se condensa aparte. La densidad no interviene.",
+   "id": "cie7-oa14-8"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "En una planta de aguas servidas, el agua pasa primero por rejas que atrapan ramas y botellas. ¿Qué método es?",
+   "opciones": [
+    "Un tamizado, porque las rejas retienen los sólidos según su tamaño",
+    "Una decantación, porque los objetos grandes se hunden frente a la reja",
+    "Una destilación, porque el agua se separa de la basura al evaporarse",
+    "Una filtración fina, porque la reja retiene también la materia disuelta"
+   ],
+   "correcta": 0,
+   "tip": "Las rejas de entrada dejan pasar el agua y retienen lo grande: separan por tamaño, igual que un tamiz. Lo disuelto pasa sin problema.",
+   "id": "cie7-oa14-9"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "En el decantador de una planta de tratamiento, el lodo cae al fondo con el agua quieta. ¿Por qué ocurre?",
+   "opciones": [
+    "Porque las partículas del lodo son más densas que el agua y sedimentan",
+    "Porque el agua se evapora lentamente y deja el lodo abajo del estanque",
+    "Porque el lodo se disuelve en el agua y después se precipita solo",
+    "Porque las partículas del lodo son más pequeñas y se cuelan hacia el fondo"
+   ],
+   "correcta": 0,
+   "tip": "En reposo, lo más denso sedimenta por acción de la gravedad. Ese es el principio de la decantación y por eso los estanques mantienen el agua casi sin movimiento.",
+   "id": "cie7-oa14-10"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "En una planta de cobre, el mineral chancado pasa por harneros de distinta abertura. ¿Para qué sirve ese paso?",
+   "opciones": [
+    "Para separar los trozos de roca según su tamaño antes de seguir el proceso",
+    "Para disolver el cobre y separarlo del resto de la roca que salió del chancador",
+    "Para secar el mineral aprovechando el calor que generan los harneros",
+    "Para separar el cobre del agua que trae el mineral desde la mina"
+   ],
+   "correcta": 0,
+   "tip": "Un harnero es un tamiz industrial: clasifica el material por tamaño. Recién después vienen las etapas que separan el cobre del resto de la roca.",
+   "id": "cie7-oa14-11"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "Camila quiere obtener agua potable a partir de agua de mar. ¿Qué método le conviene?",
+   "opciones": [
+    "Destilación, porque el agua se evapora y la sal disuelta queda atrás",
+    "Filtración, porque el papel filtro retiene los cristales de sal disuelta",
+    "Decantación, porque la sal es más densa y se deposita en el fondo",
+    "Tamizado, porque los granos de sal son más grandes que el agua"
+   ],
+   "correcta": 0,
+   "tip": "La sal está disuelta: no la retiene ningún filtro ni sedimenta sola. Solo separándola por cambio de estado, como en la destilación, se recupera el agua.",
+   "id": "cie7-oa14-12"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "Benjamín filtra agua con sal disuelta y prueba el líquido que sale. ¿Qué va a encontrar?",
+   "opciones": [
+    "Que sigue salado, porque la sal disuelta atraviesa los poros del filtro",
+    "Que quedó sin sabor, porque el filtro retuvo toda la sal de la mezcla",
+    "Que está más salado, porque el filtro retuvo parte del agua de la mezcla",
+    "Que se separó en dos capas, una salada abajo y una dulce arriba"
+   ],
+   "correcta": 0,
+   "tip": "Filtrar solo retiene partículas más grandes que los poros. La sal disuelta está dividida en partículas diminutas y pasa junto con el agua.",
+   "id": "cie7-oa14-13"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "¿Cuál de estas mezclas es heterogénea?",
+   "opciones": [
+    "Agua con aceite, porque se distinguen dos capas separadas",
+    "Agua con azúcar revuelta hasta que se disuelve por completo",
+    "Aire limpio, formado por nitrógeno, oxígeno y otros gases",
+    "Acero, que es una mezcla sólida de hierro con algo de carbono"
+   ],
+   "correcta": 0,
+   "tip": "Una mezcla es heterogénea cuando se distinguen sus fases a simple vista. Agua y aceite no se mezclan y forman dos capas; las otras tres tienen una sola fase.",
+   "id": "cie7-oa14-14"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "En un trozo de granito se ven granos blancos, grises y negros. ¿Cómo se clasifica?",
+   "opciones": [
+    "Mezcla heterogénea, porque se distinguen a simple vista sus componentes",
+    "Sustancia pura, porque todo el trozo es una sola roca compacta",
+    "Mezcla homogénea, porque los granos están repartidos por toda la roca",
+    "Compuesto químico, porque sus minerales están unidos con mucha fuerza"
+   ],
+   "correcta": 0,
+   "tip": "Que sea un solo trozo sólido no lo hace puro: en el granito se distinguen los minerales que lo forman, así que hay más de una fase.",
+   "id": "cie7-oa14-15"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "El bronce es una aleación de cobre y estaño de aspecto uniforme. ¿Cómo se clasifica?",
+   "opciones": [
+    "Mezcla homogénea, porque sus metales forman una sola fase indistinguible",
+    "Sustancia pura, porque es un material sólido de composición siempre fija",
+    "Mezcla heterogénea, porque está formado por dos metales diferentes",
+    "Elemento químico, porque en la tabla periódica aparece como un metal"
+   ],
+   "correcta": 0,
+   "tip": "Las aleaciones son mezclas: sus metales no se unen químicamente en proporción fija. Como no se distinguen entre sí, la mezcla es homogénea.",
+   "id": "cie7-oa14-16"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "¿Cuál de estos materiales es una sustancia pura?",
+   "opciones": [
+    "El oxígeno de un balón medicinal, formado por un solo tipo de partícula",
+    "El agua mineral embotellada, que trae sales disueltas de origen natural",
+    "El jugo de naranja natural, con pulpa repartida en todo el líquido",
+    "El bronce de una campana, hecho con cobre y estaño fundidos juntos"
+   ],
+   "correcta": 0,
+   "tip": "Una sustancia pura tiene un solo tipo de partícula, sea elemento o compuesto. Las otras tres tienen más de un componente, aunque no siempre se noten.",
+   "id": "cie7-oa14-17"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "Se disuelve azúcar en agua: la mezcla sigue siendo dulce y sigue mojando. ¿Qué muestra eso?",
+   "opciones": [
+    "Que en una mezcla los componentes conservan sus propiedades",
+    "Que el agua y el azúcar se combinaron formando un compuesto nuevo",
+    "Que el azúcar desapareció y solo dejó su sabor en el agua",
+    "Que la mezcla es heterogénea porque se distinguen dos sabores"
+   ],
+   "correcta": 0,
+   "tip": "En una mezcla no hay reacción química: cada componente conserva sus propiedades y por eso se puede recuperar con un método físico de separación.",
+   "id": "cie7-oa14-18"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "Una mezcla de limaduras de hierro y arena se separa con un imán. ¿Qué propiedad se aprovechó?",
+   "opciones": [
+    "Que solo el hierro es atraído por el imán y la arena no lo es",
+    "Que el hierro es más denso que la arena y por eso queda pegado al imán",
+    "Que los granos de hierro son más pequeños que los de arena",
+    "Que el hierro se disuelve al acercarle un campo magnético"
+   ],
+   "correcta": 0,
+   "tip": "Cada método de separación se elige por la propiedad que diferencia a los componentes. Aquí es el magnetismo, no la densidad ni el tamaño.",
+   "id": "cie7-oa14-19"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "¿Cuál es el criterio principal para elegir un método de separación de mezclas?",
+   "opciones": [
+    "La propiedad en que se diferencian los componentes, como tamaño o densidad",
+    "La cantidad de mezcla que se quiere separar en el laboratorio o en la industria",
+    "El estado de agregación en que se encuentre la mezcla completa",
+    "El costo del equipo disponible en el lugar donde se trabaja"
+   ],
+   "correcta": 0,
+   "tip": "Un método funciona porque explota una diferencia: tamaño, densidad, punto de ebullición o magnetismo. Sin esa diferencia, ningún equipo separa la mezcla.",
+   "id": "cie7-oa14-20"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "En la minería del cobre, los espesadores dejan reposar la pulpa para que el sólido caiga al fondo. ¿Qué método es?",
+   "opciones": [
+    "Una decantación, porque separa el sólido del agua por diferencia de densidad",
+    "Un tamizado, porque el sólido queda retenido en el fondo del estanque",
+    "Una destilación, porque el agua se evapora y deja el sólido concentrado",
+    "Una filtración, porque el agua atraviesa la capa de sólido acumulado"
+   ],
+   "correcta": 0,
+   "tip": "El espesador es un decantador industrial: recupera el agua por arriba y el sólido sedimentado por abajo. No hay ni filtro ni calor de por medio.",
+   "id": "cie7-oa14-21"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "¿Por qué el tamizado no sirve para separar sal disuelta en agua?",
+   "opciones": [
+    "Porque el tamizado separa sólidos entre sí y la sal ya no es un sólido aparte",
+    "Porque la sal es demasiado densa y atraviesa la malla arrastrada por el agua",
+    "Porque el agua disuelve la malla del tamiz al pasar por ella",
+    "Porque la sal disuelta hierve antes que el agua y se escapa"
+   ],
+   "correcta": 0,
+   "tip": "El tamizado separa partículas sólidas de distinto tamaño. Al disolverse, la sal deja de estar en trozos separables y hay que recurrir a un cambio de estado.",
+   "id": "cie7-oa14-22"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "Un vaso tiene agua turbia con tierra en suspensión. ¿Qué combinación conviene?",
+   "opciones": [
+    "Decantar primero y filtrar después, para sacar el resto de partículas finas",
+    "Destilar primero y filtrar después, para asegurar que no quede nada de tierra",
+    "Tamizar primero y decantar después, para separar la tierra por su tamaño",
+    "Filtrar tres veces seguidas, para que el agua salga cada vez más limpia"
+   ],
+   "correcta": 0,
+   "tip": "Decantar saca el grueso sin tapar el filtro, y la filtración retira lo fino que quedó. Ese es el orden que usan las plantas de agua potable.",
+   "id": "cie7-oa14-23"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "Al destilar agua de mar, ¿dónde queda cada componente al terminar?",
+   "opciones": [
+    "El agua pura se recoge condensada y la sal queda en el recipiente inicial",
+    "La sal se recoge condensada y el agua queda en el recipiente inicial",
+    "Los dos se recogen juntos, pero el agua sale más limpia que al principio",
+    "El agua y la sal quedan separadas en dos capas del mismo recipiente"
+   ],
+   "correcta": 0,
+   "tip": "Solo el agua alcanza su punto de ebullición y se evapora; al enfriarse en el condensador vuelve a ser líquida. La sal, que no se evapora, queda atrás.",
+   "id": "cie7-oa14-24"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "¿En qué se diferencia la destilación de la simple evaporación al sol?",
+   "opciones": [
+    "En que la destilación recupera el líquido evaporado al condensarlo",
+    "En que la destilación solo funciona con mezclas de dos sólidos",
+    "En que la evaporación necesita mucha más energía que la destilación",
+    "En que la evaporación separa los componentes por densidad y no por calor"
+   ],
+   "correcta": 0,
+   "tip": "Las dos aprovechan el cambio de estado, pero la evaporación deja escapar el vapor y la destilación lo condensa para recuperarlo. Por eso las salinas usan evaporación.",
+   "id": "cie7-oa14-25"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "Una mezcla se ve pareja con lupa y no se distinguen fases. ¿Qué otro nombre recibe?",
+   "opciones": [
+    "Solución o disolución",
+    "Suspensión de partículas",
+    "Emulsión de dos líquidos",
+    "Compuesto químico simple"
+   ],
+   "correcta": 0,
+   "tip": "Toda mezcla homogénea es una solución: hay un soluto repartido de manera uniforme en un solvente. Las suspensiones y las emulsiones, en cambio, son heterogéneas.",
+   "id": "cie7-oa14-26"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "El agua servida de una casa trae papel, arena y detergente disuelto. ¿Qué se saca primero en la planta?",
+   "opciones": [
+    "El papel, retenido por las rejas gruesas de la entrada",
+    "El detergente disuelto, separado también por esas mismas rejas",
+    "La arena, que flota y se retira desde la superficie del estanque",
+    "El agua limpia, que se recupera por destilación antes que todo"
+   ],
+   "correcta": 0,
+   "tip": "El tratamiento va de lo más grande a lo más pequeño: primero rejas para lo grueso, después desarenadores y decantadores, y al final los procesos para lo disuelto.",
+   "id": "cie7-oa14-27"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "Javiera revuelve arena y azúcar, agrega agua y luego filtra. ¿Qué queda en el papel filtro?",
+   "opciones": [
+    "Solo la arena, porque el azúcar se disolvió y pasó con el agua",
+    "La arena y el azúcar juntos, porque los dos son sólidos",
+    "Solo el azúcar, porque sus granos son más grandes que los de arena",
+    "Nada, porque el agua arrastra los dos sólidos a través del filtro"
+   ],
+   "correcta": 0,
+   "tip": "El azúcar se disuelve y atraviesa el filtro con el agua; la arena no se disuelve y queda retenida. Para recuperar el azúcar habría que evaporar el agua.",
+   "id": "cie7-oa14-28"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "¿Qué observación permite afirmar que un líquido es una mezcla heterogénea?",
+   "opciones": [
+    "Que al dejarlo reposar se distinguen dos capas separadas",
+    "Que tiene un color intenso y parejo en todo el recipiente",
+    "Que al calentarlo cambia de estado a una temperatura fija",
+    "Que conduce la electricidad mejor que el agua destilada"
+   ],
+   "correcta": 0,
+   "tip": "Lo que define lo heterogéneo es distinguir más de una fase. Un color parejo o conducir electricidad son propios de muchas mezclas homogéneas.",
+   "id": "cie7-oa14-29"
+  },
+  {
+   "oa": "CN07 OA 14",
+   "pregunta": "Camila necesita separar el aceite del agua de un lavaplatos industrial. ¿Qué método elige?",
+   "opciones": [
+    "Decantación, porque el aceite es menos denso y forma una capa arriba",
+    "Filtración, porque el aceite no pasa por los poros del papel filtro",
+    "Tamizado, porque las gotas de aceite son más grandes que las de agua",
+    "Destilación, porque el aceite hierve antes que el agua del lavaplatos"
+   ],
+   "correcta": 0,
+   "tip": "Agua y aceite no se mezclan y tienen densidades distintas, así que se separan en capas y basta con retirar una. Es lo que hacen las trampas de grasa.",
+   "id": "cie7-oa14-30"
+  }
+ ]
+}

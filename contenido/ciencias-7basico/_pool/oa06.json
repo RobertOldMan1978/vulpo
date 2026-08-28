@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "En una mina del norte de Chile se riega un botadero de mineral pobre con solución ácida y se recupera cobre. ¿Qué hacen ahí las bacterias?",
+   "opciones": [
+    "Oxidan los minerales sulfurados de la roca y dejan el cobre disuelto en la solución",
+    "Fabrican cobre nuevo combinando el hierro y el azufre de la roca estéril que las rodea",
+    "Derriten la roca con el calor que liberan mientras respiran bajo el sol",
+    "Se tragan el cobre del mineral y después lo devuelven convertido en metal puro"
+   ],
+   "correcta": 0,
+   "tip": "El cobre ya está en el mineral: la bacteria no lo crea ni funde la roca, solo ataca el compuesto de azufre que lo retiene y lo deja libre en el líquido.",
+   "id": "cie7-oa06-1"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "¿Por qué la biolixiviación gasta menos energía que la fundición tradicional del cobre?",
+   "opciones": [
+    "Porque las bacterias trabajan a temperatura ambiente y no hay que fundir la roca en hornos",
+    "Porque el mineral se muele hasta un polvo mucho más fino que en la fundición",
+    "Porque las piscinas se riegan de noche, cuando la electricidad tiene menor precio",
+    "Porque las propias bacterias generan buena parte de la electricidad que consume la faena minera"
+   ],
+   "correcta": 0,
+   "tip": "El ahorro viene de reemplazar un horno de más de mil grados por microorganismos que hacen la separación en frío. Las bacterias no producen energía eléctrica.",
+   "id": "cie7-oa06-2"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "¿De dónde obtiene su energía una bacteria como Acidithiobacillus ferrooxidans, usada en la minería del cobre?",
+   "opciones": [
+    "De oxidar compuestos de hierro y de azufre presentes en el mineral",
+    "De la luz solar que recibe la superficie del botadero durante el día",
+    "De los azúcares que le aportan las raíces de las plantas del entorno",
+    "Del cobre metálico ya separado que se acumula al final del proceso"
+   ],
+   "correcta": 0,
+   "tip": "Es un microorganismo que saca energía de reacciones químicas con minerales, no de la luz ni de materia orgánica. Por eso vive en una roca donde no hay plantas.",
+   "id": "cie7-oa06-3"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "¿Por qué en la biolixiviación se riega con solución ácida y no con agua común?",
+   "opciones": [
+    "Porque las bacterias que se usan solo viven y trabajan en medios muy ácidos",
+    "Porque el agua común congelaría a las bacterias durante la noche del desierto",
+    "Porque el ácido reemplaza a las bacterias y hace todo el trabajo por sí solo",
+    "Porque el agua común disolvería el cobre demasiado rápido y se perdería"
+   ],
+   "correcta": 0,
+   "tip": "Son bacterias acidófilas: fuera de ese pH bajo dejan de actuar. El ácido ayuda, pero sin ellas la extracción es mucho más lenta e incompleta.",
+   "id": "cie7-oa06-4"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "¿Qué ventaja tiene la biolixiviación cuando la roca contiene muy poco cobre?",
+   "opciones": [
+    "Permite aprovechar mineral de baja ley que sería demasiado caro procesar en un horno",
+    "Aumenta la cantidad de cobre que contiene cada tonelada de roca que llega a la planta",
+    "Deja el cobre listo para usar sin ninguna etapa posterior de purificación",
+    "Reduce a pocas horas un proceso que en la fundición demora varios días"
+   ],
+   "correcta": 0,
+   "tip": "La biolixiviación no cambia la ley del mineral ni entrega cobre puro: hace rentable tratar roca pobre porque el proceso es barato, aunque demore meses.",
+   "id": "cie7-oa06-5"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "Camila dice que las bacterias de la mina producen cobre. ¿Por qué su afirmación es incorrecta?",
+   "opciones": [
+    "Porque el cobre ya está en el mineral y ellas solo lo liberan al atacar la roca",
+    "Porque el cobre lo produce el ácido y las bacterias solo mantienen la temperatura",
+    "Porque las bacterias no participan en la minería, solo se usan en los laboratorios",
+    "Porque las bacterias producen hierro y azufre, y el cobre aparece después por sí solo"
+   ],
+   "correcta": 0,
+   "tip": "Ningún ser vivo fabrica un elemento químico. El aporte de la bacteria es transformar el compuesto que atrapa al cobre para que quede disuelto y se pueda recuperar.",
+   "id": "cie7-oa06-6"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "¿Qué cuidado ambiental exige una faena minera que usa biolixiviación?",
+   "opciones": [
+    "Evitar que las soluciones ácidas se filtren y contaminen suelos y aguas cercanas",
+    "Impedir que las bacterias escapen y provoquen enfermedades graves en la población",
+    "Enfriar el terreno para que las bacterias no incendien el material acumulado",
+    "Retirar el oxígeno del aire cercano, porque el proceso se detiene si hay oxígeno"
+   ],
+   "correcta": 0,
+   "tip": "El riesgo real es el drenaje ácido: líquidos con ácido y metales disueltos. Las bacterias usadas no son patógenas y el proceso no genera fuego.",
+   "id": "cie7-oa06-7"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "¿Por qué la biolixiviación no ha reemplazado por completo a la fundición del cobre en Chile?",
+   "opciones": [
+    "Porque es un proceso mucho más lento, que puede tomar meses en dar resultados",
+    "Porque las bacterias necesarias solo existen en laboratorios de otros países del mundo",
+    "Porque entrega un cobre de peor calidad, que no sirve para fabricar cables",
+    "Porque consume más energía eléctrica que un horno de fundición equivalente"
+   ],
+   "correcta": 0,
+   "tip": "Su gran desventaja es el tiempo: la actividad de las bacterias es lenta. En energía y costo resulta más conveniente, y el cobre final tiene la misma calidad.",
+   "id": "cie7-oa06-8"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "Tras un derrame de petróleo en la costa se aplican bacterias degradadoras. ¿Qué hacen con el petróleo?",
+   "opciones": [
+    "Lo usan como alimento y lo transforman en sustancias más simples e inofensivas",
+    "Lo empujan hacia el fondo del mar, donde deja de estar en contacto con el aire",
+    "Lo absorben dentro de su cuerpo y lo mantienen guardado sin transformarlo",
+    "Lo endurecen hasta formar una costra sólida que después se retira con máquinas"
+   ],
+   "correcta": 0,
+   "tip": "Eso es biorremediación: el contaminante es el alimento del microorganismo, que lo descompone. Hundirlo o solidificarlo no lo elimina, solo lo cambia de lugar.",
+   "id": "cie7-oa06-9"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "¿Por qué en una playa con petróleo se agregan nitrógeno y fósforo junto con las bacterias?",
+   "opciones": [
+    "Porque el petróleo aporta carbono, pero faltan esos nutrientes para que se multipliquen",
+    "Porque esos compuestos disuelven el petróleo antes de que lleguen las bacterias",
+    "Porque el nitrógeno y el fósforo eliminan a las bacterias marinas que compiten",
+    "Porque sin ellos el petróleo se evaporaría antes de que las bacterias alcanzaran a degradarlo"
+   ],
+   "correcta": 0,
+   "tip": "Se llama bioestimulación: crecer exige algo más que una fuente de carbono. Sin nitrógeno ni fósforo la población de bacterias no aumenta y la limpieza casi no avanza.",
+   "id": "cie7-oa06-10"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "En una planta de tratamiento de aguas servidas, ¿cuál es el rol de los microorganismos?",
+   "opciones": [
+    "Consumir la materia orgánica disuelta y reducir así la carga contaminante del agua",
+    "Filtrar mecánicamente las partículas sólidas más grandes que trae el agua desde la ciudad",
+    "Teñir el agua para que los operadores vean cuánta suciedad queda en ella",
+    "Producir cloro dentro del estanque para desinfectar el agua ya tratada"
+   ],
+   "correcta": 0,
+   "tip": "El corazón del tratamiento es biológico: bacterias que se alimentan de los desechos orgánicos. El filtrado y la desinfección son etapas distintas, sin microorganismos.",
+   "id": "cie7-oa06-11"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "Un suelo agrícola quedó contaminado con un plaguicida y se aplican hongos degradadores. ¿Qué se espera de ellos?",
+   "opciones": [
+    "Que descompongan la molécula del plaguicida en compuestos menos tóxicos",
+    "Que cubran el suelo con una capa que impida el paso del plaguicida",
+    "Que absorban el plaguicida y lo devuelvan intacto a la superficie",
+    "Que reemplacen el plaguicida por otro producto químico igual de fuerte, pero de origen natural"
+   ],
+   "correcta": 0,
+   "tip": "Muchos hongos tienen enzimas capaces de romper moléculas complejas. La idea es transformar el tóxico, no taparlo ni trasladarlo a otra parte.",
+   "id": "cie7-oa06-12"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "¿Por qué la biorremediación con bacterias no logra eliminar el plomo de un terreno contaminado?",
+   "opciones": [
+    "Porque el plomo es un elemento químico y ningún ser vivo puede destruirlo",
+    "Porque el plomo elimina a todas las bacterias apenas entra en contacto con ellas",
+    "Porque el plomo se evapora antes de que las bacterias alcancen a actuar",
+    "Porque las bacterias solo actúan sobre sustancias que están disueltas en agua"
+   ],
+   "correcta": 0,
+   "tip": "Se pueden degradar compuestos orgánicos, pero un metal no se descompone. A lo más se logra inmovilizarlo o concentrarlo para retirarlo, nunca hacerlo desaparecer.",
+   "id": "cie7-oa06-13"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "En un plantel lechero los purines van a un estanque cerrado y se obtiene un gas combustible. ¿Quién lo produce?",
+   "opciones": [
+    "Bacterias que descomponen la materia orgánica sin oxígeno y liberan metano",
+    "Hongos que respiran oxígeno y liberan metano como desecho de su respiración",
+    "El calor del sol, que separa el metano contenido en el estiércol fresco",
+    "Algas microscópicas que fabrican metano usando la luz que entra al estanque"
+   ],
+   "correcta": 0,
+   "tip": "Los responsables son bacterias metanogénicas, que trabajan en ausencia de oxígeno. Sin ellas el estiércol se descompone igual, pero no se obtiene biogás aprovechable.",
+   "id": "cie7-oa06-14"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "¿Por qué un biodigestor debe permanecer herméticamente cerrado?",
+   "opciones": [
+    "Porque las bacterias que generan metano se detienen o mueren si entra oxígeno",
+    "Porque el estiércol pierde su olor solamente cuando está bien tapado",
+    "Porque la presión del aire exterior impediría que el estanque se llenara de residuos",
+    "Porque la luz del sol destruiría el metano apenas termina de formarse"
+   ],
+   "correcta": 0,
+   "tip": "Son bacterias anaerobias: el oxígeno las inhibe. Si entra aire, la descomposición sigue por otra vía y prácticamente no se produce metano.",
+   "id": "cie7-oa06-15"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "¿Qué se hace con el biogás que se obtiene en el digestor de una lechería?",
+   "opciones": [
+    "Se quema para generar calor o electricidad que aprovecha el mismo predio",
+    "Se entierra nuevamente en el suelo para que fertilice los potreros",
+    "Se libera al aire, porque su única función era evitar el mal olor",
+    "Se envasa como abono líquido y se vende a las plantas de tratamiento de agua"
+   ],
+   "correcta": 0,
+   "tip": "El metano es combustible: ese es el sentido del digestor. Lo que sirve como fertilizante es el residuo que queda en el fondo, no el gas.",
+   "id": "cie7-oa06-16"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "¿Qué doble beneficio ambiental tiene tratar residuos orgánicos en un biodigestor?",
+   "opciones": [
+    "Se aprovecha un residuo y se evita que el metano llegue a la atmósfera",
+    "Se elimina el residuo y además se destruyen todos los metales del suelo",
+    "Se produce oxígeno puro y se reduce la temperatura del aire de la zona",
+    "Se genera combustible y se elimina la necesidad de tratar el agua usada"
+   ],
+   "correcta": 0,
+   "tip": "El metano es un gas de efecto invernadero potente. Capturarlo y quemarlo como combustible resuelve dos problemas con un mismo proceso.",
+   "id": "cie7-oa06-17"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "En muchos rellenos sanitarios hay tuberías que captan gas. ¿De dónde proviene ese gas?",
+   "opciones": [
+    "De bacterias que descomponen la basura orgánica enterrada, sin contacto con el aire",
+    "De la evaporación de los líquidos que se acumulan en el fondo del relleno",
+    "Del aire que quedó atrapado entre las bolsas cuando las máquinas compactaron la basura",
+    "De reacciones del plástico enterrado cuando se calienta bajo la tierra"
+   ],
+   "correcta": 0,
+   "tip": "Bajo tierra y sin oxígeno, la basura orgánica sigue el mismo camino que dentro de un biodigestor. Por eso el gas de relleno es rico en metano y se puede aprovechar.",
+   "id": "cie7-oa06-18"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "Además del biogás, ¿qué producto útil queda en un biodigestor?",
+   "opciones": [
+    "Un residuo llamado digestato, que se usa como fertilizante en los cultivos",
+    "Un aceite combustible que puede reemplazar directamente al petróleo diésel",
+    "Agua potable, ya que las bacterias eliminan todos los microbios peligrosos",
+    "Carbón mineral, formado por la presión que ejerce el material acumulado"
+   ],
+   "correcta": 0,
+   "tip": "Lo que sobra conserva los nutrientes del residuo original y vuelve al suelo como abono. El carbón mineral demora millones de años, no unas semanas.",
+   "id": "cie7-oa06-19"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "En la elaboración del vino, ¿qué hace la levadura con el azúcar de la uva?",
+   "opciones": [
+    "Lo transforma en alcohol y en dióxido de carbono mediante la fermentación",
+    "Lo transforma en agua y en oxígeno, que escapa en forma de burbujas",
+    "Lo acumula sin cambiarlo, hasta que el mosto alcanza el dulzor buscado",
+    "Lo convierte en ácido acético, que es lo que le da al vino su aroma característico"
+   ],
+   "correcta": 0,
+   "tip": "La fermentación alcohólica convierte azúcar en alcohol y dióxido de carbono. El ácido acético aparece después, cuando el vino se echa a perder y se vuelve vinagre.",
+   "id": "cie7-oa06-20"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "En la fabricación de cerveza, ¿de qué se alimenta la levadura dentro del fermentador?",
+   "opciones": [
+    "De los azúcares que se obtienen de la malta al preparar el mosto",
+    "Del alcohol que la mezcla ya traía disuelto desde el comienzo",
+    "Del lúpulo, que es la única fuente de alimento de todo el proceso",
+    "Del agua mineral, que aporta las sales que la levadura necesita"
+   ],
+   "correcta": 0,
+   "tip": "La malta aporta el azúcar y la levadura lo fermenta. El lúpulo entrega amargor y aroma, y el alcohol es el producto final, no el alimento inicial.",
+   "id": "cie7-oa06-21"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "¿Por qué la fermentación del vino se hace en estanques cerrados, sin entrada de aire?",
+   "opciones": [
+    "Porque con oxígeno disponible la levadura respira y produce mucho menos alcohol",
+    "Porque el oxígeno hace que la levadura se reproduzca hasta reventar el estanque",
+    "Porque el aire enfría el mosto y detiene por completo a la levadura",
+    "Porque el oxígeno destruye el azúcar de la uva antes de que sea fermentado"
+   ],
+   "correcta": 0,
+   "tip": "La levadura puede respirar o fermentar. Con oxígeno crece y respira; sin él, fermenta y genera el alcohol que se busca en el vino.",
+   "id": "cie7-oa06-22"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "Para fabricar vinagre se inyecta aire al estanque donde las bacterias actúan sobre el vino. ¿Qué indica eso?",
+   "opciones": [
+    "Que esas bacterias necesitan oxígeno para transformar el alcohol en ácido acético",
+    "Que el aire arrastra el alcohol y deja el ácido ya formado dentro del líquido",
+    "Que el oxígeno reemplaza a las bacterias y hace la transformación por sí solo",
+    "Que el aire mantiene frío el estanque para que las bacterias no mueran"
+   ],
+   "correcta": 0,
+   "tip": "Es el contraste con el vino: la fermentación alcohólica ocurre sin oxígeno y la producción de vinagre lo exige. Por eso una botella mal tapada se avinagra.",
+   "id": "cie7-oa06-23"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "Al preparar chucrut, la col rallada con sal se deja tapada varios días. ¿Qué hacen las bacterias ahí?",
+   "opciones": [
+    "Producen ácido láctico, que baja el pH y conserva la verdura por más tiempo",
+    "Producen sal adicional, que se suma a la que se agregó al comienzo",
+    "Producen alcohol, que evapora el agua contenida en las hojas de col",
+    "Producen calor, que va cociendo lentamente la verdura dentro del recipiente tapado"
+   ],
+   "correcta": 0,
+   "tip": "Las bacterias lácticas acidifican el medio, y en un medio ácido casi no crecen los microbios que descomponen los alimentos. Por eso el chucrut dura meses.",
+   "id": "cie7-oa06-24"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "Benjamín visita una fábrica de antibióticos. ¿Qué crece dentro de los grandes fermentadores?",
+   "opciones": [
+    "Hongos o bacterias que liberan el antibiótico mientras se multiplican",
+    "Cristales del medicamento, que se forman al enfriar una mezcla química",
+    "Plantas medicinales cultivadas en agua, de las que luego se extrae el fármaco",
+    "Virus modificados que se convierten en antibiótico al final del proceso"
+   ],
+   "correcta": 0,
+   "tip": "El antibiótico es una sustancia que el microorganismo fabrica de forma natural; la industria solo le da las condiciones para crecer y después lo purifica.",
+   "id": "cie7-oa06-25"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "Hoy la insulina que usan las personas con diabetes se produce con bacterias. ¿Cómo es posible?",
+   "opciones": [
+    "Se les inserta el gen humano de la insulina y ellas la fabrican al multiplicarse",
+    "Se les inyecta insulina humana y ellas la copian sin cambiar nada de su material genético",
+    "Se alimentan con páncreas de animales y liberan la insulina ya digerida",
+    "Se las hace crecer en sangre humana, de donde toman la insulina disponible"
+   ],
+   "correcta": 0,
+   "tip": "Es biotecnología con ADN: la bacteria recibe la instrucción genética y produce la proteína como si fuera propia. No copia una molécula que se le entregue hecha.",
+   "id": "cie7-oa06-26"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "¿Qué ventaja tiene producir insulina con bacterias en vez de extraerla del páncreas de animales?",
+   "opciones": [
+    "Se obtienen grandes cantidades de una insulina idéntica a la humana",
+    "Se obtiene una insulina más barata, aunque distinta de la humana",
+    "Se evita tener que refrigerar el medicamento antes de usarlo",
+    "Se logra un medicamento que ya no necesita ninguna dosis diaria"
+   ],
+   "correcta": 0,
+   "tip": "Las bacterias se multiplican rápido y a bajo costo, y la proteína que producen es la humana. La insulina animal servía, pero era escasa y algo distinta.",
+   "id": "cie7-oa06-27"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "¿Qué tienen en común la biolixiviación, el biogás y la producción de insulina?",
+   "opciones": [
+    "En los tres se aprovecha el metabolismo de microorganismos para obtener algo útil",
+    "En los tres se usan hongos, porque las bacterias no resisten esos ambientes",
+    "En los tres el microorganismo muere al terminar y así forma el producto buscado",
+    "En los tres se necesita luz solar para que el microorganismo pueda trabajar"
+   ],
+   "correcta": 0,
+   "tip": "Esa es la idea de la biotecnología: poner a trabajar reacciones que el microbio ya hace por su cuenta. Los tres casos usan bacterias y ninguno depende de la luz.",
+   "id": "cie7-oa06-28"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "En invierno la producción de gas de un biodigestor rural baja mucho. ¿Cuál es la explicación más probable?",
+   "opciones": [
+    "Con menor temperatura la actividad de las bacterias disminuye y generan menos metano",
+    "El frío congela el metano dentro del estanque y por eso el gas ya no logra salir de él",
+    "El estiércol de invierno tiene menos materia orgánica que el de verano",
+    "En invierno hay menos luz y las bacterias del digestor la necesitan"
+   ],
+   "correcta": 0,
+   "tip": "Son seres vivos: su metabolismo depende de la temperatura. Por eso muchos digestores se aíslan o se calientan para mantener el rendimiento todo el año.",
+   "id": "cie7-oa06-29"
+  },
+  {
+   "oa": "CN07 OA 06",
+   "pregunta": "¿Cuál es la diferencia entre la biorremediación y la biolixiviación?",
+   "opciones": [
+    "En una los microbios degradan contaminantes y en la otra liberan un metal útil",
+    "En una participan bacterias y en la otra participan solamente hongos",
+    "En una el proceso ocurre sin oxígeno y en la otra siempre con luz solar",
+    "En una se usan seres vivos y en la otra solo reacciones químicas sin microbios"
+   ],
+   "correcta": 0,
+   "tip": "Las dos usan microorganismos, pero con fines opuestos: una limpia un ambiente contaminado y la otra extrae un recurso económico desde el mineral.",
+   "id": "cie7-oa06-30"
+  }
+ ]
+}

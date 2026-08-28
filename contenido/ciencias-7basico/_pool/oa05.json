@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "¿Cuál de estos microorganismos no está formado por células?",
+   "opciones": [
+    "El virus, que es solo material genético dentro de una cubierta de proteínas",
+    "La bacteria, que es una célula muy simple y sin núcleo definido",
+    "El hongo, que puede ser unicelular como la levadura",
+    "La levadura, que se usa para fermentar la masa del pan"
+   ],
+   "correcta": 0,
+   "tip": "Bacterias y hongos son organismos celulares. El virus no lo es: no tiene citoplasma ni membrana celular, solo su material genético envuelto en una cápside de proteínas.",
+   "id": "cie7-oa05-1"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "Ordenados de menor a mayor tamaño, ¿cómo quedan virus, bacterias y hongos?",
+   "opciones": [
+    "Virus, bacterias y hongos",
+    "Bacterias, virus y hongos",
+    "Virus, hongos y bacterias",
+    "Hongos, bacterias y virus"
+   ],
+   "correcta": 0,
+   "tip": "Los virus miden decenas de nanómetros, las bacterias unos pocos micrómetros y los hongos son los mayores. Un virus es cientos de veces más pequeño que una bacteria.",
+   "id": "cie7-oa05-2"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "¿Qué partes tiene un virus según el modelo que se usa para representarlo?",
+   "opciones": [
+    "Material genético rodeado por una cápside de proteínas",
+    "Núcleo con cromosomas rodeado de citoplasma y membrana",
+    "Pared de celulosa, cloroplastos y una vacuola central",
+    "Citoplasma con muchas mitocondrias y ribosomas propios"
+   ],
+   "correcta": 0,
+   "tip": "Un virus solo tiene material genético (ADN o ARN) y la cápside que lo protege; algunos suman una envoltura externa. No posee núcleo, citoplasma ni organelos.",
+   "id": "cie7-oa05-3"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "¿Qué caracteriza a la célula de una bacteria?",
+   "opciones": [
+    "Su material genético está suelto en el citoplasma, sin núcleo que lo encierre",
+    "Su material genético está encerrado dentro de un núcleo rodeado por su propia membrana",
+    "No tiene material genético, porque lo toma de las células que infecta",
+    "Tiene varios núcleos pequeños repartidos por todo el citoplasma"
+   ],
+   "correcta": 0,
+   "tip": "Las bacterias son procariontes: tienen membrana, citoplasma, ribosomas y pared celular, pero su ADN flota libre en el citoplasma en vez de estar dentro de un núcleo.",
+   "id": "cie7-oa05-4"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "Javiera observa al microscopio una célula con núcleo definido y pared de quitina. ¿A qué grupo pertenece?",
+   "opciones": [
+    "A los hongos, que son eucariontes con pared de quitina",
+    "A las bacterias, que son procariontes con pared de peptidoglicano",
+    "A los virus, que no tienen célula pero sí una cubierta rígida",
+    "A las plantas, que tienen núcleo y pared de celulosa"
+   ],
+   "correcta": 0,
+   "tip": "La quitina es la marca de los hongos: las plantas tienen celulosa y las bacterias, peptidoglicano. Tener núcleo ya descarta a las bacterias.",
+   "id": "cie7-oa05-5"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "¿Por qué los hongos no se clasifican dentro de las plantas?",
+   "opciones": [
+    "Porque no realizan fotosíntesis: obtienen su alimento de materia orgánica ya formada",
+    "Porque son siempre unicelulares y microscópicos, mientras que todas las plantas son pluricelulares",
+    "Porque no tienen pared celular y las plantas sí la tienen",
+    "Porque viven bajo la tierra y las plantas crecen hacia la luz"
+   ],
+   "correcta": 0,
+   "tip": "Los hongos son heterótrofos: absorben nutrientes de otros seres vivos o de restos. Sin clorofila no pueden fabricar su alimento, que es lo que define a una planta.",
+   "id": "cie7-oa05-6"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "¿Por qué un virus no puede reproducirse por sí solo?",
+   "opciones": [
+    "Porque necesita la maquinaria de una célula huésped para copiar su material genético",
+    "Porque se reproduce muy lentamente y necesita varios días completos para llegar a dividirse",
+    "Porque solo se reproduce cuando la temperatura del ambiente es alta",
+    "Porque debe unirse a otro virus para intercambiar material genético"
+   ],
+   "correcta": 0,
+   "tip": "El virus no tiene ribosomas ni enzimas propias para fabricar sus copias. Por eso se le llama parásito intracelular obligado: sin una célula que infectar, no se multiplica.",
+   "id": "cie7-oa05-7"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "Un virus queda fuera de cualquier célula durante varias horas. ¿Qué ocurre con sus funciones vitales?",
+   "opciones": [
+    "No realiza ninguna: se comporta como una partícula inerte hasta infectar una célula",
+    "Sigue respirando y alimentándose, pero mucho más lento que dentro de una célula",
+    "Se divide en dos virus más pequeños para ahorrar energía",
+    "Fabrica sus propias proteínas usando el oxígeno del aire"
+   ],
+   "correcta": 0,
+   "tip": "Fuera de una célula el virus no se alimenta, no respira ni se reproduce. Justamente por eso no se le considera un ser vivo completo.",
+   "id": "cie7-oa05-8"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "Al comparar las características de los seres vivos, ¿qué diferencia clave tiene el virus?",
+   "opciones": [
+    "No tiene metabolismo propio ni se reproduce sin una célula huésped",
+    "No tiene material genético, a diferencia de bacterias y hongos",
+    "No puede transmitirse de una persona a otra por contagio",
+    "No cambia nunca, porque su material genético no presenta variaciones"
+   ],
+   "correcta": 0,
+   "tip": "Bacterias y hongos se alimentan, respiran y se reproducen solos. El virus tiene material genético y evoluciona, pero sin metabolismo propio: por eso no cumple todas las características de los seres vivos.",
+   "id": "cie7-oa05-9"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "Matías tiene gripe y el médico no le receta antibióticos. ¿Cuál es la razón?",
+   "opciones": [
+    "La gripe la causa un virus y los antibióticos actúan sobre estructuras de las bacterias",
+    "Los antibióticos solo se recetan cuando la fiebre se mantiene sobre los 39 grados Celsius por varios días",
+    "La gripe la causa un hongo y los antibióticos solo eliminan virus",
+    "Los antibióticos tardan demasiado y la gripe dura solo tres días"
+   ],
+   "correcta": 0,
+   "tip": "Un antibiótico ataca la pared celular o los ribosomas bacterianos, estructuras que el virus no posee. Tomarlo contra una gripe no ayuda y favorece la resistencia bacteriana.",
+   "id": "cie7-oa05-10"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "¿Qué función cumplen las bacterias de la microbiota intestinal humana?",
+   "opciones": [
+    "Ayudan a digerir alimentos, producen vitaminas y frenan a bacterias dañinas",
+    "Reemplazan a las células de la pared del intestino a medida que estas se van desgastando",
+    "Producen el ácido del estómago que destruye los alimentos",
+    "Absorben directamente el oxígeno del aire que llega al intestino"
+   ],
+   "correcta": 0,
+   "tip": "La microbiota es un ejemplo claro de efecto positivo: degrada fibra, sintetiza vitaminas como la K y ocupa el espacio que usarían microorganismos patógenos.",
+   "id": "cie7-oa05-11"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "¿Qué microorganismos transforman la leche en yogur?",
+   "opciones": [
+    "Bacterias lácticas, que fermentan la lactosa y producen ácido láctico",
+    "Virus lácteos, que infectan las proteínas de la leche y la espesan al multiplicarse",
+    "Hongos filamentosos, que cubren la leche con una capa de esporas",
+    "Bacterias que respiran el oxígeno de la leche y la deshidratan"
+   ],
+   "correcta": 0,
+   "tip": "Las bacterias lácticas fermentan el azúcar de la leche. El ácido láctico que producen baja el pH, cuaja las proteínas y da el sabor característico del yogur.",
+   "id": "cie7-oa05-12"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "¿Por qué la masa del pan sube cuando se le agrega levadura?",
+   "opciones": [
+    "Porque la levadura fermenta los azúcares y libera dióxido de carbono que forma burbujas",
+    "Porque la levadura absorbe el agua de la masa y aumenta muchas veces su propio tamaño dentro de ella",
+    "Porque la levadura libera oxígeno mientras hace fotosíntesis en la masa",
+    "Porque la levadura derrite la harina y la vuelve más liviana"
+   ],
+   "correcta": 0,
+   "tip": "La levadura es un hongo unicelular. Al fermentar sin oxígeno produce dióxido de carbono y alcohol; el gas queda atrapado en la masa y la esponja.",
+   "id": "cie7-oa05-13"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "En varios quesos maduros se agregan hongos a propósito. ¿Para qué sirven?",
+   "opciones": [
+    "Para transformar grasas y proteínas y darle al queso su sabor y textura",
+    "Para eliminar todos los microorganismos que quedan en la leche",
+    "Para aportar la clorofila que da color a la corteza del queso",
+    "Para congelar el agua del queso y que se conserve más tiempo"
+   ],
+   "correcta": 0,
+   "tip": "Hongos como el Penicillium maduran el queso: sus enzimas degradan grasas y proteínas y generan los compuestos que dan aroma, sabor y las vetas azules.",
+   "id": "cie7-oa05-14"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "¿De dónde se obtuvo la penicilina, el primer antibiótico usado en medicina?",
+   "opciones": [
+    "De un hongo del género Penicillium que impedía crecer a las bacterias",
+    "De un virus que infectaba y destruía a las bacterias causantes de la enfermedad",
+    "De una bacteria del suelo que fabricaba sus propias vacunas",
+    "De una planta medicinal cultivada en laboratorio desde 1928"
+   ],
+   "correcta": 0,
+   "tip": "Fleming vio que alrededor de un moho las bacterias no crecían. Ese hongo producía penicilina: un microorganismo que salva vidas es otro ejemplo de efecto positivo.",
+   "id": "cie7-oa05-15"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "El pie de atleta y la tiña son enfermedades de la piel producidas por...",
+   "opciones": [
+    "hongos que crecen en zonas húmedas y se alimentan de la queratina de la piel",
+    "virus que se multiplican en las capas más profundas de la piel y la enrojecen",
+    "bacterias que solo viven en superficies muy secas y frías",
+    "parásitos que perforan la piel para alimentarse de sangre"
+   ],
+   "correcta": 0,
+   "tip": "Son micosis: infecciones causadas por hongos que aprovechan la humedad y el calor. Se tratan con antifúngicos, no con antibióticos ni antivirales.",
+   "id": "cie7-oa05-16"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "¿Cuál de estas enfermedades está causada por una bacteria?",
+   "opciones": [
+    "El cólera",
+    "El sarampión",
+    "La gripe",
+    "La hepatitis A"
+   ],
+   "correcta": 0,
+   "tip": "El cólera lo produce la bacteria Vibrio cholerae, presente en agua contaminada. El sarampión, la gripe y la hepatitis A son enfermedades virales.",
+   "id": "cie7-oa05-17"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "De estas cuatro enfermedades, ¿cuál es de origen viral?",
+   "opciones": [
+    "El sarampión",
+    "El tétanos",
+    "La tuberculosis",
+    "La salmonelosis"
+   ],
+   "correcta": 0,
+   "tip": "El sarampión es viral. Tétanos, tuberculosis y salmonelosis son bacterianas, por eso pueden tratarse con antibióticos y el sarampión no.",
+   "id": "cie7-oa05-18"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "Camila afirma que todas las bacterias causan enfermedades. ¿Por qué su afirmación es incorrecta?",
+   "opciones": [
+    "Porque la mayoría es inofensiva o beneficiosa, como las de la microbiota intestinal",
+    "Porque las bacterias solo enferman a los animales y a las plantas, nunca a las personas",
+    "Porque las bacterias enferman únicamente cuando se juntan con un virus",
+    "Porque ninguna bacteria produce enfermedades: eso lo hacen solo los virus"
+   ],
+   "correcta": 0,
+   "tip": "Solo una minoría de bacterias es patógena. Las demás degradan materia orgánica, producen alimentos y viven en nuestro cuerpo cumpliendo funciones útiles.",
+   "id": "cie7-oa05-19"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "Tras un tratamiento largo con antibióticos, una persona puede sufrir molestias digestivas. ¿Por qué?",
+   "opciones": [
+    "Porque el antibiótico también elimina bacterias beneficiosas de la microbiota intestinal",
+    "Porque el antibiótico destruye las células de la pared del intestino que absorben los nutrientes",
+    "Porque el antibiótico multiplica los virus que viven en el intestino",
+    "Porque el antibiótico impide que el estómago produzca ácido"
+   ],
+   "correcta": 0,
+   "tip": "El antibiótico no distingue entre bacterias dañinas y útiles. Al desequilibrarse la microbiota aparecen diarreas y a veces crecen hongos que antes estaban controlados.",
+   "id": "cie7-oa05-20"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "¿Cómo se reproduce habitualmente una bacteria?",
+   "opciones": [
+    "Por fisión binaria: la célula copia su ADN y se divide en dos bacterias iguales",
+    "Por esporas que libera al aire y germinan sobre una superficie húmeda",
+    "Infectando otra célula para que esta fabrique copias suyas",
+    "Uniendo dos células que forman un individuo con material genético mezclado"
+   ],
+   "correcta": 0,
+   "tip": "La fisión binaria es asexual y muy rápida: en condiciones favorables una bacteria puede dividirse cada veinte minutos, y por eso una infección avanza tan rápido.",
+   "id": "cie7-oa05-21"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "El pan olvidado varias semanas se cubre de moho. ¿Cómo llegó el hongo hasta ahí?",
+   "opciones": [
+    "Por esporas presentes en el aire, que germinaron sobre el pan húmedo",
+    "Por bacterias propias del pan que se transformaron en hongos al empezar a pudrirse",
+    "Porque la harina fabrica hongos cuando pierde su frescura",
+    "Por virus del ambiente que infectaron los granos de la harina"
+   ],
+   "correcta": 0,
+   "tip": "Los hongos se reproducen por esporas, que flotan en el aire y germinan donde encuentran humedad y nutrientes. Un ser vivo no se transforma en otro tipo de organismo.",
+   "id": "cie7-oa05-22"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "Las bacterias se ven con microscopio óptico, pero los virus necesitan uno electrónico. ¿Por qué?",
+   "opciones": [
+    "Porque los virus son tan pequeños que el microscopio óptico no logra distinguirlos",
+    "Porque los virus son totalmente transparentes, mientras que las bacterias tienen color propio",
+    "Porque los virus se mueven muy rápido y no alcanzan a enfocarse",
+    "Porque los virus solo existen dentro de células y no se pueden aislar"
+   ],
+   "correcta": 0,
+   "tip": "El microscopio óptico usa luz y no distingue objetos menores a unos 200 nanómetros. La mayoría de los virus está muy por debajo de ese límite.",
+   "id": "cie7-oa05-23"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "En una tabla comparativa, ¿qué fila corresponde solo a bacterias y hongos, y no a los virus?",
+   "opciones": [
+    "Obtienen energía mediante procesos metabólicos propios",
+    "Poseen material genético en su interior",
+    "Pueden provocar enfermedades en las personas",
+    "Se transmiten de un organismo a otro"
+   ],
+   "correcta": 0,
+   "tip": "Las otras tres características las comparten los tres grupos. El metabolismo propio es lo que separa a los organismos celulares del virus, que depende de la célula que infecta.",
+   "id": "cie7-oa05-24"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "La levadura de la cerveza y del pan es un organismo del grupo de...",
+   "opciones": [
+    "los hongos, unicelular y con núcleo definido",
+    "las bacterias, unicelular y sin núcleo definido",
+    "los virus, que no tienen estructura celular",
+    "las plantas microscópicas que hacen fotosíntesis"
+   ],
+   "correcta": 0,
+   "tip": "Saccharomyces cerevisiae es un hongo unicelular eucarionte. Que sea microscópica y unicelular no la convierte en bacteria: tiene núcleo y organelos.",
+   "id": "cie7-oa05-25"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "Benjamín arma una maqueta de un virus. ¿Qué NO debe incluir en ella?",
+   "opciones": [
+    "Un núcleo con membrana y mitocondrias en el citoplasma",
+    "Una cápside formada por unidades de proteína",
+    "Una hebra de material genético en el interior",
+    "Estructuras externas que le permiten unirse a una célula"
+   ],
+   "correcta": 0,
+   "tip": "Ningún virus tiene organelos ni núcleo, porque no es una célula. Su modelo se limita al material genético, la cápside y, en algunos, una envoltura con proteínas de anclaje.",
+   "id": "cie7-oa05-26"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "En caldo nutritivo crecen colonias de bacterias, pero un virus sembrado igual no se multiplica. ¿Qué muestra esto?",
+   "opciones": [
+    "Que el virus necesita células vivas y no le basta con nutrientes del medio",
+    "Que el virus murió apenas tomó contacto con los nutrientes del caldo de cultivo",
+    "Que el virus crece solo si la placa se mantiene en oscuridad total",
+    "Que el virus se multiplica más lento y necesita varias semanas"
+   ],
+   "correcta": 0,
+   "tip": "Una bacteria se alimenta del medio y se divide sola. El virus no tiene metabolismo: para cultivarlo hay que darle células huésped, no nutrientes.",
+   "id": "cie7-oa05-27"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "¿Cómo se alimenta un hongo que crece sobre un tronco caído?",
+   "opciones": [
+    "Libera enzimas que degradan la madera y luego absorbe los nutrientes disueltos",
+    "Fabrica su alimento con la luz del sol que llega hasta el bosque",
+    "Captura pequeños insectos y los digiere dentro de su cuerpo",
+    "Toma minerales del suelo y con ellos produce su propia azúcar"
+   ],
+   "correcta": 0,
+   "tip": "Los hongos son heterótrofos por absorción: digieren fuera del cuerpo y luego absorben. Como descomponedores devuelven los nutrientes al suelo, otro efecto positivo.",
+   "id": "cie7-oa05-28"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "Al comparar una bacteria con una célula humana, ¿qué estructura tiene la bacteria que la humana no?",
+   "opciones": [
+    "Una pared celular que rodea su membrana",
+    "Un citoplasma donde ocurren reacciones químicas",
+    "Ribosomas que le permiten fabricar sus proteínas",
+    "Una membrana que controla lo que entra y sale"
+   ],
+   "correcta": 0,
+   "tip": "Citoplasma, ribosomas y membrana los tienen ambas. La pared bacteriana es exclusiva de la bacteria, y por eso varios antibióticos la atacan sin dañar nuestras células.",
+   "id": "cie7-oa05-29"
+  },
+  {
+   "oa": "CN07 OA 05",
+   "pregunta": "Un mismo grupo de microorganismos, ¿puede tener efectos positivos y negativos en la salud humana?",
+   "opciones": [
+    "Sí: hay bacterias y hongos útiles en alimentos o medicinas y otros que causan infecciones",
+    "No: cada grupo de microorganismos es siempre dañino o siempre beneficioso para la salud de las personas",
+    "Sí, pero solo los virus, porque cambian según la persona que infectan",
+    "No: los hongos son siempre beneficiosos y las bacterias siempre dañinas"
+   ],
+   "correcta": 0,
+   "tip": "Los grupos no se dividen en buenos y malos. Entre las bacterias hay lácticas que producen yogur y otras que causan cólera; entre los hongos, la levadura del pan y el que produce el pie de atleta.",
+   "id": "cie7-oa05-30"
+  }
+ ]
+}

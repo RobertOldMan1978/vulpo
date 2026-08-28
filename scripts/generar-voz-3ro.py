@@ -136,9 +136,33 @@ def textos():
     return unicos
 
 
+# Palabras que la voz NO sabe leer, dictadas en alfabeto fonetico (IPA).
+#
+# "copihue" salia como "copi" y silencio: el sintetizador se come el sonido /we/. Se
+# probaron seis escrituras distintas (copigue, copigüe, copi güe, copi hue...) y ninguna
+# funciono: enganar al motor con una ortografia rara no es el camino. `<phoneme>` es la
+# herramienta que existe justo para esto —nombres propios y palabras que el motor no
+# conoce— y le dicta la pronunciacion sin tocar lo que el nino ve en pantalla.
+#
+# Roberto escucho las alternativas y eligio esta. Agregar una palabra aca exige
+# ESCUCHARLA antes: pehuen y pehuenche parecian tener el mismo problema y resulto que la
+# voz ya los decia bien; "arreglarlos" los habria roto.
+_FONEMAS = {
+    "copihue":  "koˈpiɣwe",
+    "copihues": "koˈpiɣwes",
+}
+_RX_FONEMAS = re.compile(r"\b(%s)\b" % "|".join(sorted(_FONEMAS, key=len, reverse=True)),
+                         re.IGNORECASE)
+
+
 def sintetizar(texto, clave, region):
     import requests
     esc = texto.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    # Va DESPUES del escapado: si se inyectara antes, el `<phoneme>` quedaria convertido
+    # en &lt;phoneme&gt; y la voz lo leeria en voz alta, literalmente.
+    esc = _RX_FONEMAS.sub(
+        lambda m: '<phoneme alphabet="ipa" ph="%s">%s</phoneme>'
+                  % (_FONEMAS[m.group(0).lower()], m.group(0)), esc)
     ssml = ('<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="es-CL">'
             '<voice name="%s"><prosody rate="%s">%s</prosody></voice></speak>' % (VOZ, RITMO, esc))
     url = "https://%s.tts.speech.microsoft.com/cognitiveservices/v1" % region

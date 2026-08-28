@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "¿Qué caracteriza a la barrera defensiva primaria del cuerpo humano?",
+   "opciones": [
+    "Impide la entrada de los microorganismos y actúa igual frente a cualquiera de ellos",
+    "Reconoce a cada microorganismo en particular y guarda memoria de él para la próxima vez",
+    "Solo se activa cuando el microorganismo ya llegó a la sangre y a los tejidos",
+    "Está formada por los linfocitos que fabrican anticuerpos contra un agente"
+   ],
+   "correcta": 0,
+   "tip": "La barrera primaria (piel, mucosas, lágrimas, acidez del estómago) es inespecífica y externa: bloquea la entrada. Reconocer a un agente en particular y recordarlo es tarea de la barrera terciaria.",
+   "id": "cie7-oa04-1"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "Javiera se corta un dedo con un cuchillo. ¿Qué barrera defensiva quedó rota?",
+   "opciones": [
+    "La primaria, porque la piel dejó de ser una cubierta continua",
+    "La secundaria, porque los fagocitos ya no pueden llegar a esa zona",
+    "La terciaria, porque los anticuerpos se pierden con la sangre que sale",
+    "Ninguna, porque las barreras defensivas actúan solamente frente a virus"
+   ],
+   "correcta": 0,
+   "tip": "La piel intacta es la principal barrera primaria. Al cortarse se abre una puerta de entrada; los fagocitos y los anticuerpos siguen funcionando y de hecho acuden al lugar.",
+   "id": "cie7-oa04-2"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "¿Por qué el jugo gástrico ácido se considera una barrera defensiva?",
+   "opciones": [
+    "Porque destruye a gran parte de los microorganismos que llegan con los alimentos",
+    "Porque avisa a los linfocitos cuál microorganismo deben atacar primero",
+    "Porque fabrica los anticuerpos que después viajan por la sangre",
+    "Porque provoca fiebre apenas se come un alimento contaminado con bacterias dañinas"
+   ],
+   "correcta": 0,
+   "tip": "La acidez del estómago es una barrera primaria de tipo químico: elimina microbios antes de que pasen al intestino. No reconoce a nadie en particular ni fabrica anticuerpos.",
+   "id": "cie7-oa04-3"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "Matías cree que las lágrimas solo sirven para expresar emociones. ¿Qué le falta saber?",
+   "opciones": [
+    "Que además arrastran y dañan microorganismos que llegan a la superficie del ojo",
+    "Que además llevan linfocitos de memoria hasta la superficie del ojo",
+    "Que además le avisan al cerebro cuando hay una infección en alguna parte del cuerpo",
+    "Que además provocan la fiebre con que el cuerpo combate a los virus"
+   ],
+   "correcta": 0,
+   "tip": "Las lágrimas son barrera primaria: lavan el ojo de forma constante y contienen sustancias que dañan a las bacterias. Los linfocitos y la fiebre pertenecen a las otras barreras.",
+   "id": "cie7-oa04-4"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "¿Qué papel cumplen el moco y los cilios de las vías respiratorias?",
+   "opciones": [
+    "Atrapan las partículas y microbios del aire y los empujan hacia afuera",
+    "Reconocen al virus de la gripe y guardan memoria de él para el año siguiente",
+    "Elevan la temperatura del aire que entra para destruir a las bacterias",
+    "Digieren a los microbios que entran, igual que el ácido del estómago"
+   ],
+   "correcta": 0,
+   "tip": "El moco pega las partículas y los cilios las barren hacia la faringe: es una barrera primaria mecánica. Recordar a un virus en particular es propio de la barrera terciaria.",
+   "id": "cie7-oa04-5"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "¿Cuándo entra en acción la barrera defensiva secundaria?",
+   "opciones": [
+    "Cuando un microorganismo ya logró atravesar la piel o las mucosas",
+    "Antes de que el microorganismo toque el cuerpo, sobre la superficie de la piel",
+    "Solamente la segunda vez que el mismo microorganismo entra al cuerpo",
+    "Solamente cuando ya existen anticuerpos contra ese microorganismo"
+   ],
+   "correcta": 0,
+   "tip": "La secundaria (inflamación, fiebre, fagocitos) se activa una vez que algo entró, y actúa igual sea la primera o la décima vez. Responder distinto la segunda vez es memoria, o sea barrera terciaria.",
+   "id": "cie7-oa04-6"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "La herida de Benjamín se pone roja, caliente e hinchada. ¿Qué indica eso?",
+   "opciones": [
+    "Que llega más sangre con células defensoras hasta el lugar dañado",
+    "Que la infección ya se extendió por todo el cuerpo del muchacho",
+    "Que las defensas del cuerpo dejaron de funcionar justo en esa zona",
+    "Que la piel está fabricando anticuerpos específicos contra la bacteria"
+   ],
+   "correcta": 0,
+   "tip": "La inflamación es una respuesta útil: los vasos se dilatan y llevan fagocitos al sitio dañado. Es señal de que el cuerpo está trabajando, no de que falló.",
+   "id": "cie7-oa04-7"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "¿Por qué la fiebre moderada se considera parte de la defensa del cuerpo?",
+   "opciones": [
+    "Porque dificulta la reproducción de muchos microbios y acelera la respuesta inmune",
+    "Porque es el daño directo que provoca el microbio al multiplicarse dentro",
+    "Porque quema los anticuerpos viejos para que se fabriquen otros nuevos",
+    "Porque impide que cualquier microbio logre atravesar la piel y las mucosas del cuerpo"
+   ],
+   "correcta": 0,
+   "tip": "La fiebre la produce el propio cuerpo como respuesta: sube la temperatura, frena a muchos patógenos y activa las defensas. No es la enfermedad, es una reacción contra ella.",
+   "id": "cie7-oa04-8"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "¿Qué hacen los fagocitos frente a una bacteria que entró por una herida?",
+   "opciones": [
+    "La rodean, la engloban y la digieren dentro de la propia célula",
+    "Le entregan anticuerpos específicos fabricados por la piel de la zona",
+    "La empujan hacia la piel para que salga del cuerpo con el sudor",
+    "Elevan la acidez de toda la sangre hasta lograr destruirla"
+   ],
+   "correcta": 0,
+   "tip": "Fagocito significa célula que come: engloba al microbio y lo destruye en su interior. Es defensa inespecífica; los anticuerpos los fabrican los linfocitos, no la piel.",
+   "id": "cie7-oa04-9"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "¿Qué distingue a la barrera terciaria de las otras dos barreras?",
+   "opciones": [
+    "Que reconoce a cada agente en particular y conserva memoria de él",
+    "Que actúa mucho más rápido que la inflamación y que la fiebre",
+    "Que impide la entrada de los microbios antes de que toquen el cuerpo",
+    "Que funciona solo en la piel y en las mucosas del sistema digestivo"
+   ],
+   "correcta": 0,
+   "tip": "La terciaria es específica y con memoria: linfocitos y anticuerpos. Justamente es la más lenta la primera vez, y por eso la memoria que deja resulta tan valiosa.",
+   "id": "cie7-oa04-10"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "¿Qué son los anticuerpos?",
+   "opciones": [
+    "Proteínas que se unen a un agente determinado y ayudan a neutralizarlo",
+    "Células defensoras que engloban y digieren a cualquier microorganismo que entre",
+    "Sustancias que elevan la temperatura del cuerpo durante una infección",
+    "Medicamentos que se toman para eliminar bacterias del organismo"
+   ],
+   "correcta": 0,
+   "tip": "Los anticuerpos son proteínas fabricadas por linfocitos y actúan contra un agente específico. Las células que engloban microbios son los fagocitos.",
+   "id": "cie7-oa04-11"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "Camila tuvo sarampión a los cuatro años y nunca volvió a enfermarse de eso. ¿Por qué?",
+   "opciones": [
+    "Porque quedaron linfocitos de memoria que responden muy rápido al mismo virus",
+    "Porque su piel se hizo más gruesa con los años e impide que ese virus vuelva a entrar",
+    "Porque el virus del sarampión desapareció por completo del ambiente",
+    "Porque la fiebre de esa vez destruyó a todos los virus de ese tipo del país"
+   ],
+   "correcta": 0,
+   "tip": "La memoria inmune pertenece a la barrera terciaria: al segundo contacto los linfocitos responden tan rápido que la enfermedad no alcanza a desarrollarse.",
+   "id": "cie7-oa04-12"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "¿Cómo actúa una vacuna dentro del cuerpo?",
+   "opciones": [
+    "Entrena la memoria inmune con el agente inactivado o con un fragmento de él",
+    "Mata directamente a todos los microbios que ya están dentro del cuerpo enfermo",
+    "Aporta anticuerpos hechos en laboratorio que duran para toda la vida",
+    "Refuerza la piel y las mucosas para que el microbio no logre entrar"
+   ],
+   "correcta": 0,
+   "tip": "La vacuna no mata microbios: presenta una versión inactivada o un fragmento del agente para que los linfocitos aprendan a reconocerlo antes del contacto real.",
+   "id": "cie7-oa04-13"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "Matías no quiere vacunarse contra la influenza porque no está enfermo. ¿Qué error comete?",
+   "opciones": [
+    "La vacuna se pone antes del contacto, justamente para preparar la defensa",
+    "La vacuna solo hace efecto si ya aparecieron los primeros síntomas de gripe",
+    "La vacuna reemplaza a los anticuerpos mientras dura la enfermedad",
+    "La vacuna se pone después de la infección para acortar los síntomas"
+   ],
+   "correcta": 0,
+   "tip": "Vacunarse es preventivo: crea memoria inmune antes de encontrarse con el virus. Si la persona ya está enferma, para esa infección la vacuna llega tarde.",
+   "id": "cie7-oa04-14"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "¿Para qué existe en Chile un calendario nacional de vacunación?",
+   "opciones": [
+    "Para que cada persona reciba las vacunas a la edad en que más la protegen",
+    "Para registrar qué enfermedades tuvo cada niño durante todo su año escolar",
+    "Para repartir antibióticos gratuitos contra las infecciones más comunes",
+    "Para vacunar solamente a quienes ya se contagiaron de alguna enfermedad"
+   ],
+   "correcta": 0,
+   "tip": "El calendario fija qué vacuna corresponde a cada edad, de modo que la memoria inmune esté lista antes del momento de mayor riesgo. Las vacunas no son antibióticos.",
+   "id": "cie7-oa04-15"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "Javiera tiene gripe y quiere tomar antibióticos. ¿Por qué no le van a servir?",
+   "opciones": [
+    "Porque los antibióticos actúan sobre bacterias y la gripe la causa un virus",
+    "Porque los antibióticos solo actúan si la fiebre pasa los 39 grados Celsius",
+    "Porque los antibióticos deben tomarse antes de que aparezca cualquier síntoma",
+    "Porque los antibióticos solamente funcionan en las infecciones de la piel"
+   ],
+   "correcta": 0,
+   "tip": "Los antibióticos atacan estructuras propias de las bacterias, que los virus no tienen. Contra la gripe no hacen nada, y tomarlos sin necesidad trae problemas.",
+   "id": "cie7-oa04-16"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "¿Qué consecuencia tiene usar antibióticos para infecciones causadas por virus?",
+   "opciones": [
+    "No mejoran la infección y favorecen la aparición de bacterias resistentes",
+    "Curan más rápido, aunque provocan fiebre alta durante algunos días",
+    "Destruyen a los virus, pero de paso dañan a los linfocitos que nos defienden",
+    "Impiden que la vacuna contra ese virus funcione bien en el futuro"
+   ],
+   "correcta": 0,
+   "tip": "Sobre el virus no tienen efecto alguno. Sobre las bacterias del cuerpo sí: sobreviven las resistentes, que después son mucho más difíciles de tratar.",
+   "id": "cie7-oa04-17"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "Escherichia coli vive normalmente en el intestino humano. ¿Qué se puede afirmar de ella?",
+   "opciones": [
+    "Que la mayoría de sus variedades son inofensivas y algunas causan enfermedad",
+    "Que provoca enfermedad siempre, apenas entra en contacto con el cuerpo humano",
+    "Que es un virus, y por eso los antibióticos no tienen efecto sobre ella",
+    "Que aparece en el intestino solo cuando la persona ya está enferma"
+   ],
+   "correcta": 0,
+   "tip": "Escherichia coli es una bacteria habitual del intestino. Algunas cepas, que suelen llegar en agua o alimentos contaminados, sí producen diarreas graves.",
+   "id": "cie7-oa04-18"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "¿Qué medida reduce mejor el contagio de las variedades dañinas de Escherichia coli?",
+   "opciones": [
+    "Lavarse las manos y cocinar bien los alimentos antes de comerlos",
+    "Vacunarse cada año contra la influenza en el consultorio más cercano",
+    "Tomar antibióticos de forma preventiva antes de cada comida del día",
+    "Evitar acercarse a las personas que estornuden o tosan en la sala"
+   ],
+   "correcta": 0,
+   "tip": "Esa bacteria se transmite sobre todo por agua y alimentos contaminados, así que la higiene y la cocción son la mejor barrera. El estornudo transmite virus respiratorios.",
+   "id": "cie7-oa04-19"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "¿Cómo se transmite principalmente el virus de la gripe o influenza?",
+   "opciones": [
+    "Por las gotitas que salen al toser, estornudar o hablar de cerca",
+    "Por el agua contaminada que se bebe sin hervir ni filtrar antes",
+    "Por la picadura de insectos que lo llevan de una persona a otra",
+    "Por comer carne mal cocida que estuvo mucho tiempo sin refrigerar"
+   ],
+   "correcta": 0,
+   "tip": "La influenza es una infección respiratoria: viaja en gotitas y en las manos que tocan superficies contaminadas. El agua y los alimentos transmiten otros agentes.",
+   "id": "cie7-oa04-20"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "¿Por qué la vacuna contra la influenza se repite todos los años?",
+   "opciones": [
+    "Porque el virus cambia y la vacuna se ajusta a las variedades que circulan",
+    "Porque los anticuerpos se destruyen apenas termina la estación de invierno",
+    "Porque cada dosis alcanza a proteger solamente una parte del cuerpo",
+    "Porque el cuerpo humano no es capaz de guardar ninguna memoria inmune"
+   ],
+   "correcta": 0,
+   "tip": "El virus de la influenza varía con frecuencia, así que la memoria del año pasado puede no reconocer a la variedad nueva. Por eso la vacuna se actualiza cada temporada.",
+   "id": "cie7-oa04-21"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "¿Qué ocurre en el cuerpo de una persona alérgica al polen?",
+   "opciones": [
+    "Su sistema inmune reacciona de forma exagerada frente a algo inofensivo",
+    "Su sistema inmune está tan débil que no logra reconocer al polen",
+    "El polen es un agente patógeno que se multiplica dentro de su cuerpo y lo daña",
+    "Su piel perdió la capacidad de impedir la entrada de microorganismos"
+   ],
+   "correcta": 0,
+   "tip": "La alergia es una respuesta desproporcionada contra una sustancia que no causa daño. No es una defensa débil ni una infección.",
+   "id": "cie7-oa04-22"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "¿Qué tienen en común una alergia y una enfermedad autoinmune?",
+   "opciones": [
+    "Que en ambas el sistema inmune ataca algo que no debería atacar",
+    "Que en ambas el sistema inmune deja de producir cualquier anticuerpo",
+    "Que ambas las causan bacterias que entran por una herida en la piel",
+    "Que ambas se curan tomando antibióticos durante unos cuantos días"
+   ],
+   "correcta": 0,
+   "tip": "Las dos son alteraciones de la respuesta inmune. En la alergia el blanco es una sustancia inofensiva; en la autoinmune, el propio cuerpo.",
+   "id": "cie7-oa04-23"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "¿Qué caracteriza a una enfermedad autoinmune?",
+   "opciones": [
+    "El sistema inmune ataca células y tejidos del propio cuerpo",
+    "El sistema inmune deja pasar a todos los microorganismos sin defenderse",
+    "Un virus se instala en los linfocitos y los usa para reproducirse",
+    "La piel y las mucosas dejan de producir sus sustancias protectoras"
+   ],
+   "correcta": 0,
+   "tip": "En una enfermedad autoinmune la defensa confunde lo propio con lo ajeno y lo ataca. No es una falta de defensas ni una infección.",
+   "id": "cie7-oa04-24"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "¿Por qué el cuerpo puede rechazar un riñón recibido en un trasplante?",
+   "opciones": [
+    "Porque el sistema inmune reconoce ese órgano como ajeno y lo ataca",
+    "Porque el órgano recibido no alcanza a producir sus propios anticuerpos",
+    "Porque todo órgano trasplantado trae bacterias del cuerpo del donante",
+    "Porque la piel cicatrizada impide que llegue sangre al órgano nuevo"
+   ],
+   "correcta": 0,
+   "tip": "El rechazo es una respuesta inmune normal dirigida a un blanco no deseado: las células del órgano donado se reconocen como extrañas al cuerpo.",
+   "id": "cie7-oa04-25"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "¿Por qué una persona trasplantada toma medicamentos que frenan su sistema inmune?",
+   "opciones": [
+    "Para que su defensa no ataque al órgano que recibió del donante",
+    "Para que el órgano que recibió crezca más rápido dentro del cuerpo",
+    "Para evitar que el órgano que recibió fabrique anticuerpos propios",
+    "Para subir la fiebre y así destruir las bacterias del órgano nuevo"
+   ],
+   "correcta": 0,
+   "tip": "Se busca bajar la respuesta contra el órgano ajeno. El costo es quedar más expuesto a infecciones, así que estas personas deben cuidarse más.",
+   "id": "cie7-oa04-26"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "Una bacteria entra por una herida y llega a los tejidos. ¿En qué orden actúan las defensas?",
+   "opciones": [
+    "Primero la inflamación y los fagocitos, y después los linfocitos específicos",
+    "Primero los anticuerpos específicos, y después la inflamación de la zona",
+    "Primero la acidez del estómago, y después la fiebre de todo el cuerpo",
+    "Primero la memoria inmune, y solo si ella falla aparecen los fagocitos y la fiebre"
+   ],
+   "correcta": 0,
+   "tip": "La respuesta inespecífica es rápida y llega primero. La específica demora días la primera vez, porque los linfocitos deben reconocer al agente y multiplicarse.",
+   "id": "cie7-oa04-27"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "Una persona con quemaduras extensas tiene más riesgo de sufrir infecciones. ¿Por qué?",
+   "opciones": [
+    "Porque perdió gran parte de su barrera primaria, que es la piel",
+    "Porque las quemaduras destruyen todos los anticuerpos de su sangre",
+    "Porque el calor de la quemadura la deja con fiebre de forma permanente",
+    "Porque la piel quemada empieza a producir bacterias por sí sola"
+   ],
+   "correcta": 0,
+   "tip": "La piel es la barrera primaria más extensa. Sin ella, los microorganismos entran directamente a los tejidos, aunque las otras barreras sigan funcionando bien.",
+   "id": "cie7-oa04-28"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "En un curso, casi todos están vacunados contra la meningitis. ¿Qué efecto tiene eso?",
+   "opciones": [
+    "El agente circula menos, y también se protege a quien no pudo vacunarse",
+    "Los vacunados fabrican anticuerpos que pasan por el aire a sus compañeros",
+    "Los no vacunados quedan igual de protegidos que si se hubieran vacunado",
+    "El agente desaparece por completo del país en unas pocas semanas"
+   ],
+   "correcta": 0,
+   "tip": "Con muchas personas protegidas, el microorganismo encuentra menos gente donde multiplicarse y se transmite menos. Los anticuerpos no se contagian de una persona a otra.",
+   "id": "cie7-oa04-29"
+  },
+  {
+   "oa": "CN07 OA 04",
+   "pregunta": "¿A qué barrera defensiva corresponde la producción de anticuerpos contra un virus?",
+   "opciones": [
+    "A la terciaria, porque es específica para ese virus en particular",
+    "A la primaria, porque impide que el virus entre por las mucosas",
+    "A la secundaria, porque actúa igual contra cualquier microorganismo",
+    "A ninguna, porque los anticuerpos llegan en los alimentos que comemos"
+   ],
+   "correcta": 0,
+   "tip": "Los anticuerpos los fabrican los linfocitos y actúan contra un agente determinado: esa especificidad es justamente lo que define a la barrera terciaria.",
+   "id": "cie7-oa04-30"
+  }
+ ]
+}

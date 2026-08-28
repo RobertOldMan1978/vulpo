@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "Tabla de mascotas de 20 estudiantes: perro 9, gato 6, ave 3, pez 2. ¿Cuál es la frecuencia absoluta de gato?",
+   "opciones": [
+    "6",
+    "0,3",
+    "9",
+    "20"
+   ],
+   "correcta": 0,
+   "tip": "La frecuencia absoluta es el conteo: cuántos estudiantes eligieron esa categoría. El 0,3 es la frecuencia relativa de gato y el 20 es el total de la muestra, no el conteo de una categoría.",
+   "id": "mate7-oa16-1"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "Tabla de mascotas de 20 estudiantes: perro 9, gato 6, ave 3, pez 2. ¿Cuál es la frecuencia relativa de gato?",
+   "opciones": [
+    "0,3",
+    "0,6",
+    "0,25",
+    "0,15"
+   ],
+   "correcta": 0,
+   "tip": "La frecuencia relativa se obtiene dividiendo el conteo por el total: 6 dividido en 20 da 0,3. El error típico es dividir por 10 o repartir entre las 4 categorías, pero el divisor siempre es el total de la muestra.",
+   "id": "mate7-oa16-2"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "Tabla de mascotas de 20 estudiantes: perro 9, gato 6, ave 3, pez 2. ¿Qué porcentaje de la muestra eligió perro?",
+   "opciones": [
+    "45 por ciento",
+    "9 por ciento",
+    "90 por ciento",
+    "20 por ciento"
+   ],
+   "correcta": 0,
+   "tip": "Se divide 9 en 20, que da 0,45, y eso se multiplica por 100. Decir 9 por ciento es confundir el conteo con el porcentaje: solo coincidirían si la muestra fuera de 100 personas.",
+   "id": "mate7-oa16-3"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "En una tabla de frecuencias absolutas de una muestra, ¿qué representa la suma de la columna de frecuencias?",
+   "opciones": [
+    "El total de datos de la muestra",
+    "El número de categorías distintas que se registraron",
+    "El promedio de los datos registrados",
+    "Siempre 100, porque las frecuencias son porcentajes"
+   ],
+   "correcta": 0,
+   "tip": "Cada dato de la muestra se cuenta en una sola categoría, así que las frecuencias absolutas suman el total encuestado. Las que suman 100 son los porcentajes, no las frecuencias absolutas.",
+   "id": "mate7-oa16-4"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "¿Qué indica la frecuencia relativa de una categoría en una tabla?",
+   "opciones": [
+    "Qué parte del total representa esa categoría",
+    "Cuántas veces se repitió esa categoría en la muestra",
+    "Cuántas categorías hay en la tabla en total",
+    "La diferencia entre esa categoría y la más elegida"
+   ],
+   "correcta": 0,
+   "tip": "La relativa es una proporción: compara la categoría con el total. El conteo de repeticiones es la frecuencia absoluta, que es un número entero y no una parte del total.",
+   "id": "mate7-oa16-5"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "En una muestra de 40 estudiantes, la frecuencia relativa de viajar en micro es 0,3. ¿Cuántos estudiantes viajan en micro?",
+   "opciones": [
+    "12",
+    "3",
+    "30",
+    "13"
+   ],
+   "correcta": 0,
+   "tip": "Para volver de la relativa a la absoluta se multiplica por el total: 0,3 por 40 da 12. Responder 3 es leer el 0,3 como si fuera el conteo, y 30 es confundirlo con un porcentaje del total.",
+   "id": "mate7-oa16-6"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "8 estudiantes eligieron ciclismo y esa categoría tiene frecuencia relativa 0,16. ¿Cuántos estudiantes se encuestaron?",
+   "opciones": [
+    "50",
+    "16",
+    "8",
+    "128"
+   ],
+   "correcta": 0,
+   "tip": "Si 8 corresponde a 0,16 del total, el total es 8 dividido en 0,16, o sea 50. Multiplicar 8 por 16 da 128 y no tiene sentido: el total no puede crecer al multiplicar por una parte.",
+   "id": "mate7-oa16-7"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "De 30 estudiantes, 12 prefieren Historia. ¿Cuál es esa frecuencia relativa como fracción simplificada?",
+   "opciones": [
+    "2/5",
+    "1/5",
+    "2/8",
+    "3/5"
+   ],
+   "correcta": 0,
+   "tip": "La fracción es 12/30, y al dividir arriba y abajo por 6 queda 2/5. El error típico es simplificar solo un poco o quedarse con la parte que no eligió Historia, que sería 3/5.",
+   "id": "mate7-oa16-8"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "Tabla de talleres con 50 estudiantes: música 12, deporte 18, arte 9 y robótica sin anotar. ¿Cuál es la frecuencia absoluta de robótica?",
+   "opciones": [
+    "11",
+    "9",
+    "39",
+    "50"
+   ],
+   "correcta": 0,
+   "tip": "Las frecuencias absolutas suman el total: 12 más 18 más 9 da 39, y 50 menos 39 deja 11 para robótica. El 39 es la suma de las otras tres, no el dato que falta.",
+   "id": "mate7-oa16-9"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "Tabla de frecuencias relativas: teatro 0,25; danza 0,35; canto 0,15; circo sin anotar. ¿Cuál es la frecuencia relativa de circo?",
+   "opciones": [
+    "0,25",
+    "0,75",
+    "0,15",
+    "1"
+   ],
+   "correcta": 0,
+   "tip": "Todas las frecuencias relativas de una tabla suman 1, porque juntas cubren el total. Como las tres anotadas suman 0,75, a circo le corresponde 0,25. El 0,75 es lo ya ocupado, no lo que falta.",
+   "id": "mate7-oa16-10"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "La frecuencia relativa de la categoría lectura es 3/10. ¿Cómo se expresa ese mismo valor en porcentaje?",
+   "opciones": [
+    "30 por ciento",
+    "3 por ciento",
+    "10 por ciento",
+    "70 por ciento"
+   ],
+   "correcta": 0,
+   "tip": "Una frecuencia relativa se pasa a porcentaje multiplicando por 100: 3/10 es 0,3 y eso es 30 por ciento. El 70 por ciento sería la parte que NO eligió lectura.",
+   "id": "mate7-oa16-11"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "Un gráfico circular de 60 encuestados muestra que el 30 por ciento prefiere el cine. ¿Cuántas personas son?",
+   "opciones": [
+    "18",
+    "30",
+    "20",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Se calcula el 30 por ciento de 60: 0,3 por 60 da 18. Responder 30 es copiar el porcentaje como si fuera un conteo, algo que solo pasaría si la muestra tuviera 100 personas.",
+   "id": "mate7-oa16-12"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "Javiera registró las visitas a la biblioteca durante los 12 meses del año. ¿Qué gráfico muestra mejor cómo cambiaron?",
+   "opciones": [
+    "Un gráfico de líneas, porque muestra la evolución de un dato en el tiempo",
+    "Un gráfico circular, porque reparte el año en doce sectores iguales",
+    "Un gráfico circular sin rótulos, porque los meses ya se conocen de memoria",
+    "Una tabla de frecuencias relativas, porque los datos vienen de una muestra"
+   ],
+   "correcta": 0,
+   "tip": "El gráfico de líneas une puntos ordenados en el tiempo y deja ver subidas y bajadas. El circular sirve para partes de un total, no para seguir un cambio mes a mes.",
+   "id": "mate7-oa16-13"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "Benjamín quiere mostrar qué parte del curso eligió cada uno de los 4 talleres, sobre el total de estudiantes. ¿Qué gráfico conviene?",
+   "opciones": [
+    "Un gráfico circular, porque muestra cómo se reparte un total entre las categorías",
+    "Un gráfico de líneas, porque conecta las cuatro categorías en orden",
+    "Un gráfico de líneas con el eje vertical partiendo en el taller más elegido",
+    "Una tabla de frecuencias absolutas, porque el gráfico no puede mostrar partes"
+   ],
+   "correcta": 0,
+   "tip": "El circular representa el total como el círculo completo y cada categoría como una parte de él. Unir categorías con una línea sugiere una evolución que aquí no existe: los talleres no van uno después de otro.",
+   "id": "mate7-oa16-14"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "Camila quiere comparar cuántos libros se prestaron en cada uno de los 5 cursos de un colegio. ¿Qué gráfico es el más apropiado?",
+   "opciones": [
+    "Un gráfico de barras, porque permite comparar cantidades entre categorías",
+    "Un gráfico de líneas, porque los cursos van del 4° al 8° en orden",
+    "Un gráfico circular con un sector por curso y otro sector para el total",
+    "Ninguno: con cinco categorías los datos solo se pueden mostrar en una tabla"
+   ],
+   "correcta": 0,
+   "tip": "Las barras se comparan a simple vista por su altura, que es justo lo que se pide. La línea insinúa un cambio en el tiempo, y en un circular el total no puede ser además uno de los sectores.",
+   "id": "mate7-oa16-15"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "¿Por qué un gráfico circular NO sirve para mostrar cómo cambió la temperatura de Valparaíso durante una semana?",
+   "opciones": [
+    "Porque muestra partes de un total y aquí no hay un total que repartir",
+    "Porque solo admite tres categorías como máximo en sus sectores",
+    "Porque los datos de temperatura no se pueden expresar como porcentaje",
+    "Porque la semana tiene siete días y el círculo se divide en seis partes"
+   ],
+   "correcta": 0,
+   "tip": "Sumar las temperaturas de los días no da ningún total con sentido, así que repartir el círculo entre ellas no significa nada. Para seguir un cambio en el tiempo se usa el gráfico de líneas.",
+   "id": "mate7-oa16-16"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "Un gráfico circular indica que el 25 por ciento eligió música, pero no dice cuántas personas se encuestaron. ¿Qué se puede afirmar?",
+   "opciones": [
+    "Que uno de cada cuatro encuestados eligió música, pero no cuántas personas son",
+    "Que 25 personas eligieron música, porque el porcentaje es el conteo",
+    "Que se encuestó exactamente a 100 personas, porque el círculo vale 100",
+    "Que música fue la categoría más elegida de todas las del gráfico"
+   ],
+   "correcta": 0,
+   "tip": "El porcentaje entrega la proporción, no la cantidad: para saber cuántas personas son hace falta el total. Y un 25 por ciento tampoco garantiza ser el mayor, porque otra categoría puede tener más.",
+   "id": "mate7-oa16-17"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "Matías tiene las ventas de 8 productos distintos, con valores parecidos entre sí. ¿Qué gráfico deja ver mejor las diferencias?",
+   "opciones": [
+    "Un gráfico de barras, porque con muchas categorías las alturas se comparan mejor",
+    "Un gráfico circular, porque con ocho sectores parecidos se distinguen a simple vista",
+    "Un gráfico de líneas, porque los productos se ordenan de mayor a menor venta",
+    "Un gráfico circular sin porcentajes, porque los números distraen la comparación"
+   ],
+   "correcta": 0,
+   "tip": "Con muchos sectores de tamaño parecido, el ojo no distingue bien los ángulos de un círculo; en cambio las alturas de las barras se comparan directamente. La línea, además, sugiere una evolución inexistente.",
+   "id": "mate7-oa16-18"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "Un gráfico de barras de asistencia parte su eje vertical en 90 y no en 0. Los cursos marcan 92, 94 y 96 estudiantes. ¿Qué efecto produce?",
+   "opciones": [
+    "Hace parecer enormes diferencias que en realidad son de pocos estudiantes",
+    "Cambia los datos, porque las barras ya no representan los valores reales",
+    "Hace que las tres barras se vean exactamente iguales entre sí",
+    "No produce ningún efecto, porque el eje no influye en cómo se ve el gráfico"
+   ],
+   "correcta": 0,
+   "tip": "Los datos siguen siendo correctos, pero al cortar el eje solo se dibuja el tramo sobre 90, así que una diferencia de 2 ocupa media barra. La lectura se distorsiona aunque ningún número esté mal.",
+   "id": "mate7-oa16-19"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "Un gráfico de barras exagera las diferencias porque su eje vertical parte en 40. ¿Cómo se corrige para que la comparación sea honesta?",
+   "opciones": [
+    "Haciendo partir el eje vertical en 0, para que la altura sea proporcional al valor",
+    "Cambiando las barras por los sectores de un gráfico circular",
+    "Ordenando las barras de mayor a menor altura antes de mostrarlas",
+    "Recalculando los datos como frecuencias relativas en vez de absolutas"
+   ],
+   "correcta": 0,
+   "tip": "Con el eje desde 0, la altura de cada barra es proporcional a su valor y las diferencias se ven en su tamaño real. Ordenar las barras o cambiar de gráfico no arregla la escala distorsionada.",
+   "id": "mate7-oa16-20"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "Dos gráficos muestran los mismos datos de ventas, pero en uno las diferencias se ven mucho mayores. ¿Cuál es la explicación?",
+   "opciones": [
+    "Que los dos usan escalas distintas en el eje vertical",
+    "Que uno de los dos tiene los datos mal copiados desde la tabla",
+    "Que uno incluye más meses de venta que el otro gráfico",
+    "Que uno usa barras verticales y el otro usa barras horizontales"
+   ],
+   "correcta": 0,
+   "tip": "Si los datos son los mismos, lo único que cambia la impresión visual es la escala del eje. Por eso, antes de sacar conclusiones de un gráfico, conviene mirar dónde parte el eje vertical.",
+   "id": "mate7-oa16-21"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "En un gráfico circular, los sectores están rotulados con 40, 35, 30 y 25 por ciento. ¿Qué se puede concluir?",
+   "opciones": [
+    "Que hay un error, porque los porcentajes de un circular deben sumar 100",
+    "Que la muestra tuvo 130 personas encuestadas en total",
+    "Que está bien, porque cada sector se calculó por separado",
+    "Que faltan categorías por agregar hasta completar el círculo"
+   ],
+   "correcta": 0,
+   "tip": "Los sectores reparten un total, así que sus porcentajes suman 100. Aquí suman 130: sobra, no falta, y el 130 no es un total de personas sino una suma de porcentajes imposible.",
+   "id": "mate7-oa16-22"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "En dos gráficos circulares, lectura ocupa el 40 por ciento en 7°A y el 40 por ciento en 7°B. ¿Qué NO se puede afirmar?",
+   "opciones": [
+    "Que la misma cantidad de estudiantes eligió lectura en los dos cursos",
+    "Que en ambos cursos lectura reúne la misma proporción del total",
+    "Que en ambos cursos lectura ocupa un sector del mismo tamaño",
+    "Que en cada curso, 4 de cada 10 estudiantes eligieron lectura"
+   ],
+   "correcta": 0,
+   "tip": "El porcentaje habla de proporción, no de cantidad: el 40 por ciento de un curso de 30 son 12 estudiantes y el de uno de 45 son 18. Sin los totales, las cantidades no se pueden comparar.",
+   "id": "mate7-oa16-23"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "Se quiere comparar el gusto por la música entre un curso de 30 y otro de 45 estudiantes. ¿Qué conviene usar?",
+   "opciones": [
+    "Las frecuencias relativas, porque los cursos tienen distinto tamaño",
+    "Las frecuencias absolutas, porque muestran la cantidad exacta de estudiantes",
+    "El total de cada curso, porque indica cuál de los dos es más grande",
+    "El número de categorías de cada tabla, porque iguala las dos encuestas"
+   ],
+   "correcta": 0,
+   "tip": "Comparar conteos entre grupos de distinto tamaño favorece siempre al grupo grande. La frecuencia relativa divide por el total de cada curso y deja las dos cifras en la misma base.",
+   "id": "mate7-oa16-24"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "Talleres, frecuencias relativas: fútbol 0,30; teatro 0,25; danza 0,27; ajedrez 0,18. ¿Qué par reúne junto más de la mitad del curso?",
+   "opciones": [
+    "Teatro y danza",
+    "Fútbol y ajedrez",
+    "Teatro y ajedrez",
+    "Danza y ajedrez"
+   ],
+   "correcta": 0,
+   "tip": "La mitad del curso es 0,5. Teatro más danza da 0,52, que la supera; fútbol más ajedrez da 0,48 y queda justo por debajo, aunque fútbol sea el taller más elegido de los cuatro.",
+   "id": "mate7-oa16-25"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "En 7°A, 18 de 45 eligieron ciencia; en 7°B, 14 de 28. Matías dice que a 7°A le gusta más porque son 18 contra 14. ¿Por qué se equivoca?",
+   "opciones": [
+    "Porque en proporción es 0,4 en 7°A y 0,5 en 7°B, así que 7°B prefiere más la ciencia",
+    "Porque debió sumar los dos cursos antes de comparar las dos cantidades",
+    "Porque 18 y 14 son frecuencias relativas y no se pueden restar entre sí",
+    "Porque el curso más numeroso siempre tiene la proporción más baja"
+   ],
+   "correcta": 0,
+   "tip": "18 dividido en 45 da 0,4 y 14 dividido en 28 da 0,5: la cantidad mayor viene de un curso más grande. Comparar conteos entre grupos de distinto tamaño lleva justo a este error.",
+   "id": "mate7-oa16-26"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "Una tabla registra el color favorito de 25 estudiantes con su frecuencia absoluta y relativa. ¿Qué dato NO se puede obtener de ella?",
+   "opciones": [
+    "Qué color eligió cada estudiante en particular",
+    "Cuántos estudiantes eligieron el color azul",
+    "Qué proporción del curso eligió el color verde",
+    "Cuál fue el color más elegido del curso"
+   ],
+   "correcta": 0,
+   "tip": "Una tabla de frecuencias resume la muestra en conteos por categoría y pierde el dato individual. Lo que sí conserva es cuántos y qué parte del total hay en cada categoría.",
+   "id": "mate7-oa16-27"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "Camila calculó una frecuencia relativa de 1,4 para una categoría de su tabla. ¿Por qué es seguro que se equivocó?",
+   "opciones": [
+    "Porque una frecuencia relativa es una parte del total y va entre 0 y 1",
+    "Porque las frecuencias relativas deben ser siempre números enteros",
+    "Porque una frecuencia relativa se escribe solo como fracción, nunca como decimal",
+    "Porque 1,4 corresponde al 14 por ciento y ninguna categoría llega a tanto"
+   ],
+   "correcta": 0,
+   "tip": "La relativa se obtiene dividiendo una parte por el total, así que nunca supera 1. Un valor mayor que 1 delata que se dividió por un número menor que la cantidad de datos, no por el total.",
+   "id": "mate7-oa16-28"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "En una tabla de frecuencias relativas con todas sus categorías, ¿cuánto debe dar la suma de esa columna?",
+   "opciones": [
+    "1",
+    "100",
+    "El total de datos de la muestra",
+    "El número de categorías de la tabla"
+   ],
+   "correcta": 0,
+   "tip": "Cada dato aporta su parte y todas juntas cubren el total, así que la suma es 1. El 100 aparece cuando esas mismas relativas se expresan como porcentaje, que es otra forma de escribirlas.",
+   "id": "mate7-oa16-29"
+  },
+  {
+   "oa": "MA07 OA 16",
+   "pregunta": "En una encuesta, la frecuencia relativa de andar en bicicleta es 0,45. ¿Cómo se interpreta ese valor?",
+   "opciones": [
+    "Que 45 de cada 100 encuestados andan en bicicleta",
+    "Que 45 personas encuestadas andan en bicicleta",
+    "Que 45 es la cantidad total de encuestados de la muestra",
+    "Que hay 45 categorías registradas en esa misma tabla"
+   ],
+   "correcta": 0,
+   "tip": "La relativa expresa una proporción, así que 0,45 equivale a 45 de cada 100. Para saber cuántas personas son de verdad hay que multiplicar 0,45 por el total encuestado.",
+   "id": "mate7-oa16-30"
+  }
+ ]
+}

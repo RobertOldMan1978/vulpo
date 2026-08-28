@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Camila disuelve una cucharada de sal en un vaso con agua. ¿Qué tipo de cambio ocurrió?",
+   "opciones": [
+    "Físico, porque la sal sigue siendo sal y se recupera al evaporar el agua",
+    "Químico, porque la sal desapareció y se transformó en una sustancia nueva",
+    "Químico, porque el agua con sal tiene un sabor distinto al del agua pura",
+    "Físico, porque se formó una sustancia nueva llamada agua salada"
+   ],
+   "correcta": 0,
+   "tip": "Disolver es un cambio físico: la sal no desaparece, queda repartida entre el agua y se recupera entera al evaporar. Que cambie el sabor o el aspecto no prueba que se haya formado una sustancia nueva.",
+   "id": "cie7-oa15-1"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Un clavo de acero queda a la intemperie y a las semanas aparece cubierto de óxido café. ¿Qué ocurrió?",
+   "opciones": [
+    "Un cambio químico, porque el hierro reaccionó con el oxígeno y formó una sustancia nueva",
+    "Un cambio físico, porque el clavo solo se ensució por fuera con polvo del ambiente",
+    "Un cambio físico, porque el hierro cambió de color pero sigue siendo el mismo material",
+    "Un cambio químico, porque el clavo se puso más liviano al perder parte de su hierro"
+   ],
+   "correcta": 0,
+   "tip": "El óxido de hierro es una sustancia distinta del hierro: tiene otro color, otra dureza y no se puede volver a clavo raspándolo. Además el clavo oxidado pesa más, no menos, porque incorporó oxígeno.",
+   "id": "cie7-oa15-2"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "¿Cuál es el criterio que permite decidir si un cambio de la materia fue químico?",
+   "opciones": [
+    "Que se haya formado al menos una sustancia nueva, con propiedades distintas",
+    "Que el material haya cambiado de color, de forma o de estado durante el proceso",
+    "Que el cambio ya no se pueda deshacer con las manos ni a simple vista",
+    "Que el proceso haya necesitado calor o electricidad para poder ocurrir"
+   ],
+   "correcta": 0,
+   "tip": "El criterio es la aparición de una sustancia nueva. Cambiar de color, de forma o de estado ocurre también en cambios físicos, como cuando el hielo se derrite o se dobla un alambre.",
+   "id": "cie7-oa15-3"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Matías quema una hoja de papel y queda ceniza. ¿Qué evidencia muestra mejor que fue un cambio químico?",
+   "opciones": [
+    "Que la ceniza y los gases liberados no se pueden volver a convertir en papel",
+    "Que el papel cambió de color blanco a negro mientras se quemaba",
+    "Que la hoja quedó reducida a un montón mucho más pequeño que el original",
+    "Que el proceso liberó bastante calor y una llama que se veía amarilla"
+   ],
+   "correcta": 0,
+   "tip": "Color, tamaño y calor son indicios, no pruebas. Lo decisivo es que la ceniza y los gases son sustancias distintas del papel y ningún procedimiento físico las devuelve a su estado inicial.",
+   "id": "cie7-oa15-4"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Javiera mezcla témpera azul con témpera amarilla y obtiene verde. ¿Es un cambio químico?",
+   "opciones": [
+    "No, porque los dos pigmentos siguen ahí mezclados, sin formar una sustancia nueva",
+    "Sí, porque cuando algo cambia de color siempre significa que se formó una sustancia nueva",
+    "Sí, porque el verde tiene propiedades distintas del azul y del amarillo",
+    "No, porque los cambios de color nunca corresponden a un cambio químico"
+   ],
+   "correcta": 0,
+   "tip": "El cambio de color es solo un indicio. Aquí los pigmentos se mezclaron sin reaccionar, así que es un cambio físico. Cuidado con el otro extremo: en muchas reacciones el color sí cambia por formarse algo nuevo.",
+   "id": "cie7-oa15-5"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Al abrir una bebida gaseosa salen muchas burbujas. ¿Por qué esto NO es un cambio químico?",
+   "opciones": [
+    "Porque el dióxido de carbono ya estaba disuelto en el líquido y solo escapó al bajar la presión",
+    "Porque las burbujas son de aire común, que entró a la botella justo en el momento de destaparla",
+    "Porque toda formación de gas corresponde siempre a un cambio de estado",
+    "Porque el líquido no cambió de color mientras salían las burbujas"
+   ],
+   "correcta": 0,
+   "tip": "Aparecer gas es un indicio de reacción, pero aquí el gas no es nuevo: estaba disuelto por presión y se libera al abrir. Por eso el criterio no es «salió gas», sino «apareció una sustancia que antes no existía».",
+   "id": "cie7-oa15-6"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Benjamín cocina un huevo y la clara pasa de transparente a blanca y firme. ¿Cómo se clasifica?",
+   "opciones": [
+    "Cambio químico, porque las proteínas se transformaron y la clara ya no vuelve a su estado líquido",
+    "Cambio físico, porque la clara solo se solidificó como el agua al congelarse",
+    "Cambio físico, porque el huevo sigue teniendo los mismos ingredientes de antes",
+    "Cambio químico, porque al cocinarse el huevo pierde agua y termina pesando bastante más que al principio"
+   ],
+   "correcta": 0,
+   "tip": "Al calentarse, las proteínas de la clara se transforman de manera irreversible: enfriarla no la devuelve a líquida. Eso la distingue del agua congelada, que se derrite y vuelve a ser la misma.",
+   "id": "cie7-oa15-7"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Un vaso de vidrio se cae y se rompe en muchos pedazos. ¿Qué tipo de cambio es?",
+   "opciones": [
+    "Físico, porque los trozos siguen siendo vidrio con las mismas propiedades",
+    "Químico, porque el vaso quedó destruido y no se puede volver a usar igual",
+    "Químico, porque al romperse se formaron trozos con formas totalmente nuevas",
+    "Físico, porque el vidrio se transformó en un material más frágil que antes"
+   ],
+   "correcta": 0,
+   "tip": "Romper cambia la forma y el tamaño, no la sustancia: cada trozo sigue siendo vidrio, funde a la misma temperatura y pesa lo mismo en total. Que algo sea irreparable no lo convierte en cambio químico.",
+   "id": "cie7-oa15-8"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "En un frasco tapado se mezclan vinagre y bicarbonato: burbujea y el globo del cuello se infla. ¿Qué muestra esa evidencia?",
+   "opciones": [
+    "Que se formó un gas nuevo que antes no estaba en ninguno de los dos ingredientes",
+    "Que el vinagre pasó al estado gaseoso por efecto del calor que suelta el bicarbonato",
+    "Que el aire del frasco se calentó y por eso ocupó más volumen",
+    "Que el bicarbonato se disolvió por completo en el vinagre líquido"
+   ],
+   "correcta": 0,
+   "tip": "El dióxido de carbono que infla el globo no estaba antes: se produjo en la reacción. Por eso es un cambio químico, y no una simple evaporación ni una dilatación del aire.",
+   "id": "cie7-oa15-9"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "La leche olvidada fuera del refrigerador se corta, huele ácido y se separa en grumos. ¿Qué ocurrió?",
+   "opciones": [
+    "Un cambio químico, porque bacterias produjeron ácido y las proteínas de la leche se transformaron",
+    "Un cambio físico, porque la leche solo se separó en dos partes, igual que cuando se mezclan agua y aceite",
+    "Un cambio físico, porque la leche perdió temperatura y por eso cambió de textura",
+    "Un cambio químico, porque la leche se evaporó en parte y quedó más concentrada"
+   ],
+   "correcta": 0,
+   "tip": "La fermentación forma sustancias nuevas, como el ácido láctico, y por eso el olor y el sabor cambian de forma irreversible. Enfriar la leche cortada no la devuelve a su estado original.",
+   "id": "cie7-oa15-10"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Camila derrite un cubo de hielo y luego vuelve a congelar el agua. ¿Qué demuestra este experimento?",
+   "opciones": [
+    "Que fue un cambio físico, porque la sustancia es la misma y el proceso se puede revertir",
+    "Que fue un cambio químico, porque el hielo sólido y el agua líquida son sustancias distintas",
+    "Que fue un cambio químico, porque hizo falta entregarle calor al hielo para derretirlo",
+    "Que fue un cambio físico, porque el agua perdió una parte de su masa al derretirse"
+   ],
+   "correcta": 0,
+   "tip": "Sólido, líquido y gas son estados de una misma sustancia. El agua congelada, líquida y en vapor tiene siempre la misma composición, y por eso el cambio de estado es físico y reversible.",
+   "id": "cie7-oa15-11"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "¿Qué procedimiento serviría para comprobar que disolver azúcar en agua fue un cambio físico?",
+   "opciones": [
+    "Evaporar el agua con cuidado y comprobar que queda el azúcar con su misma masa",
+    "Probar la mezcla con cuidado y verificar que efectivamente quedó con sabor dulce en todo el vaso",
+    "Revisar si al disolverse el azúcar aparecieron burbujas en el vaso",
+    "Medir la temperatura del agua antes y después de agregar el azúcar"
+   ],
+   "correcta": 0,
+   "tip": "Recuperar el material original con sus propiedades intactas es la mejor prueba de que no se formó nada nuevo. El sabor, las burbujas o un cambio de temperatura son solo indicios que hay que interpretar.",
+   "id": "cie7-oa15-12"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Dos estudiantes discuten: al hervir agua, ¿el vapor es una sustancia nueva?",
+   "opciones": [
+    "No, el vapor es la misma agua en estado gaseoso y al enfriarse vuelve a ser líquida",
+    "Sí, porque el vapor es un gas invisible, mientras que el agua líquida se puede ver y tocar",
+    "Sí, porque al hervir el agua se descompone en los gases que la forman",
+    "No, porque hervir el agua no le entrega ninguna energía a las partículas"
+   ],
+   "correcta": 0,
+   "tip": "Hervir separa las partículas de agua, no las rompe. Descomponer el agua en hidrógeno y oxígeno sí sería un cambio químico, pero eso requiere electricidad, no una olla.",
+   "id": "cie7-oa15-13"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Al congelarse, el agua libera calor al ambiente. ¿Qué se puede concluir de esa evidencia?",
+   "opciones": [
+    "Nada por sí sola: liberar calor también ocurre en cambios físicos como este",
+    "Que congelar el agua es un cambio químico, porque toda liberación de calor lo es",
+    "Que el agua se transformó en hielo, una sustancia con composición diferente",
+    "Que el agua absorbió partículas del aire mientras se iba congelando"
+   ],
+   "correcta": 0,
+   "tip": "El calor liberado o absorbido es un indicio, no una prueba: los cambios de estado también lo involucran. Para afirmar que hubo reacción hace falta mostrar que apareció una sustancia distinta.",
+   "id": "cie7-oa15-14"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Javiera parte un trozo de madera en astillas y luego quema las astillas. ¿Cómo se clasifican los dos cambios?",
+   "opciones": [
+    "Partirla es físico y quemarla es químico, porque solo al quemarse aparecen sustancias nuevas",
+    "Los dos son físicos, porque en ambos casos la madera solo cambia de tamaño y de aspecto exterior",
+    "Los dos son químicos, porque en ambos casos la madera queda destruida para siempre",
+    "Partirla es químico y quemarla es físico, porque el fuego solo calienta la madera"
+   ],
+   "correcta": 0,
+   "tip": "Al partirla, cada astilla sigue siendo madera. Al quemarla se forman ceniza, humo y gases, que son sustancias distintas y no se pueden volver a unir para recuperar el trozo original.",
+   "id": "cie7-oa15-15"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Se destila agua de mar y se obtiene agua dulce y sal en el fondo. ¿Qué tipo de cambio hubo?",
+   "opciones": [
+    "Físico, porque solo se separaron dos sustancias que ya estaban mezcladas",
+    "Químico, porque el agua salada se convirtió en dos sustancias distintas",
+    "Químico, porque hubo que calentar el agua de mar hasta hacerla hervir",
+    "Físico, porque el agua obtenida es diferente del agua de mar original"
+   ],
+   "correcta": 0,
+   "tip": "Separar una mezcla no crea ni destruye sustancias: el agua y la sal ya estaban ahí. Que se necesite calor no vuelve químico el proceso, porque el calor también sirve para separar mezclas.",
+   "id": "cie7-oa15-16"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Una barandilla de cobre lleva años a la intemperie y se cubre de una capa verde. ¿Qué evidencia apoya que fue un cambio químico?",
+   "opciones": [
+    "Que esa capa verde tiene propiedades distintas del cobre y no se recupera fundiéndola",
+    "Que la barandilla se ve más oscura justo en las partes que reciben menos sol durante el día",
+    "Que el cobre se puso más frío al estar mucho tiempo a la intemperie",
+    "Que la capa verde se puede sacar frotando con un paño y agua"
+   ],
+   "correcta": 0,
+   "tip": "El compuesto verde es una sustancia nueva formada al reaccionar el cobre con el aire y la humedad. Que se pueda raspar no lo devuelve a cobre: el metal debajo ya se consumió en parte.",
+   "id": "cie7-oa15-17"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Una barra de metal se calienta hasta ponerse roja y, al enfriarse, recupera su color y su brillo. ¿Qué ocurrió?",
+   "opciones": [
+    "Un cambio físico, porque el metal es el mismo y todo volvió a su estado inicial",
+    "Un cambio químico, porque el metal cambió de color mientras estaba caliente",
+    "Un cambio químico, porque el calor transformó el metal en una sustancia nueva",
+    "Un cambio físico, porque el metal perdió masa al brillar con ese color rojo"
+   ],
+   "correcta": 0,
+   "tip": "El color rojo se debe a la temperatura, no a una sustancia nueva. Que todo vuelva exactamente al punto de partida al enfriarse es una buena evidencia de cambio físico.",
+   "id": "cie7-oa15-18"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Al mezclar dos líquidos transparentes aparece un sólido blanco que se deposita en el fondo. ¿Qué indica?",
+   "opciones": [
+    "Que se formó una sustancia nueva insoluble, señal de que ocurrió una reacción química",
+    "Que uno de los líquidos se congeló al entrar en contacto con el otro",
+    "Que el sólido blanco ya estaba flotando en uno de los líquidos y solo se juntó por la gravedad",
+    "Que los dos líquidos eran demasiado densos para poder mezclarse entre sí"
+   ],
+   "correcta": 0,
+   "tip": "La aparición de un sólido a partir de dos líquidos transparentes se llama precipitado, y es un indicio fuerte de reacción química: hay una sustancia que antes no existía en la mezcla.",
+   "id": "cie7-oa15-19"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "¿Cuál de estos procesos del cuerpo humano corresponde a un cambio químico?",
+   "opciones": [
+    "La digestión, donde los alimentos se transforman en sustancias más simples",
+    "La masticación, donde los dientes parten el alimento en trozos pequeños",
+    "La sudoración, donde el agua de la piel pasa al estado gaseoso",
+    "El paso del alimento por el esófago hacia el estómago"
+   ],
+   "correcta": 0,
+   "tip": "Masticar, sudar y tragar son cambios físicos: el alimento o el agua siguen siendo lo mismo. En la digestión actúan sustancias que rompen los alimentos y forman moléculas distintas.",
+   "id": "cie7-oa15-20"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Un curso mezcló azúcar con agua en un frasco cerrado y la masa total no cambió. ¿Sirve ese dato para decidir si fue físico o químico?",
+   "opciones": [
+    "No, porque la masa total se conserva tanto en los cambios físicos como en los químicos",
+    "Sí, porque la masa solo se conserva cuando el cambio es de tipo físico",
+    "Sí, porque en un cambio químico siempre se pierde una parte de la masa que había al comienzo",
+    "No, porque en un frasco cerrado la masa nunca se puede medir con exactitud"
+   ],
+   "correcta": 0,
+   "tip": "En un sistema cerrado la masa se conserva siempre, haya reacción o no. Por eso ese dato no distingue: hay que buscar si aparecieron sustancias con propiedades nuevas.",
+   "id": "cie7-oa15-21"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "En un frasco con agua tibia, azúcar y levadura se infla un globo puesto en la boca del frasco. ¿Qué explica el resultado?",
+   "opciones": [
+    "La levadura fermentó el azúcar y produjo un gas nuevo: hubo un cambio químico",
+    "El agua tibia se evaporó dentro del frasco y ese vapor de agua fue el que infló el globo",
+    "El azúcar disuelta ocupa más volumen y empujó el aire hacia el globo",
+    "La levadura absorbió aire del frasco y lo devolvió hacia el globo"
+   ],
+   "correcta": 0,
+   "tip": "La fermentación transforma el azúcar en alcohol y dióxido de carbono. El gas del globo no estaba antes en el frasco: se produjo, y por eso el cambio es químico.",
+   "id": "cie7-oa15-22"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Matías afirma: «Si un cambio se puede revertir, entonces fue físico». ¿Es correcta esa regla?",
+   "opciones": [
+    "Es un buen indicio, pero lo que decide es si se formó o no una sustancia nueva",
+    "Es siempre correcta, porque ningún cambio químico se puede revertir jamás",
+    "Es siempre incorrecta, porque los cambios físicos tampoco se pueden revertir",
+    "Es correcta solo cuando el cambio ocurre sin necesidad de entregar calor"
+   ],
+   "correcta": 0,
+   "tip": "La reversibilidad ayuda, pero hay reacciones químicas que se pueden revertir, como cargar de nuevo una batería. El criterio firme sigue siendo la aparición de sustancias nuevas.",
+   "id": "cie7-oa15-23"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Camila quiere mostrar en su informe que el cambio que estudió fue químico. ¿Qué evidencia le sirve más?",
+   "opciones": [
+    "Comparar propiedades como olor, color y solubilidad antes y después, y mostrar que ya no coinciden",
+    "Describir con detalle todos los materiales de laboratorio que usó durante cada uno de los pasos",
+    "Mostrar una foto del momento exacto en que la mezcla cambió de aspecto",
+    "Explicar que el proceso tardó bastante más de lo que ella tenía calculado"
+   ],
+   "correcta": 0,
+   "tip": "Argumentar con evidencia significa comparar propiedades medibles antes y después. Una foto o una lista de materiales describen el procedimiento, pero no prueban que se haya formado algo nuevo.",
+   "id": "cie7-oa15-24"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Se coloca una cucharada de sal en agua y luego se deja el vaso al sol durante varios días. ¿Qué se espera observar?",
+   "opciones": [
+    "Que el agua se evapore y quede la sal en el fondo, con su misma masa inicial",
+    "Que la sal desaparezca por completo porque se transformó en agua salada",
+    "Que quede un polvo distinto de la sal, con otro color y otro sabor",
+    "Que el agua se evapore y arrastre la sal, dejando el vaso completamente limpio"
+   ],
+   "correcta": 0,
+   "tip": "La sal no se transforma al disolverse: solo se reparte entre el agua. Al evaporarse el agua, la sal reaparece con las mismas propiedades, lo que confirma que el cambio fue físico.",
+   "id": "cie7-oa15-25"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "¿En cuál de estas situaciones NO se forma ninguna sustancia nueva?",
+   "opciones": [
+    "Moler granos de café hasta convertirlos en polvo fino",
+    "Dejar que una manzana partida se ponga café por fuera",
+    "Encender una vela y dejar que la mecha arda un rato",
+    "Agregar levadura a la masa y dejarla reposar hasta que suba"
+   ],
+   "correcta": 0,
+   "tip": "Moler solo cambia el tamaño de los trozos: el café molido sigue siendo café. Oxidarse, arder y fermentar producen sustancias que antes no estaban.",
+   "id": "cie7-oa15-26"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Benjamín deja evaporar alcohol de un plato y el olor llena la sala. ¿Cómo se clasifica ese cambio?",
+   "opciones": [
+    "Físico, porque el alcohol solo pasó al estado gaseoso sin transformarse en otra cosa",
+    "Químico, porque el alcohol reaccionó con el aire de la sala y por eso se sintió ese olor",
+    "Químico, porque el alcohol desapareció del plato y ya no se puede recuperar",
+    "Físico, porque el alcohol se transformó en un gas de composición distinta"
+   ],
+   "correcta": 0,
+   "tip": "Evaporar es un cambio de estado: las mismas partículas de alcohol pasan al aire y por eso se huelen. Si se recogiera ese vapor y se enfriara, volvería a ser alcohol líquido.",
+   "id": "cie7-oa15-27"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Un grupo mide la temperatura de una mezcla y ve que sube 8 grados Celsius. ¿Qué puede concluir con seguridad?",
+   "opciones": [
+    "Que hubo liberación de energía, pero aún debe revisar si aparecieron sustancias nuevas",
+    "Que ocurrió una reacción química, porque solo estas liberan energía en forma de calor",
+    "Que ocurrió un cambio físico, porque las reacciones químicas siempre enfrían la mezcla",
+    "Que la mezcla se va a evaporar por completo si sigue subiendo la temperatura"
+   ],
+   "correcta": 0,
+   "tip": "Muchas reacciones liberan calor, pero también lo hacen procesos físicos como disolver ciertas sales o condensar vapor. El dato de temperatura orienta la investigación, no la cierra.",
+   "id": "cie7-oa15-28"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Javiera hace dos pruebas con azúcar: en una la disuelve en agua y en otra la calienta hasta que queda café y amarga. ¿Qué diferencia hay?",
+   "opciones": [
+    "La primera es física y la segunda química, porque solo al calentarla se formó otra sustancia",
+    "Las dos son químicas, porque en ambas el azúcar deja de verse como al principio",
+    "Las dos son físicas, porque el azúcar es siempre azúcar en cualquiera de los dos casos",
+    "La primera es química y la segunda física, porque el agua altera el azúcar mucho más de lo que lo hace el calor"
+   ],
+   "correcta": 0,
+   "tip": "El azúcar disuelta se recupera evaporando el agua y sigue siendo dulce. El azúcar quemada quedó café y amarga: sus propiedades cambiaron porque se formaron sustancias nuevas.",
+   "id": "cie7-oa15-29"
+  },
+  {
+   "oa": "CN07 OA 15",
+   "pregunta": "Para argumentar con evidencia si un cambio fue físico o químico, ¿cuál es la mejor pregunta que puede hacerse un estudiante?",
+   "opciones": [
+    "¿Las sustancias que hay al final tienen las mismas propiedades que las del comienzo?",
+    "¿El material se ve muy distinto de como se veía antes de empezar el experimento?",
+    "¿El proceso ocurrió rápido o tardó varios minutos en completarse del todo?",
+    "¿Fue necesario usar instrumentos de laboratorio para poder provocar el cambio?"
+   ],
+   "correcta": 0,
+   "tip": "Comparar propiedades antes y después es lo que permite decidir. El aspecto, la rapidez y los instrumentos usados describen el experimento, pero no dicen si apareció una sustancia nueva.",
+   "id": "cie7-oa15-30"
+  }
+ ]
+}

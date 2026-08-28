@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
-"""Consolida el banco de preguntas de una asignatura de 3 basico.
+"""Consolida el banco de preguntas de una asignatura de cualquier nivel.
 
 Un solo consolidador para todas. Antes habia uno por asignatura (Matematica e
 Historia, casi identicos): este proyecto ya se quemo varias veces con listas
 paralelas que se desincronizan, y un tercer y cuarto clon para Lenguaje y Ciencias
-era pedirlo de nuevo.
+era pedirlo de nuevo. Al llegar 7 basico se renombro de `-3ro` a `-nivel`:
+no tiene nada especifico de 3 y tener un consolidador por curso seria la
+misma lista paralela, un piso mas arriba.
 
 Que hace:
 - Lee las tandas de `contenido/<asignatura>/_pool/*.json` (acepta tanto `oaNN.json`
@@ -18,8 +20,8 @@ Que hace:
 - Escribe `preguntas.json` ordenado por OA y numero.
 
 Uso:
-    python scripts/consolidar-pool-3ro.py historia-3basico
-    python scripts/consolidar-pool-3ro.py lenguaje-3basico --seco   # no escribe
+    python scripts/consolidar-pool-nivel.py historia-3basico
+    python scripts/consolidar-pool-nivel.py lenguaje-3basico --seco   # no escribe
 """
 import json, io, glob, random, sys, unicodedata
 from collections import Counter
@@ -50,8 +52,8 @@ def num_id(pid):
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     if not args:
-        sys.exit("uso: python scripts/consolidar-pool-3ro.py <carpeta-de-contenido>\n"
-                 "     por ejemplo: historia-3basico")
+        sys.exit("uso: python scripts/consolidar-pool-nivel.py <carpeta-de-contenido>\n"
+                 "     por ejemplo: historia-3basico, ciencias-7basico")
     base = RAIZ / "contenido" / args[0]
     if not base.is_dir():
         sys.exit("no existe %s" % base)

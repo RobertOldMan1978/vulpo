@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Camila lanzó una moneda 10 veces y obtuvo 7 caras. Si ahora la lanza 1.000 veces, ¿qué ocurrirá con la frecuencia relativa de caras?",
+   "opciones": [
+    "Se acercará mucho más a 0,5, porque al aumentar las repeticiones la frecuencia relativa se aproxima a la probabilidad teórica",
+    "Seguirá cerca de 0,7, porque los primeros 10 lanzamientos ya mostraron la tendencia propia de esa moneda y esa tendencia se mantiene",
+    "Bajará cerca de 0,3, porque los sellos tienen que compensar las caras de más que salieron al principio",
+    "Será exactamente 0,5, porque en 1.000 lanzamientos siempre salen 500 caras y 500 sellos"
+   ],
+   "correcta": 0,
+   "tip": "La frecuencia relativa se acerca a la probabilidad teórica al repetir mucho, pero acercarse no es ser igual: difícilmente saldrán 500 caras exactas. Y la moneda no recuerda lo anterior, así que nada se compensa.",
+   "id": "mate7-oa19-1"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Matías lanzó un dado 60 veces y el 4 salió 12 veces. La probabilidad teórica del 4 es 1/6. ¿Qué afirmación compara bien ambos valores?",
+   "opciones": [
+    "La frecuencia relativa fue 0,2, un poco mayor que la probabilidad teórica de 0,167",
+    "La frecuencia relativa fue 12, muchísimo mayor que la probabilidad teórica de 0,167",
+    "La frecuencia relativa fue 5, porque se divide el total de 60 lanzamientos entre las 12 veces",
+    "La frecuencia relativa fue 0,167, igual a la teórica, porque el dado no estaba cargado"
+   ],
+   "correcta": 0,
+   "tip": "La frecuencia relativa es 12 : 60 = 0,2 y la teórica 1 : 6 = 0,167, así que el experimento quedó algo por encima. Una frecuencia relativa siempre está entre 0 y 1: el 12 es la frecuencia absoluta.",
+   "id": "mate7-oa19-2"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Se lanzan dos monedas. El árbol tiene cuatro ramas: cara-cara, cara-sello, sello-cara y sello-sello. ¿Cuál es la probabilidad de obtener una cara y un sello?",
+   "opciones": [
+    "1/2, porque dos de las cuatro ramas del árbol dan una cara y un sello",
+    "1/3, porque los resultados posibles son dos caras, dos sellos o una de cada",
+    "1/4, porque es una sola rama entre las cuatro que tiene el árbol",
+    "3/4, porque de las cuatro ramas solo queda descartada la de cara-cara"
+   ],
+   "correcta": 0,
+   "tip": "Cara-sello y sello-cara son ramas distintas del árbol, aunque al mirar las monedas se vean iguales. Por eso el resultado una de cada vale 2 de 4 y no 1 de 3: contar solo tres resultados olvida que uno ocurre de dos formas.",
+   "id": "mate7-oa19-3"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Javiera arma el árbol de lanzar una moneda dos veces: primero se abren dos ramas y de cada una salen otras dos. ¿Cuántas ramas finales tiene el árbol?",
+   "opciones": [
+    "4, porque cada una de las 2 ramas del primer lanzamiento se abre en 2",
+    "2, porque la moneda solo tiene dos resultados: cara y sello",
+    "3, porque los resultados son dos caras, dos sellos o una de cada",
+    "6, porque se suman las 2 ramas del primer lanzamiento con las 4 del segundo"
+   ],
+   "correcta": 0,
+   "tip": "En un árbol de dos etapas los resultados se multiplican, no se suman: 2 × 2 = 4 ramas finales. Contar solo 3 resultados junta en uno dos caminos distintos del árbol.",
+   "id": "mate7-oa19-4"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Benjamín tiene 3 poleras y 4 pantalones. Dibuja un árbol con una rama por polera y de cada una salen las ramas de los pantalones. ¿Cuántas tenidas distintas puede armar?",
+   "opciones": [
+    "12, porque cada una de las 3 poleras se combina con los 4 pantalones",
+    "7, porque se suman las 3 poleras con los 4 pantalones que tiene",
+    "4, porque los pantalones son la prenda con más opciones disponibles",
+    "3, porque cada polera va con un pantalón distinto y no se pueden repetir"
+   ],
+   "correcta": 0,
+   "tip": "El árbol muestra 3 grupos de 4 ramas: 3 × 4 = 12. Sumar las prendas responde a cuántas prendas tengo, no a cuántas combinaciones distintas puedo formar con ellas.",
+   "id": "mate7-oa19-5"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Con dos monedas se repitió el experimento 80 veces: dos caras 18, una cara y un sello 42, dos sellos 20. ¿Qué resultado tuvo una frecuencia relativa igual a su probabilidad teórica?",
+   "opciones": [
+    "Dos sellos, porque 20 de 80 da 0,25, exactamente la probabilidad teórica de ese resultado",
+    "Dos caras, porque 18 de 80 es la frecuencia más baja de las tres y por eso la más cercana",
+    "Una cara y un sello, porque 42 de 80 es la mayor de las tres frecuencias registradas",
+    "Ninguno, porque una frecuencia relativa nunca puede coincidir con la probabilidad teórica"
+   ],
+   "correcta": 0,
+   "tip": "20 : 80 = 0,25 justo. Los otros dos quedaron a 0,025 de su valor teórico: 0,225 contra 0,25 y 0,525 contra 0,5. Coincidir exacto es posible, solo que no está garantizado.",
+   "id": "mate7-oa19-6"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Para dos dados se arma una tabla con las 6 caras del primero en las filas y las 6 del segundo en las columnas. ¿Cuántos resultados posibles tiene esa tabla?",
+   "opciones": [
+    "36, porque cada una de las 6 filas se cruza con las 6 columnas",
+    "12, porque se suman las 6 caras de un dado con las 6 caras del otro",
+    "6, porque los dos dados son iguales y tienen exactamente las mismas caras",
+    "11, porque las sumas posibles de los dos dados van desde el 2 hasta el 12"
+   ],
+   "correcta": 0,
+   "tip": "La tabla tiene 6 × 6 = 36 casillas. Las 11 sumas distintas no son igualmente probables, justamente porque cada una ocupa un número diferente de casillas.",
+   "id": "mate7-oa19-7"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "En la tabla de 36 resultados de dos dados, la suma 7 aparece en 6 casillas. ¿Cuál es la probabilidad teórica de obtener suma 7?",
+   "opciones": [
+    "1/6, porque 6 casillas favorables entre las 36 posibles dan 6/36",
+    "1/11, porque hay 11 sumas posibles y todas tendrían la misma posibilidad",
+    "1/36, porque cada casilla de la tabla vale exactamente lo mismo que las demás",
+    "6/12, porque hay 6 casillas favorables entre las 12 caras de los dos dados"
+   ],
+   "correcta": 0,
+   "tip": "6 casillas favorables de 36 dan 6/36 = 1/6. Las 11 sumas no son igual de probables: el 2 ocupa una sola casilla y el 7 ocupa seis, por eso el 7 aparece mucho más seguido.",
+   "id": "mate7-oa19-8"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Un curso lanzó dos monedas 200 veces y anotó 98 veces una cara y un sello. La probabilidad teórica de ese resultado es 1/2. ¿Qué se concluye?",
+   "opciones": [
+    "Que el experimento respalda la teoría, porque 98 de 200 da 0,49 y está muy cerca de 0,5",
+    "Que el experimento contradice la teoría, porque con 1/2 debían salir 100 veces exactas",
+    "Que la probabilidad teórica correcta era 1/3, porque hay tres resultados posibles",
+    "Que hubo un error al contar, porque la frecuencia relativa nunca puede quedar bajo la teórica"
+   ],
+   "correcta": 0,
+   "tip": "98 : 200 = 0,49, a una centésima de 0,5. La frecuencia relativa casi nunca coincide exacto con la teoría: lo esperable es que ronde ese valor y se acerque más al repetir más veces.",
+   "id": "mate7-oa19-9"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "El grupo A lanzó una moneda 20 veces y obtuvo 13 caras; el grupo B la lanzó 500 veces y obtuvo 261 caras. ¿Cuál frecuencia relativa quedó más cerca de la teórica 0,5?",
+   "opciones": [
+    "La del grupo B, que dio 0,522 y se aleja solo 0,022 de la probabilidad teórica",
+    "La del grupo A, que dio 0,65 porque obtuvo bastantes más caras que sellos",
+    "No se puede saber, porque los dos grupos no lanzaron la misma cantidad de veces",
+    "Las dos quedaron igual de cerca, porque ambos grupos usaron exactamente la misma moneda"
+   ],
+   "correcta": 0,
+   "tip": "13 : 20 = 0,65 y 261 : 500 = 0,522. La diferencia con 0,5 es 0,15 en el grupo A y 0,022 en el B: más repeticiones acercan la frecuencia relativa a la probabilidad teórica.",
+   "id": "mate7-oa19-10"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Dos grupos lanzaron el mismo dado 30 veces cada uno y obtuvieron frecuencias relativas distintas para el 5. ¿Cómo se explica esa diferencia?",
+   "opciones": [
+    "Por el azar, porque con pocas repeticiones las frecuencias relativas varían bastante entre experimentos",
+    "Porque uno de los grupos contó mal, ya que el mismo dado debe dar siempre lo mismo",
+    "Porque la probabilidad teórica del 5 cambia según la persona que lanza el dado y la fuerza con que lo tira",
+    "Porque el dado se va desgastando y sus caras dejan de tener la misma posibilidad"
+   ],
+   "correcta": 0,
+   "tip": "La frecuencia relativa es un dato del experimento, no una propiedad fija del dado. Con 30 tiros la variación es grande; con 3.000 los dos grupos obtendrían valores muy parecidos.",
+   "id": "mate7-oa19-11"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Se lanzó un dado 600 veces y el 3 salió 95 veces. La probabilidad teórica del 3 es aproximadamente 0,167. ¿Qué conclusión es razonable?",
+   "opciones": [
+    "Que el dado parece equilibrado, porque 95 : 600 da 0,158 y eso está muy cerca de 0,167",
+    "Que el dado está cargado en contra del 3, porque salió menos de 100 veces",
+    "Que hay que descartar el experimento, porque el 3 no salió exactamente 100 veces",
+    "Que la probabilidad teórica del 3 en ese dado es 0,158, porque así lo mostró el experimento"
+   ],
+   "correcta": 0,
+   "tip": "95 : 600 = 0,158, a nueve milésimas de 0,167. Un experimento no cambia la probabilidad teórica: la teoría se calcula con los casos posibles y el experimento sirve para contrastarla.",
+   "id": "mate7-oa19-12"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Se lanza una moneda y luego un dado. En el árbol, de cada una de las 2 ramas de la moneda salen las 6 ramas del dado. ¿Cuántos resultados posibles hay?",
+   "opciones": [
+    "12, porque cada una de las 2 ramas de la moneda se abre en 6",
+    "8, porque se suman las 2 caras de la moneda con las 6 caras del dado",
+    "6, porque manda el dado, que es el que tiene más resultados posibles",
+    "36, porque se multiplican 6 por 6, igual que en el caso de los dos dados"
+   ],
+   "correcta": 0,
+   "tip": "Las etapas se multiplican: 2 × 6 = 12 ramas finales, desde cara-1 hasta sello-6. Sumar responde a cuántas caras hay en total, no a cuántas combinaciones se pueden formar.",
+   "id": "mate7-oa19-13"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Con el árbol de 12 ramas de lanzar una moneda y un dado, ¿cuál es la probabilidad de obtener cara y el número 6?",
+   "opciones": [
+    "1/12, porque una sola de las 12 ramas del árbol es cara con 6",
+    "1/8, porque entre la moneda y el dado hay 8 resultados en total",
+    "2/3, porque se suman la probabilidad de cara y la probabilidad del 6",
+    "1/6, porque lo difícil es sacar el 6 y la moneda no influye en el resultado"
+   ],
+   "correcta": 0,
+   "tip": "Cada rama del árbol vale lo mismo: 1 de 12. Cuando dos etapas deben ocurrir juntas las probabilidades se multiplican, 1/2 × 1/6 = 1/12; sumarlas daría un valor mucho mayor que el real.",
+   "id": "mate7-oa19-14"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Se lanzaron dos monedas 100 veces y salieron dos sellos en 26 ocasiones. La probabilidad teórica de dos sellos es 1/4. ¿Cómo se comparan ambos valores?",
+   "opciones": [
+    "La frecuencia relativa fue 0,26 y la teórica 0,25, así que se parecen mucho",
+    "La frecuencia relativa fue 26 y la teórica 0,25, así que no se pueden comparar",
+    "La frecuencia relativa fue 0,52, porque hay que contar los dos sellos por separado",
+    "La frecuencia relativa fue 0,26 y eso demuestra que la probabilidad teórica es 0,26"
+   ],
+   "correcta": 0,
+   "tip": "26 : 100 = 0,26 contra 0,25 de la teoría: una centésima de diferencia. La frecuencia relativa siempre queda entre 0 y 1, así que 26 a secas es la frecuencia absoluta.",
+   "id": "mate7-oa19-15"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Camila quiere comprobar con un experimento si la probabilidad de sacar un 6 es 1/6. ¿Qué le conviene hacer para que su frecuencia relativa sea confiable?",
+   "opciones": [
+    "Lanzar el dado muchas veces, por ejemplo 1.000, porque así la frecuencia relativa se acerca a la teórica",
+    "Lanzar el dado 6 veces, porque tiene 6 caras y así saldrá una vez cada número",
+    "Lanzar el dado hasta que salga el primer 6 y anotar cuántos intentos necesitó",
+    "Lanzar seis dados a la vez una sola vez, porque eso reemplaza exactamente los seis lanzamientos por separado"
+   ],
+   "correcta": 0,
+   "tip": "Con pocas repeticiones el azar domina y la frecuencia relativa puede quedar lejos de 1/6. Con muchas se estabiliza cerca del valor teórico: por eso se simula con software, que repite miles de veces.",
+   "id": "mate7-oa19-16"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "En 10 lanzamientos de una moneda salieron 8 caras. ¿Se puede concluir que esa moneda está cargada?",
+   "opciones": [
+    "No, porque 10 lanzamientos son muy pocos y ese resultado ocurre a menudo con una moneda normal",
+    "Sí, porque 0,8 queda demasiado lejos de 0,5 y una diferencia de ese tamaño ya resulta concluyente",
+    "Sí, porque una moneda normal debe dar 5 caras y 5 sellos en 10 lanzamientos",
+    "No, porque una moneda nunca puede estar cargada: siempre tiene una cara y un sello"
+   ],
+   "correcta": 0,
+   "tip": "Para acusar a una moneda hay que repetir muchas veces: con 10 tiros, 8 caras es perfectamente posible por azar. Si con 1.000 tiros la frecuencia relativa siguiera en 0,8, ahí sí habría razón para sospechar.",
+   "id": "mate7-oa19-17"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Un experimento se repitió 300 veces y el evento estudiado ocurrió 45 veces. ¿Cuál es su frecuencia relativa expresada en porcentaje?",
+   "opciones": [
+    "15%, porque 45 : 300 da 0,15 y eso se multiplica por 100",
+    "45%, porque el evento ocurrió 45 veces durante el experimento",
+    "6,7%, porque se divide el total de 300 repeticiones entre las 45 veces",
+    "0,15%, porque la frecuencia relativa da 0,15 y solo hay que agregarle el símbolo"
+   ],
+   "correcta": 0,
+   "tip": "45 : 300 = 0,15, y para pasar a porcentaje se multiplica por 100: 15%. Escribir 0,15% es cien veces menos y confunde la fracción con el porcentaje.",
+   "id": "mate7-oa19-18"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Una bolsa tiene 2 fichas rojas y 1 azul. Se saca una ficha, se devuelve y se saca otra. El árbol tiene 9 ramas. ¿Cuál es la probabilidad de sacar dos rojas?",
+   "opciones": [
+    "4/9, porque 4 de las 9 ramas del árbol tienen roja en las dos extracciones",
+    "2/3, porque hay 2 fichas rojas entre las 3 que contiene la bolsa",
+    "1/9, porque una sola rama del árbol corresponde a sacar dos fichas rojas",
+    "1/3, porque de cada tres extracciones se saca una ficha roja de la bolsa"
+   ],
+   "correcta": 0,
+   "tip": "Cada roja se puede sacar de 2 maneras, así que dos rojas ocurre en 2 × 2 = 4 de las 9 ramas. La probabilidad de un resultado de dos etapas se obtiene multiplicando, no repitiendo la de una sola extracción.",
+   "id": "mate7-oa19-19"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "En la tabla de 36 resultados de dos dados, ¿cuál es la probabilidad de que ambos dados muestren un número par?",
+   "opciones": [
+    "1/4, porque 3 caras pares en cada dado dan 3 × 3 = 9 casillas de las 36",
+    "1/2, porque en cada dado la mitad de las caras son números pares",
+    "1/36, porque una sola casilla de la tabla tiene los dos dados pares",
+    "1/6, porque entre los dos dados hay 6 números pares repartidos"
+   ],
+   "correcta": 0,
+   "tip": "9 casillas favorables de 36 dan 9/36 = 1/4. Que cada dado por separado dé 1/2 no basta: para que las dos cosas ocurran a la vez se multiplican, 1/2 × 1/2 = 1/4.",
+   "id": "mate7-oa19-20"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Un gráfico muestra la frecuencia relativa de caras: en el lanzamiento 10 marca 0,70; en el 100, 0,56; y en el 1.000, 0,51. ¿Qué muestra ese gráfico?",
+   "opciones": [
+    "Que al aumentar los lanzamientos la frecuencia relativa se estabiliza cerca de 0,5",
+    "Que la moneda va sacando menos caras a medida que se la usa más veces",
+    "Que la probabilidad teórica de cara fue bajando desde 0,70 hasta 0,51",
+    "Que el experimento está mal hecho, porque los tres valores deberían ser iguales"
+   ],
+   "correcta": 0,
+   "tip": "La curva se acerca a 0,5 sin llegar exacto: es la ley de los grandes números vista en un gráfico. La probabilidad teórica no cambia nunca; lo que cambia es la frecuencia relativa observada.",
+   "id": "mate7-oa19-21"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Se lanzan tres monedas. El árbol tiene 8 ramas y en 3 de ellas salen exactamente dos caras. ¿Cuál es la probabilidad de obtener exactamente dos caras?",
+   "opciones": [
+    "3/8, porque 3 de las 8 ramas del árbol cumplen esa condición",
+    "1/3, porque hay tres monedas y dos de ellas deben salir cara",
+    "2/3, porque dos de las tres monedas tienen que mostrar cara",
+    "1/8, porque cada rama del árbol vale lo mismo y solo una sirve"
+   ],
+   "correcta": 0,
+   "tip": "Cara-cara-sello, cara-sello-cara y sello-cara-cara son ramas distintas, así que el evento ocurre en 3 de las 8. Contar monedas en vez de ramas hace perder de vista que un resultado se puede dar de varias formas.",
+   "id": "mate7-oa19-22"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Si se lanzan dos monedas 400 veces, ¿cuántas veces se espera aproximadamente obtener dos caras?",
+   "opciones": [
+    "Alrededor de 100, porque la probabilidad teórica es 1/4 y 400 : 4 = 100",
+    "Alrededor de 200, porque la probabilidad de cara es 1/2 y la mitad de 400 es 200",
+    "Alrededor de 133, porque los resultados son dos caras, dos sellos o una de cada",
+    "Alrededor de 4, porque una de cada cuatro veces se obtienen dos caras seguidas"
+   ],
+   "correcta": 0,
+   "tip": "Se multiplica la probabilidad teórica por las repeticiones: 1/4 de 400 es 100. Es una estimación, no una garantía: lo esperable es un número cercano a 100, no exactamente 100.",
+   "id": "mate7-oa19-23"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "¿Cuál es la diferencia entre la frecuencia relativa y la probabilidad teórica de un evento?",
+   "opciones": [
+    "La relativa se obtiene contando lo que pasó al repetir el experimento y la teórica se calcula con los casos posibles",
+    "La relativa se calcula mirando los casos posibles del experimento y la teórica se obtiene repitiendo el experimento muchas veces",
+    "Son exactamente lo mismo, solo que una se escribe en fracción y la otra en número decimal",
+    "La relativa sirve para experimentos con dados y la teórica solo para experimentos con monedas"
+   ],
+   "correcta": 0,
+   "tip": "La teórica se conoce antes de lanzar nada, mirando los casos posibles; la relativa aparece después, con los datos del experimento. Compararlas es justamente el trabajo de este objetivo.",
+   "id": "mate7-oa19-24"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "En su tabla de frecuencias Javiera anotó que, en 50 lanzamientos de un dado, el 2 salió 9 veces. ¿Cuál es la frecuencia absoluta y cuál la relativa del 2?",
+   "opciones": [
+    "Frecuencia absoluta 9 y frecuencia relativa 0,18",
+    "Frecuencia absoluta 0,18 y frecuencia relativa 9",
+    "Frecuencia absoluta 9 y frecuencia relativa 0,17, que es el valor teórico del dado",
+    "Frecuencia absoluta 50 y frecuencia relativa 9, porque 50 es el total de lanzamientos"
+   ],
+   "correcta": 0,
+   "tip": "La absoluta es el conteo, 9 veces, y la relativa es ese conteo dividido por el total: 9 : 50 = 0,18. El 0,17 es la probabilidad teórica del dado, con la que después se compara.",
+   "id": "mate7-oa19-25"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "En un experimento con cuatro resultados posibles se calcularon las cuatro frecuencias relativas. ¿Cuánto debe dar la suma de las cuatro?",
+   "opciones": [
+    "1, porque entre las cuatro se reparten el total de repeticiones del experimento",
+    "4, porque son cuatro resultados distintos y cada uno aporta una unidad",
+    "0, porque las diferencias con la probabilidad teórica se anulan entre sí",
+    "Cualquier valor, porque depende de cuántas veces se repitió el experimento"
+   ],
+   "correcta": 0,
+   "tip": "Cada frecuencia relativa es una parte del total, así que juntas forman el entero. Si la suma no da 1, hubo un error al contar o quedó un resultado sin registrar.",
+   "id": "mate7-oa19-26"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Un curso lanzó dos dados 50 veces y obtuvo suma 7 en 5 ocasiones, o sea 0,10. Un software simuló 10.000 lanzamientos y obtuvo 0,166. ¿Qué explica la diferencia?",
+   "opciones": [
+    "Que el software repitió muchas más veces, y a más repeticiones la frecuencia relativa se acerca a la teórica",
+    "Que el software usa dados perfectos y el curso trabajó con dados imperfectos",
+    "Que la probabilidad teórica de la suma 7 cambia según la cantidad de lanzamientos que se hagan en el experimento",
+    "Que el curso contó mal, porque con 50 lanzamientos también debía obtener 0,166"
+   ],
+   "correcta": 0,
+   "tip": "0,10 con 50 tiros y 0,166 con 10.000 es exactamente lo esperable: la frecuencia relativa se estabiliza al repetir. Por eso se simula con software, no porque sus dados sean mejores.",
+   "id": "mate7-oa19-27"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Un menú ofrece 2 entradas, 3 platos de fondo y 2 postres. En el árbol, cada entrada se abre en los platos y cada plato en los postres. ¿Cuántos menús distintos hay?",
+   "opciones": [
+    "12, porque las etapas se multiplican: 2 × 3 × 2",
+    "7, porque se suman las 2 entradas, los 3 platos de fondo y los 2 postres",
+    "6, porque se multiplican solo las 2 entradas por los 3 platos de fondo",
+    "4, porque se multiplican las 2 entradas por los 2 postres del menú"
+   ],
+   "correcta": 0,
+   "tip": "En el árbol cada etapa multiplica: 2 × 3 × 2 = 12 ramas finales. Sumar, o dejar una etapa fuera, cuenta menos caminos de los que el árbol realmente tiene.",
+   "id": "mate7-oa19-28"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "En la tabla de dos dados la suma 2 ocupa 1 casilla y la suma 7 ocupa 6. ¿Por qué en un experimento largo la suma 7 aparece mucho más seguido?",
+   "opciones": [
+    "Porque hay seis combinaciones que dan 7 y una sola que da 2, así que el 7 es seis veces más probable",
+    "Porque el 7 es un número mayor y los números grandes salen más al sumar dos dados",
+    "Porque las 11 sumas posibles son igual de probables y el 7 está justo al medio",
+    "Porque los dados tienden a mostrar caras distintas entre sí y eso favorece a las sumas impares como el 7"
+   ],
+   "correcta": 0,
+   "tip": "1+6, 2+5, 3+4, 4+3, 5+2 y 6+1 son casillas distintas de la tabla, mientras que el 2 solo se logra con 1+1. Las sumas no son equiprobables aunque las 36 casillas sí lo sean.",
+   "id": "mate7-oa19-29"
+  },
+  {
+   "oa": "MA07 OA 19",
+   "pregunta": "Se lanzó un dado 600 veces y el 6 salió 210 veces, o sea una frecuencia relativa de 0,35. La teórica es 0,167. ¿Qué conclusión es la más razonable?",
+   "opciones": [
+    "Que el dado probablemente está cargado, porque 0,35 se aleja demasiado con tantas repeticiones",
+    "Que el resultado es normal, porque la frecuencia relativa nunca coincide con la teórica",
+    "Que la probabilidad teórica del 6 en ese dado pasó a ser 0,35 después del experimento",
+    "Que faltan repeticiones, porque recién con 6.000 lanzamientos se puede opinar de un dado"
+   ],
+   "correcta": 0,
+   "tip": "Con 600 repeticiones la frecuencia relativa ya debería rondar 0,167, y 0,35 es más del doble. Que ambas casi nunca coincidan exacto no justifica una diferencia tan grande.",
+   "id": "mate7-oa19-30"
+  }
+ ]
+}

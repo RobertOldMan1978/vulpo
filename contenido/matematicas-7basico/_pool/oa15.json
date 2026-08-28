@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "En una comuna de 30.000 habitantes se encuesta a 300 personas. ¿Qué es la población en este estudio?",
+   "opciones": [
+    "Los 30.000 habitantes de la comuna, que son el grupo completo sobre el que se quiere concluir",
+    "Las 300 personas encuestadas, que son quienes entregaron la información del estudio",
+    "Las respuestas obtenidas, ordenadas después en una tabla de frecuencias por categoría",
+    "El porcentaje final del estudio, que se aplica a los habitantes de toda la comuna"
+   ],
+   "correcta": 0,
+   "tip": "La población es el grupo completo del que se quiere saber algo. Las 300 personas encuestadas son la muestra: la parte que sí se estudia para estimar lo que pasa en el total.",
+   "id": "mate7-oa15-1"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "Se estudia a 400 apoderados de un colegio que tiene 2.500 apoderados en total. ¿Cuál es la muestra?",
+   "opciones": [
+    "Los 400 apoderados encuestados, que son la parte del total que sí se estudia",
+    "Los 2.500 apoderados del colegio, que forman el grupo completo del estudio",
+    "El porcentaje obtenido al final, aplicado después a los 2.500 apoderados",
+    "Los apoderados que no respondieron, que quedaron fuera del estudio realizado"
+   ],
+   "correcta": 0,
+   "tip": "La muestra es la parte que se estudia; la población es el grupo completo. Aquí la muestra son los 400 encuestados y la población son los 2.500 apoderados.",
+   "id": "mate7-oa15-2"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "¿Por qué se estudia una muestra en vez de encuestar a toda la población?",
+   "opciones": [
+    "Porque encuestar a todos cuesta demasiado tiempo y dinero, y una muestra bien elegida ya basta",
+    "Porque los resultados de una muestra son exactos y los de la población completa tienen error",
+    "Porque la población cambia todos los días y por eso no se puede medir nunca de forma directa",
+    "Porque una muestra pequeña representa siempre mejor a la gente que un grupo muy numeroso"
+   ],
+   "correcta": 0,
+   "tip": "Se muestrea por costo y tiempo: preguntarle a todos suele ser imposible en la práctica. La muestra no es más exacta que la población, solo más barata y más rápida de medir.",
+   "id": "mate7-oa15-3"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "¿Qué hace que una muestra sea representativa de su población?",
+   "opciones": [
+    "Que se parezca a la población en lo que importa y que sus integrantes se elijan al azar",
+    "Que tenga muchos integrantes, aunque todos se hayan elegido en un mismo lugar y a una misma hora",
+    "Que sus integrantes respondan la encuesta completa, sin dejar ninguna pregunta sin contestar",
+    "Que las personas elegidas se ofrezcan voluntariamente, porque así contestan con más interés"
+   ],
+   "correcta": 0,
+   "tip": "Una muestra representa a su población cuando se parece a ella y se elige al azar. Ni el tamaño ni las ganas de participar arreglan una muestra tomada siempre en el mismo lugar.",
+   "id": "mate7-oa15-4"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "Para saber qué deporte prefiere el colegio, Matías encuesta solo a los del taller de fútbol. ¿Cuál es el problema?",
+   "opciones": [
+    "La muestra no representa al colegio: quienes van a ese taller ya eligieron el fútbol",
+    "La muestra es muy pequeña, y bastaría con encuestar a más integrantes de ese mismo taller",
+    "No hay ningún problema, porque los del taller también son estudiantes de ese colegio",
+    "El problema es que preguntó por deportes y no por las demás actividades del colegio"
+   ],
+   "correcta": 0,
+   "tip": "El taller de fútbol reúne justamente a quienes ya prefieren ese deporte, así que la muestra está sesgada desde el comienzo. Encuestar a más personas del mismo taller no lo arregla.",
+   "id": "mate7-oa15-5"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "Matías insiste y encuesta a 400 personas, todas a la salida del taller de fútbol. ¿Mejora su estimación del colegio?",
+   "opciones": [
+    "No: si todas vienen del mismo grupo, el sesgo sigue igual por muchas respuestas que junte",
+    "Sí: con 400 respuestas la muestra ya es lo bastante grande para representar al colegio",
+    "Sí, porque mientras más personas se encuesten, menos importa dónde se hayan elegido",
+    "No, pero solo porque 400 respuestas son demasiadas para ordenarlas y procesarlas a mano"
+   ],
+   "correcta": 0,
+   "tip": "Agrandar una muestra sesgada solo repite el mismo error más veces: el resultado se aleja igual de la realidad. El sesgo se corrige cambiando cómo se elige, no cuántos se eligen.",
+   "id": "mate7-oa15-6"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "En el taller de fútbol, el 90 por ciento dijo preferir el fútbol. ¿Qué se puede concluir con ese dato?",
+   "opciones": [
+    "Que el 90 por ciento de ese taller prefiere el fútbol, pero nada sobre el colegio completo",
+    "Que el 90 por ciento del colegio prefiere el fútbol, porque el taller es parte del colegio",
+    "Que el 90 por ciento del colegio prefiere el fútbol, siempre que el taller sea numeroso",
+    "Que no se puede concluir nada, ni siquiera sobre las personas que fueron encuestadas"
+   ],
+   "correcta": 0,
+   "tip": "Una conclusión solo alcanza hasta donde llega la muestra. El dato es válido para el taller, que sí fue encuestado, y no se puede estirar a un colegio que la muestra no representa.",
+   "id": "mate7-oa15-7"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "Una radio pregunta en su sitio web cuántos hogares de la comuna tienen internet. ¿Por qué el resultado no sirve?",
+   "opciones": [
+    "Porque solo pueden responder quienes ya tienen internet, así que el porcentaje sale muy alto",
+    "Porque las encuestas por internet entregan sus resultados más lento que las encuestas en la calle",
+    "Porque el sitio web no tiene forma de saber en qué comuna vive cada persona que responde",
+    "Porque una radio no puede hacer estudios estadísticos sobre los hogares de su propia comuna"
+   ],
+   "correcta": 0,
+   "tip": "Justo las personas que faltan en la respuesta son las que se quiere contar: quien no tiene internet no puede contestar por internet. La muestra deja fuera al grupo que decide el resultado.",
+   "id": "mate7-oa15-8"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "Para estimar cuánto gasta en comida una familia de la comuna, se encuesta a la salida del supermercado más caro. ¿Qué pasa?",
+   "opciones": [
+    "La estimación queda más alta que la real, porque ahí compran las familias con más recursos",
+    "La estimación queda más baja que la real, porque en un supermercado caro se compran menos cosas",
+    "La estimación queda correcta, porque cualquier familia de la comuna puede entrar a ese supermercado",
+    "No se puede saber nada, porque el gasto en comida de una familia cambia todas las semanas"
+   ],
+   "correcta": 0,
+   "tip": "El lugar elegido filtra a las personas: a un supermercado caro llegan sobre todo quienes pueden pagarlo. La muestra queda inclinada hacia arriba y la estimación hereda esa inclinación.",
+   "id": "mate7-oa15-9"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "Para estimar cuántos vecinos leen un libro al mes, Javiera encuesta dentro de la biblioteca. ¿Cómo saldrá su estimación?",
+   "opciones": [
+    "Más alta que la real, porque a la biblioteca va sobre todo gente que ya lee",
+    "Más baja que la real, porque en la biblioteca la gente está leyendo y no quiere responder",
+    "Igual a la real, porque cualquier vecino de la comuna puede entrar a esa biblioteca",
+    "No se puede saber, porque la cantidad de libros que lee una persona no se puede preguntar"
+   ],
+   "correcta": 0,
+   "tip": "Que un lugar esté abierto a todos no significa que todos vayan. A la biblioteca llegan sobre todo lectores, así que la muestra exagera el porcentaje de lectores de la comuna.",
+   "id": "mate7-oa15-10"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "¿Cómo debería corregir Javiera su encuesta sobre lectura en la comuna?",
+   "opciones": [
+    "Encuestando en varios lugares distintos de la comuna, elegidos al azar",
+    "Encuestando al doble de personas, pero siempre dentro de la misma biblioteca",
+    "Encuestando solo a quienes salen de la biblioteca con un libro prestado en la mano",
+    "Preguntando también por revistas y diarios, sin cambiar el lugar donde encuesta"
+   ],
+   "correcta": 0,
+   "tip": "El sesgo estaba en el lugar, así que la corrección tiene que estar en el lugar: variar los puntos y elegirlos al azar. Duplicar el tamaño en la biblioteca repite el mismo error.",
+   "id": "mate7-oa15-11"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "El colegio pide que quienes quieran opinar sobre el casino se anoten en una lista. ¿Por qué esa muestra puede estar sesgada?",
+   "opciones": [
+    "Porque se anotan sobre todo quienes tienen algo fuerte que reclamar o que defender",
+    "Porque las listas de inscripción se llenan más lento que una encuesta aplicada en la sala",
+    "Porque no se puede encuestar a estudiantes sobre los servicios de su propio colegio",
+    "Porque una lista voluntaria reúne siempre a menos de la mitad de los estudiantes"
+   ],
+   "correcta": 0,
+   "tip": "Cuando la muestra se arma sola, se llena de quienes tienen una opinión fuerte y deja fuera a los indiferentes. Por eso una lista voluntaria no representa al colegio completo.",
+   "id": "mate7-oa15-12"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "Para saber cuánta gente de la comuna trabaja, se encuesta casa por casa un martes a las 11 de la mañana. ¿Qué problema tiene?",
+   "opciones": [
+    "A esa hora casi no están en casa quienes trabajan, así que el porcentaje saldrá muy bajo",
+    "A esa hora las personas están cansadas y responden la encuesta con menos cuidado que en la tarde",
+    "Ninguno: encuestar casa por casa entrega siempre una muestra representativa de la comuna",
+    "El problema es que un martes hay menos gente viviendo en la comuna que un fin de semana"
+   ],
+   "correcta": 0,
+   "tip": "La hora también selecciona a las personas: a media mañana en un día hábil, quien trabaja no está en su casa. La muestra deja fuera justo al grupo que se quiere contar.",
+   "id": "mate7-oa15-13"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "¿Cuál de estas formas de elegir 100 estudiantes representa mejor a un colegio de 1.000?",
+   "opciones": [
+    "Sortear 100 estudiantes entre la lista completa del colegio, de todos los cursos",
+    "Tomar a los 100 primeros que llegan al colegio un lunes temprano por la mañana",
+    "Elegir a los 100 estudiantes que forman los cuatro cursos de séptimo básico",
+    "Pedir que se anoten los 100 primeros que quieran participar en la encuesta"
+   ],
+   "correcta": 0,
+   "tip": "El sorteo sobre la lista completa le da a cada estudiante la misma posibilidad de salir elegido. Las otras tres seleccionan a un tipo de estudiante: puntual, de un nivel o interesado.",
+   "id": "mate7-oa15-14"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "Para estimar un porcentaje en una comuna de 50.000 habitantes, ¿qué muestra conviene más?",
+   "opciones": [
+    "500 personas elegidas al azar en distintos barrios y a distintas horas del día",
+    "5 personas elegidas al azar, porque al ser al azar ya representan a toda la comuna",
+    "500 personas elegidas todas en un mismo barrio, para poder visitarlas más rápido",
+    "50.000 personas, porque una estimación solo vale si se encuesta a la comuna entera"
+   ],
+   "correcta": 0,
+   "tip": "Hacen falta las dos cosas: azar y un tamaño suficiente. Con 5 personas el resultado varía demasiado, y con 500 de un solo barrio vuelve el sesgo. Encuestar a todos ya no es estimar.",
+   "id": "mate7-oa15-15"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "Un colegio tiene cursos de primero a octavo básico. Para representar al colegio completo, la muestra debería...",
+   "opciones": [
+    "incluir estudiantes de todos los cursos, en proporción parecida a la del colegio",
+    "incluir solo a los cursos más numerosos, porque son los que más pesan en el total",
+    "incluir únicamente a los cursos mayores, que entienden mejor las preguntas de la encuesta",
+    "incluir la misma cantidad de estudiantes de cada curso, aunque unos cursos sean mucho más grandes que otros"
+   ],
+   "correcta": 0,
+   "tip": "La muestra tiene que parecerse al colegio: si un nivel es el 20 por ciento del total, debería aportar cerca del 20 por ciento de la muestra. Dejar cursos fuera inclina el resultado.",
+   "id": "mate7-oa15-16"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "En una muestra al azar de 50 estudiantes, 30 van al colegio en bicicleta. ¿Qué porcentaje de la muestra usa bicicleta?",
+   "opciones": [
+    "60 por ciento, porque 30 de 50 equivale a 60 de cada 100",
+    "30 por ciento, porque 30 estudiantes contestaron que sí usan bicicleta",
+    "40 por ciento, porque 20 de los 50 estudiantes no usan bicicleta",
+    "80 por ciento, porque se suman los 30 que usan bicicleta y los 50 encuestados"
+   ],
+   "correcta": 0,
+   "tip": "El porcentaje compara la parte con el total: 30 dividido en 50 da 0,6, o sea 60 por ciento. La cantidad de respuestas sí no es el porcentaje, y 40 por ciento son los que no usan bicicleta.",
+   "id": "mate7-oa15-17"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "Ese colegio tiene 800 estudiantes y la muestra dio 60 por ciento. ¿Cuántos usan bicicleta aproximadamente?",
+   "opciones": [
+    "Alrededor de 480 estudiantes, porque el 60 por ciento de 800 es 480",
+    "Exactamente 60 estudiantes, porque ese fue el porcentaje que entregó la muestra",
+    "Alrededor de 320 estudiantes, que son los que no usan bicicleta según la muestra",
+    "Alrededor de 30 estudiantes, que es la cantidad que respondió que sí en la muestra"
+   ],
+   "correcta": 0,
+   "tip": "El porcentaje de la muestra se aplica al total: el 60 por ciento de 800 son 480. Confundir el 60 por ciento con 60 estudiantes es el error más común al estimar una población.",
+   "id": "mate7-oa15-18"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "En una feria se encuesta al azar a 200 personas y 50 dicen que van todas las semanas. ¿Qué porcentaje de la muestra es?",
+   "opciones": [
+    "25 por ciento, porque 50 de 200 equivale a 25 de cada 100",
+    "50 por ciento, porque 50 personas dijeron que van todas las semanas",
+    "75 por ciento, porque 150 personas dijeron que no van todas las semanas",
+    "4 por ciento, porque 200 dividido en 50 da 4"
+   ],
+   "correcta": 0,
+   "tip": "Se divide la parte por el total: 50 dividido en 200 da 0,25, o sea 25 por ciento. Dividir al revés da 4, que no es un porcentaje, y 75 por ciento corresponde a los que no van.",
+   "id": "mate7-oa15-19"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "A esa feria llegan 8.000 personas al mes y la muestra dio 25 por ciento. ¿Cuántas van todas las semanas?",
+   "opciones": [
+    "Unas 2.000 personas, porque el 25 por ciento de 8.000 es la cuarta parte",
+    "Unas 4.000 personas, porque el 25 por ciento equivale a la mitad de 8.000",
+    "Unas 200 personas, porque ese fue el tamaño de la muestra que se encuestó",
+    "Unas 6.000 personas, que corresponden a quienes no van todas las semanas"
+   ],
+   "correcta": 0,
+   "tip": "El 25 por ciento es la cuarta parte, no la mitad: 8.000 dividido en 4 da 2.000. Las 6.000 restantes son el otro 75 por ciento, que responde una pregunta distinta.",
+   "id": "mate7-oa15-20"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "En una muestra al azar de 80 vecinos, 20 reciclan. Si la comuna tiene 1.200 vecinos, ¿cuántos reciclan aproximadamente?",
+   "opciones": [
+    "Unos 300 vecinos, porque 20 de 80 es el 25 por ciento y el 25 por ciento de 1.200 es 300",
+    "Unos 900 vecinos, porque el 75 por ciento restante se aplica a los 1.200 de la comuna",
+    "Unos 20 vecinos, porque esa fue la cantidad de personas que dijo reciclar en la encuesta",
+    "Unos 240 vecinos, porque se multiplican los 20 que reciclan por los 12 grupos de 100"
+   ],
+   "correcta": 0,
+   "tip": "Primero se saca el porcentaje de la muestra, 20 de 80, que es 25 por ciento, y después se aplica al total: 300 vecinos. Multiplicar 20 por 12 usa el tamaño equivocado de grupo.",
+   "id": "mate7-oa15-21"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "En una muestra al azar de 250 alumnos, 40 dicen llegar atrasados alguna vez. ¿Qué porcentaje de la muestra es?",
+   "opciones": [
+    "16 por ciento, porque 40 de 250 equivale a 16 de cada 100",
+    "40 por ciento, porque 40 alumnos dijeron que llegan atrasados alguna vez",
+    "84 por ciento, porque 210 alumnos dijeron que nunca llegan atrasados",
+    "6,25 por ciento, porque 250 dividido en 40 da 6,25"
+   ],
+   "correcta": 0,
+   "tip": "40 dividido en 250 da 0,16, o sea 16 por ciento. Tomar el 40 como porcentaje ignora el tamaño de la muestra: 40 de 250 y 40 de 100 no significan lo mismo.",
+   "id": "mate7-oa15-22"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "La muestra dio 16 por ciento y el colegio tiene 1.000 alumnos. Camila dice que son 16 alumnos. ¿En qué se equivocó?",
+   "opciones": [
+    "Usó el porcentaje como si fuera la cantidad: el 16 por ciento de 1.000 son 160 alumnos",
+    "Se equivocó de porcentaje: debía calcular el 84 por ciento de 1.000, que son 840 alumnos",
+    "No se equivocó, porque el porcentaje de la muestra se mantiene igual en toda la población",
+    "Debía multiplicar el 16 por los 250 alumnos encuestados y obtener 4.000 alumnos"
+   ],
+   "correcta": 0,
+   "tip": "Un porcentaje no es una cantidad: hay que aplicarlo al total. El 16 por ciento de 1.000 son 160. El porcentaje sí se mantiene, lo que cambia es el número de personas que representa.",
+   "id": "mate7-oa15-23"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "En una muestra al azar de 60 personas de la comuna, 45 tienen mascota. Si la comuna tiene 20.000 habitantes, ¿cuántos tienen mascota?",
+   "opciones": [
+    "Unas 15.000 personas, porque 45 de 60 es el 75 por ciento y el 75 por ciento de 20.000 es 15.000",
+    "Unas 5.000 personas, que corresponden al 25 por ciento que dijo no tener mascota",
+    "Unas 900 personas, porque se multiplican las 45 con mascota por los 20 grupos de mil",
+    "Unas 45.000 personas, porque se le agregan tres ceros a las 45 que respondieron que sí"
+   ],
+   "correcta": 0,
+   "tip": "45 de 60 es 75 por ciento, y el 75 por ciento de 20.000 son 15.000. Las 5.000 restantes son quienes no tienen mascota, que es lo contrario de lo que pide la pregunta.",
+   "id": "mate7-oa15-24"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "De 120 puestos de una feria elegidos al azar, 36 venden verdura. ¿Qué porcentaje de la muestra vende verdura?",
+   "opciones": [
+    "30 por ciento, porque 36 de 120 equivale a 30 de cada 100",
+    "36 por ciento, porque 36 puestos de la feria venden verdura",
+    "70 por ciento, porque los otros 84 puestos venden productos distintos",
+    "3,3 por ciento, porque 120 dividido en 36 da aproximadamente 3,3"
+   ],
+   "correcta": 0,
+   "tip": "36 dividido en 120 da 0,3, o sea 30 por ciento. El 70 por ciento corresponde a los otros puestos, y dividir el total por la parte da un número que no es un porcentaje.",
+   "id": "mate7-oa15-25"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "La feria completa tiene 600 puestos y la muestra dio 30 por ciento de verdura. ¿Cuántos puestos venden verdura?",
+   "opciones": [
+    "Unos 180 puestos, porque el 30 por ciento de 600 es 180",
+    "Unos 30 puestos, porque ese fue el porcentaje que entregó la muestra encuestada",
+    "Unos 420 puestos, que son los que venden productos distintos según la muestra",
+    "Unos 36 puestos, porque esa fue la cantidad de puestos con verdura en la muestra"
+   ],
+   "correcta": 0,
+   "tip": "El 30 por ciento de 600 son 180 puestos. Ni el 30 ni el 36 sirven como respuesta: uno es el porcentaje y el otro es un conteo de la muestra, no de la feria completa.",
+   "id": "mate7-oa15-26"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "Una fábrica revisa 50 de las 5.000 galletas que produjo y encuentra 2 quebradas. ¿Cuántas quebradas estima en total?",
+   "opciones": [
+    "Unas 200 galletas, porque 2 de 50 es el 4 por ciento y el 4 por ciento de 5.000 es 200",
+    "Unas 2 galletas, porque esa fue la cantidad de galletas quebradas que se encontró",
+    "Unas 100 galletas, porque se multiplican las 2 quebradas por las 50 galletas revisadas",
+    "Unas 4.800 galletas, que corresponden a las que llegaron en buen estado a la caja"
+   ],
+   "correcta": 0,
+   "tip": "2 de 50 es 4 por ciento, y el 4 por ciento de 5.000 son 200 galletas. Multiplicar 2 por 50 usa el tamaño de la muestra en vez del de la producción completa.",
+   "id": "mate7-oa15-27"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "Una muestra al azar de 200 vecinos dio 35 por ciento. ¿Qué se puede afirmar sobre la comuna completa?",
+   "opciones": [
+    "Que alrededor del 35 por ciento de la comuna tiene esa característica, con cierto margen",
+    "Que exactamente el 35 por ciento de la comuna tiene esa característica, sin diferencia alguna",
+    "Que solo 35 vecinos de toda la comuna tienen esa característica según el estudio",
+    "Que el resultado vale únicamente para los 200 vecinos encuestados y para nadie más"
+   ],
+   "correcta": 0,
+   "tip": "Una muestra al azar permite estimar, no medir: el valor real anda cerca del 35 por ciento, pero no tiene por qué ser exactamente ese. Por eso se habla de estimación y no de conteo.",
+   "id": "mate7-oa15-28"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "Dos grupos estiman lo mismo con muestras al azar: uno encuesta a 10 personas y el otro a 200. ¿Cuál estimación es más confiable?",
+   "opciones": [
+    "La de 200 personas, porque una muestra al azar más grande da estimaciones más estables",
+    "La de 10 personas, porque con menos datos se puede revisar mejor cada una de las respuestas",
+    "Las dos son igual de confiables, porque las dos muestras se eligieron al azar",
+    "Ninguna sirve, porque dos muestras distintas nunca pueden estimar el mismo porcentaje"
+   ],
+   "correcta": 0,
+   "tip": "Con la elección al azar asegurada, el tamaño sí importa: una muestra grande varía menos de una vez a otra. Ojo, esto vale porque las dos son al azar; el tamaño no corrige un sesgo.",
+   "id": "mate7-oa15-29"
+  },
+  {
+   "oa": "MA07 OA 15",
+   "pregunta": "Dos muestras al azar del mismo colegio dan 42 por ciento y 46 por ciento. ¿Qué se concluye?",
+   "opciones": [
+    "Que el porcentaje real anda cerca de esos valores: muestras distintas dan resultados algo distintos",
+    "Que una de las dos muestras está mal tomada, porque deberían haber dado exactamente lo mismo",
+    "Que no se puede estimar nada del colegio mientras los dos resultados no coincidan",
+    "Que hay que quedarse con el 46 por ciento, porque siempre se elige el porcentaje más alto"
+   ],
+   "correcta": 0,
+   "tip": "Dos muestras al azar casi nunca dan el mismo número, y eso no es un error: es la variación propia del muestreo. Resultados cercanos indican que la estimación anda por ahí.",
+   "id": "mate7-oa15-30"
+  }
+ ]
+}

@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "¿Qué relación existe entre el VIH y el sida?",
+   "opciones": [
+    "El VIH es el virus y el sida es la etapa avanzada de la infección que puede provocar",
+    "El sida es el virus que se contagia y el VIH es el conjunto de síntomas que aparece al final",
+    "Son dos virus distintos que se transmiten por las mismas vías y a la vez",
+    "Son dos nombres del mismo virus, usados uno en medicina y otro en la prensa"
+   ],
+   "correcta": 0,
+   "tip": "El VIH es el virus de la inmunodeficiencia humana. El sida es la etapa avanzada, que aparece cuando el virus ya dañó mucho el sistema inmune. Con tratamiento, una persona con VIH puede no llegar nunca a esa etapa.",
+   "id": "cie7-oa03-1"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "¿A qué parte del cuerpo ataca principalmente el VIH?",
+   "opciones": [
+    "A ciertos linfocitos, que son células de defensa del sistema inmune",
+    "A los glóbulos rojos, que son las células que transportan el oxígeno",
+    "A las neuronas del cerebro, que son las células que conducen los impulsos",
+    "A las plaquetas, que son las células que permiten la coagulación de la sangre"
+   ],
+   "correcta": 0,
+   "tip": "El VIH infecta y destruye linfocitos, que dirigen la defensa del organismo. Por eso el daño no lo hace solo el virus: el cuerpo queda sin defensas frente a otros microorganismos.",
+   "id": "cie7-oa03-2"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "¿Cuáles son las tres vías por las que se transmite el VIH?",
+   "opciones": [
+    "Sexual, sanguínea y de la madre al hijo durante el embarazo, el parto o la lactancia",
+    "Sexual, respiratoria al toser cerca de otra persona y por contacto con la piel intacta de alguien",
+    "Sanguínea, digestiva al compartir alimentos y por la picadura de insectos",
+    "Sexual, por el sudor durante el deporte y por el contacto con superficies húmedas"
+   ],
+   "correcta": 0,
+   "tip": "El virus necesita llegar a la sangre o a las mucosas a través de fluidos como sangre, semen, flujos vaginales o leche materna. No viaja por el aire ni sobrevive en superficies.",
+   "id": "cie7-oa03-3"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "Camila comparte el vaso con un compañero que vive con VIH. ¿Qué riesgo de contagio hay?",
+   "opciones": [
+    "Ninguno, porque la saliva no transmite el virus",
+    "Alto, porque el virus se concentra en la saliva y pasa fácilmente al vaso",
+    "Bajo pero real, porque siempre queda algo de sangre en la saliva de cualquier persona",
+    "Depende de cuánto rato haya pasado desde que el compañero bebió del vaso"
+   ],
+   "correcta": 0,
+   "tip": "El VIH no se transmite por saliva, abrazos, besos sociales, vasos compartidos ni baños. Creer lo contrario aísla injustamente a las personas que viven con el virus.",
+   "id": "cie7-oa03-4"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "¿Por qué la picadura de un mosquito no transmite el VIH?",
+   "opciones": [
+    "Porque el virus no se reproduce ni sobrevive dentro del insecto",
+    "Porque los mosquitos evitan picar a las personas que viven con el virus",
+    "Porque el virus muere apenas entra en contacto con el aire libre en cualquier situación",
+    "Porque la cantidad de sangre que toma un mosquito siempre está libre de virus"
+   ],
+   "correcta": 0,
+   "tip": "Cada virus necesita células específicas para multiplicarse, y el VIH solo usa células humanas. El mosquito no es un huésped posible, a diferencia de lo que ocurre con el dengue.",
+   "id": "cie7-oa03-5"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "¿Por qué muchas infecciones de transmisión sexual se propagan sin que las personas lo noten?",
+   "opciones": [
+    "Porque durante mucho tiempo pueden no producir ningún síntoma visible",
+    "Porque sus síntomas aparecen de inmediato pero desaparecen en pocas horas",
+    "Porque solo producen síntomas en las personas mayores de treinta años",
+    "Porque sus síntomas se confunden siempre con los de un resfrío común"
+   ],
+   "correcta": 0,
+   "tip": "Ser asintomático significa no sentir nada, pero la infección está y puede transmitirse igual. Por eso lo que permite saber es el examen y no el aspecto sano de alguien.",
+   "id": "cie7-oa03-6"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "¿Cuál es la única forma de saber con certeza si una persona tiene VIH?",
+   "opciones": [
+    "Realizarse un examen de laboratorio específico para detectarlo",
+    "Observar si aparecen manchas o heridas en la piel durante varias semanas",
+    "Medir la temperatura corporal durante un mes para detectar fiebres repetidas",
+    "Preguntar a la pareja si alguna vez tuvo síntomas parecidos a una gripe"
+   ],
+   "correcta": 0,
+   "tip": "El VIH puede pasar años sin dar señales. Solo un examen de laboratorio detecta la infección, y por eso el sistema de salud ofrece testeo gratuito y confidencial.",
+   "id": "cie7-oa03-7"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "¿Qué es el período de ventana en el examen de VIH?",
+   "opciones": [
+    "El tiempo inicial en que la infección ya existe pero el examen aún puede dar negativo",
+    "El tiempo que hay que esperar entre pedir la hora y recibir la atención médica",
+    "El plazo en que el virus permanece fuera del cuerpo antes de infectar a alguien",
+    "El período en que la infección desaparece sola sin necesidad de tratamiento"
+   ],
+   "correcta": 0,
+   "tip": "El examen detecta la respuesta del organismo o el material del virus, y eso demora en hacerse detectable. Por eso un resultado negativo muy temprano se repite después.",
+   "id": "cie7-oa03-8"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "¿Qué caracteriza al herpes genital una vez que la persona se infecta?",
+   "opciones": [
+    "El virus permanece en el cuerpo y puede reactivarse en brotes cada cierto tiempo",
+    "El virus se elimina por completo del cuerpo apenas termina el primer brote de lesiones",
+    "El virus desaparece solo si la persona toma antibióticos durante una semana",
+    "El virus se transforma en otro tipo de infección al cabo de algunos meses"
+   ],
+   "correcta": 0,
+   "tip": "El virus del herpes queda latente en el organismo. Los antivirales reducen y acortan los brotes, pero no lo eliminan, y los antibióticos no actúan sobre ningún virus.",
+   "id": "cie7-oa03-9"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "¿Por qué el herpes genital puede transmitirse aunque no haya lesiones a la vista?",
+   "opciones": [
+    "Porque el virus puede estar presente en la piel y las mucosas sin producir lesiones",
+    "Porque las lesiones son siempre invisibles y nunca llegan a notarse en ningún caso",
+    "Porque el virus queda en la ropa y se transmite al lavarla junto con otras prendas",
+    "Porque el virus pasa al aire cuando la persona infectada respira cerca de otra"
+   ],
+   "correcta": 0,
+   "tip": "Que no se vean lesiones no garantiza que no haya virus. Esto explica por qué las medidas de prevención se mantienen también entre un brote y otro.",
+   "id": "cie7-oa03-10"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "La sífilis es causada por una bacteria. ¿Qué implica eso para su tratamiento?",
+   "opciones": [
+    "Que puede curarse con el antibiótico indicado por un médico",
+    "Que se controla con antivirales pero permanece siempre en el organismo",
+    "Que desaparece sola con reposo si la persona está bien alimentada",
+    "Que necesita una vacuna aplicada después del contagio para eliminarse"
+   ],
+   "correcta": 0,
+   "tip": "Las infecciones bacterianas, como la sífilis, la gonorrea y la clamidia, sí tienen cura con antibióticos. Las virales, como el VIH o el herpes, se controlan pero no se eliminan.",
+   "id": "cie7-oa03-11"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "Matías propone tomar antibióticos para evitar contagiarse de VIH. ¿Por qué no funciona?",
+   "opciones": [
+    "Porque los antibióticos actúan sobre bacterias y el VIH es un virus",
+    "Porque los antibióticos solo funcionan si se toman después de aparecer los síntomas",
+    "Porque el VIH es una bacteria que ya se hizo resistente a todos los antibióticos",
+    "Porque los antibióticos actúan únicamente en el aparato digestivo de las personas"
+   ],
+   "correcta": 0,
+   "tip": "Los antibióticos atacan estructuras que solo tienen las bacterias, y los virus no las tienen. Además, tomarlos sin necesidad favorece que aparezcan bacterias resistentes.",
+   "id": "cie7-oa03-12"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "La gonorrea y la clamidia muchas veces no dan síntomas. ¿Qué consecuencia puede traer eso?",
+   "opciones": [
+    "Que avancen sin tratamiento y lleguen a causar infertilidad",
+    "Que se curen solas al no producir molestias en el organismo",
+    "Que se transformen con el tiempo en una infección de tipo viral",
+    "Que dejen al cuerpo inmunizado frente a cualquier otra infección sexual"
+   ],
+   "correcta": 0,
+   "tip": "Sin síntomas no hay consulta, y la infección sigue dañando en silencio los órganos reproductores. Detectadas a tiempo se curan con antibióticos y esa secuela se evita.",
+   "id": "cie7-oa03-13"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "¿Contra qué infección de transmisión sexual existe hoy una vacuna en el plan chileno?",
+   "opciones": [
+    "Contra el virus papiloma humano, asociado al cáncer cervicouterino",
+    "Contra el VIH, que se aplica en dos dosis durante la enseñanza media",
+    "Contra el herpes genital, que se aplica antes del primer brote de lesiones",
+    "Contra la gonorrea, que reemplaza al tratamiento con antibióticos"
+   ],
+   "correcta": 0,
+   "tip": "La vacuna contra el virus papiloma humano se aplica en la niñez, antes de cualquier exposición. Contra el VIH y el herpes todavía no existe una vacuna disponible.",
+   "id": "cie7-oa03-14"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "¿Cómo actúa el preservativo frente a las infecciones de transmisión sexual?",
+   "opciones": [
+    "Funciona como barrera e impide el contacto con los fluidos que llevan el agente infeccioso",
+    "Elimina con sustancias químicas todos los virus y bacterias que estén presentes",
+    "Refuerza las defensas del organismo mientras dura la relación sexual",
+    "Avisa mediante un cambio de color si alguna de las personas tiene una infección"
+   ],
+   "correcta": 0,
+   "tip": "El preservativo es una barrera física: separa mucosas y fluidos. No mata microorganismos ni actúa sobre el sistema inmune de las personas.",
+   "id": "cie7-oa03-15"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "¿Por qué los métodos anticonceptivos hormonales no protegen frente a las ITS?",
+   "opciones": [
+    "Porque actúan sobre la ovulación y no impiden el contacto con fluidos infecciosos",
+    "Porque su efecto sobre las infecciones dura solo las primeras semanas de uso",
+    "Porque solo protegen frente a las infecciones causadas por bacterias, no por virus",
+    "Porque disminuyen las defensas del organismo mientras la persona los utiliza"
+   ],
+   "correcta": 0,
+   "tip": "Evitar un embarazo y evitar una infección son dos problemas distintos. Los hormonales impiden la ovulación, pero solo una barrera impide el paso del agente infeccioso.",
+   "id": "cie7-oa03-16"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "¿Por qué se insiste en un uso correcto y sostenido del preservativo, y no ocasional?",
+   "opciones": [
+    "Porque basta una sola relación sin protección para que ocurra la transmisión",
+    "Porque el efecto protector se acumula y recién sirve tras varios meses de uso",
+    "Porque usado pocas veces pierde su resistencia física y se rompe con más facilidad",
+    "Porque el organismo necesita acostumbrarse de a poco a la barrera para tolerarla"
+   ],
+   "correcta": 0,
+   "tip": "La protección no se acumula: actúa en cada ocasión. Una sola exposición sin barrera es suficiente para que una infección se transmita.",
+   "id": "cie7-oa03-17"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "El preservativo reduce mucho el riesgo de herpes y de virus papiloma, pero no lo elimina. ¿Por qué?",
+   "opciones": [
+    "Porque esas infecciones también pasan por contacto de piel que la barrera no cubre",
+    "Porque esos virus atraviesan el material del preservativo con facilidad",
+    "Porque esos virus se transmiten sobre todo por la saliva durante los besos en la boca",
+    "Porque esos virus solo se contagian cuando hay lesiones grandes y muy visibles"
+   ],
+   "correcta": 0,
+   "tip": "Estas infecciones se transmiten por contacto directo de piel y mucosas, no solo por fluidos. La barrera cubre buena parte de la zona en contacto, pero no toda.",
+   "id": "cie7-oa03-18"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "¿En qué momentos puede transmitirse el VIH de una madre a su hijo?",
+   "opciones": [
+    "Durante el embarazo, el parto o la lactancia materna",
+    "Solamente en el momento de la concepción, al unirse los gametos",
+    "Únicamente si el niño convive con la madre durante sus primeros años de vida",
+    "En cualquier momento de la vida, por el simple hecho de ser familiares directos"
+   ],
+   "correcta": 0,
+   "tip": "Se llama transmisión vertical. Con control del embarazo y tratamiento oportuno, la probabilidad de que ocurra baja a niveles muy pequeños.",
+   "id": "cie7-oa03-19"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "¿Por qué compartir jeringas puede transmitir el VIH y la hepatitis B?",
+   "opciones": [
+    "Porque quedan restos de sangre en la aguja que pasan directo al cuerpo siguiente",
+    "Porque el metal de la aguja conserva el virus durante meses aunque se lave",
+    "Porque el virus se multiplica dentro del plástico de la jeringa entre un uso y otro",
+    "Porque la piel perforada queda abierta al aire y se infecta con virus del ambiente"
+   ],
+   "correcta": 0,
+   "tip": "Es la vía sanguínea, la misma que explica el riesgo de instrumentos no esterilizados en tatuajes o perforaciones. El material desechable o esterilizado corta esa vía.",
+   "id": "cie7-oa03-20"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "Un afiche habla de «grupos de riesgo» para el VIH. ¿Por qué esa idea es incorrecta?",
+   "opciones": [
+    "Porque el riesgo depende de las prácticas y no de pertenecer a un grupo de personas",
+    "Porque el riesgo depende únicamente de la edad que tenga cada persona en ese momento",
+    "Porque en realidad ningún grupo ni práctica implica riesgo alguno de contagio",
+    "Porque los grupos existen, pero cambian de un país a otro según el clima"
+   ],
+   "correcta": 0,
+   "tip": "Hablar de grupos hace que quien no se siente parte de ellos se crea protegido, y estigmatiza a los demás. Lo que aumenta o baja el riesgo es la práctica concreta.",
+   "id": "cie7-oa03-21"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "¿Qué logra hoy el tratamiento antirretroviral en una persona con VIH?",
+   "opciones": [
+    "Controla el virus, protege sus defensas y le permite una vida de duración normal",
+    "Elimina por completo el virus del organismo en unos pocos meses de uso",
+    "Solo alivia los síntomas una vez que la infección ya llegó a su etapa avanzada, el sida",
+    "Impide que aparezcan síntomas, pero debe tomarse únicamente durante un año"
+   ],
+   "correcta": 0,
+   "tip": "El tratamiento no cura, pero mantiene el virus tan bajo que el sistema inmune se recupera. Por eso hoy vivir con VIH es muy distinto de lo que era hace décadas.",
+   "id": "cie7-oa03-22"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "¿Qué significa que una persona con VIH tenga carga viral indetectable?",
+   "opciones": [
+    "Que la cantidad de virus es tan baja que no lo transmite por vía sexual",
+    "Que ya se curó por completo y puede suspender su tratamiento sin riesgo",
+    "Que el virus se escondió y volverá a aparecer más adelante con más fuerza",
+    "Que el examen falló y hay que repetirlo con otra técnica de laboratorio"
+   ],
+   "correcta": 0,
+   "tip": "Es un resultado sostenido gracias al tratamiento: indetectable equivale a intransmisible por vía sexual. La persona sigue teniendo VIH y debe mantener su tratamiento.",
+   "id": "cie7-oa03-23"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "Javiera se trató una clamidia y cree que ya no puede volver a contagiarse. ¿Por qué se equivoca?",
+   "opciones": [
+    "Porque haber tenido una ITS no deja inmunidad y es posible reinfectarse",
+    "Porque la clamidia deja inmunidad, pero solo durante los primeros dos meses",
+    "Porque el tratamiento con antibióticos nunca llega a curar del todo esa infección",
+    "Porque queda protegida de la clamidia, pero se vuelve más vulnerable a las demás"
+   ],
+   "correcta": 0,
+   "tip": "Curarse elimina la bacteria presente en ese momento, no crea defensas duraderas contra ella. Frente a una nueva exposición, la infección puede ocurrir otra vez.",
+   "id": "cie7-oa03-24"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "Benjamín afirma que si su pareja se ve sana, no puede tener una ITS. ¿Por qué es incorrecto?",
+   "opciones": [
+    "Porque muchas ITS no producen síntomas visibles durante largos períodos",
+    "Porque las ITS siempre producen síntomas, pero solo en las personas adultas",
+    "Porque el aspecto sano descarta las bacterias, pero no descarta los virus",
+    "Porque los síntomas aparecen únicamente si la infección lleva menos de un mes"
+   ],
+   "correcta": 0,
+   "tip": "El aspecto físico no informa nada sobre una infección. Lo que permite saber es el examen, y por eso se recomienda testearse en vez de deducirlo mirando.",
+   "id": "cie7-oa03-25"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "¿Qué puede ocurrir si una sífilis no recibe tratamiento durante años?",
+   "opciones": [
+    "Puede avanzar por etapas y dañar órganos como el corazón y el sistema nervioso",
+    "Se detiene sola después de la primera lesión y no vuelve a producir ningún daño",
+    "Se convierte con el tiempo en una infección viral imposible de tratar",
+    "Deja al organismo protegido frente a otras infecciones bacterianas"
+   ],
+   "correcta": 0,
+   "tip": "Las lesiones iniciales desaparecen solas y eso hace creer que la infección se fue, pero sigue avanzando en silencio. Tratada a tiempo, esas secuelas no ocurren.",
+   "id": "cie7-oa03-26"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "Si una persona se trata una ITS bacteriana y su pareja no lo hace, ¿qué puede ocurrir?",
+   "opciones": [
+    "Que se reinfecte, porque la bacteria sigue presente en la pareja no tratada",
+    "Que el tratamiento pierda efecto y esa persona ya no responda a ningún antibiótico",
+    "Que la pareja se cure también, porque el tratamiento se transmite entre ambas personas",
+    "Que la infección de la pareja se vuelva viral al no recibir el antibiótico a tiempo"
+   ],
+   "correcta": 0,
+   "tip": "Por eso el tratamiento de las ITS bacterianas indica tratar también a las parejas sexuales. Si no, la persona ya curada se vuelve a exponer a la misma bacteria.",
+   "id": "cie7-oa03-27"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "Una persona nota molestias que podrían ser una ITS. ¿Cuál es la conducta médicamente indicada?",
+   "opciones": [
+    "Consultar en un centro de salud para obtener diagnóstico y tratamiento adecuados",
+    "Tomar los antibióticos que le sobraron a un familiar de un tratamiento anterior",
+    "Esperar algunas semanas a ver si las molestias desaparecen por sí solas",
+    "Buscar en internet cuál infección coincide y comprar el remedio recomendado"
+   ],
+   "correcta": 0,
+   "tip": "Varias ITS producen molestias parecidas y el tratamiento correcto depende del agente. Automedicarse puede enmascarar el cuadro y dejar la infección sin curar.",
+   "id": "cie7-oa03-28"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "¿Por qué aparecen infecciones oportunistas cuando el VIH avanza sin tratamiento?",
+   "opciones": [
+    "Porque al destruirse los linfocitos el cuerpo pierde su capacidad de defenderse",
+    "Porque el VIH se transforma dentro del cuerpo en otras bacterias y hongos",
+    "Porque el virus abre heridas en la piel por donde entran otros microorganismos del ambiente",
+    "Porque el tratamiento debilita las defensas todavía más que el propio virus"
+   ],
+   "correcta": 0,
+   "tip": "Se llaman oportunistas porque aprovechan la falta de defensas. Son microorganismos que un sistema inmune sano controlaría sin dificultad.",
+   "id": "cie7-oa03-29"
+  },
+  {
+   "oa": "CN07 OA 03",
+   "pregunta": "¿Por qué el testeo periódico es una medida de prevención y no solo de diagnóstico?",
+   "opciones": [
+    "Porque detectar una infección a tiempo permite tratarla y cortar su transmisión",
+    "Porque el examen en sí mismo elimina los agentes infecciosos de la sangre",
+    "Porque realizarse exámenes seguido refuerza las defensas del organismo",
+    "Porque un resultado negativo protege a la persona durante los meses siguientes al examen"
+   ],
+   "correcta": 0,
+   "tip": "Quien conoce su situación puede tratarse y evitar transmitir. Por eso el testeo, junto con la barrera y la vacunación, es parte de la prevención y no solo del diagnóstico.",
+   "id": "cie7-oa03-30"
+  }
+ ]
+}

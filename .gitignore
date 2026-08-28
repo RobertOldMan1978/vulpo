@@ -33,3 +33,6 @@ azure-tts.txt
 
 # Documentos de revision generados (se rehacen con generar-revision-preguntas.py)
 dev/revision-*.html
+
+# Pruebas de pronunciación (regenerables con el script de voz)
+dev/prueba-voz/

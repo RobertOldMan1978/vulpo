@@ -236,7 +236,9 @@ function irArriba(){ window.scrollTo(0,0); }
 const OA_CARPETA = {HI08:'historia-8basico', MA08:'matematicas-8basico',
                     CN08:'ciencias-8basico', LE08:'lenguaje-8basico',
                     MA03:'matematicas-3basico', HI03:'historia-3basico',
-                    LE03:'lenguaje-3basico', CN03:'ciencias-3basico'};
+                    LE03:'lenguaje-3basico', CN03:'ciencias-3basico',
+                    MA07:'matematicas-7basico', HI07:'historia-7basico',
+                    LE07:'lenguaje-7basico', CN07:'ciencias-7basico'};
 const OA_TEXTO = {};        // "HI08 OA 01" -> "Analizar, apoyándose en diversas fuentes…"
 const OA_CARGADA = {};      // carpetas ya pedidas
 const OA_TOTAL = {};        // 'HI08' -> cuántos OA tiene la asignatura (de oa.json)
@@ -678,14 +680,19 @@ const SIN_DATOS_ASIG =
 // la pantalla del armador (?armar=1) ya vive dentro de cada app.
 const NIVELES_MUESTRA = [
   {nombre:'8° básico', ruta:'/juego/'},
+  {nombre:'7° básico', ruta:'/7mo/'},
   {nombre:'3° básico', ruta:'/3ro/'}
 ];
 // El nivel va en el código, como en el servidor (kimun_oa_asignatura). Los cuatro
 // primeros son de 8°; a partir del segundo nivel el año se nombra en la etiqueta.
 const ASIG_NOMBRE = {HI08:'Historia', MA08:'Matemáticas', CN08:'Ciencias', LE08:'Lenguaje',
                      MA03:'Matemática 3°', HI03:'Historia 3°',
-                     LE03:'Lenguaje 3°', CN03:'Ciencias 3°'};
-const ASIG_ORDEN  = ['HI08','MA08','CN08','LE08','MA03','HI03','LE03','CN03'];
+                     LE03:'Lenguaje 3°', CN03:'Ciencias 3°',
+                     MA07:'Matemática 7°', HI07:'Historia 7°',
+                     LE07:'Lenguaje 7°', CN07:'Ciencias 7°'};
+const ASIG_ORDEN  = ['HI08','MA08','CN08','LE08',
+                     'HI07','MA07','CN07','LE07',
+                     'MA03','HI03','LE03','CN03'];
 
 // Filtro por asignatura. Con una sola asignatura no filtra nada y solo ocupa pantalla,
 // así que no se dibuja.
@@ -969,6 +976,10 @@ function SB_asigDe(oa){
   if(s.slice(0,4)==='HI03') return 'HI03';
   if(s.slice(0,4)==='LE03') return 'LE03';
   if(s.slice(0,4)==='CN03') return 'CN03';
+  if(s.slice(0,4)==='MA07') return 'MA07';
+  if(s.slice(0,4)==='HI07') return 'HI07';
+  if(s.slice(0,4)==='LE07') return 'LE07';
+  if(s.slice(0,4)==='CN07') return 'CN07';
   return null;
 }
 

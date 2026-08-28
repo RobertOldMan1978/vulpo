@@ -3646,7 +3646,14 @@ $('btnExpBack').onclick=()=>{SND.tap();go('scr-rol');};
 $('btnMapasBack').onclick=()=>{SND.tap();go('scr-expediciones');};
 // Landing de Lenguaje
 $('btnLengCampana').onclick=()=>{SND.tap();abrirCampaña(campañaDe('Lenguaje'));};
-$('btnLengVocab').onclick=()=>{SND.tap();entrarExpedicion(EXPEDICIONES.find(e=>e.id==='voc-general'));};
+/* 3° NO tiene Vocabulario: la pantalla scr-lenguaje es herencia muerta del fork de 8°.
+   Este handler llamaba entrarExpedicion(EXPEDICIONES.find(e=>e.id==='voc-general')), y
+   'voc-general' no existe en este archivo -> entrarExpedicion(undefined) revienta. Hoy es
+   inalcanzable porque renderExpediciones ya no llama a abrirLenguaje(), pero quedaba armado
+   para el dia que alguien reconecte el landing. Se deja inofensivo en vez de borrar el boton:
+   quitar el <button> sin quitar esta linea haria que $('btnLengVocab') sea null y .onclick
+   mataria TODO el JavaScript del juego (la trampa de la Sesion 56). */
+$('btnLengVocab').onclick=()=>{SND.tap();go('scr-expediciones');};
 $('btnLengBack').onclick=()=>{SND.tap();go('scr-expediciones');};
 // Biblioteca
 $('btnBiblioBack').onclick=()=>{SND.tap();go('scr-expediciones');};
