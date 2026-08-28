@@ -4604,6 +4604,19 @@ Sesión corta, de habilitación y documentación. Sin cambios en el juego ni en 
   translúcida, responsive ≤520px). El enlace del pie se conservó. *(Verificado en el archivo; el panel
   del navegador integrado rechazó la raíz `localhost:8765/` esta sesión, así que no hubo captura en
   vivo — se ve en vulpo.cl al desplegar.)*
+- **A2 cerrada: los 8 villanos propios de 3° y 7° (16 imágenes, normal + derrotado).** Hasta ahora 3°
+  y 7° prestaban los villanos de 8° (comentarios `PLACEHOLDER`). Roberto generó las 16 (los nombres ya
+  estaban cableados: 3° El Número Perdido/El Olvido/El Apagón/El Borrón; 7° El Anacronismo/El Azar/La
+  Erosión/El Silencio). Se identificaron una por una (nombres UUID en Descargas) y se procesaron con
+  `scripts/procesar-lote8.py` (fondo blanco por inundación, recorte, cuadrado, 512 px, ~5 MB total) a
+  `assets/villano-<asig>-3ro.png` / `-7mo.png` + `-derrotado`. Se cableó `villanoImg` +
+  `villanoImgDerrotado` de las 8 campañas (3° Mate e Historia no tenían la línea derrotado; se agregó)
+  y se quitaron los 8 `PLACEHOLDER`. **8° intacto** (nombres nuevos, no se pisó `villano-historia.png`).
+  *Gotchas:* dos derrotadas de Lenguaje (El Borrón 3°, El Silencio 7°) llegaron con **texto incrustado**
+  (globos con palabras) y hubo que **regenerarlas sin texto** (el prompt debe insistir "sin palabras,
+  sin letras, globos en blanco"); y **NO se copiaron los 16 originales** a `assets/originales` (ya pesa
+  175 MB y el sitio es sensible al tamaño), quedan en Descargas de Roberto. Verificado estático: las 16
+  rutas existen, 0 PLACEHOLDER (el panel del navegador vino inestable, sin captura en vivo).
 - **Pendiente (Roberto):** hacer A1 con los PDF/tablero (7-11 h, el camino crítico); cuando exporte
   el `revisadas.json`, se aplica con `aplicar-revisadas.py` y se regenera el tablero. Sigue en pie
   la reautenticación de NotebookLM (el paso del AI Brain de la orden 66 falla hasta rehacer el login
