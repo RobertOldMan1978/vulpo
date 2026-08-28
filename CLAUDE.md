@@ -4587,6 +4587,16 @@ Sesión corta, de habilitación y documentación. Sin cambios en el juego ni en 
   *Gotcha del formato:* `matematicas-3basico` usa JSON `indent=2` y `lenguaje-3basico` `indent=1`
   (por `autocrlf`, en disco CRLF); re-dumpar con el indent equivocado reformatea el archivo entero —
   hay que detectar el indent por archivo (round-trip) antes de escribir.
+- **Voz de 3° resincronizada tras las correcciones (regla #8).** Al cambiar el **enunciado** de una
+  pregunta, su clip de voz pregrabado queda desfasado. De las correcciones de 3°, solo 3 tocaron el
+  enunciado (`mat3-oa22-16`, `mat3-oa26-25`, `len3-oa23-28`); el resto no afecta el audio (los `tip`
+  **no se locutan**, y las opciones nuevas de OA11 ya tenían clip). Se regeneraron los **3 clips** con
+  `generar-voz-3ro.py` (Azure, ~US$0; hubo que `pip install requests`, la clave vive en
+  `Escritorio/azure-tts.txt`). Verificado: los 3 enunciados ahora tienen su clip (manifiesto), y los 2
+  de Matemática auditados con Azure STT suenan correctos ("un"→"1" y "0"→"cero" son manías del
+  transcriptor, no del audio). *Cómo verificar coincidencia audio↔texto:* el `manifiesto.json` de cada
+  asignatura mapea **texto→clip**; una pregunta cuyo enunciado/opción no esté en el manifiesto quedó
+  sin voz.
 - **Pendiente (Roberto):** hacer A1 con los PDF/tablero (7-11 h, el camino crítico); cuando exporte
   el `revisadas.json`, se aplica con `aplicar-revisadas.py` y se regenera el tablero. Sigue en pie
   la reautenticación de NotebookLM (el paso del AI Brain de la orden 66 falla hasta rehacer el login
