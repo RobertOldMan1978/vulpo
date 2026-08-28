@@ -78,7 +78,7 @@ Para poder decir "tengo 3°, 7° y 8°". Es el hito más cercano y el de mejor r
 | ~~A2~~ | ~~**8 villanos** (4 de 3° + 4 de 7°)~~ ✅ **HECHO (28/08)**: 16 imágenes (normal + derrotado) generadas, procesadas (`procesar-lote8.py`) y cableadas; `PLACEHOLDER` fuera | — | — |
 | A3 | Landing y `docs/comercial.md` hablando de tres cursos — **solo después de A1** | ~½ sesión | código |
 | A4 | Conversación con el colegio sobre `CN07 OA 01/02/03` (sexualidad, currículum obligatorio; el colegio piloto es salesiano) | — | Roberto |
-| A5 | Escuchar el clip de voz de **copihue** (`assets/voz/cie3/acb4dae9f7c13d0e.mp3`): el transcriptor no sirve para juzgar palabras que no conoce | 1 min | Roberto |
+| ~~A5~~ | ~~Escuchar el clip de voz de **copihue**~~ ✅ **HECHO (28/08)**: Roberto eligió la pronunciación `ko.piˈwe` (IPA en `_FONEMAS`); los 2 clips regenerados y confirmados | — | — |
 | A6 | Confirmar el **lunes 31/08** que apareció la primera foto semanal | 1 min | Roberto |
 
 **Las portadas de capítulo siguen prestadas a propósito.** Son ~46 imágenes más para una

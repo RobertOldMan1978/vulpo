@@ -4617,6 +4617,16 @@ Sesión corta, de habilitación y documentación. Sin cambios en el juego ni en 
   sin letras, globos en blanco"); y **NO se copiaron los 16 originales** a `assets/originales` (ya pesa
   175 MB y el sitio es sensible al tamaño), quedan en Descargas de Roberto. Verificado estático: las 16
   rutas existen, 0 PLACEHOLDER (el panel del navegador vino inestable, sin captura en vivo).
+- **A5 cerrada: pronunciación de "copihue" en la voz de 3°.** Roberto escuchó el clip (A5) y no le
+  gustaba cómo sonaba "copihue" (flor chilena que Azure no sabe leer). El pipeline ya tenía el arreglo
+  por SSML `<phoneme>` IPA en `_FONEMAS` de `generar-voz-3ro.py` (indexado por texto MOSTRADO, así que
+  cambiar la pronunciación NO invalida el manifiesto ni el banco). Se generaron **4 variantes IPA** a
+  archivos temporales para que eligiera de oído; eligió **`ko.piˈwe`** (co-pi-UÉ, acento final) sobre
+  la anterior `koˈpiɣwe`. Se actualizó `_FONEMAS`, se **borraron los 2 clips de copihue** (solo cie3
+  los tiene: `acb4dae9f7c13d0e`, `58958b47fe787ee0`) y se **regeneraron** (el generador solo rehace lo
+  que falta, así que hay que borrar el clip viejo para forzar la nueva pronunciación). Verificado por
+  Roberto. *Gotcha:* al cambiar una pronunciación en `_FONEMAS`, borrar los mp3 afectados antes de
+  regenerar; si no, el script los ve "ya generados" y no los toca.
 - **Pendiente (Roberto):** hacer A1 con los PDF/tablero (7-11 h, el camino crítico); cuando exporte
   el `revisadas.json`, se aplica con `aplicar-revisadas.py` y se regenera el tablero. Sigue en pie
   la reautenticación de NotebookLM (el paso del AI Brain de la orden 66 falla hasta rehacer el login

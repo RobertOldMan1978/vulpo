@@ -148,8 +148,8 @@ def textos():
 # ESCUCHARLA antes: pehuen y pehuenche parecian tener el mismo problema y resulto que la
 # voz ya los decia bien; "arreglarlos" los habria roto.
 _FONEMAS = {
-    "copihue":  "koˈpiɣwe",
-    "copihues": "koˈpiɣwes",
+    "copihue":  "ko.piˈwe",
+    "copihues": "ko.piˈwes",
 }
 _RX_FONEMAS = re.compile(r"\b(%s)\b" % "|".join(sorted(_FONEMAS, key=len, reverse=True)),
                          re.IGNORECASE)
