@@ -202,6 +202,58 @@ conversaciones comerciales van FUERA del repo** (`Escritorio\VULPO - correos pro
 El modelo de precios, la secuencia de venta, qué se promete y qué no, y dónde vive el material
 están en **`docs/comercial.md`**. Leerlo antes de tocar cualquier cosa que un colegio vaya a ver.
 
+### Cómo se ordenan los archivos: las cinco capas
+
+Los tres análisis externos del 27/08/2026 coinciden en un punto que este proyecto **ya cumplía
+de hecho pero no tenía escrito**, y por lo tanto no obligaba a nada: VULPO se sostiene porque
+**lógica, contenido, recursos, infraestructura y herramientas viven separados**. Es lo que
+permitió sumar tres cursos y cuatro asignaturas sin tocar el motor, y es lo que la PWA da por
+supuesto cuando pide "no modificar `contenido/` ni `supabase/`".
+
+| Capa | Dónde vive | Qué es |
+|---|---|---|
+| **Presentación** | `index.html` (raíz) · `assets/web/` | La landing comercial. No es el juego |
+| **Motor** | `<curso>/index.html` · `assets/js/*.js` | La lógica: quiz, campañas, jefes, tienda, duelo |
+| **Contenido** | `contenido/<asignatura>-<n>basico/` | Los bancos, los OA y las lecciones. **Datos, nunca código** |
+| **Recursos** | `assets/` (arte, audio, voz, video) | Lo que pesa. Ver la tabla de abajo |
+| **Infraestructura** | `supabase/schema.sql` · `profesor.html` | Identidad, permisos, dominio por OA, cursos |
+| **Herramientas** | `scripts/` · `dev/` | Nunca se sirven al alumno |
+
+**Las cinco reglas que se derivan, y que valen para todo lo que venga (PWA incluida):**
+
+1. **Un cambio de una capa no toca las otras.** Agregar preguntas es `contenido/`; cambiar una
+   regla del juego es motor; ninguno de los dos toca `supabase/`. Cuando un trabajo obliga a
+   tocar tres capas a la vez, casi siempre está mal planteado.
+2. **Lo que se comparte entre cursos va a `assets/js/`, no se copia.** Es el patrón que
+   `revision.js`, `sensible.js` y `calculo.js` ya validaron en producción. **Siempre con su
+   respaldo vacío antes de usarse**, porque un 404 de un `<script src>` mata todo el JavaScript
+   del juego y el síntoma engaña.
+3. **Lo que difiere entre cursos va como DATO, no como `if`** — banderas con nombre, `EXTRAS`,
+   `sinfin:true`. Un `if` sobre el nombre de la asignatura no dice si el nivel tiene esa
+   funcionalidad, y al forkear se copia con su suposición adentro.
+4. **La convención de nombres ES la configuración.** `historia-7basico` dice su nivel; un código
+   con nivel adentro (`HI07`, `MA03`) es currículum y uno sin él (`VOC`, `AF`) es transversal.
+   Por eso ningún script lleva una lista de carpetas escrita a mano: las listas paralelas son la
+   fuente de bug más repetida del proyecto.
+5. **Nada nuevo en la raíz sin motivo.** La raíz es la landing. La PWA sumará exactamente
+   `manifest.webmanifest`, `sw.js` y `pwa.js`, y ahí se detiene.
+
+#### El peso, medido hoy (28/08/2026)
+
+| | |
+|---|---|
+| `assets/voz/` (voz pregrabada de 3°) | **251 MB** |
+| `assets/originales/` (arte crudo, **excluido del sitio** por `_config.yml`) | 175 MB |
+| `contenido/` (los bancos completos) | 7,6 MB |
+| `assets/audio/` (música) | 5,1 MB |
+| **`assets/` completo** | **464 MB** |
+| **Sitio publicado** (sin `.git` ni originales) | **333 MB** |
+
+El techo de GitHub Pages es **1 GB**, y la voz de 4° suma otros ~254 MB. Por eso la regla del
+proyecto —voz pregrabada solo de 1° a 4°— no es una preferencia pedagógica: **es también la
+única aritmética que cabe**. Y por eso la precarga `cache-first` que propone el análisis de la
+PWA es inviable tal cual: bajaría 250 MB al teléfono de un niño en la primera apertura de 3°.
+
 ### Gotchas del motor de expediciones
 
 Al agregar expediciones nuevas al arreglo `EXPEDICIONES` de `juego/index.html`:
@@ -4989,3 +5041,109 @@ después de que pasara con `CALC.init`. La nota no bastó.
   listas paralelas.
 - **Pendiente de Roberto:** la **aprobación pedagógica**, ahora con la herramienta hecha para
   ella. Sigue siendo el camino crítico de la v1.
+
+### Sesión 71 (2026-08-28) — El currículum de 4°, 5° y 6° queda fijado, y las capas se escriben
+Dos trabajos, ninguno de código de juego: **no se tocó ningún `index.html`, ningún script ni una
+sola pregunta existente** (verificado con `git status` al cierre).
+
+#### Los tres análisis externos, releídos y aterrizados
+
+Roberto pidió tener más presentes los tres documentos del 27/08 (`Estrategia_VULPO_PWA_Android_iOS`,
+`Proyecto_VULPO_PWA_v1.0_Analisis_Tecnico` y `Modelo_Suscripcion_VULPO`), **especialmente en la
+manera de programar y ordenar los archivos**. Se releyeron completos y se contrastaron con lo que
+el repositorio ya recogía.
+
+**El fondo ya estaba bien recogido** en `docs/roadmap-tecnico.md` (Sesión 63), que además los
+**corrige** con hechos que ellos no conocían: el `start_url:/juego/` que abriría el curso
+equivocado, la precarga `cache-first` que bajaría 250 MB al teléfono de un niño, y el
+`<base href="/">` que obliga a que el alcance del service worker sea `/`. Eso no había que
+rehacerlo.
+
+**Lo que faltaba era justo lo que Roberto señaló: la forma de ordenar los archivos no estaba
+escrita.** Los tres documentos la dan por supuesta —"esto permite mantener la separación entre
+lógica, contenido y recursos", "NO modificar `/contenido/` ni `/supabase/` en PWA v1"— y el
+proyecto la cumplía de hecho. Pero **una regla que no está escrita no obliga a nada**, y vienen
+tres cursos más y una extracción de motor que la van a poner a prueba. Se agregó a este archivo la
+sección **"Cómo se ordenan los archivos: las cinco capas"**, con sus cinco reglas derivadas.
+
+**Y un número que estaba mal en tres archivos a la vez.** Los pesos venían de una medición vieja,
+anterior a la voz de Ciencias y Lenguaje de 3°:
+
+| | Decía | Medido el 28/08 |
+|---|---|---|
+| `assets/` | 459 MB | **464 MB** |
+| Voz de 3° | 227 MB | **251 MB** |
+| Sitio publicado | 273 MB | **333 MB** |
+
+Corregido en `CLAUDE.md`, `pendiente.md` y `docs/roadmap-tecnico.md`, que se contradecían entre
+sí. Y quedó dicho lo que ese número significa: con el techo de 1 GB de GitHub Pages y los ~254 MB
+que suma la voz de 4°, **la regla de voz solo de 1° a 4° no es una preferencia pedagógica, es la
+única aritmética que cabe**.
+
+#### El currículum de 4°, 5° y 6°: 12 carpetas, 284 OA
+
+Encargo de Roberto, acotado a propósito: *"solo descarga la info de los cursos que faltan,
+ordénalos por carpeta y define los OA y sus objetivos, solo eso"*. **Cero preguntas escritas**,
+que es lo correcto: el banco es el Bloque B y cuesta sesiones.
+
+| | Matemática | Lenguaje | Ciencias | Historia | Total |
+|---|---|---|---|---|---|
+| **4°** | 27 | 30 | 17 | 18 | **92** |
+| **5°** | 27 | 30 | 14 | 22 | **93** |
+| **6°** | 24 | 31 | 18 | 26 | **99** |
+
+Son **~8.490 preguntas por escribir**, más que las ~7.350 que estimaba `pendiente.md`. El número
+ahora está **medido, no supuesto**: el paso 0 del molde de 7° —transcribir el currículum— está
+hecho para los tres cursos, y B1/B2/B3 entran directo al fork y al banco.
+
+**La trampa de la transcripción, y es una que hay que recordar:** la ficha web de una asignatura
+en `curriculumnacional.cl` **devuelve los objetivos cortados a media frase**, y el peligro es que
+*parecen* completos. El `CN04 OA 10` terminaba en "en relación con" y el `OA 07` se quedaba sin
+mencionar el cerebro. Un texto cortado como fuente curricular es **peor que ninguno**, porque
+nadie vuelve a mirarlo.
+
+> **La ruta que sí funciona: la página individual del objetivo**,
+> `…/<asignatura>/<n>-basico/<cod>-oa-NN`, que entrega el texto íntegro con sus ejemplos entre
+> paréntesis. Se usó para **Ciencias de 4° entera** y para los tramos malos de **Lenguaje de 6°**
+> (que además devolvía media Comunicación oral traducida al inglés) e **Historia de 5°**. Queda
+> anotado en el `nota_fidelidad` de cada archivo: cuál pasó, y por qué.
+
+**Verificación, en tres pasadas:**
+- `validar-oa-json.py`: los 12 nuevos **`ok`, cero avisos**. Los 17 avisos que quedan son de
+  bancos preexistentes (3°, 7°, 8° y los de apoyo), no de este trabajo.
+- `generar-tablero.py` **vuelve a salir**. Es la comprobación obligatoria: un `oa.json` con otro
+  dialecto deja sin tablero a los quince y bloquea la aprobación entera. Ya pasó dos veces.
+- Un chequeo propio sobre los **284 textos** (truncados, puntos suspensivos, restos de inglés,
+  placeholders): **0 sospechosos**.
+  > **Su primera versión acusó 6, y los 6 eran falsos positivos míos:** `independientemente`
+  > contiene `pendiente`, y el `MA04 OA 18` mide 38 caracteres porque el texto oficial es así de
+  > corto. Se afinó antes de creerle. Es el mismo error que ya se cometió con el auditor numérico
+  > (Sesión 62) y con el de "distractor fuera de escala" (Sesión 56): **un informe que marca lo
+  > correcto se deja de leer.**
+
+**Tres cosas que aparecieron y cambian trabajo futuro, todas declaradas en los `oa.json`:**
+
+1. **`LE04 OA 15` queda EXCLUIDO del banco** ("escribir con letra clara"): es caligrafía
+   manuscrita y no admite pregunta honesta. Va en `oa_excluidos_del_banco`, no en prosa — mismo
+   criterio que `LE03 OA 16` y `LE07 OA 12`.
+2. **⚠️ La conversación con el colegio ya NO es solo por 7°.** Aparecen `CN06 OA 04/05/06`
+   (sistema reproductor y pubertad) y `CN06 OA 07` / `CN04 OA 08` (drogas y alcohol, este último
+   a los 9 años), más `HI05 OA 02/03/04/07` (conquista, guerra de Arauco, encomienda, esclavitud)
+   e `HI06 OA 05/08` (ocupación de la Araucanía, quiebre de la democracia). Cada uno con su
+   `nota_contenido_sensible` y su categoría de `docs/contenido-sensible.md`.
+3. **Lenguaje sigue siendo la asignatura menos evaluable por quiz** —13 de 30 OA en 4°, 13 de 30
+   en 5° y 14 de 31 en 6° son de producción o de hábito— e **Historia suma 6 o 7 OA
+   actitudinales por curso**. Escrito en cada `nota_evaluacion`, porque el mapa de dominio le
+   muestra al profesor un porcentaje junto a "actuar con honestidad" y eso se lee como nota de
+   conducta.
+
+> **Decisión de forma: los `oa.json` agrupan por EJE oficial, no por capítulo de juego.** Se
+> escribieron para fijar el currículum **antes** de que exista una sola pregunta, y el reparto en
+> capítulos jugables se decide al construir el nivel, cuando ya se sabe cuántas preguntas admite
+> cada objetivo. Decidirlo ahora sería adivinar. Cada archivo lo dice en su `nota_unidades`, y ahí
+> queda indicado si conviene seguir las unidades del Programa (como Historia y Ciencias de 3°) o
+> agrupar por tema con `capitulos_del_juego` (como Lenguaje de 3° y de 7°).
+
+- **Pendiente inmediato:** sin cambios de prioridad. **M4** (`niveles.js`) sigue siendo lo que
+  abarata los tres cursos nuevos, y **la aprobación pedagógica de 3° y 7°** sigue siendo el camino
+  crítico de la v1.

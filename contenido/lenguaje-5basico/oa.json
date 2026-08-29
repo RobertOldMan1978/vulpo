@@ -1,0 +1,212 @@
+{
+ "asignatura": "Lenguaje y Comunicación",
+ "nivel": "5° básico",
+ "codigo_asignatura": "LE05",
+ "fuente": "Bases Curriculares 1° a 6° básico — MINEDUC Chile (curriculumnacional.cl)",
+ "url_fuente": "https://www.curriculumnacional.cl/curriculum/1o-6o-basico/lenguaje-comunicacion/5-basico",
+ "nota_fidelidad": "Los 30 textos se transcribieron de la ficha web de la asignatura en curriculumnacional.cl, conservando íntegros los sub-puntos y separándolos con punto y coma. Numeración por eje: Lectura OA 01-12, Escritura OA 13-22 y Comunicación oral OA 23-30.",
+ "nota_evaluacion": "Lenguaje es la asignatura menos evaluable por quiz de todo el nivel, como ya ocurre en 3°, 4°, 7° y 8°: Trece de sus 30 OA son de PRODUCCIÓN o de HÁBITO (09, 10, 11, 13, 14, 15, 16, 17, 18, 25, 26, 27 y 30). Un quiz no puede medir si un estudiante escribe un cuento, va a la biblioteca o expone sin leer: solo puede medir si RECONOCE la decisión correcta. Sus preguntas deben plantear siempre el trabajo YA HECHO por un tercero con nombre —«Ana escribió esto, ¿qué le falta?»— y nunca preguntar por la conducta del propio jugador. El mapa de dominio le muestra al profesor un porcentaje junto a «desarrollar el gusto por la lectura», y eso se lee como una nota de actitud.",
+ "nota_unidades": "Los grupos de este archivo son los EJES oficiales de las Bases Curriculares, no las unidades del Programa de Estudio ni los capítulos del juego. Se agrupó así a propósito: este archivo se escribió para fijar el currículum (los OA y su texto literal) antes de que exista una sola pregunta, y el reparto en capítulos jugables se decide al construir el nivel, cuando ya se sabe cuántas preguntas admite cada objetivo. Al hacerlo, revisar si conviene seguir las unidades del Programa —como hacen Historia y Ciencias de 3°— o agrupar por tema —como hacen Lenguaje de 3° y de 7°—, y en ese caso pasar a `capitulos_del_juego`.",
+ "unidades": [
+  {
+   "id": "U1",
+   "titulo": "Lectura",
+   "oa": [
+    "LE05 OA 01",
+    "LE05 OA 02",
+    "LE05 OA 03",
+    "LE05 OA 04",
+    "LE05 OA 05",
+    "LE05 OA 06",
+    "LE05 OA 07",
+    "LE05 OA 08",
+    "LE05 OA 09",
+    "LE05 OA 10",
+    "LE05 OA 11",
+    "LE05 OA 12"
+   ]
+  },
+  {
+   "id": "U2",
+   "titulo": "Escritura",
+   "oa": [
+    "LE05 OA 13",
+    "LE05 OA 14",
+    "LE05 OA 15",
+    "LE05 OA 16",
+    "LE05 OA 17",
+    "LE05 OA 18",
+    "LE05 OA 19",
+    "LE05 OA 20",
+    "LE05 OA 21",
+    "LE05 OA 22"
+   ]
+  },
+  {
+   "id": "U3",
+   "titulo": "Comunicación oral",
+   "oa": [
+    "LE05 OA 23",
+    "LE05 OA 24",
+    "LE05 OA 25",
+    "LE05 OA 26",
+    "LE05 OA 27",
+    "LE05 OA 28",
+    "LE05 OA 29",
+    "LE05 OA 30"
+   ]
+  }
+ ],
+ "oa": [
+  {
+   "codigo": "LE05 OA 01",
+   "eje": "Lectura",
+   "texto": "Leer de manera fluida textos variados apropiados a su edad: pronunciando las palabras con precisión; respetando la prosodia indicada por todos los signos de puntuación; decodificando de manera automática la mayoría de las palabras del texto."
+  },
+  {
+   "codigo": "LE05 OA 02",
+   "eje": "Lectura",
+   "texto": "Comprender textos aplicando estrategias de comprensión lectora; por ejemplo: relacionar la información del texto con sus experiencias y conocimientos; releer lo que no fue comprendido; formular preguntas sobre lo leído y responderlas; identificar las ideas más importantes de acuerdo con el propósito del lector; organizar la información en esquemas o mapas conceptuales."
+  },
+  {
+   "codigo": "LE05 OA 03",
+   "eje": "Lectura",
+   "texto": "Leer y familiarizarse con un amplio repertorio de literatura para aumentar su conocimiento del mundo, desarrollar su imaginación y reconocer su valor social y cultural; por ejemplo: poemas, cuentos folclóricos y de autor, fábulas, leyendas, mitos, novelas, historietas, otros."
+  },
+  {
+   "codigo": "LE05 OA 04",
+   "eje": "Lectura",
+   "texto": "Analizar aspectos relevantes de narraciones leídas para profundizar su comprensión: interpretando el lenguaje figurado presente en el texto; expresando opiniones sobre las actitudes y acciones de los personajes y fundamentándolas con ejemplos del texto; determinando las consecuencias de hechos o acciones; describiendo el ambiente y las costumbres representadas en el texto; explicando las características físicas y sicológicas de los personajes que son relevantes para el desarrollo de la historia; comparando textos de autores diferentes y justificando su preferencia por alguno."
+  },
+  {
+   "codigo": "LE05 OA 05",
+   "eje": "Lectura",
+   "texto": "Analizar aspectos relevantes de diversos poemas para profundizar su comprensión: explicando cómo el lenguaje poético que emplea el autor apela a los sentidos, sugiere estados de ánimo y crea imágenes en el lector; identificando personificaciones y comparaciones y explicando su significado dentro del poema; distinguiendo los elementos formales de la poesía (rima asonante y consonante, verso y estrofa)."
+  },
+  {
+   "codigo": "LE05 OA 06",
+   "eje": "Lectura",
+   "texto": "Leer independientemente y comprender textos no literarios (cartas, biografías, relatos históricos, libros y artículos informativos, noticias, etc.) para ampliar su conocimiento del mundo y formarse una opinión: extrayendo información explícita e implícita; haciendo inferencias a partir de la información del texto y de sus experiencias y conocimientos; relacionando la información de imágenes, gráficos, tablas, mapas o diagramas, con el texto en el cual están insertos; interpretando expresiones en lenguaje figurado; comparando información; formulando una opinión sobre algún aspecto de la lectura; fundamentando su opinión con información del texto o sus conocimientos previos."
+  },
+  {
+   "codigo": "LE05 OA 07",
+   "eje": "Lectura",
+   "texto": "Evaluar críticamente la información presente en textos de diversa procedencia: determinando quién es el emisor, cuál es su propósito y a quién dirige el mensaje; evaluando si un texto entrega suficiente información para responder una determinada pregunta o cumplir un propósito."
+  },
+  {
+   "codigo": "LE05 OA 08",
+   "eje": "Lectura",
+   "texto": "Sintetizar y registrar las ideas principales de textos leídos para satisfacer propósitos como estudiar, hacer una investigación, recordar detalles, etc."
+  },
+  {
+   "codigo": "LE05 OA 09",
+   "eje": "Lectura",
+   "texto": "Desarrollar el gusto por la lectura, leyendo habitualmente diversos textos."
+  },
+  {
+   "codigo": "LE05 OA 10",
+   "eje": "Lectura",
+   "texto": "Asistir habitualmente a la biblioteca para satisfacer diversos propósitos (seleccionar textos, investigar sobre un tema, informarse sobre actualidad, etc.), adecuando su comportamiento y cuidando el material para permitir el trabajo y la lectura de los demás."
+  },
+  {
+   "codigo": "LE05 OA 11",
+   "eje": "Lectura",
+   "texto": "Buscar y seleccionar la información más relevante sobre un tema en internet, libros, diarios, revistas, enciclopedias, atlas, etc., para llevar a cabo una investigación."
+  },
+  {
+   "codigo": "LE05 OA 12",
+   "eje": "Lectura",
+   "texto": "Aplicar estrategias para determinar el significado de palabras nuevas: claves del texto (para determinar qué acepción es pertinente según el contexto); raíces y afijos; preguntar a otro; diccionarios, enciclopedias e internet."
+  },
+  {
+   "codigo": "LE05 OA 13",
+   "eje": "Escritura",
+   "texto": "Escribir frecuentemente, para desarrollar la creatividad y expresar sus ideas, textos como poemas, diarios de vida, cuentos, anécdotas, cartas, blogs, etc."
+  },
+  {
+   "codigo": "LE05 OA 14",
+   "eje": "Escritura",
+   "texto": "Escribir creativamente narraciones (relatos de experiencias personales, noticias, cuentos, etc.) que: tengan una estructura clara; utilicen conectores adecuados; incluyan descripciones y diálogo (si es pertinente) para desarrollar la trama, los personajes y el ambiente."
+  },
+  {
+   "codigo": "LE05 OA 15",
+   "eje": "Escritura",
+   "texto": "Escribir artículos informativos para comunicar información sobre un tema: presentando el tema en una oración; desarrollando una idea central por párrafo; agregando las fuentes utilizadas."
+  },
+  {
+   "codigo": "LE05 OA 16",
+   "eje": "Escritura",
+   "texto": "Escribir frecuentemente para compartir impresiones sobre sus lecturas, desarrollando un tema relevante del texto leído y fundamentando sus comentarios con ejemplos."
+  },
+  {
+   "codigo": "LE05 OA 17",
+   "eje": "Escritura",
+   "texto": "Planificar sus textos: estableciendo propósito y destinatario; generando ideas a partir de sus conocimientos e investigación; organizando las ideas que compondrán su escrito."
+  },
+  {
+   "codigo": "LE05 OA 18",
+   "eje": "Escritura",
+   "texto": "Escribir, revisar y editar sus textos para satisfacer un propósito y transmitir sus ideas con claridad. Durante este proceso: desarrollan las ideas agregando información; emplean un vocabulario preciso y variado, y un registro adecuado; releen a medida que escriben; aseguran la coherencia y agregan conectores; editan, en forma independiente, aspectos de ortografía y presentación; utilizan las herramientas del procesador de textos para buscar sinónimos, corregir ortografía y gramática, y dar formato (cuando escriben en computador)."
+  },
+  {
+   "codigo": "LE05 OA 19",
+   "eje": "Escritura",
+   "texto": "Incorporar de manera pertinente en la escritura el vocabulario nuevo extraído de textos escuchados o leídos."
+  },
+  {
+   "codigo": "LE05 OA 20",
+   "eje": "Escritura",
+   "texto": "Distinguir matices entre sinónimos al leer, hablar y escribir para ampliar su comprensión y capacidad expresiva."
+  },
+  {
+   "codigo": "LE05 OA 21",
+   "eje": "Escritura",
+   "texto": "Conjugar correctamente los verbos regulares al utilizarlos en sus producciones escritas."
+  },
+  {
+   "codigo": "LE05 OA 22",
+   "eje": "Escritura",
+   "texto": "Escribir correctamente para facilitar la comprensión por parte del lector, aplicando las reglas ortográficas aprendidas en años anteriores, además de: uso de c-s-z; raya para indicar diálogo; acento diacrítico y dierético; coma en frases explicativas."
+  },
+  {
+   "codigo": "LE05 OA 23",
+   "eje": "Comunicación oral",
+   "texto": "Comprender y disfrutar versiones completas de obras de la literatura, narradas o leídas por un adulto, como: cuentos folclóricos y de autor; poemas; mitos y leyendas; capítulos de novelas."
+  },
+  {
+   "codigo": "LE05 OA 24",
+   "eje": "Comunicación oral",
+   "texto": "Comprender textos orales (explicaciones, instrucciones, noticias, documentales, entrevistas, testimonios, relatos, etc.) para obtener información y desarrollar su curiosidad por el mundo: relacionando las ideas escuchadas con sus experiencias personales y sus conocimientos previos; extrayendo y registrando la información relevante; formulando preguntas al profesor o a los compañeros para comprender o elaborar una idea, o aclarar el significado de una palabra; comparando información dentro del texto o con otros textos; formulando y fundamentando una opinión sobre lo escuchado."
+  },
+  {
+   "codigo": "LE05 OA 25",
+   "eje": "Comunicación oral",
+   "texto": "Apreciar obras de teatro, películas o representaciones: discutiendo aspectos relevantes de la historia; describiendo a los personajes según su manera de hablar y de comportarse."
+  },
+  {
+   "codigo": "LE05 OA 26",
+   "eje": "Comunicación oral",
+   "texto": "Dialogar para compartir y desarrollar ideas y buscar acuerdos: manteniendo el foco en un tema; aceptando sugerencias; haciendo comentarios en los momentos adecuados; mostrando acuerdo o desacuerdo con respeto; fundamentando su postura."
+  },
+  {
+   "codigo": "LE05 OA 27",
+   "eje": "Comunicación oral",
+   "texto": "Interactuar de acuerdo con las convenciones sociales en diferentes situaciones: presentarse a sí mismo y a otros; saludar; preguntar; expresar opiniones, sentimientos e ideas; otras situaciones que requieran el uso de fórmulas de cortesía como por favor, gracias, perdón, permiso."
+  },
+  {
+   "codigo": "LE05 OA 28",
+   "eje": "Comunicación oral",
+   "texto": "Expresarse de manera clara y efectiva en exposiciones orales para comunicar temas de su interés: presentando las ideas de manera coherente y cohesiva; fundamentando sus planteamientos con ejemplos y datos; organizando las ideas en introducción, desarrollo y cierre; utilizando un vocabulario variado y preciso y un registro formal, adecuado a la situación comunicativa; reemplazando algunas construcciones sintácticas familiares por otras más variadas; conjugando correctamente los verbos; pronunciando claramente y usando un volumen audible, entonación, pausas y énfasis adecuados; usando gestos y posturas acordes a la situación; usando material de apoyo (power point, papelógrafo, objetos, etc.) de manera efectiva."
+  },
+  {
+   "codigo": "LE05 OA 29",
+   "eje": "Comunicación oral",
+   "texto": "Incorporar de manera pertinente en sus intervenciones orales el vocabulario nuevo extraído de textos escuchados o leídos."
+  },
+  {
+   "codigo": "LE05 OA 30",
+   "eje": "Comunicación oral",
+   "texto": "Producir textos orales planificados de diverso tipo para desarrollar su capacidad expresiva: poemas; narraciones (contar una historia, describir una actividad, relatar noticias, testimonios, etc.); dramatizaciones."
+  }
+ ]
+}

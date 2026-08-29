@@ -1,0 +1,116 @@
+{
+ "asignatura": "Ciencias Naturales",
+ "nivel": "5° básico",
+ "codigo_asignatura": "CN05",
+ "fuente": "Bases Curriculares 1° a 6° básico — MINEDUC Chile (curriculumnacional.cl)",
+ "url_fuente": "https://www.curriculumnacional.cl/curriculum/1o-6o-basico/ciencias-naturales/5-basico",
+ "nota_fidelidad": "Los 14 textos se transcribieron de la ficha web de la asignatura en curriculumnacional.cl y volvieron completos, con sus enumeraciones de estructuras entre paréntesis, que son parte del objetivo y no un ejemplo opcional: fijan exactamente qué órganos entran en el nivel.",
+ "nota_evaluacion": "Varios OA piden INVESTIGAR, CONSTRUIR o COMUNICAR (06, 07, 09, 10 y 14): son actividades de laboratorio y de indagación, no respuestas. Un quiz solo puede medir el contenido factual que esa investigación deja instalado —qué material conduce, qué le pasa al agua al calentarla—, y sus preguntas deben plantear el experimento YA REALIZADO por un tercero, preguntando por su resultado o su conclusión. Ver `docs/cuidados-ciencias.md` antes de escribir el banco.",
+ "nota_unidades": "Los grupos de este archivo son los EJES oficiales de las Bases Curriculares, no las unidades del Programa de Estudio ni los capítulos del juego. Se agrupó así a propósito: este archivo se escribió para fijar el currículum (los OA y su texto literal) antes de que exista una sola pregunta, y el reparto en capítulos jugables se decide al construir el nivel, cuando ya se sabe cuántas preguntas admite cada objetivo. Al hacerlo, revisar si conviene seguir las unidades del Programa —como hacen Historia y Ciencias de 3°— o agrupar por tema —como hacen Lenguaje de 3° y de 7°—, y en ese caso pasar a `capitulos_del_juego`.",
+ "unidades": [
+  {
+   "id": "U1",
+   "titulo": "Ciencias de la vida",
+   "oa": [
+    "CN05 OA 01",
+    "CN05 OA 02",
+    "CN05 OA 03",
+    "CN05 OA 04",
+    "CN05 OA 05",
+    "CN05 OA 06",
+    "CN05 OA 07"
+   ]
+  },
+  {
+   "id": "U2",
+   "titulo": "Ciencias físicas y químicas",
+   "oa": [
+    "CN05 OA 08",
+    "CN05 OA 09",
+    "CN05 OA 10",
+    "CN05 OA 11"
+   ]
+  },
+  {
+   "id": "U3",
+   "titulo": "Ciencias de la Tierra y el Universo",
+   "oa": [
+    "CN05 OA 12",
+    "CN05 OA 13",
+    "CN05 OA 14"
+   ]
+  }
+ ],
+ "oa": [
+  {
+   "codigo": "CN05 OA 01",
+   "eje": "Ciencias de la vida",
+   "texto": "Reconocer y explicar que los seres vivos están formados por una o más células y que estas se organizan en tejidos, órganos y sistemas."
+  },
+  {
+   "codigo": "CN05 OA 02",
+   "eje": "Ciencias de la vida",
+   "texto": "Identificar y describir por medio de modelos las estructuras básicas del sistema digestivo (boca, esófago, estómago, hígado, intestino delgado, intestino grueso, recto y ano) y sus funciones en la digestión, la absorción de alimentos y la eliminación de desechos."
+  },
+  {
+   "codigo": "CN05 OA 03",
+   "eje": "Ciencias de la vida",
+   "texto": "Explicar por medio de modelos la respiración (inspiración-espiración-intercambio de oxígeno y dióxido de carbono), identificando las estructuras básicas del sistema respiratorio (nariz, tráquea, bronquios, alvéolos, pulmones)."
+  },
+  {
+   "codigo": "CN05 OA 04",
+   "eje": "Ciencias de la vida",
+   "texto": "Explicar la función de transporte del sistema circulatorio (sustancias alimenticias, oxígeno y dióxido de carbono), identificando sus estructuras básicas (corazón, vasos sanguíneos y sangre)."
+  },
+  {
+   "codigo": "CN05 OA 05",
+   "eje": "Ciencias de la vida",
+   "texto": "Analizar el consumo de alimento diario (variedad, tamaño y frecuencia de porciones) reconociendo los alimentos para el crecimiento, la reparación, el desarrollo y el movimiento del cuerpo."
+  },
+  {
+   "codigo": "CN05 OA 06",
+   "eje": "Ciencias de la vida",
+   "texto": "Investigar en diversas fuentes y comunicar los efectos nocivos que produce el cigarrillo (humo del tabaco) en los sistemas respiratorio y circulatorio."
+  },
+  {
+   "codigo": "CN05 OA 07",
+   "eje": "Ciencias de la vida",
+   "texto": "Investigar e identificar algunos microorganismos beneficiosos y dañinos para la salud (bacterias, virus y hongos), y proponer medidas de cuidado e higiene del cuerpo."
+  },
+  {
+   "codigo": "CN05 OA 08",
+   "eje": "Ciencias físicas y químicas",
+   "texto": "Reconocer los cambios que experimenta la energía eléctrica al pasar de una forma a otra (eléctrica a calórica, sonora, lumínica, etc.) e investigar los principales aportes de científicos en su estudio a lo largo del tiempo."
+  },
+  {
+   "codigo": "CN05 OA 09",
+   "eje": "Ciencias físicas y químicas",
+   "texto": "Construir un circuito eléctrico simple (cable, ampolleta, interruptor y pila), usarlo para resolver problemas cotidianos y explicar su funcionamiento."
+  },
+  {
+   "codigo": "CN05 OA 10",
+   "eje": "Ciencias físicas y químicas",
+   "texto": "Observar y distinguir, por medio de la investigación experimental, los materiales conductores (cobre y aluminio) y aisladores (plásticos y goma) de electricidad, relacionándolos con la manipulación segura de artefactos tecnológicos y circuitos eléctricos domiciliarios."
+  },
+  {
+   "codigo": "CN05 OA 11",
+   "eje": "Ciencias físicas y químicas",
+   "texto": "Explicar la importancia de la energía eléctrica en la vida cotidiana y proponer medidas para promover su ahorro y uso responsable."
+  },
+  {
+   "codigo": "CN05 OA 12",
+   "eje": "Ciencias de la Tierra y el Universo",
+   "texto": "Describir la distribución del agua dulce y salada en la Tierra, considerando océanos, glaciares, ríos y lagos, aguas subterráneas, nubes, vapor de agua, etc., y comparar sus volúmenes, reconociendo la escasez relativa de agua dulce."
+  },
+  {
+   "codigo": "CN05 OA 13",
+   "eje": "Ciencias de la Tierra y el Universo",
+   "texto": "Analizar y describir las características de los océanos y lagos: variación de temperatura, luminosidad y presión en relación con la profundidad; diversidad de flora y fauna; movimiento de las aguas, como olas, mareas, corrientes (El Niño y Humboldt)."
+  },
+  {
+   "codigo": "CN05 OA 14",
+   "eje": "Ciencias de la Tierra y el Universo",
+   "texto": "Investigar y explicar efectos positivos y negativos de la actividad humana en los océanos, lagos, ríos, glaciares, entre otros, proponiendo acciones de protección de las reservas hídricas en Chile y comunicando sus resultados."
+  }
+ ]
+}

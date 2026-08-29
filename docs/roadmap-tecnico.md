@@ -71,8 +71,8 @@ Medido en el repositorio hoy:
 | `assets/voz/` (voz pregrabada de 3°) | **251 MB** — len3 116 · cie3 50 · mat3 45 · hist3 43 |
 | `assets/originales/` (arte crudo, nunca se sirve) | **175 MB** |
 | `assets/audio/` (música) | 5,1 MB |
-| `contenido/` (los 7 bancos de preguntas) | 7,4 MB |
-| **Sitio completo sin `.git`** | **498 MB** |
+| `contenido/` (los bancos de preguntas) | 7,6 MB |
+| **Sitio publicado** (sin `.git` ni `originales`, ya excluidos) | **333 MB** |
 
 Un service worker con `cache-first` sobre "imágenes, audio y fuentes" —tal cual lo propone el
 documento— **le bajaría 250 MB a un teléfono en la primera apertura de 3° básico**. En el
@@ -87,7 +87,7 @@ un motivo para desinstalar.
   respondía HTTP 200 con 2,4 MB) y se excluyeron del sitio con `_config.yml`. **Siguen en el
   repositorio**, porque son el respaldo del arte crudo y la forma de sincronizarlo entre los dos
   computadores; lo que ya no ocurre es publicarlos. Libera 175 MB del techo de 1 GB.
-- `contenido/` (7,4 MB) sí es buen candidato a precarga, pero **por nivel**, no completo.
+- `contenido/` (7,6 MB) sí es buen candidato a precarga, pero **por nivel**, no completo.
 - El `install` debe precargar solo el casco: HTML, CSS, JS, íconos y la mascota. Todo lo demás,
   a medida que se usa.
 

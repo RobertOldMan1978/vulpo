@@ -1,0 +1,141 @@
+{
+ "asignatura": "Ciencias Naturales",
+ "nivel": "6° básico",
+ "codigo_asignatura": "CN06",
+ "fuente": "Bases Curriculares 1° a 6° básico — MINEDUC Chile (curriculumnacional.cl)",
+ "url_fuente": "https://www.curriculumnacional.cl/curriculum/1o-6o-basico/ciencias-naturales/6-basico",
+ "nota_fidelidad": "Los 18 textos se transcribieron de la ficha web de la asignatura en curriculumnacional.cl y volvieron completos en una sola pasada.",
+ "nota_evaluacion": "Varios OA piden INVESTIGAR, CONSTRUIR o COMUNICAR (01, 07, 09, 10, 13 y 17): son actividades de laboratorio y de indagación, no respuestas. Un quiz solo puede medir el contenido factual que esa investigación deja instalado —qué material conduce, qué le pasa al agua al calentarla—, y sus preguntas deben plantear el experimento YA REALIZADO por un tercero, preguntando por su resultado o su conclusión. Ver `docs/cuidados-ciencias.md` antes de escribir el banco.",
+ "nota_unidades": "Los grupos de este archivo son los EJES oficiales de las Bases Curriculares, no las unidades del Programa de Estudio ni los capítulos del juego. Se agrupó así a propósito: este archivo se escribió para fijar el currículum (los OA y su texto literal) antes de que exista una sola pregunta, y el reparto en capítulos jugables se decide al construir el nivel, cuando ya se sabe cuántas preguntas admite cada objetivo. Al hacerlo, revisar si conviene seguir las unidades del Programa —como hacen Historia y Ciencias de 3°— o agrupar por tema —como hacen Lenguaje de 3° y de 7°—, y en ese caso pasar a `capitulos_del_juego`.",
+ "nota_contenido_sensible": "Los CN06 OA 04, 05 y 06 son sistema reproductor humano femenino y masculino, cambios de la pubertad e higiene corporal en la pubertad, y el OA 07 son los efectos de las drogas. Es currículum OFICIAL y obligatorio, igual que los CN07 OA 01/02/03 de 7° básico, pero **hay que avisarle al colegio antes de publicarlo**: el colegio piloto es salesiano. El banco debe escribirse de forma factual, sin segunda persona y sin valoración moral, como se hizo en 7°. Ver `docs/contenido-sensible.md` — categorías 🔴 Sexualidad y 🔵 Sustancias.",
+ "unidades": [
+  {
+   "id": "U1",
+   "titulo": "Ciencias de la vida",
+   "oa": [
+    "CN06 OA 01",
+    "CN06 OA 02",
+    "CN06 OA 03",
+    "CN06 OA 04",
+    "CN06 OA 05",
+    "CN06 OA 06",
+    "CN06 OA 07"
+   ]
+  },
+  {
+   "id": "U2",
+   "titulo": "Ciencias físicas y químicas",
+   "oa": [
+    "CN06 OA 08",
+    "CN06 OA 09",
+    "CN06 OA 10",
+    "CN06 OA 11",
+    "CN06 OA 12",
+    "CN06 OA 13",
+    "CN06 OA 14",
+    "CN06 OA 15"
+   ]
+  },
+  {
+   "id": "U3",
+   "titulo": "Ciencias de la Tierra y el Universo",
+   "oa": [
+    "CN06 OA 16",
+    "CN06 OA 17",
+    "CN06 OA 18"
+   ]
+  }
+ ],
+ "oa": [
+  {
+   "codigo": "CN06 OA 01",
+   "eje": "Ciencias de la vida",
+   "texto": "Explicar, a partir de una investigación experimental, los requerimientos de agua, dióxido de carbono y energía lumínica para la producción de azúcar y liberación de oxígeno en la fotosíntesis, comunicando sus resultados y los aportes de científicos en este campo a través del tiempo."
+  },
+  {
+   "codigo": "CN06 OA 02",
+   "eje": "Ciencias de la vida",
+   "texto": "Representar, por medio de modelos, la transferencia de energía y materia desde los organismos fotosintéticos a otros seres vivos por medio de cadenas y redes alimentarias en diferentes ecosistemas."
+  },
+  {
+   "codigo": "CN06 OA 03",
+   "eje": "Ciencias de la vida",
+   "texto": "Analizar los efectos de la actividad humana sobre las redes alimentarias."
+  },
+  {
+   "codigo": "CN06 OA 04",
+   "eje": "Ciencias de la vida",
+   "texto": "Identificar y describir las funciones de las principales estructuras del sistema reproductor humano femenino y masculino."
+  },
+  {
+   "codigo": "CN06 OA 05",
+   "eje": "Ciencias de la vida",
+   "texto": "Describir y comparar los cambios que se producen en la pubertad en mujeres y hombres, reconociéndola como una etapa del desarrollo humano."
+  },
+  {
+   "codigo": "CN06 OA 06",
+   "eje": "Ciencias de la vida",
+   "texto": "Reconocer los beneficios de realizar actividad física en forma regular y de cuidar la higiene corporal en el período de la pubertad."
+  },
+  {
+   "codigo": "CN06 OA 07",
+   "eje": "Ciencias de la vida",
+   "texto": "Investigar y comunicar los efectos nocivos de algunas drogas para la salud, proponiendo conductas de protección."
+  },
+  {
+   "codigo": "CN06 OA 08",
+   "eje": "Ciencias físicas y químicas",
+   "texto": "Explicar que la energía es necesaria para que los objetos cambien y los seres vivos realicen sus procesos vitales y que la mayoría de los recursos energéticos proviene directa o indirectamente del Sol, dando ejemplos de ello."
+  },
+  {
+   "codigo": "CN06 OA 09",
+   "eje": "Ciencias físicas y químicas",
+   "texto": "Investigar en forma experimental la transformación de la energía de una forma a otra, dando ejemplos y comunicando sus conclusiones."
+  },
+  {
+   "codigo": "CN06 OA 10",
+   "eje": "Ciencias físicas y químicas",
+   "texto": "Demostrar, por medio de la investigación experimental, que el calor fluye de un objeto caliente a uno frío hasta que ambos alcanzan la misma temperatura."
+  },
+  {
+   "codigo": "CN06 OA 11",
+   "eje": "Ciencias físicas y químicas",
+   "texto": "Clasificar los recursos naturales energéticos en no renovables y renovables y proponer medidas para el uso responsable de la energía."
+  },
+  {
+   "codigo": "CN06 OA 12",
+   "eje": "Ciencias físicas y químicas",
+   "texto": "Explicar, a partir de modelos, que la materia está formada por partículas en movimiento en sus estados sólido, líquido y gaseoso."
+  },
+  {
+   "codigo": "CN06 OA 13",
+   "eje": "Ciencias físicas y químicas",
+   "texto": "Demostrar, mediante la investigación experimental, los cambios de estado de la materia, como fusión, evaporación, ebullición, condensación, solidificación y sublimación."
+  },
+  {
+   "codigo": "CN06 OA 14",
+   "eje": "Ciencias físicas y químicas",
+   "texto": "Diferenciar entre calor y temperatura, considerando que el calor es una forma de energía y la temperatura es una medida de lo caliente de un objeto."
+  },
+  {
+   "codigo": "CN06 OA 15",
+   "eje": "Ciencias físicas y químicas",
+   "texto": "Medir e interpretar la información obtenida al calentar y enfriar el agua, considerando las transformaciones de un estado a otro."
+  },
+  {
+   "codigo": "CN06 OA 16",
+   "eje": "Ciencias de la Tierra y el Universo",
+   "texto": "Describir las características de las capas de la Tierra (atmósfera, litósfera e hidrósfera) que posibilitan el desarrollo de la vida y proveen recursos para el ser humano, y proponer medidas de protección de dichas capas."
+  },
+  {
+   "codigo": "CN06 OA 17",
+   "eje": "Ciencias de la Tierra y el Universo",
+   "texto": "Investigar experimentalmente la formación del suelo, sus propiedades (como color, textura y capacidad de retención de agua) y la importancia de protegerlo de la contaminación, comunicando sus resultados."
+  },
+  {
+   "codigo": "CN06 OA 18",
+   "eje": "Ciencias de la Tierra y el Universo",
+   "texto": "Explicar las consecuencias de la erosión sobre la superficie de la Tierra, identificando los agentes que la provocan, como el viento, el agua y las actividades humanas."
+  }
+ ]
+}

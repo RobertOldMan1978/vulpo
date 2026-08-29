@@ -1,0 +1,219 @@
+{
+ "asignatura": "Lenguaje y Comunicación",
+ "nivel": "4° básico",
+ "codigo_asignatura": "LE04",
+ "fuente": "Bases Curriculares 1° a 6° básico — MINEDUC Chile (curriculumnacional.cl)",
+ "url_fuente": "https://www.curriculumnacional.cl/curriculum/1o-6o-basico/lenguaje-comunicacion/4-basico",
+ "nota_fidelidad": "Los 30 textos se transcribieron de la ficha web de la asignatura en curriculumnacional.cl, conservando íntegros los sub-puntos y separándolos con punto y coma. La numeración de los ejes coincide con la de las Bases Curriculares: Lectura OA 01-10, Escritura OA 11-21 y Comunicación oral OA 22-30.",
+ "nota_evaluacion": "Lenguaje es, como en 3° y en 7°, la asignatura menos evaluable por quiz de todo el nivel: 13 de sus 30 OA son de PRODUCCIÓN o de HÁBITO (07, 08, 11, 12, 13, 14, 16, 17, 24, 25, 26, 29 y 30). Un quiz no puede medir si un niño escribe un cuento, va a la biblioteca o recita con expresión: solo puede medir si RECONOCE la decisión correcta. Sus preguntas deben plantear siempre el trabajo ya hecho por un tercero con nombre —«Ana escribió esto, ¿qué le falta?»— y nunca preguntar por la conducta del propio jugador. El mapa de dominio va a mostrarle al profesor un porcentaje junto a «desarrollar el gusto por la lectura», y eso se lee como una nota de actitud si no se avisa.",
+ "nota_unidades": "Los grupos de este archivo son los EJES oficiales de las Bases Curriculares, no las unidades del Programa de Estudio ni los capítulos del juego. Se agrupó así a propósito: este archivo se escribió para fijar el currículum (los OA y su texto literal) antes de que exista una sola pregunta, y el reparto en capítulos jugables se decide al construir el nivel, cuando ya se sabe cuántas preguntas admite cada objetivo. Al hacerlo, revisar si conviene seguir las unidades del Programa —como hacen Historia y Ciencias de 3°— o agrupar por tema —como hacen Lenguaje de 3° y de 7°—, y en ese caso pasar a `capitulos_del_juego`.",
+ "oa_excluidos_del_banco": [
+  {
+   "codigo": "LE04 OA 15",
+   "texto": "Escribir con letra clara para que pueda ser leída por otros con facilidad.",
+   "por_que": "Es caligrafía manuscrita y no admite ninguna pregunta honesta de opción múltiple: lo que se mide es el trazo sobre el papel. Se excluye del banco en vez de inventar un ítem que finja medirlo. Mismo criterio que el LE03 OA 16, que es el mismo objetivo un año antes."
+  }
+ ],
+ "unidades": [
+  {
+   "id": "U1",
+   "titulo": "Lectura",
+   "oa": [
+    "LE04 OA 01",
+    "LE04 OA 02",
+    "LE04 OA 03",
+    "LE04 OA 04",
+    "LE04 OA 05",
+    "LE04 OA 06",
+    "LE04 OA 07",
+    "LE04 OA 08",
+    "LE04 OA 09",
+    "LE04 OA 10"
+   ]
+  },
+  {
+   "id": "U2",
+   "titulo": "Escritura",
+   "oa": [
+    "LE04 OA 11",
+    "LE04 OA 12",
+    "LE04 OA 13",
+    "LE04 OA 14",
+    "LE04 OA 15",
+    "LE04 OA 16",
+    "LE04 OA 17",
+    "LE04 OA 18",
+    "LE04 OA 19",
+    "LE04 OA 20",
+    "LE04 OA 21"
+   ]
+  },
+  {
+   "id": "U3",
+   "titulo": "Comunicación oral",
+   "oa": [
+    "LE04 OA 22",
+    "LE04 OA 23",
+    "LE04 OA 24",
+    "LE04 OA 25",
+    "LE04 OA 26",
+    "LE04 OA 27",
+    "LE04 OA 28",
+    "LE04 OA 29",
+    "LE04 OA 30"
+   ]
+  }
+ ],
+ "oa": [
+  {
+   "codigo": "LE04 OA 01",
+   "eje": "Lectura",
+   "texto": "Leer en voz alta de manera fluida variados textos apropiados a su edad: pronunciando las palabras con precisión; respetando los signos de puntuación; leyendo con entonación adecuada; leyendo con velocidad adecuada para el nivel."
+  },
+  {
+   "codigo": "LE04 OA 02",
+   "eje": "Lectura",
+   "texto": "Comprender textos aplicando estrategias de comprensión lectora; por ejemplo: relacionar la información del texto con sus experiencias y conocimientos; releer lo que no fue comprendido; visualizar lo que describe el texto; recapitular; formular preguntas sobre lo leído y responderlas; subrayar información relevante en un texto."
+  },
+  {
+   "codigo": "LE04 OA 03",
+   "eje": "Lectura",
+   "texto": "Leer y familiarizarse con un amplio repertorio de literatura para aumentar su conocimiento del mundo y desarrollar su imaginación; por ejemplo: poemas; cuentos folclóricos y de autor; fábulas; leyendas; mitos; novelas; historietas; otros."
+  },
+  {
+   "codigo": "LE04 OA 04",
+   "eje": "Lectura",
+   "texto": "Profundizar su comprensión de las narraciones leídas: extrayendo información explícita e implícita; determinando las consecuencias de hechos o acciones; describiendo y comparando a los personajes; describiendo los diferentes ambientes que aparecen en un texto; reconociendo el problema y la solución en una narración; expresando opiniones fundamentadas sobre actitudes y acciones de los personajes; comparando diferentes textos escritos por un mismo autor."
+  },
+  {
+   "codigo": "LE04 OA 05",
+   "eje": "Lectura",
+   "texto": "Comprender poemas adecuados al nivel e interpretar el lenguaje figurado presente en ellos."
+  },
+  {
+   "codigo": "LE04 OA 06",
+   "eje": "Lectura",
+   "texto": "Leer independientemente y comprender textos no literarios (cartas, biografías, relatos históricos, instrucciones, libros y artículos informativos, noticias, etc.) para ampliar su conocimiento del mundo y formarse una opinión: extrayendo información explícita e implícita; utilizando los organizadores de textos expositivos (títulos, subtítulos, índice y glosario) para encontrar información específica; comprendiendo la información entregada por textos discontinuos, como imágenes, gráficos, tablas, mapas o diagramas; interpretando expresiones en lenguaje figurado; comparando información; respondiendo preguntas como ¿por qué sucede?, ¿cuál es la consecuencia de?, ¿qué sucedería si?; formulando una opinión sobre algún aspecto de la lectura; fundamentando su opinión con información del texto o sus conocimientos previos."
+  },
+  {
+   "codigo": "LE04 OA 07",
+   "eje": "Lectura",
+   "texto": "Desarrollar el gusto por la lectura, leyendo habitualmente diversos textos."
+  },
+  {
+   "codigo": "LE04 OA 08",
+   "eje": "Lectura",
+   "texto": "Asistir habitualmente a la biblioteca para satisfacer diversos propósitos (encontrar información, elegir libros, estudiar, trabajar o investigar), cuidando el material en favor del uso común."
+  },
+  {
+   "codigo": "LE04 OA 09",
+   "eje": "Lectura",
+   "texto": "Buscar y clasificar información sobre un tema en internet, libros, diarios, revistas, enciclopedias, atlas, etc., para llevar a cabo una investigación."
+  },
+  {
+   "codigo": "LE04 OA 10",
+   "eje": "Lectura",
+   "texto": "Aplicar estrategias para determinar el significado de palabras nuevas: claves del texto (para determinar qué acepción es pertinente según el contexto); raíces y afijos; preguntar a otro; diccionarios, enciclopedias e internet."
+  },
+  {
+   "codigo": "LE04 OA 11",
+   "eje": "Escritura",
+   "texto": "Escribir frecuentemente, para desarrollar la creatividad y expresar sus ideas, textos como poemas, diarios de vida, cuentos, anécdotas, cartas, comentarios sobre sus lecturas, noticias, etc."
+  },
+  {
+   "codigo": "LE04 OA 12",
+   "eje": "Escritura",
+   "texto": "Escribir creativamente narraciones (experiencias personales, relatos de hechos, cuentos, etc.) que incluyan: una secuencia lógica de eventos; inicio, desarrollo y desenlace; conectores adecuados; descripciones; un lenguaje expresivo para desarrollar la acción."
+  },
+  {
+   "codigo": "LE04 OA 13",
+   "eje": "Escritura",
+   "texto": "Escribir artículos informativos para comunicar información sobre un tema: presentando el tema en una oración; desarrollando una idea central por párrafo; utilizando sus propias palabras."
+  },
+  {
+   "codigo": "LE04 OA 14",
+   "eje": "Escritura",
+   "texto": "Escribir cartas, instrucciones, afiches, reportes de una experiencia o noticias, entre otros, para lograr diferentes propósitos: usando un formato adecuado; transmitiendo el mensaje con claridad."
+  },
+  {
+   "codigo": "LE04 OA 15",
+   "eje": "Escritura",
+   "texto": "Escribir con letra clara para que pueda ser leída por otros con facilidad."
+  },
+  {
+   "codigo": "LE04 OA 16",
+   "eje": "Escritura",
+   "texto": "Planificar la escritura: estableciendo propósito y destinatario; generando ideas a partir de conversaciones, investigaciones, lluvia de ideas u otra estrategia."
+  },
+  {
+   "codigo": "LE04 OA 17",
+   "eje": "Escritura",
+   "texto": "Escribir, revisar y editar sus textos para satisfacer un propósito y transmitir sus ideas con claridad. Durante este proceso: organizan las ideas en párrafos separados con punto aparte; utilizan conectores apropiados; emplean un vocabulario preciso y variado; adecuan el registro al propósito del texto y al destinatario; mejoran la redacción del texto a partir de sugerencias de los pares y el docente; corrigen la ortografía y la presentación."
+  },
+  {
+   "codigo": "LE04 OA 18",
+   "eje": "Escritura",
+   "texto": "Incorporar de manera pertinente en la escritura el vocabulario nuevo extraído de textos escuchados o leídos."
+  },
+  {
+   "codigo": "LE04 OA 19",
+   "eje": "Escritura",
+   "texto": "Comprender la función de los adverbios en textos orales y escritos, y reemplazarlos o combinarlos para enriquecer o precisar sus producciones."
+  },
+  {
+   "codigo": "LE04 OA 20",
+   "eje": "Escritura",
+   "texto": "Comprender la función de los verbos en textos orales y escritos, y usarlos manteniendo la concordancia con el sujeto."
+  },
+  {
+   "codigo": "LE04 OA 21",
+   "eje": "Escritura",
+   "texto": "Escribir correctamente para facilitar la comprensión por parte del lector, aplicando todas las reglas de ortografía literal y puntual aprendidas en años anteriores, además de: palabras con b-v; palabras con h de uso frecuente; escritura de ay, hay, ahí; acentuación de palabras agudas, graves, esdrújulas y sobreesdrújulas."
+  },
+  {
+   "codigo": "LE04 OA 22",
+   "eje": "Comunicación oral",
+   "texto": "Comprender y disfrutar versiones completas de obras de la literatura, narradas o leídas por un adulto, como: cuentos folclóricos y de autor; poemas; mitos y leyendas; capítulos de novelas."
+  },
+  {
+   "codigo": "LE04 OA 23",
+   "eje": "Comunicación oral",
+   "texto": "Comprender textos orales (explicaciones, instrucciones, noticias, documentales, películas, testimonios, relatos, etc.) para obtener información y desarrollar su curiosidad por el mundo: estableciendo conexiones con sus propias experiencias; identificando el propósito; formulando preguntas para obtener información adicional, aclarar dudas y profundizar la comprensión; estableciendo relaciones entre distintos textos; respondiendo preguntas sobre información explícita e implícita; formulando una opinión sobre lo escuchado."
+  },
+  {
+   "codigo": "LE04 OA 24",
+   "eje": "Comunicación oral",
+   "texto": "Disfrutar de la experiencia de asistir a obras de teatro infantiles o representaciones para ampliar sus posibilidades de expresión, desarrollar su creatividad y familiarizarse con el género."
+  },
+  {
+   "codigo": "LE04 OA 25",
+   "eje": "Comunicación oral",
+   "texto": "Participar activamente en conversaciones grupales sobre textos leídos o escuchados en clases o temas de su interés: manteniendo el foco de la conversación; expresando sus ideas u opiniones y fundamentándolas; formulando preguntas para aclarar dudas y verificar la comprensión; demostrando interés ante lo escuchado; mostrando empatía frente a situaciones expresadas por otros; respetando turnos."
+  },
+  {
+   "codigo": "LE04 OA 26",
+   "eje": "Comunicación oral",
+   "texto": "Interactuar de acuerdo con las convenciones sociales en diferentes situaciones: presentarse a sí mismo y a otros; saludar; preguntar; expresar opiniones, sentimientos e ideas; situaciones que requieren el uso de fórmulas de cortesía como por favor, gracias, perdón, permiso."
+  },
+  {
+   "codigo": "LE04 OA 27",
+   "eje": "Comunicación oral",
+   "texto": "Expresarse de manera coherente y articulada sobre temas de su interés: organizando las ideas en introducción, desarrollo y cierre; incorporando descripciones y ejemplos que ilustren las ideas; utilizando un vocabulario variado; reemplazando los pronombres y algunos adverbios por construcciones sintácticas que expliciten o describan al referente; usando gestos y posturas acordes a la situación; usando material de apoyo (power point, papelógrafo, objetos, etc.) si es pertinente."
+  },
+  {
+   "codigo": "LE04 OA 28",
+   "eje": "Comunicación oral",
+   "texto": "Incorporar de manera pertinente en sus intervenciones orales el vocabulario nuevo extraído de textos escuchados o leídos."
+  },
+  {
+   "codigo": "LE04 OA 29",
+   "eje": "Comunicación oral",
+   "texto": "Caracterizar distintos personajes para desarrollar su lenguaje y autoestima, y aprender a trabajar en equipo."
+  },
+  {
+   "codigo": "LE04 OA 30",
+   "eje": "Comunicación oral",
+   "texto": "Recitar poemas con entonación y expresión para fortalecer la confianza en sí mismos, aumentar el vocabulario y desarrollar su capacidad expresiva."
+  }
+ ]
+}

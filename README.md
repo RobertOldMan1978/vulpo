@@ -63,7 +63,10 @@ Versión **v0.99**: completo y jugable de punta a punta, en vuelta de revisión
 manual antes de coronar la v1.
 
 **La v1 será VULPO de 3° a 8° básico**, seis cursos completos con sus cuatro
-asignaturas. Hoy existen tres (3°, 7° y 8°) y faltan 4°, 5° y 6°.
+asignaturas. Hoy existen tres jugables (3°, 7° y 8°). De los tres que faltan —4°, 5° y 6°—
+ya está **fijado el currículum**: sus 284 objetivos de aprendizaje están transcritos del
+currículum oficial y validados, en `contenido/<asignatura>-<n>basico/oa.json`. Lo que falta
+es escribir sus bancos de preguntas.
 
 **Qué falta y en qué orden está en [`pendiente.md`](pendiente.md)**, la lista viva de tareas:
 es el archivo por el que se empieza al abrir una rama. El plan de

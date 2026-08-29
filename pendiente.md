@@ -39,7 +39,9 @@ Es una app web mobile-first y se reutiliza. Ver `docs/roadmap-tecnico.md` §1.
 | 8° | 69 | 2.314 (+222 apoyo) | ✅ todas | no lleva | ✅ |
 
 - **7.524 preguntas escritas · 2.536 aprobadas · 4.988 sin aprobar.**
-- **Sitio publicado: 273 MB** (techo de GitHub Pages: 1 GB).
+- **Sitio publicado: 333 MB** (techo de GitHub Pages: 1 GB). `assets/` completo son 464 MB,
+  de los cuales 251 MB son la voz de 3° y 175 MB los originales, ya excluidos del sitio.
+  El reparto y sus reglas, en `CLAUDE.md` → “Cómo se ordenan los archivos”.
 - **Backend al día:** `schema.sql` aplicado y verificado, los códigos de los tres cursos en las
   dos listas de `kimun_prof_asignaturas`, y la foto semanal agendada.
 - **Paridad de funcionalidad entre los tres cursos: completa.** No queda motor pendiente para
@@ -83,7 +85,7 @@ Para poder decir "tengo 3°, 7° y 8°". Es el hito más cercano y el de mejor r
 | ~~A2~~ | ~~**8 villanos** (4 de 3° + 4 de 7°)~~ ✅ **HECHO (28/08)**: 16 imágenes (normal + derrotado) generadas, procesadas (`procesar-lote8.py`) y cableadas; `PLACEHOLDER` fuera | — | — |
 | ~~A3~~ | ~~Landing y `docs/comercial.md` hablando de tres cursos~~ ✅ **HECHO (28/08)**: se hizo **antes** de A1 sin romper la regla, diciendo el estado real — la landing declara que las 2.536 de 8° están aprobadas una a una y que 3° y 7° están **en revisión pedagógica**. Ver A8 | — | — |
 | A8 | **Al cerrar A1, actualizar esa frase.** La tarjeta de la landing y `docs/comercial.md` dicen "los bancos de 3° y 7° están en revisión pedagógica"; cuando se aprueben pasa a "7.524 preguntas aprobadas una a una", que es un argumento de venta mucho más fuerte | 10 min | código |
-| A4 | Conversación con el colegio sobre `CN07 OA 01/02/03` (sexualidad, currículum obligatorio; el colegio piloto es salesiano) | — | Roberto |
+| A4 | Conversación con el colegio sobre el **contenido sensible obligatorio**. Ya no es solo `CN07 OA 01/02/03` (sexualidad de 7°): al transcribir el currículum de 4°, 5° y 6° aparecieron `CN06 OA 04/05/06` (sistema reproductor y pubertad), `CN06 OA 07` y `CN04 OA 08` (drogas y alcohol, este último a los 9 años), `HI05 OA 02/03/04/07` (conquista, guerra de Arauco, encomienda, esclavitud) e `HI06 OA 05/08` (Araucanía, quiebre de la democracia). Todos declarados en su `nota_contenido_sensible`. **Conviene una sola conversación que los cubra**, no seis | — | Roberto |
 | ~~A5~~ | ~~Escuchar el clip de voz de **copihue**~~ ✅ **HECHO (28/08)**: Roberto eligió la pronunciación `ko.piˈwe` (IPA en `_FONEMAS`); los 2 clips regenerados y confirmados | — | — |
 | A6 | Confirmar el **lunes 31/08** que apareció la primera foto semanal | 1 min | Roberto |
 | ~~A9~~ | ~~**Vocabulario en 7°**~~ ✅ **HECHO (28/08)**: 120 palabras en 4 áreas (`contenido/vocabulario-7basico`), la bandera encendida y el handler restaurado. El código ya estaba en el fork: solo faltaba el dato | — | — |
@@ -101,20 +103,46 @@ diferencia que casi nadie mira; el Jefe Final es donde el préstamo chirría.
 
 ## Bloque B · Terminar la v1 (4°, 5° y 6°)
 
-**Orden decidido: 5° → 6° → 4°.** Los dos sin voz primero; 4° al final porque suma ~227 MB.
+**Orden decidido: 5° → 6° → 4°.** Los dos sin voz primero; 4° al final porque suma ~254 MB.
 
 **Voz solo hasta 4°, y no es preferencia sino restricción:** con voz en 4°, 5° y 6° el sitio
 publicado llegaría a ~950 MB y roza el techo de 1 GB de GitHub Pages. Con voz solo en 4°, queda
 en ~500 MB.
 
-| # | Curso | Contenido estimado | Peso | Costo |
-|---|---|---|---|---|
-| B1 | **5° básico** | ~80 OA, ~2.400 preguntas | 1–2 sesiones | — |
-| B2 | **6° básico** | ~80 OA, ~2.400 preguntas | 1–2 sesiones | — |
-| B3 | **4° básico** + voz + dibujos + auditoría de audibilidad | ~85 OA, ~2.550 preguntas, ~10.500 clips | 2–3 sesiones | ~US$8 de Azure |
+### ✅ B0 · El currículum de los tres cursos ya está fijado (Sesión 71)
 
-> Los conteos de OA son **estimación**, no medición: salen de que 3° tiene 86, 7° tiene 81 y 8°
-> tiene 69. El número exacto aparece al transcribir el currículum oficial (paso 0 de cada fase).
+Las **12 carpetas de `contenido/` existen, con su `oa.json` transcrito del currículum oficial**
+y validado. Ya no hay que estimar: los OA están contados y con su texto literal.
+
+| # | Curso | OA | Preguntas a escribir (30 × OA) | Peso | Costo |
+|---|---|---|---|---|---|
+| B1 | **5° básico** | **93** (MA 27 · LE 30 · CN 14 · HI 22) | ~2.790 | 1–2 sesiones | — |
+| B2 | **6° básico** | **99** (MA 24 · LE 31 · CN 18 · HI 26) | ~2.970 | 1–2 sesiones | — |
+| B3 | **4° básico** + voz + dibujos + auditoría de audibilidad | **92** (MA 27 · LE 30 · CN 17 · HI 18) | ~2.760 (−30 del OA excluido) | 2–3 sesiones | ~US$8 de Azure |
+
+**284 OA y ~8.490 preguntas**, algo más que la estimación anterior (~7.350). El paso 0 del molde
+de 7° —transcribir el currículum— **está hecho para los tres**; se entra directo al fork y al
+banco.
+
+**Tres cosas quedaron declaradas en los `oa.json` y hay que respetarlas al escribir el banco:**
+
+- **`LE04 OA 15` está EXCLUIDO** («escribir con letra clara»): es caligrafía manuscrita y no
+  admite pregunta honesta. Mismo criterio que `LE03 OA 16` y `LE07 OA 12`, y declarado en
+  `oa_excluidos_del_banco`, no en prosa.
+- **Contenido sensible en cuatro asignaturas**, con su `nota_contenido_sensible`: `CN06 OA
+  04/05/06` (sistema reproductor y pubertad) y `CN06 OA 07` (drogas) — hermanos de los `CN07 OA
+  01/02/03` que ya hay que conversar con el colegio salesiano (tarea A4); `CN04 OA 08` (alcohol,
+  a los 9 años); `HI05 OA 02/03/04/07` (conquista, guerra de Arauco, encomienda y esclavitud); y
+  `HI06 OA 05/08` (ocupación de la Araucanía y quiebre de la democracia). **La conversación con
+  el colegio crece: ya no es solo 7°.**
+- **Lenguaje sigue siendo el menos evaluable por quiz**: 13 de 30 OA en 4°, 13 de 30 en 5° y 14
+  de 31 en 6° son de producción o de hábito. Y **Historia suma 6 o 7 OA actitudinales por
+  curso**. Las dos advertencias están escritas en cada `nota_evaluacion`.
+
+> **Los `oa.json` agrupan por EJE, no por capítulo de juego, y es a propósito.** Se escribieron
+> para fijar el currículum antes de que exista una sola pregunta; el reparto en capítulos
+> jugables se decide al construir el nivel, cuando ya se sabe cuántas preguntas admite cada
+> objetivo. Cada archivo lo dice en su `nota_unidades`.
 
 **El molde es el plan de 7°**, en 8 pasos: currículum contrastado contra dos fuentes → fork y
 cascarón → códigos en el servidor y el panel → **tanda de validación de 6 OA antes de escalar**
@@ -177,8 +205,8 @@ Plan completo en `docs/roadmap-tecnico.md` §3. **Nada de esto está implementad
 
 1. **Un manifiesto por curso, no uno solo.** Hay tres apps forkeadas; un `start_url` único
    instalaría "VULPO" y abriría el curso equivocado para dos de cada tres alumnos.
-2. **La precarga cache-first que proponen es inviable.** `assets/` son 459 MB, de los cuales
-   **227 MB son la voz de 3°**: cachearlo todo en el `install` le bajaría ~250 MB al teléfono de
+2. **La precarga cache-first que proponen es inviable.** `assets/` son 464 MB, de los cuales
+   **251 MB son la voz de 3°**: cachearlo todo en el `install` le bajaría ~250 MB al teléfono de
    un niño la primera vez que abre. La voz se cachea **clip a clip al reproducir**.
 3. **El `<base href="/">`** de los tres juegos obliga a que el alcance del SW sea `/`, no
    `/juego/`.

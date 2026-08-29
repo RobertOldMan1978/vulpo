@@ -1,0 +1,135 @@
+{
+ "asignatura": "Ciencias Naturales",
+ "nivel": "4° básico",
+ "codigo_asignatura": "CN04",
+ "fuente": "Bases Curriculares 1° a 6° básico — MINEDUC Chile (curriculumnacional.cl)",
+ "url_fuente": "https://www.curriculumnacional.cl/curriculum/1o-6o-basico/ciencias-naturales/4-basico",
+ "nota_fidelidad": "Los 17 textos NO se pudieron transcribir desde la ficha general de la asignatura: esa página devuelve los objetivos truncados a media frase (por ejemplo, el OA 10 terminaba en «en relación con» y el OA 07 se quedaba sin la mención del cerebro), y un texto cortado como fuente curricular es peor que ninguno, porque parece completo. Se transcribieron uno por uno desde su página individual (`.../ciencias-naturales/4-basico/cn04-oa-NN`), que sí entrega el texto íntegro con sus ejemplos entre paréntesis.",
+ "nota_evaluacion": "Ocho de los 17 OA piden EXPLORAR, INVESTIGAR EXPERIMENTALMENTE, MEDIR o CONSTRUIR (01, 08, 09, 11, 12, 13, 14 y, en parte, el 02): son actividades de laboratorio, no respuestas. El quiz mide el contenido factual que esa actividad deja instalado —qué le pasa a un objeto al aplicarle una fuerza, qué instrumento mide la masa—, planteando siempre el experimento YA REALIZADO por un tercero. Cuidados de precisión científica en `docs/cuidados-ciencias.md`.",
+ "nota_unidades": "Los grupos de este archivo son los EJES oficiales de las Bases Curriculares, no las unidades del Programa de Estudio ni los capítulos del juego. Se agrupó así a propósito: este archivo se escribió para fijar el currículum (los OA y su texto literal) antes de que exista una sola pregunta, y el reparto en capítulos jugables se decide al construir el nivel, cuando ya se sabe cuántas preguntas admite cada objetivo. Al hacerlo, revisar si conviene seguir las unidades del Programa —como hacen Historia y Ciencias de 3°— o agrupar por tema —como hacen Lenguaje de 3° y de 7°—, y en ese caso pasar a `capitulos_del_juego`.",
+ "nota_contenido_sensible": "El CN04 OA 08 es el consumo excesivo de alcohol y sus efectos en la salud. Es currículum oficial y a los 9-10 años, así que el banco debe quedarse en lo factual y fisiológico —descoordinación, confusión, lentitud, que son los ejemplos del propio objetivo— sin escenas de consumo, sin segunda persona y sin juicio moral. Categoría 🔵 Sustancias de `docs/contenido-sensible.md`.",
+ "unidades": [
+  {
+   "id": "U1",
+   "titulo": "Ciencias de la vida",
+   "oa": [
+    "CN04 OA 01",
+    "CN04 OA 02",
+    "CN04 OA 03",
+    "CN04 OA 04",
+    "CN04 OA 05",
+    "CN04 OA 06",
+    "CN04 OA 07",
+    "CN04 OA 08"
+   ]
+  },
+  {
+   "id": "U2",
+   "titulo": "Ciencias físicas y químicas",
+   "oa": [
+    "CN04 OA 09",
+    "CN04 OA 10",
+    "CN04 OA 11",
+    "CN04 OA 12",
+    "CN04 OA 13",
+    "CN04 OA 14"
+   ]
+  },
+  {
+   "id": "U3",
+   "titulo": "Ciencias de la Tierra y el Universo",
+   "oa": [
+    "CN04 OA 15",
+    "CN04 OA 16",
+    "CN04 OA 17"
+   ]
+  }
+ ],
+ "oa": [
+  {
+   "codigo": "CN04 OA 01",
+   "eje": "Ciencias de la vida",
+   "texto": "Reconocer, por medio de la exploración, que un ecosistema está compuesto por elementos vivos (animales, plantas, etc.) y no vivos (piedras, aguas, tierra, etc.) que interactúan entre sí."
+  },
+  {
+   "codigo": "CN04 OA 02",
+   "eje": "Ciencias de la vida",
+   "texto": "Observar y comparar adaptaciones de plantas y animales para sobrevivir en los ecosistemas en relación con su estructura y conducta; por ejemplo: cubierta corporal, camuflaje, tipo de hojas, hibernación, entre otras."
+  },
+  {
+   "codigo": "CN04 OA 03",
+   "eje": "Ciencias de la vida",
+   "texto": "Dar ejemplos de cadenas alimentarias, identificando la función de los organismos productores, consumidores y descomponedores, en diferentes ecosistemas de Chile."
+  },
+  {
+   "codigo": "CN04 OA 04",
+   "eje": "Ciencias de la vida",
+   "texto": "Analizar los efectos de la actividad humana en ecosistemas de Chile, proponiendo medidas para protegerlos (parques nacionales y vedas, entre otras)."
+  },
+  {
+   "codigo": "CN04 OA 05",
+   "eje": "Ciencias de la vida",
+   "texto": "Identificar y describir, usando modelos, estructuras del sistema esquelético y algunas de sus funciones, como protección (costillas y cráneo), soporte (vértebras y columna vertebral) y movimiento (pelvis y fémur)."
+  },
+  {
+   "codigo": "CN04 OA 06",
+   "eje": "Ciencias de la vida",
+   "texto": "Explicar, con apoyo de modelos, el movimiento del cuerpo, considerando la acción coordinada de músculos, huesos, tendones y articulación (ejemplo: brazo y pierna), y describir los beneficios de la actividad física para el sistema musculoesquelético."
+  },
+  {
+   "codigo": "CN04 OA 07",
+   "eje": "Ciencias de la vida",
+   "texto": "Identificar estructuras del sistema nervioso y describir algunas de sus funciones, como conducción de información (médula espinal y nervios) y elaboración y control (cerebro)."
+  },
+  {
+   "codigo": "CN04 OA 08",
+   "eje": "Ciencias de la vida",
+   "texto": "Investigar en diversas fuentes y comunicar los efectos que produce el consumo excesivo de alcohol en la salud humana (como descoordinación, confusión y lentitud, entre otras)."
+  },
+  {
+   "codigo": "CN04 OA 09",
+   "eje": "Ciencias físicas y químicas",
+   "texto": "Demostrar, por medio de la investigación experimental, que la materia tiene masa y ocupa espacio, usando materiales del entorno."
+  },
+  {
+   "codigo": "CN04 OA 10",
+   "eje": "Ciencias físicas y químicas",
+   "texto": "Comparar los tres estados de la materia (sólido, líquido y gaseoso) en relación con criterios como la capacidad de fluir, cambiar de forma y volumen, entre otros."
+  },
+  {
+   "codigo": "CN04 OA 11",
+   "eje": "Ciencias físicas y químicas",
+   "texto": "Medir la masa, el volumen y la temperatura de la materia (en estados sólido, líquido y gaseoso), utilizando instrumentos y unidades de medida apropiados."
+  },
+  {
+   "codigo": "CN04 OA 12",
+   "eje": "Ciencias físicas y químicas",
+   "texto": "Demostrar, por medio de la investigación experimental, los efectos de la aplicación de fuerzas sobre objetos, considerando cambios en la forma, la rapidez y la dirección del movimiento, entre otros."
+  },
+  {
+   "codigo": "CN04 OA 13",
+   "eje": "Ciencias físicas y químicas",
+   "texto": "Identificar, por medio de la investigación experimental, diferentes tipos de fuerzas y sus efectos en situaciones concretas: fuerza de roce (arrastrando objetos); peso (fuerza de gravedad); fuerza magnética (en imanes)."
+  },
+  {
+   "codigo": "CN04 OA 14",
+   "eje": "Ciencias físicas y químicas",
+   "texto": "Diseñar y construir objetos tecnológicos que usen la fuerza para resolver problemas cotidianos."
+  },
+  {
+   "codigo": "CN04 OA 15",
+   "eje": "Ciencias de la Tierra y el Universo",
+   "texto": "Describir, por medio de modelos, que la Tierra tiene una estructura de capas (corteza, manto y núcleo) con características distintivas en cuanto a su composición, rigidez y temperatura."
+  },
+  {
+   "codigo": "CN04 OA 16",
+   "eje": "Ciencias de la Tierra y el Universo",
+   "texto": "Explicar los cambios de la superficie de la Tierra a partir de la interacción de sus capas y los movimientos de las placas tectónicas (sismos, tsunamis y erupciones volcánicas)."
+  },
+  {
+   "codigo": "CN04 OA 17",
+   "eje": "Ciencias de la Tierra y el Universo",
+   "texto": "Proponer medidas de prevención y seguridad ante riesgos naturales en la escuela, la calle y el hogar, para desarrollar una cultura preventiva."
+  }
+ ]
+}

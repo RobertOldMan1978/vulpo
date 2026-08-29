@@ -1,0 +1,165 @@
+{
+ "asignatura": "Historia, Geografía y Ciencias Sociales",
+ "nivel": "5° básico",
+ "codigo_asignatura": "HI05",
+ "fuente": "Bases Curriculares 1° a 6° básico — MINEDUC Chile (curriculumnacional.cl)",
+ "url_fuente": "https://www.curriculumnacional.cl/curriculum/1o-6o-basico/historia-geografia-ciencias-sociales/5-basico",
+ "nota_fidelidad": "Los 22 textos se transcribieron de curriculumnacional.cl en dos pasadas. La ficha general de la asignatura devuelve los OA 14, 16, 17, 18, 19 y 22 resumidos —el 16 perdía todos sus ejemplos y el 17 quedaba cortado a media frase—, así que esos seis se transcribieron desde su página individual (`.../historia-geografia-ciencias-sociales/5-basico/hi05-oa-NN`). Se corrigió una errata evidente de la página en el OA 17 («Participaren» por «Participar en»), sin tocar el contenido.",
+ "nota_evaluacion": "SEIS de los 22 OA son ACTITUDINALES o de proyecto —16 «demostrar actitudes cívicas», 17 «participar en elecciones», 18 «diseñar y participar en un proyecto», 20 «opinar y argumentar», 21 «evaluar y justificar» y 22 «informarse y opinar»—, y el 04 pide investigar. Un quiz no mide conducta: solo mide si el estudiante RECONOCE la acción correcta, y por eso sus preguntas plantean siempre la situación de un tercero con nombre. Cuidado especial con el OA 15 («logros que dependen del esfuerzo y el mérito»): mal redactado, una pregunta puede terminar afirmándole a un niño que a quien le va mal es porque no se esforzó.",
+ "nota_unidades": "Los grupos de este archivo son los EJES oficiales de las Bases Curriculares, no las unidades del Programa de Estudio ni los capítulos del juego. Se agrupó así a propósito: este archivo se escribió para fijar el currículum (los OA y su texto literal) antes de que exista una sola pregunta, y el reparto en capítulos jugables se decide al construir el nivel, cuando ya se sabe cuántas preguntas admite cada objetivo. Al hacerlo, revisar si conviene seguir las unidades del Programa —como hacen Historia y Ciencias de 3°— o agrupar por tema —como hacen Lenguaje de 3° y de 7°—, y en ese caso pasar a `capitulos_del_juego`.",
+ "nota_contenido_sensible": "Los HI05 OA 02, 03, 04 y 07 son la conquista de América y de Chile: expediciones y conflictos bélicos, los efectos sobre los pueblos indígenas, la guerra de Arauco, la encomienda y la esclavitud. Es currículum oficial y el eje del año, pero cae de lleno en las categorías ⚫ Violencia y muerte y 🟤 Pueblos originarios de `docs/contenido-sensible.md`. Mismo criterio editorial que se usó en 8° para el arte de estos capítulos: el banco mide hechos, procesos y consecuencias verificables, sin recrear escenas de violencia y sin presentar el trabajo forzado como un dato neutro más. El OA 06 (rol de la Iglesia católica) suma la categoría 🟡 Religión y creencias: se trata como hecho histórico, no como afirmación de fe.",
+ "unidades": [
+  {
+   "id": "U1",
+   "titulo": "Historia",
+   "oa": [
+    "HI05 OA 01",
+    "HI05 OA 02",
+    "HI05 OA 03",
+    "HI05 OA 04",
+    "HI05 OA 05",
+    "HI05 OA 06",
+    "HI05 OA 07",
+    "HI05 OA 08"
+   ]
+  },
+  {
+   "id": "U2",
+   "titulo": "Geografía",
+   "oa": [
+    "HI05 OA 09",
+    "HI05 OA 10",
+    "HI05 OA 11",
+    "HI05 OA 12"
+   ]
+  },
+  {
+   "id": "U3",
+   "titulo": "Formación ciudadana",
+   "oa": [
+    "HI05 OA 13",
+    "HI05 OA 14",
+    "HI05 OA 15",
+    "HI05 OA 16",
+    "HI05 OA 17",
+    "HI05 OA 18",
+    "HI05 OA 19",
+    "HI05 OA 20",
+    "HI05 OA 21",
+    "HI05 OA 22"
+   ]
+  }
+ ],
+ "oa": [
+  {
+   "codigo": "HI05 OA 01",
+   "eje": "Historia",
+   "texto": "Explicar los viajes de descubrimiento de Cristóbal Colón, de Hernando de Magallanes y de algún otro explorador, considerando sus objetivos, las rutas recorridas, los avances tecnológicos que facilitaron la navegación, las dificultades y los desafíos que enfrentaron las tripulaciones y el contexto europeo general en que se desarrollaron."
+  },
+  {
+   "codigo": "HI05 OA 02",
+   "eje": "Historia",
+   "texto": "Describir el proceso de conquista de América y de Chile, incluyendo a los principales actores (Corona española, Iglesia católica y hombres y mujeres protagonistas, entre otros), algunas expediciones y conflictos bélicos, y la fundación de ciudades como expresión de la voluntad de los españoles de quedarse y expandirse, y reconocer en este proceso el surgimiento de una nueva sociedad."
+  },
+  {
+   "codigo": "HI05 OA 03",
+   "eje": "Historia",
+   "texto": "Analizar el impacto y las consecuencias que tuvo el proceso de conquista para Europa y para América, considerando diversos ámbitos."
+  },
+  {
+   "codigo": "HI05 OA 04",
+   "eje": "Historia",
+   "texto": "Investigar sobre los efectos de la conquista sobre los pueblos indígenas americanos, utilizando fuentes dadas por el docente."
+  },
+  {
+   "codigo": "HI05 OA 05",
+   "eje": "Historia",
+   "texto": "Describir algunas dimensiones de la vida colonial en Chile, como organización de la sociedad y grupos sociales, oficios y actividades económicas, costumbres y vida cotidiana, arte y celebraciones."
+  },
+  {
+   "codigo": "HI05 OA 06",
+   "eje": "Historia",
+   "texto": "Explicar aspectos centrales de la Colonia, como la dependencia de las colonias americanas de la metrópoli, el rol de la Iglesia católica y el surgimiento de una sociedad mestiza."
+  },
+  {
+   "codigo": "HI05 OA 07",
+   "eje": "Historia",
+   "texto": "Explicar y dar ejemplos de las distintas formas en las que españoles y mapuches se relacionaron en el período colonial, considerando resistencia mapuche y guerra de Arauco, mestizaje, formas de trabajo (como encomienda y esclavitud), evangelización, vida fronteriza y sistema de parlamentos."
+  },
+  {
+   "codigo": "HI05 OA 08",
+   "eje": "Historia",
+   "texto": "Identificar, en su entorno o en fotografías, elementos del patrimonio colonial de Chile que siguen presentes hoy, como edificios, obras de arte y costumbres, entre otros."
+  },
+  {
+   "codigo": "HI05 OA 09",
+   "eje": "Geografía",
+   "texto": "Caracterizar las grandes zonas de Chile y sus paisajes (Norte Grande, Norte Chico, Zona Central, Zona Sur y Zona Austral), considerando ubicación, clima (temperatura y precipitaciones), relieve, hidrografía, población y recursos naturales, entre otros."
+  },
+  {
+   "codigo": "HI05 OA 10",
+   "eje": "Geografía",
+   "texto": "Reconocer y ubicar en mapas recursos naturales significativos de Chile, como cobre, hierro, recursos marítimos y forestales, entre otros; diferenciar recursos renovables y no renovables y explicar la importancia de cuidarlos en el marco de un desarrollo sostenible."
+  },
+  {
+   "codigo": "HI05 OA 11",
+   "eje": "Geografía",
+   "texto": "Analizar y dar ejemplos de diversas maneras en las que el trabajo de las personas, sus ideas y proyectos potencian y dan valor a los recursos naturales (por ejemplo: tecnología de riego, elaboración de vinos, uso de madera en la construcción, nuevas formas de explotación sustentable)."
+  },
+  {
+   "codigo": "HI05 OA 12",
+   "eje": "Geografía",
+   "texto": "Investigar, describir y ubicar los riesgos naturales que afectan a su localidad, como sismos, maremotos, inundaciones, derrumbes y volcanismo, e identificar formas en que la comunidad puede protegerse (construcciones antisísmicas, medidas de seguridad y evacuación en el hogar, en la escuela y en los distintos espacios públicos, entre otros)."
+  },
+  {
+   "codigo": "HI05 OA 13",
+   "eje": "Formación ciudadana",
+   "texto": "Reconocer que todas las personas son sujetos de derecho, que deben ser respetados por los pares, la comunidad y el Estado, y que esos derechos no dependen de características individuales, como etnia, sexo, lugar de nacimiento u otras."
+  },
+  {
+   "codigo": "HI05 OA 14",
+   "eje": "Formación ciudadana",
+   "texto": "Reconocer que los derechos generan deberes y responsabilidades en las personas y en el Estado, lo que, por ejemplo, se manifiesta en que: las personas deben respetar los derechos de los demás; todas las personas deben respetar las leyes; el Estado debe asegurar que las personas puedan ejercer sus derechos (a la educación, a la protección de la salud, a la libertad de expresión, a la propiedad privada y a la igualdad ante la ley, entre otros); el Estado debe asegurar los derechos de las personas a participar en la vida pública, como el derecho a formar organizaciones de participación social (fundaciones, juntas de vecinos, etc.), a participar en partidos políticos y el derecho a sufragio, entre otros."
+  },
+  {
+   "codigo": "HI05 OA 15",
+   "eje": "Formación ciudadana",
+   "texto": "Reconocer que hay logros y beneficios que dependen del esfuerzo, el mérito y el comportamiento de cada persona (calificaciones, premios deportivos, reconocimiento por compañerismo, liderazgo)."
+  },
+  {
+   "codigo": "HI05 OA 16",
+   "eje": "Formación ciudadana",
+   "texto": "Demostrar actitudes cívicas con acciones en su vida diaria, como: actuar con honestidad y responsabilidad (ejemplos: respetar los acuerdos establecidos, respetar la autoría de música y películas, evitar el plagio escolar, etc.); respetar a todas las personas (ejemplos: no discriminar por condiciones físicas, sociales, culturales o étnicas, escuchar respetuosamente opiniones distintas, respetar espacios y propiedad de los demás, etc.); contribuir a la buena convivencia (ejemplos: buscar soluciones pacíficas para resolver problemas, mostrar empatía con los demás, etc.); cuidar y valorar el patrimonio y el medioambiente (ejemplos: realizar campañas de información y cuidado de nuestro patrimonio, usar la energía de manera eficiente, etc.)."
+  },
+  {
+   "codigo": "HI05 OA 17",
+   "eje": "Formación ciudadana",
+   "texto": "Participar en su comunidad, tomando parte en elecciones para una directiva de curso, asignando roles y funciones a cada cargo, y demostrando que entienden las responsabilidades que lleva consigo el desempeño de un cargo y la importancia de elegir personas que se estimen idóneas, para mantener una buena convivencia y una organización del curso que permita el trabajo escolar."
+  },
+  {
+   "codigo": "HI05 OA 18",
+   "eje": "Formación ciudadana",
+   "texto": "Diseñar y participar en un proyecto que solucione un problema de la comunidad escolar, considerando temas como voluntariado, gasto excesivo de agua y electricidad en la escuela, y cuidado del medioambiente, entre otros, y ateniéndose a un plan y a un presupuesto."
+  },
+  {
+   "codigo": "HI05 OA 19",
+   "eje": "Formación ciudadana",
+   "texto": "Explicar formas en que un grupo de personas puede organizarse para resolver problemas, mejorar su calidad de vida y la de otros y lograr metas comunes; por ejemplo, fundaciones, voluntariado, empresas, agrupaciones y recolección de fondos para causas benéficas."
+  },
+  {
+   "codigo": "HI05 OA 20",
+   "eje": "Formación ciudadana",
+   "texto": "Opinar y argumentar con fundamentos sobre temas de la asignatura u otros."
+  },
+  {
+   "codigo": "HI05 OA 21",
+   "eje": "Formación ciudadana",
+   "texto": "Evaluar posibles soluciones frente a un problema o proyecto y justificar su elección."
+  },
+  {
+   "codigo": "HI05 OA 22",
+   "eje": "Formación ciudadana",
+   "texto": "Informarse y opinar sobre temas relevantes y de su interés en el país y el mundo (política, medioambiente, deporte, arte y música, entre otros) por medio de periódicos y TIC."
+  }
+ ]
+}

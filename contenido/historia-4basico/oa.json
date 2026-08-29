@@ -1,0 +1,140 @@
+{
+ "asignatura": "Historia, Geografía y Ciencias Sociales",
+ "nivel": "4° básico",
+ "codigo_asignatura": "HI04",
+ "fuente": "Bases Curriculares 1° a 6° básico — MINEDUC Chile (curriculumnacional.cl)",
+ "url_fuente": "https://www.curriculumnacional.cl/curriculum/1o-6o-basico/historia-geografia-ciencias-sociales/4-basico",
+ "nota_fidelidad": "Los 18 textos se transcribieron de la ficha web de la asignatura en curriculumnacional.cl y volvieron completos en una sola pasada, sin sub-puntos que reponer. La numeración por eje coincide con las Bases Curriculares: Historia OA 01-05, Geografía OA 06-10 y Formación ciudadana OA 11-18.",
+ "nota_evaluacion": "SEIS de los 18 OA son ACTITUDINALES o de proyecto —13 «mantener una conducta honesta», 14 «demostrar respeto», 15 «participar», 16 «resolver conflictos», 17 «diseñar y participar en un proyecto» y 18 «opinar y argumentar»—, y el 05 pide investigar. Un quiz no puede medir conducta: solo puede medir si el niño RECONOCE la acción correcta. Por eso sus preguntas plantean SIEMPRE la situación de otra persona con nombre, nunca la del propio jugador. Es la misma advertencia que llevan Historia de 3° (OA 11, 12, 13 y 16) y de 7°, y existe porque el mapa de dominio le va a mostrar al profesor un porcentaje junto a «conducta honesta», y eso se lee como una nota de conducta.",
+ "nota_unidades": "Los grupos de este archivo son los EJES oficiales de las Bases Curriculares, no las unidades del Programa de Estudio ni los capítulos del juego. Se agrupó así a propósito: este archivo se escribió para fijar el currículum (los OA y su texto literal) antes de que exista una sola pregunta, y el reparto en capítulos jugables se decide al construir el nivel, cuando ya se sabe cuántas preguntas admite cada objetivo. Al hacerlo, revisar si conviene seguir las unidades del Programa —como hacen Historia y Ciencias de 3°— o agrupar por tema —como hacen Lenguaje de 3° y de 7°—, y en ese caso pasar a `capitulos_del_juego`.",
+ "unidades": [
+  {
+   "id": "U1",
+   "titulo": "Historia",
+   "oa": [
+    "HI04 OA 01",
+    "HI04 OA 02",
+    "HI04 OA 03",
+    "HI04 OA 04",
+    "HI04 OA 05"
+   ]
+  },
+  {
+   "id": "U2",
+   "titulo": "Geografía",
+   "oa": [
+    "HI04 OA 06",
+    "HI04 OA 07",
+    "HI04 OA 08",
+    "HI04 OA 09",
+    "HI04 OA 10"
+   ]
+  },
+  {
+   "id": "U3",
+   "titulo": "Formación ciudadana",
+   "oa": [
+    "HI04 OA 11",
+    "HI04 OA 12",
+    "HI04 OA 13",
+    "HI04 OA 14",
+    "HI04 OA 15",
+    "HI04 OA 16",
+    "HI04 OA 17",
+    "HI04 OA 18"
+   ]
+  }
+ ],
+ "oa": [
+  {
+   "codigo": "HI04 OA 01",
+   "eje": "Historia",
+   "texto": "Describir la civilización maya, considerando ubicación geográfica, organización política, actividades económicas, formas de cultivo y alimentos, organización de la sociedad, roles y oficios de hombres y mujeres, religión y ritos, desarrollo de la astronomía y la matemática, sistemas de escritura, guerras y sacrificios humanos, construcciones, costumbres y vida cotidiana, entre otros."
+  },
+  {
+   "codigo": "HI04 OA 02",
+   "eje": "Historia",
+   "texto": "Describir la civilización azteca, considerando ubicación geográfica, organización política y extensión, la ciudad de Tenochtitlán, formas de cultivo y alimentos, religión y ritos, avances tecnológicos, organización de la sociedad, roles y oficios de hombres y mujeres, construcciones, costumbres y vida cotidiana, entre otros."
+  },
+  {
+   "codigo": "HI04 OA 03",
+   "eje": "Historia",
+   "texto": "Describir la civilización inca, considerando ubicación geográfica, organización política, sistema de caminos y correos, religión y ritos, avances tecnológicos, organización de la sociedad, roles y oficios de hombres y mujeres, formas de cultivo y alimentos, construcciones, costumbres y vida cotidiana, entre otros."
+  },
+  {
+   "codigo": "HI04 OA 04",
+   "eje": "Historia",
+   "texto": "Analizar y comparar las principales características de las civilizaciones americanas (mayas, aztecas e incas)."
+  },
+  {
+   "codigo": "HI04 OA 05",
+   "eje": "Historia",
+   "texto": "Investigar en diversas fuentes (imágenes, medios audiovisuales, TICs, gráficos, textos y otras) sobre algunos temas relacionados con el presente de los pueblos indígenas americanos; por ejemplo, el protagonismo que tienen hoy, la influencia de las civilizaciones maya, azteca e inca sobre la cultura y la sociedad de los países actuales, situados donde ellos se desarrollaron, y su influencia en las comidas y en la lengua que empleamos en la actualidad, entre otros."
+  },
+  {
+   "codigo": "HI04 OA 06",
+   "eje": "Geografía",
+   "texto": "Ubicar lugares en un mapa, utilizando coordenadas geográficas como referencia (paralelos y meridianos)."
+  },
+  {
+   "codigo": "HI04 OA 07",
+   "eje": "Geografía",
+   "texto": "Distinguir recursos naturales renovables y no renovables, reconocer el carácter limitado de los recursos naturales y la necesidad de cuidarlos, e identificar recursos presentes en objetos y bienes cotidianos."
+  },
+  {
+   "codigo": "HI04 OA 08",
+   "eje": "Geografía",
+   "texto": "Describir distintos paisajes del continente americano, considerando climas, ríos, población, idiomas, países y grandes ciudades, entre otros, y utilizando vocabulario geográfico adecuado."
+  },
+  {
+   "codigo": "HI04 OA 09",
+   "eje": "Geografía",
+   "texto": "Reconocer y ubicar los principales recursos naturales de América, considerando su distribución geográfica, su uso, y la importancia de cuidarlos en el marco de un desarrollo sostenible."
+  },
+  {
+   "codigo": "HI04 OA 10",
+   "eje": "Geografía",
+   "texto": "Comparar, mediante la observación en imágenes, mapas y otras fuentes, paisajes de su región con paisajes de América, distinguiendo distintas formas de adaptación y transformación de la población a su ambiente natural."
+  },
+  {
+   "codigo": "HI04 OA 11",
+   "eje": "Formación ciudadana",
+   "texto": "Distinguir algunos actores de la organización política y democrática de Chile, como Presidente, ministros, senadores, diputados y alcaldes, considerando las instituciones en las que ejercen y cómo son nombrados o elegidos."
+  },
+  {
+   "codigo": "HI04 OA 12",
+   "eje": "Formación ciudadana",
+   "texto": "Reconocer sus principales derechos en situaciones de la vida cotidiana, como el derecho a la educación, a contar con alimentación, vivienda, recreo y servicios médicos adecuados, a expresarse, a ser protegido contra el abandono y la crueldad, y a no trabajar antes de la edad apropiada; y dar ejemplos de cómo se pueden ejercer y proteger esos derechos."
+  },
+  {
+   "codigo": "HI04 OA 13",
+   "eje": "Formación ciudadana",
+   "texto": "Mantener una conducta honesta en la vida cotidiana, en los juegos y en el trabajo escolar, hablando con la verdad, respetando las reglas de los juegos sin hacer trampa, evitando la copia y el plagio y reconociendo sus errores y sus acciones, entre otros."
+  },
+  {
+   "codigo": "HI04 OA 14",
+   "eje": "Formación ciudadana",
+   "texto": "Demostrar respeto por todas las personas mediante acciones en su vida diaria, sin discriminar por condiciones físicas, sociales, económicas, étnicas o culturales."
+  },
+  {
+   "codigo": "HI04 OA 15",
+   "eje": "Formación ciudadana",
+   "texto": "Participar en su comunidad, tomando parte en elecciones para una directiva del curso, asignando roles y funciones a cada cargo, y considerando la importancia de mantener una buena convivencia y una organización del curso que favorezca el trabajo escolar."
+  },
+  {
+   "codigo": "HI04 OA 16",
+   "eje": "Formación ciudadana",
+   "texto": "Resolver conflictos, aplicando estrategias como determinar la causa del problema, proponer posibles soluciones, dialogar, buscar un punto de vista común y votar, entre otras, demostrando respeto y empatía por las partes involucradas para mejorar la convivencia en el curso y en la comunidad escolar."
+  },
+  {
+   "codigo": "HI04 OA 17",
+   "eje": "Formación ciudadana",
+   "texto": "Diseñar y participar activamente en un proyecto grupal que solucione un problema de la comunidad escolar; por ejemplo, reciclaje de la basura, exceso de ruido, organización de turnos, leer o entretener a alumnos más pequeños, etc."
+  },
+  {
+   "codigo": "HI04 OA 18",
+   "eje": "Formación ciudadana",
+   "texto": "Opinar y argumentar con fundamentos sobre temas de la asignatura u otros."
+  }
+ ]
+}
