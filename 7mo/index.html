@@ -2019,7 +2019,16 @@ const DOM_PEND = 'kimun_dom_pend'+SUFIJO;      // resúmenes que no se pudieron 
 function registrarOA(oa, ok){
  if(EFIMERO) return;                    // QA marca las respuestas y el modo prueba no guarda: no se mide nada
  if(!oa) return;
- if(/^(AF-|VOC-)/.test(oa)) return;     // OA de apoyo (Vocabulario/Lectura): no van al mapa de dominio
+ // Al mapa de dominio del profesor va SOLO el curriculum, y se reconoce por la FORMA
+ // del codigo: el curriculum lleva el nivel adentro (`HI07 OA 04`) y un modulo
+ // transversal no (`VOC-HIST`, `AF-T1`, `CA-T1`). Por eso los transversales no se miden:
+ // un porcentaje junto a "Cuentos de Ada" se leeria como cobertura de Lenguaje, y no lo es.
+ //
+ // Antes esto era una lista escrita a mano (/^(AF-|VOC-)/) que habia que ampliar en los
+ // TRES forks cada vez que entraba un modulo nuevo. Es el mismo criterio que ya usan
+ // validar-oa-json.py y generar-tablero.py, y el mismo patron con que el servidor
+ // descarta lo que no reconoce: asi el cliente deja de mandarle cosas que bota en silencio.
+ if(!/^[A-Z]{2}[0-9]{2} OA [0-9]{2}$/.test(oa)) return;
  const d = DOM_BUF[oa] || (DOM_BUF[oa] = {n:0, ok:0});
  d.n++; if(ok) d.ok++;
 }

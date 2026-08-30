@@ -88,7 +88,7 @@ Ciencias Naturales (13 objetivos, 390) y Lenguaje y Comunicación (30 objetivos,
 con su voz grabada; **no está enlazada desde el sitio** y sus bancos aún no pasan por
 revisión pedagógica. Dentro de Matemática lleva además un **Reto Sin Fin** de cálculo mental
 **sin cronómetro**, medido por escalones: practica sus objetivos de cálculo mental, tablas y
-división, y como genera las operaciones por código no consume banco de preguntas ni voz. Guarda su avance **y su identidad en línea aparte** de 8°, aunque
+división, y como genera las operaciones por código no consume banco de preguntas ni voz. Y tiene su **📖 Lectura** con el primer libro del colegio, *Cuentos de Ada* de Pepe Pelayo: 10 tramos, uno por cuento, con preguntas de comprensión originales —el niño lee el ejemplar; el juego no reproduce el texto del libro—. Guarda su avance **y su identidad en línea aparte** de 8°, aunque
 los dos se sirvan del mismo dominio, así que un curso de 3° y uno de 8° pueden convivir
 en el panel del profesor.
 

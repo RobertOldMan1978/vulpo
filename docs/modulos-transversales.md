@@ -25,6 +25,19 @@ de carpetas que mantener**: `scripts/validar-oa-json.py` y `scripts/generar-tabl
 preguntan por la forma del código. Antes había un conjunto escrito a mano
 (`{"vocabulario", "lectura-anafrank"}`) y se rompió al primer módulo de otro nivel.
 
+## Los libros que existen hoy
+
+| Libro | Carpeta | Código | Curso | Tramos | Preguntas |
+|---|---|---|---|---|---|
+| *El diario de Ana Frank* | `lectura-anafrank` | `AF-T#` | 8° | 8 | 72 ✅ aprobadas |
+| *Cuentos de Ada* (Pepe Pelayo) | `lectura-cuentos-de-ada` | `CA-T#` | 3° | 10 | 101 ❌ sin aprobar |
+
+> **Cuentos de Ada se escribió desde documentos de estudio, no desde el ejemplar**, y eso está
+> declarado en su `nota_fidelidad`. La guía de la que salió advierte que las fuentes discrepan en
+> nombres y detalles, así que el banco se limita a trama, personajes, motivaciones y desenlace, y
+> **no pregunta detalle fino**: una pregunta de detalle inventado castiga justamente al niño que
+> sí leyó el libro.
+
 ## Los tres que existen
 
 | Módulo | Qué es | Banco | Motor |
@@ -35,8 +48,13 @@ preguntan por la forma del código. Antes había un conjunto escrito a mano
 
 ## Reglas que comparten
 
-1. **No entran al mapa de dominio del profesor.** `registrarOA` los excluye por el prefijo de
-   su código. Un porcentaje junto a "Palabras de Historia" se leería como cobertura de Historia,
+1. **No entran al mapa de dominio del profesor.** `registrarOA` los excluye **por la FORMA del
+   código**, no por una lista: solo se mide lo que calza con `^[A-Z]{2}[0-9]{2} OA [0-9]{2}$`,
+   o sea lo que lleva el nivel adentro. Hasta la Sesión 71 era una lista escrita a mano
+   (`/^(AF-|VOC-)/`) que había que ampliar **en los tres forks** con cada módulo nuevo; al entrar
+   *Cuentos de Ada* se cambió por la comprobación estructural, que es el mismo criterio de
+   `validar-oa-json.py` y `generar-tablero.py` y el mismo patrón con que el servidor descarta lo
+   que no reconoce. Así el próximo libro no vuelve a pedir un cambio de motor. Un porcentaje junto a "Palabras de Historia" se leería como cobertura de Historia,
    y no lo es.
 2. **No se presentan a un colegio como cobertura curricular.** Son un apoyo. Decir "cubrimos
    Historia" porque hay 30 palabras de Historia sería falso.

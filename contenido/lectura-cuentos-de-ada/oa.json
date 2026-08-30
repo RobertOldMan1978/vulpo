@@ -1,0 +1,80 @@
+{
+ "asignatura": "Lectura · Cuentos de Ada",
+ "nivel": "3° básico · Comprensión lectora",
+ "codigo_asignatura": "CA",
+ "fuente": "Cuentos de Ada, Pepe Pelayo (ilustraciones de Alex Pelayo), Santillana Infantil",
+ "url_fuente": "https://pepepelayo.com/libros/cuentos-de-ada",
+ "nota_fidelidad": "Preguntas de comprensión ORIGINALES; no reproducen el texto del libro. Se escribieron desde dos documentos de estudio aportados por Roberto (un resumen extenso y una guía con banco de preguntas), NO desde el ejemplar. La propia guía se declara compilación de resúmenes escolares en línea, advierte que no sustituye al libro original y avisa que las fuentes discrepan en nombres (Yoyito / Yayito / Yayo, Cary / Cari) y en detalles como cuántos personajes participan en la batalla final. Por eso el banco se limita a trama, personajes, motivaciones, causa-consecuencia y desenlace —que coinciden entre ambos documentos— y NO pregunta detalle fino: una pregunta de detalle inventado castiga justamente al niño que sí leyó el libro. PENDIENTE: confirmar el sello editorial contra la tapa del ejemplar; la guía dice «Alfaguara Infantil (Chile, 2003)» y Alfaguara pertenece al grupo Santillana.",
+ "nota_evaluacion": "Es comprensión lectora de un libro, no cobertura curricular: NO entra al mapa de dominio del profesor y no se le presenta a un colegio como «Lenguaje cubierto». Las preguntas miden si el niño siguió la historia y entendió por qué los personajes actúan como actúan; nunca su opinión ni su conducta. Ojo con el tema del libro: Orco es un compañero que abusa de otros, así que las preguntas describen lo que hace y por qué está mal, sin pedirle al niño que juzgue a un compañero real ni que diga qué haría él.",
+ "unidades": [
+  {
+   "id": "L1",
+   "titulo": "Cuentos de Ada",
+   "descripcion": "Comprensión lectora por cuento (lectura del colegio). Los 10 cuentos del libro, en orden, agrupados por sus cuatro partes.",
+   "oa": [
+    "CA-T1",
+    "CA-T2",
+    "CA-T3",
+    "CA-T4",
+    "CA-T5",
+    "CA-T6",
+    "CA-T7",
+    "CA-T8",
+    "CA-T9",
+    "CA-T10"
+   ]
+  }
+ ],
+ "oa": [
+  {
+   "codigo": "CA-T1",
+   "eje": "El hermanito",
+   "texto": "Las vacaciones — Ada acepta cuidar a Yoyito a cambio de una tabla de surf, y lo que parecía fácil se le va de las manos."
+  },
+  {
+   "codigo": "CA-T2",
+   "eje": "El hermanito",
+   "texto": "La mentira — Ada exagera una aventura para parecer valiente, y el conflicto nace de la distancia entre lo que cuenta y lo que pasó."
+  },
+  {
+   "codigo": "CA-T3",
+   "eje": "El hermanito",
+   "texto": "El sándwich — Ada quiere comerse un sándwich enorme sin compartirlo con su hermano, y la situación se vuelve cada vez más absurda."
+  },
+  {
+   "codigo": "CA-T4",
+   "eje": "El romance",
+   "texto": "Primer intento — Ada trata de llamar la atención de Cary mostrándose más valiente de lo que se siente."
+  },
+  {
+   "codigo": "CA-T5",
+   "eje": "El romance",
+   "texto": "Segundo intento — Un nuevo acercamiento a Cary que no resulta como Ada lo había planeado."
+  },
+  {
+   "codigo": "CA-T6",
+   "eje": "El romance",
+   "texto": "Último intento — El tercer intento con Cary, ahora complicado por la presencia de Orco."
+  },
+  {
+   "codigo": "CA-T7",
+   "eje": "El enemigo",
+   "texto": "La renuncia — Ada se cansa de Orco y piensa en dejar de enfrentarlo; el cuento muestra que también tiene miedo y dudas."
+  },
+  {
+   "codigo": "CA-T8",
+   "eje": "El enemigo",
+   "texto": "El acto heroico — Ada busca demostrar que es valiente, y su imaginación vuelve a intervenir."
+  },
+  {
+   "codigo": "CA-T9",
+   "eje": "El enemigo",
+   "texto": "La venganza — Orco lo humilla y lo deja mojado delante de otros; Ada escapa y el conflicto queda abierto."
+  },
+  {
+   "codigo": "CA-T10",
+   "eje": "El final",
+   "texto": "La batalla decisiva — La guerra de agua contra Orco, y el plan de Yoyito que demuestra que la inteligencia y la colaboración pueden más que la fuerza."
+  }
+ ]
+}

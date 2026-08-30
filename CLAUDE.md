@@ -327,7 +327,7 @@ arriba del archivo, no como condiciones sueltas repartidas por el código.
 | `HAY_RETO_CALCULO` | Si Matemática se juega como Reto de Cálculo. Afecta al **Duelo** (`odNMapas`, `odMapasMate`, `odPreguntasCalc`), a `detenerTimersActivos` y a la música de `scr-calc` | ✅ | ❌ | ❌ |
 | `HAY_MINICLASES` | Si existe el camino de mini-clases. Afecta al **siguiente paso al reprobar**, a `renderCampaña`, al Jefe Final (`cargarPoolMate`) y al ✕ del quiz | ✅ | ❌ | ❌ |
 | `HAY_VOCABULARIO` | Si Lenguaje abre el landing "Campaña + Vocabulario" en vez de su campaña | ✅ | ❌ | ❌ |
-| `HAY_BIBLIOTECA` | Si la pantalla principal ofrece el módulo 📖 Lectura | ✅ | ❌ | ❌ |
+| `HAY_BIBLIOTECA` | Si la pantalla principal ofrece el módulo 📖 Lectura | ✅ | ❌ | ✅ |
 | `SIN_RELOJ` | Quiz sin cuenta regresiva y sin selector Normal/Difícil | ❌ | ❌ | ✅ |
 
 Cada bandera va **pegada a su comentario**, que explica qué pasa si se pone mal. Una bandera cuyo
@@ -5147,3 +5147,99 @@ nadie vuelve a mirarlo.
 - **Pendiente inmediato:** sin cambios de prioridad. **M4** (`niveles.js`) sigue siendo lo que
   abarata los tres cursos nuevos, y **la aprobación pedagógica de 3° y 7°** sigue siendo el camino
   crítico de la v1.
+
+### Sesión 72 (2026-08-30) — El primer libro de 3°: *Cuentos de Ada*
+3° básico estrena su módulo **📖 Lectura** con *Cuentos de Ada*, de Pepe Pelayo. Es el segundo
+libro del proyecto, después de Ana Frank en 8°, y el primero de un curso que lee en voz alta.
+
+#### El motor no había que construirlo
+
+**La biblioteca ya estaba entera en los tres forks** —la pantalla `scr-biblioteca`, su CSS de
+papel cálido, `abrirBiblioteca` y `LIBROS`—, solo apagada en 3°. Es el mismo caso del Vocabulario
+de 7° (Sesión 68): el código estaba y faltaba el dato. El cableado fueron tres cosas: la bandera,
+el catálogo y la expedición de 10 etapas.
+
+> ⚠️ **Y traía la trampa del fork.** El `LIBROS` de 3° apuntaba a `lect-anafrank`, que es
+> contenido de **8°**. Encender `HAY_BIBLIOTECA` sin tocarlo le habría abierto *El diario de Ana
+> Frank* a un niño de 8 años. Se **reemplaza**, no se agrega. Es el cuarto caso del mismo defecto,
+> después del Duelo que ofrecía el Reto de 8°, el botón que bajaba las lecciones de 8° y
+> `cargarPoolMate` descargando el banco de otro nivel.
+
+#### La exclusión del mapa de dominio pasa a ser ESTRUCTURAL
+
+`registrarOA` descartaba los módulos transversales con una **lista escrita a mano**
+(`/^(AF-|VOC-)/`) que había que ampliar en los tres forks con cada módulo nuevo. Con `CA-` el
+libro habría empezado a contarse como currículum en el mapa del profesor.
+
+```js
+if(!/^[A-Z]{2}[0-9]{2} OA [0-9]{2}$/.test(oa)) return;
+```
+
+Ahora se mide **solo lo que tiene forma de código curricular** —el que lleva el nivel adentro—,
+que es el mismo criterio de `validar-oa-json.py` y `generar-tablero.py` y el mismo patrón con que
+el servidor descarta lo que no reconoce. **El próximo libro ya no pide un cambio de motor.**
+Verificado **4/0 en las tres apps**: los cuatro códigos de currículum se miden y ninguno de los
+transversales; de paso rechaza malformados como `MA03 OA 1`, que el servidor botaba en silencio.
+Va **idéntico en los tres forks** (10 líneas agregadas, 1 quitada en cada uno) aunque 7° y 8° no
+cambien de comportamiento: mantenerlos convergentes es el objetivo.
+
+#### El contenido, y el techo que se declaró por escrito
+
+**10 tramos, uno por cuento** —Las vacaciones, La mentira, El sándwich, los tres intentos con
+Cary, La renuncia, El acto heroico, La venganza y La batalla decisiva—, con **101 preguntas**
+(~10 por tramo, 6 servidas por ronda). Nacen `revisada:false`.
+
+**Las preguntas NO se escribieron desde el libro**, sino desde dos documentos de estudio que
+entregó Roberto. La guía se declara a sí misma compilación de resúmenes escolares en línea,
+advierte que **no sustituye al original** y avisa que las fuentes discrepan en nombres (Yoyito /
+Yayito / Yayo, Cary / Cari) y en detalles como cuántos participan en la batalla final.
+
+> Eso no la inutiliza —trama, personajes, motivaciones y desenlace **coinciden entre los dos
+> documentos**— pero fija qué se puede preguntar. El banco se limita a eso y **no pregunta detalle
+> fino**, porque *una pregunta de detalle inventado castiga justamente al niño que sí leyó el
+> libro*. Queda escrito en el `nota_fidelidad`, con la fuente nombrada, para que nadie lo lea
+> después como un banco escrito con el ejemplar en la mano.
+
+#### Tres defectos propios, encontrados por las herramientas del proyecto
+
+1. **Sesgo de largo del 60% en la primera pasada.** Es lo esperado —en 7° fue de 20 a 25 de cada
+   30— y se corrigió como manda el estándar: **dándole cuerpo a 45 distractores, nunca acortando
+   la correcta**, que la volvería imprecisa. Quedó en **0%**.
+2. **Dos preguntas con el mismo enunciado** en cuentos distintos (`ada-t5-10` y `ada-t7-8`), que
+   caza `revisar-tanda.py`. Al diferenciarlas **se releyó la clave y el tip de cada una**, que es
+   justo la lección de la Sesión 59: al cambiar un enunciado se le puede pegar encima el de otra
+   pregunta y dejarla con la clave equivocada.
+3. **Una pregunta repetida entre dos tramos**, que caza `auditar-solape-oa.py`: T7 y T9
+   preguntaban lo mismo con la misma clave. Se reemplazó la de T9. El par que queda (T4~T6, 0.57)
+   es legítimo: los dos cuentos tratan de acercarse a Cary, pero preguntan cosas distintas.
+
+#### El 404 de la portada, que no se dejó pasar
+
+El arte propio del libro no existe todavía, y `assets/portada-lectura-cuentos-ada.png` daba **404
+tapado por el `onerror`** — el defecto que 3° evita usando portadas explícitas. Se apunta a
+`assets/portada-lectura.png`, que existe, **con un comentario que dice qué cambiar** cuando
+Roberto genere el arte del libro.
+
+#### Verificación (con `cdp.mjs`, jugando)
+
+Recorrido real con clics: **📖 Lectura** aparece como quinto módulo → biblioteca → *Cuentos de
+Ada* → mapa de **10 nodos** → tramo → tarjeta 🎯 → quiz de **6 preguntas, 4 opciones y sin
+reloj**; se responde y avanza. El **"← Volver" regresa a la biblioteca**, no a Expediciones.
+
+**Regresión:** 8° conserva su Ana Frank, sus 20 expediciones y sus 12 diagramas; 7° sigue con
+`HAY_BIBLIOTECA=false` y sus 23 expediciones; las tres claves de guardado conviven y la partida
+sembrada en 8° (777 XP) queda intacta. **Cero 404 y cero errores de consola.**
+
+> **Un tropiezo de método que vale registrar:** la primera verificación decía que tocar el libro
+> devolvía al inicio, y parecía un bug. No lo era: el navegador de prueba arranca **sin partida**,
+> y el juego —con razón— manda a crear el perfil antes de dejar entrar a una expedición. Había que
+> **sembrar una partida primero**. Un "defecto" que en realidad era el escenario de prueba mal
+> montado.
+
+- **Pendiente de Roberto:** confirmar el **sello editorial** contra la tapa del ejemplar (la guía
+  dice *Alfaguara Infantil (Chile, 2003)* y Roberto dijo Santillana; Alfaguara es del grupo
+  Santillana, pero el dato se le muestra al alumno); **aprobar las 101 preguntas**, que ya salen
+  en el tablero bajo "Módulos transversales"; el **arte propio** del libro; y la **voz**
+  (~500 clips, del orden de US$0,3), que **va después de aprobar y nunca en paralelo**.
+- Spec y plan: `docs/superpowers/specs/2026-08-30-lectura-cuentos-de-ada-3basico-design.md` y
+  `docs/superpowers/plans/2026-08-30-lectura-cuentos-de-ada-3basico.md`.

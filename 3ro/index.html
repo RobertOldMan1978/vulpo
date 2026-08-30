@@ -1434,6 +1434,26 @@ const EXPEDICIONES=[
      {oa:"BOSS",nombre:"⚡ JEFE: Libros y búsqueda",icono:"🐲",n:15,
       oas:["LE03 OA 07","LE03 OA 08","LE03 OA 09"]},
    ] },
+ { id:'lect-cuentos-ada', asignatura:'Lectura', nivel:'Cuentos de Ada',
+   /* Arte PRESTADO: la portada genérica de Lectura. Cuando exista el arte propio del
+      libro, cambiar las dos rutas a assets/portada-lectura-cuentos-ada.png. Va explícita
+      y a un archivo que EXISTE: la convención implícita daría un 404 que el onerror tapa
+      a la vista pero no en la red. */
+   portada:'assets/portada-lectura.png',
+   portadaMapa:'assets/portada-lectura.png',
+   contenido:'contenido/lectura-cuentos-de-ada/preguntas.json', activa:true,
+   etapas:[
+     {oa:"CA-T1",  nombre:"Las vacaciones",      icono:"🏖️", n:6},
+     {oa:"CA-T2",  nombre:"La mentira",          icono:"🤥", n:6},
+     {oa:"CA-T3",  nombre:"El sándwich",         icono:"🥪", n:6},
+     {oa:"CA-T4",  nombre:"Primer intento",      icono:"💌", n:6},
+     {oa:"CA-T5",  nombre:"Segundo intento",     icono:"💃", n:6},
+     {oa:"CA-T6",  nombre:"Último intento",      icono:"🌹", n:6},
+     {oa:"CA-T7",  nombre:"La renuncia",         icono:"😔", n:6},
+     {oa:"CA-T8",  nombre:"El acto heroico",     icono:"🦸", n:6},
+     {oa:"CA-T9",  nombre:"La venganza",         icono:"💦", n:6},
+     {oa:"CA-T10", nombre:"La batalla decisiva", icono:"🌊", n:6}
+   ] },
 ];
 
 /* Ids de ?solo= que existen de verdad. Uno inventado se ignora en silencio; si no
@@ -2513,7 +2533,16 @@ const DOM_PEND = 'kimun_dom_pend'+SUFIJO;      // resúmenes que no se pudieron 
 function registrarOA(oa, ok){
  if(EFIMERO) return;                    // QA marca las respuestas y el modo prueba no guarda: no se mide nada
  if(!oa) return;
- if(/^(AF-|VOC-)/.test(oa)) return;     // OA de apoyo (Vocabulario/Lectura): no van al mapa de dominio
+ // Al mapa de dominio del profesor va SOLO el curriculum, y se reconoce por la FORMA
+ // del codigo: el curriculum lleva el nivel adentro (`HI07 OA 04`) y un modulo
+ // transversal no (`VOC-HIST`, `AF-T1`, `CA-T1`). Por eso los transversales no se miden:
+ // un porcentaje junto a "Cuentos de Ada" se leeria como cobertura de Lenguaje, y no lo es.
+ //
+ // Antes esto era una lista escrita a mano (/^(AF-|VOC-)/) que habia que ampliar en los
+ // TRES forks cada vez que entraba un modulo nuevo. Es el mismo criterio que ya usan
+ // validar-oa-json.py y generar-tablero.py, y el mismo patron con que el servidor
+ // descarta lo que no reconoce: asi el cliente deja de mandarle cosas que bota en silencio.
+ if(!/^[A-Z]{2}[0-9]{2} OA [0-9]{2}$/.test(oa)) return;
  const d = DOM_BUF[oa] || (DOM_BUF[oa] = {n:0, ok:0});
  d.n++; if(ok) d.ok++;
 }
@@ -2772,7 +2801,7 @@ function renderExpediciones(){
  }
 }
 // Biblioteca de lecturas (hoy: El diario de Ana Frank). Cada libro = una expedición de tramos.
-const LIBROS=[{id:'lect-anafrank', titulo:'El diario de Ana Frank', autor:'Ana Frank', tramos:8}];
+const LIBROS=[{id:'lect-cuentos-ada', titulo:'Cuentos de Ada', autor:'Pepe Pelayo', tramos:10}];
 function abrirBiblioteca(){
  const g=$('biblioGrid'); g.innerHTML='';
  LIBROS.forEach(lb=>{const exp=EXPEDICIONES.find(e=>e.id===lb.id);
@@ -3472,7 +3501,7 @@ const HAY_MINICLASES=false;
    la asignatura Lenguaje inalcanzable en 3° (Sesión 61). Como banderas, las tres apps
    comparten el mismo renderExpediciones y solo cambia el valor. */
 const HAY_VOCABULARIO=false;
-const HAY_BIBLIOTECA=false;
+const HAY_BIBLIOTECA=true;
 function odExpsDe(asig){return EXPEDICIONES.filter(e=>e.activa&&e.asignatura===asig);}
 function odNMapas(asig){return (HAY_RETO_CALCULO&&asig==='Matemáticas')?NIVELES_CALC.length:odExpsDe(asig).length;}
 // NIVEL 1 (duelo): un módulo por asignatura; al tocarlo se abren sus mapas.
