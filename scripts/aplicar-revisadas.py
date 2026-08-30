@@ -38,7 +38,7 @@ Luego vuelve a generar el tablero:
     python scripts/generar-tablero.py
 """
 
-import json
+import io, json
 import sys
 from pathlib import Path
 
@@ -68,6 +68,39 @@ def ubicar_revisadas(args):
     if descargas.exists():
         return descargas
     return cand  # inexistente: se reportara el error
+
+
+def escribir_conservando(ruta, d):
+    """Escribe el banco SIN reformatearlo.
+
+    Antes se hacia json.dump(..., indent=2) fijo, y eso reindentaba entero
+    cualquier banco escrito con otro indent: el contenido quedaba bien, pero el
+    diff de marcar 390 preguntas pasaba de 390 lineas a 5.463 y dejaba de poder
+    leerse. Los bancos de este proyecto NO son todos iguales: la mayoria usa
+    indent=1, matematicas-3basico usa 2, y ninguno termina en salto de linea.
+
+    El formato se detecta con un round-trip contra el archivo tal como esta en
+    disco, que es el unico metodo que no adivina.
+    """
+    crudo = io.open(ruta, encoding="utf-8", newline="").read()
+    nl = "\r\n" if "\r\n" in crudo else "\n"
+    plano = crudo.replace("\r\n", "\n")
+    try:
+        original = json.loads(plano)
+    except ValueError:
+        original = None
+    indent, salto = 2, False
+    if original is not None:
+        for i in (1, 2, 3, 4):
+            base = json.dumps(original, ensure_ascii=False, indent=i)
+            if base == plano:
+                indent, salto = i, False
+                break
+            if base + "\n" == plano:
+                indent, salto = i, True
+                break
+    txt = json.dumps(d, ensure_ascii=False, indent=indent) + ("\n" if salto else "")
+    io.open(ruta, "w", encoding="utf-8", newline="").write(txt.replace("\n", nl))
 
 
 def main():
@@ -127,7 +160,7 @@ def main():
                 detalle += " / -%d" % desmarcadas
             print("  %-24s %4d/%4d revisadas   (%s)" % (nombre, rev, len(preguntas), detalle))
             if not seco:
-                json.dump(d, open(preg, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+                escribir_conservando(preg, d)
         else:
             sin_tocar.append("%s %d/%d" % (nombre, rev, len(preguntas)))
 

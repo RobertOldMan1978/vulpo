@@ -31,14 +31,14 @@ Es una app web mobile-first y se reutiliza. Ver `docs/roadmap-tecnico.md` §1.
 
 | Curso | OA | Preguntas | Aprobadas | Voz | Arte propio |
 |---|---|---|---|---|---|
-| 3° | 86 | 2.558 (+101 apoyo) | **101** (solo el apoyo) | ✅ 11.078 clips | villanos ✅ · portadas ❌ |
+| 3° | 86 | 2.558 (+101 apoyo) | **2.599** (faltan 60) | ✅ 11.078 clips | villanos ✅ · portadas ❌ |
 | 4° | 92 | — | — | pendiente | — |
 | 5° | 93 | — | — | no lleva | — |
 | 6° | 99 | — | — | no lleva | — |
-| 7° | 81 | 2.430 (+120 apoyo) | **0** | no lleva | villanos ✅ · portadas ❌ |
+| 7° | 81 | 2.430 (+120 apoyo) | ✅ **todas** | no lleva | villanos ✅ · portadas ❌ |
 | 8° | 69 | 2.314 (+222 apoyo) | ✅ todas | no lleva | ✅ |
 
-- **7.745 preguntas escritas · 2.637 aprobadas · 5.108 sin aprobar.** El currículum de 4°, 5°
+- **7.745 preguntas escritas · 7.685 aprobadas · 60 sin aprobar** (dos OA de Historia de 3°). El currículum de 4°, 5°
   y 6° ya está fijado (284 OA), pero sin una sola pregunta escrita todavía.
 - **Sitio publicado: 317 MB** (techo de GitHub Pages: 1 GB). `assets/` completo son 475 MB,
   de los cuales 263 MB son la voz de 3° y 175 MB los originales, ya excluidos del sitio.
@@ -50,15 +50,22 @@ Es una app web mobile-first y se reutiliza. Ver `docs/roadmap-tecnico.md` §1.
 
 ---
 
-## 🔴 El bloqueo real, y no es técnico
+## ✅ El bloqueo que era el camino crítico: LEVANTADO (30/08/2026)
 
-**La aprobación pedagógica de 3° y 7°: 171 objetivos, 1.368 preguntas por muestreo, 7 a 11
-horas de Roberto.** Nadie puede hacerlo por él. (Eran 167 y 1.336 antes de que 7° sumara sus
-4 áreas de Vocabulario el 28/08.)
+**Roberto aprobó 3° y 7° por muestreo: 5.048 preguntas nuevas.** El proyecto pasa de 2.637 a
+**7.685 de 7.745 aprobadas (99,2%)**. Faltan **60**: los `HI03 OA 01` y `HI03 OA 08`, que quedaron
+saltados.
 
-Es el camino crítico de todo lo demás: 3° y 7° llevan meses escritos y sin una sola pregunta
-firmada, y **anunciarlos antes de aprobarlos contradice la regla del proyecto de no prometer lo
-que no hay** (la landing dice "todas aprobadas una a una").
+Con esto el Bloque A queda cerrado y **lo que manda ahora es el Bloque B** (los bancos de 4°, 5°
+y 6°) con **M4** delante, que es lo que lo abarata.
+
+> ⚠️ **Cómo se aprobó importa, y hay que sostenerlo si un colegio pregunta.** 8° se revisó
+> **pregunta por pregunta**; 3° y 7° se aprobaron **por muestreo** —8 de cada 30 por objetivo—.
+> Por eso la landing dice *"aprobadas por un profesor, objetivo por objetivo"* y **no** *"una a
+> una"*, que sería exagerar. El muestreo caza un objetivo mal escrito, no una pregunta suelta
+> mala, y eso está dicho en `docs/aprobacion-pedagogica.md`.
+
+**Lo que queda de aprobación** (~15 min): los 2 OA saltados de Historia de 3°.
 
 - Herramienta: `dev/tablero.html` → botón **"⚡ Aprobar por muestreo"** (Sesión 70). Una pantalla
   por objetivo con **sus 8 preguntas ya elegidas**, teclado (**espacio** aprueba y avanza, **V**
@@ -72,7 +79,11 @@ que no hay** (la landing dice "todas aprobadas una a una").
 - Después: "Exportar revisadas" → `python scripts/aplicar-revisadas.py` → regenerar el tablero.
 - **Los OA actitudinales se revisan completos, no por muestreo** (ver `docs/cuidados-historia.md`).
 
-**Se puede empezar hoy y avanza en paralelo con todo lo demás.**
+**Al aplicar aparecieron dos defectos de la herramienta, los dos ya corregidos:**
+`aplicar-revisadas.py` re-escribía con `indent=2` fijo y **reformateaba entero** cualquier banco
+con otro formato (el diff de marcar 390 preguntas pasaba de 390 líneas a 5.463), y no conservaba
+el salto de línea final. Ahora detecta el formato de cada banco con un round-trip y lo respeta;
+comprobado corriéndolo dos veces seguidas sin que toque un byte.
 
 ---
 
@@ -82,10 +93,10 @@ Para poder decir "tengo 3°, 7° y 8°". Es el hito más cercano y el de mejor r
 
 | # | Tarea | Peso | Quién |
 |---|---|---|---|
-| A1 | **Aprobación pedagógica de 3° y 7°** (arriba) | 7–11 h | Roberto |
+| ~~A1~~ | ~~**Aprobación pedagógica de 3° y 7°**~~ ✅ **HECHO (30/08)**: 5.048 preguntas aprobadas por muestreo. Quedan **60** (los `HI03 OA 01` y `OA 08`, saltados) | ~15 min | Roberto |
 | ~~A2~~ | ~~**8 villanos** (4 de 3° + 4 de 7°)~~ ✅ **HECHO (28/08)**: 16 imágenes (normal + derrotado) generadas, procesadas (`procesar-lote8.py`) y cableadas; `PLACEHOLDER` fuera | — | — |
 | ~~A3~~ | ~~Landing y `docs/comercial.md` hablando de tres cursos~~ ✅ **HECHO (28/08)**: se hizo **antes** de A1 sin romper la regla, diciendo el estado real — la landing declara que las 2.536 de 8° están aprobadas una a una y que 3° y 7° están **en revisión pedagógica**. Ver A8 | — | — |
-| A8 | **Al cerrar A1, actualizar esa frase.** La tarjeta de la landing y `docs/comercial.md` dicen "los bancos de 3° y 7° están en revisión pedagógica"; cuando se aprueben pasa a "7.524 preguntas aprobadas una a una", que es un argumento de venta mucho más fuerte | 10 min | código |
+| ~~A8~~ | ~~Al cerrar A1, actualizar esa frase~~ ✅ **HECHO (30/08)**: la landing dice **7.685 preguntas aprobadas**. **NO dice "una a una"**, a propósito: 8° se revisó pregunta por pregunta, pero 3° y 7° se aprobaron **por muestreo** (8 de 30 por objetivo). La frase es *"aprobadas por un profesor, objetivo por objetivo"*, que es la verdad y sigue siendo un argumento fuerte | — | — |
 | A4 | Conversación con el colegio sobre el **contenido sensible obligatorio**. Ya no es solo `CN07 OA 01/02/03` (sexualidad de 7°): al transcribir el currículum de 4°, 5° y 6° aparecieron `CN06 OA 04/05/06` (sistema reproductor y pubertad), `CN06 OA 07` y `CN04 OA 08` (drogas y alcohol, este último a los 9 años), `HI05 OA 02/03/04/07` (conquista, guerra de Arauco, encomienda, esclavitud) e `HI06 OA 05/08` (Araucanía, quiebre de la democracia). Todos declarados en su `nota_contenido_sensible`. **Conviene una sola conversación que los cubra**, no seis | — | Roberto |
 | ~~A5~~ | ~~Escuchar el clip de voz de **copihue**~~ ✅ **HECHO (28/08)**: Roberto eligió la pronunciación `ko.piˈwe` (IPA en `_FONEMAS`); los 2 clips regenerados y confirmados | — | — |
 | A6 | Confirmar el **lunes 31/08** que apareció la primera foto semanal | 1 min | Roberto |

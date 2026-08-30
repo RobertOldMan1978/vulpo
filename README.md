@@ -85,8 +85,8 @@ por voz con una voz chilena grabada** —los MP3 viajan en el repo, y si alguno 
 carga se lee con la voz del navegador). Tiene sus **cuatro asignaturas**: Matemática
 (26 objetivos, 792 preguntas), Historia, Geografía y Ciencias Sociales (16 objetivos, 480),
 Ciencias Naturales (13 objetivos, 390) y Lenguaje y Comunicación (30 objetivos, 896), todas
-con su voz grabada; **no está enlazada desde el sitio** y sus bancos aún no pasan por
-revisión pedagógica. Dentro de Matemática lleva además un **Reto Sin Fin** de cálculo mental
+con su voz grabada; **no está enlazada desde el sitio**. Sus bancos quedaron **aprobados por
+muestreo el 30/08/2026**, salvo dos objetivos de Historia. Dentro de Matemática lleva además un **Reto Sin Fin** de cálculo mental
 **sin cronómetro**, medido por escalones: practica sus objetivos de cálculo mental, tablas y
 división, y como genera las operaciones por código no consume banco de preguntas ni voz. Y tiene su **📖 Lectura** con el primer libro del colegio, *Cuentos de Ada* de Pepe Pelayo (Santillana Infantil): 10 tramos, uno por cuento, con **101 preguntas de comprensión originales y aprobadas**, también con voz grabada. El niño lee el ejemplar: el juego no reproduce el texto del libro, y por eso su portada es la genérica de Lectura y no la tapa. Guarda su avance **y su identidad en línea aparte** de 8°, aunque
 los dos se sirvan del mismo dominio, así que un curso de 3° y uno de 8° pueden convivir

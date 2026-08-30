@@ -82,14 +82,18 @@ vender a un colegio cuesta lo mismo pague lo que pague.
 
 | Nivel | Contenido | Estado |
 |---|---|---|
-| **8° básico** (`/juego/`) | 2.536 preguntas, 4 asignaturas + Vocabulario y Lectura | ✅ revisado y a la venta |
-| **7° básico** (`/7mo/`) | 2.430 preguntas, 4 asignaturas | ⚠️ jugable, **sin aprobación pedagógica** |
-| **3° básico** (`/3ro/`) | 2.558 preguntas, 4 asignaturas + voz pregrabada | ⚠️ jugable, **sin aprobación pedagógica** |
+| **8° básico** (`/juego/`) | 2.536 preguntas, 4 asignaturas + Vocabulario y Lectura | ✅ aprobado (pregunta por pregunta) y a la venta |
+| **7° básico** (`/7mo/`) | 2.550 preguntas, 4 asignaturas + Vocabulario | ✅ aprobado por muestreo (30/08/2026) |
+| **3° básico** (`/3ro/`) | 2.659 preguntas, 4 asignaturas + voz pregrabada + Lectura | ✅ aprobado por muestreo, salvo 2 OA de Historia |
 
-Desde el 28/08/2026 los tres cursos **sí se nombran** en la landing, pero **con su estado real
-dicho de frente**: la página declara que las 2.536 preguntas de 8° están aprobadas una a una y
-que los bancos de 3° y 7° están en revisión pedagógica. No es un matiz de redacción, es la regla
-del proyecto: **no se promete lo que no hay**, y un director que pregunte "¿quién revisó esto?"
+Desde el 30/08/2026 los tres cursos están aprobados y la landing lo dice, **pero sin exagerar
+cómo**: dice *"aprobadas por un profesor, objetivo por objetivo"* y **NO** *"una a una"*.
+La diferencia es real y hay que sostenerla si un director pregunta: 8° se revisó **pregunta por
+pregunta**; 3° y 7° se aprobaron **por muestreo** —8 preguntas de cada 30 por objetivo, y si la
+muestra pasa se aprueba el objetivo completo (`docs/aprobacion-pedagogica.md`)—. El muestreo
+detecta un objetivo mal escrito, no una pregunta suelta mala, y eso se dice tal cual. No es un
+matiz de redacción, es la regla del proyecto: **no se promete lo que no hay**, y un director que
+pregunte "¿quién revisó esto?"
 merece la respuesta verdadera.
 
 **Qué se puede vender hoy, entonces:** 8° sin reservas. 3° y 7° **como piloto o con la revisión
@@ -171,8 +175,9 @@ la propuesta, el guion de reunión y la landing. **Léelo antes de una reunión 
 
 ## Qué se le promete a un colegio, y qué no
 
-**Sí:** 4 asignaturas por curso en 3°, 7° y 8° básico —7.524 preguntas alineadas a las Bases del
-MINEDUC, de las cuales las 2.536 de 8° están aprobadas una a una—,
+**Sí:** 4 asignaturas por curso en 3°, 7° y 8° básico —7.745 preguntas alineadas a las Bases del
+MINEDUC, de las cuales **7.685 están aprobadas** (8° pregunta por pregunta; 3° y 7° por muestreo
+de 8 por objetivo)—,
 **evaluación formativa alineada al Decreto 67/2018** (ver sección anterior), panel del profesor
 con mapa de dominio por OA, desafíos de refuerzo, ranking por curso, soporte y actualizaciones.
 Funciona en cualquier celular con internet, sin instalar nada.

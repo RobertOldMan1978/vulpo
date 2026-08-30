@@ -115,7 +115,16 @@ Matemáticas **603/603 (17 OA)** · Ciencias **534/534 (15 OA)** · Lenguaje
 humana de Roberto, ver Sesión 12). Los 3 bancos nuevos se llevaron a cobertura de
 año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron con ítems
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
-están hoy en una expedición jugable, el resto es reserva. **Herramientas dev:** tablero con clave
+están hoy en una expedición jugable, el resto es reserva.
+
+> **Estado de aprobación de TODO el proyecto (30/08/2026): 7.685 de 7.745.** Faltan 60 —los
+> `HI03 OA 01` y `HI03 OA 08`—. Pero **cómo se aprobó cada banco no es lo mismo, y hay que
+> saberlo antes de decírselo a un colegio:** los 2.536 de 8° y los módulos de apoyo se
+> revisaron **pregunta por pregunta**; los de 3° y 7° se aprobaron **por muestreo** —8 de cada
+> 30 por objetivo, criterio de `docs/aprobacion-pedagogica.md`—. Por eso la landing dice
+> *"aprobadas por un profesor, objetivo por objetivo"* y **nunca** *"una a una"*.
+
+**Herramientas dev:** tablero con clave
 (`dev/tablero.html`) y scripts (`consolidar-pool-nivel`, `aplicar-revisadas`,
 `generar-pdf-preguntas` —por asignatura y con `--sin-revisar`—, `generar-tablero`).
 
@@ -5345,3 +5354,53 @@ inscripción** por curso, una pantalla que pida el nombre y una función `kimun_
 Se le ofreció además una alternativa mucho más barata: **un enlace por alumno con el código
 adentro** (`?alu=ALU-XXXX`), que elimina el error de tipeo —donde más se cae el canje— **sin tocar
 el modelo de seguridad ni recoger datos de menores**. Roberto no eligió todavía.
+
+#### Y el mismo día se levantó el bloqueo que llevaba meses: 3° y 7° quedaron aprobados
+
+Roberto avisó *"ya aprobé varias en el módulo"*. No había nada en el repositorio, porque el
+tablero guarda las marcas en `localStorage['kimun_revisadas']` **del navegador** y no salen de
+ahí hasta apretar "Exportar revisadas". (Tampoco puedo leerlas yo: `cdp.mjs` arranca con un
+perfil temporal nuevo cada vez, así que su almacenamiento está vacío por diseño.)
+
+**Lo que llegó no eran "varias": eran 7.685 marcas, 5.048 de ellas nuevas** — o sea toda la
+aprobación pendiente de 3° y 7° salvo 60 preguntas. **No se aplicó sin preguntar**, porque de eso
+depende lo que la landing y la propuesta le dicen a un colegio. Roberto confirmó que lo respalda.
+
+**El proyecto pasa de 2.637 a 7.685 de 7.745 aprobadas (99,2%).** Quedan los `HI03 OA 01` y
+`HI03 OA 08`, que aparecen en **cero mientras los otros 14 OA de Historia de 3° están completos**:
+la forma de dos objetivos **salteados** con la tecla `S`, no la de un trabajo cortado a la mitad.
+
+**Cómo se aprobó cada cosa, que es lo que hay que sostener frente a una UTP:** 8° y los módulos de
+apoyo se revisaron **pregunta por pregunta**; 3° y 7°, **por muestreo**. Por eso la landing quedó
+en *"7.685 preguntas aprobadas… por un profesor, objetivo por objetivo"* y **no** en *"una a una"*,
+que era lo que anticipaba la tarea A8 y habría sido exagerar. `docs/comercial.md` lleva ahora la
+distinción escrita, para que nadie la redacte de nuevo hacia arriba.
+
+**Dos defectos de `aplicar-revisadas.py`, encontrados al aplicar y corregidos:**
+
+1. **Reformateaba los bancos.** Escribía con `indent=2` fijo, y la mayoría de los bancos usa
+   `indent=1` (`matematicas-3basico` usa 2). El contenido quedaba bien, pero **el diff de marcar
+   390 preguntas pasaba de 390 líneas a 5.463** y dejaba de poder leerse — justo lo que la Sesión
+   66 había dejado anotado como trampa del formato.
+2. **Ninguno de los bancos termina en salto de línea**, y el script sí lo agregaba.
+
+   > **Mi primer detector de formato falló en los 9 bancos** y dijo "formato no reconocido".
+   > Comparando byte a byte, la única diferencia era ese salto final. Vale la lección: cuando un
+   > round-trip falla en el 100% de los casos, **el sospechoso es el detector, no los datos**.
+
+   Ahora el script detecta indent y salto final con un round-trip contra el archivo en disco y los
+   respeta. Comprobado corriéndolo **dos veces seguidas sin que toque un byte**.
+
+**Un efecto de borde, benigno:** el script agrega el contador de nivel superior `revisadas`, que
+los bancos de 3° y 7° no tenían y los de 8° y los módulos sí. Los deja **consistentes** con la
+forma establecida; nadie lo lee como dato, es metadato. Se le agregó también al banco del libro,
+que se había quedado sin él.
+
+**Verificado tras tocar los 9 bancos:** 0 preguntas con estructura rota; los tres cursos juegan
+una etapa real; el guardado de 8° queda intacto; **cero 404 y cero errores de consola**.
+
+**Lo que esto cambia en el plan:** el Bloque A queda cerrado y **el camino crítico deja de ser la
+aprobación**. Lo que manda ahora es el Bloque B —los bancos de 4°, 5° y 6°, ~8.490 preguntas— con
+**M4 (`niveles.js`) delante**, porque es lo que abarata dar de alta un curso (hoy son ~27 puntos
+de edición en tres archivos, ocho de ellos listas paralelas).
+

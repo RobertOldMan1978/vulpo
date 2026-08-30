@@ -11,7 +11,7 @@
    ],
    "correcta": 3,
    "tip": "Partir en -4 y subir 9 es -4 + 9 = 5. Sumar 9 significa avanzar 9 lugares hacia la derecha en la recta: se cruza el cero y se queda sobre cero. Juntar 4 y 9 sería correcto solo si ambos apuntaran al mismo lado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-1"
   },
   {
@@ -25,7 +25,7 @@
    ],
    "correcta": 2,
    "tip": "Restar 5 es retroceder 5 lugares: desde -3 se llega a -8. El error frecuente es leerlo como -3 + 5; la regla de los signos que da resultado positivo es de la multiplicación, no de la resta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-2"
   },
   {
@@ -39,7 +39,7 @@
    ],
    "correcta": 3,
    "tip": "Hacia la derecha se suma: -6 + 4 = -2. Como solo avanzaste 4 y faltaban 6 para llegar al cero, te quedas antes del cero. Alejarse del cero sería moverse hacia la izquierda.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-3"
   },
   {
@@ -53,7 +53,7 @@
    ],
    "correcta": 2,
    "tip": "Subir 5 pisos desde -3 es -3 + 5 = 2. Los pisos del subterráneo funcionan como una recta numérica vertical y la calle es el cero, que sí se cuenta como un nivel al pasar por él.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-4"
   },
   {
@@ -67,7 +67,7 @@
    ],
    "correcta": 3,
    "tip": "Un saldo negativo es una deuda: -12000 + 20000 = 8000. Los primeros 12000 del depósito pagan la deuda y quedan 8000 a favor. Sumar todo daría lo mismo solo si ambas cantidades fueran ganancias.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-5"
   },
   {
@@ -81,7 +81,7 @@
    ],
    "correcta": 3,
    "tip": "En la recta numérica es mayor el que está más a la derecha, y -2 está a la derecha de -9. Comparar los números sin mirar el signo es el error más típico con enteros negativos: 9 grados bajo cero es más frío que 2 grados bajo cero.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-6"
   },
   {
@@ -95,7 +95,7 @@
    ],
    "correcta": 2,
    "tip": "El menor es el que está más a la izquierda en la recta, y -7 lo está. El cero no es el menor: separa los negativos de los positivos, y todo número negativo es menor que él.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-7"
   },
   {
@@ -109,7 +109,7 @@
    ],
    "correcta": 2,
    "tip": "Sumar el opuesto de un número siempre da cero: avanzas 8 y luego retrocedes 8, así que vuelves al punto de partida. Por eso -8 se llama el opuesto de 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-8"
   },
   {
@@ -123,7 +123,7 @@
    ],
    "correcta": 0,
    "tip": "El signo indica la dirección, no la cantidad de esfuerzo. Un movimiento y otro equivalente en sentido opuesto se anulan: la posición final es la misma. Contar diez pasos mide el recorrido, no el cambio de posición.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-9"
   },
   {
@@ -137,7 +137,7 @@
    ],
    "correcta": 2,
    "tip": "Bajo el nivel del mar es negativo: -30 + 45 = 15. Como subió más de lo que estaba hundido, cruza el nivel del mar y termina por encima. El nivel del mar es el cero de esta recta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-10"
   },
   {
@@ -151,7 +151,7 @@
    ],
    "correcta": 3,
    "tip": "Los años antes de Cristo se cuentan hacia atrás, como los negativos: -44 - (-100) = 56. Cuanto más grande es el número antes de Cristo, más antiguo es el año, así que el 100 antes de Cristo es anterior al 44 antes de Cristo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-11"
   },
   {
@@ -165,7 +165,7 @@
    ],
    "correcta": 3,
    "tip": "Con signos distintos se calcula la diferencia y queda el signo del número más alejado del cero. Como 20 supera a 15, el resultado es positivo: -15 + 20 = 5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-12"
   },
   {
@@ -179,7 +179,7 @@
    ],
    "correcta": 2,
    "tip": "Restar un número negativo es sumar su opuesto: 7 - (-3) = 7 + 3 = 10. Quitar una deuda de 3 te deja mejor, no peor, así que el resultado tiene que crecer.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-13"
   },
   {
@@ -193,7 +193,7 @@
    ],
    "correcta": 3,
    "tip": "Restar -10 equivale a sumar 10: -6 + 10 = 4. Sumar los dos números como si fueran del mismo lado es el error típico; aquí el segundo signo menos cambia la dirección del movimiento.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-14"
   },
   {
@@ -207,7 +207,7 @@
    ],
    "correcta": 0,
    "tip": "Bajar 11 desde 3 es 3 - 11 = -8. Los primeros 3 grados de bajada llegan al cero y los 8 restantes siguen hacia abajo, así que se cruza el cero.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-15"
   },
   {
@@ -221,7 +221,7 @@
    ],
    "correcta": 1,
    "tip": "La diferencia es 6 - (-9) = 15. En la recta hay 6 unidades del cero a la máxima y 9 del cero a la mínima, y hay que recorrer las dos. Restar 9 - 6 ignora que están en lados opuestos del cero.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-16"
   },
   {
@@ -235,7 +235,7 @@
    ],
    "correcta": 3,
    "tip": "Las dos cantidades son deudas, así que ambas son negativas y se acumulan: debe 8000. Un préstamo aumenta la deuda aunque llegue como dinero a la mano.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-17"
   },
   {
@@ -249,7 +249,7 @@
    ],
    "correcta": 2,
    "tip": "Moverse a la izquierda es restar: 1 - 4 = -3. Se pasa por el cero después de una unidad y quedan 3 unidades más hacia el lado negativo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-18"
   },
   {
@@ -263,7 +263,7 @@
    ],
    "correcta": 3,
    "tip": "Un número y su opuesto suman cero porque están a la misma distancia del cero, pero en lados contrarios. Las otras tres acumulan hacia un mismo lado y dan 14 o -14.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-19"
   },
   {
@@ -277,7 +277,7 @@
    ],
    "correcta": 0,
    "tip": "Los dos números apuntan hacia la izquierda, así que los retrocesos se acumulan: -4 + (-6) = -10. Restarlos solo corresponde cuando los signos son distintos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-20"
   },
   {
@@ -291,7 +291,7 @@
    ],
    "correcta": 0,
    "tip": "Bajar 7 desde el piso 4 es 4 - 7 = -3, es decir tres pisos de subterráneo. Los 4 primeros pisos de bajada llegan al nivel de la calle y los 3 restantes siguen hacia abajo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-21"
   },
   {
@@ -305,7 +305,7 @@
    ],
    "correcta": 0,
    "tip": "Del -5 al cero hay 5 unidades y del cero al 3 hay 3 más: 5 + 3 = 8. Restar 5 - 3 serviría solo si ambos estuvieran del mismo lado del cero.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-22"
   },
   {
@@ -319,7 +319,7 @@
    ],
    "correcta": 3,
    "tip": "Con signos distintos se calcula la diferencia: -8 + 3 = -5. El 3 avanza hacia la derecha y acerca el resultado al cero, no lo aleja.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-23"
   },
   {
@@ -333,7 +333,7 @@
    ],
    "correcta": 2,
    "tip": "El depósito es el opuesto exacto de la deuda, así que la cancela: -25000 + 25000 = 0. La cuenta queda sin deuda y sin dinero disponible.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-24"
   },
   {
@@ -347,7 +347,7 @@
    ],
    "correcta": 1,
    "tip": "Bajar 3 desde -2 es -2 - 3 = -5. Los dos movimientos van hacia la izquierda de la recta, así que se acumulan y el frío aumenta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-25"
   },
   {
@@ -361,7 +361,7 @@
    ],
    "correcta": 2,
    "tip": "El opuesto está a la misma distancia del cero pero al otro lado, así que el opuesto de -11 es 11. Se reconoce porque al sumar un número con su opuesto el resultado es cero.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-26"
   },
   {
@@ -375,7 +375,7 @@
    ],
    "correcta": 3,
    "tip": "Descender es seguir hacia los negativos: -120 + (-40) = -160. Como los dos movimientos van en la misma dirección, las profundidades se suman.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-27"
   },
   {
@@ -389,7 +389,7 @@
    ],
    "correcta": 2,
    "tip": "Entre negativos, queda más a la derecha el que está más cerca del cero, y ese es -1. Mirar el número sin su signo invierte el orden y es el error más frecuente con enteros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-28"
   },
   {
@@ -403,7 +403,7 @@
    ],
    "correcta": 2,
    "tip": "Se calcula en orden: -9 + 4 = -5 y luego -5 - 6 = -11. El 4 acerca el resultado al cero y el 6 lo vuelve a alejar, así que no se cancelan.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-29"
   },
   {
@@ -417,7 +417,7 @@
    ],
    "correcta": 0,
    "tip": "Se resuelve paso a paso: -7 + 12 = 5 y luego 5 - 5 = 0. La subida del mediodía y la bajada de la noche no se suman entre sí porque van en direcciones opuestas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa01-30"
   },
   {
@@ -431,7 +431,7 @@
    ],
    "correcta": 1,
    "tip": "20 por 3/4 es 15, que son tres cuartas partes de 20. Multiplicar por un número menor que 1 achica, y por uno mayor que 1 agranda: no es cierto que multiplicar siempre agrande.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-1"
   },
   {
@@ -445,7 +445,7 @@
    ],
    "correcta": 0,
    "tip": "Dividir por 1/2 no es sacar la mitad: es preguntar cuántos medios caben. En 6 unidades caben 12 medios. Sacar la mitad de 6 sería multiplicar por 1/2, y eso sí da 3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-2"
   },
   {
@@ -459,7 +459,7 @@
    ],
    "correcta": 0,
    "tip": "Dos tercios de tres cuartos se calcula multiplicando: 2 por 3 da 6 arriba y 3 por 4 da 12 abajo, o sea 6/12, que es 1/2. La palabra \"de\" entre fracciones indica multiplicación, nunca suma.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-3"
   },
   {
@@ -473,7 +473,7 @@
    ],
    "correcta": 2,
    "tip": "El cruce ocupa 6 casillas de las 20 del rectángulo: 6/20, es decir 3/10. Ese modelo muestra por qué al multiplicar fracciones se multiplican numeradores entre sí y denominadores entre sí.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-4"
   },
   {
@@ -487,7 +487,7 @@
    ],
    "correcta": 2,
    "tip": "Solo agranda el factor mayor que 1: 5/4 vale más que una unidad y 12 por 5/4 da 15. Las otras fracciones valen menos que 1, así que achican el 12.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-5"
   },
   {
@@ -501,7 +501,7 @@
    ],
    "correcta": 3,
    "tip": "Dividir por un número mayor que 1 achica: 9 dividido por 3/2 da 6. Dividir por una fracción menor que 1 agranda, porque cabe muchas veces: 9 dividido por 1/2 da 18.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-6"
   },
   {
@@ -515,7 +515,7 @@
    ],
    "correcta": 1,
    "tip": "Es una división: 3/4 dividido por 1/8 equivale a 3/4 por 8, o sea 6. Multiplicar las dos fracciones daría 3/32, que es el error típico de confundir repartir con tomar una parte.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-7"
   },
   {
@@ -529,7 +529,7 @@
    ],
    "correcta": 0,
    "tip": "Se invierte siempre el divisor, porque su inverso deshace la división: 5/6 por 3/2 da 15/12, o sea 5/4. Invertir el dividendo cambia el problema y entrega otro número.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-8"
   },
   {
@@ -543,7 +543,7 @@
    ],
    "correcta": 1,
    "tip": "0,5 es la escritura decimal de 1/2, así que ambos cálculos dan 9. El decimal 0,5 no vale un quinto: 1/5 se escribe 0,2 y daría 3,6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-9"
   },
   {
@@ -557,7 +557,7 @@
    ],
    "correcta": 3,
    "tip": "Ambos cálculos dan 3. Multiplicar por 1/4 y dividir por 4 son la misma acción vista de dos maneras, y no pasa con cualquier decimal: pasa porque 0,25 equivale justo a un cuarto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-10"
   },
   {
@@ -571,7 +571,7 @@
    ],
    "correcta": 2,
    "tip": "Dividir por una fracción responde cuántas veces cabe el divisor en el dividendo. Como 1/8 es más chico que 3/4, cabe varias veces y por eso el resultado es mayor que 1.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-11"
   },
   {
@@ -585,7 +585,7 @@
    ],
    "correcta": 2,
    "tip": "Un tercio de un medio es 1/2 por 1/3, o sea 1/6. Al tomar una parte de una parte el resultado es más chico que las dos fracciones, nunca más grande.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-12"
   },
   {
@@ -599,7 +599,7 @@
    ],
    "correcta": 3,
    "tip": "2 por 5 da 10 arriba y 5 por 8 da 40 abajo: 10/40 se simplifica a 1/4. Sumar numeradores y denominadores daría 7/13 y no corresponde a ninguna multiplicación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-13"
   },
   {
@@ -613,7 +613,7 @@
    ],
    "correcta": 1,
    "tip": "Se invierte el divisor: 7/10 por 5/2 da 35/20, o sea 7/4. Multiplicar directo sin invertir daría 14/50, el error más común al dividir fracciones.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-14"
   },
   {
@@ -627,7 +627,7 @@
    ],
    "correcta": 1,
    "tip": "Multiplicar una fracción por un número natural repite esa fracción: 3 por 2/7 es 6/7. El 3 multiplica al numerador; si multiplicara al denominador daría 2/21, que es menos que una aplicación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-15"
   },
   {
@@ -641,7 +641,7 @@
    ],
    "correcta": 1,
    "tip": "Dividir por 2 es repartir en dos partes iguales: 4/9 por 1/2 da 4/18, que se simplifica a 2/9. El entero 2 se escribe 2/1 y al invertirlo queda 1/2.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-16"
   },
   {
@@ -655,7 +655,7 @@
    ],
    "correcta": 3,
    "tip": "Multiplicar por una fracción menor que 1 achica el otro factor: el resultado es 40/54, algo menos que 5/6. Estimar así permite descartar respuestas absurdas antes de calcular.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-17"
   },
   {
@@ -669,7 +669,7 @@
    ],
    "correcta": 2,
    "tip": "El resultado es 10/12, o sea 5/6, y 5/6 es mayor que 2/3. Cada vez que se divide por una fracción menor que 1 el cociente supera al dividendo, así que no es cierto que dividir siempre achique.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-18"
   },
   {
@@ -683,7 +683,7 @@
    ],
    "correcta": 1,
    "tip": "El resultado correcto es 6/15, o sea 2/5. La multiplicación en cruz sirve para comparar fracciones o resolver proporciones, no para multiplicarlas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-19"
   },
   {
@@ -697,7 +697,7 @@
    ],
    "correcta": 3,
    "tip": "Hay que invertir el divisor, no el dividendo: 5/8 por 4/3 da 20/24, o sea 5/6. Invertir la fracción equivocada cambia por completo el problema.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-20"
   },
   {
@@ -711,7 +711,7 @@
    ],
    "correcta": 3,
    "tip": "0,4 es 4/10, o sea 2/5, y 0,5 es 1/2. El producto da 2/10, es decir 0,2. Confundir 0,4 con un cuarto es un error frecuente: 1/4 se escribe 0,25.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-21"
   },
   {
@@ -725,7 +725,7 @@
    ],
    "correcta": 3,
    "tip": "Pasar a fracciones muestra de dónde salen los decimales: los denominadores 10 y 10 se multiplican y dan 100. Por eso el resultado lleva dos cifras decimales y es más chico que ambos factores.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-22"
   },
   {
@@ -739,7 +739,7 @@
    ],
    "correcta": 0,
    "tip": "Tres quintos de la receta se traduce en 3/5 por 2/3, que da 6/15, o sea 2/5 de taza. Como se prepara menos receta, el resultado tiene que ser menor que 2/3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-23"
   },
   {
@@ -753,7 +753,7 @@
    ],
    "correcta": 0,
    "tip": "Con el mismo denominador basta dividir los numeradores: 9 dividido por 3 da 3. Multiplicar las fracciones daría 27/100, que no responde cuántos trozos caben.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-24"
   },
   {
@@ -767,7 +767,7 @@
    ],
    "correcta": 1,
    "tip": "Invirtiendo el divisor queda 4/5 por 5/4, que da 20/20, o sea 1. Multiplicar 4/5 por 4/5 sería distinto: entrega 16/25.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-25"
   },
   {
@@ -781,7 +781,7 @@
    ],
    "correcta": 0,
    "tip": "El resultado es 10 vasos: 4 por 5/2 da 20/2. Multiplicar por 2/5 daría 8/5, menos de dos vasos, y ese absurdo avisa que la operación estaba mal elegida.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-26"
   },
   {
@@ -795,7 +795,7 @@
    ],
    "correcta": 0,
    "tip": "6 por 3/4 da 4,5 y 6 dividido por 3/4 da 8. Con fracciones menores que 1 se invierte lo que uno espera: multiplicar achica y dividir agranda.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-27"
   },
   {
@@ -809,7 +809,7 @@
    ],
    "correcta": 3,
    "tip": "Se busca 3/8 de 4/9, o sea 12/72, que equivale a 1/6. Conviene simplificar antes de multiplicar, cruzando el 4 con el 8 y el 3 con el 9: el resultado es el mismo y los números quedan más chicos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-28"
   },
   {
@@ -823,7 +823,7 @@
    ],
    "correcta": 3,
    "tip": "El área es 5/6 por 3/4, o sea 15/24, que se simplifica a 5/8. Sumar los lados daría 19/12 y eso no es un área, sino la suma de dos largos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-29"
   },
   {
@@ -837,7 +837,7 @@
    ],
    "correcta": 1,
    "tip": "5/5 vale una unidad, igual que 3/3 o 12/12. Por eso amplificar una fracción multiplicándola por 5/5 cambia cómo se escribe, pero no cuánto vale.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa02-30"
   },
   {
@@ -851,7 +851,7 @@
    ],
    "correcta": 3,
    "tip": "La pregunta es cuántas veces cabe 3/4 en 6, así que es una división: 6 por 4/3 da 8. Multiplicar por 3/4 daría 4,5, o sea menos vasos que litros, lo que es imposible si cada vaso es menor que un litro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-1"
   },
   {
@@ -865,7 +865,7 @@
    ],
    "correcta": 2,
    "tip": "En cada kilo caben 4 cuartos, así que en 5 kilos caben 20: es 5 dividido por 1/4. Si el trozo es menor que la unidad, la respuesta tiene que ser mayor que 5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-2"
   },
   {
@@ -879,7 +879,7 @@
    ],
    "correcta": 2,
    "tip": "Repetir una cantidad varias veces siempre es multiplicar: 5 por 3/4 da 15/4, es decir 3,75 metros. Dividir tendría sentido solo si los 5 delantales tuvieran que salir de una tela ya cortada.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-3"
   },
   {
@@ -893,7 +893,7 @@
    ],
    "correcta": 0,
    "tip": "Cortar en trozos iguales es preguntar cuántas veces cabe 0,75 en 4,5, o sea una división: da 6 exacto. Un número de trozos con decimales avisa que la operación elegida no era la correcta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-4"
   },
   {
@@ -907,7 +907,7 @@
    ],
    "correcta": 1,
    "tip": "Se compra una parte del kilo, así que se multiplica: 2.400 por 0,75 da 1.800. Como 0,75 es menor que 1, el pago tiene que ser menor que 2.400; dividir daría más y eso es imposible.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-5"
   },
   {
@@ -921,7 +921,7 @@
    ],
    "correcta": 2,
    "tip": "Se busca cuántas veces cabe 2/5 en 12: 12 por 5/2 da 30. Multiplicar por 2/5 responde otra pregunta, la de cuánta pintura ocupan 2/5 de muro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-6"
   },
   {
@@ -935,7 +935,7 @@
    ],
    "correcta": 2,
    "tip": "Cada litro aporta 12,5 kilómetros, así que se repite 40 veces: es una multiplicación. La división serviría para la pregunta contraria, cuántos litros se gastan en cierta distancia.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-7"
   },
   {
@@ -949,7 +949,7 @@
    ],
    "correcta": 3,
    "tip": "Repartir en partes iguales es dividir: 3/4 dividido por 6 da 3/24, o sea 1/8. Cada porción tiene que ser mucho menor que 3/4, así que cualquier resultado mayor que 1 está mal.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-8"
   },
   {
@@ -963,7 +963,7 @@
    ],
    "correcta": 0,
    "tip": "El área de un rectángulo es largo por ancho: 4,5 por 3,2 da 14,4. Sumar los lados entrega una longitud, no una superficie, y por eso ese resultado no puede medirse en metros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-9"
   },
   {
@@ -977,7 +977,7 @@
    ],
    "correcta": 1,
    "tip": "Envasar es repartir en recipientes iguales, o sea dividir: 6 entre 0,4 da 15. Al dividir por un número menor que 1 el resultado crece, porque el envase chico cabe muchas veces.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-10"
   },
   {
@@ -991,7 +991,7 @@
    ],
    "correcta": 3,
    "tip": "Dos tercios de tres cuartos se calcula multiplicando: 6/12, o sea 1/2 litro. Como pintó menos que la pieza entera, el resultado tiene que ser menor que 3/4 de litro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-11"
   },
   {
@@ -1005,7 +1005,7 @@
    ],
    "correcta": 2,
    "tip": "Se pide una parte de una parte, así que se multiplica: 3/5 por 5/6 da 15/30, es decir 1/2. Un resultado mayor que 1 sería imposible, porque no se puede ocupar más agua que la que hay.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-12"
   },
   {
@@ -1019,7 +1019,7 @@
    ],
    "correcta": 2,
    "tip": "Dos quintos de cinco octavos es 10/40, o sea 1/4 de hectárea. Solo se planta una parte del terreno, así que el resultado tiene que ser menor que 5/8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-13"
   },
   {
@@ -1033,7 +1033,7 @@
    ],
    "correcta": 1,
    "tip": "Tomar 3/5 de una cantidad es multiplicar: 240 por 3/5 da 144. Dividir por 5 entrega solo un quinto del libro, que es la quinta parte y no las tres quintas partes.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-14"
   },
   {
@@ -1047,7 +1047,7 @@
    ],
    "correcta": 1,
    "tip": "Pagar 3/4 del precio es multiplicar 12.000 por 3/4, lo que da 9.000. Los 3.000 pesos son el descuento, no el precio final: es el error de calcular la parte que no se paga.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-15"
   },
   {
@@ -1061,7 +1061,7 @@
    ],
    "correcta": 3,
    "tip": "El precio se repite 2,5 veces: 6.800 por 2,5 da 17.000. Multiplicar solo por 2 deja fuera el medio kilo, que cuesta 3.400 pesos más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-16"
   },
   {
@@ -1075,7 +1075,7 @@
    ],
    "correcta": 3,
    "tip": "Como compra menos de un kilo, se multiplica y el pago baja: 4.500 por 0,6 da 2.700. Olvidar la coma multiplica el resultado por diez y entrega un precio disparatado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-17"
   },
   {
@@ -1089,7 +1089,7 @@
    ],
    "correcta": 3,
    "tip": "Cada litro cuesta lo mismo, así que se multiplica: 1.240 por 32,5 da 40.300. Una forma de estimar es pensar que 32 litros ya pasan de 39.000 pesos, lo que descarta las otras opciones.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-18"
   },
   {
@@ -1103,7 +1103,7 @@
    ],
    "correcta": 0,
    "tip": "Se repite el mismo peso 200 veces: 0,025 por 200 da 5 kilos. Confundir 0,025 con 0,25 multiplica el resultado por diez, y es el error más frecuente con tres cifras decimales.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-19"
   },
   {
@@ -1117,7 +1117,7 @@
    ],
    "correcta": 1,
    "tip": "En cada metro caben 4 pedazos de 0,25, así que en 15 metros caben 60: es 15 dividido por 0,25. Multiplicar entrega menos pedazos que metros, lo que no puede ser si cada pedazo es más corto que un metro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-20"
   },
   {
@@ -1131,7 +1131,7 @@
    ],
    "correcta": 1,
    "tip": "Multiplicar por un número menor que 1 siempre achica: el precio real es 7.600 pesos. Estimar antes de calcular sirve para darse cuenta de inmediato cuando un resultado es imposible.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-21"
   },
   {
@@ -1145,7 +1145,7 @@
    ],
    "correcta": 0,
    "tip": "El total es 6 por 3/4, o sea 4,5 litros. Su división da 8, que responde otra pregunta: cuántas botellas de 3/4 se llenan con 6 litros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-22"
   },
   {
@@ -1159,7 +1159,7 @@
    ],
    "correcta": 0,
    "tip": "Dividir responde cuántas veces cabe el trozo en el total: salen 7,5 trozos. Juntar cuerdas iguales o tomar una parte del largo son multiplicaciones, y las dos dan menos de 5 metros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-23"
   },
   {
@@ -1173,7 +1173,7 @@
    ],
    "correcta": 2,
    "tip": "Para comparar hay que dividir el precio por los kilos: 1.080 y 1.200 pesos por kilo. Fijarse solo en el total engaña, porque en cada puesto se lleva una cantidad distinta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-24"
   },
   {
@@ -1187,7 +1187,7 @@
    ],
    "correcta": 2,
    "tip": "Se repite la receta 2,5 veces, así que se multiplica: 1,5 por 2,5 da 3,75 litros. Multiplicar solo por 2 deja fuera la media receta, que son 0,75 litros más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-25"
   },
   {
@@ -1201,7 +1201,7 @@
    ],
    "correcta": 2,
    "tip": "Repartir entre 4 es multiplicar por 1/4: 2/12, que se simplifica a 1/6 de kilo. Como la miel se reparte, cada frasco tiene que llevar menos que los 2/3 iniciales.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-26"
   },
   {
@@ -1215,7 +1215,7 @@
    ],
    "correcta": 1,
    "tip": "Camila dividió 8.000 entre 0,6 en vez de multiplicar; el precio correcto es 4.800 pesos. Comparar el resultado con el precio de un kilo entero permite descartar el error sin hacer la cuenta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-27"
   },
   {
@@ -1229,7 +1229,7 @@
    ],
    "correcta": 3,
    "tip": "Se busca cuántas veces cabe 3/8 en 3, así que se multiplica 3 por 8/3 y da 8. Un resultado menor que una vuelta avisa de inmediato que la operación estaba equivocada.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-28"
   },
   {
@@ -1243,7 +1243,7 @@
    ],
    "correcta": 2,
    "tip": "Primero queda 3/5 de 15.000, o sea 9.000 pesos, y el cuarto de eso son 2.250. El error típico es aplicar el 1/4 al total inicial, cuando el enunciado dice que se aplica a lo que quedó.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-29"
   },
   {
@@ -1257,7 +1257,7 @@
    ],
    "correcta": 1,
    "tip": "En 3 kilos caben 4 veces los 3/4 de kilo, porque 3 dividido por 3/4 da 4, y por eso salen 4 veces 12 pancitos. Multiplicar directo por 3 olvida que la receta base no usa un kilo entero.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa03-30"
   },
   {
@@ -1271,7 +1271,7 @@
    ],
    "correcta": 1,
    "tip": "Un porcentaje es una fracción de denominador 100: 25/100 se simplifica a 1/4 y como decimal es 0,25. El error de 2,5 viene de correr la coma un lugar en vez de dos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-1"
   },
   {
@@ -1285,7 +1285,7 @@
    ],
    "correcta": 3,
    "tip": "El 50 por ciento siempre es la mitad, sin importar el total: 40 dividido en 2 es 20. El porcentaje no es una cantidad fija, es una parte del total.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-2"
   },
   {
@@ -1299,7 +1299,7 @@
    ],
    "correcta": 2,
    "tip": "Calcular el 10 por ciento es dividir por 10, porque 10/100 es igual a 1/10. Dividir por 100 da el 1 por ciento, que sería $25.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-3"
   },
   {
@@ -1313,7 +1313,7 @@
    ],
    "correcta": 0,
    "tip": "El 15 por ciento se descompone como 10 por ciento más 5 por ciento, y el 5 por ciento es la mitad del 10 por ciento: $80 más $40 da $120. Sumar 15 pesos confunde el porcentaje con una cantidad.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-4"
   },
   {
@@ -1327,7 +1327,7 @@
    ],
    "correcta": 0,
    "tip": "El 20 por ciento es 20/100, o sea 1/5: 45 dividido en 5 da 9. También se puede pensar como el doble del 10 por ciento, que es 4,5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-5"
   },
   {
@@ -1341,7 +1341,7 @@
    ],
    "correcta": 1,
    "tip": "El camino mental más corto es sacar el 10 por ciento ($120) y dividirlo en 2, lo que da $60. La quinta parte, $240, corresponde al 20 por ciento.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-6"
   },
   {
@@ -1355,7 +1355,7 @@
    ],
    "correcta": 3,
    "tip": "Con 30 por ciento de descuento se paga el 70 por ciento restante: 12.000 por 0,7 da $8.400. Los $3.600 son lo que se ahorra, no lo que se paga.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-7"
   },
   {
@@ -1369,7 +1369,7 @@
    ],
    "correcta": 3,
    "tip": "El 19 por ciento de 20.000 es 3.800, y el precio final es 20.000 más 3.800. También se puede hacer de una vez multiplicando por 1,19.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-8"
   },
   {
@@ -1383,7 +1383,7 @@
    ],
    "correcta": 2,
    "tip": "El total ya es el 119 por ciento del neto, así que se divide por 1,19. Restarle el 19 por ciento al total no devuelve el neto, porque ese 19 por ciento se calculó sobre una base distinta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-9"
   },
   {
@@ -1397,7 +1397,7 @@
    ],
    "correcta": 3,
    "tip": "El 10 por ciento de 18.400 se obtiene dividiendo por 10: $1.840. La propina se suma, así que el total es $20.240.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-10"
   },
   {
@@ -1411,7 +1411,7 @@
    ],
    "correcta": 2,
    "tip": "Los descuentos sucesivos no se suman: 10.000 menos 20 por ciento da 8.000, y el 10 por ciento de 8.000 son 800, así que quedan $7.200. Sumar 20 más 10 daría $7.000, menos de lo que realmente se paga.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-11"
   },
   {
@@ -1425,7 +1425,7 @@
    ],
    "correcta": 1,
    "tip": "El 20 por ciento de bajada se calcula sobre 5.000 y quita 1.000, pero el 20 por ciento de subida se calcula sobre 4.000 y solo agrega 800. Como las bases son distintas, el precio no vuelve al original.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-12"
   },
   {
@@ -1439,7 +1439,7 @@
    ],
    "correcta": 1,
    "tip": "El aumento porcentual compara el alza con el valor inicial: 300 dividido en 600 es 0,5, o sea 50 por ciento. El precio nuevo sí es el 150 por ciento del anterior, pero el aumento es de 50 por ciento.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-13"
   },
   {
@@ -1453,7 +1453,7 @@
    ],
    "correcta": 1,
    "tip": "Aumentar un 50 por ciento es sumarle la mitad a lo que ya había, así que el resultado es el 150 por ciento del inicio. Confundirlo con tener el 50 por ciento sería justo lo contrario: una baja a la mitad.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-14"
   },
   {
@@ -1467,7 +1467,7 @@
    ],
    "correcta": 3,
    "tip": "El 10 por ciento de 300 son 30, así que el 60 por ciento son 6 veces 30, o sea 180. Los 120 restantes son quienes prefieren otra asignatura.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-15"
   },
   {
@@ -1481,7 +1481,7 @@
    ],
    "correcta": 1,
    "tip": "Para obtener el porcentaje se divide la parte por el total y se multiplica por 100: 15/60 es 0,25, o sea 25 por ciento. Dividir al revés da 4, que no es un porcentaje.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-16"
   },
   {
@@ -1495,7 +1495,7 @@
    ],
    "correcta": 2,
    "tip": "Como 25 por 4 es 100, se amplifica la fracción: 9 por 4 da 36, así que 9/25 es 36 por ciento. El 64 por ciento restante son las preguntas falladas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-17"
   },
   {
@@ -1509,7 +1509,7 @@
    ],
    "correcta": 1,
    "tip": "Amplificando por 5, la fracción 7/20 se transforma en 35/100, o sea 35 por ciento. Los otros 13 dulces son el 65 por ciento.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-18"
   },
   {
@@ -1523,7 +1523,7 @@
    ],
    "correcta": 3,
    "tip": "El 10 por ciento de 40 son 4 puntos, así que el 60 por ciento son 24. Los 16 restantes son el 40 por ciento que se puede fallar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-19"
   },
   {
@@ -1537,7 +1537,7 @@
    ],
    "correcta": 2,
    "tip": "Un porcentaje sí puede pasar de 100 cuando la cantidad supera al total de referencia: el 20 por ciento de 50 son 10, así que vendió 60.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-20"
   },
   {
@@ -1551,7 +1551,7 @@
    ],
    "correcta": 2,
    "tip": "El 5 por ciento de 200.000 es la mitad del 10 por ciento (20.000), o sea 10.000. Ese interés se suma al capital, no lo reemplaza.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-21"
   },
   {
@@ -1565,7 +1565,7 @@
    ],
    "correcta": 0,
    "tip": "Conviene sacar primero el 1 por ciento dividiendo por 100 ($4.500) y luego multiplicarlo por 8, lo que da $36.000. Dividir por 8 daría el 12,5 por ciento.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-22"
   },
   {
@@ -1579,7 +1579,7 @@
    ],
    "correcta": 1,
    "tip": "El 100 por ciento es el total de referencia completo, no una cantidad fija de personas. En un curso de 32, el 100 por ciento son 32 estudiantes.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-23"
   },
   {
@@ -1593,7 +1593,7 @@
    ],
    "correcta": 3,
    "tip": "Sacar el 1 por ciento es dividir por 100, y sirve de base para calcular cualquier otro porcentaje multiplicándolo. Dividir por 10 da el 10 por ciento, que serían $450.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-24"
   },
   {
@@ -1607,7 +1607,7 @@
    ],
    "correcta": 3,
    "tip": "El 35 por ciento se arma como 10 más 10 más 10 más 5: $180 más $30 da $210. El 5 por ciento es la mitad del 10 por ciento, nunca 5 pesos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-25"
   },
   {
@@ -1621,7 +1621,7 @@
    ],
    "correcta": 2,
    "tip": "El 20 por ciento de 300 es 60 y el 30 por ciento de 200 también es 60. Un porcentaje mayor sobre un total menor puede dar el mismo resultado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-26"
   },
   {
@@ -1635,7 +1635,7 @@
    ],
    "correcta": 1,
    "tip": "Descontar el 25 por ciento equivale a pagar el 75 por ciento, o sea multiplicar por 0,75. Multiplicar por 0,25 daría el ahorro, no el precio final.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-27"
   },
   {
@@ -1649,7 +1649,7 @@
    ],
    "correcta": 2,
    "tip": "Para comparar hay que llevar todo a la misma forma: 1/4 es 25/100, o sea 25 por ciento, mayor que el 20 por ciento. Un quinto sí sería el 20 por ciento.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-28"
   },
   {
@@ -1663,7 +1663,7 @@
    ],
    "correcta": 3,
    "tip": "La cuadrícula de 100 es la representación pictórica del porcentaje: cada cuadrito vale 1 por ciento. Los 63 sin pintar son el 63 por ciento restante.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-29"
   },
   {
@@ -1677,7 +1677,7 @@
    ],
    "correcta": 2,
    "tip": "El aumento porcentual se calcula sobre el precio inicial, no sobre el final: 1.000 dividido en 4.000 es 0,25, o sea 25 por ciento. Usar los $5.000 como base es el error más frecuente.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa04-30"
   },
   {
@@ -1691,7 +1691,7 @@
    ],
    "correcta": 1,
    "tip": "En 10 elevado a 6, el 10 es la base y el 6 es el exponente. La potencia es el resultado completo, 1.000.000, y no uno de esos dos números sueltos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-1"
   },
   {
@@ -1705,7 +1705,7 @@
    ],
    "correcta": 0,
    "tip": "El exponente cuenta los factores: 10 elevado a 7 son siete dieces multiplicados entre sí. No se suma nada; sumar 10 siete veces daría apenas 70.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-2"
   },
   {
@@ -1719,7 +1719,7 @@
    ],
    "correcta": 1,
    "tip": "10 elevado a 3 es 10 × 10 × 10 = 1.000. El error más común es multiplicar la base por el exponente y responder 30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-3"
   },
   {
@@ -1733,7 +1733,7 @@
    ],
    "correcta": 2,
    "tip": "Se define que toda potencia de base 10 con exponente 0 vale 1. Confundirlo con 0 es el error típico: el exponente 0 no significa que no haya nada.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-4"
   },
   {
@@ -1747,7 +1747,7 @@
    ],
    "correcta": 2,
    "tip": "Mira la secuencia 1.000, 100, 10: cada vez que el exponente baja en 1, el valor se divide por 10. Después de 10 elevado a 1 viene, entonces, 1.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-5"
   },
   {
@@ -1761,7 +1761,7 @@
    ],
    "correcta": 2,
    "tip": "El exponente es la cantidad de ceros que sigue al 1. Como 100.000 tiene cinco ceros, se escribe 10 elevado a 5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-6"
   },
   {
@@ -1775,7 +1775,7 @@
    ],
    "correcta": 1,
    "tip": "En una potencia de base 10, el exponente indica exactamente cuántos ceros acompañan al 1: 10 elevado a 8 es un 1 seguido de ocho ceros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-7"
   },
   {
@@ -1789,7 +1789,7 @@
    ],
    "correcta": 2,
    "tip": "10 elevado a 4 es 10 × 10 × 10 × 10 = 10.000. El exponente no se multiplica con la base: cuenta cuántas veces aparece esa base como factor.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-8"
   },
   {
@@ -1803,7 +1803,7 @@
    ],
    "correcta": 0,
    "tip": "45.000 es 4,5 × 10.000, y 10.000 es 10 elevado a 4. Las otras expresiones tienen un primer factor que no queda entre 1 y 10, o un valor equivocado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-9"
   },
   {
@@ -1817,7 +1817,7 @@
    ],
    "correcta": 3,
    "tip": "La notación científica exige que el primer factor sea mayor o igual que 1 y menor que 10. Solo 3,2 cumple: 45, 12,5 y 0,7 quedan fuera de ese rango.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-10"
   },
   {
@@ -1831,7 +1831,7 @@
    ],
    "correcta": 0,
    "tip": "10 elevado a 5 es 100.000, y 7 × 100.000 da 700.000. Un atajo seguro: al 7 se le agregan tantos ceros como indique el exponente.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-11"
   },
   {
@@ -1845,7 +1845,7 @@
    ],
    "correcta": 3,
    "tip": "Se corre la coma hasta dejar un solo dígito antes de ella, o sea 1,95. La coma se movió siete lugares, así que el exponente es 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-12"
   },
   {
@@ -1859,7 +1859,7 @@
    ],
    "correcta": 0,
    "tip": "150.000.000 tiene nueve cifras, así que la coma se corre ocho lugares. La opción con 15 vale lo mismo, pero 15 no está entre 1 y 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-13"
   },
   {
@@ -1873,7 +1873,7 @@
    ],
    "correcta": 3,
    "tip": "El valor que escribió sí es correcto: 4.500.000. Lo que falla es la forma; en notación científica ese número se escribe 4,5 × 10 elevado a 6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-14"
   },
   {
@@ -1887,7 +1887,7 @@
    ],
    "correcta": 0,
    "tip": "10 elevado a 4 es 10.000, y 2,5 × 10.000 da 25.000. También se puede correr la coma cuatro lugares hacia la derecha.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-15"
   },
   {
@@ -1901,7 +1901,7 @@
    ],
    "correcta": 1,
    "tip": "3 × 10 elevado a 7 son 30.000.000 y 9 × 10 elevado a 6 son 9.000.000. Cuando los exponentes son distintos, manda el exponente y no el primer factor.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-16"
   },
   {
@@ -1915,7 +1915,7 @@
    ],
    "correcta": 1,
    "tip": "El número es un 1 seguido de nueve ceros, así que el exponente es 9. La opción que parte con 10 ni siquiera cumple la forma de la notación científica.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-17"
   },
   {
@@ -1929,7 +1929,7 @@
    ],
    "correcta": 2,
    "tip": "El número tiene diez cifras, así que la coma se corre nueve lugares. Escribirlo con 46 adelante deja el primer factor fuera del rango permitido.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-18"
   },
   {
@@ -1943,7 +1943,7 @@
    ],
    "correcta": 3,
    "tip": "10 elevado a 6 es 1.000.000 y 10 elevado a 3 es 1.000; al dividirlos queda 1.000. Responder 3 confunde la diferencia entre los exponentes con el resultado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-19"
   },
   {
@@ -1957,7 +1957,7 @@
    ],
    "correcta": 1,
    "tip": "10 elevado a 5 es un 1 seguido de cinco ceros, o sea 100.000. Son dos escrituras del mismo número, no dos números distintos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-20"
   },
   {
@@ -1971,7 +1971,7 @@
    ],
    "correcta": 0,
    "tip": "0,45 × 10 elevado a 6 vale 450.000, pero la forma correcta es 4,5 × 10 elevado a 5. Un primer factor menor que 1 nunca cumple la regla.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-21"
   },
   {
@@ -1985,7 +1985,7 @@
    ],
    "correcta": 3,
    "tip": "384.000 tiene seis cifras, así que la coma se corre cinco lugares. La opción con 38,4 vale lo mismo, pero su primer factor pasa de 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-22"
   },
   {
@@ -1999,7 +1999,7 @@
    ],
    "correcta": 0,
    "tip": "Una potencia es el resultado de multiplicar una base por sí misma varias veces. Base y exponente son las partes de la potencia, no el resultado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-23"
   },
   {
@@ -2013,7 +2013,7 @@
    ],
    "correcta": 0,
    "tip": "5 × 10 elevado a 6 son 5.000.000 y 8 × 10 elevado a 5 son 800.000. Antes de comparar hay que mirar el exponente, no el primer factor.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-24"
   },
   {
@@ -2027,7 +2027,7 @@
    ],
    "correcta": 2,
    "tip": "El número tiene nueve ceros después del 1, y en las potencias de base 10 el exponente es justamente esa cantidad de ceros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-25"
   },
   {
@@ -2041,7 +2041,7 @@
    ],
    "correcta": 1,
    "tip": "10 elevado a 4 es 10.000, y 4 × 10.000 da 40.000. Al 4 se le agregan tantos ceros como indique el exponente.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-26"
   },
   {
@@ -2055,7 +2055,7 @@
    ],
    "correcta": 1,
    "tip": "La notación científica no cambia el valor del número ni lo redondea: solo lo escribe de una forma más corta y fácil de comparar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-27"
   },
   {
@@ -2069,7 +2069,7 @@
    ],
    "correcta": 1,
    "tip": "Su expresión vale 2.400.000, así que el valor está bien; el problema es que 24 no está entre 1 y 10. Al bajar el primer factor a 2,4, el exponente sube a 6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-28"
   },
   {
@@ -2083,7 +2083,7 @@
    ],
    "correcta": 0,
    "tip": "10 elevado a 7 es un 1 seguido de siete ceros: 10.000.000. Responder 70 sería multiplicar la base por el exponente, que es el error típico.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-29"
   },
   {
@@ -2097,7 +2097,7 @@
    ],
    "correcta": 0,
    "tip": "De 10 elevado a 3 a 10 elevado a 4 se pasa de 1.000 a 10.000: el valor no crece sumando, crece multiplicándose por 10 cada vez.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa05-30"
   },
   {
@@ -2111,7 +2111,7 @@
    ],
    "correcta": 0,
    "tip": "Primero se dobla el número, o sea 2n, y recién después se agregan 5 unidades. Si se doblara la suma completa, el 5 también quedaría duplicado y eso ya es otra expresión.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-1"
   },
   {
@@ -2125,7 +2125,7 @@
    ],
    "correcta": 1,
    "tip": "Aquí lo que se dobla es toda la suma, por eso va entre paréntesis. Sin paréntesis, el 2 multiplicaría solo al número y el 5 quedaría fuera del doble.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-2"
   },
   {
@@ -2139,7 +2139,7 @@
    ],
    "correcta": 0,
    "tip": "En la resta el orden cambia el resultado: 5 - n parte del 5 y le quita el número, mientras que n - 5 parte del número. Con n igual a 2 dan 3 y -3, que no es lo mismo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-3"
   },
   {
@@ -2153,7 +2153,7 @@
    ],
    "correcta": 3,
    "tip": "En álgebra la letra representa un número cualquiera, no la inicial de un objeto. Un número escrito junto a una letra siempre indica multiplicación: 3m es 3 por m.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-4"
   },
   {
@@ -2167,7 +2167,7 @@
    ],
    "correcta": 2,
    "tip": "Juntar un número y una letra indica producto, no pegar cifras. Con n igual a 7 la expresión 2n vale 14 y no 27; ese es el error típico al leer lenguaje algebraico.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-5"
   },
   {
@@ -2181,7 +2181,7 @@
    ],
    "correcta": 3,
    "tip": "El avance constante de 3 fija el 3n, y el ajuste se busca con el primer término: 3 por 1 da 3 y faltan 2 para llegar a 5. La regla n + 3 describe el paso de un término al siguiente, no su posición.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-6"
   },
   {
@@ -2195,7 +2195,7 @@
    ],
    "correcta": 1,
    "tip": "La diferencia constante 5 fija el 5n, y el ajuste sale del primer par: 5 por 1 da 5 y hay que sumar 4 para llegar a 9. La regla 5n + 9 asociaría el lugar 1 con 14.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-7"
   },
   {
@@ -2209,7 +2209,7 @@
    ],
    "correcta": 1,
    "tip": "Cada cuadrado nuevo agrega 3 palitos porque comparte un lado con el anterior, y sobra 1 palito del arranque. Con 4n se contarían dos veces los lados compartidos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-8"
   },
   {
@@ -2223,7 +2223,7 @@
    ],
    "correcta": 0,
    "tip": "Al unir las mesas se pierden los lados del medio: quedan 2 puestos por mesa más los 2 de las puntas. Con n igual a 1 la regla debe dar 4, y 2n + 4 daría 6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-9"
   },
   {
@@ -2237,7 +2237,7 @@
    ],
    "correcta": 2,
    "tip": "Un número es par cuando es el doble de otro entero, así que la forma general es 2n. La expresión n + 2 no sirve: si n es impar, n + 2 también resulta impar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-10"
   },
   {
@@ -2251,7 +2251,7 @@
    ],
    "correcta": 3,
    "tip": "Al sumar 1 a un número par se obtiene el impar siguiente. La expresión 2(n + 1) vuelve a ser un doble, o sea otro par, y 2n - 1 entrega el impar anterior.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-11"
   },
   {
@@ -2265,7 +2265,7 @@
    ],
    "correcta": 0,
    "tip": "Consecutivos significa que cada número supera al anterior en una unidad. La lista n, n + 2, n + 4 salta de 2 en 2 y describe pares o impares, no consecutivos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-12"
   },
   {
@@ -2279,7 +2279,7 @@
    ],
    "correcta": 3,
    "tip": "Escribir los pares como 2a y 2b y factorizar muestra que la suma vuelve a ser el doble de un entero, o sea par, para cualquier valor. Un ejemplo numérico no prueba que valga siempre.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-13"
   },
   {
@@ -2293,7 +2293,7 @@
    ],
    "correcta": 3,
    "tip": "Se saca primero la mitad del número y recién después se suman 3 unidades. Poner la suma dentro de la fracción haría que el 3 también quedara dividido a la mitad.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-14"
   },
   {
@@ -2307,7 +2307,7 @@
    ],
    "correcta": 0,
    "tip": "Lo que se reparte en tres partes es la suma completa, por eso va entre paréntesis. Sin ellos, solo el número o solo el 6 quedaría dividido.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-15"
   },
   {
@@ -2321,7 +2321,7 @@
    ],
    "correcta": 0,
    "tip": "El perímetro suma los cuatro lados iguales: a + a + a + a, que se escribe 4a. Sumar 4 al lado no repite la medida, y elevar a 4 sería multiplicarla por sí misma.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-16"
   },
   {
@@ -2335,7 +2335,7 @@
    ],
    "correcta": 2,
    "tip": "El perímetro suma dos anchos y dos largos: 2x más 2 por 3x, o sea 8x. La expresión 4x suma un solo ancho y un solo largo, es decir la mitad del contorno.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-17"
   },
   {
@@ -2349,7 +2349,7 @@
    ],
    "correcta": 1,
    "tip": "Cada moneda aporta 100 pesos, así que el total es 100 por la cantidad de monedas. Sumar la cantidad y el valor mezcla dos cosas que se miden de manera distinta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-18"
   },
   {
@@ -2363,7 +2363,7 @@
    ],
    "correcta": 0,
    "tip": "Tener tres años más indica sumar 3 a la edad de Benjamín. Escribir 3b diría que Camila tiene el triple de años, que es una relación completamente distinta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-19"
   },
   {
@@ -2377,7 +2377,7 @@
    ],
    "correcta": 0,
    "tip": "El 4 multiplica solo al número y después se agregan 2 unidades. Si se cuadruplicara la suma habría paréntesis, y ahí el 2 también quedaría multiplicado por 4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-20"
   },
   {
@@ -2391,7 +2391,7 @@
    ],
    "correcta": 3,
    "tip": "El paréntesis indica que primero se resta y ese resultado se multiplica por 5. Sin paréntesis, la resta de 2 quedaría fuera de la multiplicación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-21"
   },
   {
@@ -2405,7 +2405,7 @@
    ],
    "correcta": 0,
    "tip": "Sumar tres veces el mismo número es multiplicarlo por 3. Elevar a 3 sería n por n por n, que con n igual a 2 da 8 en vez de 6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-22"
   },
   {
@@ -2419,7 +2419,7 @@
    ],
    "correcta": 1,
    "tip": "El doble y el cuadrado coinciden en 0 y en 2, pero se separan en el resto: con n igual a 5 dan 10 y 25. Repetir el número sumando no es lo mismo que multiplicarlo por sí mismo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-23"
   },
   {
@@ -2433,7 +2433,7 @@
    ],
    "correcta": 2,
    "tip": "La ecuación debe copiar el orden del relato: primero multiplicar por 4 y después sumar 7. Mover el 7 al otro lado es un paso de la resolución, no del planteamiento.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-24"
   },
   {
@@ -2447,7 +2447,7 @@
    ],
    "correcta": 1,
    "tip": "Se suman dos cantidades: el número y su triple, o sea n + 3n. Escribir solo 3n dejaría fuera el número original, que también forma parte del total.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-25"
   },
   {
@@ -2461,7 +2461,7 @@
    ],
    "correcta": 2,
    "tip": "Los 300 pesos se pagan una sola vez y solo los 250 se repiten en cada kilómetro. Al sumar los dos cobros antes de multiplicar, el monto fijo se cobraría muchas veces.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-26"
   },
   {
@@ -2475,7 +2475,7 @@
    ],
    "correcta": 0,
    "tip": "Como baja de 3 en 3, la regla incluye 3n restándose, y el ajuste sale del primer término: 43 menos 3 da 40. La regla 40 - 3n entregaría 37 en el primer lugar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-27"
   },
   {
@@ -2489,7 +2489,7 @@
    ],
    "correcta": 2,
    "tip": "Si se descuenta el 20 por ciento, se paga el 80 por ciento restante, o sea 0,8 por el precio. La expresión 0,2p entrega el descuento y no lo que hay que pagar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-28"
   },
   {
@@ -2503,7 +2503,7 @@
    ],
    "correcta": 1,
    "tip": "El factor 2 multiplica a los dos términos del paréntesis, así que también dobla el 3. Se puede comprobar con x igual a 5: las dos expresiones dan 16.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-29"
   },
   {
@@ -2517,7 +2517,7 @@
    ],
    "correcta": 1,
    "tip": "Disminuir el número significa restarle 7 a él, no restarlo a él del 7. Con n igual a 10 la expresión correcta da 3 y la invertida da -3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa06-30"
   },
   {
@@ -2531,7 +2531,7 @@
    ],
    "correcta": 0,
    "tip": "Al reunir términos semejantes se suman solo los coeficientes y la parte literal se mantiene: 3 + 5 = 8, así que queda 8x. Sumar no es multiplicar, por eso la x no se eleva ni desaparece.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-1"
   },
   {
@@ -2545,7 +2545,7 @@
    ],
    "correcta": 1,
    "tip": "Solo se reúnen los términos que tienen la misma parte literal. Como x e y son letras distintas, la expresión ya está reducida: juntarlas en 5xy inventaría un producto que nadie escribió.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-2"
   },
   {
@@ -2559,7 +2559,7 @@
    ],
    "correcta": 2,
    "tip": "Los tres términos son semejantes, así que se opera con los coeficientes respetando su signo: 7 - 2 + 4 = 9, y queda 9a. El exponente no cambia por la cantidad de términos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-3"
   },
   {
@@ -2573,7 +2573,7 @@
    ],
    "correcta": 1,
    "tip": "Una x sola lleva coeficiente 1, y 1 + 1 = 2, así que queda 2x. La expresión x^2 aparecería si las x se multiplicaran, no si se suman.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-4"
   },
   {
@@ -2587,7 +2587,7 @@
    ],
    "correcta": 0,
    "tip": "Se agrupan por separado: 4x - x = 3x y 3y + 2y = 5y. La x que va sola tiene coeficiente 1, y olvidarlo es lo que lleva a dejar 4x.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-5"
   },
   {
@@ -2601,7 +2601,7 @@
    ],
    "correcta": 1,
    "tip": "El signo menos delante del paréntesis cambia el signo de TODO lo que está adentro: -2x y +3. Por eso queda 5x - 2x + 3 = 3x + 3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-6"
   },
   {
@@ -2615,7 +2615,7 @@
    ],
    "correcta": 3,
    "tip": "El 2 multiplica a los dos términos del paréntesis: 6x + 8. Luego 6x - 5x = x, y el 8 queda solo porque no tiene término semejante.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-7"
   },
   {
@@ -2629,7 +2629,7 @@
    ],
    "correcta": 3,
    "tip": "6m - 6m = 0, así que esos términos desaparecen y sobrevive 2n. La expresión completa no se anula: el 2n no tiene con quién cancelarse.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-8"
   },
   {
@@ -2643,7 +2643,7 @@
    ],
    "correcta": 1,
    "tip": "Dos términos son semejantes solo si tienen la misma letra CON el mismo exponente. Con x = 3, el primer término vale 27 y el segundo 6: son cantidades de distinta naturaleza y no se pueden reunir.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-9"
   },
   {
@@ -2657,7 +2657,7 @@
    ],
    "correcta": 3,
    "tip": "El perímetro suma los cuatro lados: 3x + 3x + (2x + 1) + (2x + 1) = 10x + 2. El ancho aparece dos veces, así que el 1 también se cuenta dos veces.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-10"
   },
   {
@@ -2671,7 +2671,7 @@
    ],
    "correcta": 2,
    "tip": "Se suman los tres lados agrupando por separado: x + 2x + 3x = 6x, y 2 - 1 = 1. El resultado es 6x + 1.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-11"
   },
   {
@@ -2685,7 +2685,7 @@
    ],
    "correcta": 0,
    "tip": "Los coeficientes solo se suman cuando la parte literal es idéntica. Con x = 1 e y = 2, la expresión original vale 10 y 7xy vale 14: no son la misma cantidad.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-12"
   },
   {
@@ -2699,7 +2699,7 @@
    ],
    "correcta": 0,
    "tip": "La letra indica QUÉ se está contando y no desaparece: 8 equis menos 3 equis son 5 equis. Con x = 2, la expresión original vale 10 y no 5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-13"
   },
   {
@@ -2713,7 +2713,7 @@
    ],
    "correcta": 3,
    "tip": "La y que va sola tiene coeficiente 1, así que 9 - 1 = 8 y queda 8y. Olvidar ese 1 invisible es lo que lleva a dejar 9y.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-14"
   },
   {
@@ -2727,7 +2727,7 @@
    ],
    "correcta": 3,
    "tip": "Los coeficientes se operan con su signo: -4 + 7 = 3, así que el resultado es 3x, positivo. El signo del resultado lo decide el coeficiente mayor en valor absoluto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-15"
   },
   {
@@ -2741,7 +2741,7 @@
    ],
    "correcta": 3,
    "tip": "Se agrupa por letra respetando los signos: 5a - 2a = 3a y 3b - 7b = -4b. Un coeficiente negativo es un resultado perfectamente válido.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-16"
   },
   {
@@ -2755,7 +2755,7 @@
    ],
    "correcta": 3,
    "tip": "Se reúne cada letra por separado: 2x - x = x, 3y + y = 4y y 4z - z = 3z. Tanto la x como la z que van solas llevan coeficiente 1.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-17"
   },
   {
@@ -2769,7 +2769,7 @@
    ],
    "correcta": 3,
    "tip": "Restar un paréntesis es restar todo su contenido: 10x - 4x - 2 = 6x - 2. Con x = 1, la expresión original vale 4 y 6x + 2 vale 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-18"
   },
   {
@@ -2783,7 +2783,7 @@
    ],
    "correcta": 2,
    "tip": "El 3 multiplica a los dos términos: 6x - 3y. Después -3y + 4y = y, así que el resultado es 6x + y.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-19"
   },
   {
@@ -2797,7 +2797,7 @@
    ],
    "correcta": 3,
    "tip": "El signo menos delante equivale a multiplicar todo por -1, así que ambos términos cambian de signo. Con x = 1 e y = 1, la expresión vale 2, igual que -3x + 5y.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-20"
   },
   {
@@ -2811,7 +2811,7 @@
    ],
    "correcta": 0,
    "tip": "Dos términos son semejantes cuando tienen exactamente la misma parte literal, con las mismas letras y los mismos exponentes. El coeficiente no influye en eso.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-21"
   },
   {
@@ -2825,7 +2825,7 @@
    ],
    "correcta": 2,
    "tip": "7 - 9 = -2, así que el término es -2x y la expresión reducida queda -2x + 2y. Un término puede tener coeficiente negativo sin perder su letra.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-22"
   },
   {
@@ -2839,7 +2839,7 @@
    ],
    "correcta": 1,
    "tip": "El perímetro es 4 veces el lado, y el 4 multiplica a los DOS términos: 4(3x + 2) = 12x + 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-23"
   },
   {
@@ -2853,7 +2853,7 @@
    ],
    "correcta": 3,
    "tip": "Se agrupa por producto: 3 + 2 = 5 lápices y 2 + 5 = 7 cuadernos, o sea 5x + 7y. Lápices y cuadernos tienen precios distintos, así que no se pueden reunir en un mismo término.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-24"
   },
   {
@@ -2867,7 +2867,7 @@
    ],
    "correcta": 1,
    "tip": "Primero se reduce: 4 + 3 - 2 = 5, o sea 5x. Después se reemplaza: 5 por 5 da 25. Reducir antes de evaluar ahorra trabajo y evita errores.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-25"
   },
   {
@@ -2881,7 +2881,7 @@
    ],
    "correcta": 3,
    "tip": "Sumar tres veces 4x es lo mismo que multiplicar 4x por 3: 12x. El exponente 3 aparecería si las expresiones se multiplicaran entre sí.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-26"
   },
   {
@@ -2895,7 +2895,7 @@
    ],
    "correcta": 3,
    "tip": "Un término con letra y uno sin letra nunca son semejantes. Con x = 2, la expresión original vale 15 y 10x vale 20.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-27"
   },
   {
@@ -2909,7 +2909,7 @@
    ],
    "correcta": 3,
    "tip": "6 - 8 = -2, así que queda -2x. El resultado puede ser negativo sin problema, y el exponente de la x no cambia al restar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-28"
   },
   {
@@ -2923,7 +2923,7 @@
    ],
    "correcta": 0,
    "tip": "El 3 multiplica a los dos términos del paréntesis: 3a - 6. Luego 2a + 3a = 5a, y el -6 queda solo por no tener término semejante.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-29"
   },
   {
@@ -2937,7 +2937,7 @@
    ],
    "correcta": 2,
    "tip": "Los términos semejantes son 7x y 2x, que suman 9x. El -3y no tiene con quién reunirse y se conserva tal cual, con su signo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa07-30"
   },
   {
@@ -2951,7 +2951,7 @@
    ],
    "correcta": 3,
    "tip": "En una relación directa las dos cantidades crecen en el mismo factor y el cociente y/x se mantiene fijo. Que el producto se mantenga fijo es lo propio de la relación inversa, no de la directa.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-1"
   },
   {
@@ -2965,7 +2965,7 @@
    ],
    "correcta": 3,
    "tip": "En la relación inversa x por y da siempre el mismo valor: si x se duplica, y debe reducirse a la mitad para que el producto no cambie. El cociente constante corresponde a la relación directa.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-2"
   },
   {
@@ -2979,7 +2979,7 @@
    ],
    "correcta": 1,
    "tip": "El precio es directamente proporcional al peso: primero se busca el valor de un kilo (4.500 dividido en 3 es 1.500) y luego se multiplica por la cantidad pedida. Sumar tramos sueltos rompe la proporción.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-3"
   },
   {
@@ -2993,7 +2993,7 @@
    ],
    "correcta": 2,
    "tip": "Es una relación inversa: más obreros, menos días. El producto obreros por días es constante (4 por 18 es 72), así que con 6 obreros el plazo baja a 12 días. Multiplicar en vez de dividir da el resultado al revés.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-4"
   },
   {
@@ -3007,7 +3007,7 @@
    ],
    "correcta": 0,
    "tip": "La proporcionalidad directa se grafica como una recta que pasa por el punto (0, 0): a cantidad cero corresponde valor cero. Si la recta corta el eje vertical más arriba, hay una parte fija y la relación ya no es proporcional.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-5"
   },
   {
@@ -3021,7 +3021,7 @@
    ],
    "correcta": 1,
    "tip": "Como el producto de las dos cantidades es constante, ninguna puede valer cero: la curva se acerca a los ejes pero jamás los toca. La recta por el origen es el gráfico de la relación directa.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-6"
   },
   {
@@ -3035,7 +3035,7 @@
    ],
    "correcta": 3,
    "tip": "Que dos cantidades crezcan juntas no basta para que sean proporcionales: hace falta que el cociente sea constante. Con 1 kilómetro se pagan 700 pesos y con 2 kilómetros 1.000, que no es el doble. La tarifa base rompe la proporcionalidad.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-7"
   },
   {
@@ -3049,7 +3049,7 @@
    ],
    "correcta": 0,
    "tip": "Trabajadores y tiempo forman una relación inversa: más pintores, menos días. El error clásico es tratarla como directa y multiplicar. El producto 3 por 12 es 36, así que con 6 pintores el plazo es 6 días.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-8"
   },
   {
@@ -3063,7 +3063,7 @@
    ],
    "correcta": 2,
    "tip": "La escala de un mapa es una proporción directa: cada centímetro vale siempre los mismos kilómetros, así que se multiplica. Sumar magnitudes distintas, centímetros con kilómetros, no tiene sentido.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-9"
   },
   {
@@ -3077,7 +3077,7 @@
    ],
    "correcta": 2,
    "tip": "A rapidez constante la distancia es directamente proporcional al tiempo. Primero se busca cuánto avanza en una hora (120 dividido en 1,5 es 80) y recién ahí se multiplica por las 4 horas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-10"
   },
   {
@@ -3091,7 +3091,7 @@
    ],
    "correcta": 0,
    "tip": "En un mismo material la masa y el volumen son directamente proporcionales, y la constante es justamente la densidad. Aquí 80 dividido en 10 da 8 gramos por centímetro cúbico, así que 360 gramos ocupan 45.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-11"
   },
   {
@@ -3105,7 +3105,7 @@
    ],
    "correcta": 0,
    "tip": "Los ingredientes son directamente proporcionales al número de comensales. Se busca la porción de una persona (300 dividido en 4 es 75) y se multiplica por 10. Duplicar la receta solo sirve si se duplican las personas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-12"
   },
   {
@@ -3119,7 +3119,7 @@
    ],
    "correcta": 3,
    "tip": "Para que el jugo sepa igual, la razón entre agua y concentrado debe mantenerse: 20 dividido en 5 es 4 medidas de agua por cada una de concentrado. Sumar en vez de multiplicar cambia el sabor de la mezcla.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-13"
   },
   {
@@ -3133,7 +3133,7 @@
    ],
    "correcta": 3,
    "tip": "La prueba de la proporcionalidad directa es dividir: 5 entre 2, 10 entre 4 y 15 entre 6 dan siempre 2,5. Que las dos columnas crezcan de a saltos iguales es una consecuencia, no la definición.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-14"
   },
   {
@@ -3147,7 +3147,7 @@
    ],
    "correcta": 1,
    "tip": "En la relación inversa lo que se mantiene fijo es el producto: 1 por 24, 2 por 12, 3 por 8 y 4 por 6 dan todos 24. Las restas entre valores no son iguales, y justamente por eso la curva no es una recta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-15"
   },
   {
@@ -3161,7 +3161,7 @@
    ],
    "correcta": 0,
    "tip": "La constante de proporcionalidad directa es el cociente y dividido en x: 14 entre 2, 35 entre 5 y 56 entre 8 dan siempre 7. Dividir al revés entrega el inverso de la constante, no la constante.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-16"
   },
   {
@@ -3175,7 +3175,7 @@
    ],
    "correcta": 2,
    "tip": "La constante aquí es 6, así que todo punto de la recta cumple que el segundo valor es seis veces el primero. El par ordenado no se puede invertir: el primer número siempre indica la posición horizontal.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-17"
   },
   {
@@ -3189,7 +3189,7 @@
    ],
    "correcta": 2,
    "tip": "Las edades crecen sumando, no multiplicando: la diferencia de 4 años se mantiene, pero el cociente no. Crecer juntas no es lo mismo que ser proporcionales.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-18"
   },
   {
@@ -3203,7 +3203,7 @@
    ],
    "correcta": 0,
    "tip": "El área de un cuadrado es lado por lado, así que al duplicar el lado el área queda multiplicada por cuatro. Para ser proporcional tendría que duplicarse, y no ocurre.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-19"
   },
   {
@@ -3217,7 +3217,7 @@
    ],
    "correcta": 0,
    "tip": "Perímetro igual a cuatro por el lado es exactamente la forma de una proporción directa, con constante 4. Su gráfico es una recta que pasa por el origen: lado cero, perímetro cero.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-20"
   },
   {
@@ -3231,7 +3231,7 @@
    ],
    "correcta": 0,
    "tip": "Llaves y tiempo son inversamente proporcionales: el producto se mantiene en 120. Con 5 llaves el tiempo baja a 24 minutos. Si el resultado sale mayor que el original, se trató la relación como directa.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-21"
   },
   {
@@ -3245,7 +3245,7 @@
    ],
    "correcta": 0,
    "tip": "Copias y tiempo son directamente proporcionales: 250 entre 5 da 50 copias por minuto, y 900 entre 50 da 18 minutos. La máquina no cambia de velocidad por recibir un encargo más grande.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-22"
   },
   {
@@ -3259,7 +3259,7 @@
    ],
    "correcta": 0,
    "tip": "En un gas a temperatura constante, presión por volumen se mantiene fijo: 2 por 6 es 12, así que a 3 atmósferas el volumen es 4 litros. Si al apretar el gas el volumen creciera, el globo nunca se achicaría.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-23"
   },
   {
@@ -3273,7 +3273,7 @@
    ],
    "correcta": 2,
    "tip": "Con distancia fija, rapidez y tiempo son inversamente proporcionales: su producto es la distancia, 360 kilómetros. Ir más lento siempre alarga el viaje, nunca lo acorta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-24"
   },
   {
@@ -3287,7 +3287,7 @@
    ],
    "correcta": 2,
    "tip": "No basta con que el gráfico sea una recta: para que haya proporcionalidad directa esa recta debe pasar por el origen. Los 8.000 pesos de cargo fijo hacen que el cociente entre cobro y datos vaya cambiando.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-25"
   },
   {
@@ -3301,7 +3301,7 @@
    ],
    "correcta": 2,
    "tip": "La constante inversa se obtiene multiplicando cualquier par completo: 2 por 30 da 60. Entonces el valor que acompaña a 5 es 60 dividido en 5, o sea 12. Buscar el punto medio funcionaría en una recta, no en esta curva.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-26"
   },
   {
@@ -3315,7 +3315,7 @@
    ],
    "correcta": 0,
    "tip": "El rendimiento es constante, así que kilómetros y litros son directamente proporcionales: 96 entre 8 da 12 kilómetros por litro. Sumar litros a kilómetros mezcla dos magnitudes distintas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-27"
   },
   {
@@ -3329,7 +3329,7 @@
    ],
    "correcta": 3,
    "tip": "Si una de las cantidades llegara a cero, el producto también sería cero y dejaría de ser el mismo de siempre. Por eso los valores se hacen cada vez más pequeños pero jamás llegan al eje.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-28"
   },
   {
@@ -3343,7 +3343,7 @@
    ],
    "correcta": 1,
    "tip": "La constante de una proporción directa siempre se lee como un valor por unidad: aquí, pesos por kilo. Por eso conviene calcularla, porque permite responder cualquier cantidad sin rehacer la tabla.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-29"
   },
   {
@@ -3357,7 +3357,7 @@
    ],
    "correcta": 2,
    "tip": "En la tabla B el cociente cambia: 9, después 6 y después 5. Crece de a 3, pero partiendo de 6, así que su gráfico es una recta que no pasa por el origen. Crecer parejo no es lo mismo que ser proporcional.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa08-30"
   },
   {
@@ -3371,7 +3371,7 @@
    ],
    "correcta": 2,
    "tip": "Seis veces el precio de un cuaderno da el total, así que 6x = 7.200. Dividir x entre 6 modelaría repartir un cuaderno en 6 partes, que no es lo que ocurre.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-1"
   },
   {
@@ -3385,7 +3385,7 @@
    ],
    "correcta": 1,
    "tip": "El total x se divide entre 8 y ese resultado es 15: x/8 = 15. La forma 8x = 15 diría que 8 grupos de x láminas dan solo 15, mucho menos que el total real.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-2"
   },
   {
@@ -3399,7 +3399,7 @@
    ],
    "correcta": 2,
    "tip": "Como 9 multiplica a x, se despeja dividiendo: 108 dividido en 9 es 12. Se comprueba sustituyendo: 9 por 12 da 108. Restar o sumar 9 no deshace una multiplicación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-3"
   },
   {
@@ -3413,7 +3413,7 @@
    ],
    "correcta": 0,
    "tip": "Como x está dividido en 7, se despeja multiplicando: 13 por 7 es 91. Al sustituir, 91 dividido en 7 da 13. Volver a dividir repite la operación en vez de deshacerla.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-4"
   },
   {
@@ -3427,7 +3427,7 @@
    ],
    "correcta": 1,
    "tip": "Cada bolsa gasta 5 dulces, así que 5x es el total usado, y ese total tiene que quedar bajo 60. Poner una igualdad obligaría a usar exactamente 60 dulces, que no es lo que dice el problema.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-5"
   },
   {
@@ -3441,7 +3441,7 @@
    ],
    "correcta": 3,
    "tip": "La solución de una inecuación no es un número sino un conjunto: sirve cualquier x menor que 8, como 7 o 2. El 8 mismo no sirve, porque 4 por 8 da 32 y 32 no es menor que 32.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-6"
   },
   {
@@ -3455,7 +3455,7 @@
    ],
    "correcta": 3,
    "tip": "A lo más marca un tope que sí se puede alcanzar, por eso va menor o igual. Menos de 600 sería otra cosa: dejaría fuera el caso de las 24 cajas que pesan exactamente 600 kilos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-7"
   },
   {
@@ -3469,7 +3469,7 @@
    ],
    "correcta": 2,
    "tip": "Menos de 9.000 deja fuera los 9.000 exactos, así que la desigualdad es estricta. Con 6 completos gastaría justo 9.000 y ya no cumpliría la condición del problema.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-8"
   },
   {
@@ -3483,7 +3483,7 @@
    ],
    "correcta": 2,
    "tip": "Lo que queda en cada vaso es x dividido en 6, y ese valor debe quedar bajo 250. Multiplicar por 6 modelaría el total de seis bidones, no el contenido de un vaso.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-9"
   },
   {
@@ -3497,7 +3497,7 @@
    ],
    "correcta": 3,
    "tip": "Lo ahorrado en x semanas es 3.000 por x, y eso debe superar los 45.000. Escribir 3.000 + x sumaría semanas con pesos, dos cantidades que no se pueden sumar entre sí.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-10"
   },
   {
@@ -3511,7 +3511,7 @@
    ],
    "correcta": 1,
    "tip": "Se multiplica por 3 a ambos lados y queda x mayor que 36. El 36 justo no sirve, porque 36 dividido en 3 da 12 y 12 no es mayor que 12. Multiplicar por un número positivo no cambia el sentido de la desigualdad.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-11"
   },
   {
@@ -3525,7 +3525,7 @@
    ],
    "correcta": 0,
    "tip": "84 más 7 da 91, que es lo que hizo. Como 7 multiplica a x, la operación que la deja sola es la división: 84 dividido en 7 es 12, y al sustituir, 7 por 12 da 84.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-12"
   },
   {
@@ -3539,7 +3539,7 @@
    ],
    "correcta": 0,
    "tip": "La inecuación es 3.000x menor que 20.000, o sea x menor que 6,66. Como las entradas son números enteros, el mayor que cumple es 6: gasta 18.000. Con 7 gastaría 21.000 y no le alcanza.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-13"
   },
   {
@@ -3553,7 +3553,7 @@
    ],
    "correcta": 1,
    "tip": "En x semanas crece 4 por x centímetros, y eso debe dar 52: la solución es 13 semanas. Sumar 4 más x mezclaría centímetros con semanas, que son unidades distintas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-14"
   },
   {
@@ -3567,7 +3567,7 @@
    ],
    "correcta": 3,
    "tip": "Comprobar una solución es reemplazarla en la ecuación y ver si la igualdad se cumple: 8 por 15 es 120, así que sirve. El tamaño de x frente al otro número no dice nada por sí solo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-15"
   },
   {
@@ -3581,7 +3581,7 @@
    ],
    "correcta": 1,
    "tip": "Menor que es estricto: el valor que da la igualdad justa queda fuera. Con x igual a 8 sí se cumple, porque 40 es menor que 45. Comparar 9 con 45 sin multiplicar ignora el 5 que acompaña a la incógnita.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-16"
   },
   {
@@ -3595,7 +3595,7 @@
    ],
    "correcta": 2,
    "tip": "Hay que dividir cada valor en 4 y comparar con 6: 28 dividido en 4 da 7, que sí es mayor. Con 24 se obtiene exactamente 6, y 6 no es mayor que 6, así que el borde queda fuera.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-17"
   },
   {
@@ -3609,7 +3609,7 @@
    ],
    "correcta": 3,
    "tip": "Al menos 96 significa 96 o más, así que la desigualdad incluye el valor. Con 12 mesas se llega justo a 96 y la condición se cumple; exigir mayor que dejaría fuera esa solución válida.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-18"
   },
   {
@@ -3623,7 +3623,7 @@
    ],
    "correcta": 0,
    "tip": "En x/12 la incógnita es el total que se divide, y el 5 es lo que queda en cada parte. Doce cajas de 5 se escribiría como 12 por 5, una multiplicación y no una división.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-19"
   },
   {
@@ -3637,7 +3637,7 @@
    ],
    "correcta": 2,
    "tip": "El 250 multiplica a la incógnita, así que es el precio unitario y x es la cantidad; el 2.000 es el tope del gasto. Si el 250 fuera la cantidad de lápices, la incógnita sería el precio y aparecería en otro lugar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-20"
   },
   {
@@ -3651,7 +3651,7 @@
    ],
    "correcta": 0,
    "tip": "La ecuación es 7.500x = 60.000 y se despeja dividiendo: 60.000 dividido en 7.500 da 8. Al comprobar, 7.500 por 8 es exactamente 60.000, sin dinero sobrante.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-21"
   },
   {
@@ -3665,7 +3665,7 @@
    ],
    "correcta": 2,
    "tip": "La ecuación es 15x = 450, y al dividir queda x igual a 30. Comprobando: en 30 minutos entrega 15 por 30, o sea 450 litros exactos. Restar o multiplicar no despeja una incógnita que está multiplicada.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-22"
   },
   {
@@ -3679,7 +3679,7 @@
    ],
    "correcta": 1,
    "tip": "La inecuación es 4x mayor que 240, y al dividir en 4 queda x mayor que 60. Con 60 justos se llega a 240 y no se supera, así que ese valor queda fuera del conjunto solución.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-23"
   },
   {
@@ -3693,7 +3693,7 @@
    ],
    "correcta": 2,
    "tip": "Quíntuple significa cinco veces, así que la ecuación es 5x = 30 y el número es 6. Con x/5 = 30 el resultado sería 150, que es la quinta parte al revés: un error de traducción, no de cálculo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-24"
   },
   {
@@ -3707,7 +3707,7 @@
    ],
    "correcta": 1,
    "tip": "Se necesita 5x mayor que 40, o sea x mayor que 8. Los 8 furgones cubren exactamente 40 y el problema pide más de 40, así que el menor entero que sirve es 9.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-25"
   },
   {
@@ -3721,7 +3721,7 @@
    ],
    "correcta": 3,
    "tip": "La ecuación aparece cuando el enunciado fija un valor exacto, como costaron 18.000. Expresiones como no puede pasar de, menos de o más de marcan un rango de valores y llevan a una inecuación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-26"
   },
   {
@@ -3735,7 +3735,7 @@
    ],
    "correcta": 0,
    "tip": "Al multiplicar por 2 queda x mayor que 18, y el menor entero mayor que 18 es 19: 19 dividido en 2 da 9,5, que sí supera a 9. Con 18 se obtiene 9 exacto y no cumple la desigualdad estricta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-27"
   },
   {
@@ -3749,7 +3749,7 @@
    ],
    "correcta": 2,
    "tip": "La condición es 2x menor o igual que 30, o sea x menor o igual que 15. Como a lo más incluye el tope, los 15 libros que pesan justo 30 kilos sí caben, y cualquier cantidad menor también.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-28"
   },
   {
@@ -3763,7 +3763,7 @@
    ],
    "correcta": 0,
    "tip": "La situación se modela como 4x = 12.000 y se despeja dividiendo: cada entrada vale 3.000. Al comprobar, 4 por 3.000 da 12.000, el total que efectivamente pagó.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-29"
   },
   {
@@ -3777,7 +3777,7 @@
    ],
    "correcta": 0,
    "tip": "Una ecuación pregunta qué valor iguala y suele dar uno solo; una inecuación pregunta qué valores cumplen una condición, y eso forma un conjunto: 6, 5, 4 y cualquier número menor que 7 sirven.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa09-30"
   },
   {
@@ -3791,7 +3791,7 @@
    ],
    "correcta": 2,
    "tip": "La demostración clásica traza una paralela al lado opuesto por un vértice: los dos ángulos de la base reaparecen arriba y, con el tercero, completan un ángulo extendido de 180 grados. Que el equilátero mida 60 y 60 y 60 es un caso particular, no la razón.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-1"
   },
   {
@@ -3805,7 +3805,7 @@
    ],
    "correcta": 0,
    "tip": "Los ángulos de los dos triángulos, juntos, son exactamente los cuatro ángulos del cuadrilátero: 180 más 180 da 360 grados. Multiplicar por los cuatro lados en vez de por los dos triángulos es el error típico.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-2"
   },
   {
@@ -3819,7 +3819,7 @@
    ],
    "correcta": 2,
    "tip": "Desde un vértice salen diagonales hacia los vértices que no son vecinos: en el pentágono son dos diagonales, que dejan tres triángulos. Por eso sus interiores suman 3 por 180, o sea 540 grados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-3"
   },
   {
@@ -3833,7 +3833,7 @@
    ],
    "correcta": 1,
    "tip": "Desde un vértice el polígono se corta en n - 2 triángulos, y cada triángulo aporta 180 grados. Multiplicar por n es el error más frecuente: da de más justo dos triángulos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-4"
   },
   {
@@ -3847,7 +3847,7 @@
    ],
    "correcta": 1,
    "tip": "Con n igual a 6: (6 - 2) por 180 da 720 grados. Los 1.080 salen de multiplicar por los 6 lados, y los 360 son la suma de los ángulos exteriores, no de los interiores.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-5"
   },
   {
@@ -3861,7 +3861,7 @@
    ],
    "correcta": 0,
    "tip": "Con n igual a 8: (8 - 2) por 180 da 1.080 grados. Los 1.440 salen de multiplicar por los 8 lados; los 900 corresponden al heptágono.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-6"
   },
   {
@@ -3875,7 +3875,7 @@
    ],
    "correcta": 2,
    "tip": "Es el resultado más sorprendente del tema: triángulo, cuadrilátero o decágono, los exteriores siempre suman 360 grados. Lo que cambia con los lados es cuánto mide cada uno, no el total.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-7"
   },
   {
@@ -3889,7 +3889,7 @@
    ],
    "correcta": 2,
    "tip": "La suma de los exteriores es 360 grados en cualquier polígono convexo, regular o no. Más lados significa repartir esos 360 grados entre más ángulos, así que cada uno sale más chico.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-8"
   },
   {
@@ -3903,7 +3903,7 @@
    ],
    "correcta": 0,
    "tip": "Primero la suma: (5 - 2) por 180 da 540 grados. Recién ahí se divide entre los 5 ángulos iguales y salen 108 grados. Quedarse en 540 es confundir la suma total con un solo ángulo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-9"
   },
   {
@@ -3917,7 +3917,7 @@
    ],
    "correcta": 1,
    "tip": "Los interiores del hexágono suman 720 grados repartidos entre 6 ángulos iguales: 120 cada uno, y 120 por 3 da 360. Los 60 grados son el ángulo exterior. Con pentágonos regulares no funciona, porque 108 no divide a 360.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-10"
   },
   {
@@ -3931,7 +3931,7 @@
    ],
    "correcta": 0,
    "tip": "Los exteriores suman 360 grados y en un polígono regular son todos iguales: 360 dividido por 8 da 45 grados. Los 135 grados son el ángulo interior, que es su suplemento.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-11"
   },
   {
@@ -3945,7 +3945,7 @@
    ],
    "correcta": 0,
    "tip": "Como los exteriores suman 360 grados y todos son iguales, el número de lados es 360 dividido por 36, o sea 10. Responder 36 es repetir el dato del enunciado sin dividir.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-12"
   },
   {
@@ -3959,7 +3959,7 @@
    ],
    "correcta": 3,
    "tip": "El exterior se forma prolongando un lado, así que interior y exterior están alineados y arman un ángulo extendido: 180 grados. Solo se hacen iguales cuando los dos miden 90 grados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-13"
   },
   {
@@ -3973,7 +3973,7 @@
    ],
    "correcta": 0,
    "tip": "Se resuelve (n - 2) por 180 igual a 1.440: dividiendo, n - 2 da 8, así que n es 10. Responder 8 es olvidar sumarle los dos triángulos que descuenta la fórmula.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-14"
   },
   {
@@ -3987,7 +3987,7 @@
    ],
    "correcta": 3,
    "tip": "Los tres suman 180 grados: 47 más 68 da 115, y 180 menos 115 deja 65 grados. Los 115 grados son la suma de los dos ángulos conocidos, no el que falta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-15"
   },
   {
@@ -4001,7 +4001,7 @@
    ],
    "correcta": 1,
    "tip": "Los cuatro suman 360 grados: 95 más 100 más 85 da 280, y 360 menos 280 deja 80 grados. Los 280 grados son lo que ya está ocupado, no lo que falta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-16"
   },
   {
@@ -4015,7 +4015,7 @@
    ],
    "correcta": 0,
    "tip": "El interior vecino mide 55 grados, porque completa 180 con el exterior. Como los tres interiores suman 180, los otros dos suman 125: justo lo mismo que el ángulo exterior. Esa es la relación que hay que descubrir.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-17"
   },
   {
@@ -4029,7 +4029,7 @@
    ],
    "correcta": 0,
    "tip": "Al trazar diagonales desde un vértice, los dos lados vecinos no dan diagonal, así que quedan n - 2 triángulos y cada uno aporta 180 grados. No se resta nada al final: el 2 viene del conteo de triángulos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-18"
   },
   {
@@ -4043,7 +4043,7 @@
    ],
    "correcta": 3,
    "tip": "Si el interior mide 150, el exterior mide 30 grados, porque juntos dan 180. Y 360 dividido por 30 da 12 lados. Ir por los exteriores es mucho más corto que despejar la fórmula de los interiores.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-19"
   },
   {
@@ -4057,7 +4057,7 @@
    ],
    "correcta": 0,
    "tip": "Cada lado nuevo agrega exactamente un triángulo, o sea 180 grados: el hexágono suma 720 y el heptágono 900. Con los exteriores pasa lo contrario, ahí el total no cambia nunca.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-20"
   },
   {
@@ -4071,7 +4071,7 @@
    ],
    "correcta": 2,
    "tip": "La suma es (n - 2) por 180, así que solo puede dar 180, 360, 540, 720, 900, 1.080 y así. 1.000 no es múltiplo de 180 y queda entre el heptágono y el octágono. Ser irregular no cambia la suma.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-21"
   },
   {
@@ -4085,7 +4085,7 @@
    ],
    "correcta": 1,
    "tip": "En cada vértice gira justo el ángulo exterior, y al volver mirando igual dio una vuelta completa: 360 grados. Ese paseo es la mejor explicación de por qué los exteriores suman siempre lo mismo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-22"
   },
   {
@@ -4099,7 +4099,7 @@
    ],
    "correcta": 1,
    "tip": "Los exteriores suman 360 grados y son tres iguales: 120 grados cada uno. Los 60 grados son el ángulo interior, que es su suplemento.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-23"
   },
   {
@@ -4113,7 +4113,7 @@
    ],
    "correcta": 2,
    "tip": "Si el interior midiera 100, el exterior mediría 80, y el número de lados sería 360 dividido por 80, o sea 4,5: imposible. El pentágono regular tiene 108 grados y el cuadrado 90, así que tampoco es cierto que siempre pasen de 120.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-24"
   },
   {
@@ -4127,7 +4127,7 @@
    ],
    "correcta": 3,
    "tip": "Ser irregular cambia cuánto mide cada ángulo exterior, pero no el total: en cualquier polígono convexo los exteriores suman 360 grados. Los 540 grados son la suma de los interiores del pentágono.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-25"
   },
   {
@@ -4141,7 +4141,7 @@
    ],
    "correcta": 0,
    "tip": "La suma del pentágono es (5 - 2) por 180, o sea 540 grados. Los cuatro datos suman 425, así que faltan 115 grados. Los 425 son lo ya ocupado, no lo que falta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-26"
   },
   {
@@ -4155,7 +4155,7 @@
    ],
    "correcta": 0,
    "tip": "El pentágono se parte en 3 triángulos, no en 5: (5 - 2) por 180 da 540 grados. Los 900 grados corresponden a un heptágono, que sí tiene siete lados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-27"
   },
   {
@@ -4169,7 +4169,7 @@
    ],
    "correcta": 2,
    "tip": "El hexágono regular tiene interiores de 120 grados y el octágono de 135. Al agregar lados, el exterior se achica y por eso el interior, que es su suplemento, crece. El exterior del hexágono es 60 y el del octágono 45, así que el hexágono los tiene más grandes, no más chicos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-28"
   },
   {
@@ -4183,7 +4183,7 @@
    ],
    "correcta": 1,
    "tip": "El exterior mide 360 dividido por 20, o sea 18 grados, y el interior es su suplemento: 162 grados. Los 3.240 grados son la suma de los veinte interiores, no uno solo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-29"
   },
   {
@@ -4197,7 +4197,7 @@
    ],
    "correcta": 2,
    "tip": "El total de los exteriores queda fijo en 360 grados, así que repartirlo entre más ángulos deja a cada uno más chico: 120 en el triángulo, 90 en el cuadrado, 60 en el hexágono. Lo que crece con los lados es el interior.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa10-30"
   },
   {
@@ -4211,7 +4211,7 @@
    ],
    "correcta": 0,
    "tip": "Esa división da siempre el mismo número, llamado pi, sin importar si el círculo es una moneda o la rueda de un camión. Cuando el círculo crece, el contorno y el diámetro crecen juntos, así que la razón entre ellos no cambia.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-1"
   },
   {
@@ -4225,7 +4225,7 @@
    ],
    "correcta": 3,
    "tip": "Pi nace de dividir el perímetro por el diámetro, y da algo más de 3 en todo círculo. El diámetro dividido por el radio siempre da 2, que es una relación distinta y mucho más simple.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-2"
   },
   {
@@ -4239,7 +4239,7 @@
    ],
    "correcta": 2,
    "tip": "En teoría las tres divisiones dan pi. Al medir con instrumentos reales siempre hay un margen de un par de milímetros, y eso mueve el resultado en las centésimas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-3"
   },
   {
@@ -4253,7 +4253,7 @@
    ],
    "correcta": 0,
    "tip": "El perímetro es pi veces el diámetro, y pi vale aproximadamente 3,14: por eso el diámetro cabe tres veces y un poco más. El que cabe algo más de 6 veces es el radio, que mide la mitad.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-4"
   },
   {
@@ -4267,7 +4267,7 @@
    ],
    "correcta": 0,
    "tip": "Pi vale aproximadamente 3,14, así que está entre 3 y 4. Saberlo permite estimar sin calculadora: el contorno de cualquier círculo es un poco más de tres veces su diámetro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-5"
   },
   {
@@ -4281,7 +4281,7 @@
    ],
    "correcta": 1,
    "tip": "El diámetro atraviesa el círculo de lado a lado pasando por el centro, así que está formado por dos radios: siempre mide el doble. Multiplicar por pi sirve para el perímetro, no para el diámetro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-6"
   },
   {
@@ -4295,7 +4295,7 @@
    ],
    "correcta": 2,
    "tip": "El radio va del centro al borde, o sea recorre la mitad del diámetro. Confundir cuál es el doble de cuál es el error más común de este contenido.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-7"
   },
   {
@@ -4309,7 +4309,7 @@
    ],
    "correcta": 3,
    "tip": "El perímetro es pi por el diámetro: 3,14 por 10 da 31,4. Multiplicar pi por el radio al cuadrado entrega el área, que es una superficie y no una longitud.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-8"
   },
   {
@@ -4323,7 +4323,7 @@
    ],
    "correcta": 1,
    "tip": "Con el radio, el perímetro es 2 por pi por el radio: 2 por 3,14 por 8 da 50,24. Si solo multiplicas pi por el radio, te olvidas de que el diámetro son dos radios.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-9"
   },
   {
@@ -4337,7 +4337,7 @@
    ],
    "correcta": 2,
    "tip": "El área es pi por el radio al cuadrado: 3,14 por 100 da 314. La expresión 2 por pi por el radio entrega el perímetro, que se mide en centímetros y no en centímetros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-10"
   },
   {
@@ -4351,7 +4351,7 @@
    ],
    "correcta": 2,
    "tip": "Para el área hay que usar el radio, no el diámetro: la mitad de 12 es 6, y 3,14 por 36 da 113,04. Usar el diámetro en la fórmula del área cuadruplica el resultado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-11"
   },
   {
@@ -4365,7 +4365,7 @@
    ],
    "correcta": 3,
    "tip": "3,14 por 5 al cuadrado da 78,5, que es el área. El perímetro de ese círculo es 2 por 3,14 por 5, o sea 31,4 centímetros. Mezclar las dos fórmulas es el error más frecuente de este contenido.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-12"
   },
   {
@@ -4379,7 +4379,7 @@
    ],
    "correcta": 3,
    "tip": "El borde de un círculo es una línea, y su medida es el perímetro. El área serviría si tuviera que comprar la tela del mantel, que cubre una superficie.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-13"
   },
   {
@@ -4393,7 +4393,7 @@
    ],
    "correcta": 1,
    "tip": "Cubrir una superficie se mide con el área, en metros cuadrados. El perímetro sirve para lo que rodea la rotonda, como una reja o una solera.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-14"
   },
   {
@@ -4407,7 +4407,7 @@
    ],
    "correcta": 3,
    "tip": "La circunferencia se define como lugar geométrico: le pertenecen los puntos que cumplen la condición de estar a la misma distancia del centro, y esa distancia es justamente el radio.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-15"
   },
   {
@@ -4421,7 +4421,7 @@
    ],
    "correcta": 0,
    "tip": "La cabra alcanza todos los puntos que están a 6 metros o menos de la estaca, y esa región completa es el círculo. La circunferencia sería solo la línea del borde, donde la cuerda queda estirada.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-16"
   },
   {
@@ -4435,7 +4435,7 @@
    ],
    "correcta": 3,
    "tip": "La frontera es una línea, y la línea que reúne los puntos a igual distancia del centro es la circunferencia. La zona con señal, que incluye el interior, es el círculo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-17"
   },
   {
@@ -4449,7 +4449,7 @@
    ],
    "correcta": 0,
    "tip": "La circunferencia es la línea; el círculo es la región que esa línea encierra. Por eso el perímetro corresponde al largo de la circunferencia y el área corresponde al círculo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-18"
   },
   {
@@ -4463,7 +4463,7 @@
    ],
    "correcta": 3,
    "tip": "En una vuelta la rueda apoya todo su contorno en el suelo, así que avanza su perímetro: 3,14 por 50 da 157 centímetros. El área no sirve aquí porque mide superficie, no recorrido.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-19"
   },
   {
@@ -4477,7 +4477,7 @@
    ],
    "correcta": 0,
    "tip": "Cada vuelta avanza 3,14 metros, y 31,4 dividido por 3,14 da 10. Suponer que avanza su diámetro es el error típico: el contorno mide más de tres veces esa medida.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-20"
   },
   {
@@ -4491,7 +4491,7 @@
    ],
    "correcta": 1,
    "tip": "Si el perímetro se obtiene multiplicando el diámetro por pi, para volver atrás hay que dividir por pi: 31,4 dividido por 3,14 da 10. Dividir además por 2 entrega el radio.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-21"
   },
   {
@@ -4505,7 +4505,7 @@
    ],
    "correcta": 2,
    "tip": "En la fórmula del área el radio va elevado al cuadrado, así que al duplicarlo el área se multiplica por 2 al cuadrado, o sea por 4. El que se duplica es el perímetro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-22"
   },
   {
@@ -4519,7 +4519,7 @@
    ],
    "correcta": 2,
    "tip": "El perímetro es 2 por pi por el radio: si el radio se duplica, el resultado se duplica. La que crece cuatro veces es el área, porque ahí el radio va al cuadrado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-23"
   },
   {
@@ -4533,7 +4533,7 @@
    ],
    "correcta": 3,
    "tip": "El radio está elevado al cuadrado, así que triplicarlo multiplica el área por 3 al cuadrado, o sea por 9. El perímetro, en cambio, sí se triplica.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-24"
   },
   {
@@ -4547,7 +4547,7 @@
    ],
    "correcta": 3,
    "tip": "El alcance del aspersor es el radio, así que el área es 3,14 por 8 al cuadrado, o sea 200,96. Elevar al cuadrado sin multiplicar por pi da el área de un cuadrado, no de un círculo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-25"
   },
   {
@@ -4561,7 +4561,7 @@
    ],
    "correcta": 1,
    "tip": "La familiar tiene 706,5 centímetros cuadrados y la individual 176,6: cuatro individuales suman lo mismo. Como el radio va al cuadrado, duplicar el tamaño cuadruplica la masa.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-26"
   },
   {
@@ -4575,7 +4575,7 @@
    ],
    "correcta": 0,
    "tip": "El perímetro es algo más de tres veces el diámetro: tres veces 30 son 90, y el valor exacto es 94,2 centímetros. Los 700 corresponden al área, que se mide en centímetros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-27"
   },
   {
@@ -4589,7 +4589,7 @@
    ],
    "correcta": 2,
    "tip": "El área es pi por el radio al cuadrado: 10 al cuadrado son 100, y algo más de tres veces 100 son poco más de 300. El valor exacto usando 3,14 es 314 centímetros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-28"
   },
   {
@@ -4603,7 +4603,7 @@
    ],
    "correcta": 3,
    "tip": "El perímetro depende del radio de forma directa, así que se duplica. El área depende del radio al cuadrado, así que se multiplica por cuatro: 28,26 pasa a 113,04 centímetros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-29"
   },
   {
@@ -4617,7 +4617,7 @@
    ],
    "correcta": 1,
    "tip": "Los puntos que están a distancia exactamente 5 forman la circunferencia; los que están a menos de 5 llenan la región que ella encierra, es decir el interior del círculo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa11-30"
   },
   {
@@ -4631,7 +4631,7 @@
    ],
    "correcta": 0,
    "tip": "Bisectriz viene de partir en dos: parte el ángulo en dos ángulos iguales. Cortar perpendicular por el punto medio es la mediatriz, y eso se le hace a un segmento, no a un ángulo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-1"
   },
   {
@@ -4645,7 +4645,7 @@
    ],
    "correcta": 1,
    "tip": "La mediatriz exige las dos cosas a la vez: pasar por el punto medio Y ser perpendicular. Si solo pasa por el punto medio es una recta cualquiera, y si solo es perpendicular puede cortar en cualquier parte.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-2"
   },
   {
@@ -4659,7 +4659,7 @@
    ],
    "correcta": 1,
    "tip": "La bisectriz es el lugar de los puntos que equidistan de los LADOS del ángulo. Equidistar de dos puntos, como los extremos de un segmento, es lo propio de la mediatriz: ahí está el error más común.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-3"
   },
   {
@@ -4673,7 +4673,7 @@
    ],
    "correcta": 3,
    "tip": "Todo punto de la mediatriz equidista de los dos extremos, esté cerca o lejos del segmento. Por eso la mediatriz sirve para buscar lugares a la misma distancia de dos puntos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-4"
   },
   {
@@ -4687,7 +4687,7 @@
    ],
    "correcta": 0,
    "tip": "Con dos arcos de igual radio desde cada extremo se obtienen dos cruces, y la recta que los une es la mediatriz: corta el segmento exactamente en el punto medio. La bisectriz se le traza a un ángulo, no a un segmento.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-5"
   },
   {
@@ -4701,7 +4701,7 @@
    ],
    "correcta": 0,
    "tip": "La altura pide perpendicularidad, no punto medio: ir al punto medio del lado opuesto es la mediana. Son distintas salvo en casos especiales, como el vértice superior de un triángulo isósceles.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-6"
   },
   {
@@ -4715,7 +4715,7 @@
    ],
    "correcta": 0,
    "tip": "Si el pie de la perpendicular no cae dentro del lado, hay que prolongar ese lado y la altura queda por fuera. Por eso altura no significa siempre un segmento dibujado dentro de la figura.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-7"
   },
   {
@@ -4729,7 +4729,7 @@
    ],
    "correcta": 3,
    "tip": "La mediana va de vértice a punto medio, sin importar el ángulo que forme. Llegar formando ángulo recto es la altura, y coinciden solo en casos especiales.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-8"
   },
   {
@@ -4743,7 +4743,7 @@
    ],
    "correcta": 0,
    "tip": "En un isósceles, la altura desde el vértice entre los lados iguales cae justo en el punto medio de la base: ahí altura, mediana, bisectriz y mediatriz coinciden. En un triángulo cualquiera son cuatro rectas distintas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-9"
   },
   {
@@ -4757,7 +4757,7 @@
    ],
    "correcta": 2,
    "tip": "Baricentro y medianas van juntos: es el punto donde el triángulo recortado en cartón se equilibra sobre la punta de un lápiz. Las alturas dan el ortocentro, las bisectrices el incentro y las mediatrices el circuncentro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-10"
   },
   {
@@ -4771,7 +4771,7 @@
    ],
    "correcta": 2,
    "tip": "El círculo inscrito toca los tres lados, así que su centro debe equidistar de los lados, y eso lo cumplen los puntos de las bisectrices. Su cruce es el incentro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-11"
   },
   {
@@ -4785,7 +4785,7 @@
    ],
    "correcta": 1,
    "tip": "El círculo circunscrito pasa por los tres vértices, o sea que su centro equidista de tres puntos: eso lo dan las mediatrices. Equidistar de los lados es lo del incentro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-12"
   },
   {
@@ -4799,7 +4799,7 @@
    ],
    "correcta": 2,
    "tip": "Estar a la misma distancia de puntos siempre es mediatriz. El cruce de las tres mediatrices es el circuncentro, que equidista de los tres vértices: el pozo va ahí.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-13"
   },
   {
@@ -4813,7 +4813,7 @@
    ],
    "correcta": 1,
    "tip": "Los senderos son líneas, no puntos: estar a igual distancia de dos líneas que se cruzan es la bisectriz de su ángulo. La mediatriz serviría si se tratara de dos puntos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-14"
   },
   {
@@ -4827,7 +4827,7 @@
    ],
    "correcta": 3,
    "tip": "La bisectriz parte el ángulo en dos partes iguales, así que cada una mide la mitad: 76 dividido en 2 da 38 grados. Dividirlo en cuatro exigiría trazar dos bisectrices más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-15"
   },
   {
@@ -4841,7 +4841,7 @@
    ],
    "correcta": 1,
    "tip": "La razón 2 : 1 reparte la mediana en tres partes: dos quedan del lado del vértice y una del lado opuesto. Con 21 centímetros cada parte vale 7, así que del vértice al baricentro hay 14. Que sea centro no significa que esté en la mitad.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-16"
   },
   {
@@ -4855,7 +4855,7 @@
    ],
    "correcta": 1,
    "tip": "Congruentes significa que una calza exactamente sobre la otra: mismos lados y mismos ángulos. Misma forma con distinto tamaño es semejanza, y misma área con otra forma no es ninguna de las dos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-17"
   },
   {
@@ -4869,7 +4869,7 @@
    ],
    "correcta": 3,
    "tip": "Cada lado del segundo es el doble del primero, así que la forma se conserva y los ángulos son iguales: son semejantes. Para ser congruentes tendrían que medir exactamente lo mismo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-18"
   },
   {
@@ -4883,7 +4883,7 @@
    ],
    "correcta": 2,
    "tip": "Cualquiera de los tres lados puede tomarse como base, así que hay tres alturas, tres medianas, tres bisectrices y tres mediatrices. Dibujar el triángulo apoyado sobre un lado hace creer que solo hay una.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-19"
   },
   {
@@ -4897,7 +4897,7 @@
    ],
    "correcta": 0,
    "tip": "El incentro es el centro del círculo inscrito, que está metido dentro de la figura, así que nunca puede salirse. El que sí sale en un obtusángulo es el circuncentro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-20"
   },
   {
@@ -4911,7 +4911,7 @@
    ],
    "correcta": 2,
    "tip": "El circuncentro solo tiene que equidistar de los tres vértices, y para lograrlo en un obtusángulo debe salirse de la figura. En un triángulo rectángulo cae justo en el punto medio de la hipotenusa.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-21"
   },
   {
@@ -4925,7 +4925,7 @@
    ],
    "correcta": 0,
    "tip": "En el equilátero cada altura es a la vez mediana, bisectriz y mediatriz, así que los puntos notables se juntan en el centro. Por eso el círculo inscrito y el circunscrito comparten centro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-22"
   },
   {
@@ -4939,7 +4939,7 @@
    ],
    "correcta": 3,
    "tip": "Inscrito significa metido dentro: el círculo es tangente a los tres lados. El que pasa por los vértices y encierra la figura es el circunscrito.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-23"
   },
   {
@@ -4953,7 +4953,7 @@
    ],
    "correcta": 2,
    "tip": "Con el compás se llevan las longitudes y se cruzan dos arcos para ubicar el tercer vértice. Los ángulos no hacen falta: tres lados iguales ya obligan a que el triángulo sea congruente.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-24"
   },
   {
@@ -4967,7 +4967,7 @@
    ],
    "correcta": 2,
    "tip": "Tres lados iguales determinan un único triángulo posible, así que los ángulos quedan forzados: es el criterio lado-lado-lado. Girar o dar vuelta la figura no cambia que sea congruente.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-25"
   },
   {
@@ -4981,7 +4981,7 @@
    ],
    "correcta": 3,
    "tip": "En figuras congruentes cada lado y cada ángulo correspondiente son iguales. Guardar una razón constante sin medir lo mismo es lo que ocurre entre figuras semejantes.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-26"
   },
   {
@@ -4995,7 +4995,7 @@
    ],
    "correcta": 0,
    "tip": "Con centro en el punto exterior se corta la recta en dos puntos que quedan a igual distancia de él, y la mediatriz de esos dos puntos pasa por él y es perpendicular a la recta. Todo se apoya en la equidistancia.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-27"
   },
   {
@@ -5009,7 +5009,7 @@
    ],
    "correcta": 0,
    "tip": "Una recta auxiliar corta a las dos rectas y forma ángulos correspondientes: si el ángulo copiado en el punto es igual, las rectas son paralelas. También sirve trazar dos perpendiculares seguidas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-28"
   },
   {
@@ -5023,7 +5023,7 @@
    ],
    "correcta": 3,
    "tip": "Si la mediatriz pasa por el vértice opuesto, ese vértice equidista de los dos extremos del lado, así que los otros dos lados son iguales y el triángulo es isósceles. Ocurre, pero no en cualquier triángulo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-29"
   },
   {
@@ -5037,7 +5037,7 @@
    ],
    "correcta": 2,
    "tip": "También en los cuadriláteros la altura es una perpendicular entre un vértice y el lado opuesto, y es la que entra en el área del paralelogramo. La diagonal es otra cosa: une dos vértices, no un vértice con un punto medio.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa12-30"
   },
   {
@@ -5051,7 +5051,7 @@
    ],
    "correcta": 1,
    "tip": "Con dos triángulos iguales se arma exactamente un paralelogramo de la misma base y la misma altura: por eso el triángulo vale la mitad. La altura no depende de la base ni tiene que ver con la cantidad de lados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-1"
   },
   {
@@ -5065,7 +5065,7 @@
    ],
    "correcta": 0,
    "tip": "Área es base por altura dividido en dos: 12 por 5 es 60, y la mitad es 30. Quedarse en 60 es olvidar dividir por dos, y sumar 12 más 5 no calcula ninguna área.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-2"
   },
   {
@@ -5079,7 +5079,7 @@
    ],
    "correcta": 2,
    "tip": "En el paralelogramo se multiplica la base por la ALTURA, que es perpendicular a ella: 9 por 4 es 36. Usar el lado inclinado de 6 da 54 y es el error más común, porque ese lado no es perpendicular a la base.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-3"
   },
   {
@@ -5093,7 +5093,7 @@
    ],
    "correcta": 3,
    "tip": "Se promedian las bases y se multiplica por la altura: 8 más 12 es 20, la mitad es 10, y 10 por 5 es 50. Sumar las bases sin promediar da 100, el doble de lo correcto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-4"
   },
   {
@@ -5107,7 +5107,7 @@
    ],
    "correcta": 2,
    "tip": "Al cortar el trapecio a media altura y girar la pieza de arriba se arma un paralelogramo de la misma altura cuya base es el promedio de las dos bases. Por eso el promedio no es un truco de medición: es la base equivalente.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-5"
   },
   {
@@ -5121,7 +5121,7 @@
    ],
    "correcta": 1,
    "tip": "La altura siempre se mide en ángulo recto respecto de la base. El lado inclinado es más largo que la altura y usarlo infla el área; la diagonal tampoco sirve, porque no es perpendicular a la base.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-6"
   },
   {
@@ -5135,7 +5135,7 @@
    ],
    "correcta": 0,
    "tip": "Se despeja al revés: 24 por 2 es 48, y 48 dividido en 8 da 6. Dividir 24 en 8 y quedarse en 3 olvida que el área ya venía dividida por dos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-7"
   },
   {
@@ -5149,7 +5149,7 @@
    ],
    "correcta": 1,
    "tip": "En el paralelogramo el área es base por altura, sin dividir: 48 dividido en 6 da 8. Dividir además por dos, como si fuera un triángulo, deja 4, que es la mitad de lo correcto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-8"
   },
   {
@@ -5163,7 +5163,7 @@
    ],
    "correcta": 1,
    "tip": "El promedio de las bases es 7, y 42 dividido en 7 da 6. Si en vez de promediar se suman las bases y se divide 42 en 14, sale 3, la mitad de la altura verdadera.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-9"
   },
   {
@@ -5177,7 +5177,7 @@
    ],
    "correcta": 0,
    "tip": "Mover el vértice de arriba en paralelo a la base cambia la forma del triángulo, pero no su base ni su altura, así que el área no cambia. Los lados y los ángulos no entran en la fórmula.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-10"
   },
   {
@@ -5191,7 +5191,7 @@
    ],
    "correcta": 2,
    "tip": "La altura se mide hacia la recta que prolonga la base, quede dentro o fuera del triángulo. La fórmula vale para todos los triángulos, no solo para los rectángulos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-11"
   },
   {
@@ -5205,7 +5205,7 @@
    ],
    "correcta": 0,
    "tip": "El rectángulo es un caso particular de paralelogramo: sus lados ya son perpendiculares, así que el lado vertical es la altura. No es casualidad ni hace falta partirlo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-12"
   },
   {
@@ -5219,7 +5219,7 @@
    ],
    "correcta": 1,
    "tip": "La altura está multiplicando, así que duplicarla duplica el área: 20 pasa a 40. Se cuadruplicaría solo si también se duplicara la base.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-13"
   },
   {
@@ -5233,7 +5233,7 @@
    ],
    "correcta": 0,
    "tip": "10 por 7 es 70, y la mitad es 35. El resultado 70 corresponde al paralelogramo que se forma con dos de esos triángulos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-14"
   },
   {
@@ -5247,7 +5247,7 @@
    ],
    "correcta": 3,
    "tip": "En el paralelogramo se multiplica y no se divide: 15 por 8 es 120. Dividir por dos da 60 y es confundirlo con la fórmula del triángulo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-15"
   },
   {
@@ -5261,7 +5261,7 @@
    ],
    "correcta": 2,
    "tip": "El promedio de 5 y 11 es 8, y 8 por 6 es 48. Multiplicar la suma 16 por la altura da 96, justo el doble, porque falta promediar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-16"
   },
   {
@@ -5275,7 +5275,7 @@
    ],
    "correcta": 3,
    "tip": "El número es 6 por 5 dividido en dos, o sea 15, y la unidad va al cuadrado porque el área mide una superficie. Escribir centímetros a secas corresponde a un largo, no a un área.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-17"
   },
   {
@@ -5289,7 +5289,7 @@
    ],
    "correcta": 3,
    "tip": "40 por 25 es 1000 y la mitad es 500. Entregar 1000 es olvidar el paso de dividir por dos, que es lo que distingue al triángulo del paralelogramo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-18"
   },
   {
@@ -5303,7 +5303,7 @@
    ],
    "correcta": 2,
    "tip": "El triángulo es la mitad del paralelogramo de igual base e igual altura, así que el paralelogramo es el doble. Los lados inclinados no aparecen en ninguna de las dos fórmulas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-19"
   },
   {
@@ -5317,7 +5317,7 @@
    ],
    "correcta": 3,
    "tip": "Si las bases son iguales, el promedio entre ellas es esa misma medida y la fórmula se reduce a base por altura. Y una figura con dos pares de lados paralelos es justamente un paralelogramo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-20"
   },
   {
@@ -5331,7 +5331,7 @@
    ],
    "correcta": 2,
    "tip": "Solo entran la base y la altura: 10 por 4 es 40. Multiplicar 10 por el lado inclinado de 6 da 60 y sobreestima el área, porque ese lado es más largo que la altura.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-21"
   },
   {
@@ -5345,7 +5345,7 @@
    ],
    "correcta": 1,
    "tip": "En un triángulo rectángulo un cateto sirve de base y el otro de altura, porque son perpendiculares: 9 por 6 dividido en dos da 27. No hace falta conocer la hipotenusa.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-22"
   },
   {
@@ -5359,7 +5359,7 @@
    ],
    "correcta": 2,
    "tip": "Se calcula por partes y se suma: el rectángulo aporta 40 y el triángulo 10 por 3 dividido en dos, o sea 15. El total 70 aparece si al triángulo se le olvida dividir por dos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-23"
   },
   {
@@ -5373,7 +5373,7 @@
    ],
    "correcta": 2,
    "tip": "Al girar media vuelta uno de los triángulos y unirlos por un lado igual se forma un paralelogramo. Ese armado es justamente el origen del paso de dividir por dos en la fórmula del triángulo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-24"
   },
   {
@@ -5387,7 +5387,7 @@
    ],
    "correcta": 3,
    "tip": "El paralelogramo armado tiene el doble del área del trapecio, así que hay que dividir por dos: queda la suma de las bases partida en dos, multiplicada por la altura. Restar las bases no representa ninguna parte de la figura.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-25"
   },
   {
@@ -5401,7 +5401,7 @@
    ],
    "correcta": 2,
    "tip": "La base está multiplicando, así que triplicarla triplica el área: 18 por 3 da 54. Sumarle 3 a la medida de la base no equivale a triplicarla.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-26"
   },
   {
@@ -5415,7 +5415,7 @@
    ],
    "correcta": 3,
    "tip": "Se multiplica el área por dos y se divide por la altura: 36 por 2 es 72, y 72 dividido en 9 da 8. Dividir 36 en 9 y quedarse en 4 deja la base a la mitad.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-27"
   },
   {
@@ -5429,7 +5429,7 @@
    ],
    "correcta": 3,
    "tip": "La altura debe corresponder a la base elegida: como los 5 son la altura sobre el lado de 12, el área es 12 por 5, o sea 60. Multiplicar los dos lados, 12 por 7, es el error clásico de usar el lado en lugar de la altura.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-28"
   },
   {
@@ -5443,7 +5443,7 @@
    ],
    "correcta": 3,
    "tip": "El promedio de 40 y 60 es 50, y 50 por 30 da 1500. Usar la suma 100 por la altura entrega 3000, el doble del área real de la ventana.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-29"
   },
   {
@@ -5457,7 +5457,7 @@
    ],
    "correcta": 0,
    "tip": "La suma de las bases está bien hecha, pero falta dividirla en dos: el promedio es 8 y el área correcta es 8 por 4, o sea 32. Por eso su 64 es exactamente el doble.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa13-30"
   },
   {
@@ -5471,7 +5471,7 @@
    ],
    "correcta": 3,
    "tip": "En un par ordenado el primer número siempre es la coordenada x (horizontal) y el segundo la coordenada y (vertical). El orden no es un detalle: es lo que define la posición.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-1"
   },
   {
@@ -5485,7 +5485,7 @@
    ],
    "correcta": 3,
    "tip": "(2, 7) y (7, 2) son dos puntos distintos del mismo cuadrante. Cambiar el orden de las coordenadas cambia el lugar: el par se llama «ordenado» justamente por eso.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-2"
   },
   {
@@ -5499,7 +5499,7 @@
    ],
    "correcta": 1,
    "tip": "(3, 5) se ubica 3 a la derecha y 5 arriba; (5, 3) se ubica 5 a la derecha y 3 arriba. Ninguno de los dos está sobre un eje: son dos lugares diferentes del primer cuadrante.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-3"
   },
   {
@@ -5513,7 +5513,7 @@
    ],
    "correcta": 3,
    "tip": "El origen es el punto donde se cruzan los dos ejes, así que no avanza nada ni en x ni en y: es (0, 0). Un error frecuente es creer que la cuenta empieza en (1, 1).",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-4"
   },
   {
@@ -5527,7 +5527,7 @@
    ],
    "correcta": 1,
    "tip": "El segundo cuadrante tiene x negativa e y positiva: está a la izquierda del eje y y arriba del eje x. Tener un número negativo no basta para estar en el tercero.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-5"
   },
   {
@@ -5541,7 +5541,7 @@
    ],
    "correcta": 0,
    "tip": "El cuarto cuadrante tiene x positiva e y negativa: a la derecha del eje y y abajo del eje x. El segundo cuadrante es justo el caso contrario.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-6"
   },
   {
@@ -5555,7 +5555,7 @@
    ],
    "correcta": 3,
    "tip": "En el tercer cuadrante las dos coordenadas son negativas. Los cuadrantes se numeran en sentido contrario a los punteros del reloj, partiendo arriba a la derecha.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-7"
   },
   {
@@ -5569,7 +5569,7 @@
    ],
    "correcta": 2,
    "tip": "Para saber el cuadrante hay que mirar los DOS signos, no uno. Con x negativa e y positiva el punto queda a la izquierda y arriba: segundo cuadrante.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-8"
   },
   {
@@ -5583,7 +5583,7 @@
    ],
    "correcta": 0,
    "tip": "Cuando una coordenada vale 0 el punto queda sobre un eje, y los ejes no pertenecen a ningún cuadrante. Con y = 0 el punto está sobre el eje x.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-9"
   },
   {
@@ -5597,7 +5597,7 @@
    ],
    "correcta": 0,
    "tip": "Un punto con alguna coordenada igual a 0 queda sobre un eje, y los ejes son la frontera entre cuadrantes. (0, -5) está sobre el eje y, bajo el origen.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-10"
   },
   {
@@ -5611,7 +5611,7 @@
    ],
    "correcta": 0,
    "tip": "El cuarto cuadrante está a la derecha del eje y (x positiva) y bajo el eje x (y negativa). La combinación contraria corresponde al segundo cuadrante.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-11"
   },
   {
@@ -5625,7 +5625,7 @@
    ],
    "correcta": 3,
    "tip": "Estar sobre el eje y significa no haberse movido horizontalmente: x = 0. Los puntos con y = 0 son los del eje x, y el eje y también incluye valores negativos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-12"
   },
   {
@@ -5639,7 +5639,7 @@
    ],
    "correcta": 0,
    "tip": "En un vector la primera componente es el movimiento horizontal (positivo a la derecha) y la segunda el vertical (negativo hacia abajo). El orden manda, igual que en un par ordenado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-13"
   },
   {
@@ -5653,7 +5653,7 @@
    ],
    "correcta": 0,
    "tip": "Aplicar un vector es sumar componente a componente: 2 + 5 = 7 y 3 + 4 = 7. No se multiplican las coordenadas ni se restan.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-14"
   },
   {
@@ -5667,7 +5667,7 @@
    ],
    "correcta": 0,
    "tip": "8 + (-3) = 5 y 5 + 2 = 7. Una componente negativa mueve hacia la izquierda; sumarla no es lo mismo que ignorar su signo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-15"
   },
   {
@@ -5681,7 +5681,7 @@
    ],
    "correcta": 3,
    "tip": "La primera componente es 0, así que el punto no se mueve hacia los lados: 1 + 0 = 1. En vertical baja 4 unidades: 6 + (-4) = 2.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-16"
   },
   {
@@ -5695,7 +5695,7 @@
    ],
    "correcta": 0,
    "tip": "El vector entre dos puntos se obtiene restando el punto de llegada menos el de partida: 9 - 2 = 7 y 5 - 1 = 4. Invertir el resultado da el vector de vuelta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-17"
   },
   {
@@ -5709,7 +5709,7 @@
    ],
    "correcta": 2,
    "tip": "Se resta llegada menos partida: 2 - 6 = -4 y 3 - 8 = -5. Los signos negativos indican que el movimiento es hacia la izquierda y hacia abajo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-18"
   },
   {
@@ -5723,7 +5723,7 @@
    ],
    "correcta": 3,
    "tip": "Cada componente actúa por separado: la segunda vale 0, así que la altura no cambia. El vector describe un desplazamiento, no un destino fijo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-19"
   },
   {
@@ -5737,7 +5737,7 @@
    ],
    "correcta": 3,
    "tip": "Sumar 0 a cada coordenada no cambia nada, así que (0, 0) representa «no moverse». El vector (1, 1) sí mueve el punto en diagonal.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-20"
   },
   {
@@ -5751,7 +5751,7 @@
    ],
    "correcta": 2,
    "tip": "Para deshacer un desplazamiento hay que cambiar el signo de las dos componentes: así la suma total queda en (0, 0) y el punto vuelve a su lugar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-21"
   },
   {
@@ -5765,7 +5765,7 @@
    ],
    "correcta": 1,
    "tip": "Los desplazamientos se acumulan sumando componente a componente: 0 + 3 + 2 = 5 y 0 + 4 + (-1) = 3. El orden en que se apliquen no cambia el resultado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-22"
   },
   {
@@ -5779,7 +5779,7 @@
    ],
    "correcta": 0,
    "tip": "El cuarto vértice comparte la x del vértice (1, 1) y la y del vértice (6, 4), porque los lados de este rectángulo son paralelos a los ejes.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-23"
   },
   {
@@ -5793,7 +5793,7 @@
    ],
    "correcta": 3,
    "tip": "El lado del cuadrado mide 4 unidades. El vértice que falta tiene la x de (6, 6) y la y de (2, 2), así que es (6, 2); el punto (4, 4) es el centro, no un vértice.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-24"
   },
   {
@@ -5807,7 +5807,7 @@
    ],
    "correcta": 2,
    "tip": "Los dos puntos tienen la misma x, así que el segmento es vertical y su largo es la diferencia de las y: 9 - 2 = 7. Contar marcas en vez de restar suele dar uno de menos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-25"
   },
   {
@@ -5821,7 +5821,7 @@
    ],
    "correcta": 0,
    "tip": "La base va de x = 0 a x = 8 (8 unidades) y la altura de y = 0 a y = 5 (5 unidades): el área es 8 por 5 = 40. El 26 es el perímetro, no el área.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-26"
   },
   {
@@ -5835,7 +5835,7 @@
    ],
    "correcta": 2,
    "tip": "A cada vértice se le suma el mismo vector: 4 + 2 = 6 y 1 + 3 = 4. Trasladar no significa llevar la figura al punto (2, 3).",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-27"
   },
   {
@@ -5849,7 +5849,7 @@
    ],
    "correcta": 2,
    "tip": "Como todos los vértices se mueven lo mismo, las distancias entre ellos no cambian: eso es una traslación. Estirar o reflejar la figura son transformaciones distintas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-28"
   },
   {
@@ -5863,7 +5863,7 @@
    ],
    "correcta": 1,
    "tip": "Compartir la coordenada x significa estar en la misma vertical. La diferencia de las y, 7 - 2 = 5, dice cuántas unidades separan un punto del otro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-29"
   },
   {
@@ -5877,7 +5877,7 @@
    ],
    "correcta": 2,
    "tip": "El primer número del par indica el movimiento horizontal y el segundo el vertical. Al invertirlos, Javiera terminó en (2, 7), muy lejos de (7, 2).",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa14-30"
   },
   {
@@ -5891,7 +5891,7 @@
    ],
    "correcta": 0,
    "tip": "La población es el grupo completo del que se quiere saber algo. Las 300 personas encuestadas son la muestra: la parte que sí se estudia para estimar lo que pasa en el total.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-1"
   },
   {
@@ -5905,7 +5905,7 @@
    ],
    "correcta": 1,
    "tip": "La muestra es la parte que se estudia; la población es el grupo completo. Aquí la muestra son los 400 encuestados y la población son los 2.500 apoderados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-2"
   },
   {
@@ -5919,7 +5919,7 @@
    ],
    "correcta": 2,
    "tip": "Se muestrea por costo y tiempo: preguntarle a todos suele ser imposible en la práctica. La muestra no es más exacta que la población, solo más barata y más rápida de medir.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-3"
   },
   {
@@ -5933,7 +5933,7 @@
    ],
    "correcta": 3,
    "tip": "Una muestra representa a su población cuando se parece a ella y se elige al azar. Ni el tamaño ni las ganas de participar arreglan una muestra tomada siempre en el mismo lugar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-4"
   },
   {
@@ -5947,7 +5947,7 @@
    ],
    "correcta": 3,
    "tip": "El taller de fútbol reúne justamente a quienes ya prefieren ese deporte, así que la muestra está sesgada desde el comienzo. Encuestar a más personas del mismo taller no lo arregla.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-5"
   },
   {
@@ -5961,7 +5961,7 @@
    ],
    "correcta": 0,
    "tip": "Agrandar una muestra sesgada solo repite el mismo error más veces: el resultado se aleja igual de la realidad. El sesgo se corrige cambiando cómo se elige, no cuántos se eligen.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-6"
   },
   {
@@ -5975,7 +5975,7 @@
    ],
    "correcta": 2,
    "tip": "Una conclusión solo alcanza hasta donde llega la muestra. El dato es válido para el taller, que sí fue encuestado, y no se puede estirar a un colegio que la muestra no representa.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-7"
   },
   {
@@ -5989,7 +5989,7 @@
    ],
    "correcta": 0,
    "tip": "Justo las personas que faltan en la respuesta son las que se quiere contar: quien no tiene internet no puede contestar por internet. La muestra deja fuera al grupo que decide el resultado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-8"
   },
   {
@@ -6003,7 +6003,7 @@
    ],
    "correcta": 3,
    "tip": "El lugar elegido filtra a las personas: a un supermercado caro llegan sobre todo quienes pueden pagarlo. La muestra queda inclinada hacia arriba y la estimación hereda esa inclinación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-9"
   },
   {
@@ -6017,7 +6017,7 @@
    ],
    "correcta": 1,
    "tip": "Que un lugar esté abierto a todos no significa que todos vayan. A la biblioteca llegan sobre todo lectores, así que la muestra exagera el porcentaje de lectores de la comuna.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-10"
   },
   {
@@ -6031,7 +6031,7 @@
    ],
    "correcta": 3,
    "tip": "El sesgo estaba en el lugar, así que la corrección tiene que estar en el lugar: variar los puntos y elegirlos al azar. Duplicar el tamaño en la biblioteca repite el mismo error.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-11"
   },
   {
@@ -6045,7 +6045,7 @@
    ],
    "correcta": 0,
    "tip": "Cuando la muestra se arma sola, se llena de quienes tienen una opinión fuerte y deja fuera a los indiferentes. Por eso una lista voluntaria no representa al colegio completo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-12"
   },
   {
@@ -6059,7 +6059,7 @@
    ],
    "correcta": 1,
    "tip": "La hora también selecciona a las personas: a media mañana en un día hábil, quien trabaja no está en su casa. La muestra deja fuera justo al grupo que se quiere contar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-13"
   },
   {
@@ -6073,7 +6073,7 @@
    ],
    "correcta": 3,
    "tip": "El sorteo sobre la lista completa le da a cada estudiante la misma posibilidad de salir elegido. Las otras tres seleccionan a un tipo de estudiante: puntual, de un nivel o interesado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-14"
   },
   {
@@ -6087,7 +6087,7 @@
    ],
    "correcta": 3,
    "tip": "Hacen falta las dos cosas: azar y un tamaño suficiente. Con 5 personas el resultado varía demasiado, y con 500 de un solo barrio vuelve el sesgo. Encuestar a todos ya no es estimar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-15"
   },
   {
@@ -6101,7 +6101,7 @@
    ],
    "correcta": 2,
    "tip": "La muestra tiene que parecerse al colegio: si un nivel es el 20 por ciento del total, debería aportar cerca del 20 por ciento de la muestra. Dejar cursos fuera inclina el resultado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-16"
   },
   {
@@ -6115,7 +6115,7 @@
    ],
    "correcta": 1,
    "tip": "El porcentaje compara la parte con el total: 30 dividido en 50 da 0,6, o sea 60 por ciento. La cantidad de respuestas sí no es el porcentaje, y 40 por ciento son los que no usan bicicleta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-17"
   },
   {
@@ -6129,7 +6129,7 @@
    ],
    "correcta": 3,
    "tip": "El porcentaje de la muestra se aplica al total: el 60 por ciento de 800 son 480. Confundir el 60 por ciento con 60 estudiantes es el error más común al estimar una población.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-18"
   },
   {
@@ -6143,7 +6143,7 @@
    ],
    "correcta": 2,
    "tip": "Se divide la parte por el total: 50 dividido en 200 da 0,25, o sea 25 por ciento. Dividir al revés da 4, que no es un porcentaje, y 75 por ciento corresponde a los que no van.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-19"
   },
   {
@@ -6157,7 +6157,7 @@
    ],
    "correcta": 1,
    "tip": "El 25 por ciento es la cuarta parte, no la mitad: 8.000 dividido en 4 da 2.000. Las 6.000 restantes son el otro 75 por ciento, que responde una pregunta distinta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-20"
   },
   {
@@ -6171,7 +6171,7 @@
    ],
    "correcta": 3,
    "tip": "Primero se saca el porcentaje de la muestra, 20 de 80, que es 25 por ciento, y después se aplica al total: 300 vecinos. Multiplicar 20 por 12 usa el tamaño equivocado de grupo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-21"
   },
   {
@@ -6185,7 +6185,7 @@
    ],
    "correcta": 2,
    "tip": "40 dividido en 250 da 0,16, o sea 16 por ciento. Tomar el 40 como porcentaje ignora el tamaño de la muestra: 40 de 250 y 40 de 100 no significan lo mismo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-22"
   },
   {
@@ -6199,7 +6199,7 @@
    ],
    "correcta": 0,
    "tip": "Un porcentaje no es una cantidad: hay que aplicarlo al total. El 16 por ciento de 1.000 son 160. El porcentaje sí se mantiene, lo que cambia es el número de personas que representa.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-23"
   },
   {
@@ -6213,7 +6213,7 @@
    ],
    "correcta": 3,
    "tip": "45 de 60 es 75 por ciento, y el 75 por ciento de 20.000 son 15.000. Las 5.000 restantes son quienes no tienen mascota, que es lo contrario de lo que pide la pregunta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-24"
   },
   {
@@ -6227,7 +6227,7 @@
    ],
    "correcta": 2,
    "tip": "36 dividido en 120 da 0,3, o sea 30 por ciento. El 70 por ciento corresponde a los otros puestos, y dividir el total por la parte da un número que no es un porcentaje.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-25"
   },
   {
@@ -6241,7 +6241,7 @@
    ],
    "correcta": 3,
    "tip": "El 30 por ciento de 600 son 180 puestos. Ni el 30 ni el 36 sirven como respuesta: uno es el porcentaje y el otro es un conteo de la muestra, no de la feria completa.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-26"
   },
   {
@@ -6255,7 +6255,7 @@
    ],
    "correcta": 0,
    "tip": "2 de 50 es 4 por ciento, y el 4 por ciento de 5.000 son 200 galletas. Multiplicar 2 por 50 usa el tamaño de la muestra en vez del de la producción completa.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-27"
   },
   {
@@ -6269,7 +6269,7 @@
    ],
    "correcta": 2,
    "tip": "Una muestra al azar permite estimar, no medir: el valor real anda cerca del 35 por ciento, pero no tiene por qué ser exactamente ese. Por eso se habla de estimación y no de conteo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-28"
   },
   {
@@ -6283,7 +6283,7 @@
    ],
    "correcta": 3,
    "tip": "Con la elección al azar asegurada, el tamaño sí importa: una muestra grande varía menos de una vez a otra. Ojo, esto vale porque las dos son al azar; el tamaño no corrige un sesgo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-29"
   },
   {
@@ -6297,7 +6297,7 @@
    ],
    "correcta": 0,
    "tip": "Dos muestras al azar casi nunca dan el mismo número, y eso no es un error: es la variación propia del muestreo. Resultados cercanos indican que la estimación anda por ahí.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa15-30"
   },
   {
@@ -6311,7 +6311,7 @@
    ],
    "correcta": 3,
    "tip": "La frecuencia absoluta es el conteo: cuántos estudiantes eligieron esa categoría. El 0,3 es la frecuencia relativa de gato y el 20 es el total de la muestra, no el conteo de una categoría.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-1"
   },
   {
@@ -6325,7 +6325,7 @@
    ],
    "correcta": 0,
    "tip": "La frecuencia relativa se obtiene dividiendo el conteo por el total: 6 dividido en 20 da 0,3. El error típico es dividir por 10 o repartir entre las 4 categorías, pero el divisor siempre es el total de la muestra.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-2"
   },
   {
@@ -6339,7 +6339,7 @@
    ],
    "correcta": 3,
    "tip": "Se divide 9 en 20, que da 0,45, y eso se multiplica por 100. Decir 9 por ciento es confundir el conteo con el porcentaje: solo coincidirían si la muestra fuera de 100 personas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-3"
   },
   {
@@ -6353,7 +6353,7 @@
    ],
    "correcta": 2,
    "tip": "Cada dato de la muestra se cuenta en una sola categoría, así que las frecuencias absolutas suman el total encuestado. Las que suman 100 son los porcentajes, no las frecuencias absolutas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-4"
   },
   {
@@ -6367,7 +6367,7 @@
    ],
    "correcta": 2,
    "tip": "La relativa es una proporción: compara la categoría con el total. El conteo de repeticiones es la frecuencia absoluta, que es un número entero y no una parte del total.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-5"
   },
   {
@@ -6381,7 +6381,7 @@
    ],
    "correcta": 0,
    "tip": "Para volver de la relativa a la absoluta se multiplica por el total: 0,3 por 40 da 12. Responder 3 es leer el 0,3 como si fuera el conteo, y 30 es confundirlo con un porcentaje del total.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-6"
   },
   {
@@ -6395,7 +6395,7 @@
    ],
    "correcta": 2,
    "tip": "Si 8 corresponde a 0,16 del total, el total es 8 dividido en 0,16, o sea 50. Multiplicar 8 por 16 da 128 y no tiene sentido: el total no puede crecer al multiplicar por una parte.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-7"
   },
   {
@@ -6409,7 +6409,7 @@
    ],
    "correcta": 1,
    "tip": "La fracción es 12/30, y al dividir arriba y abajo por 6 queda 2/5. El error típico es simplificar solo un poco o quedarse con la parte que no eligió Historia, que sería 3/5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-8"
   },
   {
@@ -6423,7 +6423,7 @@
    ],
    "correcta": 1,
    "tip": "Las frecuencias absolutas suman el total: 12 más 18 más 9 da 39, y 50 menos 39 deja 11 para robótica. El 39 es la suma de las otras tres, no el dato que falta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-9"
   },
   {
@@ -6437,7 +6437,7 @@
    ],
    "correcta": 3,
    "tip": "Todas las frecuencias relativas de una tabla suman 1, porque juntas cubren el total. Como las tres anotadas suman 0,75, a circo le corresponde 0,25. El 0,75 es lo ya ocupado, no lo que falta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-10"
   },
   {
@@ -6451,7 +6451,7 @@
    ],
    "correcta": 0,
    "tip": "Una frecuencia relativa se pasa a porcentaje multiplicando por 100: 3/10 es 0,3 y eso es 30 por ciento. El 70 por ciento sería la parte que NO eligió lectura.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-11"
   },
   {
@@ -6465,7 +6465,7 @@
    ],
    "correcta": 0,
    "tip": "Se calcula el 30 por ciento de 60: 0,3 por 60 da 18. Responder 30 es copiar el porcentaje como si fuera un conteo, algo que solo pasaría si la muestra tuviera 100 personas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-12"
   },
   {
@@ -6479,7 +6479,7 @@
    ],
    "correcta": 1,
    "tip": "El gráfico de líneas une puntos ordenados en el tiempo y deja ver subidas y bajadas. El circular sirve para partes de un total, no para seguir un cambio mes a mes.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-13"
   },
   {
@@ -6493,7 +6493,7 @@
    ],
    "correcta": 0,
    "tip": "El circular representa el total como el círculo completo y cada categoría como una parte de él. Unir categorías con una línea sugiere una evolución que aquí no existe: los talleres no van uno después de otro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-14"
   },
   {
@@ -6507,7 +6507,7 @@
    ],
    "correcta": 1,
    "tip": "Las barras se comparan a simple vista por su altura, que es justo lo que se pide. La línea insinúa un cambio en el tiempo, y en un circular el total no puede ser además uno de los sectores.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-15"
   },
   {
@@ -6521,7 +6521,7 @@
    ],
    "correcta": 1,
    "tip": "Sumar las temperaturas de los días no da ningún total con sentido, así que repartir el círculo entre ellas no significa nada. Para seguir un cambio en el tiempo se usa el gráfico de líneas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-16"
   },
   {
@@ -6535,7 +6535,7 @@
    ],
    "correcta": 0,
    "tip": "El porcentaje entrega la proporción, no la cantidad: para saber cuántas personas son hace falta el total. Y un 25 por ciento tampoco garantiza ser el mayor, porque otra categoría puede tener más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-17"
   },
   {
@@ -6549,7 +6549,7 @@
    ],
    "correcta": 3,
    "tip": "Con muchos sectores de tamaño parecido, el ojo no distingue bien los ángulos de un círculo; en cambio las alturas de las barras se comparan directamente. La línea, además, sugiere una evolución inexistente.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-18"
   },
   {
@@ -6563,7 +6563,7 @@
    ],
    "correcta": 2,
    "tip": "Los datos siguen siendo correctos, pero al cortar el eje solo se dibuja el tramo sobre 90, así que una diferencia de 2 ocupa media barra. La lectura se distorsiona aunque ningún número esté mal.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-19"
   },
   {
@@ -6577,7 +6577,7 @@
    ],
    "correcta": 1,
    "tip": "Con el eje desde 0, la altura de cada barra es proporcional a su valor y las diferencias se ven en su tamaño real. Ordenar las barras o cambiar de gráfico no arregla la escala distorsionada.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-20"
   },
   {
@@ -6591,7 +6591,7 @@
    ],
    "correcta": 1,
    "tip": "Si los datos son los mismos, lo único que cambia la impresión visual es la escala del eje. Por eso, antes de sacar conclusiones de un gráfico, conviene mirar dónde parte el eje vertical.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-21"
   },
   {
@@ -6605,7 +6605,7 @@
    ],
    "correcta": 0,
    "tip": "Los sectores reparten un total, así que sus porcentajes suman 100. Aquí suman 130: sobra, no falta, y el 130 no es un total de personas sino una suma de porcentajes imposible.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-22"
   },
   {
@@ -6619,7 +6619,7 @@
    ],
    "correcta": 2,
    "tip": "El porcentaje habla de proporción, no de cantidad: el 40 por ciento de un curso de 30 son 12 estudiantes y el de uno de 45 son 18. Sin los totales, las cantidades no se pueden comparar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-23"
   },
   {
@@ -6633,7 +6633,7 @@
    ],
    "correcta": 3,
    "tip": "Comparar conteos entre grupos de distinto tamaño favorece siempre al grupo grande. La frecuencia relativa divide por el total de cada curso y deja las dos cifras en la misma base.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-24"
   },
   {
@@ -6647,7 +6647,7 @@
    ],
    "correcta": 2,
    "tip": "La mitad del curso es 0,5. Teatro más danza da 0,52, que la supera; fútbol más ajedrez da 0,48 y queda justo por debajo, aunque fútbol sea el taller más elegido de los cuatro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-25"
   },
   {
@@ -6661,7 +6661,7 @@
    ],
    "correcta": 1,
    "tip": "18 dividido en 45 da 0,4 y 14 dividido en 28 da 0,5: la cantidad mayor viene de un curso más grande. Comparar conteos entre grupos de distinto tamaño lleva justo a este error.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-26"
   },
   {
@@ -6675,7 +6675,7 @@
    ],
    "correcta": 0,
    "tip": "Una tabla de frecuencias resume la muestra en conteos por categoría y pierde el dato individual. Lo que sí conserva es cuántos y qué parte del total hay en cada categoría.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-27"
   },
   {
@@ -6689,7 +6689,7 @@
    ],
    "correcta": 0,
    "tip": "La relativa se obtiene dividiendo una parte por el total, así que nunca supera 1. Un valor mayor que 1 delata que se dividió por un número menor que la cantidad de datos, no por el total.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-28"
   },
   {
@@ -6703,7 +6703,7 @@
    ],
    "correcta": 3,
    "tip": "Cada dato aporta su parte y todas juntas cubren el total, así que la suma es 1. El 100 aparece cuando esas mismas relativas se expresan como porcentaje, que es otra forma de escribirlas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-29"
   },
   {
@@ -6717,7 +6717,7 @@
    ],
    "correcta": 3,
    "tip": "La relativa expresa una proporción, así que 0,45 equivale a 45 de cada 100. Para saber cuántas personas son de verdad hay que multiplicar 0,45 por el total encuestado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa16-30"
   },
   {
@@ -6731,7 +6731,7 @@
    ],
    "correcta": 0,
    "tip": "El promedio suma las cinco notas, que dan 28,0, y divide por 5. La nota que queda al centro al ordenar es la mediana, y la diferencia entre la mayor y la menor es el rango: son otras medidas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-1"
   },
   {
@@ -6745,7 +6745,7 @@
    ],
    "correcta": 1,
    "tip": "La mediana exige ordenar primero los datos: 1, 2, 3, 4, 7. Recién ahí el valor del centro es 3. Tomar el dato del medio sin ordenar es el error más común con esta medida.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-2"
   },
   {
@@ -6759,7 +6759,7 @@
    ],
    "correcta": 0,
    "tip": "Cuando la cantidad de datos es par hay dos valores centrales, 13 y 14, y la mediana es el promedio de ambos: 13,5. Quedarse con uno solo de los dos deja al otro fuera sin razón.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-3"
   },
   {
@@ -6773,7 +6773,7 @@
    ],
    "correcta": 2,
    "tip": "La moda es el dato que más veces se repite, y el 37 aparece dos veces mientras el resto aparece una. Confundirla con el dato mayor es un error frecuente: la moda mira la frecuencia, no el tamaño.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-4"
   },
   {
@@ -6787,7 +6787,7 @@
    ],
    "correcta": 0,
    "tip": "El rango se obtiene restando la menor a la mayor: de 26 a 33 hay 7 grados. Sumar los extremos no mide nada, porque el rango dice cuánto se separan entre sí, no cuánto valen juntos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-5"
   },
   {
@@ -6801,7 +6801,7 @@
    ],
    "correcta": 2,
    "tip": "El promedio suma los cinco días, que dan 17,0 kilómetros, y divide por 5. Los otros tres números son la mediana, la moda y el rango del mismo conjunto: cada medida responde algo distinto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-6"
   },
   {
@@ -6815,7 +6815,7 @@
    ],
    "correcta": 0,
    "tip": "Si el promedio de 5 notas es 5,8, la suma total es 29,0. Las cuatro conocidas suman 23,0, así que la quinta es 6,0. La nota que falta no tiene por qué coincidir con el promedio.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-7"
   },
   {
@@ -6829,7 +6829,7 @@
    ],
    "correcta": 3,
    "tip": "La media aquí llega a 990 por culpa de un solo sueldo altísimo, muy por encima de lo que gana casi todo el mundo; la mediana es 500 y sí describe el sueldo típico. Además, en esta lista ningún sueldo se repite, así que no hay moda, y el rango no es una medida de tendencia central.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-8"
   },
   {
@@ -6843,7 +6843,7 @@
    ],
    "correcta": 2,
    "tip": "Para producir conviene saber cuál es la talla más pedida, y eso es exactamente la moda. El promedio de tallas puede dar un valor que ni siquiera se fabrica, como 38,7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-9"
   },
   {
@@ -6857,7 +6857,7 @@
    ],
    "correcta": 2,
    "tip": "Una sola venta muy cara empuja la media hacia arriba y termina indicando un precio que ningún comprador pagó de verdad. La mediana se queda en el centro del grupo y no se mueve por ese dato.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-10"
   },
   {
@@ -6871,7 +6871,7 @@
    ],
    "correcta": 2,
    "tip": "Las medidas de tendencia central dicen dónde se ubican los datos, no cuánto se dispersan. Para saber si están juntos o separados sirve el rango, que es una medida de dispersión.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-11"
   },
   {
@@ -6885,7 +6885,7 @@
    ],
    "correcta": 2,
    "tip": "Repartir un total en partes iguales es justamente lo que hace el promedio: suma todo y lo divide entre los participantes. Las otras medidas no reparten nada.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-12"
   },
   {
@@ -6899,7 +6899,7 @@
    ],
    "correcta": 1,
    "tip": "La media y la mediana necesitan datos numéricos: una exige sumar y la otra ordenar. Con datos como colores o marcas, la única medida de tendencia central posible es la moda.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-13"
   },
   {
@@ -6913,7 +6913,7 @@
    ],
    "correcta": 2,
    "tip": "El dato 75 empuja la media hasta 21,5 minutos, más de lo que demora cualquiera de los otros cinco. La mediana, 11,5, sí representa al grupo. Ojo: la moda es el dato que más se repite, no el que más destaca, y aquí no hay ninguno repetido.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-14"
   },
   {
@@ -6927,7 +6927,7 @@
    ],
    "correcta": 1,
    "tip": "La media suma todos los sueldos, así que un valor muy grande la arrastra hacia arriba. Por eso el promedio puede quedar por encima de casi todos los datos y no representar a nadie.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-15"
   },
   {
@@ -6941,7 +6941,7 @@
    ],
    "correcta": 2,
    "tip": "La media suma todos los datos, así que un valor mucho más grande que el resto la desplaza con fuerza. La que casi no se movió fue la mediana, que pasó de 15 a 15,5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-16"
   },
   {
@@ -6955,7 +6955,7 @@
    ],
    "correcta": 1,
    "tip": "La mediana solo mira la posición central, no el tamaño de los datos. Al agregar el 90 el centro se corre un lugar y queda entre 15 y 16, así que la mediana es 15,5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-17"
   },
   {
@@ -6969,7 +6969,7 @@
    ],
    "correcta": 0,
    "tip": "Solo la media usa el valor de cada dato, así que un número enorme engorda la suma. La mediana depende de la posición y la moda de la frecuencia: un valor extremo casi no las mueve.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-18"
   },
   {
@@ -6983,7 +6983,7 @@
    ],
    "correcta": 2,
    "tip": "Al sacar el 24 la suma pasa de 60 a 36 y se divide entre 4: el promedio cae a 9, mucho más parecido a lo que demoraron los otros cuatro corredores.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-19"
   },
   {
@@ -6997,7 +6997,7 @@
    ],
    "correcta": 1,
    "tip": "El rango es la resta entre el mayor y el menor: de 20 a 60 hay 40. Es la medida que más se altera con un dato extremo, porque se calcula justamente con los extremos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-20"
   },
   {
@@ -7011,7 +7011,7 @@
    ],
    "correcta": 0,
    "tip": "La moda depende de cuántas veces aparece cada dato, no de su tamaño. El 50 aparece una sola vez, así que el 5 sigue siendo el valor más repetido. Los que sí cambiaron fueron la media y la mediana.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-21"
   },
   {
@@ -7025,7 +7025,7 @@
    ],
    "correcta": 0,
    "tip": "Cuando la media queda por encima de la mediana suele ser porque unos pocos datos altos estiran la suma. La diferencia entre ambas medidas no es el rango: son cosas distintas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-22"
   },
   {
@@ -7039,7 +7039,7 @@
    ],
    "correcta": 2,
    "tip": "Dos grupos pueden tener el mismo promedio y ser muy distintos. El rango dice cuánto se dispersan los datos: un rango chico significa notas parecidas entre sí, no notas más altas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-23"
   },
   {
@@ -7053,7 +7053,7 @@
    ],
    "correcta": 1,
    "tip": "Comparar promedios exige sumar y dividir cada grupo: 220 entre 5 da 44 y 230 entre 5 da 46. Que las ventas de A sean más parejas es otra cosa, y eso lo dice el rango, no la media.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-24"
   },
   {
@@ -7067,7 +7067,7 @@
    ],
    "correcta": 1,
    "tip": "Los promedios casi coinciden, 21,8 y 22, porque en la consulta A hay una espera de 60 minutos que estira la media. La mediana muestra lo que pasa habitualmente: 13 minutos contra 22.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-25"
   },
   {
@@ -7081,7 +7081,7 @@
    ],
    "correcta": 3,
    "tip": "El rango mide cuánto se separan el valor mayor y el menor, no cuán altos son. Un rango grande indica variación, y para saber si hizo calor hay que mirar el promedio.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-26"
   },
   {
@@ -7095,7 +7095,7 @@
    ],
    "correcta": 0,
    "tip": "Ser parejo es variar poco, y eso lo mide el rango. Sofía anota más en promedio, pero sus partidos van de 2 a 35 puntos: es mucho más irregular que Ana.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-27"
   },
   {
@@ -7109,7 +7109,7 @@
    ],
    "correcta": 1,
    "tip": "Una media obtenida en una muestra sirve para estimar el valor de toda la población, pero no dice cuánto duerme cada persona: hay quienes duermen más y quienes duermen menos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-28"
   },
   {
@@ -7123,7 +7123,7 @@
    ],
    "correcta": 0,
    "tip": "El 40 ocupa el mismo lugar que ocupaba el 10, el último al ordenar, así que el valor central sigue siendo 8. En cambio la media sube de 8 a 14 y el rango pasa de 4 a 34.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-29"
   },
   {
@@ -7137,7 +7137,7 @@
    ],
    "correcta": 3,
    "tip": "La moda indica el valor que más se repite, no el total ni el promedio. Puede haber estudiantes con 0, 2 o 5 mascotas en cualquiera de los dos cursos sin que la moda cambie.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa17-30"
   },
   {
@@ -7151,7 +7151,7 @@
    ],
    "correcta": 0,
    "tip": "La probabilidad es la razón entre casos favorables y casos posibles: una sola cara muestra el 4 y hay 6 caras, así que es 1/6. El valor del número no entra en el cálculo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-1"
   },
   {
@@ -7165,7 +7165,7 @@
    ],
    "correcta": 1,
    "tip": "Para pasar una fracción a porcentaje se divide el numerador entre el denominador y se multiplica por 100: 3 : 4 = 0,75, o sea 75 por ciento. Juntar las cifras de la fracción no es una operación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-2"
   },
   {
@@ -7179,7 +7179,7 @@
    ],
    "correcta": 2,
    "tip": "La moneda no recuerda lo que salió antes: en cada lanzamiento hay 1 cara entre 2 resultados posibles, así que siempre es 1/2. Creer que el sello está atrasado se llama falacia del jugador.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-3"
   },
   {
@@ -7193,7 +7193,7 @@
    ],
    "correcta": 2,
    "tip": "Los lanzamientos son independientes: el dado no lleva la cuenta de lo que ya salió. La probabilidad del 6 sigue siendo 1 caso favorable entre 6 posibles, tiro tras tiro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-4"
   },
   {
@@ -7207,7 +7207,7 @@
    ],
    "correcta": 2,
    "tip": "Cada sorteo parte de cero: si los 40 números vuelven a entrar, todos valen 1/40. Lo que ocurrió la semana pasada no cambia el sorteo de esta semana.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-5"
   },
   {
@@ -7221,7 +7221,7 @@
    ],
    "correcta": 1,
    "tip": "Una racha no cambia el mecanismo: la ruleta sigue teniendo los mismos sectores. Tanto creer que la racha continúa como creer que ya le toca al otro resultado son la misma falacia del jugador.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-6"
   },
   {
@@ -7235,7 +7235,7 @@
    ],
    "correcta": 1,
    "tip": "Dividir 1 entre la cantidad de resultados solo vale cuando los resultados son igualmente probables. Aquí los sectores tienen distinto tamaño, así que el rojo vale 1/2 y no 1/3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-7"
   },
   {
@@ -7249,7 +7249,7 @@
    ],
    "correcta": 3,
    "tip": "Los casos posibles son todas las fichas (5 + 3 + 2 = 10), no los colores. Contar colores supondría que hay la misma cantidad de cada uno, y no es así.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-8"
   },
   {
@@ -7263,7 +7263,7 @@
    ],
    "correcta": 2,
    "tip": "Las seis caras (1, 2, 3, 4, 5 y 6) son menores que 7, así que hay 6 casos favorables de 6 posibles: 6/6 = 1. Un suceso seguro tiene probabilidad 1.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-9"
   },
   {
@@ -7277,7 +7277,7 @@
    ],
    "correcta": 3,
    "tip": "Sin casos favorables la razón da 0 dividido por el total, es decir 0. Un suceso imposible tiene probabilidad 0 sin importar cuántas fichas haya en la caja.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-10"
   },
   {
@@ -7291,7 +7291,7 @@
    ],
    "correcta": 2,
    "tip": "La frecuencia relativa es la frecuencia absoluta dividida por el total de repeticiones: 84 : 200 = 0,42. El 84 solo es la frecuencia absoluta, todavía sin comparar con el total.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-11"
   },
   {
@@ -7305,7 +7305,7 @@
    ],
    "correcta": 0,
    "tip": "Se divide 180 entre 300 y se multiplica por 100: 0,6 es 60 por ciento. El 40 por ciento corresponde a los 120 lanzamientos restantes, que son el suceso contrario.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-12"
   },
   {
@@ -7319,7 +7319,7 @@
    ],
    "correcta": 3,
    "tip": "Contar casos favorables sobre posibles solo sirve cuando los resultados son igualmente probables. Como la tachuela no es simétrica, se estima con la frecuencia relativa de muchos lanzamientos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-13"
   },
   {
@@ -7333,7 +7333,7 @@
    ],
    "correcta": 3,
    "tip": "Con pocas repeticiones la frecuencia relativa salta mucho; con muchas se estabiliza alrededor de la probabilidad teórica, aunque casi nunca coincide con ella de forma exacta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-14"
   },
   {
@@ -7347,7 +7347,7 @@
    ],
    "correcta": 0,
    "tip": "Mientras más repeticiones tiene el experimento, menos influye el azar de cada lanzamiento y más confiable es la frecuencia relativa como estimación de la probabilidad.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-15"
   },
   {
@@ -7361,7 +7361,7 @@
    ],
    "correcta": 3,
    "tip": "0,508 está muy cerca de 0,5: es la variación normal del azar. Esperar el valor exacto es un error; lo que promete la teoría es acercarse, no coincidir.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-16"
   },
   {
@@ -7375,7 +7375,7 @@
    ],
    "correcta": 0,
    "tip": "Los casos posibles son los 30 estudiantes, no los 18 que no usan lentes: 12/30 se simplifica a 2/5, que es 0,4 o 40 por ciento.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-17"
   },
   {
@@ -7389,7 +7389,7 @@
    ],
    "correcta": 1,
    "tip": "El contrario se calcula restando: 1 - 0,3 = 0,7. Suponer que dos resultados valen 0,5 cada uno solo es válido cuando son igualmente probables, y aquí no lo son.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-18"
   },
   {
@@ -7403,7 +7403,7 @@
    ],
    "correcta": 2,
    "tip": "Para comparar hay que mirar la razón entre premiadas y total, no la cantidad de premiadas: 2 de 8 es 25 por ciento y 3 de 15 es 20 por ciento.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-19"
   },
   {
@@ -7417,7 +7417,7 @@
    ],
    "correcta": 1,
    "tip": "Un porcentaje es una fracción de denominador 100: 20/100 se simplifica dividiendo por 20 y queda 1/5. La fracción 4/5 corresponde al suceso contrario.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-20"
   },
   {
@@ -7431,7 +7431,7 @@
    ],
    "correcta": 0,
    "tip": "Los casos favorables son 2, 4 y 6, o sea 3 de 6 caras: 3/6 se simplifica a 1/2. El denominador siempre es el total de casos posibles, que aquí son las 6 caras.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-21"
   },
   {
@@ -7445,7 +7445,7 @@
    ],
    "correcta": 3,
    "tip": "Toda probabilidad va entre 0 y 1 (o entre 0 y 100 por ciento). El 0 es el suceso imposible y el 1 el suceso seguro: los dos son valores válidos, 1,4 no lo es.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-22"
   },
   {
@@ -7459,7 +7459,7 @@
    ],
    "correcta": 2,
    "tip": "La frecuencia relativa describe lo que ya ocurrió en ese experimento. Sirve para estimar la probabilidad, pero no garantiza el resultado de los giros siguientes.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-23"
   },
   {
@@ -7473,7 +7473,7 @@
    ],
    "correcta": 2,
    "tip": "Cuando los resultados no son igualmente probables, el tamaño de cada sector es la clave: mientras más superficie ocupa un color, más cerca de 1 está su probabilidad.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-24"
   },
   {
@@ -7487,7 +7487,7 @@
    ],
    "correcta": 0,
    "tip": "Los casos favorables son 3 (las tres amigas) y los posibles son los 30 del curso: 3/30 = 1/10. El denominador es el total, no el resto que queda fuera.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-25"
   },
   {
@@ -7501,7 +7501,7 @@
    ],
    "correcta": 0,
    "tip": "Cara-sello y sello-cara son dos resultados distintos, así que hay 4 y no 3. Solo uno de ellos es cara-cara, por lo tanto la probabilidad es 1/4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-26"
   },
   {
@@ -7515,7 +7515,7 @@
    ],
    "correcta": 1,
    "tip": "Con más repeticiones la frecuencia relativa se acerca a la probabilidad teórica de 0,5, pero no compensa lo pasado ni cae en el valor exacto: el azar sigue presente.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-27"
   },
   {
@@ -7529,7 +7529,7 @@
    ],
    "correcta": 2,
    "tip": "Las frecuencias absolutas no se pueden comparar cuando los totales son distintos. Al dividir por el total (18 : 30 = 0,6 y 45 : 90 = 0,5) las dos quedan en la misma escala.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-28"
   },
   {
@@ -7543,7 +7543,7 @@
    ],
    "correcta": 3,
    "tip": "La estimación es la frecuencia relativa: 14 : 40 = 0,35, o sea 35 por ciento. Acertar y fallar no son igualmente probables, así que suponer 0,5 no corresponde.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-29"
   },
   {
@@ -7557,7 +7557,7 @@
    ],
    "correcta": 3,
    "tip": "Un suceso es seguro solo si su probabilidad es 1, y aquí es 9/10: muy alta, pero todavía puede fallar. El denominador es el total de fichas, o sea 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa18-30"
   },
   {
@@ -7571,7 +7571,7 @@
    ],
    "correcta": 0,
    "tip": "La frecuencia relativa se acerca a la probabilidad teórica al repetir mucho, pero acercarse no es ser igual: difícilmente saldrán 500 caras exactas. Y la moneda no recuerda lo anterior, así que nada se compensa.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-1"
   },
   {
@@ -7585,7 +7585,7 @@
    ],
    "correcta": 1,
    "tip": "La frecuencia relativa es 12 : 60 = 0,2 y la teórica 1 : 6 = 0,167, así que el experimento quedó algo por encima. Una frecuencia relativa siempre está entre 0 y 1: el 12 es la frecuencia absoluta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-2"
   },
   {
@@ -7599,7 +7599,7 @@
    ],
    "correcta": 0,
    "tip": "Cara-sello y sello-cara son ramas distintas del árbol, aunque al mirar las monedas se vean iguales. Por eso el resultado una de cada vale 2 de 4 y no 1 de 3: contar solo tres resultados olvida que uno ocurre de dos formas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-3"
   },
   {
@@ -7613,7 +7613,7 @@
    ],
    "correcta": 3,
    "tip": "En un árbol de dos etapas los resultados se multiplican, no se suman: 2 × 2 = 4 ramas finales. Contar solo 3 resultados junta en uno dos caminos distintos del árbol.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-4"
   },
   {
@@ -7627,7 +7627,7 @@
    ],
    "correcta": 2,
    "tip": "El árbol muestra 3 grupos de 4 ramas: 3 × 4 = 12. Sumar las prendas responde a cuántas prendas tengo, no a cuántas combinaciones distintas puedo formar con ellas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-5"
   },
   {
@@ -7641,7 +7641,7 @@
    ],
    "correcta": 0,
    "tip": "20 : 80 = 0,25 justo. Los otros dos quedaron a 0,025 de su valor teórico: 0,225 contra 0,25 y 0,525 contra 0,5. Coincidir exacto es posible, solo que no está garantizado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-6"
   },
   {
@@ -7655,7 +7655,7 @@
    ],
    "correcta": 1,
    "tip": "La tabla tiene 6 × 6 = 36 casillas. Las 11 sumas distintas no son igualmente probables, justamente porque cada una ocupa un número diferente de casillas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-7"
   },
   {
@@ -7669,7 +7669,7 @@
    ],
    "correcta": 0,
    "tip": "6 casillas favorables de 36 dan 6/36 = 1/6. Las 11 sumas no son igual de probables: el 2 ocupa una sola casilla y el 7 ocupa seis, por eso el 7 aparece mucho más seguido.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-8"
   },
   {
@@ -7683,7 +7683,7 @@
    ],
    "correcta": 0,
    "tip": "98 : 200 = 0,49, a una centésima de 0,5. La frecuencia relativa casi nunca coincide exacto con la teoría: lo esperable es que ronde ese valor y se acerque más al repetir más veces.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-9"
   },
   {
@@ -7697,7 +7697,7 @@
    ],
    "correcta": 3,
    "tip": "13 : 20 = 0,65 y 261 : 500 = 0,522. La diferencia con 0,5 es 0,15 en el grupo A y 0,022 en el B: más repeticiones acercan la frecuencia relativa a la probabilidad teórica.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-10"
   },
   {
@@ -7711,7 +7711,7 @@
    ],
    "correcta": 3,
    "tip": "La frecuencia relativa es un dato del experimento, no una propiedad fija del dado. Con 30 tiros la variación es grande; con 3.000 los dos grupos obtendrían valores muy parecidos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-11"
   },
   {
@@ -7725,7 +7725,7 @@
    ],
    "correcta": 1,
    "tip": "95 : 600 = 0,158, a nueve milésimas de 0,167. Un experimento no cambia la probabilidad teórica: la teoría se calcula con los casos posibles y el experimento sirve para contrastarla.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-12"
   },
   {
@@ -7739,7 +7739,7 @@
    ],
    "correcta": 3,
    "tip": "Las etapas se multiplican: 2 × 6 = 12 ramas finales, desde cara-1 hasta sello-6. Sumar responde a cuántas caras hay en total, no a cuántas combinaciones se pueden formar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-13"
   },
   {
@@ -7753,7 +7753,7 @@
    ],
    "correcta": 0,
    "tip": "Cada rama del árbol vale lo mismo: 1 de 12. Cuando dos etapas deben ocurrir juntas las probabilidades se multiplican, 1/2 × 1/6 = 1/12; sumarlas daría un valor mucho mayor que el real.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-14"
   },
   {
@@ -7767,7 +7767,7 @@
    ],
    "correcta": 0,
    "tip": "26 : 100 = 0,26 contra 0,25 de la teoría: una centésima de diferencia. La frecuencia relativa siempre queda entre 0 y 1, así que 26 a secas es la frecuencia absoluta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-15"
   },
   {
@@ -7781,7 +7781,7 @@
    ],
    "correcta": 1,
    "tip": "Con pocas repeticiones el azar domina y la frecuencia relativa puede quedar lejos de 1/6. Con muchas se estabiliza cerca del valor teórico: por eso se simula con software, que repite miles de veces.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-16"
   },
   {
@@ -7795,7 +7795,7 @@
    ],
    "correcta": 0,
    "tip": "Para acusar a una moneda hay que repetir muchas veces: con 10 tiros, 8 caras es perfectamente posible por azar. Si con 1.000 tiros la frecuencia relativa siguiera en 0,8, ahí sí habría razón para sospechar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-17"
   },
   {
@@ -7809,7 +7809,7 @@
    ],
    "correcta": 1,
    "tip": "45 : 300 = 0,15, y para pasar a porcentaje se multiplica por 100: 15%. Escribir 0,15% es cien veces menos y confunde la fracción con el porcentaje.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-18"
   },
   {
@@ -7823,7 +7823,7 @@
    ],
    "correcta": 3,
    "tip": "Cada roja se puede sacar de 2 maneras, así que dos rojas ocurre en 2 × 2 = 4 de las 9 ramas. La probabilidad de un resultado de dos etapas se obtiene multiplicando, no repitiendo la de una sola extracción.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-19"
   },
   {
@@ -7837,7 +7837,7 @@
    ],
    "correcta": 1,
    "tip": "9 casillas favorables de 36 dan 9/36 = 1/4. Que cada dado por separado dé 1/2 no basta: para que las dos cosas ocurran a la vez se multiplican, 1/2 × 1/2 = 1/4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-20"
   },
   {
@@ -7851,7 +7851,7 @@
    ],
    "correcta": 3,
    "tip": "La curva se acerca a 0,5 sin llegar exacto: es la ley de los grandes números vista en un gráfico. La probabilidad teórica no cambia nunca; lo que cambia es la frecuencia relativa observada.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-21"
   },
   {
@@ -7865,7 +7865,7 @@
    ],
    "correcta": 3,
    "tip": "Cara-cara-sello, cara-sello-cara y sello-cara-cara son ramas distintas, así que el evento ocurre en 3 de las 8. Contar monedas en vez de ramas hace perder de vista que un resultado se puede dar de varias formas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-22"
   },
   {
@@ -7879,7 +7879,7 @@
    ],
    "correcta": 0,
    "tip": "Se multiplica la probabilidad teórica por las repeticiones: 1/4 de 400 es 100. Es una estimación, no una garantía: lo esperable es un número cercano a 100, no exactamente 100.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-23"
   },
   {
@@ -7893,7 +7893,7 @@
    ],
    "correcta": 1,
    "tip": "La teórica se conoce antes de lanzar nada, mirando los casos posibles; la relativa aparece después, con los datos del experimento. Compararlas es justamente el trabajo de este objetivo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-24"
   },
   {
@@ -7907,7 +7907,7 @@
    ],
    "correcta": 0,
    "tip": "La absoluta es el conteo, 9 veces, y la relativa es ese conteo dividido por el total: 9 : 50 = 0,18. El 0,17 es la probabilidad teórica del dado, con la que después se compara.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-25"
   },
   {
@@ -7921,7 +7921,7 @@
    ],
    "correcta": 0,
    "tip": "Cada frecuencia relativa es una parte del total, así que juntas forman el entero. Si la suma no da 1, hubo un error al contar o quedó un resultado sin registrar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-26"
   },
   {
@@ -7935,7 +7935,7 @@
    ],
    "correcta": 3,
    "tip": "0,10 con 50 tiros y 0,166 con 10.000 es exactamente lo esperable: la frecuencia relativa se estabiliza al repetir. Por eso se simula con software, no porque sus dados sean mejores.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-27"
   },
   {
@@ -7949,7 +7949,7 @@
    ],
    "correcta": 0,
    "tip": "En el árbol cada etapa multiplica: 2 × 3 × 2 = 12 ramas finales. Sumar, o dejar una etapa fuera, cuenta menos caminos de los que el árbol realmente tiene.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-28"
   },
   {
@@ -7963,7 +7963,7 @@
    ],
    "correcta": 2,
    "tip": "1+6, 2+5, 3+4, 4+3, 5+2 y 6+1 son casillas distintas de la tabla, mientras que el 2 solo se logra con 1+1. Las sumas no son equiprobables aunque las 36 casillas sí lo sean.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-29"
   },
   {
@@ -7977,8 +7977,9 @@
    ],
    "correcta": 3,
    "tip": "Con 600 repeticiones la frecuencia relativa ya debería rondar 0,167, y 0,35 es más del doble. Que ambas casi nunca coincidan exacto no justifica una diferencia tan grande.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate7-oa19-30"
   }
- ]
+ ],
+ "revisadas": 570
 }
