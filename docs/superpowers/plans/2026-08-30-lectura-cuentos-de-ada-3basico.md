@@ -145,9 +145,9 @@ mkdir -p contenido/lectura-cuentos-de-ada/_pool
 }
 ```
 
-> ⚠️ **Confirmar `editorial` contra la tapa del ejemplar antes de dar la tarea por cerrada.** La
-> guía dice "Alfaguara Infantil (Chile, 2003)"; Roberto dijo Santillana Infantil. Alfaguara es del
-> grupo Santillana. Este campo se muestra al alumno.
+> ✅ **Confirmado por Roberto contra la tapa (30/08): Santillana Infantil.** La guía decía
+> "Alfaguara Infantil (Chile, 2003)", que es del mismo grupo. Este campo se muestra al alumno,
+> así que se preguntó en vez de elegir por probabilidad.
 
 - [ ] **Step 3: Escribir `oa.json`**
 

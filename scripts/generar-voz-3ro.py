@@ -43,6 +43,11 @@ ASIGS = {
     "hist3": {"banco": "historia-3basico",    "oa": "HI03", "caps": "hist3-"},
     "cie3":  {"banco": "ciencias-3basico",    "oa": "CN03", "caps": "cie3-"},
     "len3":  {"banco": "lenguaje-3basico",    "oa": "LE03", "caps": "len3-"},
+    # Los modulos transversales tambien entran aca. Su codigo NO lleva el nivel
+    # adentro (CA-T1, no LE03 OA 01), asi que el filtro de META_OA no encuentra
+    # nada y esta bien: el libro no tiene metas de aprendizaje, y lo que se lee
+    # en su tarjeta es el nombre del tramo, que si viaja por "caps".
+    "ada3":  {"banco": "lectura-cuentos-de-ada", "oa": "CA", "caps": "lect-cuentos-ada"},
 }
 ASIG = "mat3"
 for _a in sys.argv[1:]:

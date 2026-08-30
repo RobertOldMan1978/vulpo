@@ -1435,10 +1435,11 @@ const EXPEDICIONES=[
       oas:["LE03 OA 07","LE03 OA 08","LE03 OA 09"]},
    ] },
  { id:'lect-cuentos-ada', asignatura:'Lectura', nivel:'Cuentos de Ada',
-   /* Arte PRESTADO: la portada genérica de Lectura. Cuando exista el arte propio del
-      libro, cambiar las dos rutas a assets/portada-lectura-cuentos-ada.png. Va explícita
-      y a un archivo que EXISTE: la convención implícita daría un 404 que el onerror tapa
-      a la vista pero no en la red. */
+   /* La portada genérica de Lectura es DELIBERADA y definitiva, no un préstamo temporal:
+      ilustrar la tapa de un libro ajeno es material con derechos, y VULPO no reproduce
+      nada del libro (por eso las preguntas también son originales). NO reemplazar por un
+      arte propio del título. Va explícita y a un archivo que EXISTE: la convención
+      implícita daría un 404 que el onerror tapa a la vista pero no en la red. */
    portada:'assets/portada-lectura.png',
    portadaMapa:'assets/portada-lectura.png',
    contenido:'contenido/lectura-cuentos-de-ada/preguntas.json', activa:true,
@@ -1852,7 +1853,7 @@ if(window.speechSynthesis){
 /* Una carpeta por asignatura: los clips se generan por banco y así agregar una
    asignatura nueva no obliga a regenerar (ni volver a pagar) las anteriores. El mapa
    guarda la RUTA COMPLETA, no solo el nombre, porque ya no hay una base única. */
-const VOZ_DIRS=['assets/voz/mat3/','assets/voz/hist3/','assets/voz/cie3/','assets/voz/len3/'];
+const VOZ_DIRS=['assets/voz/mat3/','assets/voz/hist3/','assets/voz/cie3/','assets/voz/len3/','assets/voz/ada3/'];
 let VOZ_MAP=null;
 Promise.all(VOZ_DIRS.map(dir =>
   fetch(dir+'manifiesto.json')

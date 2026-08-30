@@ -27,20 +27,21 @@ Es una app web mobile-first y se reutiliza. Ver `docs/roadmap-tecnico.md` §1.
 
 ---
 
-## Dónde estamos hoy (28/08/2026, medido en disco)
+## Dónde estamos hoy (30/08/2026, medido en disco)
 
 | Curso | OA | Preguntas | Aprobadas | Voz | Arte propio |
 |---|---|---|---|---|---|
-| 3° | 86 | 2.558 | **0** | ✅ 10.563 clips | ❌ |
-| 4° | — | — | — | pendiente | — |
-| 5° | — | — | — | no lleva | — |
-| 6° | — | — | — | no lleva | — |
-| 7° | 81 | 2.430 | **0** | no lleva | ❌ |
+| 3° | 86 | 2.558 (+101 apoyo) | **101** (solo el apoyo) | ✅ 11.078 clips | villanos ✅ · portadas ❌ |
+| 4° | 92 | — | — | pendiente | — |
+| 5° | 93 | — | — | no lleva | — |
+| 6° | 99 | — | — | no lleva | — |
+| 7° | 81 | 2.430 (+120 apoyo) | **0** | no lleva | villanos ✅ · portadas ❌ |
 | 8° | 69 | 2.314 (+222 apoyo) | ✅ todas | no lleva | ✅ |
 
-- **7.524 preguntas escritas · 2.536 aprobadas · 4.988 sin aprobar.**
-- **Sitio publicado: 333 MB** (techo de GitHub Pages: 1 GB). `assets/` completo son 464 MB,
-  de los cuales 251 MB son la voz de 3° y 175 MB los originales, ya excluidos del sitio.
+- **7.745 preguntas escritas · 2.637 aprobadas · 5.108 sin aprobar.** El currículum de 4°, 5°
+  y 6° ya está fijado (284 OA), pero sin una sola pregunta escrita todavía.
+- **Sitio publicado: 317 MB** (techo de GitHub Pages: 1 GB). `assets/` completo son 475 MB,
+  de los cuales 263 MB son la voz de 3° y 175 MB los originales, ya excluidos del sitio.
   El reparto y sus reglas, en `CLAUDE.md` → “Cómo se ordenan los archivos”.
 - **Backend al día:** `schema.sql` aplicado y verificado, los códigos de los tres cursos en las
   dos listas de `kimun_prof_asignaturas`, y la foto semanal agendada.
@@ -90,8 +91,8 @@ Para poder decir "tengo 3°, 7° y 8°". Es el hito más cercano y el de mejor r
 | A6 | Confirmar el **lunes 31/08** que apareció la primera foto semanal | 1 min | Roberto |
 | ~~A9~~ | ~~**Vocabulario en 7°**~~ ✅ **HECHO (28/08)**: 120 palabras en 4 áreas (`contenido/vocabulario-7basico`), la bandera encendida y el handler restaurado. El código ya estaba en el fork: solo faltaba el dato | — | — |
 | A10 | **Vocabulario en 3°**, el mismo patrón. Ojo: 3° suma **voz** (~600 clips de Azure), así que va **después** de que su banco esté cerrado — la voz se genera al final, nunca en paralelo con las auditorías | ~1 sesión + Azure | código |
-| ~~A15~~ | ~~**Primer libro de 3°**~~ ✅ **HECHO (30/08, Sesión 72)**: *Cuentos de Ada* de Pepe Pelayo, 10 tramos y 101 preguntas en `contenido/lectura-cuentos-de-ada`. La biblioteca de 3° quedó encendida. **Faltan tres cosas suyas:** confirmar el sello editorial contra la tapa, aprobar las 101 y el arte propio de la portada (hoy usa la genérica de Lectura) | — | — |
-| A16 | **Voz de *Cuentos de Ada*** (~500 clips, del orden de US$0,3 de Azure). Va **después** de aprobar su banco: cada texto corregido obliga a regenerar su clip y a pagarlo de nuevo | ~½ sesión + Azure | código |
+| ~~A15~~ | ~~**Primer libro de 3°**~~ ✅ **HECHO (30/08, Sesión 72)**: *Cuentos de Ada* de Pepe Pelayo, 10 tramos y 101 preguntas en `contenido/lectura-cuentos-de-ada`. La biblioteca de 3° quedó encendida. Sello editorial **confirmado: Santillana Infantil**, y la portada **se queda en la genérica de Lectura a propósito**, para no ilustrar la tapa de un libro ajeno. **Las 101 quedaron aprobadas el 30/08** (aprobación forzada de Roberto) y con voz. Cerrada | — | — |
+| ~~A16~~ | ~~**Voz de *Cuentos de Ada***~~ ✅ **HECHO (30/08)**: Roberto aprobó las 101 preguntas y se generaron los **515 clips** (12 MB, **US$0,32**) en `assets/voz/ada3/`, enganchados en `VOZ_DIRS`. Cobertura completa verificada y el clip suena en el navegador. **Ningún texto del libro cambia al pronunciarse**, así que el normalizador no lo toca. Queda opcional la auditoría por muestra con Azure STT (~US$0,06), que aquí solo sirve para los nombres propios (Ada, Yoyito, Pocho, Cary, Orco) | — | — |
 | ~~A11~~ | ~~**Reto Sin Fin de cálculo en 7°**~~ ✅ **HECHO (28/08)**: motor compartido en `assets/js/calculo.js` + `genCalc7()` con el temario de 7°. **No consume banco de preguntas**: las operaciones se generan por código, así que no suma nada a la aprobación pedagógica ni a la voz | — | — |
 | A12 | **Migrar el Reto de Cálculo de 8° al motor compartido.** Hoy 8° tiene su propio motor inline (171 líneas) y `assets/js/calculo.js` existe aparte: hay solape. Es un cambio sobre la app en producción, así que va como paso propio y con su verificación | ~½ sesión | código |
 | ~~A13~~ | ~~**Reto Sin Fin en 3°**~~ ✅ **HECHO (28/08)**: **sin reloj**, medido por escalones. Encaja mejor que en 7°: no es un extra sino la práctica de `MA03 OA 04` (cálculo mental hasta 100), `OA 08` (tablas) y `OA 09` (división). Sin banco, sin voz nueva, sin sumar horas de aprobación | — | — |

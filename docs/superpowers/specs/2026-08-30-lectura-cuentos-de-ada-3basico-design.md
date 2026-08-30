@@ -29,10 +29,13 @@ libro y el mismo podría asignarse a dos cursos. Qué curso lo ofrece se decide 
 páginas. Protagonista Adalberto ("Ada"), su hermano menor Yoyito, su amigo Pocho, Cary —la niña
 que le gusta— y Orco, el compañero abusivo.
 
-> ⚠️ **Confirmar el sello editorial contra la tapa del ejemplar.** La guía dice **Alfaguara
-> Infantil (Chile, 2003)** y Roberto dijo Santillana Infantil. Alfaguara pertenece al grupo
-> Santillana, así que probablemente es la misma edición con sello distinto, pero el dato se
-> muestra en el juego y en el `libro.json`.
+> ✅ **Resuelto (30/08): el sello es Santillana Infantil**, confirmado por Roberto contra la tapa
+> del ejemplar. La guía decía **Alfaguara Infantil (Chile, 2003)**, que pertenece al mismo grupo;
+> como el dato se le muestra al alumno, se preguntó en vez de elegir por probabilidad.
+
+> ✅ **Y la portada se queda en la genérica de Lectura**, no como préstamo temporal sino por
+> **derechos de autor**: ilustrar la tapa de un libro ajeno sería obra derivada. Es coherente con
+> el resto del módulo, que no reproduce nada del libro.
 
 ### Los 10 tramos
 

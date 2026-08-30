@@ -591,8 +591,10 @@ voz**: 7° no lleva audio pregrabado, y de 5° hacia arriba no vale la pena paga
   lanzó la voz de Ciencias junto con sus auditorías y hubo que rehacer los textos de 20
   preguntas.
 - **La voz pregrabada va por asignatura, una carpeta cada una** (`assets/voz/mat3/`,
-  `assets/voz/hist3/`, `assets/voz/cie3/`, `assets/voz/len3/`), y el juego **carga y fusiona
-  los manifiestos**. Separarlas
+  `assets/voz/hist3/`, `assets/voz/cie3/`, `assets/voz/len3/` y `assets/voz/ada3/`, la del
+  libro), y el juego **carga y fusiona los manifiestos**. Los módulos transversales entran
+  por la misma puerta: su entrada en `ASIGS` filtra los nombres de etapa por el id de su
+  expedición (`caps`) en vez de por un prefijo de nivel. Separarlas
   evita volver a pagar Azure por lo ya generado al agregar una asignatura. El generador
   recibe la asignatura como primer argumento (`python scripts/generar-voz-3ro.py hist3`).
   ⚠️ **Gotcha caro:** el manifiesto se indexa por el texto **mostrado**, así que cambiar
@@ -5236,10 +5238,110 @@ sembrada en 8° (777 XP) queda intacta. **Cero 404 y cero errores de consola.**
 > **sembrar una partida primero**. Un "defecto" que en realidad era el escenario de prueba mal
 > montado.
 
-- **Pendiente de Roberto:** confirmar el **sello editorial** contra la tapa del ejemplar (la guía
-  dice *Alfaguara Infantil (Chile, 2003)* y Roberto dijo Santillana; Alfaguara es del grupo
-  Santillana, pero el dato se le muestra al alumno); **aprobar las 101 preguntas**, que ya salen
-  en el tablero bajo "Módulos transversales"; el **arte propio** del libro; y la **voz**
-  (~500 clips, del orden de US$0,3), que **va después de aprobar y nunca en paralelo**.
+**Cerrado el mismo día, con dos respuestas de Roberto:**
+
+- **El sello es Santillana Infantil**, confirmado contra la tapa del ejemplar. La guía decía
+  *Alfaguara Infantil (Chile, 2003)*, que es del mismo grupo; el dato **se le muestra al alumno**,
+  así que valía preguntarlo en vez de elegir por probabilidad.
+- **La portada se queda en la genérica de Lectura, y es una decisión, no un préstamo.**
+  Dibujar la tapa de un libro ajeno es obra derivada de material con derechos, y es coherente con
+  lo que el módulo ya hacía: el juego **no reproduce nada del libro** —por eso las preguntas son
+  originales y el niño lee el ejemplar—. El comentario del código pasó de *"cambiar cuando exista
+  el arte propio"* a **"no reemplazar"**, que es lo contrario: una nota que invita a un cambio que
+  no debe hacerse es peor que ninguna.
+
+- **Pendiente de Roberto:** **aprobar las 101 preguntas**, que ya salen en el tablero bajo
+  "Módulos transversales"; y después la **voz** (~500 clips, del orden de US$0,3), que **va
+  después de aprobar y nunca en paralelo**.
 - Spec y plan: `docs/superpowers/specs/2026-08-30-lectura-cuentos-de-ada-3basico-design.md` y
   `docs/superpowers/plans/2026-08-30-lectura-cuentos-de-ada-3basico.md`.
+#### Cierre de la Sesión 72 (30/08) — el libro queda aprobado y con voz
+
+Roberto respondió las dos preguntas abiertas y luego pidió aprobar y generar. Todo el trabajo
+es de datos y de audio: **el motor no se tocó** salvo una línea de configuración.
+
+**Sus dos decisiones, y lo que cambió cada una:**
+
+- **El sello es Santillana Infantil**, confirmado contra la tapa. La guía decía *Alfaguara
+  Infantil (Chile, 2003)*, que es del mismo grupo. El dato **se le muestra al alumno**, así
+  que valía preguntarlo en vez de elegir por probabilidad.
+- **La portada se queda en la genérica de Lectura, por derechos de autor.** No es un préstamo
+  a la espera de arte propio: ilustrar la tapa de un libro ajeno sería obra derivada, y es
+  coherente con lo que el módulo ya hacía —el juego no reproduce nada del libro—.
+  > Lo que había que corregir no era la ruta sino **el comentario**, que decía *"cuando exista
+  > el arte propio del libro, cambiar las dos rutas"*. Ahora dice **NO reemplazar**, que es lo
+  > contrario. **Una nota que invita a un cambio que no debe hacerse es peor que ninguna**, y
+  > en este proyecto ya pasó que una advertencia sin revisar se volviera un candado (el `NS` de
+  > la Sesión 65).
+
+**Los seis filtros, corridos a pedido de Roberto y no de memoria.** Pasa todos: `validar-oa-json`
+ok; `revisar-tanda --largo=120` 0 errores y **0% de sesgo de largo**; `auditar-banco-nivel` 0
+errores y 0 avisos (correcta en 20/21/29/31%); `auditar-numerico` 0 opciones equivalentes;
+`auditar-solape-oa` 1 par sobre el umbral; y **`auditar-audible-3ro`: las 101 se pueden responder
+escuchando**, 0 homófonas. Se comprobó además que el banco **corresponde a sus tandas** (101 = 101)
+y que el tablero está al día — el defecto de la Sesión 68 fue corregir un banco y no regenerarlo.
+
+Los dos avisos se miraron uno por uno en vez de darlos por buenos: **T4~T6** (0.57) son dos cuentos
+sobre acercarse a Cary que preguntan cosas distintas, y **`ada-t7-8`~`ada-t1-9`** comparten la
+plantilla *"¿Qué muestra este cuento sobre… de Ada?"* pero no el contenido. En los dos se verificó
+lo que el aviso pide: **la clave y el tip le corresponden a su propia pregunta**.
+
+**Aprobación forzada de las 101** (decisión de Roberto). El proyecto pasa de **2.536 a 2.637
+aprobadas**. El archivo cambió **102 líneas de 102**, o sea solo las marcas: el indent se detecta
+con un round-trip antes de escribir, porque re-dumpar con el equivocado reformatea el banco entero.
+
+**La voz: 515 clips, 12 MB, US$0,32** — clavado en la estimación. Entrada `ada3` en el generador
+y en `VOZ_DIRS` del juego.
+
+> **Un hallazgo que vale para todo módulo de lectura: ningún texto del libro cambia al
+> pronunciarse — 0 de 515.** El normalizador no tiene nada que normalizar, porque es prosa pura,
+> sin operaciones, símbolos ni emoji. Toda la familia de defectos de las Sesiones 56 y 60 —el
+> "enero", el menos que desaparecía, las coordenadas leídas como preposición, los números
+> romanos— **no puede ocurrir en un banco así**. Por eso la auditoría con reconocimiento de voz
+> aquí rinde poco: lo único con riesgo real son los nombres propios (Ada, Yoyito, Pocho, Cary,
+> Orco), que es el caso de *copihue*. Quedó sin correr, y anotada.
+
+**Verificación (jugando, con `cdp.mjs`):** cobertura **505 de 505** textos del banco con clip y
+**0 de 0 bytes**; el manifiesto carga pese al `<base href="/">` y aporta **515 entradas desde
+`ada3/`**; en una ronda real **30 de 30** textos encuentran su clip; y los 5 clips de la pregunta
+en pantalla responden **HTTP 200 `audio/mpeg`**, 24–28 KB. Cero 404 y cero errores de consola.
+
+> **Un error de medición propio, registrado porque la conclusión falsa era alarmante.** La primera
+> comprobación dijo *"opciones con clip: 0 de 4"*. Era falso: yo comparaba contra el `textContent`
+> del DOM, que lleva la letra delante (*"A. Porque su mamá…"*), mientras el juego busca el clip con
+> el texto **de los datos** (`orden.map(it=>it.o)`). Y busqué un botón `btnVoz` que no existe —se
+> llama `btnEscuchar`—. **Medir la pantalla no siempre es medir lo que el juego hace**: hay que
+> mirar por dónde pasa el dato.
+
+- **Peso tras sumar la voz:** `assets/voz/` queda en **263 MB** y el sitio publicado en **317 MB**,
+  lejos del techo de 1 GB.
+- **Queda de este libro:** nada bloqueante. Opcional, la auditoría por muestra con Azure STT
+  (~US$0,06) para los cinco nombres propios.
+
+#### Una pregunta de producto que quedó abierta: la autoinscripción por un solo enlace
+
+Roberto preguntó si puede repartir **un solo enlace** para que varias personas se inscriban solas
+en un curso que él asignó, y que desde ahí se registren sus resultados. **Hoy no existe**: el
+modelo es un `ALU-` por alumno, creado por el profesor con su nombre, y `kimun_canjear` engancha
+el dispositivo a un perfil **que ya existe**. Ninguna función crea el perfil desde el lado del
+alumno.
+
+Es construible y es chico, porque **lo de "que se registren sus resultados" ya funciona solo**: en
+cuanto un dispositivo queda vinculado a un perfil con curso, el XP, el mapa de dominio, la
+participación, el ranking y los refuerzos empiezan a llegar sin tocar nada. Faltaría un **token de
+inscripción** por curso, una pantalla que pida el nombre y una función `kimun_inscribirse`.
+
+**Las cuatro cosas que hay que decidir antes** quedaron planteadas y sin resolver:
+
+1. **El enlace *es* la credencial.** Hoy un `ALU-` filtrado regala **un** cupo; un enlace filtrado
+   los regala **todos**. Se acota con cupo máximo, vencimiento (la maquinaria del token `?m=` ya
+   existe) e interruptor.
+2. **Los nombres dejan de estar verificados** — llegan apodos, duplicados y "asdf". Conviene
+   marcarlos como autoinscritos para distinguirlos de los que escribió el profesor.
+3. **Un dispositivo, un vínculo:** inscribirse dos veces dejaría dos perfiles y uno huérfano.
+4. **Son datos de menores.** Hoy el nombre lo pone el colegio; con autoinscripción un niño lo
+   escribe en un formulario público sin autenticar. Es exactamente lo que pregunta UTP.
+
+Se le ofreció además una alternativa mucho más barata: **un enlace por alumno con el código
+adentro** (`?alu=ALU-XXXX`), que elimina el error de tipeo —donde más se cae el canje— **sin tocar
+el modelo de seguridad ni recoger datos de menores**. Roberto no eligió todavía.
