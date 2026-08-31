@@ -48,6 +48,9 @@ ASIGS = {
     # nada y esta bien: el libro no tiene metas de aprendizaje, y lo que se lee
     # en su tarjeta es el nombre del tramo, que si viaja por "caps".
     "ada3":  {"banco": "lectura-cuentos-de-ada", "oa": "CA", "caps": "lect-cuentos-ada"},
+    # Vocabulario de 3o: sus codigos son VOC-CIEN y VOC-HIST, sin nivel adentro, igual
+    # que el libro. Su expedicion en el juego es voc-general.
+    "voc3":  {"banco": "vocabulario-3basico", "oa": "VOC", "caps": "voc-general"},
 }
 # Sin argumento vale mat3, que es el uso historico. Con un argumento que NO sea una
 # asignatura conocida, MORIR en vez de caer a mat3: el fallback callado generaba (y

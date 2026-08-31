@@ -40,8 +40,10 @@ Es una app web mobile-first y se reutiliza. Ver `docs/roadmap-tecnico.md` §1.
 
 - **7.745 preguntas escritas · 7.745 aprobadas · 0 pendientes.** El currículum de 4°, 5°
   y 6° ya está fijado (284 OA), pero sin una sola pregunta escrita todavía.
-- **Sitio publicado: 317 MB** (techo de GitHub Pages: 1 GB). `assets/` completo son 475 MB,
-  de los cuales 263 MB son la voz de 3° y 175 MB los originales, ya excluidos del sitio.
+- **Sitio publicado: 324 MB** (techo de GitHub Pages: 1 GB). `assets/` completo son 455 MB,
+  de los cuales 244 MB son la voz de 3° y 174 MB los originales, ya excluidos del sitio.
+  ⚠️ Medido en **bytes reales**: `du` sin `--apparent-size` cuenta bloques de 4 KB y con
+  11.391 clips infla ~26 MB (las cifras viejas venían de ahí).
   El reparto y sus reglas, en `CLAUDE.md` → “Cómo se ordenan los archivos”.
 - **Backend al día:** `schema.sql` aplicado y verificado, los códigos de los tres cursos en las
   dos listas de `kimun_prof_asignaturas`, y la foto semanal agendada.

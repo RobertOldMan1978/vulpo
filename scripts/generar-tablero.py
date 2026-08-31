@@ -681,7 +681,14 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
     document.getElementById('mzCerrar').onclick=cerrarMuestreo;
   }
 
-  function guardarPos(){ try{localStorage.setItem(LS_POS,String(MZ.i));}catch(e){} }
+  // Se guarda el CODIGO del objetivo y no el indice. El indice no sirve: la cola se
+  // recalcula en cada apertura y encoge al aprobar, asi que un indice viejo apunta a
+  // otro OA -o al final-. Paso de verdad: con la cola en 170 y luego en 2, el clamp
+  // dejaba MZ.i=2 sobre una cola de 2 y el modo anunciaba que no quedaba nada.
+  function guardarPos(){ try{
+    var it=MZ.cola[MZ.i];
+    localStorage.setItem(LS_POS, it? it.cod : '');
+  }catch(e){} }
 
   function aprobarActual(){
     var it=MZ.cola[MZ.i];
@@ -717,10 +724,12 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
   var btnMz=document.getElementById('abrirMuestreo');
   if(btnMz) btnMz.onclick=function(){
     MZ.cola=armarCola();
-    // Retomar donde se quedo, pero sin pasarse: la cola se recalcula en cada apertura
-    // y encoge a medida que se aprueba, asi que la posicion guardada puede quedar fuera.
-    var g=0; try{ g=parseInt(localStorage.getItem(LS_POS)||'0',10)||0; }catch(e){}
-    MZ.i=Math.min(Math.max(0,g), MZ.cola.length);
+    // Retomar donde se quedo: se busca el OA guardado en la cola NUEVA. Si ya no esta
+    // -porque se aprobo, o porque la cola es otra- se empieza del principio, que es lo
+    // unico util. Empezar del final es como no tener modo.
+    var g=''; try{ g=localStorage.getItem(LS_POS)||''; }catch(e){}
+    MZ.i=0;
+    if(g) for(var k=0;k<MZ.cola.length;k++){ if(MZ.cola[k].cod===g){ MZ.i=k; break; } }
     document.getElementById('muestreo').style.display='block';
     document.addEventListener('keydown', teclasMuestreo);
     pintarMuestreo();

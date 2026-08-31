@@ -125,9 +125,8 @@ año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron co
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
 están hoy en una expedición jugable, el resto es reserva.
 
-> **Estado de aprobación (31/08/2026): 7.745 aprobadas de 7.805 escritas.** Las 60 que faltan
-> son el **Vocabulario de 3°**, recién escrito (Sesión 74), y están esperando la firma de Roberto
-> en el tablero. Hasta el 30/08 el banco entero estaba firmado. Pero **cómo se aprobó cada banco no es lo mismo, y hay que saberlo antes de
+> **Estado de aprobación (31/08/2026): 7.805 de 7.805. El banco entero está firmado de nuevo**,
+> incluidas las 60 del Vocabulario de 3° que se escribieron ese mismo día. Pero **cómo se aprobó cada banco no es lo mismo, y hay que saberlo antes de
 > decírselo a un colegio:** los 2.536 de 8° y los módulos de apoyo se revisaron **pregunta por
 > pregunta**; los de 3° y 7° se aprobaron **por muestreo** —8 de cada 30 por objetivo, criterio
 > de `docs/aprobacion-pedagogica.md`—. Por eso la landing dice *"aprobadas por un profesor,
@@ -184,7 +183,7 @@ mobile-first y se reutiliza. Nada de eso está implementado.
 
 Antes de tocar `sw.js` hay que leer su §2, que corrige el análisis externo con hechos del
 repositorio: hoy hay **tres apps forkeadas** (`/juego/`, `/3ro/`, `/7mo/`), así que un manifiesto
-único abriría el curso equivocado; y **`assets/` pesa 475 MB** (263 MB solo de voz de 3°), así que
+único abriría el curso equivocado; y **`assets/` pesa 455 MB** (244 MB solo de voz de 3°), así que
 la precarga `cache-first` que propone el análisis le bajaría 250 MB al teléfono de un niño en la
 primera apertura. El progreso local en `localStorage` es el requisito real del modelo de
 suscripción, y es trabajo de backend, no de PWA.
@@ -257,20 +256,27 @@ supuesto cuando pide "no modificar `contenido/` ni `supabase/`".
 5. **Nada nuevo en la raíz sin motivo.** La raíz es la landing. La PWA sumará exactamente
    `manifest.webmanifest`, `sw.js` y `pwa.js`, y ahí se detiene.
 
-#### El peso, medido hoy (30/08/2026)
+#### El peso, medido hoy (31/08/2026)
 
 > Una sola medición para todo el proyecto. Antes vivía con **cuatro cifras distintas en
-> cuatro documentos** y ninguna calzaba con el disco: venían de antes de generar la voz del
-> libro. Al actualizarla, actualizar también `pendiente.md` y `docs/roadmap-tecnico.md`.
+> cuatro documentos** y ninguna calzaba con el disco. Al actualizarla, actualizar también
+> `pendiente.md` y `docs/roadmap-tecnico.md`.
+>
+> ⚠️ **Y hay que medir en BYTES REALES, no en tamaño de disco.** Las cifras anteriores venían
+> de `du` sin `--apparent-size`, que cuenta bloques de 4 KB: con **11.391 archivos** de voz eso
+> infla ~26 MB, y el proyecto se creía 20 MB más pesado de lo que es. Contra el techo de 1 GB de
+> GitHub Pages lo que cuenta son los bytes. `du -sm assets` en Git Bash además devuelve un
+> número **menor que el de su propia subcarpeta**, así que aquí no sirve: se mide recorriendo
+> con `os.path.getsize`.
 
 | | |
 |---|---|
-| `assets/voz/` (voz pregrabada de 3°, **5 asignaturas**) | **263 MB** |
-| `assets/originales/` (arte crudo, **excluido del sitio** por `_config.yml`) | 175 MB |
-| `contenido/` (los bancos completos) | 7,8 MB |
-| `assets/audio/` (música) | 5,1 MB |
-| **`assets/` completo** | **475 MB** |
-| **Sitio publicado** (sin `.git` ni originales) | **317 MB** |
+| `assets/voz/` (voz pregrabada de 3°, **6 asignaturas**) | **244 MB** |
+| `assets/originales/` (arte crudo, **excluido del sitio** por `_config.yml`) | 174 MB |
+| `contenido/` (los bancos completos) | 7,3 MB |
+| `assets/audio/` (música) | 5,0 MB |
+| **`assets/` completo** | **455 MB** |
+| **Sitio publicado** (sin `.git` ni originales) | **324 MB** |
 
 El techo de GitHub Pages es **1 GB**, y la voz de 4° suma otros ~254 MB. Por eso la regla del
 proyecto —voz pregrabada solo de 1° a 4°— no es una preferencia pedagógica: **es también la
@@ -6054,10 +6060,58 @@ X?"*, inevitable en un banco de vocabulario, y cada clave y cada tip corresponde
 
 #### Estado del banco, que cambia una afirmación de la landing
 
-El proyecto pasa a **7.745 aprobadas de 7.805 escritas**. Las 60 nuevas nacen `revisada:false`,
-así que la landing dejó de poder decir *"Todo el banco, sin pendientes"* y esa frase se quitó
-—el 7.745 sigue siendo verdad—. Vuelve a cuadrar en cuanto Roberto firme las 60, que en el
-tablero son **dos objetivos**: unos 5 minutos por muestreo.
+El proyecto pasó a 7.745 aprobadas de 7.805 escritas, y la landing perdió por un rato su frase
+*"Todo el banco, sin pendientes"*. **Roberto las firmó el mismo día y quedó en 7.805 de 7.805.**
+
+> **Y las revisó una a una, no por muestreo** — porque el modo de muestreo no se las mostraba (ver
+> abajo). O sea que el bug del tablero terminó dejando ese banco firmado con el método **más
+> fuerte** de los dos. Al aplicarlas, el diff fue de **61 líneas y no del archivo entero**: el
+> detector de formato de `aplicar-revisadas.py`, que se arregló en la Sesión 72, hizo su trabajo.
+
+#### El tablero decía "no queda nada por revisar" sobre un banco recién escrito
+
+Roberto abrió el modo de aprobación y **no le aparecía nada**. No era el banco: era el tablero.
+
+`armarCola()` recalcula la cola en cada apertura, y la posición para *reanudar donde te quedaste*
+se guardaba como el **índice** de esa cola. Ayer la cola eran 170 objetivos y quedó guardado ~170;
+hoy la cola son **2** (las dos áreas del Vocabulario), y el clamp hacía
+`MZ.i = Math.min(170, 2) = 2` sobre una cola de 2 — o sea, **te dejaba al final**, y la primera
+comprobación anunciaba que estaba todo aprobado.
+
+> **No daba ningún error y se veía exactamente igual que si de verdad no quedara nada.** Es la
+> misma familia de defectos que este archivo ya documenta —el código de OA ausente de un arreglo,
+> el trabajo de `pg_cron` sin agendar, el esquema sin aplicar—: **fallan en silencio**. Y este
+> además crecía con el proyecto: mientras solo se aprobaba, la cola encogía de a poco y el clamp
+> disimulaba; el día que se agrega contenido nuevo **después** de haber aprobado todo, deja el
+> modo permanentemente mudo.
+
+#### Cierre: la voz, y un número del proyecto que estaba inflado
+
+Aprobadas las 60, se generó su voz: **308 clips, 6,9 MB, US$0,23**, clavado en la estimación.
+Cobertura verificada —los 300 textos del banco tienen clip, ninguno de 0 bytes— y comprobado en
+el navegador que los cinco de una pregunta real responden 200. `voc3` quedó registrada en
+`generar-voz-3ro.py` y en `VOZ_DIRS`.
+
+> **Ojo con las banderas inventadas:** se lanzó con `--simular`, que **no existe**. El generador
+> ignora lo que empiece con `-` que no conozca, así que **generó de verdad**. Aquí no importó
+> —estaba autorizado— pero con `--rehacer` habría vuelto a pagar todo. El modo que sí existe se
+> llama `--recuento`.
+
+**Y al medir el peso apareció que la cifra del proyecto estaba inflada en ~20 MB.** Las anteriores
+venían de `du` sin `--apparent-size`, que cuenta **bloques de 4 KB**: con **11.391 archivos** de
+voz eso suma ~26 MB que no existen. Medido en bytes reales, `assets/voz` son **244 MB** y no 263,
+`assets/` **455** y no 475, y el sitio publicado **324 MB**.
+
+> No es un detalle contable: **ese número gobierna la decisión de poner voz solo hasta 4°**,
+> porque es lo que se compara contra el techo de 1 GB de GitHub Pages. Y contra ese techo lo que
+> cuenta son los bytes, no los bloques. Queda además anotado que **`du -sm assets` en Git Bash
+> devuelve un número menor que el de su propia subcarpeta**, así que en este entorno no sirve: se
+> mide recorriendo con `os.path.getsize`.
+
+Ahora se guarda **el código del objetivo**, que sí es estable entre colas distintas: si sigue en
+la cola nueva, reanuda ahí; si ya no está, empieza del principio, que es lo único útil. Probados
+los cinco casos —índice viejo, reanudar en el primero, en el segundo, un OA ya aprobado y sin nada
+guardado—, y **empezar del final es como no tener modo**.
 
 **La voz va después de aprobar, nunca en paralelo** (~300 clips, ~US$0,2): cada texto corregido
 obliga a regenerar su clip y a pagarlo de nuevo.
