@@ -68,7 +68,9 @@ dominio poblado, y la decisión llega a tiempo para el presupuesto del año sigu
 - **El año escolar chileno termina en diciembre.** Desde septiembre en adelante ya no se vende
   el año en curso: **se vende el año siguiente**.
 - **Fiestas Patrias interrumpe septiembre.** Una prueba que arranque el 1 de septiembre se corta
-  a los diez días. Conviene partir la última semana del mes.
+  a los diez días. Conviene partir la última semana del mes. **Por eso la puerta se corrió al
+  1 de octubre** (31/08/2026): cerrar el acceso en plena interrupción del calendario dejaba al
+  piloto sin las dos semanas de uso continuo que lo hacen demostrable.
 - **El momento de compra de un colegio es noviembre–diciembre** (presupuesto) o enero–marzo.
   De ahí que la tarifa Fundador venza el 31 de diciembre: coincide con cuando deciden.
 
@@ -226,7 +228,7 @@ mandan a la URL antigua y ofrecen piloto de un semestre.**
 
 1. **Verificar que el curso demo `CUR-BA04` siga sembrado.** Un panel vacío no vende nada; el
    mapa de dominio solo impresiona con datos.
-2. **Llevar un código `ALU-` propio ya canjeado.** Desde el 1 de septiembre de 2026, sin código
+2. **Llevar un código `ALU-` propio ya canjeado.** Desde el 1 de octubre de 2026, sin código
    no se pasa del primer capítulo — ni siquiera para quien está mostrando el producto.
 3. Propuesta impresa, para entregarla en el minuto 10.
 

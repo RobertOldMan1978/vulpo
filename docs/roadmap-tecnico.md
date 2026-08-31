@@ -115,7 +115,7 @@ prerrequisito del modelo de suscripción — no de la PWA. Conviene no mezclarlo
 
 ### 2.5 La puerta ya existe, y es blanda
 
-`FECHA_PUERTA` cierra el juego desde el 1 de septiembre de 2026 y la llave es el código `ALU-`.
+`FECHA_PUERTA` cierra el juego desde el 1 de octubre de 2026 y la llave es el código `ALU-`.
 Pero **es un bloqueo blando**: `tieneLicencia()` solo lee `localStorage`, no revalida contra
 Supabase, y las preguntas se descargan pidiendo el archivo directo. Un modelo de suscripción con
 vencimiento **hereda ese hueco tal cual**. Cerrarlo de verdad exige servir el contenido desde

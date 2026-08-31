@@ -490,7 +490,7 @@ producción; el costo del fork está medido y es re-aplicar cada corrección en 
   ese contenido queda **invisible para el Jefe sin ningún error**), y en `profesor.html` a
   `OA_CARPETA`, `ASIG_NOMBRE`, `ASIG_ORDEN`, `SB_asigDe` y `NIVELES_MUESTRA`.
   ⚠️ **Requiere re-aplicar `supabase/schema.sql`.**
-- **`FECHA_PUERTA='2026-09-01'`** (alineada con 8° en la Sesión 65) y `DEMO_LIBRE='hist7-cap1'`.
+- **`FECHA_PUERTA='2026-10-01'`** (alineada con 8°) y `DEMO_LIBRE='hist7-cap1'`.
 - **Arte prestado de 8°, declarado en comentarios.** Los villanos sí tienen nombre propio:
   El Anacronismo (Historia), El Azar (Matemática), La Erosión (Ciencias) y El Silencio
   (Lenguaje).
@@ -905,12 +905,17 @@ código `ALU-` para jugar más allá de una demo. **Todo lo gobierna una sola co
 
 Llegada la fecha el cierre **ocurre solo**, sin desplegar nada ese día.
 
-> **ESTADO ACTUAL: `FECHA_PUERTA='2026-09-01'` en los TRES niveles.** Roberto la fijó en 8° el
-> 25/08/2026 con 7 días de aviso, y en la Sesión 65 se alineó **3° y 7°**, que estaban abiertos
-> (`''`) y por lo tanto eran gratis. Una plataforma, una fecha. Desde entonces los tres muestran
-> la banda que anuncia el cierre, y **el 1 de septiembre de 2026 VULPO deja de ser gratuito**:
-> sin código `ALU-` solo se juega la demo de cada nivel (`hist-cap1` en 8°, `hist7-cap1` en 7°,
-> `mat3-cap1` en 3°). Para posponerlo o cancelarlo, editar esa constante en cada `index.html`.
+> **ESTADO ACTUAL: `FECHA_PUERTA='2026-10-01'` en los TRES niveles.** Roberto la fijó primero en
+> 8° el 25/08/2026, en la Sesión 65 se alineó **3° y 7°** (que estaban abiertos y por lo tanto
+> eran gratis), y el **31/08/2026 la corrió de septiembre a octubre**. Una plataforma, una fecha.
+> Los tres muestran la banda que anuncia el cierre, y **el 1 de octubre de 2026 VULPO deja de ser
+> gratuito**: sin código `ALU-` solo se juega la demo de cada nivel (`hist-cap1` en 8°,
+> `hist7-cap1` en 7°, `mat3-cap1` en 3°). Para posponerlo o cancelarlo, editar esa constante en
+> cada `index.html`.
+>
+> **Correrla es barato y no rompe nada**, pero recordar que el **aviso previo se muestra solo
+> mientras la fecha es futura**: quien vea la banda hoy va a leer una fecha distinta de la que
+> vio la semana pasada. Con un piloto en marcha eso conviene decirlo, no dejarlo aparecer.
 >
 > **La puerta NO estorba la revisión de un profesor:** `bloqueado()` exige `!PRUEBA`, así que los
 > enlaces de muestra (`?solo=`, `?m=`) y el modo revisión (`?rev=1`) la esquivan por diseño.
@@ -5565,7 +5570,7 @@ con el porqué escrito encima para que nadie la "ordene" de vuelta junto a las o
   La pieza de motor es partir `MODO_ABIERTO` en **`CAPS_ABIERTOS`** y **`JEFES_ABIERTOS`** — el
   mismo corte que la Sesión 41 le hizo a `QA`.
 
-### Sesión 73 (2026-08-30) — La inscripción por enlace único, implementada
+### Sesión 73 (2026-08-30 y 31) — La inscripción por enlace único, y el primer curso real
 Se ejecutó el plan que la Sesión 72 dejó diseñado: **un enlace al chat del curso**, cada
 persona se crea sola en un curso que el profesor ya abrió, recibe su código `ALU-` y su
 avance se registra como el de cualquier alumno. **No se tocó contenido**: ni un banco, ni
@@ -5803,3 +5808,38 @@ antes: que el duelo es **contra el reloj** y 3° juega `SIN_RELOJ` a propósito 
 conoce el proyecto: al Reto Sin Fin de 3° se le **quitó** el cronómetro, no se le aflojó), y que
 `cargarPoolDuelo` no traiga el banco de 8°, que es el defecto del fork que ya mordió tres veces.
 
+#### La puerta se corre a octubre (31/08)
+
+Roberto la movió de **`2026-09-01` a `2026-10-01`** en los tres cursos, el día antes de que
+cerrara. La razón la tenía escrita `docs/comercial.md` desde la Sesión 48 y no se había cruzado
+con la fecha: **Fiestas Patrias parte septiembre en dos**, así que cerrar el acceso el día 1
+dejaba al piloto sin las semanas de uso continuo que lo hacen demostrable. Ahora el argumento y
+la constante dicen lo mismo.
+
+Verificado jugando: la banda anuncia sola la fecha nueva —la arma el JavaScript desde la
+constante, no hay texto que corregir— y el límite sigue siendo **inclusivo**: `30/09` abierto,
+`01/10` cerrado, que es lo que promete el aviso.
+
+> **Lo que hay que decir antes de que lo noten:** el aviso previo solo se muestra **mientras la
+> fecha es futura**, así que quien vio la banda la semana pasada leyó "1 de septiembre" y hoy lee
+> "1 de octubre". Con gente ya jugando, correr la puerta es barato para el código y no tanto para
+> la confianza: conviene avisarlo, no dejar que aparezca.
+
+De paso, el comentario de `3ro/index.html` decía *"app de 3° WIP oculta: sin puerta durante el
+desarrollo"* y **mentía desde la Sesión 65**, cuando se le puso fecha.
+
+#### Un pendiente falso, inventado por mí
+
+Tras el commit avisé de que "hay que re-aplicar el esquema", y **ya estaba aplicado**: el arreglo
+de `v_rol` lo había pegado Roberto la noche anterior —por eso nombrar Jefe le funcionó— y desde
+entonces solo se había tocado el cliente.
+
+Es inofensivo, porque el archivo es idempotente. Pero es el mismo defecto que este archivo
+documenta al revés, dado vuelta: **un pendiente que nadie vuelve a medir se arrastra solo**, y
+esta vez lo creé yo. Mandar a re-aplicar por reflejo entrena a ignorar el aviso, que es
+justamente lo que lo vuelve peligroso el día que sea de verdad. La comprobación quedó escrita en
+`docs/aplicar-schema.md`:
+
+    git log -1 --format=%cd -- supabase/schema.sql
+
+contra la fecha de la última fila del registro. Si coinciden, ya está aplicado.

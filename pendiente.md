@@ -93,7 +93,8 @@ Esto no es un bloque del roadmap: es la lista corta de lo que hay entre hoy y un
 
 **Bloquea de verdad:**
 
-1. **La puerta cierra el 1 de septiembre** en los tres cursos (`FECHA_PUERTA='2026-09-01'`).
+1. **La puerta cierra el 1 de octubre** en los tres cursos (`FECHA_PUERTA='2026-10-01'`;
+   corrida desde el 1 de septiembre el 31/08/2026, para que Fiestas Patrias no parta el piloto).
    Desde ese día, sin credencial solo se juega la demo (`hist-cap1` / `hist7-cap1` /
    `mat3-cap1`). O sea que **el curso tiene que entrar con credencial desde el primer día**.
 2. **Elegir la puerta de entrada**, que son dos y no equivalen:

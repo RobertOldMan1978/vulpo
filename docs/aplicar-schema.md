@@ -16,8 +16,15 @@ puede ejecutar cambios de estructura).
 | **2026-08-30** | La **inscripción por enlace**, primera tanda: tabla `inscripciones`, columna `cursos.experimental`, índice de un solo enlace vivo por curso y las cuatro funciones | Sí: las **6 filas en `ok`**, incluida la que comprueba que el generador de tokens NO es ejecutable por `anon` |
 | **2026-08-30** | La misma feature, segunda tanda: los **tres fallos distinguidos** en `kimun_inscribirse` (enlace que no existe / cerrado / sin cupo) y la columna `perfiles.autoinscrito`, que `kimun_prof_listar` devuelve | Sí: el bloque del panel carga y deja crear el enlace desde la cuenta de admin, que es lo que fallaba mientras no estaba aplicada |
 | **2026-08-30** | El **nivel del curso**: columna `cursos.nivel`, `kimun_prof_curso_crear` **cambia de firma** (`text` → `text,text`), `kimun_prof_curso_nivel` nueva, `kimun_prof_listar` devuelve el nivel y `kimun_prof_equipo_asignar` rechaza una asignatura de otro nivel | Sí: las **3 filas en `ok`**, incluida la que confirma que no quedaron dos versiones de `kimun_prof_curso_crear` |
+| **2026-08-30** | `v_rol` en `kimun_prof_equipo_asignar` (la variable se llamaba igual que la columna `rol`) y el `unnest` con alias de columna explícito | Sí, y **de la mejor manera**: nombrar Profesor Jefe desde el panel pasó a funcionar, que es lo que estaba roto desde la Sesión 37 |
 
 > **Al 30/08/2026 el backend está al día**: las tres tandas del día aplicadas y comprobadas.
+>
+> ⚠️ **Antes de mandar a re-aplicar, MIRAR si el archivo cambió.** El 30/08 se pidió un pegado
+> de más: el arreglo ya estaba aplicado y en el intervalo solo se había tocado el cliente. Es
+> inofensivo —el archivo es idempotente— pero entrena a re-aplicar por reflejo, y entonces el
+> aviso deja de significar algo. La comprobación es `git log -1 --format=%%cd -- supabase/schema.sql`
+> contra la fecha de la última fila de esta tabla.
 >
 > ⚠️ **Cuidado con el orden cuando una función CAMBIA DE FIRMA.** Aplicar el esquema antes de
 > publicar el cliente deja una ventana en la que el panel en vivo llama a una firma que ya no
