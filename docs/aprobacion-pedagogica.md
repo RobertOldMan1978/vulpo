@@ -33,7 +33,7 @@ saber qué cubren, para no gastar ojos humanos en eso:
 | `auditar-numerico.py` | Dos opciones que **valen lo mismo** escritas distinto (`1/6` y `2/12`) |
 | `auditar-solape-oa.py` | El mismo tema medido en **dos OA distintos** |
 | `validar-oa-json.py` | Que el currículum esté bien declarado y que ningún OA quede sin preguntas por olvido |
-| `auditar-audible-3ro.py` | Preguntas irresolubles **para quien las escucha** (solo niveles con voz) |
+| `auditar-audible-nivel.py` | Preguntas irresolubles **para quien las escucha** (solo niveles con voz) |
 
 **Lo que ninguna máquina puede ver, y es para lo que sirve la revisión humana:** una clave
 equivocada que exige saber la materia, imprecisión científica o histórica, un contenido que es de

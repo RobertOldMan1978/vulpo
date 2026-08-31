@@ -8,13 +8,16 @@ traduce la notacion a palabras antes de mandarla al sintetizador.
 
 El texto mostrado en pantalla NO cambia: solo cambia lo que se pronuncia.
 
-Ojo con los dos puntos: en este banco significan division (OA 09: "18 : 6") y
-tambien hora (OA 20: "7:45"). Por eso `normalizar` recibe el OA y decide. Se
-verifico que ningun texto con ":" aparece en los dos contextos a la vez.
+Ojo con los dos puntos: significan division ("18 : 6"), hora ("7:45") y enumeracion
+("de 10 en 10: 10, 20"). Se distinguen por los ESPACIOS, no por el objetivo: antes
+habia una lista de codigos MA03 y eso dejaba a 4 basico sin traducir en silencio.
+
+Sirve para CUALQUIER nivel, y por eso su nombre lleva "nivel" y no "3ro".
 
 Uso:
-    python scripts/normalizar-voz-3ro.py            # ejemplos de prueba
-    python scripts/normalizar-voz-3ro.py --banco    # revisa TODO el banco
+    python scripts/normalizar-voz-nivel.py                             # ejemplos
+    python scripts/normalizar-voz-nivel.py --banco                     # revisa un banco
+    python scripts/normalizar-voz-nivel.py --banco historia-3basico    # otro banco
 """
 import re
 
@@ -26,8 +29,11 @@ _DENOM = {1: ("entero", "enteros"), 2: ("medio", "medios"), 3: ("tercio", "terci
 _NUM = {1: "un", 2: "dos", 3: "tres", 4: "cuatro", 5: "cinco", 6: "seis",
         7: "siete", 8: "ocho", 9: "nueve", 10: "diez", 11: "once", 12: "doce"}
 
-# Numeros en palabras hasta 1000, que es todo lo que necesita 3 basico. Se usa para
-# desarmar "de 10 en 10", que el sintetizador lee como fecha (ver _en_en mas abajo).
+# Numeros en palabras. Se usa para desarmar "de 10 en 10", que el sintetizador lee como
+# fecha (ver mas abajo). Llega hasta 999.999 y NO hasta 1.000, que era "todo lo que
+# necesita 3 basico": 4 basico trabaja con numeros hasta 10.000, asi que "cuenta de
+# 1.000 en 1.000" habria caido al `str(n)` y devuelto justo el defecto que esta regla
+# existe para evitar.
 _U = ["cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve",
       "diez", "once", "doce", "trece", "catorce", "quince", "dieciseis", "diecisiete",
       "dieciocho", "diecinueve", "veinte", "veintiuno", "veintidos", "veintitres",
@@ -49,8 +55,10 @@ def _en_palabras(n):
     if n < 1000:
         c, r = divmod(n, 100)
         return _C[c] + ("" if r == 0 else " " + _en_palabras(r))
-    if n == 1000:
-        return "mil"
+    if n < 1000000:
+        m, r = divmod(n, 1000)
+        miles = "mil" if m == 1 else _en_palabras(m) + " mil"
+        return miles + ("" if r == 0 else " " + _en_palabras(r))
     return str(n)
 
 # Simbolos que el banco usa como incognita o como ficha.
@@ -79,7 +87,12 @@ _UNIDADES = [(r"(\d+)\s*cm\b", "centimetro"),
              (r"(\d+)\s*g\b", "gramo"),
              (r"(\d+)\s*m\b", "metro")]
 
-_OA_HORA = {"MA03 OA 18", "MA03 OA 20"}     # ahi ":" es hora, no division
+# NO hay lista de OA que decida si ":" es hora: la FORMA ya alcanza, y una lista de
+# codigos de 3 basico dejaba a 4 sin traducir EN SILENCIO (el clip se paga igual).
+# Medido sobre los 16 bancos: la forma de hora pegada (una o dos cifras, dos puntos,
+# dos cifras) aparece en cuatro OA -MA03 OA 18 y 20, LE07 OA 21 y LE08 OA 11- y en
+# LOS CUATRO es una hora de verdad. Ninguna division ni enumeracion la empareja,
+# porque esas llevan espacio a algun lado.
 
 # Palabras que la voz NO sabe pronunciar, con su escritura fonetica.
 #
@@ -151,7 +164,13 @@ def _emoji_objeto(t):
 
 
 def normalizar(texto, oa=""):
-    """Texto listo para el sintetizador. `oa` desambigua los dos puntos."""
+    """Texto listo para el sintetizador.
+
+    `oa` se sigue recibiendo porque los cuatro llamadores lo pasan, pero YA NO decide
+    nada: los dos puntos se desambiguan por la forma del texto. Se conserva el
+    parametro para no tocar los llamadores, y porque el dia que haga falta una
+    excepcion por objetivo este es su lugar.
+    """
     t = " " + (texto or "").strip() + " "
 
     # Va primero: son palabras enteras y no deben verse afectadas por las reglas de
@@ -169,8 +188,7 @@ def normalizar(texto, oa=""):
     # Exigir espacios a ambos lados para la division es lo que impide que un listado
     # se lea "cuenta de diez en diez DIVIDIDO EN diez, veinte" — verificado sobre los
     # 124 textos del banco que llevan dos puntos.
-    if oa in _OA_HORA:
-        t = re.sub(r"\b(\d{1,2}):(\d{2})\b", _hora, t)
+    t = re.sub(r"\b(\d{1,2}):(\d{2})\b", _hora, t)
     t = re.sub(r"(\d)\s+:\s+(\d)", r"\1 dividido en \2", t)
 
     # "de 10 en 10" el sintetizador lo lee como FECHA: "10 de ENERO de 10", porque "en"
@@ -242,7 +260,12 @@ def _revisar_banco():
     """Busca en TODO el banco textos que sigan trayendo notacion sin traducir."""
     import json, io
     from pathlib import Path
-    banco = Path(__file__).resolve().parent.parent / "contenido" / "matematicas-3basico" / "preguntas.json"
+    import sys as _s
+    carpeta = ([a for a in _s.argv[1:] if not a.startswith("-")] or ["matematicas-3basico"])[0]
+    banco = Path(__file__).resolve().parent.parent / "contenido" / carpeta / "preguntas.json"
+    if not banco.exists():
+        _s.exit("No existe %s" % banco)
+    print("banco: %s" % carpeta)
     ps = json.load(io.open(banco, encoding="utf-8"))["preguntas"]
     # El ":" NO se marca: en 107 textos del banco es un dos puntos de enumeracion
     # ("cuenta de 10 en 10: 10, 20") que el sintetizador lee bien como pausa. Solo la
@@ -266,6 +289,13 @@ def _revisar_banco():
 
 if __name__ == "__main__":
     import sys
+    # La consola de Windows va en cp1252 y aca se imprimen tildes, emoji y simbolos
+    # del banco. Sin esto el modo de ejemplos muere con UnicodeEncodeError a la
+    # tercera linea, y parece que el script estuviera roto cuando el texto esta bien.
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
     if "--banco" in sys.argv:
         _revisar_banco()
     else:

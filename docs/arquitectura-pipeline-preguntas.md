@@ -13,7 +13,7 @@ corregir → verificar de nuevo → aprobar → publicar → medir), y no como u
 > | Motor curricular | Los `oa.json` por asignatura/nivel (`esquema-oa-json.md`) |
 > | Generador IA | Agentes que escriben **tandas por OA**, guiados por `prompt-generador-preguntas.md` y `encargo-banco.md` |
 > | Banco de preguntas | Archivos **JSON estáticos** (`contenido/<asignatura>-<nivel>/preguntas.json`), servidos con `fetch` |
-> | Validación programática (Nivel 2) | Los scripts `revisar-tanda.py`, `auditar-numerico.py`, `auditar-solape-oa.py`, `validar-oa-json.py`, `auditar-audible-3ro.py` |
+> | Validación programática (Nivel 2) | Los scripts `revisar-tanda.py`, `auditar-numerico.py`, `auditar-solape-oa.py`, `validar-oa-json.py`, `auditar-audible-nivel.py` |
 > | Validación pedagógica (Nivel 1) | El estándar `prompt-validador-preguntas.md` (se aplica cuando se corre un validador IA sobre una tanda) |
 > | Publicación / gate final | La **aprobación humana por muestreo** de Roberto (`revisada:true`), ver `aprobacion-pedagogica.md` |
 > | Versionado, estados, códigos de error, métricas, control de duplicados semánticos | **No existen todavía** |

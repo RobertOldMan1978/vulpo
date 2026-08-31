@@ -610,7 +610,7 @@ voz**: 7° no lleva audio pregrabado, y de 5° hacia arriba no vale la pena paga
   documenta en su `oa.json` en vez de inventar un ítem que finja medirlo. A los agentes se
   les pide explícitamente entregar **menos preguntas** antes que rellenar; el OA 07 de
   Lenguaje entregó 26 de 30 y explicó por qué.
-- **`scripts/auditar-audible-3ro.py` — preguntas que no se pueden responder ESCUCHANDO.**
+- **`scripts/auditar-audible-nivel.py` — preguntas que no se pueden responder ESCUCHANDO.**
   3° lee en voz alta y quien usa ese botón es el que peor lee. Una pregunta cuyas opciones
   son *"Había / Havía / Abia / Habia"* tiene el JSON perfecto y es irresoluble por el oído.
   El chequeo compara lo que se **pronuncia** (pasa por el normalizador de voz) y aplica la
@@ -637,9 +637,9 @@ voz**: 7° no lleva audio pregrabado, y de 5° hacia arriba no vale la pena paga
   por la misma puerta: su entrada en `ASIGS` filtra los nombres de etapa por el id de su
   expedición (`caps`) en vez de por un prefijo de nivel. Separarlas
   evita volver a pagar Azure por lo ya generado al agregar una asignatura. El generador
-  recibe la asignatura como primer argumento (`python scripts/generar-voz-3ro.py hist3`).
+  recibe la asignatura como primer argumento (`python scripts/generar-voz-nivel.py hist3`).
   ⚠️ **Gotcha caro:** el manifiesto se indexa por el texto **mostrado**, así que cambiar
-  `normalizar-voz-3ro.py` —o sea cambiar cómo se PRONUNCIA algo— **no invalida ningún
+  `normalizar-voz-nivel.py` —o sea cambiar cómo se PRONUNCIA algo— **no invalida ningún
   clip**: los viejos siguen sonando como antes, en silencio. Hay que borrarlos del
   manifiesto a mano y regenerarlos.
 - **La identidad en línea también está separada** (Sesión 58). 3° crea su cliente de Supabase con

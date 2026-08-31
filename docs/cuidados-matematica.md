@@ -116,5 +116,5 @@ distractores, no acortes la clave.
 - **Un espacio en blanco hay que nombrarlo.** Colapsar las comas dejó *"35, 40, 50"* donde el
   enunciado decía *"35, 40, ___, 50"*: suena a que esa es la secuencia.
 - **"de 10 en 10" se leía "10 de enero de 10"**, porque `en` es la abreviatura de enero.
-- El chequeo automático es `scripts/auditar-audible-3ro.py`, y **la auditoría del audio real** con
+- El chequeo automático es `scripts/auditar-audible-nivel.py`, y **la auditoría del audio real** con
   reconocimiento de voz es lo único que caza estos casos: leer el texto normalizado no basta.

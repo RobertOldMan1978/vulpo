@@ -241,7 +241,7 @@ python scripts/auditar-solape-oa.py   contenido/<asig>-<n>basico/preguntas.json
 python scripts/validar-oa-json.py     <asig>-<n>basico
 ```
 
-Y en los niveles con voz, además `scripts/auditar-audible-3ro.py`.
+Y en los niveles con voz, además `scripts/auditar-audible-nivel.py`.
 
 Los cuidados de precisión propios de cada asignatura están en `docs/cuidados-<asignatura>.md`.
 **Léelos: son los errores que ya se colaron una vez.**

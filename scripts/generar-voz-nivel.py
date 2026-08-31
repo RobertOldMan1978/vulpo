@@ -6,7 +6,7 @@ La voz es es-CL-CatalinaNeural (chilena). Se genera UNA VEZ y los MP3 quedan
 versionados en el repo; el juego los reproduce desde archivo y cae a la voz del
 navegador si falta alguno.
 
-El texto se pasa antes por scripts/normalizar-voz-3ro.py, porque el sintetizador
+El texto se pasa antes por scripts/normalizar-voz-nivel.py, porque el sintetizador
 no sabe matematica: leeria "18 : 6" como "dieciocho dos puntos seis".
 
 La clave de Azure vive FUERA del repositorio, que es publico. Formato del archivo:
@@ -18,14 +18,14 @@ cual; sin argumento, mat3. Separarlas evita volver a pagar lo ya generado al agr
 una asignatura nueva.
 
 Uso:
-    python scripts/generar-voz-3ro.py --recuento         # cuanto costaria (no gasta ni pide clave)
-    python scripts/generar-voz-3ro.py --probar           # UN clip, para validar clave y region
-    python scripts/generar-voz-3ro.py                    # genera lo que falte de mat3
-    python scripts/generar-voz-3ro.py hist3              # genera lo que falte de Historia
-    python scripts/generar-voz-3ro.py hist3 --recuento
-    python scripts/generar-voz-3ro.py --rehacer          # regenera todo
+    python scripts/generar-voz-nivel.py --recuento         # cuanto costaria (no gasta ni pide clave)
+    python scripts/generar-voz-nivel.py --probar           # UN clip, para validar clave y region
+    python scripts/generar-voz-nivel.py                    # genera lo que falte de mat3
+    python scripts/generar-voz-nivel.py hist3              # genera lo que falte de Historia
+    python scripts/generar-voz-nivel.py hist3 --recuento
+    python scripts/generar-voz-nivel.py --rehacer          # regenera todo
 
-OJO al cambiar scripts/normalizar-voz-3ro.py: el manifiesto se indexa por el texto
+OJO al cambiar scripts/normalizar-voz-nivel.py: el manifiesto se indexa por el texto
 MOSTRADO, asi que cambiar como se PRONUNCIA algo no invalida ningun clip y los viejos
 quedan sonando como antes, en silencio. Hay que borrarlos a mano del manifiesto.
 """
@@ -33,34 +33,14 @@ import json, io, re, sys, time, hashlib, importlib.util
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
-JUEGO = RAIZ / "3ro" / "index.html"
-
 # Una carpeta de clips por asignatura. Separarlas no es cosmetico: agregar una
 # asignatura nueva NO obliga a regenerar las anteriores, y regenerar una no arriesga
-# las otras. El juego carga los dos manifiestos y los fusiona.
-ASIGS = {
-    "mat3":  {"banco": "matematicas-3basico", "oa": "MA03", "caps": "mat3-"},
-    "hist3": {"banco": "historia-3basico",    "oa": "HI03", "caps": "hist3-"},
-    "cie3":  {"banco": "ciencias-3basico",    "oa": "CN03", "caps": "cie3-"},
-    "len3":  {"banco": "lenguaje-3basico",    "oa": "LE03", "caps": "len3-"},
-    # Los modulos transversales tambien entran aca. Su codigo NO lleva el nivel
-    # adentro (CA-T1, no LE03 OA 01), asi que el filtro de META_OA no encuentra
-    # nada y esta bien: el libro no tiene metas de aprendizaje, y lo que se lee
-    # en su tarjeta es el nombre del tramo, que si viaja por "caps".
-    "ada3":  {"banco": "lectura-cuentos-de-ada", "oa": "CA", "caps": "lect-cuentos-ada"},
-    # Vocabulario de 3o: sus codigos son VOC-CIEN y VOC-HIST, sin nivel adentro, igual
-    # que el libro. Su expedicion en el juego es voc-general.
-    "voc3":  {"banco": "vocabulario-3basico", "oa": "VOC", "caps": "voc-general"},
-}
+# las otras. El juego carga los manifiestos y los fusiona.
+from voz_asignaturas import ASIGS, elegir   # catalogo unico; ver ese archivo
 # Sin argumento vale mat3, que es el uso historico. Con un argumento que NO sea una
 # asignatura conocida, MORIR en vez de caer a mat3: el fallback callado generaba (y
 # con --rehacer, volvia a PAGAR) la asignatura equivocada sin decir nada.
-_pedidas = [a for a in sys.argv[1:] if not a.startswith("-")]
-_malas = [a for a in _pedidas if a not in ASIGS]
-if _malas:
-    sys.exit("No conozco la asignatura %s. Las que hay: %s"
-             % (", ".join(_malas), ", ".join(sorted(ASIGS))))
-ASIG = _pedidas[0] if _pedidas else "mat3"
+ASIG = elegir(sys.argv[1:])
 _CFG = ASIGS[ASIG]
 BANCO = RAIZ / "contenido" / _CFG["banco"] / "preguntas.json"
 SALIDA = RAIZ / "assets" / "voz" / ASIG
@@ -84,7 +64,7 @@ VOZ = "es-CL-CatalinaNeural"
 RITMO = "-10%"
 PRECIO_POR_MILLON = 16.0
 
-_spec = importlib.util.spec_from_file_location("nv", str(RAIZ / "scripts" / "normalizar-voz-3ro.py"))
+_spec = importlib.util.spec_from_file_location("nv", str(RAIZ / "scripts" / "normalizar-voz-nivel.py"))
 _nv = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_nv)
 
@@ -118,7 +98,16 @@ def textos():
         for o in p["opciones"]:
             pares.append((str(o), _nv.normalizar(str(o), p["oa"])))
 
-    h = io.open(JUEGO, encoding="utf-8").read()
+    # El fork del que salen META_OA y los nombres de etapa, POR ASIGNATURA y no fijo
+    # en "3ro": con la ruta clavada, generar la voz de 4 basico habria leido las metas
+    # de 3, no habria encontrado ninguna de las suyas y habria pagado los clips igual,
+    # sin decir nada.
+    juego = RAIZ / _CFG["juego"] / "index.html"
+    if not juego.exists():
+        sys.exit("No existe %s. El fork del nivel tiene que existir antes de "
+                 "generar su voz: de ahi salen las metas y los nombres de etapa."
+                 % juego)
+    h = io.open(juego, encoding="utf-8").read()
     ini = h.index("const META_OA=")
     for m in re.findall(r"'%s OA \d\d':'([^']*)'" % _CFG["oa"], h[ini:h.index("};", ini)]):
         pares.append((m, _nv.normalizar(m)))
@@ -136,9 +125,21 @@ def textos():
         for m in re.findall(r'nombre:"([^"]*)"', trozo):
             limpio = adorno.sub("", m).strip()
             pares.append((m, _nv.normalizar(limpio)))
-    for m in ["¡Nivel superado!", "¿Cómo te fue?", "Lo que vas a aprender",
-              "¡Muy bien!", "Inténtalo de nuevo", "Casi lo logras"]:
+    # Textos fijos de pantalla que tambien se leen en voz. Cada uno se COMPRUEBA contra
+    # el HTML: uno que ya no exista se avisa en vez de seguir pagandose en silencio.
+    # Paso de verdad -"¿Como te fue?" salio del resultado en la Sesion 74 y aqui siguio
+    # pidiendose- y el sintoma es mudo, porque un clip de mas no rompe nada.
+    for m in ["¡Nivel superado!", "Lo que vas a aprender", "Casi lo logras"]:
+        if m not in h:
+            print("  AVISO: '%s' ya no esta en el juego; sobra en la lista de fijos" % m)
+            continue
         pares.append((m, m))
+    # La linea de la pantalla de prediccion se LEE del juego en vez de copiarse: es la
+    # unica de estas que tiene texto literal en el HTML, y copiarla a mano era garantia
+    # de que se desincronizara con el proximo cambio de redaccion.
+    _p = re.search(r'<p id="predVoz"[^>]*>([^<]+)</p>', h)
+    if _p:
+        pares.append((_p.group(1), _nv.normalizar(_p.group(1))))
 
     vistos, unicos = set(), []
     for ve, dice in pares:

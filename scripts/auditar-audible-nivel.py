@@ -16,8 +16,8 @@ numeros escritos de dos formas.
 Que hace: normaliza cada opcion como la oiria el nino (sin tildes, sin mayusculas, sin
 puntuacion) y avisa cuando dos opciones de la misma pregunta colapsan en lo mismo.
 
-    python scripts/auditar-audible-3ro.py contenido/lenguaje-3basico/preguntas.json
-    python scripts/auditar-audible-3ro.py contenido/*-3basico/preguntas.json
+    python scripts/auditar-audible-nivel.py contenido/lenguaje-3basico/preguntas.json
+    python scripts/auditar-audible-nivel.py contenido/*-3basico/preguntas.json
 
 No es un error automatico: a veces la pregunta ES sobre la escritura y hay que decidir
 que hacer (reformularla por la regla, o marcarla para que no se lea en voz alta). Por eso
@@ -33,7 +33,7 @@ from pathlib import Path
 # los convierte en palabras antes de mandarlos a Azure. Comparar el texto crudo daba
 # decenas de falsos positivos en el banco de Matematica.
 _RAIZ = Path(__file__).resolve().parent.parent
-_spec = importlib.util.spec_from_file_location("nv", str(_RAIZ / "scripts" / "normalizar-voz-3ro.py"))
+_spec = importlib.util.spec_from_file_location("nv", str(_RAIZ / "scripts" / "normalizar-voz-nivel.py"))
 _nv = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(_nv)
 
 
@@ -96,7 +96,7 @@ def main():
     for a in sys.argv[1:]:
         rutas += sorted(glob.glob(a))
     if not rutas:
-        sys.exit("uso: python scripts/auditar-audible-3ro.py <preguntas.json> [...]")
+        sys.exit("uso: python scripts/auditar-audible-nivel.py <preguntas.json> [...]")
 
     total_p = total_c = total_g = 0
     for ruta in rutas:

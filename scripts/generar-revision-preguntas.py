@@ -18,12 +18,25 @@ import io, json, re, sys
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
-JUEGO_3RO = RAIZ / "3ro" / "index.html"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from niveles import fork_de          # de que nivel es un banco; ver ese archivo
 
 
-def render_visual_js():
-    """Saca svgEnvoltura + renderVisual del juego, tal cual, sin copiarlas."""
-    h = io.open(JUEGO_3RO, encoding="utf-8").read()
+def render_visual_js(carpeta):
+    """Saca svgEnvoltura + renderVisual del juego DE ESE NIVEL, tal cual, sin copiarlas.
+
+    Solo se llama cuando el banco trae dibujos, para que un libro -o un banco de 5
+    basico, que no lleva- no dependa de que exista un fork con renderVisual.
+    """
+    fork = fork_de(carpeta)
+    if fork is None:
+        sys.exit("No se de que nivel es '%s', y su banco trae dibujos. Declara su nivel "
+                 "en NIVELES_MUESTRA (profesor.html)." % carpeta)
+    juego = RAIZ / fork / "index.html"
+    if not juego.exists():
+        sys.exit("No existe %s. El fork del nivel tiene que existir para incrustar sus "
+                 "dibujos en el informe." % juego)
+    h = io.open(juego, encoding="utf-8").read()
     # OJO: empieza en textoVisual, no en svgEnvoltura. renderVisual depende de las
     # tres (textoVisual, _DESC_VISUAL y svgEnvoltura); cortar mas abajo deja fuera una
     # dependencia y los 232 dibujos desaparecen SIN ERROR VISIBLE, porque el catch de
@@ -111,7 +124,11 @@ def main():
     doc = PLANTILLA.replace("{{TITULO}}", esc("Revisión · %s %s" % (
         oa_json.get("asignatura", carpeta), oa_json.get("nivel", ""))))
     doc = doc.replace("{{CUERPO}}", "\n".join(H))
-    doc = doc.replace("/*RENDER*/", render_visual_js())
+    # Solo se va a buscar renderVisual al fork si este banco tiene algun dibujo. Sin
+    # esto, un libro o un nivel sin fork todavia moririan pidiendo un archivo que no
+    # necesitan.
+    hay_dibujos = any(p.get("visual") for p in preguntas)
+    doc = doc.replace("/*RENDER*/", render_visual_js(carpeta) if hay_dibujos else "")
 
     salida = RAIZ / "dev" / ("revision-%s.html" % carpeta)
     salida.parent.mkdir(parents=True, exist_ok=True)

@@ -34,9 +34,11 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
 
-# Catalogo de dibujos. Debe calzar con `renderVisual` del juego del nivel; si un tipo
-# no esta ahi, el juego lo ignora en silencio (`return ''`) y la pregunta queda sin su
-# apoyo sin que nada avise.
+# Catalogo de dibujos: que CAMPOS exige cada tipo. Los NOMBRES se contrastan ademas
+# contra el `renderVisual` del juego del nivel (ver `contrastar_tipos`), porque si esta
+# copia se desincroniza el sintoma es mudo: el juego devuelve '' y la pregunta queda sin
+# su apoyo sin que nada avise. Los campos NO se pueden leer del juego -no los declara en
+# ninguna parte parseable-, asi que esa mitad si vive aca.
 TIPOS = {
     "contar":     ("a", "b"),
     "agrupar":    ("grupos", "porGrupo"),
@@ -54,9 +56,40 @@ CUERPOS = {"cubo", "paralelepipedo", "esfera", "cono", "cilindro", "piramide"}
 
 # El limite del enunciado depende del nivel, y la razon NO es la edad sino el reloj:
 # 3 y 4 basico no tienen cronometro, asi que un fragmento breve cabe. Ver el §0 de
-# docs/encargo-banco.md.
+# docs/encargo-banco.md. 5 y 6 NO van aca a proposito: llevan cronometro, asi que les
+# corresponde el limite por defecto.
 LARGO = {"03": (110, 220), "04": (110, 220)}
 LARGO_POR_DEFECTO = (120, 250)
+
+
+def contrastar_tipos(carpeta):
+    """Avisa si el catalogo de arriba y el juego del nivel no dicen lo mismo.
+
+    Un tipo que este aca y no en el juego pasa la auditoria y despues NO se dibuja: el
+    renderVisual cae a `return ''` y la pregunta sale sin apoyo, sin ningun error.
+    """
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        import niveles
+    except Exception:
+        return []
+    fork = niveles.fork_de(carpeta)
+    if not fork:
+        return []
+    del_juego = niveles.tipos_de_dibujo(fork)
+    if del_juego is None:
+        return ["el juego de %s no tiene renderVisual: este banco no puede llevar dibujos"
+                % fork]
+    faltan = sorted(set(TIPOS) - del_juego)
+    sobran = sorted(del_juego - set(TIPOS))
+    m = []
+    if faltan:
+        m.append("tipos que este script conoce y %s/index.html NO dibuja: %s"
+                 % (fork, ", ".join(faltan)))
+    if sobran:
+        m.append("tipos que %s/index.html dibuja y este script desconoce: %s"
+                 % (fork, ", ".join(sobran)))
+    return m
 
 
 def sinac(t):
@@ -131,6 +164,12 @@ def main():
     print("%s — %s (%s) · %d preguntas" % (ruta.name, oa_data.get("asignatura", carpeta), cod, len(ps)))
     print("limite de enunciado: %d blando / %d duro%s\n"
           % (blando, duro, "  · con verificacion aritmetica" if es_mate else ""))
+
+    # Solo se contrasta si este banco de verdad trae dibujos: un libro o un nivel sin
+    # fork todavia no tienen por que fallar aca.
+    if any(p.get("visual") for p in ps):
+        for m in contrastar_tipos(carpeta):
+            print("  AVISO catalogo de dibujos: %s" % m)
 
     errores, avisos = [], []
     vistos, por_oa, pos = {}, Counter(), Counter()

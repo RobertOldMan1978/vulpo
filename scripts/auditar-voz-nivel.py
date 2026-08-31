@@ -12,8 +12,8 @@ se reportan las que aparecen en lo que se oyo y no estaban en lo que se pidio. U
 palabra intrusa que se repite —"enero"— delata un patron mal leido.
 
 Uso:
-    python scripts/auditar-voz-3ro.py            # audita lo que falte (reanudable)
-    python scripts/auditar-voz-3ro.py --informe  # solo el informe de lo ya auditado
+    python scripts/auditar-voz-nivel.py            # audita lo que falte (reanudable)
+    python scripts/auditar-voz-nivel.py --informe  # solo el informe de lo ya auditado
 """
 import io, os, re, sys, json, subprocess, tempfile, unicodedata, importlib.util
 from pathlib import Path
@@ -21,19 +21,11 @@ from concurrent.futures import ThreadPoolExecutor
 import requests, imageio_ffmpeg
 
 RAIZ = Path(__file__).resolve().parent.parent
-# Tiene que quedar igual a la de generar-voz-3ro.py. Estuvo sin "ada3" y pedirle
-# esa asignatura auditaba Matematica EN SILENCIO, pisando su evidencia ya pagada.
-ASIGS = {"mat3": "matematicas-3basico", "hist3": "historia-3basico",
-         "cie3": "ciencias-3basico",    "len3": "lenguaje-3basico",
-         "ada3": "lectura-cuentos-de-ada"}
-# Sin argumento vale mat3, que es el uso historico. Con un argumento que NO sea una
-# asignatura conocida, MORIR: el fallback callado hacia auditar la equivocada y pagarla.
-_pedidas = [a for a in sys.argv[1:] if not a.startswith("-")]
-_malas = [a for a in _pedidas if a not in ASIGS]
-if _malas:
-    sys.exit("No conozco la asignatura %s. Las que hay: %s"
-             % (", ".join(_malas), ", ".join(sorted(ASIGS))))
-ASIG = _pedidas[0] if _pedidas else "mat3"
+# El catalogo se IMPORTA, no se copia. Copiado a mano se desincronizo dos veces: le
+# falto "ada3" -y pedirle esa asignatura auditaba Matematica EN SILENCIO, pisando su
+# evidencia ya pagada- y despues "voc3", que quedo directamente inauditable.
+from voz_asignaturas import ASIGS, elegir
+ASIG = elegir(sys.argv[1:])
 S = RAIZ / "assets" / "voz" / ASIG
 MANIFIESTO = S / "manifiesto.json"
 # La transcripcion SI se versiona (son ~120 KB): es la evidencia de como suena cada
@@ -42,13 +34,13 @@ MANIFIESTO = S / "manifiesto.json"
 # evidencia ya pagada de sus 1.987 clips.
 SALIDA = RAIZ / "dev" / ("auditoria-voz-3ro.json" if ASIG == "mat3"
                          else "auditoria-voz-%s.json" % ASIG)
-BANCO = RAIZ / "contenido" / ASIGS[ASIG] / "preguntas.json"
+BANCO = RAIZ / "contenido" / ASIGS[ASIG]["banco"] / "preguntas.json"
 CAND = [Path.home()/"OneDrive"/"Escritorio"/"azure-tts.txt",
         Path.home()/"OneDrive"/"Desktop"/"azure-tts.txt",
         Path.home()/"Escritorio"/"azure-tts.txt",
         Path.home()/"Desktop"/"azure-tts.txt"]
 
-_spec = importlib.util.spec_from_file_location("nv", str(RAIZ/"scripts"/"normalizar-voz-3ro.py"))
+_spec = importlib.util.spec_from_file_location("nv", str(RAIZ/"scripts"/"normalizar-voz-nivel.py"))
 _nv = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(_nv)
 FF = imageio_ffmpeg.get_ffmpeg_exe()
 
@@ -56,7 +48,7 @@ FF = imageio_ffmpeg.get_ffmpeg_exe()
 def credenciales():
     a = next((c for c in CAND if c.exists()), None)
     if a is None:
-        sys.exit("No encuentro azure-tts.txt (ver scripts/generar-voz-3ro.py).")
+        sys.exit("No encuentro azure-tts.txt (ver scripts/generar-voz-nivel.py).")
     L = [l.strip() for l in io.open(a, encoding="utf-8-sig") if l.strip()]
     return L[0], L[1]
 
