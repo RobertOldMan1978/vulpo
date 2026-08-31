@@ -6002,6 +6002,19 @@ ninguno. Cero 404 y cero errores de consola. La única divergencia que queda en 
 `nuevaRondaDuelo`, que en 3° propaga el campo `visual` — **preexistente y correcta**, y ahora
 además útil: las preguntas de Historia de 3° con dibujo lo muestran también en el duelo.
 
+> **Corrección propia del mismo día:** el cambio dejó **cuatro `t:15` por fork** sin migrar,
+> en el estado inicial del duelo en línea. No se veían —el reloj se repinta al arrancar— pero eran
+> estado inconsistente. Al migrarlos se le puso al script la aserción que evita la trampa que ya
+> mordió tres veces: **comprobar que `DUELO_SEG` se declare ANTES de su primer uso**, porque un
+> `const` leído en zona muerta temporal mata todo el JavaScript y el síntoma engaña.
+>
+> **Y quedó zanjada una duda de producto de Roberto:** *"los duelos no pueden ser asincrónicos, los
+> niños no pueden llevar celulares al colegio"*. Medido, es al revés — **el asíncrono es el único
+> modo que funciona con esa restricción**: cada uno juega en su casa y el rival tiene 24 h, así que
+> nunca coinciden ni necesitan el teléfono en la sala. El que exige estar juntos es el **local**.
+> Se dejaron **los dos**: el local para jugar con un hermano, el asíncrono para competir con el
+> curso. Los **bots** responden al instante, así que el primero en inscribirse ya puede jugar.
+
 - **Pendiente de arrastre (Roberto):** sin cambios — A4 (la conversación con el colegio sobre el
   contenido sensible), A12, A14 y A19; y el camino crítico sigue siendo el **Bloque B** (los
   bancos de 4°, 5° y 6°) con **M4 (`niveles.js`)** delante.

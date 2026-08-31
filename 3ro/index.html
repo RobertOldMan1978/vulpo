@@ -2735,7 +2735,7 @@ const DUELO_BANCO={ruta:'contenido/historia-3basico/preguntas.json',
 const DUELO_SEG=30;   // 30 s: 3° juega SIN_RELOJ en todo lo demas, pero el duelo es una
                           // competencia y ahi el tiempo es parte del juego. El doble que en 8°
                           // porque a los 8 anos leer el enunciado ya toma la mitad del turno.
-let D={j:[{n:"Jugador 1",em:DUELO_AV[0],pts:0},{n:"Jugador 2",em:DUELO_AV[1],pts:0}],pr:[],ronda:0,turno:0,lock:false,t:15,timer:null};
+let D={j:[{n:"Jugador 1",em:DUELO_AV[0],pts:0},{n:"Jugador 2",em:DUELO_AV[1],pts:0}],pr:[],ronda:0,turno:0,lock:false,t:DUELO_SEG,timer:null};
 let DUELO_POOL=null;
 async function cargarPoolDuelo(){
  if(DUELO_POOL) return DUELO_POOL;
@@ -3602,7 +3602,7 @@ $('btnDueloAgain').onclick=()=>{SND.tap();nuevaRondaDuelo();};
 $('btnDueloExit').onclick=()=>{SND.tap();go('scr-rol');};
 
 /* ================= DUELO ONLINE (Supabase) ================= */
-let OD={preguntas:[],idx:0,aciertos:0,tiempo:0,t:15,timer:null,lock:false,modo:'crear',rivalCodigo:'',expedicion:null,dueloId:null,rivalNombre:'',expira:null};
+let OD={preguntas:[],idx:0,aciertos:0,tiempo:0,t:DUELO_SEG,timer:null,lock:false,modo:'crear',rivalCodigo:'',expedicion:null,dueloId:null,rivalNombre:'',expira:null};
 let OD_EXP_SEL=null;
 async function abrirDueloOnline(){
  if(!SB){alert('El duelo en línea necesita conexión a internet.');go('scr-rol');return;}
@@ -3732,11 +3732,11 @@ async function iniciarDesafio(){
  if(OD_EXP_SEL.calc){pregs=odPreguntasCalc(OD_EXP_SEL);}
  else{await cargarPool(OD_EXP_SEL);pregs=odPreguntas(OD_EXP_SEL);}
  if(pregs.length<8){$('odSetupErr').textContent='Esa expedición no tiene suficientes preguntas.';return;}
- OD={preguntas:pregs,idx:0,aciertos:0,tiempo:0,t:15,timer:null,lock:false,modo:'crear',rivalCodigo:codigo,expedicion:OD_EXP_SEL.id,dueloId:null,rivalNombre:'',expira:null};
+ OD={preguntas:pregs,idx:0,aciertos:0,tiempo:0,t:DUELO_SEG,timer:null,lock:false,modo:'crear',rivalCodigo:codigo,expedicion:OD_EXP_SEL.id,dueloId:null,rivalNombre:'',expira:null};
  SND.init();odPinta();
 }
 function responderDesafio(d){
- OD={preguntas:d.preguntas,idx:0,aciertos:0,tiempo:0,t:15,timer:null,lock:false,modo:'responder',rivalCodigo:'',expedicion:d.expedicion,dueloId:d.id,rivalNombre:d.retador_nombre,expira:d.expira};
+ OD={preguntas:d.preguntas,idx:0,aciertos:0,tiempo:0,t:DUELO_SEG,timer:null,lock:false,modo:'responder',rivalCodigo:'',expedicion:d.expedicion,dueloId:d.id,rivalNombre:d.retador_nombre,expira:d.expira};
  SND.init();odPinta();
 }
 function odPinta(){
