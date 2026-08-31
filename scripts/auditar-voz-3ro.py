@@ -21,9 +21,19 @@ from concurrent.futures import ThreadPoolExecutor
 import requests, imageio_ffmpeg
 
 RAIZ = Path(__file__).resolve().parent.parent
+# Tiene que quedar igual a la de generar-voz-3ro.py. Estuvo sin "ada3" y pedirle
+# esa asignatura auditaba Matematica EN SILENCIO, pisando su evidencia ya pagada.
 ASIGS = {"mat3": "matematicas-3basico", "hist3": "historia-3basico",
-         "cie3": "ciencias-3basico",    "len3": "lenguaje-3basico"}
-ASIG = next((a for a in sys.argv[1:] if a in ASIGS), "mat3")
+         "cie3": "ciencias-3basico",    "len3": "lenguaje-3basico",
+         "ada3": "lectura-cuentos-de-ada"}
+# Sin argumento vale mat3, que es el uso historico. Con un argumento que NO sea una
+# asignatura conocida, MORIR: el fallback callado hacia auditar la equivocada y pagarla.
+_pedidas = [a for a in sys.argv[1:] if not a.startswith("-")]
+_malas = [a for a in _pedidas if a not in ASIGS]
+if _malas:
+    sys.exit("No conozco la asignatura %s. Las que hay: %s"
+             % (", ".join(_malas), ", ".join(sorted(ASIGS))))
+ASIG = _pedidas[0] if _pedidas else "mat3"
 S = RAIZ / "assets" / "voz" / ASIG
 MANIFIESTO = S / "manifiesto.json"
 # La transcripcion SI se versiona (son ~120 KB): es la evidencia de como suena cada

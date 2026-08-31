@@ -30,7 +30,7 @@ preguntan por la forma del código. Antes había un conjunto escrito a mano
 | Libro | Carpeta | Código | Curso | Tramos | Preguntas |
 |---|---|---|---|---|---|
 | *El diario de Ana Frank* | `lectura-anafrank` | `AF-T#` | 8° | 8 | 72 ✅ aprobadas |
-| *Cuentos de Ada* (Pepe Pelayo) | `lectura-cuentos-de-ada` | `CA-T#` | 3° | 10 | 101 ❌ sin aprobar |
+| *Cuentos de Ada* (Pepe Pelayo) | `lectura-cuentos-de-ada` | `CA-T#` | 3° | 10 | 101 ✅ aprobadas (30/08) |
 
 > **Cuentos de Ada se escribió desde documentos de estudio, no desde el ejemplar**, y eso está
 > declarado en su `nota_fidelidad`. La guía de la que salió advierte que las fuentes discrepan en

@@ -5,7 +5,7 @@
 > colegios—, pero **el análisis interno de estrategia, los números de ingreso proyectado y el
 > estado de las conversaciones NO deben escribirse aquí.** Eso vive fuera del repo.
 
-**Última revisión:** 25 de agosto de 2026.
+**Última revisión:** 30 de agosto de 2026.
 
 ## Precio
 
@@ -96,11 +96,13 @@ matiz de redacción, es la regla del proyecto: **no se promete lo que no hay**, 
 pregunte "¿quién revisó esto?"
 merece la respuesta verdadera.
 
-**Qué se puede vender hoy, entonces:** 8° sin reservas. 3° y 7° **como piloto o con la revisión
-declarada**, nunca afirmando que su banco está aprobado.
+**Qué se puede vender hoy, entonces:** los tres cursos, **diciendo cómo se aprobó cada uno**.
+8° se revisó pregunta por pregunta; 3° y 7° por muestreo de 8 por objetivo. Las dos cosas son
+aprobación pedagógica de verdad, y la segunda hay que saber explicarla: **detecta un objetivo
+mal escrito, no una pregunta suelta mala**.
 
-Terminar la aprobación de 3° y 7° es lo que **triplica el techo por colegio** sin triplicar el
-esfuerzo de venta, y sigue siendo el trabajo de mayor retorno pendiente.
+Con los tres cursos aprobados (30/08/2026), el techo por colegio **se triplicó**: ya no hay
+que vender un solo nivel. Lo que falta para cuadruplicarlo son 4°, 5° y 6°.
 
 **En 7° hay además una conversación que ningún archivo resuelve:** los `CN07 OA 01/02/03` son
 sexualidad, ciclo menstrual, métodos de control de la natalidad e ITS. Es currículum obligatorio
@@ -186,8 +188,10 @@ Funciona en cualquier celular con internet, sin instalar nada.
 - ❌ **No funciona sin internet.** Verificado: no hay service worker y los bancos de preguntas se
   piden con `fetch`. **Nunca prometer uso sin conexión.**
 - ❌ **No cubre todos los niveles.** Hoy 3°, 7° y 8° básico. Faltan 4°, 5° y 6°.
-- ❌ **No decir que 3° y 7° están "revisados".** Sus bancos están escritos y en revisión
-  pedagógica; afirmar lo contrario se cae a la primera pregunta de una UTP.
+- ⚠️ **No decir que las 7.685 están aprobadas "una a una".** Lo están *objetivo por objetivo*:
+  8° se revisó pregunta por pregunta, pero 3° y 7° por **muestreo** de 8 de cada 30. Exagerarlo
+  se cae a la primera pregunta de una UTP; decirlo bien no le quita fuerza al argumento.
+- ❌ **No decir que están aprobadas las 7.745.** Quedan 60 sin aprobar, de Historia de 3°.
 - ❌ **No es una herramienta de calificación.** El panel es una brújula; así está descrito en el
   producto y así hay que venderlo.
 

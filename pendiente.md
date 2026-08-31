@@ -31,7 +31,7 @@ Es una app web mobile-first y se reutiliza. Ver `docs/roadmap-tecnico.md` §1.
 
 | Curso | OA | Preguntas | Aprobadas | Voz | Arte propio |
 |---|---|---|---|---|---|
-| 3° | 86 | 2.558 (+101 apoyo) | **2.599** (faltan 60) | ✅ 11.078 clips | villanos ✅ · portadas ❌ |
+| 3° | 86 | 2.558 (+101 apoyo) | **2.599** (faltan 60) | ✅ 11.077 clips | villanos ✅ · portadas ❌ |
 | 4° | 92 | — | — | pendiente | — |
 | 5° | 93 | — | — | no lleva | — |
 | 6° | 99 | — | — | no lleva | — |
@@ -101,19 +101,38 @@ Para poder decir "tengo 3°, 7° y 8°". Es el hito más cercano y el de mejor r
 | ~~A5~~ | ~~Escuchar el clip de voz de **copihue**~~ ✅ **HECHO (28/08)**: Roberto eligió la pronunciación `ko.piˈwe` (IPA en `_FONEMAS`); los 2 clips regenerados y confirmados | — | — |
 | A6 | Confirmar el **lunes 31/08** que apareció la primera foto semanal | 1 min | Roberto |
 | ~~A9~~ | ~~**Vocabulario en 7°**~~ ✅ **HECHO (28/08)**: 120 palabras en 4 áreas (`contenido/vocabulario-7basico`), la bandera encendida y el handler restaurado. El código ya estaba en el fork: solo faltaba el dato | — | — |
-| A10 | **Vocabulario en 3°**, el mismo patrón. Ojo: 3° suma **voz** (~600 clips de Azure), así que va **después** de que su banco esté cerrado — la voz se genera al final, nunca en paralelo con las auditorías | ~1 sesión + Azure | código |
 | ~~A15~~ | ~~**Primer libro de 3°**~~ ✅ **HECHO (30/08, Sesión 72)**: *Cuentos de Ada* de Pepe Pelayo, 10 tramos y 101 preguntas en `contenido/lectura-cuentos-de-ada`. La biblioteca de 3° quedó encendida. Sello editorial **confirmado: Santillana Infantil**, y la portada **se queda en la genérica de Lectura a propósito**, para no ilustrar la tapa de un libro ajeno. **Las 101 quedaron aprobadas el 30/08** (aprobación forzada de Roberto) y con voz. Cerrada | — | — |
 | ~~A16~~ | ~~**Voz de *Cuentos de Ada***~~ ✅ **HECHO (30/08)**: Roberto aprobó las 101 preguntas y se generaron los **515 clips** (12 MB, **US$0,32**) en `assets/voz/ada3/`, enganchados en `VOZ_DIRS`. Cobertura completa verificada y el clip suena en el navegador. **Ningún texto del libro cambia al pronunciarse**, así que el normalizador no lo toca. Queda opcional la auditoría por muestra con Azure STT (~US$0,06), que aquí solo sirve para los nombres propios (Ada, Yoyito, Pocho, Cary, Orco) | — | — |
 | ~~A11~~ | ~~**Reto Sin Fin de cálculo en 7°**~~ ✅ **HECHO (28/08)**: motor compartido en `assets/js/calculo.js` + `genCalc7()` con el temario de 7°. **No consume banco de preguntas**: las operaciones se generan por código, así que no suma nada a la aprobación pedagógica ni a la voz | — | — |
 | A12 | **Migrar el Reto de Cálculo de 8° al motor compartido.** Hoy 8° tiene su propio motor inline (171 líneas) y `assets/js/calculo.js` existe aparte: hay solape. Es un cambio sobre la app en producción, así que va como paso propio y con su verificación | ~½ sesión | código |
 | ~~A13~~ | ~~**Reto Sin Fin en 3°**~~ ✅ **HECHO (28/08)**: **sin reloj**, medido por escalones. Encaja mejor que en 7°: no es un extra sino la práctica de `MA03 OA 04` (cálculo mental hasta 100), `OA 08` (tablas) y `OA 09` (división). Sin banco, sin voz nueva, sin sumar horas de aprobación | — | — |
-| A14 | **Vocabulario en 3°: decidir si va.** Medido, se solapa con su propio currículum —`LE03 OA 10` (significado por contexto y raíces) y `OA 11` (diccionario) ya tienen 30 preguntas cada uno—, y costaría ~120 preguntas + ~600 clips de voz + horas de aprobación. El ángulo que NO se pisa sería otro: las palabras nuevas que aparecen en Ciencias e Historia de 3°, que es distinto de *la estrategia* para deducirlas | decisión | Roberto decide |
+| A14 | **Vocabulario en 3°: decidir si va.** (Absorbe a la antigua A10, que era la misma tarea dada por decidida.) Medido, se solapa con su propio currículum —`LE03 OA 10` (significado por contexto y raíces) y `OA 11` (diccionario) ya tienen 30 preguntas cada uno—, y costaría ~120 preguntas + ~600 clips de voz + horas de aprobación. El ángulo que NO se pisa sería otro: las palabras nuevas que aparecen en Ciencias e Historia de 3°, que es distinto de *la estrategia* para deducirlas | decisión | Roberto decide |
 | ~~A7~~ | ~~**Marcar el contenido sensible en el armador**~~ ✅ **HECHO (28/08, Sesión 67)**: `assets/js/sensible.js` (mapa de los 20 OA + 5 categorías) + leyenda/emojis/resumen en `arrancarArmador` de las tres apps. La decisión se toma al construir el enlace (la casilla por capítulo es el control); el enlace de venta no cambió. Verificado con `cdp.mjs`, cero consola / cero 404 | — | — |
 
 **Las portadas de capítulo siguen prestadas a propósito.** Son ~46 imágenes más para una
 diferencia que casi nadie mira; el Jefe Final es donde el préstamo chirría.
 
 ---
+
+## Bloque O · Ordenar las bases (auditoría del 30/08/2026)
+
+Cuatro agentes midieron el motor, los scripts, la documentación y el contenido; cada hallazgo se
+verificó a mano antes de entrar aquí. Detalle y método:
+[`docs/superpowers/plans/2026-08-30-ordenar-las-bases.md`](docs/superpowers/plans/2026-08-30-ordenar-las-bases.md).
+
+**Va antes del Bloque B**, porque todo lo que se sume después se copia tres veces más.
+
+| # | Qué | Peso | Quién |
+|---|---|---|---|
+| ~~O1~~ | ~~Retirar los scripts muertos~~ ✅ **HECHO (30/08)**: 10 retirados (los 8 procesadores de arte, `aplicar-fix-distractores`, `generar-pdf-preguntas`), rescatando antes su parte reutilizable en **`scripts/procesar-arte.py`**, que recibe los archivos por argumento y se probó reprocesando un villano real | — | — |
+| ~~O2~~ | ~~Salir con error cuando se encuentran errores~~ ✅ **HECHO (30/08)**: `revisar-tanda.py` y `auditar-numerico.py` imprimían los defectos y **salían con 0**, así que un `&&` los ignoraba. Probado con un banco roto a propósito | — | — |
+| ~~O3~~ | ~~El fallback silencioso de los scripts de voz~~ ✅ **HECHO (30/08)**: pedirles una asignatura desconocida **generaba o auditaba Matemática sin avisar**, y al auditor le faltaba `ada3` — o sea que auditar el libro habría auditado Matemática y pagado por ello. Ahora mueren con un mensaje | — | — |
+| ~~O4~~ | ~~Assets huérfanos~~ ✅ **HECHO (30/08)**: 5 retirados (~900 KB), verificados con búsqueda exacta | — | — |
+| ~~O5~~ | ~~Documentación con afirmaciones falsas~~ ✅ **HECHO (30/08)**: 22 hallazgos. Los 5 graves eran contradicciones en `comercial.md` y `aprobacion-pedagogica.md`; más el ranking "simulado", la tabla de banderas, el peso con cuatro cifras distintas y el armador con 2 niveles en vez de 3 | — | — |
+| **O6** | **Generalizar lo cableado a 3°, que es lo que rompe 4°.** `normalizar-voz-3ro.py` decide si `7:45` es hora mirando códigos **`MA03`**: en 4° no empareja, el texto llega crudo a Azure, **el clip se paga, se genera y suena mal**, y nadie se entera. Sus números en palabras además llegan solo hasta 1.000. Y `generar-voz-3ro.py` / `generar-revision-preguntas.py` leen `3ro/index.html` siempre | ~½ sesión | código |
+| **O7** | **`.gitattributes`.** No existe, y de ahí salen los 9 formatos de serialización y la mezcla LF/CRLF. ⚠️ Su migración toca **todos** los archivos: va sola en su commit, y **antes de unificar formatos** (O8), no antes de todo | ~½ sesión | código |
+| **O8** | **El contrato del contenido, antes de escribir 8.490 preguntas.** Un solo formato de `preguntas.json` (hoy 9 variantes); un solo contrato de `_pool/` (hoy 3, y 72 de 180 archivos formateados a mano); y **la convención de `id` para 4°, 5° y 6°** — hoy no es derivable (`cie3`/`cien8`, `mat3`/`mate7`) y ⚠️ **NO se renombran los existentes**: las marcas de aprobación se guardan por id | ~1 sesión | código |
+| ~~O9~~ | ~~Modo Difícil en 3°~~ ✅ **HECHO (30/08)**: su diseño lo descartó por edad y el fork lo dejó vivo. Ahora es la bandera **`HAY_DIFICIL`**, con las mismas 4 guardas en los tres forks. De paso cierra que **la Maestría Total era inalcanzable en 3°** (`esMaestro` exigía `S.calc.jefe`, que ahí nadie escribe) | — | — |
 
 ## Bloque B · Terminar la v1 (4°, 5° y 6°)
 
@@ -178,19 +197,37 @@ categoría y tienen su propio estándar) ·
 
 ### Antes de B1, o en paralelo: terminar de desduplicar el motor
 
-Tras el corte de la Sesión 65, **7° es 89% idéntico a 8° y 3° un 77%**: quedan **~3.050 líneas
-duplicadas tres veces**, y con seis cursos serían seis. Ya no es código muerto: es motor vivo.
+**Medido el 30/08** (auditoría con agentes, no estimación): **1.982 líneas de JS son comunes a
+los tres forks**, o sea **~3.964 líneas redundantes** en el repositorio. Es el 63,5 % del JS de 8°,
+el **77,6 % del de 7°** y el 64,8 % del de 3°. **71 funciones son byte a byte idénticas** en los
+tres (y ese número es un piso, no un total). Ya no es código muerto: es motor vivo.
 
-| # | Módulo a extraer a `assets/js/` | Estado |
-|---|---|---|
-| M1 | `visuales.js` — `renderVisual` + `textoVisual`, 11 dibujos, hoy solo en 3° | pendiente (lo necesita 4°) |
-| M2 | `voz.js` — hoy solo en 3° | pendiente (lo necesita 4°) |
-| M3 | `motor.js` — quiz, campaña, jefes, tienda, duelo | pendiente, va al final |
-| M4 | `niveles.js` — un solo catálogo del que se derive todo | pendiente |
+El orden lo fijó la medición, de menor a mayor riesgo:
+
+| # | Módulo a extraer a `assets/js/` | Líneas | Por qué en esa posición |
+|---|---|---|---|
+| M1 | `visuales.js` — `renderVisual` + `textoVisual`, 11 dibujos, hoy solo en 3° | 281 | **Función pura**: recibe un objeto y devuelve SVG. No toca estado ni DOM, un solo punto de entrada, cero efectos al cargar. El más seguro del repo |
+| M2 | `voz.js` — hoy solo en 3° | 134 | Igual de aislado, un escalón arriba por sus tres efectos al cargar |
+| M4 | `niveles.js` — un solo catálogo del que se derive todo | — | No quita duplicación, pero es **el paso habilitante**: sin el dato afuera y cargado antes, el motor cae en zona muerta temporal. Spec y plan escritos |
+| M3 | `motor.js` — **por rebanadas**: jefes → duelo → armador → persistencia → quiz | ~830 | Jefes primero (12 de 13 funciones idénticas); **persistencia y quiz al final**, porque un error ahí borra partidas guardadas |
+
+**Preparación que hace idénticas cinco funciones más antes de mover nada:** propagar
+`visual:q.visual` en los tres forks (es inocuo donde el campo no existe) y definir un no-op de
+`callarVoz`.
 
 **M4 es el que más duele hoy:** dar de alta un curso toca ~24 puntos en 3 archivos, 8 de ellos
 listas paralelas. `SB_asigDe` de `profesor.html` es un espejo escrito a mano de
-`kimun_oa_asignatura`, que es el patrón que ya causó un bug real.
+`kimun_oa_asignatura`, que es el patrón que ya causó un bug real. Verificado el 30/08: **hoy los
+dos lados reconocen los mismos 18 códigos**, o sea nadie los ha desincronizado todavía — pero con
+tres cursos más son ~96 ediciones a mano.
+
+> ⚠️ **`motor.js` NO puede ir en el `<head>`.** Hay cientos de `$('id').onclick=` **en el nivel
+> superior** del script; hoy funcionan porque va al final del `<body>`. `visuales.js` y `voz.js`
+> son los **únicos dos** módulos que no sufren esto.
+
+> ⚠️ **`SUFIJO` no existe en 8°**, y es la causa única de tres divergencias. Al extraer algo que
+> toque `localStorage`, 8° necesita `const SUFIJO='';`. **No migrar la clave:** `kimun_save` sin
+> sufijo es la partida real de todos los alumnos de 8°.
 
 > ⚠️ **Al mover código a un `<script src>`, PROBAR SIEMPRE qué pasa si NO carga.** Un 404 de
 > `revision.js` mató una vez todo el JavaScript del juego, y el síntoma engaña: la pantalla se

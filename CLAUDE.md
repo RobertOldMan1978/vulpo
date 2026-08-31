@@ -102,7 +102,8 @@ backend Supabase para el duelo en línea. Historia de v0 al detalle en la Bitác
 - Persistencia (localStorage), **tienda de skins** (precios escalonados 110–1250;
   emojis baratos de entrada + skins ilustradas premium, incluidas **7 deportivas**:
   karate, fútbol, básquetbol, vóleibol, ciclismo, tenis, skate), animación de subida
-  de nivel, logros, ranking (aún simulado).
+  de nivel, logros y **ranking real del curso** (alumnos de verdad, ordenados por XP;
+  ver "Cursos, profesores y ranking real").
 - **Audio:** efectos procedurales (Web Audio, sin archivos) + **música de fondo**
   opcional por archivos (`assets/audio/`, con fallback si no están); control separado
   🎵 música / 🔊 efectos, persistido.
@@ -126,7 +127,8 @@ están hoy en una expedición jugable, el resto es reserva.
 
 **Herramientas dev:** tablero con clave
 (`dev/tablero.html`) y scripts (`consolidar-pool-nivel`, `aplicar-revisadas`,
-`generar-pdf-preguntas` —por asignatura y con `--sin-revisar`—, `generar-tablero`).
+`generar-revision-preguntas` —el informe de aprobación, con los dibujos reales—,
+`generar-tablero`, `procesar-arte`).
 
 ## Decisiones de diseño
 
@@ -142,7 +144,7 @@ están hoy en una expedición jugable, el resto es reserva.
 - Progresión por etapas desbloqueables con jefe final.
 - Refuerzo positivo: partículas, combos, XP, monedas, estrellas y logros.
 - Retroalimentación educativa al fallar (no solo penalización).
-- Competencia social: ranking de curso (por ahora simulado).
+- Competencia social: ranking del curso, con datos reales desde la Sesión 19.
 
 ## Roadmap
 
@@ -174,7 +176,7 @@ mobile-first y se reutiliza. Nada de eso está implementado.
 
 Antes de tocar `sw.js` hay que leer su §2, que corrige el análisis externo con hechos del
 repositorio: hoy hay **tres apps forkeadas** (`/juego/`, `/3ro/`, `/7mo/`), así que un manifiesto
-único abriría el curso equivocado; y **`assets/` pesa 459 MB** (251 MB solo de voz de 3°), así que
+único abriría el curso equivocado; y **`assets/` pesa 475 MB** (263 MB solo de voz de 3°), así que
 la precarga `cache-first` que propone el análisis le bajaría 250 MB al teléfono de un niño en la
 primera apertura. El progreso local en `localStorage` es el requisito real del modelo de
 suscripción, y es trabajo de backend, no de PWA.
@@ -247,16 +249,20 @@ supuesto cuando pide "no modificar `contenido/` ni `supabase/`".
 5. **Nada nuevo en la raíz sin motivo.** La raíz es la landing. La PWA sumará exactamente
    `manifest.webmanifest`, `sw.js` y `pwa.js`, y ahí se detiene.
 
-#### El peso, medido hoy (28/08/2026)
+#### El peso, medido hoy (30/08/2026)
+
+> Una sola medición para todo el proyecto. Antes vivía con **cuatro cifras distintas en
+> cuatro documentos** y ninguna calzaba con el disco: venían de antes de generar la voz del
+> libro. Al actualizarla, actualizar también `pendiente.md` y `docs/roadmap-tecnico.md`.
 
 | | |
 |---|---|
-| `assets/voz/` (voz pregrabada de 3°) | **251 MB** |
+| `assets/voz/` (voz pregrabada de 3°, **5 asignaturas**) | **263 MB** |
 | `assets/originales/` (arte crudo, **excluido del sitio** por `_config.yml`) | 175 MB |
-| `contenido/` (los bancos completos) | 7,6 MB |
+| `contenido/` (los bancos completos) | 7,8 MB |
 | `assets/audio/` (música) | 5,1 MB |
-| **`assets/` completo** | **464 MB** |
-| **Sitio publicado** (sin `.git` ni originales) | **333 MB** |
+| **`assets/` completo** | **475 MB** |
+| **Sitio publicado** (sin `.git` ni originales) | **317 MB** |
 
 El techo de GitHub Pages es **1 GB**, y la voz de 4° suma otros ~254 MB. Por eso la regla del
 proyecto —voz pregrabada solo de 1° a 4°— no es una preferencia pedagógica: **es también la
@@ -335,8 +341,10 @@ arriba del archivo, no como condiciones sueltas repartidas por el código.
 |---|---|---|---|---|
 | `HAY_RETO_CALCULO` | Si Matemática se juega como Reto de Cálculo. Afecta al **Duelo** (`odNMapas`, `odMapasMate`, `odPreguntasCalc`), a `detenerTimersActivos` y a la música de `scr-calc` | ✅ | ❌ | ❌ |
 | `HAY_MINICLASES` | Si existe el camino de mini-clases. Afecta al **siguiente paso al reprobar**, a `renderCampaña`, al Jefe Final (`cargarPoolMate`) y al ✕ del quiz | ✅ | ❌ | ❌ |
-| `HAY_VOCABULARIO` | Si Lenguaje abre el landing "Campaña + Vocabulario" en vez de su campaña | ✅ | ❌ | ❌ |
+| `HAY_VOCABULARIO` | Si Lenguaje abre el landing "Campaña + Vocabulario" en vez de su campaña | ✅ | ✅ | ❌ |
 | `HAY_BIBLIOTECA` | Si la pantalla principal ofrece el módulo 📖 Lectura | ✅ | ❌ | ✅ |
+| `HAY_SINFIN` | Si Matemática ofrece el **Reto Sin Fin** de `assets/js/calculo.js`. Gobierna el nodo del mapa y la llamada `CALC.init` | ❌ | ✅ | ✅ |
+| `HAY_DIFICIL` | Si el nivel ofrece **Modo Difícil**, y con él las insignias 🔥, la skin de Maestro y la Maestría Total. ⚠️ Se declara **pegada a `DIF_ASIGS`** y no con las demás: la consulta `revisarDificil()`, que corre en el arranque | ✅ | ✅ | ❌ |
 | `SIN_RELOJ` | Quiz sin cuenta regresiva y sin selector Normal/Difícil | ❌ | ❌ | ✅ |
 
 Cada bandera va **pegada a su comentario**, que explica qué pasa si se pone mal. Una bandera cuyo
@@ -776,7 +784,7 @@ para siempre.
   correctas"). Botones Copiar y Probar. El enlace se arma con `location.origin`, así que
   abierto desde vulpo.cl genera enlaces de vulpo.cl y en local genera locales. Se llega
   desde `profesor.html` → Administración → "🔗 Armar enlace de muestra": un **selector de nivel**
-  (8° básico → `/juego/`, 3° básico → `/3ro/`) + "Abrir armador", visible solo para `YO.es_admin`
+  (8° → `/juego/`, 7° → `/7mo/`, 3° → `/3ro/`) + "Abrir armador", visible solo para `YO.es_admin`
   (no lo ven los SuperUsuarios). **Cada app tiene su propio armador** y lista solo sus capítulos;
   agregar un curso nuevo al selector es **una línea** en `NIVELES_MUESTRA` (`profesor.html`). **Vive en `index.html` a propósito:** el
   catálogo (`EXPEDICIONES`) ya está ahí, así que una expedición nueva aparece sola, sin
@@ -811,7 +819,7 @@ para siempre.
     un fork y lo que se escribe adentro hay que reescribirlo en el siguiente. El módulo inyecta
     su CSS, su pantalla y el botón 🚩 él solo; **integrarlo en un curso nuevo son 5 líneas**
     (incluir el script, `REV.init`, y engancharlo en `nPreguntas`, `pintaPregunta` y `go`). Con
-    el modo apagado no inyecta nada. Ya está en **8° y en 3°**, y el armador (`?armar=1`) de
+    el modo apagado no inyecta nada. Ya está en **los tres cursos**, y el armador (`?armar=1`) de
     ambos tiene su casilla.
   - **⚠️ Al agregar un `<script src>` al juego, PROBAR SIEMPRE que pasa si NO carga.**
     Sacar este módulo a un archivo aparte creó una **dependencia dura en el arranque**: la
@@ -1160,7 +1168,8 @@ cualquier banco de cualquier nivel; la carpeta va como argumento.
   el selector Normal/Difícil del mapa (variable global `MODO`).
 
 ### Del tablero (producción)
-- Cobertura: `preguntas / 25` por OA.
+- Cobertura: `preguntas / meta_preguntas_por_oa` por OA, **meta 8 por defecto**
+  (`scripts/generar-tablero.py`). Aquí decía 25, que nunca fue el valor del script.
 - Revisión: `revisadas / total` (aprobadas por un humano).
 
 ## Backend (Supabase)
@@ -5404,3 +5413,99 @@ aprobación**. Lo que manda ahora es el Bloque B —los bancos de 4°, 5° y 6°
 **M4 (`niveles.js`) delante**, porque es lo que abarata dar de alta un curso (hoy son ~27 puntos
 de edición en tres archivos, ocho de ellos listas paralelas).
 
+#### Y despues, ordenar las bases: cuatro agentes midiendo antes de sumar tres cursos
+
+Roberto pidió **dejar todo ordenado antes** de entrar a los siguientes libros, vocabularios y
+desafíos — porque lo que se sume desde ahora se copia tres veces más. Se despacharon **cuatro
+agentes de solo lectura** (motor duplicado, scripts, documentación, contenido y assets) y **cada
+hallazgo se verificó a mano** antes de actuar. Plan completo:
+[`docs/superpowers/plans/2026-08-30-ordenar-las-bases.md`](docs/superpowers/plans/2026-08-30-ordenar-las-bases.md).
+
+**Lo que midieron, que no se sabía con números:**
+
+| | |
+|---|---|
+| Líneas de JS comunes a los tres forks | **1.982** → ~3.964 redundantes |
+| Duplicación del JS de 7° | **77,6 %** |
+| Funciones **byte a byte idénticas** en los tres | **71** (piso, no total) |
+| Formatos de serialización distintos entre 16 bancos | **9** |
+| Scripts sin una sola referencia viva | **10** de 25 |
+| Afirmaciones falsas en documentación viva | **22** |
+
+#### Dos bugs vivos que aparecieron de paso, y uno lo reportó Roberto
+
+**1. 3° tenía Modo Difícil, y su propio diseño lo había descartado.** El spec dice *"Sin Modo
+Difícil (los 15 s / 80% no van para 8 años)"* y *"descartado por edad"*, pero el fork lo conservó:
+`renderModoSel` solo miraba `S.dificilDesbloqueado`, así que un niño de 8 años que vencía un jefe
+recibía el botón 🔥. **Y de paso, la Maestría Total era inalcanzable ahí**: `esMaestro()` venía
+copiado de 8° exigiendo `S.calc.jefe`, que en 3° nadie escribe.
+Se cerró con la bandera **`HAY_DIFICIL`** y **cuatro guardas byte a byte iguales en los tres
+forks** — no con `if` sueltos, que es lo que produjo el problema.
+(Se comprobó de paso que el cronómetro **sí** está apagado en 3°: el `setInterval` vive dentro del
+`else` de `SIN_RELOJ`, así que no se crea. Esa sospecha era infundada.)
+
+**2. «En algunas pruebas creadas, aunque fueran de otro curso, siempre aparecía 8vo».** Reporte de
+Roberto, y eran **dos pantallas**:
+
+- `scr-rol`, la primerísima pantalla, decía *"Aprende jugando · **8° Básico**"* en 3° y en 7°. La
+  ve **todo el que abre la app** sin código canjeado.
+- `scr-inicio`, donde el jugador nuevo crea su perfil, decía *"**EXPEDICIÓN HISTORIA** · 8°
+  Básico"*. Mal el nivel **y** la asignatura: ese título viene de cuando el juego era una sola
+  expedición de Historia, y 3° empieza por Matemática.
+
+Quedó *"TU EXPEDICIÓN"*, igual en los tres, con el nivel como único dato que cambia. **Va como
+literal de HTML y no por JavaScript a propósito**: una constante leída en el arranque es justo el
+patrón que mató las tres apps tres veces esta semana.
+
+#### Lo que se ordenó
+
+- **10 scripts retirados** (los 8 procesadores de arte, `aplicar-fix-distractores`,
+  `generar-pdf-preguntas`), **rescatando antes** su parte reutilizable en
+  **`scripts/procesar-arte.py`**, que recibe los archivos por argumento en vez de llevar una lista
+  de UUID adentro. Probado reprocesando un villano real, no solo leído.
+- **Códigos de salida:** `revisar-tanda.py` y `auditar-numerico.py` encontraban defectos y **salían
+  con 0**, así que un `&&` en una cadena los ignoraba — y son la primera puerta del pipeline y el
+  que caza dos respuestas correctas. Probado con un banco roto a propósito.
+- **El fallback silencioso de los scripts de voz** (defecto mío del mismo día): pedirles una
+  asignatura desconocida **generaba o auditaba Matemática sin avisar**, y al auditor le faltaba
+  `ada3`. O sea que auditar el libro habría auditado Matemática **y pagado por ello**, mientras
+  `pendiente.md` le decía al próximo que corriera justo ese comando. Ahora mueren con un mensaje.
+- **5 assets huérfanos** (~900 KB), verificados con búsqueda exacta del nombre completo.
+- **22 afirmaciones falsas en la documentación viva.** Las cinco graves eran contradicciones que
+  yo mismo creé ese día al aprobar 3° y 7°: `docs/comercial.md` decía arriba que estaban aprobados
+  y abajo *"nunca afirmando que su banco está aprobado"*, y `docs/aprobacion-pedagogica.md` —el
+  documento que respalda la frase de la landing— seguía marcando **0 aprobadas**. Más el ranking
+  descrito como "simulado" (es real desde la Sesión 19), la tabla de banderas sin `HAY_SINFIN` y
+  con 7° sin Vocabulario, el armador con 2 niveles en vez de 3, y **el peso con cuatro cifras
+  distintas en cuatro documentos**, ninguna igual al disco.
+
+> **El peso quedó con una sola medición** (30/08): `assets/` **475 MB**, voz **263 MB**,
+> originales 175 MB, `contenido/` 7,8 MB, sitio publicado **317 MB**. Al actualizarla hay que
+> tocar `CLAUDE.md`, `pendiente.md` y `docs/roadmap-tecnico.md`, que es donde vivía repartida.
+
+#### Un error propio que vale registrar
+
+Al agregar `HAY_DIFICIL` la declaré **después** de su primer uso y **maté las tres apps** con zona
+muerta temporal — `revisarDificil()` corre en el arranque. Es la **tercera vez esta semana** que
+ese patrón muerde (`CALC.init`, `EXTRAS`, y ahora esto). La bandera quedó **pegada a `DIF_ASIGS`**,
+con el porqué escrito encima para que nadie la "ordene" de vuelta junto a las otras.
+
+> La lección de forma: en este archivo, **dónde se declara una constante es parte de su
+> corrección**, no un detalle de estilo.
+
+#### Lo que quedó diseñado y sin implementar
+
+- **M4 · `niveles.js`** (spec y plan). Al medirlo el diseño salió **más chico** de lo que decía la
+  tarea: casi ninguna de las ocho listas necesita existir, porque **el código ya contiene la
+  información** (`HI08` = `HI` + `08`). El catálogo real son **4 prefijos y una fila por nivel**.
+  Dar de alta un curso pasa de ~24 puntos de edición a **2**.
+  ⚠️ Y una que hay que respetar: `kimun_oa_asignatura` **no** puede volverse puramente estructural,
+  porque también mapea `VOC-HIST` y `AF-T1`, y **hay filas históricas de 8° con esos códigos** que
+  desaparecerían del panel sin ningún error.
+- **Inscripción por enlace único** (spec y plan), pedida por Roberto: un enlace al chat, cada uno
+  se crea solo en un curso ya abierto, con **todo el contenido salvo los jefes**, y su avance
+  registrado. Decisiones suyas: **el nombre lo escribe el alumno** y **el cupo es el único
+  límite**. Lo que ya funciona solo es el punto que parecía más grande: **el registro de uso**, que
+  arranca en cuanto el dispositivo queda vinculado a un perfil con curso.
+  La pieza de motor es partir `MODO_ABIERTO` en **`CAPS_ABIERTOS`** y **`JEFES_ABIERTOS`** — el
+  mismo corte que la Sesión 41 le hizo a `QA`.

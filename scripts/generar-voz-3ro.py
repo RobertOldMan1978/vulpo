@@ -49,10 +49,15 @@ ASIGS = {
     # en su tarjeta es el nombre del tramo, que si viaja por "caps".
     "ada3":  {"banco": "lectura-cuentos-de-ada", "oa": "CA", "caps": "lect-cuentos-ada"},
 }
-ASIG = "mat3"
-for _a in sys.argv[1:]:
-    if _a in ASIGS:
-        ASIG = _a
+# Sin argumento vale mat3, que es el uso historico. Con un argumento que NO sea una
+# asignatura conocida, MORIR en vez de caer a mat3: el fallback callado generaba (y
+# con --rehacer, volvia a PAGAR) la asignatura equivocada sin decir nada.
+_pedidas = [a for a in sys.argv[1:] if not a.startswith("-")]
+_malas = [a for a in _pedidas if a not in ASIGS]
+if _malas:
+    sys.exit("No conozco la asignatura %s. Las que hay: %s"
+             % (", ".join(_malas), ", ".join(sorted(ASIGS))))
+ASIG = _pedidas[0] if _pedidas else "mat3"
 _CFG = ASIGS[ASIG]
 BANCO = RAIZ / "contenido" / _CFG["banco"] / "preguntas.json"
 SALIDA = RAIZ / "assets" / "voz" / ASIG

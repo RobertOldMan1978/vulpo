@@ -643,7 +643,7 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
       <img class="badge-img" src="assets/vulpo-mascota.png" alt="Vulpi, la mascota" width="190" height="203">
       <h1>VULPO</h1>
       <div id="rolNombre" class="rol-nombre" hidden></div>
-      <p id="rolSub">Aprende jugando · 8° Básico</p>
+      <p id="rolSub">Aprende jugando · 7° Básico</p>
     </div>
     <div id="bannerDesafio" class="banner-desafio" hidden></div>
     <div id="avisoPuerta" class="card" hidden
@@ -878,8 +878,8 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
   <section class="screen" id="scr-inicio">
     <div class="logo">
       <img class="badge-conq" src="assets/kimun-conquistador.png" alt="Vulpi explorador">
-      <h1>EXPEDICIÓN<br>HISTORIA</h1>
-      <p>8° Básico · Descubre, conquista y sube de nivel</p>
+      <h1>TU<br>EXPEDICIÓN</h1>
+      <p>7° Básico · Descubre, conquista y sube de nivel</p>
     </div>
     <div class="card">
       <h3>Tu nombre de explorador</h3>
@@ -1570,6 +1570,16 @@ const INSIGNIAS=[
 /* En 7° las CUATRO asignaturas son campaña normal (no hay Reto de Cálculo), así que
    las cuatro tienen Modo Difícil y la Maestría Total exige las cuatro. */
 const DIF_ASIGS=['Historia','Ciencias','Lenguaje','Matemáticas'];
+/* ¿Este nivel ofrece Modo Difícil (y con él las insignias 🔥, la skin de Maestro
+   y la Maestría Total)? El diseño de 3° lo descartó por edad —"los 15 s y el 80% no
+   van para 8 años"— pero el fork lo conservó vivo, así que un niño que vencía un jefe
+   recibía el botón 🔥 que nunca debió existir ahí. Y de paso su esMaestro() venía
+   copiado de 8°, exigiendo S.calc.jefe, que en 3° NADIE escribe: la corona era
+   inalcanzable.
+   ⚠️ Va PEGADA a DIF_ASIGS y no junto a las otras banderas: la consulta revisarDificil(),
+   que corre en el arranque. Declararla más abajo la deja en zona muerta temporal y mata
+   todo el JavaScript de la app. */
+const HAY_DIFICIL=true;
 function campañaDe(asig){return CAMPAÑAS.find(c=>c.asignatura===asig)||null;}
 function campañaPorId(id){return CAMPAÑAS.find(c=>c.id===id)||null;}
 
@@ -3163,7 +3173,7 @@ function renderMapa(){
 }
 function renderModoSel(){
  const el=$('modoSel');if(!el)return;
- if(!S.dificilDesbloqueado){el.style.display='none';el.innerHTML='';return;}
+ if(!HAY_DIFICIL||!S.dificilDesbloqueado){el.style.display='none';el.innerHTML='';return;}
  el.style.display='flex';
  el.innerHTML=`<button class="${MODO==='normal'?'on':''}" data-m="normal">🗺️ Normal</button>`+
   `<button class="dif ${MODO==='dificil'?'on':''}" data-m="dificil">🔥 Difícil</button>`;
@@ -3414,7 +3424,7 @@ function asignaturaDificilCompleta(asig){const c=CAMPAÑAS.find(x=>x.asignatura=
 function asignaturasDificil(){return DIF_ASIGS.filter(asignaturaDificilCompleta);}
 // Maestría Total en 7° = las CUATRO asignaturas en Difícil. 7° no tiene El Autómata
 // (ese es el jefe del Reto de Cálculo de 8°), así que el cuarto hito es Matemática.
-function esMaestro(){return asignaturasDificil().length>=4;}
+function esMaestro(){if(!HAY_DIFICIL) return false; return asignaturasDificil().length>=4;}
 // Aura/halo dorados permanentes mientras se es maestro (clase en el body).
 function aplicarMaestria(){document.body.classList.toggle('es-maestro', esMaestro());}
 // La primera vez que se logra la maestría: skin cumbre + video de celebración.
@@ -3433,6 +3443,7 @@ function revisarMaestria(){
 // Autómata) y revisa la maestría. Idempotente. Se llama al pasar una etapa en Difícil,
 // al vencer a El Autómata y al iniciar.
 function revisarDificil(){
+ if(!HAY_DIFICIL) return;
  const hechas=asignaturasDificil();
  const ins={Historia:'dif-historia',Ciencias:'dif-ciencias',Lenguaje:'dif-lenguaje'};
  let nuevo=false;
@@ -3501,7 +3512,7 @@ function terminarNivel(){
   if(estrellas===3)toast('perfecto');
   if(esJefe)toast('jefe');
   S.monedas+=Q.repetida?0:estrellas*10;   // el bono de estrellas solo la primera vez (anti-farmeo)
-  if(esJefe&&EXPEDICION[Q.lvl]&&EXPEDICION[Q.lvl].oa==='BOSS'&&!dif&&!S.dificilDesbloqueado){S.dificilDesbloqueado=true;setTimeout(()=>toast('dificil'),700);}
+  if(HAY_DIFICIL&&esJefe&&EXPEDICION[Q.lvl]&&EXPEDICION[Q.lvl].oa==='BOSS'&&!dif&&!S.dificilDesbloqueado){S.dificilDesbloqueado=true;setTimeout(()=>toast('dificil'),700);}
  }
  if(paso)SND.win();else SND.lose();
  [1,2,3].forEach(i=>{if(i<=estrellas)setTimeout(()=>SND.star(i),350+i*260);});

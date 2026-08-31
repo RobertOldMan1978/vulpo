@@ -152,6 +152,10 @@ def main():
         f, s = revisar(r, vistos)
         tf += f; ts += s
     print("\n=== %d archivos · %d errores · %d con sesgo de largo ===" % (len(rutas), tf, ts))
+    # Salir con error si los hay: es la PRIMERA puerta del pipeline, y saliendo con 0
+    # un `&&` en una cadena de comandos se la saltaba sin que nadie lo notara. El sesgo
+    # de largo NO cuenta: es un aviso para reescribir distractores, no un banco roto.
+    sys.exit(1 if tf else 0)
 
 
 if __name__ == "__main__":

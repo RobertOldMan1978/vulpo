@@ -12,11 +12,12 @@ Roberto. El tablero permitía marcar **de a una casilla**, y las cuentas no dan:
 
 | | Preguntas | A 5 s cada una | A 10 s |
 |---|---|---|---|
-| Hoy sin aprobar (3° y 7°) | **4.988** | 7 horas | 14 horas |
+| Sin aprobar hoy (2 OA de Historia de 3°) | **60** | 5 minutos | 10 minutos |
 | Proyección v1 (con 4°, 5° y 6°) | **~12.800** | **18 horas** | **36 horas** |
 
-No es una molestia: es el cuello de botella real del proyecto. **3° y 7° llevan meses escritos y
-sin una sola pregunta aprobada**, y esa es exactamente la forma en que la v1 se cae — no por falta
+No es una molestia: fue el cuello de botella real del proyecto hasta el 30/08/2026, cuando 3° y 7°
+se aprobaron por muestreo en una sola pasada. **Con 4°, 5° y 6° vuelve a serlo**, y esa es
+exactamente la forma en que la v1 se cae — no por falta
 de contenido, sino porque el contenido nunca se firma.
 
 ---
@@ -111,7 +112,7 @@ El modo cierra ese hueco. Una pantalla por objetivo, con **sus 8 preguntas ya el
 | **Esc** | salir |
 
 - **La cola son solo los OA con preguntas pendientes.** 8°, aprobado entero, no aparece; hoy
-  quedan **170**, y el contador dice en cuál vas.
+  quedan **2**, y el contador dice en cuál vas. (Eran 170 antes de la pasada del 30/08.)
 - **Se retoma donde se quedó**, aunque se cierre el navegador.
 - **La muestra es estable**: se sortea con una semilla derivada del código del OA, así que las
   mismas 8 salen siempre. Si cambiaran al recargar, uno podría aprobar un OA habiendo visto ocho
@@ -148,8 +149,13 @@ El modo cierra ese hueco. Una pantalla por objetivo, con **sus 8 preguntas ya el
 |---|---|---|
 | 8° básico (4 asignaturas) | 2.314 | ✅ todas |
 | Vocabulario y Ana Frank | 222 | ✅ todas |
-| **3° básico** (4 asignaturas) | **2.558** | ❌ **0** |
-| **7° básico** (4 asignaturas) | **2.430** | ❌ **0** |
+| **3° básico** (4 asignaturas) | **2.558** | ✅ **2.498** — faltan 60 (`HI03 OA 01` y `OA 08`) |
+| **7° básico** (4 asignaturas) | **2.430** | ✅ **todas** |
+| Vocabulario 7° y *Cuentos de Ada* | 221 | ✅ todas |
+
+> **Cerrado el 30/08/2026.** 5.048 preguntas aprobadas por muestreo en una pasada. El proyecto
+> quedó en **7.685 de 7.745**. Lo que sigue abajo describe el método con el que se hizo, y sirve
+> igual para 4°, 5° y 6°, que son los que faltan.
 
 Los informes en papel para revisar sin pantalla se generan con
 `python scripts/generar-revision-preguntas.py <carpeta>` y quedan en `dev/` (ignorados por git:

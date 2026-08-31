@@ -110,6 +110,9 @@ def main():
     for r in rutas:
         total += revisar(r)
     print("\n=== %d archivos · %d con dos respuestas correctas ===" % (len(rutas), total))
+    # Dos opciones que valen lo mismo convierten una pregunta de 4 en una de 3 y
+    # castigan justo al que razona bien: es un ERROR, no un aviso. Salia con 0.
+    sys.exit(1 if total else 0)
 
 
 if __name__ == "__main__":

@@ -21,9 +21,11 @@ estas fotos es imposible responder "¿cómo le fue al curso la semana pasada?", 
 **el historial NO se puede reconstruir hacia atrás**: cada semana sin el trabajo
 agendado se pierde para siempre.
 
-**Estado actual:** el código está en `supabase/schema.sql` (Sesión 36) pero el
-trabajo **no está agendado en Supabase todavía**, a la espera de tener datos
-reales (hoy el curso demo `CUR-BA04` y las cuentas `profe-prueba*` son de prueba).
+**Estado actual (30/08/2026): APLICADO Y AGENDADO.** Roberto pegó
+`supabase/aplicar-foto-semanal.sql` el 27/08 y el 28/08 se confirmó con
+`select count(*) from cron.job where jobname='foto-semanal';` → **1**. La primera foto la
+toma el trabajo solo, el lunes 31/08. Lo que sigue abajo es el procedimiento, por si hay
+que re-aplicarlo.
 
 > ⚠️ **La trampa a evitar:** el bloque que agenda el trabajo (`schema.sql`, cerca
 > de la línea 1371) **falla en silencio si `pg_cron` no está habilitado** — para

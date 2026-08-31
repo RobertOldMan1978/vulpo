@@ -4,7 +4,7 @@
 > querer **revisar antes de activar**, con un **código de color por categoría**. Es a la vez la
 > **leyenda que muestra el armador** (`?armar=1`) y el **insumo de la feature** que marca lo sensible
 > en los enlaces de muestra y de venta para preguntar al usuario si lo activa. Nace del inventario de
-> los 20 OA sensibles de 3°, 7° y 8° (Matemática no tiene). Ver A4 en `pendiente.md`.
+> los 21 OA sensibles de 3°, 7° y 8° (Matemática no tiene). Ver A4 en `pendiente.md`.
 
 ## Leyenda — qué representa cada color (para el armador)
 

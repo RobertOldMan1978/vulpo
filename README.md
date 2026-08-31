@@ -75,7 +75,7 @@ organización y la programación están en
 mediano plazo: web → PWA → Capacitor → Android → iOS, y el modelo de suscripción
 anual por nivel escolar. Nada de eso está implementado todavía.
 
-Aparte hay **dos cursos más en construcción**, cada uno como una app propia y **sin enlazar desde el sitio**. Los tres cursos comparten la misma puerta de acceso: desde el **1 de septiembre de 2026** hace falta un código de alumno para jugar más allá de la demo de cada nivel.
+Aparte hay **dos cursos más completos y aprobados**, cada uno como una app propia y **sin enlazar desde el sitio**. Los tres cursos comparten la misma puerta de acceso: desde el **1 de septiembre de 2026** hace falta un código de alumno para jugar más allá de la demo de cada nivel.
 
 **7° básico** (`7mo/`) sigue las mismas bases que 8°: campañas por asignatura con capítulos en orden, jefe de capítulo y Jefe Final multi-fase, Modo Difícil, comodín 50/50, meta de aprendizaje y repaso al fallar. Sus cuatro asignaturas son Historia, Geografía y Ciencias Sociales (23 objetivos), Matemática (19), Ciencias Naturales (15) y Lengua y Literatura (24). No lleva lectura por voz: a los 12-13 años ya se lee de corrido. Guarda su avance y su identidad en línea aparte de 8° y de 3°. Suma además dos **módulos transversales**: un **Vocabulario** de 120 palabras de sus cuatro asignaturas, y un **Reto Sin Fin** de cálculo mental —operaciones generadas por código, sin banco de preguntas— dentro de Matemática.
 
