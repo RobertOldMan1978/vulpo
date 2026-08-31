@@ -5752,3 +5752,54 @@ producción**, con las tres comprobaciones dando `ok`.
 > hay un `drop`. Los dos cambios anteriores del día no mordieron porque sus funciones eran
 > nuevas. Queda en `docs/aplicar-schema.md`.
 
+#### Dar de alta el primer curso destapó tres defectos, y uno llevaba meses vivo
+
+Roberto creó el curso de 3° y fue apareciendo todo lo que nadie había recorrido nunca por esa
+pantalla. Los tres se encontraron **usándola**, no leyéndola.
+
+**1 · Nombrar Profesor Jefe NUNCA había funcionado.** `kimun_prof_equipo_asignar` declaraba una
+variable llamada `rol`, y `curso_profesores` tiene una columna `rol`. En el `update` que baja al
+Jefe anterior chocan, y PostgreSQL aborta con *"column reference rol is ambiguous"* (42702).
+
+> Lo que lo mantuvo escondido desde la **Sesión 37** es cómo funciona plpgsql: **prepara cada
+> sentencia la primera vez que la ejecuta**, y esa vive dentro de un `if rol='jefe'`. O sea que
+> el resto de la función —agregar y editar profes de asignatura— funcionaba perfecto, y solo
+> fallaba la rama del Jefe. El Jefe de los cursos existentes había llegado por otro camino (la
+> migración de la Sesión 37 y `kimun_prof_curso_asignar`), así que nadie la había pisado.
+> La variable pasó a llamarse `v_rol`, con el porqué escrito encima.
+
+Se auditó **la clase entera, no el caso**: un script comparó las variables declaradas de las 50
+funciones contra las 42 columnas del esquema. **Un solo choque real.** El otro candidato
+(`total` en `kimun_crear_duelo`) es falso positivo: esa columna vive en `desafio_resultados`,
+una tabla que la función ni toca, y la variable solo aparece en expresiones sin `FROM`.
+
+> **Error propio en el arreglo:** intenté el renombre con un regex a bulto y me dejó **dos
+> líneas mal** —un `where` que debía seguir siendo la columna, y un `excluded.v_rol`—. Lo rehíce
+> explícito. Es la misma trampa que el corte por índices de la Sesión 56, con otra herramienta.
+
+**2 · El mensaje de error existía y estaba fuera de pantalla.** `aviso()` escribe en `#panelMsg`,
+arriba del panel, y **todas** las acciones que lo disparan —equipo, enlace, alumnos— viven abajo
+del todo. Roberto apretaba el botón y "no pasaba nada", cuando el servidor sí estaba respondiendo.
+Ahora el aviso hace `scrollIntoView`. Es un defecto viejo que solo se nota cuando algo falla, que
+es justo cuando más estorba.
+
+**3 · El nivel se perdía al repintar, y lo cometí DOS VECES.** Los bloques del equipo y del
+enlace se vuelven a dibujar tras cada acción, y esas recargas llamaban a su función **sin el
+nivel**: las casillas volvían a mostrar las de todos los niveles, y el selector del enlace caía a
+la primera opción —8°—, así que **el enlace de un curso de 3° salía apuntando a `/juego/`**. Lo
+arreglé en el equipo y no revisé su gemelo del enlace, que hacía exactamente lo mismo. Ahora las
+**tres** llamadas de repintado pasan el nivel, y el helper lo busca por `[data-nivel]` en vez de
+por un bloque concreto, para que un bloque nuevo lo herede solo.
+
+> **Dato útil para el enlace ya repartido:** el token no sabe de niveles. Lo único que decide a
+> qué curso llega el alumno es la **ruta** de la URL, así que un enlace mal apuntado se arregla
+> cambiando el selector y copiando de nuevo, sin crear otro ni invalidar el anterior.
+
+#### El Duelo de 3° queda anotado, no descartado
+
+Está apagado con una línea de CSS (`#btnDuelo{display:none}`, Sesión 54). Roberto lo quiere —*"es
+el único modo social del juego"*— y quedó como **A19**, con las dos cosas que hay que medir
+antes: que el duelo es **contra el reloj** y 3° juega `SIN_RELOJ` a propósito (la salida ya la
+conoce el proyecto: al Reto Sin Fin de 3° se le **quitó** el cronómetro, no se le aflojó), y que
+`cargarPoolDuelo` no traiga el banco de 8°, que es el defecto del fork que ya mordió tres veces.
+

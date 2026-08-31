@@ -1073,12 +1073,18 @@ end $$;
 create or replace function public.kimun_prof_equipo_asignar(
   p_curso_codigo text, p_correo text, p_rol text, p_asignaturas text[])
 returns void language plpgsql security definer set search_path=public as $$
-declare cid uuid; pid uuid; rol text; asigs text[]; niv text; begin
+-- ⚠️ La variable se llama v_rol y NO rol: curso_profesores tiene una columna `rol`, y
+-- con el mismo nombre PostgreSQL no sabe cual es cual en el `where` del update de abajo
+-- ("column reference rol is ambiguous", 42702). El bug vivio desde la Sesion 37 sin que
+-- nadie lo viera porque plpgsql prepara cada sentencia la PRIMERA vez que la ejecuta, y
+-- esa vive dentro del `if rol='jefe'`: solo se disparaba al nombrar Profesor Jefe desde
+-- el panel, que es un camino que casi no se usa (el Jefe inicial lo puso la migracion).
+declare cid uuid; pid uuid; v_rol text; asigs text[]; niv text; begin
   select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
   if cid is null then raise exception 'no_autorizado'; end if;
-  rol := case when p_rol = 'jefe' then 'jefe' else 'asignatura' end;
+  v_rol := case when p_rol = 'jefe' then 'jefe' else 'asignatura' end;
   -- Nombrar Jefe = solo Admin/SuperUsuario. Agregar/editar profe de asignatura = jefe/super/admin.
-  if rol = 'jefe' then
+  if v_rol = 'jefe' then
     if not public.kimun_prof_admin_colegio() then raise exception 'no_autorizado'; end if;
   else
     if not public.kimun_prof_es_mio(cid) then raise exception 'no_autorizado'; end if;
@@ -1087,22 +1093,22 @@ declare cid uuid; pid uuid; rol text; asigs text[]; niv text; begin
   if pid is null then raise exception 'profesor_invalido'; end if;
   -- El jefe ignora asignaturas (alcanza todas); un profe de asignatura sin
   -- materias queda sin acceso, pero es una fila válida ("aún no le asignan").
-  asigs := case when rol = 'jefe' then '{}'::text[] else coalesce(p_asignaturas,'{}'::text[]) end;
+  asigs := case when v_rol = 'jefe' then '{}'::text[] else coalesce(p_asignaturas,'{}'::text[]) end;
   -- Una asignatura de OTRO nivel no se le puede asignar a este curso. El panel ya no las
   -- dibuja, pero la interfaz nunca es el único guardia: cualquiera puede llamar la función
   -- con la clave pública. Un curso SIN nivel (los de antes de esta columna) no se valida,
   -- porque no hay contra qué comparar.
   select nivel into niv from public.cursos where id = cid;
-  if niv is not null and exists (select 1 from unnest(asigs) a where right(a,2) <> niv) then
+  if niv is not null and exists (select 1 from unnest(asigs) as u(cod) where right(u.cod,2) <> niv) then
     raise exception 'asignatura_de_otro_nivel';
   end if;
-  if rol = 'jefe' then
+  if v_rol = 'jefe' then
     -- Solo puede haber un jefe: baja al actual (si es otro) antes de insertar.
     update public.curso_profesores set rol='asignatura'
-     where curso_id = cid and rol='jefe' and profesor_id <> pid;
+     where curso_id = cid and curso_profesores.rol='jefe' and profesor_id <> pid;
   end if;
   insert into public.curso_profesores(curso_id, profesor_id, rol, asignaturas)
-  values (cid, pid, rol, asigs)
+  values (cid, pid, v_rol, asigs)
   on conflict (curso_id, profesor_id) do update
     set rol = excluded.rol, asignaturas = excluded.asignaturas;
 end $$;

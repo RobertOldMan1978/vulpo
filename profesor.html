@@ -209,6 +209,10 @@ async function manejarFalloDeIngreso(e){
 function aviso(t,color){
   const el = $('cardPanel').classList.contains('hide') ? $('authMsg') : $('panelMsg');
   el.style.color=color||'var(--pink)'; el.textContent=t;
+  // El mensaje vive arriba del panel, y las acciones que lo disparan (equipo, enlace,
+  // alumnos) ocurren abajo del todo: sin esto, un error queda FUERA DE PANTALLA justo
+  // cuando mas se necesita, y la pantalla parece no responder. Paso de verdad.
+  try{ el.scrollIntoView({block:'center', behavior:'smooth'}); }catch(e){}
 }
 function esc(t){ return String(t==null?'':t)
   .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
@@ -646,7 +650,7 @@ async function cargarInscripcion(cursoCodigo, nivel){
         {p_curso_codigo:cursoCodigo, p_cupo:cupo, p_experimental:exp});
       if(error) throw error;
       aviso('Enlace creado');
-      cargarInscripcion(cursoCodigo);
+      cargarInscripcion(cursoCodigo, nivelDeCurso(cursoCodigo));
     }catch(e){ aviso(errorPanel(e)); }
   };
 }
@@ -737,12 +741,20 @@ async function cargarEquipo(cursoCodigo, nivel){
   };
 }
 
+/* El nivel lo lleva el <details> del curso en el DOM, que es donde ya vive. Hace falta
+   porque los bloques se REPINTAN tras cada accion (crear el enlace, agregar al equipo) y
+   sin esto la recarga pierde el nivel: las casillas vuelven a las de todos los niveles y
+   el selector del enlace cae a la primera opcion, que es 8. Mordio dos veces. */
+function nivelDeCurso(cod){
+  const d=document.querySelector('details[data-cod="'+CSS.escape(cod)+'"][data-nivel]');
+  return d ? (d.dataset.nivel||'') : '';
+}
 async function equipoAsignar(cursoCodigo, correo, rol, asigs){
   try{
     const {error}=await SB.rpc('kimun_prof_equipo_asignar',
       {p_curso_codigo:cursoCodigo, p_correo:correo, p_rol:rol, p_asignaturas:asigs});
     if(error) throw error; aviso('Profesor agregado al equipo','var(--green)');
-    cargarEquipo(cursoCodigo);
+    cargarEquipo(cursoCodigo, nivelDeCurso(cursoCodigo));
   }catch(e){ aviso(errorPanel(e)); }
 }
 
@@ -751,7 +763,7 @@ async function equipoQuitar(cursoCodigo, correo){
   try{
     const {error}=await SB.rpc('kimun_prof_equipo_quitar',{p_curso_codigo:cursoCodigo, p_correo:correo});
     if(error) throw error; aviso('Profesor quitado del curso','var(--green)');
-    cargarEquipo(cursoCodigo);
+    cargarEquipo(cursoCodigo, nivelDeCurso(cursoCodigo));
   }catch(e){ aviso(errorPanel(e)); }
 }
 
