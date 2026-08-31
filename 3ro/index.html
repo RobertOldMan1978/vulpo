@@ -156,10 +156,17 @@ input.nm:focus{border-color:var(--cyan)}
 
 /* ===== QUIZ ===== */
 .qtop{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+/* Los controles de audio son position:fixed arriba a la derecha (.sndbtn), asi que en
+   pantalla angosta se COMEN el reloj de .qtop: medido, quedaba tapado en el quiz y en el
+   duelo de los tres cursos, o sea el jugador no veia su cuenta regresiva. Se les reserva
+   el espacio. En pantalla ancha los botones quedan fuera del contenedor y no estorban. */
+@media (max-width:560px){ .qtop{padding-right:94px} }
 .back{background:#00000044;border:none;color:var(--txt);width:42px;height:42px;border-radius:13px;font-size:18px;cursor:pointer}
 .qprog{flex:1;height:14px;background:#00000055;border-radius:8px;overflow:hidden}
 .qprog i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--green),var(--cyan));transition:width .4s}
-.timer{font-family:'Titan One';font-size:18px;color:var(--gold);min-width:40px;text-align:center}
+/* En 3° el reloj se ve GRANDE: es el unico lugar del curso donde hay cuenta regresiva,
+   asi que tiene que leerse de una y no confundirse con el resto del HUD. */
+.timer{font-family:'Titan One';font-size:30px;color:var(--gold);min-width:56px;text-align:center}
 .timer.low{color:var(--pink);animation:shake .4s infinite}
 .combo{position:fixed;top:18%;left:50%;transform:translateX(-50%);font-family:'Titan One';font-size:44px;
   color:var(--gold);text-shadow:0 0 20px #ffc93c,3px 3px 0 #b5651d;opacity:0;pointer-events:none;z-index:50}
@@ -295,7 +302,9 @@ input.nm:focus{border-color:var(--cyan)}
 .shop-item button:disabled{filter:grayscale(.7);opacity:.5;cursor:not-allowed}
 /* ===== DUELO ===== */
 .duelo-av{grid-template-columns:repeat(6,1fr)}
-.duelo-turn{font-weight:900;font-size:14px;color:var(--gold);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* El nombre del turno NO compite con la barra de progreso: en el duelo local dice a quien
+   le toca el telefono, asi que vale mas que la barra. Conserva el ellipsis por si es largo. */
+.duelo-turn{font-weight:900;font-size:14px;color:var(--gold);flex:none;max-width:52%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .duelo-score{text-align:center;font-weight:900;margin-top:14px;font-size:16px;color:var(--cyan)}
 .duelo-final{font-family:'Titan One';font-size:19px;margin:14px 0;line-height:1.5}
 /* ===== DUELO ONLINE ===== */
@@ -601,7 +610,8 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
 .ninos #qText{font-size:22px;line-height:1.3}
 .ninos .opt{font-size:18px;padding:18px 16px}
 .ninos #qMeta{font-size:13px}
-#btnDuelo{display:none}
+/* El duelo de 3° SI va (decidido el 31/08): es el unico modo social del juego.
+   Su reloj es DUELO_SEG=30, el doble que en 8°. */
 </style>
 </head>
 <body class="ninos">
@@ -2716,13 +2726,21 @@ function renderTienda(){
 
 /* ================= DUELO 1v1 ================= */
 const DUELO_AV=["🦁","🐉","🦊","🐺","🦄","🐲"], DUELO_ROUNDS=5;
+// El duelo saca sus preguntas de Historia DEL PROPIO NIVEL. Iba fija a historia-8basico
+// en los TRES forks, asi que en 7° un alumno recibia preguntas de 8° (la conquista de
+// America) y en 3° las habria recibido al encender el duelo. Va como DATO y no como un
+// if sobre el nivel, que es justo lo que se copia con su suposicion adentro al forkear.
+const DUELO_BANCO={ruta:'contenido/historia-3basico/preguntas.json',
+                    oas:['HI03 OA 01','HI03 OA 02','HI03 OA 03','HI03 OA 04']};
+const DUELO_SEG=30;   // 30 s: 3° juega SIN_RELOJ en todo lo demas, pero el duelo es una
+                          // competencia y ahi el tiempo es parte del juego. El doble que en 8°
+                          // porque a los 8 anos leer el enunciado ya toma la mitad del turno.
 let D={j:[{n:"Jugador 1",em:DUELO_AV[0],pts:0},{n:"Jugador 2",em:DUELO_AV[1],pts:0}],pr:[],ronda:0,turno:0,lock:false,t:15,timer:null};
 let DUELO_POOL=null;
 async function cargarPoolDuelo(){
  if(DUELO_POOL) return DUELO_POOL;
- try{ const d=await (await fetch('contenido/historia-8basico/preguntas.json')).json();
-   const oas=['HI08 OA 04','HI08 OA 05','HI08 OA 06','HI08 OA 07'];
-   DUELO_POOL=(d.preguntas||[]).filter(q=>oas.includes(q.oa)); }catch(e){ DUELO_POOL=[]; }
+ try{ const d=await (await fetch(DUELO_BANCO.ruta)).json();
+   DUELO_POOL=(d.preguntas||[]).filter(q=>DUELO_BANCO.oas.includes(q.oa)); }catch(e){ DUELO_POOL=[]; }
  return DUELO_POOL;
 }
 function poolDuelo(){return DUELO_POOL||[];}   // banco propio del duelo, independiente del POOL de expedición activa
@@ -2760,7 +2778,7 @@ function pintaDuelo(){
  orden.forEach((it,k)=>{const b=document.createElement('div');b.className='opt';
   b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${escHtml(it.o)}`;
   b.onclick=()=>responderDuelo(b,it.i===P.ok,P);box.appendChild(b);});
- clearInterval(D.timer);D.t=15;$('dTimer').textContent=D.t;$('dTimer').className='timer';
+ clearInterval(D.timer);D.t=DUELO_SEG;$('dTimer').textContent=D.t;$('dTimer').className='timer';
  D.timer=setInterval(()=>{D.t--;$('dTimer').textContent=D.t;if(D.t<=5){$('dTimer').classList.add('low');if(D.t>0)SND.tick();}
   if(D.t<=0){clearInterval(D.timer);responderDuelo(null,false,P);}},1000);
  go('scr-duelo-q');
@@ -3733,7 +3751,7 @@ function odPinta(){
  orden.forEach((it,k)=>{const b=document.createElement('div');b.className='opt';
   if(QA_MARCA&&it.i===P.correcta)b.classList.add('qa-ok');
   b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${escHtml(it.o)}`;b.onclick=()=>odResponder(b,it.i===P.correcta);box.appendChild(b);});
- clearInterval(OD.timer);OD.t=15;$('odTimer').textContent=OD.t;$('odTimer').className='timer';
+ clearInterval(OD.timer);OD.t=DUELO_SEG;$('odTimer').textContent=OD.t;$('odTimer').className='timer';
  OD.timer=setInterval(()=>{OD.t--;$('odTimer').textContent=OD.t;if(OD.t<=5){$('odTimer').classList.add('low');if(OD.t>0)SND.tick();}
   if(OD.t<=0){clearInterval(OD.timer);odResponder(null,false);}},1000);
  go('scr-od-quiz');

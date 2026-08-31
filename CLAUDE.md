@@ -113,7 +113,9 @@ backend Supabase para el duelo en línea. Historia de v0 al detalle en la Bitác
   opcional por archivos (`assets/audio/`, con fallback si no están); control separado
   🎵 música / 🔊 efectos, persistido.
 - **Duelo 1v1:** en el mismo teléfono y **en línea asíncrono (Supabase)** con
-  código de amigo, lista de jugadores, bots de práctica y reto de 24h.
+  código de amigo, lista de jugadores, bots de práctica y reto de 24h. **Está en los tres
+  cursos** (3° desde la Sesión 74), y cada uno saca sus preguntas de **su propia Historia**:
+  el banco y los segundos por pregunta van como dato (`DUELO_BANCO`, `DUELO_SEG`).
 
 **Contenido (bancos de año completo, TODOS revisados):** Historia **663/663** ·
 Matemáticas **603/603 (17 OA)** · Ciencias **534/534 (15 OA)** · Lenguaje
@@ -350,7 +352,9 @@ arriba del archivo, no como condiciones sueltas repartidas por el código.
 | `HAY_BIBLIOTECA` | Si la pantalla principal ofrece el módulo 📖 Lectura | ✅ | ❌ | ✅ |
 | `HAY_SINFIN` | Si Matemática ofrece el **Reto Sin Fin** de `assets/js/calculo.js`. Gobierna el nodo del mapa y la llamada `CALC.init` | ❌ | ✅ | ✅ |
 | `HAY_DIFICIL` | Si el nivel ofrece **Modo Difícil**, y con él las insignias 🔥, la skin de Maestro y la Maestría Total. ⚠️ Se declara **pegada a `DIF_ASIGS`** y no con las demás: la consulta `revisarDificil()`, que corre en el arranque | ✅ | ✅ | ❌ |
-| `SIN_RELOJ` | Quiz sin cuenta regresiva y sin selector Normal/Difícil | ❌ | ❌ | ✅ |
+| `SIN_RELOJ` | Quiz sin cuenta regresiva y sin selector Normal/Difícil. ⚠️ **No alcanza al Duelo**, que sí lleva reloj en los tres: es una competencia y ahí el tiempo es parte del juego | ❌ | ❌ | ✅ |
+| `DUELO_BANCO` | De qué banco saca preguntas el Duelo (ruta + los 4 OA). Iba **fijo a `historia-8basico`** en los tres forks, así que en 7° un alumno recibía preguntas de 8° | `HI08` | `HI07` | `HI03` |
+| `DUELO_SEG` | Segundos por pregunta del Duelo, local y en línea | 15 | 15 | **30** |
 | `EXPERIMENTAL` | **No es de nivel sino del CURSO**: lo enciende la inscripción por enlace. Se lee del disco al arrancar y lo reconcilia `sincronizarModoCurso()`. Gobierna `CAPS_ABIERTOS` | según el curso | según el curso | según el curso |
 
 `MODO_ABIERTO` se partió en **`CAPS_ABIERTOS`** (ignora los candados entre capítulos y
@@ -5935,6 +5939,69 @@ porque los tres tienen la misma altura; se arregla acortando la etiqueta si mole
   un heredoc es anidar otro adentro.
 - Spec y plan: `docs/superpowers/specs/2026-08-31-prediccion-antes-del-resultado-design.md` y
   `docs/superpowers/plans/2026-08-31-prediccion-antes-del-resultado.md`.
+
+#### Segundo tramo — el Duelo llega a 3°, y aparece un bug vivo en 7°
+
+Roberto decidió cuatro pendientes de una vez. El del Duelo cerró la duda de diseño que estaba
+abierta desde la Sesión 73: **el duelo SÍ lleva reloj** aunque 3° juegue `SIN_RELOJ` en todo lo
+demás —*"en el desafío el tiempo es válido, es una competencia"*—, pero con **30 s** en vez de 15
+y el contador **en grande**. A los 8 años leer el enunciado ya se come la mitad del turno.
+
+**El bug que apareció al medir, y que nadie había visto:** `cargarPoolDuelo` descargaba
+`contenido/historia-8basico/preguntas.json` **en los tres forks**. Y como en **7° el botón del
+Duelo nunca estuvo oculto**, un alumno de 7° que jugaba el duelo local recibía preguntas de 8°
+sobre la conquista de América. Estaba en producción. Es el cuarto caso del mismo defecto —el Duelo
+que ofrecía el Reto de 8° (Sesión 63), el botón de mini-clase (64), `cargarPoolMate` (65) y el
+`LIBROS` de 3° que apuntaba a Ana Frank (72)—: **un fork copiado con su suposición adentro**.
+
+La corrección va como **dato y no como `if` sobre el nivel** (`DUELO_BANCO`, `DUELO_SEG`), y con
+eso `cargarPoolDuelo` quedó **byte a byte idéntica en los tres**, que es el objetivo.
+
+#### El reloj estaba tapado, y llevaba así desde siempre
+
+Al mirar la captura —no el conteo— apareció que **los botones fijos de música y sonido
+(`.sndbtn`, `position:fixed`) se comían el reloj**: arrancan en x=275 y el reloj iba de 319 a 359.
+No era solo el duelo de 3°: **también el quiz normal de 8°**, o sea que el jugador no veía su
+cuenta regresiva. Corregido en los tres reservándoles el espacio con una media query.
+
+> **La lección es la de la Sesión 59, otra vez, y ahora con dos formas nombrables.** El conteo
+> decía que todo estaba bien —sin desborde, reloj de 30 px, cero errores— y la pantalla estaba
+> mal. Los dos defectos de esta sesión que solo se vieron mirando son: **un estilo anclado al id
+> de una pantalla no se hereda al reusar su HTML**, y **un elemento `position:fixed` tapa lo que
+> haya debajo sin que ninguna medición del elemento tapado lo diga**.
+
+De paso, el nombre del turno dejó de competir con la barra de progreso: en el duelo local dice a
+quién le toca el teléfono, así que vale más que la barra.
+
+#### A12 descartada, pero auditando lo que sí importaba
+
+Roberto pidió "solucionar el Reto de Cálculo de 8°". Medido, **la tarea estaba mal dimensionada**:
+8° **no carga** `calculo.js` (solo tiene su respaldo vacío) y su Sin Fin inline son **~14 líneas**,
+no 171 — las otras ~157 son niveles, etapas y el Jefe El Autómata, que **`calculo.js` no sabe
+hacer**, porque ese módulo es *solo* Sin Fin. Migrarlo habría sumado una segunda pantalla, un
+segundo reloj y un segundo HUD compitiendo con `scr-calc`, cambiando música y récord en una app
+con alumnos jugando.
+
+**Lo que sí valía la pena era otra cosa:** el generador de 8° nunca había pasado el verificador de
+aritmética que en 7° y 3° encontró claves equivocadas. Se le corrió: **5.000 operaciones, 100%
+verificadas por cálculo independiente → 0 claves malas, 0 opciones repetidas, 0 decimales**. Está
+sano.
+
+#### Las otras dos decisiones
+
+- **A4 · El contenido sensible lo elige el colegio al contratar**, no se conversa antes.
+  ⚠️ Queda anotado que **eso implica una feature que no existe**: el armador solo *marca* lo
+  sensible para enlaces de muestra; apagar un OA de verdad toca la campaña, el Jefe Final —que
+  mezcla objetivos de todo el capítulo— y el mapa de dominio del profesor.
+- **A14 · Vocabulario en 3° va, con 60 preguntas** (la medición proponía 120). Pendiente: es
+  contenido, con su aprobación y ~300 clips de voz.
+
+**Verificado jugando el duelo local en los tres**, con clics reales: cada curso trae su Historia,
+3° arranca en 29 con el reloj a 30 px, 8° y 7° en 14 con 18 px, y el reloj ya no queda tapado en
+ninguno. Cero 404 y cero errores de consola. La única divergencia que queda en el duelo es
+`nuevaRondaDuelo`, que en 3° propaga el campo `visual` — **preexistente y correcta**, y ahora
+además útil: las preguntas de Historia de 3° con dibujo lo muestran también en el duelo.
+
 - **Pendiente de arrastre (Roberto):** sin cambios — A4 (la conversación con el colegio sobre el
   contenido sensible), A12, A14 y A19; y el camino crítico sigue siendo el **Bloque B** (los
   bancos de 4°, 5° y 6°) con **M4 (`niveles.js`)** delante.
