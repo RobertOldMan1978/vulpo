@@ -18,7 +18,9 @@ acompaña y reacciona a cada respuesta. Incluye **Modo Difícil** desbloqueable.
 Como **evaluación formativa** (alineada al enfoque del MINEDUC), cada etapa muestra su **meta
 de aprendizaje en lenguaje de niño** antes de jugar, ofrece un **comodín 50/50** de ayuda, y al
 fallar propone **el siguiente paso** —repasar el objetivo sin presión, o la mini-clase en
-Matemática— en vez de solo revelar la respuesta; al cerrar, un **semáforo** de autoevaluación.
+Matemática— en vez de solo revelar la respuesta. Y **antes de ver el puntaje** pide una
+**predicción** («Lo entendí / Más o menos / Me costó»): el resultado le responde comparando lo
+que creía con lo que pasó. Es local y privado, no se envía al profesor.
 
 La pantalla principal ofrece un **módulo por asignatura**. **Historia**, **Ciencias** y
 **Lenguaje** se juegan como **campañas con hilo conductor**: capítulos en orden que cubren

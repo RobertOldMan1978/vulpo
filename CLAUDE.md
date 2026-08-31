@@ -95,9 +95,14 @@ backend Supabase para el duelo en línea. Historia de v0 al detalle en la Bitác
   Normal, nunca en jefes/duelo/desafío; la pregunta asistida no se mide). Al **reprobar** una
   etapa de un OA, el **siguiente paso**: en Matemática abre la **mini-clase** de la unidad; en
   Historia/Ciencias/Lenguaje, un **repaso sin reloj ni reprobar** (10 preguntas distintas de
-  las falladas, que no mide ni paga). Al cerrar, un **semáforo** 🟢🟡🔴 de autoevaluación
-  (local, no se envía al profesor). Specs/planes `2026-08-25-siguiente-paso-al-fallar*` y
-  `2026-08-25-marco-de-la-etapa*`.
+  las falladas, que no mide ni paga). Y **antes de ver el puntaje** (Sesión 74), la
+  **predicción**: pantalla propia y obligatoria de un toque —🟢 Lo entendí · 🟡 Más o menos ·
+  🔴 Me costó— y el resultado le **responde** con el cruce entre lo que creyó y lo que pasó
+  (*"Creías que lo tenías y te fue 4 de 10"*). Antes se preguntaba **al cerrar**, después del
+  veredicto, así que era un eco de las estrellas y se saltaba. Local y privado: **no se envía
+  al profesor**. La salta `EFIMERO`, o sea `?qa=1`, `?solo=`, `?m=` y `?rev=1`. Specs/planes
+  `2026-08-25-siguiente-paso-al-fallar*`, `2026-08-25-marco-de-la-etapa*` y
+  `2026-08-31-prediccion-antes-del-resultado*`.
 - **Modo Difícil** desbloqueable (10 preguntas, 15 s, 80%, tema oscuro/carmesí).
 - Persistencia (localStorage), **tienda de skins** (precios escalonados 110–1250;
   emojis baratos de entrada + skins ilustradas premium, incluidas **7 deportivas**:
@@ -5843,3 +5848,93 @@ justamente lo que lo vuelve peligroso el día que sea de verdad. La comprobació
     git log -1 --format=%cd -- supabase/schema.sql
 
 contra la fecha de la última fila del registro. Si coinciden, ya está aplicado.
+
+### Sesión 74 (2026-08-31) — El semáforo se adelanta: predecir antes de ver el puntaje
+Roberto preguntó para qué servía el semáforo 🟢🟡🔴 y, al explicarlo, apareció que él mismo lo
+había saltado varias veces probando. Las dos cosas juntas destaparon el problema real. **No se
+tocó contenido**: ni un banco, ni una pregunta, ni un clip de voz.
+
+#### El diagnóstico, que cambió la solución
+
+Lo primero fue medir en vez de suponer: `S.semaforo` tiene **tres apariciones** en cada app —se
+escribe, se guarda, se carga— y **cero lecturas**. Pero el problema de fondo no era ese:
+
+> **Se preguntaba después de que la pantalla ya había dado el veredicto.** El niño veía
+> "¡Nivel superado!", las estrellas, el XP y las monedas, y recién entonces se le pedía
+> autoevaluarse. Aunque contestara con honestidad, en gran parte **repetía lo que ya había
+> visto**. Por eso valía poco: no porque nadie leyera el dato, sino porque un juicio emitido
+> después del resultado mide poco, así que aunque lo leyéramos valdría poco igual.
+
+Eso descartó la solución obvia. **Obligarlo donde estaba** —apagar los botones hasta marcar—
+produce toques reflejos: el niño toca el primero que pilla para seguir, y se pierden las dos
+cosas a la vez, el dato *y* el acto pedagógico. Roberto eligió adelantarlo.
+
+#### Lo construido
+
+Una pantalla propia entre la última pregunta y el resultado, de **un solo toque**:
+
+> 🤔 **ANTES DE VER TU PUNTAJE** · ¿Cómo crees que te fue?
+> 🟢 Lo entendí · 🟡 Más o menos · 🔴 Me costó
+
+- **Obligatoria sin ser peaje:** es el único control de la pantalla, así que no hay botón que
+  apagar ni bloqueo que explicar —el patrón del aviso invisible que ya se pagó en la Sesión 73—.
+- **Los emojis llevan etiqueta.** Antes eran 🟢🟡🔴 pelados; en pantalla propia caben las
+  palabras, y eso hace el dato más honesto, permite leerlo en voz y deja de exigirle al niño que
+  interprete un color.
+- **El resultado dejó de preguntar y pasó a responder.** La fila "¿Cómo te fue?" salió de
+  `scr-res` y en su lugar va el cruce: *"Te conoces bien 👌"* si acertó, *"Creías que lo tenías y
+  te fue 4 de 10. Démosle otra vuelta. 👉 Toca «Repasar»"* si se sobreestimó, y *"¡Te costó menos
+  de lo que pensabas! 💪"* si se subestimó. Sin predicción la línea queda vacía y la pantalla se
+  ve como antes.
+- **En 3° lleva su 🔊**, que lee una frase escrita para el oído —*"Verde: lo entendí. Amarillo:
+  más o menos. Rojo: me costó."*—, guardada aparte del DOM de los botones: **sin emojis ni
+  números**, así no depende del normalizador ni de que exista su clip. Es **un solo clip** si
+  algún día se quiere generar.
+
+**No hizo falta ninguna bandera nueva.** `EFIMERO` (`QA || PRUEBA`) ya existía con ese propósito
+y gobierna también la tarjeta de meta; como `REVISION` implica `PRUEBA`, cubre de una `?qa=1`,
+`?solo=`, `?m=` y `?rev=1`. Un profesor revisando contenido no queda trancado.
+
+**Se calcó un patrón que ya estaba en el archivo** en vez de inventar otro: `startQuiz` es la
+compuerta, `mostrarMetaEtapa` la pantalla y `arrancarQuiz` el trabajo real. Ahora `terminarNivel`
+es la compuerta y su cuerpo entero se mudó a `mostrarResultado()`, sin tocar a `avanzar()`, su
+único llamador.
+
+#### El defecto que solo apareció mirando
+
+Reusé la tarjeta de la pantalla de meta, pero sus estilos estaban anclados a
+`#scr-meta .meta-card`, así que **la pantalla nueva no recibía ninguno**: el contenido salía
+pegado al borde izquierdo, sin caja, sin centrar.
+
+> **Y el conteo decía que todo estaba bien:** sin desborde lateral, botones de 109 px, etiquetas
+> en una línea, cero errores, cero 404. La pantalla estaba rota igual. Lo delató la captura.
+> Es la lección de la Sesión 59 repitiéndose, y ahora con una forma nombrable: **un estilo
+> anclado al id de una pantalla no se hereda al reusar su HTML en otra**, y ninguna medición
+> del DOM lo dice, porque cada número que se mide está bien.
+
+Los cuatro selectores quedaron sueltos a la clase, que es lo que los vuelve reusables, y se
+comprobó que `scr-meta` no se movió (tarjeta de 343 px, radio 18, kicker dorado `#ffc93c`).
+
+#### Alcance y verificación
+
+`montarSemaforo` se llamaba **en un solo lugar**, así que esto no toca el repaso, la mini-clase,
+la práctica de lección, el desafío de refuerzo, el Jefe Final ni el Reto de Cálculo.
+
+Verificado con `scripts/cdp.mjs` **jugando una etapa real con clics de verdad** en los tres
+cursos: el quiz desemboca en `scr-pred`, el toque lleva a `scr-res`, `S.semaforo` queda escrito y
+los tres mensajes del cruce salen correctos; `?qa=1` y `?solo=` van directo al resultado con el
+cruce vacío; sin desborde a 375 px; el guardado de 8° (777 XP) sobrevive a jugar 3° con las
+claves separadas; y **cero errores de consola y cero 404**. Las cuatro funciones quedan **byte a
+byte idénticas en los tres forks**.
+
+**Detalle menor conocido:** *"Más o menos"* cae en dos líneas dentro de su botón. Se ve parejo
+porque los tres tienen la misma altura; se arregla acortando la etiqueta si molesta.
+
+- **Dato de método:** los heredocs de Git Bash **sí** preservan tildes y emojis —se comprobó—;
+  lo que falla es *imprimirlos* por `stdout`, que en este equipo va en `cp1252`. Lo que sí rompe
+  un heredoc es anidar otro adentro.
+- Spec y plan: `docs/superpowers/specs/2026-08-31-prediccion-antes-del-resultado-design.md` y
+  `docs/superpowers/plans/2026-08-31-prediccion-antes-del-resultado.md`.
+- **Pendiente de arrastre (Roberto):** sin cambios — A4 (la conversación con el colegio sobre el
+  contenido sensible), A12, A14 y A19; y el camino crítico sigue siendo el **Bloque B** (los
+  bancos de 4°, 5° y 6°) con **M4 (`niveles.js`)** delante.

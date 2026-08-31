@@ -189,19 +189,21 @@ input.nm:focus{border-color:var(--cyan)}
 .qv-grupo{border:2px dashed var(--gold);border-radius:12px;padding:4px 8px;display:inline-block}
 .res-obj{color:var(--dim);font-weight:800;font-size:14px;margin:2px 0 8px}
 .qmeta{color:var(--dim);font-weight:800;font-size:12px;margin-top:6px}
-#scr-meta .meta-card{max-width:460px;margin:40px auto 0;background:var(--panel2);border:1px solid #ffffff1f;
+.meta-card{max-width:460px;margin:40px auto 0;background:var(--panel2);border:1px solid #ffffff1f;
   border-radius:18px;padding:26px 22px;text-align:center;box-shadow:0 12px 34px rgba(0,0,0,.4)}
-#scr-meta .meta-ic{font-size:44px;display:block;margin-bottom:8px}
-#scr-meta .meta-kick{color:var(--gold);font-weight:900;font-size:14px;letter-spacing:.04em;text-transform:uppercase}
-#scr-meta .meta-frase{color:var(--txt);font-weight:800;font-size:20px;line-height:1.35;margin:10px 0 20px}
-.res-sem{margin:6px 0 12px}
-.res-sem-tit{display:block;color:var(--dim);font-weight:800;font-size:14px;margin-bottom:6px}
-#resSem{display:flex;gap:10px;justify-content:center}
-.sem{font-size:30px;line-height:1;background:transparent;border:2px solid transparent;border-radius:14px;
-  padding:4px 8px;cursor:pointer;opacity:.6;transition:.12s}
+.meta-ic{font-size:44px;display:block;margin-bottom:8px}
+.meta-kick{color:var(--gold);font-weight:900;font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+.meta-frase{color:var(--txt);font-weight:800;font-size:20px;line-height:1.35;margin:10px 0 20px}
+/* Prediccion antes del resultado: el nino declara como cree que le fue ANTES de ver su
+   puntaje, asi el semaforo deja de ser un eco de las estrellas. Los botones viven ahora
+   en scr-pred; .res-sem-msg se conserva porque el resultado la usa para responderle. */
+#predOpts{display:flex;gap:8px;justify-content:center;margin-bottom:18px}
+.sem{flex:1;max-width:112px;font-size:30px;line-height:1;background:transparent;border:2px solid #ffffff1f;
+  border-radius:14px;padding:12px 6px;cursor:pointer;opacity:.75;transition:.12s;color:var(--txt)}
+.sem span{display:block;font-size:12px;font-weight:800;margin-top:7px;line-height:1.2}
 .sem:hover{opacity:1}
-.sem.sel{opacity:1;border-color:var(--gold);background:#ffffff10;transform:scale(1.08)}
-.res-sem-msg{min-height:18px;color:var(--txt);font-weight:800;font-size:13px;margin-top:8px}
+.sem.sel{opacity:1;border-color:var(--gold);background:#ffffff10;transform:scale(1.06)}
+.res-sem-msg{min-height:18px;color:var(--txt);font-weight:800;font-size:13px;margin:6px 0 12px}
 @keyframes bump{50%{transform:scale(1.04)}}
 @keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 .feedback{min-height:22px;text-align:center;font-weight:900;margin-top:4px}
@@ -971,6 +973,22 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
     </div>
   </section>
 
+  <!-- ====== PREDICCION (antes de ver el resultado) ====== -->
+  <section class="screen" id="scr-pred">
+    <div class="meta-card">
+      <span class="meta-ic">🤔</span>
+      <div class="meta-kick">Antes de ver tu puntaje</div>
+      <p class="meta-frase" id="predTxt">¿Cómo crees que te fue?</p>
+      <p id="predVoz" hidden>¿Cómo crees que te fue? Verde: lo entendí. Amarillo: más o menos. Rojo: me costó.</p>
+      <button class="btn-escuchar" id="btnEscucharPred" type="button">🔊 Escuchar</button>
+      <div id="predOpts">
+        <button class="sem" data-v="🟢" type="button">🟢<span>Lo entendí</span></button>
+        <button class="sem" data-v="🟡" type="button">🟡<span>Más o menos</span></button>
+        <button class="sem" data-v="🔴" type="button">🔴<span>Me costó</span></button>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ QUIZ ============ -->
   <section class="screen" id="scr-quiz">
     <div class="qtop">
@@ -1006,15 +1024,7 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
         <div class="stat"><b id="resCoins" style="color:var(--gold)">+0</b><small>Monedas</small></div>
         <div class="stat"><b id="resCombo" style="color:var(--pink)">x0</b><small>Combo máx</small></div>
       </div>
-      <div class="res-sem">
-        <span class="res-sem-tit">¿Cómo te fue?</span>
-        <div id="resSem">
-          <button class="sem" data-v="🟢" type="button">🟢</button>
-          <button class="sem" data-v="🟡" type="button">🟡</button>
-          <button class="sem" data-v="🔴" type="button">🔴</button>
-        </div>
-        <p id="resSemMsg" class="res-sem-msg"></p>
-      </div>
+      <p id="resCruce" class="res-sem-msg"></p>
       <button class="btn" id="btnNext">SIGUIENTE ETAPA ➜</button>
       <button class="btn" id="btnPaso" type="button" style="display:none;background:linear-gradient(180deg,var(--green),#1fa862);color:#04231a"></button>
       <button class="btn sec" id="btnMap">VOLVER AL MAPA</button>
@@ -2016,7 +2026,7 @@ function leerPreguntaEnVoz(pregunta,opciones,contenedor){
    del clic, no al cablear: el titular del resultado lo pintan tres caminos distintos
    (etapa aprobada, reprobada y refuerzo), y así ninguno tiene que acordarse de la voz. */
 document.addEventListener('DOMContentLoaded',()=>{
- [['btnEscucharMeta','metaTxt'],['btnEscucharRes','resTitle']].forEach(([b,t])=>{
+ [['btnEscucharMeta','metaTxt'],['btnEscucharRes','resTitle'],['btnEscucharPred','predVoz']].forEach(([b,t])=>{
   const bt=document.getElementById(b);
   if(bt) bt.onclick=()=>leerEnVoz(document.getElementById(t).textContent);
  });
@@ -4139,21 +4149,42 @@ function avanzar(){if(!Q||!Q.preguntas)return;   // guard: evita reentrada (dobl
   else if(Q.repaso)finRepaso();
   else if(Q.leccion)finPracticaLeccion();
   else if(Q.desafio)terminarDesafio();else terminarNivel();}
-// Semáforo de autoevaluación (local, privado). No mide ni sincroniza: solo guarda en S.semaforo.
-// hayRepaso: si en esta pantalla se ofrece "Repasar", el mensaje empuja suave hacia él en 🟡/🔴.
-function montarSemaforo(clave, hayRepaso){
- const msg=$('resSemMsg'); msg.textContent='';
- const btns=[...document.querySelectorAll('#resSem .sem')];
- btns.forEach(b=>b.classList.remove('sel'));
- const textos={'🟢':'¡Genial, lo dominas! Sigue así.','🟡':'Vas bien. Un repasito y queda redondo.','🔴':'Te costó, y está bien. El repaso te va a ayudar.'};
- btns.forEach(b=>{ b.onclick=()=>{
-   btns.forEach(x=>x.classList.remove('sel')); b.classList.add('sel');
-   const v=b.dataset.v;
-   msg.textContent=textos[v] + ((v!=='🟢' && hayRepaso)?' 👉 Toca “Repasar”.':'');
-   S.semaforo[clave]=v; guardar(); SND.tap();
- };});
-}
+// Prediccion antes del resultado. El nino declara como cree que le fue ANTES de ver su puntaje:
+// asi el semaforo deja de ser un eco de las estrellas y pasa a ser una prediccion, y el resultado
+// puede responderle. Mismo patron que la tarjeta de meta (startQuiz -> mostrarMetaEtapa ->
+// arrancarQuiz): esta es la compuerta y mostrarResultado el trabajo real.
+// EFIMERO (QA || PRUEBA, y REVISION implica PRUEBA) la salta, asi que ?qa=1, ?solo=, ?m= y ?rev=1
+// quedan cubiertos por la bandera que ya existe: quien revisa contenido no se tranca.
 function terminarNivel(){
+ if(EFIMERO){ mostrarResultado(); return; }
+ preguntarPrediccion();
+}
+// La pantalla: un solo toque, sin boton de confirmar. Es el unico control, asi que es obligatoria
+// sin necesidad de apagar nada ni de explicar un bloqueo.
+function preguntarPrediccion(){
+ const clave=(EXP_ACT?EXP_ACT.id:'')+':'+Q.lvl;
+ const btns=[...document.querySelectorAll('#predOpts .sem')];
+ btns.forEach(b=>{ b.classList.remove('sel');
+  b.onclick=()=>{
+   if(Q._pred)return;              // guard de reentrada: doble toque
+   Q._pred=true; b.classList.add('sel'); SND.tap();
+   S.semaforo[clave]=b.dataset.v; guardar();
+   setTimeout(mostrarResultado,220);   // alcanza a verse la marca antes de cambiar de pantalla
+  };});
+ go('scr-pred');   // en 3ro el propio go() corta la voz de la pantalla anterior
+}
+// El resultado RESPONDE a la prediccion. Sin prediccion (modo efimero o partida vieja) la linea
+// queda vacia y la pantalla se ve como antes. Local y privado: no mide ni viaja al profesor.
+function mostrarCruce(clave, paso, ratio, aciertos, tot, hayRepaso){
+ const el=$('resCruce'); if(!el)return; el.textContent='';
+ const pred=S.semaforo[clave]; if(!pred)return;
+ const real=!paso?'🔴':(ratio>=0.9?'🟢':'🟡');   // mismo corte con que ya se reparten las estrellas
+ const ord={'🔴':0,'🟡':1,'🟢':2}, d=ord[pred]-ord[real], marca=aciertos+' de '+tot;
+ el.textContent = d===0 ? 'Te conoces bien: sabías cómo te iba a ir 👌'
+   : d>0 ? 'Creías que lo tenías y te fue '+marca+'. Démosle otra vuelta.'+(hayRepaso?' 👉 Toca “Repasar”.':'')
+         : '¡Te costó menos de lo que pensabas! '+marca+' 💪';
+}
+function mostrarResultado(){
  const tot=Q.preguntas.length;
  const ratio=Q.aciertos/tot;
  const dif=MODO==='dificil';
@@ -4213,7 +4244,7 @@ function terminarNivel(){
  refreshHud();guardar();enviarDominio();
  if(dif&&paso)revisarDificil();   // ¿completó una asignatura en Difícil? → insignia/skin + marca 🔥
  if(paso)particulas(window.innerWidth/2,window.innerHeight/3,['🎉','⭐','✨','🎊'],24);
- montarSemaforo((EXP_ACT?EXP_ACT.id:'')+':'+lvlFail, !paso && !esJefe && !esLibro);
+ mostrarCruce((EXP_ACT?EXP_ACT.id:'')+':'+lvlFail, paso, ratio, Q.aciertos, tot, !paso && !esJefe && !esLibro);
  go('scr-res');
 }
 
