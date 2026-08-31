@@ -191,6 +191,15 @@ alter table public.curso_profesores enable row level security;
 -- hasta llenar el cupo. Por eso el cupo va ajustado al grupo, no holgado.
 -- ------------------------------------------------------------
 
+-- El NIVEL del curso, en dos dígitos ('03', '07', '08'). Es el mismo dato que ya vive
+-- dentro del código de asignatura (MA03 = MA + 03), así que no hace falta ninguna lista
+-- nueva: una asignatura pertenece a este curso si su código termina en este nivel.
+--
+-- Va NULLABLE a propósito: los cursos creados antes de esto no lo tienen, y un curso sin
+-- nivel se comporta como antes (ve todas las asignaturas). Se le fija con
+-- kimun_prof_curso_nivel en vez de inventarle uno.
+alter table public.cursos add column if not exists nivel text;
+
 -- El modo experimental es propiedad del CURSO y no del enlace ni del aparato: así
 -- un alumno que borra los datos del navegador y vuelve a canjear su ALU- recupera
 -- el mismo modo, en vez de caer en el juego normal sin entender por qué.
@@ -707,7 +716,7 @@ create or replace function public.kimun_prof_listar()
 returns table(curso text, curso_codigo text, alumno text, avatar text,
               codigo_acceso text, xp int, dificil int, pid uuid,
               puede_gestionar boolean, mis_asignaturas text[], mi_rol text,
-              autoinscrito boolean)
+              autoinscrito boolean, nivel text)
 language plpgsql security definer set search_path=public as $$
 declare yo public.profesores; begin
   select * into yo from public.profesores where id = auth.uid();
@@ -726,7 +735,8 @@ declare yo public.profesores; begin
            -- Mi rol en ESTE curso: 'jefe' | 'asignatura' | null (admin/super sin membresía).
            (select cp.rol from public.curso_profesores cp
              where cp.curso_id = c.id and cp.profesor_id = yo.id),
-           coalesce(p.autoinscrito,false)
+           coalesce(p.autoinscrito,false),
+           c.nivel
     from public.cursos c
     left join public.perfiles p on p.curso_id = c.id
     where yo.es_admin or yo.es_super
@@ -736,16 +746,38 @@ declare yo public.profesores; begin
     order by c.nombre, p.xp desc nulls last, p.nombre;
 end $$;
 
-create or replace function public.kimun_prof_curso_crear(p_nombre text)
+-- ⚠️ Cambió de firma al sumarle el nivel (30/08/2026): sin este drop, re-aplicar el
+-- archivo dejaría DOS versiones y PostgREST elegiría por los parámetros que le lleguen.
+drop function if exists public.kimun_prof_curso_crear(text);
+create or replace function public.kimun_prof_curso_crear(p_nombre text, p_nivel text)
 returns public.cursos language plpgsql security definer set search_path=public as $$
-declare r public.cursos; begin
+declare r public.cursos; niv text; begin
   if not public.kimun_prof_admin_colegio() then raise exception 'no_autorizado'; end if;
   if coalesce(trim(p_nombre),'') = '' then raise exception 'nombre_vacio'; end if;
+  niv := nullif(trim(coalesce(p_nivel,'')),'');
+  -- Dos dígitos y nada más. Se valida aquí y no solo en el panel porque de este dato
+  -- depende qué asignaturas se le pueden asignar al curso.
+  if niv is not null and niv !~ '^[0-9]{2}$' then raise exception 'nivel_invalido'; end if;
   -- El curso nace SIN Jefe: quien lo crea (Admin/Super) no es Jefe de aula.
   -- profesor_id queda nulo; el Jefe se nombra después con kimun_prof_equipo_asignar.
-  insert into public.cursos(nombre, codigo)
-  values (trim(p_nombre), public.kimun_gen_codigo_curso()) returning * into r;
+  insert into public.cursos(nombre, codigo, nivel)
+  values (trim(p_nombre), public.kimun_gen_codigo_curso(), niv) returning * into r;
   return r; end $$;
+
+-- Fijarle el nivel a un curso que ya existía. Sin esto, los cursos creados antes de que
+-- el nivel existiera se quedarían para siempre viendo las asignaturas de todos los niveles.
+create or replace function public.kimun_prof_curso_nivel(p_curso_codigo text, p_nivel text)
+returns void language plpgsql security definer set search_path=public as $$
+declare cid uuid; niv text; begin
+  select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
+  if cid is null or not public.kimun_prof_admin_colegio() then raise exception 'no_autorizado'; end if;
+  niv := nullif(trim(coalesce(p_nivel,'')),'');
+  if niv is not null and niv !~ '^[0-9]{2}$' then raise exception 'nivel_invalido'; end if;
+  -- No se tocan las asignaturas ya asignadas al equipo: cambiar el nivel de un curso con
+  -- gente adentro es raro, y borrarles el acceso en silencio sería peor que dejar una
+  -- fila incoherente que el panel muestra.
+  update public.cursos set nivel = niv where id = cid;
+end $$;
 
 -- Elimina un curso mío y sus alumnos (arrastra los duelos de esos alumnos).
 create or replace function public.kimun_prof_curso_quitar(p_curso_codigo text)
@@ -1041,7 +1073,7 @@ end $$;
 create or replace function public.kimun_prof_equipo_asignar(
   p_curso_codigo text, p_correo text, p_rol text, p_asignaturas text[])
 returns void language plpgsql security definer set search_path=public as $$
-declare cid uuid; pid uuid; rol text; asigs text[]; begin
+declare cid uuid; pid uuid; rol text; asigs text[]; niv text; begin
   select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
   if cid is null then raise exception 'no_autorizado'; end if;
   rol := case when p_rol = 'jefe' then 'jefe' else 'asignatura' end;
@@ -1056,6 +1088,14 @@ declare cid uuid; pid uuid; rol text; asigs text[]; begin
   -- El jefe ignora asignaturas (alcanza todas); un profe de asignatura sin
   -- materias queda sin acceso, pero es una fila válida ("aún no le asignan").
   asigs := case when rol = 'jefe' then '{}'::text[] else coalesce(p_asignaturas,'{}'::text[]) end;
+  -- Una asignatura de OTRO nivel no se le puede asignar a este curso. El panel ya no las
+  -- dibuja, pero la interfaz nunca es el único guardia: cualquiera puede llamar la función
+  -- con la clave pública. Un curso SIN nivel (los de antes de esta columna) no se valida,
+  -- porque no hay contra qué comparar.
+  select nivel into niv from public.cursos where id = cid;
+  if niv is not null and exists (select 1 from unnest(asigs) a where right(a,2) <> niv) then
+    raise exception 'asignatura_de_otro_nivel';
+  end if;
   if rol = 'jefe' then
     -- Solo puede haber un jefe: baja al actual (si es otro) antes de insertar.
     update public.curso_profesores set rol='asignatura'
@@ -1474,7 +1514,8 @@ grant execute on function
   public.kimun_yo(), public.kimun_xp(int), public.kimun_dificil(int), public.kimun_ranking(), public.kimun_canjear(text),
   public.kimun_dominio(jsonb),
   public.kimun_prof_yo(), public.kimun_prof_alta(text),
-  public.kimun_prof_listar(), public.kimun_prof_curso_crear(text),
+  public.kimun_prof_listar(), public.kimun_prof_curso_crear(text,text),
+  public.kimun_prof_curso_nivel(text,text),
   public.kimun_prof_curso_quitar(text), public.kimun_prof_alumno_agregar(text,text,text),
   public.kimun_prof_alumno_quitar(text), public.kimun_prof_xp_fijar(text,int),
   public.kimun_prof_autorizar(text), public.kimun_prof_profesores(),

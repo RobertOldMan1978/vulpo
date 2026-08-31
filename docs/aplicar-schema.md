@@ -15,9 +15,17 @@ puede ejecutar cambios de estructura).
 | **2026-08-27** | Los cuatro códigos de 7° básico: `HI07`, `MA07`, `CN07`, `LE07` (Sesión 62) | Sí: `kimun_oa_asignatura` resuelve los cuatro contra producción, y 8° y 3° siguen intactos |
 | **2026-08-30** | La **inscripción por enlace**, primera tanda: tabla `inscripciones`, columna `cursos.experimental`, índice de un solo enlace vivo por curso y las cuatro funciones | Sí: las **6 filas en `ok`**, incluida la que comprueba que el generador de tokens NO es ejecutable por `anon` |
 | **2026-08-30** | La misma feature, segunda tanda: los **tres fallos distinguidos** en `kimun_inscribirse` (enlace que no existe / cerrado / sin cupo) y la columna `perfiles.autoinscrito`, que `kimun_prof_listar` devuelve | Sí: el bloque del panel carga y deja crear el enlace desde la cuenta de admin, que es lo que fallaba mientras no estaba aplicada |
+| **2026-08-30** | El **nivel del curso**: columna `cursos.nivel`, `kimun_prof_curso_crear` **cambia de firma** (`text` → `text,text`), `kimun_prof_curso_nivel` nueva, `kimun_prof_listar` devuelve el nivel y `kimun_prof_equipo_asignar` rechaza una asignatura de otro nivel | Sí: las **3 filas en `ok`**, incluida la que confirma que no quedaron dos versiones de `kimun_prof_curso_crear` |
 
-> **Al 30/08/2026 el backend está al día**: las dos tandas de la inscripción por enlace
-> aplicadas y comprobadas.
+> **Al 30/08/2026 el backend está al día**: las tres tandas del día aplicadas y comprobadas.
+>
+> ⚠️ **Cuidado con el orden cuando una función CAMBIA DE FIRMA.** Aplicar el esquema antes de
+> publicar el cliente deja una ventana en la que el panel en vivo llama a una firma que ya no
+> existe: pasó el 30/08 con `kimun_prof_curso_crear`, y durante esos minutos **crear un curso
+> fallaba en producción** aunque las tres comprobaciones dieran `ok`. Con `create or replace`
+> normal no ocurre —la función vieja sigue ahí—; ocurre solo cuando hay un `drop`. La regla:
+> **si el cambio trae un `drop function`, se publica el cliente ANTES o al mismo tiempo, nunca
+> después.**
 >
 > **Todo lo anterior está aplicado y verificado.** Los códigos de 7° (Sesión 62) se confirmaron
 > en vivo contra producción el 28/08, y la comprobación de `kimun_prof_asignaturas` (los dos
@@ -166,6 +174,34 @@ select 'marca de autoinscrito',
 **Las siete filas tienen que decir `ok`.** La última importa más de lo que parece: PostgreSQL
 otorga EXECUTE a PUBLIC por defecto, así que **omitir una función del `grant` no la protege** —
 hay que revocarla explícitamente. Es una trampa que este proyecto ya pagó en la Sesión 19.
+
+### Comprobación del nivel del curso (30/08/2026)
+
+Va aparte porque `kimun_prof_curso_crear` **cambia de firma**, y ese es el caso en que un
+esquema a medio aplicar se nota de inmediato: el panel manda `p_nivel` y la función vieja no lo
+acepta.
+
+```sql
+select 'columna cursos.nivel' as que,
+       case when exists(select 1 from information_schema.columns
+                        where table_schema='public' and table_name='cursos'
+                          and column_name='nivel') then 'ok' else 'FALTA' end as estado
+union all
+select 'curso_crear con nivel (y SIN la firma vieja)',
+       case when (select count(*) from pg_proc
+                   where proname='kimun_prof_curso_crear') = 1
+             and (select pg_get_function_arguments(oid) from pg_proc
+                   where proname='kimun_prof_curso_crear') like '%p_nivel%'
+            then 'ok' else 'FALLA: quedaron dos versiones o la vieja' end
+union all
+select 'kimun_prof_curso_nivel',
+       case when exists(select 1 from pg_proc where proname='kimun_prof_curso_nivel')
+            then 'ok' else 'FALTA' end;
+```
+
+**Las tres filas tienen que decir `ok`.** La segunda importa más de lo que parece: si el `drop`
+de la firma vieja no corrió, quedan **dos versiones** de la misma función y PostgREST elige por
+los parámetros que le lleguen — un fallo que aparece más tarde y en otra parte.
 
 ### Y el aislamiento entre profesores (necesita dos cuentas reales)
 

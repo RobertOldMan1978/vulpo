@@ -638,6 +638,22 @@ voz**: 7° no lleva audio pregrabado, y de 5° hacia arriba no vale la pena paga
   juego de 3°— y de paso el bloque de refuerzo dejó de repetir la lista a mano (era la causa del bug
   de la Sesión 37). **Si falta un código en `kimun_prof_asignaturas`, ese contenido queda INVISIBLE
   para el Jefe sin ningún error**: por eso la función lleva ahora una advertencia encima.
+- **El CURSO sí guarda su nivel desde la Sesión 73** (`cursos.nivel`, dos dígitos), y eso corrige
+  la contrapartida que la Sesión 58 había asumido: las casillas de "Equipo del curso" mostraban
+  **las asignaturas de todos los niveles en todos los cursos**. Con tres cursos eran 12 casillas;
+  con seis serán 24, y nada impedía marcarle `MA08` a un curso de 3°. Ahora se muestran solo las
+  suyas y **el servidor rechaza** una de otro nivel (`asignatura_de_otro_nivel`).
+  - **No hizo falta ninguna lista nueva**, y ese es el punto: el nivel ya vive dentro del código
+    de asignatura (`MA03` = `MA` + `03`), así que pertenecer al curso es *terminar en su nivel*.
+    Es la misma idea que sostiene M4 (`niveles.js`), y esto adelanta un pedazo de esa tarea.
+  - `NIVELES_MUESTRA` (en `profesor.html`) pasó a ser **LA lista de niveles del panel**: de ahí
+    salen el armador de enlaces de muestra, el selector del enlace de inscripción y el nivel del
+    curso. Agregar un curso nuevo sigue siendo **una línea**.
+  - **`nivel` es NULLABLE a propósito.** Un curso creado antes de la columna se comporta como
+    antes (ve todas las asignaturas) y el panel le ofrece fijárselo con `kimun_prof_curso_nivel`.
+    Inventarle un nivel a partir del nombre habría sido adivinar.
+  - Y el enlace de inscripción **se preselecciona con el nivel del curso**: mandarle a un 3° el
+    enlace de `/juego/` era el error fácil de esa pantalla.
 
 ### Regla de commits (importante)
 
@@ -5697,4 +5713,42 @@ están aprobadas las 7.745", que ya no aplica.
 > 100% es de **cobertura**, no de método: 8° y los módulos de apoyo se revisaron pregunta por
 > pregunta, pero 3° y 7° por **muestreo de 8 de cada 30**. Un 100% invita a redondear el discurso
 > hacia arriba, y es justo cuando hay que sujetarlo.
+
+#### Y el curso pasó a guardar su nivel
+
+Lo pidió Roberto al ir a dar de alta un 3°: al armar el equipo, las casillas de asignaturas
+mostraban **las de todos los niveles**. Con tres cursos son 12; **con seis serán 24**, y nada
+impedía marcarle `MA08` a un curso de 3°.
+
+Era una contrapartida asumida a propósito en la Sesión 58 —"sin columna `nivel` ni entidad
+Colegio"— que aguantó bien mientras hubo un nivel y medio, y que dejó de aguantar al tercero.
+**No fue un error de entonces: fue una decisión con fecha de vencimiento, y venció.**
+
+- `cursos.nivel`, dos dígitos, elegido al crear el curso.
+- **El servidor rechaza** una asignatura de otro nivel (`asignatura_de_otro_nivel`). El panel ya
+  no las dibuja, pero cualquiera puede llamar la función con la clave pública.
+- El enlace de inscripción **se preselecciona con el nivel del curso**: mandarle a un 3° el
+  enlace de `/juego/` era el error fácil de esa pantalla.
+
+> **Lo que lo abarató, y vale para M4:** no hizo falta ninguna lista nueva, porque **el nivel ya
+> vive dentro del código de asignatura** (`MA03` = `MA` + `03`). Pertenecer al curso es
+> *terminar en su nivel*. `NIVELES_MUESTRA` pasó a ser LA lista de niveles del panel —de ahí
+> salen el armador, el enlace de inscripción y esto—, así que agregar un curso sigue siendo
+> **una línea**. Es un pedazo de M4 adelantado, no deuda nueva.
+
+**`nivel` es NULLABLE a propósito.** Los cursos creados antes se comportan como antes y el panel
+les ofrece fijárselo. Inventarles el nivel a partir del nombre habría sido adivinar.
+
+#### El error de secuencia que dejó producción rota unos minutos
+
+`kimun_prof_curso_crear` **cambió de firma**, así que el archivo trae un `drop function` de la
+vieja. Roberto aplicó el esquema **antes** de que el cliente estuviera publicado, y en esa
+ventana el panel en vivo llamaba a una firma que ya no existía: **crear un curso fallaba en
+producción**, con las tres comprobaciones dando `ok`.
+
+> **La regla, que faltaba escrita:** si un cambio de esquema trae un `drop function`, **el
+> cliente se publica ANTES o al mismo tiempo, nunca después**. Con un `create or replace` normal
+> no pasa —la firma vieja sigue viva y el cliente viejo sigue funcionando—; pasa **solo** cuando
+> hay un `drop`. Los dos cambios anteriores del día no mordieron porque sus funciones eran
+> nuevas. Queda en `docs/aplicar-schema.md`.
 

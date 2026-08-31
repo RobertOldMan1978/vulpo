@@ -361,7 +361,8 @@ async function pintarLista(){
   const porCurso={};
   (data||[]).forEach(f=>{
     porCurso[f.curso_codigo]=porCurso[f.curso_codigo]||
-      {nombre:f.curso, alumnos:[], gestiono:f.puede_gestionar, miRol:f.mi_rol, misAsig:f.mis_asignaturas};
+      {nombre:f.curso, alumnos:[], gestiono:f.puede_gestionar, miRol:f.mi_rol,
+       misAsig:f.mis_asignaturas, nivel:f.nivel||''};
     if(f.pid) porCurso[f.curso_codigo].alumnos.push(f);   // pid: id de perfil (siempre presente); codigo_acceso puede venir null para un profe de asignatura
   });
   const cursos=Object.entries(porCurso);
@@ -382,7 +383,8 @@ async function pintarLista(){
         <span class="cur-chevron" aria-hidden="true">▸</span>
         <b class="cur-nom" style="color:var(--gold)">${esc(c.nombre)}</b>
         <code>${esc(cod)}</code>
-        <span class="cur-alu">${c.alumnos.length} alumno${c.alumnos.length===1?'':'s'}</span>
+        <span class="cur-alu">${c.alumnos.length} alumno${c.alumnos.length===1?'':'s'}${
+          c.nivel?' · '+esc(NIVEL_NOMBRE(c.nivel)):''}</span>
         <span class="cur-jefe" data-cod="${esc(cod)}"></span>
         <span class="cur-part" data-cod="${esc(cod)}">Participación · …</span>
         ${window.ESADMINCOLEGIO?`<button class="ico ico-del delcurso" data-cod="${esc(cod)}" title="Eliminar curso">🗑️</button>`:''}
@@ -419,13 +421,13 @@ async function pintarLista(){
             </details>`:''}
           </div>
         </details>
-        ${c.gestiono?`<details class="inscripcion" data-cod="${esc(cod)}" style="margin-top:6px">
+        ${c.gestiono?`<details class="inscripcion" data-cod="${esc(cod)}" data-nivel="${esc(c.nivel)}" style="margin-top:6px">
           <summary style="cursor:pointer;color:var(--green);font-size:13px;font-weight:800;list-style:none">🔗 Enlace de inscripción</summary>
           <div class="inscripcion-cuerpo" data-cod="${esc(cod)}">
             <p style="color:var(--dim);font-size:12px;margin:6px 0">Cargando…</p>
           </div>
         </details>`:''}
-        ${c.gestiono?`<details class="equipo" data-cod="${esc(cod)}" style="margin-top:6px">
+        ${c.gestiono?`<details class="equipo" data-cod="${esc(cod)}" data-nivel="${esc(c.nivel)}" style="margin-top:6px">
           <summary style="cursor:pointer;color:var(--violet);font-size:13px;font-weight:800;list-style:none">👥 Equipo del curso</summary>
           <div class="equipo-cuerpo" data-cod="${esc(cod)}">
             <p style="color:var(--dim);font-size:12px;margin:6px 0">Cargando…</p>
@@ -436,6 +438,8 @@ async function pintarLista(){
    : '<p style="color:var(--dim);font-size:13px">Aún no tienes cursos.</p>')
    + (window.ESADMINCOLEGIO ? `<div style="margin-top:10px;border-top:1px solid #ffffff22;padding-top:12px">
         <input id="cursoNombre" placeholder="Nombre del curso nuevo (8° A)">
+        <label style="font-size:12px;color:var(--dim)">Nivel del curso
+          <select id="cursoNivel">${NIVELES_MUESTRA.map(n=>`<option value="${n.nivel}">${n.nombre}</option>`).join('')}</select></label>
         <button class="btn sec" id="btnCurso">+ Crear curso</button>
       </div>` : '');
   conectarAcciones();
@@ -447,10 +451,10 @@ async function pintarLista(){
   });
   // El equipo del curso se pide la primera vez que se abre su desplegable (carga perezosa).
   document.querySelectorAll('details.inscripcion').forEach(det => det.addEventListener('toggle', () => {
-    if(det.open && !det.dataset.cargado){ det.dataset.cargado='1'; cargarInscripcion(det.dataset.cod); }
+    if(det.open && !det.dataset.cargado){ det.dataset.cargado='1'; cargarInscripcion(det.dataset.cod, det.dataset.nivel); }
   }));
   document.querySelectorAll('details.equipo').forEach(det => det.addEventListener('toggle', () => {
-    if(det.open && !det.dataset.cargado){ det.dataset.cargado='1'; cargarEquipo(det.dataset.cod); }
+    if(det.open && !det.dataset.cargado){ det.dataset.cargado='1'; cargarEquipo(det.dataset.cod, det.dataset.nivel); }
   }));
   cargarTitularesParticipacion(cursos.map(([cod])=>cod));
   cargarJefes(cursos.map(([cod])=>cod));
@@ -528,7 +532,8 @@ function conectarAcciones(){
   if(bc) bc.onclick=async ()=>{
     const n=($('cursoNombre').value||'').trim();
     if(!n){ aviso('Escribe un nombre.'); return; }
-    await accion(()=>SB.rpc('kimun_prof_curso_crear',{p_nombre:n}), 'Curso creado');
+    const niv=($('cursoNivel')||{}).value||null;
+    await accion(()=>SB.rpc('kimun_prof_curso_crear',{p_nombre:n, p_nivel:niv}), 'Curso creado');
   };
   document.querySelectorAll('.add-alumno').forEach(b=>b.onclick=async ()=>{
     const campo=document.querySelector('.in-alumno[data-curso="'+b.dataset.curso+'"]');
@@ -582,7 +587,7 @@ function conectarAcciones(){
 /* ===== Enlace de inscripción del curso (jefe/admin) =====
    Un solo enlace vivo por curso, garantizado por un índice único en la base: crear uno
    nuevo cierra el anterior, que es lo que uno espera al pedir otro. */
-async function cargarInscripcion(cursoCodigo){
+async function cargarInscripcion(cursoCodigo, nivel){
   const caja=document.querySelector('.inscripcion-cuerpo[data-cod="'+cursoCodigo+'"]');
   if(!caja) return;
   caja.innerHTML='<p style="color:var(--dim);font-size:12px">Cargando…</p>';
@@ -618,6 +623,9 @@ async function cargarInscripcion(cursoCodigo){
      </details>`;
 
   const sel=caja.querySelector('.ins-nivel'), url=caja.querySelector('.ins-url');
+  // El enlace tiene que llevar al nivel del curso. Si el curso lo declara, se preselecciona
+  // solo: mandarle a un 3o el enlace de /juego/ es el error facil de esta pantalla.
+  if(sel && nivel){ const n=NIVELES_MUESTRA.find(x=>x.nivel===nivel); if(n) sel.value=n.ruta; }
   function pintarUrl(){ if(url&&sel&&fila) url.value=location.origin+sel.value+'?inscribir='+fila.token; }
   pintarUrl();
   if(sel) sel.onchange=pintarUrl;
@@ -644,7 +652,7 @@ async function cargarInscripcion(cursoCodigo){
 }
 
 /* ===== Equipo del curso (jefe/admin) ===== */
-async function cargarEquipo(cursoCodigo){
+async function cargarEquipo(cursoCodigo, nivel){
   const caja=document.querySelector('.equipo-cuerpo[data-cod="'+cursoCodigo+'"]');
   if(!caja) return;
   caja.innerHTML='<p style="color:var(--dim);font-size:12px">Cargando…</p>';
@@ -673,8 +681,18 @@ async function cargarEquipo(cursoCodigo){
       ${puedeQuitar?`<button class="ico ico-del eq-quitar" data-cod="${esc(cursoCodigo)}" data-correo="${esc(m.correo)}" title="Quitar del curso">✕</button>`:''}
     </div>`;
   }).join('');
-  const casillas=ASIG_ORDEN.map(a=>
+  // Solo las asignaturas de ESTE curso. Un curso sin nivel —creado antes de que la
+  // columna existiera— las muestra todas, como siempre, y ofrece fijárselo.
+  const casillas=asigsDeNivel(nivel).map(a=>
     `<label style="font-size:12px"><input type="checkbox" class="eq-asig" value="${a}"> ${ASIG_NOMBRE[a]}</label>`).join('');
+  const avisoNivel = nivel ? '' : `
+      <div style="margin:6px 0;padding:8px;border:1px dashed #ffffff33;border-radius:10px">
+        <p style="color:var(--gold);font-size:12px;margin:0 0 6px">
+          Este curso no tiene nivel, así que se muestran las asignaturas de todos. Fíjaselo
+          y quedan solo las suyas.</p>
+        <select class="eq-nivel">${NIVELES_MUESTRA.map(n=>`<option value="${n.nivel}">${n.nombre}</option>`).join('')}</select>
+        <button class="btn sec eq-fijar-nivel">Fijar el nivel</button>
+      </div>`;
   // El radio de rol solo aparece si puede nombrar Jefe; si no, se fuerza 'asignatura'.
   const selectorRol = puedeJefe ? `
       <div style="margin:6px 0">
@@ -685,9 +703,19 @@ async function cargarEquipo(cursoCodigo){
     <div style="margin-top:8px;border-top:1px solid #ffffff22;padding-top:8px">
       <input class="eq-correo" type="email" placeholder="Correo del profesor (ya registrado)" style="width:100%">
       ${selectorRol}
+      ${avisoNivel}
       <div class="eq-casillas" style="margin:0 0 6px">${casillas}</div>
       <button class="btn sec eq-asignar" data-cod="${esc(cursoCodigo)}">+ Agregar al equipo</button>
     </div>`;
+  const bFijar=caja.querySelector('.eq-fijar-nivel');
+  if(bFijar) bFijar.onclick=async ()=>{
+    const n=caja.querySelector('.eq-nivel').value;
+    try{
+      const {error}=await SB.rpc('kimun_prof_curso_nivel',{p_curso_codigo:cursoCodigo, p_nivel:n});
+      if(error) throw error;
+      aviso('Nivel fijado'); pintarLista();
+    }catch(e){ aviso(errorPanel(e)); }
+  };
   caja.querySelectorAll('.eq-quitar').forEach(b=>b.onclick=()=>equipoQuitar(b.dataset.cod, b.dataset.correo));
   // Editar: precarga correo + casillas y cambia el botón a "Guardar cambios".
   caja.querySelectorAll('.eq-editar').forEach(b=>b.onclick=()=>{
@@ -755,11 +783,18 @@ const SIN_DATOS_ASIG =
   '<p style="color:var(--dim);font-size:13px">Esta asignatura todavía no tiene datos.</p>';
 // Niveles con armador de enlaces de muestra. Un curso nuevo = una linea mas aca;
 // la pantalla del armador (?armar=1) ya vive dentro de cada app.
+/* LA lista de niveles del panel. De aquí salen el armador de enlaces de muestra, el
+   selector del enlace de inscripción y el nivel del curso. `nivel` son los dos dígitos
+   que van dentro del código de asignatura (MA03 = MA + 03), así que una asignatura es de
+   este nivel si su código TERMINA en él: no hay ninguna lista paralela que mantener.
+   Agregar un curso nuevo sigue siendo una línea. */
 const NIVELES_MUESTRA = [
-  {nombre:'8° básico', ruta:'/juego/'},
-  {nombre:'7° básico', ruta:'/7mo/'},
-  {nombre:'3° básico', ruta:'/3ro/'}
+  {nivel:'08', nombre:'8° básico', ruta:'/juego/'},
+  {nivel:'07', nombre:'7° básico', ruta:'/7mo/'},
+  {nivel:'03', nombre:'3° básico', ruta:'/3ro/'}
 ];
+const NIVEL_NOMBRE = n => (NIVELES_MUESTRA.find(x=>x.nivel===n)||{}).nombre || '';
+const asigsDeNivel = n => n ? ASIG_ORDEN.filter(a=>a.slice(-2)===n) : ASIG_ORDEN;
 // El nivel va en el código, como en el servidor (kimun_oa_asignatura). Los cuatro
 // primeros son de 8°; a partir del segundo nivel el año se nombra en la etiqueta.
 const ASIG_NOMBRE = {HI08:'Historia', MA08:'Matemáticas', CN08:'Ciencias', LE08:'Lenguaje',
