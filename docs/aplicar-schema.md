@@ -14,19 +14,20 @@ puede ejecutar cambios de estructura).
 | **2026-08-27** | `LE03` y `CN03` (Sesión 61) | — |
 | **2026-08-27** | Los cuatro códigos de 7° básico: `HI07`, `MA07`, `CN07`, `LE07` (Sesión 62) | Sí: `kimun_oa_asignatura` resuelve los cuatro contra producción, y 8° y 3° siguen intactos |
 | **2026-08-30** | La **inscripción por enlace**, primera tanda: tabla `inscripciones`, columna `cursos.experimental`, índice de un solo enlace vivo por curso y las cuatro funciones | Sí: las **6 filas en `ok`**, incluida la que comprueba que el generador de tokens NO es ejecutable por `anon` |
-| **2026-08-30** | La misma feature, segunda tanda: los **tres fallos distinguidos** en `kimun_inscribirse` (enlace que no existe / cerrado / sin cupo) y la columna `perfiles.autoinscrito`, que `kimun_prof_listar` devuelve | **PENDIENTE** — re-aplicar y correr la consulta de abajo, que ahora son **7 filas** |
+| **2026-08-30** | La misma feature, segunda tanda: los **tres fallos distinguidos** en `kimun_inscribirse` (enlace que no existe / cerrado / sin cupo) y la columna `perfiles.autoinscrito`, que `kimun_prof_listar` devuelve | Sí: el bloque del panel carga y deja crear el enlace desde la cuenta de admin, que es lo que fallaba mientras no estaba aplicada |
 
-> **`schema.sql` NO tiene nada pendiente de aplicar.** Su última modificación es del **27/08 a
-> las 10:41** (Sesión 62, los códigos de 7°) y se aplicó ese mismo día; las Sesiones 63, 64 y 65
-> **no tocaron el backend**. Re-confirmado en vivo contra producción el **28/08/2026** (ver abajo
-> cómo). Si el archivo sigue con esa fecha, es que está al día — no es un olvido.
+> **Al 30/08/2026 el backend está al día**: las dos tandas de la inscripción por enlace
+> aplicadas y comprobadas.
 >
-> **Las dos comprobaciones están hechas.** La de `kimun_prof_asignaturas` (los dos arreglos) la
-> corrió Roberto el **28/08/2026** y devolvió `ok` con los cuatro códigos de 7° en **2 y 2**. Es
-> la que importa, porque **si a un arreglo le falta un código ese contenido queda invisible para
-> el Profesor Jefe sin ningún error**, y la consulta general de cinco filas no lo detecta.
+> **Todo lo anterior está aplicado y verificado.** Los códigos de 7° (Sesión 62) se confirmaron
+> en vivo contra producción el 28/08, y la comprobación de `kimun_prof_asignaturas` (los dos
+> arreglos) devolvió `ok` con los cuatro en **2 y 2**. Es la que importa, porque **si a un
+> arreglo le falta un código ese contenido queda invisible para el Profesor Jefe sin ningún
+> error**, y la consulta general de cinco filas no lo detecta.
 >
-> **El backend de VULPO está al día: no hay nada de `schema.sql` pendiente de aplicar.**
+> **La regla del proyecto no es "aplicarlo" sino "aplicarlo y mirar el número".** Un código
+> ausente de un arreglo, un trabajo de `pg_cron` sin agendar y un esquema sin aplicar se ven
+> exactamente igual que si estuvieran bien.
 
 ## Antes de empezar: por qué es seguro
 
@@ -165,6 +166,41 @@ select 'marca de autoinscrito',
 **Las siete filas tienen que decir `ok`.** La última importa más de lo que parece: PostgreSQL
 otorga EXECUTE a PUBLIC por defecto, así que **omitir una función del `grant` no la protege** —
 hay que revocarla explícitamente. Es una trampa que este proyecto ya pagó en la Sesión 19.
+
+### Y el aislamiento entre profesores (necesita dos cuentas reales)
+
+El enlace de inscripción **es la credencial y abre el producto completo**, así que quien lo
+lea puede repartirlo. Sus dos funciones están detrás de `kimun_prof_es_mio` —admin, super o
+**Jefe de ese curso**—, y hay que comprobar que el **servidor** rechaza, no solo que el panel
+no dibuja el bloque: cualquiera puede llamar la función desde la consola con la clave pública.
+
+Se hace desde `vulpo.cl/profesor.html`, con la consola del navegador abierta.
+
+**1. Con una cuenta que NO gestione ese curso** (un profe de asignatura, o el Jefe de otro
+curso). Las dos deben fallar con `no_autorizado` (HTTP 400: la función hace `raise exception`
+y PostgREST lo traduce así):
+
+```js
+await SB.rpc('kimun_prof_inscripcion_estado', {p_curso_codigo:'CUR-XXXX'})
+await SB.rpc('kimun_prof_inscripcion_crear',
+             {p_curso_codigo:'CUR-XXXX', p_cupo:5, p_experimental:true})
+```
+
+**2. Con la cuenta de admin, sobre el MISMO curso.** Tiene que responder con datos.
+
+> ⚠️ **El paso 2 no es un extra: sin él la prueba no vale.** Un `no_autorizado` universal
+> —una función rota para todos— se ve exactamente igual que el aislamiento funcionando. Es el
+> control que se usó en la Sesión 38, donde `profe-prueba4` daba 400 en `HI08` y **200 en
+> `MA08`**, su propia asignatura.
+
+**Resultado (30/08/2026): verificado, las dos mitades.** Desde una cuenta ajena las dos
+funciones devuelven `no_autorizado`; desde la cuenta de admin el bloque del panel carga y deja
+crear el enlace.
+
+> **El paso 2 se ganó el sueldo:** al correrlo, el admin también recibía `no_autorizado` — y no
+> era el aislamiento, era que **la segunda tanda del esquema todavía no estaba aplicada**. Sin
+> ese control se habría anotado "aislamiento verificado" sobre una función que estaba rota para
+> todos. Es exactamente el escenario que el paso 2 existe para descartar.
 
 ### Y una vez, la prueba del cupo
 

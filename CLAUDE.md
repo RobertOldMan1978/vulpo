@@ -118,12 +118,12 @@ año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron co
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
 están hoy en una expedición jugable, el resto es reserva.
 
-> **Estado de aprobación de TODO el proyecto (30/08/2026): 7.685 de 7.745.** Faltan 60 —los
-> `HI03 OA 01` y `HI03 OA 08`—. Pero **cómo se aprobó cada banco no es lo mismo, y hay que
-> saberlo antes de decírselo a un colegio:** los 2.536 de 8° y los módulos de apoyo se
-> revisaron **pregunta por pregunta**; los de 3° y 7° se aprobaron **por muestreo** —8 de cada
-> 30 por objetivo, criterio de `docs/aprobacion-pedagogica.md`—. Por eso la landing dice
-> *"aprobadas por un profesor, objetivo por objetivo"* y **nunca** *"una a una"*.
+> **Estado de aprobación de TODO el proyecto (30/08/2026): 7.745 de 7.745. El banco entero
+> está firmado.** Pero **cómo se aprobó cada banco no es lo mismo, y hay que saberlo antes de
+> decírselo a un colegio:** los 2.536 de 8° y los módulos de apoyo se revisaron **pregunta por
+> pregunta**; los de 3° y 7° se aprobaron **por muestreo** —8 de cada 30 por objetivo, criterio
+> de `docs/aprobacion-pedagogica.md`—. Por eso la landing dice *"aprobadas por un profesor,
+> objetivo por objetivo"* y **nunca** *"una a una"*: el 100% es de cobertura, no de método.
 
 **Herramientas dev:** tablero con clave
 (`dev/tablero.html`) y scripts (`consolidar-pool-nivel`, `aplicar-revisadas`,
@@ -5659,8 +5659,42 @@ el mismo del armador, así que sumar un curso nuevo sigue siendo una línea.
 
 #### Lo que queda de esto para Roberto
 
-Re-aplicar `supabase/schema.sql` (la consulta de comprobación son ahora **7 filas**), correr
-`supabase/probar-inscripcion.sql`, y la prueba de **aislamiento entre profesores**, que
-necesita dos cuentas reales. Mientras tanto, **los códigos `ALU-` funcionan igual que
-siempre**: la inscripción por enlace es una puerta adicional, no un reemplazo.
+Esquema aplicado el mismo día y **aislamiento verificado en sus dos mitades**. Queda opcional
+`supabase/probar-inscripcion.sql`, que comprueba el techo del cupo. Los códigos `ALU-` siguen
+igual: la inscripción por enlace es una puerta adicional, no un reemplazo.
+
+#### El paso que casi se salta, y por qué se ganó el sueldo
+
+La prueba de aislamiento tiene dos mitades: una cuenta ajena debe recibir `no_autorizado`, y la
+**cuenta de admin debe recibir datos**. La primera salió al primer intento. La segunda **también
+devolvió `no_autorizado`** — y no era el aislamiento, era que la segunda tanda del esquema aún no
+estaba aplicada.
+
+> Sin ese control se habría anotado "aislamiento verificado" sobre una función **rota para
+> todos**: un `no_autorizado` universal se ve exactamente igual que el aislamiento funcionando.
+> Es hermano de las tres comprobaciones de la Sesión 65 —el código ausente de un arreglo, el
+> trabajo de `pg_cron` sin agendar, el esquema sin aplicar—: **ninguna da error cuando falla.**
+> Por eso el control positivo quedó escrito en `docs/aplicar-schema.md` como parte de la prueba,
+> no como un extra.
+
+De paso salió un dato de operación: **Firefox bloquea pegar en la consola** hasta escribir
+`permitir pegar`, y hay que **borrar ese texto** antes de pegar o queda concatenado al comando.
+
+#### Y se cerró la aprobación: 7.745 de 7.745
+
+Roberto firmó los **60** que quedaban —los `HI03 OA 01` ("Vivir en Grecia") y `HI03 OA 08`
+("Climas y paisajes"), que se habían saltado con la tecla `S`—. El banco entero queda aprobado.
+
+El diff del banco fueron **61 líneas de 61** y no 5.400: el arreglo de `aplicar-revisadas.py` de
+la Sesión 72 —detectar el formato de cada banco con un round-trip antes de escribir— hizo
+exactamente lo que se le pidió.
+
+**Se actualizaron las afirmaciones vivas, no la bitácora:** la landing pasa a *"7.745 preguntas
+aprobadas · Todo el banco, sin pendientes"*, y `docs/comercial.md` pierde la regla "no decir que
+están aprobadas las 7.745", que ya no aplica.
+
+> ⚠️ **La otra regla se queda, y ahora importa más: sigue sin poder decirse "una a una".** El
+> 100% es de **cobertura**, no de método: 8° y los módulos de apoyo se revisaron pregunta por
+> pregunta, pero 3° y 7° por **muestreo de 8 de cada 30**. Un 100% invita a redondear el discurso
+> hacia arriba, y es justo cuando hay que sujetarlo.
 

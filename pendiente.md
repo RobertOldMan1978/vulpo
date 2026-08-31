@@ -31,14 +31,14 @@ Es una app web mobile-first y se reutiliza. Ver `docs/roadmap-tecnico.md` §1.
 
 | Curso | OA | Preguntas | Aprobadas | Voz | Arte propio |
 |---|---|---|---|---|---|
-| 3° | 86 | 2.558 (+101 apoyo) | **2.599** (faltan 60) | ✅ 11.077 clips | villanos ✅ · portadas ❌ |
+| 3° | 86 | 2.558 (+101 apoyo) | ✅ **todas** | ✅ 11.077 clips | villanos ✅ · portadas ❌ |
 | 4° | 92 | — | — | pendiente | — |
 | 5° | 93 | — | — | no lleva | — |
 | 6° | 99 | — | — | no lleva | — |
 | 7° | 81 | 2.430 (+120 apoyo) | ✅ **todas** | no lleva | villanos ✅ · portadas ❌ |
 | 8° | 69 | 2.314 (+222 apoyo) | ✅ todas | no lleva | ✅ |
 
-- **7.745 preguntas escritas · 7.685 aprobadas · 60 sin aprobar** (dos OA de Historia de 3°). El currículum de 4°, 5°
+- **7.745 preguntas escritas · 7.745 aprobadas · 0 pendientes.** El currículum de 4°, 5°
   y 6° ya está fijado (284 OA), pero sin una sola pregunta escrita todavía.
 - **Sitio publicado: 317 MB** (techo de GitHub Pages: 1 GB). `assets/` completo son 475 MB,
   de los cuales 263 MB son la voz de 3° y 175 MB los originales, ya excluidos del sitio.
@@ -52,9 +52,8 @@ Es una app web mobile-first y se reutiliza. Ver `docs/roadmap-tecnico.md` §1.
 
 ## ✅ El bloqueo que era el camino crítico: LEVANTADO (30/08/2026)
 
-**Roberto aprobó 3° y 7° por muestreo: 5.048 preguntas nuevas.** El proyecto pasa de 2.637 a
-**7.685 de 7.745 aprobadas (99,2%)**. Faltan **60**: los `HI03 OA 01` y `HI03 OA 08`, que quedaron
-saltados.
+**Roberto aprobó 3° y 7° por muestreo: 5.048 preguntas, y ese mismo día los 60 que habían
+quedado saltados.** El proyecto pasa de 2.637 a **7.745 de 7.745: el banco entero firmado.**
 
 Con esto el Bloque A queda cerrado y **lo que manda ahora es el Bloque B** (los bancos de 4°, 5°
 y 6°) con **M4** delante, que es lo que lo abarata.
@@ -65,7 +64,8 @@ y 6°) con **M4** delante, que es lo que lo abarata.
 > una"*, que sería exagerar. El muestreo caza un objetivo mal escrito, no una pregunta suelta
 > mala, y eso está dicho en `docs/aprobacion-pedagogica.md`.
 
-**Lo que queda de aprobación** (~15 min): los 2 OA saltados de Historia de 3°.
+**No queda aprobación pendiente.** Lo que sigue describe la herramienta, que es la misma que
+usarán 4°, 5° y 6°.
 
 - Herramienta: `dev/tablero.html` → botón **"⚡ Aprobar por muestreo"** (Sesión 70). Una pantalla
   por objetivo con **sus 8 preguntas ya elegidas**, teclado (**espacio** aprueba y avanza, **V**
@@ -114,10 +114,6 @@ Esto no es un bloque del roadmap: es la lista corta de lo que hay entre hoy y un
 
 **No bloquea, pero hay que decirlo antes de que lo descubran:**
 
-- **Los 60 sin aprobar de Historia de 3° SÍ se juegan.** El juego nunca lee el campo
-  `revisada` —cero apariciones en los tres `index.html`—, así que `HI03 OA 01` ("Vivir en
-  Grecia") y `HI03 OA 08` ("Climas y paisajes") están en el mapa como cualquier etapa. Son
-  ~15 min de tablero.
 - **No funciona sin internet**, ni la primera carga ni los bancos.
 - **El progreso local es del teléfono**, no del alumno: monedas, skins y avance de campaña
   viven en `localStorage`; al servidor suben el XP y el dominio por objetivo. Dos hermanos en
@@ -136,7 +132,7 @@ Para poder decir "tengo 3°, 7° y 8°". Es el hito más cercano y el de mejor r
 | ~~A1~~ | ~~**Aprobación pedagógica de 3° y 7°**~~ ✅ **HECHO (30/08)**: 5.048 preguntas aprobadas por muestreo. Quedan **60** (los `HI03 OA 01` y `OA 08`, saltados) | ~15 min | Roberto |
 | ~~A2~~ | ~~**8 villanos** (4 de 3° + 4 de 7°)~~ ✅ **HECHO (28/08)**: 16 imágenes (normal + derrotado) generadas, procesadas (`procesar-lote8.py`) y cableadas; `PLACEHOLDER` fuera | — | — |
 | ~~A3~~ | ~~Landing y `docs/comercial.md` hablando de tres cursos~~ ✅ **HECHO (28/08)**: se hizo **antes** de A1 sin romper la regla, diciendo el estado real — la landing declara que las 2.536 de 8° están aprobadas una a una y que 3° y 7° están **en revisión pedagógica**. Ver A8 | — | — |
-| ~~A8~~ | ~~Al cerrar A1, actualizar esa frase~~ ✅ **HECHO (30/08)**: la landing dice **7.685 preguntas aprobadas**. **NO dice "una a una"**, a propósito: 8° se revisó pregunta por pregunta, pero 3° y 7° se aprobaron **por muestreo** (8 de 30 por objetivo). La frase es *"aprobadas por un profesor, objetivo por objetivo"*, que es la verdad y sigue siendo un argumento fuerte | — | — |
+| ~~A8~~ | ~~Al cerrar A1, actualizar esa frase~~ ✅ **HECHO (30/08)**: la landing dice **7.745 preguntas aprobadas** (partió en 7.685 y esa misma tarde se firmaron los 60 que faltaban). **NO dice "una a una"**, a propósito: 8° se revisó pregunta por pregunta, pero 3° y 7° se aprobaron **por muestreo** (8 de 30 por objetivo). La frase es *"aprobadas por un profesor, objetivo por objetivo"*, que es la verdad y sigue siendo un argumento fuerte | — | — |
 | A4 | Conversación con el colegio sobre el **contenido sensible obligatorio**. Ya no es solo `CN07 OA 01/02/03` (sexualidad de 7°): al transcribir el currículum de 4°, 5° y 6° aparecieron `CN06 OA 04/05/06` (sistema reproductor y pubertad), `CN06 OA 07` y `CN04 OA 08` (drogas y alcohol, este último a los 9 años), `HI05 OA 02/03/04/07` (conquista, guerra de Arauco, encomienda, esclavitud) e `HI06 OA 05/08` (Araucanía, quiebre de la democracia). Todos declarados en su `nota_contenido_sensible`. **Conviene una sola conversación que los cubra**, no seis | — | Roberto |
 | ~~A5~~ | ~~Escuchar el clip de voz de **copihue**~~ ✅ **HECHO (28/08)**: Roberto eligió la pronunciación `ko.piˈwe` (IPA en `_FONEMAS`); los 2 clips regenerados y confirmados | — | — |
 | A6 | Confirmar el **lunes 31/08** que apareció la primera foto semanal | 1 min | Roberto |
@@ -149,7 +145,7 @@ Para poder decir "tengo 3°, 7° y 8°". Es el hito más cercano y el de mejor r
 | A14 | **Vocabulario en 3°: decidir si va.** (Absorbe a la antigua A10, que era la misma tarea dada por decidida.) Medido, se solapa con su propio currículum —`LE03 OA 10` (significado por contexto y raíces) y `OA 11` (diccionario) ya tienen 30 preguntas cada uno—, y costaría ~120 preguntas + ~600 clips de voz + horas de aprobación. El ángulo que NO se pisa sería otro: las palabras nuevas que aparecen en Ciencias e Historia de 3°, que es distinto de *la estrategia* para deducirlas | decisión | Roberto decide |
 | ~~A7~~ | ~~**Marcar el contenido sensible en el armador**~~ ✅ **HECHO (28/08, Sesión 67)**: `assets/js/sensible.js` (mapa de los 20 OA + 5 categorías) + leyenda/emojis/resumen en `arrancarArmador` de las tres apps. La decisión se toma al construir el enlace (la casilla por capítulo es el control); el enlace de venta no cambió. Verificado con `cdp.mjs`, cero consola / cero 404 | — | — |
 
-| A17 | **Inscripción por enlace único (modo experimental).** Un enlace al chat del curso: cada persona escribe su nombre, se crea sola en un curso que Roberto ya abrió, recibe su `ALU-` y su avance se registra. **Código: HECHO** (backend, pantalla del juego en los tres cursos, bloque del panel, `?inscribir=`). **Falta de Roberto:** (1) **re-aplicar `supabase/schema.sql`** y correr la consulta de 7 filas de `docs/aplicar-schema.md`; (2) correr `supabase/probar-inscripcion.sql` (2 filas en `ok`); (3) la prueba de **aislamiento entre profesores**, que necesita dos cuentas reales | ~10 min | Roberto |
+| ~~A17~~ | ~~**Inscripción por enlace único (modo experimental)**~~ ✅ **HECHO (30/08, Sesión 73)**: un enlace al chat del curso, cada persona escribe su nombre, se crea sola en un curso ya abierto, recibe su `ALU-` y su avance se registra. Backend, pantalla del juego en los tres cursos, bloque del panel y `?inscribir=`. Esquema aplicado y **aislamiento verificado en sus dos mitades** (cuenta ajena → `no_autorizado`; admin → funciona). **Queda opcional** correr `supabase/probar-inscripcion.sql` (2 filas en `ok`), que comprueba el techo del cupo | — | — |
 
 **Las portadas de capítulo siguen prestadas a propósito.** Son ~46 imágenes más para una
 diferencia que casi nadie mira; el Jefe Final es donde el préstamo chirría.

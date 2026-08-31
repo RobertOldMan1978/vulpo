@@ -178,8 +178,8 @@ la propuesta, el guion de reunión y la landing. **Léelo antes de una reunión 
 ## Qué se le promete a un colegio, y qué no
 
 **Sí:** 4 asignaturas por curso en 3°, 7° y 8° básico —7.745 preguntas alineadas a las Bases del
-MINEDUC, de las cuales **7.685 están aprobadas** (8° pregunta por pregunta; 3° y 7° por muestreo
-de 8 por objetivo)—,
+MINEDUC, **todas aprobadas** (8° pregunta por pregunta; 3° y 7° por muestreo de 8 por
+objetivo)—,
 **evaluación formativa alineada al Decreto 67/2018** (ver sección anterior), panel del profesor
 con mapa de dominio por OA, desafíos de refuerzo, ranking por curso, soporte y actualizaciones.
 Funciona en cualquier celular con internet, sin instalar nada.
@@ -188,10 +188,10 @@ Funciona en cualquier celular con internet, sin instalar nada.
 - ❌ **No funciona sin internet.** Verificado: no hay service worker y los bancos de preguntas se
   piden con `fetch`. **Nunca prometer uso sin conexión.**
 - ❌ **No cubre todos los niveles.** Hoy 3°, 7° y 8° básico. Faltan 4°, 5° y 6°.
-- ⚠️ **No decir que las 7.685 están aprobadas "una a una".** Lo están *objetivo por objetivo*:
-  8° se revisó pregunta por pregunta, pero 3° y 7° por **muestreo** de 8 de cada 30. Exagerarlo
-  se cae a la primera pregunta de una UTP; decirlo bien no le quita fuerza al argumento.
-- ❌ **No decir que están aprobadas las 7.745.** Quedan 60 sin aprobar, de Historia de 3°.
+- ⚠️ **No decir que las 7.745 están aprobadas "una a una".** Lo están *objetivo por objetivo*:
+  8° se revisó pregunta por pregunta, pero 3° y 7° por **muestreo** de 8 de cada 30. El 100% es
+  de cobertura, no de método. Exagerarlo se cae a la primera pregunta de una UTP; decirlo bien no
+  le quita fuerza al argumento, y además permite explicar el criterio, que es una señal de rigor.
 - ❌ **No es una herramienta de calificación.** El panel es una brújula; así está descrito en el
   producto y así hay que venderlo.
 - ⚠️ **El enlace de inscripción NO es una licencia por persona.** Sirve para que un grupo entre

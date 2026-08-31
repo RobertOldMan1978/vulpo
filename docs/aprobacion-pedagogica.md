@@ -149,13 +149,17 @@ El modo cierra ese hueco. Una pantalla por objetivo, con **sus 8 preguntas ya el
 |---|---|---|
 | 8° básico (4 asignaturas) | 2.314 | ✅ todas |
 | Vocabulario y Ana Frank | 222 | ✅ todas |
-| **3° básico** (4 asignaturas) | **2.558** | ✅ **2.498** — faltan 60 (`HI03 OA 01` y `OA 08`) |
+| **3° básico** (4 asignaturas) | **2.558** | ✅ **todas** |
 | **7° básico** (4 asignaturas) | **2.430** | ✅ **todas** |
 | Vocabulario 7° y *Cuentos de Ada* | 221 | ✅ todas |
 
-> **Cerrado el 30/08/2026.** 5.048 preguntas aprobadas por muestreo en una pasada. El proyecto
-> quedó en **7.685 de 7.745**. Lo que sigue abajo describe el método con el que se hizo, y sirve
-> igual para 4°, 5° y 6°, que son los que faltan.
+> **Cerrado el 30/08/2026: 7.745 de 7.745.** Primero 5.048 preguntas por muestreo en una
+> pasada, y ese mismo día los **60** que habían quedado saltados (`HI03 OA 01` y `OA 08`). Lo que
+> sigue abajo describe el método, y sirve igual para 4°, 5° y 6°, que son los que faltan.
+>
+> ⚠️ **100% de cobertura no es 100% del mismo método.** 8° y los módulos de apoyo se revisaron
+> pregunta por pregunta; 3° y 7°, por muestreo de 8 de cada 30. Al decirlo afuera, la frase que
+> se sostiene es *"objetivo por objetivo"*, no *"una a una"*.
 
 Los informes en papel para revisar sin pantalla se generan con
 `python scripts/generar-revision-preguntas.py <carpeta>` y quedan en `dev/` (ignorados por git:
