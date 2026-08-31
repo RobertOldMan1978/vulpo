@@ -125,8 +125,9 @@ año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron co
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
 están hoy en una expedición jugable, el resto es reserva.
 
-> **Estado de aprobación de TODO el proyecto (30/08/2026): 7.745 de 7.745. El banco entero
-> está firmado.** Pero **cómo se aprobó cada banco no es lo mismo, y hay que saberlo antes de
+> **Estado de aprobación (31/08/2026): 7.745 aprobadas de 7.805 escritas.** Las 60 que faltan
+> son el **Vocabulario de 3°**, recién escrito (Sesión 74), y están esperando la firma de Roberto
+> en el tablero. Hasta el 30/08 el banco entero estaba firmado. Pero **cómo se aprobó cada banco no es lo mismo, y hay que saberlo antes de
 > decírselo a un colegio:** los 2.536 de 8° y los módulos de apoyo se revisaron **pregunta por
 > pregunta**; los de 3° y 7° se aprobaron **por muestreo** —8 de cada 30 por objetivo, criterio
 > de `docs/aprobacion-pedagogica.md`—. Por eso la landing dice *"aprobadas por un profesor,
@@ -348,7 +349,7 @@ arriba del archivo, no como condiciones sueltas repartidas por el código.
 |---|---|---|---|---|
 | `HAY_RETO_CALCULO` | Si Matemática se juega como Reto de Cálculo. Afecta al **Duelo** (`odNMapas`, `odMapasMate`, `odPreguntasCalc`), a `detenerTimersActivos` y a la música de `scr-calc` | ✅ | ❌ | ❌ |
 | `HAY_MINICLASES` | Si existe el camino de mini-clases. Afecta al **siguiente paso al reprobar**, a `renderCampaña`, al Jefe Final (`cargarPoolMate`) y al ✕ del quiz | ✅ | ❌ | ❌ |
-| `HAY_VOCABULARIO` | Si Lenguaje abre el landing "Campaña + Vocabulario" en vez de su campaña | ✅ | ✅ | ❌ |
+| `HAY_VOCABULARIO` | Si Lenguaje abre el landing "Campaña + Vocabulario" en vez de su campaña | ✅ | ✅ | ✅ |
 | `HAY_BIBLIOTECA` | Si la pantalla principal ofrece el módulo 📖 Lectura | ✅ | ❌ | ✅ |
 | `HAY_SINFIN` | Si Matemática ofrece el **Reto Sin Fin** de `assets/js/calculo.js`. Gobierna el nodo del mapa y la llamada `CALC.init` | ❌ | ✅ | ✅ |
 | `HAY_DIFICIL` | Si el nivel ofrece **Modo Difícil**, y con él las insignias 🔥, la skin de Maestro y la Maestría Total. ⚠️ Se declara **pegada a `DIF_ASIGS`** y no con las demás: la consulta `revisarDificil()`, que corre en el arranque | ✅ | ✅ | ❌ |
@@ -6014,6 +6015,56 @@ además útil: las preguntas de Historia de 3° con dibujo lo muestran también 
 > nunca coinciden ni necesitan el teléfono en la sala. El que exige estar juntos es el **local**.
 > Se dejaron **los dos**: el local para jugar con un hermano, el asíncrono para competir con el
 > curso. Los **bots** responden al instante, así que el primero en inscribirse ya puede jugar.
+
+
+#### Tercer tramo — el Vocabulario llega a 3°, y son DOS áreas y no cuatro
+
+Roberto pidió las 60 preguntas de A14 (había decidido bajarlas de 120). **Lo que la medición
+cambió fue la forma, no el número:** en 7° y 8° el Vocabulario son 4 y 5 áreas, una por
+asignatura, pero en 3° **Lenguaje ya cubre vocabulario en su propio currículum** —`LE03 OA 10`
+(deducir el significado por contexto y por las raíces) y `OA 11` (usar el diccionario), con 30
+preguntas cada uno—, así que un área `VOC-LENG` mediría dos veces lo mismo. Y Matemática de 3° no
+tiene un vocabulario propio que se sostenga a esa edad.
+
+> **El ángulo que no se pisa con nada, y que es lo que justifica el módulo, son las PALABRAS
+> NUEVAS que traen Ciencias e Historia** —raíz, germinar, órbita, acueducto, hemisferio—. Eso es
+> distinto de *la estrategia* para deducirlas, que es lo que enseña Lenguaje.
+
+Quedaron **30 `VOC-CIEN` + 30 `VOC-HIST`**, elegidas leyendo los OA oficiales de esas dos
+asignaturas y no una lista externa. El código ya estaba en el fork (`scr-lenguaje`,
+`abrirLenguaje`): el cableado fueron la bandera, la expedición y **reconectar `btnLengVocab`**,
+que estaba desactivado desde la Sesión 63 justamente porque apuntaba a una expedición inexistente.
+
+#### El sesgo de largo apareció otra vez, y en la proporción de siempre
+
+**16 de 60 en la primera pasada (27%)**, escribiéndolas ya sabiendo del defecto. Se corrigió como
+manda el estándar: **dándole cuerpo a los distractores, nunca acortando la correcta** —acortarla
+la vuelve imprecisa, que es peor que el sesgo—. Quedó en **0**.
+
+**Los seis filtros en cero:** `validar-oa-json` ok, `revisar-tanda` sin errores y sin sesgo,
+`auditar-banco-nivel` 0/0, `auditar-numerico` sin opciones equivalentes, `auditar-solape-oa` sin
+solape, y el crítico de 3° —`auditar-audible-3ro`— **todas se pueden responder escuchando**, cero
+homófonas. Los 4 avisos de casi-duplicados se revisaron uno por uno: son la plantilla *"¿Qué es
+X?"*, inevitable en un banco de vocabulario, y cada clave y cada tip corresponden a su pregunta.
+
+> **Un error propio que cazó el conteo:** el script escribió **56 y no 60**, porque el arreglo de
+> destinos del barajado se calculaba con `len//4` —28 para 30 preguntas— y el `zip` cortaba dos de
+> cada área **en silencio**. Se vio solo porque el script imprime el total. Ahora lleva un
+> `assert` de 60.
+
+#### Estado del banco, que cambia una afirmación de la landing
+
+El proyecto pasa a **7.745 aprobadas de 7.805 escritas**. Las 60 nuevas nacen `revisada:false`,
+así que la landing dejó de poder decir *"Todo el banco, sin pendientes"* y esa frase se quitó
+—el 7.745 sigue siendo verdad—. Vuelve a cuadrar en cuanto Roberto firme las 60, que en el
+tablero son **dos objetivos**: unos 5 minutos por muestreo.
+
+**La voz va después de aprobar, nunca en paralelo** (~300 clips, ~US$0,2): cada texto corregido
+obliga a regenerar su clip y a pagarlo de nuevo.
+
+Verificado jugando: Lenguaje de 3° abre el landing "Campaña + Vocabulario", el módulo carga sus
+dos etapas de 10, se juega sin reloj y con el botón 🔊, 3° pasa de 26 a **27 expediciones**, y 8°
+y 7° quedan en 20 y 23 sin moverse. Cero 404 y cero errores.
 
 - **Pendiente de arrastre (Roberto):** sin cambios — A4 (la conversación con el colegio sobre el
   contenido sensible), A12, A14 y A19; y el camino crítico sigue siendo el **Bloque B** (los

@@ -1502,6 +1502,17 @@ const EXPEDICIONES=[
      {oa:"CA-T9",  nombre:"La venganza",         icono:"💦", n:6},
      {oa:"CA-T10", nombre:"La batalla decisiva", icono:"🌊", n:6}
    ] },
+ /* Vocabulario de 3°: DOS areas y no cuatro como 7° y 8°, y es una decision medida.
+    Lenguaje de 3° ya cubre vocabulario en su propio curriculum (LE03 OA 10 y OA 11,
+    con 30 preguntas cada uno), asi que un area VOC-LENG mediria dos veces lo mismo.
+    Lo que no se pisa con nada son las PALABRAS NUEVAS de Ciencias e Historia. */
+ { id:'voc-general', asignatura:'Vocabulario', nivel:'3° Básico · Vocabulario del curso',
+   portada:'assets/portada-voc-general.png', portadaMapa:'assets/portada-voc-general.png',
+   contenido:'contenido/vocabulario-3basico/preguntas.json', activa:true,
+   etapas:[
+     {oa:"VOC-CIEN", nombre:"Palabras de Ciencias", icono:"🔬", n:10},
+     {oa:"VOC-HIST", nombre:"Palabras de Historia", icono:"📜", n:10},
+   ]},
 ];
 
 /* Ids de ?solo= que existen de verdad. Uno inventado se ignora en silencio; si no
@@ -3096,14 +3107,10 @@ $('btnExpBack').onclick=()=>{SND.tap();go('scr-rol');};
 $('btnMapasBack').onclick=()=>{SND.tap();go('scr-expediciones');};
 // Landing de Lenguaje
 $('btnLengCampana').onclick=()=>{SND.tap();abrirCampaña(campañaDe('Lenguaje'));};
-/* 3° NO tiene Vocabulario: la pantalla scr-lenguaje es herencia muerta del fork de 8°.
-   Este handler llamaba entrarExpedicion(EXPEDICIONES.find(e=>e.id==='voc-general')), y
-   'voc-general' no existe en este archivo -> entrarExpedicion(undefined) revienta. Hoy es
-   inalcanzable porque renderExpediciones ya no llama a abrirLenguaje(), pero quedaba armado
-   para el dia que alguien reconecte el landing. Se deja inofensivo en vez de borrar el boton:
-   quitar el <button> sin quitar esta linea haria que $('btnLengVocab') sea null y .onclick
-   mataria TODO el JavaScript del juego (la trampa de la Sesion 56). */
-$('btnLengVocab').onclick=()=>{SND.tap();go('scr-expediciones');};
+/* Reconectado en la Sesion 74: 3° YA tiene Vocabulario (60 palabras de Ciencias e
+   Historia), asi que este boton vuelve a abrir su expedicion. Estuvo desactivado desde
+   la Sesion 63, cuando se descubrio que llamaba a una expedicion inexistente. */
+$('btnLengVocab').onclick=()=>{SND.tap();entrarExpedicion(EXPEDICIONES.find(e=>e.id==='voc-general'));};
 $('btnLengBack').onclick=()=>{SND.tap();go('scr-expediciones');};
 // Biblioteca
 $('btnBiblioBack').onclick=()=>{SND.tap();go('scr-expediciones');};
@@ -3678,7 +3685,7 @@ const HAY_MINICLASES=false;
    Son contenido de 8°. Antes se resolvían BORRANDO líneas del fork, y ese corte dejó
    la asignatura Lenguaje inalcanzable en 3° (Sesión 61). Como banderas, las tres apps
    comparten el mismo renderExpediciones y solo cambia el valor. */
-const HAY_VOCABULARIO=false;
+const HAY_VOCABULARIO=true;
 const HAY_BIBLIOTECA=true;
 function odExpsDe(asig){return EXPEDICIONES.filter(e=>e.activa&&e.asignatura===asig);}
 function odNMapas(asig){return (HAY_RETO_CALCULO&&asig==='Matemáticas')?NIVELES_CALC.length:odExpsDe(asig).length;}

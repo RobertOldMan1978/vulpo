@@ -1,0 +1,845 @@
+{
+ "preguntas": [
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"raíz\" de una planta?",
+   "opciones": [
+    "La parte de arriba que sostiene las flores y los frutos",
+    "La parte que guarda las semillas hasta que estén maduras",
+    "La parte que crece bajo la tierra y toma el agua del suelo",
+    "La parte verde y plana donde la planta fabrica su alimento"
+   ],
+   "correcta": 2,
+   "tip": "La raíz está bajo tierra y absorbe el agua.",
+   "revisada": false,
+   "id": "voc3-cien-1"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Para qué le sirve el \"tallo\" a una planta?",
+   "opciones": [
+    "Para tomar del suelo el agua y los minerales que la planta necesita",
+    "Para sostenerla y llevar el agua desde la raíz hasta las hojas",
+    "Para proteger a las semillas mientras terminan de madurar adentro",
+    "Para atraer a los insectos con su color llamativo y con su perfume"
+   ],
+   "correcta": 1,
+   "tip": "El tallo es como una cañería que sostiene y transporta.",
+   "revisada": false,
+   "id": "voc3-cien-2"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué hacen las \"hojas\" de una planta?",
+   "opciones": [
+    "Fabrican el alimento de la planta usando la luz del sol",
+    "Guardan el agua de la lluvia para los días de sequía",
+    "Sujetan la planta al suelo para que el viento no la bote",
+    "Forman la parte dura que rodea y protege al fruto"
+   ],
+   "correcta": 0,
+   "tip": "En las hojas la planta usa la luz para hacer su alimento.",
+   "revisada": false,
+   "id": "voc3-cien-3"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"semilla\"?",
+   "opciones": [
+    "La parte blanda y dulce que muchas veces comemos",
+    "La parte de la que puede nacer una planta nueva",
+    "La parte más colorida que atrae a los insectos",
+    "La parte que sostiene las hojas y las mantiene arriba"
+   ],
+   "correcta": 1,
+   "tip": "De la semilla nace una planta nueva.",
+   "revisada": false,
+   "id": "voc3-cien-4"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué significa que una semilla \"germine\"?",
+   "opciones": [
+    "Que empieza a brotar y aparece una plantita",
+    "Que cambia de color porque ya está madura",
+    "Que se pone dura para poder guardarla mucho tiempo",
+    "Que se seca por completo y ya no sirve"
+   ],
+   "correcta": 0,
+   "tip": "Germinar es empezar a brotar.",
+   "revisada": false,
+   "id": "voc3-cien-5"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Cuál es el trabajo principal de la \"flor\"?",
+   "opciones": [
+    "Fabricar el alimento de la planta durante la noche",
+    "Permitir que la planta se reproduzca y forme semillas",
+    "Absorber el agua que la planta necesita cada día",
+    "Sostener el peso de las ramas cuando hay mucho viento"
+   ],
+   "correcta": 1,
+   "tip": "La flor es la parte con que la planta se reproduce.",
+   "revisada": false,
+   "id": "voc3-cien-6"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"fruto\" de una planta?",
+   "opciones": [
+    "La parte delgada por donde sube el agua hasta las hojas de arriba",
+    "La parte que se hunde en la tierra y sujeta a la planta entera",
+    "La parte plana y verde que recibe durante el día la luz del sol",
+    "La parte que se forma después de la flor y guarda las semillas"
+   ],
+   "correcta": 3,
+   "tip": "El fruto viene después de la flor y lleva las semillas dentro.",
+   "revisada": false,
+   "id": "voc3-cien-7"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"polen\"?",
+   "opciones": [
+    "Un polvillo de la flor que sirve para formar semillas",
+    "Un líquido dulce que las plantas guardan en la raíz",
+    "Un insecto pequeño que vive dentro de algunas flores",
+    "Un tipo de tierra especial donde crecen mejor las flores"
+   ],
+   "correcta": 0,
+   "tip": "El polen es el polvillo de la flor, y las abejas lo llevan de una a otra.",
+   "revisada": false,
+   "id": "voc3-cien-8"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"cultivo\"?",
+   "opciones": [
+    "Un grupo de plantas que las personas siembran y cuidan",
+    "Una herramienta que se usa para remover la tierra dura",
+    "Un lugar del bosque donde nunca ha entrado una persona",
+    "Un animal pequeño que ayuda a las plantas a crecer"
+   ],
+   "correcta": 0,
+   "tip": "Cultivar es sembrar y cuidar plantas a propósito.",
+   "revisada": false,
+   "id": "voc3-cien-9"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Una planta \"nativa\" de Chile es una que...",
+   "opciones": [
+    "crece en Chile desde siempre, sin que nadie la trajera",
+    "solo puede vivir dentro de un invernadero con calor",
+    "vino de otro país y se plantó en jardines y plazas",
+    "se usa nada más que para decorar y no da frutos"
+   ],
+   "correcta": 0,
+   "tip": "Nativa quiere decir que es de acá, de siempre. El copihue es un ejemplo.",
+   "revisada": false,
+   "id": "voc3-cien-10"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué significa \"reciclar\"?",
+   "opciones": [
+    "Botar la basura en el lugar que le corresponde a cada una",
+    "Convertir algo usado en un material para hacer cosas nuevas",
+    "Guardar algo viejo dentro de una caja por si acaso sirve",
+    "Comprar menos cosas de las que uno tenía pensado comprar"
+   ],
+   "correcta": 1,
+   "tip": "Reciclar es transformar lo usado en material nuevo.",
+   "revisada": false,
+   "id": "voc3-cien-11"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué significa \"reutilizar\" algo?",
+   "opciones": [
+    "Volver a usarlo, en vez de botarlo después de una vez",
+    "Fabricarlo otra vez con materiales que salen de la tierra",
+    "Repartirlo entre varias personas que también lo necesitan",
+    "Romperlo en trozos chicos para que ocupe menos espacio"
+   ],
+   "correcta": 0,
+   "tip": "Reutilizar es darle otro uso a lo mismo, sin botarlo.",
+   "revisada": false,
+   "id": "voc3-cien-12"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Un alimento \"nutritivo\" es el que...",
+   "opciones": [
+    "tiene el sabor más dulce de todos los que hay",
+    "se prepara más rápido que cualquier otra comida",
+    "le entrega al cuerpo lo que necesita para crecer sano",
+    "se puede guardar muchos meses sin echarse a perder"
+   ],
+   "correcta": 2,
+   "tip": "Nutritivo es que alimenta bien, no que sea rico o rápido.",
+   "revisada": false,
+   "id": "voc3-cien-13"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"higiene\"?",
+   "opciones": [
+    "El horario en que conviene comer cada día",
+    "La mezcla de alimentos de distintos colores",
+    "La cantidad de comida que se sirve en un plato",
+    "El cuidado de la limpieza para no enfermarse"
+   ],
+   "correcta": 3,
+   "tip": "Higiene es limpieza: lavarse las manos es higiene.",
+   "revisada": false,
+   "id": "voc3-cien-14"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"fuente de luz natural\"?",
+   "opciones": [
+    "Algo que devuelve la luz que le llega desde algún otro lugar",
+    "Algo que no deja pasar nada de luz a través de su superficie",
+    "Algo que da luz sin que las personas lo fabriquen, como el Sol",
+    "Algo que las personas inventaron para poder alumbrar de noche"
+   ],
+   "correcta": 2,
+   "tip": "Natural es que no la fabricó nadie: el Sol, el fuego, un relámpago.",
+   "revisada": false,
+   "id": "voc3-cien-15"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "La ampolleta es una fuente de luz \"artificial\" porque...",
+   "opciones": [
+    "su luz es más débil que la luz que da el Sol",
+    "la fabricaron las personas para poder alumbrar",
+    "solamente se puede encender cuando ya es de noche",
+    "necesita estar cerca de una ventana para servir"
+   ],
+   "correcta": 1,
+   "tip": "Artificial quiere decir hecho por las personas.",
+   "revisada": false,
+   "id": "voc3-cien-16"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué quiere decir que la luz se \"refleja\"?",
+   "opciones": [
+    "Que rebota al chocar con algo y sale en otra dirección",
+    "Que atraviesa las cosas sin ninguna dificultad y sigue",
+    "Que se transforma en calor apenas toca cualquier objeto",
+    "Que se apaga de a poco hasta que ya no se alcanza a ver"
+   ],
+   "correcta": 0,
+   "tip": "Reflejar es rebotar. Por eso te ves en el espejo.",
+   "revisada": false,
+   "id": "voc3-cien-17"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Si un objeto es \"opaco\", quiere decir que...",
+   "opciones": [
+    "no deja pasar la luz a través de él",
+    "brilla con luz propia en la oscuridad",
+    "cambia de color cuando le llega la luz",
+    "deja pasar toda la luz sin problema"
+   ],
+   "correcta": 0,
+   "tip": "Opaco es que la luz no pasa. Por eso hace sombra.",
+   "revisada": false,
+   "id": "voc3-cien-18"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Si un vidrio es \"transparente\", entonces...",
+   "opciones": [
+    "produce su propia luz cuando está oscuro",
+    "hace que la luz se separe en muchos colores",
+    "deja pasar la luz y se puede ver a través de él",
+    "detiene la luz por completo y forma una sombra"
+   ],
+   "correcta": 2,
+   "tip": "Transparente es que la luz pasa y se ve al otro lado.",
+   "revisada": false,
+   "id": "voc3-cien-19"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Por qué se forma una \"sombra\"?",
+   "opciones": [
+    "Porque el aire frío hace que la luz cambie de color",
+    "Porque el objeto guarda un poco de la luz que recibió",
+    "Porque la luz se vuelve más débil al llegar la noche",
+    "Porque un objeto se pone delante de la luz y la detiene"
+   ],
+   "correcta": 3,
+   "tip": "La sombra aparece donde un objeto tapa la luz.",
+   "revisada": false,
+   "id": "voc3-cien-20"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"vibración\"?",
+   "opciones": [
+    "Un silencio que se produce cuando nadie habla ni se mueve",
+    "Un movimiento rapidísimo de ida y vuelta que produce sonido",
+    "Un eco que vuelve después de rebotar en una pared de piedra",
+    "Un ruido muy fuerte que se alcanza a escuchar desde lejos"
+   ],
+   "correcta": 1,
+   "tip": "Todo sonido nace de algo que vibra.",
+   "revisada": false,
+   "id": "voc3-cien-21"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"eco\"?",
+   "opciones": [
+    "Un sonido que dos personas hacen al mismo tiempo",
+    "Un sonido que viaja siempre en una sola dirección",
+    "Un sonido tan bajo que casi no se alcanza a oír",
+    "Un sonido que vuelve después de rebotar en algo"
+   ],
+   "correcta": 3,
+   "tip": "El eco es sonido que rebota y vuelve.",
+   "revisada": false,
+   "id": "voc3-cien-22"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Cuando un material \"absorbe\" el sonido, lo que hace es...",
+   "opciones": [
+    "cambiarlo por otro sonido bastante más agudo que el primero",
+    "hacerlo viajar mucho más rápido de lo normal por el aire",
+    "devolverlo con mucha más fuerza de la que traía al llegar",
+    "atraparlo, así que casi no rebota ni se escucha de vuelta"
+   ],
+   "correcta": 3,
+   "tip": "Absorber es atrapar. Una alfombra absorbe sonido.",
+   "revisada": false,
+   "id": "voc3-cien-23"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Un sonido \"grave\" es un sonido...",
+   "opciones": [
+    "que se repite muchas veces seguidas",
+    "bajo y profundo, como el de un tambor grande",
+    "corto, que dura apenas un instante",
+    "muy fuerte, que molesta cuando está cerca"
+   ],
+   "correcta": 1,
+   "tip": "Grave es profundo. Lo contrario es agudo, que es finito.",
+   "revisada": false,
+   "id": "voc3-cien-24"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"planeta\"?",
+   "opciones": [
+    "Una estrella que produce su propia luz y una enorme cantidad de calor",
+    "Un trozo de roca pequeño que viaja suelto por el espacio, sin rumbo",
+    "Un cuerpo grande y redondo que gira alrededor de una estrella",
+    "Una nube de polvo y de gas que flota entre unas estrellas y otras"
+   ],
+   "correcta": 2,
+   "tip": "Los planetas giran alrededor del Sol y no tienen luz propia.",
+   "revisada": false,
+   "id": "voc3-cien-25"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"satélite\" como la Luna?",
+   "opciones": [
+    "Un cuerpo que produce luz y calor por sí solo",
+    "Un cuerpo que gira alrededor de un planeta",
+    "Un cuerpo que se mueve en línea recta sin girar",
+    "Un cuerpo formado solamente por hielo y polvo"
+   ],
+   "correcta": 1,
+   "tip": "La Luna es el satélite de la Tierra: gira a su alrededor.",
+   "revisada": false,
+   "id": "voc3-cien-26"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"cometa\"?",
+   "opciones": [
+    "Un pedazo de la Luna que se soltó y quedó dando vueltas alrededor",
+    "Un planeta pequeño que se salió de su camino habitual y anda perdido",
+    "Un cuerpo de hielo y polvo que forma una cola al acercarse al Sol",
+    "Una estrella que se apaga de golpe y deja una marca brillante en el cielo"
+   ],
+   "correcta": 2,
+   "tip": "El cometa tiene cola porque su hielo se evapora cerca del Sol.",
+   "revisada": false,
+   "id": "voc3-cien-27"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"asteroide\"?",
+   "opciones": [
+    "Una luna que gira alrededor del planeta Júpiter",
+    "Una estrella muy lejana que apenas se alcanza a ver",
+    "Una nube de gas caliente que rodea al Sol",
+    "Una roca del espacio, más pequeña que un planeta"
+   ],
+   "correcta": 3,
+   "tip": "Los asteroides son rocas del espacio, mucho menores que un planeta.",
+   "revisada": false,
+   "id": "voc3-cien-28"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"órbita\" de un planeta?",
+   "opciones": [
+    "La distancia que hay entre el planeta y su luna",
+    "La velocidad con que el planeta gira sobre sí mismo",
+    "El camino que recorre al girar alrededor del Sol",
+    "El tiempo que dura un día completo en ese planeta"
+   ],
+   "correcta": 2,
+   "tip": "La órbita es el camino que sigue al dar la vuelta.",
+   "revisada": false,
+   "id": "voc3-cien-29"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"rotación\" de la Tierra?",
+   "opciones": [
+    "La inclinación que tiene la Tierra respecto del camino que recorre",
+    "El movimiento que hace la Luna cuando gira alrededor de la Tierra",
+    "La vuelta completa que da la Tierra alrededor del Sol una vez al año",
+    "El giro de la Tierra sobre sí misma, que causa el día y la noche"
+   ],
+   "correcta": 3,
+   "tip": "Rotar es girar sobre sí misma: por eso hay día y noche.",
+   "revisada": false,
+   "id": "voc3-cien-30"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"civilización\"?",
+   "opciones": [
+    "Una familia numerosa que vive junta en la misma casa",
+    "Un grupo de personas que viaja sin quedarse en un lugar",
+    "Un pueblo grande con ciudades, leyes y costumbres propias",
+    "Un ejército que se prepara para defender una ciudad"
+   ],
+   "correcta": 2,
+   "tip": "Una civilización tiene ciudades, leyes y una cultura propia.",
+   "revisada": false,
+   "id": "voc3-hist-1"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "Cuando decimos \"la Antigüedad\", hablamos de...",
+   "opciones": [
+    "una época de hace miles de años, como la de Grecia y Roma",
+    "el tiempo en que vivieron los abuelos de nuestros abuelos",
+    "los años en que se inventaron los primeros automóviles",
+    "cualquier cosa que haya pasado antes de que tú nacieras"
+   ],
+   "correcta": 0,
+   "tip": "La Antigüedad es hace miles de años, no hace unas décadas.",
+   "revisada": false,
+   "id": "voc3-hist-2"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es el \"legado\" de una civilización?",
+   "opciones": [
+    "El territorio que alcanzó a conquistar",
+    "El motivo por el que terminó desapareciendo",
+    "La cantidad de gente que llegó a tener",
+    "Lo que nos dejó y todavía usamos hoy"
+   ],
+   "correcta": 3,
+   "tip": "Legado es lo que dejaron y seguimos usando, como el alfabeto.",
+   "revisada": false,
+   "id": "voc3-hist-3"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"mito\"?",
+   "opciones": [
+    "Un dibujo hecho en la pared de una casa muy antigua y grande",
+    "Una noticia sobre algo que acaba de ocurrir dentro de la ciudad",
+    "Una lista con todas las leyes que la gente debía obedecer",
+    "Un relato antiguo que explica el mundo con dioses y héroes"
+   ],
+   "correcta": 3,
+   "tip": "Los mitos son relatos con dioses y héroes que explicaban el mundo.",
+   "revisada": false,
+   "id": "voc3-hist-4"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En los relatos griegos, un \"héroe\" era alguien que...",
+   "opciones": [
+    "hacía hazañas extraordinarias y era muy valiente",
+    "escribía las obras que se presentaban en el teatro",
+    "se dedicaba a vender cosas en la plaza del pueblo",
+    "gobernaba la ciudad y decidía todas sus leyes"
+   ],
+   "correcta": 0,
+   "tip": "El héroe es el del valor y las hazañas, como Hércules.",
+   "revisada": false,
+   "id": "voc3-hist-5"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué era un \"templo\" en Grecia y en Roma?",
+   "opciones": [
+    "Una casa grande donde vivía la familia del gobernante",
+    "Un edificio construido para honrar a un dios",
+    "Un lugar donde se guardaban los alimentos del pueblo",
+    "Un espacio abierto donde se compraba y se vendía"
+   ],
+   "correcta": 1,
+   "tip": "El templo era el edificio dedicado a un dios.",
+   "revisada": false,
+   "id": "voc3-hist-6"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Para qué servía un \"acueducto\" romano?",
+   "opciones": [
+    "Para guardar el trigo que se cosechaba cada año",
+    "Para llevar agua desde lejos hasta la ciudad",
+    "Para defender la ciudad de los ataques enemigos",
+    "Para que la gente cruzara caminando de un cerro a otro"
+   ],
+   "correcta": 1,
+   "tip": "El acueducto traía agua a la ciudad, a veces desde muy lejos.",
+   "revisada": false,
+   "id": "voc3-hist-7"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué era el \"Coliseo\" de Roma?",
+   "opciones": [
+    "El mercado principal en que se vendían los alimentos",
+    "La escuela a la que asistían los niños de la ciudad",
+    "Un enorme lugar donde el público iba a ver espectáculos",
+    "El palacio donde vivía el emperador con su familia"
+   ],
+   "correcta": 2,
+   "tip": "El Coliseo era para espectáculos, y cabía muchísima gente.",
+   "revisada": false,
+   "id": "voc3-hist-8"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En la Antigüedad, un \"ciudadano\" era alguien que...",
+   "opciones": [
+    "trabajaba construyendo los edificios más importantes",
+    "había nacido dentro de las murallas de la ciudad",
+    "tenía derechos y podía participar en las decisiones",
+    "vivía en el campo y llevaba sus productos a vender"
+   ],
+   "correcta": 2,
+   "tip": "Ser ciudadano era tener derechos y poder participar.",
+   "revisada": false,
+   "id": "voc3-hist-9"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué significa \"democracia\"?",
+   "opciones": [
+    "Que una sola persona manda durante toda su vida",
+    "Que el pueblo participa en las decisiones de su gobierno",
+    "Que las decisiones las toman los soldados del ejército",
+    "Que cada familia decide sus propias reglas en su casa"
+   ],
+   "correcta": 1,
+   "tip": "Democracia es que el pueblo participa. Nació en Atenas.",
+   "revisada": false,
+   "id": "voc3-hist-10"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"imperio\"?",
+   "opciones": [
+    "Un grupo de comerciantes que viaja de un lugar a otro vendiendo",
+    "Un territorio enorme con muchos pueblos bajo un mismo mando",
+    "Una isla muy lejana donde no vive ninguna persona todavía",
+    "Una ciudad pequeña que se gobierna sola, sin ayuda de nadie"
+   ],
+   "correcta": 1,
+   "tip": "Un imperio junta muchos pueblos bajo un mismo gobierno.",
+   "revisada": false,
+   "id": "voc3-hist-11"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"oficio\"?",
+   "opciones": [
+    "El lugar de la ciudad donde se reúnen los vecinos",
+    "La herramienta principal que usa un trabajador",
+    "El día de la semana en que nadie trabajaba",
+    "El trabajo que una persona sabe hacer y del que vive"
+   ],
+   "correcta": 3,
+   "tip": "El oficio es el trabajo que uno sabe hacer: alfarero, panadero.",
+   "revisada": false,
+   "id": "voc3-hist-12"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"costumbre\"?",
+   "opciones": [
+    "Una fecha importante que se recuerda todos los años",
+    "Un objeto muy antiguo que se guarda y se cuida en un museo",
+    "Algo que un pueblo hace siempre, de la misma manera",
+    "Una regla escrita que obliga a todas las personas por igual"
+   ],
+   "correcta": 2,
+   "tip": "La costumbre es lo que se hace siempre igual, sin que sea ley.",
+   "revisada": false,
+   "id": "voc3-hist-13"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"cuadrícula\" en un mapa?",
+   "opciones": [
+    "Una red de líneas que forma casillas para ubicar cosas",
+    "Una lista con los nombres de todos los lugares que aparecen",
+    "Un dibujo pequeño en una esquina que muestra dónde está el norte",
+    "Un color distinto para cada altura que tiene el terreno"
+   ],
+   "correcta": 0,
+   "tip": "La cuadrícula forma casillas: se dice la columna y la fila.",
+   "revisada": false,
+   "id": "voc3-hist-14"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Cuáles son los cuatro \"puntos cardinales\"?",
+   "opciones": [
+    "Verano, otoño, invierno y primavera",
+    "Norte, sur, este y oeste",
+    "Arriba, abajo, derecha e izquierda",
+    "Cerca, lejos, adentro y afuera"
+   ],
+   "correcta": 1,
+   "tip": "Los puntos cardinales son norte, sur, este y oeste.",
+   "revisada": false,
+   "id": "voc3-hist-15"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"hemisferio\"?",
+   "opciones": [
+    "Cada una de las dos mitades en que se divide la Tierra",
+    "Cada uno de los continentes que hay en el planeta",
+    "Un país muy grande que ocupa parte de dos continentes",
+    "Una línea imaginaria que rodea la Tierra por el medio"
+   ],
+   "correcta": 0,
+   "tip": "Hemisferio es media Tierra. Chile está en el hemisferio sur.",
+   "revisada": false,
+   "id": "voc3-hist-16"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es el \"Ecuador\"?",
+   "opciones": [
+    "El continente que está justo al lado de África",
+    "La línea imaginaria que divide la Tierra en dos mitades",
+    "El punto más al norte que tiene el planeta entero",
+    "La zona con más hielo y con las temperaturas más bajas"
+   ],
+   "correcta": 1,
+   "tip": "El Ecuador es la línea del medio, y parte la Tierra en dos.",
+   "revisada": false,
+   "id": "voc3-hist-17"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué son los \"polos\" de la Tierra?",
+   "opciones": [
+    "Los dos extremos del planeta, donde hace muchísimo frío",
+    "Las dos épocas del año en que llueve con más fuerza",
+    "Los dos océanos que rodean por completo a América",
+    "Las dos ciudades más grandes que existen en el mundo"
+   ],
+   "correcta": 0,
+   "tip": "Los polos son los extremos, el norte y el sur, y son helados.",
+   "revisada": false,
+   "id": "voc3-hist-18"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"continente\"?",
+   "opciones": [
+    "Un país tan ancho que tiene costa en dos océanos distintos",
+    "Una cadena de montañas altas que cruza por varios países",
+    "Una isla muy grande que está rodeada por agua por todos lados",
+    "Una extensión enorme de tierra, como América o África"
+   ],
+   "correcta": 3,
+   "tip": "Los continentes son las grandes extensiones de tierra.",
+   "revisada": false,
+   "id": "voc3-hist-19"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"océano\"?",
+   "opciones": [
+    "Un río muy ancho que desemboca cerca de una ciudad",
+    "Un lago de agua dulce rodeado de montañas altas",
+    "Una masa de agua salada enorme, que separa continentes",
+    "Una zona de la costa donde el agua es poco profunda"
+   ],
+   "correcta": 2,
+   "tip": "Los océanos son las grandes masas de agua salada.",
+   "revisada": false,
+   "id": "voc3-hist-20"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"globo terráqueo\"?",
+   "opciones": [
+    "Un aparato que sirve para medir la temperatura",
+    "Una fotografía del planeta tomada desde el espacio",
+    "Un modelo redondo que representa a toda la Tierra",
+    "Un mapa plano que se puede doblar y guardar"
+   ],
+   "correcta": 2,
+   "tip": "El globo terráqueo es la Tierra hecha modelo, y es redondo.",
+   "revisada": false,
+   "id": "voc3-hist-21"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"zona climática\"?",
+   "opciones": [
+    "Una franja del planeta donde el clima se parece",
+    "El lugar exacto donde se juntan dos continentes",
+    "Un país en que siempre llueve durante todo el año",
+    "Una montaña tan alta que su cima tiene nieve"
+   ],
+   "correcta": 0,
+   "tip": "Las zonas climáticas son franjas con clima parecido.",
+   "revisada": false,
+   "id": "voc3-hist-22"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"paisaje\"?",
+   "opciones": [
+    "La cantidad de personas que viven en un sector",
+    "Todo lo que se ve de un lugar cuando uno lo mira",
+    "El nombre antiguo que tenía una región del país",
+    "El camino más corto que une dos ciudades vecinas"
+   ],
+   "correcta": 1,
+   "tip": "El paisaje es lo que se ve de un lugar.",
+   "revisada": false,
+   "id": "voc3-hist-23"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"valle\"?",
+   "opciones": [
+    "Una zona con muchos árboles muy juntos entre sí",
+    "Un corte profundo por donde pasa el agua del mar",
+    "La parte más alta y puntiaguda de una montaña",
+    "Un terreno plano y bajo que queda entre montañas"
+   ],
+   "correcta": 3,
+   "tip": "El valle es la parte baja y plana entre montañas.",
+   "revisada": false,
+   "id": "voc3-hist-24"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es el \"relieve\" de un lugar?",
+   "opciones": [
+    "La forma que tiene el terreno, con sus alturas y sus bajos",
+    "La cantidad de lluvia que cae en ese lugar durante todo el año",
+    "El conjunto de los caminos que llegan hasta ese lugar y lo cruzan",
+    "La clase de plantas que crecen allí de manera natural, sin sembrar"
+   ],
+   "correcta": 0,
+   "tip": "El relieve es la forma del terreno: montañas, valles, llanuras.",
+   "revisada": false,
+   "id": "voc3-hist-25"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"recurso natural\"?",
+   "opciones": [
+    "Un lugar protegido al que nadie puede entrar",
+    "Una máquina construida para trabajar en el campo",
+    "Una regla que enseña a cuidar el medio ambiente",
+    "Algo que la naturaleza da y las personas aprovechan"
+   ],
+   "correcta": 3,
+   "tip": "El agua, la madera y los minerales son recursos naturales.",
+   "revisada": false,
+   "id": "voc3-hist-26"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"deber\"?",
+   "opciones": [
+    "Algo que a uno le corresponde cumplir",
+    "Algo que uno recibe porque le pertenece",
+    "Algo que se pide prestado por un tiempo",
+    "Algo que se elige hacer solo si uno quiere"
+   ],
+   "correcta": 0,
+   "tip": "El deber es lo que hay que cumplir; el derecho es lo que a uno le toca.",
+   "revisada": false,
+   "id": "voc3-hist-27"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"derecho\" de los niños?",
+   "opciones": [
+    "Un premio que se gana portándose bien en la escuela",
+    "Algo que a todo niño le corresponde y debe respetarse",
+    "Una tarea que hay que cumplir todos los días",
+    "Un permiso que los adultos dan cuando quieren"
+   ],
+   "correcta": 1,
+   "tip": "Los derechos no se ganan ni se prestan: le tocan a todo niño.",
+   "revisada": false,
+   "id": "voc3-hist-28"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "Actuar con \"honestidad\" es...",
+   "opciones": [
+    "cumplir siempre con lo que dice el horario",
+    "hacer las cosas más rápido que el resto",
+    "decir la verdad y no engañar a los demás",
+    "ayudar a quien lo necesita sin que lo pidan"
+   ],
+   "correcta": 2,
+   "tip": "Honestidad es decir la verdad y no engañar.",
+   "revisada": false,
+   "id": "voc3-hist-29"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es la \"solidaridad\"?",
+   "opciones": [
+    "Contar siempre la verdad, aunque a veces cueste harto hacerlo",
+    "Respetar el turno de los demás mientras se juega en grupo",
+    "Cumplir con todas las tareas antes de la fecha que pidieron",
+    "Ayudar a quien lo necesita sin esperar nada a cambio"
+   ],
+   "correcta": 3,
+   "tip": "Solidaridad es ayudar sin esperar nada a cambio.",
+   "revisada": false,
+   "id": "voc3-hist-30"
+  }
+ ],
+ "revisadas": 0
+}

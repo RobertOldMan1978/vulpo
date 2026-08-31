@@ -1,0 +1,36 @@
+{
+ "asignatura": "Vocabulario",
+ "nivel": "3° básico · Todo el curso",
+ "codigo_asignatura": "VOC",
+ "nota_alcance": "DOS áreas y no cuatro, a diferencia de 7° y 8°, y es una decisión medida: Lenguaje de 3° YA cubre vocabulario en su propio currículum —LE03 OA 10 (deducir el significado por contexto y por las raíces de las palabras) y LE03 OA 11 (usar el diccionario), con 30 preguntas cada uno—, así que un área VOC-LENG mediría dos veces lo mismo. Y Matemática de 3° no tiene un vocabulario propio que se sostenga por sí solo a esta edad. Lo que sí NO se pisa con nada, y es el ángulo de este módulo, son las PALABRAS NUEVAS que traen Ciencias e Historia: raíz, germinar, órbita, acueducto, hemisferio. Eso es distinto de la estrategia para deducirlas, que es lo que enseña Lenguaje.",
+ "nota_codigos": "Los códigos son VOC-* igual que en 7° y 8°, a propósito. Los bancos viven en archivos separados, así que no hay colisión; lo que distingue a 3° son los ids de las preguntas (voc3-*). Desde la Sesión 72 el guard de registrarOA excluye del mapa de dominio todo lo que no tenga forma de código curricular, así que estos códigos quedan fuera por estructura y no por una lista escrita a mano.",
+ "nota_evaluacion": "Vocabulario NO es una asignatura del currículum ni sus áreas son Objetivos de Aprendizaje del MINEDUC: es un apoyo transversal del juego. Por eso no aparece en el mapa de dominio del profesor y no debe presentarse a un colegio como cobertura curricular.",
+ "nota_fidelidad": "Las 60 palabras se eligieron leyendo los OA oficiales de ciencias-3basico e historia-3basico, no de una lista externa. Cada una aparece de verdad en el temario del año.",
+ "unidades": [
+  {
+   "id": "V1",
+   "titulo": "Vocabulario del curso",
+   "descripcion": "Palabras clave de Ciencias Naturales e Historia de 3° básico, definidas en lenguaje de niño.",
+   "oa": [
+    "VOC-CIEN",
+    "VOC-HIST"
+   ]
+  }
+ ],
+ "oa": [
+  {
+   "codigo": "VOC-CIEN",
+   "unidad": "V1",
+   "titulo": "Palabras de Ciencias Naturales",
+   "texto": "Vocabulario de las cuatro unidades de Ciencias de 3°: las plantas y su ciclo de vida, el cuidado de los recursos y los alimentos, la luz y el sonido, y el Sistema Solar."
+  },
+  {
+   "codigo": "VOC-HIST",
+   "unidad": "V1",
+   "titulo": "Palabras de Historia y Geografía",
+   "texto": "Vocabulario de las cuatro unidades de Historia de 3°: las civilizaciones griega y romana, la ubicación en el planeta, los paisajes y las zonas climáticas, y los deberes y derechos."
+  }
+ ],
+ "fuente": "Objetivos de Aprendizaje de Ciencias Naturales e Historia, Geografía y Cs. Sociales de 3° básico (MINEDUC)",
+ "url_fuente": "https://www.curriculumnacional.cl/"
+}
