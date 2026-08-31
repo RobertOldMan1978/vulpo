@@ -686,6 +686,32 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
     </div>
   </section>
 
+  <!-- ============ INSCRIPCIÓN POR ENLACE (?inscribir=) ============ -->
+  <section class="screen" id="scr-inscribir">
+    <div class="card" id="insForm">
+      <h3>🎟️ Únete a tu curso</h3>
+      <p style="color:var(--dim);font-weight:800;font-size:13px">
+        Escribe tu nombre y tu apellido, como te conoce tu profesor. Así va a poder
+        ver tu avance junto al de tus compañeros.
+      </p>
+      <input id="insNombre" placeholder="Tu nombre" maxlength="40"
+             style="width:100%;padding:12px;border-radius:12px;border:2px solid var(--violet);
+                    background:#1a1440;color:#fff;font-weight:900;text-align:center;font-size:18px;margin:10px 0">
+      <button class="btn" id="btnInsOk">Entrar</button>
+      <p id="insMsg" style="text-align:center;font-weight:800;font-size:13px;margin-top:10px"></p>
+    </div>
+    <div class="card" id="insListo" hidden>
+      <h3>¡Listo, <span id="insHola"></span>!</h3>
+      <p style="color:var(--dim);font-weight:800;font-size:13px">
+        Este es tu código. Anótalo: con él puedes seguir jugando desde otro teléfono, o
+        recuperar tu avance si se borran los datos de este.
+      </p>
+      <p id="insCodigo" style="text-align:center;font-family:monospace;font-size:22px;
+                font-weight:900;color:var(--gold);letter-spacing:1px;margin:14px 0"></p>
+      <button class="btn" id="btnInsJugar">¡A jugar!</button>
+    </div>
+  </section>
+
   <!-- ============ ELEGIR EXPEDICIÓN ============ -->
   <section class="screen" id="scr-expediciones">
     <div class="logo" style="margin:20px 0 4px">
@@ -1119,7 +1145,8 @@ const AVATARES=["🦁","🐉","🦅","🐺","🦊","🤖","👽","🥷"];
    Las banderas de más abajo eran un solo booleano (QA) y se separaron a propósito,
    porque "desbloquear", "marcar la respuesta" y "no reportar al servidor" son cosas
    distintas y el modo prueba necesita unas sí y otras no:
-     MODO_ABIERTO  ignora los candados entre capítulos          (QA y prueba)
+     CAPS_ABIERTOS ignora los candados entre capítulos          (QA, prueba, experimental)
+     JEFES_ABIERTOS ignora los candados de los jefes            (QA y prueba)
      QA_MARCA      pinta la respuesta correcta                   (solo QA)
      EFIMERO       no mide dominio por OA ni reporta refuerzos   (QA y prueba)
      PRUEBA        además, no escribe en disco ni usa Supabase   (solo prueba)
@@ -1429,7 +1456,31 @@ if(!window.REV) window.REV={activo:false,n:3,marcadas:[],
 REV.init({ activo:REVISION,
            titulo:'VULPO · Revisión de 7° básico',
            volver:function(){ go('scr-expediciones'); } });
-const MODO_ABIERTO=QA||PRUEBA;   // ignora los candados de progresión
+/* MODO_ABIERTO mezclaba DOS preguntas distintas, y el modo experimental las necesita
+   distintas: capítulos abiertos pero jefes cerrados. Mismo corte que la Sesión 41 le
+   hizo a QA. NO cambiar sin volver a sacar la foto de scripts/ (ver el plan de la
+   inscripción por enlace): ?qa=1 y los enlaces de muestra dependen de esto.
+     CAPS_ABIERTOS   ignora los candados entre capítulos y niveles
+     JEFES_ABIERTOS  ignora los candados de los jefes y del Desafío Extra
+   ⚠️ El Desafío Extra va con los JEFES: es la recompensa de haber recorrido todos los
+   capítulos, y además jefeFinalDesbloqueado lo usa como precondición — si se abriera
+   con los capítulos, el Jefe Final de una campaña SIN Desafío Extra se abriría solo. */
+/* ===== Modo experimental (inscripción por enlace) =====
+   Lo fija el CURSO, no el aparato: así un alumno que borra los datos del navegador y
+   vuelve a canjear su ALU- recupera el mismo modo. Pero el juego necesita saberlo
+   ANTES de dibujar nada —CAPS_ABIERTOS se evalúa aquí mismo— y el curso llega del
+   servidor un segundo después. Por eso se recuerda en el disco, y sincronizarModoCurso()
+   lo reconcilia con kimun_mi_curso(): si no calzan, escribe y recarga UNA vez.
+   ⚠️ La clave va escrita a mano y NO con SUFIJO, que se declara ~450 líneas más abajo:
+      leerla aquí sería zona muerta temporal y mataría todo el JavaScript de la app.
+      Es la trampa que ya mordió tres veces esta semana. */
+const EXPER_KEY='kimun_exper_7mo';
+const INSCRIBIR=(PRUEBA||ARMAR)?'':(_PARAMS.get('inscribir')||'').trim().toUpperCase();
+let _exper=false;
+try{ _exper = !PRUEBA && !ARMAR && localStorage.getItem(EXPER_KEY)==='1'; }catch(e){}
+const EXPERIMENTAL=_exper;
+const CAPS_ABIERTOS=QA||PRUEBA||EXPERIMENTAL;
+const JEFES_ABIERTOS=QA||PRUEBA;
 const EFIMERO=QA||PRUEBA;        // no mide dominio por OA ni reporta refuerzos
 const SIN_DISCO=PRUEBA||ARMAR;   // ni localStorage ni Supabase ni intro
 /* Vigencia inclusiva: un enlace con hasta=2026-09-15 sirve todo el 15 y muere el 16. */
@@ -1728,7 +1779,13 @@ const LOGROS={
 function nuevoProgreso(n){n=n||(EXPEDICION?EXPEDICION.length:5);
  // En modo prueba (?solo=) la ruta nace con TODAS las etapas abiertas, jefe del
  // capítulo incluido: el invitado entra a probar cualquiera, no a avanzar en orden.
- return Array.from({length:n},(_,i)=>({est:(PRUEBA||i===0)?"open":"lock",estrellas:0}));}
+ // En modo experimental se abren todas MENOS la del jefe, que sigue pidiendo el camino.
+ // ⚠️ ?qa=1 NO abre etapas y nunca las abrió: por eso la condición mira PRUEBA y no
+ //    CAPS_ABIERTOS, que también vale true en QA.
+ return Array.from({length:n},(_,i)=>{
+  const esJefe=(i===n-1);
+  const abierta = PRUEBA || i===0 || (CAPS_ABIERTOS && !JEFES_ABIERTOS && !esJefe);
+  return {est:abierta?"open":"lock",estrellas:0};});}
 const S={nombre:"",avatar:AVATARES[0],xp:0,nivel:1,monedas:0,
  progreso:nuevoProgreso(), progresoDificil:nuevoProgreso(), dificilDesbloqueado:false,
  skins:[], logros:new Set(), rutas:{},
@@ -1903,15 +1960,15 @@ function expedicionCompleta(id){
 function capsCompletos(camp){return camp.capitulos.filter(expedicionCompleta).length;}
 // ¿está desbloqueado el capítulo i de la campaña? (cap 1 siempre; cap N tras vencer N-1)
 function nodoCampDesbloqueado(camp,i){
- if(MODO_ABIERTO)return true;
+ if(CAPS_ABIERTOS)return true;
  if(i===0)return true;
  const exp=EXPEDICIONES.find(e=>e.id===camp.capitulos[i]);
  if(exp&&exp.libre)return true;   // capítulo marcado como libre (siempre abierto)
  if(i<camp.capitulos.length)return expedicionCompleta(camp.capitulos[i-1]);
  return false;
 }
-function desafioDesbloqueado(camp){return MODO_ABIERTO||camp.capitulos.every(expedicionCompleta);}
-function jefeFinalDesbloqueado(camp){return MODO_ABIERTO||(desafioDesbloqueado(camp)&&(!camp.desafioExtra||expedicionCompleta(camp.desafioExtra)));}
+function desafioDesbloqueado(camp){return JEFES_ABIERTOS||camp.capitulos.every(expedicionCompleta);}
+function jefeFinalDesbloqueado(camp){return JEFES_ABIERTOS||(desafioDesbloqueado(camp)&&(!camp.desafioExtra||expedicionCompleta(camp.desafioExtra)));}
 function campañaCompleta(camp){return S.campañasCompletas.has(camp.id);}
 /* Activa una expedición: fija etapas, carga su pool y apunta el progreso a esa ruta */
 function activarExpedicion(exp){
@@ -2223,6 +2280,7 @@ function finDuelo(){
  pintarInicio();
  if(PRUEBA) setTimeout(VENCIDA?mostrarVencida:arrancarModoPrueba,0);   // tras montar la UI
  if(ARMAR)  setTimeout(arrancarArmador,0);
+ if(INSCRIBIR) setTimeout(arrancarInscripcion,0);
  aplicarMaestria();   // aura dorada si ya es maestro (no depende del servidor)
  // Perfil en el servidor desde el inicio (antes solo se creaba al entrar al duelo).
  // No bloquea: si falla, el juego funciona igual y se reintenta en la próxima sesión.
@@ -2233,6 +2291,9 @@ function finDuelo(){
   if(!p) return;
   if(p.codigo_acceso){ S.alumno = p.nombre; S.nombre = p.nombre; S.avatar = p.avatar; }
   await cargarCurso();
+  // Mientras el alumno escribe su nombre NO se reconcilia: recargar la página bajo
+  // sus dedos le borraría lo escrito.
+  if(!INSCRIBIR) await sincronizarModoCurso(true);
   guardar(); refreshHud(); pintarInicio();
   revisarDesafio();   // muestra el banner del desafío del profe, si hay
   revisarDificil();   // sincroniza la marca 🔥 y otorga premios de Difícil ya logrados
@@ -2540,12 +2601,15 @@ $('btnCanjeOk').onclick=async ()=>{
   await SB.rpc('kimun_xp',{p_xp:S.xp});        // conserva el avance local
   localStorage.removeItem('kimun_rank'+SUFIJO);       // fuera el ranking del curso anterior
   await cargarCurso();
+  // Canjear el ALU- de un curso experimental tiene que traer también su modo: es lo
+  // que hace que sobreviva a borrar los datos del navegador.
+  const cambioModo=await sincronizarModoCurso(false);
   guardar(); refreshHud(); revisarDesafio();
   _rankUlt=0;                                  // el ranking debe volver a consultarse ya, sin esperar los 30 s
   $('canjeMsg').style.color='var(--green)';
   $('canjeMsg').textContent='¡Listo, '+p.nombre+'! Ya estás en '+(S.curso?S.curso.nombre:'tu curso')+'.';
   SND.unlock();
-  setTimeout(cerrarCanje,1600);
+  setTimeout(cambioModo?recargarPorModo:cerrarCanje,1600);
  }catch(e){
   $('canjeMsg').style.color='var(--pink)';
   $('canjeMsg').textContent=(e.message||'').includes('codigo_invalido')
@@ -2553,6 +2617,81 @@ $('btnCanjeOk').onclick=async ()=>{
     : 'No se pudo conectar. Intenta de nuevo.';
  }
 };
+
+/* ===== Inscripción por enlace (?inscribir=) ===== */
+/* Reconcilia el modo del curso con lo que el juego leyó del disco al arrancar.
+   Devuelve true si quedaron distintos, es decir si hace falta recargar. */
+async function sincronizarModoCurso(recargar){
+ if(!SB||SIN_DISCO) return false;
+ try{
+  const {data,error}=await SB.rpc('kimun_mi_curso');
+  if(error) throw error;
+  const fila=Array.isArray(data)?data[0]:data;
+  const real=!!(fila&&fila.experimental);
+  try{ localStorage.setItem(EXPER_KEY, real?'1':'0'); }catch(e){}
+  if(real===EXPERIMENTAL){ try{ sessionStorage.removeItem(EXPER_KEY+'_rc'); }catch(e){} return false; }
+  if(recargar) recargarPorModo();
+  return true;
+ }catch(e){ console.error('Modo del curso:',e.message||e); return false; }   // best-effort
+}
+/* Una sola recarga por pestaña. Si algo saliera mal —el servidor devolviendo una cosa
+   y el disco guardando otra— el guard evita que el juego quede recargándose en bucle,
+   que es peor que quedarse con el modo viejo. */
+function recargarPorModo(){
+ try{
+  if(sessionStorage.getItem(EXPER_KEY+'_rc')==='1') return;
+  sessionStorage.setItem(EXPER_KEY+'_rc','1');
+ }catch(e){ return; }
+ location.reload();
+}
+function arrancarInscripcion(){
+ $('nav').style.display='none';          // la barra inferior no va encima de esta pantalla
+ $('insForm').hidden=false; $('insListo').hidden=true;
+ $('insMsg').textContent=''; $('insNombre').value=S.nombre||'';
+ go('scr-inscribir');
+}
+/* Los tres fallos se dicen distinto a propósito: un mensaje genérico deja al apoderado
+   sin saber si el enlace está mal, si se cerró o si llegó tarde, y las tres cosas se
+   resuelven de manera distinta. */
+const INS_ERRORES={
+ token_invalido:'Ese enlace no existe. Pídele a tu profesor el enlace correcto.',
+ enlace_cerrado:'Este enlace ya está cerrado. Avísale a tu profesor.',
+ sin_cupo:'Este enlace ya se llenó. Avísale a tu profesor para que abra otro.',
+ nombre_invalido:'Escribe tu nombre completo (entre 2 y 40 letras).'
+};
+$('btnInsOk').onclick=async ()=>{
+ SND.tap();
+ const nom=($('insNombre').value||'').trim(), msg=$('insMsg');
+ if(nom.length<2){msg.style.color='var(--pink)';msg.textContent='Escribe tu nombre.';return;}
+ if(!SB){msg.style.color='var(--pink)';msg.textContent='Necesitas conexión a internet.';return;}
+ msg.style.color='var(--dim)';msg.textContent='Entrando…';
+ try{
+  await conectarKimun();                       // asegura sesión anónima
+  const {data,error}=await SB.rpc('kimun_inscribirse',
+    {p_token:INSCRIBIR,p_nombre:nom,p_avatar:S.avatar||'🦊'});
+  if(error) throw error;
+  const p=Array.isArray(data)?data[0]:data;
+  MI_PERFIL=p;
+  S.alumno=p.nombre; S.nombre=p.nombre; S.avatar=p.avatar;
+  guardar();
+  // El modo lo manda el CURSO y no el enlace: un profesor puede abrir un enlace de
+  // inscripción sin marcar el modo experimental. Se pregunta, no se supone. Sin
+  // recargar todavía: primero el alumno tiene que ver su código.
+  await sincronizarModoCurso(false);
+  $('insHola').textContent=p.nombre;
+  $('insCodigo').textContent=p.codigo_acceso||'';
+  $('insForm').hidden=true; $('insListo').hidden=false;
+  SND.unlock();
+ }catch(e){
+  const m=''+(e.message||''), k=Object.keys(INS_ERRORES).find(x=>m.includes(x));
+  msg.style.color='var(--pink)';
+  msg.textContent=k?INS_ERRORES[k]:'No se pudo conectar. Intenta de nuevo.';
+ }
+};
+/* Entra al juego por la puerta principal y SIN el ?inscribir= en la barra de
+   direcciones: así una recarga no vuelve a esta pantalla, y el juego arranca leyendo
+   del disco el modo que se acaba de escribir. */
+$('btnInsJugar').onclick=()=>{SND.tap();location.replace(location.pathname);};
 
 /* ===== Mapa de campaña (Nivel 2) ===== */
 let CAMP_ACT=null;

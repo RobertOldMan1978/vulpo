@@ -346,6 +346,14 @@ arriba del archivo, no como condiciones sueltas repartidas por el código.
 | `HAY_SINFIN` | Si Matemática ofrece el **Reto Sin Fin** de `assets/js/calculo.js`. Gobierna el nodo del mapa y la llamada `CALC.init` | ❌ | ✅ | ✅ |
 | `HAY_DIFICIL` | Si el nivel ofrece **Modo Difícil**, y con él las insignias 🔥, la skin de Maestro y la Maestría Total. ⚠️ Se declara **pegada a `DIF_ASIGS`** y no con las demás: la consulta `revisarDificil()`, que corre en el arranque | ✅ | ✅ | ❌ |
 | `SIN_RELOJ` | Quiz sin cuenta regresiva y sin selector Normal/Difícil | ❌ | ❌ | ✅ |
+| `EXPERIMENTAL` | **No es de nivel sino del CURSO**: lo enciende la inscripción por enlace. Se lee del disco al arrancar y lo reconcilia `sincronizarModoCurso()`. Gobierna `CAPS_ABIERTOS` | según el curso | según el curso | según el curso |
+
+`MODO_ABIERTO` se partió en **`CAPS_ABIERTOS`** (ignora los candados entre capítulos y
+niveles: QA, modo prueba y experimental) y **`JEFES_ABIERTOS`** (ignora los de los jefes y
+el Desafío Extra: solo QA y modo prueba). Es el mismo corte que la Sesión 41 le hizo a `QA`.
+⚠️ **El Desafío Extra va con los JEFES**: `jefeFinalDesbloqueado` lo usa como precondición,
+así que si se abriera con los capítulos, el Jefe Final de una campaña **sin** Desafío Extra
+—Ciencias— se abriría solo.
 
 Cada bandera va **pegada a su comentario**, que explica qué pasa si se pone mal. Una bandera cuyo
 porqué vive catorce líneas más arriba no cumple su único propósito, que es **obligar a responder
@@ -835,6 +843,37 @@ para siempre.
     constructores de cada app** — el mismo punto ciego que ya causó dos bugs silenciosos (el `oa`
     en la Sesión 23 y el `visual` en la 55). Al tocar un constructor, revisar que no se caiga un
     campo.
+
+- **`?inscribir=<token>` — Inscripción por enlace (modo experimental):** un solo enlace
+  al chat del curso; cada persona escribe su nombre, se crea sola en un curso que el
+  profesor ya abrió, recibe su código `ALU-` y **su avance se registra como el de
+  cualquier alumno** (XP, mapa de dominio, participación, refuerzos). El enlace lo genera
+  el profesor desde su panel, con su **cupo**, y cada curso tiene **uno vivo a la vez**
+  (índice único en la base): crear otro cierra el anterior.
+  - **⚠️ El enlace ES la credencial, y abre el producto completo.** Un `ALU-` filtrado
+    regala un cupo; este enlace reenviado fuera del chat los regala todos hasta llenarse.
+    Por eso el cupo se ajusta al grupo y no se deja holgado. **No hay revocación por
+    persona**, solo cerrar el enlace.
+  - **El "modo experimental" es propiedad del CURSO, no del enlace ni del aparato**
+    (`cursos.experimental`), y lo marca el profesor al crearlo. Abre **todos los
+    capítulos** y deja **cerrados los jefes** —el de cada capítulo y el Jefe Final—, para
+    que alguien pueda recorrer el contenido sin jugarse el año en orden pero conservando
+    la meta. Que viva en el curso es lo que hace que **sobreviva a borrar los datos del
+    navegador**: al re-canjear el `ALU-` vuelve solo.
+  - **Cómo llega ese modo al juego, que es la parte delicada:** `CAPS_ABIERTOS` se evalúa
+    al cargar el archivo y el curso llega del servidor un segundo después, así que el modo
+    se **recuerda en `localStorage`** (`kimun_exper`, `kimun_exper_7mo`, `kimun_exper_3ro`)
+    y `sincronizarModoCurso()` lo reconcilia con `kimun_mi_curso()`: si no calzan, escribe
+    y **recarga una sola vez** (guard en `sessionStorage`, para que un desacuerdo no deje
+    la página recargándose en bucle). El servidor siempre gana.
+  - **Los nombres dejan de venir verificados**: los escribe el alumno. `perfiles.autoinscrito`
+    los marca, y el panel muestra "se inscribió solo" junto a su XP.
+  - **Los tres fallos se dicen distinto** —enlace que no existe, enlace cerrado, sin cupo—
+    porque las tres cosas se resuelven de manera distinta y un mensaje genérico deja al
+    apoderado sin saber cuál le tocó.
+  - **Enlace por nivel**: cada curso es una app distinta, así que el enlace lleva la ruta
+    adentro (`vulpo.cl/3ro/?inscribir=INS-XXXXXXXX`). El selector del panel sale de
+    `NIVELES_MUESTRA`, el mismo del armador: sumar un curso nuevo sigue siendo una línea.
 
 #### Modelo de acceso (la "puerta")
 
@@ -5509,3 +5548,119 @@ con el porqué escrito encima para que nadie la "ordene" de vuelta junto a las o
   arranca en cuanto el dispositivo queda vinculado a un perfil con curso.
   La pieza de motor es partir `MODO_ABIERTO` en **`CAPS_ABIERTOS`** y **`JEFES_ABIERTOS`** — el
   mismo corte que la Sesión 41 le hizo a `QA`.
+
+### Sesión 73 (2026-08-30) — La inscripción por enlace único, implementada
+Se ejecutó el plan que la Sesión 72 dejó diseñado: **un enlace al chat del curso**, cada
+persona se crea sola en un curso que el profesor ya abrió, recibe su código `ALU-` y su
+avance se registra como el de cualquier alumno. **No se tocó contenido**: ni un banco, ni
+una pregunta, ni un clip de voz.
+
+**El punto que parecía más grande no había que construirlo.** "Que se registren sus
+resultados" ya funcionaba solo: en cuanto un dispositivo queda vinculado a un perfil con
+curso, el XP, el mapa de dominio, la participación y los refuerzos empiezan a llegar sin
+tocar nada. Lo que faltaba era la puerta de entrada.
+
+#### El corte de motor: `MODO_ABIERTO` se partió en dos
+
+Mezclaba **dos preguntas distintas** —¿ignoro los candados entre capítulos? ¿y los de los
+jefes?— y el modo experimental las necesita distintas: **capítulos abiertos, jefes
+cerrados**. Es el mismo corte que la Sesión 41 le hizo a `QA`, que mezclaba cuatro cosas.
+
+- **`CAPS_ABIERTOS`** = QA, modo prueba y experimental.
+- **`JEFES_ABIERTOS`** = solo QA y modo prueba.
+- `nuevoProgreso` abre todas las etapas **menos la del jefe** cuando el modo es experimental.
+
+**Antes de tocar nada se sacó una foto** de los tres cursos en los tres modos (normal,
+`?qa=1`, `?solo=`) con `scripts/cdp.mjs`, y después se comparó contra ella. `?qa=1` y los
+enlaces de muestra ya están repartidos: no pueden cambiar de comportamiento.
+
+> ⚠️ **El Desafío Extra va con los JEFES, no con los capítulos.** `jefeFinalDesbloqueado`
+> lo usa como precondición, así que enrutarlo a `CAPS_ABIERTOS` habría **abierto solo** el
+> Jefe Final de Ciencias, que es la campaña sin Desafío Extra. Se detectó leyendo la
+> cadena de dependencias antes de escribir, no después.
+
+#### Tres cosas que el plan no había visto, y las tres eran del servidor
+
+1. **`EXPERIMENTAL` no podía salir de `cargarCurso`.** El plan decía "que `cargarCurso`
+   traiga `experimental`", pero esa función usa `kimun_ranking`, que no lo lleva, y sobre
+   todo **corre después**: `CAPS_ABIERTOS` se evalúa al cargar el archivo. Se resolvió con
+   **`kimun_mi_curso()`**, el modo **recordado en `localStorage`** y `sincronizarModoCurso()`
+   reconciliándolo: si no calzan, escribe y **recarga una sola vez** (guard en
+   `sessionStorage`, para que un desacuerdo no deje la página recargándose en bucle). El
+   servidor siempre gana. Que el modo viva en el **curso** y no en el aparato es lo que hace
+   que sobreviva a borrar los datos del navegador.
+2. **Los tres mensajes de error exigían tocar el servidor.** El `update` atómico funde los
+   tres casos en `sin_cupo`, y el cliente **no puede** separarlos: `inscripciones` tiene RLS
+   sin políticas. El diagnóstico corre **solo en la rama de fallo**, cuando ya se sabe que no
+   se tomó ningún cupo, así que la atomicidad queda intacta.
+3. **Marcar a los autoinscritos, también.** `perfiles` no registraba cómo se creó un perfil.
+   Columna `perfiles.autoinscrito`, que `kimun_inscribirse` pone en `true` y
+   `kimun_prof_listar` devuelve. **No es cosmético:** los nombres que escribe el profesor
+   vienen verificados y los que escribe un niño en un formulario público, no.
+
+> **Error propio de planificación, y se paga en viajes de Roberto:** el schema se mandó a
+> producción **tres veces** en la misma sesión porque estas tres cosas aparecieron al
+> implementar y no al diseñar. Lo que había que hacer era medir el camino del dato —de dónde
+> sale `experimental`, quién puede leer `inscripciones`— **antes** de escribir el plan.
+
+#### La atomicidad del cupo, que es lo único que no admite un error
+
+```sql
+update public.inscripciones set usados = usados + 1
+ where token = tok and activo and usados < cupo
+ returning curso_id into cid;
+```
+
+Una sola sentencia. PostgreSQL vuelve a evaluar ese `where` **después** de tomar el candado
+de la fila, así que dos sesiones simultáneas no pueden pasar las dos. Con un `select` y
+después un `update` sí podrían — y veinte inscripciones simultáneas es exactamente lo que
+pasa cuando el enlace cae en el chat del curso.
+
+**`supabase/probar-inscripcion.sql` (nuevo)** crea un curso de prueba, intenta tomar el cupo
+20 veces contra un cupo de 10, comprueba que pasan 10 y **borra lo que creó**. El archivo
+dice de frente qué prueba y qué no: una sesión de SQL no simula veinte teléfonos; contra eso
+responde la forma de la sentencia, no el test.
+
+#### El panel
+
+Un desplegable por curso con el cupo, la casilla del modo experimental, el enlace listo para
+copiar y **"N de M se inscribieron"**. Un solo enlace vivo por curso, garantizado por un
+índice único parcial en la base —no por el panel, que se puede tener abierto en dos
+pestañas—: crear otro cierra el anterior. El **selector de nivel** sale de `NIVELES_MUESTRA`,
+el mismo del armador, así que sumar un curso nuevo sigue siendo una línea.
+
+#### Verificación (con `cdp.mjs`, jugando)
+
+- **Sin `?inscribir=` el juego sale idéntico a la foto**: `prog5:"o...."`, un capítulo
+  abierto por campaña, jefes cerrados. Es la comprobación que protege los enlaces repartidos.
+- Con `?inscribir=` aparece la pantalla en los tres cursos y un token falso contra el
+  servidor **de verdad** devuelve su mensaje (camino de solo lectura, no escribe nada).
+- Con el modo experimental: `CAPS_ABIERTOS` sí, `JEFES_ABIERTOS` no, `prog5:"oooo."`, todos
+  los capítulos abiertos y Jefe Final y Desafío Extra cerrados. En 3° se comprobó jugando:
+  **8 de 9 nodos**. Y no se recarga en bucle.
+- El panel a **375 px sin desborde**, que es donde ya falló en la Sesión 26.
+- Los tres cursos juegan una etapa real, el guardado de 8° queda intacto, **cero 404 y cero
+  errores de consola**.
+
+> **Un tropiezo de método que vale registrar:** en 3° el arranque **ya había corrido** cuando
+> `ev.ir()` devolvió —la página carga tarde, con sus manifiestos de voz—, así que el doble de
+> Supabase llegaba después del `setTimeout(…,1200)` y parecía que la reconciliación no
+> funcionaba en ese curso. No era el producto: era la prueba. **En una página pesada, `load`
+> no es el principio de la vida de la página.** Se probó entonces por el otro lado —sembrando
+> la bandera en disco— y salió correcto.
+
+#### Qué NO se hizo, a propósito
+
+- **El enlace de muestra (`?solo=`, `?m=`) no cambió.** El opt-in en tiempo de apertura sería
+  blando: VULPO es estático. La decisión de qué contenido entra se sigue tomando **al
+  construir** el enlace.
+- **No hay revocación por persona.** Un enlace repartido vive hasta que se cierra o se llena.
+  Revocar de verdad exigiría identidad por invitado, y no es lo que se pidió.
+
+#### Lo que queda de esto para Roberto
+
+Re-aplicar `supabase/schema.sql` (la consulta de comprobación son ahora **7 filas**), correr
+`supabase/probar-inscripcion.sql`, y la prueba de **aislamiento entre profesores**, que
+necesita dos cuentas reales. Mientras tanto, **los códigos `ALU-` funcionan igual que
+siempre**: la inscripción por enlace es una puerta adicional, no un reemplazo.
+

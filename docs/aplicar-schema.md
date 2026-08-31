@@ -13,6 +13,8 @@ puede ejecutar cambios de estructura).
 | **2026-08-26** | `MA03` y `HI03` (Sesiones 58 y 59) | Sí, con la consulta de 3 filas de esa sesión |
 | **2026-08-27** | `LE03` y `CN03` (Sesión 61) | — |
 | **2026-08-27** | Los cuatro códigos de 7° básico: `HI07`, `MA07`, `CN07`, `LE07` (Sesión 62) | Sí: `kimun_oa_asignatura` resuelve los cuatro contra producción, y 8° y 3° siguen intactos |
+| **2026-08-30** | La **inscripción por enlace**, primera tanda: tabla `inscripciones`, columna `cursos.experimental`, índice de un solo enlace vivo por curso y las cuatro funciones | Sí: las **6 filas en `ok`**, incluida la que comprueba que el generador de tokens NO es ejecutable por `anon` |
+| **2026-08-30** | La misma feature, segunda tanda: los **tres fallos distinguidos** en `kimun_inscribirse` (enlace que no existe / cerrado / sin cupo) y la columna `perfiles.autoinscrito`, que `kimun_prof_listar` devuelve | **PENDIENTE** — re-aplicar y correr la consulta de abajo, que ahora son **7 filas** |
 
 > **`schema.sql` NO tiene nada pendiente de aplicar.** Su última modificación es del **27/08 a
 > las 10:41** (Sesión 62, los códigos de 7°) y se aplicó ese mismo día; las Sesiones 63, 64 y 65
@@ -111,6 +113,65 @@ select * from (
 | 3 Firma | `p_perfil uuid` | Si dice `text`, quedó la versión antigua de la Sesión 39 |
 | 4 Clave admin | `0 filas` | No llegó al final del archivo |
 | 5 Funciones | ~50 | Muy por debajo: se cortó a medio camino |
+
+## Comprobación de la inscripción por enlace (30/08/2026)
+
+La consulta general de arriba **no la cubre**: cuenta funciones y RLS en bloque, así que daría
+`ok` aunque faltara la tabla nueva. Va en **una sola sentencia** porque el SQL Editor de Supabase
+ejecuta todo pero **solo muestra el resultado de la última**.
+
+```sql
+select 'tabla inscripciones' as que,
+       case when to_regclass('public.inscripciones') is not null then 'ok' else 'FALTA' end as estado
+union all
+select 'columna cursos.experimental',
+       case when exists(select 1 from information_schema.columns
+                        where table_schema='public' and table_name='cursos'
+                          and column_name='experimental') then 'ok' else 'FALTA' end
+union all
+select 'un solo enlace vivo por curso',
+       case when exists(select 1 from pg_indexes
+                        where indexname='idx_inscripcion_activa_curso') then 'ok' else 'FALTA' end
+union all
+select 'las 4 funciones',
+       case when (select count(*) from pg_proc
+                   where proname in ('kimun_inscribirse',
+                                     'kimun_prof_inscripcion_crear',
+                                     'kimun_prof_inscripcion_estado',
+                                     'kimun_mi_curso')) = 4
+            then 'ok' else 'FALTAN' end
+union all
+select 'RLS en inscripciones',
+       case when (select relrowsecurity from pg_class
+                   where relname='inscripciones') then 'ok' else 'FALTA' end
+union all
+select 'el generador NO es publico',
+       case when has_function_privilege('anon','public.kimun_gen_codigo_inscripcion()','execute')
+            then 'MAL: es ejecutable por anon' else 'ok' end
+union all
+select 'los tres fallos se distinguen',
+       case when (select count(*) from pg_proc p
+                   where p.proname='kimun_inscribirse'
+                     and p.prosrc like '%token_invalido%'
+                     and p.prosrc like '%enlace_cerrado%') = 1
+            then 'ok' else 'FALTA: re-aplica schema.sql' end
+union all
+select 'marca de autoinscrito',
+       case when exists(select 1 from information_schema.columns
+                        where table_schema='public' and table_name='perfiles'
+                          and column_name='autoinscrito') then 'ok' else 'FALTA' end;
+```
+
+**Las siete filas tienen que decir `ok`.** La última importa más de lo que parece: PostgreSQL
+otorga EXECUTE a PUBLIC por defecto, así que **omitir una función del `grant` no la protege** —
+hay que revocarla explícitamente. Es una trampa que este proyecto ya pagó en la Sesión 19.
+
+### Y una vez, la prueba del cupo
+
+`supabase/probar-inscripcion.sql` crea un curso de prueba, intenta tomar el cupo 20 veces
+contra un cupo de 10, comprueba que solo pasan 10 y **borra lo que creó**. Sus 2 filas
+tienen que decir `ok`. El propio archivo explica qué prueba y qué no (una sesión de SQL no
+puede simular veinte teléfonos a la vez; lo que responde a eso es la forma de la sentencia).
 
 ## Comprobación extra cuando el cambio trae un NIVEL nuevo
 

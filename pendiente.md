@@ -87,6 +87,46 @@ comprobado corriéndolo dos veces seguidas sin que toque un byte.
 
 ---
 
+## Para lanzar con un curso REAL (medido el 30/08/2026)
+
+Esto no es un bloque del roadmap: es la lista corta de lo que hay entre hoy y un curso jugando.
+
+**Bloquea de verdad:**
+
+1. **La puerta cierra el 1 de septiembre** en los tres cursos (`FECHA_PUERTA='2026-09-01'`).
+   Desde ese día, sin credencial solo se juega la demo (`hist-cap1` / `hist7-cap1` /
+   `mat3-cap1`). O sea que **el curso tiene que entrar con credencial desde el primer día**.
+2. **Elegir la puerta de entrada**, que son dos y no equivalen:
+   - **Códigos `ALU-`** — funciona hoy, sin tocar nada. Se crea el curso, se pega la lista con
+     "Cargar varios de una vez" y se reparte un código a cada uno. Un código perdido deja a un
+     alumno fuera, pero **nadie más entra**.
+   - **Enlace de inscripción** — más cómodo (uno al chat, cada uno escribe su nombre), pero
+     **el enlace ES la credencial**: reenviado, entra cualquiera hasta llenar el cupo, y no hay
+     revocación por persona. Necesita el schema re-aplicado. Ver A17.
+3. **Publicar.** Nada existe en `vulpo.cl` hasta el commit + push: GitHub Pages sirve de `main`.
+
+**Del día, según el curso:**
+
+- **Si es 7°**, la conversación sobre `CN07 OA 01/02/03` va **antes** de repartir el enlace
+  (ver A4). El armador (`?armar=1`) marca esos capítulos en rojo, justamente para poder
+  mostrárselos.
+- **Confirmar la foto semanal** el lunes siguiente (A6).
+
+**No bloquea, pero hay que decirlo antes de que lo descubran:**
+
+- **Los 60 sin aprobar de Historia de 3° SÍ se juegan.** El juego nunca lee el campo
+  `revisada` —cero apariciones en los tres `index.html`—, así que `HI03 OA 01` ("Vivir en
+  Grecia") y `HI03 OA 08` ("Climas y paisajes") están en el mapa como cualquier etapa. Son
+  ~15 min de tablero.
+- **No funciona sin internet**, ni la primera carga ni los bancos.
+- **El progreso local es del teléfono**, no del alumno: monedas, skins y avance de campaña
+  viven en `localStorage`; al servidor suben el XP y el dominio por objetivo. Dos hermanos en
+  el mismo tablet comparten avance aunque tengan XP distinto en el ranking.
+
+**Los trámites bloquean COBRAR, no jugar:** un piloto gratuito no necesita ni la SpA ni INAPI.
+
+---
+
 ## Bloque A · Cerrar los tres cursos que ya existen
 
 Para poder decir "tengo 3°, 7° y 8°". Es el hito más cercano y el de mejor relación esfuerzo/valor.
@@ -108,6 +148,8 @@ Para poder decir "tengo 3°, 7° y 8°". Es el hito más cercano y el de mejor r
 | ~~A13~~ | ~~**Reto Sin Fin en 3°**~~ ✅ **HECHO (28/08)**: **sin reloj**, medido por escalones. Encaja mejor que en 7°: no es un extra sino la práctica de `MA03 OA 04` (cálculo mental hasta 100), `OA 08` (tablas) y `OA 09` (división). Sin banco, sin voz nueva, sin sumar horas de aprobación | — | — |
 | A14 | **Vocabulario en 3°: decidir si va.** (Absorbe a la antigua A10, que era la misma tarea dada por decidida.) Medido, se solapa con su propio currículum —`LE03 OA 10` (significado por contexto y raíces) y `OA 11` (diccionario) ya tienen 30 preguntas cada uno—, y costaría ~120 preguntas + ~600 clips de voz + horas de aprobación. El ángulo que NO se pisa sería otro: las palabras nuevas que aparecen en Ciencias e Historia de 3°, que es distinto de *la estrategia* para deducirlas | decisión | Roberto decide |
 | ~~A7~~ | ~~**Marcar el contenido sensible en el armador**~~ ✅ **HECHO (28/08, Sesión 67)**: `assets/js/sensible.js` (mapa de los 20 OA + 5 categorías) + leyenda/emojis/resumen en `arrancarArmador` de las tres apps. La decisión se toma al construir el enlace (la casilla por capítulo es el control); el enlace de venta no cambió. Verificado con `cdp.mjs`, cero consola / cero 404 | — | — |
+
+| A17 | **Inscripción por enlace único (modo experimental).** Un enlace al chat del curso: cada persona escribe su nombre, se crea sola en un curso que Roberto ya abrió, recibe su `ALU-` y su avance se registra. **Código: HECHO** (backend, pantalla del juego en los tres cursos, bloque del panel, `?inscribir=`). **Falta de Roberto:** (1) **re-aplicar `supabase/schema.sql`** y correr la consulta de 7 filas de `docs/aplicar-schema.md`; (2) correr `supabase/probar-inscripcion.sql` (2 filas en `ok`); (3) la prueba de **aislamiento entre profesores**, que necesita dos cuentas reales | ~10 min | Roberto |
 
 **Las portadas de capítulo siguen prestadas a propósito.** Son ~46 imágenes más para una
 diferencia que casi nadie mira; el Jefe Final es donde el préstamo chirría.

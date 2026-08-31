@@ -40,6 +40,10 @@ textarea{resize:vertical;line-height:1.4;font-weight:600}
 .msg{text-align:center;font-size:13px;margin-top:8px;min-height:18px}
 .hide{display:none}
 code{color:var(--cyan);font-weight:900}
+/* Marca del alumno que se inscribio solo: su nombre NO lo escribio el profesor. Va en
+   la linea de abajo, no junto al nombre: la fila de arriba es la que desbordo a 375 px
+   en la Sesion 26 y no se le suma nada. */
+.ins-chip{color:var(--gold);font-weight:900}
 /* El triángulo por omisión del desplegable se oculta: la fila del mapa ya se ve
    pulsable, y en WebKit "list-style:none" por sí solo no lo quita. */
 .oa-fila>summary::-webkit-details-marker{display:none}
@@ -400,7 +404,7 @@ async function pintarLista(){
                   ${c.gestiono?`<button class="ico ico-del del" data-cod="${esc(a.codigo_acceso)}"
                           title="Eliminar alumno">✕</button>`:''}
                 </div>
-                <div class="alu-sub">${a.codigo_acceso?`<code>${esc(a.codigo_acceso)}</code> · `:''}${esc(a.xp)} XP</div>
+                <div class="alu-sub">${a.codigo_acceso?`<code>${esc(a.codigo_acceso)}</code> · `:''}${esc(a.xp)} XP${a.autoinscrito?` · <span class="ins-chip" title="Se inscribió por el enlace: este nombre lo escribió el alumno, no tú">se inscribió solo</span>`:''}</div>
               </div>`).join('')
              : '<p style="color:var(--dim);font-size:12px">Sin alumnos todavía.</p>'}
             ${c.gestiono?`<div style="margin-top:8px">
@@ -415,6 +419,12 @@ async function pintarLista(){
             </details>`:''}
           </div>
         </details>
+        ${c.gestiono?`<details class="inscripcion" data-cod="${esc(cod)}" style="margin-top:6px">
+          <summary style="cursor:pointer;color:var(--green);font-size:13px;font-weight:800;list-style:none">🔗 Enlace de inscripción</summary>
+          <div class="inscripcion-cuerpo" data-cod="${esc(cod)}">
+            <p style="color:var(--dim);font-size:12px;margin:6px 0">Cargando…</p>
+          </div>
+        </details>`:''}
         ${c.gestiono?`<details class="equipo" data-cod="${esc(cod)}" style="margin-top:6px">
           <summary style="cursor:pointer;color:var(--violet);font-size:13px;font-weight:800;list-style:none">👥 Equipo del curso</summary>
           <div class="equipo-cuerpo" data-cod="${esc(cod)}">
@@ -436,6 +446,9 @@ async function pintarLista(){
     if(aluAbiertos.has(cod)){ const a=d.querySelector('details.alumnos'); if(a) a.open=true; }
   });
   // El equipo del curso se pide la primera vez que se abre su desplegable (carga perezosa).
+  document.querySelectorAll('details.inscripcion').forEach(det => det.addEventListener('toggle', () => {
+    if(det.open && !det.dataset.cargado){ det.dataset.cargado='1'; cargarInscripcion(det.dataset.cod); }
+  }));
   document.querySelectorAll('details.equipo').forEach(det => det.addEventListener('toggle', () => {
     if(det.open && !det.dataset.cargado){ det.dataset.cargado='1'; cargarEquipo(det.dataset.cod); }
   }));
@@ -564,6 +577,70 @@ function conectarAcciones(){
     b=>b.onclick=()=>verAvance(b.dataset.cod, b.dataset.nom, b.dataset.gestiono==='1'));
   document.querySelectorAll('.avalum').forEach(
     b=>b.onclick=()=>verAvanceAlumno(b.dataset.pid, b.dataset.nom));
+}
+
+/* ===== Enlace de inscripción del curso (jefe/admin) =====
+   Un solo enlace vivo por curso, garantizado por un índice único en la base: crear uno
+   nuevo cierra el anterior, que es lo que uno espera al pedir otro. */
+async function cargarInscripcion(cursoCodigo){
+  const caja=document.querySelector('.inscripcion-cuerpo[data-cod="'+cursoCodigo+'"]');
+  if(!caja) return;
+  caja.innerHTML='<p style="color:var(--dim);font-size:12px">Cargando…</p>';
+  let fila=null;
+  try{
+    const {data,error}=await SB.rpc('kimun_prof_inscripcion_estado',{p_curso_codigo:cursoCodigo});
+    if(error) throw error; fila=(data&&data.length)?data[0]:null;
+  }catch(e){ caja.innerHTML='<p style="color:var(--pink);font-size:12px">'+errorPanel(e)+'</p>'; return; }
+
+  const opciones=NIVELES_MUESTRA.map(n=>`<option value="${n.ruta}">${n.nombre}</option>`).join('');
+  caja.innerHTML =
+    (fila?`<p style="font-size:12px;margin:6px 0">
+             <b style="color:var(--green)">${fila.usados} de ${fila.cupo}</b> se inscribieron ·
+             ${fila.experimental?'modo experimental (capítulos abiertos, jefes cerrados)':'juego normal'}</p>
+           <label style="font-size:12px;color:var(--dim)">Nivel al que lleva el enlace
+             <select class="ins-nivel">${opciones}</select></label>
+           <input class="ins-url" readonly>
+           <button class="btn sec ins-copiar">Copiar enlace</button>`
+        :`<p style="color:var(--dim);font-size:12px;margin:6px 0">Este curso todavía no tiene enlace.</p>`)
+  + `<details style="margin-top:8px">
+       <summary style="cursor:pointer;color:var(--cyan);font-size:13px;font-weight:800;list-style:none">${
+         fila?'♻️ Crear otro enlace (cierra el de arriba)':'➕ Crear el enlace'}</summary>
+       <p style="color:var(--dim);font-size:12px;margin:6px 0">
+         ⚠️ El enlace <b>es</b> la credencial: quien lo reciba entra al curso hasta llenar el
+         cupo. Ajústalo al grupo en vez de dejarlo holgado.</p>
+       <label style="font-size:12px;color:var(--dim)">Cupo
+         <input class="ins-cupo" type="number" min="1" max="500" value="${fila?fila.cupo:30}"></label>
+       <label style="display:block;font-size:12px;color:var(--dim);margin:6px 0">
+         <input class="ins-exper" type="checkbox" style="width:auto;margin-right:6px" ${
+           fila&&fila.experimental?'checked':''}>
+         Modo experimental: todos los capítulos abiertos y los jefes cerrados</label>
+       <button class="btn sec ins-crear">Crear enlace</button>
+     </details>`;
+
+  const sel=caja.querySelector('.ins-nivel'), url=caja.querySelector('.ins-url');
+  function pintarUrl(){ if(url&&sel&&fila) url.value=location.origin+sel.value+'?inscribir='+fila.token; }
+  pintarUrl();
+  if(sel) sel.onchange=pintarUrl;
+  const cop=caja.querySelector('.ins-copiar');
+  if(cop) cop.onclick=async ()=>{
+    try{ await navigator.clipboard.writeText(url.value); aviso('Enlace copiado'); }
+    // Si el navegador bloquea el portapapeles, se selecciona para copiar a mano, en vez
+    // de dejar un botón que aparenta funcionar (mismo criterio que el armador).
+    catch(e){ url.focus(); url.select(); aviso('Cópialo con Ctrl+C'); }
+  };
+  caja.querySelector('.ins-crear').onclick=async ()=>{
+    const cupo=parseInt(caja.querySelector('.ins-cupo').value,10);
+    const exp=caja.querySelector('.ins-exper').checked;
+    if(!(cupo>=1&&cupo<=500)){ aviso('El cupo va entre 1 y 500.'); return; }
+    if(fila && !confirm('Esto cierra el enlace actual: quien todavía no lo haya usado no podrá entrar. ¿Seguir?')) return;
+    try{
+      const {error}=await SB.rpc('kimun_prof_inscripcion_crear',
+        {p_curso_codigo:cursoCodigo, p_cupo:cupo, p_experimental:exp});
+      if(error) throw error;
+      aviso('Enlace creado');
+      cargarInscripcion(cursoCodigo);
+    }catch(e){ aviso(errorPanel(e)); }
+  };
 }
 
 /* ===== Equipo del curso (jefe/admin) ===== */

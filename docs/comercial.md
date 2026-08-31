@@ -194,6 +194,15 @@ Funciona en cualquier celular con internet, sin instalar nada.
 - ❌ **No decir que están aprobadas las 7.745.** Quedan 60 sin aprobar, de Historia de 3°.
 - ❌ **No es una herramienta de calificación.** El panel es una brújula; así está descrito en el
   producto y así hay que venderlo.
+- ⚠️ **El enlace de inscripción NO es una licencia por persona.** Sirve para que un grupo entre
+  solo a un curso ya abierto (una demo, un piloto, un taller), y **quien lo reciba entra hasta
+  llenar el cupo**: es la credencial, y reenviarlo lo reparte. Se acota con el cupo, que hay que
+  ajustar al grupo, y **no hay forma de revocarle el acceso a una persona**, solo de cerrar el
+  enlace. No ofrecerlo como el mecanismo de acceso de un colegio que paga: para eso están los
+  códigos `ALU-`, uno por alumno.
+- ⚠️ **El "modo experimental" abre todos los capítulos y cierra los jefes.** Sirve para que
+  alguien recorra el contenido sin jugarse el año en orden. **No venderlo como el modo normal**:
+  el producto es la campaña con su progresión, y así se mide el dominio por objetivo.
 
 ## Material comercial
 

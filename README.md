@@ -43,7 +43,10 @@ se ve una vez. Todo en un solo archivo `index.html`, pensado para el celular.
 El **ranking es real y por curso**: el profesor crea el curso e inscribe a los alumnos
 desde `profesor.html` —una página aparte del juego, con correo y contraseña—, y cada uno
 entra en su teléfono con un código de acceso. El XP se sincroniza con el servidor, así que
-los compañeros compiten con datos de verdad.
+los compañeros compiten con datos de verdad. Para un grupo que parte de cero —una demo, un
+taller— el panel también genera un **enlace de inscripción** con cupo: cada persona escribe
+su nombre, se crea sola en el curso y recibe su código. Ese enlace **es** la credencial, así
+que el cupo se ajusta al grupo.
 
 Ese mismo panel trae el **mapa de dominio por objetivo de aprendizaje**: muestra, de peor a
 mejor porcentaje, qué contenidos le están costando al curso y quiénes necesitan apoyo en

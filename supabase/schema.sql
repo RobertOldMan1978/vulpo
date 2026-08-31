@@ -178,6 +178,56 @@ create unique index if not exists idx_curso_jefe_unico
   on public.curso_profesores(curso_id) where rol = 'jefe';
 
 alter table public.curso_profesores enable row level security;
+-- ------------------------------------------------------------
+-- Inscripción por enlace único (modo experimental)
+--
+-- Un solo enlace al chat del curso: cada persona se crea sola en un curso que el
+-- profesor ya abrió, con todo el contenido salvo los jefes, y su avance queda
+-- registrado como el de cualquier alumno. Diseño:
+-- docs/superpowers/specs/2026-08-30-inscripcion-por-enlace-design.md
+--
+-- ⚠️ EL ENLACE ES LA CREDENCIAL, y abre el producto completo. Un ALU- filtrado
+-- regala UN cupo de la demo; este enlace reenviado fuera del chat los regala todos
+-- hasta llenar el cupo. Por eso el cupo va ajustado al grupo, no holgado.
+-- ------------------------------------------------------------
+
+-- El modo experimental es propiedad del CURSO y no del enlace ni del aparato: así
+-- un alumno que borra los datos del navegador y vuelve a canjear su ALU- recupera
+-- el mismo modo, en vez de caer en el juego normal sin entender por qué.
+alter table public.cursos add column if not exists experimental boolean not null default false;
+
+-- Los nombres que escribe el profesor vienen verificados; los que escribe un nino en
+-- un formulario publico, no. El panel los distingue con esto: sin la marca, un apodo o
+-- un "asdf" se leen igual que un alumno de la lista de clase.
+alter table public.perfiles add column if not exists autoinscrito boolean not null default false;
+
+create table if not exists public.inscripciones (
+  id       uuid primary key default gen_random_uuid(),
+  curso_id uuid not null references public.cursos(id) on delete cascade,
+  token    text not null unique,                 -- INS-XXXXXXXX
+  cupo     int  not null check (cupo > 0),
+  usados   int  not null default 0,
+  activo   boolean not null default true,
+  creado   timestamptz not null default now()
+);
+alter table public.inscripciones enable row level security;
+-- Sin políticas, como el resto del esquema: nada se lee directo.
+
+-- Un solo enlace vivo por curso. Igual que idx_desafio_activo_curso y que
+-- idx_curso_jefe_unico: la regla se garantiza en la base y no en el panel, porque
+-- el panel se puede tener abierto en dos pestañas.
+create unique index if not exists idx_inscripcion_activa_curso
+  on public.inscripciones(curso_id) where activo;
+
+create or replace function public.kimun_gen_codigo_inscripcion() returns text
+language plpgsql as $$
+declare c text; begin
+  loop c := 'INS-'||upper(substr(md5(gen_random_uuid()::text),1,8));
+    exit when not exists (select 1 from public.inscripciones where token=c); end loop;
+  return c; end $$;
+revoke execute on function public.kimun_gen_codigo_inscripcion() from public, anon, authenticated;
+
+
 -- Sin políticas, como el resto del esquema: nada se lee directo.
 
 -- Migración: cada dueño actual (cursos.profesor_id no nulo) se vuelve Profesor
@@ -656,7 +706,8 @@ drop function if exists public.kimun_prof_listar();
 create or replace function public.kimun_prof_listar()
 returns table(curso text, curso_codigo text, alumno text, avatar text,
               codigo_acceso text, xp int, dificil int, pid uuid,
-              puede_gestionar boolean, mis_asignaturas text[], mi_rol text)
+              puede_gestionar boolean, mis_asignaturas text[], mi_rol text,
+              autoinscrito boolean)
 language plpgsql security definer set search_path=public as $$
 declare yo public.profesores; begin
   select * into yo from public.profesores where id = auth.uid();
@@ -674,7 +725,8 @@ declare yo public.profesores; begin
            public.kimun_prof_asignaturas(c.id),
            -- Mi rol en ESTE curso: 'jefe' | 'asignatura' | null (admin/super sin membresía).
            (select cp.rol from public.curso_profesores cp
-             where cp.curso_id = c.id and cp.profesor_id = yo.id)
+             where cp.curso_id = c.id and cp.profesor_id = yo.id),
+           coalesce(p.autoinscrito,false)
     from public.cursos c
     left join public.perfiles p on p.curso_id = c.id
     where yo.es_admin or yo.es_super
@@ -1310,6 +1362,111 @@ end $$;
 -- public no se los quita. Revocar un permiso inexistente es inofensivo.
 revoke execute on function public.kimun_foto_semanal(date) from public, anon, authenticated;
 
+-- ------------------------------------------------------------
+-- Inscripción por enlace: las tres funciones
+-- ------------------------------------------------------------
+
+-- El alumno se inscribe solo. El orden de los pasos IMPORTA y está razonado:
+create or replace function public.kimun_inscribirse(p_token text, p_nombre text, p_avatar text)
+returns public.perfiles language plpgsql security definer set search_path=public as $$
+declare cid uuid; r public.perfiles; nom text; tok text; act boolean; begin
+  tok := upper(trim(coalesce(p_token,'')));
+
+  -- 1. Si este aparato YA tiene perfil en ese curso, se devuelve y NO se consume
+  --    cupo. Sin esto, recargar la página o volver al día siguiente crearía un
+  --    segundo perfil huérfano que se lleva el avance del primero.
+  select p.* into r
+    from public.perfiles p
+    join public.vinculos v     on v.perfil_id = p.id
+    join public.inscripciones i on i.curso_id = p.curso_id
+   where v.auth_uid = auth.uid() and i.token = tok;
+  if r.id is not null then return r; end if;
+
+  nom := trim(coalesce(p_nombre,''));
+  if length(nom) < 2 or length(nom) > 40 then raise exception 'nombre_invalido'; end if;
+
+  -- 2. El cupo se toma de forma ATÓMICA, en el mismo update que lo cuenta. Con un
+  --    select y después un update, veinte inscripciones simultáneas pasan de largo
+  --    — y eso es exactamente lo que ocurre cuando el enlace cae en el chat.
+  update public.inscripciones
+     set usados = usados + 1
+   where token = tok and activo and usados < cupo
+   returning curso_id into cid;
+  -- Los tres fallos se separan, y el diagnostico corre SOLO aqui, cuando ya se sabe
+  -- que no se tomo ningun cupo: la atomicidad de arriba queda intacta. Se acepta a
+  -- proposito que esto revele si un token existe (el resto del archivo funde "no
+  -- existe" con "no es tuyo" para los codigos de curso, que son cortos y tecleables;
+  -- estos son 8 hex que nadie escribe a mano, y a cambio el apoderado sabe si se
+  -- equivoco de enlace o si llego tarde).
+  if cid is null then
+    select i.activo into act from public.inscripciones i where i.token = tok;
+    if not found then raise exception 'token_invalido'; end if;
+    if not act   then raise exception 'enlace_cerrado'; end if;
+    -- Existe y esta abierto, asi que la unica razon que queda es que se lleno.
+    raise exception 'sin_cupo';
+  end if;
+
+  -- 3. El alumno recibe su ALU- igual, aunque no lo haya escrito: es lo que le
+  --    permite seguir en otro aparato o recuperar su avance si borra los datos.
+  insert into public.perfiles(id,nombre,avatar,codigo,curso_id,codigo_acceso,autoinscrito)
+  values (gen_random_uuid(), nom, coalesce(p_avatar,'🦊'),
+          public.kimun_gen_codigo(), cid, public.kimun_gen_codigo_alumno(), true)
+  returning * into r;
+  insert into public.vinculos(auth_uid,perfil_id) values (auth.uid(), r.id)
+    on conflict (auth_uid) do update set perfil_id = excluded.perfil_id;
+  return r; end $$;
+
+-- Crea (o reemplaza) el enlace de un curso mío. Cerrar el anterior es lo que hace
+-- que el índice único no choque, y de paso invalida el enlace viejo, que es lo que
+-- uno espera al pedir uno nuevo.
+create or replace function public.kimun_prof_inscripcion_crear(
+         p_curso_codigo text, p_cupo int, p_experimental boolean)
+returns public.inscripciones language plpgsql security definer set search_path=public as $$
+declare cid uuid; r public.inscripciones; begin
+  select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
+  -- No se distingue "no existe" de "no es tuyo", igual que en el resto del archivo:
+  -- separarlos dejaría descubrir qué códigos de curso están en uso probándolos.
+  if cid is null or not public.kimun_prof_es_mio(cid) then raise exception 'no_autorizado'; end if;
+  if coalesce(p_cupo,0) < 1 or p_cupo > 500 then raise exception 'cupo_invalido'; end if;
+
+  update public.inscripciones set activo = false where curso_id = cid and activo;
+  update public.cursos set experimental = coalesce(p_experimental,false) where id = cid;
+  insert into public.inscripciones(curso_id, token, cupo)
+  values (cid, public.kimun_gen_codigo_inscripcion(), p_cupo)
+  returning * into r;
+  return r; end $$;
+
+-- El curso de ESTE dispositivo, con su bandera experimental. La necesita el juego al
+-- arrancar para saber si abre los capítulos: el modo es propiedad del curso y no del
+-- aparato, así que un alumno que borra los datos del navegador y vuelve a canjear su
+-- ALU- recupera el mismo modo en vez de caer en el juego normal sin entender por qué.
+drop function if exists public.kimun_mi_curso();
+create or replace function public.kimun_mi_curso()
+returns table(nombre text, experimental boolean)
+language sql security definer stable set search_path=public as $$
+  select c.nombre, c.experimental
+    from public.perfiles p join public.cursos c on c.id = p.curso_id
+   where p.id = public.kimun_yo();
+$$;
+
+-- El enlace vivo de un curso mío, con cuántos de cuántos se inscribieron. Devuelve
+-- cero filas si no hay ninguno, que es distinto de fallar.
+-- El drop previo es el guardia de idempotencia que el archivo ya usa en kimun_ranking
+-- y kimun_prof_listar: al ser "returns table", cambiar cualquier columna del returns
+-- haría fallar el re-pegado con "cannot change return type of existing function".
+drop function if exists public.kimun_prof_inscripcion_estado(text);
+create or replace function public.kimun_prof_inscripcion_estado(p_curso_codigo text)
+returns table(token text, cupo int, usados int, experimental boolean)
+language plpgsql security definer set search_path=public as $$
+declare cid uuid; begin
+  select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
+  if cid is null or not public.kimun_prof_es_mio(cid) then raise exception 'no_autorizado'; end if;
+  return query
+    select i.token, i.cupo, i.usados, c.experimental
+      from public.inscripciones i join public.cursos c on c.id = i.curso_id
+     where i.curso_id = cid and i.activo;
+end $$;
+
 grant execute on function
   public.kimun_perfil(text,text), public.kimun_buscar(text), public.kimun_jugadores(),
   public.kimun_crear_duelo(text,text,jsonb,int,int), public.kimun_pendientes(),
@@ -1337,6 +1494,10 @@ grant execute on function
   , public.kimun_prof_equipo_quitar(text,text)
   , public.kimun_prof_ranking_asignatura(text,text,int)
   , public.kimun_prof_super_fijar(text,boolean)
+  , public.kimun_inscribirse(text,text,text)
+  , public.kimun_prof_inscripcion_crear(text,int,boolean)
+  , public.kimun_prof_inscripcion_estado(text)
+  , public.kimun_mi_curso()
   to anon, authenticated;
 
 -- ------------------------------------------------------------

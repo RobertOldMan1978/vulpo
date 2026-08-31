@@ -18,11 +18,11 @@ aislamiento entre profesores. El asistente no ejecuta SQL contra producción.
 Va primero porque es lo único que se puede probar entero sin base de datos, y porque deja el
 juego listo para cuando llegue la inscripción.
 
-- [ ] **Paso 1: la foto de hoy.** Con `cdp.mjs`, en los tres cursos y en los tres modos
+- [x] **Paso 1: la foto de hoy.** Con `cdp.mjs`, en los tres cursos y en los tres modos
       (normal, `?qa=1`, `?solo=…`), volcar qué capítulos y qué jefes salen desbloqueados. Es el
       patrón contra el que se compara todo lo que sigue.
 
-- [ ] **Paso 2: las dos banderas.** En los **tres** `index.html`, junto a la declaración actual:
+- [x] **Paso 2: las dos banderas.** En los **tres** `index.html`, junto a la declaración actual:
 
 ```js
 /* MODO_ABIERTO mezclaba DOS preguntas distintas, y el modo experimental necesita
@@ -35,7 +35,7 @@ const CAPS_ABIERTOS  = QA||PRUEBA||EXPERIMENTAL;
 const JEFES_ABIERTOS = QA||PRUEBA;
 ```
 
-- [ ] **Paso 3: reemplazar los seis usos**, uno por uno, sin agrupar:
+- [x] **Paso 3: reemplazar los seis usos**, uno por uno, sin agrupar:
       `nodoCampDesbloqueado` y el `MODO_ABIERTO` de las etapas → `CAPS_ABIERTOS`;
       `desafioDesbloqueado`, `jefeFinalDesbloqueado`, `jefeCalcDesbloqueado` y
       `jefeFinalMateDesbloqueado` → `JEFES_ABIERTOS`.
@@ -43,17 +43,17 @@ const JEFES_ABIERTOS = QA||PRUEBA;
       !JEFES_ABIERTOS`.
       ⚠️ Con `EXPERIMENTAL=false` cableado a mano, el volcado del Paso 1 debe salir **idéntico**.
 
-- [ ] **Paso 4: verificar.** Los tres cursos, los tres modos, contra la foto. Cero 404, cero
+- [x] **Paso 4: verificar.** Los tres cursos, los tres modos, contra la foto. Cero 404, cero
       errores. **Si algo difiere, parar**: `?qa=1` y el modo prueba están repartidos y no pueden
       cambiar de comportamiento.
 
-- [ ] **Paso 5: commit.**
+- [x] **Paso 5: commit.**
 
 ---
 
 ## Tarea 2 · El backend
 
-- [ ] **Paso 1: la tabla y la columna del curso** (en `supabase/schema.sql`, idempotente como
+- [x] **Paso 1: la tabla y la columna del curso** (en `supabase/schema.sql`, idempotente como
       todo el archivo):
 
 ```sql
@@ -75,7 +75,7 @@ alter table public.inscripciones enable row level security;
 > `activo` no tendrá botón —Roberto eligió el cupo como único límite— pero hace falta para contar
 > y deja una salida de emergencia si el enlace llega a donde no debía.
 
-- [ ] **Paso 2: `kimun_inscribirse(p_token, p_nombre, p_avatar)`**, en este orden exacto:
+- [x] **Paso 2: `kimun_inscribirse(p_token, p_nombre, p_avatar)`**, en este orden exacto:
 
 ```sql
 create or replace function public.kimun_inscribirse(p_token text, p_nombre text, p_avatar text)
@@ -111,16 +111,16 @@ declare cid uuid; r public.perfiles; nom text; begin
   return r; end $$;
 ```
 
-- [ ] **Paso 3: para el panel**, `kimun_prof_inscripcion_crear(curso, cupo, experimental)` y
+- [x] **Paso 3: para el panel**, `kimun_prof_inscripcion_crear(curso, cupo, experimental)` y
       `kimun_prof_inscripcion_estado(curso)`, ambas tras `kimun_prof_es_mio`. Y sumar las tres al
       `grant execute`.
       ⚠️ **PostgreSQL otorga EXECUTE a PUBLIC por defecto**: omitir una función del `grant` NO la
       protege. Es una trampa que este proyecto ya pagó en la Sesión 19.
 
-- [ ] **Paso 4: que `cargarCurso` traiga `experimental`**, para que el modo viva en el curso y
+- [x] **Paso 4: que `cargarCurso` traiga `experimental`**, para que el modo viva en el curso y
       sobreviva a borrar los datos del navegador.
 
-- [ ] **Paso 5: revisión del SQL antes de mandarlo a producción.** Cero `drop table`, cero
+- [x] **Paso 5: revisión del SQL antes de mandarlo a producción.** Cero `drop table`, cero
       `truncate`; los `delete` solo dentro de cuerpos de función. `docs/aplicar-schema.md` describe
       el procedimiento.
 
@@ -128,23 +128,23 @@ declare cid uuid; r public.perfiles; nom text; begin
 
 ## Tarea 3 · La pantalla de inscripción
 
-- [ ] **Paso 1:** leer `?inscribir=` junto a los otros parámetros, y `EXPERIMENTAL` desde el curso.
-- [ ] **Paso 2:** pantalla que pide el nombre y llama a `kimun_inscribirse`.
-- [ ] **Paso 3: los tres errores, con tres mensajes distintos** — token que no existe, cerrado, y
+- [x] **Paso 1:** leer `?inscribir=` junto a los otros parámetros, y `EXPERIMENTAL` desde el curso.
+- [x] **Paso 2:** pantalla que pide el nombre y llama a `kimun_inscribirse`.
+- [x] **Paso 3: los tres errores, con tres mensajes distintos** — token que no existe, cerrado, y
       sin cupo. Un mensaje genérico deja al apoderado sin saber si escribió mal o llegó tarde.
-- [ ] **Paso 4:** al entrar, mostrarle su código `ALU-` una vez, con el texto de que sirve para
+- [x] **Paso 4:** al entrar, mostrarle su código `ALU-` una vez, con el texto de que sirve para
       seguir en otro aparato. Se lo ganó aunque no lo haya escrito.
-- [ ] **Paso 5: verificar** que sin `?inscribir=` no cambia absolutamente nada.
+- [x] **Paso 5: verificar** que sin `?inscribir=` no cambia absolutamente nada.
 
 ---
 
 ## Tarea 4 · El panel
 
-- [ ] Un bloque por curso: crear el enlace (con su cupo), verlo, copiarlo y ver **cuántos de
+- [x] Un bloque por curso: crear el enlace (con su cupo), verlo, copiarlo y ver **cuántos de
       cuántos** se inscribieron.
-- [ ] Marcar en la lista de alumnos a los **autoinscritos**, para distinguirlos de los que
+- [x] Marcar en la lista de alumnos a los **autoinscritos**, para distinguirlos de los que
       escribió el profesor. Los nombres ya no vienen verificados.
-- [ ] A 375 px sin desborde: es el panel que ya falló ahí en la Sesión 26.
+- [x] A 375 px sin desborde: es el panel que ya falló ahí en la Sesión 26.
 
 ---
 
@@ -165,6 +165,52 @@ declare cid uuid; r public.perfiles; nom text; begin
 
 ## Tarea 6 · Dejarlo escrito
 
-- [ ] `CLAUDE.md`: el parámetro `?inscribir=` junto a los otros, y las dos banderas nuevas.
-- [ ] `pendiente.md` y `docs/comercial.md`: qué es el modo experimental y qué **no** prometer
+- [x] `CLAUDE.md`: el parámetro `?inscribir=` junto a los otros, y las dos banderas nuevas.
+- [x] `pendiente.md` y `docs/comercial.md`: qué es el modo experimental y qué **no** prometer
       (el enlace es la credencial y abre el producto completo).
+
+---
+
+## Lo que cambió al implementarlo (30/08/2026)
+
+Tres cosas que el plan no había visto, y una que hay que respetar:
+
+1. **`EXPERIMENTAL` no podía salir de `cargarCurso`.** El Paso 4 de la Tarea 2 decía "que
+   `cargarCurso` traiga `experimental`", pero `cargarCurso` usa `kimun_ranking`, que no lo
+   lleva, y sobre todo **corre después**: `CAPS_ABIERTOS` se evalúa al cargar el archivo.
+   Se resolvió con una función nueva, **`kimun_mi_curso()`**, y con el modo **recordado en
+   `localStorage`** y reconciliado por `sincronizarModoCurso()`, que recarga una sola vez
+   (guard en `sessionStorage`). El servidor siempre gana.
+
+2. **Los tres errores exigían tocar el servidor.** El `update` atómico funde los tres casos
+   en uno, y el cliente **no puede** distinguirlos: `inscripciones` tiene RLS sin políticas.
+   Se agregó un diagnóstico que corre **solo en la rama de fallo**, cuando ya se sabe que no
+   se tomó ningún cupo, así que la atomicidad queda intacta.
+
+3. **Marcar a los autoinscritos también era servidor**: `perfiles` no registraba cómo se
+   creó un perfil. Columna `perfiles.autoinscrito`, que `kimun_inscribirse` pone en `true` y
+   `kimun_prof_listar` devuelve.
+
+4. **⚠️ `EXPER_KEY` va escrita a mano y NO con `SUFIJO`**, que se declara ~450 líneas más
+   abajo: leerla ahí sería zona muerta temporal y **mataría todo el JavaScript de la app**.
+   Es la trampa que ya mordió tres veces esta semana (`CALC.init`, `EXTRAS`, `HAY_DIFICIL`).
+
+**Cómo se verificó** (con `scripts/cdp.mjs`, en los tres cursos, cero 404 y cero errores):
+
+- Sin `?inscribir=` el juego sale **idéntico** a la foto de la Tarea 1 (`prog5:"o...."`,
+  un solo capítulo abierto por campaña, jefes cerrados).
+- Con `?inscribir=` aparece la pantalla, la barra inferior se apaga, y un token falso contra
+  el servidor **de verdad** devuelve su mensaje (camino de solo lectura, no escribe nada).
+- Con el modo experimental encendido: `CAPS_ABIERTOS` sí, `JEFES_ABIERTOS` no,
+  `prog5:"oooo."` —todas las etapas menos la del jefe—, **todos** los capítulos abiertos y
+  Jefe Final y Desafío Extra **cerrados**. En 3° se comprobó además jugando: 8 de 9 nodos.
+  Y no se recarga en bucle.
+- El panel a **375 px sin desborde**: el estado vacío, crear el enlace con su cupo y su
+  casilla, el resumen "0 de 12", el selector de nivel armando la URL de cada curso y la
+  marca "se inscribió solo".
+
+> **Un tropiezo de método que vale registrar:** en 3° el arranque ya había corrido cuando
+> `ev.ir()` devolvió —la página carga tarde, con sus manifiestos de voz—, así que el doble
+> de Supabase llegaba **después** del `setTimeout(...,1200)` del arranque y parecía que la
+> reconciliación no funcionaba. No era el producto: era la prueba. **En una página pesada,
+> `load` no es el principio de la vida de la página.**
