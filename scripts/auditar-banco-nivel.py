@@ -62,33 +62,63 @@ LARGO = {"03": (110, 220), "04": (110, 220)}
 LARGO_POR_DEFECTO = (120, 250)
 
 
-def contrastar_tipos(carpeta):
-    """Avisa si el catalogo de arriba y el juego del nivel no dicen lo mismo.
+# Cabecera canonica de preguntas.json: `preguntas` obligatoria, y `revisadas` y `nota`
+# opcionales. Todo lo demas sobra o vive en oa.json. Ver contenido/_plantilla/README.md.
+CABECERA = ("revisadas", "nota")
 
-    Un tipo que este aca y no en el juego pasa la auditoria y despues NO se dibuja: el
+
+def revisar_formato(ruta):
+    """Avisa si el banco no esta escrito en el formato canonico.
+
+    Sin esta comprobacion el contrato es solo un documento: la plantilla describia una
+    cabecera que la herramienta real no producia y que NINGUNO de los 16 bancos cumplia,
+    durante meses y sin que nada avisara.
+    """
+    crudo = io.open(ruta, encoding="utf-8", newline="").read()
+    d = json.loads(crudo)
+    m = []
+    if "\r\n" in crudo:
+        m.append("tiene CRLF; el proyecto va en LF (.gitattributes)")
+    if crudo.endswith("\n"):
+        m.append("termina en salto de linea; el formato canonico no lleva")
+    sobran = [k for k in d if k != "preguntas" and k not in CABECERA]
+    if sobran:
+        m.append("claves de cabecera que sobran: %s" % ", ".join(sobran))
+    orden = {k: d[k] for k in CABECERA if k in d}
+    orden["preguntas"] = d.get("preguntas", [])
+    if json.dumps(orden, ensure_ascii=False, indent=1) != crudo.rstrip("\n"):
+        m.append("no calza con indent=1 y el orden canonico de claves; lo arregla volver "
+                 "a escribirlo con consolidar-pool-nivel.py o aplicar-revisadas.py")
+    return m
+
+
+def contrastar_tipos(carpeta):
+    """Avisa si el catalogo de arriba y assets/js/visuales.js no dicen lo mismo.
+
+    Un tipo que este aca y no en el modulo pasa la auditoria y despues NO se dibuja: el
     renderVisual cae a `return ''` y la pregunta sale sin apoyo, sin ningun error.
+
+    Desde M1 el catalogo es UNICO y compartido por todos los cursos, asi que ya no
+    depende del fork del nivel: un banco de 5 basico se puede auditar entero antes de
+    que exista su juego.
     """
     try:
         sys.path.insert(0, str(Path(__file__).resolve().parent))
         import niveles
     except Exception:
         return []
-    fork = niveles.fork_de(carpeta)
-    if not fork:
-        return []
-    del_juego = niveles.tipos_de_dibujo(fork)
-    if del_juego is None:
-        return ["el juego de %s no tiene renderVisual: este banco no puede llevar dibujos"
-                % fork]
-    faltan = sorted(set(TIPOS) - del_juego)
-    sobran = sorted(del_juego - set(TIPOS))
+    del_modulo = niveles.tipos_de_dibujo()
+    if del_modulo is None:
+        return ["no encuentro assets/js/visuales.js: no puedo contrastar el catalogo"]
+    faltan = sorted(set(TIPOS) - del_modulo)
+    sobran = sorted(del_modulo - set(TIPOS))
     m = []
     if faltan:
-        m.append("tipos que este script conoce y %s/index.html NO dibuja: %s"
-                 % (fork, ", ".join(faltan)))
+        m.append("tipos que este script conoce y visuales.js NO dibuja: %s"
+                 % ", ".join(faltan))
     if sobran:
-        m.append("tipos que %s/index.html dibuja y este script desconoce: %s"
-                 % (fork, ", ".join(sobran)))
+        m.append("tipos que visuales.js dibuja y este script desconoce: %s"
+                 % ", ".join(sobran))
     return m
 
 
@@ -167,6 +197,9 @@ def main():
 
     # Solo se contrasta si este banco de verdad trae dibujos: un libro o un nivel sin
     # fork todavia no tienen por que fallar aca.
+    for m in revisar_formato(ruta):
+        print("  AVISO formato del banco: %s" % m)
+
     if any(p.get("visual") for p in ps):
         for m in contrastar_tipos(carpeta):
             print("  AVISO catalogo de dibujos: %s" % m)

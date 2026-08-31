@@ -22,28 +22,24 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from niveles import fork_de          # de que nivel es un banco; ver ese archivo
 
 
-def render_visual_js(carpeta):
-    """Saca svgEnvoltura + renderVisual del juego DE ESE NIVEL, tal cual, sin copiarlas.
+VISUALES = RAIZ / "assets" / "js" / "visuales.js"
 
-    Solo se llama cuando el banco trae dibujos, para que un libro -o un banco de 5
-    basico, que no lleva- no dependa de que exista un fork con renderVisual.
+
+def render_visual_js():
+    """Devuelve el modulo de dibujos tal cual, sin copiarlo.
+
+    Antes se recortaba del index.html del fork del nivel, y ese recorte fue una trampa:
+    empezaba en textoVisual y terminaba justo antes de `const $`, asi que mover una linea
+    dejaba fuera una dependencia y los 232 dibujos desaparecian SIN ERROR VISIBLE -el
+    catch de la plantilla los reemplazaba por texto-. Ya paso una vez.
+
+    Desde M1 el modulo es un archivo aparte, asi que se lee entero y no hay recorte que
+    pueda quedar mal. Y de paso el informe deja de depender de que el fork del nivel
+    exista: 5 basico va a poder aprobar su banco con dibujos antes de tener su juego.
     """
-    fork = fork_de(carpeta)
-    if fork is None:
-        sys.exit("No se de que nivel es '%s', y su banco trae dibujos. Declara su nivel "
-                 "en NIVELES_MUESTRA (profesor.html)." % carpeta)
-    juego = RAIZ / fork / "index.html"
-    if not juego.exists():
-        sys.exit("No existe %s. El fork del nivel tiene que existir para incrustar sus "
-                 "dibujos en el informe." % juego)
-    h = io.open(juego, encoding="utf-8").read()
-    # OJO: empieza en textoVisual, no en svgEnvoltura. renderVisual depende de las
-    # tres (textoVisual, _DESC_VISUAL y svgEnvoltura); cortar mas abajo deja fuera una
-    # dependencia y los 232 dibujos desaparecen SIN ERROR VISIBLE, porque el catch de
-    # la plantilla los reemplaza por texto. Ya paso una vez.
-    i = h.index("function textoVisual(")
-    j = h.index("\nconst $=id=>document.getElementById(id);", i)
-    return h[i:j]
+    if not VISUALES.exists():
+        sys.exit("No existe %s: sin el, los dibujos no se pueden incrustar." % VISUALES)
+    return io.open(VISUALES, encoding="utf-8").read()
 
 
 def esc(t):
@@ -128,7 +124,7 @@ def main():
     # esto, un libro o un nivel sin fork todavia moririan pidiendo un archivo que no
     # necesitan.
     hay_dibujos = any(p.get("visual") for p in preguntas)
-    doc = doc.replace("/*RENDER*/", render_visual_js(carpeta) if hay_dibujos else "")
+    doc = doc.replace("/*RENDER*/", render_visual_js() if hay_dibujos else "")
 
     salida = RAIZ / "dev" / ("revision-%s.html" % carpeta)
     salida.parent.mkdir(parents=True, exist_ok=True)

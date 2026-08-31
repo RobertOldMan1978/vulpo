@@ -20,7 +20,16 @@
 <!-- Modo revisión de profesor, compartido por todos los cursos. -->
 <script src="assets/js/revision.js"></script>
 <script src="assets/js/sensible.js"></script>
+<!-- Apoyo visual de las preguntas (dibujos por código), compartido por todos los cursos. -->
+<script src="assets/js/visuales.js"></script>
+<!-- Lectura por voz, compartida. Nace dormida: solo habla tras VOZ.init(). -->
+<script src="assets/js/voz.js"></script>
 <script>if(!window.SENSIBLE)window.SENSIBLE={cats:{},oa:{},deExpedicion:function(){return[];}};</script>
+<script>if(!window.renderVisual)window.renderVisual=function(){return '';};</script>   <!-- respaldo: un 404 de visuales.js no puede matar el juego -->
+<!-- El motor del juego, compartido por los tres cursos. ⚠️ Va ANTES del <script> inline
+     (sus funciones se izan) y NO lleva respaldo vacío: sin él no hay juego. Lo vigila la
+     canaria del final del archivo. -->
+<script src="assets/js/motor.js"></script>
 <script src="assets/vendor/supabase-js-2.112.4.min.js"></script>
 <style>
 :root{
@@ -1046,6 +1055,7 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
     <div class="qcard">
       <div class="tag" id="qTag">Nivel 1</div>
       <h2 id="qText">Pregunta…</h2>
+      <div id="qVisual"></div>
       <div id="qMeta" class="qmeta" hidden></div>
     </div>
     <div class="opts" id="qOpts"></div>
@@ -1222,28 +1232,6 @@ const AVATARES=["🦁","🐉","🦅","🐺","🦊","🤖","👽","🥷"];
    para que la fecha no se vea en la barra de direcciones (y nadie sienta la invitación a
    editarla), no para detener a quien sepa lo que mira. */
 function b64uCod(txt){ return btoa(txt).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,''); }
-function b64uDec(txt){
- try{ return atob(String(txt).replace(/-/g,'+').replace(/_/g,'/')); }catch(e){ return ''; }
-}
-/* Token de muestra: "ids separados por coma | AAAA-MM-DD | 1 si respuestas".
-   Devuelve null si no se puede leer, y quien lo llama cae al juego normal. */
-function leerToken(t){
- if(!t) return null;
- const crudo=b64uDec(t); if(!crudo) return null;
- const p=crudo.split('|');
- // Se exige forma de id (letras, numeros y guiones). Sin esto, un texto cualquiera que
- // por casualidad sea base64 valido ('xxxx') pasaba como token y devolvia basura.
- const ids=(p[0]||'').split(',').map(s=>s.trim()).filter(x=>/^[a-z0-9-]+$/i.test(x));
- if(!ids.length) return null;
- const hasta=/^\d{4}-\d{2}-\d{2}$/.test(p[1]||'') ? p[1] : '';
- // 4.º campo: modo revisión de profesor. Un token viejo no lo trae y sigue valiendo.
- return { ids:ids, hasta:hasta, qa:(p[2]||'')==='1', rev:(p[3]||'')==='1' };
-}
-/* Fecha local del dispositivo como AAAA-MM-DD (no UTC: interesa el día del visitante). */
-function hoyISO(){
- const d=new Date(), z=n=>String(n).padStart(2,'0');
- return d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate());
-}
 const _PARAMS=new URLSearchParams(location.search);
 const _M=leerToken(_PARAMS.get('m'));   // null si no hay ?m= o si viene corrupto
 const QA=_PARAMS.has('qa')||!!(_M&&_M.qa);
@@ -1255,7 +1243,7 @@ const ARMAR=_PARAMS.has('armar');      // pantalla para armar enlaces de muestra
 
 const EXPEDICIONES=[
  // --- Campaña Historia (capítulos = expediciones) ---
- { id:'hist-cap1', asignatura:'Historia', nivel:'8° Básico · Los inicios de la modernidad',
+ { id:'hist-cap1', portadaMapa:'assets/portada-hist-cap1.png', asignatura:'Historia', nivel:'8° Básico · Los inicios de la modernidad',
    portada:'assets/portada-historia.png', mapaImg:'assets/kimun-conquistador.png',
    contenido:'contenido/historia-8basico/preguntas.json', activa:true, campaña:'hist',
    etapas:[
@@ -1265,7 +1253,7 @@ const EXPEDICIONES=[
      {oa:"HI08 OA 04",nombre:"La economía mercantilista",icono:"⚖️",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: La modernidad",icono:"🐲",n:15,oas:["HI08 OA 01","HI08 OA 02","HI08 OA 03","HI08 OA 04"]},
    ]},
- { id:'hist-cap2', asignatura:'Historia', nivel:'8° Básico · Los europeos llegan a América',
+ { id:'hist-cap2', portadaMapa:'assets/portada-hist-cap2.png', asignatura:'Historia', nivel:'8° Básico · Los europeos llegan a América',
    portada:'assets/portada-historia.png', mapaImg:'assets/kimun-conquistador.png',
    contenido:'contenido/historia-8basico/preguntas.json', activa:true, campaña:'hist',
    etapas:[
@@ -1275,7 +1263,7 @@ const EXPEDICIONES=[
      {oa:"HI08 OA 08",nombre:"Ciudades y administración",icono:"🏛️",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: La conquista",icono:"🐲",n:15,oas:["HI08 OA 05","HI08 OA 06","HI08 OA 07","HI08 OA 08"]},
    ]},
- { id:'hist-cap3', asignatura:'Historia', nivel:'8° Básico · El mundo colonial',
+ { id:'hist-cap3', portadaMapa:'assets/portada-hist-cap3.png', asignatura:'Historia', nivel:'8° Básico · El mundo colonial',
    portada:'assets/portada-historia.png', contenido:'contenido/historia-8basico/preguntas.json',
    activa:true, campaña:'hist',
    etapas:[
@@ -1285,7 +1273,7 @@ const EXPEDICIONES=[
      {oa:"HI08 OA 12",nombre:"Convivencia y conflictos",icono:"🤝",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: El mundo colonial",icono:"🐲",n:15,oas:["HI08 OA 09","HI08 OA 10","HI08 OA 11","HI08 OA 12"]},
    ]},
- { id:'hist-cap4', asignatura:'Historia', nivel:'8° Básico · Chile colonial y las nuevas ideas',
+ { id:'hist-cap4', portadaMapa:'assets/portada-hist-cap4.png', asignatura:'Historia', nivel:'8° Básico · Chile colonial y las nuevas ideas',
    portada:'assets/portada-historia.png', contenido:'contenido/historia-8basico/preguntas.json',
    activa:true, campaña:'hist',
    etapas:[
@@ -1295,7 +1283,7 @@ const EXPEDICIONES=[
      {oa:"HI08 OA 16",nombre:"Independencia americana",icono:"🏴",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Nuevas ideas",icono:"🐲",n:15,oas:["HI08 OA 13","HI08 OA 14","HI08 OA 15","HI08 OA 16"]},
    ]},
- { id:'hist-cap5', asignatura:'Historia', nivel:'8° Básico · Independencia y ciudadanía',
+ { id:'hist-cap5', portadaMapa:'assets/portada-hist-cap5.png', asignatura:'Historia', nivel:'8° Básico · Independencia y ciudadanía',
    portada:'assets/portada-historia.png', contenido:'contenido/historia-8basico/preguntas.json',
    activa:true, campaña:'hist',
    etapas:[
@@ -1304,7 +1292,7 @@ const EXPEDICIONES=[
      {oa:"HI08 OA 19",nombre:"Independencia de Chile",icono:"🇨🇱",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Independencia",icono:"🐲",n:15,oas:["HI08 OA 17","HI08 OA 18","HI08 OA 19"]},
    ]},
- { id:'hist-desafio', asignatura:'Historia', nivel:'8° Básico · Desafío: Chile hoy',
+ { id:'hist-desafio', portadaMapa:'assets/portada-hist-desafio.png', asignatura:'Historia', nivel:'8° Básico · Desafío: Chile hoy',
    portada:'assets/portada-historia.png', contenido:'contenido/historia-8basico/preguntas.json',
    activa:true, campaña:'hist', desafio:true,
    etapas:[
@@ -1316,7 +1304,7 @@ const EXPEDICIONES=[
  // Nota: el banco de Álgebra (contenido/matematicas-8basico) queda de reserva; en el
  // juego Matemáticas se juega como Reto de Cálculo (procedural), no como expedición.
  // --- Campaña Ciencias (capítulos = las 4 unidades del año) ---
- { id:'cien-celula', asignatura:'Ciencias', nivel:'8° Básico · La célula',
+ { id:'cien-celula', portadaMapa:'assets/portada-cien-celula.png', asignatura:'Ciencias', nivel:'8° Básico · La célula',
    portada:'assets/portada-ciencias.png', contenido:'contenido/ciencias-8basico/preguntas.json', activa:true, campaña:'cien',
    etapas:[
      {oa:"CN08 OA 01", nombre:"La teoría celular", icono:"🔬", n:10},
@@ -1325,7 +1313,7 @@ const EXPEDICIONES=[
      {oa:"CN08 OA 04", nombre:"Las plantas", icono:"🌱", n:10},
      {oa:"BOSS", nombre:"⚡ JEFE: La célula", icono:"🧬", n:15, oas:["CN08 OA 01","CN08 OA 02","CN08 OA 03","CN08 OA 04"]},
    ]},
- { id:'cien-cuerpo', asignatura:'Ciencias', nivel:'8° Básico · Cuerpo humano y salud',
+ { id:'cien-cuerpo', portadaMapa:'assets/portada-cien-cuerpo.png', asignatura:'Ciencias', nivel:'8° Básico · Cuerpo humano y salud',
    portada:'assets/portada-ciencias.png', contenido:'contenido/ciencias-8basico/preguntas.json', activa:true, campaña:'cien',
    etapas:[
      {oa:"CN08 OA 05", nombre:"Sistemas del cuerpo", icono:"🫀", n:10},
@@ -1333,7 +1321,7 @@ const EXPEDICIONES=[
      {oa:"CN08 OA 07", nombre:"Vida saludable", icono:"🏃", n:10},
      {oa:"BOSS", nombre:"⚡ JEFE: Cuerpo y salud", icono:"🧠", n:15, oas:["CN08 OA 05","CN08 OA 06","CN08 OA 07"]},
    ]},
- { id:'cien-electricidad', asignatura:'Ciencias', nivel:'8° Básico · Electricidad y calor',
+ { id:'cien-electricidad', portadaMapa:'assets/portada-cien-electricidad.png', asignatura:'Ciencias', nivel:'8° Básico · Electricidad y calor',
    portada:'assets/portada-ciencias.png', contenido:'contenido/ciencias-8basico/preguntas.json', activa:true, campaña:'cien',
    etapas:[
      {oa:"CN08 OA 08", nombre:"Fuerzas eléctricas", icono:"⚡", n:10},
@@ -1342,7 +1330,7 @@ const EXPEDICIONES=[
      {oa:"CN08 OA 11", nombre:"El calor", icono:"🔥", n:10},
      {oa:"BOSS", nombre:"⚡ JEFE: Electricidad y calor", icono:"🌡️", n:15, oas:["CN08 OA 08","CN08 OA 09","CN08 OA 10","CN08 OA 11"]},
    ]},
- { id:'cien-materia', asignatura:'Ciencias', nivel:'8° Básico · La materia y el átomo',
+ { id:'cien-materia', portadaMapa:'assets/portada-cien-materia.png', asignatura:'Ciencias', nivel:'8° Básico · La materia y el átomo',
    portada:'assets/portada-ciencias.png', contenido:'contenido/ciencias-8basico/preguntas.json', activa:true, campaña:'cien',
    etapas:[
      {oa:"CN08 OA 12", nombre:"Modelos del átomo", icono:"⚛️", n:10},
@@ -1352,7 +1340,7 @@ const EXPEDICIONES=[
      {oa:"BOSS", nombre:"⚡ JEFE: La materia", icono:"🔬", n:15, oas:["CN08 OA 12","CN08 OA 13","CN08 OA 14","CN08 OA 15"]},
    ]},
  // --- Campaña Lenguaje (capítulos = las 3 unidades del año; la U1 se parte en 2) ---
- { id:'leng-lectura', asignatura:'Lenguaje', nivel:'8° Básico · Leer y comprender',
+ { id:'leng-lectura', portadaMapa:'assets/portada-leng-lectura.png', asignatura:'Lenguaje', nivel:'8° Básico · Leer y comprender',
    portada:'assets/portada-lenguaje.png', contenido:'contenido/lenguaje-8basico/preguntas.json', activa:true, campaña:'leng',
    etapas:[
      {oa:"LE08 OA 01", nombre:"El hábito de leer", icono:"📚", n:10},
@@ -1361,7 +1349,7 @@ const EXPEDICIONES=[
      {oa:"LE08 OA 08", nombre:"Interpretar la obra", icono:"🔎", n:10},
      {oa:"BOSS", nombre:"⚡ JEFE: Leer y comprender", icono:"✒️", n:15, oas:["LE08 OA 01","LE08 OA 02","LE08 OA 03","LE08 OA 08"]},
    ]},
- { id:'leng-literarios', asignatura:'Lenguaje', nivel:'8° Básico · Mundos literarios',
+ { id:'leng-literarios', portadaMapa:'assets/portada-leng-literarios.png', asignatura:'Lenguaje', nivel:'8° Básico · Mundos literarios',
    portada:'assets/portada-lenguaje.png', contenido:'contenido/lenguaje-8basico/preguntas.json', activa:true, campaña:'leng',
    etapas:[
      {oa:"LE08 OA 04", nombre:"Poesía", icono:"🎵", n:10},
@@ -1370,7 +1358,7 @@ const EXPEDICIONES=[
      {oa:"LE08 OA 07", nombre:"Comedia", icono:"😄", n:10},
      {oa:"BOSS", nombre:"⚡ JEFE: Mundos literarios", icono:"✒️", n:15, oas:["LE08 OA 04","LE08 OA 05","LE08 OA 06","LE08 OA 07"]},
    ]},
- { id:'leng-textos', asignatura:'Lenguaje', nivel:'8° Básico · Textos y medios',
+ { id:'leng-textos', portadaMapa:'assets/portada-leng-textos.png', asignatura:'Lenguaje', nivel:'8° Básico · Textos y medios',
    portada:'assets/portada-lenguaje.png', contenido:'contenido/lenguaje-8basico/preguntas.json', activa:true, campaña:'leng',
    etapas:[
      {oa:"LE08 OA 09", nombre:"Argumentar y opinar", icono:"💬", n:10},
@@ -1379,7 +1367,7 @@ const EXPEDICIONES=[
      {oa:"LE08 OA 12", nombre:"Estrategias de comprensión", icono:"🧩", n:10},
      {oa:"BOSS", nombre:"⚡ JEFE: Textos y medios", icono:"✒️", n:15, oas:["LE08 OA 09","LE08 OA 10","LE08 OA 11","LE08 OA 12"]},
    ]},
- { id:'leng-escritura', asignatura:'Lenguaje', nivel:'8° Básico · Escritura',
+ { id:'leng-escritura', portadaMapa:'assets/portada-leng-escritura.png', asignatura:'Lenguaje', nivel:'8° Básico · Escritura',
    portada:'assets/portada-lenguaje.png', contenido:'contenido/lenguaje-8basico/preguntas.json', activa:true, campaña:'leng',
    etapas:[
      {oa:"LE08 OA 13", nombre:"Escritura creativa", icono:"✍️", n:10},
@@ -1388,7 +1376,7 @@ const EXPEDICIONES=[
      {oa:"BOSS", nombre:"⚡ JEFE: Escritura", icono:"✒️", n:15, oas:["LE08 OA 13","LE08 OA 14","LE08 OA 15"]},
    ]},
  // --- Vocabulario (dentro de Lenguaje): palabras de todo el curso. OA de apoyo VOC-* ---
- { id:'voc-general', asignatura:'Vocabulario', nivel:'8° Básico · Vocabulario del curso',
+ { id:'voc-general', portadaMapa:'assets/portada-voc-general.png', asignatura:'Vocabulario', nivel:'8° Básico · Vocabulario del curso',
    portada:'assets/portada-voc-general.png', contenido:'contenido/vocabulario-8basico/preguntas.json', activa:true,
    etapas:[
      {oa:"VOC-HIST", nombre:"Palabras de Historia", icono:"📜", n:15},
@@ -1469,7 +1457,6 @@ const EXTRAS = [
   {id:'reto-calculo', asignatura:'Matemáticas', nombre:'Reto de Cálculo', icono:'⚡',
    disponible:()=>HAY_RETO_CALCULO, abrir:()=>abrirRetoCalculo()},
 ];
-function extraPorId(id){ const x=EXTRAS.find(e=>e.id===id); return (x&&x.disponible())?x:null; }
 const SOLO=_SOLO_PEDIDO.filter(id=>EXPEDICIONES.some(e=>e.id===id)||EXTRAS.some(x=>x.id===id));
 const PRUEBA=SOLO.length>0;
 /* Modo revisión de profesor (?rev=1 junto a ?solo= o ?m=). La maquinaria vive en
@@ -1480,6 +1467,17 @@ const REVISION=PRUEBA && (_PARAMS.has('rev')||!!(_M&&_M.rev));
    todo el JavaScript del juego: una función accesoria de revisión dejaría la página
    inservible para un alumno que no tiene nada que ver con ella. Pasó de verdad. */
 if(!window.CALC) window.CALC={activo:false,init:function(){},abrir:function(){},detener:function(){}};
+// Respaldo vacio de la lectura por voz. Solo 3 basico lee en voz alta; en 8 y 7 el
+// nino ya lee de corrido. La linea es la MISMA en los tres a proposito: en 3 no hace
+// nada -su function callarVoz() se iza antes- y en los otros dos deja que go(),
+// pintaPregunta(), responder() y mostrarMetaEtapa() llamen a callarVoz() y queden
+// identicas. Cuando la voz salga a assets/js/voz.js, este respaldo es lo que impide
+// que un 404 de ese archivo mate todo el JavaScript del juego.
+if(!window.VOZ) window.VOZ={activo:false,init:function(){}};
+if(!window.callarVoz) window.callarVoz=function(){};
+if(!window.leerEnVoz) window.leerEnVoz=function(){};
+if(!window.leerPreguntaEnVoz) window.leerPreguntaEnVoz=function(){};
+if(!window.sonarClip) window.sonarClip=function(){return false;};
 if(!window.REV) window.REV={activo:false,n:3,marcadas:[],
   init:function(){return this;},barra:function(){},boton:function(){},
   abrir:function(){},mensaje:function(){return '';},tipoAudio:function(){return '';}};
@@ -1528,30 +1526,6 @@ const FECHA_PUERTA='2026-10-01';        // corrida por Roberto el 31/08/2026 (an
 const PUERTA=!!FECHA_PUERTA && hoyISO()>=FECHA_PUERTA;
 const AVISO_PUERTA=!!FECHA_PUERTA && !PUERTA;
 const DEMO_LIBRE='hist-cap1';           // lo único jugable sin código
-/* La licencia se consulta EN VIVO (no se congela al arrancar): si el alumno canjea su
-   código a mitad de sesión, la puerta se abre sin recargar la página. */
-function tieneLicencia(){ return !!S.alumno; }
-/* Excepciones incorporadas: los enlaces de muestra y ?qa=1 nunca pasan por la puerta. */
-function bloqueado(){ return PUERTA && !PRUEBA && !QA && !tieneLicencia(); }
-function capAbierto(id){ return !bloqueado() || id===DEMO_LIBRE; }
-/* Mensaje único cuando se toca algo cerrado. */
-function avisoCandado(){ alert('🔒 Necesitas un código de tu profesor para abrir esta parte de VULPO.\n\n¿Eres profesor? Escríbenos a vulpochile.app@gmail.com'); }
-/* Remate de la demo: en vez del capítulo siguiente, la invitación a conseguir un código. */
-function mostrarFinDemo(){
- $('demoContacto').hidden=true;
- $('demoCodigo').onclick=()=>{SND.tap();abrirCanje();};
- $('demoProfe').onclick=()=>{SND.tap();$('demoContacto').hidden=false;};
- $('nav').style.display='none';
- go('scr-demo-fin');
-}
-/* Con la puerta cerrada, la barra inferior deja solo el Mapa. */
-function ajustarNav(){
- const cerrado=bloqueado();
- document.querySelectorAll('#nav button').forEach(b=>{
-  const destino=b.dataset.go;
-  if(destino==='scr-tienda'||destino==='perfil') b.style.display=cerrado?'none':'';
- });
-}
 
 /* ===== CAMPAÑAS (capa "asignatura completa" · data-driven) =====
    Una campaña agrupa expediciones (capítulos) en orden, con un Desafío Extra y un
@@ -1664,8 +1638,13 @@ const DIF_ASIGS=['Historia','Ciencias','Lenguaje'];
    que corre en el arranque. Declararla más abajo la deja en zona muerta temporal y mata
    todo el JavaScript de la app. */
 const HAY_DIFICIL=true;
-function campañaDe(asig){return CAMPAÑAS.find(c=>c.asignatura===asig)||null;}
-function campañaPorId(id){return CAMPAÑAS.find(c=>c.id===id)||null;}
+/* ¿El cuarto hito de la Maestría Total es El Autómata (el Jefe del Reto de Cálculo)?
+   En 8° la Maestría es Historia + Ciencias + Lenguaje en Difícil MÁS El Autómata, porque
+   la dificultad de Matemáticas es el Reto y no el Modo Difícil. En 7° son las CUATRO
+   asignaturas en Difícil y no hay Autómata que sumar. Son el mismo número —cuatro hitos—
+   contados distinto, así que la diferencia va como DATO y no como dos funciones distintas.
+   ⚠️ PEGADA a HAY_DIFICIL por el mismo motivo: la consulta esMaestro() en el arranque. */
+const MAESTRIA_CALC=true;
 
 let EXP_ACT=EXPEDICIONES[0];          // expedición activa
 let EXPEDICION=EXP_ACT.etapas;         // etapas de la expedición activa
@@ -1673,33 +1652,8 @@ let N_ETAPAS=EXPEDICION.length;
 
 /* Pool de preguntas de la expedición activa (oa -> [preguntas]) */
 let POOL={};
-function cargarPool(exp){
- POOL={};
- if(!exp||!exp.contenido)return Promise.resolve();
- return fetch(exp.contenido).then(r=>r.json())
-  .then(d=>{(d.preguntas||[]).forEach(q=>{(POOL[q.oa]=POOL[q.oa]||[]).push(q);});})
-  .catch(e=>{console.error('No se pudo cargar el pool',e);});
-}
 cargarPool(EXP_ACT); // carga inicial (Historia) para el Duelo y el arranque
 
-function pickN(arr,n){
- const a=(arr||[]).slice();
- for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
- return a.slice(0,n);
-}
-function buildPreguntas(lvl){
- const c=EXPEDICION[lvl];const N=nPreguntas(lvl);let sel;
- if(c.oas){const per=Math.ceil(N/c.oas.length);
-  sel=[];c.oas.forEach(oa=>{sel=sel.concat(pickN(POOL[oa],per));});
-  sel=pickN(sel,N);
- }else{sel=pickN(POOL[c.oa],N);}
- // Se conserva el `oa` de cada pregunta: lo necesita el mapa de dominio del profesor.
- return sel.map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,id:q.id}));
-}
-function poolListo(lvl){
- const c=EXPEDICION[lvl];
- return c.oas?c.oas.every(oa=>(POOL[oa]||[]).length):(POOL[c.oa]||[]).length>0;
-}
 // Meta de aprendizaje en lenguaje de niño, por OA. Se completa por revisión (ver el plan del
 // marco de la etapa). La frase completa "Lo que vas a aprender: ‹…›", así que va sin "Vas a"
 // (p. ej. "Por qué los europeos cruzaron el océano."). Fallback al nombre de la etapa.
@@ -1774,10 +1728,6 @@ const META_OA={
  'MA08 OA 16':'Cómo un gráfico puede engañarte y aprender a descubrirlo.',
  'MA08 OA 17':'Cómo contar todas las combinaciones posibles sin perder ninguna.',
 };
-// La meta de una etapa: la frase amable del OA, o el nombre de la etapa como respaldo.
-function metaDeEtapa(lvl){ const c=EXPEDICION[lvl]; if(!c) return ''; return META_OA[c.oa] || c.nombre || 'este objetivo'; }
-// ¿Corresponde mostrar meta para esta etapa? Sí salvo libros de apoyo (no son OA del currículum).
-function metaDisponible(lvl){ const c=EXPEDICION[lvl]; return !!(c && !/^(VOC-|AF-)/.test(c.oa||'')); }
 const LOGROS={
  primera:{ic:"🥇",tx:"Primera victoria"},
  combo3:{ic:"🔥",tx:"Combo x3 — ¡Imparable!"},
@@ -1792,17 +1742,6 @@ const LOGROS={
  'mision-profe':{ic:"📣",tx:"¡Misión del profe cumplida!"},
 };
 
-/* ================= ESTADO ================= */
-function nuevoProgreso(n){n=n||(EXPEDICION?EXPEDICION.length:5);
- // En modo prueba (?solo=) la ruta nace con TODAS las etapas abiertas, jefe del
- // capítulo incluido: el invitado entra a probar cualquiera, no a avanzar en orden.
- // En modo experimental se abren todas MENOS la del jefe, que sigue pidiendo el camino.
- // ⚠️ ?qa=1 NO abre etapas y nunca las abrió: por eso la condición mira PRUEBA y no
- //    CAPS_ABIERTOS, que también vale true en QA.
- return Array.from({length:n},(_,i)=>{
-  const esJefe=(i===n-1);
-  const abierta = PRUEBA || i===0 || (CAPS_ABIERTOS && !JEFES_ABIERTOS && !esJefe);
-  return {est:abierta?"open":"lock",estrellas:0};});}
 const S={nombre:"",avatar:AVATARES[0],xp:0,nivel:1,monedas:0,
  progreso:nuevoProgreso(), progresoDificil:nuevoProgreso(), dificilDesbloqueado:false,
  skins:[], logros:new Set(), rutas:{},
@@ -1818,13 +1757,10 @@ let Q={lvl:0,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock
 
 /* Modo de juego: 'normal' | 'dificil' */
 let MODO='normal';
-function esJefeLvl(lvl){return lvl===N_ETAPAS-1;}
-function progAct(){return MODO==='dificil'?S.progresoDificil:S.progreso;}
-function nPreguntas(lvl){
- if(REV.activo) return REV.n;           // revisión de profesor: pocas por etapa
- if(MODO==='dificil')return esJefeLvl(lvl)?15:10;
- return EXPEDICION[lvl].n;}
-function tiempoInicial(){return MODO==='dificil'?15:20;}
+// Cuenta regresiva del quiz. En 3° va en true porque a los 8-9 años el cronómetro
+// produce ansiedad y no foco; de 5° hacia arriba el reloj es parte del juego.
+// ⚠️ NO alcanza al Duelo, que lleva reloj en los tres: ahí el tiempo es la competencia.
+const SIN_RELOJ=false;
 
 const $=id=>document.getElementById(id);
 const XP_POR_NIVEL=100;
@@ -1896,36 +1832,6 @@ const MUSIC={
  },
 };
 
-/* ================= UTIL ================= */
-function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));$(id).classList.add('on');window.scrollTo(0,0);
- var enJuego=(id==='scr-mapa'||id==='scr-quiz'||id==='scr-res');
- document.body.classList.toggle('en-dificil', enJuego && MODO==='dificil');
- if(id==='scr-rol'){pintarInicio();revisarDesafio();}
- REV.barra();   // modo revisión: la barra se oculta sola en su propia pantalla
- MUSIC.contexto(id);}
-// Saluda al alumno por su nombre (mismas letras que VULPO) si canjeó un código.
-function pintarInicio(){const el=$('rolNombre'),sub=$('rolSub');if(!el)return;
- if(S.alumno){el.textContent='¡Hola, '+S.alumno+'!';el.hidden=false;if(sub)sub.hidden=true;}
- else{el.hidden=true;if(sub)sub.hidden=false;}
- const av=$('avisoPuerta');
- if(av){
-  av.hidden=!AVISO_PUERTA;
-  if(AVISO_PUERTA) $('avisoPuertaTxt').textContent=
-    'Desde el '+fechaLarga(FECHA_PUERTA)+' necesitarás un código de tu profesor para seguir jugando.';
- }}
-function toast(l){if(S.logros.has(l))return;S.logros.add(l);SND.unlock();
- $('toastIc').textContent=LOGROS[l].ic;$('toastTx').textContent=LOGROS[l].tx;
- $('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2600);}
-function particulas(x,y,emojis,n=14){
- for(let i=0;i<n;i++){const p=document.createElement('span');p.className='pt';
-  p.textContent=emojis[Math.floor(Math.random()*emojis.length)];
-  p.style.left=x+'px';p.style.top=y+'px';
-  p.style.setProperty('--dx',(Math.random()*220-110)+'px');
-  p.style.setProperty('--dy',(Math.random()*-180-40)+'px');
-  p.style.setProperty('--rot',(Math.random()*360)+'deg');
-  document.body.appendChild(p);setTimeout(()=>p.remove(),1000);}}
-function comboFx(n){const c=$('combo');c.textContent='COMBO x'+n+' 🔥';
- c.classList.remove('show');void c.offsetWidth;c.classList.add('show');}
 
 /* ================= CATÁLOGO DE DIAGRAMAS (SVG interactivo) =================
    Cada widget: DIAGRAMAS[kind](params, nodo) dibuja SVG dentro de `nodo`.
@@ -2306,7 +2212,7 @@ async function preguntasDeOA(oa,n){
  let pool=[];
  try{ const d=await (await fetch(url)).json();
       pool=(d.preguntas||[]).filter(q=>q.oa===oa); }catch(e){ return []; }
- return pickN(pool,n).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,id:q.id}));
+ return pickN(pool,n).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,visual:q.visual,id:q.id}));
 }
 
 // Lanza el quiz en modo lección (reusa el motor con el flag Q.leccion).
@@ -2620,107 +2526,16 @@ $('btnCalcBack').onclick=()=>{SND.tap();if(CAMP_ACT){renderCampaña();go('scr-ca
 $('calcSalir').onclick=()=>{clearInterval(RC.timer);clearTimeout(RC._resolveT);SND.tap();renderNivelesCalc();go('scr-calc-mapa');};
 $('calcResMapa').onclick=()=>{SND.tap();renderNivelesCalc();go('scr-calc-mapa');};
 
-function refreshHud(){
- $('hudAv').innerHTML=avatarHTML(S.avatar);
- $('hudName').textContent=insigniaIc()+S.nombre;
- const dentro=S.xp % XP_POR_NIVEL;
- const nuevoNivel=Math.floor(S.xp/XP_POR_NIVEL)+1;
- if(S._lastNivel!=null && nuevoNivel>S._lastNivel) levelUpFx(nuevoNivel);
- S._lastNivel=nuevoNivel; S.nivel=nuevoNivel;
- $('hudXp').style.width=(dentro/XP_POR_NIVEL*100)+'%';
- $('hudLvl').textContent='Nivel '+S.nivel+' · '+S.xp+' XP';
- $('hudCoins').textContent=S.monedas;}
-function levelUpFx(n){
- SND.levelup();
- const el=$('levelup');el.querySelector('.lvl-num').textContent='NIVEL '+n;
- el.classList.remove('show');void el.offsetWidth;el.classList.add('show');
- particulas(window.innerWidth/2,window.innerHeight/2,['⭐','✨','🎉','💫','🌟'],30);
- setTimeout(()=>el.classList.remove('show'),1900);}
 
 /* ================= PERSISTENCIA ================= */
-const SAVE_KEY='kimun_save';
-/* Almacén de progreso por ruta (id de expedición -> {progreso, progresoDificil, dificilDesbloqueado}) */
-function estadoRuta(exp){
- if(!S.rutas[exp.id]) S.rutas[exp.id]={progreso:nuevoProgreso(exp.etapas.length),progresoDificil:nuevoProgreso(exp.etapas.length),dificilDesbloqueado:false};
- return S.rutas[exp.id];
-}
+// Sufijo de las claves de localStorage. En 8 basico va VACIO, y eso importa:
+// 'kimun_save'+'' es exactamente 'kimun_save', que es la partida real de todos sus
+// alumnos. Existe solo para que las funciones que tocan el disco queden identicas a
+// las de 7 y 3, que si necesitan separarse (se sirven del mismo origen, y sin sufijo
+// un nino con dos juegos abiertos comparte monedas, skins y avance).
+const SUFIJO='';
+const SAVE_KEY='kimun_save'+SUFIJO;
 
-/* ===== Helpers de progreso de campaña ===== */
-// ¿el jefe (último nodo) de esta expedición está vencido en Normal?
-function expedicionCompleta(id){
- const st=S.rutas[id]; if(!st||!st.progreso)return false;
- const ult=st.progreso[st.progreso.length-1];
- return !!ult && ult.est==='done';
-}
-// capítulos completados de una campaña (en orden)
-function capsCompletos(camp){return camp.capitulos.filter(expedicionCompleta).length;}
-// ¿está desbloqueado el capítulo i de la campaña? (cap 1 siempre; cap N tras vencer N-1)
-function nodoCampDesbloqueado(camp,i){
- if(CAPS_ABIERTOS)return true;
- if(i===0)return true;
- const exp=EXPEDICIONES.find(e=>e.id===camp.capitulos[i]);
- if(exp&&exp.libre)return true;   // capítulo marcado como libre (siempre abierto)
- if(i<camp.capitulos.length)return expedicionCompleta(camp.capitulos[i-1]);
- return false;
-}
-function desafioDesbloqueado(camp){return JEFES_ABIERTOS||camp.capitulos.every(expedicionCompleta);}
-function jefeFinalDesbloqueado(camp){return JEFES_ABIERTOS||(desafioDesbloqueado(camp)&&(!camp.desafioExtra||expedicionCompleta(camp.desafioExtra)));}
-function campañaCompleta(camp){return S.campañasCompletas.has(camp.id);}
-/* Activa una expedición: fija etapas, carga su pool y apunta el progreso a esa ruta */
-function activarExpedicion(exp){
- EXP_ACT=exp; EXPEDICION=exp.etapas; N_ETAPAS=EXPEDICION.length; MODO='normal';
- const st=estadoRuta(exp);
- S.progreso=st.progreso; S.progresoDificil=st.progresoDificil; S.dificilDesbloqueado=st.dificilDesbloqueado;
- return cargarPool(exp);
-}
-function guardar(){
- // Modo prueba: el avance vive solo en memoria. Se conserva el volcado a S.rutas
- // (si no, al volver del mapa a la lista se perdería el avance dentro de la misma
- // sesión), pero NO se toca localStorage ni se sincroniza con Supabase.
- // Deliberadamente NO se usa EFIMERO aquí: ?qa=1 siempre guardó, y se deja igual.
- if(SIN_DISCO){ if(EXP_ACT) S.rutas[EXP_ACT.id]={progreso:S.progreso,progresoDificil:S.progresoDificil,dificilDesbloqueado:S.dificilDesbloqueado}; return; }
- try{
- if(EXP_ACT) S.rutas[EXP_ACT.id]={progreso:S.progreso,progresoDificil:S.progresoDificil,dificilDesbloqueado:S.dificilDesbloqueado};
- localStorage.setItem(SAVE_KEY,JSON.stringify({
-  nombre:S.nombre,avatar:S.avatar,xp:S.xp,monedas:S.monedas,
-  skins:S.skins,logros:[...S.logros], rutaActual:EXP_ACT?EXP_ACT.id:null, rutas:S.rutas,
-  campañasCompletas:[...S.campañasCompletas], insignias:[...S.insignias], insigniaActiva:S.insigniaActiva,
-  calc:S.calc, curso:S.curso, alumno:S.alumno, maestro:S.maestro, mateLecciones:S.mateLecciones,
-  metasVistas:S.metasVistas, semaforo:S.semaforo}));sincronizarXP();}catch(e){}}
-function cargar(){try{const d=JSON.parse(localStorage.getItem(SAVE_KEY)||'null');if(!d)return false;
- S.nombre=d.nombre||"";S.avatar=d.avatar||AVATARES[0];S.xp=d.xp||0;S.monedas=d.monedas||0;
- S.skins=Array.isArray(d.skins)?d.skins:[];S.logros=new Set(d.logros||[]);
- S.campañasCompletas=new Set(d.campañasCompletas||[]);
- S.insignias=new Set(d.insignias||[]);
- S.insigniaActiva=d.insigniaActiva||null;
- if(d.calc&&Array.isArray(d.calc.etapas))S.calc=d.calc;
- if(d.mateLecciones&&typeof d.mateLecciones==='object')S.mateLecciones=d.mateLecciones;
- if(d.metasVistas&&typeof d.metasVistas==='object')S.metasVistas=d.metasVistas;
- if(d.semaforo&&typeof d.semaforo==='object')S.semaforo=d.semaforo;
- S.curso=d.curso||null; S.alumno=d.alumno||null; S.maestro=!!d.maestro;
- S.rutas=(d.rutas&&typeof d.rutas==='object')?d.rutas:{};
- if(!d.rutas && Array.isArray(d.progreso)){ // migrar partidas antiguas (Historia)
-  S.rutas['hist-europeos']={progreso:d.progreso,
-   progresoDificil:Array.isArray(d.progresoDificil)?d.progresoDificil:nuevoProgreso(d.progreso.length),
-   dificilDesbloqueado:!!d.dificilDesbloqueado};
- }
- // Cortesía de campaña: si el jugador ya había vencido el piloto (hist-europeos),
- // dar por completado el Capítulo 1 para que se abra el Capítulo 2. Lo global no se toca.
- if(S.rutas['hist-europeos']){
-  const viejo=S.rutas['hist-europeos'];
-  const ult=viejo.progreso&&viejo.progreso[viejo.progreso.length-1];
-  if(ult&&ult.est==='done' && !S.rutas['hist-cap1']){
-   const p=nuevoProgreso(5); p.forEach(n=>{n.est='done';});
-   S.rutas['hist-cap1']={progreso:p,progresoDificil:nuevoProgreso(5),dificilDesbloqueado:false};
-  }
-  delete S.rutas['hist-europeos'];
- }
- const st=estadoRuta(EXP_ACT); // reflejar la ruta activa
- S.progreso=st.progreso;S.progresoDificil=st.progresoDificil;S.dificilDesbloqueado=st.dificilDesbloqueado;
- guardar(); // persistir la limpieza/migración con el progreso ya reflejado
- return !!d.nombre;}catch(e){return false;}}
-function hayPartida(){try{const d=JSON.parse(localStorage.getItem(SAVE_KEY)||'null');return !!(d&&d.nombre);}catch(e){return false;}}
-function borrarPartida(){localStorage.removeItem(SAVE_KEY);}
 
 /* ================= SUPABASE (duelo online asíncrono) ================= */
 const SUPA_URL='https://bdgzpjzlqidcexdkjhzy.supabase.co';
@@ -2750,52 +2565,14 @@ async function cargarCurso(){
 }
 // Sube el XP al servidor como máximo una vez cada 15 s, con el valor más reciente.
 let _xpTimer=null, _xpUlt=0;
-function sincronizarXP(){
- if(!SB||!MI_PERFIL) return;
- if(_xpTimer) return;                       // ya hay un envío programado
- const espera = Math.max(0, 15000-(Date.now()-_xpUlt));
- _xpTimer=setTimeout(async ()=>{
-  _xpTimer=null; _xpUlt=Date.now();
-  try{
-   const {data,error}=await SB.rpc('kimun_xp',{p_xp:S.xp});
-   if(error) throw error;
-   // El servidor manda: si el adulto corrigió un XP inflado, el teléfono lo adopta.
-   // Hay que guardar: si no, al reabrir el juego se volvería a enviar el XP viejo
-   // desde el disco y la corrección del adulto se desharía sola.
-   if(typeof data==='number' && data < S.xp){ S.xp=data; refreshHud(); guardar(); }
-  }catch(e){ console.error('XP:',e.message||e); }  // best-effort: no interrumpe el juego
- }, espera);
-}
 
 /* ===== Dominio por objetivo de aprendizaje =====
    Se acumula en memoria durante la etapa y se envía un resumen al terminarla.
    El niño no ve nada de esto y nunca se le interrumpe el juego. */
 let DOM_BUF = {};                       // { "HI08 OA 04": {n:6, ok:4} }
-const DOM_PEND = 'kimun_dom_pend';      // resúmenes que no se pudieron enviar
+const DOM_PEND = 'kimun_dom_pend'+SUFIJO;      // resúmenes que no se pudieron enviar
 
-function registrarOA(oa, ok){
- if(EFIMERO) return;                    // QA marca las respuestas y el modo prueba no guarda: no se mide nada
- if(!oa) return;
- // Al mapa de dominio del profesor va SOLO el curriculum, y se reconoce por la FORMA
- // del codigo: el curriculum lleva el nivel adentro (`HI07 OA 04`) y un modulo
- // transversal no (`VOC-HIST`, `AF-T1`, `CA-T1`). Por eso los transversales no se miden:
- // un porcentaje junto a "Cuentos de Ada" se leeria como cobertura de Lenguaje, y no lo es.
- //
- // Antes esto era una lista escrita a mano (/^(AF-|VOC-)/) que habia que ampliar en los
- // TRES forks cada vez que entraba un modulo nuevo. Es el mismo criterio que ya usan
- // validar-oa-json.py y generar-tablero.py, y el mismo patron con que el servidor
- // descarta lo que no reconoce: asi el cliente deja de mandarle cosas que bota en silencio.
- if(!/^[A-Z]{2}[0-9]{2} OA [0-9]{2}$/.test(oa)) return;
- const d = DOM_BUF[oa] || (DOM_BUF[oa] = {n:0, ok:0});
- d.n++; if(ok) d.ok++;
-}
 
-// Convierte el acumulador en el arreglo que espera el servidor y lo vacía.
-function cerrarDominio(){
- const datos = Object.keys(DOM_BUF).map(oa => ({oa, n:DOM_BUF[oa].n, ok:DOM_BUF[oa].ok}));
- DOM_BUF = {};
- return datos;
-}
 
 async function enviarDominio(){
  try{
@@ -2816,10 +2593,6 @@ async function enviarDominio(){
  }catch(e){ console.error('Dominio:', e.message||e); }  // best-effort: nunca interrumpe la partida
 }
 
-function guardarPendiente(datos){
- // Se acota para que un teléfono sin conexión durante días no acumule sin límite.
- try{ localStorage.setItem(DOM_PEND, JSON.stringify(datos.slice(-200))); }catch(e){}
-}
 
 /* ================= TIENDA DE SKINS ================= */
 const SKINS=[{e:"🐲",p:160},{e:"🦄",p:200},{e:"🦖",p:240},{e:"🐙",p:140},{e:"🦉",p:110},{e:"🚀",p:300},{e:"🧙",p:360},{e:"👑",p:480},
@@ -2844,40 +2617,6 @@ const SKINS=[{e:"🐲",p:160},{e:"🦄",p:200},{e:"🦖",p:240},{e:"🐙",p:140}
  {id:'kimun-matematico', e:"📐", img:'assets/kimun-matematico.png', nombre:'Vulpi Matemático', bloqueada:true, desbloqueaCon:'mate', req:'Vence a La Incógnita'},
  // Skin maestra: se gana completando las 3 asignaturas en Modo Difícil (emoji hasta que haya arte).
  {id:'kimun-maestro', e:"🏆", img:'assets/skin-kimun-maestro.png', nombre:'Vulpi Maestro', bloqueada:true, req:'Vence los 4 jefes (3 en Difícil + El Autómata)'}];
-// Si el avatar equipado es una skin con imagen, devuelve su ruta; si no, null.
-function skinImg(av){const s=SKINS.find(k=>k.e===av&&k.img);return s?s.img:null;}
-// HTML del avatar: <img> si la skin tiene imagen, o el emoji tal cual.
-function avatarHTML(av){const img=skinImg(av);return img?`<img src="${img}" alt="avatar">`:av;}
-function renderTienda(){
- $('tiendaCoins').textContent=S.monedas;
- const g=$('tiendaGrid');g.innerHTML='';
- SKINS.forEach(sk=>{
-  const owned=S.skins.includes(sk.e), equipped=S.avatar===sk.e;
-  const bloqueada=sk.bloqueada&&!owned;   // exclusiva aún no ganada
-  const em=sk.img?`<img src="${sk.img}" alt="${sk.nombre||''}">`:sk.e; // imagen o emoji
-  const it=document.createElement('div');it.className='shop-item'+(equipped?' equipped':'')+(bloqueada?' locked':'');
-  if(bloqueada){ // visible pero no comprable: se gana venciendo al Jefe Final
-   it.innerHTML=`<div class="em">${em}</div><div class="price">🔒 ${sk.req||'Bloqueada'}</div>`+
-     `<div class="skin-lock">${sk.nombre||'Skin exclusiva'}</div>`;
-   g.appendChild(it); return;
-  }
-  let btn;
-  if(equipped)btn='<button class="on" disabled>✓ Equipado</button>';
-  else if(owned)btn='<button class="equip">Equipar</button>';
-  else btn=`<button class="buy"${S.monedas<sk.p?' disabled':''}>Comprar 🪙${sk.p}</button>`;
-  const precio=owned?'<div class="price" style="color:var(--green)">Tuyo</div>':`<div class="price">🪙 ${sk.p}</div>`;
-  const nombreHtml=sk.nombre?`<div class="skin-name">${sk.nombre}</div>`:'';
-  it.innerHTML=`<div class="em">${em}</div>`+nombreHtml+precio+btn;
-  const b=it.querySelector('button');
-  if(b&&!equipped)b.onclick=()=>{
-   if(owned){S.avatar=sk.e;SND.tap();}
-   else{if(S.monedas<sk.p){SND.wrong();return;}S.monedas-=sk.p;S.skins.push(sk.e);S.avatar=sk.e;
-    SND.coin();particulas(window.innerWidth/2,window.innerHeight/3,['🪙','✨','⭐'],16);}
-   guardar();refreshHud();renderTienda();
-  };
-  g.appendChild(it);
- });
-}
 
 /* ================= DUELO 1v1 ================= */
 const DUELO_AV=["🦁","🐉","🦊","🐺","🦄","🐲"], DUELO_ROUNDS=5;
@@ -2896,65 +2635,13 @@ async function cargarPoolDuelo(){
    DUELO_POOL=(d.preguntas||[]).filter(q=>DUELO_BANCO.oas.includes(q.oa)); }catch(e){ DUELO_POOL=[]; }
  return DUELO_POOL;
 }
-function poolDuelo(){return DUELO_POOL||[];}   // banco propio del duelo, independiente del POOL de expedición activa
-function initDueloSetup(){
- $('d1Name').value='';$('d2Name').value='';
- D.j[0].em=DUELO_AV[0];D.j[1].em=DUELO_AV[1];
- [['d1Av',0],['d2Av',1]].forEach(par=>{const g=$(par[0]),pi=par[1];g.innerHTML='';
-  DUELO_AV.forEach(a=>{const d=document.createElement('div');d.className='av'+(a===D.j[pi].em?' sel':'');d.textContent=a;
-   d.onclick=()=>{SND.tap();D.j[pi].em=a;g.querySelectorAll('.av').forEach(x=>x.classList.remove('sel'));d.classList.add('sel');};
-   g.appendChild(d);});});
- go('scr-duelo-setup');
-}
+   // banco propio del duelo, independiente del POOL de expedición activa
 async function startDuelo(){
  const pool=await cargarPoolDuelo();
  if(pool.length<DUELO_ROUNDS){alert('Cargando preguntas… intenta de nuevo en un momento.');return;}
  D.j[0].n=$('d1Name').value.trim()||"Jugador 1";
  D.j[1].n=$('d2Name').value.trim()||"Jugador 2";
  nuevaRondaDuelo();
-}
-function nuevaRondaDuelo(){
- D.j[0].pts=0;D.j[1].pts=0;D.ronda=0;D.turno=0;
- D.pr=pickN(poolDuelo(),DUELO_ROUNDS).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,id:q.id}));
- dueloPass();
-}
-function dueloPass(){const jug=D.j[D.turno];$('dpEm').textContent=jug.em;$('dpMsg').textContent='Turno de '+jug.n;go('scr-duelo-pass');}
-function pintaDuelo(){
- const P=D.pr[D.ronda],jug=D.j[D.turno];D.lock=false;
- $('dTurn').textContent=jug.em+' '+jug.n;
- $('dTag').textContent='Ronda '+(D.ronda+1)+'/'+DUELO_ROUNDS;
- $('dText').textContent=P.q;$('dFb').textContent='';$('dFb').className='feedback';
- $('dProg').style.width=(D.ronda/DUELO_ROUNDS*100)+'%';
- $('dScore').textContent=`${D.j[0].em} ${D.j[0].pts}  —  ${D.j[1].pts} ${D.j[1].em}`;
- const orden=P.ops.map((o,i)=>({o,i})).sort(()=>Math.random()-.5);
- const box=$('dOpts');box.innerHTML='';
- orden.forEach((it,k)=>{const b=document.createElement('div');b.className='opt';
-  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${escHtml(it.o)}`;
-  b.onclick=()=>responderDuelo(b,it.i===P.ok,P);box.appendChild(b);});
- clearInterval(D.timer);D.t=DUELO_SEG;$('dTimer').textContent=D.t;$('dTimer').className='timer';
- D.timer=setInterval(()=>{D.t--;$('dTimer').textContent=D.t;if(D.t<=5){$('dTimer').classList.add('low');if(D.t>0)SND.tick();}
-  if(D.t<=0){clearInterval(D.timer);responderDuelo(null,false,P);}},1000);
- go('scr-duelo-q');
-}
-function responderDuelo(el,ok,P){
- if(D.lock)return;D.lock=true;clearInterval(D.timer);
- document.querySelectorAll('#dOpts .opt').forEach(o=>o.classList.add('off'));
- if(ok){D.j[D.turno].pts++;if(el){el.classList.remove('off');el.classList.add('ok');}$('dFb').textContent='✓ ¡Correcto!';$('dFb').classList.add('ok');SND.correct();}
- else{if(el){el.classList.remove('off');el.classList.add('bad');}$('dFb').textContent='✗ '+P.tip;$('dFb').classList.add('bad');SND.wrong();}
- $('dScore').textContent=`${D.j[0].em} ${D.j[0].pts}  —  ${D.j[1].pts} ${D.j[1].em}`;
- setTimeout(()=>{
-  if(D.turno===0){D.turno=1;dueloPass();}
-  else{D.turno=0;D.ronda++;if(D.ronda<DUELO_ROUNDS)dueloPass();else finDuelo();}
- },ok?1100:2000);
-}
-function finDuelo(){
- clearInterval(D.timer);const a=D.j[0],b=D.j[1];let ic,title;
- if(a.pts===b.pts){ic='🤝';title='¡Empate!';}
- else{const w=a.pts>b.pts?a:b;ic=w.em;title='¡Gana '+w.n+'!';}
- SND.win();
- $('drIc').textContent=ic;$('drTitle').textContent=title;
- $('drScore').innerHTML=`${escHtml(a.em)} ${escHtml(a.n)}: <b style="color:var(--cyan)">${a.pts}</b> &nbsp;vs&nbsp; ${escHtml(b.em)} ${escHtml(b.n)}: <b style="color:var(--cyan)">${b.pts}</b>`;
- go('scr-duelo-res');
 }
 
 /* ================= INICIO ================= */
@@ -3007,242 +2694,14 @@ const ORDEN_ASIG=['Historia','Matemáticas','Ciencias','Lenguaje'];
    de la portada propia de cada mapa/capítulo. */
 const ASIG_PORTADA={Historia:'assets/portada-historia.png',Matemáticas:'assets/portada-matematicas.png',
  Ciencias:'assets/portada-ciencias.png',Lenguaje:'assets/portada-lenguaje.png'};
-/* Portada propia de cada mapa POR CONVENCIÓN: assets/portada-<id>.png.
-   Pensado para el final: al crear el archivo aparece solo (sin tocar código);
-   mientras no exista, el onerror cae a la portada de la asignatura. */
-function portadaMapa(exp){return `assets/portada-${exp.id}.png`;}
-function portadaFallback(exp){return ASIG_PORTADA[exp.asignatura]||exp.portada||'';}
-// Nombre corto del mapa a partir del nivel ("8° Básico · La célula" -> "La célula")
-function nombreMapa(exp){const p=(exp.nivel||'').split('·');return p.length>1?p.slice(1).join('·').trim():(exp.nivel||exp.asignatura);}
-// Expediciones sueltas (no campaña) y activas de una asignatura
-function mapasDe(asig){return EXPEDICIONES.filter(e=>e.activa&&e.asignatura===asig&&!e.campaña);}
 
-// NIVEL 1: un módulo por asignatura
-function renderExpediciones(){
- ajustarNav();
- const g=$('expGrid');g.innerHTML='';
- ORDEN_ASIG.forEach(asig=>{
-  if(asig==='Matemáticas'){                            // Matemáticas = campaña de lecciones + Reto
-   const camp=CAMPAÑAS.find(c=>c.id==='mate');
-   const cap0=camp.capitulosMate[0];
-   const nHechas=cap0.lecciones.filter(id=>S.mateLecciones[id]).length;
-   const card=document.createElement('div');card.className='exp-card';
-   card.innerHTML=`<img src="${ASIG_PORTADA['Matemáticas']}" alt="Matemáticas"><div class="exp-info"><b>Matemáticas</b><small>Aprende y practica · Números ${nHechas}/${cap0.lecciones.length}</small></div><span class="exp-go">▶</span>`;
-   card.onclick=()=>{SND.tap(); if(bloqueado()){avisoCandado();return;} abrirCampaña(camp);};
-   if(bloqueado()) card.classList.add('lock');
-   g.appendChild(card); return;
-  }
-  const camp=CAMPAÑAS.find(c=>c.asignatura===asig);
-  const exps=mapasDe(asig);
-  if(!camp&&!exps.length)return;                       // sin contenido: no se muestra
-  const portada=camp?camp.portada:(ASIG_PORTADA[asig]||exps[0].portada);
-  const done=camp?campañaCompleta(camp):false;
-  const sub=camp?`Campaña · ${capsCompletos(camp)}/${camp.capitulos.length} capítulos`
-                :`${exps.length} ${exps.length===1?'mapa':'mapas'}`;
-  const card=document.createElement('div');card.className='exp-card'+(done?' camp-done':'');
-  const subL=(HAY_VOCABULARIO&&asig==='Lenguaje')?'Campaña + Vocabulario':sub;
-  card.innerHTML=`<img src="${portada}" alt="${asig}"><div class="exp-info"><b>${asig} ${done?'👑':''}</b><small>${subL}</small></div><span class="exp-go">▶</span>`;
-  card.onclick=()=>{SND.tap();
-   // Historia entra siempre: dentro se decide qué capítulo está abierto (la demo).
-   if(bloqueado() && asig!=='Historia'){avisoCandado();return;}
-   if(HAY_VOCABULARIO&&asig==='Lenguaje')abrirLenguaje(); else if(camp)abrirCampaña(camp); else abrirAsignatura(asig);};
-  if(bloqueado() && asig!=='Historia') card.classList.add('lock');
-  g.appendChild(card);
- });
- // Módulo Lectura (biblioteca): fuera de las asignaturas, crece con más libros.
- if(HAY_BIBLIOTECA){
- const bib=document.createElement('div'); bib.className='exp-card bib-entry';
- bib.innerHTML=`<img src="assets/portada-lectura.png" alt="Lectura"><div class="exp-info"><b>📖 Lectura</b><small>Lecturas del colegio · ${LIBROS.length} libro${LIBROS.length===1?'':'s'}</small></div><span class="exp-go">▶</span>`;
- bib.onclick=()=>{SND.tap(); if(bloqueado()){avisoCandado();return;} abrirBiblioteca();};
- if(bloqueado()) bib.classList.add('lock');
- g.appendChild(bib);
- }
-}
 // Biblioteca de lecturas (hoy: El diario de Ana Frank). Cada libro = una expedición de tramos.
 const LIBROS=[{id:'lect-anafrank', titulo:'El diario de Ana Frank', autor:'Ana Frank', tramos:8}];
-function abrirBiblioteca(){
- const g=$('biblioGrid'); g.innerHTML='';
- LIBROS.forEach(lb=>{const exp=EXPEDICIONES.find(e=>e.id===lb.id);
-  const card=document.createElement('div'); card.className='exp-card';
-  card.innerHTML=`<img src="${exp.portada}" alt="" onerror="this.onerror=null;this.src='assets/portada-lenguaje.png'"><div class="exp-info"><b>${lb.titulo}</b><small>${lb.autor} · ${lb.tramos} tramos</small></div><span class="exp-go">▶</span>`;
-  card.onclick=()=>{SND.tap();entrarExpedicion(exp);};
-  g.appendChild(card);});
- go('scr-biblioteca');
-}
-// Landing de Lenguaje: elegir entre la Campaña y el Vocabulario.
-function abrirLenguaje(){ go('scr-lenguaje'); }
 
-// NIVEL 2: los mapas de una asignatura (sin campaña), cada uno con su portada propia
-function abrirAsignatura(asig){
- const exps=mapasDe(asig);
- $('mapasHead').innerHTML=`<h1 style="font-size:26px">${asig}</h1><p>Elige un mapa</p>`;
- const g=$('mapasGrid');g.innerHTML='';
- exps.forEach(exp=>{
-  const card=document.createElement('div');card.className='exp-card';
-  card.innerHTML=`<img src="${portadaMapa(exp)}" alt="${nombreMapa(exp)}" onerror="this.onerror=null;this.src='${portadaFallback(exp)}'"><div class="exp-info"><b>${nombreMapa(exp)}</b><small>${exp.nivel}</small></div><span class="exp-go">▶</span>`;
-  card.onclick=()=>{SND.tap();entrarExpedicion(exp);};
-  g.appendChild(card);
- });
- go('scr-mapas');
-}
-function entrarExpedicion(exp){
- if(!exp.activa){alert('🚀 La expedición de '+exp.asignatura+' viene pronto. ¡Sigue explorando Historia!');return;}
- // En modo prueba el invitado ya tiene nombre y avatar: nunca pasa por scr-inicio.
- const tienePartida=PRUEBA?true:hayPartida();
- if(tienePartida && !PRUEBA) cargar();
- activarExpedicion(exp).then(()=>{
-  if(tienePartida){refreshHud();renderMapa();renderRanking();
-   $('nav').style.display=PRUEBA?'none':'flex';ajustarNav();go('scr-mapa');datoKimun();}
-  else go('scr-inicio');
- });
-}
-/* Lista propia del modo prueba: dibuja EXACTAMENTE los capítulos de ?solo=, vengan de la
-   asignatura que vengan. No se reutiliza la pantalla de campaña porque esa es de UNA
-   asignatura y, en Matemáticas, delega en renderCampañaMate (donde el filtro no llegaba:
-   ?solo=mate-* abría la campaña entera). Reusa scr-campana para no agregar marcado. */
-function renderListaPrueba(){
- if($('btnCampBack')) $('btnCampBack').style.display='none';   // no hay a dónde volver
- const exps=SOLO.map(id=>EXPEDICIONES.find(e=>e.id===id)).filter(Boolean);
- const extras=SOLO.map(extraPorId).filter(Boolean);
- const asigs=[...new Set(exps.map(e=>e.asignatura).concat(extras.map(x=>x.asignatura)))];
- $('campHead').innerHTML=`<h1 style="font-size:26px">Modo prueba</h1><p>${asigs.join(' · ')}</p>`;
- const cont=$('campNodos'); cont.innerHTML='';
- exps.forEach(exp=>{
-  const camp=exp.campaña?campañaPorId(exp.campaña):null;
-  const i=camp?camp.capitulos.indexOf(exp.id):-1;
-  const hecho=expedicionCompleta(exp.id);
-  cont.appendChild(nodoCampañaEl(i>=0?`${i+1}`:'📘', nombreMapa(exp), true, hecho,
-    ()=>entrarExpedicion(exp), hecho?'Completado':'¡Jugar!',
-    portadaMapa(exp), portadaFallback(exp)));
- });
- extras.forEach(x=>{
-  cont.appendChild(nodoCampañaEl(x.icono, x.nombre, true, false,
-    ()=>x.abrir(), '¡Jugar!', ''));
- });
- go('scr-campana');
-}
 /* ===== Armador de enlaces de muestra (?armar=1) =====
    Vive aquí y no en profesor.html a propósito: el catálogo (EXPEDICIONES) ya está en este
    archivo, así que una expedición nueva aparece sola, sin listas paralelas que mantener.
    El panel solo abre esta pantalla, igual que hace con el Tablero de avance. */
-/* '2026-09-15' -> '15 de septiembre de 2026'. La usan el resumen y el lector. */
-function fechaLarga(iso){
- const MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto',
-              'septiembre','octubre','noviembre','diciembre'];
- const p=(iso||'').split('-');
- if(p.length!==3) return iso||'';
- return Number(p[2])+' de '+MESES[Number(p[1])-1]+' de '+p[0];
-}
-function armarUrl(){
- const ids=[...document.querySelectorAll('#armarLista input[type=checkbox]:checked')].map(c=>c.value);
- const hasta=$('armarHasta').value||'';
- const qa=$('armarQA').checked;
- const rev=$('armarRev').checked;
- const url=ids.length
-   ? location.origin+location.pathname+'?m='+b64uCod(ids.join(',')+'|'+hasta+'|'+(qa?'1':'')+'|'+(rev?'1':''))
-   : '';
- $('armarUrl').value=url||'Marca al menos un capítulo';
- $('armarCopiar').disabled=!url; $('armarProbar').disabled=!url;
- // Categorías sensibles incluidas en los capítulos marcados (assets/js/sensible.js).
- const scat=Object.keys(SENSIBLE.cats).filter(c=>
-   ids.some(id=>{const e=EXPEDICIONES.find(x=>x.id===id); return e&&SENSIBLE.deExpedicion(e).includes(c);}))
-   .map(c=>SENSIBLE.cats[c].icono+' '+SENSIBLE.cats[c].nombre).join(', ');
- $('armarResumen').textContent = url
-   ? ids.length+(ids.length===1?' capítulo':' capítulos')
-     +(hasta?' · vence el '+fechaLarga(hasta):' · sin caducidad')
-     +(qa?' · con respuestas':'')
-     +(rev?' · REVISIÓN de profesor (3 por etapa)':'')
-     +(scat?' · incluye: '+scat:'')
-   : '';
- return url;
-}
-function arrancarArmador(){
- const cont=$('armarLista'); cont.innerHTML='';
- const activas=EXPEDICIONES.filter(e=>e.activa);
- // Leyenda de contenido sensible: solo las categorías presentes en este nivel (assets/js/sensible.js).
- const catsPresentes=Object.keys(SENSIBLE.cats).filter(c=>
-   activas.some(e=>SENSIBLE.deExpedicion(e).includes(c)));
- if(catsPresentes.length){
-  const ley=document.createElement('div'); ley.className='sens-leyenda';
-  ley.innerHTML='<b>Contenido sensible:</b> '+catsPresentes.map(c=>
-    `<span style="color:${SENSIBLE.cats[c].color}">${SENSIBLE.cats[c].icono} ${SENSIBLE.cats[c].nombre}</span>`).join('&nbsp;&nbsp;&nbsp;');
-  cont.appendChild(ley);
- }
- const asigs=[...new Set(activas.map(e=>e.asignatura).concat(EXTRAS.filter(x=>x.disponible()).map(x=>x.asignatura)))]
-   .sort((a,b)=>((ORDEN_ASIG.indexOf(a)+1)||99)-((ORDEN_ASIG.indexOf(b)+1)||99));
- asigs.forEach(asig=>{
-  const h=document.createElement('h3');
-  h.textContent=asig; h.style.cssText='color:var(--cyan);font-size:14px;margin:14px 0 6px';
-  cont.appendChild(h);
-  activas.filter(e=>e.asignatura===asig).forEach(exp=>{
-   const camp=exp.campaña?campañaPorId(exp.campaña):null;
-   const i=camp?camp.capitulos.indexOf(exp.id):-1;
-   const l=document.createElement('label');
-   l.style.cssText='display:flex;gap:8px;align-items:center;font-size:13px;font-weight:700;padding:4px 0';
-   const sc=SENSIBLE.deExpedicion(exp);
-   const marcas=sc.map(c=>`<span class="sens-m" style="background:${SENSIBLE.cats[c].color}33" title="${SENSIBLE.cats[c].nombre}">${SENSIBLE.cats[c].icono}</span>`).join('');
-   l.innerHTML=`<input type="checkbox" value="${exp.id}"><span>${i>=0?(i+1)+'. ':''}${nombreMapa(exp)}</span>${marcas}`;
-   cont.appendChild(l);
-  });
-  // Los módulos de esta asignatura que no son expediciones (ver EXTRAS).
-  EXTRAS.filter(x=>x.asignatura===asig && x.disponible()).forEach(x=>{
-   const l=document.createElement('label');
-   l.style.cssText='display:flex;gap:8px;align-items:center;font-size:13px;font-weight:700;padding:4px 0';
-   l.innerHTML=`<input type="checkbox" value="${x.id}"><span>${x.icono} ${x.nombre}</span>`;
-   cont.appendChild(l);
-  });
- });
- cont.addEventListener('change',armarUrl);
- $('armarQA').onchange=armarUrl;
- $('armarRev').onchange=armarUrl;
- $('armarCopiar').onclick=()=>{
-  const u=armarUrl(); if(!u) return;
-  Promise.resolve(navigator.clipboard&&navigator.clipboard.writeText(u))
-   .then(()=>{ $('armarMsg').textContent='Enlace copiado.'; })
-   .catch(()=>{ $('armarUrl').select(); $('armarMsg').textContent='Selecciona y copia con Ctrl+C.'; });
- };
- $('armarProbar').onclick=()=>{ const u=armarUrl(); if(u) window.open(u,'_blank'); };
- const enDias=n=>{ const d=new Date(); d.setDate(d.getDate()+n);
-   const z=x=>String(x).padStart(2,'0');
-   return d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate()); };
- $('armarHasta').onchange=armarUrl;
- $('armarSinFin').onclick=()=>{ $('armarHasta').value=''; armarUrl(); };
- $('armarSemana').onclick=()=>{ $('armarHasta').value=enDias(7); armarUrl(); };
- $('armarMes').onclick=()=>{ $('armarHasta').value=enDias(30); armarUrl(); };
- $('armarHasta').min=hoyISO();          // no ofrecer fechas ya pasadas
- $('armarLeerBtn').onclick=()=>{
-  const txt=($('armarLeer').value||'').trim();
-  const t=(txt.match(/[?&]m=([^&\s]+)/)||[])[1] || txt;   // acepta enlace completo o token suelto
-  const d=leerToken(t);
-  if(!d){ $('armarLeido').textContent='No pude leer ese enlace.'; return; }
-  const nombres=d.ids.map(id=>{const e=EXPEDICIONES.find(x=>x.id===id); return e?nombreMapa(e):id;});
-  const estado=!d.hasta ? 'Sin caducidad.'
-    : (hoyISO()>d.hasta ? 'VENCIÓ el '+fechaLarga(d.hasta)+'.' : 'Vence el '+fechaLarga(d.hasta)+'.');
-  $('armarLeido').textContent=nombres.join(' · ')+' — '+estado+(d.qa?' Con respuestas.':'')
-    +(d.rev?' MODO REVISIÓN de profesor.':'');
- };
- armarUrl();
- $('nav').style.display='none';
- go('scr-armar');
-}
-/* Pantalla de muestra vencida. No da acceso a los capítulos, pero sí al juego completo:
-   VULPO es público, así que caducar el enlace apaga la muestra, no el juego. */
-function mostrarVencida(){
- const MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto',
-              'septiembre','octubre','noviembre','diciembre'];
- const p=VENCE.split('-');
- $('vencidaFecha').textContent='Venció el '+Number(p[2])+' de '+MESES[Number(p[1])-1]+' de '+p[0]+'.';
- $('vencidaIr').onclick=()=>{ location.href=location.origin+location.pathname; };
- $('nav').style.display='none';
- go('scr-vencida');
-}
-/* Modo prueba (?solo=): entra como invitado y abre su propia lista de capítulos,
-   saltándose "¿Cómo quieres entrar?" y la pantalla de nombre/avatar. */
-function arrancarModoPrueba(){
- S.nombre='Invitado'; S.avatar=AVATARES[4];   // 🦊, la mascota
- $('nav').style.display='none';
- renderListaPrueba();
-}
 $('btnJugador').onclick=()=>{SND.init();SND.tap();$('nav').style.display='none';renderExpediciones();go('scr-expediciones');};
 // Acceso a la tienda desde Expediciones (la tienda recuerda de dónde se abrió para volver).
 let tiendaOrigen='scr-mapa';
@@ -3261,20 +2720,6 @@ $('btnBiblioBack').onclick=()=>{SND.tap();go('scr-expediciones');};
 /* ===== Canje del código de alumno ===== */
 // Pantalla desde la que se abrió el canje, para volver justo a donde estaba el jugador.
 let CANJE_VUELVE='scr-rol';
-function abrirCanje(){
- const actual=document.querySelector('.screen.on');
- CANJE_VUELVE=(actual&&actual.id!=='scr-canje')?actual.id:'scr-rol';
- $('nav').style.display='none';                 // la barra inferior no va encima de esta pantalla
- $('canjeMsg').textContent='';$('canjeCodigo').value='';
- go('scr-canje');
-}
-function cerrarCanje(){
- const destino=CANJE_VUELVE;
- // La barra inferior solo reaparece si volvemos al mapa, que es la pantalla que la usa.
- $('nav').style.display=(destino==='scr-mapa')?'flex':'none';
- if(destino==='scr-mapa') renderRanking();      // al volver al mapa, con el ranking al día
- go(destino);
-}
 $('btnCanje').onclick=(e)=>{e.preventDefault();SND.tap();abrirCanje();};
 $('btnCanjeBack').onclick=()=>{SND.tap();cerrarCanje();};
 $('btnCanjeOk').onclick=async ()=>{
@@ -3291,7 +2736,7 @@ $('btnCanjeOk').onclick=async ()=>{
   MI_PERFIL=p;
   S.alumno=p.nombre; S.nombre=p.nombre; S.avatar=p.avatar;
   await SB.rpc('kimun_xp',{p_xp:S.xp});        // conserva el avance local
-  localStorage.removeItem('kimun_rank');       // fuera el ranking del curso anterior
+  localStorage.removeItem('kimun_rank'+SUFIJO);       // fuera el ranking del curso anterior
   await cargarCurso();
   // Canjear el ALU- de un curso experimental tiene que traer también su modo: es lo
   // que hace que sobreviva a borrar los datos del navegador.
@@ -3325,22 +2770,6 @@ async function sincronizarModoCurso(recargar){
   if(recargar) recargarPorModo();
   return true;
  }catch(e){ console.error('Modo del curso:',e.message||e); return false; }   // best-effort
-}
-/* Una sola recarga por pestaña. Si algo saliera mal —el servidor devolviendo una cosa
-   y el disco guardando otra— el guard evita que el juego quede recargándose en bucle,
-   que es peor que quedarse con el modo viejo. */
-function recargarPorModo(){
- try{
-  if(sessionStorage.getItem(EXPER_KEY+'_rc')==='1') return;
-  sessionStorage.setItem(EXPER_KEY+'_rc','1');
- }catch(e){ return; }
- location.reload();
-}
-function arrancarInscripcion(){
- $('nav').style.display='none';          // la barra inferior no va encima de esta pantalla
- $('insForm').hidden=false; $('insListo').hidden=true;
- $('insMsg').textContent=''; $('insNombre').value=S.nombre||'';
- go('scr-inscribir');
 }
 /* Los tres fallos se dicen distinto a propósito: un mensaje genérico deja al apoderado
    sin saber si el enlace está mal, si se cerró o si llegó tarde, y las tres cosas se
@@ -3387,7 +2816,6 @@ $('btnInsJugar').onclick=()=>{SND.tap();location.replace(location.pathname);};
 
 /* ===== Mapa de campaña (Nivel 2) ===== */
 let CAMP_ACT=null;
-function abrirCampaña(c){CAMP_ACT=c; renderCampaña(); go('scr-campana');}
 $('btnCampBack').onclick=()=>{SND.tap();go('scr-expediciones');};
 // Volver desde el mapa de un capítulo a su campaña (refresca el desbloqueo)
 $('btnMapaCamp').onclick=()=>{SND.tap();
@@ -3396,54 +2824,6 @@ $('btnMapaCamp').onclick=()=>{SND.tap();
  if(EXP_ACT&&EXP_ACT.id==='voc-general'){go('scr-lenguaje');return;}   // Vocabulario → landing de Lenguaje
  if(EXP_ACT&&EXP_ACT.asignatura==='Lectura'){go('scr-biblioteca');return;} // Lectura → biblioteca
  go('scr-expediciones');};
-function renderCampaña(){
- const c=CAMP_ACT; if(!c)return;
- if(HAY_MINICLASES&&c.esLecciones){ renderCampañaMate(c); return; }
- $('campHead').innerHTML=`<h1 style="font-size:26px">${c.asignatura} ${campañaCompleta(c)?'👑':''}</h1><p>${c.intro}</p>`;
- const cont=$('campNodos'); cont.innerHTML='';
- // capítulos en orden
- c.capitulos.forEach((id,i)=>{
-  const exp=EXPEDICIONES.find(e=>e.id===id);
-  const abierto=capAbierto(id) && nodoCampDesbloqueado(c,i), hecho=expedicionCompleta(id);
-  const titulo=(exp.nivel.split('· ')[1]||exp.nivel);
-  cont.appendChild(nodoCampañaEl(`${i+1}`, titulo, abierto, hecho,
-    abierto?()=>entrarExpedicion(exp):null,
-    hecho?'Completado':(abierto?'¡Jugar!':(capAbierto(id)?'🔒 Bloqueado':'🔒 Necesitas un código')),
-    portadaMapa(exp), portadaFallback(exp)));
- });
- // desafío extra (solo si la campaña lo define). Con la puerta cerrada no se muestra.
- if(c.desafioExtra && !bloqueado()){
-  const de=EXPEDICIONES.find(e=>e.id===c.desafioExtra);
-  const deAb=desafioDesbloqueado(c), deHecho=expedicionCompleta(c.desafioExtra);
-  cont.appendChild(nodoCampañaEl('⭐','Desafío Extra: Chile hoy', deAb, deHecho,
-    deAb?()=>entrarExpedicion(de):null, deHecho?'Completado':(deAb?'¡Desafío!':'🔒 Termina los capítulos'),
-    portadaMapa(de), portadaFallback(de)));
- }
- // jefe final (luce al villano de la campaña). Con la puerta cerrada no se muestra.
- if(!bloqueado()){
-  const jfAb=jefeFinalDesbloqueado(c), jfHecho=campañaCompleta(c);
-  cont.appendChild(nodoCampañaEl('👑','JEFE FINAL DE '+c.asignatura.toUpperCase(), jfAb, jfHecho,
-    jfAb?()=>iniciarJefeFinal(c):null, jfHecho?'¡Vencido!':(jfAb?'¡Al 100%! Enfréntalo':'🔒 Completa todo'),
-    c.jefeFinal.villanoImg||''));
- }
- // Reto Sin Fin. Dos condiciones, y cada una responde algo distinto:
- //  · CALC.activo  -> ¿está DISPONIBLE? Es false si assets/js/calculo.js no cargó. Con la
- //    bandera del nivel a secas, un 404 dejaba el botón dibujado y muerto: el alumno toca y
- //    no pasa nada, el mismo defecto del botón de mini-clase de la Sesión 64.
- //  · c.sinfin     -> ¿esta CAMPAÑA lo ofrece? Va como campo de la campaña y NO como
- //    comparación contra el nombre de la asignatura. Ese `if` sobre el nombre es el patrón
- //    que causó los bugs de las Sesiones 63 y 64 —no dice si el nivel tiene la
- //    funcionalidad— y encima se rompe solo entre forks: 3° escribe 'Matemática' en
- //    singular, así que la comparación en plural nunca habría entrado.
- // Con las dos, esta función queda byte a byte igual en los tres cursos.
- if(CALC.activo && c.sinfin && !bloqueado()){
-  const sf=document.createElement('div'); sf.className='camp-nodo';
-  sf.innerHTML=`<div class="cn-marco"><div class="cn-circ" style="background:#8f6bff22">♾️</div></div>`+
-    `<div class="cn-body"><b>Reto Sin Fin</b><small>Récord: ${(S.sinfin&&S.sinfin.record)||0} seguidas</small></div>`;
-  sf.onclick=()=>{SND.tap();CALC.abrir();};
-  cont.appendChild(sf);
- }
-}
 // Campaña de Matemáticas: capítulos = grupos de lecciones. Además, acceso al Reto.
 function renderCampañaMate(c){
  CAP_MATE=null;   // no dejar un capítulo colgante de una visita anterior
@@ -3483,27 +2863,9 @@ function renderCampañaMate(c){
 function jefeFinalMateDesbloqueado(c){ return JEFES_ABIERTOS || (c.capitulos.length>0 && c.capitulos.every(expedicionCompleta)); }
 function capMateCompleto(cap){ if(!cap||!cap.lecciones||!cap.lecciones.length)return false;
  return cap.lecciones.every(id=>S.mateLecciones[id]); }
-// img/imgAlt: portada del capítulo (o villano del jefe). Sin imagen, el círculo lleva la marca.
-function nodoCampañaEl(marca,titulo,abierto,hecho,onClick,estado,img,imgAlt){
- const d=document.createElement('div');
- d.className='camp-nodo'+(abierto?'':' lock')+(hecho?' done':'');
- const circ=img
-  ?`<div class="cn-circ cn-img"><img src="${img}" alt=""${imgAlt?` onerror="this.onerror=null;this.src='${imgAlt}'"`:''}></div><span class="cn-badge">${hecho?'✓':(abierto?marca:'🔒')}</span>`
-  :`<div class="cn-circ">${hecho?'✓':marca}</div>`;
- d.innerHTML=`<div class="cn-marco">${circ}</div><div class="cn-body"><b>${titulo}</b><small>${estado}</small></div>`;
- if(onClick) d.onclick=()=>{SND.tap();onClick();};
- return d;
-}
 
 /* ===== JEFE FINAL (multi-fase) ===== */
 let JF=null; // {camp,fase,idx,preguntas,vidaMax,vida,vidas,lock}
-// Arma las preguntas de una fase mezclando sus OA (reusa POOL y pickN)
-function jefePreguntasFase(camp,faseIdx){
- const f=camp.jefeFinal.fases[faseIdx], n=camp.jefeFinal.nPorFase, per=Math.max(1,Math.ceil(n/f.oas.length));
- let sel=[]; f.oas.forEach(oa=>{sel=sel.concat(pickN(POOL[oa]||[],per));});
- // Igual que en las etapas: se conserva el `oa` para el mapa de dominio.
- return pickN(sel,n).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,id:q.id}));
-}
 // Carga el banco completo de Matemáticas en el POOL global (keyed por OA), para el jefe
 // de la campaña de lecciones (Matemáticas no tiene expedición de la cual tomar el POOL).
 async function cargarPoolMate(){
@@ -3511,203 +2873,13 @@ async function cargarPoolMate(){
  try{ const d=await (await fetch('contenido/matematicas-8basico/preguntas.json')).json();
       (d.preguntas||[]).forEach(q=>{(POOL[q.oa]=POOL[q.oa]||[]).push(q);}); }catch(e){}
 }
-function iniciarJefeFinal(camp){
- const arrancar=()=>{
-  const jf=camp.jefeFinal, total=jf.fases.length*jf.nPorFase;
-  if(!jf.fases.every(f=>f.oas.every(oa=>(POOL[oa]||[]).length>0))){   // el banco no cargó (p. ej. sin conexión)
-   alert('Cargando preguntas… intenta de nuevo en un momento.'); renderCampaña(); go('scr-campana'); return;
-  }
-  JF={camp,fase:0,idx:0,preguntas:[],vidaMax:total,vida:total,vidas:jf.vidasJugador,lock:false};
-  renderJefeIntro();
- };
- if(HAY_MINICLASES&&camp.esLecciones){ cargarPoolMate().then(arrancar); }   // campaña de Matemáticas
- else { const capExp=EXPEDICIONES.find(e=>e.id===camp.capitulos[0]); activarExpedicion(capExp).then(arrancar); }
-}
-function renderJefeIntro(){
- const jf=JF.camp.jefeFinal;
- $('jiVillano').innerHTML=jf.villanoImg?`<img src="${jf.villanoImg}" alt="${jf.villano}">`:jf.villanoIc;
- $('jiNombre').textContent=jf.villano;
- $('jiDialogo').textContent='«'+jf.dialogo+'»';
- document.body.classList.add('en-jefe');
- $('nav').style.display='none';
- go('scr-jefe-intro');
-}
 $('jiStart').onclick=()=>{SND.init();SND.tap();JF.fase=0;cargarFaseJefe();go('scr-jefe');};
 $('jiBack').onclick=()=>{SND.tap();document.body.classList.remove('en-jefe');go('scr-campana');renderCampaña();};
 
-function cargarFaseJefe(){JF.preguntas=jefePreguntasFase(JF.camp,JF.fase);JF.idx=0;renderJefePregunta();}
-function pintarHudJefe(){
- const jf=JF.camp.jefeFinal;
- $('jvVillanoIc').innerHTML=jf.villanoImg?`<img src="${jf.villanoImg}" alt="">`:jf.villanoIc;
- $('jvNombre').textContent=jf.villano;
- $('jvFill').style.width=Math.max(0,(JF.vida/JF.vidaMax*100))+'%';
- $('jvVidas').textContent='❤️'.repeat(Math.max(0,JF.vidas))+'🤍'.repeat(Math.max(0,jf.vidasJugador-JF.vidas));
- $('jvFase').textContent='Fase '+(JF.fase+1)+' de '+jf.fases.length+' · '+jf.fases[JF.fase].nombre;
-}
-function renderJefePregunta(){
- pintarHudJefe();
- const p=JF.preguntas[JF.idx], cont=$('jefePregunta');
- const orden=p.ops.map((o,i)=>({o,i})).sort(()=>Math.random()-.5);
- cont.innerHTML=`<div class="qcard"><div class="tag">👑 Jefe Final · Pregunta ${JF.idx+1}/${JF.preguntas.length}</div><h2>${escHtml(p.q)}</h2></div><div class="opts" id="jfOpts"></div>`;
- const ops=cont.querySelector('#jfOpts');
- orden.forEach((it,k)=>{const b=document.createElement('div');b.className='opt';
-  if(it.i===p.ok)b.dataset.correcta='1';
-  if(QA_MARCA&&it.i===p.ok)b.classList.add('qa-ok');
-  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${escHtml(it.o)}`;
-  b.onclick=()=>responderJefe(b,it.i===p.ok);ops.appendChild(b);});
- JF.lock=false;
-}
-function responderJefe(el,ok){
- if(JF.lock)return; JF.lock=true;
- registrarOA(JF.preguntas[JF.idx] && JF.preguntas[JF.idx].oa, ok);   // mapa de dominio
- document.querySelectorAll('#jfOpts .opt').forEach(o=>o.classList.add('off'));
- if(ok){ SND.hit(); JF.vida=Math.max(0,JF.vida-1);
-  if(el){el.classList.remove('off');el.classList.add('ok');}
-  const r=el?el.getBoundingClientRect():null; if(r)particulas(r.left+r.width/2,r.top,['⚔️','💥','✨']);
- } else { SND.hurt(); JF.vidas--;
-  if(el){el.classList.remove('off');el.classList.add('bad');}
-  const c=document.querySelector('#jfOpts .opt[data-correcta]'); if(c)c.classList.add('ok');
-  document.body.classList.add('jefe-hit'); setTimeout(()=>document.body.classList.remove('jefe-hit'),260);
-  if(navigator.vibrate)navigator.vibrate(140);
- }
- pintarHudJefe();
- setTimeout(()=>{
-  if(JF.vidas<=0){ enviarDominio(); return jefeDerrota(); }   // no se pierde lo que sí respondió
-  if(JF.vida<=0){ return jefeVictoria(); }
-  JF.idx++;
-  if(JF.idx>=JF.preguntas.length){ // fin de fase → siguiente fase
-   JF.fase++;
-   if(JF.fase>=JF.camp.jefeFinal.fases.length){ JF.fase=0; } // salvaguarda: normalmente ya venció
-   cargarFaseJefe();
-  } else { renderJefePregunta(); }
- }, ok?700:1200);
-}
-function jefeDerrota(){
- SND.lose();
- renderJefeDerrota();   // pantalla temática (mantiene en-jefe para la atmósfera carmesí)
- go('scr-jefe-lose');
-}
-function renderJefeDerrota(){
- const jf=JF.camp.jefeFinal, camp=JF.camp;
- const dmg=Math.max(0,JF.vidaMax-JF.vida), pct=Math.round(dmg/JF.vidaMax*100);
- $('jlVillano').innerHTML=jf.villanoImg?`<img src="${jf.villanoImg}" alt="${jf.villano}">`:jf.villanoIc;
- $('jlTauntNom').textContent=jf.villano;
- $('jlTitulo').textContent=pct>=70?'¡Casi lo logras!':'¡Buen intento!';
- $('jlDialogo').textContent=jf.derrota?('«'+jf.derrota+'»'):'Aprende de esta ronda y vuelve más fuerte. ¡Tú puedes!';
- $('jlDmgPct').textContent=pct+'%';
- $('jlFase').textContent='Llegaste a la Fase '+(JF.fase+1)+' de '+jf.fases.length;
- const fill=$('jlDmgFill'); fill.style.width='0%'; requestAnimationFrame(()=>{fill.style.width=pct+'%';});
- $('jlRetry').onclick=()=>{SND.tap();iniciarJefeFinal(camp);};   // reintento con preguntas nuevas
- $('jlBack').onclick=()=>{SND.tap();document.body.classList.remove('en-jefe');go('scr-campana');renderCampaña();};
-}
 let JC_LOCK=false;
-function jefeVictoria(){
- SND.win();
- otorgarRecompensasCampaña(JF.camp); // Fase 4
- renderCaidaVillano(JF.camp, ()=>{   // Tiempo 1: caída; luego recompensas
-  document.body.classList.remove('en-jefe');   // el carmesí se conserva hasta aquí
-  renderJefeVictoria();
- });
-}
-// Tiempo 1: overlay a pantalla completa donde el villano cae y arranca la música de victoria.
-function renderCaidaVillano(camp, alTerminar){
- const jf=camp.jefeFinal;
- const ov=$('jefe-caida'), vic=$('jcVillano'), txt=$('jcTexto'), fl=$('jcFlash');
- JC_LOCK=false;
- vic.className='jc-villano';                     // estado inicial: imagen de combate
- vic.innerHTML=jf.villanoImg?`<img src="${jf.villanoImg}" alt="${jf.villano}">`:jf.villanoIc;
- const fem=/^la\b/i.test(jf.villano);   // "La Entropía"/"La Incógnita" → derrotada
- txt.className='jc-texto disp'; txt.textContent='¡'+jf.villano+' ha sido derrotad'+(fem?'a':'o')+'!';
- fl.classList.remove('go');
- ov.hidden=false;
- MUSIC.play('victoria');
- const avanzar=()=>{ if(JC_LOCK)return; JC_LOCK=true; ov.hidden=true; alTerminar(); };
- ov.onclick=avanzar;
- setTimeout(()=>{ fl.classList.add('go'); vic.classList.add('jc-shake'); }, 300);
- setTimeout(()=>{
-  const usarFallback=!jf.villanoImgDerrotado;
-  const src=jf.villanoImgDerrotado||jf.villanoImg;
-  vic.classList.remove('jc-shake');
-  vic.innerHTML=jf.villanoImg
-   ? `<img src="${src}" alt="${jf.villano}" onerror="this.onerror=null;this.src='${jf.villanoImg}';this.closest('.jc-villano').classList.add('jc-fallback')">`
-   : jf.villanoIc;
-  if(usarFallback) vic.classList.add('jc-fallback');
-  vic.classList.add('caido');
-  txt.classList.add('show');
- }, 550);
- setTimeout(avanzar, 3000);
-}
 
-/* ===== Recompensas de campaña (Fase 4) ===== */
-function otorgarRecompensasCampaña(camp){
- const r=camp.recompensa||{};
- const primera=!S.campañasCompletas.has(camp.id);   // el bono se paga UNA sola vez
- S.campañasCompletas.add(camp.id);
- if(r.insignia) S.insignias.add(r.insignia);
- if(r.skin){ // la skin exclusiva se identifica por id; guardamos su emoji (lo que usa el avatar)
-  const sk=SKINS.find(s=>s.id===r.skin), val=sk?sk.e:r.skin;
-  if(!S.skins.includes(val)) S.skins.push(val);
- }
- if(primera){ S.monedas+=(r.bonoMonedas||0); S.xp+=(r.bonoXP||0); }   // no re-otorgar al rejugar
- if(S.insigniaActiva===null && r.insignia) S.insigniaActiva=r.insignia; // luce la primera por defecto
- guardar(); refreshHud();
-}
-function renderJefeVictoria(){
- const camp=JF.camp, r=camp.recompensa||{};
- const sk=SKINS.find(s=>s.id===r.skin), ins=INSIGNIAS.find(i=>i.id===r.insignia);
- $('jwTitulo').textContent='¡'+camp.asignatura+' dominada!';
- const items=[];
- const it=(ic,titulo,sub)=>`<div class="jw-item" style="animation-delay:${(items.length*0.15).toFixed(2)}s"><span class="jw-ic">${ic}</span><div><b>${titulo}</b><small>${sub}</small></div></div>`;
- if(sk){const ic=sk.img?`<img src="${sk.img}" alt="${sk.nombre}">`:sk.e;
-  items.push(it(ic,'Skin exclusiva',`${sk.nombre} — ya equipable en la tienda`));}
- if(ins) items.push(it(ins.ic,'Insignia',ins.tx));
- items.push(it('👑','Corona dorada',`en la tarjeta de ${camp.asignatura}`));
- items.push(it('🎁','Bono',`+${r.bonoMonedas||0} monedas · +${r.bonoXP||0} XP`));
- $('jwRecompensas').innerHTML=items.join('');
- enviarDominio();
- go('scr-jefe-win');
- confetiVictoria();
-}
-function confetiVictoria(){
- if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
- const cols=['#ffc93c','#ff4d8d','#4dd8ff','#3ee089','#8f6bff'];
- for(let i=0;i<26;i++){
-  const c=document.createElement('span'); c.className='confeti';
-  c.style.left=(Math.random()*100)+'%';
-  c.style.background=cols[i%cols.length];
-  c.style.animationDelay=(Math.random()*0.6).toFixed(2)+'s';
-  c.style.setProperty('--dx',Math.round(Math.random()*60-30)+'px');
-  document.body.appendChild(c);
-  setTimeout(()=>c.remove(),2900);
- }
-}
 $('jwBack').onclick=()=>{SND.tap();go('scr-campana');renderCampaña();};
 
-/* ===== Perfil: logros e insignias ===== */
-function renderPerfil(){
- const lg=$('logrosGrid'); lg.innerHTML='';
- Object.keys(LOGROS).forEach(k=>{
-  const tengo=S.logros.has(k), L=LOGROS[k];
-  const d=document.createElement('div'); d.className='logro'+(tengo?'':' lock');
-  d.innerHTML=`<span class="l-ic">${tengo?L.ic:'🔒'}</span><span>${L.tx}</span>`;
-  lg.appendChild(d);
- });
- renderInsignias();
-}
-// Icono de la insignia activa (con espacio) para anteponer al nombre; '' si no hay
-function insigniaIc(){const i=INSIGNIAS.find(x=>x.id===S.insigniaActiva);return i?i.ic+' ':'';}
-function renderInsignias(){
- const cont=$('insigniasGrid'); cont.innerHTML='';
- INSIGNIAS.forEach(ins=>{
-  const tengo=S.insignias.has(ins.id), activa=S.insigniaActiva===ins.id;
-  const d=document.createElement('button');
-  d.className='insignia'+(tengo?'':' lock')+(activa?' activa':'');
-  d.innerHTML=`<span class="i-ic">${tengo?ins.ic:'🔒'}</span><span class="i-tx">${ins.tx}</span>`+
-    (activa?'<span class="i-badge">Lucida</span>':(tengo?'<span class="i-badge sec">Tocar para lucir</span>':''));
-  if(tengo) d.onclick=()=>{SND.tap();S.insigniaActiva=activa?null:ins.id; guardar(); renderInsignias(); refreshHud();};
-  cont.appendChild(d);
- });
-}
 
 /* ===== Duelo / reiniciar (eventos) ===== */
 $('btnDuelo').onclick=()=>{SND.init();SND.tap();$('nav').style.display='none';
@@ -3743,11 +2915,6 @@ async function cargarPendientes(){
    it.onclick=()=>{SND.tap();responderDesafio(d);};cont.appendChild(it);});
  }catch(e){cont.innerHTML='<p style="color:var(--pink);font-weight:800;font-size:13px">No se pudo cargar.</p>';}
 }
-function restante(expira){const ms=new Date(expira)-new Date();if(ms<=0)return 'expira pronto';
- const h=Math.floor(ms/3600000),m=Math.floor((ms%3600000)/60000);return h+'h '+m+'m';}
-function odPreguntas(exp){let all=[],seen=new Set();
- exp.etapas.forEach(e=>{const oas=e.oas||(e.oa&&e.oa!=='BOSS'?[e.oa]:[]);oas.forEach(oa=>(POOL[oa]||[]).forEach(q=>{if(!seen.has(q.pregunta)){seen.add(q.pregunta);all.push(q);}}));});
- return pickN(all,8).map(q=>({pregunta:q.pregunta,opciones:q.opciones,correcta:q.correcta,tip:q.tip}));}
 // Duelo de Matemáticas (Reto de Cálculo): 8 operaciones generadas al vuelo, sin repetir.
 function odPreguntasCalc(exp){const out=[],seen=new Set();let g=0;
  while(out.length<8&&g++<120){const q=genCalculo(exp.calc,exp.dif||2);
@@ -3780,38 +2947,9 @@ const HAY_MINICLASES=true;
    comparten el mismo renderExpediciones y solo cambia el valor. */
 const HAY_VOCABULARIO=true;
 const HAY_BIBLIOTECA=true;
-function odExpsDe(asig){return EXPEDICIONES.filter(e=>e.activa&&e.asignatura===asig);}
 // Matemáticas en el duelo = los niveles del Reto de Cálculo (mismo look que el mapa).
 function odMapasMate(){return NIVELES_CALC.map((n,i)=>({id:'calc-'+n.id,asignatura:'Matemáticas',
   nombre:(i+1)+'. '+n.nombre,sub:n.sub,icono:n.icono,calc:n.id,dif:Math.min(5,RC_BASE[i]+1)}));}
-function odNMapas(asig){return (HAY_RETO_CALCULO&&asig==='Matemáticas')?NIVELES_CALC.length:odExpsDe(asig).length;}
-// NIVEL 1 (duelo): un módulo por asignatura; al tocarlo se abren sus mapas.
-function renderODExp(){const cont=$('odExpSel');cont.innerHTML='';OD_EXP_SEL=null;
- ORDEN_ASIG.forEach(asig=>{const n=odNMapas(asig);if(!n)return;
-  const exps=odExpsDe(asig);
-  const b=document.createElement('button');
-  const portada=ASIG_PORTADA[asig]||(exps[0]&&exps[0].portada);
-  b.innerHTML=`<img src="${portada}" alt=""><span class="od-exp-tx"><b>${asig}</b><small>${n} ${n===1?'mapa':'mapas'}</small></span>`;
-  b.onclick=()=>{SND.tap();renderODExpMapas(asig);};
-  cont.appendChild(b);});}
-// NIVEL 2 (duelo): los mapas de una asignatura, con "volver" a materias.
-function renderODExpMapas(asig){const cont=$('odExpSel');cont.innerHTML='';
- const volver=document.createElement('button');volver.className='od-exp-volver';
- volver.innerHTML=`<span class="od-exp-tx"><b>← Materias</b></span>`;
- volver.onclick=()=>{SND.tap();renderODExp();};cont.appendChild(volver);
- // Matemáticas: niveles de cálculo (ícono emoji, mismo estilo que el mapa del Reto).
- const esMate=HAY_RETO_CALCULO&&asig==='Matemáticas';
- const mapas=esMate?odMapasMate():odExpsDe(asig);
- mapas.forEach(e=>{const b=document.createElement('button');
-  const ic=esMate?`<span class="od-exp-ic">${e.icono}</span>`
-                 :`<img src="${portadaMapa(e)}" alt="" onerror="this.onerror=null;this.src='${portadaFallback(e)}'">`;
-  const titulo=esMate?e.nombre:nombreMapa(e);
-  const sub=esMate?e.sub:e.asignatura;
-  b.innerHTML=`${ic}<span class="od-exp-tx"><b>${titulo}</b><small>${sub}</small></span>`;
-  b.onclick=()=>{SND.tap();cont.querySelectorAll('button').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');OD_EXP_SEL=e;};
-  if(OD_EXP_SEL&&OD_EXP_SEL.id===e.id)b.classList.add('sel');
-  cont.appendChild(b);});}
-function abrirCrearDesafio(){renderODExp();$('odCodigo').value='';$('odSetupErr').textContent='';cargarJugadores();go('scr-od-setup');}
 async function cargarJugadores(){
  const cont=$('odJugadores');cont.innerHTML='<p style="color:var(--dim);font-weight:800;font-size:13px">Cargando…</p>';
  try{
@@ -3837,34 +2975,6 @@ async function iniciarDesafio(){
  if(pregs.length<8){$('odSetupErr').textContent='Esa expedición no tiene suficientes preguntas.';return;}
  OD={preguntas:pregs,idx:0,aciertos:0,tiempo:0,t:DUELO_SEG,timer:null,lock:false,modo:'crear',rivalCodigo:codigo,expedicion:OD_EXP_SEL.id,dueloId:null,rivalNombre:'',expira:null};
  SND.init();odPinta();
-}
-function responderDesafio(d){
- OD={preguntas:d.preguntas,idx:0,aciertos:0,tiempo:0,t:DUELO_SEG,timer:null,lock:false,modo:'responder',rivalCodigo:'',expedicion:d.expedicion,dueloId:d.id,rivalNombre:d.retador_nombre,expira:d.expira};
- SND.init();odPinta();
-}
-function odPinta(){
- const P=OD.preguntas[OD.idx];OD.lock=false;
- $('odTurn').textContent=OD.modo==='crear'?'Tu ronda':('Responde a '+OD.rivalNombre);
- $('odTag').textContent='Pregunta '+(OD.idx+1)+'/8';
- $('odText').textContent=P.pregunta;$('odFb').textContent='';$('odFb').className='feedback';
- $('odProg').style.width=(OD.idx/8*100)+'%';
- if(OD.modo==='responder'&&OD.expira){$('odReloj').hidden=false;$('odReloj').textContent='⏳ Te quedan '+restante(OD.expira);}else $('odReloj').hidden=true;
- const orden=P.opciones.map((o,i)=>({o,i})).sort(()=>Math.random()-.5);
- const box=$('odOpts');box.innerHTML='';
- orden.forEach((it,k)=>{const b=document.createElement('div');b.className='opt';
-  if(QA_MARCA&&it.i===P.correcta)b.classList.add('qa-ok');
-  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${escHtml(it.o)}`;b.onclick=()=>odResponder(b,it.i===P.correcta);box.appendChild(b);});
- clearInterval(OD.timer);OD.t=DUELO_SEG;$('odTimer').textContent=OD.t;$('odTimer').className='timer';
- OD.timer=setInterval(()=>{OD.t--;$('odTimer').textContent=OD.t;if(OD.t<=5){$('odTimer').classList.add('low');if(OD.t>0)SND.tick();}
-  if(OD.t<=0){clearInterval(OD.timer);odResponder(null,false);}},1000);
- go('scr-od-quiz');
-}
-function odResponder(el,ok){
- if(OD.lock)return;OD.lock=true;clearInterval(OD.timer);OD.tiempo+=(15-OD.t);
- document.querySelectorAll('#odOpts .opt').forEach(o=>o.classList.add('off'));
- if(ok){OD.aciertos++;if(el){el.classList.remove('off');el.classList.add('ok');}$('odFb').textContent='✓ ¡Correcto!';$('odFb').classList.add('ok');SND.correct();}
- else{if(el){el.classList.remove('off');el.classList.add('bad');}$('odFb').textContent='✗ Incorrecto';$('odFb').classList.add('bad');SND.wrong();}
- setTimeout(()=>{OD.idx++;if(OD.idx<8)odPinta();else odFin();},ok?900:1400);
 }
 async function odFin(){
  clearInterval(OD.timer);
@@ -3931,81 +3041,11 @@ $('btnStart').onclick=()=>{
  refreshHud();guardar();renderMapa();renderRanking();
  $('nav').style.display='flex';go('scr-mapa');datoKimun();};
 
-/* ================= MAPA ================= */
-function renderMapa(){
- renderModoSel();
- const bc=$('btnMapaCamp');
- if(bc){ bc.style.display='block';
-  bc.textContent=(EXP_ACT&&EXP_ACT.campaña)?'← Volver a la campaña':'← Volver'; }
- if($('mapaSub'))$('mapaSub').textContent=EXP_ACT.nivel;
- if($('mapaImg'))$('mapaImg').src=EXP_ACT.mapaImg||EXP_ACT.portada;
- const box=$('mapbox');box.innerHTML='';
- EXPEDICION.forEach((n,i)=>{
-  const p=progAct()[i];
-  const d=document.createElement('div');d.className='node '+p.est;
-  const est=p.est==='done'?'✓ Completado':(p.est==='open'?'▶ ¡Jugar ahora!':'🔒 Bloqueado');
-  const stars=p.estrellas?'★'.repeat(p.estrellas)+'☆'.repeat(3-p.estrellas):'';
-  d.innerHTML=`<div class="orb">${p.est==='lock'?'🔒':n.icono}</div>
-   <div class="info"><b>${i+1}. ${n.nombre}</b><small>${est}</small>
-   <div class="stars-mini">${stars}</div></div>`;
-  d.querySelector('.orb').onclick=()=>{if(p.est!=='lock')startQuiz(i);};
-  box.appendChild(d);});
-}
-function renderModoSel(){
- const el=$('modoSel');if(!el)return;
- if(!HAY_DIFICIL||!S.dificilDesbloqueado){el.style.display='none';el.innerHTML='';return;}
- el.style.display='flex';
- el.innerHTML=`<button class="${MODO==='normal'?'on':''}" data-m="normal">🗺️ Normal</button>`+
-  `<button class="dif ${MODO==='dificil'?'on':''}" data-m="dificil">🔥 Difícil</button>`;
- el.querySelectorAll('button').forEach(b=>b.onclick=()=>{SND.tap();MODO=b.dataset.m;
-  document.body.classList.toggle('en-dificil', MODO==='dificil');renderMapa();});
-}
 // Ranking real del curso. Tres estados: con curso, sin curso y sin conexión.
 let _rankUlt=0;
-function renderRanking(){
- const el=$('ranking');
- const cache=JSON.parse(localStorage.getItem('kimun_rank')||'null');
- if(cache) pintarRanking(cache);                       // muestra lo último mientras carga
- if(!SB||!MI_PERFIL){ if(!cache) pintarSinCurso(); return; }
- // Como máximo una consulta cada 30 s, pero solo si ya hay algo pintado:
- // sin caché la pediremos igual, para no dejar el ranking en blanco.
- if(cache && Date.now()-_rankUlt < 30000) return;
- _rankUlt=Date.now();
- SB.rpc('kimun_ranking').then(({data,error})=>{
-  if(error) throw error;
-  if(!data||!data.length){ pintarSinCurso(); localStorage.removeItem('kimun_rank'); return; }
-  localStorage.setItem('kimun_rank',JSON.stringify(data));
-  pintarRanking(data);
- }).catch(e=>{
-  console.error('Ranking:',e.message||e);
-  if(!cache) el.innerHTML='<p style="color:var(--dim);font-weight:800;font-size:13px;text-align:center">Sin conexión. El ranking se actualizará más tarde.</p>';
- });
-}
 // Escapa el texto que viene del servidor: un nombre con < o & no debe romper la lista.
 function escHtml(t){return String(t==null?'':t).replace(/[&<>"']/g,
  c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-// Los nombres los escribió el profesor en su panel: se escapan antes de pintarlos.
-function pintarRanking(filas){
- $('ranking').innerHTML=filas.map((r,i)=>{
-  const marca=(r.dificil>0)?'🔥 ':'';
-  const ins=r.soy_yo?insigniaIc():'';
-  // Evita el 🔥 duplicado: si la insignia lucida ya es 🔥, no repetir la marca.
-  const pre=(marca&&ins.trim()==='🔥')?ins:(marca+ins);
-  const difcls=(r.dificil>0)?(' dif d'+Math.min(4,r.dificil)):'';   // d4 = maestría total (marco dorado)
-  return `<div class="rk ${i<1?'top':''} ${r.soy_yo?'me':''}${difcls}"><div class="pos">${i+1}</div>
-   <div class="em">${r.soy_yo?avatarHTML(S.avatar):escHtml(r.avatar)}</div>
-   <div>${pre}${escHtml(r.nombre)}${r.soy_yo?' (tú)':''}</div>
-   <div class="pts">${escHtml(r.xp)} XP</div></div>`;}).join('');
-}
-function pintarSinCurso(){
- $('ranking').innerHTML=
-  `<p style="color:var(--dim);font-weight:800;font-size:13px;text-align:center;margin-bottom:10px">
-     Pide tu código para entrar al ranking de tu curso.</p>
-   <button class="btn sec" onclick="SND.tap();abrirCanje()">🎟️ Tengo un código</button>`;
-}
-// Detiene cualquier temporizador/avance en curso (quiz, Reto de Cálculo, duelo) para que
-// no siga corriendo de fondo al cambiar de pantalla por la barra inferior u otro atajo.
-function detenerTimersActivos(){ clearInterval(Q.timer); clearTimeout(Q._avanzarT); if(HAY_RETO_CALCULO){clearInterval(RC.timer); clearTimeout(RC._resolveT);} clearInterval(D.timer); CALC.detener(); }
 document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>{
  SND.tap(); detenerTimersActivos();
  const dst=b.dataset.go;
@@ -4020,355 +3060,16 @@ document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>{
 ['neutral','feliz','triste','sorprendido','oro','plata','bronce','fiesta','desanimado']
  .forEach(n=>{const i=new Image();i.src='assets/kimun-'+n+'.png';});
 const KIM_REACT={neutral:['neutral',''],feliz:['feliz','happy'],triste:['triste','sad'],wow:['sorprendido','wow']};
-function kimReact(estado, id){
- const el=$(id||'kimBuddy');if(!el)return;
- const [img,cls]=KIM_REACT[estado]||KIM_REACT.neutral;
- el.src='assets/kimun-'+img+'.png';
- el.className='kim-buddy';void el.offsetWidth;
- if(cls)el.classList.add(cls);
-}
-/* Comentario/dato de Vulpi al iniciar la ruta: revela al azar una pregunta y su respuesta */
-function datoKimun(){
- const bub=$('kimDato');if(!bub)return;
- let todas=[];Object.keys(POOL).forEach(oa=>{todas=todas.concat(POOL[oa]);});
- if(!todas.length){bub.hidden=true;return;}
- const q=todas[Math.floor(Math.random()*todas.length)];
- const cont=$('kimDatoTxt');cont.innerHTML='';
- const p=document.createElement('div');p.className='kd-q';p.textContent='¿Sabías esto? '+q.pregunta;
- const r=document.createElement('div');r.className='kd-a';r.textContent='➜ '+q.opciones[q.correcta];
- cont.append(p,r);
- bub.hidden=false;bub.classList.remove('show');void bub.offsetWidth;bub.classList.add('show');
- clearTimeout(datoKimun._t);
- datoKimun._t=setTimeout(()=>{bub.classList.remove('show');setTimeout(()=>{bub.hidden=true;},400);},10000);
-}
 (function(){
  const x=$('kimDatoX');if(x)x.onclick=()=>{const b=$('kimDato');b.classList.remove('show');setTimeout(()=>{b.hidden=true;},300);};
  const s=$('btnSeguir');if(s)s.onclick=()=>{SND.tap();s.hidden=true;$('qExpl').hidden=true;avanzar();};
 })();
 
-/* ================= QUIZ ================= */
-function startQuiz(lvl){
- if(!poolListo(lvl)){alert('Cargando preguntas… intenta de nuevo en un momento.');return;}
- // Tarjeta de meta la primera vez (salvo libros de apoyo y modo efímero QA/prueba).
- const c0=EXPEDICION[lvl];
- const esLibro0=/^(VOC-|AF-)/.test(c0.oa||'');
- const clave=(EXP_ACT?EXP_ACT.id:'')+':'+lvl;
- if(!esLibro0 && !EFIMERO && !S.metasVistas[clave]){ mostrarMetaEtapa(lvl, clave); return; }
- arrancarQuiz(lvl);
-}
-// La tarjeta de meta: se marca vista, se pinta y su botón arranca el quiz de verdad.
-function mostrarMetaEtapa(lvl, clave){
- S.metasVistas[clave]=true; guardar();
- $('metaTxt').textContent=metaDeEtapa(lvl);
- $('metaVamos').onclick=()=>{ SND.tap(); arrancarQuiz(lvl); };
- go('scr-meta');
-}
-// Arranque real del quiz de una etapa (lo que hacía startQuiz antes de la compuerta de meta).
-function arrancarQuiz(lvl){
- const prg=progAct();
- const c=EXPEDICION[lvl];
- const esLibro=/^(VOC-|AF-)/.test(c.oa||'');
- // 2 comodines por etapa. Solo Normal, no en el nodo jefe (5.º) ni en los libros de apoyo.
- const comodines=(MODO==='normal' && lvl!==N_ETAPAS-1 && !esLibro)?2:0;
- Q={lvl,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock:false,preguntas:buildPreguntas(lvl),
-    repetida:!!(prg&&prg[lvl]&&prg[lvl].est==='done'), comodines};   // ya superada antes en este modo → pago reducido
- go('scr-quiz');pintaPregunta();}
 $('btnBack').onclick=()=>{clearInterval(Q.timer);clearTimeout(Q._avanzarT);
  if(HAY_MINICLASES&&Q.leccion){volverAlCapituloMate();}else{go(Q.desafio?'scr-rol':'scr-mapa');}};
 
-// Modo repaso: 10 preguntas nuevas del OA de la etapa fallada (excluye las que ya salieron),
-// sin cronómetro, sin reprobar, sin medir dominio y sin pagar. Al terminar vuelve a scr-res.
-function iniciarRepaso(lvl, vistos){
- const c=EXPEDICION[lvl];
- const oas=c.oas||[c.oa];
- let banco=[]; oas.forEach(oa=>{ banco=banco.concat(POOL[oa]||[]); });
- const set=new Set(vistos||[]);
- let disp=banco.filter(q=>!set.has(q.pregunta));
- if(disp.length<10) disp=banco;   // salvaguarda: si por alguna razón no alcanzan, usa todo el banco del OA
- const preguntas=pickN(disp,10).map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,id:q.id}));
- if(!preguntas.length){ go('scr-res'); return; }
- Q={lvl,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock:false,preguntas,repaso:{lvl}};
- MODO='normal';
- go('scr-quiz'); pintaPregunta();
-}
-// Fin del repaso: no mide, no premia. Vuelve a la pantalla de reprobado (con REINTENTAR intacto).
-function finRepaso(){
- clearInterval(Q.timer);
- Q={lvl:0,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock:false};
- go('scr-res');
-}
 
-function pintaPregunta(){
- const N=EXPEDICION[Q.lvl],P=Q.preguntas[Q.idx];Q.lock=false;
- kimReact('neutral');
- Q.asistidaActual=false;
- // Botón de ayuda 50/50: visible solo si quedan comodines en esta etapa.
- const ba=$('btnAyuda');
- if(Q.comodines>0){ ba.hidden=false; ba.disabled=false; ba.textContent='💡 Ayuda ('+Q.comodines+')'; ba.onclick=usarComodin; }
- else { ba.hidden=true; }
- $('qTag').textContent = Q.repaso
-   ? `🧑‍🏫 Repaso · Pregunta ${Q.idx+1}/${Q.preguntas.length}`
-   : Q.leccion
-   ? `📘 ${Q.leccion.titulo} · Pregunta ${Q.idx+1}/${Q.preguntas.length}`
-   : Q.desafio
-   ? `📣 ${Q.desafio.titulo} · Pregunta ${Q.idx+1}/${Q.preguntas.length}`
-   : `${MODO==='dificil'?'🔥 ':''}${N.icono} ${N.nombre} · Pregunta ${Q.idx+1}/${Q.preguntas.length}`;
- $('qText').textContent=P.q;$('qFb').textContent='';$('qFb').className='feedback';
- // Línea fija de meta: en etapa y repaso (mismo OA), no en lección/desafío/libros.
- const qm=$('qMeta');
- if(!Q.leccion && !Q.desafio && metaDisponible(Q.lvl)){ qm.textContent='🎯 '+metaDeEtapa(Q.lvl); qm.hidden=false; }
- else { qm.hidden=true; }
- $('qExpl').hidden=true;$('btnSeguir').hidden=true;
- $('qProg').style.width=(Q.idx/Q.preguntas.length*100)+'%';
- // barajar opciones
- const orden=P.ops.map((o,i)=>({o,i})).sort(()=>Math.random()-.5);
- $('qOpts').innerHTML='';
- orden.forEach((it,k)=>{
-  const b=document.createElement('div');b.className='opt';
-  if(it.i===P.ok)b.dataset.correcta='1';
-  if(QA_MARCA&&it.i===P.ok)b.classList.add('qa-ok');
-  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${escHtml(it.o)}`;
-  b.onclick=e=>responder(b,it.i===P.ok,P,e);
-  $('qOpts').appendChild(b);});
- REV.boton(P);   // 🚩 del modo revisión (assets/js/revision.js)
- // timer (el repaso no tiene cronómetro: es estudio, no evaluación)
- clearInterval(Q.timer);
- if(Q.repaso){ $('qTimer').style.visibility='hidden'; }
- else{
-  $('qTimer').style.visibility='visible';
-  Q.t=tiempoInicial();$('qTimer').textContent=Q.t;$('qTimer').className='timer';
-  Q.timer=setInterval(()=>{Q.t--;$('qTimer').textContent=Q.t;
-   if(Q.t<=5){$('qTimer').classList.add('low');if(Q.t>0)SND.tick();}
-   if(Q.t<=0){clearInterval(Q.timer);responder(null,false,P);}},1000);
- }
-}
-// Comodín 50/50: elimina dos de las tres opciones incorrectas. Marca la pregunta como asistida
-// (no se mide en el mapa de dominio). Gratis, tope de Q.comodines por etapa.
-function usarComodin(){
- if(Q.lock || !Q.comodines || Q.comodines<=0 || Q.asistidaActual) return;
- const opts=[...document.querySelectorAll('#qOpts .opt')];
- const malas=opts.filter(o=>!o.dataset.correcta);
- // baraja las malas y descarta dos
- for(let i=malas.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[malas[i],malas[j]]=[malas[j],malas[i]];}
- malas.slice(0,2).forEach(o=>{o.classList.add('descartada');o.onclick=null;});
- Q.comodines--; Q.asistidaActual=true; SND.tap();
- const ba=$('btnAyuda');
- if(Q.comodines>0){ ba.textContent='💡 Ayuda ('+Q.comodines+')'; }
- else { ba.disabled=true; ba.textContent='💡 Sin ayudas'; }
-}
-function responder(el,ok,P,e){
- if(Q.lock)return;Q.lock=true;clearInterval(Q.timer);
- if(!Q.desafio && !Q.repaso && !Q.asistidaActual) registrarOA(P&&P.oa, ok);   // desafío/repaso miden aparte; una pregunta con comodín no se mide
- document.querySelectorAll('.opt').forEach(o=>o.classList.add('off'));
- if(ok){
-  Q.combo++;Q.comboMax=Math.max(Q.comboMax,Q.combo);Q.aciertos++;
-  const bonus=Math.max(Q.t,3),pts=10+bonus+ (Q.combo>=2?Q.combo*2:0);
-  const xpGan=Q.repaso?0:(Q.repetida?Math.max(1,Math.round(pts*0.25)):pts), coinGan=Q.repaso?0:(Q.repetida?1:5);   // repaso no paga; repeticiones pagan reducido (anti-farmeo)
-  Q.xpGanado+=xpGan;S.xp+=xpGan;S.monedas+=coinGan;
-  el.classList.remove('off');el.classList.add('ok');
-  $('qFb').textContent=Q.repaso?'✓ ¡Correcto!':`✓ ¡Correcto! +${xpGan} XP`;$('qFb').classList.add('ok');
-  const r=el.getBoundingClientRect();
-  particulas(r.left+r.width/2,r.top,['✨','⭐','🪙','💥']);
-  SND.correct();
-  if(Q.combo>=2){comboFx(Q.combo);SND.combo(Q.combo);kimReact('wow');}
-  else kimReact('feliz');
-  if(Q.combo>=3)toast('combo3');
- }else{
-  Q.combo=0;
-  if(el){el.classList.remove('off');el.classList.add('bad');}
-  $('qFb').textContent='✗ Incorrecto';$('qFb').classList.add('bad');
-  SND.wrong();kimReact('triste');
-  if(navigator.vibrate)navigator.vibrate(120);
- }
- refreshHud();
- if(ok){Q._avanzarT=setTimeout(avanzar,1100);}
- else{
-  // Revelar la respuesta correcta y una explicación más amplia; sin apuro (botón Continuar)
-  const correcta=document.querySelector('#qOpts .opt[data-correcta]');
-  if(correcta)correcta.classList.add('ok');
-  const e=$('qExpl');e.innerHTML='';
-  const b=document.createElement('b');b.textContent='Respuesta correcta: ';
-  const s1=document.createElement('span');s1.textContent=P.ops[P.ok];
-  const s2=document.createElement('span');s2.className='expl-tip';s2.textContent='💡 '+P.tip;
-  e.append(b,s1,document.createElement('br'),s2);
-  e.hidden=false;$('btnSeguir').hidden=false;
- }
-}
-/* ===== Recompensas del Modo Difícil ===== */
-function capDificilCompleto(capId){const r=S.rutas[capId];
- return !!(r&&Array.isArray(r.progresoDificil)&&r.progresoDificil.length&&r.progresoDificil.every(n=>n.est==='done'));}
-function asignaturaDificilCompleta(asig){const c=CAMPAÑAS.find(x=>x.asignatura===asig);
- // Una campaña sin capítulos de expedición no cuenta para Difícil: exige capítulos
- // antes de evaluar para no generar una "Maestría" falsa.
- return !!(c&&c.capitulos.length&&c.capitulos.every(capDificilCompleto));}
-function asignaturasDificil(){return DIF_ASIGS.filter(asignaturaDificilCompleta);}
-// Maestría Total = 3 asignaturas en Difícil + vencer a El Autómata (los 4 jefes al máximo).
-function esMaestro(){if(!HAY_DIFICIL) return false; return asignaturasDificil().length>=3 && !!(S.calc&&S.calc.jefe);}
-// Aura/halo dorados permanentes mientras se es maestro (clase en el body).
-function aplicarMaestria(){document.body.classList.toggle('es-maestro', esMaestro());}
-// La primera vez que se logra la maestría: skin cumbre + video de celebración.
-function revisarMaestria(){
- aplicarMaestria();
- if(esMaestro() && !S.maestro){
-  S.maestro=true;
-  const sk=SKINS.find(s=>s.id==='kimun-maestro');
-  if(sk&&!S.skins.includes(sk.e))S.skins.push(sk.e);
-  guardar(); refreshHud(); aplicarMaestria();
-  toast('dif-maestro');
-  reproducirMaestro();
- }
-}
-// Otorga las insignias de Difícil por asignatura, sincroniza la marca (0–4, incluye El
-// Autómata) y revisa la maestría. Idempotente. Se llama al pasar una etapa en Difícil,
-// al vencer a El Autómata y al iniciar.
-function revisarDificil(){
- if(!HAY_DIFICIL) return;
- const hechas=asignaturasDificil();
- const ins={Historia:'dif-historia',Ciencias:'dif-ciencias',Lenguaje:'dif-lenguaje'};
- let nuevo=false;
- hechas.forEach(asig=>{const id=ins[asig];
-  if(id&&!S.insignias.has(id)){S.insignias.add(id);if(S.insigniaActiva===null)S.insigniaActiva=id;toast(id);nuevo=true;}});
- // Matemáticas: insignia propia de Difícil. Se otorga aparte de DIF_ASIGS (3 core),
- // así NO entra en asignaturasDificil() ni altera la Maestría Total.
- if(asignaturaDificilCompleta('Matemáticas') && !S.insignias.has('dif-matematicas')){
-  S.insignias.add('dif-matematicas'); if(S.insigniaActiva===null)S.insigniaActiva='dif-matematicas'; toast('dif-matematicas'); nuevo=true;
- }
- if(nuevo){guardar();refreshHud();}
- const cnt=hechas.length+((S.calc&&S.calc.jefe)?1:0);   // 0–4: suma El Autómata
- if(SB&&MI_PERFIL){try{Promise.resolve(SB.rpc('kimun_dificil',{p_n:cnt})).catch(()=>{});}catch(e){}}  // best-effort
- revisarMaestria();
- return cnt;
-}
-// Video de celebración de la Maestría Total (una vez; con sonido, es tras una acción del usuario).
-function reproducirMaestro(){
- const ov=$('maestroOverlay'),vid=$('maestroVid'),skip=$('maestroSkip'); if(!ov)return;
- ov.hidden=false; ov.classList.remove('fade');
- let cerrado=false,guard=null;
- function cerrar(){if(cerrado)return;cerrado=true;clearTimeout(guard);try{vid.pause();}catch(e){}
-  ov.classList.add('fade');setTimeout(()=>{ov.hidden=true;ov.classList.remove('fade');},480);}
- skip.onclick=cerrar; vid.onended=cerrar;
- vid.addEventListener('playing',()=>{clearTimeout(guard);guard=setTimeout(cerrar,12000);},{once:true});
- vid.currentTime=0; vid.muted=false;
- const p=vid.play(); if(p&&p.catch)p.catch(()=>{vid.muted=true;const q=vid.play();if(q&&q.catch)q.catch(()=>cerrar());});
-}
-function avanzar(){if(!Q||!Q.preguntas)return;   // guard: evita reentrada (doble toque) tras resetear Q
-  if(!$('scr-quiz').classList.contains('on'))return;   // el usuario salió del quiz: no continuar
-  Q.idx++;if(Q.idx<Q.preguntas.length)pintaPregunta();
-  else if(Q.repaso)finRepaso();
-  else if(Q.leccion)finPracticaLeccion();
-  else if(Q.desafio)terminarDesafio();else terminarNivel();}
-// Prediccion antes del resultado. El nino declara como cree que le fue ANTES de ver su puntaje:
-// asi el semaforo deja de ser un eco de las estrellas y pasa a ser una prediccion, y el resultado
-// puede responderle. Mismo patron que la tarjeta de meta (startQuiz -> mostrarMetaEtapa ->
-// arrancarQuiz): esta es la compuerta y mostrarResultado el trabajo real.
-// EFIMERO (QA || PRUEBA, y REVISION implica PRUEBA) la salta, asi que ?qa=1, ?solo=, ?m= y ?rev=1
-// quedan cubiertos por la bandera que ya existe: quien revisa contenido no se tranca.
-function terminarNivel(){
- if(EFIMERO){ mostrarResultado(); return; }
- preguntarPrediccion();
-}
-// La pantalla: un solo toque, sin boton de confirmar. Es el unico control, asi que es obligatoria
-// sin necesidad de apagar nada ni de explicar un bloqueo.
-function preguntarPrediccion(){
- const clave=(EXP_ACT?EXP_ACT.id:'')+':'+Q.lvl;
- const btns=[...document.querySelectorAll('#predOpts .sem')];
- btns.forEach(b=>{ b.classList.remove('sel');
-  b.onclick=()=>{
-   if(Q._pred)return;              // guard de reentrada: doble toque
-   Q._pred=true; b.classList.add('sel'); SND.tap();
-   S.semaforo[clave]=b.dataset.v; guardar();
-   setTimeout(mostrarResultado,220);   // alcanza a verse la marca antes de cambiar de pantalla
-  };});
- go('scr-pred');   // en 3ro el propio go() corta la voz de la pantalla anterior
-}
-// El resultado RESPONDE a la prediccion. Sin prediccion (modo efimero o partida vieja) la linea
-// queda vacia y la pantalla se ve como antes. Local y privado: no mide ni viaja al profesor.
-function mostrarCruce(clave, paso, ratio, aciertos, tot, hayRepaso){
- const el=$('resCruce'); if(!el)return; el.textContent='';
- const pred=S.semaforo[clave]; if(!pred)return;
- const real=!paso?'🔴':(ratio>=0.9?'🟢':'🟡');   // mismo corte con que ya se reparten las estrellas
- const ord={'🔴':0,'🟡':1,'🟢':2}, d=ord[pred]-ord[real], marca=aciertos+' de '+tot;
- el.textContent = d===0 ? 'Te conoces bien: sabías cómo te iba a ir 👌'
-   : d>0 ? 'Creías que lo tenías y te fue '+marca+'. Démosle otra vuelta.'+(hayRepaso?' 👉 Toca “Repasar”.':'')
-         : '¡Te costó menos de lo que pensabas! '+marca+' 💪';
-}
-function mostrarResultado(){
- const tot=Q.preguntas.length;
- const ratio=Q.aciertos/tot;
- const dif=MODO==='dificil';
- const estrellas=dif?(ratio>=1?3:(ratio>=0.90?2:(ratio>=0.80?1:0)))
-                    :(ratio>=1?3:(ratio>=0.80?2:(ratio>=0.66?1:0)));
- const paso=dif?ratio>=0.80:ratio>=0.66;   // Difícil pasa con 80%, Normal con 66%
- const esJefe=Q.lvl===N_ETAPAS-1;
- const cFail=EXPEDICION[Q.lvl], lvlFail=Q.lvl, oaFail=cFail.oa||'';
- const esLibro=/^(VOC-|AF-)/.test(oaFail);
- const esMate=HAY_MINICLASES && EXP_ACT && EXP_ACT.asignatura==='Matemáticas';
- const vistos=Q.preguntas.map(p=>p.q);   // enunciados de la etapa fallada, para excluirlos en el repaso
- const prog=progAct();
- const p=prog[Q.lvl];
- if(paso){p.est='done';p.estrellas=Math.max(p.estrellas,estrellas);
-  if(prog[Q.lvl+1]&&prog[Q.lvl+1].est==='lock')prog[Q.lvl+1].est='open';
-  toast('primera');
-  if(estrellas===3)toast('perfecto');
-  if(esJefe)toast('jefe');
-  S.monedas+=Q.repetida?0:estrellas*10;   // el bono de estrellas solo la primera vez (anti-farmeo)
-  if(HAY_DIFICIL&&esJefe&&EXPEDICION[Q.lvl]&&EXPEDICION[Q.lvl].oa==='BOSS'&&!dif&&!S.dificilDesbloqueado){S.dificilDesbloqueado=true;setTimeout(()=>toast('dificil'),700);}
- }
- if(paso)SND.win();else SND.lose();
- [1,2,3].forEach(i=>{if(i<=estrellas)setTimeout(()=>SND.star(i),350+i*260);});
- let kimImg = !paso ? 'desanimado'
-   : esJefe ? 'fiesta'
-   : (estrellas===3?'oro':estrellas===2?'plata':'bronce');
- $('resKim').src='assets/kimun-'+kimImg+'.png';
- $('resTitle').textContent=paso?(esJefe?'¡EXPEDICIÓN COMPLETA!':'¡Nivel superado!'):('¡Casi! Necesitas '+(dif?'80%':'66%')+' para pasar');
- $('resStars').innerHTML=[1,2,3].map(i=>i<=estrellas?'<span class="g">★</span>':'<span class="w">★</span>').join('');
- $('resXp').textContent='+'+Q.xpGanado;
- $('resCoins').textContent='+'+((Q.repetida?0:estrellas*10)+Q.aciertos*(Q.repetida?1:5));
- $('resCombo').textContent='x'+Q.comboMax;
- if(paso){
-  $('btnNext').style.display=(Q.lvl<N_ETAPAS-1)?'block':'none';
-  $('btnNext').textContent='SIGUIENTE ETAPA ➜';
-  $('btnNext').onclick=()=>startQuiz(Q.lvl+1);
- }else{
-  $('btnNext').style.display='block';
-  $('btnNext').textContent='🔁 REINTENTAR';
-  $('btnNext').onclick=()=>startQuiz(lvlFail);
- }
- // Siguiente paso al reprobar una etapa de un solo OA (no jefe, no libros).
- if(!paso && !esJefe && !esLibro){
-  $('resObj').textContent='🎯 '+metaDeEtapa(lvlFail);
-  $('resObj').hidden=false;
-  $('btnPaso').style.display='block';
-  if(esMate){ $('btnPaso').textContent='📘 Repasar la mini-clase'; $('btnPaso').onclick=()=>abrirMiniClaseDeOA(oaFail); }
-  else      { $('btnPaso').textContent='🧑‍🏫 Repasar sin presión'; $('btnPaso').onclick=()=>iniciarRepaso(lvlFail,vistos); }
- }else{
-  $('resObj').hidden=true;
-  $('btnPaso').style.display='none';
- }
- $('btnMap').onclick=()=>{
-  // Terminó el jefe de la demo y no tiene código: se le ofrece el resto.
-  if(bloqueado() && EXP_ACT && EXP_ACT.id===DEMO_LIBRE && expedicionCompleta(DEMO_LIBRE)){ mostrarFinDemo(); return; }
-  renderMapa();renderRanking();go('scr-mapa');};
- refreshHud();guardar();enviarDominio();
- if(dif&&paso)revisarDificil();   // ¿completó una asignatura en Difícil? → insignia/skin + marca 🔥
- if(paso)particulas(window.innerWidth/2,window.innerHeight/3,['🎉','⭐','✨','🎊'],24);
- mostrarCruce((EXP_ACT?EXP_ACT.id:'')+':'+lvlFail, paso, ratio, Q.aciertos, tot, !paso && !esJefe && !esLibro);
- go('scr-res');
-}
 
-/* ===== Desafío de refuerzo (lado alumno) ===== */
-// El servidor guarda la asignatura del desafío con su código canónico de 4 letras
-// (HI08/CN08/MA08/LE08). El juego, en cambio, nombra las asignaturas en EXPEDICIONES
-// ("Historia"…), así que hay que traducir el código al nombre para mostrarlo y para
-// buscar su banco de preguntas. Tolera también el nombre antiguo por si llega un
-// desafío previo a la normalización.
-const ASIG_DESAFIO_NOMBRE={HI08:'Historia',CN08:'Ciencias',MA08:'Matemáticas',LE08:'Lenguaje'};
-function asigDesafioNombre(a){return ASIG_DESAFIO_NOMBRE[a]||a;}
-// Ruta del preguntas.json de una asignatura (cualquiera de sus expediciones sirve).
-function contenidoDeAsignatura(asig){
-  const e=EXPEDICIONES.find(x=>x.asignatura===asig&&x.contenido);
-  return e?e.contenido:null;
-}
 // Arma ~12 preguntas de los objetivos del desafío, repartidas por OA. Hace su propio fetch
 // para no pisar el POOL de la expedición activa.
 async function construirPreguntasDesafio(asig, objetivos){
@@ -4380,7 +3081,7 @@ async function construirPreguntasDesafio(asig, objetivos){
   const per=Math.min(6,Math.max(2,Math.round(12/objetivos.length)));
   let sel=[]; objetivos.forEach(oa=>{ sel=sel.concat(pickN(pool[oa],per)); });
   sel=pickN(sel,12);
-  return sel.map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,id:q.id}));
+  return sel.map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,visual:q.visual,id:q.id}));
 }
 // Arranca el quiz en modo desafío (reusa el motor con el flag Q.desafio).
 async function jugarDesafio(d){
@@ -4406,34 +3107,6 @@ async function revisarDesafio(){
   $('btnDesafio').onclick=()=>jugarDesafio(d);
   cont.hidden=false;
 }
-// Fin del desafío: resultado propio + recompensa. No toca el progreso de campañas ni el
-// mapa de dominio (se midió aparte). El +5/acierto ya se sumó en responder; aquí va el bono.
-function terminarDesafio(){
-  const tot=Q.preguntas.length, ac=Q.aciertos, ratio=ac/tot;
-  const estrellas = ratio>=1?3:(ratio>=0.80?2:(ratio>=0.66?1:0));
-  S.monedas += 30;
-  let insigniaNueva=false;
-  if(!S.insignias.has('mision-profe')){ S.insignias.add('mision-profe');
-    if(!S.insigniaActiva)S.insigniaActiva='mision-profe'; insigniaNueva=true; }
-  guardar(); refreshHud();
-  if(!EFIMERO && SB && MI_PERFIL){
-    try{ Promise.resolve(SB.rpc('kimun_refuerzo_completar',
-      {p_desafio_id:Q.desafio.id,p_correctas:ac,p_total:tot})).catch(()=>{}); }catch(e){}
-  }
-  SND.win();
-  $('resKim').src='assets/kimun-'+(estrellas>=2?'oro':estrellas===1?'plata':'bronce')+'.png';
-  $('resTitle').textContent='¡Refuerzo cumplido!';
-  $('resStars').innerHTML=[1,2,3].map(i=>i<=estrellas?'<span class="g">★</span>':'<span class="w">★</span>').join('');
-  $('resXp').textContent='+'+Q.xpGanado;
-  $('resCoins').textContent='+'+(30+ac*5);
-  $('resCombo').textContent='x'+Q.comboMax;
-  $('btnNext').style.display='none';
-  $('btnMap').textContent='VOLVER AL INICIO';
-  $('btnMap').onclick=()=>{revisarDesafio();pintarInicio();go('scr-rol');};
-  if(insigniaNueva) setTimeout(()=>toast('mision-profe'),600);
-  particulas(window.innerWidth/2,window.innerHeight/3,['🎉','⭐','✨','📣'],24);
-  go('scr-res');
-}
 /* Aviso visible del modo QA (solo con ?qa=1). El del modo prueba se agrega aparte. */
 if(QA){const b=document.createElement('div');b.className='qa-badge';b.textContent='🧪 QA · respuestas marcadas · todo desbloqueado';document.body.appendChild(b);}
 /* Aviso del modo prueba (?solo=): deja claro que el avance no se guarda. */
@@ -4447,10 +3120,10 @@ if(PRUEBA&&!QA&&!VENCIDA){const b=document.createElement('div');b.className='qa-
  if(SIN_DISCO){ ov.remove(); return; }   // prueba/armador: entrada directa, y no se escribe kimun_intro
  const vid=$('introVid'), skip=$('introSkip'), tap=$('introTap');
  const forzar=new URLSearchParams(location.search).has('intro');
- const visto=localStorage.getItem('kimun_intro');
+ const visto=localStorage.getItem('kimun_intro'+SUFIJO);
  const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
  if(!forzar && (visto || reduce)){ ov.remove(); return; }   // ya se vio o se prefiere sin animación
- try{ localStorage.setItem('kimun_intro','1'); }catch(e){}
+ try{ localStorage.setItem('kimun_intro'+SUFIJO,'1'); }catch(e){}
  let cerrado=false, guard=null;
  function ocultar(){ if(cerrado) return; cerrado=true; clearTimeout(guard); try{vid.pause();}catch(e){}
   ov.classList.add('fade'); setTimeout(()=>ov.remove(),480); }
@@ -4466,6 +3139,15 @@ if(PRUEBA&&!QA&&!VENCIDA){const b=document.createElement('div');b.className='qa-
  }
  intentar();
 })();
+</script>
+<script>
+/* CANARIA. Si motor.js no cargó, el juego está muerto: sin ella la pantalla se ve bien y
+   ningún botón responde, que es el fallo más caro de diagnosticar de este proyecto. */
+if(!window.__MOTOR_OK){document.documentElement.innerHTML=
+ '<body style="background:#140f33;color:#fff;font:16px/1.5 system-ui;padding:32px;text-align:center">'
++'<p style="font-size:40px;margin:0">🦊</p><p><b>No se pudo cargar el juego.</b></p>'
++'<p>Revisa tu conexión y vuelve a intentarlo.</p>'
++'<p><a href="" style="color:#4dd8ff">Recargar</a></p></body>';}
 </script>
 </body>
 </html>

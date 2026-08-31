@@ -242,10 +242,28 @@ supuesto cuando pide "no modificar `contenido/` ni `supabase/`".
 1. **Un cambio de una capa no toca las otras.** Agregar preguntas es `contenido/`; cambiar una
    regla del juego es motor; ninguno de los dos toca `supabase/`. Cuando un trabajo obliga a
    tocar tres capas a la vez, casi siempre está mal planteado.
-2. **Lo que se comparte entre cursos va a `assets/js/`, no se copia.** Es el patrón que
-   `revision.js`, `sensible.js` y `calculo.js` ya validaron en producción. **Siempre con su
-   respaldo vacío antes de usarse**, porque un 404 de un `<script src>` mata todo el JavaScript
-   del juego y el síntoma engaña.
+2. **Lo que se comparte entre cursos va a `assets/js/`, no se copia.** Hoy son siete módulos:
+   `revision.js`, `sensible.js`, `calculo.js`, y desde el 31/08 **`visuales.js`** (los 11
+   dibujos), **`voz.js`** (la lectura en voz alta), **`niveles.js`** (el catálogo de niveles,
+   que solo carga el panel) y **`motor.js`** (el juego entero: quiz, campañas, jefes, duelo,
+   tienda, guardado). **Siempre con su respaldo vacío antes de usarse**, porque un 404 de
+   un `<script src>` mata todo el JavaScript y el síntoma engaña: la pantalla se ve bien y ningún
+   botón responde. Cada uno se prueba **con el archivo ausente**, no solo presente.
+   - ⚠️ **`motor.js` es la excepción: NO admite respaldo vacío, porque es el juego.** Lo que sí
+     se puede es que el fallo **se diga**: cada fork lleva al final una **canaria** que comprueba
+     `window.__MOTOR_OK` y, si no está, escribe en pantalla que hay que recargar. Cuesta seis
+     líneas y convierte el fallo mudo más caro del proyecto en uno legible por un apoderado.
+     Y por lo mismo **se publica en un push ANTERIOR al que lo referencia**: es la lección del
+     `drop function` de la Sesión 73 —el cliente nunca antes que su dependencia—, agravada
+     porque GitHub Pages tardó ~2 minutos en servir `revision.js` el día que se desplegó.
+   - **Un módulo se lleva su CSS.** Si sus reglas quedan sueltas en el `<style>` de cada curso,
+     un nivel nuevo carga el módulo, funciona, y **no se ve** — sin ningún error. Lo inyectan
+     ellos mismos, que es lo que `revision.js` ya hacía.
+   - **Un módulo con datos propios del curso nace dormido** y despierta con un `init` que recibe
+     esos datos (`VOZ.init(VOZ_DIRS)`, `CALC.init({activo})`). Así no hace falta una bandera más
+     para apagarlo donde no corresponde. ⚠️ **La llamada a `init` va PEGADA a la declaración de
+     sus datos**, nunca arriba con las otras constantes: un `const` leído antes de declararse
+     mata todo el JavaScript, y esa trampa mordió cuatro veces en una semana.
 3. **Lo que difiere entre cursos va como DATO, no como `if`** — banderas con nombre, `EXTRAS`,
    `sinfin:true`. Un `if` sobre el nombre de la asignatura no dice si el nivel tiene esa
    funcionalidad, y al forkear se copia con su suposición adentro.
@@ -255,6 +273,23 @@ supuesto cuando pide "no modificar `contenido/` ni `supabase/`".
    fuente de bug más repetida del proyecto.
 5. **Nada nuevo en la raíz sin motivo.** La raíz es la landing. La PWA sumará exactamente
    `manifest.webmanifest`, `sw.js` y `pwa.js`, y ahí se detiene.
+
+#### El contrato de la capa de contenido (31/08/2026)
+
+Vive en **[`contenido/_plantilla/README.md`](contenido/_plantilla/README.md)**, y ahí hay que
+mirar antes de crear una carpeta de asignatura: nombre de la carpeta, los tres archivos, el
+formato canónico de `preguntas.json`, el contrato de `_pool/` y la convención de `id`.
+
+**El estándar no se inventó: es el que ya producía `scripts/consolidar-pool-nivel.py`**, que es
+la herramienta que crea los bancos —`indent=1`, sin salto final, LF, y como cabecera solo lo que
+alguien lee—. Antes la plantilla describía una cabecera de seis claves que **la herramienta real
+no escribía y que ninguno de los 16 bancos cumplía**, durante meses y sin que nada avisara. Por
+eso ahora lo comprueba `auditar-banco-nivel.py`, probado rompiendo un banco a propósito.
+
+> ⚠️ **Los `id` de las preguntas ya escritas NO se renombran, aunque sean inconsistentes**
+> (`cie3`/`cie7`/`cien8`, `mat3`/`mate7`, `len3`/`leng7`): **las marcas de aprobación del tablero
+> se guardan por id**, así que renombrarlas dejaría huérfanas las 7.805 firmadas. La regla —las 4
+> primeras letras de la asignatura más el dígito del nivel— es para lo que venga.
 
 #### El peso, medido hoy (31/08/2026)
 
@@ -359,6 +394,7 @@ arriba del archivo, no como condiciones sueltas repartidas por el código.
 | `HAY_BIBLIOTECA` | Si la pantalla principal ofrece el módulo 📖 Lectura | ✅ | ❌ | ✅ |
 | `HAY_SINFIN` | Si Matemática ofrece el **Reto Sin Fin** de `assets/js/calculo.js`. Gobierna el nodo del mapa y la llamada `CALC.init` | ❌ | ✅ | ✅ |
 | `HAY_DIFICIL` | Si el nivel ofrece **Modo Difícil**, y con él las insignias 🔥, la skin de Maestro y la Maestría Total. ⚠️ Se declara **pegada a `DIF_ASIGS`** y no con las demás: la consulta `revisarDificil()`, que corre en el arranque | ✅ | ✅ | ❌ |
+| `MAESTRIA_CALC` | Si el **cuarto hito** de la Maestría Total es El Autómata (el Jefe del Reto de Cálculo). En 8° la Maestría es Historia+Ciencias+Lenguaje en Difícil **más** El Autómata; donde no hay Reto son las **cuatro** asignaturas. Son el mismo número contado distinto, así que va como dato y no como dos `esMaestro()` distintos. ⚠️ También **pegada a `HAY_DIFICIL`** | ✅ | ❌ | ❌ |
 | `SIN_RELOJ` | Quiz sin cuenta regresiva y sin selector Normal/Difícil. ⚠️ **No alcanza al Duelo**, que sí lleva reloj en los tres: es una competencia y ahí el tiempo es parte del juego | ❌ | ❌ | ✅ |
 | `DUELO_BANCO` | De qué banco saca preguntas el Duelo (ruta + los 4 OA). Iba **fijo a `historia-8basico`** en los tres forks, así que en 7° un alumno recibía preguntas de 8° | `HI08` | `HI07` | `HI03` |
 | `DUELO_SEG` | Segundos por pregunta del Duelo, local y en línea | 15 | 15 | **30** |
@@ -448,8 +484,30 @@ en todos sus modos. Lo que sí funciona, y se usó en la Sesión 65:
 - **Antes de borrar HTML, comprobar que ningún `id` de adentro lo nombre el JavaScript.** Ese
   chequeo frenó el primer intento (`scr-calc` seguía nombrado en `MUSIC.contexto`) y obligó a
   guardar también esa línea.
-- Y **preservar CRLF** (escribir con `newline=""`). Convertir los forks a LF deja cualquier
-  comparación entre cursos inservible, que es la herramienta principal para mantenerlos.
+- Y **escribir con `newline=""`**, o sea conservar los finales de línea que trae el archivo.
+  Desde el 31/08 eso significa **LF en todo el proyecto**, declarado en `.gitattributes` (ver
+  abajo). Antes esta regla decía "preservar CRLF", y **su motivo estaba mal contado**: la
+  comparación entre forks se rompía porque quedaban **distintos entre sí**, no porque fueran
+  CRLF. Con los tres en LF siguen siendo comparables, que es lo único que importaba.
+
+> ⚠️ **Y una que se pagó en M3 (31/08): una pieza extraída tiene que llevarse sus comentarios
+> ENTEROS.** El extractor subía sobre las líneas que empiezan por `//`, `/*` o `*`, pero este
+> proyecto escribe los bloques **sin prefijo en las líneas del medio**:
+>
+>     /* Una sola recarga por pestaña...
+>        y el disco guardando otra...
+>        que es peor que quedarse con el modo viejo. */
+>
+> así que se llevó **solo el último renglón** y dejó el `/*` **huérfano** en los tres forks,
+> comentando lo que viniera detrás. Es el hermano exacto del `*/` de la Sesión 63.
+>
+> **Lo grave es que `node --check` NO lo delata**, y por eso hay que decirlo: el bloque siguiente
+> aportaba el `*/` que faltaba, así que el archivo seguía siendo JavaScript válido — solo que con
+> un comentario tragado. Si en vez de un comentario hubiera habido código, se habría ido en
+> silencio. **El guard que sí lo caza es contar `/*` y `*/` en la pieza que sale: tienen que ser
+> iguales.** Y de paso: los comentarios de una misma función divergían entre forks (3° conservaba
+> el "por qué" y 8°/7° la versión vieja), así que **el extractor aborta si difieren** y obliga a
+> escribir uno solo, que es lo que corresponde cuando la función pasa a ser una sola.
 
 ### ⚠️ Un `*/` dentro de un comentario lo cierra antes de tiempo (y mata el juego entero)
 
@@ -670,6 +728,34 @@ voz**: 7° no lleva audio pregrabado, y de 5° hacia arriba no vale la pena paga
     Inventarle un nivel a partir del nombre habría sido adivinar.
   - Y el enlace de inscripción **se preselecciona con el nivel del curso**: mandarle a un 3° el
     enlace de `/juego/` era el error fácil de esa pantalla.
+
+### Finales de línea: LF en todo, declarado en `.gitattributes` (31/08/2026)
+
+`.gitattributes` fija **`* text=auto eol=lf`** para todo el proyecto y declara binarios los
+tipos de arte, audio y video. Con eso el disco es igual al índice, y un script nuevo no
+necesita ninguna ceremonia para no ensuciar el árbol.
+
+> **La premisa con la que se planificó esta tarea era falsa, y conviene dejarlo escrito.**
+> Se creía que faltaba normalizar el repositorio y que la migración *"toca todos los archivos
+> y produce un commit gigante"*. Medido: **el índice ya estaba 100% en LF** —376 archivos de
+> texto, ninguno con CRLF guardado—, y lo que GitHub Pages sirve siempre fue LF. El desorden
+> estaba **en el disco**: 187 archivos con CRLF contra 188 con LF, casi una moneda al aire,
+> más `.gitignore` con los dos mezclados. Y el disco es lo que leen y reescriben los scripts,
+> varios de los cuales conservan el formato que encuentran — así es como un mismo script
+> producía CRLF en un PC y LF en el otro.
+>
+> Pasar los 188 archivos a LF **no cambió ni un byte de contenido para git**: el `git diff`
+> siguió mostrando exactamente los 11 archivos que se habían editado a mano. Verificado
+> comparando `git status` antes y después.
+
+Dos cosas que hay que saber al hacerlo, porque las dos asustan sin motivo:
+
+- **`git status` marca cientos de archivos como modificados y `git diff` sale vacío.** Es la
+  caché de `stat`, que quedó rancia al reescribirlos. `git update-index --refresh` **no la
+  arregla** (solo mira `stat`, no vuelve a calcular el hash); lo que la limpia es
+  `git add --renormalize .`, que no puede colar nada porque los blobs son idénticos.
+- **Antes de renormalizar, mirar `git diff --numstat`**, que sí aplica los filtros. Ahí se ve
+  el cambio real y se distingue del ruido.
 
 ### Regla de commits (importante)
 
@@ -1244,8 +1330,13 @@ cualquier banco de cualquier nivel; la carpeta va como argumento.
   el selector Normal/Difícil del mapa (variable global `MODO`).
 
 ### Del tablero (producción)
-- Cobertura: `preguntas / meta_preguntas_por_oa` por OA, **meta 8 por defecto**
-  (`scripts/generar-tablero.py`). Aquí decía 25, que nunca fue el valor del script.
+- Cobertura: `preguntas / meta` por OA, **meta 8**, que vive en `scripts/generar-tablero.py`
+  y **ya no se declara en ningún banco** (31/08). Cinco bancos de 8° traían
+  `meta_preguntas_por_oa: 25`, o sea que el tablero medía 8° contra una vara **tres veces
+  más alta** que 3° y 7°. Hoy no cambiaba ningún número —ningún OA de 8° baja de 25
+  preguntas, medido— pero era una trampa puesta para el primer banco de 4°, 5° o 6° con un
+  OA corto: habría marcado 80% donde corresponde 100%. Al sacarlo, las **562 barras de
+  cobertura quedaron idénticas** y las cuatro secciones de 8° pasaron a decir "meta 8".
 - Revisión: `revisadas / total` (aprobadas por un humano).
 
 ## Backend (Supabase)
@@ -6123,3 +6214,152 @@ y 7° quedan en 20 y 23 sin moverse. Cero 404 y cero errores.
 - **Pendiente de arrastre (Roberto):** sin cambios — A4 (la conversación con el colegio sobre el
   contenido sensible), A12, A14 y A19; y el camino crítico sigue siendo el **Bloque B** (los
   bancos de 4°, 5° y 6°) con **M4 (`niveles.js`)** delante.
+
+### Sesión 75 (2026-08-31) — El motor deja de estar copiado tres veces
+Sesión larga de infraestructura. **No se escribió contenido**: ni un banco, ni una pregunta, ni
+una lección. Todo es herramienta, estándar y motor, y cierra los dos bloques que estaban delante
+del camino crítico de la v1.
+
+#### Primero, terminar de ordenar las bases (Bloque O)
+
+- **O6 · Lo cableado a 3° dejó de estarlo.** El normalizador de voz decidía si un número era
+  **hora** con una lista de códigos de OA escrita a mano (`MA03 OA 18`, `MA03 OA 20`); ahora lo
+  decide **por la forma** del texto. Medido en los 16 bancos: la forma acierta en los 4 objetivos
+  que traen horas, y los cuatro son horas de verdad. Y sabía contar **solo hasta 1.000**, que era
+  "todo lo que necesita 3° básico" — ahora llega al millón, que es lo que pide 4°.
+  Los tres scripts de voz pasaron a `-nivel` y su catálogo de asignaturas vive en **uno solo**
+  (`scripts/voz_asignaturas.py`), porque estaba copiado en dos y al auditor le faltaba `ada3`.
+- **O7 · `.gitattributes`, y la premisa con la que se planificó era falsa.** Se creía que faltaba
+  normalizar el repositorio y que sería "un commit gigante". Medido: **el índice ya estaba 100 %
+  en LF** —376 archivos de texto, ninguno con CRLF guardado— y lo que GitHub Pages sirve siempre
+  fue LF. El desorden estaba **en el disco**: 187 archivos con CRLF contra 188 con LF, casi una
+  moneda al aire, y el disco es lo que leen y reescriben los scripts. Detalle en la sección de
+  finales de línea, arriba.
+- **O8 · El contrato de la capa de contenido.** El estándar **no se inventó**: es el que ya
+  producía `consolidar-pool-nivel.py`. La plantilla, en cambio, describía una cabecera de seis
+  claves que **la herramienta real no escribía y que ninguno de los 16 bancos cumplía**, durante
+  meses y sin que nada avisara. Ahora lo comprueba `auditar-banco-nivel.py`, probado rompiendo un
+  banco a propósito.
+  > De paso apareció una trampa cara: cinco bancos de 8° traían `meta_preguntas_por_oa: 25`, o sea
+  > que el tablero medía 8° contra una vara **tres veces más alta** que 3° y 7°. Hoy no cambiaba
+  > ningún número —ningún OA de 8° baja de 25— pero estaba puesta para el primer banco de 4°, 5° o
+  > 6° con un OA corto. Al sacarla, las **562 barras de cobertura quedaron idénticas**.
+
+#### Después, desduplicar el motor (Bloque M): los cuatro módulos
+
+La medición del 30/08 decía **1.982 líneas comunes a los tres forks** y **71 funciones byte a byte
+idénticas**. Al cierre de esta sesión son **cero**.
+
+| | Qué salió | Líneas |
+|---|---|---|
+| **M1** `visuales.js` | Los 11 dibujos por código, que vivían **solo en 3°** | 308 |
+| **M2** `voz.js` | La lectura en voz alta. **Nace dormida** | 170 |
+| **M4** `niveles.js` | El catálogo de niveles del panel | 110 |
+| **M3** `motor.js` | **El juego entero**: quiz, campañas, jefes, duelo, tienda, guardado | 1.454 |
+
+Los tres forks pasan de **12.458 a 8.301 líneas**. Lo que importa no es el número sino que **una
+corrección de motor se escribe una vez y no tres** — y con 4°, 5° y 6° por delante habrían sido
+seis.
+
+**Dos decisiones de forma que valen para lo que venga:**
+- **Un módulo se lleva su CSS.** Si sus reglas quedan sueltas en el `<style>` de cada curso, un
+  nivel nuevo carga el módulo, funciona y **no se ve**, sin ningún error.
+- **Un módulo con datos propios del curso nace dormido** y despierta con `init`. Así `voz.js` lo
+  cargan los tres y 8° y 7° quedan mudos **sin una bandera más**.
+
+Y una ganancia que no era el objetivo: los dos scripts que leían `renderVisual` **recortándolo del
+`index.html` del fork** ahora leen el módulo. Con eso **5° va a poder aprobar su banco con dibujos
+antes de que exista su juego**.
+
+#### M3 se hizo AHORA por una razón con fecha de vencimiento
+
+Roberto avisó que todavía no ha repartido el enlace, o sea que **nadie está usando la plataforma**.
+Eso invierte el cálculo: el único argumento en contra de M3 era tocar `guardar()` y el quiz con
+alumnos jugando. **Es la única ventana para hacerlo, y se cierra sola cuando parta el piloto.**
+
+Seis rebanadas, de menor a mayor riesgo: jefes → duelo → puerta/armador → campaña/mapa/tienda →
+**persistencia** → **quiz**. Las dos últimas al final a propósito, porque un error ahí borra
+partidas guardadas.
+
+> **La medición corrigió el plan.** `pendiente.md` estimaba ~830 líneas; eran **1.310 por fork**,
+> 58 % más. Y solo **4 funciones** divergían.
+
+#### ⚠️ `motor.js` es el único módulo que NO puede degradar
+
+Los otros cinco llevan respaldo vacío: si no cargan, el juego sigue sin esa funcionalidad. Aquí no
+hay respaldo posible —esto **es** el juego— y el síntoma de un 404 es el engañoso de siempre: la
+pantalla se ve bien y ningún botón responde. Lo que sí se puede es que el fallo **se diga**:
+
+- **Canaria** al final de cada fork. Si falta `window.__MOTOR_OK`, escribe en pantalla que hay que
+  recargar. Seis líneas, probadas con el archivo ausente en los tres cursos.
+- **Se publica en un push ANTERIOR** al que lo referencia. Es la lección del `drop function` de la
+  Sesión 73 —el cliente nunca antes que su dependencia— agravada porque `revision.js` tardó ~2
+  minutos en estar disponible el día que se desplegó.
+
+#### La Preparación: las 4 divergencias pasaron a datos
+
+1. ⚠️ **`renderExpediciones` había vuelto a divergir**, con un `if(asig==='Matemáticas')` para el
+   camino de mini-clases. Es el **quinto caso** del patrón que este archivo documenta cuatro veces
+   (Sesiones 63, 64, 69 y 72), y **la Sesión 64 la daba por unificada**. La bandera `HAY_MINICLASES`
+   ya existía desde entonces: solo faltaba usarla aquí.
+2. **`esMaestro` y `revisarDificil` → `MAESTRIA_CALC`.** 8° cuenta 3 asignaturas en Difícil + El
+   Autómata; 7° cuenta las 4. Son **el mismo número —cuatro hitos— contado distinto**. La
+   equivalencia se comprobó con la **tabla de verdad completa (8 casos)** contra la definición
+   vieja, no razonando.
+3. **`portadaMapa`**: 8° la armaba por convención **implícita** (`assets/portada-<id>.png`), que es
+   justo lo que este archivo documenta como causa de 404 tapados por el `onerror`. Medido: de sus
+   20 expediciones, **6 pedían un archivo que no existe** —las cuatro `mate-exp-*` y Ana Frank—,
+   salvadas solo por que ninguna pantalla llamaba ahí con ellas.
+   > ⚠️ Y unificarla sin más **le habría quitado a 8° el arte propio de sus 14 capítulos**, porque
+   > su campo `portada` es la genérica de la asignatura. Por eso se le dio `portadaMapa:` explícito
+   > a las 15 que sí tienen arte: quedan **15 idénticas y 5 que pasan de un archivo inexistente a
+   > uno que existe**.
+
+#### Mi error de la sesión, y por qué `node --check` no basta
+
+El extractor se llevó **la cola de un bloque `/* */` sin su apertura**, porque este proyecto
+escribe los comentarios **sin prefijo en las líneas del medio**. Dejó un `/*` **huérfano** en los
+tres forks, comentando lo que viniera detrás.
+
+> **Lo grave es que `node --check` NO lo delató**: el bloque siguiente aportaba el `*/` que
+> faltaba, así que el archivo seguía siendo JavaScript válido —solo que con un comentario tragado—.
+> Si en vez de un comentario hubiera habido código, se iba en silencio. Es el hermano exacto del
+> `*/` de la Sesión 63. El guard que sí lo caza quedó puesto: **una pieza extraída tiene que salir
+> con tantos `/*` como `*/`**.
+
+El extractor **aborta además si el comentario difiere entre forks**, y eso destapó tres casos donde
+3° conservaba el "por qué" y 8° y 7° arrastraban una versión vieja u obsoleta —`portadaMapa`,
+`reconciliarProgreso` y `metaDisponible`—, más dos comentarios huérfanos en 7° que describían el
+`ASIG_DESAFIO_NOMBRE` que M4 había eliminado. Los cinco se escribieron **una sola vez**, que es lo
+que corresponde cuando la función pasa a ser una sola.
+
+#### Verificación (con `scripts/cdp.mjs`, jugando)
+
+- **El guardado se comporta byte a byte igual** que una foto tomada **antes** de mover la
+  persistencia: lo que el juego lee, lo que escribe, las claves del disco y el aislamiento entre
+  los tres cursos.
+- Etapa completa jugada en los tres; **Jefe Final peleado** en los tres, cada uno con su villano
+  propio; duelo con la Matemática correcta por curso (5 niveles del Reto en 8°, 4 capítulos en 7°,
+  7 en 3°); armador generando su token; canje.
+- **Predicción y resultado sin `?qa=1`** (con QA se salta a propósito): 10 preguntas → pantalla
+  propia → el cruce **responde** ("Creías que lo tenías y te fue 0 de 10").
+- 8° conserva sus 12 diagramas, los 5 niveles del Reto y las 17 lecciones. El panel del profesor,
+  intacto.
+- **Cero errores de consola y cero 404.** Los `429` de Supabase son el límite de altas anónimas
+  gastado por las corridas headless: comprobado que **ni una línea del diff toca auth**.
+
+#### M4 aplicado en producción y verificado
+
+Roberto pegó el esquema. **La comprobación buena no fue "existe la función"** sino preguntarle por
+los 12 códigos uno por uno: los 12 devuelven su asignatura por `kimun_oa_asignatura`, que consulta
+justamente esa lista, así que ninguno falta. `kimun_asignaturas_todas()` los entrega en el orden del
+panel, y los controles negativos (`XX99 OA 01`, `CA-T1`, el malformado `MA03 OA 1`) dan `null`, o
+sea que la respuesta no es un eco. Los transversales siguen mapeando (`VOC-HIST`→`HI08`,
+`AF-T3`→`LE08`), que era el ⚠️ del diseño: volver la función puramente estructural habría borrado
+del panel el avance histórico de 8° en Vocabulario y Ana Frank.
+
+**Agregar un curso al backend pasa a ser UNA fila.**
+
+- **Pendiente inmediato:** el Bloque M está cerrado y el backend al día. El camino crítico es ahora
+  **B1, el banco de 5° básico** (93 OA, ~2.790 preguntas), cuyo currículum ya quedó transcrito y
+  validado en la Sesión 71: se entra directo al fork y al banco.

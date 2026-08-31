@@ -110,6 +110,9 @@ def main():
         print("\n(--seco: no se escribio nada)")
         return
     destino = base / "preguntas.json"
+    # Formato canonico: indent=1, sin salto final, LF, y como unica clave `preguntas`.
+    # `revisadas` la agrega despues aplicar-revisadas.py, cuando haya algo aprobado.
+    # Ver contenido/_plantilla/README.md.
     io.open(destino, "w", encoding="utf-8", newline="\n").write(
         json.dumps({"preguntas": salida}, ensure_ascii=False, indent=1))
     print("escrito en %s" % destino)

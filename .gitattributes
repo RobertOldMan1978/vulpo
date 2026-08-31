@@ -1,0 +1,43 @@
+# Final de linea, declarado de una vez para todos los equipos.
+#
+# POR QUE EXISTE ESTE ARCHIVO
+# El repositorio ya guardaba TODO como LF (medido: 376 archivos de texto, ninguno con
+# CRLF en el indice). El desorden estaba en el DISCO: 187 archivos con CRLF y 188 con
+# LF, casi una moneda al aire, mas .gitignore con los dos mezclados. Y el disco es lo
+# que leen y reescriben los scripts, varios de los cuales "conservan el formato que
+# encuentran": asi es como un mismo script producia CRLF en un equipo y LF en otro.
+#
+# Esa loteria es la mitad del problema de los nueve formatos de serializacion de los
+# bancos (la otra mitad es la indentacion, y esa se arregla aparte).
+#
+# POR QUE LF Y NO CRLF
+#   - Es lo que git ya tiene guardado, asi que el disco pasa a ser igual al indice y
+#     `git diff` no puede volver a mostrar un archivo entero por un salto de linea.
+#   - Es lo que GitHub Pages sirve HOY: la pagina en vivo siempre fue LF.
+#   - Es lo que Python escribe por defecto, asi que un script nuevo no necesita
+#     ninguna ceremonia para no ensuciar el arbol.
+#
+# Ojo: deja obsoleta la regla de "preservar CRLF al escribir en los forks". Esa regla
+# nacio de que 7mo y 3ro quedaran DISTINTOS entre si, no de que fueran CRLF; con todo
+# en LF los tres siguen siendo comparables, que es lo que de verdad importa.
+
+* text=auto eol=lf
+
+# Binarios: que git no les mire adentro ni intente convertir nada. Son 11.557 archivos
+# -casi todos clips de voz-, asi que declararlos ahorra trabajo en cada operacion.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.webp binary
+*.mp3  binary
+*.mp4  binary
+*.wav  binary
+*.webm binary
+*.pdf  binary
+*.zip  binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary

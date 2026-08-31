@@ -70,37 +70,27 @@ def ubicar_revisadas(args):
     return cand  # inexistente: se reportara el error
 
 
-def escribir_conservando(ruta, d):
-    """Escribe el banco SIN reformatearlo.
+# Formato canonico de preguntas.json. Es el que ya producia consolidar-pool-nivel.py y
+# el que cumplen los 16 bancos desde el 31/08: indent=1, sin salto final, LF, y como
+# cabecera solo lo que alguien LEE de verdad. Ver contenido/_plantilla/README.md.
+CABECERA = ("revisadas", "nota")
 
-    Antes se hacia json.dump(..., indent=2) fijo, y eso reindentaba entero
-    cualquier banco escrito con otro indent: el contenido quedaba bien, pero el
-    diff de marcar 390 preguntas pasaba de 390 lineas a 5.463 y dejaba de poder
-    leerse. Los bancos de este proyecto NO son todos iguales: la mayoria usa
-    indent=1, matematicas-3basico usa 2, y ninguno termina en salto de linea.
 
-    El formato se detecta con un round-trip contra el archivo tal como esta en
-    disco, que es el unico metodo que no adivina.
+def escribir_banco(ruta, d):
+    """Escribe el banco en el formato canonico.
+
+    Antes esta funcion DETECTABA el formato de cada archivo y lo conservaba, porque
+    convivian cuatro: sin eso, marcar 390 preguntas producia un diff de 5.463 lineas.
+    Ahora los 16 bancos comparten formato, asi que conservar lo que se encuentre pasaria
+    a ser el mecanismo por el que uno vuelve a divergir sin que nadie lo vea.
     """
-    crudo = io.open(ruta, encoding="utf-8", newline="").read()
-    nl = "\r\n" if "\r\n" in crudo else "\n"
-    plano = crudo.replace("\r\n", "\n")
-    try:
-        original = json.loads(plano)
-    except ValueError:
-        original = None
-    indent, salto = 2, False
-    if original is not None:
-        for i in (1, 2, 3, 4):
-            base = json.dumps(original, ensure_ascii=False, indent=i)
-            if base == plano:
-                indent, salto = i, False
-                break
-            if base + "\n" == plano:
-                indent, salto = i, True
-                break
-    txt = json.dumps(d, ensure_ascii=False, indent=indent) + ("\n" if salto else "")
-    io.open(ruta, "w", encoding="utf-8", newline="").write(txt.replace("\n", nl))
+    orden = {}
+    for k in CABECERA:
+        if k in d:
+            orden[k] = d[k]
+    orden["preguntas"] = d["preguntas"]
+    io.open(ruta, "w", encoding="utf-8", newline="\n").write(
+        json.dumps(orden, ensure_ascii=False, indent=1))
 
 
 def main():
@@ -160,7 +150,7 @@ def main():
                 detalle += " / -%d" % desmarcadas
             print("  %-24s %4d/%4d revisadas   (%s)" % (nombre, rev, len(preguntas), detalle))
             if not seco:
-                escribir_conservando(preg, d)
+                escribir_banco(preg, d)
         else:
             sin_tocar.append("%s %d/%d" % (nombre, rev, len(preguntas)))
 

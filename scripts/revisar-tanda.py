@@ -42,7 +42,17 @@ def revisar(ruta, vistos):
     if len(oas) != 1:
         fallas.append("la tanda mezcla OA: %s" % dict(oas))
     ids = [p.get("id") for p in d]
-    if len(set(ids)) != len(ids):
+    # Se separa "sin id" de "id repetido" a proposito. Una tanda sin ids daba
+    # `len(set([None]*30)) == 1` y salia como "ids repetidos": 26 errores fantasma en
+    # el pool de matematicas-3basico, que es el unico que se escribio sin ellos. Un
+    # informe que acusa lo correcto se deja de leer, y este proyecto ya pago esa lección
+    # dos veces (el auditor numerico y el de "distractor fuera de escala").
+    sin_id = sum(1 for i in ids if not i)
+    if sin_id:
+        fallas.append("%d preguntas sin id (el consolidador se los asigna, pero la tanda "
+                      "deberia traerlos para poder rastrearlas)" % sin_id)
+    puestos = [i for i in ids if i]
+    if len(set(puestos)) != len(puestos):
         fallas.append("ids repetidos")
 
     sesgo, largos, pos = [], [], Counter()

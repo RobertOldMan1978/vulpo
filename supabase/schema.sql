@@ -343,26 +343,42 @@ $$;
 -- Efecto lateral bienvenido: Vocabulario (VOC-*) y Lectura (VOC-LECT, AF-T*) hoy
 -- no calzan con los cuatro prefijos y por eso no aparecen en el filtro del panel;
 -- esta función los reparte por materia y los hace visibles.
+-- ⚠️ ESTA FUNCION YA NO CRECE AL AGREGAR UN CURSO, y esa es toda la idea.
+-- Antes enumeraba los doce codigos uno por uno; con 4°, 5° y 6° por delante eran doce
+-- mas, y cuando a esta lista le falta un codigo el contenido queda INVISIBLE para el
+-- Profesor Jefe sin ningun error que mirar (paso en la Sesion 37).
+--
+-- Todas las asignaturas de la plataforma. AGREGAR UN CURSO NUEVO ES UN VALOR MAS EN
+-- `niveles`, y nada mas: los cuatro codigos salen solos del producto de las dos listas.
+-- Tiene que quedar igual a NIV.NIVELES en assets/js/niveles.js, que es la lista del panel.
+-- Va ANTES de kimun_oa_asignatura, que la usa.
+create or replace function public.kimun_asignaturas_todas()
+returns text[] language sql immutable as $$
+  select array_agg(a.asig || n.niv order by n.orden, a.orden)
+  from (values ('HI',1),('MA',2),('CN',3),('LE',4)) as a(asig, orden),
+       -- AGREGAR UN CURSO NUEVO ES UNA FILA MAS AQUI. Descendente, como el panel.
+       (values ('08',1),('07',2),('03',3))          as n(niv, orden);
+$$;
+
+-- Un codigo de curriculum lleva el nivel adentro (MA03 = MA + 03), asi que la asignatura
+-- son sus cuatro primeros caracteres. Se exige la FORMA completa —"XX99 OA 99"— y que la
+-- asignatura EXISTA, para devolver null ante un codigo desconocido igual que antes.
+--
+-- ⚠️ NO se puede volver PURAMENTE estructural: los modulos transversales no llevan el
+-- nivel adentro, y hay filas historicas de 8° en produccion con esos codigos
+-- (Vocabulario y Ana Frank estan desde la Sesion 30). Sin el `case` de abajo ese avance
+-- desapareceria del panel del profesor, tambien sin ningun error.
 create or replace function public.kimun_oa_asignatura(p_oa text)
 returns text language sql immutable as $$
   select case
-    when p_oa like 'HI08%' or p_oa = 'VOC-HIST' then 'HI08'
-    when p_oa like 'CN08%' or p_oa = 'VOC-CIEN' then 'CN08'
-    when p_oa like 'MA08%' or p_oa = 'VOC-MATE' then 'MA08'
-    -- 3° básico. El nivel viaja en el prefijo del código, que es como el modelo ya
-    -- distingue las asignaturas: no hace falta una columna "nivel" en cursos. Un curso
-    -- de 3° usa MA03 y uno de 8° usa MA08, y el aislamiento por asignatura los separa.
-    when p_oa like 'MA03%'                       then 'MA03'
-    when p_oa like 'HI03%'                       then 'HI03'
-    when p_oa like 'LE03%'                       then 'LE03'
-    when p_oa like 'CN03%'                       then 'CN03'
-    -- 7° básico (Sesión 62). Mismo principio: el año va en el prefijo.
-    when p_oa like 'MA07%'                       then 'MA07'
-    when p_oa like 'HI07%'                       then 'HI07'
-    when p_oa like 'LE07%'                       then 'LE07'
-    when p_oa like 'CN07%'                       then 'CN07'
-    when p_oa like 'LE08%' or p_oa in ('VOC-LENG','VOC-LECT')
-         or p_oa like 'AF-T%'                    then 'LE08'
+    when p_oa ~ '^[A-Z]{2}[0-9]{2} OA [0-9]{2}$'
+     and substr(p_oa, 1, 4) = any(public.kimun_asignaturas_todas())
+                                                 then substr(p_oa, 1, 4)
+    when p_oa = 'VOC-HIST'                       then 'HI08'
+    when p_oa = 'VOC-CIEN'                       then 'CN08'
+    when p_oa = 'VOC-MATE'                       then 'MA08'
+    when p_oa in ('VOC-LENG','VOC-LECT')
+      or p_oa like 'AF-T%'                       then 'LE08'
     else null end;
 $$;
 
@@ -685,13 +701,11 @@ returns text[] language sql security definer stable set search_path=public as $$
   select case
     when exists(select 1 from public.profesores pr
                 where pr.id = auth.uid() and (pr.es_admin or pr.es_super))
-      then array['HI08','CN08','MA08','LE08','MA03','HI03','LE03','CN03',
-                 'MA07','HI07','LE07','CN07']
+      then public.kimun_asignaturas_todas()
     when exists(select 1 from public.curso_profesores cp
                 where cp.curso_id = p_curso and cp.profesor_id = auth.uid()
                   and cp.rol = 'jefe')
-      then array['HI08','CN08','MA08','LE08','MA03','HI03','LE03','CN03',
-                 'MA07','HI07','LE07','CN07']
+      then public.kimun_asignaturas_todas()
     else coalesce((select cp.asignaturas from public.curso_profesores cp
                    where cp.curso_id = p_curso and cp.profesor_id = auth.uid()),
                   '{}'::text[])

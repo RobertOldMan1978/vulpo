@@ -157,13 +157,20 @@ diferencia que casi nadie mira; el Jefe Final es donde el préstamo chirría.
 
 ---
 
-## Bloque O · Ordenar las bases (auditoría del 30/08/2026)
+## Bloque O · Ordenar las bases — ✅ **COMPLETO (31/08/2026)**
 
 Cuatro agentes midieron el motor, los scripts, la documentación y el contenido; cada hallazgo se
 verificó a mano antes de entrar aquí. Detalle y método:
 [`docs/superpowers/plans/2026-08-30-ordenar-las-bases.md`](docs/superpowers/plans/2026-08-30-ordenar-las-bases.md).
 
-**Va antes del Bloque B**, porque todo lo que se sume después se copia tres veces más.
+Iba **antes del Bloque B**, porque todo lo que se sume después se copia tres veces más.
+
+> **Dos de las tres tareas resultaron ser distintas de como estaban planteadas, y eso vale más
+> que haberlas hecho:** O7 daba por hecho que faltaba normalizar el repositorio, y el repositorio
+> **ya estaba normalizado** —el desorden estaba en el disco—; y O8 preguntaba si cumplir la
+> cabecera de la plantilla o cambiarla, cuando la respuesta era que **la plantilla describía algo
+> que la herramienta real no producía y que ningún banco cumplía**. En los dos casos la tarea se
+> replanteó midiendo primero, no ejecutando el enunciado.
 
 | # | Qué | Peso | Quién |
 |---|---|---|---|
@@ -172,9 +179,9 @@ verificó a mano antes de entrar aquí. Detalle y método:
 | ~~O3~~ | ~~El fallback silencioso de los scripts de voz~~ ✅ **HECHO (30/08)**: pedirles una asignatura desconocida **generaba o auditaba Matemática sin avisar**, y al auditor le faltaba `ada3` — o sea que auditar el libro habría auditado Matemática y pagado por ello. Ahora mueren con un mensaje | — | — |
 | ~~O4~~ | ~~Assets huérfanos~~ ✅ **HECHO (30/08)**: 5 retirados (~900 KB), verificados con búsqueda exacta | — | — |
 | ~~O5~~ | ~~Documentación con afirmaciones falsas~~ ✅ **HECHO (30/08)**: 22 hallazgos. Los 5 graves eran contradicciones en `comercial.md` y `aprobacion-pedagogica.md`; más el ranking "simulado", la tabla de banderas, el peso con cuatro cifras distintas y el armador con 2 niveles en vez de 3 | — | — |
-| **O6** | **Generalizar lo cableado a 3°, que es lo que rompe 4°.** `normalizar-voz-3ro.py` decide si `7:45` es hora mirando códigos **`MA03`**: en 4° no empareja, el texto llega crudo a Azure, **el clip se paga, se genera y suena mal**, y nadie se entera. Sus números en palabras además llegan solo hasta 1.000. Y `generar-voz-3ro.py` / `generar-revision-preguntas.py` leen `3ro/index.html` siempre | ~½ sesión | código |
-| **O7** | **`.gitattributes`.** No existe, y de ahí salen los 9 formatos de serialización y la mezcla LF/CRLF. ⚠️ Su migración toca **todos** los archivos: va sola en su commit, y **antes de unificar formatos** (O8), no antes de todo | ~½ sesión | código |
-| **O8** | **El contrato del contenido, antes de escribir 8.490 preguntas.** Un solo formato de `preguntas.json` (hoy 9 variantes); un solo contrato de `_pool/` (hoy 3, y 72 de 180 archivos formateados a mano); y **la convención de `id` para 4°, 5° y 6°** — hoy no es derivable (`cie3`/`cien8`, `mat3`/`mate7`) y ⚠️ **NO se renombran los existentes**: las marcas de aprobación se guardan por id | ~1 sesión | código |
+| ~~O6~~ | ~~Generalizar lo cableado a 3°~~ ✅ **HECHO (31/08)**: la hora se decide **por forma** y no por códigos `MA03` (medido en los 16 bancos: la forma acierta en los 4 OA que la traen, y los 4 son horas de verdad); números en palabras hasta **999.999**; los cuatro scripts se llaman `-nivel` y leen el fork **de su nivel**; la tabla de asignaturas es una sola (`scripts/voz_asignaturas.py`) y **estaba desincronizada otra vez** —sin `voc3`, o sea que auditar el Vocabulario moría—. **Cero regresión en 11.085 textos y `faltan: 0` en las seis asignaturas**: ningún clip pagado se toca | — | — |
+| ~~O7~~ | ~~`.gitattributes`~~ ✅ **HECHO (31/08)**, y **la premisa era falsa**: el índice ya estaba **100% en LF** (376 archivos, ninguno con CRLF guardado) y lo que GitHub Pages sirve siempre fue LF. El desorden estaba **en el disco**: 187 CRLF contra 188 LF, más `.gitignore` mezclado — y el disco es lo que leen los scripts. Pasar los 188 a LF **no cambió ni un byte de contenido**: el `git diff` siguió mostrando exactamente los 11 archivos editados a mano | — | — |
+| ~~O8~~ | ~~El contrato del contenido~~ ✅ **HECHO (31/08)**: el estándar es **el que ya producía `consolidar-pool-nivel.py`** (indent=1, sin salto final, LF), no uno nuevo; la cabecera se reduce a lo que alguien lee; el `_pool/` de `matematicas-3basico` se aplanó (estaba en `verificado/u1-oa01.json` y **quedaba en cero ante el comando estándar**); la convención de `id` quedó fijada en `docs/encargo-banco.md`; y `auditar-banco-nivel.py` **comprueba el formato**, probado rompiendo un banco a propósito. Contrato completo en `contenido/_plantilla/README.md` | — | — |
 | ~~O9~~ | ~~Modo Difícil en 3°~~ ✅ **HECHO (30/08)**: su diseño lo descartó por edad y el fork lo dejó vivo. Ahora es la bandera **`HAY_DIFICIL`**, con las mismas 4 guardas en los tres forks. De paso cierra que **la Maestría Total era inalcanzable en 3°** (`esMaestro` exigía `S.calc.jefe`, que ahí nadie escribe) | — | — |
 
 ## Bloque B · Terminar la v1 (4°, 5° y 6°)
@@ -245,18 +252,76 @@ los tres forks**, o sea **~3.964 líneas redundantes** en el repositorio. Es el 
 el **77,6 % del de 7°** y el 64,8 % del de 3°. **71 funciones son byte a byte idénticas** en los
 tres (y ese número es un piso, no un total). Ya no es código muerto: es motor vivo.
 
-El orden lo fijó la medición, de menor a mayor riesgo:
+El orden lo fijó la medición, de menor a mayor riesgo. **Los cuatro están hechos: el motor del juego ya no está copiado tres veces.**
+
+> **Cierre del 31/08, medido de nuevo:** los tres forks pasaron de **12.458 a 8.301 líneas** y `assets/js/` de 1.149 a **2.603**. Neto: **~2.700 líneas menos** en el repositorio, y —lo que importa de verdad— **una corrección de motor se escribe una vez y no tres**. Con 4°, 5° y 6° por delante habrían sido seis.
 
 | # | Módulo a extraer a `assets/js/` | Líneas | Por qué en esa posición |
 |---|---|---|---|
-| M1 | `visuales.js` — `renderVisual` + `textoVisual`, 11 dibujos, hoy solo en 3° | 281 | **Función pura**: recibe un objeto y devuelve SVG. No toca estado ni DOM, un solo punto de entrada, cero efectos al cargar. El más seguro del repo |
-| M2 | `voz.js` — hoy solo en 3° | 134 | Igual de aislado, un escalón arriba por sus tres efectos al cargar |
-| M4 | `niveles.js` — un solo catálogo del que se derive todo | — | No quita duplicación, pero es **el paso habilitante**: sin el dato afuera y cargado antes, el motor cae en zona muerta temporal. Spec y plan escritos |
-| M3 | `motor.js` — **por rebanadas**: jefes → duelo → armador → persistencia → quiz | ~830 | Jefes primero (12 de 13 funciones idénticas); **persistencia y quiz al final**, porque un error ahí borra partidas guardadas |
+| ~~M1~~ | ~~`visuales.js`~~ ✅ **HECHO (31/08)** — 308 líneas, los 11 dibujos, **lo cargan los tres cursos**. Se lleva también **su CSS**, que si no un nivel nuevo generaría bien el SVG y no se vería. Los dos scripts que leían `renderVisual` **del index.html del fork** ahora leen el módulo, y con eso dejan de depender de que el fork exista: **5° va a poder aprobar su banco con dibujos antes de tener su juego** | 308 | — |
+| ~~M2~~ | ~~`voz.js`~~ ✅ **HECHO (31/08)** — 170 líneas. **Nace dormido**: solo habla tras `VOZ.init([carpetas])`, y esa llamada va en el curso pegada a su `VOZ_DIRS`. Así 8° y 7° lo cargan y quedan mudos **sin una bandera más** (el patrón de `CALC.activo`). Se lleva sus dos reglas de CSS | 170 | — |
+| ~~M4~~ | ~~`niveles.js`~~ ✅ **HECHO (31/08)** — dar de alta un curso pasa de **~24 puntos de edición en 3 archivos a 2**: una fila en `NIV.NIVELES` y una en `kimun_asignaturas_todas()`. Se comparó **contra una captura del comportamiento anterior**, no contra la memoria: mismos códigos, mismos nombres, mismas carpetas, mismo `asigDe`. ✅ **Esquema aplicado y verificado el 31/08**: los 12 códigos resuelven y `kimun_asignaturas_todas()` los devuelve en el orden del panel | — | — |
+| ~~M3~~ | ~~`motor.js`~~ ✅ **HECHO (31/08)** — **1.454 líneas**, en seis rebanadas de menor a mayor riesgo (jefes → duelo → puerta/armador → campaña/mapa/tienda → persistencia → quiz). Las **139 funciones duplicadas quedaron en 0**: 7° y 3° conservan UNA función propia cada uno y 8° las 47 de su bloque de lecciones y Reto. ⚠️ Es el único módulo **sin respaldo posible** —si no carga, no hay juego—, así que lleva **canaria** y **se publica en un push anterior** al que lo referencia | 1.416 ×3 | Se hizo AHORA porque nadie está usando la plataforma todavía: es la única ventana para tocar el guardado y el quiz sin arriesgar la partida de un niño, y se cierra sola en cuanto parta el piloto |
 
-**Preparación que hace idénticas cinco funciones más antes de mover nada:** propagar
-`visual:q.visual` en los tres forks (es inocuo donde el campo no existe) y definir un no-op de
-`callarVoz`.
+### ✅ Preparación — HECHA (31/08). De **71** funciones idénticas a **139 de 139 (100 %)**
+
+La primera pasada dejó 134 de 140. La segunda, ya con M3 encima, cerró las **cuatro que faltaban** convirtiéndolas en datos:
+
+1. ⚠️ **`renderExpediciones` había vuelto a divergir**, con un `if(asig==='Matemáticas')` para el camino de mini-clases. Es el **quinto caso** del patrón que este proyecto documentó cuatro veces (Sesiones 63, 64, 69 y 72), y la Sesión 64 la daba por unificada. La bandera `HAY_MINICLASES` ya existía: solo faltaba usarla aquí. El bloque queda **guardado** en los tres —doctrina de la Sesión 65— y tras M3 existe **una sola vez**.
+2. **`esMaestro` y `revisarDificil`** se unificaron con **`MAESTRIA_CALC`**: 8° cuenta 3 asignaturas en Difícil + El Autómata y 7° cuenta las 4, que son **el mismo número —cuatro hitos— contado distinto**. Equivalencia comprobada con la **tabla de verdad completa** (8 casos) contra la definición vieja, no por razonamiento.
+3. **`portadaMapa`**: 8° la armaba por convención **implícita** (`assets/portada-<id>.png`), que es justo lo que este proyecto documenta como causa de 404 tapados por el `onerror`. Medido: de sus 20 expediciones, **6 pedían un archivo que no existe** —las cuatro `mate-exp-*` y Ana Frank—, salvadas solo por que ninguna pantalla llamaba ahí con ellas. ⚠️ Unificar sin más le habría **quitado a 8° el arte propio de sus 14 capítulos** (su campo `portada` es la genérica de la asignatura), así que se le dio `portadaMapa:` explícito a las 15 que sí tienen arte. Verificado: **15 idénticas y 5 que pasan de un archivo inexistente a uno que existe**.
+
+
+Antes de mover una sola línea de código:
+
+- **`visual:q.visual`** propagado en los constructores de 8° y 7°. Es **inerte** ahí —`renderVisual`
+  solo existe en 3° y solo 3° lo llama— pero deja los cinco constructores compartidos idénticos.
+- **Respaldo de `callarVoz`**, la *misma* línea en los tres: en 3° no hace nada (su `function` se
+  iza antes) y en 8° y 7° permite que `go`, `pintaPregunta`, `responder` y `mostrarMetaEtapa`
+  llamen a `callarVoz()` y queden idénticas. Es además el respaldo que hará que un 404 de
+  `voz.js` (M2) no mate el juego.
+- **`SUFIJO=''` en 8°**, que era «la causa única de tres divergencias». ⚠️ `'kimun_save'+''` es
+  **exactamente** `'kimun_save'`: comprobado sembrando una partida con la clave literal y viendo
+  que el juego la recupera con sus 777 XP y 4.242 monedas. Ningún alumno pierde nada.
+
+**Y aparecieron dos defectos vivos en los que 3° era el correcto**, portados a 8° y 7°:
+
+1. **`reconciliarProgreso` no existía fuera de 3°.** Repara una partida guardada cuyo capítulo
+   cambió de número de etapas; sin ella el arreglo de progreso queda del largo viejo y el mapa se
+   dibuja con nodos que no existen o le faltan. No lo había pisado nadie porque ninguna expedición
+   de 8° ha cambiado de etapas — el día que pase, el síntoma sería una partida rota.
+2. **El nodo del JEFE mostraba meta de aprendizaje.** `metaDisponible` no lo excluía en 8° ni 7°, y
+   como `META_OA['BOSS']` no existe, `metaDeEtapa` caía al nombre de la etapa: el quiz del jefe
+   anunciaba **«🎯 ⚡ JEFE FINAL»** como si fuera un objetivo.
+
+**Las 6 que seguían difiriendo eran exactamente las que M1, M2 y M4 tenían que absorber.** Tras M1
+y M2 quedan **136 de 140 (97 %)**, y las 4 restantes son `portadaMapa` y `renderExpediciones`
+—que se lleva **M4**— más `esMaestro` y `revisarDificil`, que son **banderas y difieren a
+propósito** (la Maestría de 7° exige sus cuatro asignaturas; la de 8° deja Matemáticas fuera
+porque su dificultad es el Reto de Cálculo).
+
+**Los tres módulos compartidos se probaron con el archivo AUSENTE**, que es la regla que este
+proyecto pagó con `revision.js`: con `visuales.js`, `voz.js` o `niveles.js` en 404, los tres
+cursos juegan un quiz completo, el 🔊 no revienta, el panel del profesor sigue abriendo y la
+consola queda limpia. Un `<script src>` que no carga mata todo el JavaScript, y el síntoma
+engaña: la pantalla se ve bien y ningún botón responde.
+
+**Dos cosas que el spec de M4 daba por resueltas y no lo estaban:**
+
+1. **`ASIG_DESAFIO_NOMBRE` no es una etiqueta: es la LLAVE con que `contenidoDeAsignatura`
+   busca el banco.** El spec proponía derivar el nombre del código, y eso habría dejado a un
+   curso sin banco en su desafío de refuerzo **sin ningún error** — porque los cursos no lo
+   escriben igual: 8° y 7° dicen *"Matemáticas"* y 3° dice *"Matemática"*. Se deriva de las
+   **propias expediciones del curso**, que además no puede desincronizarse; verificado en los
+   12 casos reales antes de escribirlo.
+2. **`kimun_oa_asignatura` conserva el `null` para códigos desconocidos.** Puramente estructural
+   habría devuelto `MA99` para `MA99 OA 01`; el efecto visible era el mismo, pero preservar el
+   comportamiento exacto costaba una línea. Contrastado contra la **función viva en producción**:
+   0 diferencias en los 10 casos.
+
+> ⚠️ **Este cambio es seguro de desplegar en cualquier orden.** No hay ningún `drop function`
+> —las dos son `create or replace` y la tercera es nueva—, y mientras el esquema no se re-aplique
+> la función vieja devuelve exactamente los mismos 12 códigos. No aplica la regla de la Sesión 73.
 
 **M4 es el que más duele hoy:** dar de alta un curso toca ~24 puntos en 3 archivos, 8 de ellos
 listas paralelas. `SB_asigDe` de `profesor.html` es un espejo escrito a mano de
@@ -392,8 +457,10 @@ Cada una nació de un defecto real; el detalle está en `CLAUDE.md`.
    todas explícitamente**, aunque el valor coincida con el original.
 3. **Nunca borrar código por aritmética de índices ni por filtros de prefijo.** Anclas exactas,
    aserciones que aborten antes de escribir, y balance de llaves para funciones sueltas.
-4. **Preservar CRLF** en los tres `index.html`. Pasarlos a LF deja inservible la comparación
-   entre cursos, que es la herramienta principal para mantenerlos.
+4. **Escribir con `newline=""`**, o sea conservar los finales de línea del archivo. Desde el
+   31/08 son **LF en todo el proyecto** (`.gitattributes`). La regla decía "preservar CRLF" y
+   su motivo estaba mal contado: lo que rompe la comparación entre forks es que queden
+   **distintos entre sí**, no que sean CRLF.
 5. **Nunca escribir un glob, una ruta con comodín ni una expresión regular dentro de un
    comentario de bloque.** Un cierre de comentario prematuro mata el juego entero.
 6. **El mensaje de commit va siempre en un archivo, con `git commit -F`.** Comprobación:

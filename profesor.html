@@ -10,6 +10,15 @@
 <link rel="apple-touch-icon" href="assets/kimun-180.png">
 <!-- supabase-js auto-hospedado (no desde CDN): el panel maneja la sesión del profesor, así
      que un CDN comprometido podría exfiltrar su sesión. Versión fija 2.112.4. -->
+<!-- Catálogo de niveles y asignaturas, compartido. Agregar un curso es una fila ahí. -->
+<script src="assets/js/niveles.js"></script>
+<script>/* Respaldo: un 404 de niveles.js degrada el panel a mostrar códigos en vez de
+   nombres, pero NO lo tumba. Sin esto, `NIV` sin definir mataría todo el JavaScript y el
+   síntoma engaña: la pantalla se ve bien y ningún botón responde. */
+if(!window.NIV) window.NIV={ASIGS:{},NIVELES:[],TRANSVERSALES:{},ETIQUETA_8:{},
+ codigos:function(){return[];}, nombre:function(c){return c;},
+ carpeta:function(){return null;}, deNivel:function(){return[];},
+ asigDe:function(o){return String(o||"").slice(0,4)||null;}};</script>
 <script src="assets/vendor/supabase-js-2.112.4.min.js"></script>
 <style>
 :root{--gold:#ffc93c;--cyan:#4dd8ff;--green:#3ee089;--pink:#ff4d8d;--violet:#8f6bff;
@@ -241,12 +250,10 @@ function irArriba(){ window.scrollTo(0,0); }
 
 /* Textos de los objetivos de aprendizaje. El código HI08 OA 01 no le dice nada a
    nadie: sin el texto real, la tabla es ilegible para un profesor. */
-const OA_CARPETA = {HI08:'historia-8basico', MA08:'matematicas-8basico',
-                    CN08:'ciencias-8basico', LE08:'lenguaje-8basico',
-                    MA03:'matematicas-3basico', HI03:'historia-3basico',
-                    LE03:'lenguaje-3basico', CN03:'ciencias-3basico',
-                    MA07:'matematicas-7basico', HI07:'historia-7basico',
-                    LE07:'lenguaje-7basico', CN07:'ciencias-7basico'};
+// 'HI08' -> 'historia-8basico'. Se deriva del código (assets/js/niveles.js): el nivel
+// vive dentro de él, así que no hay lista que mantener al agregar un curso.
+const OA_CARPETA = {};
+NIV.codigos().forEach(c => { OA_CARPETA[c] = NIV.carpeta(c); });
 const OA_TEXTO = {};        // "HI08 OA 01" -> "Analizar, apoyándose en diversas fuentes…"
 const OA_CARGADA = {};      // carpetas ya pedidas
 const OA_TOTAL = {};        // 'HI08' -> cuántos OA tiene la asignatura (de oa.json)
@@ -795,28 +802,19 @@ const SIN_DATOS_ASIG =
   '<p style="color:var(--dim);font-size:13px">Esta asignatura todavía no tiene datos.</p>';
 // Niveles con armador de enlaces de muestra. Un curso nuevo = una linea mas aca;
 // la pantalla del armador (?armar=1) ya vive dentro de cada app.
-/* LA lista de niveles del panel. De aquí salen el armador de enlaces de muestra, el
-   selector del enlace de inscripción y el nivel del curso. `nivel` son los dos dígitos
-   que van dentro del código de asignatura (MA03 = MA + 03), así que una asignatura es de
-   este nivel si su código TERMINA en él: no hay ninguna lista paralela que mantener.
-   Agregar un curso nuevo sigue siendo una línea. */
-const NIVELES_MUESTRA = [
-  {nivel:'08', nombre:'8° básico', ruta:'/juego/'},
-  {nivel:'07', nombre:'7° básico', ruta:'/7mo/'},
-  {nivel:'03', nombre:'3° básico', ruta:'/3ro/'}
-];
+/* LA lista de niveles y sus asignaturas. Todo sale de assets/js/niveles.js, que guarda
+   SOLO lo que no se puede derivar: agregar un curso es una fila ahí, y nada más.
+   Los nombres de estas tres constantes se conservan porque los usan ~20 sitios del panel;
+   lo único que cambió es de dónde salen sus datos. Cada una deriva de NIV directamente y
+   no de las otras, para que el orden de las declaraciones no pueda morder. */
+const NIVELES_MUESTRA = NIV.NIVELES;
 const NIVEL_NOMBRE = n => (NIVELES_MUESTRA.find(x=>x.nivel===n)||{}).nombre || '';
-const asigsDeNivel = n => n ? ASIG_ORDEN.filter(a=>a.slice(-2)===n) : ASIG_ORDEN;
-// El nivel va en el código, como en el servidor (kimun_oa_asignatura). Los cuatro
-// primeros son de 8°; a partir del segundo nivel el año se nombra en la etiqueta.
-const ASIG_NOMBRE = {HI08:'Historia', MA08:'Matemáticas', CN08:'Ciencias', LE08:'Lenguaje',
-                     MA03:'Matemática 3°', HI03:'Historia 3°',
-                     LE03:'Lenguaje 3°', CN03:'Ciencias 3°',
-                     MA07:'Matemática 7°', HI07:'Historia 7°',
-                     LE07:'Lenguaje 7°', CN07:'Ciencias 7°'};
-const ASIG_ORDEN  = ['HI08','MA08','CN08','LE08',
-                     'HI07','MA07','CN07','LE07',
-                     'MA03','HI03','LE03','CN03'];
+const asigsDeNivel = n => NIV.deNivel(n);
+// Orden canónico: por nivel descendente y, dentro de cada uno, Historia · Matemática ·
+// Ciencias · Lenguaje. Antes 3° iba en otro orden porque su lista se escribió a mano.
+const ASIG_ORDEN = NIV.codigos();
+const ASIG_NOMBRE = {};
+ASIG_ORDEN.forEach(c => { ASIG_NOMBRE[c] = NIV.nombre(c); });;
 
 // Filtro por asignatura. Con una sola asignatura no filtra nada y solo ocupa pantalla,
 // así que no se dibuja.
@@ -1090,22 +1088,11 @@ async function cargarRankingAsignatura(cursoCodigo, filasDominio){
 
 // Devuelve la asignatura de un OA en el cliente, para saber qué rankings pedir.
 // Refleja la regla de kimun_oa_asignatura para los códigos que llegan al mapa.
-function SB_asigDe(oa){
-  const s=String(oa);
-  if(s.slice(0,4)==='HI08'||s==='VOC-HIST') return 'HI08';
-  if(s.slice(0,4)==='CN08'||s==='VOC-CIEN') return 'CN08';
-  if(s.slice(0,4)==='MA08'||s==='VOC-MATE') return 'MA08';
-  if(s.slice(0,4)==='LE08'||['VOC-LENG','VOC-LECT'].includes(s)||s.startsWith('AF-T')) return 'LE08';
-  if(s.slice(0,4)==='MA03') return 'MA03';
-  if(s.slice(0,4)==='HI03') return 'HI03';
-  if(s.slice(0,4)==='LE03') return 'LE03';
-  if(s.slice(0,4)==='CN03') return 'CN03';
-  if(s.slice(0,4)==='MA07') return 'MA07';
-  if(s.slice(0,4)==='HI07') return 'HI07';
-  if(s.slice(0,4)==='LE07') return 'LE07';
-  if(s.slice(0,4)==='CN07') return 'CN07';
-  return null;
-}
+/* De un código de objetivo a su asignatura. Era un ESPEJO ESCRITO A MANO de la función
+   `kimun_oa_asignatura` que vive en PostgreSQL: las dos hacían lo mismo línea por línea,
+   y ese patrón ya causó un defecto real (Sesión 37). Ahora las dos derivan de la misma
+   idea —el nivel vive dentro del código— y solo los módulos transversales van a mano. */
+function SB_asigDe(oa){ return NIV.asigDe(oa); }
 
 function rankingHTML(filas, asig){
   const total = OA_TOTAL[asig] || 0;

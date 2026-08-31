@@ -108,6 +108,8 @@ profesor) va **auto-hospedado** en `assets/vendor/`, con la versión fija, para 
 depender de un script de terceros que puede cambiar.
 Contenido de cada expedición en `contenido/<asignatura>/` (JSON). Mobile-first.
 
+Cada curso se sirve de su propia carpeta (`juego/`, `7mo/`, `3ro/`), pero **el motor del juego se escribe una sola vez** y vive en `assets/js/`: `motor.js` (quiz, campañas, jefes, duelo, tienda, guardado), más los módulos de apoyo `visuales.js` (los dibujos por código), `voz.js` (la lectura en voz alta), `calculo.js`, `revision.js`, `sensible.js` y `niveles.js`. Lo que cambia de un curso a otro son **datos y banderas**, no código.
+
 ---
 
 Proyecto personal de Roberto.

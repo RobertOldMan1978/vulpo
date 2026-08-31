@@ -63,6 +63,13 @@ Un solo archivo JSON, UTF-8, en la ruta que te indiquen:
 - **`id` obligatorio y correlativo**: `<prefijo>-oa<NN>-<n>`, con `n` de 1 a 30. El modo de
   revisión del profesor (`?rev=1`) identifica cada pregunta por su id; **sin id no se puede
   reportar**.
+  - **El prefijo son las 4 primeras letras de la asignatura + el dígito del nivel**:
+    `hist`, `mate`, `cien`, `leng` — o sea `hist5`, `mate5`, `cien5`, `leng5` para 5° básico.
+    Sale del nombre de la carpeta, así que no hay nada que elegir ni recordar.
+  - ⚠️ **Los bancos ya escritos NO se renombran**, y por eso hay tres formas conviviendo
+    (`cie3`/`cie7`/`cien8`, `mat3`/`mate7`, `len3`/`leng7`): **las marcas de aprobación del
+    tablero se guardan POR ID**, así que renombrarlas dejaría huérfanas las 7.805 firmadas.
+    La regla es para lo que venga; lo viejo se documenta y se deja.
 - **Exactamente 4 opciones**, todas distintas entre sí.
 - **`tip` obligatorio**: una o dos frases que EXPLIQUEN por qué, no que repitan la respuesta. Es
   lo que el estudiante lee cuando se equivoca, y es el único momento de enseñanza del juego. De 5°

@@ -17,8 +17,11 @@ puede ejecutar cambios de estructura).
 | **2026-08-30** | La misma feature, segunda tanda: los **tres fallos distinguidos** en `kimun_inscribirse` (enlace que no existe / cerrado / sin cupo) y la columna `perfiles.autoinscrito`, que `kimun_prof_listar` devuelve | Sí: el bloque del panel carga y deja crear el enlace desde la cuenta de admin, que es lo que fallaba mientras no estaba aplicada |
 | **2026-08-30** | El **nivel del curso**: columna `cursos.nivel`, `kimun_prof_curso_crear` **cambia de firma** (`text` → `text,text`), `kimun_prof_curso_nivel` nueva, `kimun_prof_listar` devuelve el nivel y `kimun_prof_equipo_asignar` rechaza una asignatura de otro nivel | Sí: las **3 filas en `ok`**, incluida la que confirma que no quedaron dos versiones de `kimun_prof_curso_crear` |
 | **2026-08-30** | `v_rol` en `kimun_prof_equipo_asignar` (la variable se llamaba igual que la columna `rol`) y el `unnest` con alias de columna explícito | Sí, y **de la mejor manera**: nombrar Profesor Jefe desde el panel pasó a funcionar, que es lo que estaba roto desde la Sesión 37 |
+| **2026-08-31** | **M4**: `kimun_asignaturas_todas()` nueva —el catálogo de las 12 asignaturas, que antes eran doce códigos enumerados a mano en `kimun_oa_asignatura` y **dos arreglos gemelos** dentro de `kimun_prof_asignaturas`—. Agregar un curso pasa a ser **una fila**. Sin `drop function`, así que era seguro aplicarlo en cualquier orden | Sí, y con **prueba positiva completa**: los **12 códigos** devuelven su asignatura por `kimun_oa_asignatura`, que consulta justamente esa lista —o sea que ninguno falta—, y `kimun_asignaturas_todas()` los entrega en el orden del panel. Controles negativos: `XX99 OA 01`, `CA-T1` y el malformado `MA03 OA 1` dan `null`, así que la respuesta no es un eco. Y los transversales siguen mapeando (`VOC-HIST`→`HI08`, `AF-T3`→`LE08`), que era el ⚠️ del diseño: volverla puramente estructural habría borrado del panel el avance histórico de 8° en Vocabulario y Ana Frank |
 
-> **Al 30/08/2026 el backend está al día**: las tres tandas del día aplicadas y comprobadas.
+> **Al 31/08/2026 el backend está al día**: aplicado y comprobado M4, que es lo último que tocó el esquema.
+>
+> **Un apunte de método que vale para los cursos que vienen:** la comprobación buena no fue «existe la función» sino **preguntarle por los 12 códigos uno por uno**. Si a la lista le faltara uno, ese contenido queda **invisible para el Profesor Jefe sin ningún error** — y «la función existe» se ve exactamente igual en los dos casos.
 >
 > ⚠️ **Antes de mandar a re-aplicar, MIRAR si el archivo cambió.** El 30/08 se pidió un pegado
 > de más: el arreglo ya estaba aplicado y en el intervalo solo se había tocado el cliente. Es
@@ -277,28 +280,24 @@ Corrido el 28/08/2026: los cuatro códigos de 7°, más `HI08` y `MA03`, devuelv
 a re-aplicar algo que ya está aplicado, que es exactamente lo que pasó por arrastre entre las
 Sesiones 63 y 65.
 
-**2. `kimun_prof_asignaturas` — que el código esté en los DOS arreglos.** Esta sí hay que
-mirarla desde el SQL Editor, y es la que importa: **si a un arreglo le falta un código, ese
-contenido queda invisible para el Profesor Jefe sin ningún error**. Tiene dos listas —una para
-Admin/SuperUsuario y otra para el Jefe de curso— y es fácil actualizar una sola.
-
-Cambiar los cuatro códigos por los del nivel que se acaba de aplicar:
+**2. `kimun_asignaturas_todas` — que el curso nuevo esté en la lista.** Es la que importa:
+**si a esa lista le falta un código, ese contenido queda invisible para el Profesor Jefe sin
+ningún error**. Desde M4 (31/08/2026) es UNA sola lista —antes eran dos arreglos copiados a
+mano dentro de `kimun_prof_asignaturas`, y era fácil actualizar uno solo—.
 
 ```sql
-select case when a=2 and b=2 and c=2 and d4=2
-            then 'ok - los 4 codigos estan en los DOS arreglos'
-            else 'REVISAR - cada uno deberia dar 2' end as estado,
-       a, b, c, d4
-from (
-  select (length(f)-length(replace(f,'MA07','')))/4 a,
-         (length(f)-length(replace(f,'HI07','')))/4 b,
-         (length(f)-length(replace(f,'CN07','')))/4 c,
-         (length(f)-length(replace(f,'LE07','')))/4 d4
-  from (select pg_get_functiondef('public.kimun_prof_asignaturas(uuid)'::regprocedure) f) x
-) y;
+select case when array_length(public.kimun_asignaturas_todas(),1) = cursos*4
+            then 'ok - estan los ' || cursos || ' cursos x 4 asignaturas'
+            else 'REVISAR - hay ' || array_length(public.kimun_asignaturas_todas(),1)
+                 || ' codigos y deberian ser ' || cursos*4 end as estado,
+       public.kimun_asignaturas_todas() as codigos
+from (select 3 as cursos) x;   -- <- cuantos cursos deberia haber
 ```
 
-**Cada uno debe dar 2.** Si alguno da 1, falta en uno de los arreglos; si da 0, no se aplicó.
+Corrido el 31/08/2026 con 3 cursos: **12 códigos**. Al agregar 4°, 5° y 6° hay que subir ese
+número; la lista misma se actualiza sola desde `kimun_asignaturas_todas()`, que es lo único que
+hay que editar en el servidor al dar de alta un curso.
+
 
 ## Si algo sale mal
 
