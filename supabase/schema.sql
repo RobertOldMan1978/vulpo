@@ -444,6 +444,25 @@ language sql security definer set search_path=public as $$
 
 -- Crear un duelo. Si el rival es bot, responde al instante y devuelve el resultado;
 -- si es un jugador real, queda pendiente (24h).
+-- ═══ Quien gana un duelo. UNA sola definicion (Sesion 76) ═══
+-- Esta regla —mas aciertos; si empatan, menos tiempo; si todo empata, empate— estaba
+-- escrita a mano TRES veces: en la rama del bot de kimun_crear_duelo, en kimun_responder
+-- y en kimun_duelos_avisos. El ranking de duelos habria sido la cuarta. Es el patron de
+-- lista paralela que ya causo un bug real en este proyecto (Sesion 37), asi que se escribe
+-- una vez y las cuatro la llaman.
+--
+-- Devuelve 'a', 'b' o 'empate'. Espera los CUATRO valores no nulos: sus llamadores filtran
+-- por estado='completado', que es lo que lo garantiza. Con un null caeria al else y diria
+-- 'empate' sin avisar.
+create or replace function public.kimun_duelo_ganador(ac_a int, t_a int, ac_b int, t_b int)
+returns text language sql immutable as $$
+  select case when ac_a > ac_b then 'a'
+              when ac_a < ac_b then 'b'
+              when t_a  < t_b  then 'a'
+              when t_a  > t_b  then 'b'
+              else 'empate' end;
+$$;
+
 create or replace function public.kimun_crear_duelo(p_retado_codigo text,p_expedicion text,p_preguntas jsonb,p_aciertos int,p_tiempo int)
 returns jsonb language plpgsql security definer set search_path=public as $$
 declare v uuid; mi uuid; bot public.perfiles; b_ac int; b_t int; g text; total int; acc numeric; begin
@@ -460,9 +479,14 @@ declare v uuid; mi uuid; bot public.perfiles; b_ac int; b_t int; g text; total i
     acc := 0.45 + bot.nivel*0.1;                         -- nivel 1..5 -> 0.55..0.95
     b_ac := least(total, greatest(0, round(total*acc)::int + (floor(random()*3)-1)::int));
     b_t := 20 + floor(random()*40)::int;
-    update public.duelos set retado_id=bot.id,retado_aciertos=b_ac,retado_tiempo=b_t,estado='completado' where id=v;
-    if p_aciertos>b_ac then g:='yo'; elsif p_aciertos<b_ac then g:='rival';
-      elsif p_tiempo<b_t then g:='yo'; elsif p_tiempo>b_t then g:='rival'; else g:='empate'; end if;
+    -- visto_retador=true: el duelo contra un BOT se resuelve al instante y el jugador ve
+    -- su resultado en pantalla ahi mismo (odFin lo pinta con el marcador). Sin esto, el
+    -- banner del inicio se lo repetiria despues como si fuera noticia nueva. Los duelos
+    -- contra una PERSONA si nacen sin ver, que es justo para lo que existe la columna.
+    update public.duelos set retado_id=bot.id,retado_aciertos=b_ac,retado_tiempo=b_t,
+                             estado='completado',visto_retador=true where id=v;
+    g := case public.kimun_duelo_ganador(p_aciertos,p_tiempo,b_ac,b_t)
+           when 'a' then 'yo' when 'b' then 'rival' else 'empate' end;
     return jsonb_build_object('tipo','bot','rival_nombre',bot.nombre,'rival_avatar',bot.avatar,
       'rival_aciertos',b_ac,'mis_aciertos',p_aciertos,'total',total,'ganador',g);
   end if;
@@ -487,13 +511,131 @@ declare d public.duelos; mi text; g text; begin
   select * into d from public.duelos where id=p_id and retado_codigo=mi and estado='pendiente' and expira>now() for update;
   if d.id is null then raise exception 'duelo_no_disponible'; end if;
   update public.duelos set retado_id=public.kimun_yo(),retado_aciertos=p_aciertos,retado_tiempo=p_tiempo,estado='completado' where id=p_id;
-  if p_aciertos>d.retador_aciertos then g:='yo';
-  elsif p_aciertos<d.retador_aciertos then g:='rival';
-  elsif p_tiempo<d.retador_tiempo then g:='yo';
-  elsif p_tiempo>d.retador_tiempo then g:='rival';
-  else g:='empate'; end if;
+  g := case public.kimun_duelo_ganador(p_aciertos,p_tiempo,d.retador_aciertos,d.retador_tiempo)
+         when 'a' then 'yo' when 'b' then 'rival' else 'empate' end;
   return query select p2.nombre,p2.avatar,d.retador_aciertos,d.retador_tiempo,p_aciertos,p_tiempo,g
     from public.perfiles p2 where p2.id=d.retador_id; end $$;
+
+-- ═══════════ Ranking de duelos del curso (Sesion 76) ═══════════
+-- Quien ha ganado mas duelos entre los companeros del curso. No guarda nada nuevo: el dato
+-- ya vive entero en `duelos` (los dos jugadores, sus aciertos y sus tiempos).
+--
+-- Dos decisiones que hacen que mida algo:
+--   * LOS BOTS QUEDAN FUERA. A Diego se le puede ganar cincuenta veces en una tarde, asi
+--     que contarlos convertiria el ranking en un contador de paciencia. Son practica.
+--   * ACOTADO AL CURSO, como kimun_jugadores desde la Sesion 39 y como el ranking por XP:
+--     no expone los nombres de menores de otros cursos.
+-- Solo aparece quien haya jugado al menos un duelo terminado; el resto no es un cero, es
+-- que todavia no juega, y son dos cosas distintas.
+create or replace function public.kimun_ranking_duelos()
+returns table(nombre text, avatar text, ganados int, perdidos int, empates int, soy_yo boolean)
+language sql security definer set search_path=public as $$
+  with mio as (select curso_id as cid from public.perfiles where id = public.kimun_yo()),
+  jugados as (
+    select d.retador_id as a, d.retado_id as b,
+           public.kimun_duelo_ganador(d.retador_aciertos, d.retador_tiempo,
+                                      d.retado_aciertos,  d.retado_tiempo) as g
+      from public.duelos d
+      join public.perfiles pa on pa.id = d.retador_id
+      join public.perfiles pb on pb.id = d.retado_id
+      cross join mio
+     where d.estado = 'completado'
+       and not pa.es_bot and not pb.es_bot
+       and mio.cid is not null
+       and pa.curso_id = mio.cid and pb.curso_id = mio.cid
+  ),
+  -- una fila por jugador y duelo, cada uno desde su propio punto de vista
+  lado as (
+    select a as pid, (g='a')::int as gan, (g='b')::int as per, (g='empate')::int as emp from jugados
+    union all
+    select b,        (g='b')::int,        (g='a')::int,        (g='empate')::int        from jugados
+  )
+  select p.nombre, p.avatar,
+         sum(l.gan)::int, sum(l.per)::int, sum(l.emp)::int,
+         coalesce(p.id = public.kimun_yo(), false)
+    from lado l join public.perfiles p on p.id = l.pid
+   group by p.id, p.nombre, p.avatar
+   order by sum(l.gan) desc, sum(l.per) asc, p.nombre;
+$$;
+
+-- ═══════════ Avisos de duelo en la pantalla de inicio (Sesion 76) ═══════════
+-- POR QUE EXISTE: el duelo asincrono estaba construido a medias. El RETADO ve su resultado
+-- en pantalla al terminar de responder (se lo devuelve kimun_responder), pero el RETADOR no
+-- se enteraba NUNCA: kimun_historial existe desde la Sesion 6 y ningun cliente la llamo
+-- jamas. Desafiabas a alguien, contestaba al otro dia, y para ti el duelo quedaba en
+-- silencio para siempre. Es el unico modo social del juego y su ciclo no cerraba.
+--
+-- La marca de visto es del RETADOR y no del retado a proposito: el retado ya vio lo suyo.
+-- Vive en el servidor y no en localStorage para que sobreviva a borrar los datos del
+-- navegador y para que el aviso no se repita en el tablet. Misma decision, y por el mismo
+-- motivo, que el modo experimental del curso (Sesion 73).
+--
+-- La columna se siembra con el truco del "if not exists" sobre la COLUMNA, que corre una
+-- sola vez por construccion:
+--   * los duelos que ya existian nacen con true  -> nadie abre el juego y se encuentra el
+--     resultado de un duelo de hace tres semanas;
+--   * el default queda en false                  -> los nuevos si avisan.
+-- Un `add column if not exists ... default false` mas un `update set visto=true` NO sirve:
+-- ese update no es idempotente y al re-aplicar el esquema —que aqui es rutina— borraria
+-- avisos legitimos que el retador todavia no ha visto.
+do $$
+begin
+  if not exists (select 1 from information_schema.columns
+                 where table_schema='public' and table_name='duelos'
+                   and column_name='visto_retador') then
+    alter table public.duelos add column visto_retador boolean not null default true;
+    alter table public.duelos alter column visto_retador set default false;
+  end if;
+end $$;
+
+-- Lo que vale la pena mostrar en el inicio. Devuelve poco a proposito: NO trae la columna
+-- `preguntas` (que es el set completo del duelo) porque esto se consulta en cada entrada a
+-- la pantalla de inicio y solo necesita un titular.
+create or replace function public.kimun_duelos_avisos()
+returns table(clase text, id uuid, rival text, avatar text, mios int, suyos int, expira timestamptz)
+language sql security definer set search_path=public as $$
+  with yo as (
+    select public.kimun_yo() as pid,
+           (select codigo from public.perfiles where id=public.kimun_yo()) as cod
+  )
+  -- 1) Me desafiaron y sigue vivo. No necesita marca de visto: se apaga solo al jugarlo
+  --    o cuando expira a las 24 h.
+  select 'desafio'::text, d.id, p.nombre, p.avatar, null::int, null::int, d.expira
+    from public.duelos d cross join yo
+    join public.perfiles p on p.id = d.retador_id
+   where d.retado_codigo = yo.cod and d.estado = 'pendiente' and d.expira > now()
+  union all
+  -- 2) El que yo inicie, ya respondido y sin ver. El ganador se recalcula porque
+  --    kimun_responder lo decide al responder y NO lo guarda; la regla vive una sola vez,
+  --    en kimun_duelo_ganador.
+  select case public.kimun_duelo_ganador(d.retador_aciertos,d.retador_tiempo,
+                                        d.retado_aciertos, d.retado_tiempo)
+           when 'a' then 'gane' when 'b' then 'perdi' else 'empate' end,
+         d.id, coalesce(p.nombre,'tu rival'), coalesce(p.avatar,'🦊'),
+         d.retador_aciertos, d.retado_aciertos, d.expira
+    from public.duelos d cross join yo
+    left join public.perfiles p on p.id = d.retado_id
+   where d.retador_id = yo.pid and d.estado = 'completado' and not d.visto_retador
+  union all
+  -- 3) El que yo inicie y vencio sin que el rival respondiera. Tambien es informacion:
+  --    sin esto el duelo simplemente desaparece.
+  select 'expiro'::text, d.id, coalesce(p.nombre,'tu rival'), coalesce(p.avatar,'🦊'),
+         d.retador_aciertos, null::int, d.expira
+    from public.duelos d cross join yo
+    left join public.perfiles p on p.codigo = d.retado_codigo
+   where d.retador_id = yo.pid and d.estado = 'pendiente' and d.expira <= now()
+     and not d.visto_retador;
+$$;
+
+-- Marcar un aviso como visto. Solo el retador puede marcar el suyo: si el id es de otro,
+-- el update no toca ninguna fila y la funcion termina sin decir nada, que es el modo de
+-- fallar correcto aqui (no revela si ese duelo existe).
+create or replace function public.kimun_duelo_visto(p_id uuid)
+returns void
+language sql security definer set search_path=public as $$
+  update public.duelos set visto_retador = true
+   where id = p_id and retador_id = public.kimun_yo();
+$$;
 
 -- Historial de mis duelos (para "mis duelos" / ranking futuro)
 create or replace function public.kimun_historial()
@@ -1531,6 +1673,8 @@ grant execute on function
   public.kimun_perfil(text,text), public.kimun_buscar(text), public.kimun_jugadores(),
   public.kimun_crear_duelo(text,text,jsonb,int,int), public.kimun_pendientes(),
   public.kimun_responder(uuid,int,int), public.kimun_historial(),
+  public.kimun_duelos_avisos(), public.kimun_duelo_visto(uuid),
+  public.kimun_ranking_duelos(), public.kimun_duelo_ganador(int,int,int,int),
   public.kimun_yo(), public.kimun_xp(int), public.kimun_dificil(int), public.kimun_ranking(), public.kimun_canjear(text),
   public.kimun_dominio(jsonb),
   public.kimun_prof_yo(), public.kimun_prof_alta(text),

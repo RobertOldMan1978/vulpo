@@ -152,9 +152,11 @@ El modo cierra ese hueco. Una pantalla por objetivo, con **sus 8 preguntas ya el
 | **3° básico** (4 asignaturas) | **2.558** | ✅ **todas** |
 | **7° básico** (4 asignaturas) | **2.430** | ✅ **todas** |
 | Vocabulario 7° y *Cuentos de Ada* | 221 | ✅ todas |
+| Vocabulario 3° | 60 | ✅ todas |
 
-> **Cerrado el 30/08/2026: 7.745 de 7.745.** Primero 5.048 preguntas por muestreo en una
-> pasada, y ese mismo día los **60** que habían quedado saltados (`HI03 OA 01` y `OA 08`). Lo que
+> **Cerrado el 31/08/2026: 7.805 de 7.805.** El 30/08 se firmaron 5.048 preguntas por muestreo
+> en una pasada y, ese mismo día, los **60** que habían quedado saltados (`HI03 OA 01` y `OA 08`);
+> el 31/08 se sumaron las **60 del Vocabulario de 3°**, escritas y aprobadas el mismo día. Lo que
 > sigue abajo describe el método, y sirve igual para 4°, 5° y 6°, que son los que faltan.
 >
 > ⚠️ **100% de cobertura no es 100% del mismo método.** 8° y los módulos de apoyo se revisaron

@@ -303,11 +303,91 @@ function odPinta(){
  go('scr-od-quiz');
 }
 function odResponder(el,ok){
- if(OD.lock)return;OD.lock=true;clearInterval(OD.timer);OD.tiempo+=(15-OD.t);
+ if(OD.lock)return;OD.lock=true;clearInterval(OD.timer);OD.tiempo+=(DUELO_SEG-OD.t);
  document.querySelectorAll('#odOpts .opt').forEach(o=>o.classList.add('off'));
  if(ok){OD.aciertos++;if(el){el.classList.remove('off');el.classList.add('ok');}$('odFb').textContent='✓ ¡Correcto!';$('odFb').classList.add('ok');SND.correct();}
  else{if(el){el.classList.remove('off');el.classList.add('bad');}$('odFb').textContent='✗ Incorrecto';$('odFb').classList.add('bad');SND.wrong();}
  setTimeout(()=>{OD.idx++;if(OD.idx<8)odPinta();else odFin();},ok?900:1400);
+}
+
+/* ===== Avisos de duelo en la pantalla de inicio (Sesion 76) =====
+   El duelo asincrono estaba construido a medias: el RETADO ve su resultado al terminar de
+   responder, pero el RETADOR no se enteraba NUNCA —kimun_historial existia desde la Sesion 6
+   y ningun cliente la llamo jamas—. Desafiabas a alguien, contestaba al otro dia, y para ti
+   el duelo quedaba en silencio para siempre.
+
+   Vive en motor.js y no en cada fork porque no tiene ni un dato propio del curso: se escribe
+   una vez y los tres cursos lo heredan. Copia el patron de revisarDesafio() (el banner del
+   refuerzo del profe): best-effort, hidden por defecto y falla en silencio. */
+let DUELO_AVISOS=[];
+async function revisarDuelos(){
+ const cont=$('bannerDuelo'); if(!cont) return;
+ cont.hidden=true; DUELO_AVISOS=[];
+ /* Con la puerta cerrada btnDuelo cae al duelo LOCAL, o sea que el duelo en linea es
+    inalcanzable: anunciarlo seria ofrecer algo que no se puede tocar. Y sin perfil (enlaces
+    de muestra, sin conexion) no hay a quien preguntarle. */
+ if(!SB||!MI_PERFIL||bloqueado()) return;
+ try{ const {data}=await SB.rpc('kimun_duelos_avisos'); DUELO_AVISOS=data||[]; }catch(e){ return; }
+ pintarAvisoDuelo();
+}
+function pintarAvisoDuelo(){
+ const cont=$('bannerDuelo'); if(!cont) return;
+ cont.hidden=true;
+ if(!DUELO_AVISOS.length) return;
+ /* Los RESULTADOS van primero y de a uno: son noticia de una sola vez y se cierran. El
+    desafio va despues porque queda vivo hasta jugarlo o hasta que expire a las 24 h, asi
+    que no se pierde si hoy queda tapado. */
+ const res=DUELO_AVISOS.find(a=>a.clase!=='desafio');
+ if(res){
+  const T={gane:['🏆','¡Ganaste tu duelo!'],perdi:['💪','Te ganaron esta vez'],
+           empate:['🤝','¡Empataron!'],expiro:['⌛','Tu duelo venció']};
+  const c=T[res.clase]||['⚔️','Tu duelo terminó'];
+  /* escHtml: el nombre lo escribe otra persona —desde la Sesion 73 los autoinscritos
+     escriben el suyo— y este proyecto ya tuvo un XSS almacenado por esta via exacta. */
+  const linea=res.clase==='expiro'
+   ? escHtml(res.rival)+' no alcanzó a responder'
+   : 'Contra '+escHtml(res.rival)+' · '+res.mios+' a '+res.suyos;
+  cont.innerHTML='<h4>'+c[0]+' '+c[1]+'</h4><p>'+linea+'</p><button id="btnDueloVisto">¡Entendido!</button>';
+  $('btnDueloVisto').onclick=()=>{
+   SND.tap();
+   DUELO_AVISOS=DUELO_AVISOS.filter(a=>a.id!==res.id);
+   pintarAvisoDuelo();                                  // encadena el siguiente, si hay
+   try{Promise.resolve(SB.rpc('kimun_duelo_visto',{p_id:res.id})).catch(()=>{});}catch(e){}
+  };
+  cont.hidden=false; return;
+ }
+ const des=DUELO_AVISOS.filter(a=>a.clase==='desafio');
+ cont.innerHTML='<h4>⚔️ Te desafiaron</h4><p>'+escHtml(des[0].rival)+' te está esperando'
+  +(des.length>1?' · y '+(des.length-1)+' más':'')+'</p><button id="btnDueloIr">¡Jugar ahora!</button>';
+ $('btnDueloIr').onclick=()=>{SND.init();SND.tap();$('nav').style.display='none';abrirDueloOnline();};
+ cont.hidden=false;
+}
+
+/* ===== Ranking de duelos del curso (Sesion 76) =====
+   Quien ha ganado mas duelos entre los companeros. El servidor deja fuera a los bots y
+   acota al curso; aca solo se pinta. Reusa las clases .rk / .rk.top / .rk.me del ranking
+   por XP, asi que no agrega ni una regla de CSS. */
+const _RK_DIM='color:var(--dim);font-weight:800;font-size:13px';
+async function cargarRankingDuelos(){
+ const cont=$('rkDuelos'); if(!cont) return;
+ cont.innerHTML='<p style="'+_RK_DIM+'">Cargando…</p>';
+ if(!SB||!MI_PERFIL){ cont.innerHTML='<p style="'+_RK_DIM+'">Sin conexión.</p>'; return; }
+ /* Sin curso el servidor devuelve vacio, y ahi "todavia nadie ha jugado" seria FALSO: no es
+    que el curso no juegue, es que este jugador no tiene curso. Se dice lo que corresponde,
+    igual que pintarSinCurso() en el ranking por XP. */
+ if(!MI_PERFIL.curso_id){ cont.innerHTML='<p style="'+_RK_DIM+'">Pide tu código para entrar al ranking de duelos de tu curso.</p>'; return; }
+ let d=[];
+ try{ const {data,error}=await SB.rpc('kimun_ranking_duelos'); if(error)throw error; d=data||[]; }
+ catch(e){ cont.innerHTML='<p style="'+_RK_DIM+'">No se pudo cargar.</p>'; return; }
+ /* Vacio NO es lo mismo que "van 0": es que el curso todavia no juega duelos, y al empezar
+    es el caso normal. Decir "sé el primero" invita; una tabla en blanco parece un error. */
+ if(!d.length){ cont.innerHTML='<p style="'+_RK_DIM+'">Todavía nadie ha jugado un duelo contra un compañero. ¡Sé el primero! Los duelos contra Vale, Nico, Fran y Diego no cuentan: son para practicar.</p>'; return; }
+ cont.innerHTML=d.map((r,i)=>
+  '<div class="rk'+(i<3?' top':'')+(r.soy_yo?' me':'')+'">'
+  +'<div class="pos">'+(i+1)+'</div>'
+  +'<div class="em">'+escHtml(r.avatar||'🦊')+'</div>'
+  +'<div>'+escHtml(r.nombre)+'</div>'
+  +'<div class="pts">'+r.ganados+' G · '+r.perdidos+' P</div></div>').join('');
 }
 
 /* ── Puerta de acceso, enlaces de muestra, armador y canje ─────────────────────────────────────────────────── */
@@ -513,7 +593,7 @@ function ajustarNav(){
 function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));$(id).classList.add('on');window.scrollTo(0,0);
  var enJuego=(id==='scr-mapa'||id==='scr-quiz'||id==='scr-res');
  document.body.classList.toggle('en-dificil', enJuego && MODO==='dificil');
- if(id==='scr-rol'){pintarInicio();revisarDesafio();}
+ if(id==='scr-rol'){pintarInicio();revisarDesafio();revisarDuelos();}
  callarVoz();   // ninguna pantalla hereda la lectura de la anterior
  REV.barra();   // modo revisión: la barra se oculta sola en su propia pantalla
  MUSIC.contexto(id);}
@@ -1386,7 +1466,7 @@ function terminarDesafio(){
   $('resCombo').textContent='x'+Q.comboMax;
   $('btnNext').style.display='none';
   $('btnMap').textContent='VOLVER AL INICIO';
-  $('btnMap').onclick=()=>{revisarDesafio();pintarInicio();go('scr-rol');};
+  $('btnMap').onclick=()=>{revisarDesafio();revisarDuelos();pintarInicio();go('scr-rol');};
   if(insigniaNueva) setTimeout(()=>toast('mision-profe'),600);
   particulas(window.innerWidth/2,window.innerHeight/3,['🎉','⭐','✨','📣'],24);
   go('scr-res');
