@@ -1110,6 +1110,17 @@ recorta a círculo y el `kimun-512.png` original pierde las puntas de las orejas
 ⚠️ **Lo que no se puede verificar con `cdp.mjs`: la instalación misma.** Chrome headless no
 instala PWAs. Se prueba en un teléfono.
 
+**Probado en Android el 31/08 y funciona**: ícono, nombre y sin barra del navegador. Pero la
+opción hubo que buscarla **en el menú ⋮** — **Chrome no la ofreció solo**. Eso confirma que el
+prompt automático de Android **sí depende del service worker**, y de paso valida la decisión de
+poner el paso a paso dentro del juego: sin él, un apoderado no encuentra la opción. Falta
+probarlo en iPhone.
+
+> **Y el service worker sería necesario pero NO suficiente para ese prompt:** Chrome además
+> exige que el usuario haya interactuado con el sitio, así que aun teniéndolo no aparece
+> siempre ni en la primera visita. O sea que **el paso a paso del juego se queda igual**, y lo
+> único que el Bloque C agregaría de verdad es el **offline parcial**.
+
 ## Tablero de avance (`dev/tablero.html`)
 
 Pantalla para el desarrollador (no para estudiantes) que muestra, por asignatura,
@@ -6711,3 +6722,29 @@ respaldo vacío** y su 404 no mata nada —está probado—, así que un solo pu
 Se hacen dos igual para que ningún visitante encuentre, ni por los ~90 segundos que tarda GitHub
 Pages, un manifiesto o un módulo que todavía no está. **El primero lleva lo nuevo** (módulo,
 manifiestos, íconos, script), **el segundo los forks que lo referencian.**
+
+**Post scriptum de la Sesión 77 — probado en Android, y el resultado achica el Bloque C.**
+Roberto lo instaló en su teléfono el mismo día: *"en android quedó perfecto"* — ícono, nombre y
+sin barra del navegador. Pero el dato que importaba era **cómo llegó a la opción**, y fue **por el
+menú ⋮**: **Chrome no se la ofreció solo**.
+
+- **Confirma lo que se había dicho con incertidumbre:** el prompt automático de instalación en
+  Android **sí depende del service worker**. Ahora está medido en un teléfono real, no supuesto.
+- **Valida la decisión de diseño.** Sin el paso a paso dentro del juego, un apoderado no habría
+  encontrado la opción — que es exactamente el problema que este trabajo venía a resolver. El
+  módulo no era un extra.
+- ⚠️ **Y hay un matiz que cambia la prioridad del Bloque C:** el service worker sería **necesario
+  pero NO suficiente** para ese prompt, porque Chrome además exige que la persona haya
+  interactuado con el sitio — así que aun teniéndolo no aparece siempre ni en la primera visita.
+  **El paso a paso del juego se queda igual pase lo que pase.**
+
+> **Conclusión para la planificación:** lo único que el Bloque C agregaría de verdad es el
+> **offline parcial**, no la instalación. Deja de justificarse como *"para que se pueda instalar"*
+> —eso ya está resuelto— y pasa a ser *"para que funcione sin señal"*, que es un caso de uso mucho
+> más chico. Baja de prioridad frente al Bloque B (los bancos de 4°, 5° y 6°) y al **Bloque D**
+> (el progreso en el servidor), que es el que de verdad bloquea el modelo de suscripción.
+
+**Falta el iPhone, y el riesgo ahí es distinto:** iOS **ignora el `display:standalone` del
+manifiesto** y depende de la meta `apple-mobile-web-app-capable`, que Safari ha tratado de forma
+irregular entre versiones. El síntoma a mirar es simple: si al abrirlo desde el ícono **aparece la
+barra de Safari arriba**, eso es lo que quedaría por afinar.
