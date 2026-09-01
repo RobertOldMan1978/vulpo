@@ -31,12 +31,12 @@ Es una app web mobile-first y se reutiliza. Ver `docs/roadmap-tecnico.md` §1.
 
 | Curso | OA | Preguntas | Aprobadas | Voz | Arte propio |
 |---|---|---|---|---|---|
-| 3° | 86 | 2.558 (+161 apoyo) | ✅ **todas** | ✅ 11.391 clips | villanos ✅ · portadas ❌ |
+| 3° | 86 | 2.558 (+161 apoyo) | ✅ **todas** | ✅ 11.391 clips | villanos ✅ · portadas 2/27 |
 | 4° | 92 | — | — | pendiente | — |
 | 5° | 93 | — | — | no lleva | — |
 | 6° | 99 | — | — | no lleva | — |
-| 7° | 81 | 2.430 (+120 apoyo) | ✅ **todas** | no lleva | villanos ✅ · portadas ❌ |
-| 8° | 69 | 2.314 (+222 apoyo) | ✅ todas | no lleva | ✅ |
+| 7° | 81 | 2.430 (+120 apoyo) | ✅ **todas** | no lleva | villanos ✅ · portadas 1/23 |
+| 8° | 69 | 2.314 (+222 apoyo) | ✅ todas | no lleva | ✅ portadas 20/20 |
 
 - **7.805 preguntas escritas · 7.805 aprobadas · 0 pendientes.** El currículum de 4°, 5°
   y 6° ya está fijado (284 OA), pero sin una sola pregunta escrita todavía.
@@ -161,8 +161,14 @@ Para poder decir "tengo 3°, 7° y 8°". Es el hito más cercano y el de mejor r
 | ~~A17~~ | ~~**Inscripción por enlace único (modo experimental)**~~ ✅ **HECHO (30/08, Sesión 73)**: un enlace al chat del curso, cada persona escribe su nombre, se crea sola en un curso ya abierto, recibe su `ALU-` y su avance se registra. Backend, pantalla del juego en los tres cursos, bloque del panel y `?inscribir=`. Esquema aplicado y **aislamiento verificado en sus dos mitades** (cuenta ajena → `no_autorizado`; admin → funciona). **Queda opcional** correr `supabase/probar-inscripcion.sql` (2 filas en `ok`), que comprueba el techo del cupo | — | — |
 | ~~A22~~ | ~~**Instalarlo en la pantalla del teléfono**~~ ✅ **HECHO (31/08)**: los tres cursos tienen `manifest.webmanifest` propio (ícono, nombre y sin barra del navegador) y `assets/js/instalar.js` le explica al apoderado cómo agregarlo, con el paso a paso de su sistema. **Un manifiesto POR CURSO**: un papá con hijos en dos cursos tiene dos íconos y cada uno abre el suyo. **Sin service worker a propósito** — en iPhone no existe la instalación automática ni con él, así que hay que explicar el paso a paso igual. ⚠️ El banner tuvo que quedar **de una línea**: medido en 375×667, la versión de dos líneas dejaba el botón **JUGADOR cortado** (658 px de 667) con el aviso de la puerta encima, y eso ningún conteo lo delata. ✅ **PROBADO EN ANDROID (31/08) y quedó perfecto**: ícono, nombre y sin barra del navegador. ⚠️ Roberto llegó a la opción **por el menú ⋮**, o sea que **Chrome NO lo ofreció solo** — eso confirma que el prompt automático de Android depende del service worker, y valida haber puesto el paso a paso dentro del juego en vez de confiar en que el navegador lo ofrezca. **Falta el iPhone** | — | Roberto (probar en iPhone) |
 
-**Las portadas de capítulo siguen prestadas a propósito.** Son ~46 imágenes más para una
-diferencia que casi nadie mira; el Jefe Final es donde el préstamo chirría.
+**Las portadas de capítulo dejaron de estar prestadas (decisión del 01/09).** La nota anterior
+decía que eran *"~46 imágenes para una diferencia que casi nadie mira"*, y **medida la pantalla
+resultó ser otra cosa**: un niño de 3° abre Lenguaje y ve **nueve tarjetas idénticas**, así que es
+un problema de **orientación**, no de decoración. El estándar quedó fijado en
+[`docs/estandar-arte-portadas.md`](docs/estandar-arte-portadas.md): **cada capítulo con su
+portada, un solo estilo para los seis cursos**, con la escena más simple en los chicos. Faltan
+**30 imágenes** (27 nuevas + 3 que rompen el estándar y conviene rehacer); otras **20 se
+reutilizan** del arte de 8°, porque los ejes de Matemática y Lenguaje se repiten entre cursos.
 
 ---
 
@@ -502,4 +508,6 @@ Cada una nació de un defecto real; el detalle está en `CLAUDE.md`.
   sincronización y panel siguen exigiendo internet.
 - ❌ Unificar los seis juegos en una sola app multinivel de un salto. La extracción por módulos
   converge hacia allá sin el big-bang.
-- ❌ Portadas propias de capítulo para todos los cursos (~110 imágenes). Solo villanos en la v1.
+- ~~❌ Portadas propias de capítulo para todos los cursos~~ — **revertido el 01/09**: sí van, y
+  el estándar está en `docs/estandar-arte-portadas.md`. El número real es bastante menor que
+  las ~110 que decía esta línea, porque 20 se reutilizan entre cursos.

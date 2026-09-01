@@ -150,6 +150,12 @@ están hoy en una expedición jugable, el resto es reserva.
 - Tipografías: **Titan One** para títulos y **Nunito** para texto.
 - Mobile-first, contenedor máximo de 480px, sin zoom del usuario.
 - Fondo con estrellas animadas y degradados radiales.
+- **Portadas de capítulo: cada capítulo la suya**, con el estándar de 8° (viñeta circular
+  sobre violeta, Vulpi de cuerpo entero haciendo la actividad, sin texto dentro de la
+  imagen). **Un solo estilo para los seis cursos**; lo que cambia con la edad es la densidad
+  de la escena, no el estilo. Fijado el 01/09/2026 en
+  [`docs/estandar-arte-portadas.md`](docs/estandar-arte-portadas.md), que además lista las 20
+  reutilizaciones aprobadas entre cursos y las 30 que faltan.
 
 ### Mecánicas
 - Progresión por etapas desbloqueables con jefe final.
@@ -4591,7 +4597,7 @@ todas sus sesiones juntas. Decisiones tomadas por Roberto:
 | Motor | **Extracción progresiva a `assets/js/`**, el patrón que `revision.js` ya validó en producción |
 | Orden | **5° → 6° → 4°**: los dos sin voz primero; 4° al final porque suma ~254 MB |
 | Aprobación | **Muestreo + aprobación masiva** (con la herramienta de hoy son 18–36 horas de clic) |
-| Arte | **Solo los 4 villanos por nivel** (20 imágenes); las portadas siguen prestadas |
+| Arte | **Solo los 4 villanos por nivel** (20 imágenes); ~~las portadas siguen prestadas~~ → **revertido el 01/09/2026**: cada capítulo lleva la suya, ver `docs/estandar-arte-portadas.md` |
 
 **Voz solo en 4°**, y no por preferencia: con voz en 4°, 5° y 6° el sitio publicado llegaría a
 **~1.260 MB y revienta el techo de 1 GB de GitHub Pages**. Con voz solo en 4°, y sacando
@@ -6748,3 +6754,99 @@ menú ⋮**: **Chrome no se la ofreció solo**.
 manifiesto** y depende de la meta `apple-mobile-web-app-capable`, que Safari ha tratado de forma
 irregular entre versiones. El síntoma a mirar es simple: si al abrirlo desde el ícono **aparece la
 barra de Safari arriba**, eso es lo que quedaría por afinar.
+
+### Sesión 78 (2026-09-01) — Cada capítulo con su portada: se fija el estándar de arte
+Roberto notó jugando que *"las expediciones todas tienen una foto distinta, pero dentro de cada
+asignatura también son distintas… ¿es así en todas?"*. **No lo era**, y medirlo dio un número que
+no estaba en ningún documento.
+
+| | Capítulos | Imágenes distintas |
+|---|---|---|
+| **8°** | 20 | **20** — cada capítulo la suya |
+| **7°** | 23 | **5** — una por asignatura |
+| **3°** | 27 | **6** — una por asignatura |
+
+O sea que en 7° y 3° **los capítulos de una misma asignatura se ven todos idénticos**: los 6 de
+Historia de 7° son la misma imagen, y los 9 de Lenguaje de 3° también.
+
+#### La nota que lo justificaba era falsa, y se vio mirando la pantalla
+
+`pendiente.md` decía desde hace sesiones: *"Las portadas de capítulo siguen prestadas a propósito.
+Son ~46 imágenes más para una diferencia que **casi nadie mira**"*. Esa frase daba el asunto por
+cerrado.
+
+> **Y el argumento estaba mal planteado, no solo desactualizado.** No es que nadie mire la
+> diferencia: es que **sin ella el niño no sabe en qué capítulo va**. Un alumno de 3° abre
+> Lenguaje y ve **nueve tarjetas idénticas**, distinguibles solo por el número y el nombre en
+> letra chica. Es un problema de **orientación**, no de decoración — y pesa justo donde hay más
+> capítulos por asignatura.
+
+Es el mismo patrón de la sesión anterior, cuando el banner de instalación dejaba el botón JUGADOR
+cortado: **una afirmación sobre lo que el usuario ve, escrita sin mirar la pantalla.**
+
+#### Un solo estilo para los seis cursos (decisión de Roberto)
+
+Roberto propuso dos bandas etarias —3-4-5 infantil, 6-7-8 adolescente— y preguntó si convenía otra
+diferenciación. Se evaluaron tres opciones y **se eligió no separar por banda**:
+
+1. **Una sola identidad de marca es más fuerte**, y lo que se ve "de grandes" en el arte actual no
+   son las viñetas de capítulo —`mate-numeros`, con Vulpi saltando entre números, funciona igual a
+   los 8 que a los 14— sino los **retratos realistas** de las genéricas de asignatura.
+2. **Permite reutilizar entre cursos:** con dos estilos, 20 de las 47 portadas pendientes dejaban
+   de servir.
+3. **El riesgo es asimétrico:** a los 10-11 años los niños rechazan activamente lo que les parece
+   "de guagua", mientras que un niño de 4° con arte algo más grande no se ofende. **Infantilizar
+   cuesta más caro que lo contrario.**
+
+Lo que sí cambia con la edad es la **densidad de la escena** —menos objetos y colores más cálidos
+en los cursos chicos—, no el estilo.
+
+> Se había considerado además mover el corte a 4°/5°, que es donde el proyecto ya tiene su línea
+> (la voz pregrabada va de 1° a 4°) y donde corta el ciclo oficial del MINEDUC. Queda anotado por
+> si algún día se reabre.
+
+#### 20 se reutilizan, 30 hay que generar
+
+**Matemática y Lenguaje rinden mucho, porque sus ejes se repiten en todos los cursos**; Historia
+no rinde **nada**, y era previsible: 8° es modernidad, colonia e independencia; 7° es prehistoria,
+Grecia-Roma y Edad Media; 3° es el planeta, Grecia, Roma y los derechos. Ni un tema compartido.
+
+- **27 nuevas** (11 en 7°, 16 en 3°).
+- **3 rehechas**: `leng-literarios`, `leng-textos` y `mate-algebra` **están fuera del estándar**
+  —son retratos de busto sobre fondo claro, no viñetas circulares sobre violeta—. Importa porque
+  son de las que se reutilizan: dejarlas propaga el estilo ajeno a **8 ubicaciones**. Rehacer 3
+  arregla las 8, y de paso deja 8° uniforme.
+
+#### El estándar quedó escrito
+
+[`docs/estandar-arte-portadas.md`](docs/estandar-arte-portadas.md): la composición (viñeta
+circular, fondo violeta, Vulpi de cuerpo entero **haciendo** la actividad, objetos temáticos
+flotando, sin texto dentro de la imagen), el formato (PNG 512×512, ~400 KB), la convención de
+nombres con su ⚠️ de portada **explícita** y no por convención implícita, la tabla de las 20
+reutilizaciones y el reparto de quién hace qué.
+
+> **Y ese reparto conviene tenerlo claro: el asistente NO genera ilustraciones**, no tiene
+> herramienta de imagen. Escribe los prompts calibrados al estándar y **procesa** el resultado con
+> `scripts/procesar-arte.py`. Lo que sí dibuja por código son los apoyos visuales SVG de las
+> preguntas, que son otra cosa.
+
+#### Dos errores propios de medición, los dos corregidos antes de dar el número
+
+1. **Conté 53 faltantes cuando eran 47.** Las 5 de 8° que marqué como pendientes **sí tienen arte
+   propio**, solo que con un nombre que no sigue la convención (`portada-lectura-anafrank.png`,
+   `portada-mate-numeros.png`). Se detectó midiendo la **imagen real** que usa cada capítulo en vez
+   del nombre esperado.
+2. **Mi primer intento de extraer los capítulos leyó el HTML con expresiones regulares y devolvió
+   cero en los tres cursos.** Se resolvió preguntándole al juego en el navegador con sus propias
+   funciones (`nombreMapa`, `portadaMapa`) — que además reveló que el campo del nombre se llama
+   `nivel`, no `nombre`.
+
+#### Lo que costará terminar la v1
+
+Con 4°, 5° y 6° por venir, y contando la reutilización que este estándar habilita, quedan del
+orden de **60 a 70 imágenes más** para los seis cursos completos. Conviene saberlo antes del
+cuarto curso, no después.
+
+**Siguiente paso acordado:** escribir los 30 prompts, por asignatura, para generar por tandas y
+calibrar con la primera. Se empieza por **Historia de 3°** (5 imágenes): la que no tiene ninguna
+reutilización posible y la de menor riesgo editorial.
