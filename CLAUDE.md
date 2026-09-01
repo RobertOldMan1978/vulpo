@@ -6878,8 +6878,9 @@ portada propia por capítulo**, igual que 8°.
   nombre de archivo (solo se reemplazó la imagen), así 8° ya las usa sin cablear.
 - **Nota de fin de línea:** la línea base del proyecto **ya es LF** en los tres forks (incluido
   `juego/`, que no se tocó), no CRLF. El script preservó LF y el diff es 47/47 (una línea por
-  capítulo, sin churn). La regla 4 de `pendiente.md` (preservar CRLF) quedó **desactualizada**: hoy
-  lo correcto es preservar LF; conviene corregirla.
+  capítulo, sin churn). Esto ya está bien contado en las reglas: tanto la regla 4 de `pendiente.md`
+  como la guía activa de `CLAUDE.md` se corrigieron el 31/08 (`.gitattributes`) y dicen "escribir
+  con `newline=""`… LF en todo el proyecto". No queda nada que corregir ahí.
 - **Verificado en el navegador** (`scripts/cdp.mjs`, las tres apps): las 4 campañas de cada curso
   cargan **todas** sus portadas (`fallan:[]`), **cero 404 de portada y cero errores de consola**. La
   captura de la campaña de Lenguaje de 3° muestra las tarjetas con arte **distinto** por capítulo
