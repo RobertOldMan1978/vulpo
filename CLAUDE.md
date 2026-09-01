@@ -246,10 +246,11 @@ supuesto cuando pide "no modificar `contenido/` ni `supabase/`".
 1. **Un cambio de una capa no toca las otras.** Agregar preguntas es `contenido/`; cambiar una
    regla del juego es motor; ninguno de los dos toca `supabase/`. Cuando un trabajo obliga a
    tocar tres capas a la vez, casi siempre está mal planteado.
-2. **Lo que se comparte entre cursos va a `assets/js/`, no se copia.** Hoy son siete módulos:
+2. **Lo que se comparte entre cursos va a `assets/js/`, no se copia.** Hoy son ocho módulos:
    `revision.js`, `sensible.js`, `calculo.js`, y desde el 31/08 **`visuales.js`** (los 11
    dibujos), **`voz.js`** (la lectura en voz alta), **`niveles.js`** (el catálogo de niveles,
-   que solo carga el panel) y **`motor.js`** (el juego entero: quiz, campañas, jefes, duelo,
+   que solo carga el panel), **`instalar.js`** (el ofrecimiento de agregar el juego a la
+   pantalla del teléfono) y **`motor.js`** (el juego entero: quiz, campañas, jefes, duelo,
    tienda, guardado). **Siempre con su respaldo vacío antes de usarse**, porque un 404 de
    un `<script src>` mata todo el JavaScript y el síntoma engaña: la pantalla se ve bien y ningún
    botón responde. Cada uno se prueba **con el archivo ausente**, no solo presente.
@@ -1052,10 +1053,62 @@ Llegada la fecha el cierre **ocurre solo**, sin desplegar nada ese día.
 > pedir el archivo. Cerrar de verdad exige mover el contenido a Supabase y servirlo pregunta a
 > pregunta: proyecto aparte, de meses.
 
-> **VULPO NO funciona sin internet** (verificado 24/08/2026): no hay service worker ni manifiesto,
-> así que sin conexión el sitio ni carga, y cada banco de preguntas se pide con `fetch` al usarlo.
+> **VULPO NO funciona sin internet** (verificado 24/08/2026): **no hay service worker**, así que
+> sin conexión el sitio ni carga, y cada banco de preguntas se pide con `fetch` al usarlo.
 > **No prometerle a un colegio que funciona sin conexión.** La cláusula de "sin internet vale la
 > última licencia confirmada" cubre **caídas a mitad de sesión**, no juego sin conexión.
+> ⚠️ Desde el 31/08 **sí hay manifiesto** (ver la sección siguiente) y el juego se instala en el
+> teléfono — pero **instalarlo no lo hace funcionar sin conexión**: eso lo daría el service
+> worker, que no existe. Es una confusión fácil y cara si se la dice a un colegio.
+
+### Instalación en la pantalla de inicio (31/08/2026)
+
+Los tres cursos se pueden agregar a la pantalla del teléfono y quedan como una aplicación: ícono
+propio, nombre propio y **sin la barra del navegador**. Nace de un escenario concreto: el enlace
+llega al chat del curso, un papá lo abre y le pasa el teléfono al niño — y a los dos días ese
+enlace está hundido en el chat.
+
+**Un `manifest.webmanifest` POR CURSO** (`juego/`, `7mo/`, `3ro/`), con su `start_url` y su
+`scope` acotados. Con uno solo en la raíz, el ícono abriría siempre el mismo nivel; un papá con
+hijos en dos cursos necesita dos íconos y los tiene.
+
+> ⚠️ **El `<link rel="manifest">` va con RUTA ABSOLUTA.** El `<base href="/">` de los tres juegos
+> resolvería `manifest.webmanifest` a `/manifest.webmanifest`, que no existe.
+
+**No hay service worker, y la razón decide sola:** en iPhone **no existe la instalación
+automática, ni con service worker** — Safari nunca la ofrece, la única vía es *Compartir →
+Agregar a pantalla de inicio*. O sea que hay que explicar el paso a paso de todos modos, y el
+service worker solo agregaría comodidad en Android. Queda para el Bloque C, y **la decisión de si
+hace falta se toma probando en un teléfono real**.
+
+**`assets/js/instalar.js`** muestra un banner en el inicio y una pantalla con el paso a paso del
+sistema que detecte (iPhone / Android / escritorio; iPadOS 13+ se declara como Mac y se delata
+por el touch). **No aparece** si ya está instalado —hacen falta las dos comprobaciones,
+`display-mode: standalone` en Android y `navigator.standalone` en iOS—, si el papá lo cerró, o
+con `SIN_DISCO`, o sea nunca en `?solo=`, `?m=`, `?rev=1` ni `?armar=1`. Como el banner se cierra
+para siempre, hay además un enlace permanente junto a Créditos.
+
+> ⚠️ **El banner va COMPACTO, de una línea, y eso no es estética.** Medido en 375×667 (la
+> pantalla más chica real): con el aviso de la puerta encima —activo en los tres cursos hasta
+> octubre— una versión de dos líneas empujaba el botón **JUGADOR de 522 px a 658 px** de un
+> viewport de 667, o sea que un niño abría el juego y **no veía entero el botón de jugar**. Con
+> el banner compacto queda en 581 px. El banner es para el papá; el botón es para el niño.
+> **Ningún conteo lo delata: se ve mirando la pantalla.**
+
+**Corriendo instalada se oculta el «← Volver a vulpo.cl» del inicio** (`#salirWeb`), que para un
+niño es una fuga: lo toca, se le abre el navegador encima y no sabe volver. **El del fin de la
+demo se mantiene**, porque es el que lleva al contacto. Es CSS puro
+(`@media (display-mode: standalone)`) y vive en el `<style>` de cada fork — **única excepción a
+"un módulo se lleva su CSS"**, porque el navegador la aplica solo y meterla en el módulo la haría
+depender de que cargue el JavaScript.
+
+**El ícono es propio** (`assets/icono-512.png` / `-192.png`, generados con
+`scripts/generar-icono-app.py`): la cara de Vulpi al 80% sobre su fondo durazno, porque Android
+recorta a círculo y el `kimun-512.png` original pierde las puntas de las orejas. Ese original
+**no se toca**: sigue siendo el favicon y el `apple-touch-icon`.
+
+⚠️ **Lo que no se puede verificar con `cdp.mjs`: la instalación misma.** Chrome headless no
+instala PWAs. Se prueba en un teléfono.
 
 ## Tablero de avance (`dev/tablero.html`)
 
@@ -6533,3 +6586,128 @@ Dos pushes, como en la Sesión 75: **`motor.js` primero**. Los forks llaman a `r
 y a `cargarRankingDuelos()` en su arranque; con el `motor.js` viejo todavía en caché eso sería
 un `ReferenceError` que **mata el resto del script de arranque**. El esquema, en cambio, ya
 estaba aplicado y verificado por Roberto antes de subir.
+
+### Sesión 77 (2026-08-31) — VULPO se instala en el teléfono
+Roberto preguntó por el camino técnico a la v1 y si esa v1 era "la versión PWA". **La premisa
+estaba invertida y conviene dejarlo escrito**, porque el roadmap técnico es prominente y se lee
+como si fuera la meta: **la v1 es de contenido —3° a 8°— y la PWA va después**. Lo que falta para
+la v1 son los bancos de 4°, 5° y 6°; el Bloque C empieza cuando eso esté.
+
+De ahí salió el pedido real: *"¿hay alguna forma de que los que vean el enlace de 3° accedan
+desde un ícono en el escritorio o en la pantalla del celular?"*, pensando en que **muchos papás
+lo instalarán en su propio teléfono y se lo pasarán al niño**.
+
+#### Estaba a mitad de camino sin que nadie lo supiera
+
+Los tres juegos ya declaraban `apple-touch-icon` y un ícono de 512, y los archivos existían y
+respondían 200 en `vulpo.cl`. O sea que "Agregar a pantalla de inicio" **ya dejaba el ícono
+correcto**. Lo que faltaba era que **abriera como aplicación y no como página web**: sin
+manifiesto, al tocarlo aparece la barra de direcciones y se nota que es un sitio.
+
+#### La decisión que lo abarató: sin service worker
+
+> **En iPhone no existe la instalación automática, ni con service worker.** Safari nunca la
+> ofrece; la única vía es *Compartir → Agregar a pantalla de inicio*. O sea que **hay que
+> explicar el paso a paso de todos modos** para el 20-25% de familias con iPhone, y si la
+> explicación va igual, el service worker solo agrega comodidad en Android.
+
+Por eso este trabajo **no es el Bloque C**: es un subconjunto que da el 80% del resultado en una
+sesión en vez de dos, y deja la decisión del service worker para cuando haya el dato de un
+teléfono real. Lo que el Bloque C sigue debiendo es el prompt automático de Android y el
+**offline parcial** — que es lo único que de verdad falta, porque **instalarlo NO hace que
+funcione sin conexión**.
+
+#### Lo construido
+
+**Un `manifest.webmanifest` por curso.** No es un tecnicismo: un papá con un hijo en 3° y otro en
+7° tiene **dos íconos con dos nombres**, y cada uno abre el suyo. Con uno solo en la raíz, el
+ícono abriría siempre el mismo nivel — es el defecto que `docs/roadmap-tecnico.md` §2.1 ya había
+anticipado, y este escenario lo volvió concreto.
+
+⚠️ **El `<link rel="manifest">` va con ruta absoluta**: el `<base href="/">` de los tres juegos
+resolvería `manifest.webmanifest` a `/manifest.webmanifest`, que no existe.
+
+**`assets/js/instalar.js`** (octavo módulo compartido) muestra un banner en el inicio y una
+pantalla con el paso a paso del sistema que detecte. Nace dormido, se lleva su CSS y tiene
+respaldo vacío, como los otros. No aparece si ya está instalado, si el papá lo cerró, o con
+`SIN_DISCO` — nunca en `?solo=`, `?m=`, `?rev=1` ni `?armar=1`.
+
+**El ícono es propio** (`scripts/generar-icono-app.py`): la cara de Vulpi al 80% sobre su fondo
+durazno. El original llena el cuadro y Android recorta a círculo, así que perdía las puntas de
+las orejas.
+
+> **Y ahí corregí algo que había dicho de más.** Afirmé que el ícono actual "quedaría sin orejas
+> y sin barbilla". Generando la comparativa con el recorte circular real, se ve que pierde las
+> **puntas** y algo de barbilla, pero sigue siendo reconocible. La versión reducida es mejor, no
+> imprescindible.
+
+#### ⚠️ El hallazgo de la sesión: el banner dejaba el botón de jugar cortado
+
+El diseño aprobado tenía título, párrafo y dos botones, como los otros banners del inicio.
+Medido en **375×667** —la pantalla más chica real, un iPhone SE o un Android económico— con el
+aviso de la puerta encima, que está activo en los tres cursos hasta octubre:
+
+| | Botón JUGADOR |
+|---|---|
+| Antes de este trabajo | 522 px de 667 · se ve entero |
+| Banner de dos líneas | **658 px** · se asoma 9 px |
+| Banner de una línea | **581 px** · se ve entero |
+
+O sea que un niño de 8 años habría abierto el juego y **no habría visto el botón de jugar**,
+desde el primer día del piloto.
+
+> **Lo grave es que ningún conteo lo delataba:** sin desborde lateral, cero errores de consola,
+> cero 404, los once elementos presentes y cada uno una sola vez. **Se vio mirando la captura.**
+> Es la tercera vez que este proyecto tropieza con lo mismo —la Sesión 59 con las franjas
+> climáticas, la 74 con el estilo anclado al id y el reloj tapado por los botones de audio— y por
+> eso el porqué quedó escrito **dentro de `instalar.js`**, no en la bitácora: para que nadie lo
+> "mejore" de vuelta a dos líneas sin saber lo que cuesta.
+
+#### Y un error que casi reporto como defecto del código
+
+La comprobación de sintaxis marcó fallo en los tres forks. No era el código: el **comentario HTML
+de `motor.js` contiene literalmente la cadena `<script>`** en su texto («Va ANTES del `<script>`
+inline»), así que mi regex lo capturaba como si fuera JavaScript. Se corrige quitando los
+comentarios HTML antes de extraer.
+
+> Es hermano del `*/` de la Sesión 63 y del `/*` huérfano de la 75, pero **al revés**: ahí un
+> comentario se comía código; acá un comentario se hacía pasar por código. La lección es la misma
+> —el HTML de este proyecto habla de sí mismo en sus comentarios— y la regla que queda es
+> **verificar la herramienta antes de creerle al informe**.
+
+#### Otra afirmación falsa que este trabajo destapó
+
+`CLAUDE.md` decía *"no hay service worker **ni manifiesto**"*, y la segunda mitad quedó falsa.
+Corregida, con una advertencia nueva y deliberada: **instalarlo no lo hace funcionar sin
+conexión**. Es la confusión más fácil de cometer al vender esto, y la más cara.
+
+#### Verificación
+
+Con `scripts/cdp.mjs`, en los tres cursos: manifiesto 200 con su `short_name` y `scope` propios,
+el `<link>` resolviendo a una URL que existe, banner y enlace permanente visibles, el cierre que
+persiste al recargar, ausencia en `?solo=` y `?armar=1`, y la detección de sistema acertando los
+cuatro casos —incluido el **iPadOS 13+, que se declara como Macintosh** y se delata por el touch—.
+**Con `instalar.js` ausente**, los tres siguen jugándose: cero excepciones y el único fallo de red
+es su propio 404. Regresión: 20/23/27 expediciones, motor vivo, y el guardado de 8° (777 XP)
+intacto con las tres claves conviviendo. **Cero errores de consola y cero 404.**
+
+Las **18 ediciones** (6 × 3 forks) quedaron **byte a byte idénticas** salvo la ruta del manifiesto
+y el nombre — comprobado por hash del diff normalizado, no por lectura.
+
+#### Lo que falta, y no lo puede hacer el asistente
+
+**Probarlo en un teléfono real**, un Android y un iPhone: que el ícono se vea completo, que diga
+*VULPO 3°* y que abra sin la barra del navegador. **Chrome headless no instala PWAs**, así que
+esto no se puede verificar acá. **Ese resultado decide si algún día hace falta el service
+worker**: si Android ya lo ofrece solo, el Bloque C se achica bastante.
+
+Spec y plan: `docs/superpowers/specs/2026-08-31-instalacion-pantalla-inicio-design.md` y
+`docs/superpowers/plans/2026-08-31-instalacion-pantalla-inicio.md`.
+
+#### Orden de despliegue
+
+Dos pushes, y **por una razón distinta a la de las Sesiones 75 y 76**: `instalar.js` **sí tiene
+respaldo vacío** y su 404 no mata nada —está probado—, así que un solo push no rompería el juego.
+Se hacen dos igual para que ningún visitante encuentre, ni por los ~90 segundos que tarda GitHub
+Pages, un manifiesto o un módulo que todavía no está. **El primero lleva lo nuevo** (módulo,
+manifiestos, íconos, script), **el segundo los forks que lo referencian.**

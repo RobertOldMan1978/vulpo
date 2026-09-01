@@ -12,6 +12,16 @@
 <link rel="icon" type="image/png" sizes="512x512" href="assets/kimun-512.png">
 <link rel="apple-touch-icon" href="assets/kimun-180.png">
 <meta name="theme-color" content="#1e1747">
+<!-- Instalacion en la pantalla de inicio. Un manifiesto POR CURSO: con uno solo en la raiz, el
+     icono abriria siempre el mismo nivel, y un papa con hijos en dos cursos necesita dos.
+     ⚠️ RUTA ABSOLUTA: el <base href="/"> de arriba resolveria "manifest.webmanifest" a
+     /manifest.webmanifest, que no existe. -->
+<link rel="manifest" href="/3ro/manifest.webmanifest">
+<!-- iOS ignora display:standalone del manifiesto; necesita estas. Sin la primera, la app
+     instalada abre CON la barra del navegador y no se siente una app. -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
 <!-- supabase-js auto-hospedado (no desde CDN): elimina el riesgo de cadena de suministro
@@ -27,7 +37,10 @@
 <!-- Reto Sin Fin de cálculo, compartido por todos los cursos. -->
 <script src="assets/js/calculo.js"></script>
 <script>if(!window.SENSIBLE)window.SENSIBLE={cats:{},oa:{},deExpedicion:function(){return[];}};</script>
-<script>if(!window.renderVisual)window.renderVisual=function(){return '';};</script>   <!-- respaldo: un 404 de visuales.js no puede matar el juego -->
+<script>if(!window.renderVisual)window.renderVisual=function(){return '';};</script>
+<!-- Ofrecer instalar en la pantalla de inicio, compartido. Nace dormido: INST.init(). -->
+<script src="assets/js/instalar.js"></script>
+<script>if(!window.INST)window.INST={activo:false,init:function(){},abrir:function(){}};</script>   <!-- respaldo: un 404 de visuales.js no puede matar el juego -->
 <!-- El motor del juego, compartido por los tres cursos. ⚠️ Va ANTES del <script> inline
      (sus funciones se izan) y NO lleva respaldo vacío: sin él no hay juego. Lo vigila la
      canaria del final del archivo. -->
@@ -40,6 +53,12 @@
   --txt:#f3f0ff; --dim:#a89fd6;
   --r:18px;
 }
+/* Corriendo como app instalada, el "Volver a vulpo.cl" del inicio es una fuga: un nino lo
+   toca, se le abre el navegador encima y no sabe volver. El del FIN DE LA DEMO no se toca:
+   ese es el que lleva al contacto y ahi abrir el navegador es lo que se quiere.
+   Va aca y no en instalar.js -unica excepcion a "un modulo se lleva su CSS"- porque el
+   navegador la aplica solo: meterla en el modulo la haria depender de que cargue el JS. */
+@media (display-mode: standalone){ #salirWeb{display:none} }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{height:100%}
 body{
@@ -676,6 +695,10 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
          Reusa su misma clase CSS, asi que no agrega ni una regla. Lo llena
          revisarDuelos() de assets/js/motor.js. -->
     <div id="bannerDuelo" class="banner-desafio" hidden></div>
+    <!-- Ofrecimiento de instalar. Va APARTE de los otros dos banners: si hay refuerzo del profe
+         y ademas te desafiaron, un tercer texto adentro los pisaria. Reusa su clase CSS.
+         Lo llena INST.init() de assets/js/instalar.js. -->
+    <div id="bannerInstalar" class="banner-desafio" hidden></div>
     <div id="avisoPuerta" class="card" hidden
          style="border:2px solid var(--gold);background:#2a1f00">
       <p id="avisoPuertaTxt" style="font-weight:900;font-size:13px;margin:0 0 6px"></p>
@@ -693,10 +716,11 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
       <a href="#" id="btnCanje" style="color:var(--cyan);font-weight:800;font-size:13px">🎟️ Tengo un código</a>
     </p>
     <p style="text-align:center;margin-top:10px">
-      <a href="#" id="verCreditos" style="color:var(--cyan);font-weight:800;font-size:12px">Créditos</a>
+      <a href="#" id="lnkInstalar" hidden style="color:var(--cyan);font-weight:800;font-size:12px">📲 Instalar</a>
+      <a href="#" id="verCreditos" style="color:var(--cyan);font-weight:800;font-size:12px;margin-left:10px">Créditos</a>
     </p>
     <p style="text-align:center;margin-top:10px">
-      <a href="/" style="color:var(--dim);font-weight:800;font-size:12px">← Volver a vulpo.cl</a>
+      <a href="/" id="salirWeb" style="color:var(--dim);font-weight:800;font-size:12px">← Volver a vulpo.cl</a>
     </p>
   </section>
 
@@ -1947,6 +1971,10 @@ const MUSIC={
    comparte monedas, skins y avance de campaña. Los ajustes de audio SÍ se comparten a
    propósito (quien silenció la música espera que siga silenciada en el otro juego). */
 const SUFIJO='_3ro';   // NS ya lo usa el namespace de SVG (linea ~1922)
+/* ⚠️ PEGADO a SUFIJO a proposito, no arriba con las otras constantes: este modulo lo
+   necesita, y un const leido antes de declararse mata todo el JavaScript con un sintoma
+   que enganha (la pantalla se ve bien y ningun boton responde). Ya mordio cuatro veces. */
+INST.init({nombre:'VULPO 3°', sufijo:SUFIJO, activo:!SIN_DISCO});
 const SAVE_KEY='kimun_save'+SUFIJO;
 
 

@@ -62,6 +62,12 @@ La página de presentación está en **https://vulpo.cl**, el juego en
 **https://vulpo.cl/juego** y el panel del profesor en **https://vulpo.cl/profesor.html**. Para desarrollo local conviene un servidor
 (`python -m http.server 8765`), porque el JavaScript no funciona bien desde `file://`.
 
+**Se puede instalar en el teléfono.** Desde el menú del navegador, «Agregar a pantalla de
+inicio»: queda con su ícono y su nombre (*VULPO 3°*, *VULPO 7°*, *VULPO 8°*) y se abre como una
+aplicación, sin la barra del navegador. El juego mismo explica cómo hacerlo. Ojo: instalarlo
+**no** lo hace funcionar sin internet — para eso haría falta un service worker, que todavía no
+existe.
+
 ## Estado
 
 Versión **v0.99**: completo y jugable de punta a punta, en vuelta de revisión

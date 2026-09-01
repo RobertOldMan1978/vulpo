@@ -116,6 +116,10 @@ Esto no es un bloque del roadmap: es la lista corta de lo que hay entre hoy y un
   (ver A4). El armador (`?armar=1`) marca esos capítulos en rojo, justamente para poder
   mostrárselos.
 - **Confirmar la foto semanal** el lunes siguiente (A6).
+- **Decirle al curso que se puede instalar.** El juego lo ofrece solo en la pantalla de inicio,
+  pero conviene que el mensaje que reparte el enlace lo mencione: es lo que hace que el niño
+  vuelva mañana en vez de perder el enlace en el chat. ⚠️ **Sin prometer que funciona sin
+  internet**: instalarlo no es lo mismo que offline.
 
 **No bloquea, pero hay que decirlo antes de que lo descubran:**
 
@@ -155,6 +159,7 @@ Para poder decir "tengo 3°, 7° y 8°". Es el hito más cercano y el de mejor r
 | ~~A20~~ | ~~**El duelo asíncrono no cerraba su ciclo**~~ ✅ **HECHO (31/08, Sesión 76)**: el retado veía su resultado, pero **el retador no se enteraba nunca** — `kimun_historial` existía desde la Sesión 6 y ningún cliente la había llamado jamás. Ahora la pantalla de inicio avisa ⚔️ que te desafiaron y 🏆 cómo terminó el tuyo, con la marca de visto **en el servidor** para que sobreviva a borrar los datos del navegador. Probado el **ciclo completo contra producción** con dos identidades reales. ⚠️ De paso apareció, **probando y no leyendo**, que el duelo contra un bot **repetía** el aviso: se resuelve al instante y el jugador ya lo vio en pantalla | — | — |
 | ~~A21~~ | ~~**Ranking de duelos del curso**~~ ✅ **HECHO (31/08, Sesión 76)**: en la misma pantalla del duelo, por **duelos ganados**, **sin contar los bots** y acotado al curso. **No guarda nada nuevo**: el dato ya vivía entero en `duelos`. De paso, la regla de desempate dejó de estar **escrita a mano en tres lugares** y vive una sola vez en `kimun_duelo_ganador`. Y el reloj del duelo en línea acumulaba **tiempo negativo en 3°** (`15 - OD.t` con el 15 cableado y el reloj en 30) | — | — |
 | ~~A17~~ | ~~**Inscripción por enlace único (modo experimental)**~~ ✅ **HECHO (30/08, Sesión 73)**: un enlace al chat del curso, cada persona escribe su nombre, se crea sola en un curso ya abierto, recibe su `ALU-` y su avance se registra. Backend, pantalla del juego en los tres cursos, bloque del panel y `?inscribir=`. Esquema aplicado y **aislamiento verificado en sus dos mitades** (cuenta ajena → `no_autorizado`; admin → funciona). **Queda opcional** correr `supabase/probar-inscripcion.sql` (2 filas en `ok`), que comprueba el techo del cupo | — | — |
+| ~~A22~~ | ~~**Instalarlo en la pantalla del teléfono**~~ ✅ **HECHO (31/08)**: los tres cursos tienen `manifest.webmanifest` propio (ícono, nombre y sin barra del navegador) y `assets/js/instalar.js` le explica al apoderado cómo agregarlo, con el paso a paso de su sistema. **Un manifiesto POR CURSO**: un papá con hijos en dos cursos tiene dos íconos y cada uno abre el suyo. **Sin service worker a propósito** — en iPhone no existe la instalación automática ni con él, así que hay que explicar el paso a paso igual. ⚠️ El banner tuvo que quedar **de una línea**: medido en 375×667, la versión de dos líneas dejaba el botón **JUGADOR cortado** (658 px de 667) con el aviso de la puerta encima, y eso ningún conteo lo delata. **Falta que Roberto lo pruebe en un Android y un iPhone**: Chrome headless no instala PWAs, y ese resultado decide si algún día hace falta el service worker | — | Roberto (probar) |
 
 **Las portadas de capítulo siguen prestadas a propósito.** Son ~46 imágenes más para una
 diferencia que casi nadie mira; el Jefe Final es donde el préstamo chirría.
@@ -350,6 +355,14 @@ tres cursos más son ~96 ediciones a mano.
 ## Bloque C · PWA v1.0
 
 Plan completo en `docs/roadmap-tecnico.md` §3. **Nada de esto está implementado.**
+
+> **Lo que YA está hecho y NO es parte de este bloque (31/08):** los tres cursos tienen
+> `manifest.webmanifest` propio, ícono de app y el módulo `assets/js/instalar.js`, que le explica
+> al apoderado cómo agregarlo a la pantalla del teléfono. **Sin service worker**, porque en
+> iPhone no existe la instalación automática ni con él. Lo que este bloque agrega encima es el
+> prompt automático de Android y el **offline parcial** — que es lo único que de verdad falta:
+> **instalarlo NO lo hace funcionar sin conexión**. Spec:
+> `docs/superpowers/specs/2026-08-31-instalacion-pantalla-inicio-design.md`.
 
 **Rama propia: `feature/pwa-v1`. No se trabaja sobre `main`.**
 
