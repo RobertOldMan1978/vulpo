@@ -1,0 +1,17 @@
+{
+  "name": "VULPO 8° Básico",
+  "short_name": "VULPO 8°",
+  "description": "Aprende jugando: Historia, Matemáticas, Ciencias y Lenguaje de 8° básico.",
+  "start_url": "/juego/",
+  "scope": "/juego/",
+  "display": "standalone",
+  "background_color": "#1e1747",
+  "theme_color": "#1e1747",
+  "orientation": "portrait",
+  "lang": "es-CL",
+  "dir": "ltr",
+  "icons": [
+    { "src": "/assets/icono-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/assets/icono-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
