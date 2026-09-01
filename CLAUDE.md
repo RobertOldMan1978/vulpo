@@ -802,6 +802,8 @@ Dos cosas que hay que saber al hacerlo, porque las dos asustan sin motivo:
   Es parte de la orden 66: escribir un resumen breve de la sesión (lo avanzado y lo
   pendiente) y subirlo al notebook con el CLI de `notebooklm-py`:
   `<venv>\Scripts\notebooklm.exe source add '<ruta-del-resumen>' --notebook '19408e05-1f37-48b6-b398-644519ac019e'`.
+  ⚠️ **Desde el 31/08 ese `.exe` NO corre en el PC de casa**: lo bloquea el Control de aplicaciones de Windows (*"Una directiva de Control de aplicaciones bloqueó este archivo"*), y desde Git Bash el síntoma engaña —dice `Permission denied`—. **La salida es invocar el MÓDULO en vez del ejecutable**, que hace exactamente lo mismo y no está bloqueado:
+  `<venv>\Scripts\python.exe -m notebooklm source add '<ruta>' --notebook '<id>'`.
   **La ruta del CLI depende del equipo** (el usuario de Windows cambia entre el PC de casa y
   el de la oficina): venvs conocidos `C:\Users\Rodrigo\.notebooklm-venv\...` y
   `C:\Users\rlorc\.notebooklm-venv\...`. Si no está instalado en ese PC:
@@ -6359,6 +6361,12 @@ sea que la respuesta no es un eco. Los transversales siguen mapeando (`VOC-HIST`
 del panel el avance histórico de 8° en Vocabulario y Ana Frank.
 
 **Agregar un curso al backend pasa a ser UNA fila.**
+
+#### Cierre (orden 66)
+
+Subido en **dos pushes**, y la regla se justificó sola: tras el primero, `motor.js` dio **404 durante ~60 segundos** antes de quedar servido por GitHub Pages. Con un solo push, ese minuto habría sido el juego muerto en los tres cursos. **Verificado en el sitio en vivo**, no solo en local: se juega una etapa real en `vulpo.cl/juego/`, `/7mo/` y `/3ro/`, con `__MOTOR_OK` en true, cero errores y cero 404.
+
+> **Y un error propio de la orden 66:** el primer commit se llevó 41 archivos y no 4, porque un `git add --renormalize .` anterior había dejado el índice cargado. Lo crítico quedó intacto —ningún `index.html` entró, así que el orden de publicación se respetó— pero el mensaje no describía lo que había dentro. En este proyecto **el log es parte del registro**, así que se corrigió antes de subir. La lección: `git add <rutas>` no alcanza si el índice ya traía cosas; hay que mirar `git status` **staged** antes de commitear.
 
 - **Pendiente inmediato:** el Bloque M está cerrado y el backend al día. El camino crítico es ahora
   **B1, el banco de 5° básico** (93 OA, ~2.790 preguntas), cuyo currículum ya quedó transcrito y
