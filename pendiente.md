@@ -31,11 +31,11 @@ Es una app web mobile-first y se reutiliza. Ver `docs/roadmap-tecnico.md` §1.
 
 | Curso | OA | Preguntas | Aprobadas | Voz | Arte propio |
 |---|---|---|---|---|---|
-| 3° | 86 | 2.558 (+161 apoyo) | ✅ **todas** | ✅ 11.391 clips | villanos ✅ · portadas 2/27 |
+| 3° | 86 | 2.558 (+161 apoyo) | ✅ **todas** | ✅ 11.391 clips | villanos ✅ · portadas 27/27 |
 | 4° | 92 | — | — | pendiente | — |
 | 5° | 93 | — | — | no lleva | — |
 | 6° | 99 | — | — | no lleva | — |
-| 7° | 81 | 2.430 (+120 apoyo) | ✅ **todas** | no lleva | villanos ✅ · portadas 1/23 |
+| 7° | 81 | 2.430 (+120 apoyo) | ✅ **todas** | no lleva | villanos ✅ · portadas 23/23 |
 | 8° | 69 | 2.314 (+222 apoyo) | ✅ todas | no lleva | ✅ portadas 20/20 |
 
 - **7.805 preguntas escritas · 7.805 aprobadas · 0 pendientes.** El currículum de 4°, 5°
@@ -166,9 +166,14 @@ decía que eran *"~46 imágenes para una diferencia que casi nadie mira"*, y **m
 resultó ser otra cosa**: un niño de 3° abre Lenguaje y ve **nueve tarjetas idénticas**, así que es
 un problema de **orientación**, no de decoración. El estándar quedó fijado en
 [`docs/estandar-arte-portadas.md`](docs/estandar-arte-portadas.md): **cada capítulo con su
-portada, un solo estilo para los seis cursos**, con la escena más simple en los chicos. Faltan
-**30 imágenes** (27 nuevas + 3 que rompen el estándar y conviene rehacer); otras **20 se
-reutilizan** del arte de 8°, porque los ejes de Matemática y Lenguaje se repiten entre cursos.
+portada, un solo estilo para los seis cursos**, con la escena más simple en los chicos.
+
+✅ **HECHO (01/09, Sesión 79): las 30 generadas, procesadas y cableadas.** Roberto generó las
+imágenes; el asistente escribió los prompts (`docs/prompts-arte-portadas.md`), las procesó y cableó
+`portadaMapa` en los 47 capítulos de 3° y 7° (27 nuevas a su archivo, 20 reutilizando arte de 8°, y
+las 3 de 8° rehechas). Verificado en el navegador: las 12 campañas cargan sus portadas, cero 404,
+cero consola; **3° y 7° ya no repiten imagen por capítulo**. `procesar-arte.py` ganó `--fondo=negro`
+y `--negromax=`. Solo faltan las de 4°, 5° y 6° cuando existan esos cursos.
 
 ---
 

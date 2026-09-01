@@ -19,6 +19,12 @@ Que hace con cada imagen:
 Uso:
     python scripts/procesar-arte.py <archivo>=<nombre-destino> [...]
     python scripts/procesar-arte.py --tam=384 --margen=0.08 foto.png=skin-vulpi-mago
+    python scripts/procesar-arte.py --fondo=negro d552b0aa=portada-hist3-cap1
+
+  --fondo=blanco (por defecto) para arte sobre fondo blanco opaco (los villanos, las
+  skins). --fondo=negro para arte que viene sobre fondo NEGRO (las portadas de capitulo
+  del 2026-09: una vineta circular dorada sobre negro). Se inunda desde las esquinas
+  igual, pero buscando oscuro en vez de claro.
 
   <archivo> puede ser una ruta o, si no existe, se busca en la carpeta de Descargas
   (asi se puede pasar el UUID que deja el generador de imagenes).
@@ -41,21 +47,32 @@ DESCARGAS = os.path.join(os.path.expanduser("~"), "Downloads")
 # una esquina. Los dos umbrales salieron de probar con arte real; bajarlos come
 # bordes claros del dibujo.
 BLANCO_MIN = 200
+NEGRO_MAX = 60     # un pixel es fondo negro si su gris esta por debajo de esto
 UMBRAL_FILL = 30
 
 TAM = 512
 MARGEN = 0.06
 
 
-def quitar_fondo(im):
+def quitar_fondo(im, fondo="blanco", negro_max=NEGRO_MAX):
     im = im.convert("RGB")
     gris = im.convert("L")
     marca = gris.copy()
+    g = np.asarray(gris)
+    # marca==1 se pinta con floodfill; para no confundirlo con un gris real de valor 1
+    # sobre fondo negro, se pinta con 255 (fuera del rango del fondo negro).
+    tinta = 255 if fondo == "negro" else 1
+    def es_fondo(v):
+        return v <= negro_max if fondo == "negro" else v >= BLANCO_MIN
     for esquina in [(0, 0), (im.width - 1, 0), (0, im.height - 1), (im.width - 1, im.height - 1)]:
-        if gris.getpixel(esquina) >= BLANCO_MIN:
-            ImageDraw.floodfill(marca, esquina, 1, thresh=UMBRAL_FILL)
-    fondo = (np.asarray(marca) == 1) & (np.asarray(gris) >= BLANCO_MIN)
-    alfa = Image.fromarray(np.where(fondo, 0, 255).astype(np.uint8), "L")
+        if es_fondo(gris.getpixel(esquina)):
+            ImageDraw.floodfill(marca, esquina, tinta, thresh=UMBRAL_FILL)
+    m = np.asarray(marca)
+    if fondo == "negro":
+        fondo_mask = (m == 255) & (g <= negro_max)
+    else:
+        fondo_mask = (m == 1) & (g >= BLANCO_MIN)
+    alfa = Image.fromarray(np.where(fondo_mask, 0, 255).astype(np.uint8), "L")
     # Un desenfoque minimo suaviza el borde: sin el, el recorte queda dentado.
     alfa = alfa.filter(ImageFilter.GaussianBlur(0.8))
     out = im.convert("RGBA")
@@ -86,12 +103,18 @@ def buscar(origen):
 
 
 def main():
-    tam, margen, pares = TAM, MARGEN, []
+    tam, margen, fondo, negro_max, pares = TAM, MARGEN, "blanco", NEGRO_MAX, []
     for a in sys.argv[1:]:
         if a.startswith("--tam="):
             tam = int(a.split("=", 1)[1])
         elif a.startswith("--margen="):
             margen = float(a.split("=", 1)[1])
+        elif a.startswith("--fondo="):
+            fondo = a.split("=", 1)[1]
+            if fondo not in ("blanco", "negro"):
+                sys.exit("--fondo debe ser 'blanco' o 'negro'")
+        elif a.startswith("--negromax="):
+            negro_max = int(a.split("=", 1)[1])   # sube el umbral si el fondo no es negro puro (violeta)
         elif "=" in a:
             pares.append(a.split("=", 1))
         else:
@@ -102,7 +125,7 @@ def main():
 
     os.makedirs(ASSETS, exist_ok=True)
     hechos = faltan = 0
-    print("Procesando %d imagen(es) a %d px, margen %.2f" % (len(pares), tam, margen))
+    print("Procesando %d imagen(es) a %d px, margen %.2f, fondo %s" % (len(pares), tam, margen, fondo))
     print("=" * 60)
     for origen, nombre in pares:
         src = buscar(origen)
@@ -111,7 +134,7 @@ def main():
             faltan += 1
             continue
         im = Image.open(src)
-        final = recortar_y_centrar(quitar_fondo(im), margen).resize((tam, tam), Image.LANCZOS)
+        final = recortar_y_centrar(quitar_fondo(im, fondo, negro_max), margen).resize((tam, tam), Image.LANCZOS)
         dst = os.path.join(ASSETS, nombre + ".png")
         final.save(dst, "PNG", optimize=True)
         hechos += 1

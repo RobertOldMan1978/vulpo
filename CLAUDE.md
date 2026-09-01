@@ -6850,3 +6850,41 @@ cuarto curso, no después.
 **Siguiente paso acordado:** escribir los 30 prompts, por asignatura, para generar por tandas y
 calibrar con la primera. Se empieza por **Historia de 3°** (5 imágenes): la que no tiene ninguna
 reutilización posible y la de menor riesgo editorial.
+
+### Sesión 79 (2026-09-01) — Las 30 portadas de capítulo: generadas, procesadas y cableadas
+Se ejecutó el estándar de la Sesión 78. Roberto generó las 30 imágenes con IA; el asistente escribió
+los prompts, las procesó y cableó cada capítulo. **3° y 7° pasan de portada genérica por asignatura a
+portada propia por capítulo**, igual que 8°.
+- **Prompts (`docs/prompts-arte-portadas.md`, nuevo):** las 30 en 8 tandas, con un **bloque de estilo
+  compartido** (para calibrar el look en un solo lugar) + la escena de cada capítulo. Cuidados del
+  estándar: **sin letras legibles** (Lenguaje va con gemas/piezas, no abecedario; solo se permiten
+  símbolos matemáticos y de puntuación) y **densidad por edad** (3° más simple y cálido; 7°/8° más
+  contraste).
+- **Mapeo por orden de descarga = orden del MD.** Las 30 vienen con nombre UUID; se ordenaron por
+  hora de modificación (30 PNGs del 01/09) y se asignaron a los 30 ids en orden. **Verificado
+  MIRANDO** el primer archivo de cada tanda + las 3 de 8° antes de procesar: una mala asignación
+  pone el arte equivocado en cada capítulo y no se nota sola.
+- **`scripts/procesar-arte.py` ganó `--fondo=negro` y `--negromax=N`.** El arte de las portadas viene
+  sobre **fondo negro** (una viñeta circular dorada), no blanco como los villanos y skins; el modo
+  negro inunda desde las esquinas buscando oscuro. Una imagen (`len3-cap7`) vino sobre **violeta**
+  (gris ~85), y se procesó con `--negromax=120`. Resultado: 30 PNG 512×512 RGBA, ~310–415 KB,
+  círculo sobre transparente (la convención de las buenas de 8°).
+- **Cableado de 47 capítulos** (`portadaMapa` en `3ro` y `7mo`), con un script **acotado al bloque de
+  cada capítulo** (entre su `id` y el siguiente) para no editar el capítulo equivocado — el riesgo
+  real, porque en 3° ningún capítulo tenía `portadaMapa` y un regex sin acotar habría saltado al
+  `portadaMapa` de `lect-cuentos-ada` 20 capítulos más abajo. En **7°** se reemplazó el valor (ya
+  apuntaban a la genérica); en **3°** se agregó el campo. **27 nuevas → su `portada-<id>.png`; 20
+  reutilizan** una portada de 8° según la tabla del estándar; las **3 rehechas de 8°** conservan su
+  nombre de archivo (solo se reemplazó la imagen), así 8° ya las usa sin cablear.
+- **Nota de fin de línea:** la línea base del proyecto **ya es LF** en los tres forks (incluido
+  `juego/`, que no se tocó), no CRLF. El script preservó LF y el diff es 47/47 (una línea por
+  capítulo, sin churn). La regla 4 de `pendiente.md` (preservar CRLF) quedó **desactualizada**: hoy
+  lo correcto es preservar LF; conviene corregirla.
+- **Verificado en el navegador** (`scripts/cdp.mjs`, las tres apps): las 4 campañas de cada curso
+  cargan **todas** sus portadas (`fallan:[]`), **cero 404 de portada y cero errores de consola**. La
+  captura de la campaña de Lenguaje de 3° muestra las tarjetas con arte **distinto** por capítulo
+  (antes eran 9 idénticas) — el problema de orientación que motivó el estándar quedó resuelto.
+- **Los originales NO se copiaron a `assets/originales/`** (ya pesa 175 MB y el sitio es sensible al
+  tamaño); quedan en Descargas de Roberto.
+- **Pendiente de arrastre:** la instalación en iPhone (Android quedó bien); y las portadas de 4°, 5°
+  y 6° para cuando existan esos cursos (el estándar ya habilita ~20 reutilizaciones más).
