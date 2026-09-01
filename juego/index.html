@@ -662,6 +662,11 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
       <p id="rolSub">Aprende jugando · 8° Básico</p>
     </div>
     <div id="bannerDesafio" class="banner-desafio" hidden></div>
+    <!-- Avisos de duelo (te desafiaron / como termino el tuyo). Va APARTE del banner
+         del profe: si hay refuerzo y ademas te desafiaron, uno pisaria al otro.
+         Reusa su misma clase CSS, asi que no agrega ni una regla. Lo llena
+         revisarDuelos() de assets/js/motor.js. -->
+    <div id="bannerDuelo" class="banner-desafio" hidden></div>
     <div id="avisoPuerta" class="card" hidden
          style="border:2px solid var(--gold);background:#2a1f00">
       <p id="avisoPuertaTxt" style="font-weight:900;font-size:13px;margin:0 0 6px"></p>
@@ -1158,6 +1163,13 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
     <div class="card">
       <h3>📥 Desafíos para ti</h3>
       <div id="pendList"><p style="color:var(--dim);font-weight:800;font-size:13px">Cargando…</p></div>
+    </div>
+    <!-- Ranking de duelos del curso. Lo llena cargarRankingDuelos() de assets/js/motor.js;
+         el servidor deja fuera a los bots y lo acota al curso. Reusa las clases .rk del
+         ranking por XP, asi que no pide CSS propio. -->
+    <div class="card">
+      <h3>🏆 Ranking de duelos</h3>
+      <div id="rkDuelos"><p style="color:var(--dim);font-weight:800;font-size:13px">Cargando…</p></div>
     </div>
     <button class="btn sec" id="btnDueloLocal">🤝 Duelo en este teléfono</button>
     <button class="btn sec" id="btnDOBack">← Volver</button>
@@ -2678,6 +2690,7 @@ async function startDuelo(){
   if(!INSCRIBIR) await sincronizarModoCurso(true);
   guardar(); refreshHud(); pintarInicio();
   revisarDesafio();   // muestra el banner del desafío del profe, si hay
+  revisarDuelos();    // y el de los duelos: te desafiaron, o el tuyo ya terminó
   revisarDificil();   // sincroniza la marca 🔥 y otorga premios de Difícil ya logrados
  }, 1200);
  if(S.nombre)$('inpName').value=S.nombre;
@@ -2741,7 +2754,7 @@ $('btnCanjeOk').onclick=async ()=>{
   // Canjear el ALU- de un curso experimental tiene que traer también su modo: es lo
   // que hace que sobreviva a borrar los datos del navegador.
   const cambioModo=await sincronizarModoCurso(false);
-  guardar(); refreshHud(); revisarDesafio();
+  guardar(); refreshHud(); revisarDesafio(); revisarDuelos();
   _rankUlt=0;                                  // el ranking debe volver a consultarse ya, sin esperar los 30 s
   $('canjeMsg').style.color='var(--green)';
   $('canjeMsg').textContent='¡Listo, '+p.nombre+'! Ya estás en '+(S.curso?S.curso.nombre:'tu curso')+'.';
@@ -2903,6 +2916,7 @@ async function abrirDueloOnline(){
  const perfil=await conectarKimun();
  $('miCodigo').textContent=perfil?perfil.codigo:'(sin conexión)';
  cargarPendientes();
+ cargarRankingDuelos();   // 🏆 quién ha ganado más duelos del curso
 }
 async function cargarPendientes(){
  const cont=$('pendList');

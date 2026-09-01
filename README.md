@@ -38,7 +38,7 @@ de año completo (todos sus OA del currículum).
 Además hay un **📚 Vocabulario** (dentro de Lenguaje): ~150 palabras de todo el curso en un
 quiz de opción múltiple, y una **📖 Lectura** del colegio (biblioteca; primer libro *El diario
 de Ana Frank*) con un camino de preguntas de comprensión por tramos.
-También hay **Duelo 1v1** en el mismo teléfono y en línea (Supabase), una **tienda de
+También hay **Duelo 1v1** en el mismo teléfono y en línea (Supabase) —con aviso en el inicio cuando te desafían o termina tu duelo, y un **ranking de duelos del curso**—, una **tienda de
 skins** (incluidas skins deportivas ilustradas) y una **intro de bienvenida** en video que
 se ve una vez. Todo en un solo archivo `index.html`, pensado para el celular.
 

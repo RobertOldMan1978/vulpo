@@ -116,6 +116,10 @@ backend Supabase para el duelo en línea. Historia de v0 al detalle en la Bitác
   código de amigo, lista de jugadores, bots de práctica y reto de 24h. **Está en los tres
   cursos** (3° desde la Sesión 74), y cada uno saca sus preguntas de **su propia Historia**:
   el banco y los segundos por pregunta van como dato (`DUELO_BANCO`, `DUELO_SEG`).
+  Desde la Sesión 76 su ciclo **cierra**: la pantalla de inicio avisa **⚔️ que te desafiaron**
+  y **🏆 cómo terminó el duelo que iniciaste** —antes el retador no se enteraba nunca—, y la
+  pantalla del duelo trae el **🏆 ranking de duelos del curso**, por duelos ganados, **sin
+  contar los bots** (a Diego se le gana cincuenta veces en una tarde).
 
 **Contenido (bancos de año completo, TODOS revisados):** Historia **663/663** ·
 Matemáticas **603/603 (17 OA)** · Ciencias **534/534 (15 OA)** · Lenguaje
@@ -1441,6 +1445,15 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
   necesita nada especial, pero si alguna función vuelve a usar pgcrypto (`crypt`,
   `gen_salt`) necesita `set search_path = public, extensions`, porque en Supabase esa
   extensión no vive en `public`.
+- **Duelo: avisos y ranking (Sesión 76):** columna `duelos.visto_retador` (sembrada con un
+  `if not exists` sobre la **columna**, que corre una sola vez: los duelos viejos nacen vistos
+  y el default queda en `false`); `kimun_duelos_avisos()` y `kimun_duelo_visto(uuid)` para el
+  banner del inicio; `kimun_ranking_duelos()` para el ranking del curso. Y
+  **`kimun_duelo_ganador(int,int,int,int)`**: la regla de desempate del duelo —más aciertos;
+  si empatan, menos tiempo— estaba **escrita a mano en tres lugares** y ahora vive una sola
+  vez. ⚠️ Va declarada **antes** de sus usos: una función `language sql` se valida al crearse.
+  ⚠️ El duelo contra **bot** nace con `visto_retador=true`, porque se resuelve al instante y el
+  jugador ya vio su marcador en pantalla; sin eso el banner se lo repetía.
 - **Pendiente:** notificaciones push.
 
 ## Trámites pendientes (fuera del código)
@@ -6371,3 +6384,152 @@ Subido en **dos pushes**, y la regla se justificó sola: tras el primero, `motor
 - **Pendiente inmediato:** el Bloque M está cerrado y el backend al día. El camino crítico es ahora
   **B1, el banco de 5° básico** (93 OA, ~2.790 preguntas), cuyo currículum ya quedó transcrito y
   validado en la Sesión 71: se entra directo al fork y al banco.
+
+### Sesión 76 (2026-08-31) — El duelo cierra su ciclo, y estrena ranking del curso
+Roberto reportó: *"Hice un duelo, no salió aviso que me habían desafiado y al terminar
+tampoco mandó el resultado."* Al medirlo, lo que faltaba no era un aviso. **No se escribió
+contenido**: ni un banco, ni una pregunta, ni un clip de voz.
+
+#### El diagnóstico, que era más grande que el reporte
+
+| Pieza | Estado real |
+|---|---|
+| `kimun_pendientes` — *¿me desafiaron?* | ✅ Funcionaba, pero **solo se consultaba al entrar a la pantalla del Duelo**. Si no entrabas ahí, no te enterabas |
+| `kimun_historial` — *¿cómo terminó?* | ✅ Existe **desde la Sesión 6** · ❌ **ningún cliente la había llamado nunca** |
+
+O sea: **el duelo asíncrono estaba construido a medias**. El retado ve su resultado en
+pantalla al terminar de responder —se lo devuelve `kimun_responder`— pero **el retador no se
+enteraba jamás**. Desafiabas a alguien, contestaba al otro día, y para ti el duelo quedaba en
+silencio para siempre. Es el único modo social del juego y su ciclo no cerraba.
+
+#### Lo construido
+
+Un banner propio en `scr-rol` (`#bannerDuelo`), **copiando el patrón de `revisarDesafio()`**
+—el del refuerzo del profe—: `hidden` por defecto, best-effort y falla en silencio. Va en
+**elemento aparte** porque si el profe lanzó un refuerzo y además te desafiaron, uno pisaría
+al otro; reusa su misma clase CSS, así que no agrega ni una regla.
+
+- ⚔️ **Te desafiaron** → toca y entra al duelo. **Cero backend nuevo**: `kimun_pendientes` ya
+  devuelve solo los vivos y el aviso se apaga solo al jugarlo o a las 24 h.
+- 🏆 / 💪 / 🤝 **el resultado del que iniciaste** · ⌛ **el que venció** sin respuesta.
+
+**Los resultados van primero y de a uno**, cerrables; el desafío después, porque queda vivo
+hasta jugarlo y no se pierde si hoy queda tapado. Dos guardas: **no aparece con la puerta
+cerrada** —ahí `btnDuelo` cae al duelo local, o sea que el en línea es inalcanzable y
+anunciarlo sería ofrecer algo que no se puede tocar— ni sin perfil.
+
+`revisarDuelos()` y `pintarAvisoDuelo()` viven en **`assets/js/motor.js`**: no tienen ni un
+dato propio del curso, así que se escriben una vez y los tres cursos las heredan. Es para
+esto que sirvió la Sesión 75.
+
+#### La única decisión que no era obvia
+
+El aviso de *"te desafiaron"* es gratis. El del **resultado** no, porque la base **no tenía
+noción de "esto ya lo vi"** y el aviso se quedaría pegado para siempre. Roberto eligió
+guardarlo **en el servidor** (`duelos.visto_retador`) y no en `localStorage`: así sobrevive a
+borrar los datos del navegador y no se repite en el tablet. Misma decisión, y por el mismo
+motivo, que el modo experimental de la Sesión 73.
+
+> **La columna se siembra con un truco que hay que conservar:** el `if not exists` va sobre la
+> **columna**, así que corre **una sola vez por construcción** — los duelos que ya existían
+> nacen `true` (nadie abre el juego y se encuentra el resultado de hace tres semanas) y el
+> default queda en `false`. Un `add column if not exists … default false` más un
+> `update set visto=true` **no sirve**: ese update no es idempotente y al re-aplicar el
+> esquema —que aquí es rutina— borraría avisos legítimos.
+
+#### ⚠️ El defecto que solo apareció al PROBAR: el duelo contra bot se duplicaba
+
+El duelo contra un bot **se resuelve dentro del propio `kimun_crear_duelo`** (queda
+`completado` al instante) y `odFin` le pinta el marcador al jugador ahí mismo. Pero nacía sin
+ver, así que el banner del inicio **se lo repetía como si fuera noticia nueva**. Comprobado
+contra el esquema en vivo antes de arreglarlo:
+
+    duelo contra Diego  -> {"tipo":"bot","ganador":"yo"}   (el jugador YA lo vio en pantalla)
+    banner al volver    -> 🏆 ¡Ganaste tu duelo! · Contra Diego · 6 a 0    ← repetido
+
+Corregido: la rama del bot escribe `visto_retador=true` en su propio `update`. Los duelos
+contra una **persona** siguen naciendo sin ver, que es justo para lo que existe la columna.
+
+> **No se habría encontrado leyendo:** el `estado='completado'` del bot y el banner del inicio
+> están a 2.500 líneas de distancia y en archivos distintos. Salió de **jugar el caso**.
+
+#### El ranking de duelos del curso (segundo pedido del mismo día)
+
+*"¿Se puede crear un ranking dentro del curso con los alumnos que más duelos han ganado?"*
+Sí, y **no hubo que guardar nada nuevo**: `duelos` ya tiene los dos jugadores, sus aciertos y
+sus tiempos. Es una función de lectura y una tarjeta en la misma pantalla del duelo.
+
+| | |
+|---|---|
+| **Orden** | Por **duelos ganados** (elegido sobre porcentaje y sobre puntos tipo fútbol). Lo más legible en 3°, y premia jugar |
+| **Bots** | **NO cuentan.** A Diego se le gana cincuenta veces en una tarde: contarlos convertiría el ranking en un contador de paciencia |
+| **Alcance** | **El curso**, como `kimun_jugadores` desde la Sesión 39 y como el ranking por XP |
+
+Solo aparece quien haya jugado al menos un duelo terminado: **un cero y un "todavía no juega"
+son dos cosas distintas**, y mezclarlas haría ver a medio curso como si perdiera siempre. Y
+un jugador **sin curso** recibe *"pide tu código"*, no *"todavía nadie ha jugado"*, que sería
+falso. Reusa las clases `.rk`, `.rk.top` y `.rk.me` del ranking por XP: **cero CSS nuevo**.
+
+#### La regla de desempate dejó de estar escrita cuatro veces
+
+*Más aciertos; si empatan, menos tiempo; si todo empata, empate.* Estaba **copiada a mano en
+tres lugares** —la rama del bot, `kimun_responder` y los avisos nuevos— y el ranking habría
+sido la cuarta. Es el patrón de lista paralela que ya causó un bug real (Sesión 37).
+
+Ahora vive una sola vez en **`kimun_duelo_ganador(ac_a,t_a,ac_b,t_b)`** y las cuatro la
+llaman. Va declarada **antes** de sus usos: una función `language sql` se valida al crearse,
+así que `kimun_duelos_avisos` no podría nombrarla si todavía no existiera.
+
+#### Otro defecto vivo, encontrado de paso
+
+`odResponder` acumulaba el tiempo con **`OD.tiempo += (15 - OD.t)`**, con el 15 escrito a
+mano — y el reloj arranca en `DUELO_SEG`, que en **3° vale 30**. Cada respuesta sumaba
+**tiempo negativo**: contestar al toque daba −15. Es hermano de los `t:15` que la Sesión 74
+migró; este se salvó porque no está en la declaración del estado sino en la aritmética. **No
+cambiaba quién ganaba** —los dos jugadores del mismo curso llevan el mismo desfase— pero
+dejaba sin sentido justo el número que desempata. Corregido a `DUELO_SEG - OD.t`.
+
+#### Verificación
+
+**El ciclo completo contra el Supabase de PRODUCCIÓN**, con dos identidades anónimas reales:
+
+    A = KIM-4AAC · B = KIM-277E
+    B desafía a A          -> {"tipo":"async"}
+    -- vuelve A · banner   -> ⚔️ Te desafiaron · Jugador te está esperando
+       A responde y gana   -> ganador: "yo"  (7 a 5)
+    -- vuelve B · banner   -> 💪 Te ganaron esta vez · Contra Jugador · 5 a 7
+       B cierra            -> tras recargar, oculto
+
+**La línea de B es la que importa:** ese aviso es exactamente el que antes no llegaba nunca.
+Además, contra producción: la **tabla de verdad completa** de `kimun_duelo_ganador` (6 de 6),
+el arreglo del bot (banner **oculto** donde antes repetía) y `kimun_ranking_duelos`
+respondiendo sin error.
+
+Con `cdp.mjs` en los tres cursos: sin el esquema aplicado el banner queda oculto **y el inicio
+intacto**; un nombre con `<img src=x onerror=…>` sale como texto —este proyecto ya tuvo un XSS
+almacenado por esa vía exacta (Sesión 51)—; "¡Entendido!" marca vistos **solo los resultados**;
+el ranking muestra 4 filas con podio y fila propia; etapa real jugada en los tres, guardado de
+8° intacto, **cero errores de consola y cero 404**.
+
+> **Lo único que NO se verificó contra producción es el ranking con datos reales de un curso**,
+> porque haría falta meter dos alumnos de prueba en el 3° real de Roberto. Queda con datos
+> simulados; el camino hasta el servidor sí está probado en vivo.
+
+#### Dos trampas del método, las dos nuevas
+
+1. **Los Chrome headless colgados se bloquean en cascada.** `cdp.mjs` usa el puerto 9333 fijo;
+   una corrida que expira deja Chrome reteniéndolo y **la siguiente se cuelga sin decir nada**,
+   así que el síntoma parece del código bajo prueba. Se limpia filtrando por
+   `remote-debugging-port=9333` **y sus procesos hijos** — nunca por `Name='chrome.exe'` a
+   secas, que cerraría el navegador de Roberto.
+2. **`| tail -N` esconde la salida parcial de una corrida colgada**, porque `tail` no emite
+   nada hasta que se cierra la entrada. Durante tres intentos pareció que el script moría en
+   la primera línea, y en realidad llegaba hasta el final: el cuelgue estaba **después** de
+   todo lo que interesaba. Al depurar algo que se cuelga, **sin `tail`**.
+
+#### Orden de despliegue
+
+Dos pushes, como en la Sesión 75: **`motor.js` primero**. Los forks llaman a `revisarDuelos()`
+y a `cargarRankingDuelos()` en su arranque; con el `motor.js` viejo todavía en caché eso sería
+un `ReferenceError` que **mata el resto del script de arranque**. El esquema, en cambio, ya
+estaba aplicado y verificado por Roberto antes de subir.
