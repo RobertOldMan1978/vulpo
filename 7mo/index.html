@@ -52,7 +52,7 @@
 <script>if(!window.LECC)window.LECC={activo:false,init:function(){return false;},
   abrirLeccion:function(){},abrirUnidad:function(){},abrirMiniClaseDeOA:function(){},
   volverAlCapitulo:function(){},finPractica:function(){},cargarPool:function(){return Promise.resolve();},
-  renderCampana:function(){return false;}};</script>
+  renderCampana:function(){return false;},nodoIntro:function(){return false;}};</script>
 <script src="assets/js/instalar.js"></script>
 <script>if(!window.INST)window.INST={activo:false,init:function(){},abrir:function(){}};</script>   <!-- respaldo: un 404 de visuales.js no puede matar el juego -->
 <!-- El motor del juego, compartido por los tres cursos. ⚠️ Va ANTES del <script> inline
@@ -1354,7 +1354,7 @@ const EXPEDICIONES=[
      {oa:"BOSS",nombre:"⚡ JEFE: Datos y azar",icono:"🎲",n:15,oas:["MA07 OA 15","MA07 OA 16","MA07 OA 17","MA07 OA 18","MA07 OA 19"]},
    ]},
  // --- Campaña Ciencias (7°) ---
- { id:'cie7-cap1', asignatura:'Ciencias', nivel:'7° Básico · La materia y sus cambios',
+ { id:'cie7-cap1', intro:'ci7-materia', asignatura:'Ciencias', nivel:'7° Básico · La materia y sus cambios',
    portada:'assets/portada-ciencias.png', portadaMapa:'assets/portada-cien-materia.png',
    contenido:'contenido/ciencias-7basico/preguntas.json', activa:true, campaña:'cie7',
    etapas:[
@@ -1363,7 +1363,7 @@ const EXPEDICIONES=[
      {oa:"CN07 OA 15",nombre:"Cambios fisicos y quimicos",icono:"🔥",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: La materia y sus cambios",icono:"🪨",n:15,oas:["CN07 OA 13","CN07 OA 14","CN07 OA 15"]},
    ]},
- { id:'cie7-cap2', asignatura:'Ciencias', nivel:'7° Básico · Fuerzas y presion',
+ { id:'cie7-cap2', intro:'ci7-fuerzas', asignatura:'Ciencias', nivel:'7° Básico · Fuerzas y presion',
    portada:'assets/portada-ciencias.png', portadaMapa:'assets/portada-cie7-cap2.png',
    contenido:'contenido/ciencias-7basico/preguntas.json', activa:true, campaña:'cie7',
    etapas:[
@@ -1371,7 +1371,7 @@ const EXPEDICIONES=[
      {oa:"CN07 OA 08",nombre:"La presion",icono:"🔩",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Fuerzas y presion",icono:"🪨",n:15,oas:["CN07 OA 07","CN07 OA 08"]},
    ]},
- { id:'cie7-cap3', asignatura:'Ciencias', nivel:'7° Básico · La Tierra que se mueve',
+ { id:'cie7-cap3', intro:'ci7-tierra', asignatura:'Ciencias', nivel:'7° Básico · La Tierra que se mueve',
    portada:'assets/portada-ciencias.png', portadaMapa:'assets/portada-cie7-cap3.png',
    contenido:'contenido/ciencias-7basico/preguntas.json', activa:true, campaña:'cie7',
    etapas:[
@@ -1381,7 +1381,7 @@ const EXPEDICIONES=[
      {oa:"CN07 OA 12",nombre:"El clima",icono:"🌦️",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: La Tierra que se mueve",icono:"🪨",n:15,oas:["CN07 OA 09","CN07 OA 10","CN07 OA 11","CN07 OA 12"]},
    ]},
- { id:'cie7-cap4', asignatura:'Ciencias', nivel:'7° Básico · Microorganismos y defensas',
+ { id:'cie7-cap4', intro:'ci7-microbios', asignatura:'Ciencias', nivel:'7° Básico · Microorganismos y defensas',
    portada:'assets/portada-ciencias.png', portadaMapa:'assets/portada-cien-celula.png',
    contenido:'contenido/ciencias-7basico/preguntas.json', activa:true, campaña:'cie7',
    etapas:[
@@ -1390,7 +1390,7 @@ const EXPEDICIONES=[
      {oa:"CN07 OA 04",nombre:"Las defensas del cuerpo",icono:"🛡️",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Microorganismos y defensas",icono:"🪨",n:15,oas:["CN07 OA 05","CN07 OA 06","CN07 OA 04"]},
    ]},
- { id:'cie7-cap5', asignatura:'Ciencias', nivel:'7° Básico · Sexualidad y autocuidado',
+ { id:'cie7-cap5', intro:'ci7-sexualidad', asignatura:'Ciencias', nivel:'7° Básico · Sexualidad y autocuidado',
    portada:'assets/portada-ciencias.png', portadaMapa:'assets/portada-cien-cuerpo.png',
    contenido:'contenido/ciencias-7basico/preguntas.json', activa:true, campaña:'cie7',
    etapas:[
@@ -1647,11 +1647,27 @@ const CAMPAÑAS=[
     dialogo:'Desgasto la roca, la costa y la memoria... ¿crees que tu ciencia me puede explicar?',
     derrota:'Sigo desgastando todo, sin apuro. Estudia el ciclo y vuelve.',
     vidasJugador:3, nPorFase:4,
+    /* ⚠️ EL JEFE FINAL NO PREGUNTA CONTENIDO SEXUAL, y esto NO se revierte.
+       Los CN07 OA 01, 02 y 03 -pubertad, ciclo menstrual, anticoncepcion e ITS- son
+       curriculum obligatorio y viven en su capitulo, "Sexualidad y autocuidado". Pero el
+       Jefe Final se abre al 100% de la campana y MEZCLA objetivos de toda la asignatura,
+       asi que tenia una fase entera de ese contenido: un colegio que decidiera no incluir
+       ese capitulo se lo encontraba igual aqui, y ahi ya no hay forma de evitarlo.
+       Sacarlos deja el contenido sensible VIVIENDO EN UN SOLO LUGAR -su capitulo-, que es
+       lo que hace que excluirlo sea posible de verdad.
+       El jefe conserva sus 4 fases y sus 16 preguntas: los 12 OA restantes se reparten por
+       unidad, que ademas agrupa mejor que antes (la fase 1 juntaba materia con presion solo
+       para hacerle sitio a la de sexualidad).
+       ⚠️ El jefe DEL CAPITULO (mas arriba, oas: CN07 OA 01/02/03) se queda: es el cierre de
+       ese capitulo, y quien no lo incluye nunca llega a el. Vaciarlo lo dejaria roto para el
+       colegio que si lo incluye.
+       Regla del proyecto, en docs/contenido-sensible.md: lo marcado ❤️ Sexualidad no entra
+       en ningun Jefe Final. Al construir 6 basico vale igual para sus CN06 OA 04, 05 y 06. */
     fases:[
-      {nombre:'La materia y sus cambios y fuerzas y presion', oas:['CN07 OA 13','CN07 OA 14','CN07 OA 15','CN07 OA 07','CN07 OA 08']},
+      {nombre:'La materia y sus cambios', oas:['CN07 OA 13','CN07 OA 14','CN07 OA 15']},
+      {nombre:'Fuerzas y presion', oas:['CN07 OA 07','CN07 OA 08']},
       {nombre:'La Tierra que se mueve', oas:['CN07 OA 09','CN07 OA 10','CN07 OA 11','CN07 OA 12']},
-      {nombre:'Microorganismos y defensas', oas:['CN07 OA 05','CN07 OA 06','CN07 OA 04']},
-      {nombre:'Sexualidad y autocuidado', oas:['CN07 OA 01','CN07 OA 02','CN07 OA 03']},
+      {nombre:'Microorganismos y defensas', oas:['CN07 OA 04','CN07 OA 05','CN07 OA 06']},
     ],
   },
   recompensa:{ skin:'kimun-cientifico', insignia:'maestro-ciencias', bonoMonedas:500, bonoXP:300 },
@@ -2418,7 +2434,8 @@ const HAY_MINICLASES=true;
    un `const` leido antes de declararse mata todo el JavaScript (zona muerta temporal), y
    esa trampa ya mordio cuatro veces en este proyecto. `montar()` necesita ademas el <body>,
    que aqui ya existe: este script inline corre despues del HTML. */
-LECC.init({ ruta:'contenido/matematicas-7basico/lecciones.json', hayReto:HAY_RETO_CALCULO });
+LECC.init({ rutas:['contenido/matematicas-7basico/lecciones.json',
+                    'contenido/ciencias-7basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
 /* ¿Este nivel tiene el módulo de Vocabulario, y la biblioteca de lecturas del colegio?
    Son contenido de 8°. Antes se resolvían BORRANDO líneas del fork, y ese corte dejó
    la asignatura Lenguaje inalcanzable en 3° (Sesión 61). Como banderas, las tres apps

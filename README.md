@@ -36,6 +36,15 @@ Autómata"). Cada unidad **intercala clase y expedición** —primero se aprende
 un desafío con el banco de año completo— y la campaña culmina en su **Jefe Final "La Incógnita"**,
 con las mismas recompensas que las demás asignaturas. Cada asignatura tiene un banco de preguntas
 de año completo (todos sus OA del currículum).
+
+**Ciencias abre cada capítulo con una introducción**, en los tres cursos: dos o tres pantallas que
+encuadran de qué se trata, con el dibujo del modelo —la célula, un circuito abierto y cerrado, las
+partículas del sólido y del gas— y **sin preguntas**, porque no evalúan nada. Son 13 en total.
+
+> **Y una regla de contenido que conviene conocer:** los objetivos de índole sexual —currículum
+> obligatorio de 7° básico— se juegan **solo en su propio capítulo** y **no entran en ningún Jefe
+> Final**, que es el que mezcla objetivos de toda la asignatura. Así un colegio que decida no
+> incluir ese capítulo no se lo encuentra en otra parte.
 Además hay un **📚 Vocabulario** (dentro de Lenguaje): ~150 palabras de todo el curso en un
 quiz de opción múltiple, y una **📖 Lectura** del colegio (biblioteca; primer libro *El diario
 de Ana Frank*) con un camino de preguntas de comprensión por tramos.
@@ -120,7 +129,7 @@ profesor) va **auto-hospedado** en `assets/vendor/`, con la versión fija, para 
 depender de un script de terceros que puede cambiar.
 Contenido de cada expedición en `contenido/<asignatura>/` (JSON). Mobile-first.
 
-Cada curso se sirve de su propia carpeta (`juego/`, `7mo/`, `3ro/`), pero **el motor del juego se escribe una sola vez** y vive en `assets/js/`: `motor.js` (quiz, campañas, jefes, duelo, tienda, guardado), más los módulos de apoyo `lecciones.js` (el motor de mini-clases y sus 22 diagramas interactivos), `visuales.js` (los dibujos por código), `voz.js` (la lectura en voz alta), `fracciones.js` (las fracciones apiladas), `instalar.js`, `calculo.js`, `revision.js`, `sensible.js` y `niveles.js`. Lo que cambia de un curso a otro son **datos y banderas**, no código.
+Cada curso se sirve de su propia carpeta (`juego/`, `7mo/`, `3ro/`), pero **el motor del juego se escribe una sola vez** y vive en `assets/js/`: `motor.js` (quiz, campañas, jefes, duelo, tienda, guardado), más los módulos de apoyo `lecciones.js` (el motor de mini-clases e introducciones, con sus 25 diagramas interactivos), `visuales.js` (los dibujos por código), `voz.js` (la lectura en voz alta), `fracciones.js` (las fracciones apiladas), `instalar.js`, `calculo.js`, `revision.js`, `sensible.js` y `niveles.js`. Lo que cambia de un curso a otro son **datos y banderas**, no código.
 
 ---
 

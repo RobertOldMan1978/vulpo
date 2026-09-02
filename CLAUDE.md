@@ -56,6 +56,7 @@ backend Supabase para el duelo en línea. Historia de v0 al detalle en la Bitác
   - **Historia:** 5 capítulos (22 OA) + Desafío Extra; villano "El Guardián del Tiempo";
     skin "Vulpi Historiador".
   - **Ciencias:** 4 capítulos (15 OA = las 4 unidades); villano "La Entropía";
+    **cada capítulo abre con una introducción** (nodo 📘 al principio de su mapa, sin práctica);
     skin "Vulpi Científico".
   - **Lenguaje:** 4 capítulos (15 OA; la U1 "Lectura literaria" partida en 2 —Leer y
     comprender / Mundos literarios— + Textos y medios + Escritura); villano "El Borrón";
@@ -266,7 +267,7 @@ supuesto cuando pide "no modificar `contenido/` ni `supabase/`".
    que solo carga el panel), **`instalar.js`** (el ofrecimiento de agregar el juego a la
    pantalla del teléfono) y **`motor.js`** (el juego entero: quiz, campañas, jefes, duelo,
    tienda, guardado); desde el 02/09, **`fracciones.js`** (las fracciones apiladas) y
-   **`lecciones.js`** (el motor de mini-clases y sus 22 diagramas interactivos). **Siempre con su respaldo vacío antes de usarse**, porque un 404 de
+   **`lecciones.js`** (el motor de mini-clases e introducciones, con sus 25 diagramas interactivos). **Siempre con su respaldo vacío antes de usarse**, porque un 404 de
    un `<script src>` mata todo el JavaScript y el síntoma engaña: la pantalla se ve bien y ningún
    botón responde. Cada uno se prueba **con el archivo ausente**, no solo presente.
    - ⚠️ **`motor.js` es la excepción: NO admite respaldo vacío, porque es el juego.** Lo que sí
@@ -602,6 +603,15 @@ producción; el costo del fork está medido y es re-aplicar cada corrección en 
   sexualidad, ciclo menstrual, métodos de control de la natalidad e ITS. Es currículum
   oficial, el banco está escrito de forma factual y sin promover ninguna postura, pero
   **hay que avisarle al colegio antes de publicarlo** — el colegio piloto es salesiano.
+  ⚠️ **Desde el 02/09 ese contenido NO entra en ningún Jefe Final**, y no es configurable: el
+  Jefe Final se abre al 100% de la campaña y **mezcla objetivos de toda la asignatura**, así que
+  tenía una fase entera de esos tres OA y un colegio que no incluyera el capítulo **se los
+  encontraba igual ahí**. Sacarlos deja el contenido sensible **viviendo en un solo lugar —su
+  capítulo—**, que es lo que hace que excluirlo sea posible de verdad. El jefe conserva sus 4
+  fases y sus 16 preguntas. El **jefe del capítulo se queda**: quien no lo incluye nunca llega a
+  él. Regla, alcance y chequeo en
+  [`docs/contenido-sensible.md`](docs/contenido-sensible.md); vale igual para los
+  `CN06 OA 04/05/06` cuando se construya 6°.
 - **`LE07 OA 12` está FUERA del banco**: escritura creativa de tema, género y destinatario
   libres, cuyo indicador oficial es "escriben al menos una vez a la semana". Mismo criterio
   que el `LE03 OA 16` de 3°.
@@ -7455,3 +7465,135 @@ revisaron una por una y **casi todas eran el vocabulario que la lección existe 
   llegan, y hay que conducir por la interfaz —que además es la prueba que vale.
 - **Un ancla con 4 espacios de sangría donde escribí 2**: el script **abortó antes de escribir**,
   que es exactamente para lo que llevan la aserción.
+
+### Sesión 84 (2026-09-02) — El contenido sexual sale de los jefes, y Ciencias estrena introducciones
+Continuación directa de la 83, con dos encargos de Roberto. **Ningún banco de preguntas se tocó.**
+
+#### El estándar de qué lleva cada asignatura (decisión de Roberto)
+
+Al revisar qué faltaba, Roberto preguntó por Historia y Lenguaje. **Estaban descartadas en el
+diseño de la Sesión 82, y al volver a medirlo uno de los dos motivos no se sostuvo:**
+
+> Se había escrito que Ciencias era la única candidata porque *"0 de sus 1.374 preguntas llevan
+> dibujo"*. Medido: es **igual de cierto de Historia de 7° y 8° (1.353 preguntas) y de todo
+> Lenguaje (2.130)** — 0% de 3.483 en total. **Ese criterio no distinguía a nadie.** Y la otra
+> mitad —*"Historia ya tiene sus dibujos propios"*— vale **solo en 3°**, donde son 33 de 480 (7%).
+
+La regla que fijó Roberto, ya escrita en
+[`docs/estandar-miniclases.md`](docs/estandar-miniclases.md):
+
+| Asignatura | Qué lleva | Granularidad |
+|---|---|---|
+| **Matemática** | **Mini-clase SIEMPRE**, sin excepción | una por **OA** |
+| **Ciencias** e **Historia** | Mini-clase **o** introducción, **si amerita** | mini-clase por OA · introducción por **capítulo** |
+| **Lenguaje** | **Solo introducción**, y solo si amerita. **Nunca mini-clase** | por **capítulo** |
+
+**Y hay una asimetría que explica la regla entera, no solo la registra: una mini-clase AGREGA una
+medición al mapa de dominio del profesor; una introducción NO.** La introducción no tiene
+práctica, así que no llama a `registrarOA` y no puede ensuciar ningún porcentaje. Por eso Lenguaje
+—donde 17 de 31 OA en 3° y 10 de 25 en 7° son de producción o de hábito— **nunca** lleva
+mini-clase: su práctica mediría si el alumno reconoce una definición y **le mandaría al profesor
+un número engañoso sobre "escritura"**.
+
+**Qué NO decide "si amerita", medido:** la profundidad del banco (los **235 OA con banco tienen 26
+preguntas o más**, el mínimo es `LE03`) ni "la asignatura no tiene dibujos". Decide si el OA enseña
+**un procedimiento que el alumno ejecuta** (→ mini-clase) o si el capítulo **abre un modelo** que
+el alumno no tiene (→ introducción). Y **la granularidad se decide antes de escribir**: por OA el
+techo son **104 mini-clases** en Ciencias e Historia, por capítulo **29 introducciones**, y entre
+las dos lecturas hay meses.
+
+#### El contenido sexual fuera de los Jefes Finales — cierra la tarea A4
+
+Roberto la resolvió con una decisión **más simple que la feature que se creía necesaria**. La
+tarea decía que apagar un OA "toca la campaña, el Jefe Final y el mapa de dominio", y que mientras
+tanto la única forma de excluirlo era no incluir el capítulo. **El problema era que eso no
+funcionaba**, y la medición mostró exactamente por qué:
+
+> El Jefe Final **se abre al 100% de la campaña y mezcla objetivos de toda la asignatura**, así que
+> tenía una **fase entera** de `CN07 OA 01/02/03`. Un colegio que decidiera no incluir el capítulo
+> de sexualidad **se lo encontraba igual en el jefe**, y ahí ya no hay forma de evitarlo.
+
+Sacarlos deja el contenido sensible **viviendo en un solo lugar —su capítulo—**, que es lo que
+hace que excluirlo sea posible de verdad. Sin configuración, para todos, y por eso no puede
+quedar mal puesto.
+
+- **El jefe conserva su tamaño:** 4 fases × 4 = 16 preguntas. Los 12 OA restantes se reparten por
+  unidad, y **queda más coherente que antes** — la fase 1 juntaba materia con presión solo para
+  hacerle sitio a la de sexualidad.
+- ⚠️ **El jefe DEL CAPÍTULO se queda.** Quien no incluye el capítulo nunca llega a él, y vaciarlo
+  lo dejaría roto para el colegio que sí lo incluye. Es una decisión tomada dentro de la
+  instrucción, no una omisión.
+- **Verificado peleando el jefe:** **800 preguntas sorteadas del banco real, 12 OA distintos,
+  cero sexuales.**
+- Regla, alcance y chequeo en [`docs/contenido-sensible.md`](docs/contenido-sensible.md). Vale
+  igual para los `CN06 OA 04/05/06` cuando se construya 6°.
+
+> **Y el chequeo que documenté no servía: usaba `SENSIBLE.deOA()`, que no existe** (el módulo
+> expone `SENSIBLE.oa`). Corregido y **corrido en los tres cursos**, donde da vacío. Una
+> comprobación escrita que no funciona es peor que ninguna: da la sensación de estar cubierto.
+
+#### Fase 5 · las 13 introducciones de Ciencias
+
+**4 en 8°, 5 en 7° y 4 en 3°**, una por capítulo. Son lecciones de 2 a 4 bloques **sin práctica**,
+así que no miden, no pagan y no consumen banco. Tres dibujos de modelo nuevos —**`celula`**,
+**`circuito`** (abierto y cerrado, que es lo que explica por qué la luz se enciende) y
+**`estados`** (las mismas partículas ordenadas en el sólido y sueltas en el gas)—: el catálogo
+llega a **25 widgets**.
+
+**El punto delicado, que el plan no había visto:**
+
+> ⚠️ **El nodo 📘 NO puede entrar en el arreglo indexado de etapas.** El avance vive en
+> `S.rutas[id].progreso` **indexado por posición**, así que meterlo como etapa 0 correría todas
+> las demás y **le rompería la partida a quien ya venía jugando**. Se dibuja aparte, desde
+> `LECC.nodoIntro`, insertándose al principio del mapa. Verificado sembrando un save con
+> `done,done,open,lock,lock`: sale **idéntico** con el nodo delante.
+
+Y **no bloquea**: es un ofrecimiento, no un peaje. Quien la salta juega igual.
+
+**`LECC.init` pasa a recibir una lista de rutas** (`rutas:[...]`, conservando `ruta` en singular
+por compatibilidad), porque cada asignatura trae su propio archivo de lecciones. Se fusionan como
+`voz.js` fusiona sus manifiestos, y **cada lección se queda con el banco de su propio archivo** —
+por eso la práctica no necesita saber de qué asignatura es.
+
+#### ⚠️ Un bug que solo se vio en la captura, y es el tercero de su familia
+
+`.btn-escuchar{display:block}` **le gana al atributo `hidden`**, así que el 🔊 que la Sesión 83 le
+puso a la mini-clase **se estaba viendo en 7° y 8°**, donde no hay voz que sonar.
+
+> **El DOM decía `hidden=true` y el píxel decía lo contrario.** La verificación de la Sesión 83
+> midió el atributo y reportó "🔊: 0" — estaba mal. Es exactamente lo que ya pasó con
+> `#maestroOverlay` (Sesión 20) y con el botón Continuar del quiz (Sesión 29), y las tres veces
+> el arreglo es el mismo: `[hidden]{display:none}` **primero**, en el CSS del módulo que define
+> la clase.
+
+#### Dos correcciones al revisar los pendientes
+
+1. **`A25` en `pendiente.md` se contradecía a sí mismo:** arrastraba el encargo original diciendo
+   *"el motor vive solo en 8° y hay que extraerlo"*, que se había hecho ese mismo día. Se fueron
+   **1.275 caracteres** de trabajo ya cumplido. Es el patrón de nota rancia que este archivo
+   documenta: **una nota que nadie vuelve a medir se vuelve un candado**.
+2. **El esquema del Bloque D estaba aplicado y sin registrar.** El registro de
+   `docs/aplicar-schema.md` se detenía el 31/08 y el archivo se editó el 01/09. Comprobado contra
+   producción —`kimun_progreso_bajar` responde `[]` en vez de `PGRST202`— y anotado.
+   > Es el defecto **inverso** al de la Sesión 73, cuando se mandó a re-aplicar algo ya aplicado.
+   > Los dos salen de lo mismo: **mandar a re-aplicar por reflejo entrena a ignorar el aviso el
+   > día que sea de verdad.**
+
+#### Verificación
+
+- **Las 13 introducciones se recorren enteras** en sus tres cursos (4/4, 5/5, 4/4), y el **🔊
+  aparece solo en 3°** — cero en 8° y 7°, que es lo correcto.
+- **El avance no se movió:** las etapas de cada capítulo siguen siendo las mismas con el nodo
+  nuevo delante.
+- El Jefe Final de Ciencias de 7° peleado: **800 sorteos, cero contenido sexual**.
+- El chequeo de `docs/contenido-sensible.md` corrido en los tres: **arreglo vacío**.
+- **Cero errores de consola y cero 404.**
+
+#### Lo que queda de A25
+
+- **La aprobación de las 45 mini-clases y las 13 introducciones** (Roberto). Salen en el tablero y
+  en los informes.
+- **La voz de 3°**: ~230 clips de las mini-clases **más ~10 de sus 4 introducciones** ≈ US$0,15.
+  **Después de aprobar, nunca en paralelo, y con autorización explícita: gasta plata de Roberto.**
+- **Historia (16 capítulos) y Lenguaje (20)**, aplicando el criterio capítulo por capítulo **antes**
+  de escribir.

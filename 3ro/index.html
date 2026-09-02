@@ -52,7 +52,7 @@
 <script>if(!window.LECC)window.LECC={activo:false,init:function(){return false;},
   abrirLeccion:function(){},abrirUnidad:function(){},abrirMiniClaseDeOA:function(){},
   volverAlCapitulo:function(){},finPractica:function(){},cargarPool:function(){return Promise.resolve();},
-  renderCampana:function(){return false;}};</script>
+  renderCampana:function(){return false;},nodoIntro:function(){return false;}};</script>
 <script src="assets/js/instalar.js"></script>
 <script>if(!window.INST)window.INST={activo:false,init:function(){},abrir:function(){}};</script>   <!-- respaldo: un 404 de visuales.js no puede matar el juego -->
 <!-- El motor del juego, compartido por los tres cursos. ⚠️ Va ANTES del <script> inline
@@ -1387,7 +1387,7 @@ const EXPEDICIONES=[
      {oa:"BOSS",nombre:"⚡ JEFE: Vivir juntos",icono:"🐲",n:15,
       oas:["HI03 OA 12","HI03 OA 15","HI03 OA 16"]},
    ] },
- { id:'cie3-cap1', asignatura:'Ciencias', nivel:'3° Básico · La luz y el sonido',
+ { id:'cie3-cap1', intro:'ci3-luz', asignatura:'Ciencias', nivel:'3° Básico · La luz y el sonido',
    portada:'assets/portada-ciencias.png', portadaMapa:'assets/portada-cie3-cap1.png',
    contenido:'contenido/ciencias-3basico/preguntas.json', activa:true, campaña:'cie3',
    etapas:[
@@ -1397,7 +1397,7 @@ const EXPEDICIONES=[
      {oa:"BOSS",nombre:"⚡ JEFE: La luz y el sonido",icono:"🐲",n:15,
       oas:["CN03 OA 08","CN03 OA 09","CN03 OA 10"]},
    ] },
- { id:'cie3-cap2', asignatura:'Ciencias', nivel:'3° Básico · El Sistema Solar',
+ { id:'cie3-cap2', intro:'ci3-solar', asignatura:'Ciencias', nivel:'3° Básico · El Sistema Solar',
    portada:'assets/portada-ciencias.png', portadaMapa:'assets/portada-cie3-cap2.png',
    contenido:'contenido/ciencias-3basico/preguntas.json', activa:true, campaña:'cie3',
    etapas:[
@@ -1407,7 +1407,7 @@ const EXPEDICIONES=[
      {oa:"BOSS",nombre:"⚡ JEFE: El Sistema Solar",icono:"🐲",n:15,
       oas:["CN03 OA 11","CN03 OA 12","CN03 OA 13"]},
    ] },
- { id:'cie3-cap3', asignatura:'Ciencias', nivel:'3° Básico · Las plantas',
+ { id:'cie3-cap3', intro:'ci3-plantas', asignatura:'Ciencias', nivel:'3° Básico · Las plantas',
    portada:'assets/portada-ciencias.png', portadaMapa:'assets/portada-cie3-cap3.png',
    contenido:'contenido/ciencias-3basico/preguntas.json', activa:true, campaña:'cie3',
    etapas:[
@@ -1419,7 +1419,7 @@ const EXPEDICIONES=[
      {oa:"BOSS",nombre:"⚡ JEFE: Las plantas",icono:"🐲",n:15,
       oas:["CN03 OA 01","CN03 OA 02","CN03 OA 03","CN03 OA 04","CN03 OA 05"]},
    ] },
- { id:'cie3-cap4', asignatura:'Ciencias', nivel:'3° Básico · Vida saludable',
+ { id:'cie3-cap4', intro:'ci3-salud', asignatura:'Ciencias', nivel:'3° Básico · Vida saludable',
    portada:'assets/portada-ciencias.png', portadaMapa:'assets/portada-cien-cuerpo.png',
    contenido:'contenido/ciencias-3basico/preguntas.json', activa:true, campaña:'cie3',
    etapas:[
@@ -2513,7 +2513,8 @@ const HAY_MINICLASES=true;
    un `const` leido antes de declararse mata todo el JavaScript (zona muerta temporal), y
    esa trampa ya mordio cuatro veces en este proyecto. `montar()` necesita ademas el <body>,
    que aqui ya existe: este script inline corre despues del HTML. */
-LECC.init({ ruta:'contenido/matematicas-3basico/lecciones.json', hayReto:HAY_RETO_CALCULO });
+LECC.init({ rutas:['contenido/matematicas-3basico/lecciones.json',
+                    'contenido/ciencias-3basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
 /* ¿Este nivel tiene el módulo de Vocabulario, y la biblioteca de lecturas del colegio?
    Son contenido de 8°. Antes se resolvían BORRANDO líneas del fork, y ese corte dejó
    la asignatura Lenguaje inalcanzable en 3° (Sesión 61). Como banderas, las tres apps

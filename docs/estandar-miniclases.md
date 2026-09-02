@@ -1,8 +1,67 @@
-# Estándar: las mini-clases de Matemática
+# Estándar: las mini-clases y las introducciones
 
-**Fijado el 02/09/2026.** Vale para los seis cursos. El motor vive en
+**Fijado el 02/09/2026.** Vale para las cuatro asignaturas y los seis cursos. El motor vive en
 [`assets/js/lecciones.js`](../assets/js/lecciones.js) y las lecciones son **datos**, en
-`contenido/matematicas-<n>basico/lecciones.json`.
+`contenido/<asignatura>-<n>basico/lecciones.json`.
+
+> Nació como el estándar de Matemática, que es donde se construyó primero. Desde el 02/09 cubre
+> también a Ciencias, Historia y Lenguaje, con la regla de abajo.
+
+## Qué lleva cada asignatura
+
+**La regla la fijó Roberto:**
+
+| Asignatura | Qué lleva | Granularidad |
+|---|---|---|
+| **Matemática** | **Mini-clase SIEMPRE**, sin excepción | una por **OA** |
+| **Ciencias** e **Historia** | Mini-clase **o** introducción, **si amerita** | mini-clase por OA · introducción por **capítulo** |
+| **Lenguaje** | **Solo introducción**, y solo si amerita. **Nunca mini-clase** | por **capítulo** |
+
+### Por qué Lenguaje no lleva mini-clase, y no es una preferencia
+
+Sus OA son mayoritariamente de **producción o de hábito** —escribir, exponer, recitar, leer
+habitualmente—: **17 de 31 en 3°** y **10 de 25 en 7°**. Una clase que enseña a escribir no tiene
+cómo comprobar con un quiz que se aprendió, así que su práctica terminaría midiendo si el alumno
+**reconoce una definición**, que es otra cosa.
+
+> **Y ahí está la asimetría que ordena todo el estándar: una mini-clase AGREGA una medición al mapa
+> de dominio del profesor; una introducción NO.** La introducción no tiene práctica, así que no
+> llama a `registrarOA` y no puede ensuciar ningún porcentaje. Por eso es la forma segura donde la
+> medición sería engañosa — y por eso Matemática, donde el quiz mide justo lo que la clase enseña,
+> la lleva siempre.
+
+### Cómo se decide "si amerita"
+
+Se responde **por capítulo**, en este orden, y la primera que dé sí manda:
+
+1. **¿El OA enseña un PROCEDIMIENTO que el alumno ejecuta?** —pasos que se repiten y en los que se
+   puede equivocar: leer un gráfico con escala, ubicar en una cuadrícula, calcular con una línea de
+   tiempo—. → **Mini-clase**, con su práctica de 10.
+2. **¿El capítulo abre un MODELO o un mundo que el alumno no tiene?** —la célula, un circuito, los
+   cambios de estado, la Edad Media, el sistema colonial—. → **Introducción** de 2-3 bloques, con
+   **un dibujo del modelo**, sin práctica.
+3. **Si no es ninguna de las dos**, no lleva nada. Es el caso del contenido que son **hechos
+   sueltos**, donde cada pregunta ya enseña con su `tip` y una clase previa sería repetir el banco.
+
+⚠️ **Lo que NO decide: la profundidad del banco.** Medido el 02/09, **los 235 OA con banco del
+proyecto tienen 26 preguntas o más** (el mínimo es `LE03`, con 26), así que la práctica nunca se
+queda corta y ese criterio no separa nada. Tampoco decide **"la asignatura no tiene dibujos"**: es
+cierto de Ciencias, pero **también de Historia de 7° y 8° y de todo Lenguaje** —0% de sus 3.483
+preguntas—, así que no distingue a nadie. Ese argumento se usó en el diseño de la Sesión 82 y **no
+sobrevivió a volver a medirlo**.
+
+### El techo, para que "si amerita" no se convierta en "siempre"
+
+| | OA | Capítulos | Hoy |
+|---|---|---|---|
+| Matemática | 62 | 15 | ✅ **62 mini-clases** |
+| Ciencias | 43 | 13 | — |
+| Historia | 61 | 16 | — |
+| Lenguaje | 69 | 20 | — |
+
+O sea que aplicar el criterio con la mano suelta llega a **104 mini-clases más** en Ciencias e
+Historia. Aplicado por capítulo como introducción, son **29**. La diferencia entre las dos lecturas
+es de meses, así que la granularidad se decide **antes** de escribir, no mientras se escribe.
 
 ## La anatomía, medida sobre las 17 de 8°
 
@@ -128,7 +187,21 @@ Ya no se toca el motor. Son cuatro datos:
    ⚠️ **La `portada` va EXPLÍCITA.** La convención implícita `portada-<id>.png` pediría archivos
    que no existen, y el `onerror` los tapa **a la vista, no en la red**. Es la doctrina de 3° y 7°.
    ⚠️ Y **el id de la unidad no puede chocar con ningún id de `EXPEDICIONES`**: se comprueba antes.
-4. **Las unidades en `EXTRAS`**, o **el armador no las muestra** y un profesor con enlace de
+4. **Una introducción se cablea distinto: con `intro:'<id>'` en la expedición del capítulo.**
+   El nodo 📘 lo dibuja `LECC.nodoIntro` desde `renderMapa`, **al principio del mapa**.
+   ⚠️ **Va FUERA del arreglo indexado de etapas, y no es negociable:** el avance vive en
+   `S.rutas[id].progreso` **indexado por posición**, así que meterla como etapa 0 correría todas
+   las demás y **le rompería la partida a quien ya venía jugando**. Verificado sembrando un save
+   con `done,done,open,lock,lock` y comprobando que sale idéntico con el nodo delante.
+   Y **no bloquea**: es un ofrecimiento, no un peaje. Quien la salta juega igual.
+5. **Cada asignatura trae su propio archivo**, y `LECC.init` recibe la lista:
+   ```js
+   LECC.init({ rutas:['contenido/matematicas-<n>basico/lecciones.json',
+                      'contenido/ciencias-<n>basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
+   ```
+   Se fusionan como `voz.js` fusiona sus manifiestos, y **cada lección se queda con el banco de
+   su propio archivo** — por eso la práctica no necesita saber de qué asignatura es.
+6. **Las unidades en `EXTRAS`**, o **el armador no las muestra** y un profesor con enlace de
    muestra nunca ve esa parte del producto — pasó con el Reto de Cálculo (Sesión 70) y otra vez
    con las mini-clases (Sesión 82).
 

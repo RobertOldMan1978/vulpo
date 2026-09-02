@@ -557,10 +557,28 @@ una lección real respondan **HTTP 200 `audio/mpeg`**.
 
 ---
 
-# Fase 5 · Ciencias: 13 introducciones
+# Fase 5 · Ciencias, Historia y Lenguaje
 
 > **Cero motor nuevo:** `terminarLeccion()` ya marca completa una lección que se queda sin bloques,
 > así que una introducción es una lección de 2-3 bloques **sin `practica`**.
+
+> ⚠️ **ALCANCE AMPLIADO el 02/09, después de escribir este plan.** La Fase 5 decía "Ciencias" con
+> un argumento que **no sobrevivió a volver a medirlo**: se justificó que Ciencias era la única
+> candidata porque *"0 de sus 1.374 preguntas llevan dibujo"*, y eso es igual de cierto de
+> **Historia de 7° y 8° y de todo Lenguaje** (0% de 3.483 preguntas). O sea que ese criterio no
+> distinguía a nadie.
+>
+> **El estándar que rige ahora está en [`docs/estandar-miniclases.md`](../../estandar-miniclases.md)**
+> (§ *Qué lleva cada asignatura*): Matemática mini-clase **siempre**; Ciencias e Historia
+> mini-clase **o** introducción **si amerita**; Lenguaje **solo introducción**, y **nunca**
+> mini-clase, porque sus OA son de producción o de hábito y su práctica mediría reconocimiento de
+> una definición — y **le agregaría al profesor un porcentaje engañoso**, que una introducción no
+> hace porque no llama a `registrarOA`.
+>
+> Las tareas 16 y 17 se hacen **primero en Ciencias**, que es donde el dibujo del modelo agrega
+> más. Historia (16 capítulos) y Lenguaje (20) van después y **con el criterio aplicado capítulo
+> por capítulo antes de escribir**, no mientras se escribe: por OA el techo son 104 mini-clases y
+> por capítulo son 29, y esa diferencia son meses.
 
 ## Tarea 16: Las introducciones de 8° (4 capítulos)
 

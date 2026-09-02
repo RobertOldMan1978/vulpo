@@ -50,7 +50,7 @@
 <script>if(!window.LECC)window.LECC={activo:false,init:function(){return false;},
   abrirLeccion:function(){},abrirUnidad:function(){},abrirMiniClaseDeOA:function(){},
   volverAlCapitulo:function(){},finPractica:function(){},cargarPool:function(){return Promise.resolve();},
-  renderCampana:function(){return false;}};</script>
+  renderCampana:function(){return false;},nodoIntro:function(){return false;}};</script>
 <script src="assets/js/instalar.js"></script>
 <script>if(!window.INST)window.INST={activo:false,init:function(){},abrir:function(){}};</script>   <!-- respaldo: un 404 de visuales.js no puede matar el juego -->
 <!-- El motor del juego, compartido por los tres cursos. ⚠️ Va ANTES del <script> inline
@@ -1353,7 +1353,7 @@ const EXPEDICIONES=[
  // Nota: el banco de Álgebra (contenido/matematicas-8basico) queda de reserva; en el
  // juego Matemáticas se juega como Reto de Cálculo (procedural), no como expedición.
  // --- Campaña Ciencias (capítulos = las 4 unidades del año) ---
- { id:'cien-celula', portadaMapa:'assets/portada-cien-celula.png', asignatura:'Ciencias', nivel:'8° Básico · La célula',
+ { id:'cien-celula', intro:'ci8-celula', portadaMapa:'assets/portada-cien-celula.png', asignatura:'Ciencias', nivel:'8° Básico · La célula',
    portada:'assets/portada-ciencias.png', contenido:'contenido/ciencias-8basico/preguntas.json', activa:true, campaña:'cien',
    etapas:[
      {oa:"CN08 OA 01", nombre:"La teoría celular", icono:"🔬", n:10},
@@ -1362,7 +1362,7 @@ const EXPEDICIONES=[
      {oa:"CN08 OA 04", nombre:"Las plantas", icono:"🌱", n:10},
      {oa:"BOSS", nombre:"⚡ JEFE: La célula", icono:"🧬", n:15, oas:["CN08 OA 01","CN08 OA 02","CN08 OA 03","CN08 OA 04"]},
    ]},
- { id:'cien-cuerpo', portadaMapa:'assets/portada-cien-cuerpo.png', asignatura:'Ciencias', nivel:'8° Básico · Cuerpo humano y salud',
+ { id:'cien-cuerpo', intro:'ci8-cuerpo', portadaMapa:'assets/portada-cien-cuerpo.png', asignatura:'Ciencias', nivel:'8° Básico · Cuerpo humano y salud',
    portada:'assets/portada-ciencias.png', contenido:'contenido/ciencias-8basico/preguntas.json', activa:true, campaña:'cien',
    etapas:[
      {oa:"CN08 OA 05", nombre:"Sistemas del cuerpo", icono:"🫀", n:10},
@@ -1370,7 +1370,7 @@ const EXPEDICIONES=[
      {oa:"CN08 OA 07", nombre:"Vida saludable", icono:"🏃", n:10},
      {oa:"BOSS", nombre:"⚡ JEFE: Cuerpo y salud", icono:"🧠", n:15, oas:["CN08 OA 05","CN08 OA 06","CN08 OA 07"]},
    ]},
- { id:'cien-electricidad', portadaMapa:'assets/portada-cien-electricidad.png', asignatura:'Ciencias', nivel:'8° Básico · Electricidad y calor',
+ { id:'cien-electricidad', intro:'ci8-electricidad', portadaMapa:'assets/portada-cien-electricidad.png', asignatura:'Ciencias', nivel:'8° Básico · Electricidad y calor',
    portada:'assets/portada-ciencias.png', contenido:'contenido/ciencias-8basico/preguntas.json', activa:true, campaña:'cien',
    etapas:[
      {oa:"CN08 OA 08", nombre:"Fuerzas eléctricas", icono:"⚡", n:10},
@@ -1379,7 +1379,7 @@ const EXPEDICIONES=[
      {oa:"CN08 OA 11", nombre:"El calor", icono:"🔥", n:10},
      {oa:"BOSS", nombre:"⚡ JEFE: Electricidad y calor", icono:"🌡️", n:15, oas:["CN08 OA 08","CN08 OA 09","CN08 OA 10","CN08 OA 11"]},
    ]},
- { id:'cien-materia', portadaMapa:'assets/portada-cien-materia.png', asignatura:'Ciencias', nivel:'8° Básico · La materia y el átomo',
+ { id:'cien-materia', intro:'ci8-materia', portadaMapa:'assets/portada-cien-materia.png', asignatura:'Ciencias', nivel:'8° Básico · La materia y el átomo',
    portada:'assets/portada-ciencias.png', contenido:'contenido/ciencias-8basico/preguntas.json', activa:true, campaña:'cien',
    etapas:[
      {oa:"CN08 OA 12", nombre:"Modelos del átomo", icono:"⚛️", n:10},
@@ -2509,7 +2509,8 @@ const HAY_MINICLASES=true;
    un `const` leido antes de declararse mata todo el JavaScript (zona muerta temporal), y
    esa trampa ya mordio cuatro veces en este proyecto. `montar()` necesita ademas el <body>,
    que aqui ya existe: este script inline corre despues del HTML. */
-LECC.init({ ruta:'contenido/matematicas-8basico/lecciones.json', hayReto:HAY_RETO_CALCULO });
+LECC.init({ rutas:['contenido/matematicas-8basico/lecciones.json',
+                    'contenido/ciencias-8basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
 /* ¿Este nivel tiene el módulo de Vocabulario, y la biblioteca de lecturas del colegio?
    Son contenido de 8°. Antes se resolvían BORRANDO líneas del fork, y ese corte dejó
    la asignatura Lenguaje inalcanzable en 3° (Sesión 61). Como banderas, las tres apps

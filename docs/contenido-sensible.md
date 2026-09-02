@@ -6,6 +6,40 @@
 > en los enlaces de muestra y de venta para preguntar al usuario si lo activa. Nace del inventario de
 > los 21 OA sensibles de 3°, 7° y 8° (Matemática no tiene). Ver A4 en `pendiente.md`.
 
+## ⚠️ Regla: lo sexual NO entra en ningún Jefe Final (02/09/2026)
+
+**Decidida por Roberto**, y resuelve el problema que dejaba abierta la tarea A4.
+
+El contenido de índole sexual es **currículum obligatorio** y se juega en su capítulo. Pero el
+**Jefe Final se abre al 100% de la campaña y MEZCLA objetivos de toda la asignatura**, así que
+tenía una fase entera de ese contenido: un colegio que decidiera no incluir ese capítulo **se lo
+encontraba igual en el jefe**, y ahí ya no hay forma de evitarlo.
+
+Sacarlo del jefe deja el contenido sensible **viviendo en un solo lugar —su capítulo—**, que es lo
+que hace que excluirlo sea posible de verdad.
+
+| | |
+|---|---|
+| **Aplicado hoy** | `CN07 OA 01`, `02` y `03` fuera del Jefe Final de Ciencias de 7° |
+| **Vale igual para** | los `CN06 OA 04`, `05` y `06` cuando se construya 6° básico |
+| **NO se toca** | el **jefe del capítulo**, que es su cierre natural. Quien no incluye el capítulo nunca llega a él, y vaciarlo lo dejaría roto para el colegio que sí lo incluye |
+
+**El jefe conserva su tamaño**: los 12 OA restantes se reparten en las mismas 4 fases de 4
+preguntas. En 7° el reparto quedó además **más coherente** que antes, porque la fase 1 juntaba
+materia con presión solo para hacerle sitio a la de sexualidad.
+
+**Cómo se comprueba** (y hay que hacerlo, porque un jefe que pregunta de más no da ningún error):
+
+```js
+// en la consola de cualquiera de los tres cursos
+CAMPAÑAS.filter(c => c.jefeFinal)
+  .flatMap(c => c.jefeFinal.fases.flatMap(f => f.oas))
+  .filter(o => (SENSIBLE.oa[o] || []).includes('sex'))
+```
+
+Debe dar **arreglo vacío**. Verificado el 02/09 peleando el jefe: **800 preguntas sorteadas del
+banco real, 12 OA distintos, cero sexuales.**
+
 ## Leyenda — qué representa cada color (para el armador)
 
 | Color | Ícono | Categoría | Qué agrupa |
