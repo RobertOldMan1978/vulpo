@@ -8140,3 +8140,39 @@ no llega a la pantalla que espera.
 
 - **Con esto el Bloque A queda cerrado.** El camino crítico vuelve a ser el **Bloque B**: los
   bancos de 4°, 5° y 6°.
+
+#### Cierre de la Sesión 88 — la SpA queda constituida, y sus datos FUERA del repo
+
+Roberto avisó que la sociedad está lista y pasó el documento del SII. **Era el trámite que
+bloqueaba cobrar**: un colegio que aceptaba y no tenía cómo recibir factura hacía caer la venta en
+el último paso.
+
+> ⚠️ **Los datos NO entran aquí, y por eso este párrafo no los tiene.** El repositorio es público
+> y GitHub Pages sirve desde él; el documento trae **RUT personal y domicilio particular**. La
+> ficha completa —razón social, RUT de la sociedad, giro, domicilio, representante, códigos de
+> actividad y situación tributaria— vive en
+> `Escritorio\VULPO - correos profesores\VULPO - datos de la empresa.md`, con el resto del
+> material comercial. En el repo queda **solo el hecho**.
+
+**Comprobado antes de commitear, no después:** ninguno de los ocho datos sensibles aparece en el
+árbol. Dos coincidencias que sí saltaron —`INFANTE` y `Maipú`— resultaron ser **contenido de
+Historia de 7°** (la Batalla de Maipú), no la dirección.
+
+> Y un descuido propio, corregido en el momento: al extraer el texto del PDF dejé el volcado en
+> la **raíz del repositorio**. Se borró antes de cualquier `git add`. Extraer a un archivo es
+> cómodo y el directorio de trabajo es el repo: **el scratchpad existe justamente para eso**.
+
+**Lo que cambia para lo comercial**, escrito en `docs/comercial.md`, que pasó de *"Pendiente que
+bloquea cobrar"* a **"Ya se puede facturar"**:
+
+1. **Quien firma es la sociedad, no Roberto.** La propuesta y el contrato van a nombre de la SpA,
+   con su RUT y su representante legal — los PDF actuales están a nombre de una persona.
+2. **Afecta a IVA.** Los precios del documento son **netos**, que es lo correcto, pero **al
+   cotizar hay que decir cuál de los dos números es**: un colegio compara presupuestos.
+3. **Falta la parte operativa:** habilitar la facturación electrónica y abrir la cuenta corriente
+   de la empresa. Sin eso se factura en el papel y no en la práctica.
+
+⚠️ Y desde el inicio de actividades hay **obligaciones mensuales aunque no haya ventas**.
+
+De los tres trámites queda **INAPI** —y ahora que hay sociedad, la marca puede registrarse **a su
+nombre** en vez del de una persona, que es lo que corresponde— y el enlace de agenda.

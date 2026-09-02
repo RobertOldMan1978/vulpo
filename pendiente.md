@@ -130,7 +130,8 @@ Esto no es un bloque del roadmap: es la lista corta de lo que hay entre hoy y un
   van pisando el vínculo, aunque cada uno recupere lo suyo al volver a canjear.
   ⚠️ **Recuperarlo necesita internet**, que es distinto de funcionar sin conexión.
 
-**Los trámites bloquean COBRAR, no jugar:** un piloto gratuito no necesita ni la SpA ni INAPI.
+**Los trámites bloquean COBRAR, no jugar:** un piloto gratuito no necesita ninguno. La **SpA
+ya está** (02/09); queda INAPI, que no bloquea el piloto pero sí el lanzamiento.
 
 ---
 
@@ -459,8 +460,11 @@ tienda y permite probar notificaciones antes de enfrentar iOS. Detalle en
 - **Registrar la marca VULPO en INAPI.** Verificado disponible el 18/08/2026, **no registrada**.
   Mientras no se inscriba, cualquiera puede registrarla primero y el proyecto quedaría en el
   mismo problema que tuvo con el nombre anterior. Clases: software y educación.
-- **Constituir la SpA** (Empresa en un Día) para poder facturar. Si un colegio acepta y no hay
-  cómo emitir factura, la venta se cae en el último paso.
+- ✅ **La SpA está constituida**, con **inicio de actividades ante el SII desde el 01/09/2026**
+  (primera categoría, afecta a IVA). Era el trámite que bloqueaba cobrar. ⚠️ Sus datos NO van
+  en este repositorio, que es público: están en `Escritorio\VULPO - correos profesores\`.
+  **Queda la parte operativa:** habilitar la facturación electrónica y abrir la cuenta
+  corriente de la empresa — sin eso se factura en el papel y no en la práctica.
 - **Enlace de agenda real** (Calendly o similar) para el botón de la landing, hoy en WhatsApp.
 
 ---

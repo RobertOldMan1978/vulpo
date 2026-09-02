@@ -237,8 +237,23 @@ mandan a la URL antigua y ofrecen piloto de un semestre.**
    no se pasa del primer capítulo — ni siquiera para quien está mostrando el producto.
 3. Propuesta impresa, para entregarla en el minuto 10.
 
-## Pendiente que bloquea cobrar
+## Ya se puede facturar (02/09/2026)
 
-**Con qué se factura.** La forma recomendada era una **SpA por Empresa en un Día** con factura
-electrónica. Sin eso, el precio da lo mismo: si un colegio acepta y no hay cómo emitir la
-factura, la venta se cae en el último paso.
+**La SpA está constituida y con inicio de actividades ante el SII desde el 01/09/2026**, en
+primera categoría y **afecta a IVA**. Era el trámite que bloqueaba cobrar: si un colegio
+aceptaba y no había cómo emitir la factura, la venta se caía en el último paso.
+
+> ⚠️ **Los datos de la sociedad —razón social, RUT, domicilio y representante— NO están en
+> este repositorio, que es público.** Viven en
+> `Escritorio\VULPO - correos profesores\VULPO - datos de la empresa.md`, con el resto del
+> material comercial. Ahí está también lo que el trámite deja pendiente.
+
+**Tres consecuencias para lo comercial:**
+
+1. **Quien firma es la sociedad, no Roberto.** La propuesta y el contrato van a nombre de la
+   SpA, con su RUT y su representante legal — no a nombre de una persona.
+2. **Al cotizar hay que decir si el número es neto o con IVA.** Los precios de este documento
+   son **netos**, y así estaban escritos; con IVA incluido son otro número y un colegio
+   compara presupuestos.
+3. **Falta la parte operativa:** habilitar la facturación electrónica y abrir la cuenta
+   corriente de la empresa. Sin eso se puede facturar en el papel y no en la práctica.
