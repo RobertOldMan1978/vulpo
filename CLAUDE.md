@@ -66,7 +66,7 @@ backend Supabase para el duelo en línea. Historia de v0 al detalle en la Bitác
 - **Matemáticas · campaña "enseña→desafío" (Sesiones 29 y 31) + "Reto de Cálculo"
   (Sesión 15):** ⚠️ **Desde la Sesión 83 el camino "enseña→desafío" está en los TRES cursos**
   —**62 mini-clases**: 26 en 3°, 19 en 7° y las 17 de 8°—, con el motor compartido en
-  `assets/js/lecciones.js` y **22 diagramas interactivos**. Lo que sigue es la descripción de 8°,
+  `assets/js/lecciones.js` y **27 diagramas interactivos**. Lo que sigue es la descripción de 8°,
   que es el que además tiene el Reto de Cálculo.
   Al entrar a Matemáticas se abre su **campaña** con las 4 unidades del año
   (Números, Álgebra y funciones, Geometría, y Probabilidad y estadística), y el mapa
@@ -267,7 +267,7 @@ supuesto cuando pide "no modificar `contenido/` ni `supabase/`".
    que solo carga el panel), **`instalar.js`** (el ofrecimiento de agregar el juego a la
    pantalla del teléfono) y **`motor.js`** (el juego entero: quiz, campañas, jefes, duelo,
    tienda, guardado); desde el 02/09, **`fracciones.js`** (las fracciones apiladas) y
-   **`lecciones.js`** (el motor de mini-clases e introducciones, con sus 25 diagramas interactivos). **Siempre con su respaldo vacío antes de usarse**, porque un 404 de
+   **`lecciones.js`** (el motor de mini-clases e introducciones, con sus 27 diagramas interactivos). **Siempre con su respaldo vacío antes de usarse**, porque un 404 de
    un `<script src>` mata todo el JavaScript y el síntoma engaña: la pantalla se ve bien y ningún
    botón responde. Cada uno se prueba **con el archivo ausente**, no solo presente.
    - ⚠️ **`motor.js` es la excepción: NO admite respaldo vacío, porque es el juego.** Lo que sí
@@ -7686,3 +7686,118 @@ Las últimas tres sesiones fueron en **dos pushes** porque había un proveedor (
 consumidores (los `index.html`). **Aquí no**: ningún fork cambió, el tablero se genera
 autocontenido y el único cambio de `lecciones.js` es cosmético (el rótulo "mitocondria", que se
 encimaba con el contorno de la célula). **Un push basta, y partirlo por costumbre sería ceremonia.**
+
+### Sesión 86 (2026-09-02) — Historia y Lenguaje estrenan introducción, y se aplica la firma de las 75
+Cierra el criterio que la Sesión 84 dejó fijado: **cada asignatura lleva lo que le corresponde**,
+y ya no quedan capítulos donde el alumno entra sin saber qué va a hacer. **No se tocó ningún banco
+de preguntas.**
+
+#### El criterio, aplicado capítulo por capítulo antes de escribir
+
+Los 36 capítulos de Historia y Lenguaje de los tres cursos se revisaron uno por uno contra la regla
+—¿abre un modelo que el alumno no tiene?— y el veredicto quedó escrito en
+[`docs/veredicto-historia-lenguaje.md`](docs/veredicto-historia-lenguaje.md), que Roberto aprobó
+antes de escribir una sola pantalla. **Salieron 24 de 36**, y los 12 descartes son tan
+informativos como los aprobados: un capítulo que solo agrupa contenido no necesita que alguien lo
+presente.
+
+| | Aprobados | Qué se escribió |
+|---|---|---|
+| **Historia** | 12 de 16 | 1 mini-clase + 11 introducciones |
+| **Lenguaje** | 12 de 20 | 12 introducciones |
+
+**La única mini-clase es `hi3-planeta`** (`HI03 OA 06`, ubicación en el planeta), y lleva práctica
+porque es lo único de los 36 que enseña **un procedimiento que el alumno ejecuta** —encontrar algo
+con coordenadas— y no un modelo que se explica. Las otras 23 no miden nada.
+
+> Y ahí está la asimetría que sostiene la regla entera, no solo la registra: **una mini-clase
+> AGREGA una medición al mapa de dominio del profesor; una introducción NO.** Sin práctica no se
+> llama a `registrarOA`, así que no puede ensuciar ningún porcentaje. Por eso Lenguaje —donde 17 de
+> 31 OA en 3° y 10 de 25 en 7° son de producción o de hábito— **nunca** lleva mini-clase: su
+> práctica mediría si el alumno reconoce una definición y le mandaría al profesor **un número
+> engañoso sobre "escritura"**.
+
+El proyecto pasa de 75 a **99 lecciones**: 63 mini-clases y 36 introducciones.
+
+#### Dos widgets nuevos, y uno que no hubo que escribir
+
+`tiempo` (línea de tiempo con hitos alternados) y `oracion` (sujeto y predicado en cajas de colores,
+con *¿quién?* y *¿qué hace?* debajo). El catálogo llega a **27**.
+
+**El tercero no se escribió, y esa es la decisión:** `hi3-planeta` necesitaba `globo` y `zonas`, que
+viven en **`visuales.js`** —los dibujos estáticos de pregunta— y no en el catálogo de lecciones.
+Copiarlos habría sido tener dos versiones de 80 líneas que divergen. Ahora **`montarDiagrama`
+consulta los dos catálogos**: si el tipo no está en el suyo, cae al de `visuales.js`. Los dos siguen
+siendo catálogos distintos a propósito —uno se arrastra, el otro ilustra— pero una lección tiene
+todo el derecho a usar un dibujo estático.
+
+#### ⚠️ El widget de línea de tiempo estaba mal de tres formas, y ninguna la delata un conteo
+
+El test decía *"1 diagrama, dibujado"* y estaba bien dicho. Los tres defectos salieron **mirando la
+captura**:
+
+1. **`−300000` no es un año que nadie lea.** Ahora dice **`300.000 a.C.`**, con separador de miles.
+2. **El primer rótulo se salía por el borde** y se leía *"neros humanos"*: el texto va centrado en
+   su `x`, así que la mitad quedaba fuera del `viewBox`. Ahora se ancla al borde cuando el hito cae
+   cerca de un extremo.
+3. Los dos hitos de la derecha se encaraman — **y eso se deja así a propósito**: la lección dice
+   *"fíjate dónde caen la agricultura y la escritura: en el último tramo"*, y el dibujo lo está
+   mostrando. Espaciarlos parejo haría el dibujo más bonito y la lección mentirosa.
+
+> Es la sexta vez que este proyecto tropieza con lo mismo (Sesiones 59, 74, 77, 82, 83). El
+> estándar ya lo dice: **un widget se aprueba mirando, no contando.**
+
+#### La firma de las 75, que estaba exportada y sin aplicar
+
+Roberto aprobó las mini-clases en el tablero y exportó, pero **el `revisadas.json` seguía en
+Descargas**: los 12 `lecciones.json` estaban en **0 aprobadas**. Se aplicó con el circuito de
+siempre (tablero → Exportar → `aplicar-revisadas.py` → regenerar). **75 de 99 marcadas**; las 24
+nuevas quedan pendientes, que es lo correcto —se escribieron después de su exportación—.
+
+> **Se encontró revisando antes de commitear, no porque alguien lo pidiera.** Un `revisadas.json`
+> sin aplicar es de la familia de fallos que este archivo ya documenta: **no da ningún error y se ve
+> exactamente igual que si estuviera aplicado.**
+
+**Dos archivos se reformatearon enteros** (`matematicas-7basico` y `-8basico`, ~900 y ~770 líneas) y
+**está bien**: nacieron con `indent=2` y el script ya no detecta el formato sino que **impone el
+canónico** —decisión de la Sesión 85, porque conservar lo que se encuentre es justamente el
+mecanismo por el que un archivo vuelve a divergir sin que nadie lo vea—. Comprobado que **el
+contenido no cambió**: mismas 19 y 17 lecciones, cero diferencias fuera de la marca. Los **29
+archivos de `contenido/` quedan canónicos**, así que la próxima firma vuelve a ser 2 líneas por
+lección.
+
+⚠️ Y `matematicas-8basico` perdió dos claves de nivel superior (`asignatura`, `unidad`). Se
+verificó antes de darlo por bueno: **los tres consumidores leen solo `d.lecciones`**
+(`lecciones.js:1042`, `generar-tablero.py:121`, `generar-revision-preguntas.py:171`). Eran
+metadatos muertos, y la cabecera canónica es solo lo que alguien lee de verdad.
+
+#### Verificación (con `scripts/cdp.mjs`, jugando)
+
+- **Las 24 lecciones nuevas se recorren enteras** con clics reales: 8° 7/7, 7° 10/10, 3° 7/7.
+- **El avance no se movió** en ninguno de los 24 capítulos: las etapas siguen siendo las mismas con
+  el nodo 📘 delante.
+- **El tablero, en el navegador:** 29 secciones, **99 casillas de lección, 75 marcadas**, y las
+  **6 secciones pendientes son exactamente las 24 nuevas** (3+4+5+5+4+3), arriba de todo con
+  Vocabulario y Lectura al final. **88 diagramas dibujados.**
+- Sin regresión: 20 / 23 / 27 expediciones, motor vivo en los tres, y el guardado de 8° sobrevive
+  con sus 777 XP y sus tres claves separadas.
+- **Cero errores de consola y cero 404.**
+
+> **Un error de medición propio, y ya con nombre:** medí *"0 casillas de lección"* buscando
+> `.lec-card`, y se llaman `details.lec input`. Es el mismo tropiezo que la Sesión 83 con
+> `.diag` y la 85 con `lec-diag`: **cuando un conteo da cero, el primer sospechoso es el selector,
+> no el producto.**
+
+#### Un push, y por qué
+
+Las Sesiones 75, 76 y 77 fueron en dos pushes porque había un proveedor (`assets/js/`) y unos
+consumidores (los forks). **Aquí el orden no importa**: el cambio de `lecciones.js` es aditivo —dos
+widgets nuevos y un respaldo que consulta `visuales.js`—, así que un fork nuevo sobre el módulo
+viejo simplemente no dibujaría esos dos diagramas, y el módulo nuevo sobre forks viejos no rompe
+nada porque nadie lo llama todavía. **Un push basta.**
+
+- **Pendiente de Roberto:** **aprobar las 24 lecciones nuevas** en el tablero (ya salen, y abre
+  filtrado en ellas). Después de eso, la **voz de 3°** —ahora ~250 clips ≈ US$0,16— que va
+  **después de aprobar, nunca en paralelo, y con autorización explícita porque gasta su cuenta de
+  Azure**.
+- **El camino crítico sigue siendo el Bloque B:** los bancos de 4°, 5° y 6°.

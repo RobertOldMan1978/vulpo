@@ -54,10 +54,10 @@ sobrevivió a volver a medirlo**.
 
 | | OA | Capítulos | Hoy |
 |---|---|---|---|
-| Matemática | 62 | 15 | ✅ **62 mini-clases** |
-| Ciencias | 43 | 13 | — |
-| Historia | 61 | 16 | — |
-| Lenguaje | 69 | 20 | — |
+| Matemática | 62 | 15 | ✅ **62 mini-clases** (una por OA) |
+| Ciencias | 43 | 13 | ✅ **13 introducciones** (una por capítulo) |
+| Historia | 61 | 16 | ✅ **1 mini-clase + 11 introducciones** (12 de 16 capítulos) |
+| Lenguaje | 69 | 20 | ✅ **12 introducciones** (12 de 20 capítulos) |
 
 O sea que aplicar el criterio con la mano suelta llega a **104 mini-clases más** en Ciencias e
 Historia. Aplicado por capítulo como introducción, son **29**. La diferencia entre las dos lecturas

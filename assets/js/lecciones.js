@@ -82,8 +82,22 @@ const DIAGRAMAS={};
 function montarDiagrama(kind,params,nodo){
  nodo.innerHTML=''; nodo.className='lec-diag';
  const fn=DIAGRAMAS[kind];
- if(!fn){nodo.textContent='(diagrama no disponible)';return;}
- try{fn(params||{},nodo);}catch(e){console.error('Diagrama',kind,e);nodo.textContent='';}
+ if(fn){
+  try{fn(params||{},nodo);}catch(e){console.error('Diagrama',kind,e);nodo.textContent='';}
+  return;
+ }
+ /* Si el tipo no esta en ESTE catalogo, se busca en el de assets/js/visuales.js, que son
+    los 11 dibujos ESTATICOS de las preguntas. Los dos catalogos siguen siendo distintos a
+    proposito -uno se arrastra y el otro ilustra- pero una leccion tiene todo el derecho a
+    usar un dibujo estatico: el globo terraqueo y las zonas climaticas de HI03 ya existian
+    ahi, y duplicarlos aqui habria sido copiar 80 lineas para tener dos versiones que
+    divergen. renderVisual devuelve HTML, asi que se monta como texto. */
+ if(typeof renderVisual==='function'){
+  const p=Object.assign({tipo:kind}, params||{});
+  const html=renderVisual(p);
+  if(html){ nodo.innerHTML=html; return; }
+ }
+ nodo.textContent='(diagrama no disponible)';
 }
 
 // recta numérica: marca un punto (arrastrable) e intervalos con círculo abierto/cerrado.
@@ -575,6 +589,92 @@ DIAGRAMAS.estados=function(p,nodo){
  const tt=svgEl('text',{x:W/2,y:H-8,'text-anchor':'middle',fill:'#ffc93c',
   'font-family':"'Titan One',sans-serif",'font-size':15});
  tt.textContent=p.etiqueta||'Las mismas partículas, más sueltas'; svg.appendChild(tt);
+ nodo.appendChild(svg);
+};
+
+// tiempo: linea de tiempo con hitos ROTULADOS. Es el dibujo que pide Historia casi entera:
+// lo que a un alumno le falta no es el dato sino saber DONDE ESTA en el tiempo.
+// ⚠️ `recta` no sirve para esto: solo rotula numeros, y aqui hay que nombrar el hito
+// ("1492 · llegan los europeos"). En el MA03 OA 19 alcanzaba porque eran anos sueltos.
+// params: {desde, hasta, hitos:[{a:1492, txt:'...'}], etiqueta}
+DIAGRAMAS.tiempo=function(p,nodo){
+ const hitos=(p.hitos||[]).slice(0,6);
+ const vals=hitos.map(h=>h.a);
+ const desde=p.desde??(vals.length?Math.min.apply(null,vals):0);
+ const hasta=p.hasta??(vals.length?Math.max.apply(null,vals):100);
+ const W=360, x0=26, x1=334, y=76, H=150;
+ const svg=svgEl('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'Línea de tiempo con sus hitos'});
+ const xOf=v=>hasta===desde?(x0+x1)/2:x0+(v-desde)/(hasta-desde)*(x1-x0);
+ svg.appendChild(svgEl('line',{x1:x0,y1:y,x2:x1,y2:y,stroke:'#5a4b8f','stroke-width':3}));
+ // la flecha: el tiempo va hacia la derecha, y a los 8 anos eso no es obvio
+ svg.appendChild(svgEl('path',{d:'M '+(x1-8)+' '+(y-5)+' L '+x1+' '+y+' L '+(x1-8)+' '+(y+5),
+  fill:'none',stroke:'#5a4b8f','stroke-width':2.5}));
+ /* El ano, escrito como se lee: "300.000 a.C." y no "-300000". Un numero negativo con
+    seis cifras seguidas no lo lee nadie, y menos un nino de 8 anos. */
+ const anio=v=>{
+  if(v===0) return '0';
+  const n=Math.abs(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+  return v<0 ? n+' a.C.' : n;
+ };
+ hitos.forEach((h,i)=>{
+  const x=xOf(h.a), arriba=(i%2===0);   // alternados: si no, los rotulos se enciman
+  const yl=arriba?y-14:y+16;
+  svg.appendChild(svgEl('line',{x1:x,y1:y-8,x2:x,y2:y+8,stroke:'#4dd8ff','stroke-width':2.5}));
+  svg.appendChild(svgEl('circle',{cx:x,cy:y,r:4,fill:'#8f6bff',stroke:'#4dd8ff','stroke-width':1.8}));
+  /* ⚠️ El rotulo se ancla al borde cuando el hito cae cerca de un extremo. Sin esto el
+     primero se sale por la izquierda y se lee "neros humanos": el texto va centrado en x,
+     asi que la mitad queda fuera del viewBox. No lo delata ninguna medicion. */
+  const cerca=54, izq=x<cerca, der=x>W-cerca;
+  const anc=izq?'start':(der?'end':'middle');
+  const xr=izq?4:(der?W-4:x);
+  const a=svgEl('text',{x:xr,y:arriba?yl-10:yl+10,'text-anchor':anc,fill:'#ffc93c',
+   'font-family':"'Titan One',sans-serif",'font-size':11});
+  a.textContent=anio(h.a); svg.appendChild(a);
+  // el texto se parte en dos lineas si no cabe: a 10px caben ~18 caracteres
+  const txt=String(h.txt||''), corte=txt.length>18?txt.lastIndexOf(' ',18):-1;
+  const lineas=corte>0?[txt.slice(0,corte),txt.slice(corte+1)]:[txt];
+  lineas.forEach((ln,k)=>{
+   const e=svgEl('text',{x:xr,y:(arriba?yl-23:yl+23)+(arriba?-k*11:k*11),'text-anchor':anc,
+    fill:'#a99fd0','font-size':10});
+   e.textContent=ln; svg.appendChild(e);
+  });
+ });
+ const tt=svgEl('text',{x:W/2,y:H-6,'text-anchor':'middle',fill:'#ffc93c',
+  'font-family':"'Titan One',sans-serif",'font-size':14});
+ tt.textContent=p.etiqueta||''; svg.appendChild(tt);
+ nodo.appendChild(svg);
+};
+
+// oracion: sujeto y predicado marcados en una frase. Para len7-cap5 y len3-cap4, que son
+// los dos capitulos de Lenguaje con algo que de verdad se puede DIBUJAR.
+// params: {sujeto:'El perro de Ana', predicado:'corre por el patio', etiqueta}
+DIAGRAMAS.oracion=function(p,nodo){
+ const suj=String(p.sujeto||'El perro'), pre=String(p.predicado||'corre');
+ const W=360, H=126, y=44, hh=34;
+ // ancho proporcional al largo del texto, para que la caja calce con lo que rodea
+ const tot=suj.length+pre.length||1;
+ const util=W-32, ws=Math.max(70,Math.round(util*suj.length/tot)), wp=util-ws;
+ const svg=svgEl('svg',{viewBox:'0 0 '+W+' '+H,role:'img',
+  'aria-label':'Una oración con su sujeto y su predicado marcados'});
+ function caja(x,w,txt,rot,col){
+  svg.appendChild(svgEl('rect',{x,y,width:w-4,height:hh,rx:8,fill:col+'33',
+   stroke:col,'stroke-width':2.5}));
+  // el texto se encoge si no cabe: a 14px caben ~w/8 caracteres
+  const fs=Math.max(10,Math.min(15,Math.floor((w-12)/(txt.length*0.55))));
+  const e=svgEl('text',{x:x+(w-4)/2,y:y+hh/2+fs/3,'text-anchor':'middle',fill:'#fff','font-size':fs});
+  e.textContent=txt; svg.appendChild(e);
+  const r=svgEl('text',{x:x+(w-4)/2,y:y-8,'text-anchor':'middle',fill:col,'font-size':12});
+  r.textContent=rot; svg.appendChild(r);
+ }
+ caja(16,ws,suj,'sujeto','#4dd8ff');
+ caja(16+ws,wp,pre,'predicado','#3ee089');
+ const q=svgEl('text',{x:16+ws/2,y:y+hh+18,'text-anchor':'middle',fill:'#a99fd0','font-size':11});
+ q.textContent='¿quién?'; svg.appendChild(q);
+ const q2=svgEl('text',{x:16+ws+wp/2,y:y+hh+18,'text-anchor':'middle',fill:'#a99fd0','font-size':11});
+ q2.textContent='¿qué hace?'; svg.appendChild(q2);
+ const tt=svgEl('text',{x:W/2,y:H-6,'text-anchor':'middle',fill:'#ffc93c',
+  'font-family':"'Titan One',sans-serif",'font-size':14});
+ tt.textContent=p.etiqueta||''; svg.appendChild(tt);
  nodo.appendChild(svg);
 };
 

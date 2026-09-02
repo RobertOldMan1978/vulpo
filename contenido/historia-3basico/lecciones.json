@@ -1,0 +1,126 @@
+{
+ "lecciones": [
+  {
+   "id": "hi3-planeta",
+   "oa": "HI03 OA 06",
+   "titulo": "Ubicar en el planeta",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Para decir dónde está algo en un mapa se usa una cuadrícula. La letra dice la columna y el número dice la fila, siempre en ese orden."
+    },
+    {
+     "t": "diagrama",
+     "kind": "cuadricula",
+     "params": {
+      "cols": 5,
+      "filas": 4,
+      "marca": [
+       4,
+       3
+      ],
+      "etiqueta": "El tesoro está en (D, 3)"
+     },
+     "intro": "Primero busca la columna con la letra. Después baja hasta la fila con el número."
+    },
+    {
+     "t": "texto",
+     "md": "El planeta también tiene sus líneas de referencia. El Ecuador lo parte en dos mitades: el hemisferio norte y el hemisferio sur."
+    },
+    {
+     "t": "diagrama",
+     "kind": "globo",
+     "params": {},
+     "intro": "El Ecuador es la línea del medio. Chile está en el hemisferio sur."
+    },
+    {
+     "t": "texto",
+     "md": "Según qué tan cerca estén del Ecuador, los lugares tienen distinto clima. Cerca del Ecuador hace calor todo el año; cerca de los polos hace frío."
+    },
+    {
+     "t": "diagrama",
+     "kind": "zonas",
+     "params": {},
+     "intro": "Las franjas del planeta según su clima: cálida al medio, templadas a los lados y frías en los extremos."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ubiquemos un lugar paso a paso.",
+     "pasos": [
+      "Miramos si está arriba o abajo del Ecuador: eso da el hemisferio.",
+      "Miramos qué tan lejos está del Ecuador: eso da la zona climática.",
+      "Si el mapa tiene cuadrícula, decimos la letra y después el número.",
+      "Con esas tres cosas cualquiera encuentra el lugar."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "HI03 OA 06",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "hi3-grecia",
+   "titulo": "Antes de empezar: La antigua Grecia",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Hace mucho tiempo, mucho antes de que existiera Chile, vivió en Europa un pueblo llamado los griegos."
+    },
+    {
+     "t": "diagrama",
+     "kind": "tiempo",
+     "params": {
+      "desde": -800,
+      "hasta": 2026,
+      "hitos": [
+       {
+        "a": -800,
+        "txt": "los griegos"
+       },
+       {
+        "a": 1810,
+        "txt": "Chile es país"
+       },
+       {
+        "a": 2026,
+        "txt": "hoy"
+       }
+      ],
+      "etiqueta": "Fue hace muchísimo tiempo"
+     },
+     "intro": "Mira lo lejos que queda: los griegos vivieron mucho antes que todo lo demás."
+    },
+    {
+     "t": "texto",
+     "md": "Muchas cosas que usamos hoy vienen de ellos: las olimpiadas, el teatro y la idea de votar para decidir entre todos."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver cómo era su vida cotidiana, dónde vivían y por qué el mar fue tan importante para ellos."
+    }
+   ]
+  },
+  {
+   "id": "hi3-derechos",
+   "titulo": "Antes de empezar: Mis deberes y mis derechos",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un derecho es algo que te corresponde solo por ser niño o niña: que te cuiden, que te enseñen, que puedas jugar."
+    },
+    {
+     "t": "texto",
+     "md": "Un deber es lo que te toca hacer a ti. Los dos van juntos: si todos cumplen sus deberes, todos pueden usar sus derechos."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver cuáles son tus derechos, qué deberes tienes en la escuela y en la casa, y por qué ser honesto importa incluso cuando nadie te está mirando."
+    }
+   ]
+  }
+ ]
+}

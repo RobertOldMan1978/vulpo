@@ -1,901 +1,920 @@
 {
-  "lecciones": [
+ "lecciones": [
+  {
+   "id": "ma7-oa01",
+   "oa": "MA07 OA 01",
+   "titulo": "Sumar y restar números enteros",
+   "bloques": [
     {
-      "id": "ma7-oa01",
+     "t": "texto",
+     "md": "Los números enteros son los naturales, el cero y los negativos. En la recta numérica los negativos van a la izquierda del cero, y cada paso a la derecha suma uno."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": -8,
+      "max": 8,
+      "marca": -3,
+      "interactivo": true
+     },
+     "intro": "Arrastra la marca: fíjate en qué lado del cero queda cada número."
+    },
+    {
+     "t": "texto",
+     "md": "Sumar es avanzar a la derecha y restar es retroceder a la izquierda. Da igual desde dónde partas: la operación siempre indica hacia dónde te mueves."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Calculemos −3 + 5 con la recta.",
+     "pasos": [
+      "Partimos parados en el −3.",
+      "Sumar 5 significa avanzar 5 pasos hacia la derecha.",
+      "−3, −2, −1, 0, 1, 2: llegamos al 2.",
+      "Entonces −3 + 5 = 2."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora 4 − 7, que también se puede leer como 4 + (−7).",
+     "pasos": [
+      "Partimos en el 4.",
+      "Restar 7 significa retroceder 7 pasos.",
+      "4, 3, 2, 1, 0, −1, −2, −3: llegamos al −3.",
+      "Entonces 4 − 7 = −3."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
       "oa": "MA07 OA 01",
-      "titulo": "Sumar y restar números enteros",
-      "bloques": [
-        {
-          "t": "texto",
-          "md": "Los números enteros son los naturales, el cero y los negativos. En la recta numérica los negativos van a la izquierda del cero, y cada paso a la derecha suma uno."
-        },
-        {
-          "t": "diagrama",
-          "kind": "recta",
-          "params": {
-            "min": -8,
-            "max": 8,
-            "marca": -3,
-            "interactivo": true
-          },
-          "intro": "Arrastra la marca: fíjate en qué lado del cero queda cada número."
-        },
-        {
-          "t": "texto",
-          "md": "Sumar es avanzar a la derecha y restar es retroceder a la izquierda. Da igual desde dónde partas: la operación siempre indica hacia dónde te mueves."
-        },
-        {
-          "t": "ejemplo",
-          "intro": "Calculemos −3 + 5 con la recta.",
-          "pasos": [
-            "Partimos parados en el −3.",
-            "Sumar 5 significa avanzar 5 pasos hacia la derecha.",
-            "−3, −2, −1, 0, 1, 2: llegamos al 2.",
-            "Entonces −3 + 5 = 2."
-          ]
-        },
-        {
-          "t": "ejemplo",
-          "intro": "Ahora 4 − 7, que también se puede leer como 4 + (−7).",
-          "pasos": [
-            "Partimos en el 4.",
-            "Restar 7 significa retroceder 7 pasos.",
-            "4, 3, 2, 1, 0, −1, −2, −3: llegamos al −3.",
-            "Entonces 4 − 7 = −3."
-          ]
-        },
-        {
-          "t": "practica",
-          "fromBank": {
-            "oa": "MA07 OA 01",
-            "n": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": "ma7-oa02",
-      "oa": "MA07 OA 02",
-      "titulo": "Multiplicar y dividir fracciones",
-      "bloques": [
-        {
-          "t": "texto",
-          "md": "Una fracción dice en cuántas partes iguales se partió el entero (el denominador) y cuántas de esas partes tomamos (el numerador)."
-        },
-        {
-          "t": "diagrama",
-          "kind": "fracciones",
-          "params": {
-            "partes": 6,
-            "pintadas": 4,
-            "etiqueta": "4/6"
-          },
-          "intro": "El entero partido en 6, con 4 partes pintadas."
-        },
-        {
-          "t": "texto",
-          "md": "Para multiplicar dos fracciones se multiplican los numeradores entre sí y los denominadores entre sí. Para dividir, se multiplica por la fracción invertida: 3/4 dividido por 2/5 es lo mismo que 3/4 por 5/2."
-        },
-        {
-          "t": "ejemplo",
-          "intro": "Calculemos 2/3 · 3/4.",
-          "pasos": [
-            "Multiplicamos los numeradores: 2 · 3 = 6.",
-            "Multiplicamos los denominadores: 3 · 4 = 12.",
-            "Queda 6/12.",
-            "Simplificando por 6: el resultado es 1/2."
-          ]
-        },
-        {
-          "t": "ejemplo",
-          "intro": "Ahora 3/5 dividido por 2/7.",
-          "pasos": [
-            "Dividir es multiplicar por la fracción invertida: 3/5 · 7/2.",
-            "Numeradores: 3 · 7 = 21.",
-            "Denominadores: 5 · 2 = 10.",
-            "El resultado es 21/10."
-          ]
-        },
-        {
-          "t": "practica",
-          "fromBank": {
-            "oa": "MA07 OA 02",
-            "n": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": "ma7-oa03",
-      "oa": "MA07 OA 03",
-      "titulo": "Problemas con fracciones y decimales",
-      "bloques": [
-        {
-          "t": "texto",
-          "md": "Una fracción y un decimal pueden ser el mismo número escrito de dos maneras. Dividiendo el numerador por el denominador se pasa de una forma a la otra."
-        },
-        {
-          "t": "diagrama",
-          "kind": "fracciones",
-          "params": {
-            "partes": 4,
-            "pintadas": 3,
-            "etiqueta": "3/4 = 0,75"
-          },
-          "intro": "Tres de las cuatro partes: la misma cantidad, escrita de dos formas."
-        },
-        {
-          "t": "texto",
-          "md": "En un problema conviene preguntarse primero de qué es la fracción. «Los tres cuartos de 20» significa dividir 20 en 4 partes y tomar 3."
-        },
-        {
-          "t": "ejemplo",
-          "intro": "Una botella tiene 3/4 de litro y se toman 2/3 de ella. ¿Cuánto se tomó?",
-          "pasos": [
-            "Tomar 2/3 «de» algo es multiplicar por 2/3.",
-            "Calculamos 3/4 · 2/3.",
-            "Numeradores 3 · 2 = 6; denominadores 4 · 3 = 12.",
-            "Queda 6/12, o sea 1/2 litro."
-          ]
-        },
-        {
-          "t": "practica",
-          "fromBank": {
-            "oa": "MA07 OA 03",
-            "n": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": "ma7-oa04",
-      "oa": "MA07 OA 04",
-      "titulo": "El porcentaje",
-      "bloques": [
-        {
-          "t": "texto",
-          "md": "Un porcentaje es una fracción cuyo denominador es 100. Escribir 30% es otra forma de escribir 30/100, y también 0,3."
-        },
-        {
-          "t": "diagrama",
-          "kind": "fracciones",
-          "params": {
-            "partes": 10,
-            "pintadas": 3,
-            "etiqueta": "30% = 3/10"
-          },
-          "intro": "El entero partido en 10: cada parte es un 10%."
-        },
-        {
-          "t": "texto",
-          "md": "Para calcular un porcentaje de una cantidad se multiplica por la fracción. El 25% es un cuarto, el 50% es la mitad y el 10% es dividir por 10: reconocerlos ahorra mucho tiempo."
-        },
-        {
-          "t": "ejemplo",
-          "intro": "Calculemos el 15% de 240.",
-          "pasos": [
-            "El 10% de 240 es dividir por 10: 24.",
-            "El 5% es la mitad del 10%: 12.",
-            "15% = 10% + 5%.",
-            "24 + 12 = 36. El 15% de 240 es 36."
-          ]
-        },
-        {
-          "t": "practica",
-          "fromBank": {
-            "oa": "MA07 OA 04",
-            "n": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": "ma7-oa05",
-      "oa": "MA07 OA 05",
-      "titulo": "Potencias de base 10",
-      "bloques": [
-        {
-          "t": "texto",
-          "md": "Una potencia es una multiplicación abreviada. En 10³ el 10 es la base y el 3 es el exponente: significa multiplicar el 10 por sí mismo tres veces."
-        },
-        {
-          "t": "diagrama",
-          "kind": "potencias",
-          "params": {
-            "lado": 10,
-            "etiqueta": "10² = 100"
-          },
-          "intro": "Diez filas de diez: por eso 10² es 100."
-        },
-        {
-          "t": "texto",
-          "md": "Con base 10 el exponente cuenta los ceros: 10⁴ es un 1 seguido de cuatro ceros. Y cualquier base elevada a 0 vale 1, también el 10."
-        },
-        {
-          "t": "ejemplo",
-          "intro": "Escribamos 45.000 en notación científica.",
-          "pasos": [
-            "Corremos la coma hasta dejar un solo dígito antes: 4,5.",
-            "Contamos cuántos lugares corrimos: 4.",
-            "Ese número es el exponente del 10.",
-            "45.000 = 4,5 · 10⁴."
-          ]
-        },
-        {
-          "t": "practica",
-          "fromBank": {
-            "oa": "MA07 OA 05",
-            "n": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": "ma7-oa06",
-      "oa": "MA07 OA 06",
-      "titulo": "El lenguaje algebraico",
-      "bloques": [
-        {
-          "t": "texto",
-          "md": "Una letra puede representar un número que todavía no conocemos o que puede cambiar. Con ella, una regla que valdría para muchos casos se escribe una sola vez."
-        },
-        {
-          "t": "diagrama",
-          "kind": "algebra",
-          "params": {
-            "x": 2,
-            "u": 3,
-            "etiqueta": "2x + 3"
-          },
-          "intro": "Dos fichas de x y tres unidades sueltas: eso es 2x + 3."
-        },
-        {
-          "t": "texto",
-          "md": "El doble de un número se escribe 2n, y tres más que un número se escribe n + 3. El truco está en leer despacio qué operación pide cada palabra."
-        },
-        {
-          "t": "ejemplo",
-          "intro": "Escribamos: el triple de un número, menos cinco.",
-          "pasos": [
-            "Le ponemos una letra al número que no conocemos: n.",
-            "El triple es multiplicar por 3: 3n.",
-            "Menos cinco es restar 5.",
-            "Queda 3n − 5."
-          ]
-        },
-        {
-          "t": "practica",
-          "fromBank": {
-            "oa": "MA07 OA 06",
-            "n": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": "ma7-oa07",
-      "oa": "MA07 OA 07",
-      "titulo": "Reducir términos semejantes",
-      "bloques": [
-        {
-          "t": "texto",
-          "md": "Dos términos son semejantes cuando tienen la misma letra elevada al mismo exponente. Solo esos se pueden sumar o restar entre sí."
-        },
-        {
-          "t": "diagrama",
-          "kind": "algebra",
-          "params": {
-            "x": 3,
-            "u": 2,
-            "etiqueta": "3x + 2"
-          },
-          "intro": "Las fichas de x se juntan entre ellas; las unidades, entre ellas."
-        },
-        {
-          "t": "texto",
-          "md": "Es como ordenar: las manzanas con las manzanas. 4x y 2x se suman y dan 6x, pero 4x y 2y no se pueden juntar en un solo término."
-        },
-        {
-          "t": "ejemplo",
-          "intro": "Reduzcamos 5x + 3y − 2x + y.",
-          "pasos": [
-            "Juntamos los términos con x: 5x − 2x = 3x.",
-            "Juntamos los términos con y: 3y + y = 4y.",
-            "No se pueden mezclar entre sí.",
-            "El resultado es 3x + 4y."
-          ]
-        },
-        {
-          "t": "practica",
-          "fromBank": {
-            "oa": "MA07 OA 07",
-            "n": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": "ma7-oa08",
-      "oa": "MA07 OA 08",
-      "titulo": "Proporción directa e inversa",
-      "bloques": [
-        {
-          "t": "texto",
-          "md": "Dos cantidades son directamente proporcionales cuando al doblar una, la otra también se dobla. Su gráfico es una recta que pasa por el origen."
-        },
-        {
-          "t": "diagrama",
-          "kind": "funcion",
-          "params": {
-            "a": 2,
-            "b": 0,
-            "interactivo": true
-          },
-          "intro": "Mueve la pendiente: mientras la recta pase por el origen, la proporción es directa."
-        },
-        {
-          "t": "texto",
-          "md": "En la proporción inversa pasa lo contrario: al doblar una, la otra se reduce a la mitad, y el producto de las dos se mantiene constante. Más trabajadores, menos días."
-        },
-        {
-          "t": "ejemplo",
-          "intro": "Si 3 kilos cuestan $2.400, ¿cuánto cuestan 7 kilos?",
-          "pasos": [
-            "Es proporción directa: más kilos, más precio.",
-            "Buscamos cuánto vale un kilo: 2.400 ÷ 3 = 800.",
-            "Multiplicamos por los kilos que queremos: 800 · 7.",
-            "7 kilos cuestan $5.600."
-          ]
-        },
-        {
-          "t": "practica",
-          "fromBank": {
-            "oa": "MA07 OA 08",
-            "n": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": "ma7-oa09",
-      "oa": "MA07 OA 09",
-      "titulo": "Ecuaciones e inecuaciones",
-      "bloques": [
-        {
-          "t": "texto",
-          "md": "Una ecuación es una balanza en equilibrio: lo que hay a un lado del igual pesa lo mismo que lo del otro. Resolverla es despejar la letra sin romper ese equilibrio."
-        },
-        {
-          "t": "diagrama",
-          "kind": "balanza",
-          "params": {
-            "izqX": 2,
-            "izqU": 1,
-            "derU": 7,
-            "etiqueta": "2x + 1 = 7"
-          },
-          "intro": "Si quitas lo mismo de los dos lados, la balanza sigue equilibrada."
-        },
-        {
-          "t": "texto",
-          "md": "Una inecuación usa <, >, ≤ o ≥ en vez del igual, y su respuesta no es un solo número sino un conjunto. Se resuelve igual, con un cuidado: al multiplicar o dividir por un negativo, el signo se da vuelta."
-        },
-        {
-          "t": "diagrama",
-          "kind": "recta",
-          "params": {
-            "min": -2,
-            "max": 10,
-            "intervalo": {
-              "desde": 3,
-              "tipo": ">"
-            }
-          },
-          "intro": "La solución de x > 3: todos los de la derecha, sin incluir el 3."
-        },
-        {
-          "t": "ejemplo",
-          "intro": "Resolvamos 2x + 1 = 7.",
-          "pasos": [
-            "Restamos 1 a los dos lados: 2x = 6.",
-            "Dividimos los dos lados por 2: x = 3.",
-            "Comprobamos: 2 · 3 + 1 = 7."
-          ]
-        },
-        {
-          "t": "practica",
-          "fromBank": {
-            "oa": "MA07 OA 09",
-            "n": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": "ma7-oa10",
-      "oa": "MA07 OA 10",
-      "titulo": "Ángulos de los polígonos",
-      "bloques": [
-        {
-          "t": "texto",
-          "md": "Los ángulos interiores de un triángulo siempre suman 180°, sin importar su forma. Es el punto de partida para todos los demás polígonos."
-        },
-        {
-          "t": "diagrama",
-          "kind": "poligono",
-          "params": {
-            "lados": 6,
-            "etiqueta": "6 lados → 4 triángulos"
-          },
-          "intro": "Desde un vértice, el hexágono se parte en 4 triángulos."
-        },
-        {
-          "t": "texto",
-          "md": "Cualquier polígono se puede partir en triángulos desde uno de sus vértices. Uno de n lados se parte en n − 2 triángulos, así que sus ángulos interiores suman (n − 2) por 180°."
-        },
-        {
-          "t": "ejemplo",
-          "intro": "¿Cuánto suman los ángulos interiores de un hexágono?",
-          "pasos": [
-            "Un hexágono tiene 6 lados, así que n = 6.",
-            "Se parte en n − 2 = 4 triángulos.",
-            "Cada triángulo aporta 180°.",
-            "4 · 180° = 720°."
-          ]
-        },
-        {
-          "t": "ejemplo",
-          "intro": "Y en un hexágono regular, ¿cuánto mide cada ángulo?",
-          "pasos": [
-            "En un polígono regular todos los ángulos son iguales.",
-            "Repartimos el total entre los 6 ángulos.",
-            "720° ÷ 6 = 120°."
-          ]
-        },
-        {
-          "t": "practica",
-          "fromBank": {
-            "oa": "MA07 OA 10",
-            "n": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": "ma7-oa11",
-      "oa": "MA07 OA 11",
-      "titulo": "El círculo",
-      "bloques": [
-        {
-          "t": "texto",
-          "md": "El radio es la distancia del centro al borde, y el diámetro son dos radios: siempre mide el doble. Todos los puntos del borde están a la misma distancia del centro."
-        },
-        {
-          "t": "diagrama",
-          "kind": "circulo",
-          "params": {
-            "radio": 62,
-            "mostrar": "ambos"
-          },
-          "intro": "El radio va del centro al borde; el diámetro lo cruza entero."
-        },
-        {
-          "t": "texto",
-          "md": "Si mides el contorno de cualquier círculo y lo divides por su diámetro, siempre da el mismo número: un poco más de 3. Ese número es pi, y por eso el perímetro es pi por el diámetro."
-        },
-        {
-          "t": "ejemplo",
-          "intro": "Un plato tiene 20 cm de diámetro. ¿Cuánto mide su contorno?",
-          "pasos": [
-            "El perímetro es pi por el diámetro.",
-            "Usamos pi aproximadamente igual a 3,14.",
-            "3,14 · 20 = 62,8.",
-            "El contorno mide unos 62,8 cm."
-          ]
-        },
-        {
-          "t": "ejemplo",
-          "intro": "¿Y cuánta superficie ocupa ese plato?",
-          "pasos": [
-            "El área es pi por el radio al cuadrado.",
-            "El radio es la mitad del diámetro: 10 cm.",
-            "10 al cuadrado es 100.",
-            "3,14 · 100 = 314 cm²."
-          ]
-        },
-        {
-          "t": "practica",
-          "fromBank": {
-            "oa": "MA07 OA 11",
-            "n": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": "ma7-oa12",
-      "oa": "MA07 OA 12",
-      "titulo": "Construir figuras geométricas",
-      "bloques": [
-        {
-          "t": "texto",
-          "md": "Dos rectas son perpendiculares cuando se cruzan formando un ángulo de 90°, y paralelas cuando nunca se cruzan por mucho que se alarguen."
-        },
-        {
-          "t": "texto",
-          "md": "La bisectriz de un ángulo lo parte en dos ángulos iguales. La altura de un triángulo va desde un vértice hasta el lado de enfrente, formando 90° con él."
-        },
-        {
-          "t": "ejemplo",
-          "intro": "Trazar la bisectriz de un ángulo con compás.",
-          "pasos": [
-            "Con el compás en el vértice, marcamos un arco que corte los dos lados.",
-            "Desde cada uno de esos dos cortes trazamos otro arco, con la misma abertura.",
-            "Los dos arcos se cruzan en un punto.",
-            "La recta que va del vértice a ese punto es la bisectriz."
-          ]
-        },
-        {
-          "t": "practica",
-          "fromBank": {
-            "oa": "MA07 OA 12",
-            "n": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": "ma7-oa13",
-      "oa": "MA07 OA 13",
-      "titulo": "Área de triángulos y cuadriláteros",
-      "bloques": [
-        {
-          "t": "texto",
-          "md": "El área de un paralelogramo es base por altura, igual que la de un rectángulo: si le cortas el triángulo de un extremo y lo pegas al otro, queda un rectángulo."
-        },
-        {
-          "t": "diagrama",
-          "kind": "figura",
-          "params": {
-            "tipo": "triangulo",
-            "base": 8,
-            "altura": 5,
-            "etiqueta": "área = base · altura ÷ 2"
-          },
-          "intro": "La altura siempre forma 90° con la base."
-        },
-        {
-          "t": "texto",
-          "md": "Un triángulo es siempre la mitad de un paralelogramo con su misma base y altura, así que su área es base por altura dividido en dos. En el trapecio se promedian las dos bases: base mayor más base menor, por la altura, dividido en dos."
-        },
-        {
-          "t": "ejemplo",
-          "intro": "Un triángulo mide 8 cm de base y 5 cm de altura.",
-          "pasos": [
-            "Multiplicamos base por altura: 8 · 5 = 40.",
-            "Dividimos en dos, porque es la mitad del paralelogramo.",
-            "40 ÷ 2 = 20.",
-            "El área es 20 cm²."
-          ]
-        },
-        {
-          "t": "ejemplo",
-          "intro": "Un trapecio con bases de 10 y 6 cm, y altura 4 cm.",
-          "pasos": [
-            "Sumamos las dos bases: 10 + 6 = 16.",
-            "Multiplicamos por la altura: 16 · 4 = 64.",
-            "Dividimos en dos: 64 ÷ 2 = 32.",
-            "El área es 32 cm²."
-          ]
-        },
-        {
-          "t": "practica",
-          "fromBank": {
-            "oa": "MA07 OA 13",
-            "n": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": "ma7-oa14",
-      "oa": "MA07 OA 14",
-      "titulo": "El plano cartesiano",
-      "bloques": [
-        {
-          "t": "texto",
-          "md": "El plano cartesiano ubica un punto con dos números: primero cuánto se avanza en horizontal y después cuánto en vertical. Ese par se escribe como (x, y), y el orden importa."
-        },
-        {
-          "t": "diagrama",
-          "kind": "transformacion",
-          "params": {
-            "tipo": "traslacion",
-            "vector": [
-              3,
-              2
-            ],
-            "figura": [
-              [
-                1,
-                1
-              ],
-              [
-                3,
-                1
-              ],
-              [
-                2,
-                3
-              ]
-            ],
-            "etiqueta": "Traslación (3, 2)"
-          },
-          "intro": "La figura se movió 3 a la derecha y 2 hacia arriba."
-        },
-        {
-          "t": "texto",
-          "md": "Un vector indica un movimiento: (3, 2) significa avanzar 3 en horizontal y 2 en vertical. Aplicarlo a un punto es sumar cada número a su coordenada."
-        },
-        {
-          "t": "ejemplo",
-          "intro": "Trasladar el punto (2, 5) con el vector (−1, 3).",
-          "pasos": [
-            "A la coordenada x le sumamos −1: 2 + (−1) = 1.",
-            "A la coordenada y le sumamos 3: 5 + 3 = 8.",
-            "El punto llega a (1, 8)."
-          ]
-        },
-        {
-          "t": "practica",
-          "fromBank": {
-            "oa": "MA07 OA 14",
-            "n": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": "ma7-oa15",
-      "oa": "MA07 OA 15",
-      "titulo": "Muestreo",
-      "bloques": [
-        {
-          "t": "texto",
-          "md": "Cuando preguntarle a toda la población es imposible, se le pregunta a una parte: la muestra. Con ella se estima lo que pasa en el total."
-        },
-        {
-          "t": "diagrama",
-          "kind": "barras",
-          "params": {
-            "datos": [
-              {
-                "etiqueta": "Sí",
-                "valor": 36
-              },
-              {
-                "etiqueta": "No",
-                "valor": 24
-              }
-            ],
-            "desde": 0
-          },
-          "intro": "36 de 60 encuestados dijeron que sí."
-        },
-        {
-          "t": "texto",
-          "md": "Para que la estimación sirva, la muestra tiene que parecerse a la población. Si preguntas solo a la salida de un gimnasio, no vas a saber qué opina la ciudad."
-        },
-        {
-          "t": "ejemplo",
-          "intro": "En una muestra de 60 estudiantes, 36 usan bicicleta. En un colegio de 800, ¿cuántos serían?",
-          "pasos": [
-            "Calculamos el porcentaje de la muestra: 36 ÷ 60 = 0,6, o sea 60%.",
-            "Aplicamos ese porcentaje al total.",
-            "0,6 · 800 = 480.",
-            "Se estiman unos 480 estudiantes."
-          ]
-        },
-        {
-          "t": "practica",
-          "fromBank": {
-            "oa": "MA07 OA 15",
-            "n": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": "ma7-oa16",
-      "oa": "MA07 OA 16",
-      "titulo": "Tablas y gráficos de frecuencia",
-      "bloques": [
-        {
-          "t": "texto",
-          "md": "La frecuencia absoluta es cuántas veces aparece un dato. La relativa es esa cantidad dividida por el total, y sirve para comparar grupos de distinto tamaño."
-        },
-        {
-          "t": "diagrama",
-          "kind": "barras",
-          "params": {
-            "datos": [
-              {
-                "etiqueta": "Fútbol",
-                "valor": 12
-              },
-              {
-                "etiqueta": "Tenis",
-                "valor": 5
-              },
-              {
-                "etiqueta": "Vóley",
-                "valor": 8
-              },
-              {
-                "etiqueta": "Otro",
-                "valor": 5
-              }
-            ],
-            "desde": 0
-          },
-          "intro": "Cuatro categorías y cuántos eligió cada una."
-        },
-        {
-          "t": "texto",
-          "md": "El gráfico de barras compara categorías y el circular muestra cómo se reparte un total. Mirar dónde empieza el eje es clave: uno que no parte en cero exagera las diferencias."
-        },
-        {
-          "t": "ejemplo",
-          "intro": "De 30 encuestados, 12 eligieron fútbol. ¿Cuál es su frecuencia relativa?",
-          "pasos": [
-            "Dividimos la frecuencia por el total: 12 ÷ 30.",
-            "Da 0,4.",
-            "En porcentaje, un 40%."
-          ]
-        },
-        {
-          "t": "practica",
-          "fromBank": {
-            "oa": "MA07 OA 16",
-            "n": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": "ma7-oa17",
-      "oa": "MA07 OA 17",
-      "titulo": "Media, mediana, moda y rango",
-      "bloques": [
-        {
-          "t": "texto",
-          "md": "La media es el promedio: se suma todo y se divide por la cantidad de datos. La mediana es el valor del medio al ordenarlos, y la moda es el que más se repite."
-        },
-        {
-          "t": "diagrama",
-          "kind": "cajon",
-          "params": {
-            "min": 2,
-            "q1": 5,
-            "mediana": 7,
-            "q3": 9,
-            "max": 14
-          },
-          "intro": "El diagrama muestra dónde está el medio y cuánto se estiran los datos."
-        },
-        {
-          "t": "texto",
-          "md": "La media se deja arrastrar por un valor extremo; la mediana no. Por eso, cuando hay un dato muy alejado del resto, la mediana describe mejor al grupo."
-        },
-        {
-          "t": "ejemplo",
-          "intro": "Datos: 4, 7, 7, 9, 13. Calculemos las cuatro medidas.",
-          "pasos": [
-            "Media: 4 + 7 + 7 + 9 + 13 = 40, y 40 ÷ 5 = 8.",
-            "Mediana: ya están ordenados, el del medio es 7.",
-            "Moda: el 7, porque aparece dos veces.",
-            "Rango: 13 − 4 = 9."
-          ]
-        },
-        {
-          "t": "practica",
-          "fromBank": {
-            "oa": "MA07 OA 17",
-            "n": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": "ma7-oa18",
-      "oa": "MA07 OA 18",
-      "titulo": "Probabilidad",
-      "bloques": [
-        {
-          "t": "texto",
-          "md": "La probabilidad de un evento es cuántos resultados lo cumplen dividido por todos los resultados posibles. Va de 0, imposible, a 1, seguro."
-        },
-        {
-          "t": "diagrama",
-          "kind": "arbol",
-          "params": {
-            "n1": 2,
-            "n2": 3
-          },
-          "intro": "Dos opciones y después tres: en total 2 · 3 = 6 resultados posibles."
-        },
-        {
-          "t": "texto",
-          "md": "Al repetir un experimento muchas veces, la frecuencia relativa se va acercando a la probabilidad teórica. Con pocos intentos puede alejarse bastante, y eso es normal."
-        },
-        {
-          "t": "ejemplo",
-          "intro": "Al lanzar un dado, ¿cuál es la probabilidad de sacar un número par?",
-          "pasos": [
-            "Resultados posibles: 1, 2, 3, 4, 5 y 6, o sea 6.",
-            "Resultados que sirven: 2, 4 y 6, o sea 3.",
-            "Probabilidad = 3/6.",
-            "Simplificando, 1/2, o un 50%."
-          ]
-        },
-        {
-          "t": "practica",
-          "fromBank": {
-            "oa": "MA07 OA 18",
-            "n": 10
-          }
-        }
-      ]
-    },
-    {
-      "id": "ma7-oa19",
-      "oa": "MA07 OA 19",
-      "titulo": "Lo que pasa y lo que debería pasar",
-      "bloques": [
-        {
-          "t": "texto",
-          "md": "La probabilidad teórica se calcula pensando; la frecuencia relativa se mide experimentando. Casi nunca dan exactamente lo mismo, y eso no significa que el cálculo esté malo."
-        },
-        {
-          "t": "diagrama",
-          "kind": "barras",
-          "params": {
-            "datos": [
-              {
-                "etiqueta": "Cara",
-                "valor": 46
-              },
-              {
-                "etiqueta": "Sello",
-                "valor": 54
-              }
-            ],
-            "desde": 0
-          },
-          "intro": "Cien lanzamientos reales de una moneda: no salió 50 y 50."
-        },
-        {
-          "t": "texto",
-          "md": "Mientras más veces se repite el experimento, más se acercan las dos. Con 10 lanzamientos la diferencia puede ser enorme; con 10.000 casi desaparece."
-        },
-        {
-          "t": "ejemplo",
-          "intro": "Se lanzó una moneda 100 veces y salieron 46 caras.",
-          "pasos": [
-            "Frecuencia relativa de cara: 46 ÷ 100 = 0,46.",
-            "Probabilidad teórica: 1/2 = 0,5.",
-            "La diferencia es de 4 puntos.",
-            "Con más lanzamientos esa diferencia tiende a achicarse."
-          ]
-        },
-        {
-          "t": "practica",
-          "fromBank": {
-            "oa": "MA07 OA 19",
-            "n": 10
-          }
-        }
-      ]
+      "n": 10
+     }
     }
-  ]
+   ],
+   "revisada": true
+  },
+  {
+   "id": "ma7-oa02",
+   "oa": "MA07 OA 02",
+   "titulo": "Multiplicar y dividir fracciones",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una fracción dice en cuántas partes iguales se partió el entero (el denominador) y cuántas de esas partes tomamos (el numerador)."
+    },
+    {
+     "t": "diagrama",
+     "kind": "fracciones",
+     "params": {
+      "partes": 6,
+      "pintadas": 4,
+      "etiqueta": "4/6"
+     },
+     "intro": "El entero partido en 6, con 4 partes pintadas."
+    },
+    {
+     "t": "texto",
+     "md": "Para multiplicar dos fracciones se multiplican los numeradores entre sí y los denominadores entre sí. Para dividir, se multiplica por la fracción invertida: 3/4 dividido por 2/5 es lo mismo que 3/4 por 5/2."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Calculemos 2/3 · 3/4.",
+     "pasos": [
+      "Multiplicamos los numeradores: 2 · 3 = 6.",
+      "Multiplicamos los denominadores: 3 · 4 = 12.",
+      "Queda 6/12.",
+      "Simplificando por 6: el resultado es 1/2."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora 3/5 dividido por 2/7.",
+     "pasos": [
+      "Dividir es multiplicar por la fracción invertida: 3/5 · 7/2.",
+      "Numeradores: 3 · 7 = 21.",
+      "Denominadores: 5 · 2 = 10.",
+      "El resultado es 21/10."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA07 OA 02",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": true
+  },
+  {
+   "id": "ma7-oa03",
+   "oa": "MA07 OA 03",
+   "titulo": "Problemas con fracciones y decimales",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una fracción y un decimal pueden ser el mismo número escrito de dos maneras. Dividiendo el numerador por el denominador se pasa de una forma a la otra."
+    },
+    {
+     "t": "diagrama",
+     "kind": "fracciones",
+     "params": {
+      "partes": 4,
+      "pintadas": 3,
+      "etiqueta": "3/4 = 0,75"
+     },
+     "intro": "Tres de las cuatro partes: la misma cantidad, escrita de dos formas."
+    },
+    {
+     "t": "texto",
+     "md": "En un problema conviene preguntarse primero de qué es la fracción. «Los tres cuartos de 20» significa dividir 20 en 4 partes y tomar 3."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Una botella tiene 3/4 de litro y se toman 2/3 de ella. ¿Cuánto se tomó?",
+     "pasos": [
+      "Tomar 2/3 «de» algo es multiplicar por 2/3.",
+      "Calculamos 3/4 · 2/3.",
+      "Numeradores 3 · 2 = 6; denominadores 4 · 3 = 12.",
+      "Queda 6/12, o sea 1/2 litro."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA07 OA 03",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": true
+  },
+  {
+   "id": "ma7-oa04",
+   "oa": "MA07 OA 04",
+   "titulo": "El porcentaje",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un porcentaje es una fracción cuyo denominador es 100. Escribir 30% es otra forma de escribir 30/100, y también 0,3."
+    },
+    {
+     "t": "diagrama",
+     "kind": "fracciones",
+     "params": {
+      "partes": 10,
+      "pintadas": 3,
+      "etiqueta": "30% = 3/10"
+     },
+     "intro": "El entero partido en 10: cada parte es un 10%."
+    },
+    {
+     "t": "texto",
+     "md": "Para calcular un porcentaje de una cantidad se multiplica por la fracción. El 25% es un cuarto, el 50% es la mitad y el 10% es dividir por 10: reconocerlos ahorra mucho tiempo."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Calculemos el 15% de 240.",
+     "pasos": [
+      "El 10% de 240 es dividir por 10: 24.",
+      "El 5% es la mitad del 10%: 12.",
+      "15% = 10% + 5%.",
+      "24 + 12 = 36. El 15% de 240 es 36."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA07 OA 04",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": true
+  },
+  {
+   "id": "ma7-oa05",
+   "oa": "MA07 OA 05",
+   "titulo": "Potencias de base 10",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una potencia es una multiplicación abreviada. En 10³ el 10 es la base y el 3 es el exponente: significa multiplicar el 10 por sí mismo tres veces."
+    },
+    {
+     "t": "diagrama",
+     "kind": "potencias",
+     "params": {
+      "lado": 10,
+      "etiqueta": "10² = 100"
+     },
+     "intro": "Diez filas de diez: por eso 10² es 100."
+    },
+    {
+     "t": "texto",
+     "md": "Con base 10 el exponente cuenta los ceros: 10⁴ es un 1 seguido de cuatro ceros. Y cualquier base elevada a 0 vale 1, también el 10."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Escribamos 45.000 en notación científica.",
+     "pasos": [
+      "Corremos la coma hasta dejar un solo dígito antes: 4,5.",
+      "Contamos cuántos lugares corrimos: 4.",
+      "Ese número es el exponente del 10.",
+      "45.000 = 4,5 · 10⁴."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA07 OA 05",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": true
+  },
+  {
+   "id": "ma7-oa06",
+   "oa": "MA07 OA 06",
+   "titulo": "El lenguaje algebraico",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una letra puede representar un número que todavía no conocemos o que puede cambiar. Con ella, una regla que valdría para muchos casos se escribe una sola vez."
+    },
+    {
+     "t": "diagrama",
+     "kind": "algebra",
+     "params": {
+      "x": 2,
+      "u": 3,
+      "etiqueta": "2x + 3"
+     },
+     "intro": "Dos fichas de x y tres unidades sueltas: eso es 2x + 3."
+    },
+    {
+     "t": "texto",
+     "md": "El doble de un número se escribe 2n, y tres más que un número se escribe n + 3. El truco está en leer despacio qué operación pide cada palabra."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Escribamos: el triple de un número, menos cinco.",
+     "pasos": [
+      "Le ponemos una letra al número que no conocemos: n.",
+      "El triple es multiplicar por 3: 3n.",
+      "Menos cinco es restar 5.",
+      "Queda 3n − 5."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA07 OA 06",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": true
+  },
+  {
+   "id": "ma7-oa07",
+   "oa": "MA07 OA 07",
+   "titulo": "Reducir términos semejantes",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Dos términos son semejantes cuando tienen la misma letra elevada al mismo exponente. Solo esos se pueden sumar o restar entre sí."
+    },
+    {
+     "t": "diagrama",
+     "kind": "algebra",
+     "params": {
+      "x": 3,
+      "u": 2,
+      "etiqueta": "3x + 2"
+     },
+     "intro": "Las fichas de x se juntan entre ellas; las unidades, entre ellas."
+    },
+    {
+     "t": "texto",
+     "md": "Es como ordenar: las manzanas con las manzanas. 4x y 2x se suman y dan 6x, pero 4x y 2y no se pueden juntar en un solo término."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Reduzcamos 5x + 3y − 2x + y.",
+     "pasos": [
+      "Juntamos los términos con x: 5x − 2x = 3x.",
+      "Juntamos los términos con y: 3y + y = 4y.",
+      "No se pueden mezclar entre sí.",
+      "El resultado es 3x + 4y."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA07 OA 07",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": true
+  },
+  {
+   "id": "ma7-oa08",
+   "oa": "MA07 OA 08",
+   "titulo": "Proporción directa e inversa",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Dos cantidades son directamente proporcionales cuando al doblar una, la otra también se dobla. Su gráfico es una recta que pasa por el origen."
+    },
+    {
+     "t": "diagrama",
+     "kind": "funcion",
+     "params": {
+      "a": 2,
+      "b": 0,
+      "interactivo": true
+     },
+     "intro": "Mueve la pendiente: mientras la recta pase por el origen, la proporción es directa."
+    },
+    {
+     "t": "texto",
+     "md": "En la proporción inversa pasa lo contrario: al doblar una, la otra se reduce a la mitad, y el producto de las dos se mantiene constante. Más trabajadores, menos días."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Si 3 kilos cuestan $2.400, ¿cuánto cuestan 7 kilos?",
+     "pasos": [
+      "Es proporción directa: más kilos, más precio.",
+      "Buscamos cuánto vale un kilo: 2.400 ÷ 3 = 800.",
+      "Multiplicamos por los kilos que queremos: 800 · 7.",
+      "7 kilos cuestan $5.600."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA07 OA 08",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": true
+  },
+  {
+   "id": "ma7-oa09",
+   "oa": "MA07 OA 09",
+   "titulo": "Ecuaciones e inecuaciones",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una ecuación es una balanza en equilibrio: lo que hay a un lado del igual pesa lo mismo que lo del otro. Resolverla es despejar la letra sin romper ese equilibrio."
+    },
+    {
+     "t": "diagrama",
+     "kind": "balanza",
+     "params": {
+      "izqX": 2,
+      "izqU": 1,
+      "derU": 7,
+      "etiqueta": "2x + 1 = 7"
+     },
+     "intro": "Si quitas lo mismo de los dos lados, la balanza sigue equilibrada."
+    },
+    {
+     "t": "texto",
+     "md": "Una inecuación usa <, >, ≤ o ≥ en vez del igual, y su respuesta no es un solo número sino un conjunto. Se resuelve igual, con un cuidado: al multiplicar o dividir por un negativo, el signo se da vuelta."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": -2,
+      "max": 10,
+      "intervalo": {
+       "desde": 3,
+       "tipo": ">"
+      }
+     },
+     "intro": "La solución de x > 3: todos los de la derecha, sin incluir el 3."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Resolvamos 2x + 1 = 7.",
+     "pasos": [
+      "Restamos 1 a los dos lados: 2x = 6.",
+      "Dividimos los dos lados por 2: x = 3.",
+      "Comprobamos: 2 · 3 + 1 = 7."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA07 OA 09",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": true
+  },
+  {
+   "id": "ma7-oa10",
+   "oa": "MA07 OA 10",
+   "titulo": "Ángulos de los polígonos",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Los ángulos interiores de un triángulo siempre suman 180°, sin importar su forma. Es el punto de partida para todos los demás polígonos."
+    },
+    {
+     "t": "diagrama",
+     "kind": "poligono",
+     "params": {
+      "lados": 6,
+      "etiqueta": "6 lados → 4 triángulos"
+     },
+     "intro": "Desde un vértice, el hexágono se parte en 4 triángulos."
+    },
+    {
+     "t": "texto",
+     "md": "Cualquier polígono se puede partir en triángulos desde uno de sus vértices. Uno de n lados se parte en n − 2 triángulos, así que sus ángulos interiores suman (n − 2) por 180°."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "¿Cuánto suman los ángulos interiores de un hexágono?",
+     "pasos": [
+      "Un hexágono tiene 6 lados, así que n = 6.",
+      "Se parte en n − 2 = 4 triángulos.",
+      "Cada triángulo aporta 180°.",
+      "4 · 180° = 720°."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Y en un hexágono regular, ¿cuánto mide cada ángulo?",
+     "pasos": [
+      "En un polígono regular todos los ángulos son iguales.",
+      "Repartimos el total entre los 6 ángulos.",
+      "720° ÷ 6 = 120°."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA07 OA 10",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": true
+  },
+  {
+   "id": "ma7-oa11",
+   "oa": "MA07 OA 11",
+   "titulo": "El círculo",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "El radio es la distancia del centro al borde, y el diámetro son dos radios: siempre mide el doble. Todos los puntos del borde están a la misma distancia del centro."
+    },
+    {
+     "t": "diagrama",
+     "kind": "circulo",
+     "params": {
+      "radio": 62,
+      "mostrar": "ambos"
+     },
+     "intro": "El radio va del centro al borde; el diámetro lo cruza entero."
+    },
+    {
+     "t": "texto",
+     "md": "Si mides el contorno de cualquier círculo y lo divides por su diámetro, siempre da el mismo número: un poco más de 3. Ese número es pi, y por eso el perímetro es pi por el diámetro."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un plato tiene 20 cm de diámetro. ¿Cuánto mide su contorno?",
+     "pasos": [
+      "El perímetro es pi por el diámetro.",
+      "Usamos pi aproximadamente igual a 3,14.",
+      "3,14 · 20 = 62,8.",
+      "El contorno mide unos 62,8 cm."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "¿Y cuánta superficie ocupa ese plato?",
+     "pasos": [
+      "El área es pi por el radio al cuadrado.",
+      "El radio es la mitad del diámetro: 10 cm.",
+      "10 al cuadrado es 100.",
+      "3,14 · 100 = 314 cm²."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA07 OA 11",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": true
+  },
+  {
+   "id": "ma7-oa12",
+   "oa": "MA07 OA 12",
+   "titulo": "Construir figuras geométricas",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Dos rectas son perpendiculares cuando se cruzan formando un ángulo de 90°, y paralelas cuando nunca se cruzan por mucho que se alarguen."
+    },
+    {
+     "t": "texto",
+     "md": "La bisectriz de un ángulo lo parte en dos ángulos iguales. La altura de un triángulo va desde un vértice hasta el lado de enfrente, formando 90° con él."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Trazar la bisectriz de un ángulo con compás.",
+     "pasos": [
+      "Con el compás en el vértice, marcamos un arco que corte los dos lados.",
+      "Desde cada uno de esos dos cortes trazamos otro arco, con la misma abertura.",
+      "Los dos arcos se cruzan en un punto.",
+      "La recta que va del vértice a ese punto es la bisectriz."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA07 OA 12",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": true
+  },
+  {
+   "id": "ma7-oa13",
+   "oa": "MA07 OA 13",
+   "titulo": "Área de triángulos y cuadriláteros",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "El área de un paralelogramo es base por altura, igual que la de un rectángulo: si le cortas el triángulo de un extremo y lo pegas al otro, queda un rectángulo."
+    },
+    {
+     "t": "diagrama",
+     "kind": "figura",
+     "params": {
+      "tipo": "triangulo",
+      "base": 8,
+      "altura": 5,
+      "etiqueta": "área = base · altura ÷ 2"
+     },
+     "intro": "La altura siempre forma 90° con la base."
+    },
+    {
+     "t": "texto",
+     "md": "Un triángulo es siempre la mitad de un paralelogramo con su misma base y altura, así que su área es base por altura dividido en dos. En el trapecio se promedian las dos bases: base mayor más base menor, por la altura, dividido en dos."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un triángulo mide 8 cm de base y 5 cm de altura.",
+     "pasos": [
+      "Multiplicamos base por altura: 8 · 5 = 40.",
+      "Dividimos en dos, porque es la mitad del paralelogramo.",
+      "40 ÷ 2 = 20.",
+      "El área es 20 cm²."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un trapecio con bases de 10 y 6 cm, y altura 4 cm.",
+     "pasos": [
+      "Sumamos las dos bases: 10 + 6 = 16.",
+      "Multiplicamos por la altura: 16 · 4 = 64.",
+      "Dividimos en dos: 64 ÷ 2 = 32.",
+      "El área es 32 cm²."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA07 OA 13",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": true
+  },
+  {
+   "id": "ma7-oa14",
+   "oa": "MA07 OA 14",
+   "titulo": "El plano cartesiano",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "El plano cartesiano ubica un punto con dos números: primero cuánto se avanza en horizontal y después cuánto en vertical. Ese par se escribe como (x, y), y el orden importa."
+    },
+    {
+     "t": "diagrama",
+     "kind": "transformacion",
+     "params": {
+      "tipo": "traslacion",
+      "vector": [
+       3,
+       2
+      ],
+      "figura": [
+       [
+        1,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        2,
+        3
+       ]
+      ],
+      "etiqueta": "Traslación (3, 2)"
+     },
+     "intro": "La figura se movió 3 a la derecha y 2 hacia arriba."
+    },
+    {
+     "t": "texto",
+     "md": "Un vector indica un movimiento: (3, 2) significa avanzar 3 en horizontal y 2 en vertical. Aplicarlo a un punto es sumar cada número a su coordenada."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Trasladar el punto (2, 5) con el vector (−1, 3).",
+     "pasos": [
+      "A la coordenada x le sumamos −1: 2 + (−1) = 1.",
+      "A la coordenada y le sumamos 3: 5 + 3 = 8.",
+      "El punto llega a (1, 8)."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA07 OA 14",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": true
+  },
+  {
+   "id": "ma7-oa15",
+   "oa": "MA07 OA 15",
+   "titulo": "Muestreo",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Cuando preguntarle a toda la población es imposible, se le pregunta a una parte: la muestra. Con ella se estima lo que pasa en el total."
+    },
+    {
+     "t": "diagrama",
+     "kind": "barras",
+     "params": {
+      "datos": [
+       {
+        "etiqueta": "Sí",
+        "valor": 36
+       },
+       {
+        "etiqueta": "No",
+        "valor": 24
+       }
+      ],
+      "desde": 0
+     },
+     "intro": "36 de 60 encuestados dijeron que sí."
+    },
+    {
+     "t": "texto",
+     "md": "Para que la estimación sirva, la muestra tiene que parecerse a la población. Si preguntas solo a la salida de un gimnasio, no vas a saber qué opina la ciudad."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "En una muestra de 60 estudiantes, 36 usan bicicleta. En un colegio de 800, ¿cuántos serían?",
+     "pasos": [
+      "Calculamos el porcentaje de la muestra: 36 ÷ 60 = 0,6, o sea 60%.",
+      "Aplicamos ese porcentaje al total.",
+      "0,6 · 800 = 480.",
+      "Se estiman unos 480 estudiantes."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA07 OA 15",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": true
+  },
+  {
+   "id": "ma7-oa16",
+   "oa": "MA07 OA 16",
+   "titulo": "Tablas y gráficos de frecuencia",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "La frecuencia absoluta es cuántas veces aparece un dato. La relativa es esa cantidad dividida por el total, y sirve para comparar grupos de distinto tamaño."
+    },
+    {
+     "t": "diagrama",
+     "kind": "barras",
+     "params": {
+      "datos": [
+       {
+        "etiqueta": "Fútbol",
+        "valor": 12
+       },
+       {
+        "etiqueta": "Tenis",
+        "valor": 5
+       },
+       {
+        "etiqueta": "Vóley",
+        "valor": 8
+       },
+       {
+        "etiqueta": "Otro",
+        "valor": 5
+       }
+      ],
+      "desde": 0
+     },
+     "intro": "Cuatro categorías y cuántos eligió cada una."
+    },
+    {
+     "t": "texto",
+     "md": "El gráfico de barras compara categorías y el circular muestra cómo se reparte un total. Mirar dónde empieza el eje es clave: uno que no parte en cero exagera las diferencias."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "De 30 encuestados, 12 eligieron fútbol. ¿Cuál es su frecuencia relativa?",
+     "pasos": [
+      "Dividimos la frecuencia por el total: 12 ÷ 30.",
+      "Da 0,4.",
+      "En porcentaje, un 40%."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA07 OA 16",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": true
+  },
+  {
+   "id": "ma7-oa17",
+   "oa": "MA07 OA 17",
+   "titulo": "Media, mediana, moda y rango",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "La media es el promedio: se suma todo y se divide por la cantidad de datos. La mediana es el valor del medio al ordenarlos, y la moda es el que más se repite."
+    },
+    {
+     "t": "diagrama",
+     "kind": "cajon",
+     "params": {
+      "min": 2,
+      "q1": 5,
+      "mediana": 7,
+      "q3": 9,
+      "max": 14
+     },
+     "intro": "El diagrama muestra dónde está el medio y cuánto se estiran los datos."
+    },
+    {
+     "t": "texto",
+     "md": "La media se deja arrastrar por un valor extremo; la mediana no. Por eso, cuando hay un dato muy alejado del resto, la mediana describe mejor al grupo."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Datos: 4, 7, 7, 9, 13. Calculemos las cuatro medidas.",
+     "pasos": [
+      "Media: 4 + 7 + 7 + 9 + 13 = 40, y 40 ÷ 5 = 8.",
+      "Mediana: ya están ordenados, el del medio es 7.",
+      "Moda: el 7, porque aparece dos veces.",
+      "Rango: 13 − 4 = 9."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA07 OA 17",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": true
+  },
+  {
+   "id": "ma7-oa18",
+   "oa": "MA07 OA 18",
+   "titulo": "Probabilidad",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "La probabilidad de un evento es cuántos resultados lo cumplen dividido por todos los resultados posibles. Va de 0, imposible, a 1, seguro."
+    },
+    {
+     "t": "diagrama",
+     "kind": "arbol",
+     "params": {
+      "n1": 2,
+      "n2": 3
+     },
+     "intro": "Dos opciones y después tres: en total 2 · 3 = 6 resultados posibles."
+    },
+    {
+     "t": "texto",
+     "md": "Al repetir un experimento muchas veces, la frecuencia relativa se va acercando a la probabilidad teórica. Con pocos intentos puede alejarse bastante, y eso es normal."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Al lanzar un dado, ¿cuál es la probabilidad de sacar un número par?",
+     "pasos": [
+      "Resultados posibles: 1, 2, 3, 4, 5 y 6, o sea 6.",
+      "Resultados que sirven: 2, 4 y 6, o sea 3.",
+      "Probabilidad = 3/6.",
+      "Simplificando, 1/2, o un 50%."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA07 OA 18",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": true
+  },
+  {
+   "id": "ma7-oa19",
+   "oa": "MA07 OA 19",
+   "titulo": "Lo que pasa y lo que debería pasar",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "La probabilidad teórica se calcula pensando; la frecuencia relativa se mide experimentando. Casi nunca dan exactamente lo mismo, y eso no significa que el cálculo esté malo."
+    },
+    {
+     "t": "diagrama",
+     "kind": "barras",
+     "params": {
+      "datos": [
+       {
+        "etiqueta": "Cara",
+        "valor": 46
+       },
+       {
+        "etiqueta": "Sello",
+        "valor": 54
+       }
+      ],
+      "desde": 0
+     },
+     "intro": "Cien lanzamientos reales de una moneda: no salió 50 y 50."
+    },
+    {
+     "t": "texto",
+     "md": "Mientras más veces se repite el experimento, más se acercan las dos. Con 10 lanzamientos la diferencia puede ser enorme; con 10.000 casi desaparece."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Se lanzó una moneda 100 veces y salieron 46 caras.",
+     "pasos": [
+      "Frecuencia relativa de cara: 46 ÷ 100 = 0,46.",
+      "Probabilidad teórica: 1/2 = 0,5.",
+      "La diferencia es de 4 puntos.",
+      "Con más lanzamientos esa diferencia tiende a achicarse."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA07 OA 19",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": true
+  }
+ ]
 }

@@ -1250,7 +1250,7 @@ const ARMAR=_PARAMS.has('armar');      // pantalla para armar enlaces de muestra
 
 const EXPEDICIONES=[
  // --- Campaña Historia (7°) ---
- { id:'hist7-cap1', asignatura:'Historia', nivel:'7° Básico · Los primeros humanos y su medio',
+ { id:'hist7-cap1', intro:'hi7-humanos', asignatura:'Historia', nivel:'7° Básico · Los primeros humanos y su medio',
    portada:'assets/portada-historia.png', portadaMapa:'assets/portada-hist7-cap1.png',
    contenido:'contenido/historia-7basico/preguntas.json', activa:true, campaña:'hist7',
    etapas:[
@@ -1260,7 +1260,7 @@ const EXPEDICIONES=[
      {oa:"HI07 OA 22",nombre:"El medio y nosotros",icono:"♻️",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Los primeros humanos y su medio",icono:"⏳",n:15,oas:["HI07 OA 01","HI07 OA 02","HI07 OA 21","HI07 OA 22"]},
    ]},
- { id:'hist7-cap2', asignatura:'Historia', nivel:'7° Básico · Las primeras civilizaciones',
+ { id:'hist7-cap2', intro:'hi7-civilizaciones', asignatura:'Historia', nivel:'7° Básico · Las primeras civilizaciones',
    portada:'assets/portada-historia.png', portadaMapa:'assets/portada-hist7-cap2.png',
    contenido:'contenido/historia-7basico/preguntas.json', activa:true, campaña:'hist7',
    etapas:[
@@ -1269,7 +1269,7 @@ const EXPEDICIONES=[
      {oa:"HI07 OA 23",nombre:"Problemas del planeta",icono:"🌍",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Las primeras civilizaciones",icono:"⏳",n:15,oas:["HI07 OA 03","HI07 OA 04","HI07 OA 23"]},
    ]},
- { id:'hist7-cap3', asignatura:'Historia', nivel:'7° Básico · Grecia y Roma',
+ { id:'hist7-cap3', intro:'hi7-grecia-roma', asignatura:'Historia', nivel:'7° Básico · Grecia y Roma',
    portada:'assets/portada-historia.png', portadaMapa:'assets/portada-hist7-cap3.png',
    contenido:'contenido/historia-7basico/preguntas.json', activa:true, campaña:'hist7',
    etapas:[
@@ -1279,7 +1279,7 @@ const EXPEDICIONES=[
      {oa:"HI07 OA 08",nombre:"El canon clasico",icono:"🎭",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Grecia y Roma",icono:"⏳",n:15,oas:["HI07 OA 05","HI07 OA 06","HI07 OA 07","HI07 OA 08"]},
    ]},
- { id:'hist7-cap4', asignatura:'Historia', nivel:'7° Básico · La Edad Media',
+ { id:'hist7-cap4', intro:'hi7-medieval', asignatura:'Historia', nivel:'7° Básico · La Edad Media',
    portada:'assets/portada-historia.png', portadaMapa:'assets/portada-hist7-cap4.png',
    contenido:'contenido/historia-7basico/preguntas.json', activa:true, campaña:'hist7',
    etapas:[
@@ -1298,7 +1298,7 @@ const EXPEDICIONES=[
      {oa:"HI07 OA 19",nombre:"Lo que aporta la diversidad",icono:"🤝",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Ciudadania, de Atenas a hoy",icono:"⏳",n:15,oas:["HI07 OA 17","HI07 OA 18","HI07 OA 19"]},
    ]},
- { id:'hist7-cap6', asignatura:'Historia', nivel:'7° Básico · Civilizaciones de America',
+ { id:'hist7-cap6', intro:'hi7-america', asignatura:'Historia', nivel:'7° Básico · Civilizaciones de America',
    portada:'assets/portada-historia.png', portadaMapa:'assets/portada-hist7-cap6.png',
    contenido:'contenido/historia-7basico/preguntas.json', activa:true, campaña:'hist7',
    etapas:[
@@ -1400,7 +1400,7 @@ const EXPEDICIONES=[
      {oa:"BOSS",nombre:"⚡ JEFE: Sexualidad y autocuidado",icono:"🪨",n:15,oas:["CN07 OA 01","CN07 OA 02","CN07 OA 03"]},
    ]},
  // --- Campaña Lenguaje (7°) ---
- { id:'len7-cap1', asignatura:'Lenguaje', nivel:'7° Básico · Narraciones y heroes',
+ { id:'len7-cap1', intro:'le7-narraciones', asignatura:'Lenguaje', nivel:'7° Básico · Narraciones y heroes',
    portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-leng-literarios.png',
    contenido:'contenido/lenguaje-7basico/preguntas.json', activa:true, campaña:'len7',
    etapas:[
@@ -1409,7 +1409,7 @@ const EXPEDICIONES=[
      {oa:"LE07 OA 07",nombre:"Interpretar un texto",icono:"🔍",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Narraciones y heroes",icono:"🤫",n:15,oas:["LE07 OA 02","LE07 OA 03","LE07 OA 07"]},
    ]},
- { id:'len7-cap2', asignatura:'Lenguaje', nivel:'7° Básico · Poesia, mitos y relatos populares',
+ { id:'len7-cap2', intro:'le7-poesia', asignatura:'Lenguaje', nivel:'7° Básico · Poesia, mitos y relatos populares',
    portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-len7-cap2.png',
    contenido:'contenido/lenguaje-7basico/preguntas.json', activa:true, campaña:'len7',
    etapas:[
@@ -1418,7 +1418,7 @@ const EXPEDICIONES=[
      {oa:"LE07 OA 06",nombre:"Relatos mitologicos",icono:"⚡",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Poesia, mitos y relatos populares",icono:"🤫",n:15,oas:["LE07 OA 04","LE07 OA 05","LE07 OA 06"]},
    ]},
- { id:'len7-cap3', asignatura:'Lenguaje', nivel:'7° Básico · Argumentar y leer los medios',
+ { id:'len7-cap3', intro:'le7-medios', asignatura:'Lenguaje', nivel:'7° Básico · Argumentar y leer los medios',
    portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-leng-textos.png',
    contenido:'contenido/lenguaje-7basico/preguntas.json', activa:true, campaña:'len7',
    etapas:[
@@ -1427,7 +1427,7 @@ const EXPEDICIONES=[
      {oa:"LE07 OA 20",nombre:"Escuchar con criterio",icono:"🎧",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Argumentar y leer los medios",icono:"🤫",n:15,oas:["LE07 OA 08","LE07 OA 09","LE07 OA 20"]},
    ]},
- { id:'len7-cap4', asignatura:'Lenguaje', nivel:'7° Básico · Leer para aprender',
+ { id:'len7-cap4', intro:'le7-aprender', asignatura:'Lenguaje', nivel:'7° Básico · Leer para aprender',
    portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-leng-lectura.png',
    contenido:'contenido/lenguaje-7basico/preguntas.json', activa:true, campaña:'len7',
    etapas:[
@@ -1437,7 +1437,7 @@ const EXPEDICIONES=[
      {oa:"LE07 OA 25",nombre:"La idea principal",icono:"✒️",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Leer para aprender",icono:"🤫",n:15,oas:["LE07 OA 01","LE07 OA 10","LE07 OA 11","LE07 OA 25"]},
    ]},
- { id:'len7-cap5', asignatura:'Lenguaje', nivel:'7° Básico · Las palabras por dentro',
+ { id:'len7-cap5', intro:'le7-palabras', asignatura:'Lenguaje', nivel:'7° Básico · Las palabras por dentro',
    portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-len7-cap5.png',
    contenido:'contenido/lenguaje-7basico/preguntas.json', activa:true, campaña:'len7',
    etapas:[
@@ -2435,7 +2435,9 @@ const HAY_MINICLASES=true;
    esa trampa ya mordio cuatro veces en este proyecto. `montar()` necesita ademas el <body>,
    que aqui ya existe: este script inline corre despues del HTML. */
 LECC.init({ rutas:['contenido/matematicas-7basico/lecciones.json',
-                    'contenido/ciencias-7basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
+                    'contenido/ciencias-7basico/lecciones.json',
+                    'contenido/historia-7basico/lecciones.json',
+                    'contenido/lenguaje-7basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
 /* ¿Este nivel tiene el módulo de Vocabulario, y la biblioteca de lecturas del colegio?
    Son contenido de 8°. Antes se resolvían BORRANDO líneas del fork, y ese corte dejó
    la asignatura Lenguaje inalcanzable en 3° (Sesión 61). Como banderas, las tres apps

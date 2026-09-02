@@ -1,0 +1,96 @@
+{
+ "lecciones": [
+  {
+   "id": "le3-entender",
+   "titulo": "Antes de empezar: Leer y entender",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Leer no es solo decir las palabras en voz alta. Es entender lo que dicen, y para eso ayuda ir pensando mientras lees."
+    },
+    {
+     "t": "texto",
+     "md": "Un truco que sirve siempre: cuando algo del cuento te recuerde a algo que te pasó a ti, se entiende mucho mejor."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a leer cuentos y también textos de verdad, como cartas y noticias, y vas a buscar en ellos lo que dicen y lo que no dicen pero se puede adivinar."
+    }
+   ]
+  },
+  {
+   "id": "le3-cuentos",
+   "titulo": "Antes de empezar: Mundos de cuento",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "En los poemas las palabras a veces no significan lo mismo de siempre. Si alguien dice que su hermano es un torbellino, no es que sea viento: es que no se queda quieto."
+    },
+    {
+     "t": "texto",
+     "md": "Eso se llama lenguaje figurado, y sirve para decir cosas con más fuerza. Cuando algo suene raro en un poema, pregúntate a qué se parece."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a leer poemas y cuentos, y vas a descubrir qué quieren decir de verdad."
+    }
+   ]
+  },
+  {
+   "id": "le3-palabras",
+   "titulo": "Antes de empezar: Palabras nuevas",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Cuando aparece una palabra que no conoces no hay que parar de leer. Casi siempre el resto de la frase te da una pista."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Mira cómo se descubre sin preguntarle a nadie.",
+     "pasos": [
+      "«El perro estaba famélico y se comió todo de una vez.»",
+      "No sabemos qué es famélico.",
+      "Pero se comió todo de una vez, así que tenía mucha hambre.",
+      "Entonces famélico quiere decir muy hambriento."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "Y si la pista no alcanza, está el diccionario: las palabras van en orden alfabético, así que se busca por la primera letra."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a aprender a descubrir palabras nuevas y a usarlas después cuando escribas y cuando hables."
+    }
+   ]
+  },
+  {
+   "id": "le3-reglas",
+   "titulo": "Antes de empezar: Las palabras y sus reglas",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "En una oración siempre hay dos partes: de quién se habla, y qué se dice de esa persona o cosa."
+    },
+    {
+     "t": "diagrama",
+     "kind": "oracion",
+     "params": {
+      "sujeto": "Mi hermana chica",
+      "predicado": "juega en el patio",
+      "etiqueta": "Las dos partes de una oración"
+     },
+     "intro": "Pregúntate «¿quién?» para encontrar la primera parte, y «¿qué hace?» para la segunda."
+    },
+    {
+     "t": "texto",
+     "md": "Las palabras tienen distintos trabajos. El sustantivo nombra (perro, casa), el adjetivo dice cómo es (grande, café) y el artículo va delante (el, la, los)."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver esos trabajos, cómo los pronombres evitan repetir, y las reglas para escribir de manera que se entienda."
+    }
+   ]
+  }
+ ]
+}

@@ -1292,7 +1292,7 @@ const ARMAR=_PARAMS.has('armar');      // pantalla para armar enlaces de muestra
 
 const EXPEDICIONES=[
  // --- Campaña Historia (capítulos = expediciones) ---
- { id:'hist-cap1', portadaMapa:'assets/portada-hist-cap1.png', asignatura:'Historia', nivel:'8° Básico · Los inicios de la modernidad',
+ { id:'hist-cap1', intro:'hi8-modernidad', portadaMapa:'assets/portada-hist-cap1.png', asignatura:'Historia', nivel:'8° Básico · Los inicios de la modernidad',
    portada:'assets/portada-historia.png', mapaImg:'assets/kimun-conquistador.png',
    contenido:'contenido/historia-8basico/preguntas.json', activa:true, campaña:'hist',
    etapas:[
@@ -1302,7 +1302,7 @@ const EXPEDICIONES=[
      {oa:"HI08 OA 04",nombre:"La economía mercantilista",icono:"⚖️",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: La modernidad",icono:"🐲",n:15,oas:["HI08 OA 01","HI08 OA 02","HI08 OA 03","HI08 OA 04"]},
    ]},
- { id:'hist-cap2', portadaMapa:'assets/portada-hist-cap2.png', asignatura:'Historia', nivel:'8° Básico · Los europeos llegan a América',
+ { id:'hist-cap2', intro:'hi8-america', portadaMapa:'assets/portada-hist-cap2.png', asignatura:'Historia', nivel:'8° Básico · Los europeos llegan a América',
    portada:'assets/portada-historia.png', mapaImg:'assets/kimun-conquistador.png',
    contenido:'contenido/historia-8basico/preguntas.json', activa:true, campaña:'hist',
    etapas:[
@@ -1312,7 +1312,7 @@ const EXPEDICIONES=[
      {oa:"HI08 OA 08",nombre:"Ciudades y administración",icono:"🏛️",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: La conquista",icono:"🐲",n:15,oas:["HI08 OA 05","HI08 OA 06","HI08 OA 07","HI08 OA 08"]},
    ]},
- { id:'hist-cap3', portadaMapa:'assets/portada-hist-cap3.png', asignatura:'Historia', nivel:'8° Básico · El mundo colonial',
+ { id:'hist-cap3', intro:'hi8-colonial', portadaMapa:'assets/portada-hist-cap3.png', asignatura:'Historia', nivel:'8° Básico · El mundo colonial',
    portada:'assets/portada-historia.png', contenido:'contenido/historia-8basico/preguntas.json',
    activa:true, campaña:'hist',
    etapas:[
@@ -1322,7 +1322,7 @@ const EXPEDICIONES=[
      {oa:"HI08 OA 12",nombre:"Convivencia y conflictos",icono:"🤝",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: El mundo colonial",icono:"🐲",n:15,oas:["HI08 OA 09","HI08 OA 10","HI08 OA 11","HI08 OA 12"]},
    ]},
- { id:'hist-cap4', portadaMapa:'assets/portada-hist-cap4.png', asignatura:'Historia', nivel:'8° Básico · Chile colonial y las nuevas ideas',
+ { id:'hist-cap4', intro:'hi8-ilustracion', portadaMapa:'assets/portada-hist-cap4.png', asignatura:'Historia', nivel:'8° Básico · Chile colonial y las nuevas ideas',
    portada:'assets/portada-historia.png', contenido:'contenido/historia-8basico/preguntas.json',
    activa:true, campaña:'hist',
    etapas:[
@@ -1389,7 +1389,7 @@ const EXPEDICIONES=[
      {oa:"BOSS", nombre:"⚡ JEFE: La materia", icono:"🔬", n:15, oas:["CN08 OA 12","CN08 OA 13","CN08 OA 14","CN08 OA 15"]},
    ]},
  // --- Campaña Lenguaje (capítulos = las 3 unidades del año; la U1 se parte en 2) ---
- { id:'leng-lectura', portadaMapa:'assets/portada-leng-lectura.png', asignatura:'Lenguaje', nivel:'8° Básico · Leer y comprender',
+ { id:'leng-lectura', intro:'le8-lectura', portadaMapa:'assets/portada-leng-lectura.png', asignatura:'Lenguaje', nivel:'8° Básico · Leer y comprender',
    portada:'assets/portada-lenguaje.png', contenido:'contenido/lenguaje-8basico/preguntas.json', activa:true, campaña:'leng',
    etapas:[
      {oa:"LE08 OA 01", nombre:"El hábito de leer", icono:"📚", n:10},
@@ -1398,7 +1398,7 @@ const EXPEDICIONES=[
      {oa:"LE08 OA 08", nombre:"Interpretar la obra", icono:"🔎", n:10},
      {oa:"BOSS", nombre:"⚡ JEFE: Leer y comprender", icono:"✒️", n:15, oas:["LE08 OA 01","LE08 OA 02","LE08 OA 03","LE08 OA 08"]},
    ]},
- { id:'leng-literarios', portadaMapa:'assets/portada-leng-literarios.png', asignatura:'Lenguaje', nivel:'8° Básico · Mundos literarios',
+ { id:'leng-literarios', intro:'le8-literarios', portadaMapa:'assets/portada-leng-literarios.png', asignatura:'Lenguaje', nivel:'8° Básico · Mundos literarios',
    portada:'assets/portada-lenguaje.png', contenido:'contenido/lenguaje-8basico/preguntas.json', activa:true, campaña:'leng',
    etapas:[
      {oa:"LE08 OA 04", nombre:"Poesía", icono:"🎵", n:10},
@@ -1407,7 +1407,7 @@ const EXPEDICIONES=[
      {oa:"LE08 OA 07", nombre:"Comedia", icono:"😄", n:10},
      {oa:"BOSS", nombre:"⚡ JEFE: Mundos literarios", icono:"✒️", n:15, oas:["LE08 OA 04","LE08 OA 05","LE08 OA 06","LE08 OA 07"]},
    ]},
- { id:'leng-textos', portadaMapa:'assets/portada-leng-textos.png', asignatura:'Lenguaje', nivel:'8° Básico · Textos y medios',
+ { id:'leng-textos', intro:'le8-textos', portadaMapa:'assets/portada-leng-textos.png', asignatura:'Lenguaje', nivel:'8° Básico · Textos y medios',
    portada:'assets/portada-lenguaje.png', contenido:'contenido/lenguaje-8basico/preguntas.json', activa:true, campaña:'leng',
    etapas:[
      {oa:"LE08 OA 09", nombre:"Argumentar y opinar", icono:"💬", n:10},
@@ -2510,7 +2510,9 @@ const HAY_MINICLASES=true;
    esa trampa ya mordio cuatro veces en este proyecto. `montar()` necesita ademas el <body>,
    que aqui ya existe: este script inline corre despues del HTML. */
 LECC.init({ rutas:['contenido/matematicas-8basico/lecciones.json',
-                    'contenido/ciencias-8basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
+                    'contenido/ciencias-8basico/lecciones.json',
+                    'contenido/historia-8basico/lecciones.json',
+                    'contenido/lenguaje-8basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
 /* ¿Este nivel tiene el módulo de Vocabulario, y la biblioteca de lecturas del colegio?
    Son contenido de 8°. Antes se resolvían BORRANDO líneas del fork, y ese corte dejó
    la asignatura Lenguaje inalcanzable en 3° (Sesión 61). Como banderas, las tres apps

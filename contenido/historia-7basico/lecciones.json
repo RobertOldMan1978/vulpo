@@ -1,0 +1,226 @@
+{
+ "lecciones": [
+  {
+   "id": "hi7-humanos",
+   "titulo": "Antes de empezar: Los primeros humanos",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Este capítulo cubre más tiempo que todos los demás juntos. La escritura, que es donde empieza lo que llamamos historia, aparece recién al final."
+    },
+    {
+     "t": "diagrama",
+     "kind": "tiempo",
+     "params": {
+      "desde": -300000,
+      "hasta": 0,
+      "hitos": [
+       {
+        "a": -300000,
+        "txt": "primeros humanos"
+       },
+       {
+        "a": -10000,
+        "txt": "agricultura"
+       },
+       {
+        "a": -3300,
+        "txt": "escritura"
+       }
+      ],
+      "etiqueta": "Casi todo el dibujo es antes de la escritura"
+     },
+     "intro": "Fíjate dónde caen la agricultura y la escritura: en el último tramo."
+    },
+    {
+     "t": "texto",
+     "md": "El cambio que lo ordena todo es la agricultura. Mientras hubo que seguir a los animales, no se podía vivir en un lugar fijo; cuando se pudo producir alimento, aparecieron las aldeas, y con ellas todo lo demás."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver el proceso de hominización, cómo la agricultura cambió la forma de vivir, y cómo el ser humano ha transformado el medio y hoy también lo daña."
+    }
+   ]
+  },
+  {
+   "id": "hi7-civilizaciones",
+   "titulo": "Antes de empezar: Las primeras civilizaciones",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una civilización no es cualquier grupo humano. Aparece cuando hay excedente de alimento: si sobra comida, no todos tienen que producirla, y esas personas se dedican a otra cosa."
+    },
+    {
+     "t": "texto",
+     "md": "De ahí sale casi todo lo que estudia este capítulo: el Estado que organiza, los oficios especializados, la escritura para llevar cuentas, y las ciudades."
+    },
+    {
+     "t": "diagrama",
+     "kind": "tiempo",
+     "params": {
+      "desde": -3500,
+      "hasta": -500,
+      "hitos": [
+       {
+        "a": -3500,
+        "txt": "Mesopotamia"
+       },
+       {
+        "a": -3100,
+        "txt": "Egipto"
+       },
+       {
+        "a": -2500,
+        "txt": "valle del Indo"
+       },
+       {
+        "a": -1600,
+        "txt": "China"
+       }
+      ],
+      "etiqueta": "Nacen lejos unas de otras, y casi al mismo tiempo"
+     },
+     "intro": "Cuatro civilizaciones, en cuatro ríos distintos, sin conocerse entre ellas."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver cómo se formaron esos primeros Estados, qué las hacía parecidas pese a la distancia, y cómo se relaciona todo eso con los problemas ambientales de hoy."
+    }
+   ]
+  },
+  {
+   "id": "hi7-grecia-roma",
+   "titulo": "Antes de empezar: Grecia y Roma",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "El mar Mediterráneo es el protagonista de este capítulo. No separaba a los pueblos: los conectaba, porque navegar era mucho más rápido que ir por tierra."
+    },
+    {
+     "t": "texto",
+     "md": "Por ahí circularon mercancías, pero sobre todo ideas: el alfabeto, las leyes escritas, la filosofía y la idea de que los ciudadanos decidan."
+    },
+    {
+     "t": "diagrama",
+     "kind": "tiempo",
+     "params": {
+      "desde": -800,
+      "hasta": 500,
+      "hitos": [
+       {
+        "a": -508,
+        "txt": "democracia en Atenas"
+       },
+       {
+        "a": -27,
+        "txt": "Imperio romano"
+       },
+       {
+        "a": 476,
+        "txt": "cae Roma"
+       }
+      ],
+      "etiqueta": "Mil trescientos años de mundo clásico"
+     },
+     "intro": "Grecia primero, Roma después, y la segunda hereda de la primera."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver la democracia ateniense y sus límites, la organización del Imperio romano, y por qué a esa herencia se le llama el canon clásico."
+    }
+   ]
+  },
+  {
+   "id": "hi7-medieval",
+   "titulo": "Antes de empezar: La Edad Media",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Al caer el Imperio romano de Occidente, Europa se fragmenta. Sin un poder central que proteja, la gente busca amparo en quien tenga tierra y soldados: así funciona el feudalismo."
+    },
+    {
+     "t": "texto",
+     "md": "Es un mundo con otra lógica: la vida se organiza alrededor de la aldea y el señor, y la religión da el marco para entenderlo todo."
+    },
+    {
+     "t": "diagrama",
+     "kind": "tiempo",
+     "params": {
+      "desde": 476,
+      "hasta": 1492,
+      "hitos": [
+       {
+        "a": 476,
+        "txt": "cae Roma"
+       },
+       {
+        "a": 800,
+        "txt": "feudalismo"
+       },
+       {
+        "a": 1096,
+        "txt": "cruzadas"
+       },
+       {
+        "a": 1350,
+        "txt": "renacen las ciudades"
+       }
+      ],
+      "etiqueta": "Mil años, y no todos iguales"
+     },
+     "intro": "No fue un bloque quieto: desde el siglo XII las ciudades y el comercio cambian todo."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver cómo se forma la Europa medieval, sus rasgos propios, su relación con el mundo musulmán —de conflicto pero también de intercambio— y las transformaciones que abren paso a la época siguiente."
+    }
+   ]
+  },
+  {
+   "id": "hi7-america",
+   "titulo": "Antes de empezar: Civilizaciones de América",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Mientras en Europa pasaba todo lo anterior, en América había civilizaciones grandes y organizadas, con ciudades, escritura, astronomía y caminos."
+    },
+    {
+     "t": "texto",
+     "md": "Se desarrollaron sin contacto con Europa ni con Asia, así que resolvieron los mismos problemas de otra manera: los incas administraron un imperio enorme sin rueda ni caballos."
+    },
+    {
+     "t": "diagrama",
+     "kind": "tiempo",
+     "params": {
+      "desde": 250,
+      "hasta": 1533,
+      "hitos": [
+       {
+        "a": 250,
+        "txt": "maya clásico"
+       },
+       {
+        "a": 1325,
+        "txt": "Tenochtitlán"
+       },
+       {
+        "a": 1438,
+        "txt": "Imperio inca"
+       },
+       {
+        "a": 1533,
+        "txt": "conquista"
+       }
+      ],
+      "etiqueta": "Siglos de desarrollo propio"
+     },
+     "intro": "Compara estas fechas con las del capítulo de la Edad Media: son las mismas."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver a los mayas, los aztecas y los incas, qué los hacía distintos entre sí, y qué de esa herencia sigue vivo hoy en América Latina."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,156 @@
+{
+ "lecciones": [
+  {
+   "id": "hi8-modernidad",
+   "titulo": "Antes de empezar: Los inicios de la modernidad",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Este capítulo trata de un cambio en la forma de pensar. En el mundo medieval, la explicación de todo venía dada; en el moderno, el ser humano se pone a averiguar por su cuenta."
+    },
+    {
+     "t": "texto",
+     "md": "De ese giro salen las tres cosas que vas a estudiar: el humanismo, que pone al ser humano al centro; el Estado moderno, que concentra el poder que antes estaba repartido; y una economía que ya no vive de la tierra sino del comercio."
+    },
+    {
+     "t": "diagrama",
+     "kind": "tiempo",
+     "params": {
+      "desde": 1400,
+      "hasta": 1600,
+      "hitos": [
+       {
+        "a": 1450,
+        "txt": "imprenta"
+       },
+       {
+        "a": 1492,
+        "txt": "llegan a América"
+       },
+       {
+        "a": 1517,
+        "txt": "Reforma"
+       }
+      ],
+      "etiqueta": "Siglo y medio que cambia todo"
+     },
+     "intro": "Tres hechos en pocas décadas, y cada uno alimenta al siguiente."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver el humanismo, la transición desde la sociedad medieval, los rasgos del Estado moderno y la economía mercantilista del siglo XVI."
+    }
+   ]
+  },
+  {
+   "id": "hi8-america",
+   "titulo": "Antes de empezar: Los europeos llegan a América",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "En 1492 se encuentran dos mundos que llevaban milenios sin saber el uno del otro. No fue un descubrimiento en un solo sentido: cada lado se topó con algo que no cabía en lo que creía saber."
+    },
+    {
+     "t": "texto",
+     "md": "Este capítulo trata de un proceso violento, y se estudia como tal: hubo guerra, dominación y muerte, sobre todo por enfermedades ante las que la población americana no tenía defensas."
+    },
+    {
+     "t": "diagrama",
+     "kind": "tiempo",
+     "params": {
+      "desde": 1490,
+      "hasta": 1545,
+      "hitos": [
+       {
+        "a": 1492,
+        "txt": "primer viaje"
+       },
+       {
+        "a": 1521,
+        "txt": "cae Tenochtitlán"
+       },
+       {
+        "a": 1533,
+        "txt": "cae el Cusco"
+       },
+       {
+        "a": 1541,
+        "txt": "Santiago"
+       }
+      ],
+      "etiqueta": "Menos de cincuenta años"
+     },
+     "intro": "Fíjate en la velocidad: dos imperios enormes caen en poco más de una década."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver por qué ese encuentro fue un choque entre culturas, qué factores explican la rapidez de la conquista, y qué efectos tuvo en la propia Europa."
+    }
+   ]
+  },
+  {
+   "id": "hi8-colonial",
+   "titulo": "Antes de empezar: El mundo colonial",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "La sociedad colonial se organiza por origen: peninsulares, criollos, mestizos, indígenas y africanos esclavizados, cada grupo con distintos derechos. Es una sociedad de estamentos, no de iguales."
+    },
+    {
+     "t": "texto",
+     "md": "Y al mismo tiempo es una sociedad que se mezcla. El mestizaje no fue una excepción sino la regla, y de ahí sale buena parte de lo que hoy es América Latina: su comida, su música, sus palabras."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver el barroco americano, el comercio atlántico, cómo se formó esa sociedad, y la larga convivencia y conflicto entre españoles, mestizos y mapuches en Chile."
+    }
+   ]
+  },
+  {
+   "id": "hi8-ilustracion",
+   "titulo": "Antes de empezar: Chile colonial y las nuevas ideas",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "En el siglo XVIII aparece una idea que lo mueve todo: que la razón, y no la tradición ni la autoridad, debe decidir cómo se organiza una sociedad. Eso es la Ilustración."
+    },
+    {
+     "t": "texto",
+     "md": "Suena abstracto y no lo es: de ahí salen la independencia de Estados Unidos, la Revolución Francesa y, poco después, la de las colonias hispanoamericanas."
+    },
+    {
+     "t": "diagrama",
+     "kind": "tiempo",
+     "params": {
+      "desde": 1750,
+      "hasta": 1820,
+      "hitos": [
+       {
+        "a": 1776,
+        "txt": "independencia EE.UU."
+       },
+       {
+        "a": 1789,
+        "txt": "Revolución Francesa"
+       },
+       {
+        "a": 1810,
+        "txt": "primera junta"
+       },
+       {
+        "a": 1818,
+        "txt": "independencia de Chile"
+       }
+      ],
+      "etiqueta": "Las ideas viajan, y rápido"
+     },
+     "intro": "Cuarenta años entre la primera revolución y la independencia de Chile."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver el papel de la hacienda en el Chile colonial, qué proponía la Ilustración, y cómo esas ideas se convirtieron en procesos revolucionarios."
+    }
+   ]
+  }
+ ]
+}

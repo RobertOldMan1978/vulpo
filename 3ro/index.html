@@ -1336,7 +1336,7 @@ const EXPEDICIONES=[
      {oa:"BOSS",nombre:"⚡ JEFE: Datos",icono:"🐲",n:15,
       oas:["MA03 OA 23","MA03 OA 24","MA03 OA 25","MA03 OA 26"]},
    ]},
- { id:'hist3-cap1', asignatura:'Historia', nivel:'3° Básico · Nuestro planeta',
+ { id:'hist3-cap1', intro:'hi3-planeta', asignatura:'Historia', nivel:'3° Básico · Nuestro planeta',
    portada:'assets/portada-historia.png', portadaMapa:'assets/portada-hist3-cap1.png',
    contenido:'contenido/historia-3basico/preguntas.json', activa:true, campaña:'hist3',
    etapas:[
@@ -1346,7 +1346,7 @@ const EXPEDICIONES=[
      {oa:"BOSS",nombre:"⚡ JEFE: Nuestro planeta",icono:"🐲",n:15,
       oas:["HI03 OA 06","HI03 OA 07","HI03 OA 08"]},
    ] },
- { id:'hist3-cap2', asignatura:'Historia', nivel:'3° Básico · La antigua Grecia',
+ { id:'hist3-cap2', intro:'hi3-grecia', asignatura:'Historia', nivel:'3° Básico · La antigua Grecia',
    portada:'assets/portada-historia.png', portadaMapa:'assets/portada-hist3-cap2.png',
    contenido:'contenido/historia-3basico/preguntas.json', activa:true, campaña:'hist3',
    etapas:[
@@ -1367,7 +1367,7 @@ const EXPEDICIONES=[
      {oa:"BOSS",nombre:"⚡ JEFE: La antigua Roma",icono:"🐲",n:15,
       oas:["HI03 OA 02","HI03 OA 03","HI03 OA 04"]},
    ] },
- { id:'hist3-cap4', asignatura:'Historia', nivel:'3° Básico · Mis deberes y mis derechos',
+ { id:'hist3-cap4', intro:'hi3-derechos', asignatura:'Historia', nivel:'3° Básico · Mis deberes y mis derechos',
    portada:'assets/portada-historia.png', portadaMapa:'assets/portada-hist3-cap4.png',
    contenido:'contenido/historia-3basico/preguntas.json', activa:true, campaña:'hist3',
    etapas:[
@@ -1428,7 +1428,7 @@ const EXPEDICIONES=[
      {oa:"BOSS",nombre:"⚡ JEFE: Vida saludable",icono:"🐲",n:15,
       oas:["CN03 OA 06","CN03 OA 07"]},
    ] },
- { id:'len3-cap1', asignatura:'Lenguaje', nivel:'3° Básico · Leer y entender',
+ { id:'len3-cap1', intro:'le3-entender', asignatura:'Lenguaje', nivel:'3° Básico · Leer y entender',
    portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-leng-lectura.png',
    contenido:'contenido/lenguaje-3basico/preguntas.json', activa:true, campaña:'len3',
    etapas:[
@@ -1438,7 +1438,7 @@ const EXPEDICIONES=[
      {oa:"BOSS",nombre:"⚡ JEFE: Leer y entender",icono:"🐲",n:15,
       oas:["LE03 OA 02","LE03 OA 04","LE03 OA 06"]},
    ] },
- { id:'len3-cap2', asignatura:'Lenguaje', nivel:'3° Básico · Mundos de cuento',
+ { id:'len3-cap2', intro:'le3-cuentos', asignatura:'Lenguaje', nivel:'3° Básico · Mundos de cuento',
    portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-leng-literarios.png',
    contenido:'contenido/lenguaje-3basico/preguntas.json', activa:true, campaña:'len3',
    etapas:[
@@ -1448,7 +1448,7 @@ const EXPEDICIONES=[
      {oa:"BOSS",nombre:"⚡ JEFE: Mundos de cuento",icono:"🐲",n:15,
       oas:["LE03 OA 03","LE03 OA 05","LE03 OA 23"]},
    ] },
- { id:'len3-cap3', asignatura:'Lenguaje', nivel:'3° Básico · Palabras nuevas',
+ { id:'len3-cap3', intro:'le3-palabras', asignatura:'Lenguaje', nivel:'3° Básico · Palabras nuevas',
    portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-len3-cap3.png',
    contenido:'contenido/lenguaje-3basico/preguntas.json', activa:true, campaña:'len3',
    etapas:[
@@ -1459,7 +1459,7 @@ const EXPEDICIONES=[
      {oa:"BOSS",nombre:"⚡ JEFE: Palabras nuevas",icono:"🐲",n:15,
       oas:["LE03 OA 10","LE03 OA 11","LE03 OA 19","LE03 OA 29"]},
    ] },
- { id:'len3-cap4', asignatura:'Lenguaje', nivel:'3° Básico · Las palabras y sus reglas',
+ { id:'len3-cap4', intro:'le3-reglas', asignatura:'Lenguaje', nivel:'3° Básico · Las palabras y sus reglas',
    portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-len3-cap4.png',
    contenido:'contenido/lenguaje-3basico/preguntas.json', activa:true, campaña:'len3',
    etapas:[
@@ -2514,7 +2514,9 @@ const HAY_MINICLASES=true;
    esa trampa ya mordio cuatro veces en este proyecto. `montar()` necesita ademas el <body>,
    que aqui ya existe: este script inline corre despues del HTML. */
 LECC.init({ rutas:['contenido/matematicas-3basico/lecciones.json',
-                    'contenido/ciencias-3basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
+                    'contenido/ciencias-3basico/lecciones.json',
+                    'contenido/historia-3basico/lecciones.json',
+                    'contenido/lenguaje-3basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
 /* ¿Este nivel tiene el módulo de Vocabulario, y la biblioteca de lecturas del colegio?
    Son contenido de 8°. Antes se resolvían BORRANDO líneas del fork, y ese corte dejó
    la asignatura Lenguaje inalcanzable en 3° (Sesión 61). Como banderas, las tres apps
