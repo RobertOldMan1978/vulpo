@@ -46,6 +46,13 @@
   .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
   .replace(/"/g,'&quot;').replace(/'/g,'&#39;');},init:function(){}};</script>
 <!-- Ofrecer instalar en la pantalla de inicio, compartido. Nace dormido: INST.init(). -->
+<!-- Mini-clases de Matematica (diagramas SVG + motor de lecciones), compartido.
+     Nace dormido: LECC.init({ruta,hayReto}) inyecta su CSS y su pantalla. -->
+<script src="assets/js/lecciones.js"></script>
+<script>if(!window.LECC)window.LECC={activo:false,init:function(){return false;},
+  abrirLeccion:function(){},abrirUnidad:function(){},abrirMiniClaseDeOA:function(){},
+  volverAlCapitulo:function(){},finPractica:function(){},cargarPool:function(){return Promise.resolve();},
+  renderCampana:function(){return false;}};</script>
 <script src="assets/js/instalar.js"></script>
 <script>if(!window.INST)window.INST={activo:false,init:function(){},abrir:function(){}};</script>   <!-- respaldo: un 404 de visuales.js no puede matar el juego -->
 <!-- El motor del juego, compartido por los tres cursos. ⚠️ Va ANTES del <script> inline
@@ -631,19 +638,7 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
 #maestroSkip{position:fixed;bottom:20px;right:18px;z-index:100001;background:#ffffff1f;color:#fff;border:1.5px solid #ffffff55;
   border-radius:999px;padding:9px 18px;font:900 13px/1 'Nunito',sans-serif;cursor:pointer;backdrop-filter:blur(4px)}
 #maestroSkip:hover{background:#ffffff33}
-#scr-leccion{padding:16px}
-#scr-leccion.on{display:flex;flex-direction:column;gap:12px}
-.lec-top{display:flex;align-items:center;gap:10px}
-.lec-prog{flex:1;height:8px;background:#241a44;border-radius:6px;overflow:hidden}
-#lecProgBar{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--violet));transition:width .3s}
-.lec-titulo{font-family:'Titan One',sans-serif;font-size:20px;margin:2px 0}
-.lec-cuerpo{background:#241a44;border:1px solid #3a2f60;border-radius:16px;padding:16px;min-height:220px}
-.lec-cuerpo p{font-size:15px;line-height:1.5}
-.lec-cuerpo img{max-width:100%;border-radius:12px;display:block;margin:0 auto}
-.lec-diag{width:100%;overflow-x:auto}
-.lec-ejemplo-paso{opacity:.35;transition:opacity .3s;margin:6px 0;font-size:15px}
-.lec-ejemplo-paso.on{opacity:1}
-.lec-cont{width:100%}
+
 .ninos #qText{font-size:22px;line-height:1.3}
 .ninos .opt{font-size:18px;padding:18px 16px}
 .ninos #qMeta{font-size:13px}
@@ -1578,6 +1573,24 @@ const EXPEDICIONES=[
 const EXTRAS = [
   {id:'sinfin', asignatura:'Matemática', nombre:'Reto Sin Fin de cálculo', icono:'♾️',
    disponible:()=>CALC.activo, abrir:()=>CALC.abrir()},
+  // Las unidades del camino de mini-clases. Tampoco son expediciones (viven en
+  // capitulosMate de la campana), asi que sin esto el armador no las veia: mismo
+  // defecto que el Reto de Calculo (Sesion 70) y que las de 8 (Sesion 82).
+  // El `nombre` va a mano porque CAMPANAS se declara DESPUES de este literal.
+  {id:'mat3-numeros', asignatura:'Matemática', nombre:'Mini-clases · Números hasta 1.000', icono:'📘',
+   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mat3-numeros')},
+  {id:'mat3-sumar', asignatura:'Matemática', nombre:'Mini-clases · Sumar y restar', icono:'📘',
+   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mat3-sumar')},
+  {id:'mat3-multiplicar', asignatura:'Matemática', nombre:'Mini-clases · Multiplicar y dividir', icono:'📘',
+   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mat3-multiplicar')},
+  {id:'mat3-fracciones', asignatura:'Matemática', nombre:'Mini-clases · Fracciones y patrones', icono:'📘',
+   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mat3-fracciones')},
+  {id:'mat3-geometria', asignatura:'Matemática', nombre:'Mini-clases · Geometría', icono:'📘',
+   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mat3-geometria')},
+  {id:'mat3-medir', asignatura:'Matemática', nombre:'Mini-clases · Medir', icono:'📘',
+   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mat3-medir')},
+  {id:'mat3-datos', asignatura:'Matemática', nombre:'Mini-clases · Datos', icono:'📘',
+   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mat3-datos')},
 ];
 const SOLO=_SOLO_PEDIDO.filter(id=>EXPEDICIONES.some(e=>e.id===id)||EXTRAS.some(x=>x.id===id));
 const PRUEBA=SOLO.length>0;
@@ -1666,6 +1679,23 @@ const CAMPAÑAS=[{
   sinfin:true,   // ofrece el Reto Sin Fin (assets/js/calculo.js)
   intro:'Cuenta, suma, mide y descubre con Vulpi.',
   capitulos:['mat3-cap1','mat3-cap2','mat3-cap3','mat3-cap4','mat3-cap5','mat3-cap6','mat3-cap7'],
+  esLecciones:true,
+  capitulosMate:[
+    {id:'mat3-numeros',     titulo:'Números hasta 1.000',   portada:'assets/portada-mate-numeros.png',
+     lecciones:['ma3-oa01','ma3-oa02','ma3-oa03','ma3-oa05']},
+    {id:'mat3-sumar',       titulo:'Sumar y restar',        portada:'assets/portada-mat3-cap2.png',
+     lecciones:['ma3-oa04','ma3-oa06','ma3-oa07']},
+    {id:'mat3-multiplicar', titulo:'Multiplicar y dividir', portada:'assets/portada-mat3-cap3.png',
+     lecciones:['ma3-oa08','ma3-oa09','ma3-oa10']},
+    {id:'mat3-fracciones',  titulo:'Fracciones y patrones', portada:'assets/portada-mat3-cap4.png',
+     lecciones:['ma3-oa11','ma3-oa12','ma3-oa13']},
+    {id:'mat3-geometria',   titulo:'Geometría',             portada:'assets/portada-mate-geometria.png',
+     lecciones:['ma3-oa14','ma3-oa15','ma3-oa16','ma3-oa17','ma3-oa18']},
+    {id:'mat3-medir',       titulo:'Medir',                 portada:'assets/portada-mat3-cap6.png',
+     lecciones:['ma3-oa19','ma3-oa20','ma3-oa21','ma3-oa22']},
+    {id:'mat3-datos',       titulo:'Datos',                 portada:'assets/portada-mate-datos.png',
+     lecciones:['ma3-oa23','ma3-oa24','ma3-oa25','ma3-oa26']},
+  ],
   jefeFinal:{
     villano:'El Número Perdido', villanoIc:'🔟', villanoImg:'assets/villano-matematicas-3ro.png',
     villanoImgDerrotado:'assets/villano-matematicas-3ro-derrotado.png',
@@ -2478,7 +2508,12 @@ CALC.init({
    bandera mal puesta el botón dice "📘 Repasar la mini-clase", descarga las 17 lecciones
    de 8° dentro de otro nivel y NO abre ninguna: el alumno toca y no pasa nada. Estaba
    pasando en 7° (Sesión 63); 3° se salvaba solo porque escribe "Matemática" en singular. */
-const HAY_MINICLASES=false;
+const HAY_MINICLASES=true;
+/* ⚠️ La llamada va PEGADA a la bandera y a su ruta, no arriba con las otras constantes:
+   un `const` leido antes de declararse mata todo el JavaScript (zona muerta temporal), y
+   esa trampa ya mordio cuatro veces en este proyecto. `montar()` necesita ademas el <body>,
+   que aqui ya existe: este script inline corre despues del HTML. */
+LECC.init({ ruta:'contenido/matematicas-3basico/lecciones.json', hayReto:HAY_RETO_CALCULO });
 /* ¿Este nivel tiene el módulo de Vocabulario, y la biblioteca de lecturas del colegio?
    Son contenido de 8°. Antes se resolvían BORRANDO líneas del fork, y ese corte dejó
    la asignatura Lenguaje inalcanzable en 3° (Sesión 61). Como banderas, las tres apps

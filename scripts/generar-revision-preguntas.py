@@ -23,6 +23,52 @@ from niveles import fork_de          # de que nivel es un banco; ver ese archivo
 
 
 VISUALES = RAIZ / "assets" / "js" / "visuales.js"
+LECCIONES_JS = RAIZ / "assets" / "js" / "lecciones.js"
+
+
+def lecciones_js():
+    """El modulo de mini-clases, para dibujar sus diagramas en el informe.
+
+    Los diagramas de leccion son SVG INTERACTIVOS y su API no es la de visuales.js
+    (renderVisual devuelve texto; aqui hay que montar dentro de un nodo), por eso se
+    incrusta el modulo entero y se llama LECC.diagrama. En papel se ve su estado inicial.
+    """
+    if not LECCIONES_JS.exists():
+        sys.exit("No existe %s: sin el, las mini-clases quedan sin dibujos." % LECCIONES_JS)
+    return io.open(LECCIONES_JS, encoding="utf-8").read()
+
+
+def bloque_leccion(l, texto_oa):
+    """Una mini-clase con sus bloques, para revisar en papel."""
+    H = ['<div class="q">']
+    oa = l.get("oa", "")
+    H.append('<div class="qh"><span class="chk"></span>%s<span class="id">%s</span></div>'
+             % (esc(l.get("titulo", l["id"])), esc(l["id"])))
+    if oa:
+        H.append('<div class="oatxt"><b>%s</b> &middot; %s</div>'
+                 % (esc(oa), esc(texto_oa.get(oa, "(sin texto de OA)"))))
+    for b in l.get("bloques", []):
+        tipo = b.get("t")
+        if tipo == "texto":
+            H.append("<p>%s</p>" % esc(b.get("md", "")))
+        elif tipo == "diagrama":
+            if b.get("intro"):
+                H.append('<p class="sub">%s</p>' % esc(b["intro"]))
+            H.append("<div class='diag' data-k='%s' data-p='%s'></div>"
+                     % (esc(b.get("kind", "")), esc(json.dumps(b.get("params", {})))))
+        elif tipo == "ejemplo":
+            if b.get("intro"):
+                H.append("<p><b>Ejemplo:</b> %s</p>" % esc(b["intro"]))
+            H.append('<ol class="ops">')
+            for paso in b.get("pasos", []):
+                H.append("<li>%s</li>" % esc(paso))
+            H.append("</ol>")
+        elif tipo == "practica":
+            fb = b.get("fromBank", {})
+            H.append('<div class="tip">Practica: %s preguntas de <code>%s</code></div>'
+                     % (fb.get("n", "?"), esc(fb.get("oa", "?"))))
+    H.append("</div>")
+    return H
 
 
 def render_visual_js():
@@ -117,6 +163,20 @@ def main():
                     H.append("<div class='tip'>%s</div>" % esc(p["tip"]))
                 H.append("</div>")
 
+    # --- Mini-clases de esta asignatura, si las tiene. Van ARRIBA: se aprueba primero lo
+    # que ENSEÑA y despues lo que pregunta.
+    lecciones = []
+    f_lec = base / "lecciones.json"
+    if f_lec.exists():
+        lecciones = json.load(io.open(f_lec, encoding="utf-8")).get("lecciones", [])
+    if lecciones:
+        L = ['<h2>Mini-clases <span class="cnt">%d</span></h2>' % len(lecciones),
+             '<div class="aviso">Cada mini-clase <b>ense&ntilde;a</b>: un error aqu&iacute; no se '
+             'falla y se corrige como una pregunta, se cree. Marca la casilla si la apruebas.</div>']
+        for l in lecciones:
+            L += bloque_leccion(l, texto_oa)
+        H = L + H
+
     doc = PLANTILLA.replace("{{TITULO}}", esc("Revisión · %s %s" % (
         oa_json.get("asignatura", carpeta), oa_json.get("nivel", ""))))
     doc = doc.replace("{{CUERPO}}", "\n".join(H))
@@ -125,6 +185,8 @@ def main():
     # necesitan.
     hay_dibujos = any(p.get("visual") for p in preguntas)
     doc = doc.replace("/*RENDER*/", render_visual_js() if hay_dibujos else "")
+    hay_diagramas = any(b.get("t") == "diagrama" for l in lecciones for b in l.get("bloques", []))
+    doc = doc.replace("/*LECC*/", lecciones_js() if hay_diagramas else "")
 
     salida = RAIZ / "dev" / ("revision-%s.html" % carpeta)
     salida.parent.mkdir(parents=True, exist_ok=True)
@@ -163,6 +225,8 @@ PLANTILLA = """<!doctype html>
  .tip{margin-top:5px;font-size:9.5pt;color:#444;border-left:3px solid #d8b24a;padding-left:8px}
  .vis{margin:6px 0 2px 26px;max-width:260px}
  .vis svg{max-width:250px;height:auto}
+ .diag{margin:6px 0;max-width:360px}
+ .diag svg{max-width:355px;height:auto}
  .q-visual{font-size:16pt;line-height:1.4}
  .q-visual.qv-grupos{display:flex;flex-wrap:wrap;gap:6px}
  code{background:#eee;padding:1px 4px;border-radius:3px;font-size:9pt}
@@ -170,8 +234,16 @@ PLANTILLA = """<!doctype html>
 {{CUERPO}}
 <script>
 /*RENDER*/
+/*LECC*/
 let fallidos=0;
-const total=document.querySelectorAll('.vis').length;
+let total=document.querySelectorAll('.vis').length;
+// Los diagramas de mini-clase: montarDiagrama TRAGA sus errores (deja el nodo vacio), asi
+// que no basta con try/catch — hay que comprobar que quedo un <svg> dentro.
+document.querySelectorAll('.diag').forEach(d=>{
+  total++;
+  try{ LECC.diagrama(d.dataset.k, JSON.parse(d.dataset.p), d); }catch(e){}
+  if(!d.querySelector('svg')){ d.innerHTML='<i>(diagrama no disponible)</i>'; fallidos++; }
+});
 document.querySelectorAll('.vis').forEach(d=>{
   try{ d.innerHTML = renderVisual(JSON.parse(d.dataset.v)) || '<i>(dibujo no disponible)</i>'; }
   catch(e){ d.innerHTML = '<i>(dibujo no disponible)</i>'; fallidos++; }
@@ -182,7 +254,7 @@ if(fallidos){
   const a=document.createElement('div');
   a.style.cssText='background:#c00;color:#fff;padding:14px;font-size:14pt;font-weight:700';
   a.textContent='ATENCION: '+fallidos+' de '+total+' dibujos no se pudieron generar. '+
-                'NO revises con este documento: revisa el extractor de renderVisual.';
+                'NO revises con este documento: revisa el extractor de dibujos.';
   document.body.insertBefore(a, document.body.firstChild);
 }
 </script>

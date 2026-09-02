@@ -39,7 +39,7 @@ function iniciarJefeFinal(camp){
   JF={camp,fase:0,idx:0,preguntas:[],vidaMax:total,vida:total,vidas:jf.vidasJugador,lock:false};
   renderJefeIntro();
  };
- if(HAY_MINICLASES&&camp.esLecciones){ cargarPoolMate().then(arrancar); }   // campaña de Matemáticas
+ if(HAY_MINICLASES&&camp.esLecciones){ LECC.cargarPool().then(arrancar); }   // campaña de Matemáticas
  else { const capExp=EXPEDICIONES.find(e=>e.id===camp.capitulos[0]); activarExpedicion(capExp).then(arrancar); }
 }
 function renderJefeIntro(){
@@ -782,7 +782,9 @@ function renderListaPrueba(){
 function abrirCampaña(c){CAMP_ACT=c; renderCampaña(); go('scr-campana');}
 function renderCampaña(){
  const c=CAMP_ACT; if(!c)return;
- if(HAY_MINICLASES&&c.esLecciones){ renderCampañaMate(c); return; }
+ // renderCampana devuelve false si el modulo no cargo: se sigue de largo con la campana
+ // normal en vez de dejar la pantalla en blanco.
+ if(HAY_MINICLASES&&c.esLecciones&&LECC.renderCampana(c)) return;
  $('campHead').innerHTML=`<h1 style="font-size:26px">${c.asignatura} ${campañaCompleta(c)?'👑':''}</h1><p>${c.intro}</p>`;
  const cont=$('campNodos'); cont.innerHTML='';
  // capítulos en orden
@@ -820,6 +822,13 @@ function renderCampaña(){
  //    funcionalidad— y encima se rompe solo entre forks: 3° escribe 'Matemática' en
  //    singular, así que la comparación en plural nunca habría entrado.
  // Con las dos, esta función queda byte a byte igual en los tres cursos.
+ nodoSinFin(c,cont);
+}
+/* El nodo del Reto Sin Fin lo dibujan DOS pantallas: la campaña normal y la de mini-clases
+   (renderCampañaMate, en assets/js/lecciones.js). Vive aquí una sola vez porque duplicarlo
+   es justo lo que este módulo vino a deshacer: al encender esLecciones en 7° y 3°, su Reto
+   Sin Fin —que ya tenían— se habría perdido sin ningún error. */
+function nodoSinFin(c,cont){
  if(CALC.activo && c.sinfin && !bloqueado()){
   const sf=document.createElement('div'); sf.className='camp-nodo';
   sf.innerHTML=`<div class="cn-marco"><div class="cn-circ" style="background:#8f6bff22">♾️</div></div>`+
@@ -1451,7 +1460,7 @@ function avanzar(){if(!Q||!Q.preguntas)return;   // guard: evita reentrada (dobl
   if(!$('scr-quiz').classList.contains('on'))return;   // el usuario salió del quiz: no continuar
   Q.idx++;if(Q.idx<Q.preguntas.length)pintaPregunta();
   else if(Q.repaso)finRepaso();
-  else if(Q.leccion)finPracticaLeccion();
+  else if(Q.leccion)LECC.finPractica();
   else if(Q.desafio)terminarDesafio();else terminarNivel();}
 // Prediccion antes del resultado. El nino declara como cree que le fue ANTES de ver su puntaje:
 // asi el semaforo deja de ser un eco de las estrellas y pasa a ser una prediccion, y el resultado
@@ -1535,7 +1544,7 @@ function mostrarResultado(){
   $('resObj').textContent='🎯 '+metaDeEtapa(lvlFail);
   $('resObj').hidden=false;
   $('btnPaso').style.display='block';
-  if(esMate){ $('btnPaso').textContent='📘 Repasar la mini-clase'; $('btnPaso').onclick=()=>abrirMiniClaseDeOA(oaFail); }
+  if(esMate){ $('btnPaso').textContent='📘 Repasar la mini-clase'; $('btnPaso').onclick=()=>LECC.abrirMiniClaseDeOA(oaFail); }
   else      { $('btnPaso').textContent='🧑‍🏫 Repasar sin presión'; $('btnPaso').onclick=()=>iniciarRepaso(lvlFail,vistos); }
  }else{
   $('resObj').hidden=true;

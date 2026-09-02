@@ -115,7 +115,11 @@ def recolectar_asignaturas():
         oa_data = cargar_json(oa_path)
         preg_path = carpeta / "preguntas.json"
         preg_data = cargar_json(preg_path) if preg_path.exists() else {"preguntas": [], "meta_preguntas_por_oa": 8}
-        asignaturas.append((carpeta.name, oa_data, preg_data))
+        # Las mini-clases se cuentan APARTE: una leccion no es una pregunta, y meterlas
+        # en la cobertura (preguntas/meta por OA) inflaria el porcentaje.
+        lec_path = carpeta / "lecciones.json"
+        lecciones = cargar_json(lec_path).get("lecciones", []) if lec_path.exists() else []
+        asignaturas.append((carpeta.name, oa_data, preg_data, lecciones))
     return asignaturas
 
 
@@ -147,7 +151,7 @@ def u_titulo(u):
     return u.get("titulo") or u.get("nombre") or "(sin nombre)"
 
 
-def render_asignatura(oa_data, preg_data):
+def render_asignatura(oa_data, preg_data, lecciones=()):
     meta = int(preg_data.get("meta_preguntas_por_oa", 8))
     preguntas = preg_data.get("preguntas", [])
 
@@ -199,7 +203,10 @@ def render_asignatura(oa_data, preg_data):
         f'<span class="chip">🎯 {oa_con_algo}/{total_oa} OA con contenido</span>'
         f'<span class="chip ok">✅ {oa_listos} OA listos</span>'
         f'<span class="chip rev2">🔍 {total_rev} revisadas</span>'
-        "</div>"
+        # Las mini-clases ENSEÑAN, y su aprobacion es otro tramite que el de las preguntas:
+        # se revisan en el informe (generar-revision-preguntas.py), no con estas casillas.
+        + (f'<span class="chip">📘 {len(lecciones)} mini-clases</span>' if lecciones else "")
+        + "</div>"
     )
 
     for u in grupos_de(oa_data):
@@ -291,16 +298,16 @@ def generar():
     # es medir cobertura de sus OA oficiales; aprobar un modulo transversal es revisar
     # un apoyo que no responde a ningun OA. Mezclados, el Vocabulario de 8 aparecia al
     # final -despues de Ana Frank- mientras el de 7 se ordenaba entre las de 7.
-    curric = [(oa, pg) for _, oa, pg in asignaturas if not es_transversal(oa)]
-    trans = [(oa, pg) for _, oa, pg in asignaturas if es_transversal(oa)]
-    cuerpo = chr(10).join(render_asignatura(oa, pg) for oa, pg in curric)
+    curric = [(oa, pg, lec) for _, oa, pg, lec in asignaturas if not es_transversal(oa)]
+    trans = [(oa, pg, lec) for _, oa, pg, lec in asignaturas if es_transversal(oa)]
+    cuerpo = chr(10).join(render_asignatura(oa, pg, lec) for oa, pg, lec in curric)
     if trans:
         cuerpo += ('<div class="grupo-tit">Módulos transversales</div>'
                    '<div class="grupo-sub">Acompañan al curso pero <b>no son cobertura'
                    ' curricular</b>: sus códigos no son Objetivos de Aprendizaje del'
                    ' MINEDUC y no entran al mapa de dominio del profesor. Se aprueban'
                    ' igual, con el mismo criterio de muestreo.</div>')
-        cuerpo += chr(10).join(render_asignatura(oa, pg) for oa, pg in trans)
+        cuerpo += chr(10).join(render_asignatura(oa, pg, lec) for oa, pg, lec in trans)
     if not cuerpo:
         cuerpo = '<p class="vacio">Aún no hay contenido en la carpeta <code>contenido/</code>.</p>'
     marca = datetime.now().strftime("%d-%m-%Y %H:%M")
@@ -801,7 +808,9 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
     )
 
     SALIDA.parent.mkdir(parents=True, exist_ok=True)
-    with open(SALIDA, "w", encoding="utf-8") as f:
+    # newline="" preserva LF: es la regla del proyecto desde .gitattributes (31/08). Sin esto
+    # Python escribe CRLF en Windows y git avisa en cada generacion del tablero.
+    with open(SALIDA, "w", encoding="utf-8", newline="") as f:
         f.write(html)
     print(f"Tablero generado: {SALIDA}")
 

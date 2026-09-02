@@ -26,7 +26,8 @@ La pantalla principal ofrece un **módulo por asignatura**. **Historia**, **Cien
 **Lenguaje** se juegan como **campañas con hilo conductor**: capítulos en orden que cubren
 todos los OA del año, con **Jefe Final multi-fase** (barra de vida, 3 corazones) y
 **recompensas** (skin exclusiva, insignia coleccionable, corona y bono). **Matemáticas**
-tiene un **camino de aprendizaje** completo (los 17 OA del año): mini-clases guiadas con
+tiene un **camino de aprendizaje** completo (los 17 OA del año, y desde el 02/09 también los 26
+de 3° y los 19 de 7°: **62 mini-clases** en total): mini-clases guiadas con
 explicación, **diagramas interactivos** (recta, fracciones, potencias, plano cartesiano con
 función, balanza de ecuaciones, triángulo de Pitágoras, sólidos, transformaciones en el plano,
 diagrama de cajón, gráficos de barras y árbol de posibilidades) y práctica; aprender cada tema
@@ -90,7 +91,7 @@ anual por nivel escolar. Nada de eso está implementado todavía.
 
 Aparte hay **dos cursos más completos y aprobados**, cada uno como una app propia y **sin enlazar desde el sitio**. Los tres cursos comparten la misma puerta de acceso: desde el **1 de octubre de 2026** hace falta un código de alumno para jugar más allá de la demo de cada nivel.
 
-**7° básico** (`7mo/`) sigue las mismas bases que 8°: campañas por asignatura con capítulos en orden, jefe de capítulo y Jefe Final multi-fase, Modo Difícil, comodín 50/50, meta de aprendizaje y repaso al fallar. Sus cuatro asignaturas son Historia, Geografía y Ciencias Sociales (23 objetivos), Matemática (19), Ciencias Naturales (15) y Lengua y Literatura (24). No lleva lectura por voz: a los 12-13 años ya se lee de corrido. Guarda su avance y su identidad en línea aparte de 8° y de 3°. Suma además dos **módulos transversales**: un **Vocabulario** de 120 palabras de sus cuatro asignaturas, y un **Reto Sin Fin** de cálculo mental —operaciones generadas por código, sin banco de preguntas— dentro de Matemática.
+**7° básico** (`7mo/`) sigue las mismas bases que 8°: campañas por asignatura con capítulos en orden, jefe de capítulo y Jefe Final multi-fase, Modo Difícil, comodín 50/50, meta de aprendizaje y repaso al fallar. Sus cuatro asignaturas son Historia, Geografía y Ciencias Sociales (23 objetivos), Matemática (19), Ciencias Naturales (15) y Lengua y Literatura (24). No lleva lectura por voz: a los 12-13 años ya se lee de corrido. Guarda su avance y su identidad en línea aparte de 8° y de 3°. Suma además dos **módulos transversales**: un **Vocabulario** de 120 palabras de sus cuatro asignaturas, y un **Reto Sin Fin** de cálculo mental —operaciones generadas por código, sin banco de preguntas— dentro de Matemática. Y desde el 02/09, Matemática se juega como **camino de aprendizaje**: **19 mini-clases**, una por objetivo, con su diagrama interactivo y su práctica.
 
 Y una **app de 3° básico** en `3ro/`, adaptada a niños de
 8-9 años (sin cronómetro, apoyo visual dibujado por código, texto grande y **lectura
@@ -99,7 +100,10 @@ carga se lee con la voz del navegador). Tiene sus **cuatro asignaturas**: Matem�
 (26 objetivos, 792 preguntas), Historia, Geografía y Ciencias Sociales (16 objetivos, 480),
 Ciencias Naturales (13 objetivos, 390) y Lenguaje y Comunicación (30 objetivos, 896), todas
 con su voz grabada; **no está enlazada desde el sitio**. Sus bancos quedaron **aprobados por
-muestreo el 30/08/2026**, salvo dos objetivos de Historia. Dentro de Matemática lleva además un **Reto Sin Fin** de cálculo mental
+muestreo**, y desde el 31/08/2026 no queda ninguno pendiente. Matemática se juega como **camino
+de aprendizaje**: **26 mini-clases**, una por objetivo, cada una con su diagrama interactivo
+—bloques de cien, tabla de valor posicional, recta con saltos, reloj, monedas, pictograma,
+diagrama de puntos— y su práctica del banco. Dentro de Matemática lleva además un **Reto Sin Fin** de cálculo mental
 **sin cronómetro**, medido por escalones: practica sus objetivos de cálculo mental, tablas y
 división, y como genera las operaciones por código no consume banco de preguntas ni voz. Y tiene su **📖 Lectura** con el primer libro del colegio, *Cuentos de Ada* de Pepe Pelayo (Santillana Infantil): 10 tramos, uno por cuento, con **101 preguntas de comprensión originales y aprobadas**, también con voz grabada. El niño lee el ejemplar: el juego no reproduce el texto del libro, y por eso su portada es la genérica de Lectura y no la tapa. Guarda su avance **y su identidad en línea aparte** de 8°, aunque
 los dos se sirvan del mismo dominio, así que un curso de 3° y uno de 8° pueden convivir
@@ -116,7 +120,7 @@ profesor) va **auto-hospedado** en `assets/vendor/`, con la versión fija, para 
 depender de un script de terceros que puede cambiar.
 Contenido de cada expedición en `contenido/<asignatura>/` (JSON). Mobile-first.
 
-Cada curso se sirve de su propia carpeta (`juego/`, `7mo/`, `3ro/`), pero **el motor del juego se escribe una sola vez** y vive en `assets/js/`: `motor.js` (quiz, campañas, jefes, duelo, tienda, guardado), más los módulos de apoyo `visuales.js` (los dibujos por código), `voz.js` (la lectura en voz alta), `calculo.js`, `revision.js`, `sensible.js` y `niveles.js`. Lo que cambia de un curso a otro son **datos y banderas**, no código.
+Cada curso se sirve de su propia carpeta (`juego/`, `7mo/`, `3ro/`), pero **el motor del juego se escribe una sola vez** y vive en `assets/js/`: `motor.js` (quiz, campañas, jefes, duelo, tienda, guardado), más los módulos de apoyo `lecciones.js` (el motor de mini-clases y sus 22 diagramas interactivos), `visuales.js` (los dibujos por código), `voz.js` (la lectura en voz alta), `fracciones.js` (las fracciones apiladas), `instalar.js`, `calculo.js`, `revision.js`, `sensible.js` y `niveles.js`. Lo que cambia de un curso a otro son **datos y banderas**, no código.
 
 ---
 

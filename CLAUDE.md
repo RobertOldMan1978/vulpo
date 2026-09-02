@@ -63,7 +63,11 @@ backend Supabase para el duelo en línea. Historia de v0 al detalle en la Bitác
   Capa `CAMPAÑAS` data-driven; el motor de campañas es **genérico** (Desafío Extra
   opcional, jefe con título dinámico).
 - **Matemáticas · campaña "enseña→desafío" (Sesiones 29 y 31) + "Reto de Cálculo"
-  (Sesión 15):** al entrar a Matemáticas se abre su **campaña** con las 4 unidades del año
+  (Sesión 15):** ⚠️ **Desde la Sesión 83 el camino "enseña→desafío" está en los TRES cursos**
+  —**62 mini-clases**: 26 en 3°, 19 en 7° y las 17 de 8°—, con el motor compartido en
+  `assets/js/lecciones.js` y **22 diagramas interactivos**. Lo que sigue es la descripción de 8°,
+  que es el que además tiene el Reto de Cálculo.
+  Al entrar a Matemáticas se abre su **campaña** con las 4 unidades del año
   (Números, Álgebra y funciones, Geometría, y Probabilidad y estadística), y el mapa
   **intercala por unidad lección → expedición**: primero la **mini-clase guiada**
   (explicación breve + **diagramas SVG interactivos** —recta arrastrable, barras de
@@ -256,12 +260,13 @@ supuesto cuando pide "no modificar `contenido/` ni `supabase/`".
 1. **Un cambio de una capa no toca las otras.** Agregar preguntas es `contenido/`; cambiar una
    regla del juego es motor; ninguno de los dos toca `supabase/`. Cuando un trabajo obliga a
    tocar tres capas a la vez, casi siempre está mal planteado.
-2. **Lo que se comparte entre cursos va a `assets/js/`, no se copia.** Hoy son **nueve** módulos:
+2. **Lo que se comparte entre cursos va a `assets/js/`, no se copia.** Hoy son **diez** módulos:
    `revision.js`, `sensible.js`, `calculo.js`, y desde el 31/08 **`visuales.js`** (los 11
    dibujos), **`voz.js`** (la lectura en voz alta), **`niveles.js`** (el catálogo de niveles,
    que solo carga el panel), **`instalar.js`** (el ofrecimiento de agregar el juego a la
    pantalla del teléfono) y **`motor.js`** (el juego entero: quiz, campañas, jefes, duelo,
-   tienda, guardado); desde el 02/09, **`fracciones.js`** (las fracciones apiladas). **Siempre con su respaldo vacío antes de usarse**, porque un 404 de
+   tienda, guardado); desde el 02/09, **`fracciones.js`** (las fracciones apiladas) y
+   **`lecciones.js`** (el motor de mini-clases y sus 22 diagramas interactivos). **Siempre con su respaldo vacío antes de usarse**, porque un 404 de
    un `<script src>` mata todo el JavaScript y el síntoma engaña: la pantalla se ve bien y ningún
    botón responde. Cada uno se prueba **con el archivo ausente**, no solo presente.
    - ⚠️ **`motor.js` es la excepción: NO admite respaldo vacío, porque es el juego.** Lo que sí
@@ -404,7 +409,7 @@ arriba del archivo, no como condiciones sueltas repartidas por el código.
 | Bandera | Qué gobierna | 8° | 7° | 3° |
 |---|---|---|---|---|
 | `HAY_RETO_CALCULO` | Si Matemática se juega como Reto de Cálculo. Afecta al **Duelo** (`odNMapas`, `odMapasMate`, `odPreguntasCalc`), a `detenerTimersActivos` y a la música de `scr-calc` | ✅ | ❌ | ❌ |
-| `HAY_MINICLASES` | Si existe el camino de mini-clases. Afecta al **siguiente paso al reprobar**, a `renderCampaña`, al Jefe Final (`cargarPoolMate`) y al ✕ del quiz | ✅ | ❌ | ❌ |
+| `HAY_MINICLASES` | Si existe el camino de mini-clases. Afecta al **siguiente paso al reprobar**, a `renderCampaña`, al Jefe Final (`cargarPoolMate`) y al ✕ del quiz. **Desde la Sesión 83 vale `true` en los tres**, y va **pegada a `LECC.init`** | ✅ | ✅ | ✅ |
 | `HAY_VOCABULARIO` | Si Lenguaje abre el landing "Campaña + Vocabulario" en vez de su campaña | ✅ | ✅ | ✅ |
 | `HAY_BIBLIOTECA` | Si la pantalla principal ofrece el módulo 📖 Lectura | ✅ | ❌ | ✅ |
 | `HAY_SINFIN` | Si Matemática ofrece el **Reto Sin Fin** de `assets/js/calculo.js`. Gobierna el nodo del mapa y la llamada `CALC.init` | ❌ | ✅ | ✅ |
@@ -446,7 +451,14 @@ la pregunta al crear un nivel**.
 **Al crear un curso nuevo, poner TODAS las banderas explícitamente**, aunque el valor sea el
 mismo que en el original.
 
-#### El bloque de lecciones ya NO está en los forks (Sesión 65)
+#### El bloque de lecciones ya NO está en NINGÚN fork (Sesiones 65 y 83)
+
+> ⚠️ **Actualización del 02/09 (Sesión 83): el motor de mini-clases salió también de 8°** y vive
+> en [`assets/js/lecciones.js`](assets/js/lecciones.js), porque 3° y 7° volvieron a necesitarlo al
+> tener sus propias lecciones. Lo que queda abajo es el registro de por qué se cortó primero de
+> 3° y 7°, y el método del corte, que sigue valiendo. **El Reto de Cálculo NO viajó**: seguía
+> pegado en el archivo pero es otra cosa, y se queda en `juego/index.html` (medido en la Sesión
+> 74). Lo único que los toca es el nodo del Reto en el mapa, guardado con `CFG.hayReto`.
 
 Las **693 líneas** de 8° (catálogo de diagramas SVG + motor de mini-clases + Reto de Cálculo)
 **salieron de `3ro/` y `7mo/`**, donde eran inalcanzables. Siguen vivas y sin tocar en
@@ -7267,3 +7279,179 @@ lo que la Tarea 1 del plan es justamente enumerarlas.
 
 Spec y plan: `docs/superpowers/specs/2026-09-02-miniclases-e-introducciones-design.md` y
 `docs/superpowers/plans/2026-09-02-miniclases-e-introducciones.md` (18 tareas en 5 fases).
+
+### Sesión 83 (2026-09-02) — Las mini-clases llegan a 3° y 7°, y el motor sale de 8°
+Ejecución del plan A25, fases 1 a 4. El camino **"enseña → desafío"** deja de ser exclusivo de 8°:
+el proyecto pasa de 17 a **62 mini-clases** (3°: 26 · 7°: 19 · 8°: 17). **No se tocó ningún banco
+de preguntas**: las lecciones son contenido nuevo y aparte.
+
+#### Fase 1 — El motor sale del fork, y esta vez también de 8°
+
+Vive en **[`assets/js/lecciones.js`](assets/js/lecciones.js)** (décimo módulo compartido): las 479
+líneas del bloque más **cuatro funciones sueltas** intercaladas con código vivo
+—`renderCampañaMate`, `capMateCompleto`, `jefeFinalMateDesbloqueado`, `cargarPoolMate`—, cortadas
+por balance de llaves y no por rangos. `juego/index.html` baja **535 líneas**; los tres forks
+quedan en **8.301** en total.
+
+**El módulo inyecta su CSS *y su pantalla*.** La Sesión 65 se llevó de 7° y 3° el markup de
+`scr-leccion` pero les dejó sus 13 reglas de CSS, huérfanas desde entonces. En vez de restaurar el
+markup en cada fork lo pone el módulo —el patrón que `revision.js` ya validó en producción—, así
+**integrar un curso nuevo son dos líneas**.
+
+> ⚠️ **La auto-revisión del plan cazó lo que habría matado los tres cursos a la vez:** `motor.js`
+> nombra **cinco** de las funciones que se van al módulo, no las tres que el plan decía
+> (`cargarPoolMate`, `renderCampañaMate`, `finPracticaLeccion`, `abrirMiniClaseDeOA` y
+> `volverAlCapituloMate` desde el ✕ del quiz en los tres). Cortarlas sin reconectarlas deja al
+> motor genérico llamando a funciones que ya no existen. Es el hermano del `detenerTimersActivos`
+> de la Sesión 65: la referencia cruzada solo aparece si la enumeras **antes** de cortar, que es
+> por lo que la primera tarea del plan era justamente enumerarlas.
+
+**Y una que estuvo a punto de perderse en silencio:** el nodo del **Reto Sin Fin** lo dibujaba
+solo `renderCampaña`, así que encender `esLecciones` en 7° y 3° —que los manda a
+`renderCampañaMate`— les habría **borrado su Reto** sin ningún error. Se extrajo a `nodoSinFin()`,
+que ahora llaman **las dos** pantallas de campaña.
+
+**El Reto de Cálculo NO viajó.** Vivía pegado al bloque pero es otra cosa (medido en la Sesión
+74): se queda en `juego/index.html`, y lo único que los toca es el nodo del Reto en el mapa,
+guardado con `CFG.hayReto`.
+
+#### Fase 2 — Las mini-clases entran al circuito de aprobación
+
+**Ninguna herramienta leía `lecciones.json`**, así que las 17 de 8° llevaban **enseñando desde la
+Sesión 29 sin ninguna firma**, y no había forma de dárselas. Ahora:
+
+- `generar-revision-preguntas.py` abre el informe con una **sección de mini-clases**, **arriba de
+  las preguntas** —se aprueba primero lo que enseña—, con sus diagramas **dibujados de verdad**
+  reutilizando el módulo, y un **aviso en rojo** si alguno falla.
+- `generar-tablero.py` las cuenta aparte, con una insignia `📘 N mini-clases` por asignatura. **Las
+  1.287 barras de cobertura quedaron idénticas**: no movió ni un porcentaje.
+
+> **Un falso negativo propio, y conviene registrarlo:** medí los diagramas del informe buscando
+> `.diag` y daban **0**. No era el informe: `montarDiagrama` le **cambia la clase al nodo** al
+> montarlo (`nodo.className='lec-diag'`). Medido bien, **20 de 20** en 8° y **19 de 19** en 7°.
+> Un "0 errores" que en realidad era cierto **por vacuidad** es la peor clase de verificación.
+
+#### Fase 3 — 7°: 19 mini-clases
+
+5,3 bloques de promedio (8° tiene 5,2) y **19 de 19 llegan al quiz**, 18 con su dibujo. La tanda
+de validación de 5 salió limpia a la primera, así que el estándar aguantó y se escaló sin
+cambiarlo. **La única sin dibujo es la de construcciones con compás**, y es correcto: es un
+procedimiento manual paso a paso, no un modelo que dibujar.
+
+Tres widgets nuevos, elegidos por lo que el contenido pidió y no por lo que el plan preveía:
+**`circulo`** (radio y diámetro), **`poligono`** (el n-gono partido en n−2 triángulos desde un
+vértice, que es lo que *explica* la fórmula en vez de enunciarla) y **`figura`** (triángulo,
+paralelogramo y trapecio con su base y su altura). La proporcionalidad, que el plan daba por
+widget nuevo, se resolvió con el `funcion` que ya existía.
+
+> Y una que se vio **mirando**: en el círculo la palabra "diámetro" **cruzaba por la línea del
+> radio**. Corregida corriéndola a la izquierda.
+
+#### Fase 4 — 3°: 26 mini-clases
+
+5,2 bloques de promedio, **26 de 26 juegan y llegan a su quiz de 10**, todas con dibujo. El
+catálogo pasa de 12 a **22 widgets**: el plan preveía 2 para 3° (`dinero` y `pictograma`) y
+hicieron falta **5** — se suman **`cuadricula`**, **`reloj`** y **`puntos`**.
+
+> **`puntos` cierra algo anotado desde la Sesión 55:** el `MA03 OA 26` pide diagramas de puntos
+> **por su nombre** y hasta hoy sus preguntas se ilustraban con barras, que es otra cosa.
+
+Y la cuadrícula respeta la convención que este proyecto ya pagó una vez: **la letra dice la
+columna y el número dice la fila**, que es lo que declaran las 15 preguntas de ese OA (un informe
+externo pidió invertirla en la Sesión 56 y estaba equivocado).
+
+#### ⚠️ Dos bugs de motor, y el primero llevaba a un dato falso en el panel
+
+**1 · La práctica de 3° no medía nada, y no daba ningún error.** `preguntasDeOA` sacaba el banco
+del **nombre de la asignatura** (`contenidoDeAsignatura('Matemáticas')`) con un respaldo literal
+al banco de 8°. **3° escribe `'Matemática'` en singular**, así que la búsqueda devolvía `null`,
+descargaba el banco de **otro nivel**, lo filtraba por `MA03` y no encontraba una sola pregunta —
+y **una práctica vacía marca la lección completa igual**. O sea: en el panel del profesor la
+lección aparecía hecha y el objetivo sin datos.
+
+> Es el **quinto caso** del mismo defecto del fork (Sesiones 63, 64, 65, 72 y esta), y la salida
+> es la de siempre: **la convención de nombres ES la configuración**. El banco de un curso vive al
+> lado de sus lecciones, así que ahora sale de `CFG.ruta` y no hay ningún nombre que calzar. De
+> paso 7° y 8° dejaron de depender de esa búsqueda.
+
+**2 · El botón «← Salir» se comía la barra de progreso entera**: 406 px contra **0**.
+Preexistente y **vivo en producción en 8°** desde que existen las mini-clases; al llegar a 3° y 7°
+se triplicaba. El `.btn` de los tres forks es `width:100%`, y dentro de `.lec-top` eso deja al
+hermano `flex:1` sin espacio. La regla va en el CSS del **módulo**, que es quien trae esa barra.
+Ahora **96 / 205**.
+
+#### Lo que faltaba y no estaba en el plan: la voz de la mini-clase
+
+La mini-clase es **la pantalla con más texto del juego**, y era la única de 3° sin botón 🔊 —
+justo para el niño que todavía no lee de corrido, que es la razón entera de que 3° tenga voz.
+
+- **`textoLocutable(b)`** arma lo que se lee **desde los datos y no desde el DOM**: el cuerpo ya
+  pintado arrastra los rótulos del SVG ("centenas", "7 centenas"), que son apoyo visual y suenan a
+  disparate leídos de corrido. Es además **la lista exacta de fragmentos** que
+  `generar-voz-nivel.py` tiene que sacar de `lecciones.json` en la Tarea 15.
+- El botón aparece solo si `VOZ.activo` **y** el bloque tiene algo que decir, así que en 7° y 8°
+  nunca se ve **sin necesidad de una bandera más**.
+
+#### Cinco correcciones de contenido, y tres solo se vieron mirando
+
+- **Dos números regalaban la respuesta:** el ejemplo llegaba a `604` y a `405`, y el banco
+  pregunta justo por esos dos **con la respuesta dicha en el paso** ("no tiene ninguna barra de
+  diez", "hay un cero"). El niño la contestaría de memoria treinta segundos después y el mapa de
+  dominio mediría recuerdo, no saber. Cambiados por `907` y `309`, a costo pedagógico cero.
+- **"2 cientos" y "5 dieces"** eran plurales inventados: el OA se llama *unidades, decenas y
+  centenas*, y así lo dice la profesora en la sala.
+- **La tabla posicional no decía de qué número era cada fila**, así que el niño tenía que *armar*
+  415 leyendo 4-1-5 — y el que todavía no puede hacer eso es justamente el que necesita la tabla.
+- **La etiqueta de la cuadrícula salía CORTADA** (*"lpi está en la casilla (C"*): su `viewBox`
+  medía 176 y el texto no cabía.
+
+> ⚠️ **Esa última no la delata ninguna medición** —`scrollWidth` no desbordaba, el `<svg>` estaba,
+> el alto era correcto—. **Se vio en la captura.** Es la quinta vez que este proyecto tropieza con
+> lo mismo (Sesiones 59, 74, 77, 82), así que quedó escrita como regla en el estándar: **un widget
+> se aprueba mirando, no contando.**
+
+#### Un barrido que había que juzgar, no obedecer
+
+El detector de "la lección regala la respuesta" marcó **49 coincidencias** sobre las 26 de 3°. Se
+revisaron una por una y **casi todas eran el vocabulario que la lección existe para enseñar**:
+*traslación*, *columna*, *3/4*, *ángulo recto*. Una clase de transformaciones que evite decir
+"traslación" no es una clase.
+
+> **El defecto real es otro: que la lección resuelva el CASO NUMÉRICO EXACTO** que una pregunta va
+> a preguntar, cuando el concepto se enseña igual con cualquier otro número. Esos eran dos y están
+> corregidos. Distinguir las dos cosas es a mano, y hay que hacerlo: **un informe que marca lo
+> correcto se deja de leer**, que es lo que ya pasó en las Sesiones 56, 62 y 70.
+>
+> Y una consecuencia que conviene decir: **el porcentaje que el mapa de dominio produce justo
+> después de una mini-clase mide recuerdo inmediato, no dominio del año.** Es propio del diseño
+> "enseña → desafío", vale igual en 8° y 7°, y no se lee como maestría.
+
+#### Verificación (con `scripts/cdp.mjs`, jugando)
+
+- **Las 62 mini-clases se juegan por la interfaz**, con clics reales: 26 + 19 + 17, todas llegan a
+  un quiz de **10 preguntas, 4 opciones y del OA correcto**. En 3° **sin reloj**.
+- **El informe de aprobación** de 3° dibuja sus 26 con **30 de 30 diagramas**, sin aviso rojo; el
+  de 7°, 19 de 19. El tablero cuenta **26 · 19 · 17**.
+- **Sin regresión:** 20 / 23 / 27 expediciones, motor vivo en los tres, y el guardado de 8°
+  sobrevive a jugar los otros dos con sus 777 XP y sus tres claves separadas.
+- **Con `lecciones.js` ausente los tres siguen jugables** —`LECC.activo` en false, cero
+  excepciones— y el único fallo de red es su propio 404.
+- **Cero errores de consola y cero 404.**
+
+#### Lo que queda de A25
+
+- **Tarea 14 · la aprobación de las 45** (Roberto): ya salen en el tablero y en los informes.
+- **Tarea 15 · la voz de 3°** (~230 clips ≈ US$0,15): **después de aprobar, nunca en paralelo**, y
+  **gasta plata de Roberto, así que no se corre sin su autorización explícita**. Requiere enseñarle
+  a `generar-voz-nivel.py` a leer `lecciones.json`, y `textoLocutable` ya define qué sacar.
+- **Fase 5 · las 13 introducciones de Ciencias** (4 en 3°, 5 en 7°, 4 en 8°): **cero motor nuevo**,
+  porque `terminarLeccion()` ya marca completa una lección sin práctica.
+
+#### Trampas de método, todas nuevas
+
+- **`ev.ir()` a la MISMA dirección no recarga la página**, así que un save sembrado antes nunca se
+  lee y el progreso sale en cero. Parece un bug del producto y es de la prueba.
+- **`DIAGRAMAS`, `LEC` y `renderBloque` viven dentro del IIFE del módulo**: desde `cdp.mjs` no se
+  llegan, y hay que conducir por la interfaz —que además es la prueba que vale.
+- **Un ancla con 4 espacios de sangría donde escribí 2**: el script **abortó antes de escribir**,
+  que es exactamente para lo que llevan la aserción.

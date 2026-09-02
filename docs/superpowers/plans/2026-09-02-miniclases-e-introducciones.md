@@ -30,8 +30,8 @@ lecciones.json`) y el motor no se toca al agregar un curso.
 | Archivo | Qué pasa |
 |---|---|
 | `assets/js/lecciones.js` | **Nuevo.** Catálogo de 12 diagramas interactivos + motor de lecciones + las 4 funciones de la campaña mate |
-| `juego/index.html` | Pierde 479 líneas del tramo + 4 funciones sueltas; gana el `<script src>` y su respaldo |
-| `7mo/index.html` · `3ro/index.html` | Ganan el `<script src>`, su respaldo, `HAY_MINICLASES=true`, `capitulosMate` y `esLecciones` |
+| `juego/index.html` | Pierde 479 líneas del tramo, 4 funciones sueltas, el markup de `scr-leccion` y sus 13 reglas de CSS; gana el `<script src>` y su respaldo |
+| `7mo/index.html` · `3ro/index.html` | Ganan el `<script src>`, su respaldo, `HAY_MINICLASES=true`, `capitulosMate` y `esLecciones`; **pierden las 13 reglas de CSS huérfanas** |
 | `contenido/matematicas-7basico/lecciones.json` | **Nuevo.** 19 mini-clases |
 | `contenido/matematicas-3basico/lecciones.json` | **Nuevo.** 26 mini-clases |
 | `contenido/ciencias-{3,7,8}basico/lecciones.json` | **Nuevos.** 4 + 5 + 4 introducciones |
@@ -71,6 +71,20 @@ done
 Anotar el resultado. **Todo símbolo que aparezca en `motor.js` o fuera del tramo que se corta es
 una referencia cruzada** y tiene que seguir resolviendo después del corte.
 
+> ✅ **MEDIDO el 02/09, y el plan estaba corto: son CINCO, no tres.** La enumeración cazó dos que la
+> auto-revisión no había visto:
+>
+> | Dónde | Qué llama | En qué contexto |
+> |---|---|---|
+> | `motor.js:42` | `cargarPoolMate()` | El Jefe Final de la campaña de lecciones |
+> | `motor.js:785` | `renderCampañaMate(c)` | `renderCampaña` |
+> | `motor.js:1454` | **`finPracticaLeccion()`** | El `avanzar` del quiz |
+> | `motor.js:1538` | `abrirMiniClaseDeOA(oaFail)` | El siguiente paso al reprobar |
+> | `btnBack` de **los tres forks** | `volverAlCapituloMate()` | El ✕ del quiz |
+>
+> Es justo para esto que esta tarea existe: **la referencia cruzada solo aparece si la enumeras
+> antes de cortar.**
+
 - [ ] **Paso 2: Comprobar que `NS` no es una trampa**
 
 `NS` es el namespace SVG y lo usan **los dos** catálogos de dibujo. La Sesión 65 midió que en 3°
@@ -85,6 +99,10 @@ grep -n "createElementNS\|svgEl(" assets/js/visuales.js | head
 Si `visuales.js` declara su propio namespace, **el módulo nuevo declara el suyo** y no hay
 conflicto. Si lo toma de una global, hay que resolverlo antes de cortar.
 
+> ✅ **MEDIDO el 02/09: `visuales.js` es autónomo.** Arma el SVG como **texto** con su propio
+> `svgEnvoltura`, no con `createElementNS`, y `node --check` lo compila solo. **El módulo nuevo
+> declara su propio `NS` y no hay conflicto.**
+
 - [ ] **Paso 3: Comprobar que ningún `id` del HTML que se conserva lo nombra el código que se va**
 
 ```bash
@@ -93,8 +111,18 @@ for id in scr-leccion lecCuerpo lecCont lecSalir lecProgBar lecTit; do
 done
 ```
 
-Este chequeo frenó el primer intento de la Sesión 65. **El HTML de `scr-leccion` se queda en cada
-fork** (es markup, no motor); lo que se mueve es el JavaScript que lo llena.
+Este chequeo frenó el primer intento de la Sesión 65.
+
+> ⚠️ **MEDIDO el 02/09, y ESTO CORRIGE EL PLAN.** Yo daba por hecho que *"el HTML de `scr-leccion`
+> se queda en cada fork"*, y **es falso**: la Sesión 65 se llevó el markup de 7° y 3° junto con el
+> motor. Pero **el CSS sí se quedó** — las **13 reglas** (`#scr-leccion`, `.lec-top`, `.lec-prog`,
+> `#lecProgBar`, `.lec-titulo`, `.lec-cuerpo`…) están **idénticas en los tres**, huérfanas en dos
+> de ellos desde entonces.
+>
+> **Por eso el módulo inyecta su pantalla Y su CSS**, que es el patrón que `revision.js` ya validó
+> en producción: integrar un curso nuevo pasa a ser **2 líneas** (el `<script src>` y su respaldo)
+> en vez de diez, y **las 13 reglas se quitan de los tres forks**, como manda la regla de que un
+> módulo se lleva su CSS.
 
 ---
 
