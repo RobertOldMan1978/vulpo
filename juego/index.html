@@ -230,6 +230,13 @@ input.nm:focus{border-color:var(--cyan)}
 .sem:hover{opacity:1}
 .sem.sel{opacity:1;border-color:var(--gold);background:#ffffff10;transform:scale(1.06)}
 .res-sem-msg{min-height:18px;color:var(--txt);font-weight:800;font-size:13px;margin:6px 0 12px}
+/* Pantalla de conflicto de progreso. Reusa .meta-card, que desde la Sesion 74 es
+   un selector suelto y ya no esta anclado a #scr-meta: por eso hereda bien aca. */
+#progComp{display:flex;gap:10px;margin:14px 0 18px}
+.prog-col{flex:1;min-width:0;background:#00000033;border:1px solid #ffffff1f;border-radius:14px;padding:12px 10px}
+.prog-col h4{margin:0 0 6px;font-size:12px;font-weight:900;color:var(--gold);text-transform:uppercase;letter-spacing:.03em}
+.prog-col p{margin:0;font-size:13px;font-weight:800;line-height:1.5}
+#scr-progreso .btn{margin-top:8px}
 @keyframes bump{50%{transform:scale(1.04)}}
 @keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 .feedback{min-height:22px;text-align:center;font-weight:900;margin-top:4px}
@@ -1070,6 +1077,19 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
         <button class="sem" data-v="🟡" type="button">🟡<span>Más o menos</span></button>
         <button class="sem" data-v="🔴" type="button">🔴<span>Me costó</span></button>
       </div>
+    </div>
+  </section>
+  <section class="screen" id="scr-progreso">
+    <div class="meta-card">
+      <span class="meta-ic">🎒</span>
+      <div class="meta-kick">Encontramos tu avance guardado</div>
+      <p class="meta-frase">¿Cuál quieres usar?</p>
+      <div id="progComp">
+        <div class="prog-col"><h4 id="progRemTit">Guardado</h4><p id="progRemDatos"></p></div>
+        <div class="prog-col"><h4>Este teléfono</h4><p id="progLocDatos"></p></div>
+      </div>
+      <button class="btn" id="progUsarRem">Usar el guardado</button>
+      <button class="btn" id="progUsarLoc">Seguir con este teléfono</button>
     </div>
   </section>
 
@@ -2720,6 +2740,8 @@ async function startDuelo(){
   revisarDesafio();   // muestra el banner del desafío del profe, si hay
   revisarDuelos();    // y el de los duelos: te desafiaron, o el tuyo ya terminó
   revisarDificil();   // sincroniza la marca 🔥 y otorga premios de Difícil ya logrados
+  // Si la bajada del progreso falló al canjear, o quedó a medias, se reintenta acá.
+  if(p.codigo_acceso && !yaBajo()) bajarProgreso(null);
  }, 1200);
  if(S.nombre)$('inpName').value=S.nombre;
  const g=$('avgrid');AVATARES.forEach((a)=>{const d=document.createElement('div');
@@ -2776,7 +2798,7 @@ $('btnCanjeOk').onclick=async ()=>{
   const p=Array.isArray(data)?data[0]:data;
   MI_PERFIL=p;
   S.alumno=p.nombre; S.nombre=p.nombre; S.avatar=p.avatar;
-  await SB.rpc('kimun_xp',{p_xp:S.xp});        // conserva el avance local
+  const rxp=await SB.rpc('kimun_xp',{p_xp:S.xp});   // conserva el avance local
   localStorage.removeItem('kimun_rank'+SUFIJO);       // fuera el ranking del curso anterior
   await cargarCurso();
   // Canjear el ALU- de un curso experimental tiene que traer también su modo: es lo
@@ -2787,6 +2809,9 @@ $('btnCanjeOk').onclick=async ()=>{
   $('canjeMsg').style.color='var(--green)';
   $('canjeMsg').textContent='¡Listo, '+p.nombre+'! Ya estás en '+(S.curso?S.curso.nombre:'tu curso')+'.';
   SND.unlock();
+  // El XP autoritativo es el que ACABA de devolver el servidor, no el de la foto.
+  const tomo=await bajarProgreso(typeof rxp.data==='number'?rxp.data:null);
+  if(tomo) return;                          // la pantalla de conflicto se encarga
   setTimeout(cambioModo?recargarPorModo:cerrarCanje,1600);
  }catch(e){
   $('canjeMsg').style.color='var(--pink)';

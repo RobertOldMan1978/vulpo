@@ -1087,9 +1087,19 @@ Agregar a pantalla de inicio*. O sea que hay que explicar el paso a paso de todo
 service worker solo agregaría comodidad en Android. Queda para el Bloque C, y **la decisión de si
 hace falta se toma probando en un teléfono real**.
 
+> ⚠️ **Y EN iPHONE ESO VALE SOLO EN SAFARI** (medido en un iPhone real el 01/09/2026). Desde
+> **Chrome** el ícono queda igual de bonito, pero al abrirlo **aparece la barra de direcciones**:
+> es un acceso directo, no una app. Solo el *Agregar a pantalla de inicio* de Safari respeta el
+> `apple-mobile-web-app-capable` que declaramos, y **el fallo engaña porque el ícono se ve igual**.
+> No es un caso de borde: el enlace llega al chat del curso, y el **navegador incrustado de
+> WhatsApp tampoco es Safari** — ése es el camino mayoritario del piloto.
+
 **`assets/js/instalar.js`** muestra un banner en el inicio y una pantalla con el paso a paso del
-sistema que detecte (iPhone / Android / escritorio; iPadOS 13+ se declara como Mac y se delata
-por el touch). **No aparece** si ya está instalado —hacen falta las dos comprobaciones,
+sistema que detecte (iPhone / **iPhone fuera de Safari** / Android / escritorio; iPadOS 13+ se
+declara como Mac y se delata por el touch). El caso **`ios-otro`** manda primero a Safari, y se
+detecta con **lista blanca** —descartando por marca propia a Chrome, Firefox y Edge, que sí traen
+el token `Safari/`, y por la ausencia de ese token a los navegadores incrustados—, no enumerando
+rivales uno por uno. **No aparece** si ya está instalado —hacen falta las dos comprobaciones,
 `display-mode: standalone` en Android y `navigator.standalone` en iOS—, si el papá lo cerró, o
 con `SIN_DISCO`, o sea nunca en `?solo=`, `?m=`, `?rev=1` ni `?armar=1`. Como el banner se cierra
 para siempre, hay además un enlace permanente junto a Créditos.
@@ -1248,9 +1258,12 @@ como identidad del jugador resuelven el perfil con `kimun_yo()`.
 
 **Límites conocidos:** el XP lo reporta el teléfono, así que puede falsearse; para
 eso existe `kimun_prof_xp_fijar`, que permite al profesor corregirlo (el teléfono
-adopta el valor del servidor cuando es menor). El progreso de campañas y las skins
-siguen siendo del aparato, no del alumno: en un tablet compartido, dos hermanos
-comparten avance aunque tengan XP distinto en el ranking.
+adopta el valor del servidor cuando es menor). **El progreso de campañas, las
+monedas y las skins ya NO son del aparato** (Bloque D, 01/09/2026): viajan al
+servidor como una foto y vuelven al canjear el `ALU-` en otro teléfono. Lo que
+sigue siendo por aparato es el **vínculo**: en un tablet compartido, dos hermanos
+que canjean uno tras otro se van pisando el vínculo, aunque cada uno recupere lo
+suyo al volver a canjear.
 
 Diseño y plan de los cursos y el ranking:
 `docs/superpowers/specs/2026-08-17-cursos-ranking-real-design.md` y
@@ -1524,6 +1537,28 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
   vez. ⚠️ Va declarada **antes** de sus usos: una función `language sql` se valida al crearse.
   ⚠️ El duelo contra **bot** nace con `visto_retador=true`, porque se resuelve al instante y el
   jugador ya vio su marcador en pantalla; sin eso el banner se lo repetía.
+- **Progreso del alumno (Bloque D, 01/09/2026):** tabla `progreso` (una fila por alumno:
+  `perfil_id` como clave, `datos jsonb`, `actualizado`; RLS sin políticas y `on delete cascade`)
+  más `kimun_progreso_subir(jsonb)` y `kimun_progreso_bajar()`. Guarda **una foto completa del
+  save**, no columnas normalizadas: el save gana campos seguido y así un campo nuevo viaja sin
+  migrar el esquema. Medido, la foto más grande posible son **9,4 KB** (3°, 27 rutas), y el
+  servidor **rechaza sobre 64 KB**.
+  - **Sube** enganchada a `guardar()` con rebote de 15 s, y **no sube si el JSON es idéntico al
+    último enviado** — `guardar()` corre en cada respuesta.
+  - ⚠️ **NO sube en `EFIMERO`**, y es una diferencia deliberada con el XP: el XP es un número que
+    solo sube, pero **la foto es un reemplazo completo**. Abrir `?qa=1` en un teléfono vinculado a
+    un alumno real y completar una etapa le **pisaría la partida del año**.
+  - **Baja en un solo momento: al canjear el `ALU-`.** No hace falta otro, porque borrar los datos
+    del navegador se lleva también la sesión de Supabase. Si falla, **no** se marca como bajada y
+    se reintenta al abrir el juego.
+  - ⚠️ **Al bajar, el XP lo manda el SERVIDOR, no la foto.** Si no, una foto vieja con 900 XP
+    deshace sola la corrección que el profesor hizo con `kimun_prof_xp_fijar`, que es la única
+    forma de **bajar** un XP inflado. Por lo mismo la foto **no sobrescribe `alumno` ni `curso`**:
+    esos vienen del canje recién hecho.
+  - Si los dos lados tienen avance, la pantalla **`scr-progreso`** pregunta una vez, y **el lado
+    que pierde se guarda** en `localStorage` bajo `<SAVE_KEY>_previo`.
+  - **No necesita cola de reintentos** como `dominio`: una foto es completa e idempotente, así que
+    el próximo envío que llegue lleva todo. `dominio` la necesita porque manda **eventos**.
 - **Pendiente:** notificaciones push.
 
 ## Trámites pendientes (fuera del código)
@@ -6889,3 +6924,137 @@ portada propia por capítulo**, igual que 8°.
   tamaño); quedan en Descargas de Roberto.
 - **Pendiente de arrastre:** la instalación en iPhone (Android quedó bien); y las portadas de 4°, 5°
   y 6° para cuando existan esos cursos (el estándar ya habilita ~20 reutilizaciones más).
+
+### Sesión 80 (2026-09-01) — El avance deja de vivir solo en el teléfono (Bloque D)
+Dos trabajos: se cerró el defecto que dejó la prueba en iPhone, y se implementó el **Bloque D**, que
+es el requisito real del modelo de suscripción. **No se tocó contenido**: ni un banco, ni una
+pregunta, ni un clip de voz.
+
+#### ⚠️ En iPhone la instalación solo sirve desde Safari
+
+Roberto probó la instalación y reportó dos cosas: *"pasó desde Chrome, y quedó el logo en pantalla"*
+y, al preguntarle, *"se ve arriba la barra de dirección web"*. Eso lo cierra: **desde Chrome no se
+instala de verdad**. Crea un acceso directo que abre el navegador encima, porque **solo el "Agregar
+a pantalla de inicio" de Safari** produce una app que respeta el `apple-mobile-web-app-capable` que
+el proyecto declara desde la Sesión 77.
+
+> **El ícono se ve igual en los dos casos, así que el fallo engaña.** Y no lo delata ningún conteo:
+> se supo preguntando qué se veía al abrirlo.
+
+**Y al mirar el código apareció algo más grande que Chrome.** `plataforma()` devolvía `'ios'`
+mirando solo si era iPhone, **sin mirar qué navegador era**, así que el paso a paso de Safari
+—*"Toca Compartir ⬆️ en la barra de abajo"*, que es la barra de Safari— se le mostraba a cualquiera.
+Y el camino más común del piloto **no es Chrome**: el enlace llega al chat del curso y el papá lo
+abre **dentro de WhatsApp**, cuyo navegador incrustado tampoco puede instalar.
+
+**El arreglo: un cuarto caso `ios-otro`, detectado por lista blanca de Safari** y no enumerando
+rivales. Son dos mitades y cada una ataja un grupo: Chrome, Firefox y Edge de iPhone **sí** traen el
+token `Safari/` y se descartan por su marca propia (`CriOS`/`FxiOS`/`EdgiOS`/`OPiOS`); los
+navegadores incrustados **no** traen ese token y caen solos. Sus pasos mandan primero a *Abrir en
+Safari*.
+
+**Verificado con 8 user agents reales** —Safari, Chrome, Firefox y Edge de iPhone, los navegadores
+de WhatsApp e Instagram, Android y escritorio—: **8 de 8**. Falta que Roberto lo pruebe en su
+teléfono.
+
+#### Bloque D · El progreso en el servidor
+
+Hasta hoy el XP y el mapa de dominio vivían en Supabase, pero **las monedas, las skins y el avance
+de campaña vivían solo en `localStorage`**. Mientras siguiera así, prometerle a un apoderado que su
+hijo cambia de teléfono y recupera todo **era falso**.
+
+**El diseño se decidió con una medición, no con una intuición.** Un save **completo** —todas las
+rutas al máximo, todas las skins compradas— mide **9,4 KB en 3° y 7,7 KB en 8°**. Eso descarta media
+discusión: cabe entero en una llamada y no hay que sincronizar campo por campo.
+
+**Dos decisiones de Roberto fijaron el alcance:**
+
+1. **Restaurar, no sincronizar.** Un aparato a la vez. Que el mismo niño juegue en el teléfono y el
+   tablet el mismo día obliga a fundir estados divergentes, cubre bastante menos del caso real y
+   cuesta bastante más.
+2. **Cuando los dos lados tienen avance, se pregunta una vez** —pantalla propia, los dos botones
+   pesando igual— en vez de que gane el mayor en silencio. **El lado que pierde se guarda** en
+   `<SAVE_KEY>_previo`: 10 KB de seguro, sin interfaz.
+
+**La forma: una foto completa en `jsonb`**, no columnas normalizadas. La ventaja de normalizar
+—resolver conflictos campo por campo— **no se necesita** con "restaurar"; y su costo es real, porque
+**el save gana campos seguido** (`mateLecciones` en la Sesión 29, `metasVistas` y `semaforo` en la
+52) y cada uno pediría una migración de esquema, que aquí significa que Roberto va a pegar SQL a
+mano. Detalle completo en la sección de Backend, arriba.
+
+#### Dos cruces que rompen en silencio, y que son lo delicado del trabajo
+
+1. ⚠️ **`?qa=1` no puede subir.** El XP es un número que solo sube, pero **la foto es un reemplazo
+   completo**: abrir QA en un teléfono vinculado a un alumno real, completar una etapa para revisar
+   contenido y que eso suba, le **pisa la partida del año**. El XP no tiene esa forma de fallar. Va
+   guardado con `EFIMERO`, y es una diferencia **deliberada** con el XP.
+2. ⚠️ **Al bajar la foto, el XP lo manda el servidor, no la foto.** `kimun_xp` solo sube, y
+   `kimun_prof_xp_fijar` es la única forma de **bajar** un XP inflado. Un teléfono nuevo que bajara
+   una foto vieja con 900 XP después de una corrección a 500 mandaría 900 en el siguiente
+   `guardar()`, el servidor tomaría el mayor y **la corrección del profesor se desharía sola, sin
+   ningún error**. Por lo mismo, la foto **no sobrescribe `alumno` ni `curso`**: vienen del canje.
+
+#### Dos tareas del Bloque D se cerraron sin escribir su código
+
+- **D4 (migración del avance que ya vive en los teléfonos): no hay migración.** El primer `guardar()`
+  después de la actualización sube lo que el niño ya tenía.
+- **D1 no necesita cola de reintentos**, aunque la tarea la daba por hecha copiando el patrón de
+  `dominio`. **`dominio` la necesita porque manda eventos**, que se pierden si no llegan; una foto es
+  completa e idempotente, así que el próximo envío que sí llegue lleva todo.
+
+#### El refactor que hubo que hacer antes, y por qué no era opcional
+
+La forma del save estaba escrita **dos veces** —`guardar()` la armaba campo por campo y `cargar()` la
+leía campo por campo—. El camino de bajada la habría escrito una tercera vez, y el día que el juego
+sume un campo se caería en una de las tres **sin ningún error**. Es exactamente el bug que este
+proyecto ya pagó tres veces: el `oa` en la Sesión 23, el `visual` en la 55 y el `META_OA` en la 63.
+
+Se extrajeron **`payloadSave()`** y **`aplicarSave(d)`**, con el cuerpo movido byte a byte (31
+líneas). La comprobación que lo cierra no es `node --check` —un corte a medias puede seguir siendo
+JavaScript válido, como el `/*` huérfano de la Sesión 75— sino que **`git diff` da +16/−6 y las 31
+líneas movidas no aparecen**, más que en el navegador `lo que se escribe en disco es byte a byte lo
+que arma payloadSave()`.
+
+#### Verificación (con `cdp.mjs`, jugando)
+
+| | |
+|---|---|
+| Dos `guardar()` seguidos | **1** subida (el rebote de 15 s) |
+| Un tercero sin cambios | **sigue en 1** |
+| `?qa=1` | **0 subidas** |
+| Foto vieja de 900 XP contra un servidor en 500 | **queda 500** |
+| Foto de "Ana" sobre el canje de "Pedro" | **queda Pedro** |
+| Las dos ramas del conflicto | correctas, y el perdedor guardado en las dos |
+| Sin conexión | no se marca como bajada → **reintenta**, y el juego sigue |
+
+Regresión: 20/23/27 expediciones, guardado de 8° intacto (777 XP), las tres claves conviviendo,
+**cero excepciones**. El único fallo de red es el `404` de `kimun_progreso_subir`, que es el esquema
+todavía sin aplicar.
+
+#### Tres cosas que aparecieron ejecutando
+
+1. **Una ancla mía tenía 3 espacios de sangría y son 2.** El script **abortó antes de escribir
+   nada** — es para eso que llevan la aserción. Y al medir bien apareció que **`revisarDificil()`
+   aparece dos veces en 8°**, así que la otra ancla también habría pegado en el lugar equivocado.
+2. **La captura delató dos tildes** que ningún conteo ve: *"capitulo"* y *"3 DIAS"*. En cambio se
+   dejó **`1240` sin separador de miles a propósito**: el HUD del juego muestra las monedas así, y
+   divergir en una sola pantalla se vería peor que el número crudo.
+3. **`cerrarCanje()` ya navega solo.** El plan decía `cerrarCanje(); go('scr-rol')`, y ese `go`
+   pisaba su destino y mandaba siempre al inicio, incluso a un niño que venía del mapa. Se detectó
+   en la auto-revisión del plan, antes de escribir una línea.
+
+#### Lo que esto cambia en lo que se puede prometer
+
+`docs/comercial.md` listaba «el progreso vive en el teléfono, no en la cuenta» como **el primer
+requisito que bloquea el modelo de suscripción**. Queda resuelto, y ahora **sí** se puede decir que
+el niño cambia de teléfono y recupera todo.
+
+> ⚠️ **Pero sigue sin poder decirse que funciona sin conexión**, que es la confusión fácil y cara:
+> recuperar el avance necesita internet igual. Y **el avance lo sigue reportando el teléfono**, igual
+> que el XP: es un dato que ya no se pierde, no un dato confiable.
+
+- **Pendiente de Roberto:** **aplicar `supabase/schema.sql`** —hasta entonces el cliente da 404 en
+  `kimun_progreso_subir` y el avance no viaja— y probar en el iPhone que el aviso ahora manda a
+  Safari. Queda sin correr la comprobación del tope de 64 KB, que necesita el esquema aplicado.
+- Spec y plan: `docs/superpowers/specs/2026-09-01-progreso-en-el-servidor-design.md` y
+  `docs/superpowers/plans/2026-09-01-progreso-en-el-servidor.md`.

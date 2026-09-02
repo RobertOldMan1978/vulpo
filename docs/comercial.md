@@ -144,10 +144,15 @@ durante la vigencia**.
 
 ### Lo que bloquea este modelo, y no es comercial
 
-1. **Hoy el progreso vive en el teléfono, no en la cuenta.** Monedas, skins, avance de campaña,
-   estrellas e insignias están en `localStorage`; solo el XP y el dominio por OA están en el
-   servidor. Prometerle a un apoderado que su hijo cambia de teléfono y recupera todo **sería
-   falso hoy**. Es trabajo de backend y es el primer requisito.
+1. ~~**Hoy el progreso vive en el teléfono, no en la cuenta.**~~ ✅ **RESUELTO el 01/09/2026**
+   (Bloque D). Monedas, skins, avance de campaña, estrellas e insignias viajan al servidor como
+   una foto, y vuelven al canjear el `ALU-` en otro teléfono. **Ya se puede decir** que el niño
+   cambia de teléfono y recupera todo.
+   ⚠️ **Pero sigue sin poder decirse que funciona sin conexión**, que es la confusión fácil:
+   recuperar el avance necesita internet igual, y el juego sin señal ni carga. Eso lo daría el
+   service worker, que no existe.
+   ⚠️ **Y el avance lo sigue reportando el teléfono**, igual que el XP: es un dato que ya no se
+   pierde, no un dato confiable.
 2. **La puerta es un bloqueo blando.** El vencimiento de una suscripción heredaría el mismo
    hueco que ya tiene el código `ALU-`.
 3. **Pagar en la web y pagar dentro de una app no son lo mismo.** Google Play y Apple tienen

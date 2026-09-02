@@ -44,8 +44,9 @@ se ve una vez. Todo en un solo archivo `index.html`, pensado para el celular.
 
 El **ranking es real y por curso**: el profesor crea el curso e inscribe a los alumnos
 desde `profesor.html` —una página aparte del juego, con correo y contraseña—, y cada uno
-entra en su teléfono con un código de acceso. El XP se sincroniza con el servidor, así que
-los compañeros compiten con datos de verdad. Para un grupo que parte de cero —una demo, un
+entra en su teléfono con un código de acceso. El XP y **el avance completo** —monedas, skins,
+insignias y campañas— se sincronizan con el servidor, así que los compañeros compiten con datos
+de verdad y **cambiar de teléfono no borra nada**: se canjea el mismo código y vuelve todo. Para un grupo que parte de cero —una demo, un
 taller— el panel también genera un **enlace de inscripción** con cupo: cada persona escribe
 su nombre, se crea sola en el curso y recibe su código. Ese enlace **es** la credencial, así
 que el cupo se ajusta al grupo.
@@ -64,9 +65,10 @@ La página de presentación está en **https://vulpo.cl**, el juego en
 
 **Se puede instalar en el teléfono.** Desde el menú del navegador, «Agregar a pantalla de
 inicio»: queda con su ícono y su nombre (*VULPO 3°*, *VULPO 7°*, *VULPO 8°*) y se abre como una
-aplicación, sin la barra del navegador. El juego mismo explica cómo hacerlo. Ojo: instalarlo
-**no** lo hace funcionar sin internet — para eso haría falta un service worker, que todavía no
-existe.
+aplicación, sin la barra del navegador. El juego mismo explica cómo hacerlo, con el paso a paso
+del sistema que detecte. **En iPhone hay que hacerlo desde Safari**: desde Chrome el ícono queda
+igual, pero al abrirlo aparece la barra de direcciones. Ojo: instalarlo **no** lo hace funcionar
+sin internet — para eso haría falta un service worker, que todavía no existe.
 
 ## Estado
 
