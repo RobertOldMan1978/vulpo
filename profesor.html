@@ -635,7 +635,7 @@ async function cargarInscripcion(cursoCodigo, nivel){
 
   const sel=caja.querySelector('.ins-nivel'), url=caja.querySelector('.ins-url');
   // El enlace tiene que llevar al nivel del curso. Si el curso lo declara, se preselecciona
-  // solo: mandarle a un 3o el enlace de /juego/ es el error facil de esta pantalla.
+  // solo: mandarle a un 3o el enlace de /8vo/ es el error facil de esta pantalla.
   if(sel && nivel){ const n=NIVELES_MUESTRA.find(x=>x.nivel===nivel); if(n) sel.value=n.ruta; }
   function pintarUrl(){ if(url&&sel&&fila) url.value=location.origin+sel.value+'?inscribir='+fila.token; }
   pintarUrl();

@@ -19,7 +19,6 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from niveles import fork_de          # de que nivel es un banco; ver ese archivo
 
 
 VISUALES = RAIZ / "assets" / "js" / "visuales.js"

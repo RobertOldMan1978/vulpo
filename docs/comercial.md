@@ -56,7 +56,7 @@ Tres etapas. **En la reunión no se cierra una venta: se cierra una prueba.**
 
 | Etapa | Qué pasa |
 |---|---|
-| **1. La prueba engancha** | Enlace de muestra (`?solo=` / `?m=`) o la demo pública en `vulpo.cl/juego`. Al terminar, la pantalla de fin de demo ofrece el contacto |
+| **1. La prueba engancha** | Enlace de muestra (`?solo=` / `?m=`) o la demo pública en `vulpo.cl/8vo`. Al terminar, la pantalla de fin de demo ofrece el contacto |
 | **2. La reunión** | 15 minutos con dirección/UTP. Se muestra la app y el panel con datos. Guion aparte |
 | **3. El cierre** | Precio, mínimo, Fundador acotado y las tres condiciones |
 
@@ -84,7 +84,7 @@ vender a un colegio cuesta lo mismo pague lo que pague.
 
 | Nivel | Contenido | Estado |
 |---|---|---|
-| **8° básico** (`/juego/`) | 2.536 preguntas, 4 asignaturas + Vocabulario y Lectura | ✅ aprobado (pregunta por pregunta) y a la venta |
+| **8° básico** (`/8vo/`) | 2.536 preguntas, 4 asignaturas + Vocabulario y Lectura | ✅ aprobado (pregunta por pregunta) y a la venta |
 | **7° básico** (`/7mo/`) | 2.550 preguntas, 4 asignaturas + Vocabulario | ✅ aprobado por muestreo (30/08/2026) |
 | **3° básico** (`/3ro/`) | 2.659 preguntas, 4 asignaturas + voz pregrabada + Lectura | ✅ aprobado por muestreo, salvo 2 OA de Historia |
 

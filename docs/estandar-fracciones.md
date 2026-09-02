@@ -65,7 +65,7 @@ Tres casos, y los tres están cubiertos y probados:
 | Archivo | Dónde |
 |---|---|
 | `assets/js/motor.js` | Quiz (enunciado y opciones), Jefe Final, Duelo local, Duelo en línea, y la explicación al fallar (respuesta correcta + tip) |
-| `juego/index.html` | Reto de Cálculo (enunciado y opciones) y las mini-clases (texto, pie, intro y los pasos del ejemplo resuelto) |
+| `8vo/index.html` | Reto de Cálculo (enunciado y opciones) y las mini-clases (texto, pie, intro y los pasos del ejemplo resuelto) |
 
 ## Para agregar un curso nuevo
 

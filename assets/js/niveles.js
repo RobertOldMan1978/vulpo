@@ -37,7 +37,7 @@ NIV.ASIGS = {
    este nivel si su código TERMINA en él. Orden descendente, y así debe quedar.
    AGREGAR UN CURSO NUEVO ES ESTA FILA. */
 NIV.NIVELES = [
-  {nivel:'08', nombre:'8° básico', ruta:'/juego/'},
+  {nivel:'08', nombre:'8° básico', ruta:'/8vo/'},
   {nivel:'07', nombre:'7° básico', ruta:'/7mo/'},
   {nivel:'03', nombre:'3° básico', ruta:'/3ro/'}
 ];

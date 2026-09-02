@@ -3,7 +3,7 @@
 
    POR QUE EXISTE. El camino de aprendizaje de Matematica —12 diagramas SVG
    interactivos + el motor que recorre los bloques de una leccion— vivia SOLO en
-   juego/index.html. La Sesion 65 lo corto de 3 y 7 porque ahi era codigo muerto;
+   8vo/index.html. La Sesion 65 lo corto de 3 y 7 porque ahi era codigo muerto;
    al darles su propio lecciones.json volvio a hacer falta, y copiarlo por fork
    serian SEIS copias al llegar a 6 basico.
 
@@ -19,7 +19,7 @@
    body todavia no existe.
 
    ⚠️ NO ES EL RETO DE CALCULO. Vivian pegados en el archivo pero son cosas distintas;
-   el Reto se queda en juego/index.html (medido en la Sesion 74). Lo unico que los
+   el Reto se queda en 8vo/index.html (medido en la Sesion 74). Lo unico que los
    toca es el nodo del Reto en el mapa, guardado con CFG.hayReto.
 
    QUIEN LO LLAMA DESDE FUERA (medido al cortar, y eran CINCO y no tres):

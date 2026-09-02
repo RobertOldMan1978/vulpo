@@ -70,7 +70,7 @@ para calificar**.
 ## Cómo probarlo
 
 La página de presentación está en **https://vulpo.cl**, el juego en
-**https://vulpo.cl/juego** y el panel del profesor en **https://vulpo.cl/profesor.html**. Para desarrollo local conviene un servidor
+**https://vulpo.cl/8vo** y el panel del profesor en **https://vulpo.cl/profesor.html**. Para desarrollo local conviene un servidor
 (`python -m http.server 8765`), porque el JavaScript no funciona bien desde `file://`.
 
 **Se puede instalar en el teléfono.** Desde el menú del navegador, «Agregar a pantalla de
@@ -129,7 +129,7 @@ profesor) va **auto-hospedado** en `assets/vendor/`, con la versión fija, para 
 depender de un script de terceros que puede cambiar.
 Contenido de cada expedición en `contenido/<asignatura>/` (JSON). Mobile-first.
 
-Cada curso se sirve de su propia carpeta (`juego/`, `7mo/`, `3ro/`), pero **el motor del juego se escribe una sola vez** y vive en `assets/js/`: `motor.js` (quiz, campañas, jefes, duelo, tienda, guardado), más los módulos de apoyo `lecciones.js` (el motor de mini-clases e introducciones, con sus 27 diagramas interactivos), `visuales.js` (los dibujos por código), `voz.js` (la lectura en voz alta), `fracciones.js` (las fracciones apiladas), `instalar.js`, `calculo.js`, `revision.js`, `sensible.js` y `niveles.js`. Lo que cambia de un curso a otro son **datos y banderas**, no código.
+Cada curso se sirve de su propia carpeta (`8vo/`, `7mo/`, `3ro/`), pero **el motor del juego se escribe una sola vez** y vive en `assets/js/`: `motor.js` (quiz, campañas, jefes, duelo, tienda, guardado), más los módulos de apoyo `lecciones.js` (el motor de mini-clases e introducciones, con sus 27 diagramas interactivos), `visuales.js` (los dibujos por código), `voz.js` (la lectura en voz alta), `fracciones.js` (las fracciones apiladas), `instalar.js`, `calculo.js`, `revision.js`, `sensible.js` y `niveles.js`. Lo que cambia de un curso a otro son **datos y banderas**, no código.
 
 ---
 

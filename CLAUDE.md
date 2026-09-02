@@ -201,7 +201,7 @@ decisión de fondo es **no reescribir en Flutter ni React Native**: VULPO ya es 
 mobile-first y se reutiliza. Nada de eso está implementado.
 
 Antes de tocar `sw.js` hay que leer su §2, que corrige el análisis externo con hechos del
-repositorio: hoy hay **tres apps forkeadas** (`/juego/`, `/3ro/`, `/7mo/`), así que un manifiesto
+repositorio: hoy hay **tres apps forkeadas** (`/8vo/`, `/3ro/`, `/7mo/`), así que un manifiesto
 único abriría el curso equivocado; y **`assets/` pesa 473 MB** (252 MB solo de voz de 3°), así que
 la precarga `cache-first` que propone el análisis le bajaría 250 MB al teléfono de un niño en la
 primera apertura. El progreso local en `localStorage` es el requisito real del modelo de
@@ -341,7 +341,7 @@ PWA es inviable tal cual: bajaría 250 MB al teléfono de un niño en la primera
 
 ### Gotchas del motor de expediciones
 
-Al agregar expediciones nuevas al arreglo `EXPEDICIONES` de `juego/index.html`:
+Al agregar expediciones nuevas al arreglo `EXPEDICIONES` de `8vo/index.html`:
 
 - **Portada del nodo:** `portadaMapa(exp)` devuelve `assets/portada-<id>.png`. Si ese PNG no
   existe hay **404 en consola**, aunque el `onerror` tape el problema visualmente. Para nodos
@@ -458,12 +458,12 @@ mismo que en el original.
 > en [`assets/js/lecciones.js`](assets/js/lecciones.js), porque 3° y 7° volvieron a necesitarlo al
 > tener sus propias lecciones. Lo que queda abajo es el registro de por qué se cortó primero de
 > 3° y 7°, y el método del corte, que sigue valiendo. **El Reto de Cálculo NO viajó**: seguía
-> pegado en el archivo pero es otra cosa, y se queda en `juego/index.html` (medido en la Sesión
+> pegado en el archivo pero es otra cosa, y se queda en `8vo/index.html` (medido en la Sesión
 > 74). Lo único que los toca es el nodo del Reto en el mapa, guardado con `CFG.hayReto`.
 
 Las **693 líneas** de 8° (catálogo de diagramas SVG + motor de mini-clases + Reto de Cálculo)
 **salieron de `3ro/` y `7mo/`**, donde eran inalcanzables. Siguen vivas y sin tocar en
-`juego/index.html`, que es donde se juegan. Con el HTML huérfano de sus cuatro pantallas y una
+`8vo/index.html`, que es donde se juegan. Con el HTML huérfano de sus cuatro pantallas y una
 segunda zona muerta que había fuera del bloque, son **792 líneas menos por fork**.
 
 **Se pudo recién ahora, y el orden importa:** primero las diferencias entre cursos pasaron a ser
@@ -647,7 +647,7 @@ voz**: 7° no lleva audio pregrabado, y de 5° hacia arriba no vale la pena paga
 
 ### Gotchas de 3° básico (`3ro/index.html`, que es un FORK de 8°)
 
-- **`localStorage` está separado por sufijo.** `/3ro` y `/juego` se sirven del mismo origen, así
+- **`localStorage` está separado por sufijo.** `/3ro` y `/8vo` se sirven del mismo origen, así
   que compartían `kimun_save`: un niño con los dos juegos abiertos compartía monedas, skins y
   avance. En 3° las claves llevan `SUFIJO='_3ro'` (`kimun_save_3ro`, `kimun_dom_pend_3ro`,
   `kimun_rank_3ro`, `kimun_intro_3ro`). Los **ajustes de audio se comparten a propósito**.
@@ -764,7 +764,7 @@ voz**: 7° no lleva audio pregrabado, y de 5° hacia arriba no vale la pena paga
     antes (ve todas las asignaturas) y el panel le ofrece fijárselo con `kimun_prof_curso_nivel`.
     Inventarle un nivel a partir del nombre habría sido adivinar.
   - Y el enlace de inscripción **se preselecciona con el nivel del curso**: mandarle a un 3° el
-    enlace de `/juego/` era el error fácil de esa pantalla.
+    enlace de `/8vo/` era el error fácil de esa pantalla.
 
 ### Finales de línea: LF en todo, declarado en `.gitattributes` (31/08/2026)
 
@@ -937,7 +937,7 @@ para siempre.
   Oculta la barra inferior (Tienda/Logros), el botón "Volver" de la campaña, el Desafío
   Extra y el Jefe Final. Pensado para pasarle a un grupo de alumnos un enlace de
   práctica acotado a las unidades que están viendo.
-  Ejemplo: `https://vulpo.cl/juego/?solo=hist-cap2,hist-cap3,hist-cap4`.
+  Ejemplo: `https://vulpo.cl/8vo/?solo=hist-cap2,hist-cap3,hist-cap4`.
   Se puede **combinar con `?qa=1`** para revisar contenido acotado (manda QA: marca las
   respuestas, pero se sigue sin guardar). Ids inválidos se ignoran; si no queda ninguno
   válido, cae al juego normal.
@@ -949,7 +949,7 @@ para siempre.
   correctas"). Botones Copiar y Probar. El enlace se arma con `location.origin`, así que
   abierto desde vulpo.cl genera enlaces de vulpo.cl y en local genera locales. Se llega
   desde `profesor.html` → Administración → "🔗 Armar enlace de muestra": un **selector de nivel**
-  (8° → `/juego/`, 7° → `/7mo/`, 3° → `/3ro/`) + "Abrir armador", visible solo para `YO.es_admin`
+  (8° → `/8vo/`, 7° → `/7mo/`, 3° → `/3ro/`) + "Abrir armador", visible solo para `YO.es_admin`
   (no lo ven los SuperUsuarios). **Cada app tiene su propio armador** y lista solo sus capítulos;
   agregar un curso nuevo al selector es **una línea** en `NIVELES_MUESTRA` (`profesor.html`). **Vive en `index.html` a propósito:** el
   catálogo (`EXPEDICIONES`) ya está ahí, así que una expedición nueva aparece sola, sin
@@ -1099,6 +1099,42 @@ Llegada la fecha el cierre **ocurre solo**, sin desplegar nada ese día.
 > teléfono — pero **instalarlo no lo hace funcionar sin conexión**: eso lo daría el service
 > worker, que no existe. Es una confusión fácil y cara si se la dice a un colegio.
 
+### Las rutas de los cursos: `/3ro`, `/7mo`, `/8vo` (02/09/2026)
+
+Cada curso se sirve de su propia carpeta y **todas siguen la misma convención**, el ordinal
+abreviado en español: `/3ro/`, `/7mo/`, `/8vo/`, y `/4to/`, `/5to/`, `/6to/` cuando existan.
+
+8° básico vivía en **`/juego/`** desde la Sesión 45 —cuando la raíz pasó a ser la landing— y se
+mudó a `/8vo/`. No era estética: con seis cursos, uno llamado "juego" al lado de `/4to` y `/5to`
+**no dice de qué nivel es**, y contradice la regla de que *la convención de nombres ES la
+configuración*. De hecho ya había un caso especial escrito por eso en `scripts/niveles.py`, que
+la mudanza borró.
+
+**El cambio de código fue una línea**, porque M4 (Sesión 75) ya había dejado la ruta de cada
+curso en un solo lugar: la fila de `NIV.NIVELES` en `assets/js/niveles.js`. De ahí salen el
+armador de enlaces de muestra, el selector del enlace de inscripción y el nivel del curso. Más el
+manifiesto de la app, dos enlaces de la landing y comentarios.
+
+> ⚠️ **`juego/index.html` es ahora un REENVÍO, y no se borra a la ligera.** GitHub Pages es
+> estático: **no hay redirección 301 posible**, así que el reenvío es del lado del cliente y
+> **conserva `search` y `hash`**. Eso último es lo importante: sin conservarlos, un enlace de
+> muestra (`?solo=`, `?m=`), el de inscripción (`?inscribir=`) o el de revisión (`?rev=1`)
+> llegarían al **juego completo y sin su acotamiento** — que es peor que un 404, porque no se
+> nota. Verificado con los cuatro tipos de enlace.
+>
+> Borrarlo exige comprobar antes que no siga circulando ninguno: enlaces de muestra repartidos,
+> el enlace de inscripción vivo de algún curso de 8°, y **la app que alguien haya instalado con
+> el `scope` viejo**.
+
+⚠️ **A quien tenga la app instalada hay que decirle que la reinstale.** Su `scope` es `/juego/`,
+así que al abrirla cae en el reenvío y `/8vo/` **queda fuera de su alcance**: se ve con la barra
+del navegador, o sea deja de parecer una app. Se hizo el 02/09 justamente porque **todavía no la
+tenía instalada nadie más que Roberto** — ese costo solo crece.
+
+**Y el `<base href="/">` muerde también aquí:** el reenvío no lo lleva, así que sus rutas van
+**absolutas** (`/assets/favicon-32.png`). Con una relativa, el favicon resolvía a
+`/juego/assets/…` y daba 404.
+
 ### Instalación en la pantalla de inicio (31/08/2026)
 
 Los tres cursos se pueden agregar a la pantalla del teléfono y quedan como una aplicación: ícono
@@ -1106,7 +1142,7 @@ propio, nombre propio y **sin la barra del navegador**. Nace de un escenario con
 llega al chat del curso, un papá lo abre y le pasa el teléfono al niño — y a los dos días ese
 enlace está hundido en el chat.
 
-**Un `manifest.webmanifest` POR CURSO** (`juego/`, `7mo/`, `3ro/`), con su `start_url` y su
+**Un `manifest.webmanifest` POR CURSO** (`8vo/`, `7mo/`, `3ro/`), con su `start_url` y su
 `scope` acotados. Con uno solo en la raíz, el ícono abriría siempre el mismo nivel; un papá con
 hijos en dos cursos necesita dos íconos y los tiene.
 
@@ -7889,3 +7925,76 @@ recuento posterior da US$0,00.
 **El peso se movió** y quedó re-medido en bytes reales: `assets/voz` **252 MB**, `assets/`
 **473 MB**, sitio publicado **343 MB** (era 244/455/324). Actualizado en los tres documentos donde
 vive esa cifra. Con eso **A25 queda COMPLETA**.
+
+### Sesión 87 (2026-09-02) — 8° se muda a `/8vo/`, y las seis rutas quedan iguales
+Roberto lo pidió como orden: *"en la web se juega 8vo en `/juego`… podemos ordenar que 8vo quede
+en `/8vo`"*. **No se tocó contenido ni motor**: es una mudanza de ruta y una limpieza.
+
+#### Por qué valía la pena, y por qué ahora
+
+`/juego/` venía de la Sesión 45, cuando la raíz pasó a ser la landing y el juego —que entonces era
+uno solo— se movió a una subcarpeta. Con tres cursos ya chirriaba; **con seis, uno llamado "juego"
+al lado de `/4to` y `/5to` no dice de qué nivel es**, y contradice la regla de que *la convención
+de nombres ES la configuración*. La prueba de que ya molestaba: había un caso especial escrito por
+eso dentro de `scripts/niveles.py`.
+
+**El cambio de código fue UNA LÍNEA:** la fila de `NIV.NIVELES` en `assets/js/niveles.js`, de donde
+salen el armador de enlaces de muestra, el selector del enlace de inscripción y el nivel del curso.
+Eso es **M4 (Sesión 75) pagándose sola** — antes de esa tarea eran ocho listas paralelas en tres
+archivos. El resto fue el manifiesto de la app, dos enlaces de la landing y comentarios.
+
+#### Lo que costaba no estaba en el repositorio
+
+Tres cosas que `git mv` no arregla: los **enlaces ya repartidos**, la **app instalada** y los PDF
+comerciales. Roberto confirmó que **no hay nada afuera todavía**, y por eso se hizo hoy: ese costo
+solo crece.
+
+- ⚠️ **`juego/index.html` es ahora un REENVÍO**, y su regla quedó escrita arriba. Lo delicado no es
+  reenviar sino **conservar `search` y `hash`**: sin eso, un enlace de muestra llegaría al **juego
+  completo y sin su acotamiento**, que es peor que un 404 porque no se nota. Verificado con los
+  **seis** tipos de enlace: pelado, `?solo=`, `?qa=1`, `?rev=1`, `?armar=1` e `?inscribir=`.
+- ⚠️ **La app instalada hay que reinstalarla:** su `scope` es `/juego/`, así que `/8vo/` le queda
+  fuera de alcance y se ve con la barra del navegador.
+- **Nadie pierde su avance.** `localStorage` es **por origen, no por ruta**, así que la partida
+  sigue en `kimun_save` — demostrado sembrando una (Ignacio, 1.240 XP, 930 monedas, su skin) y
+  leyéndola desde la ruta nueva. Lo mismo vale para el vínculo `ALU-` y la identidad de Supabase.
+
+#### El `<base href="/">` mordió otra vez, y ahora al revés
+
+El favicon del reenvío se copió tal cual de `8vo/index.html`, donde es **relativo**
+(`assets/favicon-32.png`) y funciona **solo por el `<base>`**. El reenvío no lo lleva, así que
+resolvía a `/juego/assets/…` → 404. Va absoluto, con el porqué escrito al lado.
+
+#### Y apareció un script roto que llevaba una semana así
+
+**`scripts/niveles.py` devolvía `None` para los tres niveles.** Su `_tabla()` leía la lista de
+`NIVELES_MUESTRA` en `profesor.html`, pero desde M4 ahí solo queda
+`const NIVELES_MUESTRA = NIV.NIVELES` y la tabla real vive en `assets/js/niveles.js`: el parseo
+devolvía `[]`.
+
+> **No degradaba nada, y por eso nadie lo vio.** Sus dos consumidores ya no lo usaban:
+> `contrastar_tipos` lee `visuales.js` directo desde M1, y `generar-revision-preguntas.py` **solo
+> lo importaba**. Pero una función que responde `None` a todo es una mina para el próximo que la
+> use, así que se **borra** en vez de repararse — y con ella el único caso especial de `/juego/`.
+> Es la contracara de la lección del `NS` (Sesión 65): allá una advertencia sin volver a medir se
+> volvió un candado; acá fue código muerto que se veía vivo.
+
+**Un error propio en el corte:** me llevé por delante la constante `VISUALES`, que estaba entre las
+dos funciones. **Lo delató la autoprueba del propio archivo** en el primer intento — es para eso
+que ese `if __name__ == "__main__"` existe.
+
+#### Verificación (con `scripts/cdp.mjs`)
+
+- Los **seis** tipos de enlace viejo llegan a `/8vo/` con su parámetro entero.
+- Se **juega** en `/8vo/`: `SAVE_KEY` sigue siendo `kimun_save`, el manifiesto resuelve a
+  `/8vo/manifest.webmanifest` y el armador genera enlaces de `/8vo/` **solo**, sin tocar código
+  (usa `location.pathname`).
+- El panel entrega `08=/8vo/ · 07=/7mo/ · 03=/3ro/`.
+- 3° y 7° intactos con sus 27 y 23 expediciones y sus claves separadas; la landing apunta a `/8vo`.
+- Los dos consumidores de `niveles.py` siguen corriendo (0 errores, 0 avisos).
+- **Cero excepciones y cero 404.**
+
+- **Pendiente que nace de aquí:** el **tutorial en `/tutorial/`** para padres y alumnos, que Roberto
+  pidió en la misma conversación. Se decidió **no** ponerlo en `/juego/` por tres razones: "juego"
+  significa jugar y un nombre que miente cuesta más que uno feo; chocaría con el reenvío; y un
+  tutorial es **capa de presentación**, como la landing, no una cuarta app. Queda por diseñar.

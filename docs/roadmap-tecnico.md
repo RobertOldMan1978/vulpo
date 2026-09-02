@@ -36,22 +36,22 @@ corrigen. **Estos son los puntos a resolver antes de escribir una línea de `sw.
 
 ### 2.1 Ya no hay "un juego": hay tres, y son FORKS
 
-El análisis asume `start_url: /juego/`. Pero hoy conviven:
+El análisis asume `start_url: /juego/`. Pero hoy conviven (8° se mudó a `/8vo/` el 02/09):
 
 | Ruta | Qué es | Aislamiento |
 |---|---|---|
-| `/juego/` | 8° básico | `kimun_save`, `storageKey` por defecto |
+| `/8vo/` | 8° básico | `kimun_save`, `storageKey` por defecto |
 | `/3ro/` | 3° básico | `SUFIJO='_3ro'`, `storageKey:'kimun-3ro'` |
 | `/7mo/` | 7° básico | `SUFIJO='_7mo'`, `storageKey:'kimun-7mo'` |
 
 Son **copias del mismo motor**, no un producto multinivel. Un manifiesto único con
-`start_url:/juego/` instalaría "VULPO" y abriría **8° básico**, que para dos de cada tres alumnos
+`start_url:/8vo/` instalaría "VULPO" y abriría **8° básico**, que para dos de cada tres alumnos
 sería el curso equivocado.
 
 **Y esto choca de frente con el modelo de suscripción** (§4), donde *el producto es el nivel*.
 Hay dos salidas y hay que elegir una antes de empezar:
 
-- **A · Un manifiesto por nivel** (`/juego/manifest.webmanifest`, `/3ro/…`, `/7mo/…`), cada uno
+- **A · Un manifiesto por nivel** (`/8vo/manifest.webmanifest`, `/3ro/…`, `/7mo/…`), cada uno
   con su `scope`, su `start_url`, su nombre visible ("VULPO 7° Básico") y su propio service
   worker. Calza con el modelo comercial: se instala el nivel que se compró. Cuesta mantener tres
   de todo, que es exactamente el costo que ya se paga por el fork.
@@ -94,8 +94,8 @@ un motivo para desinstalar.
 ### 2.3 El `<base href="/">` de los tres juegos
 
 Cada `index.html` de juego lleva `<base href="/">` con un comentario de "NO borrar": es lo que
-permitió mover el juego a `/juego/` sin romper 118 rutas relativas. **Un `scope` de service
-worker acotado a `/juego/` no cubre `/assets/` ni `/contenido/`**, que es de donde sale todo.
+permitió mover el juego fuera de la raíz sin romper 118 rutas relativas. **Un `scope` de service
+worker acotado a `/8vo/` no cubre `/assets/` ni `/contenido/`**, que es de donde sale todo.
 El scope tiene que ser `/`, con las estrategias diferenciadas por ruta dentro del `fetch`.
 
 ### 2.4 La cuenta permanente ya existe a medias, y el hueco es el progreso

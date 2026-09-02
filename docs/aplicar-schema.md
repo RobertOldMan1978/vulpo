@@ -264,11 +264,11 @@ registrado. Hay que mirar dos funciones distintas.
 
 **1. `kimun_oa_asignatura` — que el código se reconozca.** Esto lo comprueba el asistente
 **sin credenciales de administrador**, porque la función no está revocada y no toca datos: se la
-llama con la clave pública que ya vive en `juego/index.html`. Un código inexistente debe dar
+llama con la clave pública que ya vive en `8vo/index.html`. Un código inexistente debe dar
 `null`, que es lo que demuestra que la respuesta no es un eco.
 
 ```bash
-KEY=$(grep -o "sb_publishable_[A-Za-z0-9_-]*" juego/index.html | head -1)
+KEY=$(grep -o "sb_publishable_[A-Za-z0-9_-]*" 8vo/index.html | head -1)
 URL="https://bdgzpjzlqidcexdkjhzy.supabase.co"
 for oa in "HI07 OA 01" "MA07 OA 05" "MA03 OA 01" "XX99 OA 01"; do
   printf "%-14s -> " "$oa"
