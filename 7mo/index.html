@@ -38,6 +38,13 @@
 <script src="assets/js/calculo.js"></script>
 <script>if(!window.SENSIBLE)window.SENSIBLE={cats:{},oa:{},deExpedicion:function(){return[];}};</script>
 <script>if(!window.renderVisual)window.renderVisual=function(){return '';};</script>
+<!-- Fracciones apiladas (numerador sobre denominador), compartido. Se aplica SOLO al
+     enunciado, las opciones y el tip: el "PREGUNTA 1/10" del encabezado y el contador
+     del Reto comparten la forma y NO son fracciones. -->
+<script src="assets/js/fracciones.js"></script>
+<script>if(!window.FRAC)window.FRAC={html:function(t){return String(t==null?'':t)
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+  .replace(/"/g,'&quot;').replace(/'/g,'&#39;');},init:function(){}};</script>
 <!-- Ofrecer instalar en la pantalla de inicio, compartido. Nace dormido: INST.init(). -->
 <script src="assets/js/instalar.js"></script>
 <script>if(!window.INST)window.INST={activo:false,init:function(){},abrir:function(){}};</script>   <!-- respaldo: un 404 de visuales.js no puede matar el juego -->

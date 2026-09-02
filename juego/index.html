@@ -36,6 +36,13 @@
 <script src="assets/js/voz.js"></script>
 <script>if(!window.SENSIBLE)window.SENSIBLE={cats:{},oa:{},deExpedicion:function(){return[];}};</script>
 <script>if(!window.renderVisual)window.renderVisual=function(){return '';};</script>
+<!-- Fracciones apiladas (numerador sobre denominador), compartido. Se aplica SOLO al
+     enunciado, las opciones y el tip: el "PREGUNTA 1/10" del encabezado y el contador
+     del Reto comparten la forma y NO son fracciones. -->
+<script src="assets/js/fracciones.js"></script>
+<script>if(!window.FRAC)window.FRAC={html:function(t){return String(t==null?'':t)
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+  .replace(/"/g,'&quot;').replace(/'/g,'&#39;');},init:function(){}};</script>
 <!-- Ofrecer instalar en la pantalla de inicio, compartido. Nace dormido: INST.init(). -->
 <script src="assets/js/instalar.js"></script>
 <script>if(!window.INST)window.INST={activo:false,init:function(){},abrir:function(){}};</script>   <!-- respaldo: un 404 de visuales.js no puede matar el juego -->
@@ -2229,19 +2236,19 @@ function renderBloque(){
  cuerpo.innerHTML=''; cuerpo.onclick=null;
  $('lecProgBar').style.width=(LEC.idx/LEC.leccion.bloques.length*100)+'%';
  if(b.t==='texto'){
-  const p=document.createElement('p'); p.textContent=b.md; cuerpo.appendChild(p);
+  const p=document.createElement('p'); p.innerHTML=FRAC.html(b.md); cuerpo.appendChild(p);
  }else if(b.t==='imagen'){
   const img=document.createElement('img'); img.src=b.src; img.alt=b.alt||'';
   img.onerror=function(){this.onerror=null;this.style.display='none';}; cuerpo.appendChild(img);
-  if(b.pie){const p=document.createElement('p');p.textContent=b.pie;p.style.textAlign='center';cuerpo.appendChild(p);}
+  if(b.pie){const p=document.createElement('p');p.innerHTML=FRAC.html(b.pie);p.style.textAlign='center';cuerpo.appendChild(p);}
  }else if(b.t==='diagrama'){
-  if(b.intro){const p=document.createElement('p');p.textContent=b.intro;cuerpo.appendChild(p);}
+  if(b.intro){const p=document.createElement('p');p.innerHTML=FRAC.html(b.intro);cuerpo.appendChild(p);}
   const d=document.createElement('div'); cuerpo.appendChild(d);
   montarDiagrama(b.kind,b.params,d);
  }else if(b.t==='ejemplo'){
-  if(b.intro){const p=document.createElement('p');p.textContent=b.intro;cuerpo.appendChild(p);}
+  if(b.intro){const p=document.createElement('p');p.innerHTML=FRAC.html(b.intro);cuerpo.appendChild(p);}
   b.pasos.forEach((paso,i)=>{const el=document.createElement('div');
-   el.className='lec-ejemplo-paso'+(i===0?' on':'');el.textContent=paso;cuerpo.appendChild(el);});
+   el.className='lec-ejemplo-paso'+(i===0?' on':'');el.innerHTML=FRAC.html(paso);cuerpo.appendChild(el);});
   let vis=1; cuerpo.onclick=()=>{const pasos=cuerpo.querySelectorAll('.lec-ejemplo-paso');
    if(vis<pasos.length){pasos[vis].classList.add('on');vis++;}};
  }
@@ -2502,9 +2509,9 @@ function pintaOpCalc(){
  else if(RC.modo==='jefe'){ $('calcJefeVida').style.width=(RC.vida/RC_JEFE_VIDA*100)+'%'; $('calcJefeCor').textContent='❤️'.repeat(RC.corazones)||'💀'; }
  else { $('calcRachaN').textContent=RC.racha; }
  $('calcCombo').textContent=RC.combo>=2?('🔥 COMBO x'+RC.combo):'';
- $('calcPreg').textContent=o.pregunta;
+ $('calcPreg').innerHTML=FRAC.html(o.pregunta);
  const cont=$('calcOpts'); cont.innerHTML='';
- o.opciones.forEach((op,i)=>{const b=document.createElement('button');b.textContent=op;if(QA_MARCA&&i===o.ok)b.classList.add('qa-ok');b.onclick=()=>responderCalc(i,b);cont.appendChild(b);});
+ o.opciones.forEach((op,i)=>{const b=document.createElement('button');b.innerHTML=FRAC.html(op);if(QA_MARCA&&i===o.ok)b.classList.add('qa-ok');b.onclick=()=>responderCalc(i,b);cont.appendChild(b);});
  const tf=$('calcTimerFill'), bar=tf.parentElement; bar.classList.remove('low'); tf.style.width='100%';
  const t0=Date.now(), tMax=RC.tMax;
  RC.timer=setInterval(()=>{ const rest=Math.max(0,tMax-(Date.now()-t0)/1000);

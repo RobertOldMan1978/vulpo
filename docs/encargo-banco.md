@@ -142,6 +142,15 @@ evalúa el OA). Si el OA no alcanza para 30 preguntas honestas, **entrega menos 
 - **Sin abreviaturas ni símbolos ambiguos.** "25 grados Celsius" antes que "25 °C"; "antes de
   Cristo" completo. En los niveles con voz es obligatorio (§4); en los demás, porque a 20 segundos
   cada símbolo que hay que decodificar es tiempo perdido.
+- **Las fracciones se escriben `n/m` y nada más:** `3/4`, `9/10`, `-3/4`. **El juego las dibuja
+  apiladas solo** —numerador sobre denominador— con `assets/js/fracciones.js`, así que no uses
+  `¾`, ni `3 sobre 4`, ni `tres cuartos` cuando el número es el contenido. Escribirla de otra
+  forma es lo único que impide que se dibuje bien.
+  - Para el numerador y el denominador, **solo dígitos**: `x/2` no se apila.
+  - Los **paréntesis alrededor de una fracción sola sobran** —el juego los quita al apilarla—,
+    así que `(9/10) ÷ (3/5)` y `9/10 ÷ 3/5` se ven igual. Escribe la que prefieras.
+  - ⚠️ **Cuidado con una fecha o una lista con barras** (`12/05/2020`, `1/2/3`): el juego las
+    respeta y NO las apila, pero conviene no escribirlas junto a fracciones en la misma frase.
 - **Varía la exigencia cognitiva.** El banco no puede ser 30 definiciones.
   - **3° y 4°:** alterna reconocer, aplicar a una situación, ordenar, comparar y predecir.
   - **5° a 8°:** apunta a **⅓ reconocer, ⅓ aplicar a una situación nueva, ⅓ analizar, comparar,
