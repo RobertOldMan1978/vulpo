@@ -1030,6 +1030,17 @@ function reconciliarProgreso(arr,n){
  }
  return p;
 }
+/* La forma del save, en UN SOLO lugar. La usan guardar() (disco) y subirProgreso()
+   (servidor), asi que un campo nuevo llega a los dos sin que nadie se acuerde.
+   Estaba escrita dos veces -aqui y al reves en cargar()-, que es como se cayeron
+   el `oa` en la Sesion 23, el `visual` en la 55 y el META_OA en la 63. */
+function payloadSave(){
+ return {nombre:S.nombre,avatar:S.avatar,xp:S.xp,monedas:S.monedas,
+  skins:S.skins,logros:[...S.logros], rutaActual:EXP_ACT?EXP_ACT.id:null, rutas:S.rutas,
+  campañasCompletas:[...S.campañasCompletas], insignias:[...S.insignias], insigniaActiva:S.insigniaActiva,
+  calc:S.calc, curso:S.curso, alumno:S.alumno, maestro:S.maestro, mateLecciones:S.mateLecciones,
+  metasVistas:S.metasVistas, semaforo:S.semaforo};
+}
 function guardar(){
  // Modo prueba: el avance vive solo en memoria. Se conserva el volcado a S.rutas
  // (si no, al volver del mapa a la lista se perdería el avance dentro de la misma
@@ -1038,13 +1049,12 @@ function guardar(){
  if(SIN_DISCO){ if(EXP_ACT) S.rutas[EXP_ACT.id]={progreso:S.progreso,progresoDificil:S.progresoDificil,dificilDesbloqueado:S.dificilDesbloqueado}; return; }
  try{
  if(EXP_ACT) S.rutas[EXP_ACT.id]={progreso:S.progreso,progresoDificil:S.progresoDificil,dificilDesbloqueado:S.dificilDesbloqueado};
- localStorage.setItem(SAVE_KEY,JSON.stringify({
-  nombre:S.nombre,avatar:S.avatar,xp:S.xp,monedas:S.monedas,
-  skins:S.skins,logros:[...S.logros], rutaActual:EXP_ACT?EXP_ACT.id:null, rutas:S.rutas,
-  campañasCompletas:[...S.campañasCompletas], insignias:[...S.insignias], insigniaActiva:S.insigniaActiva,
-  calc:S.calc, curso:S.curso, alumno:S.alumno, maestro:S.maestro, mateLecciones:S.mateLecciones,
-  metasVistas:S.metasVistas, semaforo:S.semaforo}));sincronizarXP();}catch(e){}}
+ localStorage.setItem(SAVE_KEY,JSON.stringify(payloadSave()));sincronizarXP();subirProgreso();}catch(e){}}
 function cargar(){try{const d=JSON.parse(localStorage.getItem(SAVE_KEY)||'null');if(!d)return false;
+ return aplicarSave(d);}catch(e){return false;}}
+/* Aplica un save a S, venga del DISCO o del SERVIDOR. Incluye a proposito las
+   migraciones de partidas antiguas: una foto bajada tambien puede ser vieja. */
+function aplicarSave(d){try{
  S.nombre=d.nombre||"";S.avatar=d.avatar||AVATARES[0];S.xp=d.xp||0;S.monedas=d.monedas||0;
  S.skins=Array.isArray(d.skins)?d.skins:[];S.logros=new Set(d.logros||[]);
  S.campañasCompletas=new Set(d.campañasCompletas||[]);
@@ -1093,6 +1103,121 @@ function sincronizarXP(){
    if(typeof data==='number' && data < S.xp){ S.xp=data; refreshHud(); guardar(); }
   }catch(e){ console.error('XP:',e.message||e); }  // best-effort: no interrumpe el juego
  }, espera);
+}
+
+/* -- Progreso en el servidor (Bloque D) ---------------------------------------
+   Sube una FOTO completa del save, no eventos. Por eso NO necesita la cola de
+   reintentos que si necesita dominio: dominio manda eventos, que se pierden si
+   no llegan; la foto es completa e idempotente, asi que el proximo envio que si
+   llegue lleva todo. */
+let _progTimer=null, _progUlt=0, _progEnviado=null;
+
+function subirProgreso(){
+ if(!SB||!MI_PERFIL) return;
+ /* NO se sube en EFIMERO, y esta es una diferencia DELIBERADA con el XP.
+    El XP es un numero que solo sube; la FOTO es un REEMPLAZO COMPLETO. Abrir
+    ?qa=1 en un telefono vinculado a un alumno real, completar una etapa para
+    revisar contenido y que eso suba, le PISA LA PARTIDA DEL ANO. */
+ if(EFIMERO) return;
+ if(_progTimer) return;                       // ya hay un envio programado
+ const espera=Math.max(0,15000-(Date.now()-_progUlt));
+ _progTimer=setTimeout(async ()=>{
+  _progTimer=null; _progUlt=Date.now();
+  const json=JSON.stringify(payloadSave());
+  if(json===_progEnviado) return;             // guardar() corre en CADA respuesta
+  try{
+   const {error}=await SB.rpc('kimun_progreso_subir',{p_datos:JSON.parse(json)});
+   if(error) throw error;
+   _progEnviado=json;
+  }catch(e){ console.error('progreso:',e.message||e); }   // best-effort: no interrumpe
+ }, espera);
+}
+
+/* Resumen comparable de un save: sirve para decidir si hay conflicto y para
+   pintarlo. "capitulos" cuenta las rutas cuyo ULTIMO nodo -el jefe- esta vencido. */
+function resumenAvance(d){
+ if(!d) return null;
+ const rutas=(d.rutas&&typeof d.rutas==='object')?d.rutas:{};
+ let caps=0;
+ for(const k in rutas){
+  const p=rutas[k]&&rutas[k].progreso;
+  if(Array.isArray(p)&&p.length&&p[p.length-1]&&p[p.length-1].est==='done') caps++;
+ }
+ return {xp:d.xp||0, capitulos:caps, monedas:d.monedas||0,
+         skins:Array.isArray(d.skins)?d.skins.length:0};
+}
+function hayAvance(r){ return !!r && (r.xp>0 || r.capitulos>0); }
+
+function haceCuanto(iso){
+ const dias=Math.floor((Date.now()-new Date(iso).getTime())/86400000);
+ if(!isFinite(dias)||dias<0) return '';
+ if(dias===0) return 'hoy';
+ if(dias===1) return 'ayer';
+ if(dias<30)  return 'hace '+dias+' días';
+ const m=Math.floor(dias/30);
+ return m===1?'hace un mes':'hace '+m+' meses';
+}
+
+let PROG_REMOTO=null;                       // {datos, fecha, xpServidor}
+/* Las claves se derivan de SAVE_KEY para no repetir SUFIJO, que vive en el fork. */
+function claveBajado(){ return SAVE_KEY+'_bajado'; }
+function clavePrevio(){ return SAVE_KEY+'_previo'; }
+function yaBajo(){ try{ return localStorage.getItem(claveBajado())==='1'; }catch(e){ return false; } }
+function marcarBajado(){ try{ localStorage.setItem(claveBajado(),'1'); }catch(e){} }
+
+/* Devuelve true si tomo la pantalla: hay conflicto y hay que esperar al usuario.
+   xpServidor es lo que devolvio kimun_xp en el canje. Si la RPC falla NO se marca
+   como bajado, y se reintenta al abrir el juego: sin eso, un fallo de red se
+   lleva la promesa en silencio. */
+async function bajarProgreso(xpServidor){
+ if(!SB||!MI_PERFIL||EFIMERO) return false;
+ try{
+  const {data,error}=await SB.rpc('kimun_progreso_bajar');
+  if(error) throw error;
+  const fila=Array.isArray(data)?data[0]:data;
+  if(!fila||!fila.datos){                   // servidor vacio: sube lo que hay aqui
+   marcarBajado(); _progEnviado=null; subirProgreso(); return false;
+  }
+  PROG_REMOTO={datos:fila.datos, fecha:fila.actualizado, xpServidor:xpServidor};
+  if(!hayAvance(resumenAvance(payloadSave()))){   // telefono recien empezado
+   aplicarProgresoRemoto(); return false;
+  }
+  mostrarConflictoProgreso(); return true;        // los dos con avance: preguntar
+ }catch(e){ console.error('progreso:',e.message||e); return false; }
+}
+
+function aplicarProgresoRemoto(){
+ const d=PROG_REMOTO&&PROG_REMOTO.datos; if(!d) return;
+ try{ localStorage.setItem(clavePrevio(), JSON.stringify(payloadSave())); }catch(e){}
+ const alumno=S.alumno, curso=S.curso;      // vienen del canje recien hecho, NO de la foto
+ aplicarSave(d);
+ S.alumno=alumno; S.curso=curso;
+ /* El XP lo manda el SERVIDOR, no la foto. Si no, una foto vieja con 900 XP
+    deshace sola la correccion que el profesor hizo con kimun_prof_xp_fijar,
+    que es la unica forma de BAJAR un XP inflado. */
+ if(typeof PROG_REMOTO.xpServidor==='number') S.xp=PROG_REMOTO.xpServidor;
+ marcarBajado(); PROG_REMOTO=null;
+ _progEnviado=null; guardar(); refreshHud();
+}
+
+function mostrarConflictoProgreso(){
+ const rRem=resumenAvance(PROG_REMOTO.datos), rLoc=resumenAvance(payloadSave());
+ const linea=r=>'Nivel '+(Math.floor(r.xp/XP_POR_NIVEL)+1)+' &middot; '+r.capitulos+
+   (r.capitulos===1?' capítulo':' capítulos')+'<br>'+r.monedas+' monedas &middot; '+
+   r.skins+(r.skins===1?' skin':' skins');
+ const cuando=haceCuanto(PROG_REMOTO.fecha);
+ $('progRemTit').textContent='Guardado'+(cuando?' ('+cuando+')':'');
+ $('progRemDatos').innerHTML=linea(rRem);
+ $('progLocDatos').innerHTML=linea(rLoc);
+ $('progUsarRem').onclick=()=>{ aplicarProgresoRemoto(); cerrarCanje(); };
+ $('progUsarLoc').onclick=()=>{
+  /* El que pierde tambien se guarda: 10 KB de seguro si un apoderado reclama. */
+  try{ localStorage.setItem(clavePrevio(), JSON.stringify(PROG_REMOTO.datos)); }catch(e){}
+  marcarBajado(); PROG_REMOTO=null;
+  _progEnviado=null; guardar();             // pisa el servidor con lo de este telefono
+  cerrarCanje();
+ };
+ go('scr-progreso');
 }
 function registrarOA(oa, ok){
  if(EFIMERO) return;                    // QA marca las respuestas y el modo prueba no guarda: no se mide nada

@@ -1669,6 +1669,51 @@ declare cid uuid; begin
      where i.curso_id = cid and i.activo;
 end $$;
 
+/* -- Progreso del alumno (Bloque D) ------------------------------------------
+   Una FOTO completa del save en jsonb, no columnas normalizadas. El save del
+   juego gana campos seguido (mateLecciones en la Sesion 29, metasVistas y
+   semaforo en la 52) y una foto los lleva sin migrar el esquema -- que aqui
+   significa que Roberto va a pegar SQL a mano. Medido en el navegador: 9,4 KB
+   el save mas grande que el juego puede producir hoy (3 basico, 27 rutas).   */
+create table if not exists public.progreso (
+  perfil_id    uuid primary key references public.perfiles(id) on delete cascade,
+  datos        jsonb       not null,
+  actualizado  timestamptz not null default now()
+);
+alter table public.progreso enable row level security;   -- sin politicas: todo por funciones
+
+-- Los drop van a proposito aunque las funciones sean nuevas: sin ellos, el dia
+-- que alguien le agregue una columna al resultado, re-aplicar este archivo falla
+-- (leccion de la Sesion 39).
+drop function if exists public.kimun_progreso_subir(jsonb);
+create or replace function public.kimun_progreso_subir(p_datos jsonb)
+returns void language plpgsql security definer set search_path = public as $$
+declare mi uuid;
+begin
+  mi := public.kimun_yo();
+  if mi is null then return; end if;
+  -- 6x el maximo medido. Ataja un bug del cliente que llene la base; no es un
+  -- ajuste fino y no hay que bajarlo "para apretar".
+  if octet_length(p_datos::text) > 65536 then
+    raise exception 'progreso_muy_grande';
+  end if;
+  insert into public.progreso(perfil_id, datos, actualizado)
+       values (mi, p_datos, now())
+  on conflict (perfil_id) do update
+     set datos = excluded.datos, actualizado = now();
+end $$;
+
+drop function if exists public.kimun_progreso_bajar();
+create or replace function public.kimun_progreso_bajar()
+returns table(datos jsonb, actualizado timestamptz)
+language plpgsql security definer set search_path = public as $$
+declare mi uuid;
+begin
+  mi := public.kimun_yo();
+  if mi is null then return; end if;
+  return query select p.datos, p.actualizado from public.progreso p where p.perfil_id = mi;
+end $$;
+
 grant execute on function
   public.kimun_perfil(text,text), public.kimun_buscar(text), public.kimun_jugadores(),
   public.kimun_crear_duelo(text,text,jsonb,int,int), public.kimun_pendientes(),
@@ -1703,6 +1748,8 @@ grant execute on function
   , public.kimun_prof_inscripcion_crear(text,int,boolean)
   , public.kimun_prof_inscripcion_estado(text)
   , public.kimun_mi_curso()
+  , public.kimun_progreso_subir(jsonb)
+  , public.kimun_progreso_bajar()
   to anon, authenticated;
 
 -- ------------------------------------------------------------

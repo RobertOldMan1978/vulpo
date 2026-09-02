@@ -11,6 +11,14 @@
    pantalla de inicio. Así que este módulo no instala: EXPLICA cómo hacerlo, con
    el paso a paso del teléfono que se tenga.
 
+   ⚠️ Y EN iPHONE ESO VALE SOLO EN SAFARI. Verificado en un iPhone real el
+   01/09/2026: desde Chrome el ícono queda igual de bonito, pero al abrirlo
+   APARECE LA BARRA DE DIRECCIONES — o sea que no es una app sino un acceso
+   directo. Solo el "Agregar a pantalla de inicio" de Safari respeta el
+   apple-mobile-web-app-capable que declaramos. De ahí el caso 'ios-otro', que
+   primero manda a Safari. Y no es un caso de borde: el enlace llega por
+   WhatsApp, cuyo navegador incrustado tampoco es Safari.
+
    POR QUÉ VIVE AQUÍ Y NO DENTRO DE CADA JUEGO. Cada curso es un fork del
    index.html: lo que se escribe adentro hay que volver a escribirlo en el
    siguiente. Este archivo se incluye con una línea y se engancha con otra.
@@ -58,6 +66,9 @@
     ios: ['Toca <b>Compartir</b> ⬆️ en la barra de abajo.',
           'Desliza y toca <b>Agregar a pantalla de inicio</b>.',
           'Toca <b>Agregar</b> arriba a la derecha.'],
+    'ios-otro': ['En iPhone esto solo funciona desde <b>Safari</b>.',
+                 'Abre el menú de este navegador y toca <b>Abrir en Safari</b>.',
+                 'Ya en Safari: <b>Compartir</b> ⬆️ y <b>Agregar a pantalla de inicio</b>.'],
     android: ['Toca <b>⋮</b> arriba a la derecha.',
               'Toca <b>Instalar app</b> o <b>Agregar a pantalla de inicio</b>.',
               'Confirma con <b>Instalar</b> o <b>Agregar</b>.'],
@@ -80,10 +91,23 @@
   }
 
   /* iPadOS 13+ se declara como Macintosh en el userAgent: se delata por el touch. */
+  /* ¿Es Safari de verdad? Se pregunta con lista blanca y no enumerando rivales,
+     porque son muchos y cambian. Dos mitades, y cada una ataja un grupo:
+     Chrome, Firefox y Edge de iPhone SÍ traen el token Safari/ y hay que
+     descartarlos por su marca propia; los navegadores incrustados —el de
+     WhatsApp, el de Instagram— NO traen ese token y caen solos. El segundo
+     grupo es el caso mayoritario del piloto, porque el enlace llega al chat. */
+  function safariDeVerdad(ua) {
+    if (/CriOS|FxiOS|EdgiOS|OPiOS|OPT\//.test(ua)) return false;
+    return /Safari\//.test(ua);
+  }
+
+  /* iPadOS 13+ se declara como Macintosh en el userAgent: se delata por el touch. */
   function plataforma() {
     var ua = navigator.userAgent || '';
-    if (/iPad|iPhone|iPod/.test(ua)) return 'ios';
-    if (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1) return 'ios';
+    var esIOS = /iPad|iPhone|iPod/.test(ua)
+             || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+    if (esIOS) return safariDeVerdad(ua) ? 'ios' : 'ios-otro';
     if (/Android/.test(ua)) return 'android';
     return 'escritorio';
   }
@@ -113,9 +137,12 @@
     }
     var p = plataforma();
     var pasos = PASOS[p].map(function (t) { return '<li>' + t + '</li>'; }).join('');
-    var nota = p === 'escritorio'
-      ? 'En el computador no todos los navegadores lo permiten. Donde de verdad sirve es en el teléfono.'
-      : 'Después va a aparecer <b>' + CFG.nombre + '</b> entre tus aplicaciones, y se abre sin el navegador.';
+    var NOTAS = {
+      escritorio: 'En el computador no todos los navegadores lo permiten. Donde de verdad sirve es en el teléfono.',
+      'ios-otro': 'Desde aquí el ícono queda, pero abre el navegador encima. En Safari queda como una aplicación de verdad.'
+    };
+    var nota = NOTAS[p]
+      || 'Después va a aparecer <b>' + CFG.nombre + '</b> entre tus aplicaciones, y se abre sin el navegador.';
     ov.innerHTML = ''
       + '<div class="inst-box">'
       + '<h2>📲 Tener VULPO a mano</h2>'
