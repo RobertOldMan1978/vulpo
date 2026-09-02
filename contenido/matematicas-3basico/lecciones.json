@@ -1,0 +1,1206 @@
+{
+ "lecciones": [
+  {
+   "id": "ma3-oa01",
+   "oa": "MA03 OA 01",
+   "titulo": "Contar de a saltos",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Contar de cinco en cinco es ir dando saltos iguales. En vez de contar uno por uno, avanzas de a cinco."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 0,
+      "max": 50,
+      "paso": 5,
+      "saltos": true,
+      "signo": false,
+      "marca": 15,
+      "interactivo": true
+     },
+     "intro": "Arrastra la marca y mira cómo avanza de cinco en cinco."
+    },
+    {
+     "t": "texto",
+     "md": "También puedes saltar de diez en diez, o de cien en cien. El salto siempre mide lo mismo."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 0,
+      "max": 1000,
+      "paso": 100,
+      "saltos": true,
+      "signo": false,
+      "marca": 300,
+      "interactivo": true
+     },
+     "intro": "Aquí cada salto es de cien, hasta llegar a mil."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Contemos de tres en tres, empezando en seis.",
+     "pasos": [
+      "Partimos en 6.",
+      "Sumamos 3 y llegamos a 9.",
+      "Sumamos 3 otra vez y llegamos a 12.",
+      "Un salto más y llegamos a 15.",
+      "La cuenta es 6, 9, 12, 15."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 01",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa02",
+   "oa": "MA03 OA 02",
+   "titulo": "Leer números hasta mil",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un número se puede mostrar de tres formas: con bloques, con un dibujo y con cifras. Las tres dicen lo mismo."
+    },
+    {
+     "t": "diagrama",
+     "kind": "bloques",
+     "params": {
+      "numero": 253
+     },
+     "intro": "Mira el número doscientos cincuenta y tres hecho con bloques."
+    },
+    {
+     "t": "texto",
+     "md": "El cuadrado grande vale cien. La barra vale diez. El cubito vale uno."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Leamos un número que tiene un cero.",
+     "pasos": [
+      "Tiene 9 cuadrados de cien: novecientos.",
+      "No tiene ninguna barra de diez.",
+      "Tiene 7 cubitos: siete.",
+      "Se escribe 907 y se lee novecientos siete."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 02",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa03",
+   "oa": "MA03 OA 03",
+   "titulo": "Comparar y ordenar",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Para saber cuál número es mayor no se miran todas las cifras juntas. Se miran de a una, empezando por la izquierda."
+    },
+    {
+     "t": "diagrama",
+     "kind": "posicional",
+     "params": {
+      "numero": 415,
+      "contra": 451
+     },
+     "intro": "Los dos tienen 4 centenas, así que hay que seguir mirando. La primera cifra distinta está en las decenas."
+    },
+    {
+     "t": "texto",
+     "md": "La primera cifra distinta manda. Si esa cifra es mayor, el número entero es mayor."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 400,
+      "max": 500,
+      "paso": 10,
+      "signo": false,
+      "marca": 430,
+      "interactivo": true
+     },
+     "intro": "En la recta pasa lo mismo: el número que está más a la derecha es el mayor."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ordenemos de menor a mayor: 380, 308 y 830.",
+     "pasos": [
+      "Miramos las centenas: 3, 3 y 8.",
+      "830 tiene 8 centenas, así que es el mayor.",
+      "380 y 308 tienen las mismas centenas, entonces miramos las decenas: 8 y 0.",
+      "El orden de menor a mayor es 308, 380, 830."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 03",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa04",
+   "oa": "MA03 OA 04",
+   "titulo": "Sumar y restar de memoria",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Para sumar de memoria no hace falta contar de uno en uno. Conviene llegar primero a la decena más cercana."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 0,
+      "max": 20,
+      "paso": 1,
+      "signo": false,
+      "marca": 8,
+      "interactivo": true
+     },
+     "intro": "Arrastra la marca hasta el 10 y fíjate cuánto avanzaste."
+    },
+    {
+     "t": "texto",
+     "md": "Otra forma es separar el número en partes que sean fáciles de sumar."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Sumemos 8 más 7 llegando primero a la decena.",
+     "pasos": [
+      "Al 8 le faltan 2 para llegar a 10.",
+      "Del 7 tomamos esos 2 y nos quedan 5.",
+      "Ahora es 10 más 5.",
+      "El resultado es 15."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 04",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa05",
+   "oa": "MA03 OA 05",
+   "titulo": "Unidades, decenas y centenas",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Cada cifra de un número vale distinto según el lugar donde está."
+    },
+    {
+     "t": "diagrama",
+     "kind": "posicional",
+     "params": {
+      "numero": 726
+     },
+     "intro": "En el 726, el 7 está en las centenas, el 2 en las decenas y el 6 en las unidades."
+    },
+    {
+     "t": "texto",
+     "md": "El 7 no vale siete: está en las centenas, así que vale setecientos. Y el 2 vale veinte."
+    },
+    {
+     "t": "diagrama",
+     "kind": "bloques",
+     "params": {
+      "numero": 726
+     },
+     "intro": "Los bloques muestran lo mismo: siete cuadrados de cien, dos barras de diez y seis cubitos."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Separemos un número en sus partes.",
+     "pasos": [
+      "El 3 está en las centenas y vale 300.",
+      "En las decenas hay un cero, así que no aporta nada.",
+      "El 9 está en las unidades y vale 9.",
+      "Entonces 309 se separa en 300 más 9."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 05",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa06",
+   "oa": "MA03 OA 06",
+   "titulo": "Sumar y restar hasta mil",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Para sumar números grandes se juntan las partes que son del mismo tipo: las centenas con las centenas y las decenas con las decenas."
+    },
+    {
+     "t": "diagrama",
+     "kind": "bloques",
+     "params": {
+      "numero": 235
+     },
+     "intro": "Mira las partes del 235 antes de sumarlo."
+    },
+    {
+     "t": "texto",
+     "md": "Cuando se juntan diez unidades, esas diez se cambian por una decena. Eso se llama reagrupar."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Sumemos 235 más 142 por partes.",
+     "pasos": [
+      "Centenas: 200 más 100 son 300.",
+      "Decenas: 30 más 40 son 70.",
+      "Unidades: 5 más 2 son 7.",
+      "Juntando todo: 377."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 06",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa07",
+   "oa": "MA03 OA 07",
+   "titulo": "La familia de operaciones",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "La suma y la resta son operaciones que se deshacen entre ellas. Si avanzas y después retrocedes lo mismo, vuelves al punto de partida."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 0,
+      "max": 20,
+      "paso": 1,
+      "signo": false,
+      "marca": 8,
+      "interactivo": true
+     },
+     "intro": "Parte en el 8, avanza 5 y después retrocede 5. Vuelves al mismo lugar."
+    },
+    {
+     "t": "texto",
+     "md": "Con tres números se pueden escribir cuatro operaciones. A eso se le llama familia de operaciones."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Armemos la familia del 8, el 5 y el 13.",
+     "pasos": [
+      "8 más 5 es igual a 13.",
+      "5 más 8 también es igual a 13.",
+      "13 menos 5 es igual a 8.",
+      "13 menos 8 es igual a 5."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 07",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa08",
+   "oa": "MA03 OA 08",
+   "titulo": "Las tablas de multiplicar",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Multiplicar es sumar muchas veces el mismo número. Por eso 3 por 4 es lo mismo que 4 más 4 más 4."
+    },
+    {
+     "t": "diagrama",
+     "kind": "arbol",
+     "params": {
+      "n1": 3,
+      "n2": 4
+     },
+     "intro": "Tres grupos, y en cada grupo cuatro cosas."
+    },
+    {
+     "t": "texto",
+     "md": "El orden no cambia el resultado: 3 por 4 y 4 por 3 dan lo mismo. Eso deja la mitad de las tablas aprendida de una."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Calculemos 6 por 5 sin saberlo de memoria.",
+     "pasos": [
+      "5 por 5 son 25, y esa la sabemos.",
+      "Nos falta un grupo de 5 más.",
+      "25 más 5 son 30.",
+      "Entonces 6 por 5 es 30."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 08",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa09",
+   "oa": "MA03 OA 09",
+   "titulo": "Dividir es repartir",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Dividir es repartir en partes iguales. La palabra importante es iguales: si a alguien le toca más, no es una división."
+    },
+    {
+     "t": "diagrama",
+     "kind": "fracciones",
+     "params": {
+      "partes": 3,
+      "pintadas": 1,
+      "etiqueta": "12 repartido en 3 partes"
+     },
+     "intro": "La barra se parte en 3 partes iguales. A cada una le tocan 4."
+    },
+    {
+     "t": "texto",
+     "md": "Dividir también sirve para preguntar cuántos grupos se pueden armar. Es la misma operación mirada al revés."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Repartamos 12 galletas entre 3 niños.",
+     "pasos": [
+      "Le damos una a cada uno: van 3 galletas.",
+      "Repetimos hasta que se acaben.",
+      "Alcanzó para 4 vueltas.",
+      "A cada niño le tocaron 4 galletas."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 09",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa10",
+   "oa": "MA03 OA 10",
+   "titulo": "Problemas con dinero",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Para resolver un problema hay que leerlo con calma y preguntarse qué está pidiendo. No siempre se suma."
+    },
+    {
+     "t": "diagrama",
+     "kind": "dinero",
+     "params": {
+      "valores": [
+       500,
+       100,
+       100,
+       50
+      ]
+     },
+     "intro": "Cuenta cuánto dinero hay aquí."
+    },
+    {
+     "t": "texto",
+     "md": "Si te preguntan cuánto queda de vuelto, se resta. Si preguntan cuánto cuesta todo junto, se suma."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Tienes 750 pesos y un jugo cuesta 480.",
+     "pasos": [
+      "La pregunta es cuánto sobra, así que se resta.",
+      "750 menos 480.",
+      "Primero 750 menos 400 son 350.",
+      "Después 350 menos 80 son 270.",
+      "Te quedan 270 pesos."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 10",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa11",
+   "oa": "MA03 OA 11",
+   "titulo": "Fracciones de uso común",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una fracción muestra una parte de algo entero. Abajo va en cuántas partes iguales se cortó, y arriba cuántas se tomaron."
+    },
+    {
+     "t": "diagrama",
+     "kind": "fracciones",
+     "params": {
+      "partes": 4,
+      "pintadas": 3,
+      "etiqueta": "3/4"
+     },
+     "intro": "El entero está cortado en 4 partes iguales y se tomaron 3."
+    },
+    {
+     "t": "texto",
+     "md": "Mientras más partes tiene el entero, más chica es cada parte. Un cuarto es más chico que un medio."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Leamos la fracción 2/3.",
+     "pasos": [
+      "El 3 de abajo dice que el entero se cortó en 3 partes iguales.",
+      "El 2 de arriba dice que se tomaron 2 de esas partes.",
+      "Se lee dos tercios.",
+      "Queda 1 parte sin tomar."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 11",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa12",
+   "oa": "MA03 OA 12",
+   "titulo": "Patrones de números",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un patrón es una regla que se repite. Si descubres la regla, puedes saber qué número viene sin contar todo de nuevo."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 0,
+      "max": 30,
+      "paso": 3,
+      "saltos": true,
+      "signo": false,
+      "marca": 12,
+      "interactivo": true
+     },
+     "intro": "Aquí la regla es sumar 3 cada vez. Mira los saltos."
+    },
+    {
+     "t": "texto",
+     "md": "Para encontrar la regla, mira cuánto cambia de un número al siguiente. Ese cambio es la regla."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Busquemos la regla de 4, 8, 12, 16.",
+     "pasos": [
+      "Del 4 al 8 hay 4.",
+      "Del 8 al 12 también hay 4.",
+      "Entonces la regla es sumar 4.",
+      "El número que sigue es 20."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 12",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa13",
+   "oa": "MA03 OA 13",
+   "titulo": "El número escondido",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "A veces en una operación falta un número y en su lugar hay una figura. Hay que averiguar cuánto vale esa figura."
+    },
+    {
+     "t": "diagrama",
+     "kind": "balanza",
+     "params": {
+      "izqX": 1,
+      "izqU": 3,
+      "derU": 10,
+      "etiqueta": "▢ + 3 = 10"
+     },
+     "intro": "Los dos lados pesan lo mismo. Si sacas 3 de un lado, hay que sacar 3 del otro."
+    },
+    {
+     "t": "texto",
+     "md": "Para despejar la figura se hace la operación contraria: si estaba sumando, se resta."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Busquemos el valor de la figura en ▢ + 3 = 10.",
+     "pasos": [
+      "El 3 está sumando, así que lo restamos a los dos lados.",
+      "Queda ▢ = 10 menos 3.",
+      "10 menos 3 es 7.",
+      "Comprobamos: 7 más 3 es 10. Está bien."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 13",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa14",
+   "oa": "MA03 OA 14",
+   "titulo": "Encontrar un lugar",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "En un mapa con cuadrícula, cada casilla tiene un nombre. La letra dice la columna y el número dice la fila."
+    },
+    {
+     "t": "diagrama",
+     "kind": "cuadricula",
+     "params": {
+      "cols": 5,
+      "filas": 4,
+      "marca": [
+       3,
+       2
+      ],
+      "etiqueta": "Vulpi está en la casilla (C, 2)"
+     },
+     "intro": "Primero busca la columna con la letra. Después baja hasta la fila con el número."
+    },
+    {
+     "t": "texto",
+     "md": "Siempre se dice primero la letra y después el número. Si se dicen al revés, se llega a otra casilla."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Busquemos la casilla (B, 3).",
+     "pasos": [
+      "La letra B es la segunda columna.",
+      "El número 3 es la tercera fila.",
+      "Nos movemos por la columna B hacia abajo.",
+      "Paramos en la fila 3 y esa es la casilla."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 14",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa15",
+   "oa": "MA03 OA 15",
+   "titulo": "De la plantilla al cuerpo",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una red es la plantilla plana de un cuerpo. Si la recortas y la doblas por las líneas, se arma el cuerpo."
+    },
+    {
+     "t": "diagrama",
+     "kind": "solido",
+     "params": {
+      "tipo": "prisma",
+      "etiqueta": "Este cuerpo viene de una plantilla plana"
+     },
+     "intro": "Este cuerpo se puede desarmar y dejar plano sobre la mesa."
+    },
+    {
+     "t": "texto",
+     "md": "Cada cara del cuerpo aparece una vez en la plantilla. Si falta una cara, el cuerpo queda con un hueco."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Veamos la plantilla de un cubo.",
+     "pasos": [
+      "El cubo tiene 6 caras y todas son cuadrados.",
+      "Entonces la plantilla debe tener 6 cuadrados.",
+      "Al doblarlos, cuatro forman los lados.",
+      "Los otros dos son la tapa y el piso."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 15",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa16",
+   "oa": "MA03 OA 16",
+   "titulo": "Caras, aristas y vértices",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Los cuerpos se describen por tres cosas: sus caras, sus aristas y sus vértices."
+    },
+    {
+     "t": "diagrama",
+     "kind": "solido",
+     "params": {
+      "tipo": "prisma",
+      "etiqueta": "Caras planas, aristas y vértices"
+     },
+     "intro": "Las caras son las superficies planas. Las aristas son las líneas donde se juntan dos caras."
+    },
+    {
+     "t": "texto",
+     "md": "Un vértice es una punta, el lugar donde llegan varias aristas. La esfera no tiene ninguna de las tres: es toda curva."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Contemos las partes de una caja de zapatos.",
+     "pasos": [
+      "Las caras son las superficies planas: arriba, abajo y los cuatro lados.",
+      "Son 6 caras en total.",
+      "Las aristas son las líneas donde se juntan dos caras.",
+      "Los vértices son las puntas de la caja."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 16",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa17",
+   "oa": "MA03 OA 17",
+   "titulo": "Mover figuras",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una figura se puede mover de tres formas sin cambiar su tamaño: se puede deslizar, reflejar o girar."
+    },
+    {
+     "t": "diagrama",
+     "kind": "transformacion",
+     "params": {
+      "tipo": "traslacion",
+      "vector": [
+       3,
+       1
+      ]
+     },
+     "intro": "Aquí la figura se deslizó sin girarse. Eso es una traslación."
+    },
+    {
+     "t": "texto",
+     "md": "En un reflejo la figura queda como en un espejo: lo que estaba a la derecha pasa a la izquierda."
+    },
+    {
+     "t": "diagrama",
+     "kind": "transformacion",
+     "params": {
+      "tipo": "reflexion"
+     },
+     "intro": "Mira cómo la figura se dio vuelta como en un espejo."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "¿Cómo saber cuál movimiento fue?",
+     "pasos": [
+      "Si la figura solo cambió de lugar, fue una traslación.",
+      "Si quedó como en un espejo, fue una reflexión.",
+      "Si dio una vuelta apoyada en un punto, fue una rotación.",
+      "En los tres casos la figura mantiene su tamaño."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 17",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa18",
+   "oa": "MA03 OA 18",
+   "titulo": "Los ángulos",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un ángulo es la abertura entre dos líneas que se juntan. Mientras más abiertas, más grande el ángulo."
+    },
+    {
+     "t": "diagrama",
+     "kind": "transformacion",
+     "params": {
+      "tipo": "rotacion",
+      "etiqueta": "Un cuarto de vuelta es un ángulo recto"
+     },
+     "intro": "Un cuarto de vuelta forma la esquina más común de todas: el ángulo recto."
+    },
+    {
+     "t": "texto",
+     "md": "El ángulo recto es el de la esquina de una hoja o de una puerta. Sirve de referencia para comparar los demás."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Comparemos un ángulo con el ángulo recto.",
+     "pasos": [
+      "Ponemos la esquina de una hoja sobre el ángulo.",
+      "Si el ángulo cabe adentro de la esquina, es más chico que un recto.",
+      "Si la esquina no alcanza a taparlo, es más grande.",
+      "Y si calzan justo, es un ángulo recto."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 18",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa19",
+   "oa": "MA03 OA 19",
+   "titulo": "Calendarios y líneas de tiempo",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una línea de tiempo ordena lo que pasó, de lo más antiguo a lo más nuevo, de izquierda a derecha."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 2018,
+      "max": 2028,
+      "paso": 1,
+      "signo": false,
+      "marca": 2024,
+      "interactivo": true
+     },
+     "intro": "Arrastra la marca y fíjate que a la derecha están los años más nuevos."
+    },
+    {
+     "t": "texto",
+     "md": "En un calendario, cada fila es una semana y cada columna es un día. Así se puede contar cuántos días faltan para algo."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Contemos cuántos días faltan del 8 al 15.",
+     "pasos": [
+      "Del 8 al 15 hay que contar los saltos, no los números.",
+      "Del 8 al 10 hay 2 días.",
+      "Del 10 al 15 hay 5 días.",
+      "En total faltan 7 días, o sea una semana."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 19",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa20",
+   "oa": "MA03 OA 20",
+   "titulo": "Leer la hora",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "El reloj tiene dos manecillas. La corta marca la hora y la larga marca los minutos."
+    },
+    {
+     "t": "diagrama",
+     "kind": "reloj",
+     "params": {
+      "hora": 8,
+      "minutos": 20,
+      "etiqueta": "8:20"
+     },
+     "intro": "La manecilla corta pasó el 8, así que son las 8. La larga está en el 4."
+    },
+    {
+     "t": "texto",
+     "md": "La manecilla larga avanza de 5 en 5. Si está en el 4, van 20 minutos, porque 4 por 5 es 20."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Leamos un reloj paso a paso.",
+     "pasos": [
+      "Primero miramos la manecilla corta para saber la hora.",
+      "Marca un número que ya pasó, no el que viene.",
+      "Después miramos la larga y contamos de 5 en 5.",
+      "Media hora son 30 minutos y un cuarto de hora son 15."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 20",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa21",
+   "oa": "MA03 OA 21",
+   "titulo": "El perímetro",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "El perímetro es lo que mide el borde de una figura. Es la vuelta completa por el contorno."
+    },
+    {
+     "t": "diagrama",
+     "kind": "poligono",
+     "params": {
+      "lados": 5,
+      "etiqueta": "El perímetro es la vuelta entera"
+     },
+     "intro": "Recorre el borde con el dedo. Todo ese camino es el perímetro."
+    },
+    {
+     "t": "texto",
+     "md": "Para calcularlo se suman todos los lados. No importa el orden en que los sumes."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Calculemos el perímetro de un rectángulo de 6 y 4.",
+     "pasos": [
+      "Un rectángulo tiene 4 lados.",
+      "Dos lados miden 6 y dos lados miden 4.",
+      "Sumamos: 6 más 4 más 6 más 4.",
+      "El perímetro es 20."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 21",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa22",
+   "oa": "MA03 OA 22",
+   "titulo": "Medir el peso",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "El peso se mide en gramos y en kilos. Un kilo son mil gramos."
+    },
+    {
+     "t": "diagrama",
+     "kind": "barras",
+     "params": {
+      "datos": [
+       {
+        "etiqueta": "manzana",
+        "valor": 200
+       },
+       {
+        "etiqueta": "pan",
+        "valor": 500
+       },
+       {
+        "etiqueta": "melón",
+        "valor": 1500
+       }
+      ],
+      "desde": 0
+     },
+     "intro": "Compara los pesos. La barra más alta es la del objeto más pesado."
+    },
+    {
+     "t": "texto",
+     "md": "Para cosas livianas se usan gramos. Para cosas pesadas conviene usar kilos, porque el número queda más corto."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Pasemos 1500 gramos a kilos.",
+     "pasos": [
+      "Mil gramos son 1 kilo.",
+      "Nos quedan 500 gramos sueltos.",
+      "500 gramos son medio kilo.",
+      "Entonces 1500 gramos son 1 kilo y medio."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 22",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa23",
+   "oa": "MA03 OA 23",
+   "titulo": "Encuestas y gráficos",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una encuesta es preguntarle lo mismo a varias personas y anotar las respuestas."
+    },
+    {
+     "t": "diagrama",
+     "kind": "barras",
+     "params": {
+      "datos": [
+       {
+        "etiqueta": "perro",
+        "valor": 8
+       },
+       {
+        "etiqueta": "gato",
+        "valor": 6
+       },
+       {
+        "etiqueta": "pez",
+        "valor": 3
+       }
+      ],
+      "desde": 0
+     },
+     "intro": "Cada barra muestra cuántos eligieron esa respuesta."
+    },
+    {
+     "t": "texto",
+     "md": "En un gráfico de barras, la barra más alta es la respuesta que más se repitió. Se compara de un vistazo."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ordenemos los datos de una encuesta.",
+     "pasos": [
+      "Primero se anota cada respuesta en una tabla.",
+      "Se cuenta cuántas veces aparece cada una.",
+      "Ese número es la altura de su barra.",
+      "Todas las barras deben tener el mismo ancho."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 23",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa24",
+   "oa": "MA03 OA 24",
+   "titulo": "Juegos de azar",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "En un juego de azar no se puede saber qué va a salir. Pero sí se puede anotar lo que salió y ordenarlo."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 1,
+      "max": 6,
+      "paso": 1,
+      "signo": false,
+      "marca": 3,
+      "interactivo": true
+     },
+     "intro": "Un dado puede salir del 1 al 6. El menor es 1 y el mayor es 6."
+    },
+    {
+     "t": "texto",
+     "md": "El punto medio es el número que queda justo al centro entre el menor y el mayor."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Busquemos el punto medio entre 2 y 8.",
+     "pasos": [
+      "El menor es 2 y el mayor es 8.",
+      "Entre ellos hay 6 de diferencia.",
+      "La mitad de 6 es 3.",
+      "Contamos 3 desde el 2 y llegamos al 5."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 24",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa25",
+   "oa": "MA03 OA 25",
+   "titulo": "Pictogramas",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un pictograma usa dibujos en vez de barras. Lo importante es que cada dibujo puede valer más de uno."
+    },
+    {
+     "t": "diagrama",
+     "kind": "pictograma",
+     "params": {
+      "datos": [
+       {
+        "etiqueta": "1° básico",
+        "valor": 8
+       },
+       {
+        "etiqueta": "2° básico",
+        "valor": 6
+       },
+       {
+        "etiqueta": "3° básico",
+        "valor": 10
+       }
+      ],
+      "icono": "⚽",
+      "escala": 2
+     },
+     "intro": "Aquí cada pelota vale 2. Por eso hay menos dibujos que niños."
+    },
+    {
+     "t": "texto",
+     "md": "Antes de contar hay que mirar cuánto vale cada dibujo. Si vale 2, hay que multiplicar por 2."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Contemos una fila de un pictograma.",
+     "pasos": [
+      "La fila tiene 5 dibujos.",
+      "Cada dibujo vale 2.",
+      "Multiplicamos 5 por 2.",
+      "Esa fila representa 10."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 25",
+      "n": 10
+     }
+    }
+   ]
+  },
+  {
+   "id": "ma3-oa26",
+   "oa": "MA03 OA 26",
+   "titulo": "Diagramas de puntos",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un diagrama de puntos anota cada respuesta como un punto sobre su número. Los puntos se apilan uno encima de otro."
+    },
+    {
+     "t": "diagrama",
+     "kind": "puntos",
+     "params": {
+      "valores": [
+       2,
+       3,
+       3,
+       4,
+       4,
+       4,
+       5,
+       5,
+       6
+      ],
+      "min": 1,
+      "max": 7
+     },
+     "intro": "Cada punto es una respuesta. La columna más alta es la que más se repitió."
+    },
+    {
+     "t": "texto",
+     "md": "Sirve para ver de un vistazo qué respuesta se repitió más y cuál menos, sin tener que contar de nuevo."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Leamos un diagrama de puntos.",
+     "pasos": [
+      "Se busca el número que interesa en la línea de abajo.",
+      "Se cuentan los puntos que están sobre él.",
+      "Ese es el número de veces que se repitió.",
+      "La columna más alta es la respuesta más común."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA03 OA 26",
+      "n": 10
+     }
+    }
+   ]
+  }
+ ]
+}
