@@ -75,6 +75,7 @@ function renderJefePregunta(){
 }
 function responderJefe(el,ok){
  if(JF.lock)return; JF.lock=true;
+ marcarActividad();
  registrarOA(JF.preguntas[JF.idx] && JF.preguntas[JF.idx].oa, ok);   // mapa de dominio
  document.querySelectorAll('#jfOpts .opt').forEach(o=>o.classList.add('off'));
  if(ok){ SND.hit(); JF.vida=Math.max(0,JF.vida-1);
@@ -1055,7 +1056,11 @@ function payloadSave(){
   skins:S.skins,logros:[...S.logros], rutaActual:EXP_ACT?EXP_ACT.id:null, rutas:S.rutas,
   campañasCompletas:[...S.campañasCompletas], insignias:[...S.insignias], insigniaActiva:S.insigniaActiva,
   calc:S.calc, curso:S.curso, alumno:S.alumno, maestro:S.maestro, mateLecciones:S.mateLecciones,
-  metasVistas:S.metasVistas, semaforo:S.semaforo};
+  metasVistas:S.metasVistas, semaforo:S.semaforo,
+  // Dos campos para el informe del apoderado. Nacen vacios en las partidas que ya
+  // existen, y la pantalla lo DICE en vez de mostrar un cero que se leeria como
+  // "no ha jugado nunca".
+  visto:S.visto, respondidas:S.respondidas};
 }
 function guardar(){
  // Modo prueba: el avance vive solo en memoria. Se conserva el volcado a S.rutas
@@ -1076,6 +1081,7 @@ function aplicarSave(d){try{
  S.campañasCompletas=new Set(d.campañasCompletas||[]);
  S.insignias=new Set(d.insignias||[]);
  S.insigniaActiva=d.insigniaActiva||null;
+ S.visto=d.visto||null; S.respondidas=d.respondidas||0;
  if(d.calc&&Array.isArray(d.calc.etapas))S.calc=d.calc;
  if(d.mateLecciones&&typeof d.mateLecciones==='object')S.mateLecciones=d.mateLecciones;
  if(d.metasVistas&&typeof d.metasVistas==='object')S.metasVistas=d.metasVistas;
@@ -1419,6 +1425,7 @@ function usarComodin(){
 }
 function responder(el,ok,P,e){
  if(Q.lock)return;Q.lock=true;clearInterval(Q.timer);
+ marcarActividad();
  // Corta la lectura APENAS responde. Antes seguia leyendo las opciones que faltaban
  // encima del "¡Correcto!" y de la explicacion: ruido justo cuando hay que escuchar
  // otra cosa. No basta con cortar al pintar la pregunta siguiente, porque entre
@@ -1672,3 +1679,222 @@ function reproducirMaestro(){
  vid.currentTime=0; vid.muted=false;
  const p=vid.play(); if(p&&p.catch)p.catch(()=>{vid.muted=true;const q=vid.play();if(q&&q.catch)q.catch(()=>cerrar());});
 }
+
+/* ================= INFORME PARA EL APODERADO ("📊 Cómo va") =================
+   Se mira en el TELÉFONO DEL NIÑO, y por eso no tiene backend, ni credencial nueva, ni
+   un solo dato que salga del aparato: todo lo que muestra ya está en `localStorage`.
+   Es como un papá revisa de verdad, y evita de raíz la pregunta de UTP sobre qué se hace
+   con los datos de un menor.
+
+   ⚠️ TRES COSAS QUE NO MUESTRA, Y NO ES OLVIDO:
+
+   1. El PORCENTAJE de acierto por objetivo. El dato lo reporta el teléfono -o sea que es
+      falsificable, y el panel del profesor ya lo dice de sí mismo- y un apoderado lo lee
+      como NOTA. Además no hace falta: en este juego cada etapa ES un objetivo y las
+      ESTRELLAS ya son ese porcentaje traducido (3★=100%, 2★≥80%, 1★≥66%). Por eso "le
+      costó" = etapa superada con UNA estrella: exacto, y sin inventar una métrica nueva.
+   2. La POSICIÓN EN EL RANKING. Existe y es del niño; este informe es para acompañar, no
+      para comparar.
+   3. El SEMÁFORO (🟢🟡🔴) de su autoevaluación. Es el dato más valioso que hay aquí, y
+      justamente por eso: al niño se le prometió que es privado y que no se envía a nadie
+      (Sesiones 52 y 74). Mostrárselo al papá cambia el incentivo a contestarlo con
+      honestidad, y entonces deja de servirle a él, que es para quien se hizo. */
+
+/* Marca que el nino JUGO, para el informe del apoderado. Va donde se responde una
+   pregunta y NO en guardar(), que tambien corre al abrir la app: ahi bastaba con que el
+   papa entrara a mirar el informe para que dijera "jugo hoy", justo lo contrario de lo
+   que el dato sirve.
+   Alcance: el quiz de campana y el Jefe Final, que es de lo que habla el informe. Un nino
+   que solo juegue el Reto de Calculo o el duelo va a mostrar su ultima partida de campana. */
+function marcarActividad(){ S.visto=hoyISO(); S.respondidas=(S.respondidas||0)+1; }
+
+function _infFecha(iso){
+ if(!iso) return null;
+ const hoy=new Date(hoyISO()+'T00:00:00'), d=new Date(iso+'T00:00:00');
+ const dias=Math.round((hoy-d)/86400000);
+ if(dias<=0) return 'hoy';
+ if(dias===1) return 'ayer';
+ if(dias<7)  return 'hace '+dias+' días';
+ if(dias<14) return 'hace una semana';
+ return 'hace '+Math.floor(dias/7)+' semanas';
+}
+
+/* Lo hecho en UNA expedición, leído del progreso guardado. Cuenta el modo Normal: el
+   Difícil es un segundo recorrido del mismo contenido y sumarlo inflaría el avance. */
+function _infExp(exp){
+ const st=S.rutas[exp.id], p=(st&&st.progreso)||[], n=exp.etapas.length;
+ let hechas=0, est=0;
+ for(let i=0;i<n;i++){ const e=p[i]; if(e&&e.est==='done'){ hechas++; est+=(e.estrellas||0); } }
+ return {n:n, hechas:hechas, est:est, max:n*3, completa:(hechas===n)};
+}
+
+/* Los temas que le costaron: etapas SUPERADAS con una sola estrella. Se nombran con
+   META_OA, la meta en lenguaje de niño que ya está escrita para cada objetivo (69 en 8°,
+   81 en 7°, 85 en 3°), así el papá lee "Repartir en partes iguales" y no "MA08 OA 05". */
+function _infCuesta(exp){
+ const st=S.rutas[exp.id], p=(st&&st.progreso)||[], out=[];
+ for(let i=0;i<exp.etapas.length;i++){
+  const e=p[i]; if(!e||e.est!=='done'||(e.estrellas||0)>1) continue;
+  const et=exp.etapas[i], oa=et.oa||(et.oas&&et.oas[0]);
+  // El jefe mezcla los objetivos del capítulo, así que no nombra UN tema: se salta.
+  if(!oa||oa==='BOSS') continue;
+  out.push({asig:exp.asignatura, tema:(META_OA[oa]||et.nombre||'')});
+ }
+ return out;
+}
+
+function datosInforme(){
+ const d={asigs:[], extras:[], cuesta:[], etapas:0, estrellas:0, estrellasMax:0};
+ const suma=exp=>{ const r=_infExp(exp); d.etapas+=r.hechas; d.estrellas+=r.est;
+                   d.estrellasMax+=r.max; d.cuesta=d.cuesta.concat(_infCuesta(exp)); return r; };
+
+ ORDEN_ASIG.forEach(asig=>{
+  const c=campañaDe(asig);
+  const exps=EXPEDICIONES.filter(e=>e.activa && e.asignatura===asig && (c? e.campaña===c.id : !e.campaña));
+  if(!exps.length) return;
+  let caps=0, est=0, max=0, port='';
+  exps.forEach(exp=>{ const r=suma(exp); if(r.completa) caps++; est+=r.est; max+=r.max;
+                      if(!port && !r.completa) port=portadaMapa(exp); });
+  const fila={asig:asig, caps:caps, total:exps.length, est:est, max:max,
+              portada:port||portadaMapa(exps[exps.length-1]), lecciones:null};
+  // Matemáticas lleva además su camino de mini-clases, que no son expediciones.
+  if(HAY_MINICLASES && c && c.capitulosMate){
+   const ids=c.capitulosMate.reduce((a,x)=>a.concat(x.lecciones||[]),[]);
+   fila.lecciones={hechas:ids.filter(id=>S.mateLecciones[id]).length, total:ids.length};
+  }
+  d.asigs.push(fila);
+ });
+
+ // Vocabulario y las lecturas: son apoyos, no currículum, así que van aparte y no se
+ // mezclan con el avance del año. Su código no lleva el nivel adentro y por eso tampoco
+ // tienen meta de aprendizaje: no aportan a "temas que le costaron".
+ EXPEDICIONES.filter(e=>e.activa && !e.campaña && ORDEN_ASIG.indexOf(e.asignatura)<0)
+  .forEach(exp=>{ const r=_infExp(exp); d.etapas+=r.hechas; d.estrellas+=r.est; d.estrellasMax+=r.max;
+   d.extras.push({nombre:nombreMapa(exp)||exp.asignatura, hechas:r.hechas, total:r.n}); });
+
+ d.visto=_infFecha(S.visto);
+ d.respondidas=S.respondidas||0;
+ d.nivel=Math.floor((S.xp||0)/XP_POR_NIVEL)+1;
+
+ // OJO: insignias y campanasCompletas son Set, no arreglos: con .length darian 0 en
+ // silencio, que es el tipo de error que no se nota hasta que alguien pregunta.
+ d.insignias=(S.insignias&&S.insignias.size)||0;
+ d.coronas=(S.campañasCompletas&&S.campañasCompletas.size)||0;
+ return d;
+}
+
+function renderInforme(){
+ const d=datosInforme(), $i=id=>document.getElementById(id);
+ $i('infNombre').textContent=S.nombre||'Tu hijo o hija';
+
+ /* La actividad se dice en una frase y no como fecha: "hace 3 días" es accionable y
+    "2026-08-30" no. Si el campo todavía no existe -partida anterior a que se agregara-
+    se DICE, en vez de mostrar un cero que se leería como "no ha jugado nunca". */
+ $i('infVisto').textContent = d.visto ? ('Última vez que jugó: '+d.visto)
+   : 'Aún no hay registro de cuándo jugó (se empieza a guardar desde ahora)';
+
+ $i('infCifras').innerHTML=
+   '<div class="inf-c"><b>'+d.etapas+'</b><span>etapas superadas</span></div>'+
+   '<div class="inf-c"><b>'+d.estrellas+'<small>/'+d.estrellasMax+'</small></b><span>estrellas</span></div>'+
+   '<div class="inf-c"><b>'+d.respondidas+'</b><span>preguntas respondidas</span></div>'+
+   '<div class="inf-c"><b>'+d.nivel+'</b><span>nivel</span></div>';
+
+ $i('infAsigs').innerHTML=d.asigs.map(a=>{
+  const pct=a.total?Math.round(a.caps/a.total*100):0;
+  const lec=a.lecciones?('<span class="inf-lec">'+a.lecciones.hechas+' de '+a.lecciones.total+' mini-clases</span>'):'';
+  return '<div class="inf-a"><img src="'+escHtml(a.portada)+'" alt="" onerror="this.style.visibility=\'hidden\'">'+
+   '<div class="inf-a-t"><b>'+escHtml(a.asig)+'</b>'+
+   '<span>'+a.caps+' de '+a.total+' capítulos · '+a.est+' de '+a.max+' estrellas</span>'+lec+
+   '<div class="inf-bar"><i style="width:'+pct+'%"></i></div></div></div>';
+ }).join('');
+
+ $i('infExtras').innerHTML=d.extras.length
+  ? '<h3>También ha jugado</h3>'+d.extras.map(e=>'<p class="inf-x">'+escHtml(e.nombre)+
+      ' · <b>'+e.hechas+' de '+e.total+'</b></p>').join('')
+  : '';
+
+ /* Los temas se agrupan por asignatura y se deduplican: un mismo objetivo puede aparecer
+    en dos capítulos, y repetirlo haría ver peor de lo que está. */
+ const vistos={}, porAsig={};
+ d.cuesta.forEach(c=>{ if(!c.tema||vistos[c.tema])return; vistos[c.tema]=1;
+   (porAsig[c.asig]=porAsig[c.asig]||[]).push(c.tema); });
+ const asigs=Object.keys(porAsig), n=Object.keys(vistos).length;
+ $i('infCuesta').innerHTML = n
+  ? '<h3>🎯 '+n+(n===1?' tema en el que le vendría bien apoyo':' temas en los que le vendría bien apoyo')+'</h3>'+
+    '<p class="inf-sub">Los pasó, pero le costaron. Preguntarle por ellos ayuda más que repetir la etapa.</p>'+
+    asigs.map(a=>'<div class="inf-t"><b>'+escHtml(a)+'</b><ul>'+
+      porAsig[a].map(t=>'<li>'+escHtml(t)+'</li>').join('')+'</ul></div>').join('')
+  : '<h3>🎯 Sin temas pendientes</h3><p class="inf-sub">Todo lo que ha jugado le salió bien. '+
+    'A medida que avance, aquí van a aparecer los temas que le cuesten.</p>';
+
+ $i('infLogros').textContent = d.insignias
+   ? (d.insignias+(d.insignias===1?' insignia':' insignias')+(d.coronas?' · '+d.coronas+(d.coronas===1?' corona':' coronas'):''))
+   : 'Todavía sin insignias';
+}
+
+/* La pantalla y su CSS se INYECTAN, no viven en los tres forks: así un curso nuevo la
+   trae gratis y una corrección se escribe una vez. Es el patrón de revision.js y
+   lecciones.js. El botón del inicio SÍ va en cada fork, a propósito: un enlace inyectado
+   que no aparece porque cambió su ancla es un fallo mudo, y prefiero verlo en el HTML. */
+(function(){
+ const CSS =
+  "#scr-informe{padding:16px}#scr-informe.on{display:flex;flex-direction:column;gap:14px}"+
+  ".inf-top{display:flex;align-items:center;gap:10px}.inf-top .btn{width:auto;flex:0 0 auto;padding:8px 16px;font-size:15px;margin:0}"+
+  ".inf-h{font-family:'Titan One',sans-serif;font-size:20px;margin:0}"+
+  ".inf-visto{color:var(--dim);font-size:13px;margin:-6px 0 0}"+
+  ".inf-cifras{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}"+
+  ".inf-c{background:#241a44;border:1px solid #3a2f60;border-radius:14px;padding:10px;text-align:center}"+
+  ".inf-c b{display:block;font-family:'Titan One',sans-serif;font-size:22px;color:var(--gold)}"+
+  ".inf-c b small{font-size:13px;color:var(--dim)}"+
+  ".inf-c span{font-size:11px;color:var(--dim);line-height:1.2;display:block;margin-top:2px}"+
+  ".inf-a{display:flex;gap:10px;align-items:center;background:#241a44;border:1px solid #3a2f60;"+
+   "border-radius:14px;padding:10px;margin-bottom:8px}"+
+  ".inf-a img{width:52px;height:52px;border-radius:12px;object-fit:cover;flex:0 0 auto}"+
+  ".inf-a-t{flex:1;min-width:0}.inf-a-t b{display:block;font-size:15px}"+
+  ".inf-a-t span{display:block;font-size:12px;color:var(--dim);margin-top:1px}"+
+  ".inf-lec{color:var(--cyan)!important}"+
+  ".inf-bar{height:7px;background:#1a1233;border-radius:5px;overflow:hidden;margin-top:6px}"+
+  ".inf-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--violet))}"+
+  "#scr-informe h3{font-family:'Titan One',sans-serif;font-size:16px;margin:4px 0 2px}"+
+  ".inf-sub{font-size:13px;color:var(--dim);margin:0 0 8px;line-height:1.4}"+
+  ".inf-t{background:#241a44;border:1px solid #3a2f60;border-radius:14px;padding:10px 12px;margin-bottom:8px}"+
+  ".inf-t b{font-size:13px;color:var(--gold)}.inf-t ul{margin:4px 0 0;padding-left:18px}"+
+  ".inf-t li{font-size:14px;line-height:1.45;margin:2px 0}"+
+  ".inf-x{font-size:13px;color:var(--dim);margin:2px 0}"+
+  ".inf-pie{font-size:12px;color:var(--dim);line-height:1.5;border-top:1px solid #3a2f60;padding-top:10px}";
+
+ const HTML =
+  '<div class="inf-top"><button class="btn" id="infSalir">← Salir</button></div>'+
+  '<h2 class="inf-h">📊 Cómo va <span id="infNombre"></span></h2>'+
+  '<p class="inf-visto" id="infVisto"></p>'+
+  '<div class="inf-cifras" id="infCifras"></div>'+
+  '<div id="infAsigs"></div>'+
+  '<div id="infExtras"></div>'+
+  '<div id="infCuesta"></div>'+
+  '<h3>🏅 Logros</h3><p class="inf-sub" id="infLogros"></p>'+
+  /* Este pie no es letra chica de trámite: es lo que evita que el informe se lea como
+     una nota. Va dentro de la pantalla, no en un enlace que nadie abre. */
+  '<p class="inf-pie">Esto no es una calificación: es para saber por dónde va y de qué '+
+  'conversar en casa. Las estrellas miden cuánto le salió bien en cada etapa. '+
+  /* ⚠️ Esta frase decía "no se envía a nadie" y era FALSA desde el Bloque D: el avance
+     sube al servidor como una foto, para que no se pierda al cambiar de teléfono. Una
+     afirmación de privacidad equivocada en una pantalla para apoderados es exactamente
+     lo que pregunta una UTP, así que dice lo que de verdad pasa. */
+  'Este resumen se arma en el teléfono. Su avance además se guarda en su cuenta para que '+
+  'no se pierda si cambia de aparato; el profesor ve el avance del curso, no esta pantalla.</p>';
+
+ function montar(){
+  if(document.getElementById('scr-informe')) return;
+  const st=document.createElement('style'); st.textContent=CSS; document.head.appendChild(st);
+  const s=document.createElement('section'); s.id='scr-informe'; s.className='screen';
+  s.innerHTML=HTML;
+  const cont=document.querySelector('.wrap')||document.body; cont.appendChild(s);
+  s.querySelector('#infSalir').onclick=()=>{ SND.tap(); go('scr-rol'); };
+ }
+
+ window.abrirInforme=function(){
+  montar();
+  renderInforme();
+  go('scr-informe');
+ };
+})();

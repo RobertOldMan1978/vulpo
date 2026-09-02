@@ -719,6 +719,11 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
     </p>
     <p style="text-align:center;margin-top:10px">
       <a href="#" id="lnkInstalar" hidden style="color:var(--cyan);font-weight:800;font-size:12px">📲 Instalar</a>
+      <!-- El informe para el apoderado. El BOTÓN va en cada fork y la pantalla se inyecta
+           desde motor.js: un enlace inyectado que no aparece porque cambió su ancla es un
+           fallo mudo, y este se ve en el HTML. -->
+      <a href="#" id="btnInforme" style="color:var(--cyan);font-weight:800;font-size:12px;margin-left:10px">📊 Cómo va</a>
+      <a href="/tutorial/" id="lnkTutorial" style="color:var(--cyan);font-weight:800;font-size:12px;margin-left:10px">❓ Cómo se juega</a>
       <a href="#" id="verCreditos" style="color:var(--cyan);font-weight:800;font-size:12px;margin-left:10px">Créditos</a>
     </p>
     <p style="text-align:center;margin-top:10px">
@@ -1846,6 +1851,8 @@ const S={nombre:"",avatar:AVATARES[0],xp:0,nivel:1,monedas:0,
  curso:null,        // {nombre} del curso al que pertenece el alumno
  alumno:null,       // nombre del perfil del servidor, si canjeó un código
  maestro:false,     // logró la Maestría Total (3 en Difícil + El Autómata) → ya celebrada
+ visto:null,        // AAAA-MM-DD del último juego, para el informe del apoderado
+ respondidas:0,     // preguntas contestadas en total (esfuerzo, no acierto)
  mateLecciones:{}, // { 'ma-oa01': true, ... } lecciones de Matemáticas completadas
  metasVistas:{},   // { 'exp:lvl': true } etapas cuya tarjeta de meta ya se vio
  semaforo:{}};     // { 'exp:lvl': '🟢'|'🟡'|'🔴' } autoevaluación local por etapa
@@ -2513,6 +2520,9 @@ $('btnODExit').onclick=()=>{SND.tap();abrirDueloOnline();};
  const upd=()=>{b.textContent='🎵';b.style.opacity=MUSIC.on?'1':'.4';b.title=MUSIC.on?'Música: activada':'Música: silenciada';};upd();
  b.onclick=()=>{SND.init();MUSIC.setOn(!MUSIC.on);upd();};})();
 /* Créditos */
+/* Informe para el apoderado. La pantalla la inyecta motor.js; aqui solo se cablea el
+   boton del inicio. Con guard: si el enlace no esta, no se mata el arranque. */
+(function(){const b=$('btnInforme'); if(b) b.onclick=e=>{e.preventDefault();SND.tap();abrirInforme();};})();
 (function(){const v=$('verCreditos'),m=$('creditosModal'),c=$('cerrarCreditos');if(!v||!m)return;
  v.onclick=e=>{e.preventDefault();SND.tap();m.hidden=false;};
  if(c)c.onclick=()=>{SND.tap();m.hidden=true;};

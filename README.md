@@ -70,7 +70,7 @@ para calificar**.
 ## Cómo probarlo
 
 La página de presentación está en **https://vulpo.cl**, el juego en
-**https://vulpo.cl/8vo** y el panel del profesor en **https://vulpo.cl/profesor.html**. Para desarrollo local conviene un servidor
+**https://vulpo.cl/8vo** y el panel del profesor en **https://vulpo.cl/profesor.html**. Hay además un **tutorial** en **https://vulpo.cl/tutorial/**, con capturas y clips del juego real, dividido en dos secciones: para el apoderado y para el alumno. Para desarrollo local conviene un servidor
 (`python -m http.server 8765`), porque el JavaScript no funciona bien desde `file://`.
 
 **Se puede instalar en el teléfono.** Desde el menú del navegador, «Agregar a pantalla de

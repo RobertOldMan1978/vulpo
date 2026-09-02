@@ -104,8 +104,10 @@ backend Supabase para el duelo en línea. Historia de v0 al detalle en la Bitác
   **predicción**: pantalla propia y obligatoria de un toque —🟢 Lo entendí · 🟡 Más o menos ·
   🔴 Me costó— y el resultado le **responde** con el cruce entre lo que creyó y lo que pasó
   (*"Creías que lo tenías y te fue 4 de 10"*). Antes se preguntaba **al cerrar**, después del
-  veredicto, así que era un eco de las estrellas y se saltaba. Local y privado: **no se envía
-  al profesor**. La salta `EFIMERO`, o sea `?qa=1`, `?solo=`, `?m=` y `?rev=1`. Specs/planes
+  veredicto, así que era un eco de las estrellas y se saltaba. **No se envía al profesor**
+  —desde el Bloque D viaja dentro de la foto del save, pero el panel **no lee `progreso`**,
+  así que el docente no tiene por dónde verlo—, y tampoco lo muestra el informe del
+  apoderado, a propósito: al niño se le prometió que es suyo. La salta `EFIMERO`, o sea `?qa=1`, `?solo=`, `?m=` y `?rev=1`. Specs/planes
   `2026-08-25-siguiente-paso-al-fallar*`, `2026-08-25-marco-de-la-etapa*` y
   `2026-08-31-prediccion-antes-del-resultado*`.
 - **Modo Difícil** desbloqueable (10 preguntas, 15 s, 80%, tema oscuro/carmesí).
@@ -1098,6 +1100,82 @@ Llegada la fecha el cierre **ocurre solo**, sin desplegar nada ese día.
 > ⚠️ Desde el 31/08 **sí hay manifiesto** (ver la sección siguiente) y el juego se instala en el
 > teléfono — pero **instalarlo no lo hace funcionar sin conexión**: eso lo daría el service
 > worker, que no existe. Es una confusión fácil y cara si se la dice a un colegio.
+
+### El informe para el apoderado — «📊 Cómo va» (02/09/2026)
+
+Botón en la pantalla de inicio de los tres cursos. Se mira **en el teléfono del niño**, y por eso
+**no tiene backend, ni credencial nueva, ni un solo dato que salga del aparato**: todo lo que
+muestra ya estaba en `localStorage`. Es como un papá revisa de verdad, y evita de raíz la pregunta
+de UTP sobre qué se hace con los datos de un menor.
+
+La pantalla y su CSS **los inyecta `motor.js`**, así que un curso nuevo la trae gratis; lo único que
+va en cada fork es el **botón**, a propósito: un enlace inyectado que no aparece porque cambió su
+ancla es un fallo mudo, y en el HTML se ve.
+
+**Qué muestra:** cuándo jugó por última vez · etapas superadas, estrellas, preguntas respondidas y
+nivel · por asignatura, capítulos y estrellas (más mini-clases en Matemática) · Vocabulario y
+Lectura aparte · logros · y **los temas que le costaron**.
+
+> **Ese último bloque salió gratis, y es la parte útil.** Como **cada etapa ES un objetivo**, una
+> etapa superada con **una sola estrella** es un tema que pasó raspando: exacto, sin inventar una
+> métrica. Y se nombran con **`META_OA`**, las metas en lenguaje de niño que ya estaban escritas
+> (69 · 81 · 85), así el papá lee *"Repartir en partes iguales"* y no *"MA08 OA 05"*.
+
+⚠️ **Tres cosas que NO muestra, y no es olvido:**
+
+1. **El porcentaje de acierto por objetivo.** El dato lo reporta el teléfono —el panel del profesor
+   ya lo dice de sí mismo— y **un apoderado lo lee como NOTA**. Y no hace falta: **las estrellas ya
+   son ese porcentaje** traducido (3★=100%, 2★≥80%, 1★≥66%).
+2. **La posición en el ranking.** Existe y es del niño; el informe es para acompañar, no comparar.
+3. **El semáforo 🟢🟡🔴.** Es el dato más valioso que hay, y por eso mismo: al niño se le prometió
+   que es suyo, y mostrárselo al papá cambia el incentivo a contestarlo con honestidad.
+
+**Dos campos nuevos en el save**, `visto` y `respondidas`, que **nacen vacíos** en las partidas que
+ya existen — y la pantalla **lo dice** en vez de mostrar un cero que se leería como "no ha jugado
+nunca".
+
+> ⚠️ **`marcarActividad()` va donde se RESPONDE una pregunta, no en `guardar()`.** Puesta ahí, con
+> solo abrir la app para mirar el informe ya decía *"jugó hoy"* — justo lo contrario de lo que el
+> dato sirve. Alcance: el quiz de campaña y el Jefe Final; quien solo juegue el Reto o el duelo
+> mostrará su última partida de campaña.
+
+> ⚠️ Y el pie **no puede decir "no se envía a nadie"**: era falso desde el Bloque D, porque el
+> avance sube al servidor como foto. Una afirmación de privacidad equivocada en una pantalla para
+> apoderados es exactamente lo que pregunta una UTP.
+
+### El tutorial: `/tutorial/` (02/09/2026)
+
+Una página, dos secciones —**Para el apoderado** y **Para el alumno**—, con **16 capturas y 3 clips
+del juego de verdad**. Cubre lo que pidió Roberto: las asignaturas, el recorrido, que **enseña**
+antes de preguntar, que **corrige los errores**, las **ayudas**, el ranking y los informes.
+
+**Se genera con dos scripts, y es re-ejecutable a propósito:**
+
+    node scripts/cdp.mjs about:blank scripts/capturar-tutorial.mjs
+    python scripts/armar-clips.py
+
+⚠️ **Una captura tomada a mano no se rehace nunca**, y esta página muestra pantallas del producto:
+cuando el juego cambie, se corre el script. **No usa `?qa=1`** —esa banda verde saldría en las 16
+imágenes— sino una partida sembrada, que además es lo que un apoderado ve de verdad.
+
+**Los clips son una ráfaga de capturas unidas con ffmpeg**, no `Page.startScreencast`: así
+`cdp.mjs` —la herramienta con la que se **verifica** el juego— se queda chica. Van en MP4 y no GIF
+(pesan del orden de diez veces menos: 30–73 KB) con `muted autoplay loop playsinline`, que es lo
+único que se reproduce solo en iPhone.
+
+> ⚠️ **Tres capturas salieron MAL con el script diciendo "cero errores".** `abrirAsignatura()` es
+> **solo** para asignaturas sin campaña —el enrutado a la campaña lo decide la tarjeta del menú—,
+> así que Historia y Matemáticas daban una pantalla vacía; y la opción incorrecta **no se puede
+> saber del DOM antes de responder**, porque la clase `ok` se pone después. Por eso el script
+> ahora **aborta** si no llega a la pantalla que espera: una captura equivocada en un tutorial es
+> peor que ninguna, porque se publica y nadie la mira dos veces.
+
+**La barra de navegación va pegada arriba y en UNA fila** (53 px). Envuelta en dos son ~80 px que
+se le quitan a cada pantalla de lectura — la lección del banner de instalación. La píldora de la
+sección actual se ilumina **y se trae a la vista**, porque en un teléfono las cinco no caben.
+⚠️ Cuál está activa se decide **por geometría** (la última cuyo título ya pasó bajo la barra) y no
+por "la primera que intersecta": con `scroll-margin-top` la anterior sigue rozando la banda y el
+resaltado quedaba corrido en uno.
 
 ### Las rutas de los cursos: `/3ro`, `/7mo`, `/8vo` (02/09/2026)
 
@@ -7998,3 +8076,67 @@ que ese `if __name__ == "__main__"` existe.
   pidió en la misma conversación. Se decidió **no** ponerlo en `/juego/` por tres razones: "juego"
   significa jugar y un nombre que miente cuesta más que uno feo; chocaría con el reenvío; y un
   tutorial es **capa de presentación**, como la landing, no una cuarta app. Queda por diseñar.
+
+### Sesión 88 (2026-09-02) — El informe para el apoderado, y el tutorial
+Roberto pidió un tutorial que le mostrara a un apoderado las asignaturas, los recorridos, que hay
+enseñanza, que hay corrección de errores, ayudas, ranking «y si lo quieren, informes de rendimiento
+para apoderados y profesores». **No se tocó contenido.**
+
+#### La pregunta que cambió el orden del trabajo
+
+Antes de escribir nada se comprobó ese último punto, y el informe para profesores existe pero
+**el del apoderado NO**: el panel exige una cuenta autorizada por un administrador —sin fila en
+`profesores` no se puede nada— y lo que ve un alumno de sí mismo es su XP, sus estrellas y sus
+insignias, que es progreso de juego.
+
+> **En un tutorial esa diferencia desaparece: lo que la página muestre, el apoderado lo lee como
+> "esto existe".** Roberto eligió **construirlo primero**, así que el tutorial quedó para después.
+
+#### El informe (detalle en su sección, arriba)
+
+Se decidió **la pantalla dentro del juego** sobre las otras dos opciones —una página aparte con el
+código `ALU-`, o que lo mande el profesor—: cero backend, cero credencial nueva y **cero dato que
+sale**, porque todo ya estaba en `localStorage`. Roberto pidió además *"unos cuantos números, que
+de verdad sirva algo más"*, y ahí está la parte fina: **cuáles números son honestos**. Los que
+miden actividad y logro sí; el porcentaje de acierto por objetivo no, porque se lee como nota — y
+**las estrellas ya son ese porcentaje** en el idioma del juego.
+
+**Tres defectos encontrados construyéndolo, y los tres callados:**
+
+1. **`S.insignias` y `S.campañasCompletas` son `Set`, no arreglos.** Con `.length` habrían mostrado
+   **0 insignias para siempre**, sin ningún error.
+2. **La fecha mentía.** Puesta en `guardar()` —que también corre al abrir la app— un papá entrando
+   a mirar el informe marcaba *"jugó hoy"*. Ahora hay `marcarActividad()`, donde se responde de
+   verdad. Verificado: sembrado el 30/08, dice **"hace 3 días"**.
+3. **El pie decía "no se envía a nadie", y es FALSO desde el Bloque D.** El avance sube al servidor
+   como foto. Se comprobó de paso el semáforo: **sí sube** dentro de la foto, pero el panel del
+   profesor **nunca lee `progreso`** (0 referencias), así que la promesa "no se envía al profesor"
+   se sostiene y la redacción de este archivo quedó precisada.
+
+#### El tutorial (detalle en su sección, arriba)
+
+Se descartó ponerlo en `/juego/`, que era la idea original al mudar 8°: *"juego"* significa jugar y
+un nombre que miente cuesta más que uno feo; chocaría con el reenvío que mantiene vivos los enlaces
+repartidos; y un tutorial es **capa de presentación**, como la landing, no una cuarta app.
+
+**16 capturas y 3 clips del juego real**, con dos scripts re-ejecutables. Y el hallazgo de método:
+**tres capturas salieron mal con el script reportando "cero errores"**, así que ahora **aborta** si
+no llega a la pantalla que espera.
+
+#### Verificación
+
+- **El informe:** jugador nuevo sin partida (4 asignaturas, "Sin temas pendientes", no revienta) ·
+  clic real desde el inicio en los tres cursos · Salir vuelve a `scr-rol` · responder una pregunta
+  marca `respondidas` y la fecha · **los tres forks recibieron 9 líneas idénticas, 0 borradas**.
+- **El tutorial:** 12 imágenes, **0 rotas y 0 sin texto alternativo**, 3 clips, 5 secciones, sin
+  desborde a 375 ni a 1280, enlazado desde la landing y desde el inicio de los tres juegos. La
+  barra pegada mide 53 px y las **5 de 5** secciones se marcan bien.
+- Sin regresión: 20/23/27 expediciones, guardado de 8° intacto, **cero excepciones y cero 404**.
+
+> **Y un error de método repetido hasta tener nombre: me equivoqué de selector SEIS veces**
+> (`.lec-card`, `VOZ.mapa`, `#armLista`, `#opts`, `.pred-b`, `btnCont`). Una vez, además, una
+> comprobación de sintaxis dio "OK" siendo falsa, porque el `&&` se disparaba con el `head`.
+> **Cuando un conteo da cero o da todo mal, el primer sospechoso es la prueba, no el producto.**
+
+- **Con esto el Bloque A queda cerrado.** El camino crítico vuelve a ser el **Bloque B**: los
+  bancos de 4°, 5° y 6°.

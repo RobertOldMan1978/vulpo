@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cómo se juega VULPO · Guía para apoderados y alumnos</title>
+<meta name="description" content="Un recorrido por VULPO con pantallas reales del juego: las asignaturas, los recorridos, las mini-clases, la corrección de errores, las ayudas, el ranking y cómo ver cómo va tu hijo o hija.">
+<meta name="theme-color" content="#150f2e">
+<meta property="og:title" content="Cómo se juega VULPO">
+<meta property="og:description" content="Guía corta para apoderados y alumnos, con pantallas reales del juego.">
+<meta property="og:image" content="https://vulpo.cl/assets/web/og.png">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#150f2e; --panel:#1e1640; --panel2:#241a44; --linea:#3a2f60;
+  --gold:#ffc93c; --cyan:#4dd8ff; --green:#3ee089; --pink:#ff4d8d; --violet:#8f6bff;
+  --txt:#f3f0ff; --dim:#a89fd6; --r:16px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);
+  font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.6;
+  -webkit-text-size-adjust:100%}
+/* Fondo de estrellas, el mismo lenguaje de la landing y del juego. Decorativo. */
+.stars{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:.5;
+  animation:tw 4s infinite}
+@keyframes tw{0%,100%{opacity:.15}50%{opacity:.7}}
+.envoltura{max-width:860px;margin:0 auto;padding:0 20px}
+a{color:var(--cyan)}
+a:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:8px}
+.marca{font-family:'Titan One',cursive;font-size:22px;letter-spacing:.02em}
+
+header{padding:26px 0 8px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+h1{font-size:clamp(26px,5vw,40px);line-height:1.15;margin:22px 0 10px;font-weight:800;
+  letter-spacing:-.02em}
+.bajada{color:var(--dim);font-size:17px;max-width:62ch;margin:0}
+
+/* Índice: en un teléfono, saber cuánto falta es la mitad de que se lea entero. */
+/* Barra de navegación PEGADA arriba. En una sola fila que se desliza en horizontal, no
+   envuelta en dos: a 375 px dos filas de píldoras son ~80 px que le quitas a cada pantalla
+   de lectura, y esa es la lección del banner de instalación (Sesión 77). Alto medido: 52 px. */
+.navbar{position:sticky;top:0;z-index:40;background:rgba(21,15,46,.92);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+.navbar .envoltura{display:flex;align-items:center;gap:10px;padding-top:8px;padding-bottom:8px}
+.navbar .marca{font-size:17px;text-decoration:none;color:var(--txt);flex:0 0 auto}
+.indice{display:flex;gap:7px;margin:0;padding:0 0 2px;list-style:none;
+  overflow-x:auto;flex:1;min-width:0;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.indice::-webkit-scrollbar{display:none}
+.indice li{flex:0 0 auto}
+.indice a{display:inline-block;padding:6px 12px;border:1px solid var(--linea);border-radius:999px;
+  background:var(--panel);text-decoration:none;font-size:12.5px;font-weight:600;color:var(--dim);
+  white-space:nowrap}
+.indice a:hover{border-color:var(--violet);color:var(--txt)}
+/* La sección en la que vas: es lo que convierte la barra en "dónde estoy" y no solo en un menú. */
+.indice a.aqui{color:#2a1c00;background:linear-gradient(180deg,var(--gold),#ff9d3c);border-color:transparent}
+@media(min-width:720px){.navbar .envoltura{gap:14px}.indice a{font-size:13px;padding:7px 14px}}
+
+section.parte{padding:34px 0 6px;scroll-margin-top:66px}   /* 52 de la barra + aire */
+.kicker{font-family:'Titan One',cursive;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);opacity:.9;margin:0 0 6px}
+h2{font-size:clamp(21px,4vw,30px);margin:0 0 6px;font-weight:800;letter-spacing:-.01em}
+h3{font-size:19px;margin:0 0 6px;font-weight:700}
+.parte > p{color:var(--dim);max-width:66ch}
+
+/* Cada paso: la explicación al lado de la pantalla real. En teléfono se apilan. */
+.paso{display:grid;grid-template-columns:1fr;gap:18px;align-items:center;
+  padding:22px 0;border-top:1px solid var(--linea)}
+@media(min-width:720px){
+  .paso{grid-template-columns:1fr 268px;gap:30px}
+  .paso.izq{grid-template-columns:268px 1fr}
+  .paso.izq .txt{order:2}
+}
+.paso .txt p{margin:6px 0 0;color:var(--dim)}
+.paso .txt p strong{color:var(--txt)}
+
+/* Marco de teléfono, el mismo de la landing: una captura suelta no se lee como pantalla. */
+.tel{background:#0d0920;border:8px solid #2b2350;border-radius:34px;padding:0;overflow:hidden;
+  box-shadow:0 18px 40px rgba(0,0,0,.5);margin:0 auto;max-width:268px;width:100%}
+.tel img,.tel video{display:block;width:100%;height:auto;border-radius:26px}
+/* Dos telefonos lado a lado en una columna de 375 px dejan cada captura en ~170 px, y el
+   informe -que es justo la pantalla que hay que poder LEER- queda ilegible. En movil se
+   apilan: una pagina mas larga se lee; una ilegible no. */
+.par{display:grid;grid-template-columns:1fr;gap:16px;max-width:560px;margin:0 auto}
+@media(min-width:620px){.par{grid-template-columns:1fr 1fr;gap:12px}.par .tel{max-width:none}}
+.pie-img{font-size:12px;color:var(--dim);text-align:center;margin:8px 0 0}
+
+/* Marco de navegador para el panel del profesor, que se usa en computador. */
+.mock{background:#0d0920;border:1px solid var(--linea);border-radius:12px;overflow:hidden;
+  box-shadow:0 14px 34px rgba(0,0,0,.45)}
+.mock .barra{display:flex;gap:5px;padding:8px 10px;background:#1a1338;border-bottom:1px solid var(--linea)}
+.mock .barra i{width:9px;height:9px;border-radius:50%;background:#3a2f60}
+.mock img{display:block;width:100%;height:auto}
+
+.aviso{background:var(--panel2);border:1px solid var(--linea);border-left:3px solid var(--gold);
+  border-radius:var(--r);padding:14px 16px;margin:22px 0}
+.aviso p{margin:0;color:var(--dim);font-size:15px}
+.aviso p + p{margin-top:8px}
+.aviso b{color:var(--txt)}
+
+.pasos-num{counter-reset:p;list-style:none;padding:0;margin:12px 0 0}
+.pasos-num li{counter-increment:p;position:relative;padding:0 0 0 38px;margin:0 0 12px;color:var(--dim)}
+.pasos-num li::before{content:counter(p);position:absolute;left:0;top:0;width:26px;height:26px;
+  display:grid;place-items:center;border-radius:50%;background:var(--violet);color:#fff;
+  font-weight:800;font-size:13px}
+.pasos-num b{color:var(--txt)}
+
+footer{border-top:1px solid var(--linea);margin-top:44px;padding:22px 0 40px;color:var(--dim);font-size:14px}
+.btn{display:inline-block;padding:12px 22px;border-radius:12px;font-weight:800;text-decoration:none;
+  color:#2a1c00;background:linear-gradient(180deg,var(--gold),#ff9d3c);
+  box-shadow:0 4px 16px rgba(0,0,0,.35)}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){.stars i{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="stars" aria-hidden="true"></div>
+
+<nav class="navbar" aria-label="Secciones de esta guía">
+  <div class="envoltura">
+    <a class="marca" href="#arriba" aria-label="Volver arriba">VULPO</a>
+    <ul class="indice">
+      <li><a href="#apoderado">Para el apoderado</a></li>
+      <li><a href="#ensena">Enseña</a></li>
+      <li><a href="#errores">Si se equivoca</a></li>
+      <li><a href="#comova">Cómo ver cómo va</a></li>
+      <li><a href="#alumno">Para el alumno</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="envoltura" id="arriba">
+  <div class="top">
+    <a href="/" style="font-size:13px;font-weight:600">← Volver a vulpo.cl</a>
+  </div>
+  <h1>Cómo se juega VULPO</h1>
+  <p class="bajada">Un recorrido de tres minutos, con <strong>pantallas reales del juego</strong>.
+     Arriba, lo que le sirve saber a un apoderado; más abajo, lo que necesita el alumno para
+     empezar.</p>
+</header>
+
+<main class="envoltura">
+
+<!-- ===================== APODERADO ===================== -->
+<section class="parte" id="apoderado">
+  <p class="kicker">Para el apoderado</p>
+  <h2>Qué es y qué va a estar haciendo su hijo o hija</h2>
+  <p>VULPO es un juego para repasar la materia del año, con las cuatro asignaturas del
+     currículum chileno. Se juega en el teléfono, en ratos cortos: una etapa son diez preguntas
+     y toma unos cinco minutos.</p>
+
+  <div class="paso">
+    <div class="txt">
+      <h3>Las cuatro asignaturas</h3>
+      <p>Historia, Matemáticas, Ciencias y Lenguaje, cada una con el contenido de <strong>su
+         curso</strong>. Algunos cursos suman además un módulo de <strong>Lectura</strong> con el
+         libro del colegio y un <strong>Vocabulario</strong>.</p>
+    </div>
+    <div><div class="tel"><img src="/assets/web/tutorial/asignaturas.png"
+      alt="Pantalla con las cuatro asignaturas: Historia, Matemáticas, Ciencias y Lenguaje"></div></div>
+  </div>
+
+  <div class="paso izq">
+    <div><div class="tel"><img src="/assets/web/tutorial/campana.png"
+      alt="Los capítulos de Historia en orden, cada uno con su ilustración"></div></div>
+    <div class="txt">
+      <h3>Un recorrido en orden, no preguntas sueltas</h3>
+      <p>Cada asignatura es una <strong>campaña por capítulos</strong> que cubre los objetivos del
+         año, en el orden en que se pasan en clases. Un capítulo se abre cuando termina el
+         anterior, y al final de cada uno hay un jefe que mezcla todo lo visto.</p>
+    </div>
+  </div>
+
+  <div class="paso">
+    <div class="txt">
+      <h3>Dentro de un capítulo</h3>
+      <p>Cuatro etapas y un jefe. <strong>Cada etapa es un objetivo de aprendizaje</strong> del
+         programa, y arriba de cada pregunta se ve, en lenguaje de niño, qué se está aprendiendo.</p>
+    </div>
+    <div><div class="tel"><img src="/assets/web/tutorial/mapa.png"
+      alt="Mapa de un capítulo con sus etapas y el jefe al final"></div></div>
+  </div>
+</section>
+
+<!-- ===================== ENSEÑA ===================== -->
+<section class="parte" id="ensena">
+  <p class="kicker">No es solo preguntar</p>
+  <h2>Primero enseña, después pregunta</h2>
+  <p>Antes de preguntar, VULPO explica. En Matemáticas cada objetivo tiene su
+     <strong>mini-clase</strong>; en Ciencias, Historia y Lenguaje, los capítulos abren con una
+     <strong>introducción</strong> que da el contexto antes de la primera pregunta.</p>
+
+  <div class="paso izq">
+    <div>
+      <div class="tel"><video src="/assets/web/tutorial/diagrama.mp4" autoplay muted loop playsinline
+        aria-label="El diagrama de la mini-clase se arrastra con el dedo"></video></div>
+      <p class="pie-img">Los diagramas se tocan y se arrastran</p>
+    </div>
+    <div class="txt">
+      <h3>Mini-clases con diagramas que se tocan</h3>
+      <p>Explicación breve, un <strong>diagrama interactivo</strong> con el que se puede jugar, un
+         ejemplo resuelto paso a paso, y recién entonces la práctica. Hay
+         <strong>99 clases</strong> repartidas en los tres cursos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ERRORES Y AYUDAS ===================== -->
+<section class="parte" id="errores">
+  <p class="kicker">Equivocarse sirve</p>
+  <h2>Qué pasa cuando se equivoca</h2>
+  <p>Un error no descuenta y no cierra nada. El juego se detiene, <strong>muestra cuál era la
+     respuesta correcta y explica por qué</strong>, y recién ahí sigue. Es el momento en que más
+     se aprende, así que no se pasa rápido.</p>
+
+  <div class="paso">
+    <div class="txt">
+      <h3>La corrección, en el momento</h3>
+      <p>La respuesta elegida queda en rojo, la correcta en verde, y debajo aparece la explicación.
+         Si una etapa no se aprueba, el juego <strong>ofrece repasar</strong>: en Matemáticas
+         reabre la mini-clase; en las demás, un repaso sin reloj que no reprueba ni descuenta.</p>
+    </div>
+    <div>
+      <div class="tel"><video src="/assets/web/tutorial/error.mp4" autoplay muted loop playsinline
+        aria-label="Al elegir una opción incorrecta se marca la correcta y aparece la explicación"></video></div>
+    </div>
+  </div>
+
+  <div class="paso izq">
+    <div><div class="tel"><img src="/assets/web/tutorial/error-explica.png"
+      alt="Panel con la respuesta correcta y su explicación, y el botón Continuar"></div></div>
+    <div class="txt">
+      <h3>Y ayudas para no quedarse pegado</h3>
+      <p>Dos <strong>comodines 50/50</strong> por etapa, que descartan dos opciones y son gratis.
+         La pregunta con ayuda cuenta para pasar, pero <strong>no se toma como medición</strong>.
+         En 3° básico, además, cada pregunta se puede <strong>escuchar</strong> con voz chilena
+         grabada, para el niño que todavía no lee de corrido.</p>
+    </div>
+  </div>
+
+  <div class="par">
+    <div>
+      <div class="tel"><video src="/assets/web/tutorial/ayuda.mp4" autoplay muted loop playsinline
+        aria-label="El comodín de ayuda descarta dos opciones incorrectas"></video></div>
+      <p class="pie-img">El comodín 50/50</p>
+    </div>
+    <div>
+      <div class="tel"><img src="/assets/web/tutorial/voz-3ro.png" alt="Botón Escuchar en una pregunta de 3° básico"></div>
+      <p class="pie-img">La voz, en 3° básico</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CÓMO VA ===================== -->
+<section class="parte" id="comova">
+  <p class="kicker">Para acompañar</p>
+  <h2>Cómo ver cómo va</h2>
+  <p>En la pantalla de inicio del juego hay un botón <strong>📊 Cómo va</strong>. Muestra qué ha
+     recorrido, cuándo jugó por última vez, lo que ha logrado y —lo más útil— los
+     <strong>temas que le costaron</strong>, con su nombre en lenguaje de niño para poder
+     preguntarle por ellos.</p>
+
+  <div class="par">
+    <div><div class="tel"><img src="/assets/web/tutorial/informe.png"
+      alt="Informe con la última vez que jugó, las etapas superadas y el avance por asignatura"></div></div>
+    <div><div class="tel"><img src="/assets/web/tutorial/informe-temas.png"
+      alt="Lista de temas en los que le vendría bien apoyo, con su nombre en lenguaje de niño"></div></div>
+  </div>
+
+  <div class="aviso">
+    <p><b>No es una calificación, y conviene tenerlo claro.</b> Las estrellas miden cuánto le salió
+       bien en cada etapa; sirven para saber de qué conversar, no para poner una nota. El dato lo
+       reporta el propio teléfono.</p>
+    <p>El resumen se arma en el aparato. Su avance además se guarda en su cuenta, para que
+       <b>no se pierda si cambia de teléfono</b>.</p>
+  </div>
+
+  <h3 style="margin-top:26px">Y el profesor ve el curso completo</h3>
+  <p>Aparte, y solo con una cuenta autorizada por el colegio, el docente ve
+     <strong>qué objetivos le están costando al curso</strong>, quiénes están jugando y puede
+     lanzar un desafío de refuerzo con los temas más flojos.</p>
+  <div class="mock" style="margin-top:14px">
+    <div class="barra"><i></i><i></i><i></i></div>
+    <img src="/assets/web/panel-dominio.png" alt="Panel del profesor con el avance del curso por objetivo de aprendizaje">
+  </div>
+  <p class="pie-img">Panel del profesor · datos de demostración</p>
+</section>
+
+<!-- ===================== ALUMNO ===================== -->
+<section class="parte" id="alumno">
+  <p class="kicker">Para el alumno</p>
+  <h2>Cómo empiezo</h2>
+  <ol class="pasos-num">
+    <li>Abre el enlace que te pasó tu profesor o tu apoderado. <b>No hay que instalar nada</b>
+        para jugar.</li>
+    <li>Toca <b>JUGADOR</b>, escribe tu nombre y elige tu zorro.</li>
+    <li>Si tu curso está inscrito, toca <b>🎟️ Tengo un código</b> y escribe el
+        <b>ALU-</b> que te dieron. Eso te suma al ranking de tu curso y guarda tu avance
+        aunque cambies de teléfono.</li>
+    <li>Elige una asignatura y parte por el primer capítulo. Los demás se van abriendo.</li>
+  </ol>
+
+  <div class="paso" style="margin-top:10px">
+    <div class="txt">
+      <h3>Las estrellas y lo que ganas</h3>
+      <p>Cada etapa da <strong>hasta tres estrellas</strong>, más XP y monedas. Antes de ver tu
+         puntaje el juego te pregunta cómo crees que te fue: sirve para darte cuenta de cuánto
+         sabes de verdad.</p>
+    </div>
+    <div><div class="tel"><img src="/assets/web/tutorial/resultado.png"
+      alt="Pantalla de resultado con dos estrellas, XP, monedas y un logro desbloqueado"></div></div>
+  </div>
+
+  <div class="par">
+    <div>
+      <div class="tel"><img src="/assets/web/tutorial/tienda.png" alt="Tienda con skins comprables con monedas"></div>
+      <p class="pie-img">Con las monedas compras skins</p>
+    </div>
+    <div>
+      <div class="tel"><img src="/assets/web/tutorial/ranking.png" alt="Ranking del curso ordenado por experiencia"></div>
+      <p class="pie-img">Y compites con tu curso</p>
+    </div>
+  </div>
+
+  <div class="paso izq" style="margin-top:6px">
+    <div><div class="tel"><img src="/assets/web/tutorial/jefe.png"
+      alt="Pantalla del Jefe Final con el villano de la asignatura"></div></div>
+    <div class="txt">
+      <h3>Al final de cada asignatura, un Jefe Final</h3>
+      <p>Cuando terminas todos los capítulos aparece el <strong>Jefe Final</strong>: barra de vida,
+         tres corazones y preguntas de todo el año. Vencerlo te da una <strong>skin exclusiva</strong>,
+         una insignia y una corona que se ve junto a tu nombre en el ranking.</p>
+    </div>
+  </div>
+
+  <div class="aviso">
+    <p><b>Dos cosas que conviene saber.</b> VULPO <b>necesita internet</b>: no funciona sin
+       conexión. Y puedes <b>agregarlo a la pantalla de tu teléfono</b> para no perder el enlace en
+       el chat — el propio juego te explica cómo, desde su pantalla de inicio.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="envoltura">
+  <p style="margin:0 0 12px"><a class="btn" href="/">Conocer VULPO</a></p>
+  <p style="margin:0">¿Dudas? <a href="mailto:vulpochile.app@gmail.com">vulpochile.app@gmail.com</a>
+     · <a href="/profesor.html">Panel del profesor</a></p>
+</footer>
+
+<script>
+/* Marca en la barra la sección en la que vas, y la trae a la vista si la barra está
+   desplazada: en un teléfono las cinco píldoras no caben, así que sin esto la de tu sección
+   puede quedar fuera de pantalla y la barra deja de decir "dónde estoy".
+   Con IntersectionObserver y no con un listener de scroll: el navegador ya lleva esa cuenta.
+   Si el navegador no lo tiene, la barra sigue sirviendo para navegar; solo no se ilumina. */
+(function(){
+  var secs = [].slice.call(document.querySelectorAll('section.parte'));
+  var links = {};
+  [].forEach.call(document.querySelectorAll('.indice a'), function(a){
+    links[a.getAttribute('href').slice(1)] = a; });
+  if (!secs.length || !window.IntersectionObserver) return;
+  /* ⚠️ Cual seccion esta activa se decide por GEOMETRIA, no por "la primera que
+     intersecta". Con `scroll-margin-top` la seccion ANTERIOR sigue rozando la banda por
+     unos pixeles, asi que tomar la primera en orden dejaba el resaltado corrido en uno:
+     en "Enseña" marcaba "Para el apoderado". La regla buena es la ultima cuyo titulo ya
+     paso bajo la barra. */
+  function marcar(){
+    var act = null;
+    secs.forEach(function(s){ if (s.getBoundingClientRect().top <= 120) act = s; });
+    if (!act) act = secs[0];
+    for (var k in links) links[k].classList.toggle('aqui', k === act.id);
+    var a = links[act.id];
+    if (a && a.scrollIntoView) a.scrollIntoView({block:'nearest', inline:'nearest'});
+  }
+  /* El observer se usa solo como DISPARADOR -el navegador ya lleva la cuenta de que entra
+     y sale de pantalla-, y el calculo lo hace marcar(). Sin el, habria que escuchar scroll. */
+  var io = new IntersectionObserver(marcar, {threshold:[0, .01, .5, 1]});
+  secs.forEach(function(s){ io.observe(s); });
+  addEventListener('scroll', marcar, {passive:true});
+  marcar();
+})();
+
+/* Las estrellas del fondo, como en la landing y en el juego. Decorativas: si no cargan, no
+   se pierde nada. Respetan quien pidió menos movimiento (el CSS apaga la animación). */
+(function(){
+  var c = document.querySelector('.stars');
+  if (!c) return;
+  var html = '';
+  for (var i = 0; i < 60; i++)
+    html += '<i style="left:' + (Math.random()*100).toFixed(2) + '%;top:' +
+            (Math.random()*100).toFixed(2) + '%;animation-delay:' +
+            (Math.random()*4).toFixed(2) + 's"></i>';
+  c.innerHTML = html;
+})();
+</script>
+</body>
+</html>
