@@ -129,8 +129,13 @@ def textos():
     # el HTML: uno que ya no exista se avisa en vez de seguir pagandose en silencio.
     # Paso de verdad -"¿Como te fue?" salio del resultado en la Sesion 74 y aqui siguio
     # pidiendose- y el sintoma es mudo, porque un clip de mas no rompe nada.
-    for m in ["¡Nivel superado!", "Lo que vas a aprender", "Casi lo logras"]:
-        if m not in h:
+    # OJO: se busca en el fork Y en assets/js/motor.js. Desde la Sesion 75 el juego vive
+    # en el modulo, asi que mirar solo el index.html daba falsa alarma -y peor: el aviso
+    # SALTA el clip, o sea que un texto fijo que viviera en el motor se habria quedado sin
+    # voz en silencio, que es justo el fallo que este chequeo venia a evitar.
+    h_todo = h + io.open(RAIZ / "assets" / "js" / "motor.js", encoding="utf-8").read()
+    for m in ["¡Nivel superado!", "Lo que vas a aprender"]:
+        if m not in h_todo:
             print("  AVISO: '%s' ya no esta en el juego; sobra en la lista de fijos" % m)
             continue
         pares.append((m, m))
@@ -140,6 +145,40 @@ def textos():
     _p = re.search(r'<p id="predVoz"[^>]*>([^<]+)</p>', h)
     if _p:
         pares.append((_p.group(1), _nv.normalizar(_p.group(1))))
+
+    # Las MINI-CLASES y las INTRODUCCIONES. Son la pantalla con mas texto del juego, y
+    # eran lo unico de 3 basico sin voz -justo para el nino que todavia no lee de corrido,
+    # que es la razon entera de que 3 tenga voz-.
+    #
+    # Lo que se pronuncia lo decide `textoLocutable(b)` en assets/js/lecciones.js, y esta
+    # funcion es su ESPEJO: si las dos se separan, se pagan clips que nadie oye o se deja
+    # muda una pantalla, y ninguna de las dos cosas da error. Por eso el `else` de abajo
+    # MUERE en vez de saltarse un bloque desconocido.
+    #
+    # Ojo: se lee del DATO y no del DOM. El cuerpo ya pintado arrastra los rotulos del SVG
+    # ("centenas", "7 centenas"), que son apoyo visual y suenan a disparate leidos de corrido.
+    lecciones = BANCO.parent / "lecciones.json"
+    if lecciones.exists():
+        for lec in json.load(io.open(lecciones, encoding="utf-8"))["lecciones"]:
+            for b in lec["bloques"]:
+                tipo = b.get("t")
+                if tipo == "texto":
+                    dice = b.get("md") or ""
+                elif tipo == "imagen":
+                    dice = b.get("pie") or ""
+                elif tipo == "diagrama":
+                    dice = b.get("intro") or ""
+                elif tipo == "ejemplo":
+                    dice = ". ".join(x for x in [b.get("intro") or ""] + list(b.get("pasos") or []) if x)
+                elif tipo == "practica":
+                    continue          # la practica es un quiz: sus textos ya vienen del banco
+                else:
+                    sys.exit("Bloque de leccion desconocido: %r en %s. \n"
+                             "Si es nuevo y tiene texto hablado, agregalo AQUI y en "
+                             "textoLocutable() de assets/js/lecciones.js: las dos tienen "
+                             "que decir lo mismo." % (tipo, lec["id"]))
+                if dice.strip():
+                    pares.append((dice, _nv.normalizar(dice)))
 
     vistos, unicos = set(), []
     for ve, dice in pares:
@@ -241,10 +280,10 @@ def main():
         manifiesto[ve] = arch
         if i % 50 == 0 or i == len(faltan):
             print("  %d/%d" % (i, len(faltan)), flush=True)
-            io.open(MANIFIESTO, "w", encoding="utf-8").write(
+            io.open(MANIFIESTO, "w", encoding="utf-8", newline="\n").write(
                 json.dumps(manifiesto, ensure_ascii=False, indent=1))
 
-    io.open(MANIFIESTO, "w", encoding="utf-8").write(
+    io.open(MANIFIESTO, "w", encoding="utf-8", newline="\n").write(
         json.dumps(manifiesto, ensure_ascii=False, indent=1))
     clips = list(SALIDA.glob("*.mp3"))
     peso = sum(f.stat().st_size for f in clips)

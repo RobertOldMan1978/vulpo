@@ -202,7 +202,7 @@ mobile-first y se reutiliza. Nada de eso está implementado.
 
 Antes de tocar `sw.js` hay que leer su §2, que corrige el análisis externo con hechos del
 repositorio: hoy hay **tres apps forkeadas** (`/juego/`, `/3ro/`, `/7mo/`), así que un manifiesto
-único abriría el curso equivocado; y **`assets/` pesa 455 MB** (244 MB solo de voz de 3°), así que
+único abriría el curso equivocado; y **`assets/` pesa 473 MB** (252 MB solo de voz de 3°), así que
 la precarga `cache-first` que propone el análisis le bajaría 250 MB al teléfono de un niño en la
 primera apertura. El progreso local en `localStorage` es el requisito real del modelo de
 suscripción, y es trabajo de backend, no de PWA.
@@ -319,7 +319,7 @@ eso ahora lo comprueba `auditar-banco-nivel.py`, probado rompiendo un banco a pr
 > `pendiente.md` y `docs/roadmap-tecnico.md`.
 >
 > ⚠️ **Y hay que medir en BYTES REALES, no en tamaño de disco.** Las cifras anteriores venían
-> de `du` sin `--apparent-size`, que cuenta bloques de 4 KB: con **11.391 archivos** de voz eso
+> de `du` sin `--apparent-size`, que cuenta bloques de 4 KB: con **11.536 archivos** de voz eso
 > infla ~26 MB, y el proyecto se creía 20 MB más pesado de lo que es. Contra el techo de 1 GB de
 > GitHub Pages lo que cuenta son los bytes. `du -sm assets` en Git Bash además devuelve un
 > número **menor que el de su propia subcarpeta**, así que aquí no sirve: se mide recorriendo
@@ -327,12 +327,12 @@ eso ahora lo comprueba `auditar-banco-nivel.py`, probado rompiendo un banco a pr
 
 | | |
 |---|---|
-| `assets/voz/` (voz pregrabada de 3°, **6 asignaturas**) | **244 MB** |
+| `assets/voz/` (voz pregrabada de 3°, **6 asignaturas**) | **252 MB** |
 | `assets/originales/` (arte crudo, **excluido del sitio** por `_config.yml`) | 174 MB |
 | `contenido/` (los bancos completos) | 7,3 MB |
 | `assets/audio/` (música) | 5,0 MB |
-| **`assets/` completo** | **455 MB** |
-| **Sitio publicado** (sin `.git` ni originales) | **324 MB** |
+| **`assets/` completo** | **473 MB** |
+| **Sitio publicado** (sin `.git` ni originales) | **343 MB** |
 
 El techo de GitHub Pages es **1 GB**, y la voz de 4° suma otros ~254 MB. Por eso la regla del
 proyecto —voz pregrabada solo de 1° a 4°— no es una preferencia pedagógica: **es también la
@@ -7801,3 +7801,91 @@ nada porque nadie lo llama todavía. **Un push basta.**
   **después de aprobar, nunca en paralelo, y con autorización explícita porque gasta su cuenta de
   Azure**.
 - **El camino crítico sigue siendo el Bloque B:** los bancos de 4°, 5° y 6°.
+
+#### Cierre de la Sesión 86 — las lecciones de 3° estrenan voz, y el banco queda 99/99
+
+Roberto aprobó las 24 nuevas y autorizó los clips. **No se tocó ningún banco de preguntas.**
+
+**99 de 99 lecciones aprobadas.** Su exportación estaba **otra vez sin aplicar** en Descargas —la
+segunda del día—, así que se aplicó antes de nada. El diff fueron **2 líneas por lección**, que es
+el formato canónico haciendo su trabajo: los dos archivos que la mañana se había reformateado
+enteros ya no vuelven a hacerlo.
+
+**145 clips · US$0,27**, repartidos así: 108 de Matemática, 14 de Historia, 9 de Ciencias y 14 de
+Lenguaje. Menos que los ~250 estimados, porque **los bloques de práctica no se locutan**: su texto
+ya viene del banco y sus clips existen desde hace sesiones.
+
+##### El generador no sabía leer `lecciones.json`, y ese era el trabajo
+
+Era la Tarea 15 del plan A25. Lo que se le agregó es el **espejo de `textoLocutable(b)`**, la
+función del juego que decide qué se pronuncia: `texto`→`md`, `imagen`→`pie`, `diagrama`→`intro`,
+`ejemplo`→`intro`+`pasos`, y la práctica **no**.
+
+> ⚠️ **Si las dos se separan, se pagan clips que nadie oye o queda una pantalla muda, y ninguna de
+> las dos cosas da error.** Por eso el `else` **mata** en vez de saltarse un bloque desconocido —
+> probado metiendo un bloque falso: muere con el mensaje correcto y el archivo queda restaurado
+> byte a byte. Y por eso se lee del **dato y no del DOM**: el cuerpo ya pintado arrastra los
+> rótulos del SVG ("centenas", "7 centenas"), que son apoyo visual y suenan a disparate leídos de
+> corrido.
+
+**La comprobación que decidía si el gasto servía** —el manifiesto se indexa por el texto mostrado,
+así que un carácter de diferencia es un clip pagado que nunca se encuentra— se hizo **contra la
+`textoLocutable` real recortada del módulo**, no contra una copia escrita a mano, que habría
+comprobado mi copia contra mi copia. **145 contra 145, cero de diferencia.**
+
+##### Qué dice la voz
+
+De los 145, el normalizador toca **5**, revisados uno por uno **antes** de pagar: `2/3` → "dos
+tercios", `▢ + 3 = 10` → "el cuadrito más 3 es igual a 10", `(B, 3)` → "columna B, fila 3" (el
+arreglo de la Sesión 60) y "de 5 en 5" → "de cinco en cinco" (el del "enero"). Los cinco correctos.
+
+Auditados después con reconocimiento de voz, cuatro salen limpios. En el de `▢ + 3 = 10` **la
+palabra "menos" desaparece** en la transcripción, que es exactamente el defecto de la Sesión 56, así
+que se contrastó contra el corpus en vez de confiar: **19 de 20** clips que dicen "menos" lo
+transcriben bien, y el único que no es éste. El patrón lo explica —*"menos" entre palabras* se
+transcribe; *entre números* se colapsa a notación (`10 menos 3` → `−1`, `7 más 3` → `73`)—, o sea
+el artefacto ya documentado del transcriptor y no la voz.
+
+> Aun así **no se puede escuchar desde aquí**, así que queda anotado como el copihue y los números
+> romanos: `assets/voz/mat3/0f9b533696de594b.mp3`.
+
+##### Un aviso viejo que era falso, con un agujero real detrás
+
+El generador avisaba en cada corrida que `"Casi lo logras"` ya no existe en el juego. Era cierto a
+medias: el texto **se mudó a `assets/js/motor.js`** con la extracción del motor (Sesión 75), y el
+chequeo solo mira el `index.html` del fork.
+
+> **Lo grave no era el ruido sino que ese aviso SALTA el clip.** Cualquier texto fijo que hoy viva
+> en el motor se habría quedado mudo en silencio — justo lo que ese chequeo venía a evitar. Ahora
+> busca en los dos. Y `"Casi lo logras"` salió de la lista porque su pantalla —la derrota del Jefe
+> Final— **no tiene botón 🔊**: nadie lo lee.
+
+##### Verificación
+
+- **Cobertura:** los 145 textos locutables tienen clip, **ninguno de 0 bytes**, y en todo
+  `assets/voz` tampoco hay ninguno vacío.
+- **En tiempo de ejecución**, fusionando los 6 manifiestos como hace `VOZ.init`: los 145 resuelven,
+  y la muestra pedida responde **200 `audio/mpeg`** (24–176 KB) pese al `<base href="/">`.
+- **Jugando:** la mini-clase de Matemática de 3° abre con sus **5 bloques y 🔊 en los 5**; la
+  captura muestra la recta con sus saltos, el botón en su sitio y el «← Salir» ya sin comerse la
+  barra de progreso.
+- Tablero: **99 casillas, 99 marcadas, 0 pendientes.** Los tres cursos con 20/23/27 expediciones,
+  guardado de 8° intacto con sus 777 XP, **cero excepciones y cero 404**.
+
+> **Y un error de medición propio, el cuarto idéntico:** medí *"sin clip: 7"* consultando
+> `VOZ.mapa`, que no existe — el módulo usa `VOZ_MAP` interno. **Cuando un conteo da cero o da
+> todo mal, el primer sospechoso es el selector, no el producto.**
+
+##### Y los scripts de voz escribían CRLF
+
+Lo delató `git add`, no una revisión: los dos escribían el manifiesto y el almacén de auditoría
+con `io.open(..., "w")` a secas, que en Windows traduce a CRLF. Git lo normalizaba al índice, así
+que **el repositorio siempre estuvo bien y el disco no**, que es exactamente el desorden que la
+Sesión 75 midió y `.gitattributes` vino a cerrar. Los cuatro puntos de escritura pasan a
+`newline="
+"` y los 7 archivos ya escritos se normalizaron. **No invalidó ni un clip**: el
+recuento posterior da US$0,00.
+
+**El peso se movió** y quedó re-medido en bytes reales: `assets/voz` **252 MB**, `assets/`
+**473 MB**, sitio publicado **343 MB** (era 244/455/324). Actualizado en los tres documentos donde
+vive esa cifra. Con eso **A25 queda COMPLETA**.

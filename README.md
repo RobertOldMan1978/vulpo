@@ -112,7 +112,7 @@ con su voz grabada; **no está enlazada desde el sitio**. Sus bancos quedaron **
 muestreo**, y desde el 31/08/2026 no queda ninguno pendiente. Matemática se juega como **camino
 de aprendizaje**: **26 mini-clases**, una por objetivo, cada una con su diagrama interactivo
 —bloques de cien, tabla de valor posicional, recta con saltos, reloj, monedas, pictograma,
-diagrama de puntos— y su práctica del banco. Dentro de Matemática lleva además un **Reto Sin Fin** de cálculo mental
+diagrama de puntos—, su práctica del banco y **su voz grabada**, como todo lo demás del curso. Dentro de Matemática lleva además un **Reto Sin Fin** de cálculo mental
 **sin cronómetro**, medido por escalones: practica sus objetivos de cálculo mental, tablas y
 división, y como genera las operaciones por código no consume banco de preguntas ni voz. Y tiene su **📖 Lectura** con el primer libro del colegio, *Cuentos de Ada* de Pepe Pelayo (Santillana Infantil): 10 tramos, uno por cuento, con **101 preguntas de comprensión originales y aprobadas**, también con voz grabada. El niño lee el ejemplar: el juego no reproduce el texto del libro, y por eso su portada es la genérica de Lectura y no la tapa. Guarda su avance **y su identidad en línea aparte** de 8°, aunque
 los dos se sirvan del mismo dominio, así que un curso de 3° y uno de 8° pueden convivir

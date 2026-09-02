@@ -68,11 +68,11 @@ Medido en el repositorio hoy:
 
 | Carpeta | Peso |
 |---|---|
-| `assets/voz/` (voz pregrabada de 3°) | **244 MB** en bytes reales — 6 asignaturas, 11.391 clips |
+| `assets/voz/` (voz pregrabada de 3°) | **252 MB** en bytes reales — 6 asignaturas, 11.536 clips |
 | `assets/originales/` (arte crudo, nunca se sirve) | **174 MB** |
 | `assets/audio/` (música) | 5,0 MB |
 | `contenido/` (los bancos de preguntas) | 7,3 MB |
-| **Sitio publicado** (sin `.git` ni `originales`, ya excluidos) | **324 MB** |
+| **Sitio publicado** (sin `.git` ni `originales`, ya excluidos) | **343 MB** |
 
 Un service worker con `cache-first` sobre "imágenes, audio y fuentes" —tal cual lo propone el
 documento— **le bajaría 250 MB a un teléfono en la primera apertura de 3° básico**. En el

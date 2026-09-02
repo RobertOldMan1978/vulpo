@@ -124,9 +124,9 @@ def main():
                 hecho[t] = oido
                 if i % 100 == 0 or i == len(faltan):
                     print("  %d/%d" % (i, len(faltan)), flush=True)
-                    io.open(SALIDA, "w", encoding="utf-8").write(
+                    io.open(SALIDA, "w", encoding="utf-8", newline="\n").write(
                         json.dumps(hecho, ensure_ascii=False, indent=1))
-        io.open(SALIDA, "w", encoding="utf-8").write(
+        io.open(SALIDA, "w", encoding="utf-8", newline="\n").write(
             json.dumps(hecho, ensure_ascii=False, indent=1))
 
     # ---- informe ----
