@@ -4,47 +4,96 @@
    "id": "ci7-materia",
    "titulo": "Antes de empezar: La materia y sus cambios",
    "bloques": [
-    {"t": "texto", "md": "Todo lo que ocupa lugar está hecho de partículas. Lo que distingue a un sólido de un gas no es de qué está hecho, sino qué tan juntas y qué tan quietas están esas partículas."},
-    {"t": "diagrama", "kind": "estados", "params": {},
-     "intro": "Las mismas partículas: ordenadas en el sólido, sueltas en el gas."},
-    {"t": "texto", "md": "Eso explica por qué un gas se puede comprimir y un sólido no, y por qué el agua hierve sin dejar de ser agua."},
-    {"t": "texto", "md": "En este capítulo vas a ver cómo se comportan los gases, cómo se separa una mezcla de una sustancia pura, y cuándo un cambio es solo físico y cuándo aparece una sustancia nueva."}
+    {
+     "t": "texto",
+     "md": "Todo lo que ocupa lugar está hecho de partículas. Lo que distingue a un sólido de un gas no es de qué está hecho, sino qué tan juntas y qué tan quietas están esas partículas."
+    },
+    {
+     "t": "diagrama",
+     "kind": "estados",
+     "params": {},
+     "intro": "Las mismas partículas: ordenadas en el sólido, sueltas en el gas."
+    },
+    {
+     "t": "texto",
+     "md": "Eso explica por qué un gas se puede comprimir y un sólido no, y por qué el agua hierve sin dejar de ser agua."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver cómo se comportan los gases, cómo se separa una mezcla de una sustancia pura, y cuándo un cambio es solo físico y cuándo aparece una sustancia nueva."
+    }
    ]
   },
   {
    "id": "ci7-fuerzas",
    "titulo": "Antes de empezar: Fuerzas y presión",
    "bloques": [
-    {"t": "texto", "md": "Una fuerza no siempre mueve algo. También lo puede deformar, frenar o mantener quieto: un libro sobre la mesa está empujado hacia abajo y sostenido hacia arriba al mismo tiempo."},
-    {"t": "texto", "md": "La presión es otra cosa que la fuerza, y ahí se confunde casi todo el mundo: es la misma fuerza repartida en más o menos superficie. Por eso un cuchillo afilado corta mejor que uno romo aunque empujes igual, y por eso las raquetas para la nieve no se hunden."},
-    {"t": "texto", "md": "En este capítulo vas a ver cómo se representan las fuerzas, cómo se suman cuando actúan varias a la vez, y qué efectos tiene la presión en los sólidos, los líquidos y los gases."}
+    {
+     "t": "texto",
+     "md": "Una fuerza no siempre mueve algo. También lo puede deformar, frenar o mantener quieto: un libro sobre la mesa está empujado hacia abajo y sostenido hacia arriba al mismo tiempo."
+    },
+    {
+     "t": "texto",
+     "md": "La presión es otra cosa que la fuerza, y ahí se confunde casi todo el mundo: es la misma fuerza repartida en más o menos superficie. Por eso un cuchillo afilado corta mejor que uno romo aunque empujes igual, y por eso las raquetas para la nieve no se hunden."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver cómo se representan las fuerzas, cómo se suman cuando actúan varias a la vez, y qué efectos tiene la presión en los sólidos, los líquidos y los gases."
+    }
    ]
   },
   {
    "id": "ci7-tierra",
    "titulo": "Antes de empezar: La Tierra que se mueve",
    "bloques": [
-    {"t": "texto", "md": "La superficie de la Tierra está partida en placas que se mueven muy lento, unos pocos centímetros al año. No se nota, pero lleva millones de años ocurriendo."},
-    {"t": "texto", "md": "Ese movimiento es el que explica de una sola vez cosas que parecen sueltas: dónde hay volcanes, dónde tiembla, cómo se levantó la cordillera y por qué Chile tiene las tres cosas."},
-    {"t": "texto", "md": "En este capítulo vas a ver el modelo de las placas, la actividad volcánica y sísmica, cómo se forman y se transforman las rocas, y qué hace que el clima sea distinto en cada zona del planeta."}
+    {
+     "t": "texto",
+     "md": "La superficie de la Tierra está partida en placas que se mueven muy lento, unos pocos centímetros al año. No se nota, pero lleva millones de años ocurriendo."
+    },
+    {
+     "t": "texto",
+     "md": "Ese movimiento es el que explica de una sola vez cosas que parecen sueltas: dónde hay volcanes, dónde tiembla, cómo se levantó la cordillera y por qué Chile tiene las tres cosas."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver el modelo de las placas, la actividad volcánica y sísmica, cómo se forman y se transforman las rocas, y qué hace que el clima sea distinto en cada zona del planeta."
+    }
    ]
   },
   {
    "id": "ci7-microbios",
    "titulo": "Antes de empezar: Microorganismos y defensas",
    "bloques": [
-    {"t": "texto", "md": "La mayoría de los microorganismos no produce enfermedades. Muchos son necesarios: sin ellos no habría pan, ni yogur, ni quesos, y el suelo no reciclaría los restos de lo que muere."},
-    {"t": "texto", "md": "Virus, bacterias y hongos son tres cosas distintas, y esa diferencia importa: un antibiótico actúa sobre bacterias y no hace nada contra un virus."},
-    {"t": "texto", "md": "En este capítulo vas a ver en qué se diferencian, qué papel cumplen en la industria y en la naturaleza, y cómo el cuerpo se defiende con barreras que van de la piel hasta las células del sistema inmune."}
+    {
+     "t": "texto",
+     "md": "La mayoría de los microorganismos no produce enfermedades. Muchos son necesarios: sin ellos no habría pan, ni yogur, ni quesos, y el suelo no reciclaría los restos de lo que muere."
+    },
+    {
+     "t": "texto",
+     "md": "Virus, bacterias y hongos son tres cosas distintas, y esa diferencia importa: un antibiótico actúa sobre bacterias y no hace nada contra un virus."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver en qué se diferencian, qué papel cumplen en la industria y en la naturaleza, y cómo el cuerpo se defiende con barreras que van de la piel hasta las células del sistema inmune."
+    }
    ]
   },
   {
    "id": "ci7-sexualidad",
    "titulo": "Antes de empezar: Sexualidad y autocuidado",
    "bloques": [
-    {"t": "texto", "md": "Este capítulo es parte del programa de Ciencias Naturales de séptimo básico y se trata con el mismo criterio que el resto: describir cómo funciona el cuerpo, con los nombres que usa la ciencia."},
-    {"t": "texto", "md": "La pubertad es una etapa de cambios físicos, afectivos y sociales. Ocurre a distinta edad en cada persona, y esa diferencia es normal: no hay un calendario correcto."},
-    {"t": "texto", "md": "En este capítulo vas a ver qué cambios trae la pubertad, cómo se forma un nuevo ser humano, y qué son las infecciones de transmisión sexual y cómo se previenen."}
+    {
+     "t": "texto",
+     "md": "Este capítulo es parte del programa de Ciencias Naturales de séptimo básico y se trata con el mismo criterio que el resto: describir cómo funciona el cuerpo, con los nombres que usa la ciencia."
+    },
+    {
+     "t": "texto",
+     "md": "La pubertad es una etapa de cambios físicos, afectivos y sociales. Ocurre a distinta edad en cada persona, y esa diferencia es normal: no hay un calendario correcto."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver qué cambios trae la pubertad, cómo se forma un nuevo ser humano, y qué son las infecciones de transmisión sexual y cómo se previenen."
+    }
    ]
   }
  ]

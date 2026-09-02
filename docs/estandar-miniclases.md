@@ -205,6 +205,30 @@ Ya no se toca el motor. Son cuatro datos:
    muestra nunca ve esa parte del producto — pasó con el Reto de Cálculo (Sesión 70) y otra vez
    con las mini-clases (Sesión 82).
 
+## Cómo se aprueban (02/09/2026)
+
+**Hasta el 02/09 no había forma de aprobarlas**, siendo lo único del proyecto que **enseña**: el
+tablero solo las contaba con un chip y el informe traía su casilla impresa, pero esa marca no
+llegaba a ninguna parte. Ahora el circuito es el mismo de las preguntas, de punta a punta:
+
+1. **`dev/tablero.html`** las muestra **enteras** —texto, ejemplo y **el diagrama dibujado de
+   verdad**, porque el generador incrusta `assets/js/lecciones.js`— con su casilla, en una sección
+   propia por asignatura y un botón *"✓ Aprobar todas"*.
+2. **"Exportar revisadas"** ya las incluye: usan el mismo almacén y su `id` (`ma3-oa01`,
+   `ci8-celula`) no choca con ningún id de pregunta.
+3. **`aplicar-revisadas.py`** escribe `revisada:true` en el `lecciones.json` que corresponda.
+
+⚠️ **El `lecciones.json` va en el formato canónico** (`indent=1`, LF, sin salto final), igual que
+un banco. Los tres de Ciencias nacieron escritos a mano con otro formato y **marcar dos lecciones
+reformateaba el archivo entero —74 líneas por 2 marcas—**, que es el mismo defecto que la Sesión 72
+arregló para los bancos. Canonizados, marcar una lección son **2 líneas**.
+
+⚠️ **El tablero abre en "👁 Solo lo pendiente"** y manda las asignaturas sin pendientes **al final**,
+no solo las pliega: con 23 de 29 aprobadas, dejarlas arriba son ~2.700 px de scroll antes de llegar
+a lo que hay que revisar. Y decide qué está pendiente con **el dato que declara el generador**
+(`data-pend-preg`), no contando casillas del DOM: **las preguntas solo se pintan al desplegar su
+OA**, así que 12 de las 29 secciones tienen cero casillas y contarlas las daba por no aprobadas.
+
 ## ⚠️ Lo que hay que saber antes de publicar
 
 **Cablear las unidades sin escribir sus lecciones deja la asignatura INJUGABLE.** Con el

@@ -57,6 +57,23 @@ def bancos():
             yield carpeta.name, preg
 
 
+def lecciones():
+    """Los archivos de mini-clases e introducciones.
+
+    ⚠️ Se aplican por el MISMO archivo exportado y por el mismo `id`: el tablero guarda
+    todas las marcas juntas en localStorage y una leccion (ma3-oa01, ci8-celula) no
+    choca con ningun id de pregunta. Sin esto, las 75 lecciones del proyecto se podian
+    marcar en el tablero y la marca no llegaba a ninguna parte — que es como estuvieron
+    hasta el 02/09, cuando ni siquiera habia casilla que marcar.
+    """
+    for carpeta in sorted(CONTENIDO.iterdir()):
+        if not carpeta.is_dir() or carpeta.name.startswith("_"):
+            continue
+        lec = carpeta / "lecciones.json"
+        if lec.exists():
+            yield carpeta.name, lec
+
+
 def ubicar_revisadas(args):
     rutas = [a for a in args if not a.startswith("--")]
     if rutas:
@@ -84,11 +101,14 @@ def escribir_banco(ruta, d):
     Ahora los 16 bancos comparten formato, asi que conservar lo que se encuentre pasaria
     a ser el mecanismo por el que uno vuelve a divergir sin que nadie lo vea.
     """
+    # La clave de la lista cambia segun el archivo: los bancos traen "preguntas" y los
+    # de mini-clases "lecciones". Todo lo demas del formato canonico es identico.
+    lista = "preguntas" if "preguntas" in d else "lecciones"
     orden = {}
     for k in CABECERA:
-        if k in d:
+        if k in d and k != lista:
             orden[k] = d[k]
-    orden["preguntas"] = d["preguntas"]
+    orden[lista] = d[lista]
     io.open(ruta, "w", encoding="utf-8", newline="\n").write(
         json.dumps(orden, ensure_ascii=False, indent=1))
 
@@ -114,6 +134,7 @@ def main():
     else:
         print("Modo seguro: solo se AGREGAN marcas. Usa --sincronizar para poder desmarcar.\n")
 
+    tot_lec_marcadas = tot_lec = 0
     tot_marcadas = tot_desmarcadas = tot_preg = tot_rev = 0
     sin_tocar = []
     huerfanos = set(ids)
@@ -154,12 +175,40 @@ def main():
         else:
             sin_tocar.append("%s %d/%d" % (nombre, rev, len(preguntas)))
 
+    # --- las mini-clases y las introducciones ------------------------------
+    # Mismo archivo exportado, mismo id, mismo modo seguro. Se escriben con el mismo
+    # detector de formato que los bancos, asi que marcar 26 lecciones cambia 26 lineas
+    # y no reformatea el archivo entero.
+    for nombre, lec in lecciones():
+        dl = json.load(open(lec, encoding="utf-8"))
+        lista = dl.get("lecciones", [])
+        marcadas = 0
+        for l in lista:
+            lid = l.get("id")
+            huerfanos.discard(lid)
+            esta = lid in ids
+            era = bool(l.get("revisada"))
+            if esta and not era:
+                l["revisada"] = True
+                marcadas += 1
+            elif era and not esta and sincronizar:
+                l["revisada"] = False
+        rev = sum(1 for l in lista if l.get("revisada"))
+        tot_lec += len(lista)
+        tot_lec_marcadas += marcadas
+        if marcadas:
+            print("  %-24s %4d/%4d lecciones     (+%d)" % (nombre, rev, len(lista), marcadas))
+            if not seco:
+                escribir_banco(lec, dl)
+
     if sin_tocar:
         print("\n  sin cambios: " + " · ".join(sin_tocar))
 
     print("\n=== %d bancos · %d/%d revisadas en total ===" % (
         len(list(bancos())), tot_rev, tot_preg))
     print("marcadas: +%d   desmarcadas: -%d" % (tot_marcadas, tot_desmarcadas))
+    if tot_lec:
+        print("mini-clases e introducciones: +%d marcadas (de %d)" % (tot_lec_marcadas, tot_lec))
 
     if huerfanos:
         # Un id exportado que no existe en ningun banco casi siempre significa que el

@@ -4,42 +4,94 @@
    "id": "ci8-celula",
    "titulo": "Antes de empezar: La célula",
    "bloques": [
-    {"t": "texto", "md": "Todo lo que está vivo está hecho de células. Un helecho, una bacteria y tú: la diferencia es cuántas y de qué tipo, no si las tienen."},
-    {"t": "diagrama", "kind": "celula", "params": {"tipo": "animal"},
-     "intro": "Esta es una célula animal. Fíjate en el núcleo, que guarda las instrucciones, y en la mitocondria, donde se obtiene la energía."},
-    {"t": "texto", "md": "En este capítulo vas a ver por qué la célula es la unidad de la vida, qué hace cada una de sus partes, cómo entran y salen sustancias de ella, y qué tienen de propio las células de las plantas."}
+    {
+     "t": "texto",
+     "md": "Todo lo que está vivo está hecho de células. Un helecho, una bacteria y tú: la diferencia es cuántas y de qué tipo, no si las tienen."
+    },
+    {
+     "t": "diagrama",
+     "kind": "celula",
+     "params": {
+      "tipo": "animal"
+     },
+     "intro": "Esta es una célula animal. Fíjate en el núcleo, que guarda las instrucciones, y en la mitocondria, donde se obtiene la energía."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver por qué la célula es la unidad de la vida, qué hace cada una de sus partes, cómo entran y salen sustancias de ella, y qué tienen de propio las células de las plantas."
+    }
    ]
   },
   {
    "id": "ci8-cuerpo",
    "titulo": "Antes de empezar: Cuerpo humano y salud",
    "bloques": [
-    {"t": "texto", "md": "Tu cuerpo no es un montón de partes sueltas. Los sistemas trabajan conectados: lo que respiras llega a la sangre, y la sangre lo reparte a cada célula."},
-    {"t": "texto", "md": "Por eso una decisión sobre lo que comes o cuánto te mueves no afecta a un solo órgano: afecta a la red completa."},
-    {"t": "texto", "md": "En este capítulo vas a ver cómo se coordinan los sistemas del cuerpo, qué aporta cada tipo de nutriente y qué significa, con evidencia y no con opiniones, llevar una vida saludable."}
+    {
+     "t": "texto",
+     "md": "Tu cuerpo no es un montón de partes sueltas. Los sistemas trabajan conectados: lo que respiras llega a la sangre, y la sangre lo reparte a cada célula."
+    },
+    {
+     "t": "texto",
+     "md": "Por eso una decisión sobre lo que comes o cuánto te mueves no afecta a un solo órgano: afecta a la red completa."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver cómo se coordinan los sistemas del cuerpo, qué aporta cada tipo de nutriente y qué significa, con evidencia y no con opiniones, llevar una vida saludable."
+    }
    ]
   },
   {
    "id": "ci8-electricidad",
    "titulo": "Antes de empezar: Electricidad y calor",
    "bloques": [
-    {"t": "texto", "md": "La corriente eléctrica necesita un camino cerrado. Si el camino se corta en cualquier punto, no circula nada: por eso un interruptor apaga la luz sin desconectar ningún cable."},
-    {"t": "diagrama", "kind": "circuito", "params": {"cerrado": true},
-     "intro": "Con el interruptor cerrado el camino se completa y la ampolleta se enciende."},
-    {"t": "diagrama", "kind": "circuito", "params": {"cerrado": false},
-     "intro": "Basta abrirlo en un punto para que deje de circular, aunque la pila siga llena."},
-    {"t": "texto", "md": "En este capítulo vas a ver de dónde viene la fuerza eléctrica, cómo se genera y se transporta la energía, cómo se arma un circuito y qué es el calor, que no es lo mismo que la temperatura."}
+    {
+     "t": "texto",
+     "md": "La corriente eléctrica necesita un camino cerrado. Si el camino se corta en cualquier punto, no circula nada: por eso un interruptor apaga la luz sin desconectar ningún cable."
+    },
+    {
+     "t": "diagrama",
+     "kind": "circuito",
+     "params": {
+      "cerrado": true
+     },
+     "intro": "Con el interruptor cerrado el camino se completa y la ampolleta se enciende."
+    },
+    {
+     "t": "diagrama",
+     "kind": "circuito",
+     "params": {
+      "cerrado": false
+     },
+     "intro": "Basta abrirlo en un punto para que deje de circular, aunque la pila siga llena."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver de dónde viene la fuerza eléctrica, cómo se genera y se transporta la energía, cómo se arma un circuito y qué es el calor, que no es lo mismo que la temperatura."
+    }
    ]
   },
   {
    "id": "ci8-materia",
    "titulo": "Antes de empezar: La materia y el átomo",
    "bloques": [
-    {"t": "texto", "md": "Todo lo que ocupa lugar está hecho de partículas demasiado pequeñas para verse. Lo que cambia entre el hielo, el agua y el vapor no son las partículas: es qué tan juntas y qué tan quietas están."},
-    {"t": "diagrama", "kind": "estados", "params": {},
-     "intro": "Las mismas partículas, ordenadas en el sólido y sueltas en el gas."},
-    {"t": "texto", "md": "El modelo de átomo que se usa hoy no apareció de una vez. Se fue corrigiendo cada vez que un experimento mostraba algo que el modelo anterior no explicaba, y eso es lo normal en ciencia."},
-    {"t": "texto", "md": "En este capítulo vas a ver cómo cambió ese modelo, cómo los átomos se unen para formar sustancias, cómo se ordenan en la tabla periódica y cuáles son los elementos de los que está hecho todo ser vivo."}
+    {
+     "t": "texto",
+     "md": "Todo lo que ocupa lugar está hecho de partículas demasiado pequeñas para verse. Lo que cambia entre el hielo, el agua y el vapor no son las partículas: es qué tan juntas y qué tan quietas están."
+    },
+    {
+     "t": "diagrama",
+     "kind": "estados",
+     "params": {},
+     "intro": "Las mismas partículas, ordenadas en el sólido y sueltas en el gas."
+    },
+    {
+     "t": "texto",
+     "md": "El modelo de átomo que se usa hoy no apareció de una vez. Se fue corrigiendo cada vez que un experimento mostraba algo que el modelo anterior no explicaba, y eso es lo normal en ciencia."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver cómo cambió ese modelo, cómo los átomos se unen para formar sustancias, cómo se ordenan en la tabla periódica y cuáles son los elementos de los que está hecho todo ser vivo."
+    }
    ]
   }
  ]

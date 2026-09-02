@@ -498,7 +498,7 @@ DIAGRAMAS.celula=function(p,nodo){
   e.textContent=txt; svg.appendChild(e);}
  rot(6,cy+4,'núcleo','#a99fd0');
  svg.appendChild(svgEl('line',{x1:46,y1:cy,x2:cx-40,y2:cy,stroke:'#5a4b8f','stroke-width':1}));
- rot(cx+72,cy-24,'mitocondria','#ff4d8d');
+ rot(cx+96,cy-24,'mitocondria','#ff4d8d');   // fuera del contorno: en cx+72 se encimaba
  if(veg) rot(cx+70,cy+28,'cloroplasto','#3ee089');
  rot(6,cy-66,veg?'pared celular':'membrana','#4dd8ff');
  const tt=svgEl('text',{x:W/2,y:H-10,'text-anchor':'middle',fill:'#ffc93c',

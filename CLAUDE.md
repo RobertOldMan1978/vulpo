@@ -1213,6 +1213,21 @@ contador "vas en el N de 170" y **reanudar donde se quedó**. La cola son solo l
 preguntas pendientes, así que 8° no aparece. Aprobar marca **las 30**, que es el criterio.
 Detalle en `docs/aprobacion-pedagogica.md`.
 
+**Las mini-clases y las introducciones se aprueban ahí también (Sesión 85).** Hasta el 02/09 el
+tablero solo las **contaba** con un chip, y el informe traía su casilla impresa pero esa marca **no
+llegaba a ninguna parte**: las 75 lecciones del proyecto —lo único que **enseña**— no tenían
+trámite de aprobación. Ahora cada asignatura trae su sección 📘 con las lecciones **enteras** —su
+texto, su ejemplo y **el diagrama dibujado de verdad**, porque el generador incrusta
+`assets/js/lecciones.js`—, su casilla y un "✓ Aprobar todas". Reusan el mismo almacén, así que
+"Exportar revisadas" las incluye y `aplicar-revisadas.py` escribe en su `lecciones.json`.
+
+> ⚠️ **El tablero abre en "👁 Solo lo pendiente"** y manda las asignaturas sin pendientes **al
+> final**, no solo las pliega: con 7.805/7.805 preguntas firmadas, 23 de 29 secciones están
+> aprobadas y dejarlas arriba son ~2.700 px de scroll antes de llegar a lo que hay que revisar.
+> Y decide qué está pendiente con el dato que declara el generador (`data-pend-preg`), **no
+> contando casillas del DOM**: las preguntas solo se pintan al desplegar su OA, así que 12 de las
+> 29 secciones tienen cero casillas y contarlas las daba por no aprobadas.
+
 **En el tablero:** al pinchar un OA se despliegan sus preguntas (solo el
 enunciado y la respuesta correcta). Los controles **"Expandir todo / Contraer
 todo"** (arriba) abren o cierran todas las preguntas de una vez, y cada
@@ -7597,3 +7612,77 @@ puso a la mini-clase **se estaba viendo en 7° y 8°**, donde no hay voz que son
   **Después de aprobar, nunca en paralelo, y con autorización explícita: gasta plata de Roberto.**
 - **Historia (16 capítulos) y Lenguaje (20)**, aplicando el criterio capítulo por capítulo **antes**
   de escribir.
+
+### Sesión 85 (2026-09-02) — Las 75 lecciones ya se pueden aprobar, y el tablero muestra solo lo pendiente
+Sesión corta y de herramienta. **No se tocó contenido**: los tres `lecciones.json` de Ciencias solo
+cambiaron de formato, no de texto.
+
+#### El hueco lo encontró Roberto preguntando dónde revisar
+
+Dijo: *"me imagino que lo debo revisar en `vulpo.cl/dev/tablero.html`, porque no escondes las ya
+revisadas y dejas a la vista solo las pendientes"*. Las dos mitades de la frase resultaron ciertas,
+y la segunda destapó algo peor que un tema de comodidad.
+
+> ⚠️ **Se le había dicho DOS VECES que las mini-clases "ya salen en el tablero y en los informes",
+> y era medio falso.** El tablero solo las **contaba** con un chip `📘 N mini-clases` — su propio
+> código lo admitía en un comentario: *"su aprobación es otro trámite que el de las preguntas"*, y
+> **ese trámite nunca se construyó**. O sea que las **75 lecciones del proyecto —lo único que
+> ENSEÑA— no tenían forma de aprobarse.**
+
+**Y una corrección dentro de la corrección:** al reportarlo se afirmó además que el informe decía
+*"marca la casilla"* sobre una casilla inexistente. **Falso: el informe SÍ imprime su recuadro**
+(`class="chk"`, igual que cada pregunta). El grep buscaba `check`/`input`/`casilla`. Lo que faltaba
+era marcarlas **en el tablero** y que esa marca **llegara al archivo**.
+
+#### El circuito, ahora completo
+
+1. **`dev/tablero.html`** trae una sección 📘 por asignatura con las lecciones **enteras** —texto,
+   ejemplo y **el diagrama dibujado de verdad**, porque el generador incrusta
+   `assets/js/lecciones.js` igual que el informe—, su casilla y un botón *"✓ Aprobar todas"*.
+2. **"Exportar revisadas"** ya las incluye: **reusan el mismo almacén** (`.pq-check input` con
+   `data-id`), y el `id` de una lección (`ma3-oa01`, `ci8-celula`) no choca con ninguno de pregunta.
+   No hubo que tocar el guardado, ni el contador, ni la exportación.
+3. **`aplicar-revisadas.py`** escribe `revisada:true` en el `lecciones.json` que corresponda.
+   Probado marcando 5 y volviendo a correrlo: la segunda vez marca **+0**.
+
+**Verificado en el tablero: 75 lecciones con casilla, 74 diagramas, los 74 renderizados.** El
+contador pasa de `7.805/7.880` a `7.806/7.880` al marcar una, y queda guardada.
+
+#### "Solo lo pendiente", que era el pedido
+
+Con **7.805 de 7.805 preguntas firmadas**, abrir el tablero era recorrer 235 objetivos verdes para
+llegar a nada. Ahora abre filtrado y **las asignaturas sin pendientes se van al FINAL**.
+
+> **Plegarlas no bastaba:** 23 de 29 aprobadas, a ~120 px cada encabezado, son **~2.700 px de
+> scroll** antes de lo único que hay que revisar — justo lo que el filtro venía a evitar. Hay que
+> sacarlas del camino, no solo encogerlas.
+
+#### ⚠️ Dos defectos encontrados construyéndolo
+
+1. **El filtro daba 11 de 29 aprobadas con todo firmado.** La causa no se ve leyendo: **las
+   preguntas solo se pintan al desplegar su OA**, así que **12 de las 29 secciones tienen cero
+   casillas en el DOM** y la regla `todas las casillas marcadas` las daba por pendientes. Se
+   resolvió con el dato que sí conoce quien genera el archivo: `data-pend-preg` por asignatura.
+   Quedó en **23 de 29**, que son exactamente las 6 con lecciones sin firmar.
+2. **Marcar 2 lecciones reformateaba el archivo entero** — 74 líneas por 2 marcas. Los tres
+   `lecciones.json` de Ciencias nacieron escritos a mano con otro formato, y `escribir_banco`
+   además asumía la clave `preguntas`. Canonizados (`indent=1`, LF, sin salto final) y con el
+   escritor generalizado, marcar una lección son **2 líneas**. Es el mismo defecto que la Sesión 72
+   arregló para los bancos.
+
+#### Y un error de medición propio, el tercero idéntico
+
+Se midió **"0 diagramas dibujados"** y era falso: **`montarDiagrama` le cambia la clase al nodo**
+(`lec-diag-slot` → `lec-diag`) al dibujar. Medido bien, **74 de 74**. De paso apareció que la regla
+de CSS apuntaba solo a la clase vieja, o sea que **dejaba de aplicar justo cuando había algo que
+ver**; ahora apunta a las dos.
+
+> Es la tercera vez que este proyecto tropieza con lo mismo —la Sesión 83 lo hizo con el informe— y
+> por eso quedó escrito en el CSS del generador, no en la bitácora.
+
+#### Un push, y conviene decir por qué
+
+Las últimas tres sesiones fueron en **dos pushes** porque había un proveedor (`assets/js/`) y unos
+consumidores (los `index.html`). **Aquí no**: ningún fork cambió, el tablero se genera
+autocontenido y el único cambio de `lecciones.js` es cosmético (el rótulo "mitocondria", que se
+encimaba con el contorno de la célula). **Un push basta, y partirlo por costumbre sería ceremonia.**

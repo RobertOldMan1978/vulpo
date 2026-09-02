@@ -151,6 +151,65 @@ def u_titulo(u):
     return u.get("titulo") or u.get("nombre") or "(sin nombre)"
 
 
+def render_lecciones(lecciones, oa_por_codigo):
+    """Las mini-clases e introducciones, CON su casilla y renderizadas.
+
+    ⚠️ Hasta el 02/09 el tablero solo las CONTABA con un chip, y el informe decia
+    "marca la casilla si la apruebas" sobre una casilla que no existia. O sea que las
+    58 lecciones del proyecto no tenian ningun tramite de aprobacion, siendo lo unico
+    que ENSEÑA: una pregunta equivocada se falla y se corrige, una clase se cree.
+
+    Reusa el mismo mecanismo de las preguntas —`.pq-check input` con `data-id`— asi que
+    el guardado, el contador y "Exportar revisadas" funcionan sin tocar nada. Los ids de
+    leccion (ma3-oa01, ci8-celula) no chocan con los de pregunta.
+
+    Los diagramas se dibujan de verdad: el modulo assets/js/lecciones.js va incrustado
+    al final del documento y aqui solo se deja el nodo con sus datos.
+    """
+    if not lecciones:
+        return ""
+    H = ['<div class="lecs">',
+         '<div class="lecs-head"><b>📘 Mini-clases e introducciones</b>'
+         '<span class="lecs-n">%d</span>'
+         '<button class="bulk lecs-bulk">✓ Aprobar todas</button></div>' % len(lecciones),
+         '<div class="lecs-sub">Enseñan antes de preguntar, así que se aprueban aparte. '
+         'Una clase equivocada no se falla: se cree.</div>']
+    for l in lecciones:
+        rev = "1" if l.get("revisada") else "0"
+        oa = l.get("oa", "")
+        txt_oa = oa_por_codigo.get(oa, {}).get("texto", "") if oa else ""
+        H.append('<details class="lec" data-lid="%s"><summary>'
+                 '<span class="pq-check"><input type="checkbox" data-id="%s" data-rev="%s"></span>'
+                 '<b>%s</b><span class="lec-id">%s</span></summary>'
+                 % (escape(l["id"]), escape(l["id"]), rev,
+                    escape(l.get("titulo", l["id"])), escape(l["id"])))
+        if oa:
+            H.append('<div class="lec-oa"><b>%s</b> · %s</div>' % (escape(oa), escape(txt_oa)))
+        for b in l.get("bloques", []):
+            tipo = b.get("t")
+            if tipo == "texto":
+                H.append("<p>%s</p>" % escape(b.get("md", "")))
+            elif tipo == "diagrama":
+                if b.get("intro"):
+                    H.append('<p class="lec-sub">%s</p>' % escape(b["intro"]))
+                H.append("<div class='lec-diag-slot' data-k=\"%s\" data-p=\"%s\"></div>"
+                         % (escape(b.get("kind", "")), escape(json.dumps(b.get("params", {})))))
+            elif tipo == "ejemplo":
+                if b.get("intro"):
+                    H.append("<p><b>Ejemplo:</b> %s</p>" % escape(b["intro"]))
+                H.append("<ol>")
+                for paso in b.get("pasos", []):
+                    H.append("<li>%s</li>" % escape(paso))
+                H.append("</ol>")
+            elif tipo == "practica":
+                fb = b.get("fromBank", {})
+                H.append('<div class="lec-prac">Práctica: %d preguntas de %s del banco</div>'
+                         % (fb.get("n", 0), escape(fb.get("oa", "?"))))
+        H.append("</details>")
+    H.append("</div>")
+    return "".join(H)
+
+
 def render_asignatura(oa_data, preg_data, lecciones=()):
     meta = int(preg_data.get("meta_preguntas_por_oa", 8))
     preguntas = preg_data.get("preguntas", [])
@@ -177,7 +236,8 @@ def render_asignatura(oa_data, preg_data, lecciones=()):
     rev_global = (total_rev / total_preg * 100) if total_preg else 0
 
     partes = []
-    partes.append('<section class="asig">')
+    pend_preg = total_preg - total_rev
+    partes.append('<section class="asig" data-pend-preg="%d">' % pend_preg)
     partes.append(
         f'<div class="asig-head">'
         f'<div><h2><span class="a-caret">▾</span>{escape(oa_data["asignatura"])}</h2>'
@@ -203,11 +263,13 @@ def render_asignatura(oa_data, preg_data, lecciones=()):
         f'<span class="chip">🎯 {oa_con_algo}/{total_oa} OA con contenido</span>'
         f'<span class="chip ok">✅ {oa_listos} OA listos</span>'
         f'<span class="chip rev2">🔍 {total_rev} revisadas</span>'
-        # Las mini-clases ENSEÑAN, y su aprobacion es otro tramite que el de las preguntas:
-        # se revisan en el informe (generar-revision-preguntas.py), no con estas casillas.
+        # Las mini-clases ENSEÑAN, asi que llevan su propia seccion con sus propias
+        # casillas (mas abajo). El chip queda como resumen.
         + (f'<span class="chip">📘 {len(lecciones)} mini-clases</span>' if lecciones else "")
         + "</div>"
     )
+
+    partes.append(render_lecciones(lecciones, oa_por_codigo))
 
     for u in grupos_de(oa_data):
         codigos = u.get("oa", [])
@@ -454,7 +516,39 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
   font-family:'Titan One';font-size:16px;color:#2a1400;background:linear-gradient(180deg,var(--gold),#ff9d3c)}
 .gate-err{color:var(--pink);font-weight:800;font-size:13px;min-height:18px;margin-top:10px}
 .gate-volver{display:inline-block;margin-top:8px;color:var(--dim);font-weight:800;font-size:13px;text-decoration:none}
+
+ /* Mini-clases e introducciones: su propia seccion, con casilla propia */
+ .lecs{margin:14px 0 6px;border:1px solid #3a2f60;border-radius:12px;padding:10px 12px;background:#20183d}
+ .lecs-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+ .lecs-n{background:#8f6bff;color:#fff;border-radius:10px;padding:1px 8px;font-size:12px}
+ .lecs-sub{color:#a99fd0;font-size:12px;margin:4px 0 8px}
+ .lec{border-top:1px solid #302753;padding:6px 0}
+ .lec summary{cursor:pointer;display:flex;align-items:center;gap:8px;list-style:none}
+ .lec summary::-webkit-details-marker{display:none}
+ .lec-id{color:#7a6ab0;font-size:11px;margin-left:auto}
+ .lec-oa{color:#a99fd0;font-size:12px;margin:6px 0}
+ .lec-sub{color:#a99fd0;font-size:12px;margin:6px 0 2px}
+ .lec p{font-size:13px;line-height:1.45;margin:6px 0}
+ .lec ol{font-size:13px;margin:4px 0 4px 18px}
+ .lec-prac{color:#3ee089;font-size:12px;margin:6px 0}
+ /* ⚠️ Las dos clases: montarDiagrama hace nodo.className='lec-diag' al dibujar, asi que
+    una regla que solo mire .lec-diag-slot deja de aplicar justo cuando hay algo que ver. */
+ .lec-diag-slot,.lec-diag{margin:6px 0;max-width:360px}
+ .lec-diag-slot svg,.lec-diag svg{width:100%;height:auto}
+ /* "Solo lo pendiente": lo aprobado se pliega detras de una linea */
+ body.solo-pend .asig.aprobada > *:not(.asig-head):not(.aprobada-nota){display:none}
+ .aprobada-nota{color:#3ee089;font-size:13px;padding:6px 0}
+ .filtro{display:flex;align-items:center;gap:8px;margin:10px 0;font-size:13px;color:#cfc7ea}
+ .filtro button{background:#2a2150;color:#cfc7ea;border:1px solid #3a2f60;border-radius:8px;
+   padding:6px 12px;cursor:pointer;font-size:13px}
+ .filtro button.on{background:#8f6bff;color:#fff;border-color:#8f6bff}
 """
+
+    # El modulo de mini-clases va ANTES del script del tablero: se usa para dibujar
+    # los diagramas de cada leccion, igual que en el informe de revision. Si el
+    # archivo no esta, el tablero sigue sirviendo y solo se pierde el dibujo.
+    ruta_lecc = RAIZ / "assets" / "js" / "lecciones.js"
+    lecc_js = ruta_lecc.read_text(encoding="utf-8") if ruta_lecc.exists() else ""
 
     js = """
 (function(){
@@ -553,10 +647,79 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
     });
     localStorage.setItem(LS,JSON.stringify(ov));
     updateCount();
+    if(typeof marcarAprobadas==='function') marcarAprobadas();
   }
   function inputsDe(raiz){
     return Array.prototype.slice.call(raiz.querySelectorAll('.pq-check input'));
   }
+  // --- Mini-clases: dibujar sus diagramas y aprobarlas ---------------------
+  // El modulo LECC viene incrustado al final. Si por lo que sea no esta, la leccion se
+  // sigue leyendo y aprobando: solo no se ve el dibujo, que es degradar y no romper.
+  document.querySelectorAll('.lec-diag-slot').forEach(function(d){
+    if(!window.LECC || !LECC.diagrama) { d.textContent='(diagrama: recarga el tablero)'; return; }
+    var p={}; try{p=JSON.parse(d.dataset.p||'{}');}catch(e){}
+    try{ LECC.diagrama(d.dataset.k, p, d); }catch(e){ d.textContent='(no se pudo dibujar)'; }
+  });
+  document.querySelectorAll('.lec summary input').forEach(function(cb){
+    cb.addEventListener('click',function(e){e.stopPropagation();});
+  });
+  document.querySelectorAll('.lecs-bulk').forEach(function(b){
+    b.addEventListener('click',function(e){
+      e.stopPropagation();
+      var ins=inputsDe(b.closest('.lecs'));
+      var todas=ins.length>0&&ins.every(function(c){return c.checked;});
+      fijar(ins,!todas);
+      b.textContent=todas?'✕ Quitar todas':'✓ Aprobar todas';
+      marcarAprobadas();
+    });
+  });
+
+  // --- "Solo lo pendiente" ------------------------------------------------
+  // Con 7.805 de 7.805 preguntas firmadas, abrir el tablero completo es recorrer 235
+  // objetivos verdes para llegar a nada. Se marca aprobada la asignatura cuyas casillas
+  // estan TODAS marcadas, y el filtro la pliega a una linea.
+  // ⚠️ Corre DESPUES de inicializar las casillas desde el almacen, no antes.
+  function marcarAprobadas(){
+    document.querySelectorAll('.asig').forEach(function(a){
+      // Las preguntas se pintan solo al desplegar su OA, asi que NO se pueden contar
+      // desde el DOM: el generador declara cuantas quedan en data-pend-preg. Las
+      // lecciones si estan siempre, y se cuentan en vivo porque son lo que se aprueba hoy.
+      var pendPreg=parseInt(a.dataset.pendPreg||'0',10);
+      var lecs=Array.prototype.slice.call(a.querySelectorAll('.lec summary input'));
+      var pendLec=lecs.filter(function(c){return !c.checked;}).length;
+      var todas=(pendPreg+pendLec)===0;
+      a.classList.toggle('aprobada',todas);
+      var nota=a.querySelector('.aprobada-nota');
+      if(todas && !nota){
+        nota=document.createElement('div');
+        nota.className='aprobada-nota';
+        nota.textContent='✓ Todo aprobado · pincha el título para verlo';
+        a.appendChild(nota);
+      }else if(!todas && nota){ nota.remove(); }
+    });
+    // Y se mandan al FINAL: 23 asignaturas aprobadas arriba son ~2.700 px de scroll
+    // antes de llegar a lo unico que hay que revisar, que es justo lo que el filtro
+    // venia a evitar. Plegarlas no basta; hay que sacarlas del camino.
+    document.querySelectorAll('.asig.aprobada').forEach(function(a){
+      if(a.parentNode) a.parentNode.appendChild(a);
+    });
+    var n=document.querySelectorAll('.asig.aprobada').length;
+    var el=document.getElementById('filtroInfo');
+    if(el) el.textContent=n+' de '+document.querySelectorAll('.asig').length+' asignaturas sin pendientes';
+  }
+  marcarAprobadas();
+  var btnPend=document.getElementById('soloPend');
+  if(btnPend){
+    btnPend.addEventListener('click',function(){
+      var on=document.body.classList.toggle('solo-pend');
+      btnPend.classList.toggle('on',on);
+      btnPend.textContent=on?'👁 Solo lo pendiente':'👁 Ver todo';
+      marcarAprobadas();
+    });
+  }
+  // Abre filtrado: es lo que hace util el tablero hoy.
+  document.body.classList.add('solo-pend');
+
   document.querySelectorAll('.oa-bulk').forEach(function(b){
     b.addEventListener('click',function(e){
       e.stopPropagation();
@@ -782,6 +945,10 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
         '      <button class="salir" id="salir">🔒 Bloquear</button>\n'
         '    </div>\n'
         '  </div>\n'
+        '  <div class="filtro">\n'
+        '    <button id="soloPend" class="on">👁 Solo lo pendiente</button>\n'
+        '    <span id="filtroInfo"></span>\n'
+        '  </div>\n'
         '  <div class="top">\n'
         '    <h1>VULPO · Tablero</h1>\n'
         '    <div class="lema">Panel de desarrollo · avance por materia y OA</div>\n'
@@ -803,6 +970,7 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
         '  <div class="gen" style="margin-top:18px">Pincha un OA para ver sus preguntas, o usa <b>Expandir todo</b> para verlas todas. Pincha el encabezado de una asignatura o unidad para contraerla; <b>Contraer todo</b> deja solo las asignaturas. Marca la casilla de las que apruebes y usa "Exportar revisadas".</div>\n'
         '</div>\n'
         '<div id="muestreo" style="display:none"><div class="mz" id="mzCuerpo"></div></div>\n'
+        "<script>" + lecc_js + "</script>\n"
         "<script>" + js + "</script>\n"
         "</body>\n</html>\n"
     )
