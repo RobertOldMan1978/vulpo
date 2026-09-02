@@ -867,6 +867,10 @@ function renderMapa(){
    <div class="stars-mini">${stars}</div></div>`;
   d.querySelector('.orb').onclick=()=>{if(p.est!=='lock')startQuiz(i);};
   box.appendChild(d);});
+ // La introducción del capítulo, si la declara. Va DESPUÉS del bucle y se inserta al
+ // principio: así no entra en el arreglo indexado y no corre el avance ya guardado.
+ // Sin `intro` en los datos no pasa nada, y sin el módulo tampoco (su respaldo devuelve false).
+ if(EXP_ACT.intro) LECC.nodoIntro(EXP_ACT.intro, box);
 }
 function renderModoSel(){
  const el=$('modoSel');if(!el)return;

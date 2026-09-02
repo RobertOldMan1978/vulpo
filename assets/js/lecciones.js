@@ -33,7 +33,12 @@
 (function () {
   'use strict';
 
-  var CFG = { ruta: '', hayReto: false };
+  /* `rutas` es una LISTA porque una asignatura nueva trae su propio archivo de lecciones
+     (Matemática las suyas, Ciencias sus introducciones). Se conserva `ruta` en singular por
+     compatibilidad con los tres cursos que ya lo llaman así. Cada lección se marca al cargar
+     con el banco que le toca —su archivo de al lado—, y por eso la práctica no necesita saber
+     de qué asignatura es: ver el ⚠️ de preguntasDeOA. */
+  var CFG = { rutas: [], hayReto: false };
 
   var CSS = "#scr-leccion{padding:16px}#scr-leccion.on{display:flex;flex-direction:column;gap:12px}.lec-top{display:flex;align-items:center;gap:10px}.lec-top .btn{width:auto;flex:0 0 auto;padding:8px 16px;font-size:15px;margin:0}.lec-prog{flex:1;height:8px;background:#241a44;border-radius:6px;overflow:hidden}#lecProgBar{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--violet));transition:width .3s}.lec-titulo{font-family:'Titan One',sans-serif;font-size:20px;margin:2px 0}.lec-cuerpo{background:#241a44;border:1px solid #3a2f60;border-radius:16px;padding:16px;min-height:220px}.lec-cuerpo p{font-size:15px;line-height:1.5}.lec-cuerpo img{max-width:100%;border-radius:12px;display:block;margin:0 auto}.lec-diag{width:100%;overflow-x:auto}.lec-ejemplo-paso{opacity:.35;transition:opacity .3s;margin:6px 0;font-size:15px}.lec-ejemplo-paso.on{opacity:1}.lec-cont{width:100%}";
 
@@ -466,6 +471,113 @@ DIAGRAMAS.puntos=function(p,nodo){
  nodo.appendChild(svg);
 };
 
+// celula: la celula con sus partes rotuladas. Para las introducciones de Ciencias, que es la
+// asignatura sin un solo dibujo en su banco: 0 de sus 1.374 preguntas lleva `visual`.
+// ⚠️ Rotula solo lo que la introduccion nombra: un diagrama con las 12 organelas seria un
+// poster, y la introduccion no evalua nada, asi que no gana precision, gana ruido.
+// params: {tipo:'animal'|'vegetal', etiqueta}
+DIAGRAMAS.celula=function(p,nodo){
+ const veg=(p.tipo||'animal')==='vegetal';
+ const W=320,H=206,cx=150,cy=96;
+ const svg=svgEl('svg',{viewBox:'0 0 '+W+' '+H,role:'img',
+  'aria-label':'Dibujo de una célula con sus partes'});
+ if(veg) svg.appendChild(svgEl('rect',{x:cx-96,y:cy-62,width:192,height:124,rx:10,
+  fill:'#3ee08922',stroke:'#3ee089','stroke-width':3}));
+ svg.appendChild(svgEl(veg?'rect':'ellipse', veg
+  ? {x:cx-88,y:cy-54,width:176,height:108,rx:8,fill:'#8f6bff22',stroke:'#4dd8ff','stroke-width':2.5}
+  : {cx,cy,rx:92,ry:58,fill:'#8f6bff22',stroke:'#4dd8ff','stroke-width':3}));
+ svg.appendChild(svgEl('circle',{cx:cx-16,cy,r:24,fill:'#8f6bff',opacity:.9,
+  stroke:'#241a44','stroke-width':1.5}));
+ svg.appendChild(svgEl('circle',{cx:cx-16,cy,r:8,fill:'#241a44'}));
+ // mitocondria: la otra parte que la introduccion nombra
+ svg.appendChild(svgEl('ellipse',{cx:cx+46,cy:cy-22,rx:20,ry:11,fill:'#ff4d8d',opacity:.85,
+  stroke:'#241a44','stroke-width':1.2}));
+ if(veg) svg.appendChild(svgEl('ellipse',{cx:cx+44,cy:cy+24,rx:18,ry:12,fill:'#3ee089',
+  opacity:.9,stroke:'#241a44','stroke-width':1.2}));
+ function rot(x,y,txt,col){const e=svgEl('text',{x,y,fill:col,'font-size':11});
+  e.textContent=txt; svg.appendChild(e);}
+ rot(6,cy+4,'núcleo','#a99fd0');
+ svg.appendChild(svgEl('line',{x1:46,y1:cy,x2:cx-40,y2:cy,stroke:'#5a4b8f','stroke-width':1}));
+ rot(cx+72,cy-24,'mitocondria','#ff4d8d');
+ if(veg) rot(cx+70,cy+28,'cloroplasto','#3ee089');
+ rot(6,cy-66,veg?'pared celular':'membrana','#4dd8ff');
+ const tt=svgEl('text',{x:W/2,y:H-10,'text-anchor':'middle',fill:'#ffc93c',
+  'font-family':"'Titan One',sans-serif",'font-size':15});
+ tt.textContent=p.etiqueta||(veg?'Célula vegetal':'Célula animal'); svg.appendChild(tt);
+ nodo.appendChild(svg);
+};
+
+// circuito: pila, cable y ampolleta, abierto o cerrado. Es el modelo que explica por que la
+// luz se enciende, y no hay forma honesta de decirlo solo con palabras.
+// params: {cerrado:true, etiqueta}
+DIAGRAMAS.circuito=function(p,nodo){
+ const on=p.cerrado!==false;
+ const W=300,H=170;
+ const svg=svgEl('svg',{viewBox:'0 0 '+W+' '+H,role:'img',
+  'aria-label':'Circuito eléctrico con una pila y una ampolleta'});
+ const col=on?'#ffc93c':'#5a4b8f';
+ // el cable
+ const d='M 60 120 H 240 V 62 H 196';
+ svg.appendChild(svgEl('path',{d,fill:'none',stroke:col,'stroke-width':3}));
+ svg.appendChild(svgEl('path',{d:'M 60 120 V 62 H 104',fill:'none',stroke:col,'stroke-width':3}));
+ // pila
+ svg.appendChild(svgEl('rect',{x:104,y:48,width:34,height:28,rx:3,fill:'#3ee089',
+  stroke:'#241a44','stroke-width':1.5}));
+ const mas=svgEl('text',{x:121,y:68,'text-anchor':'middle',fill:'#12102a',
+  'font-family':"'Titan One',sans-serif",'font-size':15}); mas.textContent='+';
+ svg.appendChild(mas);
+ // el interruptor: la parte que cambia
+ svg.appendChild(svgEl('circle',{cx:152,cy:62,r:3.5,fill:col}));
+ svg.appendChild(svgEl('circle',{cx:178,cy:62,r:3.5,fill:col}));
+ svg.appendChild(svgEl('line',{x1:152,y1:62,x2:on?178:172,y2:on?62:42,
+  stroke:col,'stroke-width':3,'stroke-linecap':'round'}));
+ // ampolleta
+ svg.appendChild(svgEl('circle',{cx:240,cy:120,r:0.1,fill:'none'}));
+ svg.appendChild(svgEl('circle',{cx:150,cy:126,r:0.1,fill:'none'}));
+ svg.appendChild(svgEl('circle',{cx:240,cy:120,r:1,fill:'none'}));
+ svg.appendChild(svgEl('circle',{cx:150,cy:120,r:20,fill:on?'#ffc93c':'#241a44',
+  stroke:on?'#fff4c2':'#5a4b8f','stroke-width':2.5,opacity:on?.95:1}));
+ if(on) for(let i=0;i<8;i++){const a=i*Math.PI/4;
+  svg.appendChild(svgEl('line',{x1:150+26*Math.cos(a),y1:120+26*Math.sin(a),
+   x2:150+33*Math.cos(a),y2:120+33*Math.sin(a),stroke:'#ffc93c','stroke-width':2}));}
+ const tt=svgEl('text',{x:W/2,y:H-8,'text-anchor':'middle',fill:'#ffc93c',
+  'font-family':"'Titan One',sans-serif",'font-size':15});
+ tt.textContent=p.etiqueta||(on?'Circuito cerrado: la ampolleta se enciende'
+                               :'Circuito abierto: no pasa corriente'); svg.appendChild(tt);
+ nodo.appendChild(svg);
+};
+
+// estados: solido, liquido y gas con sus particulas, y las flechas del cambio entre ellos.
+// params: {etiqueta}
+DIAGRAMAS.estados=function(p,nodo){
+ const W=340,H=176;
+ const svg=svgEl('svg',{viewBox:'0 0 '+W+' '+H,role:'img',
+  'aria-label':'Las partículas en sólido, líquido y gas'});
+ const cajas=[{x:14,nom:'sólido',n:16,orden:1},{x:126,nom:'líquido',n:12,orden:.5},
+              {x:238,nom:'gas',n:7,orden:0}];
+ cajas.forEach(c=>{
+  svg.appendChild(svgEl('rect',{x:c.x,y:22,width:88,height:88,rx:6,fill:'#241a44',
+   stroke:'#5a4b8f','stroke-width':2}));
+  let k=0;
+  for(let f=0;f<4 && k<c.n;f++)for(let g=0;g<4 && k<c.n;g++){
+   // el orden es el punto: en el solido forman rejilla, en el gas van sueltas
+   const jx=(1-c.orden)*(((k*37)%23)-11), jy=(1-c.orden)*(((k*53)%23)-11);
+   svg.appendChild(svgEl('circle',{cx:c.x+18+g*18+jx,cy:40+f*18+jy,r:5.5,
+    fill:'#4dd8ff',opacity:.9})); k++;
+  }
+  const e=svgEl('text',{x:c.x+44,y:126,'text-anchor':'middle',fill:'#a99fd0','font-size':12});
+  e.textContent=c.nom; svg.appendChild(e);
+ });
+ [[102,'calor →'],[214,'calor →']].forEach(([x,txt])=>{
+  const e=svgEl('text',{x:x+12,y:20,'text-anchor':'middle',fill:'#ff4d8d','font-size':11});
+  e.textContent=txt; svg.appendChild(e);
+ });
+ const tt=svgEl('text',{x:W/2,y:H-8,'text-anchor':'middle',fill:'#ffc93c',
+  'font-family':"'Titan One',sans-serif",'font-size':15});
+ tt.textContent=p.etiqueta||'Las mismas partículas, más sueltas'; svg.appendChild(tt);
+ nodo.appendChild(svg);
+};
+
 // funcion: recta f(x)=a·x+b sobre un plano cartesiano, con deslizadores de a y b.
 // params: {a=1, b=0, interactivo=true}
 DIAGRAMAS.funcion=function(p,nodo){
@@ -777,8 +889,8 @@ function avanzarBloque(){
    Es el quinto caso del mismo defecto del fork (Sesiones 63, 64, 65, 72 y este), y la salida
    es la de siempre: la convención de nombres ES la configuración. El banco de un curso vive
    al lado de sus lecciones, así que se deduce de la ruta y no hay nombre que calzar. */
-async function preguntasDeOA(oa,n){
- const url=CFG.ruta.replace('lecciones.json','preguntas.json');
+async function preguntasDeOA(oa,n,banco){
+ const url=banco||CFG.rutas[0].replace('lecciones.json','preguntas.json');
  let pool=[];
  try{ const d=await (await fetch(url)).json();
       pool=(d.preguntas||[]).filter(q=>q.oa===oa); }catch(e){ return []; }
@@ -791,7 +903,7 @@ async function iniciarPracticaLeccion(leccion){
  const fb=bloque.fromBank||{oa:leccion.oa,n:3};
  // La practica NO pasa por nPreguntas(), asi que el modo revision hay que respetarlo aqui:
  // 10 por leccion son 50 en una unidad, y ese modo existe porque 40 por capitulo agotan.
- const preguntas = await preguntasDeOA(fb.oa, REV.activo?REV.n:(fb.n||3));
+ const preguntas = await preguntasDeOA(fb.oa, REV.activo?REV.n:(fb.n||3), leccion._banco);
  if(!preguntas.length){ terminarLeccion(); return; }  // sin banco: se marca completa igual
  Q={lvl:0,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock:false,
     preguntas, leccion:{id:leccion.id, titulo:leccion.titulo}, repetida:!!S.mateLecciones[leccion.id]};
@@ -822,8 +934,15 @@ function terminarLeccion(){ marcarLeccionCompleta(LEC.leccion.id); }
 let LECCIONES=null;   // cache del archivo
 async function cargarLecciones(){
  if(LECCIONES) return LECCIONES;
- try{ const d=await (await fetch(CFG.ruta)).json();
-      LECCIONES=d.lecciones||[]; }catch(e){ LECCIONES=[]; }
+ LECCIONES=[];
+ // Se fusionan los archivos igual que voz.js fusiona sus manifiestos: una asignatura nueva
+ // no obliga a tocar las que ya estaban. Un archivo que no carga se salta sin matar al resto.
+ for(const ruta of CFG.rutas){
+  try{ const d=await (await fetch(ruta)).json();
+       (d.lecciones||[]).forEach(l=>{ l._banco=ruta.replace('lecciones.json','preguntas.json');
+                                      LECCIONES.push(l); });
+  }catch(e){ console.warn('lecciones: no cargó', ruta); }
+ }
  return LECCIONES;
 }
 function leccionPorId(id){ return (LECCIONES||[]).find(l=>l.id===id); }
@@ -946,9 +1065,9 @@ async function cargarPoolMate(){
     activo: false,
     init: function (cfg) {
       cfg = cfg || {};
-      CFG.ruta = cfg.ruta || '';
+      CFG.rutas = cfg.rutas || (cfg.ruta ? [cfg.ruta] : []);
       CFG.hayReto = !!cfg.hayReto;
-      this.activo = montar() && !!CFG.ruta;
+      this.activo = montar() && CFG.rutas.length > 0;
       return this.activo;
     },
     /* Dibuja un diagrama suelto en un nodo. Lo usa el informe de aprobacion
@@ -963,6 +1082,27 @@ async function cargarPoolMate(){
     cargarPool: cargarPoolMate,
     /* Devuelve false si el modulo no esta activo, para que renderCampana de motor.js
        pueda caer a la campana normal en vez de quedarse con la pantalla en blanco. */
-    renderCampana: function (c) { if (!this.activo) return false; renderCampañaMate(c); return true; }
+    renderCampana: function (c) { if (!this.activo) return false; renderCampañaMate(c); return true; },
+    /* El nodo 📘 Introducción al principio del mapa de un capítulo.
+       ⚠️ Se dibuja FUERA del arreglo indexado de etapas, y no es negociable: el avance vive en
+       S.rutas[id].prog INDEXADO POR POSICIÓN, así que meterlo como etapa 0 correría todas las
+       demás y le rompería la partida a quien ya venía jugando.
+       Y NO bloquea: es un ofrecimiento, no un peaje. Un niño que la salta juega igual. */
+    nodoIntro: function (id, caja) {
+      if (!this.activo || !id || !caja) return false;
+      var self = this;
+      cargarLecciones().then(function (todas) {
+        var l = todas.find(function (x) { return x.id === id; });
+        if (!l) return;
+        var hecho = !!S.mateLecciones[id];
+        var d = document.createElement('div');
+        d.className = 'node ' + (hecho ? 'done' : 'open');
+        d.innerHTML = '<div class="orb">📘</div><div class="info"><b>' + escHtml(l.titulo) +
+          '</b><small>' + (hecho ? '✓ Vista' : '▶ Empieza aquí') + '</small></div>';
+        d.querySelector('.orb').onclick = function () { SND.tap(); abrirLeccion(l); };
+        caja.insertBefore(d, caja.firstChild);
+      });
+      return true;
+    }
   };
 })();

@@ -162,6 +162,12 @@ document.addEventListener('DOMContentLoaded',()=>{
  var s=document.createElement('style');
  s.id='css-voz';
  s.textContent=
+  /* ⚠️ [hidden] va PRIMERO y no es opcional: `display:block` en el selector de clase le gana
+     al atributo hidden, asi que un boton oculto se sigue VIENDO. Es la tercera vez que este
+     proyecto tropieza con lo mismo (#maestroOverlay en la Sesion 20, .btn del quiz en la 29),
+     y aqui hizo que el 🔊 de la mini-clase apareciera en 7° y 8°, donde no hay voz que sonar.
+     ⚠️ Y no lo delata mirar el DOM: el atributo decia hidden=true. Se vio en la captura. */
+  ".btn-escuchar[hidden]{display:none}"+
   ".btn-escuchar{display:block;margin:6px auto 10px;padding:8px 18px;border:0;border-radius:20px;"+
   "background:var(--gold);color:#3a2a12;font-family:'Nunito',sans-serif;font-weight:900;"+
   "font-size:15px;cursor:pointer}"+
