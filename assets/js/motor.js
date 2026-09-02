@@ -521,7 +521,10 @@ function arrancarArmador(){
   const t=(txt.match(/[?&]m=([^&\s]+)/)||[])[1] || txt;   // acepta enlace completo o token suelto
   const d=leerToken(t);
   if(!d){ $('armarLeido').textContent='No pude leer ese enlace.'; return; }
-  const nombres=d.ids.map(id=>{const e=EXPEDICIONES.find(x=>x.id===id); return e?nombreMapa(e):id;});
+  // Los EXTRAS no estan en EXPEDICIONES: sin este respaldo el lector mostraba el id crudo
+  // ("reto-calculo") en vez de su nombre.
+  const nombres=d.ids.map(id=>{const e=EXPEDICIONES.find(x=>x.id===id); if(e) return nombreMapa(e);
+    const x=EXTRAS.find(v=>v.id===id); return x?x.nombre:id;});
   const estado=!d.hasta ? 'Sin caducidad.'
     : (hoyISO()>d.hasta ? 'VENCIÓ el '+fechaLarga(d.hasta)+'.' : 'Vence el '+fechaLarga(d.hasta)+'.');
   $('armarLeido').textContent=nombres.join(' · ')+' — '+estado+(d.qa?' Con respuestas.':'')

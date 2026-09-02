@@ -931,7 +931,13 @@ para siempre.
   (no lo ven los SuperUsuarios). **Cada app tiene su propio armador** y lista solo sus capítulos;
   agregar un curso nuevo al selector es **una línea** en `NIVELES_MUESTRA` (`profesor.html`). **Vive en `index.html` a propósito:** el
   catálogo (`EXPEDICIONES`) ya está ahí, así que una expedición nueva aparece sola, sin
-  listas paralelas que mantener. Como `?solo=`, **no es un candado**, pero tampoco expone
+  listas paralelas que mantener.
+  ⚠️ **Pero lo que no es una expedición hay que declararlo en `EXTRAS`, o no aparece.** Pasó dos
+  veces con lo mismo: el **Reto de Cálculo** (Sesión 70) y las **4 unidades de mini-clases**
+  (Sesión 82) no se veían, así que un profesor con un enlace de muestra nunca conocía esa parte
+  del producto. Al agregar un módulo con pantalla propia, su entrada en `EXTRAS` va en el mismo
+  trabajo — y con ella hay que **probar el camino completo en modo prueba y en `?rev=1`**, que es
+  donde aparecieron las tres fugas de la Sesión 82. Como `?solo=`, **no es un candado**, pero tampoco expone
   nada nuevo.
 - **`?m=<token>` — Muestra con caducidad:** misma experiencia que `?solo=`, pero los datos
   viajan en un token **base64url** con el formato `ids|AAAA-MM-DD|1` (ids de capítulos, fecha
@@ -7149,3 +7155,115 @@ Ahí `motor.js` era el **proveedor** y salía primero. Aquí es el **consumidor*
 `FRAC.html()`— y el proveedor son el módulo y el respaldo que vive en los forks. Así que primero
 `fracciones.js` **con** los tres forks, y `motor.js` después. Al revés, un `motor.js` nuevo sobre
 forks viejos daría `FRAC is not defined` y **mataría el quiz**.
+### Sesión 82 (2026-09-02) — El armador no mostraba las mini-clases, y detrás había tres fugas
+Roberto lo vio usándolo: *"en el armador no se ven las mini clases"*. Confirmado, y al medirlo
+aparecieron tres defectos más que nadie había visto. **No se tocó contenido**: ni un banco, ni una
+pregunta, ni un clip de voz.
+
+#### Por qué no se veían
+
+El armador dibuja `EXPEDICIONES` + `EXTRAS`. **Las mini-clases no son ninguna de las dos**: viven
+en `capitulosMate` de la campaña `mate`, y su contenido en `lecciones.json`.
+
+Es **el mismo defecto que la Sesión 70 encontró con el Reto de Cálculo**, por la misma causa: el
+armador solo entiende expediciones. De Matemática de 8° ofrecía las 4 expediciones y el Reto, pero
+no las 4 unidades con sus 17 mini-clases — justo el sub-producto más vistoso del nivel, el de los
+diagramas SVG interactivos, que costó cuatro planes.
+
+Entran como **dato en `EXTRAS`**, no como caso especial, así que el armador, el filtro de `?solo=`
+y la lista del modo prueba **siguen iguales en los tres forks**. 8° pasa de **21 a 25 casillas**.
+
+#### Los tres defectos que aparecieron, y ninguno se veía
+
+Nacen todos de lo mismo: **las mini-clases nunca fueron alcanzables desde un enlace de muestra**,
+así que ese camino nunca pasó por los modos prueba y revisión.
+
+1. ⚠️ **Una fuga que convertía el enlace de muestra en la llave del juego completo.** El nodo
+   "← Volver a Matemáticas" de la lista de lecciones llama a `renderCampaña()`, que abre la
+   campaña **entera**: las 4 unidades, las 4 expediciones, el Reto y el Jefe Final. Es la misma
+   fuga que la Sesión 41 cerró en el "Volver" de la campaña y la 42 con `renderListaPrueba`.
+2. **Las lecciones estaban encadenadas** (`i===0 || S.mateLecciones[anterior]`) **sin mirar
+   `CAPS_ABIERTOS`**: el profesor recibía la unidad con 4 de sus 5 lecciones bloqueadas, contra
+   la promesa del modo prueba.
+3. **`?rev=1` no llegaba a la práctica.** `iniciarPracticaLeccion` toma `fb.n` del JSON **sin
+   pasar por `nPreguntas()`**, así que servía 10 por lección — 30 en una unidad, cuando ese modo
+   existe justamente porque 40 por capítulo agotan a cualquiera (Sesión 56).
+
+De paso, el **lector de enlaces** del armador mostraba el id crudo (`reto-calculo`) para lo que no
+es expedición. Con 4 ids más iba a empeorar.
+
+#### Verificación (con `cdp.mjs`, jugando)
+
+| | |
+|---|---|
+| Armador de 8° | **25 casillas**, las 4 mini-clases bajo Matemáticas |
+| Lector | *"Mini-clases · Geometría"* y *"Reto de Cálculo"*, no el id |
+| `?solo=mate-geometria` | 1 tarjeta · las 4 lecciones **abiertas** (`bloqueadas: 0`) |
+| El "Volver" | vuelve a la lista de prueba (**1 nodo**), no a la campaña |
+| `?rev=1` | **3** preguntas, y el 🚩 marca el id real (`mate8-oa15-102`) |
+| Regresión | 8° con sus 20 expediciones, 10 nodos de campaña mate, 12 diagramas y 5 niveles del Reto; 7° y 3° con `HAY_MINICLASES=false` y cero mini-clases |
+
+**Cero errores de consola y cero 404** en los tres.
+
+> **Dos errores míos de medición, los dos del script y no del producto:** busqué el 🚩 por
+> `.rev-flag` cuando se llama `btnMarcar`, y leí `xp:0` porque **`ev.ir()` a la URL actual no
+> recarga la página**, así que el save sembrado nunca se leyó. Comprobados aparte: el 🚩 funciona
+> y el guardado sobrevive con sus 777 XP. La segunda es una trampa nueva de `cdp.mjs` y conviene
+> recordarla.
+
+#### Y el encargo que salió de ahí: llevar las mini-clases al resto de los cursos
+
+Roberto pidió el plan para los demás cursos de Matemática y evaluar si otra asignatura necesita
+una introducción. Se midió antes de proponer, y la medición **partió el trabajo sola**:
+
+| | 3° | 4° | 5° | 6° | 7° | 8° |
+|---|---|---|---|---|---|---|
+| OA de Matemática | 26 | 27 | 27 | 24 | 19 | 17 |
+| Banco | 792 ✅ | 0 | 0 | 0 | 570 ✅ | 603 ✅ |
+| Mini-clases | — | — | — | — | — | **17** ✅ |
+
+**140 OA, 17 con mini-clase: faltan 123.** Pero ⚠️ **la práctica saca del banco** (`fromBank`), y
+4°, 5° y 6° no tienen banco: sus 78 no se pueden escribir antes que el Bloque B. Es una
+dependencia dura. Alcance decidido: **3° (26) y 7° (19) = 45**, con el mapa «enseña → desafío»
+como en 8°.
+
+**Tres hallazgos que cambian el trabajo:**
+
+- ⚠️ **Ninguna herramienta lee `lecciones.json`** —ni el tablero, ni un validador, ni el generador
+  de informes, ni los scripts de voz—. **Las 17 mini-clases de 8° llevan enseñando desde la
+  Sesión 29 sin ninguna firma**, y hoy no hay forma de dárselas. No contradice la landing (dice
+  *"7.805 **preguntas** aprobadas"*, y es cierto), pero escribir 45 más multiplica por 3,6 el
+  contenido que enseña sin revisar. Y **una mini-clase equivocada es peor que una pregunta
+  equivocada: la pregunta se falla y se corrige, la clase se cree.** Por eso la herramienta va
+  **antes** de escribir.
+- **El motor vive solo en `juego/index.html`** (la Sesión 65 lo cortó de 3° y 7° por ser código
+  muerto). Hay que extraerlo a `assets/js/lecciones.js`: **479 líneas**, más **4 funciones sueltas
+  intercaladas con código vivo** (`renderCampañaMate`, `jefeFinalMateDesbloqueado`,
+  `capMateCompleto`, `cargarPoolMate`), que se cortan por balance de llaves y no por rangos.
+  El Reto de Cálculo vive pegado pero **no viaja** (Sesión 74).
+- **El motor ya admite lecciones sin práctica** (`terminarLeccion()` marca completa una lección que
+  se queda sin bloques). Así que **una introducción de Ciencias no pide una línea de motor**: es
+  una lección de 2-3 bloques sin `practica`. Y Ciencias es la única otra candidata medida —**0 de
+  sus 1.374 preguntas llevan dibujo**, se enseña y evalúa 100% con texto—, con **una por capítulo**
+  (4+5+4 = 13) y no por OA, que serían 92.
+
+**Historia y Lenguaje quedan fuera, y con motivo:** Historia ya tiene sus 4 dibujos propios en 3°
+usados en 33 preguntas, así que una introducción sería ambientación; Lenguaje es la peor candidata
+al formato —17 de sus 31 OA de 3° son producción o hábito, y una clase que enseña a escribir no
+tiene cómo comprobar con un quiz que se aprendió.
+
+**La migración cortés se sacó del alcance** cuando Roberto confirmó que el curso de 3° es de prueba
+y la invitación no se ha mandado: sería **una rama que nadie ejerce**, y una rama que nadie ejerce
+es una rama que no se prueba. El patrón queda anotado en el spec para el día que haya alumnos vivos.
+
+#### Lo que cazó la auto-revisión del plan, y habría matado los tres cursos
+
+**`motor.js` nombra tres cosas que se van al módulo**: `renderCampañaMate` (en `renderCampaña`),
+`volverAlCapituloMate` (en el ✕ del quiz) y `abrirMiniClaseDeOA` (en el siguiente paso al
+reprobar). Cortarlas sin reconectarlas deja al motor genérico llamando funciones que ya no
+existen, **en los tres cursos a la vez**. Es el hermano exacto del `detenerTimersActivos` de la
+Sesión 65 — la referencia cruzada que solo aparece si la enumeras **antes** de cortar, que es por
+lo que la Tarea 1 del plan es justamente enumerarlas.
+
+Spec y plan: `docs/superpowers/specs/2026-09-02-miniclases-e-introducciones-design.md` y
+`docs/superpowers/plans/2026-09-02-miniclases-e-introducciones.md` (18 tareas en 5 fases).
