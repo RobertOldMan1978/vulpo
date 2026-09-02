@@ -150,6 +150,10 @@ están hoy en una expedición jugable, el resto es reserva.
 - Tipografías: **Titan One** para títulos y **Nunito** para texto.
 - Mobile-first, contenedor máximo de 480px, sin zoom del usuario.
 - Fondo con estrellas animadas y degradados radiales.
+- **Las fracciones se dibujan APILADAS**, numerador sobre denominador, como en el cuaderno —no
+  `9/10` en línea—. Lo hace `assets/js/fracciones.js` **al pintar**, y por eso hay una regla que
+  vale para todo curso nuevo: **el banco escribe `n/m` y el juego lo apila; el banco NO se toca**.
+  Ver [`docs/estandar-fracciones.md`](docs/estandar-fracciones.md).
 - **Portadas de capítulo: cada capítulo la suya**, con el estándar de 8° (viñeta circular
   sobre violeta, Vulpi de cuerpo entero haciendo la actividad, sin texto dentro de la
   imagen). **Un solo estilo para los seis cursos**; lo que cambia con la edad es la densidad
@@ -252,12 +256,12 @@ supuesto cuando pide "no modificar `contenido/` ni `supabase/`".
 1. **Un cambio de una capa no toca las otras.** Agregar preguntas es `contenido/`; cambiar una
    regla del juego es motor; ninguno de los dos toca `supabase/`. Cuando un trabajo obliga a
    tocar tres capas a la vez, casi siempre está mal planteado.
-2. **Lo que se comparte entre cursos va a `assets/js/`, no se copia.** Hoy son ocho módulos:
+2. **Lo que se comparte entre cursos va a `assets/js/`, no se copia.** Hoy son **nueve** módulos:
    `revision.js`, `sensible.js`, `calculo.js`, y desde el 31/08 **`visuales.js`** (los 11
    dibujos), **`voz.js`** (la lectura en voz alta), **`niveles.js`** (el catálogo de niveles,
    que solo carga el panel), **`instalar.js`** (el ofrecimiento de agregar el juego a la
    pantalla del teléfono) y **`motor.js`** (el juego entero: quiz, campañas, jefes, duelo,
-   tienda, guardado). **Siempre con su respaldo vacío antes de usarse**, porque un 404 de
+   tienda, guardado); desde el 02/09, **`fracciones.js`** (las fracciones apiladas). **Siempre con su respaldo vacío antes de usarse**, porque un 404 de
    un `<script src>` mata todo el JavaScript y el síntoma engaña: la pantalla se ve bien y ningún
    botón responde. Cada uno se prueba **con el archivo ausente**, no solo presente.
    - ⚠️ **`motor.js` es la excepción: NO admite respaldo vacío, porque es el juego.** Lo que sí
@@ -7058,3 +7062,90 @@ el niño cambia de teléfono y recupera todo.
   Safari. Queda sin correr la comprobación del tope de 64 KB, que necesita el esquema aplicado.
 - Spec y plan: `docs/superpowers/specs/2026-09-01-progreso-en-el-servidor-design.md` y
   `docs/superpowers/plans/2026-09-01-progreso-en-el-servidor.md`.
+### Sesión 81 (2026-09-02) — Las fracciones se dibujan como en el cuaderno
+Roberto lo vio jugando: la pregunta *"¿Cuánto es (9/10) ÷ (3/5)?"* mostraba las fracciones **en
+línea**, y un niño las aprende **apiladas**. Pidió corregirlo *"y dejarlo como regla para los
+siguientes cursos"*, que es la mitad más valiosa del encargo. **No se tocó ni un banco.**
+
+#### La medición, antes de decidir nada
+
+**128 preguntas** con fracciones —Matemática de 7° (82), de 8° (30) y de 3° (16)— en **278 formas
+distintas**, todas de dígitos: `3/4`, `(9/10)`, `-3/4`, `35/2`, y muchas con puntuación pegada.
+
+Se buscaron los falsos positivos antes de escribir el patrón: los 20 casos de `letra/letra` del
+proyecto son **versos de poemas de Lenguaje** (*"que golpea tu ventana / y nadie me…"*) y
+`metal/no metal`. Un patrón de solo dígitos no los toca.
+
+#### ⚠️ Se cambia el DIBUJO, nunca el dato — y es la regla que hay que respetar
+
+Tres motivos, y el primero cuesta plata:
+
+1. **La voz pregrabada de 3° se indexa por el texto MOSTRADO.** Cambiar el texto del banco dejaría
+   los clips huérfanos —siguen sonando como antes, en silencio— y habría que regenerarlos y
+   pagarlos de nuevo. Es el *gotcha* de la Sesión 60.
+2. `contenido/` es la capa de datos y esto es presentación: un cambio de una capa no toca las otras.
+3. Las marcas de aprobación son por `id`, así que sobrevivirían igual — pero **el texto que un
+   profesor aprobó sigue siendo exactamente el mismo**, que es lo honesto.
+
+#### ⚠️ Dos números comparten la forma y NO son fracciones
+
+`PREGUNTA 1/10`, en el encabezado del quiz, y el contador `1/10` del Reto de Cálculo. Los dos viven
+en elementos aparte (`#qTag`, `#calcNum`) y **no pasan por el módulo**: aplicar esto a lo ancho de
+la pantalla dejaría el contador de preguntas apilado. Verificado en pantalla.
+
+#### El módulo
+
+**`assets/js/fracciones.js`** (noveno compartido). `FRAC.html(texto)` **escapa primero y marca
+después** —al revés reabriría el XSS almacenado de la Sesión 51—, se lleva su propio CSS y tiene
+respaldo vacío que **también escapa**: un 404 no puede reabrir ese agujero.
+
+Sus guardas, y las tres nacieron de mirar datos reales:
+
+- **Fechas y listas** (`12/05/2020`, `1/2/3`): mira el carácter pegado a cada lado y, si es un
+  dígito o una barra, no apila. **Ante la duda no apila** — un falso negativo se ve como antes, un
+  falso positivo deforma el dato.
+- **El signo va FUERA y pegado** a su fracción: en 8° el objetivo es *"fracciones y decimales,
+  aunque sean negativos"*, y un `-` suelto se lee como una resta.
+- **Los paréntesis de una fracción sola se quitan**, porque apilada sobran. ⚠️ Pero **solo** si el
+  paréntesis contiene exactamente una fracción y lo anterior no es dígito ni letra: `2(3/4)` es una
+  multiplicación y sin paréntesis se leería como el mixto 2¾, que es otro valor.
+
+**Nueve puntos de pintura**: quiz, Jefe Final, duelo local, duelo en línea y la explicación al
+fallar (`motor.js`); Reto de Cálculo y mini-clases (`juego/index.html`).
+
+#### Lo que solo se vio MIRANDO la captura
+
+La primera versión medía perfecto —2 fracciones en el enunciado, 4 en las opciones, 0 en el
+contador— y aun así tenía dos defectos: **los paréntesis alrededor de una fracción apilada quedaban
+ruidosos** (`( 9/10 ) ÷ ( 3/5 )`) y **el signo menos quedaba separado** de su fracción. Ningún
+conteo lo dice. Es la cuarta vez que este proyecto tropieza con lo mismo —Sesiones 59, 74, 77— y por
+eso la captura es parte de la verificación, no un extra.
+
+#### Verificación
+
+| | |
+|---|---|
+| Barrido sobre **los 16 bancos** | 46.842 textos, 762 fracciones apiladas, **0 escapes rotos** |
+| Fechas, listas, versos, `metal/no metal` | intactos |
+| `2(3/4)` | conserva sus paréntesis |
+| `PREGUNTA 1/10` | no se apila |
+| Con el módulo **ausente** | el juego sigue en los tres, y el respaldo **sigue escapando** |
+| Regresión | 20/23/27 expediciones, motor vivo, cero consola y cero 404 |
+
+**7° y 3° cambian byte a byte igual**; lo único que 8° tiene de más son las mini-clases y el Reto,
+que en los otros dos no existen.
+
+#### La regla, escrita para los cursos que vienen
+
+- **[`docs/estandar-fracciones.md`](docs/estandar-fracciones.md)** (nuevo): la regla, los cinco
+  casos que **no** son fracciones, y las dos líneas que necesita un curso nuevo.
+- **`docs/encargo-banco.md` §3**: lo que necesita saber quien escriba preguntas — *escribe `n/m` y
+  nada más; el juego lo apila solo*. Con eso **5°, 6° y 4° lo heredan sin trabajo extra**, que era
+  el punto del encargo.
+
+#### Orden de publicación: al revés que en la Sesión 80
+
+Ahí `motor.js` era el **proveedor** y salía primero. Aquí es el **consumidor** —llama a
+`FRAC.html()`— y el proveedor son el módulo y el respaldo que vive en los forks. Así que primero
+`fracciones.js` **con** los tres forks, y `motor.js` después. Al revés, un `motor.js` nuevo sobre
+forks viejos daría `FRAC is not defined` y **mataría el quiz**.

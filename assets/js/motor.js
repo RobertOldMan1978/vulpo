@@ -64,12 +64,12 @@ function renderJefePregunta(){
  pintarHudJefe();
  const p=JF.preguntas[JF.idx], cont=$('jefePregunta');
  const orden=p.ops.map((o,i)=>({o,i})).sort(()=>Math.random()-.5);
- cont.innerHTML=`<div class="qcard"><div class="tag">👑 Jefe Final · Pregunta ${JF.idx+1}/${JF.preguntas.length}</div><h2>${escHtml(p.q)}</h2></div><div class="opts" id="jfOpts"></div>`;
+ cont.innerHTML=`<div class="qcard"><div class="tag">👑 Jefe Final · Pregunta ${JF.idx+1}/${JF.preguntas.length}</div><h2>${FRAC.html(p.q)}</h2></div><div class="opts" id="jfOpts"></div>`;
  const ops=cont.querySelector('#jfOpts');
  orden.forEach((it,k)=>{const b=document.createElement('div');b.className='opt';
   if(it.i===p.ok)b.dataset.correcta='1';
   if(QA_MARCA&&it.i===p.ok)b.classList.add('qa-ok');
-  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${escHtml(it.o)}`;
+  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${FRAC.html(it.o)}`;
   b.onclick=()=>responderJefe(b,it.i===p.ok);ops.appendChild(b);});
  JF.lock=false;
 }
@@ -216,13 +216,13 @@ function pintaDuelo(){
  const P=D.pr[D.ronda],jug=D.j[D.turno];D.lock=false;
  $('dTurn').textContent=jug.em+' '+jug.n;
  $('dTag').textContent='Ronda '+(D.ronda+1)+'/'+DUELO_ROUNDS;
- $('dText').textContent=P.q;$('dFb').textContent='';$('dFb').className='feedback';
+ $('dText').innerHTML=FRAC.html(P.q);$('dFb').textContent='';$('dFb').className='feedback';
  $('dProg').style.width=(D.ronda/DUELO_ROUNDS*100)+'%';
  $('dScore').textContent=`${D.j[0].em} ${D.j[0].pts}  —  ${D.j[1].pts} ${D.j[1].em}`;
  const orden=P.ops.map((o,i)=>({o,i})).sort(()=>Math.random()-.5);
  const box=$('dOpts');box.innerHTML='';
  orden.forEach((it,k)=>{const b=document.createElement('div');b.className='opt';
-  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${escHtml(it.o)}`;
+  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${FRAC.html(it.o)}`;
   b.onclick=()=>responderDuelo(b,it.i===P.ok,P);box.appendChild(b);});
  clearInterval(D.timer);D.t=DUELO_SEG;$('dTimer').textContent=D.t;$('dTimer').className='timer';
  D.timer=setInterval(()=>{D.t--;$('dTimer').textContent=D.t;if(D.t<=5){$('dTimer').classList.add('low');if(D.t>0)SND.tick();}
@@ -289,14 +289,14 @@ function odPinta(){
  const P=OD.preguntas[OD.idx];OD.lock=false;
  $('odTurn').textContent=OD.modo==='crear'?'Tu ronda':('Responde a '+OD.rivalNombre);
  $('odTag').textContent='Pregunta '+(OD.idx+1)+'/8';
- $('odText').textContent=P.pregunta;$('odFb').textContent='';$('odFb').className='feedback';
+ $('odText').innerHTML=FRAC.html(P.pregunta);$('odFb').textContent='';$('odFb').className='feedback';
  $('odProg').style.width=(OD.idx/8*100)+'%';
  if(OD.modo==='responder'&&OD.expira){$('odReloj').hidden=false;$('odReloj').textContent='⏳ Te quedan '+restante(OD.expira);}else $('odReloj').hidden=true;
  const orden=P.opciones.map((o,i)=>({o,i})).sort(()=>Math.random()-.5);
  const box=$('odOpts');box.innerHTML='';
  orden.forEach((it,k)=>{const b=document.createElement('div');b.className='opt';
   if(QA_MARCA&&it.i===P.correcta)b.classList.add('qa-ok');
-  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${escHtml(it.o)}`;b.onclick=()=>odResponder(b,it.i===P.correcta);box.appendChild(b);});
+  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${FRAC.html(it.o)}`;b.onclick=()=>odResponder(b,it.i===P.correcta);box.appendChild(b);});
  clearInterval(OD.timer);OD.t=DUELO_SEG;$('odTimer').textContent=OD.t;$('odTimer').className='timer';
  OD.timer=setInterval(()=>{OD.t--;$('odTimer').textContent=OD.t;if(OD.t<=5){$('odTimer').classList.add('low');if(OD.t>0)SND.tick();}
   if(OD.t<=0){clearInterval(OD.timer);odResponder(null,false);}},1000);
@@ -1350,7 +1350,7 @@ function pintaPregunta(){
    : Q.desafio
    ? `📣 ${Q.desafio.titulo} · Pregunta ${Q.idx+1}/${Q.preguntas.length}`
    : `${MODO==='dificil'?'🔥 ':''}${N.icono} ${N.nombre} · Pregunta ${Q.idx+1}/${Q.preguntas.length}`;
- $('qText').textContent=P.q;
+ $('qText').innerHTML=FRAC.html(P.q);
  $('qVisual').innerHTML = renderVisual(P.visual);
  $('qFb').textContent='';$('qFb').className='feedback';
  // Línea fija de meta: en etapa y repaso (mismo OA), no en lección/desafío/libros.
@@ -1367,7 +1367,7 @@ function pintaPregunta(){
   const b=document.createElement('div');b.className='opt';
   if(it.i===P.ok)b.dataset.correcta='1';
   if(QA_MARCA&&it.i===P.ok)b.classList.add('qa-ok');
-  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${escHtml(it.o)}`;
+  b.innerHTML=`<span class="key">${'ABCD'[k]}</span>${FRAC.html(it.o)}`;
   b.onclick=e=>responder(b,it.i===P.ok,P,e);
   $('qOpts').appendChild(b);});
  // Botón de lectura: lee la pregunta y las 4 opciones en voz alta.
@@ -1438,8 +1438,8 @@ function responder(el,ok,P,e){
   if(correcta)correcta.classList.add('ok');
   const e=$('qExpl');e.innerHTML='';
   const b=document.createElement('b');b.textContent='Respuesta correcta: ';
-  const s1=document.createElement('span');s1.textContent=P.ops[P.ok];
-  const s2=document.createElement('span');s2.className='expl-tip';s2.textContent='💡 '+P.tip;
+  const s1=document.createElement('span');s1.innerHTML=FRAC.html(P.ops[P.ok]);
+  const s2=document.createElement('span');s2.className='expl-tip';s2.innerHTML='💡 '+FRAC.html(P.tip);
   e.append(b,s1,document.createElement('br'),s2);
   e.hidden=false;$('btnSeguir').hidden=false;
  }
