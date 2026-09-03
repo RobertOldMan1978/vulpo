@@ -684,17 +684,24 @@ function renderExpediciones(){
  ajustarNav();
  const g=$('expGrid');g.innerHTML='';
  ORDEN_ASIG.forEach(asig=>{
-  if(HAY_MINICLASES && asig==='Matemáticas'){          // Matemáticas = campaña de lecciones + Reto
-   const camp=CAMPAÑAS.find(c=>c.id==='mate');
+  const camp=CAMPAÑAS.find(c=>c.asignatura===asig);
+  /* ¿Esta asignatura se juega como camino de mini-clases? Es una propiedad de SU campaña
+     —que tenga capitulosMate—, no el nombre de la asignatura ni el id que le tocó a 8°.
+     Antes decía asig==='Matemáticas' y buscaba la campaña por id 'mate': en 7° se llama
+     'mate7' y en 5° 'mate5', así que devolvía undefined y reventaba aquí. Y como esto
+     corre ANTES del go('scr-expediciones'), el botón JUGADOR no navegaba y el curso
+     quedaba inalcanzable SIN NINGÚN ERROR de consola. 3° se salvaba de casualidad, por
+     escribir 'Matemática' en singular. Es el mismo patrón de las Sesiones 63, 64, 69 y 72:
+     un `if` sobre el nombre de la asignatura no dice si el nivel tiene esa funcionalidad. */
+  if(HAY_MINICLASES && camp && camp.capitulosMate){    // campaña de lecciones + Reto
    const cap0=camp.capitulosMate[0];
    const nHechas=cap0.lecciones.filter(id=>S.mateLecciones[id]).length;
    const card=document.createElement('div');card.className='exp-card';
-   card.innerHTML=`<img src="${ASIG_PORTADA['Matemáticas']}" alt="Matemáticas"><div class="exp-info"><b>Matemáticas</b><small>Aprende y practica · Números ${nHechas}/${cap0.lecciones.length}</small></div><span class="exp-go">▶</span>`;
+   card.innerHTML=`<img src="${camp.portada||ASIG_PORTADA[asig]}" alt="${asig}"><div class="exp-info"><b>${asig}</b><small>Aprende y practica · ${cap0.titulo} ${nHechas}/${cap0.lecciones.length}</small></div><span class="exp-go">▶</span>`;
    card.onclick=()=>{SND.tap(); if(bloqueado()){avisoCandado();return;} abrirCampaña(camp);};
    if(bloqueado()) card.classList.add('lock');
    g.appendChild(card); return;
   }
-  const camp=CAMPAÑAS.find(c=>c.asignatura===asig);
   const exps=mapasDe(asig);
   if(!camp&&!exps.length)return;                       // sin contenido: no se muestra
   const portada=camp?camp.portada:(ASIG_PORTADA[asig]||exps[0].portada);

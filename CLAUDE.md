@@ -136,8 +136,8 @@ año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron co
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
 están hoy en una expedición jugable, el resto es reserva.
 
-> **Estado de aprobación (03/09/2026): 7.805 aprobadas de 8.615 escritas.** Las **810 de
-> Matemática de 5°** son lo único pendiente: se escribieron el 02/09 y nacen `revisada:false`.
+> **Estado de aprobación (03/09/2026): 7.805 aprobadas de 9.035 escritas.** Las **1.230 de 5°**
+> —810 de Matemática y 420 de Ciencias— son lo único pendiente: nacen `revisada:false`.
 > Hasta el 31/08 el banco estaba firmado entero (7.805 de 7.805), incluidas las 60 del
 > Vocabulario de 3°. Pero **cómo se aprobó cada banco no es lo mismo, y hay que saberlo antes de
 > decírselo a un colegio:** los 2.536 de 8° y los módulos de apoyo se revisaron **pregunta por
@@ -474,6 +474,21 @@ la pregunta al crear un nivel**.
    **3° se salvaba por accidente**, porque escribe `'Matemática'` en singular y la comparación
    era con el plural — o sea, la protección era una coincidencia de ortografía.
 
+> ⚠️ **Y el tercer caso mató un curso entero, en producción (Sesión 90).**
+> `renderExpediciones` buscaba la campaña de mini-clases con `CAMPAÑAS.find(c=>c.id==='mate')`
+> —**el id de 8°**—, y en 7° se llama `mate7` y en 5° `mate5`. Devolvía `undefined` y reventaba
+> al leer `.capitulosMate`. Como esa función corre **antes** del `go('scr-expediciones')`, el
+> botón JUGADOR **no navegaba: 7° básico estuvo injugable en `vulpo.cl` desde la Sesión 83**,
+> con **cero errores de consola**. 3° se salvó otra vez de casualidad, por escribir
+> `'Matemática'` en singular. La pregunta correcta no es cómo se llama la asignatura ni qué id
+> le tocó a 8°, sino **si SU campaña tiene `capitulosMate`** — que es como ya lo preguntaba
+> `renderInformeApoderado` mil líneas más abajo, en el mismo archivo.
+>
+> **Y la lección de método: se encontró TOCANDO el botón, no llamando la función.** Un curso
+> muerto y una consola limpia se ven igual que un curso sano si se verifica por funciones
+> sueltas. Toda verificación de nivel incluye ahora tocar JUGADOR y comprobar que la pantalla
+> **cambia**.
+>
 > **Por qué importa la forma y no solo el arreglo:** los dos bugs eran `asig==='Matemáticas'`
 > escrito a mano en un archivo que se copió tres veces. Un `if` sobre el nombre de la asignatura
 > **no dice** si el nivel tiene esa funcionalidad, así que al forkear se copia con su suposición
@@ -8354,3 +8369,108 @@ defecto mudo de 7°— y el guardado queda aislado en `kimun_save_5to`.
 
 **De 5° faltan Historia (22 OA), Ciencias (14) y Lenguaje (30)**, con su reparto en capítulos ya
 aprobado.
+
+### Sesión 90 (2026-09-03) — Ciencias de 5°, y 7° estaba caído en producción
+Continuación de la 89, a pedido de Roberto: *"sigue con ciencias, al mismo ritmo"*. Ciencias
+queda cerrada, pero lo más importante de la sesión apareció verificando: **7° básico llevaba
+días injugable en `vulpo.cl`**.
+
+#### ⚠️ El botón JUGADOR de 7° no navegaba, y la consola estaba limpia
+
+Se encontró **tocando el botón**, no leyendo el código ni llamando funciones sueltas:
+
+    vulpo.cl/7mo  tras tocar JUGADOR -> pantalla scr-rol · tarjetas 1   <<< NO NAVEGA
+    vulpo.cl/8vo  tras tocar JUGADOR -> pantalla scr-expediciones · tarjetas 5   ok
+    vulpo.cl/3ro  tras tocar JUGADOR -> pantalla scr-expediciones · tarjetas 5   ok
+    errores de consola en produccion: 0
+
+`renderExpediciones` buscaba la campaña de mini-clases con `CAMPAÑAS.find(c=>c.id==='mate')`
+—**el id de 8°**— y en 7° se llama `mate7`. Devolvía `undefined` y reventaba al leer
+`.capitulosMate`; como esa función corre **antes** del `go('scr-expediciones')`, la pantalla no
+cambiaba. **Vivo desde la Sesión 83**, que es cuando `HAY_MINICLASES` pasó a `true` en 7°.
+**3° se salvó de casualidad** por escribir `'Matemática'` en singular — la misma protección
+accidental de la Sesión 64.
+
+El arreglo pregunta por el **dato** (`camp.capitulosMate`) y no por el nombre ni por el id,
+copiando el patrón correcto que ya existía mil líneas más abajo **en el mismo archivo**. De paso
+salieron dos literales más cableados a 8° en esa tarjeta: la portada y la palabra "Números", que
+en 5° debía decir "Números y operaciones". Tras el arreglo: 8° 5 tarjetas, **7° de 1 a 4**, 3° 5,
+5° de 0 a 2.
+
+> **Consecuencia deliberada en 3°:** antes su Matemática caía a la tarjeta genérica ("0/7
+> capítulos") aunque su campaña es `esLecciones:true`; ahora muestra "Aprende y practica ·
+> Números hasta 1.000 0/4", como 7° y 8°. El destino ya era el correcto — lo que cambia es que
+> el subtítulo dice la verdad.
+
+#### Dos defectos propios, y uno también estaba en producción
+
+- **`matematicas-5basico` traía 158 marcas de negrita de markdown**, y el motor de lecciones **no interpreta
+  markdown**: pinta con `FRAC.html`, que escapa. O sea que las **27 mini-clases publicadas en la
+  Sesión 89 mostraban los asteriscos en pantalla**. Los otros 12 archivos de lecciones tienen
+  **cero**, así que la convención del proyecto es texto plano y la rompí al escribir 5°. Los 14
+  quedan en 0. (Darle negrita al motor es una línea, pero es un cambio del módulo compartido y
+  merece su propia decisión.)
+- **Las tildes de las cadenas visibles**: escribí "el ano completo", "Celulas, tejidos y organos",
+  "Como respiramos". Las había dejado sin tilde para no pelear con el heredoc. **Ningún conteo lo
+  delata** — se vieron en la captura.
+
+#### Ciencias de 5°
+
+**420 preguntas** (14 OA × 30, correcta repartida 26/22/26/26%), **4 capítulos** y Jefe Final
+**El Cortocircuito**. Las 3 unidades oficiales van 7-4-3 OA, así que "Ciencias de la vida" se
+parte en dos por tema —el cuerpo y la salud—, declarado, como ya hizo 7° con su unidad de 6.
+
+**4 introducciones**, una por capítulo, según el estándar de la Sesión 84. Sin práctica, así que
+**no agregan ninguna medición al mapa de dominio del profesor** — que es la asimetría que
+distingue una introducción de una mini-clase.
+
+> ⚠️ **El nodo 📘 no entra en el arreglo de etapas**, que está indexado por posición: se dibuja
+> aparte con `LECC.nodoIntro`. Verificado que el avance no se movió — las etapas del capítulo
+> siguen siendo las mismas con el nodo nuevo delante.
+
+**Una fuga real, encontrada y corregida.** El barrido de fugas marcó 6 candidatos y **hubo que
+juzgarlos, no obedecerlos**: cinco eran el concepto que el capítulo existe para abrir —la
+escalera célula→tejido→órgano→sistema, las piezas del circuito—, igual que los 49 avisos de la
+Sesión 83. El sexto sí lo era: mi gráfico de barras mostraba `salada 97 / dulce 3` y
+`cien5-oa12-1` pregunta *"¿qué parte es salada?"* con clave **"Alrededor del 97%"**. El widget
+`barras` **imprime siempre el valor sobre la barra** y no tiene forma de apagarlo —lo mismo que
+midió la Sesión 89—, así que se quitó el gráfico: el texto dice "casi toda es salada", que es el
+concepto sin el número.
+
+**El backend no necesitó nada.** `CN05` sale solo del producto cruzado de `kimun_asignaturas_todas()`
+—M4 pagándose otra vez—, y `LECC.init` ya recibe una lista de rutas desde la Sesión 84.
+
+#### Verificación (con `scripts/cdp.mjs`, jugando)
+
+Con clics reales: campaña de 5 nodos con **arte distinto por capítulo**, mapa con el nodo 📘
+delante de sus 4 etapas y el jefe, introducción de 5 bloques con la célula dibujada y sus
+rótulos, tarjeta 🎯 con la meta en lenguaje de niño, y quiz de 10 con 4 opciones y reloj. Los
+**14 OA tienen su `META_OA`** —la comprobación que habría cazado el defecto mudo de 7°— y los
+**8 assets que nombra la campaña existen**, así que no hay un solo 404 tapado por el `onerror`.
+El informe de aprobación dibuja sus **3 de 3 diagramas** y trae **424 casillas** (420 preguntas +
+4 lecciones). **Sin regresión**: 8° 20 expediciones, 7° 23, 3° 27, 5° 10; el guardado de 8° (777
+XP) intacto y las claves conviviendo. **Cero errores de consola y cero 404** en los cuatro.
+
+> **Nueve errores de selector propios en la verificación** (`lecSig` por `lecCont`, `.lec-card`,
+> `.diag`, `data-id`…). Ya con nombre: **cuando un conteo da cero o da todo mal, el primer
+> sospechoso es la prueba, no el producto.**
+
+#### Medido para Roberto: el nivel 05 NO está aplicado en el servidor
+
+Contra producción con la clave pública: `MA05 OA 01` → `null`, `CN05 OA 01` → `null`, y el
+**control positivo** `CN08 OA 01` → `"CN08"`. O sea que la función responde y lo que falta es el
+`05`: **el avance de 5° no llega al panel del profesor, sin ningún error**. No hay que escribir
+nada nuevo, solo re-aplicar `supabase/schema.sql`. (El control positivo es la lección de la
+Sesión 73: un `null` universal se ve igual que el aislamiento funcionando.)
+
+#### Orden de publicación
+
+Dos pushes, y aquí el primero **es el urgente**: `assets/js/motor.js` solo ya resucita 7° en
+producción, y el `5to/index.html` nuevo **no puede salir antes** —con el motor viejo, sus dos
+campañas reventarían igual—. Primero el motor y el contenido, después el fork.
+
+- **Pendiente de Roberto:** aprobar las 420 preguntas y las 4 introducciones (tablero regenerado,
+  **7.904 de 9.165**, e informe de 91 páginas en `dev/revision-ciencias-5basico.pdf`);
+  **re-aplicar el esquema con el nivel 05**; y el arte propio de 5° (villanos y portadas de
+  capítulo, hoy prestado y declarado).
+- **De 5° faltan Historia (22 OA) y Lenguaje (30)**, con su reparto en capítulos ya aprobado.

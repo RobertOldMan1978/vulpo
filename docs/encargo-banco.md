@@ -38,6 +38,13 @@ Tres consecuencias que la tabla no dice en voz alta:
 
 **La voz es la que más cambia el trabajo.** Si tu nivel la tiene, la sección 4 es obligatoria.
 
+⚠️ **Y antes de escribir la primera pregunta, lee `docs/cuidados-<asignatura>.md`.** Está
+nombrado también al final, en el §8, y por eso un agente que lea de arriba abajo puede tomarlo
+por post-proceso y saltárselo. No lo es: son **los errores que ya se colaron una vez**.
+⚠️ **Busca por TEMA, no por número de OA.** Esos documentos se escribieron para un nivel y se
+generalizaron después, así que un «OA 12» de ahí puede ser de otro año: en Ciencias, el
+`CN03 OA 12` es la rotación de la Tierra y el `CN05 OA 12` es el agua.
+
 ---
 
 ## 1. Formato exacto de salida
@@ -109,6 +116,13 @@ gastan el pool. Las parejas de **contraste** deliberado sí son legítimas.
 de 2. Todos tienen que ser **errores que un estudiante realmente cometería**: los errores
 conceptuales conocidos de cada materia.
 
+**e bis) El distractor demasiado cierto POR SER UN MATIZ AVANZADO.** Es un tercer caso, distinto
+de la (a) —el distractor defendible— y de la (e) —el absurdo—: una opción que **un niño de 10 años
+lee como error y un especialista marcaría como correcta**. En Ciencias aparece seguido. El agente
+del `CN05 OA 13` descartó cuatro ya escritos: *"los peces suben a la superficie de mañana"* (la
+migración vertical existe), *"durante El Niño los peces se hunden a aguas más frías"* (pasa de
+verdad) y dos más. **Antes de cerrar, pregúntate si tu distractor es falso o solo POCO CONOCIDO.**
+
 **f) El `tip` no puede nombrar la posición de una opción.** Las tandas se escriben con la correcta
 primera y el consolidador **baraja**: un tip que dice *"solo la primera lleva signos de
 interrogación"* termina contradiciendo la pantalla. No se ve revisando tu tanda, porque ahí
@@ -124,8 +138,26 @@ las opciones son distintas mira el texto, así que **no caza esto**: verifícalo
 dividir 2.400 entre 0,75", ese número tiene que ser de verdad esa división. Uno que anuncia una
 operación y muestra otra es descartable de una, y además el `tip` termina enseñando algo falso.
 
+**h bis) El objetivo VECINO del mismo año.** La trampa (i) habla de otro *año*; esta es peor,
+porque el mapa de dominio le reporta al profesor **por objetivo**: si tu pregunta se responde
+igual desde el OA de al lado, le va a mostrar **dos porcentajes que son el mismo dato**. Antes de
+escribir, lee el texto de tus vecinos en `oa.json` y decide qué es tuyo y qué no. `auditar-solape-oa.py`
+lo caza **después**; a ti te sirve saberlo antes.
+
+**h ter) Cuando la verdad lleva un «suele», ese «suele» NO se borra.** Muchos fenómenos son
+probabilísticos o de causa múltiple: en un año de El Niño **suele** llover más en Chile central,
+pero no siempre y no en todas partes; Humboldt **contribuye a** la aridez de Atacama, que además
+tiene la sombra de lluvia andina. Borrar el matiz deja la opción más limpia y **enseña una regla
+que no existe**. El hedge va en el enunciado o en la clave, no se sacrifica por prolijidad.
+
 **i) Contenido de otro año.** Ni más arriba (que solo se puede memorizar) ni más abajo (que no
 evalúa el OA). Si el OA no alcanza para 30 preguntas honestas, **entrega menos y explica por qué**.
+
+  > **Y la salida, que casi siempre existe: el CONCEPTO sí, el TÉRMINO no.** Se puede preguntar
+  > que las aguas profundas suben cargadas de nutrientes sin decir «surgencia»; que abajo no llega
+  > nada de luz sin decir «zona afótica»; que dos aristas de un cubo pueden cruzarse sin tocarse
+  > sin decir «alabeadas». Es la técnica que vuelve escribible casi cualquier OA con vocabulario
+  > de enseñanza media, y la levantó el agente del `CN05 OA 13`.
 
 ---
 
@@ -151,6 +183,10 @@ evalúa el OA). Si el OA no alcanza para 30 preguntas honestas, **entrega menos 
     así que `(9/10) ÷ (3/5)` y `9/10 ÷ 3/5` se ven igual. Escribe la que prefieras.
   - ⚠️ **Cuidado con una fecha o una lista con barras** (`12/05/2020`, `1/2/3`): el juego las
     respeta y NO las apila, pero conviene no escribirlas junto a fracciones en la misma frase.
+- ⚠️ **Si el OA ENUMERA categorías, cúbrelas todas y di el reparto en tu respuesta.** Cuando el
+  texto del objetivo dice «beneficiosos y dañinos», «positivos y negativos» o «renovables y no
+  renovables», la mitad incómoda es la que se olvida — y es justo la que el OA existe para
+  enseñar. Nadie te lo va a recordar en el encargo por objetivo.
 - **Varía la exigencia cognitiva.** El banco no puede ser 30 definiciones.
   - **3° y 4°:** alterna reconocer, aplicar a una situación, ordenar, comparar y predecir.
   - **5° a 8°:** apunta a **⅓ reconocer, ⅓ aplicar a una situación nueva, ⅓ analizar, comparar,
@@ -218,6 +254,20 @@ Cuando te toque uno de esos:
   esto (`LE03 OA 16`, caligrafía manuscrita; `LE07 OA 12`, escritura creativa libre) y se
   documentaron en su `oa.json`, en vez de fingir que se medían.
 
+### 6 bis. Los OA que piden una ACTIVIDAD (construir, investigar, experimentar)
+
+Es distinto del §6. Ahí el contenido mismo era inmedible —una conducta, un hábito—; aquí **el
+contenido SÍ se mide y lo que no se mide es la acción**: «construir un circuito», «investigar en
+diversas fuentes», «observar experimentalmente».
+
+La receta, que funcionó en Ciencias de 5°: **el experimento ya lo hizo un tercero con nombre**, y
+tú preguntas por **su resultado, su causa o su corrección**. *«Sofía conectó la pila, el cable y la
+ampolleta, pero dejó el interruptor abierto. ¿Qué pasa?»* mide exactamente lo que el laboratorio
+deja instalado, sin fingir que el alumno armó algo.
+
+⚠️ Varios `oa.json` traen esto escrito en su `nota_evaluacion`. **Léela**: es específica de tu
+nivel y de tu asignatura, y dice cuáles de tus objetivos están en este caso.
+
 ---
 
 ## 7. Antes de entregar
@@ -227,11 +277,22 @@ Valida tú mismo el archivo y **dilo en tu respuesta final**:
 1. Es JSON válido y son exactamente 30 preguntas (o las que hayas justificado).
 2. Todas tienen los campos, `correcta` es 0, las 4 opciones son distintas.
 3. Los `id` son correlativos y sin repetir.
-4. Ningún enunciado repetido ni casi repetido.
+4. Ningún enunciado repetido ni casi repetido. ⚠️ **Incluido el casi-duplicado de PLANTILLA:**
+   cuando el OA tiene elementos paralelos —las cuatro piezas de un circuito, los órganos de un
+   sistema, los planetas— lo natural es preguntarlos todos con la misma frase cambiando una
+   palabra, y eso *es* un casi-duplicado aunque el contenido difiera. Varía la forma.
 5. Releíste cada clave contra sus distractores buscando el caso "hay otra defendible".
 6. Cuentas cuántas veces la correcta es la más larga: **si pasa de 8 de 30, redistribuye** dándole
-   cuerpo a los distractores.
+   cuerpo a los distractores. ⚠️ **La medida que manda es la de `revisar-tanda.py`**, que exige
+   que la correcta le saque margen a **todas** las demás — no basta con empatar. Midiendo de otra
+   forma vas a reportar un número distinto del suyo, y ya pasó varias veces: un agente informó
+   «10 de 30» por su cuenta y «1 de 30» por el script. Reporta el del script.
 7. Ninguna pregunta tiene dos opciones que valgan lo mismo (trampa **g**).
+7 bis. **Relees cada `tip` preguntándote si enseña algo FALSO o de otro año.** El checklist solo
+   pedía que no repitiera la respuesta, y eso deja fuera el riesgo real: el `tip` es el único
+   momento de enseñanza del juego, así que una imprecisión ahí se aprende. En Ciencias es donde
+   más se cuela —«el jabón mata los microbios», «el refrigerador los mata» (los frena)— y en
+   Matemática ya hubo tips que afirmaban una regla falsa. Lo pidió el agente del `CN05 OA 07`.
 8. Ningún enunciado pasa del largo de tu fila en el §0.
 9. De 5° hacia arriba: cuentas el reparto por exigencia cognitiva y no te quedaste en puras
    definiciones.

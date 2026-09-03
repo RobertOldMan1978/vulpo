@@ -69,6 +69,10 @@ Y lo que **NO** va, con su motivo:
 
 ### `_pool/` — las tandas crudas
 
+⚠️ **En el pool, el salto de línea final DA IGUAL** —hoy hay 118 archivos con él y 93 sin él—:
+lo lee el consolidador, que es quien escribe el formato canónico del banco. La regla del salto
+final es del `preguntas.json`, no de aquí. Se decía "misma forma" y era ambiguo.
+
 Un archivo **por objetivo**, plano en `_pool/`, con el nombre del objetivo:
 
 ```

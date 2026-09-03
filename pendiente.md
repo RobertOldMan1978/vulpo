@@ -229,7 +229,7 @@ y validado. Ya no hay que estimar: los OA están contados y con su texto literal
 
 | # | Curso | OA | Preguntas a escribir (30 × OA) | Peso | Costo |
 |---|---|---|---|---|---|
-| B1 | **5° básico** — ✅ **Matemática LISTA (03/09)**: 810 preguntas + 27 mini-clases, jugable y auditada. Faltan LE 30 · CN 14 · HI 22 | **93** (MA 27 ✅) | ~2.790 (810 hechas) | 1 sesión más | — |
+| B1 | **5° básico** — ✅ **Matemática y Ciencias LISTAS (03/09)**: 1.230 preguntas, 27 mini-clases y 4 introducciones, jugables y auditadas. Faltan HI 22 · LE 30 | **93** (MA 27 ✅ · CN 14 ✅) | ~2.790 (1.230 hechas) | 1 sesión más | — |
 | B2 | **6° básico** | **99** (MA 24 · LE 31 · CN 18 · HI 26) | ~2.970 | 1–2 sesiones | — |
 | B3 | **4° básico** + voz + dibujos + auditoría de audibilidad | **92** (MA 27 · LE 30 · CN 17 · HI 18) | ~2.760 (−30 del OA excluido) | 2–3 sesiones | ~US$8 de Azure |
 
@@ -237,9 +237,9 @@ y validado. Ya no hay que estimar: los OA están contados y con su texto literal
 de 7° —transcribir el currículum— **está hecho para los tres**; se entra directo al fork y al
 banco.
 
-> **Avance real al 03/09: 810 de ~8.490.** El fork `5to/` existe, está cableado en los dos
+> **Avance real al 03/09: 1.230 de ~8.490.** El fork `5to/` existe, está cableado en los dos
 > catálogos y se juega. El reparto en capítulos de las **cuatro** asignaturas de 5° ya está
-> decidido y aprobado, así que las tres que faltan entran directo al banco.
+> decidido y aprobado, así que las dos que faltan entran directo al banco.
 
 **Tres cosas quedaron declaradas en los `oa.json` y hay que respetarlas al escribir el banco:**
 

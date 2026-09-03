@@ -86,9 +86,10 @@ Versión **v0.99**: completo y jugable de punta a punta, en vuelta de revisión
 manual antes de coronar la v1.
 
 **La v1 será VULPO de 3° a 8° básico**, seis cursos completos con sus cuatro
-asignaturas. Hoy existen **tres jugables completos** (3°, 7° y 8°) y **5° con su Matemática lista**
-(810 preguntas y 27 mini-clases, en revisión pedagógica). De los que faltan —4°, 6° y las
-otras tres asignaturas de 5°— ya está **fijado el currículum**: sus 284 objetivos están
+asignaturas. Hoy existen **tres jugables completos** (3°, 7° y 8°) y **5° con Matemática y
+Ciencias listas** (1.230 preguntas, 27 mini-clases y 4 introducciones, en revisión pedagógica).
+De los que faltan —4°, 6° y las otras dos asignaturas de 5°— ya está **fijado el currículum**:
+sus 284 objetivos están
 transcritos del currículum oficial y validados, en `contenido/<asignatura>-<n>basico/oa.json`.
 Lo que falta es escribir sus bancos de preguntas.
 

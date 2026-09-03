@@ -1,0 +1,152 @@
+{
+ "lecciones": [
+  {
+   "id": "ci5-cuerpo",
+   "oa": "CN05 OA 01",
+   "titulo": "El cuerpo por dentro",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Tu cuerpo funciona sin que tengas que pensarlo: mientras lees esto estás digiriendo, respirando y repartiendo sangre. En este capítulo vas a ver cómo lo hace."
+    },
+    {
+     "t": "diagrama",
+     "kind": "celula",
+     "params": {
+      "tipo": "animal"
+     },
+     "intro": "Todo empieza acá: la célula, la pieza más pequeña de un ser vivo."
+    },
+    {
+     "t": "texto",
+     "md": "La idea que ordena todo el capítulo es una escalera: las células parecidas forman un tejido, varios tejidos forman un órgano, y varios órganos que trabajan juntos forman un sistema."
+    },
+    {
+     "t": "texto",
+     "md": "Vas a recorrer tres sistemas y los tres son equipos, no piezas sueltas: el digestivo saca de la comida lo que sirve, el respiratorio toma el oxígeno del aire, y el circulatorio reparte las dos cosas a cada rincón del cuerpo."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un ejemplo que conecta los tres.",
+     "pasos": [
+      "Te comes un pan: el digestivo lo descompone y lo absorbe en el intestino delgado.",
+      "Respiras: el oxígeno del aire pasa a la sangre en los alvéolos.",
+      "La sangre lleva las dos cosas hasta tus piernas.",
+      "Por eso puedes correr. Ningún sistema podría hacerlo solo."
+     ]
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ci5-salud",
+   "oa": "CN05 OA 05",
+   "titulo": "Cuidar la salud",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Este capítulo no es una lista de reglas. Es entender por qué funcionan las cosas que uno ya escuchó mil veces, que es lo que las hace fáciles de recordar."
+    },
+    {
+     "t": "texto",
+     "md": "Vas a ver tres temas. El primero: para qué sirve cada alimento. Unos dan material para crecer y reparar, otros dan energía para moverse, y otros ayudan a que todo funcione. Por eso conviene comer variado — ningún alimento hace todo."
+    },
+    {
+     "t": "texto",
+     "md": "El segundo: qué le hace el humo del cigarrillo a los pulmones y al corazón. Acá se explica el mecanismo, no se juzga a nadie: mucha gente que fuma quisiera dejarlo, y no es un asunto de fuerza de voluntad."
+    },
+    {
+     "t": "texto",
+     "md": "Y el tercero: los microorganismos. Ojo con esto, porque casi todos creen lo contrario: no todos son dañinos. Hay bacterias que viven en tu intestino y te ayudan, y otras que hacen el yogur y el pan."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Por qué lavarse las manos funciona de verdad.",
+     "pasos": [
+      "El jabón no mata a los microbios con solo tocarlos.",
+      "Lo que hace es despegar la suciedad y la grasa de la piel.",
+      "Al frotar, los microbios se sueltan; al enjuagar, el agua se los lleva.",
+      "Por eso hay que frotar y enjuagar: sin eso, el jabón no alcanza a servir."
+     ]
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ci5-electricidad",
+   "oa": "CN05 OA 08",
+   "titulo": "La electricidad",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "La electricidad no se ve, así que es fácil imaginarla mal. En este capítulo vas a armar una idea que sí funciona, y empieza por una palabra: transformar."
+    },
+    {
+     "t": "diagrama",
+     "kind": "circuito",
+     "params": {
+      "cerrado": true
+     },
+     "intro": "Un circuito cerrado: la corriente puede dar la vuelta completa."
+    },
+    {
+     "t": "texto",
+     "md": "La energía no se gasta ni se acaba: cambia de forma. En una ampolleta pasa de eléctrica a luz, en una estufa a calor, en un parlante a sonido. Y siempre, además, aparece algo de calor — por eso el cargador se entibia."
+    },
+    {
+     "t": "texto",
+     "md": "Para que la corriente circule, el camino tiene que estar cerrado. Si falta un cable o el interruptor está abierto, no pasa nada: eso explica casi todas las fallas que vas a ver."
+    },
+    {
+     "t": "texto",
+     "md": "⚠️ Todo lo que vas a probar en clases se hace con una pila. Los enchufes y los cables de la casa llevan muchísima más energía y no se tocan, no se abren y no se usan para experimentar. Eso no es un consejo: es la regla."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Por qué el cable tiene dos materiales.",
+     "pasos": [
+      "Por dentro lleva cobre, que deja pasar la corriente muy bien.",
+      "Por fuera lleva plástico o goma, que la frenan.",
+      "El cobre la conduce hasta donde tiene que llegar.",
+      "El plástico impide que se escape hacia tu mano. Los dos materiales cumplen su papel."
+     ]
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ci5-agua",
+   "oa": "CN05 OA 12",
+   "titulo": "El agua en la Tierra",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Desde el espacio la Tierra se ve azul, y eso hace pensar que el agua sobra. Este capítulo empieza justamente ahí, porque la cuenta real sorprende."
+    },
+    {
+     "t": "texto",
+     "md": "Casi toda el agua de la Tierra es salada. De la poca que es dulce, la mayor parte está congelada en glaciares, y otra buena parte está bajo tierra. Los ríos y los lagos juntos son una fracción diminuta."
+    },
+    {
+     "t": "texto",
+     "md": "A eso el currículum le llama escasez relativa, y conviene entenderlo bien: el agua no se está acabando —el planeta tiene la misma y circula—, lo escaso es el agua dulce que se puede alcanzar y beber."
+    },
+    {
+     "t": "texto",
+     "md": "Después vas a ver cómo es el mar por dentro —abajo hace frío, no llega la luz y la presión aumenta— y por qué el mar chileno es helado incluso frente al desierto. Y al final, cómo la actividad humana daña y también cuida el agua: las dos cosas son parte del objetivo."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Por qué el mar de Iquique es frío si el desierto está al lado.",
+     "pasos": [
+      "Por la costa de Chile sube una corriente de agua fría desde el sur: la corriente de Humboldt.",
+      "Esa agua fría enfría el aire que está sobre ella.",
+      "Por eso casi no se forman lluvias en la costa del norte, y hay neblina en la mañana.",
+      "Y como además arrastra nutrientes desde el fondo, ahí hay muchísimos peces."
+     ]
+    }
+   ],
+   "revisada": false
+  }
+ ]
+}
