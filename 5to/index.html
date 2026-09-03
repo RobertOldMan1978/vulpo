@@ -1321,6 +1321,50 @@ const EXPEDICIONES=[
      {oa:"MA05 OA 27",nombre:"Tallo y hojas",icono:"🌿",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Datos y azar",icono:"🎯",n:15,oas:["MA05 OA 23","MA05 OA 24","MA05 OA 25","MA05 OA 26","MA05 OA 27"]},
    ]},
+ // --- Campaña Ciencias (5°) ---
+ // Las 3 unidades oficiales van 7-4-3 OA: "Ciencias de la vida" con 7 sería el doble de
+ // larga que las otras dos, así que se parte en dos por tema —el cuerpo y la salud—, que
+ // es como se enseña. Declarado a propósito, igual que hizo 7° con su unidad de 6.
+ { id:'cie5-cap1', intro:'ci5-cuerpo', asignatura:'Ciencias', nivel:'5° Básico · El cuerpo por dentro',
+   portada:'assets/portada-ciencias.png', portadaMapa:'assets/portada-cien-cuerpo.png',
+   contenido:'contenido/ciencias-5basico/preguntas.json', activa:true, campaña:'cie5',
+   etapas:[
+     {oa:"CN05 OA 01",nombre:"Células, tejidos y órganos",icono:"🔬",n:10},
+     {oa:"CN05 OA 02",nombre:"El viaje de la comida",icono:"🍽️",n:10},
+     {oa:"CN05 OA 03",nombre:"Cómo respiramos",icono:"🫁",n:10},
+     {oa:"CN05 OA 04",nombre:"La sangre reparte",icono:"❤️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: El cuerpo por dentro",icono:"🧬",n:15,oas:["CN05 OA 01","CN05 OA 02","CN05 OA 03","CN05 OA 04"]},
+   ]},
+ { id:'cie5-cap2', intro:'ci5-salud', asignatura:'Ciencias', nivel:'5° Básico · Cuidar la salud',
+   portada:'assets/portada-ciencias.png', portadaMapa:'assets/portada-cien-celula.png',
+   contenido:'contenido/ciencias-5basico/preguntas.json', activa:true, campaña:'cie5',
+   etapas:[
+     {oa:"CN05 OA 05",nombre:"Para qué sirve cada alimento",icono:"🥗",n:10},
+     {oa:"CN05 OA 06",nombre:"El humo del cigarrillo",icono:"🚭",n:10},
+     {oa:"CN05 OA 07",nombre:"Microbios buenos y malos",icono:"🦠",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Cuidar la salud",icono:"🧬",n:15,oas:["CN05 OA 05","CN05 OA 06","CN05 OA 07"]},
+   ]},
+ { id:'cie5-cap3', intro:'ci5-electricidad', asignatura:'Ciencias', nivel:'5° Básico · La electricidad',
+   portada:'assets/portada-ciencias.png', portadaMapa:'assets/portada-cien-electricidad.png',
+   contenido:'contenido/ciencias-5basico/preguntas.json', activa:true, campaña:'cie5',
+   etapas:[
+     {oa:"CN05 OA 08",nombre:"En qué se transforma",icono:"⚡",n:10},
+     {oa:"CN05 OA 09",nombre:"El circuito cerrado",icono:"💡",n:10},
+     {oa:"CN05 OA 10",nombre:"Conductores y aisladores",icono:"🔌",n:10},
+     {oa:"CN05 OA 11",nombre:"No desperdiciarla",icono:"🔋",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: La electricidad",icono:"🧬",n:15,oas:["CN05 OA 08","CN05 OA 09","CN05 OA 10","CN05 OA 11"]},
+   ]},
+ { id:'cie5-cap4', intro:'ci5-agua', asignatura:'Ciencias', nivel:'5° Básico · El agua en la Tierra',
+   // ARTE PRESTADO: no hay portada propia de agua todavía. Usa la de "materia" para que los
+   // cuatro capítulos se distingan entre sí, que es el punto del estándar de portadas.
+   portada:'assets/portada-ciencias.png', portadaMapa:'assets/portada-cien-materia.png',
+   contenido:'contenido/ciencias-5basico/preguntas.json', activa:true, campaña:'cie5',
+   etapas:[
+     {oa:"CN05 OA 12",nombre:"Cuánta agua hay",icono:"💧",n:10},
+     {oa:"CN05 OA 13",nombre:"El mar por dentro",icono:"🌊",n:10},
+     {oa:"CN05 OA 14",nombre:"Dañar y cuidar el agua",icono:"🐟",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: El agua en la Tierra",icono:"🧬",n:15,oas:["CN05 OA 12","CN05 OA 13","CN05 OA 14"]},
+   ]},
 ];
 const EXTRAS = [
   // Las unidades del camino de mini-clases. NO son expediciones (viven en capitulosMate
@@ -1454,6 +1498,26 @@ const CAMPAÑAS=[
     ],
   },
   recompensa:{ skin:'kimun-matematico', insignia:'maestro-matematica', bonoMonedas:500, bonoXP:300 },
+},{
+  id:'cie5', asignatura:'Ciencias', portada:'assets/portada-ciencias.png',
+  intro:'Del cuerpo por dentro a la electricidad y el agua del planeta: el año completo de Ciencias de 5°.',
+  capitulos:['cie5-cap1','cie5-cap2','cie5-cap3','cie5-cap4'],
+  jefeFinal:{
+    // ARTE PRESTADO de 7° mientras no exista el propio, declarado a propósito. El NOMBRE
+    // sí es propio: el año necesita identidad.
+    villano:'El Cortocircuito', villanoIc:'⚡', villanoImg:'assets/villano-ciencias-7mo.png',
+    villanoImgDerrotado:'assets/villano-ciencias-7mo-derrotado.png',
+    dialogo:'Corto el camino de todo: la corriente, la sangre, el agua... ¿crees que puedes cerrar el circuito?',
+    derrota:'Todo vuelve a cortarse. Estudia cómo se conecta cada cosa y regresa.',
+    vidasJugador:3, nPorFase:4,
+    fases:[
+      {nombre:'El cuerpo por dentro', oas:['CN05 OA 01','CN05 OA 02','CN05 OA 03','CN05 OA 04']},
+      {nombre:'Cuidar la salud', oas:['CN05 OA 05','CN05 OA 06','CN05 OA 07']},
+      {nombre:'La electricidad', oas:['CN05 OA 08','CN05 OA 09','CN05 OA 10','CN05 OA 11']},
+      {nombre:'El agua en la Tierra', oas:['CN05 OA 12','CN05 OA 13','CN05 OA 14']},
+    ],
+  },
+  recompensa:{ skin:'kimun-cientifico', insignia:'maestro-ciencias', bonoMonedas:500, bonoXP:300 },
 }];
 /* Solo las alcanzables. 5° nace con Matematica y nada mas, y una recompensa que no se
    puede ganar es peor que no ofrecerla — la leccion que 7° aprendio quitando la skin
@@ -1461,10 +1525,12 @@ const CAMPAÑAS=[
    Al sumar Historia, Ciencias y Lenguaje vuelven sus cuatro entradas. */
 const INSIGNIAS=[
   {id:'maestro-matematica', ic:'📐', tx:'Maestro de las Matemáticas', asignatura:'Matemáticas'},
+  {id:'maestro-ciencias', ic:'🔬', tx:'Maestro de Ciencias', asignatura:'Ciencias'},
   // Se gana la primera vez que se completa cualquier desafío de refuerzo del profesor.
   {id:'mision-profe', ic:'📣', tx:'Misión del profe', asignatura:null},
   // Exclusiva del Modo Difícil (se gana completando la asignatura en Difícil).
   {id:'dif-matematicas', ic:'🔥', tx:'Matemáticas · Difícil', asignatura:'Matemáticas'},
+  {id:'dif-ciencias', ic:'🔥', tx:'Ciencias · Difícil', asignatura:'Ciencias'},
 ];
 /* ⚠️ DECISION CON FECHA DE VENCIMIENTO. Hoy 5° tiene UNA asignatura, asi que "todas en
    Difícil" es Matematica, y la Maestria Total se gana dominando todo lo que el curso
@@ -1472,7 +1538,7 @@ const INSIGNIAS=[
    dejar la corona IMPOSIBLE hasta que existan, que es el defecto que este proyecto ya
    decidio evitar. Al sumar las otras tres asignaturas, esta lista crece a cuatro.
    Contra asumida: quien gane la corona en esta ventana la conserva. */
-const DIF_ASIGS=['Matemáticas'];
+const DIF_ASIGS=['Matemáticas','Ciencias'];
 const HAY_DIFICIL=true;
 /* ¿El cuarto hito de la Maestría Total es El Autómata (el Jefe del Reto de Cálculo)?
    En 8° la Maestría es Historia + Ciencias + Lenguaje en Difícil MÁS El Autómata, porque
@@ -1526,6 +1592,21 @@ const META_OA={
  'MA05 OA 25':'Decidir qué es más probable sin necesidad de hacer cuentas.',
  'MA05 OA 26':'Leer tablas y gráficos, y contar lo que muestran.',
  'MA05 OA 27':'Ordenar datos con un diagrama de tallo y hojas.',
+ // Ciencias Naturales
+ 'CN05 OA 01':'De qué están hechos todos los seres vivos, por dentro.',
+ 'CN05 OA 02':'El viaje que hace la comida por tu cuerpo, y qué pasa en cada parada.',
+ 'CN05 OA 03':'Cómo entra el aire a tu cuerpo y dónde le entrega el oxígeno a la sangre.',
+ 'CN05 OA 04':'Cómo la sangre reparte alimento y oxígeno a todo el cuerpo.',
+ 'CN05 OA 05':'Para qué sirve cada tipo de alimento y por qué conviene comer variado.',
+ 'CN05 OA 06':'Qué le hace el humo del cigarrillo a los pulmones y al corazón.',
+ 'CN05 OA 07':'Que hay microbios buenos y malos, y cómo cuidarse de los que enferman.',
+ 'CN05 OA 08':'En qué se transforma la electricidad, y quiénes lo fueron descubriendo.',
+ 'CN05 OA 09':'Cómo funciona un circuito y por qué tiene que estar cerrado.',
+ 'CN05 OA 10':'Qué materiales dejan pasar la electricidad y cuáles la frenan.',
+ 'CN05 OA 11':'Por qué la electricidad es tan importante y cómo no desperdiciarla.',
+ 'CN05 OA 12':'Cuánta agua hay en el planeta y por qué tan poca se puede beber.',
+ 'CN05 OA 13':'Cómo cambia el mar con la profundidad, y por qué el mar chileno es frío.',
+ 'CN05 OA 14':'Cómo la actividad humana daña y también cuida el agua del planeta.',
 };
 const LOGROS={
  primera:{ic:"🥇",tx:"Primera victoria"},
@@ -1739,6 +1820,7 @@ const SKINS=[{e:"🐲",p:160},{e:"🦄",p:200},{e:"🦖",p:240},{e:"🐙",p:140}
  /* Sin 'kimun-calculista': su requisito es El Autómata, el jefe del Reto de Cálculo,
     que 7° no tiene. Quedaría bloqueada para siempre en la tienda. */
  {id:'kimun-matematico', e:"📐", img:'assets/kimun-matematico.png', nombre:'Vulpi Matemático', bloqueada:true, desbloqueaCon:'mate5', req:'Vence a El Descuadre'},
+ {id:'kimun-cientifico', e:"🔬", img:'assets/kimun-cientifico.png', nombre:'Vulpi Científico', bloqueada:true, desbloqueaCon:'cie5', req:'Vence a El Cortocircuito'},
  // Skin maestra: se gana completando las 3 asignaturas en Modo Difícil (emoji hasta que haya arte).
  {id:'kimun-maestro', e:"🏆", img:'assets/skin-kimun-maestro.png', nombre:'Vulpi Maestro', bloqueada:true, req:'Completa Matemáticas en Difícil'}];
 
@@ -1816,8 +1898,8 @@ async function startDuelo(){
 /* ===== Selección de modo (Jugador / Duelo) ===== */
 /* Pantalla de expediciones: generada desde EXPEDICIONES (data-driven) */
 /* Orden fijo de los módulos por asignatura en la pantalla principal */
-// 5 nace con UNA asignatura. Al sumar las otras tres, se agregan aqui en su orden.
-const ORDEN_ASIG=['Matemáticas'];
+// El orden en que se ven en el menu. Al sumar Historia y Lenguaje, van aqui.
+const ORDEN_ASIG=['Matemáticas','Ciencias'];
 /* Portada genérica por asignatura: la usa el módulo (nivel 1) y es el fallback
    de la portada propia de cada mapa/capítulo. */
 const ASIG_PORTADA={Historia:'assets/portada-historia.png',Matemáticas:'assets/portada-matematicas.png',
@@ -2161,7 +2243,8 @@ const HAY_MINICLASES=true;
    un `const` leido antes de declararse mata todo el JavaScript (zona muerta temporal), y
    esa trampa ya mordio cuatro veces en este proyecto. `montar()` necesita ademas el <body>,
    que aqui ya existe: este script inline corre despues del HTML. */
-LECC.init({ rutas:['contenido/matematicas-5basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
+LECC.init({ rutas:['contenido/matematicas-5basico/lecciones.json',
+                   'contenido/ciencias-5basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
 /* ¿Este nivel tiene el módulo de Vocabulario, y la biblioteca de lecturas del colegio?
    Son contenido de 8°. Antes se resolvían BORRANDO líneas del fork, y ese corte dejó
    la asignatura Lenguaje inalcanzable en 3° (Sesión 61). Como banderas, las tres apps
