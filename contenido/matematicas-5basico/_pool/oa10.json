@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "¿Qué número decimal corresponde a la fracción 1/2?",
+   "opciones": [
+    "0,5",
+    "0,12",
+    "0,2",
+    "1,2"
+   ],
+   "correcta": 0,
+   "tip": "1/2 es 1 dividido en 2 partes iguales, o sea la mitad de la unidad: 0,5. Escribir 0,12 es solo juntar el 1 y el 2 con una coma, y eso no es dividir.",
+   "id": "mate5-oa10-1"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "Al convertir la fracción 3/4 a decimal, ¿qué número se obtiene?",
+   "opciones": [
+    "0,75",
+    "0,34",
+    "0,43",
+    "0,7"
+   ],
+   "correcta": 0,
+   "tip": "3/4 son 3 partes de 4, y 3 dividido 4 da 0,75. Los números 0,34 y 0,43 salen de juntar el 3 y el 4 con una coma, que no es lo mismo que dividir.",
+   "id": "mate5-oa10-2"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "¿Cuál es el valor de 1/5 escrito con coma decimal?",
+   "opciones": [
+    "0,2",
+    "0,15",
+    "0,5",
+    "0,05"
+   ],
+   "correcta": 0,
+   "tip": "1/5 se amplifica por 2 y queda 2/10, o sea 2 décimas: 0,2. El 0,15 sale de juntar el 1 y el 5, y el 0,5 corresponde a 1/2, no a 1/5.",
+   "id": "mate5-oa10-3"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "Una fracción vale 7/10. ¿Cómo se anota ese mismo valor con coma?",
+   "opciones": [
+    "0,7",
+    "0,07",
+    "7,10",
+    "10,7"
+   ],
+   "correcta": 0,
+   "tip": "El denominador 10 indica décimas, así que 7/10 son 7 décimas: 0,7. Con 0,07 la coma se corrió dos lugares, y eso equivale a 7/100.",
+   "id": "mate5-oa10-4"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "Al dividir 5 entre 4 se obtiene el decimal de la fracción 5/4. ¿Cuál es?",
+   "opciones": [
+    "1,25",
+    "0,54",
+    "1,4",
+    "0,8"
+   ],
+   "correcta": 0,
+   "tip": "5/4 vale más de una unidad, porque 5 es mayor que 4: da 1,25. El 0,8 corresponde a 4/5, que es la misma fracción dada vuelta y vale menos que 1.",
+   "id": "mate5-oa10-5"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "Al pasar la fracción impropia 3/2 a decimal, ¿qué número queda?",
+   "opciones": [
+    "1,5",
+    "0,32",
+    "3,2",
+    "0,5"
+   ],
+   "correcta": 0,
+   "tip": "3/2 son tres mitades: una unidad entera más media unidad, o sea 1,5. El 0,5 sería solo 1/2, porque deja fuera el numerador 3.",
+   "id": "mate5-oa10-6"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "Para convertir 9/5 se amplifica a décimos. ¿Qué decimal se obtiene?",
+   "opciones": [
+    "1,8",
+    "0,9",
+    "0,95",
+    "9,5"
+   ],
+   "correcta": 0,
+   "tip": "Amplificando por 2, 9/5 es 18/10, o sea 18 décimas: 1,8. El 0,9 sale de cambiar el denominador por 10 sin duplicar también el numerador.",
+   "id": "mate5-oa10-7"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "¿Qué fracción corresponde exactamente al decimal 0,25?",
+   "opciones": [
+    "1/4",
+    "1/25",
+    "25/10",
+    "2/5"
+   ],
+   "correcta": 0,
+   "tip": "0,25 son 25 centésimas, que equivalen a un cuarto de la unidad: 1/4. Escribir 1/25 es usar los dígitos 2 y 5 como denominador, y eso vale mucho menos.",
+   "id": "mate5-oa10-8"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "El decimal 0,4 equivale a una de estas fracciones. ¿A cuál?",
+   "opciones": [
+    "2/5",
+    "4/5",
+    "1/4",
+    "4/100"
+   ],
+   "correcta": 0,
+   "tip": "0,4 son 4 décimas, o sea 4/10, y al simplificar por 2 queda 2/5. La fracción 4/5 equivale a 8/10, o sea 0,8, justo el doble.",
+   "id": "mate5-oa10-9"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "¿Cuál de estas fracciones vale exactamente 0,9?",
+   "opciones": [
+    "9/10",
+    "1/9",
+    "9/100",
+    "9/5"
+   ],
+   "correcta": 0,
+   "tip": "0,9 son 9 décimas y las décimas se escriben con denominador 10: 9/10. Con denominador 100 el valor sería 0,09, diez veces más chico.",
+   "id": "mate5-oa10-10"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "Una botella tiene 3/5 de litro de jugo. ¿Cuántos litros dice la etiqueta en decimal?",
+   "opciones": [
+    "0,6 litros",
+    "0,35 litros",
+    "0,3 litros",
+    "1,6 litros"
+   ],
+   "correcta": 0,
+   "tip": "3/5 amplificado por 2 es 6/10, o sea 0,6 litros. El 0,3 sale de cambiar el 5 por 10 sin duplicar también el numerador.",
+   "id": "mate5-oa10-11"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "Camila cortó 4/5 de metro de cinta. ¿Qué medida anota en metros con coma?",
+   "opciones": [
+    "0,8 metros",
+    "0,45 metros",
+    "0,4 metros",
+    "1,25 metros"
+   ],
+   "correcta": 0,
+   "tip": "4/5 equivale a 8/10, o sea 0,8 metros. El 1,25 corresponde a 5/4, que es la fracción dada vuelta y mide más de un metro.",
+   "id": "mate5-oa10-12"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "Al celular de Matías le queda 3/10 de la batería. ¿Qué decimal muestra la pantalla?",
+   "opciones": [
+    "0,3",
+    "0,03",
+    "3,10",
+    "0,10"
+   ],
+   "correcta": 0,
+   "tip": "El denominador 10 son décimas, así que 3/10 es 0,3. Con 0,03 la coma se corrió un lugar de más y eso equivale a 3/100.",
+   "id": "mate5-oa10-13"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "Diego corrió 7/4 de vuelta a la pista. ¿A cuántas vueltas equivale en decimal?",
+   "opciones": [
+    "1,75 vueltas",
+    "0,75 vueltas",
+    "0,74 vueltas",
+    "7,4 vueltas"
+   ],
+   "correcta": 0,
+   "tip": "7/4 son siete cuartos: cuatro cuartos forman una vuelta entera y quedan tres cuartos más, o sea 1,75. Con 0,75 se olvida la vuelta completa que ya corrió.",
+   "id": "mate5-oa10-14"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "Una receta pide 5/2 kilos de harina. ¿Cuánto debe marcar la balanza en decimal?",
+   "opciones": [
+    "2,5 kilos",
+    "0,52 kilos",
+    "5,2 kilos",
+    "0,4 kilos"
+   ],
+   "correcta": 0,
+   "tip": "5/2 son cinco mitades: dos kilos enteros y medio kilo más, o sea 2,5. El 0,4 corresponde a 2/5, la fracción al revés, y pesa menos que un kilo.",
+   "id": "mate5-oa10-15"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "En una jarra hay 6/5 de litro de agua. ¿Qué cantidad es esa en decimal?",
+   "opciones": [
+    "1,2 litros",
+    "0,65 litros",
+    "0,6 litros",
+    "6,5 litros"
+   ],
+   "correcta": 0,
+   "tip": "6/5 equivale a 12/10, o sea 1,2 litros: un litro entero y dos décimas más. El 0,6 corresponde a 3/5, que es la mitad de lo que hay en la jarra.",
+   "id": "mate5-oa10-16"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "Sofía debe convertir 9/4 y escribe 9 dividido 4 en la calculadora. ¿Qué aparece?",
+   "opciones": [
+    "2,25",
+    "0,94",
+    "2,5",
+    "4,9"
+   ],
+   "correcta": 0,
+   "tip": "9 dividido 4 da 2 unidades enteras y sobra 1, y ese resto vale un cuarto: 0,25. Por eso 9/4 es 2,25. El 2,5 correspondería a 5/2, que es otra fracción.",
+   "id": "mate5-oa10-17"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "Al estanque del auto le queda 1/10 de su capacidad. ¿Qué decimal representa esa parte?",
+   "opciones": [
+    "0,1",
+    "0,01",
+    "1,10",
+    "10,1"
+   ],
+   "correcta": 0,
+   "tip": "El denominador 10 indica décimas: 1/10 es una décima, o sea 0,1. Con 0,01 la coma queda un lugar más allá y eso sería 1/100, diez veces menos.",
+   "id": "mate5-oa10-18"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "Javiera necesita 7/5 de metro de cordón. ¿Qué número con coma escribe en su lista?",
+   "opciones": [
+    "1,4 metros",
+    "0,75 metros",
+    "0,7 metros",
+    "7,5 metros"
+   ],
+   "correcta": 0,
+   "tip": "7/5 mide más de un metro, porque 7 es mayor que 5: equivale a 14/10, o sea 1,4. El 0,7 sería 7/10, una cantidad menor que la unidad.",
+   "id": "mate5-oa10-19"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "Un saco de arroz pesa 9/2 kilos. ¿Cuántos kilos indica la etiqueta en decimal?",
+   "opciones": [
+    "4,5 kilos",
+    "0,92 kilos",
+    "9,2 kilos",
+    "2,9 kilos"
+   ],
+   "correcta": 0,
+   "tip": "9/2 son nueve mitades: 9 dividido 2 da 4 kilos enteros y medio kilo más, o sea 4,5. El 9,2 sale de poner una coma entre los dos números, que no es dividir.",
+   "id": "mate5-oa10-20"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "Matías convirtió 3/4 y escribió 0,34. ¿Cuál fue su error?",
+   "opciones": [
+    "Juntó el 3 y el 4 con una coma en vez de dividir 3 entre 4, que da 0,75",
+    "Debió sumar el numerador con el denominador, y entonces habría escrito 0,7",
+    "Anotó la fracción al revés, así que debió escribir 0,43 en lugar de 0,34",
+    "Le faltó un cero adelante, porque el resultado correcto se escribe 0,034"
+   ],
+   "correcta": 0,
+   "tip": "Para pasar una fracción a decimal se divide el numerador por el denominador: 3 entre 4 da 0,75. Juntar los dígitos con una coma no representa ninguna división.",
+   "id": "mate5-oa10-21"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "Sofía dice que 2/5 es 0,25 porque cree que vale lo mismo que 1/4. ¿Qué le falla?",
+   "opciones": [
+    "Que 2/5 equivale a 4/10 y da 0,4; el 0,25 corresponde a 1/4, que es otra fracción",
+    "Que 2/5 y 1/4 sí son equivalentes, pero el decimal correcto de las dos es 0,45",
+    "Que debió simplificar primero 2/5 hasta llegar a 1/4 y recién ahí convertirla",
+    "Que le faltó un cero, porque 2/5 escrita con coma decimal queda como 0,025"
+   ],
+   "correcta": 0,
+   "tip": "2/5 se amplifica por 2 y queda 4/10, o sea 0,4. Además 2/5 no se puede simplificar, porque 2 y 5 no tienen divisores comunes: nunca llegaría a 1/4.",
+   "id": "mate5-oa10-22"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "¿Cuál de estas parejas de fracción y decimal es correcta?",
+   "opciones": [
+    "5/10 = 0,5",
+    "3/4 = 0,34",
+    "1/5 = 0,15",
+    "6/5 = 0,65"
+   ],
+   "correcta": 0,
+   "tip": "5/10 son cinco décimas, o sea 0,5. Las otras tres solo juntan los dígitos con una coma: 3/4 es 0,75, 1/5 es 0,2 y 6/5 es 1,2.",
+   "id": "mate5-oa10-23"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "Ana convierte 2/4 y Diego convierte 5/10. ¿Qué decimal obtiene cada uno?",
+   "opciones": [
+    "Los dos obtienen 0,5, porque las dos fracciones equivalen a la mitad de la unidad",
+    "Ana obtiene 0,24 y Diego 0,5, porque solo la de Diego tiene denominador 10",
+    "Ana obtiene 0,5 y Diego 0,05, porque el denominador 10 corre la coma dos lugares",
+    "Ana obtiene 0,2 y Diego 0,5, porque en 2/4 se usa el numerador dividido por 10"
+   ],
+   "correcta": 0,
+   "tip": "2/4 se simplifica a 1/2 y 5/10 también es la mitad: las dos dan 0,5. Fracciones distintas pueden corresponder al mismo decimal si representan la misma cantidad.",
+   "id": "mate5-oa10-24"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "En fracciones con denominador 10, ¿qué le pasa al decimal si el numerador sube en 1?",
+   "opciones": [
+    "Sube una décima, o sea 0,1, porque cada unidad del numerador vale una décima",
+    "Sube una unidad entera, porque el numerador siempre cuenta unidades completas",
+    "Sube una centésima, o sea 0,01, porque el denominador 10 corre la coma dos lugares",
+    "No cambia nada, porque el decimal lo decide solamente el denominador de la fracción"
+   ],
+   "correcta": 0,
+   "tip": "Con denominador 10 cada unidad del numerador es una décima: 3/10 es 0,3 y 4/10 es 0,4. Para que subiera una centésima el denominador tendría que ser 100.",
+   "id": "mate5-oa10-25"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "¿Por qué conviene escribir 3/5 como 6/10 antes de pasarla a decimal?",
+   "opciones": [
+    "Porque una fracción con denominador 10 se lee directo como décimas: 6/10 es 0,6",
+    "Porque al amplificar por 2 la fracción se agranda y recién ahí el decimal es exacto",
+    "Porque el denominador 5 no se puede dividir y hay que reemplazarlo siempre por 10",
+    "Porque 6/10 vale más que 3/5 y siempre conviene convertir el número más grande"
+   ],
+   "correcta": 0,
+   "tip": "Amplificar por 2 no cambia el valor: 3/5 y 6/10 son la misma cantidad. La ventaja es que el denominador 10 se lee de inmediato como décimas.",
+   "id": "mate5-oa10-26"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "La bolsa A dice 0,4 kilos y la bolsa B dice 4/10 de kilo. ¿Cuál de las dos pesa más?",
+   "opciones": [
+    "Pesan exactamente lo mismo, porque 4/10 son cuatro décimas y eso se escribe 0,4",
+    "La bolsa A, porque 4/10 se convierte en 0,04 y eso pesa menos que 0,4 kilos",
+    "La bolsa B, porque una fracción con denominador 10 siempre pasa de medio kilo",
+    "La bolsa A, porque un número escrito con coma siempre vale más que una fracción"
+   ],
+   "correcta": 0,
+   "tip": "El denominador 10 indica décimas, así que 4/10 es 0,4 kilos: las dos bolsas pesan igual. Una fracción y un decimal pueden nombrar la misma cantidad.",
+   "id": "mate5-oa10-27"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "¿Cuál de estas fracciones da un decimal con una sola cifra después de la coma?",
+   "opciones": [
+    "1/2",
+    "1/4",
+    "3/4",
+    "5/4"
+   ],
+   "correcta": 0,
+   "tip": "1/2 es 0,5 y ahí termina, porque equivale a 5/10. Las otras tres necesitan dos cifras: 1/4 es 0,25, 3/4 es 0,75 y 5/4 es 1,25.",
+   "id": "mate5-oa10-28"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "Javiera convirtió 6/10 y escribió 0,06. ¿En qué se equivocó?",
+   "opciones": [
+    "Corrió la coma dos lugares en vez de uno: 6/10 son seis décimas, o sea 0,6",
+    "Debió escribir 6,10, porque el numerador va antes de la coma y el denominador después",
+    "Se olvidó de multiplicar el numerador por 10 antes de anotar el resultado final",
+    "Confundió las décimas con las unidades, así que debía anotar 6,0 en la conversión"
+   ],
+   "correcta": 0,
+   "tip": "El denominador 10 corre la coma un solo lugar: 6/10 es 0,6. Con 0,06 el denominador sería 100, o sea una cantidad diez veces más chica.",
+   "id": "mate5-oa10-29"
+  },
+  {
+   "oa": "MA05 OA 10",
+   "pregunta": "Una barra de carga tiene 4 partes iguales y va en 0,25. ¿Cuántas partes están llenas?",
+   "opciones": [
+    "1 parte",
+    "2 partes",
+    "3 partes",
+    "25 partes"
+   ],
+   "correcta": 0,
+   "tip": "0,25 equivale a 1/4, o sea una de las cuatro partes. Las 25 partes salen de leer los dígitos del decimal sin considerar que la barra solo tiene 4 partes.",
+   "id": "mate5-oa10-30"
+  }
+ ]
+}

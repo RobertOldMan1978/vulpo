@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "¿Cuál es el resultado de 4,7 + 2,35?",
+   "opciones": [
+    "7,05",
+    "6,42",
+    "6,05",
+    "7,50"
+   ],
+   "correcta": 0,
+   "tip": "Se alinean las comas: 4,70 + 2,35. Siete décimas más tres décimas son diez décimas, o sea un entero justo. Sumar 7 con 35 por separado da 6,42 y borra el valor de cada cifra.",
+   "id": "mate5-oa12-1"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "Calcula 8,4 - 3,65.",
+   "opciones": [
+    "4,75",
+    "5,61",
+    "5,25",
+    "4,39"
+   ],
+   "correcta": 0,
+   "tip": "Conviene escribir 8,40 - 3,65 y restar columna por columna pidiendo prestado. Restar 65 a 4 por separado da 5,61, y restar siempre la cifra menor de la mayor da 5,25: las dos veces se pierde el valor posicional.",
+   "id": "mate5-oa12-2"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "¿Cuánto suman 0,45 y 0,375?",
+   "opciones": [
+    "0,825",
+    "0,420",
+    "0,725",
+    "0,850"
+   ],
+   "correcta": 0,
+   "tip": "Se escribe 0,450 + 0,375. Cinco centésimas más siete centésimas son doce: se anota 2 y se lleva una décima, por eso el resultado es 0,825. Sumar 45 con 375 da 0,420 y no respeta el lugar de cada cifra.",
+   "id": "mate5-oa12-3"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "A 6 se le resta 2,375. ¿Qué número queda?",
+   "opciones": [
+    "3,625",
+    "4,375",
+    "4,625",
+    "3,375"
+   ],
+   "correcta": 0,
+   "tip": "El 6 se escribe 6,000. Hay que pedir prestado un entero: mil milésimas menos 375 milésimas son 625, y del 6 queda 5, así que 5 - 2 = 3. Quien resta solo los enteros y copia los decimales obtiene 4,375.",
+   "id": "mate5-oa12-4"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "¿Qué cifra ocupa el lugar de las centésimas en el resultado de 2,4 + 1,08?",
+   "opciones": [
+    "8",
+    "4",
+    "2",
+    "0"
+   ],
+   "correcta": 0,
+   "tip": "Alineando las comas, 2,40 + 1,08 = 3,48. Las centésimas del resultado salen de 0 + 8 = 8. El 4 está en las décimas, no en las centésimas.",
+   "id": "mate5-oa12-5"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "Suma 12,5 + 0,375.",
+   "opciones": [
+    "12,875",
+    "12,380",
+    "12,375",
+    "12,900"
+   ],
+   "correcta": 0,
+   "tip": "Escrito como 12,500 + 0,375 cada cifra queda en su lugar: 5 décimas más 3 décimas son 8 décimas. Sumar 5 con 375 como enteros da 12,380, menor que 12,5, y eso es imposible al sumar un número positivo.",
+   "id": "mate5-oa12-6"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "¿Cuál es la diferencia entre 7,08 y 4,9?",
+   "opciones": [
+    "2,18",
+    "2,99",
+    "3,98",
+    "3,18"
+   ],
+   "correcta": 0,
+   "tip": "Se escribe 7,08 - 4,90. Como 0 décimas no alcanzan para quitar 9 décimas, se pide prestado un entero. Escribir 4,9 como 4,09 da 2,99, y restar la cifra menor de la mayor en cada columna da 3,98.",
+   "id": "mate5-oa12-7"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "¿Cuánto es 5,006 + 2,08?",
+   "opciones": [
+    "7,086",
+    "7,014",
+    "7,806",
+    "7,140"
+   ],
+   "correcta": 0,
+   "tip": "Se completa con ceros a la derecha: 5,006 + 2,080. El 8 de 2,08 son centésimas y el 6 de 5,006 son milésimas, así que no se suman entre sí. Alinear por la última cifra convierte 2,08 en 2,008 y da 7,014.",
+   "id": "mate5-oa12-8"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "Para restar 15,7 - 8,25 con el algoritmo escrito, ¿cómo hay que escribir los números?",
+   "opciones": [
+    "15,70 sobre 8,25, con las comas una debajo de la otra",
+    "15,7 sobre 8,25, alineando la última cifra de cada número",
+    "15,07 sobre 8,25, agregando el cero justo después de la coma",
+    "15,7 sobre 8,2, dejando fuera el 5 porque sobra una cifra"
+   ],
+   "correcta": 0,
+   "tip": "Lo que manda es el valor posicional: décimas bajo décimas y centésimas bajo centésimas. Agregar un cero a la derecha no cambia el número, porque 15,7 y 15,70 valen lo mismo; agregarlo después de la coma sí lo cambia.",
+   "id": "mate5-oa12-9"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "¿Cuál es el total de 0,08 + 0,9?",
+   "opciones": [
+    "0,98",
+    "0,17",
+    "0,89",
+    "1,08"
+   ],
+   "correcta": 0,
+   "tip": "El 9 son décimas y el 8 son centésimas: 0,08 + 0,90 = 0,98. Sumar 8 con 9 como si estuvieran en el mismo lugar da 0,17, que es menor que 0,9, cuando el total tenía que ser mayor.",
+   "id": "mate5-oa12-10"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "¿Qué número falta? 2,75 + ___ = 4,5",
+   "opciones": [
+    "1,75",
+    "2,25",
+    "1,85",
+    "7,25"
+   ],
+   "correcta": 0,
+   "tip": "Para hallar el sumando que falta se resta: 4,50 - 2,75 = 1,75. Comprobación: 2,75 + 1,75 = 4,50. Quien suma en vez de restar obtiene 7,25, un número mayor que el propio total.",
+   "id": "mate5-oa12-11"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "En la igualdad 4,2 + ___ = 4,275, ¿qué número va en el espacio?",
+   "opciones": [
+    "0,075",
+    "0,750",
+    "0,255",
+    "8,475"
+   ],
+   "correcta": 0,
+   "tip": "4,275 - 4,200 = 0,075, o sea 75 milésimas. Si esas 75 se leen como centésimas queda 0,750, que sumado a 4,2 daría 4,95 y no 4,275.",
+   "id": "mate5-oa12-12"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "¿Qué número hay que restar a 9,4 para obtener 6,85?",
+   "opciones": [
+    "2,55",
+    "3,45",
+    "2,65",
+    "16,25"
+   ],
+   "correcta": 0,
+   "tip": "Se calcula 9,40 - 6,85 = 2,55. Comprobación: 6,85 + 2,55 = 9,40. Restar en cada columna la cifra menor de la mayor da 3,45, porque así se salta el préstamo.",
+   "id": "mate5-oa12-13"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "Diego debe calcular 5,25 + 3,7 + 0,05. ¿Qué resultado obtiene?",
+   "opciones": [
+    "9,00",
+    "8,37",
+    "8,00",
+    "9,45"
+   ],
+   "correcta": 0,
+   "tip": "Alineadas, 5,25 + 3,70 + 0,05 dan 100 centésimas, o sea un entero justo: 9,00. Quien anota 00 y olvida llevar ese entero se queda en 8,00.",
+   "id": "mate5-oa12-14"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "¿Qué número se restó si 4,3 - ___ = 1,875?",
+   "opciones": [
+    "2,425",
+    "3,425",
+    "3,575",
+    "6,175"
+   ],
+   "correcta": 0,
+   "tip": "El número que falta es 4,300 - 1,875 = 2,425. Comprobación: 1,875 + 2,425 = 4,300. Al pedir prestado a los enteros hay que descontarlo: olvidarlo deja 3,425.",
+   "id": "mate5-oa12-15"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "¿Cuánto le falta a 0,86 para llegar a 1?",
+   "opciones": [
+    "0,14",
+    "0,24",
+    "1,86",
+    "0,04"
+   ],
+   "correcta": 0,
+   "tip": "El 1 se escribe 1,00. Como 0 centésimas no alcanzan para quitar 6, se pide prestado: 1,00 - 0,86 = 0,14. Comprobación: 0,86 + 0,14 = 1,00. El 0,04 es lo que falta para llegar a 0,90, no a 1.",
+   "id": "mate5-oa12-16"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "Matías sumó 6,4 + 0,55 y obtuvo 6,95. A ese resultado le resta 1,7. ¿Qué número queda?",
+   "opciones": [
+    "5,25",
+    "5,88",
+    "8,65",
+    "6,25"
+   ],
+   "correcta": 0,
+   "tip": "Se escribe 6,95 - 1,70. Las 7 décimas se restan a las 9 décimas, no a las 5 centésimas. Restar 7 a 95 como si fueran enteros da 5,88, más de lo que corresponde.",
+   "id": "mate5-oa12-17"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "¿Qué número es 3 centésimas mayor que 7,49?",
+   "opciones": [
+    "7,52",
+    "7,79",
+    "7,46",
+    "10,49"
+   ],
+   "correcta": 0,
+   "tip": "Tres centésimas son 0,03. Nueve centésimas más tres son doce: se anota 2 y se lleva una décima, así que 7,49 + 0,03 = 7,52. Sumar 3 décimas en vez de 3 centésimas daría 7,79.",
+   "id": "mate5-oa12-18"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "Se sabe que 0,25 + 0,25 + 0,25 = 0,75. ¿Cuánto es 0,25 + 0,25 + 0,25 + 0,125?",
+   "opciones": [
+    "0,875",
+    "0,375",
+    "1,000",
+    "0,200"
+   ],
+   "correcta": 0,
+   "tip": "Basta sumar 0,750 + 0,125 = 0,875. Sumar 75 con 125 como enteros da 0,200, menor que 0,75, y al agregar un sumando el total tiene que crecer.",
+   "id": "mate5-oa12-19"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "Javiera partió de 5,5 y sumó 0,05 tres veces. ¿A qué número llegó?",
+   "opciones": [
+    "5,65",
+    "7,00",
+    "5,55",
+    "5,35"
+   ],
+   "correcta": 0,
+   "tip": "Tres veces 0,05 son 0,15, o sea 15 centésimas. Entonces 5,50 + 0,15 = 5,65. Confundir 0,05 con 0,5 lleva a sumar 1,5 y a llegar hasta 7,00.",
+   "id": "mate5-oa12-20"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "Benjamín calculó 3,6 + 0,45 y anotó 3,51. ¿Qué error cometió?",
+   "opciones": [
+    "Sumó 6 con 45 como si fueran enteros, sin alinear las comas",
+    "Olvidó la reserva al pasar de las décimas a los enteros",
+    "Restó las décimas en lugar de sumarlas al hacer el cálculo",
+    "Escribió el resultado con la coma corrida un lugar a la izquierda"
+   ],
+   "correcta": 0,
+   "tip": "Alineando las comas, 3,60 + 0,45 = 4,05. El 6 son décimas y el 45 son centésimas, así que no se pueden juntar como si formaran un mismo número entero.",
+   "id": "mate5-oa12-21"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "Ana restó 7,2 - 0,45 y obtuvo 7,25. ¿Cómo se nota que está mal sin rehacer la resta?",
+   "opciones": [
+    "Porque al quitar 0,45 el resultado debe ser menor que 7,2, y 7,25 es mayor",
+    "Porque el resultado no puede tener más cifras decimales que el minuendo",
+    "Porque 7,2 no tiene centésimas y por eso no se le pueden quitar 45 centésimas",
+    "Porque toda resta de decimales debe terminar con un cero en las centésimas"
+   ],
+   "correcta": 0,
+   "tip": "Quitar un número positivo siempre achica el total, así que 7,2 - 0,45 tiene que dar menos de 7,2. El valor correcto es 6,75; el 7,25 sale de restar en cada columna la cifra menor de la mayor.",
+   "id": "mate5-oa12-22"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "Al sumar 0,8 + 0,25, Sofía escribió 0,33. ¿Qué le pasó?",
+   "opciones": [
+    "Sumó 8 con 25 sin ver que el 8 son décimas y el 25, centésimas",
+    "Restó los dos números en lugar de sumarlos y por eso el total bajó",
+    "Sumó bien las cifras, pero corrió la coma un lugar hacia la derecha",
+    "Se equivocó al llevar el entero que sale al sumar las décimas"
+   ],
+   "correcta": 0,
+   "tip": "El resultado correcto es 0,80 + 0,25 = 1,05. Ocho décimas ya valen más que 0,33, así que la respuesta ni siquiera es razonable: el 8 y el 25 quedaron tratados como si ocuparan el mismo lugar.",
+   "id": "mate5-oa12-23"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "Sin calcular el resultado exacto, ¿cuál de estas sumas es mayor que 1?",
+   "opciones": [
+    "0,65 + 0,4",
+    "0,3 + 0,45",
+    "0,25 + 0,7",
+    "0,12 + 0,8"
+   ],
+   "correcta": 0,
+   "tip": "Basta mirar las décimas: 6 décimas más 4 décimas son 10, o sea un entero completo, y todavía sobran 5 centésimas (1,05). En las otras sumas las décimas juntas no llegan a diez, así que el total se queda bajo 1.",
+   "id": "mate5-oa12-24"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "¿Cuál de estas restas tiene 0,125 como resultado?",
+   "opciones": [
+    "0,5 - 0,375",
+    "0,375 - 0,2",
+    "0,6 - 0,375",
+    "0,5 - 0,125"
+   ],
+   "correcta": 0,
+   "tip": "Conviene escribir el 0,5 como 0,500 para restar milésima con milésima: 0,500 - 0,375 = 0,125. Sin ese paso las cifras quedan desalineadas y el resultado se corre de lugar.",
+   "id": "mate5-oa12-25"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "Diego dice que 4,5 + 0,50 y 4,5 + 0,5 dan resultados distintos. ¿Tiene razón?",
+   "opciones": [
+    "No, porque 0,50 y 0,5 son el mismo número: cinco décimas",
+    "Sí, porque 0,50 tiene centésimas y 0,5 no llega a tenerlas",
+    "Sí, porque el cero del final agrega una centésima al número",
+    "No, pero solo si los dos resultados se redondean a las décimas"
+   ],
+   "correcta": 0,
+   "tip": "Un cero agregado a la derecha de la última cifra decimal no cambia el valor: 5 décimas son lo mismo que 50 centésimas. Las dos sumas dan 5.",
+   "id": "mate5-oa12-26"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "En la resta 6,4 - 2,17, ¿por qué conviene escribir el 6,4 como 6,40?",
+   "opciones": [
+    "Porque así cada cifra queda en su lugar y se resta columna a columna",
+    "Porque todo número decimal tiene que llevar dos cifras después de la coma",
+    "Porque al agregar el cero el número crece y la resta se hace posible",
+    "Porque el cero permite pedir prestado a los enteros sin cambiar nada"
+   ],
+   "correcta": 0,
+   "tip": "6,4 y 6,40 son el mismo número, pero con el cero escrito las centésimas quedan alineadas y se ve que hay que pedir prestado: 6,40 - 2,17 = 4,23.",
+   "id": "mate5-oa12-27"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "Al calcular 9,7 + 0,4, ¿qué le pasa a la parte entera del resultado?",
+   "opciones": [
+    "Aumenta en 1, porque 7 décimas más 4 décimas pasan de un entero",
+    "Se queda en 9, porque las décimas nunca alcanzan para formar un entero",
+    "Aumenta en 4, porque el 4 se suma directamente a la parte entera",
+    "Se queda en 9, porque solo cambian las décimas y las centésimas"
+   ],
+   "correcta": 0,
+   "tip": "Siete décimas más cuatro décimas son once décimas, o sea 1 entero y 1 décima: 9,7 + 0,4 = 10,1. Cada diez décimas forman un entero, así que la parte entera sí puede cambiar.",
+   "id": "mate5-oa12-28"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "Camila calculó 5 - 1,3 y anotó 4,7. ¿Dónde se equivocó?",
+   "opciones": [
+    "Pidió prestado un entero y después no lo descontó del 5",
+    "Restó solo los enteros y después copió las 3 décimas tal cual",
+    "Sumó las décimas en vez de restarlas al hacer la operación",
+    "Escribió el resultado con la coma corrida un lugar a la derecha"
+   ],
+   "correcta": 0,
+   "tip": "El 5 se escribe 5,0. Al pedir prestado, 10 décimas menos 3 son 7 décimas, pero el 5 pasa a valer 4, y 4 - 1 = 3. El resultado es 3,7.",
+   "id": "mate5-oa12-29"
+  },
+  {
+   "oa": "MA05 OA 12",
+   "pregunta": "Para calcular 3,4 + 0,275, ¿cuál de estos pasos es correcto?",
+   "opciones": [
+    "Escribir 3,400 y sumar cada cifra con la de su mismo lugar",
+    "Escribir 3,004 para que los dos números tengan tres cifras decimales",
+    "Sumar 34 con 275 y después poner la coma donde estaba al principio",
+    "Alinear la última cifra de cada número y sumar de derecha a izquierda"
+   ],
+   "correcta": 0,
+   "tip": "3,4 es lo mismo que 3,400, así que la suma es 3,400 + 0,275 = 3,675. Escribirlo como 3,004 cambia el número, y alinear por la última cifra deja las décimas junto a las milésimas.",
+   "id": "mate5-oa12-30"
+  }
+ ]
+}

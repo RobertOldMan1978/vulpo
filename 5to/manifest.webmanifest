@@ -1,0 +1,17 @@
+{
+  "name": "VULPO 5° Básico",
+  "short_name": "VULPO 5°",
+  "description": "Aprende jugando: Matemática de 5° básico.",
+  "start_url": "/5to/",
+  "scope": "/5to/",
+  "display": "standalone",
+  "background_color": "#1e1747",
+  "theme_color": "#1e1747",
+  "orientation": "portrait",
+  "lang": "es-CL",
+  "dir": "ltr",
+  "icons": [
+    { "src": "/assets/icono-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/assets/icono-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

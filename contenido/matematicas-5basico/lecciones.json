@@ -1,0 +1,1487 @@
+{
+ "lecciones": [
+  {
+   "id": "ma5-oa01",
+   "oa": "MA05 OA 01",
+   "titulo": "Números grandes y valor posicional",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un número grande no se lee de una vez: se lee por grupos de tres cifras. En 507.320, el punto separa los **miles** de las unidades, así que decimos «quinientos siete mil trescientos veinte»."
+    },
+    {
+     "t": "diagrama",
+     "kind": "posicional",
+     "params": {
+      "numero": 507320
+     },
+     "intro": "Cada cifra vale distinto según el lugar que ocupa. Toca las columnas."
+    },
+    {
+     "t": "texto",
+     "md": "El **cero guarda el lugar**. En 507.320 no hay decenas de mil, pero el 0 tiene que estar: sin él, el 5 se correría de lugar y el número sería otro."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Descompongamos 507.320 en forma expandida.",
+     "pasos": [
+      "El 5 está en las centenas de mil: vale 500.000.",
+      "El 0 está en las decenas de mil: vale 0, y por eso no se escribe.",
+      "El 7 está en las unidades de mil: vale 7.000.",
+      "El 3 vale 300 y el 2 vale 20.",
+      "Entonces 507.320 = 500.000 + 7.000 + 300 + 20."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Aproximemos 507.320 a la unidad de mil.",
+     "pasos": [
+      "Miramos la cifra de la derecha de los miles: es el 3 de las centenas.",
+      "Como 3 es menor que 5, los miles se quedan igual.",
+      "Todo lo que viene después se vuelve cero.",
+      "Queda 507.000."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 01",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa02",
+   "oa": "MA05 OA 02",
+   "titulo": "Multiplicar de memoria",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Hay multiplicaciones que no necesitan lápiz. La primera regla: **multiplicar por 10 corre las cifras un lugar a la izquierda**, y por eso aparece un cero al final."
+    },
+    {
+     "t": "diagrama",
+     "kind": "posicional",
+     "params": {
+      "numero": 2400
+     },
+     "intro": "Fíjate dónde queda cada cifra al multiplicar por 10 y por 100."
+    },
+    {
+     "t": "texto",
+     "md": "La segunda: **doblar y dividir por 2**. Como 6 × 50 es lo mismo que 3 × 100, conviene cambiar la multiplicación por otra más fácil que da el mismo resultado."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Calculemos 8 × 60 sin escribir nada.",
+     "pasos": [
+      "Separo el 60 en 6 × 10.",
+      "8 × 6 = 48, que me la sé de memoria.",
+      "Ahora multiplico por 10: le agrego un cero.",
+      "8 × 60 = 480."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Calculemos 24 × 50 doblando y dividiendo.",
+     "pasos": [
+      "Doblo el 50 y llego a 100; entonces divido el 24 por 2 y queda 12.",
+      "24 × 50 es lo mismo que 12 × 100.",
+      "12 × 100 = 1.200.",
+      "El truco sirve porque lo que le quito a un factor se lo doy al otro."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 02",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa03",
+   "oa": "MA05 OA 03",
+   "titulo": "Multiplicar por dos cifras y estimar",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Antes de multiplicar conviene **estimar**: redondear los dos números y ver más o menos dónde va a caer el resultado. Así uno se da cuenta al tiro si se equivocó."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 1000,
+      "max": 2000,
+      "paso": 200,
+      "marca": 1800,
+      "interactivo": true
+     },
+     "intro": "Arrastra la marca: ¿dónde caería 43 × 38?"
+    },
+    {
+     "t": "texto",
+     "md": "Para multiplicar de verdad, el número se parte por su valor posicional: 43 × 38 es 43 × 30 más 43 × 8. **El error más común es olvidar el cero** de la parte de las decenas."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Estimemos 43 × 38.",
+     "pasos": [
+      "Redondeo 43 a 40 y 38 a 40.",
+      "40 × 40 = 1.600.",
+      "Como redondeé 43 hacia abajo y 38 hacia arriba, el resultado real anda cerca de 1.600.",
+      "Si me diera 300 o 16.000, sabría de inmediato que me equivoqué."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora el resultado exacto de 43 × 38.",
+     "pasos": [
+      "43 × 30 = 1.290.",
+      "43 × 8 = 344.",
+      "Sumo las dos partes: 1.290 + 344 = 1.634.",
+      "Y 1.634 está cerca de mi estimación de 1.600. Cuadra."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 03",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa04",
+   "oa": "MA05 OA 04",
+   "titulo": "Dividir y entender el resto",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Dividir es repartir en partes iguales. Cuando no alcanza a repartirse todo, lo que queda se llama **resto**, y siempre es menor que el divisor."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 0,
+      "max": 30,
+      "paso": 4,
+      "marca": 28,
+      "saltos": true,
+      "interactivo": true
+     },
+     "intro": "Cada salto es un grupo de 4. ¿Cuántos saltos caben en 30?"
+    },
+    {
+     "t": "texto",
+     "md": "Lo importante no es el número que sale, sino **qué pregunta responde**. El mismo cálculo sirve para cosas distintas según lo que se pregunte."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Repartamos 30 lápices en cajas de 4.",
+     "pasos": [
+      "30 ÷ 4 = 7, y sobran 2.",
+      "El 7 es el cociente: las cajas que se llenan por completo.",
+      "El 2 es el resto: los lápices que quedan sueltos.",
+      "Comprobación: 4 × 7 + 2 = 30."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "La misma división, otra pregunta: ¿cuántas cajas se necesitan para guardar TODOS los lápices?",
+     "pasos": [
+      "Siguen siendo 7 cajas llenas y 2 lápices sueltos.",
+      "Pero esos 2 también hay que guardarlos, así que hace falta una caja más.",
+      "La respuesta es 8 cajas, no 7.",
+      "Por eso hay que leer bien qué se está preguntando."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 04",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa05",
+   "oa": "MA05 OA 05",
+   "titulo": "El orden de las operaciones",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Cuando una cuenta tiene varias operaciones, **no se resuelve de izquierda a derecha**. Hay un orden: primero lo que está entre paréntesis, después multiplicar y dividir, y al final sumar y restar."
+    },
+    {
+     "t": "texto",
+     "md": "Por eso en 9 + 4 × 3 **la multiplicación va primero**, aunque esté escrita después: primero se resuelve 4 × 3 y recién ahí se suma el 9."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Resolvamos 9 + 4 × 3.",
+     "pasos": [
+      "Busco paréntesis: no hay.",
+      "Busco multiplicaciones o divisiones: está 4 × 3 = 12.",
+      "Ahora sí sumo: 9 + 12 = 21.",
+      "Si hubiera ido de izquierda a derecha me habría dado 39, que es el error típico."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora (9 + 4) × 3, que se parece pero es otra cosa.",
+     "pasos": [
+      "El paréntesis manda: primero 9 + 4 = 13.",
+      "Después multiplico: 13 × 3 = 39.",
+      "El paréntesis cambió el resultado de 21 a 39.",
+      "Los paréntesis no son adorno: dicen qué va primero."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 05",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa06",
+   "oa": "MA05 OA 06",
+   "titulo": "Problemas con las cuatro operaciones",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "En un problema, lo difícil no es calcular: es **decidir qué operación va**. Conviene leerlo dos veces y preguntarse qué se está pidiendo antes de tocar los números."
+    },
+    {
+     "t": "diagrama",
+     "kind": "dinero",
+     "params": {
+      "valores": [
+       1000,
+       500,
+       100,
+       100
+      ]
+     },
+     "intro": "Con estas monedas y billetes, ¿cuánto hay en total?"
+    },
+    {
+     "t": "texto",
+     "md": "Cuando hay dos pasos, el orden importa. Un truco: escribir primero **el cálculo completo** y recién después resolverlo."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Sofía tiene $5.000. Compra 3 cuadernos de $890 cada uno. ¿Cuánto le queda?",
+     "pasos": [
+      "Primero averiguo cuánto gastó: 3 × 890 = 2.670.",
+      "Después resto de lo que tenía: 5.000 − 2.670 = 2.330.",
+      "El cálculo completo es 5.000 − 3 × 890.",
+      "Le quedan $2.330."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "¿Por qué no sirve restar primero?",
+     "pasos": [
+      "Si hago 5.000 − 3 = 4.997 y después multiplico por 890, el resultado es enorme.",
+      "Ese número no responde nada de la situación.",
+      "Estimar ayuda: tres cuadernos de casi mil pesos son casi tres mil.",
+      "Si el resultado se aleja mucho de eso, algo salió mal."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 06",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa07",
+   "oa": "MA05 OA 07",
+   "titulo": "Fracciones equivalentes",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una fracción dice en cuántas partes iguales se partió algo (el **denominador**) y cuántas se tomaron (el **numerador**). En 3/4, el entero se partió en 4 y se tomaron 3."
+    },
+    {
+     "t": "diagrama",
+     "kind": "fracciones",
+     "params": {
+      "partes": 4,
+      "pintadas": 3,
+      "etiqueta": "3/4"
+     },
+     "intro": "Toca las partes: ¿cuánto falta para completar el entero?"
+    },
+    {
+     "t": "texto",
+     "md": "Dos fracciones son **equivalentes** cuando valen lo mismo aunque se escriban distinto. Se obtienen **amplificando** (multiplicando arriba y abajo por el mismo número) o **simplificando** (dividiendo)."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Busquemos una fracción equivalente a 2/5.",
+     "pasos": [
+      "Multiplico arriba y abajo por 3: el numerador queda 6 y el denominador 15.",
+      "Entonces 2/5 = 6/15.",
+      "Hay que multiplicar los DOS. Si solo multiplico arriba, cambio la cantidad.",
+      "Por eso 2/5 no es lo mismo que 6/5."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Simplifiquemos 9/12.",
+     "pasos": [
+      "Busco un número que divida a los dos: el 3 divide a 9 y a 12.",
+      "9 dividido en 3 es 3; 12 dividido en 3 es 4.",
+      "Entonces 9/12 = 3/4.",
+      "Simplificar no achica la cantidad: la escribe con números más chicos."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 07",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa08",
+   "oa": "MA05 OA 08",
+   "titulo": "Fracciones impropias y números mixtos",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Cuando el numerador es **mayor** que el denominador, la fracción vale más que un entero y se llama **impropia**. Por ejemplo 7/4, que es más de una pizza completa."
+    },
+    {
+     "t": "diagrama",
+     "kind": "fracciones",
+     "params": {
+      "partes": 4,
+      "pintadas": 4,
+      "etiqueta": "4/4 es un entero completo"
+     },
+     "intro": "Con 4 partes de 4 se arma un entero. ¿Y si hubiera 7 partes?"
+    },
+    {
+     "t": "texto",
+     "md": "La misma cantidad se puede escribir como **número mixto**: un entero más una fracción propia. 7/4 y 1 3/4 son el mismo número escrito de dos formas."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Pasemos 7/4 a número mixto.",
+     "pasos": [
+      "Me pregunto cuántos enteros caben: 4/4 forman un entero.",
+      "De 7 cuartos, 4 forman un entero y sobran 3.",
+      "Entonces 7/4 es igual a 1 3/4.",
+      "En la práctica es dividir 7 entre 4: da 1 y sobran 3."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora al revés: 2 1/3 a fracción impropia.",
+     "pasos": [
+      "Cada entero tiene 3 tercios, así que 2 enteros son 6 tercios.",
+      "Le sumo el tercio que ya estaba: 6 + 1 = 7.",
+      "Entonces 2 1/3 es igual a 7/3.",
+      "El error típico es escribir 21/3, pegando los números en vez de operar."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 08",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa09",
+   "oa": "MA05 OA 09",
+   "titulo": "Sumar y restar fracciones",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Para sumar o restar fracciones tienen que estar **partidas igual**, o sea tener el mismo denominador. Si ya lo tienen, se suman los numeradores y el denominador **no se toca**."
+    },
+    {
+     "t": "diagrama",
+     "kind": "fracciones",
+     "params": {
+      "partes": 12,
+      "pintadas": 7,
+      "etiqueta": "3/12 + 4/12 = 7/12"
+     },
+     "intro": "Las partes son del mismo tamaño, así que se juntan directo."
+    },
+    {
+     "t": "texto",
+     "md": "Si los denominadores son distintos, primero se **amplifica** una de las fracciones (o las dos) para que queden iguales. Recién ahí se suma."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Sumemos 1/6 + 1/3.",
+     "pasos": [
+      "Los denominadores son distintos: 6 y 3.",
+      "Amplifico 1/3 multiplicando arriba y abajo por 2: queda 2/6.",
+      "Ahora sí: 1/6 + 2/6 = 3/6.",
+      "Y 3/6 se simplifica a 1/2."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "El error más común, para reconocerlo.",
+     "pasos": [
+      "Alguien escribe 1/6 + 1/3 = 2/9, sumando arriba con arriba y abajo con abajo.",
+      "Eso no puede ser: 2/9 es MENOR que 1/3, y estábamos sumando.",
+      "Sumar nunca puede dar menos que uno de los sumandos.",
+      "Estimar antes de operar caza este error solo."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 09",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa10",
+   "oa": "MA05 OA 10",
+   "titulo": "De fracción a decimal",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un número decimal es otra forma de escribir una fracción de denominador 10, 100 o 1.000. Las **décimas** son la primera cifra después de la coma."
+    },
+    {
+     "t": "diagrama",
+     "kind": "fracciones",
+     "params": {
+      "partes": 10,
+      "pintadas": 3,
+      "etiqueta": "3/10 = 0,3"
+     },
+     "intro": "Tres partes de diez: se escribe 0,3 y se lee tres décimas."
+    },
+    {
+     "t": "texto",
+     "md": "Para las fracciones de denominador 2, 4 y 5 conviene **amplificar hasta 10 o hasta 100**, y ahí el decimal sale solo."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Pasemos 1/5 a decimal.",
+     "pasos": [
+      "Amplifico para llegar a denominador 10: multiplico arriba y abajo por 2.",
+      "1/5 es igual a 2/10.",
+      "Dos décimas se escriben 0,2.",
+      "Entonces 1/5 = 0,2, y no 0,15 como haría quien pega las cifras."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora 1/4, que necesita llegar a 100.",
+     "pasos": [
+      "El 4 no llega a 10 multiplicando por un entero, pero sí llega a 100: por 25.",
+      "1/4 es igual a 25/100.",
+      "Veinticinco centésimas se escriben 0,25.",
+      "Otro camino: dividir 1 entre 4, que también da 0,25."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 10",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa11",
+   "oa": "MA05 OA 11",
+   "titulo": "Comparar y ordenar decimales",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Para comparar decimales **no se cuentan las cifras**: se mira posición por posición, de izquierda a derecha, igual que con los números enteros."
+    },
+    {
+     "t": "diagrama",
+     "kind": "barras",
+     "params": {
+      "datos": [
+       {
+        "etiqueta": "0,4",
+        "valor": 0.4
+       },
+       {
+        "etiqueta": "0,25",
+        "valor": 0.25
+       },
+       {
+        "etiqueta": "0,7",
+        "valor": 0.7
+       }
+      ],
+      "desde": 0
+     },
+     "intro": "Fíjate cuál barra es más alta: tener más cifras no es ser más grande."
+    },
+    {
+     "t": "texto",
+     "md": "El error clásico es creer que 0,25 es mayor que 0,4 porque tiene más números. **Agregar ceros a la derecha no cambia el valor**: 0,4 es lo mismo que 0,40, y así se ven comparables."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "¿Cuál es mayor, 0,4 o 0,25?",
+     "pasos": [
+      "Igualo la cantidad de cifras: 0,4 se escribe 0,40.",
+      "Ahora comparo 40 centésimas contra 25 centésimas.",
+      "40 es mayor que 25, así que 0,4 es mayor que 0,25.",
+      "Las cifras de más no valen más: son partes más chicas."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ordenemos 1,308, 1,31 y 1,3 de menor a mayor.",
+     "pasos": [
+      "Igualo a milésimas: 1,308, 1,310 y 1,300.",
+      "Comparo las partes decimales: 308, 310 y 300.",
+      "De menor a mayor queda 1,3, después 1,308 y por último 1,31.",
+      "Sin igualar las cifras, el 1,31 parecía el más chico."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 11",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa12",
+   "oa": "MA05 OA 12",
+   "titulo": "Sumar y restar decimales",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Para sumar o restar decimales hay una sola regla que importa: **la coma con la coma**. Cada cifra queda bajo la de su mismo valor: décimas con décimas, centésimas con centésimas."
+    },
+    {
+     "t": "diagrama",
+     "kind": "fracciones",
+     "params": {
+      "partes": 10,
+      "pintadas": 8,
+      "etiqueta": "0,8 son 8 décimas"
+     },
+     "intro": "Un decimal es un entero partido: por eso solo se suman partes del mismo tamaño."
+    },
+    {
+     "t": "texto",
+     "md": "Si a un número le faltan cifras, se le agregan **ceros a la derecha**, que no cambian su valor. Así las dos filas quedan parejas."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Sumemos 2,5 + 0,75.",
+     "pasos": [
+      "Igualo las cifras: 2,5 se escribe 2,50.",
+      "Sumo columna con columna: 50 centésimas más 75 centésimas son 125 centésimas.",
+      "125 centésimas son 1 entero y 25 centésimas.",
+      "Entonces 2,50 + 0,75 = 3,25."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "El error de no alinear, para reconocerlo.",
+     "pasos": [
+      "Alguien pone el 75 debajo del 5 y suma como si fueran enteros.",
+      "Se caza estimando: 2,5 es dos y medio, y 0,75 es menos de uno.",
+      "El resultado tiene que estar entre 3 y 3,5.",
+      "Ni 10,3 ni 3,00 cumplen eso, así que están malos."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 12",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa13",
+   "oa": "MA05 OA 13",
+   "titulo": "Problemas con fracciones y decimales",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "En estos problemas lo difícil no es la cuenta: es **darse cuenta de qué operación pide la situación**. Juntar es sumar; sacar, comparar o averiguar lo que falta es restar."
+    },
+    {
+     "t": "diagrama",
+     "kind": "fracciones",
+     "params": {
+      "partes": 8,
+      "pintadas": 5,
+      "etiqueta": "Se comieron 5/8: ¿cuánto queda?"
+     },
+     "intro": "Lo que falta para completar el entero también se calcula restando."
+    },
+    {
+     "t": "texto",
+     "md": "Conviene escribir primero **el cálculo completo** y recién después resolverlo. Y estimar antes: si el resultado se aleja mucho de lo esperable, algo salió mal."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Javiera corrió 1,4 kilómetros en la mañana y 2,25 en la tarde. ¿Cuánto corrió en total?",
+     "pasos": [
+      "La frase en total pide juntar, así que es una suma.",
+      "El cálculo es 1,4 + 2,25.",
+      "Igualo cifras: 1,40 + 2,25 = 3,65.",
+      "Corrió 3,65 kilómetros, que es razonable: algo más de tres."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Benjamín tomó 3/8 de un litro de jugo. ¿Cuánto le queda?",
+     "pasos": [
+      "El litro entero son 8/8.",
+      "La pregunta cuánto le queda pide sacar lo que tomó: es una resta.",
+      "8/8 menos 3/8 da 5/8.",
+      "Le quedan 5/8 de litro, que es más de la mitad."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 13",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa14",
+   "oa": "MA05 OA 14",
+   "titulo": "La regla escondida de una secuencia",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una **secuencia** es una lista de números que sigue una regla. Descubrir la regla sirve para saber qué viene después, sin tener que escribir todos los términos."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 0,
+      "max": 50,
+      "paso": 5,
+      "marca": 15,
+      "saltos": true,
+      "interactivo": true
+     },
+     "intro": "Cada salto es del mismo tamaño. ¿De cuánto en cuánto avanza?"
+    },
+    {
+     "t": "texto",
+     "md": "Para encontrarla, se mira **qué pasa entre un término y el siguiente**. Si la diferencia es siempre la misma, la regla es sumar o restar. Si en cambio cada término es un múltiplo del anterior, la regla es multiplicar o dividir."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Descubramos la regla de 4, 11, 18, 25.",
+     "pasos": [
+      "Del 4 al 11 hay 7. Del 11 al 18 también hay 7. Y del 18 al 25, otra vez 7.",
+      "La diferencia es siempre la misma, así que la regla es sumar 7.",
+      "El término siguiente es 25 + 7 = 32.",
+      "Ojo: hay que revisar TODOS los saltos, no solo el primero."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora 3, 6, 12, 24, que parece igual pero no lo es.",
+     "pasos": [
+      "Del 3 al 6 hay 3, pero del 6 al 12 hay 6: las diferencias cambian.",
+      "Pruebo multiplicando: 3 por 2 es 6, 6 por 2 es 12, 12 por 2 es 24.",
+      "La regla es multiplicar por 2, y el siguiente es 48.",
+      "Si me hubiera quedado con el primer salto habría dicho 27, que está mal."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 14",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa15",
+   "oa": "MA05 OA 15",
+   "titulo": "El número que falta",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una **ecuación** es una igualdad con un número escondido. Resolverla es averiguar qué valor hace que los dos lados pesen lo mismo."
+    },
+    {
+     "t": "diagrama",
+     "kind": "balanza",
+     "params": {
+      "izqX": 1,
+      "izqU": 3,
+      "derU": 10,
+      "etiqueta": "▢ + 3 = 10"
+     },
+     "intro": "Los dos platillos están equilibrados. ¿Cuánto pesa la caja?"
+    },
+    {
+     "t": "texto",
+     "md": "La idea de la balanza es la clave: **lo que se le quita a un lado hay que quitárselo al otro**, o se desequilibra. Por eso para despejar se hace la operación contraria a los dos lados."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Resolvamos el caso de la balanza.",
+     "pasos": [
+      "Tengo la caja más 3 kilos de un lado, y 10 kilos del otro.",
+      "Le saco 3 kilos a los dos lados para dejar la caja sola.",
+      "De un lado queda la caja; del otro, 10 menos 3, que es 7.",
+      "La caja pesa 7. Compruebo: 7 + 3 = 10."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora una donde el número escondido va restando: 23 menos el número da 9.",
+     "pasos": [
+      "Aquí no sirve restar: hay que pensar qué le falta al 9 para llegar a 23.",
+      "23 menos 9 da 14.",
+      "Entonces el número escondido es 14.",
+      "Compruebo: 23 menos 14 da 9. Comprobar siempre es parte de resolver."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 15",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa16",
+   "oa": "MA05 OA 16",
+   "titulo": "Ubicar puntos en el plano",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "El **plano cartesiano** es una cuadrícula con dos rectas: una horizontal y una vertical, que se cruzan en el **origen**. Cualquier punto se ubica con dos números, llamados coordenadas."
+    },
+    {
+     "t": "diagrama",
+     "kind": "cuadricula",
+     "params": {
+      "cols": 6,
+      "filas": 5,
+      "marca": [
+       3,
+       4
+      ],
+      "etiqueta": "Un punto en la posición (3, 4)"
+     },
+     "intro": "El primer número cuenta hacia la derecha y el segundo hacia arriba."
+    },
+    {
+     "t": "texto",
+     "md": "**El orden importa y no es un detalle**: el primer número siempre dice cuánto avanzar a la derecha, y el segundo cuánto subir. Por eso (3, 4) y (4, 3) son puntos distintos."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ubiquemos el punto (5, 2).",
+     "pasos": [
+      "Parto del origen, donde se cruzan las dos rectas.",
+      "El primer número es 5: avanzo 5 lugares hacia la derecha.",
+      "El segundo número es 2: desde ahí subo 2 lugares.",
+      "Ese es el punto (5, 2)."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "¿Por qué (5, 2) no es lo mismo que (2, 5)?",
+     "pasos": [
+      "En (5, 2) avanzo 5 y subo 2: queda lejos a la derecha y bajo.",
+      "En (2, 5) avanzo 2 y subo 5: queda cerca a la izquierda y alto.",
+      "Son dos lugares distintos de la cuadrícula.",
+      "Confundir el orden es el error más común de este contenido."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 16",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa17",
+   "oa": "MA05 OA 17",
+   "titulo": "Lados y aristas: paralelos o perpendiculares",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Dos líneas son **paralelas** si nunca se juntan, por más que se estiren. Son **perpendiculares** si se cruzan formando un ángulo recto, como la esquina de una hoja."
+    },
+    {
+     "t": "diagrama",
+     "kind": "solido",
+     "params": {
+      "tipo": "prisma",
+      "etiqueta": "Caras planas, aristas y vértices"
+     },
+     "intro": "Busca en el dibujo dos aristas paralelas y dos perpendiculares."
+    },
+    {
+     "t": "texto",
+     "md": "En las figuras planas se mira **los lados**; en los cuerpos, **las aristas y las caras**. Un rectángulo tiene dos pares de lados paralelos, y sus lados vecinos son perpendiculares entre sí."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Miremos un rectángulo.",
+     "pasos": [
+      "El lado de arriba y el de abajo nunca se juntan: son paralelos.",
+      "El lado izquierdo y el derecho también son paralelos entre sí.",
+      "Entonces tiene dos PARES de lados paralelos, no cuatro.",
+      "Y el lado de arriba con el izquierdo forman una esquina recta: son perpendiculares."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un caso que sorprende, en una caja de zapatos.",
+     "pasos": [
+      "Dos aristas que no se tocan no siempre son paralelas.",
+      "Una arista de arriba y otra del fondo pueden ir en direcciones distintas.",
+      "No se juntan, pero tampoco llevan el mismo rumbo: se cruzan sin tocarse.",
+      "Paralelo no significa solo que no se toquen: significa que van en la misma dirección."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 17",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa18",
+   "oa": "MA05 OA 18",
+   "titulo": "Mover, voltear y girar una figura",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Hay tres formas de mover una figura sin cambiarla: **trasladarla** (deslizarla), **reflejarla** (voltearla como en un espejo) y **rotarla** (girarla en torno a un punto)."
+    },
+    {
+     "t": "diagrama",
+     "kind": "transformacion",
+     "params": {
+      "tipo": "traslacion",
+      "vector": [
+       3,
+       1
+      ]
+     },
+     "intro": "La figura se desliza: todos sus puntos se mueven exactamente lo mismo."
+    },
+    {
+     "t": "texto",
+     "md": "Lo importante es que en las tres la figura **conserva su forma y su tamaño**. Solo cambia de lugar o de orientación. Por eso la figura original y la nueva se llaman **congruentes**."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Trasladar un punto.",
+     "pasos": [
+      "Un punto está en la posición (2, 3).",
+      "Lo traslado 4 lugares a la derecha y ninguno hacia arriba.",
+      "El primer número aumenta en 4 y el segundo se queda igual.",
+      "Queda en (6, 3). En una traslación TODOS los puntos se mueven lo mismo."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "La diferencia entre reflejar y rotar.",
+     "pasos": [
+      "Al reflejar, la figura queda como en un espejo: la derecha pasa a ser izquierda.",
+      "Al rotar, la figura gira entera, como la manecilla de un reloj.",
+      "Una rotación de una vuelta completa la deja donde estaba.",
+      "En las dos, la figura sigue midiendo exactamente lo mismo."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 18",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa19",
+   "oa": "MA05 OA 19",
+   "titulo": "Medir longitudes",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Medir es comparar con una unidad. Para longitudes usamos **milímetros, centímetros y metros**, y la gracia está en elegir la que corresponde: nadie mide una sala en milímetros."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 0,
+      "max": 20,
+      "paso": 1,
+      "marca": 15,
+      "interactivo": true
+     },
+     "intro": "Como una regla: arrastra la marca y fíjate en la separación entre números."
+    },
+    {
+     "t": "texto",
+     "md": "Al medir con una regla, **no basta con mirar dónde termina el objeto**: hay que restar dónde empezó. Ese es el error más común y da resultados demasiado grandes."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Sofía apoya un lápiz en la regla: la punta queda en el 2 y el otro extremo en el 17.",
+     "pasos": [
+      "El lápiz no empieza en el cero, así que no mide 17.",
+      "Resto la posición inicial: 17 menos 2 da 15.",
+      "El lápiz mide 15 centímetros.",
+      "Quien lee solo el 17 se equivoca en exactamente lo que corrió la regla."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Elegir la unidad adecuada.",
+     "pasos": [
+      "El grosor de una moneda se mide en milímetros: en centímetros daría menos de uno.",
+      "El largo de un cuaderno se mide en centímetros.",
+      "El ancho de una cancha se mide en metros.",
+      "La unidad correcta es la que da un número cómodo de decir y de comparar."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 19",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa20",
+   "oa": "MA05 OA 20",
+   "titulo": "Cambiar de unidad",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Las unidades de longitud se relacionan por potencias de diez: **1 metro son 100 centímetros**, **1 centímetro son 10 milímetros** y **1 kilómetro son 1.000 metros**."
+    },
+    {
+     "t": "diagrama",
+     "kind": "bloques",
+     "params": {
+      "numero": 1000
+     },
+     "intro": "Mil unidades juntas: eso es un kilómetro medido en metros."
+    },
+    {
+     "t": "texto",
+     "md": "La regla práctica: al pasar a una unidad **más chica** el número **crece** (se multiplica), y al pasar a una **más grande** el número **achica** (se divide). Si el número cambió para el lado contrario, la operación estaba al revés."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Pasemos 3,5 metros a centímetros.",
+     "pasos": [
+      "El centímetro es más chico que el metro, así que el número tiene que crecer.",
+      "1 metro son 100 centímetros, entonces multiplico por 100.",
+      "3,5 por 100 da 350.",
+      "3,5 metros son 350 centímetros."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora al revés: 2.400 metros a kilómetros.",
+     "pasos": [
+      "El kilómetro es más grande, así que el número tiene que achicar.",
+      "1 kilómetro son 1.000 metros, entonces divido por 1.000.",
+      "2.400 dividido en 1.000 da 2,4.",
+      "Son 2,4 kilómetros. Si me hubiera dado 2.400.000, habría multiplicado en vez de dividir."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 20",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa21",
+   "oa": "MA05 OA 21",
+   "titulo": "Rectángulos, perímetro y área",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "El **perímetro** es lo que mide el contorno: la vuelta completa. El **área** es la superficie que cubre por dentro. Son dos cosas distintas y se miden en unidades distintas."
+    },
+    {
+     "t": "diagrama",
+     "kind": "poligono",
+     "params": {
+      "lados": 4,
+      "etiqueta": "El perímetro es la vuelta entera"
+     },
+     "intro": "Recorre el borde con el dedo: eso es el perímetro."
+    },
+    {
+     "t": "texto",
+     "md": "Lo interesante de este objetivo es que **con el mismo perímetro hay muchos rectángulos distintos**, y no todos tienen la misma área. El más parecido a un cuadrado es el que más área encierra."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Busquemos rectángulos de perímetro 20 centímetros.",
+     "pasos": [
+      "El perímetro es dos veces el largo más dos veces el ancho, así que largo más ancho es 10.",
+      "Sirve 9 por 1, que tiene área 9.",
+      "Sirve 7 por 3, que tiene área 21.",
+      "Y sirve 5 por 5, con área 25: el cuadrado es el de mayor área."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora al revés: rectángulos de área 36.",
+     "pasos": [
+      "Sirve 36 por 1, cuyo perímetro es 74.",
+      "Sirve 9 por 4, cuyo perímetro es 26.",
+      "Sirve 6 por 6, cuyo perímetro es 24.",
+      "Con la misma área, el más alargado es el de mayor perímetro."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 21",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa22",
+   "oa": "MA05 OA 22",
+   "titulo": "Calcular áreas",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "El área de un **rectángulo** es base por altura. A partir de ahí salen las demás: un **triángulo** es la mitad de un rectángulo, y por eso su área lleva un dividido por dos."
+    },
+    {
+     "t": "diagrama",
+     "kind": "figura",
+     "params": {
+      "tipo": "triangulo",
+      "base": 8,
+      "altura": 5,
+      "etiqueta": "área = base · altura ÷ 2"
+     },
+     "intro": "El triángulo ocupa justo la mitad del rectángulo que lo contiene."
+    },
+    {
+     "t": "texto",
+     "md": "⚠️ La **altura** es la distancia perpendicular a la base, no el lado inclinado. Confundirlos es el error que más se repite en este contenido, porque el lado inclinado siempre es más largo."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Área de un triángulo de base 8 y altura 5.",
+     "pasos": [
+      "Multiplico base por altura: 8 por 5 da 40.",
+      "Divido por 2, porque es la mitad del rectángulo: 40 dividido en 2 da 20.",
+      "El área es 20 centímetros cuadrados.",
+      "Olvidar el dividido por dos daría 40, que es el error más común."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Estimar el área de una figura irregular.",
+     "pasos": [
+      "Se pone la figura sobre una cuadrícula y se cuentan los cuadraditos.",
+      "Supongamos que cubre 14 cuadraditos completos y 8 a medias, de 1 centímetro cuadrado cada uno.",
+      "Los que están a medias suman más o menos 4 completos.",
+      "La estimación es de unos 18 centímetros cuadrados. Es una estimación, no un valor exacto."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 22",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa23",
+   "oa": "MA05 OA 23",
+   "titulo": "El promedio",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "El **promedio** reparte un total en partes iguales: es lo que le tocaría a cada uno si todos tuvieran lo mismo. Se calcula sumando los datos y dividiendo por cuántos son."
+    },
+    {
+     "t": "diagrama",
+     "kind": "barras",
+     "params": {
+      "datos": [
+       {
+        "etiqueta": "lun",
+        "valor": 6
+       },
+       {
+        "etiqueta": "mar",
+        "valor": 2
+       },
+       {
+        "etiqueta": "mié",
+        "valor": 4
+       }
+      ],
+      "desde": 0
+     },
+     "intro": "Si emparejaras las tres barras a la misma altura, esa altura sería el promedio."
+    },
+    {
+     "t": "texto",
+     "md": "El promedio **no siempre es un dato de la lista**, y puede no ser un número entero. Que el promedio de goles sea 2,5 no significa que alguien haya hecho medio gol: significa que el total repartido parejo da eso."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Calculemos el promedio de 6, 2 y 4.",
+     "pasos": [
+      "Sumo los tres datos: 6 más 2 más 4 da 12.",
+      "Los datos son 3, así que divido 12 en 3.",
+      "El promedio es 4.",
+      "Fíjate que el 4 sí estaba en la lista, pero eso fue casualidad."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Qué le pasa al promedio con un dato muy distinto.",
+     "pasos": [
+      "Si los datos son 5, 6 y 7, el promedio es 6.",
+      "Si agrego un 30, la suma es 48 y ahora son 4 datos: el promedio sube a 12.",
+      "Un solo dato extremo movió el promedio más que todos los demás.",
+      "Por eso el promedio solo no cuenta toda la historia."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 23",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa24",
+   "oa": "MA05 OA 24",
+   "titulo": "Seguro, posible o imposible",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un experimento es **aleatorio** cuando no se puede saber de antemano qué va a salir. Sus resultados se describen con cuatro palabras: **seguro, posible, poco posible e imposible**."
+    },
+    {
+     "t": "diagrama",
+     "kind": "fracciones",
+     "params": {
+      "partes": 10,
+      "pintadas": 1,
+      "etiqueta": "1 de 10: poco posible"
+     },
+     "intro": "Una sola parte de diez: puede pasar, pero cuesta."
+    },
+    {
+     "t": "texto",
+     "md": "⚠️ **Poco posible no es imposible.** Que algo sea difícil no significa que no pueda ocurrir: imposible es solo lo que no tiene ninguna forma de pasar."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "En una bolsa hay 9 fichas azules y 1 roja.",
+     "pasos": [
+      "Sacar una ficha azul es posible, y además bastante probable.",
+      "Sacar la roja es poco posible: hay una sola entre diez.",
+      "Sacar una ficha de algún color es seguro: todas tienen color.",
+      "Sacar una ficha verde es imposible: no hay ninguna verde en la bolsa."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Cómo cambiar la categoría de un evento.",
+     "pasos": [
+      "Si en la bolsa solo hubiera fichas azules, sacar azul pasaría a ser seguro.",
+      "Si sacara la única roja y no la devolviera, sacar roja pasaría a ser imposible.",
+      "La categoría depende de lo que hay, no de la suerte que uno tenga.",
+      "Por eso primero se mira qué contiene el experimento."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 24",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa25",
+   "oa": "MA05 OA 25",
+   "titulo": "Qué es más probable",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Para comparar dos situaciones **no hace falta calcular nada**: basta con mirar cuántos casos sirven y sobre cuántos en total."
+    },
+    {
+     "t": "diagrama",
+     "kind": "fracciones",
+     "params": {
+      "partes": 6,
+      "pintadas": 2,
+      "etiqueta": "2 casos favorables de 6"
+     },
+     "intro": "Dos partes pintadas de seis: compáralas con otra bolsa."
+    },
+    {
+     "t": "texto",
+     "md": "Hay dos comparaciones fáciles. Si **el total es el mismo**, gana la que tiene más casos favorables. Si **los casos favorables son los mismos**, gana la que tiene menos elementos en total, porque están menos repartidos."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Bolsa A: 3 rojas de 10. Bolsa B: 3 rojas de 5.",
+     "pasos": [
+      "Las dos tienen la misma cantidad de rojas: 3.",
+      "Pero en A hay que elegir entre 10 fichas y en B entre 5.",
+      "En B las rojas son una porción más grande del total.",
+      "Es más probable sacar roja de la bolsa B, y no hizo falta ninguna cuenta."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un caso que engaña: bolsa C con 4 rojas de 20, bolsa D con 2 rojas de 6.",
+     "pasos": [
+      "C tiene más rojas, así que parece la mejor.",
+      "Pero en C las rojas son 4 de 20, o sea una de cada cinco.",
+      "En D son 2 de 6, o sea una de cada tres.",
+      "Es más probable en D. Tener más casos favorables no basta: importa sobre cuántos."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 25",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa26",
+   "oa": "MA05 OA 26",
+   "titulo": "Leer tablas y gráficos",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un **gráfico de barras** sirve para comparar categorías, y uno de **línea** para mostrar cómo algo cambia en el tiempo. Elegir el correcto es parte de comunicar bien."
+    },
+    {
+     "t": "diagrama",
+     "kind": "barras",
+     "params": {
+      "datos": [
+       {
+        "etiqueta": "lun",
+        "valor": 12
+       },
+       {
+        "etiqueta": "mar",
+        "valor": 8
+       },
+       {
+        "etiqueta": "mié",
+        "valor": 15
+       },
+       {
+        "etiqueta": "jue",
+        "valor": 8
+       }
+      ],
+      "desde": 0
+     },
+     "intro": "Libros prestados por día. ¿Qué día se prestaron más?"
+    },
+    {
+     "t": "texto",
+     "md": "Leer un gráfico es más que mirar la barra más alta: también se puede sacar el **total**, la **diferencia** entre dos, y **un dato que falta** si se conoce la suma."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Con los datos del gráfico.",
+     "pasos": [
+      "El día de más préstamos es el miércoles, con 15.",
+      "El total de la semana es 12 más 8 más 15 más 8, o sea 43.",
+      "La diferencia entre el miércoles y el martes es 15 menos 8, o sea 7.",
+      "El lunes y el jueves empataron: los dos tienen 8."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Cuidado con las conclusiones que los datos NO permiten.",
+     "pasos": [
+      "Con este gráfico puedo afirmar que el miércoles hubo más préstamos.",
+      "No puedo afirmar por qué: el gráfico no dice las razones.",
+      "Tampoco puedo decir qué pasará el próximo miércoles.",
+      "Una conclusión honesta se queda dentro de lo que los datos muestran."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 26",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma5-oa27",
+   "oa": "MA05 OA 27",
+   "titulo": "Diagramas de tallo y hojas",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un **diagrama de tallo y hojas** ordena datos de dos cifras separándolos en dos partes: el **tallo** es la cifra de las decenas y la **hoja** es la de las unidades."
+    },
+    {
+     "t": "diagrama",
+     "kind": "puntos",
+     "params": {
+      "valores": [
+       21,
+       23,
+       25,
+       30,
+       31,
+       31,
+       34
+      ],
+      "min": 20,
+      "max": 35
+     },
+     "intro": "Los mismos datos, mostrados uno por uno y en orden."
+    },
+    {
+     "t": "texto",
+     "md": "Su gracia es que **conserva todos los datos originales**: a diferencia de un gráfico de barras, que solo muestra cuántos hay en cada grupo, aquí se puede leer cada valor exacto."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Leamos un diagrama con tallo 2 y hojas 3, 5, 8.",
+     "pasos": [
+      "El tallo 2 significa que todos esos datos están entre 20 y 29.",
+      "La hoja 3 con el tallo 2 forma el número 23.",
+      "Las hojas 5 y 8 forman el 25 y el 28.",
+      "Ese tallo tiene 3 datos: 23, 25 y 28."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "El error de leer la hoja sola.",
+     "pasos": [
+      "Alguien ve la hoja 8 y dice que el dato es 8.",
+      "Pero la hoja no vale por sí sola: necesita su tallo.",
+      "Con tallo 3, esa misma hoja 8 sería el número 38.",
+      "Para contar cuántos datos hay se cuentan las hojas, no los tallos."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA05 OA 27",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  }
+ ]
+}

@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "¿Cuál de estos rectángulos tiene un perímetro de 20 centímetros?",
+   "opciones": [
+    "6 centímetros por 4 centímetros",
+    "10 centímetros por 2 centímetros",
+    "5 centímetros por 4 centímetros",
+    "12 centímetros por 8 centímetros"
+   ],
+   "correcta": 0,
+   "tip": "El perímetro suma los cuatro lados: 6 + 4 + 6 + 4 = 20. Los de 10 por 2 y 5 por 4 tienen área 20, no perímetro 20, y sumar solo el largo con el ancho, como 12 + 8, deja fuera la mitad del contorno.",
+   "id": "mate5-oa21-1"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "¿Cuál de estos rectángulos tiene un área de 42 centímetros cuadrados?",
+   "opciones": [
+    "7 centímetros por 6 centímetros",
+    "8 centímetros por 5 centímetros",
+    "9 centímetros por 4 centímetros",
+    "13 centímetros por 8 centímetros"
+   ],
+   "correcta": 0,
+   "tip": "El área multiplica largo por ancho: 7 × 6 = 42. El de 13 por 8 tiene perímetro 42, que es otra medida: el perímetro recorre el borde y el área cubre la superficie. Los de 8 por 5 y 9 por 4 encierran 40 y 36.",
+   "id": "mate5-oa21-2"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Un rectángulo mide 7 centímetros de largo y 5 de ancho. ¿Cuál es su perímetro?",
+   "opciones": [
+    "24 centímetros",
+    "35 centímetros",
+    "12 centímetros",
+    "14 centímetros"
+   ],
+   "correcta": 0,
+   "tip": "Se suman los cuatro lados: 7 + 5 + 7 + 5 = 24, o bien (7 + 5) × 2. El 35 es el área, el 12 suma solo dos lados y el 14 duplica únicamente el largo.",
+   "id": "mate5-oa21-3"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "¿Cuál es el área de un rectángulo que mide 9 centímetros por 6 centímetros?",
+   "opciones": [
+    "54 centímetros cuadrados",
+    "30 centímetros cuadrados",
+    "15 centímetros cuadrados",
+    "108 centímetros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "El área se obtiene multiplicando: 9 × 6 = 54. El 30 es el perímetro, el 15 suma en vez de multiplicar y el 108 duplica el resultado, algo que solo corresponde al sumar lados para el perímetro.",
+   "id": "mate5-oa21-4"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Entre todos los rectángulos que tienen el mismo perímetro, ¿cuál tiene la mayor área?",
+   "opciones": [
+    "El cuadrado, porque sus cuatro lados miden lo mismo",
+    "El más alargado, porque su lado mayor ocupa más espacio",
+    "El más angosto, porque cabe más veces dentro del otro",
+    "Todos tienen la misma área, porque el perímetro es igual"
+   ],
+   "correcta": 0,
+   "tip": "Con el perímetro fijo, mientras más parecidos son el largo y el ancho mayor es el área, y el máximo se alcanza cuando son iguales. Con 20 centímetros de contorno, 5 por 5 encierra 25 y 9 por 1 solo encierra 9.",
+   "id": "mate5-oa21-5"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Dos rectángulos tienen el mismo perímetro. ¿Qué se puede afirmar de sus áreas?",
+   "opciones": [
+    "Pueden ser distintas, porque el perímetro no determina el área",
+    "Son siempre iguales, porque el contorno mide lo mismo",
+    "El más alargado siempre tiene el área mayor",
+    "El área siempre es la mitad del perímetro"
+   ],
+   "correcta": 0,
+   "tip": "Con 16 centímetros de perímetro se puede armar 4 por 4, con área 16, o 7 por 1, con área 7. Igual contorno no significa igual superficie, y el más alargado es justamente el que menos área encierra.",
+   "id": "mate5-oa21-6"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Matías dibujó un rectángulo de 8 por 3 centímetros. ¿Cuál otro tiene el mismo perímetro?",
+   "opciones": [
+    "7 centímetros por 4 centímetros",
+    "8 centímetros por 4 centímetros",
+    "6 centímetros por 4 centímetros",
+    "12 centímetros por 2 centímetros"
+   ],
+   "correcta": 0,
+   "tip": "El rectángulo de Matías tiene perímetro (8 + 3) × 2 = 22, así que el largo y el ancho del otro deben sumar 11, y 7 + 4 lo cumple. Cambiar un solo lado, como pasar de 8 por 3 a 8 por 4, siempre cambia el perímetro.",
+   "id": "mate5-oa21-7"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Camila hizo un rectángulo de 12 por 2 centímetros. ¿Cuál otro tiene la misma área?",
+   "opciones": [
+    "8 centímetros por 3 centímetros",
+    "6 centímetros por 5 centímetros",
+    "9 centímetros por 3 centímetros",
+    "7 centímetros por 4 centímetros"
+   ],
+   "correcta": 0,
+   "tip": "El de Camila tiene área 12 × 2 = 24, y 8 × 3 también da 24. Un área parecida no basta: 6 por 5 da 30, 9 por 3 da 27 y 7 por 4 da 28, aunque los cuatro rectángulos se vean de tamaños similares.",
+   "id": "mate5-oa21-8"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Un rectángulo tiene 30 centímetros de perímetro y 9 centímetros de largo. ¿Cuánto mide el ancho?",
+   "opciones": [
+    "6 centímetros",
+    "21 centímetros",
+    "15 centímetros",
+    "12 centímetros"
+   ],
+   "correcta": 0,
+   "tip": "El perímetro cuenta dos largos y dos anchos: los largos ocupan 18 y quedan 12 para los dos anchos, así que cada uno mide 6. Restar un solo largo da 21 y quedarse con los 12 sin repartirlos entre ambos anchos da 12.",
+   "id": "mate5-oa21-9"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "El área de un rectángulo es 48 centímetros cuadrados y uno de sus lados mide 8. ¿Cuánto mide el otro?",
+   "opciones": [
+    "6 centímetros",
+    "40 centímetros",
+    "24 centímetros",
+    "384 centímetros"
+   ],
+   "correcta": 0,
+   "tip": "El área es un lado por el otro, así que el lado que falta sale de dividir: 48 dividido por 8 es 6. Restar (48 menos 8 da 40) sirve para repartir un perímetro, no un área; partir el área por la mitad da 24 y multiplicar da 384.",
+   "id": "mate5-oa21-10"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Sofía quiere cercar un huerto rectangular de 7 por 3 metros. ¿Cuántos metros de malla necesita?",
+   "opciones": [
+    "20 metros",
+    "21 metros",
+    "10 metros",
+    "14 metros"
+   ],
+   "correcta": 0,
+   "tip": "La malla rodea el huerto, así que se necesita el perímetro: (7 + 3) × 2 = 20 metros. El 21 es el área, que sirve para cubrir el suelo y no para cercarlo, y el 10 recorre solo la mitad del contorno.",
+   "id": "mate5-oa21-11"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Un patio rectangular mide 15 por 8 metros y se cubrirá con pasto. ¿Cuántos metros cuadrados se necesitan?",
+   "opciones": [
+    "120 metros cuadrados",
+    "46 metros cuadrados",
+    "23 metros cuadrados",
+    "240 metros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "Cubrir una superficie pide el área: 15 × 8 = 120. El 46 es el perímetro, que solo alcanzaría para bordear el patio, el 23 suma los lados en vez de multiplicarlos y el 240 duplica el área sin motivo.",
+   "id": "mate5-oa21-12"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Benjamín formó un rectángulo con 24 centímetros de alambre y su largo mide 8. ¿Cuánto mide el ancho?",
+   "opciones": [
+    "4 centímetros",
+    "16 centímetros",
+    "12 centímetros",
+    "8 centímetros"
+   ],
+   "correcta": 0,
+   "tip": "El alambre es el perímetro. Los dos largos ocupan 16 y quedan 8 para los dos anchos, así que cada uno mide 4. Restar un solo largo da 16, la mitad del alambre da 12 y no repartir los 8 entre ambos anchos da 8.",
+   "id": "mate5-oa21-13"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Javiera quiere formar un rectángulo usando todo un cordel de 16 centímetros. ¿Cuál de estos puede formar?",
+   "opciones": [
+    "5 centímetros por 3 centímetros",
+    "6 centímetros por 3 centímetros",
+    "4 centímetros por 3 centímetros",
+    "8 centímetros por 4 centímetros"
+   ],
+   "correcta": 0,
+   "tip": "El cordel debe alcanzar justo para los cuatro lados: 5 + 3 + 5 + 3 = 16. El largo y el ancho tienen que sumar 8, la mitad del cordel; 6 + 3 suma 9 y se pasa, 4 + 3 suma 7 y deja cordel sobrando, y 8 por 4 pediría 24.",
+   "id": "mate5-oa21-14"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Una sala mide 9 por 6 metros y se pondrá una cinta en todo su borde. ¿Cuántos metros de cinta van?",
+   "opciones": [
+    "30 metros",
+    "54 metros",
+    "15 metros",
+    "18 metros"
+   ],
+   "correcta": 0,
+   "tip": "La cinta recorre el borde, o sea el perímetro: (9 + 6) × 2 = 30 metros. El 54 es el área y serviría para cubrir el piso, no para rodearlo, y el 15 llega solo hasta la mitad del recorrido.",
+   "id": "mate5-oa21-15"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Un jardín de 10 por 4 metros se cambia por un cuadrado con el mismo perímetro. ¿Cuánto mide su lado?",
+   "opciones": [
+    "7 metros",
+    "14 metros",
+    "10 metros",
+    "4 metros"
+   ],
+   "correcta": 0,
+   "tip": "El perímetro es (10 + 4) × 2 = 28, y el cuadrado lo reparte en cuatro lados iguales: 28 dividido por 4 da 7. Dividir por 2 da 14, que es lo que suman dos lados, y quedarse con 10 o con 4 conserva una medida del jardín viejo.",
+   "id": "mate5-oa21-16"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Diego ordena 36 baldosas cuadradas formando un rectángulo. ¿Qué arreglo usa exactamente las 36?",
+   "opciones": [
+    "9 filas de 4 baldosas",
+    "8 filas de 4 baldosas",
+    "7 filas de 5 baldosas",
+    "10 filas de 4 baldosas"
+   ],
+   "correcta": 0,
+   "tip": "La cantidad de baldosas es el área del rectángulo: 9 × 4 = 36. Con 8 filas de 4 se ocupan 32 y sobran baldosas, con 7 filas de 5 se ocupan 35 y con 10 filas de 4 harían falta 40.",
+   "id": "mate5-oa21-17"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Un rectángulo tiene 40 centímetros cuadrados de área y 26 centímetros de perímetro. ¿Cuánto miden sus lados?",
+   "opciones": [
+    "8 centímetros por 5 centímetros",
+    "10 centímetros por 4 centímetros",
+    "20 centímetros por 2 centímetros",
+    "9 centímetros por 4 centímetros"
+   ],
+   "correcta": 0,
+   "tip": "Hay que cumplir las dos condiciones a la vez: 8 × 5 = 40 y (8 + 5) × 2 = 26. Los de 10 por 4 y 20 por 2 tienen el área pedida pero otro perímetro, y el de 9 por 4 tiene el perímetro pedido pero área 36.",
+   "id": "mate5-oa21-18"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Una cancha rectangular tiene 60 metros de perímetro y 20 metros de largo. ¿Cuál es su área?",
+   "opciones": [
+    "200 metros cuadrados",
+    "800 metros cuadrados",
+    "600 metros cuadrados",
+    "1.200 metros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "Primero el ancho: los dos largos suman 40, quedan 20 para los dos anchos y cada uno mide 10. Recién ahí el área: 20 × 10 = 200. Tomar 40 como ancho, restando el largo al perímetro, lleva a 800.",
+   "id": "mate5-oa21-19"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Un cuadro mide 18 por 12 centímetros y llevará moldura en el borde. ¿Cuánta moldura se necesita?",
+   "opciones": [
+    "60 centímetros",
+    "216 centímetros",
+    "30 centímetros",
+    "36 centímetros"
+   ],
+   "correcta": 0,
+   "tip": "La moldura sigue el contorno, o sea el perímetro: (18 + 12) × 2 = 60 centímetros. El 216 es el área del cuadro, el 30 suma un largo y un ancho, la mitad del recorrido, y el 36 duplica solo el ancho.",
+   "id": "mate5-oa21-20"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Ana quiere una huerta de 24 metros cuadrados con lados enteros y el menor cerco posible. ¿Qué medidas usa?",
+   "opciones": [
+    "6 metros por 4 metros",
+    "8 metros por 3 metros",
+    "12 metros por 2 metros",
+    "24 metros por 1 metro"
+   ],
+   "correcta": 0,
+   "tip": "Los cuatro rectángulos encierran 24 metros cuadrados, pero el cerco cambia: 20, 22, 28 y 50 metros. Con el área fija, mientras más parecidos son los lados menos cerco se necesita, y 6 y 4 es el par más parecido.",
+   "id": "mate5-oa21-21"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "¿Cuántos rectángulos distintos de lados enteros tienen 12 centímetros de perímetro, contando el cuadrado?",
+   "opciones": [
+    "3 rectángulos",
+    "5 rectángulos",
+    "6 rectángulos",
+    "12 rectángulos"
+   ],
+   "correcta": 0,
+   "tip": "El largo y el ancho deben sumar 6: 5 y 1, 4 y 2, 3 y 3. Son 3 rectángulos distintos. Contar además 1 y 5 o 2 y 4 sube el total a 5, pero son los mismos rectángulos girados, no rectángulos nuevos.",
+   "id": "mate5-oa21-22"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "¿Cuántos rectángulos distintos de lados enteros tienen 18 centímetros cuadrados de área?",
+   "opciones": [
+    "3 rectángulos",
+    "6 rectángulos",
+    "9 rectángulos",
+    "18 rectángulos"
+   ],
+   "correcta": 0,
+   "tip": "Hay que buscar pares de números que multiplicados den 18: 1 y 18, 2 y 9, 3 y 6. Son 3 rectángulos. Contar también 18 y 1 o 9 y 2 duplica la cuenta, pero un rectángulo girado sigue siendo el mismo.",
+   "id": "mate5-oa21-23"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Con 24 centímetros de alambre se hace un rectángulo de 11 por 1 y otro de 6 por 6. ¿Cuál tiene mayor área?",
+   "opciones": [
+    "El de 6 por 6, porque a igual perímetro el cuadrado da el área mayor",
+    "El de 11 por 1, porque su lado más largo mide más centímetros",
+    "Los dos tienen la misma área, porque usan el mismo alambre",
+    "Los dos tienen 24 centímetros cuadrados, igual que su perímetro"
+   ],
+   "correcta": 0,
+   "tip": "Las áreas son 11 × 1 = 11 y 6 × 6 = 36, con el mismo alambre en los dos casos. Tener un lado muy largo no ayuda si el otro es muy corto: el área crece cuando el largo y el ancho se parecen.",
+   "id": "mate5-oa21-24"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Estos rectángulos tienen todos 28 centímetros de perímetro. ¿Cuál de ellos tiene la MENOR área?",
+   "opciones": [
+    "13 centímetros por 1 centímetro",
+    "11 centímetros por 3 centímetros",
+    "9 centímetros por 5 centímetros",
+    "7 centímetros por 7 centímetros"
+   ],
+   "correcta": 0,
+   "tip": "Con el perímetro fijo en 28, las áreas son 13, 33, 45 y 49. Mientras más se alejan el largo y el ancho, menos área encierra el rectángulo: el mínimo está en el más alargado y el máximo en el cuadrado.",
+   "id": "mate5-oa21-25"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Estos rectángulos tienen todos 36 centímetros cuadrados de área. ¿Cuál tiene el MAYOR perímetro?",
+   "opciones": [
+    "36 centímetros por 1 centímetro",
+    "18 centímetros por 2 centímetros",
+    "9 centímetros por 4 centímetros",
+    "6 centímetros por 6 centímetros"
+   ],
+   "correcta": 0,
+   "tip": "Con el área fija en 36, los perímetros son 74, 40, 26 y 24. El más alargado necesita mucho más contorno para encerrar la misma superficie, y el cuadrado es el que menos contorno gasta.",
+   "id": "mate5-oa21-26"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Un rectángulo mide 8 por 5 centímetros. Si el largo se duplica y el ancho no cambia, ¿qué pasa con su área?",
+   "opciones": [
+    "Se duplica, porque uno de los dos factores se duplicó",
+    "Se mantiene igual, porque el ancho sigue midiendo lo mismo",
+    "Se cuadruplica, porque el área crece más rápido que los lados",
+    "Aumenta 8 centímetros cuadrados, lo que medía el largo original"
+   ],
+   "correcta": 0,
+   "tip": "El área pasa de 8 × 5 = 40 a 16 × 5 = 80, o sea el doble. Al multiplicar por 2 uno solo de los factores el producto se duplica; se cuadruplicaría si se duplicaran los dos lados a la vez.",
+   "id": "mate5-oa21-27"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Camila duplicó los dos lados de un rectángulo de 5 por 3 centímetros. ¿Cuál es el perímetro del nuevo?",
+   "opciones": [
+    "32 centímetros",
+    "16 centímetros",
+    "60 centímetros",
+    "64 centímetros"
+   ],
+   "correcta": 0,
+   "tip": "El rectángulo nuevo mide 10 por 6, así que su perímetro es (10 + 6) × 2 = 32, justo el doble de los 16 del original. El 60 es el área del nuevo rectángulo y el 64 duplica dos veces el perímetro.",
+   "id": "mate5-oa21-28"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Dos rectángulos tienen la misma área. ¿Qué se puede afirmar de sus perímetros?",
+   "opciones": [
+    "Pueden ser distintos, y el más alargado tiene el perímetro mayor",
+    "Son siempre iguales, porque ocupan la misma superficie",
+    "El más alargado siempre tiene el perímetro menor",
+    "El perímetro siempre mide el doble que el área"
+   ],
+   "correcta": 0,
+   "tip": "Con área 36 se puede armar 6 por 6, con perímetro 24, o 36 por 1, con perímetro 74. La misma superficie se encierra con contornos muy distintos, y estirar el rectángulo siempre alarga el contorno.",
+   "id": "mate5-oa21-29"
+  },
+  {
+   "oa": "MA05 OA 21",
+   "pregunta": "Con 16 fichas cuadradas de 1 centímetro se arma un rectángulo. ¿Cuál es el MENOR perímetro que puede tener?",
+   "opciones": [
+    "16 centímetros",
+    "20 centímetros",
+    "34 centímetros",
+    "8 centímetros"
+   ],
+   "correcta": 0,
+   "tip": "Con 16 fichas se puede armar 1 por 16, 2 por 8 o 4 por 4, cuyos perímetros son 34, 20 y 16. El menor lo da el cuadrado: con el área fija, los lados parecidos ahorran contorno. El 8 es solo la mitad del área.",
+   "id": "mate5-oa21-30"
+  }
+ ]
+}

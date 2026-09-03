@@ -63,7 +63,19 @@ def valor(op):
         unidad = ""
     crudo, pct = m2.group(1), m2.group(2)
     # formato chileno: el punto separa miles, la coma es decimal
-    crudo = crudo.replace(".", "") if "," in crudo else crudo
+    # Formato chileno: el punto separa miles y la coma es decimal.
+    # ATENCION: antes el punto solo se quitaba SI ADEMAS habia coma, asi que
+    # "2.500" se leia como 2,5. Eso daba las dos fallas a la vez: acusaba como
+    # iguales a "5.000 m" y "5 m" (falso positivo, y en un OA de conversiones
+    # los distractores son justo potencias de diez), y NO cazaba "2.500" contra
+    # "2500", que si valen lo mismo (falso negativo, que es el peor). Lo
+    # encontro el agente del MA05 OA 20 escribiendo el banco de 5, midiendo.
+    # Se quita el punto solo cuando TODOS los puntos separan grupos de 3
+    # digitos, para no romper un decimal escrito con punto ("2.5").
+    if re.match(r"^\d{1,3}(?:\.\d{3})+(?:,\d+)?$", crudo):
+        crudo = crudo.replace(".", "")
+    elif "," in crudo:
+        crudo = crudo.replace(".", "")
     crudo = crudo.replace(",", ".")
     try:
         v = Fraction(crudo)

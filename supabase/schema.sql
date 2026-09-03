@@ -357,7 +357,7 @@ returns text[] language sql immutable as $$
   select array_agg(a.asig || n.niv order by n.orden, a.orden)
   from (values ('HI',1),('MA',2),('CN',3),('LE',4)) as a(asig, orden),
        -- AGREGAR UN CURSO NUEVO ES UNA FILA MAS AQUI. Descendente, como el panel.
-       (values ('08',1),('07',2),('03',3))          as n(niv, orden);
+       (values ('08',1),('07',2),('05',3),('03',4)) as n(niv, orden);
 $$;
 
 -- Un codigo de curriculum lleva el nivel adentro (MA03 = MA + 03), asi que la asignatura

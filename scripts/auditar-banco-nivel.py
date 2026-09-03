@@ -142,7 +142,11 @@ def norm(t):
 # todos los numeros del enunciado deben pertenecer a ella.
 def clave_aritmetica(p):
     q = p["pregunta"]
-    if re.search(r"[▢🔺🔷🟡⬛_=]|red |aproxim|redonde|cerca|entre", q):
+    # Y si la pregunta pide una PROPIEDAD del resultado y no el resultado —en que
+    # digito termina, cuantas cifras tiene— compararla contra el producto acusa una
+    # pregunta correcta: 45 x 32 da 1440 y la clave legitima es "0". Medido sobre los
+    # 18 bancos, este guard apaga 2 comprobaciones de 99 y las 2 son de ese tipo.
+    if re.search(r"[▢🔺🔷🟡⬛_=]|red |aproxim|redonde|cerca|entre|d[ií]gito|cifra", q):
         return None
     cuerpo = q.replace("¿", "").replace("?", "")
     # El signo del PRIMER termino: sin el `-?` inicial, "-3 - 5" empareja "3 - 5" = -2

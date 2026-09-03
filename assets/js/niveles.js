@@ -39,6 +39,7 @@ NIV.ASIGS = {
 NIV.NIVELES = [
   {nivel:'08', nombre:'8° básico', ruta:'/8vo/'},
   {nivel:'07', nombre:'7° básico', ruta:'/7mo/'},
+  {nivel:'05', nombre:'5° básico', ruta:'/5to/'},
   {nivel:'03', nombre:'3° básico', ruta:'/3ro/'}
 ];
 

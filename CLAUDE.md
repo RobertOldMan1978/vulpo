@@ -136,8 +136,10 @@ año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron co
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
 están hoy en una expedición jugable, el resto es reserva.
 
-> **Estado de aprobación (31/08/2026): 7.805 de 7.805. El banco entero está firmado de nuevo**,
-> incluidas las 60 del Vocabulario de 3° que se escribieron ese mismo día. Pero **cómo se aprobó cada banco no es lo mismo, y hay que saberlo antes de
+> **Estado de aprobación (03/09/2026): 7.805 aprobadas de 8.615 escritas.** Las **810 de
+> Matemática de 5°** son lo único pendiente: se escribieron el 02/09 y nacen `revisada:false`.
+> Hasta el 31/08 el banco estaba firmado entero (7.805 de 7.805), incluidas las 60 del
+> Vocabulario de 3°. Pero **cómo se aprobó cada banco no es lo mismo, y hay que saberlo antes de
 > decírselo a un colegio:** los 2.536 de 8° y los módulos de apoyo se revisaron **pregunta por
 > pregunta**; los de 3° y 7° se aprobaron **por muestreo** —8 de cada 30 por objetivo, criterio
 > de `docs/aprobacion-pedagogica.md`—. Por eso la landing dice *"aprobadas por un profesor,
@@ -227,6 +229,33 @@ suscripción, y es trabajo de backend, no de PWA.
 - Flujo de trabajo entre oficina y casa sincronizando por **GitHub**.
 - **Cierre de sesión:** al pedirlo, actualizar este `CLAUDE.md` con lo avanzado
   y lo pendiente, luego commit y push.
+
+### ⚠️ Los agentes van de a POCOS y EN ORDEN, nunca en oleadas grandes
+
+Regla de Roberto, del 02/09/2026, y nació de perder una tarde entera.
+
+Escribiendo el banco de 5° se lanzaron **21 agentes en dos oleadas**. A media tarde se acabó
+el límite de sesión y **19 murieron con HTTP 429 a la vez**. Lo que ya estaba escrito en disco
+se salvó; lo que estaba a medio escribir se perdió entero, y no hay forma de saber cuánto
+faltaba de cada uno.
+
+**La regla: se construye por orden y de a poco** —del orden de 3 o 4 agentes por vez, no
+veinte—, esperando a que la tanda cierre antes de lanzar la siguiente.
+
+> **El motivo no es el costo sino el TAMAÑO DE LO QUE SE PIERDE.** Con oleadas grandes, un
+> corte de sesión se lleva por delante todo lo que estaba en vuelo. Con tandas chicas, se
+> pierde una tanda y el resto ya está en disco, auditado y firmado. Es la misma lógica del
+> commit frecuente: no evita el accidente, acota lo que cuesta.
+
+Dos corolarios que ya se pagaron:
+
+- ⚠️ **Antes de relanzar nada, MIRAR EL DISCO.** El informe de un agente muerto no dice si
+  alcanzó a escribir su archivo. En esta sesión cuatro tandas (`oa02`, `oa03`, `oa06`,
+  `oa08`) estaban completas e íntegras aunque su agente reportara fallo: relanzarlas habría
+  sido pagar dos veces por trabajo hecho. Ya era la lección de la Sesión 62 y volvió a
+  aplicar tal cual.
+- **La tanda de validación sigue yendo primero**, y ahora encaja sola con esta regla: es la
+  primera tanda chica, y valida el encargo antes de que nada más se escriba.
 
 ### ⚠️ El repositorio es PÚBLICO
 
@@ -409,19 +438,19 @@ Cada curso es un fork, y lo que distingue a uno de otro **no es código de motor
 funcionalidades tiene**. Desde la Sesión 63 esas diferencias se declaran como constantes
 arriba del archivo, no como condiciones sueltas repartidas por el código.
 
-| Bandera | Qué gobierna | 8° | 7° | 3° |
-|---|---|---|---|---|
-| `HAY_RETO_CALCULO` | Si Matemática se juega como Reto de Cálculo. Afecta al **Duelo** (`odNMapas`, `odMapasMate`, `odPreguntasCalc`), a `detenerTimersActivos` y a la música de `scr-calc` | ✅ | ❌ | ❌ |
-| `HAY_MINICLASES` | Si existe el camino de mini-clases. Afecta al **siguiente paso al reprobar**, a `renderCampaña`, al Jefe Final (`cargarPoolMate`) y al ✕ del quiz. **Desde la Sesión 83 vale `true` en los tres**, y va **pegada a `LECC.init`** | ✅ | ✅ | ✅ |
-| `HAY_VOCABULARIO` | Si Lenguaje abre el landing "Campaña + Vocabulario" en vez de su campaña | ✅ | ✅ | ✅ |
-| `HAY_BIBLIOTECA` | Si la pantalla principal ofrece el módulo 📖 Lectura | ✅ | ❌ | ✅ |
-| `HAY_SINFIN` | Si Matemática ofrece el **Reto Sin Fin** de `assets/js/calculo.js`. Gobierna el nodo del mapa y la llamada `CALC.init` | ❌ | ✅ | ✅ |
-| `HAY_DIFICIL` | Si el nivel ofrece **Modo Difícil**, y con él las insignias 🔥, la skin de Maestro y la Maestría Total. ⚠️ Se declara **pegada a `DIF_ASIGS`** y no con las demás: la consulta `revisarDificil()`, que corre en el arranque | ✅ | ✅ | ❌ |
-| `MAESTRIA_CALC` | Si el **cuarto hito** de la Maestría Total es El Autómata (el Jefe del Reto de Cálculo). En 8° la Maestría es Historia+Ciencias+Lenguaje en Difícil **más** El Autómata; donde no hay Reto son las **cuatro** asignaturas. Son el mismo número contado distinto, así que va como dato y no como dos `esMaestro()` distintos. ⚠️ También **pegada a `HAY_DIFICIL`** | ✅ | ❌ | ❌ |
-| `SIN_RELOJ` | Quiz sin cuenta regresiva y sin selector Normal/Difícil. ⚠️ **No alcanza al Duelo**, que sí lleva reloj en los tres: es una competencia y ahí el tiempo es parte del juego | ❌ | ❌ | ✅ |
-| `DUELO_BANCO` | De qué banco saca preguntas el Duelo (ruta + los 4 OA). Iba **fijo a `historia-8basico`** en los tres forks, así que en 7° un alumno recibía preguntas de 8° | `HI08` | `HI07` | `HI03` |
-| `DUELO_SEG` | Segundos por pregunta del Duelo, local y en línea | 15 | 15 | **30** |
-| `EXPERIMENTAL` | **No es de nivel sino del CURSO**: lo enciende la inscripción por enlace. Se lee del disco al arrancar y lo reconcilia `sincronizarModoCurso()`. Gobierna `CAPS_ABIERTOS` | según el curso | según el curso | según el curso |
+| Bandera | Qué gobierna | 8° | 7° | 5° | 3° |
+|---|---|---|---|---|---|
+| `HAY_RETO_CALCULO` | Si Matemática se juega como Reto de Cálculo. Afecta al **Duelo** (`odNMapas`, `odMapasMate`, `odPreguntasCalc`), a `detenerTimersActivos` y a la música de `scr-calc` | ✅ | ❌ | ❌ | ❌ |
+| `HAY_MINICLASES` | Si existe el camino de mini-clases. Afecta al **siguiente paso al reprobar**, a `renderCampaña`, al Jefe Final (`cargarPoolMate`) y al ✕ del quiz. **Desde la Sesión 83 vale `true` en los tres**, y va **pegada a `LECC.init`** | ✅ | ✅ | ✅ | ✅ |
+| `HAY_VOCABULARIO` | Si Lenguaje abre el landing "Campaña + Vocabulario" en vez de su campaña | ✅ | ✅ | ❌ | ✅ |
+| `HAY_BIBLIOTECA` | Si la pantalla principal ofrece el módulo 📖 Lectura | ✅ | ❌ | ❌ | ✅ |
+| `HAY_SINFIN` | Si Matemática ofrece el **Reto Sin Fin** de `assets/js/calculo.js`. Gobierna el nodo del mapa y la llamada `CALC.init` | ❌ | ✅ | ✅ | ✅ |
+| `HAY_DIFICIL` | Si el nivel ofrece **Modo Difícil**, y con él las insignias 🔥, la skin de Maestro y la Maestría Total. ⚠️ Se declara **pegada a `DIF_ASIGS`** y no con las demás: la consulta `revisarDificil()`, que corre en el arranque | ✅ | ✅ | ✅ | ❌ |
+| `MAESTRIA_CALC` | Si el **cuarto hito** de la Maestría Total es El Autómata (el Jefe del Reto de Cálculo). En 8° la Maestría es Historia+Ciencias+Lenguaje en Difícil **más** El Autómata; donde no hay Reto son las **cuatro** asignaturas. Son el mismo número contado distinto, así que va como dato y no como dos `esMaestro()` distintos. ⚠️ También **pegada a `HAY_DIFICIL`** | ✅ | ❌ | ❌ | ❌ |
+| `SIN_RELOJ` | Quiz sin cuenta regresiva y sin selector Normal/Difícil. ⚠️ **No alcanza al Duelo**, que sí lleva reloj en los tres: es una competencia y ahí el tiempo es parte del juego | ❌ | ❌ | ❌ | ✅ |
+| `DUELO_BANCO` | De qué banco saca preguntas el Duelo (ruta + los 4 OA). Iba **fijo a `historia-8basico`** en los tres forks, así que en 7° un alumno recibía preguntas de 8° | `HI08` | `HI07` | `MA05` | `HI03` |
+| `DUELO_SEG` | Segundos por pregunta del Duelo, local y en línea | 15 | 15 | 15 | **30** |
+| `EXPERIMENTAL` | **No es de nivel sino del CURSO**: lo enciende la inscripción por enlace. Se lee del disco al arrancar y lo reconcilia `sincronizarModoCurso()`. Gobierna `CAPS_ABIERTOS` | según el curso | según el curso | según el curso | según el curso |
 
 `MODO_ABIERTO` se partió en **`CAPS_ABIERTOS`** (ignora los candados entre capítulos y
 niveles: QA, modo prueba y experimental) y **`JEFES_ABIERTOS`** (ignora los de los jefes y
@@ -8176,3 +8205,152 @@ bloquea cobrar"* a **"Ya se puede facturar"**:
 
 De los tres trámites queda **INAPI** —y ahora que hay sociedad, la marca puede registrarse **a su
 nombre** en vez del de una persona, que es lo que corresponde— y el enlace de agenda.
+
+### Sesión 89 (2026-09-02 y 03) — 5° básico estrena Matemática: 810 preguntas y 27 mini-clases
+
+Arranca el **Bloque B**, que es el camino crítico de la v1. VULPO pasa de tres cursos a
+cuatro: `vulpo.cl/5to/`, con Matemática completa y jugable. **Ningún otro curso se tocó**
+—8°, 7° y 3° quedan en sus 20, 23 y 27 expediciones, verificado jugando.
+
+| | |
+|---|---|
+| Banco | **810 preguntas**, los 27 OA, correcta repartida 26/22/26/25% |
+| Mini-clases | **27**, todas con práctica, 26 con diagrama |
+| Fork `5to/index.html` | 2.378 líneas · manifiesto propio · `SUFIJO='_5to'` · `storageKey:'kimun-5to'` |
+| Campaña | 6 capítulos · Jefe Final **El Descuadre** (4 fases × 4) |
+| Catálogos | **dos líneas**: una en `assets/js/niveles.js` y otra en `kimun_asignaturas_todas()` |
+
+Que dar de alta un curso en el backend sea **una fila** es M4 (Sesión 75) pagándose sola:
+antes eran ~24 puntos de edición en tres archivos.
+
+#### El reparto en capítulos, y las dos decisiones que no se resolvían solas
+
+Los `oa.json` agrupan por **eje oficial**, no por capítulo de juego, así que había que
+decidirlo. Las unidades del Programa de Matemática van **13-2-3-4-5 OA**: un capítulo de 13
+sería más largo que la campaña entera de Ciencias, y otro de 2 no da capítulo. Se reparten en
+**6 por tipo de número**, que es como se enseña: Números y operaciones · Fracciones ·
+Decimales · Patrones, ecuaciones y figuras · Medir y calcular áreas · Datos y probabilidades.
+
+Y se decidió el reparto de las otras tres asignaturas de 5° (Historia 6 capítulos, Ciencias 4,
+Lenguaje 7 por tema), que quedan escritas y aprobadas para cuando toque su banco.
+
+> ⚠️ **Historia de 5° tiene dos capítulos casi enteramente actitudinales** —el eje «Formación
+> ciudadana» trae 10 OA de 22—, y eso tiene consecuencia: al profesor le va a aparecer un
+> porcentaje junto a *"demostrar actitudes cívicas"*. La protección es la de siempre: siempre
+> la situación de un tercero con nombre, nunca la conducta del jugador.
+
+#### La tanda de validación, otra vez, y otra vez se pagó
+
+Seis OA elegidos por riesgo antes de escalar a los 27: el 05 (aritmética verificable), el
+**07 y el 10** (donde la trampa de las dos respuestas correctas es máxima, porque su contenido
+*es* la equivalencia), y el **18, 21 y 25**, que son los tres que su propio `oa.json` declara
+como no medibles tal como están redactados —«demostrar congruencia», «diseñar y construir»,
+«comparar sin calcularlas»—.
+
+**180 preguntas, 0 errores, y ningún cambio al estándar.** Los tres «no medibles» entregaron
+30 honestas cada uno.
+
+#### ⚠️ Se acabó el límite de sesión con 21 agentes en vuelo, y el disco salvó el día
+
+A media tarde murieron **19 de 21 agentes** con HTTP 429 a la vez. Pero el disco tenía
+**cuatro tandas más de las que decían los informes**: `oa02`, `oa03`, `oa06` y `oa08` estaban
+completas e íntegras aunque su agente reportara fallo. Relanzarlas habría sido pagar dos veces.
+Es la lección de la Sesión 62 cumpliéndose tal cual: **mirar el disco antes de relanzar**.
+
+De ahí salió la regla nueva de Roberto, ya escrita en «Reglas de trabajo»: **los agentes van de
+a POCOS (3 o 4) y EN ORDEN**. El motivo no es el costo sino **el tamaño de lo que se pierde**.
+
+> Y una causa que conviene saber: más tarde, **una interrupción del usuario mató a los cuatro
+> agentes en vuelo** sin que ninguno alcanzara a escribir. No aparecían en `ListAgents` y no
+> hubo notificación de fallo. A los relanzados se les agregó una instrucción que salió de eso:
+> **escribir el archivo temprano e irlo completando**, en vez de guardarlo todo para el final.
+
+#### Dos herramientas COMPARTIDAS arregladas, y las dos las encontró un agente midiendo
+
+**1 · `auditar-numerico.py` leía `"2.500"` como 2,5.** El punto solo se quitaba si además había
+coma, así que tenía **las dos fallas a la vez**: acusaba como iguales `"5.000 m"` y `"5 m"`
+—falso positivo, y en un OA de conversiones los distractores son justo potencias de diez— y
+**no cazaba `"2.500"` contra `"2500"`**, que sí valen lo mismo. El falso negativo es el peor:
+dos respuestas correctas pasando sin que nadie se entere. Arreglado quitando el punto solo
+cuando **todos** los puntos separan grupos de tres dígitos.
+
+> **Medido antes de aceptarlo: no cambia el veredicto de ninguno de los 18 bancos** —0
+> hallazgos nuevos, 0 que desaparezcan— y pasa una autoprueba de 12 casos. Probado además
+> rompiendo un banco a propósito, porque un chequeo que nunca falla no prueba nada.
+
+**2 · `auditar-banco-nivel.py` acusaba una pregunta correcta.** *«¿En qué dígito termina el
+producto 45 × 32?»* con clave `0`: el auditor comparaba contra 1440. Se le agregó una guarda
+para las preguntas que piden una **propiedad** del resultado y no el resultado.
+
+> **Medido: apaga 2 comprobaciones de 99 en los 18 bancos, y las 2 son de ese tipo.** Cero
+> comprobaciones legítimas perdidas. Es la doctrina de siempre: *una comprobación que acusa lo
+> correcto entrena a ignorar el informe.*
+
+#### Dos fugas de mini-clase, del tipo exacto que la Sesión 83 documenta
+
+La clase resolvía el **caso numérico exacto** que una pregunta iba a preguntar —`14 × 50 = 700`
+y `4 + 3 × 5 = 19`—, así que el niño respondía de memoria treinta segundos después. Corregidas
+cambiando los números: el concepto se enseña igual.
+
+> ⚠️ **Y los cuatro números de reemplazo que se eligieron primero YA estaban en el banco.** Se
+> comprobó antes de escribir, no después. Al arreglar una fuga hay que verificar que el
+> reemplazo no cree otra.
+
+Los otros cinco avisos eran falsos positivos, **tres de ellos del detector propio**, que partía
+`2,5 + 0,75` en `5 + 0` porque no entendía la coma decimal. Se afinó antes de creerle.
+
+#### La pregunta de los dibujos: medida por tres agentes, y NO es lo que parecía
+
+`docs/encargo-banco.md` dice que 5° no lleva campo `visual`. Medido, **eso no es un límite del
+motor**: `motor.js` propaga `visual` en sus cuatro constructores y `visuales.js` lo cargan los
+tres cursos. El «no» es una **convención heredada** de cuando voz y dibujos venían juntos como
+paquete de los cursos chicos — nadie decidió nunca que la geometría de 5° no los necesitara.
+
+Se les pidió a los agentes de los OA 17, 22 y 26 que lo midieran en vez de opinar, y
+**corrigieron dos supuestos míos**:
+
+- **El widget `cuerpo` no serviría** para el OA 17: dibuja un contorno genérico **sin rótulos ni
+  aristas destacadas**, así que no recupera el ítem canónico *«¿qué arista es perpendicular a la
+  marcada?»*.
+- **El widget `barras` de las preguntas empeoraría el OA 26**: imprime el valor sobre cada barra
+  en dorado, o sea **regala la respuesta**; no tiene eje ni escala, así que sin ese número no se
+  puede leer nada; y **no existe ningún widget de gráfico de línea**, o sea que la mitad del
+  nombre de ese OA no tiene dibujo posible.
+- **Pero `DIAGRAMAS.figura` de `lecciones.js` SÍ es el que la geometría necesita** —triángulo,
+  paralelogramo y trapecio con su base y su altura marcadas—. Dos problemas medidos: **topa la
+  base en 10 y la altura en 6**, así que un enunciado con base 15 se recortaría **en silencio**
+  (cuidado 🟠 10); y **la caída entre catálogos es de una sola dirección**, así que una pregunta
+  no lo alcanza aunque se encendiera la bandera.
+
+> **Nada de esto bloquea 5°:** los tres entregaron sus 30 preguntas honestas sin dibujo. El
+> dibujo **sube el techo**, no tapa un hoyo — el OA 22 pierde *medición* en 3 de 30, porque el
+> enunciado le da el conteo hecho al niño. Y es una decisión **de la fila de 5° en el estándar**,
+> no de un objetivo suelto: afectaría a las 27 tandas ya escritas sin él. La evidencia completa
+> quedó fuera del repo, en el archivo de trabajo de la sesión.
+
+#### Verificación
+
+Con `scripts/cdp.mjs`, **jugando con clics y no llamando funciones**: tarjeta de meta con su
+frase en lenguaje de niño → quiz con 4 opciones, la meta 🎯 en pantalla y reloj de 20 s →
+responder → feedback con su explicación; y la mini-clase abriendo su unidad. **0 fallos de red y
+0 errores de consola.** Los **27 OA tienen su `META_OA`** —la comprobación que habría cazado el
+defecto mudo de 7°— y el guardado queda aislado en `kimun_save_5to`.
+
+**8°, 7° y 3° sin moverse**: 20 / 23 / 27 expediciones y motor vivo en los tres.
+
+> Vale registrar el método: **siete errores de selector propios** en la verificación (`#opts`
+> por `#qOpts`, `btnMetaOk` por `metaVamos`…). Cuando un conteo da cero, el primer sospechoso
+> es la prueba, no el producto.
+
+#### Pendiente de Roberto
+
+1. **La aprobación pedagógica**: 27 OA × 8 = **216 preguntas** por muestreo. Tablero regenerado
+   (30 secciones) e informe en `dev/revision-matematicas-5basico.pdf`, 221 páginas.
+2. **Re-aplicar `supabase/schema.sql`**, ahora con el nivel `05`.
+3. **El arte, que es lo único que el encargo permitía dejar pendiente:** villano propio de
+   Matemática de 5° y las 6 portadas de capítulo. Hoy usa arte **prestado** de 7° y 8°,
+   declarado en comentarios, y **sin un solo 404**.
+4. **La decisión sobre `visual` en 5°.**
+
+**De 5° faltan Historia (22 OA), Ciencias (14) y Lenguaje (30)**, con su reparto en capítulos ya
+aprobado.
