@@ -36,6 +36,27 @@
      "md": "Por eso una decisión sobre lo que comes o cuánto te mueves no afecta a un solo órgano: afecta a la red completa."
     },
     {
+     "t": "diagrama",
+     "intro": "Los sistemas no trabajan sueltos.",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "desc": "Del aire que respiras hasta cada célula",
+      "items": [
+       {
+        "titulo": "Respiras"
+       },
+       {
+        "titulo": "Llega a la sangre"
+       },
+       {
+        "titulo": "Cada célula"
+       }
+      ],
+      "etiqueta": "Por eso afecta a la red completa"
+     }
+    },
+    {
      "t": "texto",
      "md": "En este capítulo vas a ver cómo se coordinan los sistemas del cuerpo, qué aporta cada tipo de nutriente y qué significa, con evidencia y no con opiniones, llevar una vida saludable."
     }

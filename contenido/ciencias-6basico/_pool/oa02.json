@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "¿Qué tipo de organismo es siempre el primer eslabón de una cadena alimentaria?",
+   "opciones": [
+    "Un organismo fotosintético, capaz de producir su propio alimento con luz solar",
+    "Un animal herbívoro que se alimenta de plantas y algas",
+    "Un animal carnívoro que caza a otros animales para sobrevivir",
+    "Un hongo o una bacteria que descompone materia orgánica muerta"
+   ],
+   "correcta": 0,
+   "tip": "El primer eslabón siempre es un productor: un organismo fotosintético (planta, alga o fitoplancton) que fabrica su propio alimento. Los herbívoros y carnívoros dependen de él para obtener energía.",
+   "id": "cien6-oa02-1"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "¿Por qué las plantas y las algas se consideran productores en una cadena alimentaria?",
+   "opciones": [
+    "Porque fabrican su propio alimento usando luz solar, agua y dióxido de carbono",
+    "Porque producen semillas que sirven de alimento a todos los animales del ecosistema",
+    "Porque crecen más rápido que los animales y así generan más biomasa disponible",
+    "Porque viven fijas en un lugar y no necesitan buscar su alimento como los animales"
+   ],
+   "correcta": 0,
+   "tip": "Se llaman productores porque, mediante la fotosíntesis, fabrican su propio alimento a partir de luz, agua y dióxido de carbono, sin depender de otro ser vivo para comer.",
+   "id": "cien6-oa02-2"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "¿Cómo se llama al animal que se alimenta directamente de un productor?",
+   "opciones": [
+    "Consumidor primario",
+    "Consumidor secundario",
+    "Consumidor terciario",
+    "Descomponedor"
+   ],
+   "correcta": 0,
+   "tip": "El consumidor primario es el que come directamente al productor (una planta, un alga o el fitoplancton), por eso también se le llama herbívoro.",
+   "id": "cien6-oa02-3"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "Un gato salvaje caza y se come a un ratón que antes comió semillas. ¿Qué nivel ocupa el gato?",
+   "opciones": [
+    "Consumidor secundario",
+    "Consumidor primario",
+    "Productor",
+    "Descomponedor"
+   ],
+   "correcta": 0,
+   "tip": "El ratón, al comer semillas (el productor), es consumidor primario. El gato, que se come al ratón, ocupa el siguiente nivel: consumidor secundario.",
+   "id": "cien6-oa02-4"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "En una cadena de cuatro eslabones, ¿qué organismo ocupa el nivel de consumidor terciario?",
+   "opciones": [
+    "El que se alimenta de un consumidor secundario",
+    "El que se alimenta directamente del productor",
+    "El organismo fotosintético que inicia la cadena",
+    "El hongo que descompone los restos de los demás"
+   ],
+   "correcta": 0,
+   "tip": "El consumidor terciario está en el cuarto eslabón: se alimenta de un consumidor secundario, que a su vez comió a un consumidor primario.",
+   "id": "cien6-oa02-5"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "¿Qué función cumplen los hongos y las bacterias descomponedoras en un ecosistema?",
+   "opciones": [
+    "Transforman los restos de organismos muertos en materia que vuelve al suelo",
+    "Cazan y comen a los consumidores terciarios que quedan sin depredadores",
+    "Fabrican su propio alimento igual que las plantas, usando la luz solar",
+    "Se alimentan solo de productores vivos, igual que los consumidores primarios"
+   ],
+   "correcta": 0,
+   "tip": "Los descomponedores no cazan ni comen organismos vivos: se alimentan de restos y materia orgánica muerta, devolviendo nutrientes al ambiente.",
+   "id": "cien6-oa02-6"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "En un bosque, un roble es comido por una oruga, y la oruga por un petirrojo. ¿Qué es la oruga?",
+   "opciones": [
+    "El consumidor primario de esa cadena",
+    "El productor de esa cadena",
+    "El consumidor secundario de esa cadena",
+    "Un descomponedor de esa cadena"
+   ],
+   "correcta": 0,
+   "tip": "La oruga come directamente al roble (el productor), así que es el consumidor primario. El petirrojo, que se la come a ella, es el consumidor secundario.",
+   "id": "cien6-oa02-7"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "En la cadena roble → oruga → petirrojo → gavilán, ¿qué organismo es el productor?",
+   "opciones": [
+    "El roble",
+    "La oruga",
+    "El petirrojo",
+    "El gavilán"
+   ],
+   "correcta": 0,
+   "tip": "El roble es la única especie fotosintética de esa cadena: fabrica su propio alimento y por eso es el productor que sostiene a todos los demás.",
+   "id": "cien6-oa02-8"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "En una pradera, el pasto es comido por un ratón, y el ratón por una serpiente. ¿Quién es el consumidor secundario?",
+   "opciones": [
+    "La serpiente",
+    "El ratón",
+    "El pasto",
+    "Ninguno, porque falta un cuarto eslabón"
+   ],
+   "correcta": 0,
+   "tip": "La serpiente se alimenta del ratón, que es un consumidor primario, así que la serpiente ocupa el lugar de consumidor secundario en esa cadena.",
+   "id": "cien6-oa02-9"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "Si un águila caza a la serpiente de la cadena pasto → ratón → serpiente, ¿qué nivel ocupa el águila?",
+   "opciones": [
+    "Consumidor terciario",
+    "Consumidor primario",
+    "Productor",
+    "Descomponedor"
+   ],
+   "correcta": 0,
+   "tip": "El águila se alimenta de un consumidor secundario (la serpiente), así que pasa a ser el consumidor terciario de esa cadena de cuatro eslabones.",
+   "id": "cien6-oa02-10"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "En el océano, ¿qué organismo diminuto cumple el papel de productor en la mayoría de las cadenas?",
+   "opciones": [
+    "El fitoplancton, formado por microorganismos capaces de hacer fotosíntesis",
+    "El zooplancton, formado por pequeños animales que flotan en el agua",
+    "El krill, un pequeño crustáceo que sirve de alimento a muchas ballenas",
+    "Las algas pardas de gran tamaño que crecen ancladas al fondo marino"
+   ],
+   "correcta": 0,
+   "tip": "El fitoplancton está formado por microorganismos fotosintéticos: aunque es diminuto, sostiene casi todas las cadenas alimentarias marinas por su enorme cantidad.",
+   "id": "cien6-oa02-11"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "En la cadena fitoplancton → zooplancton → sardina → atún, ¿qué es el zooplancton?",
+   "opciones": [
+    "El consumidor primario, porque se alimenta del fitoplancton",
+    "El productor, porque fabrica su propio alimento",
+    "El consumidor secundario, porque se alimenta de la sardina",
+    "Un descomponedor de la cadena marina"
+   ],
+   "correcta": 0,
+   "tip": "El zooplancton se alimenta del fitoplancton (el productor), así que ocupa el lugar de consumidor primario en esa cadena marina.",
+   "id": "cien6-oa02-12"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "En un desierto, ¿qué organismo puede actuar como productor de una cadena alimentaria?",
+   "opciones": [
+    "Un cactus u otra planta adaptada a la sequía",
+    "Un escorpión que caza insectos por la noche",
+    "Una lagartija que toma sol sobre las rocas",
+    "Un zorro que se alimenta de roedores pequeños"
+   ],
+   "correcta": 0,
+   "tip": "Aunque el desierto tiene poca vegetación, las plantas adaptadas a la sequía, como los cactus, siguen siendo productoras: fabrican su alimento con luz solar.",
+   "id": "cien6-oa02-13"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "En la cadena cactus → insecto → lagartija → zorro del desierto, ¿qué es el zorro?",
+   "opciones": [
+    "El consumidor terciario",
+    "El consumidor primario",
+    "El consumidor secundario",
+    "El productor"
+   ],
+   "correcta": 0,
+   "tip": "El zorro se alimenta de la lagartija (un consumidor secundario), así que ocupa el cuarto eslabón: el de consumidor terciario.",
+   "id": "cien6-oa02-14"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "¿De dónde proviene originalmente la energía que fluye por toda cadena alimentaria?",
+   "opciones": [
+    "Del Sol, captada por los organismos fotosintéticos",
+    "Del suelo, absorbida directamente por las raíces de las plantas",
+    "Del aire, que las plantas transforman en energía al respirar",
+    "De los descomponedores, que liberan energía al suelo"
+   ],
+   "correcta": 0,
+   "tip": "La energía original viene del Sol. Los productores la captan mediante la fotosíntesis y la transfieren al resto de la cadena cuando son comidos.",
+   "id": "cien6-oa02-15"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "En el modelo pasto → conejo, ¿qué indica la flecha que va del pasto al conejo?",
+   "opciones": [
+    "Que la energía y la materia pasan del pasto al conejo cuando este lo come",
+    "Que el pasto persigue y captura al conejo para alimentarse de él",
+    "Que el conejo produce el pasto con la energía de su digestión",
+    "Que el pasto y el conejo compiten por el mismo alimento"
+   ],
+   "correcta": 0,
+   "tip": "En estos modelos, la flecha siempre apunta hacia quien recibe la energía y la materia, es decir, hacia el que se come al organismo anterior.",
+   "id": "cien6-oa02-16"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "Diego dibujó una cadena con una flecha que va desde el zorro hacia el conejo. ¿Qué debe corregir?",
+   "opciones": [
+    "La flecha debe ir del conejo hacia el zorro, porque el zorro se come al conejo",
+    "Nada, porque la flecha puede apuntar en cualquiera de los dos sentidos",
+    "Debe cambiar el conejo por un productor, porque los conejos no aparecen en cadenas",
+    "Debe agregar una segunda flecha que vuelva del zorro hacia el conejo"
+   ],
+   "correcta": 0,
+   "tip": "La flecha siempre apunta en la dirección en que se transfiere la energía: del organismo comido hacia el que se lo come, nunca al revés.",
+   "id": "cien6-oa02-17"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "¿Qué diferencia principal hay entre una cadena alimentaria y una red alimentaria?",
+   "opciones": [
+    "La red conecta varias cadenas que comparten organismos; la cadena es una sola línea",
+    "La cadena incluye descomponedores y la red nunca los incluye",
+    "La red solo se puede representar en ecosistemas marinos, y la cadena en cualquiera",
+    "La cadena muestra más de diez especies y la red muestra menos de cuatro"
+   ],
+   "correcta": 0,
+   "tip": "Una cadena alimentaria es una sola secuencia lineal de organismos. Una red alimentaria conecta varias cadenas que comparten especies en un mismo ecosistema.",
+   "id": "cien6-oa02-18"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "En un bosque, la oruga es comida por el petirrojo y también por la araña. ¿Qué representa esto?",
+   "opciones": [
+    "Que la oruga forma parte de dos cadenas distintas dentro de una misma red alimentaria",
+    "Que la oruga es en realidad un productor, porque alimenta a dos especies",
+    "Que el petirrojo y la araña son la misma especie de consumidor primario",
+    "Que la cadena alimentaria de ese bosque está mal construida"
+   ],
+   "correcta": 0,
+   "tip": "Cuando un mismo organismo es presa de más de un depredador, sus cadenas se conectan y forman una red alimentaria, no un error en el modelo.",
+   "id": "cien6-oa02-19"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "En una red alimentaria, un zorro caza tanto conejos como aves pequeñas. ¿Qué muestra este dato?",
+   "opciones": [
+    "Que el zorro participa en más de una cadena alimentaria del mismo ecosistema",
+    "Que el zorro dejó de ser un consumidor y pasó a ser un productor",
+    "Que los conejos y las aves pequeñas pertenecen a la misma cadena que el zorro",
+    "Que el ecosistema solo tiene una cadena alimentaria posible"
+   ],
+   "correcta": 0,
+   "tip": "Un depredador que caza más de una presa conecta varias cadenas alimentarias, y esas conexiones son justamente lo que forma una red.",
+   "id": "cien6-oa02-20"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "¿En qué se diferencia un productor de un consumidor primario dentro de una cadena?",
+   "opciones": [
+    "El productor fabrica su alimento; el consumidor primario debe comer al productor para obtenerlo",
+    "El productor se alimenta de otros seres vivos; el consumidor primario fabrica su propio alimento",
+    "Ambos fabrican su alimento con luz solar, pero en distintos ecosistemas",
+    "El productor solo existe en el mar y el consumidor primario solo en tierra"
+   ],
+   "correcta": 0,
+   "tip": "El productor fabrica su propio alimento mediante fotosíntesis; el consumidor primario necesita comerse al productor para obtener esa energía.",
+   "id": "cien6-oa02-21"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "¿Por qué los descomponedores no se clasifican como consumidores primarios, secundarios o terciarios?",
+   "opciones": [
+    "Porque se alimentan de materia orgánica muerta y no de organismos vivos en la cadena",
+    "Porque son organismos fotosintéticos igual que los productores",
+    "Porque solo aparecen en cadenas alimentarias del océano",
+    "Porque no forman parte de ningún ecosistema real"
+   ],
+   "correcta": 0,
+   "tip": "Los consumidores se alimentan de otros seres vivos dentro de la cadena. Los descomponedores actúan sobre restos ya muertos, así que se ubican aparte del modelo de niveles.",
+   "id": "cien6-oa02-22"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "Un hongo crece sobre un tronco caído en el bosque y se alimenta de su madera muerta. ¿Qué rol cumple?",
+   "opciones": [
+    "Descomponedor",
+    "Consumidor primario",
+    "Productor",
+    "Consumidor terciario"
+   ],
+   "correcta": 0,
+   "tip": "El hongo se alimenta de materia orgánica muerta (el tronco), no de un organismo vivo, así que su rol en el modelo es el de descomponedor.",
+   "id": "cien6-oa02-23"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "Un oso come bayas (un productor) y también peces (un consumidor primario). ¿Qué muestra esto?",
+   "opciones": [
+    "Que puede ocupar distintos niveles según qué alimento consuma en cada cadena",
+    "Que en realidad es un productor, porque también come plantas",
+    "Que no puede formar parte de una red alimentaria por comer dos tipos de alimento",
+    "Que siempre debe clasificarse como consumidor terciario"
+   ],
+   "correcta": 0,
+   "tip": "Un mismo organismo puede ser consumidor primario en una cadena (si come bayas) y consumidor secundario en otra (si come un pez), según qué se esté comiendo.",
+   "id": "cien6-oa02-24"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "El fitoplancton es microscópico, pero sostiene casi toda la cadena alimentaria del océano. ¿Por qué?",
+   "opciones": [
+    "Porque existe en cantidades enormes y realiza fotosíntesis, produciendo el alimento base",
+    "Porque es el único organismo del mar capaz de moverse en busca de su alimento",
+    "Porque los peces grandes lo transforman directamente en oxígeno para respirar",
+    "Porque, pese a su tamaño, actúa como un consumidor terciario del ecosistema marino"
+   ],
+   "correcta": 0,
+   "tip": "Aunque cada organismo de fitoplancton es diminuto, su enorme cantidad y su capacidad de fotosíntesis lo convierten en la base de casi toda la cadena marina.",
+   "id": "cien6-oa02-25"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "En una laguna, las algas son comidas por un caracol de agua, y este por un pato. ¿Qué es el caracol?",
+   "opciones": [
+    "El consumidor primario",
+    "El productor",
+    "El consumidor secundario",
+    "Un descomponedor"
+   ],
+   "correcta": 0,
+   "tip": "El caracol se alimenta directamente de las algas (el productor), así que ocupa el lugar de consumidor primario en esa cadena de agua dulce.",
+   "id": "cien6-oa02-26"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "En la cadena alga → pez pequeño → pez grande → tiburón, ¿de qué depende la energía del tiburón?",
+   "opciones": [
+    "De la energía que el alga capturó del Sol y que pasó por toda la cadena",
+    "De la energía que el tiburón produce directamente con su propio cuerpo",
+    "De la energía que libera el pez grande al descomponerse en el fondo marino",
+    "De la energía que el pez pequeño obtiene al respirar aire directamente"
+   ],
+   "correcta": 0,
+   "tip": "Aunque el tiburón está en el último eslabón, toda su energía viene originalmente del Sol, capturada por el alga y transferida de organismo en organismo.",
+   "id": "cien6-oa02-27"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "En un diagrama de red alimentaria, ¿qué significa que dos flechas distintas lleguen a un mismo animal?",
+   "opciones": [
+    "Que ese animal se alimenta de dos organismos diferentes en la red",
+    "Que ese animal es el único productor de todo el ecosistema",
+    "Que ese animal transfiere su energía a los dos organismos anteriores",
+    "Que el diagrama tiene un error, porque solo puede llegar una flecha a cada animal"
+   ],
+   "correcta": 0,
+   "tip": "Cada flecha que llega a un organismo representa una fuente de alimento distinta; recibir dos flechas significa que se alimenta de dos organismos diferentes.",
+   "id": "cien6-oa02-28"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "¿Cuál de estas situaciones representa mejor una red alimentaria y no solo una cadena?",
+   "opciones": [
+    "Un zorro que caza conejos y también aves, y ambos comen el mismo pasto",
+    "Un pasto que es comido únicamente por un conejo, y este por un zorro",
+    "Un alga que solo es comida por un pez, sin ninguna otra conexión",
+    "Un cactus que crece solo, sin ningún animal que se alimente de él"
+   ],
+   "correcta": 0,
+   "tip": "Una red aparece cuando varias cadenas se conectan compartiendo organismos, como un depredador que caza más de una presa que además comparten el mismo alimento.",
+   "id": "cien6-oa02-29"
+  },
+  {
+   "oa": "CN06 OA 02",
+   "pregunta": "En un bosque, el zorro es depredador tope en una cadena, pero no en otra con un águila. ¿Qué muestra esto?",
+   "opciones": [
+    "Que un depredador tope en una cadena puede no serlo en otra del mismo ecosistema",
+    "Que el zorro y el águila deben pertenecer siempre a la misma cadena alimentaria",
+    "Que un ecosistema solo puede tener un único depredador tope en total",
+    "Que el águila es en realidad un consumidor primario dentro de ese bosque"
+   ],
+   "correcta": 0,
+   "tip": "Un ecosistema puede tener varias cadenas con distintos depredadores tope: quien está en la cima de una cadena no necesariamente lo está en todas las del mismo lugar.",
+   "id": "cien6-oa02-30"
+  }
+ ]
+}

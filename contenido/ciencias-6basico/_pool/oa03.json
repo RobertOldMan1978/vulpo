@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Cazan todas las truchas de un lago por años. ¿Qué pasa con los peces pequeños que ellas comían?",
+   "opciones": [
+    "Se reproducen sin control y terminan agotando su propio alimento en el lago",
+    "Emigran de inmediato a otro lago apenas dejan de existir las truchas",
+    "No cambian en nada, porque las truchas no eran parte de su red alimentaria",
+    "Disminuyen también, porque dependían de las truchas para poder alimentarse"
+   ],
+   "correcta": 0,
+   "tip": "Sacar al depredador no deja todo igual: sin control, la presa se sobrepobla y agota su propio alimento.",
+   "id": "cien6-oa03-1"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Una fábrica vierte residuos tóxicos a un río y muere gran parte del fitoplancton. ¿Qué pasa después?",
+   "opciones": [
+    "Los peces que comían fitoplancton tienen menos comida, y eso afecta a los peces grandes",
+    "Solo se ve afectado el fitoplancton, porque nadie más depende de él en el río",
+    "Los peces grandes aumentan de inmediato porque hay menos competencia por el agua",
+    "El río se recupera solo en pocos días sin que ningún otro organismo lo note"
+   ],
+   "correcta": 0,
+   "tip": "El fitoplancton es la base de la red del río: si desaparece, el efecto sube hacia quienes dependían de él.",
+   "id": "cien6-oa03-2"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Se tala un bosque completo donde vivían zorros, conejos y pasto. ¿Qué es más probable que ocurra?",
+   "opciones": [
+    "Sin pasto ni refugio, los conejos disminuyen y después los zorros también",
+    "Los zorros aumentan porque tienen más espacio libre para moverse sin árboles",
+    "Los conejos se vuelven inmunes a la falta de pasto y siguen reproduciéndose igual",
+    "Los animales del bosque se trasladan sin ningún problema al bosque vecino"
+   ],
+   "correcta": 0,
+   "tip": "Al talar el bosque se pierde el productor (el pasto) y el refugio: el efecto baja de los herbívoros a sus depredadores.",
+   "id": "cien6-oa03-3"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Cazan todos los búhos de una zona agrícola porque asustan a los vecinos. ¿Qué pasa con el tiempo?",
+   "opciones": [
+    "Los ratones se reproducen sin control y terminan dañando los cultivos de la zona",
+    "Los ratones desaparecen también, porque dependían de los búhos para sobrevivir",
+    "Los cultivos crecen mejor, porque ya no hay ningún animal que los amenace",
+    "La zona vuelve a su equilibrio original en pocos días sin ningún cambio visible"
+   ],
+   "correcta": 0,
+   "tip": "Quitar al depredador tope no es neutro: sin control, su presa (los ratones) se sobrepobla.",
+   "id": "cien6-oa03-4"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Introducen un pez carnívoro extranjero en un lago y este se come a los peces nativos pequeños. ¿Qué pasa?",
+   "opciones": [
+    "Los animales que se alimentaban de esos peces nativos también pierden su comida",
+    "El lago gana una especie nueva sin que eso afecte a las especies que ya vivían ahí",
+    "Los peces nativos aprenden a convivir con el pez nuevo de inmediato y no cambia nada",
+    "El pez introducido desaparece solo porque no pertenece al ecosistema original"
+   ],
+   "correcta": 0,
+   "tip": "Una especie invasora que se come a especies nativas no queda aislada: el efecto llega a quienes dependían de esas presas.",
+   "id": "cien6-oa03-5"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Un agricultor fumiga sus cultivos con un pesticida que también mata a las abejas. ¿Qué es más probable?",
+   "opciones": [
+    "Muchas plantas dejan de polinizarse y producen menos flores y frutos",
+    "Los cultivos crecen mejor porque ya no compiten con las abejas por el espacio disponible",
+    "Solo mueren las abejas, ya que ninguna planta del huerto depende de un polinizador",
+    "Las plantas de la zona reemplazan a las abejas por sí mismas en muy pocos días"
+   ],
+   "correcta": 0,
+   "tip": "Las abejas polinizan muchas plantas; si mueren, baja la producción de frutos, y eso afecta a quienes los comen.",
+   "id": "cien6-oa03-6"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Sueltan gatos abandonados en una isla sin depredadores naturales y estos cazan aves pequeñas. ¿Qué pasa?",
+   "opciones": [
+    "Las aves disminuyen mucho y los insectos de los que ellas se alimentaban aumentan",
+    "Los gatos y las aves llegan de inmediato a vivir en perfecto equilibrio",
+    "Las aves emigran todas juntas a otra isla apenas ven un gato en la suya",
+    "Los insectos de la isla desaparecen junto con las aves, sin relación entre ambos hechos"
+   ],
+   "correcta": 0,
+   "tip": "Una especie invasora que caza un eslabón de la red desequilibra a los que dependían de ese eslabón.",
+   "id": "cien6-oa03-7"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Construyen un barrio sobre un humedal donde vivían aves y peces pequeños. ¿Qué pasa con esa red?",
+   "opciones": [
+    "Muchas especies pierden su alimento y su refugio, y la red se reduce o se rompe",
+    "La red alimentaria se traslada completa a otro humedal cercano sin ninguna pérdida",
+    "Solo se ven afectadas las aves, porque los peces viven bajo el agua y no notan el cambio",
+    "El barrio nuevo no afecta a la red, porque las construcciones no interactúan con seres vivos"
+   ],
+   "correcta": 0,
+   "tip": "Destruir un hábitat elimina a la vez alimento y refugio para varias especies conectadas.",
+   "id": "cien6-oa03-8"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Una pesquera captura casi todo el jurel, del que se alimentan lobos y aves marinas. ¿Qué pasa?",
+   "opciones": [
+    "Los lobos y las aves marinas tienen menos alimento y su población puede disminuir",
+    "Los lobos y las aves marinas aumentan porque hay menos competencia por el jurel",
+    "El jurel se recupera de inmediato al año siguiente sin que nadie lo note",
+    "Solo se ve afectada la empresa, porque los animales consiguen comida en otra parte"
+   ],
+   "correcta": 0,
+   "tip": "La sobrepesca de una especie clave quita el alimento de quienes dependen de ella en la red.",
+   "id": "cien6-oa03-9"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Eliminan todos los pumas de un bosque para proteger ganado cercano. ¿Qué pasa con los ciervos?",
+   "opciones": [
+    "Se sobrepueblan y terminan agotando la vegetación",
+    "Disminuyen también, porque sin los pumas cazándolos no logran reproducirse igual de bien",
+    "No cambian en nada, porque los pumas no eran una parte importante de esa red alimentaria",
+    "La vegetación del bosque crece mucho más porque los ciervos dejan de existir por completo"
+   ],
+   "correcta": 0,
+   "tip": "Sin el depredador tope, la presa se sobrepobla y puede agotar su propio alimento.",
+   "id": "cien6-oa03-10"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Un río recibe aguas servidas de una ciudad y baja mucho su nivel de oxígeno. ¿Qué es más probable?",
+   "opciones": [
+    "Muchos peces mueren por falta de oxígeno y las algas crecen sin control al no ser comidas",
+    "Los peces se adaptan de inmediato a respirar sin oxígeno disuelto en el agua",
+    "Solo bajan las algas, porque los peces no dependen del oxígeno disuelto",
+    "El río se limpia solo en pocas semanas sin que la red alimentaria se vea afectada"
+   ],
+   "correcta": 0,
+   "tip": "La contaminación que baja el oxígeno afecta primero a los peces, y ese desequilibrio deja sin control a otros organismos.",
+   "id": "cien6-oa03-11"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Introducen el conejo europeo en una zona de Chile sin depredadores naturales. ¿Qué pasa con la vegetación?",
+   "opciones": [
+    "Los conejos se reproducen sin control y agotan la vegetación de la que otros se alimentan",
+    "Los conejos se extinguen rápido porque no logran adaptarse a un ambiente nuevo",
+    "La vegetación crece más rápido gracias a los conejos, que esparcen sus semillas",
+    "No hay ningún cambio, porque una especie introducida no interactúa con las nativas"
+   ],
+   "correcta": 0,
+   "tip": "Una especie invasora sin depredadores puede sobrepoblarse y consumir la vegetación de la que dependen otras.",
+   "id": "cien6-oa03-12"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Eliminan las arañas y avispas de un campo con un insecticida de amplio espectro. ¿Qué pasa después?",
+   "opciones": [
+    "Los insectos herbívoros aumentan al no tener depredadores y dañan más los cultivos",
+    "Los insectos herbívoros desaparecen también, porque necesitaban a las arañas para vivir",
+    "Los cultivos crecen mejor porque ya no hay ningún insecto en el campo",
+    "El campo queda exactamente igual, porque las arañas y avispas no cumplían función"
+   ],
+   "correcta": 0,
+   "tip": "Al eliminar a los depredadores de insectos, sus presas quedan sin control natural y pueden aumentar.",
+   "id": "cien6-oa03-13"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Una fábrica derrama petróleo en el mar y muere gran parte del fitoplancton costero. ¿Qué es más probable?",
+   "opciones": [
+    "Los peces pequeños tienen menos comida, y ese efecto sube hasta las aves marinas",
+    "Solo mueren los organismos que tocan directamente el petróleo, y nada más",
+    "Los peces grandes se benefician porque hay menos fitoplancton compitiendo por espacio",
+    "El mar se recupera de inmediato porque el fitoplancton no es parte de la red"
+   ],
+   "correcta": 0,
+   "tip": "El fitoplancton es la base de casi toda red marina; su pérdida se propaga hacia arriba en la cadena.",
+   "id": "cien6-oa03-14"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Sueltan peces de acuario en una laguna y estos comen los huevos de las ranas nativas. ¿Qué pasa?",
+   "opciones": [
+    "Las ranas disminuyen y los insectos de los que ellas se alimentaban pueden aumentar",
+    "Los peces de acuario mueren de inmediato porque no están adaptados a la laguna",
+    "Las ranas y los peces de acuario conviven sin ningún cambio en la red de la laguna",
+    "Solo se ven afectados los huevos, sin ninguna consecuencia para el resto de la laguna"
+   ],
+   "correcta": 0,
+   "tip": "Una especie introducida que se come los huevos de otra reduce esa población, y el efecto llega a sus presas habituales.",
+   "id": "cien6-oa03-15"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Cazan casi todos los cóndores de una zona andina por varios años. ¿Qué pasa con el tiempo?",
+   "opciones": [
+    "Los herbívoros que el cóndor mantenía a raya pueden aumentar y dañar la vegetación",
+    "La zona no cambia en nada, porque los cóndores solo comen animales muertos",
+    "Los herbívoros de la zona disminuyen también, porque dependían del cóndor",
+    "La vegetación de la zona desaparece de inmediato al no haber cóndores"
+   ],
+   "correcta": 0,
+   "tip": "Quitar a un depredador tope, aunque sea carroñero, saca un control de la red, y el efecto baja en cascada.",
+   "id": "cien6-oa03-16"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Una ciudad rellena un estero donde vivían insectos, peces y aves acuáticas. ¿Qué pasa con esas aves?",
+   "opciones": [
+    "Pierden su fuente de alimento ahí y disminuyen o se van a buscar comida a otro sitio",
+    "No se ven afectadas, porque pueden alimentarse igual de la basura de la ciudad",
+    "Aumentan porque ahora tienen más espacio para volar sin árboles ni vegetación",
+    "El estero se recupera solo apenas la ciudad deja de crecer, sin ninguna pérdida"
+   ],
+   "correcta": 0,
+   "tip": "Rellenar un estero destruye a la vez el hábitat y el alimento de varias especies conectadas.",
+   "id": "cien6-oa03-17"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Cazan todos los búhos y zorros de un bosque para proteger gallineros cercanos. ¿Qué pasa con los roedores?",
+   "opciones": [
+    "Se reproducen sin control al no tener depredador y dañan más las plantaciones",
+    "Disminuyen también, porque necesitaban a los búhos y zorros para reproducirse",
+    "El bosque no cambia en nada, porque no cumplían función en la red alimentaria",
+    "Las gallinas de la zona dejan de poner huevos apenas desaparecen esos animales"
+   ],
+   "correcta": 0,
+   "tip": "Eliminar a los depredadores de roedores quita el control natural de esa población.",
+   "id": "cien6-oa03-18"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Se derrama un químico agrícola en un canal y mueren muchas larvas de insectos acuáticos. ¿Qué pasa?",
+   "opciones": [
+    "Los peces pequeños que comían esas larvas tienen menos comida y pueden disminuir",
+    "Los peces pequeños aumentan porque ya no compiten con las larvas por el espacio",
+    "Los peces pequeños no se ven afectados, porque no dependían de esas larvas",
+    "El canal de regadío se limpia solo al día siguiente sin ninguna consecuencia"
+   ],
+   "correcta": 0,
+   "tip": "Un contaminante que elimina un eslabón de la red reduce el alimento de quienes se alimentaban de él.",
+   "id": "cien6-oa03-19"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Un incendio destruye la vegetación de un cerro donde vivían insectos, aves y mamíferos. ¿Qué pasa?",
+   "opciones": [
+    "Muchos animales pierden alimento y refugio de golpe, y la red se reduce por un tiempo",
+    "Los animales se adaptan de inmediato a vivir sin vegetación en el cerro",
+    "Solo se ven afectados los insectos, porque las aves y mamíferos huyen sin ningún costo",
+    "La vegetación vuelve a crecer al día siguiente y nada cambia para los animales"
+   ],
+   "correcta": 0,
+   "tip": "Un incendio que destruye la vegetación elimina a la vez alimento y refugio de la red completa.",
+   "id": "cien6-oa03-20"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Cazan todos los zorros culpeo de una zona rural porque a veces atacan gallinas. ¿Qué pasa después?",
+   "opciones": [
+    "Los conejos y roedores de los que se alimentaba el zorro aumentan y dañan cultivos",
+    "Las gallinas de la zona quedan totalmente seguras y no ocurre ningún otro cambio",
+    "Los conejos y roedores también disminuyen, porque dependían del zorro para vivir",
+    "El equilibrio no se altera, porque el zorro culpeo no cumplía función en la red"
+   ],
+   "correcta": 0,
+   "tip": "Cazar a un depredador para proteger un solo interés puede desatar un desequilibrio mayor en su presa natural.",
+   "id": "cien6-oa03-21"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Instalan una planta de celulosa cerca de un río y sus residuos matan gran parte del alga del fondo. ¿Qué pasa?",
+   "opciones": [
+    "Los peces herbívoros que comían el alga tienen menos comida y pueden disminuir",
+    "Los peces herbívoros no se ven afectados, porque el alga no es parte de la red",
+    "Los peces herbívoros aumentan porque ya no compiten con el alga por espacio",
+    "El río se recupera de inmediato apenas la planta deja de funcionar un solo día"
+   ],
+   "correcta": 0,
+   "tip": "El alga es un productor del río; si desaparece por contaminación, quienes se alimentan de ella pierden recursos.",
+   "id": "cien6-oa03-22"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Turistas alimentan con pan a las gaviotas de una playa durante todo el verano. ¿Qué pasa con el tiempo?",
+   "opciones": [
+    "Las gaviotas cazan menos sus presas naturales, y esas presas pueden aumentar",
+    "Las gaviotas dejan de reproducirse por completo al comer pan en vez de su alimento",
+    "La red alimentaria de la playa no se altera, porque el pan no afecta a nadie más",
+    "Las presas naturales de las gaviotas desaparecen apenas empieza a alimentarlas la gente"
+   ],
+   "correcta": 0,
+   "tip": "Cambiar el alimento de una especie por acción humana altera su papel en la red: si caza menos, sus presas pueden aumentar.",
+   "id": "cien6-oa03-23"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Sobreexplotan los erizos y locos de una zona costera por varios años seguidos. ¿Qué pasa con las algas?",
+   "opciones": [
+    "Las algas que ellos comían pueden crecer sin control y cambiar el equilibrio de la zona",
+    "Las algas desaparecen también, porque dependían de los erizos y locos para reproducirse",
+    "La zona costera queda exactamente igual, porque no eran parte de una red alimentaria",
+    "Las algas se trasladan a otra zona costera para escapar de la sobreexplotación"
+   ],
+   "correcta": 0,
+   "tip": "La sobrepesca de un consumidor puede dejar sin control a las algas de las que se alimentaba.",
+   "id": "cien6-oa03-24"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Construyen una represa en un río y ya no llegan nutrientes al estuario donde desemboca. ¿Qué pasa?",
+   "opciones": [
+    "El fitoplancton del estuario tiene menos nutrientes, y eso afecta a los peces que dependen de él",
+    "El estuario no se ve afectado, porque un río no influye en la red de un estuario",
+    "Los peces del estuario aumentan, porque hay menos competencia por el agua",
+    "El fitoplancton del estuario crece más rápido al no recibir nutrientes desde el río"
+   ],
+   "correcta": 0,
+   "tip": "Cortar el flujo de nutrientes afecta primero a los productores, y el efecto se propaga hacia quienes dependen de ellos.",
+   "id": "cien6-oa03-25"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "En un parque nacional eliminan los pumas y los guanacos dejan casi sin vegetación el pastizal. ¿Qué muestra esto?",
+   "opciones": [
+    "Que eliminar un depredador tope puede afectar a toda la red, no solo a la especie cazada",
+    "Que los guanacos no forman parte de ninguna red alimentaria dentro del parque",
+    "Que el ecosistema se ajusta solo, sin ninguna consecuencia para la vegetación",
+    "Que eliminar un depredador solo afecta a esa especie y a nadie más en la red"
+   ],
+   "correcta": 0,
+   "tip": "Este es el efecto en cascada típico de quitar un depredador tope: la presa se sobrepobla y agota su recurso.",
+   "id": "cien6-oa03-26"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Una fábrica textil vierte tintes a un río y muchas plantas acuáticas mueren por falta de luz. ¿Qué pasa?",
+   "opciones": [
+    "Los animales que comían esas plantas pierden su alimento y su población puede bajar",
+    "Esos animales se alimentan del tinte contaminante sin ningún problema de salud",
+    "Esos animales no se ven afectados, porque no dependían de las plantas acuáticas",
+    "Las plantas acuáticas crecen mejor gracias a los nutrientes del tinte contaminante"
+   ],
+   "correcta": 0,
+   "tip": "La contaminación que mata a los productores de un río reduce el alimento de quienes dependían de ellos.",
+   "id": "cien6-oa03-27"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Sueltan truchas en un lago andino y estas comen los crustáceos de los que vivían las aves acuáticas. ¿Qué pasa?",
+   "opciones": [
+    "Las aves acuáticas tienen menos alimento disponible y su población puede disminuir",
+    "Las truchas y las aves acuáticas comparten el mismo alimento sin ningún conflicto",
+    "Los crustáceos nativos aumentan gracias a la llegada de las truchas al lago",
+    "El lago no se ve afectado, porque una especie introducida no interactúa con las nativas"
+   ],
+   "correcta": 0,
+   "tip": "Una especie introducida que compite por el mismo alimento puede dejar a una especie nativa con menos recursos.",
+   "id": "cien6-oa03-28"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Cazan todos los quiques de un bosque nativo porque a veces comen huevos de gallina. ¿Qué pasa con el tiempo?",
+   "opciones": [
+    "Los roedores aumentan sin control y pueden dañar más los cultivos y las semillas",
+    "Los roedores disminuyen también, porque necesitaban a los quiques para reproducirse",
+    "El bosque no cambia en nada, porque los quiques no cumplían función en la red",
+    "Las gallinas de la zona dejan de poner huevos apenas desaparecen los quiques"
+   ],
+   "correcta": 0,
+   "tip": "Cazar a un depredador pequeño también saca un control de la red: sus presas pueden sobrepoblarse.",
+   "id": "cien6-oa03-29"
+  },
+  {
+   "oa": "CN06 OA 03",
+   "pregunta": "Drenan un pantano para construir un centro comercial y desaparecen insectos, ranas y aves. ¿Qué muestra esto?",
+   "opciones": [
+    "Que destruir un hábitat elimina de golpe varios eslabones conectados de una red",
+    "Que las especies de un pantano pueden sobrevivir igual sin agua ni vegetación",
+    "Que un centro comercial no tiene ninguna relación con las redes alimentarias",
+    "Que solo se pierde la especie que vivía justo donde se construye, y nada más"
+   ],
+   "correcta": 0,
+   "tip": "Destruir un hábitat completo no afecta a una sola especie: rompe de una vez varios eslabones conectados.",
+   "id": "cien6-oa03-30"
+  }
+ ]
+}

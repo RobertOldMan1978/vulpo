@@ -118,3 +118,56 @@ distractores, no acortes la clave.
 - **"de 10 en 10" se leía "10 de enero de 10"**, porque `en` es la abreviatura de enero.
 - El chequeo automático es `scripts/auditar-audible-nivel.py`, y **la auditoría del audio real** con
   reconocimiento de voz es lo único que caza estos casos: leer el texto normalizado no basta.
+
+## Los ángulos se escriben «grados», con la palabra (03/09/2026)
+
+Medido en los bancos existentes, **no estaban de acuerdo**: 5° usa la palabra 14 veces contra 3 el
+símbolo, 7° 36 contra 5, y **8° al revés — 17 símbolos y cero palabras**. Lo detectó la tanda de
+validación de 6°, cuyo OA 12 es de triángulos.
+
+**La convención para lo que venga es la palabra**, por dos razones que valen más que la estética:
+el `°` es un carácter que se pierde al copiar entre herramientas —y ya se perdió una vez, en la
+Sesión 9, con los subíndices químicos—, y en los cursos con voz el símbolo obliga a una regla de
+normalización más. Los bancos ya escritos **no se tocan**: su texto está aprobado y renombrar por
+consistencia es justo lo que este proyecto no hace.
+
+⚠️ **Vale sobre todo para los OA de ángulos de 6°** (15, 16, 17, 20 y 21), que se escriben después
+de esta nota y son los que más veces van a nombrarlos.
+
+## Las unidades: la palabra para las cuadradas y cubicas (04/09/2026)
+
+Misma familia que la nota de los grados, y hay que zanjarla **antes** de escribir los OA de area
+y volumen (en 6°, los OA 13, 18 y 19), porque son los que mas veces van a nombrarlas.
+
+Medido en los cuatro bancos de Matematica: **8° escribe `cm²` (135 veces y solo 1 con palabra),
+mientras 5° y 7° escriben la palabra** (102 y 104 veces, cero simbolos). O sea que no habia
+convencion, habia dos.
+
+**Para lo que venga se escribe con palabra**: *centimetros cuadrados*, *metros cubicos*. El
+superindice es un caracter que se pierde al copiar entre herramientas —ya paso en la Sesion 9 con
+los subindices quimicos, y `generar-pdf-preguntas.py` tuvo que sanearlos— y en los cursos con voz
+obliga a una regla de normalizacion mas.
+
+⚠️ **La abreviatura simple SI se usa** (`5 cm`, `12 m`, `3 km`): la usan los cuatro bancos, con 730
+apariciones. La prohibicion de abreviaturas del §3 del encargo nacio de la voz y apunta a cosas
+como *"aprox."* o *"etc."*, no a las unidades de medida.
+
+Los bancos ya escritos **no se tocan**: su texto esta aprobado, y renombrar por consistencia es
+justo lo que este proyecto no hace.
+
+## La incognita NO se llama «x» (04/09/2026)
+
+Lo encontro la tanda del OA 10 de 6 (expresiones con letras) y vale para todo OA de algebra.
+
+**Medido: los bancos usan `x` como signo de MULTIPLICAR 500 veces** (3° 106, 5° 351, 8° 43). En una
+tanda de algebra eso vuelve ambiguo cualquier `n x n` o `2x`, y el alumno no tiene como saber cual
+de los dos es. Usa **otra letra** —`n`, `a`, `p`, la inicial del contexto— y **`÷` para dividir**.
+
+⚠️ **Y ojo con `/` para dividir en una expresion con letras:** `f + 8/2` **se apila** —el modulo de
+fracciones dibuja numerador sobre denominador cuando los dos lados son digitos—, asi que esa opcion
+queda dibujada distinto de las otras tres y las delata por formato (ver el cuidado del formato
+mezclado). El `8/2` de una fraccion propia esta bien; el de una division dentro de una expresion, no.
+
+**Tampoco superindices** (`n²`): en 6° no hay ningun OA de potencias, y el caracter se pierde al
+copiar entre herramientas igual que el `°`. El mismo contraste se mide con palabras: *"n multiplicado
+por n"* contra *"el doble de n"*.

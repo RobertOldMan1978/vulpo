@@ -86,12 +86,13 @@ Versión **v0.99**: completo y jugable de punta a punta, en vuelta de revisión
 manual antes de coronar la v1.
 
 **La v1 será VULPO de 3° a 8° básico**, seis cursos completos con sus cuatro
-asignaturas. Hoy existen **tres jugables completos** (3°, 7° y 8°) y **5° con Matemática y
-Ciencias listas** (1.230 preguntas, 27 mini-clases y 4 introducciones, en revisión pedagógica).
-De los que faltan —4°, 6° y las otras dos asignaturas de 5°— ya está **fijado el currículum**:
-sus 284 objetivos están
-transcritos del currículum oficial y validados, en `contenido/<asignatura>-<n>basico/oa.json`.
-Lo que falta es escribir sus bancos de preguntas.
+asignaturas. Hoy existen **tres jugables completos** (3°, 7° y 8°), **5° básico con su banco
+completo** (2.790 preguntas, sus cuatro asignaturas, jugable en `5to/`, en revisión pedagógica)
+y **6° básico con su banco completo también** (2.970 preguntas, sus cuatro asignaturas, en
+`contenido/`, todavía sin cablear en un fork jugable). Solo falta **4° básico**, cuyo currículum
+—92 objetivos— ya está transcrito del currículum oficial y validado, en
+`contenido/<asignatura>-4basico/oa.json`. Lo que falta ahí es escribir su banco de preguntas
+(con voz y dibujos, como corresponde a ese nivel).
 
 **Qué falta y en qué orden está en [`pendiente.md`](pendiente.md)**, la lista viva de tareas:
 es el archivo por el que se empieza al abrir una rama. El plan de
@@ -100,7 +101,7 @@ organización y la programación están en
 mediano plazo: web → PWA → Capacitor → Android → iOS, y el modelo de suscripción
 anual por nivel escolar. Nada de eso está implementado todavía.
 
-Aparte hay **dos cursos más completos y aprobados** —7° y 3°— y **5° con su Matemática**, cada uno como una app propia y **sin enlazar desde el sitio**. Todos comparten la misma puerta de acceso: desde el **1 de octubre de 2026** hace falta un código de alumno para jugar más allá de la demo de cada nivel.
+Aparte hay **dos cursos más completos y aprobados** —7° y 3°— y **5° con su banco completo** (pendiente de aprobación), cada uno como una app propia y **sin enlazar desde el sitio**. Todos comparten la misma puerta de acceso: desde el **1 de octubre de 2026** hace falta un código de alumno para jugar más allá de la demo de cada nivel.
 
 **7° básico** (`7mo/`) sigue las mismas bases que 8°: campañas por asignatura con capítulos en orden, jefe de capítulo y Jefe Final multi-fase, Modo Difícil, comodín 50/50, meta de aprendizaje y repaso al fallar. Sus cuatro asignaturas son Historia, Geografía y Ciencias Sociales (23 objetivos), Matemática (19), Ciencias Naturales (15) y Lengua y Literatura (24). No lleva lectura por voz: a los 12-13 años ya se lee de corrido. Guarda su avance y su identidad en línea aparte de 8° y de 3°. Suma además dos **módulos transversales**: un **Vocabulario** de 120 palabras de sus cuatro asignaturas, y un **Reto Sin Fin** de cálculo mental —operaciones generadas por código, sin banco de preguntas— dentro de Matemática. Y desde el 02/09, Matemática se juega como **camino de aprendizaje**: **19 mini-clases**, una por objetivo, con su diagrama interactivo y su práctica.
 

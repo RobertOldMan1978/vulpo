@@ -179,3 +179,28 @@ respiración boca a boca—, y **los pulmones no se inflan solos**: los infla el
 > La forma de evitarlo que le funcionó fue poner el eje del objetivo sobre **casero ↔ envasado**
 > en vez de sobre **caro ↔ barato**, y hacer que todas las correcciones fueran **aditivas** —qué
 > agregar, nunca qué quitar—, porque un niño de 10 años no decide lo que hay en su casa.
+
+## 6° básico: la tanda de validación (04/09/2026)
+
+Cuatro OA elegidos por riesgo, antes de escalar a los 18: los dos de contenido sensible
+(`CN06 OA 04/05`) y los dos con verbo de indagación (`CN06 OA 07/13`). Cero claves erróneas,
+pero tres cosas que valen para el resto del banco:
+
+**A. "Investigar/demostrar experimentalmente" + el límite de 120 caracteres de 6° es genuinamente
+difícil, no solo la trampa de siempre.** Ese verbo empuja a narrar un experimento (sujeto, acción,
+resultado) y el límite del nivel obliga a recortarlo al mínimo. Los dos agentes que lo tuvieron
+(OA 07 y OA 13) tuvieron que reescribir el lote completo. **Sigue valiendo lo mismo que en otros
+OA de indagación**: plantear el experimento YA REALIZADO por un tercero y preguntar por su
+resultado, pero anticipa que el primer borrador va a pasarse de largo casi siempre. Vale también
+para `CN06 OA 01, 09, 10, 17`, que llevan el mismo tipo de verbo.
+
+**B. Evaporación no es ebullición.** La evaporación ocurre a cualquier temperatura y solo en la
+superficie del líquido; la ebullición es a una temperatura fija y en todo el volumen. Confundirlas
+es el error típico al escribir sobre cambios de estado (`CN06 OA 13`), y **"el frío entra" es
+siempre falso**: lo que pasa es que el calor sale.
+
+**C. Un OA de conducta pide un tercero con nombre, y el actitudinal no es solo Historia.**
+`CN06 OA 07` (drogas, conductas de protección) no está en la lista de OA actitudinales del
+`oa.json`, pero pide exactamente el mismo cuidado: la pregunta plantea la situación de un tercero
+("¿qué debería hacer Andrés si...?"), nunca la conducta propia del jugador — si no, el mapa de
+dominio del profesor le muestra un porcentaje que se lee como nota de conducta.

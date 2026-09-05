@@ -13,6 +13,27 @@
      "md": "El conflicto es el motor: sin algo que se oponga a lo que el personaje quiere, no hay historia. Y el personaje que interesa es el que sale distinto de como entró."
     },
     {
+     "t": "diagrama",
+     "intro": "Cómo está armada una narración.",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "desc": "Conflicto, cambio del personaje y final distinto",
+      "items": [
+       {
+        "titulo": "Algo se opone"
+       },
+       {
+        "titulo": "El personaje cambia"
+       },
+       {
+        "titulo": "Algo queda distinto"
+       }
+      ],
+      "etiqueta": "El conflicto es el motor"
+     }
+    },
+    {
      "t": "texto",
      "md": "En este capítulo vas a analizar narraciones desde ahí, y a formular tu propia interpretación —que no es opinar cualquier cosa: es sostenerla con lo que el texto dice."
     }
@@ -32,6 +53,34 @@
      "md": "La poesía no busca informar sino producir un efecto, y por eso usa el lenguaje de otra manera. El teatro está escrito para ser visto, así que casi todo pasa en los diálogos. La epopeya cuenta hazañas de un héroe que representa a todo un pueblo. Y la comedia se ríe de algo, casi siempre de nosotros mismos."
     },
     {
+     "t": "diagrama",
+     "intro": "Cuatro formas de contar, cada una con su regla.",
+     "kind": "esquema",
+     "params": {
+      "forma": "niveles",
+      "piramide": false,
+      "desc": "Las cuatro formas literarias del capítulo",
+      "items": [
+       {
+        "titulo": "Poesía",
+        "texto": "No informa: busca producir un efecto"
+       },
+       {
+        "titulo": "Teatro",
+        "texto": "Escrito para ser visto: todo pasa en los diálogos"
+       },
+       {
+        "titulo": "Epopeya",
+        "texto": "Las hazañas de un héroe que representa a un pueblo"
+       },
+       {
+        "titulo": "Comedia",
+        "texto": "Se ríe de algo, casi siempre de nosotros mismos"
+       }
+      ]
+     }
+    },
+    {
      "t": "texto",
      "md": "En este capítulo vas a leer y analizar las cuatro, prestando atención a lo que cada una hace y al contexto en que se escribió."
     }
@@ -49,6 +98,29 @@
     {
      "t": "texto",
      "md": "Una noticia informa: dice qué pasó y se puede comprobar. Una columna opina: sostiene una postura con argumentos. Y la publicidad busca que hagas algo, casi siempre apelando a lo que sientes y no a lo que piensas."
+    },
+    {
+     "t": "diagrama",
+     "intro": "La pregunta que resuelve el capítulo: ¿me informa o me quiere convencer?",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Noticia, columna y publicidad, y qué busca cada una",
+      "items": [
+       {
+        "titulo": "Noticia",
+        "texto": "Dice qué pasó. Se puede comprobar."
+       },
+       {
+        "titulo": "Columna",
+        "texto": "Sostiene una postura con argumentos."
+       },
+       {
+        "titulo": "Publicidad",
+        "texto": "Busca que hagas algo."
+       }
+      ]
+     }
     },
     {
      "t": "texto",

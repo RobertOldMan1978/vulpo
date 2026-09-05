@@ -74,8 +74,19 @@ def revisar(ruta, umbral):
                 por_par[tuple(sorted((datos[i][1], datos[j][1])))] += 1
     pares.sort(key=lambda p: -p[0])
     print("%s — %d preguntas" % (os.path.basename(os.path.dirname(ruta)), len(preguntas)))
+    # ⚠️ Este script compara OA ENTRE SI, asi que un archivo con un solo OA no puede
+    # encontrar nada y su "sin solape" es cero por vacuidad. Pasaba de verdad: correrlo
+    # sobre `_pool/*.json` —donde cada tanda es un OA— devolvia un informe limpio por
+    # cada archivo sin haber comparado una sola pareja, y se leia como si el nivel
+    # estuviera verificado. Para revisar un nivel a medio escribir hay que UNIR las
+    # tandas en un archivo y correrlo sobre ese.
+    n_oa = len(set(x[1] for x in datos))
+    if n_oa < 2:
+        print("  AVISO: un solo OA en el archivo — no hay nada que comparar.")
+        print("         Une las tandas del nivel en un archivo y corre el script sobre ese.")
+        return 0
     if not pares:
-        print("  sin solape entre OA sobre %.2f." % umbral)
+        print("  sin solape entre OA sobre %.2f (%d OA comparados)." % (umbral, n_oa))
         return 0
     print("  %d pares por sobre %.2f, en %d combinaciones de OA:" % (len(pares), umbral, len(por_par)))
     for par, n in por_par.most_common():

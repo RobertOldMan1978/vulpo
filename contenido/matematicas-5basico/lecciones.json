@@ -228,6 +228,27 @@
      "md": "Por eso en 9 + 4 × 3 la multiplicación va primero, aunque esté escrita después: primero se resuelve 4 × 3 y recién ahí se suma el 9."
     },
     {
+     "t": "diagrama",
+     "intro": "El orden que manda, siempre el mismo.",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "desc": "El orden de las operaciones en tres pasos",
+      "items": [
+       {
+        "titulo": "Paréntesis"
+       },
+       {
+        "titulo": "× y ÷"
+       },
+       {
+        "titulo": "+ y −"
+       }
+      ],
+      "etiqueta": "No es de izquierda a derecha"
+     }
+    },
+    {
      "t": "ejemplo",
      "intro": "Resolvamos 9 + 4 × 3.",
      "pasos": [

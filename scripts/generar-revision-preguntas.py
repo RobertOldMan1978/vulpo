@@ -37,6 +37,13 @@ def lecciones_js():
     return io.open(LECCIONES_JS, encoding="utf-8").read()
 
 
+def esc_md(t):
+    """Igual que esc(), mas la negrita que el motor pinta (fmtLec en assets/js/lecciones.js).
+    Si el informe no la entendiera, el profesor aprobaria en papel un texto DISTINTO del que
+    ve el nino: con los asteriscos a la vista. Escapa primero, marca despues."""
+    return re.sub(r"\*\*(\S(?:[^*]*\S)?)\*\*", r"<b>\1</b>", esc(t))
+
+
 def bloque_leccion(l, texto_oa):
     """Una mini-clase con sus bloques, para revisar en papel."""
     H = ['<div class="q">']
@@ -49,18 +56,18 @@ def bloque_leccion(l, texto_oa):
     for b in l.get("bloques", []):
         tipo = b.get("t")
         if tipo == "texto":
-            H.append("<p>%s</p>" % esc(b.get("md", "")))
+            H.append("<p>%s</p>" % esc_md(b.get("md", "")))
         elif tipo == "diagrama":
             if b.get("intro"):
-                H.append('<p class="sub">%s</p>' % esc(b["intro"]))
+                H.append('<p class="sub">%s</p>' % esc_md(b["intro"]))
             H.append("<div class='diag' data-k='%s' data-p='%s'></div>"
                      % (esc(b.get("kind", "")), esc(json.dumps(b.get("params", {})))))
         elif tipo == "ejemplo":
             if b.get("intro"):
-                H.append("<p><b>Ejemplo:</b> %s</p>" % esc(b["intro"]))
+                H.append("<p><b>Ejemplo:</b> %s</p>" % esc_md(b["intro"]))
             H.append('<ol class="ops">')
             for paso in b.get("pasos", []):
-                H.append("<li>%s</li>" % esc(paso))
+                H.append("<li>%s</li>" % esc_md(paso))
             H.append("</ol>")
         elif tipo == "practica":
             fb = b.get("fromBank", {})

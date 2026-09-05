@@ -60,6 +60,30 @@
      "md": "Y el tercero: los microorganismos. Ojo con esto, porque casi todos creen lo contrario: no todos son dañinos. Hay bacterias que viven en tu intestino y te ayudan, y otras que hacen el yogur y el pan."
     },
     {
+     "t": "diagrama",
+     "intro": "Los tres temas del capítulo.",
+     "kind": "esquema",
+     "params": {
+      "forma": "niveles",
+      "piramide": false,
+      "desc": "Los tres temas del capítulo de salud",
+      "items": [
+       {
+        "titulo": "Los alimentos",
+        "texto": "Para qué sirve cada uno"
+       },
+       {
+        "titulo": "El humo del cigarrillo",
+        "texto": "Qué le hace a los pulmones y al corazón"
+       },
+       {
+        "titulo": "Los microorganismos",
+        "texto": "No todos son dañinos"
+       }
+      ]
+     }
+    },
+    {
      "t": "ejemplo",
      "intro": "Por qué lavarse las manos funciona de verdad.",
      "pasos": [
@@ -128,8 +152,27 @@
      "md": "Casi toda el agua de la Tierra es salada. De la poca que es dulce, la mayor parte está congelada en glaciares, y otra buena parte está bajo tierra. Los ríos y los lagos juntos son una fracción diminuta."
     },
     {
+     "t": "diagrama",
+     "intro": "Mira el tamaño de cada barra: así se reparte el agua del planeta.",
+     "kind": "barras",
+     "params": {
+      "datos": [
+       {
+        "etiqueta": "salada",
+        "valor": 97
+       },
+       {
+        "etiqueta": "dulce",
+        "valor": 3
+       }
+      ],
+      "top": 100,
+      "valores": false
+     }
+    },
+    {
      "t": "texto",
-     "md": "A eso el currículum le llama escasez relativa, y conviene entenderlo bien: el agua no se está acabando —el planeta tiene la misma y circula—, lo escaso es el agua dulce que se puede alcanzar y beber."
+     "md": "A eso el currículum le llama **escasez relativa**, y conviene entenderlo bien: el agua no se está acabando —el planeta tiene la misma y circula—, lo escaso es el agua dulce que se puede alcanzar y beber."
     },
     {
      "t": "texto",

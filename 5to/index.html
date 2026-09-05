@@ -1365,6 +1365,154 @@ const EXPEDICIONES=[
      {oa:"CN05 OA 14",nombre:"Dañar y cuidar el agua",icono:"🐟",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: El agua en la Tierra",icono:"🧬",n:15,oas:["CN05 OA 12","CN05 OA 13","CN05 OA 14"]},
    ]},
+
+ // --- Campaña Historia (5°) ---
+ // Los 22 OA se reparten en 6 capítulos por TEMA, no por los ejes de las Bases: el eje
+ // "Formación ciudadana" solo tiene 10 OA y daría un capítulo del doble que los demás.
+ // Declarado a propósito, como hizo Matemática con sus unidades disparejas.
+ // ⚠️ Arte PRESTADO mientras no exista el propio, declarado igual que en Matemática y
+ // Ciencias. Las portadas se eligieron por TEMA y no por orden —la de "Los europeos
+ // llegan a América" de 8°, la de "Vivir juntos" de 3°—, porque prestar en orden dejaba
+ // columnas romanas sobre el capítulo de las zonas de Chile. Se ve mirando, no contando.
+ // Los nombres sí son propios.
+ { id:'hist5-cap1', asignatura:'Historia', nivel:'5° Básico · Descubrimiento y conquista',
+   portada:'assets/portada-historia.png', portadaMapa:'assets/portada-hist-cap2.png',
+   contenido:'contenido/historia-5basico/preguntas.json', activa:true, campaña:'hist5',
+   etapas:[
+     {oa:"HI05 OA 01",nombre:"Cruzar el mar",icono:"🧭",n:10},
+     {oa:"HI05 OA 02",nombre:"Llegan los españoles",icono:"⛵",n:10},
+     {oa:"HI05 OA 03",nombre:"Dos mundos se cruzan",icono:"🌍",n:10},
+     {oa:"HI05 OA 04",nombre:"Los pueblos originarios",icono:"🪶",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Descubrimiento y conquista",icono:"🗺️",n:15,oas:["HI05 OA 01","HI05 OA 02","HI05 OA 03","HI05 OA 04"]},
+   ]},
+ { id:'hist5-cap2', asignatura:'Historia', nivel:'5° Básico · La Colonia',
+   portada:'assets/portada-historia.png', portadaMapa:'assets/portada-hist-cap3.png',
+   contenido:'contenido/historia-5basico/preguntas.json', activa:true, campaña:'hist5',
+   etapas:[
+     {oa:"HI05 OA 05",nombre:"La vida colonial",icono:"🏘️",n:10},
+     {oa:"HI05 OA 06",nombre:"Depender de España",icono:"⚓",n:10},
+     {oa:"HI05 OA 07",nombre:"Españoles y mapuches",icono:"🤝",n:10},
+     {oa:"HI05 OA 08",nombre:"Lo que quedó",icono:"🏛️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: La Colonia",icono:"🕯️",n:15,oas:["HI05 OA 05","HI05 OA 06","HI05 OA 07","HI05 OA 08"]},
+   ]},
+ { id:'hist5-cap3', asignatura:'Historia', nivel:'5° Básico · Chile y sus paisajes',
+   portada:'assets/portada-historia.png', portadaMapa:'assets/portada-hist3-cap1.png',
+   contenido:'contenido/historia-5basico/preguntas.json', activa:true, campaña:'hist5',
+   etapas:[
+     {oa:"HI05 OA 09",nombre:"Las cinco zonas",icono:"🗺️",n:10},
+     {oa:"HI05 OA 10",nombre:"Recursos naturales",icono:"⛏️",n:10},
+     {oa:"HI05 OA 11",nombre:"El trabajo da valor",icono:"🍇",n:10},
+     {oa:"HI05 OA 12",nombre:"Riesgos naturales",icono:"🌋",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Chile y sus paisajes",icono:"🏔️",n:15,oas:["HI05 OA 09","HI05 OA 10","HI05 OA 11","HI05 OA 12"]},
+   ]},
+ { id:'hist5-cap4', asignatura:'Historia', nivel:'5° Básico · Derechos y deberes',
+   portada:'assets/portada-historia.png', portadaMapa:'assets/portada-hist3-cap4.png',
+   contenido:'contenido/historia-5basico/preguntas.json', activa:true, campaña:'hist5',
+   etapas:[
+     {oa:"HI05 OA 13",nombre:"Todos con los mismos derechos",icono:"⚖️",n:10},
+     {oa:"HI05 OA 14",nombre:"Derechos y deberes",icono:"📜",n:10},
+     {oa:"HI05 OA 15",nombre:"Lo que se gana con esfuerzo",icono:"🏅",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Derechos y deberes",icono:"🕊️",n:15,oas:["HI05 OA 13","HI05 OA 14","HI05 OA 15"]},
+   ]},
+ { id:'hist5-cap5', asignatura:'Historia', nivel:'5° Básico · Vivir en comunidad',
+   portada:'assets/portada-historia.png', portadaMapa:'assets/portada-hist3-cap5.png',
+   contenido:'contenido/historia-5basico/preguntas.json', activa:true, campaña:'hist5',
+   etapas:[
+     {oa:"HI05 OA 16",nombre:"Actitudes que suman",icono:"🤲",n:10},
+     {oa:"HI05 OA 17",nombre:"Elegir y representar",icono:"🗳️",n:10},
+     {oa:"HI05 OA 18",nombre:"Un proyecto para el colegio",icono:"💡",n:10},
+     {oa:"HI05 OA 19",nombre:"Organizarse para lograr",icono:"👥",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Vivir en comunidad",icono:"🏫",n:15,oas:["HI05 OA 16","HI05 OA 17","HI05 OA 18","HI05 OA 19"]},
+   ]},
+ { id:'hist5-cap6', asignatura:'Historia', nivel:'5° Básico · Opinar con fundamento',
+   portada:'assets/portada-historia.png', portadaMapa:'assets/portada-hist7-cap5.png',
+   contenido:'contenido/historia-5basico/preguntas.json', activa:true, campaña:'hist5',
+   etapas:[
+     {oa:"HI05 OA 20",nombre:"Opinar con razones",icono:"💬",n:10},
+     {oa:"HI05 OA 21",nombre:"Elegir la mejor solución",icono:"🧩",n:10},
+     {oa:"HI05 OA 22",nombre:"Informarse de verdad",icono:"📰",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Opinar con fundamento",icono:"🔎",n:15,oas:["HI05 OA 20","HI05 OA 21","HI05 OA 22"]},
+   ]},
+
+ // --- Campaña Lenguaje (5°) ---
+ // Los 30 OA van en 7 capítulos POR TEMA, no por los tres ejes de las Bases. Los ejes
+ // están 12-10-8, así que uno solo daría un capítulo más largo que la campaña entera de
+ // Ciencias. Es el mismo criterio que ya usan Lenguaje de 3° y de 7°, y queda declarado
+ // en su oa.json (`nota_unidades`).
+ // ⚠️ Arte PRESTADO mientras no exista el propio, y elegido POR TEMA y no por número de
+ // capítulo: es la regla que dejó Historia de 5° (ver docs/estandar-arte-portadas.md).
+ { id:'leng5-cap1', asignatura:'Lenguaje', nivel:'5° Básico · Leer y comprender',
+   portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-leng-lectura.png',
+   contenido:'contenido/lenguaje-5basico/preguntas.json', activa:true, campaña:'leng5',
+   etapas:[
+     {oa:"LE05 OA 01",nombre:"Leer con soltura",icono:"📖",n:10},
+     {oa:"LE05 OA 02",nombre:"Trucos para entender",icono:"🔑",n:10},
+     {oa:"LE05 OA 08",nombre:"Las ideas principales",icono:"📝",n:10},
+     {oa:"LE05 OA 09",nombre:"El gusto por leer",icono:"❤️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Leer y comprender",icono:"📚",n:15,oas:["LE05 OA 01","LE05 OA 02","LE05 OA 08","LE05 OA 09"]},
+   ]},
+ { id:'leng5-cap2', asignatura:'Lenguaje', nivel:'5° Básico · Mundos literarios',
+   portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-leng-literarios.png',
+   contenido:'contenido/lenguaje-5basico/preguntas.json', activa:true, campaña:'leng5',
+   etapas:[
+     {oa:"LE05 OA 03",nombre:"Muchas historias",icono:"🌍",n:10},
+     {oa:"LE05 OA 04",nombre:"Lo que dice un cuento",icono:"🦉",n:10},
+     {oa:"LE05 OA 05",nombre:"Cómo emociona un poema",icono:"🎭",n:10},
+     {oa:"LE05 OA 23",nombre:"Historias que me narran",icono:"👂",n:10},
+     {oa:"LE05 OA 25",nombre:"Obras y películas",icono:"🎬",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Mundos literarios",icono:"✨",n:15,oas:["LE05 OA 03","LE05 OA 04","LE05 OA 05","LE05 OA 23","LE05 OA 25"]},
+   ]},
+ { id:'leng5-cap3', asignatura:'Lenguaje', nivel:'5° Básico · Informarse de verdad',
+   portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-leng-textos.png',
+   contenido:'contenido/lenguaje-5basico/preguntas.json', activa:true, campaña:'leng5',
+   etapas:[
+     {oa:"LE05 OA 06",nombre:"Textos que informan",icono:"📰",n:10},
+     {oa:"LE05 OA 07",nombre:"¿Puedo confiar?",icono:"🕵️",n:10},
+     {oa:"LE05 OA 11",nombre:"Buscar lo que sirve",icono:"🔍",n:10},
+     {oa:"LE05 OA 10",nombre:"En la biblioteca",icono:"🏛️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Informarse de verdad",icono:"🧭",n:15,oas:["LE05 OA 06","LE05 OA 07","LE05 OA 11","LE05 OA 10"]},
+   ]},
+ { id:'leng5-cap4', asignatura:'Lenguaje', nivel:'5° Básico · Crear y contar',
+   portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-leng-escritura.png',
+   contenido:'contenido/lenguaje-5basico/preguntas.json', activa:true, campaña:'leng5',
+   etapas:[
+     {oa:"LE05 OA 13",nombre:"Escribir seguido",icono:"✏️",n:10},
+     {oa:"LE05 OA 14",nombre:"Contar una historia",icono:"📜",n:10},
+     {oa:"LE05 OA 16",nombre:"Qué me pareció",icono:"💭",n:10},
+     {oa:"LE05 OA 17",nombre:"Pensarlo antes",icono:"🗂️",n:10},
+     {oa:"LE05 OA 30",nombre:"Decirlo en voz alta",icono:"🎤",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Crear y contar",icono:"🌟",n:15,oas:["LE05 OA 13","LE05 OA 14","LE05 OA 16","LE05 OA 17","LE05 OA 30"]},
+   ]},
+ { id:'leng5-cap5', asignatura:'Lenguaje', nivel:'5° Básico · Escribir con precisión',
+   portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-len3-cap4.png',
+   contenido:'contenido/lenguaje-5basico/preguntas.json', activa:true, campaña:'leng5',
+   etapas:[
+     {oa:"LE05 OA 15",nombre:"Explicar un tema",icono:"🗞️",n:10},
+     {oa:"LE05 OA 18",nombre:"Revisar y mejorar",icono:"🔧",n:10},
+     {oa:"LE05 OA 21",nombre:"Los verbos justos",icono:"🔤",n:10},
+     {oa:"LE05 OA 22",nombre:"Escribir sin errores",icono:"✅",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Escribir con precisión",icono:"🖊️",n:15,oas:["LE05 OA 15","LE05 OA 18","LE05 OA 21","LE05 OA 22"]},
+   ]},
+ { id:'leng5-cap6', asignatura:'Lenguaje', nivel:'5° Básico · Las palabras justas',
+   portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-len7-cap5.png',
+   contenido:'contenido/lenguaje-5basico/preguntas.json', activa:true, campaña:'leng5',
+   etapas:[
+     {oa:"LE05 OA 12",nombre:"Palabras que no conozco",icono:"🔎",n:10},
+     {oa:"LE05 OA 19",nombre:"Palabras nuevas al escribir",icono:"🖋️",n:10},
+     {oa:"LE05 OA 20",nombre:"La palabra exacta",icono:"🎯",n:10},
+     {oa:"LE05 OA 29",nombre:"Palabras nuevas al hablar",icono:"💬",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Las palabras justas",icono:"📔",n:15,oas:["LE05 OA 12","LE05 OA 19","LE05 OA 20","LE05 OA 29"]},
+   ]},
+ { id:'leng5-cap7', asignatura:'Lenguaje', nivel:'5° Básico · Escuchar y hablar',
+   portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-len7-cap7.png',
+   contenido:'contenido/lenguaje-5basico/preguntas.json', activa:true, campaña:'leng5',
+   etapas:[
+     {oa:"LE05 OA 24",nombre:"Entender lo que escucho",icono:"👂",n:10},
+     {oa:"LE05 OA 26",nombre:"Conversar y acordar",icono:"🤝",n:10},
+     {oa:"LE05 OA 27",nombre:"Qué decir en cada caso",icono:"🙋",n:10},
+     {oa:"LE05 OA 28",nombre:"Exponer ante el curso",icono:"🎙️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Escuchar y hablar",icono:"🗣️",n:15,oas:["LE05 OA 24","LE05 OA 26","LE05 OA 27","LE05 OA 28"]},
+   ]},
 ];
 const EXTRAS = [
   // Las unidades del camino de mini-clases. NO son expediciones (viven en capitulosMate
@@ -1518,6 +1666,54 @@ const CAMPAÑAS=[
     ],
   },
   recompensa:{ skin:'kimun-cientifico', insignia:'maestro-ciencias', bonoMonedas:500, bonoXP:300 },
+},{
+  id:'hist5', asignatura:'Historia', portada:'assets/portada-historia.png',
+  intro:'De los viajes que cruzaron el mar a informarse bien hoy: el año completo de Historia de 5°.',
+  capitulos:['hist5-cap1','hist5-cap2','hist5-cap3','hist5-cap4','hist5-cap5','hist5-cap6'],
+  jefeFinal:{
+    // ARTE PRESTADO de 7° mientras no exista el propio, declarado a propósito. El NOMBRE
+    // sí es propio: el año necesita identidad.
+    // "El Rumor" sale del cierre del año —informarse y opinar con fundamento—, que es
+    // justamente lo que lo derrota: un rumor deforma lo que pasó y no aguanta una fuente.
+    villano:'El Rumor', villanoIc:'🗣️', villanoImg:'assets/villano-historia-7mo.png',
+    villanoImgDerrotado:'assets/villano-historia-7mo-derrotado.png',
+    dialogo:'Yo cuento la historia como más conviene, y nadie va a comprobarlo... ¿o sí?',
+    derrota:'Me repito hasta que suene verdad. Vuelve cuando puedas demostrar lo contrario.',
+    vidasJugador:3, nPorFase:4,
+    // Las cuatro fases recorren el año entero: los dos capítulos de historia, el de
+    // geografía, y uno que junta las cuatro ideas del bloque ciudadano.
+    fases:[
+      {nombre:'Descubrimiento y conquista', oas:['HI05 OA 01','HI05 OA 02','HI05 OA 03','HI05 OA 04']},
+      {nombre:'La Colonia', oas:['HI05 OA 05','HI05 OA 06','HI05 OA 07','HI05 OA 08']},
+      {nombre:'Chile y sus paisajes', oas:['HI05 OA 09','HI05 OA 10','HI05 OA 11','HI05 OA 12']},
+      {nombre:'Vivir juntos', oas:['HI05 OA 13','HI05 OA 16','HI05 OA 19','HI05 OA 22']},
+    ],
+  },
+  recompensa:{ skin:'kimun-historiador', insignia:'maestro-historia', bonoMonedas:500, bonoXP:300 },
+},{
+  id:'leng5', asignatura:'Lenguaje', portada:'assets/portada-lenguaje.png',
+  intro:'De leer con soltura a exponer ante el curso: el año completo de Lenguaje de 5°.',
+  capitulos:['leng5-cap1','leng5-cap2','leng5-cap3','leng5-cap4','leng5-cap5','leng5-cap6','leng5-cap7'],
+  jefeFinal:{
+    // ARTE PRESTADO de 7° mientras no exista el propio. El NOMBRE sí es propio: no se
+    // repite "El Borrón" (8° y 3°) ni "El Silencio" (7°), porque cada año necesita el suyo.
+    // "El Malentendido" sale de lo que la asignatura entera existe para evitar: entender
+    // una cosa por otra. Lo derrotan la palabra exacta, la fuente comprobada y el hablar claro.
+    villano:'El Malentendido', villanoIc:'❓', villanoImg:'assets/villano-lenguaje-7mo.png',
+    villanoImgDerrotado:'assets/villano-lenguaje-7mo-derrotado.png',
+    dialogo:'Yo vivo entre lo que uno dice y lo que el otro entiende. Y ahí nadie me alcanza.',
+    derrota:'Me basta una palabra mal puesta para volver. Y esa palabra siempre aparece.',
+    vidasJugador:3, nPorFase:4,
+    // Las cuatro fases recorren el año por sus cuatro destrezas, no por capítulo:
+    // leer, la literatura, escribir y hablar.
+    fases:[
+      {nombre:'Leer y entender', oas:['LE05 OA 01','LE05 OA 02','LE05 OA 08','LE05 OA 07']},
+      {nombre:'Mundos literarios', oas:['LE05 OA 03','LE05 OA 04','LE05 OA 05','LE05 OA 25']},
+      {nombre:'Escribir', oas:['LE05 OA 14','LE05 OA 17','LE05 OA 18','LE05 OA 22']},
+      {nombre:'Hablar y escuchar', oas:['LE05 OA 24','LE05 OA 26','LE05 OA 28','LE05 OA 20']},
+    ],
+  },
+  recompensa:{ skin:'kimun-escritor', insignia:'maestro-lenguaje', bonoMonedas:500, bonoXP:300 },
 }];
 /* Solo las alcanzables. 5° nace con Matematica y nada mas, y una recompensa que no se
    puede ganar es peor que no ofrecerla — la leccion que 7° aprendio quitando la skin
@@ -1526,6 +1722,8 @@ const CAMPAÑAS=[
 const INSIGNIAS=[
   {id:'maestro-matematica', ic:'📐', tx:'Maestro de las Matemáticas', asignatura:'Matemáticas'},
   {id:'maestro-ciencias', ic:'🔬', tx:'Maestro de Ciencias', asignatura:'Ciencias'},
+  {id:'maestro-historia', ic:'🏅', tx:'Maestro de Historia', asignatura:'Historia'},
+  {id:'maestro-lenguaje', ic:'✍️', tx:'Maestro de las Letras', asignatura:'Lenguaje'},
   // Se gana la primera vez que se completa cualquier desafío de refuerzo del profesor.
   {id:'mision-profe', ic:'📣', tx:'Misión del profe', asignatura:null},
   // Exclusiva del Modo Difícil (se gana completando la asignatura en Difícil).
@@ -1538,7 +1736,7 @@ const INSIGNIAS=[
    dejar la corona IMPOSIBLE hasta que existan, que es el defecto que este proyecto ya
    decidio evitar. Al sumar las otras tres asignaturas, esta lista crece a cuatro.
    Contra asumida: quien gane la corona en esta ventana la conserva. */
-const DIF_ASIGS=['Matemáticas','Ciencias'];
+const DIF_ASIGS=['Historia','Matemáticas','Ciencias','Lenguaje'];
 const HAY_DIFICIL=true;
 /* ¿El cuarto hito de la Maestría Total es El Autómata (el Jefe del Reto de Cálculo)?
    En 8° la Maestría es Historia + Ciencias + Lenguaje en Difícil MÁS El Autómata, porque
@@ -1607,6 +1805,63 @@ const META_OA={
  'CN05 OA 12':'Cuánta agua hay en el planeta y por qué tan poca se puede beber.',
  'CN05 OA 13':'Cómo cambia el mar con la profundidad, y por qué el mar chileno es frío.',
  'CN05 OA 14':'Cómo la actividad humana daña y también cuida el agua del planeta.',
+ /* Historia. La comprobacion que hay que correr al cerrar el nivel, y que en 7 basico
+    habria cazado un META_OA entero con los codigos de otro curso:
+      EXPEDICIONES.flatMap(e=>e.etapas).flatMap(t=>t.oas||[t.oa])
+        .filter(o=>o&&o!=='BOSS').filter(o=>!META_OA[o])   // debe dar [] */
+ 'HI05 OA 01':'Cómo cruzaron el mar Colón y Magallanes, y qué andaban buscando.',
+ 'HI05 OA 02':'Cómo fue la conquista de América y de Chile, y quiénes la protagonizaron.',
+ 'HI05 OA 03':'Qué cambió en Europa y qué cambió en América después de la conquista.',
+ 'HI05 OA 04':'Qué les pasó a los pueblos originarios con la conquista.',
+ 'HI05 OA 05':'Cómo se vivía en el Chile colonial: sus oficios, costumbres y fiestas.',
+ 'HI05 OA 06':'Por qué las colonias dependían de España y cómo nació una sociedad mestiza.',
+ 'HI05 OA 07':'Cómo se relacionaron españoles y mapuches: guerra, comercio y parlamentos.',
+ 'HI05 OA 08':'Reconocer lo que quedó de la Colonia y sigue vivo a tu alrededor.',
+ 'HI05 OA 09':'Las cinco grandes zonas de Chile y cómo es el paisaje de cada una.',
+ 'HI05 OA 10':'Dónde están los recursos naturales de Chile y por qué hay que cuidarlos.',
+ 'HI05 OA 11':'Cómo el trabajo y las ideas de las personas le dan valor a lo que hay.',
+ 'HI05 OA 12':'Qué riesgos naturales hay donde vives y cómo se protege la comunidad.',
+ 'HI05 OA 13':'Todas las personas tienen los mismos derechos, sin importar cómo sean.',
+ 'HI05 OA 14':'Los derechos traen deberes: para ti, para los demás y para el Estado.',
+ 'HI05 OA 15':'Qué cosas se consiguen con esfuerzo, y cuáles no hay que ganarse nunca.',
+ 'HI05 OA 16':'Reconocer las acciones que hacen bien a los demás y al lugar donde vives.',
+ 'HI05 OA 17':'Cómo se elige una directiva de curso y qué responsabilidad trae cada cargo.',
+ 'HI05 OA 18':'Cómo se arma un proyecto para resolver un problema del colegio.',
+ 'HI05 OA 19':'De cuántas maneras se organiza la gente para resolver problemas juntos.',
+ 'HI05 OA 20':'Dar tu opinión apoyándola en razones, no solo en lo que te gusta.',
+ 'HI05 OA 21':'Comparar las soluciones posibles y explicar por qué eliges una.',
+ 'HI05 OA 22':'Informarte sobre lo que pasa en el país y en el mundo, y opinar.',
+ // --- Lenguaje ---
+ 'LE05 OA 01':'Leer en voz alta con soltura y buena entonación.',
+ 'LE05 OA 02':'Usar trucos que te ayudan a entender mejor lo que lees.',
+ 'LE05 OA 03':'Conocer muchas historias distintas y ampliar tu mundo.',
+ 'LE05 OA 04':'Descubrir lo que un cuento dice entre líneas.',
+ 'LE05 OA 05':'Entender cómo un poema logra emocionarte.',
+ 'LE05 OA 06':'Leer solo textos que informan y entenderlos bien.',
+ 'LE05 OA 07':'Darte cuenta de si puedes confiar en lo que lees.',
+ 'LE05 OA 08':'Sacar las ideas principales de lo que lees.',
+ 'LE05 OA 09':'Disfrutar la lectura y buscar libros que te gusten.',
+ 'LE05 OA 10':'Usar la biblioteca para encontrar lo que buscas.',
+ 'LE05 OA 11':'Encontrar la información que sirve, entre tanta que hay.',
+ 'LE05 OA 12':'Descubrir qué significa una palabra que no conoces.',
+ 'LE05 OA 13':'Escribir seguido para expresar lo que imaginas.',
+ 'LE05 OA 14':'Escribir historias que se entiendan y atrapen.',
+ 'LE05 OA 15':'Escribir para explicar un tema con claridad.',
+ 'LE05 OA 16':'Contar por escrito qué te pareció lo que leíste.',
+ 'LE05 OA 17':'Pensar tu texto antes de empezar a escribirlo.',
+ 'LE05 OA 18':'Revisar lo que escribiste para que se entienda mejor.',
+ 'LE05 OA 19':'Usar palabras nuevas cuando escribes.',
+ 'LE05 OA 20':'Elegir la palabra exacta entre varias parecidas.',
+ 'LE05 OA 21':'Conjugar bien los verbos cuando escribes.',
+ 'LE05 OA 22':'Escribir correctamente para que todos te entiendan.',
+ 'LE05 OA 23':'Disfrutar historias largas que te leen o te narran.',
+ 'LE05 OA 24':'Entender bien lo que escuchas.',
+ 'LE05 OA 25':'Mirar una obra o una película con ojo atento.',
+ 'LE05 OA 26':'Conversar buscando acuerdos y respetando al otro.',
+ 'LE05 OA 27':'Saber qué decir en cada situación.',
+ 'LE05 OA 28':'Exponer un tema con claridad frente al curso.',
+ 'LE05 OA 29':'Usar palabras nuevas cuando hablas.',
+ 'LE05 OA 30':'Preparar poemas, relatos y escenas para decirlos en voz alta.',
 };
 const LOGROS={
  primera:{ic:"🥇",tx:"Primera victoria"},
@@ -1820,6 +2075,8 @@ const SKINS=[{e:"🐲",p:160},{e:"🦄",p:200},{e:"🦖",p:240},{e:"🐙",p:140}
  /* Sin 'kimun-calculista': su requisito es El Autómata, el jefe del Reto de Cálculo,
     que 7° no tiene. Quedaría bloqueada para siempre en la tienda. */
  {id:'kimun-matematico', e:"📐", img:'assets/kimun-matematico.png', nombre:'Vulpi Matemático', bloqueada:true, desbloqueaCon:'mate5', req:'Vence a El Descuadre'},
+ {id:'kimun-historiador', e:"🎓", img:'assets/kimun-historiador.png', nombre:'Vulpi Historiador', bloqueada:true, desbloqueaCon:'hist5', req:'Vence a El Rumor'},
+ {id:'kimun-escritor', e:"✍️", img:'assets/kimun-escritor.png', nombre:'Vulpi Escritor', bloqueada:true, desbloqueaCon:'leng5', req:'Vence a El Malentendido'},
  {id:'kimun-cientifico', e:"🔬", img:'assets/kimun-cientifico.png', nombre:'Vulpi Científico', bloqueada:true, desbloqueaCon:'cie5', req:'Vence a El Cortocircuito'},
  // Skin maestra: se gana completando las 3 asignaturas en Modo Difícil (emoji hasta que haya arte).
  {id:'kimun-maestro', e:"🏆", img:'assets/skin-kimun-maestro.png', nombre:'Vulpi Maestro', bloqueada:true, req:'Completa Matemáticas en Difícil'}];
@@ -1899,7 +2156,7 @@ async function startDuelo(){
 /* Pantalla de expediciones: generada desde EXPEDICIONES (data-driven) */
 /* Orden fijo de los módulos por asignatura en la pantalla principal */
 // El orden en que se ven en el menu. Al sumar Historia y Lenguaje, van aqui.
-const ORDEN_ASIG=['Matemáticas','Ciencias'];
+const ORDEN_ASIG=['Historia','Matemáticas','Ciencias','Lenguaje'];
 /* Portada genérica por asignatura: la usa el módulo (nivel 1) y es el fallback
    de la portada propia de cada mapa/capítulo. */
 const ASIG_PORTADA={Historia:'assets/portada-historia.png',Matemáticas:'assets/portada-matematicas.png',

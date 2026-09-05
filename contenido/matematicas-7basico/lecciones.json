@@ -537,6 +537,25 @@
      "md": "La bisectriz de un ángulo lo parte en dos ángulos iguales. La altura de un triángulo va desde un vértice hasta el lado de enfrente, formando 90° con él."
     },
     {
+     "t": "diagrama",
+     "intro": "Dos rectas, dos maneras de estar.",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Rectas perpendiculares y paralelas",
+      "items": [
+       {
+        "titulo": "Perpendiculares",
+        "texto": "Se cruzan formando un ángulo de 90°."
+       },
+       {
+        "titulo": "Paralelas",
+        "texto": "Nunca se cruzan, por mucho que se alarguen."
+       }
+      ]
+     }
+    },
+    {
      "t": "ejemplo",
      "intro": "Trazar la bisectriz de un ángulo con compás.",
      "pasos": [

@@ -13,6 +13,26 @@
      "md": "Y el héroe de un relato no es el que gana: es el que enfrenta algo. Lo que lo hace interesante es cómo lo cambia haberlo enfrentado."
     },
     {
+     "t": "diagrama",
+     "intro": "Quién cuenta la historia cambia lo que puedes saber.",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Dos tipos de narrador y lo que cada uno puede saber",
+      "items": [
+       {
+        "titulo": "Narrador personaje",
+        "texto": "Ves solo lo que él ve."
+       },
+       {
+        "titulo": "Narrador fuera",
+        "texto": "Puede saberlo todo, hasta lo que los personajes piensan."
+       }
+      ],
+      "etiqueta": "Por eso importa quién cuenta"
+     }
+    },
+    {
      "t": "texto",
      "md": "En este capítulo vas a analizar narraciones desde el conflicto y los personajes, y a formular una interpretación propia sostenida en el texto."
     }
@@ -32,6 +52,26 @@
      "md": "Los mitos hacen algo parecido a otra escala: explican con un relato lo que un pueblo necesitaba entender —de dónde venimos, por qué existe la muerte, por qué llueve."
     },
     {
+     "t": "diagrama",
+     "intro": "La misma idea dicha de dos maneras.",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Una idea dicha de frente y la misma dicha con una imagen",
+      "items": [
+       {
+        "titulo": "De frente",
+        "texto": "«Era una persona fría.» Se entiende y se olvida."
+       },
+       {
+        "titulo": "Con una imagen",
+        "texto": "«Tenía el corazón de piedra.» Se queda."
+       }
+      ],
+      "etiqueta": "Por eso la poesía no dice las cosas derecho"
+     }
+    },
+    {
      "t": "texto",
      "md": "En este capítulo vas a leer poemas, romances, poesía popular y relatos mitológicos, y a preguntarte siempre lo mismo: qué efecto busca producir, y con qué recurso lo consigue."
     }
@@ -49,6 +89,26 @@
     {
      "t": "texto",
      "md": "Distinguirlos es la herramienta central de este capítulo, porque casi ningún texto real es solo lo uno o solo lo otro: una noticia elige qué contar primero, y esa elección ya dice algo."
+    },
+    {
+     "t": "diagrama",
+     "intro": "La distinción que sostiene todo el capítulo.",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Diferencia entre un hecho y una opinión",
+      "items": [
+       {
+        "titulo": "Un hecho",
+        "texto": "Se puede comprobar. «El río creció dos metros.»"
+       },
+       {
+        "titulo": "Una opinión",
+        "texto": "Se puede discutir. «El municipio actuó mal.»"
+       }
+      ],
+      "etiqueta": "Y casi ningún texto es solo una de las dos"
+     }
     },
     {
      "t": "texto",
@@ -74,6 +134,27 @@
       "Al terminar un tramo, resumirlo en una frase con tus palabras.",
       "Si el resumen no sale, es señal de que hay que releer ese tramo."
      ]
+    },
+    {
+     "t": "diagrama",
+     "intro": "Leer haciendo algo, en tres momentos.",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "desc": "Tres momentos de la lectura para aprender",
+      "items": [
+       {
+        "titulo": "Antes: mira los títulos"
+       },
+       {
+        "titulo": "Mientras: pregúntale al texto"
+       },
+       {
+        "titulo": "Después: resume en una frase"
+       }
+      ],
+      "etiqueta": "Si el resumen no sale, hay que releer"
+     }
     },
     {
      "t": "texto",

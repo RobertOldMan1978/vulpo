@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "Al leer en voz alta, ¿qué le indica a la voz una coma dentro de una oración?",
+   "opciones": [
+    "Que hay que hacer una pausa breve y seguir con la misma oración",
+    "Que hay que detenerse por completo porque ahí termina la idea entera",
+    "Que hay que subir la voz al final, como cuando se hace una pregunta",
+    "Que hay que leer más rápido la parte que viene justo después de ella"
+   ],
+   "correcta": 0,
+   "tip": "La coma corta la frase sin cerrarla: se hace una pausa corta y se continúa. El punto sí cierra la idea, y por eso pide una pausa más larga que la coma.",
+   "id": "leng5-oa01-1"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "¿En qué se diferencian, al leer en voz alta, un punto seguido y una coma?",
+   "opciones": [
+    "El punto pide una pausa más larga que la coma, porque cierra la idea",
+    "El punto pide una pausa más corta, porque la oración ya se entendió",
+    "El punto pide subir la voz y la coma pide bajarla hasta el susurro",
+    "No hay diferencia: los dos piden exactamente la misma pausa breve"
+   ],
+   "correcta": 0,
+   "tip": "Los dos marcan pausa, pero de distinto tamaño: la coma separa partes dentro de una idea y el punto cierra la idea completa. Por eso su pausa dura más.",
+   "id": "leng5-oa01-2"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "Matías lee: «Cuando llegó la lluvia, los niños entraron corriendo». ¿Dónde hace la pausa?",
+   "opciones": [
+    "Después de «lluvia», donde está la coma",
+    "Después de «niños», antes del verbo de la oración",
+    "Después de «Cuando», para separar la primera palabra",
+    "En ninguna parte: la oración se lee entera de corrido"
+   ],
+   "correcta": 0,
+   "tip": "La pausa no se elige por gusto: la indica el signo. La única coma de esa oración está después de «lluvia», así que ahí va la única pausa breve.",
+   "id": "leng5-oa01-3"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "¿Qué le pide a la voz un signo de interrogación al final de una oración?",
+   "opciones": [
+    "Que la entonación suba hacia el final, como cuando se pregunta algo",
+    "Que la oración se lea con mucha fuerza, casi gritando cada palabra",
+    "Que se lea dos veces seguidas para que quede clara la duda al oyente",
+    "Que la voz baje al final, igual que en cualquier oración afirmativa"
+   ],
+   "correcta": 0,
+   "tip": "La pregunta se marca con la entonación, no con el volumen: la voz asciende al final. Si cae, suena a afirmación aunque la oración lleve los signos escritos.",
+   "id": "leng5-oa01-4"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "Camila lee «¿Terminaste la tarea?» bajando la voz al final, como una afirmación. ¿Qué provoca?",
+   "opciones": [
+    "Que quien la escucha entienda que afirma algo, no que está preguntando",
+    "Que no pase nada, porque los signos escritos ya dejan clara la pregunta",
+    "Que se entienda que ella está enojada con la persona a la que le habla",
+    "Que se pierda el significado de la palabra «tarea» dentro de la oración"
+   ],
+   "correcta": 0,
+   "tip": "Quien escucha no ve los signos: solo tiene la entonación. Si la voz cae al final, la pregunta suena a afirmación y el mensaje que llega es otro.",
+   "id": "leng5-oa01-5"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "Al leer «¡Qué frío hace!» en voz alta, ¿qué piden los signos de exclamación?",
+   "opciones": [
+    "Un tono más enfático, que exprese la emoción de quien habla",
+    "Una pausa muy larga justo antes de empezar a leer la oración",
+    "Leer la oración más lento de lo normal, sílaba por sílaba",
+    "Terminar con la voz subiendo, igual que en una pregunta"
+   ],
+   "correcta": 0,
+   "tip": "La exclamación marca emoción: sorpresa, alegría o susto. Se lee con énfasis, que es intensidad y no volumen máximo ni lentitud.",
+   "id": "leng5-oa01-6"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "En «Traje tres cosas: pan, queso y fruta», ¿qué indican los dos puntos al leerla?",
+   "opciones": [
+    "Una pausa que anuncia que viene una enumeración o una explicación",
+    "Que la oración termina ahí y la que sigue es completamente nueva",
+    "Que hay que leer con voz de pregunta lo que viene después de ellos",
+    "Que las palabras siguientes se leen mucho más rápido que el resto"
+   ],
+   "correcta": 0,
+   "tip": "Los dos puntos abren algo: anuncian lo que viene. Por eso la voz hace una pausa y queda en suspenso, sin caer como cae al llegar a un punto.",
+   "id": "leng5-oa01-7"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "Benjamín leyó un párrafo entero sin detenerse en ningún punto. ¿Qué provocó su lectura?",
+   "opciones": [
+    "Que las oraciones se mezclaran y costara saber dónde terminaba cada idea",
+    "Que su lectura sonara demasiado lenta y aburrida para quienes escuchaban",
+    "Que se saltara varias palabras del párrafo sin llegar a darse cuenta",
+    "Que cambiara el significado de las palabras difíciles de ese párrafo"
+   ],
+   "correcta": 0,
+   "tip": "El punto es lo que separa una idea de la siguiente. Sin esa pausa, el oyente recibe todo junto y tiene que adivinar dónde termina cada oración.",
+   "id": "leng5-oa01-8"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "Un texto dice «No sé si deba contarte…». ¿Qué hace la voz al llegar a los puntos suspensivos?",
+   "opciones": [
+    "Se detiene dejando la idea en suspenso",
+    "Repite la última palabra tres veces seguidas",
+    "Lee esa parte con entonación de pregunta hasta el final",
+    "Inventa en voz alta las palabras que faltan en el texto"
+   ],
+   "correcta": 0,
+   "tip": "Los puntos suspensivos dejan algo sin decir. La voz se detiene y queda esperando, sin cerrar la idea como la cerraría un punto final.",
+   "id": "leng5-oa01-9"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "Un cuento dice: «—No quiero ir —dijo Ana». ¿Cómo conviene leerlo en voz alta?",
+   "opciones": [
+    "Cambiando la voz en la parte que dice Ana y volviendo a la del narrador en «dijo Ana»",
+    "Leyendo toda la oración con la misma voz, sin ninguna pausa entre las partes",
+    "Leyendo primero «dijo Ana» y después la frase que va detrás de la raya",
+    "Pronunciando la palabra «raya» cada vez que ese signo aparece en el texto"
+   ],
+   "correcta": 0,
+   "tip": "La raya avisa que habla un personaje y que después vuelve el narrador. Marcar ese cambio con la voz es lo que deja claro quién dice cada cosa.",
+   "id": "leng5-oa01-10"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "Sofía leyó muy rápido, sin pausas ni entonación. ¿Se puede decir que leyó con fluidez?",
+   "opciones": [
+    "No, porque la fluidez es leer a un ritmo parejo respetando pausas y entonación",
+    "Sí, porque la fluidez se mide por la velocidad a la que se lee un texto",
+    "Sí, porque no se equivocó en ninguna de las palabras que leyó",
+    "No, porque para leer con fluidez hay que leer siempre muy despacio"
+   ],
+   "correcta": 0,
+   "tip": "Rápido no es fluido. La fluidez junta tres cosas: pronunciar con precisión, mantener un ritmo adecuado y respetar las pausas y la entonación de los signos.",
+   "id": "leng5-oa01-11"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "¿Qué significa que un lector decodifique las palabras de manera automática?",
+   "opciones": [
+    "Que reconoce las palabras de inmediato, sin tener que armarlas sílaba por sílaba",
+    "Que lee el texto en voz muy baja para no equivocarse en las palabras",
+    "Que aprende de memoria el texto antes de leerlo delante del curso",
+    "Que adivina las palabras largas mirando solo su primera sílaba"
+   ],
+   "correcta": 0,
+   "tip": "Decodificar es convertir las letras en sonidos. Cuando eso sale solo, la atención queda libre para la entonación y para entender lo que se está leyendo.",
+   "id": "leng5-oa01-12"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "¿Por qué a Diego le cuesta entonar bien si lee cada palabra sílaba por sílaba?",
+   "opciones": [
+    "Porque su atención se va en armar las palabras y no le queda para la entonación",
+    "Porque las palabras largas no se pueden entonar de ninguna manera al leerlas",
+    "Porque leer por sílabas obliga a subir la voz al final de cada oración",
+    "Porque la entonación solo se aprende leyendo en silencio, nunca en voz alta"
+   ],
+   "correcta": 0,
+   "tip": "Leer en voz alta exige dos cosas a la vez: reconocer las palabras y darles entonación. Si lo primero cuesta mucho, se lleva toda la atención disponible.",
+   "id": "leng5-oa01-13"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "Javiera se trabó en una palabra larga, se detuvo y la volvió a leer bien. ¿Cómo se evalúa eso?",
+   "opciones": [
+    "Es una corrección normal: notar el error y repararlo mejora la lectura",
+    "Es un error grave: quien lee bien nunca se detiene en ninguna palabra",
+    "Da lo mismo, porque en la lectura en voz alta nadie escucha los errores",
+    "Es un error, porque al volver atrás se pierde la pausa del punto anterior"
+   ],
+   "correcta": 0,
+   "tip": "Autocorregirse muestra que el lector está atento a lo que dice. Lo que sí entorpece la lectura es seguir de largo con una palabra mal leída.",
+   "id": "leng5-oa01-14"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "En «Compré manzanas, peras, uvas y duraznos», ¿cómo suena una lectura que respeta las comas?",
+   "opciones": [
+    "Con una pausa breve después de cada fruta, salvo antes de «y duraznos»",
+    "Con una pausa larga después de cada fruta, como si fueran cuatro oraciones",
+    "Sin ninguna pausa, porque las enumeraciones se leen de corrido y rápido",
+    "Con una sola pausa al final, justo antes de la palabra «duraznos»"
+   ],
+   "correcta": 0,
+   "tip": "En una enumeración, cada coma pide una pausa breve. Delante de la «y» final no hay coma, así que ahí la lectura sigue sin detenerse.",
+   "id": "leng5-oa01-15"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "Ana leyó la noticia respetando los puntos y Tomás la leyó de corrido. ¿Qué logró Ana?",
+   "opciones": [
+    "Que quien escuchaba distinguiera una información de la siguiente",
+    "Que la noticia terminara de leerse en mucho menos tiempo que la de Tomás",
+    "Que las palabras difíciles de la noticia se pronunciaran mucho más fuerte",
+    "Que la noticia sonara más entretenida gracias a su tono de voz alegre"
+   ],
+   "correcta": 0,
+   "tip": "Los puntos separan ideas. Al respetarlos, el que escucha recibe la información por partes; sin pausas le llega todo junto y cuesta seguir el hilo.",
+   "id": "leng5-oa01-16"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "Al leer en voz alta, ¿qué pausa pide un punto y coma comparado con una coma?",
+   "opciones": [
+    "Una pausa algo más larga que la de la coma, pero menor que la del punto",
+    "Una pausa exactamente igual de breve que la de cualquier coma del texto",
+    "Una pausa más larga que la del punto, porque separa ideas muy distintas",
+    "Ninguna pausa: el punto y coma solo se usa al escribir, no al leer"
+   ],
+   "correcta": 0,
+   "tip": "El punto y coma queda a medio camino: separa más que la coma y menos que el punto, y su pausa también queda a medio camino entre las dos.",
+   "id": "leng5-oa01-17"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "Matías leyó «murciégalo» donde el texto decía «murciélago». ¿Qué parte de la fluidez falló?",
+   "opciones": [
+    "La pronunciación precisa de las palabras",
+    "El respeto de las pausas que marcan los signos de puntuación",
+    "La entonación que corresponde a una oración exclamativa",
+    "El volumen de la voz, que quedó demasiado bajo para el curso"
+   ],
+   "correcta": 0,
+   "tip": "Leer con fluidez incluye decir cada palabra tal como está escrita. Cambiar el orden de las letras altera la palabra, aunque el resto suene bien.",
+   "id": "leng5-oa01-18"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "Al leer en voz alta, Camila se salta palabras cortas como «de» y «la». ¿Qué consecuencia tiene?",
+   "opciones": [
+    "Cambia lo que dice el texto, aunque ella crea que igual se entiende",
+    "Ninguna, porque esas palabras no aportan nada al sentido de la oración",
+    "Hace que la lectura suene más lenta de lo que corresponde",
+    "Obliga a subir la voz en la palabra que viene inmediatamente después"
+   ],
+   "correcta": 0,
+   "tip": "Las palabras cortas sostienen la oración: dicen de quién es algo o a qué se refiere. Saltárselas cambia el mensaje, aunque el resto de la frase suene bien.",
+   "id": "leng5-oa01-19"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "En «El puma (el más grande de la zona) bajó al río», ¿cómo se lee lo que va entre paréntesis?",
+   "opciones": [
+    "Con una pausa antes y después, y en un tono algo más bajo",
+    "Con voz mucho más fuerte, porque es la parte más importante",
+    "Con entonación de pregunta, porque el paréntesis indica una duda",
+    "Igual que el resto, sin ninguna marca que lo distinga en la voz"
+   ],
+   "correcta": 0,
+   "tip": "El paréntesis mete un dato aparte dentro de la oración. La voz lo separa bajando un poco el tono, para que se note que es un agregado y no el hilo principal.",
+   "id": "leng5-oa01-20"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "«Ya llegó Ana» y «¿Ya llegó Ana?» tienen las mismas palabras. ¿Qué las distingue al leerlas?",
+   "opciones": [
+    "La entonación: una afirma un hecho y la otra pregunta por él",
+    "La velocidad: la pregunta se lee siempre más rápido que la afirmación",
+    "El volumen: la afirmación se lee más fuerte que la pregunta",
+    "Nada, porque al leerlas en voz alta las dos suenan exactamente igual"
+   ],
+   "correcta": 0,
+   "tip": "Cuando las palabras son las mismas, la entonación es la que lleva el mensaje: subiendo al final se pregunta, bajando se afirma.",
+   "id": "leng5-oa01-21"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "En «Mi hermano, que vive en Arica, llega mañana», ¿cuántas pausas breves pide la puntuación?",
+   "opciones": [
+    "Dos, una en cada coma",
+    "Ninguna, porque la oración se lee entera de corrido",
+    "Cuatro, una después de cada palabra importante",
+    "Una sola, la que va justo antes de «llega mañana»"
+   ],
+   "correcta": 0,
+   "tip": "Las pausas no se reparten a gusto: las marcan los signos. Esa oración lleva dos comas, que encierran un dato agregado sobre el hermano, así que pide dos.",
+   "id": "leng5-oa01-22"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "Antes de leerle un cuento al curso, Sofía lo leyó dos veces sola. ¿En qué la ayuda eso?",
+   "opciones": [
+    "En reconocer antes las palabras difíciles y así leerlas sin trabarse",
+    "En aprenderse el cuento de memoria para no tener que mirar el libro",
+    "En poder leerlo después al doble de velocidad frente a sus compañeros",
+    "En cambiar las palabras difíciles por otras más fáciles al leer en voz alta"
+   ],
+   "correcta": 0,
+   "tip": "Una palabra que ya se reconoció antes se lee sin detenerse. Ensayar no sirve para memorizar ni para correr: sirve para que la lectura salga pareja.",
+   "id": "leng5-oa01-23"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "¿Cuál de estas descripciones corresponde a una lectura fluida en voz alta?",
+   "opciones": [
+    "Pronuncia bien las palabras, mantiene un ritmo parejo y respeta las pausas de los signos",
+    "Lee lo más rápido que puede, sin detenerse en ningún signo del texto",
+    "Lee muy despacio, deletreando cada palabra para no equivocarse nunca",
+    "Lee con voz muy fuerte para que se escuche desde el fondo de la sala"
+   ],
+   "correcta": 0,
+   "tip": "La fluidez son tres cosas juntas: precisión, ritmo y prosodia. Que falte una basta para que la lectura se entienda a medias, por rápida o fuerte que sea.",
+   "id": "leng5-oa01-24"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "Al leer «No, espere» y «No espere», ¿qué cambia la coma en la voz de quien lee?",
+   "opciones": [
+    "Agrega una pausa después del «no», y con eso cambia lo que se entiende",
+    "Alarga la palabra «espere» al doble de lo normal cuando se lee",
+    "Obliga a leer las dos palabras con entonación de pregunta",
+    "No cambia nada en la voz: la coma solo se ve al escribir el texto"
+   ],
+   "correcta": 0,
+   "tip": "Con la coma, «no» es una respuesta y «espere» una petición aparte; sin ella se pide no esperar. Esa pausa mínima es la que separa los dos sentidos.",
+   "id": "leng5-oa01-25"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "Benjamín leyó todo el poema con la misma voz plana, sin subir ni bajar el tono. ¿Qué le faltó?",
+   "opciones": [
+    "Darle entonación a lo que leía",
+    "Leer el poema a mayor velocidad de la que usó",
+    "Pronunciar cada palabra separada de la siguiente",
+    "Subir el volumen para que lo escucharan todos"
+   ],
+   "correcta": 0,
+   "tip": "Una voz plana entrega las palabras sin sus matices. La entonación es la que muestra si algo es pregunta, sorpresa o cierre de una idea.",
+   "id": "leng5-oa01-26"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "Al leer en voz alta un cuento con varios personajes, ¿qué ayuda a que se entienda quién habla?",
+   "opciones": [
+    "Cambiar levemente la voz o el tono en los parlamentos de cada personaje",
+    "Leer los parlamentos de todos los personajes con la misma voz del narrador",
+    "Leer primero todos los parlamentos y después todas las partes del narrador",
+    "Leer los parlamentos mucho más rápido que las partes del narrador"
+   ],
+   "correcta": 0,
+   "tip": "El texto marca los parlamentos con rayas o comillas, pero quien escucha no las ve. Diferenciar las voces es la forma de traspasar esa marca al oído.",
+   "id": "leng5-oa01-27"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "Al leer en voz alta, ¿en qué se diferencia un punto aparte de un punto seguido?",
+   "opciones": [
+    "El punto aparte pide una pausa mayor, porque además cierra el párrafo",
+    "El punto aparte pide una pausa menor, porque el párrafo ya se leyó entero",
+    "El punto aparte pide subir la voz, igual que un signo de interrogación",
+    "No se diferencian en nada: los dos son puntos y piden la misma pausa"
+   ],
+   "correcta": 0,
+   "tip": "Los dos cierran una oración, pero el punto aparte además cierra un párrafo y abre otro asunto. Esa separación mayor se traduce en una pausa más larga.",
+   "id": "leng5-oa01-28"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "Al leer en voz alta, Javiera llega a una palabra larga que no conoce. ¿Qué le conviene hacer?",
+   "opciones": [
+    "Separarla en sílabas mentalmente y decirla completa, sin cambiarle letras",
+    "Saltársela y seguir leyendo, porque una sola palabra no cambia el texto",
+    "Reemplazarla por otra parecida que ella sí sepa pronunciar bien",
+    "Deletrearla en voz alta letra por letra delante de quienes la escuchan"
+   ],
+   "correcta": 0,
+   "tip": "Ante una palabra nueva, la salida es armarla y decirla completa. Saltarla o cambiarla altera el texto, y deletrearla en voz alta corta el hilo de la lectura.",
+   "id": "leng5-oa01-29"
+  },
+  {
+   "oa": "LE05 OA 01",
+   "pregunta": "¿Por qué importa respetar los signos de puntuación al leerle un texto a otra persona?",
+   "opciones": [
+    "Porque quien escucha no ve los signos y solo recibe las pausas y el tono de la voz",
+    "Porque así la lectura termina antes y se puede leer un texto más largo",
+    "Porque los signos indican qué palabras hay que pronunciar más fuerte",
+    "Porque leer sin pausas cansa la garganta de quien está leyendo"
+   ],
+   "correcta": 0,
+   "tip": "El lector ve la puntuación; el oyente no. Toda esa información le llega convertida en pausas y entonación, así que saltarse un signo le quita parte del mensaje.",
+   "id": "leng5-oa01-30"
+  }
+ ]
+}

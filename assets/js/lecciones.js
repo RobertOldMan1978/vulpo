@@ -869,8 +869,93 @@ DIAGRAMAS.cajon=function(p,nodo){
  nodo.appendChild(svg);
 };
 
+// esquema: el dibujo conceptual que Lenguaje, Ciencias e Historia necesitan y que este
+// catalogo no tenia, porque nacio matematico (22 widgets, casi todos de numeros).
+// En vez de 24 widgets a medida, UNO data-driven con tres formas. Un curso nuevo lo hereda.
+// params: {forma:'comparar'|'secuencia'|'niveles', items:[{titulo,texto}], etiqueta, desc}
+//   comparar  → 2 o 3 columnas enfrentadas (hecho/opinión, virus/bacterias/hongos)
+//   secuencia → cajas con flechas (respiras → sangre → célula)
+//   niveles   → estratos apilados (los estamentos coloniales, célula→tejido→órgano)
+// ⚠️ `desc` es para el lector de pantalla y, en una mini-clase CON práctica, no puede
+// delatar la clave de una pregunta del banco: es la misma regla del resto del catálogo.
+DIAGRAMAS.esquema=function(p,nodo){
+ const W=340, forma=p.forma||'comparar';
+ const items=(p.items||[]).slice(0,4);
+ if(!items.length){ nodo.textContent=''; return; }
+ const C=['#4dd8ff','#3ee089','#ff4d8d','#ffc93c'];
+
+ // parte un texto en lineas de a lo mas `max` caracteres, sin cortar palabras
+ function lineas(t,max){
+  const p=(t||'').split(/\s+/).filter(Boolean), out=[]; let l='';
+  p.forEach(w=>{ if((l+' '+w).trim().length>max){ if(l)out.push(l); l=w; } else l=(l?l+' ':'')+w; });
+  if(l)out.push(l); return out;
+ }
+ function tx(svg,x,y,s,fill,fs,anchor,peso){
+  const t=svgEl('text',{x,y,fill,'font-size':fs,'text-anchor':anchor||'middle'});
+  if(peso)t.setAttribute('font-weight','700');
+  t.textContent=s; svg.appendChild(t); return t;
+ }
+
+ let H=176, svg;
+ if(forma==='secuencia'){
+  // gap ancho a proposito: con 10px la flecha no cabe y se ve como un guion (medido)
+  const n=items.length, gap=24, bw=(W-16-gap*(n-1))/n;
+  const filas=items.map(it=>lineas(it.titulo||'', Math.max(8,Math.floor(bw/6.2))));
+  const alto=Math.max(46, 20+Math.max.apply(null,filas.map(f=>f.length))*15);
+  H=alto+46;
+  svg=svgEl('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':p.desc||'Esquema de pasos'});
+  items.forEach((it,i)=>{
+   const x=8+i*(bw+gap), col=C[i%C.length];
+   svg.appendChild(svgEl('rect',{x,y:14,width:bw,height:alto,rx:8,fill:'#241a44',
+    stroke:col,'stroke-width':2}));
+   filas[i].forEach((ln,k)=>tx(svg,x+bw/2,38+k*15,ln,'#efe9ff',12));
+   if(i<n-1) tx(svg,x+bw+gap/2,14+alto/2+6,'→','#ffc93c',19);
+  });
+ }else if(forma==='niveles'){
+  const n=items.length, alto=34, gap=7;
+  H=18+n*(alto+gap)+34;
+  svg=svgEl('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':p.desc||'Esquema por niveles'});
+  items.forEach((it,i)=>{
+   // ancho decreciente: la forma dice sola que hay menos arriba (estamentos, jerarquia)
+   const bw=p.piramide===false ? W-40 : (W-40)*(0.52+0.48*i/Math.max(1,n-1));
+   const x=(W-bw)/2, y=14+i*(alto+gap), col=C[i%C.length];
+   svg.appendChild(svgEl('rect',{x,y,width:bw,height:alto,rx:7,fill:'#241a44',
+    stroke:col,'stroke-width':2}));
+   tx(svg,W/2,y+16,(it.titulo||''),col,13,'middle',1);
+   if(it.texto) tx(svg,W/2,y+29,lineas(it.texto,Math.floor(bw/5.4))[0]||'','#a99fd0',10);
+  });
+ }else{ // comparar
+  const n=items.length, gap=10, bw=(W-16-gap*(n-1))/n, cpl=Math.max(10,Math.floor(bw/5.4));
+  const cuerpos=items.map(it=>lineas(it.texto||'', cpl));
+  const tits=items.map(it=>lineas(it.titulo||'', Math.max(8,Math.floor(bw/6.4))));
+  const hT=Math.max.apply(null,tits.map(f=>f.length))*14;
+  const hC=Math.max.apply(null,cuerpos.map(f=>f.length))*13;
+  const alto=18+hT+hC+10; H=alto+42;
+  svg=svgEl('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':p.desc||'Esquema comparativo'});
+  items.forEach((it,i)=>{
+   const x=8+i*(bw+gap), col=C[i%C.length];
+   svg.appendChild(svgEl('rect',{x,y:12,width:bw,height:alto,rx:8,fill:'#241a44',
+    stroke:col,'stroke-width':2}));
+   svg.appendChild(svgEl('rect',{x,y:12,width:bw,height:6,rx:3,fill:col}));
+   tits[i].forEach((ln,k)=>tx(svg,x+bw/2,34+k*14,ln,col,12.5,'middle',1));
+   cuerpos[i].forEach((ln,k)=>tx(svg,x+bw/2,38+hT+k*13,ln,'#cfc4ee',10.5));
+  });
+ }
+ if(p.etiqueta){
+  const t=svgEl('text',{x:W/2,y:H-8,'text-anchor':'middle',fill:'#ffc93c',
+   'font-family':"'Titan One',sans-serif",'font-size':14});
+  t.textContent=p.etiqueta; svg.appendChild(t);
+ }
+ nodo.appendChild(svg);
+};
+
 // barras: gráfico de barras cuyo eje puede empezar en `desde` (para mostrar distorsión).
-// params: {datos:[{etiqueta,valor}], desde:0, top}
+// params: {datos:[{etiqueta,valor}], desde:0, top, valores:true}
+// ⚠️ `valores:false` esconde el número sobre cada barra, para cuando la lección enseña una
+// PROPORCIÓN y ese número es la respuesta de una pregunta del banco (pasó con el agua salada
+// en Ciencias de 5°: la barra decía 97 y la clave era «Alrededor del 97%»).
+// Por omisión se MUESTRAN, y eso no se cambia: 8° usa este widget para enseñar cómo un
+// gráfico engaña, y ahí los números son la lección.
 DIAGRAMAS.barras=function(p,nodo){
  const datos=p.datos||[{etiqueta:'A',valor:92},{etiqueta:'B',valor:95},{etiqueta:'C',valor:98}];
  const desde=p.desde||0;
@@ -887,7 +972,7 @@ DIAGRAMAS.barras=function(p,nodo){
  datos.forEach((d,i)=>{
   const h=Math.max(2,(d.valor-desde)/den*ph), bx=x0+gap+i*(bw+gap);
   svg.appendChild(svgEl('rect',{x:bx,y:pb-h,width:bw,height:h,rx:3,fill:'#4dd8ff',stroke:'#8f6bff','stroke-width':1}));
-  tx(bx+bw/2,pb-h-4,''+d.valor,'#ffc93c',12);
+  if(p.valores!==false) tx(bx+bw/2,pb-h-4,''+d.valor,'#ffc93c',12);
   tx(bx+bw/2,pb+15,d.etiqueta,'#a99fd0',11);
  });
  nodo.appendChild(svg);
@@ -939,25 +1024,37 @@ function textoLocutable(b){
  return '';
 }
 
+/* El texto de una lección admite **negrita**, y SOLO eso: es para el término que la
+   clase enseña, no para enfatizar a gusto. Si se usa de más, en tres cursos deja de
+   resaltar nada. La regla vive en docs/estandar-miniclases.md.
+   ⚠️ El orden importa y no se invierte: FRAC.html ESCAPA primero (y de paso apila las
+   fracciones), y la negrita se marca DESPUÉS, sobre texto ya escapado. Al revés se
+   reabre el XSS almacenado que costó la Sesión 51.
+   El patrón exige contenido sin espacios en los bordes y sin asteriscos adentro, así
+   que un `3 * 4` suelto no lo dispara. */
+function fmtLec(t){
+ return FRAC.html(t||'').replace(/\*\*(\S(?:[^*]*\S)?)\*\*/g,'<b>$1</b>');
+}
+
 function renderBloque(){
  if(!LEC||!LEC.leccion)return;   // guard: sin lección activa no hay bloque que pintar
  const b=LEC.leccion.bloques[LEC.idx], cuerpo=$('lecCuerpo');
  cuerpo.innerHTML=''; cuerpo.onclick=null;
  $('lecProgBar').style.width=(LEC.idx/LEC.leccion.bloques.length*100)+'%';
  if(b.t==='texto'){
-  const p=document.createElement('p'); p.innerHTML=FRAC.html(b.md); cuerpo.appendChild(p);
+  const p=document.createElement('p'); p.innerHTML=fmtLec(b.md); cuerpo.appendChild(p);
  }else if(b.t==='imagen'){
   const img=document.createElement('img'); img.src=b.src; img.alt=b.alt||'';
   img.onerror=function(){this.onerror=null;this.style.display='none';}; cuerpo.appendChild(img);
-  if(b.pie){const p=document.createElement('p');p.innerHTML=FRAC.html(b.pie);p.style.textAlign='center';cuerpo.appendChild(p);}
+  if(b.pie){const p=document.createElement('p');p.innerHTML=fmtLec(b.pie);p.style.textAlign='center';cuerpo.appendChild(p);}
  }else if(b.t==='diagrama'){
-  if(b.intro){const p=document.createElement('p');p.innerHTML=FRAC.html(b.intro);cuerpo.appendChild(p);}
+  if(b.intro){const p=document.createElement('p');p.innerHTML=fmtLec(b.intro);cuerpo.appendChild(p);}
   const d=document.createElement('div'); cuerpo.appendChild(d);
   montarDiagrama(b.kind,b.params,d);
  }else if(b.t==='ejemplo'){
-  if(b.intro){const p=document.createElement('p');p.innerHTML=FRAC.html(b.intro);cuerpo.appendChild(p);}
+  if(b.intro){const p=document.createElement('p');p.innerHTML=fmtLec(b.intro);cuerpo.appendChild(p);}
   b.pasos.forEach((paso,i)=>{const el=document.createElement('div');
-   el.className='lec-ejemplo-paso'+(i===0?' on':'');el.innerHTML=FRAC.html(paso);cuerpo.appendChild(el);});
+   el.className='lec-ejemplo-paso'+(i===0?' on':'');el.innerHTML=fmtLec(paso);cuerpo.appendChild(el);});
   let vis=1; cuerpo.onclick=()=>{const pasos=cuerpo.querySelectorAll('.lec-ejemplo-paso');
    if(vis<pasos.length){pasos[vis].classList.add('on');vis++;}};
  }
@@ -1111,7 +1208,11 @@ function renderCampañaMate(c){
   const hechas=(cap.lecciones||[]).filter(id=>S.mateLecciones[id]).length;
   const tot=(cap.lecciones||[]).length;
   const lecHecho=tot>0 && hechas===tot;
-  const lecAbierto=!cap.proximamente && (i===0 || capMateCompleto(c.capitulosMate[i-1]));
+  // CAPS_ABIERTOS igual que en la expedicion de aqui abajo: en QA, modo prueba y modo
+  // experimental las unidades van todas abiertas. Sin esto la expedicion se abria y su
+  // mini-clase NO, o sea que un alumno con modo experimental no podia entrar a lo que
+  // ensena. `proximamente` sigue mandando: una unidad sin contenido no se abre ni en QA.
+  const lecAbierto=!cap.proximamente && (CAPS_ABIERTOS || i===0 || capMateCompleto(c.capitulosMate[i-1]));
   const lecEstado=cap.proximamente?'🔒 Pronto':(lecHecho?'Completado':(lecAbierto?`${hechas}/${tot} lecciones`:'🔒 Bloqueado'));
   cont.appendChild(nodoCampañaEl(`${i+1}`, cap.titulo, lecAbierto, lecHecho,
     lecAbierto?()=>abrirCapituloMate(cap):null, lecEstado,

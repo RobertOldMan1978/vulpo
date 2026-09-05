@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "¿Qué clima predomina en el Norte Grande de Chile?",
+   "opciones": [
+    "Desértico, con precipitaciones casi nulas durante todo el año",
+    "Templado lluvioso, con precipitaciones repartidas en todo el año",
+    "Mediterráneo, con inviernos lluviosos y veranos secos y calurosos",
+    "Frío y ventoso, con nieve durante buena parte del año"
+   ],
+   "correcta": 0,
+   "tip": "El desierto de Atacama es el más árido del mundo: hay estaciones donde no se registra lluvia en años. El clima mediterráneo es el de la Zona Central y el templado lluvioso, el de la Zona Sur.",
+   "id": "hist5-oa09-1"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "¿Por qué se dice que el Norte Chico es una zona de transición?",
+   "opciones": [
+    "Porque su clima semiárido queda entre el desierto del norte y el mediterráneo del centro",
+    "Porque es un desierto igual al del Norte Grande, aunque con cerros algo más bajos y verdes",
+    "Porque en él se alternan meses de desierto absoluto con meses de lluvias muy intensas",
+    "Porque su clima cambia por completo de un año a otro, sin ningún patrón fijo"
+   ],
+   "correcta": 0,
+   "tip": "El Norte Chico no es desierto: es semiárido. Llueve poco, sobre todo en invierno, y cada vez más a medida que se avanza al sur, hasta llegar al clima mediterráneo de la Zona Central.",
+   "id": "hist5-oa09-2"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "¿Cómo se reparten las lluvias durante el año en la Zona Central de Chile?",
+   "opciones": [
+    "Casi todas caen en invierno y el verano es seco y caluroso",
+    "Caen repartidas de forma pareja en los doce meses del año",
+    "Casi todas caen en verano y el invierno queda seco y frío",
+    "Prácticamente no llueve en ningún mes, salvo años excepcionales"
+   ],
+   "correcta": 0,
+   "tip": "Ese reparto se llama clima mediterráneo: inviernos lluviosos y veranos secos. Por eso en la Zona Central los ríos crecen en invierno con la lluvia y en primavera con el deshielo de la cordillera.",
+   "id": "hist5-oa09-3"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "¿Qué caracteriza al clima de la Zona Sur de Chile?",
+   "opciones": [
+    "Llueve durante todo el año y las temperaturas son moderadas",
+    "Llueve solo en invierno y el verano es largo y muy caluroso",
+    "Casi no llueve y la diferencia de temperatura entre día y noche es enorme",
+    "Hace frío todo el año y sopla un viento constante desde el oeste"
+   ],
+   "correcta": 0,
+   "tip": "En la Zona Sur llueve en todos los meses, aunque más en invierno, y por eso hay bosques densos y ríos caudalosos. El verano seco y caluroso es propio de la Zona Central.",
+   "id": "hist5-oa09-4"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "¿Qué ocurre con las precipitaciones a medida que se avanza desde Arica hacia el sur de Chile?",
+   "opciones": [
+    "Aumentan",
+    "Disminuyen hasta desaparecer en el extremo sur del país",
+    "Se mantienen iguales a lo largo de todo el territorio",
+    "Aumentan hasta la Zona Central y después vuelven a bajar"
+   ],
+   "correcta": 0,
+   "tip": "Chile es tan largo que atraviesa varios climas: en el norte casi no llueve y hacia el sur las lluvias son cada vez más abundantes y más repartidas en el año. La temperatura, en cambio, baja.",
+   "id": "hist5-oa09-5"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "¿Qué nombre recibe la meseta de gran altura que se extiende por el este del Norte Grande?",
+   "opciones": [
+    "El altiplano",
+    "La pampa del Tamarugal, la llanura interior del desierto",
+    "La depresión intermedia, el valle que separa las dos cordilleras",
+    "Las planicies litorales, la franja plana que bordea el mar"
+   ],
+   "correcta": 0,
+   "tip": "El altiplano está sobre los 3.500 metros y en él hay salares y volcanes. La pampa del Tamarugal está mucho más abajo, en pleno desierto, y las planicies litorales son las franjas junto al mar.",
+   "id": "hist5-oa09-6"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "¿Qué son los valles transversales que caracterizan el relieve del Norte Chico?",
+   "opciones": [
+    "Valles orientados de este a oeste, entre cordones de cerros que unen las dos cordilleras",
+    "Valles largos y angostos excavados por glaciares que bajaron desde los Andes",
+    "Valles orientados de norte a sur, paralelos a la cordillera de la Costa",
+    "Valles submarinos que quedaron bajo el agua al hundirse la costa"
+   ],
+   "correcta": 0,
+   "tip": "En el Norte Chico la cordillera de la Costa y los Andes se juntan y la depresión intermedia desaparece. Quedan cordones de cerros de este a oeste y, entre ellos, valles como el del Elqui o el del Huasco.",
+   "id": "hist5-oa09-7"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "En la Zona Central se distinguen con claridad las cuatro franjas del relieve chileno. ¿Cuáles son?",
+   "opciones": [
+    "Planicies litorales, cordillera de la Costa, depresión intermedia y cordillera de los Andes",
+    "Planicies litorales, altiplano, pampa del Tamarugal y cordillera de los Andes",
+    "Archipiélagos, fiordos, campos de hielo y llanuras patagónicas",
+    "Valles transversales, cordones montañosos, salares de altura y planicies litorales"
+   ],
+   "correcta": 0,
+   "tip": "De oeste a este: la franja plana junto al mar, la cordillera de la Costa, el valle central entre ambas cordilleras y los Andes. En otras zonas alguna de esas franjas desaparece o se hunde en el mar.",
+   "id": "hist5-oa09-8"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "¿Qué distingue al relieve de la Zona Austral del resto del territorio chileno?",
+   "opciones": [
+    "Está partido en islas, canales y fiordos",
+    "Es una llanura continua que baja suavemente hacia el mar",
+    "Lo forman valles orientados de este a oeste, entre cordones de cerros",
+    "Está cubierto por un desierto de arena en casi toda su extensión"
+   ],
+   "correcta": 0,
+   "tip": "El mar entró en el territorio: la depresión intermedia quedó sumergida y las cumbres de la cordillera de la Costa asoman como islas. Por eso allí se viaja mucho en barco y en avión.",
+   "id": "hist5-oa09-9"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "¿Qué se puede afirmar sobre la población de la Zona Austral de Chile?",
+   "opciones": [
+    "Es la zona con menos habitantes por kilómetro cuadrado del país",
+    "Concentra a más de la mitad de los habitantes de todo el territorio",
+    "Tiene una densidad parecida a la de la Zona Central del país",
+    "Casi toda su población vive en el campo y no en ciudades"
+   ],
+   "correcta": 0,
+   "tip": "Es la zona más extensa y la menos poblada: el territorio está fragmentado y aislado, y el clima es duro. Aun así tiene ciudades como Punta Arenas y Coyhaique, habitadas todo el año.",
+   "id": "hist5-oa09-10"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "El río Loa cruza el desierto más árido del mundo y aun así lleva agua todo el año. ¿Por qué?",
+   "opciones": [
+    "Porque nace en la cordillera, donde recibe deshielos y las lluvias de verano del altiplano",
+    "Porque el agua de la camanchaca costera se acumula en su cauce cada mañana",
+    "Porque recibe agua de los grandes lagos que hay en la pampa del Tamarugal",
+    "Porque en la costa del Norte Grande llueve poco, pero llueve todos los meses"
+   ],
+   "correcta": 0,
+   "tip": "En el altiplano llueve en verano, en lo que se llama invierno altiplánico, y además hay nieve que se derrite. Esa agua baja por la cordillera y alimenta al Loa, que es el río más largo de Chile.",
+   "id": "hist5-oa09-11"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "Tras un invierno muy lluvioso, el desierto de la Región de Atacama se cubre de flores. ¿Por qué?",
+   "opciones": [
+    "Porque hay semillas esperando bajo la tierra y solo brotan cuando cae lluvia suficiente",
+    "Porque el viento arrastra flores ya crecidas desde los valles cultivados hasta el desierto",
+    "Porque la nieve de la cordillera, al derretirse, deja plantas nuevas donde se retira",
+    "Porque las plantas del desierto florecen cada año en la misma fecha exacta"
+   ],
+   "correcta": 0,
+   "tip": "Es el desierto florido. Las semillas resisten años bajo la tierra sin germinar y brotan cuando llueve más de lo habitual, lo que en el Norte Chico ocurre solo algunos años.",
+   "id": "hist5-oa09-12"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "Más de la mitad de los chilenos vive en la Zona Central. ¿Qué explica mejor esa concentración?",
+   "opciones": [
+    "Que reúne clima templado, suelos fértiles y ríos con agua, y allí se instaló el centro del país",
+    "Que es la zona más extensa del país y por eso cabe en ella mucha más gente",
+    "Que sus ciudades fueron las últimas en fundarse y por eso son más modernas",
+    "Que es la única zona donde los ríos llevan agua durante los doce meses"
+   ],
+   "correcta": 0,
+   "tip": "Se juntan varias razones: clima agradable, suelos buenos para cultivar y ríos con agua todo el año. Sobre esa base creció el centro urbano y económico del país. No hay una sola causa.",
+   "id": "hist5-oa09-13"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "¿Por qué los ríos de la Zona Sur llevan mucha agua durante todos los meses del año?",
+   "opciones": [
+    "Porque allí llueve en todas las estaciones y no hay un período seco largo",
+    "Porque reciben el agua de los campos de hielo que hay en esa misma zona",
+    "Porque nacen en salares de altura que se van vaciando de a poco todo el año",
+    "Porque el deshielo de la cordillera dura los doce meses en esa latitud"
+   ],
+   "correcta": 0,
+   "tip": "Su régimen es pluvial: dependen de la lluvia, que en la Zona Sur cae todo el año. Los campos de hielo están más al sur, en la Zona Austral, y el deshielo es estacional, no permanente.",
+   "id": "hist5-oa09-14"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "En Magallanes hay estepas secas de pastos bajos. ¿Cómo se explica, si en el sur llueve tanto?",
+   "opciones": [
+    "La cordillera detiene las lluvias que vienen del oeste y el lado oriental queda seco",
+    "El mar que rodea esa zona está tan frío que no alcanza a formar nubes cargadas de lluvia",
+    "El viento se lleva el agua caída antes de que alcance a mojar el suelo",
+    "Allí las lluvias caen solo en verano y el resto del año el suelo se seca"
+   ],
+   "correcta": 0,
+   "tip": "Las nubes descargan su lluvia al chocar con la cordillera por el lado del océano. Al pasar al otro lado bajan casi sin agua, así que la Patagonia oriental es seca y ventosa, con pastizales y no bosque.",
+   "id": "hist5-oa09-15"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "Camila ve que casi toda la gente del Norte Grande vive en la costa o en oasis. ¿Por qué?",
+   "opciones": [
+    "Porque son los pocos lugares donde hay agua disponible para vivir",
+    "Porque en el resto de la zona hace demasiado frío para habitarla",
+    "Porque el gobierno prohibió construir viviendas en el interior del desierto",
+    "Porque el suelo del desierto es tan blando que no soporta edificios"
+   ],
+   "correcta": 0,
+   "tip": "En el desierto el problema no es el frío ni el suelo, sino la falta de agua. Por eso las ciudades están en la costa, junto a los puertos, o en oasis como Pica y San Pedro de Atacama.",
+   "id": "hist5-oa09-16"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "Diego observa que en el Norte Chico las ciudades y los cultivos están dentro de los valles. ¿Por qué?",
+   "opciones": [
+    "Porque los ríos les dan el agua y el suelo que los cerros de alrededor no tienen",
+    "Porque en los cerros de la zona hace demasiado frío durante todo el año",
+    "Porque los valles son los únicos lugares planos que existen en esa zona",
+    "Porque las lluvias de la zona caen solamente dentro de los valles y no en los cerros"
+   ],
+   "correcta": 0,
+   "tip": "Los ríos que bajan por los valles traen agua de la cordillera y dejan suelos aptos para cultivar. Sin esa agua no habría cultivos aunque el terreno fuera plano: en la costa también hay llanuras y están casi vacías.",
+   "id": "hist5-oa09-17"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "El río Maipo crece en invierno y vuelve a crecer en primavera. ¿Por qué crece dos veces?",
+   "opciones": [
+    "En invierno lo alimentan las lluvias y en primavera, el deshielo de la nieve cordillerana",
+    "En invierno recibe el agua que sueltan los embalses y en primavera, la lluvia de la cordillera",
+    "En invierno lo alimenta el mar, que entra por su desembocadura, y luego la lluvia",
+    "En invierno se llena con agua subterránea y en primavera baja el agua de los lagos"
+   ],
+   "correcta": 0,
+   "tip": "Se llama régimen mixto: el río recibe agua de dos fuentes en momentos distintos del año. Los ríos del sur, en cambio, dependen sobre todo de la lluvia, que allí cae durante todo el año.",
+   "id": "hist5-oa09-18"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "En la Zona Sur las ciudades son más pequeñas y más separadas que en la Central. ¿Qué lo explica?",
+   "opciones": [
+    "Que allí vive menos gente y la población está más repartida en el campo",
+    "Que las leyes de esa zona prohíben que las ciudades crezcan demasiado",
+    "Que el clima lluvioso impide construir edificios de más de un piso",
+    "Que el terreno es tan montañoso que no quedan superficies planas para construir"
+   ],
+   "correcta": 0,
+   "tip": "La Zona Sur tiene bastante menos habitantes que la Central y una parte importante de su gente vive en localidades rurales. Temuco, Valdivia, Osorno y Puerto Montt son sus ciudades mayores.",
+   "id": "hist5-oa09-19"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "¿Por qué muchos poblados de la Zona Austral se conectan entre sí por mar o por aire?",
+   "opciones": [
+    "Porque canales, fiordos y hielos cortan el paso por tierra en gran parte del territorio",
+    "Porque las carreteras de esa zona quedan cubiertas de arena con el viento",
+    "Porque el terreno es tan plano que resulta más rápido cruzarlo volando",
+    "Porque allí no se permite construir caminos para proteger los bosques"
+   ],
+   "correcta": 0,
+   "tip": "El territorio está partido por el mar y por los hielos, así que un camino continuo es muy difícil. La Carretera Austral, por ejemplo, necesita transbordadores para completar su recorrido.",
+   "id": "hist5-oa09-20"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "Un documental muestra salares, oasis y las mayores minas de cobre del país. ¿Qué zona retrata?",
+   "opciones": [
+    "El Norte Grande",
+    "El Norte Chico, con sus valles transversales",
+    "La Zona Central, con su gran valle fértil",
+    "La Zona Sur, con sus bosques y sus lagos"
+   ],
+   "correcta": 0,
+   "tip": "Salares, oasis y las minas de cobre más grandes de Chile son rasgos del Norte Grande. Los valles transversales caracterizan al Norte Chico, y los bosques y lagos, a la Zona Sur.",
+   "id": "hist5-oa09-21"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "Un tren cruza una llanura ancha entre dos cordilleras, con huertos y viñas. ¿Qué zona atraviesa?",
+   "opciones": [
+    "La Zona Central",
+    "El Norte Grande, donde la llanura interior es la pampa",
+    "La Zona Austral, donde la llanura llega hasta la costa",
+    "El Norte Chico, donde los valles corren de este a oeste"
+   ],
+   "correcta": 0,
+   "tip": "Esa llanura ancha entre la cordillera de la Costa y los Andes es la depresión intermedia, y en la Zona Central tiene los suelos más fértiles del país. En el Norte Grande la llanura equivalente es desierto.",
+   "id": "hist5-oa09-22"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "Lluvias todos los meses, bosques densos, volcanes y muchos lagos de origen glaciar. ¿Qué zona es?",
+   "opciones": [
+    "La Zona Sur",
+    "La Zona Central, de inviernos lluviosos y veranos secos",
+    "El Norte Chico, de valles regados por ríos cordilleranos",
+    "El Norte Grande, de salares y oasis en pleno desierto"
+   ],
+   "correcta": 0,
+   "tip": "Los lagos Villarrica, Ranco y Llanquihue se formaron cuando antiguos glaciares excavaron el terreno y luego se retiraron. Con lluvia en todos los meses, el bosque crece denso y siempre verde.",
+   "id": "hist5-oa09-23"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "¿Qué son los campos de hielo Norte y Sur que se encuentran en la Zona Austral?",
+   "opciones": [
+    "Enormes masas de hielo continental de las que nacen numerosos glaciares",
+    "Extensiones de mar congelado que se forman durante los meses de invierno austral",
+    "Cumbres nevadas que pierden todo su hielo durante los meses de verano",
+    "Lagos cubiertos por una capa de hielo que se rompe con la primavera"
+   ],
+   "correcta": 0,
+   "tip": "Son las mayores masas de hielo del hemisferio sur fuera de la Antártica. De ellas bajan glaciares hacia los fiordos y hacia los lagos, y alimentan ríos como el Baker, el más caudaloso de Chile.",
+   "id": "hist5-oa09-24"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "¿Qué combinación describe el paisaje de un valle del Norte Chico, como el del Elqui?",
+   "opciones": [
+    "Un río al fondo, cultivos y parras en sus orillas y cerros secos alrededor",
+    "Un río caudaloso rodeado de bosques cerrados y de lagos de origen glaciar",
+    "Un salar extenso rodeado de volcanes y sin vegetación en varios kilómetros",
+    "Una llanura ancha entre dos cordilleras, con potreros verdes todo el año"
+   ],
+   "correcta": 0,
+   "tip": "En el Norte Chico el verde se concentra en el fondo de los valles, donde llega el agua del río, y los cerros de alrededor quedan secos. El contraste entre ambos es lo que más llama la atención.",
+   "id": "hist5-oa09-25"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "¿Qué ocurre con la depresión intermedia al sur de Puerto Montt?",
+   "opciones": [
+    "Se hunde bajo el mar y queda convertida en golfos y canales",
+    "Se ensancha hasta ocupar todo el ancho del territorio, de mar a cordillera",
+    "Se levanta y forma la meseta más alta del país",
+    "Se llena de salares por la evaporación del agua"
+   ],
+   "correcta": 0,
+   "tip": "El valle central se sumerge y solo asoman las cumbres de la cordillera de la Costa, que forman Chiloé y los archipiélagos. Por eso más al sur el territorio aparece partido en islas y canales.",
+   "id": "hist5-oa09-26"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "¿Por qué en el Norte Grande casi no llueve, si tiene el océano justo al lado?",
+   "opciones": [
+    "Porque se suman varios factores: un centro de alta presión sobre el mar, aguas frías y la cordillera",
+    "Porque el océano Pacífico está demasiado lejos de la costa del norte",
+    "Porque el aire del desierto es tan caliente que quema las nubes que llegan",
+    "Porque en esa zona el viento sopla siempre desde el este, tierra adentro"
+   ],
+   "correcta": 0,
+   "tip": "No hay una sola causa. Un centro de altas presiones sobre el Pacífico impide que se formen lluvias, la corriente fría de Humboldt enfría el aire de la costa y los Andes frenan la humedad del este.",
+   "id": "hist5-oa09-27"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "Javiera ordena cuatro zonas de Chile de la menos a la más lluviosa. ¿Cuál es el orden correcto?",
+   "opciones": [
+    "Norte Grande, Norte Chico, Zona Central, Zona Sur",
+    "Zona Central, Norte Chico, Norte Grande, Zona Sur",
+    "Zona Sur, Zona Central, Norte Chico, Norte Grande",
+    "Norte Chico, Norte Grande, Zona Central, Zona Sur"
+   ],
+   "correcta": 0,
+   "tip": "Las lluvias aumentan hacia el sur, así que el orden sigue la latitud. La Zona Austral queda fuera de esta comparación porque allí conviven sectores lluviosísimos con estepas secas del lado oriental.",
+   "id": "hist5-oa09-28"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "La Zona Austral es la más extensa de Chile y la Zona Central, la más poblada. ¿Qué muestra eso?",
+   "opciones": [
+    "Que la población no se reparte según el tamaño, sino según las condiciones para vivir",
+    "Que en la Zona Central el territorio es más ancho y por eso caben muchas más personas",
+    "Que en la Zona Central las familias tienen más hijos que en el resto del país",
+    "Que la Zona Central es en realidad más grande de lo que muestran los mapas"
+   ],
+   "correcta": 0,
+   "tip": "Donde el clima es benigno, hay suelo fértil y agua accesible, se concentra la gente. En la Zona Austral el territorio es enorme, pero fragmentado, frío y ventoso, y por eso vive mucha menos gente.",
+   "id": "hist5-oa09-29"
+  },
+  {
+   "oa": "HI05 OA 09",
+   "pregunta": "Benjamín viaja de Arica a Punta Arenas. ¿Qué cambio nota a lo largo del recorrido?",
+   "opciones": [
+    "Cada vez llueve más y hace más frío, y el paisaje pasa de desierto a bosque y hielo",
+    "Cada vez llueve menos y hace más calor, y el paisaje se va volviendo cada vez más seco",
+    "El clima se mantiene casi igual, porque todo el país está junto al mar",
+    "La temperatura sube y las lluvias bajan al pasar la Zona Central"
+   ],
+   "correcta": 0,
+   "tip": "Chile mide más de 4.000 kilómetros de norte a sur, y esa longitud explica el cambio: hacia el sur baja la temperatura y aumentan las lluvias, y con ellas cambian la vegetación y el paisaje.",
+   "id": "hist5-oa09-30"
+  }
+ ]
+}

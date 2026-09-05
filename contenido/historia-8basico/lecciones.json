@@ -103,6 +103,33 @@
      "md": "Y al mismo tiempo es una sociedad que se mezcla. El mestizaje no fue una excepción sino la regla, y de ahí sale buena parte de lo que hoy es América Latina: su comida, su música, sus palabras."
     },
     {
+     "t": "diagrama",
+     "intro": "Una sociedad organizada por origen, no de iguales.",
+     "kind": "esquema",
+     "params": {
+      "forma": "niveles",
+      "desc": "Los estamentos de la sociedad colonial",
+      "items": [
+       {
+        "titulo": "Peninsulares",
+        "texto": "Nacidos en España"
+       },
+       {
+        "titulo": "Criollos",
+        "texto": "Hijos de españoles, nacidos en América"
+       },
+       {
+        "titulo": "Mestizos",
+        "texto": "De la mezcla, y fueron la regla"
+       },
+       {
+        "titulo": "Indígenas y africanos esclavizados",
+        "texto": "Con muchos menos derechos"
+       }
+      ]
+     }
+    },
+    {
      "t": "texto",
      "md": "En este capítulo vas a ver el barroco americano, el comercio atlántico, cómo se formó esa sociedad, y la larga convivencia y conflicto entre españoles, mestizos y mapuches en Chile."
     }

@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "Camila llegó al final del capítulo y no recuerda nada de lo leído. ¿Qué le conviene hacer?",
+   "opciones": [
+    "Volver atrás y releer, buscando dónde perdió el hilo de la historia",
+    "Seguir con el capítulo siguiente, porque más adelante se va a ir aclarando",
+    "Anotar que ese capítulo no se entiende y saltar directamente al final del libro",
+    "Leer el capítulo completo de nuevo, pero mucho más rápido que la primera vez"
+   ],
+   "correcta": 0,
+   "tip": "Seguir leyendo cuando ya se perdió el hilo solo agranda lo que no se entiende. Releer no es retroceder: es volver al punto donde la lectura dejó de tener sentido.",
+   "id": "leng5-oa02-1"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "Diego cree que releer un párrafo es señal de que él lee mal. ¿Qué error hay en su idea?",
+   "opciones": [
+    "Releer es justamente lo que hacen los buenos lectores cuando notan que algo no les quedó claro",
+    "Ninguno: quien lee bien entiende todo a la primera y nunca necesita volver atrás",
+    "Su error es otro: releer sirve, pero solamente cuando el texto es muy largo",
+    "Su error es otro: releer lo necesitan solo quienes leen en voz alta ante un curso"
+   ],
+   "correcta": 0,
+   "tip": "Un lector experto se da cuenta cuando dejó de entender y vuelve atrás. Lo que distingue a quien lee bien no es entender todo de una, sino notar cuándo no entendió.",
+   "id": "leng5-oa02-2"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "Sofía no entendió una parte del texto. ¿Qué le conviene releer?",
+   "opciones": [
+    "El párrafo donde se perdió, no el texto entero desde el comienzo",
+    "El texto completo desde el título, para no saltarse ningún detalle",
+    "El último párrafo del texto, que suele resumir todo lo anterior",
+    "Solo la primera oración de cada uno de los párrafos del texto"
+   ],
+   "correcta": 0,
+   "tip": "Releer sirve cuando apunta al lugar exacto donde se perdió la comprensión. Volver al comienzo cuesta tiempo y casi siempre repite lo que ya estaba entendido.",
+   "id": "leng5-oa02-3"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "¿En qué se nota que a un lector le conviene detenerse y releer lo que va leyendo?",
+   "opciones": [
+    "En que lleva varias líneas leyendo y no podría decir de qué trataban",
+    "En que el texto tiene palabras largas y párrafos de muchas líneas seguidas",
+    "En que ya lleva bastante rato leyendo y se empieza a sentir algo cansado",
+    "En que el texto trata sobre un tema que nunca antes había estudiado"
+   ],
+   "correcta": 0,
+   "tip": "La señal es interna: darse cuenta de que los ojos siguieron pero la cabeza se quedó atrás. Un texto difícil puede entenderse bien, y uno fácil puede perderse igual.",
+   "id": "leng5-oa02-4"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "Matías se distrae leyendo y sigue adelante sin volver atrás. ¿Qué le va a pasar al terminar?",
+   "opciones": [
+    "Habrá leído todas las páginas, pero no podrá contar de qué trataban",
+    "Va a entender igual, porque el final de un texto explica todo lo anterior",
+    "Se va a demorar bastante menos y por eso recordará mejor lo importante",
+    "No le pasará nada, porque distraerse un rato no afecta la comprensión"
+   ],
+   "correcta": 0,
+   "tip": "Leer no es pasar los ojos por las palabras. Si nadie repara el hilo cuando se corta, al final quedan muchas páginas leídas y ninguna idea que contar.",
+   "id": "leng5-oa02-5"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "¿Para qué le sirve a un lector relacionar lo que lee con lo que ya sabe o vivió?",
+   "opciones": [
+    "Para entender mejor el texto, apoyándose en algo ya conocido",
+    "Para poder saltarse las partes del texto que ya le resultan conocidas",
+    "Para escribir después un texto parecido con esas mismas ideas",
+    "Para corregir al autor cuando cuenta algo distinto de lo que él vivió"
+   ],
+   "correcta": 0,
+   "tip": "Lo nuevo se entiende enganchándolo con lo que ya está en la cabeza. Eso ayuda a comprender, pero no autoriza a saltarse partes ni a cambiar lo que el texto dice.",
+   "id": "leng5-oa02-6"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "Antonia lee sobre un terremoto y recuerda uno que vivió. ¿Cómo le ayuda ese recuerdo?",
+   "opciones": [
+    "Le permite imaginar mejor la situación que el texto está describiendo",
+    "Le permite saltarse esa parte, porque ella ya sabe cómo es un terremoto",
+    "Le permite corregir los datos del texto con lo que ella recuerda de ese día",
+    "Le permite contar su experiencia en vez de responder sobre lo que dice el texto"
+   ],
+   "correcta": 0,
+   "tip": "La experiencia propia es un apoyo para entender lo que el texto cuenta, no un reemplazo. Lo que se responde sigue saliendo del texto, no del recuerdo.",
+   "id": "leng5-oa02-7"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "Vicente dice que sus recuerdos le bastan para responder sin leer el texto. ¿Qué falla ahí?",
+   "opciones": [
+    "Sus recuerdos ayudan a comprender el texto, pero no lo reemplazan",
+    "Nada falla: si él ya conoce bien el tema, leer el texto es tiempo perdido",
+    "Falla que sus recuerdos son suyos y el texto habla de otras personas",
+    "Falla el orden: primero hay que leer el texto y después olvidar lo vivido"
+   ],
+   "correcta": 0,
+   "tip": "Los conocimientos previos abren la puerta, pero la respuesta la da el texto. Y tampoco hay que dejarlos de lado: se usan mientras se lee, para ir comprendiendo.",
+   "id": "leng5-oa02-8"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "Antes de leer un artículo sobre volcanes, Emilia piensa qué sabe del tema. ¿Para qué sirve eso?",
+   "opciones": [
+    "Para tener dónde enganchar la información nueva mientras va leyendo",
+    "Para comprobar si el artículo trae algún error de información grave",
+    "Para decidir si el artículo es demasiado difícil y dejarlo de lado",
+    "Para responder las preguntas sin necesidad de leer el artículo completo"
+   ],
+   "correcta": 0,
+   "tip": "Activar lo que ya se sabe prepara la lectura: la información nueva encuentra dónde quedarse. Es una ayuda para entrar al texto, no un reemplazo de leerlo.",
+   "id": "leng5-oa02-9"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "Un texto contradice algo que Joaquín creía saber. ¿Qué le conviene hacer como lector?",
+   "opciones": [
+    "Releer con atención esa parte y ver con qué la respalda el texto",
+    "Descartar el texto, porque contradice lo que él ya tenía aprendido",
+    "Cambiar de inmediato de idea, ya que un texto escrito siempre acierta",
+    "Saltarse esa parte y quedarse solo con lo que calza con lo que él sabía"
+   ],
+   "correcta": 0,
+   "tip": "Cuando lo leído choca con lo que uno creía, el paso siguiente es mirar qué dice el texto y en qué se apoya. Ni descartarlo de entrada ni creerle porque sí.",
+   "id": "leng5-oa02-10"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "Florencia lee un cuento parecido a otro que ya conocía. ¿Cómo le ayuda esa comparación?",
+   "opciones": [
+    "Le permite anticipar cómo puede seguir la historia y entenderla mejor",
+    "Le permite saber el final, porque los cuentos parecidos terminan igual",
+    "Le permite dejar la lectura, ya que la historia va a ser exactamente la misma",
+    "Le permite decidir cuál de los dos autores escribe mejor sus historias"
+   ],
+   "correcta": 0,
+   "tip": "Reconocer un patrón conocido ayuda a seguir el hilo y a fijarse en lo que este texto hace distinto. Parecido no es igual: el final puede sorprender.",
+   "id": "leng5-oa02-11"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "¿Qué gana un lector al comparar dos textos que tratan sobre el mismo tema?",
+   "opciones": [
+    "Nota en qué coinciden y en qué se diferencian, y así entiende mejor el tema completo",
+    "Puede quedarse con el más corto, porque los dos van a decir lo mismo",
+    "Descubre cuál de los dos autores escribe con mejor ortografía",
+    "Se ahorra leer el segundo, ya que el primero explicó el tema completo"
+   ],
+   "correcta": 0,
+   "tip": "Dos textos sobre un mismo tema casi nunca dicen exactamente lo mismo. Ver dónde se cruzan y dónde no es lo que termina dando una idea más completa.",
+   "id": "leng5-oa02-12"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "¿Qué significa formularle preguntas a un texto mientras se lo está leyendo?",
+   "opciones": [
+    "Ir preguntándose cosas sobre lo leído y seguir leyendo para buscar la respuesta",
+    "Preguntarle al profesor cada vez que aparece una parte difícil",
+    "Escribir preguntas al final para que las respondan los compañeros",
+    "Anotar las dudas y dejarlas para cuando termine de leer todo el libro"
+   ],
+   "correcta": 0,
+   "tip": "Preguntarle al texto es un diálogo con la lectura: uno se pregunta y sigue leyendo para ver si el texto responde. Eso mantiene la atención despierta.",
+   "id": "leng5-oa02-13"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "Isidora se pregunta «¿por qué el personaje se fue?» y sigue leyendo. ¿Qué está haciendo?",
+   "opciones": [
+    "Se formuló una pregunta sobre lo leído y lee para responderla",
+    "Se está distrayendo de la lectura con una duda que no viene al caso",
+    "Está inventando una parte de la historia que el texto no llega a contar",
+    "Está adivinando cuál será el final antes de que el autor lo escriba"
+   ],
+   "correcta": 0,
+   "tip": "Una pregunta bien hecha le da rumbo a la lectura: se sigue leyendo con algo que buscar. No es distracción ni invención, es lo que hace un lector atento.",
+   "id": "leng5-oa02-14"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "Lucas quiere comprender mejor un relato. ¿Qué pregunta le conviene más hacerse?",
+   "opciones": [
+    "¿Por qué el personaje tomó esa decisión y qué trajo después?",
+    "¿Cuántos personajes aparecen nombrados a lo largo de todo el relato?",
+    "¿En qué página empieza y en qué página termina cada capítulo?",
+    "¿Cuántas palabras difíciles trae el relato que él no conocía antes?"
+   ],
+   "correcta": 0,
+   "tip": "Las preguntas que ayudan a comprender apuntan al porqué y a las consecuencias. Contar personajes o páginas se puede responder sin haber entendido la historia.",
+   "id": "leng5-oa02-15"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "Renata se hace preguntas sobre el texto, pero nunca busca las respuestas. ¿Qué le falta?",
+   "opciones": [
+    "Seguir leyendo con esa pregunta en mente hasta encontrar la respuesta en el texto",
+    "Hacerse preguntas más fáciles, que ella pueda responder de memoria",
+    "Anotar todas sus preguntas para entregárselas después al profesor",
+    "Hacerse menos preguntas, porque tantas dudas interrumpen la lectura"
+   ],
+   "correcta": 0,
+   "tip": "La pregunta sola no comprende: lo que enseña es buscarle respuesta en el texto. Preguntarse mucho y no volver a mirar deja la duda igual que al principio.",
+   "id": "leng5-oa02-16"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "Simón lee el título «El puente que nadie cruzaba» y se pregunta por qué. ¿Qué logra con eso?",
+   "opciones": [
+    "Entra al texto con algo que buscar, y eso lo mantiene atento mientras va leyendo",
+    "Se adelanta al autor y ya no necesita leer el texto completo",
+    "Descubre el final de la historia antes siquiera de empezar a leerla",
+    "Pierde tiempo, porque el título nunca dice nada sobre el contenido"
+   ],
+   "correcta": 0,
+   "tip": "Preguntarle al título convierte la lectura en una búsqueda. El título sí adelanta algo, pero no la respuesta: esa aparece más adelante, leyendo.",
+   "id": "leng5-oa02-17"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "¿En qué consiste visualizar mientras se lee un texto?",
+   "opciones": [
+    "Imaginar en la cabeza lo que el texto va describiendo",
+    "Mirar con atención las ilustraciones que acompañan al texto",
+    "Ir siguiendo cada línea del texto con el dedo o con un lápiz",
+    "Dibujar en el cuaderno cada escena antes de seguir leyendo"
+   ],
+   "correcta": 0,
+   "tip": "Visualizar es armar la escena por dentro con lo que dicen las palabras. Las ilustraciones ayudan, pero la imagen que sirve es la que construye el propio lector.",
+   "id": "leng5-oa02-18"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "Amanda lee la descripción de una casa antigua y arma la escena en su mente. ¿Para qué le sirve?",
+   "opciones": [
+    "Para seguir mejor lo que ocurre después en ese lugar",
+    "Para memorizar la descripción palabra por palabra tal como está escrita",
+    "Para poder saltarse las próximas descripciones que traiga el mismo texto",
+    "Para corregir la ilustración del libro si no calza con la imagen que armó"
+   ],
+   "correcta": 0,
+   "tip": "Cuando el lugar ya está armado en la cabeza, lo que ocurre después se sigue sin esfuerzo. No se trata de memorizar la descripción, sino de poder ver la escena.",
+   "id": "leng5-oa02-19"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "Gaspar dice que no logra imaginar nada de lo que lee. ¿Qué le conviene hacer?",
+   "opciones": [
+    "Detenerse en las palabras que describen y armar la escena de a poco en su cabeza",
+    "Leer más rápido, así llega antes a la parte donde ocurre la acción",
+    "Buscar en internet fotografías de ese lugar antes de seguir leyendo",
+    "Cambiar a un libro con más ilustraciones y menos descripciones largas"
+   ],
+   "correcta": 0,
+   "tip": "La imagen se arma con los datos que el texto entrega: colores, tamaños, sonidos. Pasar rápido justo por esa parte es lo que deja la escena vacía.",
+   "id": "leng5-oa02-20"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "¿Qué le pasa a un lector que se salta todas las descripciones de un relato?",
+   "opciones": [
+    "Le cuesta imaginar dónde ocurre y por qué actúan así los personajes",
+    "Nada, porque las descripciones son un adorno y no cuentan la historia",
+    "Termina bastante antes y por eso recuerda mejor los hechos importantes",
+    "Entiende igual, ya que lo importante siempre está en los diálogos"
+   ],
+   "correcta": 0,
+   "tip": "La descripción arma el escenario y muchas veces explica lo que después hacen los personajes. Saltarla deja la historia sin lugar y sin motivos.",
+   "id": "leng5-oa02-21"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "¿Qué conviene subrayar en un texto para comprenderlo mejor?",
+   "opciones": [
+    "Las ideas centrales, unas pocas por párrafo",
+    "Todo lo que parezca importante, aunque quede casi entero marcado",
+    "Las palabras más largas y difíciles que aparezcan en cada página",
+    "La primera y la última línea de cada uno de los párrafos del texto"
+   ],
+   "correcta": 0,
+   "tip": "Subrayar sirve porque separa lo central de lo demás. Si queda marcado casi todo, no separa nada y el texto vuelve a quedar igual de parejo que antes.",
+   "id": "leng5-oa02-22"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "Tomás subrayó casi todo el texto con destacador. ¿Qué problema tiene su trabajo?",
+   "opciones": [
+    "Al quedar todo marcado, ya no se distingue qué era lo importante",
+    "El problema es el color: el destacador no sirve para trabajar textos",
+    "El problema es que subrayó en el libro y no en una copia del texto",
+    "Ninguno: subrayar todo asegura no dejar afuera ningún dato del texto"
+   ],
+   "correcta": 0,
+   "tip": "Subrayar es elegir. Marcarlo todo cuesta el mismo trabajo que no marcar nada, porque después la vista no encuentra dónde estaba lo que importaba.",
+   "id": "leng5-oa02-23"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "Javiera anota al margen «aquí explica la causa». ¿Para qué le sirve esa nota?",
+   "opciones": [
+    "Para ubicar rápido esa parte y recordar qué hacía el texto ahí",
+    "Para tener el texto más ordenado y con una mejor presentación",
+    "Para no tener que volver a leer nunca más ese párrafo del texto",
+    "Para mostrarle al profesor que leyó el texto con mucha dedicación"
+   ],
+   "correcta": 0,
+   "tip": "Una nota al margen dice qué hace esa parte del texto, no todo lo que dice. Por eso permite volver directo a ella, pero la idea completa sigue estando en el párrafo.",
+   "id": "leng5-oa02-24"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "Martín subraya siempre al terminar el párrafo, nunca antes. ¿Por qué le conviene así?",
+   "opciones": [
+    "Porque recién ahí sabe cuál era la idea central de ese párrafo",
+    "Porque subrayar mientras se lee estropea la hoja del libro o del cuaderno",
+    "Porque de esa manera avanza más rápido y termina el texto en menos tiempo",
+    "Porque el destacador se corre si la vista va siguiendo las líneas al mismo tiempo"
+   ],
+   "correcta": 0,
+   "tip": "La idea central de un párrafo se reconoce cuando el párrafo ya está leído entero. Subrayar antes es apostar a que la primera frase será la importante.",
+   "id": "leng5-oa02-25"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "¿De qué depende cuáles son las ideas más importantes de un texto?",
+   "opciones": [
+    "Del propósito con que lo está leyendo esa persona",
+    "Del largo del texto: mientras más largo, más ideas importantes trae",
+    "De cuántas veces se repita cada palabra a lo largo del texto",
+    "De cuáles sean las ideas que aparecen en el primer párrafo del texto"
+   ],
+   "correcta": 0,
+   "tip": "Un mismo texto entrega ideas distintas según para qué se lea. Buscar una fecha y buscar una explicación llevan a fijarse en partes diferentes del mismo texto.",
+   "id": "leng5-oa02-26"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "Ana lee un artículo sobre ballenas para saber de qué se alimentan. ¿En qué debe fijarse?",
+   "opciones": [
+    "En las partes que hablan de su alimentación, más que en las demás",
+    "En todas las partes por igual, porque todo el artículo es importante",
+    "En el primer párrafo, donde siempre está lo más importante del texto",
+    "En las palabras que no conoce, que son las que traen los datos nuevos"
+   ],
+   "correcta": 0,
+   "tip": "El propósito de la lectura decide dónde poner la atención. Leerlo todo con el mismo peso hace perder de vista justamente lo que se fue a buscar.",
+   "id": "leng5-oa02-27"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "Dos alumnos leen el mismo texto: uno busca fechas y el otro busca causas. ¿Qué ocurre?",
+   "opciones": [
+    "Cada uno destaca partes distintas del texto, porque están leyendo con propósitos distintos",
+    "Los dos destacan lo mismo, porque el texto trae ideas importantes fijas",
+    "Uno de los dos está leyendo mal, ya que hay una sola forma correcta",
+    "Ninguno comprende el texto, porque hay que leer sin buscar nada en especial"
+   ],
+   "correcta": 0,
+   "tip": "Lo importante no viene marcado dentro del texto: lo define la pregunta con que se lee. Por eso dos lectores atentos pueden destacar cosas distintas y acertar los dos.",
+   "id": "leng5-oa02-28"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "¿Para qué sirve organizar en un esquema la información de un texto leído?",
+   "opciones": [
+    "Para ver cómo se relacionan entre sí las ideas del texto",
+    "Para tener el cuaderno más ordenado y con una mejor presentación",
+    "Para copiar el texto completo en un formato más entretenido de mirar",
+    "Para reemplazar la lectura del texto por unas pocas palabras sueltas"
+   ],
+   "correcta": 0,
+   "tip": "Un esquema muestra qué idea depende de cuál y cuáles van juntas. Si solo cambia la forma de copiar lo mismo, no ayuda a comprender nada nuevo.",
+   "id": "leng5-oa02-29"
+  },
+  {
+   "oa": "LE05 OA 02",
+   "pregunta": "Benjamín hizo un esquema copiando párrafos enteros dentro de los recuadros. ¿Qué falla?",
+   "opciones": [
+    "Un esquema pide ideas breves y las relaciones entre ellas, no párrafos copiados tal cual",
+    "Falla que usó recuadros: un esquema se hace siempre con flechas solas",
+    "Falla que lo hizo al terminar de leer, cuando debía hacerlo mientras leía",
+    "Nada falla: mientras más completo esté el esquema, mejor se entiende todo"
+   ],
+   "correcta": 0,
+   "tip": "El esquema ayuda porque obliga a decir cada idea en pocas palabras y a mostrar cómo se conectan. Copiar párrafos enteros deja el mismo texto en otra hoja.",
+   "id": "leng5-oa02-30"
+  }
+ ]
+}

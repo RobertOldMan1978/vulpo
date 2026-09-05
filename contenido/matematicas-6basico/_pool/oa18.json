@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "¿Cómo se calcula la superficie total de un cubo?",
+   "opciones": [
+    "Se calcula el área de una cara y se multiplica por seis, porque las seis son iguales",
+    "Se multiplican entre sí las tres medidas del cubo, que en un cubo son todas iguales",
+    "Se suman los largos de las doce aristas, que son los bordes de toda la superficie",
+    "Se calcula el área de una cara y se multiplica por cuatro, una por cada costado"
+   ],
+   "correcta": 0,
+   "tip": "Un cubo tiene seis caras cuadradas del mismo tamaño, así que basta calcular una y multiplicarla por seis. Contar solo cuatro deja fuera la tapa y el fondo, y sumar aristas mide largo, no superficie.",
+   "id": "mate6-oa18-1"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "Camila midió una caja en cm, calculó su superficie y anotó 240. ¿Qué unidad le falta?",
+   "opciones": [
+    "Centímetros cuadrados, porque toda superficie se expresa en unidades cuadradas",
+    "Centímetros, porque las tres medidas de la caja estaban dadas en centímetros",
+    "Centímetros cúbicos, porque una caja es un cuerpo y no una figura plana",
+    "Ninguna, porque un número solo ya deja claro cuánta superficie tiene la caja"
+   ],
+   "correcta": 0,
+   "tip": "Una superficie se mide contando cuadraditos, así que su unidad es cuadrada. Los centímetros a secas miden largos y los centímetros cúbicos miden el espacio que cabe adentro.",
+   "id": "mate6-oa18-2"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "¿Cuántos centímetros cuadrados caben en 1 metro cuadrado?",
+   "opciones": [
+    "10.000, porque un cuadrado de 1 m de lado mide 100 cm de largo y 100 cm de ancho",
+    "100, porque 1 metro equivale a 100 centímetros al medir cualquier longitud",
+    "1.000, del mismo modo que 1 kilogramo equivale a 1.000 gramos de masa",
+    "1.000.000, porque hay que multiplicar 100 por 100 y todavía otra vez por 100"
+   ],
+   "correcta": 0,
+   "tip": "Un metro cuadrado es un cuadrado de 100 cm por 100 cm, y 100 por 100 son 10.000. El 100 sirve para pasar largos, no superficies, y multiplicar tres veces daría metros cúbicos.",
+   "id": "mate6-oa18-3"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "Un cubo mide 4 cm de arista. ¿Cuál es su superficie total?",
+   "opciones": [
+    "96 centímetros cuadrados",
+    "64 centímetros cuadrados",
+    "24 centímetros cuadrados",
+    "16 centímetros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "Cada cara mide 4 por 4, o sea 16 centímetros cuadrados, y el cubo tiene seis: 16 por 6 son 96. Los 64 salen de multiplicar 4 por 4 por 4, y los 16 son una sola de las seis caras.",
+   "id": "mate6-oa18-4"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "Una caja mide 5 cm de largo, 4 cm de ancho y 3 cm de alto. ¿Cuál es su superficie?",
+   "opciones": [
+    "94 centímetros cuadrados",
+    "47 centímetros cuadrados",
+    "60 centímetros cuadrados",
+    "54 centímetros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "Las tres caras distintas miden 20, 15 y 12 centímetros cuadrados y suman 47; como cada una tiene su gemela, se duplica y da 94. Los 54 dejan fuera la tapa y el fondo de la caja.",
+   "id": "mate6-oa18-5"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "¿En qué unidad conviene expresar la superficie de la pared de una sala de clases?",
+   "opciones": [
+    "En metros cuadrados, porque es una superficie grande y el número queda manejable",
+    "En centímetros cuadrados, porque así el resultado queda mucho más exacto que en metros",
+    "En metros, porque la pared se mide con huincha y la huincha viene marcada en metros",
+    "En centímetros cúbicos, porque una sala de clases es un espacio de tres dimensiones"
+   ],
+   "correcta": 0,
+   "tip": "Las dos unidades cuadradas sirven, pero en centímetros cuadrados una pared da decenas de miles y cuesta leerlo. Cambiar de unidad no cambia la exactitud: 6 metros cuadrados y 60.000 centímetros cuadrados son lo mismo.",
+   "id": "mate6-oa18-6"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "Un dado gigante mide 10 cm de arista. ¿Cuánto papel se necesita para forrarlo entero?",
+   "opciones": [
+    "600 centímetros cuadrados",
+    "1.000 centímetros cuadrados",
+    "100 centímetros cuadrados",
+    "60 centímetros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "Cada cara mide 10 por 10, o sea 100 centímetros cuadrados, y hay seis: 600. Los 1.000 salen de multiplicar 10 por 10 por 10, que es el espacio de adentro y no el papel de afuera.",
+   "id": "mate6-oa18-7"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "Una caja de 8 cm de largo, 6 cm de ancho y 2 cm de alto se va a forrar. ¿Cuánto papel se usa?",
+   "opciones": [
+    "152 centímetros cuadrados",
+    "76 centímetros cuadrados",
+    "96 centímetros cuadrados",
+    "56 centímetros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "Las caras distintas miden 48, 16 y 12 centímetros cuadrados: suman 76 y, como cada una va dos veces, el total es 152. Los 96 salen de multiplicar las tres medidas entre sí.",
+   "id": "mate6-oa18-8"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "¿Qué significa que un baúl tenga 5 metros cuadrados de superficie?",
+   "opciones": [
+    "Que sus seis caras juntas suman 5 metros cuadrados de material por fuera",
+    "Que cada una de sus seis caras mide 5 metros cuadrados por separado",
+    "Que dentro del baúl caben 5 metros cuadrados de ropa bien ordenada",
+    "Que la cara más grande del baúl mide exactamente 5 metros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "La superficie de un cuerpo es todo lo que lo cubre por fuera, o sea la suma de sus seis caras. Lo que cabe adentro es otra cosa y no se mide en unidades cuadradas.",
+   "id": "mate6-oa18-9"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "Un cubo mide 1 m de arista. ¿Cuál es su superficie en centímetros cuadrados?",
+   "opciones": [
+    "60.000 centímetros cuadrados",
+    "600 centímetros cuadrados",
+    "6 centímetros cuadrados",
+    "6.000 centímetros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "Cada cara mide 100 cm por 100 cm, o sea 10.000 centímetros cuadrados, y hay seis: 60.000. Multiplicar los 6 metros cuadrados por 100 confunde la conversión de largos con la de superficies.",
+   "id": "mate6-oa18-10"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "Una caja tiene base cuadrada de 7 cm por 7 cm y 10 cm de alto. ¿Cuál es su superficie?",
+   "opciones": [
+    "378 centímetros cuadrados",
+    "189 centímetros cuadrados",
+    "490 centímetros cuadrados",
+    "280 centímetros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "La base y la tapa miden 49 centímetros cuadrados cada una y los cuatro costados 70 cada uno: 98 más 280 son 378. Los 280 dejan fuera justamente la base y la tapa.",
+   "id": "mate6-oa18-11"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "Un baúl mide 2 m de largo, 1 m de ancho y 1 m de alto. ¿Cuánta superficie hay que barnizar?",
+   "opciones": [
+    "10 metros cuadrados",
+    "5 metros cuadrados",
+    "2 metros cuadrados",
+    "6 metros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "Las caras distintas miden 2, 2 y 1 metros cuadrados: suman 5 y, como cada una va dos veces, la superficie es 10. Los 6 dejarían sin barniz la tapa y el fondo del baúl.",
+   "id": "mate6-oa18-12"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "Una sala mide 6 m de largo, 4 m de ancho y 3 m de alto. ¿Cuánto miden sus cuatro paredes juntas?",
+   "opciones": [
+    "60 metros cuadrados",
+    "108 metros cuadrados",
+    "84 metros cuadrados",
+    "72 metros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "Dos paredes miden 6 por 3, o sea 18 cada una, y las otras dos miden 4 por 3, o sea 12 cada una: 36 más 24 son 60. Los 108 incluyen el piso y el techo, que no son paredes.",
+   "id": "mate6-oa18-13"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "Una piscina mide 8 m de largo, 4 m de ancho y 2 m de hondo. ¿Cuánto miden su fondo y sus paredes?",
+   "opciones": [
+    "80 metros cuadrados",
+    "112 metros cuadrados",
+    "48 metros cuadrados",
+    "64 metros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "Hay que cubrir el fondo y las cuatro paredes, pero no la abertura de arriba: 32 del fondo más 32 y 16 de las paredes dan 80. Los 112 incluirían una tapa que la piscina no tiene.",
+   "id": "mate6-oa18-14"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "Un cajón mide 40 cm de largo, 30 cm de ancho y 20 cm de alto y va abierto arriba. ¿Cuánto cartón usa?",
+   "opciones": [
+    "4.000 centímetros cuadrados",
+    "5.200 centímetros cuadrados",
+    "2.800 centímetros cuadrados",
+    "24.000 centímetros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "Cerrado gastaría 5.200 centímetros cuadrados. Como arriba va abierto, se resta esa cara de 40 por 30, o sea 1.200, y quedan 4.000. Los 24.000 salen de multiplicar las tres medidas.",
+   "id": "mate6-oa18-15"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "¿Cuánto se pinta de un contenedor de 5 m de largo, 2 m de ancho y 3 m de alto, sin la cara del muro?",
+   "opciones": [
+    "47 metros cuadrados",
+    "62 metros cuadrados",
+    "52 metros cuadrados",
+    "30 metros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "Entero mediría 62 metros cuadrados. La cara pegada al muro es la de 5 por 3, o sea 15, y esa no se pinta: 62 menos 15 son 47. Los 30 salen de multiplicar las tres medidas entre sí.",
+   "id": "mate6-oa18-16"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "La superficie de un cubo es de 50.000 centímetros cuadrados. ¿Cuántos metros cuadrados son?",
+   "opciones": [
+    "5 metros cuadrados",
+    "500 metros cuadrados",
+    "50 metros cuadrados",
+    "0,5 metros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "Cada metro cuadrado tiene 10.000 centímetros cuadrados, así que se divide 50.000 en 10.000 y da 5. Dividir en 100 sirve para pasar centímetros a metros de largo, no superficies.",
+   "id": "mate6-oa18-17"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "Matías pasó 3 metros cuadrados a centímetros cuadrados y anotó 300. ¿Está bien hecho?",
+   "opciones": [
+    "No: son 30.000, porque cada metro cuadrado guarda 10.000 centímetros cuadrados",
+    "Sí: para pasar de metros a centímetros siempre se multiplica el número por 100",
+    "No: son 3.000, porque hay que multiplicar por 1.000 igual que con los kilogramos",
+    "Sí, siempre que esa superficie sea una cara plana y no la de un cuerpo completo"
+   ],
+   "correcta": 0,
+   "tip": "Multiplicar por 100 funciona con los largos. Una superficie crece de largo y de ancho a la vez, así que cada metro cuadrado guarda 100 por 100 centímetros cuadrados, o sea 10.000.",
+   "id": "mate6-oa18-18"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "La caja A tiene 20.000 centímetros cuadrados de superficie y la B tiene 3 metros cuadrados. ¿Cuál es mayor?",
+   "opciones": [
+    "La caja B, porque sus 3 metros cuadrados equivalen a 30.000 centímetros cuadrados",
+    "La caja A, porque 20.000 es un número muchísimo más grande que el número 3",
+    "La caja B, porque sus 3 metros cuadrados equivalen a 300.000 centímetros cuadrados",
+    "Las dos son iguales, porque 3 metros cuadrados dan justo 20.000 centímetros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "Antes de comparar hay que llevar las dos a la misma unidad: 3 por 10.000 son 30.000 centímetros cuadrados, más que los 20.000 de la caja A. Comparar un 3 con un 20.000 sin convertir no dice nada.",
+   "id": "mate6-oa18-19"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "Para forrar un cubo se usaron justo 96 centímetros cuadrados de papel. ¿Cuánto mide su arista?",
+   "opciones": [
+    "4 centímetros",
+    "16 centímetros",
+    "6 centímetros",
+    "24 centímetros"
+   ],
+   "correcta": 0,
+   "tip": "Las seis caras son iguales, así que cada una mide 96 dividido en 6, o sea 16 centímetros cuadrados. Un cuadrado de 16 centímetros cuadrados tiene 4 centímetros de lado, porque 4 por 4 son 16.",
+   "id": "mate6-oa18-20"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "Dos cubos de 10 cm de arista se pegan por una cara. ¿La superficie de la caja es el doble?",
+   "opciones": [
+    "No: son 1.000 centímetros cuadrados, porque las dos caras pegadas dejan de estar afuera",
+    "Sí: son 1.200 centímetros cuadrados, la suma de los 600 que mide cada cubo por separado",
+    "No: son 1.100 centímetros cuadrados, porque al unirlos desaparece una sola cara de 100",
+    "No: son 800 centímetros cuadrados, porque la caja larga tiene solo cuatro caras a la vista"
+   ],
+   "correcta": 0,
+   "tip": "Cada cubo mide 600 centímetros cuadrados, pero al pegarlos dos caras de 100 quedan escondidas por dentro. Hay que restar 200 a los 1.200, y la caja de 20 por 10 por 10 mide 1.000.",
+   "id": "mate6-oa18-21"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "¿Tiene sentido decir que la superficie de una caja de zapatos es de 2 metros cuadrados?",
+   "opciones": [
+    "No: una caja de zapatos ronda los 2.400 centímetros cuadrados, casi un cuarto de metro",
+    "Sí: 2 metros cuadrados es una medida corriente para cualquier caja de cartón",
+    "No: le falta la unidad, porque las cajas siempre se miden en centímetros cúbicos",
+    "Sí, siempre que la caja se mida por dentro y no por fuera, que es bastante distinto"
+   ],
+   "correcta": 0,
+   "tip": "Una caja de zapatos mide más o menos 30 por 20 por 12 cm, y su superficie ronda los 2.400 centímetros cuadrados, o sea menos de un cuarto de metro cuadrado. Dos metros cuadrados es casi una mesa entera.",
+   "id": "mate6-oa18-22"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "Para la superficie de una caja de 9, 5 y 2 cm, Javiera calculó 2 por (9 más 5 más 2). ¿Qué obtuvo?",
+   "opciones": [
+    "Un número de largo, no de superficie: sumó las tres medidas en lugar de las áreas",
+    "La superficie exacta de la caja, porque sus caras van agrupadas en tres pares iguales",
+    "El área de una sola cara, que después habría que multiplicar por las seis caras",
+    "El espacio que cabe dentro de la caja, que no se mide en unidades cuadradas"
+   ],
+   "correcta": 0,
+   "tip": "Para la superficie hay que multiplicar las medidas de a dos y después sumar: 9 por 5, 9 por 2 y 5 por 2 dan 45, 18 y 10, que suman 73. El doble es 146 centímetros cuadrados.",
+   "id": "mate6-oa18-23"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "¿Por qué la superficie se expresa en centímetros cuadrados y no en centímetros?",
+   "opciones": [
+    "Porque se cuenta cuántos cuadraditos de 1 cm por 1 cm alcanzan a cubrir la cara",
+    "Porque los centímetros a secas solo sirven para medir objetos que son muy pequeños",
+    "Porque es una costumbre antigua y en realidad da lo mismo escribirlo de las dos formas",
+    "Porque toda medida tomada sobre un cuerpo de tres dimensiones lleva una unidad especial"
+   ],
+   "correcta": 0,
+   "tip": "Medir una superficie es ver cuántos cuadraditos de 1 cm de lado la cubren, y por eso la unidad es cuadrada. El centímetro simple mide una línea, y las aristas de un cuerpo se miden así.",
+   "id": "mate6-oa18-24"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "El papel viene en pliegos de 1 metro cuadrado. ¿Alcanza uno para forrar un cubo de 20 cm?",
+   "opciones": [
+    "Sí: el cubo necesita 2.400 centímetros cuadrados y el pliego trae 10.000",
+    "No: el cubo necesita 2.400 centímetros cuadrados y el pliego trae solo 100",
+    "Sí, pero justo: el cubo necesita 8.000 de los 10.000 centímetros cuadrados del pliego",
+    "No: harían falta 24 metros cuadrados, o sea 24 pliegos de ese mismo papel"
+   ],
+   "correcta": 0,
+   "tip": "Cada cara mide 20 por 20, o sea 400 centímetros cuadrados, y las seis dan 2.400. Un metro cuadrado son 10.000 centímetros cuadrados, así que sobra bastante más de la mitad del pliego.",
+   "id": "mate6-oa18-25"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "Un cubo de 2 m de arista: Diego dice 24 metros cuadrados y Ana, 240.000 centímetros cuadrados.",
+   "opciones": [
+    "Los dos aciertan, porque esas dos cifras son la misma superficie en unidades distintas",
+    "Solo Diego, porque 24 metros cuadrados equivalen a 2.400 centímetros cuadrados",
+    "Solo Ana, porque una superficie tan grande no se puede expresar en metros cuadrados",
+    "Ninguno, porque un cubo de 2 m de arista tiene 8 metros cuadrados de superficie"
+   ],
+   "correcta": 0,
+   "tip": "Cada cara mide 2 por 2, o sea 4 metros cuadrados, y las seis dan 24. Como un metro cuadrado tiene 10.000 centímetros cuadrados, esos 24 son 240.000: el mismo tamaño dicho de dos maneras.",
+   "id": "mate6-oa18-26"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "¿Cuál gasta más papel: un cubo de 5 cm de arista o una caja de 5 cm, 5 cm y 10 cm?",
+   "opciones": [
+    "La caja, que mide 250 centímetros cuadrados contra los 150 que mide el cubo",
+    "El cubo, porque sus seis caras son iguales y por eso suman más que las de la caja",
+    "Las dos gastan lo mismo, porque las dos tienen seis caras que hay que cubrir",
+    "La caja, pero solo 50 centímetros cuadrados más, porque es 5 cm más alta que el cubo"
+   ],
+   "correcta": 0,
+   "tip": "El cubo tiene seis caras de 25 centímetros cuadrados: 150. La caja tiene dos de 25 y cuatro de 50: 50 más 200 son 250. Tener seis caras no dice nada sobre cuánto mide cada una.",
+   "id": "mate6-oa18-27"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "Una caja tiene dos caras de 30 centímetros cuadrados, dos de 20 y dos de 15. ¿Cuál es su superficie?",
+   "opciones": [
+    "130 centímetros cuadrados",
+    "65 centímetros cuadrados",
+    "390 centímetros cuadrados",
+    "9.000 centímetros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "Se suma una cara de cada par —30 más 20 más 15 son 65— y se duplica, porque cada una está dos veces: 130 centímetros cuadrados. Multiplicar por seis contaría cada cara tres veces.",
+   "id": "mate6-oa18-28"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "¿Puede una caja más alta que otra tener menos superficie?",
+   "opciones": [
+    "Sí: si además es mucho más angosta, sus caras pueden ser más chicas aunque suba más",
+    "No: al aumentar la altura, todas las caras de la caja crecen al mismo tiempo que ella",
+    "No: la superficie de una caja depende únicamente de cuánto mide su altura en total",
+    "Sí, pero solo si las dos cajas guardan exactamente el mismo espacio en su interior"
+   ],
+   "correcta": 0,
+   "tip": "La superficie depende de las tres medidas a la vez. Una caja de 1 por 1 por 10 cm mide 42 centímetros cuadrados y una de 4 por 4 por 2 cm mide 64, aunque la primera sea cinco veces más alta.",
+   "id": "mate6-oa18-29"
+  },
+  {
+   "oa": "MA06 OA 18",
+   "pregunta": "Una lámina cubre justo un cubo de 30 cm de arista. ¿Cuánto mide esa lámina en metros cuadrados?",
+   "opciones": [
+    "0,54 metros cuadrados",
+    "54 metros cuadrados",
+    "5,4 metros cuadrados",
+    "0,054 metros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "Cada cara mide 30 por 30, o sea 900 centímetros cuadrados, y las seis dan 5.400. Como cada metro cuadrado tiene 10.000 centímetros cuadrados, se divide 5.400 en 10.000 y da 0,54.",
+   "id": "mate6-oa18-30"
+  }
+ ]
+}

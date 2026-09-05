@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Ana quiere construir un triángulo con lados de 2, 3 y 9 centímetros. ¿Qué le va a pasar?",
+   "opciones": [
+    "Los lados de 2 y 3 no alcanzan a juntarse sobre el lado de 9",
+    "Le va a salir un triángulo con un ángulo bastante obtuso",
+    "Le va a salir un triángulo alargado y muy delgado, pero cerrado",
+    "Le va a salir un triángulo con sus tres lados de distinta medida"
+   ],
+   "correcta": 0,
+   "tip": "Los dos lados cortos suman 5 y el largo mide 9: aunque se estiren del todo, sus puntas no llegan a tocarse. Para que la figura cierre, los dos lados menores sumados tienen que pasar al mayor.",
+   "id": "mate6-oa12-1"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "¿Con cuál de estos tríos de medidas SÍ se puede construir un triángulo?",
+   "opciones": [
+    "6, 8 y 11 centímetros",
+    "3, 4 y 9 centímetros",
+    "2, 5 y 8 centímetros",
+    "4, 4 y 10 centímetros"
+   ],
+   "correcta": 0,
+   "tip": "El trío de 6, 8 y 11 cierra, porque 6 más 8 son 14 y pasan a 11. Los otros tres no: sus dos lados menores suman menos que el mayor (7 contra 9, 7 contra 8 y 8 contra 10), así que las puntas nunca se alcanzan.",
+   "id": "mate6-oa12-2"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Diego tiene palitos de 5 y 7 centímetros. ¿Cuál de estos palitos NO le sirve como tercer lado?",
+   "opciones": [
+    "13 centímetros",
+    "4 centímetros",
+    "9 centímetros",
+    "11 centímetros"
+   ],
+   "correcta": 0,
+   "tip": "Con lados de 5 y 7, el tercero tiene que medir menos de 12, que es lo que suman los otros dos. El palito de 13 se pasa de esa suma y los otros dos quedan cortos; con 4, 9 u 11 la figura cierra sin problema.",
+   "id": "mate6-oa12-3"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Dos lados de un triángulo miden 4 y 9 centímetros. ¿Cuánto es lo MÁS que puede medir el tercero?",
+   "opciones": [
+    "Menos de 13 centímetros",
+    "Exactamente 13 centímetros, que es la suma de los otros dos",
+    "Menos de 9 centímetros, para no pasar al lado más largo de todos",
+    "Cualquier medida, porque el tercer lado no tiene ningún tope"
+   ],
+   "correcta": 0,
+   "tip": "Los lados de 4 y 9 suman 13, así que el tercero tiene que quedar por debajo de esa suma. Si midiera justo 13, los otros dos quedarían estirados encima de él y no habría figura, solo una línea.",
+   "id": "mate6-oa12-4"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Camila dibujó lados de 6, 6 y 12 centímetros y no le cerró la figura. ¿Por qué?",
+   "opciones": [
+    "Porque 6 más 6 da justo 12 y los dos lados quedan estirados sobre el tercero",
+    "Porque para cerrar un triángulo los tres lados deben medir distinto entre sí",
+    "Porque 12 es el doble de 6 y esa proporción nunca deja cerrar una figura",
+    "Porque le faltó usar el transportador para abrir bien el ángulo de arriba"
+   ],
+   "correcta": 0,
+   "tip": "Cuando los dos lados menores suman exactamente el mayor, sus puntas se juntan, pero encima del tercer lado: queda una línea recta y no un triángulo. Hace falta que sumen más, no lo mismo.",
+   "id": "mate6-oa12-5"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "¿Qué condición deben cumplir tres medidas para que con ellas se pueda construir un triángulo?",
+   "opciones": [
+    "Que los dos lados más cortos sumados den más que el lado más largo",
+    "Que los tres lados midan distinto entre sí, sin repetir ninguna medida",
+    "Que el lado más largo mida menos que el doble del lado más corto",
+    "Que la suma de los tres lados sea mayor que el lado más largo de todos"
+   ],
+   "correcta": 0,
+   "tip": "La condición compara dos lados contra uno, no los tres juntos: los menores sumados tienen que pasar al mayor. Que los tres sumados pasen al mayor se cumple siempre y no informa nada, y sí existen triángulos con lados repetidos.",
+   "id": "mate6-oa12-6"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Con tres palitos de 8, 15 y 6 centímetros, ¿se puede armar un triángulo?",
+   "opciones": [
+    "No, porque 8 más 6 dan 14 y no alcanzan a cubrir los 15",
+    "Sí, y queda un triángulo con sus tres lados de distinta medida",
+    "Sí, pero solo si se ubica el palito de 15 centímetros como base",
+    "No, porque los tres palitos tendrían que medir exactamente lo mismo"
+   ],
+   "correcta": 0,
+   "tip": "Los dos palitos cortos suman 14 y el largo mide 15: falta un centímetro para que las puntas se toquen. Cambiar cuál palito va abajo no arregla nada, porque las medidas siguen siendo las mismas.",
+   "id": "mate6-oa12-7"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Ana y Diego construyen cada uno un triángulo de lados 5, 7 y 9 centímetros. ¿Cómo quedan?",
+   "opciones": [
+    "Iguales, porque con los tres lados dados solo se puede armar un triángulo",
+    "Distintos, porque cada uno puede abrir los ángulos como quiera",
+    "Distintos, porque el orden en que dibujen los lados cambia la figura",
+    "Iguales solo si los dos parten dibujando el lado de 9 centímetros"
+   ],
+   "correcta": 0,
+   "tip": "Con los tres lados fijos, el tercer vértice queda en un solo lugar posible y los ángulos salen solos: no hay nada que elegir. Por eso los dos triángulos son el mismo, aunque uno quede girado respecto del otro.",
+   "id": "mate6-oa12-8"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Con dos lados de 6 y 8 centímetros, sin fijar el ángulo entre ellos, ¿cuántos triángulos salen?",
+   "opciones": [
+    "Muchos, porque al abrir o cerrar ese ángulo el tercer lado cambia",
+    "Uno solo, porque dos lados ya dejan fija la figura completa",
+    "Dos, uno con el ángulo bien abierto y otro con el ángulo cerrado",
+    "Ninguno, porque hacen falta las tres medidas para poder empezar"
+   ],
+   "correcta": 0,
+   "tip": "Los dos lados se pueden abrir como una tijera: mientras más se abren, más se separan las puntas y más largo sale el tercer lado. Cada abertura entrega un triángulo distinto, así que hay muchísimas posibilidades.",
+   "id": "mate6-oa12-9"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Sofía dibuja un ángulo de 50 grados y sobre sus lados marca 4 y 7 centímetros. ¿Qué obtiene?",
+   "opciones": [
+    "Un único triángulo, porque el ángulo y esos dos lados ya lo dejan fijo",
+    "Muchos triángulos distintos, porque falta saber cuánto mide el tercer lado",
+    "Dos triángulos, según hacia qué lado del ángulo dibuje el tercer lado",
+    "Ningún triángulo, porque con un ángulo de 50 grados la figura no cierra"
+   ],
+   "correcta": 0,
+   "tip": "Al fijar el ángulo y los dos lados que lo forman, las dos puntas quedan en un lugar determinado y solo falta unirlas. El tercer lado no se elige: sale solo, y siempre el mismo.",
+   "id": "mate6-oa12-10"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Benjamín sabe que su triángulo tiene ángulos de 60, 60 y 60 grados, pero no los lados. ¿Puede dibujarlo?",
+   "opciones": [
+    "Sí, muchos: todos con la misma forma, pero de distinto tamaño",
+    "Sí, pero uno solo, porque los tres ángulos dejan fija la figura",
+    "No, porque conociendo solo los ángulos no se puede empezar a dibujar",
+    "Sí, uno solo, y siempre va a tener 6 centímetros por cada lado"
+   ],
+   "correcta": 0,
+   "tip": "Los ángulos dicen qué tan abierta es la figura, pero no qué tan grande: se puede dibujar uno chiquitito y otro enorme con esos mismos ángulos. Para que quede uno solo hay que dar alguna medida de lado.",
+   "id": "mate6-oa12-11"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "¿Qué datos alcanzan para que dos personas dibujen exactamente el mismo triángulo?",
+   "opciones": [
+    "Las medidas de sus tres lados",
+    "Las medidas de sus tres ángulos",
+    "Las medidas de dos de sus lados",
+    "La medida de un lado y su perímetro"
+   ],
+   "correcta": 0,
+   "tip": "Los tres lados dejan el triángulo completamente fijo. Los tres ángulos solo fijan la forma y no el tamaño; dos lados dejan libre el ángulo entre ellos; y un lado con el perímetro no dice cómo se reparten los otros dos.",
+   "id": "mate6-oa12-12"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Un triángulo tiene lados de 7, 7 y 4 centímetros. ¿Cómo se clasifica según sus lados?",
+   "opciones": [
+    "Isósceles",
+    "Escaleno",
+    "Equilátero",
+    "Rectángulo"
+   ],
+   "correcta": 0,
+   "tip": "Tiene dos lados iguales y uno distinto, y a eso se le llama isósceles. Escaleno es cuando los tres miden distinto y equilátero cuando los tres miden lo mismo. Rectángulo no es una clase por lados, sino por ángulos.",
+   "id": "mate6-oa12-13"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Un triángulo tiene un ángulo de 100 grados. ¿Cómo se clasifica según sus ángulos?",
+   "opciones": [
+    "Obtusángulo, porque tiene un ángulo mayor que 90 grados",
+    "Rectángulo, porque tiene un ángulo bastante mayor que 90 grados",
+    "Acutángulo, porque sus otros dos ángulos son menores que 90 grados",
+    "Equilátero, porque un ángulo de 100 grados obliga a que los lados sean iguales"
+   ],
+   "correcta": 0,
+   "tip": "Basta con que UN ángulo pase de 90 grados para que el triángulo sea obtusángulo. Rectángulo es tener un ángulo de 90 exactos, y acutángulo exige que los tres sean menores que 90, no solo dos de ellos.",
+   "id": "mate6-oa12-14"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "¿Puede un mismo triángulo ser isósceles y rectángulo a la vez?",
+   "opciones": [
+    "Sí, porque una clasificación mira los lados y la otra mira los ángulos",
+    "No, porque cada triángulo recibe una sola clasificación posible",
+    "Sí, pero únicamente si además sus tres lados miden lo mismo",
+    "No, porque al tener un ángulo recto sus tres lados quedan distintos"
+   ],
+   "correcta": 0,
+   "tip": "Son dos clasificaciones independientes: por lados (equilátero, isósceles, escaleno) y por ángulos (acutángulo, rectángulo, obtusángulo). Un triángulo con dos lados iguales y un ángulo recto cumple las dos a la vez.",
+   "id": "mate6-oa12-15"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Ana dibujó un triángulo con sus tres lados de 5 centímetros. ¿Cómo son sus ángulos?",
+   "opciones": [
+    "Los tres miden lo mismo",
+    "Uno mide 90 grados y los otros dos son menores",
+    "Los tres miden distinto entre sí",
+    "Uno es obtuso y los otros dos son agudos"
+   ],
+   "correcta": 0,
+   "tip": "A lados iguales se oponen ángulos iguales, así que si los tres lados miden lo mismo los tres ángulos también. Por eso a un triángulo de lados iguales no le puede sobresalir ningún ángulo por encima de los otros.",
+   "id": "mate6-oa12-16"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Ana dibujó un triángulo de lados 8, 8 y 8; Diego, uno de 8, 8 y 3. ¿En qué se parecen?",
+   "opciones": [
+    "Los dos tienen al menos dos lados iguales",
+    "Los dos tienen sus tres ángulos iguales entre sí",
+    "Los dos tienen sus tres lados de distinta medida",
+    "Los dos tienen un ángulo recto por usar el lado de 8"
+   ],
+   "correcta": 0,
+   "tip": "En los dos hay un par de lados de 8 centímetros, así que los dos tienen al menos dos lados iguales. Donde se diferencian es en el tercero: el de Ana lo tiene igual a los otros y el de Diego, mucho más corto.",
+   "id": "mate6-oa12-17"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Camila midió los ángulos de su triángulo: 30, 60 y 90 grados. ¿Cómo son sus lados?",
+   "opciones": [
+    "Los tres miden distinto entre sí",
+    "Dos miden lo mismo y el tercero es distinto",
+    "Los tres miden exactamente lo mismo",
+    "Los dos lados del ángulo recto miden lo mismo"
+   ],
+   "correcta": 0,
+   "tip": "A ángulos distintos se oponen lados distintos, y aquí los tres ángulos son diferentes. Los dos lados del ángulo recto solo serían iguales si los otros dos ángulos midieran lo mismo, y aquí uno es de 30 y el otro de 60.",
+   "id": "mate6-oa12-18"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "En un triángulo de lados 5, 9 y 12 centímetros, ¿a qué lado se opone el ángulo más grande?",
+   "opciones": [
+    "Al lado de 12 centímetros",
+    "Al lado de 5 centímetros",
+    "Al lado de 9 centímetros",
+    "A los tres por igual, porque los ángulos no dependen de los lados"
+   ],
+   "correcta": 0,
+   "tip": "El lado más largo es el que queda justo enfrente del ángulo más abierto: mientras más se abre un ángulo, más se separan sus puntas y más largo sale el lado que las une. Aquí ese lado es el de 12 centímetros.",
+   "id": "mate6-oa12-19"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Ana construyó un triángulo con dos lados de 6 centímetros. ¿Qué pasa con sus ángulos?",
+   "opciones": [
+    "Los dos ángulos opuestos a esos lados miden lo mismo",
+    "El ángulo que queda entre esos dos lados mide siempre 60 grados",
+    "Los tres ángulos quedan obligatoriamente de la misma medida",
+    "Ninguno de los tres ángulos queda igual a otro"
+   ],
+   "correcta": 0,
+   "tip": "A lados iguales se oponen ángulos iguales, así que los dos ángulos de la base coinciden. El de arriba se puede abrir o cerrar libremente, y solo cuando los tres lados son iguales los tres ángulos miden lo mismo.",
+   "id": "mate6-oa12-20"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Ana tiene un triángulo de lados 4, 5 y 6; Diego, uno de 4, 5 y 8. ¿Cuál tiene el ángulo más abierto?",
+   "opciones": [
+    "El de Diego, porque con los mismos lados de 4 y 5 su tercer lado se estira más",
+    "El de Ana, porque sus tres lados son más parecidos entre sí",
+    "Los dos por igual, porque comparten los lados de 4 y de 5 centímetros",
+    "No se puede saber sin medir los dos con un transportador"
+   ],
+   "correcta": 0,
+   "tip": "Los dos parten de los mismos lados de 4 y 5, que funcionan como una tijera: para que el tercer lado llegue a 8 hay que abrirla mucho más que para llegar a 6. Por eso el ángulo de Diego es el más abierto.",
+   "id": "mate6-oa12-21"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "¿Qué se puede afirmar de dos triángulos que tienen sus tres lados iguales, uno a uno?",
+   "opciones": [
+    "Que son exactamente iguales, aunque estén girados o dados vuelta",
+    "Que tienen la misma forma, pero pueden ser de distinto tamaño",
+    "Que sus ángulos pueden salir distintos si se dibujaron por separado",
+    "Que son iguales solo si además se dibujaron en la misma posición"
+   ],
+   "correcta": 0,
+   "tip": "Con los tres lados iguales, los ángulos salen solos y también coinciden: los dos triángulos son el mismo. Girarlo o darlo vuelta cambia cómo se ve en la hoja, pero no cambia ninguna de sus medidas.",
+   "id": "mate6-oa12-22"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Con lados de 5 y 7, Ana abre un ángulo de 40 grados y Diego uno de 100. ¿Quién tiene tercer lado mayor?",
+   "opciones": [
+    "Diego, porque mientras más se abre ese ángulo más se separan las puntas",
+    "Ana, porque un ángulo pequeño deja el triángulo más estirado a lo largo",
+    "Los dos igual, porque el tercer lado depende solo de los otros dos lados",
+    "No se pueden comparar, porque cada uno usó una abertura distinta"
+   ],
+   "correcta": 0,
+   "tip": "Los lados de 5 y 7 funcionan como una tijera con la punta en el vértice: al abrirla, las otras dos puntas se alejan y el lado que las une se alarga. Con 100 grados esa separación es mucho mayor que con 40.",
+   "id": "mate6-oa12-23"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Ana ya dibujó un lado y necesita abrir desde su punta un ángulo de 65 grados. ¿Qué instrumento usa?",
+   "opciones": [
+    "El transportador",
+    "El compás",
+    "La regla graduada",
+    "La escuadra"
+   ],
+   "correcta": 0,
+   "tip": "El transportador es el único que trae la escala en grados para abrir un ángulo con esa precisión. El compás traslada largos, la regla mide centímetros y la escuadra solo trae ángulos ya fijos, como el de 90 grados.",
+   "id": "mate6-oa12-24"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Diego trazó el lado de 9 centímetros. ¿Cómo ubica el tercer vértice si los otros miden 6 y 7?",
+   "opciones": [
+    "Trazando con el compás un arco de 6 desde una punta y otro de 7 desde la otra",
+    "Midiendo 6 y 7 con la regla hacia arriba desde el centro del lado de 9",
+    "Abriendo con el transportador un ángulo de 60 grados en cada punta del lado",
+    "Dividiendo el lado de 9 en tres partes iguales y levantando una línea en cada marca"
+   ],
+   "correcta": 0,
+   "tip": "El vértice que falta tiene que quedar a 6 centímetros de una punta y a 7 de la otra al mismo tiempo. Cada arco marca todos los puntos que cumplen una de esas condiciones, y donde se cruzan está el único que cumple las dos.",
+   "id": "mate6-oa12-25"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Camila quiere un triángulo con dos lados iguales. ¿Qué hace con el compás para asegurarlo?",
+   "opciones": [
+    "Lo abre una sola vez y con esa misma abertura marca los dos lados",
+    "Lo abre distinto para cada lado y después compara los dos con la regla",
+    "Lo usa para abrir el ángulo de arriba en exactamente 60 grados",
+    "Lo apoya en el punto medio del lado de abajo y traza un círculo completo"
+   ],
+   "correcta": 0,
+   "tip": "Mientras el compás no se mueva, la abertura es exactamente la misma, así que los dos lados salen iguales sin necesidad de leer ningún número. Volver a medir con la regla agrega error en vez de quitarlo.",
+   "id": "mate6-oa12-26"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Ana quiere lados de 5, 6 y 7. Trazó el de 5, midió 6 con la regla y unió las puntas. ¿Qué falló?",
+   "opciones": [
+    "Que unió las puntas sin comprobar que el último lado midiera 7 centímetros",
+    "Que empezó por el lado más corto en vez de partir por el más largo",
+    "Que usó la regla, cuando los lados se marcan solo con el transportador",
+    "Que no midió antes los ángulos, que son los que dejan fija la figura"
+   ],
+   "correcta": 0,
+   "tip": "Con tres lados dados hay tres condiciones que cumplir, no dos. Al unir las puntas al azar, el tercer lado sale del largo que quede y casi nunca es el pedido: por eso se cruzan dos arcos de compás en vez de cerrar a ojo.",
+   "id": "mate6-oa12-27"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "¿Qué instrumento permite comparar si dos triángulos tienen lados iguales sin usar números?",
+   "opciones": [
+    "El compás, abriéndolo en un lado y llevándolo tal cual hasta el otro",
+    "El transportador, apoyándolo sobre cada uno de los lados que se comparan",
+    "La escuadra, que trae en su borde una escala para comparar largos",
+    "Ninguno, porque comparar dos largos exige siempre anotar sus medidas"
+   ],
+   "correcta": 0,
+   "tip": "El compás guarda una distancia sin traducirla a centímetros: se abre en un lado y se lleva al otro para ver si calza. El transportador solo sirve para ángulos, y la escuadra no reemplaza esa comparación directa.",
+   "id": "mate6-oa12-28"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "¿Qué instrumento hay que usar para saber si un triángulo ya dibujado es rectángulo?",
+   "opciones": [
+    "El transportador, para comprobar si alguno de sus ángulos llega a 90 grados",
+    "El compás, para comprobar si dos de sus lados tienen la misma abertura",
+    "La regla, para comprobar si el lado más largo mide el doble del más corto",
+    "Ninguno, porque un triángulo rectángulo se reconoce siempre a simple vista"
+   ],
+   "correcta": 0,
+   "tip": "Ser rectángulo depende de los ángulos, así que hay que medirlos con el transportador. Un ángulo de 88 grados se ve casi igual que uno de 90 a simple vista, y esa pequeña diferencia es justo la que decide.",
+   "id": "mate6-oa12-29"
+  },
+  {
+   "oa": "MA06 OA 12",
+   "pregunta": "Diego construyó su triángulo y quiere revisar si le quedó isósceles. ¿Qué le conviene hacer?",
+   "opciones": [
+    "Medir sus tres lados con la regla y ver si dos de ellos coinciden",
+    "Medir sus tres ángulos y ver si los tres coinciden entre sí",
+    "Revisar si el triángulo tiene por lo menos un ángulo recto",
+    "Comprobar que sus tres lados midan distinto entre sí"
+   ],
+   "correcta": 0,
+   "tip": "Isósceles se define por los lados: basta con que dos de ellos coincidan. Que los tres ángulos coincidan describe a un equilátero, tener un ángulo recto lo hace rectángulo y tener los tres lados distintos, escaleno.",
+   "id": "mate6-oa12-30"
+  }
+ ]
+}

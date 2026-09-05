@@ -126,3 +126,25 @@ Historia no rinde nada: los contenidos son completamente distintos por nivel.
 Con 4°, 5° y 6° por venir, y contando la reutilización que este estándar habilita, quedan del
 orden de **60 a 70 imágenes más** para los seis cursos completos. Conviene saberlo antes del
 cuarto curso, no después.
+
+## Historia de 5° — el préstamo va por TEMA, no por orden (03/09/2026)
+
+5° nació con arte prestado, igual que 3° y 7°, y al cablear Historia se probó primero el préstamo
+**mecánico** (los seis capítulos tomando las seis portadas de Historia de 7° en orden). Se veía mal
+y **solo se notó mirando la captura**: el capítulo «Chile y sus paisajes» quedaba ilustrado con
+columnas romanas, porque esa es la portada del capítulo de Roma de 7°.
+
+Las seis pasaron a elegirse por cercanía temática, y cinco calzan bien:
+
+| Capítulo de 5° | Portada prestada | De |
+|---|---|---|
+| Descubrimiento y conquista | `portada-hist-cap2.png` | 8° · Los europeos llegan a América |
+| La Colonia | `portada-hist-cap3.png` | 8° · El mundo colonial |
+| Chile y sus paisajes | `portada-hist3-cap1.png` | 3° · Nuestro planeta |
+| Derechos y deberes | `portada-hist3-cap4.png` | 3° · Mis deberes y mis derechos |
+| Vivir en comunidad | `portada-hist3-cap5.png` | 3° · Vivir juntos |
+| Opinar con fundamento | `portada-hist7-cap5.png` | 7° · Ciudadanía, de Atenas a hoy |
+
+**La regla que queda:** al prestar arte entre cursos se busca **de qué trata** la portada, no el
+número de capítulo. Cuesta lo mismo y evita que un dibujo contradiga el título que tiene al lado.
+Y el villano de Historia de 5° —**El Rumor**— usa el arte de 7°, declarado en el código.

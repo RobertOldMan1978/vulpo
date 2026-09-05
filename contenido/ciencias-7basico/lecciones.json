@@ -38,6 +38,26 @@
      "md": "La presión es otra cosa que la fuerza, y ahí se confunde casi todo el mundo: es la misma fuerza repartida en más o menos superficie. Por eso un cuchillo afilado corta mejor que uno romo aunque empujes igual, y por eso las raquetas para la nieve no se hunden."
     },
     {
+     "t": "diagrama",
+     "intro": "Fuerza y presión no son lo mismo, y ahí se confunde casi todo el mundo.",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Diferencia entre fuerza y presión",
+      "items": [
+       {
+        "titulo": "Fuerza",
+        "texto": "Puede mover, deformar, frenar o sostener."
+       },
+       {
+        "titulo": "Presión",
+        "texto": "La misma fuerza repartida en más o menos superficie."
+       }
+      ],
+      "etiqueta": "Por eso un cuchillo afilado corta mejor"
+     }
+    },
+    {
      "t": "texto",
      "md": "En este capítulo vas a ver cómo se representan las fuerzas, cómo se suman cuando actúan varias a la vez, y qué efectos tiene la presión en los sólidos, los líquidos y los gases."
     }
@@ -57,6 +77,27 @@
      "md": "Ese movimiento es el que explica de una sola vez cosas que parecen sueltas: dónde hay volcanes, dónde tiembla, cómo se levantó la cordillera y por qué Chile tiene las tres cosas."
     },
     {
+     "t": "diagrama",
+     "intro": "Un solo movimiento explica cosas que parecen sueltas.",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "desc": "De las placas a los volcanes, los sismos y la cordillera",
+      "items": [
+       {
+        "titulo": "Las placas se mueven"
+       },
+       {
+        "titulo": "Chocan y se rozan"
+       },
+       {
+        "titulo": "Volcanes, sismos y cordillera"
+       }
+      ],
+      "etiqueta": "Y Chile tiene las tres"
+     }
+    },
+    {
      "t": "texto",
      "md": "En este capítulo vas a ver el modelo de las placas, la actividad volcánica y sísmica, cómo se forman y se transforman las rocas, y qué hace que el clima sea distinto en cada zona del planeta."
     }
@@ -74,6 +115,30 @@
     {
      "t": "texto",
      "md": "Virus, bacterias y hongos son tres cosas distintas, y esa diferencia importa: un antibiótico actúa sobre bacterias y no hace nada contra un virus."
+    },
+    {
+     "t": "diagrama",
+     "intro": "Tres cosas distintas, y la diferencia importa.",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Virus, bacterias y hongos",
+      "items": [
+       {
+        "titulo": "Virus",
+        "texto": "Necesitan una célula para multiplicarse."
+       },
+       {
+        "titulo": "Bacterias",
+        "texto": "Viven solas. Muchas son necesarias."
+       },
+       {
+        "titulo": "Hongos",
+        "texto": "Levaduras y mohos. Hacen el pan."
+       }
+      ],
+      "etiqueta": "Un antibiótico no hace nada contra un virus"
+     }
     },
     {
      "t": "texto",

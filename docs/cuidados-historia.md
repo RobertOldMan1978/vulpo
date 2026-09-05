@@ -75,6 +75,24 @@ Cuando el OA pide explicar un proceso, la clave tiene que ser el factor que el O
 que la fecha **sea** el contenido (1492, 1810). Preferir el orden y la relación: qué vino antes,
 qué causó qué.
 
+**6. Un OA que pide "su región" o "su localidad" no se puede escribir asumiendo cuál es.**
+(`HI06 OA 13`, y va a repetirse en otros niveles.) El banco es único para todo Chile: no puede
+saber en qué región vive cada alumno. La salida es que **cada pregunta dé la región o localidad
+concreta dentro del propio enunciado** ("La Región de Valparaíso tiene puertos, viñedos y el
+Congreso Nacional. ¿Cuál de esos es un rasgo económico?"), variando el ejemplo entre distintas
+zonas de Chile para no sesgar el banco hacia una sola realidad geográfica. Lo que se mide es la
+capacidad de clasificar/caracterizar, que es transferible a la región real del alumno sin
+necesidad de acertarla.
+
+**7. Los temas políticamente vigentes se miden en hechos, nunca en posturas.** El quiebre y la
+recuperación de la democracia (`HI06 OA 08`) y la Constitución (`HI06 OA 16`) son currículum
+oficial y de los pocos temas donde Chile sigue dividido hoy. La regla que funcionó: **fechas,
+nombres, instituciones y resultados verificables sí; juicios sobre si algo estuvo justificado,
+quién tuvo la razón, o si la Constitución debería cambiar, nunca**. Donde el propio OA exige
+"considerar distintos puntos de vista", se pregunta por el **hecho de que existen** esas visiones
+distintas, no por cuál es la correcta. Verificado con un barrido de palabras clave sensibles
+(plebiscito, 1980, constituyente, etc.) antes de dar por buena la tanda de `HI06 OA 16`.
+
 ---
 
 ## 🟠 El solape entre OA, que en Historia es la trampa silenciosa

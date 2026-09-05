@@ -136,14 +136,16 @@ año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron co
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
 están hoy en una expedición jugable, el resto es reserva.
 
-> **Estado de aprobación (03/09/2026): 7.805 aprobadas de 9.035 escritas.** Las **1.230 de 5°**
-> —810 de Matemática y 420 de Ciencias— son lo único pendiente: nacen `revisada:false`.
-> Hasta el 31/08 el banco estaba firmado entero (7.805 de 7.805), incluidas las 60 del
-> Vocabulario de 3°. Pero **cómo se aprobó cada banco no es lo mismo, y hay que saberlo antes de
-> decírselo a un colegio:** los 2.536 de 8° y los módulos de apoyo se revisaron **pregunta por
-> pregunta**; los de 3° y 7° se aprobaron **por muestreo** —8 de cada 30 por objetivo, criterio
-> de `docs/aprobacion-pedagogica.md`—. Por eso la landing dice *"aprobadas por un profesor,
-> objetivo por objetivo"* y **nunca** *"una a una"*: el 100% es de cobertura, no de método.
+> **Estado de aprobación (05/09/2026): 9.035 preguntas aprobadas de 13.565 escritas**
+> (más 99 de 130 mini-clases/introducciones). Lo pendiente son **las 4.530 de 5° y 6° básico**:
+> Historia (660) y Lenguaje (900) de 5°, y las cuatro asignaturas completas de 6° —Matemática
+> (720), Ciencias (540), Historia (780) y Lenguaje (930)—; nacen todas `revisada:false`.
+> Matemática y Ciencias de 5° (1.230) sí están aprobadas. Pero **cómo se aprobó cada banco no es
+> lo mismo, y hay que saberlo antes de decírselo a un colegio:** los 2.536 de 8° y los módulos de
+> apoyo se revisaron **pregunta por pregunta**; los de 3° y 7° se aprobaron **por muestreo** —8
+> de cada 30 por objetivo, criterio de `docs/aprobacion-pedagogica.md`—. Por eso la landing dice
+> *"aprobadas por un profesor, objetivo por objetivo"* y **nunca** *"una a una"*: el 100% es de
+> cobertura, no de método.
 
 **Herramientas dev:** tablero con clave
 (`dev/tablero.html`) y scripts (`consolidar-pool-nivel`, `aplicar-revisadas`,
@@ -8474,3 +8476,107 @@ campañas reventarían igual—. Primero el motor y el contenido, después el fo
   **re-aplicar el esquema con el nivel 05**; y el arte propio de 5° (villanos y portadas de
   capítulo, hoy prestado y declarado).
 - **De 5° faltan Historia (22 OA) y Lenguaje (30)**, con su reparto en capítulos ya aprobado.
+
+### Sesión 91 (2026-09-04 y 05) — 6° básico queda con su banco completo: 2.970 preguntas
+Sesión larga, corrida en `/loop` mientras Roberto aprobaba en paralelo. Al llegar, Historia y
+Lenguaje de 5° ya estaban escritos (660 y 900 preguntas, del cierre de la Sesión 90) y
+Matemática de 6° llevaba 20 de 24 objetivos. Al terminar, **6° básico tiene sus cuatro
+asignaturas completas y auditadas: 99 OA, 2.970 preguntas.**
+
+**Primero, lo que Roberto aprobó de vuelta.** Bajó `revisadas.json` del tablero y lo aplicó con
+`aplicar-revisadas.py`: **Matemática de 5° (810) y Ciencias de 5° (420) quedaron aprobadas**,
+más 21 mini-clases/introducciones. El proyecto pasó de 7.805 a **9.035 de 10.595** preguntas
+aprobadas (antes de sumar el banco nuevo de esta sesión).
+
+#### Matemática de 6° — cerrada: 24/24, 720 preguntas
+
+Los 4 objetivos que faltaban (ángulos con transportador, ángulos en paralelas, comparar
+distribuciones, gráficos de barra doble/circular) se escribieron con las tres convenciones
+fijadas la sesión anterior (grados en palabra, unidades cuadradas/cúbicas en palabra, nunca `x`
+como incógnita). Al consolidar, `auditar-solape-oa.py` marcó **13 pares** sobre el umbral —se
+revisaron **uno por uno**: 12 eran variedad legítima de plantilla (mismo patrón de pregunta
+midiendo objetos distintos: cruce de rectas vs. cuadrilátero, área de la red vs. superficie
+total, triángulo simple vs. combinado con paralelas — el `nota_evaluacion` del propio `oa.json`
+ya adelantaba que varios OA de esta unidad son "construir" medidos por reconocimiento del
+resultado, lo que produce este solape estructural) y **1 duplicado real**, corregido: dos
+preguntas de ángulos con la misma anécdota ("Diego dice que 90° es agudo porque se ve chico")
+solo con distinto personaje.
+
+#### Ciencias de 6° — cerrada: 18/18, 540 preguntas
+
+**Tanda de validación primero** (OA 04/05 sistema reproductor y pubertad, contenido sensible que
+hay que conversar con el colegio; OA 07/13 drogas y cambios de estado, ambos con verbo de
+indagación) antes de escalar a los 18. Salió limpia, y dejó dos lecciones nuevas en
+`docs/cuidados-ciencias.md`: el verbo **"investigar/demostrar experimentalmente" combinado con
+el límite de 120 caracteres de 6° es genuinamente difícil**, no solo la trampa de siempre —narrar
+un experimento con sujeto, acción y resultado en una frase corta cuesta, y hay que anticiparlo,
+no solo corregirlo—; y `CN06 OA 07` (drogas) **pide tercero-con-nombre aunque no esté en la
+lista de OA actitudinales del `oa.json`** — el criterio es el contenido, no la etiqueta.
+
+#### Historia de 6° — cerrada: 26/26, 780 preguntas
+
+El currículum de Historia de 6° trae los dos casos más difíciles de todo el banco de 6°:
+
+- **`HI06 OA 13`** pide "las características de **su** región y **su** localidad" — literal, la
+  del alumno. Un banco único para todo Chile no puede saberlo. Se resolvió dando la región o
+  localidad **dentro del propio enunciado** ("La Región de Valparaíso tiene puertos, viñedos y
+  el Congreso Nacional. ¿Cuál es un rasgo económico?"), variando el ejemplo entre zonas de Chile:
+  lo que se mide es la capacidad de clasificar, transferible a la región real de cada niño sin
+  necesidad de acertarla. Quedó documentado en `docs/cuidados-historia.md` como regla general,
+  porque **va a repetirse en otros niveles**.
+- **`HI06 OA 08`** —comparar visiones sobre el quiebre de la democracia, la dictadura y la
+  recuperación democrática— es el objetivo más delicado del currículum de 6° a 8°: Chile sigue
+  dividido en esto hoy. La regla que funcionó: **fechas, nombres, instituciones y resultados
+  verificables sí; juicios sobre si algo estuvo justificado o quién tuvo la razón, nunca**.
+  Donde el propio OA exige "considerar distintos puntos de vista", se preguntó por el **hecho de
+  que existen** esas visiones, no por cuál es la correcta. Se verificó con un barrido de palabras
+  clave sensibles (plebiscito, 1980, constituyente) que ninguna de las 30 preguntas de `HI06 OA
+  16` (la Constitución) tocara el debate actual sobre reemplazarla.
+
+Al consolidar, un solo par sobre el umbral (ángulos idénticos con "cruce"/"cuadrilátero", ya
+existente en Matemática, más el volcán compartido entre dos OA de Geografía) — legítimos.
+
+#### Lenguaje de 6° — cerrada: 31/31, 930 preguntas
+
+La más larga de las cuatro: 14 de sus 31 OA son de producción o de hábito. El caso más difícil
+del banco completo de 6° apareció aquí:
+
+- **`LE06 OA 01`** — "leer de manera fluida" — mide pronunciación, decodificación automática y
+  prosodia. Las dos primeras son habilidades **orales/físicas que ningún quiz de texto puede
+  evaluar de forma honesta**, mismo criterio que excluyó `LE03 OA 16` (caligrafía) o `LE07 OA 12`
+  (escritura creativa libre) en niveles anteriores. Se acotó el banco al **único ángulo medible**
+  —qué prosodia/pausa/entonación indica cada signo de puntuación al leer en voz alta— y esa
+  acotación **rindió 30 preguntas de calidad real sin relleno**, verificado explícitamente por
+  el agente antes de entregar.
+- Los 13 OA de producción restantes (escribir narraciones, planificar textos, exponer
+  oralmente, dramatizar, comentar lecturas) se midieron con el patrón ya establecido en 3°/7°/8°:
+  la pregunta plantea el trabajo **ya hecho por un tercero con nombre** y pide reconocer la buena
+  decisión, nunca "hazlo tú". `LE06 OA 29` (exposiciones orales) tiene una docena de criterios,
+  la mitad físicos (volumen, gestos, exponer sin leer) — se acotó a los seis medibles
+  (estructura, cohesión, fundamentación, vocabulario/registro, material de apoyo, conjugación),
+  con cuidado explícito de no repetir las preguntas de participios irregulares que ya cubre
+  `LE06 OA 21`.
+
+#### Tres cortes de sesión, cero preguntas perdidas
+
+El límite de sesión de Claude mató agentes en vuelo **tres veces** durante esta sesión (una vez
+con 4 agentes de Historia, otra con 3 de Lenguaje). Las tres veces se aplicó la regla de la
+Sesión 89: **mirar el disco antes de relanzar nada**. Las tres veces, lo que ya estaba escrito
+seguía ahí — en dos casos completo y solo le faltaba la corrección de sesgo de largo (que un
+agente de reparación puntual completó sin rehacer el archivo), y en el tercero solo faltaba el
+archivo que aún no se había empezado. **Cero preguntas se perdieron ni se reescribieron de más**
+en ninguno de los tres cortes.
+
+#### Verificación y cierre
+
+Los cuatro bancos pasan `revisar-tanda.py`, `auditar-numerico.py`, `auditar-solape-oa.py` y
+`validar-oa-json.py` en cero errores. El tablero se regeneró. El proyecto queda en
+**13.565 preguntas escritas** (9.035 aprobadas, todas las de 5° y 6° pendientes salvo
+Matemática y Ciencias de 5°) y **130 mini-clases/introducciones** (99 aprobadas).
+
+- **Pendiente inmediato:** **cablear `6to/index.html`**, que no existe todavía — es clonar el
+  patrón de `5to/index.html` (las 4 campañas, `META_OA` con 99 entradas, `ORDEN_ASIG`/
+  `DIF_ASIGS`, villanos con arte prestado y declarado, reparto en capítulos por asignatura).
+- **Pendiente de Roberto:** la aprobación pedagógica de 5° y 6° (4.530 preguntas, las únicas del
+  proyecto sin firmar); el arte propio de ambos niveles; y después, **4° básico** (Bloque B3,
+  92 OA, ~2.760 preguntas, el único que lleva voz y dibujos) para cerrar el Bloque B entero.

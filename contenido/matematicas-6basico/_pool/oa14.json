@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "¿Qué es lo que caracteriza a un teselado del plano?",
+   "opciones": [
+    "Que las figuras cubren toda la superficie sin dejar huecos ni montarse entre ellas",
+    "Que las figuras se repiten dejando entre una y otra espacios iguales y ordenados",
+    "Que todas las figuras usadas tienen que ser exactamente del mismo color y tamaño",
+    "Que las figuras se van achicando de a poco a medida que se alejan del centro"
+   ],
+   "correcta": 0,
+   "tip": "Un teselado cubre la superficie completa: no puede quedar ni un hueco ni una zona con dos figuras encima. Dejar espacios entre las piezas, aunque sean parejos, ya no es teselar.",
+   "id": "mate6-oa14-1"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "Camila pegó baldosas y entre ellas quedaron pequeños espacios blancos. ¿Logró un teselado?",
+   "opciones": [
+    "No, porque un teselado no puede dejar ningún hueco sin cubrir",
+    "Sí, siempre que todos los espacios que quedaron midan lo mismo entre sí",
+    "Sí, porque usó baldosas iguales y las ordenó formando filas parejas",
+    "No, porque para teselar hay que usar por lo menos dos figuras distintas"
+   ],
+   "correcta": 0,
+   "tip": "Teselar es cubrir la superficie entera, así que los huecos rompen la condición aunque sean parejos. Y no importa si se usa una figura o varias: con los cuadrados solos ya se tesela.",
+   "id": "mate6-oa14-2"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "Diego armó un mosaico y varias piezas quedaron montadas una encima de otra. ¿Qué regla rompió?",
+   "opciones": [
+    "La de no superponer: cada punto tiene que quedar cubierto una sola vez",
+    "La de usar siempre figuras del mismo tamaño para que todas calcen entre sí",
+    "La de girar cada pieza antes de pegarla para que encaje con la vecina",
+    "La de empezar el mosaico siempre desde una de las esquinas de la superficie"
+   ],
+   "correcta": 0,
+   "tip": "En un teselado cada punto queda tapado exactamente una vez: ni cero veces, que sería un hueco, ni dos, que sería una superposición. Girar las piezas o elegir por dónde empezar es libre.",
+   "id": "mate6-oa14-3"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "¿Cuál de estos ejemplos de la vida diaria es un teselado?",
+   "opciones": [
+    "Las celdas de un panal de abejas, que encajan sin dejar espacio libre",
+    "Las monedas guardadas en un tarro, apiladas una encima de la otra",
+    "Las estrellas del cielo, repartidas por todo el firmamento de noche",
+    "Los peldaños de una escalera, separados por la misma altura cada uno"
+   ],
+   "correcta": 0,
+   "tip": "El panal cubre toda la superficie con hexágonos que calzan perfectamente, sin huecos ni piezas montadas. Las monedas se apilan, los peldaños se separan y entre las estrellas queda cielo vacío.",
+   "id": "mate6-oa14-4"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "¿Cuál de estas figuras regulares NO alcanza a teselar el plano ella sola?",
+   "opciones": [
+    "El pentágono regular",
+    "El triángulo equilátero",
+    "El cuadrado",
+    "El hexágono regular"
+   ],
+   "correcta": 0,
+   "tip": "Alrededor de un punto los ángulos deben sumar 360 grados justos. Cada esquina del pentágono regular mide 108: tres dan 324 y cuatro se pasan a 432. El triángulo, el cuadrado y el hexágono sí calzan.",
+   "id": "mate6-oa14-5"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "Cada esquina de un hexágono regular mide 120 grados. ¿Cuántos se juntan alrededor de un punto?",
+   "opciones": [
+    "Tres, porque 120 sumado tres veces da los 360 grados de una vuelta",
+    "Dos, porque con dos hexágonos ya queda cubierto todo el contorno del punto",
+    "Cuatro, igual que los cuadrados que se juntan en la esquina de un piso",
+    "Seis, porque el hexágono tiene seis lados y cada lado aporta una pieza"
+   ],
+   "correcta": 0,
+   "tip": "Una vuelta completa mide 360 grados y cada hexágono aporta 120, así que caben exactamente tres. Con dos quedarían 120 grados de hueco y con cuatro las piezas se montarían unas sobre otras.",
+   "id": "mate6-oa14-6"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "Cada esquina de un pentágono regular mide 108 grados. ¿Por qué no se puede teselar solo con ellos?",
+   "opciones": [
+    "Porque 108 no cabe una cantidad exacta de veces en los 360 grados de la vuelta",
+    "Porque el pentágono tiene un número impar de lados y eso impide que calcen",
+    "Porque sus lados resultan demasiado cortos comparados con los de un hexágono",
+    "Porque el pentágono regular no tiene todos sus ángulos de la misma medida"
+   ],
+   "correcta": 0,
+   "tip": "Tres pentágonos alrededor de un punto dan 324 grados y dejan un hueco de 36; con cuatro se llega a 432 y se montan. Que un polígono sea regular significa justamente que todos sus ángulos miden lo mismo.",
+   "id": "mate6-oa14-7"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "Matías juntó cinco triángulos equiláteros de 60 grados en un vértice. ¿Qué le falta?",
+   "opciones": [
+    "Un triángulo más, porque cinco dan 300 grados y faltan 60",
+    "Nada, porque con cinco triángulos la vuelta ya está completa",
+    "Dos triángulos más, porque en cada vértice se juntan siete",
+    "Un cuadrado, porque el hueco que le queda mide 90 grados"
+   ],
+   "correcta": 0,
+   "tip": "Cinco triángulos de 60 grados suman 300, y para la vuelta completa faltan 60: exactamente un triángulo más. Por eso en un teselado de triángulos equiláteros se juntan seis en cada vértice.",
+   "id": "mate6-oa14-8"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "¿Qué se tiene que cumplir en cada punto donde se juntan las esquinas de un teselado?",
+   "opciones": [
+    "Que los ángulos que llegan a ese punto sumen exactamente 360 grados",
+    "Que lleguen siempre cuatro figuras a ese punto, ni una más ni una menos",
+    "Que todas las figuras que llegan sean del mismo tamaño y la misma forma",
+    "Que los ángulos que llegan a ese punto sumen exactamente 180 grados"
+   ],
+   "correcta": 0,
+   "tip": "Alrededor de un punto hay una vuelta completa, o sea 360 grados: si suman menos queda hueco y si suman más las piezas se montan. La cantidad de figuras cambia según cuál sea: tres hexágonos, cuatro cuadrados.",
+   "id": "mate6-oa14-9"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "¿Qué tienen en común el triángulo equilátero, el cuadrado y el hexágono regular?",
+   "opciones": [
+    "Que cada uno tesela el plano por sí solo, sin dejar huecos",
+    "Que los tres tienen exactamente la misma cantidad de lados",
+    "Que sus ángulos interiores miden todos 90 grados",
+    "Que los tres tienen todos sus ángulos interiores obtusos"
+   ],
+   "correcta": 0,
+   "tip": "Son los tres únicos polígonos regulares que teselan solos: sus ángulos de 60, 90 y 120 grados caben seis, cuatro y tres veces en 360. El pentágono, con 108 grados, no da una cantidad entera.",
+   "id": "mate6-oa14-10"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "Sofía quiere un piso de puros octágonos regulares. Sus esquinas miden 135 grados. ¿Le resultará?",
+   "opciones": [
+    "No: dos octágonos dejan 90 grados de hueco y tres ya se montan entre sí",
+    "Sí: en cada vértice se juntan exactamente tres octágonos y calzan justo",
+    "Sí, porque el octágono tiene el doble de lados que el cuadrado, que tesela",
+    "No, pero solo porque los octágonos son difíciles de cortar con precisión"
+   ],
+   "correcta": 0,
+   "tip": "Dos octágonos aportan 270 grados y faltan 90 para la vuelta; tres llegan a 405 y se pasan. Ese hueco de 90 es justo del porte de un cuadrado, y por eso los pisos mezclan octágonos con cuadraditos.",
+   "id": "mate6-oa14-11"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "Los pisos de octágonos llevan un cuadradito en cada cruce. ¿Por qué funciona esa mezcla?",
+   "opciones": [
+    "Porque dos octágonos de 135 grados más un cuadrado de 90 dan justo 360",
+    "Porque el cuadrado tapa el hueco aunque los ángulos no lleguen a sumar 360",
+    "Porque el octágono y el cuadrado tienen los dos sus lados de igual medida",
+    "Porque un octágono se puede partir en ocho cuadrados exactamente iguales"
+   ],
+   "correcta": 0,
+   "tip": "En cada cruce se juntan dos octágonos y un cuadrado: 135 más 135 más 90 suman los 360 grados de la vuelta. Que los lados midan lo mismo permite que encajen, pero lo que decide es la suma de los ángulos.",
+   "id": "mate6-oa14-12"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "Ana quiere teselar con círculos iguales pegados uno al lado del otro. ¿Qué va a pasar?",
+   "opciones": [
+    "Van a quedar huecos entre los círculos, porque sus bordes curvos no llegan a calzar",
+    "Va a resultar, porque los círculos se pueden apretar hasta que no quede ningún espacio",
+    "Va a resultar, porque un círculo mide 360 grados, igual que una vuelta",
+    "Se van a superponer, porque un círculo siempre invade el espacio del que tiene al lado"
+   ],
+   "correcta": 0,
+   "tip": "Entre tres círculos que se tocan queda siempre un espacio con forma de triángulo curvo, y apretarlos más solo los haría montarse. Que un círculo mida 360 grados no dice nada sobre si sus bordes encajan.",
+   "id": "mate6-oa14-13"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "¿Qué hace una traslación con una figura?",
+   "opciones": [
+    "La mueve a otro lugar sin girarla ni darla vuelta",
+    "La hace girar alrededor de uno de sus vértices",
+    "La refleja como si estuviera frente a un espejo",
+    "La agranda o la achica manteniendo su misma forma"
+   ],
+   "correcta": 0,
+   "tip": "Trasladar es deslizar: la figura llega a otro lugar mirando exactamente igual que antes. Girarla es rotarla, darla vuelta como en un espejo es reflejarla, y cambiar el tamaño no es ninguna de las tres.",
+   "id": "mate6-oa14-14"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "¿Qué es lo que cambia cuando a una figura se le aplica una reflexión?",
+   "opciones": [
+    "Su orientación: queda como se vería en un espejo, hacia el otro lado",
+    "Su tamaño: la figura reflejada sale siempre más chica que la original",
+    "Su forma: los lados que eran rectos aparecen curvados al reflejarla",
+    "Nada, porque una figura reflejada queda exactamente igual que antes"
+   ],
+   "correcta": 0,
+   "tip": "La reflexión conserva el tamaño y la forma, pero da vuelta la figura: lo que estaba a la derecha queda a la izquierda. Por eso una mano derecha reflejada se ve como una mano izquierda.",
+   "id": "mate6-oa14-15"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "Para rotar una figura, ¿qué hay que fijar además del ángulo de giro?",
+   "opciones": [
+    "Un punto que sirva de centro, en torno al cual la figura gira",
+    "Una recta que funcione como espejo para la figura",
+    "La distancia exacta que la figura va a recorrer",
+    "El tamaño nuevo que la figura tendrá al terminar"
+   ],
+   "correcta": 0,
+   "tip": "Toda rotación necesita un centro: el punto que se queda quieto mientras el resto gira. La recta espejo pertenece a la reflexión y la distancia recorrida, a la traslación; el tamaño nunca cambia.",
+   "id": "mate6-oa14-16"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "De las tres transformaciones que se usan al teselar, ¿cuál cambia el tamaño?",
+   "opciones": [
+    "Ninguna: la traslación, la reflexión y la rotación conservan el tamaño",
+    "Solo la rotación, porque al girarla la figura se va estirando hacia los lados",
+    "Solo la reflexión, porque la imagen del espejo sale siempre más chica",
+    "Las tres, porque cada movimiento va desgastando un poco la figura"
+   ],
+   "correcta": 0,
+   "tip": "Las tres solo cambian dónde está la figura o hacia dónde mira: la copia siempre es del mismo tamaño y la misma forma. Si el tamaño cambiara, las piezas dejarían de calzar y aparecerían huecos.",
+   "id": "mate6-oa14-17"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "Ana movió una pieza cuatro cuadritos a la derecha sin girarla. ¿Qué transformación aplicó?",
+   "opciones": [
+    "Una traslación",
+    "Una rotación",
+    "Una reflexión",
+    "Una ampliación"
+   ],
+   "correcta": 0,
+   "tip": "Deslizar una figura en línea recta, sin girarla ni darla vuelta, es una traslación. La rotación la haría girar, la reflexión la dejaría mirando al otro lado y una ampliación cambiaría su tamaño.",
+   "id": "mate6-oa14-18"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "Una pieza quedó en el mismo lugar pero mirando hacia el lado contrario. ¿Qué se le hizo?",
+   "opciones": [
+    "Se le aplicó una reflexión, que la deja como en un espejo",
+    "Se le aplicó una traslación, que la deslizó hacia el otro lado",
+    "Se le aplicó una ampliación, que la dejó mirando distinto",
+    "No se le aplicó nada, porque la figura sigue en el mismo lugar"
+   ],
+   "correcta": 0,
+   "tip": "Cuando una figura queda del mismo tamaño pero invertida, como su imagen en un espejo, se trata de una reflexión. La traslación la habría corrido de lugar sin cambiar hacia dónde mira.",
+   "id": "mate6-oa14-19"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "Una pieza dio un cuarto de vuelta apoyada en una de sus esquinas. ¿Qué transformación fue?",
+   "opciones": [
+    "Una rotación de 90 grados en torno a esa esquina",
+    "Una traslación de 90 centímetros hacia esa esquina",
+    "Una reflexión usando esa esquina como espejo",
+    "Un cambio de tamaño centrado en esa esquina"
+   ],
+   "correcta": 0,
+   "tip": "Girar en torno a un punto es rotar, y un cuarto de vuelta corresponde a 90 grados. Trasladar sería deslizarla en línea recta, y reflejar necesita una recta que haga de espejo, no un punto suelto.",
+   "id": "mate6-oa14-20"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "Después de trasladar una baldosa, ¿qué es lo único que queda distinto?",
+   "opciones": [
+    "Su posición: el tamaño, la forma y hacia dónde mira siguen igual",
+    "Su forma: al deslizarla, sus lados quedan un poco más inclinados",
+    "Su tamaño: la baldosa trasladada queda siempre un poco más grande",
+    "Hacia dónde mira: la baldosa termina volteada respecto de la original"
+   ],
+   "correcta": 0,
+   "tip": "Una traslación solo cambia el lugar. La figura llega igual de grande, con la misma forma y mirando en la misma dirección, y por eso las copias trasladadas calzan perfectamente entre sí.",
+   "id": "mate6-oa14-21"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "La huella de una mano derecha se refleja en un espejo. ¿Cómo se ve la huella reflejada?",
+   "opciones": [
+    "Como una mano izquierda del mismo tamaño",
+    "Como una mano derecha del mismo tamaño",
+    "Como una mano derecha bastante más chica",
+    "Exactamente igual, sin ninguna diferencia"
+   ],
+   "correcta": 0,
+   "tip": "La reflexión invierte la lateralidad: lo que estaba a la derecha pasa a la izquierda, así que una mano derecha se ve como una izquierda. El tamaño no cambia, porque reflejar no achica ni agranda.",
+   "id": "mate6-oa14-22"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "Una figura con forma de mano derecha se gira media vuelta sobre la mesa. ¿Cómo queda?",
+   "opciones": [
+    "Sigue siendo una mano derecha, solo que apuntando al otro lado",
+    "Se transforma en una mano izquierda, igual que frente a un espejo",
+    "Queda con los dedos más largos por efecto del giro sobre la mesa",
+    "Deja de parecer una mano, porque el giro le deforma el contorno"
+   ],
+   "correcta": 0,
+   "tip": "Rotar no invierte la lateralidad: la mano gira entera y sigue siendo derecha, solo cambia hacia dónde apunta. Convertirla en izquierda es cosa de la reflexión, la única de las tres que da vuelta la figura.",
+   "id": "mate6-oa14-23"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "Un muro de ladrillos iguales, con cada fila corrida media pieza. ¿Qué movimiento se repite?",
+   "opciones": [
+    "Traslaciones, porque cada ladrillo se desliza sin girar ni voltearse",
+    "Reflexiones, porque las filas van alternándose hacia un lado y el otro",
+    "Rotaciones de 90 grados, porque el ladrillo cambia de orientación",
+    "Ampliaciones, porque las filas de más arriba se ven más pequeñas"
+   ],
+   "correcta": 0,
+   "tip": "Todos los ladrillos están puestos igual, acostados y mirando en la misma dirección: lo único que cambia es dónde están. Correr una fila media pieza sigue siendo deslizar, no girar ni voltear.",
+   "id": "mate6-oa14-24"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "Diego tesela con cuadrados iguales. ¿Le basta con usar solo traslaciones?",
+   "opciones": [
+    "Sí, porque copias del cuadrado deslizadas hacia el lado y hacia arriba lo cubren todo",
+    "No, porque además tendría que reflejar un cuadrado por medio para que las filas calcen",
+    "No, porque cada cuadrado debe girar un cuarto de vuelta antes de ser pegado",
+    "Sí, pero solamente si los cuadrados van pegados en diagonal y no en filas rectas"
+   ],
+   "correcta": 0,
+   "tip": "Un cuadrado deslizado hacia el lado y hacia arriba forma una cuadrícula que no deja huecos. Reflejarlo o girarlo un cuarto de vuelta lo deja idéntico, así que esos movimientos no cambian nada.",
+   "id": "mate6-oa14-25"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "Camila recortó muchas copias iguales de un triángulo de lados distintos. ¿Puede teselar con ellas?",
+   "opciones": [
+    "Sí: cada triángulo con una copia girada media vuelta forma un paralelogramo",
+    "No: solamente el triángulo equilátero sirve para teselar sin dejar huecos",
+    "Sí, pero únicamente si primero lo vuelve a recortar para dejarlo equilátero",
+    "No: al no tener ningún par de lados iguales, sus piezas nunca llegan a calzar"
+   ],
+   "correcta": 0,
+   "tip": "Cualquier triángulo tesela. Dos copias, una de ellas girada media vuelta, arman un paralelogramo, y los paralelogramos se deslizan para cubrir todo el plano sin huecos ni superposiciones.",
+   "id": "mate6-oa14-26"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "¿Es cierto que con copias iguales de cualquier cuadrilátero se puede teselar el plano?",
+   "opciones": [
+    "Sí, porque sus cuatro ángulos suman 360 grados y se pueden juntar en un punto",
+    "No, porque solo el cuadrado y el rectángulo logran cubrirlo sin dejar huecos",
+    "No, porque un cuadrilátero irregular deja siempre pequeños huecos triangulares",
+    "Sí, pero únicamente si sus cuatro lados tienen exactamente la misma medida"
+   ],
+   "correcta": 0,
+   "tip": "Los cuatro ángulos de un cuadrilátero suman 360 grados, o sea una vuelta completa. Poniendo sus cuatro esquinas distintas alrededor de un mismo punto se llena la vuelta justa, y así se cubre el plano.",
+   "id": "mate6-oa14-27"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "Un teselado de hexágonos se copia al doble de tamaño. ¿Sigue siendo un teselado?",
+   "opciones": [
+    "Sí, porque las piezas grandes conservan sus ángulos y siguen calzando igual",
+    "No, porque al agrandarlas los ángulos se abren y dejan de sumar 360 grados",
+    "No, porque un hexágono grande necesita otro hexágono chico para rellenar",
+    "Sí, pero solo si además se giran todas las piezas un cuarto de vuelta"
+   ],
+   "correcta": 0,
+   "tip": "Agrandar una figura cambia el largo de sus lados, no la abertura de sus esquinas: siguen midiendo 120 grados y tres siguen completando la vuelta. El teselado funciona igual, con piezas más grandes.",
+   "id": "mate6-oa14-28"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "En un piso de baldosas cuadradas, ¿por qué las piezas nunca se montan unas sobre otras?",
+   "opciones": [
+    "Porque en cada esquina se juntan cuatro ángulos de 90 grados y dan justo 360",
+    "Porque los cuadrados son la única figura con sus cuatro lados iguales",
+    "Porque el pegamento impide que una baldosa quede encima de la vecina",
+    "Porque en cada esquina se juntan dos baldosas y sus 90 grados dan 180"
+   ],
+   "correcta": 0,
+   "tip": "Cuatro ángulos de 90 grados suman 360, que es la vuelta completa: no sobra ni falta espacio. Si se juntaran solo dos, quedaría media vuelta sin cubrir; y el rombo también tiene sus cuatro lados iguales.",
+   "id": "mate6-oa14-29"
+  },
+  {
+   "oa": "MA06 OA 14",
+   "pregunta": "Sofía tiene piezas triangulares y cuadradas del mismo lado. ¿Cómo las junta en un vértice?",
+   "opciones": [
+    "Con tres triángulos y dos cuadrados: 60 más 60 más 60 más 90 más 90 dan 360",
+    "Con dos triángulos y dos cuadrados, porque en total suman cuatro piezas",
+    "Con cuatro triángulos y un cuadrado, porque así queda una pieza por lado",
+    "No se pueden mezclar, porque solo calzan figuras del mismo tipo entre sí"
+   ],
+   "correcta": 0,
+   "tip": "Hay que llegar a 360 grados sumando ángulos de 60 y de 90. Tres triángulos aportan 180 y dos cuadrados otros 180: justo la vuelta. Dos y dos se quedan en 300, y cuatro triángulos con un cuadrado, en 330.",
+   "id": "mate6-oa14-30"
+  }
+ ]
+}

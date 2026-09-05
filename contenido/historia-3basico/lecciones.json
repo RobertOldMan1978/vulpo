@@ -119,6 +119,26 @@
      "md": "Un deber es lo que te toca hacer a ti. Los dos van juntos: si todos cumplen sus deberes, todos pueden usar sus derechos."
     },
     {
+     "t": "diagrama",
+     "intro": "Los dos van juntos.",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Diferencia entre un derecho y un deber",
+      "items": [
+       {
+        "titulo": "Un derecho",
+        "texto": "Algo que te corresponde por ser niño o niña."
+       },
+       {
+        "titulo": "Un deber",
+        "texto": "Algo que te toca hacer a ti."
+       }
+      ],
+      "etiqueta": "Si todos cumplen, todos pueden usarlos"
+     }
+    },
+    {
      "t": "texto",
      "md": "En este capítulo vas a ver cuáles son tus derechos, qué deberes tienes en la escuela y en la casa, y por qué ser honesto importa incluso cuando nadie te está mirando."
     }

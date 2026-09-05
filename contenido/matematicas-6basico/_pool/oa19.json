@@ -1,0 +1,392 @@
+{"preguntas": [
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "¿Qué indica el volumen de una caja de zapatos?",
+  "opciones": [
+   "Cuánto espacio tiene por dentro, o sea cuánto material cabría dentro de ella",
+   "Cuánto cartón se necesita para cubrir por fuera todas sus caras sin dejar huecos",
+   "Cuánto mide el borde de su tapa si se recorre entero con una huincha de medir",
+   "Cuánto pesa la caja una vez que está completamente llena de arena o de arroz"
+  ],
+  "correcta": 0,
+  "tip": "El volumen es el espacio que hay adentro y se mide en unidades cúbicas. El cartón de afuera es la superficie, el borde de la tapa es un largo y el peso depende de con qué se llene.",
+  "id": "mate6-oa19-1"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "¿Qué es exactamente un centímetro cúbico?",
+  "opciones": [
+   "El espacio que ocupa un cubito que mide 1 cm en cada una de sus tres direcciones",
+   "La superficie de un cuadrado que mide 1 cm en cada uno de sus cuatro lados",
+   "La longitud de una regla de 1 cm apoyada sobre el borde de una figura plana",
+   "El peso que tiene un cubito de 1 cm de arista cuando está hecho de madera"
+  ],
+  "correcta": 0,
+  "tip": "Un centímetro cúbico es el espacio de un cubito de 1 cm de arista. El cuadrado de 1 cm por lado es un centímetro cuadrado y sirve para superficies; el centímetro solo mide largo.",
+  "id": "mate6-oa19-2"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "¿Cómo se calcula el volumen de un cubo?",
+  "opciones": [
+   "Multiplicando su arista por sí misma tres veces: arista por arista por arista",
+   "Multiplicando el área de una de sus caras por las seis caras que tiene el cubo",
+   "Sumando las medidas de las doce aristas que forman el borde del cubo armado",
+   "Multiplicando la medida de su arista por doce, una vez por cada arista"
+  ],
+  "correcta": 0,
+  "tip": "El volumen usa las tres direcciones: arista por arista por arista. Multiplicar una cara por seis da la superficie de afuera, y sumar o multiplicar aristas entrega una medida de largo.",
+  "id": "mate6-oa19-3"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "Un dado tiene 3 cm de arista. ¿Cuál es su volumen?",
+  "opciones": [
+   "27 centímetros cúbicos",
+   "9 centímetros cúbicos",
+   "54 centímetros cúbicos",
+   "36 centímetros cúbicos"
+  ],
+  "correcta": 0,
+  "tip": "Se multiplica 3 por 3 por 3, o sea 27. Los 9 son el área de una sola cara, los 54 la superficie de las seis caras juntas y los 36 el largo total de sus doce aristas.",
+  "id": "mate6-oa19-4"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "Una caja de galletas mide 8 cm de largo, 5 cm de ancho y 4 cm de alto. ¿Cuánto espacio tiene adentro?",
+  "opciones": [
+   "160 centímetros cúbicos",
+   "17 centímetros cúbicos",
+   "184 centímetros cúbicos",
+   "40 centímetros cúbicos"
+  ],
+  "correcta": 0,
+  "tip": "Se multiplican las tres medidas: 8 por 5 son 40 y por 4 dan 160. Sumar las medidas da 17, que es un largo; los 184 son la superficie de afuera y los 40, solo el área de la base.",
+  "id": "mate6-oa19-5"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "Una sala mide 5 m de largo, 4 m de ancho y 3 m de alto. ¿Qué volumen de aire contiene?",
+  "opciones": [
+   "60 metros cúbicos",
+   "12 metros cúbicos",
+   "20 metros cúbicos",
+   "94 metros cúbicos"
+  ],
+  "correcta": 0,
+  "tip": "Se multiplican las tres medidas: 5 por 4 son 20 y por 3 dan 60 metros cúbicos. Los 20 son solo el área del piso, los 12 la suma de las medidas y los 94 la superficie de paredes, piso y techo.",
+  "id": "mate6-oa19-6"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "Una goma de borrar mide 30 mm de largo, 20 mm de ancho y 10 mm de alto. ¿Cuál es su volumen?",
+  "opciones": [
+   "6.000 milímetros cúbicos",
+   "600 milímetros cúbicos",
+   "60 milímetros cúbicos",
+   "2.200 milímetros cúbicos"
+  ],
+  "correcta": 0,
+  "tip": "Se multiplican las tres medidas: 30 por 20 son 600 y por 10 dan 6.000 milímetros cúbicos. Los 600 son solo el área de la cara de arriba y los 2.200, la superficie de toda la goma.",
+  "id": "mate6-oa19-7"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "¿En qué unidad conviene expresar el volumen de una piscina municipal?",
+  "opciones": [
+   "En metros cúbicos, porque sus medidas se toman en metros y el número queda manejable",
+   "En centímetros cúbicos, porque así el resultado es un número más grande y más exacto",
+   "En milímetros cúbicos, porque es la unidad más pequeña y por eso la más precisa de todas",
+   "En metros cuadrados, porque es la unidad que se usa para todo lo que sea muy grande"
+  ],
+  "correcta": 0,
+  "tip": "La unidad se elige según el tamaño de lo que se mide, y una piscina se mide en metros. En centímetros cúbicos el número tendría millones sin ganar exactitud, y los metros cuadrados miden superficies.",
+  "id": "mate6-oa19-8"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "¿A cuántos centímetros cúbicos equivale un litro?",
+  "opciones": [
+   "1.000 centímetros cúbicos",
+   "100 centímetros cúbicos",
+   "10 centímetros cúbicos",
+   "1.000.000 centímetros cúbicos"
+  ],
+  "correcta": 0,
+  "tip": "Un litro es el espacio que ocupa un cubo de 10 cm de arista, y 10 por 10 por 10 dan 1.000 centímetros cúbicos. El millón corresponde a un metro cúbico, que es muchísimo más grande.",
+  "id": "mate6-oa19-9"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "¿Por qué el volumen de una caja se calcula multiplicando sus tres medidas?",
+  "opciones": [
+   "Porque así se cuenta cuántos cubitos caben a lo largo, a lo ancho y a lo alto",
+   "Porque una caja tiene tres pares de caras iguales y hay que considerar los tres pares",
+   "Porque es una regla que sirve igual para todas las figuras, tengan la forma que tengan",
+   "Porque al multiplicar tres números cualesquiera el resultado siempre queda en unidades cúbicas"
+  ],
+  "correcta": 0,
+  "tip": "El volumen cuenta cuántos cubitos de una unidad caben adentro: en cada capa entran largo por ancho, y hay tantas capas como diga la altura. De ahí sale la multiplicación de las tres medidas.",
+  "id": "mate6-oa19-10"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "¿Cuántos cubitos de 1 cm de arista caben dentro de una caja de 6 por 4 por 3 cm?",
+  "opciones": [
+   "72 cubitos",
+   "24 cubitos",
+   "13 cubitos",
+   "216 cubitos"
+  ],
+  "correcta": 0,
+  "tip": "En cada capa caben 6 por 4, o sea 24 cubitos, y la caja tiene 3 capas de alto: 24 por 3 dan 72. Los 24 son una sola capa, los 13 la suma de las medidas y los 216 el volumen de un cubo de 6 cm.",
+  "id": "mate6-oa19-11"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "Una caja guarda 120 centímetros cúbicos y su base mide 6 por 4 cm. ¿Cuánto mide de alto?",
+  "opciones": [
+   "5 centímetros",
+   "20 centímetros",
+   "30 centímetros",
+   "24 centímetros"
+  ],
+  "correcta": 0,
+  "tip": "La base ocupa 6 por 4, o sea 24, y hay que ver cuántas capas de esa base caben en 120: da 5. Dividir por una sola medida deja 20 o 30, que son demasiado, y los 24 son el área de la base.",
+  "id": "mate6-oa19-12"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "Un cubo de plasticina tiene 64 milímetros cúbicos de volumen. ¿Cuánto mide su arista?",
+  "opciones": [
+   "4 milímetros",
+   "8 milímetros",
+   "16 milímetros",
+   "32 milímetros"
+  ],
+  "correcta": 0,
+  "tip": "Hay que buscar el número que multiplicado tres veces por sí mismo dé 64: 4 por 4 por 4. Los 8 salen de buscar solo dos factores iguales, que es lo que se hace con un área, y los 32 de partir 64 por la mitad.",
+  "id": "mate6-oa19-13"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "Un acuario mide 40 por 25 por 30 cm. Si un litro son 1.000 centímetros cúbicos, ¿cuántos litros contiene?",
+  "opciones": [
+   "30 litros",
+   "95 litros",
+   "300 litros",
+   "3 litros"
+  ],
+  "correcta": 0,
+  "tip": "El acuario guarda 40 por 25 por 30, o sea 30.000 centímetros cúbicos. Como cada litro son 1.000, se divide 30.000 en 1.000 y quedan 30 litros. Los 95 son la suma de las tres medidas.",
+  "id": "mate6-oa19-14"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "Un estanque mide 2 m de largo, 1,5 m de ancho y 2 m de alto. ¿Cuánta agua le cabe?",
+  "opciones": [
+   "6 metros cúbicos",
+   "5,5 metros cúbicos",
+   "3 metros cúbicos",
+   "20 metros cúbicos"
+  ],
+  "correcta": 0,
+  "tip": "Se multiplican las tres medidas: 2 por 1,5 son 3 y por 2 dan 6 metros cúbicos. Los 3 son solo el área del fondo, los 5,5 la suma de las medidas y los 20, la superficie de sus seis caras.",
+  "id": "mate6-oa19-15"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "Una caja de 10 por 6 por 5 cm ya tiene 150 centímetros cúbicos de arena. ¿Cuánto le falta?",
+  "opciones": [
+   "150 centímetros cúbicos",
+   "300 centímetros cúbicos",
+   "450 centímetros cúbicos",
+   "21 centímetros cúbicos"
+  ],
+  "correcta": 0,
+  "tip": "La caja entera guarda 10 por 6 por 5, o sea 300 centímetros cúbicos. Si ya hay 150, falta justo la otra mitad: 300 menos 150 son 150. Los 450 salen de sumar en vez de restar.",
+  "id": "mate6-oa19-16"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "¿Cuántos cubitos de 1 mm de arista caben dentro de un cubo de 1 cm de arista?",
+  "opciones": [
+   "1.000 cubitos",
+   "10 cubitos",
+   "100 cubitos",
+   "30 cubitos"
+  ],
+  "correcta": 0,
+  "tip": "El cubo grande mide 10 mm de largo, 10 de ancho y 10 de alto: 10 por 10 por 10 dan 1.000. Los 100 serían los cubitos de una sola capa del fondo y los 10, los de una sola fila.",
+  "id": "mate6-oa19-17"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "¿Cuántas cajitas de 2 cm de arista caben dentro de una caja de 8 por 4 por 4 cm?",
+  "opciones": [
+   "16 cajitas",
+   "8 cajitas",
+   "128 cajitas",
+   "64 cajitas"
+  ],
+  "correcta": 0,
+  "tip": "La caja grande guarda 128 centímetros cúbicos y cada cajita ocupa 2 por 2 por 2, o sea 8: 128 dividido en 8 da 16. Los 128 serían cubitos de 1 cm y los 64 salen de dividir por la arista y no por el volumen.",
+  "id": "mate6-oa19-18"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "Un contenedor mide 6 m de largo, 2,4 m de ancho y 2,5 m de alto. ¿Qué volumen de carga admite?",
+  "opciones": [
+   "36 metros cúbicos",
+   "10,9 metros cúbicos",
+   "14,4 metros cúbicos",
+   "15 metros cúbicos"
+  ],
+  "correcta": 0,
+  "tip": "Se multiplican las tres medidas: 6 por 2,4 dan 14,4 y por 2,5 dan 36 metros cúbicos. Los 14,4 son solo el área del piso, los 15 el largo por el alto y los 10,9 la suma de las medidas.",
+  "id": "mate6-oa19-19"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "Un cubo de 2 cm de arista se cambia por otro de 4 cm. ¿Qué le pasa a su volumen?",
+  "opciones": [
+   "Se multiplica por ocho: pasa de 8 a 64 centímetros cúbicos",
+   "Se multiplica por dos: pasa de 8 a 16 centímetros cúbicos, igual que la arista",
+   "Se multiplica por cuatro: pasa de 8 a 32 centímetros cúbicos, como el área de una cara",
+   "Se multiplica por seis: pasa de 8 a 48 centímetros cúbicos, una vez por cada cara"
+  ],
+  "correcta": 0,
+  "tip": "Al doblar la arista de un cubo, este crece al doble de largo, de ancho y de alto a la vez: 2 por 2 por 2 son 8 y 4 por 4 por 4 son 64. Doblar la arista multiplica el volumen por ocho, no por dos.",
+  "id": "mate6-oa19-20"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "Una caja de 5 por 4 por 2 cm se reemplaza por otra igual pero del doble de alto. ¿Y su volumen?",
+  "opciones": [
+   "Se duplica: pasa de 40 a 80 centímetros cúbicos",
+   "No cambia, porque el largo y el ancho siguen midiendo exactamente lo mismo que antes",
+   "Se multiplica por ocho: pasa de 40 a 320 centímetros cúbicos, como pasa en los cubos",
+   "Sube 2 centímetros cúbicos, que es justo lo que creció la altura de esa caja"
+  ],
+  "correcta": 0,
+  "tip": "Aquí creció una sola de las tres medidas, así que caben el doble de capas y el volumen se duplica. Se multiplica por ocho cuando las tres medidas se doblan a la vez, como al agrandar un cubo.",
+  "id": "mate6-oa19-21"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "Una caja mide 8 por 3 por 2 cm y otra mide 4 por 4 por 3 cm. ¿Cuál guarda más?",
+  "opciones": [
+   "Las dos guardan lo mismo: 48 centímetros cúbicos cada una, aunque tengan otra forma",
+   "La de 8 por 3 por 2, porque es la más larga de las dos y por eso le cabe más adentro",
+   "La de 4 por 4 por 3, porque su forma es más compacta y aprovecha mejor el espacio",
+   "No se puede saber sin conocer además cuánta cartulina se usó para armar cada una"
+  ],
+  "correcta": 0,
+  "tip": "Se multiplican las tres medidas de cada caja: 8 por 3 por 2 dan 48 y 4 por 4 por 3 también dan 48. Dos cajas de forma muy distinta pueden guardar exactamente lo mismo por dentro.",
+  "id": "mate6-oa19-22"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "Javiera calculó un volumen y anotó el resultado en centímetros cuadrados. ¿Está bien?",
+  "opciones": [
+   "No: el volumen ocupa las tres direcciones, así que se anota en centímetros cúbicos",
+   "Sí, porque los centímetros cuadrados sirven para cualquier medida que tenga una caja",
+   "Sí, siempre que el cuerpo sea un cubo y por eso todas sus caras midan exactamente igual",
+   "No: un volumen se anota en centímetros a secas, sin agregarle ninguna palabra atrás"
+  ],
+  "correcta": 0,
+  "tip": "Los centímetros miden largo, los centímetros cuadrados miden superficies planas y los centímetros cúbicos miden el espacio de adentro. Como el volumen usa largo, ancho y alto, su unidad es cúbica.",
+  "id": "mate6-oa19-23"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "Matías sumó 7 más 5 más 2 y dijo que el volumen de su caja era 14. ¿Qué le pasó?",
+  "opciones": [
+   "Sumó las medidas en vez de multiplicarlas: el volumen es 70 centímetros cúbicos",
+   "Nada: los 14 están correctos, porque el volumen se obtiene sumando las tres medidas",
+   "Sumó bien, pero le faltó multiplicar ese 14 por las seis caras que tiene la caja",
+   "Sumó bien, pero el resultado se anota en centímetros cuadrados y no en cúbicos"
+  ],
+  "correcta": 0,
+  "tip": "Sumar las medidas entrega un largo, no un espacio. Para el volumen hay que multiplicarlas: 7 por 5 son 35 y por 2 dan 70 centímetros cúbicos, que es lo que cabe dentro de esa caja.",
+  "id": "mate6-oa19-24"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "¿Guarda más un cubo de 5 cm de arista o una caja de 10 por 4 por 3 cm?",
+  "opciones": [
+   "El cubo, porque guarda 125 centímetros cúbicos y la caja llega solo a 120",
+   "La caja, porque mide 10 cm de largo y el cubo apenas llega a 5 cm por lado",
+   "Los dos guardan lo mismo, porque en los dos hay que multiplicar exactamente tres medidas",
+   "La caja, porque tiene tres medidas distintas y el cubo repite siempre la misma medida"
+  ],
+  "correcta": 0,
+  "tip": "El cubo guarda 5 por 5 por 5, o sea 125 centímetros cúbicos, y la caja 10 por 4 por 3, o sea 120. Ser más largo no basta: lo que decide es el producto de las tres medidas.",
+  "id": "mate6-oa19-25"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "Ana da vuelta una caja y la apoya sobre otra de sus caras. ¿Cambia su volumen?",
+  "opciones": [
+   "No: se multiplican las mismas tres medidas y el resultado no depende del orden",
+   "Sí: al apoyarla de otro modo el largo y el alto se intercambian y el resultado sube",
+   "Sí, porque queda más alta y el volumen depende sobre todo de cuánto mide de alto",
+   "Depende: cambia solo si la cara sobre la que queda apoyada es la más grande de todas"
+  ],
+  "correcta": 0,
+  "tip": "El volumen es el producto de las tres medidas, y multiplicar en otro orden da lo mismo: 6 por 4 por 2 y 2 por 6 por 4 son los dos 48. Girar la caja no le agrega ni le quita espacio adentro.",
+  "id": "mate6-oa19-26"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "Un volumen de 2.000 centímetros cúbicos, ¿es lo mismo que 2 litros o que 2 metros cúbicos?",
+  "opciones": [
+   "Es lo mismo que 2 litros, porque cada litro equivale a 1.000 centímetros cúbicos",
+   "Es lo mismo que 2 metros cúbicos, porque un metro cúbico son 1.000 centímetros cúbicos",
+   "No equivale a ninguno de los dos: los centímetros cúbicos no se pueden cambiar de unidad",
+   "Equivale a los dos a la vez, porque un litro y un metro cúbico ocupan el mismo espacio"
+  ],
+  "correcta": 0,
+  "tip": "Mil centímetros cúbicos hacen un litro, así que 2.000 son 2 litros. Un metro cúbico es muchísimo mayor: son un millón de centímetros cúbicos, más o menos lo que ocupa una lavadora grande.",
+  "id": "mate6-oa19-27"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "Una piscina mide 10 m de largo, 5 m de ancho y 1,2 m de hondo. ¿Cuánta agua cabe en ella?",
+  "opciones": [
+   "60 metros cúbicos",
+   "50 metros cúbicos",
+   "16,2 metros cúbicos",
+   "600 metros cúbicos"
+  ],
+  "correcta": 0,
+  "tip": "Se multiplican las tres medidas: 10 por 5 son 50 y por 1,2 dan 60 metros cúbicos. Los 50 son solo la superficie del agua vista desde arriba y los 600 salen de tratar el 1,2 como si fuera 12.",
+  "id": "mate6-oa19-28"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "Una cara de un cubo mide 16 centímetros cuadrados. ¿Cuál es el volumen de ese cubo?",
+  "opciones": [
+   "64 centímetros cúbicos",
+   "96 centímetros cúbicos",
+   "48 centímetros cúbicos",
+   "16 centímetros cúbicos"
+  ],
+  "correcta": 0,
+  "tip": "Si una cara mide 16 centímetros cuadrados, su lado mide 4, porque 4 por 4 son 16. Esa es la arista, así que el volumen es 4 por 4 por 4, o sea 64. Los 96 son la superficie de las seis caras.",
+  "id": "mate6-oa19-29"
+ },
+ {
+  "oa": "MA06 OA 19",
+  "pregunta": "Sofía dice que 5 metros cúbicos es menos que 5.000 centímetros cúbicos. ¿Tiene razón?",
+  "opciones": [
+   "No: un metro cúbico es un millón de centímetros cúbicos, así que 5 son muchísimo más",
+   "Sí, porque 5.000 es un número mucho más grande que 5 y eso decide la comparación",
+   "Sí, porque un metro cúbico equivale a solo 100 centímetros cúbicos y no alcanza",
+   "No se pueden comparar, porque son unidades distintas y habría que medir todo de nuevo"
+  ],
+  "correcta": 0,
+  "tip": "Un cubo de 1 m de arista mide 100 cm por lado, así que guarda 100 por 100 por 100, o sea un millón de centímetros cúbicos. Cinco de esos son cinco millones, muchísimo más que 5.000.",
+  "id": "mate6-oa19-30"
+ }
+]}

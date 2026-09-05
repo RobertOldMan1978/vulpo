@@ -105,6 +105,67 @@ a los distractores**, que de paso quedan más plausibles.
 > si algo interrumpe. Un distractor con cuerpo no es relleno: es el error *con su razón* — no
 > "El Senado", sino "El Senado, cuyos miembros elegía el pueblo cada año".
 
+> ⚠️ **Y el sesgo tiene DOS direcciones: que la correcta sea la más CORTA es la misma pista al
+> revés.** Enseña "elige la breve", y se acierta igual sin leer. Aparece sola justo al corregir
+> el sesgo clásico —se les da cuerpo a los distractores y no a la clave, y uno se pasa al otro
+> lado—, así que es el error del segundo borrador, no del primero.
+>
+> Medido en todo el proyecto el 03/09/2026, con el azar en 25%:
+>
+> | | correcta más LARGA | correcta más CORTA |
+> |---|---|---|
+> | `vocabulario-8basico` | **148 / 150** | 0 |
+> | `historia-8basico` | **469 / 663** | 35 |
+> | `ciencias-8basico` | **391 / 534** | 30 |
+> | `lenguaje-7basico` | 91 | **287 / 720** |
+> | `matematicas-7basico` | 68 | **263 / 570** |
+>
+> Los bancos viejos están sesgados a la larga porque cuando se escribieron nadie lo medía; los
+> nuevos, a la corta, por haber corregido lo primero sin mirar lo segundo. **Hasta el 03/09
+> `revisar-tanda.py` solo veía una de las dos mitades**, así que una tanda podía salir "0% de
+> sesgo" con la correcta siendo la más corta en 29 de 30. Ya mide las dos y las informa por
+> separado.
+>
+> **El umbral es un TECHO, no una meta: por debajo de 8 de 30 (27%) en CADA dirección.** No hay
+> que apuntarle a 8 — apuntarle invita a fabricar diferencias de largo que no aportan nada.
+>
+> ⚠️ **Y en Matemática lo normal es CERO, sin que eso sea un defecto.** Cuando las cuatro
+> opciones son números o expresiones paralelas (`13/5`, `23/5`, `10/5`, `16/5`) sus largos
+> quedan casi iguales solos, que es justamente el ideal: ninguna señal de largo. Medido en los
+> cuatro bancos de Matemática del proyecto, la dirección larga da 0%, 0%, 2% y 12%. Forzar un
+> reparto ahí obligaría a convertir preguntas numéricas en prosa y **empeoraría la tanda**.
+> Lo dijeron por separado dos agentes de la tanda de validación de 6°, con la evidencia de las
+> tandas de 5° ya aprobadas (0/3 y 0/1).
+>
+> Donde cero SÍ es sospechoso es en las asignaturas de prosa: significa que las cuatro opciones
+> están midiendo lo mismo.
+
+**a bis) El `tip` que nombra la posición de una opción, y el hueco del validador.** Las tandas se
+escriben con la correcta primera y **el consolidador baraja**, así que un tip que diga *"solo el
+primero cierra"* termina contradiciendo la pantalla. No se ve revisando la tanda, porque ahí
+todavía es cierto.
+
+> ⚠️ **Y `revisar-tanda.py` NO caza todos los casos: escríbelo bien igual.** Su patrón busca las
+> formas femeninas y apocopadas (*la primera, el primer*), así que **las masculinas en -o se le
+> escapan**: *"el primero", "el segundo", "el tercero", "el último"*. Un agente de la tanda de
+> validación de 6° escribió *"Solo el primero cierra"* y el validador calló.
+>
+> **Se midió si convenía ampliarlo y la respuesta fue que no**: ampliar el patrón a las formas
+> en -o lleva los avisos de 17 a 32 en el proyecto, y **los 15 nuevos son falsos positivos** —
+> *"el último Estado musulmán"*, *"el primer paso; el segundo es que la ley valga"*, *"el tercero
+> tiene que medir menos"*—, donde el ordinal nombra un sustantivo del enunciado y no una opción.
+> Un chequeo léxico no puede separar los dos casos, y un informe que marca lo correcto se deja de
+> leer. **Así que la responsabilidad es tuya y no del script: ninguna referencia a una opción por
+> su posición, aunque el validador no diga nada.**
+
+**b bis) El distractor que acierta por casualidad.** Apareció escribiendo el OA de cálculo de 6°:
+en un ítem de redondeo por contexto, el distractor *"redondear al entero más cercano"* **da la
+misma respuesta que la clave** cuando el decimal cae del lado que corresponde. `337,5 → 338` se
+acierta con el atajo, así que la pregunta deja de medir el razonamiento contextual y nadie lo
+nota. La salida es elegir los números **contra** el atajo: redondear hacia arriba con decimal
+bajo (`281,25 → 282`, porque son buses y no caben) y hacia abajo con decimal alto (`12,5 → 12`,
+porque el material no alcanza). Vale para cualquier tanda con redondeo, estimación o truncado.
+
 **c) El enunciado que cambia y deja atrás su clave.** Si reescribes una pregunta, **relee su
 `correcta` y su `tip`**. Una vez quedó una pregunta sobre un río con la clave de otra y un tip que
 hablaba de una escuela inexistente.
@@ -282,8 +343,9 @@ Valida tú mismo el archivo y **dilo en tu respuesta final**:
    sistema, los planetas— lo natural es preguntarlos todos con la misma frase cambiando una
    palabra, y eso *es* un casi-duplicado aunque el contenido difiera. Varía la forma.
 5. Releíste cada clave contra sus distractores buscando el caso "hay otra defendible".
-6. Cuentas cuántas veces la correcta es la más larga: **si pasa de 8 de 30, redistribuye** dándole
-   cuerpo a los distractores. ⚠️ **La medida que manda es la de `revisar-tanda.py`**, que exige
+6. Cuentas cuántas veces la correcta es la más larga **y cuántas es la más corta**: si alguna de
+   las dos pasa de 8 de 30, redistribuye — a la larga dándole cuerpo a los distractores, a la
+   corta dándosela a la clave (con sustancia real, nunca con relleno). ⚠️ **La medida que manda es la de `revisar-tanda.py`**, que exige
    que la correcta le saque margen a **todas** las demás — no basta con empatar. Midiendo de otra
    forma vas a reportar un número distinto del suyo, y ya pasó varias veces: un agente informó
    «10 de 30» por su cuenta y «1 de 30» por el script. Reporta el del script.

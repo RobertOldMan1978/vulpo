@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "¿Para qué sirve el catálogo de una biblioteca?",
+   "opciones": [
+    "Para saber si un libro está en esa biblioteca y en qué estante buscarlo",
+    "Para conocer un resumen de cada libro y decidir si vale la pena leerlo",
+    "Para revisar la lista de las personas que tienen libros atrasados",
+    "Para elegir automáticamente el libro más adecuado a la edad del lector"
+   ],
+   "correcta": 0,
+   "tip": "El catálogo es el índice de toda la biblioteca: dice qué títulos hay y dónde están guardados. Sin él habría que recorrer los estantes a ciegas, incluso para saber si el libro existe ahí.",
+   "id": "leng5-oa10-1"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "Los libros de una biblioteca llevan un número en el lomo. ¿Qué indica ese número?",
+   "opciones": [
+    "El lugar exacto del estante donde ese libro debe quedar guardado",
+    "La cantidad de veces que ese libro ha salido en préstamo hasta hoy",
+    "El orden en que la biblioteca fue comprando cada uno de sus libros",
+    "La edad mínima que necesita tener quien quiera pedirlo prestado"
+   ],
+   "correcta": 0,
+   "tip": "Ese código ordena el estante: los libros de un mismo tema quedan juntos y cada uno tiene su lugar fijo. Por eso un libro devuelto a otro estante queda perdido aunque siga dentro de la sala.",
+   "id": "leng5-oa10-2"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "Matías sacó tres libros del estante y solo se llevará uno. ¿Qué conviene hacer con los otros dos?",
+   "opciones": [
+    "Dejarlos en el carro o la mesa que la biblioteca indica para eso",
+    "Ponerlos rápido en cualquier estante libre para no dejarlos tirados",
+    "Devolverlos a un estante cercano, ya que igual quedan cerca de su tema",
+    "Llevárselos igual y devolverlos todos juntos la semana siguiente"
+   ],
+   "correcta": 0,
+   "tip": "Un libro guardado en el estante equivocado queda perdido para todos: el catálogo dice que está y nadie lo encuentra. Por eso muchas bibliotecas prefieren reordenarlos ellas mismas.",
+   "id": "leng5-oa10-3"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "En una biblioteca, el atlas y la enciclopedia no se prestan a domicilio. ¿Por qué se decide eso?",
+   "opciones": [
+    "Porque son pocos ejemplares que muchos consultan por ratos cortos",
+    "Porque son libros que se echan a perder con solo trasladarlos",
+    "Porque su contenido está desactualizado y no conviene estudiarlo",
+    "Porque solo los profesores pueden usarlos para preparar sus clases"
+   ],
+   "correcta": 0,
+   "tip": "Una obra de consulta se usa unos minutos y la necesita mucha gente. Si un solo lector se la lleva una semana, deja sin ella a todos los demás; en la sala, en cambio, alcanza para todos.",
+   "id": "leng5-oa10-4"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "El préstamo de un libro tiene un plazo de devolución. ¿Para qué existe ese plazo?",
+   "opciones": [
+    "Para que el libro vuelva y otros lectores también puedan usarlo",
+    "Para obligar al lector a terminar el libro dentro de esos mismos días",
+    "Para calcular cuánto tendrá que pagar el lector cuando lo devuelva",
+    "Para revisar que el libro no haya sido leído por más de una persona"
+   ],
+   "correcta": 0,
+   "tip": "El plazo no es un castigo: es el turno de cada lector. Un solo ejemplar le sirve a muchas personas al año, pero únicamente si vuelve; retenerlo un mes deja a los demás esperando.",
+   "id": "leng5-oa10-5"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "A Camila se le acaba el plazo y va en la mitad del libro. ¿Qué le conviene hacer?",
+   "opciones": [
+    "Pedir en el mesón que le renueven el préstamo por unos días más",
+    "Quedárselo sin avisar hasta que alcance a terminarlo con calma",
+    "Devolverlo y volver a sacarlo a nombre de un compañero suyo",
+    "Fotografiar las páginas que le faltan antes de tener que devolverlo"
+   ],
+   "correcta": 0,
+   "tip": "Renovar es un trámite normal y se pide antes de que venza el plazo. Solo no se puede cuando otro lector ya reservó ese ejemplar: ahí el turno le toca a quien está esperando.",
+   "id": "leng5-oa10-6"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "El libro que Diego necesita está prestado a otro lector. ¿Qué le conviene hacer?",
+   "opciones": [
+    "Pedir que se lo reserven para cuando ese lector lo devuelva",
+    "Volver a preguntar todos los días hasta que aparezca en el estante",
+    "Ubicar al compañero que lo tiene y pedirle que se lo pase antes",
+    "Dar por perdido el asunto y elegir otro tema para su trabajo"
+   ],
+   "correcta": 0,
+   "tip": "La reserva guarda el turno: cuando el ejemplar vuelve, la biblioteca le avisa a quien lo pidió. Pasarse un libro entre lectores parece más rápido, pero lo deja registrado a nombre de otro.",
+   "id": "leng5-oa10-7"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "Ana sacó un libro con su carné y un amigo se lo pide prestado. ¿Qué debería considerar?",
+   "opciones": [
+    "Que el libro sigue a su nombre y ella responde si se daña o se atrasa",
+    "Que prestarlo está prohibido, porque ese libro es solo para ella",
+    "Que puede prestarlo sin problema, ya que el libro es de todos igual",
+    "Que su amigo puede renovar ese préstamo usando su propio carné"
+   ],
+   "correcta": 0,
+   "tip": "El préstamo es un compromiso personal: la biblioteca le pedirá cuentas a quien lo firmó. Ana puede prestarlo, pero sabiendo que el atraso o el daño van a quedar anotados a su nombre.",
+   "id": "leng5-oa10-8"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "Benjamín quiere llevarse libros a su casa desde la biblioteca municipal. ¿Qué necesita primero?",
+   "opciones": [
+    "Inscribirse en la biblioteca, un trámite gratuito que hace con un adulto",
+    "Comprar una tarjeta anual que le dé derecho a retirar libros",
+    "Llevar una carta del colegio que autorice el préstamo a su nombre",
+    "Nada, porque cualquiera puede sacar libros a domicilio sin registrarse"
+   ],
+   "correcta": 0,
+   "tip": "Leer en la sala es libre para cualquiera, pero llevarse un libro a la casa exige inscribirse: así la biblioteca sabe quién tiene cada ejemplar y a quién pedírselo de vuelta.",
+   "id": "leng5-oa10-9"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "Javiera lleva dos semanas atrasada y piensa: si nadie reclama, no le molesto a nadie. ¿Acierta?",
+   "opciones": [
+    "Se equivoca: puede haber lectores esperando ese libro sin poder pedirlo",
+    "Tiene razón, porque la biblioteca avisa cuando alguien necesita el libro",
+    "Tiene razón, ya que el libro está siendo usado y no guardado sin leer",
+    "Se equivoca, porque el atraso le impide para siempre volver a la sala"
+   ],
+   "correcta": 0,
+   "tip": "Quien busca un libro prestado casi nunca reclama: mira el catálogo, ve que no está disponible y se va. El atraso se nota poco justamente porque deja gente afuera en silencio.",
+   "id": "leng5-oa10-10"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "Sofía no encuentra lo que busca, pero no pregunta para no molestar. ¿Qué habría que decirle?",
+   "opciones": [
+    "Que orientar a los lectores es parte del trabajo del bibliotecario",
+    "Que conviene preguntar solo cuando la biblioteca esté bien vacía",
+    "Que primero debe recorrer todos los estantes y preguntar al final",
+    "Que es mejor pedirle ayuda a un compañero para no interrumpir a nadie"
+   ],
+   "correcta": 0,
+   "tip": "El bibliotecario conoce la colección mejor que nadie y su trabajo es justamente ese. Preguntar temprano ahorra media hora de búsqueda a ciegas y no le quita el lugar a ningún lector.",
+   "id": "leng5-oa10-11"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "Matías recuerda de qué trataba un libro, pero no su título ni su autor. ¿Qué le sirve decir?",
+   "opciones": [
+    "De qué trataba, para que lo busquen por tema",
+    "Que era un libro grueso y de tapa dura, de los que se ven desde lejos",
+    "El color de la portada, porque el catálogo los ordena por ese dato",
+    "El estante donde estaba, ya que los libros nunca cambian de lugar"
+   ],
+   "correcta": 0,
+   "tip": "El catálogo permite buscar por tema, por título y por autor, pero no por el aspecto del libro. Describir el contenido es lo que más acerca: el color y el grosor no están registrados.",
+   "id": "leng5-oa10-12"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "¿Cuál es la tarea principal de quien atiende una biblioteca?",
+   "opciones": [
+    "Organizar la colección y ayudar a los lectores a encontrar lo que buscan",
+    "Vigilar que nadie hable y anotar a quienes hacen ruido en la sala",
+    "Decidir qué libros son adecuados para cada lector que entra",
+    "Leer todos los libros nuevos antes de ponerlos en el estante"
+   ],
+   "correcta": 0,
+   "tip": "El bibliotecario ordena, presta y orienta: sabe qué hay y dónde está. Cuidar el ambiente es parte del trabajo, pero no es el motivo por el que la biblioteca tiene a alguien atendiendo.",
+   "id": "leng5-oa10-13"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "Diego cree que la biblioteca sirve solo para hacer tareas. ¿Qué le falta considerar?",
+   "opciones": [
+    "Que también se va a elegir lecturas por gusto o a informarse de la actualidad",
+    "Que solo conviene ir cuando un profesor lo pide de manera expresa",
+    "Que las tareas se hacen mejor en la casa que en una sala compartida",
+    "Que además de tareas se puede ir a conversar con los compañeros"
+   ],
+   "correcta": 0,
+   "tip": "Una biblioteca sirve para varias cosas a la vez: elegir algo que leer, investigar un tema y enterarse de lo que está pasando. Ir solo cuando hay tarea deja fuera casi todo lo demás.",
+   "id": "leng5-oa10-14"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "¿Por qué una biblioteca guarda los diarios de los días anteriores y no solo el de hoy?",
+   "opciones": [
+    "Porque alguien puede necesitar revisar lo que se publicó esos días",
+    "Porque los diarios viejos se consiguen más baratos que los del día",
+    "Porque las noticias antiguas se vuelven más confiables con el tiempo",
+    "Porque así completa la colección para poder encuadernarla después"
+   ],
+   "correcta": 0,
+   "tip": "Un diario deja de ser noticia al día siguiente, pero sigue siendo el registro de lo que pasó ese día. Por eso la biblioteca los conserva ordenados por fecha, como un archivo que se consulta.",
+   "id": "leng5-oa10-15"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "Camila va a la biblioteca sin ninguna tarea pendiente, solo a buscar algo para leer. ¿Es válido?",
+   "opciones": [
+    "Sí, elegir textos para leer es uno de los propósitos de la biblioteca",
+    "No, la sala de lectura está reservada para los trabajos del colegio",
+    "Solo si un profesor la autoriza a ocupar ese tiempo de esa manera",
+    "Solo si además aprovecha de estudiar algún contenido de sus clases"
+   ],
+   "correcta": 0,
+   "tip": "Seleccionar textos es la primera razón para ir a una biblioteca. No hace falta una tarea que lo justifique: buscar qué leer es exactamente para lo que está pensada la sala.",
+   "id": "leng5-oa10-16"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "Sofía necesita un solo dato de un libro enorme y ya van a cerrar. ¿Qué le conviene hacer?",
+   "opciones": [
+    "Buscar el dato ahí mismo y anotarlo, sin llevarse el libro",
+    "Sacarlo en préstamo por dos semanas para leerlo entero en su casa",
+    "Fotografiar el libro completo para revisarlo con calma en su casa",
+    "Volver otro día con más tiempo para poder leerlo entero"
+   ],
+   "correcta": 0,
+   "tip": "El préstamo sirve para leer algo largo con calma; para un dato puntual basta la consulta en sala. Ocupar un ejemplar toda la semana por dos líneas lo deja fuera del alcance de otros.",
+   "id": "leng5-oa10-17"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "Benjamín no logra estudiar en su casa por el ruido. ¿Qué le puede ofrecer la biblioteca?",
+   "opciones": [
+    "Una sala tranquila donde trabajar, aunque no saque ningún libro",
+    "Un espacio para estudiar en voz alta con sus compañeros de curso",
+    "Nada, porque a la sala solo se entra a buscar libros en préstamo",
+    "Un lugar para estudiar únicamente durante las semanas de pruebas"
+   ],
+   "correcta": 0,
+   "tip": "La sala de lectura es un servicio en sí mismo: silencio, mesa y luz. Se puede usar sin pedir ningún libro, y por lo mismo el ruido que uno hace ahí le cuesta el rato a todos los demás.",
+   "id": "leng5-oa10-18"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "Ana estudia subrayando con destacador y ahora tiene un libro de la biblioteca. ¿Qué le conviene?",
+   "opciones": [
+    "Anotar en su cuaderno lo que le sirve y dejar el libro sin marcas",
+    "Subrayar suave con lápiz grafito, que después se puede borrar",
+    "Destacar solo las páginas más importantes para no rayar tanto",
+    "Marcar con destacador y avisar en el mesón lo que hizo"
+   ],
+   "correcta": 0,
+   "tip": "El siguiente lector va a recibir el libro con las marcas de Ana y con su idea de qué era importante. Ni el lápiz borrable es inofensivo: al borrarlo, el papel queda gastado.",
+   "id": "leng5-oa10-19"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "Diego quiere marcar la página donde va en un libro prestado. ¿Cuál es la mejor forma?",
+   "opciones": [
+    "Poner un papel entre las páginas",
+    "Doblar la punta de la hoja, que es una marca bien discreta",
+    "Dejar el libro abierto boca abajo sobre el velador",
+    "Poner un lápiz grueso adentro y cerrar el libro encima"
+   ],
+   "correcta": 0,
+   "tip": "El doblez y el lomo forzado quedan para siempre; el separador no deja ningún rastro. El lápiz adentro parece inofensivo, pero abre las tapas y termina soltando las hojas del centro.",
+   "id": "leng5-oa10-20"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "A un libro de la biblioteca se le soltó una hoja. ¿Qué conviene hacer?",
+   "opciones": [
+    "Avisar en el mesón y dejar que ellos lo reparen como corresponde",
+    "Pegarla con cinta adhesiva antes de devolverlo, para dejarlo mejor",
+    "Guardar la hoja suelta adentro y devolverlo sin decir nada",
+    "Devolverlo así, porque la biblioteca revisa cada libro que vuelve"
+   ],
+   "correcta": 0,
+   "tip": "La cinta adhesiva común se pone amarilla y termina rasgando el papel al despegarse: arregla hoy y daña después. Las bibliotecas usan materiales que se pueden retirar sin dejar huella.",
+   "id": "leng5-oa10-21"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "Matías saca un libro y descubre que alguien ya le escribió encima. ¿Qué corresponde hacer?",
+   "opciones": [
+    "Avisar al recibirlo, así el daño no queda anotado a su nombre",
+    "Borrar todo lo que pueda para dejarlo mejor de como lo encontró",
+    "Devolverlo de inmediato y pedir que le presten otro título",
+    "Seguir escribiendo, ya que el libro igual está estropeado"
+   ],
+   "correcta": 0,
+   "tip": "Avisar en el momento protege a los dos: al libro, que entra a reparación, y a Matías, que si no lo dice puede aparecer como responsable del rayado cuando le toque devolverlo.",
+   "id": "leng5-oa10-22"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "Javiera piensa escribir su nombre en un libro prestado para no perderlo. ¿Por qué no conviene?",
+   "opciones": [
+    "Porque el libro no es suyo y esa marca queda para todos los que sigan",
+    "Porque su nombre podría borrarse y dejaría una mancha en la hoja",
+    "Porque la biblioteca ya escribe el nombre de quien tiene cada libro",
+    "Porque el nombre solo se puede escribir en la última página del libro"
+   ],
+   "correcta": 0,
+   "tip": "La intención es buena y el resultado es una marca permanente en algo prestado. Para no confundirlo alcanza con ponerle un separador con su nombre, que se saca al devolverlo.",
+   "id": "leng5-oa10-23"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "Camila estudia en la biblioteca con su jugo al lado del libro abierto. ¿Qué riesgo hay?",
+   "opciones": [
+    "Que una mancha en el papel ya no se pueda quitar nunca más",
+    "Que el bibliotecario la anote en la lista de lectores atrasados",
+    "Que el olor del jugo impida que otros lean en esa misma mesa",
+    "Que el libro pese más y quede incómodo de llevar en la mochila"
+   ],
+   "correcta": 0,
+   "tip": "El papel absorbe: una mancha se corre, se seca y se queda ahí. No es una regla caprichosa, es que ese ejemplar le va a llegar manchado a todos los lectores que vengan después.",
+   "id": "leng5-oa10-24"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "¿Cuál es la razón de fondo para cuidar un libro de la biblioteca?",
+   "opciones": [
+    "Que ese mismo ejemplar lo van a leer muchas personas después",
+    "Que el bibliotecario revisa el estado de cada libro devuelto",
+    "Que un libro dañado cuesta caro y hay que pagarlo al devolverlo",
+    "Que las normas de la biblioteca prohíben rayarlos o doblarlos"
+   ],
+   "correcta": 0,
+   "tip": "La revisión y el cobro existen, pero son consecuencias, no el motivo. La razón es más simple: ese libro no es de nadie y es de todos, y llega al siguiente lector tal como lo dejó el anterior.",
+   "id": "leng5-oa10-25"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "A Sofía se le perdió un libro de la biblioteca. ¿Qué corresponde hacer?",
+   "opciones": [
+    "Avisar cuanto antes en el mesón y preguntar cómo se repone",
+    "Esperar a ver si aparece y no decir nada mientras tanto",
+    "Comprar otro ejemplar igual y dejarlo en el estante que corresponde",
+    "Dejar de ir a la biblioteca hasta que haya pasado bastante tiempo"
+   ],
+   "correcta": 0,
+   "tip": "Avisar temprano permite sacar ese ejemplar del catálogo y reponerlo. Mientras nadie lo dice, la biblioteca lo sigue ofreciendo a lectores que nunca lo van a encontrar en el estante.",
+   "id": "leng5-oa10-26"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "¿Por qué en una sala de lectura se habla en voz baja?",
+   "opciones": [
+    "Porque a un metro hay alguien leyendo o estudiando concentrado",
+    "Porque el ruido daña las hojas de los libros más antiguos",
+    "Porque es una norma antigua que se conserva por tradición",
+    "Porque el bibliotecario necesita silencio para poder trabajar"
+   ],
+   "correcta": 0,
+   "tip": "El silencio de la biblioteca no es una regla por sí misma: es lo que permite que veinte personas trabajen juntas en una sala. Se cuida por los demás, no por obedecer a alguien.",
+   "id": "leng5-oa10-27"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "Tres compañeros deben hacer un trabajo juntos en la biblioteca. ¿Qué corresponde hacer?",
+   "opciones": [
+    "Conversar en voz baja o buscar la mesa destinada al trabajo en grupo",
+    "No hablar nada y comunicarse solamente escribiendo en un papel",
+    "Trabajar cada uno por su cuenta y juntar todo al salir de la sala",
+    "Hablar normal, ya que son un grupo autorizado por el profesor"
+   ],
+   "correcta": 0,
+   "tip": "La biblioteca no exige mudez: exige no invadir a los demás. Muchas tienen una zona para grupos justamente porque conversar en voz baja es parte de estudiar entre varios.",
+   "id": "leng5-oa10-28"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "Benjamín dejó su mochila para guardar puesto y salió una hora. ¿Qué se puede decir de eso?",
+   "opciones": [
+    "Que un puesto vacío una hora le hacía falta a quien estaba esperando",
+    "Que hizo bien, porque la mochila avisa que el puesto está ocupado",
+    "Que debió pedirle al bibliotecario que le guardara el puesto",
+    "Que el único problema es el riesgo de que le roben la mochila"
+   ],
+   "correcta": 0,
+   "tip": "Guardar puesto ocupa dos cosas a la vez, la silla y la mesa, sin usar ninguna. En una sala llena, una hora de mochila sola es una hora que alguien pasó de pie o se terminó yendo.",
+   "id": "leng5-oa10-29"
+  },
+  {
+   "oa": "LE05 OA 10",
+   "pregunta": "A Ana le suena el teléfono en la sala de lectura y es su mamá. ¿Qué corresponde hacer?",
+   "opciones": [
+    "Silenciarlo y salir de la sala para contestar afuera",
+    "Contestar rápido y en voz baja sin moverse de su puesto",
+    "Dejar que suene hasta que corte para no hacer más ruido",
+    "Contestar solo si la biblioteca está poco llena a esa hora"
+   ],
+   "correcta": 0,
+   "tip": "Hablar bajo igual interrumpe: la voz de una conversación se sigue sin querer y rompe la lectura de la mesa entera. Salir toma diez segundos y no le cuesta el rato a nadie.",
+   "id": "leng5-oa10-30"
+  }
+ ]
+}

@@ -92,6 +92,32 @@ es de meses, así que la granularidad se decide **antes** de escribir, no mientr
 - **`practica`** — reusa el motor de quiz. Va **última**, y es opcional: una lección que se queda
   sin bloques se marca completa igual (así funcionan las introducciones de Ciencias).
 
+### El texto admite `**negrita**`, y SOLO eso (03/09/2026)
+
+El motor no interpreta markdown: pinta con `FRAC.html`, que **escapa**. La única excepción es la
+negrita, que agrega `fmtLec` en [`assets/js/lecciones.js`](../assets/js/lecciones.js).
+
+**Se usa para el término que la clase enseña, y para nada más.** *"A eso el currículum le llama
+**escasez relativa**"* sí; enfatizar media frase porque parece importante, no. La razón es que se
+degrada sola: si cada lección negrita lo que le parece, en tres cursos más está todo resaltado y no
+resalta nada. Como mucho, **un término por bloque**.
+
+> ⚠️ **Y hay que tocar DOS sitios, no uno.** El informe de aprobación
+> (`scripts/generar-revision-preguntas.py`) imprime el texto de las lecciones con su propio escapado
+> en Python. Si el motor entiende la negrita y el informe no, **el profesor aprueba en papel un texto
+> distinto del que ve el niño** —con los asteriscos a la vista— y nadie se entera. Por eso ese script
+> tiene `esc_md()`, que es el espejo de `fmtLec`.
+
+> ⚠️ **El orden no se invierte: se ESCAPA primero y se marca después.** `FRAC.html` escapa, y la
+> negrita se aplica sobre el resultado ya escapado. Al revés se reabre el XSS almacenado de la
+> Sesión 51. Probado metiendo `**<img src=x onerror=...>**` en una lección real: sale como texto,
+> cero elementos creados.
+
+**Escribir `**` en un texto que no sea eso rompe la pantalla en silencio**: hasta el 02/09 las 27
+mini-clases de Matemática de 5° mostraban los asteriscos literales, porque se escribieron con marcas
+de markdown que el motor no entendía. Los otros doce archivos tenían cero, así que la convención era
+texto plano y se rompió al escribir un curso nuevo.
+
 ## ⚠️ Las reglas que ya se pagaron
 
 1. **El `fromBank.oa` tiene que calzar EXACTO con el banco** (`"MA07 OA 01"`, con espacios). Si no,
@@ -152,12 +178,31 @@ es de meses, así que la granularidad se decide **antes** de escribir, no mientr
    **cortada por el borde**: `scrollWidth` no desbordaba, el SVG tenía su `<svg>`, el alto era
    correcto y **ninguna medición lo decía**. Un widget con etiqueta larga lleva ancho mínimo.
 
+### ⚠️ Un dibujo no puede regalar la clave de una pregunta del banco
+
+Es la regla que ya tiene su sección más abajo, pero el widget **`barras`** merece su nota porque
+**imprime el valor sobre cada barra**: en la introducción del agua de Ciencias de 5° la barra decía
+`97` y `cien5-oa12-1` pregunta justamente *"¿qué parte del agua es salada?"* con clave *"Alrededor
+del 97%"*. El niño lo leía y lo elegía de memoria treinta segundos después, y el mapa de dominio
+habría medido **recuerdo**, no si entendió.
+
+Desde el 03/09 se apaga con **`"valores": false`** en los `params`. Por omisión **se muestran**, y
+eso no se cambia: la lección `ma-oa16` de 8° usa este widget para enseñar cómo un gráfico engaña, y
+ahí los números *son* la lección.
+
+    {"t":"diagrama","kind":"barras","intro":"Mira el tamaño de cada barra.",
+     "params":{"datos":[{"etiqueta":"salada","valor":97},{"etiqueta":"dulce","valor":3}],
+               "top":100,"valores":false}}
+
+La pregunta que hay que hacerse al poner un gráfico: *¿la lección enseña una **proporción** o un
+**número**?* Si es una proporción, el número sobra y puede hacer daño.
+
 ## El catálogo de dibujos: son DOS, y no se fusionan
 
 | | Dónde | Tipos | Qué son |
 |---|---|---|---|
 | `assets/js/visuales.js` | compartido | **11** — contar, agrupar, fracción, recta, reloj, barras, cuerpo, cuadrícula, globo, zonas, línea | **estáticos**, dentro de una pregunta |
-| `assets/js/lecciones.js` | compartido | **22** — algebra, arbol, balanza, barras, bloques, cajon, circulo, cuadricula, dinero, figura, fracciones, funcion, pictograma, poligono, posicional, potencias, puntos, recta, reloj, solido, transformacion, triangulo | **interactivos**, para enseñar |
+| `assets/js/lecciones.js` | compartido | **23** — algebra, arbol, balanza, barras, bloques, cajon, circulo, cuadricula, dinero, **esquema**, figura, fracciones, funcion, pictograma, poligono, posicional, potencias, puntos, recta, reloj, solido, transformacion, triangulo | **interactivos**, para enseñar |
 
 ⚠️ **Comparten tres nombres —`recta`, `barras`, `fraccion(es)`— a propósito y con
 implementaciones distintas.** No es un descuido: un dibujo que ilustra una pregunta y uno que el
@@ -166,6 +211,43 @@ refactor con riesgo sobre producción a cambio de nada.
 
 Al agregar un widget nuevo va con su **descripción para lector de pantalla**, que tampoco puede
 delatar la respuesta (dice "una marca en uno de los saltos", nunca su número).
+
+### `esquema`: el dibujo que no es de números (03/09/2026)
+
+Los otros 22 widgets nacieron para Matemática, y por eso el déficit de dibujos estaba **medido**
+donde nadie miraba: Lenguaje tenía **2 de 12** lecciones con dibujo y Ciencias **7 de 17**, contra
+**87 de 89** en Matemática.
+
+La salida no fue escribir 24 widgets a medida sino **uno data-driven con tres formas**, que cubre
+casi todo lo que Lenguaje, Ciencias e Historia necesitan — y que 4° y 6° heredan gratis:
+
+| forma | Para qué | Ejemplo real |
+|---|---|---|
+| `comparar` | 2 o 3 ideas enfrentadas | hecho / opinión · virus / bacterias / hongos |
+| `secuencia` | pasos encadenados con flechas | respiras → sangre → célula |
+| `niveles` | estratos apilados (`piramide:false` para que no se estrechen) | los estamentos coloniales · célula → tejido → órgano |
+
+    {"t":"diagrama","kind":"esquema","intro":"La distinción que sostiene el capítulo.",
+     "params":{"forma":"comparar","desc":"Diferencia entre un hecho y una opinión",
+       "items":[{"titulo":"Un hecho","texto":"Se puede comprobar."},
+                {"titulo":"Una opinión","texto":"Se puede discutir."}],
+       "etiqueta":"Y casi ningún texto es solo una de las dos"}}
+
+- **`items`: 2 a 4.** Con más, las columnas quedan ilegibles en un teléfono.
+- **`titulo` corto y `texto` de una frase.** El widget parte las líneas solo, pero un párrafo
+  dentro de una caja no se lee.
+- **`desc`** es para el lector de pantalla, y en una mini-clase **con práctica** no puede delatar
+  la clave de una pregunta del banco.
+- **`etiqueta`** es el remate dorado al pie. Opcional, y sirve para la conclusión.
+
+> **Con esto el proyecto queda en 129 de 130 lecciones con dibujo.** La única sin él es
+> `ci7-sexualidad`, y es una decisión: es contenido sensible, un esquema no aporta nada ahí, y el
+> estándar ya dice que **un dibujo que no aporta es peor que ninguno**.
+
+> ⚠️ **Agregar un dibujo a una lección ya aprobada la devuelve a la cola.** El texto no cambia,
+> pero lo que el profesor firmó sí: ahora se ve otra cosa. Las 23 tocadas quedaron con
+> `revisada:false` a propósito — la marca es por id, así que si no se desmarcan se quedarían
+> aprobadas mostrando algo que nadie revisó.
 
 ## Cómo se agrega un curso
 

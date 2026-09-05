@@ -55,7 +55,7 @@ def revisar(ruta, vistos):
     if len(set(puestos)) != len(puestos):
         fallas.append("ids repetidos")
 
-    sesgo, largos, pos = [], [], Counter()
+    sesgo, corta, largos, pos = [], [], [], Counter()
     for p in d:
         ops = [str(o) for o in p.get("opciones", [])]
         ok = p.get("correcta")
@@ -90,10 +90,20 @@ def revisar(ruta, vistos):
             fallas.append("%s: sin tip" % pid)
         elif pelado(p["tip"]) == pelado(ops[ok]):
             avisos.append("%s: el tip solo repite la respuesta" % pid)
-        # sesgo de largo: unica y por un margen sobre TODAS las demas
-        otras = max(len(o) for i, o in enumerate(ops) if i != ok)
-        if len(ops[ok]) > otras + MARGEN:
+        # Sesgo de largo, en LAS DOS DIRECCIONES. Que la correcta sea sistematicamente la
+        # mas larga es la pista clasica; que sea la mas CORTA es exactamente la misma pista
+        # al reves, y ensena "elige la breve". Aparece sola al corregir el sesgo clasico:
+        # se les da cuerpo a los distractores y no a la clave, y se pasa al otro lado.
+        # Medido el 03/09 en todo el proyecto: los bancos viejos (8 basico, apoyo) estan
+        # sesgados A LA LARGA porque nadie lo media entonces, y los nuevos (7, 5) A LA CORTA
+        # por haber corregido lo primero. Hasta hoy el script solo veia una mitad.
+        largo_ok = len(ops[ok])
+        mas_larga = max(len(o) for i, o in enumerate(ops) if i != ok)
+        mas_corta = min(len(o) for i, o in enumerate(ops) if i != ok)
+        if largo_ok > mas_larga + MARGEN:
             sesgo.append((pid, ops[ok]))
+        elif largo_ok < mas_corta - MARGEN:
+            corta.append((pid, ops[ok]))
         q = p.get("pregunta", "")
         largos.append(len(q))
         if len(q) > LARGO_MAX:
@@ -121,8 +131,14 @@ def revisar(ruta, vistos):
     print("\n%s — %d preguntas, OA %s" % (ruta.replace("\\", "/"), n, list(oas)[0]))
     print("  enunciado: medio %d, máximo %d caracteres" % (sum(largos) // max(1, len(largos)), max(largos or [0])))
     print("  con dibujo: %d" % sum(1 for p in d if p.get("visual")))
-    print("  sesgo de largo: %d de %d (%.0f%%)" % (len(sesgo), n, 100.0 * len(sesgo) / max(1, n)))
-    for pid, txt in sesgo:
+    # Al azar, con 4 opciones, cada direccion daria ~25%. Se muestra el detalle solo de
+    # la direccion que este desbalanceada, para no sepultar el informe: un informe que
+    # imprime de mas se deja de leer, que es la leccion de las Sesiones 56, 62 y 70.
+    print("  sesgo de largo: %d de %d (%.0f%%) la correcta es la MAS LARGA" %
+          (len(sesgo), n, 100.0 * len(sesgo) / max(1, n)))
+    print("                  %d de %d (%.0f%%) la correcta es la MAS CORTA" %
+          (len(corta), n, 100.0 * len(corta) / max(1, n)))
+    for pid, txt in (sesgo if len(sesgo) >= len(corta) else corta):
         print("      %s -> %s" % (pid, txt))
     if fallas:
         print("  ERRORES (%d):" % len(fallas))
@@ -132,9 +148,9 @@ def revisar(ruta, vistos):
         print("  avisos (%d):" % len(avisos))
         for a in avisos:
             print("      " + a)
-    if not fallas and not sesgo:
+    if not fallas and not sesgo and not corta:
         print("  sin errores.")
-    return len(fallas), len(sesgo)
+    return len(fallas), len(sesgo) + len(corta)
 
 
 def main():
@@ -161,7 +177,7 @@ def main():
     for r in rutas:
         f, s = revisar(r, vistos)
         tf += f; ts += s
-    print("\n=== %d archivos · %d errores · %d con sesgo de largo ===" % (len(rutas), tf, ts))
+    print("\n=== %d archivos · %d errores · %d con sesgo de largo (en cualquier direccion) ===" % (len(rutas), tf, ts))
     # Salir con error si los hay: es la PRIMERA puerta del pipeline, y saliendo con 0
     # un `&&` en una cadena de comandos se la saltaba sin que nadie lo notara. El sesgo
     # de largo NO cuenta: es un aviso para reescribir distractores, no un banco roto.

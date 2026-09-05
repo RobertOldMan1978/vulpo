@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Altura de plantas de tomate (cm). Grupo A: 24, 25, 26, 27, 50. Grupo B: 29, 30, 31, 32, 33. ¿Qué grupo tiene mayor dispersión?",
+   "opciones": [
+    "Grupo A, porque su rango es 26 cm (de 24 a 50) y el de Grupo B es solo 4 cm",
+    "Grupo B, porque sus alturas son en general más grandes que las de Grupo A",
+    "Los dos tienen la misma dispersión, porque ambos grupos tienen 5 plantas",
+    "Grupo A, porque su promedio de altura es más alto que el de Grupo B"
+   ],
+   "correcta": 0,
+   "tip": "La dispersión se mide con el rango (máximo menos mínimo), no con el tamaño de los números ni con el promedio. Grupo A va de 24 a 50 (rango 26); Grupo B va de 29 a 33 (rango 4).",
+   "id": "mate6-oa22-1"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Distancias de salto largo (m). Equipo A: 5,2 / 5,3 / 5,4 / 5,5 / 5,6. Equipo B: 3,1 / 4,5 / 5,0 / 6,2 / 7,8. ¿Qué equipo saltó de forma más consistente?",
+   "opciones": [
+    "Equipo A, porque sus saltos varían poco entre sí (van de 5,2 a 5,6 m)",
+    "Equipo B, porque tiene el salto más largo de todos (7,8 m)",
+    "Los dos son igual de consistentes, porque cada uno tiene 5 saltos",
+    "Equipo B, porque su salto más corto es más largo que el más corto de A"
+   ],
+   "correcta": 0,
+   "tip": "Ser consistente significa variar poco: el rango de A es 0,4 m y el de B es 4,7 m. Tener el mejor salto individual no dice nada sobre la consistencia del grupo completo.",
+   "id": "mate6-oa22-2"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Minutos de lectura diaria. Grupo A (diagrama de puntos): 20 tiene 1 punto, 25 tiene 4 puntos, 30 tiene 2 puntos. Grupo B: 20 tiene 2 puntos, 25 tiene 2 puntos, 30 tiene 3 puntos. ¿En qué grupo el valor más repetido es mayor?",
+   "opciones": [
+    "En Grupo B, porque el valor con más puntos es 30 minutos",
+    "En Grupo A, porque el valor con más puntos es 30 minutos",
+    "En los dos grupos el valor más repetido es el mismo",
+    "No se puede saber sin sumar todos los minutos de cada grupo"
+   ],
+   "correcta": 0,
+   "tip": "En Grupo A, 25 minutos tiene 4 puntos: es el valor más repetido. En Grupo B, 30 minutos tiene 3 puntos y es el más repetido ahí. Como 30 es mayor que 25, el valor más común de Grupo B es mayor.",
+   "id": "mate6-oa22-3"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Edad de perros (años). Grupo A: 1, 2, 2, 3, 8, 9, 10. Grupo B: 3, 4, 4, 5, 5, 6, 7. ¿Qué grupo tiene la mediana más alta?",
+   "opciones": [
+    "Grupo B, porque al ordenar sus 7 edades, el valor del medio es 5",
+    "Grupo A, porque al ordenar sus 7 edades, el valor del medio es 8",
+    "Los dos grupos tienen la misma mediana, porque ambos tienen 7 datos",
+    "Grupo A, porque su edad máxima (10) es mayor que la de Grupo B"
+   ],
+   "correcta": 0,
+   "tip": "Ordenando Grupo A queda 1,2,2,3,8,9,10: el valor del medio es 3, no 8. Ordenando Grupo B queda 3,4,4,5,5,6,7: el valor del medio es 5. Por eso la mediana de B es mayor.",
+   "id": "mate6-oa22-4"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Puntaje en un juego. Grupo A: 10, 10, 10, 10, 10. Grupo B: 2, 6, 10, 14, 18. Ambos grupos tienen la misma mediana (10). ¿Qué diferencia real hay entre ellos?",
+   "opciones": [
+    "Grupo B tiene mucha más dispersión: su rango es 16 y el de Grupo A es 0",
+    "No hay ninguna diferencia real, porque comparten la misma mediana",
+    "Grupo A tiene más dispersión, porque sus datos se repiten varias veces",
+    "Grupo B tiene una mediana más alta, aunque el cálculo diga lo mismo"
+   ],
+   "correcta": 0,
+   "tip": "Dos grupos pueden compartir la mediana y ser muy distintos: en Grupo A todos sacaron exactamente 10 (rango 0); en Grupo B los puntajes van de 2 a 18 (rango 16), mucho más disperso aunque el centro sea igual.",
+   "id": "mate6-oa22-5"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Edad de los árboles de dos parques (años), en tallo y hoja. Parque A: tallo 1 con hojas 2, 5, 8; tallo 2 con hojas 0, 3. Parque B: tallo 0 con hojas 8, 9; tallo 1 con hojas 0, 1, 4. ¿Qué parque tiene el árbol más antiguo?",
+   "opciones": [
+    "Parque A, porque su árbol más antiguo tiene 23 años",
+    "Parque B, porque su árbol más antiguo tiene 14 años",
+    "Los dos parques tienen árboles de la misma edad máxima",
+    "No se puede saber, porque el tallo y hoja no muestra la edad exacta"
+   ],
+   "correcta": 0,
+   "tip": "En tallo y hoja, el tallo es la primera cifra y la hoja la segunda. Parque A: 12, 15, 18, 20, 23 (el mayor es 23). Parque B: 8, 9, 10, 11, 14 (el mayor es 14). 23 es mayor que 14.",
+   "id": "mate6-oa22-6"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Puntos anotados por partido. Grupo A: 5, 6, 6, 7, 8. Grupo B: 5, 5, 6, 7, 7, 7. ¿Qué grupo tiene más partidos con 7 puntos o más?",
+   "opciones": [
+    "Grupo B, porque anotó 7 puntos o más en 3 partidos y Grupo A solo en 2",
+    "Grupo A, porque su puntaje máximo (8) es mayor que el de Grupo B (7)",
+    "Los dos grupos tienen la misma cantidad de partidos con 7 puntos o más",
+    "Grupo B, porque jugó un partido más que Grupo A en total"
+   ],
+   "correcta": 0,
+   "tip": "Contando valores de 7 en adelante: en Grupo A solo 7 y 8 califican (2 partidos); en Grupo B, tres partidos con 7 puntos califican (3 partidos). Tener el puntaje máximo más alto no significa tener más partidos altos.",
+   "id": "mate6-oa22-7"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Temperatura máxima diaria (°C) durante una semana. Ciudad A: 18, 19, 18, 20, 19. Ciudad B: 12, 25, 15, 30, 10. ¿Qué ciudad tuvo temperaturas más variables?",
+   "opciones": [
+    "Ciudad B, porque sus temperaturas van de 10 a 30 grados, un rango de 20",
+    "Ciudad A, porque registró más días con temperaturas distintas entre sí",
+    "Las dos ciudades tuvieron la misma variabilidad, porque ambas tienen 5 días",
+    "Ciudad A, porque su temperatura máxima (20) es más alta en promedio"
+   ],
+   "correcta": 0,
+   "tip": "El rango de Ciudad A es 2 grados (18 a 20); el de Ciudad B es 20 grados (10 a 30). Una diferencia de 18 grados entre ambos rangos muestra que Ciudad B es mucho más variable.",
+   "id": "mate6-oa22-8"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Talla de zapatos de dos cursos. Curso A: 35, 36, 36, 36, 37, 38. Curso B: 35, 35, 37, 38, 39, 39. ¿En qué curso hay una talla que se repite claramente más que las demás?",
+   "opciones": [
+    "En Curso A, donde la talla 36 aparece 3 veces y ninguna otra se repite tanto",
+    "En Curso B, donde la talla 37 aparece más veces que cualquier otra",
+    "En los dos cursos hay una talla que domina claramente sobre las demás",
+    "En ninguno de los dos cursos se repite una talla más que las otras"
+   ],
+   "correcta": 0,
+   "tip": "En Curso A, 36 aparece 3 veces y es la moda clara. En Curso B, 35 y 39 se repiten 2 veces cada una: hay un empate, no una moda que domine sobre las demás.",
+   "id": "mate6-oa22-9"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Peso de dos cajas de manzanas (kg), en tallo y hoja. Caja A: tallo 2 con hojas 1, 3, 5, 7, 9. Caja B: tallo 3 con hojas 0, 2, 4, 6, 8. ¿Qué caja tiene la mediana más alta?",
+   "opciones": [
+    "Caja B, porque su mediana es 34 kg y la de Caja A es 25 kg",
+    "Caja A, porque su valor más pequeño (21) es menor que el de Caja B (30)",
+    "Las dos cajas tienen la misma mediana, porque ambas tienen 5 pesos",
+    "No se puede calcular la mediana desde un tallo y hoja, solo el rango"
+   ],
+   "correcta": 0,
+   "tip": "Caja A: 21, 23, 25, 27, 29 (mediana 25). Caja B: 30, 32, 34, 36, 38 (mediana 34). El tallo y hoja sí permite calcular la mediana: basta ordenar los datos, y ya vienen ordenados por tallo.",
+   "id": "mate6-oa22-10"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Ahorro semanal (miles de pesos), en diagrama de puntos. Grupo A: un punto en cada uno de 2, 3, 4, 5 y 20. Grupo B: un punto en 8, dos puntos en 9 y dos puntos en 10. ¿Qué grupo tiene mayor dispersión en sus ahorros?",
+   "opciones": [
+    "Grupo A, porque su rango es 18 mil pesos y el de Grupo B es solo 2 mil",
+    "Grupo B, porque tiene más puntos repetidos en el mismo valor",
+    "Los dos grupos tienen la misma dispersión, porque suman 5 datos cada uno",
+    "Grupo A, porque ahorró en total más dinero que Grupo B"
+   ],
+   "correcta": 0,
+   "tip": "Grupo A va de 2 a 20 (rango 18); Grupo B va de 8 a 10 (rango 2). El dato 20 de Grupo A es un valor atípico que separa mucho a ese grupo del resto.",
+   "id": "mate6-oa22-11"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Peso al nacer de crías de dos criaderos (en gramos, sobre 39). Criadero A: 39, 40, 40, 41, 42. Criadero B: 10, 20, 40, 60, 90. Ambos tienen la misma mediana (40). ¿En cuál los datos están más concentrados alrededor de ese valor?",
+   "opciones": [
+    "En Criadero A, donde todos los pesos están entre 39 y 42 gramos",
+    "En Criadero B, donde los pesos están más cerca entre sí",
+    "En los dos por igual, porque comparten la misma mediana",
+    "No se puede saber sin conocer el peso promedio de cada uno"
+   ],
+   "correcta": 0,
+   "tip": "Criadero A tiene un rango de solo 3 gramos: sus datos están apretados junto a la mediana. Criadero B tiene un rango de 80 gramos: aunque la mediana coincide, sus datos están mucho más dispersos.",
+   "id": "mate6-oa22-12"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Tiempo en terminar una carrera (minutos). Grupo A: 22, 23, 24, 25, 50. Grupo B: 19, 20, 21, 22, 23. ¿Qué grupo tiene al corredor más rápido de todos?",
+   "opciones": [
+    "Grupo B, porque su tiempo mínimo es 19 minutos, menor que el de Grupo A",
+    "Grupo A, porque tiene más corredores con tiempos parecidos entre sí",
+    "Los dos grupos tienen al corredor más rápido con el mismo tiempo",
+    "Grupo B, porque ningún corredor suyo superó los 25 minutos"
+   ],
+   "correcta": 0,
+   "tip": "El corredor más rápido es el del tiempo mínimo. En Grupo A el menor tiempo es 22; en Grupo B es 19. Como 19 es menor que 22, el corredor más rápido de todos está en Grupo B.",
+   "id": "mate6-oa22-13"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Goles anotados por partido, en diagrama de puntos. Grupo A: dos puntos en 0, tres puntos en 1, un punto en 2. Grupo B: un punto en 0, uno en 1 y cuatro puntos en 2. ¿Qué grupo anotó más goles en total?",
+   "opciones": [
+    "Grupo B, porque sumando todos sus partidos anotó 9 goles contra 5 de Grupo A",
+    "Grupo A, porque jugó más partidos con al menos un gol anotado",
+    "Los dos grupos anotaron la misma cantidad total de goles",
+    "Grupo B, porque tiene más puntos dibujados sobre el valor 2"
+   ],
+   "correcta": 0,
+   "tip": "Grupo A: 0+0+1+1+1+2 = 5 goles. Grupo B: 0+1+2+2+2+2 = 9 goles. Hay que multiplicar cada valor por su cantidad de puntos y sumar, no solo mirar dónde hay más puntos.",
+   "id": "mate6-oa22-14"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Horas de sueño por noche. Grupo A: 7, 7, 8, 8, 9. Grupo B: 5, 6, 9, 10, 11. ¿Qué grupo duerme de forma más consistente?",
+   "opciones": [
+    "Grupo A, porque sus horas de sueño varían poco (rango de solo 2 horas)",
+    "Grupo B, porque tiene el registro con más horas de sueño (11)",
+    "Los dos grupos son igual de consistentes, porque tienen 5 datos cada uno",
+    "Grupo B, porque su rango es mayor y eso indica mayor regularidad"
+   ],
+   "correcta": 0,
+   "tip": "Consistencia significa poca variación: el rango de Grupo A es 2 horas (de 7 a 9); el de Grupo B es 6 horas (de 5 a 11). Un rango mayor indica MENOS regularidad, no más.",
+   "id": "mate6-oa22-15"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Precio de dos productos en distintas ferias (cientos de pesos). Feria A: 10, 12, 14, 16, 18, 20. Feria B: 5, 6, 7, 8, 9, 10. ¿Qué feria tiene la mediana más alta?",
+   "opciones": [
+    "Feria A, porque el promedio de sus dos valores centrales (14 y 16) es 15",
+    "Feria B, porque tiene más precios bajo 10 que Feria A",
+    "Las dos ferias tienen la misma mediana, porque ambas tienen 6 precios",
+    "Feria A, porque su precio máximo es el doble del de Feria B"
+   ],
+   "correcta": 0,
+   "tip": "Con 6 datos, la mediana es el promedio de los dos valores del medio. En Feria A son 14 y 16 (mediana 15); en Feria B son 7 y 8 (mediana 7,5). La mediana de Feria A es el doble que la de Feria B.",
+   "id": "mate6-oa22-16"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Distancia de salto largo (cm), en tallo y hoja. Grupo A: tallo 1 con hojas 5, 8; tallo 2 con hojas 0, 2, 5. Grupo B: tallo 0 con hoja 9; tallo 1 con hojas 0, 1, 2, 3. ¿Qué grupo logró el salto más largo?",
+   "opciones": [
+    "Grupo A, porque su mejor salto llegó a 25 cm",
+    "Grupo B, porque su mejor salto llegó a 13 cm",
+    "Los dos grupos lograron el mismo salto máximo",
+    "Grupo B, porque tiene un dato más que Grupo A"
+   ],
+   "correcta": 0,
+   "tip": "Grupo A: 15, 18, 20, 22, 25 (máximo 25). Grupo B: 9, 10, 11, 12, 13 (máximo 13). El mejor salto de Grupo A es casi el doble del mejor salto de Grupo B.",
+   "id": "mate6-oa22-17"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Crecimiento de plántulas en dos semanas (cm), en diagrama de puntos. Grupo A: 3, 4, 5, 5, 5, 6. Grupo B: 1, 5, 5, 5, 9. ¿Qué grupo creció de forma más pareja?",
+   "opciones": [
+    "Grupo A, porque sus datos van de 3 a 6, un rango de solo 3 cm",
+    "Grupo B, porque tiene la misma cantidad de plántulas en el valor 5",
+    "Los dos grupos crecieron igual de parejo, porque comparten la moda 5",
+    "Grupo B, porque su plántula más alta creció 9 cm"
+   ],
+   "correcta": 0,
+   "tip": "Ambos grupos comparten la moda (5 cm), pero eso no dice si crecieron parejo. El rango de Grupo A es 3 cm; el de Grupo B es 8 cm (de 1 a 9), mucho menos parejo.",
+   "id": "mate6-oa22-18"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Peso de dos lotes de sandías (en cientos de gramos), en tallo y hoja. Lote A: tallo 4 con hojas 0, 0, 0, 2, 5. Lote B: tallo 5 con hojas 1, 3, 3, 3, 7. ¿Qué lote tiene el peso más común (la moda) más alto?",
+   "opciones": [
+    "Lote B, porque su moda es 530 y la de Lote A es 400",
+    "Lote A, porque su moda se repite 3 veces igual que la de Lote B",
+    "Los dos lotes tienen exactamente la misma moda",
+    "No se puede saber la moda a partir de un tallo y hoja"
+   ],
+   "correcta": 0,
+   "tip": "Lote A: 400, 400, 400, 420, 450 (moda 400). Lote B: 510, 530, 530, 530, 570 (moda 530). Ambas modas se repiten 3 veces, pero 530 es mayor que 400.",
+   "id": "mate6-oa22-19"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Estatura de dos grupos de plantas (cm), en tallo y hoja. Grupo A: tallo 1 con hojas 2, 4, 6, 8; tallo 2 con hojas 0, 2. Grupo B: tallo 0 con hojas 5, 7; tallo 1 con hojas 0, 2, 4, 6. ¿Qué grupo tiene más plantas de 20 cm o más?",
+   "opciones": [
+    "Grupo A, con 2 plantas de 20 cm o más, contra ninguna en Grupo B",
+    "Grupo B, porque todas sus plantas miden menos de lo esperado",
+    "Los dos grupos tienen la misma cantidad de plantas de 20 cm o más",
+    "No se puede saber sin conocer la altura exacta de cada planta"
+   ],
+   "correcta": 0,
+   "tip": "Grupo A: 12, 14, 16, 18, 20, 22 (dos valores de 20 o más). Grupo B: 5, 7, 10, 12, 14, 16 (ninguno llega a 20). El tallo y hoja sí da la altura exacta de cada dato: tallo y hoja juntos forman el número.",
+   "id": "mate6-oa22-20"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Peso de peces capturados (kg). Bote A: 1,1 / 1,2 / 1,2 / 1,3 / 1,4. Bote B: 0,5 / 0,8 / 1,0 / 2,0 / 3,5. ¿Qué bote capturó peces de peso más uniforme?",
+   "opciones": [
+    "Bote A, porque sus pesos van de 1,1 a 1,4 kg, muy cerca entre sí",
+    "Bote B, porque capturó el pez más pesado de los dos botes (3,5 kg)",
+    "Los dos botes capturaron peces igual de uniformes, con 5 peces cada uno",
+    "Bote B, porque su peso mínimo (0,5 kg) es menor que el de Bote A"
+   ],
+   "correcta": 0,
+   "tip": "El rango de Bote A es 0,3 kg; el de Bote B es 3,0 kg, diez veces mayor. Capturar el pez más pesado no significa que todos los pesos sean parecidos entre sí.",
+   "id": "mate6-oa22-21"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Minutos de espera del bus en dos paraderos, durante 5 días. Paradero A: 4, 4, 5, 5, 6. Paradero B: 1, 2, 3, 10, 15. ¿En qué paradero es más fácil predecir cuánto habrá que esperar?",
+   "opciones": [
+    "En Paradero A, porque sus tiempos varían poco (entre 4 y 6 minutos)",
+    "En Paradero B, porque tuvo el día con menor espera (1 minuto)",
+    "En los dos es igual de fácil predecir, porque ambos tienen 5 registros",
+    "En Paradero B, porque su tiempo promedio es más bajo que en A"
+   ],
+   "correcta": 0,
+   "tip": "Predecir es más fácil cuando la dispersión es baja. El rango de Paradero A es 2 minutos; el de Paradero B es 14 minutos. Un promedio más bajo no garantiza que los tiempos sean parecidos entre sí.",
+   "id": "mate6-oa22-22"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Notas de una prueba (escala 1 a 10). Grupo A: 4, 5, 6, 7, 10. Grupo B: 6, 7, 8, 9, 10. Comparando ambas medianas, ¿qué grupo tendió a obtener mejores notas?",
+   "opciones": [
+    "Grupo B, porque su mediana es 8 y la de Grupo A es 6",
+    "Grupo A, porque su nota máxima (10) iguala a la de Grupo B",
+    "Los dos grupos tendieron igual, porque ambos llegaron al 10",
+    "Grupo A, porque tiene una nota más baja que empuja el resultado"
+   ],
+   "correcta": 0,
+   "tip": "Ambos grupos llegaron a la nota máxima 10, pero eso no basta para comparar la tendencia general. La mediana de Grupo B (8) es mayor que la de Grupo A (6), así que Grupo B tendió a notas más altas.",
+   "id": "mate6-oa22-23"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Kilómetros recorridos en bicicleta cada día de la semana. Grupo A: 8, 9, 8, 10, 9. Grupo B: 3, 15, 6, 20, 2. ¿Qué grupo tuvo un recorrido diario más variable?",
+   "opciones": [
+    "Grupo B, porque sus kilómetros van de 2 a 20, un rango de 18",
+    "Grupo A, porque registró más días distintos de recorrido",
+    "Los dos grupos variaron igual, porque cada uno tiene 5 días registrados",
+    "Grupo A, porque su día con más kilómetros (10) fue menor que el de B"
+   ],
+   "correcta": 0,
+   "tip": "El rango de Grupo A es 2 km (de 8 a 10); el de Grupo B es 18 km (de 2 a 20). Grupo B alternó días muy cortos con días muy largos, mucho más variable.",
+   "id": "mate6-oa22-24"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Horas de televisión al día, en diagrama de puntos. Grupo A: un punto en 1, cuatro puntos en 2, un punto en 3. Grupo B: dos puntos en 1, un punto en 2, tres puntos en 3. ¿Qué grupo tiene la mediana más alta?",
+   "opciones": [
+    "Grupo B, porque al ordenar sus 6 datos, el promedio de los dos centrales es 2,5",
+    "Grupo A, porque tiene más puntos dibujados en total que Grupo B",
+    "Las dos medianas son iguales, porque ambos grupos tienen 6 datos",
+    "Grupo A, porque su valor más repetido (2) es mayor que 1"
+   ],
+   "correcta": 0,
+   "tip": "Grupo A ordenado: 1,2,2,2,2,3 (mediana 2). Grupo B ordenado: 1,1,2,3,3,3 (mediana 2,5). Aunque ambos tienen 6 datos, la mediana de Grupo B es más alta.",
+   "id": "mate6-oa22-25"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Tiempos de una carrera (minutos). Grupo A: 29, 30, 30, 31, 60. Grupo B: 10, 20, 30, 40, 50. Un compañero dice que Grupo A tiene más dispersión porque su tiempo máximo (60) es mayor. ¿Tiene razón?",
+   "opciones": [
+    "No: el rango de Grupo B es 40 y el de Grupo A es 31, así que B varía más",
+    "Sí: el grupo con el dato máximo más alto siempre tiene más dispersión",
+    "Sí, porque además Grupo A tiene un dato que se repite (30) y Grupo B no",
+    "No se puede comparar la dispersión cuando un grupo tiene un dato atípico"
+   ],
+   "correcta": 0,
+   "tip": "El rango depende del máximo Y del mínimo. Grupo A va de 29 a 60 (rango 31); Grupo B va de 10 a 50 (rango 40). Aunque el máximo de A es más alto, su mínimo también es alto, así que su rango es menor.",
+   "id": "mate6-oa22-26"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Horas de voluntariado en un mes. Grupo A: 2, 3, 3, 3, 4. Grupo B: 1, 2, 3, 4, 5. ¿Cuál de estas conclusiones es correcta al comparar ambos grupos?",
+   "opciones": [
+    "Grupo A tiene una moda clara (3 horas), mientras que en Grupo B todos los valores son distintos",
+    "Grupo B tiene una moda clara (3 horas), mientras que en Grupo A todos los valores son distintos",
+    "Ambos grupos tienen exactamente la misma moda y el mismo rango",
+    "Ninguno de los dos grupos tiene un valor que se repita más que otro"
+   ],
+   "correcta": 0,
+   "tip": "En Grupo A, 3 horas aparece 3 veces: es una moda clara. En Grupo B cada valor (1,2,3,4,5) aparece una sola vez, así que no hay ningún valor que se repita más que otro.",
+   "id": "mate6-oa22-27"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Grupo A (diagrama de puntos): 2 tiene 1 punto, 3 tiene 3 puntos, 4 tiene 1 punto. Grupo B (lista): 2, 2, 4, 4, 6. ¿Qué grupo tiene la mediana más alta?",
+   "opciones": [
+    "Grupo B, porque su mediana es 4 y la de Grupo A es 3",
+    "Grupo A, porque tiene un valor que se repite 3 veces",
+    "Las dos medianas son iguales, porque ambos tienen 5 datos",
+    "Grupo B, porque su valor máximo (6) es el más alto entre los dos"
+   ],
+   "correcta": 0,
+   "tip": "Grupo A ordenado: 2,3,3,3,4 (mediana 3). Grupo B ordenado: 2,2,4,4,6 (mediana 4). Hay que ordenar los datos de cada grupo antes de buscar el del medio, sea cual sea la forma en que se presentan.",
+   "id": "mate6-oa22-28"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Edad de los socios de dos clubes (años), en tallo y hoja comparado. Tallo 1: hojas de Club A 2 y 5; hojas de Club B 0, 3, 6 y 8. Tallo 2: hojas de Club A 1, 3, 5 y 7; hojas de Club B 2. ¿Qué club tiene mayor dispersión de edades?",
+   "opciones": [
+    "Club A, porque su rango es 15 años (de 12 a 27) y el de Club B es 12",
+    "Club B, porque tiene más socios con edades en el tallo 1",
+    "Los dos clubes tienen exactamente la misma dispersión de edades",
+    "Club A, porque tiene más socios en total que Club B"
+   ],
+   "correcta": 0,
+   "tip": "Club A: 12, 15, 21, 23, 25, 27 (rango 15). Club B: 10, 13, 16, 18, 22 (rango 12). En un tallo y hoja comparado, cada tallo se comparte y las hojas de cada grupo se leen por separado.",
+   "id": "mate6-oa22-29"
+  },
+  {
+   "oa": "MA06 OA 22",
+   "pregunta": "Cantidad de mensajes enviados por día, en tallo y hoja. Grupo A: tallo 1 con hojas 2, 4; tallo 2 con hojas 1, 3, 5. Grupo B: tallo 0 con hojas 5, 6, 7, 8. ¿Qué grupo registró más días de datos en total?",
+   "opciones": [
+    "Grupo A, con 5 días registrados contra 4 días de Grupo B",
+    "Grupo B, porque su tallo tiene más hojas escritas seguidas",
+    "Los dos grupos registraron la misma cantidad de días",
+    "No se puede saber cuántos días registró cada grupo desde un tallo y hoja"
+   ],
+   "correcta": 0,
+   "tip": "En tallo y hoja, cada hoja es un dato. Grupo A tiene 2 hojas en el tallo 1 más 3 en el tallo 2 = 5 datos. Grupo B tiene 4 hojas en su único tallo = 4 datos.",
+   "id": "mate6-oa22-30"
+  }
+ ]
+}

@@ -13,6 +13,26 @@
      "md": "Un truco que sirve siempre: cuando algo del cuento te recuerde a algo que te pasó a ti, se entiende mucho mejor."
     },
     {
+     "t": "diagrama",
+     "intro": "Leer es hacer las dos cosas, no solo la primera.",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Dos cajas: decir las palabras y entender lo que dicen",
+      "items": [
+       {
+        "titulo": "Decir las palabras",
+        "texto": "Sale la voz, pero puede no quedar nada."
+       },
+       {
+        "titulo": "Entender lo que dicen",
+        "texto": "Vas pensando mientras lees."
+       }
+      ],
+      "etiqueta": "Leer es entender"
+     }
+    },
+    {
      "t": "texto",
      "md": "En este capítulo vas a leer cuentos y también textos de verdad, como cartas y noticias, y vas a buscar en ellos lo que dicen y lo que no dicen pero se puede adivinar."
     }
@@ -30,6 +50,26 @@
     {
      "t": "texto",
      "md": "Eso se llama lenguaje figurado, y sirve para decir cosas con más fuerza. Cuando algo suene raro en un poema, pregúntate a qué se parece."
+    },
+    {
+     "t": "diagrama",
+     "intro": "Fíjate en la diferencia entre lo que dice y lo que quiere decir.",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Dos cajas: lo que dice la frase y lo que quiere decir",
+      "items": [
+       {
+        "titulo": "Lo que dice",
+        "texto": "«Mi hermano es un torbellino.»"
+       },
+       {
+        "titulo": "Lo que quiere decir",
+        "texto": "Que no se queda quieto nunca."
+       }
+      ],
+      "etiqueta": "Eso es lenguaje figurado"
+     }
     },
     {
      "t": "texto",
@@ -59,6 +99,26 @@
     {
      "t": "texto",
      "md": "Y si la pista no alcanza, está el diccionario: las palabras van en orden alfabético, así que se busca por la primera letra."
+    },
+    {
+     "t": "diagrama",
+     "intro": "Qué hacer cuando aparece una palabra que no conoces.",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "desc": "Tres pasos para descubrir una palabra nueva",
+      "items": [
+       {
+        "titulo": "Sigue leyendo"
+       },
+       {
+        "titulo": "Busca la pista en la frase"
+       },
+       {
+        "titulo": "Si no alcanza, el diccionario"
+       }
+      ]
+     }
     },
     {
      "t": "texto",

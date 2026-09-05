@@ -14,6 +14,13 @@ opciones de la misma pregunta valen igual. Deliberadamente NO intenta interpreta
 opciones en prosa: preferimos no avisar a llenar el informe de falsos positivos,
 que es como se entrena a ignorarlo (leccion de la Sesion 56).
 
+Y tampoco evalua EXPRESIONES ("700 + 20 + 6"), aunque se reporto como hueco. Medido
+sobre las 95 preguntas del proyecto que las usan: aparecerian 2 pares y los DOS son
+falsos positivos, porque ahi la pregunta pide que expresion REPRESENTA algo, no
+cuanto vale. "Como se descompone 726?" ofrece "700 + 20 + 6" (la clave) y "700 + 26":
+los dos valen 726 y solo uno es la descomposicion. Cerrar ese hueco acusaria
+preguntas correctas de 3 basico, asi que se deja abierto a proposito.
+
 Uso:
     python scripts/auditar-numerico.py contenido/matematicas-7basico/preguntas.json
     python scripts/auditar-numerico.py contenido/*/preguntas.json
@@ -29,13 +36,30 @@ from fractions import Fraction
 # Un numero suelto, con o sin unidad pegada detras. Se exige que la opcion sea
 # CASI solo el numero: si trae mas de dos palabras extra, es prosa y no se toca.
 _RX_FRAC = re.compile(r"^\s*(-?\d+)\s*/\s*(\d+)\s*$")
+# Numero MIXTO ("3 1/2"). Sin esta rama, valor() devolvia None y los mixtos se
+# trataban como prosa: una pregunta con clave 7/2 y distractor 3 1/2 —el MISMO
+# numero escrito de dos formas— pasaba el auditor con codigo de salida 0. Lo
+# encontro la tanda de validacion de 6 basico, cuyo OA 05 trabaja justamente la
+# equivalencia entre impropias y mixtos (tambien sus OA 06 y 08).
+# Medido antes de aplicarlo sobre los 18 bancos: no cambia NINGUN veredicto
+# —cero pares antes, cero despues— asi que cierra la puerta sin mover nada.
+_RX_MIXTO = re.compile(r"^\s*(-?\d+)\s+(\d+)\s*/\s*(\d+)\s*$")
+# Razon ("2:3"). Sin esto, «2:3» y «4:6» —la MISMA razon— pasaban como prosa.
+# ⚠️ Pero «3:00» es una HORA y «24 : 6» una division, y las dos formas son
+# identicas: el contexto decide, no el texto. Por eso la razon se lee salvo que
+# el ENUNCIADO hable de horas o relojes, que es informacion que el script ya
+# tiene. Medido antes de aplicarlo sobre los 10.595 items del proyecto (34 de
+# ellos preguntas de hora): cero pares nuevos, o sea cierra el hueco sin mover
+# ningun veredicto.
+_RX_RAZON = re.compile(r"^\s*(\d+)\s*:\s*(\d+)\s*$")
+_RX_HORA = re.compile(r"hora|reloj|minutos|a\.?m\.?|p\.?m\.?", re.IGNORECASE)
 _RX_NUM = re.compile(r"^\s*(-?\d[\d.]*(?:,\d+)?|-?\d+(?:\.\d+)?)\s*(%)?\s*$")
 
 
 _RX_UNIDAD = re.compile(r"^(.*?)\s*([A-Za-zÁÉÍÓÚÑáéíóúñ][\wÁÉÍÓÚÑáéíóúñ ]{0,24})?\s*$")
 
 
-def valor(op):
+def valor(op, razon=False):
     """Devuelve (Fraction, unidad) si la opcion es un numero con o sin unidad.
     None si es prosa.
 
@@ -45,6 +69,21 @@ def valor(op):
     (leccion de la Sesion 56). La unidad se normaliza solo en minusculas y sin
     plural, para que «15 centimetro» y «15 centimetros» no se escapen."""
     t = str(op).strip()
+    if razon:
+        m = _RX_RAZON.match(t)
+        if m:
+            den = int(m.group(2))
+            return (Fraction(int(m.group(1)), den), "") if den else None
+
+    m = _RX_MIXTO.match(t)
+    if m:
+        den = int(m.group(3))
+        if not den:
+            return None
+        ent, num = int(m.group(1)), int(m.group(2))
+        signo = -1 if ent < 0 else 1
+        return (signo * (Fraction(abs(ent)) + Fraction(num, den)), "")
+
     m = _RX_FRAC.match(t)
     if m:
         den = int(m.group(2))
@@ -91,7 +130,9 @@ def revisar(ruta):
     choques = []
     for q in preguntas:
         ops = q.get("opciones", [])
-        vals = [(i, valor(o)) for i, o in enumerate(ops)]
+        # «3:00» es hora y «2:3» es razon: los distingue el enunciado, no la forma.
+        es_hora = bool(_RX_HORA.search(q.get("pregunta") or ""))
+        vals = [(i, valor(o, razon=not es_hora)) for i, o in enumerate(ops)]
         vals = [(i, v) for i, v in vals if v is not None]
         # Solo colisionan si ademas la UNIDAD coincide.
         for a in range(len(vals)):

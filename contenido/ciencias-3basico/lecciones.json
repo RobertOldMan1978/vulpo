@@ -9,6 +9,26 @@
      "md": "La luz y el sonido viajan. Por eso ves el relámpago antes de escuchar el trueno, aunque los dos pasaron al mismo tiempo."
     },
     {
+     "t": "diagrama",
+     "intro": "Los dos viajan, pero no a la misma velocidad.",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "La luz y el sonido, y cuál llega primero",
+      "items": [
+       {
+        "titulo": "La luz",
+        "texto": "Llega al tiro. Por eso ves el relámpago."
+       },
+       {
+        "titulo": "El sonido",
+        "texto": "Llega después. Por eso el trueno se oye más tarde."
+       }
+      ],
+      "etiqueta": "Los dos pasaron al mismo tiempo"
+     }
+    },
+    {
      "t": "texto",
      "md": "En este capítulo vas a ver de dónde sale la luz, cómo viaja y por qué se forman las sombras. Y también cómo viaja el sonido hasta tu oído."
     }
@@ -28,6 +48,25 @@
      "md": "La Tierra hace dos cosas a la vez: gira sobre sí misma, y eso hace el día y la noche; y da la vuelta al Sol, y eso hace el año."
     },
     {
+     "t": "diagrama",
+     "intro": "La Tierra hace dos cosas a la vez, y cada una produce algo distinto.",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Los dos movimientos de la Tierra y lo que produce cada uno",
+      "items": [
+       {
+        "titulo": "Gira sobre sí misma",
+        "texto": "Eso hace el día y la noche."
+       },
+       {
+        "titulo": "Da la vuelta al Sol",
+        "texto": "Eso hace el año."
+       }
+      ]
+     }
+    },
+    {
      "t": "texto",
      "md": "En este capítulo vas a ver el Sol y sus planetas, los dos movimientos de la Tierra, y por qué la Luna se ve distinta según el día."
     }
@@ -43,6 +82,27 @@
      "md": "Una planta está viva, igual que tú. Necesita agua, luz y aire, y cada una de sus partes hace un trabajo distinto."
     },
     {
+     "t": "diagrama",
+     "intro": "Lo que una planta necesita para vivir.",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Las tres cosas que necesita una planta",
+      "items": [
+       {
+        "titulo": "Agua"
+       },
+       {
+        "titulo": "Luz"
+       },
+       {
+        "titulo": "Aire"
+       }
+      ],
+      "etiqueta": "Y cada parte hace un trabajo distinto"
+     }
+    },
+    {
      "t": "texto",
      "md": "En este capítulo vas a ver qué necesita una planta para crecer, algunas plantas que solo viven en Chile, y cómo una semilla se convierte en fruto."
     }
@@ -56,6 +116,25 @@
     {
      "t": "texto",
      "md": "Cuidarse no es dejar de comer lo que te gusta. Es que la mayoría de las veces comas cosas que te ayudan a crecer, y que te muevas todos los días."
+    },
+    {
+     "t": "diagrama",
+     "intro": "Cuidarse son dos cosas, y ninguna es dejar de comer lo que te gusta.",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Las dos cosas que son cuidarse",
+      "items": [
+       {
+        "titulo": "Comer variado",
+        "texto": "La mayoría de las veces, cosas que te ayudan a crecer."
+       },
+       {
+        "titulo": "Moverte",
+        "texto": "Todos los días, aunque sea un rato."
+       }
+      ]
+     }
     },
     {
      "t": "texto",

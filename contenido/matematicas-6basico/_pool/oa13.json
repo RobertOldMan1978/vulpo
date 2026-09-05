@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "¿De qué piezas está formada la red (plantilla) de un cubo?",
+   "opciones": [
+    "De seis cuadrados exactamente iguales, uno por cada cara del cubo",
+    "De ocho cuadrados iguales, uno por cada vértice o esquina del cubo",
+    "De doce rectángulos angostos, uno por cada arista del cubo armado",
+    "De seis cuadrados de distinto tamaño, uno para cada cara del cubo"
+   ],
+   "correcta": 0,
+   "tip": "Un cubo tiene seis caras y las seis son cuadrados del mismo tamaño, así que su red lleva seis cuadrados iguales. Los ocho vértices y las doce aristas son esquinas y bordes, no piezas de cartulina.",
+   "id": "mate6-oa13-1"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "La red de un cubo está formada por seis cuadrados de 5 cm de lado. ¿Cuánto mide su área?",
+   "opciones": [
+    "150 centímetros cuadrados",
+    "30 centímetros cuadrados",
+    "25 centímetros cuadrados",
+    "125 centímetros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "Cada cuadrado mide 5 por 5, o sea 25 centímetros cuadrados, y hay seis: 25 por 6 son 150. Sumar 5 seis veces da 30, que es una medida de largo, y 125 es el espacio que cabe dentro del cubo.",
+   "id": "mate6-oa13-2"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "Diego recortó una tira recta de seis cuadrados iguales seguidos. ¿Se pliega en un cubo?",
+   "opciones": [
+    "No: con cuatro cuadrados ya da la vuelta y los dos que sobran quedan montados",
+    "Sí, porque tiene seis cuadrados iguales y eso es todo lo que hace falta",
+    "Sí, siempre que todos los dobleces se hagan hacia el mismo lado de la tira",
+    "No, porque a la red de un cubo le hacen falta ocho cuadrados y no seis"
+   ],
+   "correcta": 0,
+   "tip": "Para rodear un cubo bastan cuatro cuadrados en fila; los otros dos tienen que salir hacia los costados para tapar arriba y abajo. En una tira recta se montan sobre los primeros y quedan dos caras al aire.",
+   "id": "mate6-oa13-3"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "¿Cuál de estas figuras hechas con seis cuadrados iguales SÍ se pliega en un cubo?",
+   "opciones": [
+    "Una fila de cuatro cuadrados, con uno pegado arriba y otro abajo del segundo",
+    "Una tira recta de seis cuadrados puestos uno tras otro en la misma fila",
+    "Un rectángulo formado por dos filas de tres cuadrados pegadas una a la otra",
+    "Una fila de cinco cuadrados, con el sexto pegado arriba del primero de todos"
+   ],
+   "correcta": 0,
+   "tip": "La fila de cuatro da la vuelta al cubo y los dos cuadrados sueltos tapan arriba y abajo. En las otras figuras nunca hay cuatro cuadrados en fila más dos que salgan a los costados, así que quedan caras destapadas.",
+   "id": "mate6-oa13-4"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "En la red de un cubo hay dos cuadrados pegados por un lado. ¿Cómo quedan al plegarla?",
+   "opciones": [
+    "En caras vecinas, y el lado que compartían se transforma en una arista",
+    "Uno justo frente al otro, en caras opuestas del cubo ya terminado",
+    "Montados uno encima del otro, así que una de las dos piezas sobra",
+    "Separados por un hueco, que hay que tapar con otra cartulina aparte"
+   ],
+   "correcta": 0,
+   "tip": "El lado que dos cuadrados comparten en la red es la línea del doblez, así que al plegar se convierte en una arista y las dos caras quedan vecinas, haciendo esquina. Para quedar enfrentadas tendrían que estar separadas.",
+   "id": "mate6-oa13-5"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "En la red de un cubo hay tres cuadrados seguidos en fila. ¿Cómo quedan el primero y el tercero?",
+   "opciones": [
+    "En caras opuestas, mirándose de frente cuando el cubo está armado",
+    "En caras vecinas, compartiendo la arista que se forma en el doblez",
+    "Montados uno sobre el otro, porque la fila se cierra sobre sí misma",
+    "En una misma cara, porque los cuadrados de una fila siempre se juntan"
+   ],
+   "correcta": 0,
+   "tip": "Entre esos dos cuadrados hay uno de por medio, así que al plegar cada uno gira hacia un lado distinto y terminan enfrentados. Las caras vecinas son las que en la red están pegadas por un lado.",
+   "id": "mate6-oa13-6"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "¿Cómo son las seis caras que forman la red de un paralelepípedo?",
+   "opciones": [
+    "Son seis rectángulos que se agrupan en tres pares de caras iguales",
+    "Son seis rectángulos exactamente iguales entre sí, de la misma medida",
+    "Son seis rectángulos todos distintos, uno por cada cara de la caja",
+    "Son ocho rectángulos, agrupados en cuatro pares de caras iguales"
+   ],
+   "correcta": 0,
+   "tip": "Una caja tiene tres medidas, y cada par de ellas forma dos caras iguales que quedan enfrentadas. Por eso su red lleva tres pares distintos: no son seis caras idénticas ni seis caras todas diferentes.",
+   "id": "mate6-oa13-7"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "Una caja mide 8, 5 y 3 cm. ¿Qué medidas tienen las caras distintas de su red?",
+   "opciones": [
+    "8 por 5, 8 por 3 y 5 por 3, y cada una de ellas aparece dos veces",
+    "8 por 5 y 5 por 3 solamente, porque hay solo dos caras diferentes",
+    "8 por 8, 5 por 5 y 3 por 3, una cara por cada medida de la caja",
+    "8 por 5 por 3 en las seis caras, porque todas usan las tres medidas"
+   ],
+   "correcta": 0,
+   "tip": "Cada cara junta dos de las tres medidas de la caja, y hay tres maneras de emparejarlas: 8 con 5, 8 con 3 y 5 con 3. Como cada cara tiene su gemela al frente, esas tres medidas aparecen dos veces.",
+   "id": "mate6-oa13-8"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "¿Cuánto mide el área de la red de una caja de 6, 4 y 2 cm?",
+   "opciones": [
+    "88 centímetros cuadrados",
+    "44 centímetros cuadrados",
+    "48 centímetros cuadrados",
+    "24 centímetros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "Las tres caras distintas miden 24, 12 y 8 centímetros cuadrados y suman 44; como cada una tiene su gemela, la red mide el doble: 88. Los 48 salen de multiplicar las tres medidas, que da el espacio de adentro.",
+   "id": "mate6-oa13-9"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "Para el área de la red de una caja se suman tres caras y se duplica. ¿Por qué se duplica?",
+   "opciones": [
+    "Porque las caras van en tres pares iguales: cada una tiene su gemela enfrente",
+    "Porque una caja tiene tres medidas y cada medida se usa dos veces al calcular",
+    "Porque las seis caras son iguales y con calcular la mitad ya queda todo listo",
+    "Porque al plegar la red cada cara se dobla por la mitad y hay que reponerla"
+   ],
+   "correcta": 0,
+   "tip": "En una caja cada cara tiene otra idéntica en el lado opuesto: son tres parejas. Por eso basta calcular una cara de cada pareja, sumarlas y duplicar. Las seis caras no son iguales entre sí.",
+   "id": "mate6-oa13-10"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "A la red de una caja de 9, 5 y 4 cm le falta la cara de 9 por 5. ¿Cuánta cartulina falta?",
+   "opciones": [
+    "45 centímetros cuadrados",
+    "90 centímetros cuadrados",
+    "36 centímetros cuadrados",
+    "28 centímetros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "La cara que falta mide 9 por 5, o sea 45 centímetros cuadrados. Los 90 serían las dos caras de ese tamaño, pero falta una sola; los 36 corresponden a la cara de 9 por 4, que es otra distinta.",
+   "id": "mate6-oa13-11"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "Una caja mide 6, 4 y 2 cm y otra 8, 3 y 2 cm. ¿Cuál necesita más cartulina para su red?",
+   "opciones": [
+    "La de 8, 3 y 2, porque su red mide 92 centímetros cuadrados contra 88",
+    "La de 6, 4 y 2, porque su cara más grande es más ancha que la de la otra",
+    "Las dos gastan lo mismo, porque las dos guardan 48 centímetros cúbicos",
+    "No se pueden comparar, porque las dos cajas tienen formas distintas"
+   ],
+   "correcta": 0,
+   "tip": "En la caja de 6, 4 y 2: 24 más 12 más 8 son 44, y el doble es 88. En la de 8, 3 y 2: 24 más 16 más 6 son 46, y el doble es 92. Las dos guardan lo mismo por dentro, pero el cartón de afuera no tiene por qué coincidir.",
+   "id": "mate6-oa13-12"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "Sofía dice que su caja de 2, 3 y 4 cm gasta menos cartulina que una de 1, 2 y 8 cm. ¿Es así?",
+   "opciones": [
+    "No: las dos redes miden exactamente 52 centímetros cuadrados, o sea lo mismo",
+    "Sí, porque su caja guarda más espacio adentro que la caja alargada",
+    "Sí, porque la caja de 1, 2 y 8 es más larga y por eso necesita más cartón",
+    "No: su caja gasta más, porque dos de sus medidas son mayores que las otras"
+   ],
+   "correcta": 0,
+   "tip": "En la caja de 2, 3 y 4: 6 más 8 más 12 son 26, y el doble es 52. En la de 1, 2 y 8: 2 más 8 más 16 son 26, y el doble también es 52. Guardar más espacio adentro no obliga a gastar más cartón afuera.",
+   "id": "mate6-oa13-13"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "Una cara de un cubo mide 9 centímetros cuadrados. ¿Cuánto mide el área de su red?",
+   "opciones": [
+    "54 centímetros cuadrados",
+    "27 centímetros cuadrados",
+    "45 centímetros cuadrados",
+    "81 centímetros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "La red lleva seis caras iguales, así que se multiplica 9 por 6 y da 54. Los 45 salen de contar solo cinco caras y olvidar una, y los 27 son el espacio que cabe dentro de ese cubo, no cartulina.",
+   "id": "mate6-oa13-14"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "Un cubo mide 2 cm de arista y otro 4 cm. ¿Cuántas veces más grande es la red del segundo?",
+   "opciones": [
+    "Cuatro veces más grande: la red pasa de 24 a 96 centímetros cuadrados",
+    "Dos veces más grande, porque la arista del segundo es el doble de la otra",
+    "Ocho veces más grande, igual que el espacio que cabe dentro de cada cubo",
+    "Seis veces más grande, una vez por cada una de las caras que tiene el cubo"
+   ],
+   "correcta": 0,
+   "tip": "En el cubo chico cada cara mide 4 y la red 24; en el grande cada cara mide 16 y la red 96. Al doblar la arista, la cara crece al cuádruple, porque crece de largo y de ancho a la vez.",
+   "id": "mate6-oa13-15"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "¿El área de la red de una caja es igual a la superficie de esa caja ya armada?",
+   "opciones": [
+    "Sí, porque la red son exactamente las seis caras puestas planas sobre la mesa",
+    "No, la red mide más, porque al plegarla hay partes que se superponen",
+    "No, la red mide menos, porque al doblarse las caras se acortan un poco",
+    "Solo en los cubos: en las cajas alargadas la red mide siempre un poco más"
+   ],
+   "correcta": 0,
+   "tip": "Desplegar una caja no agrega ni quita cartulina: la red es la misma superficie, solo que estirada sobre el plano. Por eso el área de la red y la superficie del cuerpo armado son el mismo número.",
+   "id": "mate6-oa13-16"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "En la red de una caja de 10, 6 y 4 cm, ¿cuántas caras miden 10 por 6 centímetros?",
+   "opciones": [
+    "Dos caras, porque cada cara de una caja tiene otra igual enfrente",
+    "Una sola cara, porque cada par de medidas se usa una única vez",
+    "Cuatro caras, porque esa es la medida de todos los costados de la caja",
+    "Seis caras, porque en una red todas las piezas miden exactamente lo mismo"
+   ],
+   "correcta": 0,
+   "tip": "Las caras van de a pares: dos miden 10 por 6, dos miden 10 por 4 y dos miden 6 por 4. En total son tres pares distintos, no seis piezas iguales ni seis piezas todas diferentes.",
+   "id": "mate6-oa13-17"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "Ana dibujó siete cuadrados iguales para armar la red de un cubo. ¿Qué debería hacer?",
+   "opciones": [
+    "Sacar uno: la red de un cubo lleva exactamente seis cuadrados, ni más ni menos",
+    "Dejarlos: el séptimo sirve de tapa extra para cerrar mejor el cubo por arriba",
+    "Agregar uno más: la red de un cubo necesita ocho cuadrados para poder cerrar",
+    "Sacar tres: la red de un cubo se arma con cuatro cuadrados en fila y nada más"
+   ],
+   "correcta": 0,
+   "tip": "Un cubo tiene seis caras, así que su red lleva seis cuadrados. Con siete siempre queda uno montado sobre otro, y con cuatro la figura se cierra como un tubo, sin tapa arriba ni abajo.",
+   "id": "mate6-oa13-18"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "¿En qué se diferencia la red de un cubo de la red de una caja alargada?",
+   "opciones": [
+    "En el cubo las seis piezas son cuadrados iguales; en la caja hay tres pares",
+    "En que la red del cubo lleva seis piezas y la de la caja alargada lleva ocho",
+    "En que la red del cubo se pliega sola y la de la caja alargada hay que pegarla",
+    "En que en la caja alargada las seis piezas son iguales y en el cubo son distintas"
+   ],
+   "correcta": 0,
+   "tip": "Las dos redes tienen seis piezas, porque los dos cuerpos tienen seis caras. Lo que cambia es la forma: en un cubo las tres medidas son iguales y salen seis caras idénticas; en una caja salen tres pares.",
+   "id": "mate6-oa13-19"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "Matías desarma una caja de 20, 15 y 10 cm y la deja plana. ¿Cuánto mide esa red?",
+   "opciones": [
+    "1.300 centímetros cuadrados",
+    "650 centímetros cuadrados",
+    "3.000 centímetros cuadrados",
+    "1.000 centímetros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "Las tres caras distintas miden 300, 200 y 150 centímetros cuadrados y suman 650; como cada una está dos veces, la red mide 1.300. Los 3.000 son el espacio que cabía adentro, no el cartón.",
+   "id": "mate6-oa13-20"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "Una caja tiene base de 12 por 8 cm y 5 cm de alto, y va sin tapa. ¿Cuánto mide su red?",
+   "opciones": [
+    "296 centímetros cuadrados",
+    "392 centímetros cuadrados",
+    "352 centímetros cuadrados",
+    "196 centímetros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "Con tapa la red mediría 392. Como la tapa no va, hay que restar esa cara de 12 por 8, o sea 96, y quedan 296. Los 352 salen de restar por error una cara lateral de 8 por 5, que sí está en la red.",
+   "id": "mate6-oa13-21"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "Camila armó un rectángulo con dos filas de tres cuadrados iguales. ¿Se pliega en un cubo?",
+   "opciones": [
+    "No: ninguna de sus filas tiene los cuatro cuadrados que dan la vuelta al cubo",
+    "Sí, porque tiene seis cuadrados iguales y un cubo tiene seis caras iguales",
+    "Sí, doblando por la línea del medio y cerrando después los dos costados",
+    "No, porque para plegar un cubo la red tiene que ser siempre una tira recta"
+   ],
+   "correcta": 0,
+   "tip": "Para rodear un cubo hacen falta cuatro cuadrados seguidos, y aquí las filas tienen solo tres. Tener seis cuadrados es necesario, pero no basta: también importa cómo están conectados entre sí.",
+   "id": "mate6-oa13-22"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "La red de un cubo mide en total 24 centímetros cuadrados. ¿Cuánto mide su arista?",
+   "opciones": [
+    "2 centímetros",
+    "4 centímetros",
+    "6 centímetros",
+    "12 centímetros"
+   ],
+   "correcta": 0,
+   "tip": "La red tiene seis caras iguales, así que cada cara mide 24 dividido en 6, o sea 4 centímetros cuadrados. Un cuadrado de 4 centímetros cuadrados tiene 2 centímetros de lado, porque 2 por 2 son 4.",
+   "id": "mate6-oa13-23"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "La red de un cubo, ya recortada, mide 96 centímetros cuadrados. ¿Cuánto mide cada pieza?",
+   "opciones": [
+    "16 centímetros cuadrados",
+    "48 centímetros cuadrados",
+    "32 centímetros cuadrados",
+    "24 centímetros cuadrados"
+   ],
+   "correcta": 0,
+   "tip": "Las seis caras de un cubo son iguales, así que se reparte el total entre seis: 96 dividido en 6 da 16. Los 32 salen de repartirlo entre las tres caras que se ven, olvidando que cada una tiene su gemela.",
+   "id": "mate6-oa13-24"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "Para una caja de 6, 4 y 2 cm, Javiera sumó 24, 12 y 8, y dijo 44. ¿Qué le faltó hacer?",
+   "opciones": [
+    "Multiplicar por dos, porque cada una de esas tres caras tiene su gemela enfrente",
+    "Sumar también las tres medidas de la caja, o sea 6 más 4 más 2, al resultado",
+    "Multiplicar por seis, una vez por cada una de las seis caras que tiene la caja",
+    "Nada: los 44 centímetros cuadrados son el área correcta de la red de esa caja"
+   ],
+   "correcta": 0,
+   "tip": "Javiera calculó bien las tres caras distintas, pero la caja tiene seis. Como van de a pares iguales, ese 44 hay que duplicarlo: la red mide 88 centímetros cuadrados.",
+   "id": "mate6-oa13-25"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "Benjamín multiplicó 6 por 4 por 2 y dijo que la red de esa caja mide 48. ¿Qué calculó?",
+   "opciones": [
+    "El espacio que cabe dentro de la caja, no la cartulina que la cubre por fuera",
+    "El área de la red, pero le faltó repartir el resultado entre las seis caras",
+    "El contorno de la red, que es la línea que hay que recortar por el borde",
+    "El área de la red, pero contando solo las cuatro caras de los costados"
+   ],
+   "correcta": 0,
+   "tip": "Multiplicar las tres medidas entre sí da cuánto cabe adentro. La red se calcula sumando el área de las caras: en esta caja son 24, 12 y 8, duplicados, o sea 88 centímetros cuadrados.",
+   "id": "mate6-oa13-26"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "Si conoces el área de tres caras distintas de una caja, ¿alcanza para saber cuánto mide su red?",
+   "opciones": [
+    "Sí, porque las otras tres son iguales a esas: se suman y se multiplica por dos",
+    "No, hay que medir las seis caras, porque cada una tiene un tamaño diferente",
+    "No, hace falta saber además cuánto espacio cabe dentro de la caja armada",
+    "Sí, pero hay que sumarlas y multiplicar por seis, una vez por cada cara"
+   ],
+   "correcta": 0,
+   "tip": "Las seis caras de una caja forman tres parejas iguales. Con una cara de cada pareja ya está toda la información: se suman las tres y se duplica el resultado, porque cada una aparece dos veces.",
+   "id": "mate6-oa13-27"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "Valentina dibujó seis cuadrados para la red de un cubo, pero uno quedó más chico. ¿Qué pasa?",
+   "opciones": [
+    "No cierra: sus bordes no calzan con los de las caras vecinas y queda un hueco",
+    "Cierra igual, porque lo importante es que sean seis piezas de cuatro lados",
+    "Cierra, pero el cubo queda con una cara hundida hacia adentro en ese lugar",
+    "No cierra: para armar un cubo hacen falta seis cuadrados y uno más de repuesto"
+   ],
+   "correcta": 0,
+   "tip": "En un cubo todas las aristas miden lo mismo, así que las seis caras tienen que ser cuadrados del mismo tamaño. Si uno es más chico, sus lados no coinciden con los de las caras que debería tocar.",
+   "id": "mate6-oa13-28"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "La red de una caja tiene dos caras de 7 por 3 cm y dos de 7 por 5 cm. ¿Qué caras faltan?",
+   "opciones": [
+    "Dos caras de 3 por 5 centímetros, que son el par que todavía no aparece",
+    "Dos caras más de 7 por 3 centímetros, para completar las seis de la red",
+    "Una sola cara de 3 por 5 centímetros, porque las otras cinco ya están",
+    "Dos caras de 7 por 7 centímetros, que cierran la caja por los extremos"
+   ],
+   "correcta": 0,
+   "tip": "La caja mide 7, 3 y 5, y sus tres pares de caras juntan esas medidas de a dos: 7 con 3, 7 con 5 y 3 con 5. Las dos primeras parejas ya están dibujadas, así que falta entera la de 3 por 5.",
+   "id": "mate6-oa13-29"
+  },
+  {
+   "oa": "MA06 OA 13",
+   "pregunta": "Una red tiene dos cuadrados de 6 cm de lado y cuatro rectángulos de 6 por 10 cm. ¿Qué forma?",
+   "opciones": [
+    "Una caja de base cuadrada de 6 por 6 cm y 10 centímetros de altura",
+    "Un cubo de 6 cm de arista, porque sus dos caras principales son cuadradas",
+    "Una caja de 6 por 10 por 10 cm, con dos caras cuadradas en los extremos",
+    "Nada, porque le faltan dos rectángulos de 10 por 10 cm para poder cerrarse"
+   ],
+   "correcta": 0,
+   "tip": "Los dos cuadrados son la base y la tapa, y los cuatro rectángulos son los costados: todos comparten el lado de 6 y se levantan 10 centímetros. Un cubo necesitaría seis cuadrados, no dos.",
+   "id": "mate6-oa13-30"
+  }
+ ]
+}

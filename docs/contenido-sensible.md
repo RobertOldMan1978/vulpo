@@ -1,10 +1,34 @@
 # Contenido sensible — código de color
 
 > **Qué es este archivo.** La lista de contenido que un colegio (sobre todo confesional) podría
-> querer **revisar antes de activar**, con un **código de color por categoría**. Es a la vez la
-> **leyenda que muestra el armador** (`?armar=1`) y el **insumo de la feature** que marca lo sensible
-> en los enlaces de muestra y de venta para preguntar al usuario si lo activa. Nace del inventario de
-> los 21 OA sensibles de 3°, 7° y 8° (Matemática no tiene). Ver A4 en `pendiente.md`.
+> querer **conocer antes de contratar**, con un **código de color por categoría**. Es la **leyenda
+> que muestra el armador** (`?armar=1`), para que un enlace de muestra diga qué trae. Nace del
+> inventario de los 21 OA sensibles de 3°, 7° y 8° (Matemática no tiene).
+
+## ⚠️ Lo que este archivo NO es, desde el 03/09/2026
+
+**No es el insumo de ninguna feature de opt-in.** Roberto decidió que **el único contenido que no
+entra en los Jefes Finales es el sexual, y todo lo demás entra, en todos los cursos**. O sea:
+
+- **No se construye** la pantalla que preguntaba al colegio qué categorías activar. Queda
+  descartada, no pospuesta.
+- **No hay OA apagables.** Drogas y alcohol, la conquista, la guerra de Arauco, la encomienda, la
+  esclavitud, la ocupación de la Araucanía y el quiebre de la democracia **son currículum oficial y
+  se juegan completos**, jefe incluido.
+- Lo que este archivo sigue sirviendo es para **decir qué trae** un enlace de muestra, no para
+  quitar nada.
+
+**Medido el 03/09 en los cuatro cursos**, y es la comprobación que sostiene la regla:
+
+| | sexual en los jefes | resto del contenido sensible en los jefes |
+|---|---|---|
+| 8° | ninguno | 10 OA de Historia y Ciencias |
+| 7° | ninguno | 7 OA de Historia |
+| 3° | ninguno | 1 OA de Historia |
+| 5° | ninguno | ninguno todavía |
+
+Los únicos OA sensibles que quedan fuera de un jefe son los tres de sexualidad de 7°, que es
+exactamente la regla.
 
 ## ⚠️ Regla: lo sexual NO entra en ningún Jefe Final (02/09/2026)
 
@@ -21,7 +45,7 @@ que hace que excluirlo sea posible de verdad.
 | | |
 |---|---|
 | **Aplicado hoy** | `CN07 OA 01`, `02` y `03` fuera del Jefe Final de Ciencias de 7° |
-| **Vale igual para** | los `CN06 OA 04`, `05` y `06` cuando se construya 6° básico |
+| **Vale igual para** | los `CN06 OA 04`, `05` y `06` cuando se construya 6° básico. **Y solo para esos**: ningún otro contenido sensible sale del jefe |
 | **NO se toca** | el **jefe del capítulo**, que es su cierre natural. Quien no incluye el capítulo nunca llega a él, y vaciarlo lo dejaría roto para el colegio que sí lo incluye |
 
 **El jefe conserva su tamaño**: los 12 OA restantes se reparten en las mismas 4 fases de 4
