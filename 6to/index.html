@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- El juego vive en /5to/ pero sus rutas relativas (assets/, contenido/) apuntan a la
+<!-- El juego vive en /6to/ pero sus rutas relativas (assets/, contenido/) apuntan a la
      raíz del sitio. Esta línea las resuelve. NO borrar: sin ella el juego queda sin imágenes
      ni preguntas. Es válida porque el sitio vive en el dominio propio vulpo.cl. -->
 <base href="/">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>VULPO · Aprende jugando — 5° Básico</title>
+<title>VULPO · Aprende jugando — 6° Básico</title>
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="512x512" href="assets/kimun-512.png">
 <link rel="apple-touch-icon" href="assets/kimun-180.png">
@@ -16,7 +16,7 @@
      icono abriria siempre el mismo nivel, y un papa con hijos en dos cursos necesita dos.
      ⚠️ RUTA ABSOLUTA: el <base href="/"> de arriba resolveria "manifest.webmanifest" a
      /manifest.webmanifest, que no existe. -->
-<link rel="manifest" href="/5to/manifest.webmanifest">
+<link rel="manifest" href="/6to/manifest.webmanifest">
 <!-- iOS ignora display:standalone del manifiesto; necesita estas. Sin la primera, la app
      instalada abre CON la barra del navegador y no se siente una app. -->
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -689,7 +689,7 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
       <img class="badge-img" src="assets/vulpo-mascota.png" alt="Vulpi, la mascota" width="190" height="203">
       <h1>VULPO</h1>
       <div id="rolNombre" class="rol-nombre" hidden></div>
-      <p id="rolSub">Aprende jugando · 5° Básico</p>
+      <p id="rolSub">Aprende jugando · 6° Básico</p>
     </div>
     <div id="bannerDesafio" class="banner-desafio" hidden></div>
     <!-- Avisos de duelo (te desafiaron / como termino el tuyo). Va APARTE del banner
@@ -966,7 +966,7 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
     <div class="logo">
       <img class="badge-conq" src="assets/kimun-conquistador.png" alt="Vulpi explorador">
       <h1>TU<br>EXPEDICIÓN</h1>
-      <p>5° Básico · Descubre, conquista y sube de nivel</p>
+      <p>6° Básico · Descubre, conquista y sube de nivel</p>
     </div>
     <div class="card">
       <h3>Tu nombre de explorador</h3>
@@ -1254,284 +1254,295 @@ const VENCE=_M?_M.hasta:'';            // '' = no caduca. ?solo= nunca caduca.
 const ARMAR=_PARAMS.has('armar');      // pantalla para armar enlaces de muestra
 
 const EXPEDICIONES=[
- // --- Campaña Matemática (5°) ---
- // Las 5 unidades oficiales del Programa van 13-2-3-4-5 OA: "Números y operaciones" con 13
- // seria mas largo que la campana entera de Ciencias, y "Patrones" con 2 no da capitulo.
- // Se reparten en 6 por tipo de numero, que es como se ensena. Declarado a proposito.
- { id:'mate5-cap1', asignatura:'Matemáticas', nivel:'5° Básico · Números y operaciones',
-   portada:'assets/portada-matematicas.png', portadaMapa:'assets/portada-mate-numeros.png',
-   contenido:'contenido/matematicas-5basico/preguntas.json', activa:true, campaña:'mate5',
+ // --- Campaña Matemática (6°) ---
+ // Los 24 OA se reparten en 7 capítulos por tipo de contenido: números y razones,
+ // fracciones y decimales, álgebra (patrones y ecuaciones), y luego geometría partida
+ // en tres (figuras, ángulos, medición) más datos y probabilidades. Declarado a
+ // propósito, como hicieron Matemática e Historia de 5°.
+ { id:'mate6-cap1', asignatura:'Matemáticas', nivel:'6° Básico · Números y razones',
+   portada:'assets/portada-matematicas.png',
+   portadaMapa:'assets/portada-mate-numeros.png',
+   contenido:'contenido/matematicas-6basico/preguntas.json', activa:true, campaña:'mate6',
    etapas:[
-     {oa:"MA05 OA 01",nombre:"Numeros gigantes",icono:"🔢",n:10},
-     {oa:"MA05 OA 02",nombre:"Multiplicar de memoria",icono:"🧠",n:10},
-     {oa:"MA05 OA 03",nombre:"Multiplicar por dos cifras",icono:"✖️",n:10},
-     {oa:"MA05 OA 04",nombre:"Dividir y el resto",icono:"➗",n:10},
-     {oa:"MA05 OA 05",nombre:"El orden de las operaciones",icono:"🔀",n:10},
-     {oa:"MA05 OA 06",nombre:"Problemas y dinero",icono:"💰",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: Numeros y operaciones",icono:"🎯",n:15,oas:["MA05 OA 01","MA05 OA 02","MA05 OA 03","MA05 OA 04","MA05 OA 05","MA05 OA 06"]},
+     {oa:"MA06 OA 01",nombre:"Múltiplos y factores",icono:"🔢",n:10},
+     {oa:"MA06 OA 02",nombre:"Problemas con calculadora",icono:"🧮",n:10},
+     {oa:"MA06 OA 03",nombre:"Razones y comparaciones",icono:"⚖️",n:10},
+     {oa:"MA06 OA 04",nombre:"Los porcentajes",icono:"💯",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Números y razones",icono:"🎯",n:15,oas:["MA06 OA 01","MA06 OA 02","MA06 OA 03","MA06 OA 04"]},
    ]},
- { id:'mate5-cap2', asignatura:'Matemáticas', nivel:'5° Básico · Fracciones',
-   portada:'assets/portada-matematicas.png', portadaMapa:'assets/portada-mate-algebra.png',
-   contenido:'contenido/matematicas-5basico/preguntas.json', activa:true, campaña:'mate5',
+ { id:'mate6-cap2', asignatura:'Matemáticas', nivel:'6° Básico · Fracciones y decimales',
+   portada:'assets/portada-matematicas.png',
+   contenido:'contenido/matematicas-6basico/preguntas.json', activa:true, campaña:'mate6',
    etapas:[
-     {oa:"MA05 OA 07",nombre:"Fracciones equivalentes",icono:"½",n:10},
-     {oa:"MA05 OA 08",nombre:"Impropias y numeros mixtos",icono:"🥧",n:10},
-     {oa:"MA05 OA 09",nombre:"Sumar y restar fracciones",icono:"➕",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: Fracciones",icono:"🎯",n:15,oas:["MA05 OA 07","MA05 OA 08","MA05 OA 09"]},
+     {oa:"MA06 OA 05",nombre:"Fracciones equivalentes",icono:"½",n:10},
+     {oa:"MA06 OA 06",nombre:"Sumar fracciones",icono:"➕",n:10},
+     {oa:"MA06 OA 07",nombre:"Multiplicar decimales",icono:"✖️",n:10},
+     {oa:"MA06 OA 08",nombre:"Problemas con decimales",icono:"🧩",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Fracciones y decimales",icono:"🎯",n:15,oas:["MA06 OA 05","MA06 OA 06","MA06 OA 07","MA06 OA 08"]},
    ]},
- { id:'mate5-cap3', asignatura:'Matemáticas', nivel:'5° Básico · Decimales',
-   portada:'assets/portada-matematicas.png', portadaMapa:'assets/portada-mate-datos.png',
-   contenido:'contenido/matematicas-5basico/preguntas.json', activa:true, campaña:'mate5',
+ { id:'mate6-cap3', asignatura:'Matemáticas', nivel:'6° Básico · Patrones y ecuaciones',
+   portada:'assets/portada-matematicas.png',
+   portadaMapa:'assets/portada-mate-algebra.png',
+   contenido:'contenido/matematicas-6basico/preguntas.json', activa:true, campaña:'mate6',
    etapas:[
-     {oa:"MA05 OA 10",nombre:"De fraccion a decimal",icono:"🔁",n:10},
-     {oa:"MA05 OA 11",nombre:"Comparar decimales",icono:"📏",n:10},
-     {oa:"MA05 OA 12",nombre:"Sumar y restar decimales",icono:"🧮",n:10},
-     {oa:"MA05 OA 13",nombre:"Problemas con decimales",icono:"🧩",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: Decimales",icono:"🎯",n:15,oas:["MA05 OA 10","MA05 OA 11","MA05 OA 12","MA05 OA 13"]},
+     {oa:"MA06 OA 09",nombre:"El patrón escondido",icono:"🔍",n:10},
+     {oa:"MA06 OA 10",nombre:"Relaciones con letras",icono:"🔤",n:10},
+     {oa:"MA06 OA 11",nombre:"La balanza y la incógnita",icono:"⚖️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Patrones y ecuaciones",icono:"🎯",n:15,oas:["MA06 OA 09","MA06 OA 10","MA06 OA 11"]},
    ]},
- { id:'mate5-cap4', asignatura:'Matemáticas', nivel:'5° Básico · Patrones, ecuaciones y figuras',
-   portada:'assets/portada-matematicas.png', portadaMapa:'assets/portada-mate-geometria.png',
-   contenido:'contenido/matematicas-5basico/preguntas.json', activa:true, campaña:'mate5',
+ { id:'mate6-cap4', asignatura:'Matemáticas', nivel:'6° Básico · Figuras geométricas',
+   portada:'assets/portada-matematicas.png',
+   portadaMapa:'assets/portada-mate-geometria.png',
+   contenido:'contenido/matematicas-6basico/preguntas.json', activa:true, campaña:'mate6',
    etapas:[
-     {oa:"MA05 OA 14",nombre:"La regla escondida",icono:"🔍",n:10},
-     {oa:"MA05 OA 15",nombre:"El numero que falta",icono:"⚖️",n:10},
-     {oa:"MA05 OA 16",nombre:"El plano cartesiano",icono:"📍",n:10},
-     {oa:"MA05 OA 17",nombre:"Paralelas y perpendiculares",icono:"📐",n:10},
-     {oa:"MA05 OA 18",nombre:"Mover, voltear y girar",icono:"🔄",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: Patrones y figuras",icono:"🎯",n:15,oas:["MA05 OA 14","MA05 OA 15","MA05 OA 16","MA05 OA 17","MA05 OA 18"]},
+     {oa:"MA06 OA 12",nombre:"Construir triángulos",icono:"📐",n:10},
+     {oa:"MA06 OA 13",nombre:"El área con la red",icono:"📦",n:10},
+     {oa:"MA06 OA 14",nombre:"Teselados",icono:"🔷",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Figuras geométricas",icono:"🎯",n:15,oas:["MA06 OA 12","MA06 OA 13","MA06 OA 14"]},
    ]},
- { id:'mate5-cap5', asignatura:'Matemáticas', nivel:'5° Básico · Medir y calcular áreas',
-   portada:'assets/portada-matematicas.png', portadaMapa:'assets/portada-mate-geometria.png',
-   contenido:'contenido/matematicas-5basico/preguntas.json', activa:true, campaña:'mate5',
+ { id:'mate6-cap5', asignatura:'Matemáticas', nivel:'6° Básico · Ángulos',
+   portada:'assets/portada-matematicas.png',
+   contenido:'contenido/matematicas-6basico/preguntas.json', activa:true, campaña:'mate6',
    etapas:[
-     {oa:"MA05 OA 19",nombre:"Medir longitudes",icono:"📏",n:10},
-     {oa:"MA05 OA 20",nombre:"Cambiar de unidad",icono:"↔️",n:10},
-     {oa:"MA05 OA 21",nombre:"Rectangulos y perimetro",icono:"▭",n:10},
-     {oa:"MA05 OA 22",nombre:"Calcular areas",icono:"🟦",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: Medicion",icono:"🎯",n:15,oas:["MA05 OA 19","MA05 OA 20","MA05 OA 21","MA05 OA 22"]},
+     {oa:"MA06 OA 15",nombre:"Construir ángulos",icono:"📐",n:10},
+     {oa:"MA06 OA 16",nombre:"Rectas que se cruzan",icono:"✖️",n:10},
+     {oa:"MA06 OA 17",nombre:"180° en el triángulo",icono:"🔺",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Ángulos",icono:"🎯",n:15,oas:["MA06 OA 15","MA06 OA 16","MA06 OA 17"]},
    ]},
- { id:'mate5-cap6', asignatura:'Matemáticas', nivel:'5° Básico · Datos y probabilidades',
-   portada:'assets/portada-matematicas.png', portadaMapa:'assets/portada-mate-datos.png',
-   contenido:'contenido/matematicas-5basico/preguntas.json', activa:true, campaña:'mate5',
+ { id:'mate6-cap6', asignatura:'Matemáticas', nivel:'6° Básico · Medición',
+   portada:'assets/portada-matematicas.png',
+   contenido:'contenido/matematicas-6basico/preguntas.json', activa:true, campaña:'mate6',
    etapas:[
-     {oa:"MA05 OA 23",nombre:"El promedio",icono:"📊",n:10},
-     {oa:"MA05 OA 24",nombre:"Seguro, posible o imposible",icono:"🎲",n:10},
-     {oa:"MA05 OA 25",nombre:"Que es mas probable",icono:"🍀",n:10},
-     {oa:"MA05 OA 26",nombre:"Tablas y graficos",icono:"📈",n:10},
-     {oa:"MA05 OA 27",nombre:"Tallo y hojas",icono:"🌿",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: Datos y azar",icono:"🎯",n:15,oas:["MA05 OA 23","MA05 OA 24","MA05 OA 25","MA05 OA 26","MA05 OA 27"]},
+     {oa:"MA06 OA 18",nombre:"Superficie del cubo",icono:"📦",n:10},
+     {oa:"MA06 OA 19",nombre:"El volumen",icono:"🧊",n:10},
+     {oa:"MA06 OA 20",nombre:"Medir con el transportador",icono:"📐",n:10},
+     {oa:"MA06 OA 21",nombre:"Ángulos y paralelas",icono:"📏",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Medición",icono:"🎯",n:15,oas:["MA06 OA 18","MA06 OA 19","MA06 OA 20","MA06 OA 21"]},
    ]},
- // --- Campaña Ciencias (5°) ---
- // Las 3 unidades oficiales van 7-4-3 OA: "Ciencias de la vida" con 7 sería el doble de
- // larga que las otras dos, así que se parte en dos por tema —el cuerpo y la salud—, que
- // es como se enseña. Declarado a propósito, igual que hizo 7° con su unidad de 6.
- { id:'cie5-cap1', intro:'ci5-cuerpo', asignatura:'Ciencias', nivel:'5° Básico · El cuerpo por dentro',
-   portada:'assets/portada-ciencias.png', portadaMapa:'assets/portada-cien-cuerpo.png',
-   contenido:'contenido/ciencias-5basico/preguntas.json', activa:true, campaña:'cie5',
+ { id:'mate6-cap7', asignatura:'Matemáticas', nivel:'6° Básico · Datos y probabilidades',
+   portada:'assets/portada-matematicas.png',
+   portadaMapa:'assets/portada-mate-datos.png',
+   contenido:'contenido/matematicas-6basico/preguntas.json', activa:true, campaña:'mate6',
    etapas:[
-     {oa:"CN05 OA 01",nombre:"Células, tejidos y órganos",icono:"🔬",n:10},
-     {oa:"CN05 OA 02",nombre:"El viaje de la comida",icono:"🍽️",n:10},
-     {oa:"CN05 OA 03",nombre:"Cómo respiramos",icono:"🫁",n:10},
-     {oa:"CN05 OA 04",nombre:"La sangre reparte",icono:"❤️",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: El cuerpo por dentro",icono:"🧬",n:15,oas:["CN05 OA 01","CN05 OA 02","CN05 OA 03","CN05 OA 04"]},
+     {oa:"MA06 OA 22",nombre:"Diagramas de puntos",icono:"📊",n:10},
+     {oa:"MA06 OA 23",nombre:"Predecir con dados",icono:"🎲",n:10},
+     {oa:"MA06 OA 24",nombre:"Gráficos de barra y círculo",icono:"📈",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Datos y probabilidades",icono:"🎯",n:15,oas:["MA06 OA 22","MA06 OA 23","MA06 OA 24"]},
    ]},
- { id:'cie5-cap2', intro:'ci5-salud', asignatura:'Ciencias', nivel:'5° Básico · Cuidar la salud',
-   portada:'assets/portada-ciencias.png', portadaMapa:'assets/portada-cien-celula.png',
-   contenido:'contenido/ciencias-5basico/preguntas.json', activa:true, campaña:'cie5',
+ // --- Campaña Ciencias (6°) ---
+ // Las 3 unidades oficiales del Programa se reparten en 5 capítulos por tema: vida y
+ // ecosistemas, el cuerpo, la energía, la materia y sus cambios, y la Tierra.
+ { id:'cie6-cap1', asignatura:'Ciencias', nivel:'6° Básico · Ecosistemas y energía de la vida',
+   portada:'assets/portada-ciencias.png',
+   contenido:'contenido/ciencias-6basico/preguntas.json', activa:true, campaña:'cie6',
    etapas:[
-     {oa:"CN05 OA 05",nombre:"Para qué sirve cada alimento",icono:"🥗",n:10},
-     {oa:"CN05 OA 06",nombre:"El humo del cigarrillo",icono:"🚭",n:10},
-     {oa:"CN05 OA 07",nombre:"Microbios buenos y malos",icono:"🦠",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: Cuidar la salud",icono:"🧬",n:15,oas:["CN05 OA 05","CN05 OA 06","CN05 OA 07"]},
+     {oa:"CN06 OA 01",nombre:"Cómo comen las plantas",icono:"🌱",n:10},
+     {oa:"CN06 OA 02",nombre:"El camino de la energía",icono:"🔄",n:10},
+     {oa:"CN06 OA 03",nombre:"Cadenas alimentarias",icono:"🍃",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Ecosistemas y energía",icono:"🧬",n:15,oas:["CN06 OA 01","CN06 OA 02","CN06 OA 03"]},
    ]},
- { id:'cie5-cap3', intro:'ci5-electricidad', asignatura:'Ciencias', nivel:'5° Básico · La electricidad',
-   portada:'assets/portada-ciencias.png', portadaMapa:'assets/portada-cien-electricidad.png',
-   contenido:'contenido/ciencias-5basico/preguntas.json', activa:true, campaña:'cie5',
+ { id:'cie6-cap2', asignatura:'Ciencias', nivel:'6° Básico · Mi cuerpo y mi salud',
+   portada:'assets/portada-ciencias.png',
+   portadaMapa:'assets/portada-cien-cuerpo.png',
+   contenido:'contenido/ciencias-6basico/preguntas.json', activa:true, campaña:'cie6',
    etapas:[
-     {oa:"CN05 OA 08",nombre:"En qué se transforma",icono:"⚡",n:10},
-     {oa:"CN05 OA 09",nombre:"El circuito cerrado",icono:"💡",n:10},
-     {oa:"CN05 OA 10",nombre:"Conductores y aisladores",icono:"🔌",n:10},
-     {oa:"CN05 OA 11",nombre:"No desperdiciarla",icono:"🔋",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: La electricidad",icono:"🧬",n:15,oas:["CN05 OA 08","CN05 OA 09","CN05 OA 10","CN05 OA 11"]},
+     {oa:"CN06 OA 04",nombre:"El sistema reproductor",icono:"🧬",n:10},
+     {oa:"CN06 OA 05",nombre:"Cambios en la pubertad",icono:"🧑",n:10},
+     {oa:"CN06 OA 06",nombre:"Higiene y ejercicio",icono:"🧼",n:10},
+     {oa:"CN06 OA 07",nombre:"Los efectos de las drogas",icono:"🚭",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Mi cuerpo y mi salud",icono:"🧬",n:15,oas:["CN06 OA 04","CN06 OA 05","CN06 OA 06","CN06 OA 07"]},
    ]},
- { id:'cie5-cap4', intro:'ci5-agua', asignatura:'Ciencias', nivel:'5° Básico · El agua en la Tierra',
-   // ARTE PRESTADO: no hay portada propia de agua todavía. Usa la de "materia" para que los
-   // cuatro capítulos se distingan entre sí, que es el punto del estándar de portadas.
-   portada:'assets/portada-ciencias.png', portadaMapa:'assets/portada-cien-materia.png',
-   contenido:'contenido/ciencias-5basico/preguntas.json', activa:true, campaña:'cie5',
+ { id:'cie6-cap3', asignatura:'Ciencias', nivel:'6° Básico · La energía',
+   portada:'assets/portada-ciencias.png',
+   portadaMapa:'assets/portada-cien-electricidad.png',
+   contenido:'contenido/ciencias-6basico/preguntas.json', activa:true, campaña:'cie6',
    etapas:[
-     {oa:"CN05 OA 12",nombre:"Cuánta agua hay",icono:"💧",n:10},
-     {oa:"CN05 OA 13",nombre:"El mar por dentro",icono:"🌊",n:10},
-     {oa:"CN05 OA 14",nombre:"Dañar y cuidar el agua",icono:"🐟",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: El agua en la Tierra",icono:"🧬",n:15,oas:["CN05 OA 12","CN05 OA 13","CN05 OA 14"]},
+     {oa:"CN06 OA 08",nombre:"La energía del Sol",icono:"☀️",n:10},
+     {oa:"CN06 OA 09",nombre:"La energía cambia de forma",icono:"🔄",n:10},
+     {oa:"CN06 OA 10",nombre:"El calor viaja",icono:"🌡️",n:10},
+     {oa:"CN06 OA 11",nombre:"Energías que se acaban",icono:"🔋",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: La energía",icono:"🧬",n:15,oas:["CN06 OA 08","CN06 OA 09","CN06 OA 10","CN06 OA 11"]},
    ]},
-
- // --- Campaña Historia (5°) ---
- // Los 22 OA se reparten en 6 capítulos por TEMA, no por los ejes de las Bases: el eje
- // "Formación ciudadana" solo tiene 10 OA y daría un capítulo del doble que los demás.
- // Declarado a propósito, como hizo Matemática con sus unidades disparejas.
- // ⚠️ Arte PRESTADO mientras no exista el propio, declarado igual que en Matemática y
- // Ciencias. Las portadas se eligieron por TEMA y no por orden —la de "Los europeos
- // llegan a América" de 8°, la de "Vivir juntos" de 3°—, porque prestar en orden dejaba
- // columnas romanas sobre el capítulo de las zonas de Chile. Se ve mirando, no contando.
- // Los nombres sí son propios.
- { id:'hist5-cap1', asignatura:'Historia', nivel:'5° Básico · Descubrimiento y conquista',
-   portada:'assets/portada-historia.png', portadaMapa:'assets/portada-hist-cap2.png',
-   contenido:'contenido/historia-5basico/preguntas.json', activa:true, campaña:'hist5',
+ { id:'cie6-cap4', asignatura:'Ciencias', nivel:'6° Básico · La materia y sus cambios',
+   portada:'assets/portada-ciencias.png',
+   portadaMapa:'assets/portada-cien-materia.png',
+   contenido:'contenido/ciencias-6basico/preguntas.json', activa:true, campaña:'cie6',
    etapas:[
-     {oa:"HI05 OA 01",nombre:"Cruzar el mar",icono:"🧭",n:10},
-     {oa:"HI05 OA 02",nombre:"Llegan los españoles",icono:"⛵",n:10},
-     {oa:"HI05 OA 03",nombre:"Dos mundos se cruzan",icono:"🌍",n:10},
-     {oa:"HI05 OA 04",nombre:"Los pueblos originarios",icono:"🪶",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: Descubrimiento y conquista",icono:"🗺️",n:15,oas:["HI05 OA 01","HI05 OA 02","HI05 OA 03","HI05 OA 04"]},
+     {oa:"CN06 OA 12",nombre:"Partículas en movimiento",icono:"⚛️",n:10},
+     {oa:"CN06 OA 13",nombre:"Cambios de estado",icono:"💧",n:10},
+     {oa:"CN06 OA 14",nombre:"Calor y temperatura",icono:"🌡️",n:10},
+     {oa:"CN06 OA 15",nombre:"Calentar y enfriar el agua",icono:"🧊",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: La materia y sus cambios",icono:"🧬",n:15,oas:["CN06 OA 12","CN06 OA 13","CN06 OA 14","CN06 OA 15"]},
    ]},
- { id:'hist5-cap2', asignatura:'Historia', nivel:'5° Básico · La Colonia',
-   portada:'assets/portada-historia.png', portadaMapa:'assets/portada-hist-cap3.png',
-   contenido:'contenido/historia-5basico/preguntas.json', activa:true, campaña:'hist5',
+ { id:'cie6-cap5', asignatura:'Ciencias', nivel:'6° Básico · La Tierra y el suelo',
+   portada:'assets/portada-ciencias.png',
+   contenido:'contenido/ciencias-6basico/preguntas.json', activa:true, campaña:'cie6',
    etapas:[
-     {oa:"HI05 OA 05",nombre:"La vida colonial",icono:"🏘️",n:10},
-     {oa:"HI05 OA 06",nombre:"Depender de España",icono:"⚓",n:10},
-     {oa:"HI05 OA 07",nombre:"Españoles y mapuches",icono:"🤝",n:10},
-     {oa:"HI05 OA 08",nombre:"Lo que quedó",icono:"🏛️",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: La Colonia",icono:"🕯️",n:15,oas:["HI05 OA 05","HI05 OA 06","HI05 OA 07","HI05 OA 08"]},
-   ]},
- { id:'hist5-cap3', asignatura:'Historia', nivel:'5° Básico · Chile y sus paisajes',
-   portada:'assets/portada-historia.png', portadaMapa:'assets/portada-hist3-cap1.png',
-   contenido:'contenido/historia-5basico/preguntas.json', activa:true, campaña:'hist5',
-   etapas:[
-     {oa:"HI05 OA 09",nombre:"Las cinco zonas",icono:"🗺️",n:10},
-     {oa:"HI05 OA 10",nombre:"Recursos naturales",icono:"⛏️",n:10},
-     {oa:"HI05 OA 11",nombre:"El trabajo da valor",icono:"🍇",n:10},
-     {oa:"HI05 OA 12",nombre:"Riesgos naturales",icono:"🌋",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: Chile y sus paisajes",icono:"🏔️",n:15,oas:["HI05 OA 09","HI05 OA 10","HI05 OA 11","HI05 OA 12"]},
-   ]},
- { id:'hist5-cap4', asignatura:'Historia', nivel:'5° Básico · Derechos y deberes',
-   portada:'assets/portada-historia.png', portadaMapa:'assets/portada-hist3-cap4.png',
-   contenido:'contenido/historia-5basico/preguntas.json', activa:true, campaña:'hist5',
-   etapas:[
-     {oa:"HI05 OA 13",nombre:"Todos con los mismos derechos",icono:"⚖️",n:10},
-     {oa:"HI05 OA 14",nombre:"Derechos y deberes",icono:"📜",n:10},
-     {oa:"HI05 OA 15",nombre:"Lo que se gana con esfuerzo",icono:"🏅",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: Derechos y deberes",icono:"🕊️",n:15,oas:["HI05 OA 13","HI05 OA 14","HI05 OA 15"]},
-   ]},
- { id:'hist5-cap5', asignatura:'Historia', nivel:'5° Básico · Vivir en comunidad',
-   portada:'assets/portada-historia.png', portadaMapa:'assets/portada-hist3-cap5.png',
-   contenido:'contenido/historia-5basico/preguntas.json', activa:true, campaña:'hist5',
-   etapas:[
-     {oa:"HI05 OA 16",nombre:"Actitudes que suman",icono:"🤲",n:10},
-     {oa:"HI05 OA 17",nombre:"Elegir y representar",icono:"🗳️",n:10},
-     {oa:"HI05 OA 18",nombre:"Un proyecto para el colegio",icono:"💡",n:10},
-     {oa:"HI05 OA 19",nombre:"Organizarse para lograr",icono:"👥",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: Vivir en comunidad",icono:"🏫",n:15,oas:["HI05 OA 16","HI05 OA 17","HI05 OA 18","HI05 OA 19"]},
-   ]},
- { id:'hist5-cap6', asignatura:'Historia', nivel:'5° Básico · Opinar con fundamento',
-   portada:'assets/portada-historia.png', portadaMapa:'assets/portada-hist7-cap5.png',
-   contenido:'contenido/historia-5basico/preguntas.json', activa:true, campaña:'hist5',
-   etapas:[
-     {oa:"HI05 OA 20",nombre:"Opinar con razones",icono:"💬",n:10},
-     {oa:"HI05 OA 21",nombre:"Elegir la mejor solución",icono:"🧩",n:10},
-     {oa:"HI05 OA 22",nombre:"Informarse de verdad",icono:"📰",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: Opinar con fundamento",icono:"🔎",n:15,oas:["HI05 OA 20","HI05 OA 21","HI05 OA 22"]},
+     {oa:"CN06 OA 16",nombre:"Las capas de la Tierra",icono:"🌍",n:10},
+     {oa:"CN06 OA 17",nombre:"Cómo se forma el suelo",icono:"🪨",n:10},
+     {oa:"CN06 OA 18",nombre:"El desgaste de la Tierra",icono:"🌬️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: La Tierra y el suelo",icono:"🧬",n:15,oas:["CN06 OA 16","CN06 OA 17","CN06 OA 18"]},
    ]},
 
- // --- Campaña Lenguaje (5°) ---
- // Los 30 OA van en 7 capítulos POR TEMA, no por los tres ejes de las Bases. Los ejes
- // están 12-10-8, así que uno solo daría un capítulo más largo que la campaña entera de
- // Ciencias. Es el mismo criterio que ya usan Lenguaje de 3° y de 7°, y queda declarado
- // en su oa.json (`nota_unidades`).
- // ⚠️ Arte PRESTADO mientras no exista el propio, y elegido POR TEMA y no por número de
- // capítulo: es la regla que dejó Historia de 5° (ver docs/estandar-arte-portadas.md).
- { id:'leng5-cap1', asignatura:'Lenguaje', nivel:'5° Básico · Leer y comprender',
-   portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-leng-lectura.png',
-   contenido:'contenido/lenguaje-5basico/preguntas.json', activa:true, campaña:'leng5',
+ // --- Campaña Historia (6°) ---
+ // Los 26 OA se reparten en 6 capítulos por tema, siguiendo el orden del Programa:
+ // independencia y república, Chile en el siglo XIX y XX, geografía y región propia,
+ // la Constitución, derechos y participación, y ciudadanía activa.
+ { id:'hist6-cap1', asignatura:'Historia', nivel:'6° Básico · Independencia y la nueva república',
+   portada:'assets/portada-historia.png',
+   contenido:'contenido/historia-6basico/preguntas.json', activa:true, campaña:'hist6',
    etapas:[
-     {oa:"LE05 OA 01",nombre:"Leer con soltura",icono:"📖",n:10},
-     {oa:"LE05 OA 02",nombre:"Trucos para entender",icono:"🔑",n:10},
-     {oa:"LE05 OA 08",nombre:"Las ideas principales",icono:"📝",n:10},
-     {oa:"LE05 OA 09",nombre:"El gusto por leer",icono:"❤️",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: Leer y comprender",icono:"📚",n:15,oas:["LE05 OA 01","LE05 OA 02","LE05 OA 08","LE05 OA 09"]},
+     {oa:"HI06 OA 01",nombre:"La independencia americana",icono:"🌎",n:10},
+     {oa:"HI06 OA 02",nombre:"El camino a la independencia",icono:"🎖️",n:10},
+     {oa:"HI06 OA 03",nombre:"Organizar la república",icono:"🏛️",n:10},
+     {oa:"HI06 OA 04",nombre:"Avances del siglo XIX",icono:"🔬",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Independencia y la nueva república",icono:"🗺️",n:15,oas:["HI06 OA 01","HI06 OA 02","HI06 OA 03","HI06 OA 04"]},
    ]},
- { id:'leng5-cap2', asignatura:'Lenguaje', nivel:'5° Básico · Mundos literarios',
-   portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-leng-literarios.png',
-   contenido:'contenido/lenguaje-5basico/preguntas.json', activa:true, campaña:'leng5',
+ { id:'hist6-cap2', asignatura:'Historia', nivel:'6° Básico · Chile en el siglo XIX y XX',
+   portada:'assets/portada-historia.png',
+   contenido:'contenido/historia-6basico/preguntas.json', activa:true, campaña:'hist6',
    etapas:[
-     {oa:"LE05 OA 03",nombre:"Muchas historias",icono:"🌍",n:10},
-     {oa:"LE05 OA 04",nombre:"Lo que dice un cuento",icono:"🦉",n:10},
-     {oa:"LE05 OA 05",nombre:"Cómo emociona un poema",icono:"🎭",n:10},
-     {oa:"LE05 OA 23",nombre:"Historias que me narran",icono:"👂",n:10},
-     {oa:"LE05 OA 25",nombre:"Obras y películas",icono:"🎬",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: Mundos literarios",icono:"✨",n:15,oas:["LE05 OA 03","LE05 OA 04","LE05 OA 05","LE05 OA 23","LE05 OA 25"]},
+     {oa:"HI06 OA 05",nombre:"Formando el territorio",icono:"🗺️",n:10},
+     {oa:"HI06 OA 06",nombre:"La época del salitre",icono:"⛏️",n:10},
+     {oa:"HI06 OA 07",nombre:"Ganar el derecho a votar",icono:"🗳️",n:10},
+     {oa:"HI06 OA 08",nombre:"Quiebre y vuelta democrática",icono:"⚖️",n:10},
+     {oa:"HI06 OA 09",nombre:"Lo que cambió y lo que sigue",icono:"🔄",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Chile en el siglo XIX y XX",icono:"🕯️",n:15,oas:["HI06 OA 05","HI06 OA 06","HI06 OA 07","HI06 OA 08","HI06 OA 09"]},
    ]},
- { id:'leng5-cap3', asignatura:'Lenguaje', nivel:'5° Básico · Informarse de verdad',
-   portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-leng-textos.png',
-   contenido:'contenido/lenguaje-5basico/preguntas.json', activa:true, campaña:'leng5',
+ { id:'hist6-cap3', asignatura:'Historia', nivel:'6° Básico · Geografía de Chile y mi región',
+   portada:'assets/portada-historia.png',
+   portadaMapa:'assets/portada-hist3-cap1.png',
+   contenido:'contenido/historia-6basico/preguntas.json', activa:true, campaña:'hist6',
    etapas:[
-     {oa:"LE05 OA 06",nombre:"Textos que informan",icono:"📰",n:10},
-     {oa:"LE05 OA 07",nombre:"¿Puedo confiar?",icono:"🕵️",n:10},
-     {oa:"LE05 OA 11",nombre:"Buscar lo que sirve",icono:"🔍",n:10},
-     {oa:"LE05 OA 10",nombre:"En la biblioteca",icono:"🏛️",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: Informarse de verdad",icono:"🧭",n:15,oas:["LE05 OA 06","LE05 OA 07","LE05 OA 11","LE05 OA 10"]},
+     {oa:"HI06 OA 10",nombre:"Chile en el mundo",icono:"🌐",n:10},
+     {oa:"HI06 OA 11",nombre:"Las regiones de Chile",icono:"🗺️",n:10},
+     {oa:"HI06 OA 12",nombre:"Ambientes naturales",icono:"🏞️",n:10},
+     {oa:"HI06 OA 13",nombre:"Mi propia región",icono:"📍",n:10},
+     {oa:"HI06 OA 14",nombre:"Desastres naturales",icono:"🌋",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Chile y mi región",icono:"🏔️",n:15,oas:["HI06 OA 10","HI06 OA 11","HI06 OA 12","HI06 OA 13","HI06 OA 14"]},
    ]},
- { id:'leng5-cap4', asignatura:'Lenguaje', nivel:'5° Básico · Crear y contar',
-   portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-leng-escritura.png',
-   contenido:'contenido/lenguaje-5basico/preguntas.json', activa:true, campaña:'leng5',
+ { id:'hist6-cap4', asignatura:'Historia', nivel:'6° Básico · La Constitución',
+   portada:'assets/portada-historia.png',
+   contenido:'contenido/historia-6basico/preguntas.json', activa:true, campaña:'hist6',
    etapas:[
-     {oa:"LE05 OA 13",nombre:"Escribir seguido",icono:"✏️",n:10},
-     {oa:"LE05 OA 14",nombre:"Contar una historia",icono:"📜",n:10},
-     {oa:"LE05 OA 16",nombre:"Qué me pareció",icono:"💭",n:10},
-     {oa:"LE05 OA 17",nombre:"Pensarlo antes",icono:"🗂️",n:10},
-     {oa:"LE05 OA 30",nombre:"Decirlo en voz alta",icono:"🎤",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: Crear y contar",icono:"🌟",n:15,oas:["LE05 OA 13","LE05 OA 14","LE05 OA 16","LE05 OA 17","LE05 OA 30"]},
+     {oa:"HI06 OA 15",nombre:"El poder en democracia",icono:"🏛️",n:10},
+     {oa:"HI06 OA 16",nombre:"La Constitución",icono:"📜",n:10},
+     {oa:"HI06 OA 17",nombre:"Derechos de todos",icono:"⚖️",n:10},
+     {oa:"HI06 OA 18",nombre:"Derechos y deberes",icono:"🤝",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: La Constitución",icono:"📜",n:15,oas:["HI06 OA 15","HI06 OA 16","HI06 OA 17","HI06 OA 18"]},
    ]},
- { id:'leng5-cap5', asignatura:'Lenguaje', nivel:'5° Básico · Escribir con precisión',
-   portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-len3-cap4.png',
-   contenido:'contenido/lenguaje-5basico/preguntas.json', activa:true, campaña:'leng5',
+ { id:'hist6-cap5', asignatura:'Historia', nivel:'6° Básico · Derechos y participación',
+   portada:'assets/portada-historia.png',
+   portadaMapa:'assets/portada-hist3-cap4.png',
+   contenido:'contenido/historia-6basico/preguntas.json', activa:true, campaña:'hist6',
    etapas:[
-     {oa:"LE05 OA 15",nombre:"Explicar un tema",icono:"🗞️",n:10},
-     {oa:"LE05 OA 18",nombre:"Revisar y mejorar",icono:"🔧",n:10},
-     {oa:"LE05 OA 21",nombre:"Los verbos justos",icono:"🔤",n:10},
-     {oa:"LE05 OA 22",nombre:"Escribir sin errores",icono:"✅",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: Escribir con precisión",icono:"🖊️",n:15,oas:["LE05 OA 15","LE05 OA 18","LE05 OA 21","LE05 OA 22"]},
+     {oa:"HI06 OA 19",nombre:"Proteger los derechos",icono:"🛡️",n:10},
+     {oa:"HI06 OA 20",nombre:"Convivencia y honestidad",icono:"🤲",n:10},
+     {oa:"HI06 OA 21",nombre:"Trabajo en equipo",icono:"👥",n:10},
+     {oa:"HI06 OA 22",nombre:"Elegir con responsabilidad",icono:"🗳️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Derechos y participación",icono:"🕊️",n:15,oas:["HI06 OA 19","HI06 OA 20","HI06 OA 21","HI06 OA 22"]},
    ]},
- { id:'leng5-cap6', asignatura:'Lenguaje', nivel:'5° Básico · Las palabras justas',
-   portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-len7-cap5.png',
-   contenido:'contenido/lenguaje-5basico/preguntas.json', activa:true, campaña:'leng5',
+ { id:'hist6-cap6', asignatura:'Historia', nivel:'6° Básico · Ciudadanía activa',
+   portada:'assets/portada-historia.png',
+   portadaMapa:'assets/portada-hist7-cap5.png',
+   contenido:'contenido/historia-6basico/preguntas.json', activa:true, campaña:'hist6',
    etapas:[
-     {oa:"LE05 OA 12",nombre:"Palabras que no conozco",icono:"🔎",n:10},
-     {oa:"LE05 OA 19",nombre:"Palabras nuevas al escribir",icono:"🖋️",n:10},
-     {oa:"LE05 OA 20",nombre:"La palabra exacta",icono:"🎯",n:10},
-     {oa:"LE05 OA 29",nombre:"Palabras nuevas al hablar",icono:"💬",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: Las palabras justas",icono:"📔",n:15,oas:["LE05 OA 12","LE05 OA 19","LE05 OA 20","LE05 OA 29"]},
+     {oa:"HI06 OA 23",nombre:"Proyectos para la comunidad",icono:"💡",n:10},
+     {oa:"HI06 OA 24",nombre:"Opinar con razones",icono:"💬",n:10},
+     {oa:"HI06 OA 25",nombre:"Comparar soluciones",icono:"🧩",n:10},
+     {oa:"HI06 OA 26",nombre:"Informarse bien",icono:"📰",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Ciudadanía activa",icono:"🔎",n:15,oas:["HI06 OA 23","HI06 OA 24","HI06 OA 25","HI06 OA 26"]},
    ]},
- { id:'leng5-cap7', asignatura:'Lenguaje', nivel:'5° Básico · Escuchar y hablar',
-   portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-len7-cap7.png',
-   contenido:'contenido/lenguaje-5basico/preguntas.json', activa:true, campaña:'leng5',
+
+ // --- Campaña Lenguaje (6°) ---
+ // Los 31 OA van en 7 capítulos POR TEMA, no por los tres ejes de las Bases (mismo
+ // criterio que ya usan Lenguaje de 3°, 5° y 7°, declarado en su oa.json).
+ { id:'leng6-cap1', asignatura:'Lenguaje', nivel:'6° Básico · Leer con fluidez y comprender',
+   portada:'assets/portada-lenguaje.png',
+   portadaMapa:'assets/portada-leng-lectura.png',
+   contenido:'contenido/lenguaje-6basico/preguntas.json', activa:true, campaña:'leng6',
    etapas:[
-     {oa:"LE05 OA 24",nombre:"Entender lo que escucho",icono:"👂",n:10},
-     {oa:"LE05 OA 26",nombre:"Conversar y acordar",icono:"🤝",n:10},
-     {oa:"LE05 OA 27",nombre:"Qué decir en cada caso",icono:"🙋",n:10},
-     {oa:"LE05 OA 28",nombre:"Exponer ante el curso",icono:"🎙️",n:10},
-     {oa:"BOSS",nombre:"⚡ JEFE: Escuchar y hablar",icono:"🗣️",n:15,oas:["LE05 OA 24","LE05 OA 26","LE05 OA 27","LE05 OA 28"]},
+     {oa:"LE06 OA 01",nombre:"Leer con fluidez",icono:"📖",n:10},
+     {oa:"LE06 OA 02",nombre:"Estrategias de lectura",icono:"🔑",n:10},
+     {oa:"LE06 OA 08",nombre:"Ideas principales",icono:"📝",n:10},
+     {oa:"LE06 OA 12",nombre:"Adivinar palabras nuevas",icono:"🔎",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Leer con fluidez y comprender",icono:"📚",n:15,oas:["LE06 OA 01","LE06 OA 02","LE06 OA 08","LE06 OA 12"]},
+   ]},
+ { id:'leng6-cap2', asignatura:'Lenguaje', nivel:'6° Básico · Mundos literarios',
+   portada:'assets/portada-lenguaje.png',
+   portadaMapa:'assets/portada-leng-literarios.png',
+   contenido:'contenido/lenguaje-6basico/preguntas.json', activa:true, campaña:'leng6',
+   etapas:[
+     {oa:"LE06 OA 03",nombre:"Tipos de textos literarios",icono:"📚",n:10},
+     {oa:"LE06 OA 04",nombre:"Personajes y motivaciones",icono:"🎭",n:10},
+     {oa:"LE06 OA 05",nombre:"El lenguaje de la poesía",icono:"✒️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Mundos literarios",icono:"✨",n:15,oas:["LE06 OA 03","LE06 OA 04","LE06 OA 05"]},
+   ]},
+ { id:'leng6-cap3', asignatura:'Lenguaje', nivel:'6° Básico · Leer el mundo: no literarios y fuentes',
+   portada:'assets/portada-lenguaje.png',
+   portadaMapa:'assets/portada-leng-textos.png',
+   contenido:'contenido/lenguaje-6basico/preguntas.json', activa:true, campaña:'leng6',
+   etapas:[
+     {oa:"LE06 OA 06",nombre:"Textos informativos",icono:"📰",n:10},
+     {oa:"LE06 OA 07",nombre:"Quién escribe y para qué",icono:"🕵️",n:10},
+     {oa:"LE06 OA 09",nombre:"El gusto por leer",icono:"❤️",n:10},
+     {oa:"LE06 OA 10",nombre:"En la biblioteca",icono:"🏛️",n:10},
+     {oa:"LE06 OA 11",nombre:"Buscar en fuentes",icono:"🔍",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Leer el mundo",icono:"🧭",n:15,oas:["LE06 OA 06","LE06 OA 07","LE06 OA 09","LE06 OA 10","LE06 OA 11"]},
+   ]},
+ { id:'leng6-cap4', asignatura:'Lenguaje', nivel:'6° Básico · Planificar y escribir',
+   portada:'assets/portada-lenguaje.png',
+   portadaMapa:'assets/portada-leng-escritura.png',
+   contenido:'contenido/lenguaje-6basico/preguntas.json', activa:true, campaña:'leng6',
+   etapas:[
+     {oa:"LE06 OA 13",nombre:"Escribir seguido",icono:"✏️",n:10},
+     {oa:"LE06 OA 14",nombre:"Escribir un relato",icono:"📜",n:10},
+     {oa:"LE06 OA 15",nombre:"Escribir un artículo",icono:"🗞️",n:10},
+     {oa:"LE06 OA 16",nombre:"Comentar un libro",icono:"💭",n:10},
+     {oa:"LE06 OA 17",nombre:"Planificar antes de escribir",icono:"🗂️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Planificar y escribir",icono:"🌟",n:15,oas:["LE06 OA 13","LE06 OA 14","LE06 OA 15","LE06 OA 16","LE06 OA 17"]},
+   ]},
+ { id:'leng6-cap5', asignatura:'Lenguaje', nivel:'6° Básico · Revisar y usar el lenguaje',
+   portada:'assets/portada-lenguaje.png',
+   portadaMapa:'assets/portada-len3-cap4.png',
+   contenido:'contenido/lenguaje-6basico/preguntas.json', activa:true, campaña:'leng6',
+   etapas:[
+     {oa:"LE06 OA 18",nombre:"Revisar lo escrito",icono:"🔧",n:10},
+     {oa:"LE06 OA 19",nombre:"Palabras nuevas al escribir",icono:"🖋️",n:10},
+     {oa:"LE06 OA 20",nombre:"Sinónimos y comparaciones",icono:"🔤",n:10},
+     {oa:"LE06 OA 21",nombre:"Participios irregulares",icono:"✅",n:10},
+     {oa:"LE06 OA 22",nombre:"Ortografía",icono:"✔️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Revisar y usar el lenguaje",icono:"🖊️",n:15,oas:["LE06 OA 18","LE06 OA 19","LE06 OA 20","LE06 OA 21","LE06 OA 22"]},
+   ]},
+ { id:'leng6-cap6', asignatura:'Lenguaje', nivel:'6° Básico · Escuchar y comprender',
+   portada:'assets/portada-lenguaje.png',
+   portadaMapa:'assets/portada-len7-cap7.png',
+   contenido:'contenido/lenguaje-6basico/preguntas.json', activa:true, campaña:'leng6',
+   etapas:[
+     {oa:"LE06 OA 23",nombre:"Escuchar cuentos y poemas",icono:"👂",n:10},
+     {oa:"LE06 OA 24",nombre:"Entender lo que se escucha",icono:"🎧",n:10},
+     {oa:"LE06 OA 25",nombre:"La publicidad",icono:"📢",n:10},
+     {oa:"LE06 OA 26",nombre:"Emocionar con recursos",icono:"🎬",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Escuchar y comprender",icono:"👂",n:15,oas:["LE06 OA 23","LE06 OA 24","LE06 OA 25","LE06 OA 26"]},
+   ]},
+ { id:'leng6-cap7', asignatura:'Lenguaje', nivel:'6° Básico · Hablar y exponer',
+   portada:'assets/portada-lenguaje.png',
+   contenido:'contenido/lenguaje-6basico/preguntas.json', activa:true, campaña:'leng6',
+   etapas:[
+     {oa:"LE06 OA 27",nombre:"Conversar y acordar",icono:"🤝",n:10},
+     {oa:"LE06 OA 28",nombre:"Palabras para cada ocasión",icono:"🙋",n:10},
+     {oa:"LE06 OA 29",nombre:"Exponer ante el curso",icono:"🎙️",n:10},
+     {oa:"LE06 OA 30",nombre:"Palabras nuevas al hablar",icono:"💬",n:10},
+     {oa:"LE06 OA 31",nombre:"Dramatizar y contar",icono:"🎪",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Hablar y exponer",icono:"🗣️",n:15,oas:["LE06 OA 27","LE06 OA 28","LE06 OA 29","LE06 OA 30","LE06 OA 31"]},
    ]},
 ];
-const EXTRAS = [
-  // Las unidades del camino de mini-clases. NO son expediciones (viven en capitulosMate
-  // de la campana), asi que sin esto el armador de enlaces de muestra no las ve: es el
-  // mismo defecto que tuvo el Reto de Calculo (Sesion 70) y las de 8° (Sesion 82).
-  // El `nombre` va a mano porque CAMPANAS se declara DESPUES de este literal.
-  {id:'mate5-numeros', asignatura:'Matemáticas', nombre:'Mini-clases · Números y operaciones', icono:'📘',
-   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mate5-numeros')},
-  {id:'mate5-fracciones', asignatura:'Matemáticas', nombre:'Mini-clases · Fracciones', icono:'📘',
-   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mate5-fracciones')},
-  {id:'mate5-decimales', asignatura:'Matemáticas', nombre:'Mini-clases · Decimales', icono:'📘',
-   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mate5-decimales')},
-  {id:'mate5-patrones', asignatura:'Matemáticas', nombre:'Mini-clases · Patrones y figuras', icono:'📘',
-   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mate5-patrones')},
-  {id:'mate5-medicion', asignatura:'Matemáticas', nombre:'Mini-clases · Medición', icono:'📘',
-   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mate5-medicion')},
-  {id:'mate5-datos', asignatura:'Matemáticas', nombre:'Mini-clases · Datos y azar', icono:'📘',
-   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mate5-datos')},
-];
+/* 6° nace con las 4 asignaturas COMPLETAS desde el arranque (a diferencia de 5°, que
+   partió solo con Matemática): su banco de 2.970 preguntas y sus 99 OA ya estaban
+   escritos antes de crear este fork. No hay mini-clases ni Reto Sin Fin todavía —
+   HAY_MINICLASES y HAY_SINFIN quedan en false, es contenido pendiente y no un olvido—,
+   así que EXTRAS queda vacío: no hay ningún módulo con pantalla propia que declarar. */
+const EXTRAS = [];
 const SOLO=_SOLO_PEDIDO.filter(id=>EXPEDICIONES.some(e=>e.id===id)||EXTRAS.some(x=>x.id===id));
 const PRUEBA=SOLO.length>0;
 /* Modo revisión de profesor (?rev=1 junto a ?solo= o ?m=). La maquinaria vive en
@@ -1556,7 +1567,7 @@ if(!window.REV) window.REV={activo:false,n:3,marcadas:[],
   init:function(){return this;},barra:function(){},boton:function(){},
   abrir:function(){},mensaje:function(){return '';},tipoAudio:function(){return '';}};
 REV.init({ activo:REVISION,
-           titulo:'VULPO · Revisión de 5° básico',
+           titulo:'VULPO · Revisión de 6° básico',
            volver:function(){ go('scr-expediciones'); } });
 /* MODO_ABIERTO mezclaba DOS preguntas distintas, y el modo experimental las necesita
    distintas: capítulos abiertos pero jefes cerrados. Mismo corte que la Sesión 41 le
@@ -1576,7 +1587,7 @@ REV.init({ activo:REVISION,
    ⚠️ La clave va escrita a mano y NO con SUFIJO, que se declara ~450 líneas más abajo:
       leerla aquí sería zona muerta temporal y mataría todo el JavaScript de la app.
       Es la trampa que ya mordió tres veces esta semana. */
-const EXPER_KEY='kimun_exper_5to';
+const EXPER_KEY='kimun_exper_6to';
 const INSCRIBIR=(PRUEBA||ARMAR)?'':(_PARAMS.get('inscribir')||'').trim().toUpperCase();
 let _exper=false;
 try{ _exper = !PRUEBA && !ARMAR && localStorage.getItem(EXPER_KEY)==='1'; }catch(e){}
@@ -1602,7 +1613,7 @@ const VENCIDA=!!VENCE && hoyISO()>VENCE;
 const FECHA_PUERTA='2026-10-01';   // alineada con 8°: una plataforma, una fecha
 const PUERTA=!!FECHA_PUERTA && hoyISO()>=FECHA_PUERTA;
 const AVISO_PUERTA=!!FECHA_PUERTA && !PUERTA;
-const DEMO_LIBRE='mate5-cap1';          // lo único jugable sin código, cuando la puerta cierre
+const DEMO_LIBRE='hist6-cap1';          // lo único jugable sin código, cuando la puerta cierre
 
 /* ===== CAMPAÑAS (capa "asignatura completa" · data-driven) =====
    Una campaña agrupa expediciones (capítulos) en orden, con un Desafío Extra y un
@@ -1610,112 +1621,109 @@ const DEMO_LIBRE='mate5-cap1';          // lo único jugable sin código, cuando
    así que reusan todo el motor (activarExpedicion, cargarPool, renderMapa, quiz). */
 const CAMPAÑAS=[
 {
-  id:'mate5', asignatura:'Matemáticas', portada:'assets/portada-matematicas.png',
-  intro:'Numeros, fracciones, decimales, figuras y datos: el ano completo de Matematica de 5°.',
-  capitulos:['mate5-cap1','mate5-cap2','mate5-cap3','mate5-cap4','mate5-cap5','mate5-cap6'],
-  esLecciones:true,
-  capitulosMate:[
-    {id:'mate5-numeros',    titulo:'Números y operaciones', portada:'assets/portada-mate-numeros.png',
-     lecciones:['ma5-oa01','ma5-oa02','ma5-oa03','ma5-oa04','ma5-oa05','ma5-oa06']},
-    {id:'mate5-fracciones', titulo:'Fracciones',            portada:'assets/portada-mate-algebra.png',
-     lecciones:['ma5-oa07','ma5-oa08','ma5-oa09']},
-    {id:'mate5-decimales',  titulo:'Decimales',             portada:'assets/portada-mate-datos.png',
-     lecciones:['ma5-oa10','ma5-oa11','ma5-oa12','ma5-oa13']},
-    {id:'mate5-patrones',   titulo:'Patrones y figuras',    portada:'assets/portada-mate-geometria.png',
-     lecciones:['ma5-oa14','ma5-oa15','ma5-oa16','ma5-oa17','ma5-oa18']},
-    {id:'mate5-medicion',   titulo:'Medición',              portada:'assets/portada-mate-geometria.png',
-     lecciones:['ma5-oa19','ma5-oa20','ma5-oa21','ma5-oa22']},
-    {id:'mate5-datos',      titulo:'Datos y azar',          portada:'assets/portada-mate-datos.png',
-     lecciones:['ma5-oa23','ma5-oa24','ma5-oa25','ma5-oa26','ma5-oa27']},
-  ],
+  id:'mate6', asignatura:'Matemáticas', portada:'assets/portada-matematicas.png',
+  intro:'De los múltiplos y las razones a los datos y las probabilidades: el año completo de Matemática de 6°.',
+  capitulos:['mate6-cap1','mate6-cap2','mate6-cap3','mate6-cap4','mate6-cap5','mate6-cap6','mate6-cap7'],
   jefeFinal:{
-    // Arte propio generado el 05/09/2026 (antes prestado de 7°).
-    villano:'El Descuadre', villanoIc:'📐', villanoImg:'assets/villano-matematicas-5to.png',
-    villanoImgDerrotado:'assets/villano-matematicas-5to-derrotado.png',
-    dialogo:'Nada calza, nada cuadra, ningun numero esta donde deberia... ¿crees que puedes ordenar este desorden?',
-    derrota:'Ves? Todo vuelve a descuadrarse. Regresa cuando tus numeros calcen de verdad.',
+    // Arte propio generado el 05/09/2026 (antes prestado del set "-3ro"). "La
+    // Desproporción" sale de lo que la asignatura entera enseña a corregir: que un
+    // porcentaje, una razón o un ángulo calcen con lo que deberían.
+    villano:'La Desproporción', villanoIc:'📐', villanoImg:'assets/villano-matematicas-6to.png',
+    villanoImgDerrotado:'assets/villano-matematicas-6to-derrotado.png',
+    dialogo:'Nada guarda su proporción correcta: ni un porcentaje, ni un ángulo, ni una razón. ¿Crees que puedes devolverle el equilibrio a los números?',
+    derrota:'Todo vuelve a desproporcionarse apenas te vas. Regresa cuando tus cálculos calcen de verdad.',
     vidasJugador:3, nPorFase:4,
-    // 4 fases x 4 preguntas = 16. Las 6 unidades del mapa se agrupan en 4 para no
-    // alargar el jefe: la estructura de 4 fases es la del motor en las cuatro campanas.
+    // 4 fases x 4 preguntas = 16. Los 7 capítulos del mapa se agrupan en 4 para no
+    // alargar el jefe: la estructura de 4 fases es la del motor en las cuatro campañas.
     fases:[
-      {nombre:'Numeros y operaciones', oas:['MA05 OA 01','MA05 OA 02','MA05 OA 03','MA05 OA 04','MA05 OA 05','MA05 OA 06']},
-      {nombre:'Fracciones y decimales', oas:['MA05 OA 07','MA05 OA 08','MA05 OA 09','MA05 OA 10','MA05 OA 11','MA05 OA 12','MA05 OA 13']},
-      {nombre:'Patrones, figuras y medicion', oas:['MA05 OA 14','MA05 OA 15','MA05 OA 16','MA05 OA 17','MA05 OA 18','MA05 OA 19','MA05 OA 20','MA05 OA 21','MA05 OA 22']},
-      {nombre:'Datos y probabilidades', oas:['MA05 OA 23','MA05 OA 24','MA05 OA 25','MA05 OA 26','MA05 OA 27']},
+      {nombre:'Números y razones', oas:['MA06 OA 01','MA06 OA 02','MA06 OA 03','MA06 OA 04','MA06 OA 05','MA06 OA 06','MA06 OA 07','MA06 OA 08']},
+      {nombre:'Álgebra y geometría', oas:['MA06 OA 09','MA06 OA 10','MA06 OA 11','MA06 OA 12','MA06 OA 13','MA06 OA 14','MA06 OA 15','MA06 OA 16','MA06 OA 17']},
+      {nombre:'Medición', oas:['MA06 OA 18','MA06 OA 19','MA06 OA 20','MA06 OA 21']},
+      {nombre:'Datos y probabilidades', oas:['MA06 OA 22','MA06 OA 23','MA06 OA 24']},
     ],
   },
   recompensa:{ skin:'kimun-matematico', insignia:'maestro-matematica', bonoMonedas:500, bonoXP:300 },
 },{
-  id:'cie5', asignatura:'Ciencias', portada:'assets/portada-ciencias.png',
-  intro:'Del cuerpo por dentro a la electricidad y el agua del planeta: el año completo de Ciencias de 5°.',
-  capitulos:['cie5-cap1','cie5-cap2','cie5-cap3','cie5-cap4'],
+  id:'cie6', asignatura:'Ciencias', portada:'assets/portada-ciencias.png',
+  intro:'De las plantas y los ecosistemas al suelo que pisamos: el año completo de Ciencias de 6°.',
+  capitulos:['cie6-cap1','cie6-cap2','cie6-cap3','cie6-cap4','cie6-cap5'],
   jefeFinal:{
-    // Arte propio generado el 05/09/2026 (antes prestado de 7°).
-    villano:'El Cortocircuito', villanoIc:'⚡', villanoImg:'assets/villano-ciencias-5to.png',
-    villanoImgDerrotado:'assets/villano-ciencias-5to-derrotado.png',
-    dialogo:'Corto el camino de todo: la corriente, la sangre, el agua... ¿crees que puedes cerrar el circuito?',
-    derrota:'Todo vuelve a cortarse. Estudia cómo se conecta cada cosa y regresa.',
+    // Arte propio generado el 05/09/2026 (antes prestado del set "-3ro").
+    villano:'El Desequilibrio', villanoIc:'⚖️', villanoImg:'assets/villano-ciencias-6to.png',
+    villanoImgDerrotado:'assets/villano-ciencias-6to-derrotado.png',
+    dialogo:'Yo rompo el equilibrio de todo: el cuerpo, la energía, la Tierra entera. ¿Crees que puedes devolverles su balance?',
+    derrota:'Todo vuelve a desequilibrarse en cuanto te descuidas. Vuelve cuando entiendas cómo se sostiene cada sistema.',
     vidasJugador:3, nPorFase:4,
+    // ⚠️ Los CN06 OA 04/05/06 (sistema reproductor y pubertad) quedan FUERA de las fases
+    // a propósito: el Jefe Final mezcla objetivos de TODA la asignatura, así que un
+    // colegio que no incluyera el capítulo 2 se los encontraría igual acá. Ver
+    // docs/contenido-sensible.md. El OA 07 (drogas) sí entra: esa exclusión es solo
+    // para lo sexual/reproductivo. El jefe DEL CAPÍTULO 2 se queda intacto: quien no lo
+    // incluye nunca llega a él.
     fases:[
-      {nombre:'El cuerpo por dentro', oas:['CN05 OA 01','CN05 OA 02','CN05 OA 03','CN05 OA 04']},
-      {nombre:'Cuidar la salud', oas:['CN05 OA 05','CN05 OA 06','CN05 OA 07']},
-      {nombre:'La electricidad', oas:['CN05 OA 08','CN05 OA 09','CN05 OA 10','CN05 OA 11']},
-      {nombre:'El agua en la Tierra', oas:['CN05 OA 12','CN05 OA 13','CN05 OA 14']},
+      {nombre:'Vida y ecosistemas', oas:['CN06 OA 01','CN06 OA 02','CN06 OA 03','CN06 OA 07']},
+      {nombre:'La energía', oas:['CN06 OA 08','CN06 OA 09','CN06 OA 10','CN06 OA 11']},
+      {nombre:'La materia y el calor', oas:['CN06 OA 12','CN06 OA 13','CN06 OA 14','CN06 OA 15']},
+      {nombre:'La Tierra', oas:['CN06 OA 16','CN06 OA 17','CN06 OA 18']},
     ],
   },
   recompensa:{ skin:'kimun-cientifico', insignia:'maestro-ciencias', bonoMonedas:500, bonoXP:300 },
 },{
-  id:'hist5', asignatura:'Historia', portada:'assets/portada-historia.png',
-  intro:'De los viajes que cruzaron el mar a informarse bien hoy: el año completo de Historia de 5°.',
-  capitulos:['hist5-cap1','hist5-cap2','hist5-cap3','hist5-cap4','hist5-cap5','hist5-cap6'],
+  id:'hist6', asignatura:'Historia', portada:'assets/portada-historia.png',
+  intro:'De la independencia de Chile a la ciudadanía de hoy: el año completo de Historia de 6°.',
+  capitulos:['hist6-cap1','hist6-cap2','hist6-cap3','hist6-cap4','hist6-cap5','hist6-cap6'],
   jefeFinal:{
-    // Arte propio generado el 05/09/2026 (antes prestado de 7°).
-    // "El Rumor" sale del cierre del año —informarse y opinar con fundamento—, que es
-    // justamente lo que lo derrota: un rumor deforma lo que pasó y no aguanta una fuente.
-    villano:'El Rumor', villanoIc:'🗣️', villanoImg:'assets/villano-historia-5to.png',
-    villanoImgDerrotado:'assets/villano-historia-5to-derrotado.png',
-    dialogo:'Yo cuento la historia como más conviene, y nadie va a comprobarlo... ¿o sí?',
-    derrota:'Me repito hasta que suene verdad. Vuelve cuando puedas demostrar lo contrario.',
+    // Arte propio generado el 05/09/2026 (antes prestado del set "-3ro"). "La Versión
+    // Única" sale del OA más delicado del curso (HI06 OA 08, el quiebre y la vuelta de
+    // la democracia): lo derrota justamente comparar visiones distintas, que es lo que
+    // ese OA le pide al alumno.
+    villano:'La Versión Única', villanoIc:'📜', villanoImg:'assets/villano-historia-6to.png',
+    villanoImgDerrotado:'assets/villano-historia-6to-derrotado.png',
+    dialogo:'Solo existe UNA versión de la historia: la mía. Nadie más tiene derecho a contarla distinto.',
+    derrota:'Puedo repetir mi versión, pero ya escuchaste las otras. Vuelve cuando quieras comparar de verdad.',
     vidasJugador:3, nPorFase:4,
-    // Las cuatro fases recorren el año entero: los dos capítulos de historia, el de
-    // geografía, y uno que junta las cuatro ideas del bloque ciudadano.
+    // A diferencia de Ciencias, aquí NO se excluye ningún OA: el contenido político e
+    // histórico (el quiebre democrático, la Araucanía, el salitre) entra completo, que
+    // es la regla del proyecto para ese tipo de contenido. La última fase muestrea el
+    // bloque ciudadano en vez de recorrerlo entero, como ya hace Historia de 5°.
     fases:[
-      {nombre:'Descubrimiento y conquista', oas:['HI05 OA 01','HI05 OA 02','HI05 OA 03','HI05 OA 04']},
-      {nombre:'La Colonia', oas:['HI05 OA 05','HI05 OA 06','HI05 OA 07','HI05 OA 08']},
-      {nombre:'Chile y sus paisajes', oas:['HI05 OA 09','HI05 OA 10','HI05 OA 11','HI05 OA 12']},
-      {nombre:'Vivir juntos', oas:['HI05 OA 13','HI05 OA 16','HI05 OA 19','HI05 OA 22']},
+      {nombre:'Independencia y república', oas:['HI06 OA 01','HI06 OA 02','HI06 OA 03','HI06 OA 04']},
+      {nombre:'Chile en el siglo XIX y XX', oas:['HI06 OA 05','HI06 OA 06','HI06 OA 07','HI06 OA 08','HI06 OA 09']},
+      {nombre:'Nuestro territorio y nuestra región', oas:['HI06 OA 10','HI06 OA 11','HI06 OA 12','HI06 OA 13','HI06 OA 14']},
+      {nombre:'La Constitución y la vida en democracia', oas:['HI06 OA 15','HI06 OA 16','HI06 OA 17','HI06 OA 20','HI06 OA 22','HI06 OA 26']},
     ],
   },
   recompensa:{ skin:'kimun-historiador', insignia:'maestro-historia', bonoMonedas:500, bonoXP:300 },
 },{
-  id:'leng5', asignatura:'Lenguaje', portada:'assets/portada-lenguaje.png',
-  intro:'De leer con soltura a exponer ante el curso: el año completo de Lenguaje de 5°.',
-  capitulos:['leng5-cap1','leng5-cap2','leng5-cap3','leng5-cap4','leng5-cap5','leng5-cap6','leng5-cap7'],
+  id:'leng6', asignatura:'Lenguaje', portada:'assets/portada-lenguaje.png',
+  intro:'De leer con fluidez a exponer ante el curso: el año completo de Lenguaje de 6°.',
+  capitulos:['leng6-cap1','leng6-cap2','leng6-cap3','leng6-cap4','leng6-cap5','leng6-cap6','leng6-cap7'],
   jefeFinal:{
-    // Arte propio generado el 05/09/2026 (antes prestado de 7°). El NOMBRE ya era propio:
-    // no se repite "El Borrón" (8° y 3°) ni "El Silencio" (7°), porque cada año necesita el suyo.
-    // "El Malentendido" sale de lo que la asignatura entera existe para evitar: entender
-    // una cosa por otra. Lo derrotan la palabra exacta, la fuente comprobada y el hablar claro.
-    villano:'El Malentendido', villanoIc:'❓', villanoImg:'assets/villano-lenguaje-5to.png',
-    villanoImgDerrotado:'assets/villano-lenguaje-5to-derrotado.png',
-    dialogo:'Yo vivo entre lo que uno dice y lo que el otro entiende. Y ahí nadie me alcanza.',
-    derrota:'Me basta una palabra mal puesta para volver. Y esa palabra siempre aparece.',
+    // Arte propio generado el 05/09/2026 (antes prestado del set "-3ro"). El NOMBRE ya
+    // era propio: no se repite "El Borrón" (8° y 3°), "El Silencio" (7°) ni "El
+    // Malentendido" (5°). "El Enredo" sale de lo que la asignatura entera existe para
+    // deshacer: las palabras y las ideas enredadas hasta que nadie se entiende.
+    villano:'El Enredo', villanoIc:'🧶', villanoImg:'assets/villano-lenguaje-6to.png',
+    villanoImgDerrotado:'assets/villano-lenguaje-6to-derrotado.png',
+    dialogo:'Enredo cada palabra hasta que nadie entiende a nadie. ¿Crees que puedes deshacer este nudo?',
+    derrota:'Vuelvo a enredarlo todo apenas te vas. Regresa cuando tus palabras sean más claras que las mías.',
     vidasJugador:3, nPorFase:4,
-    // Las cuatro fases recorren el año por sus cuatro destrezas, no por capítulo:
-    // leer, la literatura, escribir y hablar.
+    // Las cuatro fases recorren el año por destreza y no por capítulo: leer, la
+    // literatura, escribir y hablar/escuchar, igual que hace Lenguaje de 5°.
     fases:[
-      {nombre:'Leer y entender', oas:['LE05 OA 01','LE05 OA 02','LE05 OA 08','LE05 OA 07']},
-      {nombre:'Mundos literarios', oas:['LE05 OA 03','LE05 OA 04','LE05 OA 05','LE05 OA 25']},
-      {nombre:'Escribir', oas:['LE05 OA 14','LE05 OA 17','LE05 OA 18','LE05 OA 22']},
-      {nombre:'Hablar y escuchar', oas:['LE05 OA 24','LE05 OA 26','LE05 OA 28','LE05 OA 20']},
+      {nombre:'Leer y comprender', oas:['LE06 OA 01','LE06 OA 02','LE06 OA 06','LE06 OA 07']},
+      {nombre:'Mundos literarios', oas:['LE06 OA 03','LE06 OA 04','LE06 OA 05','LE06 OA 12']},
+      {nombre:'Escribir con cuidado', oas:['LE06 OA 14','LE06 OA 15','LE06 OA 17','LE06 OA 18']},
+      {nombre:'Hablar y escuchar', oas:['LE06 OA 24','LE06 OA 25','LE06 OA 27','LE06 OA 29']},
     ],
   },
   recompensa:{ skin:'kimun-escritor', insignia:'maestro-lenguaje', bonoMonedas:500, bonoXP:300 },
 }];
-/* Solo las alcanzables. 5° nace con Matematica y nada mas, y una recompensa que no se
-   puede ganar es peor que no ofrecerla — la leccion que 7° aprendio quitando la skin
-   del Calculista y la insignia del Automata, cuyo requisito era un jefe que no existe.
-   Al sumar Historia, Ciencias y Lenguaje vuelven sus cuatro entradas. */
+/* Solo las alcanzables. 6° nace con las CUATRO asignaturas completas desde el arranque
+   (a diferencia de 5°, que partió solo con Matemática), así que las cuatro entradas de
+   Maestro y las cuatro 🔥 de Difícil valen desde el primer día: no hay ninguna
+   recompensa inalcanzable que evitar, la lección que 7° aprendió quitando la skin del
+   Calculista y la insignia del Autómata, cuyo requisito era un jefe que no existe. */
 const INSIGNIAS=[
   {id:'maestro-matematica', ic:'📐', tx:'Maestro de las Matemáticas', asignatura:'Matemáticas'},
   {id:'maestro-ciencias', ic:'🔬', tx:'Maestro de Ciencias', asignatura:'Ciencias'},
@@ -1726,20 +1734,21 @@ const INSIGNIAS=[
   // Exclusiva del Modo Difícil (se gana completando la asignatura en Difícil).
   {id:'dif-matematicas', ic:'🔥', tx:'Matemáticas · Difícil', asignatura:'Matemáticas'},
   {id:'dif-ciencias', ic:'🔥', tx:'Ciencias · Difícil', asignatura:'Ciencias'},
+  {id:'dif-historia', ic:'🔥', tx:'Historia · Difícil', asignatura:'Historia'},
+  {id:'dif-lenguaje', ic:'🔥', tx:'Lenguaje · Difícil', asignatura:'Lenguaje'},
 ];
-/* ⚠️ DECISION CON FECHA DE VENCIMIENTO. Hoy 5° tiene UNA asignatura, asi que "todas en
-   Difícil" es Matematica, y la Maestria Total se gana dominando todo lo que el curso
-   tiene — que es lo que la Maestria significa. La alternativa era listar las cuatro y
-   dejar la corona IMPOSIBLE hasta que existan, que es el defecto que este proyecto ya
-   decidio evitar. Al sumar las otras tres asignaturas, esta lista crece a cuatro.
-   Contra asumida: quien gane la corona en esta ventana la conserva. */
+/* A diferencia de 5° (que nació con una sola asignatura y tuvo que declarar esta lista
+   como una decisión con fecha de vencimiento), 6° nace con las CUATRO completas: "todas
+   en Difícil" ya son Historia + Matemáticas + Ciencias + Lenguaje desde el día uno, sin
+   ninguna ventana intermedia que gestionar. */
 const DIF_ASIGS=['Historia','Matemáticas','Ciencias','Lenguaje'];
 const HAY_DIFICIL=true;
 /* ¿El cuarto hito de la Maestría Total es El Autómata (el Jefe del Reto de Cálculo)?
    En 8° la Maestría es Historia + Ciencias + Lenguaje en Difícil MÁS El Autómata, porque
-   la dificultad de Matemáticas es el Reto y no el Modo Difícil. En 7° son las CUATRO
-   asignaturas en Difícil y no hay Autómata que sumar. Son el mismo número —cuatro hitos—
-   contados distinto, así que la diferencia va como DATO y no como dos funciones distintas.
+   la dificultad de Matemáticas es el Reto y no el Modo Difícil. En 6° (como en 7° y 3°)
+   son las CUATRO asignaturas en Difícil y no hay Autómata que sumar: 6° no tiene Reto de
+   Cálculo. Son el mismo número —cuatro hitos— contados distinto, así que la diferencia
+   va como DATO y no como dos funciones distintas.
    ⚠️ PEGADA a HAY_DIFICIL por el mismo motivo: la consulta esMaestro() en el arranque. */
 const MAESTRIA_CALC=false;
 
@@ -1760,105 +1769,111 @@ cargarPool(EXP_ACT); // carga inicial (Historia) para el Duelo y el arranque
 // nombre de la etapa, que se ve razonable, y no hay error ni 404 que lo delate.
 const META_OA={
  // Matemática
- 'MA05 OA 01':'Leer, escribir y comparar números gigantes, hasta casi mil millones.',
- 'MA05 OA 02':'Trucos para multiplicar de memoria, sin lápiz ni calculadora.',
- 'MA05 OA 03':'Multiplicar números de dos cifras y estimar el resultado antes de calcular.',
- 'MA05 OA 04':'Dividir repartiendo, y entender qué significa lo que sobra.',
- 'MA05 OA 05':'En qué orden se resuelve una cuenta que tiene varias operaciones.',
- 'MA05 OA 06':'Resolver problemas de la vida diaria, incluidos los del dinero.',
- 'MA05 OA 07':'Entender las fracciones y descubrir cuáles valen lo mismo.',
- 'MA05 OA 08':'Fracciones mayores que uno, y cómo se escriben de dos formas.',
- 'MA05 OA 09':'Sumar y restar fracciones, aunque tengan distinto denominador.',
- 'MA05 OA 10':'Pasar una fracción a número decimal, y al revés.',
- 'MA05 OA 11':'Comparar y ordenar decimales, hasta las milésimas.',
- 'MA05 OA 12':'Sumar y restar decimales sin perder de vista la coma.',
- 'MA05 OA 13':'Resolver problemas usando fracciones y decimales.',
- 'MA05 OA 14':'Descubrir la regla escondida en una secuencia de números.',
- 'MA05 OA 15':'Encontrar el número que falta en una igualdad.',
- 'MA05 OA 16':'Ubicar puntos en un plano usando sus coordenadas.',
- 'MA05 OA 17':'Reconocer lados y aristas paralelos y perpendiculares en las figuras.',
- 'MA05 OA 18':'Mover, voltear y girar una figura sin cambiar su forma ni su tamaño.',
- 'MA05 OA 19':'Medir longitudes eligiendo la unidad que corresponde.',
- 'MA05 OA 20':'Pasar de kilómetros a metros, de metros a centímetros y al revés.',
- 'MA05 OA 21':'Descubrir que muchos rectángulos distintos pueden tener el mismo perímetro.',
- 'MA05 OA 22':'Calcular el área de triángulos y otras figuras, y estimar las irregulares.',
- 'MA05 OA 23':'Calcular el promedio y entender qué te está diciendo.',
- 'MA05 OA 24':'Decir si algo es seguro, posible, poco posible o imposible.',
- 'MA05 OA 25':'Decidir qué es más probable sin necesidad de hacer cuentas.',
- 'MA05 OA 26':'Leer tablas y gráficos, y contar lo que muestran.',
- 'MA05 OA 27':'Ordenar datos con un diagrama de tallo y hojas.',
+ 'MA06 OA 01':'Descubrir los múltiplos y factores de un número, y quiénes son los primos.',
+ 'MA06 OA 02':'Resolver problemas con las cuatro operaciones usando la calculadora.',
+ 'MA06 OA 03':'Entender qué es una razón y cómo comparar dos cantidades.',
+ 'MA06 OA 04':'Entender qué es un porcentaje y cómo se calcula.',
+ 'MA06 OA 05':'Reconocer fracciones equivalentes y números mixtos, y ubicarlos en la recta.',
+ 'MA06 OA 06':'Sumar y restar fracciones y números mixtos.',
+ 'MA06 OA 07':'Multiplicar y dividir decimales por números naturales.',
+ 'MA06 OA 08':'Resolver problemas de la vida diaria con fracciones y decimales.',
+ 'MA06 OA 09':'Encontrar el patrón escondido en una tabla de números.',
+ 'MA06 OA 10':'Escribir con letras una relación entre números.',
+ 'MA06 OA 11':'Resolver una ecuación con una incógnita, como si fuera una balanza.',
+ 'MA06 OA 12':'Construir y comparar triángulos según sus lados y ángulos.',
+ 'MA06 OA 13':'Calcular el área de un cubo o una caja armando su red.',
+ 'MA06 OA 14':'Cubrir un plano con figuras que se repiten, sin dejar espacios.',
+ 'MA06 OA 15':'Construir ángulos agudos, rectos y obtusos con el transportador.',
+ 'MA06 OA 16':'Descubrir qué ángulos se forman cuando dos rectas se cruzan.',
+ 'MA06 OA 17':'Comprobar que los ángulos de un triángulo siempre suman 180 grados.',
+ 'MA06 OA 18':'Calcular cuánta superficie cubre un cubo o una caja.',
+ 'MA06 OA 19':'Calcular cuánto espacio ocupa un cubo o una caja por dentro.',
+ 'MA06 OA 20':'Medir ángulos con el transportador, en grados.',
+ 'MA06 OA 21':'Calcular los ángulos que se forman entre rectas paralelas y un triángulo.',
+ 'MA06 OA 22':'Comparar dos grupos de datos con diagramas de puntos.',
+ 'MA06 OA 23':'Predecir qué va a pasar al repetir un experimento con dados o monedas.',
+ 'MA06 OA 24':'Leer gráficos de barra doble y gráficos circulares.',
  // Ciencias Naturales
- 'CN05 OA 01':'De qué están hechos todos los seres vivos, por dentro.',
- 'CN05 OA 02':'El viaje que hace la comida por tu cuerpo, y qué pasa en cada parada.',
- 'CN05 OA 03':'Cómo entra el aire a tu cuerpo y dónde le entrega el oxígeno a la sangre.',
- 'CN05 OA 04':'Cómo la sangre reparte alimento y oxígeno a todo el cuerpo.',
- 'CN05 OA 05':'Para qué sirve cada tipo de alimento y por qué conviene comer variado.',
- 'CN05 OA 06':'Qué le hace el humo del cigarrillo a los pulmones y al corazón.',
- 'CN05 OA 07':'Que hay microbios buenos y malos, y cómo cuidarse de los que enferman.',
- 'CN05 OA 08':'En qué se transforma la electricidad, y quiénes lo fueron descubriendo.',
- 'CN05 OA 09':'Cómo funciona un circuito y por qué tiene que estar cerrado.',
- 'CN05 OA 10':'Qué materiales dejan pasar la electricidad y cuáles la frenan.',
- 'CN05 OA 11':'Por qué la electricidad es tan importante y cómo no desperdiciarla.',
- 'CN05 OA 12':'Cuánta agua hay en el planeta y por qué tan poca se puede beber.',
- 'CN05 OA 13':'Cómo cambia el mar con la profundidad, y por qué el mar chileno es frío.',
- 'CN05 OA 14':'Cómo la actividad humana daña y también cuida el agua del planeta.',
+ 'CN06 OA 01':'Descubrir qué necesita una planta para fabricar su propio alimento.',
+ 'CN06 OA 02':'Seguir el camino de la energía entre los seres vivos de un ecosistema.',
+ 'CN06 OA 03':'Analizar cómo las personas afectan las cadenas alimentarias.',
+ 'CN06 OA 04':'Conocer las partes y funciones del sistema reproductor humano.',
+ 'CN06 OA 05':'Reconocer los cambios del cuerpo durante la pubertad.',
+ 'CN06 OA 06':'Entender por qué cuidar la higiene y hacer ejercicio importa en esta etapa.',
+ 'CN06 OA 07':'Conocer los efectos dañinos de algunas drogas para la salud.',
+ 'CN06 OA 08':'Descubrir por qué casi toda la energía que usamos viene del Sol.',
+ 'CN06 OA 09':'Ver cómo la energía cambia de una forma a otra.',
+ 'CN06 OA 10':'Comprobar que el calor siempre pasa de lo caliente a lo frío.',
+ 'CN06 OA 11':'Distinguir qué recursos de energía se acaban y cuáles no.',
+ 'CN06 OA 12':'Entender que la materia está hecha de partículas que se mueven distinto en cada estado.',
+ 'CN06 OA 13':'Reconocer la fusión, evaporación, condensación y otros cambios de estado.',
+ 'CN06 OA 14':'Diferenciar el calor, que es energía, de la temperatura, que lo mide.',
+ 'CN06 OA 15':'Medir e interpretar qué pasa al calentar o enfriar el agua.',
+ 'CN06 OA 16':'Conocer las capas que hacen posible la vida en la Tierra.',
+ 'CN06 OA 17':'Descubrir cómo se forma el suelo y por qué hay que cuidarlo.',
+ 'CN06 OA 18':'Entender cómo el viento, el agua y las personas desgastan la superficie de la Tierra.',
  /* Historia. La comprobacion que hay que correr al cerrar el nivel, y que en 7 basico
     habria cazado un META_OA entero con los codigos de otro curso:
       EXPEDICIONES.flatMap(e=>e.etapas).flatMap(t=>t.oas||[t.oa])
         .filter(o=>o&&o!=='BOSS').filter(o=>!META_OA[o])   // debe dar [] */
- 'HI05 OA 01':'Cómo cruzaron el mar Colón y Magallanes, y qué andaban buscando.',
- 'HI05 OA 02':'Cómo fue la conquista de América y de Chile, y quiénes la protagonizaron.',
- 'HI05 OA 03':'Qué cambió en Europa y qué cambió en América después de la conquista.',
- 'HI05 OA 04':'Qué les pasó a los pueblos originarios con la conquista.',
- 'HI05 OA 05':'Cómo se vivía en el Chile colonial: sus oficios, costumbres y fiestas.',
- 'HI05 OA 06':'Por qué las colonias dependían de España y cómo nació una sociedad mestiza.',
- 'HI05 OA 07':'Cómo se relacionaron españoles y mapuches: guerra, comercio y parlamentos.',
- 'HI05 OA 08':'Reconocer lo que quedó de la Colonia y sigue vivo a tu alrededor.',
- 'HI05 OA 09':'Las cinco grandes zonas de Chile y cómo es el paisaje de cada una.',
- 'HI05 OA 10':'Dónde están los recursos naturales de Chile y por qué hay que cuidarlos.',
- 'HI05 OA 11':'Cómo el trabajo y las ideas de las personas le dan valor a lo que hay.',
- 'HI05 OA 12':'Qué riesgos naturales hay donde vives y cómo se protege la comunidad.',
- 'HI05 OA 13':'Todas las personas tienen los mismos derechos, sin importar cómo sean.',
- 'HI05 OA 14':'Los derechos traen deberes: para ti, para los demás y para el Estado.',
- 'HI05 OA 15':'Qué cosas se consiguen con esfuerzo, y cuáles no hay que ganarse nunca.',
- 'HI05 OA 16':'Reconocer las acciones que hacen bien a los demás y al lugar donde vives.',
- 'HI05 OA 17':'Cómo se elige una directiva de curso y qué responsabilidad trae cada cargo.',
- 'HI05 OA 18':'Cómo se arma un proyecto para resolver un problema del colegio.',
- 'HI05 OA 19':'De cuántas maneras se organiza la gente para resolver problemas juntos.',
- 'HI05 OA 20':'Dar tu opinión apoyándola en razones, no solo en lo que te gusta.',
- 'HI05 OA 21':'Comparar las soluciones posibles y explicar por qué eliges una.',
- 'HI05 OA 22':'Informarte sobre lo que pasa en el país y en el mundo, y opinar.',
+ 'HI06 OA 01':'Entender que la independencia de Chile fue parte de un proceso de todo el continente.',
+ 'HI06 OA 02':'Conocer cómo fue el camino de Chile hacia la independencia.',
+ 'HI06 OA 03':'Descubrir los desafíos de organizar un nuevo tipo de gobierno.',
+ 'HI06 OA 04':'Investigar los avances educativos y científicos del siglo XIX.',
+ 'HI06 OA 05':'Conocer cómo Chile fue formando su territorio durante el siglo XIX.',
+ 'HI06 OA 06':'Conocer la riqueza y los cambios que trajo la explotación del salitre.',
+ 'HI06 OA 07':'Descubrir cómo más personas fueron ganando el derecho a votar y participar.',
+ 'HI06 OA 08':'Conocer las distintas visiones sobre el quiebre y la vuelta de la democracia en Chile.',
+ 'HI06 OA 09':'Descubrir qué se ha mantenido y qué ha cambiado en la sociedad chilena.',
+ 'HI06 OA 10':'Ubicar a Chile en el mundo y entender qué significa que sea tricontinental.',
+ 'HI06 OA 11':'Conocer los rasgos físicos y humanos de las regiones de Chile.',
+ 'HI06 OA 12':'Comparar los distintos ambientes naturales de Chile y cómo se vive en ellos.',
+ 'HI06 OA 13':'Describir las características físicas, humanas y económicas de tu propia región.',
+ 'HI06 OA 14':'Entender cómo los desastres naturales han influido en la historia de Chile.',
+ 'HI06 OA 15':'Conocer cómo se organiza el poder y la participación en la democracia chilena.',
+ 'HI06 OA 16':'Reconocer que la Constitución organiza el país y garantiza los derechos de las personas.',
+ 'HI06 OA 17':'Comprender que todas las personas tienen derechos que deben respetarse.',
+ 'HI06 OA 18':'Descubrir que los derechos también traen deberes y responsabilidades.',
+ 'HI06 OA 19':'Proponer formas de proteger a alguien cuyos derechos no se respetan.',
+ 'HI06 OA 20':'Reconocer las actitudes que ayudan a la buena convivencia y a la honestidad.',
+ 'HI06 OA 21':'Reconocer cómo se organiza bien un trabajo en equipo.',
+ 'HI06 OA 22':'Entender qué hace responsable a un candidato antes de elegirlo.',
+ 'HI06 OA 23':'Reconocer cómo aportar en un proyecto para la comunidad.',
+ 'HI06 OA 24':'Aprender a dar una opinión y respaldarla con razones.',
+ 'HI06 OA 25':'Aprender a comparar soluciones a un problema y justificar cuál elegir.',
+ 'HI06 OA 26':'Reconocer cómo informarse bien antes de opinar sobre un tema.',
  // --- Lenguaje ---
- 'LE05 OA 01':'Leer en voz alta con soltura y buena entonación.',
- 'LE05 OA 02':'Usar trucos que te ayudan a entender mejor lo que lees.',
- 'LE05 OA 03':'Conocer muchas historias distintas y ampliar tu mundo.',
- 'LE05 OA 04':'Descubrir lo que un cuento dice entre líneas.',
- 'LE05 OA 05':'Entender cómo un poema logra emocionarte.',
- 'LE05 OA 06':'Leer solo textos que informan y entenderlos bien.',
- 'LE05 OA 07':'Darte cuenta de si puedes confiar en lo que lees.',
- 'LE05 OA 08':'Sacar las ideas principales de lo que lees.',
- 'LE05 OA 09':'Disfrutar la lectura y buscar libros que te gusten.',
- 'LE05 OA 10':'Usar la biblioteca para encontrar lo que buscas.',
- 'LE05 OA 11':'Encontrar la información que sirve, entre tanta que hay.',
- 'LE05 OA 12':'Descubrir qué significa una palabra que no conoces.',
- 'LE05 OA 13':'Escribir seguido para expresar lo que imaginas.',
- 'LE05 OA 14':'Escribir historias que se entiendan y atrapen.',
- 'LE05 OA 15':'Escribir para explicar un tema con claridad.',
- 'LE05 OA 16':'Contar por escrito qué te pareció lo que leíste.',
- 'LE05 OA 17':'Pensar tu texto antes de empezar a escribirlo.',
- 'LE05 OA 18':'Revisar lo que escribiste para que se entienda mejor.',
- 'LE05 OA 19':'Usar palabras nuevas cuando escribes.',
- 'LE05 OA 20':'Elegir la palabra exacta entre varias parecidas.',
- 'LE05 OA 21':'Conjugar bien los verbos cuando escribes.',
- 'LE05 OA 22':'Escribir correctamente para que todos te entiendan.',
- 'LE05 OA 23':'Disfrutar historias largas que te leen o te narran.',
- 'LE05 OA 24':'Entender bien lo que escuchas.',
- 'LE05 OA 25':'Mirar una obra o una película con ojo atento.',
- 'LE05 OA 26':'Conversar buscando acuerdos y respetando al otro.',
- 'LE05 OA 27':'Saber qué decir en cada situación.',
- 'LE05 OA 28':'Exponer un tema con claridad frente al curso.',
- 'LE05 OA 29':'Usar palabras nuevas cuando hablas.',
- 'LE05 OA 30':'Preparar poemas, relatos y escenas para decirlos en voz alta.',
+ 'LE06 OA 01':'Leer en voz alta respetando los signos de puntuación y sin trabarse.',
+ 'LE06 OA 02':'Usar estrategias para entender mejor lo que se lee.',
+ 'LE06 OA 03':'Conocer distintos tipos de textos literarios: cuentos, fábulas, leyendas y más.',
+ 'LE06 OA 04':'Analizar las acciones y motivaciones de los personajes de un relato.',
+ 'LE06 OA 05':'Descubrir cómo el lenguaje de un poema crea imágenes y sensaciones.',
+ 'LE06 OA 06':'Entender cartas, noticias y textos informativos, y formarse una opinión.',
+ 'LE06 OA 07':'Reconocer quién escribe un texto, para qué y para quién.',
+ 'LE06 OA 08':'Ordenar y resumir las ideas principales de lo que se lee.',
+ 'LE06 OA 09':'Disfrutar de leer distintos textos habitualmente.',
+ 'LE06 OA 10':'Usar la biblioteca para buscar, investigar e informarse.',
+ 'LE06 OA 11':'Buscar información sobre un tema en distintas fuentes.',
+ 'LE06 OA 12':'Descubrir el significado de una palabra nueva sin usar el diccionario.',
+ 'LE06 OA 13':'Escribir seguido para expresar ideas: poemas, cartas, cuentos.',
+ 'LE06 OA 14':'Escribir un relato con estructura, conectores y buena coherencia.',
+ 'LE06 OA 15':'Escribir un artículo que comunique información con orden.',
+ 'LE06 OA 16':'Escribir un comentario sobre un libro, con ejemplos.',
+ 'LE06 OA 17':'Planificar qué se va a escribir antes de empezar.',
+ 'LE06 OA 18':'Revisar lo que se escribió para que se entienda mejor.',
+ 'LE06 OA 19':'Usar en lo que se escribe una palabra nueva aprendida.',
+ 'LE06 OA 20':'Decir lo mismo de formas distintas, con sinónimos y comparaciones.',
+ 'LE06 OA 21':'Usar bien participios como roto, escrito o vuelto.',
+ 'LE06 OA 22':'Aplicar las reglas de ortografía al escribir.',
+ 'LE06 OA 23':'Disfrutar de cuentos, mitos y poemas leídos por un adulto.',
+ 'LE06 OA 24':'Entender explicaciones, noticias y relatos que se escuchan.',
+ 'LE06 OA 25':'Descubrir la intención y el destinatario de un aviso publicitario.',
+ 'LE06 OA 26':'Reconocer los recursos que usan una obra o una película para emocionar.',
+ 'LE06 OA 27':'Conversar para compartir ideas y llegar a acuerdos.',
+ 'LE06 OA 28':'Saludar, pedir y agradecer con las palabras adecuadas.',
+ 'LE06 OA 29':'Exponer un tema de forma clara, ordenada y sin leer un papel.',
+ 'LE06 OA 30':'Usar al hablar una palabra nueva aprendida.',
+ 'LE06 OA 31':'Contar, describir o dramatizar algo frente a otros.',
 };
 const LOGROS={
  primera:{ic:"🥇",tx:"Primera victoria"},
@@ -1982,11 +1997,11 @@ const MUSIC={
 /* 7 y 8 se sirven del MISMO origen, asi que sin sufijo compartirian `kimun_save`:
    un alumno con los dos juegos abiertos compartiria monedas, skins y avance.
    Los ajustes de audio (kimun_sound / kimun_music) se comparten A PROPOSITO. */
-const SUFIJO='_5to';
+const SUFIJO='_6to';
 /* ⚠️ PEGADO a SUFIJO a proposito, no arriba con las otras constantes: este modulo lo
    necesita, y un const leido antes de declararse mata todo el JavaScript con un sintoma
    que enganha (la pantalla se ve bien y ningun boton responde). Ya mordio cuatro veces. */
-INST.init({nombre:'VULPO 5°', sufijo:SUFIJO, activo:!SIN_DISCO});
+INST.init({nombre:'VULPO 6°', sufijo:SUFIJO, activo:!SIN_DISCO});
 const SAVE_KEY='kimun_save'+SUFIJO;
 
 
@@ -1998,7 +2013,7 @@ const SUPA_KEY='sb_publishable_I3FWEIOQf-_7ni_46PGSSQ_PLD3mQpM';
    con un codigo ALU-. Se sirven del mismo origen, asi que comparten el almacen. */
 const SB=(window.supabase&&window.supabase.createClient)
   ?window.supabase.createClient(SUPA_URL,SUPA_KEY,
-      {auth:{storageKey:'kimun-5to',persistSession:true,autoRefreshToken:true}})
+      {auth:{storageKey:'kimun-6to',persistSession:true,autoRefreshToken:true}})
   :null;
 let MI_PERFIL=null;   // {id, nombre, avatar, codigo}
 async function conectarKimun(){
@@ -2071,12 +2086,14 @@ const SKINS=[{e:"🐲",p:160},{e:"🦄",p:200},{e:"🦖",p:240},{e:"🐙",p:140}
  // Marcador de arte: emoji 🎓 hasta que exista assets/kimun-historiador.png.
  /* Sin 'kimun-calculista': su requisito es El Autómata, el jefe del Reto de Cálculo,
     que 7° no tiene. Quedaría bloqueada para siempre en la tienda. */
- {id:'kimun-matematico', e:"📐", img:'assets/kimun-matematico.png', nombre:'Vulpi Matemático', bloqueada:true, desbloqueaCon:'mate5', req:'Vence a El Descuadre'},
- {id:'kimun-historiador', e:"🎓", img:'assets/kimun-historiador.png', nombre:'Vulpi Historiador', bloqueada:true, desbloqueaCon:'hist5', req:'Vence a El Rumor'},
- {id:'kimun-escritor', e:"✍️", img:'assets/kimun-escritor.png', nombre:'Vulpi Escritor', bloqueada:true, desbloqueaCon:'leng5', req:'Vence a El Malentendido'},
- {id:'kimun-cientifico', e:"🔬", img:'assets/kimun-cientifico.png', nombre:'Vulpi Científico', bloqueada:true, desbloqueaCon:'cie5', req:'Vence a El Cortocircuito'},
- // Skin maestra: se gana completando las 3 asignaturas en Modo Difícil (emoji hasta que haya arte).
- {id:'kimun-maestro', e:"🏆", img:'assets/skin-kimun-maestro.png', nombre:'Vulpi Maestro', bloqueada:true, req:'Completa Matemáticas en Difícil'}];
+ {id:'kimun-matematico', e:"📐", img:'assets/kimun-matematico.png', nombre:'Vulpi Matemático', bloqueada:true, desbloqueaCon:'mate6', req:'Vence a La Desproporción'},
+ {id:'kimun-historiador', e:"🎓", img:'assets/kimun-historiador.png', nombre:'Vulpi Historiador', bloqueada:true, desbloqueaCon:'hist6', req:'Vence a La Versión Única'},
+ {id:'kimun-escritor', e:"✍️", img:'assets/kimun-escritor.png', nombre:'Vulpi Escritor', bloqueada:true, desbloqueaCon:'leng6', req:'Vence a El Enredo'},
+ {id:'kimun-cientifico', e:"🔬", img:'assets/kimun-cientifico.png', nombre:'Vulpi Científico', bloqueada:true, desbloqueaCon:'cie6', req:'Vence a El Desequilibrio'},
+ // Skin maestra: se gana completando las 4 asignaturas en Modo Difícil (emoji hasta que haya arte).
+ // 6° nace con las cuatro completas, así que a diferencia de 5° no hace falta un texto
+ // provisional que luego quede desactualizado.
+ {id:'kimun-maestro', e:"🏆", img:'assets/skin-kimun-maestro.png', nombre:'Vulpi Maestro', bloqueada:true, req:'Vence los 4 jefes en Difícil'}];
 
 /* ================= DUELO 1v1 ================= */
 const DUELO_AV=["🦁","🐉","🦊","🐺","🦄","🐲"], DUELO_ROUNDS=5;
@@ -2084,8 +2101,8 @@ const DUELO_AV=["🦁","🐉","🦊","🐺","🦄","🐲"], DUELO_ROUNDS=5;
 // en los TRES forks, asi que en 7° un alumno recibia preguntas de 8° (la conquista de
 // America) y en 3° las habria recibido al encender el duelo. Va como DATO y no como un
 // if sobre el nivel, que es justo lo que se copia con su suposicion adentro al forkear.
-const DUELO_BANCO={ruta:'contenido/matematicas-5basico/preguntas.json',
-                    oas:['MA05 OA 01','MA05 OA 03','MA05 OA 04','MA05 OA 05']};
+const DUELO_BANCO={ruta:'contenido/historia-6basico/preguntas.json',
+                    oas:['HI06 OA 01','HI06 OA 02','HI06 OA 03','HI06 OA 04']};
 const DUELO_SEG=15;   // segundos por pregunta en el duelo
 let D={j:[{n:"Jugador 1",em:DUELO_AV[0],pts:0},{n:"Jugador 2",em:DUELO_AV[1],pts:0}],pr:[],ronda:0,turno:0,lock:false,t:DUELO_SEG,timer:null};
 let DUELO_POOL=null;
@@ -2176,7 +2193,7 @@ $('btnExpBack').onclick=()=>{SND.tap();go('scr-rol');};
 $('btnMapasBack').onclick=()=>{SND.tap();go('scr-expediciones');};
 // Landing de Lenguaje
 $('btnLengCampana').onclick=()=>{SND.tap();abrirCampaña(campañaDe('Lenguaje'));};
-/* 5° NO tiene Vocabulario (HAY_VOCABULARIO=false): no hay banco propio todavia. Este
+/* 6° NO tiene Vocabulario (HAY_VOCABULARIO=false): no hay banco propio todavia. Este
    handler queda VIVO igual y es inofensivo, porque sin campana de Lenguaje la pantalla
    scr-lenguaje es inalcanzable. En 7° estuvo desactivado a proposito, porque apuntaba a
    una expedicion 'voc-general' que en este archivo no existia: entrarExpedicion(undefined)
@@ -2299,105 +2316,10 @@ $('btnMapaCamp').onclick=()=>{SND.tap();
  if(EXP_ACT&&EXP_ACT.id==='voc-general'){go('scr-lenguaje');return;}   // Vocabulario → landing de Lenguaje
  if(EXP_ACT&&EXP_ACT.asignatura==='Lectura'){go('scr-biblioteca');return;} // Lectura → biblioteca
  go('scr-expediciones');};
-/* Operaciones del Reto Sin Fin de 5°. Salen del temario del año, no de 7° ni de 8°:
-   multiplicar por múltiplos de 10 (MA05 OA02), multiplicación (OA03), división con
-   divisor de un dígito (OA04), orden de las operaciones (OA05), fracción a decimal
-   (OA10) y suma o resta de decimales (OA12).
-   Devuelve {q, ops, ok}; el módulo baraja las opciones, así que aquí NO hay que
-   barajarlas (olvidarlo es el sesgo de posición más fácil de introducir).
-   Los distractores son errores típicos, no números al azar: el que se equivoca debería
-   reconocer su propio error al ver la respuesta.
-   ⚠️ DOS REGLAS DE ESTE NIVEL, y las dos nacieron de defectos reales:
-   1. Sin enteros negativos ni potencias: son de 7°. Un distractor de otro año se
-      descarta sin pensar, así que convierte una pregunta de 4 opciones en una de 3.
-   2. Los decimales se escriben en su forma MÁS CORTA (`0,5`, nunca `0,50`). Si no,
-      dos opciones valen lo mismo escritas distinto y la pregunta pasa a tener dos
-      respuestas correctas — el defecto que `docs/cuidados-matematica.md` pone primero. */
-function genCalc5(dif){
- const ri=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
- // Coma decimal (convención chilena) y forma canónica, sin ceros a la derecha.
- const fmt=x=>String(Math.round(x*1000)/1000).replace('.',',');
- /* Arma las 4 opciones garantizando que sean DISTINTAS y que ninguna empate con la
-    clave. Sin esto los distractores chocan solos. `rellenar` produce vecinos hasta
-    completar cuatro, así que nunca devuelve menos. Idéntica a la de 7° a propósito. */
- function armar(r, cands, rellenar){
-  const vistos=new Set([String(r)]), ops=[String(r)];
-  for(const c of cands){ const s=String(c);
-   if(!vistos.has(s)){ vistos.add(s); ops.push(s); if(ops.length===4) return {ops, ok:0}; } }
-  let i=1;
-  while(ops.length<4 && i<60){ for(const s of [rellenar(i), rellenar(-i)]){
-    const k=String(s); if(!vistos.has(k)){ vistos.add(k); ops.push(k); if(ops.length===4)break; } } i++; }
-  return {ops, ok:0};
- }
-
- const TIPOS={1:['ceros','mult'], 2:['mult','div'], 3:['fdec','ceros'],
-              4:['dec','div'],    5:['mult','div','fdec','dec','orden']};
- const lista=TIPOS[Math.min(5,Math.max(1,dif))];
- const tipo=lista[ri(0,lista.length-1)];
-
- if(tipo==='ceros'){                                  // MA05 OA02 · anexar ceros
-  const a=ri(2,9), z=dif<=2?1:ri(1,2), b=ri(2,9)*Math.pow(10,z);
-  const r=a*b;
-  // errores: un cero de menos, uno de más, olvidar los ceros, sumar en vez de multiplicar
-  const c=[r/10, r*10, a*(b/Math.pow(10,z)), a+b];
-  const o=armar(r, c, k=>r+k*10);
-  return {q:a+' × '+b, ops:o.ops, ok:o.ok};
- }
- if(tipo==='mult'){                                   // MA05 OA03 · multiplicación
-  const a=ri(12,dif<=3?29:49), b=ri(3,9);
-  const r=a*b;
-  // el tercero es el error de NO llevar la reserva, que es el típico del algoritmo
-  const c=[a*(b-1), a*(b+1), Math.floor(a/10)*b*10+((a%10)*b)%10, a+b];
-  const o=armar(r, c, k=>r+k);
-  return {q:a+' × '+b, ops:o.ops, ok:o.ok};
- }
- if(tipo==='div'){                                    // MA05 OA04 · división exacta
-  const b=ri(2,9), q=ri(dif<=3?12:21, dif<=3?60:110), a=b*q;
-  const r=q;
-  // errores: uno de más o de menos en el cociente, comerse una cifra, multiplicar
-  const c=[q+1, q-1, Math.floor(q/10), q*10];
-  const o=armar(r, c, k=>r+k);
-  return {q:a+' ÷ '+b, ops:o.ops, ok:o.ok};
- }
- if(tipo==='fdec'){                                   // MA05 OA10 · fracción a decimal
-  const d=[2,4,5,10][ri(0,3)], n=ri(1,d-1);
-  const r=n/d;
-  // errores: escribir las cifras tal cual (3/4 → 0,34 y 0,43) y correr la coma
-  const c=[Number('0.'+n+d), Number('0.'+d+n), r*10, r/10];
-  const o=armar(fmt(r), c.map(fmt), k=>fmt(r+k/100));
-  return {q:n+'/'+d+' en decimal', ops:o.ops, ok:o.ok};
- }
- if(tipo==='dec'){                                    // MA05 OA12 · sumar y restar decimales
-  const p=dif<=4?1:2;                                 // décimas, y centésimas en el nivel 5
-  const paso=Math.pow(10,-p), rg=p===1?[11,99]:[101,999];
-  let a=Math.max(ri(rg[0],rg[1]),ri(rg[0],rg[1]))*paso, b=Math.min(ri(rg[0],rg[1]),ri(rg[0],rg[1]))*paso;
-  /* ⚠️ Los dos sumandos tienen que estar SEPARADOS. Con a=b la resta da 0, que no mide
-     nada, y además deja al rellenador produciendo opciones NEGATIVAS — contenido de 7°,
-     que un alumno de 5° descarta sin pensar. Lo cazó el verificador de aritmética
-     corriendo 5.000 operaciones, no la lectura del código. */
-  if(a-b < paso*5) a = b + paso*ri(5,40);
-  const suma=ri(0,1)===0;
-  const r=suma?a+b:a-b;                               // la resta nunca da 0 ni negativo
-  // el error central del OA: no alinear la coma, y correr el resultado un lugar
-  const c=[suma?a-b:a+b, r*10, r/10, Math.round(r)];
-  // el rellenador solo sube, para no volver a producir negativos
-  const o=armar(fmt(r), c.map(fmt), k=>fmt(r+Math.abs(k)*paso));
-  return {q:fmt(a)+(suma?' + ':' − ')+fmt(b), ops:o.ops, ok:o.ok};
- }
- // MA05 OA05 · orden de las operaciones y paréntesis
- const a=ri(2,12), b=ri(2,9), c0=ri(2,9), conPar=ri(0,1)===0;
- if(conPar){
-  const r=(a+b)*c0;
-  const c=[a+b*c0, a+b+c0, a*b*c0, (a+b)*c0-c0];      // ignorar el paréntesis
-  const o=armar(r, c, k=>r+k);
-  return {q:'('+a+' + '+b+') × '+c0, ops:o.ops, ok:o.ok};
- }
- const r=a+b*c0;
- const c=[(a+b)*c0, a+b+c0, a*b+c0, a*b*c0];          // resolver de izquierda a derecha
- const o=armar(r, c, k=>r+k);
- return {q:a+' + '+b+' × '+c0, ops:o.ops, ok:o.ok};
-}
-
+/* 6° NO tiene el Reto Sin Fin de cálculo (HAY_SINFIN=false, más abajo): es
+   contenido pendiente, no un olvido. Por eso no hay aquí ningún genCalc6() ni una
+   llamada a CALC.init: el respaldo vacío de assets/js/calculo.js (arriba, en el
+   <head>) basta, igual que en 8°, que tampoco llama a CALC.init. */
 
 /* ===== JEFE FINAL (multi-fase) ===== */
 let JF=null; // {camp,fase,idx,preguntas,vidaMax,vida,vidas,lock}
@@ -2444,66 +2366,33 @@ async function cargarPendientes(){
    it.onclick=()=>{SND.tap();responderDesafio(d);};cont.appendChild(it);});
  }catch(e){cont.innerHTML='<p style="color:var(--pink);font-weight:800;font-size:13px">No se pudo cargar.</p>';}
 }
-/* ¿Este nivel tiene el Reto de Cálculo? 5° NO lo tiene: su Matemática es una campaña de 6 capítulos.
-   Se declara como DATO y no como un if suelto porque de esto dependen dos cosas del
-   Duelo. Con la bandera mal puesta, el Duelo ofrece como "Matemáticas" los 5 niveles
-   del Reto de 8° (Calentamiento, Enteros, Potencias...) en vez de los capítulos del
-   nivel, y genera las operaciones con genCalculo saltándose el banco propio. Estaba
+/* ¿Este nivel tiene el Reto de Cálculo? 6° NO lo tiene: sus 4 asignaturas son campañas
+   normales. Se declara como DATO y no como un if suelto porque de esto dependen dos
+   cosas del Duelo. Con la bandera mal puesta, el Duelo ofrece como "Matemáticas" los 5
+   niveles del Reto de 8° (Calentamiento, Enteros, Potencias...) en vez de los capítulos
+   del nivel, y genera las operaciones con genCalculo saltándose el banco propio. Estaba
    pasando de verdad en 7° (Sesión 63). */
 const HAY_RETO_CALCULO=false;
-/* ¿Este nivel tiene el Reto Sin Fin de cálculo? Es el desafío de velocidad infinito,
-   medido por racha: genera las operaciones por código, así que NO consume banco de
-   preguntas, no pasa por aprobación pedagógica y no suma clips de voz. Va como extra
-   DENTRO de Matemática, sin reemplazar su campaña ni sumarle un segundo jefe.
-   El motor vive en assets/js/calculo.js y lo único propio del nivel es genCalc7().
-   En 8° va apagado: allá el cálculo mental ya es el Reto de Cálculo completo, con sus
-   5 niveles y su jefe, y tener los dos sería ofrecer lo mismo dos veces. */
-const HAY_SINFIN=true;
-/* Respaldo y encendido del Reto Sin Fin. Va AQUÍ, pegado a HAY_SINFIN, y no arriba
-   junto al de REV: `const` no se puede leer antes de su declaración (zona muerta
-   temporal), así que llamar a CALC.init({activo:HAY_SINFIN}) mil líneas antes lanza
-   ReferenceError y MATA todo el JavaScript del juego. El síntoma es idéntico al del
-   archivo que no carga —la pantalla inicial se ve bien y ningún botón responde—, y
-   por eso costó verlo: no es el 404, es el orden.
-   El respaldo sigue siendo obligatorio: si assets/js/calculo.js no carga, lo único
-   que debe pasar es que el Reto no aparezca, no que el curso quede inservible. */
-if(!window.CALC) window.CALC={activo:false,init:function(){},abrir:function(){},detener:function(){}};
-CALC.init({
-  activo: HAY_SINFIN,
-  generar: function(dif){ return genCalc5(dif); },
-  go: go,
-  volver: function(){ renderCampaña(campañaDe('Matemáticas')); go('scr-campana'); },
-  leerRecord: function(){ return (S.sinfin&&S.sinfin.record)||0; },
-  guardarRecord: function(n){ if(!S.sinfin)S.sinfin={record:0}; S.sinfin.record=n; guardar(); },
-  /* Paga como una etapa corta: la racha en monedas y cuatro veces eso en XP. Es
-     deliberadamente modesto — el Sin Fin no debe ser el camino rápido para inflar
-     el ranking, que es el defecto que la Sesión 33 tuvo que corregir. */
-  premiar: function(racha){ S.monedas+=racha; S.xp+=racha*4; guardar(); refreshHud(); },
-  snd: { ok:function(){SND.correct();}, mal:function(){SND.wrong();},
-         tic:function(){SND.tick();}, fin:function(){SND.lose();}, tap:function(){SND.tap();} },
-});
+/* ¿Este nivel tiene el Reto Sin Fin de cálculo? 6° NO lo tiene todavía: es contenido
+   pendiente, no un olvido (igual que las mini-clases, más abajo). El motor compartido
+   (assets/js/calculo.js) queda cargado con su respaldo vacío, como en 8°, que tampoco
+   llama a CALC.init porque allá el cálculo mental ya es el Reto de Cálculo completo. */
+const HAY_SINFIN=false;
 /* ¿Este nivel tiene el camino de mini-clases de Matemática (su lecciones.json)?
    Gobierna el "siguiente paso al reprobar": con mini-clases se ofrece repasar la clase,
    y sin ellas hay que caer al repaso sin reloj, como las demás asignaturas. Con la
-   bandera mal puesta el botón dice "📘 Repasar la mini-clase", descarga las 17 lecciones
-   de 8° dentro de otro nivel y NO abre ninguna: el alumno toca y no pasa nada. Estaba
-   pasando en 7° (Sesión 63); 3° se salvaba solo porque escribe "Matemática" en singular. */
-// Encendida el 03/09 junto con las 27 mini-clases de contenido/matematicas-5basico/
-// lecciones.json. ⚠️ En true SIN ese archivo, el boton dice "📘 Repasar la mini-clase" y
-// no abre nada; y una leccion cuyo OA no tenga banco se marca completa SIN MEDIR (el bug
-// que la Sesion 83 encontro en 3°). Por eso se enciende recien con el banco completo.
-const HAY_MINICLASES=true;
-/* ⚠️ La llamada va PEGADA a la bandera y a su ruta, no arriba con las otras constantes:
-   un `const` leido antes de declararse mata todo el JavaScript (zona muerta temporal), y
-   esa trampa ya mordio cuatro veces en este proyecto. `montar()` necesita ademas el <body>,
-   que aqui ya existe: este script inline corre despues del HTML. */
-LECC.init({ rutas:['contenido/matematicas-5basico/lecciones.json',
-                   'contenido/ciencias-5basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
+   bandera mal puesta el botón dice "📘 Repasar la mini-clase", descarga las lecciones de
+   otro nivel y NO abre ninguna: el alumno toca y no pasa nada. Estaba pasando en 7°
+   (Sesión 63); 3° se salvaba solo porque escribe "Matemática" en singular.
+   6° NO las tiene todavía: no existe contenido/matematicas-6basico/lecciones.json ni el
+   de Ciencias. Es contenido pendiente (Bloque B), no un olvido — se enciende recién
+   cuando ese banco exista, como hicieron 3°, 5° y 7° al nacer. */
+const HAY_MINICLASES=false;
 /* ¿Este nivel tiene el módulo de Vocabulario, y la biblioteca de lecturas del colegio?
    Son contenido de 8°. Antes se resolvían BORRANDO líneas del fork, y ese corte dejó
-   la asignatura Lenguaje inalcanzable en 3° (Sesión 61). Como banderas, las tres apps
+   la asignatura Lenguaje inalcanzable en 3° (Sesión 61). Como banderas, las apps
    comparten el mismo renderExpediciones y solo cambia el valor. */
-// 5° no tiene banco de Vocabulario propio. En true abriria el landing "Campana +
+// 6° no tiene banco de Vocabulario propio. En true abriria el landing "Campana +
 // Vocabulario" y la asignatura Lenguaje quedaria inalcanzable, que es lo que le paso
 // a 3° en la Sesion 61.
 const HAY_VOCABULARIO=false;

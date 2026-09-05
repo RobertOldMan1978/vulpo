@@ -136,16 +136,21 @@ año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron co
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
 están hoy en una expedición jugable, el resto es reserva.
 
-> **Estado de aprobación (05/09/2026): 9.035 preguntas aprobadas de 13.565 escritas**
-> (más 99 de 130 mini-clases/introducciones). Lo pendiente son **las 4.530 de 5° y 6° básico**:
+> **Estado de aprobación (05/09/2026): 13.565 de 13.565 preguntas aprobadas — el 100% del banco
+> escrito.** Más las 130 de 130 mini-clases/introducciones. Los últimos 4.530 en aprobarse fueron
 > Historia (660) y Lenguaje (900) de 5°, y las cuatro asignaturas completas de 6° —Matemática
-> (720), Ciencias (540), Historia (780) y Lenguaje (930)—; nacen todas `revisada:false`.
-> Matemática y Ciencias de 5° (1.230) sí están aprobadas. Pero **cómo se aprobó cada banco no es
+> (720), Ciencias (540), Historia (780) y Lenguaje (930)—. Pero **cómo se aprobó cada banco no es
 > lo mismo, y hay que saberlo antes de decírselo a un colegio:** los 2.536 de 8° y los módulos de
-> apoyo se revisaron **pregunta por pregunta**; los de 3° y 7° se aprobaron **por muestreo** —8
-> de cada 30 por objetivo, criterio de `docs/aprobacion-pedagogica.md`—. Por eso la landing dice
-> *"aprobadas por un profesor, objetivo por objetivo"* y **nunca** *"una a una"*: el 100% es de
-> cobertura, no de método.
+> apoyo se revisaron **pregunta por pregunta**; el resto —3°, 5°, 6° y 7°— se aprobó **por
+> muestreo** —8 de cada 30 por objetivo, criterio de `docs/aprobacion-pedagogica.md`—. Por eso la
+> landing dice *"aprobadas por un profesor, objetivo por objetivo"* y **nunca** *"una a una"*: el
+> 100% es de cobertura, no de método.
+>
+> ✅ **5° y 6° básico ya tienen su arte propio (05/09/2026).** Villanos generados y cableados en
+> los 8 `jefeFinal` de ambos forks, más las 9 portadas de capítulo que le faltaban a 6° (5° ya
+> reutilizaba portada por tema en sus 20 capítulos). Lo único que falta ahora es la **decisión
+> comercial** de cuándo anunciarlos — la regla de Roberto *"un curso a medias no se enlaza ni se
+> anuncia"* ya no aplica a ninguno de los dos: banco aprobado, fork cableado y arte propio.
 
 **Herramientas dev:** tablero con clave
 (`dev/tablero.html`) y scripts (`consolidar-pool-nivel`, `aplicar-revisadas`,
@@ -8669,3 +8674,80 @@ nuevo.
 **Pendiente: sin cambios respecto a la Sesión 91.** Cablear `6to/index.html`; la aprobación
 pedagógica de 5° y 6° (4.530 preguntas); el arte propio de ambos niveles; y después 4° básico
 (92 OA, ~2.760 preguntas) para cerrar el Bloque B.
+
+### Sesión 93 (2026-09-05) — 6° básico queda cableado y con arte propio: 5° y 6° listos para publicarse
+
+Cierra en una sola sesión los dos pendientes que dejó la 92: **cablear el fork de 6°** (fase
+1-1 del reporte pedido por Roberto, "dejar todo lo ya construido ordenado y operativo antes de
+avanzar en otros cursos") y, más tarde en la misma sesión, **generar y cablear el arte propio de
+5° y 6°**. Al cierre, Roberto aprobó también el banco entero por muestreo — con eso **5° y 6°
+quedan igual de completos que 3°, 7° y 8°: banco aprobado, fork jugable, arte propio.**
+
+**Fase 1-1 · `6to/index.html` construido desde cero (~2.589 líneas).** Se investigó primero el
+`oa.json` de las 4 asignaturas de 6° (Sesión 91) y se usó `5to/index.html` como plantilla, con
+un encargo detallado a un subagente: `SUFIJO='_6to'`, `storageKey:'kimun-6to'`, el mapeo completo
+de los 99 OA en 25 capítulos (Matemática 7 · Ciencias 5 · Historia 6 · Lenguaje 7), 4 villanos
+nuevos (La Desproporción, El Desequilibrio, La Versión Única, El Enredo) con arte prestado
+declarado del set de 3°, y las 99 frases de `META_OA` verbatim. El agente corrigió tres cosas por
+su cuenta, todas acertadas: `DUELO_BANCO` a Historia (la convención mayoritaria), `desbloqueaCon`
+en las 4 skins de recompensa (copiarlas de 5° literal las habría dejado inalcanzables para
+siempre), y quitó `genCalc6()`/`CALC.init()` en vez de dejarlos inertes, porque
+`HAY_SINFIN=false` en 6°.
+- Cableado post-build: `portadaMapa` explícito para 16 de los 25 capítulos, reutilizando arte
+  existente **por tema y no por número de capítulo** (la regla de `docs/estandar-arte-portadas.md`
+  desde la Sesión 78); los 9 restantes quedaron sin `portadaMapa` a la espera de arte nuevo.
+- **`assets/js/niveles.js` y `kimun_asignaturas_todas()`** ganan el nivel `06` (una fila cada
+  uno — M4 de la Sesión 75 pagándose otra vez). **`assets/js/sensible.js` y
+  `docs/contenido-sensible.md`** suman los 6 OA sensibles de 6° (`CN06 OA 04/05/06` sexualidad,
+  `CN06 OA 07` sustancias, `HI06 OA 05/08` violencia y quiebre democrático), con
+  `CN06 OA 04/05/06` **excluidos del Jefe Final de Ciencias** por la regla A4 (Sesión 84): el
+  jefe mezcla toda la asignatura y no hay forma de evitarlo si no se saca de ahí.
+- **Verificado jugando con `cdp.mjs`, no llamando funciones sueltas** (la lección de la Sesión
+  90, que costó 7° caído en producción): primer intento con `localStorage` sucio dio un falso
+  negativo (mandaba a crear perfil antes de entrar a una expedición, comportamiento correcto,
+  no un bug); con `localStorage.clear()` y la secuencia real de creación de perfil, las 4
+  campañas abren con su número de nodos correcto, un quiz de Historia sirvió una pregunta real
+  con 4 opciones, el armador (`?armar=1`) lista los 25 capítulos con sus marcas sensibles, y
+  **cero errores de consola y cero 404**.
+- Roberto re-aplicó `supabase/schema.sql` el mismo día; verificado contra producción con control
+  positivo y negativo: `kimun_oa_asignatura('MA06 OA 01')` → `MA06`, `CN08 OA 01` → `CN08` intacto,
+  `MA99 OA 01` → `null`.
+
+**El arte propio de 5° y 6°, generado y cableado en el mismo día.** Roberto pidió los prompts de
+lo que realmente faltaba (no lo que se asumía): con 6° ya construido, el estándar de reutilización
+por tema dejó **16 de los 25 capítulos de 6° cubiertos sin generar nada**, y **los 20 de 5° ya
+reutilizaban desde que se escribió su fork**. Quedaban **9 portadas de 6°** y **8 villanos** (4 de
+cada curso, normal + derrotado) — `docs/prompts-arte-5y6.md` (nuevo) con el bloque de estilo
+compartido y las 17 escenas individuales.
+
+- ⚠️ **El orden de descarga de los 25 archivos NO era el orden de los prompts, y asumirlo habría
+  cableado el villano equivocado a cada jefe.** Se inspeccionaron los 25 archivos uno por uno
+  (no solo el primero de la tanda) antes de procesar nada: las posiciones 10-16 eran 7 villanos
+  en su orden normal, la 17 era el derrotado de El Enredo generado fuera de secuencia, la 18 su
+  normal, y las 19-25 los derrotados de los primeros 7 **en orden inverso**. Es la misma doctrina
+  del proyecto ("mirar el primer archivo de cada tanda, no asumir el orden") extendida a "mirar
+  TODOS cuando el orden no es obviamente estable".
+- Procesadas con `scripts/procesar-arte.py` (`--fondo=negro`, `--negromax=120` para los fondos
+  cósmico-violeta de las portadas, que un umbral de "casi negro" más bajo no detectaba) y
+  cableadas en los 8 `jefeFinal` de `5to/index.html` y `6to/index.html`
+  (`villanoImg`/`villanoImgDerrotado`, comentarios "arte prestado" actualizados a "arte propio").
+- **Verificado end-to-end en 6°** jugando con `cdp.mjs`: las 4 asignaturas cargan su villano
+  propio en `scr-jefe-intro`, 512px, sin 404. **En 5° el cableado es idéntico** (mismo patrón,
+  mismos 8 archivos) pero la confirmación visual quedó por archivo y no por navegador: `cdp.mjs`
+  se colgó dos veces seguidas verificando 5° —un problema del propio Chrome headless en esta
+  sesión, no del juego—, así que se verificó en su lugar que los 8 archivos existen con el
+  tamaño correcto y el servidor los sirve en HTTP 200. No bloquea nada.
+
+**Y en paralelo, Roberto aprobó el banco entero de 5° y 6° por muestreo** desde el tablero:
+2.790 + 2.970 = 5.760 preguntas, las únicas que quedaban sin firmar en todo el proyecto. El
+banco del proyecto completo queda en **13.565 de 13.565 (100%)**.
+
+**Con el arte y la aprobación cerrados, 5° y 6° dejan de estar "a medias".** La regla de Roberto
+del 03/09 —*"un curso a medias no se enlaza ni se anuncia"*— ya no los frena: lo único pendiente
+es la decisión comercial de cuándo anunciarlos.
+
+- **Pendiente:** re-aplicar `supabase/schema.sql` tras este commit (no cambió desde la última
+  vez que Roberto lo pegó, pero es la comprobación de siempre); confirmar visualmente el arte de
+  5° en un navegador si a Roberto le interesa (opcional, no bloquea); **4° básico** (Bloque B3,
+  92 OA, ~2.760 preguntas, el único con voz y dibujos) para cerrar el Bloque B entero; y los de
+  arrastre — INAPI, el enlace de agenda de la landing, y la reautenticación de NotebookLM.

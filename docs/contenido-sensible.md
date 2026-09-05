@@ -115,17 +115,31 @@ avisar) · **BAJA** (mención menor).
 | HI08 OA 17 | Legitimidad de la conquista y derechos indígenas | 🪶 | ALTA |
 | CN08 OA 07 | Vida saludable: alcohol, tabaco y drogas | 🚭 | MEDIA |
 
+### 6° básico
+| OA | Tema | Categorías | Severidad |
+|---|---|---|---|
+| CN06 OA 04 | Sistema reproductor humano femenino y masculino | ❤️ | ALTA |
+| CN06 OA 05 | Cambios de la pubertad | ❤️ | ALTA |
+| CN06 OA 06 | Higiene corporal en la pubertad | ❤️ | MEDIA |
+| CN06 OA 07 | Efectos nocivos de las drogas | 🚭 | MEDIA |
+| HI06 OA 05 | Ocupación de la Araucanía, Guerra del Pacífico | 🪶 ⚔️ | MEDIA-ALTA |
+| HI06 OA 08 | Quiebre y recuperación de la democracia (dictadura) | ⚔️ | ALTA |
+
+Los `CN06 OA 04/05/06` son exactamente los que la regla de arriba excluye del Jefe Final de
+Ciencias de 6°. El `OA 07` (drogas) y los dos de Historia **no** se excluyen: solo lo
+sexual/reproductivo sale del jefe, el resto del contenido sensible entra completo.
+
 ## Resumen por categoría
 
 | Categoría | Nº de OA |
 |---|---|
-| ❤️ Sexualidad | 3 |
-| ⚔️ Violencia y muerte | 11 |
+| ❤️ Sexualidad | 6 |
+| ⚔️ Violencia y muerte | 13 |
 | 🛐 Religión y creencias | 6 |
-| 🪶 Pueblos originarios | 7 |
-| 🚭 Sustancias | 1 |
+| 🪶 Pueblos originarios | 8 |
+| 🚭 Sustancias | 2 |
 
-*(La suma es mayor que 20 porque varios OA llevan dos categorías.)*
+*(La suma es mayor que 26 porque varios OA llevan dos categorías.)*
 
 ## Estado de la feature (implementada, Sesión 67)
 

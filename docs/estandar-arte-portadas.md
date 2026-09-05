@@ -148,3 +148,13 @@ Las seis pasaron a elegirse por cercanía temática, y cinco calzan bien:
 **La regla que queda:** al prestar arte entre cursos se busca **de qué trata** la portada, no el
 número de capítulo. Cuesta lo mismo y evita que un dibujo contradiga el título que tiene al lado.
 Y el villano de Historia de 5° —**El Rumor**— usa el arte de 7°, declarado en el código.
+
+## 6° básico — mismo ejercicio, mismo resultado (05/09/2026)
+
+Al cablear el fork `6to/index.html` se hizo la misma búsqueda por tema con los 25 capítulos de
+6°: **16 de 25 ya tenían un candidato razonable** (Matemática y Lenguaje vuelven a ser los que
+más rinden) y quedaron cableados con `portadaMapa:` de inmediato — **sin generar nada nuevo**.
+Solo **9 capítulos** (3 de Matemática, 2 de Ciencias, 3 de Historia, 1 de Lenguaje) no tenían
+ningún parecido temático honesto y necesitan arte propio. Prompts en
+[`docs/prompts-arte-5y6.md`](prompts-arte-5y6.md), que también trae los 8 villanos propios de
+5° y 6° (hoy prestados de 7° y de 3° respectivamente).

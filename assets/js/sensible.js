@@ -24,7 +24,11 @@
     "HI08 OA 06":["violencia"], "HI08 OA 07":["violencia","pueblos"],
     "HI08 OA 10":["violencia"], "HI08 OA 11":["violencia","pueblos"],
     "HI08 OA 12":["violencia","pueblos"], "HI08 OA 13":["violencia"],
-    "HI08 OA 17":["pueblos"], "CN08 OA 07":["sustancias"]
+    "HI08 OA 17":["pueblos"], "CN08 OA 07":["sustancias"],
+    // 6° básico
+    "CN06 OA 04":["sex"], "CN06 OA 05":["sex"], "CN06 OA 06":["sex"],
+    "CN06 OA 07":["sustancias"],
+    "HI06 OA 05":["violencia","pueblos"], "HI06 OA 08":["violencia"]
   };
   window.SENSIBLE={
     cats:CATS, oa:OA,
