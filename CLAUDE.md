@@ -259,6 +259,47 @@ Dos corolarios que ya se pagaron:
 - **La tanda de validación sigue yendo primero**, y ahora encaja sola con esta regla: es la
   primera tanda chica, y valida el encargo antes de que nada más se escriba.
 
+### Los agentes redactan de a VARIOS OA, y sin narrar la verificación (05/09/2026)
+
+Esta regla es sobre el GASTO, no sobre el riesgo de colapso — es la otra cara de la de arriba, y
+las dos conviven sin pisarse: aquella dice **cuántos** agentes van a la vez (3-4, para no perder
+una tarde entera si colapsa la sesión); esta dice **cuánto** hace cada uno cuando le toca escribir.
+
+**El problema medido:** cada agente redactor paga el mismo costo fijo de contexto —
+`docs/encargo-banco.md`, el `cuidados-<asignatura>.md` de turno, el `oa.json` del nivel— **una vez
+por objetivo**. Con ~90 OA por nivel y cuatro asignaturas, ese contexto se vuelve a cargar decenas
+de veces por algo que cambia poco de un objetivo al siguiente. Se suma el sesgo de largo,
+documentado en casi todas las sesiones de escritura (40% a 80% en la primera pasada): corregirlo
+hoy significa que el mismo agente reescribe medio archivo con el mismo contexto ya cargado, o sea
+que paga dos veces por la misma tanda.
+
+**El ajuste, en cuatro puntos:**
+
+1. **Un agente redacta 2 o 3 OA por llamado (60-90 preguntas), no 1.** El costo fijo de contexto
+   se reparte entre más preguntas. Tope en 90: es donde ya se vio fatiga de fin de lote en otras
+   tandas largas del proyecto.
+2. **La respuesta final no narra la verificación, la resume.** `docs/encargo-banco.md` sigue
+   pidiendo contar el sesgo de largo y decirlo, pero como un renglón de resumen — *"sesgo: 4/30
+   largo, 2/30 corto · aritmética verificada · sin dudas"* — no como el razonamiento completo
+   pregunta por pregunta.
+3. **Si el sesgo queda sobre el 27% después de escribir con cuerpo desde el primer borrador, no
+   lo corrige el mismo agente reescribiendo el archivo entero.** Lo entrega igual, avisando el
+   número real, y una reparación aparte —acotada solo a los distractores que sobran, sin volver a
+   cargar el contexto completo— lo corrige después. `revisar-tanda.py` lo va a marcar solo.
+4. **La tanda de validación baja de 5-6 OA a 2-3**, quedándose solo con el riesgo real: aritmética
+   compleja, contenido sensible o actitudinal, objetivos que el propio `oa.json` ya marca como "no
+   medibles". Un objetivo de bajo riesgo —hechos verificables, definiciones— va directo a
+   producción.
+
+> **Lo que NO cambia:** el umbral de sesgo sigue en 27% en cada dirección; los cuatro scripts de
+> auditoría automática (`revisar-tanda.py`, `auditar-numerico.py`, `auditar-solape-oa.py`,
+> `validar-oa-json.py`) siguen corriendo sobre el 100% del banco; el criterio de contenido sensible
+> y actitudinal no se relaja; y la aprobación humana de Roberto sigue siendo la última palabra.
+> **Lo que se acepta a cambio:** algo más de probabilidad de corregir un defecto de bajo riesgo
+> recién al escalar en vez de en la tanda de validación, y que un duplicado muy sutil —el que
+> queda justo bajo el umbral de `auditar-solape-oa.py`— llegue a la aprobación humana sin que un
+> agente lo haya visto antes. La aprobación humana sigue siendo la red final para eso.
+
 ### ⚠️ El repositorio es PÚBLICO
 
 `github.com/RobertOldMan1978/vulpo` es público, y GitHub Pages sirve desde él. **Todo lo que se
@@ -8580,3 +8621,51 @@ Matemática y Ciencias de 5°) y **130 mini-clases/introducciones** (99 aprobada
 - **Pendiente de Roberto:** la aprobación pedagógica de 5° y 6° (4.530 preguntas, las únicas del
   proyecto sin firmar); el arte propio de ambos niveles; y después, **4° básico** (Bloque B3,
   92 OA, ~2.760 preguntas, el único que lleva voz y dibujos) para cerrar el Bloque B entero.
+
+### Sesión 92 (2026-09-05) — El costo de escribir preguntas: plan para gastar la mitad
+
+Sesión corta, sin contenido nuevo ni cambios de motor. Roberto pidió primero un resumen del estado
+de los seis cursos (3° a 8°) y, después, un plan para que el banco se siga escribiendo con la
+misma calidad —o apenas menos— gastando la mitad del procesamiento: el pipeline no había cambiado
+desde la regla de "agentes de a pocos" de la Sesión 89, y el gasto seguía subiendo con cada nivel
+nuevo.
+
+- **Diagnóstico:** casi todo el gasto vive en los tres pasos que involucran un agente completo con
+  su propio contexto —tanda de validación, escritura masiva y auditoría pedagógica por muestreo—.
+  Los cuatro scripts automáticos (`revisar-tanda.py`, `auditar-numerico.py`,
+  `auditar-solape-oa.py`, `validar-oa-json.py`) y la aprobación de Roberto no cuestan nada de eso.
+  El contexto fijo de cada agente —`encargo-banco.md`, `cuidados-<asignatura>.md`, `oa.json`— se
+  paga **una vez por objetivo**, y con ~90 OA por nivel × 4 asignaturas eso se repite decenas de
+  veces por sesión. Y el sesgo de largo (documentado desde hace sesiones: 40%-80% en la primera
+  pasada) obliga a menudo a una segunda pasada completa del mismo agente sobre el mismo contexto.
+- **Cuatro cambios quedaron escritos** en `CLAUDE.md` (nueva regla en "Reglas de trabajo", junto a
+  la de "agentes de a pocos") y en `docs/encargo-banco.md` (cuatro ajustes puntuales):
+  1. Un agente redacta **2 o 3 OA por llamado** (60-90 preguntas), no 1 — reparte el contexto fijo.
+  2. La respuesta final **resume en vez de narrar** la verificación (sesgo, aritmética, dudas).
+  3. Si el sesgo queda sobre el 27% tras un intento honesto, **no lo corrige el mismo agente
+     reescribiendo el archivo**: lo entrega con el número real, y una reparación aparte —acotada
+     solo a los distractores que sobran— lo corrige después.
+  4. La **tanda de validación baja de 5-6 OA a 2-3**, solo los de riesgo real (aritmética,
+     sensible/actitudinal, "no medibles"); el resto va directo a producción.
+  Dos cambios más —auditoría por muestra dirigida a lo que marcan los scripts en vez de releer el
+  banco completo, y reparaciones siempre acotadas por diff— quedaron como práctica de quien
+  orquesta a los agentes: no son instrucciones que un agente redactor lea, así que no viven en
+  ningún archivo del repo.
+- **Lo que no cambia, y se dejó explícito en los dos documentos:** el umbral de 27% de sesgo, los
+  cuatro scripts de auditoría corriendo sobre el 100% del banco, el criterio de contenido sensible
+  y actitudinal (tercero con nombre), la aprobación humana de Roberto como última palabra, y la
+  regla de "agentes de a pocos" de la Sesión 89 —que protege contra perder trabajo si colapsa la
+  sesión, un riesgo distinto del gasto de procesamiento—.
+- **Lo que se acepta perder, dicho de frente:** algo más de probabilidad de corregir un defecto de
+  bajo riesgo recién al escalar en vez de en la tanda de validación, y que un duplicado muy sutil
+  —el que queda justo bajo el umbral de `auditar-solape-oa.py`— llegue a la aprobación humana sin
+  que un agente lo haya visto antes.
+- El plan completo, con el detalle de cada cambio y una tabla antes/después, se le entregó a
+  Roberto como página aparte de trabajo — no vive en el repositorio, que es público: es una nota
+  de proceso, no contenido del producto.
+- **La prueba real queda para 4° básico**, el próximo banco grande: es donde se aplica el proceso
+  completo por primera vez, con la tanda de validación ya achicada desde el arranque.
+
+**Pendiente: sin cambios respecto a la Sesión 91.** Cablear `6to/index.html`; la aprobación
+pedagógica de 5° y 6° (4.530 preguntas); el arte propio de ambos niveles; y después 4° básico
+(92 OA, ~2.760 preguntas) para cerrar el Bloque B.

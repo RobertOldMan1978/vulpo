@@ -13,6 +13,11 @@ reglas son casi todas las mismas y lo que cambia cabe en una tabla — y porque 
 las trampas f, g, h e i**, que se descubrieron escribiendo 7°: cuatro defectos conocidos que se
 habrían repetido gratis en cada nivel nuevo.
 
+> **Desde el 05/09/2026, un mismo agente puede recibir 2 o 3 OA en un solo encargo** (60-90
+> preguntas en total), para repartir entre más preguntas el costo de cargar este documento. Nada
+> cambia en el formato: sigues entregando **un archivo por objetivo** en `_pool/`, cada uno con
+> sus 30 preguntas propias — solo cambia cuántos objetivos te tocan por llamado.
+
 ---
 
 ## 0. Los parámetros de tu nivel
@@ -139,6 +144,11 @@ a los distractores**, que de paso quedan más plausibles.
 >
 > Donde cero SÍ es sospechoso es en las asignaturas de prosa: significa que las cuatro opciones
 > están midiendo lo mismo.
+
+> **Y si después de darles cuerpo el sesgo sigue sobre el umbral, no sigas reescribiendo.**
+> Entrégalo con el número real en tu resumen y sigue adelante: hay una reparación aparte, acotada
+> solo a los distractores que sobran, que lo corrige después sin volver a cargar todo el contexto.
+> Un intento honesto desde el primer borrador basta; insistir más allá de eso no es tu costo.
 
 **a bis) El `tip` que nombra la posición de una opción, y el hueco del validador.** Las tandas se
 escriben con la correcta primera y **el consolidador baraja**, así que un tip que diga *"solo el
@@ -348,7 +358,9 @@ Valida tú mismo el archivo y **dilo en tu respuesta final**:
    corta dándosela a la clave (con sustancia real, nunca con relleno). ⚠️ **La medida que manda es la de `revisar-tanda.py`**, que exige
    que la correcta le saque margen a **todas** las demás — no basta con empatar. Midiendo de otra
    forma vas a reportar un número distinto del suyo, y ya pasó varias veces: un agente informó
-   «10 de 30» por su cuenta y «1 de 30» por el script. Reporta el del script.
+   «10 de 30» por su cuenta y «1 de 30» por el script. Reporta el del script. Si no te cierra en
+   un intento razonable, anota el número en una línea y sigue — no hace falta explicarlo pregunta
+   por pregunta (ver la nota de la §2).
 7. Ninguna pregunta tiene dos opciones que valgan lo mismo (trampa **g**).
 7 bis. **Relees cada `tip` preguntándote si enseña algo FALSO o de otro año.** El checklist solo
    pedía que no repitiera la respuesta, y eso deja fuera el riesgo real: el `tip` es el único
@@ -362,9 +374,11 @@ Valida tú mismo el archivo y **dilo en tu respuesta final**:
     formalidad: los verificadores de 7° encontraron distractores cuya justificación no producía su
     propio número, y uno cuyo razonamiento era correcto y solo fallaba la cuenta.
 
-En tu respuesta final entrega: la ruta escrita, cuántas preguntas, y **qué dudas o decisiones
-tomaste** (un OA que no admitía cierta pregunta, un contenido que preferiste no tocar, una
-imprecisión que evitaste). Esa parte importa tanto como el archivo.
+En tu respuesta final entrega, **en 5 a 8 líneas y sin narrar el razonamiento completo**: la ruta
+escrita, cuántas preguntas, el sesgo de largo en una línea, y **qué dudas o decisiones tomaste**
+(un OA que no admitía cierta pregunta, un contenido que preferiste no tocar, una imprecisión que
+evitaste). Esa última parte importa tanto como el archivo — pero en una frase, no en un párrafo
+por pregunta.
 
 ---
 
