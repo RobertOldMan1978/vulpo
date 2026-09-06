@@ -26,20 +26,23 @@ La pantalla principal ofrece un **módulo por asignatura**. **Historia**, **Cien
 **Lenguaje** se juegan como **campañas con hilo conductor**: capítulos en orden que cubren
 todos los OA del año, con **Jefe Final multi-fase** (barra de vida, 3 corazones) y
 **recompensas** (skin exclusiva, insignia coleccionable, corona y bono). **Matemáticas**
-tiene un **camino de aprendizaje** completo (los 17 OA del año, y desde el 02/09 también los 26
-de 3° y los 19 de 7°: **62 mini-clases** en total): mini-clases guiadas con
+tiene un **camino de aprendizaje** completo en cuatro cursos (los 17 OA de 8°, los 27 de 5°, los
+26 de 3° y los 19 de 7°: **89 mini-clases** en total): mini-clases guiadas con
 explicación, **diagramas interactivos** (recta, fracciones, potencias, plano cartesiano con
 función, balanza de ecuaciones, triángulo de Pitágoras, sólidos, transformaciones en el plano,
 diagrama de cajón, gráficos de barras y árbol de posibilidades) y práctica; aprender cada tema
 **desbloquea** el **Reto de Cálculo** (cálculo mental rápido, por niveles, con su Jefe "El
-Autómata"). Cada unidad **intercala clase y expedición** —primero se aprende y luego se enfrenta
-un desafío con el banco de año completo— y la campaña culmina en su **Jefe Final "La Incógnita"**,
+Autómata"). Cada unidad es **una sola tarjeta** que empieza por sus clases y sigue con el desafío
+—las mini-clases van primero dentro del mapa y **lo mantienen cerrado hasta terminarlas**, que es
+lo que hace que aprender desbloquee de verdad— y la campaña culmina en su **Jefe Final "La Incógnita"**,
 con las mismas recompensas que las demás asignaturas. Cada asignatura tiene un banco de preguntas
 de año completo (todos sus OA del currículum).
 
-**Ciencias abre cada capítulo con una introducción**, en los tres cursos: dos o tres pantallas que
+**Ciencias abre cada capítulo con una introducción**, en cuatro cursos: dos o tres pantallas que
 encuadran de qué se trata, con el dibujo del modelo —la célula, un circuito abierto y cerrado, las
-partículas del sólido y del gas— y **sin preguntas**, porque no evalúan nada. Son 13 en total.
+partículas del sólido y del gas— y **sin preguntas**, porque no evalúan nada. Son 17 en total
+(4 en 8°, 5 en 7°, 4 en 5° y 4 en 3°), y a diferencia de una mini-clase **no bloquean**: son un
+ofrecimiento al empezar el capítulo, no un peaje.
 
 > **Y una regla de contenido que conviene conocer:** los objetivos de índole sexual —currículum
 > obligatorio de 7° básico— se juegan **solo en su propio capítulo** y **no entran en ningún Jefe
@@ -148,7 +151,7 @@ profesor) va **auto-hospedado** en `assets/vendor/`, con la versión fija, para 
 depender de un script de terceros que puede cambiar.
 Contenido de cada expedición en `contenido/<asignatura>/` (JSON). Mobile-first.
 
-Cada curso se sirve de su propia carpeta (`8vo/`, `7mo/`, `3ro/`), pero **el motor del juego se escribe una sola vez** y vive en `assets/js/`: `motor.js` (quiz, campañas, jefes, duelo, tienda, guardado), más los módulos de apoyo `lecciones.js` (el motor de mini-clases e introducciones, con sus 27 diagramas interactivos), `visuales.js` (los dibujos por código), `voz.js` (la lectura en voz alta), `fracciones.js` (las fracciones apiladas), `instalar.js`, `calculo.js`, `revision.js`, `sensible.js` y `niveles.js`. Lo que cambia de un curso a otro son **datos y banderas**, no código.
+Cada curso se sirve de su propia carpeta (`3ro/`, `4to/`, `5to/`, `6to/`, `7mo/`, `8vo/`), pero **el motor del juego se escribe una sola vez** y vive en `assets/js/`: `motor.js` (quiz, campañas, jefes, duelo, tienda, guardado), más los módulos de apoyo `lecciones.js` (el motor de mini-clases e introducciones, con sus 27 diagramas interactivos), `visuales.js` (los dibujos por código), `voz.js` (la lectura en voz alta), `fracciones.js` (las fracciones apiladas), `instalar.js`, `calculo.js`, `revision.js`, `sensible.js` y `niveles.js`. Lo que cambia de un curso a otro son **datos y banderas**, no código.
 
 ---
 

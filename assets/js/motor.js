@@ -865,20 +865,30 @@ function renderMapa(){
  if($('mapaSub'))$('mapaSub').textContent=EXP_ACT.nivel;
  if($('mapaImg'))$('mapaImg').src=EXP_ACT.mapaImg||EXP_ACT.portada;
  const box=$('mapbox');box.innerHTML='';
+ // Matemáticas con mini-clases (EXP_ACT.lecciones): la etapa 0 queda bloqueada EN PANTALLA
+ // hasta terminarlas todas, aunque su progreso guardado diga "open" (nace así por defecto).
+ // No se toca progAct()[0]: es solo el estado que se muestra y lo que hace clic, así que
+ // ningún alumno con partida vieja pierde nada — antes de esto ya no se podía llegar aquí
+ // sin haber terminado las lecciones (la tarjeta de la campaña las exigía para abrirse).
+ const leccBloqueadas = !!(EXP_ACT.lecciones && EXP_ACT.lecciones.length && !CAPS_ABIERTOS &&
+   !EXP_ACT.lecciones.every(id=>S.mateLecciones[id]));
  EXPEDICION.forEach((n,i)=>{
   const p=progAct()[i];
-  const d=document.createElement('div');d.className='node '+p.est;
-  const est=p.est==='done'?'✓ Completado':(p.est==='open'?'▶ ¡Jugar ahora!':'🔒 Bloqueado');
+  const bloq0=i===0&&leccBloqueadas;
+  const est=bloq0?'lock':p.est;
+  const d=document.createElement('div');d.className='node '+est;
+  const etxt=est==='done'?'✓ Completado':(est==='open'?'▶ ¡Jugar ahora!':(bloq0?'🔒 Termina las lecciones':'🔒 Bloqueado'));
   const stars=p.estrellas?'★'.repeat(p.estrellas)+'☆'.repeat(3-p.estrellas):'';
-  d.innerHTML=`<div class="orb">${p.est==='lock'?'🔒':n.icono}</div>
-   <div class="info"><b>${i+1}. ${n.nombre}</b><small>${est}</small>
+  d.innerHTML=`<div class="orb">${est==='lock'?'🔒':n.icono}</div>
+   <div class="info"><b>${i+1}. ${n.nombre}</b><small>${etxt}</small>
    <div class="stars-mini">${stars}</div></div>`;
-  d.querySelector('.orb').onclick=()=>{if(p.est!=='lock')startQuiz(i);};
+  d.querySelector('.orb').onclick=()=>{if(est!=='lock')startQuiz(i);};
   box.appendChild(d);});
- // La introducción del capítulo, si la declara. Va DESPUÉS del bucle y se inserta al
- // principio: así no entra en el arreglo indexado y no corre el avance ya guardado.
- // Sin `intro` en los datos no pasa nada, y sin el módulo tampoco (su respaldo devuelve false).
+ // La introducción del capítulo o las mini-clases de la unidad, si las declara. Van DESPUÉS
+ // del bucle y se insertan al principio: así no entran en el arreglo indexado y no corren el
+ // avance ya guardado. Sin datos no pasa nada, y sin el módulo tampoco (su respaldo da false).
  if(EXP_ACT.intro) LECC.nodoIntro(EXP_ACT.intro, box);
+ if(EXP_ACT.lecciones) LECC.nodoLecciones(EXP_ACT.lecciones, box);
 }
 function renderModoSel(){
  const el=$('modoSel');if(!el)return;

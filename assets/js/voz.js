@@ -142,6 +142,49 @@ function leerPreguntaEnVoz(pregunta,opciones,contenedor){
  })();
 }
 
+/* Lee los segmentos de un bloque de mini-clase (por ejemplo: la intro y cada paso de un
+   "ejemplo") resaltando en pantalla el que va sonando, como una lectura de karaoke.
+
+   ⚠️ NO hay un clip por segmento: `generar-voz-nivel.py` los junta con ". " y genera UN
+   SOLO audio para el bloque completo (así lo indexa el manifiesto, por el texto unido).
+   Así que el resaltado se reparte por PROPORCIÓN DE CARACTERES sobre la duración real del
+   audio -aproximado a propósito, gratis y sin regenerar ni un clip-, no por un evento real
+   de cada frase. Si el clip no existe (curso sin voz, o un texto recién agregado que aún no
+   se generó), cae a la voz del navegador, que SÍ da un límite de palabra real
+   (`onboundary`) y ahí el resaltado es exacto. */
+function leerSegmentosEnVoz(segmentos, elementos){
+ callarVoz();
+ elementos=elementos||[];
+ const segs=(segmentos||[]).map(s=>s||'');
+ if(!segs.some(Boolean)) return;
+ const juntos=segs.filter(Boolean).join('. ');   // el MISMO texto que indexa el manifiesto
+ // Desplazamiento de cada segmento DENTRO del texto unido (mismo ". " que usa el generador).
+ // Los segmentos vacíos (sin elemento que iluminar) no suman: no viajan en el audio.
+ let acc=0; const desde=segs.map(s=>{ if(!s) return -1; const d=acc; acc+=s.length+2; return d; });
+ const total=Math.max(1,juntos.length);
+ const apagarTodo=()=>elementos.forEach(el=>el&&el.classList.remove('leyendo'));
+ const activar=(pos)=>{ let idx=-1;
+  for(let i=desde.length-1;i>=0;i--){ if(desde[i]>=0 && pos>=desde[i]){ idx=i; break; } }
+  apagarTodo(); if(idx>=0 && elementos[idx]) elementos[idx].classList.add('leyendo'); };
+ apagarTodo();   // por si quedó un resaltado de un 🔊 anterior sobre este MISMO bloque
+ _COLA_ID++; const miId=_COLA_ID;
+ const clipOk=sonarClip(juntos, function(){
+   const a=_AUDIO;
+   (function tick(){
+     if(miId!==_COLA_ID || !a || a.paused || a.ended) return;
+     activar(Math.min(total-1, Math.floor((a.currentTime/(a.duration||1))*total)));
+     requestAnimationFrame(tick);
+   })();
+ }, apagarTodo);
+ if(clipOk) return;
+ if(!('speechSynthesis' in window)){ apagarTodo(); return; }
+ const u=new SpeechSynthesisUtterance(juntos);
+ const v=elegirVoz(); u.lang=(v&&v.lang)||'es-MX'; if(v) u.voice=v; u.rate=0.9;
+ u.onboundary=(e)=>{ if(miId===_COLA_ID) activar(e.charIndex||0); };
+ u.onend=u.onerror=()=>{ if(miId===_COLA_ID) apagarTodo(); };
+ speechSynthesis.speak(u);
+}
+
 /* Los 🔊 de la meta y del resultado se cablean UNA vez y leen el texto en el momento
    del clic, no al cablear: el titular del resultado lo pintan tres caminos distintos
    (etapa aprobada, reprobada y refuerzo), y así ninguno tiene que acordarse de la voz. */

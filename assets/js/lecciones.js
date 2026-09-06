@@ -40,7 +40,12 @@
      de qué asignatura es: ver el ⚠️ de preguntasDeOA. */
   var CFG = { rutas: [], hayReto: false };
 
-  var CSS = "#scr-leccion{padding:16px}#scr-leccion.on{display:flex;flex-direction:column;gap:12px}.lec-top{display:flex;align-items:center;gap:10px}.lec-top .btn{width:auto;flex:0 0 auto;padding:8px 16px;font-size:15px;margin:0}.lec-prog{flex:1;height:8px;background:#241a44;border-radius:6px;overflow:hidden}#lecProgBar{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--violet));transition:width .3s}.lec-titulo{font-family:'Titan One',sans-serif;font-size:20px;margin:2px 0}.lec-cuerpo{background:#241a44;border:1px solid #3a2f60;border-radius:16px;padding:16px;min-height:220px}.lec-cuerpo p{font-size:15px;line-height:1.5}.lec-cuerpo img{max-width:100%;border-radius:12px;display:block;margin:0 auto}.lec-diag{width:100%;overflow-x:auto}.lec-ejemplo-paso{opacity:.35;transition:opacity .3s;margin:6px 0;font-size:15px}.lec-ejemplo-paso.on{opacity:1}.lec-cont{width:100%}";
+  var CSS = "#scr-leccion{padding:16px}#scr-leccion.on{display:flex;flex-direction:column;gap:12px}.lec-top{display:flex;align-items:center;gap:10px}.lec-top .btn{width:auto;flex:0 0 auto;padding:8px 16px;font-size:15px;margin:0}.lec-prog{flex:1;height:8px;background:#241a44;border-radius:6px;overflow:hidden}#lecProgBar{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--violet));transition:width .3s}.lec-titulo{font-family:'Titan One',sans-serif;font-size:20px;margin:2px 0}.lec-cuerpo{background:#241a44;border:1px solid #3a2f60;border-radius:16px;padding:16px;min-height:220px}.lec-cuerpo p{font-size:15px;line-height:1.5}.lec-cuerpo img{max-width:100%;border-radius:12px;display:block;margin:0 auto}.lec-diag{width:100%;overflow-x:auto}.lec-ejemplo-paso{opacity:.35;transition:opacity .3s;margin:6px 0;font-size:15px}.lec-ejemplo-paso.on{opacity:1}.lec-cont{width:100%}"+
+    /* El resaltado de "se está leyendo" (karaoke aproximado, ver leerSegmentosEnVoz en
+       voz.js). Va en el CSS de ESTE módulo -y no en el de voz.js, que solo pone `.opt.leyendo`-
+       porque .lec-cuerpo y .lec-ejemplo-paso son elementos de la mini-clase, no del quiz:
+       mismo patrón que ya separa a los dos módulos. */
+    ".lec-cuerpo>.leyendo,.lec-ejemplo-paso.leyendo{background:#3a2f6b;border-radius:8px;box-shadow:0 0 0 2px var(--gold)}";
 
   var PANTALLA = '  <section class="screen" id="scr-leccion">\n    <div class="lec-top">\n      <button id="lecSalir" class="btn sec">← Salir</button>\n      <div class="lec-prog"><div id="lecProgBar"></div></div>\n    </div>\n    <h2 id="lecTitulo" class="lec-titulo"></h2>\n    <div id="lecCuerpo" class="lec-cuerpo"></div>\n    <button id="lecEscuchar" class="btn-escuchar" hidden>🔊 Escuchar</button>\n    <button id="lecCont" class="btn lec-cont">Continuar</button>\n  </section>\n';
 
@@ -62,11 +67,20 @@
     var salir = document.getElementById('lecSalir');
     var cont  = document.getElementById('lecCont');
     if (!salir || !cont) return false;
-    /* El 🔊 lee el bloque que se esta mostrando, y se cablea UNA vez leyendo el texto en el
-       momento del clic (mismo patron que los 🔊 de la meta y del resultado en voz.js). En 7° y
-       8° el boton nunca se muestra, porque VOZ.activo es false: no hace falta una bandera. */
+    /* El 🔊 lee el bloque que se esta mostrando, resaltando en pantalla el segmento que va
+       sonando (leerSegmentosEnVoz, en voz.js) — LEC.elementos lo arma renderBloque(), en el
+       mismo orden que segmentosLocutables(b). En un "ejemplo" revela TODOS los pasos antes de
+       leer: no tiene sentido narrar un paso que sigue oculto porque nadie lo ha tocado
+       todavía. En 7° y 8° el boton nunca se muestra, porque VOZ.activo es false.*/
     var esc = document.getElementById('lecEscuchar');
-    if (esc) esc.onclick = function () { leerEnVoz(textoLocutable(LEC && LEC.leccion ? LEC.leccion.bloques[LEC.idx] : null)); };
+    if (esc) esc.onclick = function () {
+      var b = LEC && LEC.leccion ? LEC.leccion.bloques[LEC.idx] : null;
+      if (!b) return;
+      if (b.t === 'ejemplo') {
+        document.querySelectorAll('.lec-ejemplo-paso').forEach(function (p) { p.classList.add('on'); });
+      }
+      leerSegmentosEnVoz(segmentosLocutables(b), LEC.elementos);
+    };
     salir.onclick = function () { SND.tap(); volverAlCapituloMate(); };
     cont.onclick  = function () { SND.tap(); avanzarBloque(); };
     return true;
@@ -1011,18 +1025,24 @@ function abrirLeccion(leccion){
  renderBloque();
 }
 
-/* Lo que se LEE de un bloque, armado desde los datos y no desde el DOM: el cuerpo ya
-   pintado arrastra los rotulos del SVG ("centenas", "3 cientos"), que son apoyo visual y
-   suenan a disparate leidos de corrido. Es ademas la lista exacta de fragmentos que
-   scripts/generar-voz-nivel.py tiene que sacar de lecciones.json. */
-function textoLocutable(b){
- if(!b) return '';
- if(b.t==='texto')    return b.md||'';
- if(b.t==='imagen')   return b.pie||'';
- if(b.t==='diagrama') return b.intro||'';
- if(b.t==='ejemplo')  return [b.intro||''].concat(b.pasos||[]).filter(Boolean).join('. ');
- return '';
+/* Los fragmentos que se LEEN de un bloque, EN EL ORDEN en que aparecen en pantalla, armados
+   desde los datos y no desde el DOM: el cuerpo ya pintado arrastra los rotulos del SVG
+   ("centenas", "3 cientos"), que son apoyo visual y suenan a disparate leidos de corrido.
+   Uno por elemento visible (la intro, cada paso de un "ejemplo"...): es lo que permite
+   resaltar el que va sonando en leerSegmentosEnVoz (voz.js), como una lectura de karaoke. */
+function segmentosLocutables(b){
+ if(!b) return [];
+ if(b.t==='texto')    return [b.md||''];
+ if(b.t==='imagen')   return [b.pie||''];
+ if(b.t==='diagrama') return [b.intro||''];
+ if(b.t==='ejemplo')  return [b.intro||''].concat(b.pasos||[]);
+ return [];
 }
+/* El texto COMPLETO de un bloque, unido con ". " — es la lista exacta que
+   scripts/generar-voz-nivel.py tiene que sacar de lecciones.json (un solo clip por bloque,
+   indexado por este mismo texto): las dos tienen que decir lo mismo, o se pagan clips que
+   nadie oye o se deja muda una pantalla, y ninguna de las dos cosas da error. */
+function textoLocutable(b){ return segmentosLocutables(b).filter(Boolean).join('. '); }
 
 /* El texto de una lección admite **negrita**, y SOLO eso: es para el término que la
    clase enseña, no para enfatizar a gusto. Si se usa de más, en tres cursos deja de
@@ -1041,20 +1061,29 @@ function renderBloque(){
  const b=LEC.leccion.bloques[LEC.idx], cuerpo=$('lecCuerpo');
  cuerpo.innerHTML=''; cuerpo.onclick=null;
  $('lecProgBar').style.width=(LEC.idx/LEC.leccion.bloques.length*100)+'%';
+ // LEC.elementos: un elemento por cada fragmento de segmentosLocutables(b), en el MISMO
+ // orden (null si ese fragmento no llegó a pintarse, p.ej. un diagrama sin `intro`). Es lo
+ // que usa el 🔊 para saber QUÉ resaltar mientras suena cada uno.
+ LEC.elementos=[];
  if(b.t==='texto'){
   const p=document.createElement('p'); p.innerHTML=fmtLec(b.md); cuerpo.appendChild(p);
+  LEC.elementos.push(p);
  }else if(b.t==='imagen'){
   const img=document.createElement('img'); img.src=b.src; img.alt=b.alt||'';
   img.onerror=function(){this.onerror=null;this.style.display='none';}; cuerpo.appendChild(img);
-  if(b.pie){const p=document.createElement('p');p.innerHTML=fmtLec(b.pie);p.style.textAlign='center';cuerpo.appendChild(p);}
+  if(b.pie){const p=document.createElement('p');p.innerHTML=fmtLec(b.pie);p.style.textAlign='center';cuerpo.appendChild(p);LEC.elementos.push(p);}
+  else LEC.elementos.push(null);
  }else if(b.t==='diagrama'){
-  if(b.intro){const p=document.createElement('p');p.innerHTML=fmtLec(b.intro);cuerpo.appendChild(p);}
+  if(b.intro){const p=document.createElement('p');p.innerHTML=fmtLec(b.intro);cuerpo.appendChild(p);LEC.elementos.push(p);}
+  else LEC.elementos.push(null);
   const d=document.createElement('div'); cuerpo.appendChild(d);
   montarDiagrama(b.kind,b.params,d);
  }else if(b.t==='ejemplo'){
-  if(b.intro){const p=document.createElement('p');p.innerHTML=fmtLec(b.intro);cuerpo.appendChild(p);}
+  if(b.intro){const p=document.createElement('p');p.innerHTML=fmtLec(b.intro);cuerpo.appendChild(p);LEC.elementos.push(p);}
+  else LEC.elementos.push(null);
   b.pasos.forEach((paso,i)=>{const el=document.createElement('div');
-   el.className='lec-ejemplo-paso'+(i===0?' on':'');el.innerHTML=fmtLec(paso);cuerpo.appendChild(el);});
+   el.className='lec-ejemplo-paso'+(i===0?' on':'');el.innerHTML=fmtLec(paso);cuerpo.appendChild(el);
+   LEC.elementos.push(el);});
   let vis=1; cuerpo.onclick=()=>{const pasos=cuerpo.querySelectorAll('.lec-ejemplo-paso');
    if(vis<pasos.length){pasos[vis].classList.add('on');vis++;}};
  }
@@ -1208,24 +1237,25 @@ function renderCampañaMate(c){
   const hechas=(cap.lecciones||[]).filter(id=>S.mateLecciones[id]).length;
   const tot=(cap.lecciones||[]).length;
   const lecHecho=tot>0 && hechas===tot;
-  // CAPS_ABIERTOS igual que en la expedicion de aqui abajo: en QA, modo prueba y modo
-  // experimental las unidades van todas abiertas. Sin esto la expedicion se abria y su
-  // mini-clase NO, o sea que un alumno con modo experimental no podia entrar a lo que
-  // ensena. `proximamente` sigue mandando: una unidad sin contenido no se abre ni en QA.
-  const lecAbierto=!cap.proximamente && (CAPS_ABIERTOS || i===0 || capMateCompleto(c.capitulosMate[i-1]));
-  const lecEstado=cap.proximamente?'🔒 Pronto':(lecHecho?'Completado':(lecAbierto?`${hechas}/${tot} lecciones`:'🔒 Bloqueado'));
-  cont.appendChild(nodoCampañaEl(`${i+1}`, cap.titulo, lecAbierto, lecHecho,
-    lecAbierto?()=>abrirCapituloMate(cap):null, lecEstado,
-    portadaUnidad(cap,c), c.portada));
-  // Expedición de la unidad: se abre al completar sus lecciones (enseña → desafío)
+  // CAPS_ABIERTOS igual que antes: en QA, modo prueba y modo experimental las unidades van
+  // todas abiertas. `proximamente` sigue mandando: una unidad sin contenido no se abre ni en QA.
+  const abierto=!cap.proximamente && (CAPS_ABIERTOS || i===0 || capMateCompleto(c.capitulosMate[i-1]));
+  // UNA sola tarjeta por unidad, no dos: las lecciones de la unidad y su desafío eran dos
+  // nodos con la misma portada, uno detrás del otro, y se veían repetidos. Ahora la unidad
+  // abre directo su expedición, y las lecciones se muestran DENTRO de ese mapa, como primeros
+  // nodos (LECC.nodoLecciones en motor.js), igual que hace una introducción de Ciencias o
+  // Historia — con la diferencia de que aquí SÍ bloquean el resto del mapa hasta terminarlas.
   const exp=EXPEDICIONES.find(e=>e.id===c.capitulos[i]);
-  if(exp){
-   const expAb=CAPS_ABIERTOS||capMateCompleto(cap), expHecho=expedicionCompleta(exp.id);
-   cont.appendChild(nodoCampañaEl('⚔️', 'Expedición · '+cap.titulo, expAb, expHecho,
-     expAb?()=>entrarExpedicion(exp):null,
-     expHecho?'Completada':(expAb?'¡Al desafío!':'🔒 Termina las lecciones'),
-     portadaUnidad(cap,c), c.portada));
-  }
+  const hecho=exp?expedicionCompleta(exp.id):lecHecho;
+  let estado;
+  if(cap.proximamente) estado='🔒 Pronto';
+  else if(!abierto) estado='🔒 Bloqueado';
+  else if(hecho) estado='Completado';
+  else if(!lecHecho) estado=`${hechas}/${tot} lecciones`;
+  else estado='¡Al desafío!';
+  cont.appendChild(nodoCampañaEl(`${i+1}`, cap.titulo, abierto, hecho,
+    abierto?()=>{ if(exp){ exp.lecciones=cap.lecciones; entrarExpedicion(exp); } else abrirCapituloMate(cap); }:null,
+    estado, portadaUnidad(cap,c), c.portada));
  });
  // ⚠️ El nodo del Reto solo donde el Reto EXISTE. Al compartir esta funcion, en 7 y 3
  // `abrirRetoCalculo` no esta definida: sin este guard el nodo aparece ofreciendo algo que
@@ -1302,6 +1332,37 @@ async function cargarPoolMate(){
           '</b><small>' + (hecho ? '✓ Vista' : '▶ Empieza aquí') + '</small></div>';
         d.querySelector('.orb').onclick = function () { SND.tap(); abrirLeccion(l); };
         caja.insertBefore(d, caja.firstChild);
+      });
+      return true;
+    },
+    /* Las N mini-clases de la unidad, al principio del mapa de SU expedición (una por OA).
+       A diferencia de nodoIntro, SÍ bloquean: mientras falte una, la primera etapa del quiz
+       queda cerrada (lo gestiona renderMapa en motor.js) — es "aprender desbloquea el
+       desafío", el pilar del camino enseña→desafío desde la Sesión 29. Se dibujan FUERA del
+       arreglo indexado de etapas, por la misma razón que nodoIntro: S.rutas[id].progreso
+       está indexado por posición, y meter N lecciones ahí correría las etapas reales. */
+    nodoLecciones: function (ids, caja) {
+      if (!this.activo || !ids || !ids.length || !caja) return false;
+      cargarLecciones().then(function (todas) {
+        var frag = document.createDocumentFragment();
+        ids.forEach(function (id, i) {
+          var l = todas.find(function (x) { return x.id === id; });
+          if (!l) return;
+          var hecho = !!S.mateLecciones[id];
+          var abierto = CAPS_ABIERTOS || i === 0 || !!S.mateLecciones[ids[i - 1]];
+          var d = document.createElement('div');
+          d.className = 'node ' + (hecho ? 'done' : (abierto ? 'open' : 'lock'));
+          d.innerHTML = '<div class="orb">' + (hecho || abierto ? '📘' : '🔒') + '</div><div class="info"><b>' +
+            escHtml(l.titulo) + '</b><small>' +
+            (hecho ? '✓ Completada' : (abierto ? '▶ ¡Aprender!' : '🔒 Bloqueada')) + '</small></div>';
+          if (abierto) d.querySelector('.orb').onclick = function () {
+            SND.tap();
+            TRAS_LECCION = function () { go('scr-mapa'); renderMapa(); };
+            abrirLeccion(l);
+          };
+          frag.appendChild(d);
+        });
+        caja.insertBefore(frag, caja.firstChild);
       });
       return true;
     }

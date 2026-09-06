@@ -64,18 +64,25 @@ backend Supabase para el duelo en línea. Historia de v0 al detalle en la Bitác
   Capa `CAMPAÑAS` data-driven; el motor de campañas es **genérico** (Desafío Extra
   opcional, jefe con título dinámico).
 - **Matemáticas · campaña "enseña→desafío" (Sesiones 29 y 31) + "Reto de Cálculo"
-  (Sesión 15):** ⚠️ **Desde la Sesión 83 el camino "enseña→desafío" está en los TRES cursos**
-  —**62 mini-clases**: 26 en 3°, 19 en 7° y las 17 de 8°—, con el motor compartido en
+  (Sesión 15):** ⚠️ **El camino "enseña→desafío" está en CUATRO cursos** —**89 mini-clases**:
+  26 en 3°, 27 en 5°, 19 en 7° y las 17 de 8°—, con el motor compartido en
   `assets/js/lecciones.js` y **27 diagramas interactivos**. Lo que sigue es la descripción de 8°,
   que es el que además tiene el Reto de Cálculo.
   Al entrar a Matemáticas se abre su **campaña** con las 4 unidades del año
-  (Números, Álgebra y funciones, Geometría, y Probabilidad y estadística), y el mapa
-  **intercala por unidad lección → expedición**: primero la **mini-clase guiada**
+  (Números, Álgebra y funciones, Geometría, y Probabilidad y estadística), **una tarjeta por
+  unidad**. Cada una abre su **expedición** (`mate-exp-numeros`, `-algebra`, `-geometria`,
+  `-datos`), y ese mapa empieza por lo que **enseña**: las **mini-clases guiadas** de la unidad
   (explicación breve + **diagramas SVG interactivos** —recta arrastrable, barras de
   fracciones/%, cuadrículas de potencias/raíces— + ejemplo resuelto paso a paso + **10
-  preguntas** de práctica del banco revisado, que **mide dominio por OA**), y a continuación
-  su **expedición** (`mate-exp-numeros`, `-algebra`, `-geometria`, `-datos`), que pone a
-  prueba lo aprendido usando el **banco de año completo (603)**. El **Reto de Cálculo**
+  preguntas** de práctica del banco revisado, que **mide dominio por OA**), y solo después las
+  etapas del **desafío**, que ponen a prueba lo aprendido con el **banco de año completo (603)**.
+  ⚠️ **Las mini-clases BLOQUEAN la primera etapa** hasta terminarlas —es "aprender desbloquea el
+  desafío"— y en eso se diferencian del nodo 📘 de una introducción de Ciencias o Historia, que
+  es un ofrecimiento y no un peaje. Las dos se dibujan **fuera del arreglo indexado de etapas**
+  (`LECC.nodoLecciones` y `LECC.nodoIntro`), porque `S.rutas[id].progreso` va por posición y
+  meterlas dentro le correría el avance a quien ya venía jugando. **Antes de la Sesión 98 eran
+  dos tarjetas por unidad** —la mini-clase y su "Expedición · X"— con **la misma portada
+  repetida** en las dos. El **Reto de Cálculo**
   —cálculo mental rápido, **5 niveles × 3 etapas** + Jefe "El Autómata" + **Modo Sin Fin**—
   se conserva, con **cada nivel desbloqueado al completar su lección** ("aprender desbloquea
   el Reto"); sus tiempos son **fijos** (nivel y Sin Fin 20 s, El Autómata 15 s) y no bajan
@@ -494,7 +501,7 @@ arriba del archivo, no como condiciones sueltas repartidas por el código.
 | Bandera | Qué gobierna | 8° | 7° | 5° | 3° |
 |---|---|---|---|---|---|
 | `HAY_RETO_CALCULO` | Si Matemática se juega como Reto de Cálculo. Afecta al **Duelo** (`odNMapas`, `odMapasMate`, `odPreguntasCalc`), a `detenerTimersActivos` y a la música de `scr-calc` | ✅ | ❌ | ❌ | ❌ |
-| `HAY_MINICLASES` | Si existe el camino de mini-clases. Afecta al **siguiente paso al reprobar**, a `renderCampaña`, al Jefe Final (`cargarPoolMate`) y al ✕ del quiz. **Desde la Sesión 83 vale `true` en los tres**, y va **pegada a `LECC.init`** | ✅ | ✅ | ✅ | ✅ |
+| `HAY_MINICLASES` | Si existe el camino de mini-clases. Afecta al **siguiente paso al reprobar**, a `renderCampaña`, al Jefe Final (`cargarPoolMate`) y al ✕ del quiz. Vale `true` en los **cuatro** de esta tabla (8°, 7°, 5° y 3°) y `false` en 4° y 6°, que no tienen ese contenido. Va **pegada a `LECC.init`** | ✅ | ✅ | ✅ | ✅ |
 | `HAY_VOCABULARIO` | Si Lenguaje abre el landing "Campaña + Vocabulario" en vez de su campaña | ✅ | ✅ | ❌ | ✅ |
 | `HAY_BIBLIOTECA` | Si la pantalla principal ofrece el módulo 📖 Lectura | ✅ | ❌ | ❌ | ✅ |
 | `HAY_SINFIN` | Si Matemática ofrece el **Reto Sin Fin** de `assets/js/calculo.js`. Gobierna el nodo del mapa y la llamada `CALC.init` | ❌ | ✅ | ✅ | ✅ |
@@ -9033,3 +9040,124 @@ seis cursos y pidió tres ajustes puntuales. Sin tocar contenido ni el motor com
   frase nueva está presente y la vieja ya no aparece en ningún lugar vivo del repositorio.
 - **Pendiente:** sin cambios respecto a la Sesión 96 (el arrastre de `docs/contenido-sensible.md`
   con 5°, INAPI, el enlace de agenda, NotebookLM, y las mini-clases de 4°).
+
+### Sesión 98 (2026-09-06) — Matemática deja de repetir su arte, y las mini-clases hablan con karaoke
+Roberto mandó una captura de la campaña de Matemática de 3° —"mira cómo se ve la muestra"— y,
+tras precisar que lo que le molestaba era el arte repetido, salieron dos trabajos: primero el
+arreglo de esa pantalla, después —sobre la misma voz de 3° que acababa de tocar el arreglo—
+una función nueva de lectura. **No se tocó contenido ni el backend.**
+
+#### El arte no era "parecido": era la MISMA imagen, dos veces seguidas
+
+Medido antes de tocar nada: `renderCampañaMate` pintaba, por cada unidad, **dos tarjetas** —la
+mini-clase y su "Expedición · X"— y **las dos llamaban a `portadaUnidad(cap,c)`**, o sea el
+mismo PNG en dos nodos consecutivos de la lista. No era un problema de estilo de arte: era
+literalmente un archivo repetido, en las **cuatro** campañas de Matemática con mini-clases
+(3°, 5°, 7°, 8°).
+
+Un primer arreglo (quitarle la portada al nodo "Expedición" y dejarlo con un círculo ⚔️, como
+el del Reto de Cálculo) resolvía la repetición pero no lo que Roberto pidió después: **"las
+lecciones deben ser lo primero de cada expedición, si no se ven repetidos innecesariamente, y
+eso debe ser igual con las introducciones"** — es decir, que Matemática funcione como ya
+funcionan las introducciones de Ciencias e Historia (Sesión 84): **un solo nodo por capítulo**,
+que al abrirse muestra primero lo que enseña.
+
+**La diferencia real con una introducción es que aquí SÍ debe bloquear.** El pilar del camino
+"enseña → desafío" desde la Sesión 29 es que aprender desbloquea el desafío, así que las
+mini-clases no podían ser un simple adorno no-bloqueante como el 📘 de Ciencias.
+
+**Lo que se construyó, todo en los dos módulos compartidos** (`assets/js/lecciones.js` y
+`assets/js/motor.js` — ningún fork se tocó, salvo una línea de respaldo idéntica en los seis):
+
+- `renderCampañaMate` pasa a pintar **una tarjeta por unidad**, que al abrirse entra directo a
+  `entrarExpedicion(exp)` — asignando `exp.lecciones=cap.lecciones` justo antes, sin duplicar el
+  dato en ningún lado: la lista de OA de la unidad ya vivía en `capitulosMate`.
+- **`LECC.nodoLecciones(ids, caja)`** (nueva, en `lecciones.js`): dibuja las N mini-clases al
+  principio del mapa de SU expedición, cada una gateada por la anterior, igual que
+  `renderLeccionesMate` hacía en su pantalla propia (que ahora solo queda como respaldo para
+  un capítulo sin expedición emparejada).
+- **`renderMapa()`** (en `motor.js`) gana el bloqueo: si `EXP_ACT.lecciones` existe y no están
+  todas en `S.mateLecciones`, la etapa 0 se muestra **y se comporta** como bloqueada
+  ("🔒 Termina las lecciones") **sin tocar `progAct()[0]`**, que sigue naciendo "open" como
+  siempre — es un bloqueo de pantalla y de clic, no de los datos guardados, así que ningún save
+  viejo se corrompe (y no podía haber uno que llegara ahí sin haber ya terminado sus lecciones,
+  porque la tarjeta separada de antes exigía justo eso para abrirse).
+
+**Verificado jugando, no llamando funciones sueltas**, en los cuatro cursos: la campaña muestra
+una tarjeta por unidad (antes el doble); sin terminar las lecciones la etapa 1 sale bloqueada;
+marcando todas las lecciones completas se abre sola, sin tocar las siguientes; Ciencias e
+Historia (con introducción, que no bloquea) siguen intactas; los seis forks cargan con
+`__MOTOR_OK` en `true`, cero errores de consola y cero 404.
+
+#### Ocho clips de voz que quedaron huérfanos, y por qué no hacía falta "revisar cada voz"
+
+Con la campaña ya jugable, Roberto probó la voz de una mini-clase y notó dos cosas en dos
+capturas: que el resaltado de "está leyendo" no existía todavía (siguiente punto), y que en
+"Antes de empezar: Leer y entender" (una introducción de Lenguaje de 3°) **sonaba una voz
+distinta a la de Catalina** — preguntó si era un error suelto o había que revisar cada voz.
+
+No hacía falta escuchar nada para responder: `scripts/generar-voz-nivel.py <asig> --recuento`
+compara el banco actual contra el manifiesto sin gastar un centavo. Corrido sobre las 6
+asignaturas con voz de 3°, el hueco era chico y localizado: **1 en Historia, 4 en Ciencias, 3
+en Lenguaje** (0 en Matemática, Vocabulario y Ana Frank) — los tres diagramas de Lenguaje,
+agregados el 05/09 en un commit sobre 6° que de paso les sumó dibujo a esas introducciones,
+**después** de que la voz de 3° se generara en la Sesión 86. Nadie los había regenerado. Es el
+mismo defecto documentado desde la Sesión 56: el manifiesto se indexa por el texto exacto, y un
+texto nuevo sin su clip cae al navegador, que suena distinto sin que nada avise.
+
+Con autorización de Roberto (costo real: **US$0,00 redondeado**, 164-219 caracteres por
+asignatura), se generaron los 8 clips faltantes. Verificado: los tres bancos vuelven a dar
+"0 faltan", y el texto exacto de la introducción ("Leer es hacer las dos cosas, no solo la
+primera.") ya resuelve a un clip real.
+
+> ⚠️ **Aviso que se le dio a Roberto de inmediato, y queda escrito aquí también:** al intentar
+> ver la ayuda de `scripts/auditar-voz-nivel.py` se corrió `--help`, que **el script no
+> reconoce** — cualquier argumento desconocido cae al valor por defecto (`mat3`) y audita de
+> verdad. Terminó de transcribir con Azure STT los **89 clips de Matemática que ya estaban
+> pendientes de auditar** desde antes (no duplicó trabajo, completó un backlog real), pero fue
+> un gasto no autorizado para ese momento puntual. Costo estimado: unos centavos. Queda anotado
+> para no volver a tratar un script sin `--help` como si lo tuviera.
+
+#### El resaltado de lectura ("karaoke"), aproximado y gratis
+
+Roberto pidió poder "marcar el texto mientras la voz va avanzando", y eligió explícitamente la
+opción **por línea/frase y aproximada** en vez de regenerar toda la voz con tiempos exactos por
+palabra (la otra opción, descartada por costo y alcance).
+
+**No hay un clip por segmento: `generar-voz-nivel.py` junta la intro y los pasos de un
+"ejemplo" con `". "` y genera UN SOLO audio por bloque**, indexado por ese texto unido. Así que
+el resaltado se reparte por **proporción de caracteres sobre la duración real del audio**
+(`audio.duration`, ya conocida sin pedir nada nuevo), no por un evento real de cada frase —
+aproximado a propósito, sin regenerar ni un clip. Si el clip no existe (curso sin voz, o un
+texto recién agregado sin generar, como el caso de arriba), cae a `speechSynthesis`, que **sí**
+da un `onboundary` real por palabra, así que ese camino queda más preciso, no menos.
+
+- **`assets/js/voz.js`** gana `leerSegmentosEnVoz(segmentos, elementos)`, hermana de
+  `leerPreguntaEnVoz` (que ya hacía exactamente este patrón para la pregunta y las opciones del
+  quiz, solo que ahí sí hay un clip por texto).
+- **`assets/js/lecciones.js`**: `textoLocutable(b)` —el contrato que `generar-voz-nivel.py`
+  espera calcar, palabra por palabra— se reescribió **sin cambiar su salida** a partir de una
+  función nueva, `segmentosLocutables(b)`, que devuelve el arreglo en vez del texto unido.
+  `renderBloque()` arma `LEC.elementos` en el mismo orden, y el botón 🔊 llama a
+  `leerSegmentosEnVoz(segmentosLocutables(b), LEC.elementos)`.
+- **Efecto colateral querido:** en un bloque "ejemplo", tocar 🔊 ahora **revela todos los pasos
+  de una vez** (antes se destapaban con toques manuales) — no tiene sentido narrar un paso que
+  sigue oculto porque nadie lo ha tocado.
+- CSS del resaltado (`.lec-cuerpo>.leyendo,.lec-ejemplo-paso.leyendo`) va en el CSS de
+  `lecciones.js`, no en el de `voz.js`: son elementos de la mini-clase, mismo patrón que ya
+  separa a los dos módulos.
+
+**Verificado jugando "Contar de a saltos"** (el bloque de la captura de Roberto, un "ejemplo"
+de 6 segmentos): con el clip real de 20,1 s, el resaltado pasó por los 6 fragmentos en los
+puntos proporcionales correctos y se apagó solo al terminar. Regresión: un bloque de un solo
+segmento (`texto`) resalta y suelta igual de bien; el resaltado del quiz (`.opt.leyendo`,
+sesiones 55-56) sigue intacto; en 8° (sin voz) el 🔊 de la mini-clase sigue oculto. Cero errores
+de consola y cero fallos de red en las tres pruebas.
+
+- **Pendiente de arrastre, sin cambios:** `docs/contenido-sensible.md` con la fila de 5°
+  (Historia), INAPI, el enlace de agenda, la reautenticación de NotebookLM, y las mini-clases
+  de 4° (bloqueadas por B3, que no tiene su banco todavía en ese formato).
+- **Pendiente nuevo, menor:** `assets/portada-mate-numeros.png` —la portada reutilizada de 8°
+  para "Números hasta 1.000"— sigue en un estilo de arte distinto (Vulpi adolescente con
+  chaqueta) al de las demás unidades de 3°/5°/7° (Vulpi cachorro con hoodie, Sesión 79). No
+  bloquea nada; se resuelve regenerándola en el estilo nuevo cuando Roberto quiera.
