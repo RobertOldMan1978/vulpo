@@ -64,24 +64,26 @@ Hay dos salidas y hay que elegir una antes de empezar:
 
 ### 2.2 El peso hace inviable el `cache-first` que propone el análisis
 
-Medido en el repositorio hoy:
+Medido en el repositorio, 06/09/2026 (tras generar la voz de 4°):
 
 | Carpeta | Peso |
 |---|---|
-| `assets/voz/` (voz pregrabada de 3°) | **252 MB** en bytes reales — 6 asignaturas, 11.536 clips |
+| `assets/voz/` (voz pregrabada de 3° y 4°) | **578 MB** en bytes reales — 6+4 asignaturas |
 | `assets/originales/` (arte crudo, nunca se sirve) | **174 MB** |
 | `assets/audio/` (música) | 5,0 MB |
-| `contenido/` (los bancos de preguntas) | 7,3 MB |
-| **Sitio publicado** (sin `.git` ni `originales`, ya excluidos) | **343 MB** |
+| `contenido/` (los bancos de preguntas, seis cursos) | 17,3 MB |
+| **Sitio publicado** (sin `.git` ni `originales`, ya excluidos) | **713 MB** |
 
 Un service worker con `cache-first` sobre "imágenes, audio y fuentes" —tal cual lo propone el
-documento— **le bajaría 250 MB a un teléfono en la primera apertura de 3° básico**. En el
-público objetivo (colegios chilenos, planes de datos limitados) eso no es una optimización: es
-un motivo para desinstalar.
+documento— **le bajaría cientos de MB a un teléfono en la primera apertura de 3° o 4° básico**.
+En el público objetivo (colegios chilenos, planes de datos limitados) eso no es una
+optimización: es un motivo para desinstalar. Y con el sitio ya en 713 MB de 1 GB, **no queda
+margen para pregrabar la voz de un quinto curso**: la regla de 1° a 4° es la única aritmética
+que cabe.
 
 **Reglas que se derivan, y que el documento no podía anticipar:**
 
-- La voz de 3° se cachea **bajo demanda, clip a clip, al reproducirse** — nunca en el `install`.
+- La voz de 3° y 4° se cachea **bajo demanda, clip a clip, al reproducirse** — nunca en el `install`.
 - `assets/originales/` **no se cachea jamás**. **Resuelto en la Sesión 63:** se verificó que
   GitHub Pages los estaba publicando (`https://vulpo.cl/assets/originales/<archivo>.png`
   respondía HTTP 200 con 2,4 MB) y se excluyeron del sitio con `_config.yml`. **Siguen en el

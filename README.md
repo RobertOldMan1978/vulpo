@@ -70,8 +70,8 @@ para calificar**.
 ## Cómo probarlo
 
 La página de presentación está en **https://vulpo.cl**, y desde ahí se enlaza cada curso:
-**https://vulpo.cl/3ro**, **/5to**, **/6to**, **/7mo** y **https://vulpo.cl/8vo** — más el panel
-del profesor en **https://vulpo.cl/profesor.html**. Hay además un **tutorial** en **https://vulpo.cl/tutorial/**, con capturas y clips del juego real, dividido en dos secciones: para el apoderado y para el alumno. Para desarrollo local conviene un servidor
+**https://vulpo.cl/3ro**, **/4to**, **/5to**, **/6to**, **/7mo** y **https://vulpo.cl/8vo** — más
+el panel del profesor en **https://vulpo.cl/profesor.html**. Hay además un **tutorial** en **https://vulpo.cl/tutorial/**, con capturas y clips del juego real, dividido en dos secciones: para el apoderado y para el alumno. Para desarrollo local conviene un servidor
 (`python -m http.server 8765`), porque el JavaScript no funciona bien desde `file://`.
 
 **Se puede instalar en el teléfono.** Desde el menú del navegador, «Agregar a pantalla de
@@ -86,13 +86,10 @@ sin internet — para eso haría falta un service worker, que todavía no existe
 Versión **v0.99**: completo y jugable de punta a punta, en vuelta de revisión
 manual antes de coronar la v1.
 
-**La v1 será VULPO de 3° a 8° básico**, seis cursos completos con sus cuatro
-asignaturas. Hoy están **anunciados y enlazados desde `vulpo.cl` cinco cursos jugables,
-completos y aprobados: 3°, 5°, 6°, 7° y 8° básico**, cada uno como su propia app. **4° básico
-ya tiene su banco escrito, auditado y aprobado** (91 objetivos, 2.730 preguntas), aunque
-todavía sin cablear como juego, sin voz y sin arte propio — es el sexto curso, y llega después.
-**El banco total del proyecto es 16.295 preguntas, y las 16.295 están aprobadas (100%)**: las
-13.565 de los cinco cursos jugables, más las 2.730 de 4° a la espera de su versión jugable.
+**VULPO ya cubre de 3° a 8° básico**, los seis cursos completos con sus cuatro asignaturas,
+**anunciados y enlazados desde `vulpo.cl`**, cada uno como su propia app: 3°, 4°, 5°, 6°, 7° y
+8° básico. **El banco total del proyecto son 16.295 preguntas, y las 16.295 están aprobadas
+(100%)**, todas ya en su versión jugable.
 
 **Qué falta y en qué orden está en [`pendiente.md`](pendiente.md)**, la lista viva de tareas:
 es el archivo por el que se empieza al abrir una rama. El plan de
@@ -101,7 +98,7 @@ organización y la programación están en
 mediano plazo: web → PWA → Capacitor → Android → iOS, y el modelo de suscripción
 anual por nivel escolar. Nada de eso está implementado todavía.
 
-Los cinco cursos comparten la misma puerta de acceso: desde el **1 de octubre de 2026** hace
+Los seis cursos comparten la misma puerta de acceso: desde el **1 de octubre de 2026** hace
 falta un código de alumno para jugar más allá de la demo de cada nivel.
 
 **7° básico** (`7mo/`) sigue las mismas bases que 8°: campañas por asignatura con capítulos en orden, jefe de capítulo y Jefe Final multi-fase, Modo Difícil, comodín 50/50, meta de aprendizaje y repaso al fallar. Sus cuatro asignaturas son Historia, Geografía y Ciencias Sociales (23 objetivos), Matemática (19), Ciencias Naturales (15) y Lengua y Literatura (24). No lleva lectura por voz: a los 12-13 años ya se lee de corrido. Guarda su avance y su identidad en línea aparte de los demás cursos. Suma además dos **módulos transversales**: un **Vocabulario** de 120 palabras de sus cuatro asignaturas, y un **Reto Sin Fin** de cálculo mental —operaciones generadas por código, sin banco de preguntas— dentro de Matemática. Y desde el 02/09, Matemática se juega como **camino de aprendizaje**: **19 mini-clases**, una por objetivo, con su diagrama interactivo y su práctica.
@@ -113,8 +110,7 @@ El Descuadre; Historia (22, 660) — El Rumor; Ciencias (14, 420, con 4 introduc
 Cortocircuito; Lenguaje (30, 900) — El Malentendido. **6°**: Matemática (24, 720) — La
 Desproporción; Historia (26, 780) — La Versión Única; Ciencias (18, 540) — El Desequilibrio;
 Lenguaje (31, 930) — El Enredo. Ninguno de los dos lleva voz pregrabada ni apoyo visual
-dibujado (esos quedan para 3° y 4°). Guardan su avance y su identidad en línea aparte de los
-demás.
+dibujado. Guardan su avance y su identidad en línea aparte de los demás.
 
 Y una **app de 3° básico** en `3ro/`, adaptada a niños de
 8-9 años (sin cronómetro, apoyo visual dibujado por código, texto grande y **lectura
@@ -130,6 +126,16 @@ diagrama de puntos—, su práctica del banco y **su voz grabada**, como todo lo
 **sin cronómetro**, medido por escalones: practica sus objetivos de cálculo mental, tablas y
 división, y como genera las operaciones por código no consume banco de preguntas ni voz. Y tiene su **📖 Lectura** con el primer libro del colegio, *Cuentos de Ada* de Pepe Pelayo (Santillana Infantil): 10 tramos, uno por cuento, con **101 preguntas de comprensión originales y aprobadas**, también con voz grabada. El niño lee el ejemplar: el juego no reproduce el texto del libro, y por eso su portada es la genérica de Lectura y no la tapa. Guarda su avance **y su identidad en línea aparte** de los demás cursos, aunque
 todos se sirvan del mismo dominio, así que conviven en el panel del profesor.
+
+Y **4° básico** en `4to/`, el sexto curso, terminado el 06/09/2026: mismo tratamiento que 3°
+—sin cronómetro, apoyo visual dibujado por código, **lectura por voz con una voz chilena
+grabada** (12.210 clips)—, pero sin mini-clases todavía. Sus **cuatro asignaturas**: Matemática
+(27 objetivos, 810 preguntas) — villano El Trueque; Historia, Geografía y Ciencias Sociales
+(18, 540) — La Discordia; Ciencias Naturales (17, 510, incluido el efecto del alcohol y el
+tabaco, currículum oficial) — El Revoltijo; y Lenguaje y Comunicación (29 de 30 objetivos —
+`LE04 OA 15`, escribir con letra clara, queda fuera del banco por ser caligrafía manuscrita —
+870 preguntas) — El Trabalenguas. Aprobado por muestreo el 06/09/2026. Guarda su avance y su
+identidad en línea aparte de los demás.
 
 Consulta [CLAUDE.md](CLAUDE.md) para el detalle de decisiones de diseño y el
 roadmap.

@@ -24,7 +24,20 @@ Uso:
   --fondo=blanco (por defecto) para arte sobre fondo blanco opaco (los villanos, las
   skins). --fondo=negro para arte que viene sobre fondo NEGRO (las portadas de capitulo
   del 2026-09: una vineta circular dorada sobre negro). Se inunda desde las esquinas
-  igual, pero buscando oscuro en vez de claro.
+  igual, pero buscando oscuro en vez de claro. --fondo=alfa para arte que YA trae
+  transparencia real (RGBA con alfa en gradiente, sin fondo opaco que quitar): no
+  corre el flood-fill, solo recorta y centra con el alfa que el archivo ya trae.
+
+  ⚠️ Antes de elegir --fondo, revisar el MODO del archivo (algunos generadores ya
+  entregan RGBA con canal alfa de verdad). Aplicarle flood-fill a una imagen que ya
+  tiene alfa real puede dejar agujeros: un halo de color alrededor del personaje (el
+  "glow" que pide el prompt de los villanos) no siempre alcanza el umbral de fondo y
+  bloquea la inundacion desde las esquinas hacia bolsillos internos, dejandolos sin
+  quitar (--fondo=negro/blanco) o el revés, transparentando de más (visto el
+  06/09/2026 con los 8 villanos de 4°: 4 ya traian alfa -> --fondo=alfa; los otros 4
+  venian aplanados sobre negro opaco y necesitaron --negromax=8, mucho mas bajo que
+  el default de 60, porque ese mismo halo rompia la conectividad del flood-fill con
+  el umbral por defecto). Se aprueba MIRANDO el resultado, nunca por "N procesadas".
 
   <archivo> puede ser una ruta o, si no existe, se busca en la carpeta de Descargas
   (asi se puede pasar el UUID que deja el generador de imagenes).
@@ -55,6 +68,15 @@ MARGEN = 0.06
 
 
 def quitar_fondo(im, fondo="blanco", negro_max=NEGRO_MAX):
+    if fondo == "alfa":
+        # El archivo YA trae transparencia real: no hay fondo opaco que inundar. Se
+        # limpian restos de halo (alfa casi nulo que no vale la pena conservar) y se
+        # respeta el resto del alfa tal cual viene.
+        out = im.convert("RGBA")
+        a = np.asarray(out)[:, :, 3]
+        limpio = np.where(a < 20, 0, a).astype(np.uint8)
+        out.putalpha(Image.fromarray(limpio, "L"))
+        return out
     im = im.convert("RGB")
     gris = im.convert("L")
     marca = gris.copy()
@@ -111,8 +133,8 @@ def main():
             margen = float(a.split("=", 1)[1])
         elif a.startswith("--fondo="):
             fondo = a.split("=", 1)[1]
-            if fondo not in ("blanco", "negro"):
-                sys.exit("--fondo debe ser 'blanco' o 'negro'")
+            if fondo not in ("blanco", "negro", "alfa"):
+                sys.exit("--fondo debe ser 'blanco', 'negro' o 'alfa'")
         elif a.startswith("--negromax="):
             negro_max = int(a.split("=", 1)[1])   # sube el umbral si el fondo no es negro puro (violeta)
         elif "=" in a:

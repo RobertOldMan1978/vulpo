@@ -33,6 +33,19 @@ ASIGS = {
     # Vocabulario de 3: sus codigos son VOC-CIEN y VOC-HIST, sin nivel adentro, igual que
     # el libro. Su expedicion en el juego es voc-general.
     "voc3":  {"banco": "vocabulario-3basico",    "oa": "VOC",  "caps": "voc-general",     "juego": "3ro"},
+    # 4 basico: el banco ya esta escrito y aprobado (06/09/2026), pero el fork "4to/"
+    # todavia no existe. generar-voz-nivel.py MUERE si el fork no existe (de ahi salen
+    # las metas y los nombres de etapa), asi que estas cuatro entradas quedan listas
+    # para el dia que el fork exista, sin que nadie tenga que volver a escribirlas.
+    # OJO con "caps": los ids de PREGUNTA de 4 son mate4-/cien4-/hist4-/leng4- (fijos,
+    # no se tocan), pero el id de CAPITULO no tiene por que copiar eso literal -en
+    # Ciencias de 5 y 6 el capitulo usa "cie5-"/"cie6-" aunque sus preguntas sean
+    # "cien5-"/"cien6-". Se dejo "cie4-" seg extrapolar ese mismo patron; VERIFICAR
+    # contra el id real que quede en 4to/index.html al construir el fork.
+    "mat4":  {"banco": "matematicas-4basico",    "oa": "MA04", "caps": "mate4-",          "juego": "4to"},
+    "hist4": {"banco": "historia-4basico",       "oa": "HI04", "caps": "hist4-",          "juego": "4to"},
+    "cie4":  {"banco": "ciencias-4basico",       "oa": "CN04", "caps": "cie4-",           "juego": "4to"},
+    "leng4": {"banco": "lenguaje-4basico",       "oa": "LE04", "caps": "leng4-",          "juego": "4to"},
 }
 
 

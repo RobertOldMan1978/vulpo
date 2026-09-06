@@ -79,7 +79,23 @@ _EMOJI = {"\U0001f34e": ("manzana", "manzanas"),
           "\U0001f41f": ("pez", "peces"),
           "\U0001f33b": ("girasol", "girasoles"),
           "\U0001f36a": ("galleta", "galletas"),
-          "\U0001f697": ("auto", "autos")}
+          "\U0001f697": ("auto", "autos"),
+          # Los 8 que agregaron los pictogramas de 4 basico (MA04 OA 27): sin ellos
+          # el sintetizador los lee por su nombre Unicode en ingles ("baguette
+          # bread", "paw prints"), y varios se quedaban literalmente MUDOS (el
+          # emoji no se pronuncia y desaparece de la frase). Verificado uno por
+          # uno contra el banco antes de agregarlo, con la palabra que el propio
+          # emoji representa -no la palabra exacta de esa pregunta-, igual que
+          # las 10 de arriba.
+          "\U0001f5bc️": ("imagen", "imagenes"),   # 🖼️ (con variation selector)
+          "\U0001f956": ("pan", "panes"),                # 🥖
+          "\U0001f34a": ("naranja", "naranjas"),          # 🍊
+          "\U0001f43e": ("huella", "huellas"),            # 🐾
+          "\U0001f4d6": ("libro", "libros"),              # 📖 (libro abierto)
+          "\U0001f338": ("flor", "flores"),               # 🌸
+          "\U0001f388": ("globo", "globos"),              # 🎈
+          "\U0001f48c": ("carta", "cartas"),              # 💌
+          "\U0001f4bf": ("disco", "discos")}              # 💿
 
 # Unidades: singular cuando la cantidad es 1 ("1 kilo", no "1 kilos").
 _UNIDADES = [(r"(\d+)\s*cm\b", "centimetro"),
@@ -110,6 +126,10 @@ _UNIDADES = [(r"(\d+)\s*cm\b", "centimetro"),
 _LEXICO = {}
 _RX_LEXICO = re.compile(r"(?!x)x") if not _LEXICO else re.compile(
     r"(%s)" % "|".join(_LEXICO), re.IGNORECASE)
+
+# Curso escolar en ordinal ("4° basico" -> "cuarto basico"), NO grados de angulo.
+_ORDINAL = {"1": "primero", "2": "segundo", "3": "tercero", "4": "cuarto",
+            "5": "quinto", "6": "sexto", "7": "septimo", "8": "octavo"}
 
 # Nombre hablado de cada letra, para las listas de letras sueltas (ver `normalizar`).
 _LETRA = {"A": "a", "B": "be", "C": "ce", "D": "de", "E": "e", "F": "efe", "G": "ge",
@@ -240,6 +260,16 @@ def normalizar(texto, oa=""):
 
     # El punto final de la frase NO es parte del monto: "$90." es 90, no "90."
     t = re.sub(r"\$\s*(\d{1,3}(?:\.\d{3})*)", r"\1 pesos", t)
+
+    # ⚠️ "4° basico" es EL CURSO (cuarto basico), no un angulo de 4 grados. Sin esto
+    # "4 grados basico" es un disparate, y encima es el nombre del propio nivel: el
+    # banco de 4 basico compara secciones ("4°A" vs "4°B") en las preguntas de datos
+    # y graficos. Va ANTES de la regla general de grados de abajo, que si es correcta
+    # para un angulo ("90°"). Encontrado auditando el banco de 4 basico ANTES de
+    # pagar la voz (Sesion 95), nunca escuchado en produccion.
+    t = re.sub(r"\b([1-8])°(?=[A-Za-z])", lambda m: _ORDINAL[m.group(1)] + " ", t)
+    t = re.sub(r"\b([1-8])°(?=\s+[Bb]ásico)", lambda m: _ORDINAL[m.group(1)], t)
+
     t = re.sub(r"(\d)\s*[º°]", r"\1 grados", t)
 
     # Una LISTA de letras sueltas ("los numeros I, V y X", "las letras A, B, C") se

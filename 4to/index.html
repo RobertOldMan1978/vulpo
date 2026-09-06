@@ -1,0 +1,2626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- El juego vive en /4to/ pero sus rutas relativas (assets/, contenido/) apuntan a la
+     raíz del sitio. Esta línea las resuelve. NO borrar: sin ella el juego queda sin imágenes
+     ni preguntas. Es válida porque el sitio vive en el dominio propio vulpo.cl. -->
+<base href="/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>VULPO · Aprende jugando — 4° Básico</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/kimun-512.png">
+<link rel="apple-touch-icon" href="assets/kimun-180.png">
+<meta name="theme-color" content="#1e1747">
+<!-- Instalacion en la pantalla de inicio. Un manifiesto POR CURSO: con uno solo en la raiz, el
+     icono abriria siempre el mismo nivel, y un papa con hijos en dos cursos necesita dos.
+     ⚠️ RUTA ABSOLUTA: el <base href="/"> de arriba resolveria "manifest.webmanifest" a
+     /manifest.webmanifest, que no existe. -->
+<link rel="manifest" href="/4to/manifest.webmanifest">
+<!-- iOS ignora display:standalone del manifiesto; necesita estas. Sin la primera, la app
+     instalada abre CON la barra del navegador y no se siente una app. -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+<!-- supabase-js auto-hospedado (no desde CDN): elimina el riesgo de cadena de suministro
+     (un CDN comprometido correría código en el navegador del alumno/profesor). Versión fija
+     2.112.4; para actualizar, descargar la nueva y cambiar esta ruta. -->
+<!-- Modo revisión de profesor, compartido por todos los cursos. -->
+<script src="assets/js/revision.js"></script>
+<script src="assets/js/sensible.js"></script>
+<!-- Apoyo visual de las preguntas (dibujos por código), compartido por todos los cursos. -->
+<script src="assets/js/visuales.js"></script>
+<!-- Lectura por voz, compartida. Nace dormida: solo habla tras VOZ.init(). -->
+<script src="assets/js/voz.js"></script>
+<!-- Reto Sin Fin de cálculo, compartido por todos los cursos. -->
+<script src="assets/js/calculo.js"></script>
+<script>if(!window.SENSIBLE)window.SENSIBLE={cats:{},oa:{},deExpedicion:function(){return[];}};</script>
+<script>if(!window.renderVisual)window.renderVisual=function(){return '';};</script>
+<!-- Fracciones apiladas (numerador sobre denominador), compartido. Se aplica SOLO al
+     enunciado, las opciones y el tip: el "PREGUNTA 1/10" del encabezado y el contador
+     del Reto comparten la forma y NO son fracciones. -->
+<script src="assets/js/fracciones.js"></script>
+<script>if(!window.FRAC)window.FRAC={html:function(t){return String(t==null?'':t)
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+  .replace(/"/g,'&quot;').replace(/'/g,'&#39;');},init:function(){}};</script>
+<!-- Ofrecer instalar en la pantalla de inicio, compartido. Nace dormido: INST.init(). -->
+<!-- Mini-clases de Matematica (diagramas SVG + motor de lecciones), compartido.
+     Nace dormido: LECC.init({ruta,hayReto}) inyecta su CSS y su pantalla. -->
+<script src="assets/js/lecciones.js"></script>
+<script>if(!window.LECC)window.LECC={activo:false,init:function(){return false;},
+  abrirLeccion:function(){},abrirUnidad:function(){},abrirMiniClaseDeOA:function(){},
+  volverAlCapitulo:function(){},finPractica:function(){},cargarPool:function(){return Promise.resolve();},
+  renderCampana:function(){return false;},nodoIntro:function(){return false;}};</script>
+<script src="assets/js/instalar.js"></script>
+<script>if(!window.INST)window.INST={activo:false,init:function(){},abrir:function(){}};</script>   <!-- respaldo: un 404 de visuales.js no puede matar el juego -->
+<!-- El motor del juego, compartido por los tres cursos. ⚠️ Va ANTES del <script> inline
+     (sus funciones se izan) y NO lleva respaldo vacío: sin él no hay juego. Lo vigila la
+     canaria del final del archivo. -->
+<script src="assets/js/motor.js"></script>
+<script src="assets/vendor/supabase-js-2.112.4.min.js"></script>
+<style>
+:root{
+  --bg1:#140f33; --bg2:#2a1b5e; --panel:#1e1747; --panel2:#271f56;
+  --gold:#ffc93c; --cyan:#4dd8ff; --green:#3ee089; --pink:#ff4d8d; --violet:#8f6bff;
+  --txt:#f3f0ff; --dim:#a89fd6;
+  --r:18px;
+}
+/* Corriendo como app instalada, el "Volver a vulpo.cl" del inicio es una fuga: un nino lo
+   toca, se le abre el navegador encima y no sabe volver. El del FIN DE LA DEMO no se toca:
+   ese es el que lleva al contacto y ahi abrir el navegador es lo que se quiere.
+   Va aca y no en instalar.js -unica excepcion a "un modulo se lleva su CSS"- porque el
+   navegador la aplica solo: meterla en el modulo la haria depender de que cargue el JS. */
+@media (display-mode: standalone){ #salirWeb{display:none} }
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{
+  font-family:'Nunito',sans-serif;color:var(--txt);
+  background:radial-gradient(1200px 800px at 70% -10%, #3b2a7a 0%, transparent 55%),
+             linear-gradient(160deg,var(--bg1),var(--bg2));
+  min-height:100dvh;overflow-x:hidden;
+}
+.stars{position:fixed;inset:0;pointer-events:none;z-index:0}
+.stars span{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.5;animation:tw 3s infinite alternate}
+@keyframes tw{from{opacity:.15}to{opacity:.7}}
+/* estrella fugaz ocasional */
+.shoot{position:fixed;z-index:0;width:3px;height:3px;border-radius:50%;pointer-events:none;
+  background:#fff;box-shadow:0 0 6px 2px #fff,0 0 14px 5px #8f6bff88;animation:shootFall 1.3s ease-in forwards}
+.shoot::after{content:"";position:absolute;left:1px;top:1px;width:78px;height:2px;transform-origin:left center;
+  transform:rotate(-48deg);border-radius:2px;background:linear-gradient(90deg,#ffffffdd,#8f6bff33,transparent)}
+@keyframes shootFall{0%{opacity:0;transform:translate(0,0)}12%{opacity:1}100%{opacity:0;transform:translate(var(--sx),var(--sy))}}
+.wrap{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:16px 16px 90px;min-height:100dvh}
+h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
+.screen{display:none;animation:pop .35s ease}
+.screen.on{display:block}
+@keyframes pop{from{transform:scale(.96);opacity:0}to{transform:scale(1);opacity:1}}
+
+/* ===== HUD ===== */
+.hud{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.hud .avatar{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:30px;
+  background:linear-gradient(145deg,var(--violet),#5b3df0);box-shadow:0 4px 14px #5b3df066;flex-shrink:0}
+.hud .meta{flex:1;min-width:0}
+.hud .name{font-weight:900;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.xpbar{height:12px;background:#00000055;border-radius:8px;overflow:hidden;margin-top:4px;position:relative}
+.xpbar i{display:block;height:100%;width:0%;border-radius:8px;
+  background:linear-gradient(90deg,var(--cyan),var(--violet));transition:width .6s cubic-bezier(.2,.9,.3,1.4)}
+.hud .lvl{font-size:11px;color:var(--dim);margin-top:2px}
+.coins{display:flex;align-items:center;gap:5px;background:#00000044;padding:7px 12px;border-radius:14px;font-weight:900;color:var(--gold)}
+
+/* ===== INICIO ===== */
+.logo{text-align:center;margin:26px 0 8px}
+.banner-desafio{max-width:480px;margin:0 auto 12px;padding:12px 14px;border:2px solid var(--gold);
+  border-radius:14px;background:linear-gradient(90deg,#ffc93c22,#ff4d8d22);text-align:center}
+.banner-desafio h4{color:var(--gold);font-size:14px;margin:0 0 4px}
+.banner-desafio p{color:#fff;font-size:12px;margin:0 0 8px}
+.banner-desafio button{background:var(--violet);color:#fff;border:0;border-radius:10px;
+  font-family:inherit;font-weight:900;padding:8px 16px;cursor:pointer}
+.logo .badge{font-size:56px;display:inline-block;animation:float 3s ease-in-out infinite}
+/* La mascota de la portada es un busto con fondo transparente: nada de recorte circular ni
+   borde, que le cortaban la capucha. Se deja suelta, con sombra y el mismo flotar de antes. */
+.logo .badge-img{width:190px;height:auto;filter:drop-shadow(0 12px 22px #0008);
+  animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-10px) rotate(4deg)}}
+.logo h1{font-size:34px;line-height:1.05;margin-top:6px;
+  background:linear-gradient(90deg,var(--gold),#ff9d3c,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo p{color:var(--dim);font-weight:800;margin-top:6px}
+.rol-nombre{font-family:'Titan One',cursive;letter-spacing:.5px;font-size:24px;line-height:1.1;margin-top:8px;
+  background:linear-gradient(90deg,var(--cyan),var(--violet),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.card{background:var(--panel);border:1px solid #ffffff14;border-radius:var(--r);padding:18px;margin-top:16px;box-shadow:0 10px 30px #00000045}
+.card h3{font-size:13px;text-transform:uppercase;letter-spacing:2px;color:var(--dim);margin-bottom:12px}
+input.nm{width:100%;padding:14px;border-radius:14px;border:2px solid #ffffff1f;background:#00000040;color:var(--txt);
+  font-family:'Nunito';font-weight:800;font-size:16px;outline:none}
+input.nm:focus{border-color:var(--cyan)}
+.avgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.av{aspect-ratio:1;border-radius:16px;display:grid;place-items:center;font-size:32px;cursor:pointer;
+  background:#00000040;border:2px solid transparent;transition:.15s}
+.av.sel{border-color:var(--gold);background:linear-gradient(145deg,#5b3df0aa,#8f6bff55);transform:scale(1.08);box-shadow:0 0 18px #8f6bff88}
+.btn{display:block;width:100%;padding:16px;border:none;border-radius:16px;cursor:pointer;
+  font-family:'Titan One';font-size:18px;color:#2a1400;letter-spacing:1px;
+  background:linear-gradient(180deg,var(--gold),#ff9d3c);box-shadow:0 6px 0 #b56a10,0 12px 24px #00000055;
+  transition:transform .08s, box-shadow .08s;margin-top:18px}
+.btn:active{transform:translateY(4px);box-shadow:0 2px 0 #b56a10}
+.btn[hidden]{display:none}   /* .btn{display:block} anulaba el atributo hidden: botones ocultos seguían visibles */
+.btn.sec{background:linear-gradient(180deg,#6d5bff,#4a35d8);color:#fff;box-shadow:0 6px 0 #2b1e8f,0 12px 24px #00000055}
+/* Chips pequenos del armador de enlaces (?armar=1). */
+.chip{padding:7px 12px;border:2px solid var(--violet);border-radius:999px;background:#1a1440;
+  color:#fff;font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;cursor:pointer}
+.chip:active{transform:translateY(1px)}
+/* Marca de contenido sensible en el armador (assets/js/sensible.js). */
+.sens-m{display:inline-block;margin-left:4px;padding:1px 5px;border-radius:6px;font-size:12px;line-height:1.4}
+.sens-leyenda{font-size:11px;font-weight:800;color:var(--dim);margin:2px 0 8px;line-height:1.9}
+.btn.sec:active{box-shadow:0 2px 0 #2b1e8f}
+.btn:disabled{filter:grayscale(.8);opacity:.5;box-shadow:none;transform:none}
+
+/* ===== MAPA ===== */
+.mapbox{position:relative;padding:6px 0 10px}
+.route{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
+.route path{fill:none;stroke:#ffffff22;stroke-width:8;stroke-linecap:round;stroke-dasharray:2 16}
+.route path.done{stroke:var(--gold);stroke-dasharray:none;filter:drop-shadow(0 0 6px #ffc93c88)}
+.node{position:relative;display:flex;align-items:center;gap:14px;margin:22px 0;z-index:1}
+.node:nth-child(even){flex-direction:row-reverse;text-align:right}
+.orb{width:74px;height:74px;border-radius:50%;display:grid;place-items:center;font-size:32px;flex-shrink:0;
+  background:radial-gradient(circle at 32% 28%,#7b64ff,#3d2bb0);border:4px solid #ffffff2b;box-shadow:0 8px 22px #00000066;cursor:pointer;transition:.2s}
+.node.open .orb{border-color:var(--gold);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 #ffc93c66,0 8px 22px #00000066}50%{box-shadow:0 0 0 14px #ffc93c00,0 8px 22px #00000066}}
+.node.done .orb{background:radial-gradient(circle at 32% 28%,#4fe6a0,#128a56);border-color:var(--green)}
+.node.lock .orb{background:#241d4e;filter:grayscale(1);cursor:not-allowed;font-size:26px}
+.node .info b{display:block;font-size:15px}
+.node .info small{color:var(--dim);font-weight:800}
+.stars-mini{color:var(--gold);font-size:13px;letter-spacing:2px}
+
+/* ranking */
+.rk{display:flex;align-items:center;gap:10px;padding:9px 4px;border-bottom:1px dashed #ffffff14;font-weight:800}
+.rk:last-child{border:none}
+.rk .pos{width:26px;text-align:center;font-family:'Titan One';color:var(--dim)}
+.rk.top .pos{color:var(--gold)}
+.rk .em{font-size:20px}
+.rk .pts{margin-left:auto;color:var(--cyan)}
+.rk.me{background:#8f6bff22;border-radius:10px}
+/* Ranking · marca de Modo Difícil: borde animado 4 colores (las asignaturas), más intenso por conteo */
+.rk.dif{border:2px solid transparent;border-radius:12px;margin:5px 0;padding:9px 8px;
+  background:linear-gradient(#241a49,#241a49) padding-box,
+    linear-gradient(90deg,var(--gold),var(--cyan),var(--green),var(--pink),var(--gold)) border-box;
+  background-size:auto,300% 100%;animation:rkflow 6s linear infinite}
+.rk.me.dif{background:linear-gradient(#2e2359,#2e2359) padding-box,
+    linear-gradient(90deg,var(--gold),var(--cyan),var(--green),var(--pink),var(--gold)) border-box;
+  background-size:auto,300% 100%}
+.rk.dif.d2{box-shadow:0 0 12px #ffffff1f}
+.rk.dif.d3{border-width:3px;box-shadow:0 0 22px #8f6bff66,0 0 9px #ffc93c55;animation-duration:3.2s}
+/* Maestría Total: marco dorado sólido, por encima del borde de 4 colores */
+.rk.dif.d4{border:3px solid var(--gold);
+  background:linear-gradient(#3a2c12,#241a49) padding-box, linear-gradient(#ffe07a,#ffc93c,#ff9d3c) border-box;
+  box-shadow:0 0 24px #ffc93c88,0 0 10px #ffe07a66;animation:none}
+.rk.me.dif.d4{background:linear-gradient(#4a3a14,#2e2359) padding-box, linear-gradient(#ffe07a,#ffc93c,#ff9d3c) border-box}
+@keyframes rkflow{to{background-position:0 0,300% 0}}
+@media (prefers-reduced-motion:reduce){.rk.dif{animation:none}}
+
+/* ===== QUIZ ===== */
+.qtop{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+/* Los controles de audio son position:fixed arriba a la derecha (.sndbtn), asi que en
+   pantalla angosta se COMEN el reloj de .qtop: medido, quedaba tapado en el quiz y en el
+   duelo de los tres cursos, o sea el jugador no veia su cuenta regresiva. Se les reserva
+   el espacio. En pantalla ancha los botones quedan fuera del contenedor y no estorban. */
+@media (max-width:560px){ .qtop{padding-right:94px} }
+.back{background:#00000044;border:none;color:var(--txt);width:42px;height:42px;border-radius:13px;font-size:18px;cursor:pointer}
+.qprog{flex:1;height:14px;background:#00000055;border-radius:8px;overflow:hidden}
+.qprog i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--green),var(--cyan));transition:width .4s}
+.timer{font-family:'Titan One';font-size:18px;color:var(--gold);min-width:40px;text-align:center}
+.timer.low{color:var(--pink);animation:shake .4s infinite}
+.combo{position:fixed;top:18%;left:50%;transform:translateX(-50%);font-family:'Titan One';font-size:44px;
+  color:var(--gold);text-shadow:0 0 20px #ffc93c,3px 3px 0 #b5651d;opacity:0;pointer-events:none;z-index:50}
+.combo.show{animation:comboAnim .9s ease forwards}
+@keyframes comboAnim{0%{opacity:0;transform:translateX(-50%) scale(.4)}25%{opacity:1;transform:translateX(-50%) scale(1.25)}60%{transform:translateX(-50%) scale(1)}100%{opacity:0;transform:translateX(-50%) scale(1) translateY(-40px)}}
+.qcard{background:var(--panel);border-radius:var(--r);padding:20px;border:1px solid #ffffff14;margin-bottom:14px}
+.qcard .tag{font-size:11px;font-weight:900;letter-spacing:2px;color:var(--cyan);text-transform:uppercase}
+.qcard h2{font-size:20px;line-height:1.3;margin-top:8px;font-family:'Nunito';font-weight:900}
+.opts{display:grid;gap:10px}
+.opt{padding:15px 16px;border-radius:14px;background:var(--panel2);border:2px solid #ffffff17;cursor:pointer;
+  font-weight:800;font-size:15px;display:flex;gap:10px;align-items:center;transition:.12s}
+.opt .key{width:28px;height:28px;border-radius:9px;background:#00000045;display:grid;place-items:center;
+  font-family:'Titan One';font-size:13px;color:var(--dim);flex-shrink:0}
+.opt:active{transform:scale(.98)}
+.opt.ok{background:#128a56;border-color:var(--green);animation:bump .35s}
+.opt.bad{background:#8a1240;border-color:var(--pink);animation:shake .35s}
+.opt.off{opacity:.45;pointer-events:none}
+.opt.descartada{opacity:.22;pointer-events:none;text-decoration:line-through}
+.btn-ayuda{display:block;margin:10px auto 0;padding:8px 16px;border:0;border-radius:12px;
+  font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;cursor:pointer;
+  color:#2a1400;background:linear-gradient(180deg,var(--gold),#ff9d3c);box-shadow:0 3px 10px rgba(0,0,0,.3)}
+.btn-ayuda:disabled{opacity:.4;cursor:default;filter:grayscale(.4)}
+.res-obj{color:var(--dim);font-weight:800;font-size:14px;margin:2px 0 8px}
+.qmeta{color:var(--dim);font-weight:800;font-size:12px;margin-top:6px}
+.meta-card{max-width:460px;margin:40px auto 0;background:var(--panel2);border:1px solid #ffffff1f;
+  border-radius:18px;padding:26px 22px;text-align:center;box-shadow:0 12px 34px rgba(0,0,0,.4)}
+.meta-ic{font-size:44px;display:block;margin-bottom:8px}
+.meta-kick{color:var(--gold);font-weight:900;font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+.meta-frase{color:var(--txt);font-weight:800;font-size:20px;line-height:1.35;margin:10px 0 20px}
+/* Prediccion antes del resultado: el nino declara como cree que le fue ANTES de ver su
+   puntaje, asi el semaforo deja de ser un eco de las estrellas. Los botones viven ahora
+   en scr-pred; .res-sem-msg se conserva porque el resultado la usa para responderle. */
+#predOpts{display:flex;gap:8px;justify-content:center;margin-bottom:18px}
+.sem{flex:1;max-width:112px;font-size:30px;line-height:1;background:transparent;border:2px solid #ffffff1f;
+  border-radius:14px;padding:12px 6px;cursor:pointer;opacity:.75;transition:.12s;color:var(--txt)}
+.sem span{display:block;font-size:12px;font-weight:800;margin-top:7px;line-height:1.2}
+.sem:hover{opacity:1}
+.sem.sel{opacity:1;border-color:var(--gold);background:#ffffff10;transform:scale(1.06)}
+.res-sem-msg{min-height:18px;color:var(--txt);font-weight:800;font-size:13px;margin:6px 0 12px}
+/* Pantalla de conflicto de progreso. Reusa .meta-card, que desde la Sesion 74 es
+   un selector suelto y ya no esta anclado a #scr-meta: por eso hereda bien aca. */
+#progComp{display:flex;gap:10px;margin:14px 0 18px}
+.prog-col{flex:1;min-width:0;background:#00000033;border:1px solid #ffffff1f;border-radius:14px;padding:12px 10px}
+.prog-col h4{margin:0 0 6px;font-size:12px;font-weight:900;color:var(--gold);text-transform:uppercase;letter-spacing:.03em}
+.prog-col p{margin:0;font-size:13px;font-weight:800;line-height:1.5}
+#scr-progreso .btn{margin-top:8px}
+@keyframes bump{50%{transform:scale(1.04)}}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.feedback{min-height:22px;text-align:center;font-weight:900;margin-top:4px}
+.feedback.ok{color:var(--green)} .feedback.bad{color:var(--pink)}
+.qexpl{background:#00000033;border:1px solid var(--green);border-radius:14px;padding:12px 14px;margin-top:10px;font-weight:800;font-size:14px;line-height:1.42;animation:pop .3s ease}
+.qexpl b{color:var(--green)}
+.qexpl .expl-tip{display:block;color:var(--dim);margin-top:6px}
+.btn.seguir{margin-top:12px;background:linear-gradient(180deg,var(--cyan),#2aa8d8);color:#04222e;box-shadow:0 6px 0 #1a6d8f,0 12px 24px #00000055}
+.btn.seguir:active{box-shadow:0 2px 0 #1a6d8f}
+/* Comentario de Vulpi en el mapa */
+.kim-dato{display:flex;align-items:center;gap:12px;background:var(--panel);border:1px solid #ffc93c55;border-radius:16px;padding:10px 12px;margin:0 0 12px;box-shadow:0 8px 22px #0005;opacity:0;transform:translateY(-8px);transition:.35s}
+.kim-dato.show{opacity:1;transform:translateY(0)}
+.kim-dato img{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center 40%;border:3px solid var(--gold);flex-shrink:0}
+.kim-dato .kd-body{flex:1;min-width:0}
+.kim-dato .kd-title{font-weight:900;color:var(--gold);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+.kim-dato .kd-q{font-weight:800;font-size:13px;line-height:1.3;margin-top:2px}
+.kim-dato .kd-a{font-weight:900;font-size:13px;color:var(--green);margin-top:3px}
+.kim-dato .kd-x{background:none;border:none;color:var(--dim);font-size:16px;cursor:pointer;padding:4px;flex-shrink:0}
+
+/* ===== RESULTADO ===== */
+.resbox{text-align:center;padding-top:20px}
+.resbox .big{font-size:74px;animation:float 3s ease-in-out infinite}
+.resbox h2{font-size:30px;margin-top:6px}
+.statgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:18px}
+.stat{background:var(--panel);border-radius:14px;padding:12px;border:1px solid #ffffff14}
+.stat b{font-family:'Titan One';font-size:20px;display:block}
+.stat small{color:var(--dim);font-weight:800;font-size:11px}
+.starline{font-size:38px;letter-spacing:6px;margin-top:14px}
+.starline .w{opacity:.25}
+.starline .g{color:var(--gold);text-shadow:0 0 16px #ffc93c;display:inline-block;animation:starIn .5s backwards}
+.starline .g:nth-child(2){animation-delay:.25s}.starline .g:nth-child(3){animation-delay:.5s}
+@keyframes starIn{from{transform:scale(3);opacity:0}to{transform:scale(1);opacity:1}}
+
+/* logro toast */
+.toast{position:fixed;left:50%;bottom:100px;transform:translateX(-50%) translateY(30px);z-index:60;
+  background:linear-gradient(145deg,#3b2a7a,#241a55);border:2px solid var(--gold);border-radius:16px;
+  padding:12px 18px;display:flex;gap:12px;align-items:center;opacity:0;pointer-events:none;transition:.4s;box-shadow:0 0 30px #ffc93c55}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast .ic{font-size:30px}
+.toast b{color:var(--gold);display:block;font-size:13px;text-transform:uppercase;letter-spacing:1px}
+.toast span{font-weight:800;font-size:14px}
+
+/* partículas */
+.pt{position:fixed;z-index:55;pointer-events:none;font-size:18px;animation:fall 1s ease-out forwards}
+@keyframes fall{to{transform:translate(var(--dx),var(--dy)) rotate(var(--rot));opacity:0}}
+
+/* nav inferior */
+.nav{position:fixed;bottom:0;left:0;right:0;z-index:40;display:flex;justify-content:center;gap:8px;
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#120d2eee;backdrop-filter:blur(8px);border-top:1px solid #ffffff12}
+.nav button{flex:1;max-width:150px;background:none;border:none;color:var(--dim);font-family:'Nunito';font-weight:900;
+  font-size:12px;cursor:pointer;padding:8px;border-radius:12px}
+.nav button .i{display:block;font-size:22px;margin-bottom:2px}
+.nav button.on{color:var(--gold);background:#ffc93c1a}
+/* ===== SUBIDA DE NIVEL ===== */
+.levelup{position:fixed;inset:0;z-index:70;display:none;align-items:center;justify-content:center;pointer-events:none;
+  background:radial-gradient(circle at 50% 50%, #8f6bff55, #140f33cc 65%)}
+.levelup.show{display:flex}
+.levelup .box{text-align:center;animation:luPop .7s cubic-bezier(.2,.9,.3,1.6)}
+.levelup .ic{font-size:80px;display:block;animation:float 2s ease-in-out infinite}
+.levelup .lvl-num{font-family:'Titan One',cursive;font-size:46px;color:var(--gold);
+  text-shadow:0 0 24px #ffc93c,3px 3px 0 #b5651d;display:block;margin-top:2px}
+.levelup .lvl-sub{color:var(--cyan);font-weight:900;letter-spacing:2px;text-transform:uppercase;font-size:14px}
+@keyframes luPop{0%{transform:scale(.3);opacity:0}60%{opacity:1}100%{transform:scale(1);opacity:1}}
+.levelup .kim{width:136px;height:136px;display:block;margin:0 auto 6px;border-radius:50%;object-fit:cover;object-position:center 42%;
+  border:4px solid var(--gold);box-shadow:0 0 28px #ffc93c88;transform-box:fill-box;transform-origin:50% 100%}
+.levelup.show .kim{animation:kimCelebrate 1.4s ease}
+@keyframes kimBlink{0%,90%,100%{transform:scaleY(1)}94%{transform:scaleY(.1)}}
+@keyframes kimCelebrate{0%{transform:translateY(0) rotate(0)}20%{transform:translateY(-28px) rotate(-12deg)}42%{transform:translateY(0) rotate(0)}58%{transform:translateY(-34px) rotate(360deg)}82%{transform:translateY(0) rotate(360deg)}100%{transform:translateY(0) rotate(360deg)}}
+/* botón de sonido */
+.sndbtn{position:fixed;top:10px;right:10px;z-index:46;width:42px;height:42px;border-radius:12px;border:1px solid #ffffff1f;
+  background:#120d2ecc;backdrop-filter:blur(6px);color:var(--txt);font-size:20px;cursor:pointer;display:grid;place-items:center}
+.sndbtn:active{transform:scale(.92)}
+.cred-modal{position:fixed;inset:0;background:#0a0718cc;backdrop-filter:blur(4px);z-index:60;display:flex;align-items:center;justify-content:center;padding:20px}
+.cred-modal[hidden]{display:none}
+.cred-box{background:var(--panel);border:1px solid #ffffff22;border-radius:18px;padding:22px;max-width:400px;width:100%;max-height:85vh;overflow:auto}
+.cred-box p{font-size:13px;line-height:1.5;margin:10px 0;color:var(--txt)}
+.cred-box b{color:var(--cyan)}
+/* ===== TIENDA ===== */
+.shopgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.shop-item{background:var(--panel);border:2px solid #ffffff14;border-radius:16px;padding:14px;text-align:center}
+.shop-item.equipped{border-color:var(--green)}
+.shop-item .em{font-size:44px;line-height:1}
+.shop-item .price{font-weight:900;color:var(--gold);margin:6px 0}
+.shop-item .skin-name{font-weight:900;font-size:11px;color:var(--cyan);margin-top:4px;line-height:1.15;min-height:26px;display:flex;align-items:center;justify-content:center}
+.shop-item button{width:100%;padding:10px;border:none;border-radius:12px;font-family:'Nunito';font-weight:900;font-size:13px;cursor:pointer}
+.shop-item .buy{background:linear-gradient(180deg,var(--gold),#ff9d3c);color:#2a1400}
+.shop-item .equip{background:var(--panel2);color:var(--cyan);border:1px solid var(--cyan)}
+.shop-item .on{background:var(--green);color:#063a22}
+.shop-item button:disabled{filter:grayscale(.7);opacity:.5;cursor:not-allowed}
+/* ===== DUELO ===== */
+.duelo-av{grid-template-columns:repeat(6,1fr)}
+/* El nombre del turno NO compite con la barra de progreso: en el duelo local dice a quien
+   le toca el telefono, asi que vale mas que la barra. Conserva el ellipsis por si es largo. */
+.duelo-turn{font-weight:900;font-size:14px;color:var(--gold);flex:none;max-width:52%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.duelo-score{text-align:center;font-weight:900;margin-top:14px;font-size:16px;color:var(--cyan)}
+.duelo-final{font-family:'Titan One';font-size:19px;margin:14px 0;line-height:1.5}
+/* ===== DUELO ONLINE ===== */
+.mi-codigo{font-family:'Titan One';font-size:30px;color:var(--gold);letter-spacing:2px;text-align:center;
+  background:#00000033;border:1px dashed #ffc93c66;border-radius:12px;padding:12px;margin-top:6px}
+.od-exp{display:flex;flex-direction:column;gap:8px}
+.od-exp button{padding:12px;border:2px solid #ffffff1f;border-radius:12px;background:#00000030;color:var(--txt);
+  font-family:'Nunito';font-weight:900;font-size:14px;cursor:pointer;text-align:left;display:flex;align-items:center;gap:10px}
+.od-exp button.sel{border-color:var(--cyan);background:#4dd8ff1f}
+.od-exp button img{width:38px;height:38px;border-radius:9px;object-fit:cover}
+.od-exp button .od-exp-tx{display:flex;flex-direction:column;line-height:1.2}
+.od-exp button .od-exp-tx small{font-weight:800;font-size:11px;color:var(--dim)}
+.od-exp button.od-exp-volver{justify-content:center;color:var(--cyan);border-style:dashed;background:#00000018}
+.od-exp button .od-exp-ic{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:20px;background:#8f6bff22;flex:0 0 auto}
+.od-reloj{text-align:center;font-weight:900;color:var(--pink);font-size:14px;margin-bottom:8px}
+/* ===== RETO DE CÁLCULO ===== */
+.calc-top{display:flex;align-items:center;gap:10px;margin:14px 0 8px}
+.calc-hud-nivel{display:flex;align-items:center;gap:10px;flex:1}
+.calc-hud-jefe{flex:1}
+.calc-jefe-top{display:flex;justify-content:space-between;font-weight:900;font-size:13px;margin-bottom:4px;color:var(--txt)}
+.calc-vidabar{height:10px;border-radius:6px;background:#ffffff14;overflow:hidden}
+.calc-vidabar i{display:block;height:100%;width:100%;background:var(--pink);transition:width .3s}
+.calc-hud-sinfin{flex:1;text-align:center;font-weight:900;color:var(--violet);font-size:15px}
+.calc-hud-sinfin b{color:var(--gold)}
+.calc-nivic{width:60px;height:60px;border-radius:12px;background:#4dd8ff1f;display:grid;place-items:center;font-size:28px;flex-shrink:0}
+#kimBuddyCalc{width:64px;height:64px}
+.calc-jefe-ic{width:22px;height:22px;object-fit:contain;vertical-align:middle;margin-right:5px}
+.calc-nivic-img{padding:0;overflow:hidden}
+.calc-nivic-img img{width:100%;height:100%;object-fit:contain}
+.calc-x{width:38px;height:38px;border-radius:11px;border:1px solid #ffffff1f;background:#00000030;color:var(--txt);font-size:15px;cursor:pointer;flex-shrink:0}
+.calc-prog{flex:1;height:10px;border-radius:6px;background:#ffffff14;overflow:hidden}
+.calc-prog i{display:block;height:100%;width:0;background:var(--cyan);transition:width .3s}
+.calc-numq{font-weight:900;color:var(--gold);font-size:14px;flex-shrink:0}
+.calc-timerbar{height:6px;border-radius:4px;background:#ffffff14;overflow:hidden;margin-bottom:14px}
+.calc-timerbar i{display:block;height:100%;width:100%;background:var(--green)}
+.calc-timerbar.low i{background:var(--pink)}
+.calc-combo{text-align:center;height:24px;font-weight:900;color:var(--pink);font-size:16px}
+.calc-preg{text-align:center;font-family:'Titan One';font-size:46px;margin:14px 0 26px;color:var(--txt);letter-spacing:1px;word-break:break-word}
+.calc-opts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.calc-opts button{padding:22px 12px;border:2px solid #ffffff1f;border-radius:16px;background:#120d2e;color:var(--txt);
+ font-family:'Titan One';font-size:26px;cursor:pointer;transition:.12s}
+.calc-opts button:active{transform:scale(.97)}
+.calc-opts button.ok{border-color:var(--green);background:#3ee08922}
+.calc-opts button.bad{border-color:var(--pink);background:#ff4d8d22}
+.calc-stars{font-size:42px;letter-spacing:4px;color:var(--gold)}
+.calc-res-stats{display:flex;justify-content:center;gap:22px;margin-top:14px}
+.calc-res-stats b{display:block;font-size:24px;color:var(--gold)}
+.calc-res-stats small{color:var(--dim);font-weight:800;font-size:12px}
+.od-jugadores{display:flex;flex-direction:column;gap:8px;max-height:230px;overflow-y:auto}
+.od-jugadores button{padding:10px 12px;border:2px solid #ffffff1f;border-radius:12px;background:#00000030;color:var(--txt);
+  font-family:'Nunito';font-weight:900;font-size:14px;cursor:pointer;text-align:left;display:flex;align-items:center;gap:10px}
+.od-jugadores button.sel{border-color:var(--cyan);background:#4dd8ff1f}
+.od-jugadores .jb-bot{margin-left:auto;font-size:11px;color:var(--dim);font-weight:800}
+.pend-item{display:flex;align-items:center;gap:10px;padding:10px;border-radius:12px;background:var(--panel2);
+  border:1px solid #ffffff14;margin-bottom:8px;cursor:pointer}
+.pend-item:active{transform:scale(.99)}
+.pend-item .em{font-size:26px}
+.pend-item .pi-body{flex:1;min-width:0}
+.pend-item .pi-n{font-weight:900;font-size:14px}
+.pend-item .pi-t{color:var(--pink);font-weight:800;font-size:12px}
+.pend-item .pi-go{color:var(--green);font-weight:900}
+/* ===== COMPAÑERO VULPI ===== */
+.kim-stage{display:flex;justify-content:center;margin:2px 0 10px}
+.kim-buddy{width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:center 30%;
+ background:radial-gradient(circle at 50% 34%,#fff,#efe6d2);
+ border:4px solid var(--gold);box-shadow:0 0 16px #ffc93c66,0 6px 12px #0006;will-change:transform}
+.kim-buddy.happy{animation:kimBounce .6s ease}
+.kim-buddy.sad{animation:kimShake .5s ease}
+.kim-buddy.wow{animation:kimPop .7s ease}
+@keyframes kimBounce{0%,100%{transform:translateY(0) scale(1)}30%{transform:translateY(-18px) scale(1.08,.92)}55%{transform:translateY(0) scale(.94,1.08)}75%{transform:translateY(-7px) scale(1)}}
+@keyframes kimShake{10%,90%{transform:translateX(-3px) rotate(-4deg)}30%,70%{transform:translateX(5px) rotate(4deg)}50%{transform:translateX(-5px) rotate(-2deg)}}
+@keyframes kimPop{0%{transform:scale(1) rotate(0)}40%{transform:scale(1.28) rotate(-13deg)}70%{transform:scale(1.08) rotate(10deg)}100%{transform:scale(1) rotate(0)}}
+.kim-res{width:164px;height:164px;border-radius:50%;object-fit:cover;object-position:center 30%;
+ background:radial-gradient(circle at 50% 34%,#fff,#efe6d2);
+ border:5px solid var(--gold);box-shadow:0 0 26px #ffc93c88,0 10px 16px #0007}
+/* Vulpi vestido (ambientación de expedición) */
+.badge-conq{width:168px;height:168px;object-fit:contain;
+ filter:drop-shadow(0 8px 16px #0007) drop-shadow(0 0 16px #ffc93c55);animation:float 3s ease-in-out infinite}
+.mapa-head{display:flex;align-items:center;gap:12px;margin:6px 0 8px}
+.mapa-head img{width:66px;height:66px;object-fit:contain;filter:drop-shadow(0 4px 8px #0006);flex-shrink:0}
+.mapa-head h2{font-size:22px;margin:0}
+.mapa-head p{color:var(--dim);font-weight:800;font-size:13px;margin:0}
+/* selector Normal / Difícil */
+.modo-sel{display:flex;gap:8px;margin:0 0 12px}
+.modo-sel button{flex:1;padding:10px;border:2px solid #ffffff1f;border-radius:13px;cursor:pointer;
+ background:#00000030;color:var(--dim);font-family:'Nunito';font-weight:900;font-size:13px;transition:.15s}
+.modo-sel button.on{border-color:var(--cyan);color:var(--txt);background:#4dd8ff1f}
+.modo-sel button.dif.on{border-color:var(--pink);color:#fff;background:#ff4d8d22}
+
+/* ===== TEMA MODO DIFÍCIL (oscuro / intenso) ===== */
+body.en-dificil{
+  background:radial-gradient(900px 620px at 50% -12%, #5a0f1f 0%, transparent 55%),
+             linear-gradient(160deg,#0b0509,#180912) !important;
+}
+body.en-dificil::after{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(circle at 50% 42%, transparent 46%, #000000cc 100%)}
+body.en-dificil .wrap{position:relative;z-index:2}
+body.en-dificil .stars span{background:#ff7a7a;opacity:.3}
+body.en-dificil .hud .avatar{background:linear-gradient(145deg,#b3122f,#7a0f22);box-shadow:0 4px 14px #ff2d5566}
+body.en-dificil .xpbar i{background:linear-gradient(90deg,#ff6b6b,#b3122f)}
+body.en-dificil .orb{background:radial-gradient(circle at 32% 28%,#8a1f33,#3d0a16)}
+body.en-dificil .node.done .orb{background:radial-gradient(circle at 32% 28%,#c0392b,#6a1420);border-color:#ff6b6b}
+body.en-dificil .node.open .orb{border-color:#ff4d6a;animation:pulseDif 1.4s infinite}
+@keyframes pulseDif{0%,100%{box-shadow:0 0 0 0 #ff2d55aa,0 8px 22px #000a}50%{box-shadow:0 0 0 14px #ff2d5500,0 8px 22px #000a}}
+body.en-dificil .card,body.en-dificil .qcard{background:#16070f;border-color:#ff4d6a33}
+body.en-dificil .qcard{box-shadow:0 0 26px #ff2d5522,0 10px 30px #000a}
+body.en-dificil .qcard .tag{color:#ff6b6b}
+body.en-dificil .opt{background:#1c0a14;border-color:#ffffff14}
+body.en-dificil .qprog i{background:linear-gradient(90deg,#ff6b6b,#b3122f)}
+body.en-dificil .timer{color:#ff6b6b}
+body.en-dificil .disp{color:#ff9d9d;text-shadow:0 0 16px #ff2d5555}
+body.en-dificil .nav{background:#0c0510ee;border-top-color:#ff4d6a22}
+body.en-dificil .nav button.on{color:#ff6b6b;background:#ff2d551a}
+/* selección de expediciones (asignaturas) */
+.exp-grid{display:grid;gap:12px;margin-top:16px}
+.exp-card{display:flex;align-items:center;gap:14px;background:var(--panel);border:2px solid #ffffff14;
+ border-radius:16px;padding:12px;cursor:pointer;transition:.15s;box-shadow:0 8px 22px #00000038}
+.exp-card:active{transform:scale(.99)}
+.exp-card img{width:66px;height:66px;border-radius:12px;object-fit:cover;flex-shrink:0}
+.exp-card .exp-info{flex:1;min-width:0}
+.exp-card .exp-info b{display:block;font-size:16px}
+.exp-card .exp-info small{color:var(--dim);font-weight:800;font-size:12px}
+.exp-card .exp-go{font-size:22px;color:var(--green)}
+.exp-card .exp-lock{font-size:11px;font-weight:900;color:var(--dim);white-space:nowrap}
+.exp-card:not(.soon){border-color:var(--gold)}
+.exp-card.soon{opacity:.62}
+.exp-card.soon img{filter:grayscale(.55)}
+.exp-card.camp-done{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold) inset,0 0 18px #ffc93c55}
+/* --- Lectura: acceso con lomo cálido para distinguirlo de las asignaturas --- */
+.exp-card.bib-entry{border-left:7px solid #c98a4a}
+/* --- Módulo Lectura / biblioteca: tema cálido de papel (se diferencia del cosmos) --- */
+#scr-biblioteca{background:linear-gradient(180deg,#f7efda,#ecdcbb);border:1px solid #d9c399;
+  border-radius:20px;padding:14px 16px 22px;margin-top:10px;color:#4a3b23;
+  box-shadow:0 12px 34px #0a061f66, inset 0 1px 0 #fffaf0}
+#scr-biblioteca::before{content:"";display:block;height:6px;margin:-4px -6px 12px;border-radius:6px;
+  background:repeating-linear-gradient(90deg,#c99a55 0 22px,#b5813f 22px 44px)}
+#scr-biblioteca .logo{margin:6px 0 10px}
+#scr-biblioteca .logo .badge{filter:sepia(.3)}
+#scr-biblioteca .logo h1{background:linear-gradient(90deg,#8a5320,#b5762f);-webkit-background-clip:text;background-clip:text;color:transparent}
+#scr-biblioteca .logo p{color:#8a6c3f}
+#scr-biblioteca .exp-card{background:#fffdf5;border:1px solid #e2d2ab;border-left:7px solid #9a6a3a;color:#4a3b23}
+#scr-biblioteca .exp-card:not(.soon){border-color:#e2d2ab;border-left-color:#9a6a3a}
+#scr-biblioteca .exp-card .exp-info b{color:#3f2d16}
+#scr-biblioteca .exp-card .exp-info small{color:#8a7350}
+#scr-biblioteca .exp-card .exp-go{color:#9a6a3a}
+#scr-biblioteca .btn.sec{background:#e7d5ac;border-color:#cbb489;color:#5b3a1e}
+/* --- Mapa de campaña (nodos de capítulo / desafío / jefe) --- */
+.camp-nodos{display:flex;flex-direction:column;gap:12px}
+.camp-nodo{display:flex;align-items:center;gap:14px;background:var(--panel);border:2px solid #ffffff14;
+ border-radius:16px;padding:12px 14px;cursor:pointer;transition:transform .1s}
+.camp-nodo:active{transform:scale(.99)}
+.camp-nodo .cn-marco{position:relative;flex-shrink:0}
+.camp-nodo .cn-circ{width:68px;height:68px;border-radius:50%;display:grid;place-items:center;font-size:26px;font-weight:900;
+ background:radial-gradient(circle at 32% 28%,#5a4bd0,#2a2160);border:3px solid var(--violet);color:#fff}
+/* portada del capítulo (o villano del jefe) dentro del círculo */
+.camp-nodo .cn-circ.cn-img{overflow:hidden;padding:0;background:radial-gradient(circle at 32% 28%,#2a2160,#161036)}
+.camp-nodo .cn-circ.cn-img img{width:114%;height:114%;object-fit:cover;display:block}
+.camp-nodo .cn-badge{position:absolute;right:-3px;bottom:-3px;min-width:24px;height:24px;padding:0 5px;border-radius:12px;
+ display:grid;place-items:center;font-size:13px;font-weight:900;background:var(--violet);border:2px solid #1a1440;color:#fff}
+.camp-nodo .cn-body{flex:1;min-width:0}
+.camp-nodo .cn-body b{display:block;font-size:15px}
+.camp-nodo .cn-body small{color:var(--dim);font-weight:800;font-size:12px}
+.camp-nodo.done{border-color:var(--green)}
+.camp-nodo.done .cn-circ{background:radial-gradient(circle at 32% 28%,#4fe6a0,#128a56);border-color:var(--green);color:#053}
+.camp-nodo.done .cn-circ.cn-img{background:#0d3;border-color:var(--green)}
+.camp-nodo.done .cn-badge{background:var(--green);color:#053}
+.camp-nodo.lock{opacity:.55;cursor:not-allowed}
+.camp-nodo.lock .cn-circ{background:#241d4e;filter:grayscale(1)}
+.camp-nodo.lock .cn-circ.cn-img img{filter:grayscale(1) brightness(.65)}
+.camp-nodo.lock .cn-badge{background:#241d4e;filter:none}
+.shop-item.locked{opacity:.7;border-color:var(--violet)}
+.shop-item .skin-lock{font-weight:900;font-size:11px;color:var(--violet);margin-top:4px}
+/* --- Jefe Final --- */
+.btn.danger{background:linear-gradient(180deg,#ff4d6a,#b0182f);color:#fff}
+body.en-jefe{background:radial-gradient(circle at 50% 0%,#3d0a16,#0a0410 70%)}
+body.en-jefe .stars,body.en-jefe #stars{filter:hue-rotate(-40deg) saturate(1.3)}
+body.jefe-hit{animation:jefeShake .26s}
+@keyframes jefeShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.jefe-intro{min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:20px}
+.ji-villano{font-size:96px;line-height:1;filter:drop-shadow(0 0 24px #ff4d6a);animation:jiPulse 2s ease-in-out infinite}
+.ji-villano img{width:210px;height:210px;object-fit:contain;filter:drop-shadow(0 0 20px #ff4d6a)}
+.jefe-vida .jv-ic img{width:26px;height:26px;object-fit:contain;vertical-align:middle}
+@keyframes jiPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+.ji-dialogo{color:var(--cyan);font-style:italic;max-width:340px;font-size:16px}
+.jefe-hud{position:sticky;top:0;background:#14081aee;padding:12px;border-radius:0 0 16px 16px;z-index:5}
+.jefe-vida .jv-top{display:flex;align-items:center;gap:8px;font-weight:900;font-size:14px;margin-bottom:6px}
+.jefe-vida .jv-ic{font-size:22px}
+.hpbar{height:16px;border-radius:10px;background:#2a0f18;border:2px solid #ff4d6a55;overflow:hidden}
+.hpbar>i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#ff4d6a,#ff8f3c);transition:width .5s ease}
+.jefe-sub{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.jefe-hearts{font-size:18px;letter-spacing:2px}
+.jefe-fase{font-weight:900;font-size:12px;color:var(--gold);text-align:right}
+.jefe-win{min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:20px}
+.jw-crown{font-size:80px;animation:jiPulse 2s ease-in-out infinite}
+.jw-recompensas{display:flex;flex-direction:column;gap:10px;width:100%;max-width:360px}
+.jw-item{display:flex;align-items:center;gap:12px;background:var(--panel);border:2px solid var(--gold);border-radius:14px;padding:12px;text-align:left}
+.jw-item .jw-ic{font-size:34px;flex-shrink:0}
+.jw-item b{display:block;font-size:14px}
+.jw-item small{color:var(--dim);font-weight:800;font-size:12px}
+/* Jefe Final · pantalla de derrota (mantiene la atmósfera carmesí) */
+.jefe-lose{min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;padding:20px}
+.jl-villano{filter:drop-shadow(0 0 26px #ff2d55) saturate(1.15)}
+.jl-taunt{font-weight:900;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ff7a93}
+.jl-dialogo{color:var(--cyan);font-style:italic;max-width:320px;font-size:15px;margin-top:-2px}
+.jl-progreso{width:100%;max-width:340px;background:#1c0910;border:2px solid #ff4d6a40;border-radius:16px;padding:14px 16px}
+.jl-dmg-top{display:flex;justify-content:space-between;font-weight:900;font-size:13px;color:#ffb3c1;margin-bottom:7px}
+.jl-dmgbar{height:14px}
+.jl-fase{margin-top:9px;font-weight:900;font-size:12px;color:var(--gold)}
+/* Jefe Final · overlay de caída del villano (Tiempo 1 de la victoria) */
+#jefe-caida{position:fixed;inset:0;z-index:100000;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:18px;background:radial-gradient(circle at 50% 0%,#3d0a16,#0a0410 70%);
+  cursor:pointer;padding:20px;text-align:center}
+#jefe-caida[hidden]{display:none}
+.jc-flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:2}
+.jc-flash.go{animation:jcFlash .5s ease-out}
+@keyframes jcFlash{0%{opacity:0}18%{opacity:.9}100%{opacity:0}}
+.jc-villano{width:220px;height:220px;display:grid;place-items:center;font-size:120px;position:relative;z-index:1}
+.jc-villano img{width:220px;height:220px;object-fit:contain;filter:drop-shadow(0 0 22px #ff4d6a)}
+.jc-villano.jc-shake{animation:jefeShake .26s}
+.jc-villano.caido{animation:jcCaida 1.1s cubic-bezier(.5,0,.7,1) forwards}
+@keyframes jcCaida{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(26px) rotate(8deg)}}
+/* solo el fallback (imagen normal) se atenúa para leerse como "derrotado" */
+.jc-villano.jc-fallback.caido img{filter:grayscale(.85) brightness(.6) drop-shadow(0 0 22px #ff4d6a);transition:filter 1.1s ease}
+.jc-texto{color:#fff;font-size:26px;opacity:0;z-index:1}
+.jc-texto.show{animation:jcTexto .5s ease-out forwards}
+@keyframes jcTexto{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .jc-flash.go{animation:none}
+  .jc-villano.caido{animation:none;transform:translateY(26px) rotate(8deg)}
+  .jc-texto.show{animation:none;opacity:1}
+}
+/* Jefe Final · Tiempo 2: confeti y aparición escalonada de recompensas */
+.confeti{position:fixed;top:-16px;width:9px;height:14px;border-radius:2px;opacity:.95;z-index:100002;
+  pointer-events:none;animation:confetiCae 2.2s linear forwards}
+@keyframes confetiCae{0%{transform:translateY(0) translateX(0) rotate(0);opacity:1}
+  100%{transform:translateY(105vh) translateX(var(--dx,0)) rotate(540deg);opacity:.9}}
+.jw-item{opacity:0;animation:jwItemIn .45s ease forwards}
+@keyframes jwItemIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .confeti{display:none}
+  .jw-item{opacity:1;animation:none}
+}
+/* --- Perfil: logros e insignias --- */
+.logros-grid,.insignias-grid{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+.logro{display:flex;align-items:center;gap:12px;background:var(--panel);border:2px solid #ffffff14;border-radius:14px;padding:12px;font-weight:800}
+.logro .l-ic{font-size:28px}
+.logro.lock{opacity:.5}
+.insignia{display:flex;align-items:center;gap:12px;background:var(--panel);border:2px solid #ffffff14;border-radius:14px;
+ padding:12px;font-weight:800;color:#fff;text-align:left;cursor:pointer;font-family:'Nunito';width:100%}
+.insignia .i-ic{font-size:30px;flex-shrink:0}
+.insignia .i-tx{flex:1}
+.insignia .i-badge{font-size:11px;font-weight:900;color:#053;background:var(--green);border-radius:8px;padding:3px 8px}
+.insignia .i-badge.sec{color:var(--cyan);background:transparent;border:1px solid var(--cyan)}
+.insignia.activa{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold) inset}
+.insignia.lock{opacity:.5;cursor:default}
+/* --- Skins con imagen (avatar ilustrado) --- */
+.hud .avatar img{width:100%;height:100%;object-fit:contain;border-radius:12px}
+.shop-item .em img{width:60px;height:60px;object-fit:contain;display:block;margin:0 auto}
+.rk .em img{width:24px;height:24px;object-fit:contain;vertical-align:middle}
+.jw-item .jw-ic img{width:40px;height:40px;object-fit:contain;vertical-align:middle;border-radius:8px}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+/* Modo QA (solo con ?qa=1): resalta la respuesta correcta y muestra un aviso. */
+.qa-ok{outline:3px solid var(--green)!important;outline-offset:2px;position:relative}
+.qa-ok::after{content:"✓";position:absolute;top:2px;right:8px;color:var(--green);font-weight:900;font-size:15px;pointer-events:none}
+.qa-badge{position:fixed;top:8px;left:8px;z-index:99999;background:var(--green);color:#04231a;
+  font:900 12px/1 'Nunito',sans-serif;padding:7px 11px;border-radius:9px;box-shadow:0 3px 10px #0007;letter-spacing:.02em}
+/* Intro (video de bienvenida) */
+#introOverlay{position:fixed;inset:0;z-index:100000;background:#0a0716;display:flex;align-items:center;justify-content:center;transition:opacity .45s ease}
+#introOverlay.fade{opacity:0}
+#introOverlay video{max-width:100%;max-height:100%;object-fit:contain}
+#introSkip{position:fixed;bottom:20px;right:18px;z-index:100001;background:#ffffff1f;color:#fff;border:1.5px solid #ffffff55;
+  border-radius:999px;padding:9px 18px;font:900 13px/1 'Nunito',sans-serif;cursor:pointer;backdrop-filter:blur(4px)}
+#introSkip:hover{background:#ffffff33}
+#introTap{display:none;position:absolute;left:50%;bottom:16%;transform:translateX(-50%);z-index:100001;color:#fff;
+  font:900 16px/1 'Nunito',sans-serif;background:#ffffff1f;border:1.5px solid #ffffff66;border-radius:999px;
+  padding:12px 22px;backdrop-filter:blur(4px);animation:tapPulse 1.4s ease-in-out infinite}
+@keyframes tapPulse{0%,100%{opacity:.72}50%{opacity:1}}
+/* Maestría Total: aura/halo dorados permanentes */
+body.es-maestro .hud .avatar{border-color:var(--gold)!important;box-shadow:0 0 16px #ffc93c,0 0 6px #ffe07a}
+body.es-maestro #kimBuddy,body.es-maestro #kimBuddyCalc,body.es-maestro #resKim,
+body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 0 3px #ffe07a)}
+/* Overlay del video de celebración del Maestro */
+#maestroOverlay{position:fixed;inset:0;z-index:100000;background:#0a0716;display:flex;align-items:center;justify-content:center;transition:opacity .45s ease}
+#maestroOverlay[hidden]{display:none}   /* el id+display:flex anulaba el atributo hidden */
+#maestroOverlay.fade{opacity:0}
+#maestroOverlay video{max-width:100%;max-height:100%;object-fit:contain}
+#maestroSkip{position:fixed;bottom:20px;right:18px;z-index:100001;background:#ffffff1f;color:#fff;border:1.5px solid #ffffff55;
+  border-radius:999px;padding:9px 18px;font:900 13px/1 'Nunito',sans-serif;cursor:pointer;backdrop-filter:blur(4px)}
+#maestroSkip:hover{background:#ffffff33}
+
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+<div class="combo" id="combo"></div>
+<div class="toast" id="toast"><div class="ic" id="toastIc">🏅</div><div><b>¡Logro desbloqueado!</b><span id="toastTx"></span></div></div>
+<div class="levelup" id="levelup"><div class="box">
+  <img class="kim" src="assets/kimun-512.png" alt="Vulpi">
+  <span class="lvl-num">NIVEL 2</span><span class="lvl-sub">¡Subiste de nivel!</span>
+</div></div>
+<button class="sndbtn" id="musBtn" title="Música" style="right:58px">🎵</button>
+<button class="sndbtn" id="sndBtn" title="Sonido">🔊</button>
+
+<!-- Intro (se reproduce una vez por dispositivo, antes del menú) -->
+<div id="introOverlay">
+  <video id="introVid" src="assets/intro.mp4" playsinline preload="auto"></video>
+  <div id="introTap">▶ Toca para comenzar</div>
+  <button id="introSkip">Saltar ▸</button>
+</div>
+
+<!-- Celebración de la Maestría Total (al vencer a los 4 jefes) -->
+<div id="maestroOverlay" hidden>
+  <video id="maestroVid" src="assets/maestro.mp4" playsinline preload="auto"></video>
+  <button id="maestroSkip">Saltar ▸</button>
+</div>
+
+<div id="jefe-caida" hidden>
+  <div id="jcFlash" class="jc-flash"></div>
+  <div id="jcVillano" class="jc-villano"></div>
+  <h2 id="jcTexto" class="jc-texto disp"></h2>
+</div>
+
+<div id="creditosModal" class="cred-modal" hidden>
+  <div class="cred-box">
+    <h2 class="disp" style="color:var(--gold);margin:0 0 6px">Créditos</h2>
+    <p><b>🎵 Música</b><br>Intro ("Fanfare for Space"), aventura, jefes y duelo: <b>Kevin MacLeod</b> (incompetech.com) · CC BY.<br>Menú: Pixabay Music.</p>
+    <p><b>🔤 Tipografías</b><br>Titan One y Nunito (Google Fonts · SIL Open Font License).</p>
+    <p><b>📚 Contenido</b><br>Alineado al currículum del MINEDUC de Chile (curriculumnacional.cl).</p>
+    <p><b>🎨 Ilustraciones</b><br>Creadas con inteligencia artificial.</p>
+    <p style="text-align:center;color:var(--gold);font-weight:900;margin-top:14px">Hecho con ❤️ para aprender jugando</p>
+    <button class="btn" id="cerrarCreditos" style="margin-top:6px">Cerrar</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ============ SELECCIÓN DE MODO ============ -->
+  <section class="screen on" id="scr-rol">
+    <div class="logo">
+      <img class="badge-img" src="assets/vulpo-mascota.png" alt="Vulpi, la mascota" width="190" height="203">
+      <h1>VULPO</h1>
+      <div id="rolNombre" class="rol-nombre" hidden></div>
+      <p id="rolSub">Aprende jugando · 4° Básico</p>
+    </div>
+    <div id="bannerDesafio" class="banner-desafio" hidden></div>
+    <!-- Avisos de duelo (te desafiaron / como termino el tuyo). Va APARTE del banner
+         del profe: si hay refuerzo y ademas te desafiaron, uno pisaria al otro.
+         Reusa su misma clase CSS, asi que no agrega ni una regla. Lo llena
+         revisarDuelos() de assets/js/motor.js. -->
+    <div id="bannerDuelo" class="banner-desafio" hidden></div>
+    <!-- Ofrecimiento de instalar. Va APARTE de los otros dos banners: si hay refuerzo del profe
+         y ademas te desafiaron, un tercer texto adentro los pisaria. Reusa su clase CSS.
+         Lo llena INST.init() de assets/js/instalar.js. -->
+    <div id="bannerInstalar" class="banner-desafio" hidden></div>
+    <div id="avisoPuerta" class="card" hidden
+         style="border:2px solid var(--gold);background:#2a1f00">
+      <p id="avisoPuertaTxt" style="font-weight:900;font-size:13px;margin:0 0 6px"></p>
+      <p style="color:var(--dim);font-weight:800;font-size:12px;margin:0">
+        Pídeselo a tu colegio · ¿Eres profesor? Escríbenos a vulpochile.app@gmail.com
+      </p>
+    </div>
+    <div class="card">
+      <h3>¿Cómo quieres entrar?</h3>
+      <button class="btn" id="btnJugador">🎮 JUGADOR</button>
+      <button class="btn sec" id="btnDuelo">⚔️ DUELO 1v1</button>
+    </div>
+    <p style="text-align:center;margin-top:12px"><a href="#" id="btnReset" style="color:var(--dim);font-weight:800;font-size:12px;text-decoration:underline;display:none">🔄 Empezar de nuevo</a></p>
+    <p style="text-align:center;margin-top:8px">
+      <a href="#" id="btnCanje" style="color:var(--cyan);font-weight:800;font-size:13px">🎟️ Tengo un código</a>
+    </p>
+    <p style="text-align:center;margin-top:10px">
+      <a href="#" id="lnkInstalar" hidden style="color:var(--cyan);font-weight:800;font-size:12px">📲 Instalar</a>
+      <!-- El informe para el apoderado. El BOTÓN va en cada fork y la pantalla se inyecta
+           desde motor.js: un enlace inyectado que no aparece porque cambió su ancla es un
+           fallo mudo, y este se ve en el HTML. -->
+      <a href="#" id="btnInforme" style="color:var(--cyan);font-weight:800;font-size:12px;margin-left:10px">📊 Cómo va</a>
+      <a href="/tutorial/" id="lnkTutorial" style="color:var(--cyan);font-weight:800;font-size:12px;margin-left:10px">❓ Cómo se juega</a>
+      <a href="#" id="verCreditos" style="color:var(--cyan);font-weight:800;font-size:12px;margin-left:10px">Créditos</a>
+    </p>
+    <p style="text-align:center;margin-top:10px">
+      <a href="/" id="salirWeb" style="color:var(--dim);font-weight:800;font-size:12px">← Volver a vulpo.cl</a>
+    </p>
+  </section>
+
+  <!-- ============ CANJE DEL CÓDIGO DE ALUMNO ============ -->
+  <section class="screen" id="scr-canje">
+    <div class="card">
+      <h3>🎟️ Tengo un código</h3>
+      <p style="color:var(--dim);font-weight:800;font-size:13px">
+        Escribe el código que te dio tu profesor para entrar al ranking de tu curso.
+      </p>
+      <input id="canjeCodigo" placeholder="ALU-XXXXXXXX" maxlength="12"
+             style="width:100%;padding:12px;border-radius:12px;border:2px solid var(--violet);
+                    background:#1a1440;color:#fff;font-weight:900;text-align:center;font-size:18px;margin:10px 0">
+      <button class="btn" id="btnCanjeOk">Entrar</button>
+      <button class="btn sec" id="btnCanjeBack">← Volver</button>
+      <p id="canjeMsg" style="text-align:center;font-weight:800;font-size:13px;margin-top:10px"></p>
+    </div>
+  </section>
+
+  <!-- ============ INSCRIPCIÓN POR ENLACE (?inscribir=) ============ -->
+  <section class="screen" id="scr-inscribir">
+    <div class="card" id="insForm">
+      <h3>🎟️ Únete a tu curso</h3>
+      <p style="color:var(--dim);font-weight:800;font-size:13px">
+        Escribe tu nombre y tu apellido, como te conoce tu profesor. Así va a poder
+        ver tu avance junto al de tus compañeros.
+      </p>
+      <input id="insNombre" placeholder="Tu nombre" maxlength="40"
+             style="width:100%;padding:12px;border-radius:12px;border:2px solid var(--violet);
+                    background:#1a1440;color:#fff;font-weight:900;text-align:center;font-size:18px;margin:10px 0">
+      <button class="btn" id="btnInsOk">Entrar</button>
+      <p id="insMsg" style="text-align:center;font-weight:800;font-size:13px;margin-top:10px"></p>
+    </div>
+    <div class="card" id="insListo" hidden>
+      <h3>¡Listo, <span id="insHola"></span>!</h3>
+      <p style="color:var(--dim);font-weight:800;font-size:13px">
+        Este es tu código. Anótalo: con él puedes seguir jugando desde otro teléfono, o
+        recuperar tu avance si se borran los datos de este.
+      </p>
+      <p id="insCodigo" style="text-align:center;font-family:monospace;font-size:22px;
+                font-weight:900;color:var(--gold);letter-spacing:1px;margin:14px 0"></p>
+      <button class="btn" id="btnInsJugar">¡A jugar!</button>
+    </div>
+  </section>
+
+  <!-- ============ ELEGIR EXPEDICIÓN ============ -->
+  <section class="screen" id="scr-expediciones">
+    <div class="logo" style="margin:20px 0 4px">
+      <span class="badge">🧭</span>
+      <h1 style="font-size:28px">EXPEDICIONES</h1>
+      <p>Elige tu aventura de aprendizaje</p>
+    </div>
+    <div class="exp-grid" id="expGrid"></div>
+    <button class="btn sec" id="btnExpTienda" style="margin-top:18px">🛍️ Tienda de skins</button>
+    <button class="btn sec" id="btnExpBack" style="margin-top:10px">← Volver</button>
+  </section>
+
+  <!-- ============ MAPAS DE UNA ASIGNATURA (nivel 2) ============ -->
+  <section class="screen" id="scr-mapas">
+    <div class="logo" style="margin:20px 0 4px">
+      <span class="badge">🗺️</span>
+      <div id="mapasHead"></div>
+    </div>
+    <div class="exp-grid" id="mapasGrid"></div>
+    <button class="btn sec" id="btnMapasBack" style="margin-top:18px">← Volver</button>
+  </section>
+
+  <!-- ============ LANDING DE LENGUAJE (Campaña / Vocabulario) ============ -->
+  <section class="screen" id="scr-lenguaje">
+    <div class="logo" style="margin:20px 0 4px">
+      <span class="badge">📚</span>
+      <h1 style="font-size:26px">Lenguaje</h1>
+      <p>Elige qué practicar</p>
+    </div>
+    <div class="card">
+      <button class="btn" id="btnLengCampana">🗺️ Campaña</button>
+      <button class="btn sec" id="btnLengVocab">📚 Vocabulario</button>
+    </div>
+    <button class="btn sec" id="btnLengBack" style="margin-top:10px">← Volver</button>
+  </section>
+
+  <!-- ============ BIBLIOTECA (Lectura del colegio) ============ -->
+  <section class="screen" id="scr-biblioteca">
+    <div class="logo" style="margin:20px 0 4px">
+      <span class="badge">📖</span>
+      <h1 style="font-size:26px">Lectura</h1>
+      <p>Lecturas del colegio</p>
+    </div>
+    <div class="exp-grid" id="biblioGrid"></div>
+    <button class="btn sec" id="btnBiblioBack" style="margin-top:18px">← Volver</button>
+  </section>
+
+  <!-- ============ MAPA DE CAMPAÑA ============ -->
+  <section class="screen" id="scr-campana">
+    <div class="logo" style="margin:20px 0 4px">
+      <span class="badge">📜</span>
+      <div id="campHead"></div>
+    </div>
+    <div id="campNodos" class="camp-nodos"></div>
+    <button class="btn sec" id="btnCampBack" style="margin-top:18px">← Volver</button>
+  </section>
+
+  <!-- ====== ARMADOR DE ENLACES DE MUESTRA (?armar=1) ====== -->
+  <section class="screen" id="scr-armar">
+    <div class="logo" style="margin:20px 0 4px">
+      <span class="badge">🔗</span>
+      <h1 style="font-size:24px">Armar enlace de muestra</h1>
+      <p>Marca los capítulos que quieres incluir.</p>
+    </div>
+    <div id="armarLista"></div>
+    <div class="card" style="margin-top:14px">
+      <p style="font-weight:900;font-size:13px;margin:0 0 6px">Caducidad</p>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
+        <button class="chip" id="armarSinFin">Sin caducidad</button>
+        <button class="chip" id="armarSemana">1 semana</button>
+        <button class="chip" id="armarMes">1 mes</button>
+      </div>
+      <input type="date" id="armarHasta"
+             style="width:100%;padding:10px;border-radius:12px;border:2px solid var(--violet);
+                    background:#1a1440;color:#fff;font-weight:800;font-size:13px;margin-bottom:10px">
+      <label style="display:flex;gap:8px;align-items:center;font-weight:800;font-size:13px">
+        <input type="checkbox" id="armarQA"> Mostrar las respuestas correctas
+      </label>
+      <label style="display:flex;gap:8px;align-items:center;font-size:13px;font-weight:700;margin:8px 0">
+        <input type="checkbox" id="armarRev"> Modo revisión de profesor (3 preguntas por etapa + comentarios)
+      </label>
+      <input id="armarUrl" readonly
+             style="width:100%;padding:10px;border-radius:12px;border:2px solid var(--violet);
+                    background:#1a1440;color:#fff;font-weight:700;font-size:12px;margin:10px 0">
+      <button class="btn" id="armarCopiar">📋 Copiar</button>
+      <button class="btn sec" id="armarProbar">▶ Probar</button>
+      <p id="armarMsg" style="text-align:center;font-weight:800;font-size:12px;margin-top:8px;color:var(--dim)"></p>
+      <p id="armarResumen" style="text-align:center;font-weight:800;font-size:12px;margin-top:6px;color:var(--cyan)"></p>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <p style="font-weight:900;font-size:13px;margin:0 0 6px">¿Qué contiene un enlace?</p>
+      <input id="armarLeer" placeholder="Pega aquí un enlace de muestra"
+             style="width:100%;padding:10px;border-radius:12px;border:2px solid var(--violet);
+                    background:#1a1440;color:#fff;font-weight:700;font-size:12px;margin-bottom:8px">
+      <button class="btn sec" id="armarLeerBtn">🔍 Leer</button>
+      <p id="armarLeido" style="font-weight:800;font-size:12px;margin-top:8px;color:var(--dim)"></p>
+    </div>
+    <!-- Al armador solo se llega desde el panel, así que sin esto es un callejón sin salida:
+         no hay barra inferior ni botón Volver (el modo armador los apaga). -->
+    <p style="text-align:center;margin:14px 0 24px">
+      <a href="/profesor.html" style="color:var(--dim);font-weight:800;font-size:12px">← Volver al panel del profesor</a>
+    </p>
+  </section>
+
+  <!-- ====== MUESTRA VENCIDA (?m= con fecha pasada) ====== -->
+  <section class="screen" id="scr-vencida">
+    <div class="logo" style="margin:40px 0 10px">
+      <span class="badge">⌛</span>
+      <h1 style="font-size:24px">Esta muestra ya no está disponible</h1>
+      <p id="vencidaFecha"></p>
+    </div>
+    <div class="card">
+      <p style="color:var(--dim);font-weight:800;font-size:13px;text-align:center">
+        El juego completo sigue disponible para todos.
+      </p>
+      <button class="btn" id="vencidaIr">Ir al juego completo</button>
+    </div>
+  </section>
+
+  <!-- ====== FIN DE LA DEMO (puerta cerrada, sin código) ====== -->
+  <section class="screen" id="scr-demo-fin">
+    <div class="logo" style="margin:30px 0 10px">
+      <span class="badge">🎉</span>
+      <h1 style="font-size:24px">¡Terminaste la muestra de VULPO!</h1>
+      <p>El resto del juego —4 asignaturas, más de 2.500 preguntas— lo abre tu colegio.</p>
+    </div>
+    <div class="card">
+      <button class="btn" id="demoCodigo">🎟️ Tengo un código</button>
+      <button class="btn sec" id="demoProfe">🏫 Soy profesor, quiero VULPO para mi curso</button>
+      <p id="demoContacto" hidden style="text-align:center;font-weight:800;font-size:13px;margin-top:12px;color:var(--cyan)">
+        vulpochile.app@gmail.com<br>+569 7668 4967
+      </p>
+    </div>
+    <p style="text-align:center;margin-top:10px">
+      <a href="/" style="color:var(--dim);font-weight:800;font-size:12px">← Volver a vulpo.cl</a>
+    </p>
+  </section>
+
+  <!-- ============ JEFE FINAL · INTRO ============ -->
+  <section class="screen" id="scr-jefe-intro">
+    <div class="jefe-intro">
+      <div id="jiVillano" class="ji-villano"></div>
+      <h2 id="jiNombre" class="disp"></h2>
+      <p id="jiDialogo" class="ji-dialogo"></p>
+      <button class="btn danger" id="jiStart">¡Que comience el duelo!</button>
+      <button class="btn sec" id="jiBack" style="margin-top:10px">← Volver</button>
+    </div>
+  </section>
+
+  <!-- ============ JEFE FINAL · DUELO ============ -->
+  <section class="screen" id="scr-jefe">
+    <div class="jefe-hud">
+      <div class="jefe-vida">
+        <div class="jv-top"><span id="jvVillanoIc" class="jv-ic"></span><span id="jvNombre"></span></div>
+        <div class="hpbar"><i id="jvFill"></i></div>
+      </div>
+      <div class="jefe-sub"><span id="jvVidas" class="jefe-hearts"></span><span id="jvFase" class="jefe-fase"></span></div>
+    </div>
+    <div id="jefePregunta" class="quiz-body"></div>
+  </section>
+
+  <!-- ============ JEFE FINAL · VICTORIA ============ -->
+  <section class="screen" id="scr-jefe-win">
+    <div class="jefe-win">
+      <div class="jw-crown">👑</div>
+      <h2 class="disp" id="jwTitulo">¡Historia dominada!</h2>
+      <div id="jwRecompensas" class="jw-recompensas"></div>
+      <button class="btn" id="jwBack">Volver a la campaña</button>
+    </div>
+  </section>
+
+  <!-- ============ JEFE FINAL · DERROTA ============ -->
+  <section class="screen" id="scr-jefe-lose">
+    <div class="jefe-lose">
+      <div id="jlVillano" class="ji-villano jl-villano"></div>
+      <div class="jl-taunt"><span id="jlTauntNom"></span> resistió</div>
+      <p id="jlDialogo" class="jl-dialogo"></p>
+      <h2 class="disp" id="jlTitulo"></h2>
+      <div class="jl-progreso">
+        <div class="jl-dmg-top"><span>Daño al jefe</span><span id="jlDmgPct"></span></div>
+        <div class="hpbar jl-dmgbar"><i id="jlDmgFill"></i></div>
+        <div id="jlFase" class="jl-fase"></div>
+      </div>
+      <button class="btn danger" id="jlRetry">⚔️ Reintentar el duelo</button>
+      <button class="btn sec" id="jlBack" style="margin-top:10px">← Volver a la campaña</button>
+    </div>
+  </section>
+
+  <!-- ============ INICIO ============ -->
+  <section class="screen" id="scr-inicio">
+    <div class="logo">
+      <img class="badge-conq" src="assets/kimun-conquistador.png" alt="Vulpi explorador">
+      <h1>TU<br>EXPEDICIÓN</h1>
+      <p>4° Básico · Descubre, conquista y sube de nivel</p>
+    </div>
+    <div class="card">
+      <h3>Tu nombre de explorador</h3>
+      <input class="nm" id="inpName" maxlength="14" placeholder="Ej: Capitán Toto">
+    </div>
+    <div class="card">
+      <h3>Elige tu avatar</h3>
+      <div class="avgrid" id="avgrid"></div>
+    </div>
+    <button class="btn" id="btnStart">⚡ ¡COMENZAR AVENTURA!</button>
+  </section>
+
+  <!-- ============ MAPA ============ -->
+  <section class="screen" id="scr-mapa">
+    <div class="hud">
+      <div class="avatar" id="hudAv">🦉</div>
+      <div class="meta">
+        <div class="name" id="hudName">Explorador</div>
+        <div class="xpbar"><i id="hudXp"></i></div>
+        <div class="lvl" id="hudLvl">Nivel 1 · 0 XP</div>
+      </div>
+      <div class="coins">🪙 <span id="hudCoins">0</span></div>
+    </div>
+    <button class="btn sec" id="btnMapaCamp" style="display:none;margin:0 0 10px">← Volver a la campaña</button>
+    <div class="mapa-head">
+      <img id="mapaImg" src="assets/kimun-conquistador.png" alt="Expedición">
+      <div>
+        <h2 class="disp">Ruta de la Expedición</h2>
+        <p id="mapaSub">Unidad: Los europeos llegan a América</p>
+      </div>
+    </div>
+    <div class="kim-dato" id="kimDato" hidden>
+      <img src="assets/kimun-feliz.png" alt="Vulpi">
+      <div class="kd-body"><div class="kd-title">🦊 Vulpi te cuenta…</div><div id="kimDatoTxt"></div></div>
+      <button class="kd-x" id="kimDatoX" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="modo-sel" id="modoSel" style="display:none"></div>
+    <div class="mapbox" id="mapbox"></div>
+
+    <div class="card">
+      <h3>🏆 Ranking del curso</h3>
+      <div id="ranking"></div>
+    </div>
+  </section>
+
+  <!-- ============ META DE LA ETAPA (primera vez) ============ -->
+  <section class="screen" id="scr-meta">
+    <div class="meta-card">
+      <span class="meta-ic">🎯</span>
+      <div class="meta-kick">Lo que vas a aprender</div>
+      <p class="meta-frase" id="metaTxt"></p>
+      <button class="btn-escuchar" id="btnEscucharMeta" type="button">🔊 Escuchar</button>
+      <button class="btn" id="metaVamos" type="button">¡Vamos! ▶</button>
+    </div>
+  </section>
+
+  <!-- ====== PREDICCION (antes de ver el resultado) ====== -->
+  <section class="screen" id="scr-pred">
+    <div class="meta-card">
+      <span class="meta-ic">🤔</span>
+      <div class="meta-kick">Antes de ver tu puntaje</div>
+      <p class="meta-frase" id="predTxt">¿Cómo crees que te fue?</p>
+      <p id="predVoz" hidden>¿Cómo crees que te fue? Verde: lo entendí. Amarillo: más o menos. Rojo: me costó.</p>
+      <button class="btn-escuchar" id="btnEscucharPred" type="button">🔊 Escuchar</button>
+      <div id="predOpts">
+        <button class="sem" data-v="🟢" type="button">🟢<span>Lo entendí</span></button>
+        <button class="sem" data-v="🟡" type="button">🟡<span>Más o menos</span></button>
+        <button class="sem" data-v="🔴" type="button">🔴<span>Me costó</span></button>
+      </div>
+    </div>
+  </section>
+  <section class="screen" id="scr-progreso">
+    <div class="meta-card">
+      <span class="meta-ic">🎒</span>
+      <div class="meta-kick">Encontramos tu avance guardado</div>
+      <p class="meta-frase">¿Cuál quieres usar?</p>
+      <div id="progComp">
+        <div class="prog-col"><h4 id="progRemTit">Guardado</h4><p id="progRemDatos"></p></div>
+        <div class="prog-col"><h4>Este teléfono</h4><p id="progLocDatos"></p></div>
+      </div>
+      <button class="btn" id="progUsarRem">Usar el guardado</button>
+      <button class="btn" id="progUsarLoc">Seguir con este teléfono</button>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="screen" id="scr-quiz">
+    <div class="qtop">
+      <button class="back" id="btnBack">✕</button>
+      <div class="qprog"><i id="qProg"></i></div>
+      <div class="timer" id="qTimer">15</div>
+    </div>
+    <div class="kim-stage"><img class="kim-buddy" id="kimBuddy" src="assets/kimun-neutral.png" alt="Vulpi"></div>
+    <div class="qcard">
+      <div class="tag" id="qTag">Nivel 1</div>
+      <h2 id="qText">Pregunta…</h2>
+      <div id="qVisual"></div>
+      <div id="qMeta" class="qmeta" hidden></div>
+    </div>
+    <button class="btn-escuchar" id="btnEscuchar" type="button">🔊 Escuchar</button>
+    <div class="opts" id="qOpts"></div>
+    <button class="btn-ayuda" id="btnAyuda" type="button" hidden>💡 Ayuda (2)</button>
+    <div class="feedback" id="qFb"></div>
+    <div class="qexpl" id="qExpl" hidden></div>
+    <button class="btn seguir" id="btnSeguir" hidden>Continuar ➜</button>
+  </section>
+
+  <!-- ============ RESULTADO ============ -->
+  <section class="screen" id="scr-res">
+    <div class="resbox">
+      <img class="big kim-res" id="resKim" src="assets/kimun-oro.png" alt="Vulpi">
+      <h2 id="resTitle">¡Nivel superado!</h2>
+      <button class="btn-escuchar" id="btnEscucharRes" type="button">🔊 Escuchar</button>
+      <p id="resObj" class="res-obj" hidden></p>
+      <div class="starline" id="resStars"></div>
+      <div class="statgrid">
+        <div class="stat"><b id="resXp" style="color:var(--cyan)">+0</b><small>XP</small></div>
+        <div class="stat"><b id="resCoins" style="color:var(--gold)">+0</b><small>Monedas</small></div>
+        <div class="stat"><b id="resCombo" style="color:var(--pink)">x0</b><small>Combo máx</small></div>
+      </div>
+      <p id="resCruce" class="res-sem-msg"></p>
+      <button class="btn" id="btnNext">SIGUIENTE ETAPA ➜</button>
+      <button class="btn" id="btnPaso" type="button" style="display:none;background:linear-gradient(180deg,var(--green),#1fa862);color:#04231a"></button>
+      <button class="btn sec" id="btnMap">VOLVER AL MAPA</button>
+    </div>
+  </section>
+
+  <!-- ============ TIENDA ============ -->
+  <section class="screen" id="scr-tienda">
+    <h2 class="disp" style="font-size:22px;margin:6px 0 2px">🛍️ Tienda de skins</h2>
+    <p style="color:var(--dim);font-weight:800;font-size:13px">Gasta tus monedas en avatares nuevos.</p>
+    <div class="coins" style="width:max-content;margin:12px 0">🪙 <span id="tiendaCoins">0</span></div>
+    <div class="shopgrid" id="tiendaGrid"></div>
+    <button class="btn sec" id="btnTiendaBack" style="margin-top:14px">← Volver</button>
+  </section>
+
+  <!-- ============ PERFIL: LOGROS E INSIGNIAS ============ -->
+  <section class="screen" id="scr-perfil">
+    <h2 class="disp" style="font-size:22px;margin:6px 0 2px">🎖️ Tus logros</h2>
+    <p style="color:var(--dim);font-weight:800;font-size:13px">Lo que has conseguido jugando.</p>
+    <div id="logrosGrid" class="logros-grid"></div>
+    <h2 class="disp" style="font-size:22px;margin:18px 0 2px">🏅 Insignias</h2>
+    <p style="color:var(--dim);font-weight:800;font-size:13px">Gánalas completando campañas. Toca una para lucirla junto a tu nombre.</p>
+    <div id="insigniasGrid" class="insignias-grid"></div>
+  </section>
+
+  <!-- ============ DUELO: CONFIGURACIÓN ============ -->
+  <section class="screen" id="scr-duelo-setup">
+    <div class="logo"><span class="badge">⚔️</span><h1 style="font-size:30px">DUELO 1v1</h1><p>Dos jugadores, un mismo teléfono</p></div>
+    <div class="card"><h3>Jugador 1</h3><input class="nm" id="d1Name" maxlength="12" placeholder="Jugador 1"><div class="avgrid duelo-av" id="d1Av"></div></div>
+    <div class="card"><h3>Jugador 2</h3><input class="nm" id="d2Name" maxlength="12" placeholder="Jugador 2"><div class="avgrid duelo-av" id="d2Av"></div></div>
+    <button class="btn" id="btnDueloStart">⚔️ ¡COMENZAR DUELO!</button>
+    <button class="btn sec" id="btnDueloBack">← Volver</button>
+  </section>
+
+  <!-- ============ DUELO: PASAR TELÉFONO ============ -->
+  <section class="screen" id="scr-duelo-pass">
+    <div class="resbox">
+      <div class="big" id="dpEm">🦁</div>
+      <h2 id="dpMsg">Turno de Jugador 1</h2>
+      <p style="color:var(--dim);font-weight:800;margin-top:8px">Pasa el teléfono al jugador y pulsa Listo.</p>
+      <button class="btn" id="btnDueloReady">LISTO ➜</button>
+    </div>
+  </section>
+
+  <!-- ============ DUELO: PREGUNTA ============ -->
+  <section class="screen" id="scr-duelo-q">
+    <div class="qtop">
+      <div class="duelo-turn" id="dTurn">🦁 Jugador 1</div>
+      <div class="qprog"><i id="dProg"></i></div>
+      <div class="timer" id="dTimer">15</div>
+    </div>
+    <div class="qcard"><div class="tag" id="dTag">Ronda 1/5</div><h2 id="dText">Pregunta…</h2></div>
+    <div class="opts" id="dOpts"></div>
+    <div class="feedback" id="dFb"></div>
+    <div class="duelo-score" id="dScore"></div>
+  </section>
+
+  <!-- ============ DUELO: RESULTADO ============ -->
+  <section class="screen" id="scr-duelo-res">
+    <div class="resbox">
+      <div class="big" id="drIc">🏆</div>
+      <h2 id="drTitle">¡Gana Jugador 1!</h2>
+      <div class="duelo-final" id="drScore"></div>
+      <button class="btn" id="btnDueloAgain">🔁 REVANCHA</button>
+      <button class="btn sec" id="btnDueloExit">SALIR</button>
+    </div>
+  </section>
+
+  <!-- ============ DUELO ONLINE: HUB ============ -->
+  <section class="screen" id="scr-duelo-online">
+    <div class="logo"><span class="badge">⚔️</span><h1 style="font-size:26px">DUELO EN LÍNEA</h1><p>Asíncrono · 24 horas</p></div>
+    <div class="card">
+      <h3>Tu código de amigo</h3>
+      <div class="mi-codigo" id="miCodigo">KIM-…</div>
+      <p style="color:var(--dim);font-weight:800;font-size:12px;margin-top:8px">Compártelo para que te desafíen.</p>
+    </div>
+    <button class="btn" id="btnDesafiar">⚔️ Desafiar a un amigo</button>
+    <div class="card">
+      <h3>📥 Desafíos para ti</h3>
+      <div id="pendList"><p style="color:var(--dim);font-weight:800;font-size:13px">Cargando…</p></div>
+    </div>
+    <!-- Ranking de duelos del curso. Lo llena cargarRankingDuelos() de assets/js/motor.js;
+         el servidor deja fuera a los bots y lo acota al curso. Reusa las clases .rk del
+         ranking por XP, asi que no pide CSS propio. -->
+    <div class="card">
+      <h3>🏆 Ranking de duelos</h3>
+      <div id="rkDuelos"><p style="color:var(--dim);font-weight:800;font-size:13px">Cargando…</p></div>
+    </div>
+    <button class="btn sec" id="btnDueloLocal">🤝 Duelo en este teléfono</button>
+    <button class="btn sec" id="btnDOBack">← Volver</button>
+  </section>
+
+  <!-- ============ DUELO ONLINE: CREAR DESAFÍO ============ -->
+  <section class="screen" id="scr-od-setup">
+    <div class="logo"><span class="badge">⚔️</span><h1 style="font-size:26px">Desafiar</h1><p>Juega tu ronda; tu rival tendrá 24h</p></div>
+    <div class="card"><h3>¿A quién desafías?</h3><div class="od-jugadores" id="odJugadores"></div></div>
+    <div class="card"><h3>…o por código</h3><input class="nm" id="odCodigo" maxlength="8" placeholder="KIM-XXXX" autocomplete="off"></div>
+    <div class="card"><h3>Elige la expedición</h3><div class="od-exp" id="odExpSel"></div></div>
+    <div class="feedback bad" id="odSetupErr"></div>
+    <button class="btn" id="btnODStart">Jugar mi ronda ➜</button>
+    <button class="btn sec" id="btnODBack">← Volver</button>
+  </section>
+
+  <!-- ============ DUELO ONLINE: QUIZ ============ -->
+  <section class="screen" id="scr-od-quiz">
+    <div class="qtop">
+      <div class="duelo-turn" id="odTurn">Tu ronda</div>
+      <div class="qprog"><i id="odProg"></i></div>
+      <div class="timer" id="odTimer">15</div>
+    </div>
+    <div class="od-reloj" id="odReloj" hidden></div>
+    <div class="qcard"><div class="tag" id="odTag">Pregunta 1/8</div><h2 id="odText">…</h2></div>
+    <div class="opts" id="odOpts"></div>
+    <div class="feedback" id="odFb"></div>
+  </section>
+
+  <!-- ============ DUELO ONLINE: RESULTADO ============ -->
+  <section class="screen" id="scr-od-res">
+    <div class="resbox">
+      <div class="big" id="odResIc">🏆</div>
+      <h2 id="odResTitle">…</h2>
+      <div class="duelo-final" id="odResScore"></div>
+      <button class="btn" id="btnODExit">VOLVER A DUELOS</button>
+    </div>
+  </section>
+</div>
+
+<div class="nav" id="nav" style="display:none">
+  <button class="on" data-go="scr-mapa"><span class="i">🗺️</span>Mapa</button>
+  <button data-go="scr-tienda"><span class="i">🛍️</span>Tienda</button>
+  <button data-go="perfil"><span class="i">🎖️</span>Logros</button>
+</div>
+
+<script>
+/* ================= DATOS ================= */
+const AVATARES=["🦁","🐉","🦅","🐺","🦊","🤖","👽","🥷"];
+
+/* ===== EXPEDICIONES (data-driven · PLANTILLA BASE) =====
+   Para agregar una expedición nueva (otra asignatura u otra ruta):
+     1) crea contenido/<carpeta>/preguntas.json (y oa.json) con el pool de preguntas,
+     2) agrega su portada en assets/,
+     3) añade aquí un objeto con sus etapas (cada etapa mapea un OA; el jefe mezcla varios).
+   El motor NO cambia: lee todo desde estos datos, con progreso independiente por ruta. */
+/* ===== Modos ocultos por URL =====
+   ?qa=1        -> revisión de contenido: desbloquea todo Y marca la respuesta correcta.
+   ?solo=a,b,c  -> modo prueba: muestra SOLO esos capítulos (ids de EXPEDICIONES),
+                   todos abiertos, SIN marcar respuestas y sin guardar nada.
+   Las banderas de más abajo eran un solo booleano (QA) y se separaron a propósito,
+   porque "desbloquear", "marcar la respuesta" y "no reportar al servidor" son cosas
+   distintas y el modo prueba necesita unas sí y otras no:
+     CAPS_ABIERTOS ignora los candados entre capítulos          (QA, prueba, experimental)
+     JEFES_ABIERTOS ignora los candados de los jefes            (QA y prueba)
+     QA_MARCA      pinta la respuesta correcta                   (solo QA)
+     EFIMERO       no mide dominio por OA ni reporta refuerzos   (QA y prueba)
+     PRUEBA        además, no escribe en disco ni usa Supabase   (solo prueba)
+   Sin ningún parámetro, el juego se comporta exactamente como siempre. */
+/* base64url: base64 con +/ cambiados por -_ y sin = al final, para viajar limpio en la URL.
+   OJO: esto es un DISFRAZ, no un cifrado. Base64 es un formato público y reversible; sirve
+   para que la fecha no se vea en la barra de direcciones (y nadie sienta la invitación a
+   editarla), no para detener a quien sepa lo que mira. */
+function b64uCod(txt){ return btoa(txt).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,''); }
+const _PARAMS=new URLSearchParams(location.search);
+const _M=leerToken(_PARAMS.get('m'));   // null si no hay ?m= o si viene corrupto
+const QA=_PARAMS.has('qa')||!!(_M&&_M.qa);
+const QA_MARCA=QA;                     // solo QA pinta la respuesta correcta
+const _SOLO_PEDIDO=_M ? _M.ids
+                      : (_PARAMS.get('solo')||'').split(',').map(s=>s.trim()).filter(Boolean);
+const VENCE=_M?_M.hasta:'';            // '' = no caduca. ?solo= nunca caduca.
+const ARMAR=_PARAMS.has('armar');      // pantalla para armar enlaces de muestra
+
+const EXPEDICIONES=[
+ // --- Campaña Matemática (4°) ---
+ // Los 27 OA se reparten en 7 capítulos por tipo de contenido: números y operaciones
+ // básicas primero (números-multiplicar-dividir-fracciones-decimales), luego el álgebra
+ // y la geometría partidas por tema, y por último medición y datos. Declarado a
+ // propósito, mismo criterio que ya usan Matemática de 5° y 6°.
+ { id:'mate4-cap1', asignatura:'Matemáticas', nivel:'4° Básico · Números hasta 10.000',
+   portada:'assets/portada-matematicas.png',
+   portadaMapa:'assets/portada-mate-numeros.png',
+   contenido:'contenido/matematicas-4basico/preguntas.json', activa:true, campaña:'mate4',
+   etapas:[
+     {oa:"MA04 OA 01",nombre:"Contar hasta 10.000",icono:"🔢",n:10},
+     {oa:"MA04 OA 02",nombre:"Cálculo mental",icono:"🧠",n:10},
+     {oa:"MA04 OA 03",nombre:"Sumar y restar hasta 1.000",icono:"➕",n:10},
+     {oa:"MA04 OA 04",nombre:"Multiplicar y dividir por 0 y 1",icono:"0️⃣",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Números hasta 10.000",icono:"🎯",n:15,oas:["MA04 OA 01","MA04 OA 02","MA04 OA 03","MA04 OA 04"]},
+   ]},
+ { id:'mate4-cap2', asignatura:'Matemáticas', nivel:'4° Básico · Multiplicar y dividir',
+   portada:'assets/portada-matematicas.png',
+   portadaMapa:'assets/portada-mat3-cap3.png',
+   contenido:'contenido/matematicas-4basico/preguntas.json', activa:true, campaña:'mate4',
+   etapas:[
+     {oa:"MA04 OA 05",nombre:"Multiplicar por un dígito",icono:"✖️",n:10},
+     {oa:"MA04 OA 06",nombre:"Dividir por un dígito",icono:"➗",n:10},
+     {oa:"MA04 OA 07",nombre:"Problemas con dinero",icono:"💰",n:10},
+     {oa:"MA04 OA 08",nombre:"Conocer las fracciones",icono:"½",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Multiplicar y dividir",icono:"🎯",n:15,oas:["MA04 OA 05","MA04 OA 06","MA04 OA 07","MA04 OA 08"]},
+   ]},
+ { id:'mate4-cap3', asignatura:'Matemáticas', nivel:'4° Básico · Fracciones y decimales',
+   portada:'assets/portada-matematicas.png',
+   portadaMapa:'assets/portada-mate6-cap2.png',
+   contenido:'contenido/matematicas-4basico/preguntas.json', activa:true, campaña:'mate4',
+   etapas:[
+     {oa:"MA04 OA 09",nombre:"Sumar y restar fracciones",icono:"➕",n:10},
+     {oa:"MA04 OA 10",nombre:"Fracciones y números mixtos",icono:"½",n:10},
+     {oa:"MA04 OA 11",nombre:"Décimos y centésimos",icono:"🔟",n:10},
+     {oa:"MA04 OA 12",nombre:"Sumar y restar decimales",icono:"➕",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Fracciones y decimales",icono:"🎯",n:15,oas:["MA04 OA 09","MA04 OA 10","MA04 OA 11","MA04 OA 12"]},
+   ]},
+ { id:'mate4-cap4', asignatura:'Matemáticas', nivel:'4° Básico · Patrones, mapas y figuras 3D',
+   portada:'assets/portada-matematicas.png',
+   portadaMapa:'assets/portada-mate-geometria.png',
+   contenido:'contenido/matematicas-4basico/preguntas.json', activa:true, campaña:'mate4',
+   etapas:[
+     {oa:"MA04 OA 13",nombre:"Patrones en tablas",icono:"🔍",n:10},
+     {oa:"MA04 OA 14",nombre:"Ecuaciones e inecuaciones",icono:"⚖️",n:10},
+     {oa:"MA04 OA 15",nombre:"Ubicar en un mapa",icono:"🗺️",n:10},
+     {oa:"MA04 OA 16",nombre:"Vistas de figuras 3D",icono:"📦",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Patrones, mapas y figuras 3D",icono:"🎯",n:15,oas:["MA04 OA 13","MA04 OA 14","MA04 OA 15","MA04 OA 16"]},
+   ]},
+ { id:'mate4-cap5', asignatura:'Matemáticas', nivel:'4° Básico · Simetría y ángulos',
+   portada:'assets/portada-matematicas.png',
+   portadaMapa:'assets/portada-mate6-cap5.png',
+   contenido:'contenido/matematicas-4basico/preguntas.json', activa:true, campaña:'mate4',
+   etapas:[
+     {oa:"MA04 OA 17",nombre:"Líneas de simetría",icono:"🦋",n:10},
+     {oa:"MA04 OA 18",nombre:"Trasladar, rotar y reflejar",icono:"🔄",n:10},
+     {oa:"MA04 OA 19",nombre:"Construir ángulos",icono:"📐",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Simetría y ángulos",icono:"🎯",n:15,oas:["MA04 OA 17","MA04 OA 18","MA04 OA 19"]},
+   ]},
+ { id:'mate4-cap6', asignatura:'Matemáticas', nivel:'4° Básico · Medir tiempo y longitud',
+   portada:'assets/portada-matematicas.png',
+   portadaMapa:'assets/portada-mate6-cap6.png',
+   contenido:'contenido/matematicas-4basico/preguntas.json', activa:true, campaña:'mate4',
+   etapas:[
+     {oa:"MA04 OA 20",nombre:"Leer la hora",icono:"🕐",n:10},
+     {oa:"MA04 OA 21",nombre:"Conversiones de tiempo",icono:"⏱️",n:10},
+     {oa:"MA04 OA 22",nombre:"Medir longitudes",icono:"📏",n:10},
+     {oa:"MA04 OA 23",nombre:"El área de un rectángulo",icono:"🟩",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Medir tiempo y longitud",icono:"🎯",n:15,oas:["MA04 OA 20","MA04 OA 21","MA04 OA 22","MA04 OA 23"]},
+   ]},
+ { id:'mate4-cap7', asignatura:'Matemáticas', nivel:'4° Básico · Área, volumen y datos',
+   portada:'assets/portada-matematicas.png',
+   portadaMapa:'assets/portada-mate-datos.png',
+   contenido:'contenido/matematicas-4basico/preguntas.json', activa:true, campaña:'mate4',
+   etapas:[
+     {oa:"MA04 OA 24",nombre:"El volumen de un cuerpo",icono:"🧊",n:10},
+     {oa:"MA04 OA 25",nombre:"Encuestas y muestras",icono:"📋",n:10},
+     {oa:"MA04 OA 26",nombre:"Experimentos aleatorios",icono:"🎲",n:10},
+     {oa:"MA04 OA 27",nombre:"Leer pictogramas y gráficos",icono:"📊",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Área, volumen y datos",icono:"🎯",n:15,oas:["MA04 OA 24","MA04 OA 25","MA04 OA 26","MA04 OA 27"]},
+   ]},
+ // --- Campaña Ciencias (4°) ---
+ // Las 3 unidades oficiales del Programa se reparten en 5 capítulos por tema:
+ // ecosistemas, el cuerpo, la materia, las fuerzas y la Tierra.
+ { id:'cie4-cap1', asignatura:'Ciencias', nivel:'4° Básico · Ecosistemas de Chile',
+   portada:'assets/portada-ciencias.png',
+   portadaMapa:'assets/portada-cie6-cap1.png',
+   contenido:'contenido/ciencias-4basico/preguntas.json', activa:true, campaña:'cie4',
+   etapas:[
+     {oa:"CN04 OA 01",nombre:"Elementos de un ecosistema",icono:"🌳",n:10},
+     {oa:"CN04 OA 02",nombre:"Adaptaciones para sobrevivir",icono:"🦎",n:10},
+     {oa:"CN04 OA 03",nombre:"Cadenas alimentarias",icono:"🍃",n:10},
+     {oa:"CN04 OA 04",nombre:"Cuidar los ecosistemas",icono:"🛡️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Ecosistemas de Chile",icono:"🧬",n:15,oas:["CN04 OA 01","CN04 OA 02","CN04 OA 03","CN04 OA 04"]},
+   ]},
+ // ⚠️ El OA 08 (efectos del alcohol) es currículum oficial y se juega COMPLETO, sin
+ // excluirlo de nada: es contenido factual sobre salud, no una escena de consumo.
+ // Ver docs/contenido-sensible.md, sección 4° básico (categoría 🔵 Sustancias).
+ { id:'cie4-cap2', asignatura:'Ciencias', nivel:'4° Básico · Mi cuerpo',
+   portada:'assets/portada-ciencias.png',
+   portadaMapa:'assets/portada-cien-cuerpo.png',
+   contenido:'contenido/ciencias-4basico/preguntas.json', activa:true, campaña:'cie4',
+   etapas:[
+     {oa:"CN04 OA 05",nombre:"El sistema esquelético",icono:"🦴",n:10},
+     {oa:"CN04 OA 06",nombre:"Músculos y movimiento",icono:"💪",n:10},
+     {oa:"CN04 OA 07",nombre:"El sistema nervioso",icono:"🧠",n:10},
+     {oa:"CN04 OA 08",nombre:"Los efectos del alcohol",icono:"🚭",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Mi cuerpo",icono:"🧬",n:15,oas:["CN04 OA 05","CN04 OA 06","CN04 OA 07","CN04 OA 08"]},
+   ]},
+ { id:'cie4-cap3', asignatura:'Ciencias', nivel:'4° Básico · La materia',
+   portada:'assets/portada-ciencias.png',
+   portadaMapa:'assets/portada-cien-materia.png',
+   contenido:'contenido/ciencias-4basico/preguntas.json', activa:true, campaña:'cie4',
+   etapas:[
+     {oa:"CN04 OA 09",nombre:"La materia tiene masa",icono:"⚖️",n:10},
+     {oa:"CN04 OA 10",nombre:"Sólido, líquido y gaseoso",icono:"💧",n:10},
+     {oa:"CN04 OA 11",nombre:"Medir masa, volumen y temperatura",icono:"🌡️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: La materia",icono:"🧬",n:15,oas:["CN04 OA 09","CN04 OA 10","CN04 OA 11"]},
+   ]},
+ { id:'cie4-cap4', asignatura:'Ciencias', nivel:'4° Básico · Fuerzas y máquinas',
+   portada:'assets/portada-ciencias.png',
+   portadaMapa:'assets/portada-cie7-cap2.png',
+   contenido:'contenido/ciencias-4basico/preguntas.json', activa:true, campaña:'cie4',
+   etapas:[
+     {oa:"CN04 OA 12",nombre:"Efectos de las fuerzas",icono:"💥",n:10},
+     {oa:"CN04 OA 13",nombre:"Roce, peso e imanes",icono:"🧲",n:10},
+     {oa:"CN04 OA 14",nombre:"Construir con fuerzas",icono:"🔧",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Fuerzas y máquinas",icono:"🧬",n:15,oas:["CN04 OA 12","CN04 OA 13","CN04 OA 14"]},
+   ]},
+ { id:'cie4-cap5', asignatura:'Ciencias', nivel:'4° Básico · La Tierra y sus riesgos',
+   portada:'assets/portada-ciencias.png',
+   portadaMapa:'assets/portada-cie6-cap5.png',
+   contenido:'contenido/ciencias-4basico/preguntas.json', activa:true, campaña:'cie4',
+   etapas:[
+     {oa:"CN04 OA 15",nombre:"Las capas de la Tierra",icono:"🌍",n:10},
+     {oa:"CN04 OA 16",nombre:"Sismos y volcanes",icono:"🌋",n:10},
+     {oa:"CN04 OA 17",nombre:"Prevenir riesgos",icono:"⚠️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: La Tierra y sus riesgos",icono:"🧬",n:15,oas:["CN04 OA 15","CN04 OA 16","CN04 OA 17"]},
+   ]},
+
+ // --- Campaña Historia (4°) ---
+ // Los 18 OA se reparten en 5 capítulos siguiendo los tres ejes del Programa:
+ // civilizaciones americanas, geografía de América, y ciudadanía y derechos.
+ { id:'hist4-cap1', asignatura:'Historia', nivel:'4° Básico · Civilizaciones de América',
+   portada:'assets/portada-historia.png',
+   portadaMapa:'assets/portada-hist7-cap6.png',
+   contenido:'contenido/historia-4basico/preguntas.json', activa:true, campaña:'hist4',
+   etapas:[
+     {oa:"HI04 OA 01",nombre:"La civilización maya",icono:"🏛️",n:10},
+     {oa:"HI04 OA 02",nombre:"La civilización azteca",icono:"🦅",n:10},
+     {oa:"HI04 OA 03",nombre:"La civilización inca",icono:"⛰️",n:10},
+     {oa:"HI04 OA 04",nombre:"Comparar las tres civilizaciones",icono:"🔍",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Civilizaciones de América",icono:"🗺️",n:15,oas:["HI04 OA 01","HI04 OA 02","HI04 OA 03","HI04 OA 04"]},
+   ]},
+ { id:'hist4-cap2', asignatura:'Historia', nivel:'4° Básico · Investigar mapas y recursos',
+   portada:'assets/portada-historia.png',
+   portadaMapa:'assets/portada-hist3-cap1.png',
+   contenido:'contenido/historia-4basico/preguntas.json', activa:true, campaña:'hist4',
+   etapas:[
+     {oa:"HI04 OA 05",nombre:"Pueblos indígenas hoy",icono:"🌎",n:10},
+     {oa:"HI04 OA 06",nombre:"Coordenadas geográficas",icono:"🧭",n:10},
+     {oa:"HI04 OA 07",nombre:"Recursos renovables y no renovables",icono:"♻️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Investigar mapas y recursos",icono:"🗺️",n:15,oas:["HI04 OA 05","HI04 OA 06","HI04 OA 07"]},
+   ]},
+ // Sin portadaMapa: ninguna portada existente calza con este tema; cae al fallback
+ // de la genérica de Historia (assets/portada-historia.png).
+ { id:'hist4-cap3', asignatura:'Historia', nivel:'4° Básico · Paisajes de América',
+   portada:'assets/portada-historia.png',
+   contenido:'contenido/historia-4basico/preguntas.json', activa:true, campaña:'hist4',
+   etapas:[
+     {oa:"HI04 OA 08",nombre:"Paisajes del continente",icono:"🏞️",n:10},
+     {oa:"HI04 OA 09",nombre:"Recursos naturales de América",icono:"🌾",n:10},
+     {oa:"HI04 OA 10",nombre:"Comparar paisajes con mi región",icono:"🗺️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Paisajes de América",icono:"🗺️",n:15,oas:["HI04 OA 08","HI04 OA 09","HI04 OA 10"]},
+   ]},
+ { id:'hist4-cap4', asignatura:'Historia', nivel:'4° Básico · Ciudadanía y derechos',
+   portada:'assets/portada-historia.png',
+   portadaMapa:'assets/portada-hist3-cap4.png',
+   contenido:'contenido/historia-4basico/preguntas.json', activa:true, campaña:'hist4',
+   etapas:[
+     {oa:"HI04 OA 11",nombre:"Autoridades de Chile",icono:"🏛️",n:10},
+     {oa:"HI04 OA 12",nombre:"Mis derechos",icono:"⚖️",n:10},
+     {oa:"HI04 OA 13",nombre:"Actuar con honestidad",icono:"🤲",n:10},
+     {oa:"HI04 OA 14",nombre:"Respetar a los demás",icono:"🤝",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Ciudadanía y derechos",icono:"🕊️",n:15,oas:["HI04 OA 11","HI04 OA 12","HI04 OA 13","HI04 OA 14"]},
+   ]},
+ { id:'hist4-cap5', asignatura:'Historia', nivel:'4° Básico · Participar y resolver conflictos',
+   portada:'assets/portada-historia.png',
+   portadaMapa:'assets/portada-hist7-cap5.png',
+   contenido:'contenido/historia-4basico/preguntas.json', activa:true, campaña:'hist4',
+   etapas:[
+     {oa:"HI04 OA 15",nombre:"Participar en el curso",icono:"🗳️",n:10},
+     {oa:"HI04 OA 16",nombre:"Resolver conflictos",icono:"🕊️",n:10},
+     {oa:"HI04 OA 17",nombre:"Un proyecto para el curso",icono:"💡",n:10},
+     {oa:"HI04 OA 18",nombre:"Opinar con argumentos",icono:"💬",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Participar y resolver conflictos",icono:"🕊️",n:15,oas:["HI04 OA 15","HI04 OA 16","HI04 OA 17","HI04 OA 18"]},
+   ]},
+
+ // --- Campaña Lenguaje (4°) ---
+ // 29 OA jugables en 9 capítulos POR TEMA (el LE04 OA 15, "escribir con letra clara",
+ // está EXCLUIDO del banco: es caligrafía manuscrita, ver contenido/lenguaje-4basico/oa.json).
+ { id:'leng4-cap1', asignatura:'Lenguaje', nivel:'4° Básico · Leer con fluidez y comprender',
+   portada:'assets/portada-lenguaje.png',
+   portadaMapa:'assets/portada-leng-lectura.png',
+   contenido:'contenido/lenguaje-4basico/preguntas.json', activa:true, campaña:'leng4',
+   etapas:[
+     {oa:"LE04 OA 01",nombre:"Leer con fluidez",icono:"📖",n:10},
+     {oa:"LE04 OA 02",nombre:"Estrategias de comprensión",icono:"🔑",n:10},
+     {oa:"LE04 OA 03",nombre:"Un mundo de lecturas",icono:"📚",n:10},
+     {oa:"LE04 OA 04",nombre:"Comprender narraciones",icono:"📝",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Leer con fluidez y comprender",icono:"📚",n:15,oas:["LE04 OA 01","LE04 OA 02","LE04 OA 03","LE04 OA 04"]},
+   ]},
+ { id:'leng4-cap2', asignatura:'Lenguaje', nivel:'4° Básico · Poesía y hábito lector',
+   portada:'assets/portada-lenguaje.png',
+   portadaMapa:'assets/portada-leng-literarios.png',
+   contenido:'contenido/lenguaje-4basico/preguntas.json', activa:true, campaña:'leng4',
+   etapas:[
+     {oa:"LE04 OA 05",nombre:"El lenguaje de la poesía",icono:"✒️",n:10},
+     {oa:"LE04 OA 06",nombre:"Textos no literarios",icono:"📰",n:10},
+     {oa:"LE04 OA 07",nombre:"El gusto por leer",icono:"❤️",n:10},
+     {oa:"LE04 OA 08",nombre:"Ir a la biblioteca",icono:"🏛️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Poesía y hábito lector",icono:"✨",n:15,oas:["LE04 OA 05","LE04 OA 06","LE04 OA 07","LE04 OA 08"]},
+   ]},
+ { id:'leng4-cap3', asignatura:'Lenguaje', nivel:'4° Básico · Investigar y ampliar el vocabulario',
+   portada:'assets/portada-lenguaje.png',
+   portadaMapa:'assets/portada-len3-cap3.png',
+   contenido:'contenido/lenguaje-4basico/preguntas.json', activa:true, campaña:'leng4',
+   etapas:[
+     {oa:"LE04 OA 09",nombre:"Investigar un tema",icono:"🔍",n:10},
+     {oa:"LE04 OA 10",nombre:"Palabras nuevas",icono:"🔤",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Investigar y ampliar el vocabulario",icono:"🧭",n:15,oas:["LE04 OA 09","LE04 OA 10"]},
+   ]},
+ { id:'leng4-cap4', asignatura:'Lenguaje', nivel:'4° Básico · Escribir para crear e informar',
+   portada:'assets/portada-lenguaje.png',
+   portadaMapa:'assets/portada-leng-escritura.png',
+   contenido:'contenido/lenguaje-4basico/preguntas.json', activa:true, campaña:'leng4',
+   etapas:[
+     {oa:"LE04 OA 11",nombre:"Escribir seguido",icono:"✏️",n:10},
+     {oa:"LE04 OA 12",nombre:"Escribir una narración",icono:"📜",n:10},
+     {oa:"LE04 OA 13",nombre:"Escribir un artículo",icono:"🗞️",n:10},
+     {oa:"LE04 OA 14",nombre:"Cartas e instrucciones",icono:"💌",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Escribir para crear e informar",icono:"🌟",n:15,oas:["LE04 OA 11","LE04 OA 12","LE04 OA 13","LE04 OA 14"]},
+   ]},
+ { id:'leng4-cap5', asignatura:'Lenguaje', nivel:'4° Básico · Planificar y revisar lo escrito',
+   portada:'assets/portada-lenguaje.png',
+   portadaMapa:'assets/portada-leng-textos.png',
+   contenido:'contenido/lenguaje-4basico/preguntas.json', activa:true, campaña:'leng4',
+   etapas:[
+     {oa:"LE04 OA 16",nombre:"Planificar antes de escribir",icono:"🗂️",n:10},
+     {oa:"LE04 OA 17",nombre:"Revisar lo escrito",icono:"🔧",n:10},
+     {oa:"LE04 OA 18",nombre:"Usar palabras nuevas",icono:"🖋️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Planificar y revisar lo escrito",icono:"🌟",n:15,oas:["LE04 OA 16","LE04 OA 17","LE04 OA 18"]},
+   ]},
+ { id:'leng4-cap6', asignatura:'Lenguaje', nivel:'4° Básico · Adverbios, verbos y buena redacción',
+   portada:'assets/portada-lenguaje.png',
+   portadaMapa:'assets/portada-len3-cap4.png',
+   contenido:'contenido/lenguaje-4basico/preguntas.json', activa:true, campaña:'leng4',
+   etapas:[
+     {oa:"LE04 OA 19",nombre:"Los adverbios",icono:"🏃",n:10},
+     {oa:"LE04 OA 20",nombre:"Los verbos",icono:"✅",n:10},
+     {oa:"LE04 OA 21",nombre:"Ortografía",icono:"✔️",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Adverbios, verbos y buena redacción",icono:"🖊️",n:15,oas:["LE04 OA 19","LE04 OA 20","LE04 OA 21"]},
+   ]},
+ { id:'leng4-cap7', asignatura:'Lenguaje', nivel:'4° Básico · Escuchar y disfrutar',
+   portada:'assets/portada-lenguaje.png',
+   portadaMapa:'assets/portada-len7-cap7.png',
+   contenido:'contenido/lenguaje-4basico/preguntas.json', activa:true, campaña:'leng4',
+   etapas:[
+     {oa:"LE04 OA 22",nombre:"Disfrutar la literatura",icono:"👂",n:10},
+     {oa:"LE04 OA 23",nombre:"Comprender lo que se escucha",icono:"🎧",n:10},
+     {oa:"LE04 OA 24",nombre:"Ir al teatro",icono:"🎭",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Escuchar y disfrutar",icono:"👂",n:15,oas:["LE04 OA 22","LE04 OA 23","LE04 OA 24"]},
+   ]},
+ { id:'leng4-cap8', asignatura:'Lenguaje', nivel:'4° Básico · Conversar y exponer',
+   portada:'assets/portada-lenguaje.png',
+   portadaMapa:'assets/portada-len3-cap8.png',
+   contenido:'contenido/lenguaje-4basico/preguntas.json', activa:true, campaña:'leng4',
+   etapas:[
+     {oa:"LE04 OA 25",nombre:"Conversar en grupo",icono:"🗣️",n:10},
+     {oa:"LE04 OA 26",nombre:"Buenos modales",icono:"🙏",n:10},
+     {oa:"LE04 OA 27",nombre:"Exponer un tema",icono:"🎙️",n:10},
+     {oa:"LE04 OA 28",nombre:"Usar palabras nuevas al hablar",icono:"💬",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Conversar y exponer",icono:"🗣️",n:15,oas:["LE04 OA 25","LE04 OA 26","LE04 OA 27","LE04 OA 28"]},
+   ]},
+ // Sin portadaMapa: ninguna portada existente calza con este tema; cae al fallback
+ // de la genérica de Lenguaje (assets/portada-lenguaje.png).
+ { id:'leng4-cap9', asignatura:'Lenguaje', nivel:'4° Básico · Actuar y recitar',
+   portada:'assets/portada-lenguaje.png',
+   contenido:'contenido/lenguaje-4basico/preguntas.json', activa:true, campaña:'leng4',
+   etapas:[
+     {oa:"LE04 OA 29",nombre:"Caracterizar personajes",icono:"🎭",n:10},
+     {oa:"LE04 OA 30",nombre:"Recitar con expresión",icono:"🎤",n:10},
+     {oa:"BOSS",nombre:"⚡ JEFE: Actuar y recitar",icono:"🎪",n:15,oas:["LE04 OA 29","LE04 OA 30"]},
+   ]},
+];
+/* 4° nace con las 4 asignaturas COMPLETAS desde el arranque (mismo patrón que 6°): su
+   banco de 2.730 preguntas y sus 91 OA jugables ya estaban escritos antes de crear este
+   fork. No hay mini-clases todavía (HAY_MINICLASES queda en false, es contenido
+   pendiente y no un olvido), así que EXTRAS queda vacío: no hay ningún módulo con
+   pantalla propia que declarar. */
+const EXTRAS = [];
+const SOLO=_SOLO_PEDIDO.filter(id=>EXPEDICIONES.some(e=>e.id===id)||EXTRAS.some(x=>x.id===id));
+const PRUEBA=SOLO.length>0;
+/* Modo revisión de profesor (?rev=1 junto a ?solo= o ?m=). La maquinaria vive en
+   assets/js/revision.js, compartida con los demás cursos: aquí solo se enciende. */
+const REVISION=PRUEBA && (_PARAMS.has('rev')||!!(_M&&_M.rev));
+/* Respaldo por si assets/js/revision.js no cargó (404 durante un despliegue, red
+   caída, bloqueador). Sin esto, REV.init lanzaría en el nivel superior y MATARÍA
+   todo el JavaScript del juego: una función accesoria de revisión dejaría la página
+   inservible para un alumno que no tiene nada que ver con ella. Pasó de verdad. */
+// Respaldo vacio de la lectura por voz. Solo 3 basico lee en voz alta; en 8 y 7 el
+// nino ya lee de corrido. La linea es la MISMA en los tres a proposito: en 3 no hace
+// nada -su function callarVoz() se iza antes- y en los otros dos deja que go(),
+// pintaPregunta(), responder() y mostrarMetaEtapa() llamen a callarVoz() y queden
+// identicas. Cuando la voz salga a assets/js/voz.js, este respaldo es lo que impide
+// que un 404 de ese archivo mate todo el JavaScript del juego.
+if(!window.VOZ) window.VOZ={activo:false,init:function(){}};
+if(!window.callarVoz) window.callarVoz=function(){};
+if(!window.leerEnVoz) window.leerEnVoz=function(){};
+if(!window.leerPreguntaEnVoz) window.leerPreguntaEnVoz=function(){};
+if(!window.sonarClip) window.sonarClip=function(){return false;};
+if(!window.REV) window.REV={activo:false,n:3,marcadas:[],
+  init:function(){return this;},barra:function(){},boton:function(){},
+  abrir:function(){},mensaje:function(){return '';},tipoAudio:function(){return '';}};
+REV.init({ activo:REVISION,
+           titulo:'VULPO · Revisión de 4° básico',
+           volver:function(){ go('scr-expediciones'); } });
+/* MODO_ABIERTO mezclaba DOS preguntas distintas, y el modo experimental las necesita
+   distintas: capítulos abiertos pero jefes cerrados. Mismo corte que la Sesión 41 le
+   hizo a QA. NO cambiar sin volver a sacar la foto de scripts/ (ver el plan de la
+   inscripción por enlace): ?qa=1 y los enlaces de muestra dependen de esto.
+     CAPS_ABIERTOS   ignora los candados entre capítulos y niveles
+     JEFES_ABIERTOS  ignora los candados de los jefes y del Desafío Extra
+   ⚠️ El Desafío Extra va con los JEFES: es la recompensa de haber recorrido todos los
+   capítulos, y además jefeFinalDesbloqueado lo usa como precondición — si se abriera
+   con los capítulos, el Jefe Final de una campaña SIN Desafío Extra se abriría solo. */
+/* ===== Modo experimental (inscripción por enlace) =====
+   Lo fija el CURSO, no el aparato: así un alumno que borra los datos del navegador y
+   vuelve a canjear su ALU- recupera el mismo modo. Pero el juego necesita saberlo
+   ANTES de dibujar nada —CAPS_ABIERTOS se evalúa aquí mismo— y el curso llega del
+   servidor un segundo después. Por eso se recuerda en el disco, y sincronizarModoCurso()
+   lo reconcilia con kimun_mi_curso(): si no calzan, escribe y recarga UNA vez.
+   ⚠️ La clave va escrita a mano y NO con SUFIJO, que se declara ~450 líneas más abajo:
+      leerla aquí sería zona muerta temporal y mataría todo el JavaScript de la app.
+      Es la trampa que ya mordió tres veces esta semana. */
+const EXPER_KEY='kimun_exper_4to';
+const INSCRIBIR=(PRUEBA||ARMAR)?'':(_PARAMS.get('inscribir')||'').trim().toUpperCase();
+let _exper=false;
+try{ _exper = !PRUEBA && !ARMAR && localStorage.getItem(EXPER_KEY)==='1'; }catch(e){}
+const EXPERIMENTAL=_exper;
+const CAPS_ABIERTOS=QA||PRUEBA||EXPERIMENTAL;
+const JEFES_ABIERTOS=QA||PRUEBA;
+const EFIMERO=QA||PRUEBA;        // no mide dominio por OA ni reporta refuerzos
+const SIN_DISCO=PRUEBA||ARMAR;   // ni localStorage ni Supabase ni intro
+/* Vigencia inclusiva: un enlace con hasta=2026-09-15 sirve todo el 15 y muere el 16. */
+const VENCIDA=!!VENCE && hoyISO()>VENCE;
+
+/* ===== Puerta de acceso =====
+   Una sola constante gobierna las tres fases:
+     ''            -> no pasa nada, el juego sigue abierto (valor con que se publica)
+     fecha futura  -> AVISO: todo abierto, pero se anuncia el cierre
+     fecha llegada -> PUERTA: sin código solo se juega DEMO_LIBRE
+   Llegada la fecha el cierre ocurre solo, sin desplegar nada ese día.
+   OJO: esto es un bloqueo BLANDO. Los bancos de preguntas son archivos públicos que
+   cualquiera puede descargar (ver el spec). Detiene al 99%, no a quien sepa mirar. */
+/* Misma fecha que 8°, 7° y 3°: una plataforma, una fecha (ver «Modelo de acceso»).
+   ⚠️ El comentario que 7° trae aquí está RANCIO —dice que «nace ABIERTO» y la línea
+   siguiente le pone fecha—; conviene corregirlo allá también. */
+const FECHA_PUERTA='2026-10-01';   // alineada con 8°: una plataforma, una fecha
+const PUERTA=!!FECHA_PUERTA && hoyISO()>=FECHA_PUERTA;
+const AVISO_PUERTA=!!FECHA_PUERTA && !PUERTA;
+const DEMO_LIBRE='mate4-cap1';          // lo único jugable sin código, cuando la puerta cierre
+
+/* ===== CAMPAÑAS (capa "asignatura completa" · data-driven) =====
+   Una campaña agrupa expediciones (capítulos) en orden, con un Desafío Extra y un
+   Jefe Final multi-fase. Los capítulos son objetos normales de EXPEDICIONES (5 nodos),
+   así que reusan todo el motor (activarExpedicion, cargarPool, renderMapa, quiz). */
+const CAMPAÑAS=[
+{
+  id:'mate4', asignatura:'Matemáticas', portada:'assets/portada-matematicas.png',
+  intro:'De los números hasta 10.000 a los datos y las probabilidades: el año completo de Matemática de 4°.',
+  capitulos:['mate4-cap1','mate4-cap2','mate4-cap3','mate4-cap4','mate4-cap5','mate4-cap6','mate4-cap7'],
+  jefeFinal:{
+    // Arte propio generado el 06/09/2026. "El Trueque" cambia el valor de cada número,
+    // cada operación y cada medida: es lo que la asignatura entera enseña a restituir.
+    villano:'El Trueque', villanoIc:'🔄', villanoImg:'assets/villano-matematicas-4to.png',
+    villanoImgDerrotado:'assets/villano-matematicas-4to-derrotado.png',
+    dialogo:'Cambio cada número, cada resultado, cada operación... ¡nada vale lo que debería! ¿Crees que puedes devolverle su valor exacto a las matemáticas?',
+    derrota:'Ya recuperaste lo que cambié, pero volveré a trocarlo todo. Regresa cuando tus cálculos sean intocables.',
+    vidasJugador:3, nPorFase:4,
+    // 4 fases x 4 preguntas = 16. Los 7 capítulos del mapa se agrupan en 4 para no
+    // alargar el jefe: la estructura de 4 fases es la del motor en las cuatro campañas.
+    fases:[
+      {nombre:'Números y operaciones', oas:['MA04 OA 01','MA04 OA 02','MA04 OA 03','MA04 OA 04','MA04 OA 05','MA04 OA 06','MA04 OA 07','MA04 OA 08']},
+      {nombre:'Fracciones y decimales', oas:['MA04 OA 09','MA04 OA 10','MA04 OA 11','MA04 OA 12']},
+      {nombre:'Álgebra y geometría', oas:['MA04 OA 13','MA04 OA 14','MA04 OA 15','MA04 OA 16','MA04 OA 17','MA04 OA 18','MA04 OA 19']},
+      {nombre:'Medición y datos', oas:['MA04 OA 20','MA04 OA 21','MA04 OA 22','MA04 OA 23','MA04 OA 24','MA04 OA 25','MA04 OA 26','MA04 OA 27']},
+    ],
+  },
+  recompensa:{ skin:'kimun-matematico', insignia:'maestro-matematica', bonoMonedas:500, bonoXP:300 },
+},{
+  id:'cie4', asignatura:'Ciencias', portada:'assets/portada-ciencias.png',
+  intro:'De los ecosistemas de Chile a los riesgos de la Tierra: el año completo de Ciencias de 4°.',
+  capitulos:['cie4-cap1','cie4-cap2','cie4-cap3','cie4-cap4','cie4-cap5'],
+  jefeFinal:{
+    // Arte propio generado el 06/09/2026.
+    villano:'El Revoltijo', villanoIc:'🌪️', villanoImg:'assets/villano-ciencias-4to.png',
+    villanoImgDerrotado:'assets/villano-ciencias-4to-derrotado.png',
+    dialogo:'Revolví los ecosistemas, el cuerpo, la materia entera... ¡todo es un revoltijo ahora! ¿Crees que puedes poner cada cosa en su lugar?',
+    derrota:'Vuelvo a revolverlo todo en cuanto te vas. Regresa cuando entiendas cómo funciona cada sistema de verdad.',
+    vidasJugador:3, nPorFase:4,
+    // A diferencia de Ciencias de 6°/7°, aquí NO hay ningún OA sexual/reproductivo que
+    // excluir de las fases: el único OA sensible de 4° (CN04 OA 08, alcohol) entra
+    // completo, como manda docs/contenido-sensible.md para las categorías no sexuales.
+    fases:[
+      {nombre:'Ecosistemas', oas:['CN04 OA 01','CN04 OA 02','CN04 OA 03','CN04 OA 04']},
+      {nombre:'Cuerpo humano y salud', oas:['CN04 OA 05','CN04 OA 06','CN04 OA 07','CN04 OA 08']},
+      {nombre:'La materia', oas:['CN04 OA 09','CN04 OA 10','CN04 OA 11']},
+      {nombre:'Fuerzas y la Tierra', oas:['CN04 OA 12','CN04 OA 13','CN04 OA 14','CN04 OA 15','CN04 OA 16','CN04 OA 17']},
+    ],
+  },
+  recompensa:{ skin:'kimun-cientifico', insignia:'maestro-ciencias', bonoMonedas:500, bonoXP:300 },
+},{
+  id:'hist4', asignatura:'Historia', portada:'assets/portada-historia.png',
+  intro:'De las civilizaciones de América a la ciudadanía del curso: el año completo de Historia de 4°.',
+  capitulos:['hist4-cap1','hist4-cap2','hist4-cap3','hist4-cap4','hist4-cap5'],
+  jefeFinal:{
+    // Arte propio generado el 06/09/2026: dos mapas antiguos que no calzan y dos
+    // brújulas apuntando en direcciones opuestas — abstracto a propósito, sin
+    // representar personas ni culturas, mismo criterio que "El Anacronismo".
+    villano:'La Discordia', villanoIc:'⚡', villanoImg:'assets/villano-historia-4to.png',
+    villanoImgDerrotado:'assets/villano-historia-4to-derrotado.png',
+    dialogo:'Sembré la discordia entre los pueblos, los mapas y las ideas. ¿Crees que puedes traer el acuerdo de vuelta?',
+    derrota:'La discordia siempre vuelve a aparecer. Regresa cuando sepas resolver un conflicto de verdad.',
+    vidasJugador:3, nPorFase:4,
+    // Sin exclusiones: el contenido de 4° no toca ningún OA sensible de Historia (esos
+    // aparecen recién en 5° y 6°). Las seis OA actitudinales de Formación ciudadana
+    // (13 a 18) entran igual que las demás, siempre planteando la situación de un
+    // tercero con nombre y nunca la conducta del propio jugador.
+    fases:[
+      {nombre:'Civilizaciones de América', oas:['HI04 OA 01','HI04 OA 02','HI04 OA 03','HI04 OA 04']},
+      {nombre:'Geografía de América', oas:['HI04 OA 05','HI04 OA 06','HI04 OA 07','HI04 OA 08','HI04 OA 09','HI04 OA 10']},
+      {nombre:'Ciudadanía y derechos', oas:['HI04 OA 11','HI04 OA 12','HI04 OA 13','HI04 OA 14']},
+      {nombre:'Participar y resolver conflictos', oas:['HI04 OA 15','HI04 OA 16','HI04 OA 17','HI04 OA 18']},
+    ],
+  },
+  recompensa:{ skin:'kimun-historiador', insignia:'maestro-historia', bonoMonedas:500, bonoXP:300 },
+},{
+  id:'leng4', asignatura:'Lenguaje', portada:'assets/portada-lenguaje.png',
+  intro:'De leer con fluidez a recitar frente al curso: el año completo de Lenguaje de 4°.',
+  capitulos:['leng4-cap1','leng4-cap2','leng4-cap3','leng4-cap4','leng4-cap5','leng4-cap6','leng4-cap7','leng4-cap8','leng4-cap9'],
+  jefeFinal:{
+    // Arte propio generado el 06/09/2026. "El Trabalenguas" es propio de este nivel: no
+    // repite "El Borrón" (8° y 3°), "El Silencio" (7°), "El Malentendido" (5°) ni "El
+    // Enredo" (6°).
+    villano:'El Trabalenguas', villanoIc:'👅', villanoImg:'assets/villano-lenguaje-4to.png',
+    villanoImgDerrotado:'assets/villano-lenguaje-4to-derrotado.png',
+    dialogo:'Enredo cada palabra hasta convertirla en un trabalenguas imposible. ¿Crees que puedes hablar y escribir con claridad?',
+    derrota:'Puedo volver a enredar las palabras, pero ya me venciste una vez. Regresa cuando tu lenguaje sea aún más claro.',
+    vidasJugador:3, nPorFase:4,
+    // El LE04 OA 15 (letra clara) no aparece en ninguna fase: está excluido del banco
+    // por completo (ver contenido/lenguaje-4basico/oa.json), así que tampoco hay
+    // preguntas suyas que mezclar aquí.
+    fases:[
+      {nombre:'Lectura', oas:['LE04 OA 01','LE04 OA 02','LE04 OA 03','LE04 OA 04','LE04 OA 05','LE04 OA 06','LE04 OA 07','LE04 OA 08','LE04 OA 09','LE04 OA 10']},
+      {nombre:'Escritura creativa e informativa', oas:['LE04 OA 11','LE04 OA 12','LE04 OA 13','LE04 OA 14']},
+      {nombre:'Revisar y usar el lenguaje', oas:['LE04 OA 16','LE04 OA 17','LE04 OA 18','LE04 OA 19','LE04 OA 20','LE04 OA 21']},
+      {nombre:'Comunicación oral', oas:['LE04 OA 22','LE04 OA 23','LE04 OA 24','LE04 OA 25','LE04 OA 26','LE04 OA 27','LE04 OA 28','LE04 OA 29','LE04 OA 30']},
+    ],
+  },
+  recompensa:{ skin:'kimun-escritor', insignia:'maestro-lenguaje', bonoMonedas:500, bonoXP:300 },
+}];
+/* Solo las alcanzables. 4° nace con las CUATRO asignaturas completas desde el arranque
+   (mismo patrón que 6°), así que las cuatro entradas de Maestro y las cuatro 🔥 de
+   Difícil valen desde el primer día — salvo que HAY_DIFICIL queda en false aquí (ver
+   más abajo): 4° descarta el Modo Difícil por edad, igual que 3°. */
+const INSIGNIAS=[
+  {id:'maestro-matematica', ic:'📐', tx:'Maestro de las Matemáticas', asignatura:'Matemáticas'},
+  {id:'maestro-ciencias', ic:'🔬', tx:'Maestro de Ciencias', asignatura:'Ciencias'},
+  {id:'maestro-historia', ic:'🏅', tx:'Maestro de Historia', asignatura:'Historia'},
+  {id:'maestro-lenguaje', ic:'✍️', tx:'Maestro de las Letras', asignatura:'Lenguaje'},
+  // Se gana la primera vez que se completa cualquier desafío de refuerzo del profesor.
+  {id:'mision-profe', ic:'📣', tx:'Misión del profe', asignatura:null},
+  // Exclusiva del Modo Difícil (se gana completando la asignatura en Difícil).
+  {id:'dif-matematicas', ic:'🔥', tx:'Matemáticas · Difícil', asignatura:'Matemáticas'},
+  {id:'dif-ciencias', ic:'🔥', tx:'Ciencias · Difícil', asignatura:'Ciencias'},
+  {id:'dif-historia', ic:'🔥', tx:'Historia · Difícil', asignatura:'Historia'},
+  {id:'dif-lenguaje', ic:'🔥', tx:'Lenguaje · Difícil', asignatura:'Lenguaje'},
+];
+/* Declarada aunque HAY_DIFICIL sea false, por consistencia con el resto de los forks:
+   el día que 4° sume Modo Difícil, esta lista ya está lista y no hay que inventarla. */
+const DIF_ASIGS=['Historia','Matemáticas','Ciencias','Lenguaje'];
+/* ¿Este nivel ofrece Modo Difícil (y con él las insignias 🔥, la skin de Maestro y la
+   Maestría Total)? 4° lo descarta por edad, mismo criterio que 3°: a los 9-10 años los
+   15 s y el 80% del Modo Difícil no corresponden. Si el fork alguna vez lo conservara
+   vivo por accidente, un niño que venciera un jefe recibiría un botón 🔥 que nunca debió
+   existir ahí.
+   ⚠️ Va PEGADA a DIF_ASIGS y no junto a las otras banderas: la consulta revisarDificil(),
+   que corre en el arranque. Declararla más abajo la deja en zona muerta temporal y mata
+   todo el JavaScript de la app. */
+const HAY_DIFICIL=false;
+/* ¿El cuarto hito de la Maestría Total es El Autómata (el Jefe del Reto de Cálculo)?
+   En 8° la Maestría es Historia + Ciencias + Lenguaje en Difícil MÁS El Autómata, porque
+   la dificultad de Matemáticas es el Reto y no el Modo Difícil. En 4° (como en 6°, 7° y
+   3°) son las CUATRO asignaturas en Difícil y no hay Autómata que sumar: 4° no tiene
+   Reto de Cálculo. Son el mismo número —cuatro hitos— contados distinto, así que la
+   diferencia va como DATO y no como dos funciones distintas.
+   ⚠️ PEGADA a HAY_DIFICIL por el mismo motivo: la consulta esMaestro() en el arranque. */
+const MAESTRIA_CALC=false;
+
+let EXP_ACT=EXPEDICIONES[0];          // expedición activa
+let EXPEDICION=EXP_ACT.etapas;         // etapas de la expedición activa
+let N_ETAPAS=EXPEDICION.length;
+
+/* Pool de preguntas de la expedición activa (oa -> [preguntas]) */
+let POOL={};
+cargarPool(EXP_ACT); // carga inicial (Historia) para el Duelo y el arranque
+
+// Meta de aprendizaje en lenguaje de niño, por OA. Se completa por revisión (ver el plan del
+// marco de la etapa). La frase completa "Lo que vas a aprender: ‹…›", así que va sin "Vas a"
+// (p. ej. "Por qué los europeos cruzaron el océano."). Fallback al nombre de la etapa.
+// Meta de aprendizaje en lenguaje de nino, por OA. La frase completa "Lo que vas a
+// aprender: <...>", asi que va sin "Vas a". Fallback al nombre de la etapa.
+// ⚠️ Es lo primero que se olvida al forkear y MUERE EN SILENCIO: metaDeEtapa cae al
+// nombre de la etapa, que se ve razonable, y no hay error ni 404 que lo delate.
+const META_OA={
+ // Matemática
+ 'MA04 OA 01':'Leer, escribir y comparar números hasta el 10.000.',
+ 'MA04 OA 02':'Usar estrategias de cálculo mental para sumar, restar, multiplicar y dividir.',
+ 'MA04 OA 03':'Sumar y restar números hasta 1.000 con distintas estrategias.',
+ 'MA04 OA 04':'Aplicar las propiedades del 0 y del 1 en la multiplicación y la división.',
+ 'MA04 OA 05':'Multiplicar números de tres dígitos por un dígito.',
+ 'MA04 OA 06':'Dividir números de dos dígitos por un dígito.',
+ 'MA04 OA 07':'Resolver problemas con dinero eligiendo la operación correcta.',
+ 'MA04 OA 08':'Comprender qué es una fracción y comparar fracciones.',
+ 'MA04 OA 09':'Sumar y restar fracciones con el mismo denominador.',
+ 'MA04 OA 10':'Reconocer y representar fracciones propias y números mixtos.',
+ 'MA04 OA 11':'Reconocer y comparar números decimales, décimos y centésimos.',
+ 'MA04 OA 12':'Sumar y restar números decimales.',
+ 'MA04 OA 13':'Descubrir el patrón que sigue una tabla de números.',
+ 'MA04 OA 14':'Resolver ecuaciones e inecuaciones sencillas de un paso.',
+ 'MA04 OA 15':'Ubicar un objeto en un mapa con coordenadas.',
+ 'MA04 OA 16':'Reconocer las vistas de una figura 3D desde distintos ángulos.',
+ 'MA04 OA 17':'Reconocer y dibujar líneas de simetría en una figura.',
+ 'MA04 OA 18':'Trasladar, rotar y reflejar una figura en el plano.',
+ 'MA04 OA 19':'Construir y comparar ángulos con el transportador.',
+ 'MA04 OA 20':'Leer la hora en relojes análogos y digitales.',
+ 'MA04 OA 21':'Convertir entre segundos, minutos, horas, días y meses.',
+ 'MA04 OA 22':'Medir longitudes en metros y centímetros y convertir entre ellos.',
+ 'MA04 OA 23':'Calcular el área de un rectángulo y un cuadrado.',
+ 'MA04 OA 24':'Comprender qué es el volumen de un cuerpo y medirlo.',
+ 'MA04 OA 25':'Analizar los datos de una encuesta con tablas y gráficos.',
+ 'MA04 OA 26':'Realizar experimentos aleatorios y representar sus resultados.',
+ 'MA04 OA 27':'Leer e interpretar pictogramas y gráficos de barra.',
+ // Ciencias Naturales
+ 'CN04 OA 01':'Reconocer los elementos vivos y no vivos de un ecosistema.',
+ 'CN04 OA 02':'Descubrir cómo las plantas y los animales se adaptan para sobrevivir.',
+ 'CN04 OA 03':'Reconocer productores, consumidores y descomponedores en una cadena alimentaria.',
+ 'CN04 OA 04':'Analizar cómo las personas afectan los ecosistemas de Chile y cómo protegerlos.',
+ 'CN04 OA 05':'Conocer las estructuras del sistema esquelético y sus funciones.',
+ 'CN04 OA 06':'Explicar cómo se mueve el cuerpo gracias a músculos, huesos y tendones.',
+ 'CN04 OA 07':'Conocer las estructuras del sistema nervioso y sus funciones.',
+ 'CN04 OA 08':'Conocer los efectos del consumo excesivo de alcohol en la salud.',
+ 'CN04 OA 09':'Comprobar que la materia tiene masa y ocupa espacio.',
+ 'CN04 OA 10':'Comparar los estados sólido, líquido y gaseoso de la materia.',
+ 'CN04 OA 11':'Medir la masa, el volumen y la temperatura con instrumentos adecuados.',
+ 'CN04 OA 12':'Comprobar los efectos de aplicar una fuerza sobre un objeto.',
+ 'CN04 OA 13':'Reconocer la fuerza de roce, el peso y la fuerza magnética.',
+ 'CN04 OA 14':'Diseñar un objeto que use la fuerza para resolver un problema.',
+ 'CN04 OA 15':'Conocer las capas que forman la Tierra.',
+ 'CN04 OA 16':'Explicar los cambios de la superficie terrestre: sismos, tsunamis y volcanes.',
+ 'CN04 OA 17':'Proponer medidas de prevención ante riesgos naturales.',
+ /* Historia. La comprobacion que hay que correr al cerrar el nivel:
+      EXPEDICIONES.flatMap(e=>e.etapas).flatMap(t=>t.oas||[t.oa])
+        .filter(o=>o&&o!=='BOSS').filter(o=>!META_OA[o])   // debe dar [] */
+ 'HI04 OA 01':'Describir cómo era la civilización maya.',
+ 'HI04 OA 02':'Describir cómo era la civilización azteca.',
+ 'HI04 OA 03':'Describir cómo era la civilización inca.',
+ 'HI04 OA 04':'Comparar las civilizaciones maya, azteca e inca.',
+ 'HI04 OA 05':'Investigar el presente de los pueblos indígenas americanos.',
+ 'HI04 OA 06':'Ubicar lugares en un mapa usando coordenadas geográficas.',
+ 'HI04 OA 07':'Distinguir recursos naturales renovables y no renovables.',
+ 'HI04 OA 08':'Describir distintos paisajes del continente americano.',
+ 'HI04 OA 09':'Reconocer los principales recursos naturales de América.',
+ 'HI04 OA 10':'Comparar los paisajes de tu región con los de América.',
+ 'HI04 OA 11':'Conocer las autoridades políticas de Chile y cómo se eligen.',
+ 'HI04 OA 12':'Reconocer tus derechos en la vida cotidiana.',
+ 'HI04 OA 13':'Reconocer las acciones que muestran honestidad.',
+ 'HI04 OA 14':'Reconocer las acciones que muestran respeto por los demás.',
+ 'HI04 OA 15':'Participar en la organización de una directiva de curso.',
+ 'HI04 OA 16':'Reconocer estrategias para resolver un conflicto.',
+ 'HI04 OA 17':'Reconocer cómo se organiza un proyecto para la comunidad escolar.',
+ 'HI04 OA 18':'Aprender a opinar y argumentar con fundamentos.',
+ // --- Lenguaje ---
+ 'LE04 OA 01':'Leer en voz alta con fluidez, pronunciación y entonación adecuadas.',
+ 'LE04 OA 02':'Usar estrategias para comprender mejor lo que se lee.',
+ 'LE04 OA 03':'Conocer un amplio repertorio de textos literarios.',
+ 'LE04 OA 04':'Profundizar la comprensión de una narración: personajes, ambiente y consecuencias.',
+ 'LE04 OA 05':'Comprender un poema e interpretar su lenguaje figurado.',
+ 'LE04 OA 06':'Comprender textos no literarios y formarse una opinión sobre ellos.',
+ 'LE04 OA 07':'Disfrutar de leer distintos textos con frecuencia.',
+ 'LE04 OA 08':'Reconocer para qué sirve ir habitualmente a la biblioteca.',
+ 'LE04 OA 09':'Buscar y clasificar información sobre un tema para investigar.',
+ 'LE04 OA 10':'Descubrir el significado de una palabra nueva sin usar el diccionario.',
+ 'LE04 OA 11':'Escribir con frecuencia para expresar ideas y ser creativo.',
+ 'LE04 OA 12':'Escribir una narración con una secuencia lógica de eventos.',
+ 'LE04 OA 13':'Escribir un artículo informativo sobre un tema.',
+ 'LE04 OA 14':'Escribir cartas, instrucciones o noticias con un formato adecuado.',
+ 'LE04 OA 16':'Planificar qué se va a escribir antes de empezar.',
+ 'LE04 OA 17':'Revisar y editar un texto para que se entienda mejor.',
+ 'LE04 OA 18':'Incorporar una palabra nueva al escribir.',
+ 'LE04 OA 19':'Comprender la función de los adverbios.',
+ 'LE04 OA 20':'Comprender la función de los verbos y su concordancia con el sujeto.',
+ 'LE04 OA 21':'Aplicar reglas de ortografía al escribir.',
+ 'LE04 OA 22':'Disfrutar obras de la literatura narradas o leídas por un adulto.',
+ 'LE04 OA 23':'Comprender explicaciones, noticias y relatos que se escuchan.',
+ 'LE04 OA 24':'Disfrutar la experiencia de asistir a una obra de teatro.',
+ 'LE04 OA 25':'Participar en una conversación grupal manteniendo el foco del tema.',
+ 'LE04 OA 26':'Interactuar con buenos modales en distintas situaciones.',
+ 'LE04 OA 27':'Expresarse de manera coherente sobre un tema de interés.',
+ 'LE04 OA 28':'Incorporar una palabra nueva al hablar.',
+ 'LE04 OA 29':'Caracterizar distintos personajes para trabajar en equipo.',
+ 'LE04 OA 30':'Recitar un poema con entonación y expresión.',
+};
+const LOGROS={
+ primera:{ic:"🥇",tx:"Primera victoria"},
+ combo3:{ic:"🔥",tx:"Combo x3 — ¡Imparable!"},
+ perfecto:{ic:"💎",tx:"Nivel perfecto"},
+ jefe:{ic:"👑",tx:"¡Venciste al Jefe Final!"},
+ dificil:{ic:"🔥",tx:"¡Modo Difícil desbloqueado!"},
+ 'dif-historia':{ic:"🔥",tx:"¡Historia en Difícil!"},
+ 'dif-ciencias':{ic:"🔥",tx:"¡Ciencias en Difícil!"},
+ 'dif-lenguaje':{ic:"🔥",tx:"¡Lenguaje en Difícil!"},
+ 'dif-matematicas':{ic:"🔥",tx:"¡Matemáticas en Difícil!"},
+ 'dif-maestro':{ic:"🏆",tx:"¡MAESTRÍA TOTAL: venciste a los 4 jefes!"},
+ 'mision-profe':{ic:"📣",tx:"¡Misión del profe cumplida!"},
+};
+
+const S={nombre:"",avatar:AVATARES[0],xp:0,nivel:1,monedas:0,
+ progreso:nuevoProgreso(), progresoDificil:nuevoProgreso(), dificilDesbloqueado:false,
+ skins:[], logros:new Set(), rutas:{},
+ campañasCompletas:new Set(), insignias:new Set(), insigniaActiva:null,
+ calc:{etapas:[0,0,0,0,0], jefe:false, record:0},
+ sinfin:{record:0},   // Reto Sin Fin: solo la mejor racha
+ curso:null,        // {nombre} del curso al que pertenece el alumno
+ alumno:null,       // nombre del perfil del servidor, si canjeó un código
+ maestro:false,     // logró la Maestría Total (3 en Difícil + El Autómata) → ya celebrada
+ visto:null,        // AAAA-MM-DD del último juego, para el informe del apoderado
+ respondidas:0,     // preguntas contestadas en total (esfuerzo, no acierto)
+ mateLecciones:{}, // { 'ma-oa01': true, ... } lecciones de Matemáticas completadas
+ metasVistas:{},   // { 'exp:lvl': true } etapas cuya tarjeta de meta ya se vio
+ semaforo:{}};     // { 'exp:lvl': '🟢'|'🟡'|'🔴' } autoevaluación local por etapa
+let Q={lvl:0,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock:false};
+
+/* Modo de juego: 'normal' | 'dificil' */
+let MODO='normal';
+// Cuenta regresiva del quiz. En 4° va en true, igual que en 3°, porque a los 9-10 años
+// el cronómetro produce ansiedad y no foco; de 5° hacia arriba el reloj es parte del juego.
+// ⚠️ NO alcanza al Duelo, que lleva reloj en los tres: ahí el tiempo es la competencia.
+const SIN_RELOJ=true;
+
+// Lectura en voz alta con la voz del navegador (Web Speech API), más los clips
+// pregrabados de assets/js/voz.js. Una carpeta por asignatura: los clips se generan
+// por banco y así agregar una asignatura nueva no obliga a regenerar (ni volver a
+// pagar) las anteriores. El mapa guarda la RUTA COMPLETA, no solo el nombre, porque
+// no hay una base única. 4° no tiene Vocabulario ni Lectura del colegio, así que a
+// diferencia de 3° no lleva carpeta 'voc4' ni 'lib4'.
+const VOZ_DIRS=['assets/voz/mat4/','assets/voz/hist4/','assets/voz/cie4/','assets/voz/leng4/'];
+// La llamada va PEGADA a la declaracion, no arriba con las otras constantes: un
+// `const` leido antes de declararse lanza ReferenceError y mata TODO el JavaScript,
+// con un sintoma que engana (la pantalla se ve bien y ningun boton responde).
+VOZ.init(VOZ_DIRS);   // assets/js/voz.js
+
+const $=id=>document.getElementById(id);
+const XP_POR_NIVEL=100;
+
+/* ================= SONIDO (Web Audio, sintetizado) ================= */
+const SND={
+ ctx:null, on: localStorage.getItem('kimun_sound')!=='off',
+ init(){ try{ if(!this.ctx)this.ctx=new (window.AudioContext||window.webkitAudioContext)();
+   if(this.ctx.state==='suspended')this.ctx.resume(); }catch(e){} },
+ tone(freq,dur,type='square',vol=.18,when=0){
+   if(!this.on||!this.ctx)return;
+   const t=this.ctx.currentTime+when, o=this.ctx.createOscillator(), g=this.ctx.createGain();
+   o.type=type; o.frequency.setValueAtTime(freq,t);
+   g.gain.setValueAtTime(.0001,t); g.gain.linearRampToValueAtTime(vol,t+.012);
+   g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+   o.connect(g).connect(this.ctx.destination); o.start(t); o.stop(t+dur+.02); },
+ slide(f1,f2,dur,type='sawtooth',vol=.18){
+   if(!this.on||!this.ctx)return;
+   const t=this.ctx.currentTime, o=this.ctx.createOscillator(), g=this.ctx.createGain();
+   o.type=type; o.frequency.setValueAtTime(f1,t); o.frequency.exponentialRampToValueAtTime(f2,t+dur);
+   g.gain.setValueAtTime(vol,t); g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+   o.connect(g).connect(this.ctx.destination); o.start(t); o.stop(t+dur+.02); },
+ tap(){ this.tone(330,.05,'square',.10); },
+ correct(){ this.tone(660,.09,'square',.16); this.tone(880,.12,'square',.16,.09); },
+ wrong(){ this.tone(196,.18,'sawtooth',.16); this.tone(147,.24,'sawtooth',.14,.09); },
+ combo(n){ const b=520; for(let i=0;i<Math.min(n,4);i++)this.tone(b+i*150,.08,'square',.15,i*.07); },
+ levelup(){ [523,659,784,1047].forEach((f,i)=>this.tone(f,.16,'triangle',.2,i*.1)); },
+ win(){ [523,659,784,1047,1319].forEach((f,i)=>this.tone(f,.18,'triangle',.2,i*.12)); },
+ lose(){ this.slide(400,110,.6,'sawtooth',.16); },
+ star(i){ this.tone(660+i*220,.14,'square',.18); },
+ tick(){ this.tone(1180,.03,'square',.07); },                          // tic-tac del timer (≤5 s)
+ hit(){ this.tone(200,.07,'square',.18); this.slide(320,120,.12,'sawtooth',.16); }, // golpe al jefe
+ hurt(){ this.slide(240,70,.34,'sawtooth',.2); },                      // daño recibido
+ unlock(){ [660,880,1320].forEach((f,i)=>this.tone(f,.13,'triangle',.18,i*.08)); }, // desbloqueo
+ coin(){ this.tone(988,.05,'square',.14); this.tone(1319,.09,'square',.14,.05); },  // moneda
+};
+
+/* ================= MÚSICA DE FONDO (híbrido: archivos ligeros) =================
+   Reproduce un loop según el contexto (menú/mapa/quiz -> 'menu'; jefe final -> 'jefe').
+   Los archivos son opcionales: si aún no existen, no suena nada (sin errores). */
+const MUSIC={
+ on: localStorage.getItem('kimun_music')!=='off',
+ vol: Math.min(1,Math.max(0,parseFloat(localStorage.getItem('kimun_music_vol')||'0.4'))),
+ srcs:{ menu:'assets/audio/musica-menu.mp3',
+   aventura:['assets/audio/musica-aventura.mp3','assets/audio/musica-aventura2.mp3'],  // se alternan
+   jefe:['assets/audio/musica-jefe.mp3','assets/audio/musica-jefe2.mp3'],              // se alternan
+   jefeCalc:'assets/audio/musica-jefe-calc.mp3', duelo:'assets/audio/musica-duelo.mp3',
+   sinfin:'assets/audio/musica-sinfin.mp3', victoria:'assets/audio/musica-victoria.mp3' },
+ el:null, actual:null, _ctx:'menu',
+ init(){ if(this.el)return; try{ this.el=new Audio(); this.el.loop=true; this.el.volume=this.vol;
+   this.el.addEventListener('error',()=>{ this.actual=null; }); }catch(e){} },
+ play(nombre){ if(!this.on)return; this.init(); if(!this.el)return;
+   let src=this.srcs[nombre]; if(!src)return;
+   if(Array.isArray(src)) src=src[Math.floor(Math.random()*src.length)];  // alterna entre las pistas del contexto
+   if(this.actual===nombre && !this.el.paused)return;
+   this.actual=nombre; this.el.src=src; this.el.load();   // recarga el nuevo archivo (fiable en móvil)
+   const p=this.el.play(); if(p&&p.catch)p.catch(()=>{}); },   // autoplay bloqueado -> se ignora
+ stop(){ if(this.el)this.el.pause(); this.actual=null; },
+ setOn(b){ this.on=b; localStorage.setItem('kimun_music',b?'on':'off'); if(!b)this.stop(); else this.play(this._ctx); },
+ setVol(v){ this.vol=v; localStorage.setItem('kimun_music_vol',String(v)); if(this.el)this.el.volume=v; },
+ contexto(id){
+   let n='menu';
+   if(id==='scr-jefe-intro'||id==='scr-jefe') n='jefe';                            // combate del jefe
+   else if(id==='scr-jefe-win') n='victoria';                                      // triunfo
+   else if(HAY_RETO_CALCULO && id==='scr-calc') n=(typeof RC!=='undefined' && RC)?(RC.modo==='jefe'?'jefeCalc':RC.modo==='sinfin'?'sinfin':'aventura'):'aventura'; // Reto: etapas=aventura, jefe=jefeCalc, sin fin=sinfin
+   else if(id==='scr-quiz') n='aventura';                                          // quiz de expedición
+   else if(id && (id.indexOf('scr-duelo')===0 || id.indexOf('scr-od')===0)) n='duelo'; // Duelo 1v1
+   this._ctx=n; if(this.on)this.play(n);
+ },
+};
+
+
+// ---------------------------------------------------------------------------
+// Aqui vivian 693 lineas de 8vo basico: el catalogo de diagramas SVG, el motor
+// de mini-clases y el Reto de Calculo. En este nivel son INALCANZABLES, y se
+// sacaron en la Sesion 65. Lo que las hacia dificiles de sacar ya no aplica:
+// las diferencias entre cursos son ahora banderas (HAY_MINICLASES,
+// HAY_RETO_CALCULO) y no condiciones sueltas sobre el nombre de la asignatura.
+// Siguen vivas y sin tocar en 8vo/index.html, que es donde se juegan.
+// ---------------------------------------------------------------------------
+
+
+/* ================= PERSISTENCIA ================= */
+/* Los seis cursos se sirven del MISMO origen, asi que sin sufijo compartirian
+   `kimun_save`: un alumno con dos juegos abiertos compartiria monedas, skins y avance.
+   Los ajustes de audio (kimun_sound / kimun_music) se comparten A PROPOSITO. */
+const SUFIJO='_4to';
+/* ⚠️ PEGADO a SUFIJO a proposito, no arriba con las otras constantes: este modulo lo
+   necesita, y un const leido antes de declararse mata todo el JavaScript con un sintoma
+   que enganha (la pantalla se ve bien y ningun boton responde). Ya mordio cuatro veces. */
+INST.init({nombre:'VULPO 4°', sufijo:SUFIJO, activo:!SIN_DISCO});
+const SAVE_KEY='kimun_save'+SUFIJO;
+
+
+/* ================= SUPABASE (duelo online asíncrono) ================= */
+const SUPA_URL='https://bdgzpjzlqidcexdkjhzy.supabase.co';
+const SUPA_KEY='sb_publishable_I3FWEIOQf-_7ni_46PGSSQ_PLD3mQpM';
+/* storageKey propio, igual que los demás cursos y profesor.html. Sin esto, dos cursos
+   servidos del mismo origen son el MISMO usuario anonimo: el mismo perfil, el mismo XP
+   en el ranking y el mismo vinculo con un codigo ALU-. */
+const SB=(window.supabase&&window.supabase.createClient)
+  ?window.supabase.createClient(SUPA_URL,SUPA_KEY,
+      {auth:{storageKey:'kimun-4to',persistSession:true,autoRefreshToken:true}})
+  :null;
+let MI_PERFIL=null;   // {id, nombre, avatar, codigo}
+async function conectarKimun(){
+ if(!SB)return null;
+ try{
+  const {data:{session}}=await SB.auth.getSession();
+  if(!session){const {error}=await SB.auth.signInAnonymously();if(error)throw error;}
+  const {data,error}=await SB.rpc('kimun_perfil',{p_nombre:S.nombre||'Jugador',p_avatar:S.avatar||'🦊'});
+  if(error)throw error;
+  MI_PERFIL=Array.isArray(data)?data[0]:data;
+  return MI_PERFIL;
+ }catch(e){console.error('Supabase:',e.message||e);return null;}
+}
+// Guarda el nombre del curso del jugador (o null) leyendo la primera fila del ranking
+async function cargarCurso(){
+ if(!SB) return null;
+ try{
+  const {data,error}=await SB.rpc('kimun_ranking');
+  if(error) throw error;
+  S.curso = (data && data.length) ? {nombre:data[0].curso} : null;
+  return S.curso;
+ }catch(e){ console.error('Curso:',e.message||e); return null; }
+}
+// Sube el XP al servidor como máximo una vez cada 15 s, con el valor más reciente.
+let _xpTimer=null, _xpUlt=0;
+
+/* ===== Dominio por objetivo de aprendizaje =====
+   Se acumula en memoria durante la etapa y se envía un resumen al terminarla.
+   El niño no ve nada de esto y nunca se le interrumpe el juego. */
+let DOM_BUF = {};                       // { "HI08 OA 04": {n:6, ok:4} }
+const DOM_PEND = 'kimun_dom_pend'+SUFIJO;      // resúmenes que no se pudieron enviar
+
+
+
+async function enviarDominio(){
+ try{
+  let datos = cerrarDominio();
+  // Se suman los resúmenes que quedaron pendientes de un intento anterior.
+  try{ const p = JSON.parse(localStorage.getItem(DOM_PEND)||'[]');
+       if(Array.isArray(p) && p.length) datos = p.concat(datos); }catch(e){}
+  if(!datos.length) return;
+  if(!SB || !MI_PERFIL){ guardarPendiente(datos); return; }
+  try{
+   const {error} = await SB.rpc('kimun_dominio',{p_datos:datos});
+   if(error) throw error;
+   localStorage.removeItem(DOM_PEND);
+  }catch(e){
+   console.error('Dominio:', e.message||e);
+   guardarPendiente(datos);             // se reintenta al terminar la próxima etapa
+  }
+ }catch(e){ console.error('Dominio:', e.message||e); }  // best-effort: nunca interrumpe la partida
+}
+
+
+/* ================= TIENDA DE SKINS ================= */
+const SKINS=[{e:"🐲",p:160},{e:"🦄",p:200},{e:"🦖",p:240},{e:"🐙",p:140},{e:"🦉",p:110},{e:"🚀",p:300},{e:"🧙",p:360},{e:"👑",p:480},
+ {e:"🌠",img:'assets/skin-kimun-astronauta.png',nombre:'Vulpi Astronauta',p:620},
+ {e:"🪄",img:'assets/skin-kimun-mago.png',nombre:'Vulpi Mago',p:760},
+ {e:"🥷",img:'assets/skin-kimun-ninja.png',nombre:'Vulpi Ninja',p:960},
+ {e:"🦸",img:'assets/skin-kimun-superheroe.png',nombre:'Vulpi Superhéroe',p:1250},
+ // Skins deportivas (premium, ilustradas · lote 5).
+ {e:"🥋",img:'assets/skin-kimun-karate.png',nombre:'Vulpi Karateka',p:440},
+ {e:"⚽",img:'assets/skin-kimun-futbol.png',nombre:'Vulpi Futbolista',p:500},
+ {e:"🏀",img:'assets/skin-kimun-basquetbol.png',nombre:'Vulpi Basquetbolista',p:550},
+ {e:"🏐",img:'assets/skin-kimun-voleibol.png',nombre:'Vulpi Voleibolista',p:600},
+ {e:"🚴",img:'assets/skin-kimun-ciclismo.png',nombre:'Vulpi Ciclista',p:660},
+ {e:"🎾",img:'assets/skin-kimun-tenis.png',nombre:'Vulpi Tenista',p:720},
+ {e:"🛹",img:'assets/skin-kimun-skate.png',nombre:'Vulpi Skater',p:780},
+ // Skin exclusiva de recompensa: visible pero bloqueada; se desbloquea al vencer al Jefe Final de la asignatura.
+ /* Sin 'kimun-calculista': su requisito es El Autómata, el jefe del Reto de Cálculo,
+    que 4° no tiene. Quedaría bloqueada para siempre en la tienda. */
+ {id:'kimun-matematico', e:"📐", img:'assets/kimun-matematico.png', nombre:'Vulpi Matemático', bloqueada:true, desbloqueaCon:'mate4', req:'Vence a El Trueque'},
+ {id:'kimun-historiador', e:"🎓", img:'assets/kimun-historiador.png', nombre:'Vulpi Historiador', bloqueada:true, desbloqueaCon:'hist4', req:'Vence a La Discordia'},
+ {id:'kimun-escritor', e:"✍️", img:'assets/kimun-escritor.png', nombre:'Vulpi Escritor', bloqueada:true, desbloqueaCon:'leng4', req:'Vence a El Trabalenguas'},
+ {id:'kimun-cientifico', e:"🔬", img:'assets/kimun-cientifico.png', nombre:'Vulpi Científico', bloqueada:true, desbloqueaCon:'cie4', req:'Vence a El Revoltijo'},
+ // Skin maestra: requiere Modo Difícil, que 4° no tiene (HAY_DIFICIL=false, por edad,
+ // igual que 3°). Queda bloqueada para siempre en esta tienda; se conserva por
+ // consistencia con el resto de los forks y porque esMaestro() ya la protege sola
+ // (devuelve false de inmediato si !HAY_DIFICIL).
+ {id:'kimun-maestro', e:"🏆", img:'assets/skin-kimun-maestro.png', nombre:'Vulpi Maestro', bloqueada:true, req:'Vence los 4 jefes en Difícil'}];
+
+/* ================= DUELO 1v1 ================= */
+const DUELO_AV=["🦁","🐉","🦊","🐺","🦄","🐲"], DUELO_ROUNDS=5;
+// El duelo saca sus preguntas de Historia DEL PROPIO NIVEL. Iba fija a historia-8basico
+// en los TRES forks, asi que en 7° un alumno recibia preguntas de 8° (la conquista de
+// America) y en 3° las habria recibido al encender el duelo. Va como DATO y no como un
+// if sobre el nivel, que es justo lo que se copia con su suposicion adentro al forkear.
+const DUELO_BANCO={ruta:'contenido/historia-4basico/preguntas.json',
+                    oas:['HI04 OA 01','HI04 OA 02','HI04 OA 03','HI04 OA 04']};
+const DUELO_SEG=30;   // 30 s: 4° juega SIN_RELOJ en todo lo demás, pero el duelo es una
+                          // competencia y ahi el tiempo es parte del juego. El doble que en 8°
+                          // porque a los 9-10 anos leer el enunciado ya toma buena parte del turno.
+let D={j:[{n:"Jugador 1",em:DUELO_AV[0],pts:0},{n:"Jugador 2",em:DUELO_AV[1],pts:0}],pr:[],ronda:0,turno:0,lock:false,t:DUELO_SEG,timer:null};
+let DUELO_POOL=null;
+async function cargarPoolDuelo(){
+ if(DUELO_POOL) return DUELO_POOL;
+ try{ const d=await (await fetch(DUELO_BANCO.ruta)).json();
+   DUELO_POOL=(d.preguntas||[]).filter(q=>DUELO_BANCO.oas.includes(q.oa)); }catch(e){ DUELO_POOL=[]; }
+ return DUELO_POOL;
+}
+   // banco propio del duelo, independiente del POOL de expedición activa
+async function startDuelo(){
+ const pool=await cargarPoolDuelo();
+ if(pool.length<DUELO_ROUNDS){alert('Cargando preguntas… intenta de nuevo en un momento.');return;}
+ D.j[0].n=$('d1Name').value.trim()||"Jugador 1";
+ D.j[1].n=$('d2Name').value.trim()||"Jugador 2";
+ nuevaRondaDuelo();
+}
+
+/* ================= INICIO ================= */
+(function(){
+ const st=$('stars');for(let i=0;i<40;i++){const s=document.createElement('span');
+  s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';
+  s.style.animationDelay=Math.random()*3+'s';st.appendChild(s);}
+ /* estrella fugaz de vez en cuando */
+ function estrellaFugaz(){const s=document.createElement('div');s.className='shoot';
+  s.style.left=(window.innerWidth*(0.35+Math.random()*0.6))+'px';
+  s.style.top=(window.innerHeight*Math.random()*0.35)+'px';
+  const d=220+Math.random()*180;
+  s.style.setProperty('--sx',(-d)+'px');s.style.setProperty('--sy',(d*1.1)+'px');
+  document.body.appendChild(s);setTimeout(()=>s.remove(),1400);}
+ (function agenda(){setTimeout(()=>{estrellaFugaz();agenda();},8000+Math.random()*14000);})();
+ window.estrellaFugaz=estrellaFugaz;
+ if(!SIN_DISCO) cargar();    // el modo prueba y el armador no leen la partida del teléfono
+ pintarInicio();
+ if(PRUEBA) setTimeout(VENCIDA?mostrarVencida:arrancarModoPrueba,0);   // tras montar la UI
+ if(ARMAR)  setTimeout(arrancarArmador,0);
+ if(INSCRIBIR) setTimeout(arrancarInscripcion,0);
+ aplicarMaestria();   // aura dorada si ya es maestro (no depende del servidor)
+ // Perfil en el servidor desde el inicio (antes solo se creaba al entrar al duelo).
+ // No bloquea: si falla, el juego funciona igual y se reintenta en la próxima sesión.
+ // En modo prueba no se toca Supabase: el invitado no existe para el backend.
+ // (?qa=1 sí sigue creando perfil, como siempre.)
+ if(!SIN_DISCO) setTimeout(async ()=>{
+  const p = await conectarKimun();
+  if(!p) return;
+  if(p.codigo_acceso){ S.alumno = p.nombre; S.nombre = p.nombre; S.avatar = p.avatar; }
+  await cargarCurso();
+  // Mientras el alumno escribe su nombre NO se reconcilia: recargar la página bajo
+  // sus dedos le borraría lo escrito.
+  if(!INSCRIBIR) await sincronizarModoCurso(true);
+  guardar(); refreshHud(); pintarInicio();
+  revisarDesafio();   // muestra el banner del desafío del profe, si hay
+  revisarDuelos();    // y el de los duelos: te desafiaron, o el tuyo ya terminó
+  revisarDificil();   // sincroniza la marca 🔥 y otorga premios de Difícil ya logrados
+  // Si la bajada del progreso falló al canjear, o quedó a medias, se reintenta acá.
+  if(p.codigo_acceso && !yaBajo()) bajarProgreso(null);
+ }, 1200);
+ if(S.nombre)$('inpName').value=S.nombre;
+ const g=$('avgrid');AVATARES.forEach((a)=>{const d=document.createElement('div');
+  d.className='av'+(S.avatar===a?' sel':'');d.textContent=a;
+  d.onclick=()=>{SND.init();SND.tap();document.querySelectorAll('.av').forEach(x=>x.classList.remove('sel'));d.classList.add('sel');S.avatar=a;};
+  g.appendChild(d);});
+})();
+/* ===== Selección de modo (Jugador / Duelo) ===== */
+/* Pantalla de expediciones: generada desde EXPEDICIONES (data-driven) */
+/* Orden fijo de los módulos por asignatura en la pantalla principal */
+// El orden en que se ven en el menu. Al sumar Historia y Lenguaje, van aqui.
+const ORDEN_ASIG=['Historia','Matemáticas','Ciencias','Lenguaje'];
+/* Portada genérica por asignatura: la usa el módulo (nivel 1) y es el fallback
+   de la portada propia de cada mapa/capítulo. */
+const ASIG_PORTADA={Historia:'assets/portada-historia.png',Matemáticas:'assets/portada-matematicas.png',
+ Ciencias:'assets/portada-ciencias.png',Lenguaje:'assets/portada-lenguaje.png'};
+
+// Biblioteca de lecturas (hoy: El diario de Ana Frank). Cada libro = una expedición de tramos.
+const LIBROS=[{id:'lect-anafrank', titulo:'El diario de Ana Frank', autor:'Ana Frank', tramos:8}];
+
+/* ===== Armador de enlaces de muestra (?armar=1) =====
+   Vive aquí y no en profesor.html a propósito: el catálogo (EXPEDICIONES) ya está en este
+   archivo, así que una expedición nueva aparece sola, sin listas paralelas que mantener.
+   El panel solo abre esta pantalla, igual que hace con el Tablero de avance. */
+$('btnJugador').onclick=()=>{SND.init();SND.tap();$('nav').style.display='none';renderExpediciones();go('scr-expediciones');};
+// Acceso a la tienda desde Expediciones (la tienda recuerda de dónde se abrió para volver).
+let tiendaOrigen='scr-mapa';
+$('btnExpTienda').onclick=()=>{SND.tap(); if(bloqueado()){avisoCandado();return;}
+ tiendaOrigen='scr-expediciones';$('nav').style.display='none';renderTienda();go('scr-tienda');};
+$('btnTiendaBack').onclick=()=>{SND.tap();go(tiendaOrigen);};
+$('btnExpBack').onclick=()=>{SND.tap();go('scr-rol');};
+$('btnMapasBack').onclick=()=>{SND.tap();go('scr-expediciones');};
+// Landing de Lenguaje
+$('btnLengCampana').onclick=()=>{SND.tap();abrirCampaña(campañaDe('Lenguaje'));};
+/* 4° NO tiene Vocabulario (HAY_VOCABULARIO=false): no hay banco propio todavia. Este
+   handler queda VIVO igual y es inofensivo, porque sin campana de Lenguaje la pantalla
+   scr-lenguaje es inalcanzable. En 7° estuvo desactivado a proposito, porque apuntaba a
+   una expedicion 'voc-general' que en este archivo no existia: entrarExpedicion(undefined)
+   revienta. Se dejo inofensivo en vez de borrar el <button>, porque quitar el boton sin
+   quitar esta linea haria que $('btnLengVocab') sea null y .onclick mataria TODO el
+   JavaScript del juego (la trampa de la Sesion 56). Vale la advertencia al reves tambien:
+   si algun dia se apaga HAY_VOCABULARIO, hay que dejar el boton y su handler en paz. */
+$('btnLengVocab').onclick=()=>{SND.tap();entrarExpedicion(EXPEDICIONES.find(e=>e.id==='voc-general'));};
+$('btnLengBack').onclick=()=>{SND.tap();go('scr-expediciones');};
+// Biblioteca
+$('btnBiblioBack').onclick=()=>{SND.tap();go('scr-expediciones');};
+
+/* ===== Canje del código de alumno ===== */
+// Pantalla desde la que se abrió el canje, para volver justo a donde estaba el jugador.
+let CANJE_VUELVE='scr-rol';
+$('btnCanje').onclick=(e)=>{e.preventDefault();SND.tap();abrirCanje();};
+$('btnCanjeBack').onclick=()=>{SND.tap();cerrarCanje();};
+$('btnCanjeOk').onclick=async ()=>{
+ SND.tap();
+ const cod=($('canjeCodigo').value||'').trim().toUpperCase();
+ if(!cod){$('canjeMsg').style.color='var(--pink)';$('canjeMsg').textContent='Escribe tu código.';return;}
+ if(!SB){$('canjeMsg').style.color='var(--pink)';$('canjeMsg').textContent='Necesitas conexión a internet.';return;}
+ $('canjeMsg').style.color='var(--dim)';$('canjeMsg').textContent='Comprobando…';
+ try{
+  await conectarKimun();                       // asegura sesión anónima
+  const {data,error}=await SB.rpc('kimun_canjear',{p_codigo:cod});
+  if(error) throw error;
+  const p=Array.isArray(data)?data[0]:data;
+  MI_PERFIL=p;
+  S.alumno=p.nombre; S.nombre=p.nombre; S.avatar=p.avatar;
+  const rxp=await SB.rpc('kimun_xp',{p_xp:S.xp});   // conserva el avance local
+  localStorage.removeItem('kimun_rank'+SUFIJO);       // fuera el ranking del curso anterior
+  await cargarCurso();
+  // Canjear el ALU- de un curso experimental tiene que traer también su modo: es lo
+  // que hace que sobreviva a borrar los datos del navegador.
+  const cambioModo=await sincronizarModoCurso(false);
+  guardar(); refreshHud(); revisarDesafio(); revisarDuelos();
+  _rankUlt=0;                                  // el ranking debe volver a consultarse ya, sin esperar los 30 s
+  $('canjeMsg').style.color='var(--green)';
+  $('canjeMsg').textContent='¡Listo, '+p.nombre+'! Ya estás en '+(S.curso?S.curso.nombre:'tu curso')+'.';
+  SND.unlock();
+  // El XP autoritativo es el que ACABA de devolver el servidor, no el de la foto.
+  const tomo=await bajarProgreso(typeof rxp.data==='number'?rxp.data:null);
+  if(tomo) return;                          // la pantalla de conflicto se encarga
+  setTimeout(cambioModo?recargarPorModo:cerrarCanje,1600);
+ }catch(e){
+  $('canjeMsg').style.color='var(--pink)';
+  $('canjeMsg').textContent=(e.message||'').includes('codigo_invalido')
+    ? 'Ese código no existe. Revísalo con tu profesor.'
+    : 'No se pudo conectar. Intenta de nuevo.';
+ }
+};
+
+/* ===== Inscripción por enlace (?inscribir=) ===== */
+/* Reconcilia el modo del curso con lo que el juego leyó del disco al arrancar.
+   Devuelve true si quedaron distintos, es decir si hace falta recargar. */
+async function sincronizarModoCurso(recargar){
+ if(!SB||SIN_DISCO) return false;
+ try{
+  const {data,error}=await SB.rpc('kimun_mi_curso');
+  if(error) throw error;
+  const fila=Array.isArray(data)?data[0]:data;
+  const real=!!(fila&&fila.experimental);
+  try{ localStorage.setItem(EXPER_KEY, real?'1':'0'); }catch(e){}
+  if(real===EXPERIMENTAL){ try{ sessionStorage.removeItem(EXPER_KEY+'_rc'); }catch(e){} return false; }
+  if(recargar) recargarPorModo();
+  return true;
+ }catch(e){ console.error('Modo del curso:',e.message||e); return false; }   // best-effort
+}
+/* Los tres fallos se dicen distinto a propósito: un mensaje genérico deja al apoderado
+   sin saber si el enlace está mal, si se cerró o si llegó tarde, y las tres cosas se
+   resuelven de manera distinta. */
+const INS_ERRORES={
+ token_invalido:'Ese enlace no existe. Pídele a tu profesor el enlace correcto.',
+ enlace_cerrado:'Este enlace ya está cerrado. Avísale a tu profesor.',
+ sin_cupo:'Este enlace ya se llenó. Avísale a tu profesor para que abra otro.',
+ nombre_invalido:'Escribe tu nombre completo (entre 2 y 40 letras).'
+};
+$('btnInsOk').onclick=async ()=>{
+ SND.tap();
+ const nom=($('insNombre').value||'').trim(), msg=$('insMsg');
+ if(nom.length<2){msg.style.color='var(--pink)';msg.textContent='Escribe tu nombre.';return;}
+ if(!SB){msg.style.color='var(--pink)';msg.textContent='Necesitas conexión a internet.';return;}
+ msg.style.color='var(--dim)';msg.textContent='Entrando…';
+ try{
+  await conectarKimun();                       // asegura sesión anónima
+  const {data,error}=await SB.rpc('kimun_inscribirse',
+    {p_token:INSCRIBIR,p_nombre:nom,p_avatar:S.avatar||'🦊'});
+  if(error) throw error;
+  const p=Array.isArray(data)?data[0]:data;
+  MI_PERFIL=p;
+  S.alumno=p.nombre; S.nombre=p.nombre; S.avatar=p.avatar;
+  guardar();
+  // El modo lo manda el CURSO y no el enlace: un profesor puede abrir un enlace de
+  // inscripción sin marcar el modo experimental. Se pregunta, no se supone. Sin
+  // recargar todavía: primero el alumno tiene que ver su código.
+  await sincronizarModoCurso(false);
+  $('insHola').textContent=p.nombre;
+  $('insCodigo').textContent=p.codigo_acceso||'';
+  $('insForm').hidden=true; $('insListo').hidden=false;
+  SND.unlock();
+ }catch(e){
+  const m=''+(e.message||''), k=Object.keys(INS_ERRORES).find(x=>m.includes(x));
+  msg.style.color='var(--pink)';
+  msg.textContent=k?INS_ERRORES[k]:'No se pudo conectar. Intenta de nuevo.';
+ }
+};
+/* Entra al juego por la puerta principal y SIN el ?inscribir= en la barra de
+   direcciones: así una recarga no vuelve a esta pantalla, y el juego arranca leyendo
+   del disco el modo que se acaba de escribir. */
+$('btnInsJugar').onclick=()=>{SND.tap();location.replace(location.pathname);};
+
+/* ===== Mapa de campaña (Nivel 2) ===== */
+let CAMP_ACT=null;
+$('btnCampBack').onclick=()=>{SND.tap();go('scr-expediciones');};
+// Volver desde el mapa de un capítulo a su campaña (refresca el desbloqueo)
+$('btnMapaCamp').onclick=()=>{SND.tap();
+ if(PRUEBA){renderListaPrueba();return;}   // modo prueba: vuelve a su propia lista
+ if(EXP_ACT&&EXP_ACT.campaña){CAMP_ACT=campañaPorId(EXP_ACT.campaña);renderCampaña();go('scr-campana');return;}
+ if(EXP_ACT&&EXP_ACT.id==='voc-general'){go('scr-lenguaje');return;}   // Vocabulario → landing de Lenguaje
+ if(EXP_ACT&&EXP_ACT.asignatura==='Lectura'){go('scr-biblioteca');return;} // Lectura → biblioteca
+ go('scr-expediciones');};
+/* 4° NO tiene el Reto Sin Fin de cálculo (HAY_SINFIN=false, más abajo): es
+   contenido pendiente, no un olvido. Por eso no hay aquí ningún genCalc4() ni una
+   llamada a CALC.init: el respaldo vacío de assets/js/calculo.js (arriba, en el
+   <head>) basta, igual que en 8°, que tampoco llama a CALC.init. */
+
+/* ===== JEFE FINAL (multi-fase) ===== */
+let JF=null; // {camp,fase,idx,preguntas,vidaMax,vida,vidas,lock}
+$('jiStart').onclick=()=>{SND.init();SND.tap();JF.fase=0;cargarFaseJefe();go('scr-jefe');};
+$('jiBack').onclick=()=>{SND.tap();document.body.classList.remove('en-jefe');go('scr-campana');renderCampaña();};
+
+let JC_LOCK=false;
+
+$('jwBack').onclick=()=>{SND.tap();go('scr-campana');renderCampaña();};
+
+
+/* ===== Duelo / reiniciar (eventos) ===== */
+$('btnDuelo').onclick=()=>{SND.init();SND.tap();$('nav').style.display='none';
+ if(bloqueado()){ initDueloSetup(); return; }   // el duelo local queda libre
+ abrirDueloOnline();};
+$('btnDueloBack').onclick=()=>{SND.tap();go('scr-rol');};
+$('btnDueloStart').onclick=()=>{SND.init();SND.tap();startDuelo();};
+$('btnDueloReady').onclick=()=>{SND.tap();pintaDuelo();};
+$('btnDueloAgain').onclick=()=>{SND.tap();nuevaRondaDuelo();};
+$('btnDueloExit').onclick=()=>{SND.tap();go('scr-rol');};
+
+/* ================= DUELO ONLINE (Supabase) ================= */
+let OD={preguntas:[],idx:0,aciertos:0,tiempo:0,t:DUELO_SEG,timer:null,lock:false,modo:'crear',rivalCodigo:'',expedicion:null,dueloId:null,rivalNombre:'',expira:null};
+let OD_EXP_SEL=null;
+async function abrirDueloOnline(){
+ if(!SB){alert('El duelo en línea necesita conexión a internet.');go('scr-rol');return;}
+ if(!S.nombre){const n=prompt('¿Cómo te llamas? (así te verán en el duelo)');S.nombre=(n&&n.trim())||'Jugador';guardar();}
+ go('scr-duelo-online');
+ $('miCodigo').textContent='KIM-…';
+ $('pendList').innerHTML='<p style="color:var(--dim);font-weight:800;font-size:13px">Cargando…</p>';
+ const perfil=await conectarKimun();
+ $('miCodigo').textContent=perfil?perfil.codigo:'(sin conexión)';
+ cargarPendientes();
+ cargarRankingDuelos();   // 🏆 quién ha ganado más duelos del curso
+}
+async function cargarPendientes(){
+ const cont=$('pendList');
+ try{
+  const {data,error}=await SB.rpc('kimun_pendientes');if(error)throw error;
+  if(!data||!data.length){cont.innerHTML='<p style="color:var(--dim);font-weight:800;font-size:13px">No tienes desafíos pendientes.</p>';return;}
+  cont.innerHTML='';
+  data.forEach(d=>{const it=document.createElement('div');it.className='pend-item';
+   it.innerHTML=`<div class="em">${escHtml(d.retador_avatar)}</div><div class="pi-body"><div class="pi-n">${escHtml(d.retador_nombre)} te desafió</div><div class="pi-t">⏳ ${restante(d.expira)}</div></div><div class="pi-go">▶</div>`;
+   it.onclick=()=>{SND.tap();responderDesafio(d);};cont.appendChild(it);});
+ }catch(e){cont.innerHTML='<p style="color:var(--pink);font-weight:800;font-size:13px">No se pudo cargar.</p>';}
+}
+/* ¿Este nivel tiene el Reto de Cálculo? 4° NO lo tiene: sus 4 asignaturas son campañas
+   normales. Se declara como DATO y no como un if suelto porque de esto dependen dos
+   cosas del Duelo. Con la bandera mal puesta, el Duelo ofrece como "Matemáticas" los 5
+   niveles del Reto de 8° (Calentamiento, Enteros, Potencias...) en vez de los capítulos
+   del nivel, y genera las operaciones con genCalculo saltándose el banco propio. Estaba
+   pasando de verdad en 7° (Sesión 63). */
+const HAY_RETO_CALCULO=false;
+/* ¿Este nivel tiene el Reto Sin Fin de cálculo? 4° NO lo tiene todavía: es contenido
+   pendiente, no un olvido (igual que las mini-clases, más abajo). El motor compartido
+   (assets/js/calculo.js) queda cargado con su respaldo vacío, como en 8°, que tampoco
+   llama a CALC.init porque allá el cálculo mental ya es el Reto de Cálculo completo. */
+const HAY_SINFIN=false;
+/* ¿Este nivel tiene el camino de mini-clases de Matemática (su lecciones.json)?
+   Gobierna el "siguiente paso al reprobar": con mini-clases se ofrece repasar la clase,
+   y sin ellas hay que caer al repaso sin reloj, como las demás asignaturas. Con la
+   bandera mal puesta el botón dice "📘 Repasar la mini-clase", descarga las lecciones de
+   otro nivel y NO abre ninguna: el alumno toca y no pasa nada. Estaba pasando en 7°
+   (Sesión 63); 3° se salvaba solo porque escribe "Matemática" en singular.
+   4° NO las tiene todavía: no existe contenido/matematicas-4basico/lecciones.json ni el
+   de las otras asignaturas. Es contenido pendiente, no un olvido — se enciende recién
+   cuando ese banco exista, como hicieron 3°, 5° y 7° al nacer. */
+const HAY_MINICLASES=false;
+/* ¿Este nivel tiene el módulo de Vocabulario, y la biblioteca de lecturas del colegio?
+   Son contenido de 8° (y de 3° y 7° para Vocabulario). Antes se resolvían BORRANDO
+   líneas del fork, y ese corte dejó la asignatura Lenguaje inalcanzable en 3° (Sesión
+   61). Como banderas, las apps comparten el mismo renderExpediciones y solo cambia
+   el valor. */
+// 4° no tiene banco de Vocabulario propio. En true abriria el landing "Campana +
+// Vocabulario" y la asignatura Lenguaje quedaria inalcanzable, que es lo que le paso
+// a 3° en la Sesion 61.
+const HAY_VOCABULARIO=false;
+const HAY_BIBLIOTECA=false;
+async function cargarJugadores(){
+ const cont=$('odJugadores');cont.innerHTML='<p style="color:var(--dim);font-weight:800;font-size:13px">Cargando…</p>';
+ try{
+  const {data,error}=await SB.rpc('kimun_jugadores');if(error)throw error;
+  if(!data||!data.length){cont.innerHTML='<p style="color:var(--dim);font-weight:800;font-size:13px">Aún no hay otros jugadores.</p>';return;}
+  cont.innerHTML='';
+  data.forEach(j=>{const b=document.createElement('button');
+   b.innerHTML=`<span style="font-size:22px">${escHtml(j.avatar)}</span> ${escHtml(j.nombre)}`+(j.es_bot?'<span class="jb-bot">🤖 práctica</span>':'<span class="jb-bot">👤 jugador</span>');
+   b.onclick=()=>{SND.tap();$('odCodigo').value=j.codigo;cont.querySelectorAll('button').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');$('odSetupErr').textContent='';};
+   cont.appendChild(b);});
+ }catch(e){cont.innerHTML='<p style="color:var(--pink);font-weight:800;font-size:13px">No se pudo cargar la lista.</p>';}
+}
+async function iniciarDesafio(){
+ const codigo=$('odCodigo').value.trim().toUpperCase();$('odSetupErr').textContent='';
+ if(!OD_EXP_SEL){$('odSetupErr').textContent='Elige una expedición primero.';return;}
+ if(!/^KIM-[A-Z0-9]{4}$/.test(codigo)){$('odSetupErr').textContent='Código inválido (ej: KIM-AB12).';return;}
+ try{const {data,error}=await SB.rpc('kimun_buscar',{p_codigo:codigo});if(error)throw error;
+  if(!data||!data.length){$('odSetupErr').textContent='No existe un jugador con ese código.';return;}
+ }catch(e){$('odSetupErr').textContent='No se pudo validar el código.';return;}
+ let pregs;
+ if(OD_EXP_SEL.calc){pregs=odPreguntasCalc(OD_EXP_SEL);}
+ else{await cargarPool(OD_EXP_SEL);pregs=odPreguntas(OD_EXP_SEL);}
+ if(pregs.length<8){$('odSetupErr').textContent='Esa expedición no tiene suficientes preguntas.';return;}
+ OD={preguntas:pregs,idx:0,aciertos:0,tiempo:0,t:DUELO_SEG,timer:null,lock:false,modo:'crear',rivalCodigo:codigo,expedicion:OD_EXP_SEL.id,dueloId:null,rivalNombre:'',expira:null};
+ SND.init();odPinta();
+}
+async function odFin(){
+ clearInterval(OD.timer);
+ try{
+  if(OD.modo==='crear'){
+   const {data,error}=await SB.rpc('kimun_crear_duelo',{p_retado_codigo:OD.rivalCodigo,p_expedicion:OD.expedicion,p_preguntas:OD.preguntas,p_aciertos:OD.aciertos,p_tiempo:OD.tiempo});
+   if(error)throw error;const res=data||{};
+   if(res.tipo==='bot'){
+    const gano=res.ganador==='yo',emp=res.ganador==='empate';
+    $('odResIc').textContent=emp?'🤝':(gano?'🏆':'😿');
+    $('odResTitle').textContent=emp?'¡Empate!':(gano?'¡Ganaste!':'Perdiste');
+    $('odResScore').innerHTML=`Tú: <b style="color:var(--cyan)">${res.mis_aciertos}/${res.total}</b> &nbsp;vs&nbsp; ${escHtml(res.rival_avatar)} ${escHtml(res.rival_nombre)}: <b style="color:var(--cyan)">${res.rival_aciertos}/${res.total}</b>`;
+   }else{
+    $('odResIc').textContent='📨';$('odResTitle').textContent='¡Desafío enviado!';
+    $('odResScore').innerHTML=`Retaste a <b>${OD.rivalCodigo}</b>.<br>Hiciste <b style="color:var(--cyan)">${OD.aciertos}/8</b>.<br>Tiene 24 horas para responder.`;
+   }
+  }else{
+   const {data,error}=await SB.rpc('kimun_responder',{p_id:OD.dueloId,p_aciertos:OD.aciertos,p_tiempo:OD.tiempo});
+   if(error)throw error;const r=Array.isArray(data)?data[0]:data;
+   const gano=r.ganador==='yo',emp=r.ganador==='empate';
+   $('odResIc').textContent=emp?'🤝':(gano?'🏆':'😿');
+   $('odResTitle').textContent=emp?'¡Empate!':(gano?'¡Ganaste!':'Perdiste');
+   $('odResScore').innerHTML=`${insigniaIc()}Tú: <b style="color:var(--cyan)">${r.mis_aciertos}/8</b> &nbsp;vs&nbsp; ${escHtml(r.retador_avatar)} ${escHtml(r.retador_nombre)}: <b style="color:var(--cyan)">${r.retador_aciertos}/8</b>`;
+  }
+ }catch(e){$('odResIc').textContent='⚠️';$('odResTitle').textContent='Ups, algo falló';$('odResScore').textContent=(e.message||'Error');}
+ SND.win();go('scr-od-res');
+}
+$('btnDesafiar').onclick=()=>{SND.tap();abrirCrearDesafio();};
+$('btnODBack').onclick=()=>{SND.tap();go('scr-duelo-online');};
+$('btnODStart').onclick=()=>{SND.tap();iniciarDesafio();};
+$('btnDOBack').onclick=()=>{SND.tap();go('scr-rol');};
+$('btnDueloLocal').onclick=()=>{SND.tap();initDueloSetup();};
+$('btnODExit').onclick=()=>{SND.tap();abrirDueloOnline();};
+(function(){const r=$('btnReset');if(!r)return;r.style.display=hayPartida()?'inline':'none';
+ r.onclick=e=>{e.preventDefault();if(confirm('¿Borrar tu progreso y empezar de nuevo?')){borrarPartida();location.reload();}};})();
+
+/* Botón de silencio */
+(function(){const b=$('sndBtn');if(!b)return;const upd=()=>b.textContent=SND.on?'🔊':'🔇';upd();
+ b.onclick=()=>{SND.on=!SND.on;localStorage.setItem('kimun_sound',SND.on?'on':'off');upd();if(SND.on){SND.init();SND.tap();}};})();
+/* Botón de música (independiente de los efectos) */
+(function(){const b=$('musBtn');if(!b)return;
+ const upd=()=>{b.textContent='🎵';b.style.opacity=MUSIC.on?'1':'.4';b.title=MUSIC.on?'Música: activada':'Música: silenciada';};upd();
+ b.onclick=()=>{SND.init();MUSIC.setOn(!MUSIC.on);upd();};})();
+/* Créditos */
+/* Informe para el apoderado. La pantalla la inyecta motor.js; aqui solo se cablea el
+   boton del inicio. Con guard: si el enlace no esta, no se mata el arranque. */
+(function(){const b=$('btnInforme'); if(b) b.onclick=e=>{e.preventDefault();SND.tap();abrirInforme();};})();
+(function(){const v=$('verCreditos'),m=$('creditosModal'),c=$('cerrarCreditos');if(!v||!m)return;
+ v.onclick=e=>{e.preventDefault();SND.tap();m.hidden=false;};
+ if(c)c.onclick=()=>{SND.tap();m.hidden=true;};
+ m.onclick=e=>{if(e.target===m)m.hidden=true;};})();
+/* Desbloqueo de audio en el PRIMER gesto del usuario (autoplay en móvil).
+   Los navegadores móviles no dejan sonar el <audio> hasta un toque real. */
+(function(){
+ function unlock(){
+   try{SND.init();}catch(e){}
+   MUSIC.init();
+   if(MUSIC.on){ MUSIC.actual=null; MUSIC.play(MUSIC._ctx||'menu'); }
+   ['pointerdown','touchstart','click','keydown'].forEach(ev=>document.removeEventListener(ev,unlock,true));
+ }
+ ['pointerdown','touchstart','click','keydown'].forEach(ev=>document.addEventListener(ev,unlock,true));
+})();
+
+$('btnStart').onclick=()=>{
+ SND.init();SND.tap();
+ S.nombre=$('inpName').value.trim()||"Explorador";
+ refreshHud();guardar();renderMapa();renderRanking();
+ $('nav').style.display='flex';go('scr-mapa');datoKimun();};
+
+// Ranking real del curso. Tres estados: con curso, sin curso y sin conexión.
+let _rankUlt=0;
+// Escapa el texto que viene del servidor: un nombre con < o & no debe romper la lista.
+function escHtml(t){return String(t==null?'':t).replace(/[&<>"']/g,
+ c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>{
+ SND.tap(); detenerTimersActivos();
+ const dst=b.dataset.go;
+ document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+ if(dst==='perfil'){renderPerfil();go('scr-perfil');}
+ else if(dst==='scr-tienda'){tiendaOrigen='scr-mapa';renderTienda();go('scr-tienda');}
+ else{renderMapa();renderRanking();go('scr-mapa');}
+});
+
+/* ================= COMPAÑERO VULPI ================= */
+/* Precarga para evitar parpadeo al cambiar de expresión */
+['neutral','feliz','triste','sorprendido','oro','plata','bronce','fiesta','desanimado']
+ .forEach(n=>{const i=new Image();i.src='assets/kimun-'+n+'.png';});
+const KIM_REACT={neutral:['neutral',''],feliz:['feliz','happy'],triste:['triste','sad'],wow:['sorprendido','wow']};
+(function(){
+ const x=$('kimDatoX');if(x)x.onclick=()=>{const b=$('kimDato');b.classList.remove('show');setTimeout(()=>{b.hidden=true;},300);};
+ const s=$('btnSeguir');if(s)s.onclick=()=>{SND.tap();s.hidden=true;$('qExpl').hidden=true;avanzar();};
+})();
+
+$('btnBack').onclick=()=>{clearInterval(Q.timer);clearTimeout(Q._avanzarT);
+ if(HAY_MINICLASES&&Q.leccion){volverAlCapituloMate();}else{go(Q.desafio?'scr-rol':'scr-mapa');}};
+
+
+
+// Arma ~12 preguntas de los objetivos del desafío, repartidas por OA. Hace su propio fetch
+// para no pisar el POOL de la expedición activa.
+async function construirPreguntasDesafio(asig, objetivos){
+  const url=contenidoDeAsignatura(asigDesafioNombre(asig)); if(!url) return [];
+  const pool={};
+  try{ const d=await (await fetch(url)).json();
+       (d.preguntas||[]).forEach(q=>{(pool[q.oa]=pool[q.oa]||[]).push(q);}); }
+  catch(e){ return []; }
+  const per=Math.min(6,Math.max(2,Math.round(12/objetivos.length)));
+  let sel=[]; objetivos.forEach(oa=>{ sel=sel.concat(pickN(pool[oa],per)); });
+  sel=pickN(sel,12);
+  return sel.map(q=>({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,visual:q.visual,id:q.id}));
+}
+// Arranca el quiz en modo desafío (reusa el motor con el flag Q.desafio).
+async function jugarDesafio(d){
+  const preguntas=await construirPreguntasDesafio(d.asignatura, d.objetivos);
+  if(!preguntas.length){ alert('No se pudo cargar el desafío. Intenta más tarde.'); return; }
+  Q={lvl:0,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock:false,
+     preguntas, desafio:{id:d.desafio_id, asignatura:d.asignatura, titulo:'Refuerzo de '+asigDesafioNombre(d.asignatura)}};
+  MODO='normal';
+  go('scr-quiz'); pintaPregunta();
+}
+// Muestra u oculta el banner del desafío en el inicio. Best-effort: si el backend no
+// responde, el banner no aparece y el juego sigue igual.
+async function revisarDesafio(){
+  const cont=$('bannerDesafio'); if(!cont) return;
+  cont.hidden=true;
+  if(!SB||!MI_PERFIL) return;
+  let d=null;
+  try{ const {data}=await SB.rpc('kimun_refuerzo_activo'); d=(data&&data[0])||null; }catch(e){ return; }
+  if(!d) return;
+  cont.innerHTML=`<h4>📣 Desafío de tu profe</h4>
+    <p>Refuerzo de ${asigDesafioNombre(d.asignatura)} · repasa lo que costó</p>
+    <button id="btnDesafio">¡Jugar ahora!</button>`;
+  $('btnDesafio').onclick=()=>jugarDesafio(d);
+  cont.hidden=false;
+}
+/* Aviso visible del modo QA (solo con ?qa=1). El del modo prueba se agrega aparte. */
+if(QA){const b=document.createElement('div');b.className='qa-badge';b.textContent='🧪 QA · respuestas marcadas · todo desbloqueado';document.body.appendChild(b);}
+/* Aviso del modo prueba (?solo=): deja claro que el avance no se guarda. */
+if(PRUEBA&&!QA&&!VENCIDA){const b=document.createElement('div');b.className='qa-badge';b.style.background='var(--cyan)';b.style.color='#04231a';
+ b.textContent='🧪 Modo prueba · no se guarda tu avance';document.body.appendChild(b);}
+
+/* Intro de bienvenida: se ve una sola vez por dispositivo. ?intro=1 la fuerza a repetirse.
+   Intenta reproducir CON sonido; si el navegador bloquea el autoplay, pide un toque. */
+(function(){
+ const ov=$('introOverlay'); if(!ov) return;
+ if(SIN_DISCO){ ov.remove(); return; }   // prueba/armador: entrada directa, y no se escribe kimun_intro
+ const vid=$('introVid'), skip=$('introSkip'), tap=$('introTap');
+ const forzar=new URLSearchParams(location.search).has('intro');
+ const visto=localStorage.getItem('kimun_intro'+SUFIJO);
+ const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if(!forzar && (visto || reduce)){ ov.remove(); return; }   // ya se vio o se prefiere sin animación
+ try{ localStorage.setItem('kimun_intro'+SUFIJO,'1'); }catch(e){}
+ let cerrado=false, guard=null;
+ function ocultar(){ if(cerrado) return; cerrado=true; clearTimeout(guard); try{vid.pause();}catch(e){}
+  ov.classList.add('fade'); setTimeout(()=>ov.remove(),480); }
+ skip.onclick=ocultar;
+ vid.addEventListener('ended',ocultar);
+ vid.addEventListener('playing',()=>{ clearTimeout(guard); guard=setTimeout(ocultar,13000); },{once:true}); // salvaguarda desde que arranca (video ~11s)
+ function intentar(){ if(tap)tap.style.display='none'; vid.muted=false;
+  const p=vid.play();
+  if(p&&p.catch)p.catch(()=>{                                // autoplay con sonido bloqueado → pedir un toque
+    if(tap)tap.style.display='block';
+    ov.addEventListener('pointerdown',function h(){ ov.removeEventListener('pointerdown',h); intentar(); },{once:true});
+  });
+ }
+ intentar();
+})();
+</script>
+<script>
+/* CANARIA. Si motor.js no cargó, el juego está muerto: sin ella la pantalla se ve bien y
+   ningún botón responde, que es el fallo más caro de diagnosticar de este proyecto. */
+if(!window.__MOTOR_OK){document.documentElement.innerHTML=
+ '<body style="background:#140f33;color:#fff;font:16px/1.5 system-ui;padding:32px;text-align:center">'
++'<p style="font-size:40px;margin:0">🦊</p><p><b>No se pudo cargar el juego.</b></p>'
++'<p>Revisa tu conexión y vuelve a intentarlo.</p>'
++'<p><a href="" style="color:#4dd8ff">Recargar</a></p></body>';}
+</script>
+</body>
+</html>

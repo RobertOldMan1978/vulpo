@@ -165,8 +165,9 @@ El modo cierra ese hueco. Una pantalla por objetivo, con **sus 8 preguntas ya el
 >
 > **Cerrado del todo el 06/09/2026: 16.295 de 16.295, el banco completo del proyecto.** El 05/09
 > se firmaron Historia y Lenguaje de 5° y las cuatro asignaturas de 6° (5.760 preguntas); el
-> 06/09 se firmaron las 2.730 de 4° básico, la última parte del proyecto sin firmar. **4° sigue
-> sin fork jugable, así que su banco aprobado todavía no llega a ningún alumno.**
+> 06/09 se firmaron las 2.730 de 4° básico, la última parte del proyecto sin firmar. **Y el mismo
+> día 4° terminó su fork, su voz (12.210 clips) y su arte propio**, así que su banco aprobado ya
+> llega a los alumnos: los seis cursos del proyecto están completos y anunciados.
 >
 > ⚠️ **100% de cobertura no es 100% del mismo método.** 8° y los módulos de apoyo se revisaron
 > pregunta por pregunta; 3°, 4°, 5°, 6° y 7°, por muestreo de 8 de cada 30. Al decirlo afuera, la

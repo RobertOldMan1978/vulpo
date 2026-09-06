@@ -32,23 +32,25 @@ Es una app web mobile-first y se reutiliza. Ver `docs/roadmap-tecnico.md` §1.
 | Curso | OA | Preguntas | Aprobadas | Voz | Arte propio | Fork jugable | Publicado en `vulpo.cl` |
 |---|---|---|---|---|---|---|---|
 | 3° | 86 | 2.558 (+161 apoyo) | ✅ **todas** | ✅ 11.391 clips | villanos ✅ · portadas 27/27 | ✅ | ✅ |
-| 4° | 92 | 2.730 | ✅ **todas** (06/09, muestreo) | pendiente | pendiente (prestado) | ❌ no existe | ❌ |
+| 4° | 92 | 2.730 | ✅ **todas** (06/09, muestreo) | ✅ 12.210 clips (06/09) | villanos ✅ (06/09) · portadas 24/26 (2 fallback) | ✅ (06/09) | ✅ (06/09) |
 | 5° | 93 | 2.790 | ✅ **todas** | no lleva | villanos ✅ · portadas 20/20 (reutilizadas) | ✅ | ✅ |
 | 6° | 99 | 2.970 | ✅ **todas** | no lleva | villanos ✅ · portadas 25/25 (16 reutilizadas + 9 nuevas) | ✅ | ✅ |
 | 7° | 81 | 2.430 (+120 apoyo) | ✅ **todas** | no lleva | villanos ✅ · portadas 23/23 | ✅ | ✅ |
 | 8° | 69 | 2.314 (+222 apoyo) | ✅ todas | no lleva | ✅ portadas 20/20 | ✅ | ✅ |
 
 - **16.295 preguntas escritas · 16.295 aprobadas (100%) · 0 pendientes.** El banco entero del
-  proyecto, seis cursos, está firmado. De eso, **13.565 (los cinco cursos jugables: 3°, 5°, 6°,
-  7° y 8°) ya llegan a un alumno**; las 2.730 de 4° están aprobadas pero esperan su fork.
-- **VULPO se anuncia desde 3° a 8° básico (06/09/2026).** La landing (`index.html`) enlaza los
-  cinco cursos jugables y dice el estado real: cinco publicados, 4° en camino.
-- **Sitio publicado: 343 MB** (techo de GitHub Pages: 1 GB) — cifra de antes de sumar el arte de
-  5° y 6°, hay que remedirla. `assets/` completo eran 473 MB, de los cuales 252 MB son la voz de
-  3° y 174 MB los originales, ya excluidos del sitio.
-  ⚠️ Medido en **bytes reales**: `du` sin `--apparent-size` cuenta bloques de 4 KB y con
-  11.391 clips infla ~26 MB (las cifras viejas venían de ahí).
-  El reparto y sus reglas, en `CLAUDE.md` → “Cómo se ordenan los archivos”.
+  proyecto, seis cursos, está firmado y **los seis ya llegan a un alumno**.
+- **VULPO se anuncia desde 3° a 8° básico (06/09/2026), y desde ese mismo día los SEIS cursos
+  están publicados.** La landing (`index.html`) enlaza los seis cursos jugables (3°, 4°, 5°, 6°,
+  7°, 8°) con los números reales: 16.295 preguntas aprobadas, 518 objetivos medidos, 6 cursos
+  completos.
+- **Sitio publicado: 713 MB** (techo de GitHub Pages: 1 GB), remedido el 06/09 tras generar la voz
+  de 4°. `assets/` completo son 814 MB: 578 MB de voz (3° y 4°, 6+4 asignaturas — 4° sumó 326 MB,
+  más que los ~254 MB estimados) y 174 MB de originales, ya excluidos del sitio.
+  ⚠️ Medido en **bytes reales**: `du` sin `--apparent-size` cuenta bloques de 4 KB e infla el
+  número (las cifras viejas venían de ahí).
+  **Ya no hay margen para una séptima asignatura con voz**: la regla de 1° a 4° es aritmética, no
+  preferencia. El reparto y sus reglas, en `CLAUDE.md` → “Cómo se ordenan los archivos”.
 - **Backend al día:** `schema.sql` aplicado y verificado, los códigos de los seis cursos en las
   dos listas de `kimun_prof_asignaturas` (falta agregar los de 4° cuando exista su fork), y la
   foto semanal agendada.
@@ -235,8 +237,8 @@ y validado. Ya no hay que estimar: los OA están contados y con su texto literal
 | # | Curso | OA | Preguntas a escribir (30 × OA) | Peso | Costo |
 |---|---|---|---|---|---|
 | B1 | **5° básico** — ✅ **COMPLETO, APROBADO Y CON ARTE PROPIO (05/09)**: las cuatro asignaturas, **2.790 preguntas**, 27 mini-clases y 4 introducciones, jugables, auditadas y **firmadas por Roberto por muestreo**. Sus 20 capítulos ya reutilizaban portada por tema (0 nuevas necesarias) y sus **4 villanos propios ya están generados, procesados y cableados** (`villanoImg`/`villanoImgDerrotado` de las 4 campañas, verificado jugando el Jefe Final de las 4 asignaturas con `cdp.mjs`: 512px, sin 404). **Publicado (06/09): enlazado desde `vulpo.cl` junto con 6°, 7° y 8°.**| **93** ✅ | **2.790** ✅ | — | — |
-| B2 | **6° básico** — ✅ **BANCO COMPLETO (05/09): las 4 asignaturas, 99/99 OA, 2.970 preguntas**, 0 errores en las cuatro, 0 opciones equivalentes, todos los pares de solape revisados uno por uno (la mayoría variedad legítima de plantilla; 3 duplicados reales corregidos y arreglados: ángulos en Matemática, "igualdad ante la ley" entre `HI06 OA16`/`OA17`). Matemática 24/24 (720) · Ciencias 18/18 (540) · Historia 26/26 (780) · Lenguaje 31/31 (930). `docs/cuidados-ciencias.md` y `docs/cuidados-historia.md` sumaron secciones con lo que dejaron las tandas de validación (evaporación≠ebullición; "investigar/demostrar"+120 caracteres es genuinamente difícil; `HI06 OA 13` "su región/localidad" resuelto dando la región DENTRO del enunciado, porque el banco no puede saber dónde vive cada alumno; `HI06 OA 08` —quiebre y recuperación de la democracia, el OA más delicado del currículum— midiendo solo hechos verificables, sin tomar partido; `LE06 OA 01` —leer de forma fluida, mide pronunciación/decodificación que ningún quiz puede evaluar— acotado al único ángulo medible, la prosodia de los signos de puntuación). ✅ **Fork `6to/index.html` CABLEADO (05/09):** 25 capítulos (Matemática 7 · Ciencias 5 · Historia 6 · Lenguaje 7) + Jefe Final por asignatura —**La Desproporción** (Matemática), **El Desequilibrio** (Ciencias, con `CN06 OA 04/05/06` excluidos del jefe por la regla A4), **La Versión Única** (Historia) y **El Enredo** (Lenguaje)—, arte de villano **prestado del set de 3°** (declarado en comentario), 99 metas de aprendizaje en `META_OA` (cobertura verificada: 0 faltantes), `SUFIJO='_6to'`/`storageKey:'kimun-6to'` para guardado e identidad aislados, y sin mini-clases ni Reto Sin Fin todavía (`HAY_MINICLASES`/`HAY_SINFIN`=false: ese contenido no existe para 6°, no es un olvido). `assets/js/niveles.js` y `kimun_asignaturas_todas()` en `supabase/schema.sql` ya reconocen el nivel `06` (una fila cada uno, M4 pagándose sola); `assets/js/sensible.js` y `docs/contenido-sensible.md` ya listan los 6 OA sensibles de 6°. **Verificado jugando con `cdp.mjs`**: las 4 campañas abren con su cantidad de nodos correcta, un quiz real de Historia sirvió una pregunta con 4 opciones del banco real, el armador (`?armar=1`) lista los 25 capítulos con sus marcas sensibles, y **cero errores de consola y cero 404**. ✅ **Esquema re-aplicado y verificado en producción (05/09)**: `kimun_oa_asignatura('MA06 OA 01')` devuelve `MA06` (control positivo `CN08 OA 01`→`CN08` intacto, control negativo `MA99 OA 01`→`null`), y `kimun_asignaturas_todas()` ya lista los 20 códigos. ✅ **Aprobación pedagógica HECHA (05/09)**: Roberto aprobó las 2.970 preguntas por muestreo desde el tablero. ✅ **Arte propio TERMINADO (05/09)**: 16 de sus 25 capítulos reutilizan portadas existentes por tema; las **9 portadas nuevas** (`portada-mate6-cap2/-5/-6`, `-cie6-cap1/-5`, `-hist6-cap1/-2/-4`, `-leng6-cap7`) y los **4 villanos propios** (con su `-derrotado`) fueron generados a partir de [`docs/prompts-arte-5y6.md`](docs/prompts-arte-5y6.md), procesados con `procesar-arte.py` y cableados en `6to/index.html`. **Publicado (06/09): enlazado desde `vulpo.cl` junto con 5°, 7° y 8°.** | **99** ✅ | **2.970** ✅ | hecho | — |
-| B3 | **4° básico** — ✅ **BANCO COMPLETO (05/09): las 4 asignaturas, 91/91 OA (el `LE04 OA 15` excluido por caligrafía, documentado en su `oa.json`), 2.730 preguntas.** Matemática 27/27 (810) · Ciencias 17/17 (510) · Historia 18/18 (540) · Lenguaje 29/29 (870). 0 duplicados al consolidar, 0 opciones equivalentes, 0 pares de solape entre OA sobre el umbral, **el 100% de las 2.730 se puede responder ESCUCHANDO** (`auditar-audible-nivel.py`, el chequeo extra que solo llevan 3° y 4° por tener voz). Escrito con la regla de economía de la Sesión 92 (2-3 OA por agente, resumen corto) y con una tanda de validación previa de 8 OA de riesgo (fracciones con muchas equivalencias, el OA sensible del alcohol, los actitudinales de honestidad/respeto/hábito lector). ✅ **Aprobación pedagógica HECHA (06/09)**: Roberto firmó las 2.730 por muestreo desde el tablero — el banco entero del proyecto (16.295) queda aprobado al 100%. **Falta su fork, su voz (~US$8 de Azure) y su arte propio** | **91** ✅ | **2.730** ✅ | hecho | — |
+| B2 | **6° básico** — ✅ **BANCO COMPLETO (05/09): las 4 asignaturas, 99/99 OA, 2.970 preguntas**, 0 errores en las cuatro, 0 opciones equivalentes, todos los pares de solape revisados uno por uno (la mayoría variedad legítima de plantilla; 3 duplicados reales corregidos y arreglados: ángulos en Matemática, "igualdad ante la ley" entre `HI06 OA16`/`OA17`). Matemática 24/24 (720) · Ciencias 18/18 (540) · Historia 26/26 (780) · Lenguaje 31/31 (930). `docs/cuidados-ciencias.md` y `docs/cuidados-historia.md` sumaron secciones con lo que dejaron las tandas de validación (evaporación≠ebullición; "investigar/demostrar"+120 caracteres es genuinamente difícil; `HI06 OA 13` "su región/localidad" resuelto dando la región DENTRO del enunciado, porque el banco no puede saber dónde vive cada alumno; `HI06 OA 08` —quiebre y recuperación de la democracia, el OA más delicado del currículum— midiendo solo hechos verificables, sin tomar partido; `LE06 OA 01` —leer de forma fluida, mide pronunciación/decodificación que ningún quiz puede evaluar— acotado al único ángulo medible, la prosodia de los signos de puntuación). ✅ **Fork `6to/index.html` CABLEADO (05/09):** 25 capítulos (Matemática 7 · Ciencias 5 · Historia 6 · Lenguaje 7) + Jefe Final por asignatura —**La Desproporción** (Matemática), **El Desequilibrio** (Ciencias, con `CN06 OA 04/05/06` excluidos del jefe por la regla A4), **La Versión Única** (Historia) y **El Enredo** (Lenguaje)—, arte de villano **prestado del set de 3°** (declarado en comentario), 99 metas de aprendizaje en `META_OA` (cobertura verificada: 0 faltantes), `SUFIJO='_6to'`/`storageKey:'kimun-6to'` para guardado e identidad aislados, y sin mini-clases ni Reto Sin Fin todavía (`HAY_MINICLASES`/`HAY_SINFIN`=false: ese contenido no existe para 6°, no es un olvido). `assets/js/niveles.js` y `kimun_asignaturas_todas()` en `supabase/schema.sql` ya reconocen el nivel `06` (una fila cada uno, M4 pagándose sola); `assets/js/sensible.js` y `docs/contenido-sensible.md` ya listan los 6 OA sensibles de 6°. **Verificado jugando con `cdp.mjs`**: las 4 campañas abren con su cantidad de nodos correcta, un quiz real de Historia sirvió una pregunta con 4 opciones del banco real, el armador (`?armar=1`) lista los 25 capítulos con sus marcas sensibles, y **cero errores de consola y cero 404**. ✅ **Esquema re-aplicado y verificado en producción (05/09)**: `kimun_oa_asignatura('MA06 OA 01')` devuelve `MA06` (control positivo `CN08 OA 01`→`CN08` intacto, control negativo `MA99 OA 01`→`null`), y `kimun_asignaturas_todas()` ya lista los 20 códigos. ✅ **Aprobación pedagógica HECHA (05/09)**: Roberto aprobó las 2.970 preguntas por muestreo desde el tablero. ✅ **Arte propio TERMINADO (05/09)**: 16 de sus 25 capítulos reutilizan portadas existentes por tema; las **9 portadas nuevas** (`portada-mate6-cap2/-5/-6`, `-cie6-cap1/-5`, `-hist6-cap1/-2/-4`, `-leng6-cap7`) y los **4 villanos propios** (con su `-derrotado`) fueron generados a partir de [`docs/prompts-arte-5y6.md`](docs/prompts-arte-5y6.md) y procesados con `procesar-arte.py`. ⚠️ **Corregido el 06/09: las 9 portadas nuevas estaban generadas en disco desde el 05/09 pero NUNCA se habían cableado** — sus 9 capítulos seguían mostrando el genérico de la asignatura (`portada-matematicas.png`, `-ciencias.png`, `-historia.png`, `-lenguaje.png`) en vez del arte propio. No daba ningún 404 (el genérico existe), así que no se notaba sin comparar contra el disco. Se agregó el `portadaMapa:` que faltaba en los 9; verificado que las 25 portadas de 6° apuntan a un archivo específico y ninguna al genérico. **Publicado (06/09): enlazado desde `vulpo.cl` junto con 5°, 7° y 8°.** | **99** ✅ | **2.970** ✅ | hecho | — |
+| B3 | **4° básico** — ✅ **COMPLETO (06/09): banco, fork, voz y arte, los cuatro hechos.** Las 4 asignaturas, 91/91 OA (el `LE04 OA 15` excluido por caligrafía), 2.730 preguntas — Matemática 27/27 (810) · Ciencias 17/17 (510) · Historia 18/18 (540) · Lenguaje 29/29 (870), 0 duplicados, 0 opciones equivalentes, 0 solapes sobre el umbral, 100% audible. Aprobado por muestreo (06/09). `4to/index.html` construido (26 capítulos en 4 campañas, 91 `META_OA`, voz+`visual` cableados como en 3°) y verificado jugando. **12.210 clips de voz generados** (US$10,29) y verificados end-to-end (pregunta real → manifiesto → clip → HTTP 200). **8 imágenes de villanos** (El Trueque/El Revoltijo/La Discordia/El Trabalenguas, normal+derrotada) procesadas y cableadas en los 4 Jefes Finales, verificado jugando (imagen real, no el emoji de respaldo). **Solo falta la decisión comercial de anunciarlo** en la landing | **91** ✅ | **2.730** ✅ | hecho | — |
 
 **284 OA y 8.490 preguntas exactas** (no ~7.350 ni ~8.490 estimados: los tres bancos nuevos ya
 están escritos y contados). El paso 0 del molde de 7° —transcribir el currículum— **está hecho
@@ -284,33 +286,80 @@ para los tres**, y ahora también el banco de los tres.
 > 1. **Re-aplicar `supabase/schema.sql`** — tiene el nivel `06` agregado a
 >    `kimun_asignaturas_todas()`; hasta que Roberto lo pegue de nuevo tras este commit, el
 >    dominio de 6° no aparece en el panel del profesor, sin ningún error que lo avise.
-> 2. **Fork `4to/index.html`** — no existe todavía. Clonar el patrón de `5to/index.html` y
->    `6to/index.html`: las 4 campañas, `META_OA` (91 entradas), reparto en capítulos por
->    asignatura, villanos con arte prestado (declarado en comentarios), y a diferencia de 5°/6°
->    **con voz y con el campo `visual`** (más parecido a 3° en eso). Requiere además `assets/js/voz.js`
->    y `assets/js/visuales.js` (ya compartidos, extraídos en la Sesión 75 — no hay que escribirlos).
-> 3. **Aprobación pedagógica de 4°** (Roberto, en el tablero) — son las únicas 2.730 preguntas
->    del proyecto sin firmar además del arte y la voz.
-> 4. **Voz de 4°** (~US$8 de Azure, ~2.700 clips estimados) — **después de aprobar, nunca en
->    paralelo**: cada corrección posterior obliga a regenerar su clip. Usar
->    `scripts/generar-voz-nivel.py` con `4basico` como nivel.
-> 5. **Arte propio de 4°** (villanos + portadas) — igual que 3°, 5° y 6°: prestado y declarado
->    hasta que se generen. Con voz Y dibujos, 4° es el más caro de los tres en producir después
->    del banco — es la razón por la que el plan original lo dejó para el final.
+> 2. ✅ **Fork `4to/index.html` — CONSTRUIDO Y VERIFICADO (06/09/2026), 2.629 líneas.** Las 4
+>    campañas (Matemática 7 capítulos · Ciencias 5 · Historia 5 · Lenguaje 9, `LE04 OA 15`
+>    excluido), `META_OA` con las **91 entradas**, los 4 Jefes Finales con sus 4 fases cada uno
+>    (cubren el 100% de los OA de su asignatura), y **24 de 26 `portadaMapa` ya cableadas**
+>    reutilizando arte existente (0 portadas nuevas; `hist4-cap3` y `leng4-cap9` caen al fallback
+>    genérico, sin match temático bueno — ver `docs/prompts-arte-4basico.md`). A diferencia de
+>    5°/6°, trae **voz** (`VOZ.init`, `SIN_RELOJ=true`, `DUELO_SEG=30`, botón 🔊, igual que 3°) y
+>    **apoyo visual** (`assets/js/visuales.js`, ya compartido): el banco trae 40 preguntas de
+>    Matemática y 9 de Historia con campo `visual` (recta, reloj, cuadrícula, cuerpo, fracción,
+>    globo — los 6 tipos ya existen en el catálogo, no hubo que crear ninguno). Los 4 villanos (El
+>    Trueque/El Revoltijo/La Discordia/El Trabalenguas) están con su nombre y emoji pero **sin
+>    `villanoImg` todavía** (comentario `PLACEHOLDER`×4): Roberto está generando esas 8 imágenes en
+>    paralelo, y agregarlas después son 2 líneas por asignatura. `assets/js/niveles.js` y
+>    `supabase/schema.sql` (`kimun_asignaturas_todas`) ya tienen el nivel `04` (una fila cada uno,
+>    M4 pagándose otra vez); `assets/js/sensible.js` y `docs/contenido-sensible.md` ya tienen
+>    `CN04 OA 08` (alcohol/tabaco, entra completo al Jefe por no ser sexual). **Verificado jugando
+>    con `scripts/cdp.mjs` y con clics reales** (no funciones sueltas): navegación completa
+>    JUGADOR→campaña→mapa, 8 nodos en Matemática (7 capítulos + jefe, el número exacto), meta 🎯
+>    con el texto de `META_OA` y no el nombre de la etapa (la comprobación que cazó el defecto
+>    mudo de 7° en la Sesión 63), `EXPEDICIONES.flatMap(...).filter(o=>!META_OA[o])` da **vacío**,
+>    `LE04 OA 15` no aparece en ninguna etapa, las 28 rutas de portada referenciadas responden 200
+>    (0 faltantes), archivo en LF puro (0 CRLF), y **3°/5°/6°/7°/8° sin moverse** (el guardado de
+>    8° con 777 XP intacto). Cero errores de consola; los únicos 404 son los 4 `manifiesto.json`
+>    de voz, esperados hasta el punto 4. **`HAY_MINICLASES=false`**: 4° se publica sin mini-clases
+>    en esta primera versión (igual que 6°) — el estándar de `docs/estandar-miniclases.md` exige
+>    mini-clase siempre en Matemática, pero escribir las 27 (con sus diagramas) es un trabajo de
+>    contenido aparte que no bloquea tener el curso jugable; queda anotado como pendiente futuro,
+>    no como olvido. `HAY_DIFICIL=false` (4° descarta Modo Difícil por edad, igual que 3°).
+> 3. ✅ **Aprobación pedagógica de 4°** — HECHA el 06/09 (ver más abajo), antes incluso de que
+>    existiera el fork.
+> 4. **Voz de 4°** — ✅ **YA NO BLOQUEADA: generándose (06/09/2026).** Con el fork existiendo,
+>    `generar-voz-nivel.py` funciona para las 4 asignaturas. Recuento real: **mat4 3.041 textos
+>    (US$1,94) · hist4 2.490 (US$2,29) · cie4 2.489 (US$2,38) · leng4 4.190 (US$3,68) — US$10,29
+>    en total**, autorizado por Roberto explícitamente. Antes de generar se revisó que los 91
+>    `META_OA` y los 91 nombres de etapa —texto nuevo, escrito recién con el fork— pasaran por el
+>    normalizador **sin cambios** (0 de 91 en ambos casos: son oraciones simples sin números ni
+>    símbolos), así que los dos bugs que ya se habían corregido en la sesión anterior
+>    ("4° básico"→"4 grados básico", los 8 emoji de pictogramas) siguen siendo la única
+>    corrección necesaria y ya están verificados contra el banco completo y sin regresión en la
+>    voz de 3°. Las 4 generaciones corren en paralelo; `caps` de Ciencias confirmado como `cie4-`
+>    (igual que 5°/6°) al revisar los ids reales de `4to/index.html`.
+> 5. ✅ **Arte propio de 4° — HECHO (06/09/2026).** Los 4 villanos (El Trueque/Matemática, El
+>    Revoltijo/Ciencias, La Discordia/Historia, El Trabalenguas/Lenguaje), 8 imágenes (normal +
+>    derrotada), generados por Roberto y cableados en los 4 `jefeFinal` de `4to/index.html`.
+>    **Los originales trajeron dos formatos distintos y ninguno le calzaba al pipeline tal
+>    cual**: las 4 normales llegaron con transparencia real (RGBA, alfa en gradiente) —
+>    `quitar_fondo()` las rompía dejando agujeros donde un halo de color alrededor del personaje
+>    encerraba fondo sin que el flood-fill lo alcanzara—, así que se reprocesaron a partir de su
+>    propio alfa. Las 4 derrotadas llegaron **aplanadas sobre negro opaco** (sin alfa) y sí
+>    necesitaban el flood-fill de siempre, pero **el umbral por defecto (60) seguía dejando
+>    agujeros** —el mismo halo de color rompía la conectividad de las esquinas hacia bolsillos
+>    negros dentro del abrigo del personaje—: bajarlo a `--negromax=8` (calibrado probando 4
+>    valores y mirando el resultado, no contando) lo dejó limpio. **Se aprobó mirando las 8, una
+>    por una**, no por el "8 procesadas" del script. Verificado jugando: los 4 Jefes Finales
+>    abren su intro con la imagen real (no el emoji de respaldo), `villanoImgSrc` resuelve a un
+>    archivo que existe, 0 errores de consola y 0 fallos de imagen.
 >
 > ✅ **Aprobación pedagógica de 4° — HECHA (06/09/2026).** Roberto firmó por muestreo las 2.730
 > preguntas de las 91 OA desde el tablero (`aplicar-revisadas.py` aplicado, `dev/tablero.html`
 > regenerado). Con esto **el banco entero del proyecto —16.295 preguntas, seis cursos— queda
-> aprobado al 100%**, y ya no queda ninguna pregunta del proyecto sin firmar. Sigue faltando el
-> fork, la voz y el arte de 4° (puntos 2, 4 y 5 arriba): la regla de Roberto *"un curso a medias
-> no se enlaza ni se anuncia"* sigue aplicando a 4°, y solo a 4°.
+> aprobado al 100%**, y ya no queda ninguna pregunta del proyecto sin firmar.
 >
-> ✅ **Decisión comercial tomada (06/09/2026): VULPO se anuncia desde 3° a 8° básico.** La
-> landing (`index.html`) ya enlaza los **cinco cursos jugables** (3°, 5°, 6°, 7°, 8°), con los
-> números reales (13.565 preguntas aprobadas en esos cinco, 427 objetivos medidos, 16.295/16.295
-> el banco completo contando 4°) y una mención a que el proyecto se construye desde marzo de 2026
-> y se revisa sin pausa. `README.md`, `CLAUDE.md` y `docs/comercial.md` se actualizaron con el
-> mismo mensaje. **4° queda deliberadamente fuera de la landing** hasta que tenga su fork.
+> ✅ **Y con el fork, la voz y el arte también hechos el mismo día (puntos 2, 4 y 5 arriba), 4°
+> dejó de estar "a medias".** La regla de Roberto *"un curso a medias no se enlaza ni se
+> anuncia"* ya no lo frenaba por razones técnicas, y horas después Roberto tomó la decisión
+> comercial: sumarlo también.
+>
+> ✅ **4° sumado a la landing (06/09/2026): VULPO se anuncia desde 3° a 8° básico, los SEIS
+> cursos.** La landing (`index.html`) enlaza los **seis cursos jugables** (3°, 4°, 5°, 6°, 7°,
+> 8°), con los números reales recalculados (16.295 preguntas aprobadas —el banco completo,
+> ninguna pregunta a la espera de su versión jugable—, 518 objetivos medidos, 6 cursos completos)
+> y la mención a que el proyecto se construye desde marzo de 2026 y se revisa sin pausa.
+> `README.md`, `CLAUDE.md`, `docs/comercial.md` y `docs/aprobacion-pedagogica.md` se actualizaron
+> con el mismo mensaje. **No queda ningún curso fuera de la landing.**
 >
 > `pendiente.md` es la fuente de verdad de qué falta; no hay ningún resumen paralelo que
 > mantener sincronizado.
@@ -478,13 +527,15 @@ Plan completo en `docs/roadmap-tecnico.md` §3. **Nada de esto está implementad
 
 **Tres correcciones al análisis externo que hay que respetar** (`docs/roadmap-tecnico.md` §2):
 
-1. **Un manifiesto por curso, no uno solo.** Hay tres apps forkeadas; un `start_url` único
-   instalaría "VULPO" y abriría el curso equivocado para dos de cada tres alumnos.
-2. **La precarga cache-first que proponen es inviable.** `assets/` son 464 MB, de los cuales
-   **252 MB son la voz de 3°**: cachearlo todo en el `install` le bajaría ~250 MB al teléfono de
-   un niño la primera vez que abre. La voz se cachea **clip a clip al reproducir**.
-3. **El `<base href="/">`** de los tres juegos obliga a que el alcance del SW sea `/`, no
-   `/8vo/`.
+1. **Un manifiesto por curso, no uno solo.** ✅ Ya está así desde la Sesión 77: hay seis apps
+   forkeadas (3°/4°/5°/6°/7°/8°), cada una con su `manifest.webmanifest`. Un `start_url` único
+   instalaría "VULPO" y abriría el curso equivocado para casi todos los alumnos.
+2. **La precarga cache-first que proponen es inviable.** `assets/` son 814 MB (06/09), de los
+   cuales **578 MB son la voz de 3° y 4°**: cachearlo todo en el `install` le bajaría cientos de
+   MB al teléfono de un niño la primera vez que abre. La voz se cachea **clip a clip al
+   reproducir**.
+3. **El `<base href="/">`** de los seis juegos obliga a que el alcance del SW sea `/`, no una
+   subcarpeta.
 
 ---
 

@@ -26,6 +26,7 @@ entra en los Jefes Finales es el sexual, y todo lo demás entra, en todos los cu
 | 7° | ninguno | 7 OA de Historia |
 | 3° | ninguno | 1 OA de Historia |
 | 5° | ninguno | ninguno todavía |
+| 4° | ninguno | 1 OA de Ciencias (sustancias) |
 
 Los únicos OA sensibles que quedan fuera de un jefe son los tres de sexualidad de 7°, que es
 exactamente la regla.
@@ -129,6 +130,16 @@ Los `CN06 OA 04/05/06` son exactamente los que la regla de arriba excluye del Je
 Ciencias de 6°. El `OA 07` (drogas) y los dos de Historia **no** se excluyen: solo lo
 sexual/reproductivo sale del jefe, el resto del contenido sensible entra completo.
 
+### 4° básico
+| OA | Tema | Categorías | Severidad |
+|---|---|---|---|
+| CN04 OA 08 | Efectos del consumo excesivo de alcohol y tabaco | 🚭 | MEDIA |
+
+No es sexual, así que **entra completo al Jefe Final de Ciencias**, igual que `CN06 OA 07` y
+`CN08 OA 07`. Las civilizaciones americanas (`HI04 OA 01-04`: maya, azteca, inca) no se marcan
+sensibles: son descripción cultural sin conquista ni violencia, distinto de cómo se tratan esos
+mismos pueblos en 7°/8°.
+
 ## Resumen por categoría
 
 | Categoría | Nº de OA |
@@ -137,7 +148,7 @@ sexual/reproductivo sale del jefe, el resto del contenido sensible entra complet
 | ⚔️ Violencia y muerte | 13 |
 | 🛐 Religión y creencias | 6 |
 | 🪶 Pueblos originarios | 8 |
-| 🚭 Sustancias | 2 |
+| 🚭 Sustancias | 3 |
 
 *(La suma es mayor que 26 porque varios OA llevan dos categorías.)*
 

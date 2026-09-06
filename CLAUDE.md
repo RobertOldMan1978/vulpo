@@ -145,12 +145,14 @@ están hoy en una expedición jugable, el resto es reserva.
 > objetivo, criterio de `docs/aprobacion-pedagogica.md`—. Por eso la landing dice *"aprobadas por
 > un profesor, objetivo por objetivo"* y **nunca** *"una a una"*.
 >
-> ✅ **VULPO se anuncia desde 3° a 8° básico (06/09/2026), decisión de Roberto.** La landing
-> (`index.html`) enlaza ya los **cinco cursos jugables** —3°, 5°, 6°, 7° y 8°, cada uno con banco
-> aprobado, fork cableado y arte propio— y dice que el proyecto se construye desde marzo de 2026
-> y se revisa sin pausa. **4° básico sigue sin anunciarse ni enlazarse**: tiene su banco aprobado,
-> pero todavía le faltan el fork (`4to/index.html` no existe), la voz y el arte propio — la regla
-> *"un curso a medias no se enlaza ni se anuncia"* sigue aplicando a él, y a él solo.
+> ✅ **VULPO se anuncia desde 3° a 8° básico, los SEIS cursos (06/09/2026), decisión de
+> Roberto.** La landing (`index.html`) enlaza los **seis cursos jugables** —3°, 4°, 5°, 6°, 7° y
+> 8°, cada uno con banco aprobado, fork cableado y arte propio— y dice que el proyecto se
+> construye desde marzo de 2026 y se revisa sin pausa. **4° básico terminó su construcción y se
+> sumó a la landing el mismo día (06/09/2026):** banco aprobado, `4to/index.html` cableado (26
+> capítulos en 4 campañas), voz generada y verificada (12.210 clips) y los 4 villanos con arte
+> propio. Con los seis cursos, el banco completo y jugable son **16.295 preguntas** y **518
+> objetivos medidos**.
 
 **Herramientas dev:** tablero con clave
 (`dev/tablero.html`) y scripts (`consolidar-pool-nivel`, `aplicar-revisadas`,
@@ -391,32 +393,34 @@ eso ahora lo comprueba `auditar-banco-nivel.py`, probado rompiendo un banco a pr
 > se guardan por id**, así que renombrarlas dejaría huérfanas las 7.805 firmadas. La regla —las 4
 > primeras letras de la asignatura más el dígito del nivel— es para lo que venga.
 
-#### El peso, medido hoy (31/08/2026)
+#### El peso, medido hoy (06/09/2026)
 
 > Una sola medición para todo el proyecto. Antes vivía con **cuatro cifras distintas en
 > cuatro documentos** y ninguna calzaba con el disco. Al actualizarla, actualizar también
 > `pendiente.md` y `docs/roadmap-tecnico.md`.
 >
 > ⚠️ **Y hay que medir en BYTES REALES, no en tamaño de disco.** Las cifras anteriores venían
-> de `du` sin `--apparent-size`, que cuenta bloques de 4 KB: con **11.536 archivos** de voz eso
-> infla ~26 MB, y el proyecto se creía 20 MB más pesado de lo que es. Contra el techo de 1 GB de
-> GitHub Pages lo que cuenta son los bytes. `du -sm assets` en Git Bash además devuelve un
-> número **menor que el de su propia subcarpeta**, así que aquí no sirve: se mide recorriendo
-> con `os.path.getsize`.
+> de `du` sin `--apparent-size`, que cuenta bloques de 4 KB e infla el número. Contra el techo
+> de 1 GB de GitHub Pages lo que cuenta son los bytes. `du -sm assets` en Git Bash además
+> devuelve un número **menor que el de su propia subcarpeta**, así que aquí no sirve: se mide
+> recorriendo con `os.path.getsize`.
 
 | | |
 |---|---|
-| `assets/voz/` (voz pregrabada de 3°, **6 asignaturas**) | **252 MB** |
+| `assets/voz/` (voz pregrabada de **3° y 4°**, 6+4 asignaturas) | **578 MB** |
 | `assets/originales/` (arte crudo, **excluido del sitio** por `_config.yml`) | 174 MB |
-| `contenido/` (los bancos completos) | 7,3 MB |
+| `contenido/` (los bancos completos, seis cursos) | 17,3 MB |
 | `assets/audio/` (música) | 5,0 MB |
-| **`assets/` completo** | **473 MB** |
-| **Sitio publicado** (sin `.git` ni originales) | **343 MB** |
+| **`assets/` completo** | **814 MB** |
+| **Sitio publicado** (sin `.git` ni originales) | **713 MB** |
 
-El techo de GitHub Pages es **1 GB**, y la voz de 4° suma otros ~254 MB. Por eso la regla del
-proyecto —voz pregrabada solo de 1° a 4°— no es una preferencia pedagógica: **es también la
-única aritmética que cabe**. Y por eso la precarga `cache-first` que propone el análisis de la
-PWA es inviable tal cual: bajaría 250 MB al teléfono de un niño en la primera apertura de 3°.
+**La voz de 4° ya está generada (06/09/2026) y sumó 326 MB** (los ~254 MB estimados se quedaron
+cortos: 4° tiene más contenido por asignatura que 3°). El techo de GitHub Pages sigue siendo
+**1 GB**, y el sitio publicado queda en 713 MB — con margen, pero **ya no hay margen para una
+séptima asignatura con voz**: la regla del proyecto —voz pregrabada solo de 1° a 4°— es la única
+aritmética que cabe, no una preferencia pedagógica. Y por eso la precarga `cache-first` que
+propone el análisis de la PWA sigue siendo inviable tal cual: bajaría cientos de MB al teléfono
+de un niño en la primera apertura de 3° o 4°.
 
 ### Gotchas del motor de expediciones
 
@@ -8883,3 +8887,93 @@ a partir de eso, ejecutar una decisión comercial que llevaba días esperando.
   arrastre — completar `docs/contenido-sensible.md` con la fila de 5° (Historia), INAPI, el
   enlace de agenda de la landing, la reautenticación de NotebookLM, y remedir el peso del sitio
   publicado (la cifra de 343 MB es de antes de sumar el arte de 5° y 6°).
+
+### Sesión 96 (2026-09-06) — 4° básico queda cableado, con voz y con arte: los seis cursos publicados
+Cierra en un solo día lo que la Sesión 95 dejó pendiente: construir `4to/index.html`, generarle
+la voz y procesarle el arte propio. Se hizo en `/loop` dinámico (agentes de a pocos, la regla de
+la Sesión 89, para no perder trabajo si la sesión colapsaba a mitad de tanda) y terminó con
+Roberto pidiendo sumar 4° a la landing y dar la orden 66.
+
+**El fork, delegado a un subagente con un encargo cerrado.** En vez de dejar que decidiera el
+reparto en capítulos, se calculó a mano —siguiendo la regla de "4 OA por capítulo, jefe al
+final" que ya usan 5°/6°, no la propuesta de 23 capítulos por tema de `docs/prompts-arte-4basico.md`—
+y se le entregó como dato: **26 capítulos** (Matemática 7, Ciencias 5, Historia 5, Lenguaje 9,
+`LE04 OA 15` excluido), 24 de 26 con `portadaMapa` reutilizada (verificadas contra disco antes de
+asignarlas), los 4 Jefes Finales con sus fases, y los 4 villanos **sin `villanoImg` todavía**
+(comentario `PLACEHOLDER`: Roberto los estaba generando en paralelo). Copió `6to/index.html`
+como base (sin mini-clases, `HAY_MINICLASES=false`, igual que 6°) y le agregó el subconjunto de
+`3ro/index.html` que 4° necesita por llevar voz: `SIN_RELOJ=true`, `VOZ.init`, `DUELO_SEG=30`, el
+botón 🔊. **Verificado de forma independiente, no solo confiando en el autorreporte del agente:**
+`git diff --stat` en los otros cinco forks (vacío), los 26 capítulos exactos por conteo de ids,
+91 `META_OA` sin `LE04 OA 15`, 0 `villanoImg`, 28 portadas únicas y las 28 existen en disco, LF
+puro (0 CRLF), y jugando con `cdp.mjs`: JUGADOR → campaña → 8 nodos en Matemática (7+jefe), meta
+🎯 con el texto real, sin reloj, sin regresión en los otros cinco cursos.
+
+**La voz, autorizada por el propio pedido de Roberto** ("con voces y todos"), sin necesidad de
+preguntar de nuevo por el gasto. Antes de generar, los 91 `META_OA` + 91 nombres de etapa —texto
+nuevo, nunca auditado— se pasaron por el normalizador: **0 de 91 cambiaron**, así que los dos
+bugs corregidos la sesión anterior seguían siendo la única corrección necesaria. Recuento real:
+mat4 3.041 textos (US$1,94) · hist4 2.490 (US$2,29) · cie4 2.489 (US$2,38) · leng4 4.190
+(US$3,68) — **US$10,29 en total**, las 4 generaciones corridas en paralelo. **Verificado
+end-to-end y no solo por el conteo de archivos:** una pregunta real de cada una de las 4 bancos
+resuelve, vía el manifiesto fusionado, a un clip que responde HTTP 200 `audio/mpeg` con tamaño
+razonable — el camino completo pregunta→manifiesto→archivo→audio, no solo "el script dijo listo".
+**Peso del sitio remedido** (era un valor esperado, no supuesto): `assets/voz` pasa de 252 a
+**578 MB** (4° sumó 326 MB, más que los ~254 MB estimados), sitio publicado **713 MB** — bajo el
+techo de 1 GB, pero **ya sin margen para pregrabar la voz de un séptimo curso**. Actualizado en
+`CLAUDE.md`, `pendiente.md` y `docs/roadmap-tecnico.md` a la vez, como manda la convención.
+
+**Los 8 villanos: dos formatos distintos en la misma entrega, y los dos rompían el pipeline tal
+cual.** Roberto avisó que las 8 imágenes estaban en Descargas. Se identificó cada una **mirándola**,
+no por orden de descarga —la lección ya escrita en el propio `docs/prompts-arte-4basico.md`—, y
+valió la pena: la tanda de las 4 normales (11:46-11:51) sí seguía el orden de los prompts
+(Matemática, Ciencias, Historia, Lenguaje), pero la de las 4 derrotadas (13:09-13:13) llegó en
+**orden inverso** (Lenguaje, Historia, Ciencias, Matemática). Asumir que las dos tandas
+compartían orden habría cableado el villano equivocado a cada jefe.
+
+Al procesarlas con `scripts/procesar-arte.py --fondo=negro` (el comando de siempre), **las 8
+salieron con agujeros o con fringe de color** — visible mirando el resultado, no por ningún
+conteo (el script reportó "8 procesadas" sin quejarse). La causa, investigada antes de forzar un
+parche: las 4 normales traían **transparencia real** (RGBA, alfa en gradiente natural de 0 a 255,
+generada así por el propio tool de Roberto) y el flood-fill las trataba como si tuvieran fondo
+negro opaco, dejando agujeros donde un halo de color alrededor del personaje (el "glow" que pide
+el prompt) bloqueaba la inundación desde las esquinas hacia bolsillos internos del dibujo. Esas
+4 se reprocesaron a partir de su propio alfa (limpiando solo los restos de halo con alfa < 20),
+resultado idéntico a mano. Las 4 derrotadas SÍ venían aplanadas sobre negro opaco (sin alfa, el
+caso para el que el script se diseñó), pero **el umbral por defecto (`NEGRO_MAX=60`) también
+dejaba agujeros** por el mismo halo de color rompiendo la conectividad del flood-fill; se calibró
+`--negromax=8` probando 4 valores y **mirando cada resultado**, no aceptando el primero que
+compilara.
+
+**`scripts/procesar-arte.py` ganó un modo `--fondo=alfa`** para la próxima vez que un generador
+entregue transparencia real (cambio permanente, no un parche de una vez): antes de elegir
+`--fondo`, ahora el docstring dice que hay que revisar el MODO del archivo, con la lección de hoy
+escrita ahí y no solo en la bitácora. Verificado sin regresión: el modo `negro` reproduce byte a
+byte lo que ya hacía, y el modo `alfa` reproduce byte a byte lo que se había hecho a mano.
+
+Cableados los 8 en los 4 `jefeFinal` de `4to/index.html` (0 `PLACEHOLDER` restantes, 8 rutas
+verificadas en disco), y verificado jugando: los 4 Jefes Finales abren su intro con la imagen
+real (no el emoji de respaldo), 0 errores de consola, 0 fallos de imagen.
+
+**Con eso 4° quedó técnicamente completo, y Roberto pidió sumarlo a la landing.** Números
+recalculados desde los archivos, no de memoria: con los seis cursos jugables, el banco completo
+—**16.295 preguntas**— es también el banco aprobado y publicado (ya no hay distinción entre
+"aprobadas" y "aprobadas y jugables", porque los seis cursos son las dos cosas); **518 objetivos
+medidos** (427 de los cinco anteriores + 91 de 4°, verificado contando códigos con forma de OA en
+los 24 `preguntas.json`). La landing pasa de "5 cursos completos …y 4° en camino" a **"6 cursos
+completos"**, el enlace `/4to` se agregó al hero, y se verificó jugando que el link resuelve y
+que la página no tiene errores de consola. `README.md` sumó el párrafo de 4° (con sus 4
+villanos), `docs/comercial.md` y `docs/aprobacion-pedagogica.md` pasaron de "cinco cursos
+vendibles" a "los seis", y `pendiente.md`/`CLAUDE.md` dejaron de tener el callout que decía que
+4° seguía fuera.
+
+**Lección de la sesión, otra vez la misma que ya se repite:** un script que reporta éxito no es
+lo mismo que un resultado correcto — "8 procesadas" y "8 procesadas SIN AGUJEROS" son afirmaciones
+distintas, y la segunda solo se confirma mirando. Se aplicó dos veces hoy: en la verificación
+independiente del fork (no confiar en el resumen del subagente) y en el procesamiento de arte (no
+confiar en el resumen del script).
+
+- **Pendiente:** de arrastre desde la Sesión 95 — completar `docs/contenido-sensible.md` con la
+  fila de 5° (Historia), INAPI, el enlace de agenda de la landing, la reautenticación de
+  NotebookLM. Y nuevo: 4° no tiene mini-clases (`HAY_MINICLASES=false`, publicado así a
+  propósito, igual que 6°) — construirlas es un trabajo de contenido aparte, no bloqueante.

@@ -28,7 +28,9 @@
     // 6° básico
     "CN06 OA 04":["sex"], "CN06 OA 05":["sex"], "CN06 OA 06":["sex"],
     "CN06 OA 07":["sustancias"],
-    "HI06 OA 05":["violencia","pueblos"], "HI06 OA 08":["violencia"]
+    "HI06 OA 05":["violencia","pueblos"], "HI06 OA 08":["violencia"],
+    // 4° básico
+    "CN04 OA 08":["sustancias"]
   };
   window.SENSIBLE={
     cats:CATS, oa:OA,

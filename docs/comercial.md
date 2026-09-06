@@ -88,37 +88,38 @@ vender a un colegio cuesta lo mismo pague lo que pague.
 | **7° básico** (`/7mo/`) | 2.550 preguntas, 4 asignaturas + Vocabulario | ✅ aprobado por muestreo, a la venta |
 | **6° básico** (`/6to/`) | 2.970 preguntas, 4 asignaturas | ✅ aprobado por muestreo, a la venta |
 | **5° básico** (`/5to/`) | 2.790 preguntas, 4 asignaturas | ✅ aprobado por muestreo, a la venta |
+| **4° básico** (`/4to/`) | 2.730 preguntas, 4 asignaturas, voz pregrabada + apoyo visual | ✅ aprobado por muestreo, a la venta |
 | **3° básico** (`/3ro/`) | 2.659 preguntas, 4 asignaturas + voz pregrabada + Lectura | ✅ aprobado por muestreo, a la venta |
-| **4° básico** | 2.730 preguntas, 4 asignaturas | ✅ banco aprobado por muestreo, **sin fork jugable, sin voz, sin arte** — no se vende ni se anuncia todavía |
 
-Desde el 06/09/2026 los **cinco cursos jugables están aprobados y la landing los anuncia**, **pero
-sin exagerar cómo**: dice *"aprobadas por un profesor, objetivo por objetivo"* y **NO** *"una a
-una"*. La diferencia es real y hay que sostenerla si un director pregunta: 8° se revisó
-**pregunta por pregunta**; 3°, 5°, 6° y 7° se aprobaron **por muestreo** —8 preguntas de cada 30
-por objetivo, y si la muestra pasa se aprueba el objetivo completo
+Desde el 06/09/2026 **los seis cursos están completos, aprobados y la landing los anuncia**,
+**pero sin exagerar cómo**: dice *"aprobadas por un profesor, objetivo por objetivo"* y **NO**
+*"una a una"*. La diferencia es real y hay que sostenerla si un director pregunta: 8° se revisó
+**pregunta por pregunta**; 3°, 4°, 5°, 6° y 7° se aprobaron **por muestreo** —8 preguntas de cada
+30 por objetivo, y si la muestra pasa se aprueba el objetivo completo
 (`docs/aprobacion-pedagogica.md`)—. El muestreo detecta un objetivo mal escrito, no una pregunta
 suelta mala, y eso se dice tal cual. No es un matiz de redacción, es la regla del proyecto: **no
 se promete lo que no hay**, y un director que pregunte "¿quién revisó esto?" merece la respuesta
 verdadera.
 
-**Qué se puede vender hoy, entonces:** los cinco cursos jugables, **diciendo cómo se aprobó cada
-uno**. 8° se revisó pregunta por pregunta; 3°, 5°, 6° y 7° por muestreo de 8 por objetivo. Las
-dos cosas son aprobación pedagógica de verdad, y la segunda hay que saber explicarla: **detecta
-un objetivo mal escrito, no una pregunta suelta mala**.
+**Qué se puede vender hoy, entonces:** los seis cursos, **diciendo cómo se aprobó cada uno**. 8°
+se revisó pregunta por pregunta; 3°, 4°, 5°, 6° y 7° por muestreo de 8 por objetivo. Las dos
+cosas son aprobación pedagógica de verdad, y la segunda hay que saber explicarla: **detecta un
+objetivo mal escrito, no una pregunta suelta mala**.
 
-Con los cinco cursos aprobados y anunciados (06/09/2026), el techo por colegio se multiplicó por
-cinco respecto de vender solo 8°. Lo único que falta para sumar el sexto nivel es terminar de
-construir 4° básico (fork, voz y arte) — su banco de preguntas **ya está aprobado**.
+Con los seis cursos aprobados y anunciados (06/09/2026), el techo por colegio se multiplicó por
+seis respecto de vender solo 8°. **No queda ningún nivel pendiente de construir.**
 
-**En 5°, 6° y 7° hay además conversaciones que ningún archivo resuelve.** En 7°, los `CN07 OA
+**En 4°, 5°, 6° y 7° hay además conversaciones que ningún archivo resuelve.** En 7°, los `CN07 OA
 01/02/03` son sexualidad, ciclo menstrual, métodos de control de la natalidad e ITS. En 6°, los
 `CN06 OA 04/05/06` (sistema reproductor y pubertad) y `OA 07` (drogas), más `HI06 OA 08` (quiebre
 y recuperación de la democracia). En 5°, los `HI05 OA 02/03/04/07` son la conquista de América y
 de Chile —guerra de Arauco, encomienda, esclavitud—, tratada como hecho histórico verificable, sin
-recrear escenas de violencia. Es currículum obligatorio y los bancos están escritos de forma
-factual, sin promover ninguna postura, pero **hay que avisarle al colegio antes de publicarlo**
-— el colegio piloto es salesiano. Ver [`docs/contenido-sensible.md`](contenido-sensible.md) para
-el detalle completo por nivel (nota: su tabla todavía no lista a 5°, solo 3°/6°/7°/8°).
+recrear escenas de violencia. En 4°, el único es `CN04 OA 08` (efectos del alcohol y el tabaco),
+más leve que los anteriores pero igual conviene mencionarlo. Es currículum obligatorio y los
+bancos están escritos de forma factual, sin promover ninguna postura, pero **hay que avisarle al
+colegio antes de publicarlo** — el colegio piloto es salesiano. Ver
+[`docs/contenido-sensible.md`](contenido-sensible.md) para el detalle completo por nivel (nota:
+su tabla todavía no lista a 5°, solo 3°/4°/6°/7°/8°).
 
 ## Hacia dónde va el modelo (acordado el 27/08/2026, NO vigente)
 
@@ -193,9 +194,9 @@ la propuesta, el guion de reunión y la landing. **Léelo antes de una reunión 
 
 ## Qué se le promete a un colegio, y qué no
 
-**Sí:** 4 asignaturas por curso en 3°, 5°, 6°, 7° y 8° básico —13.565 preguntas alineadas a las
-Bases del MINEDUC, **todas aprobadas** (8° pregunta por pregunta; 3°, 5°, 6° y 7° por muestreo de
-8 por objetivo)—,
+**Sí:** 4 asignaturas por curso en 3°, 4°, 5°, 6°, 7° y 8° básico —16.295 preguntas alineadas a
+las Bases del MINEDUC, **todas aprobadas** (8° pregunta por pregunta; 3°, 4°, 5°, 6° y 7° por
+muestreo de 8 por objetivo)—,
 **evaluación formativa alineada al Decreto 67/2018** (ver sección anterior), panel del profesor
 con mapa de dominio por OA, desafíos de refuerzo, ranking por curso, soporte y actualizaciones.
 Funciona en cualquier celular con internet, sin instalar nada.
@@ -203,11 +204,8 @@ Funciona en cualquier celular con internet, sin instalar nada.
 **No:**
 - ❌ **No funciona sin internet.** Verificado: no hay service worker y los bancos de preguntas se
   piden con `fetch`. **Nunca prometer uso sin conexión.**
-- ❌ **No cubre todos los niveles todavía.** Hoy 3°, 5°, 6°, 7° y 8° básico. Falta 4° —su banco
-  ya está aprobado (2.730 preguntas), pero no tiene fork jugable, voz ni arte propio, así que no
-  se vende ni se anuncia.
-- ⚠️ **No decir que las 13.565 están aprobadas "una a una".** Lo están *objetivo por objetivo*:
-  8° se revisó pregunta por pregunta, pero 3°, 5°, 6° y 7° por **muestreo** de 8 de cada 30. El
+- ⚠️ **No decir que las 16.295 están aprobadas "una a una".** Lo están *objetivo por objetivo*:
+  8° se revisó pregunta por pregunta, pero 3°, 4°, 5°, 6° y 7° por **muestreo** de 8 de cada 30. El
   100% es de cobertura, no de método. Exagerarlo se cae a la primera pregunta de una UTP; decirlo
   bien no le quita fuerza al argumento, y además permite explicar el criterio, que es una señal
   de rigor.
