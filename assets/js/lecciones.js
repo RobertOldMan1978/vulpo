@@ -1140,8 +1140,13 @@ async function iniciarPracticaLeccion(leccion){
  // 10 por leccion son 50 en una unidad, y ese modo existe porque 40 por capitulo agotan.
  const preguntas = await preguntasDeOA(fb.oa, REV.activo?REV.n:(fb.n||3), leccion._banco);
  if(!preguntas.length){ terminarLeccion(); return; }  // sin banco: se marca completa igual
+ /* `mide:false` en el bloque de práctica = esta mini-clase ENSEÑA pero no le reporta nada al
+    profesor (ver el ⚠️ de `registrarOA` en motor.js). Va como DATO y no como un `if` sobre el
+    nombre de la asignatura, que es el patrón que ya falló cinco veces en este proyecto.
+    Por omisión SÍ mide, así que las mini-clases que ya existían no cambian de comportamiento. */
  Q={lvl:0,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock:false,
-    preguntas, leccion:{id:leccion.id, titulo:leccion.titulo}, repetida:!!S.mateLecciones[leccion.id]};
+    preguntas, leccion:{id:leccion.id, titulo:leccion.titulo}, repetida:!!S.mateLecciones[leccion.id],
+    sinMedir: bloque.mide===false};
  MODO='normal';
  go('scr-quiz'); pintaPregunta();
 }
@@ -1338,7 +1343,16 @@ async function cargarPoolMate(){
         d.className = 'node ' + (hecho ? 'done' : 'open');
         d.innerHTML = '<div class="orb">📘</div><div class="info"><b>' + escHtml(l.titulo) +
           '</b><small>' + (hecho ? '✓ Vista' : '▶ Empieza aquí') + '</small></div>';
-        d.querySelector('.orb').onclick = function () { SND.tap(); abrirLeccion(l); };
+        /* Vuelve al mapa del capítulo, no a la campaña. Sin esto, `volverAlCapituloMate`
+           cae en `renderCampaña()` y saca al alumno de donde estaba — se notaba poco con
+           introducciones de 3 pantallas y se nota mucho con una mini-clase que termina en
+           10 preguntas de práctica. nodoIntro solo lo llama renderMapa, así que volver al
+           mapa es el destino correcto en el 100% de los casos. */
+        d.querySelector('.orb').onclick = function () {
+          SND.tap();
+          TRAS_LECCION = function () { go('scr-mapa'); renderMapa(); };
+          abrirLeccion(l);
+        };
         caja.insertBefore(d, caja.firstChild);
       });
       return true;

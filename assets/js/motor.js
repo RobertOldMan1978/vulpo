@@ -1464,7 +1464,18 @@ function responder(el,ok,P,e){
  // otra cosa. No basta con cortar al pintar la pregunta siguiente, porque entre
  // responder y la siguiente hay una pausa (o el boton Continuar, que puede tardar).
  callarVoz();
- if(!Q.desafio && !Q.repaso && !Q.asistidaActual) registrarOA(P&&P.oa, ok);   // desafío/repaso miden aparte; una pregunta con comodín no se mide
+ /* Al mapa de dominio del profesor NO va todo lo que el alumno responde. Quedan fuera el
+    desafío del profe y el repaso (miden aparte), la pregunta resuelta con comodín, y la
+    práctica de una mini-clase que se declara `"mide": false` en su bloque.
+    ⚠️ Ese último caso existe para LENGUAJE. Sus objetivos son en buena parte de producción
+    ("escribir para persuadir", "exponer"), y una práctica que se juega recién leída la
+    explicación mide RECUERDO INMEDIATO — que al ser el PRIMER intento se congela para
+    siempre en `resp_1`/`ok_1` y le deja al profesor un porcentaje engañoso sobre escritura.
+    El objetivo se sigue midiendo donde corresponde: en su etapa normal de la campaña.
+    ⚠️ Y la exclusión va AQUÍ, al registrar, no en `enviarDominio`: si solo se omitiera el
+    envío, lo acumulado en memoria viajaría pegado al resumen de la siguiente etapa que sí
+    mide. Es el mismo motivo por el que una etapa abandonada no se descarta. */
+ if(!Q.desafio && !Q.repaso && !Q.asistidaActual && !Q.sinMedir) registrarOA(P&&P.oa, ok);
  document.querySelectorAll('.opt').forEach(o=>o.classList.add('off'));
  if(ok){
   Q.combo++;Q.comboMax=Math.max(Q.comboMax,Q.combo);Q.aciertos++;
@@ -1551,7 +1562,13 @@ function mostrarResultado(){
  const esJefe=Q.lvl===N_ETAPAS-1;
  const cFail=EXPEDICION[Q.lvl], lvlFail=Q.lvl, oaFail=cFail.oa||'';
  const esLibro=/^(VOC-|AF-)/.test(oaFail);
- const esMate=HAY_MINICLASES && EXP_ACT && EXP_ACT.asignatura==='Matemáticas';
+ /* ¿Al reprobar se le ofrece la mini-clase o el repaso? Se decide por DATO —si esta unidad
+    tiene mini-clases (LECS_EXP)— y no por el nombre de la asignatura, que era como estaba y
+    fallaba en los dos sentidos: en 7° ofrecía una mini-clase inexistente y bajaba las 17
+    lecciones de 8° (Sesión 64), y en 3° NUNCA la ofrecía aunque tiene 26, porque escribe
+    'Matemática' en singular y la comparación era con el plural. Esa "protección" era una
+    coincidencia ortográfica, y desde que 3° tiene sus mini-clases le estaba negando la suya. */
+ const hayMiniClase=!!(LECS_EXP && LECS_EXP.length);
  const vistos=Q.preguntas.map(p=>p.q);   // enunciados de la etapa fallada, para excluirlos en el repaso
  const prog=progAct();
  const p=prog[Q.lvl];
@@ -1588,7 +1605,7 @@ function mostrarResultado(){
   $('resObj').textContent='🎯 '+metaDeEtapa(lvlFail);
   $('resObj').hidden=false;
   $('btnPaso').style.display='block';
-  if(esMate){ $('btnPaso').textContent='📘 Repasar la mini-clase'; $('btnPaso').onclick=()=>LECC.abrirMiniClaseDeOA(oaFail); }
+  if(hayMiniClase){ $('btnPaso').textContent='📘 Repasar la mini-clase'; $('btnPaso').onclick=()=>LECC.abrirMiniClaseDeOA(oaFail); }
   else      { $('btnPaso').textContent='🧑‍🏫 Repasar sin presión'; $('btnPaso').onclick=()=>iniciarRepaso(lvlFail,vistos); }
  }else{
   $('resObj').hidden=true;
