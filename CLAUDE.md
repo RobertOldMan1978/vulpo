@@ -9221,3 +9221,42 @@ dejó obligatoria, cuando 7° estuvo caído con la consola limpia); el respaldo 
 teniendo las 9 funciones que el motor le pide; el armador de 8° ya no menciona "Mini-clases" y
 sí el Reto; cero errores de consola. Los dos `429` de Supabase son el límite de altas anónimas
 gastado por las corridas headless — comprobado que **el diff no toca auth**.
+
+#### Tercer tramo — ⚠️ la ✕ del quiz llevaba días muerta en 3°, 5° y 7°, en producción
+
+Roberto la encontró **usándola**: *"en esta pantalla no hay cómo volver atrás, la X no está
+funcionando, revisa todos los cursos"*. Tenía razón, y **no lo causó el trabajo de hoy** — pero
+sí lo dejó al alcance de la mano, porque hasta ayer a la práctica de una mini-clase se llegaba
+por un camino mucho menos transitado.
+
+**La causa, medida:** el handler del ✕ llama `volverAlCapituloMate()`, y esa función **vive
+dentro del IIFE de `assets/js/lecciones.js`** desde que la Sesión 83 sacó el motor de
+mini-clases a un módulo. Solo **8vo** se migró a `LECC.volverAlCapitulo()`; **3° y 7° se
+quedaron sin migrar**, y después **5°, 6° y 4° nacieron copiando de ahí**. Es el patrón del
+fork otra vez: se copia el archivo con su suposición adentro.
+
+> ⚠️ **Lo peor no es el error sino su forma: es MUDO.** Reproducido con `cdp.mjs`, el clic deja
+> la pantalla igual y **la consola queda limpia** — un `ReferenceError` lanzado dentro de un
+> `onclick` no llega a la consola de forma fiable. Es la misma familia del botón JUGADOR de 7°
+> (Sesión 90) y del `META_OA` de 7° (Sesión 63): **se ve exactamente igual que si funcionara.**
+>
+> **Y la instrucción de arreglarlo estaba escrita hace cuatro días.** La cabecera de
+> `lecciones.js` decía, en su lista de llamadores externos, `btnBack (x3) volverAlCapituloMate
+> -> LECC.volverAlCapitulo`. Estaba dicho y no cumplido. Ahora esa cabecera lleva el aviso de
+> lo que pasó, en el archivo donde alguien lo va a leer al tocarlo.
+
+**El barrido, porque Roberto pidió revisar todos los cursos.** En vez de arreglar el caso, se
+buscó **la clase**: un script comparó, en los seis forks, toda llamada a nombres declarados
+dentro de los módulos que **sí encapsulan** (`lecciones.js`, `calculo.js`, `revision.js`,
+`visuales.js`, `fracciones.js`, `sensible.js`, `instalar.js`), descartando los que el propio
+fork declara. `motor.js` y `voz.js` quedan fuera a propósito: sus funciones **son globales**,
+así que llamarlas a secas es correcto y meterlas daba puro ruido. **Resultado: este era el
+único caso real.** Los otros tres candidatos (`responder`, `montar`, `descargar`) resultaron
+ser menciones **dentro de comentarios**, verificadas una por una.
+
+**Verificado jugando, antes y después:** antes, la ✕ en la práctica de una mini-clase dejaba
+`scr-quiz` en pantalla en 3°, 5° y 7°, y funcionaba en 8°; después, los cuatro vuelven a
+`scr-mapa`. Y la ✕ del **quiz normal de campaña** —el camino más usado del juego— se probó en
+**los seis cursos** y nunca estuvo rota. Los seis forks quedan con la línea **idéntica**,
+incluidos 4° y 6°, donde hoy es inalcanzable (`HAY_MINICLASES=false`) pero mordería el día que
+tengan mini-clases.

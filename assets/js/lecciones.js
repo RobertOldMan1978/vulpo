@@ -27,7 +27,17 @@
      motor.js:785   renderCampanaMate    -> LECC.renderCampana
      motor.js:1454  finPracticaLeccion   -> LECC.finPractica
      motor.js:1538  abrirMiniClaseDeOA   -> LECC.abrirMiniClaseDeOA
-     btnBack (x3)   volverAlCapituloMate -> LECC.volverAlCapitulo
+     btnBack (x6)   volverAlCapituloMate -> LECC.volverAlCapitulo
+
+   ⚠️ ESA ULTIMA LINEA ESTUVO ESCRITA Y SIN CUMPLIR DESDE LA SESION 83 HASTA LA 98.
+   Solo 8vo se migro a LECC.volverAlCapitulo(); 3ro y 7mo se quedaron llamando
+   volverAlCapituloMate() a secas -que aqui adentro NO es global- y despues 5to, 6to y 4to
+   nacieron copiando de ahi. Resultado: en la practica de una mini-clase la ✕ del quiz NO
+   HACIA NADA en 3, 5 y 7, en produccion, y con la CONSOLA LIMPIA: un ReferenceError dentro
+   de un onclick no llega a la consola de forma fiable. Lo encontro Roberto usandolo.
+   La leccion no es "arreglar la linea" sino que al sacar codigo a un modulo hay que
+   RECORRER los seis forks y comprobar que ninguno llama al nombre interno: un nombre que
+   antes era global y ahora vive en un IIFE falla mudo, no ruidoso.
    ============================================================================ */
 (function () {
   'use strict';

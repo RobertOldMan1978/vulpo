@@ -2525,7 +2525,7 @@ const KIM_REACT={neutral:['neutral',''],feliz:['feliz','happy'],triste:['triste'
 })();
 
 $('btnBack').onclick=()=>{clearInterval(Q.timer);clearTimeout(Q._avanzarT);
- if(HAY_MINICLASES&&Q.leccion){volverAlCapituloMate();}else{go(Q.desafio?'scr-rol':'scr-mapa');}};
+ if(HAY_MINICLASES&&Q.leccion){LECC.volverAlCapitulo();}else{go(Q.desafio?'scr-rol':'scr-mapa');}};
 
 
 
