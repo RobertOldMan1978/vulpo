@@ -72,9 +72,10 @@ y 6°) con **M4** delante, que es lo que lo abarata.
 
 > ⚠️ **Cómo se aprobó importa, y hay que sostenerlo si un colegio pregunta.** 8° se revisó
 > **pregunta por pregunta**; 3° y 7° se aprobaron **por muestreo** —8 de cada 30 por objetivo—.
-> Por eso la landing dice *"aprobadas por un profesor, objetivo por objetivo"* y **no** *"una a
-> una"*, que sería exagerar. El muestreo caza un objetivo mal escrito, no una pregunta suelta
-> mala, y eso está dicho en `docs/aprobacion-pedagogica.md`.
+> Por eso la landing dice *"aprobadas por un grupo de profesionales, apoyados con Inteligencia
+> Artificial, objetivo por objetivo"* y **no** *"una a una"*, que sería exagerar. El muestreo
+> caza un objetivo mal escrito, no una pregunta suelta mala, y eso está dicho en
+> `docs/aprobacion-pedagogica.md`.
 
 **No queda aprobación pendiente.** Lo que sigue describe la herramienta, que es la misma que
 usarán 4°, 5° y 6°.

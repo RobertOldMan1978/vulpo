@@ -2617,15 +2617,20 @@ if(QA){const b=document.createElement('div');b.className='qa-badge';b.textConten
 if(PRUEBA&&!QA&&!VENCIDA){const b=document.createElement('div');b.className='qa-badge';b.style.background='var(--cyan)';b.style.color='#04231a';
  b.textContent='🧪 Modo prueba · no se guarda tu avance';document.body.appendChild(b);}
 
-/* Intro de bienvenida: se ve una sola vez por dispositivo. ?intro=1 la fuerza a repetirse.
+/* Intro de bienvenida: se ve una sola vez por dispositivo. ?intro=1 la fuerza a repetirse;
+   ?intro=0 la salta siempre —así llegan los enlaces de la landing, que ya mostró la
+   presentación y no debe repetirla, para que da igual desde qué curso se entre—.
    Intenta reproducir CON sonido; si el navegador bloquea el autoplay, pide un toque. */
 (function(){
  const ov=$('introOverlay'); if(!ov) return;
  if(SIN_DISCO){ ov.remove(); return; }   // prueba/armador: entrada directa, y no se escribe kimun_intro
  const vid=$('introVid'), skip=$('introSkip'), tap=$('introTap');
- const forzar=new URLSearchParams(location.search).has('intro');
+ const _introParam=new URLSearchParams(location.search).get('intro');
+ const forzar=_introParam==='1';
+ const saltar=_introParam==='0';
  const visto=localStorage.getItem('kimun_intro'+SUFIJO);
  const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if(saltar){ try{ localStorage.setItem('kimun_intro'+SUFIJO,'1'); }catch(e){} ov.remove(); return; }
  if(!forzar && (visto || reduce)){ ov.remove(); return; }   // ya se vio o se prefiere sin animación
  try{ localStorage.setItem('kimun_intro'+SUFIJO,'1'); }catch(e){}
  let cerrado=false, guard=null;

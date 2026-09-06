@@ -143,7 +143,8 @@ están hoy en una expedición jugable, el resto es reserva.
 > saberlo antes de decírselo a un colegio:** los 2.536 de 8° y los módulos de apoyo se revisaron
 > **pregunta por pregunta**; 3°, 4°, 5°, 6° y 7° se aprobaron **por muestreo** —8 de cada 30 por
 > objetivo, criterio de `docs/aprobacion-pedagogica.md`—. Por eso la landing dice *"aprobadas por
-> un profesor, objetivo por objetivo"* y **nunca** *"una a una"*.
+> un grupo de profesionales, apoyados con Inteligencia Artificial, objetivo por objetivo"* y
+> **nunca** *"una a una"*.
 >
 > ✅ **VULPO se anuncia desde 3° a 8° básico, los SEIS cursos (06/09/2026), decisión de
 > Roberto.** La landing (`index.html`) enlaza los **seis cursos jugables** —3°, 4°, 5°, 6°, 7° y
@@ -8977,3 +8978,58 @@ confiar en el resumen del script).
   fila de 5° (Historia), INAPI, el enlace de agenda de la landing, la reautenticación de
   NotebookLM. Y nuevo: 4° no tiene mini-clases (`HAY_MINICLASES=false`, publicado así a
   propósito, igual que 6°) — construirlas es un trabajo de contenido aparte, no bloqueante.
+
+### Sesión 97 (2026-09-06) — Pulido de la landing tras publicar los seis cursos
+Continuación el mismo día de la Sesión 96, a partir de que Roberto revisó la landing ya con los
+seis cursos y pidió tres ajustes puntuales. Sin tocar contenido ni el motor compartido.
+
+- **El botón "Cómo se juega" pasó de transparente a color sólido.** Roberto lo marcó en una
+  captura: junto a los otros dos botones del hero (naranjo y verde, ambos con degradado sólido),
+  el tercero —`.btn.sec`, fondo transparente con solo un borde— se veía apagado. Se le dio el
+  mismo tratamiento (degradado cian, texto oscuro), y se pudo borrar `.btn.sec:hover` entero
+  porque el hover genérico de `.btn` (transform + sombra) ya alcanza sin necesitar animar un
+  borde que ya no existe.
+- **La fila de enlaces por curso mostraba la intro de bienvenida en unos y en otros no, y no era
+  un bug de código sino el propio diseño funcionando como se esperaba.** Cada curso guarda en
+  `localStorage` si ya se vio su intro (`kimun_intro`+`SUFIJO`), así que los que Roberto ya había
+  visitado antes en su navegador no la repetían y los nuevos sí — inconsistente para quien prueba
+  cursos seguidos desde la misma landing. La salida no fue tocar el guardado (cambiar cómo
+  recuerda cada curso lo rompería para alumnos reales), sino agregar una tercera vía al parámetro
+  `?intro=`: **`?intro=1` la fuerza a mostrarse** (ya existía) y **`?intro=0` la fuerza a
+  ocultarse** (nuevo), marcando igual el curso como visto para que no vuelva a aparecer después.
+  Los seis enlaces de la landing —los cinco "Prueba el curso" más los dos "Ver una muestra"—
+  pasaron a usar `?intro=0`: quien llega desde la landing ya vio la presentación ahí, así que
+  nunca le vuelve a aparecer el video, sea cual sea el curso que abra.
+  - **La edición se aplicó IDÉNTICA en los seis forks** (mismo bloque, mismas anclas), verificado
+    por hash tras el cambio: los seis dan el mismo MD5 en el tramo modificado. Es el patrón de
+    siempre para no dejar que los forks diverjan.
+  - **Verificado jugando, no solo leyendo el código:** con `?intro=1` se ve igual que antes
+    (fuerza, aunque ya esté vista); con `?intro=0` sobre una visita nueva NO aparece y queda
+    marcada como vista; sintaxis válida en los seis (`node --check` sobre el script más grande
+    de cada archivo, la técnica de siempre para JS embebido en HTML). El caso "primera visita sin
+    parámetro" no se pudo comprobar tal cual en este entorno porque el Chrome headless de
+    `cdp.mjs` reporta `prefers-reduced-motion:reduce`, que la intro ya respetaba desde antes — no
+    es una regresión, es la misma condición que hace posible tomar las capturas del tutorial.
+- **Conversación de diseño: ¿el botón "Ver una muestra" no sobra con la fila de cursos debajo?**
+  Roberto preguntó y se le devolvió el análisis en vez de ejecutar de inmediato (es una decisión
+  de producto, no un bug): el botón grande sirve al visitante indeciso que quiere "ver de qué se
+  trata" sin elegir curso todavía (apunta a 8°, el más completo), mientras que la fila de abajo
+  sirve a quien ya sabe el grado de su hijo o de su colegio — son dos intenciones distintas, no
+  el mismo enlace repetido dos veces por descuido. Roberto eligió la opción intermedia: **aclarar
+  el botón en vez de borrarlo o dejarlo ambiguo** → *"Ver una muestra (8° básico)"*, en los dos
+  lugares donde aparece.
+- **La frase de aprobación de la landing cambió, a pedido de Roberto:** *"aprobadas por un
+  profesor"* → **"aprobadas por un grupo de profesionales, apoyados con Inteligencia
+  Artificial"**. No es una corrección de un error: es una decisión de Roberto sobre cómo
+  describir comercialmente su propio proceso, y le correspondía a él tomarla. Se actualizó en la
+  landing y, para que no quedara una afirmación viva contradictoria, en los **tres lugares que
+  citan esa frase textual como "lo que dice la landing"**: el callout de `CLAUDE.md`,
+  `docs/comercial.md` y `pendiente.md`. **Se dejó sin tocar la única mención dentro de la
+  bitácora histórica** (Sesión 91) y la de una tarea ya cerrada y tachada en `pendiente.md`
+  (A8, 30/08): son registro de lo que se dijo en su momento, no una afirmación del estado actual,
+  y el proyecto no reescribe su propia historia.
+- **Verificado en el navegador tras cada cambio, con la consola limpia**: el color del botón
+  (`getComputedStyle`, degradado cian confirmado), los textos de los cinco botones, y que la
+  frase nueva está presente y la vieja ya no aparece en ningún lugar vivo del repositorio.
+- **Pendiente:** sin cambios respecto a la Sesión 96 (el arrastre de `docs/contenido-sensible.md`
+  con 5°, INAPI, el enlace de agenda, NotebookLM, y las mini-clases de 4°).

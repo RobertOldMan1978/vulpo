@@ -92,8 +92,9 @@ vender a un colegio cuesta lo mismo pague lo que pague.
 | **3° básico** (`/3ro/`) | 2.659 preguntas, 4 asignaturas + voz pregrabada + Lectura | ✅ aprobado por muestreo, a la venta |
 
 Desde el 06/09/2026 **los seis cursos están completos, aprobados y la landing los anuncia**,
-**pero sin exagerar cómo**: dice *"aprobadas por un profesor, objetivo por objetivo"* y **NO**
-*"una a una"*. La diferencia es real y hay que sostenerla si un director pregunta: 8° se revisó
+**pero sin exagerar cómo**: dice *"aprobadas por un grupo de profesionales, apoyados con
+Inteligencia Artificial, objetivo por objetivo"* y **NO** *"una a una"*. La diferencia es real y
+hay que sostenerla si un director pregunta: 8° se revisó
 **pregunta por pregunta**; 3°, 4°, 5°, 6° y 7° se aprobaron **por muestreo** —8 preguntas de cada
 30 por objetivo, y si la muestra pasa se aprueba el objetivo completo
 (`docs/aprobacion-pedagogica.md`)—. El muestreo detecta un objetivo mal escrito, no una pregunta
