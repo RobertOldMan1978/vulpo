@@ -1061,12 +1061,19 @@ para siempre.
   catálogo (`EXPEDICIONES`) ya está ahí, así que una expedición nueva aparece sola, sin
   listas paralelas que mantener.
   ⚠️ **Pero lo que no es una expedición hay que declararlo en `EXTRAS`, o no aparece.** Pasó dos
-  veces con lo mismo: el **Reto de Cálculo** (Sesión 70) y las **4 unidades de mini-clases**
+  veces con lo mismo: el **Reto de Cálculo** (Sesión 70) y las **unidades de mini-clases**
   (Sesión 82) no se veían, así que un profesor con un enlace de muestra nunca conocía esa parte
   del producto. Al agregar un módulo con pantalla propia, su entrada en `EXTRAS` va en el mismo
   trabajo — y con ella hay que **probar el camino completo en modo prueba y en `?rev=1`**, que es
   donde aparecieron las tres fugas de la Sesión 82. Como `?solo=`, **no es un candado**, pero tampoco expone
   nada nuevo.
+  > ⚠️ **Las unidades de mini-clases SALIERON de `EXTRAS` en la Sesión 98, y no vuelven.** Desde
+  > que viven **dentro** de su expedición (son los primeros nodos de su mapa), ofrecerlas además
+  > como casilla suelta le mostraba al profesor **la misma unidad dos veces**. Hoy `EXTRAS` solo
+  > tiene lo que de verdad es una pantalla aparte: el Reto de Cálculo y el Reto Sin Fin. En 5°
+  > quedó **vacío**, y está bien. **Consecuencia:** un enlace repartido con el id de una unidad
+  > (`?solo=mate-numeros`) ya no es válido y cae al juego normal — el equivalente de hoy es su
+  > expedición, que trae lo que enseña y lo que evalúa juntos.
 - **`?m=<token>` — Muestra con caducidad:** misma experiencia que `?solo=`, pero los datos
   viajan en un token **base64url** con el formato `ids|AAAA-MM-DD|1` (ids de capítulos, fecha
   de caducidad, y `1` si se muestran las respuestas). Sin fecha, no caduca. La **vigencia es
@@ -9161,3 +9168,56 @@ de consola y cero fallos de red en las tres pruebas.
   para "Números hasta 1.000"— sigue en un estilo de arte distinto (Vulpi adolescente con
   chaqueta) al de las demás unidades de 3°/5°/7° (Vulpi cachorro con hoodie, Sesión 79). No
   bloquea nada; se resuelve regenerándola en el estilo nuevo cuando Roberto quiera.
+
+#### Segundo tramo — el arreglo servía en la campaña y NO en los enlaces de prueba
+
+Roberto mandó otra captura, esta con la estructura vieja todavía, y una pregunta exacta:
+*"¿las correcciones las hiciste en los enlaces de prueba también? Las lecciones se ven fuera
+de las expediciones"*. Tenía razón en las dos mitades, y solo una era caché.
+
+- **La captura sí era caché de su navegador**: comprobado contra `vulpo.cl/8vo/` en vivo, la
+  campaña ya mostraba **una tarjeta por unidad**. El `lecciones.js` desplegado era el nuevo.
+- ⚠️ **Pero el enlace de prueba estaba roto de verdad, y era mi error de diseño.** Yo resolvía
+  qué mini-clases le tocan a una expedición **en el `onclick` de la tarjeta de la campaña**
+  (`exp.lecciones=cap.lecciones`), y **a una expedición se entra por CUATRO caminos**: la
+  campaña, `?solo=`, `?m=` y el armador. En tres de ellos ese clic nunca ocurre, así que
+  `?solo=mate-exp-numeros` abría el quiz **sin una sola mini-clase adelante** — o sea, el
+  profesor con enlace de muestra veía justo la mitad menos vendible del producto.
+  > Es el patrón que este archivo ya documenta desde la Sesión 42: **el modo prueba nunca pasa
+  > por la pantalla de campaña**, así que todo lo que se cablee en ese clic no existe para él.
+  > Corregido moviéndolo a **`activarExpedicion`** —por donde pasan los cuatro caminos— con
+  > `leccionesDeExpedicion(exp)`, que **deriva la unidad desde la campaña** en vez de recibirla
+  > del punto de entrada. El estado vive en `LECS_EXP`, paralelo a `EXP_ACT`, y **no muta el
+  > objeto de datos** como hacía la versión anterior. Todo dentro de `motor.js`: ni un fork.
+
+**Verificado en los cuatro caminos** (8°, jugando): campaña → 5 mini-clases + 6 etapas, con la
+etapa 1 bloqueada; `?solo=` y `?m=` → las mismas 5 mini-clases **visibles y sin bloquear**, que
+es lo correcto en modo prueba; `?qa=1` → igual. En 4° y 6° `LECS_EXP` queda en `null` y todo
+esto es inerte, comprobado.
+
+**Y de ahí salió una decisión de producto de Roberto: las unidades de mini-clases SALEN del
+armador.** Con la expedición conteniéndolas, la casilla suelta de `EXTRAS` le ofrecía al
+profesor **la misma unidad dos veces**. Quitadas de los cuatro cursos (7 en 3°, 6 en 5°, 4 en
+7° y 4 en 8°); `EXTRAS` queda solo con lo que de verdad es pantalla aparte —el Reto de Cálculo
+y el Reto Sin Fin— y **en 5° queda vacío**, que está bien. Con eso `LECC.abrirUnidad` se quedó
+sin ningún llamador y se borró, junto con su respaldo en los seis forks (el respaldo tiene que
+espejar lo que el módulo expone).
+
+> ⚠️ **Lo que esto rompe, dicho de frente:** un enlace repartido con el id de una unidad
+> (`?solo=mate-numeros`) **deja de ser válido**. Comprobado que no revienta —`SOLO` queda
+> vacío, `PRUEBA` en false y entra al juego normal, que es el comportamiento documentado para
+> un id inválido—, y el equivalente de hoy es su expedición, que trae clase y quiz juntos.
+
+**Dos errores propios en el camino, los dos atajados por sus aserciones:** el script que quitó
+las entradas dejó vivo el **comentario viejo** que explicaba por qué estaban (quedaron dos notas
+contradictorias en el mismo bloque, justo el tipo de nota rancia que este archivo documenta como
+peligrosa) — se limpió en un segundo pase; y la comprobación de sintaxis de los seis forks dio
+**FAIL en los seis**, que era el falso positivo de la Sesión 77: **el comentario HTML de
+`motor.js` contiene literalmente la cadena `<script>`**, así que el extractor lo tomaba por
+código. Quitando los comentarios HTML antes de extraer, los seis dan OK.
+
+**Cierre**: JUGADOR **navega de verdad en los seis cursos** (la comprobación que la Sesión 90
+dejó obligatoria, cuando 7° estuvo caído con la consola limpia); el respaldo de `LECC` sigue
+teniendo las 9 funciones que el motor le pide; el armador de 8° ya no menciona "Mini-clases" y
+sí el Reto; cero errores de consola. Los dos `429` de Supabase son el límite de altas anónimas
+gastado por las corridas headless — comprobado que **el diff no toca auth**.

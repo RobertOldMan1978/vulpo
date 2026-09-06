@@ -50,7 +50,7 @@
      Nace dormido: LECC.init({ruta,hayReto}) inyecta su CSS y su pantalla. -->
 <script src="assets/js/lecciones.js"></script>
 <script>if(!window.LECC)window.LECC={activo:false,init:function(){return false;},
-  abrirLeccion:function(){},abrirUnidad:function(){},abrirMiniClaseDeOA:function(){},
+  abrirLeccion:function(){},abrirMiniClaseDeOA:function(){},
   volverAlCapitulo:function(){},finPractica:function(){},cargarPool:function(){return Promise.resolve();},
   renderCampana:function(){return false;},nodoIntro:function(){return false;},nodoLecciones:function(){return false;}};</script>
 <script src="assets/js/instalar.js"></script>
@@ -1515,22 +1515,10 @@ const EXPEDICIONES=[
    ]},
 ];
 const EXTRAS = [
-  // Las unidades del camino de mini-clases. NO son expediciones (viven en capitulosMate
-  // de la campana), asi que sin esto el armador de enlaces de muestra no las ve: es el
-  // mismo defecto que tuvo el Reto de Calculo (Sesion 70) y las de 8° (Sesion 82).
-  // El `nombre` va a mano porque CAMPANAS se declara DESPUES de este literal.
-  {id:'mate5-numeros', asignatura:'Matemáticas', nombre:'Mini-clases · Números y operaciones', icono:'📘',
-   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mate5-numeros')},
-  {id:'mate5-fracciones', asignatura:'Matemáticas', nombre:'Mini-clases · Fracciones', icono:'📘',
-   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mate5-fracciones')},
-  {id:'mate5-decimales', asignatura:'Matemáticas', nombre:'Mini-clases · Decimales', icono:'📘',
-   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mate5-decimales')},
-  {id:'mate5-patrones', asignatura:'Matemáticas', nombre:'Mini-clases · Patrones y figuras', icono:'📘',
-   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mate5-patrones')},
-  {id:'mate5-medicion', asignatura:'Matemáticas', nombre:'Mini-clases · Medición', icono:'📘',
-   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mate5-medicion')},
-  {id:'mate5-datos', asignatura:'Matemáticas', nombre:'Mini-clases · Datos y azar', icono:'📘',
-   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mate5-datos')},
+  /* ⚠️ Las unidades de mini-clases NO van aquí, y no se vuelven a agregar: desde la
+     Sesión 98 viven DENTRO de su expedición (son los primeros nodos de su mapa), así que
+     ofrecerlas además como casilla suelta le mostraba al profesor la misma unidad dos veces.
+     Un enlace con la expedición ya trae lo que enseña y lo que evalúa, en ese orden. */
 ];
 const SOLO=_SOLO_PEDIDO.filter(id=>EXPEDICIONES.some(e=>e.id===id)||EXTRAS.some(x=>x.id===id));
 const PRUEBA=SOLO.length>0;

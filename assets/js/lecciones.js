@@ -28,7 +28,6 @@
      motor.js:1454  finPracticaLeccion   -> LECC.finPractica
      motor.js:1538  abrirMiniClaseDeOA   -> LECC.abrirMiniClaseDeOA
      btnBack (x3)   volverAlCapituloMate -> LECC.volverAlCapitulo
-   Mas LECC.abrirUnidad(id), que usa el catalogo EXTRAS del armador.
    ============================================================================ */
 (function () {
   'use strict';
@@ -1176,14 +1175,11 @@ function leccionPorId(id){ return (LECCIONES||[]).find(l=>l.id===id); }
 // Lista de lecciones de un capítulo de Matemáticas (reusa la pantalla scr-campana).
 let CAP_MATE=null;
 let TRAS_LECCION=null;   // si está seteada, la mini-clase vuelve aquí en vez de a la lista del capítulo
+/* Abre la lista de lecciones de una unidad en su propia pantalla. Desde la Sesión 98 es el
+   RESPALDO y no el camino normal: las mini-clases se juegan dentro del mapa de su expedición,
+   y esto solo se usa si una unidad no tiene expedición emparejada. (Antes existía además
+   `abrirUnidadMate(id)` para el catálogo EXTRAS, que ya no ofrece las unidades por separado.) */
 function abrirCapituloMate(cap){ CAP_MATE=cap; renderLeccionesMate(); go('scr-campana'); }
-// Abre una unidad de mini-clases por su id. Lo usa el catalogo EXTRAS (armador, ?solo= y
-// ?m=), que se declara ANTES que CAMPANAS y por eso no puede guardarse el objeto.
-function abrirUnidadMate(id){
- const c=CAMPAÑAS.find(x=>x.esLecciones);
- const cap=c&&(c.capitulosMate||[]).find(u=>u.id===id);
- if(cap) abrirCapituloMate(cap);
-}
 async function renderLeccionesMate(){
  await cargarLecciones();
  const cap=CAP_MATE;
@@ -1245,6 +1241,9 @@ function renderCampañaMate(c){
   // abre directo su expedición, y las lecciones se muestran DENTRO de ese mapa, como primeros
   // nodos (LECC.nodoLecciones en motor.js), igual que hace una introducción de Ciencias o
   // Historia — con la diferencia de que aquí SÍ bloquean el resto del mapa hasta terminarlas.
+  // ⚠️ Qué lecciones le tocan a la expedición lo resuelve `leccionesDeExpedicion` en
+  // activarExpedicion, NO este clic: a una expedición se entra también por `?solo=`, `?m=` y
+  // el armador, y ahí este clic nunca ocurre.
   const exp=EXPEDICIONES.find(e=>e.id===c.capitulos[i]);
   const hecho=exp?expedicionCompleta(exp.id):lecHecho;
   let estado;
@@ -1254,7 +1253,7 @@ function renderCampañaMate(c){
   else if(!lecHecho) estado=`${hechas}/${tot} lecciones`;
   else estado='¡Al desafío!';
   cont.appendChild(nodoCampañaEl(`${i+1}`, cap.titulo, abierto, hecho,
-    abierto?()=>{ if(exp){ exp.lecciones=cap.lecciones; entrarExpedicion(exp); } else abrirCapituloMate(cap); }:null,
+    abierto?()=>{ if(exp) entrarExpedicion(exp); else abrirCapituloMate(cap); }:null,
     estado, portadaUnidad(cap,c), c.portada));
  });
  // ⚠️ El nodo del Reto solo donde el Reto EXISTE. Al compartir esta funcion, en 7 y 3
@@ -1306,7 +1305,6 @@ async function cargarPoolMate(){
        una mini-clase sin sus dibujos es irrevisable en papel. */
     diagrama: montarDiagrama,
     abrirLeccion: abrirLeccion,
-    abrirUnidad: abrirUnidadMate,
     abrirMiniClaseDeOA: abrirMiniClaseDeOA,
     volverAlCapitulo: volverAlCapituloMate,
     finPractica: finPracticaLeccion,

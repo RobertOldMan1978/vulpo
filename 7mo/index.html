@@ -50,7 +50,7 @@
      Nace dormido: LECC.init({ruta,hayReto}) inyecta su CSS y su pantalla. -->
 <script src="assets/js/lecciones.js"></script>
 <script>if(!window.LECC)window.LECC={activo:false,init:function(){return false;},
-  abrirLeccion:function(){},abrirUnidad:function(){},abrirMiniClaseDeOA:function(){},
+  abrirLeccion:function(){},abrirMiniClaseDeOA:function(){},
   volverAlCapitulo:function(){},finPractica:function(){},cargarPool:function(){return Promise.resolve();},
   renderCampana:function(){return false;},nodoIntro:function(){return false;},nodoLecciones:function(){return false;}};</script>
 <script src="assets/js/instalar.js"></script>
@@ -1505,18 +1505,10 @@ const EXPEDICIONES=[
 const EXTRAS = [
   {id:'sinfin', asignatura:'Matemáticas', nombre:'Reto Sin Fin de cálculo', icono:'♾️',
    disponible:()=>CALC.activo, abrir:()=>CALC.abrir()},
-  // Las unidades del camino de mini-clases. Tampoco son expediciones (viven en
-  // capitulosMate de la campana), asi que sin esto el armador no las veia: mismo
-  // defecto que el Reto de Calculo (Sesion 70) y que las de 8 (Sesion 82).
-  // El `nombre` va a mano porque CAMPANAS se declara DESPUES de este literal.
-  {id:'mate7-numeros', asignatura:'Matemáticas', nombre:'Mini-clases · Números', icono:'📘',
-   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mate7-numeros')},
-  {id:'mate7-algebra', asignatura:'Matemáticas', nombre:'Mini-clases · Álgebra y proporciones', icono:'📘',
-   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mate7-algebra')},
-  {id:'mate7-geometria', asignatura:'Matemáticas', nombre:'Mini-clases · Geometría', icono:'📘',
-   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mate7-geometria')},
-  {id:'mate7-datos', asignatura:'Matemáticas', nombre:'Mini-clases · Datos y azar', icono:'📘',
-   disponible:()=>HAY_MINICLASES, abrir:()=>LECC.abrirUnidad('mate7-datos')},
+  /* ⚠️ Las unidades de mini-clases NO van aquí, y no se vuelven a agregar: desde la
+     Sesión 98 viven DENTRO de su expedición (son los primeros nodos de su mapa), así que
+     ofrecerlas además como casilla suelta le mostraba al profesor la misma unidad dos veces.
+     Un enlace con la expedición ya trae lo que enseña y lo que evalúa, en ese orden. */
 ];
 const SOLO=_SOLO_PEDIDO.filter(id=>EXPEDICIONES.some(e=>e.id===id)||EXTRAS.some(x=>x.id===id));
 const PRUEBA=SOLO.length>0;

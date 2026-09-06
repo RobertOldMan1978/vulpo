@@ -283,9 +283,16 @@ Ya no se toca el motor. Son cuatro datos:
    ```
    Se fusionan como `voz.js` fusiona sus manifiestos, y **cada lección se queda con el banco de
    su propio archivo** — por eso la práctica no necesita saber de qué asignatura es.
-6. **Las unidades en `EXTRAS`**, o **el armador no las muestra** y un profesor con enlace de
-   muestra nunca ve esa parte del producto — pasó con el Reto de Cálculo (Sesión 70) y otra vez
-   con las mini-clases (Sesión 82).
+6. ⚠️ **Las unidades NO van en `EXTRAS`** (desde la Sesión 98). Estuvieron ahí entre las Sesiones
+   82 y 98 porque el armador solo lista `EXPEDICIONES` y sin eso un profesor con enlace de
+   muestra nunca veía lo que enseña. Hoy eso está resuelto por otro lado y mejor: **las
+   mini-clases viven dentro de su expedición** —son los primeros nodos de su mapa, y viajan con
+   ella por los cuatro caminos de entrada (campaña, `?solo=`, `?m=` y el armador)— así que la
+   casilla suelta le mostraba al profesor la misma unidad dos veces. `EXTRAS` queda solo para lo
+   que de verdad es una pantalla aparte: el Reto de Cálculo y el Reto Sin Fin.
+   > **Y de ahí la regla general:** qué lecciones le tocan a una expedición se resuelve en
+   > `activarExpedicion` (`leccionesDeExpedicion`), **nunca en el clic de una pantalla**. A una
+   > expedición se entra por cuatro caminos y en tres de ellos ese clic no ocurre.
 
 ## Cómo se aprueban (02/09/2026)
 

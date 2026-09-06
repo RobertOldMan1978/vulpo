@@ -865,13 +865,15 @@ function renderMapa(){
  if($('mapaSub'))$('mapaSub').textContent=EXP_ACT.nivel;
  if($('mapaImg'))$('mapaImg').src=EXP_ACT.mapaImg||EXP_ACT.portada;
  const box=$('mapbox');box.innerHTML='';
- // Matemáticas con mini-clases (EXP_ACT.lecciones): la etapa 0 queda bloqueada EN PANTALLA
- // hasta terminarlas todas, aunque su progreso guardado diga "open" (nace así por defecto).
+ // Matemáticas con mini-clases (LECS_EXP): la etapa 0 queda bloqueada EN PANTALLA hasta
+ // terminarlas todas, aunque su progreso guardado diga "open" (nace así por defecto).
  // No se toca progAct()[0]: es solo el estado que se muestra y lo que hace clic, así que
  // ningún alumno con partida vieja pierde nada — antes de esto ya no se podía llegar aquí
  // sin haber terminado las lecciones (la tarjeta de la campaña las exigía para abrirse).
- const leccBloqueadas = !!(EXP_ACT.lecciones && EXP_ACT.lecciones.length && !CAPS_ABIERTOS &&
-   !EXP_ACT.lecciones.every(id=>S.mateLecciones[id]));
+ // ⚠️ `CAPS_ABIERTOS` manda: en modo prueba y en QA las mini-clases se VEN pero no bloquean,
+ // igual que las etapas — un profesor revisando contenido no puede quedar trancado.
+ const leccBloqueadas = !!(LECS_EXP && LECS_EXP.length && !CAPS_ABIERTOS &&
+   !LECS_EXP.every(id=>S.mateLecciones[id]));
  EXPEDICION.forEach((n,i)=>{
   const p=progAct()[i];
   const bloq0=i===0&&leccBloqueadas;
@@ -888,7 +890,7 @@ function renderMapa(){
  // del bucle y se insertan al principio: así no entran en el arreglo indexado y no corren el
  // avance ya guardado. Sin datos no pasa nada, y sin el módulo tampoco (su respaldo da false).
  if(EXP_ACT.intro) LECC.nodoIntro(EXP_ACT.intro, box);
- if(EXP_ACT.lecciones) LECC.nodoLecciones(EXP_ACT.lecciones, box);
+ if(LECS_EXP) LECC.nodoLecciones(LECS_EXP, box);
 }
 function renderModoSel(){
  const el=$('modoSel');if(!el)return;
@@ -998,9 +1000,23 @@ function pintarSinCurso(){
      Pide tu código para entrar al ranking de tu curso.</p>
    <button class="btn sec" onclick="SND.tap();abrirCanje()">🎟️ Tengo un código</button>`;
 }
+/* Las mini-clases de la unidad a la que pertenece esta expedición, o null si su campaña no
+   tiene camino de lecciones. Vive AQUÍ y no en el clic de la tarjeta de la campaña porque a
+   una expedición se entra por CUATRO caminos —la campaña, `?solo=`, `?m=` y el armador— y en
+   tres de ellos ese clic nunca ocurre: un profesor con enlace de muestra veía el quiz SIN lo
+   que enseña, o sea justo la mitad más vendible del producto. En 4° y 6°, que no tienen
+   `esLecciones`, devuelve null y todo esto queda inerte. */
+let LECS_EXP=null;   // las lecciones de la expedición activa (paralela a EXP_ACT/EXPEDICION)
+function leccionesDeExpedicion(exp){
+ const c=(typeof CAMPAÑAS!=='undefined'?CAMPAÑAS:[]).find(x=>x.esLecciones&&(x.capitulos||[]).includes(exp.id));
+ if(!c) return null;
+ const cap=(c.capitulosMate||[])[c.capitulos.indexOf(exp.id)];
+ return (cap&&cap.lecciones&&cap.lecciones.length)?cap.lecciones:null;
+}
 /* Activa una expedición: fija etapas, carga su pool y apunta el progreso a esa ruta */
 function activarExpedicion(exp){
  EXP_ACT=exp; EXPEDICION=exp.etapas; N_ETAPAS=EXPEDICION.length; MODO='normal';
+ LECS_EXP=leccionesDeExpedicion(exp);
  const st=estadoRuta(exp);
  S.progreso=st.progreso; S.progresoDificil=st.progresoDificil; S.dificilDesbloqueado=st.dificilDesbloqueado;
  return cargarPool(exp);
