@@ -1,0 +1,262 @@
+{
+ "lecciones": [
+  {
+   "id": "le6-registrar",
+   "oa": "LE06 OA 08",
+   "titulo": "Anotar según para qué lees",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un mismo texto se anota de maneras distintas, y lo que decide cuál es **para qué lo estás leyendo**. Sin esa decisión tomada, uno termina copiando todo por si acaso."
+    },
+    {
+     "t": "diagrama",
+     "intro": "El mismo texto, dos propósitos, dos apuntes.",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Dos formas de registrar un mismo texto según el propósito del lector",
+      "items": [
+       {
+        "titulo": "Responder una pregunta",
+        "texto": "Anotas el dato que buscabas y cierras el libro."
+       },
+       {
+        "titulo": "Exponer sobre el tema",
+        "texto": "Anotas la idea de cada parte y las ordenas."
+       }
+      ],
+      "etiqueta": "El propósito decide qué sobra"
+     }
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un texto sobre los faros de la costa chilena (toca para avanzar):",
+     "pasos": [
+      "Cuenta para qué sirve un faro, cómo se construían, quién los atendía y cuáles quedan en pie.",
+      "Si lees para responder «¿para qué sirve un faro?», te sirve una sola línea: para avisarle al barco dónde está la costa.",
+      "Si lees para exponer, esa línea sola no te alcanza: necesitas la idea de cada parte, y en el orden en que el texto las trae.",
+      "Anotar todo no es más seguro. Es un apunte que después no se puede estudiar."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "Y si el texto explica algo que ocurre por etapas, el apunte se ordena igual que el texto. Un apunte con las ideas correctas pero desordenadas obliga a leerlo todo de nuevo."
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE06 OA 08",
+      "n": 10
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le6-personajes",
+   "titulo": "Antes de empezar: Mundos literarios",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un personaje no hace las cosas porque sí. Hace lo que hace por dos motivos a la vez: lo que quiere conseguir, y la situación en la que está metido."
+    },
+    {
+     "t": "diagrama",
+     "intro": "De dónde sale cada acción de un personaje.",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "desc": "Los dos motivos que explican la acción de un personaje",
+      "items": [
+       {
+        "titulo": "Lo que quiere"
+       },
+       {
+        "titulo": "La situación que vive"
+       },
+       {
+        "titulo": "Lo que hace"
+       }
+      ],
+      "etiqueta": "Si entiendes los dos, la acción deja de ser rara"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "El ambiente empuja igual que la voluntad: dónde y **cuándo** vive un personaje decide qué puede hacer. Lo que hoy parece una decisión valiente puede haber sido, en su época, la única salida que tenía."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a leer cuentos, novelas y poemas, y vas a sostener lo que opines con lo que el texto dice de verdad. En los poemas vas a ver además cómo el sonido de las palabras refuerza lo que el poema quiere decir."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le6-parrafo",
+   "oa": "LE06 OA 15",
+   "titulo": "Un párrafo, una idea",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un artículo informativo no es un montón de datos verdaderos: es una estructura. Se presenta el tema, se desarrolla y se cierra, y **cada párrafo se hace cargo de una sola idea**."
+    },
+    {
+     "t": "diagrama",
+     "intro": "Las tres partes, y el trabajo de cada una.",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "desc": "Las tres partes de un artículo informativo",
+      "items": [
+       {
+        "titulo": "Presentar el tema"
+       },
+       {
+        "titulo": "Desarrollar, una idea por párrafo"
+       },
+       {
+        "titulo": "Cerrar"
+       }
+      ],
+      "etiqueta": "Sin cierre, el texto termina de golpe"
+     }
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un párrafo de un artículo sobre los flamencos (toca para avanzar):",
+     "pasos": [
+      "«Los flamencos filtran el agua salada con el pico para separar los animales diminutos de los que se alimentan. Ese alimento es el que les da su color rosado. En el norte de Chile hay salares protegidos.»",
+      "Las dos primeras oraciones tratan de lo mismo: cómo come el flamenco, y qué le pasa por comer eso.",
+      "La tercera es cierta, pero habla de otra cosa: de dónde viven.",
+      "No se borra: se va al párrafo que trata de dónde viven. Un dato bueno en el párrafo equivocado igual estorba."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "Y cada dato que no sacaste de tu cabeza lleva su **fuente**: de dónde salió y quién lo publicó. No es un adorno del final; es lo que le permite al lector ir a comprobarlo."
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE06 OA 15",
+      "n": 10
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le6-participios",
+   "oa": "LE06 OA 21",
+   "titulo": "Los participios irregulares",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "El **participio** es la forma del verbo que va detrás de «haber»: «he cantado», «había comido». En casi todos los verbos termina en -ado o en -ido, y no hay que pensarlo."
+    },
+    {
+     "t": "diagrama",
+     "intro": "Unos pocos verbos no siguen esa regla.",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Un verbo con participio regular y otro con participio irregular",
+      "items": [
+       {
+        "titulo": "Regular",
+        "texto": "correr → había corrido"
+       },
+       {
+        "titulo": "Irregular",
+        "texto": "poner → había puesto"
+       }
+      ],
+      "etiqueta": "Los irregulares terminan en -to o en -cho"
+     }
+    },
+    {
+     "t": "ejemplo",
+     "intro": "La regla que te ahorra memorizarlos todos (toca para avanzar):",
+     "pasos": [
+      "El participio de «poner» es «puesto». Ese hay que sabérselo, no sale de ninguna regla.",
+      "Pero «exponer», «reponer» y «descomponer» son el mismo verbo con algo pegado adelante.",
+      "Así que heredan su participio: expuesto, repuesto, descompuesto.",
+      "Con saberte el verbo corto te sabes toda su familia, y con los demás irregulares pasa igual."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "El error típico es agregarle -ido igual, y decir «había ponido». Si un verbo tiene participio irregular, esa forma **no existe**: no es que suene mal, es que no está."
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE06 OA 21",
+      "n": 10
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le6-publicidad",
+   "oa": "LE06 OA 25",
+   "titulo": "Leer un aviso publicitario",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un aviso publicitario no está ahí para informarte. Está para que hagas algo —comprar, entrar, pedirle algo a tus papás— y siempre hay alguien que gana si lo haces."
+    },
+    {
+     "t": "diagrama",
+     "intro": "Tres preguntas que sirven con cualquier aviso.",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "desc": "Tres preguntas para analizar un mensaje publicitario",
+      "items": [
+       {
+        "titulo": "¿Quién lo pone?"
+       },
+       {
+        "titulo": "¿Qué quiere que hagas?"
+       },
+       {
+        "titulo": "¿A quién le habla?"
+       }
+      ],
+      "etiqueta": "La tercera es la que más cuesta"
+     }
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un aviso de audífonos en un canal de videojuegos (toca para avanzar):",
+     "pasos": [
+      "Se ve a un jugador con audífonos ganando una partida. El texto dice: «Escucha antes de que te vean».",
+      "Quién lo pone: la marca de audífonos. No es el consejo de un amigo, aunque lo parezca.",
+      "Qué quiere: que compres esos audífonos.",
+      "A quién le habla: a quienes juegan. Eso se sabe por dónde aparece el aviso y por quién sale en él, no porque lo diga en alguna parte."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "Esa última pista es la más útil: **dónde** aparece un aviso y a quién muestra dicen a quién está dirigido, aunque el aviso no lo diga nunca."
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE06 OA 25",
+      "n": 10
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
+  }
+ ]
+}

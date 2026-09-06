@@ -1,0 +1,259 @@
+{
+ "lecciones": [
+  {
+   "id": "le5-ideas",
+   "oa": "LE05 OA 08",
+   "titulo": "De la idea principal al resumen",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Cada párrafo de un texto trata de **una sola cosa**. Los demás datos que aparecen ahí no están sueltos: están para explicar esa cosa."
+    },
+    {
+     "t": "diagrama",
+     "intro": "La diferencia que hay que aprender a ver.",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Diferencia entre la idea de la que trata un párrafo y un dato que la explica",
+      "items": [
+       {
+        "titulo": "La idea principal",
+        "texto": "De lo que trata el párrafo entero."
+       },
+       {
+        "titulo": "Un detalle",
+        "texto": "Un dato que sirve para explicarla."
+       }
+      ],
+      "etiqueta": "Los detalles sostienen la idea"
+     }
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Buscar la idea principal en un párrafo de verdad (toca para avanzar):",
+     "pasos": [
+      "«El pudú mide unos 40 centímetros y pesa menos que un perro chico. Gracias a ese tamaño puede esconderse donde ningún otro ciervo cabe. Se mete entre arbustos bajos y desaparece.»",
+      "La primera oración da un dato: cuánto mide. Es cierto, pero el párrafo no trata de eso.",
+      "La segunda dice de qué trata: su tamaño le sirve para esconderse.",
+      "Para comprobarlo, mira las otras dos. Las dos explican esa idea, así que esa era la principal."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "Y un resumen es juntar la idea principal de cada párrafo y escribirlas con tus propias palabras. Si copias oraciones del texto una detrás de otra, no resumiste: solo acortaste."
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE05 OA 08",
+      "n": 10
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le5-poesia",
+   "titulo": "Antes de empezar: Mundos literarios",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "La literatura no está para informarte. Un poema o un cuento buscan que sientas algo, y para eso las palabras casi nunca significan lo de siempre."
+    },
+    {
+     "t": "diagrama",
+     "intro": "La misma pena, dicha de dos maneras.",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Una idea dicha de forma directa y la misma dicha con una imagen",
+      "items": [
+       {
+        "titulo": "Dicho derecho",
+        "texto": "«Estaba muy triste.» Se entiende y se olvida."
+       },
+       {
+        "titulo": "Dicho con una imagen",
+        "texto": "«Dentro de mí seguía lloviendo.» Se queda."
+       }
+      ],
+      "etiqueta": "Por eso un poema no habla derecho"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Y quien habla en un poema no es el autor: es una voz inventada para ese poema. Por eso un señor de sesenta años puede escribir un poema donde quien habla es una niña."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a leer cuentos y poemas, y también a ver obras de teatro y películas. La pregunta va a ser siempre la misma: qué quiere hacerte sentir, y con qué recurso lo consigue."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le5-planificar",
+   "oa": "LE05 OA 17",
+   "titulo": "Pensarlo antes de escribir",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Nadie escribe bien de una sola vez. Antes de la primera palabra hay dos cosas que decidir: para qué escribes y para quién."
+    },
+    {
+     "t": "texto",
+     "md": "No son lo mismo. El **propósito** es lo que quieres lograr con el texto; el destinatario es quien va a leerte, y de él depende cuánto tienes que explicarle."
+    },
+    {
+     "t": "diagrama",
+     "intro": "El orden que conviene seguir.",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "desc": "Cuatro pasos para planificar un texto antes de escribirlo",
+      "items": [
+       {
+        "titulo": "Para qué escribo"
+       },
+       {
+        "titulo": "Para quién"
+       },
+       {
+        "titulo": "Junto ideas"
+       },
+       {
+        "titulo": "Elijo y ordeno"
+       }
+      ],
+      "etiqueta": "Recién ahí se empieza a escribir"
+     }
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Elena quiere un bebedero en el patio del colegio (toca para avanzar):",
+     "pasos": [
+      "Para qué: convencer, no contar. Todo lo que no convenza va a sobrar.",
+      "Para quién: el centro de alumnos, que ya sabe cómo es el patio. No hace falta describírselo.",
+      "Junta ideas: en verano hace calor, la llave del baño queda lejos, muchos traen botella de la casa, y a ella se le acabó el agua en educación física.",
+      "Elige y ordena: la última es su caso personal y no convence a nadie más, así que la deja fuera y parte por la más fuerte."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE05 OA 17",
+      "n": 10
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le5-marcas",
+   "oa": "LE05 OA 22",
+   "titulo": "Las marcas que el lector necesita",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Cuando hablas, la voz y la cara dicen cosas que en el papel se pierden: quién está hablando, dónde hay una pausa, qué palabra va cargada. Para reemplazarlas, la escritura tiene marcas."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "La raya de diálogo, que dice quién habla (toca para avanzar):",
+     "pasos": [
+      "Cuando un personaje empieza a hablar, va una raya pegada a su primera palabra: «—¿Trajiste la linterna?»",
+      "Si después el narrador cuenta quién habló, va otra raya antes de eso: «—¿Trajiste la linterna? —preguntó Elena.»",
+      "Ahí termina la línea, así que no lleva ninguna raya más.",
+      "Y ojo: la raya (—) es más larga que el guion (-). Son dos signos distintos y hacen trabajos distintos."
+     ]
+    },
+    {
+     "t": "diagrama",
+     "intro": "Hay tildes que no cambian cómo suena la palabra.",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Dos palabras que se escriben igual salvo por la tilde y significan cosas distintas",
+      "items": [
+       {
+        "titulo": "Sin tilde: mi",
+        "texto": "«Mi cuaderno.» Dice de quién es."
+       },
+       {
+        "titulo": "Con tilde: mí",
+        "texto": "«Es para mí.» Nombra a la persona."
+       }
+      ],
+      "etiqueta": "La tilde no suena: solo cambia el significado"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "A esa tilde se le llama **tilde diacrítica**, y la llevan unas pocas palabras cortas que ya conoces. Se aprenden de memoria, porque el oído no ayuda: las dos suenan igual. En este capítulo vas a ver además la coma que encierra una explicación, y las palabras con c, s y z, que en Chile suenan iguales y por eso cuesta elegirlas."
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE05 OA 22",
+      "n": 10
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le5-sinonimos",
+   "oa": "LE05 OA 20",
+   "titulo": "Elegir la palabra exacta",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Dos sinónimos nunca dicen exactamente lo mismo. Se parecen, pero cada uno trae algo propio: más fuerza, otro tono, o el lugar donde corresponde usarlo."
+    },
+    {
+     "t": "diagrama",
+     "intro": "Las dos cosas que suelen cambiar entre sinónimos.",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Dos maneras en que se diferencian entre sí palabras parecidas",
+      "items": [
+       {
+        "titulo": "Cambia la intensidad",
+        "texto": "cansado · agotado · exhausto"
+       },
+       {
+        "titulo": "Cambia la situación",
+        "texto": "rostro en un informe · cara conversando"
+       }
+      ],
+      "etiqueta": "Por eso no se reemplazan a ciegas"
+     }
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Elena le escribe al alcalde sobre la plaza del barrio (toca para avanzar):",
+     "pasos": [
+      "Escribió: «la plaza está muy fea».",
+      "«Fea» no es falso, pero suena a reclamo de patio y esta es una carta a una autoridad.",
+      "Prueba con «descuidada»: dice casi lo mismo y además explica por qué está así, porque nadie la cuida.",
+      "Ese es el trabajo del sinónimo: no reemplazar una palabra por otra, sino elegir el matiz que a ti te conviene."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE05 OA 20",
+      "n": 10
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
+  }
+ ]
+}

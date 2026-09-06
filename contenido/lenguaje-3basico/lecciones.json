@@ -155,6 +155,127 @@
     }
    ],
    "revisada": true
+  },
+  {
+   "id": "le3-planificar",
+   "oa": "LE03 OA 17",
+   "titulo": "Antes de escribir: para qué y para quién",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Casi todos parten escribiendo al tiro. Escriben tres líneas, se quedan pegados y ya no saben cómo seguir. Los que escriben bien hacen algo antes de tomar el lápiz."
+    },
+    {
+     "t": "texto",
+     "md": "Se hacen **dos preguntas**: ¿para qué voy a escribir esto? y ¿quién lo va a leer? Recién después empiezan."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Dos cajas con las dos preguntas que se hacen antes de escribir",
+      "items": [
+       {
+        "titulo": "¿Para qué escribo?",
+        "texto": "Contar, explicar, pedir o convencer."
+       },
+       {
+        "titulo": "¿Quién lo va a leer?",
+        "texto": "Tu curso, tu abuela o el director."
+       }
+      ],
+      "etiqueta": "Se decide antes de escribir"
+     },
+     "intro": "Las dos se responden antes, no después."
+    },
+    {
+     "t": "texto",
+     "md": "Las dos respuestas cambian el texto entero. No se le escribe igual a un amigo que al director del colegio, ni es lo mismo contar un paseo que pedir un permiso."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Sigue el ejemplo paso a paso (toca para avanzar):",
+     "pasos": [
+      "En la sala hay una tortuga y tu curso tiene que cuidarla.",
+      "¿Para qué escribo? Para enseñarle al curso cómo se cuida.",
+      "¿Quién lo va a leer? Mis compañeros de tercero.",
+      "Entonces: pasos cortos y palabras fáciles, nada complicado.",
+      "Recién ahora anoto todas las ideas que se me ocurren y las ordeno."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE03 OA 17",
+      "n": 10
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le3-formas",
+   "oa": "LE03 OA 15",
+   "titulo": "Cada texto tiene su forma",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una carta, un afiche y una receta no se parecen en nada al mirarlos, y eso no es casualidad: **cada uno tiene su forma**, y siempre es la misma."
+    },
+    {
+     "t": "texto",
+     "md": "Esa forma no la inventa el que escribe: ya está acordada desde antes. Si te saltas una parte, el texto igual se puede leer, pero deja de servir para lo que era."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "desc": "Cuatro cajas seguidas con las partes de una carta",
+      "items": [
+       {
+        "titulo": "Fecha"
+       },
+       {
+        "titulo": "Saludo"
+       },
+       {
+        "titulo": "Cuerpo"
+       },
+       {
+        "titulo": "Despedida y firma"
+       }
+      ],
+      "etiqueta": "Las partes de una carta"
+     },
+     "intro": "Así se arma una carta, siempre en este orden."
+    },
+    {
+     "t": "texto",
+     "md": "El afiche y el instructivo tienen la suya. El afiche necesita **qué, dónde y cuándo**, con letras que se lean de lejos. El instructivo parte con los materiales y sigue con los pasos en orden."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Sigue el ejemplo paso a paso (toca para avanzar):",
+     "pasos": [
+      "Tu curso quiere juntar libros usados y necesita que el colegio entero ayude.",
+      "¿A cuántas personas le hablas? A todo el colegio, no a una sola.",
+      "Entonces no sirve una carta: sirve un afiche.",
+      "Y ese afiche tiene que decir qué se junta, dónde se deja y hasta cuándo."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE03 OA 15",
+      "n": 10
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
   }
  ]
 }

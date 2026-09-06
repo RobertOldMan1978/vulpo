@@ -1429,6 +1429,41 @@ const EXPEDICIONES=[
      {oa:"LE08 OA 15", nombre:"Escribir para persuadir", icono:"📢", n:10},
      {oa:"BOSS", nombre:"⚡ JEFE: Escritura", icono:"✒️", n:15, oas:["LE08 OA 13","LE08 OA 14","LE08 OA 15"]},
    ]},
+ /* Los tres capitulos que faltaban: el banco de Lenguaje de 8 cubria 15 de los 26 OA
+    oficiales y se completo el 06/09/2026. Van como capitulos NUEVOS y no como etapas dentro
+    de los que ya existian, porque el avance se guarda indexado por posicion y agregar etapas
+    en medio le correria la partida a quien ya venia jugando.
+    ⚠️ Arte prestado, declarado: reutilizan la portada de Escritura y la de Textos. Les falta
+    la suya, con el estandar de docs/estandar-arte-portadas.md. */
+ { id:'leng-taller', intro:'le8-tilde', portadaMapa:'assets/portada-leng-escritura.png', asignatura:'Lenguaje', nivel:'8° Básico · El taller de escritura',
+   portada:'assets/portada-lenguaje.png', contenido:'contenido/lenguaje-8basico/preguntas.json', activa:true, campaña:'leng',
+   etapas:[
+     {oa:"LE08 OA 16", nombre:"Planificar y revisar", icono:"🗂️", n:10},
+     {oa:"LE08 OA 17", nombre:"Oraciones complejas", icono:"🔗", n:10},
+     {oa:"LE08 OA 18", nombre:"No perder el referente", icono:"🎯", n:10},
+     {oa:"LE08 OA 19", nombre:"Los modos del verbo", icono:"🎭", n:10},
+     {oa:"LE08 OA 20", nombre:"Escribir correctamente", icono:"✔️", n:10},
+     {oa:"BOSS", nombre:"⚡ JEFE: El taller de escritura", icono:"🖊️", n:15,
+      oas:["LE08 OA 16","LE08 OA 17","LE08 OA 18","LE08 OA 19","LE08 OA 20"]},
+   ]},
+ { id:'leng-oral', portadaMapa:'assets/portada-leng-textos.png', asignatura:'Lenguaje', nivel:'8° Básico · Escuchar y hablar',
+   portada:'assets/portada-lenguaje.png', contenido:'contenido/lenguaje-8basico/preguntas.json', activa:true, campaña:'leng',
+   etapas:[
+     {oa:"LE08 OA 21", nombre:"Escuchar con ojo crítico", icono:"🎧", n:10},
+     {oa:"LE08 OA 22", nombre:"Dialogar y debatir", icono:"💬", n:10},
+     {oa:"LE08 OA 23", nombre:"Exponer ante el curso", icono:"🎤", n:10},
+     {oa:"LE08 OA 24", nombre:"Hablar según la situación", icono:"🗣️", n:10},
+     {oa:"BOSS", nombre:"⚡ JEFE: Escuchar y hablar", icono:"📣", n:15,
+      oas:["LE08 OA 21","LE08 OA 22","LE08 OA 23","LE08 OA 24"]},
+   ]},
+ { id:'leng-investigar', intro:'le8-idea', portadaMapa:'assets/portada-leng-lectura.png', asignatura:'Lenguaje', nivel:'8° Básico · Investigar y sintetizar',
+   portada:'assets/portada-lenguaje.png', contenido:'contenido/lenguaje-8basico/preguntas.json', activa:true, campaña:'leng',
+   etapas:[
+     {oa:"LE08 OA 25", nombre:"Investigar y elegir fuentes", icono:"🔎", n:10},
+     {oa:"LE08 OA 26", nombre:"Sintetizar y ordenar ideas", icono:"🗒️", n:10},
+     {oa:"BOSS", nombre:"⚡ JEFE: Investigar y sintetizar", icono:"📚", n:15,
+      oas:["LE08 OA 25","LE08 OA 26"]},
+   ]},
  // --- Vocabulario (dentro de Lenguaje): palabras de todo el curso. OA de apoyo VOC-* ---
  { id:'voc-general', portadaMapa:'assets/portada-voc-general.png', asignatura:'Vocabulario', nivel:'8° Básico · Vocabulario del curso',
    portada:'assets/portada-voc-general.png', contenido:'contenido/vocabulario-8basico/preguntas.json', activa:true,
@@ -1629,7 +1664,7 @@ const CAMPAÑAS=[{
 },{
   id:'leng', asignatura:'Lenguaje', portada:'assets/portada-lenguaje.png',
   intro:'De la primera lectura a la escritura: narra, imagina, argumenta y crea.',
-  capitulos:['leng-lectura','leng-literarios','leng-textos','leng-escritura'],
+  capitulos:['leng-lectura','leng-literarios','leng-textos','leng-escritura','leng-taller','leng-oral','leng-investigar'],
   jefeFinal:{
     villano:'El Borrón', villanoIc:'✒️', villanoImg:'assets/villano-lenguaje.png',
     dialogo:'Mancho las páginas y borro las palabras... ¿crees que tus letras pueden vencerme?',
@@ -1637,10 +1672,10 @@ const CAMPAÑAS=[{
     villanoImgDerrotado:'assets/villano-lenguaje-derrotado.png',
     vidasJugador:3, nPorFase:4,
     fases:[
-      {nombre:'Leer y comprender', oas:['LE08 OA 01','LE08 OA 02','LE08 OA 03','LE08 OA 08']},
-      {nombre:'Mundos literarios', oas:['LE08 OA 04','LE08 OA 05','LE08 OA 06','LE08 OA 07']},
+      {nombre:'Lectura literaria', oas:['LE08 OA 01','LE08 OA 02','LE08 OA 03','LE08 OA 04','LE08 OA 05','LE08 OA 06','LE08 OA 07','LE08 OA 08']},
       {nombre:'Textos y medios',   oas:['LE08 OA 09','LE08 OA 10','LE08 OA 11','LE08 OA 12']},
-      {nombre:'Escritura',         oas:['LE08 OA 13','LE08 OA 14','LE08 OA 15']},
+      {nombre:'Escritura',         oas:['LE08 OA 13','LE08 OA 14','LE08 OA 15','LE08 OA 16','LE08 OA 17','LE08 OA 18','LE08 OA 19','LE08 OA 20']},
+      {nombre:'Hablar e investigar', oas:['LE08 OA 21','LE08 OA 22','LE08 OA 23','LE08 OA 24','LE08 OA 25','LE08 OA 26']},
     ],
   },
   recompensa:{ skin:'kimun-escritor', insignia:'maestro-lenguaje', bonoMonedas:500, bonoXP:300 },
@@ -1768,6 +1803,17 @@ const META_OA={
  'LE08 OA 13':'Cómo crear tus propios cuentos, poemas y relatos.',
  'LE08 OA 14':'Cómo escribir para explicar un tema con claridad.',
  'LE08 OA 15':'Cómo escribir para convencer con buenas razones.',
+ 'LE08 OA 16':'Cómo planificar, revisar y dejar listo un texto tuyo.',
+ 'LE08 OA 17':'Cómo armar oraciones largas que igual se entiendan.',
+ 'LE08 OA 18':'Cómo no perder el hilo de quién o qué estás nombrando.',
+ 'LE08 OA 19':'Cómo cambia tu mensaje según el modo del verbo que elijas.',
+ 'LE08 OA 20':'Cómo escribir sin errores para que se te entienda mejor.',
+ 'LE08 OA 21':'Cómo escuchar un discurso o un video con ojo crítico.',
+ 'LE08 OA 22':'Cómo discutir una idea sin pelear y llegar a acuerdos.',
+ 'LE08 OA 23':'Cómo exponer frente al curso y que te sigan hasta el final.',
+ 'LE08 OA 24':'Por qué no hablas igual con un amigo que en una exposición.',
+ 'LE08 OA 25':'Cómo investigar de verdad y saber en qué fuente confiar.',
+ 'LE08 OA 26':'Cómo tomar apuntes y quedarte con lo importante.',
  'MA08 OA 01':'Cómo multiplicar y dividir números con signo sin equivocarte.',
  'MA08 OA 02':'Cómo operar con fracciones y decimales, aunque sean negativos.',
  'MA08 OA 03':'El truco para multiplicar y dividir potencias rápido.',

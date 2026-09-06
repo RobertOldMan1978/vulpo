@@ -128,6 +128,128 @@
     }
    ],
    "revisada": true
+  },
+  {
+   "id": "le8-tilde",
+   "oa": "LE08 OA 20",
+   "titulo": "Cuándo lleva tilde una palabra",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Escribir correctamente son tres decisiones distintas: si la palabra lleva **tilde**, con qué **letra** se escribe y qué **signo** de puntuación corresponde. Solo la primera tiene una regla cerrada que sirve siempre; las letras dudosas se resuelven con reglas parciales y, cuando no hay regla, con el diccionario."
+    },
+    {
+     "t": "texto",
+     "md": "Toda palabra tiene una sílaba que suena más fuerte que las otras. Según dónde caiga esa sílaba, la palabra es **aguda** (la última), **grave** (la penúltima) o **esdrújula** (la antepenúltima). De ahí sale si lleva tilde o no."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Tres cajas con los tipos de palabra según dónde suena más fuerte",
+      "items": [
+       {
+        "titulo": "Aguda",
+        "texto": "Fuerte en la última. Tilde si termina en n, s o vocal."
+       },
+       {
+        "titulo": "Grave",
+        "texto": "Fuerte en la penúltima. Tilde si NO termina en n, s ni vocal."
+       },
+       {
+        "titulo": "Esdrújula",
+        "texto": "Fuerte en la antepenúltima. Siempre lleva tilde."
+       }
+      ],
+      "etiqueta": "Dónde suena más fuerte"
+     },
+     "intro": "Primero se oye dónde carga la voz; recién después se decide la tilde."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Sigue el ejemplo paso a paso (toca para avanzar):",
+     "pasos": [
+      "«cartel»: la voz carga en «-tel», la última sílaba, así que es aguda.",
+      "Termina en L, que no es n, s ni vocal: va sin tilde.",
+      "«árbol»: la voz carga en «ár-», la penúltima, así que es grave.",
+      "También termina en L, y por eso mismo sí lleva tilde: árbol.",
+      "«brújula»: la voz carga en la antepenúltima, así que es esdrújula y lleva tilde sí o sí."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "Aparte están las palabras que se escriben igual y significan cosas distintas. Ahí la tilde no depende de la regla anterior sino de cuál de las dos es, y por eso se llama **tilde diacrítica**: «tú» eres tú, y «tu» acompaña a un sustantivo; «él» es la persona, y «el» es el artículo."
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE08 OA 20",
+      "n": 10
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le8-idea",
+   "oa": "LE08 OA 26",
+   "titulo": "Encontrar la idea principal",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Resumir no es escribir más corto: es quedarse con lo que **sostiene** el párrafo y soltar lo que solo lo acompaña. Un resumen que conserva el ejemplo y pierde la idea que ese ejemplo venía a ilustrar es más largo que el bueno y sirve menos."
+    },
+    {
+     "t": "texto",
+     "md": "Dentro de un párrafo, la idea principal es aquella a la que las demás **le sirven**: la explican, la ejemplifican o la matizan. Hay una prueba rápida: quita una idea. Si el párrafo sigue diciendo algo, era secundaria; si no queda nada en pie, era la principal."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Dos cajas comparando la idea que sostiene el párrafo con las que la acompañan",
+      "items": [
+       {
+        "titulo": "Idea principal",
+        "texto": "Si la quitas, el párrafo se queda sin nada que decir."
+       },
+       {
+        "titulo": "Idea secundaria",
+        "texto": "Explica, ejemplifica o matiza a la principal."
+       }
+      ],
+      "etiqueta": "La prueba de quitarla"
+     },
+     "intro": "La prueba funciona con cualquier párrafo."
+    },
+    {
+     "t": "texto",
+     "md": "Dos avisos que se pasan por alto. **Uno:** la idea principal no siempre abre el párrafo; a veces el autor parte con un caso y la enuncia recién al cerrar. **Dos:** manda tu propósito. El mismo texto se resume distinto si vas a rendir una prueba de conceptos o si vas a citar cifras en un informe."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Sigue el ejemplo paso a paso (toca para avanzar):",
+     "pasos": [
+      "«La biblioteca del liceo empezó a abrir en los recreos. Los préstamos subieron de 40 a 190 al mes. Antes solo abría a la salida, cuando casi nadie podía quedarse.»",
+      "¿De qué habla el párrafo? De que abrir en los recreos cambió el uso de la biblioteca.",
+      "La cifra y el horario antiguo sostienen esa idea, así que son secundarias.",
+      "Resumen fiel: abrir en los recreos multiplicó los préstamos.",
+      "Resumen infiel: «los préstamos subieron a 190». Queda la cifra y se pierde el motivo, que era justo lo que el párrafo mostraba."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE08 OA 26",
+      "n": 10
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
   }
  ]
 }

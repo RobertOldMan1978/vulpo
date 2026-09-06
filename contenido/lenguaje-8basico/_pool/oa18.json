@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "¿Qué diferencia hay entre un pronombre tónico y uno átono?",
+   "opciones": [
+    "El tónico puede ir solo y el átono se apoya siempre en un verbo",
+    "El tónico se escribe con tilde y el átono se escribe sin ella",
+    "El tónico nombra personas y el átono nombra objetos del texto",
+    "El tónico va al final de la oración y el átono va al comienzo"
+   ],
+   "correcta": 0,
+   "tip": "«A mí» se puede decir solo; «me» no funciona sin su verbo. Esa dependencia, y no la tilde ni el lugar, es lo que separa a los dos grupos.",
+   "id": "leng8-oa18-001"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "En «A ella le gustó el poema», ¿qué son «ella» y «le»?",
+   "opciones": [
+    "«Ella» es tónico y «le» es átono; los dos apuntan a la misma persona",
+    "«Ella» y «le» son los dos tónicos, porque aparecen juntos en la frase",
+    "«A ella» es átono y «le» es tónico, porque este acompaña al verbo",
+    "Solo «le» es pronombre; «ella» funciona como sujeto de la oración"
+   ],
+   "correcta": 0,
+   "tip": "Los dos retoman a la misma persona: uno con fuerza propia tras la preposición y el otro pegado al verbo. El sujeto de la oración es «el poema».",
+   "id": "leng8-oa18-002"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "En «El premio lo recibió Matías», ¿qué función cumple «lo»?",
+   "opciones": [
+    "Retoma «el premio» como complemento directo de ese verbo",
+    "Retoma a Matías, que es quien recibe el premio nombrado",
+    "Es un artículo que acompaña al sustantivo «premio» ahí",
+    "Es un pronombre tónico que puede aparecer solo en la frase"
+   ],
+   "correcta": 0,
+   "tip": "«Lo» repite el objeto que ya se nombró al comienzo. Matías es el sujeto, y un pronombre átono nunca puede sostenerse solo.",
+   "id": "leng8-oa18-003"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "¿Por qué «mí» en «para mí» es un pronombre tónico?",
+   "opciones": [
+    "Porque tiene acento propio y puede aparecer tras una preposición",
+    "Porque lleva tilde escrita, y toda palabra con tilde resulta tónica",
+    "Porque se refiere siempre a la persona que está escribiendo el texto",
+    "Porque acompaña al verbo y no puede separarse de él al hablar"
+   ],
+   "correcta": 0,
+   "tip": "Los tónicos aparecen tras preposición y con acento propio: para mí, con él, según ella. La tilde de «mí» solo lo distingue del posesivo «mi».",
+   "id": "leng8-oa18-004"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "En «Se lo entregué a la profesora», ¿qué retoma cada pronombre?",
+   "opciones": [
+    "«Se» retoma a la profesora y «lo» retoma el objeto entregado",
+    "«Se» retoma el objeto entregado y «lo» retoma a la profesora",
+    "Los dos retoman a la profesora, nombrada al final de la oración",
+    "Los dos retoman el objeto, que la oración no alcanza a nombrar"
+   ],
+   "correcta": 0,
+   "tip": "«Se» ocupa el lugar de «le» delante de otro pronombre: apunta a quien recibe. «Lo» apunta a lo entregado, que el texto ya había nombrado antes.",
+   "id": "leng8-oa18-005"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "¿Qué es un deíctico en un texto escrito?",
+   "opciones": [
+    "Una palabra que apunta a algo dicho antes o a la situación de habla",
+    "Una palabra que describe con detalle a la persona o al objeto",
+    "Una palabra que une dos oraciones dentro del mismo párrafo",
+    "Una palabra que se repite para dar más énfasis a una idea"
+   ],
+   "correcta": 0,
+   "tip": "«Yo», «aquí», «ayer» o «este» no significan nada por sí solos: se llenan con el contexto. Por eso el texto debe darle al lector ese contexto.",
+   "id": "leng8-oa18-006"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "Un cartel dice: «Vuelvo en cinco minutos». ¿Por qué puede confundir al lector?",
+   "opciones": [
+    "Porque depende de un momento de partida que el cartel no indica",
+    "Porque «vuelvo» debería escribirse en pasado para que se entienda",
+    "Porque el cartel no nombra el lugar donde ocurre la situación",
+    "Porque cinco minutos es un plazo demasiado breve para un aviso"
+   ],
+   "correcta": 0,
+   "tip": "Los cinco minutos se cuentan desde que alguien salió, y eso el lector no lo sabe. Un deíctico temporal sin punto de partida deja de informar.",
+   "id": "leng8-oa18-007"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "Camila escribió en su informe: «Como dijimos aquí, el dato es claro». ¿Qué falla?",
+   "opciones": [
+    "«Aquí» no precisa a qué parte del informe se está refiriendo",
+    "«Dijimos» debería ir en singular, porque escribe una sola persona",
+    "«El dato» necesita ir acompañado de un adjetivo que lo describa",
+    "«Como» tendría que reemplazarse por un conector de consecuencia"
+   ],
+   "correcta": 0,
+   "tip": "En un texto escrito «aquí» tiene que apuntar a un lugar del texto: «en el apartado anterior», «en la tabla 2». Si no, el lector no sabe dónde mirar.",
+   "id": "leng8-oa18-008"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "Un correo dice: «La reunión será mañana». ¿Qué se necesita para entenderlo?",
+   "opciones": [
+    "Saber la fecha en que ese correo fue escrito y enviado",
+    "Saber el lugar donde se va a realizar finalmente la reunión",
+    "Saber quiénes son las personas convocadas a esa reunión",
+    "Saber el tema que se va a tratar durante toda la sesión"
+   ],
+   "correcta": 0,
+   "tip": "«Mañana» se calcula desde el día en que se escribe. Leído una semana después ya no señala nada, y por eso conviene poner la fecha.",
+   "id": "leng8-oa18-009"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "¿Por qué un texto formal evita palabras como «acá» y «ahora» sin más precisión?",
+   "opciones": [
+    "Porque el lector puede leerlo en otro lugar y en otro momento",
+    "Porque son palabras coloquiales que ningún texto escrito admite",
+    "Porque llevan más de una tilde y complican la lectura del texto",
+    "Porque son adjetivos y los textos formales prefieren sustantivos"
+   ],
+   "correcta": 0,
+   "tip": "Quien escribe y quien lee no comparten lugar ni momento. Por eso el texto formal prefiere «en Chile» o «en 2026» a «acá» y «ahora».",
+   "id": "leng8-oa18-010"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "En «El alcalde presentó el plan. Este empezará en abril», ¿a qué apunta «este»?",
+   "opciones": [
+    "Al plan, porque es el elemento nombrado más cerca del pronombre",
+    "Al alcalde, porque es quien presentó el plan que se describe",
+    "A abril, porque es el mes en que comenzará todo el proceso",
+    "A los dos, porque el pronombre abarca la oración completa"
+   ],
+   "correcta": 0,
+   "tip": "«Este» retoma lo mencionado más cerca. Si quien empezara en abril fuera el alcalde, habría que decirlo con otras palabras para no confundir.",
+   "id": "leng8-oa18-011"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "Javiera escribió: «La profesora habló con la mamá de Ana y luego la felicitó». ¿Qué falla?",
+   "opciones": [
+    "No se sabe si felicitó a la mamá o a Ana, porque «la» queda ambiguo",
+    "«La» debería escribirse «le», porque es el complemento indirecto",
+    "Falta un punto que separe las dos acciones de la profesora",
+    "El verbo «felicitó» tendría que ir en plural por las dos personas"
+   ],
+   "correcta": 0,
+   "tip": "Hay dos mujeres disponibles y el pronombre no elige. Se arregla nombrando a quien corresponde: «y luego felicitó a Ana».",
+   "id": "leng8-oa18-012"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "Benjamín reemplazó «el proyecto» por «esto» en cinco oraciones seguidas. ¿Qué le conviene?",
+   "opciones": [
+    "Alternar «esto» con expresiones como «el proyecto» o «la iniciativa»",
+    "Mantener «esto» en todas, porque así evita repetir la misma palabra",
+    "Reemplazar «esto» por «eso» en las oraciones que van al final",
+    "Borrar «esto» y dejar las oraciones sin ningún elemento que retome"
+   ],
+   "correcta": 0,
+   "tip": "Un solo recurso repetido cansa igual que la repetición que venía a evitar, y con cada «esto» el referente se aleja. Conviene turnar recursos distintos.",
+   "id": "leng8-oa18-013"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "En «Matías llegó tarde y olvidó el material. Eso molestó al profesor», ¿a qué apunta «eso»?",
+   "opciones": [
+    "A los dos hechos juntos: llegar tarde y olvidar el material",
+    "Solo al material, que es lo que Matías olvidó ese día",
+    "Solo a Matías, que es quien realizó las dos acciones",
+    "Al profesor, que es la persona que se molestó al final"
+   ],
+   "correcta": 0,
+   "tip": "«Eso» puede retomar una oración completa, no solo un sustantivo. Aquí resume toda la conducta anterior, que es lo que provocó la molestia.",
+   "id": "leng8-oa18-014"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "¿En qué consiste la sustitución pronominal?",
+   "opciones": [
+    "Reemplazar por un pronombre algo ya nombrado, para no repetirlo",
+    "Reemplazar un pronombre por el sustantivo que le corresponde",
+    "Cambiar el orden de los pronombres dentro de la misma oración",
+    "Sustituir una palabra difícil por otra más simple de comprender"
+   ],
+   "correcta": 0,
+   "tip": "Es uno de los recursos de correferencia: el pronombre ocupa el lugar de algo ya dicho. Solo funciona si el lector puede recuperar qué reemplaza.",
+   "id": "leng8-oa18-015"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "Camila usó «él» en la sexta oración sin haber nombrado antes a nadie. ¿Qué ocurre?",
+   "opciones": [
+    "El lector no puede recuperar el referente, porque el texto no lo nombró",
+    "El texto gana en brevedad, porque el pronombre ocupa menos espacio",
+    "El pronombre queda mal escrito y debería llevar tilde diacrítica",
+    "La oración pierde su verbo principal y queda como un fragmento"
+   ],
+   "correcta": 0,
+   "tip": "Un pronombre sin antecedente deja al lector buscando a alguien que no existe en el texto. Es la pérdida del referente que el OA pide evitar.",
+   "id": "leng8-oa18-016"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "En «El río Maule cruza la región. Sus riberas están protegidas», ¿qué recurso se usó?",
+   "opciones": [
+    "Un posesivo que retoma al río sin volver a nombrarlo",
+    "Un hiperónimo que nombra la clase general a la que pertenece",
+    "Una elipsis que suprime por completo al sujeto de la oración",
+    "Una nominalización que convierte un verbo en un sustantivo"
+   ],
+   "correcta": 0,
+   "tip": "«Sus» apunta al río ya nombrado: es correferencia con un posesivo. No se omitió nada ni se cambió una palabra por otra más general.",
+   "id": "leng8-oa18-017"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "¿Qué es una nominalización?",
+   "opciones": [
+    "Convertir en sustantivo una acción, para poder retomarla después",
+    "Convertir un sustantivo en verbo dentro de la misma oración",
+    "Reemplazar un nombre propio por un nombre común más general",
+    "Nombrar por primera vez algo que el texto todavía no ha dicho"
+   ],
+   "correcta": 0,
+   "tip": "De «el liceo suspendió» se pasa a «la suspensión»: lo que era una acción pasa a ser una cosa nombrable, y así se puede retomar en una palabra.",
+   "id": "leng8-oa18-018"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "«El liceo suspendió las clases por la lluvia». ¿Qué expresión retoma ese hecho completo?",
+   "opciones": [
+    "«La suspensión de las clases», que nombra la acción como sustantivo",
+    "«El liceo mencionado», que vuelve a nombrar a la institución",
+    "«La lluvia de ese día», que retoma la causa de lo ocurrido",
+    "«Las clases perdidas», que nombra lo que quedó sin realizarse"
+   ],
+   "correcta": 0,
+   "tip": "Nominalizar exige convertir el hecho entero, no una de sus partes. Las otras tres retoman al sujeto, a la causa o al objeto, pero no lo que pasó.",
+   "id": "leng8-oa18-019"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "Camila escribió: «Los vecinos reclamaron. ___ llegó a la municipalidad». ¿Qué completa?",
+   "opciones": [
+    "«El reclamo de los vecinos»",
+    "«Los vecinos del sector sur»",
+    "«La municipalidad del lugar»",
+    "«El reclamo de la autoridad»"
+   ],
+   "correcta": 0,
+   "tip": "La nominalización convierte «reclamaron» en «el reclamo» y conserva de quién es. Cambiar el dueño del reclamo cambia el sentido de lo contado.",
+   "id": "leng8-oa18-020"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "¿Para qué sirve nominalizar un hecho ya contado?",
+   "opciones": [
+    "Para retomarlo en una expresión y avanzar con la idea siguiente",
+    "Para alargar el texto agregando información nueva en cada párrafo",
+    "Para cambiar el tiempo verbal de las oraciones que vienen después",
+    "Para repetir el hecho con las mismas palabras y darle más énfasis"
+   ],
+   "correcta": 0,
+   "tip": "Permite empaquetar en un sustantivo algo que ocupaba una oración entera, y desde ahí seguir diciendo cosas nuevas sobre ese hecho.",
+   "id": "leng8-oa18-021"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "En «Benjamín llegó tarde. Su ___ molestó al entrenador», ¿qué palabra corresponde?",
+   "opciones": [
+    "«Atraso», que nombra como sustantivo la acción de llegar tarde",
+    "«Llegada», que nombra el hecho de haber llegado al entrenamiento",
+    "«Actitud», que describe el modo en que se comporta una persona",
+    "«Reclamo», que nombra la queja que alguien expresa en voz alta"
+   ],
+   "correcta": 0,
+   "tip": "Lo que hay que nominalizar es «llegar tarde», no «llegar». «Su llegada» sería correcto en español, pero cuenta otra cosa: pierde el atraso.",
+   "id": "leng8-oa18-022"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "Javiera cambió «los estudiantes protestaron» por «la protesta estudiantil». ¿Qué ganó?",
+   "opciones": [
+    "Puede referirse al hecho completo sin repetir toda la oración",
+    "Puede cambiar el sentido de lo que había escrito antes del cambio",
+    "Puede omitir el verbo principal de las oraciones que vienen después",
+    "Puede evitar el uso de pronombres en todo el resto de su texto"
+   ],
+   "correcta": 0,
+   "tip": "Con el hecho convertido en sustantivo puede decir «la protesta duró tres días» sin volver a contar quién protestó ni cuándo.",
+   "id": "leng8-oa18-023"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "Un texto usa una elipsis. ¿Qué está haciendo?",
+   "opciones": [
+    "Omitir un elemento que ya se dijo y que el lector puede reponer",
+    "Omitir un elemento que el texto todavía no ha llegado a nombrar",
+    "Repetir un elemento importante para que el lector no lo olvide",
+    "Reemplazar un elemento por otro que significa exactamente lo mismo"
+   ],
+   "correcta": 0,
+   "tip": "La elipsis no borra información: la deja sobreentendida. Solo funciona si lo omitido apareció antes y el lector puede recuperarlo sin esfuerzo.",
+   "id": "leng8-oa18-024"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "En «Camila compró dos libros y leyó uno en la tarde», ¿qué elemento se omitió?",
+   "opciones": [
+    "El sujeto «Camila» delante del segundo verbo de la oración",
+    "El objeto «libros», que no vuelve a aparecer en la oración",
+    "El verbo «comprar», que se repite en la segunda parte del texto",
+    "Ninguno: la oración nombra todos sus elementos de forma completa"
+   ],
+   "correcta": 0,
+   "tip": "«Leyó» no lleva sujeto escrito, pero se entiende que es Camila. La terminación del verbo es la que permite reponerlo.",
+   "id": "leng8-oa18-025"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "En «¿Cuál prefieres, la roja o la azul?», ¿qué permite entender la pregunta?",
+   "opciones": [
+    "Que el sustantivo omitido se sobreentiende por el contexto compartido",
+    "Que los adjetivos pueden funcionar como verbos dentro de una pregunta",
+    "Que la oración quedó incompleta y necesita ser reescrita entera",
+    "Que «la» es un pronombre tónico que reemplaza a un nombre propio"
+   ],
+   "correcta": 0,
+   "tip": "Se omite el sustantivo (la camisa, la pelota) porque los dos hablantes ya saben de qué se trata. En un texto escrito hay que haberlo nombrado antes.",
+   "id": "leng8-oa18-026"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "¿Cuándo la elipsis se vuelve un problema dentro de un texto?",
+   "opciones": [
+    "Cuando el lector ya no puede reponer el elemento que se omitió",
+    "Cuando se omite más de una palabra dentro del mismo párrafo",
+    "Cuando el elemento omitido aparecía en la oración anterior",
+    "Cuando la oración omitida es la primera de todo el párrafo"
+   ],
+   "correcta": 0,
+   "tip": "El límite no es cuánto se omite sino si el lector lo recupera. Si el sujeto cambió hace tres oraciones, conviene volver a nombrarlo.",
+   "id": "leng8-oa18-027"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "En «La profesora revisó las pruebas y entregó las notas», ¿qué evita repetir el sujeto?",
+   "opciones": [
+    "La elipsis: el sujeto se omite y el verbo permite reponerlo",
+    "La nominalización: el sujeto pasa a nombrarse como sustantivo",
+    "La sustitución: un pronombre ocupa el lugar del sujeto omitido",
+    "La repetición: el sujeto vuelve a aparecer en la segunda parte"
+   ],
+   "correcta": 0,
+   "tip": "No hay ningún pronombre ni sustantivo nuevo: sencillamente falta el sujeto del segundo verbo, y eso es una elipsis.",
+   "id": "leng8-oa18-028"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "Camila escribió: «Se recibió el informe. El mismo será revisado el lunes». ¿Qué le conviene?",
+   "opciones": [
+    "Reemplazar «el mismo» por «este» o por «el informe», que suenan naturales",
+    "Mantener «el mismo», porque así evita repetir la palabra «informe»",
+    "Reemplazar «el mismo» por «el cual», que cumple exactamente esa función",
+    "Borrar la segunda oración, porque repite lo dicho en la primera"
+   ],
+   "correcta": 0,
+   "tip": "«El mismo» usado para retomar algo suena burocrático y no aporta nada frente a «este». No es un error de gramática, sino un problema de estilo.",
+   "id": "leng8-oa18-029"
+  },
+  {
+   "oa": "LE08 OA 18",
+   "pregunta": "¿Qué señal indica que un texto abusa de los recursos de correferencia?",
+   "opciones": [
+    "Que el lector debe volver atrás para saber de qué se está hablando",
+    "Que el texto usa más sustantivos que pronombres en cada párrafo",
+    "Que cada párrafo empieza nombrando otra vez el tema principal",
+    "Que las oraciones son más breves de lo que el género acostumbra"
+   ],
+   "correcta": 0,
+   "tip": "La correferencia existe para que el texto avance sin repetir. Si obliga a releer para ubicar el referente, está trabajando en contra de su propósito.",
+   "id": "leng8-oa18-030"
+  }
+ ]
+}

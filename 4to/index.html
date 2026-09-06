@@ -1460,7 +1460,7 @@ const EXPEDICIONES=[
  // --- Campaña Lenguaje (4°) ---
  // 29 OA jugables en 9 capítulos POR TEMA (el LE04 OA 15, "escribir con letra clara",
  // está EXCLUIDO del banco: es caligrafía manuscrita, ver contenido/lenguaje-4basico/oa.json).
- { id:'leng4-cap1', asignatura:'Lenguaje', nivel:'4° Básico · Leer con fluidez y comprender',
+ { id:'leng4-cap1', intro:'le4-comprender', asignatura:'Lenguaje', nivel:'4° Básico · Leer con fluidez y comprender',
    portada:'assets/portada-lenguaje.png',
    portadaMapa:'assets/portada-leng-lectura.png',
    contenido:'contenido/lenguaje-4basico/preguntas.json', activa:true, campaña:'leng4',
@@ -1471,7 +1471,7 @@ const EXPEDICIONES=[
      {oa:"LE04 OA 04",nombre:"Comprender narraciones",icono:"📝",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Leer con fluidez y comprender",icono:"📚",n:15,oas:["LE04 OA 01","LE04 OA 02","LE04 OA 03","LE04 OA 04"]},
    ]},
- { id:'leng4-cap2', asignatura:'Lenguaje', nivel:'4° Básico · Poesía y hábito lector',
+ { id:'leng4-cap2', intro:'le4-poesia', asignatura:'Lenguaje', nivel:'4° Básico · Poesía y hábito lector',
    portada:'assets/portada-lenguaje.png',
    portadaMapa:'assets/portada-leng-literarios.png',
    contenido:'contenido/lenguaje-4basico/preguntas.json', activa:true, campaña:'leng4',
@@ -1482,7 +1482,7 @@ const EXPEDICIONES=[
      {oa:"LE04 OA 08",nombre:"Ir a la biblioteca",icono:"🏛️",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Poesía y hábito lector",icono:"✨",n:15,oas:["LE04 OA 05","LE04 OA 06","LE04 OA 07","LE04 OA 08"]},
    ]},
- { id:'leng4-cap3', asignatura:'Lenguaje', nivel:'4° Básico · Investigar y ampliar el vocabulario',
+ { id:'leng4-cap3', intro:'le4-palabras', asignatura:'Lenguaje', nivel:'4° Básico · Investigar y ampliar el vocabulario',
    portada:'assets/portada-lenguaje.png',
    portadaMapa:'assets/portada-len3-cap3.png',
    contenido:'contenido/lenguaje-4basico/preguntas.json', activa:true, campaña:'leng4',
@@ -1491,7 +1491,7 @@ const EXPEDICIONES=[
      {oa:"LE04 OA 10",nombre:"Palabras nuevas",icono:"🔤",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Investigar y ampliar el vocabulario",icono:"🧭",n:15,oas:["LE04 OA 09","LE04 OA 10"]},
    ]},
- { id:'leng4-cap4', asignatura:'Lenguaje', nivel:'4° Básico · Escribir para crear e informar',
+ { id:'leng4-cap4', intro:'le4-textos', asignatura:'Lenguaje', nivel:'4° Básico · Escribir para crear e informar',
    portada:'assets/portada-lenguaje.png',
    portadaMapa:'assets/portada-leng-escritura.png',
    contenido:'contenido/lenguaje-4basico/preguntas.json', activa:true, campaña:'leng4',
@@ -1502,7 +1502,7 @@ const EXPEDICIONES=[
      {oa:"LE04 OA 14",nombre:"Cartas e instrucciones",icono:"💌",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Escribir para crear e informar",icono:"🌟",n:15,oas:["LE04 OA 11","LE04 OA 12","LE04 OA 13","LE04 OA 14"]},
    ]},
- { id:'leng4-cap5', asignatura:'Lenguaje', nivel:'4° Básico · Planificar y revisar lo escrito',
+ { id:'leng4-cap5', intro:'le4-revisar', asignatura:'Lenguaje', nivel:'4° Básico · Planificar y revisar lo escrito',
    portada:'assets/portada-lenguaje.png',
    portadaMapa:'assets/portada-leng-textos.png',
    contenido:'contenido/lenguaje-4basico/preguntas.json', activa:true, campaña:'leng4',
@@ -1512,7 +1512,7 @@ const EXPEDICIONES=[
      {oa:"LE04 OA 18",nombre:"Usar palabras nuevas",icono:"🖋️",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Planificar y revisar lo escrito",icono:"🌟",n:15,oas:["LE04 OA 16","LE04 OA 17","LE04 OA 18"]},
    ]},
- { id:'leng4-cap6', asignatura:'Lenguaje', nivel:'4° Básico · Adverbios, verbos y buena redacción',
+ { id:'leng4-cap6', intro:'le4-tildes', asignatura:'Lenguaje', nivel:'4° Básico · Adverbios, verbos y buena redacción',
    portada:'assets/portada-lenguaje.png',
    portadaMapa:'assets/portada-len3-cap4.png',
    contenido:'contenido/lenguaje-4basico/preguntas.json', activa:true, campaña:'leng4',
@@ -2408,8 +2408,18 @@ const HAY_SINFIN=false;
    (Sesión 63); 3° se salvaba solo porque escribe "Matemática" en singular.
    4° NO las tiene todavía: no existe contenido/matematicas-4basico/lecciones.json ni el
    de las otras asignaturas. Es contenido pendiente, no un olvido — se enciende recién
-   cuando ese banco exista, como hicieron 3°, 5° y 7° al nacer. */
-const HAY_MINICLASES=false;
+   4° las tiene desde el 06/09/2026, y SOLO en Lenguaje: seis lecciones, cuatro de
+   ellas con practica. Matematica de 4° sigue sin su camino ensena->desafio, asi que
+   aqui no hay campana con `esLecciones` — los cuatro usos de esta bandera en motor.js
+   estan guardados por `esLecciones` o `capitulosMate`, de modo que encenderla NO
+   cambia la campana ni el Jefe Final. Lo que si habilita es el ✕ del quiz: sin ella,
+   salir de la practica de una mini-clase deja al alumno tirado en la pantalla del
+   quiz (el defecto que Roberto encontro el 06/09 en 3°, 5° y 7°). */
+const HAY_MINICLASES=true;
+/* ⚠️ La llamada va PEGADA a la bandera y a sus rutas, no arriba con las otras
+   constantes: un `const` leido antes de declararse mata todo el JavaScript (zona
+   muerta temporal), y esa trampa ya mordio cuatro veces en este proyecto. */
+LECC.init({ rutas:['contenido/lenguaje-4basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
 /* ¿Este nivel tiene el módulo de Vocabulario, y la biblioteca de lecturas del colegio?
    Son contenido de 8° (y de 3° y 7° para Vocabulario). Antes se resolvían BORRANDO
    líneas del fork, y ese corte dejó la asignatura Lenguaje inalcanzable en 3° (Sesión

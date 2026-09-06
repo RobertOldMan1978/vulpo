@@ -1441,7 +1441,7 @@ const EXPEDICIONES=[
  // en su oa.json (`nota_unidades`).
  // ⚠️ Arte PRESTADO mientras no exista el propio, y elegido POR TEMA y no por número de
  // capítulo: es la regla que dejó Historia de 5° (ver docs/estandar-arte-portadas.md).
- { id:'leng5-cap1', asignatura:'Lenguaje', nivel:'5° Básico · Leer y comprender',
+ { id:'leng5-cap1', intro:'le5-ideas', asignatura:'Lenguaje', nivel:'5° Básico · Leer y comprender',
    portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-leng-lectura.png',
    contenido:'contenido/lenguaje-5basico/preguntas.json', activa:true, campaña:'leng5',
    etapas:[
@@ -1451,7 +1451,7 @@ const EXPEDICIONES=[
      {oa:"LE05 OA 09",nombre:"El gusto por leer",icono:"❤️",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Leer y comprender",icono:"📚",n:15,oas:["LE05 OA 01","LE05 OA 02","LE05 OA 08","LE05 OA 09"]},
    ]},
- { id:'leng5-cap2', asignatura:'Lenguaje', nivel:'5° Básico · Mundos literarios',
+ { id:'leng5-cap2', intro:'le5-poesia', asignatura:'Lenguaje', nivel:'5° Básico · Mundos literarios',
    portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-leng-literarios.png',
    contenido:'contenido/lenguaje-5basico/preguntas.json', activa:true, campaña:'leng5',
    etapas:[
@@ -1472,7 +1472,7 @@ const EXPEDICIONES=[
      {oa:"LE05 OA 10",nombre:"En la biblioteca",icono:"🏛️",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Informarse de verdad",icono:"🧭",n:15,oas:["LE05 OA 06","LE05 OA 07","LE05 OA 11","LE05 OA 10"]},
    ]},
- { id:'leng5-cap4', asignatura:'Lenguaje', nivel:'5° Básico · Crear y contar',
+ { id:'leng5-cap4', intro:'le5-planificar', asignatura:'Lenguaje', nivel:'5° Básico · Crear y contar',
    portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-leng-escritura.png',
    contenido:'contenido/lenguaje-5basico/preguntas.json', activa:true, campaña:'leng5',
    etapas:[
@@ -1483,7 +1483,7 @@ const EXPEDICIONES=[
      {oa:"LE05 OA 30",nombre:"Decirlo en voz alta",icono:"🎤",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Crear y contar",icono:"🌟",n:15,oas:["LE05 OA 13","LE05 OA 14","LE05 OA 16","LE05 OA 17","LE05 OA 30"]},
    ]},
- { id:'leng5-cap5', asignatura:'Lenguaje', nivel:'5° Básico · Escribir con precisión',
+ { id:'leng5-cap5', intro:'le5-marcas', asignatura:'Lenguaje', nivel:'5° Básico · Escribir con precisión',
    portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-len3-cap4.png',
    contenido:'contenido/lenguaje-5basico/preguntas.json', activa:true, campaña:'leng5',
    etapas:[
@@ -1493,7 +1493,7 @@ const EXPEDICIONES=[
      {oa:"LE05 OA 22",nombre:"Escribir sin errores",icono:"✅",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Escribir con precisión",icono:"🖊️",n:15,oas:["LE05 OA 15","LE05 OA 18","LE05 OA 21","LE05 OA 22"]},
    ]},
- { id:'leng5-cap6', asignatura:'Lenguaje', nivel:'5° Básico · Las palabras justas',
+ { id:'leng5-cap6', intro:'le5-sinonimos', asignatura:'Lenguaje', nivel:'5° Básico · Las palabras justas',
    portada:'assets/portada-lenguaje.png', portadaMapa:'assets/portada-len7-cap5.png',
    contenido:'contenido/lenguaje-5basico/preguntas.json', activa:true, campaña:'leng5',
    etapas:[
@@ -2486,7 +2486,8 @@ const HAY_MINICLASES=true;
    esa trampa ya mordio cuatro veces en este proyecto. `montar()` necesita ademas el <body>,
    que aqui ya existe: este script inline corre despues del HTML. */
 LECC.init({ rutas:['contenido/matematicas-5basico/lecciones.json',
-                   'contenido/ciencias-5basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
+                   'contenido/ciencias-5basico/lecciones.json',
+                   'contenido/lenguaje-5basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
 /* ¿Este nivel tiene el módulo de Vocabulario, y la biblioteca de lecturas del colegio?
    Son contenido de 8°. Antes se resolvían BORRANDO líneas del fork, y ese corte dejó
    la asignatura Lenguaje inalcanzable en 3° (Sesión 61). Como banderas, las tres apps

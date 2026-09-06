@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "En «Camila avisó que el ensayo se suspendía», ¿cuál es la oración subordinada?",
+   "opciones": [
+    "«Que el ensayo se suspendía», que funciona como complemento del verbo",
+    "«Camila avisó», que es la parte donde aparece el sujeto de la oración",
+    "«Se suspendía», que es el único verbo conjugado de toda la oración",
+    "No hay subordinada: las dos partes tienen exactamente la misma importancia"
+   ],
+   "correcta": 0,
+   "tip": "La subordinada completa al verbo «avisó»: dice qué avisó Camila. Sola no se sostiene, y esa dependencia es lo que la distingue de la principal.",
+   "id": "leng8-oa17-001"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "¿Qué distingue a una oración compleja de una oración simple?",
+   "opciones": [
+    "La compleja tiene más de un verbo conjugado y sus partes se relacionan",
+    "La compleja tiene más palabras y por eso ocupa más de una línea escrita",
+    "La compleja lleva siempre una coma que separa sus dos mitades",
+    "La compleja no tiene sujeto, porque este se reparte entre sus verbos"
+   ],
+   "correcta": 0,
+   "tip": "Lo que define la complejidad es la cantidad de verbos conjugados y la relación entre las partes, no el largo ni la puntuación.",
+   "id": "leng8-oa17-002"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "En «Cuando termine la prueba, Matías irá a la biblioteca», ¿cuál es la principal?",
+   "opciones": [
+    "«Matías irá a la biblioteca», porque expresa la idea que se sostiene sola",
+    "«Cuando termine la prueba», porque encabeza y anuncia toda la oración",
+    "«Cuando termine», porque contiene el nexo que une las dos partes",
+    "Las dos son principales, porque cada una tiene su propio verbo conjugado"
+   ],
+   "correcta": 0,
+   "tip": "La principal se entiende sin la otra; la subordinada, no. Que vaya primero no la convierte en principal: solo indica cuándo ocurre lo demás.",
+   "id": "leng8-oa17-003"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "En «Javiera estudió mucho, pero reprobó la prueba», ¿cómo se unen las dos partes?",
+   "opciones": [
+    "Por coordinación: las dos están al mismo nivel y una se opone a la otra",
+    "Por subordinación: la segunda depende por completo de lo que dice la primera",
+    "Por yuxtaposición: van unidas solo por un signo de puntuación",
+    "Por elipsis: la segunda oración omite una parte de lo que dice la primera"
+   ],
+   "correcta": 0,
+   "tip": "«Pero» une dos oraciones que podrían ir separadas: ninguna depende de la otra. En la subordinación, en cambio, una parte no funciona sola.",
+   "id": "leng8-oa17-004"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "En «El hermano de Camila, que vive en Arica, llegó ayer», ¿a quién se refiere «que»?",
+   "opciones": [
+    "Al hermano, que es el núcleo del grupo que antecede al relativo",
+    "A Camila, porque es el nombre propio que está más cerca del relativo",
+    "A los dos, porque el relativo abarca todo lo dicho antes de la coma",
+    "A nadie del texto: «que» solo une las dos partes de la oración"
+   ],
+   "correcta": 0,
+   "tip": "El relativo retoma su antecedente, que es el núcleo del grupo anterior: «el hermano». «De Camila» solo lo especifica, no es lo que se retoma.",
+   "id": "leng8-oa17-005"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "«Matías le devolvió el libro a Diego, que estaba muy rayado». ¿Qué problema tiene?",
+   "opciones": [
+    "«Que» queda ambiguo: puede referirse tanto al libro como a Diego",
+    "«Que» debería escribirse «quien», porque se refiere a una persona",
+    "Falta una coma antes de «a Diego» para separar los dos complementos",
+    "El verbo «estaba» debería ir en plural, porque hay dos personas"
+   ],
+   "correcta": 0,
+   "tip": "El relativo tiende a tomar lo que tiene más cerca, y ahí queda Diego. Se arregla acercando el antecedente: «le devolvió a Diego el libro, que estaba rayado».",
+   "id": "leng8-oa17-006"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "¿Cómo se evita que un pronombre relativo quede ambiguo?",
+   "opciones": [
+    "Ubicándolo lo más cerca posible del sustantivo al que se refiere",
+    "Escribiéndolo siempre al comienzo de la oración, antes del sujeto",
+    "Reemplazándolo por «el cual» cada vez que aparezca en el texto",
+    "Agregando una coma delante para separarlo del resto de la frase"
+   ],
+   "correcta": 0,
+   "tip": "La distancia es lo que crea la duda: el lector engancha el relativo con el sustantivo más cercano. Reordenar la oración resuelve más que cambiar de palabra.",
+   "id": "leng8-oa17-007"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "En «Los alumnos que llegaron tarde no entraron», ¿qué aporta la subordinada?",
+   "opciones": [
+    "Restringe: solo esos alumnos, y no todos, quedaron fuera de la sala",
+    "Explica: agrega un dato que ya se sabía de todos los alumnos del curso",
+    "Contrasta: opone a los alumnos puntuales con los que llegaron tarde",
+    "Ordena: indica en qué momento del día ocurrió lo que se describe"
+   ],
+   "correcta": 0,
+   "tip": "Sin comas, la subordinada limita de quiénes se habla: solo los atrasados. Con comas diría que todos llegaron tarde, que es otra cosa.",
+   "id": "leng8-oa17-008"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "En «Mi tío, que vive en Punta Arenas, viaja poco», ¿qué indican las comas?",
+   "opciones": [
+    "Que el dato es explicativo: agrega información sobre un tío único",
+    "Que el dato es necesario para saber de cuál de los tíos se habla",
+    "Que la subordinada es la parte principal de toda la oración escrita",
+    "Que hay una pausa larga y el lector debe detenerse a respirar ahí"
+   ],
+   "correcta": 0,
+   "tip": "Las comas convierten la subordinada en un dato agregado: se puede quitar y la oración sigue diciendo lo mismo del mismo tío.",
+   "id": "leng8-oa17-009"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "En «Camila saludó a la profesora que había llegado ese día», ¿quién había llegado?",
+   "opciones": [
+    "La profesora, porque el relativo retoma el sustantivo que lo precede",
+    "Camila, porque es el sujeto que realiza la acción principal del verbo",
+    "Las dos, porque el relativo abarca a todas las personas nombradas",
+    "No se puede saber, porque falta una coma delante del relativo"
+   ],
+   "correcta": 0,
+   "tip": "El sujeto de «había llegado» es el antecedente del relativo, no el de la principal. Camila es quien saluda; la profesora es quien había llegado.",
+   "id": "leng8-oa17-010"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "«El equipo que ganó el torneo que se jugó en marzo celebró». ¿Qué conviene hacer?",
+   "opciones": [
+    "Dividirla en dos oraciones, porque encadenar relativos la vuelve confusa",
+    "Dejarla igual, porque las oraciones largas demuestran mayor dominio",
+    "Agregar un tercer «que» para dejar más claras las tres ideas del texto",
+    "Cambiar los dos «que» por «quien», que resulta más preciso al escribir"
+   ],
+   "correcta": 0,
+   "tip": "Dos relativos encadenados obligan a sostener dos antecedentes a la vez. «El torneo se jugó en marzo. El equipo que lo ganó celebró» dice lo mismo y se entiende.",
+   "id": "leng8-oa17-011"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "En «Conocí a la escritora cuya novela ganó el premio», ¿qué indica «cuya»?",
+   "opciones": [
+    "Que la novela pertenece a la escritora nombrada antes del relativo",
+    "Que la escritora y la novela son dos temas distintos dentro del texto",
+    "Que la escritora fue premiada por escribir una novela cualquiera",
+    "Que la novela existió antes de que la escritora fuera conocida"
+   ],
+   "correcta": 0,
+   "tip": "«Cuyo» une un poseedor con lo poseído: la novela es de esa escritora. Por eso no se puede reemplazar por un simple «que».",
+   "id": "leng8-oa17-012"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "En «El autor cuyos libros leí», ¿con qué concuerda «cuyos»?",
+   "opciones": [
+    "Con «libros», que es lo poseído, y no con «autor», que es el poseedor",
+    "Con «autor», que es el poseedor de todo lo que se nombra después",
+    "Con «leí», porque el verbo determina el número de todo el enunciado",
+    "Con ninguno: «cuyo» se escribe siempre igual en cualquier oración"
+   ],
+   "correcta": 0,
+   "tip": "«Cuyo» concuerda con lo poseído, no con el dueño: «el autor cuya obra», «los autores cuyos libros». Es el error más frecuente con este relativo.",
+   "id": "leng8-oa17-013"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "Camila escribió: «Ayer llego a la casa y encontré la puerta abierta». ¿Qué falla?",
+   "opciones": [
+    "«Llego» va en presente y el resto del relato está contado en pasado",
+    "«Encontré» va en pasado y debería ir en presente como el resto",
+    "Falta un conector entre las dos acciones que se cuentan ahí",
+    "«Ayer» debería ir al final para marcar mejor el tiempo del relato"
+   ],
+   "correcta": 0,
+   "tip": "«Ayer» y «encontré» fijan el relato en pasado, así que «llego» rompe la línea temporal. Corresponde «llegué».",
+   "id": "leng8-oa17-014"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "Javiera escribió: «Cuando llegué a la casa, la puerta está abierta». ¿Qué falla?",
+   "opciones": [
+    "Los dos verbos van en tiempos distintos y el relato pierde coherencia",
+    "Falta un conector que una las dos partes de la oración escrita",
+    "«Llegué» tendría que llevar la tilde en la primera sílaba y no al final",
+    "«La puerta» no puede ser sujeto porque no realiza ninguna acción"
+   ],
+   "correcta": 0,
+   "tip": "La subordinada temporal y la principal deben ubicarse en el mismo momento: «cuando llegué… estaba abierta». Un salto así deja al lector sin saber cuándo ocurre.",
+   "id": "leng8-oa17-015"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "En «Si Camila estudiara más, aprobaría todas las pruebas», ¿por qué funcionan esos verbos?",
+   "opciones": [
+    "Porque los dos plantean una situación posible y se corresponden entre sí",
+    "Porque los dos están en el mismo tiempo verbal y en la misma persona",
+    "Porque el primero va en pasado y el segundo en presente de la acción",
+    "Porque toda oración que empieza con «si» exige verbos en futuro"
+   ],
+   "correcta": 0,
+   "tip": "En las oraciones condicionales las dos formas van emparejadas: si se cambia una, hay que cambiar la otra o la oración deja de sostenerse.",
+   "id": "leng8-oa17-016"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "Benjamín escribió: «Si tendría tiempo, iría al taller». ¿Cómo se corrige?",
+   "opciones": [
+    "«Si tuviera tiempo», porque esa forma es la que acompaña a «iría»",
+    "«Si tendré tiempo», porque la acción todavía no ha llegado a ocurrir",
+    "«Si tengo tiempo, iría», dejando el segundo verbo tal como estaba",
+    "Está correcta, porque los dos verbos van en el mismo tiempo verbal"
+   ],
+   "correcta": 0,
+   "tip": "Después de «si» no va «tendría»: la pareja correcta es «tuviera… iría». Es uno de los errores más repetidos al escribir condiciones.",
+   "id": "leng8-oa17-017"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "En «Matías terminó la tarea después de que su hermana llegó», ¿qué orden indica?",
+   "opciones": [
+    "Primero llegó la hermana y después Matías terminó la tarea",
+    "Primero terminó la tarea y después llegó su hermana a la casa",
+    "Las dos acciones ocurrieron exactamente en el mismo momento",
+    "No se puede saber, porque el nexo no indica ningún orden temporal"
+   ],
+   "correcta": 0,
+   "tip": "«Después de que» ubica la acción de la principal más tarde que la de la subordinada. El nexo temporal es lo único que ordena los hechos.",
+   "id": "leng8-oa17-018"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "Camila narra un recuerdo: «Tenía diez años y me gusta el mar». ¿Qué falla?",
+   "opciones": [
+    "«Gusta» rompe el pasado del recuerdo y debería decir «gustaba»",
+    "«Tenía» rompe el presente del texto y debería decir «tengo»",
+    "Falta una coma entre las dos partes que forman la oración",
+    "«Me» está de más, porque el verbo «gustar» no necesita ese pronombre"
+   ],
+   "correcta": 0,
+   "tip": "El recuerdo está anclado en el pasado por «tenía diez años», así que el segundo verbo debe seguirlo. Mezclar los dos tiempos confunde cuándo ocurre cada cosa.",
+   "id": "leng8-oa17-019"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "¿Por qué un relato debe sostener sus verbos en la misma línea de tiempo?",
+   "opciones": [
+    "Porque el lector necesita saber en qué momento ocurre cada hecho",
+    "Porque los verbos deben escribirse todos con la misma terminación",
+    "Porque un relato en pasado resulta siempre más fácil de comprender",
+    "Porque cada párrafo debe llevar un tiempo verbal distinto del anterior"
+   ],
+   "correcta": 0,
+   "tip": "Los tiempos verbales son las señales con que el lector arma la línea de los hechos. Si saltan sin motivo, deja de saber qué pasó antes y qué después.",
+   "id": "leng8-oa17-020"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "En «Los libros que compró Camila estaban en oferta», ¿cuál es el sujeto de «estaban»?",
+   "opciones": [
+    "Los libros, porque son aquello de lo que se dice que estaban en oferta",
+    "Camila, porque es quien realiza la acción de comprar esos libros",
+    "La oferta, porque es lo que se menciona al final de la oración",
+    "No hay sujeto expreso: se sobreentiende por la forma del verbo"
+   ],
+   "correcta": 0,
+   "tip": "La oración tiene dos verbos y cada uno su sujeto: Camila compró, los libros estaban. Confundirlos es lo que produce errores de concordancia.",
+   "id": "leng8-oa17-021"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "En «El cuaderno que Benjamín perdió apareció en la sala», ¿quién perdió el cuaderno?",
+   "opciones": [
+    "Benjamín, que es el sujeto del verbo de la oración subordinada",
+    "El cuaderno, porque es el sustantivo que encabeza toda la oración",
+    "La sala, porque es el lugar donde el objeto volvió a aparecer",
+    "No se dice: la oración solo cuenta que el cuaderno apareció"
+   ],
+   "correcta": 0,
+   "tip": "Dentro de la subordinada el sujeto es Benjamín, aunque el sujeto de la principal sea «el cuaderno». Cada verbo se pregunta por separado.",
+   "id": "leng8-oa17-022"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "En «El grupo de estudiantes que preparó la obra recibió un premio», ¿cuál es el núcleo del sujeto?",
+   "opciones": [
+    "«Grupo», y por eso los dos verbos de la oración van en singular",
+    "«Estudiantes», porque son varias las personas que actúan ahí",
+    "«Obra», porque es lo que el grupo preparó durante todo el año",
+    "«Premio», porque es lo que se recibe al final de la oración"
+   ],
+   "correcta": 0,
+   "tip": "El núcleo manda sobre el verbo aunque le siga un complemento en plural. «Estudiantes» depende de «de», así que no puede ser el núcleo.",
+   "id": "leng8-oa17-023"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "Matías dijo: «Voy a la biblioteca». ¿Cómo se cuenta eso sin citar sus palabras?",
+   "opciones": [
+    "«Matías dijo que iba a la biblioteca»",
+    "«Matías dijo que voy a la biblioteca»",
+    "«Matías dijo que vaya a la biblioteca»",
+    "«Matías dijo que fuera a la biblioteca»"
+   ],
+   "correcta": 0,
+   "tip": "Al pasar la cita al relato, el verbo se acomoda al pasado de «dijo» y la persona cambia de «yo» a «él». «Vaya» y «fuera» convertirían el aviso en una orden.",
+   "id": "leng8-oa17-024"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "En «Ayer, mientras llovía, se suspendieron las clases», ¿cuál es el sujeto de «se suspendieron»?",
+   "opciones": [
+    "Las clases, aunque aparezcan después del verbo dentro de la oración",
+    "Ayer, porque indica el momento en que ocurrió todo lo que se narra",
+    "Nadie: la oración no tiene sujeto porque lleva el pronombre «se»",
+    "La lluvia, porque es la causa que provocó que todo se suspendiera"
+   ],
+   "correcta": 0,
+   "tip": "El sujeto no siempre va delante. Se encuentra preguntando qué se suspendió: las clases, y por eso el verbo va en plural.",
+   "id": "leng8-oa17-025"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "En «Después de estudiar toda la tarde, Camila rindió la prueba», ¿quién estudió?",
+   "opciones": [
+    "Camila, porque el sujeto de la principal vale también para el infinitivo",
+    "Nadie en particular, porque el infinitivo no lleva ningún sujeto propio",
+    "La prueba, porque es aquello sobre lo que trata toda la oración",
+    "La tarde, porque es el tiempo que se menciona antes del verbo"
+   ],
+   "correcta": 0,
+   "tip": "El infinitivo no marca persona, así que toma el sujeto de la principal. Cuando el que estudia es otro, hay que decirlo: «después de que Diego estudiara».",
+   "id": "leng8-oa17-026"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "En «Los que llegaron primero eligieron asiento», ¿cuál es el sujeto?",
+   "opciones": [
+    "«Los que llegaron primero», una subordinada que funciona como sujeto",
+    "«Primero», porque indica el orden en que ocurrieron las dos acciones",
+    "«Asiento», porque es lo que las personas eligieron al ir entrando",
+    "No hay sujeto: la oración empieza directamente con el verbo"
+   ],
+   "correcta": 0,
+   "tip": "Una oración entera puede ocupar el lugar del sujeto. Se comprueba preguntando quiénes eligieron asiento: los que llegaron primero.",
+   "id": "leng8-oa17-027"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "Matías escribió: «Estudió toda la noche, aprobando la prueba al día siguiente». ¿Qué falla?",
+   "opciones": [
+    "El gerundio indica una acción simultánea, no un resultado posterior",
+    "El gerundio debe ir siempre al comienzo de la oración compleja",
+    "Falta un conector que una las dos acciones que ahí se describen",
+    "«Estudió» debería ir en presente para concordar con el gerundio"
+   ],
+   "correcta": 0,
+   "tip": "El gerundio marca algo que ocurre al mismo tiempo. Si el resultado viene después, corresponde «y aprobó la prueba al día siguiente».",
+   "id": "leng8-oa17-028"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "Javiera escribió una oración de sesenta palabras con cuatro «que». ¿Qué le conviene hacer?",
+   "opciones": [
+    "Dividirla en oraciones más breves para que cada idea se entienda sola",
+    "Dejarla igual, porque una oración larga muestra mayor vocabulario",
+    "Reemplazar los «que» por comas y mantener la oración completa",
+    "Agregar más conectores para unir mejor todas esas partes entre sí"
+   ],
+   "correcta": 0,
+   "tip": "Encadenar subordinadas obliga a sostener demasiadas ideas a la vez. Cortar en oraciones más breves conserva el contenido y libera al lector.",
+   "id": "leng8-oa17-029"
+  },
+  {
+   "oa": "LE08 OA 17",
+   "pregunta": "Benjamín escribió: «Estoy seguro que Javiera llega temprano». ¿Qué corresponde?",
+   "opciones": [
+    "«Seguro de que», porque ese adjetivo pide la preposición «de» delante",
+    "«Seguro que» está bien, porque nunca se escribe «de que» todo junto",
+    "«Segura de que», haciendo concordar el adjetivo con Javiera",
+    "«Seguro qué», con tilde, porque introduce una pregunta indirecta"
+   ],
+   "correcta": 0,
+   "tip": "Se dice «estar seguro DE algo», así que la subordinada conserva esa preposición. Quitarla es tan error como agregarla donde no corresponde.",
+   "id": "leng8-oa17-030"
+  }
+ ]
+}

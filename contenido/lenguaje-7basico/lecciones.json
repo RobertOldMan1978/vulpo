@@ -191,6 +191,66 @@
     }
    ],
    "revisada": true
+  },
+  {
+   "id": "le7-revisar",
+   "oa": "LE07 OA 15",
+   "titulo": "Revisar en tres pasadas",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Casi todo el mundo revisa igual: lee el texto una vez, arregla dos tildes y lo entrega. Por eso casi todo el mundo entrega textos con las ideas desordenadas y sin una sola falta de ortografía. Revisar bien es hacer **tres pasadas distintas**, y el orden importa: primero lo grande, al final lo chico. Corregirle la ortografía a un párrafo que después vas a borrar es trabajo perdido."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "desc": "Tres cajas seguidas con las pasadas de la revisión",
+      "items": [
+       {
+        "titulo": "Las ideas"
+       },
+       {
+        "titulo": "El hilo"
+       },
+       {
+        "titulo": "La forma"
+       }
+      ],
+      "etiqueta": "En este orden, no al revés"
+     },
+     "intro": "Cada pasada busca una sola cosa."
+    },
+    {
+     "t": "texto",
+     "md": "**Primera pasada: las ideas.** ¿Sobra alguna que no es del tema? ¿Falta alguna sin la cual no se entiende? ¿El cierre recoge lo que veniste diciendo, o solo avisa que el texto terminó?"
+    },
+    {
+     "t": "texto",
+     "md": "**Segunda: el hilo.** ¿Los párrafos van en el orden que el lector necesita? ¿Los conectores dicen la relación que existe de verdad entre las dos ideas, o están de relleno? **Tercera: la forma.** Concordancia, tiempos verbales, tildes y puntuación, ya con el texto quieto."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Sigue el ejemplo paso a paso (toca para avanzar):",
+     "pasos": [
+      "«El liceo instaló paneles solares. Ahora la sala de computación funciona con esa energía. Mi hermano estudia en otro liceo. Además, la cuenta de luz bajó a la mitad.»",
+      "Primera pasada: la tercera oración no es del tema. Fuera.",
+      "Segunda: «Además» suma, pero el ahorro es consecuencia de los paneles. Va «por eso».",
+      "Tercera: recién ahora se miran tildes, comas y concordancia.",
+      "Al revés no funciona: habrías corregido con esmero una oración que igual se iba."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE07 OA 15",
+      "n": 10
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
   }
  ]
 }

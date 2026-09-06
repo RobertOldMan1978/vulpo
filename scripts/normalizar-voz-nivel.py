@@ -127,6 +127,11 @@ _LEXICO = {}
 _RX_LEXICO = re.compile(r"(?!x)x") if not _LEXICO else re.compile(
     r"(%s)" % "|".join(_LEXICO), re.IGNORECASE)
 
+# ESPEJO EXACTO de fmtLec() en assets/js/lecciones.js. Alla la negrita de una leccion se
+# pinta como <b>; aqui se QUITA, para que el sintetizador reciba la palabra y no los
+# asteriscos. Si uno de los dos regex cambia, el otro tiene que cambiar igual.
+_RX_NEGRITA = re.compile(r"\*\*(\S(?:[^*]*\S)?)\*\*")
+
 # Curso escolar en ordinal ("4° basico" -> "cuarto basico"), NO grados de angulo.
 _ORDINAL = {"1": "primero", "2": "segundo", "3": "tercero", "4": "cuarto",
             "5": "quinto", "6": "sexto", "7": "septimo", "8": "octavo"}
@@ -192,6 +197,14 @@ def normalizar(texto, oa=""):
     excepcion por objetivo este es su lugar.
     """
     t = " " + (texto or "").strip() + " "
+
+    # La NEGRITA de las lecciones se quita antes que nada. El texto de un `lecciones.json`
+    # admite **negrita** y el motor la pinta como <b> (fmtLec, en assets/js/lecciones.js),
+    # pero al sintetizador hay que mandarle la palabra sola: sin esto los asteriscos
+    # llegan crudos a Azure. El regex es el ESPEJO EXACTO del que usa fmtLec, para que
+    # las dos capas marquen lo mismo; si una cambia, la otra tiene que cambiar igual.
+    # (Las preguntas nunca traen negrita, asi que esto solo toca a las lecciones.)
+    t = _RX_NEGRITA.sub(r"\1", t)
 
     # Va primero: son palabras enteras y no deben verse afectadas por las reglas de
     # simbolos ni por las de letras sueltas.

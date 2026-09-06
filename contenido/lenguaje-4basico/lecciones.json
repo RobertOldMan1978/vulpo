@@ -1,0 +1,334 @@
+{
+ "lecciones": [
+  {
+   "id": "le4-comprender",
+   "oa": "LE04 OA 02",
+   "titulo": "Estrategias para entender lo que lees",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Leer no es solo pasar los ojos por las palabras. Un buen lector va haciendo cosas mientras lee, y esas cosas se pueden aprender: son estrategias, y sirven para cualquier texto."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "desc": "Tres momentos de la lectura, uno detras de otro",
+      "items": [
+       {
+        "titulo": "Antes: qué sé de esto"
+       },
+       {
+        "titulo": "Mientras: imagino y releo"
+       },
+       {
+        "titulo": "Al terminar: recapitulo"
+       }
+      ]
+     },
+     "intro": "Lo que más ayuda es saber cuándo usar cada una: hay estrategias para antes de leer, para mientras lees y para cuando terminas."
+    },
+    {
+     "t": "texto",
+     "md": "Antes de empezar conviene hacer dos cosas rápidas: preguntarte qué te gustaría saber del tema, y buscar si algo parecido ya te pasó a ti. Un relato sobre alguien que se pierde en un supermercado se entiende distinto si a ti también te pasó alguna vez."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Mira cómo se usan las de mientras lees, con un texto sobre los camaleones.",
+     "pasos": [
+      "Antes de empezar te preguntas: ¿por qué cambian de color? Ahora lees buscando esa respuesta.",
+      "El texto dice que el camaleón se confunde con las hojas. Te lo imaginas: verde sobre una rama verde.",
+      "Viene una parte que no entiendes. No sigues de largo: vuelves atrás y relees solo esa parte.",
+      "Al terminar te cuentas el texto en orden: cómo es, por qué cambia de color y para qué le sirve.",
+      "Eso último es recapitular, y es lo que hace que al otro día todavía te acuerdes."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "Queda una más, y sirve sobre todo para estudiar: subrayar. La regla es marcar poco. Si subrayas casi todo, la hoja te queda pintada entera y ya no distingues una línea de otra."
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE04 OA 02",
+      "n": 10
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le4-poesia",
+   "titulo": "Antes de empezar: Poesía y lectura",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un poema no se lee como un cuento. En un poema las palabras casi nunca dicen lo de siempre, y esa es justo la gracia."
+    },
+    {
+     "t": "texto",
+     "md": "Si lees «la ciudad es un hormiguero», nadie está hablando de hormigas: quiere decir que hay mucha gente yendo y viniendo, todos apurados. Eso se llama lenguaje figurado."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Dos cajas: lo que dice la frase y lo que quiere decir",
+      "items": [
+       {
+        "titulo": "Lo que dice",
+        "texto": "«La ciudad es un hormiguero.»"
+       },
+       {
+        "titulo": "Lo que quiere decir",
+        "texto": "Que hay mucha gente apurada, yendo y viniendo."
+       }
+      ],
+      "etiqueta": "Eso es lenguaje figurado"
+     },
+     "intro": "Fíjate en la diferencia entre lo que dice y lo que quiere decir."
+    },
+    {
+     "t": "texto",
+     "md": "A veces el poema le presta a una cosa algo que solo hacen las personas: «la puerta se quejó al abrirse». Las puertas no se quejan, pero cualquiera entiende al tiro qué ruido hizo."
+    },
+    {
+     "t": "texto",
+     "md": "Cuando algo suene raro en un poema no te lo saltes: pregúntate a qué se parece y qué sentimiento te deja. En este capítulo vas a leer poemas y muchos otros textos, y vas a descubrir qué quieren decir de verdad."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le4-palabras",
+   "oa": "LE04 OA 10",
+   "titulo": "Descubrir palabras nuevas",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Cuando aparece una palabra que no conoces casi nunca hay que parar de leer. Hay tres formas de descubrirla, y conviene probarlas en ese orden."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "desc": "Tres formas de descubrir una palabra nueva, una detras de otra",
+      "items": [
+       {
+        "titulo": "La pista de la frase"
+       },
+       {
+        "titulo": "Las piezas de la palabra"
+       },
+       {
+        "titulo": "Preguntar o buscar"
+       }
+      ]
+     },
+     "intro": "Pruébalas de la más rápida a la más lenta."
+    },
+    {
+     "t": "texto",
+     "md": "La segunda es nueva este año. Muchas palabras están hechas de piezas: la raíz es el trozo que lleva el significado, y a ella se le pegan otros trozos. Los que van adelante se llaman prefijos y los que van atrás, sufijos."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Desarma la palabra submarino y vas a ver que no hacía falta el diccionario.",
+     "pasos": [
+      "La palabra es submarino.",
+      "Adentro está mar, que ya conoces: esa es la raíz.",
+      "Adelante lleva sub-, un prefijo que quiere decir debajo.",
+      "Entonces un submarino es un barco que anda debajo del mar."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "Los sufijos van atrás y también cambian la idea: un zapatero es el que trabaja con zapatos. Y las palabras que comparten la raíz forman una familia: flor, florero y florecer tienen todas que ver con flores, así que si conoces una ya tienes media pista de las otras."
+    },
+    {
+     "t": "texto",
+     "md": "Si ni la frase ni las piezas alcanzan, hay que ir a buscarla afuera. Ahí lo que hay que decidir es cuál fuente conviene, porque no todas sirven para lo mismo: no es igual querer el significado exacto de una palabra suelta que entender un tema entero."
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE04 OA 10",
+      "n": 10
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le4-textos",
+   "titulo": "Antes de empezar: Contar e informar",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "No todos los textos se escriben igual, y lo primero que hay que decidir no es cómo empezar sino para qué escribes. De eso depende toda la forma que va a tener."
+    },
+    {
+     "t": "texto",
+     "md": "Un texto que cuenta —un cuento, una anécdota, lo que te pasó el fin de semana— sigue el hilo del tiempo. Un texto que informa —un artículo, una noticia— no sigue ningún tiempo, porque no hay una historia que avance: junta lo que sabe y lo reparte por temas."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Dos cajas: un texto que cuenta y un texto que informa",
+      "items": [
+       {
+        "titulo": "Un texto que cuenta",
+        "texto": "Sigue el orden en que pasaron las cosas."
+       },
+       {
+        "titulo": "Un texto que informa",
+        "texto": "Reparte por temas lo que sabe."
+       }
+      ],
+      "etiqueta": "El propósito manda"
+     },
+     "intro": "Los dos pueden ser muy buenos textos, pero se arman distinto."
+    },
+    {
+     "t": "texto",
+     "md": "Y hay un tercer grupo que no hace ninguna de las dos cosas: los textos que sirven para algo. Una carta, un afiche, una receta, una invitación. Ahí lo que importa es que el mensaje llegue claro y completo a quien lo va a leer."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a escribir de las tres maneras. Antes de empezar cada texto pregúntate siempre lo mismo: ¿esto lo escribo para contar, para informar o para conseguir algo?"
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le4-revisar",
+   "oa": "LE04 OA 17",
+   "titulo": "Revisar lo que escribiste",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Casi nadie escribe bien a la primera, y eso no es un problema: los que escriben bien son los que revisan. Pero revisar no es volver a leerlo a ver si suena bien. Es pasar una lista, punto por punto."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "desc": "Los tres pasos de una revision, en orden",
+      "items": [
+       {
+        "titulo": "1. Las ideas"
+       },
+       {
+        "titulo": "2. Las palabras"
+       },
+       {
+        "titulo": "3. La ortografía"
+       }
+      ]
+     },
+     "intro": "El orden importa: no vale la pena arreglarle las tildes a un párrafo que después vas a borrar entero."
+    },
+    {
+     "t": "texto",
+     "md": "Paso uno, las ideas. Cada idea va en su propio párrafo, así que cuando cambias de idea pones punto aparte y empiezas uno nuevo. Y entre una idea y la siguiente van los conectores, que son las palabras que dicen qué relación hay entre las dos: si una es la causa de la otra, si se oponen o si una pasó después."
+    },
+    {
+     "t": "texto",
+     "md": "Paso dos, las palabras. Busca las que no dicen nada en concreto y cámbialas por otras exactas: si escribiste «la comida estaba buena», di qué era y a qué sabía. Aquí también se revisa a quién le escribes, porque a un amigo no se le escribe igual que a la directora del colegio."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Pasa los tres pasos por un texto corto y verás cuánto cambia.",
+     "pasos": [
+      "Sofía escribió: «Fuimos al campo. Fue bueno. Después volvimos.»",
+      "Paso uno, las ideas: son tres frases sueltas y ninguna cuenta nada. Falta decir qué pasó allá.",
+      "Paso dos, las palabras: «fue bueno» no dice nada. ¿Bueno por qué? Queda «vimos caballos y comimos afuera».",
+      "Paso tres, recién ahora: las tildes, los puntos y que la hoja esté limpia.",
+      "Si hubiera empezado por las tildes, habría corregido frases que igual se iban a cambiar."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE04 OA 17",
+      "n": 10
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le4-tildes",
+   "oa": "LE04 OA 21",
+   "titulo": "La tilde y las palabras que suenan igual",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Toda palabra tiene una sílaba que suena más fuerte que las demás. Si dices ventana despacio, ven-ta-na, vas a notar que la del medio suena más fuerte. Encontrar esa sílaba es el primer paso, porque de ella depende si la palabra lleva tilde."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Tres cajas con el lugar de la silaba fuerte",
+      "items": [
+       {
+        "titulo": "Aguda",
+        "texto": "La fuerza va en la última sílaba."
+       },
+       {
+        "titulo": "Grave",
+        "texto": "La fuerza va en la penúltima."
+       },
+       {
+        "titulo": "Esdrújula",
+        "texto": "La fuerza va en la antepenúltima."
+       }
+      ],
+      "etiqueta": "Se cuenta desde el final"
+     },
+     "intro": "Las palabras se agrupan según dónde cae esa fuerza, contando siempre desde el final."
+    },
+    {
+     "t": "texto",
+     "md": "De ahí sale la regla, y son tres frases. Las esdrújulas llevan tilde siempre, sin ninguna excepción, y lo mismo las sobresdrújulas, que llevan la fuerza todavía más atrás. Las agudas la llevan solo cuando terminan en la letra ene, en la letra ese o en una vocal. Y las graves, justo al revés: solo cuando no terminan en ninguna de esas."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Prueba la regla con dos palabras, paso a paso.",
+     "pasos": [
+      "Toma la palabra compás. Dila despacio y escucha dónde suena más fuerte: com-pás.",
+      "La fuerza cae en la última sílaba, así que es una palabra aguda.",
+      "Termina en la letra ese, y las agudas terminadas en ese llevan tilde. Por eso compás se escribe con tilde.",
+      "Ahora túnel. Dila despacio: tú-nel. La fuerza cae en la penúltima, así que es grave.",
+      "Termina en la letra ele, que no es ene, ni ese, ni vocal. Por eso túnel también lleva tilde.",
+      "Fíjate que la misma regla dio respuestas contrarias. No hay que aprenderse las palabras: hay que aplicar la regla."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "Aparte de la tilde hay tres palabras que suenan casi igual y se escriben distinto, y para estas no hay ninguna regla que deducir: hay que sabérselas. Hay dice que algo existe, como en «hay tres sillas en la sala». Ahí señala un lugar, como en «ahí empieza el camino». Y ay es un quejido, como en «¡ay, qué frío!»."
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE04 OA 21",
+      "n": 10
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
+  }
+ ]
+}

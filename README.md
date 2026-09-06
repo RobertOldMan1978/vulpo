@@ -42,7 +42,15 @@ de año completo (todos sus OA del currículum).
 encuadran de qué se trata, con el dibujo del modelo —la célula, un circuito abierto y cerrado, las
 partículas del sólido y del gas— y **sin preguntas**, porque no evalúan nada. Son 17 en total
 (4 en 8°, 5 en 7°, 4 en 5° y 4 en 3°), y a diferencia de una mini-clase **no bloquean**: son un
-ofrecimiento al empezar el capítulo, no un peaje.
+ofrecimiento al empezar el capítulo, no un peaje. **Historia lleva 12 más**, con el mismo criterio.
+
+**Lenguaje también enseña, en los seis cursos: 33 lecciones** —17 mini-clases y 16
+introducciones—, escritas capítulo por capítulo solo donde hacían falta: de 63 capítulos posibles
+hay 33, porque en el resto el banco de preguntas ya explica lo que la clase diría. Sus prácticas
+**no le reportan nada al profesor**, y eso es lo que hace honesto tenerlas: buena parte de los
+objetivos de Lenguaje son de producción —escribir, exponer, recitar—, así que un porcentaje junto
+a "escritura" mediría si el alumno reconoce una definición, que es otra cosa. El objetivo se sigue
+midiendo donde corresponde, en las etapas del capítulo.
 
 > **Y una regla de contenido que conviene conocer:** los objetivos de índole sexual —currículum
 > obligatorio de 7° básico— se juegan **solo en su propio capítulo** y **no entran en ningún Jefe

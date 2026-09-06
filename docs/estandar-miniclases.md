@@ -15,9 +15,9 @@
 |---|---|---|
 | **Matemática** | **Mini-clase SIEMPRE**, sin excepción | una por **OA** |
 | **Ciencias** e **Historia** | Mini-clase **o** introducción, **si amerita** | mini-clase por OA · introducción por **capítulo** |
-| **Lenguaje** | **Solo introducción**, y solo si amerita. **Nunca mini-clase** | por **capítulo** |
+| **Lenguaje** | Introducción, o mini-clase **con `"mide": false`**. Solo si amerita | por **capítulo** |
 
-### Por qué Lenguaje no lleva mini-clase, y no es una preferencia
+### Lenguaje: por qué NO podía llevar mini-clase, y qué cambió el 06/09/2026
 
 Sus OA son mayoritariamente de **producción o de hábito** —escribir, exponer, recitar, leer
 habitualmente—: **17 de 31 en 3°** y **10 de 25 en 7°**. Una clase que enseña a escribir no tiene
@@ -29,6 +29,24 @@ cómo comprobar con un quiz que se aprendió, así que su práctica terminaría 
 > llama a `registrarOA` y no puede ensuciar ningún porcentaje. Por eso es la forma segura donde la
 > medición sería engañosa — y por eso Matemática, donde el quiz mide justo lo que la clase enseña,
 > la lleva siempre.
+
+**Hasta el 06/09/2026 la conclusión de eso era "Lenguaje nunca lleva mini-clase". Ya no, porque el
+problema no era la clase sino el REPORTE.** Un bloque `practica` puede declarar **`"mide": false`**
+y entonces no llama a `registrarOA`: enseña y hace practicar, pero **no le manda ningún porcentaje
+al profesor**. El objetivo se sigue midiendo donde corresponde —en las etapas normales del
+capítulo, con el banco completo—, así que el mapa de dominio no pierde nada y tampoco gana un
+número engañoso junto a "escritura".
+
+⚠️ **En Lenguaje esa bandera NO es opcional: toda práctica suya la lleva.** Sin ella vuelve
+exactamente el defecto que esta sección existe para evitar. Se comprueba espiando `registrarOA`
+mientras se responde la práctica: debe quedar en **0**, y una etapa normal del mismo capítulo debe
+darlo en **más de 0** — sin ese control positivo, una medición rota para todos se ve igual que la
+bandera funcionando.
+
+> **Lo que esto NO cambia:** Lenguaje sigue teniendo **una sola lección por capítulo** (el cableado
+> admite un `intro:'<id>'` y nada más), y sigue valiendo que la mayoría de sus capítulos no lleva
+> nada. De sus 36 capítulos con lección posible, hoy hay **33 lecciones en los seis cursos**, y los
+> descartes están ahí porque su banco ya enuncia lo que la clase diría.
 
 ### Cómo se decide "si amerita"
 
@@ -57,7 +75,11 @@ sobrevivió a volver a medirlo**.
 | Matemática | 62 | 15 | ✅ **62 mini-clases** (una por OA) |
 | Ciencias | 43 | 13 | ✅ **13 introducciones** (una por capítulo) |
 | Historia | 61 | 16 | ✅ **1 mini-clase + 11 introducciones** (12 de 16 capítulos) |
-| Lenguaje | 69 | 20 | ✅ **12 introducciones** (12 de 20 capítulos) |
+| Lenguaje | 172 | 63 | ✅ **17 mini-clases + 16 introducciones** (33 de 63 capítulos) |
+
+⚠️ **La fila de Lenguaje cuenta los SEIS cursos; las otras tres son de cuando el proyecto tenía
+tres.** Se dejan así a propósito en vez de recalcularlas de memoria: al actualizar una fila hay que
+volver a medirla contra los archivos, no estimarla.
 
 O sea que aplicar el criterio con la mano suelta llega a **104 mini-clases más** en Ciencias e
 Historia. Aplicado por capítulo como introducción, son **29**. La diferencia entre las dos lecturas

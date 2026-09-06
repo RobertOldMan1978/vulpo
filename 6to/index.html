@@ -1465,7 +1465,7 @@ const EXPEDICIONES=[
  // --- Campaña Lenguaje (6°) ---
  // Los 31 OA van en 7 capítulos POR TEMA, no por los tres ejes de las Bases (mismo
  // criterio que ya usan Lenguaje de 3°, 5° y 7°, declarado en su oa.json).
- { id:'leng6-cap1', asignatura:'Lenguaje', nivel:'6° Básico · Leer con fluidez y comprender',
+ { id:'leng6-cap1', intro:'le6-registrar', asignatura:'Lenguaje', nivel:'6° Básico · Leer con fluidez y comprender',
    portada:'assets/portada-lenguaje.png',
    portadaMapa:'assets/portada-leng-lectura.png',
    contenido:'contenido/lenguaje-6basico/preguntas.json', activa:true, campaña:'leng6',
@@ -1476,7 +1476,7 @@ const EXPEDICIONES=[
      {oa:"LE06 OA 12",nombre:"Adivinar palabras nuevas",icono:"🔎",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Leer con fluidez y comprender",icono:"📚",n:15,oas:["LE06 OA 01","LE06 OA 02","LE06 OA 08","LE06 OA 12"]},
    ]},
- { id:'leng6-cap2', asignatura:'Lenguaje', nivel:'6° Básico · Mundos literarios',
+ { id:'leng6-cap2', intro:'le6-personajes', asignatura:'Lenguaje', nivel:'6° Básico · Mundos literarios',
    portada:'assets/portada-lenguaje.png',
    portadaMapa:'assets/portada-leng-literarios.png',
    contenido:'contenido/lenguaje-6basico/preguntas.json', activa:true, campaña:'leng6',
@@ -1498,7 +1498,7 @@ const EXPEDICIONES=[
      {oa:"LE06 OA 11",nombre:"Buscar en fuentes",icono:"🔍",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Leer el mundo",icono:"🧭",n:15,oas:["LE06 OA 06","LE06 OA 07","LE06 OA 09","LE06 OA 10","LE06 OA 11"]},
    ]},
- { id:'leng6-cap4', asignatura:'Lenguaje', nivel:'6° Básico · Planificar y escribir',
+ { id:'leng6-cap4', intro:'le6-parrafo', asignatura:'Lenguaje', nivel:'6° Básico · Planificar y escribir',
    portada:'assets/portada-lenguaje.png',
    portadaMapa:'assets/portada-leng-escritura.png',
    contenido:'contenido/lenguaje-6basico/preguntas.json', activa:true, campaña:'leng6',
@@ -1510,7 +1510,7 @@ const EXPEDICIONES=[
      {oa:"LE06 OA 17",nombre:"Planificar antes de escribir",icono:"🗂️",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Planificar y escribir",icono:"🌟",n:15,oas:["LE06 OA 13","LE06 OA 14","LE06 OA 15","LE06 OA 16","LE06 OA 17"]},
    ]},
- { id:'leng6-cap5', asignatura:'Lenguaje', nivel:'6° Básico · Revisar y usar el lenguaje',
+ { id:'leng6-cap5', intro:'le6-participios', asignatura:'Lenguaje', nivel:'6° Básico · Revisar y usar el lenguaje',
    portada:'assets/portada-lenguaje.png',
    portadaMapa:'assets/portada-len3-cap4.png',
    contenido:'contenido/lenguaje-6basico/preguntas.json', activa:true, campaña:'leng6',
@@ -1522,7 +1522,7 @@ const EXPEDICIONES=[
      {oa:"LE06 OA 22",nombre:"Ortografía",icono:"✔️",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Revisar y usar el lenguaje",icono:"🖊️",n:15,oas:["LE06 OA 18","LE06 OA 19","LE06 OA 20","LE06 OA 21","LE06 OA 22"]},
    ]},
- { id:'leng6-cap6', asignatura:'Lenguaje', nivel:'6° Básico · Escuchar y comprender',
+ { id:'leng6-cap6', intro:'le6-publicidad', asignatura:'Lenguaje', nivel:'6° Básico · Escuchar y comprender',
    portada:'assets/portada-lenguaje.png',
    portadaMapa:'assets/portada-len7-cap7.png',
    contenido:'contenido/lenguaje-6basico/preguntas.json', activa:true, campaña:'leng6',
@@ -2395,8 +2395,18 @@ const HAY_SINFIN=false;
    (Sesión 63); 3° se salvaba solo porque escribe "Matemática" en singular.
    6° NO las tiene todavía: no existe contenido/matematicas-6basico/lecciones.json ni el
    de Ciencias. Es contenido pendiente (Bloque B), no un olvido — se enciende recién
-   cuando ese banco exista, como hicieron 3°, 5° y 7° al nacer. */
-const HAY_MINICLASES=false;
+   4° las tiene desde el 06/09/2026, y SOLO en Lenguaje: seis lecciones, cuatro de
+   ellas con practica. Matematica de 4° sigue sin su camino ensena->desafio, asi que
+   aqui no hay campana con `esLecciones` — los cuatro usos de esta bandera en motor.js
+   estan guardados por `esLecciones` o `capitulosMate`, de modo que encenderla NO
+   cambia la campana ni el Jefe Final. Lo que si habilita es el ✕ del quiz: sin ella,
+   salir de la practica de una mini-clase deja al alumno tirado en la pantalla del
+   quiz (el defecto que Roberto encontro el 06/09 en 3°, 5° y 7°). */
+const HAY_MINICLASES=true;
+/* ⚠️ La llamada va PEGADA a la bandera y a sus rutas, no arriba con las otras
+   constantes: un `const` leido antes de declararse mata todo el JavaScript (zona
+   muerta temporal), y esa trampa ya mordio cuatro veces en este proyecto. */
+LECC.init({ rutas:['contenido/lenguaje-6basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
 /* ¿Este nivel tiene el módulo de Vocabulario, y la biblioteca de lecturas del colegio?
    Son contenido de 8°. Antes se resolvían BORRANDO líneas del fork, y ese corte dejó
    la asignatura Lenguaje inalcanzable en 3° (Sesión 61). Como banderas, las apps

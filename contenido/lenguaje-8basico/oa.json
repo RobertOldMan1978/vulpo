@@ -4,7 +4,7 @@
   "codigo_asignatura": "LE08",
   "fuente": "Bases Curriculares 7° básico a 2° medio — MINEDUC Chile (curriculumnacional.cl)",
   "url_fuente": "https://www.curriculumnacional.cl/curriculum/7o-basico-2o-medio/lengua-literatura/8-basico",
-  "nota_fidelidad": "Cobertura de año completo (LE08 OA 01-15). Textos alineados a las Bases Curriculares; validar la redacción literal contra el PDF oficial del MINEDUC. La expedición 'Tipos de texto y medios' usa los OA reales: OA03 (narración), OA11 (textos no literarios), OA10 (textos mediáticos y publicidad) y OA09 (argumentación).",
+  "nota_fidelidad": "Cobertura de ano completo VERIFICADA el 06/09/2026: los 26 OA oficiales (LE08 OA 01-26). ADVERTENCIA HISTORICA: hasta esa fecha este archivo tenia solo 15 OA (01-15, Lectura y Escritura) y su propia nota declaraba ese recorte como si fuera el ano completo, asi que el banco de Lenguaje de 8 cubria 15 de 26 objetivos sin que nada lo delatara: los cuatro auditores automaticos revisan la FORMA del archivo, no su cobertura contra las Bases Curriculares. Los 11 OA que faltaban (16-26: cinco de Escritura, cuatro de Comunicacion oral y dos de Investigacion) se transcribieron de curriculumnacional.cl contrastando la ficha de la asignatura con la ficha individual de un OA (le08-oa-20, que calza literal) y con los OA equivalentes de 7 basico ya validados en el repositorio, que son el mismo esqueleto corrido en uno. La expedicion 'Tipos de texto y medios' usa los OA reales: OA03 (narracion), OA11 (textos no literarios), OA10 (textos mediaticos y publicidad) y OA09 (argumentacion).",
   "habilidades_generales": [
     "Leer comprensivamente",
     "Localizar, interpretar y reflexionar sobre la información",
@@ -17,55 +17,474 @@
     "Respetar la diversidad de opiniones y expresiones."
   ],
   "unidades": [
-    { "id": "U1", "titulo": "Lectura literaria", "descripcion": "Narración, poesía, teatro, epopeya, comedia e interpretación de obras literarias.", "oa": ["LE08 OA 01", "LE08 OA 02", "LE08 OA 03", "LE08 OA 04", "LE08 OA 05", "LE08 OA 06", "LE08 OA 07", "LE08 OA 08"] },
-    { "id": "U2", "titulo": "Textos no literarios y medios", "descripcion": "Argumentación, textos mediáticos y publicidad, textos no literarios y estrategias de comprensión.", "oa": ["LE08 OA 09", "LE08 OA 10", "LE08 OA 11", "LE08 OA 12"] },
-    { "id": "U3", "titulo": "Escritura", "descripcion": "Escribir para expresarse creativamente, para explicar y para persuadir.", "oa": ["LE08 OA 13", "LE08 OA 14", "LE08 OA 15"] }
+    {
+      "id": "U1",
+      "titulo": "Lectura literaria",
+      "descripcion": "Narración, poesía, teatro, epopeya, comedia e interpretación de obras literarias.",
+      "oa": [
+        "LE08 OA 01",
+        "LE08 OA 02",
+        "LE08 OA 03",
+        "LE08 OA 04",
+        "LE08 OA 05",
+        "LE08 OA 06",
+        "LE08 OA 07",
+        "LE08 OA 08"
+      ]
+    },
+    {
+      "id": "U2",
+      "titulo": "Textos no literarios y medios",
+      "descripcion": "Argumentación, textos mediáticos y publicidad, textos no literarios y estrategias de comprensión.",
+      "oa": [
+        "LE08 OA 09",
+        "LE08 OA 10",
+        "LE08 OA 11",
+        "LE08 OA 12"
+      ]
+    },
+    {
+      "id": "U3",
+      "titulo": "Escritura",
+      "descripcion": "Escribir para expresarse creativamente, para explicar y para persuadir.",
+      "oa": [
+        "LE08 OA 13",
+        "LE08 OA 14",
+        "LE08 OA 15",
+        "LE08 OA 16",
+        "LE08 OA 17",
+        "LE08 OA 18",
+        "LE08 OA 19",
+        "LE08 OA 20"
+      ]
+    },
+    {
+      "id": "U4",
+      "titulo": "Comunicación oral",
+      "descripcion": "Escuchar y evaluar textos orales, dialogar, exponer y usar el registro adecuado.",
+      "oa": [
+        "LE08 OA 21",
+        "LE08 OA 22",
+        "LE08 OA 23",
+        "LE08 OA 24"
+      ]
+    },
+    {
+      "id": "U5",
+      "titulo": "Investigación",
+      "descripcion": "Investigar sobre un tema, evaluar fuentes y sintetizar lo encontrado.",
+      "oa": [
+        "LE08 OA 25",
+        "LE08 OA 26"
+      ]
+    }
   ],
   "oa": [
-    { "codigo": "LE08 OA 01", "eje": "Lectura", "unidad": "U1",
+    {
+      "codigo": "LE08 OA 01",
+      "eje": "Lectura",
+      "unidad": "U1",
       "texto": "Leer habitualmente para aprender y recrearse, y seleccionar textos de acuerdo con sus preferencias y propósitos.",
-      "conceptos_clave": ["hábito lector", "propósito de lectura", "selección de textos", "preferencias lectoras", "aprender y recrearse", "tipos de lectura", "biblioteca", "autonomía lectora"] },
-    { "codigo": "LE08 OA 02", "eje": "Lectura", "unidad": "U1",
+      "conceptos_clave": [
+        "hábito lector",
+        "propósito de lectura",
+        "selección de textos",
+        "preferencias lectoras",
+        "aprender y recrearse",
+        "tipos de lectura",
+        "biblioteca",
+        "autonomía lectora"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 02",
+      "eje": "Lectura",
+      "unidad": "U1",
       "texto": "Reflexionar sobre las diferentes dimensiones de la experiencia humana, propia y ajena, a partir de la lectura de obras literarias y otros textos que forman parte de nuestras herencias culturales.",
-      "conceptos_clave": ["experiencia humana", "temas literarios", "herencia cultural", "reflexión", "empatía", "valores y conflictos", "interpretación personal", "diversidad cultural"] },
-    { "codigo": "LE08 OA 03", "eje": "Lectura", "unidad": "U1",
+      "conceptos_clave": [
+        "experiencia humana",
+        "temas literarios",
+        "herencia cultural",
+        "reflexión",
+        "empatía",
+        "valores y conflictos",
+        "interpretación personal",
+        "diversidad cultural"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 03",
+      "eje": "Lectura",
+      "unidad": "U1",
       "texto": "Analizar las narraciones leídas considerando el conflicto, la evolución de los personajes, las relaciones textuales, las características del narrador, personajes tipo, símbolos, tópicos literarios y la disposición temporal de los hechos.",
-      "conceptos_clave": ["narrador", "narrador omnisciente", "narrador protagonista", "narrador testigo", "conflicto", "personajes tipo", "símbolo", "tópico literario", "estructura narrativa", "ambiente"] },
-    { "codigo": "LE08 OA 04", "eje": "Lectura", "unidad": "U1",
+      "conceptos_clave": [
+        "narrador",
+        "narrador omnisciente",
+        "narrador protagonista",
+        "narrador testigo",
+        "conflicto",
+        "personajes tipo",
+        "símbolo",
+        "tópico literario",
+        "estructura narrativa",
+        "ambiente"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 04",
+      "eje": "Lectura",
+      "unidad": "U1",
       "texto": "Analizar los poemas leídos considerando cómo el lenguaje poético apela a los sentidos, sugiere estados de ánimo y crea imágenes; el efecto del lenguaje figurado y el impacto de las repeticiones.",
-      "conceptos_clave": ["lenguaje poético", "lenguaje figurado", "figuras literarias", "comparación", "metáfora", "personificación", "hablante lírico", "verso y estrofa", "rima", "imagen sensorial"] },
-    { "codigo": "LE08 OA 05", "eje": "Lectura", "unidad": "U1",
+      "conceptos_clave": [
+        "lenguaje poético",
+        "lenguaje figurado",
+        "figuras literarias",
+        "comparación",
+        "metáfora",
+        "personificación",
+        "hablante lírico",
+        "verso y estrofa",
+        "rima",
+        "imagen sensorial"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 05",
+      "eje": "Lectura",
+      "unidad": "U1",
       "texto": "Analizar los textos dramáticos leídos o vistos considerando el conflicto, los personajes principales y tipo, símbolos, tópicos, las características del género y la diferencia entre obra dramática y teatral.",
-      "conceptos_clave": ["texto dramático", "obra dramática", "obra teatral", "acto y escena", "diálogo", "acotación", "conflicto dramático", "personaje", "parlamento", "dramaturgo"] },
-    { "codigo": "LE08 OA 06", "eje": "Lectura", "unidad": "U1",
+      "conceptos_clave": [
+        "texto dramático",
+        "obra dramática",
+        "obra teatral",
+        "acto y escena",
+        "diálogo",
+        "acotación",
+        "conflicto dramático",
+        "personaje",
+        "parlamento",
+        "dramaturgo"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 06",
+      "eje": "Lectura",
+      "unidad": "U1",
       "texto": "Leer y comprender fragmentos de epopeya, considerando sus características y el contexto en el que se enmarcan.",
-      "conceptos_clave": ["epopeya", "héroe épico", "hazaña", "narración en verso", "contexto histórico", "valores heroicos", "mito y epopeya", "tradición oral"] },
-    { "codigo": "LE08 OA 07", "eje": "Lectura", "unidad": "U1",
+      "conceptos_clave": [
+        "epopeya",
+        "héroe épico",
+        "hazaña",
+        "narración en verso",
+        "contexto histórico",
+        "valores heroicos",
+        "mito y epopeya",
+        "tradición oral"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 07",
+      "eje": "Lectura",
+      "unidad": "U1",
       "texto": "Leer y comprender comedias teatrales, considerando sus características y el contexto en el que se enmarcan.",
-      "conceptos_clave": ["comedia", "género dramático", "humor", "enredo", "personaje cómico", "desenlace feliz", "crítica social", "contexto de la obra"] },
-    { "codigo": "LE08 OA 08", "eje": "Lectura", "unidad": "U1",
+      "conceptos_clave": [
+        "comedia",
+        "género dramático",
+        "humor",
+        "enredo",
+        "personaje cómico",
+        "desenlace feliz",
+        "crítica social",
+        "contexto de la obra"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 08",
+      "eje": "Lectura",
+      "unidad": "U1",
       "texto": "Formular una interpretación de los textos literarios leídos o vistos, coherente con su análisis, considerando su experiencia personal, un dilema presentado en el texto y la relación de la obra con la visión de mundo y el contexto histórico en el que se sitúa.",
-      "conceptos_clave": ["interpretación", "tema de la obra", "dilema", "visión de mundo", "contexto histórico", "experiencia personal", "evidencia textual", "mensaje del texto"] },
-    { "codigo": "LE08 OA 09", "eje": "Lectura", "unidad": "U2",
+      "conceptos_clave": [
+        "interpretación",
+        "tema de la obra",
+        "dilema",
+        "visión de mundo",
+        "contexto histórico",
+        "experiencia personal",
+        "evidencia textual",
+        "mensaje del texto"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 09",
+      "eje": "Lectura",
+      "unidad": "U2",
       "texto": "Analizar y evaluar textos de los medios de comunicación de carácter argumentativo, como columnas de opinión, cartas al director y discursos, considerando la postura del autor, los argumentos y la diferencia entre hecho y opinión.",
-      "conceptos_clave": ["texto argumentativo", "tesis o postura", "argumento", "contraargumento", "hecho y opinión", "columna de opinión", "carta al director", "conector argumentativo", "propósito de persuadir"] },
-    { "codigo": "LE08 OA 10", "eje": "Lectura", "unidad": "U2",
+      "conceptos_clave": [
+        "texto argumentativo",
+        "tesis o postura",
+        "argumento",
+        "contraargumento",
+        "hecho y opinión",
+        "columna de opinión",
+        "carta al director",
+        "conector argumentativo",
+        "propósito de persuadir"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 10",
+      "eje": "Lectura",
+      "unidad": "U2",
       "texto": "Analizar textos de los medios de comunicación, como noticias, reportajes y publicidad, considerando el propósito, los hechos versus las opiniones, los estereotipos, los recursos y los elementos visuales.",
-      "conceptos_clave": ["texto mediático", "publicidad", "propaganda", "propósito comunicativo", "recurso persuasivo", "eslogan", "estereotipo", "hecho y opinión", "elementos visuales", "lectura crítica"] },
-    { "codigo": "LE08 OA 11", "eje": "Lectura", "unidad": "U2",
+      "conceptos_clave": [
+        "texto mediático",
+        "publicidad",
+        "propaganda",
+        "propósito comunicativo",
+        "recurso persuasivo",
+        "eslogan",
+        "estereotipo",
+        "hecho y opinión",
+        "elementos visuales",
+        "lectura crítica"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 11",
+      "eje": "Lectura",
+      "unidad": "U2",
       "texto": "Leer y comprender textos no literarios (noticias, reportajes, textos expositivos, entre otros) para contextualizar, complementar y profundizar la información.",
-      "conceptos_clave": ["texto no literario", "texto expositivo", "noticia", "reportaje", "propósito informar", "titular y entrada", "estructura del texto", "idea principal", "hecho y dato", "fuente de información"] },
-    { "codigo": "LE08 OA 12", "eje": "Lectura", "unidad": "U2",
+      "conceptos_clave": [
+        "texto no literario",
+        "texto expositivo",
+        "noticia",
+        "reportaje",
+        "propósito informar",
+        "titular y entrada",
+        "estructura del texto",
+        "idea principal",
+        "hecho y dato",
+        "fuente de información"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 12",
+      "eje": "Lectura",
+      "unidad": "U2",
       "texto": "Aplicar estrategias de comprensión de acuerdo con sus propósitos de lectura: resumir, formular preguntas, y analizar los distintos tipos de relaciones que establecen las imágenes o el sonido con el texto escrito en textos multimodales.",
-      "conceptos_clave": ["estrategia de comprensión", "resumir", "formular preguntas", "idea principal e ideas secundarias", "inferencia", "texto multimodal", "relación imagen-texto", "propósito de lectura"] },
-    { "codigo": "LE08 OA 13", "eje": "Escritura", "unidad": "U3",
+      "conceptos_clave": [
+        "estrategia de comprensión",
+        "resumir",
+        "formular preguntas",
+        "idea principal e ideas secundarias",
+        "inferencia",
+        "texto multimodal",
+        "relación imagen-texto",
+        "propósito de lectura"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 13",
+      "eje": "Escritura",
+      "unidad": "U3",
       "texto": "Expresarse creativamente por medio de la escritura de textos de diversos géneros (por ejemplo, cuentos, crónicas, diarios de vida, cartas, poemas), escogiendo libremente el tema, el género y el destinatario.",
-      "conceptos_clave": ["escritura creativa", "género textual", "cuento", "crónica", "poema", "tema y destinatario", "planificación", "borrador", "revisión y edición", "voz del autor"] },
-    { "codigo": "LE08 OA 14", "eje": "Escritura", "unidad": "U3",
+      "conceptos_clave": [
+        "escritura creativa",
+        "género textual",
+        "cuento",
+        "crónica",
+        "poema",
+        "tema y destinatario",
+        "planificación",
+        "borrador",
+        "revisión y edición",
+        "voz del autor"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 14",
+      "eje": "Escritura",
+      "unidad": "U3",
       "texto": "Escribir, con el propósito de explicar un tema, textos de diversos géneros con una presentación clara, información de distintas fuentes, hechos y ejemplos, progresión temática, recursos gráficos y un cierre coherente.",
-      "conceptos_clave": ["texto expositivo", "propósito de explicar", "estructura introducción-desarrollo-cierre", "progresión temática", "fuentes de información", "conector", "recurso gráfico", "coherencia y cohesión"] },
-    { "codigo": "LE08 OA 15", "eje": "Escritura", "unidad": "U3",
+      "conceptos_clave": [
+        "texto expositivo",
+        "propósito de explicar",
+        "estructura introducción-desarrollo-cierre",
+        "progresión temática",
+        "fuentes de información",
+        "conector",
+        "recurso gráfico",
+        "coherencia y cohesión"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 15",
+      "eje": "Escritura",
+      "unidad": "U3",
       "texto": "Escribir, con el propósito de persuadir, textos breves de diversos géneros, con afirmaciones sobre temas contingentes o literarios, evidencias pertinentes y una coherencia temática mantenida.",
-      "conceptos_clave": ["texto persuasivo", "propósito de persuadir", "tesis", "argumento y evidencia", "tema contingente", "coherencia temática", "conector causal", "destinatario"] }
-  ]
+      "conceptos_clave": [
+        "texto persuasivo",
+        "propósito de persuadir",
+        "tesis",
+        "argumento y evidencia",
+        "tema contingente",
+        "coherencia temática",
+        "conector causal",
+        "destinatario"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 16",
+      "eje": "Escritura",
+      "unidad": "U3",
+      "texto": "Planificar, escribir, revisar, reescribir y editar sus textos en función del contexto, el destinatario y el propósito: recopilando información e ideas y organizándolas antes de escribir; adecuando el registro, específicamente, el vocabulario (uso de términos técnicos, frases hechas, palabras propias de las redes sociales, términos y expresiones propios del lenguaje hablado), el uso de la persona gramatical, y la estructura del texto al género discursivo, contexto y destinatario; incorporando información pertinente; asegurando la coherencia y la cohesión del texto; cuidando la organización a nivel oracional y textual; usando conectores adecuados para unir las secciones que componen el texto y relacionando las ideas dentro de cada párrafo; usando un vocabulario variado y preciso; reconociendo y corrigiendo usos inadecuados, especialmente de pronombres personales y reflejos, conjugaciones verbales, participios irregulares, y concordancia sujeto-verbo, artículo-sustantivo y sustantivo-adjetivo; corrigiendo la ortografía y mejorando la presentación; usando eficazmente las herramientas del procesador de textos.",
+      "conceptos_clave": [
+        "proceso de escritura",
+        "planificar",
+        "revisar y editar",
+        "registro",
+        "destinatario",
+        "coherencia y cohesión",
+        "conector",
+        "concordancia",
+        "participio irregular"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 17",
+      "eje": "Escritura",
+      "unidad": "U3",
+      "texto": "Usar adecuadamente oraciones complejas: manteniendo un referente claro; conservando la coherencia temporal; ubicando el sujeto, para determinar de qué o quién se habla.",
+      "conceptos_clave": [
+        "oración compleja",
+        "referente",
+        "coherencia temporal",
+        "sujeto",
+        "predicado"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 18",
+      "eje": "Escritura",
+      "unidad": "U3",
+      "texto": "Construir textos con referencias claras: usando recursos de correferencia como deícticos —en particular, pronombres personales tónicos y átonos— y nominalización, sustitución pronominal y elipsis, entre otros; analizando si los recursos de correferencia utilizados evitan o contribuyen a la pérdida del referente, cambios de sentido o problemas de estilo.",
+      "conceptos_clave": [
+        "correferencia",
+        "deíctico",
+        "pronombre personal",
+        "nominalización",
+        "elipsis",
+        "pérdida del referente"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 19",
+      "eje": "Escritura",
+      "unidad": "U3",
+      "texto": "Conocer los modos verbales, analizar sus usos y seleccionar el más apropiado para lograr un efecto en el lector, especialmente al escribir textos con finalidad persuasiva.",
+      "conceptos_clave": [
+        "modo verbal",
+        "indicativo",
+        "subjuntivo",
+        "imperativo",
+        "finalidad persuasiva"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 20",
+      "eje": "Escritura",
+      "unidad": "U3",
+      "texto": "Escribir correctamente para facilitar la comprensión al lector: aplicando todas las reglas de ortografía literal y acentual; verificando la escritura de las palabras cuya ortografía no está sujeta a reglas; usando correctamente punto, coma, raya y dos puntos.",
+      "conceptos_clave": [
+        "ortografía literal",
+        "ortografía acentual",
+        "tilde",
+        "punto",
+        "coma",
+        "raya",
+        "dos puntos"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 21",
+      "eje": "Comunicación oral",
+      "unidad": "U4",
+      "texto": "Comprender, comparar y evaluar textos orales y audiovisuales tales como exposiciones, discursos, documentales, noticias, reportajes, etc., considerando: su postura personal frente a lo escuchado y argumentos que la sustenten; los temas, conceptos o hechos principales; el contexto en el que se enmarcan los textos; prejuicios expresados en los textos; una distinción entre los hechos y las opiniones expresados; diferentes puntos de vista expresados en los textos; las relaciones que se establecen entre imágenes, texto y sonido; relaciones entre lo escuchado y los temas y obras estudiados durante el curso.",
+      "conceptos_clave": [
+        "texto oral",
+        "texto audiovisual",
+        "hecho y opinión",
+        "prejuicio",
+        "punto de vista",
+        "imagen-texto-sonido"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 22",
+      "eje": "Comunicación oral",
+      "unidad": "U4",
+      "texto": "Dialogar constructivamente para debatir o explorar ideas: manteniendo el foco; demostrando comprensión de lo dicho por el interlocutor; fundamentando su postura de manera pertinente; formulando preguntas o comentarios que estimulen o hagan avanzar la discusión o profundicen un aspecto del tema; negociando acuerdos con los interlocutores; reformulando sus comentarios para desarrollarlos mejor; considerando al interlocutor para la toma de turnos.",
+      "conceptos_clave": [
+        "diálogo",
+        "debate",
+        "mantener el foco",
+        "fundamentar",
+        "toma de turnos",
+        "negociar acuerdos"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 23",
+      "eje": "Comunicación oral",
+      "unidad": "U4",
+      "texto": "Expresarse frente a una audiencia de manera clara y adecuada a la situación para comunicar temas de su interés: presentando información fidedigna y que denota una investigación previa; siguiendo una progresión temática clara; recapitulando la información más relevante o más compleja para asegurarse de que la audiencia comprenda; usando un vocabulario variado y preciso y evitando el uso de muletillas; usando conectores adecuados para hilar la presentación; usando material visual que apoye lo dicho y se relacione directamente con lo que se explica.",
+      "conceptos_clave": [
+        "exposición oral",
+        "progresión temática",
+        "recapitular",
+        "muletilla",
+        "conector",
+        "material de apoyo"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 24",
+      "eje": "Comunicación oral",
+      "unidad": "U4",
+      "texto": "Usar conscientemente los elementos que influyen y configuran los textos orales: comparando textos orales y escritos para establecer las diferencias, considerando el contexto y el destinatario; demostrando dominio de los distintos registros y empleándolos adecuadamente según la situación; utilizando estrategias que permiten cuidar la relación con el otro, especialmente al mostrar desacuerdo; utilizando un volumen, una velocidad y una dicción adecuados al propósito y a la situación.",
+      "conceptos_clave": [
+        "registro formal e informal",
+        "oralidad y escritura",
+        "mostrar desacuerdo",
+        "volumen",
+        "dicción"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 25",
+      "eje": "Investigación",
+      "unidad": "U5",
+      "texto": "Realizar investigaciones sobre diversos temas para complementar sus lecturas o responder interrogantes relacionadas con el lenguaje y la literatura: delimitando el tema de investigación; aplicando criterios para determinar la confiabilidad de las fuentes consultadas; usando los organizadores y la estructura textual para encontrar información de manera eficiente; evaluando si los textos entregan suficiente información para responder una determinada pregunta o cumplir un propósito; descartando fuentes que no aportan a la investigación porque se alejan del tema; organizando en categorías la información encontrada en las fuentes investigadas; registrando la información bibliográfica de las fuentes consultadas; elaborando un texto oral o escrito bien estructurado que comunique sus hallazgos.",
+      "conceptos_clave": [
+        "investigación",
+        "delimitar el tema",
+        "confiabilidad de la fuente",
+        "organizadores textuales",
+        "referencia bibliográfica"
+      ]
+    },
+    {
+      "codigo": "LE08 OA 26",
+      "eje": "Investigación",
+      "unidad": "U5",
+      "texto": "Sintetizar, registrar y ordenar las ideas principales de textos escuchados o leídos para satisfacer propósitos como estudiar, hacer una investigación, recordar detalles, etc.",
+      "conceptos_clave": [
+        "idea principal",
+        "síntesis",
+        "registro de información",
+        "toma de notas"
+      ]
+    }
+  ],
+  "nota_evaluacion": "Lenguaje es la asignatura menos evaluable por quiz, como en 3, 4, 5, 6 y 7: de sus 26 OA, nueve son de PRODUCCION o de HABITO (01 habito lector; 13 escritura creativa de tema libre; 14, 15, 16 escritura; 22, 23, 24 comunicacion oral; 25 investigacion). Un quiz no puede medir que un alumno escriba un cuento ni que exponga frente al curso: solo puede medir si RECONOCE la buena decision, y por eso sus preguntas plantean siempre el trabajo YA HECHO por un tercero con nombre, nunca 'hazlo tu'. OJO CON EL MAPA DE DOMINIO: el profesor va a ver un porcentaje junto a 'escribir para persuadir', y eso se lee como una nota de escritura si no se cuida. PENDIENTE DE CRITERIO: el LE08 OA 13 (expresarse creativamente escogiendo libremente el tema y el genero) es el gemelo textual del LE07 OA 12, que en 7 basico SI se excluyo del banco por ese motivo. Aqui esta dentro y con preguntas ya aprobadas, asi que la diferencia se deja documentada en vez de borrar contenido firmado; los mismos criterios deberian darles el mismo trato."
 }

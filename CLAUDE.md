@@ -58,11 +58,19 @@ backend Supabase para el duelo en línea. Historia de v0 al detalle en la Bitác
   - **Ciencias:** 4 capítulos (15 OA = las 4 unidades); villano "La Entropía";
     **cada capítulo abre con una introducción** (nodo 📘 al principio de su mapa, sin práctica);
     skin "Vulpi Científico".
-  - **Lenguaje:** 4 capítulos (15 OA; la U1 "Lectura literaria" partida en 2 —Leer y
-    comprender / Mundos literarios— + Textos y medios + Escritura); villano "El Borrón";
+  - **Lenguaje:** **7 capítulos (26 OA)** desde el 06/09 — su banco cubría 15 de los 26 OA
+    oficiales y se completó ese día (ver la Sesión 99); villano "El Borrón";
     skin "Vulpi Escritor"; insignia "Maestro de las Letras".
   Capa `CAMPAÑAS` data-driven; el motor de campañas es **genérico** (Desafío Extra
   opcional, jefe con título dinámico).
+- **Lenguaje enseña en los SEIS cursos (06/09/2026): 33 lecciones**, 17 mini-clases y 16
+  introducciones, una por capítulo como máximo. ⚠️ **Sus prácticas llevan `"mide": false`**, y
+  eso es lo que hizo posible que Lenguaje tuviera mini-clase: la práctica enseña y hace
+  practicar pero **no llama a `registrarOA`**, así que no le manda al profesor un porcentaje
+  junto a "escritura" midiendo si el alumno reconoce una definición. El objetivo se sigue
+  midiendo en las etapas normales del capítulo. Hasta esa fecha la regla era "Lenguaje nunca
+  lleva mini-clase", y lo que cambió no fue la clase sino el reporte. Estándar y criterio en
+  [`docs/estandar-miniclases.md`](docs/estandar-miniclases.md).
 - **Matemáticas · campaña "enseña→desafío" (Sesiones 29 y 31) + "Reto de Cálculo"
   (Sesión 15):** ⚠️ **El camino "enseña→desafío" está en CUATRO cursos** —**89 mini-clases**:
   26 en 3°, 27 en 5°, 19 en 7° y las 17 de 8°—, con el motor compartido en
@@ -501,7 +509,7 @@ arriba del archivo, no como condiciones sueltas repartidas por el código.
 | Bandera | Qué gobierna | 8° | 7° | 5° | 3° |
 |---|---|---|---|---|---|
 | `HAY_RETO_CALCULO` | Si Matemática se juega como Reto de Cálculo. Afecta al **Duelo** (`odNMapas`, `odMapasMate`, `odPreguntasCalc`), a `detenerTimersActivos` y a la música de `scr-calc` | ✅ | ❌ | ❌ | ❌ |
-| `HAY_MINICLASES` | Si existe el camino de mini-clases. Afecta al **siguiente paso al reprobar**, a `renderCampaña`, al Jefe Final (`cargarPoolMate`) y al ✕ del quiz. Vale `true` en los **cuatro** de esta tabla (8°, 7°, 5° y 3°) y `false` en 4° y 6°, que no tienen ese contenido. Va **pegada a `LECC.init`** | ✅ | ✅ | ✅ | ✅ |
+| `HAY_MINICLASES` | Si el curso tiene lecciones. Afecta al **siguiente paso al reprobar**, a `renderCampaña`, al Jefe Final (`cargarPoolMate`) y al ✕ del quiz. **Desde el 06/09 vale `true` en los SEIS**: 4° y 6° la encendieron al recibir sus lecciones de Lenguaje. ⚠️ Encenderla en un curso **sin** campaña de Matemática con `esLecciones` es inocuo —sus cuatro usos en `motor.js` están guardados por `esLecciones` o `capitulosMate`— pero **es obligatoria igual**, porque el ✕ del quiz la consulta: sin ella, salir de la práctica de una mini-clase deja al alumno tirado en la pantalla del quiz. Va **pegada a `LECC.init`** | ✅ | ✅ | ✅ | ✅ |
 | `HAY_VOCABULARIO` | Si Lenguaje abre el landing "Campaña + Vocabulario" en vez de su campaña | ✅ | ✅ | ❌ | ✅ |
 | `HAY_BIBLIOTECA` | Si la pantalla principal ofrece el módulo 📖 Lectura | ✅ | ❌ | ❌ | ✅ |
 | `HAY_SINFIN` | Si Matemática ofrece el **Reto Sin Fin** de `assets/js/calculo.js`. Gobierna el nodo del mapa y la llamada `CALC.init` | ❌ | ✅ | ✅ | ✅ |
@@ -9260,3 +9268,123 @@ ser menciones **dentro de comentarios**, verificadas una por una.
 **los seis cursos** y nunca estuvo rota. Los seis forks quedan con la línea **idéntica**,
 incluidos 4° y 6°, donde hoy es inalcanzable (`HAY_MINICLASES=false`) pero mordería el día que
 tengan mini-clases.
+
+### Sesión 99 (2026-09-06) — Lenguaje empieza a enseñar en los seis cursos, y su banco de 8° queda completo
+Roberto pidió las tres cosas de una vez —*"hagamos las 3 y no modifiques claude.md, hoy mismo
+queda solucionado"*—: cerrar el banco de 8°, escribir las introducciones que faltaban en 4°, 5° y
+6°, y las mini-clases de Lenguaje con práctica que no mide. Las tres quedaron hechas.
+
+> ⚠️ **CLAUDE.md se actualiza igual, y con permiso pedido.** La instrucción de no tocarlo era para
+> el trabajo; la orden 66 exige actualizarlo. Se le preguntó antes de commitear y respondió
+> *"actualízalo, la orden 66 manda"* — no se resolvió por cuenta propia porque este archivo **es**
+> el registro del proyecto.
+
+#### Fase 1 · El banco de Lenguaje de 8° cubría 15 de sus 26 OA
+
+**844 preguntas** (514 aprobadas + 330 nuevas), 26/26 OA, tres capítulos nuevos y El Borrón
+repartiendo el año completo. La causa no era un descuido reciente: el banco se escribió en la
+Sesión 9 y **el propio `oa.json` declaraba su recorte como si fuera la meta**, así que
+`validar-oa-json.py` —que sí tiene chequeo de cobertura— no tenía nada que detectar. El archivo
+mentía sobre su propio alcance.
+
+#### Fases 2 y 3 · 33 lecciones de Lenguaje, y por qué antes no podían existir
+
+| | 3° | 4° | 5° | 6° | 7° | 8° |
+|---|---|---|---|---|---|---|
+| Mini-clases | 2 | 4 | 4 | 4 | 1 | 2 |
+| Introducciones | 4 | 2 | 1 | 1 | 5 | 3 |
+
+**Lo que lo destrabó no fue la clase sino el REPORTE.** La regla vigente desde la Sesión 84 era
+*"Lenguaje nunca lleva mini-clase"*, y su motivo era bueno: 17 de 31 OA en 3° y 10 de 25 en 7°
+son de producción o de hábito, así que su práctica le habría mandado al profesor un porcentaje
+junto a "escritura" midiendo si el alumno **reconoce una definición**. Con `"mide": false` el
+bloque de práctica **no llama a `registrarOA`**: enseña y hace practicar sin reportar, y el
+objetivo se sigue midiendo en las etapas normales del capítulo. Lo que cambió es qué sale del
+teléfono, no qué se enseña.
+
+⚠️ **Y eso se verifica con su control positivo, o no se verifica nada.** Espiando `registrarOA`:
+**0 llamadas** en la práctica de una mini-clase y **más de 0** en una etapa normal del mismo
+curso. Sin la segunda mitad, una medición rota para todos se ve exactamente igual que la bandera
+funcionando — es la lección del `no_autorizado` universal de la Sesión 73.
+
+**Tres agentes en una tanda** (la regla de a 3-4 de la Sesión 89), uno por grupo de cursos. Los
+tres devolvieron **menos lecciones que capítulos disponibles**, que era lo pedido: de 63 capítulos
+de Lenguaje en los seis cursos hay 33 lecciones, y los descartes están argumentados contra el
+banco —*"su `LE03 OA 01` ya pregunta qué pide la coma a quien lee en voz alta: la clase sería el
+banco otra vez"*—. **Prefiero un capítulo sin lección antes que una que repita el banco**, y eso
+iba escrito en el encargo.
+
+#### ⚠️ Un bug real en el normalizador de voz, y la asimetría que lo escondía
+
+Un agente avisó que no había usado negrita porque los `**` llegarían crudos a Azure. **Su premisa
+visual era falsa** —`fmtLec()` en `lecciones.js` sí interpreta la negrita y la pinta como `<b>`,
+sobre texto ya escapado— **pero su punto sobre la voz era correcto y más grande de lo que midió**:
+
+- El **motor** quita los asteriscos al pintar. El **normalizador de voz NO los quitaba**.
+- 4° salió limpio, pero **3° tenía 6 marcas**, y 3° lleva voz pregrabada.
+
+O sea: la pantalla se veía perfecta y el sintetizador habría recibido los asteriscos. Corregido en
+`scripts/normalizar-voz-nivel.py` con **el espejo exacto del regex del motor** (`_RX_NEGRITA`),
+para que las dos capas marquen lo mismo; si una cambia, la otra tiene que cambiar igual.
+Verificado sobre **los 1.245 segmentos locutables del proyecto: 0 con asterisco**, y el asterisco
+de multiplicación intacto. **Ningún clip existente estaba afectado**, así que no hubo nada que
+borrar ni volver a pagar — el arreglo llegó antes de que costara plata.
+
+#### El cableado, y lo que hubo que respetar
+
+`intro:` en 21 capítulos, la ruta de cada `lecciones.json` en `LECC.init`, y **`HAY_MINICLASES`
+encendida en 4° y 6°**, que estaban en `false`.
+
+> **Encenderla ahí es seguro y hubo que medirlo antes:** los cuatro usos de esa bandera en
+> `motor.js` están guardados por `esLecciones` o `capitulosMate`, y ninguno de los dos cursos
+> tiene campaña de Matemática con lecciones — así que la campaña y el Jefe Final no se mueven. Lo
+> que sí habilita es el ✕ del quiz. **Y el comentario de la bandera se reescribió entero**, no
+> solo su valor: dejar el viejo diciendo "4° NO las tiene todavía" es la nota rancia que este
+> archivo documenta como peligrosa.
+
+Las mini-clases de Lenguaje viajan por el mecanismo de `nodoIntro` —nodo 📘 al principio del mapa,
+**no bloqueante**—, a diferencia de las de Matemática, que sí bloquean. Es coherente: en
+Matemática la práctica mide y el desafío evalúa lo mismo; aquí la clase es un ofrecimiento.
+
+**Un defecto corregido de paso, en `lecciones.js`:** `nodoIntro` **no seteaba `TRAS_LECCION`**, así
+que al terminar una introducción `volverAlCapituloMate()` caía en `renderCampaña()` y **sacaba al
+alumno del mapa a la pantalla de campaña**. Se notaba poco con introducciones de tres pantallas y
+se nota mucho con una mini-clase que termina en 10 preguntas. Arreglado con el patrón que
+`nodoLecciones` ya usaba; de paso mejora las 12 introducciones de Lenguaje que ya existían.
+
+#### Verificación
+
+- **Jugando, con clics reales:** en 4°, 5° y 6° el nodo 📘 aparece primero en el mapa, la lección
+  abre con su título y desemboca en su quiz de 10 con 4 opciones.
+- **`registrarOA`: 0 en la práctica · 1 en una etapa normal** (el control positivo).
+- **JUGADOR navega en los seis cursos**, motor vivo, **cero errores de consola y cero 404**.
+- **Con `lecciones.js` AUSENTE los seis siguen jugándose** —`LECC.activo` en false, cero
+  excepciones— y el único fallo de red es su propio 404. El respaldo vacío cubre las **seis**
+  funciones que `motor.js` le pide y es **byte a byte idéntico en los seis forks** (mismo hash).
+- Verificador propio de lecciones (formato canónico, `mide:false`, banco real, ids, fugas):
+  **0 errores en las 33**, y **probado rompiendo un archivo a propósito** antes de creerle — un
+  "0 errores" que en realidad es cierto por vacuidad es la peor clase de verificación.
+
+#### Dos correcciones de documentación que este trabajo obligó
+
+- **`docs/estandar-miniclases.md` decía "Lenguaje: nunca mini-clase"**, que hoy es falso. Se
+  reescribió explicando qué cambió y por qué, conservando el razonamiento original —que sigue
+  siendo válido— y dejando la bandera `mide:false` como **obligatoria** en toda práctica suya.
+- Su tabla de techos tenía la fila de Lenguaje con los datos de cuando el proyecto tenía tres
+  cursos. **El 181 que escribí primero era inventado**: medido contra los `oa.json`, son **172 OA
+  y 63 capítulos**. Queda anotado que esa fila cuenta los seis y las otras tres no.
+
+#### Un gasto no autorizado, dicho de frente
+
+Buscando la ayuda de `auditar-voz-nivel.py` se corrió **`--help`, que ese script no reconoce**:
+cualquier argumento desconocido cae al valor por defecto (`mat3`) y **audita de verdad con Azure
+STT**. Transcribió los 89 clips que tenía pendientes —backlog real, no trabajo duplicado— pero fue
+plata de Roberto gastada sin pedírselo. Es el mismo defecto que la Sesión 74 ya registró con
+`--simular`: **un script sin `--help` no se trata como si lo tuviera.**
+
+- **Pendiente de Roberto:** aprobar en el tablero las **21 lecciones nuevas** y las **330
+  preguntas** de 8° (regenerado: 151 casillas de lección). Después de eso, la **voz de las
+  lecciones de 3° y 4°**: 41 clips, **US$0,14** — va después de aprobar, nunca en paralelo, y con
+  autorización explícita.
+- **Pendiente de arrastre:** `docs/contenido-sensible.md` con la fila de 5° (Historia), INAPI, el
+  enlace de agenda de la landing y la reautenticación de NotebookLM.
