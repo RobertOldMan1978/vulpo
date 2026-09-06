@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "En el cuento, el gato se escabulló por la ventana antes de que lo vieran. ¿Qué significa se escabulló?",
+   "opciones": [
+    "Se escapó con cuidado y en silencio",
+    "Se quedó dormido mirando por la ventana",
+    "Rompió la ventana con fuerza",
+    "Llamó a otro gato para jugar"
+   ],
+   "correcta": 0,
+   "tip": "El contexto muestra que el gato salió sin que lo notaran, así que escabullirse es escapar con sigilo.",
+   "id": "leng4-oa10-1"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "Camila estaba exhausta después de correr toda la tarde y se sentó a descansar. ¿Qué significa exhausta?",
+   "opciones": [
+    "Muy cansada",
+    "Muy contenta",
+    "Muy asustada",
+    "Muy aburrida"
+   ],
+   "correcta": 0,
+   "tip": "Correr toda la tarde y necesitar descansar son claves del contexto que indican mucho cansancio.",
+   "id": "leng4-oa10-2"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "El explorador avanzó por la espesa selva, apartando ramas y hojas para poder pasar. ¿Qué significa espesa?",
+   "opciones": [
+    "Muy tupida y difícil de atravesar",
+    "Muy seca y sin plantas",
+    "Muy pequeña y fácil de cruzar",
+    "Muy fría y cubierta de nieve durante todo el año"
+   ],
+   "correcta": 0,
+   "tip": "Que tuviera que apartar ramas y hojas para pasar indica que la selva era muy tupida.",
+   "id": "leng4-oa10-3"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "Diego quedó perplejo cuando su perro empezó a imitar sonidos de otros animales. ¿Qué significa perplejo?",
+   "opciones": [
+    "Muy sorprendido y confundido",
+    "Muy enojado y molesto",
+    "Muy cansado y con mucho sueño después de correr",
+    "Muy alegre y feliz"
+   ],
+   "correcta": 0,
+   "tip": "Que un perro imite sonidos es algo inesperado, así que la reacción lógica es sorpresa y confusión.",
+   "id": "leng4-oa10-4"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "La anciana caminaba con parsimonia, disfrutando cada paso por el parque. ¿Qué significa parsimonia?",
+   "opciones": [
+    "Con calma y sin apuro",
+    "Con mucha rapidez y sin fijarse en nada",
+    "Con mucho miedo",
+    "Con mucho ruido"
+   ],
+   "correcta": 0,
+   "tip": "Disfrutar cada paso por el parque es una clave de que caminaba lentamente y sin apuro.",
+   "id": "leng4-oa10-5"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "El río se desbordó y anegó los campos cercanos, dejándolos cubiertos de agua. ¿Qué significa anegó?",
+   "opciones": [
+    "Cubrió de agua",
+    "Secó por completo",
+    "Congeló completamente",
+    "Iluminó con fuerza"
+   ],
+   "correcta": 0,
+   "tip": "El propio texto lo explica: los campos quedaron cubiertos de agua después de que el río se desbordara.",
+   "id": "leng4-oa10-6"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "Sofía sintió una profunda melancolía al recordar las vacaciones que ya habían terminado. ¿Qué significa melancolía?",
+   "opciones": [
+    "Una tristeza suave y silenciosa",
+    "Una alegría muy grande que dura mucho tiempo",
+    "Un miedo repentino",
+    "Un enojo muy fuerte"
+   ],
+   "correcta": 0,
+   "tip": "Recordar algo que ya terminó suele traer una tristeza suave, que es lo que significa melancolía.",
+   "id": "leng4-oa10-7"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "El científico observó cómo las plantas se marchitaban por falta de agua. ¿Qué significa se marchitaban?",
+   "opciones": [
+    "Perdían su frescura y se secaban",
+    "Crecían mucho más rápido",
+    "Cambiaban a un verde más intenso",
+    "Producían más flores nuevas"
+   ],
+   "correcta": 0,
+   "tip": "Que fuera por falta de agua indica que las plantas perdían su frescura, es decir, se secaban.",
+   "id": "leng4-oa10-8"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "Matías caminaba con sigilo para no despertar a su hermano dormido. ¿Qué significa con sigilo?",
+   "opciones": [
+    "Con mucho cuidado y en silencio",
+    "Con mucha fuerza y haciendo bastante ruido",
+    "Con mucha rapidez y gritos",
+    "Con las luces encendidas"
+   ],
+   "correcta": 0,
+   "tip": "No despertar a alguien dormido requiere caminar con cuidado y en silencio.",
+   "id": "leng4-oa10-9"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "El pueblo quedó desolado después de que todos sus habitantes se fueron. ¿Qué significa desolado?",
+   "opciones": [
+    "Vacío y sin nadie",
+    "Lleno de gente",
+    "Muy iluminado",
+    "Cubierto de flores"
+   ],
+   "correcta": 0,
+   "tip": "Si todos los habitantes se fueron, el pueblo quedó vacío, que es lo que significa desolado.",
+   "id": "leng4-oa10-10"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "La palabra desarmar empieza con el prefijo des-. ¿Qué idea agrega ese prefijo a la palabra armar?",
+   "opciones": [
+    "La idea contraria, o sea deshacer lo armado",
+    "La idea de repetir la acción de armar varias veces seguidas",
+    "La idea de hacerlo antes de tiempo",
+    "La idea de hacerlo con mucha fuerza"
+   ],
+   "correcta": 0,
+   "tip": "El prefijo des- suele indicar lo contrario de la acción, por eso desarmar es deshacer lo armado.",
+   "id": "leng4-oa10-11"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "La palabra rehacer lleva el prefijo re-. ¿Qué significa ese prefijo?",
+   "opciones": [
+    "Volver a hacer algo",
+    "Dejar de hacer algo",
+    "Hacer algo muy rápido",
+    "Hacer algo sin ganas"
+   ],
+   "correcta": 0,
+   "tip": "El prefijo re- suele indicar repetición, por eso rehacer significa volver a hacer algo.",
+   "id": "leng4-oa10-12"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "La palabra imposible lleva el prefijo im-. ¿Qué idea agrega ese prefijo a posible?",
+   "opciones": [
+    "La idea de negación, o sea que no se puede",
+    "La idea de que ocurre muy seguido, casi todos los días",
+    "La idea de que es muy fácil de lograr",
+    "La idea de que ya pasó hace tiempo"
+   ],
+   "correcta": 0,
+   "tip": "El prefijo im- niega el significado de la palabra, así que imposible significa que no se puede.",
+   "id": "leng4-oa10-13"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "La palabra panadería termina en el sufijo ería. ¿Qué suele indicar ese sufijo?",
+   "opciones": [
+    "Un lugar donde se hace o vende algo",
+    "Una acción que ocurrió hace mucho tiempo atrás",
+    "Un objeto muy pequeño",
+    "Una persona muy alegre"
+   ],
+   "correcta": 0,
+   "tip": "El sufijo ería suele nombrar el lugar donde se hace o se vende aquello que indica la raíz.",
+   "id": "leng4-oa10-14"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "La palabra perrito lleva el sufijo ito. ¿Qué idea agrega ese sufijo?",
+   "opciones": [
+    "Que algo es pequeño o querido",
+    "Que algo es enorme",
+    "Que algo pasó hace mucho tiempo",
+    "Que algo es peligroso"
+   ],
+   "correcta": 0,
+   "tip": "El sufijo ito suele indicar tamaño pequeño o cariño hacia lo nombrado.",
+   "id": "leng4-oa10-15"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "La palabra jugador lleva el sufijo dor. ¿Qué suele indicar ese sufijo?",
+   "opciones": [
+    "Que alguien realiza esa acción",
+    "Que algo terminó para siempre",
+    "Que algo es muy antiguo",
+    "Que algo ocurre solo una vez"
+   ],
+   "correcta": 0,
+   "tip": "El sufijo dor suele nombrar a quien realiza la acción, como jugar en jugador.",
+   "id": "leng4-oa10-16"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "Agregar el sufijo oso a la palabra lluvia forma lluvioso. ¿Qué idea transmite ese sufijo?",
+   "opciones": [
+    "Que tiene mucho de eso, como abundancia de lluvia",
+    "Que no tiene nada de eso",
+    "Que ocurrió solo una vez",
+    "Que es un objeto pequeño"
+   ],
+   "correcta": 0,
+   "tip": "El sufijo oso suele indicar abundancia, así que lluvioso describe algo con mucha lluvia.",
+   "id": "leng4-oa10-17"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "Añadir el prefijo in- a la palabra completo forma incompleto. ¿Qué cambia ese prefijo?",
+   "opciones": [
+    "La idea contraria, o sea que falta algo",
+    "La idea de que está terminado del todo",
+    "La idea de que es muy grande",
+    "La idea de que ocurrió hace poco"
+   ],
+   "correcta": 0,
+   "tip": "El prefijo in- niega el significado, así que incompleto es lo contrario de completo.",
+   "id": "leng4-oa10-18"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "Panadero, panadería y pan comparten la misma raíz. ¿Qué tienen en común esas palabras?",
+   "opciones": [
+    "Están relacionadas con el mismo significado base",
+    "Todas terminan con el mismo sufijo",
+    "Todas son nombres de animales",
+    "No tienen ninguna relación entre sí"
+   ],
+   "correcta": 0,
+   "tip": "Compartir la raíz significa que las palabras se relacionan con un mismo significado base.",
+   "id": "leng4-oa10-19"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "Jardín, jardinero y jardinería comparten la misma raíz. ¿Qué muestra eso?",
+   "opciones": [
+    "Que pertenecen a la misma familia de palabras",
+    "Que son palabras completamente distintas",
+    "Que todas significan exactamente lo mismo",
+    "Que ninguna tiene relación con las plantas"
+   ],
+   "correcta": 0,
+   "tip": "Compartir la raíz muestra que las palabras pertenecen a la misma familia, aunque no signifiquen lo mismo.",
+   "id": "leng4-oa10-20"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "Pescado, pescador y pesca comparten la misma raíz. ¿A qué familia de palabras pertenecen?",
+   "opciones": [
+    "A la familia relacionada con pescar",
+    "A la familia relacionada con cocinar postres",
+    "A la familia relacionada con construir casas",
+    "A la familia relacionada con viajar en avión"
+   ],
+   "correcta": 0,
+   "tip": "La raíz compartida por esas tres palabras se relaciona con la acción de pescar.",
+   "id": "leng4-oa10-21"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "Cantante, cantar y canción comparten la misma raíz. ¿Qué tienen en común?",
+   "opciones": [
+    "Se relacionan todas con el acto de cantar",
+    "Se relacionan todas con nadar en la piscina",
+    "Se relacionan todas con dibujar",
+    "No comparten ningún significado"
+   ],
+   "correcta": 0,
+   "tip": "Compartir la raíz cant- muestra que las tres palabras se relacionan con la acción de cantar.",
+   "id": "leng4-oa10-22"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "Javiera leyó una palabra que no entendió y no encontró ningún diccionario cerca. ¿Qué podría hacer?",
+   "opciones": [
+    "Preguntarle a un adulto o a un compañero qué significa",
+    "Seguir leyendo sin importarle el significado para siempre",
+    "Inventar cualquier significado sin comprobarlo",
+    "Dejar de leer el libro por completo"
+   ],
+   "correcta": 0,
+   "tip": "Cuando no hay diccionario a mano, preguntarle a otra persona es una estrategia razonable.",
+   "id": "leng4-oa10-23"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "Benjamín no entiende una palabra técnica y su profesora está cerca explicando el tema. ¿Qué le conviene hacer?",
+   "opciones": [
+    "Preguntarle a la profesora el significado de la palabra",
+    "Copiar la palabra sin buscar su significado",
+    "Ignorar la palabra aunque no la entienda",
+    "Cambiar de tema sin terminar la lectura"
+   ],
+   "correcta": 0,
+   "tip": "Si hay alguien cerca que sabe del tema, preguntarle es la estrategia más rápida y confiable.",
+   "id": "leng4-oa10-24"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "Ana encontró una palabra nueva en un texto científico, difícil de buscar en un diccionario común. ¿Qué le conviene hacer?",
+   "opciones": [
+    "Preguntarle a alguien que sepa del tema",
+    "Inventar un significado sin comprobarlo",
+    "Borrar la palabra del texto",
+    "Dejar de leer para siempre"
+   ],
+   "correcta": 0,
+   "tip": "Cuando una palabra es muy específica de un tema, preguntarle a un experto puede ser más útil que un diccionario común.",
+   "id": "leng4-oa10-25"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "Pedro está solo en su casa y encuentra una palabra nueva mientras lee. ¿Qué estrategia le conviene usar primero?",
+   "opciones": [
+    "Fijarse en el contexto de la oración para deducir su significado",
+    "Dejar de leer inmediatamente sin terminar",
+    "Inventar cualquier significado sin pensarlo",
+    "Romper la página donde está la palabra"
+   ],
+   "correcta": 0,
+   "tip": "Sin nadie a quien preguntar, fijarse en el contexto de la oración ayuda a deducir el significado.",
+   "id": "leng4-oa10-26"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "Vicente quiere saber el significado exacto de una palabra nueva y tiene un diccionario a mano. ¿Qué le conviene hacer?",
+   "opciones": [
+    "Buscar la palabra en el diccionario",
+    "Adivinar el significado sin comprobarlo",
+    "Ignorar la palabra para siempre",
+    "Cambiarla por otra palabra distinta"
+   ],
+   "correcta": 0,
+   "tip": "Con un diccionario disponible, buscar la palabra es la forma más directa de confirmar su significado exacto.",
+   "id": "leng4-oa10-27"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "Martina quiere entender bien un tema científico con una palabra técnica que aparece varias veces. ¿Qué fuente le conviene?",
+   "opciones": [
+    "Una enciclopedia, porque explica el tema en profundidad",
+    "Un cuento, porque inventa historias",
+    "Una postal, porque solo tiene una imagen",
+    "Un afiche, porque solo da un mensaje breve"
+   ],
+   "correcta": 0,
+   "tip": "Una enciclopedia explica los temas con más profundidad que otras fuentes breves.",
+   "id": "leng4-oa10-28"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "Tomás quiere saber el significado de una palabra nueva de forma rápida usando su tablet. ¿Qué fuente le conviene?",
+   "opciones": [
+    "Internet, porque permite buscar significados con rapidez",
+    "Un cuento antiguo sin relación con la palabra",
+    "Una revista de cocina sin relación con el tema",
+    "Un afiche pegado en la pared del colegio"
+   ],
+   "correcta": 0,
+   "tip": "Internet permite buscar el significado de una palabra de forma rápida desde una tablet.",
+   "id": "leng4-oa10-29"
+  },
+  {
+   "oa": "LE04 OA 10",
+   "pregunta": "Fernanda leyó la palabra banco en una oración sobre peces y no supo si era un mueble o un grupo de peces. ¿Qué debería usar para decidir?",
+   "opciones": [
+    "El contexto de la oración para elegir el significado correcto",
+    "El color de la palabra escrita",
+    "El tamaño de las letras de la palabra",
+    "El sonido de la primera letra"
+   ],
+   "correcta": 0,
+   "tip": "Cuando una palabra tiene varios significados, el contexto de la oración indica cuál corresponde.",
+   "id": "leng4-oa10-30"
+  }
+ ]
+}

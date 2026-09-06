@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Camila aprieta un trozo de plasticina redondo y este queda aplanado. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de forma: queda aplanada donde la apretaron",
+    "Cambia de rapidez: empieza a moverse sola por la mesa",
+    "Cambia de dirección: sale rodando hacia un costado",
+    "No cambia nada: queda exactamente igual que antes"
+   ],
+   "correcta": 0,
+   "tip": "Al presionar un material blando, este puede cambiar de forma sin moverse de lugar.",
+   "id": "cien4-oa12-1"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Un carrito de juguete está detenido y Matías lo empuja, así que empieza a moverse. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de rapidez: pasa de estar detenido a moverse",
+    "Cambia de forma: el carrito queda doblado por el empujón",
+    "Cambia de dirección: el carrito da la vuelta y regresa",
+    "No cambia nada: el carrito sigue detenido en su lugar"
+   ],
+   "correcta": 0,
+   "tip": "Poner en movimiento algo que estaba quieto es un cambio de rapidez: de cero a tener velocidad.",
+   "id": "cien4-oa12-2"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Una pelota rueda hacia una pared, choca y sale rodando al lado contrario. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de dirección: ahora va hacia el lado opuesto",
+    "Cambia de forma: la pelota queda ovalada tras el choque",
+    "Cambia de rapidez: la pelota se detiene y no vuelve a moverse",
+    "No cambia nada: sigue rodando igual que antes del choque"
+   ],
+   "correcta": 0,
+   "tip": "Cuando algo empuja a un objeto en sentido contrario, cambia su dirección: el camino que sigue se modifica.",
+   "id": "cien4-oa12-3"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Benjamín estira una liga por sus dos extremos y esta queda más larga y delgada. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de forma: queda más larga y delgada",
+    "Cambia de dirección: la liga se dobla hacia un costado",
+    "Cambia de rapidez: la liga empieza a rodar por la mesa",
+    "No cambia nada: la liga queda igual que antes de estirarla"
+   ],
+   "correcta": 0,
+   "tip": "Estirar un material elástico cambia su forma, sin necesidad de moverlo de lugar.",
+   "id": "cien4-oa12-4"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Un trineo baja una pendiente y va cada vez más rápido a medida que avanza. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de rapidez: aumenta su velocidad al bajar",
+    "Cambia de forma: el trineo se dobla al bajar",
+    "Cambia de dirección: el trineo empieza a subir la misma pendiente",
+    "No cambia nada: mantiene siempre la misma velocidad"
+   ],
+   "correcta": 0,
+   "tip": "La fuerza que empuja al trineo hacia abajo hace que su rapidez aumente mientras desciende.",
+   "id": "cien4-oa12-5"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Una patineta que avanzaba por el patio se va deteniendo hasta quedar quieta. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de rapidez: pierde velocidad hasta detenerse",
+    "Cambia de forma: las ruedas quedan aplastadas",
+    "Cambia de dirección: empieza a moverse hacia atrás",
+    "No cambia nada: sigue avanzando a la misma velocidad"
+   ],
+   "correcta": 0,
+   "tip": "Cuando algo se frena hasta quedar quieto, su rapidez va bajando desde un valor hasta llegar a cero.",
+   "id": "cien4-oa12-6"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Javiera patea un balón que iba derecho y este se desvía hacia la izquierda. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de dirección: se desvía hacia la izquierda",
+    "Cambia de forma: el balón queda desinflado tras la patada",
+    "Cambia de rapidez: el balón se detiene apenas lo tocan",
+    "No cambia nada: sigue el mismo camino de antes"
+   ],
+   "correcta": 0,
+   "tip": "Cuando una fuerza empuja hacia un costado a algo que ya se movía, cambia su dirección.",
+   "id": "cien4-oa12-7"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Nicolás pisa con fuerza una lata vacía y esta queda aplastada y con abolladuras. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de forma: queda aplastada y con abolladuras",
+    "Cambia de dirección: la lata sale disparada hacia otro lado",
+    "Cambia de rapidez: la lata rueda cada vez más rápido",
+    "No cambia nada: mantiene la misma forma redonda de antes"
+   ],
+   "correcta": 0,
+   "tip": "Aplastar un objeto con fuerza puede cambiar su forma de manera permanente.",
+   "id": "cien4-oa12-8"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Fernanda empuja con fuerza la pared de su pieza, pero esta sigue exactamente igual. ¿Qué efecto se observa?",
+   "opciones": [
+    "No cambia nada: la fuerza no basta para mover ni deformar la pared",
+    "Cambia de forma: la pared queda abollada donde la empujó",
+    "Cambia de rapidez: la pared empieza a moverse muy lento",
+    "Cambia de dirección: la pared se inclina hacia el otro lado"
+   ],
+   "correcta": 0,
+   "tip": "No toda fuerza aplicada produce un cambio visible: si el objeto resiste mucho, puede quedar igual.",
+   "id": "cien4-oa12-9"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Ignacio empuja un carrito suave y después muy fuerte. ¿Qué es más probable la segunda vez?",
+   "opciones": [
+    "El carrito alcanza una rapidez mayor que la primera vez",
+    "El carrito cambia de forma la segunda vez",
+    "El carrito se detiene apenas lo toca",
+    "El carrito no se mueve ninguna de las dos veces"
+   ],
+   "correcta": 0,
+   "tip": "Mientras más fuerte es el empujón, mayor es el cambio de rapidez que se produce.",
+   "id": "cien4-oa12-10"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Un columpio que va y vuelve recibe un empujón lateral y ahora se mueve al costado. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de dirección: ahora se mueve también hacia un lado",
+    "Cambia de forma: las cadenas del columpio quedan torcidas",
+    "Cambia de rapidez: el columpio se detiene por completo",
+    "No cambia nada: sigue moviéndose exactamente igual"
+   ],
+   "correcta": 0,
+   "tip": "Un empujón hacia un costado puede sumar un nuevo camino al movimiento, es decir, cambiar la dirección.",
+   "id": "cien4-oa12-11"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Martina dobla con las manos una regla de plástico y esta queda curvada. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de forma: la regla queda curvada",
+    "Cambia de dirección: la regla sale volando hacia el techo",
+    "Cambia de rapidez: la regla empieza a girar sobre la mesa",
+    "No cambia nada: la regla se mantiene completamente recta"
+   ],
+   "correcta": 0,
+   "tip": "Doblar un objeto con las manos cambia su forma, sin necesidad de moverlo ni hacerlo girar.",
+   "id": "cien4-oa12-12"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Vicente suelta una pelota y esta cae cada vez más rápido hasta el suelo. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de rapidez: aumenta su velocidad mientras cae",
+    "Cambia de forma: la pelota se aplana mientras cae",
+    "Cambia de dirección: la pelota sube de regreso al techo",
+    "No cambia nada: cae siempre a la misma velocidad"
+   ],
+   "correcta": 0,
+   "tip": "Mientras un objeto cae, va aumentando su rapidez cada segundo un poco más que el anterior.",
+   "id": "cien4-oa12-13"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Un auto de juguete que iba recto pasa una rampa curva y termina yendo a la derecha. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de dirección: ahora avanza hacia la derecha",
+    "Cambia de forma: el auto se aplasta al pasar la rampa",
+    "Cambia de rapidez: el auto queda completamente detenido",
+    "No cambia nada: sigue el mismo camino recto de antes"
+   ],
+   "correcta": 0,
+   "tip": "Una rampa curva puede desviar el camino de un objeto en movimiento: es un cambio de dirección.",
+   "id": "cien4-oa12-14"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Josefa aprieta un cubo de espuma con la mano y este se ve más chico y aplanado. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de forma: se ve más chico y aplanado al apretarlo",
+    "Cambia de dirección: el cubo se mueve hacia la izquierda",
+    "Cambia de rapidez: el cubo empieza a rodar por el suelo",
+    "No cambia nada: el cubo mantiene su forma de cubo"
+   ],
+   "correcta": 0,
+   "tip": "Al apretar un material que se deforma con facilidad, este cambia de forma mientras dura la fuerza.",
+   "id": "cien4-oa12-15"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Gabriel pedalea cada vez más fuerte y su bicicleta avanza cada vez más rápido. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de rapidez: la bicicleta aumenta su velocidad",
+    "Cambia de forma: las ruedas de la bicicleta se doblan",
+    "Cambia de dirección: la bicicleta se devuelve hacia atrás",
+    "No cambia nada: mantiene siempre la misma velocidad"
+   ],
+   "correcta": 0,
+   "tip": "Pedalear con más fuerza aumenta la rapidez de la bicicleta.",
+   "id": "cien4-oa12-16"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Un disco de hockey que iba recto es golpeado y sale disparado hacia otro lado. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de dirección: sale disparado hacia otro lado",
+    "Cambia de forma: el disco queda partido en dos",
+    "Cambia de rapidez: el disco se detiene apenas lo golpean",
+    "No cambia nada: sigue el mismo camino recto"
+   ],
+   "correcta": 0,
+   "tip": "Un golpe lateral desvía el camino que sigue un objeto en movimiento: cambia su dirección.",
+   "id": "cien4-oa12-17"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Ana presiona un trozo de arcilla dentro de un molde con forma de estrella. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de forma: queda con la forma de estrella del molde",
+    "Cambia de dirección: la arcilla sale volando fuera del molde",
+    "Cambia de rapidez: la arcilla empieza a moverse sola",
+    "No cambia nada: mantiene su forma original"
+   ],
+   "correcta": 0,
+   "tip": "Presionar un material blando dentro de un molde cambia su forma según la forma del molde.",
+   "id": "cien4-oa12-18"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Un auto que iba rápido frena y va bajando su velocidad hasta detenerse en el semáforo. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de rapidez: baja su velocidad hasta detenerse",
+    "Cambia de forma: el auto se dobla al frenar",
+    "Cambia de dirección: el auto se desvía hacia el lado contrario",
+    "No cambia nada: mantiene la misma velocidad hasta el final"
+   ],
+   "correcta": 0,
+   "tip": "Frenar un vehículo hace que su rapidez vaya disminuyendo hasta llegar a cero.",
+   "id": "cien4-oa12-19"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Tomás aprieta con la misma fuerza una pelota de goma y una piedra. ¿En cuál se nota un cambio de forma?",
+   "opciones": [
+    "En la pelota de goma, porque es blanda y se deja aplastar",
+    "En la piedra, porque es más pesada",
+    "En los dos por igual, porque reciben la misma fuerza",
+    "En ninguno, porque apretar no cambia la forma de nada"
+   ],
+   "correcta": 0,
+   "tip": "El mismo tipo de fuerza produce efectos distintos según el material: lo blando cambia de forma con más facilidad.",
+   "id": "cien4-oa12-20"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Diego patea un balón detenido, que empieza a rodar y luego choca con un poste. ¿Qué efecto ocurre primero?",
+   "opciones": [
+    "El cambio de rapidez, cuando pasa de detenido a moverse",
+    "El cambio de dirección, cuando choca con el poste",
+    "El cambio de forma, cuando se aplasta contra el poste",
+    "Ningún efecto ocurre antes que el otro"
+   ],
+   "correcta": 0,
+   "tip": "Primero la patada cambia la rapidez del balón, y después el choque con el poste cambia su dirección.",
+   "id": "cien4-oa12-21"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Una canica que rodaba en línea recta choca con otra y se desvía hacia un costado. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de dirección: se desvía hacia un costado",
+    "Cambia de forma: la canica queda ovalada tras el choque",
+    "Cambia de rapidez: la canica se detiene para siempre",
+    "No cambia nada: sigue el mismo camino recto"
+   ],
+   "correcta": 0,
+   "tip": "El choque entre dos objetos en movimiento puede desviar el camino de uno de ellos.",
+   "id": "cien4-oa12-22"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Valentina pisa un vaso de papel vacío y este queda completamente aplastado. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de forma: el vaso queda aplastado",
+    "Cambia de dirección: el vaso sale rodando hacia otro lado",
+    "Cambia de rapidez: el vaso empieza a moverse muy rápido",
+    "No cambia nada: mantiene su forma original de vaso"
+   ],
+   "correcta": 0,
+   "tip": "Pisar un objeto liviano y frágil puede cambiar su forma de manera permanente.",
+   "id": "cien4-oa12-23"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Sebastián estira el elástico de una honda y al soltarlo, la piedra sale disparada. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de rapidez: pasa de estar quieta a moverse muy rápido",
+    "Cambia de forma: la piedra queda aplastada al salir disparada",
+    "Cambia de dirección: la piedra da vueltas en el mismo lugar",
+    "No cambia nada: la piedra queda en el mismo lugar"
+   ],
+   "correcta": 0,
+   "tip": "El elástico estirado empuja a la piedra y la hace pasar de estar quieta a moverse muy rápido.",
+   "id": "cien4-oa12-24"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Una cometa que iba a la derecha se desvía por el viento hacia la izquierda. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de dirección: ahora vuela hacia la izquierda",
+    "Cambia de forma: la cometa se rompe con el viento",
+    "Cambia de rapidez: la cometa se detiene en el aire",
+    "No cambia nada: sigue volando hacia el mismo lado"
+   ],
+   "correcta": 0,
+   "tip": "Una ráfaga de viento puede empujar a un objeto en el aire y cambiar su dirección.",
+   "id": "cien4-oa12-25"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Camila aprieta una esponja mojada y esta queda comprimida y bota agua. ¿Qué efecto se observa en la esponja?",
+   "opciones": [
+    "Cambia de forma: queda comprimida mientras la aprietan",
+    "Cambia de dirección: la esponja sale disparada de la mano",
+    "Cambia de rapidez: la esponja empieza a moverse por el aire",
+    "No cambia nada: mantiene su tamaño y forma"
+   ],
+   "correcta": 0,
+   "tip": "Comprimir una esponja con la mano cambia su forma; al soltarla, suele recuperarla.",
+   "id": "cien4-oa12-26"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Diego atrapa con las manos un balón que venía volando y lo detiene por completo. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de rapidez: pasa de estar en movimiento a detenerse",
+    "Cambia de forma: el balón queda aplastado entre las manos",
+    "Cambia de dirección: el balón sigue volando hacia el mismo lado",
+    "No cambia nada: sigue con la misma rapidez de antes"
+   ],
+   "correcta": 0,
+   "tip": "Detener un objeto en movimiento también es un cambio de rapidez: pasa de tener velocidad a tener rapidez cero.",
+   "id": "cien4-oa12-27"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Un balón rueda hacia el norte; Javiera lo patea y ahora rueda hacia el sur. ¿Qué efecto se observa?",
+   "opciones": [
+    "Cambia de dirección: ahora va hacia el sur",
+    "Cambia de forma: el balón queda ovalado tras la patada",
+    "Cambia de rapidez: el balón queda completamente detenido",
+    "No cambia nada: sigue rodando hacia el norte"
+   ],
+   "correcta": 0,
+   "tip": "Cuando una fuerza hace que un objeto en movimiento tome el camino contrario, cambia su dirección.",
+   "id": "cien4-oa12-28"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Fernanda toca suavemente una roca enorme con un dedo, y esta queda igual. ¿Qué efecto se observa?",
+   "opciones": [
+    "No cambia nada: el toque es muy pequeño para mover o deformar la roca",
+    "Cambia de forma: la roca queda con una marca del dedo",
+    "Cambia de rapidez: la roca empieza a moverse muy lento",
+    "Cambia de dirección: la roca gira levemente sobre sí misma"
+   ],
+   "correcta": 0,
+   "tip": "Una fuerza muy pequeña sobre un objeto muy grande puede no producir ningún cambio visible.",
+   "id": "cien4-oa12-29"
+  },
+  {
+   "oa": "CN04 OA 12",
+   "pregunta": "Una pelota cae, choca contra el piso y rebota hacia arriba. ¿Qué efecto se observa principalmente?",
+   "opciones": [
+    "Cambia de dirección: pasa de ir hacia abajo a ir hacia arriba",
+    "Cambia de forma: la pelota queda cuadrada después del rebote",
+    "Cambia de rapidez: la pelota se detiene apenas toca el suelo",
+    "No cambia nada: sigue cayendo hacia abajo"
+   ],
+   "correcta": 0,
+   "tip": "El rebote de una pelota contra el suelo es un buen ejemplo de cambio de dirección.",
+   "id": "cien4-oa12-30"
+  }
+ ]
+}

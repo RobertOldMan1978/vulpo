@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Un ángulo mide 90 grados. ¿Cómo se llama ese tipo de ángulo?",
+   "opciones": [
+    "Recto",
+    "Agudo",
+    "Obtuso",
+    "Llano"
+   ],
+   "correcta": 0,
+   "tip": "Un ángulo de exactamente 90 grados se llama recto.",
+   "id": "mate4-oa19-1"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Un ángulo mide 40 grados. ¿Cómo se llama ese tipo de ángulo?",
+   "opciones": [
+    "Agudo",
+    "Recto",
+    "Obtuso",
+    "Llano"
+   ],
+   "correcta": 0,
+   "tip": "Un ángulo que mide menos de 90 grados se llama agudo.",
+   "id": "mate4-oa19-2"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Un ángulo mide 130 grados. ¿Cómo se llama ese tipo de ángulo?",
+   "opciones": [
+    "Obtuso",
+    "Agudo",
+    "Recto",
+    "Llano"
+   ],
+   "correcta": 0,
+   "tip": "Un ángulo que mide más de 90 grados y menos de 180 se llama obtuso.",
+   "id": "mate4-oa19-3"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Un ángulo mide exactamente 180 grados, como una línea recta abierta al máximo. ¿Cómo se llama?",
+   "opciones": [
+    "Llano",
+    "Recto",
+    "Obtuso",
+    "Agudo"
+   ],
+   "correcta": 0,
+   "tip": "Un ángulo de 180 grados, que forma una línea recta, se llama llano.",
+   "id": "mate4-oa19-4"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "La esquina de una hoja de cuaderno forma un ángulo. ¿De qué tipo es?",
+   "opciones": [
+    "Recto, porque mide 90 grados",
+    "Agudo, porque mide menos de 90 grados",
+    "Obtuso, porque mide más de 90 grados",
+    "Llano, porque mide 180 grados"
+   ],
+   "correcta": 0,
+   "tip": "Las esquinas de una hoja son ángulos rectos: miden exactamente 90 grados.",
+   "id": "mate4-oa19-5"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "La punta de una porción de pizza, bien angosta, forma un ángulo. ¿De qué tipo es probablemente?",
+   "opciones": [
+    "Agudo",
+    "Recto",
+    "Obtuso",
+    "Llano"
+   ],
+   "correcta": 0,
+   "tip": "Un ángulo que se abre poco, como una punta angosta, mide menos de 90 grados: es agudo.",
+   "id": "mate4-oa19-6"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Unas tijeras muy abiertas, más de 90 grados pero sin llegar a una línea recta, ¿qué ángulo forman?",
+   "opciones": [
+    "Obtuso",
+    "Agudo",
+    "Recto",
+    "Llano"
+   ],
+   "correcta": 0,
+   "tip": "Un ángulo mayor que 90 grados y menor que 180 grados es obtuso.",
+   "id": "mate4-oa19-7"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "El ángulo A mide 35 grados y el ángulo B mide 120 grados. ¿Cuál de los dos es mayor?",
+   "opciones": [
+    "El ángulo B",
+    "El ángulo A",
+    "Los dos miden lo mismo",
+    "No se puede saber sin volver a medirlos"
+   ],
+   "correcta": 0,
+   "tip": "120 grados es un número mayor que 35 grados, así que el ángulo B es el mayor de los dos.",
+   "id": "mate4-oa19-8"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "El ángulo A mide 95 grados y el ángulo B también mide 95 grados. ¿Qué se puede decir de ellos?",
+   "opciones": [
+    "Son iguales, aunque se vean dibujados distinto",
+    "El ángulo A es mayor",
+    "El ángulo B es mayor",
+    "No se pueden comparar porque son obtusos"
+   ],
+   "correcta": 0,
+   "tip": "Dos ángulos con la misma medida en grados son iguales, sin importar cómo estén dibujados.",
+   "id": "mate4-oa19-9"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Tres ángulos miden 20 grados, 95 grados y 170 grados. ¿Cuál es el orden de menor a mayor?",
+   "opciones": [
+    "20, 95 y 170 grados",
+    "170, 95 y 20 grados",
+    "95, 20 y 170 grados",
+    "20, 170 y 95 grados"
+   ],
+   "correcta": 0,
+   "tip": "Ordenar de menor a mayor es comparar los números: 20 es el más chico y 170 el más grande.",
+   "id": "mate4-oa19-10"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Diego dibuja un ángulo de 50 grados con lados cortos y otro de 50 con lados largos. ¿Son iguales en medida?",
+   "opciones": [
+    "Sí, la medida no depende del largo de los lados",
+    "No, el de lados largos es mayor",
+    "No, el de lados cortos es mayor",
+    "No se puede saber sin medirlos de nuevo"
+   ],
+   "correcta": 0,
+   "tip": "El ángulo se mide por cuánto se abren sus lados, no por lo largos que sean.",
+   "id": "mate4-oa19-11"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Matías dice que 40 grados con lados largos es mayor que 60 grados con lados cortos. ¿Tiene razón?",
+   "opciones": [
+    "No, 60 grados sigue siendo mayor que 40 grados",
+    "Sí, porque los lados largos se abren más",
+    "Sí, porque los lados cortos cierran el ángulo",
+    "No se puede saber sin una regla"
+   ],
+   "correcta": 0,
+   "tip": "El largo de los lados no cambia la medida del ángulo: 60 grados es mayor que 40 grados, se vea como se vea.",
+   "id": "mate4-oa19-12"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Para construir un ángulo con el transportador, primero se traza un rayo. ¿Qué se hace después?",
+   "opciones": [
+    "Alinear el centro del transportador con el extremo del rayo",
+    "Dibujar el segundo rayo a ojo, sin usar el transportador",
+    "Borrar el rayo y empezar de nuevo",
+    "Medir el largo del rayo con una regla"
+   ],
+   "correcta": 0,
+   "tip": "El centro del transportador se apoya justo en el vértice, es decir, en el extremo del rayo ya trazado.",
+   "id": "mate4-oa19-13"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Camila alineó el centro del transportador con el vértice. ¿Qué hace después para dibujar 75 grados?",
+   "opciones": [
+    "Busca la marca de 75 y traza el segundo rayo",
+    "Cuenta 75 pasos con la regla",
+    "Dobla el papel por la mitad",
+    "Dibuja un círculo completo"
+   ],
+   "correcta": 0,
+   "tip": "Con el centro ya alineado, se busca la marca de la medida deseada y se traza el segundo lado del ángulo.",
+   "id": "mate4-oa19-14"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Un transportador tiene dos escalas, una hacia la derecha y otra hacia la izquierda. ¿Para qué sirven las dos?",
+   "opciones": [
+    "Para poder leer el ángulo empiece hacia el lado que empiece",
+    "Solo una de las dos escalas sirve, la otra está de adorno",
+    "Sirven para medir dos ángulos distintos a la vez",
+    "Sirven para saber si el ángulo es agudo o recto"
+   ],
+   "correcta": 0,
+   "tip": "Según hacia qué lado se abre el ángulo, conviene leer la escala que empieza desde ese lado en 0.",
+   "id": "mate4-oa19-15"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "El transportador muestra 40 y 140 donde termina un ángulo bien abierto, que se ve obtuso. ¿Cuál es correcta?",
+   "opciones": [
+    "140 grados, porque un obtuso mide más de 90",
+    "40 grados, porque es el número más chico",
+    "Cualquiera de las dos, da lo mismo",
+    "Hay que sumar los dos números"
+   ],
+   "correcta": 0,
+   "tip": "Como el ángulo se ve obtuso, tiene que medir más de 90 grados: la lectura correcta es 140, no 40.",
+   "id": "mate4-oa19-16"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "El transportador muestra 25 y 155 donde termina un ángulo bien cerrado, que se ve agudo. ¿Cuál es correcta?",
+   "opciones": [
+    "25 grados, porque un agudo mide menos de 90",
+    "155 grados, porque es el número más grande",
+    "Cualquiera de las dos, da lo mismo",
+    "Hay que restar los dos números"
+   ],
+   "correcta": 0,
+   "tip": "Como el ángulo se ve agudo, tiene que medir menos de 90 grados: la lectura correcta es 25, no 155.",
+   "id": "mate4-oa19-17"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Sofía apoya el borde del transportador sobre un lado del ángulo, no su centro sobre el vértice. ¿Qué pasa?",
+   "opciones": [
+    "Sale mal, porque el centro tiene que ir justo en el vértice",
+    "Sale bien igual, no importa dónde se apoye",
+    "Sale mejor, porque el borde mide más preciso",
+    "No se puede saber sin intentarlo"
+   ],
+   "correcta": 0,
+   "tip": "El centro del transportador tiene que coincidir con el vértice del ángulo; si no, la medida sale incorrecta.",
+   "id": "mate4-oa19-18"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Benjamín empieza a contar los grados desde la marca de 180 en vez de la marca de 0. ¿Qué pasa con su lectura?",
+   "opciones": [
+    "Se equivoca, porque tiene que partir de la marca de 0 de su lado",
+    "Da igual, las dos marcas sirven para empezar",
+    "Su lectura sale más exacta así",
+    "No importa, el transportador se ajusta solo"
+   ],
+   "correcta": 0,
+   "tip": "Hay que empezar a contar desde la marca de 0 del lado por donde se abre el ángulo, no desde 180.",
+   "id": "mate4-oa19-19"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Un ángulo mide 91 grados, apenas más de 90. ¿De qué tipo es?",
+   "opciones": [
+    "Obtuso, porque pasa de 90 grados",
+    "Recto, porque está muy cerca de 90 grados",
+    "Agudo, porque es un número chico todavía",
+    "Llano, porque casi llega a 180"
+   ],
+   "correcta": 0,
+   "tip": "Cualquier ángulo que pase de 90 grados, aunque sea por poco, ya se clasifica como obtuso.",
+   "id": "mate4-oa19-20"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Un ángulo mide 89 grados, apenas menos de 90. ¿De qué tipo es?",
+   "opciones": [
+    "Agudo, porque no llega a 90 grados",
+    "Recto, porque está muy cerca de 90 grados",
+    "Obtuso, porque es casi 90",
+    "Llano, porque casi llega a 180"
+   ],
+   "correcta": 0,
+   "tip": "Mientras no llegue a 90 grados, el ángulo sigue siendo agudo, aunque esté muy cerca.",
+   "id": "mate4-oa19-21"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Las manecillas de un reloj a las 3 en punto forman un ángulo. ¿De qué tipo es ese ángulo?",
+   "opciones": [
+    "Recto, porque mide 90 grados",
+    "Agudo, porque mide menos de 90 grados",
+    "Obtuso, porque mide más de 90 grados",
+    "Llano, porque mide 180 grados"
+   ],
+   "correcta": 0,
+   "tip": "A las 3 en punto, las manecillas forman exactamente un cuarto de vuelta: un ángulo recto de 90 grados.",
+   "id": "mate4-oa19-22"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Las manecillas de un reloj a las 6 en punto forman un ángulo. ¿De qué tipo es ese ángulo?",
+   "opciones": [
+    "Llano, porque mide 180 grados",
+    "Recto, porque mide 90 grados",
+    "Agudo, porque mide menos de 90 grados",
+    "Obtuso, porque mide 170 grados"
+   ],
+   "correcta": 0,
+   "tip": "A las 6 en punto, las manecillas quedan en línea recta, apuntando a lados opuestos: forman un ángulo llano.",
+   "id": "mate4-oa19-23"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Una rebanada delgada de queque forma un ángulo agudo y una ancha, uno obtuso. ¿Cuál tiene el ángulo mayor?",
+   "opciones": [
+    "La rebanada ancha",
+    "La rebanada delgada",
+    "Las dos tienen el mismo ángulo",
+    "No se puede saber sin pesarlas"
+   ],
+   "correcta": 0,
+   "tip": "Un ángulo obtuso siempre mide más grados que uno agudo, así que la rebanada ancha tiene el ángulo mayor.",
+   "id": "mate4-oa19-24"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Tres ángulos miden 160, 80 y 25 grados. ¿Cuál es el orden de mayor a menor?",
+   "opciones": [
+    "160, 80 y 25 grados",
+    "25, 80 y 160 grados",
+    "80, 160 y 25 grados",
+    "160, 25 y 80 grados"
+   ],
+   "correcta": 0,
+   "tip": "Ordenar de mayor a menor es acomodar los números empezando por el más grande: 160 es el mayor.",
+   "id": "mate4-oa19-25"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "¿Qué instrumento se usa para construir y medir ángulos con exactitud, en grados?",
+   "opciones": [
+    "El transportador",
+    "La regla",
+    "La escuadra",
+    "El compás"
+   ],
+   "correcta": 0,
+   "tip": "El transportador tiene una escala en grados, hecha justamente para medir y construir ángulos.",
+   "id": "mate4-oa19-26"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Javiera dibuja un ángulo de 50 grados y luego el mismo, más grande en la hoja. ¿Sigue midiendo 50 grados?",
+   "opciones": [
+    "Sí, dibujarlo más grande no cambia los grados",
+    "No, al agrandarlo también aumentan los grados",
+    "No, al agrandarlo se convierte en recto",
+    "Sí, pero solo si usa el transportador dos veces"
+   ],
+   "correcta": 0,
+   "tip": "Los grados de un ángulo no dependen de qué tan grande se dibuje en la hoja, sino de cuánto se abre.",
+   "id": "mate4-oa19-27"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "El ángulo A mide 150 grados y el ángulo B mide 60 grados. ¿Cuál de los dos es un ángulo obtuso?",
+   "opciones": [
+    "El ángulo A",
+    "El ángulo B",
+    "Los dos son obtusos",
+    "Ninguno de los dos es obtuso"
+   ],
+   "correcta": 0,
+   "tip": "150 grados está entre 90 y 180, así que el ángulo A es el obtuso; 60 grados es agudo.",
+   "id": "mate4-oa19-28"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Ana construye un ángulo de 100 grados con el transportador. Después de marcar el punto, ¿qué le falta hacer?",
+   "opciones": [
+    "Trazar el segundo rayo desde el vértice hasta esa marca",
+    "Medir el ángulo con una regla para confirmar",
+    "Borrar el rayo original y empezar de nuevo",
+    "Dibujar un círculo alrededor del vértice"
+   ],
+   "correcta": 0,
+   "tip": "Después de marcar el punto en los 100 grados, se traza el segundo lado uniendo el vértice con esa marca.",
+   "id": "mate4-oa19-29"
+  },
+  {
+   "oa": "MA04 OA 19",
+   "pregunta": "Un libro se abre casi por completo, casi plano sobre la mesa, cerca de 180 grados. ¿Qué ángulo forma?",
+   "opciones": [
+    "Llano",
+    "Recto",
+    "Agudo",
+    "Obtuso"
+   ],
+   "correcta": 0,
+   "tip": "Un ángulo cercano a 180 grados, casi una línea recta, se clasifica como llano.",
+   "id": "mate4-oa19-30"
+  }
+ ]
+}

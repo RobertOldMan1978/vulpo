@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Sofía puso en una balanza un vaso vacío y después el mismo vaso lleno de agua. ¿Qué diferencia encontró?",
+   "opciones": [
+    "El vaso con agua pesó más, porque el agua también tiene masa",
+    "Pesaron exactamente lo mismo, porque el agua no tiene masa",
+    "El vaso vacío pesó más, porque el aire de adentro es más pesado que el agua",
+    "No pudo comparar los dos pesos, porque una balanza solo sirve para sólidos"
+   ],
+   "correcta": 0,
+   "tip": "El aire, aunque parece que no pesa nada, tiene masa: por eso el vaso con aire sellado pesa un poquito más que el vaso realmente vacío de aire.",
+   "id": "cien4-oa09-1"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Diego infló un globo y lo puso en una balanza junto a un globo igual, sin inflar. ¿Qué mostró la balanza?",
+   "opciones": [
+    "El globo inflado pesó un poco más, porque el aire que entró también tiene masa",
+    "Los dos globos pesaron exactamente igual, porque el aire no pesa nada",
+    "El globo sin inflar pesó más, porque el plástico estirado pesa menos",
+    "La balanza no pudo medir ninguno de los dos, porque los globos son muy livianos"
+   ],
+   "correcta": 0,
+   "tip": "El aire que se agrega al inflar un globo tiene masa, aunque sea muy poca; por eso el globo inflado pesa un poco más que el desinflado.",
+   "id": "cien4-oa09-2"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Matías lleno un vaso con agua hasta el borde y con cuidado metió una piedra adentro. ¿Qué ocurrió?",
+   "opciones": [
+    "Se derramó agua, porque la piedra ocupo el espacio que antes ocupaba esa agua",
+    "El agua desapareció, porque la piedra la absorbió por completo",
+    "No pasó nada, porque una piedra no ocupa espacio dentro del agua",
+    "El vaso se lleno todavía más, porque apareció agua nueva al meter la piedra"
+   ],
+   "correcta": 0,
+   "tip": "Cuando algo entra a un espacio que ya tiene agua, esa agua tiene que salir de algún lado: por eso se derrama la misma cantidad que ocupa el objeto que entró.",
+   "id": "cien4-oa09-3"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Camila puso dos bolsas idénticas en una balanza: una vacía y otra llena de arena. ¿Cuál marcó más peso?",
+   "opciones": [
+    "La bolsa con arena, porque la arena tiene masa y la bolsa casi no",
+    "Las dos pesaron lo mismo, porque una bolsa vacía en realidad no está vacía",
+    "La bolsa vacía, porque el aire que quedó adentro pesa más que la arena",
+    "Ninguna de las dos, porque una balanza no puede pesar bolsas de plástico"
+   ],
+   "correcta": 0,
+   "tip": "La arena, como toda materia, tiene masa; una bolsa vacía casi no aporta peso comparada con la arena que contiene.",
+   "id": "cien4-oa09-4"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Javiera infló un globo hasta dejarlo grande. ¿Por qué ocupa ahora más espacio?",
+   "opciones": [
+    "Porque metió más aire adentro, y el aire también ocupa espacio",
+    "Porque el plástico del globo creció solo, sin que nada entrara en el",
+    "Porque el aire de adentro se transformó en agua al soplar",
+    "Porque un globo siempre se hace más grande con el paso del tiempo"
+   ],
+   "correcta": 0,
+   "tip": "El aire que entra al soplar el globo ocupa un espacio, y por eso el globo crece: no aparece materia nueva, se agrega la que sopla la persona.",
+   "id": "cien4-oa09-5"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Ana comparó en la balanza una bolsa sin aire y una bolsa llena de aire. ¿Qué notó?",
+   "opciones": [
+    "Casi no hubo diferencia, porque el aire tiene muy poca masa, aunque si tiene algo",
+    "La bolsa con aire pesó mucho más, tanto como si tuviera agua adentro",
+    "No hubo ninguna diferencia en el peso, porque el aire prácticamente no tiene masa",
+    "La bolsa vacía pesó más, porque el plástico sin estirar es más pesado"
+   ],
+   "correcta": 0,
+   "tip": "El aire tiene masa, pero muy poca comparada con sólidos o líquidos: por eso la diferencia entre una bolsa con aire y una sin aire es pequeña, no nula.",
+   "id": "cien4-oa09-6"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Tomás llenó un frasco con arena hasta el borde y trató de agregar más. ¿Qué pasó?",
+   "opciones": [
+    "No pudo, porque la arena que ya estaba adentro ocupaba todo el espacio disponible",
+    "Pudo seguir agregando arena sin límite, porque la arena no ocupa espacio real",
+    "La arena que ya estaba adentro desapareció para dejar lugar a la nueva",
+    "El frasco se hizo más grande por dentro solo, para dejar entrar toda la arena nueva"
+   ],
+   "correcta": 0,
+   "tip": "Cuando un espacio ya está completamente ocupado por materia (la arena), no cabe más materia ahí sin sacar algo primero.",
+   "id": "cien4-oa09-7"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Fernanda echó azúcar en un vaso de agua marcado, y el nivel subió un poco. ¿A qué se debió eso?",
+   "opciones": [
+    "A que el azucar también ocupa espacio, aunque se disuelva en el agua",
+    "A que el agua se multiplicó al mezclarse con el azucar",
+    "A que el azucar hizo que el vaso se calentara y el agua se expandiera",
+    "A que el vaso estaba mal medido desde el principio"
+   ],
+   "correcta": 0,
+   "tip": "El azucar sigue siendo materia aunque se disuelva: sus partículas quedan entre las del agua, y por eso el nivel sube un poco.",
+   "id": "cien4-oa09-8"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Rodrigo comparó en la balanza un balón desinflado y el mismo balón inflado. ¿Qué pasó?",
+   "opciones": [
+    "El balón inflado pesó un poco más, porque tiene más aire adentro",
+    "El balón desinflado pesó más, porque el cuero se encoge y pesa más apretado",
+    "Los dos pesaron exactamente lo mismo, porque inflar un balón no agrega nada",
+    "No se puede pesar un balón inflado, porque el aire hace que la balanza falle"
+   ],
+   "correcta": 0,
+   "tip": "El aire que entra al inflar el balón tiene masa, así que el balón inflado pesa un poco más que el desinflado.",
+   "id": "cien4-oa09-9"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Valentina metió una piedra chica y otra grande en dos vasos iguales llenos de agua. ¿Cuál derramó más agua?",
+   "opciones": [
+    "La piedra grande, porque ocupa más espacio dentro del vaso",
+    "La piedra pequeña, porque las piedras chicas desplazan más agua",
+    "Las dos derramaron exactamente la misma cantidad de agua",
+    "Ninguna de las dos derramó agua, porque las piedras no ocupan espacio"
+   ],
+   "correcta": 0,
+   "tip": "Mientras más grande es el objeto que se sumerge, más espacio ocupa dentro del vaso, y más agua tiene que salir para dejarle lugar.",
+   "id": "cien4-oa09-10"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "¿Cuál de estas opciones NO es materia, aunque parezca que si?",
+   "opciones": [
+    "La luz de una linterna, porque no tiene masa ni ocupa espacio",
+    "Una piedra, porque tiene masa y ocupa un lugar en el espacio, igual que cualquier sólido",
+    "El agua de un vaso, porque tiene masa y ocupa un lugar",
+    "El aire de un globo, porque tiene masa y ocupa un lugar"
+   ],
+   "correcta": 0,
+   "tip": "La luz no tiene masa ni ocupa un lugar en el espacio como los objetos: es energía, no materia. Por eso no se considera materia aunque exista.",
+   "id": "cien4-oa09-11"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Ignacio dice que la materia tiene masa y ocupa espacio. Según eso, ¿cuál de estos SÍ es materia?",
+   "opciones": [
+    "Un cubo de hielo, porque tiene masa y ocupa un lugar en el espacio",
+    "El sonido de una campana, porque se puede escuchar con mucha claridad",
+    "El calor de una fogata, porque se puede sentir en la piel al acercarse",
+    "La sombra de un arbol, porque se puede ver en el suelo"
+   ],
+   "correcta": 0,
+   "tip": "Un cubo de hielo tiene masa y ocupa un lugar en el espacio, así que es materia; el sonido y el calor son formas de energía, no materia.",
+   "id": "cien4-oa09-12"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Josefa comparó dos cajas iguales: una con plumas y otra con piedras chicas. ¿Qué pudo afirmar de ambas?",
+   "opciones": [
+    "Que las dos tienen masa y ocupan el mismo espacio, aunque pesen distinto",
+    "Que la caja de plumas no tiene masa, porque las plumas son muy livianas",
+    "Que la caja de piedras ocupa más espacio, porque pesa más",
+    "Que solo una de las dos cajas está hecha de materia de verdad"
+   ],
+   "correcta": 0,
+   "tip": "El tamaño de la caja es el mismo en los dos casos, así que el espacio que ocupan es igual; lo que cambia es cuánta masa tiene cada material adentro.",
+   "id": "cien4-oa09-13"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Benjamín tiene un grano de arroz y una sandía. ¿Qué tienen en común, aunque uno sea enorme?",
+   "opciones": [
+    "Los dos tienen masa y ocupan un espacio, aunque en cantidades muy distintas",
+    "Ninguno de los dos tiene masa, porque son objetos naturales",
+    "Solo la sandía ocupa espacio, porque el grano de arroz es demasiado pequeño",
+    "Los dos pesan exactamente lo mismo, porque los dos son alimentos"
+   ],
+   "correcta": 0,
+   "tip": "Toda materia tiene masa y ocupa espacio, sin importar si es enorme como una sandía o diminuta como un grano de arroz.",
+   "id": "cien4-oa09-14"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Catalina agregó un puñado de tierra a un vaso con agua y lo revolvió. ¿Qué pasó con el nivel del agua?",
+   "opciones": [
+    "Subió un poco, porque la tierra que se agrego también ocupa espacio",
+    "Bajo, porque la tierra absorbió parte del agua y la hizo desaparecer",
+    "Se mantuvo exactamente igual, porque la tierra no ocupa ningún espacio",
+    "El vaso se vacío solo, porque la tierra hizo un hoyo en el fondo"
+   ],
+   "correcta": 0,
+   "tip": "La tierra que se agrega también es materia: ocupa un lugar dentro del vaso, y por eso el nivel del agua sube un poco al agregarla y revolverla.",
+   "id": "cien4-oa09-15"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Martina dijo que una piedra, un vaso con agua y un globo inflado son materia. ¿Tenía razón?",
+   "opciones": [
+    "Si, porque los tres tienen masa y ocupan un espacio, aunque sean muy distintos entre si",
+    "No, porque solo los sólidos como la piedra son materia de verdad, y los líquidos no",
+    "No, porque el agua y el aire no tienen masa, solo ocupan espacio",
+    "Si, pero solo la piedra ocupa espacio; los otros dos no"
+   ],
+   "correcta": 0,
+   "tip": "Una piedra, el agua y el aire tienen masa y ocupan un espacio, así que los tres son materia, aunque se vean y se sientan muy distintos.",
+   "id": "cien4-oa09-16"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Pedro pesó una botella llena de agua y luego la misma botella vacía, con aire adentro. ¿Qué encontró?",
+   "opciones": [
+    "La botella con agua pesó más, porque el agua tiene más masa que el aire que ocupaba antes ese mismo espacio",
+    "Las dos botellas pesaron exactamente lo mismo, porque están hechas del mismo plástico",
+    "La botella con aire pesó más, porque el aire caliente pesa más que el agua fría",
+    "No se puede pesar una botella bien cerrada, porque el aire de adentro siempre se escapa"
+   ],
+   "correcta": 0,
+   "tip": "El agua tiene más masa que el aire que antes ocupaba ese mismo espacio dentro de la botella; por eso la botella llena de agua pesa más.",
+   "id": "cien4-oa09-17"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Francisca ordena de menor a mayor masa una pluma, una manzana y una piedra grande. ¿Cuál es el orden?",
+   "opciones": [
+    "Pluma, manzana, piedra grande",
+    "Piedra grande, pluma, manzana",
+    "Manzana, piedra grande, pluma",
+    "Los tres pesan exactamente lo mismo en cualquier balanza"
+   ],
+   "correcta": 0,
+   "tip": "El orden va de menos masa a más masa: la pluma es la más liviana, la manzana pesa más que la pluma, y la piedra grande es la más pesada de las tres.",
+   "id": "cien4-oa09-18"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Vicente predice qué pasa si mete un cubo de madera en un vaso lleno de agua. ¿Qué predicción es correcta?",
+   "opciones": [
+    "Se va a derramar agua, porque el cubo va a ocupar parte del espacio donde antes había agua",
+    "No va a pasar nada, porque la madera no ocupa espacio dentro del agua",
+    "El nivel del agua va a bajar, porque la madera va a absorber toda el agua",
+    "El vaso se va a llenar mucho más de lo que estaba antes, sin que se derrame ni una gota"
+   ],
+   "correcta": 0,
+   "tip": "Al meter el cubo en el vaso lleno, el cubo ocupa un espacio que antes tenía agua, y esa agua tiene que salir del vaso: se derrama.",
+   "id": "cien4-oa09-19"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Consuelo dice: si algo es muy liviano, entonces no tiene masa. ¿Está en lo correcto?",
+   "opciones": [
+    "No, porque incluso algo muy liviano, como una pluma o un poco de aire, tiene algo de masa",
+    "Si, porque solo los objetos pesados tienen masa de verdad",
+    "Sí, porque la masa solo existe de verdad en los objetos sólidos y muy duros",
+    "No, pero solo porque los objetos livianos ocupan más espacio que los pesados"
+   ],
+   "correcta": 0,
+   "tip": "Incluso los objetos muy livianos, como una pluma o un poco de aire, tienen algo de masa; livianos no es lo mismo que sin masa.",
+   "id": "cien4-oa09-20"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Agustín tiene un vaso con agua y otro con aceite, hasta la misma altura. ¿Qué pueden afirmar ambos líquidos?",
+   "opciones": [
+    "Los dos tienen masa y ocupan un espacio, aunque uno pese distinto que el otro",
+    "Ninguno de los dos tiene masa, porque son líquidos y no sólidos",
+    "Solo el agua ocupa espacio; el aceite flota sin ocupar ningún lugar",
+    "Los dos pesan exactamente lo mismo, porque están a la misma altura en el vaso"
+   ],
+   "correcta": 0,
+   "tip": "El agua y el aceite son materia: los dos tienen masa y ocupan un espacio, aunque uno pese distinto que el otro por ser sustancias diferentes.",
+   "id": "cien4-oa09-21"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Isidora vio que un cubo de hielo, al derretirse, deja un charquito de agua. ¿Qué demuestra esto?",
+   "opciones": [
+    "Que el agua que queda sigue teniendo masa y sigue ocupando espacio, aunque cambió de forma",
+    "Que el hielo deja de ser materia por completo cuando termina de derretirse del todo",
+    "Que el agua que queda ya no tiene masa, porque perdio su forma sólida",
+    "Que el hielo desaparece por completo al derretirse"
+   ],
+   "correcta": 0,
+   "tip": "El agua que queda del hielo derretido sigue siendo materia: tiene masa y sigue ocupando un lugar, solo que ahora en forma líquida.",
+   "id": "cien4-oa09-22"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Emilia comparó dos cajas iguales: una vacía y otra con algodón. ¿Cuál ocupa más espacio?",
+   "opciones": [
+    "Las dos ocupan exactamente el mismo espacio, porque son del mismo tamaño; lo que cambia es la masa",
+    "La caja con algodón ocupa más espacio, porque el algodón se expande dentro de ella",
+    "La caja vacía ocupa más espacio, porque no tiene nada adentro que la achique por dentro",
+    "Ninguna de las dos ocupa espacio, porque las cajas de cartón no cuentan como materia"
+   ],
+   "correcta": 0,
+   "tip": "Dos espacios del mismo tamaño ocupan el mismo volumen sin importar que haya adentro; el algodón y el aire vacío no cambian ese tamaño.",
+   "id": "cien4-oa09-23"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Cristóbal mete un vaso boca abajo en un balde con agua, sin que entre agua adentro. ¿Qué va a ver?",
+   "opciones": [
+    "Que el agua no sube completamente dentro del vaso, porque el aire que ya está ahí ocupa ese lugar",
+    "Que el vaso se llena completamente de agua de inmediato, porque el aire no ocupa ningún espacio",
+    "Que el agua sube más rapido adentro del vaso que afuera de el",
+    "Que el vaso flota fuera del agua, sin que el agua lo toque"
+   ],
+   "correcta": 0,
+   "tip": "El aire que ya está dentro del vaso ocupa ese espacio, así que el agua de afuera no puede entrar completamente mientras el vaso siga boca abajo.",
+   "id": "cien4-oa09-24"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Renata infló dos globos iguales, uno mucho más apretado que el otro. Al pesarlos, ¿qué encontró?",
+   "opciones": [
+    "El globo más inflado pesó un poco más, porque tiene más aire adentro",
+    "Los dos pesaron exactamente lo mismo, porque el tamaño final es igual en los dos",
+    "El globo menos inflado pesó más, porque el plástico está menos estirado",
+    "Ninguno de los dos globos tuvo ningún peso, porque están llenos de aire"
+   ],
+   "correcta": 0,
+   "tip": "Mientras más apretado está el aire dentro del globo, más masa de aire hay adentro, y eso se nota al pesarlo en una balanza sensible.",
+   "id": "cien4-oa09-25"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Maximiliano tiene un puñado de clavos y uno de algodón, del mismo peso. ¿Qué pasa con el espacio que ocupan?",
+   "opciones": [
+    "Aunque pesen lo mismo, el algodón ocupa mucho más espacio que los clavos",
+    "Como pesan lo mismo, tienen que ocupar exactamente el mismo espacio",
+    "El algodón no ocupa ningún espacio, porque es mucho más liviano que el metal",
+    "Los clavos ocupan más espacio, porque son objetos más duros"
+   ],
+   "correcta": 0,
+   "tip": "Aunque pesen lo mismo, el algodón está hecho de fibras sueltas que ocupan mucho más espacio que el metal compacto de los clavos.",
+   "id": "cien4-oa09-26"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Antonia hundió una botella de plástico vacía y cerrada en una tina con agua. ¿Por qué no entra agua en ella?",
+   "opciones": [
+    "Porque el aire que ya está adentro de la botella ocupa ese espacio, y el agua no puede entrar donde ya hay algo",
+    "Porque el plástico de la botella es impermeable y no deja pasar nada, aunque este vacía",
+    "Porque el agua de la tina tiene menos masa que el aire de adentro",
+    "Porque todas las botellas de plástico repelen el agua de forma completamente natural"
+   ],
+   "correcta": 0,
+   "tip": "El aire que ya llena la botella ocupa ese espacio por completo, así que el agua de afuera no tiene donde entrar mientras la botella siga cerrada.",
+   "id": "cien4-oa09-27"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Sebastián tiene un cubo de madera y uno de metal, del mismo tamaño. ¿Qué es correcto afirmar de ambos?",
+   "opciones": [
+    "Los dos ocupan el mismo espacio, pero el de metal tiene más masa que el de madera",
+    "Los dos tienen la misma masa, porque son del mismo tamaño exacto",
+    "El cubo de madera no tiene ninguna masa, porque flota con facilidad en el agua",
+    "El cubo de metal ocupa más espacio, porque pesa más que el de madera"
+   ],
+   "correcta": 0,
+   "tip": "El metal es más denso que la madera: al mismo tamaño, tiene más masa, aunque las dos figuras ocupen exactamente el mismo espacio.",
+   "id": "cien4-oa09-28"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Constanza dice que el aire de un salón vacío no es materia, porque no se ve. ¿Está en lo correcto?",
+   "opciones": [
+    "No, porque el aire tiene masa y ocupa espacio, aunque no se vea a simple vista",
+    "Si, porque para ser materia hay que poder verse y tocarse directamente",
+    "Sí, porque el aire es solo un espacio vacío dentro del salón, sin nada adentro",
+    "No, pero solo porque el aire se puede escuchar cuando sopla el viento"
+   ],
+   "correcta": 0,
+   "tip": "El aire es materia, aunque no se pueda ver a simple vista: tiene masa (se puede pesar) y ocupa espacio (por eso llena los globos).",
+   "id": "cien4-oa09-29"
+  },
+  {
+   "oa": "CN04 OA 09",
+   "pregunta": "Felipe comparó en la balanza un vaso con agua y otro con la misma agua, pero congelada. ¿Qué encontró?",
+   "opciones": [
+    "Los dos pesaron prácticamente lo mismo, porque siguen teniendo la misma cantidad de materia",
+    "El hielo pesó mucho menos, porque al congelarse el agua pierde masa",
+    "El agua líquida pesó mucho menos, porque los líquidos casi no tienen masa",
+    "No se puede comparar de ninguna forma, porque una balanza no logra pesar el hielo"
+   ],
+   "correcta": 0,
+   "tip": "Al cambiar de estado sólido a líquido, el agua sigue siendo la misma cantidad de materia: no se pierde masa solo por derretirse.",
+   "id": "cien4-oa09-30"
+  }
+ ]
+}

@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un pictograma, cada 🖼️ vale 5 estampillas. Diego dibujó 4 símbolos junto a su nombre. ¿Cuántas estampillas tiene?",
+   "opciones": [
+    "20 estampillas",
+    "4 estampillas",
+    "9 estampillas",
+    "24 estampillas"
+   ],
+   "correcta": 0,
+   "tip": "Cada símbolo vale 5, y hay 4: 4 × 5 = 20. No basta con contar los símbolos, hay que multiplicarlos por su valor.",
+   "id": "mate4-oa27-1"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "Una panadería usa un pictograma donde cada 🥖 vale 10 panes. El lunes se dibujaron 3 símbolos. ¿Cuántos panes se vendieron ese día?",
+   "opciones": [
+    "30 panes",
+    "3 panes",
+    "13 panes",
+    "40 panes"
+   ],
+   "correcta": 0,
+   "tip": "3 símbolos, cada uno vale 10: 3 × 10 = 30.",
+   "id": "mate4-oa27-2"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En el pictograma del huerto de Sofía, cada 🍊 representa 4 naranjas. El huerto A dibuja 6 símbolos. ¿Cuántas naranjas cosechó?",
+   "opciones": [
+    "24 naranjas",
+    "6 naranjas",
+    "10 naranjas",
+    "28 naranjas"
+   ],
+   "correcta": 0,
+   "tip": "6 símbolos por 4 naranjas cada uno: 6 × 4 = 24.",
+   "id": "mate4-oa27-3"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un pictograma de mascotas, cada 🐾 vale 3 mascotas. Perros tiene 5 símbolos y gatos tiene 3 símbolos. ¿Cuántas mascotas más hay de perros que de gatos?",
+   "opciones": [
+    "6 mascotas",
+    "24 mascotas",
+    "15 mascotas",
+    "9 mascotas"
+   ],
+   "correcta": 0,
+   "tip": "Perros: 5 × 3 = 15. Gatos: 3 × 3 = 9. La diferencia es 15 − 9 = 6.",
+   "id": "mate4-oa27-4"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "Un pictograma sobre libros leídos usa cada 📖 para 2 libros. 4°A dibuja 7 símbolos y 4°B dibuja 5 símbolos. ¿Qué curso leyó más y por cuánto?",
+   "opciones": [
+    "4°A, por 4 libros de diferencia",
+    "4°B, por 4 libros de diferencia",
+    "4°A, por 2 libros de diferencia",
+    "4°B, por 10 libros en total"
+   ],
+   "correcta": 0,
+   "tip": "4°A: 7 × 2 = 14. 4°B: 5 × 2 = 10. La diferencia es 14 − 10 = 4, y ganó 4°A.",
+   "id": "mate4-oa27-5"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un pictograma, cada 🚌 vale 6 pasajeros. Si un bus llevó 24 pasajeros, ¿cuántos símbolos 🚌 hay que dibujar para representarlo?",
+   "opciones": [
+    "4 símbolos",
+    "24 símbolos",
+    "6 símbolos",
+    "18 símbolos"
+   ],
+   "correcta": 0,
+   "tip": "Para saber cuántos símbolos hacen falta, se divide el total por el valor de cada uno: 24 ÷ 6 = 4.",
+   "id": "mate4-oa27-6"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un pictograma de una verdulería, cada 🍎 vale 5 manzanas. Si se vendieron 35 manzanas en un día, ¿cuántos símbolos se necesitan para mostrarlo?",
+   "opciones": [
+    "7 símbolos",
+    "35 símbolos",
+    "5 símbolos",
+    "30 símbolos"
+   ],
+   "correcta": 0,
+   "tip": "35 ÷ 5 = 7 símbolos.",
+   "id": "mate4-oa27-7"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "Un pictograma de deportes favoritos usa cada ⚽ para 4 votos. Fútbol tiene 6 símbolos, básquetbol 3 y natación 2. ¿Cuántos votos hay en total?",
+   "opciones": [
+    "44 votos",
+    "11 votos",
+    "48 votos",
+    "36 votos"
+   ],
+   "correcta": 0,
+   "tip": "Fútbol 6×4=24, básquetbol 3×4=12, natación 2×4=8. En total: 24+12+8=44.",
+   "id": "mate4-oa27-8"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un pictograma de autos vendidos, cada 🚗 vale 10 autos: rojo 2 símbolos, azul 4 símbolos, blanco 1 símbolo. ¿Qué color vendió más autos?",
+   "opciones": [
+    "Azul, con 40 autos",
+    "Rojo, con 20 autos",
+    "Blanco, con 10 autos",
+    "Los tres vendieron la misma cantidad"
+   ],
+   "correcta": 0,
+   "tip": "Azul tiene 4 símbolos: 4 × 10 = 40, el número más alto de los tres.",
+   "id": "mate4-oa27-9"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un pictograma de puntos de comportamiento, cada ⭐ vale 10 puntos. María tiene 6 símbolos y Pedro tiene 4 símbolos. ¿Cuántos puntos más tiene María?",
+   "opciones": [
+    "20 puntos",
+    "100 puntos",
+    "60 puntos",
+    "40 puntos"
+   ],
+   "correcta": 0,
+   "tip": "María: 6×10=60. Pedro: 4×10=40. La diferencia es 60−40=20.",
+   "id": "mate4-oa27-10"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un pictograma de jardines, cada 🌸 vale 6 flores: jardín A 2 símbolos, jardín B 3 símbolos, jardín C 1 símbolo. ¿Cuál jardín tiene menos flores?",
+   "opciones": [
+    "El jardín C",
+    "El jardín A",
+    "El jardín B",
+    "Los tres tienen la misma cantidad"
+   ],
+   "correcta": 0,
+   "tip": "El jardín C tiene el menor número de símbolos, así que también tiene la menor cantidad de flores: 1 × 6 = 6.",
+   "id": "mate4-oa27-11"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un pictograma, cada 🍪 vale 3 galletas. Si se vendieron 27 galletas, ¿cuántos símbolos hay que dibujar?",
+   "opciones": [
+    "9 símbolos",
+    "27 símbolos",
+    "3 símbolos",
+    "24 símbolos"
+   ],
+   "correcta": 0,
+   "tip": "27 ÷ 3 = 9 símbolos.",
+   "id": "mate4-oa27-12"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un gráfico de barras, el eje sube de 2 en 2: 2, 4, 6, 8, 10, 12, 14, 16, 18. La barra de 'martes' llega justo a la novena marca. ¿Qué valor representa?",
+   "opciones": [
+    "18",
+    "9",
+    "16",
+    "20"
+   ],
+   "correcta": 0,
+   "tip": "La novena marca de una escala que sube de 2 en 2 es 9 × 2 = 18. Contar solo las marcas (9) olvida multiplicarlas por el paso de la escala.",
+   "id": "mate4-oa27-13"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un gráfico de barras, el eje sube de 4 en 4. La barra de 'miércoles' llega justo a la sexta marca. ¿Qué valor representa esa barra?",
+   "opciones": [
+    "24",
+    "6",
+    "20",
+    "28"
+   ],
+   "correcta": 0,
+   "tip": "La sexta marca de una escala que sube de 4 en 4 es 6 × 4 = 24.",
+   "id": "mate4-oa27-14"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un pictograma de pelotas de fútbol, cada ⚽ vale 4 pelotas, y medio balón dibujado vale la mitad. La tienda A dibujó 2 balones enteros y medio. ¿Cuántas pelotas tiene?",
+   "opciones": [
+    "10 pelotas",
+    "8 pelotas",
+    "12 pelotas",
+    "6 pelotas"
+   ],
+   "correcta": 0,
+   "tip": "2 balones enteros son 2 × 4 = 8, y el medio balón vale la mitad de 4, o sea 2. En total: 8 + 2 = 10.",
+   "id": "mate4-oa27-15"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un pictograma de globos, cada 🎈 vale 6 globos, y medio globo dibujado vale la mitad. La fiesta B dibujó 3 globos enteros y medio. ¿Cuántos globos tiene?",
+   "opciones": [
+    "21 globos",
+    "18 globos",
+    "24 globos",
+    "15 globos"
+   ],
+   "correcta": 0,
+   "tip": "3 globos enteros son 3 × 6 = 18, y el medio globo vale la mitad de 6, o sea 3. En total: 18 + 3 = 21.",
+   "id": "mate4-oa27-16"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un gráfico de barras, el eje sube de 5 en 5: 5, 10, 15, 20, 25. La barra de 'fútbol' llega justo a la cuarta marca. ¿Cuál es el valor de esa barra?",
+   "opciones": [
+    "20",
+    "4",
+    "15",
+    "25"
+   ],
+   "correcta": 0,
+   "tip": "La cuarta marca de una escala que sube de 5 en 5 es 4 × 5 = 20.",
+   "id": "mate4-oa27-17"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un gráfico de barras, el eje sube de 10 en 10: 10, 20, 30, 40. La barra de 'natación' llega justo a la tercera marca. ¿Cuál es su valor?",
+   "opciones": [
+    "30",
+    "3",
+    "20",
+    "40"
+   ],
+   "correcta": 0,
+   "tip": "La tercera marca de una escala que sube de 10 en 10 es 3 × 10 = 30.",
+   "id": "mate4-oa27-18"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un gráfico de barras con escala de 5 en 5, la barra roja llega a 15 y la azul llega a 25. ¿Cuánto suman las dos barras?",
+   "opciones": [
+    "40",
+    "10",
+    "15",
+    "25"
+   ],
+   "correcta": 0,
+   "tip": "Se suman los dos valores leídos en la escala: 15 + 25 = 40.",
+   "id": "mate4-oa27-19"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un gráfico de barras con escala de 10 en 10, la barra A llega a 40 y la barra B llega a 10. ¿Cuál es la diferencia entre ambas?",
+   "opciones": [
+    "30",
+    "50",
+    "40",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "La diferencia se calcula restando: 40 − 10 = 30.",
+   "id": "mate4-oa27-20"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "¿Para qué sirve que un pictograma use una escala, en vez de que cada símbolo valga siempre 1 unidad?",
+   "opciones": [
+    "Para representar cantidades grandes usando menos símbolos",
+    "Para que el dibujo se vea más bonito y colorido",
+    "Para que cada símbolo valga menos que antes",
+    "Para no tener que contar ningún símbolo"
+   ],
+   "correcta": 0,
+   "tip": "Con una escala, un solo símbolo puede representar varias unidades: así se pueden mostrar cantidades grandes sin dibujar cientos de símbolos.",
+   "id": "mate4-oa27-21"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un gráfico de barras con escala, ¿qué representa cada línea horizontal marcada en el eje vertical?",
+   "opciones": [
+    "Un valor fijo, como 5 o 10 unidades más que la línea anterior",
+    "Un día distinto de la semana en el gráfico",
+    "Una forma de separar las barras por color",
+    "La cantidad exacta de símbolos que hay en total"
+   ],
+   "correcta": 0,
+   "tip": "Cada línea de la escala marca un salto fijo (por ejemplo, de 5 en 5), y sirve para leer la altura de una barra sin contar de a uno.",
+   "id": "mate4-oa27-22"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un pictograma de mascotas, cada 🐾 vale 5. Perros 4 símbolos, gatos 2 símbolos, aves 1 símbolo. ¿Cuántas mascotas hay en total?",
+   "opciones": [
+    "35 mascotas",
+    "7 mascotas",
+    "40 mascotas",
+    "30 mascotas"
+   ],
+   "correcta": 0,
+   "tip": "Perros 4×5=20, gatos 2×5=10, aves 1×5=5. En total: 20+10+5=35.",
+   "id": "mate4-oa27-23"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un pictograma de tarjetas de cumpleaños, cada 💌 vale 3 tarjetas. Camila tiene 5 símbolos y Vicente tiene 3 símbolos. ¿Quién recibió más y por cuántas?",
+   "opciones": [
+    "Camila, por 6 tarjetas de diferencia",
+    "Vicente, por 6 tarjetas de diferencia",
+    "Camila, por 2 tarjetas de diferencia",
+    "Vicente, con 9 tarjetas en total"
+   ],
+   "correcta": 0,
+   "tip": "Camila: 5×3=15. Vicente: 3×3=9. La diferencia es 15−9=6, y Camila recibió más.",
+   "id": "mate4-oa27-24"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un gráfico de barras, el eje sube de 5 en 5. La barra de 'viernes' llega justo a la séptima marca. ¿Qué cantidad de páginas leídas representa?",
+   "opciones": [
+    "35",
+    "7",
+    "30",
+    "40"
+   ],
+   "correcta": 0,
+   "tip": "La séptima marca de una escala que sube de 5 en 5 es 7 × 5 = 35.",
+   "id": "mate4-oa27-25"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "Una tienda de música vendió 32 discos en una semana y quiere mostrarlo en un pictograma donde cada 💿 representa 4 discos. ¿Cuántos símbolos debe dibujar?",
+   "opciones": [
+    "8 símbolos",
+    "32 símbolos",
+    "4 símbolos",
+    "28 símbolos"
+   ],
+   "correcta": 0,
+   "tip": "Para saber cuántos símbolos hacen falta, se divide el total por el valor de cada uno: 32 ÷ 4 = 8.",
+   "id": "mate4-oa27-26"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un gráfico de barras con escala de 5 en 5, ciclismo llega a 25 y natación llega a 10. ¿Cuál es la diferencia entre las dos barras?",
+   "opciones": [
+    "15",
+    "35",
+    "25",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "La diferencia se obtiene restando: 25 − 10 = 15.",
+   "id": "mate4-oa27-27"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "En un pictograma de dulces, cada 🍬 vale 8 dulces, y medio símbolo vale la mitad. La bolsa 1 tiene un símbolo entero y medio. ¿Cuántos dulces tiene?",
+   "opciones": [
+    "12 dulces",
+    "8 dulces",
+    "16 dulces",
+    "4 dulces"
+   ],
+   "correcta": 0,
+   "tip": "Un símbolo entero vale 8, y el medio vale la mitad de 8, o sea 4. En total: 8 + 4 = 12.",
+   "id": "mate4-oa27-28"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "Camila ve un pictograma donde cada símbolo vale 5 y hay 4 símbolos en la fila de 'martes'. Ella responde que hay 4. ¿Cuál fue su error?",
+   "opciones": [
+    "Olvidó multiplicar los símbolos por el valor de la escala: 4 × 5 = 20",
+    "Contó mal los símbolos, en realidad hay 5",
+    "El pictograma no tenía ninguna escala definida",
+    "Confundió el día martes con otro día de la semana"
+   ],
+   "correcta": 0,
+   "tip": "Cuando el pictograma tiene escala, hay que multiplicar el número de símbolos por su valor: 4 × 5 = 20, no 4.",
+   "id": "mate4-oa27-29"
+  },
+  {
+   "oa": "MA04 OA 27",
+   "pregunta": "¿Cuándo conviene usar un pictograma CON escala, donde cada símbolo vale más de 1, en vez de un símbolo por unidad?",
+   "opciones": [
+    "Cuando las cantidades son grandes y un símbolo por unidad ocuparía demasiado espacio",
+    "Cuando las cantidades son siempre menores a 5",
+    "Nunca: un pictograma siempre debe usar un símbolo por unidad",
+    "Solo cuando los datos son sobre dinero"
+   ],
+   "correcta": 0,
+   "tip": "Con cantidades grandes, dibujar un símbolo por cada unidad sería poco práctico; la escala permite mostrar más con menos símbolos.",
+   "id": "mate4-oa27-30"
+  }
+ ]
+}

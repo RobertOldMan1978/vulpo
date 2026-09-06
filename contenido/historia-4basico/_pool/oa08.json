@@ -1,0 +1,398 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "Cerca del Ecuador está la selva amazónica. ¿Qué clima predomina ahí?",
+   "opciones": [
+    "Cálido y muy húmedo, con lluvias todo el año",
+    "Frío y seco, con nieve casi todo el año",
+    "Templado, con las cuatro estaciones marcadas",
+    "Desértico, con muy poca lluvia"
+   ],
+   "correcta": 0,
+   "tip": "Cerca del Ecuador el sol calienta con más fuerza y el aire húmedo produce lluvias constantes, por eso la Amazonía es cálida y húmeda.",
+   "id": "hist4-oa08-1",
+   "visual": {
+    "tipo": "globo",
+    "destacar": "ecuador"
+   }
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "El desierto de Atacama, en el norte de Chile, es uno de los más secos del planeta. ¿Qué clima tiene?",
+   "opciones": [
+    "Desértico, con lluvias muy escasas",
+    "Tropical, con lluvias abundantes",
+    "Polar, cubierto de hielo",
+    "Templado lluvioso, como el sur de Chile"
+   ],
+   "correcta": 0,
+   "tip": "El clima desértico se caracteriza por precipitaciones muy escasas; Atacama es un caso extremo en América.",
+   "id": "hist4-oa08-2"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "En la Patagonia, al sur de América, los inviernos son largos y muy fríos. ¿Qué clima corresponde a esa zona?",
+   "opciones": [
+    "Frío, por su cercanía al extremo sur del planeta",
+    "Tropical, con calor y humedad todo el año",
+    "Desértico, con temperaturas muy altas de día",
+    "Cálido y húmedo, como la selva amazónica"
+   ],
+   "correcta": 0,
+   "tip": "Al alejarse del Ecuador y acercarse al polo, las temperaturas bajan; la Patagonia tiene clima frío por su cercanía al extremo sur.",
+   "id": "hist4-oa08-3"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "En el altiplano andino hace mucho frío pese a estar cerca del Ecuador. ¿Por qué?",
+   "opciones": [
+    "Porque la altura hace bajar la temperatura",
+    "Porque el altiplano está en el hemisferio sur",
+    "Porque recibe menos horas de sol que el resto",
+    "Porque el altiplano está cubierto de selva"
+   ],
+   "correcta": 0,
+   "tip": "La temperatura baja con la altura: por eso zonas altas de los Andes son frías aunque estén cerca del Ecuador.",
+   "id": "hist4-oa08-4"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "En gran parte de Estados Unidos y Canadá se distinguen cuatro estaciones marcadas. ¿Cómo se llama ese clima?",
+   "opciones": [
+    "Templado, con estaciones bien marcadas",
+    "Tropical, sin diferencias entre estaciones",
+    "Desértico, con lluvias todo el año",
+    "Polar, con hielo permanente"
+   ],
+   "correcta": 0,
+   "tip": "El clima templado se caracteriza por tener las cuatro estaciones bien diferenciadas.",
+   "id": "hist4-oa08-5"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "Las islas del Caribe suelen ser cálidas y a veces reciben huracanes. ¿Qué clima es?",
+   "opciones": [
+    "Tropical, con lluvias estacionales y huracanes",
+    "Frío, con nieve gran parte del año",
+    "Desértico, con temperaturas bajo cero de noche",
+    "Templado, con inviernos largos y fríos"
+   ],
+   "correcta": 0,
+   "tip": "El clima tropical del Caribe es cálido todo el año y trae temporadas de lluvias intensas, como los huracanes.",
+   "id": "hist4-oa08-6"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "El río Amazonas es el que lleva más agua del mundo. ¿Dónde nace y dónde desemboca?",
+   "opciones": [
+    "Nace en los Andes y desemboca en el Atlántico",
+    "Nace en el Atlántico y termina en los Andes",
+    "Nace y termina dentro de Brasil, sin llegar al mar",
+    "Nace en el desierto de Atacama"
+   ],
+   "correcta": 0,
+   "tip": "El Amazonas nace en los Andes y recorre Brasil hasta desembocar en el océano Atlántico.",
+   "id": "hist4-oa08-7"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "El río Misisipi ha sido clave para el transporte en América del Norte. ¿Por qué?",
+   "opciones": [
+    "Porque facilita mover personas y mercancías",
+    "Porque separa completamente a Canadá de México",
+    "Porque impide que se formen ciudades cerca",
+    "Porque no tiene ninguna utilidad"
+   ],
+   "correcta": 0,
+   "tip": "Los ríos grandes como el Misisipi son rutas naturales de transporte, lo que favoreció el crecimiento de ciudades en sus orillas.",
+   "id": "hist4-oa08-8"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "Muchas ciudades de América se fundaron junto a ríos o en la costa. ¿Por qué?",
+   "opciones": [
+    "Porque facilitan el transporte y el acceso al agua",
+    "Porque en esos lugares nunca ha llovido",
+    "Porque cerca del agua no se puede cultivar la tierra",
+    "Porque los ríos impiden que lleguen nuevos habitantes"
+   ],
+   "correcta": 0,
+   "tip": "El agua permite transportar personas y productos, regar cultivos y abastecer a la población.",
+   "id": "hist4-oa08-9"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "El río Paraná atraviesa Brasil, Paraguay y Argentina. ¿Qué muestra este dato?",
+   "opciones": [
+    "Que un mismo río puede cruzar varios países",
+    "Que todos los ríos nacen en el mismo lugar",
+    "Que el Paraná es el río más corto de América",
+    "Que los ríos nunca cruzan fronteras"
+   ],
+   "correcta": 0,
+   "tip": "Muchos ríos americanos, como el Paraná, recorren el territorio de varios países antes de llegar al mar.",
+   "id": "hist4-oa08-10"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "El río Orinoco es uno de los más importantes de Venezuela. ¿Qué función cumplen ríos así?",
+   "opciones": [
+    "Proveen agua dulce y sirven de transporte",
+    "Impiden por completo construir ciudades cerca",
+    "Solo separan territorios entre países",
+    "No tienen ninguna utilidad"
+   ],
+   "correcta": 0,
+   "tip": "Los grandes ríos entregan agua dulce y sirven como ruta de transporte para las comunidades cercanas.",
+   "id": "hist4-oa08-11"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "La selva amazónica tiene menos habitantes por kilómetro cuadrado que una gran ciudad. ¿Por qué?",
+   "opciones": [
+    "Por la densa vegetación y el difícil acceso",
+    "Porque está prohibido vivir ahí",
+    "Porque no hay ningún recurso natural",
+    "Porque el clima es igual al de la ciudad"
+   ],
+   "correcta": 0,
+   "tip": "La vegetación densa y la dificultad para construir caminos hacen que la Amazonía tenga poca población comparada con una ciudad.",
+   "id": "hist4-oa08-12"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "Ciudades como Nueva York o São Paulo reúnen millones de personas en poco espacio. ¿Cómo se llama eso?",
+   "opciones": [
+    "Alta densidad de población",
+    "Baja densidad de población",
+    "Zona sin ningún habitante",
+    "Zona exclusivamente rural"
+   ],
+   "correcta": 0,
+   "tip": "Cuando muchas personas viven en poco espacio, se dice que la zona tiene alta densidad de población.",
+   "id": "hist4-oa08-13"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "Muchas costas de América tienen más población que el interior del continente. ¿Por qué?",
+   "opciones": [
+    "Facilitan el comercio, la pesca y climas templados",
+    "En esas costas nunca ocurren tormentas",
+    "El interior del continente no tiene ningún recurso",
+    "Las costas son el único lugar donde llueve"
+   ],
+   "correcta": 0,
+   "tip": "El acceso al mar favorece el comercio y la pesca, y muchas costas tienen climas templados que atraen población.",
+   "id": "hist4-oa08-14"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "En los Andes de Bolivia y Perú hay comunidades a más de 3.000 metros de altura. ¿Qué muestra esto?",
+   "opciones": [
+    "Que las personas se adaptan a distintos paisajes",
+    "Que nadie puede vivir sobre los 1.000 metros de altura",
+    "Que en los Andes no vive nadie en la actualidad",
+    "Que la altura impide cultivar cualquier alimento"
+   ],
+   "correcta": 0,
+   "tip": "Los pueblos andinos se adaptaron con técnicas propias, como terrazas de cultivo, a vivir en la altura.",
+   "id": "hist4-oa08-15"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "¿Cuál de estos países tiene el español como idioma principal?",
+   "opciones": [
+    "Argentina",
+    "Brasil",
+    "Estados Unidos",
+    "Canadá"
+   ],
+   "correcta": 0,
+   "tip": "Argentina, como la mayoría de los países de América Latina, tiene el español como idioma oficial.",
+   "id": "hist4-oa08-16"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "Brasil es el único gran país de América del Sur que no habla español. ¿Cuál es su idioma?",
+   "opciones": [
+    "El portugués",
+    "El francés",
+    "El inglés",
+    "El italiano"
+   ],
+   "correcta": 0,
+   "tip": "Brasil fue colonizado por Portugal, por eso su idioma oficial es el portugués.",
+   "id": "hist4-oa08-17"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "En Quebec, una provincia de Canadá, se habla otro idioma junto al inglés. ¿Cuál es?",
+   "opciones": [
+    "El francés",
+    "El portugués",
+    "El alemán",
+    "El italiano"
+   ],
+   "correcta": 0,
+   "tip": "Quebec fue colonizada por Francia, así que el francés se mantiene como idioma oficial junto al inglés.",
+   "id": "hist4-oa08-18"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "En Haití se habla francés y otro idioma nacido de la mezcla con lenguas africanas. ¿Cómo se llama?",
+   "opciones": [
+    "El creole",
+    "El quechua",
+    "El náhuatl",
+    "El guaraní"
+   ],
+   "correcta": 0,
+   "tip": "El creole haitiano surgió de la mezcla entre lenguas africanas y el francés, y sigue vivo hoy en Haití.",
+   "id": "hist4-oa08-19"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "En Perú, Bolivia y Ecuador se habla hoy la misma lengua que hablaban los incas. ¿Cuál es?",
+   "opciones": [
+    "El quechua",
+    "El mapudungún",
+    "El maya",
+    "El aimara antiguo"
+   ],
+   "correcta": 0,
+   "tip": "El quechua sigue vivo y lo hablan millones de personas en los Andes en la actualidad, no solo en el pasado.",
+   "id": "hist4-oa08-20"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "Canadá, Estados Unidos y otro país forman América del Norte. ¿Cuál es ese tercer país?",
+   "opciones": [
+    "México",
+    "Guatemala",
+    "Cuba",
+    "Perú"
+   ],
+   "correcta": 0,
+   "tip": "México es el tercer gran país de América del Norte, junto a Canadá y Estados Unidos.",
+   "id": "hist4-oa08-21"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "Guatemala, Costa Rica y Panamá están en la estrecha franja que une las dos Américas. ¿Cómo se llama?",
+   "opciones": [
+    "América Central",
+    "El Caribe",
+    "El cono sur",
+    "La Patagonia"
+   ],
+   "correcta": 0,
+   "tip": "América Central agrupa a los países ubicados entre México y Colombia, en la parte más angosta del continente.",
+   "id": "hist4-oa08-22"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "Cuba, República Dominicana y Puerto Rico están rodeados de mar en la misma región. ¿Cómo se llama?",
+   "opciones": [
+    "El Caribe",
+    "El altiplano",
+    "La Patagonia",
+    "El cono sur"
+   ],
+   "correcta": 0,
+   "tip": "El Caribe es la región de islas ubicada entre América del Norte y América del Sur.",
+   "id": "hist4-oa08-23"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "Un país ocupa casi la mitad del territorio de América del Sur. ¿Cuál es?",
+   "opciones": [
+    "Brasil",
+    "Chile",
+    "Uruguay",
+    "Ecuador"
+   ],
+   "correcta": 0,
+   "tip": "Brasil es el país más grande de América del Sur, tanto en territorio como en población.",
+   "id": "hist4-oa08-24"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "Chile es un país extremadamente largo y angosto. ¿Qué lo distingue de otros países de América?",
+   "opciones": [
+    "Su gran extensión y su territorio angosto",
+    "Tener más población que cualquier otro país americano",
+    "No tener ninguna cordillera",
+    "Estar ubicado completamente en zona tropical"
+   ],
+   "correcta": 0,
+   "tip": "La forma larga y angosta de Chile hace que tenga desierto en el norte, clima templado al centro y clima frío en el sur.",
+   "id": "hist4-oa08-25"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "Nueva York es una de las ciudades más grandes de América del Norte. ¿En qué país está?",
+   "opciones": [
+    "Estados Unidos",
+    "Canadá",
+    "México",
+    "Brasil"
+   ],
+   "correcta": 0,
+   "tip": "Nueva York se encuentra en la costa este de Estados Unidos.",
+   "id": "hist4-oa08-26"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "São Paulo es la ciudad con más habitantes de Brasil. ¿Qué caracteriza a las grandes ciudades como esa?",
+   "opciones": [
+    "Concentran mucha población en poco espacio",
+    "Tienen menos habitantes que un pueblo pequeño",
+    "Están siempre en zonas desérticas",
+    "No tienen actividad comercial"
+   ],
+   "correcta": 0,
+   "tip": "Las grandes ciudades como São Paulo concentran millones de personas, lo que las convierte en zonas de muy alta densidad.",
+   "id": "hist4-oa08-27"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "La Ciudad de México es la capital de México. ¿En qué región de América está México?",
+   "opciones": [
+    "En América del Norte",
+    "En América del Sur",
+    "En el Caribe",
+    "En la Patagonia"
+   ],
+   "correcta": 0,
+   "tip": "México forma parte de América del Norte, junto con Estados Unidos y Canadá.",
+   "id": "hist4-oa08-28"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "La cordillera de los Andes recorre casi toda América del Sur. ¿Qué es una cordillera?",
+   "opciones": [
+    "Una cadena de montañas unidas por un largo trecho",
+    "Un río de gran ancho y mucha profundidad",
+    "Una llanura completamente plana y sin desniveles",
+    "Un desierto ubicado muy cerca del mar"
+   ],
+   "correcta": 0,
+   "tip": "Una cordillera es una cadena de montañas unidas entre sí que se extiende por una gran distancia, como los Andes.",
+   "id": "hist4-oa08-29"
+  },
+  {
+   "oa": "HI04 OA 08",
+   "pregunta": "Las Pampas argentinas son una extensa zona plana usada para agricultura y ganadería. ¿Qué palabra la describe?",
+   "opciones": [
+    "Llanura",
+    "Cordillera",
+    "Meseta",
+    "Istmo"
+   ],
+   "correcta": 0,
+   "tip": "Una llanura es un terreno plano y extenso, ideal para cultivar y criar ganado, como las Pampas argentinas.",
+   "id": "hist4-oa08-30"
+  }
+ ]
+}

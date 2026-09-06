@@ -1,0 +1,418 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "Sofía cuenta de 10 en 10: 350, 360, 370. ¿Qué número sigue?",
+   "opciones": [
+    "380",
+    "270",
+    "371",
+    "470"
+   ],
+   "correcta": 0,
+   "tip": "Contar de 10 en 10 significa sumar 10 cada vez: 370 más 10 es 380.",
+   "id": "mate4-oa01-1"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "Matías cuenta hacia atrás de 10 en 10: 640, 630, 620. ¿Qué número sigue?",
+   "opciones": [
+    "610",
+    "530",
+    "621",
+    "720"
+   ],
+   "correcta": 0,
+   "tip": "Contar hacia atrás de 10 en 10 es restar 10 cada vez: 620 menos 10 es 610.",
+   "id": "mate4-oa01-2"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "Diego cuenta de 100 en 100: 2.300, 2.400, 2.500. ¿Qué número dice después?",
+   "opciones": [
+    "2.600",
+    "2.510",
+    "3.500",
+    "2.501"
+   ],
+   "correcta": 0,
+   "tip": "Contar de 100 en 100 suma 100 cada vez a la centena: 2.500 más 100 es 2.600.",
+   "id": "mate4-oa01-3"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "Camila cuenta hacia atrás de 100 en 100: 4.800, 4.700, 4.600. ¿Qué número sigue?",
+   "opciones": [
+    "4.500",
+    "4.610",
+    "3.600",
+    "4.599"
+   ],
+   "correcta": 0,
+   "tip": "Restar 100 cambia solo la centena: 4.600 menos 100 es 4.500.",
+   "id": "mate4-oa01-4"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "Javiera cuenta de mil en mil: 3.000, 4.000, 5.000. ¿Qué número sigue?",
+   "opciones": [
+    "6.000",
+    "5.100",
+    "4.999",
+    "15.000"
+   ],
+   "correcta": 0,
+   "tip": "Contar de 1.000 en 1.000 suma 1.000 a la unidad de mil: 5.000 más 1.000 es 6.000.",
+   "id": "mate4-oa01-5"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "Benjamín va bajando de mil en mil: 8.000, 7.000, 6.000. ¿Cuál es el siguiente número?",
+   "opciones": [
+    "5.000",
+    "6.100",
+    "6.999",
+    "5.999"
+   ],
+   "correcta": 0,
+   "tip": "Restar 1.000 baja la unidad de mil en una: 6.000 menos 1.000 es 5.000.",
+   "id": "mate4-oa01-6"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "En la secuencia 4.520, 4.530, ___, 4.550, ¿qué número falta?",
+   "opciones": [
+    "4.540",
+    "4.531",
+    "4.500",
+    "4.560"
+   ],
+   "correcta": 0,
+   "tip": "Entre 4.530 y 4.550 hay 20 de diferencia: el número que falta es 4.530 más 10, o sea 4.540.",
+   "id": "mate4-oa01-7"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "¿Cómo se lee el número 4.203?",
+   "opciones": [
+    "cuatro mil doscientos tres",
+    "cuatro mil veintitrés",
+    "cuarenta mil doscientos tres",
+    "cuatro mil doscientos treinta"
+   ],
+   "correcta": 0,
+   "tip": "4.203 tiene 4 unidades de mil, 2 centenas, 0 decenas y 3 unidades: cuatro mil doscientos tres.",
+   "id": "mate4-oa01-8"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "¿Qué número corresponde a «seis mil setenta y cinco»?",
+   "opciones": [
+    "6.075",
+    "6.750",
+    "6.705",
+    "675"
+   ],
+   "correcta": 0,
+   "tip": "Seis mil setenta y cinco tiene 6 unidades de mil, 0 centenas, 7 decenas y 5 unidades: 6.075.",
+   "id": "mate4-oa01-9"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "El número 8.009 se lee en voz alta. ¿Cuál es la forma correcta?",
+   "opciones": [
+    "ocho mil nueve",
+    "ochenta mil nueve",
+    "ocho mil noventa",
+    "ochocientos nueve"
+   ],
+   "correcta": 0,
+   "tip": "8.009 no tiene centenas ni decenas: se lee ocho mil nueve.",
+   "id": "mate4-oa01-10"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "¿Qué número corresponde a «nueve mil ochocientos»?",
+   "opciones": [
+    "9.800",
+    "9.080",
+    "9.008",
+    "980"
+   ],
+   "correcta": 0,
+   "tip": "Nueve mil ochocientos tiene 9 unidades de mil, 8 centenas y ninguna decena ni unidad: 9.800.",
+   "id": "mate4-oa01-11"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "Un número se forma con 3 bloques de mil, 2 centenas, 5 decenas y 4 unidades. ¿Qué número es?",
+   "opciones": [
+    "3.254",
+    "3.524",
+    "3.245",
+    "3.025"
+   ],
+   "correcta": 0,
+   "tip": "Cada bloque de mil vale 1.000, cada centena 100, cada decena 10 y cada unidad 1: 3.254.",
+   "id": "mate4-oa01-12"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "El número 5.132 se representa con bloques de mil, centenas, decenas y unidades. ¿Cuántas centenas necesitas?",
+   "opciones": [
+    "1",
+    "5",
+    "3",
+    "2"
+   ],
+   "correcta": 0,
+   "tip": "El dígito de las centenas en 5.132 es 1, así que se necesita 1 bloque de cien.",
+   "id": "mate4-oa01-13"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "¿Cuál de estos números es mayor: 4.789 o 4.798?",
+   "opciones": [
+    "4.798",
+    "4.789",
+    "Son iguales",
+    "No se puede saber"
+   ],
+   "correcta": 0,
+   "tip": "Los dos tienen las mismas unidades de mil y centenas; en las decenas, 9 es mayor que 8, así que 4.798 es mayor.",
+   "id": "mate4-oa01-14"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "¿Cuál de estos números es menor: 6.204 o 5.999?",
+   "opciones": [
+    "5.999",
+    "6.204",
+    "Son iguales",
+    "No se puede saber"
+   ],
+   "correcta": 0,
+   "tip": "5.999 tiene 5 unidades de mil y 6.204 tiene 6, así que 5.999 es menor aunque sus otras cifras sean más grandes.",
+   "id": "mate4-oa01-15"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "Ordena de menor a mayor: 3.410, 3.140, 3.401.",
+   "opciones": [
+    "3.140, 3.401, 3.410",
+    "3.410, 3.401, 3.140",
+    "3.401, 3.140, 3.410",
+    "3.140, 3.410, 3.401"
+   ],
+   "correcta": 0,
+   "tip": "3.140 tiene 1 centena y los otros tienen 4; entre esos dos, 3.401 tiene menos decenas que 3.410.",
+   "id": "mate4-oa01-16"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "Ordena de mayor a menor: 7.050, 7.500, 7.005.",
+   "opciones": [
+    "7.500, 7.050, 7.005",
+    "7.005, 7.050, 7.500",
+    "7.500, 7.005, 7.050",
+    "7.050, 7.500, 7.005"
+   ],
+   "correcta": 0,
+   "tip": "7.500 tiene 5 centenas; 7.050 tiene 0 centenas y 5 decenas; 7.005 tiene 0 centenas y 0 decenas.",
+   "id": "mate4-oa01-17"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "En el número 6.482, ¿qué valor tiene el dígito 4?",
+   "opciones": [
+    "400",
+    "4",
+    "40",
+    "4.000"
+   ],
+   "correcta": 0,
+   "tip": "El 4 está en el lugar de las centenas, así que su valor es 400, no solo 4.",
+   "id": "mate4-oa01-18"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "El dígito 9 del número 9.157 ocupa las unidades de mil. ¿Cuál es su valor?",
+   "opciones": [
+    "9.000",
+    "9",
+    "900",
+    "90"
+   ],
+   "correcta": 0,
+   "tip": "El 9 ocupa el lugar de las unidades de mil, así que su valor es 9.000.",
+   "id": "mate4-oa01-19"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "El número 10.000 tiene un 1 en las decenas de mil. ¿Qué valor representa ese dígito?",
+   "opciones": [
+    "10.000",
+    "1",
+    "1.000",
+    "100"
+   ],
+   "correcta": 0,
+   "tip": "El 1 está en el lugar de las decenas de mil, así que su valor es 10.000: todo el número.",
+   "id": "mate4-oa01-20"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "En el número 3.567, ¿qué lugar ocupa el dígito 5?",
+   "opciones": [
+    "Las centenas",
+    "Las decenas",
+    "Las unidades",
+    "Las unidades de mil"
+   ],
+   "correcta": 0,
+   "tip": "En 3.567 el 5 va después de las unidades de mil: es el lugar de las centenas.",
+   "id": "mate4-oa01-21"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "¿Qué número se forma al sumar 4.000 + 300 + 20 + 6?",
+   "opciones": [
+    "4.326",
+    "4.236",
+    "4.360",
+    "4.026"
+   ],
+   "correcta": 0,
+   "tip": "4.000 aporta las unidades de mil, 300 las centenas, 20 las decenas y 6 las unidades: 4.326.",
+   "id": "mate4-oa01-22"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "Si juntas 7.000, 90 y 2, ¿qué número obtienes?",
+   "opciones": [
+    "7.092",
+    "7.902",
+    "7.920",
+    "7.029"
+   ],
+   "correcta": 0,
+   "tip": "No hay centenas en esta suma, así que ese dígito es 0: 7.000 + 90 + 2 es 7.092.",
+   "id": "mate4-oa01-23"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "¿Cómo se descompone el número 5.847 según el valor de cada dígito?",
+   "opciones": [
+    "5.000 + 800 + 40 + 7",
+    "5.000 + 80 + 4 + 7",
+    "5.000 + 800 + 4 + 7",
+    "500 + 800 + 40 + 7"
+   ],
+   "correcta": 0,
+   "tip": "Cada dígito vale según su posición: 5 mil, 8 centenas, 4 decenas y 7 unidades: 5.000 + 800 + 40 + 7.",
+   "id": "mate4-oa01-24"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "¿Cómo se descompone el número 2.406?",
+   "opciones": [
+    "2.000 + 400 + 6",
+    "2.000 + 400 + 60",
+    "2.000 + 40 + 6",
+    "200 + 400 + 6"
+   ],
+   "correcta": 0,
+   "tip": "El cero de las decenas no se salta: 2.406 se descompone en 2.000 + 400 + 6.",
+   "id": "mate4-oa01-25"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "En la recta numérica, una marca sin número queda justo entre el 500 y el 700. ¿Qué número es?",
+   "opciones": [
+    "600",
+    "550",
+    "650",
+    "500"
+   ],
+   "correcta": 0,
+   "tip": "Entre 500 y 700, contando de 100 en 100, el número que queda justo a la mitad es 600.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 1000,
+    "paso": 100,
+    "marca": 600,
+    "oculta": true
+   },
+   "id": "mate4-oa01-26"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "En una recta que salta de mil en mil, hay una marca sin número entre el 3.000 y el 5.000. ¿Qué número es?",
+   "opciones": [
+    "4.000",
+    "3.500",
+    "4.500",
+    "5.000"
+   ],
+   "correcta": 0,
+   "tip": "Entre 3.000 y 5.000 hay dos saltos de 1.000: el número que falta es 4.000.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 6000,
+    "paso": 1000,
+    "marca": 4000,
+    "oculta": true
+   },
+   "id": "mate4-oa01-27"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "Una recta salta de 100 en 100. Entre el 4.700 y el 4.900 hay una marca oculta. ¿Cuál es ese número?",
+   "opciones": [
+    "4.800",
+    "4.750",
+    "4.850",
+    "4.950"
+   ],
+   "correcta": 0,
+   "tip": "Entre 4.700 y 4.900 hay dos saltos de 100: el número que falta en el medio es 4.800.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 4500,
+    "hasta": 5000,
+    "paso": 100,
+    "marca": 4800,
+    "oculta": true
+   },
+   "id": "mate4-oa01-28"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "¿Qué número tiene 2 en las unidades de mil, 0 en las centenas, 7 en las decenas y 9 en las unidades?",
+   "opciones": [
+    "2.079",
+    "2.709",
+    "2.790",
+    "279"
+   ],
+   "correcta": 0,
+   "tip": "El cero en las centenas no se salta: el número queda 2.079, con un espacio vacío en ese lugar.",
+   "id": "mate4-oa01-29"
+  },
+  {
+   "oa": "MA04 OA 01",
+   "pregunta": "En el número 4.930, ¿cuántas centenas hay en total?",
+   "opciones": [
+    "49",
+    "9",
+    "4",
+    "493"
+   ],
+   "correcta": 0,
+   "tip": "4.930 tiene 4 mil y 9 centenas sueltas; contando todas juntas (1 mil son 10 centenas), son 40 + 9, o sea 49.",
+   "id": "mate4-oa01-30"
+  }
+ ]
+}

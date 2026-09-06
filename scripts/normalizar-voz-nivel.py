@@ -195,9 +195,13 @@ def normalizar(texto, oa=""):
     # es la abreviatura de enero. Verificado sintetizando y transcribiendo de vuelta:
     # con 10 falla, con 3/4/5/100 no, pero se desarma la construccion entera —escribir
     # el numero con palabras la arregla— para no depender de que numero toque.
-    t = re.sub(r"\b(\d+)\s+en\s+(\d+)\b",
-               lambda m: "%s en %s" % (_en_palabras(int(m.group(1))),
-                                       _en_palabras(int(m.group(2)))), t)
+    # ⚠️ El numero puede llevar el punto de los miles ("de 1.000 en 1.000", propio de
+    # 4 basico): sin el "(?:\.\d{3})*" el regex cortaba en el punto y el resultado
+    # sintetizado era "1.cero en uno.000" — la mitad del numero se perdia en silencio.
+    # Encontrado por un agente redactor de MA04 OA 01, verificado antes de aplicarlo.
+    t = re.sub(r"\b(\d+(?:\.\d{3})*)\s+en\s+(\d+(?:\.\d{3})*)\b",
+               lambda m: "%s en %s" % (_en_palabras(int(m.group(1).replace(".", ""))),
+                                       _en_palabras(int(m.group(2).replace(".", "")))), t)
 
     t = re.sub(r"\b(\d+)/(\d+)\b", _fraccion, t)          # antes que la barra suelta
 
@@ -213,6 +217,12 @@ def normalizar(texto, oa=""):
     # operacion desaparece. Verificado transcribiendo el audio. Se comprobo que en las
     # 792 preguntas NO hay ningun guion usado como puntuacion, asi que es seguro.
     t = re.sub(r"(?<=\S)\s+[-−]\s+(?=\S)", " menos ", t)
+    # ⚠️ Un numero NEGATIVO como opcion suelta ("-32") no queda cubierto por ninguna
+    # regla de arriba: las dos exigen un digito ANTES del guion. Sin esto el guion se
+    # sintetiza mudo o ambiguo y "32" / "-32" suenan IGUAL — dos opciones que se
+    # confunden al oido. Encontrado por auditar-audible-nivel.py en MA04 OA 14
+    # ("50 − ▢ = 18", opciones 32 y -32), verificado antes de aplicarlo.
+    t = re.sub(r"(?<!\d)[-−](?=\d)", " menos ", t)
     # El blanco a completar ("506 __ 560", "35, 40, ___, 50") hay que NOMBRARLO. Una
     # simple pausa no sirve: "35, 40, 50" suena a que esa es la secuencia, y el nino
     # que escucha en vez de leer se pierde justo el hueco que tiene que llenar.

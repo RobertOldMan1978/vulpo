@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Diego lanzó un dado 20 veces y anotó los resultados: salió 1 tres veces, 2 dos veces, 3 cuatro veces, 4 tres veces, 5 tres veces y 6 cinco veces. ¿Qué número salió más veces?",
+   "opciones": [
+    "El 6, con 5 veces",
+    "El 3, con 4 veces",
+    "El 1, con 3 veces",
+    "El 2, con 2 veces"
+   ],
+   "correcta": 0,
+   "tip": "El 6 salió 5 veces, que es el número más alto de la tabla de resultados.",
+   "id": "mate4-oa26-1"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Camila lanzó una moneda 12 veces y registró: 7 veces salió cara y 5 veces salió sello. ¿Cuántas veces en total lanzó la moneda?",
+   "opciones": [
+    "12 veces",
+    "7 veces",
+    "5 veces",
+    "2 veces"
+   ],
+   "correcta": 0,
+   "tip": "El total de lanzamientos es la suma de los dos resultados posibles: 7 + 5 = 12.",
+   "id": "mate4-oa26-2"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Sofía sacó una bolita de una bolsa con rojas y azules, anotó el color y la devolvió, repitiendo esto 15 veces: roja 9, azul 6. ¿De qué color parece haber más en la bolsa?",
+   "opciones": [
+    "Rojas, porque salieron más veces en el experimento",
+    "Azules, porque salieron menos veces en el experimento",
+    "No se puede saber nada sobre la bolsa con este experimento",
+    "Deben ser la misma cantidad de cada color, sin importar el resultado"
+   ],
+   "correcta": 0,
+   "tip": "Si al repetir el experimento sale más veces un color, es una señal de que probablemente hay más bolitas de ese color en la bolsa.",
+   "id": "mate4-oa26-3"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Matías lanzó un dado 30 veces y tabuló los resultados en esta tabla: 1 → 4 veces, 2 → 6 veces, 3 → 5 veces, 4 → 5 veces, 5 → 4 veces, 6 → 6 veces. ¿Cuántas veces salió un número par (2, 4 o 6)?",
+   "opciones": [
+    "17 veces",
+    "13 veces",
+    "30 veces",
+    "6 veces"
+   ],
+   "correcta": 0,
+   "tip": "Los pares son 2, 4 y 6: se suman sus resultados, 6 + 5 + 6 = 17.",
+   "id": "mate4-oa26-4"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Javiera tiene una bolsa con bolitas de tres colores. Sacó una bolita, anotó el color y la devolvió, repitiendo esto 24 veces: verde 12, amarilla 8, morada 4. ¿Qué color salió con menos frecuencia?",
+   "opciones": [
+    "Morada, con 4 veces",
+    "Verde, con 12 veces",
+    "Amarilla, con 8 veces",
+    "Ninguna, porque las tres salieron el mismo número de veces"
+   ],
+   "correcta": 0,
+   "tip": "Morada tiene el número más bajo del registro, 4, así que fue el color que salió con menos frecuencia.",
+   "id": "mate4-oa26-5"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Benjamín lanzó dos monedas al mismo tiempo, 16 veces, y anotó cuántas caras salieron cada vez: 0 caras 3 veces, 1 cara 8 veces, 2 caras 5 veces. ¿Cuántos lanzamientos en total registró?",
+   "opciones": [
+    "16 lanzamientos",
+    "8 lanzamientos",
+    "3 lanzamientos",
+    "13 lanzamientos"
+   ],
+   "correcta": 0,
+   "tip": "Se suman los tres resultados posibles: 3 + 8 + 5 = 16.",
+   "id": "mate4-oa26-6"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Ana giró una ruleta de 4 colores iguales 20 veces y anotó: rojo 9, azul 5, verde 4, amarillo 2. Si las partes son iguales, ¿qué llama la atención de estos resultados?",
+   "opciones": [
+    "Que el rojo salió muchas más veces que los demás, lo que no se esperaría si las partes fueran iguales",
+    "Que el amarillo salió la mayor cantidad de veces posible",
+    "Que la suma de todos los resultados da menos de 20",
+    "Que una ruleta nunca puede dar resultados distintos entre colores"
+   ],
+   "correcta": 0,
+   "tip": "Si las cuatro partes fueran iguales, se esperaría que los resultados fueran parecidos entre sí; que el rojo casi duplique a los demás es una señal a observar.",
+   "id": "mate4-oa26-7"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Un grupo lanzó un dado 18 veces y anotó: 1→2, 2→3, 3→4, 4→3, 5→3, 6→3. Si el juego da un punto cada vez que sale 3, ¿cuántos puntos ganaron?",
+   "opciones": [
+    "4 puntos",
+    "3 puntos",
+    "18 puntos",
+    "2 puntos"
+   ],
+   "correcta": 0,
+   "tip": "El número 3 salió 4 veces según la tabla, así que se ganaron 4 puntos.",
+   "id": "mate4-oa26-8"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Constanza sacó una carta numerada del 1 al 10, la devolvió y repitió esto 25 veces: un número menor a 5 salió 14 veces. ¿Cuántas veces salió 5 o más?",
+   "opciones": [
+    "11 veces",
+    "14 veces",
+    "25 veces",
+    "5 veces"
+   ],
+   "correcta": 0,
+   "tip": "Del total de 25 repeticiones, 14 fueron menores a 5, así que las restantes son 25 − 14 = 11.",
+   "id": "mate4-oa26-9"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Rodrigo lanzó un dado 40 veces para un experimento de la clase y organizó los resultados en una tabla antes de hacer un gráfico. ¿Qué debe anotar en cada fila de esa tabla?",
+   "opciones": [
+    "Un número del dado (del 1 al 6) y cuántas veces salió",
+    "La hora exacta en que ocurrió cada uno de los 40 lanzamientos del dado",
+    "El nombre completo de la persona que lanzó el dado en cada turno",
+    "El color y el tamaño exactos del dado que se usó en el experimento"
+   ],
+   "correcta": 0,
+   "tip": "En un experimento con un dado, se tabula cada resultado posible (1 a 6) junto a cuántas veces ocurrió, no los detalles de cada lanzamiento por separado.",
+   "id": "mate4-oa26-10"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Vicente sacó una bolita de una bolsa con rojas y verdes, la devolvió y repitió esto 22 veces: roja 6, verde 16. Según su experimento, ¿qué color es más probable sacar la próxima vez?",
+   "opciones": [
+    "Verde, porque salió muchas más veces en las 22 repeticiones",
+    "Roja, porque salió menos veces y por eso 'le toca' salir",
+    "Cualquiera, porque las dos salieron exactamente la misma cantidad de veces",
+    "Ninguna, porque un experimento con bolitas nunca sirve para predecir nada"
+   ],
+   "correcta": 0,
+   "tip": "Si un color salió muchas más veces en el experimento, es razonable pensar que hay más bolitas de ese color y que es más probable que vuelva a salir.",
+   "id": "mate4-oa26-11"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Florencia lanzó una moneda 30 veces para un experimento y registró 17 caras y 13 sellos. Su compañero dice que 'la moneda está mala porque no salió mitad y mitad exacta'. ¿Es correcta esa afirmación?",
+   "opciones": [
+    "No necesariamente: al repetir un experimento con una moneda, es normal que los resultados no salgan exactamente mitad y mitad",
+    "Sí, una moneda normal siempre debe dar exactamente 15 y 15 en 30 lanzamientos",
+    "No, porque las monedas nunca pueden usarse en experimentos aleatorios",
+    "Sí, porque cualquier diferencia entre cara y sello indica que la moneda está dañada"
+   ],
+   "correcta": 0,
+   "tip": "Los resultados de un experimento aleatorio varían de una repetición a otra; que no salga exactamente mitad y mitad no significa que algo esté mal.",
+   "id": "mate4-oa26-12"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Ignacio giró dos veces seguidas una ruleta de tres colores y anotó: mismo color las dos veces 9, color distinto las dos veces 18. ¿Cuántos giros dobles hizo en total?",
+   "opciones": [
+    "27 giros dobles",
+    "9 giros dobles",
+    "18 giros dobles",
+    "3 giros dobles"
+   ],
+   "correcta": 0,
+   "tip": "Se suman los dos casos posibles del registro: 9 + 18 = 27.",
+   "id": "mate4-oa26-13"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Amanda lanzó un dado 24 veces con sus compañeros para un juego de mesa. Antes de anotar los resultados en una tabla, ¿qué es lo primero que debe decidir?",
+   "opciones": [
+    "Qué resultados son posibles (los números del 1 al 6) y cómo contará cada uno",
+    "Qué color especial pintará cada una de las seis caras del dado antes de lanzarlo",
+    "Cuánto pesa exactamente el dado que va a usar durante todo el experimento",
+    "En qué orden exacto se sentarán todos sus compañeros alrededor de la mesa"
+   ],
+   "correcta": 0,
+   "tip": "Antes de tabular, hay que tener claros los resultados posibles del experimento (1 a 6 en un dado) para poder contar cuántas veces sale cada uno.",
+   "id": "mate4-oa26-14"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Un curso lanzó un dado 60 veces entre todos y anotó: 1 → 9, 2 → 11, 3 → 10, 4 → 8, 5 → 12, 6 → 10. ¿Cuál fue el número que salió con más frecuencia?",
+   "opciones": [
+    "El 5, con 12 veces",
+    "El 2, con 11 veces",
+    "El 4, con 8 veces",
+    "El 1, con 9 veces"
+   ],
+   "correcta": 0,
+   "tip": "El 5 tiene el número más alto de la tabla, 12, así que fue el resultado más frecuente.",
+   "id": "mate4-oa26-15"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Emilia sacó una bolita de una bolsa con rojas, azules y blancas, la devolvió y repitió esto 20 veces: roja 2, azul 3, blanca 15. ¿Qué color hay probablemente en mayor cantidad?",
+   "opciones": [
+    "Blanco, porque salió muchas más veces que los otros dos colores juntos",
+    "Rojo, porque salió el menor número de veces",
+    "Azul, porque es un número intermedio entre los otros dos",
+    "No se puede saber, porque las bolitas de una bolsa nunca se pueden estimar así"
+   ],
+   "correcta": 0,
+   "tip": "Blanco salió 15 de 20 veces, muchísimo más que las otras dos: es razonable pensar que en la bolsa hay más bolitas blancas.",
+   "id": "mate4-oa26-16"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Un grupo lanzó una moneda 50 veces y fue anotando una marca cada vez que salía cara, hasta llegar a 28 marcas al final. ¿Cuántas veces salió sello?",
+   "opciones": [
+    "22 veces",
+    "28 veces",
+    "50 veces",
+    "78 veces"
+   ],
+   "correcta": 0,
+   "tip": "De los 50 lanzamientos, 28 fueron cara, así que los sellos son 50 − 28 = 22.",
+   "id": "mate4-oa26-17"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Pedro y sus amigos jugaron a lanzar un dado y ganaban un punto si salía un número mayor a 4. Lanzaron el dado 35 veces y un número mayor a 4 (5 o 6) salió 11 veces. ¿Cuántos puntos NO ganaron?",
+   "opciones": [
+    "24 veces",
+    "11 veces",
+    "35 veces",
+    "4 veces"
+   ],
+   "correcta": 0,
+   "tip": "De 35 lanzamientos, 11 dieron punto; los que no dieron punto son 35 − 11 = 24.",
+   "id": "mate4-oa26-18"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Josefa registró en una tabla los resultados de lanzar un dado 45 veces. Antes de hacer el gráfico de barras con esos datos, ¿qué debe verificar sobre su tabla?",
+   "opciones": [
+    "Que la suma de todos los resultados anotados dé exactamente 45",
+    "Que todos los números del dado hayan salido la misma cantidad de veces",
+    "Que el color del dado coincida con el color de las barras del gráfico",
+    "Que el experimento se haya hecho en menos de un minuto"
+   ],
+   "correcta": 0,
+   "tip": "Como se hicieron 45 lanzamientos, la suma de las veces que salió cada número debe dar 45: es una forma de comprobar que no faltó ni sobró ningún dato.",
+   "id": "mate4-oa26-19"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Tomás sacó una carta de un mazo con cartas rojas y negras, anotó el color y la devolvió, repitiendo esto 26 veces: roja 13, negra 13. ¿Qué muestra este resultado sobre las dos opciones?",
+   "opciones": [
+    "Que en este experimento salieron la misma cantidad de veces cada color",
+    "Que el mazo no tiene ninguna carta negra",
+    "Que el experimento se hizo mal porque los resultados deberían ser distintos",
+    "Que las cartas rojas son más pesadas que las negras"
+   ],
+   "correcta": 0,
+   "tip": "13 y 13 significa que, en este experimento, los dos colores salieron exactamente la misma cantidad de veces.",
+   "id": "mate4-oa26-20"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Un curso de 4° básico hizo un experimento lanzando un dado 100 veces entre todos y anotando cada resultado en una tabla. ¿Para qué sirve tabular los resultados antes de hacer el gráfico?",
+   "opciones": [
+    "Para ordenar y contar los datos, de modo que sea más fácil pasarlos después a un gráfico",
+    "Para que el dado deje de ser un objeto de azar y dé siempre el mismo número",
+    "Para que el experimento se pueda repetir exactamente 100 veces más",
+    "Para elegir qué número del dado es el correcto antes de lanzarlo"
+   ],
+   "correcta": 0,
+   "tip": "Tabular es ordenar y contar los resultados; esa organización es la que después se traduce directamente en las alturas de un gráfico de barras.",
+   "id": "mate4-oa26-21"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Camila hizo girar una ruleta con dos partes iguales, una roja y una azul, 40 veces, y anotó: rojo 21, azul 19. ¿Qué se puede decir de este resultado, sabiendo que las dos partes de la ruleta son iguales?",
+   "opciones": [
+    "Que el resultado salió parecido entre los dos colores, como se esperaría de partes iguales, aunque no fue exactamente mitad y mitad",
+    "Que la ruleta está mal hecha porque no dio exactamente 20 y 20",
+    "Que el azul nunca podrá volver a salir en experimentos futuros",
+    "Que hay que repetir el experimento porque el resultado no sirve"
+   ],
+   "correcta": 0,
+   "tip": "Con partes iguales se espera un resultado parecido entre ambos colores, y 21 contra 19 es justamente eso: cercano, aunque no exacto.",
+   "id": "mate4-oa26-22"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Un grupo sacó una bolita de una bolsa, anotó el color y la devolvió, repitiendo esto 30 veces: verde 6, azul 6, roja 18. Con estos datos, ¿cuántas bolitas verdes o azules salieron en total?",
+   "opciones": [
+    "12 veces",
+    "18 veces",
+    "6 veces",
+    "30 veces"
+   ],
+   "correcta": 0,
+   "tip": "Se suman las dos categorías pedidas: 6 + 6 = 12.",
+   "id": "mate4-oa26-23"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Sofía lanzó un dado 28 veces para un experimento y registró que un número par salió 15 veces. ¿Cuántas veces salió un número impar?",
+   "opciones": [
+    "13 veces",
+    "15 veces",
+    "28 veces",
+    "6 veces"
+   ],
+   "correcta": 0,
+   "tip": "Del total de 28 lanzamientos, 15 fueron pares; los impares son 28 − 15 = 13.",
+   "id": "mate4-oa26-24"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Diego y su curso repitieron el mismo experimento de lanzar un dado 30 veces, una vez en la mañana y otra en la tarde. Los resultados de las dos tablas no fueron idénticos. ¿Qué explica esto?",
+   "opciones": [
+    "Que un experimento aleatorio puede dar resultados distintos cada vez que se repite, aunque se use el mismo dado",
+    "Que el dado cambia de forma entre la mañana y la tarde",
+    "Que uno de los dos experimentos está mal hecho porque no coinciden",
+    "Que los números del dado se intercambian solos durante el día"
+   ],
+   "correcta": 0,
+   "tip": "En un experimento aleatorio, repetirlo no garantiza el mismo resultado exacto cada vez: es parte de lo que significa que sea al azar.",
+   "id": "mate4-oa26-25"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Un grupo hizo un experimento sacando una bolita de una bolsa con 3 colores, la devolvió y repitió 33 veces: azul 11, roja 11, verde 11. ¿Qué sugiere este resultado sobre la cantidad de bolitas de cada color en la bolsa?",
+   "opciones": [
+    "Que probablemente hay una cantidad parecida de bolitas de cada color",
+    "Que la bolsa solo tiene bolitas azules",
+    "Que el experimento se hizo solo una vez y no sirve",
+    "Que no se puede sacar ninguna conclusión de un experimento repetido"
+   ],
+   "correcta": 0,
+   "tip": "Si los tres colores salen la misma cantidad de veces al repetir el experimento, es razonable pensar que hay cantidades parecidas de cada color en la bolsa.",
+   "id": "mate4-oa26-26"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Matías anotó en una tabla los resultados de lanzar una moneda 18 veces: cara 10, sello 8. Quiere representar estos datos con un gráfico de barras. ¿Cuántas barras necesitará dibujar?",
+   "opciones": [
+    "2 barras, una para cara y otra para sello",
+    "18 barras, una por cada lanzamiento",
+    "10 barras, según el resultado más alto",
+    "1 barra, con el total de lanzamientos"
+   ],
+   "correcta": 0,
+   "tip": "Hay dos resultados posibles en una moneda, cara y sello, así que el gráfico necesita una barra por cada uno: 2 barras en total.",
+   "id": "mate4-oa26-27"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Un curso lanzó un dado 90 veces y registró que el número 6 salió 20 veces. Si esperaban que cada número saliera aproximadamente 15 veces (90 dividido en 6 números), ¿qué se puede decir del resultado del 6?",
+   "opciones": [
+    "Que salió más veces de lo esperado, aunque eso puede pasar por azar en un experimento real",
+    "Que el dado está roto y nunca más puede usarse",
+    "Que el número 6 ya no puede volver a salir en los próximos lanzamientos",
+    "Que 20 es imposible de obtener al lanzar un dado 90 veces"
+   ],
+   "correcta": 0,
+   "tip": "En un experimento real los resultados no caen siempre exacto en lo esperado; que un número salga un poco más o menos de lo previsto es normal por el azar.",
+   "id": "mate4-oa26-28"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Un grupo hizo un experimento con una ruleta de cuatro partes iguales (roja, azul, verde, amarilla), girándola 32 veces: rojo 9, azul 7, verde 8, amarillo 8. ¿Cuál de estos colores salió con la MISMA frecuencia que otro?",
+   "opciones": [
+    "Verde y amarillo, los dos con 8 veces",
+    "Rojo y azul, los dos con 9 veces",
+    "Rojo y verde, los dos con 7 veces",
+    "Ninguno, porque los cuatro colores salieron distinta cantidad de veces"
+   ],
+   "correcta": 0,
+   "tip": "Verde y amarillo aparecen los dos con 8 en la tabla, así que fueron los únicos con la misma frecuencia.",
+   "id": "mate4-oa26-29"
+  },
+  {
+   "oa": "MA04 OA 26",
+   "pregunta": "Felipe lanzó un dado 24 veces para un juego de mesa y anotó cada resultado en una tabla apenas lo obtenía. ¿Por qué es mejor anotar cada resultado al momento, en vez de intentar recordarlos todos al final?",
+   "opciones": [
+    "Porque con muchos lanzamientos es fácil olvidar u ordenar mal los resultados si no se anotan de inmediato",
+    "Porque el dado cambia de número si no se anota rápido",
+    "Porque anotar al final del experimento está prohibido en matemática",
+    "Porque solo importa el último resultado del experimento, no los anteriores"
+   ],
+   "correcta": 0,
+   "tip": "Con muchas repeticiones, la memoria falla fácilmente: anotar cada resultado apenas ocurre evita errores de conteo al construir la tabla final.",
+   "id": "mate4-oa26-30"
+  }
+ ]
+}

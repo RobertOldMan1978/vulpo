@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "¿Cuánto es 234 × 3?",
+   "opciones": [
+    "702",
+    "692",
+    "237",
+    "602"
+   ],
+   "correcta": 0,
+   "tip": "Se multiplica 3 por cada parte de 234 según su valor posicional y se suman los resultados, respetando las reservas. 234 × 3 = 702.",
+   "id": "mate4-oa05-1"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "¿Cuánto es 456 × 2?",
+   "opciones": [
+    "912",
+    "802",
+    "458",
+    "812"
+   ],
+   "correcta": 0,
+   "tip": "Se multiplica 2 por cada parte de 456 según su valor posicional y se suman los resultados, respetando las reservas. 456 × 2 = 912.",
+   "id": "mate4-oa05-2"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "¿Cuánto es 178 × 4?",
+   "opciones": [
+    "712",
+    "482",
+    "182",
+    "612"
+   ],
+   "correcta": 0,
+   "tip": "Se multiplica 4 por cada parte de 178 según su valor posicional y se suman los resultados, respetando las reservas. 178 × 4 = 712.",
+   "id": "mate4-oa05-3"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "¿Cuánto es 325 × 3?",
+   "opciones": [
+    "975",
+    "965",
+    "328",
+    "875"
+   ],
+   "correcta": 0,
+   "tip": "Se multiplica 3 por cada parte de 325 según su valor posicional y se suman los resultados, respetando las reservas. 325 × 3 = 975.",
+   "id": "mate4-oa05-4"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "¿Cuánto es 612 × 4?",
+   "opciones": [
+    "2.448",
+    "448",
+    "616",
+    "2.348"
+   ],
+   "correcta": 0,
+   "tip": "Se multiplica 4 por cada parte de 612 según su valor posicional y se suman los resultados, respetando las reservas. 612 × 4 = 2.448.",
+   "id": "mate4-oa05-5"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "¿Cuánto es 143 × 6?",
+   "opciones": [
+    "858",
+    "648",
+    "149",
+    "758"
+   ],
+   "correcta": 0,
+   "tip": "Se multiplica 6 por cada parte de 143 según su valor posicional y se suman los resultados, respetando las reservas. 143 × 6 = 858.",
+   "id": "mate4-oa05-6"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "¿Cuánto es 287 × 3?",
+   "opciones": [
+    "861",
+    "641",
+    "290",
+    "761"
+   ],
+   "correcta": 0,
+   "tip": "Se multiplica 3 por cada parte de 287 según su valor posicional y se suman los resultados, respetando las reservas. 287 × 3 = 861.",
+   "id": "mate4-oa05-7"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "¿Cuánto es 519 × 2?",
+   "opciones": [
+    "1.038",
+    "28",
+    "521",
+    "938"
+   ],
+   "correcta": 0,
+   "tip": "Se multiplica 2 por cada parte de 519 según su valor posicional y se suman los resultados, respetando las reservas. 519 × 2 = 1.038.",
+   "id": "mate4-oa05-8"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "¿Cuánto es 364 × 5?",
+   "opciones": [
+    "1.820",
+    "500",
+    "369",
+    "1.720"
+   ],
+   "correcta": 0,
+   "tip": "Se multiplica 5 por cada parte de 364 según su valor posicional y se suman los resultados, respetando las reservas. 364 × 5 = 1.820.",
+   "id": "mate4-oa05-9"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "¿Cuánto es 208 × 7?",
+   "opciones": [
+    "1.456",
+    "406",
+    "215",
+    "1.356"
+   ],
+   "correcta": 0,
+   "tip": "Se multiplica 7 por cada parte de 208 según su valor posicional y se suman los resultados, respetando las reservas. 208 × 7 = 1.456.",
+   "id": "mate4-oa05-10"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "Ana estimó 3 × 198 redondeando 198 a la centena más cercana (200). ¿Cuál es su estimación?",
+   "opciones": [
+    "600",
+    "594",
+    "201",
+    "900"
+   ],
+   "correcta": 0,
+   "tip": "Al redondear 198 a 200 y multiplicar por 3, la estimación es 600. El valor exacto (594) es otra cosa: aquí se pregunta por la estimación.",
+   "id": "mate4-oa05-11"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "Diego estimó 4 × 298 redondeando 298 a la centena más cercana (300). ¿Cuál es su estimación?",
+   "opciones": [
+    "1.200",
+    "1.192",
+    "302",
+    "1.600"
+   ],
+   "correcta": 0,
+   "tip": "Al redondear 298 a 300 y multiplicar por 4, la estimación es 1.200. El valor exacto (1.192) es otra cosa: aquí se pregunta por la estimación.",
+   "id": "mate4-oa05-12"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "Camila estimó 5 × 402 redondeando 402 a la centena más cercana (400). ¿Cuál es su estimación?",
+   "opciones": [
+    "2.000",
+    "2.010",
+    "407",
+    "2.500"
+   ],
+   "correcta": 0,
+   "tip": "Al redondear 402 a 400 y multiplicar por 5, la estimación es 2.000. El valor exacto (2.010) es otra cosa: aquí se pregunta por la estimación.",
+   "id": "mate4-oa05-13"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "Matías estimó 2 × 596 redondeando 596 a la centena más cercana (600). ¿Cuál es su estimación?",
+   "opciones": [
+    "1.200",
+    "1.192",
+    "598",
+    "1.400"
+   ],
+   "correcta": 0,
+   "tip": "Al redondear 596 a 600 y multiplicar por 2, la estimación es 1.200. El valor exacto (1.192) es otra cosa: aquí se pregunta por la estimación.",
+   "id": "mate4-oa05-14"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "Sofía estimó 6 × 295 redondeando 295 a la centena más cercana (300). ¿Cuál es su estimación?",
+   "opciones": [
+    "1.800",
+    "1.770",
+    "301",
+    "2.400"
+   ],
+   "correcta": 0,
+   "tip": "Al redondear 295 a 300 y multiplicar por 6, la estimación es 1.800. El valor exacto (1.770) es otra cosa: aquí se pregunta por la estimación.",
+   "id": "mate4-oa05-15"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "Para calcular 234 × 3, Diego separó así: 200 × 3 + 30 × 3 + 4 × 3. ¿Qué propiedad usó?",
+   "opciones": [
+    "La propiedad distributiva de la multiplicación respecto de la suma",
+    "La propiedad del 0 en la multiplicación, que anula cualquier producto",
+    "La estimación de productos, redondeando antes de multiplicar",
+    "Las tablas de multiplicación, resolviendo cada cifra por separado"
+   ],
+   "correcta": 0,
+   "tip": "Separar 234 en 200 + 30 + 4 y multiplicar cada parte por 3 para después sumar es aplicar la propiedad distributiva.",
+   "id": "mate4-oa05-16"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "Para calcular 456 × 2, Renata separó así: 400 × 2 + 50 × 2 + 6 × 2. ¿Qué propiedad usó?",
+   "opciones": [
+    "La propiedad distributiva de la multiplicación respecto de la suma",
+    "La propiedad del 0 en la multiplicación, que anula cualquier producto",
+    "La estimación de productos, redondeando antes de multiplicar",
+    "Las tablas de multiplicación, resolviendo cada cifra por separado"
+   ],
+   "correcta": 0,
+   "tip": "Separar 456 en 400 + 50 + 6 y multiplicar cada parte por 2 para después sumar es aplicar la propiedad distributiva.",
+   "id": "mate4-oa05-17"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "Para calcular 127 × 4, Vicente separó así: 100 × 4 + 20 × 4 + 7 × 4. ¿Qué propiedad usó?",
+   "opciones": [
+    "La propiedad distributiva de la multiplicación respecto de la suma",
+    "La propiedad del 0 en la multiplicación, que anula cualquier producto",
+    "La estimación de productos, redondeando antes de multiplicar",
+    "Las tablas de multiplicación, resolviendo cada cifra por separado"
+   ],
+   "correcta": 0,
+   "tip": "Separar 127 en 100 + 20 + 7 y multiplicar cada parte por 4 para después sumar es aplicar la propiedad distributiva.",
+   "id": "mate4-oa05-18"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "Para calcular 318 × 3, Javiera separó así: 300 × 3 + 10 × 3 + 8 × 3. ¿Qué propiedad usó?",
+   "opciones": [
+    "La propiedad distributiva de la multiplicación respecto de la suma",
+    "La propiedad del 0 en la multiplicación, que anula cualquier producto",
+    "La estimación de productos, redondeando antes de multiplicar",
+    "Las tablas de multiplicación, resolviendo cada cifra por separado"
+   ],
+   "correcta": 0,
+   "tip": "Separar 318 en 300 + 10 + 8 y multiplicar cada parte por 3 para después sumar es aplicar la propiedad distributiva.",
+   "id": "mate4-oa05-19"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "Para calcular 245 × 5, Ignacio separó así: 200 × 5 + 40 × 5 + 5 × 5. ¿Qué propiedad usó?",
+   "opciones": [
+    "La propiedad distributiva de la multiplicación respecto de la suma",
+    "La propiedad del 0 en la multiplicación, que anula cualquier producto",
+    "La estimación de productos, redondeando antes de multiplicar",
+    "Las tablas de multiplicación, resolviendo cada cifra por separado"
+   ],
+   "correcta": 0,
+   "tip": "Separar 245 en 200 + 40 + 5 y multiplicar cada parte por 5 para después sumar es aplicar la propiedad distributiva.",
+   "id": "mate4-oa05-20"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "Para calcular 163 × 6, Martina separó así: 100 × 6 + 60 × 6 + 3 × 6. ¿Qué propiedad usó?",
+   "opciones": [
+    "La propiedad distributiva de la multiplicación respecto de la suma",
+    "La propiedad del 0 en la multiplicación, que anula cualquier producto",
+    "La estimación de productos, redondeando antes de multiplicar",
+    "Las tablas de multiplicación, resolviendo cada cifra por separado"
+   ],
+   "correcta": 0,
+   "tip": "Separar 163 en 100 + 60 + 3 y multiplicar cada parte por 6 para después sumar es aplicar la propiedad distributiva.",
+   "id": "mate4-oa05-21"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "Para calcular 324 × 3, Martina se apoyó en la tabla del 3 para cada cifra. ¿Qué usó como apoyo principal?",
+   "opciones": [
+    "Las tablas de multiplicación",
+    "La propiedad del 1",
+    "La estimación de productos",
+    "Una suma repetida"
+   ],
+   "correcta": 0,
+   "tip": "Martina se apoyó en lo que ya sabe de la tabla del 3 para resolver cada parte del número.",
+   "id": "mate4-oa05-22"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "Ana multiplicó 213 × 4 en columna, cifra por cifra, anotando las reservas. ¿Qué estrategia usó?",
+   "opciones": [
+    "El algoritmo de la multiplicación en columna, anotando las reservas",
+    "La estimación de productos, redondeando bien antes de multiplicar",
+    "La propiedad del 0 en la multiplicación, que anula cualquier resultado",
+    "El conteo hacia adelante, sumando de a uno varias veces seguidas"
+   ],
+   "correcta": 0,
+   "tip": "Multiplicar en columna, dígito por dígito y anotando las reservas, es aplicar el algoritmo de la multiplicación.",
+   "id": "mate4-oa05-23"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "Benjamín calculó 3 × 152 sumando 152 tres veces: 152 + 152 + 152 = 456. ¿Qué estrategia usó?",
+   "opciones": [
+    "Una estrategia personal con sumas repetidas",
+    "El algoritmo de la multiplicación en columna",
+    "La estimación de productos",
+    "La propiedad del 1"
+   ],
+   "correcta": 0,
+   "tip": "Sumar el mismo número varias veces es una estrategia personal para multiplicar, sin usar el algoritmo en columna.",
+   "id": "mate4-oa05-24"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "Sofía sabe que 4 × 6 = 24, y lo usó para calcular más rápido 4 × 126. ¿Qué apoyo usó?",
+   "opciones": [
+    "Las tablas de multiplicación",
+    "La propiedad del 0",
+    "La estimación de productos",
+    "Una resta repetida"
+   ],
+   "correcta": 0,
+   "tip": "Conocer 4 × 6 = 24 de memoria (una tabla de multiplicar) ayuda a resolver partes de una multiplicación más grande.",
+   "id": "mate4-oa05-25"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "Vicente quería saber, sin calcular exacto, si 4 × 287 se acerca más a 800 o a 1.200. ¿Qué le sirve?",
+   "opciones": [
+    "La estimación de productos, redondeando 287 a 300",
+    "El algoritmo de la multiplicación en columna, dígito por dígito",
+    "La propiedad del 1 en la multiplicación",
+    "Las tablas de multiplicación del 2"
+   ],
+   "correcta": 0,
+   "tip": "Para saber a qué número se acerca sin calcular exacto, conviene redondear y estimar: 4 × 300 = 1.200.",
+   "id": "mate4-oa05-26"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "Una caja tiene 125 chocolates. Si se compran 4 cajas iguales, ¿cuántos chocolates hay en total?",
+   "opciones": [
+    "500 chocolates",
+    "129 chocolates",
+    "450 chocolates",
+    "510 chocolates"
+   ],
+   "correcta": 0,
+   "tip": "Se multiplica lo que hay en una caja por el número de cajas: 125 × 4 = 500.",
+   "id": "mate4-oa05-27"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "Un bus tiene 45 asientos. Si van 3 buses iguales llenos, ¿cuántos pasajeros viajan en total?",
+   "opciones": [
+    "135 pasajeros",
+    "48 pasajeros",
+    "125 pasajeros",
+    "150 pasajeros"
+   ],
+   "correcta": 0,
+   "tip": "Se multiplica la cantidad de asientos por el número de buses: 45 × 3 = 135.",
+   "id": "mate4-oa05-28"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "Cada semana Diego lee 216 páginas. ¿Cuántas páginas leerá en 4 semanas iguales?",
+   "opciones": [
+    "864 páginas",
+    "220 páginas",
+    "844 páginas",
+    "860 páginas"
+   ],
+   "correcta": 0,
+   "tip": "Se multiplica lo que lee en una semana por el número de semanas: 216 × 4 = 864.",
+   "id": "mate4-oa05-29"
+  },
+  {
+   "oa": "MA04 OA 05",
+   "pregunta": "En una feria se venden entradas a 350 pesos cada una. Si un grupo compra 6 entradas, ¿cuánto pagará en total?",
+   "opciones": [
+    "2.100 pesos",
+    "356 pesos",
+    "2.000 pesos",
+    "2.106 pesos"
+   ],
+   "correcta": 0,
+   "tip": "Se multiplica el precio de una entrada por la cantidad de entradas: 350 × 6 = 2.100.",
+   "id": "mate4-oa05-30"
+  }
+ ]
+}

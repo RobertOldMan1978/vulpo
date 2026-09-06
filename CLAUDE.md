@@ -136,15 +136,17 @@ año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron co
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
 están hoy en una expedición jugable, el resto es reserva.
 
-> **Estado de aprobación (05/09/2026): 13.565 de 13.565 preguntas aprobadas — el 100% del banco
-> escrito.** Más las 130 de 130 mini-clases/introducciones. Los últimos 4.530 en aprobarse fueron
+> **Estado de aprobación (06/09/2026): 13.565 de 16.295 preguntas aprobadas.** El banco escrito
+> creció a 16.295 el 05/09 al terminarse 4° básico (2.730 preguntas nuevas, sus 91 OA, todavía
+> `revisada:false`): **es la única parte del proyecto sin firmar.** Más las 130 de 130 mini-clases
+> e introducciones, esas sí las 130 aprobadas. Los últimos 4.530 en aprobarse antes de 4° fueron
 > Historia (660) y Lenguaje (900) de 5°, y las cuatro asignaturas completas de 6° —Matemática
 > (720), Ciencias (540), Historia (780) y Lenguaje (930)—. Pero **cómo se aprobó cada banco no es
 > lo mismo, y hay que saberlo antes de decírselo a un colegio:** los 2.536 de 8° y los módulos de
-> apoyo se revisaron **pregunta por pregunta**; el resto —3°, 5°, 6° y 7°— se aprobó **por
-> muestreo** —8 de cada 30 por objetivo, criterio de `docs/aprobacion-pedagogica.md`—. Por eso la
-> landing dice *"aprobadas por un profesor, objetivo por objetivo"* y **nunca** *"una a una"*: el
-> 100% es de cobertura, no de método.
+> apoyo se revisaron **pregunta por pregunta**; 3°, 5°, 6° y 7° se aprobaron **por muestreo** —8 de
+> cada 30 por objetivo, criterio de `docs/aprobacion-pedagogica.md`—. Por eso la landing dice
+> *"aprobadas por un profesor, objetivo por objetivo"* y **nunca** *"una a una"*, y por lo mismo
+> **la landing NO debe decir "el banco entero está aprobado" hasta que 4° se firme.**
 >
 > ✅ **5° y 6° básico ya tienen su arte propio (05/09/2026).** Villanos generados y cableados en
 > los 8 `jefeFinal` de ambos forks, más las 9 portadas de capítulo que le faltaban a 6° (5° ya
@@ -8751,3 +8753,85 @@ es la decisión comercial de cuándo anunciarlos.
   5° en un navegador si a Roberto le interesa (opcional, no bloquea); **4° básico** (Bloque B3,
   92 OA, ~2.760 preguntas, el único con voz y dibujos) para cerrar el Bloque B entero; y los de
   arrastre — INAPI, el enlace de agenda de la landing, y la reautenticación de NotebookLM.
+
+### Sesión 94 (2026-09-05 y 06) — 4° básico: banco completo, las tres asignaturas nuevas del Bloque B ya están escritas
+
+Roberto pidió empezar 4° básico y lanzar varios agentes, avisando que había margen de token.
+**El margen de token no cambió la regla de Roberto de la Sesión 89** —agentes de a pocos (3-4 a
+la vez), esperando que cierre la tanda antes de la siguiente—: esa regla protege contra perder
+trabajo si la sesión colapsa a media tanda, un riesgo que no depende de cuántos tokens queden.
+Se respetó igual, con ~26 agentes redactores en 8 tandas secuenciales.
+
+**Resultado: las 91 OA de 4° básico (`LE04 OA 15` excluido por caligrafía, ya declarado en su
+`oa.json`), 2.730 preguntas.**
+
+| Asignatura | OA | Preguntas |
+|---|---|---|
+| Matemática | 27/27 | 810 |
+| Ciencias | 17/17 | 510 |
+| Historia | 18/18 | 540 |
+| Lenguaje | 29/29 | 870 |
+
+**El método, tal como quedó fijado en la Sesión 92:** una tanda de validación de **8 objetivos
+de riesgo real** antes de escalar —fracciones con muchos denominadores (riesgo de la trampa
+"opciones que valen lo mismo"), el OA sensible del alcohol (`CN04 OA 08`), y los actitudinales de
+honestidad/respeto/hábito lector—, y desde ahí agentes de 2-3 OA por llamado. **Cada tanda se
+verificó contra los cuatro scripts reales antes de aceptarla, nunca contra el autorreporte del
+agente** — y esa disciplina encontró defectos de verdad:
+
+- **`cien4-oa08` (el OA sensible) tenía 28 de 30 enunciados sobre el límite de 110 caracteres**
+  de 4° básico, hasta 198. El agente había corrido `revisar-tanda.py` sin el flag `--largo=110`
+  y por eso no lo vio — su propio autorreporte decía "0 errores".
+- **Un casi-duplicado real entre Lenguaje `oa07` y `oa08`**: una pregunta de "gusto lector"
+  medía en realidad un trámite de biblioteca, tema del otro OA. Se reescribió para que midiera lo
+  que le correspondía a su objetivo.
+- **Tres archivos de Historia (`oa04-06`) con sesgo de largo de 30%, 47% y 47%** — muy sobre el
+  techo del 27%. Siguiendo la regla de la Sesión 92, no se le pidió al mismo agente reescribir
+  todo: se despachó **un agente de reparación acotado** que solo alargó los distractores cortos
+  de las preguntas marcadas, sin tocar enunciado ni clave. Bajó los tres a 0% en una sola pasada.
+- **Un casi-duplicado real entre Matemática `oa17` (simetría) y `oa18` (reflexión)**: dos agentes
+  distintos, sin saber uno del otro, escribieron la misma pregunta de "la mitad de una mariposa".
+  Se reescribió una de las dos con otro objeto y otro ángulo de medición.
+- **Un solo error de contenido real en las 2.730**: `auditar-banco-nivel.py` marcó
+  `mate4-oa03-25` como con la clave mal — comparó `468+275=743` contra la clave "2", **sin ver que
+  la pregunta no pedía la suma sino cuántas reservas hacen falta al sumar** (2 es correcto: una
+  al sumar las unidades, otra al sumar las decenas). Es el mismo falso positivo que ya se había
+  visto en la Sesión 62 con "¿en qué dígito termina el producto?" — un script que compara contra
+  el resultado y no contra la propiedad que en realidad se pregunta.
+
+**Dos bugs reales, y compartidos, encontrados en `normalizar-voz-nivel.py`** (el script que decide
+qué pronuncia la voz sintetizada) — los dos benefician a cualquier curso con voz que venga
+después, no solo a 4°:
+
+1. **"de 1.000 en 1.000" se sintetizaba "1.cero en uno.000".** La regla que desarma "N en N" (para
+   que no se lea como fecha, "10 de ENERO de 10") usaba `\d+`, que no atraviesa el punto de los
+   miles. 3° nunca lo pisó porque no cuenta más allá de 1.000 con esa construcción exacta.
+2. **Un número negativo suelto como opción sonaba igual que el positivo.** `mate4-oa14-9` tenía
+   `32` y `-32` entre sus cuatro opciones, y las dos reglas de guion existentes exigían un dígito
+   **antes** del signo — un "-32" al principio de una opción no calzaba con ninguna. Lo cazó
+   `auditar-audible-nivel.py`, no una lectura del texto. 3° tampoco lo tenía porque no usa enteros
+   negativos.
+
+Los dos se corrigieron en el script compartido, con el porqué escrito en el código, y se
+reverificó **el banco completo de Matemática (810 preguntas) en cero problemas de audibilidad**
+después del segundo fix.
+
+**Verificación final, sobre el banco consolidado de las cuatro asignaturas:** `validar-oa-json.py`
+en 0 errores y 0 avisos; `consolidar-pool-nivel.py` sin descartar un solo duplicado en las 2.730;
+ids únicos en el nivel completo; ningún enunciado sobre el límite duro de 220 caracteres; **el
+100% de las 2.730 preguntas se puede responder ESCUCHANDO** (`auditar-audible-nivel.py`, el
+chequeo extra que solo llevan 3° y 4° por tener voz pregrabada); `dev/tablero.html` regenerado sin
+romperse — la comprobación obligatoria después de sumar un banco, porque un `oa.json` con otro
+formato deja sin tablero a los quince bancos anteriores, no solo al nuevo.
+
+> **El Bloque B queda con el banco de sus tres cursos completo: 8.490 de 8.490 preguntas**
+> (2.790 de 5° + 2.970 de 6° + 2.730 de 4°). Lo que falta ya no es banco: es el fork
+> `4to/index.html` (que no existe todavía), su aprobación pedagógica, su voz (~US$8 de Azure,
+> **después** de aprobar, nunca en paralelo) y su arte propio — el mismo camino que ya recorrieron
+> 5° y 6°, con la diferencia de que 4° lleva voz y dibujos, como 3°.
+
+- **Pendiente:** construir `4to/index.html` (clonar el patrón de `5to/`/`6to/`, con `META_OA` de
+  91 entradas y reparto en capítulos por asignatura, decidido al construir el fork); backend
+  (`niveles.js` + `schema.sql`, una fila cada uno — M4 pagándose otra vez); aprobación pedagógica
+  de las 2.730 preguntas; voz (~US$8 de Azure); arte propio (villanos + portadas); y los de
+  arrastre — INAPI, el enlace de agenda de la landing, la reautenticación de NotebookLM.

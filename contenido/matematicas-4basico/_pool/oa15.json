@@ -1,0 +1,518 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "En este mapa simple, ¿en qué casilla está el semáforo?",
+   "opciones": [
+    "(B, 3)",
+    "(C, 3)",
+    "(B, 2)",
+    "(3, B)"
+   ],
+   "correcta": 0,
+   "tip": "El semáforo está en la columna B (segunda desde la izquierda) y en la fila 3: su casilla es (B, 3).",
+   "visual": {
+    "tipo": "cuadricula",
+    "cols": 4,
+    "filas": 4,
+    "rosa": true,
+    "fichas": [
+     {
+      "col": 2,
+      "fila": 3,
+      "emoji": "🚦"
+     }
+    ]
+   },
+   "id": "mate4-oa15-1"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "Mira el mapa: ¿en qué columna y fila se encuentra la maceta?",
+   "opciones": [
+    "(D, 1)",
+    "(D, 2)",
+    "(C, 1)",
+    "(1, D)"
+   ],
+   "correcta": 0,
+   "tip": "La maceta está en la columna D y en la fila 1, la de más arriba: su ubicación es (D, 1).",
+   "visual": {
+    "tipo": "cuadricula",
+    "cols": 5,
+    "filas": 3,
+    "rosa": true,
+    "fichas": [
+     {
+      "col": 4,
+      "fila": 1,
+      "emoji": "🪴"
+     }
+    ]
+   },
+   "id": "mate4-oa15-2"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "Según el mapa, ¿cuál es la ubicación del kiosco?",
+   "opciones": [
+    "(A, 4)",
+    "(A, 1)",
+    "(D, 4)",
+    "(4, A)"
+   ],
+   "correcta": 0,
+   "tip": "El kiosco está pegado al borde izquierdo (columna A) y bien abajo (fila 4): su casilla es (A, 4).",
+   "visual": {
+    "tipo": "cuadricula",
+    "cols": 4,
+    "filas": 4,
+    "rosa": true,
+    "fichas": [
+     {
+      "col": 1,
+      "fila": 4,
+      "emoji": "🏪"
+     }
+    ]
+   },
+   "id": "mate4-oa15-3"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "En este mapa, ¿qué hay dibujado en la casilla (C, 2)?",
+   "opciones": [
+    "Una banca",
+    "Un árbol",
+    "Una fuente",
+    "Un buzón"
+   ],
+   "correcta": 0,
+   "tip": "La columna C y la fila 2 se cruzan justo donde está dibujada la banca.",
+   "visual": {
+    "tipo": "cuadricula",
+    "cols": 4,
+    "filas": 3,
+    "rosa": true,
+    "fichas": [
+     {
+      "col": 3,
+      "fila": 2,
+      "emoji": "🪑"
+     }
+    ]
+   },
+   "id": "mate4-oa15-4"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "¿Qué objeto está dibujado en la casilla (E, 3) de este mapa?",
+   "opciones": [
+    "Un buzón",
+    "Una plaza",
+    "Un semáforo",
+    "Una tienda"
+   ],
+   "correcta": 0,
+   "tip": "La columna E es la última a la derecha, y la fila 3 es la tercera desde arriba: ahí está el buzón.",
+   "visual": {
+    "tipo": "cuadricula",
+    "cols": 5,
+    "filas": 4,
+    "rosa": true,
+    "fichas": [
+     {
+      "col": 5,
+      "fila": 3,
+      "emoji": "📮"
+     }
+    ]
+   },
+   "id": "mate4-oa15-5"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "En el mapa, ¿qué animal está justo a la derecha del perro?",
+   "opciones": [
+    "El gato",
+    "El conejo",
+    "El pájaro",
+    "El pez"
+   ],
+   "correcta": 0,
+   "tip": "El gato está en la misma fila que el perro, pero una columna más a la derecha.",
+   "visual": {
+    "tipo": "cuadricula",
+    "cols": 4,
+    "filas": 3,
+    "rosa": true,
+    "fichas": [
+     {
+      "col": 2,
+      "fila": 2,
+      "emoji": "🐶"
+     },
+     {
+      "col": 3,
+      "fila": 2,
+      "emoji": "🐱"
+     }
+    ]
+   },
+   "id": "mate4-oa15-6"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "¿Qué figura está justo abajo del sol en este mapa?",
+   "opciones": [
+    "La nube",
+    "La estrella",
+    "El rayo",
+    "La luna"
+   ],
+   "correcta": 0,
+   "tip": "La nube está en la misma columna que el sol, pero una fila más abajo.",
+   "visual": {
+    "tipo": "cuadricula",
+    "cols": 4,
+    "filas": 4,
+    "rosa": true,
+    "fichas": [
+     {
+      "col": 2,
+      "fila": 1,
+      "emoji": "☀️"
+     },
+     {
+      "col": 2,
+      "fila": 2,
+      "emoji": "☁️"
+     }
+    ]
+   },
+   "id": "mate4-oa15-7"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "En una fila hay tres juguetes: pelota, cubo y oso, en ese orden. ¿Cuál está en el medio?",
+   "opciones": [
+    "El cubo",
+    "La pelota",
+    "El oso",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "El cubo está justo en el medio de la fila, entre la pelota y el oso.",
+   "visual": {
+    "tipo": "cuadricula",
+    "cols": 5,
+    "filas": 2,
+    "rosa": true,
+    "fichas": [
+     {
+      "col": 1,
+      "fila": 1,
+      "emoji": "⚽"
+     },
+     {
+      "col": 2,
+      "fila": 1,
+      "emoji": "🧊"
+     },
+     {
+      "col": 3,
+      "fila": 1,
+      "emoji": "🧸"
+     }
+    ]
+   },
+   "id": "mate4-oa15-8"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "La farmacia está en la columna C, fila 2. ¿Cuál es su ubicación con letra y número?",
+   "opciones": [
+    "(C, 2)",
+    "(2, C)",
+    "(C, 3)",
+    "(B, 2)"
+   ],
+   "correcta": 0,
+   "tip": "Se escribe primero la columna y después la fila: columna C, fila 2, o sea (C, 2).",
+   "id": "mate4-oa15-9"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "La jaula de los monos está en la columna E, fila 1. ¿En qué fila se encuentra?",
+   "opciones": [
+    "En la fila 1",
+    "En la fila E",
+    "En la columna 1",
+    "En la fila 5"
+   ],
+   "correcta": 0,
+   "tip": "La fila es el número que acompaña a la letra de la columna: en este caso, fila 1.",
+   "id": "mate4-oa15-10"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "La heladería está en la columna B, fila 4. ¿En qué columna se encuentra?",
+   "opciones": [
+    "En la columna B",
+    "En la fila B",
+    "En la columna 4",
+    "En la columna A"
+   ],
+   "correcta": 0,
+   "tip": "La columna es la letra que va primero al describir la ubicación: columna B.",
+   "id": "mate4-oa15-11"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "El columpio está en (D, 3). Subiendo una fila sin cambiar de columna, ¿a qué casilla llegas?",
+   "opciones": [
+    "(D, 2)",
+    "(D, 4)",
+    "(C, 3)",
+    "(E, 3)"
+   ],
+   "correcta": 0,
+   "tip": "Subir una fila resta 1 al número de fila y deja la columna igual: de fila 3 pasa a fila 2, o sea (D, 2).",
+   "id": "mate4-oa15-12"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "El estacionamiento está en (A, 2). Moviéndote una columna a la derecha, ¿en qué casilla quedas?",
+   "opciones": [
+    "(B, 2)",
+    "(A, 3)",
+    "(A, 1)",
+    "(B, 3)"
+   ],
+   "correcta": 0,
+   "tip": "Moverse una columna a la derecha avanza de la letra A a la B, y la fila se mantiene igual.",
+   "id": "mate4-oa15-13"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "La zapatería está en (C, 1) y el patio de comidas en (C, 3). ¿Qué tienen en común?",
+   "opciones": [
+    "Están en la misma columna",
+    "Están en la misma fila",
+    "Están en la misma casilla",
+    "No tienen nada en común"
+   ],
+   "correcta": 0,
+   "tip": "Las dos comparten la letra C, así que están en la misma columna, aunque en filas distintas.",
+   "id": "mate4-oa15-14"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "La biblioteca y el comedor están los dos en la fila 2, pero en columnas distintas. ¿Qué comparten?",
+   "opciones": [
+    "El número de fila",
+    "La letra de columna",
+    "La misma casilla",
+    "No comparten nada"
+   ],
+   "correcta": 0,
+   "tip": "Comparten el número de fila, la fila 2, aunque estén en columnas diferentes.",
+   "id": "mate4-oa15-15"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "En una fila hay 4 locales: farmacia, banco, feria, peluquería. ¿Qué está a la izquierda de la feria?",
+   "opciones": [
+    "El banco",
+    "La farmacia",
+    "La peluquería",
+    "La feria"
+   ],
+   "correcta": 0,
+   "tip": "En el orden de la fila, justo antes de la feria, a su izquierda, está el banco.",
+   "id": "mate4-oa15-16"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "En una fila de asientos se sientan Ana, Beto, Cata y Dani, en ese orden. ¿Quién está entre Beto y Dani?",
+   "opciones": [
+    "Cata",
+    "Ana",
+    "Beto",
+    "Dani"
+   ],
+   "correcta": 0,
+   "tip": "Entre Beto y Dani, en ese orden de asientos, se sienta Cata.",
+   "id": "mate4-oa15-17"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "El pizarrón está arriba del escritorio, y el basurero, abajo del escritorio. ¿Qué queda en el medio?",
+   "opciones": [
+    "El escritorio",
+    "El pizarrón",
+    "El basurero",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "El escritorio está entre el pizarrón, que queda arriba, y el basurero, que queda abajo.",
+   "id": "mate4-oa15-18"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "El rosal está a la izquierda de la fuente, y el limonero, a la derecha. ¿Qué queda en el medio?",
+   "opciones": [
+    "La fuente",
+    "El rosal",
+    "El limonero",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "La fuente queda entre el rosal, a su izquierda, y el limonero, a su derecha.",
+   "id": "mate4-oa15-19"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "En el súper hay, en fila desde la entrada: lácteos, frutas y verduras. ¿Cuál está más cerca de la entrada?",
+   "opciones": [
+    "Los lácteos",
+    "Las frutas",
+    "Las verduras",
+    "Ninguna"
+   ],
+   "correcta": 0,
+   "tip": "Como la entrada está junto a los lácteos, esa es la sección más cercana.",
+   "id": "mate4-oa15-20"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "En una granja, gallinero, establo y chiquero están en fila. ¿Qué queda entre gallinero y chiquero?",
+   "opciones": [
+    "El establo",
+    "La casa",
+    "El corral",
+    "Nada"
+   ],
+   "correcta": 0,
+   "tip": "El establo está justo entre el gallinero y el chiquero, en el medio de la fila.",
+   "id": "mate4-oa15-21"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "El hospital está en (B, 1) y la escuela en (B, 4). ¿Cuál queda más cerca de la parte de arriba del mapa?",
+   "opciones": [
+    "El hospital",
+    "La escuela",
+    "Los dos por igual",
+    "No se puede saber"
+   ],
+   "correcta": 0,
+   "tip": "Las filas se cuentan desde arriba: la fila 1 está más arriba que la fila 4.",
+   "id": "mate4-oa15-22"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "La plaza está en (C, 2) y el museo en (C, 5). ¿Cuál de los dos queda más abajo en el mapa?",
+   "opciones": [
+    "El museo",
+    "La plaza",
+    "Los dos por igual",
+    "No se puede saber"
+   ],
+   "correcta": 0,
+   "tip": "La fila 5 es más grande que la fila 2, y las filas más grandes quedan más abajo.",
+   "id": "mate4-oa15-23"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "La piscina está en la columna A y el gimnasio en la columna E. ¿Cuál está más cerca del borde izquierdo?",
+   "opciones": [
+    "La piscina",
+    "El gimnasio",
+    "Los dos por igual",
+    "No se puede saber"
+   ],
+   "correcta": 0,
+   "tip": "La columna A es la primera, junto al borde izquierdo, así que la piscina queda más cerca.",
+   "id": "mate4-oa15-24"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "León, jirafa y elefante están en fila. Desde el león hacia la derecha, ¿a quién se llega primero?",
+   "opciones": [
+    "A la jirafa",
+    "Al elefante",
+    "Al león",
+    "A ningún animal"
+   ],
+   "correcta": 0,
+   "tip": "Caminando hacia la derecha desde el león, el siguiente animal en la fila es la jirafa.",
+   "id": "mate4-oa15-25"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "La sala de música está en (D, 2). Bajando dos filas sin cambiar de columna, ¿a qué casilla llegas?",
+   "opciones": [
+    "(D, 4)",
+    "(D, 1)",
+    "(F, 2)",
+    "(D, 0)"
+   ],
+   "correcta": 0,
+   "tip": "Bajar dos filas suma 2 al número de fila: de la fila 2 se llega a la fila 4, con la columna D igual.",
+   "id": "mate4-oa15-26"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "La panadería está en (B, 3) y la carnicería en (D, 3). ¿Qué número comparten sus ubicaciones?",
+   "opciones": [
+    "El 3, o sea la fila",
+    "El 3, o sea la columna",
+    "Ninguno",
+    "Las letras B y D"
+   ],
+   "correcta": 0,
+   "tip": "Ambas tienen el número 3, que es la fila; sus columnas, B y D, son distintas.",
+   "id": "mate4-oa15-27"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "Tobogán, columpio y arenero están en fila, en ese orden. ¿Qué juego está entre tobogán y arenero?",
+   "opciones": [
+    "El columpio",
+    "El resbalín",
+    "La reja",
+    "Ningún juego"
+   ],
+   "correcta": 0,
+   "tip": "El columpio está justo entre el tobogán y el arenero, en el medio de la fila.",
+   "id": "mate4-oa15-28"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "En un mapa de 4x4, la esquina (A, 1) queda arriba a la izquierda. ¿Cuál es la esquina opuesta?",
+   "opciones": [
+    "(D, 4)",
+    "(A, 4)",
+    "(D, 1)",
+    "(1, D)"
+   ],
+   "correcta": 0,
+   "tip": "La esquina opuesta usa la última columna, D, y la última fila, 4: la casilla es (D, 4).",
+   "id": "mate4-oa15-29"
+  },
+  {
+   "oa": "MA04 OA 15",
+   "pregunta": "La columna C tiene el ascensor en todos los pisos de un edificio. ¿Qué comparten dos oficinas junto a él?",
+   "opciones": [
+    "La misma columna",
+    "La misma fila",
+    "La misma casilla",
+    "Nada en común"
+   ],
+   "correcta": 0,
+   "tip": "Las dos están junto al ascensor, en la columna C, aunque estén en pisos (filas) distintos.",
+   "id": "mate4-oa15-30"
+  }
+ ]
+}

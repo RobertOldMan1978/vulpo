@@ -1,0 +1,410 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "▢ + 15 = 40. ¿Cuánto vale ▢?",
+   "opciones": [
+    "25",
+    "55",
+    "15",
+    "40"
+   ],
+   "correcta": 0,
+   "tip": "Para saber cuánto vale ▢ se hace la operación inversa: 40 − 15 = 25.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 50,
+    "paso": 5,
+    "marca": 25,
+    "oculta": true
+   },
+   "id": "mate4-oa14-1"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "▢ + 22 = 58. ¿Cuál es el valor de ▢?",
+   "opciones": [
+    "36",
+    "80",
+    "21",
+    "46"
+   ],
+   "correcta": 0,
+   "tip": "Como ▢ más 22 da 58, para encontrar ▢ se resta: 58 − 22 = 36.",
+   "id": "mate4-oa14-2"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "¿Qué número reemplaza a ▢ en ▢ + 8 = 33?",
+   "opciones": [
+    "25",
+    "41",
+    "8",
+    "24"
+   ],
+   "correcta": 0,
+   "tip": "33 − 8 = 25: esa es la relación inversa entre la suma y la resta.",
+   "id": "mate4-oa14-3"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "34 + ▢ = 60. ¿Cuánto vale ▢?",
+   "opciones": [
+    "26",
+    "94",
+    "34",
+    "30"
+   ],
+   "correcta": 0,
+   "tip": "Para despejar ▢ se resta: 60 − 34 = 26.",
+   "id": "mate4-oa14-4"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "19 + ▢ = 46. ¿Cuál es el número que falta?",
+   "opciones": [
+    "27",
+    "37",
+    "19",
+    "46"
+   ],
+   "correcta": 0,
+   "tip": "46 − 19 = 27: la resta deshace la suma y entrega el valor de ▢.",
+   "id": "mate4-oa14-5"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "▢ − 18 = 25. ¿Cuánto vale ▢?",
+   "opciones": [
+    "43",
+    "7",
+    "18",
+    "33"
+   ],
+   "correcta": 0,
+   "tip": "Como restarle 18 a ▢ da 25, para volver atrás se suma: 25 + 18 = 43.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 50,
+    "paso": 5,
+    "marca": 43,
+    "oculta": true
+   },
+   "id": "mate4-oa14-6"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "▢ − 45 = 12. ¿Cuál es el valor de ▢?",
+   "opciones": [
+    "57",
+    "-33",
+    "33",
+    "62"
+   ],
+   "correcta": 0,
+   "tip": "12 + 45 = 57: se suma para deshacer la resta.",
+   "id": "mate4-oa14-7"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "¿Qué número reemplaza a ▢ en ▢ − 27 = 33?",
+   "opciones": [
+    "60",
+    "33",
+    "27",
+    "54"
+   ],
+   "correcta": 0,
+   "tip": "33 + 27 = 60, porque sumar deshace lo que la resta hizo.",
+   "id": "mate4-oa14-8"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "50 − ▢ = 18. ¿Cuánto vale ▢?",
+   "opciones": [
+    "32",
+    "68",
+    "-32",
+    "28"
+   ],
+   "correcta": 0,
+   "tip": "Si a 50 le quitamos ▢ y queda 18, entonces ▢ es 50 − 18 = 32.",
+   "id": "mate4-oa14-9"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "70 − ▢ = 55. ¿Cuál es el número que falta?",
+   "opciones": [
+    "15",
+    "55",
+    "70",
+    "25"
+   ],
+   "correcta": 0,
+   "tip": "▢ es la diferencia entre el total y lo que quedó: 70 − 55 = 15.",
+   "id": "mate4-oa14-10"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "¿Qué valor de ▢ hace cierta la igualdad 90 − ▢ = 36?",
+   "opciones": [
+    "54",
+    "126",
+    "36",
+    "46"
+   ],
+   "correcta": 0,
+   "tip": "90 − 36 = 54: ese es el número que se restó de 90 para que quedara 36.",
+   "id": "mate4-oa14-11"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "Si ▢ vale 12, ¿el resultado de ▢ + 8 es 20?",
+   "opciones": [
+    "Sí, porque 12 + 8 = 20",
+    "No, porque 12 + 8 = 22",
+    "No, porque 12 + 8 = 18",
+    "No, porque ▢ tendría que valer 8"
+   ],
+   "correcta": 0,
+   "tip": "Se comprueba reemplazando: 12 + 8 = 20, así que la igualdad es correcta.",
+   "id": "mate4-oa14-12"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "Si ▢ vale 30, ¿es cierto que ▢ − 14 = 16?",
+   "opciones": [
+    "Sí, porque 30 − 14 = 16",
+    "No, porque 30 − 14 = 44",
+    "No, porque 30 − 14 = 14",
+    "No, porque ▢ tendría que valer 14"
+   ],
+   "correcta": 0,
+   "tip": "Comprobando: 30 − 14 = 16, así que la igualdad es correcta.",
+   "id": "mate4-oa14-13"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "Camila dice que si ▢ vale 25, entonces 60 − ▢ = 35. ¿Tiene razón?",
+   "opciones": [
+    "Sí, porque 60 − 25 = 35",
+    "No, porque 60 − 25 = 45",
+    "No, porque 60 − 25 = 25",
+    "No, porque ▢ tendría que valer 35"
+   ],
+   "correcta": 0,
+   "tip": "60 − 25 = 35, así que Camila tiene razón.",
+   "id": "mate4-oa14-14"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "¿Qué operación hay que hacer para encontrar ▢ en ▢ + 18 = 45?",
+   "opciones": [
+    "Restar 45 menos 18",
+    "Sumar 45 más 18",
+    "Restar 18 menos 45",
+    "Multiplicar 45 por 18"
+   ],
+   "correcta": 0,
+   "tip": "La resta es la operación inversa de la suma: para despejar ▢ se hace 45 − 18.",
+   "id": "mate4-oa14-15"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "¿Qué operación hay que hacer para encontrar ▢ en ▢ − 22 = 30?",
+   "opciones": [
+    "Sumar 30 más 22",
+    "Restar 30 menos 22",
+    "Restar 22 menos 30",
+    "Dividir 30 por 22"
+   ],
+   "correcta": 0,
+   "tip": "La suma es la operación inversa de la resta: para despejar ▢ se hace 30 + 22.",
+   "id": "mate4-oa14-16"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "Ana tenía algunas figuritas. Le regalaron 15 y ahora tiene 42. ¿Cuántas tenía al principio?",
+   "opciones": [
+    "27",
+    "57",
+    "15",
+    "32"
+   ],
+   "correcta": 0,
+   "tip": "Si al principio tenía ▢ y le regalaron 15 para llegar a 42, entonces ▢ = 42 − 15 = 27.",
+   "id": "mate4-oa14-17"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "Diego tenía 50 chapitas y le quitaron algunas, quedándole 18. ¿Cuántas le quitaron?",
+   "opciones": [
+    "32",
+    "68",
+    "18",
+    "28"
+   ],
+   "correcta": 0,
+   "tip": "Le quitaron 50 − 18 = 32 chapitas.",
+   "id": "mate4-oa14-18"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "Sofía hizo 24 puntos y luego algunos más, sumando 60 en total. ¿Cuántos hizo en la segunda vez?",
+   "opciones": [
+    "36",
+    "84",
+    "24",
+    "42"
+   ],
+   "correcta": 0,
+   "tip": "Los puntos del segundo juego son 60 − 24 = 36.",
+   "id": "mate4-oa14-19"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "Matías tenía 35 bolitas. Perdió algunas y le quedaron 12. ¿Cuántas bolitas perdió?",
+   "opciones": [
+    "23",
+    "47",
+    "12",
+    "26"
+   ],
+   "correcta": 0,
+   "tip": "Perdió 35 − 12 = 23 bolitas.",
+   "id": "mate4-oa14-20"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "¿Cuál de estos números hace que ▢ + 10 < 30 sea cierto?",
+   "opciones": [
+    "15",
+    "25",
+    "20",
+    "30"
+   ],
+   "correcta": 0,
+   "tip": "15 + 10 = 25, que es menor que 30. Los otros números dan igual o más que 30.",
+   "id": "mate4-oa14-21"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "¿Qué valor de ▢ hace cierta la desigualdad ▢ + 20 > 50?",
+   "opciones": [
+    "35",
+    "25",
+    "30",
+    "5"
+   ],
+   "correcta": 0,
+   "tip": "35 + 20 = 55, que es mayor que 50. Los demás no llegan a superarlo.",
+   "id": "mate4-oa14-22"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "¿Cuál de estos números cumple ▢ − 15 < 10?",
+   "opciones": [
+    "20",
+    "30",
+    "28",
+    "26"
+   ],
+   "correcta": 0,
+   "tip": "20 − 15 = 5, que es menor que 10. Con los otros números la resta da 10 o más.",
+   "id": "mate4-oa14-23"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "¿Qué número hace cierta la desigualdad ▢ − 10 > 20?",
+   "opciones": [
+    "35",
+    "28",
+    "25",
+    "15"
+   ],
+   "correcta": 0,
+   "tip": "35 − 10 = 25, que es mayor que 20. Los demás dan 20 o menos.",
+   "id": "mate4-oa14-24"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "¿Cuál de estos números hace que ▢ más 12 sea menor o igual a 40?",
+   "opciones": [
+    "28",
+    "30",
+    "35",
+    "40"
+   ],
+   "correcta": 0,
+   "tip": "28 + 12 = 40, que es igual a 40, así que cumple la condición. Los demás se pasan.",
+   "id": "mate4-oa14-25"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "¿Qué número hace que ▢ menos 15 sea mayor o igual a 25?",
+   "opciones": [
+    "40",
+    "38",
+    "35",
+    "20"
+   ],
+   "correcta": 0,
+   "tip": "40 − 15 = 25, así que cumple justo la condición. Los demás quedan por debajo de 25.",
+   "id": "mate4-oa14-26"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "Javiera necesita que sus puntos más 20 sean menos de 60 para pasar de nivel. ¿Con cuántos puntos lo logra?",
+   "opciones": [
+    "35",
+    "45",
+    "40",
+    "50"
+   ],
+   "correcta": 0,
+   "tip": "35 + 20 = 55, que es menos de 60. Con los otros puntajes se pasa de 60.",
+   "id": "mate4-oa14-27"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "Benjamín ahorra ▢ y su papá le agrega 30 pesos. Para no pasar de 50 pesos, ¿cuánto puede haber ahorrado?",
+   "opciones": [
+    "15",
+    "25",
+    "22",
+    "30"
+   ],
+   "correcta": 0,
+   "tip": "15 + 30 = 45, que no pasa de 50. Con los otros números sí se pasa.",
+   "id": "mate4-oa14-28"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "Un juego tiene ▢ fichas y se sacan 25. Para que sobren más de 15 fichas, ¿cuántas fichas había?",
+   "opciones": [
+    "41",
+    "38",
+    "35",
+    "30"
+   ],
+   "correcta": 0,
+   "tip": "41 − 25 = 16, que es más de 15 fichas. Con las otras cantidades sobran 15 o menos.",
+   "id": "mate4-oa14-29"
+  },
+  {
+   "oa": "MA04 OA 14",
+   "pregunta": "Camila tenía ▢ stickers y regaló 18. Para que le queden más de 40, ¿cuántos stickers tenía?",
+   "opciones": [
+    "60",
+    "58",
+    "55",
+    "50"
+   ],
+   "correcta": 0,
+   "tip": "60 − 18 = 42, que es más de 40. Con las otras cantidades le quedan 40 o menos.",
+   "id": "mate4-oa14-30"
+  }
+ ]
+}

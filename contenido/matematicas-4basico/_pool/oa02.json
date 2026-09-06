@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "Para calcular 68 + 4, Renata contó hacia adelante: 69, 70, 71, 72. ¿Qué estrategia usó?",
+   "opciones": [
+    "El conteo hacia adelante",
+    "La descomposición",
+    "Doblar",
+    "El doble del doble"
+   ],
+   "correcta": 0,
+   "tip": "Contar de uno en uno hacia adelante desde 68 para sumar 4 es la estrategia de conteo hacia adelante.",
+   "id": "mate4-oa02-1"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "Para calcular 53 - 4, Ignacio contó hacia atrás: 52, 51, 50, 49. ¿Qué estrategia usó?",
+   "opciones": [
+    "El conteo hacia atrás",
+    "La descomposición",
+    "Dividir por 2",
+    "El doble del doble"
+   ],
+   "correcta": 0,
+   "tip": "Restar de uno en uno contando hacia atrás desde 53 es la estrategia de conteo hacia atrás.",
+   "id": "mate4-oa02-2"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "¿Cuál de estas sumas conviene resolver contando hacia adelante de uno en uno?",
+   "opciones": [
+    "96 + 3",
+    "96 + 58",
+    "500 + 300",
+    "8 x 7"
+   ],
+   "correcta": 0,
+   "tip": "Contar de uno en uno funciona bien con números pequeños, como 3; con sumas grandes conviene descomponer.",
+   "id": "mate4-oa02-3"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "Fernanda calcula 7 x 6 contando de 7 en 7: 7, 14, 21, 28, 35, 42. ¿Qué estrategia usó?",
+   "opciones": [
+    "El conteo hacia adelante",
+    "La descomposición",
+    "Doblar",
+    "Dividir por 2"
+   ],
+   "correcta": 0,
+   "tip": "Contar de 7 en 7 seis veces hasta llegar a 42 es una forma de conteo aplicada a la multiplicación.",
+   "id": "mate4-oa02-4"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "¿Qué estrategia conviene más para calcular 200 - 2?",
+   "opciones": [
+    "El conteo hacia atrás",
+    "La descomposición",
+    "El doble del doble",
+    "Dividir por 2"
+   ],
+   "correcta": 0,
+   "tip": "Restar un número tan pequeño como 2 es rápido contando hacia atrás: 199, 198.",
+   "id": "mate4-oa02-5"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "El doble de 24 es 48. ¿Cuál es el doble de 34?",
+   "opciones": [
+    "68",
+    "58",
+    "64",
+    "78"
+   ],
+   "correcta": 0,
+   "tip": "Doblar es sumar el número consigo mismo: 34 + 34 es 68.",
+   "id": "mate4-oa02-6"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "Para calcular 9 + 8, Benjamín piensa: el doble de 8 es 16, más 1 es 17. ¿Qué estrategia usó?",
+   "opciones": [
+    "Doblar",
+    "El conteo hacia atrás",
+    "La descomposición",
+    "El doble del doble"
+   ],
+   "correcta": 0,
+   "tip": "Benjamín partió del doble de 8 y luego ajustó: apoyarse en un doble conocido es la estrategia de doblar.",
+   "id": "mate4-oa02-7"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "¿Cuál es el doble de 125?",
+   "opciones": [
+    "250",
+    "225",
+    "235",
+    "260"
+   ],
+   "correcta": 0,
+   "tip": "El doble de 125 es 125 + 125, que da 250.",
+   "id": "mate4-oa02-8"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "Javiera necesita el doble de 46. ¿Qué operación debe hacer?",
+   "opciones": [
+    "Sumar 46 + 46",
+    "Sumar 46 + 23",
+    "Restar 46 - 23",
+    "Multiplicar 46 x 4"
+   ],
+   "correcta": 0,
+   "tip": "El doble de un número es sumarlo consigo mismo: 46 + 46.",
+   "id": "mate4-oa02-9"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "¿Cuál es la mitad de 96?",
+   "opciones": [
+    "48",
+    "46",
+    "52",
+    "44"
+   ],
+   "correcta": 0,
+   "tip": "Dividir por 2 es repartir en dos partes iguales: 96 dividido en dos da 48 en cada parte.",
+   "id": "mate4-oa02-10"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "Tomás sabe que el doble de 37 es 74. ¿Cuál es la mitad de 74?",
+   "opciones": [
+    "37",
+    "34",
+    "39",
+    "42"
+   ],
+   "correcta": 0,
+   "tip": "La mitad deshace el doble: si el doble de 37 es 74, la mitad de 74 es 37.",
+   "id": "mate4-oa02-11"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "¿Qué operación permite calcular la mitad de 150?",
+   "opciones": [
+    "Dividir 150 en 2 partes iguales",
+    "Sumar 150 + 2",
+    "Restar 150 - 2",
+    "Multiplicar 150 x 2"
+   ],
+   "correcta": 0,
+   "tip": "La mitad de un número es dividirlo en dos partes iguales, no sumarle ni restarle 2.",
+   "id": "mate4-oa02-12"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "Camila reparte 84 estampillas en 2 álbumes iguales. ¿Cuántas estampillas van en cada álbum?",
+   "opciones": [
+    "42",
+    "40",
+    "44",
+    "82"
+   ],
+   "correcta": 0,
+   "tip": "Repartir 84 en 2 partes iguales es calcular su mitad: 84 dividido en 2 es 42.",
+   "id": "mate4-oa02-13"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "Para calcular 48 + 25, Diego pensó: 48 + 20 es 68, y 68 + 5 es 73. ¿Qué estrategia usó?",
+   "opciones": [
+    "La descomposición",
+    "El conteo hacia adelante",
+    "Doblar",
+    "El doble del doble"
+   ],
+   "correcta": 0,
+   "tip": "Diego separó 25 en 20 y 5 para sumar por partes: eso es descomponer un número.",
+   "id": "mate4-oa02-14"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "Para calcular 156 - 34, Antonia pensó: 156 - 30 es 126, y 126 - 4 es 122. ¿Qué estrategia usó?",
+   "opciones": [
+    "La descomposición",
+    "El conteo hacia atrás",
+    "Dividir por 2",
+    "El doble del doble"
+   ],
+   "correcta": 0,
+   "tip": "Separar 34 en 30 y 4 para restar por partes es la estrategia de descomposición.",
+   "id": "mate4-oa02-15"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "Vicente calcula 7 x 8 pensando: 7 x 5 es 35, y 7 x 3 es 21, y 35 + 21 es 56. ¿Qué estrategia usó?",
+   "opciones": [
+    "La descomposición",
+    "Doblar",
+    "El conteo hacia adelante",
+    "El doble del doble"
+   ],
+   "correcta": 0,
+   "tip": "Separar el 8 en 5 más 3 para multiplicar por partes y sumar los resultados es descomponer.",
+   "id": "mate4-oa02-16"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "¿Cuál de estas formas es descomponer el 47 para sumarlo más fácil?",
+   "opciones": [
+    "40 + 7",
+    "4 + 7",
+    "47 + 0",
+    "4 x 7"
+   ],
+   "correcta": 0,
+   "tip": "Descomponer 47 según su valor posicional es separarlo en 40 y 7.",
+   "id": "mate4-oa02-17"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "Sofía calcula 9 x 6 pensando: 10 x 6 es 60, y le resta 6, así que 54. ¿Qué estrategia usó?",
+   "opciones": [
+    "La descomposición",
+    "Doblar",
+    "Dividir por 2",
+    "El conteo hacia atrás"
+   ],
+   "correcta": 0,
+   "tip": "Pensar 9 como 10 menos 1 y ajustar el resultado es también una forma de descomposición.",
+   "id": "mate4-oa02-18"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "Para calcular 234 + 145, ¿qué descomposición ayuda a sumar por partes?",
+   "opciones": [
+    "200 + 100, 30 + 40, 4 + 5",
+    "234 x 145",
+    "200 + 145",
+    "234 - 100"
+   ],
+   "correcta": 0,
+   "tip": "Descomponer cada número en centenas, decenas y unidades permite sumar por partes: 200+100, 30+40 y 4+5.",
+   "id": "mate4-oa02-19"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "Para calcular 8 x 4, Matías pensó: el doble de 8 es 16, y el doble de 16 es 32. ¿Qué estrategia usó?",
+   "opciones": [
+    "El doble del doble",
+    "La descomposición",
+    "El conteo hacia adelante",
+    "Dividir por 2"
+   ],
+   "correcta": 0,
+   "tip": "Doblar 8 y luego doblar el resultado otra vez es el doble del doble, útil para multiplicar por 4.",
+   "id": "mate4-oa02-20"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "¿Cuánto es 6 x 4 usando el doble del doble?",
+   "opciones": [
+    "24",
+    "20",
+    "28",
+    "12"
+   ],
+   "correcta": 0,
+   "tip": "El doble de 6 es 12, y el doble de 12 es 24: 6 x 4 es 24.",
+   "id": "mate4-oa02-21"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "Renata quiere calcular 36 : 4 usando la mitad de la mitad. ¿Cuál es el primer paso?",
+   "opciones": [
+    "Calcular la mitad de 36, que es 18",
+    "Calcular el doble de 36, que es 72",
+    "Restar 4 a 36, que es 32",
+    "Sumar 4 a 36, que es 40"
+   ],
+   "correcta": 0,
+   "tip": "La mitad de la mitad es la división que corresponde al doble del doble: primero se saca la mitad de 36.",
+   "id": "mate4-oa02-22"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "Siguiendo la mitad de la mitad, si la mitad de 36 es 18, ¿cuánto es 36 : 4?",
+   "opciones": [
+    "9",
+    "8",
+    "18",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "La mitad de 18 es 9, así que aplicando la mitad de la mitad, 36 dividido en 4 es 9.",
+   "id": "mate4-oa02-23"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "¿Qué relación existe entre el doble del doble y la mitad de la mitad?",
+   "opciones": [
+    "El doble del doble sirve para multiplicar por 4, y la mitad de la mitad para dividir por 4",
+    "Las dos estrategias sirven solo para sumar",
+    "El doble del doble sirve para dividir y la mitad de la mitad para multiplicar",
+    "Las dos estrategias sirven solo para restar"
+   ],
+   "correcta": 0,
+   "tip": "Son estrategias inversas: doblar dos veces multiplica por 4, y sacar la mitad dos veces divide por 4.",
+   "id": "mate4-oa02-24"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "Sabiendo que 6 x 7 = 42, ¿cuánto es 42 : 7?",
+   "opciones": [
+    "6",
+    "7",
+    "36",
+    "48"
+   ],
+   "correcta": 0,
+   "tip": "La multiplicación y la división son inversas: si 6 x 7 es 42, entonces 42 dividido en 7 es 6.",
+   "id": "mate4-oa02-25"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "Si 8 x 9 es 72, ¿cuál es el resultado de 72 : 8?",
+   "opciones": [
+    "9",
+    "8",
+    "81",
+    "63"
+   ],
+   "correcta": 0,
+   "tip": "Como 8 x 9 es 72, la división inversa 72 dividido en 8 da 9.",
+   "id": "mate4-oa02-26"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "Diego sabe que 10 x 6 es 60. ¿Cómo puede usarlo para calcular 9 x 6?",
+   "opciones": [
+    "Restarle un 6 a 60, porque 9 es uno menos que 10",
+    "Sumarle un 6 a 60",
+    "Dividir 60 en 6 partes",
+    "Doblar 60"
+   ],
+   "correcta": 0,
+   "tip": "Como 9 es uno menos que 10, a 10 x 6 se le resta un grupo de 6: 60 menos 6 es 54.",
+   "id": "mate4-oa02-27"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "¿Cuánto es 9 x 6 usando la estrategia de Diego?",
+   "opciones": [
+    "54",
+    "56",
+    "64",
+    "48"
+   ],
+   "correcta": 0,
+   "tip": "60 menos 6 es 54: ese es el resultado de 9 x 6.",
+   "id": "mate4-oa02-28"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "Camila sabe que 7 x 4 es 28. ¿Cuánto es 28 : 4?",
+   "opciones": [
+    "7",
+    "4",
+    "24",
+    "32"
+   ],
+   "correcta": 0,
+   "tip": "La división deshace la multiplicación: si 7 x 4 es 28, entonces 28 dividido en 4 es 7.",
+   "id": "mate4-oa02-29"
+  },
+  {
+   "oa": "MA04 OA 02",
+   "pregunta": "Para resolver 5 x 4 mentalmente, ¿cuál es la mejor estrategia?",
+   "opciones": [
+    "El doble del doble: el doble de 5 es 10, y el doble de 10 es 20",
+    "El conteo hacia atrás, porque el número es pequeño",
+    "La descomposición en centenas y decenas",
+    "Dividir por 2, porque 4 es par"
+   ],
+   "correcta": 0,
+   "tip": "Para multiplicar por 4 conviene doblar dos veces: el doble de 5 es 10 y el doble de 10 es 20.",
+   "id": "mate4-oa02-30"
+  }
+ ]
+}

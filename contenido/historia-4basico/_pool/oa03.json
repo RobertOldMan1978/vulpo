@@ -1,0 +1,399 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿En qué gran cadena montañosa de América del Sur se desarrolló la civilización inca?",
+   "opciones": [
+    "En la cordillera de los Andes",
+    "En la selva amazónica, lejos de cualquier montaña",
+    "En la cordillera de los Alpes, en Europa",
+    "En una isla en medio del océano Pacífico"
+   ],
+   "correcta": 0,
+   "tip": "El imperio inca se extendió a lo largo de la cordillera de los Andes, en América del Sur.",
+   "id": "hist4-oa03-1"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Cuál era la capital del imperio inca?",
+   "opciones": [
+    "Cusco",
+    "Tenochtitlán",
+    "Tikal",
+    "Chichén Itzá"
+   ],
+   "correcta": 0,
+   "tip": "Cusco era la capital del imperio inca; Tenochtitlán era azteca, y Tikal y Chichén Itzá eran ciudades mayas.",
+   "id": "hist4-oa03-2"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Hasta qué parte de Chile llegó a extenderse el territorio controlado por los incas?",
+   "opciones": [
+    "Hasta el norte de Chile, antes de la llegada de los europeos",
+    "Hasta la Antártica",
+    "Hasta la isla de Pascua",
+    "Hasta el extremo sur de la Patagonia, cerca de la Antártica"
+   ],
+   "correcta": 0,
+   "tip": "El imperio inca se extendió hasta el norte de Chile, siendo la civilización americana de este curso más cercana a nuestro país.",
+   "id": "hist4-oa03-3"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "El área central del imperio inca, en torno a Cusco, se ubicaba al sur de esta línea imaginaria. ¿Cómo se llama?",
+   "opciones": [
+    "El Ecuador",
+    "El trópico de Cáncer",
+    "El meridiano de Greenwich",
+    "El círculo polar ártico"
+   ],
+   "correcta": 0,
+   "tip": "El Ecuador separa el hemisferio norte del sur; a diferencia de mayas y aztecas, el corazón del imperio inca se ubicaba al sur del Ecuador.",
+   "id": "hist4-oa03-4",
+   "visual": {
+    "tipo": "globo",
+    "destacar": "ecuador",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Cómo se llamaba el gobernante supremo del imperio inca?",
+   "opciones": [
+    "El Sapa Inca",
+    "El tlatoani",
+    "El ajaw",
+    "El faraón"
+   ],
+   "correcta": 0,
+   "tip": "El Sapa Inca era el gobernante supremo inca, considerado hijo del Sol; el tlatoani gobernaba a los aztecas y el ajaw, a una ciudad maya.",
+   "id": "hist4-oa03-5"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Cómo se llamaba el imperio inca, dividido en cuatro grandes regiones o suyos?",
+   "opciones": [
+    "El Tahuantinsuyo",
+    "La Triple Alianza",
+    "El Imperio Maya",
+    "El reino de Tenochtitlán"
+   ],
+   "correcta": 0,
+   "tip": "El Tahuantinsuyo, «las cuatro regiones unidas», era el nombre del imperio inca, organizado en cuatro suyos alrededor de Cusco.",
+   "id": "hist4-oa03-6"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Para qué usaban los incas a los mitimaes, grupos de personas trasladadas a otras zonas del imperio?",
+   "opciones": [
+    "Para ayudar a controlar y organizar mejor territorios recién conquistados",
+    "Para castigarlos por robar en el mercado",
+    "Para que sirvieran únicamente como mensajeros",
+    "Para que trabajaran únicamente en la construcción de templos religiosos"
+   ],
+   "correcta": 0,
+   "tip": "Los mitimaes eran comunidades trasladadas por el Estado inca para ayudar a integrar y controlar nuevos territorios.",
+   "id": "hist4-oa03-7"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Cómo se llamaba la extensa red de caminos que unía todo el imperio inca?",
+   "opciones": [
+    "El Qhapaq Ñan",
+    "La Vía Apia",
+    "El Camino Real Chino",
+    "La Ruta de la Seda"
+   ],
+   "correcta": 0,
+   "tip": "El Qhapaq Ñan era la gran red de caminos incas, que conectaba ciudades a lo largo de toda la cordillera de los Andes.",
+   "id": "hist4-oa03-8"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Quiénes eran los chasquis en el imperio inca?",
+   "opciones": [
+    "Corredores que se relevaban para llevar mensajes rápidamente por los caminos",
+    "Sacerdotes encargados de leer el futuro observando el cielo y las estrellas",
+    "Guerreros de élite vestidos con piel de jaguar",
+    "Comerciantes que viajaban en barcos por el océano"
+   ],
+   "correcta": 0,
+   "tip": "Los chasquis eran corredores que se turnaban a lo largo del camino para llevar mensajes a gran velocidad por todo el imperio.",
+   "id": "hist4-oa03-9"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Qué eran los tambos que se ubicaban a lo largo de los caminos incas?",
+   "opciones": [
+    "Lugares de descanso y abastecimiento para viajeros y chasquis",
+    "Templos dedicados exclusivamente al culto religioso del dios Sol",
+    "Mercados donde solo se vendía cacao",
+    "Escuelas para hijos de la nobleza"
+   ],
+   "correcta": 0,
+   "tip": "Los tambos eran postas a lo largo de los caminos incas, donde los viajeros y los chasquis podían descansar y reabastecerse.",
+   "id": "hist4-oa03-10"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Qué dios inca representaba al Sol y era considerado uno de los más importantes?",
+   "opciones": [
+    "Inti",
+    "Huitzilopochtli",
+    "Chaac",
+    "Kukulcán"
+   ],
+   "correcta": 0,
+   "tip": "Inti, el dios Sol, era una de las principales divinidades incas; Huitzilopochtli era azteca, y Chaac y Kukulcán eran dioses mayas.",
+   "id": "hist4-oa03-11"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿A qué se refería la Pachamama, tan respetada por los incas?",
+   "opciones": [
+    "A la madre tierra, relacionada con la fertilidad y las cosechas",
+    "A un río sagrado que atravesaba Cusco",
+    "A la primera reina del imperio inca",
+    "A una montaña sagrada donde, según se creía, nacía el Sol cada mañana"
+   ],
+   "correcta": 0,
+   "tip": "La Pachamama era la madre tierra para los incas, una divinidad relacionada con la fertilidad de los cultivos.",
+   "id": "hist4-oa03-12"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Qué era el Coricancha, ubicado en el centro de Cusco?",
+   "opciones": [
+    "El templo principal dedicado al dios Sol",
+    "El mercado más grande del imperio inca",
+    "La escuela donde se educaba a los futuros chasquis",
+    "El palacio donde vivían los mitimaes"
+   ],
+   "correcta": 0,
+   "tip": "El Coricancha era el templo dedicado al Sol en Cusco, uno de los lugares más sagrados del imperio inca.",
+   "id": "hist4-oa03-13"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Para qué usaban los incas el quipu, un sistema de cuerdas y nudos?",
+   "opciones": [
+    "Para registrar información, como cantidades de cosechas o de personas",
+    "Para escribir cartas completas, con oraciones largas y muy complejas",
+    "Para tejer la ropa de la nobleza",
+    "Para medir la distancia entre dos ciudades"
+   ],
+   "correcta": 0,
+   "tip": "El quipu era un sistema de cuerdas y nudos usado para registrar información numérica, ya que los incas no tenían un sistema de escritura alfabética.",
+   "id": "hist4-oa03-14"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Qué construyeron los incas en las laderas de las montañas para poder cultivar?",
+   "opciones": [
+    "Andenes, terrazas escalonadas que aprovechaban el terreno",
+    "Chinampas, islas artificiales que flotaban sobre un lago cercano",
+    "Grandes invernaderos de vidrio",
+    "Campos de cultivo bajo tierra"
+   ],
+   "correcta": 0,
+   "tip": "Los andenes eran terrazas escalonadas construidas en las laderas andinas, que permitían cultivar en un terreno tan empinado.",
+   "id": "hist4-oa03-15"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Qué tipo de puentes construyeron los incas para cruzar profundos barrancos andinos?",
+   "opciones": [
+    "Puentes colgantes hechos con fibras vegetales trenzadas",
+    "Puentes de hierro forjado en grandes hornos",
+    "Puentes de hielo, aprovechando el frío de la montaña",
+    "Puentes flotantes sobre canales de riego"
+   ],
+   "correcta": 0,
+   "tip": "Los incas construían puentes colgantes con fibras vegetales trenzadas, capaces de resistir el paso de personas y cargas por los Andes.",
+   "id": "hist4-oa03-16"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Quiénes eran los curacas dentro de la organización social inca?",
+   "opciones": [
+    "Jefes locales que gobernaban una comunidad en nombre del Sapa Inca",
+    "Sacerdotes encargados únicamente del calendario",
+    "Comerciantes que viajaban entre las distintas regiones del imperio",
+    "Guerreros de élite del ejército imperial"
+   ],
+   "correcta": 0,
+   "tip": "Los curacas eran jefes locales que administraban una comunidad y respondían ante el Sapa Inca.",
+   "id": "hist4-oa03-17"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Qué era el ayllu en la organización social inca?",
+   "opciones": [
+    "Una comunidad de familias emparentadas que trabajaban juntas la tierra",
+    "El nombre que se le daba a todo el gran ejército imperial de los incas",
+    "Un tipo de templo dedicado a la Luna",
+    "Una moneda usada para el comercio"
+   ],
+   "correcta": 0,
+   "tip": "El ayllu era la comunidad básica de la sociedad inca, formada por familias que compartían tierras y trabajo.",
+   "id": "hist4-oa03-18"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Qué era la mita, el trabajo que los incas debían aportar al Estado?",
+   "opciones": [
+    "Un turno de trabajo obligatorio en obras públicas, como caminos o cultivos",
+    "Un impuesto que todas las familias debían pagar únicamente con granos de cacao",
+    "Un tipo de ceremonia religiosa dedicada al Sol",
+    "Un castigo aplicado solo a quienes cometían delitos graves"
+   ],
+   "correcta": 0,
+   "tip": "La mita era un sistema de trabajo obligatorio y rotativo con el que las comunidades incas aportaban su esfuerzo a obras del Estado.",
+   "id": "hist4-oa03-19"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "Entre los incas, ¿en qué solía ocuparse un hombre del pueblo cuando no cumplía su turno de mita?",
+   "opciones": [
+    "En la agricultura y en el pastoreo de llamas y alpacas de su comunidad",
+    "Exclusivamente a la navegación por las lejanas costas del océano Pacífico",
+    "Solo a tejer la ropa de toda la comunidad",
+    "Únicamente a dirigir las ceremonias religiosas"
+   ],
+   "correcta": 0,
+   "tip": "Los hombres del pueblo inca se dedicaban a la agricultura, el cuidado de los animales y cumplían turnos de mita cuando el Estado lo requería.",
+   "id": "hist4-oa03-20"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Qué actividad destacaba especialmente entre las mujeres incas?",
+   "opciones": [
+    "El tejido de finos textiles de lana de alpaca y llama",
+    "El comando de los ejércitos imperiales",
+    "El diseño y el trazado completo de los caminos del Qhapaq Ñan",
+    "La construcción de puentes colgantes"
+   ],
+   "correcta": 0,
+   "tip": "El tejido era una actividad muy valorada entre las mujeres incas, que elaboraban finos textiles con lana de alpaca y llama.",
+   "id": "hist4-oa03-21"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Quiénes eran las acllas en la sociedad inca?",
+   "opciones": [
+    "Mujeres escogidas dedicadas a labores religiosas y textiles para el Estado",
+    "Guerreras que comandaban personalmente todo el gran ejército imperial inca",
+    "Mensajeras que corrían por los caminos incas",
+    "Comerciantes encargadas del mercado de Cusco"
+   ],
+   "correcta": 0,
+   "tip": "Las acllas eran mujeres escogidas, dedicadas a tejer y a labores religiosas al servicio del Sol y del Estado inca.",
+   "id": "hist4-oa03-22"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Cuál era uno de los principales alimentos cultivados por los incas en los Andes?",
+   "opciones": [
+    "La papa, de la que cultivaban muchísimas variedades",
+    "El arroz, un cereal traído desde el continente asiático",
+    "El trigo, cultivado en tierras bajas y cálidas",
+    "La banana, cultivada en la costa"
+   ],
+   "correcta": 0,
+   "tip": "La papa era uno de los alimentos más importantes de los incas, que cultivaban cientos de variedades adaptadas a distintas alturas.",
+   "id": "hist4-oa03-23"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "Además de la papa, ¿qué otros alimentos cultivaban los incas en los Andes?",
+   "opciones": [
+    "Maíz y quinua",
+    "Arroz y trigo",
+    "Aceitunas y uvas",
+    "Cacao y sal marina"
+   ],
+   "correcta": 0,
+   "tip": "El maíz y la quinua, junto con la papa, eran alimentos fundamentales del cultivo inca en distintos pisos de la cordillera.",
+   "id": "hist4-oa03-24"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Qué técnica usaban los incas para conservar la papa por mucho tiempo?",
+   "opciones": [
+    "El chuño, un método de deshidratación con frío y sol",
+    "Guardarla dentro de vasijas selladas con cera",
+    "Cocinarla completamente y enterrarla bajo tierra",
+    "Sumergirla por completo en agua salada durante varios meses"
+   ],
+   "correcta": 0,
+   "tip": "El chuño era papa deshidratada mediante frío y sol, una técnica que permitía conservarla durante mucho tiempo.",
+   "id": "hist4-oa03-25"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Qué animales criaban los incas para obtener carga, lana y alimento?",
+   "opciones": [
+    "Llamas y alpacas",
+    "Caballos y vacas",
+    "Ovejas y cerdos traídos de otro continente",
+    "Camellos del desierto"
+   ],
+   "correcta": 0,
+   "tip": "Las llamas y alpacas eran los animales típicos criados por los incas, usados para carga, lana y también como alimento.",
+   "id": "hist4-oa03-26"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Qué famosa ciudadela inca se encuentra en lo alto de una montaña, rodeada de andenes?",
+   "opciones": [
+    "Machu Picchu",
+    "Tenochtitlán",
+    "Tikal",
+    "Chichén Itzá"
+   ],
+   "correcta": 0,
+   "tip": "Machu Picchu es una ciudadela inca construida en la cima de una montaña, rodeada de terrazas de cultivo o andenes.",
+   "id": "hist4-oa03-27"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Qué tenía de especial la forma en que los incas construían muros con grandes piedras, como en Sacsayhuamán?",
+   "opciones": [
+    "Encajaban las piedras con tanta precisión que no necesitaban argamasa",
+    "Usaban únicamente ladrillos de barro secados al sol",
+    "Construían todos sus muros solo con troncos de árboles amazónicos",
+    "Pegaban las piedras con una mezcla de cal y arena"
+   ],
+   "correcta": 0,
+   "tip": "Los incas tallaban las piedras con tanta precisión que encajaban perfectamente unas con otras, sin necesitar argamasa.",
+   "id": "hist4-oa03-28"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "¿Qué idioma usaban los incas para comunicarse en gran parte de su imperio?",
+   "opciones": [
+    "El quechua",
+    "El náhuatl",
+    "El maya yucateco",
+    "El español"
+   ],
+   "correcta": 0,
+   "tip": "El quechua era la lengua que los incas difundieron por gran parte de su imperio; el náhuatl era la lengua azteca.",
+   "id": "hist4-oa03-29"
+  },
+  {
+   "oa": "HI04 OA 03",
+   "pregunta": "Un ayllu inca ayudaba a construir la casa de una familia, sabiendo que luego recibiría ayuda cuando la necesitara. ¿Qué costumbre refleja esto?",
+   "opciones": [
+    "La reciprocidad, es decir, ayudarse mutuamente entre las familias de la comunidad",
+    "La mita, un trabajo obligatorio que el Estado inca exigía a cada una de las familias",
+    "El tributo, un pago que solo se entregaba al Sapa Inca",
+    "El comercio, intercambiando productos por dinero"
+   ],
+   "correcta": 0,
+   "tip": "La reciprocidad, la ayuda mutua entre familias del ayllu, era una costumbre fundamental en la vida cotidiana inca.",
+   "id": "hist4-oa03-30"
+  }
+ ]
+}

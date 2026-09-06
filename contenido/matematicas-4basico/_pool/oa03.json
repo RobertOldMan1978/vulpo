@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "¿Cuánto es 246 + 358?",
+   "opciones": [
+    "604",
+    "594",
+    "614",
+    "504"
+   ],
+   "correcta": 0,
+   "tip": "Sumando por columnas con las reservas correspondientes, 246 + 358 es 604.",
+   "id": "mate4-oa03-1"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "Calcula 573 + 289.",
+   "opciones": [
+    "862",
+    "852",
+    "872",
+    "762"
+   ],
+   "correcta": 0,
+   "tip": "Sumando unidades, decenas y centenas con las reservas, 573 + 289 es 862.",
+   "id": "mate4-oa03-2"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "¿Cuál es el resultado de sumar 125, 240 y 315?",
+   "opciones": [
+    "680",
+    "670",
+    "690",
+    "580"
+   ],
+   "correcta": 0,
+   "tip": "Sumando los tres números en orden, 125 + 240 + 315 es 680.",
+   "id": "mate4-oa03-3"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "Si sumas 208, 176 y 96, ¿qué obtienes?",
+   "opciones": [
+    "480",
+    "470",
+    "490",
+    "380"
+   ],
+   "correcta": 0,
+   "tip": "Sumando los tres montos, 208 + 176 + 96 es 480.",
+   "id": "mate4-oa03-4"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "¿A cuánto equivale 450 + 300 + 150?",
+   "opciones": [
+    "900",
+    "890",
+    "910",
+    "800"
+   ],
+   "correcta": 0,
+   "tip": "Sumando los tres números, 450 + 300 + 150 es 900.",
+   "id": "mate4-oa03-5"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "Calcula 120 + 130 + 140 + 110.",
+   "opciones": [
+    "500",
+    "490",
+    "510",
+    "400"
+   ],
+   "correcta": 0,
+   "tip": "Sumando los cuatro números en orden, 120 + 130 + 140 + 110 es 500.",
+   "id": "mate4-oa03-6"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "¿Cuánto suman en total 85, 90, 75 y 100?",
+   "opciones": [
+    "350",
+    "340",
+    "360",
+    "250"
+   ],
+   "correcta": 0,
+   "tip": "Sumando los cuatro montos en orden, 85 + 90 + 75 + 100 es 350.",
+   "id": "mate4-oa03-7"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "Si sumas 200, 150, 300 y 250, ¿qué número obtienes?",
+   "opciones": [
+    "900",
+    "890",
+    "910",
+    "800"
+   ],
+   "correcta": 0,
+   "tip": "Sumando los cuatro números, 200 + 150 + 300 + 250 es 900.",
+   "id": "mate4-oa03-8"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "¿Cuánto es 583 - 247?",
+   "opciones": [
+    "336",
+    "346",
+    "326",
+    "236"
+   ],
+   "correcta": 0,
+   "tip": "Restando con las reservas correspondientes, 583 menos 247 es 336.",
+   "id": "mate4-oa03-9"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "Calcula 720 - 468.",
+   "opciones": [
+    "252",
+    "262",
+    "242",
+    "352"
+   ],
+   "correcta": 0,
+   "tip": "Restando 468 a 720 con las reservas necesarias, el resultado es 252.",
+   "id": "mate4-oa03-10"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "¿Cuál es la diferencia entre 905 y 379?",
+   "opciones": [
+    "526",
+    "536",
+    "516",
+    "626"
+   ],
+   "correcta": 0,
+   "tip": "Restando 379 a 905, el resultado es 526.",
+   "id": "mate4-oa03-11"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "¿Cuánto es 1.000 - 456?",
+   "opciones": [
+    "544",
+    "554",
+    "534",
+    "644"
+   ],
+   "correcta": 0,
+   "tip": "Restando 456 a 1.000, el resultado es 544.",
+   "id": "mate4-oa03-12"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "Calcula 634 - 199.",
+   "opciones": [
+    "435",
+    "445",
+    "425",
+    "535"
+   ],
+   "correcta": 0,
+   "tip": "Restando 199 a 634, el resultado es 435.",
+   "id": "mate4-oa03-13"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "Para estimar 296 + 503 redondeando cada número a la centena más cercana, ¿qué estimación obtienes?",
+   "opciones": [
+    "800",
+    "700",
+    "900",
+    "799"
+   ],
+   "correcta": 0,
+   "tip": "296 se redondea a 300 y 503 a 500: la estimación es 800, distinta del resultado exacto.",
+   "id": "mate4-oa03-14"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "Al redondear 812 y 395 a la centena más cercana y restarlos, ¿qué estimación obtienes?",
+   "opciones": [
+    "400",
+    "500",
+    "300",
+    "417"
+   ],
+   "correcta": 0,
+   "tip": "812 se redondea a 800 y 395 a 400: la diferencia estimada es 400, distinta del resultado exacto.",
+   "id": "mate4-oa03-15"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "148 se redondea a 150 y 233 a 230. Sumando esos redondeos, ¿cuál es la estimación de 148 + 233?",
+   "opciones": [
+    "380",
+    "381",
+    "370",
+    "390"
+   ],
+   "correcta": 0,
+   "tip": "Sumando los redondeos, 150 + 230 es 380, muy cercano al resultado exacto de 381.",
+   "id": "mate4-oa03-16"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "Un colegio tiene 235 alumnos en la mañana y 198 en la tarde. ¿Cuántos alumnos tiene en total?",
+   "opciones": [
+    "433",
+    "423",
+    "443",
+    "343"
+   ],
+   "correcta": 0,
+   "tip": "Sumando los alumnos de la mañana y de la tarde, 235 + 198 es 433.",
+   "id": "mate4-oa03-17"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "Camila ahorró 180 pesos en marzo, el doble en abril y 90 en mayo. ¿Cuánto ahorró en total?",
+   "opciones": [
+    "630",
+    "540",
+    "720",
+    "450"
+   ],
+   "correcta": 0,
+   "tip": "Abril fue el doble de marzo: 360. Sumando 180 + 360 + 90, el total ahorrado es 630.",
+   "id": "mate4-oa03-18"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "En una caja hay 4 bolsas de manzanas con 45, 38, 52 y 60 manzanas. ¿Cuántas manzanas hay en total?",
+   "opciones": [
+    "195",
+    "185",
+    "205",
+    "155"
+   ],
+   "correcta": 0,
+   "tip": "Sumando las cuatro bolsas, 45 + 38 + 52 + 60 es 195 manzanas en total.",
+   "id": "mate4-oa03-19"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "Una tienda tenía 650 cuadernos y vendió 275. ¿Cuántos cuadernos le quedan?",
+   "opciones": [
+    "375",
+    "385",
+    "365",
+    "475"
+   ],
+   "correcta": 0,
+   "tip": "Restando los cuadernos vendidos a los que tenía, 650 menos 275 es 375.",
+   "id": "mate4-oa03-20"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "Un colegio tenía 645 alumnos. Se retiraron algunos y quedaron 520. ¿Cuántos alumnos se retiraron?",
+   "opciones": [
+    "125",
+    "135",
+    "115",
+    "520"
+   ],
+   "correcta": 0,
+   "tip": "Restando los que quedaron a los que había, 645 menos 520 es 125 alumnos que se retiraron.",
+   "id": "mate4-oa03-21"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "Diego leyó 840 páginas de un libro que tiene 1.000. ¿Cuántas páginas le faltan por leer?",
+   "opciones": [
+    "160",
+    "150",
+    "170",
+    "240"
+   ],
+   "correcta": 0,
+   "tip": "Restando las páginas leídas al total, 1.000 menos 840 es 160 páginas por leer.",
+   "id": "mate4-oa03-22"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "Para sumar 356 + 274, se separan centenas, decenas y unidades: 300+200, 50+70 y 6+4. ¿Cuál es el resultado?",
+   "opciones": [
+    "630",
+    "620",
+    "640",
+    "530"
+   ],
+   "correcta": 0,
+   "tip": "Sumando por partes: 500 + 120 + 10 es 630, igual que sumar 356 + 274 directamente.",
+   "id": "mate4-oa03-23"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "Restando por partes: 500-200 son 300, 20-10 son 10 y 8-3 son 5. ¿Cuál es el resultado de 528 - 213?",
+   "opciones": [
+    "315",
+    "305",
+    "325",
+    "415"
+   ],
+   "correcta": 0,
+   "tip": "Sumando las diferencias por partes: 300 + 10 + 5 es 315, igual que restar 528 - 213 directamente.",
+   "id": "mate4-oa03-24"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "Al sumar 468 + 275 en forma vertical, ¿cuántas veces se necesita una reserva?",
+   "opciones": [
+    "2",
+    "1",
+    "3",
+    "0"
+   ],
+   "correcta": 0,
+   "tip": "Al sumar las unidades (8+5=13) y las decenas (6+7+1=14) se generan dos reservas.",
+   "id": "mate4-oa03-25"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "Al restar 604 - 258 en forma vertical, ¿en qué columna se necesita pedir prestado primero?",
+   "opciones": [
+    "En las unidades",
+    "En las decenas",
+    "En las centenas",
+    "No se necesita pedir prestado"
+   ],
+   "correcta": 0,
+   "tip": "Como 4 es menor que 8, hay que pedir prestado ya en las unidades, la primera columna que se resuelve.",
+   "id": "mate4-oa03-26"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "¿Cuánto es 999 + 1?",
+   "opciones": [
+    "1.000",
+    "1.001",
+    "990",
+    "900"
+   ],
+   "correcta": 0,
+   "tip": "999 más 1 es 1.000, porque se completa a la vez la decena, la centena y la unidad de mil.",
+   "id": "mate4-oa03-27"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "¿Cuánto es 500 - 500?",
+   "opciones": [
+    "0",
+    "50",
+    "500",
+    "5"
+   ],
+   "correcta": 0,
+   "tip": "Restar un número a sí mismo siempre da 0: 500 menos 500 es 0.",
+   "id": "mate4-oa03-28"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "Ana sumó 347 + 256 y obtuvo 703. Al estimar redondeando a la centena, ¿el resultado es razonable?",
+   "opciones": [
+    "No es razonable, porque redondeando da cerca de 600",
+    "Sí es razonable, porque redondeando da cerca de 700",
+    "Sí es razonable, porque 703 es un número redondo",
+    "No es razonable, porque redondeando da cerca de 800"
+   ],
+   "correcta": 0,
+   "tip": "347 se redondea a 300 y 256 a 300: la suma estimada es cerca de 600, muy lejos de 703, así que hay un error.",
+   "id": "mate4-oa03-29"
+  },
+  {
+   "oa": "MA04 OA 03",
+   "pregunta": "Sofía tenía 320 pesos, recibió 150 de regalo y gastó 90 en dulces. ¿Cuánto dinero tiene ahora?",
+   "opciones": [
+    "380",
+    "460",
+    "300",
+    "290"
+   ],
+   "correcta": 0,
+   "tip": "Sumando lo recibido y restando lo gastado: 320 + 150 es 470, y 470 menos 90 es 380.",
+   "id": "mate4-oa03-30"
+  }
+ ]
+}

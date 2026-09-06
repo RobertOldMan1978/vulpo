@@ -1,0 +1,399 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿En qué zona de América se desarrolló la civilización maya?",
+   "opciones": [
+    "En la península de Yucatán y zonas de Guatemala, Belice y Honduras",
+    "En el valle central de México, alrededor del lago Texcoco",
+    "A lo largo de toda la cordillera de los Andes, hasta el sur de Chile",
+    "En las llanuras heladas del extremo sur de América del Sur"
+   ],
+   "correcta": 0,
+   "tip": "Los mayas vivieron en Mesoamérica, en la península de Yucatán y territorios vecinos de Centroamérica; el valle de México fue territorio azteca y los Andes, territorio inca.",
+   "id": "hist4-oa01-1"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿Qué tipo de paisaje predominaba en el territorio donde vivían los mayas?",
+   "opciones": [
+    "Selva tropical densa y calurosa",
+    "Un desierto extremadamente seco y sin vegetación",
+    "Una meseta fría rodeada de volcanes nevados",
+    "Una llanura cubierta de nieve casi todo el año"
+   ],
+   "correcta": 0,
+   "tip": "El territorio maya, en la península de Yucatán y Centroamérica, es en gran parte selva tropical cálida y húmeda.",
+   "id": "hist4-oa01-2"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "Los mayas vivieron al norte de esta línea imaginaria que divide el planeta en dos mitades. ¿Cómo se llama?",
+   "opciones": [
+    "El Ecuador",
+    "El meridiano de Greenwich",
+    "El círculo polar ártico",
+    "El trópico de Capricornio"
+   ],
+   "correcta": 0,
+   "tip": "El Ecuador divide la Tierra en hemisferio norte y sur; el territorio maya está en el hemisferio norte, cerca del trópico de Cáncer.",
+   "id": "hist4-oa01-3",
+   "visual": {
+    "tipo": "globo",
+    "destacar": "ecuador",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿Cómo estaba organizada políticamente la civilización maya?",
+   "opciones": [
+    "En ciudades-estado independientes, cada una con su propio gobernante",
+    "En un solo imperio gigante gobernado desde una única capital",
+    "En tribus nómadas sin ningún gobernante ni ciudad fija",
+    "En un reino único, gobernado por una asamblea de ancianos elegida por todo el pueblo"
+   ],
+   "correcta": 0,
+   "tip": "A diferencia de los aztecas y los incas, los mayas nunca formaron un imperio único: vivieron en ciudades-estado independientes que a veces se aliaban y a veces guerreaban entre sí.",
+   "id": "hist4-oa01-4"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "Tikal y Calakmul eran dos poderosas ciudades mayas rivales. ¿Qué es más probable que ocurriera entre ellas?",
+   "opciones": [
+    "Que compitieran por el control de otras ciudades y a veces entraran en guerra",
+    "Que se unieran de inmediato bajo un solo rey supremo, dejando de lado sus diferencias",
+    "Que ninguna tuviera nunca contacto con la otra",
+    "Que fueran gobernadas por el mismo emperador azteca"
+   ],
+   "correcta": 0,
+   "tip": "Como los mayas no formaban un imperio único, ciudades poderosas como Tikal y Calakmul competían por territorio e influencia, y esa rivalidad a veces llevaba a la guerra.",
+   "id": "hist4-oa01-5"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿Qué papel cumplía el ajaw, el gobernante de una ciudad maya?",
+   "opciones": [
+    "Era el líder político y también una figura religiosa de gran importancia",
+    "Era solo un juez que resolvía problemas entre comerciantes",
+    "Era elegido por votación de todos los habitantes cada año",
+    "Era un cargo que solo se ejercía durante los conflictos entre ciudades rivales"
+   ],
+   "correcta": 0,
+   "tip": "El ajaw, o gobernante maya, concentraba el poder político y religioso: se le consideraba un intermediario entre su pueblo y los dioses.",
+   "id": "hist4-oa01-6"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿Qué usaban los mayas frecuentemente para intercambiar productos, además del trueque?",
+   "opciones": [
+    "Semillas de cacao, muy valoradas como forma de pago",
+    "Monedas de oro acuñadas por un gobierno central",
+    "Billetes de papel con la imagen del gobernante",
+    "Piezas de hierro forjadas por los herreros de cada ciudad maya"
+   ],
+   "correcta": 0,
+   "tip": "Los mayas no tenían monedas metálicas ni papel moneda: usaban el trueque y, en especial, las semillas de cacao como una forma de pago muy apreciada.",
+   "id": "hist4-oa01-7"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿Qué producto exportaban las ciudades mayas hacia otras regiones de Mesoamérica?",
+   "opciones": [
+    "Cacao, sal, obsidiana y textiles de algodón",
+    "Papas y quinua cultivadas en terrazas de montaña",
+    "Llamas y alpacas criadas en el altiplano andino",
+    "Hierro y bronce fundidos en grandes hornos"
+   ],
+   "correcta": 0,
+   "tip": "Las llamas, alpacas, papas y quinua son propias de los Andes incas, no de los mayas; los mayas comerciaban cacao, sal, obsidiana y textiles.",
+   "id": "hist4-oa01-8"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿Cuál era el alimento principal de la dieta maya?",
+   "opciones": [
+    "El maíz, que también tenía un fuerte significado religioso",
+    "El arroz, traído desde Asia por los comerciantes mayas",
+    "El trigo, cultivado en grandes campos de regadío",
+    "La papa, cultivada en terrazas construidas en zonas de montaña"
+   ],
+   "correcta": 0,
+   "tip": "El maíz era la base de la alimentación maya y también aparece en sus mitos de creación: según su tradición, los primeros humanos fueron hechos de maíz.",
+   "id": "hist4-oa01-9"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿Qué técnica usaban los mayas para cultivar en medio de la selva?",
+   "opciones": [
+    "La roza y quema: cortaban y quemaban vegetación para preparar el suelo",
+    "Terrazas de piedra construidas en laderas de montañas nevadas",
+    "Chinampas, islas artificiales que flotaban sobre la superficie de un lago",
+    "Grandes canales de riego traídos desde ríos muy lejanos"
+   ],
+   "correcta": 0,
+   "tip": "La roza y quema fue la técnica maya típica en la selva; las chinampas son aztecas y las terrazas de montaña, incas.",
+   "id": "hist4-oa01-10"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "Además del maíz, ¿qué otros alimentos formaban parte de la dieta maya?",
+   "opciones": [
+    "Frijoles, calabaza, chile y cacao",
+    "Arroz, soya y trigo integral",
+    "Quinua, papa y charqui de llama",
+    "Aceitunas, uvas y trigo candeal"
+   ],
+   "correcta": 0,
+   "tip": "Junto al maíz, los mayas cultivaban frijoles, calabaza y chile, y usaban el cacao para preparar una bebida especial.",
+   "id": "hist4-oa01-11"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿Quiénes ocupaban el nivel más alto en la sociedad maya?",
+   "opciones": [
+    "El gobernante y su familia, junto con la nobleza",
+    "Los comerciantes ambulantes que viajaban entre ciudades",
+    "Los campesinos que trabajaban las tierras comunales",
+    "Los prisioneros capturados en las guerras entre ciudades"
+   ],
+   "correcta": 0,
+   "tip": "La sociedad maya era muy jerárquica: en la cima estaban el gobernante y la nobleza, seguidos por sacerdotes, guerreros, comerciantes y campesinos.",
+   "id": "hist4-oa01-12"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿Qué grupo social maya se dedicaba principalmente a dirigir las ceremonias religiosas?",
+   "opciones": [
+    "Los sacerdotes, que también estudiaban los astros y el calendario",
+    "Los campesinos, encargados de cultivar la milpa",
+    "Los comerciantes, que viajaban entre ciudades distintas",
+    "Los esclavos, capturados en enfrentamientos con otras ciudades"
+   ],
+   "correcta": 0,
+   "tip": "Los sacerdotes mayas dirigían los rituales religiosos y además eran quienes dominaban el calendario y la observación de los astros.",
+   "id": "hist4-oa01-13"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿Qué solía sucederle a las personas capturadas en las guerras entre ciudades mayas?",
+   "opciones": [
+    "Muchas eran convertidas en esclavas o esclavos al servicio de sus captores",
+    "Recibían automáticamente la ciudadanía de la ciudad que las había vencido",
+    "Eran devueltas de inmediato sin ninguna consecuencia",
+    "Pasaban a gobernar la ciudad que las había derrotado"
+   ],
+   "correcta": 0,
+   "tip": "En la sociedad maya, quienes eran capturados en la guerra solían convertirse en esclavos, el grupo social con menos derechos.",
+   "id": "hist4-oa01-14"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿A qué actividades se dedicaban principalmente los hombres mayas del pueblo?",
+   "opciones": [
+    "Al cultivo de la tierra, la caza y, si era necesario, la guerra",
+    "Exclusivamente al comercio marítimo de larga distancia",
+    "Solo a la construcción de templos, sin dedicarse a ninguna otra actividad",
+    "Únicamente a la observación de los astros y el calendario"
+   ],
+   "correcta": 0,
+   "tip": "La mayoría de los hombres mayas del pueblo se dedicaba a la agricultura, la caza y, cuando hacía falta, a la guerra.",
+   "id": "hist4-oa01-15"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿Qué labores realizaban principalmente las mujeres mayas?",
+   "opciones": [
+    "Tejer, cocinar, criar a los hijos y ayudar en labores del hogar",
+    "Gobernar, por turnos, todas y cada una de las ciudades-estado mayas",
+    "Comandar los ejércitos en las guerras entre ciudades",
+    "Dirigir en solitario todas las ceremonias religiosas"
+   ],
+   "correcta": 0,
+   "tip": "Las mujeres mayas se encargaban sobre todo del tejido, la cocina y la crianza; el gobierno y la guerra estaban casi siempre en manos de los hombres.",
+   "id": "hist4-oa01-16"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "Además de gobernar, ¿qué otra función cumplía a veces el ajaw maya?",
+   "opciones": [
+    "Participar como figura central en ceremonias religiosas",
+    "Trabajar personalmente la tierra junto a los campesinos",
+    "Tejer la ropa que usaba toda la nobleza de la ciudad",
+    "Vender productos en el mercado de la ciudad"
+   ],
+   "correcta": 0,
+   "tip": "El ajaw no solo gobernaba: también tenía un papel religioso central, participando en ceremonias como intermediario con los dioses.",
+   "id": "hist4-oa01-17"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿Cómo era la religión de los mayas?",
+   "opciones": [
+    "Politeísta: creían en muchos dioses relacionados con la naturaleza",
+    "Monoteísta: adoraban a un único dios creador, sin ninguna otra divinidad",
+    "No tenían ninguna creencia ni práctica religiosa",
+    "Adoraban solo a los gobernantes de otras ciudades"
+   ],
+   "correcta": 0,
+   "tip": "Los mayas eran politeístas: tenían muchos dioses, varios de ellos relacionados con la lluvia, el maíz y el sol.",
+   "id": "hist4-oa01-18"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿Qué dios maya estaba asociado con la lluvia, tan importante para el maíz?",
+   "opciones": [
+    "Chaac",
+    "Huitzilopochtli",
+    "Inti",
+    "Viracocha"
+   ],
+   "correcta": 0,
+   "tip": "Chaac era el dios maya de la lluvia; Huitzilopochtli era azteca, e Inti y Viracocha eran dioses incas.",
+   "id": "hist4-oa01-19"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "Los mayas realizaban sacrificios humanos como parte de sus ritos. ¿Con qué propósito lo hacían?",
+   "opciones": [
+    "Como una ofrenda para sus dioses, ligada al calendario y a la agricultura",
+    "Como un castigo aplicado únicamente a quienes robaban comida",
+    "Como un espectáculo público, sin ningún significado religioso para su pueblo",
+    "Como una forma de elegir al próximo gobernante de la ciudad"
+   ],
+   "correcta": 0,
+   "tip": "Para los mayas, el sacrificio era una ofrenda religiosa: creían que así alimentaban a los dioses y aseguraban el ciclo de las cosechas.",
+   "id": "hist4-oa01-20"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿Qué sistema numérico usaban los mayas para hacer sus cálculos?",
+   "opciones": [
+    "Un sistema en base 20, que incluía el número cero",
+    "El sistema decimal en base 10, igual al que usamos hoy",
+    "Un sistema en base 12, como el de las horas del reloj",
+    "Un sistema en base 60, igual al de los antiguos egipcios"
+   ],
+   "correcta": 0,
+   "tip": "Los mayas usaban un sistema en base 20 y fueron una de las primeras civilizaciones del mundo en usar el número cero.",
+   "id": "hist4-oa01-21"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿Para qué usaban los mayas su avanzado conocimiento de astronomía?",
+   "opciones": [
+    "Para crear calendarios precisos y predecir eventos como los eclipses",
+    "Para construir barcos capaces de cruzar el océano Atlántico",
+    "Para fabricar armas de metal mucho más resistentes y afiladas para la guerra",
+    "Para diseñar el sistema de caminos que unía sus ciudades"
+   ],
+   "correcta": 0,
+   "tip": "Los mayas observaban el cielo con mucha precisión, lo que les permitió crear calendarios exactos y anticipar fenómenos como los eclipses.",
+   "id": "hist4-oa01-22"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿Qué calendario maya se usaba principalmente para fines religiosos y tenía 260 días?",
+   "opciones": [
+    "El Tzolkin",
+    "El Haab",
+    "El calendario gregoriano",
+    "El calendario juliano"
+   ],
+   "correcta": 0,
+   "tip": "El Tzolkin, de 260 días, era el calendario ritual maya; el Haab, de 365 días, seguía el ciclo solar.",
+   "id": "hist4-oa01-23"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿Qué tipo de escritura desarrollaron los mayas?",
+   "opciones": [
+    "Un sistema de glifos, con signos que representaban sonidos e ideas",
+    "Un alfabeto de 27 letras muy similar al español actual",
+    "Un sistema de cuerdas anudadas de distintos colores, llamado quipu",
+    "No desarrollaron ningún sistema de escritura propio"
+   ],
+   "correcta": 0,
+   "tip": "Los mayas crearon un sistema de glifos, una escritura jeroglífica; el quipu de nudos era un sistema inca, no de escritura alfabética.",
+   "id": "hist4-oa01-24"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿Dónde registraban los mayas su escritura, además de en libros de corteza?",
+   "opciones": [
+    "En estelas de piedra colocadas en sus ciudades",
+    "En tablillas de cera importadas desde Europa",
+    "En hojas de papel de arroz traídas desde Asia",
+    "En placas de metal fundido por sus artesanos"
+   ],
+   "correcta": 0,
+   "tip": "Los mayas tallaban su escritura en estelas de piedra y también la pintaban en libros llamados códices, hechos de corteza de árbol.",
+   "id": "hist4-oa01-25"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿Qué tipo de construcciones destacan en las ciudades mayas como Tikal o Palenque?",
+   "opciones": [
+    "Pirámides escalonadas usadas como templos",
+    "Rascacielos de vidrio y acero",
+    "Puentes colgantes tejidos con fibra vegetal",
+    "Castillos rodeados de fosos con agua"
+   ],
+   "correcta": 0,
+   "tip": "Las pirámides escalonadas, usadas como templos, son una de las construcciones más características de las ciudades mayas.",
+   "id": "hist4-oa01-26"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "Además de templos, ¿qué otra construcción especial tenían muchas ciudades mayas?",
+   "opciones": [
+    "Canchas para un juego de pelota de carácter ritual",
+    "Puertos marítimos preparados especialmente para naves de guerra",
+    "Estadios modernos con graderías de cemento",
+    "Torres de vigilancia para avistar barcos"
+   ],
+   "correcta": 0,
+   "tip": "Muchas ciudades mayas tenían canchas especiales para el juego de pelota, una actividad con un fuerte significado ritual.",
+   "id": "hist4-oa01-27"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿Cómo eran las viviendas de la mayoría de las familias mayas del pueblo?",
+   "opciones": [
+    "Chozas sencillas de adobe y techo de paja",
+    "Palacios de piedra tallada, igual que los del gobernante",
+    "Grandes edificios de varios pisos con ascensor",
+    "Carpas transportables, porque eran un pueblo nómada"
+   ],
+   "correcta": 0,
+   "tip": "La nobleza maya vivía en palacios de piedra, pero la mayoría de las familias del pueblo habitaba en chozas sencillas de adobe y paja.",
+   "id": "hist4-oa01-28"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "¿Qué costumbre estética practicaban algunas familias mayas con sus bebés?",
+   "opciones": [
+    "Modificar suavemente la forma del cráneo, que consideraban una señal de belleza",
+    "Pintarles el cuerpo completo de color rojo desde el nacimiento",
+    "Cortarles por completo el cabello al cumplir su primer año de vida, sin excepción",
+    "Vestirlos únicamente con ropa hecha de plumas de quetzal"
+   ],
+   "correcta": 0,
+   "tip": "Algunas familias mayas moldeaban suavemente el cráneo de sus bebés, porque una frente alargada se consideraba un signo de belleza y estatus.",
+   "id": "hist4-oa01-29"
+  },
+  {
+   "oa": "HI04 OA 01",
+   "pregunta": "Camila lee que en una ciudad maya se jugaba con una pelota de goma en una cancha con forma de I. ¿A qué se refiere?",
+   "opciones": [
+    "Al juego de pelota, un deporte con un fuerte significado ritual",
+    "A una clase de matemática para aprender el sistema vigesimal",
+    "A una ceremonia agrícola dedicada solo a las mujeres",
+    "A un mercado donde se intercambiaba cacao por sal"
+   ],
+   "correcta": 0,
+   "tip": "El juego de pelota maya se practicaba en canchas con forma de I con una pelota de goma, y tenía un significado religioso además de deportivo.",
+   "id": "hist4-oa01-30"
+  }
+ ]
+}

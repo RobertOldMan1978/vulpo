@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "¿Es cierto que la letra A tiene una línea de simetría vertical, por el medio?",
+   "opciones": [
+    "Sí, el lado izquierdo es el reflejo del derecho",
+    "No, el lado izquierdo no es igual al derecho",
+    "Sí, pero solo si la letra está acostada",
+    "No, las letras con líneas rectas no tienen simetría"
+   ],
+   "correcta": 0,
+   "tip": "Si doblas la A por el medio de arriba hacia abajo, las dos mitades calzan exactamente.",
+   "id": "mate4-oa17-1"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "¿Tiene la letra F alguna línea de simetría, vertical u horizontal?",
+   "opciones": [
+    "No, ninguna mitad de la F calza con la otra",
+    "Sí, tiene una línea de simetría vertical",
+    "Sí, tiene una línea de simetría horizontal",
+    "Sí, tiene las dos líneas de simetría"
+   ],
+   "correcta": 0,
+   "tip": "La F tiene sus brazos solo arriba y al medio, así que ningún doblez la deja igual a los dos lados.",
+   "id": "mate4-oa17-2"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Camila dobla la letra B por una línea horizontal, de lado a lado. ¿Calzan las mitades?",
+   "opciones": [
+    "Sí, la curva de arriba y la de abajo son iguales",
+    "No, la curva de arriba es más grande que la de abajo",
+    "Sí, pero solo doblándola en vertical",
+    "No, la letra B no tiene ninguna simetría"
+   ],
+   "correcta": 0,
+   "tip": "Las dos curvas de la B, arriba y abajo, son del mismo tamaño: al doblarla por el medio, calzan.",
+   "id": "mate4-oa17-3"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "¿La letra O tiene línea de simetría?",
+   "opciones": [
+    "Sí, tiene varias líneas de simetría",
+    "No, porque es redonda",
+    "Sí, pero solo una línea",
+    "No, ninguna figura redonda tiene"
+   ],
+   "correcta": 0,
+   "tip": "Un círculo se dobla por cualquier línea que pase por su centro y las dos mitades siempre calzan.",
+   "id": "mate4-oa17-4"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Un corazón, dibujado con la punta hacia abajo, ¿tiene línea de simetría?",
+   "opciones": [
+    "Sí, una vertical que pasa por el medio",
+    "Sí, una línea horizontal",
+    "No tiene ninguna línea",
+    "Sí, pero solo si el corazón está acostado"
+   ],
+   "correcta": 0,
+   "tip": "El lado izquierdo del corazón es el reflejo del derecho: la línea de simetría es vertical, al centro.",
+   "id": "mate4-oa17-5"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Una mariposa con las alas extendidas, ¿dónde iría su línea de simetría?",
+   "opciones": [
+    "En el medio de su cuerpo, en vertical",
+    "Justo en la punta de una sola de sus alas",
+    "Cruzando solo un ala",
+    "No tiene línea de simetría"
+   ],
+   "correcta": 0,
+   "tip": "Las dos alas son reflejo una de la otra a los lados del cuerpo, así que la línea pasa por el medio.",
+   "id": "mate4-oa17-6"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Al doblar la letra S por la mitad, ¿quedan sus dos partes iguales?",
+   "opciones": [
+    "No, cada curva de la S apunta a un lado distinto",
+    "Sí, las dos curvas son exactamente iguales",
+    "Sí, pero solo si la doblas al revés",
+    "No, la S no tiene ninguna forma curva definida"
+   ],
+   "correcta": 0,
+   "tip": "La curva de arriba va para un lado y la de abajo para el otro: ningún doblez las hace calzar.",
+   "id": "mate4-oa17-7"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Un triángulo equilátero, de tres lados iguales, ¿cuántas líneas de simetría tiene?",
+   "opciones": [
+    "Tres, una por cada vértice",
+    "Una sola línea",
+    "Ninguna línea",
+    "Cuatro líneas distintas"
+   ],
+   "correcta": 0,
+   "tip": "Cada línea va de un vértice al medio del lado opuesto: como hay tres vértices, hay tres líneas.",
+   "id": "mate4-oa17-8"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Un rectángulo que no es cuadrado, ¿cuántas líneas de simetría tiene?",
+   "opciones": [
+    "Dos: una a lo largo y otra a lo ancho",
+    "Cuatro, dos rectas y dos diagonales",
+    "Solo una, la que cruza por el centro",
+    "Ninguna, un rectángulo no es simétrico"
+   ],
+   "correcta": 0,
+   "tip": "Se dobla por el medio a lo largo y por el medio a lo ancho: son dos líneas en total.",
+   "id": "mate4-oa17-9"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Un cuadrado, ¿cuántas líneas de simetría tiene en total?",
+   "opciones": [
+    "Cuatro: dos rectas y dos diagonales",
+    "Dos, las que cruzan el medio de los lados",
+    "Solo las dos diagonales, nada más",
+    "Ninguna, un cuadrado no es simétrico"
+   ],
+   "correcta": 0,
+   "tip": "A las dos líneas que cruzan el medio de los lados, un cuadrado suma sus dos diagonales.",
+   "id": "mate4-oa17-10"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Una estrella de cinco puntas iguales, ¿tiene líneas de simetría?",
+   "opciones": [
+    "Sí, cinco líneas, una por punta",
+    "No tiene ninguna línea",
+    "Sí, pero solo una línea",
+    "Sí, pero solo si está acostada"
+   ],
+   "correcta": 0,
+   "tip": "Cada línea pasa por una punta y el medio del lado opuesto: con cinco puntas iguales, hay cinco líneas.",
+   "id": "mate4-oa17-11"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Un círculo se corta con una línea que NO pasa por el centro. ¿Quedan las mitades iguales?",
+   "opciones": [
+    "No, una parte queda más grande",
+    "Sí, siempre quedan iguales",
+    "Sí, porque el círculo es redondo",
+    "No se puede saber sin medir"
+   ],
+   "correcta": 0,
+   "tip": "Para que las dos mitades sean iguales, el corte tiene que pasar exactamente por el centro.",
+   "id": "mate4-oa17-12"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Sofía dibuja la mitad de una mariposa junto a una línea. Para completarla, ¿qué dibuja al otro lado?",
+   "opciones": [
+    "El reflejo exacto de esa mitad",
+    "Cualquier dibujo, no importa cuál",
+    "La misma mitad, pero más chica y girada",
+    "Nada, la mariposa queda con una sola ala"
+   ],
+   "correcta": 0,
+   "tip": "Una figura simétrica se completa dibujando el reflejo exacto de la mitad que ya existe.",
+   "id": "mate4-oa17-13"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Matías refleja, al otro lado de una línea vertical, la mitad de un corazón. ¿Qué figura obtiene?",
+   "opciones": [
+    "Un corazón completo y simétrico",
+    "Dos mitades distintas",
+    "Un círculo",
+    "Una figura sin forma definida"
+   ],
+   "correcta": 0,
+   "tip": "Reflejar la mitad de un corazón al otro lado de su línea de simetría arma el corazón completo.",
+   "id": "mate4-oa17-14"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Camila dobla un papel, recorta un triángulo pegado al doblez y lo desdobla. ¿Qué figura obtiene?",
+   "opciones": [
+    "Una figura simétrica respecto al doblez",
+    "Un triángulo con un solo lado recto",
+    "Una figura sin ninguna simetría, irregular",
+    "Dos triángulos separados y de distinto tamaño"
+   ],
+   "correcta": 0,
+   "tip": "Al recortar pegado al doblez y desdoblar, las dos mitades quedan iguales, reflejadas por el doblez.",
+   "id": "mate4-oa17-15"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Benjamín dobla una figura por una línea, y las dos mitades NO calzan. ¿Qué se puede decir de esa línea?",
+   "opciones": [
+    "No es una línea de simetría",
+    "Sí lo es, aunque no calcen",
+    "Toda figura tiene esa línea",
+    "No se puede saber sin medir"
+   ],
+   "correcta": 0,
+   "tip": "Para que una línea sea de simetría, las dos mitades deben calzar exactamente al doblar.",
+   "id": "mate4-oa17-16"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "María observa la letra M. Si la dobla por una línea vertical al medio, ¿calzan sus dos mitades?",
+   "opciones": [
+    "Sí, sus mitades son un espejo",
+    "No, la M no es simétrica",
+    "Sí, pero solo en horizontal",
+    "No, ninguna letra recta lo es"
+   ],
+   "correcta": 0,
+   "tip": "El lado izquierdo de la M y el lado derecho son exactamente iguales, reflejados por el centro.",
+   "id": "mate4-oa17-17"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Diego dobla la N por el medio, en vertical y en horizontal. ¿Calzan las mitades en algún caso?",
+   "opciones": [
+    "No tiene ninguna de las dos",
+    "Sí, tiene las dos a la vez",
+    "Sí, solo la vertical",
+    "Sí, solo la horizontal"
+   ],
+   "correcta": 0,
+   "tip": "La diagonal de la N cambia de dirección al doblarla: ni el vertical ni el horizontal la dejan igual.",
+   "id": "mate4-oa17-18"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Un pentágono regular, de cinco lados iguales, ¿cuántas líneas de simetría tiene?",
+   "opciones": [
+    "Cinco, una por cada vértice",
+    "Cuatro, como en un cuadrado",
+    "Dos, una vertical y otra horizontal",
+    "Ninguna, los pentágonos no son simétricos"
+   ],
+   "correcta": 0,
+   "tip": "Igual que en la estrella, cada línea pasa por un vértice y el medio del lado opuesto: son cinco.",
+   "id": "mate4-oa17-19"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Javiera dice que un óvalo tiene solo una línea de simetría, la que lo cruza a lo largo. ¿Tiene razón?",
+   "opciones": [
+    "No, también tiene una a lo ancho",
+    "Sí, tiene razón, solo esa",
+    "No, un óvalo no tiene ninguna",
+    "Sí, y además tiene cuatro más"
+   ],
+   "correcta": 0,
+   "tip": "Un óvalo se dobla a lo largo y a lo ancho por su centro, y en ambos casos las mitades calzan.",
+   "id": "mate4-oa17-20"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Diego mira la huella de un pie dibujada en el suelo. ¿Tiene línea de simetría?",
+   "opciones": [
+    "No, sus dos bordes son distintos",
+    "Sí, una línea vertical al medio",
+    "Sí, una línea horizontal",
+    "Sí, tiene varias líneas"
+   ],
+   "correcta": 0,
+   "tip": "El borde interior del pie es distinto del exterior, así que ninguna mitad calza con la otra.",
+   "id": "mate4-oa17-21"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Un cuerpo humano dibujado de frente, de pie y con los brazos abajo, ¿tiene línea de simetría?",
+   "opciones": [
+    "Sí, una vertical por el medio",
+    "Sí, una horizontal a la cintura",
+    "No tiene ninguna línea",
+    "Sí, tiene cuatro líneas"
+   ],
+   "correcta": 0,
+   "tip": "El lado izquierdo del cuerpo y el derecho son casi un espejo: la línea de simetría es vertical.",
+   "id": "mate4-oa17-22"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Ana dobla un cuadrado de papel por una de sus diagonales. ¿Quedan las dos partes iguales?",
+   "opciones": [
+    "Sí, la diagonal también es simetría",
+    "No, la diagonal nunca lo es",
+    "Sí, pero solo en rectángulos",
+    "No, el cuadrado no tiene diagonales"
+   ],
+   "correcta": 0,
+   "tip": "En un cuadrado, además de los dobleces por el medio de los lados, sus diagonales también son simetría.",
+   "id": "mate4-oa17-23"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "¿Es cierto que la diagonal de un rectángulo (no cuadrado) es una línea de simetría?",
+   "opciones": [
+    "No, ahí la diagonal no es simetría",
+    "Sí, la diagonal siempre lo es",
+    "No, un rectángulo no tiene simetría",
+    "Sí, solo si es muy alargado"
+   ],
+   "correcta": 0,
+   "tip": "A diferencia del cuadrado, en un rectángulo las diagonales no forman mitades que calcen.",
+   "id": "mate4-oa17-24"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Fabián, en un software de geometría, dibuja media figura y pide reflejarla. ¿Qué hace el programa?",
+   "opciones": [
+    "Dibuja la otra mitad como un espejo",
+    "Borra por completo la mitad ya dibujada",
+    "Dibuja una figura completamente distinta",
+    "Achica la mitad original a la mitad"
+   ],
+   "correcta": 0,
+   "tip": "Reflejar copia la figura como si hubiera un espejo puesto en la línea de simetría.",
+   "id": "mate4-oa17-25"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Entre la letra H y la letra P, ¿cuál tiene simetría horizontal, una línea que la cruza de lado a lado?",
+   "opciones": [
+    "La H",
+    "La P",
+    "Las dos por igual",
+    "Ninguna de las dos"
+   ],
+   "correcta": 0,
+   "tip": "Arriba y abajo de la H son iguales; en la P, el círculo de arriba no tiene reflejo abajo.",
+   "id": "mate4-oa17-26"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Entre un triángulo equilátero y uno escaleno (tres lados distintos), ¿cuál tiene simetría?",
+   "opciones": [
+    "Solo el equilátero",
+    "Solo el escaleno",
+    "Los dos por igual",
+    "Ninguno de los dos"
+   ],
+   "correcta": 0,
+   "tip": "El escaleno no tiene ningún lado ni ángulo igual a otro, así que ningún doblez calza sus mitades.",
+   "id": "mate4-oa17-27"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Benjamín dibuja una línea y, a un lado, la mitad de una estrella de cinco puntas. ¿Qué falta al otro lado?",
+   "opciones": [
+    "El reflejo exacto de esa mitad",
+    "La misma mitad, pero rotada",
+    "Dejarlo en blanco",
+    "Una estrella de seis puntas"
+   ],
+   "correcta": 0,
+   "tip": "Completar una figura simétrica es copiar su mitad como un reflejo exacto al otro lado de la línea.",
+   "id": "mate4-oa17-28"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Una flor con seis pétalos iguales, repartidos parejo alrededor del centro, ¿tiene líneas de simetría?",
+   "opciones": [
+    "Sí, varias líneas por el centro",
+    "No tiene ninguna línea de simetría",
+    "Sí, pero solo tiene una línea",
+    "Sí, solo si tuviera cinco pétalos"
+   ],
+   "correcta": 0,
+   "tip": "Cada línea que pasa por dos pétalos opuestos y el centro es una línea de simetría.",
+   "id": "mate4-oa17-29"
+  },
+  {
+   "oa": "MA04 OA 17",
+   "pregunta": "Matías dice que toda figura es simétrica. Pensando en la letra F, ¿tiene razón?",
+   "opciones": [
+    "No, la F no tiene ninguna línea de simetría",
+    "Sí, la F tiene simetría vertical, por el medio",
+    "Sí, la F tiene simetría horizontal, por el medio",
+    "Sí, toda letra mayúscula tiene alguna simetría"
+   ],
+   "correcta": 0,
+   "tip": "La F no tiene ninguna línea de simetría: ninguna mitad calza con la otra al doblarla.",
+   "id": "mate4-oa17-30"
+  }
+ ]
+}

@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "¿Cuánto es 8 × 0?",
+   "opciones": [
+    "0",
+    "8",
+    "1",
+    "80"
+   ],
+   "correcta": 0,
+   "tip": "Multiplicar cualquier número por 0 siempre da 0, porque no se forma ningún grupo.",
+   "id": "mate4-oa04-1"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "¿Cuánto es 0 × 15?",
+   "opciones": [
+    "0",
+    "15",
+    "1",
+    "150"
+   ],
+   "correcta": 0,
+   "tip": "El orden no cambia el resultado: 0 por cualquier número también da 0.",
+   "id": "mate4-oa04-2"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "Diego dice que 24 × 0 es igual a 24, porque 24 no cambia. ¿Cuál es el resultado correcto?",
+   "opciones": [
+    "0, porque multiplicar por 0 siempre da 0",
+    "24, porque 24 no cambia",
+    "1, porque cualquier número por 0 da 1",
+    "240, porque se agrega un cero"
+   ],
+   "correcta": 0,
+   "tip": "Multiplicar por 0 significa tomar 0 grupos de ese número, así que el resultado siempre es 0, no el número original.",
+   "id": "mate4-oa04-3"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "¿Cuál de estas multiplicaciones tiene como resultado 0?",
+   "opciones": [
+    "359 × 0",
+    "359 × 1",
+    "1 × 12",
+    "45 + 0"
+   ],
+   "correcta": 0,
+   "tip": "Solo la multiplicación por 0 da 0. Las otras conservan el número o son una suma.",
+   "id": "mate4-oa04-4"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "Javiera tiene 6 cajas y cada una tiene 0 lápices adentro. ¿Cuántos lápices tiene en total?",
+   "opciones": [
+    "0 lápices",
+    "6 lápices",
+    "1 lápiz",
+    "60 lápices"
+   ],
+   "correcta": 0,
+   "tip": "Si cada caja tiene 0 lápices, da lo mismo cuántas cajas haya: 6 × 0 = 0.",
+   "id": "mate4-oa04-5"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "¿Qué número falta para que la multiplicación sea correcta? 47 × ___ = 0",
+   "opciones": [
+    "0",
+    "1",
+    "47",
+    "94"
+   ],
+   "correcta": 0,
+   "tip": "Para que un producto sea 0, uno de los factores tiene que ser 0.",
+   "id": "mate4-oa04-6"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "En la multiplicación 132 × 0 = 0, ¿qué propiedad se aplicó?",
+   "opciones": [
+    "La propiedad del 0 en la multiplicación",
+    "La propiedad del 1 en la multiplicación",
+    "La propiedad del 1 en la división",
+    "La propiedad conmutativa"
+   ],
+   "correcta": 0,
+   "tip": "Cuando un factor es 0, el producto siempre es 0: esa es la propiedad del 0 en la multiplicación.",
+   "id": "mate4-oa04-7"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "Ana escribió estas cuatro multiplicaciones. ¿Cuál da 0 como resultado?",
+   "opciones": [
+    "50 × 0",
+    "50 × 1",
+    "1 × 8",
+    "12 + 0"
+   ],
+   "correcta": 0,
+   "tip": "De las cuatro, solo la que tiene un factor 0 da como resultado 0.",
+   "id": "mate4-oa04-8"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "¿Cuál de estas multiplicaciones tiene el resultado MENOR?",
+   "opciones": [
+    "999 × 0",
+    "500 × 1",
+    "1 × 750",
+    "12 × 1"
+   ],
+   "correcta": 0,
+   "tip": "Multiplicar por 0 siempre da 0, que es menor que cualquier resultado de multiplicar por 1.",
+   "id": "mate4-oa04-9"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "¿Cuánto es 1.000 × 0?",
+   "opciones": [
+    "0",
+    "1.000",
+    "1",
+    "10.000"
+   ],
+   "correcta": 0,
+   "tip": "No importa cuán grande sea el número: multiplicado por 0 siempre da 0.",
+   "id": "mate4-oa04-10"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "¿Cuánto es 27 × 1?",
+   "opciones": [
+    "27",
+    "1",
+    "0",
+    "28"
+   ],
+   "correcta": 0,
+   "tip": "Multiplicar cualquier número por 1 no lo cambia: el resultado es el mismo número.",
+   "id": "mate4-oa04-11"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "¿Cuánto es 1 × 84?",
+   "opciones": [
+    "84",
+    "1",
+    "0",
+    "85"
+   ],
+   "correcta": 0,
+   "tip": "El orden no cambia el resultado: 1 por cualquier número da ese mismo número.",
+   "id": "mate4-oa04-12"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "Matías afirma que 156 × 1 es igual a 157. ¿Cuál es el resultado correcto?",
+   "opciones": [
+    "156, porque multiplicar por 1 no cambia el número",
+    "157, porque se suma 1",
+    "1, porque cualquier número por 1 da 1",
+    "0, porque 1 es muy pequeño"
+   ],
+   "correcta": 0,
+   "tip": "Multiplicar por 1 significa tomar un solo grupo del número completo, así que el resultado queda igual.",
+   "id": "mate4-oa04-13"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "¿Cuál de estas multiplicaciones da como resultado 640?",
+   "opciones": [
+    "640 × 1",
+    "640 × 0",
+    "12 × 1",
+    "8 × 1"
+   ],
+   "correcta": 0,
+   "tip": "Multiplicar por 1 deja el número igual: 640 × 1 = 640. Las otras usan 0 o números distintos.",
+   "id": "mate4-oa04-14"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "Sofía tiene 1 caja con 45 manzanas adentro. ¿Cuántas manzanas tiene en total?",
+   "opciones": [
+    "45 manzanas",
+    "1 manzana",
+    "0 manzanas",
+    "46 manzanas"
+   ],
+   "correcta": 0,
+   "tip": "Si hay 1 caja con 45 manzanas, el total es 45: 1 × 45 = 45.",
+   "id": "mate4-oa04-15"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "Falta un número en esta igualdad: 209 × ___ = 209. ¿Cuál es?",
+   "opciones": [
+    "1",
+    "0",
+    "209",
+    "2"
+   ],
+   "correcta": 0,
+   "tip": "Multiplicar un número por 1 lo deja exactamente igual.",
+   "id": "mate4-oa04-16"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "Camila calculó 73 × 1 y obtuvo 73 sin hacer ninguna cuenta. ¿Qué propiedad usó?",
+   "opciones": [
+    "La propiedad del 1 en la multiplicación",
+    "La propiedad del 0 en la multiplicación",
+    "La propiedad del 1 en la división",
+    "La propiedad asociativa"
+   ],
+   "correcta": 0,
+   "tip": "Cuando un factor es 1, el producto es igual al otro factor: esa es la propiedad del 1 en la multiplicación.",
+   "id": "mate4-oa04-17"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "Benjamín anotó estas cuatro multiplicaciones en su cuaderno. ¿Cuál tiene el mismo resultado que el número 318?",
+   "opciones": [
+    "318 × 1",
+    "318 × 0",
+    "1 × 12",
+    "1 × 45"
+   ],
+   "correcta": 0,
+   "tip": "Solo multiplicar por 1 mantiene el número igual a sí mismo.",
+   "id": "mate4-oa04-18"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "¿Cuál de estas multiplicaciones tiene el resultado MAYOR?",
+   "opciones": [
+    "685 × 1",
+    "24 × 1",
+    "685 × 0",
+    "1 × 350"
+   ],
+   "correcta": 0,
+   "tip": "Multiplicar por 1 conserva el número completo. Como 685 es el mayor de los números, 685 × 1 da el resultado mayor.",
+   "id": "mate4-oa04-19"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "¿Cuánto es 3.478 × 1?",
+   "opciones": [
+    "3.478",
+    "1",
+    "0",
+    "3.479"
+   ],
+   "correcta": 0,
+   "tip": "Multiplicar cualquier número por 1 no lo cambia, sin importar cuántos dígitos tenga.",
+   "id": "mate4-oa04-20"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "¿Cuánto es 36 ÷ 1?",
+   "opciones": [
+    "36",
+    "1",
+    "0",
+    "37"
+   ],
+   "correcta": 0,
+   "tip": "Dividir un número por 1 no lo cambia: el resultado es el mismo número.",
+   "id": "mate4-oa04-21"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "¿Cuánto es 245 ÷ 1?",
+   "opciones": [
+    "245",
+    "1",
+    "0",
+    "246"
+   ],
+   "correcta": 0,
+   "tip": "Cualquier número dividido por 1 da el mismo número, sin importar cuántos dígitos tenga.",
+   "id": "mate4-oa04-22"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "Camila cree que 58 ÷ 1 es igual a 1. ¿Cuál es el resultado correcto?",
+   "opciones": [
+    "58, porque dividir por 1 no cambia el número",
+    "1, porque el divisor es 1",
+    "0, porque no sobra nada",
+    "59, porque se suma 1"
+   ],
+   "correcta": 0,
+   "tip": "Dividir por 1 significa repartir en 1 solo grupo, así que ese grupo se queda con todo: 58.",
+   "id": "mate4-oa04-23"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "¿Cuál de estas divisiones tiene como resultado 92?",
+   "opciones": [
+    "92 ÷ 1",
+    "92 ÷ 92",
+    "9 ÷ 1",
+    "0 ÷ 92"
+   ],
+   "correcta": 0,
+   "tip": "Dividir 92 por 1 deja el número igual: 92.",
+   "id": "mate4-oa04-24"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "Diego repartió 84 láminas en 1 solo álbum. ¿Cuántas láminas quedaron en ese álbum?",
+   "opciones": [
+    "84 láminas",
+    "1 lámina",
+    "0 láminas",
+    "85 láminas"
+   ],
+   "correcta": 0,
+   "tip": "Si todo se reparte en 1 solo grupo, ese grupo recibe el total completo: 84.",
+   "id": "mate4-oa04-25"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "En esta división falta un número: 617 ÷ ___ = 617. ¿Cuál es?",
+   "opciones": [
+    "1",
+    "0",
+    "617",
+    "2"
+   ],
+   "correcta": 0,
+   "tip": "Dividir un número por 1 lo deja exactamente igual.",
+   "id": "mate4-oa04-26"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "Vicente dividió 89 ÷ 1 y supo altiro que el resultado era 89. ¿Qué propiedad aplicó?",
+   "opciones": [
+    "La propiedad del 1 en la división",
+    "La propiedad del 0 en la multiplicación",
+    "La propiedad del 1 en la multiplicación",
+    "La propiedad conmutativa"
+   ],
+   "correcta": 0,
+   "tip": "Cuando el divisor es 1, el cociente es igual al dividendo: esa es la propiedad del 1 en la división.",
+   "id": "mate4-oa04-27"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "Javiera anotó estas cuatro operaciones en la pizarra. ¿Cuál tiene el mismo resultado que el número 156?",
+   "opciones": [
+    "156 ÷ 1",
+    "156 × 0",
+    "12 ÷ 1",
+    "1 × 45"
+   ],
+   "correcta": 0,
+   "tip": "Dividir por 1 deja el número igual: 156 ÷ 1 = 156. Las otras operaciones no dan ese resultado.",
+   "id": "mate4-oa04-28"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "¿Cuál de estas operaciones tiene el resultado MAYOR?",
+   "opciones": [
+    "940 ÷ 1",
+    "1 ÷ 1",
+    "230 × 0",
+    "58 ÷ 1"
+   ],
+   "correcta": 0,
+   "tip": "Dividir por 1 conserva el número completo. Como 940 es el número más grande, 940 ÷ 1 da el resultado mayor.",
+   "id": "mate4-oa04-29"
+  },
+  {
+   "oa": "MA04 OA 04",
+   "pregunta": "¿Cuánto es 4.230 ÷ 1?",
+   "opciones": [
+    "4.230",
+    "1",
+    "0",
+    "4.231"
+   ],
+   "correcta": 0,
+   "tip": "Dividir cualquier número por 1 no lo cambia, sin importar cuántos dígitos tenga.",
+   "id": "mate4-oa04-30"
+  }
+ ]
+}

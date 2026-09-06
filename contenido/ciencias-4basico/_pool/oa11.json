@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Sofía quiere saber cuántos gramos pesa una manzana. ¿Qué instrumento debe usar?",
+   "opciones": [
+    "Una balanza",
+    "Un termómetro",
+    "Un vaso graduado",
+    "Una regla"
+   ],
+   "correcta": 0,
+   "tip": "La balanza es el instrumento que mide la masa de los objetos, ya sean sólidos, líquidos o gases.",
+   "id": "cien4-oa11-1"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Diego quiere saber cuántos mililitros de jugo hay en una jarra. ¿Qué instrumento le sirve para medirlo?",
+   "opciones": [
+    "Un vaso graduado o una probeta",
+    "Una balanza",
+    "Un termómetro",
+    "Una regla"
+   ],
+   "correcta": 0,
+   "tip": "Un vaso graduado o una probeta tienen marcas que permiten medir el volumen de un líquido en mililitros o en litros.",
+   "id": "cien4-oa11-2"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Matías quiere saber qué tan caliente está el agua de una tetera recién hervida. ¿Qué instrumento debe usar?",
+   "opciones": [
+    "Un termómetro",
+    "Una balanza",
+    "Un vaso graduado",
+    "Una regla"
+   ],
+   "correcta": 0,
+   "tip": "El termómetro es el instrumento que mide la temperatura de un objeto o una sustancia, sin importar su estado.",
+   "id": "cien4-oa11-3"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Camila pesó una piedra en la balanza y esta marcó cierta cantidad. ¿En qué unidad se mide eso?",
+   "opciones": [
+    "En gramos o en kilogramos",
+    "En mililitros o en litros",
+    "En grados Celsius",
+    "En centímetros"
+   ],
+   "correcta": 0,
+   "tip": "La masa se mide en gramos o en kilogramos; esas son las unidades que usa una balanza.",
+   "id": "cien4-oa11-4"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Javiera midió el agua de una botella con un vaso graduado. ¿En qué unidad se mide ese resultado?",
+   "opciones": [
+    "En mililitros o en litros",
+    "En gramos o en kilogramos",
+    "En grados Celsius",
+    "En metros"
+   ],
+   "correcta": 0,
+   "tip": "El volumen de un líquido se mide en mililitros o en litros; esas son las unidades que marca un vaso graduado.",
+   "id": "cien4-oa11-5"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Benjamín midió la temperatura del agua de una piscina con un termómetro. ¿En qué unidad va el resultado?",
+   "opciones": [
+    "En grados Celsius",
+    "En mililitros",
+    "En gramos",
+    "En litros"
+   ],
+   "correcta": 0,
+   "tip": "La temperatura se mide en grados Celsius; esa es la unidad que usa un termómetro.",
+   "id": "cien4-oa11-6"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Ana quiere medir la masa de una cierta cantidad de agua. ¿Qué debe hacer, ya que el agua es líquida?",
+   "opciones": [
+    "Pesar el recipiente vacío, luego pesarlo con el agua adentro, y restar ambos resultados",
+    "Usar un termómetro, porque los líquidos se miden por su temperatura",
+    "Contar cuántos vasos de agua hay, sin usar ninguna balanza",
+    "Medir el largo completo del recipiente con una regla, de arriba hacia abajo con cuidado"
+   ],
+   "correcta": 0,
+   "tip": "Como el líquido toma la forma del recipiente, hay que restar el peso del recipiente vacío para saber cuánto pesa el líquido solo.",
+   "id": "cien4-oa11-7"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Tomás necesita el volumen de una piedra irregular, que no cabe en un vaso graduado. ¿Qué método puede usar?",
+   "opciones": [
+    "Meter la piedra en un vaso graduado con agua y medir cuánto sube el nivel del agua",
+    "Pesar la piedra en una balanza y anotar directamente ese número como el volumen",
+    "Medir la temperatura de la piedra con un termómetro",
+    "Es imposible medir el volumen de un objeto con forma irregular"
+   ],
+   "correcta": 0,
+   "tip": "Cuando un objeto tiene forma irregular, se puede medir su volumen por el agua que desplaza al sumergirlo en un vaso graduado.",
+   "id": "cien4-oa11-8"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Fernanda quiere estimar el volumen del aire de un globo inflado. ¿Qué puede hacer?",
+   "opciones": [
+    "Sumergir el globo en un balde lleno de agua y medir cuánta agua se derrama",
+    "Pesar el globo en una balanza y anotar ese número como el volumen",
+    "Usar un termómetro para calcular cuánto aire tiene adentro",
+    "Contar cuántas veces sopló para inflarlo por completo, sin detenerse ni un momento"
+   ],
+   "correcta": 0,
+   "tip": "El agua que se derrama al sumergir el globo ocupa el mismo espacio que el aire que hay adentro de el, y eso permite estimar su volumen.",
+   "id": "cien4-oa11-9"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Rodrigo mide la masa de un cubo de hielo antes de que se derrita. ¿Qué instrumento debe usar?",
+   "opciones": [
+    "Una balanza",
+    "Un termómetro",
+    "Un vaso graduado",
+    "Un cronómetro"
+   ],
+   "correcta": 0,
+   "tip": "La balanza mide la masa de cualquier objeto, incluido un sólido como un cubo de hielo, antes de que cambie de estado.",
+   "id": "cien4-oa11-10"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Valentina compara la temperatura de hielo, agua líquida y vapor. ¿Qué instrumento le sirve?",
+   "opciones": [
+    "Un termómetro, porque puede medir la temperatura de sólidos, líquidos y gases",
+    "Una balanza, porque puede medir la temperatura de cualquier estado de la materia",
+    "Un vaso graduado, porque mide tanto la temperatura como el volumen",
+    "Necesita un instrumento distinto para cada uno de los tres estados"
+   ],
+   "correcta": 0,
+   "tip": "El termómetro puede medir la temperatura de la materia en sus tres estados: sólido, líquido y gaseoso.",
+   "id": "cien4-oa11-11"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Ignacio anota que una bebida tiene 1,5 de líquido, pero olvida la unidad. ¿Cuál unidad tiene sentido?",
+   "opciones": [
+    "Litros",
+    "Gramos",
+    "Grados Celsius",
+    "Metros"
+   ],
+   "correcta": 0,
+   "tip": "Una medida de líquido, como la de una botella de bebida, se anota en litros o en mililitros.",
+   "id": "cien4-oa11-12"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Josefa pesa una bolsa con arena y la balanza marca 2. ¿Cuál de estas unidades corresponde a esa medida?",
+   "opciones": [
+    "Kilogramos",
+    "Mililitros",
+    "Grados Celsius",
+    "Centímetros"
+   ],
+   "correcta": 0,
+   "tip": "Cuando la balanza marca un número para algo sólido como la arena, esa medida corresponde a gramos o a kilogramos.",
+   "id": "cien4-oa11-13"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Catalina mide el agua de una pecera con un vaso graduado, y anota 3. ¿Qué unidad corresponde?",
+   "opciones": [
+    "Litros",
+    "Gramos",
+    "Grados Celsius",
+    "Kilogramos"
+   ],
+   "correcta": 0,
+   "tip": "El volumen de un líquido medido con un vaso graduado se anota en litros o en mililitros.",
+   "id": "cien4-oa11-14"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Martina mide la temperatura del patio con un termómetro y anota 18. ¿Qué unidad corresponde?",
+   "opciones": [
+    "Grados Celsius",
+    "Mililitros",
+    "Gramos",
+    "Litros"
+   ],
+   "correcta": 0,
+   "tip": "La temperatura del aire medida con un termómetro se anota en grados Celsius.",
+   "id": "cien4-oa11-15"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Pedro mide de un vaso de leche cuánto pesa, cuánto volumen tiene y qué tan fría está. ¿Qué instrumento usa?",
+   "opciones": [
+    "Balanza para el peso, vaso graduado para el volumen y termómetro para la temperatura",
+    "Balanza para las tres mediciones, porque sirve para todo",
+    "Termómetro para el peso, balanza para la temperatura y vaso graduado para el volumen",
+    "Solo necesita el vaso graduado, porque mide las tres cosas a la vez"
+   ],
+   "correcta": 0,
+   "tip": "Cada instrumento mide una magnitud distinta: la balanza pesa (masa), el vaso graduado mide volumen y el termómetro mide temperatura.",
+   "id": "cien4-oa11-16"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Francisca quiere medir la masa del aire de un balón inflado. ¿Cuál es la forma correcta de hacerlo?",
+   "opciones": [
+    "Pesar el balón inflado y luego el mismo balón desinflado, y restar ambos resultados",
+    "Usar un vaso graduado para medir el aire directamente, sin pesarlo",
+    "Usar un termómetro, porque la masa del aire depende por completo de su temperatura actual",
+    "Es imposible medir la masa del aire, porque no se puede pesar"
+   ],
+   "correcta": 0,
+   "tip": "Para saber la masa del aire solo, hay que pesar el balón con aire y sin aire, y restar ambos resultados: la diferencia es la masa del aire.",
+   "id": "cien4-oa11-17"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Vicente mide un cubo de madera: con regla sus lados, con balanza cuánto pesa. ¿Qué magnitud mide la balanza?",
+   "opciones": [
+    "La masa del cubo",
+    "El volumen del cubo",
+    "La temperatura del cubo",
+    "El largo del cubo"
+   ],
+   "correcta": 0,
+   "tip": "La balanza mide la masa de los objetos, que es distinto de su volumen (cuánto espacio ocupan) o su temperatura (que tan calientes están).",
+   "id": "cien4-oa11-18"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Consuelo derrite un hielo en un vaso graduado y anota el volumen del agua que queda. ¿Qué está midiendo ahí?",
+   "opciones": [
+    "El volumen del agua líquida",
+    "La masa del agua líquida",
+    "La temperatura del agua líquida",
+    "El color del agua líquida"
+   ],
+   "correcta": 0,
+   "tip": "El vaso graduado sirve para medir el volumen de un líquido, es decir, cuánto espacio ocupa esa cantidad de agua.",
+   "id": "cien4-oa11-19"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Agustín anota una masa en gramos, pero por error escribe la unidad de temperatura. ¿Por qué está mal?",
+   "opciones": [
+    "Porque los gramos miden masa y los grados Celsius miden temperatura: son magnitudes distintas",
+    "Porque en realidad da lo mismo que unidad se use para cualquier medición",
+    "Porque los gramos y los grados Celsius son exactamente la misma unidad",
+    "Porque una piedra no puede tener ni masa ni temperatura, ya que esas dos cosas no existen"
+   ],
+   "correcta": 0,
+   "tip": "Los gramos son la unidad de masa y los grados Celsius son la unidad de temperatura: son magnitudes distintas y no se pueden mezclar.",
+   "id": "cien4-oa11-20"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Isidora quiere saber si el agua de una olla ya está caliente para cocinar. ¿Qué instrumento debería usar?",
+   "opciones": [
+    "Un termómetro, para medir la temperatura de forma exacta",
+    "Una balanza, para medir cuánto pesa el agua caliente",
+    "Un vaso graduado, para medir cuánta agua hay en la olla",
+    "Una regla, para medir el tamaño de la olla"
+   ],
+   "correcta": 0,
+   "tip": "El termómetro entrega una medida exacta de la temperatura, más precisa que solo tocar el agua con la mano.",
+   "id": "cien4-oa11-21"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Emilia quiere pesar 300 mililitros de aceite. ¿Qué debe hacer para obtener la masa del aceite solo?",
+   "opciones": [
+    "Pesar el envase vacío, luego pesarlo con el aceite adentro, y restar la primera medida de la segunda",
+    "Pesar solo el envase con aceite, sin necesidad de restar nada",
+    "Usar un termómetro en vez de una balanza para medir el aceite, porque pesa lo mismo",
+    "Medir el aceite con una regla en vez de con una balanza"
+   ],
+   "correcta": 0,
+   "tip": "Para conocer la masa de un líquido hay que pesar el envase vacío y luego con el líquido adentro, y restar la primera medida de la segunda.",
+   "id": "cien4-oa11-22"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Cristóbal anota: el volumen de la piedra es de 40. ¿Qué unidad le falta para que tenga sentido?",
+   "opciones": [
+    "Mililitros (o alguna unidad de volumen, como litros)",
+    "Grados Celsius",
+    "Kilogramos",
+    "Ninguna, porque el volumen no necesita unidad"
+   ],
+   "correcta": 0,
+   "tip": "El volumen se mide en unidades como mililitros o litros; sin esa unidad, el número no dice nada sobre lo que se midió.",
+   "id": "cien4-oa11-23"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Sebastián mide el agua de un vaso graduado antes y después de meter una cuchara. ¿Qué le permite calcular?",
+   "opciones": [
+    "El volumen de la cuchara, porque el agua subió lo mismo que el espacio que ocupo la cuchara",
+    "La masa de la cuchara, porque el vaso graduado mide la masa de cualquier objeto que se sumerja",
+    "La temperatura de la cuchara, porque el agua se enfrió al meterla",
+    "El color de la cuchara, porque el agua se puso más oscura"
+   ],
+   "correcta": 0,
+   "tip": "El aumento en el vaso graduado corresponde exactamente al volumen del objeto que se sumergió, porque ocupo ese espacio antes vacío.",
+   "id": "cien4-oa11-24"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Renata anota 150 gramos, 200 mililitros y 22 grados Celsius. ¿A qué magnitud corresponde cada una?",
+   "opciones": [
+    "Masa, volumen y temperatura",
+    "Volumen, temperatura y masa",
+    "Temperatura, masa y volumen",
+    "Las tres miden exactamente lo mismo"
+   ],
+   "correcta": 0,
+   "tip": "Los gramos miden masa, los mililitros miden volumen y los grados Celsius miden temperatura: cada unidad corresponde a una magnitud distinta.",
+   "id": "cien4-oa11-25"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Maximiliano quiere comparar la masa de un litro de agua y uno de aceite. ¿Qué instrumento necesita?",
+   "opciones": [
+    "Una balanza, para pesar cada líquido por separado",
+    "Un termómetro, para comparar que tan calientes están",
+    "Una regla, para medir el alto de cada líquido",
+    "No se puede comparar la masa de dos líquidos distintos"
+   ],
+   "correcta": 0,
+   "tip": "Para comparar la masa de dos líquidos distintos hace falta pesarlos por separado en una balanza, usando la misma cantidad de cada uno.",
+   "id": "cien4-oa11-26"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Antonia mide con un termómetro un hielo, agua tibia y vapor de una olla. ¿Qué tienen en común las tres?",
+   "opciones": [
+    "Las tres se miden en grados Celsius, sin importar si la materia es sólida, líquida o gaseosa",
+    "Las tres se miden en mililitros, porque el termómetro en realidad mide el volumen del aire",
+    "Las tres se miden en gramos, porque el termómetro también es una balanza",
+    "No se pueden medir con el mismo instrumento, porque cada estado necesita uno distinto"
+   ],
+   "correcta": 0,
+   "tip": "El termómetro mide temperatura en grados Celsius sin importar si la sustancia es sólida, líquida o gaseosa.",
+   "id": "cien4-oa11-27"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Gabriela tiene un vaso graduado con marcas cada 50 mililitros. Necesita 120 exactos. ¿Qué debe hacer?",
+   "opciones": [
+    "Verter agua hasta que el nivel llegue justo a la marca de 120 mililitros, mirando desde el costado",
+    "Pesar el vaso completo con una balanza hasta que la aguja marque exactamente 120 gramos",
+    "Usar un termómetro para calcular cuántos mililitros hay",
+    "Llenar el vaso completamente, sin importar la marca"
+   ],
+   "correcta": 0,
+   "tip": "Hay que fijarse en la marca del vaso graduado, a la altura de los ojos, y verter hasta que el nivel llegue justo a esa marca.",
+   "id": "cien4-oa11-28"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Nicolás pesó papas y la balanza marcó 1200. Su profesora dijo que se puede anotar distinto. ¿Cuál es correcta?",
+   "opciones": [
+    "1,2 kilogramos, porque 1.000 gramos equivalen a 1 kilogramo",
+    "1,2 litros, porque los gramos y los litros son la misma unidad",
+    "12 grados Celsius, porque los gramos se pueden pasar a grados",
+    "0,12 kilogramos, porque hay que dividir por 10.000"
+   ],
+   "correcta": 0,
+   "tip": "Como 1.000 gramos equivalen a 1 kilogramo, 1.200 gramos se pueden escribir también como 1,2 kilogramos.",
+   "id": "cien4-oa11-29"
+  },
+  {
+   "oa": "CN04 OA 11",
+   "pregunta": "Florencia quiere medir la masa, el volumen y la temperatura de una cantidad de leche. ¿Qué instrumentos junta?",
+   "opciones": [
+    "Una balanza, un vaso graduado y un termómetro",
+    "Solo una balanza, porque sirve para medir las tres cosas",
+    "Solo un termómetro, porque la leche es un líquido",
+    "Una regla y un cronómetro, nada más"
+   ],
+   "correcta": 0,
+   "tip": "Para medir masa, volumen y temperatura de la leche hacen falta los tres instrumentos: balanza, vaso graduado y termómetro.",
+   "id": "cien4-oa11-30"
+  }
+ ]
+}

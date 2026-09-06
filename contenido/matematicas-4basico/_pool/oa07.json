@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Ana compra un lápiz de 150 pesos y una goma de 100 pesos. ¿Cuánto pagó en total?",
+   "opciones": [
+    "$250",
+    "$350",
+    "$50",
+    "$150"
+   ],
+   "correcta": 0,
+   "tip": "Se suman los dos precios: 150 + 100 = 250 pesos.",
+   "id": "mate4-oa07-1"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Diego compra un cuaderno de 500 pesos y un lápiz de 150 pesos. ¿Cuánto es el total?",
+   "opciones": [
+    "$650",
+    "$350",
+    "$500",
+    "$550"
+   ],
+   "correcta": 0,
+   "tip": "El total es la suma de los dos precios: 500 + 150 = 650 pesos, no se resta ni se deja uno afuera.",
+   "id": "mate4-oa07-2"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Sofía compra una empanada de 700 pesos y un jugo de 500 pesos para su colación. ¿Cuánto gastó en total?",
+   "opciones": [
+    "$1.200",
+    "$200",
+    "$1.300",
+    "$1.500"
+   ],
+   "correcta": 0,
+   "tip": "Para saber el gasto total se suman los dos precios: 700 + 500 = 1.200 pesos.",
+   "id": "mate4-oa07-3"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Matías compra un cuaderno de 650 pesos y un estuche de 1.200 pesos. ¿Cuánto pagó por los dos?",
+   "opciones": [
+    "$1.850",
+    "$550",
+    "$1.750",
+    "$1.950"
+   ],
+   "correcta": 0,
+   "tip": "1.200 + 650 = 1.850 pesos. Conviene sumar primero las centenas y luego las decenas.",
+   "id": "mate4-oa07-4"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Camila lleva un pan de 300 pesos, un plátano de 150 y un jugo de 400. ¿Cuánto vale su colación?",
+   "opciones": [
+    "$850",
+    "$750",
+    "$550",
+    "$900"
+   ],
+   "correcta": 0,
+   "tip": "Se suman los tres precios: 300 + 150 + 400 = 850 pesos.",
+   "id": "mate4-oa07-5"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Benjamín compra una entrada al zoológico de 2.000 pesos y un helado de 800 pesos. ¿Cuánto gastó en total?",
+   "opciones": [
+    "$2.800",
+    "$1.200",
+    "$2.700",
+    "$2.900"
+   ],
+   "correcta": 0,
+   "tip": "2.000 + 800 = 2.800 pesos: se suma el valor entero de cada cosa que compró.",
+   "id": "mate4-oa07-6"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Camila tiene: lápiz 150, goma 100, cuaderno 500 y estuche 1.200. ¿Orden de más barato a más caro?",
+   "opciones": [
+    "Goma, lápiz, cuaderno, estuche",
+    "Lápiz, goma, cuaderno, estuche",
+    "Estuche, cuaderno, lápiz, goma",
+    "Goma, cuaderno, lápiz, estuche"
+   ],
+   "correcta": 0,
+   "tip": "De menor a mayor precio: goma (100), lápiz (150), cuaderno (500) y estuche (1.200).",
+   "id": "mate4-oa07-7"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Diego compra un dulce de 350 pesos y paga con una moneda de 500 pesos. ¿Cuánto vuelto recibe?",
+   "opciones": [
+    "$150",
+    "$850",
+    "$350",
+    "$500"
+   ],
+   "correcta": 0,
+   "tip": "El vuelto es lo que sobra al restar: 500 − 350 = 150 pesos.",
+   "id": "mate4-oa07-8"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Ana paga con un billete de 1.000 pesos un cuaderno de 650 pesos. ¿Cuánto vuelto le dan?",
+   "opciones": [
+    "$350",
+    "$1.650",
+    "$650",
+    "$450"
+   ],
+   "correcta": 0,
+   "tip": "Para el vuelto se resta lo que pagó menos el precio: 1.000 − 650 = 350 pesos.",
+   "id": "mate4-oa07-9"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Sofía compra una colación de 1.200 pesos y paga con un billete de 2.000 pesos. ¿Cuánto vuelto recibe?",
+   "opciones": [
+    "$800",
+    "$3.200",
+    "$1.200",
+    "$900"
+   ],
+   "correcta": 0,
+   "tip": "1.200 se resta de los 2.000 que pagó: 2.000 − 1.200 = 800 pesos de vuelto.",
+   "id": "mate4-oa07-10"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Matías paga con un billete de 5.000 pesos una entrada de 3.800 pesos. ¿Cuánto le devuelven?",
+   "opciones": [
+    "$1.200",
+    "$8.800",
+    "$2.200",
+    "$1.800"
+   ],
+   "correcta": 0,
+   "tip": "El vuelto se calcula restando: 5.000 − 3.800 = 1.200 pesos.",
+   "id": "mate4-oa07-11"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Benjamín compra un juguete de 4.300 pesos y paga con un billete de 10.000 pesos. ¿Cuánto vuelto recibe?",
+   "opciones": [
+    "$5.700",
+    "$14.300",
+    "$6.300",
+    "$5.300"
+   ],
+   "correcta": 0,
+   "tip": "10.000 − 4.300 = 5.700 pesos de vuelto.",
+   "id": "mate4-oa07-12"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Camila compra pan por 890 pesos y paga con un billete de 1.000 pesos. ¿Cuánto vuelto le corresponde?",
+   "opciones": [
+    "$110",
+    "$1.890",
+    "$190",
+    "$210"
+   ],
+   "correcta": 0,
+   "tip": "1.000 − 890 = 110 pesos. Conviene pensar cuánto falta para llegar a 900 y luego a 1.000.",
+   "id": "mate4-oa07-13"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Javiera paga un helado de 750 pesos con dos monedas de 500. ¿Cuánto vuelto recibe?",
+   "opciones": [
+    "$250",
+    "$1.750",
+    "$350",
+    "$150"
+   ],
+   "correcta": 0,
+   "tip": "Primero se junta lo que pagó: 500 + 500 = 1.000. Después se resta el precio: 1.000 − 750 = 250 pesos.",
+   "id": "mate4-oa07-14"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Ana tiene 800 pesos y quiere comprar un cuaderno de 950 pesos. ¿Le alcanza?",
+   "opciones": [
+    "No le alcanza, le faltan 150 pesos",
+    "Sí, le alcanza y le sobran 150 pesos",
+    "Sí, le alcanza justo",
+    "No le alcanza, le faltan 950 pesos"
+   ],
+   "correcta": 0,
+   "tip": "950 − 800 = 150. Como el cuaderno cuesta más de lo que tiene, no le alcanza y le faltan esos 150 pesos.",
+   "id": "mate4-oa07-15"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Diego tiene 1.500 pesos y quiere comprar una colación de 1.200 pesos. ¿Le alcanza?",
+   "opciones": [
+    "Sí, le alcanza y le sobran 300 pesos",
+    "No le alcanza, le faltan 300 pesos",
+    "Sí, le alcanza justo",
+    "No le alcanza, le faltan 1.200 pesos"
+   ],
+   "correcta": 0,
+   "tip": "1.500 − 1.200 = 300. Como tiene más de lo que cuesta la colación, le alcanza y le sobran 300 pesos.",
+   "id": "mate4-oa07-16"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Sofía tiene 2.000 pesos y quiere comprar un libro de 2.000 pesos. ¿Le alcanza?",
+   "opciones": [
+    "Sí, le alcanza justo, sin que le sobre nada",
+    "No le alcanza, le falta un poco",
+    "Sí, le alcanza y le sobran 2.000 pesos",
+    "No le alcanza, le faltan 2.000 pesos"
+   ],
+   "correcta": 0,
+   "tip": "2.000 es exactamente lo que tiene, así que le alcanza justo y no le sobra ni le falta nada.",
+   "id": "mate4-oa07-17"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Matías tiene 2.800 pesos y quiere comprar dos entradas de 1.500 pesos cada una. ¿Le alcanza?",
+   "opciones": [
+    "No le alcanza, le faltan 200 pesos",
+    "Sí, le alcanza y le sobran 200 pesos",
+    "Sí, le alcanza justo",
+    "No le alcanza, le faltan 1.500 pesos"
+   ],
+   "correcta": 0,
+   "tip": "Las dos entradas cuestan 1.500 + 1.500 = 3.000 pesos. Como Matías tiene 2.800, le faltan 200 pesos.",
+   "id": "mate4-oa07-18"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Camila tiene 5.000 pesos y quiere comprar un juego de 4.700 pesos. ¿Cuánto le sobraría si lo compra?",
+   "opciones": [
+    "$300",
+    "$4.700",
+    "$9.700",
+    "$200"
+   ],
+   "correcta": 0,
+   "tip": "5.000 − 4.700 = 300 pesos. Como tiene más de lo que cuesta el juego, le sobran esos 300 pesos.",
+   "id": "mate4-oa07-19"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Benjamín tiene 900 pesos y quiere un jugo de 500 y una galleta de 450. ¿Le alcanza para los dos?",
+   "opciones": [
+    "No le alcanza, le faltan 50 pesos",
+    "Sí, le alcanza y le sobran 50 pesos",
+    "Sí, le alcanza justo",
+    "No le alcanza, le faltan 950 pesos"
+   ],
+   "correcta": 0,
+   "tip": "El jugo y la galleta juntos cuestan 500 + 450 = 950 pesos. Como tiene 900, le faltan 50 pesos.",
+   "id": "mate4-oa07-20"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Javiera compra 3 lápices que cuestan 150 pesos cada uno. ¿Cuánto paga en total?",
+   "opciones": [
+    "$450",
+    "$153",
+    "$300",
+    "$600"
+   ],
+   "correcta": 0,
+   "tip": "Se multiplica el precio por la cantidad: 150 x 3 = 450 pesos, en vez de sumar el precio con el número de lápices.",
+   "id": "mate4-oa07-21"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Ana compra 4 cuadernos que cuestan 500 pesos cada uno. ¿Cuánto es el total?",
+   "opciones": [
+    "$2.000",
+    "$504",
+    "$1.500",
+    "$2.500"
+   ],
+   "correcta": 0,
+   "tip": "500 x 4 = 2.000 pesos: se multiplica el precio de uno por la cantidad de cuadernos.",
+   "id": "mate4-oa07-22"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Diego reparte entradas al cine entre sus 5 amigos, y cada entrada cuesta 2.000 pesos. ¿Cuánto gasta en total?",
+   "opciones": [
+    "$10.000",
+    "$2.005",
+    "$8.000",
+    "$12.000"
+   ],
+   "correcta": 0,
+   "tip": "2.000 x 5 = 10.000 pesos, el precio de una entrada multiplicado por la cantidad de amigos.",
+   "id": "mate4-oa07-23"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Sofía compra 2 boletos de micro de 350 pesos cada uno, para ir y volver. ¿Cuánto gasta en total?",
+   "opciones": [
+    "$700",
+    "$352",
+    "$350",
+    "$750"
+   ],
+   "correcta": 0,
+   "tip": "Como paga el mismo precio dos veces, se multiplica: 350 x 2 = 700 pesos.",
+   "id": "mate4-oa07-24"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Matías compra 6 chocolates que cuestan 200 pesos cada uno. ¿Cuánto paga por todos?",
+   "opciones": [
+    "$1.200",
+    "$206",
+    "$800",
+    "$1.400"
+   ],
+   "correcta": 0,
+   "tip": "200 x 6 = 1.200 pesos. Sumar 200 seis veces da el mismo resultado que multiplicar.",
+   "id": "mate4-oa07-25"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Un balón cuesta 5.600 pesos y una pelota de tenis cuesta 1.800 pesos. ¿Cuánto más caro es el balón?",
+   "opciones": [
+    "$3.800",
+    "$7.400",
+    "$3.200",
+    "$4.200"
+   ],
+   "correcta": 0,
+   "tip": "Para saber cuánto más caro es algo, se resta: 5.600 − 1.800 = 3.800 pesos.",
+   "id": "mate4-oa07-26"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Camila ahorró 2.300 pesos y quiere comprar un juego de mesa de 4.000 pesos. ¿Cuánto le falta ahorrar?",
+   "opciones": [
+    "$1.700",
+    "$6.300",
+    "$1.300",
+    "$2.100"
+   ],
+   "correcta": 0,
+   "tip": "Se resta lo que le falta: 4.000 − 2.300 = 1.700 pesos.",
+   "id": "mate4-oa07-27"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Un jugo cuesta 500 pesos y una bebida cuesta 900 pesos. ¿Cuánto más barato es el jugo?",
+   "opciones": [
+    "$400",
+    "$1.400",
+    "$500",
+    "$300"
+   ],
+   "correcta": 0,
+   "tip": "900 − 500 = 400 pesos: esa es la diferencia entre los dos precios.",
+   "id": "mate4-oa07-28"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "Benjamín ahorró 6.500 pesos para una bicicleta de 8.200 pesos. ¿Cuánto le falta para completar el precio?",
+   "opciones": [
+    "$1.700",
+    "$14.700",
+    "$1.500",
+    "$1.900"
+   ],
+   "correcta": 0,
+   "tip": "8.200 − 6.500 = 1.700 pesos es lo que todavía necesita ahorrar.",
+   "id": "mate4-oa07-29"
+  },
+  {
+   "oa": "MA04 OA 07",
+   "pregunta": "La entrada de niño cuesta 1.200 pesos y la de adulto, 2.500. ¿Cuánto más cara es la de adulto?",
+   "opciones": [
+    "$1.300",
+    "$3.700",
+    "$1.200",
+    "$1.400"
+   ],
+   "correcta": 0,
+   "tip": "2.500 − 1.200 = 1.300 pesos de diferencia entre las dos entradas.",
+   "id": "mate4-oa07-30"
+  }
+ ]
+}

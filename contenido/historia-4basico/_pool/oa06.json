@@ -1,0 +1,419 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "¿Cómo se llaman las líneas imaginarias que rodean la Tierra en forma horizontal, como anillos?",
+   "opciones": [
+    "Paralelos",
+    "Meridianos",
+    "Continentes",
+    "Husos horarios"
+   ],
+   "correcta": 0,
+   "tip": "Los paralelos son líneas horizontales imaginarias que rodean la Tierra; el Ecuador es el más conocido.",
+   "id": "hist4-oa06-1"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "¿Cómo se llaman las líneas imaginarias verticales que unen el polo norte con el polo sur?",
+   "opciones": [
+    "Meridianos",
+    "Paralelos",
+    "Trópicos",
+    "Círculos polares"
+   ],
+   "correcta": 0,
+   "tip": "Los meridianos son líneas verticales imaginarias que van de polo a polo; el de Greenwich es el más conocido.",
+   "id": "hist4-oa06-2"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "¿Cuál es el paralelo más importante, que divide a la Tierra en hemisferio norte y hemisferio sur?",
+   "opciones": [
+    "El Ecuador",
+    "El meridiano de Greenwich",
+    "El trópico de Capricornio",
+    "El círculo polar ártico"
+   ],
+   "correcta": 0,
+   "tip": "El Ecuador es el paralelo principal, y separa el hemisferio norte del hemisferio sur.",
+   "id": "hist4-oa06-3",
+   "visual": {
+    "tipo": "globo",
+    "destacar": "ecuador",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "¿Cuál es el meridiano principal, punto de partida para medir la posición de un lugar de este a oeste?",
+   "opciones": [
+    "El meridiano de Greenwich",
+    "El Ecuador",
+    "El trópico de Cáncer",
+    "El círculo polar antártico"
+   ],
+   "correcta": 0,
+   "tip": "El meridiano de Greenwich es el meridiano principal y se usa como referencia para medir la posición este-oeste.",
+   "id": "hist4-oa06-4"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "Para ubicar con precisión un lugar en un mapa o globo terráqueo, ¿qué se necesita combinar?",
+   "opciones": [
+    "Un paralelo y un meridiano, que se cruzan en un punto exacto",
+    "Solo un paralelo, sin necesitar de ningún meridiano de más",
+    "Solo un meridiano, sin necesitar de ningún paralelo de más",
+    "El nombre del país entero, sin usar ninguna línea del mapa"
+   ],
+   "correcta": 0,
+   "tip": "Un paralelo y un meridiano se cruzan en un solo punto: esa combinación es una coordenada geográfica.",
+   "id": "hist4-oa06-5"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "¿Qué forman los paralelos y los meridianos al dibujarse juntos sobre un mapa o un globo terráqueo?",
+   "opciones": [
+    "Una red de líneas que permite ubicar cualquier punto",
+    "Un dibujo sin ninguna utilidad para ubicar lugares",
+    "Líneas que solo se usan por separado, nunca juntas",
+    "Un sistema que sirve únicamente para calcular la hora del día"
+   ],
+   "correcta": 0,
+   "tip": "Juntos, paralelos y meridianos forman una red que permite ubicar cualquier punto del planeta.",
+   "id": "hist4-oa06-6"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "En este globo se marcó una línea. ¿Qué tipo de línea imaginaria es?",
+   "opciones": [
+    "Un paralelo",
+    "Un meridiano",
+    "Un continente",
+    "Un huso horario"
+   ],
+   "correcta": 0,
+   "tip": "La línea marcada es horizontal, así que es un paralelo; los meridianos son las líneas verticales.",
+   "id": "hist4-oa06-7",
+   "visual": {
+    "tipo": "globo",
+    "destacar": "tropico-norte",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "Observa la línea marcada en este globo. ¿Es un paralelo o un meridiano?",
+   "opciones": [
+    "Un paralelo, porque es una línea horizontal alrededor del planeta",
+    "Un meridiano, porque es una línea vertical que va de polo a polo",
+    "Ninguna de las dos cosas: es solo un adorno decorativo del mapa",
+    "Un río muy largo, y no una línea imaginaria del globo terráqueo"
+   ],
+   "correcta": 0,
+   "tip": "Toda línea horizontal que rodea el planeta, como la marcada, es un paralelo.",
+   "id": "hist4-oa06-8",
+   "visual": {
+    "tipo": "globo",
+    "destacar": "circulo-sur",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "¿Cuál de estas afirmaciones describe correctamente la línea marcada en el globo?",
+   "opciones": [
+    "Es un paralelo, una línea horizontal imaginaria",
+    "Es un meridiano, una línea vertical imaginaria",
+    "Es la línea que separa un país de otro",
+    "Es la ruta que sigue un barco"
+   ],
+   "correcta": 0,
+   "tip": "Al ser horizontal y rodear el planeta, la línea marcada es un paralelo.",
+   "id": "hist4-oa06-9",
+   "visual": {
+    "tipo": "globo",
+    "destacar": "tropico-sur",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "La línea marcada en este globo rodea el planeta de forma horizontal. ¿Cómo se llama este tipo de línea?",
+   "opciones": [
+    "Paralelo",
+    "Meridiano",
+    "Frontera",
+    "Cordillera"
+   ],
+   "correcta": 0,
+   "tip": "Una línea horizontal que rodea el planeta, como la marcada, se llama paralelo.",
+   "id": "hist4-oa06-10",
+   "visual": {
+    "tipo": "globo",
+    "destacar": "circulo-norte",
+    "etiquetas": false
+   }
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "A diferencia de un meridiano, un paralelo es una línea...",
+   "opciones": [
+    "Horizontal",
+    "Vertical",
+    "Diagonal",
+    "En forma de espiral"
+   ],
+   "correcta": 0,
+   "tip": "Los paralelos son horizontales; los meridianos, verticales.",
+   "id": "hist4-oa06-11"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "¿Qué tienen en común todos los meridianos del planeta?",
+   "opciones": [
+    "Todos pasan por el polo norte y el polo sur",
+    "Todos pasan exactamente por el Ecuador",
+    "Todos tienen el mismo largo que los paralelos",
+    "Ninguno de ellos se puede dibujar en un mapa"
+   ],
+   "correcta": 0,
+   "tip": "Cada meridiano une el polo norte con el polo sur, pasando por un punto distinto del Ecuador.",
+   "id": "hist4-oa06-12"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "¿Qué paralelo marca el límite donde el Sol se puede ver sobre la cabeza al mediodía en el norte?",
+   "opciones": [
+    "El trópico de Cáncer",
+    "El trópico de Capricornio",
+    "El círculo polar ártico",
+    "El meridiano de Greenwich"
+   ],
+   "correcta": 0,
+   "tip": "El trópico de Cáncer marca ese límite en el hemisferio norte; el de Capricornio cumple una función parecida en el sur.",
+   "id": "hist4-oa06-13"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "¿Qué paralelo cumple una función parecida a la del trópico de Cáncer, pero en el hemisferio sur?",
+   "opciones": [
+    "El trópico de Capricornio",
+    "El círculo polar ártico",
+    "El meridiano de Greenwich",
+    "El Ecuador"
+   ],
+   "correcta": 0,
+   "tip": "El trópico de Capricornio es el paralelo equivalente en el hemisferio sur al trópico de Cáncer del norte.",
+   "id": "hist4-oa06-14"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "¿Cómo se llaman los paralelos que marcan el límite de las zonas más frías del planeta, cerca de cada polo?",
+   "opciones": [
+    "Los círculos polares",
+    "Los trópicos, más cálidos",
+    "Los meridianos, más rectos",
+    "Las cordilleras andinas"
+   ],
+   "correcta": 0,
+   "tip": "Los círculos polares, uno ártico y otro antártico, marcan el límite de las zonas más frías cerca de cada polo.",
+   "id": "hist4-oa06-15"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "El meridiano de Greenwich divide la Tierra en dos mitades. ¿Cómo se llaman esas mitades?",
+   "opciones": [
+    "Hemisferio oriental y hemisferio occidental",
+    "Hemisferio norte y hemisferio sur, como marca el Ecuador",
+    "Zona cálida y zona fría, según la temperatura",
+    "Continente y océano, según el tipo de superficie"
+   ],
+   "correcta": 0,
+   "tip": "El meridiano de Greenwich separa el hemisferio oriental del occidental, mientras el Ecuador separa el norte del sur.",
+   "id": "hist4-oa06-16"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "Camila vive en Chile, al sur del Ecuador; Diego vive en México, al norte. ¿En qué hemisferio vive cada uno?",
+   "opciones": [
+    "Camila en el hemisferio sur y Diego en el hemisferio norte",
+    "Los dos en el hemisferio norte",
+    "Los dos en el hemisferio sur",
+    "Camila en el hemisferio norte y Diego en el hemisferio sur"
+   ],
+   "correcta": 0,
+   "tip": "El Ecuador divide la Tierra en dos hemisferios: quien vive al sur está en el hemisferio sur, y al norte, en el norte.",
+   "id": "hist4-oa06-17"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "Si dos ciudades están sobre el mismo paralelo, ¿qué se puede decir de ellas?",
+   "opciones": [
+    "Están a la misma distancia del Ecuador, hacia el norte o hacia el sur",
+    "Tienen exactamente el mismo clima en todas las estaciones del año completo",
+    "Están siempre dentro del mismo país, sin ninguna excepción posible",
+    "Están también sobre el mismo meridiano, además de sobre el paralelo"
+   ],
+   "correcta": 0,
+   "tip": "Estar sobre el mismo paralelo solo indica igual distancia al Ecuador; el clima depende también de otros factores.",
+   "id": "hist4-oa06-18"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "Si dos ciudades están sobre el mismo meridiano, ¿qué tienen en común?",
+   "opciones": [
+    "Están en la misma posición de este a oeste, aunque pueden estar muy lejos hacia el norte o el sur",
+    "Están exactamente a la misma distancia del Ecuador, hacia el norte o hacia el sur del planeta Tierra",
+    "Tienen que estar necesariamente dentro del mismo país o territorio, sin excepción alguna",
+    "No pueden estar separadas por ningún océano ni mar de todo el planeta Tierra"
+   ],
+   "correcta": 0,
+   "tip": "Compartir meridiano solo indica igual posición este-oeste; pueden estar muy lejos una de otra hacia el norte o el sur.",
+   "id": "hist4-oa06-19"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "¿Para qué le sirve a un piloto o a un capitán de barco conocer los paralelos y meridianos de un lugar?",
+   "opciones": [
+    "Para ubicar con precisión su posición y trazar la ruta hacia su destino",
+    "Para saber qué comida se sirve en el puerto o aeropuerto de llegada final",
+    "Para elegir el uniforme que debe usar toda la tripulación del viaje entero",
+    "Para calcular cuántos pasajeros caben a bordo del barco o la nave"
+   ],
+   "correcta": 0,
+   "tip": "Los paralelos y meridianos permiten ubicar con precisión un punto y trazar rutas de navegación.",
+   "id": "hist4-oa06-20"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "Sofía busca una ciudad donde se cruzan cierto paralelo y meridiano. ¿Qué usa la profesora para explicarlo?",
+   "opciones": [
+    "Un sistema de coordenadas geográficas",
+    "Un calendario con los meses del año",
+    "Una lista con nombres de países vecinos",
+    "Un diccionario con idiomas del mundo"
+   ],
+   "correcta": 0,
+   "tip": "El cruce entre un paralelo y un meridiano es exactamente lo que forma una coordenada geográfica.",
+   "id": "hist4-oa06-21"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "¿En qué se diferencian los paralelos de los meridianos, respecto a su tamaño?",
+   "opciones": [
+    "Los paralelos cambian de tamaño, siendo más cortos cerca de los polos; los meridianos miden siempre lo mismo",
+    "Los meridianos cambian de tamaño cerca de los polos; los paralelos siempre miden exactamente lo mismo entre sí",
+    "Ambos tienen siempre exactamente el mismo tamaño, sin importar en qué parte del planeta se midan",
+    "Ninguno de los dos tiene un tamaño definido, porque son solo líneas imaginarias trazadas en el mapa"
+   ],
+   "correcta": 0,
+   "tip": "Los paralelos se hacen más cortos cerca de los polos; los meridianos, en cambio, miden siempre lo mismo entre polo y polo.",
+   "id": "hist4-oa06-22"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "¿Cuál de estas líneas es un paralelo, y no un meridiano?",
+   "opciones": [
+    "El trópico de Capricornio",
+    "El meridiano de Greenwich",
+    "Una línea que va del polo norte al polo sur",
+    "Una línea diagonal cualquiera del mapa"
+   ],
+   "correcta": 0,
+   "tip": "El trópico de Capricornio es una línea horizontal, así que es un paralelo, no un meridiano.",
+   "id": "hist4-oa06-23"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "¿Cuál de estas líneas es un meridiano, y no un paralelo?",
+   "opciones": [
+    "El meridiano de Greenwich",
+    "El Ecuador",
+    "El trópico de Cáncer",
+    "El círculo polar antártico"
+   ],
+   "correcta": 0,
+   "tip": "El meridiano de Greenwich es una línea vertical, de polo a polo, así que es un meridiano y no un paralelo.",
+   "id": "hist4-oa06-24"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "Benjamín dice que el Ecuador es un meridiano porque es una línea muy importante. ¿Qué error comete?",
+   "opciones": [
+    "El Ecuador es un paralelo, porque es una línea horizontal, no vertical",
+    "No comete ningún error: el Ecuador es en realidad un meridiano importante",
+    "El Ecuador no es ninguna línea imaginaria, sino un país de América",
+    "El Ecuador es un río muy largo, y no una línea imaginaria del mapa"
+   ],
+   "correcta": 0,
+   "tip": "Que una línea sea importante no la hace meridiano: lo que importa es si es horizontal (paralelo) o vertical (meridiano).",
+   "id": "hist4-oa06-25"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "Ana dice que el meridiano de Greenwich es un paralelo porque también ubica lugares. ¿Qué error comete?",
+   "opciones": [
+    "El meridiano de Greenwich es vertical, así que es un meridiano, no un paralelo",
+    "No comete ningún error: los paralelos y los meridianos son exactamente lo mismo",
+    "El meridiano de Greenwich no sirve para ubicar ningún lugar",
+    "El meridiano de Greenwich es en realidad un río de Inglaterra"
+   ],
+   "correcta": 0,
+   "tip": "Que ambos sirvan para ubicar lugares no los hace iguales: lo que define a un meridiano es que es vertical.",
+   "id": "hist4-oa06-26"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "¿Por qué es útil usar coordenadas geográficas, y no solo el nombre, para ubicar un lugar en un mapa?",
+   "opciones": [
+    "Porque permiten encontrar un punto exacto, aunque no se sepa cómo se llama ese lugar",
+    "Porque los nombres de los lugares nunca aparecen escritos en los mapas terrestres",
+    "Porque las coordenadas de un lugar cambian todos los días, según el clima",
+    "Porque no es posible dibujar paralelos y meridianos en un mapa de verdad"
+   ],
+   "correcta": 0,
+   "tip": "Las coordenadas permiten encontrar un punto exacto sin depender de que alguien sepa cómo se llama ese lugar.",
+   "id": "hist4-oa06-27"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "Matías halla un lugar cerca del cruce entre el trópico de Capricornio y cierto meridiano. ¿Qué usa?",
+   "opciones": [
+    "Coordenadas geográficas, combinando un paralelo especial y un meridiano",
+    "Solo el nombre del país donde se encuentra ese lugar exacto, sin más datos",
+    "El clima del lugar, sin usar ninguna línea imaginaria del mapa terrestre",
+    "La cantidad de habitantes que vive en ese lugar exacto, según el censo"
+   ],
+   "correcta": 0,
+   "tip": "Combinar un paralelo (el trópico de Capricornio) y un meridiano es usar coordenadas geográficas.",
+   "id": "hist4-oa06-28"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "¿Qué tienen en común todos los paralelos del planeta, incluidos el Ecuador y los trópicos?",
+   "opciones": [
+    "Todos son líneas horizontales imaginarias que rodean la Tierra",
+    "Todos pasan exactamente por los dos polos, norte y sur, del planeta",
+    "Todos miden exactamente lo mismo, sin ninguna excepción posible",
+    "Ninguno de ellos se puede marcar en un globo terráqueo real"
+   ],
+   "correcta": 0,
+   "tip": "El Ecuador, los trópicos y los círculos polares son todos paralelos: líneas horizontales que rodean el planeta.",
+   "id": "hist4-oa06-29"
+  },
+  {
+   "oa": "HI04 OA 06",
+   "pregunta": "Camila arma un mapa del tesoro con letras y números. ¿En qué se parece a ubicar un lugar real?",
+   "opciones": [
+    "En que ambos combinan dos tipos de líneas o referencias que se cruzan para señalar un punto exacto",
+    "En que ambos usan exactamente los mismos nombres, como 'Ecuador' y 'Greenwich', para señalar un punto",
+    "En que en realidad no se parecen en nada el uno con el otro, ni en forma ni en función",
+    "En que ambos sirven solo para medir la temperatura de un lugar exacto del planeta"
+   ],
+   "correcta": 0,
+   "tip": "Una cuadrícula de letras y números funciona con la misma idea que los paralelos y meridianos: dos líneas que se cruzan señalan un punto.",
+   "id": "hist4-oa06-30"
+  }
+ ]
+}

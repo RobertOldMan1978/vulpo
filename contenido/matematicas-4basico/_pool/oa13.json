@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "En una tabla: 2→6, 3→9, 4→12. ¿Cuál es la regla?",
+   "opciones": [
+    "Multiplicar por 3",
+    "Sumar 3",
+    "Restar 3",
+    "Dividir por 3"
+   ],
+   "correcta": 0,
+   "tip": "2 x 3 = 6, 3 x 3 = 9 y 4 x 3 = 12: cada número que sale es el que entra multiplicado por 3.",
+   "id": "mate4-oa13-1"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "Esta tabla relaciona dos números: 5→9, 6→10, 7→11. ¿Qué operación conecta cada par?",
+   "opciones": [
+    "Sumar 4",
+    "Multiplicar por 4",
+    "Restar 4",
+    "Dividir por 4"
+   ],
+   "correcta": 0,
+   "tip": "5 + 4 = 9, 6 + 4 = 10 y 7 + 4 = 11: la regla es sumar 4 al número que entra.",
+   "id": "mate4-oa13-2"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "Diego armó esta tabla: 10→7, 12→9, 15→12. ¿Qué le hizo Diego a cada número que entró?",
+   "opciones": [
+    "Restarle 3",
+    "Sumarle 3",
+    "Multiplicarlo por 3",
+    "Dividirlo por 3"
+   ],
+   "correcta": 0,
+   "tip": "10 − 3 = 7, 12 − 3 = 9 y 15 − 3 = 12: a cada número que entra se le resta 3.",
+   "id": "mate4-oa13-3"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "Observa: 20→5, 40→10, 60→15. ¿Cómo se pasa del número de la izquierda al de la derecha?",
+   "opciones": [
+    "Se divide por 4",
+    "Se multiplica por 4",
+    "Se resta 4",
+    "Se suma 4"
+   ],
+   "correcta": 0,
+   "tip": "20 ÷ 4 = 5, 40 ÷ 4 = 10 y 60 ÷ 4 = 15: el número de la derecha es el de la izquierda dividido por 4.",
+   "id": "mate4-oa13-4"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "Una máquina transforma números así: 1→5, 2→10, 3→15. ¿Qué hace la máquina con cada número?",
+   "opciones": [
+    "Lo multiplica por 5",
+    "Le suma 5",
+    "Le resta 5",
+    "Lo divide por 5"
+   ],
+   "correcta": 0,
+   "tip": "1 x 5 = 5, 2 x 5 = 10 y 3 x 5 = 15: la máquina multiplica cada número por 5.",
+   "id": "mate4-oa13-5"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "En la tabla de Camila, 8→2, 16→4, 24→6. ¿Qué operación usó Camila?",
+   "opciones": [
+    "Dividir por 4",
+    "Multiplicar por 4",
+    "Restar 4",
+    "Sumar 4"
+   ],
+   "correcta": 0,
+   "tip": "8 ÷ 4 = 2, 16 ÷ 4 = 4 y 24 ÷ 4 = 6: Camila dividió cada número por 4.",
+   "id": "mate4-oa13-6"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "Estos pares de números siguen una regla: 3→30, 5→50, 8→80. ¿Cuál es esa regla?",
+   "opciones": [
+    "Multiplicar por 10",
+    "Sumar 10",
+    "Restar 10",
+    "Dividir por 10"
+   ],
+   "correcta": 0,
+   "tip": "3 x 10 = 30, 5 x 10 = 50 y 8 x 10 = 80: la regla es multiplicar por 10.",
+   "id": "mate4-oa13-7"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "Sofía completó esta tabla: 50→42, 60→52, 70→62. ¿Qué operación aplicó en cada fila?",
+   "opciones": [
+    "Restar 8",
+    "Sumar 8",
+    "Multiplicar por 8",
+    "Dividir por 8"
+   ],
+   "correcta": 0,
+   "tip": "50 − 8 = 42, 60 − 8 = 52 y 70 − 8 = 62: en cada fila Sofía restó 8.",
+   "id": "mate4-oa13-8"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "Una tabla usa la regla multiplicar por 6: 2→12, 3→18, 4→24. Si entra 7, ¿qué número sale?",
+   "opciones": [
+    "42",
+    "43",
+    "36",
+    "48"
+   ],
+   "correcta": 0,
+   "tip": "Con la regla multiplicar por 6, si entra 7 sale 7 x 6 = 42.",
+   "id": "mate4-oa13-9"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "Una tabla sigue la regla sumar 15: 10→25, 20→35, 30→45. ¿Qué número sale si entra 45?",
+   "opciones": [
+    "60",
+    "55",
+    "65",
+    "30"
+   ],
+   "correcta": 0,
+   "tip": "Con la regla sumar 15, si entra 45 sale 45 + 15 = 60.",
+   "id": "mate4-oa13-10"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "En una tabla con la regla restar 12 (20→8, 30→18, 40→28), ¿cuál es el número que sale cuando entra 50?",
+   "opciones": [
+    "38",
+    "62",
+    "39",
+    "28"
+   ],
+   "correcta": 0,
+   "tip": "Con la regla restar 12, si entra 50 sale 50 − 12 = 38.",
+   "id": "mate4-oa13-11"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "La tabla de Matías usa la regla dividir por 5: 10→2, 20→4, 30→6. ¿Qué sale si entra 45?",
+   "opciones": [
+    "9",
+    "8",
+    "10",
+    "40"
+   ],
+   "correcta": 0,
+   "tip": "Con la regla dividir por 5, si entra 45 sale 45 ÷ 5 = 9.",
+   "id": "mate4-oa13-12"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "Con la regla multiplicar por 8 (2→16, 3→24, 4→32), ¿cuánto sale al entrar 9?",
+   "opciones": [
+    "72",
+    "73",
+    "64",
+    "80"
+   ],
+   "correcta": 0,
+   "tip": "Con la regla multiplicar por 8, si entra 9 sale 9 x 8 = 72.",
+   "id": "mate4-oa13-13"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "Javiera hizo una tabla con la regla sumar 25: 5→30, 15→40, 25→50. Si entra 75, ¿qué número obtiene?",
+   "opciones": [
+    "100",
+    "95",
+    "105",
+    "50"
+   ],
+   "correcta": 0,
+   "tip": "Con la regla sumar 25, si entra 75 sale 75 + 25 = 100.",
+   "id": "mate4-oa13-14"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "Esta tabla resta 30 a cada número: 100→70, 150→120, 200→170. ¿Qué sale si entra 250?",
+   "opciones": [
+    "220",
+    "280",
+    "230",
+    "170"
+   ],
+   "correcta": 0,
+   "tip": "Con la regla restar 30, si entra 250 sale 250 − 30 = 220.",
+   "id": "mate4-oa13-15"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "En una tabla que divide por 3 (9→3, 18→6, 27→9), ¿qué número sale cuando entra 36?",
+   "opciones": [
+    "12",
+    "11",
+    "13",
+    "33"
+   ],
+   "correcta": 0,
+   "tip": "Con la regla dividir por 3, si entra 36 sale 36 ÷ 3 = 12.",
+   "id": "mate4-oa13-16"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "Ana anotó 1→7, 2→14, 3→21, siguiendo la regla multiplicar por 7. ¿Qué sale si entra 6?",
+   "opciones": [
+    "42",
+    "41",
+    "36",
+    "49"
+   ],
+   "correcta": 0,
+   "tip": "Con la regla multiplicar por 7, si entra 6 sale 6 x 7 = 42.",
+   "id": "mate4-oa13-17"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "La regla sumar 9 da estos pares: 1→10, 2→11, 3→12. ¿Cuál es el número que sale si entra 8?",
+   "opciones": [
+    "17",
+    "16",
+    "18",
+    "9"
+   ],
+   "correcta": 0,
+   "tip": "Con la regla sumar 9, si entra 8 sale 8 + 9 = 17.",
+   "id": "mate4-oa13-18"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "Una tabla multiplica por 4: 2→8, 3→12, 4→16. Si salió 28, ¿qué número entró?",
+   "opciones": [
+    "7",
+    "24",
+    "32",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Como la regla es multiplicar por 4, para volver atrás se divide: 28 ÷ 4 = 7 entró.",
+   "id": "mate4-oa13-19"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "Con la regla sumar 20 (10→30, 20→40, 30→50), si el resultado fue 65, ¿qué número había entrado?",
+   "opciones": [
+    "45",
+    "85",
+    "40",
+    "50"
+   ],
+   "correcta": 0,
+   "tip": "Como la regla es sumar 20, para volver atrás se resta: 65 − 20 = 45 entró.",
+   "id": "mate4-oa13-20"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "En una tabla que resta 15 (50→35, 60→45, 70→55), ¿qué número entró si el que salió fue 40?",
+   "opciones": [
+    "55",
+    "25",
+    "45",
+    "60"
+   ],
+   "correcta": 0,
+   "tip": "Como la regla es restar 15, para volver atrás se suma: 40 + 15 = 55 entró.",
+   "id": "mate4-oa13-21"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "La tabla de Benjamín divide por 6 (12→2, 18→3, 24→4). Si salió el número 5, ¿cuál entró?",
+   "opciones": [
+    "30",
+    "11",
+    "36",
+    "24"
+   ],
+   "correcta": 0,
+   "tip": "Como la regla es dividir por 6, para volver atrás se multiplica: 5 x 6 = 30 entró.",
+   "id": "mate4-oa13-22"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "Siguiendo la regla multiplicar por 9 (1→9, 2→18, 3→27), ¿qué número entró si salió 45?",
+   "opciones": [
+    "5",
+    "36",
+    "54",
+    "4"
+   ],
+   "correcta": 0,
+   "tip": "Como la regla es multiplicar por 9, para volver atrás se divide: 45 ÷ 9 = 5 entró.",
+   "id": "mate4-oa13-23"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "Una tabla suma 8 a cada número (2→10, 3→11, 4→12). Si el resultado fue 20, ¿qué número había entrado?",
+   "opciones": [
+    "12",
+    "28",
+    "11",
+    "13"
+   ],
+   "correcta": 0,
+   "tip": "Como la regla es sumar 8, para volver atrás se resta: 20 − 8 = 12 entró.",
+   "id": "mate4-oa13-24"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "En la tabla 1→4, 2→8, 3→12, ¿qué número sale si entra 10, siguiendo la misma regla?",
+   "opciones": [
+    "40",
+    "41",
+    "44",
+    "36"
+   ],
+   "correcta": 0,
+   "tip": "La regla es multiplicar por 4, así que si entra 10 sale 10 x 4 = 40.",
+   "id": "mate4-oa13-25"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "Una secuencia empieza en 3 y suma 6 cada vez: 3, 9, 15… ¿Cuál es el quinto número de la secuencia?",
+   "opciones": [
+    "27",
+    "21",
+    "33",
+    "24"
+   ],
+   "correcta": 0,
+   "tip": "La secuencia es 3, 9, 15, 21, 27: cada número se obtiene sumando 6 al anterior, así que el quinto es 27.",
+   "id": "mate4-oa13-26"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "En la tabla 1→3, 2→6, 3→9, ¿cuánto sale si entra 12, con la misma regla?",
+   "opciones": [
+    "36",
+    "35",
+    "39",
+    "15"
+   ],
+   "correcta": 0,
+   "tip": "La regla es multiplicar por 3, así que si entra 12 sale 12 x 3 = 36.",
+   "id": "mate4-oa13-27"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "Una secuencia comienza en 100 y resta 5 cada vez: 100, 95, 90… ¿Cuál es el sexto número de la secuencia?",
+   "opciones": [
+    "75",
+    "80",
+    "70",
+    "85"
+   ],
+   "correcta": 0,
+   "tip": "La secuencia es 100, 95, 90, 85, 80, 75: cada número se obtiene restando 5 al anterior. El sexto es 75.",
+   "id": "mate4-oa13-28"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "En la tabla 2→20, 4→40, 6→60, ¿qué número sale si entra 9?",
+   "opciones": [
+    "90",
+    "92",
+    "81",
+    "100"
+   ],
+   "correcta": 0,
+   "tip": "La regla es multiplicar por 10, así que si entra 9 sale 9 x 10 = 90.",
+   "id": "mate4-oa13-29"
+  },
+  {
+   "oa": "MA04 OA 13",
+   "pregunta": "Una secuencia parte en 5 y se multiplica por 2 cada vez: 5, 10, 20… ¿Cuál es el quinto número de la secuencia?",
+   "opciones": [
+    "80",
+    "40",
+    "160",
+    "60"
+   ],
+   "correcta": 0,
+   "tip": "La secuencia es 5, 10, 20, 40, 80: cada número se obtiene multiplicando el anterior por 2. El quinto es 80.",
+   "id": "mate4-oa13-30"
+  }
+ ]
+}

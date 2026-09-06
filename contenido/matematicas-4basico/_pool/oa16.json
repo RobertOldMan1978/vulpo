@@ -1,0 +1,426 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Este cuerpo es un cubo. Si lo miras desde el frente, ¿qué forma ves?",
+   "opciones": [
+    "Un cuadrado",
+    "Un círculo",
+    "Un triángulo",
+    "Un rectángulo alargado"
+   ],
+   "correcta": 0,
+   "tip": "Todas las caras de un cubo son cuadrados iguales, así que se ve un cuadrado se mire por donde se mire.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cubo"
+   },
+   "id": "mate4-oa16-1"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Mirando el mismo cubo desde arriba, ¿qué forma se observa?",
+   "opciones": [
+    "Un cuadrado",
+    "Un círculo",
+    "Un triángulo",
+    "Un rectángulo alargado"
+   ],
+   "correcta": 0,
+   "tip": "Como todas sus caras son cuadradas, la vista desde arriba también es un cuadrado.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cubo"
+   },
+   "id": "mate4-oa16-2"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Un cilindro, como una lata de bebida, ¿qué forma muestra visto desde arriba?",
+   "opciones": [
+    "Un círculo",
+    "Un cuadrado",
+    "Un triángulo",
+    "Un rectángulo"
+   ],
+   "correcta": 0,
+   "tip": "Las tapas de un cilindro son circulares, así que desde arriba se ve un círculo.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cilindro"
+   },
+   "id": "mate4-oa16-3"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Si miras ese mismo cilindro de frente, ¿qué forma observas?",
+   "opciones": [
+    "Un rectángulo",
+    "Un círculo",
+    "Un triángulo",
+    "Un cuadrado perfecto"
+   ],
+   "correcta": 0,
+   "tip": "De frente, los bordes rectos del cilindro y sus dos tapas forman un rectángulo.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cilindro"
+   },
+   "id": "mate4-oa16-4"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "¿Qué forma se ve al mirar un cono, como un sombrero de mago, desde arriba?",
+   "opciones": [
+    "Un círculo",
+    "Un triángulo",
+    "Un cuadrado",
+    "Un rectángulo"
+   ],
+   "correcta": 0,
+   "tip": "La base de un cono es circular, así que mirado desde arriba se ve un círculo.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cono"
+   },
+   "id": "mate4-oa16-5"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Al mirar ese cono de frente o de lado, ¿qué forma aparece?",
+   "opciones": [
+    "Un triángulo",
+    "Un círculo",
+    "Un cuadrado",
+    "Un rectángulo"
+   ],
+   "correcta": 0,
+   "tip": "De frente, el cono se ve como un triángulo, porque sus lados se juntan en una punta arriba.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cono"
+   },
+   "id": "mate4-oa16-6"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Esta pirámide tiene base cuadrada. Vista desde arriba, ¿qué forma se ve?",
+   "opciones": [
+    "Un cuadrado",
+    "Un triángulo",
+    "Un círculo",
+    "Un rectángulo"
+   ],
+   "correcta": 0,
+   "tip": "La base de esta pirámide es un cuadrado, y esa es la forma que se ve al mirarla desde arriba.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "piramide"
+   },
+   "id": "mate4-oa16-7"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "¿Qué forma se ve en la cara frontal de esta pirámide?",
+   "opciones": [
+    "Un triángulo",
+    "Un cuadrado",
+    "Un círculo",
+    "Un rectángulo"
+   ],
+   "correcta": 0,
+   "tip": "De frente se ven las caras triangulares que suben hasta la punta de la pirámide.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "piramide"
+   },
+   "id": "mate4-oa16-8"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Una caja de zapatos es un paralelepípedo. Vista de frente, ¿qué forma tiene su cara?",
+   "opciones": [
+    "Un rectángulo",
+    "Un círculo",
+    "Un triángulo",
+    "Un cuadrado perfecto"
+   ],
+   "correcta": 0,
+   "tip": "Las caras de una caja rectangular son rectángulos, así que de frente se ve un rectángulo.",
+   "id": "mate4-oa16-9"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Esa misma caja, vista desde arriba, ¿qué forma se observa?",
+   "opciones": [
+    "Un rectángulo",
+    "Un círculo",
+    "Un triángulo",
+    "Una línea"
+   ],
+   "correcta": 0,
+   "tip": "Mirada desde arriba, una caja rectangular también muestra una cara rectangular.",
+   "id": "mate4-oa16-10"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Diego mira un balón de fútbol de frente, de lado y desde arriba. ¿Qué ve en los tres casos?",
+   "opciones": [
+    "Un círculo en los tres casos",
+    "Un cuadrado en los tres casos",
+    "Formas distintas en cada caso",
+    "Un triángulo en los tres casos"
+   ],
+   "correcta": 0,
+   "tip": "Una esfera se ve igual, como un círculo, se mire desde donde se mire.",
+   "id": "mate4-oa16-11"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Camila dice que una lata, mirada desde arriba, se ve como un cuadrado. ¿Tiene razón?",
+   "opciones": [
+    "No, porque la tapa de la lata es circular",
+    "Sí, porque todas las latas son cuadradas",
+    "No, porque desde arriba se ve un triángulo",
+    "Sí, porque la lata no tiene tapa"
+   ],
+   "correcta": 0,
+   "tip": "Una lata es un cilindro, y sus tapas son círculos, no cuadrados.",
+   "id": "mate4-oa16-12"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Un dado tiene forma de cubo. Si lo giras y lo miras de otro lado, ¿cambia la forma que ves?",
+   "opciones": [
+    "No, siempre se ve un cuadrado",
+    "Sí, a veces se ve un círculo",
+    "Sí, a veces se ve un triángulo",
+    "No, siempre se ve un rectángulo alargado"
+   ],
+   "correcta": 0,
+   "tip": "Como todas las caras de un cubo son cuadrados iguales, la vista siempre es un cuadrado.",
+   "id": "mate4-oa16-13"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Un sombrero de mago, un cono, se ve como un círculo desde arriba. ¿Y de frente?",
+   "opciones": [
+    "Un triángulo",
+    "Otro círculo",
+    "Un cuadrado",
+    "Un rectángulo"
+   ],
+   "correcta": 0,
+   "tip": "De frente, los lados del cono suben hasta una punta, formando un triángulo.",
+   "id": "mate4-oa16-14"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Matías anota: de frente ve un rectángulo, y desde arriba también un rectángulo. ¿Qué cuerpo es?",
+   "opciones": [
+    "Una caja rectangular",
+    "Una esfera",
+    "Un cono",
+    "Una pirámide"
+   ],
+   "correcta": 0,
+   "tip": "Una caja rectangular muestra caras rectangulares tanto de frente como desde arriba.",
+   "id": "mate4-oa16-15"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Javiera ve, desde arriba, un círculo, y de frente, un rectángulo. ¿Qué cuerpo es?",
+   "opciones": [
+    "Un cilindro",
+    "Un cubo",
+    "Una pirámide",
+    "Una esfera"
+   ],
+   "correcta": 0,
+   "tip": "El cilindro tiene tapas circulares, que se ven desde arriba, y un cuerpo rectangular, de frente.",
+   "id": "mate4-oa16-16"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Benjamín anota: desde arriba ve un cuadrado; de frente, un triángulo. ¿Qué cuerpo es?",
+   "opciones": [
+    "Una pirámide de base cuadrada",
+    "Un cubo",
+    "Un cilindro",
+    "Una esfera"
+   ],
+   "correcta": 0,
+   "tip": "La base cuadrada se ve desde arriba, y las caras triangulares que suben a la punta, de frente.",
+   "id": "mate4-oa16-17"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Sofía ve un cuerpo que, mirado desde cualquier lado, siempre se ve como un círculo. ¿Qué cuerpo es?",
+   "opciones": [
+    "Una esfera",
+    "Un cono",
+    "Un cilindro",
+    "Un cubo"
+   ],
+   "correcta": 0,
+   "tip": "Solo la esfera se ve igual, como un círculo, sin importar desde qué ángulo se mire.",
+   "id": "mate4-oa16-18"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Un cereal viene en una caja alta y angosta, un paralelepípedo. De frente, ¿qué forma tiene su cara?",
+   "opciones": [
+    "Un rectángulo",
+    "Un cuadrado",
+    "Un círculo",
+    "Un triángulo"
+   ],
+   "correcta": 0,
+   "tip": "Las caras de una caja de este tipo son rectángulos, aunque no todos del mismo tamaño.",
+   "id": "mate4-oa16-19"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Tomás compara un cubo y una caja alargada. De frente, ¿qué tienen en común sus vistas?",
+   "opciones": [
+    "Cuatro lados rectos en las dos",
+    "Un círculo en las dos",
+    "Un triángulo en las dos",
+    "No tienen nada en común"
+   ],
+   "correcta": 0,
+   "tip": "El cubo muestra un cuadrado y la caja un rectángulo, pero ambas figuras tienen cuatro lados rectos.",
+   "id": "mate4-oa16-20"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Ana mira, de lado, una carpa con forma de pirámide de base cuadrada. ¿Qué forma ve?",
+   "opciones": [
+    "Un triángulo",
+    "Un círculo",
+    "Un cuadrado",
+    "Un rectángulo"
+   ],
+   "correcta": 0,
+   "tip": "Desde el lado también se ve una cara triangular, igual que desde el frente.",
+   "id": "mate4-oa16-21"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Un florero es un cilindro. Fabián lo mira de lado y ve un rectángulo. ¿Qué vería desde arriba?",
+   "opciones": [
+    "Un círculo",
+    "Otro rectángulo",
+    "Un triángulo",
+    "Un cuadrado"
+   ],
+   "correcta": 0,
+   "tip": "Las tapas circulares del cilindro solo se aprecian completas al mirarlo desde arriba.",
+   "id": "mate4-oa16-22"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Valentina mira una naranja de frente, de lado y desde arriba. ¿Qué forma vería en los tres casos?",
+   "opciones": [
+    "Un círculo en los tres casos",
+    "Un óvalo distinto en cada caso",
+    "Un cuadrado en los tres casos",
+    "Formas distintas siempre"
+   ],
+   "correcta": 0,
+   "tip": "Una naranja tiene forma de esfera, y una esfera se ve como un círculo desde cualquier vista.",
+   "id": "mate4-oa16-23"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Un helado de cono, desde arriba, muestra un círculo. ¿Qué forma muestra de frente?",
+   "opciones": [
+    "Un triángulo",
+    "Un círculo",
+    "Un rectángulo",
+    "Un cuadrado"
+   ],
+   "correcta": 0,
+   "tip": "El cono se angosta hacia arriba, así que de frente se ve como un triángulo.",
+   "id": "mate4-oa16-24"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Diego apila un cubo abajo y una pirámide de base cuadrada arriba. De frente, ¿qué formas reconoce?",
+   "opciones": [
+    "Un cuadrado y luego un triángulo",
+    "Un triángulo y luego un cuadrado",
+    "Dos círculos",
+    "Dos triángulos"
+   ],
+   "correcta": 0,
+   "tip": "El cubo aporta la forma cuadrada de abajo, y la pirámide, la forma triangular de arriba.",
+   "id": "mate4-oa16-25"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "¿Cuál se ve igual, como un círculo, desde cualquier ángulo: un balón de básquetbol o un dado?",
+   "opciones": [
+    "El balón",
+    "El dado",
+    "Los dos por igual",
+    "Ninguno de los dos"
+   ],
+   "correcta": 0,
+   "tip": "El balón tiene forma de esfera, que siempre se ve como un círculo; el dado muestra cuadrados.",
+   "id": "mate4-oa16-26"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Un tarro de pintura es un cilindro. ¿Qué se ve desde arriba, y qué se ve de frente?",
+   "opciones": [
+    "Un círculo arriba y un rectángulo de frente",
+    "Un cuadrado arriba y un círculo de frente",
+    "Un triángulo en los dos casos",
+    "Un rectángulo en los dos casos"
+   ],
+   "correcta": 0,
+   "tip": "Los cilindros combinan tapas circulares, que se ven desde arriba, con un cuerpo rectangular de frente.",
+   "id": "mate4-oa16-27"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Javiera dice que una pirámide de base cuadrada, desde arriba, se ve como un triángulo. ¿Tiene razón?",
+   "opciones": [
+    "No, desde arriba se ve un cuadrado, que es su base",
+    "Sí, porque toda pirámide se ve como un triángulo",
+    "No, desde arriba se ve un círculo",
+    "Sí, porque no tiene base"
+   ],
+   "correcta": 0,
+   "tip": "La base cuadrada es justamente la que se aprecia al mirar la pirámide desde arriba.",
+   "id": "mate4-oa16-28"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Un balón de rugby es más un óvalo alargado que una esfera. De lado se ve un óvalo. ¿Y de frente?",
+   "opciones": [
+    "También un óvalo, se repite en varias direcciones",
+    "Un círculo perfecto",
+    "Un cuadrado",
+    "Un triángulo"
+   ],
+   "correcta": 0,
+   "tip": "Como el balón de rugby es alargado en varias direcciones, su silueta es un óvalo desde distintos ángulos.",
+   "id": "mate4-oa16-29"
+  },
+  {
+   "oa": "MA04 OA 16",
+   "pregunta": "Un cono y una pirámide de base cuadrada terminan los dos en punta. ¿En qué se diferencian desde arriba?",
+   "opciones": [
+    "El cono muestra un círculo y la pirámide, un cuadrado",
+    "Los dos muestran un círculo",
+    "Los dos muestran un cuadrado",
+    "El cono muestra un triángulo y la pirámide, un círculo"
+   ],
+   "correcta": 0,
+   "tip": "La diferencia está en la base: el cono tiene base circular y la pirámide, base cuadrada.",
+   "id": "mate4-oa16-30"
+  }
+ ]
+}

@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "¿Qué es un organismo PRODUCTOR en una cadena alimentaria?",
+   "opciones": [
+    "Uno que fabrica su propio alimento, como una planta o un alga",
+    "Uno que necesita comerse a otros seres vivos porque no fabrica su alimento",
+    "Uno que descompone en el suelo los restos de plantas y animales muertos",
+    "Uno que produce muchas crías cada temporada, sin relación con su alimento"
+   ],
+   "correcta": 0,
+   "tip": "Los productores son siempre plantas o algas: fabrican su propio alimento usando la luz del sol.",
+   "id": "cien4-oa03-1"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "En una cadena alimentaria, ¿qué hace un organismo CONSUMIDOR para obtener energía?",
+   "opciones": [
+    "Se alimenta de otros seres vivos, ya sean plantas o animales",
+    "Fabrica su propio alimento con la luz del sol, como las plantas",
+    "Descompone la materia orgánica ya muerta y devuelve nutrientes al suelo",
+    "Vive escondido bajo tierra toda su vida, sin necesidad de comer"
+   ],
+   "correcta": 0,
+   "tip": "Los consumidores no fabrican su propio alimento: obtienen energía comiendo plantas u otros animales.",
+   "id": "cien4-oa03-2"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "¿Qué función cumplen los hongos y las bacterias como descomponedores?",
+   "opciones": [
+    "Descomponen restos de plantas y animales muertos",
+    "Fabrican su propio alimento a partir de la luz del sol",
+    "Cazan animales pequeños para poder alimentarse",
+    "Producen las hojas nuevas que crecen en los árboles"
+   ],
+   "correcta": 0,
+   "tip": "Los descomponedores deshacen la materia muerta y devuelven nutrientes a la tierra.",
+   "id": "cien4-oa03-3"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "En un bosque templado, la araucaria fabrica su propio alimento con la luz del sol. ¿Qué rol cumple?",
+   "opciones": [
+    "Es un productor, porque fabrica su propio alimento",
+    "Es un consumidor, porque se alimenta de otros seres vivos",
+    "Es un descomponedor, porque descompone materia muerta",
+    "No cumple ningún rol dentro de la cadena alimentaria"
+   ],
+   "correcta": 0,
+   "tip": "La araucaria es un productor: como todas las plantas, fabrica su propio alimento con la luz del sol.",
+   "id": "cien4-oa03-4"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "En el desierto de Atacama, una lagartija se alimenta de insectos. ¿Qué rol cumple la lagartija?",
+   "opciones": [
+    "Es un consumidor, porque se alimenta de otro ser vivo",
+    "Es un productor, porque fabrica su propio alimento",
+    "Es un descomponedor, porque descompone materia muerta",
+    "No cumple ningún rol dentro de la cadena alimentaria"
+   ],
+   "correcta": 0,
+   "tip": "La lagartija es un consumidor: obtiene su energía comiendo insectos, no fabricando su propio alimento.",
+   "id": "cien4-oa03-5"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "En la costa, una jaiba se alimenta de algas. ¿Qué rol cumple la jaiba en esa cadena?",
+   "opciones": [
+    "Es un consumidor, porque se alimenta de un productor",
+    "Es un productor, porque fabrica su propio alimento",
+    "Es un descomponedor, porque descompone las algas muertas",
+    "No cumple ningún rol dentro de la cadena alimentaria"
+   ],
+   "correcta": 0,
+   "tip": "La jaiba es un consumidor: se alimenta del alga, que es la productora de esa cadena.",
+   "id": "cien4-oa03-6"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "En un humedal, un hongo crece sobre una totora seca y muerta. ¿Qué rol cumple el hongo?",
+   "opciones": [
+    "Es un descomponedor, que se alimenta de materia orgánica ya muerta",
+    "Es un productor, porque fabrica su propio alimento con luz solar",
+    "Es un consumidor, porque caza animales vivos para alimentarse",
+    "No cumple ningún rol dentro de esa cadena alimentaria del humedal"
+   ],
+   "correcta": 0,
+   "tip": "El hongo es un descomponedor: se alimenta de materia muerta, como la totora seca, y no caza animales vivos.",
+   "id": "cien4-oa03-7"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "En el desierto viven un cactus, una lagartija y un ave rapaz. ¿Cuál es el orden correcto de la cadena?",
+   "opciones": [
+    "Cactus, lagartija, ave rapaz",
+    "Lagartija, cactus, ave rapaz",
+    "Ave rapaz, cactus, lagartija",
+    "Cactus, ave rapaz, lagartija"
+   ],
+   "correcta": 0,
+   "tip": "La cadena parte siempre del productor: el cactus. Luego la lagartija que lo usa de refugio y come insectos, y por último el ave rapaz.",
+   "id": "cien4-oa03-8"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "¿En qué orden se relacionan el alga, la jaiba y el pulpo dentro de esta cadena de la costa?",
+   "opciones": [
+    "Alga, jaiba, pulpo",
+    "Jaiba, alga, pulpo",
+    "Pulpo, jaiba, alga",
+    "Alga, pulpo, jaiba"
+   ],
+   "correcta": 0,
+   "tip": "El alga es el productor, la jaiba se alimenta de ella, y el pulpo se alimenta de la jaiba.",
+   "id": "cien4-oa03-9"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "Un zorro caza patos, y los patos comen totora, en un humedal. ¿Cuál es el orden correcto de esta cadena?",
+   "opciones": [
+    "Totora, pato, zorro",
+    "Pato, totora, zorro",
+    "Zorro, totora, pato",
+    "Totora, zorro, pato"
+   ],
+   "correcta": 0,
+   "tip": "La totora es el productor, el pato se alimenta de ella, y el zorro se alimenta del pato.",
+   "id": "cien4-oa03-10"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "Ordena esta cadena alimentaria del altiplano: coirón, vicuña y puma.",
+   "opciones": [
+    "Coirón, vicuña, puma",
+    "Vicuña, coirón, puma",
+    "Puma, coirón, vicuña",
+    "Coirón, puma, vicuña"
+   ],
+   "correcta": 0,
+   "tip": "El coirón es el productor, la vicuña se alimenta de él, y el puma caza a la vicuña.",
+   "id": "cien4-oa03-11"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "En el bosque, un puma se come a un pudú, que a su vez come coigüe. ¿Cuál es el orden correcto?",
+   "opciones": [
+    "Coigüe, pudú, puma",
+    "Pudú, coigüe, puma",
+    "Puma, coigüe, pudú",
+    "Coigüe, puma, pudú"
+   ],
+   "correcta": 0,
+   "tip": "El coigüe es el productor, el pudú se alimenta de él, y el puma caza al pudú.",
+   "id": "cien4-oa03-12"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "El jote come animales que ya están muertos. ¿Es un descomponedor?",
+   "opciones": [
+    "No, es un consumidor carroñero, distinto de hongos y bacterias",
+    "Sí, porque come materia muerta igual que los hongos",
+    "Sí, porque descompone el cuerpo entero del animal",
+    "No, porque el jote no come nada de origen animal"
+   ],
+   "correcta": 0,
+   "tip": "El jote come restos de animales, pero sigue siendo un consumidor: no descompone la materia a nivel microscópico como los hongos y las bacterias.",
+   "id": "cien4-oa03-13"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "¿En qué se diferencia un descomponedor de un animal carroñero como el jote?",
+   "opciones": [
+    "El descomponedor deshace la materia a nivel microscópico; el carroñero solo come restos",
+    "No hay ninguna diferencia, los dos son exactamente lo mismo",
+    "El carroñero fabrica su propio alimento y el descomponedor no",
+    "El descomponedor caza animales vivos y el carroñero no"
+   ],
+   "correcta": 0,
+   "tip": "El carroñero es un consumidor que come restos de animales; el descomponedor (hongos, bacterias) deshace esa materia hasta devolverla al suelo.",
+   "id": "cien4-oa03-14"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "¿Qué le devuelven los descomponedores a la tierra cuando descomponen restos?",
+   "opciones": [
+    "Nutrientes, que las plantas pueden volver a usar para crecer",
+    "Agua, que antes se había evaporado por completo",
+    "Oxígeno, que los animales necesitan para respirar",
+    "Luz solar, que las plantas usan para hacer fotosíntesis"
+   ],
+   "correcta": 0,
+   "tip": "Al descomponer materia muerta, hongos y bacterias devuelven nutrientes al suelo, que las plantas vuelven a usar.",
+   "id": "cien4-oa03-15"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "Además de los hongos, ¿qué otro tipo de organismo actúa como descomponedor?",
+   "opciones": [
+    "Las bacterias, que también descomponen materia orgánica",
+    "Las plantas, porque también fabrican su propio alimento",
+    "Los insectos herbívoros, que comen solo hojas verdes",
+    "Las aves rapaces, que cazan otros animales pequeños"
+   ],
+   "correcta": 0,
+   "tip": "Las bacterias, además de los hongos, son descomponedores: deshacen la materia orgánica muerta.",
+   "id": "cien4-oa03-16"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "Si los cactus de un desierto desaparecieran, ¿qué le pasaría a los animales que los comen?",
+   "opciones": [
+    "Se quedarían sin ese alimento y tendrían que buscar otro",
+    "Se convertirían ellos mismos en productores",
+    "No les afectaría en nada, porque no dependen de ellos",
+    "Empezarían a descomponer materia muerta como los hongos"
+   ],
+   "correcta": 0,
+   "tip": "Si desaparece el productor de una cadena, los consumidores que dependían de él se quedan sin ese alimento.",
+   "id": "cien4-oa03-17"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "Si los pumas desaparecieran de un ecosistema, ¿qué podría pasar con los guanacos?",
+   "opciones": [
+    "Podrían aumentar mucho, porque su principal depredador ya no está",
+    "Se transformarían en depredadores para reemplazar al puma",
+    "Empezarían a fabricar su propio alimento como las plantas",
+    "No cambiaría nada, porque los guanacos no dependen del puma"
+   ],
+   "correcta": 0,
+   "tip": "Sin el puma, uno de sus principales depredadores, la población de guanacos podría crecer mucho.",
+   "id": "cien4-oa03-18"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "Si no existieran los descomponedores, ¿qué pasaría con las plantas y animales muertos?",
+   "opciones": [
+    "Se acumularían, y el suelo tendría cada vez menos nutrientes",
+    "Desaparecerían de inmediato sin dejar ningún rastro",
+    "Se convertirían automáticamente en nuevos productores",
+    "No pasaría nada, porque los descomponedores no son necesarios"
+   ],
+   "correcta": 0,
+   "tip": "Sin descomponedores, los restos se acumularían y el suelo dejaría de recibir los nutrientes que ellos devuelven.",
+   "id": "cien4-oa03-19"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "¿Cuál de estas cadenas alimentarias del bosque está BIEN ordenada?",
+   "opciones": [
+    "Coigüe, insecto, chucao, zorro",
+    "Zorro, chucao, insecto, coigüe",
+    "Insecto, coigüe, zorro, chucao",
+    "Chucao, zorro, coigüe, insecto"
+   ],
+   "correcta": 0,
+   "tip": "La cadena siempre empieza en el productor (coigüe) y sigue hacia los consumidores que se alimentan unos de otros.",
+   "id": "cien4-oa03-20"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "De estas cuatro cadenas de la costa, ¿cuál sigue el orden correcto?",
+   "opciones": [
+    "Alga, pez pequeño, pez grande, ave marina",
+    "Ave marina, pez grande, pez pequeño, alga",
+    "Pez grande, alga, ave marina, pez pequeño",
+    "Pez pequeño, ave marina, alga, pez grande"
+   ],
+   "correcta": 0,
+   "tip": "La cadena parte del alga, el productor, y avanza hacia consumidores cada vez más grandes.",
+   "id": "cien4-oa03-21"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "En la cadena coirón, vicuña, puma, ¿qué rol tiene la vicuña?",
+   "opciones": [
+    "Consumidor, porque se alimenta del coirón",
+    "Productor, porque fabrica su propio alimento",
+    "Descomponedor, porque descompone el coirón",
+    "Ninguno, porque las vicuñas no participan en cadenas"
+   ],
+   "correcta": 0,
+   "tip": "La vicuña es un consumidor: se alimenta del coirón, que es el productor de esa cadena.",
+   "id": "cien4-oa03-22"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "En una cadena marina, ¿qué rol cumple el alga que crece pegada a las rocas?",
+   "opciones": [
+    "Productor, porque fabrica su propio alimento con la luz",
+    "Consumidor, porque se alimenta de peces pequeños",
+    "Descomponedor, porque descompone restos de peces",
+    "Ninguno, porque las algas no forman parte de cadenas"
+   ],
+   "correcta": 0,
+   "tip": "El alga es un productor: al igual que las plantas, fabrica su propio alimento usando la luz del sol.",
+   "id": "cien4-oa03-23"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "Una totora de humedal usa la luz del sol para fabricar su alimento. ¿Qué rol cumple en su cadena?",
+   "opciones": [
+    "Productor, porque fabrica su propio alimento",
+    "Consumidor, porque se alimenta de otros seres vivos",
+    "Descomponedor, porque descompone materia muerta",
+    "Ninguno de los tres roles"
+   ],
+   "correcta": 0,
+   "tip": "La totora es una planta: como fabrica su propio alimento con luz solar, es un productor.",
+   "id": "cien4-oa03-24"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "El guanaco come solo coirón y otras plantas. ¿Qué tipo de consumidor es?",
+   "opciones": [
+    "Un consumidor que se alimenta de plantas",
+    "Un consumidor que se alimenta de otros animales",
+    "Un productor, porque fabrica su propio alimento",
+    "Un descomponedor, porque descompone materia muerta"
+   ],
+   "correcta": 0,
+   "tip": "El guanaco es un consumidor que se alimenta de plantas, como el coirón.",
+   "id": "cien4-oa03-25"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "El puma caza guanacos para alimentarse. ¿Qué tipo de consumidor es el puma?",
+   "opciones": [
+    "Un consumidor que se alimenta de otros animales",
+    "Un consumidor que se alimenta solo de plantas",
+    "Un productor, porque fabrica su propio alimento",
+    "Un descomponedor, porque descompone materia muerta"
+   ],
+   "correcta": 0,
+   "tip": "El puma es un consumidor que se alimenta de otros animales, como el guanaco.",
+   "id": "cien4-oa03-26"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "¿Cuál de estas es una cadena alimentaria posible en el altiplano chileno?",
+   "opciones": [
+    "Coirón, vizcacha, puma",
+    "Coigüe, pudú, chucao",
+    "Alga, jaiba, pulpo",
+    "Totora, pato, garza"
+   ],
+   "correcta": 0,
+   "tip": "El coirón, la vizcacha y el puma son organismos que viven en el altiplano chileno.",
+   "id": "cien4-oa03-27"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "¿Cuál de estas es una cadena alimentaria posible en el desierto de Atacama?",
+   "opciones": [
+    "Cactus, lagartija, zorro culpeo",
+    "Totora, pato, garza",
+    "Alga, jaiba, pulpo",
+    "Coigüe, pudú, puma"
+   ],
+   "correcta": 0,
+   "tip": "El cactus, la lagartija y el zorro culpeo son organismos que viven en el desierto de Atacama.",
+   "id": "cien4-oa03-28"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "Los hongos y bacterias descomponen restos muertos. ¿Por qué se llaman DESCOMPONEDORES y no consumidores?",
+   "opciones": [
+    "Porque cumplen una función distinta: transforman la materia muerta y devuelven nutrientes al suelo",
+    "Porque nunca se alimentan de ningún resto de plantas o animales",
+    "Porque fabrican su propio alimento igual que las plantas",
+    "Porque no forman parte de ninguna cadena alimentaria"
+   ],
+   "correcta": 0,
+   "tip": "Los descomponedores cumplen una función propia dentro de la cadena, distinta de la de un consumidor: devuelven nutrientes al suelo.",
+   "id": "cien4-oa03-29"
+  },
+  {
+   "oa": "CN04 OA 03",
+   "pregunta": "¿Por qué es importante que existan productores, consumidores y descomponedores?",
+   "opciones": [
+    "Porque juntos permiten que la energía y los nutrientes circulen",
+    "Porque solo así los animales pueden reproducirse cada año",
+    "Porque sin ellos no existiría el agua en los ecosistemas",
+    "Porque cada uno vive completamente separado de los demás"
+   ],
+   "correcta": 0,
+   "tip": "Los tres roles se necesitan entre sí: hacen que la energía pase de unos a otros y los nutrientes vuelvan a la tierra.",
+   "id": "cien4-oa03-30"
+  }
+ ]
+}

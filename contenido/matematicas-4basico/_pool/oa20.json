@@ -1,0 +1,444 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Camila se levanta para ir al colegio y mira este reloj de agujas. ¿Qué hora es?",
+   "opciones": [
+    "7:00 de la mañana",
+    "12:00 de la mañana",
+    "7:00 de la noche",
+    "8:00 de la mañana"
+   ],
+   "correcta": 0,
+   "tip": "La manecilla chica apunta al 7 y la grande al 12: son las 7 en punto, y como recién se levanta, es de mañana.",
+   "id": "mate4-oa20-1",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 7,
+    "minuto": 0
+   }
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Diego llega a su casa después del colegio y ve este reloj en la cocina. ¿Qué hora es?",
+   "opciones": [
+    "3:30 de la tarde",
+    "6:30 de la tarde",
+    "3:30 de la mañana",
+    "3:00 de la tarde"
+   ],
+   "correcta": 0,
+   "tip": "La manecilla chica está entre el 3 y el 4, y la grande en el 6: son las 3 y media, de tarde.",
+   "id": "mate4-oa20-2",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 3,
+    "minuto": 30
+   }
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Ana se pone el pijama antes de dormir y mira este reloj. ¿Qué hora es?",
+   "opciones": [
+    "9:15 de la noche",
+    "3:15 de la noche",
+    "9:15 de la mañana",
+    "9:00 de la noche"
+   ],
+   "correcta": 0,
+   "tip": "La manecilla chica está un poco pasado el 9 y la grande en el 3: son las 9 y cuarto, y es de noche.",
+   "id": "mate4-oa20-3",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 9,
+    "minuto": 15
+   }
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Es la hora de almorzar y Camila ve este reloj marcando las 12. ¿Cómo se dice esa hora?",
+   "opciones": [
+    "12:00 del mediodía",
+    "12:00 de la medianoche",
+    "1:00 de la tarde",
+    "12:00 de la mañana"
+   ],
+   "correcta": 0,
+   "tip": "Las 12 del día, cuando se almuerza, se llaman las 12 del mediodía.",
+   "id": "mate4-oa20-4",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 12,
+    "minuto": 0
+   }
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Es medianoche y todos duermen. Este reloj marca las 12. ¿Cómo se llama esa hora?",
+   "opciones": [
+    "12:00 de la medianoche",
+    "12:00 del mediodía",
+    "1:00 de la mañana",
+    "12:00 de la mañana"
+   ],
+   "correcta": 0,
+   "tip": "Las 12 de la noche, cuando todos duermen, se llaman las 12 de la medianoche.",
+   "id": "mate4-oa20-5",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 12,
+    "minuto": 0
+   }
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "El sol recién está saliendo y Matías mira este reloj. ¿Qué hora es?",
+   "opciones": [
+    "6:00 de la mañana",
+    "12:00 de la mañana",
+    "6:00 de la tarde",
+    "7:00 de la mañana"
+   ],
+   "correcta": 0,
+   "tip": "Las dos manecillas apuntan al 6 y al 12: son las 6 en punto, y como recién sale el sol, es de mañana.",
+   "id": "mate4-oa20-6",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 6,
+    "minuto": 0
+   }
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Faltan pocos minutos para las 5 de la tarde y Diego mira este reloj después de jugar. ¿Qué hora es?",
+   "opciones": [
+    "4:45 de la tarde",
+    "4:09 de la tarde",
+    "4:45 de la mañana",
+    "5:00 de la tarde"
+   ],
+   "correcta": 0,
+   "tip": "La manecilla grande en el 9 marca 45 minutos, no 9: son las 4 y 45, de tarde.",
+   "id": "mate4-oa20-7",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 4,
+    "minuto": 45
+   }
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Camila toma desayuno un sábado y mira este reloj de agujas. ¿Qué hora es?",
+   "opciones": [
+    "10:10 de la mañana",
+    "10:02 de la mañana",
+    "10:10 de la tarde",
+    "2:10 de la mañana"
+   ],
+   "correcta": 0,
+   "tip": "La manecilla grande en el 2 marca 10 minutos, porque cada número vale 5 minutos.",
+   "id": "mate4-oa20-8",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 10,
+    "minuto": 10
+   }
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Diego mira este reloj antes de acostarse un sábado en la noche. ¿Qué hora es?",
+   "opciones": [
+    "8:20 de la noche",
+    "8:04 de la noche",
+    "8:20 de la mañana",
+    "4:20 de la noche"
+   ],
+   "correcta": 0,
+   "tip": "La manecilla grande en el 4 marca 20 minutos, porque cada número vale 5 minutos.",
+   "id": "mate4-oa20-9",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 8,
+    "minuto": 20
+   }
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Faltan pocos minutos para las 2 de la tarde y Matías almuerza. Este reloj está en la cocina. ¿Qué hora es?",
+   "opciones": [
+    "1:50 de la tarde",
+    "1:10 de la tarde",
+    "1:50 de la mañana",
+    "10:50 de la tarde"
+   ],
+   "correcta": 0,
+   "tip": "La manecilla grande en el 10 marca 50 minutos, porque cada número vale 5 minutos.",
+   "id": "mate4-oa20-10",
+   "visual": {
+    "tipo": "reloj",
+    "hora": 1,
+    "minuto": 50
+   }
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Un reloj digital marca 13:00. ¿A qué hora corresponde en el formato de 12 horas?",
+   "opciones": [
+    "1:00 de la tarde",
+    "1:00 de la mañana",
+    "11:00 de la mañana",
+    "3:00 de la tarde"
+   ],
+   "correcta": 0,
+   "tip": "Como pasa de 12, se le resta 12 a la hora: 13 menos 12 son 1, y como pasó el mediodía, es de tarde.",
+   "id": "mate4-oa20-11"
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Un reloj digital marca 14:00. ¿A qué hora corresponde en el formato de 12 horas?",
+   "opciones": [
+    "2:00 de la tarde",
+    "2:00 de la mañana",
+    "10:00 de la mañana",
+    "4:00 de la tarde"
+   ],
+   "correcta": 0,
+   "tip": "14 menos 12 son 2, y como ya pasó el mediodía, esa hora es de tarde.",
+   "id": "mate4-oa20-12"
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Un reloj digital marca 16:00. ¿A qué hora corresponde en el formato de 12 horas?",
+   "opciones": [
+    "4:00 de la tarde",
+    "4:00 de la mañana",
+    "8:00 de la mañana",
+    "6:00 de la tarde"
+   ],
+   "correcta": 0,
+   "tip": "16 menos 12 son 4, y como ya pasó el mediodía, esa hora es de tarde.",
+   "id": "mate4-oa20-13"
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Un reloj digital marca 17:00. ¿A qué hora corresponde en el formato de 12 horas?",
+   "opciones": [
+    "5:00 de la tarde",
+    "5:00 de la mañana",
+    "7:00 de la mañana",
+    "7:00 de la tarde"
+   ],
+   "correcta": 0,
+   "tip": "17 menos 12 son 5, y como ya pasó el mediodía, esa hora es de tarde.",
+   "id": "mate4-oa20-14"
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Un reloj digital marca 19:00. ¿A qué hora corresponde en el formato de 12 horas?",
+   "opciones": [
+    "7:00 de la noche",
+    "7:00 de la mañana",
+    "5:00 de la tarde",
+    "9:00 de la noche"
+   ],
+   "correcta": 0,
+   "tip": "19 menos 12 son 7, y como ya oscureció, esa hora se dice de noche.",
+   "id": "mate4-oa20-15"
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Un reloj digital marca 20:00. ¿A qué hora corresponde en el formato de 12 horas?",
+   "opciones": [
+    "8:00 de la noche",
+    "8:00 de la mañana",
+    "4:00 de la tarde",
+    "10:00 de la noche"
+   ],
+   "correcta": 0,
+   "tip": "20 menos 12 son 8, y a esa hora ya es de noche.",
+   "id": "mate4-oa20-16"
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Un reloj digital marca 22:00. ¿A qué hora corresponde en el formato de 12 horas?",
+   "opciones": [
+    "10:00 de la noche",
+    "10:00 de la mañana",
+    "2:00 de la tarde",
+    "12:00 de la noche"
+   ],
+   "correcta": 0,
+   "tip": "22 menos 12 son 10, y a esa hora ya es de noche.",
+   "id": "mate4-oa20-17"
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Diego tiene entrenamiento a las 6 de la tarde. ¿Cómo se escribe esa hora en un reloj digital de 24 horas?",
+   "opciones": [
+    "18:00",
+    "06:00",
+    "16:00",
+    "18:30"
+   ],
+   "correcta": 0,
+   "tip": "Como es de tarde, se le suma 12 a la hora: 6 más 12 son 18.",
+   "id": "mate4-oa20-18"
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Javiera despierta a las 9 de la mañana. ¿Cómo se escribe esa hora en un reloj digital de 24 horas?",
+   "opciones": [
+    "09:00",
+    "19:00",
+    "21:00",
+    "09:30"
+   ],
+   "correcta": 0,
+   "tip": "Las horas de la mañana, hasta el mediodía, se escriben igual, solo con dos dígitos: 09:00.",
+   "id": "mate4-oa20-19"
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Benjamín sale del colegio a las 11 de la mañana. ¿Cómo se escribe esa hora en un reloj digital de 24 horas?",
+   "opciones": [
+    "11:00",
+    "23:00",
+    "21:00",
+    "11:30"
+   ],
+   "correcta": 0,
+   "tip": "Las horas de la mañana se escriben igual en el formato de 24 horas: 11:00.",
+   "id": "mate4-oa20-20"
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "El almuerzo del colegio es a las 12 del mediodía. ¿Cómo se escribe esa hora en un reloj digital de 24 horas?",
+   "opciones": [
+    "12:00",
+    "00:00",
+    "01:00",
+    "13:00"
+   ],
+   "correcta": 0,
+   "tip": "El mediodía, las 12 del día, se escribe 12:00 en el formato de 24 horas.",
+   "id": "mate4-oa20-21"
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Fabián despierta a las 12 de la medianoche. ¿Cómo se escribe esa hora en un reloj digital de 24 horas?",
+   "opciones": [
+    "00:00",
+    "12:00",
+    "01:00",
+    "23:00"
+   ],
+   "correcta": 0,
+   "tip": "La medianoche, el momento en que empieza un nuevo día, se escribe 00:00 en el formato de 24 horas.",
+   "id": "mate4-oa20-22"
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Sofía va al dentista a las 3 de la tarde. ¿Cómo se escribe esa hora en un reloj digital de 24 horas?",
+   "opciones": [
+    "15:00",
+    "03:00",
+    "13:00",
+    "15:30"
+   ],
+   "correcta": 0,
+   "tip": "Como es de tarde, se le suma 12 a la hora: 3 más 12 son 15.",
+   "id": "mate4-oa20-23"
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Matías se acuesta a las 10 de la noche. ¿Cómo se escribe esa hora en un reloj digital de 24 horas?",
+   "opciones": [
+    "22:00",
+    "10:00",
+    "20:00",
+    "22:30"
+   ],
+   "correcta": 0,
+   "tip": "Como es de noche, se le suma 12 a la hora: 10 más 12 son 22.",
+   "id": "mate4-oa20-24"
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "¿Qué significa que un reloj digital muestre la hora en formato de 24 horas?",
+   "opciones": [
+    "Que cuenta las horas del día seguidas, de la 0 a la 23, sin repetirlas",
+    "Que el día dura más horas de lo normal",
+    "Que ese reloj solo se puede usar de noche",
+    "Que las horas se cuentan de dos en dos"
+   ],
+   "correcta": 0,
+   "tip": "El formato de 24 horas numera cada hora del día una sola vez, sin repetir números.",
+   "id": "mate4-oa20-25"
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "En el formato de 12 horas, ¿por qué hace falta decir si una hora es de mañana, tarde o noche?",
+   "opciones": [
+    "Porque el número de la hora se repite dos veces al día",
+    "Porque las agujas del reloj cambian de forma en la tarde",
+    "Porque de noche los relojes marcan otros números distintos",
+    "Porque los minutos solo existen en la tarde"
+   ],
+   "correcta": 0,
+   "tip": "En el formato de 12 horas, por ejemplo las 4, aparecen dos veces al día: hay que aclarar cuál de las dos.",
+   "id": "mate4-oa20-26"
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Un reloj de agujas marca las 4 en punto. Mirando solo las agujas, ¿se puede saber si es de mañana o de tarde?",
+   "opciones": [
+    "No, hay que fijarse en otra pista, como la actividad del momento",
+    "Sí, las agujas se ven distintas de día que de noche",
+    "Sí, el número 4 solo aparece en la tarde",
+    "No, nunca se puede saber la hora en un reloj de agujas"
+   ],
+   "correcta": 0,
+   "tip": "Un reloj de agujas repite las mismas posiciones dos veces al día: solas, no dicen si es mañana o tarde.",
+   "id": "mate4-oa20-27"
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Dos relojes digitales marcan 8:00 y 20:00. ¿Cuál de los dos usa el formato de 24 horas?",
+   "opciones": [
+    "El que marca 20:00",
+    "El que marca 8:00",
+    "Los dos usan el formato de 24 horas",
+    "Ninguno de los dos usa ese formato"
+   ],
+   "correcta": 0,
+   "tip": "Un número de hora mayor que 12, como 20, solo puede venir del formato de 24 horas.",
+   "id": "mate4-oa20-28"
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "Un reloj digital de 24 horas marca 23:00. ¿En qué momento del día es más probable que sea?",
+   "opciones": [
+    "De noche, cerca de la medianoche",
+    "De mañana, recién amaneciendo",
+    "Del mediodía, a la hora de almorzar",
+    "De tarde, después de almorzar"
+   ],
+   "correcta": 0,
+   "tip": "23:00 está justo antes de las 24, o sea de la medianoche: es de noche.",
+   "id": "mate4-oa20-29"
+  },
+  {
+   "oa": "MA04 OA 20",
+   "pregunta": "El despertador digital de Javiera marca 06:00, con un cero adelante del 6. ¿Por qué se escribe ese cero?",
+   "opciones": [
+    "Para que la hora tenga siempre dos dígitos, igual que los minutos",
+    "Porque a esa hora hay que multiplicar por cero",
+    "Porque el reloj está descompuesto",
+    "Porque son las 6 de la tarde y no de la mañana"
+   ],
+   "correcta": 0,
+   "tip": "En el formato digital, las horas de un solo dígito llevan un cero adelante para completar dos dígitos.",
+   "id": "mate4-oa20-30"
+  }
+ ]
+}

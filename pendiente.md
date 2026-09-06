@@ -230,16 +230,24 @@ y validado. Ya no hay que estimar: los OA están contados y con su texto literal
 |---|---|---|---|---|---|
 | B1 | **5° básico** — ✅ **COMPLETO, APROBADO Y CON ARTE PROPIO (05/09)**: las cuatro asignaturas, **2.790 preguntas**, 27 mini-clases y 4 introducciones, jugables, auditadas y **firmadas por Roberto por muestreo**. Sus 20 capítulos ya reutilizaban portada por tema (0 nuevas necesarias) y sus **4 villanos propios ya están generados, procesados y cableados** (`villanoImg`/`villanoImgDerrotado` de las 4 campañas, verificado jugando el Jefe Final de las 4 asignaturas con `cdp.mjs`: 512px, sin 404). **Listo para publicarse** — solo falta la decisión comercial de cuándo anunciarlo | **93** ✅ | **2.790** ✅ | — | — |
 | B2 | **6° básico** — ✅ **BANCO COMPLETO (05/09): las 4 asignaturas, 99/99 OA, 2.970 preguntas**, 0 errores en las cuatro, 0 opciones equivalentes, todos los pares de solape revisados uno por uno (la mayoría variedad legítima de plantilla; 3 duplicados reales corregidos y arreglados: ángulos en Matemática, "igualdad ante la ley" entre `HI06 OA16`/`OA17`). Matemática 24/24 (720) · Ciencias 18/18 (540) · Historia 26/26 (780) · Lenguaje 31/31 (930). `docs/cuidados-ciencias.md` y `docs/cuidados-historia.md` sumaron secciones con lo que dejaron las tandas de validación (evaporación≠ebullición; "investigar/demostrar"+120 caracteres es genuinamente difícil; `HI06 OA 13` "su región/localidad" resuelto dando la región DENTRO del enunciado, porque el banco no puede saber dónde vive cada alumno; `HI06 OA 08` —quiebre y recuperación de la democracia, el OA más delicado del currículum— midiendo solo hechos verificables, sin tomar partido; `LE06 OA 01` —leer de forma fluida, mide pronunciación/decodificación que ningún quiz puede evaluar— acotado al único ángulo medible, la prosodia de los signos de puntuación). ✅ **Fork `6to/index.html` CABLEADO (05/09):** 25 capítulos (Matemática 7 · Ciencias 5 · Historia 6 · Lenguaje 7) + Jefe Final por asignatura —**La Desproporción** (Matemática), **El Desequilibrio** (Ciencias, con `CN06 OA 04/05/06` excluidos del jefe por la regla A4), **La Versión Única** (Historia) y **El Enredo** (Lenguaje)—, arte de villano **prestado del set de 3°** (declarado en comentario), 99 metas de aprendizaje en `META_OA` (cobertura verificada: 0 faltantes), `SUFIJO='_6to'`/`storageKey:'kimun-6to'` para guardado e identidad aislados, y sin mini-clases ni Reto Sin Fin todavía (`HAY_MINICLASES`/`HAY_SINFIN`=false: ese contenido no existe para 6°, no es un olvido). `assets/js/niveles.js` y `kimun_asignaturas_todas()` en `supabase/schema.sql` ya reconocen el nivel `06` (una fila cada uno, M4 pagándose sola); `assets/js/sensible.js` y `docs/contenido-sensible.md` ya listan los 6 OA sensibles de 6°. **Verificado jugando con `cdp.mjs`**: las 4 campañas abren con su cantidad de nodos correcta, un quiz real de Historia sirvió una pregunta con 4 opciones del banco real, el armador (`?armar=1`) lista los 25 capítulos con sus marcas sensibles, y **cero errores de consola y cero 404**. ✅ **Esquema re-aplicado y verificado en producción (05/09)**: `kimun_oa_asignatura('MA06 OA 01')` devuelve `MA06` (control positivo `CN08 OA 01`→`CN08` intacto, control negativo `MA99 OA 01`→`null`), y `kimun_asignaturas_todas()` ya lista los 20 códigos. ✅ **Aprobación pedagógica HECHA (05/09)**: Roberto aprobó las 2.970 preguntas por muestreo desde el tablero. ✅ **Arte propio TERMINADO (05/09)**: 16 de sus 25 capítulos reutilizan portadas existentes por tema; las **9 portadas nuevas** (`portada-mate6-cap2/-5/-6`, `-cie6-cap1/-5`, `-hist6-cap1/-2/-4`, `-leng6-cap7`) y los **4 villanos propios** (con su `-derrotado`) fueron generados a partir de [`docs/prompts-arte-5y6.md`](docs/prompts-arte-5y6.md), procesados con `procesar-arte.py` y cableados en `6to/index.html`. **6° queda igual de completo que 5°: listo para publicarse**, solo falta la decisión comercial de cuándo anunciarlo | **99** ✅ | **2.970** ✅ | hecho | — |
-| B3 | **4° básico** + voz + dibujos + auditoría de audibilidad | **92** (MA 27 · LE 30 · CN 17 · HI 18) | ~2.760 (−30 del OA excluido) | 2–3 sesiones | ~US$8 de Azure |
+| B3 | **4° básico** — ✅ **BANCO COMPLETO (05/09): las 4 asignaturas, 91/91 OA (el `LE04 OA 15` excluido por caligrafía, documentado en su `oa.json`), 2.730 preguntas.** Matemática 27/27 (810) · Ciencias 17/17 (510) · Historia 18/18 (540) · Lenguaje 29/29 (870). 0 duplicados al consolidar, 0 opciones equivalentes, 0 pares de solape entre OA sobre el umbral, **el 100% de las 2.730 se puede responder ESCUCHANDO** (`auditar-audible-nivel.py`, el chequeo extra que solo llevan 3° y 4° por tener voz). Escrito con la regla de economía de la Sesión 92 (2-3 OA por agente, resumen corto) y con una tanda de validación previa de 8 OA de riesgo (fracciones con muchas equivalencias, el OA sensible del alcohol, los actitudinales de honestidad/respeto/hábito lector). **Falta su fork, su voz (~US$8 de Azure), su arte propio y su aprobación pedagógica** | **91** ✅ | **2.730** ✅ | hecho | — |
 
-**284 OA y ~8.490 preguntas**, algo más que la estimación anterior (~7.350). El paso 0 del molde
-de 7° —transcribir el currículum— **está hecho para los tres**; se entra directo al fork y al
-banco.
+**284 OA y 8.490 preguntas exactas** (no ~7.350 ni ~8.490 estimados: los tres bancos nuevos ya
+están escritos y contados). El paso 0 del molde de 7° —transcribir el currículum— **está hecho
+para los tres**, y ahora también el banco de los tres.
 
-> **Avance real al 05/09: 5.760 de ~8.490** (2.790 de 5° + 2.970 de 6°, banco COMPLETO). 5° y 6°
-> básico quedan con **el banco de sus 4 asignaturas terminado y auditado** (192 OA, 5.760
-> preguntas). Solo falta **4°** (92 OA, ~2.760 preguntas, con voz y dibujos) para que el Bloque B
-> quede cerrado del todo.
+> **Avance real al 05/09: 8.490 de 8.490 (100%) — el Bloque B queda con el banco de sus tres
+> cursos TERMINADO Y AUDITADO** (284 OA, 8.490 preguntas: 2.790 de 5° + 2.970 de 6° + 2.730 de 4°).
+> Lo único que falta para cerrar el Bloque B del todo es lo que no es banco: fork de 4°, su voz
+> (única entre los tres con voz pregrabada), su arte propio, y la aprobación pedagógica de los
+> tres — 5° y 6° ya aprobados y con arte; **4° todavía no tiene nada de eso**.
+>
+> **Dos hallazgos de esta sesión que valen para cualquier banco futuro, ambos en el script
+> compartido de voz:** `normalizar-voz-nivel.py` no convertía "de 1.000 en 1.000" (el punto de los
+> miles cortaba la construcción antes del `en`) y tampoco un número negativo suelto como opción
+> ("-32" sonaba igual que "32", porque las dos reglas de guion exigían un dígito ANTES del signo).
+> Los dos se encontraron auditando (no leyendo el texto) y ya están corregidos en el script — 3° no
+> los tenía porque no usa números negativos ni conteos de mil en mil.
 >
 > ### 📍 Punto de control — 05/09/2026
 >
@@ -269,10 +277,29 @@ banco.
 > 1. **Re-aplicar `supabase/schema.sql`** — tiene el nivel `06` agregado a
 >    `kimun_asignaturas_todas()`; hasta que Roberto lo pegue de nuevo tras este commit, el
 >    dominio de 6° no aparece en el panel del profesor, sin ningún error que lo avise.
-> 2. **4° básico** (Bloque B3): currículum ya transcrito (92 OA), falta todo el banco
->    (~2.760 preguntas) + voz (~US$8 de Azure) + dibujos + auditoría de audibilidad.
-> 3. **La decisión comercial** de cuándo anunciar 5° y 6° — el contenido y el arte ya no son el
+> 2. **Fork `4to/index.html`** — no existe todavía. Clonar el patrón de `5to/index.html` y
+>    `6to/index.html`: las 4 campañas, `META_OA` (91 entradas), reparto en capítulos por
+>    asignatura, villanos con arte prestado (declarado en comentarios), y a diferencia de 5°/6°
+>    **con voz y con el campo `visual`** (más parecido a 3° en eso). Requiere además `assets/js/voz.js`
+>    y `assets/js/visuales.js` (ya compartidos, extraídos en la Sesión 75 — no hay que escribirlos).
+> 3. **Aprobación pedagógica de 4°** (Roberto, en el tablero) — son las únicas 2.730 preguntas
+>    del proyecto sin firmar además del arte y la voz.
+> 4. **Voz de 4°** (~US$8 de Azure, ~2.700 clips estimados) — **después de aprobar, nunca en
+>    paralelo**: cada corrección posterior obliga a regenerar su clip. Usar
+>    `scripts/generar-voz-nivel.py` con `4basico` como nivel.
+> 5. **Arte propio de 4°** (villanos + portadas) — igual que 3°, 5° y 6°: prestado y declarado
+>    hasta que se generen. Con voz Y dibujos, 4° es el más caro de los tres en producir después
+>    del banco — es la razón por la que el plan original lo dejó para el final.
+> 6. **La decisión comercial** de cuándo anunciar 5° y 6° — el contenido y el arte ya no son el
 >    freno.
+>
+> ⚠️ **Y ligada a esa decisión: la landing (`index.html`) quedó desactualizada desde antes de esta
+> sesión.** Sigue diciendo *"tres cursos —3°, 7° y 8° básico—"*, *"7.805 preguntas aprobadas"* y
+> *"Las 1.230 de 5° básico… recién escritas, están en revisión"* — nada de eso es cierto ya: son
+> seis cursos (cinco jugables + el banco de 4°), 13.565 preguntas aprobadas de 16.295 escritas, y
+> 5°/6° están completos y listos, no "en revisión". No se toca sin que Roberto decida el mensaje
+> —es la misma decisión del punto 6—, pero hay que saber que el número que ve un colegio hoy en
+> `vulpo.cl` no es el real.
 >
 > `pendiente.md` es la fuente de verdad de qué falta; no hay ningún resumen paralelo que
 > mantener sincronizado.

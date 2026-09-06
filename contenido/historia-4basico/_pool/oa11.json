@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "¿Cómo llega una persona a ser Presidente o Presidenta de Chile?",
+   "opciones": [
+    "Es elegida por votación popular de todos los ciudadanos",
+    "Es nombrada directamente por los senadores y diputados del Congreso Nacional",
+    "Es designada por los alcaldes de todo el país",
+    "Hereda el cargo de la persona que gobernaba antes"
+   ],
+   "correcta": 0,
+   "tip": "El Presidente o Presidenta de Chile se elige mediante votación popular, en la que participan todos los ciudadanos habilitados para votar.",
+   "id": "hist4-oa11-1"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "¿En qué edificio trabaja habitualmente el Presidente o Presidenta de Chile?",
+   "opciones": [
+    "En el Palacio de La Moneda",
+    "En el Congreso Nacional",
+    "En la Municipalidad de Santiago",
+    "En el Palacio de Tribunales"
+   ],
+   "correcta": 0,
+   "tip": "La Moneda, en Santiago, es la sede de gobierno donde el Presidente ejerce su cargo junto a su equipo de trabajo.",
+   "id": "hist4-oa11-2"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "El Presidente necesita a alguien que dirija el Ministerio de Educación. ¿Cómo llega esa persona al cargo?",
+   "opciones": [
+    "El Presidente la nombra directamente para ese cargo",
+    "Los profesores del país la eligen por votación",
+    "El cargo se hereda de un ministro anterior",
+    "El Congreso Nacional organiza una elección para escogerla"
+   ],
+   "correcta": 0,
+   "tip": "Los ministros no se eligen por votación: el Presidente los nombra para que lo ayuden a dirigir distintas áreas del gobierno, como educación o salud.",
+   "id": "hist4-oa11-3"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "¿Qué tarea cumple un ministro dentro del gobierno de Chile?",
+   "opciones": [
+    "Dirige un área específica, como salud, educación o vivienda",
+    "Elige por votación popular quién será el próximo Presidente de la República",
+    "Dirige la municipalidad de una comuna",
+    "Representa a un distrito en el Congreso Nacional"
+   ],
+   "correcta": 0,
+   "tip": "Cada ministro está a cargo de un ministerio, que se ocupa de un área del país, como la educación, la salud o las obras públicas.",
+   "id": "hist4-oa11-4"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "¿Cómo se elige a un senador o senadora en Chile?",
+   "opciones": [
+    "Por votación popular, y representa a una región del país",
+    "Es nombrado directamente por el Presidente",
+    "Es designado por los ministros del gobierno",
+    "Hereda el cargo directamente de un familiar que fue senador antes"
+   ],
+   "correcta": 0,
+   "tip": "Los senadores se eligen por votación popular y representan a los ciudadanos de una región ante el Congreso Nacional.",
+   "id": "hist4-oa11-5"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "¿Cómo se elige a un diputado o diputada en Chile?",
+   "opciones": [
+    "Por votación popular, y representa a un distrito del país",
+    "Es nombrado por el Presidente para representar a un ministerio",
+    "Es elegido por los senadores de su misma región",
+    "Es designado por el alcalde de su comuna"
+   ],
+   "correcta": 0,
+   "tip": "Los diputados también se eligen por votación popular, pero representan a un distrito, una parte más pequeña del territorio que una región.",
+   "id": "hist4-oa11-6"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "¿En qué institución trabajan juntos los senadores y los diputados de Chile?",
+   "opciones": [
+    "En el Congreso Nacional",
+    "En el Palacio de La Moneda",
+    "En la Municipalidad",
+    "En el Ministerio de Justicia"
+   ],
+   "correcta": 0,
+   "tip": "Senadores y diputados forman el Congreso Nacional, la institución encargada de discutir y aprobar las leyes del país.",
+   "id": "hist4-oa11-7"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "En la comuna de Camila se va a reparar una plaza. ¿Quién dirige esos proyectos en la comuna?",
+   "opciones": [
+    "El alcalde o alcaldesa de la comuna",
+    "Un senador de la región",
+    "Un ministro del gobierno central",
+    "El Presidente de la República"
+   ],
+   "correcta": 0,
+   "tip": "El alcalde o alcaldesa dirige la municipalidad, que es la institución encargada de los asuntos de una comuna, como plazas, calles y áreas verdes.",
+   "id": "hist4-oa11-8"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "¿Cómo llega una persona a ser alcalde o alcaldesa en Chile?",
+   "opciones": [
+    "Es elegida por votación popular de los vecinos de su comuna",
+    "Es nombrada directamente por el Presidente de la República",
+    "Es designada por los senadores de la región",
+    "Es elegida por los ministros del gobierno"
+   ],
+   "correcta": 0,
+   "tip": "El alcalde o alcaldesa se elige por votación popular entre las personas que viven en esa comuna.",
+   "id": "hist4-oa11-9"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "¿En qué institución ejerce su cargo un alcalde o alcaldesa?",
+   "opciones": [
+    "En la municipalidad de su comuna",
+    "En el Congreso Nacional",
+    "En el Palacio de La Moneda",
+    "En un ministerio del gobierno central"
+   ],
+   "correcta": 0,
+   "tip": "La municipalidad es la institución que administra una comuna, y está dirigida por el alcalde o alcaldesa.",
+   "id": "hist4-oa11-10"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "De las siguientes autoridades, ¿cuáles se eligen por votación popular?",
+   "opciones": [
+    "El Presidente, los senadores, los diputados y los alcaldes",
+    "El Presidente, los senadores y los diputados, pero no los alcaldes",
+    "Solo el Presidente de la República",
+    "Los ministros, los senadores y los diputados"
+   ],
+   "correcta": 0,
+   "tip": "Presidente, senadores, diputados y alcaldes se eligen por votación popular; los ministros, en cambio, son nombrados por el Presidente.",
+   "id": "hist4-oa11-11"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "¿Qué autoridad de Chile NO se elige por votación, sino que es designada por otra autoridad?",
+   "opciones": [
+    "El ministro de un área del gobierno",
+    "El senador de una región",
+    "El diputado elegido por votación en su distrito",
+    "El alcalde de una comuna"
+   ],
+   "correcta": 0,
+   "tip": "A diferencia de las demás autoridades mencionadas, el ministro no se elige por votación: lo nombra el Presidente de la República.",
+   "id": "hist4-oa11-12"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "El Congreso Nacional discute una ley sobre el medioambiente. ¿Quiénes participan en esa discusión?",
+   "opciones": [
+    "Los senadores y los diputados",
+    "Los alcaldes de todas las comunas del país",
+    "Los ministros del gobierno solamente",
+    "Los jueces de los tribunales"
+   ],
+   "correcta": 0,
+   "tip": "Discutir y aprobar leyes es tarea del Congreso Nacional, formado por senadores y diputados elegidos por votación popular.",
+   "id": "hist4-oa11-13"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "¿Qué autoridad representa y gobierna a todo el país, y no solo a una comuna o una región?",
+   "opciones": [
+    "El Presidente o Presidenta de la República",
+    "El alcalde o alcaldesa",
+    "El senador de una región",
+    "El diputado elegido por votación en su distrito"
+   ],
+   "correcta": 0,
+   "tip": "El Presidente es la única autoridad de estas que representa y gobierna a todo el país; las demás actúan sobre una comuna, un distrito o una región.",
+   "id": "hist4-oa11-14"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "¿Qué autoridad se ocupa específicamente de los asuntos de una comuna, y no de todo el país?",
+   "opciones": [
+    "El alcalde o alcaldesa",
+    "El Presidente de la República",
+    "Un ministro del gobierno",
+    "Un senador de la región"
+   ],
+   "correcta": 0,
+   "tip": "El alcalde o alcaldesa dirige la municipalidad de una comuna en particular, mientras que las otras autoridades actúan a nivel regional o nacional.",
+   "id": "hist4-oa11-15"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "El Ministerio de Salud necesita una nueva persona a cargo. ¿Qué autoridad decide quién ocupará ese puesto?",
+   "opciones": [
+    "El Presidente de la República en persona",
+    "Los senadores de todas las regiones",
+    "Los diputados del Congreso Nacional",
+    "Los alcaldes de las comunas más grandes"
+   ],
+   "correcta": 0,
+   "tip": "Nombrar a los ministros es una atribución del Presidente de la República, ya que ellos forman parte de su equipo de gobierno.",
+   "id": "hist4-oa11-16"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "¿Qué diferencia principal hay entre un senador y un diputado?",
+   "opciones": [
+    "El senador representa a una región y el diputado, a un distrito más pequeño",
+    "El senador es nombrado por el Presidente y el diputado se elige por votación",
+    "El diputado gobierna todo el país y el senador solo su comuna",
+    "El senador trabaja en la municipalidad y el diputado en La Moneda"
+   ],
+   "correcta": 0,
+   "tip": "Ambos se eligen por votación popular y trabajan en el Congreso Nacional, pero el senador representa a toda una región y el diputado, a un distrito dentro de ella.",
+   "id": "hist4-oa11-17"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "Un vecino quiere reclamar porque hay basura acumulada en su calle. ¿A qué institución debería acudir primero?",
+   "opciones": [
+    "A la municipalidad de su comuna",
+    "Al Congreso Nacional",
+    "Al Palacio de La Moneda",
+    "A un ministerio del gobierno central"
+   ],
+   "correcta": 0,
+   "tip": "El aseo y ornato de las calles es responsabilidad de la municipalidad, dirigida por el alcalde o alcaldesa de la comuna.",
+   "id": "hist4-oa11-18"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "Diego dice que todas las autoridades de Chile se eligen por votación, sin excepción. ¿Tiene razón?",
+   "opciones": [
+    "No, porque los ministros son nombrados por el Presidente y no se eligen",
+    "Sí, absolutamente todas se eligen por votación",
+    "No, porque en Chile ninguna autoridad se elige nunca por votación popular",
+    "Sí, incluso los ministros se eligen junto al Presidente"
+   ],
+   "correcta": 0,
+   "tip": "Presidente, senadores, diputados y alcaldes se eligen por votación, pero los ministros son una excepción: los designa el Presidente.",
+   "id": "hist4-oa11-19"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "¿Cuál de estas instituciones corresponde al Poder Ejecutivo, encabezado por el Presidente y sus ministros?",
+   "opciones": [
+    "El gobierno, con sede en el Palacio de La Moneda",
+    "El Congreso Nacional",
+    "La municipalidad de cada comuna, junto a su alcalde o alcaldesa",
+    "Los tribunales de justicia"
+   ],
+   "correcta": 0,
+   "tip": "El Presidente y sus ministros forman el gobierno, que ejerce el Poder Ejecutivo desde La Moneda.",
+   "id": "hist4-oa11-20"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "¿Cuál de estas instituciones corresponde al Poder Legislativo, encargado de hacer las leyes?",
+   "opciones": [
+    "El Congreso Nacional, formado por senadores y diputados",
+    "El Palacio de La Moneda",
+    "La municipalidad de cada comuna, junto a su alcalde o alcaldesa",
+    "Un ministerio del gobierno"
+   ],
+   "correcta": 0,
+   "tip": "Los senadores y diputados forman el Congreso Nacional, la institución del Poder Legislativo encargada de discutir y aprobar las leyes.",
+   "id": "hist4-oa11-21"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "Sofía escucha que su tía fue elegida diputada por su distrito. ¿En qué institución empezará a trabajar su tía?",
+   "opciones": [
+    "En el Congreso Nacional",
+    "En el Palacio de La Moneda",
+    "En la municipalidad de su comuna",
+    "En un ministerio del gobierno"
+   ],
+   "correcta": 0,
+   "tip": "Los diputados, junto a los senadores, ejercen su cargo en el Congreso Nacional.",
+   "id": "hist4-oa11-22"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "Un ministro deja su cargo, y el Presidente nombra a otra persona sin una nueva votación. ¿Por qué es posible?",
+   "opciones": [
+    "Porque los ministros son un cargo de confianza que el Presidente designa",
+    "Porque en Chile los ministros se eligen por sorteo",
+    "Porque el cargo de ministro se hereda dentro de la misma familia",
+    "Porque los ministros son elegidos por los diputados y senadores del Congreso"
+   ],
+   "correcta": 0,
+   "tip": "A diferencia del Presidente, los senadores, los diputados y los alcaldes, los ministros no se eligen por votación: el Presidente puede nombrarlos y reemplazarlos.",
+   "id": "hist4-oa11-23"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "¿Qué autoridad podría cambiar de un ministerio a otro si el Presidente lo decide así?",
+   "opciones": [
+    "Un ministro nombrado por el Presidente",
+    "Un senador elegido por su región",
+    "Un alcalde elegido por su comuna",
+    "Un diputado elegido por su distrito"
+   ],
+   "correcta": 0,
+   "tip": "Como el Presidente nombra a los ministros, también puede trasladarlos de un ministerio a otro; las demás autoridades ejercen el cargo para el que fueron elegidas.",
+   "id": "hist4-oa11-24"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "En su comuna, Matías votó para elegir a la nueva alcaldesa. ¿Qué tipo de autoridad acaba de elegirse?",
+   "opciones": [
+    "Una autoridad local, que dirige la municipalidad de esa comuna",
+    "Una autoridad que gobierna todo el país",
+    "Una autoridad designada directamente por el Congreso Nacional completo",
+    "Una autoridad que dirige un ministerio"
+   ],
+   "correcta": 0,
+   "tip": "El alcalde o alcaldesa es una autoridad local, elegida por votación para dirigir la municipalidad de una sola comuna.",
+   "id": "hist4-oa11-25"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "Javiera quiere proponer una idea para mejorar una ley del país. ¿A qué autoridades podría acudir?",
+   "opciones": [
+    "A los senadores o diputados de su región o distrito",
+    "Solamente al alcalde de su comuna",
+    "Solamente a un ministro del gobierno",
+    "A ningún representante, porque las leyes no pueden proponerse"
+   ],
+   "correcta": 0,
+   "tip": "Senadores y diputados, elegidos por votación, son quienes discuten y proponen leyes en el Congreso Nacional.",
+   "id": "hist4-oa11-26"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "¿Qué autoridades de Chile ejercen su cargo en el Palacio de La Moneda?",
+   "opciones": [
+    "El Presidente y los ministros de su gobierno",
+    "Los senadores y diputados que trabajan en el Congreso Nacional",
+    "Los alcaldes de todas las comunas",
+    "Los jueces de los tribunales"
+   ],
+   "correcta": 0,
+   "tip": "La Moneda es la sede del gobierno, donde ejercen su cargo el Presidente y los ministros que él nombra.",
+   "id": "hist4-oa11-27"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "Benjamín afirma que un alcalde puede gobernar sobre toda una región de Chile. ¿Qué le corregirías?",
+   "opciones": [
+    "Que un alcalde dirige solo una comuna, no una región completa",
+    "Que un alcalde en realidad gobierna todo el país, como el Presidente",
+    "Que Benjamín tiene razón, así funciona en Chile",
+    "Que un alcalde solo puede dirigir un ministerio"
+   ],
+   "correcta": 0,
+   "tip": "El territorio de un alcalde es su comuna; una región agrupa a varias comunas y no tiene una sola autoridad elegida de ese tipo a su cargo.",
+   "id": "hist4-oa11-28"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "¿Qué tienen en común el Presidente, los senadores, los diputados y los alcaldes de Chile?",
+   "opciones": [
+    "Todos llegan a su cargo por votación popular de los ciudadanos",
+    "Todos son nombrados por el Presidente de la República",
+    "Todos trabajan en el mismo edificio, el Congreso Nacional",
+    "Ninguno de ellos puede cambiar de cargo mientras dure su período de gobierno"
+   ],
+   "correcta": 0,
+   "tip": "A diferencia de los ministros, estas cuatro autoridades se eligen mediante votación popular, aunque en distintos territorios: el país, la región, el distrito o la comuna.",
+   "id": "hist4-oa11-29"
+  },
+  {
+   "oa": "HI04 OA 11",
+   "pregunta": "Ana quiere saber qué institución agrupa a las autoridades que hacen las leyes de Chile. ¿Cuál es?",
+   "opciones": [
+    "El Congreso Nacional",
+    "La municipalidad",
+    "El Palacio de La Moneda",
+    "Un ministerio del gobierno"
+   ],
+   "correcta": 0,
+   "tip": "Hacer y aprobar las leyes es tarea del Congreso Nacional, formado por los senadores y diputados que la ciudadanía elige.",
+   "id": "hist4-oa11-30"
+  }
+ ]
+}

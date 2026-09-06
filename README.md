@@ -86,13 +86,12 @@ Versión **v0.99**: completo y jugable de punta a punta, en vuelta de revisión
 manual antes de coronar la v1.
 
 **La v1 será VULPO de 3° a 8° básico**, seis cursos completos con sus cuatro
-asignaturas. Hoy existen **cinco jugables completos y aprobados** (3°, 5°, 6°, 7° y 8°) y
-**el banco entero del proyecto está aprobado: 13.565 de 13.565 preguntas**. Solo falta
-**4° básico**, cuyo currículum —92 objetivos— ya está transcrito del currículum oficial y
-validado, en `contenido/<asignatura>-4basico/oa.json`. Lo que falta ahí es escribir su banco
-de preguntas (con voz y dibujos, como corresponde a ese nivel). **5° y 6° ya tienen su arte
-propio** (villanos y portadas de capítulo), así que lo único que los separa de anunciarse es
-una decisión comercial.
+asignaturas. Hoy existen **cinco jugables completos y aprobados** (3°, 5°, 6°, 7° y 8°), y
+**4° básico ya tiene su banco escrito y auditado** (91 objetivos, 2.730 preguntas), aunque
+todavía sin cablear, sin aprobación pedagógica, sin voz y sin arte propio. **El banco total
+del proyecto es 16.295 preguntas, de las cuales 13.565 están aprobadas** (las de 4° son las
+únicas que faltan por firmar). **5° y 6° ya tienen su arte propio** (villanos y portadas de
+capítulo), así que lo único que los separa de anunciarse es una decisión comercial.
 
 **Qué falta y en qué orden está en [`pendiente.md`](pendiente.md)**, la lista viva de tareas:
 es el archivo por el que se empieza al abrir una rama. El plan de

@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Diego encuestó a 20 compañeros sobre su fruta favorita: manzana 8, plátano 6, naranja 4, pera 2. ¿Cuál fue la más elegida?",
+   "opciones": [
+    "La manzana",
+    "El plátano",
+    "La naranja",
+    "La pera"
+   ],
+   "correcta": 0,
+   "tip": "8 votos es el número más alto de la tabla, así que la manzana fue la fruta más elegida.",
+   "id": "mate4-oa25-1"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Camila preguntó a 25 personas cuántas horas duermen: 7 horas → 5, 8 horas → 12, 9 horas → 6, 10 horas → 2. ¿Cuántas duermen 8 horas o más?",
+   "opciones": [
+    "20 personas",
+    "12 personas",
+    "18 personas",
+    "5 personas"
+   ],
+   "correcta": 0,
+   "tip": "8 o más suma tres grupos: 12 + 6 + 2 = 20. Contar solo el grupo de 8 deja afuera a los de 9 y 10.",
+   "id": "mate4-oa25-2"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Sofía encuestó a 30 vecinos sobre su transporte al trabajo: auto 15, bus 9, bicicleta 4, a pie 2. ¿Cuántos NO usan auto?",
+   "opciones": [
+    "15 personas",
+    "9 personas",
+    "30 personas",
+    "13 personas"
+   ],
+   "correcta": 0,
+   "tip": "De 30 encuestados, 15 usan auto: los que no lo usan son 30 − 15 = 15.",
+   "id": "mate4-oa25-3"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Matías encuestó a 24 estudiantes sobre su deporte favorito y quiere mostrar los datos en un gráfico de barras. ¿Qué debe representar cada barra?",
+   "opciones": [
+    "Un deporte, con una altura según sus votos",
+    "Un estudiante, con una altura según su edad",
+    "Un mes, con una altura según la temperatura",
+    "Un curso, con una altura según su matrícula"
+   ],
+   "correcta": 0,
+   "tip": "En una encuesta de preferencias, cada barra es una categoría de respuesta y su altura muestra cuántos la eligieron.",
+   "id": "mate4-oa25-4"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Javiera encuestó a 18 compañeros sobre su color favorito: azul 7, rojo 5, verde 4, amarillo 2. ¿Cuántos eligieron azul o rojo?",
+   "opciones": [
+    "12 compañeros",
+    "7 compañeros",
+    "18 compañeros",
+    "9 compañeros"
+   ],
+   "correcta": 0,
+   "tip": "Se suman las dos categorías pedidas: 7 + 5 = 12.",
+   "id": "mate4-oa25-5"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "El colegio de Benjamín tiene 400 estudiantes. Para saber qué mascota prefieren, él encuestó solo a sus 30 compañeros de curso. ¿Por qué esa muestra podría no representar a todo el colegio?",
+   "opciones": [
+    "Porque 30 es muy poco frente a 400, y otros cursos podrían preferir algo distinto",
+    "Porque las mascotas no se pueden encuestar, solo se puede encuestar sobre comida o deportes",
+    "Porque las encuestas orales no valen y solo sirven las que se responden por escrito",
+    "Porque un colegio nunca se puede comparar con ningún otro grupo de personas del mismo tamaño"
+   ],
+   "correcta": 0,
+   "tip": "Una muestra chica puede no reflejar a todo el grupo: para conocer a los 400 conviene encuestar a más de un curso.",
+   "id": "mate4-oa25-6"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Ana encuestó a 20 compañeros sobre su helado favorito: chocolate 9, vainilla 6, frutilla 5. Su hermana encuestó a otro curso de 20 y le ganó la vainilla, con 8. ¿Qué muestra esto?",
+   "opciones": [
+    "Dos muestras distintas pueden dar un ganador distinto",
+    "Una de las dos encuestas está mal hecha",
+    "Los dos cursos tienen el mismo número de estudiantes",
+    "El chocolate siempre gana en cualquier encuesta"
+   ],
+   "correcta": 0,
+   "tip": "En la primera muestra ganó el chocolate y en la segunda la vainilla: dos muestras aleatorias distintas pueden variar.",
+   "id": "mate4-oa25-7"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Un curso de 32 estudiantes encuestó su asignatura favorita: Matemática 12, Lenguaje 8, Ciencias 7, Historia 5. ¿Cuál fue la menos elegida?",
+   "opciones": [
+    "Historia",
+    "Ciencias",
+    "Lenguaje",
+    "Matemática"
+   ],
+   "correcta": 0,
+   "tip": "5 es el número más bajo de la tabla: Historia fue la menos elegida.",
+   "id": "mate4-oa25-8"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Vicente encuestó a 40 personas sobre libros leídos el año pasado y ordenó los datos en una tabla. ¿Qué debe anotar en cada fila?",
+   "opciones": [
+    "Una categoría de respuesta y cuántas personas la eligieron",
+    "El nombre completo de cada una de las 40 personas que fueron encuestadas ese día",
+    "Solo el total de personas encuestadas, sin separar los datos por categoría alguna",
+    "La fecha exacta y la hora en que cada persona terminó de leer su último libro"
+   ],
+   "correcta": 0,
+   "tip": "Una tabla de encuesta organiza por categoría de respuesta, no por persona.",
+   "id": "mate4-oa25-9"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Florencia quiere comparar su encuesta sobre estaciones favoritas con la de otro curso. ¿Qué necesita saber de esa otra encuesta?",
+   "opciones": [
+    "Cuántos contestaron y cuántos eligieron cada estación",
+    "Solo el nombre del profesor de ese curso",
+    "El color del gráfico que usaron para mostrarla",
+    "La hora exacta en que se hizo esa encuesta"
+   ],
+   "correcta": 0,
+   "tip": "Para comparar dos encuestas hace falta la misma información en las dos: total y cuánto obtuvo cada categoría.",
+   "id": "mate4-oa25-10"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Tomás encuestó a 15 compañeros sobre su mes de cumpleaños y salió muy variado. Al encuestar a otros 15 de otro curso, también salió variado, pero con meses distintos destacados. ¿Por qué?",
+   "opciones": [
+    "Cada muestra es un grupo distinto, y el azar puede dar resultados distintos",
+    "Uno de los dos cursos mintió al responder sobre el mes en que nació",
+    "Los meses del año cambian de nombre entre un curso y otro del mismo colegio",
+    "La encuesta solo es válida cuando los dos cursos dan exactamente el mismo resultado"
+   ],
+   "correcta": 0,
+   "tip": "Dos muestras aleatorias distintas —aunque midan lo mismo— pueden dar resultados distintos.",
+   "id": "mate4-oa25-11"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Josefa preguntó a 22 estudiantes cuántas mascotas tienen: 0 → 9, 1 → 8, 2 → 3, 3 o más → 2. ¿Cuántos tienen al menos una?",
+   "opciones": [
+    "13 estudiantes",
+    "9 estudiantes",
+    "22 estudiantes",
+    "8 estudiantes"
+   ],
+   "correcta": 0,
+   "tip": "Al menos una es 1, 2 o más: 8 + 3 + 2 = 13. Los 9 sin mascota no se cuentan.",
+   "id": "mate4-oa25-12"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Un curso hizo esta tabla sobre el juego favorito del recreo: pillarse 14, cuerda 9, fútbol 11, luche 6. ¿Cuántos respondieron en total?",
+   "opciones": [
+    "40 estudiantes",
+    "14 estudiantes",
+    "34 estudiantes",
+    "20 estudiantes"
+   ],
+   "correcta": 0,
+   "tip": "Se suman todas las categorías: 14 + 9 + 11 + 6 = 40.",
+   "id": "mate4-oa25-13"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Rodrigo encuestó a sus 10 amigos sobre su animal favorito: perro 6, gato 3, conejo 1. Quiere saber si el colegio piensa igual, así que decide encuestar a más cursos. ¿Por qué es buena idea?",
+   "opciones": [
+    "Porque una muestra más grande representa mejor a todo el colegio",
+    "Porque así el perro gana siempre esa encuesta, sin importar los datos que salgan",
+    "Porque con solo 10 personas no se puede dibujar ningún tipo de gráfico de barras",
+    "Porque la mascota favorita cambia todos los días según el curso donde se pregunte"
+   ],
+   "correcta": 0,
+   "tip": "Una muestra grande y variada refleja mejor las preferencias de todo el colegio que un grupo de amigos.",
+   "id": "mate4-oa25-14"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "En una encuesta a 28 estudiantes sobre comida favorita: pizza 11, empanadas 8, sopaipillas 6, ensalada 3. ¿Cuántos eligieron pizza o empanadas?",
+   "opciones": [
+    "19 estudiantes",
+    "11 estudiantes",
+    "14 estudiantes",
+    "28 estudiantes"
+   ],
+   "correcta": 0,
+   "tip": "Se suman las dos categorías pedidas: 11 + 8 = 19.",
+   "id": "mate4-oa25-15"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Constanza encuestó a 26 personas sobre su número de hermanos: 0 → 7, 1 → 12, 2 → 5, 3 o más → 2. ¿Cuál fue la respuesta más común?",
+   "opciones": [
+    "Tener 1 hermano",
+    "No tener hermanos",
+    "Tener 2 hermanos",
+    "Tener 3 o más hermanos"
+   ],
+   "correcta": 0,
+   "tip": "12 es el número más alto de la tabla: tener 1 hermano fue lo más elegido.",
+   "id": "mate4-oa25-16"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Dos cursos encuestaron a 20 estudiantes cada uno sobre su programa favorito de televisión, y el más votado fue distinto en cada curso. ¿Cuál es la explicación más razonable?",
+   "opciones": [
+    "Son muestras distintas, y es normal que el resultado cambie según a quién se pregunte",
+    "Uno de los dos cursos copió mal los datos al armar su gráfico de barras",
+    "Los programas de televisión cambian de nombre todos los días de la semana",
+    "Una de las dos encuestas no es válida porque los resultados no coinciden"
+   ],
+   "correcta": 0,
+   "tip": "Personas distintas pueden preferir cosas distintas: eso no invalida ninguna de las dos encuestas.",
+   "id": "mate4-oa25-17"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Ignacio preguntó a 18 compañeros qué instrumento les gustaría aprender: guitarra 8, piano 5, batería 3, violín 2. ¿Qué gráfico conviene más para mostrar esto?",
+   "opciones": [
+    "Un gráfico de barras, una por instrumento según sus votos",
+    "Una recta numérica con los números del 1 al 18 puestos en orden",
+    "Un reloj de agujas que marque la hora en que se hizo la encuesta",
+    "Un mapa que muestre la ubicación de la casa de cada compañero"
+   ],
+   "correcta": 0,
+   "tip": "Cuando se comparan categorías y cuántas veces se eligió cada una, el gráfico de barras es el más claro.",
+   "id": "mate4-oa25-18"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "En una encuesta a 24 estudiantes sobre idioma favorito: inglés 13, francés 6, portugués 3, alemán 2. ¿Cuántos NO eligieron inglés?",
+   "opciones": [
+    "11 estudiantes",
+    "13 estudiantes",
+    "24 estudiantes",
+    "6 estudiantes"
+   ],
+   "correcta": 0,
+   "tip": "De 24 encuestados, 13 eligieron inglés: los que no, son 24 − 13 = 11.",
+   "id": "mate4-oa25-19"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Amanda encuestó a 20 vecinos de su cuadra sobre su fruta favorita y su prima encuestó a otros 20 de otra cuadra, con resultados distintos. Si Amanda quiere saber la fruta favorita de todo el barrio, ¿qué debería hacer?",
+   "opciones": [
+    "Juntar datos de varias cuadras para tener una muestra más grande",
+    "Quedarse solo con los datos de su propia cuadra",
+    "Elegir el resultado que más le guste a ella",
+    "Descartar las dos encuestas porque no coinciden"
+   ],
+   "correcta": 0,
+   "tip": "Para representar a un grupo más grande conviene juntar muestras de varias partes de ese grupo.",
+   "id": "mate4-oa25-20"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Un curso de 30 encuestó el mes preferido de vacaciones: enero 14, febrero 10, marzo 6. ¿Cuál es la diferencia entre el más y el menos elegido?",
+   "opciones": [
+    "8 estudiantes",
+    "14 estudiantes",
+    "4 estudiantes",
+    "30 estudiantes"
+   ],
+   "correcta": 0,
+   "tip": "El más elegido fue enero (14) y el menos, marzo (6): 14 − 6 = 8.",
+   "id": "mate4-oa25-21"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Pedro quiere saber el recreo favorito de todo su colegio, pero solo encuesta a los 8 amigos con los que siempre juega. ¿Por qué el resultado podría ser poco representativo?",
+   "opciones": [
+    "Porque un grupo de amigos cercanos suele responder parecido entre sí",
+    "Porque los recreos no se pueden medir con encuestas",
+    "Porque 8 personas no se pueden sumar ni graficar",
+    "Porque las encuestas de recreo deben ser escritas"
+   ],
+   "correcta": 0,
+   "tip": "Un grupo de amigos tiende a tener gustos parecidos, así que su encuesta suele reflejar peor a todo el colegio.",
+   "id": "mate4-oa25-22"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "En una encuesta a 21 personas sobre el color de su mochila: negro 9, azul 7, rosado 4, verde 1. ¿Cuántas filas de datos tendría la tabla, sin contar el título?",
+   "opciones": [
+    "4 filas, una por cada color",
+    "21 filas, una por cada persona",
+    "1 fila, con el total de personas",
+    "9 filas, según el color más elegido"
+   ],
+   "correcta": 0,
+   "tip": "Una tabla de encuesta agrupa por categoría: aquí hay 4 colores, así que son 4 filas.",
+   "id": "mate4-oa25-23"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Un curso repitió la misma encuesta de deporte favorito una semana y otra, a los mismos 25 estudiantes: primero ganó fútbol y después natación. ¿Qué es lo más probable?",
+   "opciones": [
+    "Que algunos cambiaron de opinión entre una semana y otra",
+    "Que la segunda encuesta está mal hecha",
+    "Que había menos estudiantes en la segunda semana",
+    "Que esos dos deportes no se pueden comparar"
+   ],
+   "correcta": 0,
+   "tip": "Las preferencias pueden cambiar con el tiempo, así que dos encuestas del mismo grupo pueden variar.",
+   "id": "mate4-oa25-24"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Emilia encuestó a 27 sobre su postre favorito: helado 12, torta 9, fruta 6. Un curso de otro colegio, también con 27, obtuvo: helado 8, torta 10, fruta 9. ¿Qué diferencia hay?",
+   "opciones": [
+    "En la de Emilia ganó el helado, y en la otra ganó la torta",
+    "En las dos ganó exactamente el mismo postre",
+    "El otro colegio no se puede comparar porque tiene menos estudiantes",
+    "Los dos resultados no sirven porque los números no coinciden"
+   ],
+   "correcta": 0,
+   "tip": "En la de Emilia gana el helado (12); en la otra, la torta (10): son muestras distintas con ganador distinto.",
+   "id": "mate4-oa25-25"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Un curso de 32 encuestó su forma de llegar al colegio: a pie 10, en auto 14, en bus 6, en bicicleta 2. Al dibujar el gráfico, ¿qué categoría tendrá la barra más alta?",
+   "opciones": [
+    "En auto, porque tiene el número más grande, 14",
+    "A pie, porque suma 10 estudiantes",
+    "En bus, porque es el medio más común en Chile",
+    "En bicicleta, porque es lo más saludable"
+   ],
+   "correcta": 0,
+   "tip": "La barra más alta corresponde al dato más grande de la tabla: 14, 'en auto'.",
+   "id": "mate4-oa25-26"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "En una encuesta a 16 personas sobre su día favorito: viernes 7, sábado 6, domingo 3. Un compañero dice que 'la mayoría eligió viernes'. ¿Es correcto?",
+   "opciones": [
+    "No, porque 7 de 16 es menos de la mitad, aunque sea el más votado",
+    "Sí, porque viernes tiene el número más alto",
+    "Sí, porque 7 más 6 es más de la mitad de 16",
+    "No, porque ninguna encuesta puede tener un ganador"
+   ],
+   "correcta": 0,
+   "tip": "Tener el número más alto no siempre es la mayoría del total: 7 de 16 es menos de la mitad (8).",
+   "id": "mate4-oa25-27"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Un curso de 29 encuestó su snack de colación: fruta 11, galletas 9, frutos secos 6, yogur 3. ¿Cuántos prefieren fruta o frutos secos?",
+   "opciones": [
+    "17 estudiantes",
+    "11 estudiantes",
+    "20 estudiantes",
+    "29 estudiantes"
+   ],
+   "correcta": 0,
+   "tip": "Se suman las dos categorías: 11 + 6 = 17.",
+   "id": "mate4-oa25-28"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Felipe y su vecino encuestaron a 15 estudiantes cada uno, en cursos distintos, sobre su videojuego favorito. En las dos ganó el mismo, con números parecidos. ¿Qué sugiere esto?",
+   "opciones": [
+    "Que esa preferencia es bastante común, no solo de un curso",
+    "Que las dos encuestas están mal hechas por coincidir",
+    "Que copiaron los datos sin encuestar de verdad",
+    "Que el videojuego dejará de ser favorito la próxima semana"
+   ],
+   "correcta": 0,
+   "tip": "Cuando dos muestras distintas dan un resultado parecido, es señal de que la preferencia es real y compartida.",
+   "id": "mate4-oa25-29"
+  },
+  {
+   "oa": "MA04 OA 25",
+   "pregunta": "Un curso de 24 encuestó su superhéroe favorito: héroe A 10, B 8, C 4, D 2. Al construir el gráfico de barras, ¿qué debe dar la suma de las cuatro alturas?",
+   "opciones": [
+    "El total de estudiantes encuestados, 24",
+    "Un número menor a 10",
+    "Lo mismo que la barra más alta",
+    "No tiene relación con el número de estudiantes"
+   ],
+   "correcta": 0,
+   "tip": "Como cada estudiante eligió una sola opción, la suma de todas las barras es el total: 10 + 8 + 4 + 2 = 24.",
+   "id": "mate4-oa25-30"
+  }
+ ]
+}

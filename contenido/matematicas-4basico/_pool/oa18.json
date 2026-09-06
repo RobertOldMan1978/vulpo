@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Un cajón se desliza hacia afuera del mueble, sin girar ni voltearse. ¿Qué movimiento es ese?",
+   "opciones": [
+    "Traslación",
+    "Rotación",
+    "Reflexión",
+    "Ampliación"
+   ],
+   "correcta": 0,
+   "tip": "Deslizar una figura en línea recta, sin girarla ni voltearla, es una traslación.",
+   "id": "mate4-oa18-1"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Las agujas de un reloj giran siempre alrededor del mismo punto, el centro. ¿Qué movimiento es ese?",
+   "opciones": [
+    "Rotación",
+    "Traslación",
+    "Reflexión",
+    "Reducción"
+   ],
+   "correcta": 0,
+   "tip": "Girar alrededor de un punto fijo, sin desplazarse en línea recta, es una rotación.",
+   "id": "mate4-oa18-2"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Camila se mira en el espejo del baño y ve su imagen volteada, como al revés. ¿Qué movimiento representa eso?",
+   "opciones": [
+    "Reflexión",
+    "Traslación",
+    "Rotación",
+    "Ampliación"
+   ],
+   "correcta": 0,
+   "tip": "Un espejo produce una imagen volteada: eso es una reflexión.",
+   "id": "mate4-oa18-3"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Un ascensor sube en línea recta, sin girar ni voltearse. ¿Qué movimiento hace?",
+   "opciones": [
+    "Traslación",
+    "Rotación",
+    "Reflexión",
+    "Ninguno, no se mueve"
+   ],
+   "correcta": 0,
+   "tip": "Moverse en línea recta, en cualquier dirección, sin girar ni voltearse, es una traslación.",
+   "id": "mate4-oa18-4"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Una rueda de bicicleta gira sobre su propio eje mientras avanza. Ese giro sobre el eje es...",
+   "opciones": [
+    "una rotación",
+    "una traslación",
+    "una reflexión",
+    "un cambio de tamaño"
+   ],
+   "correcta": 0,
+   "tip": "Girar sobre un eje o punto fijo es una rotación, aunque la bicicleta también se traslade.",
+   "id": "mate4-oa18-5"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Diego dobla una hoja por la mitad y calca un dibujo al otro lado del doblez. ¿Qué obtiene?",
+   "opciones": [
+    "El reflejo del dibujo original",
+    "Una traslación del dibujo",
+    "Una rotación del dibujo",
+    "El mismo dibujo, sin cambios"
+   ],
+   "correcta": 0,
+   "tip": "Calcar al otro lado de un doblez produce una imagen espejo: es una reflexión.",
+   "id": "mate4-oa18-6"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Un carrusel de un parque de diversiones da vueltas alrededor de su centro. ¿Qué movimiento es ese?",
+   "opciones": [
+    "Rotación",
+    "Traslación",
+    "Reflexión",
+    "Ampliación"
+   ],
+   "correcta": 0,
+   "tip": "Dar vueltas alrededor de un centro fijo es una rotación.",
+   "id": "mate4-oa18-7"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Una cinta transportadora mueve las maletas en línea recta. ¿Qué movimiento hacen las maletas?",
+   "opciones": [
+    "Traslación",
+    "Rotación",
+    "Reflexión",
+    "No se mueven"
+   ],
+   "correcta": 0,
+   "tip": "Desplazarse en línea recta, sin girar, es una traslación.",
+   "id": "mate4-oa18-8"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "La sombra de un árbol se ve reflejada en el agua quieta de un lago, dada vuelta. ¿Qué movimiento representa?",
+   "opciones": [
+    "Reflexión",
+    "Rotación",
+    "Traslación",
+    "Ampliación"
+   ],
+   "correcta": 0,
+   "tip": "El agua quieta funciona como un espejo: la imagen invertida es una reflexión.",
+   "id": "mate4-oa18-9"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "¿Cambia el tamaño de una figura cuando se traslada de un lugar a otro?",
+   "opciones": [
+    "No, solo cambia de posición",
+    "Sí, se hace más grande",
+    "Sí, se hace más chica",
+    "Sí, cambia de forma"
+   ],
+   "correcta": 0,
+   "tip": "En una traslación la figura solo se mueve: su tamaño y su forma quedan exactamente iguales.",
+   "id": "mate4-oa18-10"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "¿Cambia el tamaño de una figura cuando se rota alrededor de un punto?",
+   "opciones": [
+    "No, solo cambia su orientación",
+    "Sí, se agranda al girar",
+    "Sí, se achica al girar",
+    "Sí, se parte en dos"
+   ],
+   "correcta": 0,
+   "tip": "Rotar una figura solo cambia hacia dónde mira: el tamaño y la forma se mantienen iguales.",
+   "id": "mate4-oa18-11"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "¿Cambia el tamaño de una figura cuando se refleja como en un espejo?",
+   "opciones": [
+    "No, queda igual pero volteada",
+    "Sí, queda más grande",
+    "Sí, queda más chica",
+    "Sí, pierde algunos lados"
+   ],
+   "correcta": 0,
+   "tip": "Reflejar una figura la voltea, pero su tamaño y su forma no cambian.",
+   "id": "mate4-oa18-12"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Al trasladar un triángulo hacia la derecha, ¿queda mirando para el mismo lado que antes de moverse?",
+   "opciones": [
+    "Sí, no gira ni se voltea",
+    "No, queda mirando al revés",
+    "No, queda girado 90 grados",
+    "No, queda más angosto"
+   ],
+   "correcta": 0,
+   "tip": "La traslación solo cambia la posición de la figura: no la gira ni la voltea, así que mira igual que antes.",
+   "id": "mate4-oa18-13"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Al reflejar una letra F respecto a una línea vertical, ¿se ve igual a la F original?",
+   "opciones": [
+    "No, se ve volteada, como en un espejo",
+    "Sí, queda exactamente igual",
+    "No, queda girada 180 grados",
+    "Sí, pero más grande"
+   ],
+   "correcta": 0,
+   "tip": "Reflejar voltea la figura respecto a la línea, así que la F reflejada mira hacia el lado contrario.",
+   "id": "mate4-oa18-14"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Al rotar una figura 180 grados sobre un punto, ¿en qué se diferencia de una traslación?",
+   "opciones": [
+    "Gira sobre el punto, no se desliza en línea recta",
+    "No cambia nada, es exactamente lo mismo",
+    "La traslación siempre gira más",
+    "La rotación cambia el tamaño y la traslación no"
+   ],
+   "correcta": 0,
+   "tip": "La rotación da vuelta alrededor de un punto fijo; la traslación desliza la figura en línea recta, sin girar.",
+   "id": "mate4-oa18-15"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Un carro avanza recto por el pasillo y luego gira para doblar en una esquina. ¿Qué dos movimientos hace?",
+   "opciones": [
+    "Primero una traslación y luego una rotación",
+    "Primero una reflexión y luego una traslación",
+    "Solo hace rotaciones todo el camino",
+    "Solo hace traslaciones todo el camino"
+   ],
+   "correcta": 0,
+   "tip": "Avanzar recto es una traslación; girar en la esquina, alrededor de una rueda, es una rotación.",
+   "id": "mate4-oa18-16"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "¿Cuál de estos movimientos NO cambia hacia dónde mira una figura, aunque sí cambie su posición?",
+   "opciones": [
+    "La traslación",
+    "La rotación",
+    "La reflexión",
+    "Ninguno de los tres"
+   ],
+   "correcta": 0,
+   "tip": "La traslación desliza la figura sin girarla ni voltearla, así que su orientación queda igual.",
+   "id": "mate4-oa18-17"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Una hoja se dobla por la mitad y el dibujo se calca al otro lado. ¿Qué relación hay entre las dos mitades?",
+   "opciones": [
+    "Son reflejo una de la otra, como en un espejo",
+    "Son exactamente iguales, sin ninguna diferencia de orientación",
+    "Una es más grande que la otra",
+    "No tienen ninguna relación"
+   ],
+   "correcta": 0,
+   "tip": "Calcar a través de un doblez produce una imagen volteada respecto a la original: son reflejos.",
+   "id": "mate4-oa18-18"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Un triángulo gira igual que las agujas de un reloj, sobre uno de sus vértices. ¿Qué movimiento es?",
+   "opciones": [
+    "Una rotación en sentido horario",
+    "Una traslación hacia la derecha",
+    "Una reflexión respecto al vértice",
+    "Una rotación en sentido antihorario"
+   ],
+   "correcta": 0,
+   "tip": "Girar alrededor de un punto en la misma dirección que las agujas del reloj es una rotación en sentido horario.",
+   "id": "mate4-oa18-19"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Un cuadrado gira alrededor de su centro, en dirección contraria a las agujas de un reloj. ¿Qué movimiento es?",
+   "opciones": [
+    "Una rotación en sentido antihorario",
+    "Una rotación en sentido horario",
+    "Una traslación hacia la izquierda",
+    "Una reflexión respecto al centro"
+   ],
+   "correcta": 0,
+   "tip": "Cuando el giro va en dirección contraria a las agujas del reloj, se llama rotación en sentido antihorario.",
+   "id": "mate4-oa18-20"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Un peón de ajedrez avanza dos casillas hacia adelante, en línea recta, sin girar. ¿Qué movimiento hace?",
+   "opciones": [
+    "Una traslación",
+    "Una rotación",
+    "Una reflexión",
+    "Una ampliación"
+   ],
+   "correcta": 0,
+   "tip": "Avanzar en línea recta sin girar ni voltearse es una traslación.",
+   "id": "mate4-oa18-21"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Una puerta gira alrededor de sus bisagras para abrirse. ¿Qué movimiento hace la puerta al abrirse?",
+   "opciones": [
+    "Una rotación",
+    "Una traslación",
+    "Una reflexión",
+    "No hace ningún movimiento"
+   ],
+   "correcta": 0,
+   "tip": "Las bisagras funcionan como el punto fijo alrededor del cual gira la puerta: es una rotación.",
+   "id": "mate4-oa18-22"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Diego refleja un triángulo azul cruzando una línea, sin moverlo de lugar ni girarlo. ¿Qué le pasa a su forma y tamaño?",
+   "opciones": [
+    "Se mantienen iguales, solo cambia de lado la orientación",
+    "El triángulo se hace más grande, porque el reflejo lo agranda",
+    "El triángulo se hace más chico, porque el reflejo lo achica",
+    "El triángulo cambia de forma y se convierte en un cuadrado"
+   ],
+   "correcta": 0,
+   "tip": "Reflejar es como poner un espejo: la figura queda del otro lado, invertida, pero con la misma forma y el mismo tamaño.",
+   "id": "mate4-oa18-23"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Matías desliza una figura hacia arriba y, al mismo tiempo, hacia la derecha. ¿Sigue siendo una traslación?",
+   "opciones": [
+    "Sí, la traslación puede combinar dos direcciones",
+    "No, eso ya es una rotación",
+    "No, eso ya es una reflexión",
+    "No, una traslación solo va hacia un lado"
+   ],
+   "correcta": 0,
+   "tip": "Una traslación puede moverse en cualquier dirección o combinación de direcciones, mientras no gire ni se voltee.",
+   "id": "mate4-oa18-24"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Benjamín refleja una figura y la refleja otra vez, respecto a la misma línea de simetría. ¿Qué obtiene?",
+   "opciones": [
+    "La figura vuelve a quedar en su posición original",
+    "La figura queda al revés dos veces seguidas",
+    "La figura queda girada 180 grados",
+    "La figura cambia de tamaño"
+   ],
+   "correcta": 0,
+   "tip": "Reflejar dos veces respecto a la misma línea deshace el volteo anterior: la figura vuelve a como estaba.",
+   "id": "mate4-oa18-25"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Ana dice que trasladar una figura y reflejarla dan siempre el mismo resultado. ¿Tiene razón?",
+   "opciones": [
+    "No, la traslación no voltea la figura y la reflexión sí",
+    "Sí, los dos movimientos voltean la figura igual",
+    "Sí, los dos movimientos cambian el tamaño igual",
+    "No, porque la reflexión no existe en el plano"
+   ],
+   "correcta": 0,
+   "tip": "La traslación mantiene la orientación de la figura; la reflexión la voltea como un espejo, así que son distintos.",
+   "id": "mate4-oa18-26"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "En un parque de diversiones, ¿cuál atracción tiene un movimiento de traslación y no de rotación?",
+   "opciones": [
+    "Una cinta transportadora que avanza en línea recta",
+    "Un carrusel de caballitos",
+    "Una rueda de la fortuna",
+    "Un trompo que gira"
+   ],
+   "correcta": 0,
+   "tip": "La cinta transportadora se mueve en línea recta, sin girar alrededor de un punto: es una traslación.",
+   "id": "mate4-oa18-27"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Javiera ve un triángulo y su copia, iguales, mirando a lados opuestos. ¿Qué movimiento los relaciona?",
+   "opciones": [
+    "Una reflexión",
+    "Una traslación",
+    "Una ampliación",
+    "Una reducción"
+   ],
+   "correcta": 0,
+   "tip": "Cuando dos figuras iguales miran hacia lados contrarios, una es el reflejo de la otra.",
+   "id": "mate4-oa18-28"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Fabián ve un triángulo y su copia, iguales y mirando igual, pero en lugares distintos. ¿Qué movimiento fue?",
+   "opciones": [
+    "Una traslación",
+    "Una reflexión",
+    "Una rotación de 90 grados",
+    "Un cambio de tamaño"
+   ],
+   "correcta": 0,
+   "tip": "Si la copia mira exactamente igual que el original y solo cambió de lugar, el movimiento fue una traslación.",
+   "id": "mate4-oa18-29"
+  },
+  {
+   "oa": "MA04 OA 18",
+   "pregunta": "Un trompo gira apoyado siempre en el mismo punto, sin desplazarse por el suelo. ¿Qué movimiento hace?",
+   "opciones": [
+    "Una rotación",
+    "Una traslación",
+    "Una reflexión",
+    "No se mueve de ninguna forma"
+   ],
+   "correcta": 0,
+   "tip": "Girar sobre un punto fijo, sin desplazarse, es exactamente una rotación.",
+   "id": "mate4-oa18-30"
+  }
+ ]
+}
