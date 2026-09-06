@@ -1,4 +1,5 @@
 {
+ "revisadas": 810,
  "preguntas": [
   {
    "oa": "MA04 OA 01",
@@ -11,7 +12,7 @@
    ],
    "correcta": 3,
    "tip": "Contar de 10 en 10 significa sumar 10 cada vez: 370 más 10 es 380.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-1"
   },
   {
@@ -25,7 +26,7 @@
    ],
    "correcta": 2,
    "tip": "Contar hacia atrás de 10 en 10 es restar 10 cada vez: 620 menos 10 es 610.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-2"
   },
   {
@@ -39,7 +40,7 @@
    ],
    "correcta": 3,
    "tip": "Contar de 100 en 100 suma 100 cada vez a la centena: 2.500 más 100 es 2.600.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-3"
   },
   {
@@ -53,7 +54,7 @@
    ],
    "correcta": 2,
    "tip": "Restar 100 cambia solo la centena: 4.600 menos 100 es 4.500.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-4"
   },
   {
@@ -67,7 +68,7 @@
    ],
    "correcta": 3,
    "tip": "Contar de 1.000 en 1.000 suma 1.000 a la unidad de mil: 5.000 más 1.000 es 6.000.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-5"
   },
   {
@@ -81,7 +82,7 @@
    ],
    "correcta": 3,
    "tip": "Restar 1.000 baja la unidad de mil en una: 6.000 menos 1.000 es 5.000.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-6"
   },
   {
@@ -95,7 +96,7 @@
    ],
    "correcta": 2,
    "tip": "Entre 4.530 y 4.550 hay 20 de diferencia: el número que falta es 4.530 más 10, o sea 4.540.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-7"
   },
   {
@@ -109,7 +110,7 @@
    ],
    "correcta": 2,
    "tip": "4.203 tiene 4 unidades de mil, 2 centenas, 0 decenas y 3 unidades: cuatro mil doscientos tres.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-8"
   },
   {
@@ -123,7 +124,7 @@
    ],
    "correcta": 0,
    "tip": "Seis mil setenta y cinco tiene 6 unidades de mil, 0 centenas, 7 decenas y 5 unidades: 6.075.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-9"
   },
   {
@@ -137,7 +138,7 @@
    ],
    "correcta": 2,
    "tip": "8.009 no tiene centenas ni decenas: se lee ocho mil nueve.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-10"
   },
   {
@@ -151,7 +152,7 @@
    ],
    "correcta": 3,
    "tip": "Nueve mil ochocientos tiene 9 unidades de mil, 8 centenas y ninguna decena ni unidad: 9.800.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-11"
   },
   {
@@ -165,7 +166,7 @@
    ],
    "correcta": 3,
    "tip": "Cada bloque de mil vale 1.000, cada centena 100, cada decena 10 y cada unidad 1: 3.254.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-12"
   },
   {
@@ -179,7 +180,7 @@
    ],
    "correcta": 2,
    "tip": "El dígito de las centenas en 5.132 es 1, así que se necesita 1 bloque de cien.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-13"
   },
   {
@@ -193,7 +194,7 @@
    ],
    "correcta": 3,
    "tip": "Los dos tienen las mismas unidades de mil y centenas; en las decenas, 9 es mayor que 8, así que 4.798 es mayor.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-14"
   },
   {
@@ -207,7 +208,7 @@
    ],
    "correcta": 0,
    "tip": "5.999 tiene 5 unidades de mil y 6.204 tiene 6, así que 5.999 es menor aunque sus otras cifras sean más grandes.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-15"
   },
   {
@@ -221,7 +222,7 @@
    ],
    "correcta": 1,
    "tip": "3.140 tiene 1 centena y los otros tienen 4; entre esos dos, 3.401 tiene menos decenas que 3.410.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-16"
   },
   {
@@ -235,7 +236,7 @@
    ],
    "correcta": 3,
    "tip": "7.500 tiene 5 centenas; 7.050 tiene 0 centenas y 5 decenas; 7.005 tiene 0 centenas y 0 decenas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-17"
   },
   {
@@ -249,7 +250,7 @@
    ],
    "correcta": 2,
    "tip": "El 4 está en el lugar de las centenas, así que su valor es 400, no solo 4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-18"
   },
   {
@@ -263,7 +264,7 @@
    ],
    "correcta": 3,
    "tip": "El 9 ocupa el lugar de las unidades de mil, así que su valor es 9.000.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-19"
   },
   {
@@ -277,7 +278,7 @@
    ],
    "correcta": 0,
    "tip": "El 1 está en el lugar de las decenas de mil, así que su valor es 10.000: todo el número.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-20"
   },
   {
@@ -291,7 +292,7 @@
    ],
    "correcta": 0,
    "tip": "En 3.567 el 5 va después de las unidades de mil: es el lugar de las centenas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-21"
   },
   {
@@ -305,7 +306,7 @@
    ],
    "correcta": 0,
    "tip": "4.000 aporta las unidades de mil, 300 las centenas, 20 las decenas y 6 las unidades: 4.326.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-22"
   },
   {
@@ -319,7 +320,7 @@
    ],
    "correcta": 3,
    "tip": "No hay centenas en esta suma, así que ese dígito es 0: 7.000 + 90 + 2 es 7.092.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-23"
   },
   {
@@ -333,7 +334,7 @@
    ],
    "correcta": 2,
    "tip": "Cada dígito vale según su posición: 5 mil, 8 centenas, 4 decenas y 7 unidades: 5.000 + 800 + 40 + 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-24"
   },
   {
@@ -347,7 +348,7 @@
    ],
    "correcta": 1,
    "tip": "El cero de las decenas no se salta: 2.406 se descompone en 2.000 + 400 + 6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-25"
   },
   {
@@ -361,7 +362,7 @@
    ],
    "correcta": 2,
    "tip": "Entre 500 y 700, contando de 100 en 100, el número que queda justo a la mitad es 600.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-26",
    "visual": {
     "tipo": "recta",
@@ -383,7 +384,7 @@
    ],
    "correcta": 3,
    "tip": "Entre 3.000 y 5.000 hay dos saltos de 1.000: el número que falta es 4.000.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-27",
    "visual": {
     "tipo": "recta",
@@ -405,7 +406,7 @@
    ],
    "correcta": 2,
    "tip": "Entre 4.700 y 4.900 hay dos saltos de 100: el número que falta en el medio es 4.800.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-28",
    "visual": {
     "tipo": "recta",
@@ -427,7 +428,7 @@
    ],
    "correcta": 2,
    "tip": "El cero en las centenas no se salta: el número queda 2.079, con un espacio vacío en ese lugar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-29"
   },
   {
@@ -441,7 +442,7 @@
    ],
    "correcta": 0,
    "tip": "4.930 tiene 4 mil y 9 centenas sueltas; contando todas juntas (1 mil son 10 centenas), son 40 + 9, o sea 49.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa01-30"
   },
   {
@@ -455,7 +456,7 @@
    ],
    "correcta": 1,
    "tip": "Contar de uno en uno hacia adelante desde 68 para sumar 4 es la estrategia de conteo hacia adelante.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-1"
   },
   {
@@ -469,7 +470,7 @@
    ],
    "correcta": 0,
    "tip": "Restar de uno en uno contando hacia atrás desde 53 es la estrategia de conteo hacia atrás.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-2"
   },
   {
@@ -483,7 +484,7 @@
    ],
    "correcta": 0,
    "tip": "Contar de uno en uno funciona bien con números pequeños, como 3; con sumas grandes conviene descomponer.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-3"
   },
   {
@@ -497,7 +498,7 @@
    ],
    "correcta": 2,
    "tip": "Contar de 7 en 7 seis veces hasta llegar a 42 es una forma de conteo aplicada a la multiplicación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-4"
   },
   {
@@ -511,7 +512,7 @@
    ],
    "correcta": 2,
    "tip": "Restar un número tan pequeño como 2 es rápido contando hacia atrás: 199, 198.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-5"
   },
   {
@@ -525,7 +526,7 @@
    ],
    "correcta": 3,
    "tip": "Doblar es sumar el número consigo mismo: 34 + 34 es 68.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-6"
   },
   {
@@ -539,7 +540,7 @@
    ],
    "correcta": 1,
    "tip": "Benjamín partió del doble de 8 y luego ajustó: apoyarse en un doble conocido es la estrategia de doblar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-7"
   },
   {
@@ -553,7 +554,7 @@
    ],
    "correcta": 0,
    "tip": "El doble de 125 es 125 + 125, que da 250.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-8"
   },
   {
@@ -567,7 +568,7 @@
    ],
    "correcta": 1,
    "tip": "El doble de un número es sumarlo consigo mismo: 46 + 46.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-9"
   },
   {
@@ -581,7 +582,7 @@
    ],
    "correcta": 3,
    "tip": "Dividir por 2 es repartir en dos partes iguales: 96 dividido en dos da 48 en cada parte.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-10"
   },
   {
@@ -595,7 +596,7 @@
    ],
    "correcta": 2,
    "tip": "La mitad deshace el doble: si el doble de 37 es 74, la mitad de 74 es 37.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-11"
   },
   {
@@ -609,7 +610,7 @@
    ],
    "correcta": 2,
    "tip": "La mitad de un número es dividirlo en dos partes iguales, no sumarle ni restarle 2.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-12"
   },
   {
@@ -623,7 +624,7 @@
    ],
    "correcta": 3,
    "tip": "Repartir 84 en 2 partes iguales es calcular su mitad: 84 dividido en 2 es 42.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-13"
   },
   {
@@ -637,7 +638,7 @@
    ],
    "correcta": 1,
    "tip": "Diego separó 25 en 20 y 5 para sumar por partes: eso es descomponer un número.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-14"
   },
   {
@@ -651,7 +652,7 @@
    ],
    "correcta": 1,
    "tip": "Separar 34 en 30 y 4 para restar por partes es la estrategia de descomposición.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-15"
   },
   {
@@ -665,7 +666,7 @@
    ],
    "correcta": 1,
    "tip": "Separar el 8 en 5 más 3 para multiplicar por partes y sumar los resultados es descomponer.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-16"
   },
   {
@@ -679,7 +680,7 @@
    ],
    "correcta": 3,
    "tip": "Descomponer 47 según su valor posicional es separarlo en 40 y 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-17"
   },
   {
@@ -693,7 +694,7 @@
    ],
    "correcta": 2,
    "tip": "Pensar 9 como 10 menos 1 y ajustar el resultado es también una forma de descomposición.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-18"
   },
   {
@@ -707,7 +708,7 @@
    ],
    "correcta": 1,
    "tip": "Descomponer cada número en centenas, decenas y unidades permite sumar por partes: 200+100, 30+40 y 4+5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-19"
   },
   {
@@ -721,7 +722,7 @@
    ],
    "correcta": 3,
    "tip": "Doblar 8 y luego doblar el resultado otra vez es el doble del doble, útil para multiplicar por 4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-20"
   },
   {
@@ -735,7 +736,7 @@
    ],
    "correcta": 3,
    "tip": "El doble de 6 es 12, y el doble de 12 es 24: 6 x 4 es 24.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-21"
   },
   {
@@ -749,7 +750,7 @@
    ],
    "correcta": 3,
    "tip": "La mitad de la mitad es la división que corresponde al doble del doble: primero se saca la mitad de 36.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-22"
   },
   {
@@ -763,7 +764,7 @@
    ],
    "correcta": 0,
    "tip": "La mitad de 18 es 9, así que aplicando la mitad de la mitad, 36 dividido en 4 es 9.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-23"
   },
   {
@@ -777,7 +778,7 @@
    ],
    "correcta": 0,
    "tip": "Son estrategias inversas: doblar dos veces multiplica por 4, y sacar la mitad dos veces divide por 4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-24"
   },
   {
@@ -791,7 +792,7 @@
    ],
    "correcta": 1,
    "tip": "La multiplicación y la división son inversas: si 6 x 7 es 42, entonces 42 dividido en 7 es 6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-25"
   },
   {
@@ -805,7 +806,7 @@
    ],
    "correcta": 0,
    "tip": "Como 8 x 9 es 72, la división inversa 72 dividido en 8 da 9.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-26"
   },
   {
@@ -819,7 +820,7 @@
    ],
    "correcta": 0,
    "tip": "Como 9 es uno menos que 10, a 10 x 6 se le resta un grupo de 6: 60 menos 6 es 54.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-27"
   },
   {
@@ -833,7 +834,7 @@
    ],
    "correcta": 3,
    "tip": "60 menos 6 es 54: ese es el resultado de 9 x 6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-28"
   },
   {
@@ -847,7 +848,7 @@
    ],
    "correcta": 3,
    "tip": "La división deshace la multiplicación: si 7 x 4 es 28, entonces 28 dividido en 4 es 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-29"
   },
   {
@@ -861,7 +862,7 @@
    ],
    "correcta": 1,
    "tip": "Para multiplicar por 4 conviene doblar dos veces: el doble de 5 es 10 y el doble de 10 es 20.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa02-30"
   },
   {
@@ -875,7 +876,7 @@
    ],
    "correcta": 3,
    "tip": "Sumando por columnas con las reservas correspondientes, 246 + 358 es 604.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-1"
   },
   {
@@ -889,7 +890,7 @@
    ],
    "correcta": 2,
    "tip": "Sumando unidades, decenas y centenas con las reservas, 573 + 289 es 862.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-2"
   },
   {
@@ -903,7 +904,7 @@
    ],
    "correcta": 2,
    "tip": "Sumando los tres números en orden, 125 + 240 + 315 es 680.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-3"
   },
   {
@@ -917,7 +918,7 @@
    ],
    "correcta": 0,
    "tip": "Sumando los tres montos, 208 + 176 + 96 es 480.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-4"
   },
   {
@@ -931,7 +932,7 @@
    ],
    "correcta": 1,
    "tip": "Sumando los tres números, 450 + 300 + 150 es 900.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-5"
   },
   {
@@ -945,7 +946,7 @@
    ],
    "correcta": 2,
    "tip": "Sumando los cuatro números en orden, 120 + 130 + 140 + 110 es 500.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-6"
   },
   {
@@ -959,7 +960,7 @@
    ],
    "correcta": 2,
    "tip": "Sumando los cuatro montos en orden, 85 + 90 + 75 + 100 es 350.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-7"
   },
   {
@@ -973,7 +974,7 @@
    ],
    "correcta": 3,
    "tip": "Sumando los cuatro números, 200 + 150 + 300 + 250 es 900.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-8"
   },
   {
@@ -987,7 +988,7 @@
    ],
    "correcta": 0,
    "tip": "Restando con las reservas correspondientes, 583 menos 247 es 336.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-9"
   },
   {
@@ -1001,7 +1002,7 @@
    ],
    "correcta": 1,
    "tip": "Restando 468 a 720 con las reservas necesarias, el resultado es 252.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-10"
   },
   {
@@ -1015,7 +1016,7 @@
    ],
    "correcta": 3,
    "tip": "Restando 379 a 905, el resultado es 526.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-11"
   },
   {
@@ -1029,7 +1030,7 @@
    ],
    "correcta": 2,
    "tip": "Restando 456 a 1.000, el resultado es 544.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-12"
   },
   {
@@ -1043,7 +1044,7 @@
    ],
    "correcta": 2,
    "tip": "Restando 199 a 634, el resultado es 435.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-13"
   },
   {
@@ -1057,7 +1058,7 @@
    ],
    "correcta": 1,
    "tip": "296 se redondea a 300 y 503 a 500: la estimación es 800, distinta del resultado exacto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-14"
   },
   {
@@ -1071,7 +1072,7 @@
    ],
    "correcta": 1,
    "tip": "812 se redondea a 800 y 395 a 400: la diferencia estimada es 400, distinta del resultado exacto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-15"
   },
   {
@@ -1085,7 +1086,7 @@
    ],
    "correcta": 3,
    "tip": "Sumando los redondeos, 150 + 230 es 380, muy cercano al resultado exacto de 381.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-16"
   },
   {
@@ -1099,7 +1100,7 @@
    ],
    "correcta": 3,
    "tip": "Sumando los alumnos de la mañana y de la tarde, 235 + 198 es 433.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-17"
   },
   {
@@ -1113,7 +1114,7 @@
    ],
    "correcta": 3,
    "tip": "Abril fue el doble de marzo: 360. Sumando 180 + 360 + 90, el total ahorrado es 630.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-18"
   },
   {
@@ -1127,7 +1128,7 @@
    ],
    "correcta": 0,
    "tip": "Sumando las cuatro bolsas, 45 + 38 + 52 + 60 es 195 manzanas en total.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-19"
   },
   {
@@ -1141,7 +1142,7 @@
    ],
    "correcta": 1,
    "tip": "Restando los cuadernos vendidos a los que tenía, 650 menos 275 es 375.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-20"
   },
   {
@@ -1155,7 +1156,7 @@
    ],
    "correcta": 1,
    "tip": "Restando los que quedaron a los que había, 645 menos 520 es 125 alumnos que se retiraron.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-21"
   },
   {
@@ -1169,7 +1170,7 @@
    ],
    "correcta": 0,
    "tip": "Restando las páginas leídas al total, 1.000 menos 840 es 160 páginas por leer.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-22"
   },
   {
@@ -1183,7 +1184,7 @@
    ],
    "correcta": 0,
    "tip": "Sumando por partes: 500 + 120 + 10 es 630, igual que sumar 356 + 274 directamente.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-23"
   },
   {
@@ -1197,7 +1198,7 @@
    ],
    "correcta": 2,
    "tip": "Sumando las diferencias por partes: 300 + 10 + 5 es 315, igual que restar 528 - 213 directamente.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-24"
   },
   {
@@ -1211,7 +1212,7 @@
    ],
    "correcta": 2,
    "tip": "Al sumar las unidades (8+5=13) y las decenas (6+7+1=14) se generan dos reservas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-25"
   },
   {
@@ -1225,7 +1226,7 @@
    ],
    "correcta": 2,
    "tip": "Como 4 es menor que 8, hay que pedir prestado ya en las unidades, la primera columna que se resuelve.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-26"
   },
   {
@@ -1239,7 +1240,7 @@
    ],
    "correcta": 1,
    "tip": "999 más 1 es 1.000, porque se completa a la vez la decena, la centena y la unidad de mil.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-27"
   },
   {
@@ -1253,7 +1254,7 @@
    ],
    "correcta": 3,
    "tip": "Restar un número a sí mismo siempre da 0: 500 menos 500 es 0.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-28"
   },
   {
@@ -1267,7 +1268,7 @@
    ],
    "correcta": 2,
    "tip": "347 se redondea a 300 y 256 a 300: la suma estimada es cerca de 600, muy lejos de 703, así que hay un error.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-29"
   },
   {
@@ -1281,7 +1282,7 @@
    ],
    "correcta": 1,
    "tip": "Sumando lo recibido y restando lo gastado: 320 + 150 es 470, y 470 menos 90 es 380.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa03-30"
   },
   {
@@ -1295,7 +1296,7 @@
    ],
    "correcta": 1,
    "tip": "Multiplicar cualquier número por 0 siempre da 0, porque no se forma ningún grupo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-1"
   },
   {
@@ -1309,7 +1310,7 @@
    ],
    "correcta": 3,
    "tip": "El orden no cambia el resultado: 0 por cualquier número también da 0.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-2"
   },
   {
@@ -1323,7 +1324,7 @@
    ],
    "correcta": 2,
    "tip": "Multiplicar por 0 significa tomar 0 grupos de ese número, así que el resultado siempre es 0, no el número original.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-3"
   },
   {
@@ -1337,7 +1338,7 @@
    ],
    "correcta": 0,
    "tip": "Solo la multiplicación por 0 da 0. Las otras conservan el número o son una suma.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-4"
   },
   {
@@ -1351,7 +1352,7 @@
    ],
    "correcta": 0,
    "tip": "Si cada caja tiene 0 lápices, da lo mismo cuántas cajas haya: 6 × 0 = 0.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-5"
   },
   {
@@ -1365,7 +1366,7 @@
    ],
    "correcta": 1,
    "tip": "Para que un producto sea 0, uno de los factores tiene que ser 0.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-6"
   },
   {
@@ -1379,7 +1380,7 @@
    ],
    "correcta": 3,
    "tip": "Cuando un factor es 0, el producto siempre es 0: esa es la propiedad del 0 en la multiplicación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-7"
   },
   {
@@ -1393,7 +1394,7 @@
    ],
    "correcta": 3,
    "tip": "De las cuatro, solo la que tiene un factor 0 da como resultado 0.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-8"
   },
   {
@@ -1407,7 +1408,7 @@
    ],
    "correcta": 2,
    "tip": "Multiplicar por 0 siempre da 0, que es menor que cualquier resultado de multiplicar por 1.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-9"
   },
   {
@@ -1421,7 +1422,7 @@
    ],
    "correcta": 3,
    "tip": "No importa cuán grande sea el número: multiplicado por 0 siempre da 0.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-10"
   },
   {
@@ -1435,7 +1436,7 @@
    ],
    "correcta": 2,
    "tip": "Multiplicar cualquier número por 1 no lo cambia: el resultado es el mismo número.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-11"
   },
   {
@@ -1449,7 +1450,7 @@
    ],
    "correcta": 1,
    "tip": "El orden no cambia el resultado: 1 por cualquier número da ese mismo número.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-12"
   },
   {
@@ -1463,7 +1464,7 @@
    ],
    "correcta": 1,
    "tip": "Multiplicar por 1 significa tomar un solo grupo del número completo, así que el resultado queda igual.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-13"
   },
   {
@@ -1477,7 +1478,7 @@
    ],
    "correcta": 1,
    "tip": "Multiplicar por 1 deja el número igual: 640 × 1 = 640. Las otras usan 0 o números distintos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-14"
   },
   {
@@ -1491,7 +1492,7 @@
    ],
    "correcta": 3,
    "tip": "Si hay 1 caja con 45 manzanas, el total es 45: 1 × 45 = 45.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-15"
   },
   {
@@ -1505,7 +1506,7 @@
    ],
    "correcta": 1,
    "tip": "Multiplicar un número por 1 lo deja exactamente igual.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-16"
   },
   {
@@ -1519,7 +1520,7 @@
    ],
    "correcta": 2,
    "tip": "Cuando un factor es 1, el producto es igual al otro factor: esa es la propiedad del 1 en la multiplicación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-17"
   },
   {
@@ -1533,7 +1534,7 @@
    ],
    "correcta": 1,
    "tip": "Solo multiplicar por 1 mantiene el número igual a sí mismo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-18"
   },
   {
@@ -1547,7 +1548,7 @@
    ],
    "correcta": 3,
    "tip": "Multiplicar por 1 conserva el número completo. Como 685 es el mayor de los números, 685 × 1 da el resultado mayor.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-19"
   },
   {
@@ -1561,7 +1562,7 @@
    ],
    "correcta": 2,
    "tip": "Multiplicar cualquier número por 1 no lo cambia, sin importar cuántos dígitos tenga.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-20"
   },
   {
@@ -1575,7 +1576,7 @@
    ],
    "correcta": 2,
    "tip": "Dividir un número por 1 no lo cambia: el resultado es el mismo número.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-21"
   },
   {
@@ -1589,7 +1590,7 @@
    ],
    "correcta": 0,
    "tip": "Cualquier número dividido por 1 da el mismo número, sin importar cuántos dígitos tenga.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-22"
   },
   {
@@ -1603,7 +1604,7 @@
    ],
    "correcta": 1,
    "tip": "Dividir por 1 significa repartir en 1 solo grupo, así que ese grupo se queda con todo: 58.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-23"
   },
   {
@@ -1617,7 +1618,7 @@
    ],
    "correcta": 3,
    "tip": "Dividir 92 por 1 deja el número igual: 92.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-24"
   },
   {
@@ -1631,7 +1632,7 @@
    ],
    "correcta": 3,
    "tip": "Si todo se reparte en 1 solo grupo, ese grupo recibe el total completo: 84.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-25"
   },
   {
@@ -1645,7 +1646,7 @@
    ],
    "correcta": 2,
    "tip": "Dividir un número por 1 lo deja exactamente igual.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-26"
   },
   {
@@ -1659,7 +1660,7 @@
    ],
    "correcta": 1,
    "tip": "Cuando el divisor es 1, el cociente es igual al dividendo: esa es la propiedad del 1 en la división.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-27"
   },
   {
@@ -1673,7 +1674,7 @@
    ],
    "correcta": 2,
    "tip": "Dividir por 1 deja el número igual: 156 ÷ 1 = 156. Las otras operaciones no dan ese resultado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-28"
   },
   {
@@ -1687,7 +1688,7 @@
    ],
    "correcta": 3,
    "tip": "Dividir por 1 conserva el número completo. Como 940 es el número más grande, 940 ÷ 1 da el resultado mayor.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-29"
   },
   {
@@ -1701,7 +1702,7 @@
    ],
    "correcta": 2,
    "tip": "Dividir cualquier número por 1 no lo cambia, sin importar cuántos dígitos tenga.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa04-30"
   },
   {
@@ -1715,7 +1716,7 @@
    ],
    "correcta": 1,
    "tip": "Se multiplica 3 por cada parte de 234 según su valor posicional y se suman los resultados, respetando las reservas. 234 × 3 = 702.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-1"
   },
   {
@@ -1729,7 +1730,7 @@
    ],
    "correcta": 0,
    "tip": "Se multiplica 2 por cada parte de 456 según su valor posicional y se suman los resultados, respetando las reservas. 456 × 2 = 912.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-2"
   },
   {
@@ -1743,7 +1744,7 @@
    ],
    "correcta": 1,
    "tip": "Se multiplica 4 por cada parte de 178 según su valor posicional y se suman los resultados, respetando las reservas. 178 × 4 = 712.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-3"
   },
   {
@@ -1757,7 +1758,7 @@
    ],
    "correcta": 2,
    "tip": "Se multiplica 3 por cada parte de 325 según su valor posicional y se suman los resultados, respetando las reservas. 325 × 3 = 975.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-4"
   },
   {
@@ -1771,7 +1772,7 @@
    ],
    "correcta": 2,
    "tip": "Se multiplica 4 por cada parte de 612 según su valor posicional y se suman los resultados, respetando las reservas. 612 × 4 = 2.448.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-5"
   },
   {
@@ -1785,7 +1786,7 @@
    ],
    "correcta": 2,
    "tip": "Se multiplica 6 por cada parte de 143 según su valor posicional y se suman los resultados, respetando las reservas. 143 × 6 = 858.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-6"
   },
   {
@@ -1799,7 +1800,7 @@
    ],
    "correcta": 1,
    "tip": "Se multiplica 3 por cada parte de 287 según su valor posicional y se suman los resultados, respetando las reservas. 287 × 3 = 861.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-7"
   },
   {
@@ -1813,7 +1814,7 @@
    ],
    "correcta": 2,
    "tip": "Se multiplica 2 por cada parte de 519 según su valor posicional y se suman los resultados, respetando las reservas. 519 × 2 = 1.038.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-8"
   },
   {
@@ -1827,7 +1828,7 @@
    ],
    "correcta": 0,
    "tip": "Se multiplica 5 por cada parte de 364 según su valor posicional y se suman los resultados, respetando las reservas. 364 × 5 = 1.820.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-9"
   },
   {
@@ -1841,7 +1842,7 @@
    ],
    "correcta": 3,
    "tip": "Se multiplica 7 por cada parte de 208 según su valor posicional y se suman los resultados, respetando las reservas. 208 × 7 = 1.456.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-10"
   },
   {
@@ -1855,7 +1856,7 @@
    ],
    "correcta": 0,
    "tip": "Al redondear 198 a 200 y multiplicar por 3, la estimación es 600. El valor exacto (594) es otra cosa: aquí se pregunta por la estimación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-11"
   },
   {
@@ -1869,7 +1870,7 @@
    ],
    "correcta": 3,
    "tip": "Al redondear 298 a 300 y multiplicar por 4, la estimación es 1.200. El valor exacto (1.192) es otra cosa: aquí se pregunta por la estimación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-12"
   },
   {
@@ -1883,7 +1884,7 @@
    ],
    "correcta": 0,
    "tip": "Al redondear 402 a 400 y multiplicar por 5, la estimación es 2.000. El valor exacto (2.010) es otra cosa: aquí se pregunta por la estimación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-13"
   },
   {
@@ -1897,7 +1898,7 @@
    ],
    "correcta": 3,
    "tip": "Al redondear 596 a 600 y multiplicar por 2, la estimación es 1.200. El valor exacto (1.192) es otra cosa: aquí se pregunta por la estimación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-14"
   },
   {
@@ -1911,7 +1912,7 @@
    ],
    "correcta": 0,
    "tip": "Al redondear 295 a 300 y multiplicar por 6, la estimación es 1.800. El valor exacto (1.770) es otra cosa: aquí se pregunta por la estimación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-15"
   },
   {
@@ -1925,7 +1926,7 @@
    ],
    "correcta": 1,
    "tip": "Separar 234 en 200 + 30 + 4 y multiplicar cada parte por 3 para después sumar es aplicar la propiedad distributiva.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-16"
   },
   {
@@ -1939,7 +1940,7 @@
    ],
    "correcta": 1,
    "tip": "Separar 456 en 400 + 50 + 6 y multiplicar cada parte por 2 para después sumar es aplicar la propiedad distributiva.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-17"
   },
   {
@@ -1953,7 +1954,7 @@
    ],
    "correcta": 2,
    "tip": "Separar 127 en 100 + 20 + 7 y multiplicar cada parte por 4 para después sumar es aplicar la propiedad distributiva.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-18"
   },
   {
@@ -1967,7 +1968,7 @@
    ],
    "correcta": 3,
    "tip": "Separar 318 en 300 + 10 + 8 y multiplicar cada parte por 3 para después sumar es aplicar la propiedad distributiva.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-19"
   },
   {
@@ -1981,7 +1982,7 @@
    ],
    "correcta": 1,
    "tip": "Separar 245 en 200 + 40 + 5 y multiplicar cada parte por 5 para después sumar es aplicar la propiedad distributiva.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-20"
   },
   {
@@ -1995,7 +1996,7 @@
    ],
    "correcta": 0,
    "tip": "Separar 163 en 100 + 60 + 3 y multiplicar cada parte por 6 para después sumar es aplicar la propiedad distributiva.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-21"
   },
   {
@@ -2009,7 +2010,7 @@
    ],
    "correcta": 3,
    "tip": "Martina se apoyó en lo que ya sabe de la tabla del 3 para resolver cada parte del número.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-22"
   },
   {
@@ -2023,7 +2024,7 @@
    ],
    "correcta": 0,
    "tip": "Multiplicar en columna, dígito por dígito y anotando las reservas, es aplicar el algoritmo de la multiplicación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-23"
   },
   {
@@ -2037,7 +2038,7 @@
    ],
    "correcta": 0,
    "tip": "Sumar el mismo número varias veces es una estrategia personal para multiplicar, sin usar el algoritmo en columna.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-24"
   },
   {
@@ -2051,7 +2052,7 @@
    ],
    "correcta": 2,
    "tip": "Conocer 4 × 6 = 24 de memoria (una tabla de multiplicar) ayuda a resolver partes de una multiplicación más grande.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-25"
   },
   {
@@ -2065,7 +2066,7 @@
    ],
    "correcta": 1,
    "tip": "Para saber a qué número se acerca sin calcular exacto, conviene redondear y estimar: 4 × 300 = 1.200.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-26"
   },
   {
@@ -2079,7 +2080,7 @@
    ],
    "correcta": 1,
    "tip": "Se multiplica lo que hay en una caja por el número de cajas: 125 × 4 = 500.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-27"
   },
   {
@@ -2093,7 +2094,7 @@
    ],
    "correcta": 1,
    "tip": "Se multiplica la cantidad de asientos por el número de buses: 45 × 3 = 135.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-28"
   },
   {
@@ -2107,7 +2108,7 @@
    ],
    "correcta": 0,
    "tip": "Se multiplica lo que lee en una semana por el número de semanas: 216 × 4 = 864.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-29"
   },
   {
@@ -2121,7 +2122,7 @@
    ],
    "correcta": 0,
    "tip": "Se multiplica el precio de una entrada por la cantidad de entradas: 350 × 6 = 2.100.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa05-30"
   },
   {
@@ -2135,7 +2136,7 @@
    ],
    "correcta": 0,
    "tip": "Se busca cuántas veces cabe 4 en 84: 4 × 21 = 84, así que 84 ÷ 4 = 21.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-1"
   },
   {
@@ -2149,7 +2150,7 @@
    ],
    "correcta": 1,
    "tip": "Se busca cuántas veces cabe 8 en 72: 8 × 9 = 72, así que 72 ÷ 8 = 9.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-2"
   },
   {
@@ -2163,7 +2164,7 @@
    ],
    "correcta": 0,
    "tip": "Se busca cuántas veces cabe 6 en 96: 6 × 16 = 96, así que 96 ÷ 6 = 16.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-3"
   },
   {
@@ -2177,7 +2178,7 @@
    ],
    "correcta": 3,
    "tip": "Se busca cuántas veces cabe 5 en 65: 5 × 13 = 65, así que 65 ÷ 5 = 13.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-4"
   },
   {
@@ -2191,7 +2192,7 @@
    ],
    "correcta": 2,
    "tip": "Se busca cuántas veces cabe 9 en 54: 9 × 6 = 54, así que 54 ÷ 9 = 6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-5"
   },
   {
@@ -2205,7 +2206,7 @@
    ],
    "correcta": 3,
    "tip": "Se busca cuántas veces cabe 7 en 91: 7 × 13 = 91, así que 91 ÷ 7 = 13.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-6"
   },
   {
@@ -2219,7 +2220,7 @@
    ],
    "correcta": 1,
    "tip": "Se busca cuántas veces cabe 3 en 48: 3 × 16 = 48, así que 48 ÷ 3 = 16.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-7"
   },
   {
@@ -2233,7 +2234,7 @@
    ],
    "correcta": 1,
    "tip": "Se busca cuántas veces cabe 4 en 76: 4 × 19 = 76, así que 76 ÷ 4 = 19.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-8"
   },
   {
@@ -2247,7 +2248,7 @@
    ],
    "correcta": 0,
    "tip": "Se busca cuántas veces cabe 5 en 85: 5 × 17 = 85, así que 85 ÷ 5 = 17.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-9"
   },
   {
@@ -2261,7 +2262,7 @@
    ],
    "correcta": 2,
    "tip": "Se busca cuántas veces cabe 3 en 78: 3 × 26 = 78, así que 78 ÷ 3 = 26.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-10"
   },
   {
@@ -2275,7 +2276,7 @@
    ],
    "correcta": 3,
    "tip": "Al redondear 79 a 80 (que sí se reparte exacto en 4), la estimación del cociente es 80 ÷ 4 = 20.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-11"
   },
   {
@@ -2289,7 +2290,7 @@
    ],
    "correcta": 0,
    "tip": "Al redondear 58 a 60 (que sí se reparte exacto en 3), la estimación del cociente es 60 ÷ 3 = 20.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-12"
   },
   {
@@ -2303,7 +2304,7 @@
    ],
    "correcta": 3,
    "tip": "Al redondear 37 a 36 (que sí se reparte exacto en 4), la estimación del cociente es 36 ÷ 4 = 9.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-13"
   },
   {
@@ -2317,7 +2318,7 @@
    ],
    "correcta": 3,
    "tip": "Al redondear 89 a 90 (que sí se reparte exacto en 9), la estimación del cociente es 90 ÷ 9 = 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-14"
   },
   {
@@ -2331,7 +2332,7 @@
    ],
    "correcta": 0,
    "tip": "Al redondear 41 a 40 (que sí se reparte exacto en 5), la estimación del cociente es 40 ÷ 5 = 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-15"
   },
   {
@@ -2345,7 +2346,7 @@
    ],
    "correcta": 0,
    "tip": "La multiplicación y la división están relacionadas: si 8 × 9 = 72, entonces 72 ÷ 8 = 9.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-16"
   },
   {
@@ -2359,7 +2360,7 @@
    ],
    "correcta": 2,
    "tip": "La multiplicación y la división están relacionadas: si 6 × 9 = 54, entonces 54 ÷ 6 = 9.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-17"
   },
   {
@@ -2373,7 +2374,7 @@
    ],
    "correcta": 1,
    "tip": "La multiplicación y la división están relacionadas: si 6 × 8 = 48, entonces 48 ÷ 6 = 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-18"
   },
   {
@@ -2387,7 +2388,7 @@
    ],
    "correcta": 0,
    "tip": "La multiplicación y la división están relacionadas: si 7 × 9 = 63, entonces 63 ÷ 7 = 9.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-19"
   },
   {
@@ -2401,7 +2402,7 @@
    ],
    "correcta": 0,
    "tip": "La multiplicación y la división están relacionadas: si 7 × 8 = 56, entonces 56 ÷ 7 = 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-20"
   },
   {
@@ -2415,7 +2416,7 @@
    ],
    "correcta": 3,
    "tip": "La multiplicación y la división están relacionadas: si 9 × 5 = 45, entonces 45 ÷ 9 = 5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-21"
   },
   {
@@ -2429,7 +2430,7 @@
    ],
    "correcta": 0,
    "tip": "Sumando los dos cocientes parciales se obtiene el total: 20 + 1 = 21.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-22"
   },
   {
@@ -2443,7 +2444,7 @@
    ],
    "correcta": 1,
    "tip": "Sumando los dos cocientes parciales se obtiene el total: 10 + 6 = 16.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-23"
   },
   {
@@ -2457,7 +2458,7 @@
    ],
    "correcta": 2,
    "tip": "Sumando los dos cocientes parciales se obtiene el total: 10 + 8 = 18.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-24"
   },
   {
@@ -2471,7 +2472,7 @@
    ],
    "correcta": 1,
    "tip": "Sumando los dos cocientes parciales se obtiene el total: 10 + 3 = 13.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-25"
   },
   {
@@ -2485,7 +2486,7 @@
    ],
    "correcta": 2,
    "tip": "Sumando los dos cocientes parciales se obtiene el total: 10 + 3 = 13.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-26"
   },
   {
@@ -2499,7 +2500,7 @@
    ],
    "correcta": 0,
    "tip": "Se reparte el total entre la cantidad de amigos: 72 ÷ 8 = 9.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-27"
   },
   {
@@ -2513,7 +2514,7 @@
    ],
    "correcta": 2,
    "tip": "Se busca cuántas veces cabe 6 en 54: 54 ÷ 6 = 9.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-28"
   },
   {
@@ -2527,7 +2528,7 @@
    ],
    "correcta": 1,
    "tip": "Se busca cuántas veces cabe 9 en 63: 63 ÷ 9 = 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-29"
   },
   {
@@ -2541,7 +2542,7 @@
    ],
    "correcta": 1,
    "tip": "Se busca cuántas veces cabe 4 en 32: 32 ÷ 4 = 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa06-30"
   },
   {
@@ -2555,7 +2556,7 @@
    ],
    "correcta": 0,
    "tip": "Se suman los dos precios: 150 + 100 = 250 pesos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-1"
   },
   {
@@ -2569,7 +2570,7 @@
    ],
    "correcta": 1,
    "tip": "El total es la suma de los dos precios: 500 + 150 = 650 pesos, no se resta ni se deja uno afuera.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-2"
   },
   {
@@ -2583,7 +2584,7 @@
    ],
    "correcta": 2,
    "tip": "Para saber el gasto total se suman los dos precios: 700 + 500 = 1.200 pesos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-3"
   },
   {
@@ -2597,7 +2598,7 @@
    ],
    "correcta": 1,
    "tip": "1.200 + 650 = 1.850 pesos. Conviene sumar primero las centenas y luego las decenas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-4"
   },
   {
@@ -2611,7 +2612,7 @@
    ],
    "correcta": 0,
    "tip": "Se suman los tres precios: 300 + 150 + 400 = 850 pesos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-5"
   },
   {
@@ -2625,7 +2626,7 @@
    ],
    "correcta": 1,
    "tip": "2.000 + 800 = 2.800 pesos: se suma el valor entero de cada cosa que compró.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-6"
   },
   {
@@ -2639,7 +2640,7 @@
    ],
    "correcta": 3,
    "tip": "De menor a mayor precio: goma (100), lápiz (150), cuaderno (500) y estuche (1.200).",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-7"
   },
   {
@@ -2653,7 +2654,7 @@
    ],
    "correcta": 3,
    "tip": "El vuelto es lo que sobra al restar: 500 − 350 = 150 pesos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-8"
   },
   {
@@ -2667,7 +2668,7 @@
    ],
    "correcta": 1,
    "tip": "Para el vuelto se resta lo que pagó menos el precio: 1.000 − 650 = 350 pesos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-9"
   },
   {
@@ -2681,7 +2682,7 @@
    ],
    "correcta": 3,
    "tip": "1.200 se resta de los 2.000 que pagó: 2.000 − 1.200 = 800 pesos de vuelto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-10"
   },
   {
@@ -2695,7 +2696,7 @@
    ],
    "correcta": 2,
    "tip": "El vuelto se calcula restando: 5.000 − 3.800 = 1.200 pesos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-11"
   },
   {
@@ -2709,7 +2710,7 @@
    ],
    "correcta": 0,
    "tip": "10.000 − 4.300 = 5.700 pesos de vuelto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-12"
   },
   {
@@ -2723,7 +2724,7 @@
    ],
    "correcta": 0,
    "tip": "1.000 − 890 = 110 pesos. Conviene pensar cuánto falta para llegar a 900 y luego a 1.000.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-13"
   },
   {
@@ -2737,7 +2738,7 @@
    ],
    "correcta": 3,
    "tip": "Primero se junta lo que pagó: 500 + 500 = 1.000. Después se resta el precio: 1.000 − 750 = 250 pesos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-14"
   },
   {
@@ -2751,7 +2752,7 @@
    ],
    "correcta": 3,
    "tip": "950 − 800 = 150. Como el cuaderno cuesta más de lo que tiene, no le alcanza y le faltan esos 150 pesos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-15"
   },
   {
@@ -2765,7 +2766,7 @@
    ],
    "correcta": 3,
    "tip": "1.500 − 1.200 = 300. Como tiene más de lo que cuesta la colación, le alcanza y le sobran 300 pesos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-16"
   },
   {
@@ -2779,7 +2780,7 @@
    ],
    "correcta": 3,
    "tip": "2.000 es exactamente lo que tiene, así que le alcanza justo y no le sobra ni le falta nada.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-17"
   },
   {
@@ -2793,7 +2794,7 @@
    ],
    "correcta": 3,
    "tip": "Las dos entradas cuestan 1.500 + 1.500 = 3.000 pesos. Como Matías tiene 2.800, le faltan 200 pesos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-18"
   },
   {
@@ -2807,7 +2808,7 @@
    ],
    "correcta": 2,
    "tip": "5.000 − 4.700 = 300 pesos. Como tiene más de lo que cuesta el juego, le sobran esos 300 pesos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-19"
   },
   {
@@ -2821,7 +2822,7 @@
    ],
    "correcta": 3,
    "tip": "El jugo y la galleta juntos cuestan 500 + 450 = 950 pesos. Como tiene 900, le faltan 50 pesos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-20"
   },
   {
@@ -2835,7 +2836,7 @@
    ],
    "correcta": 0,
    "tip": "Se multiplica el precio por la cantidad: 150 x 3 = 450 pesos, en vez de sumar el precio con el número de lápices.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-21"
   },
   {
@@ -2849,7 +2850,7 @@
    ],
    "correcta": 2,
    "tip": "500 x 4 = 2.000 pesos: se multiplica el precio de uno por la cantidad de cuadernos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-22"
   },
   {
@@ -2863,7 +2864,7 @@
    ],
    "correcta": 1,
    "tip": "2.000 x 5 = 10.000 pesos, el precio de una entrada multiplicado por la cantidad de amigos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-23"
   },
   {
@@ -2877,7 +2878,7 @@
    ],
    "correcta": 3,
    "tip": "Como paga el mismo precio dos veces, se multiplica: 350 x 2 = 700 pesos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-24"
   },
   {
@@ -2891,7 +2892,7 @@
    ],
    "correcta": 1,
    "tip": "200 x 6 = 1.200 pesos. Sumar 200 seis veces da el mismo resultado que multiplicar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-25"
   },
   {
@@ -2905,7 +2906,7 @@
    ],
    "correcta": 3,
    "tip": "Para saber cuánto más caro es algo, se resta: 5.600 − 1.800 = 3.800 pesos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-26"
   },
   {
@@ -2919,7 +2920,7 @@
    ],
    "correcta": 3,
    "tip": "Se resta lo que le falta: 4.000 − 2.300 = 1.700 pesos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-27"
   },
   {
@@ -2933,7 +2934,7 @@
    ],
    "correcta": 3,
    "tip": "900 − 500 = 400 pesos: esa es la diferencia entre los dos precios.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-28"
   },
   {
@@ -2947,7 +2948,7 @@
    ],
    "correcta": 0,
    "tip": "8.200 − 6.500 = 1.700 pesos es lo que todavía necesita ahorrar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-29"
   },
   {
@@ -2961,7 +2962,7 @@
    ],
    "correcta": 2,
    "tip": "2.500 − 1.200 = 1.300 pesos de diferencia entre las dos entradas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa07-30"
   },
   {
@@ -2975,7 +2976,7 @@
    ],
    "correcta": 3,
    "tip": "Comió 3 de los 8 pedazos totales, así que la fracción es 3/8: el denominador es el total de partes y el numerador lo que se comió.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-1"
   },
   {
@@ -2989,7 +2990,7 @@
    ],
    "correcta": 3,
    "tip": "12 de los 30 estudiantes usan lentes, así que la fracción es 12/30: parte sobre el grupo completo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-2"
   },
   {
@@ -3003,7 +3004,7 @@
    ],
    "correcta": 1,
    "tip": "Cada parte vale 1/4, así que el segundo punto está a dos saltos del 0: dos veces 1/4 es 2/4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-3"
   },
   {
@@ -3017,7 +3018,7 @@
    ],
    "correcta": 2,
    "tip": "Cuando el numerador es el mismo, gana la fracción con menos partes: si un todo se corta en solo 4 trozos, cada trozo es más grande que si se corta en 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-4"
   },
   {
@@ -3031,7 +3032,7 @@
    ],
    "correcta": 0,
    "tip": "6/10 se puede simplificar dividiendo el numerador y el denominador por 2, lo que da 3/5: representan la misma parte pintada.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-5"
   },
   {
@@ -3045,7 +3046,7 @@
    ],
    "correcta": 1,
    "tip": "Con el mismo numerador, entre más partes tenga el todo, más chica es cada parte: por eso 1/5 es la menor y 1/2 la mayor.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-6"
   },
   {
@@ -3059,7 +3060,7 @@
    ],
    "correcta": 3,
    "tip": "25 de los 100 chocolates son de menta, así que la fracción es 25/100: parte sobre el total del grupo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-7"
   },
   {
@@ -3073,7 +3074,7 @@
    ],
    "correcta": 0,
    "tip": "3/6 significa 3 partes usadas de un total de 6, y eso es justo lo que pasa con los 3 huevos usados de los 6 del cartón.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-8"
   },
   {
@@ -3087,7 +3088,7 @@
    ],
    "correcta": 2,
    "tip": "Si la recta entre 0 y 1 se dividió en 3 partes iguales, el primer punto después del 0 es 1/3, que es el que queda al medio de las tres marcas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-9"
   },
   {
@@ -3101,7 +3102,7 @@
    ],
    "correcta": 2,
    "tip": "Ganó 8 de los 12 partidos jugados, así que la fracción es 8/12: la parte que ganó sobre el total jugado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-10"
   },
   {
@@ -3115,7 +3116,7 @@
    ],
    "correcta": 0,
    "tip": "4/8 se simplifica dividiendo por 4 el numerador y el denominador, lo que da 1/2: son la misma cantidad escrita distinto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-11"
   },
   {
@@ -3129,7 +3130,7 @@
    ],
    "correcta": 0,
    "tip": "Si 5 de 12 lápices son rojos, los que no son rojos son 12 menos 5, o sea 7, así que la fracción es 7/12.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-12"
   },
   {
@@ -3143,7 +3144,7 @@
    ],
    "correcta": 3,
    "tip": "Con el mismo numerador, entre más partes tenga el todo, más chica es cada parte: por eso 2/5 es menor que 2/3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-13"
   },
   {
@@ -3157,7 +3158,7 @@
    ],
    "correcta": 3,
    "tip": "Si 6 de los 8 puestos están ocupados, quedan libres 8 menos 6, es decir 2, así que la fracción libre es 2/8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-14"
   },
   {
@@ -3171,7 +3172,7 @@
    ],
    "correcta": 1,
    "tip": "Con el mismo denominador, gana el numerador más grande: por eso 3/4 es la mayor y 1/4 la menor.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-15"
   },
   {
@@ -3185,7 +3186,7 @@
    ],
    "correcta": 0,
    "tip": "Guardó 40 de las 100 estampillas en el primer álbum, así que la fracción es 40/100.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-16"
   },
   {
@@ -3199,7 +3200,7 @@
    ],
    "correcta": 2,
    "tip": "2/6 se simplifica dividiendo por 2 el numerador y el denominador, lo que da 1/3: representan la misma cantidad.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-17"
   },
   {
@@ -3213,7 +3214,7 @@
    ],
    "correcta": 2,
    "tip": "Si 7 de los 10 pidieron palomitas, los que no pidieron son 10 menos 7, o sea 3, así que la fracción es 3/10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-18"
   },
   {
@@ -3227,7 +3228,7 @@
    ],
    "correcta": 0,
    "tip": "El punto justo antes de llegar al 1 es el cuarto salto de cinco, así que corresponde a la fracción 4/5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-19"
   },
   {
@@ -3241,7 +3242,7 @@
    ],
    "correcta": 0,
    "tip": "Usó 9 de los 12 metros totales, así que la fracción es 9/12: parte usada sobre el largo completo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-20"
   },
   {
@@ -3255,7 +3256,7 @@
    ],
    "correcta": 0,
    "tip": "Con el mismo denominador, entre más partes se tomen del todo, mayor es la fracción: 5/6 toma más partes que 1/6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-21"
   },
   {
@@ -3269,7 +3270,7 @@
    ],
    "correcta": 0,
    "tip": "4 de las 10 flores son rosas, así que la fracción es 4/10: parte sobre el total de flores.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-22"
   },
   {
@@ -3283,7 +3284,7 @@
    ],
    "correcta": 0,
    "tip": "Perdió 3 de las 8 canicas que tenía en total, así que la fracción correcta es 3/8, comparando lo perdido con el total original.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-23"
   },
   {
@@ -3297,7 +3298,7 @@
    ],
    "correcta": 2,
    "tip": "Si cada salto vale 1/10, moverse 3 saltos desde el 0 corresponde a la fracción 3/10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-24"
   },
   {
@@ -3311,7 +3312,7 @@
    ],
    "correcta": 2,
    "tip": "3/12 se simplifica dividiendo por 3 el numerador y el denominador, lo que da 1/4: son la misma cantidad.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-25"
   },
   {
@@ -3325,7 +3326,7 @@
    ],
    "correcta": 2,
    "tip": "Si el helado se reparte en partes iguales entre 8 personas, cada una recibe 1/8 del total.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-26"
   },
   {
@@ -3339,7 +3340,7 @@
    ],
    "correcta": 0,
    "tip": "Cuando el numerador es igual, la fracción con más partes en el todo es la MENOR, porque cada parte queda más chica: 3/8 es menor que 3/5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-27"
   },
   {
@@ -3353,7 +3354,7 @@
    ],
    "correcta": 3,
    "tip": "Si 2 de los 6 huevos están rotos, los buenos son 6 menos 2, o sea 4, así que la fracción en buen estado es 4/6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-28"
   },
   {
@@ -3367,7 +3368,7 @@
    ],
    "correcta": 1,
    "tip": "Con el mismo denominador, gana el numerador más grande: 4/5 toma más partes del total que 2/5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-29"
   },
   {
@@ -3381,7 +3382,7 @@
    ],
    "correcta": 2,
    "tip": "Si vendió 60 de los 100 panes, le quedan 100 menos 60, es decir 40, así que la fracción que le queda es 40/100.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa08-30"
   },
   {
@@ -3395,7 +3396,7 @@
    ],
    "correcta": 2,
    "tip": "Como el denominador es el mismo, se suman solo los numeradores: 3 más 2 es 5, y el denominador queda igual, así que la respuesta es 5/8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-1"
   },
   {
@@ -3409,7 +3410,7 @@
    ],
    "correcta": 1,
    "tip": "Como el denominador es el mismo, se restan solo los numeradores: 4 menos 1 es 3, y el denominador se mantiene, así que quedan 3/10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-2"
   },
   {
@@ -3423,7 +3424,7 @@
    ],
    "correcta": 2,
    "tip": "Se suman los numeradores porque el denominador no cambia: 2 más 3 es 5, así que caminó 5/6 de la plaza.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-3"
   },
   {
@@ -3437,7 +3438,7 @@
    ],
    "correcta": 0,
    "tip": "Se restan los numeradores porque el denominador es el mismo: 3 menos 1 es 2, así que queda 2/4 de metro. Sumar en vez de restar daría 4/4, y no restar nada dejaría 3/4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-4"
   },
   {
@@ -3451,7 +3452,7 @@
    ],
    "correcta": 1,
    "tip": "Se suman los numeradores porque el denominador no cambia: 1 más 2 es 3, así que usó 3/5 del paquete. Sumar también los denominadores es un error común y daría 3/10, que no corresponde.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-5"
   },
   {
@@ -3465,7 +3466,7 @@
    ],
    "correcta": 3,
    "tip": "Se suman los numeradores porque el denominador es el mismo: 5 más 4 es 9, así que tiene 9/12 de la caja.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-6"
   },
   {
@@ -3479,7 +3480,7 @@
    ],
    "correcta": 3,
    "tip": "Se suman los numeradores porque el denominador es el mismo: 20 más 35 es 55, así que gastó 55/100 de su dinero.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-7"
   },
   {
@@ -3493,7 +3494,7 @@
    ],
    "correcta": 2,
    "tip": "Se restan los numeradores porque el denominador no cambia: 2 menos 1 es 1, así que le queda 1/3 del chocolate.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-8"
   },
   {
@@ -3507,7 +3508,7 @@
    ],
    "correcta": 2,
    "tip": "Se restan los numeradores porque el denominador es el mismo: 2 menos 1 es 1, así que le queda 1/2 de la torta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-9"
   },
   {
@@ -3521,7 +3522,7 @@
    ],
    "correcta": 3,
    "tip": "Se restan los numeradores porque el denominador es el mismo: 6 menos 4 es 2, así que quedan 2/8 de pintura.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-10"
   },
   {
@@ -3535,7 +3536,7 @@
    ],
    "correcta": 1,
    "tip": "Se suman los numeradores porque el denominador es el mismo: 3 más 3 es 6, así que ha leído 6/10 del libro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-11"
   },
   {
@@ -3549,7 +3550,7 @@
    ],
    "correcta": 0,
    "tip": "Se restan los numeradores porque el denominador no cambia: 5 menos 2 es 3, así que le quedan 3/6 del frasco.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-12"
   },
   {
@@ -3563,7 +3564,7 @@
    ],
    "correcta": 0,
    "tip": "Se suman los numeradores porque el denominador no cambia: 1 más 2 es 3, así que pintó 3/4 de la pared.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-13"
   },
   {
@@ -3577,7 +3578,7 @@
    ],
    "correcta": 1,
    "tip": "Se restan los numeradores porque el denominador es el mismo: 4 menos 2 es 2, así que le quedan 2/5 del rollo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-14"
   },
   {
@@ -3591,7 +3592,7 @@
    ],
    "correcta": 3,
    "tip": "Se restan los numeradores porque el denominador es el mismo: 7 menos 3 es 4, así que quedó en 4/12 de la pista.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-15"
   },
   {
@@ -3605,7 +3606,7 @@
    ],
    "correcta": 1,
    "tip": "Se restan los numeradores porque el denominador es el mismo: 45 menos 15 es 30, así que quedó 30/100 de la capacidad.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-16"
   },
   {
@@ -3619,7 +3620,7 @@
    ],
    "correcta": 2,
    "tip": "Se restan los numeradores porque el denominador no cambia: 2 menos 1 es 1, así que le queda 1/3 del helio.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-17"
   },
   {
@@ -3633,7 +3634,7 @@
    ],
    "correcta": 3,
    "tip": "Se suman los numeradores porque el denominador es el mismo: 5 más 1 es 6, así que quedó trapeado 6/8 del pasillo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-18"
   },
   {
@@ -3647,7 +3648,7 @@
    ],
    "correcta": 0,
    "tip": "Se restan los numeradores porque el denominador no cambia: 7 menos 2 es 5, así que le quedan 5/10 del depósito.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-19"
   },
   {
@@ -3661,7 +3662,7 @@
    ],
    "correcta": 2,
    "tip": "Se suman los numeradores porque el denominador es el mismo: 1 más 4 es 5, así que regó 5/6 del jardín.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-20"
   },
   {
@@ -3675,7 +3676,7 @@
    ],
    "correcta": 0,
    "tip": "Se restan los numeradores porque el denominador es el mismo: 3 menos 2 es 1, así que le queda 1/4 del saco.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-21"
   },
   {
@@ -3689,7 +3690,7 @@
    ],
    "correcta": 2,
    "tip": "Se suman los numeradores porque el denominador no cambia: 2 más 1 es 3, así que quedó pegado 3/5 del mural.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-22"
   },
   {
@@ -3703,7 +3704,7 @@
    ],
    "correcta": 1,
    "tip": "Se suman los numeradores porque el denominador es el mismo: 6 más 3 es 9, así que lleva armado 9/12 del rompecabezas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-23"
   },
   {
@@ -3717,7 +3718,7 @@
    ],
    "correcta": 2,
    "tip": "Se suman los numeradores porque el denominador es el mismo: 10 más 65 es 75, así que 75/100 del total prefiere jugo o agua.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-24"
   },
   {
@@ -3731,7 +3732,7 @@
    ],
    "correcta": 1,
    "tip": "Se restan los numeradores porque el denominador no cambia: 7 menos 5 es 2, así que le quedan 2/8 del tarro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-25"
   },
   {
@@ -3745,7 +3746,7 @@
    ],
    "correcta": 3,
    "tip": "Se suman los numeradores porque el denominador es el mismo: 1 más 2 es 3, así que el jarro quedó con 3/3, es decir, lleno.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-26"
   },
   {
@@ -3759,7 +3760,7 @@
    ],
    "correcta": 0,
    "tip": "Se restan los numeradores porque el denominador es el mismo: 8 menos 5 es 3, así que le quedaron bien hechas 3/10 de la tarea.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-27"
   },
   {
@@ -3773,7 +3774,7 @@
    ],
    "correcta": 2,
    "tip": "Se suman los numeradores porque el denominador es el mismo: 1 más 1 es 2, y como el queque completo es 2/2, no queda nada entero: 0/2.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-28"
   },
   {
@@ -3787,7 +3788,7 @@
    ],
    "correcta": 0,
    "tip": "Se restan los numeradores porque el denominador no cambia: 4 menos 1 es 3, así que quedan 3/6 de manzanas en el canasto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-29"
   },
   {
@@ -3801,7 +3802,7 @@
    ],
    "correcta": 0,
    "tip": "Se suman los numeradores porque el denominador es el mismo: 25 más 25 es 50, así que se llenó 50/100 del estanque.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa09-30"
   },
   {
@@ -3815,7 +3816,7 @@
    ],
    "correcta": 2,
    "tip": "Un número mixto junta la parte entera con la parte fraccionaria: comió 1 pizza completa más 3/4 de otra, así que es 1 3/4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-1"
   },
   {
@@ -3829,7 +3830,7 @@
    ],
    "correcta": 0,
    "tip": "La parte entera son los libros completos, 2, y la parte fraccionaria es lo que lleva del tercero, 2/3: junto es 2 2/3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-2"
   },
   {
@@ -3843,7 +3844,7 @@
    ],
    "correcta": 2,
    "tip": "Se escriben juntos los metros completos y la parte que sobra: 4 metros enteros más 1/2 metro es 4 1/2.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-3"
   },
   {
@@ -3857,7 +3858,7 @@
    ],
    "correcta": 1,
    "tip": "Tiene 3 chocolates enteros y 3/8 del cuarto chocolate, así que el número mixto es 3 3/8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-4"
   },
   {
@@ -3871,7 +3872,7 @@
    ],
    "correcta": 1,
    "tip": "Echó 2 baldes completos y una parte del tercero, 1/5, así que la cantidad es 2 1/5 baldes.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-5"
   },
   {
@@ -3885,7 +3886,7 @@
    ],
    "correcta": 0,
    "tip": "Tiene 1 rompecabezas completo y 5/6 avanzado del segundo, así que el número mixto es 1 5/6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-6"
   },
   {
@@ -3899,7 +3900,7 @@
    ],
    "correcta": 2,
    "tip": "Los 4 metros son la parte entera y los 2/3 de metro que sobran son la parte fraccionaria: junto es 4 2/3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-7"
   },
   {
@@ -3913,7 +3914,7 @@
    ],
    "correcta": 2,
    "tip": "Cosechó 2 canastos completos y 3/10 del siguiente, así que el número mixto es 2 3/10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-8"
   },
   {
@@ -3927,7 +3928,7 @@
    ],
    "correcta": 0,
    "tip": "Son 3 bandejas completas más 1/4 de la cuarta bandeja, así que el número mixto es 3 1/4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-9"
   },
   {
@@ -3941,7 +3942,7 @@
    ],
    "correcta": 1,
    "tip": "Corrió 5 vueltas enteras y la mitad de la siguiente, así que la cantidad es 5 1/2 vueltas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-10"
   },
   {
@@ -3955,7 +3956,7 @@
    ],
    "correcta": 0,
    "tip": "En un número mixto, la parte entera es el número completo que va antes de la fracción: en 3 2/5 esa parte es 3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-11"
   },
   {
@@ -3969,7 +3970,7 @@
    ],
    "correcta": 0,
    "tip": "La parte entera es el número completo antes de la fracción: en 2 5/8 esa parte es 2.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-12"
   },
   {
@@ -3983,7 +3984,7 @@
    ],
    "correcta": 3,
    "tip": "La parte entera es el número completo antes de la fracción: en 1 7/10 esa parte es 1.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-13"
   },
   {
@@ -3997,7 +3998,7 @@
    ],
    "correcta": 0,
    "tip": "La parte fraccionaria es lo que va después del número entero: en 4 1/6 esa parte es 1/6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-14"
   },
   {
@@ -4011,7 +4012,7 @@
    ],
    "correcta": 3,
    "tip": "La parte fraccionaria es lo que va después del entero: en 5 3/4 esa parte es 3/4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-15"
   },
   {
@@ -4025,7 +4026,7 @@
    ],
    "correcta": 1,
    "tip": "La parte fraccionaria es lo que va después del entero: en 2 3/5 esa parte es 3/5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-16"
   },
   {
@@ -4039,7 +4040,7 @@
    ],
    "correcta": 0,
    "tip": "La marca está a mitad de camino entre 2 y 3, así que corresponde al número mixto 2 1/2.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-17"
   },
   {
@@ -4053,7 +4054,7 @@
    ],
    "correcta": 0,
    "tip": "La parte entera es 3, porque la marca está entre el 3 y el 4, y avanzó 3 de los 4 saltos, así que es 3 3/4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-18"
   },
   {
@@ -4067,7 +4068,7 @@
    ],
    "correcta": 3,
    "tip": "La marca está entre el 1 y el 2, y avanzó solo el primer salto de tres, así que es 1 1/3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-19"
   },
   {
@@ -4081,7 +4082,7 @@
    ],
    "correcta": 0,
    "tip": "La marca está entre el 4 y el 5, avanzada en 4 de los 5 saltos, así que corresponde a 4 4/5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-20"
   },
   {
@@ -4095,7 +4096,7 @@
    ],
    "correcta": 2,
    "tip": "Como la marca está entre el 0 y el 1, no tiene parte entera todavía: es una fracción propia, 5/6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-21"
   },
   {
@@ -4109,7 +4110,7 @@
    ],
    "correcta": 1,
    "tip": "Una fracción propia tiene el numerador MENOR que el denominador: en 2/5 el 2 es menor que el 5, así que representa menos de un entero.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-22"
   },
   {
@@ -4123,7 +4124,7 @@
    ],
    "correcta": 1,
    "tip": "En una fracción propia el numerador es menor que el denominador: 3 es menor que 8, así que 3/8 es menos que un entero completo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-23"
   },
   {
@@ -4137,7 +4138,7 @@
    ],
    "correcta": 2,
    "tip": "Una fracción propia necesita que el numerador sea menor que el denominador: como 6 es mayor que 5, 6/5 representa más de un entero y no es propia.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-24"
   },
   {
@@ -4151,7 +4152,7 @@
    ],
    "correcta": 3,
    "tip": "El numerador de una fracción propia es menor que el denominador: 7 es menor que 10, así que 7/10 es menos que un entero completo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-25"
   },
   {
@@ -4165,7 +4166,7 @@
    ],
    "correcta": 0,
    "tip": "Están pintadas 2 de las 5 partes totales, así que la fracción propia es 2/5: el numerador es menor que el denominador.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-26",
    "visual": {
     "tipo": "fraccion",
@@ -4184,7 +4185,7 @@
    ],
    "correcta": 0,
    "tip": "Están pintadas 3 de las 8 partes totales, así que la fracción propia es 3/8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-27",
    "visual": {
     "tipo": "fraccion",
@@ -4203,7 +4204,7 @@
    ],
    "correcta": 2,
    "tip": "Están pintadas 5 de las 6 partes totales, así que la fracción propia que representa lo pintado es 5/6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-28",
    "visual": {
     "tipo": "fraccion",
@@ -4222,7 +4223,7 @@
    ],
    "correcta": 1,
    "tip": "Están pintadas 7 de las 10 partes totales, así que la fracción propia que representa lo pintado es 7/10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-29",
    "visual": {
     "tipo": "fraccion",
@@ -4241,7 +4242,7 @@
    ],
    "correcta": 2,
    "tip": "Está pintada 1 de las 4 partes totales, así que la fracción propia que representa lo pintado es 1/4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa10-30",
    "visual": {
     "tipo": "fraccion",
@@ -4260,7 +4261,7 @@
    ],
    "correcta": 0,
    "tip": "Cada franja vale 1 décimo, así que 7 franjas pintadas de 10 son 7 décimos, que se escribe 0,7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-1"
   },
   {
@@ -4274,7 +4275,7 @@
    ],
    "correcta": 3,
    "tip": "Cada parte vale 1 centésimo, así que 45 partes pintadas de 100 son 45 centésimos, que se escribe 0,45.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-2"
   },
   {
@@ -4288,7 +4289,7 @@
    ],
    "correcta": 2,
    "tip": "8 de 100 es menos de un décimo, así que el 8 va en el lugar de los centésimos y hay que escribir el cero antes: 0,08, no 0,8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-3"
   },
   {
@@ -4302,7 +4303,7 @@
    ],
    "correcta": 0,
    "tip": "Cada franja vale 1 décimo, así que 3 franjas pintadas de 10 son 3 décimos, que se escribe 0,3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-4"
   },
   {
@@ -4316,7 +4317,7 @@
    ],
    "correcta": 0,
    "tip": "60 de las 100 casillas son 60 centésimos, que se escribe 0,60.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-5"
   },
   {
@@ -4330,7 +4331,7 @@
    ],
    "correcta": 1,
    "tip": "Cada franja vale 1 décimo, así que 9 franjas pintadas de 10 son 9 décimos, que se escribe 0,9.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-6"
   },
   {
@@ -4344,7 +4345,7 @@
    ],
    "correcta": 2,
    "tip": "23 de las 100 casillas son 23 centésimos, que se escribe 0,23.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-7"
   },
   {
@@ -4358,7 +4359,7 @@
    ],
    "correcta": 3,
    "tip": "Cada franja vale 1 décimo, así que 5 franjas pintadas de 10 son 5 décimos, que se escribe 0,5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-8"
   },
   {
@@ -4372,7 +4373,7 @@
    ],
    "correcta": 1,
    "tip": "Un décimo se escribe con un dígito después de la coma, así que 7/10 es 0,7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-9"
   },
   {
@@ -4386,7 +4387,7 @@
    ],
    "correcta": 2,
    "tip": "Un décimo se escribe con un dígito después de la coma, así que 3/10 es 0,3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-10"
   },
   {
@@ -4400,7 +4401,7 @@
    ],
    "correcta": 2,
    "tip": "Un centésimo se escribe con dos dígitos después de la coma, así que 45/100 es 0,45.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-11"
   },
   {
@@ -4414,7 +4415,7 @@
    ],
    "correcta": 3,
    "tip": "8/100 vale menos de un décimo, así que se escribe con un cero primero en los centésimos: 0,08.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-12"
   },
   {
@@ -4428,7 +4429,7 @@
    ],
    "correcta": 3,
    "tip": "Un décimo se escribe con un dígito después de la coma, así que 9/10 es 0,9.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-13"
   },
   {
@@ -4442,7 +4443,7 @@
    ],
    "correcta": 1,
    "tip": "Un centésimo se escribe con dos dígitos después de la coma, así que 23/100 es 0,23.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-14"
   },
   {
@@ -4456,7 +4457,7 @@
    ],
    "correcta": 3,
    "tip": "Un décimo se escribe con un dígito después de la coma, así que 5/10 es 0,5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-15"
   },
   {
@@ -4470,7 +4471,7 @@
    ],
    "correcta": 0,
    "tip": "El 6 está en el lugar de los décimos, así que 0,6 es 6/10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-16"
   },
   {
@@ -4484,7 +4485,7 @@
    ],
    "correcta": 3,
    "tip": "Como el 25 llega hasta los centésimos, 0,25 es 25/100.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-17"
   },
   {
@@ -4498,7 +4499,7 @@
    ],
    "correcta": 0,
    "tip": "El 4 de 0,04 está en el lugar de los centésimos, así que la fracción es 4/100, no 4/10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-18"
   },
   {
@@ -4512,7 +4513,7 @@
    ],
    "correcta": 3,
    "tip": "El 9 de 0,9 está en el lugar de los décimos, así que la fracción es 9/10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-19"
   },
   {
@@ -4526,7 +4527,7 @@
    ],
    "correcta": 0,
    "tip": "Como el 37 llega hasta los centésimos, 0,37 es 37/100.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-20"
   },
   {
@@ -4540,7 +4541,7 @@
    ],
    "correcta": 1,
    "tip": "El primer dígito después de la coma es el lugar de los décimos, así que el 7 vale 7 décimos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-21"
   },
   {
@@ -4554,7 +4555,7 @@
    ],
    "correcta": 2,
    "tip": "El segundo dígito después de la coma es el lugar de los centésimos, así que el 3 vale 3 centésimos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-22"
   },
   {
@@ -4568,7 +4569,7 @@
    ],
    "correcta": 2,
    "tip": "El primer dígito después de la coma es el lugar de los décimos, así que el 4 vale 4 décimos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-23"
   },
   {
@@ -4582,7 +4583,7 @@
    ],
    "correcta": 3,
    "tip": "El segundo dígito después de la coma es el lugar de los centésimos, así que el 9 vale 9 centésimos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-24"
   },
   {
@@ -4596,7 +4597,7 @@
    ],
    "correcta": 3,
    "tip": "Se compara primero el lugar de los décimos: 0,7 tiene 7 décimos y 0,65 tiene 6, así que 0,7 es mayor.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-25"
   },
   {
@@ -4610,7 +4611,7 @@
    ],
    "correcta": 1,
    "tip": "Se compara primero el lugar de los décimos: 0,4 tiene 4 décimos y 0,38 tiene solo 3, así que 0,38 es menor.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-26"
   },
   {
@@ -4624,7 +4625,7 @@
    ],
    "correcta": 0,
    "tip": "Se compara primero el lugar de los décimos: 0,9 tiene 9 décimos y 0,89 tiene 8, así que 0,9 es mayor.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-27"
   },
   {
@@ -4638,7 +4639,7 @@
    ],
    "correcta": 2,
    "tip": "El valor de un dígito depende de su posición: 5 décimos (0,5) es diez veces más que 5 centésimos (0,05).",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-28"
   },
   {
@@ -4652,7 +4653,7 @@
    ],
    "correcta": 3,
    "tip": "Comparando los décimos, 0,25 tiene 2, 0,4 tiene 4 y 0,6 tiene 6, así que de menor a mayor quedan 0,25; 0,4; 0,6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-29"
   },
   {
@@ -4666,7 +4667,7 @@
    ],
    "correcta": 1,
    "tip": "0,35 tiene 3 décimos y algo más, 0,3 tiene los mismos 3 décimos sin nada más, y 0,08 no llega ni a 1 décimo: de mayor a menor son 0,35; 0,3; 0,08.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa11-30"
   },
   {
@@ -4680,7 +4681,7 @@
    ],
    "correcta": 0,
    "tip": "Para sumar hay que alinear los décimos con los décimos: 2,30 más 1,45 son 3,75. Si el 3 de 2,3 se alinea mal, como si fuera centésimo, se obtiene 3,48 por error.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-1"
   },
   {
@@ -4694,7 +4695,7 @@
    ],
    "correcta": 1,
    "tip": "Alineando los décimos con los décimos: 4,60 más 2,35 son 6,95. Descuidar la alineación, o dejar fuera el centésimo del 2,35, lleva a un resultado equivocado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-2"
   },
   {
@@ -4708,7 +4709,7 @@
    ],
    "correcta": 1,
    "tip": "Se alinean los décimos con los décimos y los centésimos con los centésimos: 3,25 más 1,60 son 4,85. Si el 6 de 1,6 se coloca en el lugar de los centésimos, el resultado sale mal.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-3"
   },
   {
@@ -4722,7 +4723,7 @@
    ],
    "correcta": 3,
    "tip": "Alineando los décimos con los décimos: 5,40 más 3,65 son 9,05. Sumar solo la parte decimal y olvidar los kilogramos completos da un número mucho más chico.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-4"
   },
   {
@@ -4736,7 +4737,7 @@
    ],
    "correcta": 0,
    "tip": "Alineando los décimos con los décimos: 1,75 más 2,80 son 4,55. Si el 8 de 2,8 se alinea como si fuera centésimo, el resultado sale distinto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-5"
   },
   {
@@ -4750,7 +4751,7 @@
    ],
    "correcta": 0,
    "tip": "Alineando los décimos con los décimos: 6,30 más 4,25 son 10,55. Descuidar el orden de las columnas cambia el resultado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-6"
   },
   {
@@ -4764,7 +4765,7 @@
    ],
    "correcta": 0,
    "tip": "Sumando los centésimos con acarreo: 5 más 8 es 13, se anota 3 y se lleva 1 a los décimos, que suman 4 más 3 más el 1 llevado, o sea 8: en total 0,83. Olvidar el acarreo, o copiar solo una de las cantidades, da un resultado equivocado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-7"
   },
   {
@@ -4778,7 +4779,7 @@
    ],
    "correcta": 3,
    "tip": "Alineando los décimos con los décimos: 7,20 más 1,65 son 8,85. Si el 2 de 7,2 se alinea como centésimo, el resultado sale mal.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-8"
   },
   {
@@ -4792,7 +4793,7 @@
    ],
    "correcta": 0,
    "tip": "Alineando los décimos con los décimos: 2,85 más 3,40 son 6,25. Si el 4 de 3,4 se alinea como centésimo, el resultado sale distinto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-9"
   },
   {
@@ -4806,7 +4807,7 @@
    ],
    "correcta": 2,
    "tip": "Alineando los décimos con los décimos: 4,15 más 2,70 son 6,85. Si el 7 de 2,7 se alinea como centésimo, el resultado cambia.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-10"
   },
   {
@@ -4820,7 +4821,7 @@
    ],
    "correcta": 2,
    "tip": "Alineando los décimos con los décimos: 1,60 más 3,45 son 5,05. Si el 6 de 1,6 se alinea como centésimo, el resultado sale mal.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-11"
   },
   {
@@ -4834,7 +4835,7 @@
    ],
    "correcta": 1,
    "tip": "Alineando los décimos con los décimos: 5,25 más 2,30 son 7,55. Si el 3 de 2,3 se alinea como centésimo, el resultado sale distinto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-12"
   },
   {
@@ -4848,7 +4849,7 @@
    ],
    "correcta": 2,
    "tip": "Alineando los décimos con los décimos: 0,75 más 0,60 son 1,35. Si el 6 de 0,6 se alinea como centésimo, el resultado sale mal.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-13"
   },
   {
@@ -4862,7 +4863,7 @@
    ],
    "correcta": 1,
    "tip": "Alineando los décimos con los décimos: 8,40 más 1,35 son 9,75. Si el 4 de 8,4 se alinea como centésimo, el resultado sale distinto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-14"
   },
   {
@@ -4876,7 +4877,7 @@
    ],
    "correcta": 3,
    "tip": "Alineando los décimos con los décimos: 3,65 más 2,90 son 6,55. Si el 9 de 2,9 se alinea como centésimo, el resultado cambia.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-15"
   },
   {
@@ -4890,7 +4891,7 @@
    ],
    "correcta": 1,
    "tip": "Como los centésimos de 1,45 son más que los de 3,20, hay que pedir prestado un décimo: 3,20 menos 1,45 son 1,75. Restar cada columna sin pedir prestado, o sumar en vez de restar, da un resultado distinto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-16"
   },
   {
@@ -4904,7 +4905,7 @@
    ],
    "correcta": 1,
    "tip": "Como los centésimos de 2,35 son más que los de 5,60, hay que pedir prestado un décimo: 5,60 menos 2,35 son 3,25. No pedir prestado, o restar mal alineado, da un resultado distinto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-17"
   },
   {
@@ -4918,7 +4919,7 @@
    ],
    "correcta": 3,
    "tip": "Como los décimos de 1,6 son más que los de 4,15, hay que pedir prestado una unidad: 4,15 menos 1,60 son 2,55. No pedir prestado da un resultado equivocado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-18"
   },
   {
@@ -4932,7 +4933,7 @@
    ],
    "correcta": 2,
    "tip": "Como los centésimos de 2,45 son más que los de 6,30, hay que pedir prestado un décimo: 6,30 menos 2,45 son 3,85. No pedir prestado da un resultado distinto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-19"
   },
   {
@@ -4946,7 +4947,7 @@
    ],
    "correcta": 0,
    "tip": "Alineando los décimos con los décimos: 2,75 menos 1,40 son 1,35. Alinear mal el 4 de 1,4, o sumar en vez de restar, da un resultado distinto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-20"
   },
   {
@@ -4960,7 +4961,7 @@
    ],
    "correcta": 2,
    "tip": "Como los centésimos de 3,65 son más que los de 7,20, hay que pedir prestado un décimo: 7,20 menos 3,65 son 3,55. No pedir prestado da un resultado distinto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-21"
   },
   {
@@ -4974,7 +4975,7 @@
    ],
    "correcta": 0,
    "tip": "Como los centésimos de 0,45 son más que los de 0,80, hay que pedir prestado un décimo: 0,80 menos 0,45 son 0,35. No pedir prestado, o sumar en vez de restar, da un resultado distinto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-22"
   },
   {
@@ -4988,7 +4989,7 @@
    ],
    "correcta": 3,
    "tip": "Como los centésimos de 2,65 son más que los de 5,40, hay que pedir prestado un décimo: 5,40 menos 2,65 son 2,75. No pedir prestado da un resultado distinto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-23"
   },
   {
@@ -5002,7 +5003,7 @@
    ],
    "correcta": 2,
    "tip": "Alineando los décimos con los décimos: 3,85 menos 1,60 son 2,25. Alinear mal el 6 de 1,6, o dejar fuera un centésimo del 3,85, da un resultado distinto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-24"
   },
   {
@@ -5016,7 +5017,7 @@
    ],
    "correcta": 2,
    "tip": "Como los décimos de 2,7 son más que los de 6,15, hay que pedir prestado una unidad: 6,15 menos 2,70 son 3,45. No pedir prestado da un resultado distinto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-25"
   },
   {
@@ -5030,7 +5031,7 @@
    ],
    "correcta": 3,
    "tip": "Como los centésimos de 1,65 son más que los de 4,30, hay que pedir prestado un décimo: 4,30 menos 1,65 son 2,65. No pedir prestado da un resultado distinto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-26"
   },
   {
@@ -5044,7 +5045,7 @@
    ],
    "correcta": 0,
    "tip": "Como los décimos de 3,4 son más que los de 8,25, hay que pedir prestado una unidad: 8,25 menos 3,40 son 4,85. No pedir prestado, o alinear mal el 4 de 3,4, da un resultado distinto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-27"
   },
   {
@@ -5058,7 +5059,7 @@
    ],
    "correcta": 0,
    "tip": "Como los centésimos de 0,35 son más que los de 0,90, hay que pedir prestado un décimo: 0,90 menos 0,35 son 0,55. No pedir prestado, o sumar en vez de restar, da un resultado distinto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-28"
   },
   {
@@ -5072,7 +5073,7 @@
    ],
    "correcta": 3,
    "tip": "Como los centésimos de 1,85 son más que los de 5,20, hay que pedir prestado un décimo: 5,20 menos 1,85 son 3,35. No pedir prestado da un resultado distinto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-29"
   },
   {
@@ -5086,7 +5087,7 @@
    ],
    "correcta": 2,
    "tip": "Como los centésimos de 4,65 son más que los de 9,40, hay que pedir prestado un décimo: 9,40 menos 4,65 son 4,75. No pedir prestado da un resultado distinto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa12-30"
   },
   {
@@ -5100,7 +5101,7 @@
    ],
    "correcta": 1,
    "tip": "2 x 3 = 6, 3 x 3 = 9 y 4 x 3 = 12: cada número que sale es el que entra multiplicado por 3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-1"
   },
   {
@@ -5114,7 +5115,7 @@
    ],
    "correcta": 0,
    "tip": "5 + 4 = 9, 6 + 4 = 10 y 7 + 4 = 11: la regla es sumar 4 al número que entra.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-2"
   },
   {
@@ -5128,7 +5129,7 @@
    ],
    "correcta": 2,
    "tip": "10 − 3 = 7, 12 − 3 = 9 y 15 − 3 = 12: a cada número que entra se le resta 3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-3"
   },
   {
@@ -5142,7 +5143,7 @@
    ],
    "correcta": 3,
    "tip": "20 ÷ 4 = 5, 40 ÷ 4 = 10 y 60 ÷ 4 = 15: el número de la derecha es el de la izquierda dividido por 4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-4"
   },
   {
@@ -5156,7 +5157,7 @@
    ],
    "correcta": 2,
    "tip": "1 x 5 = 5, 2 x 5 = 10 y 3 x 5 = 15: la máquina multiplica cada número por 5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-5"
   },
   {
@@ -5170,7 +5171,7 @@
    ],
    "correcta": 1,
    "tip": "8 ÷ 4 = 2, 16 ÷ 4 = 4 y 24 ÷ 4 = 6: Camila dividió cada número por 4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-6"
   },
   {
@@ -5184,7 +5185,7 @@
    ],
    "correcta": 0,
    "tip": "3 x 10 = 30, 5 x 10 = 50 y 8 x 10 = 80: la regla es multiplicar por 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-7"
   },
   {
@@ -5198,7 +5199,7 @@
    ],
    "correcta": 1,
    "tip": "50 − 8 = 42, 60 − 8 = 52 y 70 − 8 = 62: en cada fila Sofía restó 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-8"
   },
   {
@@ -5212,7 +5213,7 @@
    ],
    "correcta": 1,
    "tip": "Con la regla multiplicar por 6, si entra 7 sale 7 x 6 = 42.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-9"
   },
   {
@@ -5226,7 +5227,7 @@
    ],
    "correcta": 0,
    "tip": "Con la regla sumar 15, si entra 45 sale 45 + 15 = 60.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-10"
   },
   {
@@ -5240,7 +5241,7 @@
    ],
    "correcta": 2,
    "tip": "Con la regla restar 12, si entra 50 sale 50 − 12 = 38.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-11"
   },
   {
@@ -5254,7 +5255,7 @@
    ],
    "correcta": 0,
    "tip": "Con la regla dividir por 5, si entra 45 sale 45 ÷ 5 = 9.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-12"
   },
   {
@@ -5268,7 +5269,7 @@
    ],
    "correcta": 1,
    "tip": "Con la regla multiplicar por 8, si entra 9 sale 9 x 8 = 72.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-13"
   },
   {
@@ -5282,7 +5283,7 @@
    ],
    "correcta": 0,
    "tip": "Con la regla sumar 25, si entra 75 sale 75 + 25 = 100.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-14"
   },
   {
@@ -5296,7 +5297,7 @@
    ],
    "correcta": 3,
    "tip": "Con la regla restar 30, si entra 250 sale 250 − 30 = 220.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-15"
   },
   {
@@ -5310,7 +5311,7 @@
    ],
    "correcta": 2,
    "tip": "Con la regla dividir por 3, si entra 36 sale 36 ÷ 3 = 12.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-16"
   },
   {
@@ -5324,7 +5325,7 @@
    ],
    "correcta": 3,
    "tip": "Con la regla multiplicar por 7, si entra 6 sale 6 x 7 = 42.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-17"
   },
   {
@@ -5338,7 +5339,7 @@
    ],
    "correcta": 3,
    "tip": "Con la regla sumar 9, si entra 8 sale 8 + 9 = 17.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-18"
   },
   {
@@ -5352,7 +5353,7 @@
    ],
    "correcta": 2,
    "tip": "Como la regla es multiplicar por 4, para volver atrás se divide: 28 ÷ 4 = 7 entró.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-19"
   },
   {
@@ -5366,7 +5367,7 @@
    ],
    "correcta": 3,
    "tip": "Como la regla es sumar 20, para volver atrás se resta: 65 − 20 = 45 entró.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-20"
   },
   {
@@ -5380,7 +5381,7 @@
    ],
    "correcta": 2,
    "tip": "Como la regla es restar 15, para volver atrás se suma: 40 + 15 = 55 entró.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-21"
   },
   {
@@ -5394,7 +5395,7 @@
    ],
    "correcta": 1,
    "tip": "Como la regla es dividir por 6, para volver atrás se multiplica: 5 x 6 = 30 entró.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-22"
   },
   {
@@ -5408,7 +5409,7 @@
    ],
    "correcta": 2,
    "tip": "Como la regla es multiplicar por 9, para volver atrás se divide: 45 ÷ 9 = 5 entró.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-23"
   },
   {
@@ -5422,7 +5423,7 @@
    ],
    "correcta": 2,
    "tip": "Como la regla es sumar 8, para volver atrás se resta: 20 − 8 = 12 entró.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-24"
   },
   {
@@ -5436,7 +5437,7 @@
    ],
    "correcta": 3,
    "tip": "La regla es multiplicar por 4, así que si entra 10 sale 10 x 4 = 40.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-25"
   },
   {
@@ -5450,7 +5451,7 @@
    ],
    "correcta": 2,
    "tip": "La secuencia es 3, 9, 15, 21, 27: cada número se obtiene sumando 6 al anterior, así que el quinto es 27.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-26"
   },
   {
@@ -5464,7 +5465,7 @@
    ],
    "correcta": 3,
    "tip": "La regla es multiplicar por 3, así que si entra 12 sale 12 x 3 = 36.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-27"
   },
   {
@@ -5478,7 +5479,7 @@
    ],
    "correcta": 3,
    "tip": "La secuencia es 100, 95, 90, 85, 80, 75: cada número se obtiene restando 5 al anterior. El sexto es 75.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-28"
   },
   {
@@ -5492,7 +5493,7 @@
    ],
    "correcta": 3,
    "tip": "La regla es multiplicar por 10, así que si entra 9 sale 9 x 10 = 90.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-29"
   },
   {
@@ -5506,7 +5507,7 @@
    ],
    "correcta": 0,
    "tip": "La secuencia es 5, 10, 20, 40, 80: cada número se obtiene multiplicando el anterior por 2. El quinto es 80.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa13-30"
   },
   {
@@ -5520,7 +5521,7 @@
    ],
    "correcta": 3,
    "tip": "Para saber cuánto vale ▢ se hace la operación inversa: 40 − 15 = 25.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-1",
    "visual": {
     "tipo": "recta",
@@ -5542,7 +5543,7 @@
    ],
    "correcta": 3,
    "tip": "Como ▢ más 22 da 58, para encontrar ▢ se resta: 58 − 22 = 36.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-2"
   },
   {
@@ -5556,7 +5557,7 @@
    ],
    "correcta": 1,
    "tip": "33 − 8 = 25: esa es la relación inversa entre la suma y la resta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-3"
   },
   {
@@ -5570,7 +5571,7 @@
    ],
    "correcta": 3,
    "tip": "Para despejar ▢ se resta: 60 − 34 = 26.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-4"
   },
   {
@@ -5584,7 +5585,7 @@
    ],
    "correcta": 1,
    "tip": "46 − 19 = 27: la resta deshace la suma y entrega el valor de ▢.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-5"
   },
   {
@@ -5598,7 +5599,7 @@
    ],
    "correcta": 0,
    "tip": "Como restarle 18 a ▢ da 25, para volver atrás se suma: 25 + 18 = 43.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-6",
    "visual": {
     "tipo": "recta",
@@ -5620,7 +5621,7 @@
    ],
    "correcta": 3,
    "tip": "12 + 45 = 57: se suma para deshacer la resta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-7"
   },
   {
@@ -5634,7 +5635,7 @@
    ],
    "correcta": 2,
    "tip": "33 + 27 = 60, porque sumar deshace lo que la resta hizo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-8"
   },
   {
@@ -5648,7 +5649,7 @@
    ],
    "correcta": 0,
    "tip": "Si a 50 le quitamos ▢ y queda 18, entonces ▢ es 50 − 18 = 32.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-9"
   },
   {
@@ -5662,7 +5663,7 @@
    ],
    "correcta": 0,
    "tip": "▢ es la diferencia entre el total y lo que quedó: 70 − 55 = 15.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-10"
   },
   {
@@ -5676,7 +5677,7 @@
    ],
    "correcta": 0,
    "tip": "90 − 36 = 54: ese es el número que se restó de 90 para que quedara 36.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-11"
   },
   {
@@ -5690,7 +5691,7 @@
    ],
    "correcta": 3,
    "tip": "Se comprueba reemplazando: 12 + 8 = 20, así que la igualdad es correcta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-12"
   },
   {
@@ -5704,7 +5705,7 @@
    ],
    "correcta": 0,
    "tip": "Comprobando: 30 − 14 = 16, así que la igualdad es correcta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-13"
   },
   {
@@ -5718,7 +5719,7 @@
    ],
    "correcta": 0,
    "tip": "60 − 25 = 35, así que Camila tiene razón.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-14"
   },
   {
@@ -5732,7 +5733,7 @@
    ],
    "correcta": 0,
    "tip": "La resta es la operación inversa de la suma: para despejar ▢ se hace 45 − 18.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-15"
   },
   {
@@ -5746,7 +5747,7 @@
    ],
    "correcta": 3,
    "tip": "La suma es la operación inversa de la resta: para despejar ▢ se hace 30 + 22.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-16"
   },
   {
@@ -5760,7 +5761,7 @@
    ],
    "correcta": 0,
    "tip": "Si al principio tenía ▢ y le regalaron 15 para llegar a 42, entonces ▢ = 42 − 15 = 27.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-17"
   },
   {
@@ -5774,7 +5775,7 @@
    ],
    "correcta": 2,
    "tip": "Le quitaron 50 − 18 = 32 chapitas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-18"
   },
   {
@@ -5788,7 +5789,7 @@
    ],
    "correcta": 3,
    "tip": "Los puntos del segundo juego son 60 − 24 = 36.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-19"
   },
   {
@@ -5802,7 +5803,7 @@
    ],
    "correcta": 3,
    "tip": "Perdió 35 − 12 = 23 bolitas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-20"
   },
   {
@@ -5816,7 +5817,7 @@
    ],
    "correcta": 2,
    "tip": "15 + 10 = 25, que es menor que 30. Los otros números dan igual o más que 30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-21"
   },
   {
@@ -5830,7 +5831,7 @@
    ],
    "correcta": 1,
    "tip": "35 + 20 = 55, que es mayor que 50. Los demás no llegan a superarlo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-22"
   },
   {
@@ -5844,7 +5845,7 @@
    ],
    "correcta": 0,
    "tip": "20 − 15 = 5, que es menor que 10. Con los otros números la resta da 10 o más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-23"
   },
   {
@@ -5858,7 +5859,7 @@
    ],
    "correcta": 3,
    "tip": "35 − 10 = 25, que es mayor que 20. Los demás dan 20 o menos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-24"
   },
   {
@@ -5872,7 +5873,7 @@
    ],
    "correcta": 2,
    "tip": "28 + 12 = 40, que es igual a 40, así que cumple la condición. Los demás se pasan.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-25"
   },
   {
@@ -5886,7 +5887,7 @@
    ],
    "correcta": 0,
    "tip": "40 − 15 = 25, así que cumple justo la condición. Los demás quedan por debajo de 25.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-26"
   },
   {
@@ -5900,7 +5901,7 @@
    ],
    "correcta": 2,
    "tip": "35 + 20 = 55, que es menos de 60. Con los otros puntajes se pasa de 60.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-27"
   },
   {
@@ -5914,7 +5915,7 @@
    ],
    "correcta": 2,
    "tip": "15 + 30 = 45, que no pasa de 50. Con los otros números sí se pasa.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-28"
   },
   {
@@ -5928,7 +5929,7 @@
    ],
    "correcta": 1,
    "tip": "41 − 25 = 16, que es más de 15 fichas. Con las otras cantidades sobran 15 o menos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-29"
   },
   {
@@ -5942,7 +5943,7 @@
    ],
    "correcta": 2,
    "tip": "60 − 18 = 42, que es más de 40. Con las otras cantidades le quedan 40 o menos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa14-30"
   },
   {
@@ -5956,7 +5957,7 @@
    ],
    "correcta": 0,
    "tip": "El semáforo está en la columna B (segunda desde la izquierda) y en la fila 3: su casilla es (B, 3).",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-1",
    "visual": {
     "tipo": "cuadricula",
@@ -5983,7 +5984,7 @@
    ],
    "correcta": 1,
    "tip": "La maceta está en la columna D y en la fila 1, la de más arriba: su ubicación es (D, 1).",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-2",
    "visual": {
     "tipo": "cuadricula",
@@ -6010,7 +6011,7 @@
    ],
    "correcta": 2,
    "tip": "El kiosco está pegado al borde izquierdo (columna A) y bien abajo (fila 4): su casilla es (A, 4).",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-3",
    "visual": {
     "tipo": "cuadricula",
@@ -6037,7 +6038,7 @@
    ],
    "correcta": 3,
    "tip": "La columna C y la fila 2 se cruzan justo donde está dibujada la banca.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-4",
    "visual": {
     "tipo": "cuadricula",
@@ -6064,7 +6065,7 @@
    ],
    "correcta": 3,
    "tip": "La columna E es la última a la derecha, y la fila 3 es la tercera desde arriba: ahí está el buzón.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-5",
    "visual": {
     "tipo": "cuadricula",
@@ -6091,7 +6092,7 @@
    ],
    "correcta": 0,
    "tip": "El gato está en la misma fila que el perro, pero una columna más a la derecha.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-6",
    "visual": {
     "tipo": "cuadricula",
@@ -6123,7 +6124,7 @@
    ],
    "correcta": 2,
    "tip": "La nube está en la misma columna que el sol, pero una fila más abajo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-7",
    "visual": {
     "tipo": "cuadricula",
@@ -6155,7 +6156,7 @@
    ],
    "correcta": 0,
    "tip": "El cubo está justo en el medio de la fila, entre la pelota y el oso.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-8",
    "visual": {
     "tipo": "cuadricula",
@@ -6192,7 +6193,7 @@
    ],
    "correcta": 3,
    "tip": "Se escribe primero la columna y después la fila: columna C, fila 2, o sea (C, 2).",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-9"
   },
   {
@@ -6206,7 +6207,7 @@
    ],
    "correcta": 1,
    "tip": "La fila es el número que acompaña a la letra de la columna: en este caso, fila 1.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-10"
   },
   {
@@ -6220,7 +6221,7 @@
    ],
    "correcta": 3,
    "tip": "La columna es la letra que va primero al describir la ubicación: columna B.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-11"
   },
   {
@@ -6234,7 +6235,7 @@
    ],
    "correcta": 0,
    "tip": "Subir una fila resta 1 al número de fila y deja la columna igual: de fila 3 pasa a fila 2, o sea (D, 2).",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-12"
   },
   {
@@ -6248,7 +6249,7 @@
    ],
    "correcta": 1,
    "tip": "Moverse una columna a la derecha avanza de la letra A a la B, y la fila se mantiene igual.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-13"
   },
   {
@@ -6262,7 +6263,7 @@
    ],
    "correcta": 3,
    "tip": "Las dos comparten la letra C, así que están en la misma columna, aunque en filas distintas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-14"
   },
   {
@@ -6276,7 +6277,7 @@
    ],
    "correcta": 3,
    "tip": "Comparten el número de fila, la fila 2, aunque estén en columnas diferentes.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-15"
   },
   {
@@ -6290,7 +6291,7 @@
    ],
    "correcta": 2,
    "tip": "En el orden de la fila, justo antes de la feria, a su izquierda, está el banco.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-16"
   },
   {
@@ -6304,7 +6305,7 @@
    ],
    "correcta": 1,
    "tip": "Entre Beto y Dani, en ese orden de asientos, se sienta Cata.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-17"
   },
   {
@@ -6318,7 +6319,7 @@
    ],
    "correcta": 3,
    "tip": "El escritorio está entre el pizarrón, que queda arriba, y el basurero, que queda abajo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-18"
   },
   {
@@ -6332,7 +6333,7 @@
    ],
    "correcta": 2,
    "tip": "La fuente queda entre el rosal, a su izquierda, y el limonero, a su derecha.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-19"
   },
   {
@@ -6346,7 +6347,7 @@
    ],
    "correcta": 1,
    "tip": "Como la entrada está junto a los lácteos, esa es la sección más cercana.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-20"
   },
   {
@@ -6360,7 +6361,7 @@
    ],
    "correcta": 3,
    "tip": "El establo está justo entre el gallinero y el chiquero, en el medio de la fila.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-21"
   },
   {
@@ -6374,7 +6375,7 @@
    ],
    "correcta": 2,
    "tip": "Las filas se cuentan desde arriba: la fila 1 está más arriba que la fila 4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-22"
   },
   {
@@ -6388,7 +6389,7 @@
    ],
    "correcta": 0,
    "tip": "La fila 5 es más grande que la fila 2, y las filas más grandes quedan más abajo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-23"
   },
   {
@@ -6402,7 +6403,7 @@
    ],
    "correcta": 3,
    "tip": "La columna A es la primera, junto al borde izquierdo, así que la piscina queda más cerca.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-24"
   },
   {
@@ -6416,7 +6417,7 @@
    ],
    "correcta": 2,
    "tip": "Caminando hacia la derecha desde el león, el siguiente animal en la fila es la jirafa.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-25"
   },
   {
@@ -6430,7 +6431,7 @@
    ],
    "correcta": 3,
    "tip": "Bajar dos filas suma 2 al número de fila: de la fila 2 se llega a la fila 4, con la columna D igual.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-26"
   },
   {
@@ -6444,7 +6445,7 @@
    ],
    "correcta": 0,
    "tip": "Ambas tienen el número 3, que es la fila; sus columnas, B y D, son distintas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-27"
   },
   {
@@ -6458,7 +6459,7 @@
    ],
    "correcta": 2,
    "tip": "El columpio está justo entre el tobogán y el arenero, en el medio de la fila.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-28"
   },
   {
@@ -6472,7 +6473,7 @@
    ],
    "correcta": 3,
    "tip": "La esquina opuesta usa la última columna, D, y la última fila, 4: la casilla es (D, 4).",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-29"
   },
   {
@@ -6486,7 +6487,7 @@
    ],
    "correcta": 0,
    "tip": "Las dos están junto al ascensor, en la columna C, aunque estén en pisos (filas) distintos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa15-30"
   },
   {
@@ -6500,7 +6501,7 @@
    ],
    "correcta": 3,
    "tip": "Todas las caras de un cubo son cuadrados iguales, así que se ve un cuadrado se mire por donde se mire.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-1",
    "visual": {
     "tipo": "cuerpo",
@@ -6518,7 +6519,7 @@
    ],
    "correcta": 0,
    "tip": "Como todas sus caras son cuadradas, la vista desde arriba también es un cuadrado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-2",
    "visual": {
     "tipo": "cuerpo",
@@ -6536,7 +6537,7 @@
    ],
    "correcta": 3,
    "tip": "Las tapas de un cilindro son circulares, así que desde arriba se ve un círculo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-3",
    "visual": {
     "tipo": "cuerpo",
@@ -6554,7 +6555,7 @@
    ],
    "correcta": 2,
    "tip": "De frente, los bordes rectos del cilindro y sus dos tapas forman un rectángulo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-4",
    "visual": {
     "tipo": "cuerpo",
@@ -6572,7 +6573,7 @@
    ],
    "correcta": 2,
    "tip": "La base de un cono es circular, así que mirado desde arriba se ve un círculo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-5",
    "visual": {
     "tipo": "cuerpo",
@@ -6590,7 +6591,7 @@
    ],
    "correcta": 0,
    "tip": "De frente, el cono se ve como un triángulo, porque sus lados se juntan en una punta arriba.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-6",
    "visual": {
     "tipo": "cuerpo",
@@ -6608,7 +6609,7 @@
    ],
    "correcta": 2,
    "tip": "La base de esta pirámide es un cuadrado, y esa es la forma que se ve al mirarla desde arriba.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-7",
    "visual": {
     "tipo": "cuerpo",
@@ -6626,7 +6627,7 @@
    ],
    "correcta": 1,
    "tip": "De frente se ven las caras triangulares que suben hasta la punta de la pirámide.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-8",
    "visual": {
     "tipo": "cuerpo",
@@ -6644,7 +6645,7 @@
    ],
    "correcta": 1,
    "tip": "Las caras de una caja rectangular son rectángulos, así que de frente se ve un rectángulo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-9"
   },
   {
@@ -6658,7 +6659,7 @@
    ],
    "correcta": 3,
    "tip": "Mirada desde arriba, una caja rectangular también muestra una cara rectangular.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-10"
   },
   {
@@ -6672,7 +6673,7 @@
    ],
    "correcta": 0,
    "tip": "Una esfera se ve igual, como un círculo, se mire desde donde se mire.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-11"
   },
   {
@@ -6686,7 +6687,7 @@
    ],
    "correcta": 0,
    "tip": "Una lata es un cilindro, y sus tapas son círculos, no cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-12"
   },
   {
@@ -6700,7 +6701,7 @@
    ],
    "correcta": 1,
    "tip": "Como todas las caras de un cubo son cuadrados iguales, la vista siempre es un cuadrado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-13"
   },
   {
@@ -6714,7 +6715,7 @@
    ],
    "correcta": 0,
    "tip": "De frente, los lados del cono suben hasta una punta, formando un triángulo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-14"
   },
   {
@@ -6728,7 +6729,7 @@
    ],
    "correcta": 1,
    "tip": "Una caja rectangular muestra caras rectangulares tanto de frente como desde arriba.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-15"
   },
   {
@@ -6742,7 +6743,7 @@
    ],
    "correcta": 1,
    "tip": "El cilindro tiene tapas circulares, que se ven desde arriba, y un cuerpo rectangular, de frente.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-16"
   },
   {
@@ -6756,7 +6757,7 @@
    ],
    "correcta": 0,
    "tip": "La base cuadrada se ve desde arriba, y las caras triangulares que suben a la punta, de frente.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-17"
   },
   {
@@ -6770,7 +6771,7 @@
    ],
    "correcta": 3,
    "tip": "Solo la esfera se ve igual, como un círculo, sin importar desde qué ángulo se mire.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-18"
   },
   {
@@ -6784,7 +6785,7 @@
    ],
    "correcta": 2,
    "tip": "Las caras de una caja de este tipo son rectángulos, aunque no todos del mismo tamaño.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-19"
   },
   {
@@ -6798,7 +6799,7 @@
    ],
    "correcta": 1,
    "tip": "El cubo muestra un cuadrado y la caja un rectángulo, pero ambas figuras tienen cuatro lados rectos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-20"
   },
   {
@@ -6812,7 +6813,7 @@
    ],
    "correcta": 1,
    "tip": "Desde el lado también se ve una cara triangular, igual que desde el frente.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-21"
   },
   {
@@ -6826,7 +6827,7 @@
    ],
    "correcta": 0,
    "tip": "Las tapas circulares del cilindro solo se aprecian completas al mirarlo desde arriba.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-22"
   },
   {
@@ -6840,7 +6841,7 @@
    ],
    "correcta": 2,
    "tip": "Una naranja tiene forma de esfera, y una esfera se ve como un círculo desde cualquier vista.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-23"
   },
   {
@@ -6854,7 +6855,7 @@
    ],
    "correcta": 3,
    "tip": "El cono se angosta hacia arriba, así que de frente se ve como un triángulo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-24"
   },
   {
@@ -6868,7 +6869,7 @@
    ],
    "correcta": 2,
    "tip": "El cubo aporta la forma cuadrada de abajo, y la pirámide, la forma triangular de arriba.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-25"
   },
   {
@@ -6882,7 +6883,7 @@
    ],
    "correcta": 1,
    "tip": "El balón tiene forma de esfera, que siempre se ve como un círculo; el dado muestra cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-26"
   },
   {
@@ -6896,7 +6897,7 @@
    ],
    "correcta": 0,
    "tip": "Los cilindros combinan tapas circulares, que se ven desde arriba, con un cuerpo rectangular de frente.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-27"
   },
   {
@@ -6910,7 +6911,7 @@
    ],
    "correcta": 0,
    "tip": "La base cuadrada es justamente la que se aprecia al mirar la pirámide desde arriba.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-28"
   },
   {
@@ -6924,7 +6925,7 @@
    ],
    "correcta": 3,
    "tip": "Como el balón de rugby es alargado en varias direcciones, su silueta es un óvalo desde distintos ángulos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-29"
   },
   {
@@ -6938,7 +6939,7 @@
    ],
    "correcta": 3,
    "tip": "La diferencia está en la base: el cono tiene base circular y la pirámide, base cuadrada.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa16-30"
   },
   {
@@ -6952,7 +6953,7 @@
    ],
    "correcta": 0,
    "tip": "Si doblas la A por el medio de arriba hacia abajo, las dos mitades calzan exactamente.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-1"
   },
   {
@@ -6966,7 +6967,7 @@
    ],
    "correcta": 1,
    "tip": "La F tiene sus brazos solo arriba y al medio, así que ningún doblez la deja igual a los dos lados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-2"
   },
   {
@@ -6980,7 +6981,7 @@
    ],
    "correcta": 0,
    "tip": "Las dos curvas de la B, arriba y abajo, son del mismo tamaño: al doblarla por el medio, calzan.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-3"
   },
   {
@@ -6994,7 +6995,7 @@
    ],
    "correcta": 2,
    "tip": "Un círculo se dobla por cualquier línea que pase por su centro y las dos mitades siempre calzan.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-4"
   },
   {
@@ -7008,7 +7009,7 @@
    ],
    "correcta": 0,
    "tip": "El lado izquierdo del corazón es el reflejo del derecho: la línea de simetría es vertical, al centro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-5"
   },
   {
@@ -7022,7 +7023,7 @@
    ],
    "correcta": 2,
    "tip": "Las dos alas son reflejo una de la otra a los lados del cuerpo, así que la línea pasa por el medio.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-6"
   },
   {
@@ -7036,7 +7037,7 @@
    ],
    "correcta": 0,
    "tip": "La curva de arriba va para un lado y la de abajo para el otro: ningún doblez las hace calzar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-7"
   },
   {
@@ -7050,7 +7051,7 @@
    ],
    "correcta": 3,
    "tip": "Cada línea va de un vértice al medio del lado opuesto: como hay tres vértices, hay tres líneas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-8"
   },
   {
@@ -7064,7 +7065,7 @@
    ],
    "correcta": 2,
    "tip": "Se dobla por el medio a lo largo y por el medio a lo ancho: son dos líneas en total.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-9"
   },
   {
@@ -7078,7 +7079,7 @@
    ],
    "correcta": 2,
    "tip": "A las dos líneas que cruzan el medio de los lados, un cuadrado suma sus dos diagonales.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-10"
   },
   {
@@ -7092,7 +7093,7 @@
    ],
    "correcta": 2,
    "tip": "Cada línea pasa por una punta y el medio del lado opuesto: con cinco puntas iguales, hay cinco líneas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-11"
   },
   {
@@ -7106,7 +7107,7 @@
    ],
    "correcta": 2,
    "tip": "Para que las dos mitades sean iguales, el corte tiene que pasar exactamente por el centro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-12"
   },
   {
@@ -7120,7 +7121,7 @@
    ],
    "correcta": 1,
    "tip": "Una figura simétrica se completa dibujando el reflejo exacto de la mitad que ya existe.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-13"
   },
   {
@@ -7134,7 +7135,7 @@
    ],
    "correcta": 2,
    "tip": "Reflejar la mitad de un corazón al otro lado de su línea de simetría arma el corazón completo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-14"
   },
   {
@@ -7148,7 +7149,7 @@
    ],
    "correcta": 1,
    "tip": "Al recortar pegado al doblez y desdoblar, las dos mitades quedan iguales, reflejadas por el doblez.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-15"
   },
   {
@@ -7162,7 +7163,7 @@
    ],
    "correcta": 2,
    "tip": "Para que una línea sea de simetría, las dos mitades deben calzar exactamente al doblar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-16"
   },
   {
@@ -7176,7 +7177,7 @@
    ],
    "correcta": 1,
    "tip": "El lado izquierdo de la M y el lado derecho son exactamente iguales, reflejados por el centro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-17"
   },
   {
@@ -7190,7 +7191,7 @@
    ],
    "correcta": 0,
    "tip": "La diagonal de la N cambia de dirección al doblarla: ni el vertical ni el horizontal la dejan igual.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-18"
   },
   {
@@ -7204,7 +7205,7 @@
    ],
    "correcta": 2,
    "tip": "Igual que en la estrella, cada línea pasa por un vértice y el medio del lado opuesto: son cinco.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-19"
   },
   {
@@ -7218,7 +7219,7 @@
    ],
    "correcta": 1,
    "tip": "Un óvalo se dobla a lo largo y a lo ancho por su centro, y en ambos casos las mitades calzan.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-20"
   },
   {
@@ -7232,7 +7233,7 @@
    ],
    "correcta": 0,
    "tip": "El borde interior del pie es distinto del exterior, así que ninguna mitad calza con la otra.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-21"
   },
   {
@@ -7246,7 +7247,7 @@
    ],
    "correcta": 0,
    "tip": "El lado izquierdo del cuerpo y el derecho son casi un espejo: la línea de simetría es vertical.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-22"
   },
   {
@@ -7260,7 +7261,7 @@
    ],
    "correcta": 2,
    "tip": "En un cuadrado, además de los dobleces por el medio de los lados, sus diagonales también son simetría.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-23"
   },
   {
@@ -7274,7 +7275,7 @@
    ],
    "correcta": 1,
    "tip": "A diferencia del cuadrado, en un rectángulo las diagonales no forman mitades que calcen.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-24"
   },
   {
@@ -7288,7 +7289,7 @@
    ],
    "correcta": 1,
    "tip": "Reflejar copia la figura como si hubiera un espejo puesto en la línea de simetría.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-25"
   },
   {
@@ -7302,7 +7303,7 @@
    ],
    "correcta": 3,
    "tip": "Arriba y abajo de la H son iguales; en la P, el círculo de arriba no tiene reflejo abajo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-26"
   },
   {
@@ -7316,7 +7317,7 @@
    ],
    "correcta": 0,
    "tip": "El escaleno no tiene ningún lado ni ángulo igual a otro, así que ningún doblez calza sus mitades.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-27"
   },
   {
@@ -7330,7 +7331,7 @@
    ],
    "correcta": 1,
    "tip": "Completar una figura simétrica es copiar su mitad como un reflejo exacto al otro lado de la línea.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-28"
   },
   {
@@ -7344,7 +7345,7 @@
    ],
    "correcta": 0,
    "tip": "Cada línea que pasa por dos pétalos opuestos y el centro es una línea de simetría.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-29"
   },
   {
@@ -7358,7 +7359,7 @@
    ],
    "correcta": 3,
    "tip": "La F no tiene ninguna línea de simetría: ninguna mitad calza con la otra al doblarla.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa17-30"
   },
   {
@@ -7372,7 +7373,7 @@
    ],
    "correcta": 0,
    "tip": "Deslizar una figura en línea recta, sin girarla ni voltearla, es una traslación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-1"
   },
   {
@@ -7386,7 +7387,7 @@
    ],
    "correcta": 1,
    "tip": "Girar alrededor de un punto fijo, sin desplazarse en línea recta, es una rotación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-2"
   },
   {
@@ -7400,7 +7401,7 @@
    ],
    "correcta": 2,
    "tip": "Un espejo produce una imagen volteada: eso es una reflexión.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-3"
   },
   {
@@ -7414,7 +7415,7 @@
    ],
    "correcta": 2,
    "tip": "Moverse en línea recta, en cualquier dirección, sin girar ni voltearse, es una traslación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-4"
   },
   {
@@ -7428,7 +7429,7 @@
    ],
    "correcta": 2,
    "tip": "Girar sobre un eje o punto fijo es una rotación, aunque la bicicleta también se traslade.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-5"
   },
   {
@@ -7442,7 +7443,7 @@
    ],
    "correcta": 1,
    "tip": "Calcar al otro lado de un doblez produce una imagen espejo: es una reflexión.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-6"
   },
   {
@@ -7456,7 +7457,7 @@
    ],
    "correcta": 1,
    "tip": "Dar vueltas alrededor de un centro fijo es una rotación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-7"
   },
   {
@@ -7470,7 +7471,7 @@
    ],
    "correcta": 3,
    "tip": "Desplazarse en línea recta, sin girar, es una traslación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-8"
   },
   {
@@ -7484,7 +7485,7 @@
    ],
    "correcta": 2,
    "tip": "El agua quieta funciona como un espejo: la imagen invertida es una reflexión.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-9"
   },
   {
@@ -7498,7 +7499,7 @@
    ],
    "correcta": 3,
    "tip": "En una traslación la figura solo se mueve: su tamaño y su forma quedan exactamente iguales.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-10"
   },
   {
@@ -7512,7 +7513,7 @@
    ],
    "correcta": 2,
    "tip": "Rotar una figura solo cambia hacia dónde mira: el tamaño y la forma se mantienen iguales.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-11"
   },
   {
@@ -7526,7 +7527,7 @@
    ],
    "correcta": 0,
    "tip": "Reflejar una figura la voltea, pero su tamaño y su forma no cambian.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-12"
   },
   {
@@ -7540,7 +7541,7 @@
    ],
    "correcta": 3,
    "tip": "La traslación solo cambia la posición de la figura: no la gira ni la voltea, así que mira igual que antes.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-13"
   },
   {
@@ -7554,7 +7555,7 @@
    ],
    "correcta": 3,
    "tip": "Reflejar voltea la figura respecto a la línea, así que la F reflejada mira hacia el lado contrario.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-14"
   },
   {
@@ -7568,7 +7569,7 @@
    ],
    "correcta": 0,
    "tip": "La rotación da vuelta alrededor de un punto fijo; la traslación desliza la figura en línea recta, sin girar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-15"
   },
   {
@@ -7582,7 +7583,7 @@
    ],
    "correcta": 3,
    "tip": "Avanzar recto es una traslación; girar en la esquina, alrededor de una rueda, es una rotación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-16"
   },
   {
@@ -7596,7 +7597,7 @@
    ],
    "correcta": 0,
    "tip": "La traslación desliza la figura sin girarla ni voltearla, así que su orientación queda igual.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-17"
   },
   {
@@ -7610,7 +7611,7 @@
    ],
    "correcta": 1,
    "tip": "Calcar a través de un doblez produce una imagen volteada respecto a la original: son reflejos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-18"
   },
   {
@@ -7624,7 +7625,7 @@
    ],
    "correcta": 2,
    "tip": "Girar alrededor de un punto en la misma dirección que las agujas del reloj es una rotación en sentido horario.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-19"
   },
   {
@@ -7638,7 +7639,7 @@
    ],
    "correcta": 1,
    "tip": "Cuando el giro va en dirección contraria a las agujas del reloj, se llama rotación en sentido antihorario.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-20"
   },
   {
@@ -7652,7 +7653,7 @@
    ],
    "correcta": 0,
    "tip": "Avanzar en línea recta sin girar ni voltearse es una traslación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-21"
   },
   {
@@ -7666,7 +7667,7 @@
    ],
    "correcta": 3,
    "tip": "Las bisagras funcionan como el punto fijo alrededor del cual gira la puerta: es una rotación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-22"
   },
   {
@@ -7680,7 +7681,7 @@
    ],
    "correcta": 2,
    "tip": "Reflejar es como poner un espejo: la figura queda del otro lado, invertida, pero con la misma forma y el mismo tamaño.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-23"
   },
   {
@@ -7694,7 +7695,7 @@
    ],
    "correcta": 2,
    "tip": "Una traslación puede moverse en cualquier dirección o combinación de direcciones, mientras no gire ni se voltee.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-24"
   },
   {
@@ -7708,7 +7709,7 @@
    ],
    "correcta": 0,
    "tip": "Reflejar dos veces respecto a la misma línea deshace el volteo anterior: la figura vuelve a como estaba.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-25"
   },
   {
@@ -7722,7 +7723,7 @@
    ],
    "correcta": 0,
    "tip": "La traslación mantiene la orientación de la figura; la reflexión la voltea como un espejo, así que son distintos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-26"
   },
   {
@@ -7736,7 +7737,7 @@
    ],
    "correcta": 1,
    "tip": "La cinta transportadora se mueve en línea recta, sin girar alrededor de un punto: es una traslación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-27"
   },
   {
@@ -7750,7 +7751,7 @@
    ],
    "correcta": 2,
    "tip": "Cuando dos figuras iguales miran hacia lados contrarios, una es el reflejo de la otra.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-28"
   },
   {
@@ -7764,7 +7765,7 @@
    ],
    "correcta": 3,
    "tip": "Si la copia mira exactamente igual que el original y solo cambió de lugar, el movimiento fue una traslación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-29"
   },
   {
@@ -7778,7 +7779,7 @@
    ],
    "correcta": 3,
    "tip": "Girar sobre un punto fijo, sin desplazarse, es exactamente una rotación.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa18-30"
   },
   {
@@ -7792,7 +7793,7 @@
    ],
    "correcta": 0,
    "tip": "Un ángulo de exactamente 90 grados se llama recto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-1"
   },
   {
@@ -7806,7 +7807,7 @@
    ],
    "correcta": 1,
    "tip": "Un ángulo que mide menos de 90 grados se llama agudo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-2"
   },
   {
@@ -7820,7 +7821,7 @@
    ],
    "correcta": 0,
    "tip": "Un ángulo que mide más de 90 grados y menos de 180 se llama obtuso.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-3"
   },
   {
@@ -7834,7 +7835,7 @@
    ],
    "correcta": 3,
    "tip": "Un ángulo de 180 grados, que forma una línea recta, se llama llano.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-4"
   },
   {
@@ -7848,7 +7849,7 @@
    ],
    "correcta": 2,
    "tip": "Las esquinas de una hoja son ángulos rectos: miden exactamente 90 grados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-5"
   },
   {
@@ -7862,7 +7863,7 @@
    ],
    "correcta": 0,
    "tip": "Un ángulo que se abre poco, como una punta angosta, mide menos de 90 grados: es agudo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-6"
   },
   {
@@ -7876,7 +7877,7 @@
    ],
    "correcta": 1,
    "tip": "Un ángulo mayor que 90 grados y menor que 180 grados es obtuso.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-7"
   },
   {
@@ -7890,7 +7891,7 @@
    ],
    "correcta": 0,
    "tip": "120 grados es un número mayor que 35 grados, así que el ángulo B es el mayor de los dos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-8"
   },
   {
@@ -7904,7 +7905,7 @@
    ],
    "correcta": 0,
    "tip": "Dos ángulos con la misma medida en grados son iguales, sin importar cómo estén dibujados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-9"
   },
   {
@@ -7918,7 +7919,7 @@
    ],
    "correcta": 3,
    "tip": "Ordenar de menor a mayor es comparar los números: 20 es el más chico y 170 el más grande.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-10"
   },
   {
@@ -7932,7 +7933,7 @@
    ],
    "correcta": 3,
    "tip": "El ángulo se mide por cuánto se abren sus lados, no por lo largos que sean.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-11"
   },
   {
@@ -7946,7 +7947,7 @@
    ],
    "correcta": 1,
    "tip": "El largo de los lados no cambia la medida del ángulo: 60 grados es mayor que 40 grados, se vea como se vea.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-12"
   },
   {
@@ -7960,7 +7961,7 @@
    ],
    "correcta": 3,
    "tip": "El centro del transportador se apoya justo en el vértice, es decir, en el extremo del rayo ya trazado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-13"
   },
   {
@@ -7974,7 +7975,7 @@
    ],
    "correcta": 0,
    "tip": "Con el centro ya alineado, se busca la marca de la medida deseada y se traza el segundo lado del ángulo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-14"
   },
   {
@@ -7988,7 +7989,7 @@
    ],
    "correcta": 0,
    "tip": "Según hacia qué lado se abre el ángulo, conviene leer la escala que empieza desde ese lado en 0.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-15"
   },
   {
@@ -8002,7 +8003,7 @@
    ],
    "correcta": 1,
    "tip": "Como el ángulo se ve obtuso, tiene que medir más de 90 grados: la lectura correcta es 140, no 40.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-16"
   },
   {
@@ -8016,7 +8017,7 @@
    ],
    "correcta": 0,
    "tip": "Como el ángulo se ve agudo, tiene que medir menos de 90 grados: la lectura correcta es 25, no 155.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-17"
   },
   {
@@ -8030,7 +8031,7 @@
    ],
    "correcta": 1,
    "tip": "El centro del transportador tiene que coincidir con el vértice del ángulo; si no, la medida sale incorrecta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-18"
   },
   {
@@ -8044,7 +8045,7 @@
    ],
    "correcta": 3,
    "tip": "Hay que empezar a contar desde la marca de 0 del lado por donde se abre el ángulo, no desde 180.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-19"
   },
   {
@@ -8058,7 +8059,7 @@
    ],
    "correcta": 1,
    "tip": "Cualquier ángulo que pase de 90 grados, aunque sea por poco, ya se clasifica como obtuso.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-20"
   },
   {
@@ -8072,7 +8073,7 @@
    ],
    "correcta": 3,
    "tip": "Mientras no llegue a 90 grados, el ángulo sigue siendo agudo, aunque esté muy cerca.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-21"
   },
   {
@@ -8086,7 +8087,7 @@
    ],
    "correcta": 3,
    "tip": "A las 3 en punto, las manecillas forman exactamente un cuarto de vuelta: un ángulo recto de 90 grados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-22"
   },
   {
@@ -8100,7 +8101,7 @@
    ],
    "correcta": 0,
    "tip": "A las 6 en punto, las manecillas quedan en línea recta, apuntando a lados opuestos: forman un ángulo llano.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-23"
   },
   {
@@ -8114,7 +8115,7 @@
    ],
    "correcta": 1,
    "tip": "Un ángulo obtuso siempre mide más grados que uno agudo, así que la rebanada ancha tiene el ángulo mayor.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-24"
   },
   {
@@ -8128,7 +8129,7 @@
    ],
    "correcta": 0,
    "tip": "Ordenar de mayor a menor es acomodar los números empezando por el más grande: 160 es el mayor.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-25"
   },
   {
@@ -8142,7 +8143,7 @@
    ],
    "correcta": 0,
    "tip": "El transportador tiene una escala en grados, hecha justamente para medir y construir ángulos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-26"
   },
   {
@@ -8156,7 +8157,7 @@
    ],
    "correcta": 3,
    "tip": "Los grados de un ángulo no dependen de qué tan grande se dibuje en la hoja, sino de cuánto se abre.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-27"
   },
   {
@@ -8170,7 +8171,7 @@
    ],
    "correcta": 0,
    "tip": "150 grados está entre 90 y 180, así que el ángulo A es el obtuso; 60 grados es agudo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-28"
   },
   {
@@ -8184,7 +8185,7 @@
    ],
    "correcta": 2,
    "tip": "Después de marcar el punto en los 100 grados, se traza el segundo lado uniendo el vértice con esa marca.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-29"
   },
   {
@@ -8198,7 +8199,7 @@
    ],
    "correcta": 3,
    "tip": "Un ángulo cercano a 180 grados, casi una línea recta, se clasifica como llano.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa19-30"
   },
   {
@@ -8212,7 +8213,7 @@
    ],
    "correcta": 0,
    "tip": "La manecilla chica apunta al 7 y la grande al 12: son las 7 en punto, y como recién se levanta, es de mañana.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-1",
    "visual": {
     "tipo": "reloj",
@@ -8231,7 +8232,7 @@
    ],
    "correcta": 3,
    "tip": "La manecilla chica está entre el 3 y el 4, y la grande en el 6: son las 3 y media, de tarde.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-2",
    "visual": {
     "tipo": "reloj",
@@ -8250,7 +8251,7 @@
    ],
    "correcta": 2,
    "tip": "La manecilla chica está un poco pasado el 9 y la grande en el 3: son las 9 y cuarto, y es de noche.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-3",
    "visual": {
     "tipo": "reloj",
@@ -8269,7 +8270,7 @@
    ],
    "correcta": 2,
    "tip": "Las 12 del día, cuando se almuerza, se llaman las 12 del mediodía.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-4",
    "visual": {
     "tipo": "reloj",
@@ -8288,7 +8289,7 @@
    ],
    "correcta": 2,
    "tip": "Las 12 de la noche, cuando todos duermen, se llaman las 12 de la medianoche.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-5",
    "visual": {
     "tipo": "reloj",
@@ -8307,7 +8308,7 @@
    ],
    "correcta": 0,
    "tip": "Las dos manecillas apuntan al 6 y al 12: son las 6 en punto, y como recién sale el sol, es de mañana.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-6",
    "visual": {
     "tipo": "reloj",
@@ -8326,7 +8327,7 @@
    ],
    "correcta": 3,
    "tip": "La manecilla grande en el 9 marca 45 minutos, no 9: son las 4 y 45, de tarde.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-7",
    "visual": {
     "tipo": "reloj",
@@ -8345,7 +8346,7 @@
    ],
    "correcta": 1,
    "tip": "La manecilla grande en el 2 marca 10 minutos, porque cada número vale 5 minutos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-8",
    "visual": {
     "tipo": "reloj",
@@ -8364,7 +8365,7 @@
    ],
    "correcta": 1,
    "tip": "La manecilla grande en el 4 marca 20 minutos, porque cada número vale 5 minutos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-9",
    "visual": {
     "tipo": "reloj",
@@ -8383,7 +8384,7 @@
    ],
    "correcta": 1,
    "tip": "La manecilla grande en el 10 marca 50 minutos, porque cada número vale 5 minutos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-10",
    "visual": {
     "tipo": "reloj",
@@ -8402,7 +8403,7 @@
    ],
    "correcta": 3,
    "tip": "Como pasa de 12, se le resta 12 a la hora: 13 menos 12 son 1, y como pasó el mediodía, es de tarde.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-11"
   },
   {
@@ -8416,7 +8417,7 @@
    ],
    "correcta": 1,
    "tip": "14 menos 12 son 2, y como ya pasó el mediodía, esa hora es de tarde.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-12"
   },
   {
@@ -8430,7 +8431,7 @@
    ],
    "correcta": 0,
    "tip": "16 menos 12 son 4, y como ya pasó el mediodía, esa hora es de tarde.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-13"
   },
   {
@@ -8444,7 +8445,7 @@
    ],
    "correcta": 1,
    "tip": "17 menos 12 son 5, y como ya pasó el mediodía, esa hora es de tarde.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-14"
   },
   {
@@ -8458,7 +8459,7 @@
    ],
    "correcta": 3,
    "tip": "19 menos 12 son 7, y como ya oscureció, esa hora se dice de noche.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-15"
   },
   {
@@ -8472,7 +8473,7 @@
    ],
    "correcta": 0,
    "tip": "20 menos 12 son 8, y a esa hora ya es de noche.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-16"
   },
   {
@@ -8486,7 +8487,7 @@
    ],
    "correcta": 1,
    "tip": "22 menos 12 son 10, y a esa hora ya es de noche.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-17"
   },
   {
@@ -8500,7 +8501,7 @@
    ],
    "correcta": 1,
    "tip": "Como es de tarde, se le suma 12 a la hora: 6 más 12 son 18.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-18"
   },
   {
@@ -8514,7 +8515,7 @@
    ],
    "correcta": 0,
    "tip": "Las horas de la mañana, hasta el mediodía, se escriben igual, solo con dos dígitos: 09:00.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-19"
   },
   {
@@ -8528,7 +8529,7 @@
    ],
    "correcta": 1,
    "tip": "Las horas de la mañana se escriben igual en el formato de 24 horas: 11:00.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-20"
   },
   {
@@ -8542,7 +8543,7 @@
    ],
    "correcta": 1,
    "tip": "El mediodía, las 12 del día, se escribe 12:00 en el formato de 24 horas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-21"
   },
   {
@@ -8556,7 +8557,7 @@
    ],
    "correcta": 3,
    "tip": "La medianoche, el momento en que empieza un nuevo día, se escribe 00:00 en el formato de 24 horas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-22"
   },
   {
@@ -8570,7 +8571,7 @@
    ],
    "correcta": 2,
    "tip": "Como es de tarde, se le suma 12 a la hora: 3 más 12 son 15.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-23"
   },
   {
@@ -8584,7 +8585,7 @@
    ],
    "correcta": 1,
    "tip": "Como es de noche, se le suma 12 a la hora: 10 más 12 son 22.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-24"
   },
   {
@@ -8598,7 +8599,7 @@
    ],
    "correcta": 0,
    "tip": "El formato de 24 horas numera cada hora del día una sola vez, sin repetir números.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-25"
   },
   {
@@ -8612,7 +8613,7 @@
    ],
    "correcta": 3,
    "tip": "En el formato de 12 horas, por ejemplo las 4, aparecen dos veces al día: hay que aclarar cuál de las dos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-26"
   },
   {
@@ -8626,7 +8627,7 @@
    ],
    "correcta": 2,
    "tip": "Un reloj de agujas repite las mismas posiciones dos veces al día: solas, no dicen si es mañana o tarde.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-27"
   },
   {
@@ -8640,7 +8641,7 @@
    ],
    "correcta": 3,
    "tip": "Un número de hora mayor que 12, como 20, solo puede venir del formato de 24 horas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-28"
   },
   {
@@ -8654,7 +8655,7 @@
    ],
    "correcta": 2,
    "tip": "23:00 está justo antes de las 24, o sea de la medianoche: es de noche.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-29"
   },
   {
@@ -8668,7 +8669,7 @@
    ],
    "correcta": 3,
    "tip": "En el formato digital, las horas de un solo dígito llevan un cero adelante para completar dos dígitos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa20-30"
   },
   {
@@ -8682,7 +8683,7 @@
    ],
    "correcta": 3,
    "tip": "Cada minuto se forma con 60 segundos, sin importar el minuto que sea.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-1"
   },
   {
@@ -8696,7 +8697,7 @@
    ],
    "correcta": 0,
    "tip": "120 segundos se agrupan de a 60: 120 ÷ 60 = 2 minutos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-2"
   },
   {
@@ -8710,7 +8711,7 @@
    ],
    "correcta": 3,
    "tip": "Cada minuto tiene 60 segundos: 3 minutos son 3 × 60 = 180 segundos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-3"
   },
   {
@@ -8724,7 +8725,7 @@
    ],
    "correcta": 1,
    "tip": "90 segundos son 60 (un minuto completo) más 30 que sobran: 1 minuto y 30 segundos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-4"
   },
   {
@@ -8738,7 +8739,7 @@
    ],
    "correcta": 0,
    "tip": "1 minuto y 50 segundos son 60 + 50 = 110 segundos, más que los 100 de Matías.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-5"
   },
   {
@@ -8752,7 +8753,7 @@
    ],
    "correcta": 3,
    "tip": "2 minutos son 120 segundos. Si ya pasaron 90, faltan 120 − 90 = 30 segundos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-6"
   },
   {
@@ -8766,7 +8767,7 @@
    ],
    "correcta": 0,
    "tip": "1 minuto son 60 segundos, así que en segundos el orden es 45, 60 y 80.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-7"
   },
   {
@@ -8780,7 +8781,7 @@
    ],
    "correcta": 1,
    "tip": "150 ÷ 60 = 2 minutos completos (120 segundos); sobran 150 − 120 = 30 segundos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-8",
    "visual": {
     "tipo": "recta",
@@ -8801,7 +8802,7 @@
    ],
    "correcta": 1,
    "tip": "En cada hora caben 60 minutos, sin importar cuál sea.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-9"
   },
   {
@@ -8815,7 +8816,7 @@
    ],
    "correcta": 0,
    "tip": "120 minutos se agrupan de a 60: 120 ÷ 60 = 2 horas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-10"
   },
   {
@@ -8829,7 +8830,7 @@
    ],
    "correcta": 1,
    "tip": "Cada hora tiene 60 minutos: 2 horas son 2 × 60 = 120 minutos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-11"
   },
   {
@@ -8843,7 +8844,7 @@
    ],
    "correcta": 1,
    "tip": "100 minutos son 60 (una hora completa) más 40 que sobran: 1 hora y 40 minutos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-12"
   },
   {
@@ -8857,7 +8858,7 @@
    ],
    "correcta": 2,
    "tip": "1 hora con 40 minutos son 60 + 40 = 100 minutos, más que los 90 del documental.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-13"
   },
   {
@@ -8871,7 +8872,7 @@
    ],
    "correcta": 3,
    "tip": "2 horas son 120 minutos. 150 − 120 = 30 minutos le faltan.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-14"
   },
   {
@@ -8885,7 +8886,7 @@
    ],
    "correcta": 2,
    "tip": "1 hora son 60 minutos, un valor entre 50 y 80.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-15"
   },
   {
@@ -8899,7 +8900,7 @@
    ],
    "correcta": 3,
    "tip": "90 ÷ 60 = 1 hora completa (60 minutos); sobran 90 − 60 = 30 minutos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-16",
    "visual": {
     "tipo": "recta",
@@ -8920,7 +8921,7 @@
    ],
    "correcta": 2,
    "tip": "Abril es uno de los meses de 30 días, junto con junio, septiembre y noviembre.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-17"
   },
   {
@@ -8934,7 +8935,7 @@
    ],
    "correcta": 0,
    "tip": "Enero es uno de los meses de 31 días.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-18"
   },
   {
@@ -8948,7 +8949,7 @@
    ],
    "correcta": 2,
    "tip": "Los meses tienen 28, 30 o 31 días según cuál sea; no todos duran igual.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-19"
   },
   {
@@ -8962,7 +8963,7 @@
    ],
    "correcta": 0,
    "tip": "60 ÷ 30 = 2 meses, usando 30 días como referencia para este cálculo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-20"
   },
   {
@@ -8976,7 +8977,7 @@
    ],
    "correcta": 2,
    "tip": "2 meses de 30 días cada uno son 2 × 30 = 60 días.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-21"
   },
   {
@@ -8990,7 +8991,7 @@
    ],
    "correcta": 0,
    "tip": "30 − 22 = 8 días faltan para terminar septiembre.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-22"
   },
   {
@@ -9004,7 +9005,7 @@
    ],
    "correcta": 2,
    "tip": "31 − 30 = 1 día de diferencia.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-23"
   },
   {
@@ -9018,7 +9019,7 @@
    ],
    "correcta": 3,
    "tip": "Un año completo se forma con 12 meses.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-24"
   },
   {
@@ -9032,7 +9033,7 @@
    ],
    "correcta": 0,
    "tip": "24 meses se agrupan de a 12: 24 ÷ 12 = 2 años.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-25"
   },
   {
@@ -9046,7 +9047,7 @@
    ],
    "correcta": 1,
    "tip": "Cada año tiene 12 meses: 3 años son 3 × 12 = 36 meses.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-26"
   },
   {
@@ -9060,7 +9061,7 @@
    ],
    "correcta": 3,
    "tip": "18 meses son 12 (un año) más 6, la mitad de otro: 1 año y medio.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-27"
   },
   {
@@ -9074,7 +9075,7 @@
    ],
    "correcta": 0,
    "tip": "2 años y medio son 24 + 6 = 30 meses, el mismo tiempo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-28"
   },
   {
@@ -9088,7 +9089,7 @@
    ],
    "correcta": 1,
    "tip": "2 años son 24 meses. 24 − 15 = 9 meses faltan.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-29"
   },
   {
@@ -9102,7 +9103,7 @@
    ],
    "correcta": 2,
    "tip": "1 año son 12 meses, un valor entre 10 y 15.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa21-30"
   },
   {
@@ -9116,7 +9117,7 @@
    ],
    "correcta": 0,
    "tip": "Un metro se forma con 100 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-1"
   },
   {
@@ -9130,7 +9131,7 @@
    ],
    "correcta": 3,
    "tip": "Cada metro tiene 100 centímetros: 3 metros son 3 × 100 = 300 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-2"
   },
   {
@@ -9144,7 +9145,7 @@
    ],
    "correcta": 1,
    "tip": "Medio metro son 50 centímetros; 15 centímetros es bastante menos que eso.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-3"
   },
   {
@@ -9158,7 +9159,7 @@
    ],
    "correcta": 2,
    "tip": "250 son 200 (2 metros completos) más 50 que sobran: 2 metros y 50 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-4"
   },
   {
@@ -9172,7 +9173,7 @@
    ],
    "correcta": 0,
    "tip": "5 metros son 5 × 100 = 500 centímetros, más que los 400 del otro sector.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-5"
   },
   {
@@ -9186,7 +9187,7 @@
    ],
    "correcta": 2,
    "tip": "6 metros son 600 centímetros. 600 − 350 = 250 centímetros más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-6"
   },
   {
@@ -9200,7 +9201,7 @@
    ],
    "correcta": 3,
    "tip": "1 metro son 100 centímetros, un valor entre 90 y 150.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-7"
   },
   {
@@ -9214,7 +9215,7 @@
    ],
    "correcta": 0,
    "tip": "Para distancias largas conviene una unidad y un instrumento más grandes.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-8"
   },
   {
@@ -9228,7 +9229,7 @@
    ],
    "correcta": 0,
    "tip": "1 metro son 100 centímetros; 130 es más que eso.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-9"
   },
   {
@@ -9242,7 +9243,7 @@
    ],
    "correcta": 1,
    "tip": "120 son 100 (1 metro) más 20 que sobran: 1 metro y 20 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-10"
   },
   {
@@ -9256,7 +9257,7 @@
    ],
    "correcta": 0,
    "tip": "250 ÷ 100 = 2 metros completos (200 centímetros); sobran 50 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-11",
    "visual": {
     "tipo": "recta",
@@ -9277,7 +9278,7 @@
    ],
    "correcta": 0,
    "tip": "400 ÷ 100 = 4 metros exactos, sin nada de sobra.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-12",
    "visual": {
     "tipo": "recta",
@@ -9298,7 +9299,7 @@
    ],
    "correcta": 0,
    "tip": "8 metros son 8 × 100 = 800 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-13"
   },
   {
@@ -9312,7 +9313,7 @@
    ],
    "correcta": 1,
    "tip": "2 metros son 200 centímetros; 250 es más que eso.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-14"
   },
   {
@@ -9326,7 +9327,7 @@
    ],
    "correcta": 1,
    "tip": "3 metros son 3 × 100 = 300 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-15"
   },
   {
@@ -9340,7 +9341,7 @@
    ],
    "correcta": 0,
    "tip": "25 metros son 25 × 100 = 2500 centímetros, no 250.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-16"
   },
   {
@@ -9354,7 +9355,7 @@
    ],
    "correcta": 3,
    "tip": "180 son 100 (1 metro) más 80 que sobran: 1 metro y 80 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-17"
   },
   {
@@ -9368,7 +9369,7 @@
    ],
    "correcta": 1,
    "tip": "6 metros son 600 centímetros, más que los 550 del otro pasillo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-18"
   },
   {
@@ -9382,7 +9383,7 @@
    ],
    "correcta": 3,
    "tip": "40 + 70 = 110 centímetros, o sea 1 metro (100) y 10 centímetros más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-19"
   },
   {
@@ -9396,7 +9397,7 @@
    ],
    "correcta": 0,
    "tip": "4 metros son 4 × 100 = 400 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-20"
   },
   {
@@ -9410,7 +9411,7 @@
    ],
    "correcta": 1,
    "tip": "1000 ÷ 100 = 10 metros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-21"
   },
   {
@@ -9424,7 +9425,7 @@
    ],
    "correcta": 3,
    "tip": "15 metros son 15 × 100 = 1500 centímetros, exacto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-22"
   },
   {
@@ -9438,7 +9439,7 @@
    ],
    "correcta": 2,
    "tip": "2 metros son 200 centímetros y 3 metros son 300: el orden real es 150, 200 y 300.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-23"
   },
   {
@@ -9452,7 +9453,7 @@
    ],
    "correcta": 1,
    "tip": "2 metros son 200 centímetros; 200 + 50 = 250 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-24"
   },
   {
@@ -9466,7 +9467,7 @@
    ],
    "correcta": 1,
    "tip": "320 son 300 (3 metros) más 20 que sobran: 3 metros y 20 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-25"
   },
   {
@@ -9480,7 +9481,7 @@
    ],
    "correcta": 0,
    "tip": "3 metros son 300 centímetros; 280 es menos que eso.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-26"
   },
   {
@@ -9494,7 +9495,7 @@
    ],
    "correcta": 3,
    "tip": "3 metros son 3 × 100 = 300 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-27"
   },
   {
@@ -9508,7 +9509,7 @@
    ],
    "correcta": 0,
    "tip": "450 son 400 (4 metros) más 50, que es la mitad de otro metro: 4 metros y medio.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-28"
   },
   {
@@ -9522,7 +9523,7 @@
    ],
    "correcta": 0,
    "tip": "7 metros son 7 × 100 = 700 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-29"
   },
   {
@@ -9536,7 +9537,7 @@
    ],
    "correcta": 2,
    "tip": "6 metros son 600 centímetros, más que los 590 de la otra cinta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa22-30"
   },
   {
@@ -9550,7 +9551,7 @@
    ],
    "correcta": 0,
    "tip": "El área cubre una superficie, así que se mide en unidades cuadradas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-1"
   },
   {
@@ -9564,7 +9565,7 @@
    ],
    "correcta": 0,
    "tip": "El área de un rectángulo es base por altura: 5 × 4 = 20 centímetros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-2"
   },
   {
@@ -9578,7 +9579,7 @@
    ],
    "correcta": 2,
    "tip": "En un cuadrado, el área es lado por lado: 6 × 6 = 36 centímetros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-3"
   },
   {
@@ -9592,7 +9593,7 @@
    ],
    "correcta": 2,
    "tip": "Para superficies grandes conviene una unidad más grande: metros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-4"
   },
   {
@@ -9606,7 +9607,7 @@
    ],
    "correcta": 1,
    "tip": "Para superficies pequeñas conviene una unidad más chica: centímetros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-5"
   },
   {
@@ -9620,7 +9621,7 @@
    ],
    "correcta": 0,
    "tip": "2 × 6 = 12 y 3 × 4 = 12: distintos rectángulos pueden tener la misma área.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-6"
   },
   {
@@ -9634,7 +9635,7 @@
    ],
    "correcta": 0,
    "tip": "3 × 4 = 12 y 2 × 6 = 12: ambos pares dan la misma área.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-7"
   },
   {
@@ -9648,7 +9649,7 @@
    ],
    "correcta": 2,
    "tip": "8 × 8 = 64 centímetros cuadrados: al doblar el lado, el área no se duplica, se cuadruplica.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-8"
   },
   {
@@ -9662,7 +9663,7 @@
    ],
    "correcta": 1,
    "tip": "8 × 3 = 24 y 4 × 5 = 20; 24 es mayor que 20.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-9"
   },
   {
@@ -9676,7 +9677,7 @@
    ],
    "correcta": 2,
    "tip": "3 × 5 = 15 metros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-10"
   },
   {
@@ -9690,7 +9691,7 @@
    ],
    "correcta": 3,
    "tip": "2 × 2 = 4 metros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-11"
   },
   {
@@ -9704,7 +9705,7 @@
    ],
    "correcta": 0,
    "tip": "20 × 15 = 300 centímetros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-12"
   },
   {
@@ -9718,7 +9719,7 @@
    ],
    "correcta": 2,
    "tip": "120 × 80 = 9600 centímetros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-13"
   },
   {
@@ -9732,7 +9733,7 @@
    ],
    "correcta": 2,
    "tip": "6 × 4 = 24 metros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-14"
   },
   {
@@ -9746,7 +9747,7 @@
    ],
    "correcta": 2,
    "tip": "El área es base por altura: 4 × 7 = 28 centímetros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-15"
   },
   {
@@ -9760,7 +9761,7 @@
    ],
    "correcta": 1,
    "tip": "El área se calcula multiplicando, no sumando: 3 × 2 = 6 metros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-16"
   },
   {
@@ -9774,7 +9775,7 @@
    ],
    "correcta": 3,
    "tip": "10 × 10 = 100 centímetros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-17"
   },
   {
@@ -9788,7 +9789,7 @@
    ],
    "correcta": 0,
    "tip": "15 × 8 = 120 metros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-18"
   },
   {
@@ -9802,7 +9803,7 @@
    ],
    "correcta": 3,
    "tip": "9 × 2 = 18 y 6 × 3 = 18: ambos rectángulos tienen la misma área.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-19"
   },
   {
@@ -9816,7 +9817,7 @@
    ],
    "correcta": 3,
    "tip": "1 × 2 = 2 metros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-20"
   },
   {
@@ -9830,7 +9831,7 @@
    ],
    "correcta": 0,
    "tip": "90 × 60 = 5400 centímetros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-21"
   },
   {
@@ -9844,7 +9845,7 @@
    ],
    "correcta": 1,
    "tip": "5 × 5 = 25 y 25 × 1 = 25: rectángulos distintos pueden tener la misma área.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-22"
   },
   {
@@ -9858,7 +9859,7 @@
    ],
    "correcta": 0,
    "tip": "20 × 30 = 600 metros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-23"
   },
   {
@@ -9872,7 +9873,7 @@
    ],
    "correcta": 3,
    "tip": "40 × 25 = 1000 centímetros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-24"
   },
   {
@@ -9886,7 +9887,7 @@
    ],
    "correcta": 3,
    "tip": "12 × 12 = 144 metros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-25"
   },
   {
@@ -9900,7 +9901,7 @@
    ],
    "correcta": 2,
    "tip": "150 × 100 = 15000 centímetros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-26"
   },
   {
@@ -9914,7 +9915,7 @@
    ],
    "correcta": 2,
    "tip": "Si el área es base por altura, la altura es 24 ÷ 4 = 6 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-27"
   },
   {
@@ -9928,7 +9929,7 @@
    ],
    "correcta": 3,
    "tip": "La base es el área dividida por la altura: 30 ÷ 5 = 6 metros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-28"
   },
   {
@@ -9942,7 +9943,7 @@
    ],
    "correcta": 3,
    "tip": "8 × 4 = 32 metros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-29"
   },
   {
@@ -9956,7 +9957,7 @@
    ],
    "correcta": 0,
    "tip": "Para multiplicar, las dos medidas deben estar en la misma unidad: 200 × 50 = 10000 centímetros cuadrados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa23-30"
   },
   {
@@ -9970,7 +9971,7 @@
    ],
    "correcta": 0,
    "tip": "El volumen se mide contando cuántas unidades de cubo caben dentro del cuerpo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-1"
   },
   {
@@ -9984,7 +9985,7 @@
    ],
    "correcta": 2,
    "tip": "Una fila de 5 cubos usa exactamente 5 cubos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-2"
   },
   {
@@ -9998,7 +9999,7 @@
    ],
    "correcta": 2,
    "tip": "Una capa de 3 por 2 tiene 3 × 2 = 6 cubos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-3"
   },
   {
@@ -10012,7 +10013,7 @@
    ],
    "correcta": 1,
    "tip": "Cada capa tiene 2 × 3 = 6 cubos; con 2 capas son 6 × 2 = 12 cubos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-4"
   },
   {
@@ -10026,7 +10027,7 @@
    ],
    "correcta": 3,
    "tip": "La base tiene 2 × 2 = 4 cubos; con 3 capas son 4 × 3 = 12 cubos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-5"
   },
   {
@@ -10040,7 +10041,7 @@
    ],
    "correcta": 1,
    "tip": "La base tiene 4 × 1 = 4 cubos; con 2 capas son 4 × 2 = 8 cubos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-6"
   },
   {
@@ -10054,7 +10055,7 @@
    ],
    "correcta": 0,
    "tip": "El cuerpo con más cubos ocupa más espacio: tiene mayor volumen.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-7"
   },
   {
@@ -10068,7 +10069,7 @@
    ],
    "correcta": 0,
    "tip": "3 capas de 5 cubos cada una son 3 × 5 = 15 cubos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-8"
   },
   {
@@ -10082,7 +10083,7 @@
    ],
    "correcta": 3,
    "tip": "2 × 2 × 2 = 8 cubos en total.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-9"
   },
   {
@@ -10096,7 +10097,7 @@
    ],
    "correcta": 2,
    "tip": "4 × 2 × 1 = 8 cubos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-10"
   },
   {
@@ -10110,7 +10111,7 @@
    ],
    "correcta": 2,
    "tip": "El volumen cuenta todos los cubos que forman el cuerpo, estén a la vista o no.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-11"
   },
   {
@@ -10124,7 +10125,7 @@
    ],
    "correcta": 1,
    "tip": "Cada capa nueva agrega tantos cubos como tiene la base: 3 × 3 = 9 cubos más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-12"
   },
   {
@@ -10138,7 +10139,7 @@
    ],
    "correcta": 0,
    "tip": "Sofía: 2 × 4 × 3 = 24 cubos. Camila: 2 × 4 × 2 = 16 cubos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-13"
   },
   {
@@ -10152,7 +10153,7 @@
    ],
    "correcta": 1,
    "tip": "5 × 1 × 1 = 5 cubos, una sola fila.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-14"
   },
   {
@@ -10166,7 +10167,7 @@
    ],
    "correcta": 0,
    "tip": "2 capas de 6 cubos cada una son 2 × 6 = 12 cubos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-15"
   },
   {
@@ -10180,7 +10181,7 @@
    ],
    "correcta": 2,
    "tip": "El área es de dos dimensiones (superficie); el volumen es de tres (el espacio completo).",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-16"
   },
   {
@@ -10194,7 +10195,7 @@
    ],
    "correcta": 1,
    "tip": "La base tiene 3 × 4 = 12 cubos; con 2 capas son 12 × 2 = 24 cubos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-17"
   },
   {
@@ -10208,7 +10209,7 @@
    ],
    "correcta": 0,
    "tip": "3 × 3 × 3 = 27 cubos pequeños.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-18"
   },
   {
@@ -10222,7 +10223,7 @@
    ],
    "correcta": 3,
    "tip": "10 − 5 = 5 cubos quedan después de quitar la capa.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-19"
   },
   {
@@ -10236,7 +10237,7 @@
    ],
    "correcta": 1,
    "tip": "6 × 2 × 1 = 12 cubos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-20"
   },
   {
@@ -10250,7 +10251,7 @@
    ],
    "correcta": 2,
    "tip": "2 × 2 × 3 = 12 y 3 × 2 × 2 = 12: cuerpos distintos pueden tener el mismo volumen.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-21"
   },
   {
@@ -10264,7 +10265,7 @@
    ],
    "correcta": 0,
    "tip": "1 × 1 × 8 = 8 cubos, una sola columna.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-22"
   },
   {
@@ -10278,7 +10279,7 @@
    ],
    "correcta": 0,
    "tip": "4 × 3 × 2 = 24 cubos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-23"
   },
   {
@@ -10292,7 +10293,7 @@
    ],
    "correcta": 2,
    "tip": "2 × 3 × 4 = 24 cubos: multiplicar las tres medidas da el volumen.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-24"
   },
   {
@@ -10306,7 +10307,7 @@
    ],
    "correcta": 0,
    "tip": "3 capas de 4 son 12; con una capa más son 12 + 4 = 16 cubos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-25"
   },
   {
@@ -10320,7 +10321,7 @@
    ],
    "correcta": 3,
    "tip": "Una capa de 5 por 2 tiene 5 × 2 = 10 cubos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-26"
   },
   {
@@ -10334,7 +10335,7 @@
    ],
    "correcta": 3,
    "tip": "2 × 5 × 3 = 30 cubos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-27"
   },
   {
@@ -10348,7 +10349,7 @@
    ],
    "correcta": 2,
    "tip": "3 capas de 6 cubos cada una son 3 × 6 = 18 cubos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-28"
   },
   {
@@ -10362,7 +10363,7 @@
    ],
    "correcta": 2,
    "tip": "2 × 2 × 2 = 8 y 1 × 4 × 2 = 8: cuerpos con formas distintas pueden tener igual volumen.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-29"
   },
   {
@@ -10376,7 +10377,7 @@
    ],
    "correcta": 2,
    "tip": "Una capa de 4 por 4 tiene 4 × 4 = 16 cubos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa24-30"
   },
   {
@@ -10390,7 +10391,7 @@
    ],
    "correcta": 3,
    "tip": "8 votos es el número más alto de la tabla, así que la manzana fue la fruta más elegida.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-1"
   },
   {
@@ -10404,7 +10405,7 @@
    ],
    "correcta": 1,
    "tip": "8 o más suma tres grupos: 12 + 6 + 2 = 20. Contar solo el grupo de 8 deja afuera a los de 9 y 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-2"
   },
   {
@@ -10418,7 +10419,7 @@
    ],
    "correcta": 0,
    "tip": "De 30 encuestados, 15 usan auto: los que no lo usan son 30 − 15 = 15.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-3"
   },
   {
@@ -10432,7 +10433,7 @@
    ],
    "correcta": 3,
    "tip": "En una encuesta de preferencias, cada barra es una categoría de respuesta y su altura muestra cuántos la eligieron.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-4"
   },
   {
@@ -10446,7 +10447,7 @@
    ],
    "correcta": 3,
    "tip": "Se suman las dos categorías pedidas: 7 + 5 = 12.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-5"
   },
   {
@@ -10460,7 +10461,7 @@
    ],
    "correcta": 3,
    "tip": "Una muestra chica puede no reflejar a todo el grupo: para conocer a los 400 conviene encuestar a más de un curso.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-6"
   },
   {
@@ -10474,7 +10475,7 @@
    ],
    "correcta": 1,
    "tip": "En la primera muestra ganó el chocolate y en la segunda la vainilla: dos muestras aleatorias distintas pueden variar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-7"
   },
   {
@@ -10488,7 +10489,7 @@
    ],
    "correcta": 3,
    "tip": "5 es el número más bajo de la tabla: Historia fue la menos elegida.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-8"
   },
   {
@@ -10502,7 +10503,7 @@
    ],
    "correcta": 3,
    "tip": "Una tabla de encuesta organiza por categoría de respuesta, no por persona.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-9"
   },
   {
@@ -10516,7 +10517,7 @@
    ],
    "correcta": 2,
    "tip": "Para comparar dos encuestas hace falta la misma información en las dos: total y cuánto obtuvo cada categoría.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-10"
   },
   {
@@ -10530,7 +10531,7 @@
    ],
    "correcta": 0,
    "tip": "Dos muestras aleatorias distintas —aunque midan lo mismo— pueden dar resultados distintos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-11"
   },
   {
@@ -10544,7 +10545,7 @@
    ],
    "correcta": 1,
    "tip": "Al menos una es 1, 2 o más: 8 + 3 + 2 = 13. Los 9 sin mascota no se cuentan.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-12"
   },
   {
@@ -10558,7 +10559,7 @@
    ],
    "correcta": 0,
    "tip": "Se suman todas las categorías: 14 + 9 + 11 + 6 = 40.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-13"
   },
   {
@@ -10572,7 +10573,7 @@
    ],
    "correcta": 3,
    "tip": "Una muestra grande y variada refleja mejor las preferencias de todo el colegio que un grupo de amigos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-14"
   },
   {
@@ -10586,7 +10587,7 @@
    ],
    "correcta": 1,
    "tip": "Se suman las dos categorías pedidas: 11 + 8 = 19.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-15"
   },
   {
@@ -10600,7 +10601,7 @@
    ],
    "correcta": 3,
    "tip": "12 es el número más alto de la tabla: tener 1 hermano fue lo más elegido.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-16"
   },
   {
@@ -10614,7 +10615,7 @@
    ],
    "correcta": 0,
    "tip": "Personas distintas pueden preferir cosas distintas: eso no invalida ninguna de las dos encuestas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-17"
   },
   {
@@ -10628,7 +10629,7 @@
    ],
    "correcta": 2,
    "tip": "Cuando se comparan categorías y cuántas veces se eligió cada una, el gráfico de barras es el más claro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-18"
   },
   {
@@ -10642,7 +10643,7 @@
    ],
    "correcta": 1,
    "tip": "De 24 encuestados, 13 eligieron inglés: los que no, son 24 − 13 = 11.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-19"
   },
   {
@@ -10656,7 +10657,7 @@
    ],
    "correcta": 2,
    "tip": "Para representar a un grupo más grande conviene juntar muestras de varias partes de ese grupo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-20"
   },
   {
@@ -10670,7 +10671,7 @@
    ],
    "correcta": 3,
    "tip": "El más elegido fue enero (14) y el menos, marzo (6): 14 − 6 = 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-21"
   },
   {
@@ -10684,7 +10685,7 @@
    ],
    "correcta": 3,
    "tip": "Un grupo de amigos tiende a tener gustos parecidos, así que su encuesta suele reflejar peor a todo el colegio.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-22"
   },
   {
@@ -10698,7 +10699,7 @@
    ],
    "correcta": 3,
    "tip": "Una tabla de encuesta agrupa por categoría: aquí hay 4 colores, así que son 4 filas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-23"
   },
   {
@@ -10712,7 +10713,7 @@
    ],
    "correcta": 1,
    "tip": "Las preferencias pueden cambiar con el tiempo, así que dos encuestas del mismo grupo pueden variar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-24"
   },
   {
@@ -10726,7 +10727,7 @@
    ],
    "correcta": 1,
    "tip": "En la de Emilia gana el helado (12); en la otra, la torta (10): son muestras distintas con ganador distinto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-25"
   },
   {
@@ -10740,7 +10741,7 @@
    ],
    "correcta": 1,
    "tip": "La barra más alta corresponde al dato más grande de la tabla: 14, 'en auto'.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-26"
   },
   {
@@ -10754,7 +10755,7 @@
    ],
    "correcta": 2,
    "tip": "Tener el número más alto no siempre es la mayoría del total: 7 de 16 es menos de la mitad (8).",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-27"
   },
   {
@@ -10768,7 +10769,7 @@
    ],
    "correcta": 2,
    "tip": "Se suman las dos categorías: 11 + 6 = 17.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-28"
   },
   {
@@ -10782,7 +10783,7 @@
    ],
    "correcta": 2,
    "tip": "Cuando dos muestras distintas dan un resultado parecido, es señal de que la preferencia es real y compartida.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-29"
   },
   {
@@ -10796,7 +10797,7 @@
    ],
    "correcta": 1,
    "tip": "Como cada estudiante eligió una sola opción, la suma de todas las barras es el total: 10 + 8 + 4 + 2 = 24.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa25-30"
   },
   {
@@ -10810,7 +10811,7 @@
    ],
    "correcta": 0,
    "tip": "El 6 salió 5 veces, que es el número más alto de la tabla de resultados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-1"
   },
   {
@@ -10824,7 +10825,7 @@
    ],
    "correcta": 3,
    "tip": "El total de lanzamientos es la suma de los dos resultados posibles: 7 + 5 = 12.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-2"
   },
   {
@@ -10838,7 +10839,7 @@
    ],
    "correcta": 0,
    "tip": "Si al repetir el experimento sale más veces un color, es una señal de que probablemente hay más bolitas de ese color en la bolsa.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-3"
   },
   {
@@ -10852,7 +10853,7 @@
    ],
    "correcta": 3,
    "tip": "Los pares son 2, 4 y 6: se suman sus resultados, 6 + 5 + 6 = 17.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-4"
   },
   {
@@ -10866,7 +10867,7 @@
    ],
    "correcta": 0,
    "tip": "Morada tiene el número más bajo del registro, 4, así que fue el color que salió con menos frecuencia.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-5"
   },
   {
@@ -10880,7 +10881,7 @@
    ],
    "correcta": 2,
    "tip": "Se suman los tres resultados posibles: 3 + 8 + 5 = 16.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-6"
   },
   {
@@ -10894,7 +10895,7 @@
    ],
    "correcta": 2,
    "tip": "Si las cuatro partes fueran iguales, se esperaría que los resultados fueran parecidos entre sí; que el rojo casi duplique a los demás es una señal a observar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-7"
   },
   {
@@ -10908,7 +10909,7 @@
    ],
    "correcta": 2,
    "tip": "El número 3 salió 4 veces según la tabla, así que se ganaron 4 puntos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-8"
   },
   {
@@ -10922,7 +10923,7 @@
    ],
    "correcta": 1,
    "tip": "Del total de 25 repeticiones, 14 fueron menores a 5, así que las restantes son 25 − 14 = 11.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-9"
   },
   {
@@ -10936,7 +10937,7 @@
    ],
    "correcta": 1,
    "tip": "En un experimento con un dado, se tabula cada resultado posible (1 a 6) junto a cuántas veces ocurrió, no los detalles de cada lanzamiento por separado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-10"
   },
   {
@@ -10950,7 +10951,7 @@
    ],
    "correcta": 2,
    "tip": "Si un color salió muchas más veces en el experimento, es razonable pensar que hay más bolitas de ese color y que es más probable que vuelva a salir.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-11"
   },
   {
@@ -10964,7 +10965,7 @@
    ],
    "correcta": 1,
    "tip": "Los resultados de un experimento aleatorio varían de una repetición a otra; que no salga exactamente mitad y mitad no significa que algo esté mal.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-12"
   },
   {
@@ -10978,7 +10979,7 @@
    ],
    "correcta": 1,
    "tip": "Se suman los dos casos posibles del registro: 9 + 18 = 27.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-13"
   },
   {
@@ -10992,7 +10993,7 @@
    ],
    "correcta": 2,
    "tip": "Antes de tabular, hay que tener claros los resultados posibles del experimento (1 a 6 en un dado) para poder contar cuántas veces sale cada uno.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-14"
   },
   {
@@ -11006,7 +11007,7 @@
    ],
    "correcta": 1,
    "tip": "El 5 tiene el número más alto de la tabla, 12, así que fue el resultado más frecuente.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-15"
   },
   {
@@ -11020,7 +11021,7 @@
    ],
    "correcta": 3,
    "tip": "Blanco salió 15 de 20 veces, muchísimo más que las otras dos: es razonable pensar que en la bolsa hay más bolitas blancas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-16"
   },
   {
@@ -11034,7 +11035,7 @@
    ],
    "correcta": 2,
    "tip": "De los 50 lanzamientos, 28 fueron cara, así que los sellos son 50 − 28 = 22.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-17"
   },
   {
@@ -11048,7 +11049,7 @@
    ],
    "correcta": 2,
    "tip": "De 35 lanzamientos, 11 dieron punto; los que no dieron punto son 35 − 11 = 24.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-18"
   },
   {
@@ -11062,7 +11063,7 @@
    ],
    "correcta": 1,
    "tip": "Como se hicieron 45 lanzamientos, la suma de las veces que salió cada número debe dar 45: es una forma de comprobar que no faltó ni sobró ningún dato.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-19"
   },
   {
@@ -11076,7 +11077,7 @@
    ],
    "correcta": 2,
    "tip": "13 y 13 significa que, en este experimento, los dos colores salieron exactamente la misma cantidad de veces.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-20"
   },
   {
@@ -11090,7 +11091,7 @@
    ],
    "correcta": 2,
    "tip": "Tabular es ordenar y contar los resultados; esa organización es la que después se traduce directamente en las alturas de un gráfico de barras.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-21"
   },
   {
@@ -11104,7 +11105,7 @@
    ],
    "correcta": 0,
    "tip": "Con partes iguales se espera un resultado parecido entre ambos colores, y 21 contra 19 es justamente eso: cercano, aunque no exacto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-22"
   },
   {
@@ -11118,7 +11119,7 @@
    ],
    "correcta": 0,
    "tip": "Se suman las dos categorías pedidas: 6 + 6 = 12.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-23"
   },
   {
@@ -11132,7 +11133,7 @@
    ],
    "correcta": 0,
    "tip": "Del total de 28 lanzamientos, 15 fueron pares; los impares son 28 − 15 = 13.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-24"
   },
   {
@@ -11146,7 +11147,7 @@
    ],
    "correcta": 2,
    "tip": "En un experimento aleatorio, repetirlo no garantiza el mismo resultado exacto cada vez: es parte de lo que significa que sea al azar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-25"
   },
   {
@@ -11160,7 +11161,7 @@
    ],
    "correcta": 2,
    "tip": "Si los tres colores salen la misma cantidad de veces al repetir el experimento, es razonable pensar que hay cantidades parecidas de cada color en la bolsa.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-26"
   },
   {
@@ -11174,7 +11175,7 @@
    ],
    "correcta": 1,
    "tip": "Hay dos resultados posibles en una moneda, cara y sello, así que el gráfico necesita una barra por cada uno: 2 barras en total.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-27"
   },
   {
@@ -11188,7 +11189,7 @@
    ],
    "correcta": 1,
    "tip": "En un experimento real los resultados no caen siempre exacto en lo esperado; que un número salga un poco más o menos de lo previsto es normal por el azar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-28"
   },
   {
@@ -11202,7 +11203,7 @@
    ],
    "correcta": 3,
    "tip": "Verde y amarillo aparecen los dos con 8 en la tabla, así que fueron los únicos con la misma frecuencia.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-29"
   },
   {
@@ -11216,7 +11217,7 @@
    ],
    "correcta": 2,
    "tip": "Con muchas repeticiones, la memoria falla fácilmente: anotar cada resultado apenas ocurre evita errores de conteo al construir la tabla final.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa26-30"
   },
   {
@@ -11230,7 +11231,7 @@
    ],
    "correcta": 2,
    "tip": "Cada símbolo vale 5, y hay 4: 4 × 5 = 20. No basta con contar los símbolos, hay que multiplicarlos por su valor.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-1"
   },
   {
@@ -11244,7 +11245,7 @@
    ],
    "correcta": 0,
    "tip": "3 símbolos, cada uno vale 10: 3 × 10 = 30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-2"
   },
   {
@@ -11258,7 +11259,7 @@
    ],
    "correcta": 0,
    "tip": "6 símbolos por 4 naranjas cada uno: 6 × 4 = 24.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-3"
   },
   {
@@ -11272,7 +11273,7 @@
    ],
    "correcta": 2,
    "tip": "Perros: 5 × 3 = 15. Gatos: 3 × 3 = 9. La diferencia es 15 − 9 = 6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-4"
   },
   {
@@ -11286,7 +11287,7 @@
    ],
    "correcta": 2,
    "tip": "4°A: 7 × 2 = 14. 4°B: 5 × 2 = 10. La diferencia es 14 − 10 = 4, y ganó 4°A.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-5"
   },
   {
@@ -11300,7 +11301,7 @@
    ],
    "correcta": 1,
    "tip": "Para saber cuántos símbolos hacen falta, se divide el total por el valor de cada uno: 24 ÷ 6 = 4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-6"
   },
   {
@@ -11314,7 +11315,7 @@
    ],
    "correcta": 3,
    "tip": "35 ÷ 5 = 7 símbolos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-7"
   },
   {
@@ -11328,7 +11329,7 @@
    ],
    "correcta": 3,
    "tip": "Fútbol 6×4=24, básquetbol 3×4=12, natación 2×4=8. En total: 24+12+8=44.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-8"
   },
   {
@@ -11342,7 +11343,7 @@
    ],
    "correcta": 2,
    "tip": "Azul tiene 4 símbolos: 4 × 10 = 40, el número más alto de los tres.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-9"
   },
   {
@@ -11356,7 +11357,7 @@
    ],
    "correcta": 3,
    "tip": "María: 6×10=60. Pedro: 4×10=40. La diferencia es 60−40=20.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-10"
   },
   {
@@ -11370,7 +11371,7 @@
    ],
    "correcta": 2,
    "tip": "El jardín C tiene el menor número de símbolos, así que también tiene la menor cantidad de flores: 1 × 6 = 6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-11"
   },
   {
@@ -11384,7 +11385,7 @@
    ],
    "correcta": 2,
    "tip": "27 ÷ 3 = 9 símbolos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-12"
   },
   {
@@ -11398,7 +11399,7 @@
    ],
    "correcta": 2,
    "tip": "La novena marca de una escala que sube de 2 en 2 es 9 × 2 = 18. Contar solo las marcas (9) olvida multiplicarlas por el paso de la escala.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-13"
   },
   {
@@ -11412,7 +11413,7 @@
    ],
    "correcta": 0,
    "tip": "La sexta marca de una escala que sube de 4 en 4 es 6 × 4 = 24.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-14"
   },
   {
@@ -11426,7 +11427,7 @@
    ],
    "correcta": 3,
    "tip": "2 balones enteros son 2 × 4 = 8, y el medio balón vale la mitad de 4, o sea 2. En total: 8 + 2 = 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-15"
   },
   {
@@ -11440,7 +11441,7 @@
    ],
    "correcta": 2,
    "tip": "3 globos enteros son 3 × 6 = 18, y el medio globo vale la mitad de 6, o sea 3. En total: 18 + 3 = 21.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-16"
   },
   {
@@ -11454,7 +11455,7 @@
    ],
    "correcta": 2,
    "tip": "La cuarta marca de una escala que sube de 5 en 5 es 4 × 5 = 20.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-17"
   },
   {
@@ -11468,7 +11469,7 @@
    ],
    "correcta": 0,
    "tip": "La tercera marca de una escala que sube de 10 en 10 es 3 × 10 = 30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-18"
   },
   {
@@ -11482,7 +11483,7 @@
    ],
    "correcta": 2,
    "tip": "Se suman los dos valores leídos en la escala: 15 + 25 = 40.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-19"
   },
   {
@@ -11496,7 +11497,7 @@
    ],
    "correcta": 1,
    "tip": "La diferencia se calcula restando: 40 − 10 = 30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-20"
   },
   {
@@ -11510,7 +11511,7 @@
    ],
    "correcta": 1,
    "tip": "Con una escala, un solo símbolo puede representar varias unidades: así se pueden mostrar cantidades grandes sin dibujar cientos de símbolos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-21"
   },
   {
@@ -11524,7 +11525,7 @@
    ],
    "correcta": 3,
    "tip": "Cada línea de la escala marca un salto fijo (por ejemplo, de 5 en 5), y sirve para leer la altura de una barra sin contar de a uno.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-22"
   },
   {
@@ -11538,7 +11539,7 @@
    ],
    "correcta": 0,
    "tip": "Perros 4×5=20, gatos 2×5=10, aves 1×5=5. En total: 20+10+5=35.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-23"
   },
   {
@@ -11552,7 +11553,7 @@
    ],
    "correcta": 3,
    "tip": "Camila: 5×3=15. Vicente: 3×3=9. La diferencia es 15−9=6, y Camila recibió más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-24"
   },
   {
@@ -11566,7 +11567,7 @@
    ],
    "correcta": 2,
    "tip": "La séptima marca de una escala que sube de 5 en 5 es 7 × 5 = 35.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-25"
   },
   {
@@ -11580,7 +11581,7 @@
    ],
    "correcta": 0,
    "tip": "Para saber cuántos símbolos hacen falta, se divide el total por el valor de cada uno: 32 ÷ 4 = 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-26"
   },
   {
@@ -11594,7 +11595,7 @@
    ],
    "correcta": 3,
    "tip": "La diferencia se obtiene restando: 25 − 10 = 15.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-27"
   },
   {
@@ -11608,7 +11609,7 @@
    ],
    "correcta": 2,
    "tip": "Un símbolo entero vale 8, y el medio vale la mitad de 8, o sea 4. En total: 8 + 4 = 12.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-28"
   },
   {
@@ -11622,7 +11623,7 @@
    ],
    "correcta": 2,
    "tip": "Cuando el pictograma tiene escala, hay que multiplicar el número de símbolos por su valor: 4 × 5 = 20, no 4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-29"
   },
   {
@@ -11636,7 +11637,7 @@
    ],
    "correcta": 1,
    "tip": "Con cantidades grandes, dibujar un símbolo por cada unidad sería poco práctico; la escala permite mostrar más con menos símbolos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate4-oa27-30"
   }
  ]

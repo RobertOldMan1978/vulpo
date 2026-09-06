@@ -149,19 +149,28 @@ El modo cierra ese hueco. Una pantalla por objetivo, con **sus 8 preguntas ya el
 |---|---|---|
 | 8° básico (4 asignaturas) | 2.314 | ✅ todas |
 | Vocabulario y Ana Frank | 222 | ✅ todas |
-| **3° básico** (4 asignaturas) | **2.558** | ✅ **todas** |
-| **7° básico** (4 asignaturas) | **2.430** | ✅ **todas** |
+| 3° básico (4 asignaturas) | 2.558 | ✅ todas |
+| 7° básico (4 asignaturas) | 2.430 | ✅ todas |
 | Vocabulario 7° y *Cuentos de Ada* | 221 | ✅ todas |
 | Vocabulario 3° | 60 | ✅ todas |
+| **5° básico** (4 asignaturas) | **2.790** | ✅ **todas** |
+| **6° básico** (4 asignaturas) | **2.970** | ✅ **todas** |
+| **4° básico** (4 asignaturas) | **2.730** | ✅ **todas** |
+| Mini-clases e introducciones (todos los niveles) | 130 | ✅ todas |
 
-> **Cerrado el 31/08/2026: 7.805 de 7.805.** El 30/08 se firmaron 5.048 preguntas por muestreo
-> en una pasada y, ese mismo día, los **60** que habían quedado saltados (`HI03 OA 01` y `OA 08`);
-> el 31/08 se sumaron las **60 del Vocabulario de 3°**, escritas y aprobadas el mismo día. Lo que
-> sigue abajo describe el método, y sirve igual para 4°, 5° y 6°, que son los que faltan.
+> **Cerrado el 31/08/2026: 7.805 de 7.805** (los cursos anunciados hasta esa fecha: 8°, 3°, 7° y
+> sus módulos). El 30/08 se firmaron 5.048 preguntas por muestreo en una pasada y, ese mismo día,
+> los **60** que habían quedado saltados (`HI03 OA 01` y `OA 08`); el 31/08 se sumaron las **60
+> del Vocabulario de 3°**, escritas y aprobadas el mismo día.
+>
+> **Cerrado del todo el 06/09/2026: 16.295 de 16.295, el banco completo del proyecto.** El 05/09
+> se firmaron Historia y Lenguaje de 5° y las cuatro asignaturas de 6° (5.760 preguntas); el
+> 06/09 se firmaron las 2.730 de 4° básico, la última parte del proyecto sin firmar. **4° sigue
+> sin fork jugable, así que su banco aprobado todavía no llega a ningún alumno.**
 >
 > ⚠️ **100% de cobertura no es 100% del mismo método.** 8° y los módulos de apoyo se revisaron
-> pregunta por pregunta; 3° y 7°, por muestreo de 8 de cada 30. Al decirlo afuera, la frase que
-> se sostiene es *"objetivo por objetivo"*, no *"una a una"*.
+> pregunta por pregunta; 3°, 4°, 5°, 6° y 7°, por muestreo de 8 de cada 30. Al decirlo afuera, la
+> frase que se sostiene es *"objetivo por objetivo"*, no *"una a una"*.
 
 Los informes en papel para revisar sin pantalla se generan con
 `python scripts/generar-revision-preguntas.py <carpeta>` y quedan en `dev/` (ignorados por git:

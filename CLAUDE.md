@@ -136,23 +136,21 @@ año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron co
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
 están hoy en una expedición jugable, el resto es reserva.
 
-> **Estado de aprobación (06/09/2026): 13.565 de 16.295 preguntas aprobadas.** El banco escrito
-> creció a 16.295 el 05/09 al terminarse 4° básico (2.730 preguntas nuevas, sus 91 OA, todavía
-> `revisada:false`): **es la única parte del proyecto sin firmar.** Más las 130 de 130 mini-clases
-> e introducciones, esas sí las 130 aprobadas. Los últimos 4.530 en aprobarse antes de 4° fueron
-> Historia (660) y Lenguaje (900) de 5°, y las cuatro asignaturas completas de 6° —Matemática
-> (720), Ciencias (540), Historia (780) y Lenguaje (930)—. Pero **cómo se aprobó cada banco no es
-> lo mismo, y hay que saberlo antes de decírselo a un colegio:** los 2.536 de 8° y los módulos de
-> apoyo se revisaron **pregunta por pregunta**; 3°, 5°, 6° y 7° se aprobaron **por muestreo** —8 de
-> cada 30 por objetivo, criterio de `docs/aprobacion-pedagogica.md`—. Por eso la landing dice
-> *"aprobadas por un profesor, objetivo por objetivo"* y **nunca** *"una a una"*, y por lo mismo
-> **la landing NO debe decir "el banco entero está aprobado" hasta que 4° se firme.**
+> **Estado de aprobación (06/09/2026): 16.295 de 16.295 preguntas aprobadas (100%).** El 06/09
+> Roberto firmó por muestreo las 2.730 de 4° básico (91 OA), que eran la única parte del banco
+> sin firmar. Con eso **el banco escrito del proyecto queda completo y aprobado**, más las 130 de
+> 130 mini-clases e introducciones. Pero **cómo se aprobó cada banco no es lo mismo, y hay que
+> saberlo antes de decírselo a un colegio:** los 2.536 de 8° y los módulos de apoyo se revisaron
+> **pregunta por pregunta**; 3°, 4°, 5°, 6° y 7° se aprobaron **por muestreo** —8 de cada 30 por
+> objetivo, criterio de `docs/aprobacion-pedagogica.md`—. Por eso la landing dice *"aprobadas por
+> un profesor, objetivo por objetivo"* y **nunca** *"una a una"*.
 >
-> ✅ **5° y 6° básico ya tienen su arte propio (05/09/2026).** Villanos generados y cableados en
-> los 8 `jefeFinal` de ambos forks, más las 9 portadas de capítulo que le faltaban a 6° (5° ya
-> reutilizaba portada por tema en sus 20 capítulos). Lo único que falta ahora es la **decisión
-> comercial** de cuándo anunciarlos — la regla de Roberto *"un curso a medias no se enlaza ni se
-> anuncia"* ya no aplica a ninguno de los dos: banco aprobado, fork cableado y arte propio.
+> ✅ **VULPO se anuncia desde 3° a 8° básico (06/09/2026), decisión de Roberto.** La landing
+> (`index.html`) enlaza ya los **cinco cursos jugables** —3°, 5°, 6°, 7° y 8°, cada uno con banco
+> aprobado, fork cableado y arte propio— y dice que el proyecto se construye desde marzo de 2026
+> y se revisa sin pausa. **4° básico sigue sin anunciarse ni enlazarse**: tiene su banco aprobado,
+> pero todavía le faltan el fork (`4to/index.html` no existe), la voz y el arte propio — la regla
+> *"un curso a medias no se enlaza ni se anuncia"* sigue aplicando a él, y a él solo.
 
 **Herramientas dev:** tablero con clave
 (`dev/tablero.html`) y scripts (`consolidar-pool-nivel`, `aplicar-revisadas`,
@@ -8835,3 +8833,53 @@ formato deja sin tablero a los quince bancos anteriores, no solo al nuevo.
   (`niveles.js` + `schema.sql`, una fila cada uno — M4 pagándose otra vez); aprobación pedagógica
   de las 2.730 preguntas; voz (~US$8 de Azure); arte propio (villanos + portadas); y los de
   arrastre — INAPI, el enlace de agenda de la landing, la reautenticación de NotebookLM.
+
+### Sesión 95 (2026-09-06) — 4° básico queda aprobado, y VULPO se anuncia de 3° a 8°
+Sesión corta, sin tocar el motor ni escribir contenido nuevo: aplicar una aprobación pendiente y,
+a partir de eso, ejecutar una decisión comercial que llevaba días esperando.
+
+- **4° básico aprobado.** Roberto bajó `revisadas.json` del tablero (aprobación por muestreo,
+  hecha en su propio tiempo) y se aplicó con `aplicar-revisadas.py`: las 2.730 preguntas de las
+  91 OA de 4° quedaron `revisada:true`. **Con eso el banco escrito del proyecto entero —16.295
+  preguntas, seis cursos— queda aprobado al 100%.** Verificado contando directo sobre los 29
+  `preguntas.json` (no solo confiando en el resumen del script): 16.295 escritas, 16.295
+  aprobadas, sin excepción. `dev/tablero.html` regenerado sin romperse.
+- **La decisión comercial que estaba pendiente desde el 05/09 se tomó: VULPO se anuncia de 3° a
+  8° básico.** Antes de tocar la landing se le preguntó a Roberto si corregir solo lo falso o
+  aprovechar y sumar 5°/6° —que llevan desde el 5/09 con banco aprobado, fork jugable y arte
+  propio, sin más freno que la decisión de anunciarlos—. Roberto pidió ir más allá: anunciar
+  todo el rango 3°-8° y explicar que el proyecto se construye desde marzo de 2026, con revisión
+  constante.
+  - **La landing (`index.html`) enlaza ahora los cinco cursos jugables** (3°, 5°, 6°, 7°, 8°,
+    cada uno con su ruta) con números **recalculados desde los archivos, no de memoria**:
+    13.565 preguntas aprobadas en los cinco cursos jugables (verificado sumando
+    `preguntas.json` por curso), 427 objetivos de aprendizaje medidos (contados como códigos
+    con forma de OA curricular en las preguntas, el mismo criterio que ya usaba la landing),
+    y la mención de que el banco completo —incluido 4° en camino— son 16.295 de 16.295. Se
+    agregó la frase sobre marzo de 2026 y la revisión constante, y enlaces directos a cada
+    curso en el hero.
+  - **4° básico queda deliberadamente fuera de la landing.** Tiene el banco aprobado pero no
+    tiene fork (`4to/index.html` no existe), ni voz, ni arte: la regla de Roberto *"un curso a
+    medias no se enlaza ni se anuncia"* sigue aplicando, y ahora aplica solo a él.
+  - **`README.md` sumó párrafos para 5° y 6°** (villanos por asignatura: 5° El Descuadre/El
+    Rumor/El Cortocircuito/El Malentendido, 6° La Desproporción/La Versión Única/El
+    Desequilibrio/El Enredo, sacados del código real de cada fork y no de memoria) y corrigió
+    la frase que decía que esos cursos estaban "sin enlazar desde el sitio".
+  - **`docs/comercial.md` y `docs/aprobacion-pedagogica.md` actualizados**: la tabla de niveles
+    pasa de tres a cinco cursos vendibles, "qué se promete y qué no" ya no habla de 7.805 sino
+    de 13.565, y se agregó al lado de la conversación pendiente sobre `CN07` (7°) la misma
+    advertencia para `CN06`/`HI06` (6°) y `HI05` (5°, la conquista de América y de Chile) — esta
+    última no estaba ni siquiera listada en `docs/contenido-sensible.md`, que solo cubre
+    3°/6°/7°/8° y queda anotado como hueco a cerrar.
+  - **`pendiente.md` reescrito en su tabla de cabecera** ("Dónde estamos hoy"), que llevaba
+    desde el 31/08 sin las filas de 4°/5°/6°, y en las dos filas B1/B2 que todavía decían "falta
+    la decisión comercial de cuándo anunciarlo" — ya no falta.
+- **Verificado antes de escribir cualquier número:** las cinco carpetas de curso (`3ro/`, `5to/`,
+  `6to/`, `7mo/`, `8vo/`) existen de verdad antes de enlazarlas desde la landing — no se enlaza
+  una ruta sin comprobar primero que el fork está ahí.
+- Todavía **sin commitear** al momento de escribir esta entrada — el trabajo se guardó, y el
+  commit/push quedó para la orden 66, que llegó en el mismo día.
+- **Pendiente:** lo mismo que dejó la Sesión 94 para 4° básico (fork, backend, voz, arte); y de
+  arrastre — completar `docs/contenido-sensible.md` con la fila de 5° (Historia), INAPI, el
+  enlace de agenda de la landing, la reautenticación de NotebookLM, y remedir el peso del sitio
+  publicado (la cifra de 343 MB es de antes de sumar el arte de 5° y 6°).

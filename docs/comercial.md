@@ -5,7 +5,7 @@
 > colegios—, pero **el análisis interno de estrategia, los números de ingreso proyectado y el
 > estado de las conversaciones NO deben escribirse aquí.** Eso vive fuera del repo.
 
-**Última revisión:** 30 de agosto de 2026.
+**Última revisión:** 6 de septiembre de 2026.
 
 ## Precio
 
@@ -80,36 +80,45 @@ El techo de lo que un colegio puede gastar no lo pone el precio: lo pone **cuán
 cubre VULPO**. Con solo 8° básico eran **$630.000 al año** a precio Fundador con los tres 8°, y
 vender a un colegio cuesta lo mismo pague lo que pague.
 
-**Por eso la palanca nunca fue subir el precio, sino agregar niveles.** Estado al 28/08/2026:
+**Por eso la palanca nunca fue subir el precio, sino agregar niveles.** Estado al 06/09/2026:
 
 | Nivel | Contenido | Estado |
 |---|---|---|
-| **8° básico** (`/8vo/`) | 2.536 preguntas, 4 asignaturas + Vocabulario y Lectura | ✅ aprobado (pregunta por pregunta) y a la venta |
-| **7° básico** (`/7mo/`) | 2.550 preguntas, 4 asignaturas + Vocabulario | ✅ aprobado por muestreo (30/08/2026) |
-| **3° básico** (`/3ro/`) | 2.659 preguntas, 4 asignaturas + voz pregrabada + Lectura | ✅ aprobado por muestreo, salvo 2 OA de Historia |
+| **8° básico** (`/8vo/`) | 2.314 preguntas, 4 asignaturas + Vocabulario y Lectura | ✅ aprobado (pregunta por pregunta) y a la venta |
+| **7° básico** (`/7mo/`) | 2.550 preguntas, 4 asignaturas + Vocabulario | ✅ aprobado por muestreo, a la venta |
+| **6° básico** (`/6to/`) | 2.970 preguntas, 4 asignaturas | ✅ aprobado por muestreo, a la venta |
+| **5° básico** (`/5to/`) | 2.790 preguntas, 4 asignaturas | ✅ aprobado por muestreo, a la venta |
+| **3° básico** (`/3ro/`) | 2.659 preguntas, 4 asignaturas + voz pregrabada + Lectura | ✅ aprobado por muestreo, a la venta |
+| **4° básico** | 2.730 preguntas, 4 asignaturas | ✅ banco aprobado por muestreo, **sin fork jugable, sin voz, sin arte** — no se vende ni se anuncia todavía |
 
-Desde el 30/08/2026 los tres cursos están aprobados y la landing lo dice, **pero sin exagerar
-cómo**: dice *"aprobadas por un profesor, objetivo por objetivo"* y **NO** *"una a una"*.
-La diferencia es real y hay que sostenerla si un director pregunta: 8° se revisó **pregunta por
-pregunta**; 3° y 7° se aprobaron **por muestreo** —8 preguntas de cada 30 por objetivo, y si la
-muestra pasa se aprueba el objetivo completo (`docs/aprobacion-pedagogica.md`)—. El muestreo
-detecta un objetivo mal escrito, no una pregunta suelta mala, y eso se dice tal cual. No es un
-matiz de redacción, es la regla del proyecto: **no se promete lo que no hay**, y un director que
-pregunte "¿quién revisó esto?"
-merece la respuesta verdadera.
+Desde el 06/09/2026 los **cinco cursos jugables están aprobados y la landing los anuncia**, **pero
+sin exagerar cómo**: dice *"aprobadas por un profesor, objetivo por objetivo"* y **NO** *"una a
+una"*. La diferencia es real y hay que sostenerla si un director pregunta: 8° se revisó
+**pregunta por pregunta**; 3°, 5°, 6° y 7° se aprobaron **por muestreo** —8 preguntas de cada 30
+por objetivo, y si la muestra pasa se aprueba el objetivo completo
+(`docs/aprobacion-pedagogica.md`)—. El muestreo detecta un objetivo mal escrito, no una pregunta
+suelta mala, y eso se dice tal cual. No es un matiz de redacción, es la regla del proyecto: **no
+se promete lo que no hay**, y un director que pregunte "¿quién revisó esto?" merece la respuesta
+verdadera.
 
-**Qué se puede vender hoy, entonces:** los tres cursos, **diciendo cómo se aprobó cada uno**.
-8° se revisó pregunta por pregunta; 3° y 7° por muestreo de 8 por objetivo. Las dos cosas son
-aprobación pedagógica de verdad, y la segunda hay que saber explicarla: **detecta un objetivo
-mal escrito, no una pregunta suelta mala**.
+**Qué se puede vender hoy, entonces:** los cinco cursos jugables, **diciendo cómo se aprobó cada
+uno**. 8° se revisó pregunta por pregunta; 3°, 5°, 6° y 7° por muestreo de 8 por objetivo. Las
+dos cosas son aprobación pedagógica de verdad, y la segunda hay que saber explicarla: **detecta
+un objetivo mal escrito, no una pregunta suelta mala**.
 
-Con los tres cursos aprobados (30/08/2026), el techo por colegio **se triplicó**: ya no hay
-que vender un solo nivel. Lo que falta para cuadruplicarlo son 4°, 5° y 6°.
+Con los cinco cursos aprobados y anunciados (06/09/2026), el techo por colegio se multiplicó por
+cinco respecto de vender solo 8°. Lo único que falta para sumar el sexto nivel es terminar de
+construir 4° básico (fork, voz y arte) — su banco de preguntas **ya está aprobado**.
 
-**En 7° hay además una conversación que ningún archivo resuelve:** los `CN07 OA 01/02/03` son
-sexualidad, ciclo menstrual, métodos de control de la natalidad e ITS. Es currículum obligatorio
-y el banco está escrito de forma factual, sin promover ninguna postura, pero **hay que avisarle
-al colegio antes de publicarlo** — el colegio piloto es salesiano.
+**En 5°, 6° y 7° hay además conversaciones que ningún archivo resuelve.** En 7°, los `CN07 OA
+01/02/03` son sexualidad, ciclo menstrual, métodos de control de la natalidad e ITS. En 6°, los
+`CN06 OA 04/05/06` (sistema reproductor y pubertad) y `OA 07` (drogas), más `HI06 OA 08` (quiebre
+y recuperación de la democracia). En 5°, los `HI05 OA 02/03/04/07` son la conquista de América y
+de Chile —guerra de Arauco, encomienda, esclavitud—, tratada como hecho histórico verificable, sin
+recrear escenas de violencia. Es currículum obligatorio y los bancos están escritos de forma
+factual, sin promover ninguna postura, pero **hay que avisarle al colegio antes de publicarlo**
+— el colegio piloto es salesiano. Ver [`docs/contenido-sensible.md`](contenido-sensible.md) para
+el detalle completo por nivel (nota: su tabla todavía no lista a 5°, solo 3°/6°/7°/8°).
 
 ## Hacia dónde va el modelo (acordado el 27/08/2026, NO vigente)
 
@@ -184,9 +193,9 @@ la propuesta, el guion de reunión y la landing. **Léelo antes de una reunión 
 
 ## Qué se le promete a un colegio, y qué no
 
-**Sí:** 4 asignaturas por curso en 3°, 7° y 8° básico —7.805 preguntas alineadas a las Bases del
-MINEDUC, **todas aprobadas** (8° pregunta por pregunta; 3° y 7° por muestreo de 8 por
-objetivo)—,
+**Sí:** 4 asignaturas por curso en 3°, 5°, 6°, 7° y 8° básico —13.565 preguntas alineadas a las
+Bases del MINEDUC, **todas aprobadas** (8° pregunta por pregunta; 3°, 5°, 6° y 7° por muestreo de
+8 por objetivo)—,
 **evaluación formativa alineada al Decreto 67/2018** (ver sección anterior), panel del profesor
 con mapa de dominio por OA, desafíos de refuerzo, ranking por curso, soporte y actualizaciones.
 Funciona en cualquier celular con internet, sin instalar nada.
@@ -194,11 +203,14 @@ Funciona en cualquier celular con internet, sin instalar nada.
 **No:**
 - ❌ **No funciona sin internet.** Verificado: no hay service worker y los bancos de preguntas se
   piden con `fetch`. **Nunca prometer uso sin conexión.**
-- ❌ **No cubre todos los niveles.** Hoy 3°, 7° y 8° básico. Faltan 4°, 5° y 6°.
-- ⚠️ **No decir que las 7.805 están aprobadas "una a una".** Lo están *objetivo por objetivo*:
-  8° se revisó pregunta por pregunta, pero 3° y 7° por **muestreo** de 8 de cada 30. El 100% es
-  de cobertura, no de método. Exagerarlo se cae a la primera pregunta de una UTP; decirlo bien no
-  le quita fuerza al argumento, y además permite explicar el criterio, que es una señal de rigor.
+- ❌ **No cubre todos los niveles todavía.** Hoy 3°, 5°, 6°, 7° y 8° básico. Falta 4° —su banco
+  ya está aprobado (2.730 preguntas), pero no tiene fork jugable, voz ni arte propio, así que no
+  se vende ni se anuncia.
+- ⚠️ **No decir que las 13.565 están aprobadas "una a una".** Lo están *objetivo por objetivo*:
+  8° se revisó pregunta por pregunta, pero 3°, 5°, 6° y 7° por **muestreo** de 8 de cada 30. El
+  100% es de cobertura, no de método. Exagerarlo se cae a la primera pregunta de una UTP; decirlo
+  bien no le quita fuerza al argumento, y además permite explicar el criterio, que es una señal
+  de rigor.
 - ❌ **No es una herramienta de calificación.** El panel es una brújula; así está descrito en el
   producto y así hay que venderlo.
 - ⚠️ **El enlace de inscripción NO es una licencia por persona.** Sirve para que un grupo entre
