@@ -816,13 +816,56 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
 
   function esc(s){ var d=document.createElement('div'); d.textContent=s==null?'':s; return d.innerHTML; }
 
+  /* Las LECCIONES que faltan por firmar, agrupadas por asignatura.
+     ⚠️ Este modo recorre solo PREGUNTAS: una mini-clase no se aprueba por muestreo -se lee
+     entera- y por eso vive en su seccion 📘, con su casilla. Pero hasta el 07/09/2026 el
+     mensaje de cierre decia "¡No queda nada por revisar!" con 33 lecciones sin firmar: era
+     cierto de las preguntas y FALSO de lo que quedaba por hacer, y quien lo lee cierra el
+     tablero. Segunda vez en el mismo dia que este modo anuncia que no queda nada teniendo
+     trabajo pendiente; la primera fue la cola dedupeada por codigo. */
+  function leccionesPendientes(){
+    var out=[];
+    document.querySelectorAll('section.asig').forEach(function(s){
+      var n=Array.prototype.slice.call(s.querySelectorAll('.lec summary input'))
+        .filter(function(c){return !c.checked;}).length;
+      if(n) out.push({n:n, seccion:s,
+        nombre:((s.querySelector('h2')||{}).textContent||'').split('▾').join('').trim(),
+        sub:((s.querySelector('.sub')||{}).textContent||'').split('·')[0].trim()});
+    });
+    return out;
+  }
+
+  function irALecciones(pend){
+    cerrarMuestreo();
+    var s=pend[0].seccion;
+    s.classList.remove('cerrado');
+    var d=s.querySelector('details.lec');
+    if(d) d.open=true;
+    (d||s).scrollIntoView({block:'start'});
+  }
+
   function pintarMuestreo(){
     var c=document.getElementById('mzCuerpo');
     if(MZ.i>=MZ.cola.length){
-      c.innerHTML='<div class="mz-fin"><h2>¡No queda nada por revisar!</h2>'
-        +'<p style="color:var(--dim);font-weight:800">Todos los objetivos con preguntas pendientes están aprobados.</p>'
-        +'<button class="mz-b mz-x" id="mzCerrar2" style="margin-top:18px">← Volver al tablero</button></div>';
+      var pend=leccionesPendientes();
+      var tot=pend.reduce(function(a,b){return a+b.n;},0);
+      var h='<div class="mz-fin">';
+      if(tot){
+        h+='<h2>Las preguntas están listas · queda'+(tot===1?' 1 lección':'n '+tot+' lecciones')+'</h2>'
+          +'<p style="color:var(--dim);font-weight:800">Una mini-clase no se aprueba por muestreo: '
+          +'se lee entera, así que se firma en su propia sección 📘.</p>'
+          +'<p style="color:var(--dim);font-weight:800;margin-top:10px">'
+          +pend.map(function(p){return esc(p.nombre)+' '+esc(p.sub)+' · <b>'+p.n+'</b>';}).join('<br>')+'</p>'
+          +'<button class="mz-b mz-ok" id="mzIrLec" style="margin-top:18px">📘 Ir a las lecciones</button> ';
+      }else{
+        h+='<h2>¡No queda nada por revisar!</h2>'
+          +'<p style="color:var(--dim);font-weight:800">Preguntas y lecciones están aprobadas.</p>';
+      }
+      h+='<button class="mz-b mz-x" id="mzCerrar2" style="margin-top:18px">← Volver al tablero</button></div>';
+      c.innerHTML=h;
       document.getElementById('mzCerrar2').onclick=cerrarMuestreo;
+      var b=document.getElementById('mzIrLec');
+      if(b) b.onclick=function(){irALecciones(pend);};
       return;
     }
     var it=MZ.cola[MZ.i], oa=it.nodo;

@@ -151,8 +151,8 @@ año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron co
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
 están hoy en una expedición jugable, el resto es reserva.
 
-> **Estado de aprobación (07/09/2026): 16.865 de 16.865 preguntas aprobadas, y 139 de 172
-> lecciones** —las 33 pendientes son las introducciones de Historia, escritas ese mismo día.** El banco creció otra vez el 07/09 con las **240 preguntas de Vocabulario** de 4°,
+> **Estado de aprobación (07/09/2026): 16.865 de 16.865 preguntas aprobadas, y 172 de 172
+> lecciones**, incluidas las 33 introducciones de Historia escritas ese mismo día. El banco creció otra vez el 07/09 con las **240 preguntas de Vocabulario** de 4°,
 > 5° y 6°, firmadas ese mismo día. Antes había crecido tras la firma de 4° —la Sesión 99 escribió
 > **330 preguntas nuevas** para los 11 OA que le faltaban a Lenguaje de 8° y **21 lecciones**, y la
 > Sesión 100 reescribió **2 preguntas de geometría** que exigían dos cálculos encadenados con
@@ -10312,3 +10312,38 @@ pueblos y ciudades que llevaban siglos organizados"*.
 > que seguía roto** cuando la captura mostraba que estaba bien. **Cuando el resultado sorprende, el
 > primer sospechoso es la prueba** — y esa vez el falso positivo casi me hace deshacer un arreglo
 > correcto.
+
+#### Cierre — el tablero volvió a decir "no queda nada", y otra vez con trabajo pendiente
+
+Roberto abrió el tablero a aprobar las 33 y avisó: *"dice que no tengo nada que aprobar"*.
+
+**El botón "⚡ Aprobar por muestreo" recorre SOLO preguntas**, y esas estaban todas firmadas. Las
+lecciones se aprueban por otro camino —su sección 📘, con su casilla— y ese modo **nunca se
+conectó con ellas**: se construyó en la Sesión 70 para preguntas, y las lecciones entraron al
+circuito de aprobación quince sesiones después.
+
+Así que anunciaba *"¡No queda nada por revisar!"* con **33 lecciones sin firmar**. Su letra chica
+decía *"todos los objetivos con **preguntas** pendientes"* —literalmente cierto— y nadie lee la
+letra chica.
+
+> ⚠️ **Segunda vez en el mismo día que ese modo dice que no queda nada teniendo trabajo
+> pendiente.** La primera fue la cola dedupeada por código, esa misma mañana. Las dos veces el
+> síntoma es idéntico al de un banco realmente completo, y las dos veces lo destapó Roberto al
+> usarlo, no una revisión.
+
+**Lo que NO estaba roto, y conviene saberlo:** `marcarAprobadas` **sí** cuenta las lecciones, así
+que las seis secciones de Historia salían arriba y sin marcar como aprobadas, con su botón
+*"✓ Aprobar todas"* a mano. El tablero estaba bien; el camino rápido era el que no llevaba ahí.
+
+**El arreglo:** el mensaje de cierre pasa a decir **"Las preguntas están listas · quedan N
+lecciones"**, con el desglose por curso y un botón **"📘 Ir a las lecciones"** que deja la primera
+desplegada. Cuando de verdad no queda nada, dice *"Preguntas y lecciones están aprobadas"*, que es
+la afirmación que antes se daba por supuesta sin comprobarla.
+
+**Y las 33 quedaron firmadas el mismo día: 172 de 172 lecciones y 16.865 de 16.865 preguntas.**
+El diff fueron 5, 5, 6, 6, 6 y 5 líneas —las marcas y nada más—.
+
+> **Verificado con control positivo**, porque *"no queda nada"* es justo lo que decía roto: con
+> todo firmado, 0 de 32 secciones sin aprobar y 0 casillas sin marcar; y al **desmarcar una
+> lección a propósito**, el modo la detecta y lo dice. Sin ese paso, un detector roto y un tablero
+> completo dan la misma pantalla.
