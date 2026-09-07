@@ -17,6 +17,12 @@
 
 Valores **netos, más IVA (19%)**. Facturación electrónica, anual o semestral a convenir.
 
+> ⚠️ **Todo valor que salga de aquí lleva "+ IVA" PEGADO al número** (decisión de Roberto,
+> 07/09/2026): en la propuesta, en la reunión, en un correo y en un mensaje suelto. No basta con
+> aclararlo en una nota al pie ni al final de la frase — un colegio compara presupuestos, y un
+> número sin aclarar **se lee como el total**. Aclararlo después se lee como letra chica, que es
+> exactamente lo que un director recuerda cuando le llega la factura.
+
 **Desde dos cursos se aplica el valor por alumno.** El mínimo existe porque a precio Fundador un
 curso de 40 alumnos son $240.000, por debajo del costo de atender ese colegio durante un año
 (reunión, prueba, soporte). Entre 1 y 41 alumnos, el precio efectivo es el mínimo.
@@ -227,23 +233,55 @@ Funciona en cualquier celular con internet, sin instalar nada.
   alguien recorra el contenido sin jugarse el año en orden. **No venderlo como el modo normal**:
   el producto es la campaña con su progresión, y así se mide el dominio por objetivo.
 
+## Los dos correos, y cuál va en cada cosa (decisión de Roberto, 07/09/2026)
+
+VULPO tiene dos buzones en su dominio y **no son intercambiables**:
+
+| | Dónde va |
+|---|---|
+| **`contacto@vulpo.cl`** | El **buzón público**: la landing, el tutorial, el aviso del candado dentro del juego, y todo documento **general** que no va dirigido a alguien con nombre |
+| **`roberto.lorca@vulpo.cl`** | El **nominal**: la firma de correo, las cartas, y los documentos **personalizados** — una propuesta con el nombre del colegio en la portada |
+
+> **El criterio es a quién va dirigido, no qué tan formal es.** Una propuesta para un colegio
+> concreto la firma una persona y se responde a esa persona; la landing la lee cualquiera y no
+> debe depender de que Roberto esté disponible. El `vulpochile.app@gmail.com` **sigue
+> recibiendo**, así que ningún enlace ni documento ya repartido se rompe.
+
 ## Material comercial
 
 Vive **fuera del repositorio**, en `Escritorio\VULPO - correos profesores\`:
 
 | Archivo | Qué es |
 |---|---|
-| `VULPO-propuesta-SanFranciscoDeSales-2026-08-25.pdf` | Propuesta vigente (versión 25/08) |
-| `VULPO-guion-reunion-2026-08-25.pdf` | Guion de 15 minutos, vigente |
-| `VULPO-ejecutivo.pdf` | Resumen ejecutivo (**sin actualizar**, del 23/08) |
+| `VULPO-propuesta-SanFranciscoDeSales-2026-09-07.pdf` + `.html` | **Propuesta vigente.** 2 páginas · ofrece el ciclo 3°–8° · correo nominal |
+| `VULPO-ejecutivo-2026-09-07.pdf` + `.html` | **Resumen ejecutivo vigente.** 1 carilla · documento general · `contacto@` |
+| `VULPO-guion-reunion-2026-09-07.pdf` + `.html` | **Guion de 15 minutos vigente.** 2 páginas · **interno, no se entrega** |
+| `*-2026-08-25.pdf`, `VULPO-ejecutivo.pdf` | Versiones anteriores · ⚠️ **CADUCAS**, ver abajo |
 | `seed-CUR-BA04.sql` | Curso demo: 26 alumnos, ~1.270 filas de dominio |
-| `firma-*.png` | Firmas de correo por asignatura |
+| `firma-completa.png` | La firma de correo · se rehace con `generar-firma.py` |
+| `firma-<asignatura>.png` | Las cuatro ilustraciones temáticas (sin texto) |
 
-Las versiones anteriores (del 23/08) se conservan por si hay que comparar. **Están desfasadas:
-mandan a la URL antigua y ofrecen piloto de un semestre.**
+> ⚠️ **Las versiones de agosto NO se mandan.** Se escribieron cuando VULPO era un solo nivel, y
+> lo que dicen hoy es falso justo en el punto que más vende: el guion respondía *"hoy está
+> completo solo para 8° básico"* (son **seis cursos**), hablaban de *"2.536 preguntas"* (son
+> **16.865**) y decían **"revisadas una a una"** — la frase que esta misma página prohíbe,
+> porque cinco de los seis cursos se aprobaron por muestreo. El ejecutivo además mandaba a
+> `robertoldman1978.github.io/vulpo`, de antes de que existiera el dominio. Se conservan solo
+> para comparar.
+
+**Qué cambió en la versión del 07/09**, además de las cifras: la propuesta **ofrece el ciclo
+completo 3°–8°** y no un curso de 8° (decisión de Roberto), con la tabla de precios en cuatro
+escenarios; los tres cuentan que el juego **enseña antes de preguntar** y que 3° y 4° tienen voz
+pregrabada; los tres **dicen con qué método se aprobó cada banco**, en vez de la frase prohibida;
+la propuesta y el guion **ofrecen de frente el contenido sensible** —el colegio decide qué
+capítulos entran— en lugar de esperar la pregunta; y el guion suma dos objeciones que antes no
+existían (*"¿quién revisó todo ese contenido?"* y *"¿es una empresa formal?"*).
 
 **Los PDF se generan** desde HTML con Chrome en modo headless:
 `chrome.exe --headless --no-pdf-header-footer --print-to-pdf="salida.pdf" "file:///ruta.html"`.
+⚠️ **Y el HTML hay que GUARDARLO junto al PDF**: el de estos tres se perdió, así que actualizar
+una cifra obliga a reescribir el documento entero. Le pasó lo mismo a la firma de correo, y por
+eso ahora tiene su `generar-firma.py`.
 
 ## Antes de una reunión
 

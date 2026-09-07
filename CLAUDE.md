@@ -10623,3 +10623,64 @@ registro todavía no esté concedido.
 Actualizados los **tres documentos vivos** —la sección de trámites de este archivo, `pendiente.md`
 y `docs/comercial.md`—. **`docs/informe-v0.99.md` y el spec del renombre NO se tocaron**: están
 fechados y sellados con su commit, así que son foto histórica, igual que esta bitácora.
+
+#### Post scriptum 2 — el material comercial se pone al día, y estaba peor de lo que parecía
+
+Roberto pidió actualizar su firma de correo, y de ahí salió que **todo el material que le manda a
+un colegio seguía escrito para un VULPO de un solo nivel**. Nada de esto vive en el repositorio
+—es material comercial— salvo la regla, que sí queda escrita en `docs/comercial.md`.
+
+##### Los dos correos, y cuál va en cada cosa
+
+Decisión de Roberto: **`contacto@vulpo.cl` en el repositorio y en los documentos generales**;
+**`roberto.lorca@vulpo.cl` en las cartas y en lo personalizado**. El criterio es **a quién va
+dirigido, no qué tan formal es**: una propuesta con el nombre del colegio en la portada la firma
+una persona, mientras que la landing la lee cualquiera y no debe depender de que él conteste.
+El `@gmail.com` sigue recibiendo, así que nada de lo ya repartido se rompe.
+
+##### La firma: hubo que reconstruirla midiendo la imagen
+
+**Se hizo a mano en la Sesión 35 y no quedó script**, así que cambiar el correo obligó a
+arqueología: las métricas salieron de medir el PNG (Vulpi en x=21, separador de 4 px en x=228, las
+tres líneas de texto anclando en y=48, 115 y 168) y **las fuentes se identificaron comparando
+ancho/alto contra el original** en vez de adivinar — Segoe UI Black 51 da 568 px donde el original
+mide 570, así que era esa. Queda `generar-firma.py` junto a la firma para que la próxima vez sea
+un comando. **Verificado contra el original**: Vulpi, el separador y las tres líneas caen en las
+mismas coordenadas exactas; lo único que cambia es el ancho, porque el correo nuevo es más largo.
+
+> ⚠️ **Dos defectos que el script daba por buenos y solo se vieron MIRANDO.** El sobre ✉ y el ☎
+> salieron **pegados a su texto**, porque `crop()` al bbox se come los espacios de los extremos —la
+> separación tuvo que pasar a píxeles explícitos—; y **Vulpi quedó corrido 21 px** hacia el
+> separador, porque `getbbox()` conserva columnas de borde con alfa 1-2, invisibles pero presentes.
+> Es la novena vez que este proyecto tropieza con lo mismo, y la regla ya está escrita: **se aprueba
+> mirando, no contando.**
+
+##### Los tres documentos comerciales estaban CADUCOS, y uno costaba la reunión
+
+- ⚠️ **El guion respondía *"hoy está completo solo para 8° básico"*** a la objeción *"¿sirve para
+  otros cursos?"*. Hoy es falso **y regala el mejor argumento que hay**: seis cursos completos.
+- ⚠️ **La propuesta y el guion decían *"revisadas una a una"***, que es **exactamente la frase que
+  `docs/comercial.md` prohíbe** — solo 8° se revisó así; los otros cinco por muestreo.
+- Cifras de agosto (*2.536 preguntas*), el gmail, la propuesta a nombre de una persona y no de la
+  SpA, y el ejecutivo mandando a `robertoldman1978.github.io/vulpo`, de antes del dominio.
+- **Ninguno mencionaba lo que más diferencia hoy:** que el juego **enseña antes de preguntar** (233
+  mini-clases), la voz pregrabada de 3° y 4°, ni el informe para el apoderado.
+
+**Rehechos los tres**, con dos decisiones de Roberto: la propuesta **ofrece el ciclo completo 3°–8°**
+—no un 8°— con la tabla en cuatro escenarios, y la **prueba gratis sigue siendo de un curso**, que es
+lo que la hace fácil de aceptar. Los tres **dicen con qué método se aprobó cada banco** en vez de la
+frase prohibida, y **ofrecen de frente el contenido sensible** —el colegio decide qué capítulos
+entran— en lugar de esperar la pregunta, que en un colegio salesiano construye más confianza.
+
+##### Y todo precio lleva "+ IVA" PEGADO al número
+
+Regla nueva de Roberto. No basta con la nota al pie: **el ojo se posa en el número grande, y un
+valor sin aclarar se lee como el total**. Ahora va junto a cada cifra propia y en los encabezados
+de la tabla. Las dos que quedan sin él son a propósito —los $8.000 y $15.000 de una hora de
+reforzamiento particular, que no son precio de VULPO— y **el ejecutivo no lleva ninguna cifra**,
+porque la cara pública no muestra valores.
+
+> **El hallazgo de método, hermano del de la firma: no había HTML fuente de ninguno de los tres.**
+> Se generaron con Chrome y nadie guardó el origen, así que cambiar una cifra obligaba a reescribir
+> el documento entero. Los nuevos **se guardan con su `.html` al lado**, y eso quedó escrito en
+> `docs/comercial.md` como parte del procedimiento, no como una nota suelta.
