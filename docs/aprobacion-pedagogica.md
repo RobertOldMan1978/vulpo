@@ -169,11 +169,12 @@ El modo cierra ese hueco. Una pantalla por objetivo, con **sus 8 preguntas ya el
 > día 4° terminó su fork, su voz (12.210 clips) y su arte propio**, así que su banco aprobado ya
 > llega a los alumnos: los seis cursos del proyecto están completos y anunciados.
 >
-> ⚠️ **Y volvió a abrirse, que es lo normal: el banco crece.** Al 06/09 son **16.293 de 16.625**,
-> con **332 pendientes** —las 330 que completaron Lenguaje de 8° (Sesión 99) y 2 de geometría
-> reescritas (Sesión 100), que perdieron su firma al cambiarles el texto— más **21 lecciones de
-> 151**. **"Cerrado" es una foto, no un estado**: cada tanda nueva vuelve a la cola, y el número
-> se mide en cada orden 66 en vez de copiarlo de aquí.
+> ⚠️ **Volvió a abrirse y se volvió a cerrar el mismo día, y eso es lo normal: el banco crece.**
+> El 06/09 quedó en 16.293 de 16.625 al sumarse contenido nuevo —las 330 que completaron Lenguaje
+> de 8° (Sesión 99) y 2 de geometría reescritas (Sesión 100), que perdieron su firma al
+> cambiarles el texto, más 21 lecciones—, y esa misma tarde Roberto firmó las 332 + 21: **16.625
+> de 16.625 y 151 de 151**. **"Cerrado" es una foto, no un estado**: cada tanda nueva vuelve a la
+> cola, y el número se mide en cada orden 66 en vez de copiarlo de aquí.
 >
 > ⚠️ **100% de cobertura no es 100% del mismo método.** 8° y los módulos de apoyo se revisaron
 > pregunta por pregunta; 3°, 4°, 5°, 6° y 7°, por muestreo de 8 de cada 30. Al decirlo afuera, la

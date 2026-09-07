@@ -195,8 +195,8 @@ la propuesta, el guion de reunión y la landing. **Léelo antes de una reunión 
 
 ## Qué se le promete a un colegio, y qué no
 
-**Sí:** 4 asignaturas por curso en 3°, 4°, 5°, 6°, 7° y 8° básico —**16.293 preguntas aprobadas**
-de 16.625 escritas, alineadas a las Bases del MINEDUC (8° pregunta por pregunta; 3°, 4°, 5°, 6° y
+**Sí:** 4 asignaturas por curso en 3°, 4°, 5°, 6°, 7° y 8° básico —**16.625 preguntas aprobadas**,
+alineadas a las Bases del MINEDUC (8° pregunta por pregunta; 3°, 4°, 5°, 6° y
 7° por muestreo de 8 por objetivo)—,
 **evaluación formativa alineada al Decreto 67/2018** (ver sección anterior), panel del profesor
 con mapa de dominio por OA, desafíos de refuerzo, ranking por curso, soporte y actualizaciones.
@@ -205,13 +205,14 @@ Funciona en cualquier celular con internet, sin instalar nada.
 **No:**
 - ❌ **No funciona sin internet.** Verificado: no hay service worker y los bancos de preguntas se
   piden con `fetch`. **Nunca prometer uso sin conexión.**
-- ⚠️ **No decir "una a una" ni "el 100% del banco".** Lo aprobado lo está *objetivo por objetivo*:
-  8° se revisó pregunta por pregunta, pero 3°, 4°, 5°, 6° y 7° por **muestreo** de 8 de cada 30, así
-  que la cobertura no es el método. Y **el banco crece**: al 06/09 hay **332 preguntas recién
-  escritas en revisión** (las 330 que completaron Lenguaje de 8° y 2 de geometría reescritas), más
-  21 lecciones. Exagerarlo se cae a la primera pregunta de una UTP; decirlo bien no le quita fuerza
-  al argumento —*"cada tanda pasa por la misma aprobación antes de publicarse"* es la señal de rigor
-  que un colegio busca—. **El número se vuelve a medir en cada orden 66**, no se copia de aquí.
+- ⚠️ **No decir "una a una".** Hoy sí está aprobado el 100% del banco (16.625 de 16.625), pero lo
+  está *objetivo por objetivo*: 8° se revisó pregunta por pregunta, y 3°, 4°, 5°, 6° y 7° por
+  **muestreo** de 8 de cada 30, así que la cobertura no es el método. Y **el 100% es una foto, no
+  un estado**: el banco crece, y cada tanda nueva vuelve a la cola hasta que Roberto la firma —el
+  06/09 estuvo en 16.293 de 16.625 durante unas horas—. Exagerarlo se cae a la primera pregunta de
+  una UTP; decirlo bien no le quita fuerza al argumento —*"cada tanda pasa por la misma aprobación
+  antes de publicarse"* es la señal de rigor que un colegio busca—. **El número se vuelve a medir
+  en cada orden 66**, no se copia de aquí.
 - ❌ **No es una herramienta de calificación.** El panel es una brújula; así está descrito en el
   producto y así hay que venderlo.
 - ⚠️ **El enlace de inscripción NO es una licencia por persona.** Sirve para que un grupo entre

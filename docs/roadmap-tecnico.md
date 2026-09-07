@@ -68,16 +68,16 @@ Medido en el repositorio, 06/09/2026 (tras generar la voz de 4°):
 
 | Carpeta | Peso |
 |---|---|
-| `assets/voz/` (voz pregrabada de 3° y 4°) | **578 MB** en bytes reales — 6+4 asignaturas |
+| `assets/voz/` (voz pregrabada de 3° y 4°) | **582 MB** en bytes reales — 6+4 asignaturas |
 | `assets/originales/` (arte crudo, nunca se sirve) | **174 MB** |
 | `assets/audio/` (música) | 5,0 MB |
-| `contenido/` (los bancos de preguntas, seis cursos) | 17,3 MB |
-| **Sitio publicado** (sin `.git` ni `originales`, ya excluidos) | **713 MB** |
+| `contenido/` (los bancos de preguntas, seis cursos) | 17,8 MB |
+| **Sitio publicado** (sin `.git` ni `originales`, ya excluidos) | **721 MB** |
 
 Un service worker con `cache-first` sobre "imágenes, audio y fuentes" —tal cual lo propone el
 documento— **le bajaría cientos de MB a un teléfono en la primera apertura de 3° o 4° básico**.
 En el público objetivo (colegios chilenos, planes de datos limitados) eso no es una
-optimización: es un motivo para desinstalar. Y con el sitio ya en 713 MB de 1 GB, **no queda
+optimización: es un motivo para desinstalar. Y con el sitio ya en 721 MB de 1 GB, **no queda
 margen para pregrabar la voz de un quinto curso**: la regla de 1° a 4° es la única aritmética
 que cabe.
 

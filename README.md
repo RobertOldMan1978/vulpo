@@ -99,9 +99,9 @@ manual antes de coronar la v1.
 
 **VULPO ya cubre de 3° a 8° básico**, los seis cursos completos con sus cuatro asignaturas,
 **anunciados y enlazados desde `vulpo.cl`**, cada uno como su propia app: 3°, 4°, 5°, 6°, 7° y
-8° básico. **El banco del proyecto son 16.625 preguntas, 16.293 de ellas aprobadas**, todas ya en
-su versión jugable. Las 332 que faltan son contenido recién escrito —las 330 que completaron
-Lenguaje de 8° y 2 de geometría reescritas— esperando su aprobación, no una firma que se cayó.
+8° básico. **El banco del proyecto son 16.625 preguntas, todas aprobadas**, y las 151 mini-clases
+e introducciones también. Es una foto, no un estado: cada tanda nueva vuelve a la cola de
+aprobación antes de llegar a un alumno, así que el número se vuelve a medir en cada cierre.
 
 **Qué falta y en qué orden está en [`pendiente.md`](pendiente.md)**, la lista viva de tareas:
 es el archivo por el que se empieza al abrir una rama. El plan de

@@ -151,12 +151,14 @@ año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron co
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
 están hoy en una expedición jugable, el resto es reserva.
 
-> **Estado de aprobación (06/09/2026): 16.293 de 16.625 preguntas aprobadas, y 130 de 151
-> lecciones.** El banco creció después de la firma de 4°: la Sesión 99 escribió **330 preguntas
-> nuevas** para los 11 OA que le faltaban a Lenguaje de 8° y **21 lecciones**, y la Sesión 100
-> reescribió **2 preguntas de geometría** que exigían dos cálculos encadenados con reloj de 20 s —
-> al cambiarles el texto, la firma anterior dejó de corresponderles. **Esos 332 + 21 son todo lo
-> pendiente**, y son contenido nuevo, no una firma que se haya caído. Pero **cómo se aprobó cada banco no es lo mismo, y hay que
+> **Estado de aprobación (06/09/2026): 16.625 de 16.625 preguntas aprobadas, y 151 de 151
+> lecciones.** El banco había crecido después de la firma de 4° —la Sesión 99 escribió **330
+> preguntas nuevas** para los 11 OA que le faltaban a Lenguaje de 8° y **21 lecciones**, y la
+> Sesión 100 reescribió **2 preguntas de geometría** que exigían dos cálculos encadenados con
+> reloj de 20 s, así que su firma anterior dejó de corresponderles— y esas 332 + 21 se aprobaron
+> el mismo 06/09. ⚠️ **Pero "todo aprobado" es una FOTO, no un estado**: cada tanda nueva vuelve a
+> la cola, así que el número **se vuelve a medir en cada orden 66 y no se copia de aquí**. Y
+> **cómo se aprobó cada banco no es lo mismo, y hay que
 > saberlo antes de decírselo a un colegio:** los 2.536 de 8° y los módulos de apoyo se revisaron
 > **pregunta por pregunta**; 3°, 4°, 5°, 6° y 7° se aprobaron **por muestreo** —8 de cada 30 por
 > objetivo, criterio de `docs/aprobacion-pedagogica.md`—. Por eso la landing dice *"aprobadas por
@@ -435,16 +437,16 @@ eso ahora lo comprueba `auditar-banco-nivel.py`, probado rompiendo un banco a pr
 
 | | |
 |---|---|
-| `assets/voz/` (voz pregrabada de **3° y 4°**, 6+4 asignaturas) | **578 MB** |
+| `assets/voz/` (voz pregrabada de **3° y 4°**, 6+4 asignaturas) | **582 MB** |
 | `assets/originales/` (arte crudo, **excluido del sitio** por `_config.yml`) | 174 MB |
-| `contenido/` (los bancos completos, seis cursos) | 17,3 MB |
+| `contenido/` (los bancos completos, seis cursos) | 17,8 MB |
 | `assets/audio/` (música) | 5,0 MB |
-| **`assets/` completo** | **814 MB** |
-| **Sitio publicado** (sin `.git` ni originales) | **713 MB** |
+| **`assets/` completo** | **820 MB** |
+| **Sitio publicado** (sin `.git` ni originales) | **721 MB** |
 
 **La voz de 4° ya está generada (06/09/2026) y sumó 326 MB** (los ~254 MB estimados se quedaron
 cortos: 4° tiene más contenido por asignatura que 3°). El techo de GitHub Pages sigue siendo
-**1 GB**, y el sitio publicado queda en 713 MB — con margen, pero **ya no hay margen para una
+**1 GB**, y el sitio publicado queda en 721 MB — con margen, pero **ya no hay margen para una
 séptima asignatura con voz**: la regla del proyecto —voz pregrabada solo de 1° a 4°— es la única
 aritmética que cabe, no una preferencia pedagógica. Y por eso la precarga `cache-first` que
 propone el análisis de la PWA sigue siendo inviable tal cual: bajaría cientos de MB al teléfono
@@ -990,7 +992,21 @@ Dos cosas que hay que saber al hacerlo, porque las dos asustan sin motivo:
   y funcionó); lo que no funciona es `notebooklm login` (entrada interactiva en terminal) ni el
   chromium de playwright. **Al esperar el login, NO esperar el evento `close` de la página**: la
   pestaña inicial se cierra sola en la redirección de Google y el script termina creyendo que
-  Roberto ya entró (pasó en la Sesión 56). Esperar a que la URL sea la de los notebooks.
+  Roberto ya entró (pasó en la Sesión 56).
+  - ⚠️ **Y desde el 06/09/2026 `channel="chrome"` YA NO BASTA: Google rechaza el login si huele
+    automatización** —*"es posible que el navegador o la aplicación no sean seguros"*, sin dejar
+    escribir la contraseña—. Hay que quitarle a Chrome las dos señales que mira primero, y con eso
+    pasa: **`ignore_default_args=["--enable-automation"]`** al lanzarlo, y un
+    **`add_init_script`** que deje `navigator.webdriver` en `undefined` (más
+    `--disable-blink-features=AutomationControlled`). No es garantía —Google mira más cosas— pero
+    es lo que funcionó.
+  - ⚠️ **Y la condición de "ya entró" es `notebook.google.com`, SIN "lm".** El flujo de Google
+    termina ahí (`notebook.google.com/?pli=1`) y no en `notebooklm.google.com`, así que un script
+    que exija el segundo **se da por vencido con la sesión ya establecida** y no guarda las
+    cookies — pasó el 06/09, y el síntoma engaña porque se ve igual que un login fallido. Cuando
+    el script se rinda, **antes de mandar a repetir el login hay que correr la comprobación del
+    perfil de arriba**: si la URL final no es `accounts.google.com`, la sesión está y solo falta
+    regenerar el archivo.
 - **Respaldo automático a las 18:00:** cualquier día en que haya cambios sin
   guardar, una Tarea Programada de Windows ejecuta `scripts/auto-commit.ps1`,
   que hace commit y push solo si detecta cambios. Así no se pierde trabajo
@@ -9532,3 +9548,100 @@ costumbre.
   16.625**. Después, la **voz de las lecciones de 3° y 4°**: 41 clips, **US$0,14**.
 - **Pendiente de arrastre:** `docs/contenido-sensible.md` con la fila de 5° (Historia), INAPI, el
   enlace de agenda de la landing y la reautenticación de NotebookLM.
+
+### Sesión 101 (2026-09-06) — El banco vuelve a estar entero, y las lecciones de Lenguaje hablan
+Roberto avisó *"BAJADO EL ARCHIVO REVISADAS"*. Sesión corta de cierre: aplicar su aprobación,
+corregir lo que dejó de ser cierto al aplicarla y destrabar la voz que dependía de ella. **No se
+escribió contenido ni se tocó el motor.**
+
+#### La aprobación: 16.625 de 16.625 y 151 de 151
+
+Las **332 preguntas** pendientes (330 de Lenguaje de 8° + las 2 de geometría reescritas en la
+Sesión 100) y las **21 lecciones**, firmadas. El diff fueron **353 marcas y nada más** —331 líneas
+en `lenguaje-8basico` (330 preguntas + su contador), 2 en cada uno de `matematicas-5basico` y
+`-7basico`, y 21 repartidas en seis `lecciones.json`—: el formato canónico impuesto en la Sesión 85
+sigue evitando que marcar dos preguntas reformatee un archivo entero.
+
+Comprobado además que el tablero regenerado declara **0 pendientes en sus 29 secciones**.
+
+#### Cinco documentos vivos que dejaron de ser ciertos al aplicarla
+
+La landing decía **«16.293 aprobadas · hay 332 recién escritas todavía en revisión»**, que era la
+verdad de la mañana y dejó de serlo a la tarde. Corregido ahí, en `CLAUDE.md`, `README.md`,
+`pendiente.md`, `docs/comercial.md` y `docs/aprobacion-pedagogica.md`.
+
+> **Pero el 100% se dice de otra manera que la última vez.** En la Sesión 93 se escribió *"cerrado
+> del todo"* y seis días después había 332 sin firmar. Así que ahora los cinco documentos dicen lo
+> mismo: **es una FOTO, no un estado** —cada tanda nueva vuelve a la cola— y **el número se vuelve
+> a medir en cada orden 66 en vez de copiarse de ahí**. `docs/comercial.md` conserva su otra regla,
+> que ahora importa más: se puede decir "el 100% del banco", **nunca** "una a una".
+
+#### La voz de las lecciones de Lenguaje de 3° y 4°: 41 clips, US$0,14
+
+Estaba bloqueada por la aprobación, y era la última pieza del pendiente de la Sesión 99. El
+recuento —que es gratis— dio **10 en `len3` y 31 en `leng4`**, clavado en los 41 estimados.
+
+**Los 41 textos se leyeron antes de pagar**, que es lo que corresponde: el normalizador toca solo
+**3** —las que llevan negrita— y en las tres quita los asteriscos bien, o sea el arreglo de la
+Sesión 99 haciendo su trabajo. Las otras 38 son prosa pura, sin números ni símbolos, así que la
+familia de defectos del *"enero"*, del menos que desaparece y de las coordenadas leídas como
+preposición **no puede ocurrir ahí**.
+
+**Verificado el camino completo, no el "listo" del script:** se juega hasta la lección con clics
+reales en los dos cursos, se toca el 🔊 y **se espía el constructor `Audio`** para ver qué pide el
+juego de verdad. 3° pide `len3/6305fece3458bff9.mp3` y 4° `leng4/cbe276a2da5c4dab.mp3` —justo uno
+de los 31 nuevos, generado a las 21:53—, y los dos responden **200 `audio/mpeg`**. Cobertura:
+**0 textos sin clip y 0 clips de 0 bytes**, ni en esas dos asignaturas ni en todo `assets/voz`.
+
+**Regresión:** JUGADOR **navega** en los seis cursos, `__MOTOR_OK` en true, **cero errores de
+consola y cero 404**.
+
+> ⚠️ **Gotcha de método, nuevo y útil para `cdp.mjs`:** el juego **deja VER las expediciones sin
+> perfil pero lo exige al ENTRAR a una**, así que tocar el capítulo manda a `scr-inicio` — y el
+> botón COMENZAR entra **al mapa de esa misma expedición**. O sea el perfil hay que crearlo *ahí*,
+> no antes. Con `?qa=1` no sirve de nada adelantarse: es `EFIMERO` y no guarda, así que el nombre
+> nunca queda. Cuatro intentos se fueron en eso, y el síntoma —caer siempre en `scr-inicio`— se ve
+> igual que un bug del producto.
+>
+> Y los de siempre: **cinco errores de selector propios** (`.nodo` por `.node`, `VOZ.clip` que no
+> existe, `[class*=card]` pegando en un contenedor). **Cuando un conteo da cero, el primer
+> sospechoso es la prueba, no el producto.**
+
+#### El peso, remedido
+
+`assets/voz` **582 MB** · `assets/` **820 MB** · **sitio publicado 721 MB** (eran 578 / 814 / 713).
+Los 41 clips aportan ~2 MB; el resto es el tablero regenerado, que ahora incluye las 151 lecciones.
+Actualizado a la vez en `CLAUDE.md`, `pendiente.md` y `docs/roadmap-tecnico.md`, como manda la
+convención de una sola medición.
+
+#### ⚠️ El AI Brain: Google dejó de aceptar el login automatizado, y mi detección estaba mal
+
+Roberto avisó que tenía NotebookLM abierto en su Chrome. **Eso no sirve tal cual** —playwright
+arranca con un perfil aparte y no ve esa sesión—, así que se fue por la vía documentada. Y ahí
+aparecieron dos cosas, una del mundo y otra mía:
+
+1. **Google rechaza el login dentro de una ventana automatizada** desde algún momento reciente:
+   *"es posible que el navegador o la aplicación no sean seguros"*, y no deja ni escribir la
+   contraseña. Eso **invalida lo que este archivo daba por probado desde la Sesión 52**. Lo que sí
+   funcionó fue quitarle las dos señales que Google mira primero —el flag `--enable-automation` que
+   playwright pone solo, y `navigator.webdriver`—; con eso el login pasó.
+2. ⚠️ **Y después el script se rindió a los 7 minutos con la sesión YA establecida**, porque exigía
+   llegar a `notebooklm.google.com` y el flujo de Google termina en **`notebook.google.com`, sin
+   "lm"**. Roberto avisó *"está listo, conectado"* mientras el script decía lo contrario.
+   > **El síntoma es idéntico a un login fallido**, así que la conclusión fácil era mandarlo a
+   > repetirlo. Lo que lo desarmó fue correr la comprobación que este archivo ya tenía escrita
+   > —abrir el perfil persistente y mirar si la URL final **no** es `accounts.google.com`—: tenía
+   > sesión, y bastó regenerar `storage_state.json` desde ahí. **Antes de pedirle a alguien que
+   > repita algo, comprobar si ya está hecho.**
+
+Los dos hallazgos quedaron escritos **en la regla de la orden 66**, no solo aquí, porque es ahí
+donde los va a leer la próxima sesión que se tope con esto.
+
+Con el CLI autenticando (`notebooklm list` devuelve el "AI Brain de Roberto"), se subió un resumen
+**de las dos sesiones juntas**. ⚠️ **Y hubo que corregirlo antes de subirlo:** su última sección
+decía que la landing quedó en 16.293, cierto cuando se escribió esa mañana y falso desde la tarde.
+**El AI Brain es memoria de referencia: sembrarlo con un dato caduco es peor que no actualizarlo.**
+
+- **Pendiente de arrastre:** `docs/contenido-sensible.md` sin la fila de 5° (Historia), INAPI —que
+  ahora puede registrarse a nombre de la SpA— y el enlace de agenda de la landing. **La
+  reautenticación de NotebookLM queda cerrada.**
