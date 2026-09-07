@@ -5543,7 +5543,13 @@
    "correcta": 0,
    "tip": "Una vuelta completa mide 360 grados y cada hexágono aporta 120, así que caben exactamente tres. Con dos quedarían 120 grados de hueco y con cuatro las piezas se montarían unas sobre otras.",
    "revisada": true,
-   "id": "mate6-oa14-6"
+   "id": "mate6-oa14-6",
+   "visual": {
+    "kind": "poligono",
+    "lados": 6,
+    "cortes": false,
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 14",
@@ -5557,7 +5563,13 @@
    "correcta": 3,
    "tip": "Tres pentágonos alrededor de un punto dan 324 grados y dejan un hueco de 36; con cuatro se llega a 432 y se montan. Que un polígono sea regular significa justamente que todos sus ángulos miden lo mismo.",
    "revisada": true,
-   "id": "mate6-oa14-7"
+   "id": "mate6-oa14-7",
+   "visual": {
+    "kind": "poligono",
+    "lados": 5,
+    "cortes": false,
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 14",
@@ -5613,7 +5625,13 @@
    "correcta": 0,
    "tip": "Dos octágonos aportan 270 grados y faltan 90 para la vuelta; tres llegan a 405 y se pasan. Ese hueco de 90 es justo del porte de un cuadrado, y por eso los pisos mezclan octágonos con cuadraditos.",
    "revisada": true,
-   "id": "mate6-oa14-11"
+   "id": "mate6-oa14-11",
+   "visual": {
+    "kind": "poligono",
+    "lados": 8,
+    "cortes": false,
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 14",
@@ -7153,7 +7171,12 @@
    "correcta": 0,
    "tip": "Un cubo tiene seis caras cuadradas del mismo tamaño, así que basta calcular una y multiplicarla por seis. Contar solo cuatro deja fuera la tapa y el fondo, y sumar aristas mide largo, no superficie.",
    "revisada": true,
-   "id": "mate6-oa18-1"
+   "id": "mate6-oa18-1",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 18",
@@ -7195,7 +7218,12 @@
    "correcta": 2,
    "tip": "Cada cara mide 4 por 4, o sea 16 centímetros cuadrados, y el cubo tiene seis: 16 por 6 son 96. Los 64 salen de multiplicar 4 por 4 por 4, y los 16 son una sola de las seis caras.",
    "revisada": true,
-   "id": "mate6-oa18-4"
+   "id": "mate6-oa18-4",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 18",
@@ -7209,7 +7237,12 @@
    "correcta": 2,
    "tip": "Las tres caras distintas miden 20, 15 y 12 centímetros cuadrados y suman 47; como cada una tiene su gemela, se duplica y da 94. Los 54 dejan fuera la tapa y el fondo de la caja.",
    "revisada": true,
-   "id": "mate6-oa18-5"
+   "id": "mate6-oa18-5",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 18",
@@ -7279,7 +7312,12 @@
    "correcta": 3,
    "tip": "Cada cara mide 100 cm por 100 cm, o sea 10.000 centímetros cuadrados, y hay seis: 60.000. Multiplicar los 6 metros cuadrados por 100 confunde la conversión de largos con la de superficies.",
    "revisada": true,
-   "id": "mate6-oa18-10"
+   "id": "mate6-oa18-10",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 18",
@@ -7293,7 +7331,12 @@
    "correcta": 2,
    "tip": "La base y la tapa miden 49 centímetros cuadrados cada una y los cuatro costados 70 cada uno: 98 más 280 son 378. Los 280 dejan fuera justamente la base y la tapa.",
    "revisada": true,
-   "id": "mate6-oa18-11"
+   "id": "mate6-oa18-11",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 18",
@@ -7377,7 +7420,12 @@
    "correcta": 0,
    "tip": "Cada metro cuadrado tiene 10.000 centímetros cuadrados, así que se divide 50.000 en 10.000 y da 5. Dividir en 100 sirve para pasar centímetros a metros de largo, no superficies.",
    "revisada": true,
-   "id": "mate6-oa18-17"
+   "id": "mate6-oa18-17",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 18",
@@ -7405,7 +7453,12 @@
    "correcta": 2,
    "tip": "Antes de comparar hay que llevar las dos a la misma unidad: 3 por 10.000 son 30.000 centímetros cuadrados, más que los 20.000 de la caja A. Comparar un 3 con un 20.000 sin convertir no dice nada.",
    "revisada": true,
-   "id": "mate6-oa18-19"
+   "id": "mate6-oa18-19",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 18",
@@ -7433,7 +7486,12 @@
    "correcta": 0,
    "tip": "Cada cubo mide 600 centímetros cuadrados, pero al pegarlos dos caras de 100 quedan escondidas por dentro. Hay que restar 200 a los 1.200, y la caja de 20 por 10 por 10 mide 1.000.",
    "revisada": true,
-   "id": "mate6-oa18-21"
+   "id": "mate6-oa18-21",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 18",
@@ -7447,7 +7505,12 @@
    "correcta": 3,
    "tip": "Una caja de zapatos mide más o menos 30 por 20 por 12 cm, y su superficie ronda los 2.400 centímetros cuadrados, o sea menos de un cuarto de metro cuadrado. Dos metros cuadrados es casi una mesa entera.",
    "revisada": true,
-   "id": "mate6-oa18-22"
+   "id": "mate6-oa18-22",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 18",
@@ -7461,7 +7524,12 @@
    "correcta": 2,
    "tip": "Para la superficie hay que multiplicar las medidas de a dos y después sumar: 9 por 5, 9 por 2 y 5 por 2 dan 45, 18 y 10, que suman 73. El doble es 146 centímetros cuadrados.",
    "revisada": true,
-   "id": "mate6-oa18-23"
+   "id": "mate6-oa18-23",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 18",
@@ -7531,7 +7599,12 @@
    "correcta": 2,
    "tip": "Se suma una cara de cada par —30 más 20 más 15 son 65— y se duplica, porque cada una está dos veces: 130 centímetros cuadrados. Multiplicar por seis contaría cada cara tres veces.",
    "revisada": true,
-   "id": "mate6-oa18-28"
+   "id": "mate6-oa18-28",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 18",
@@ -7545,7 +7618,12 @@
    "correcta": 3,
    "tip": "La superficie depende de las tres medidas a la vez. Una caja de 1 por 1 por 10 cm mide 42 centímetros cuadrados y una de 4 por 4 por 2 cm mide 64, aunque la primera sea cinco veces más alta.",
    "revisada": true,
-   "id": "mate6-oa18-29"
+   "id": "mate6-oa18-29",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 18",
@@ -7573,7 +7651,12 @@
    "correcta": 0,
    "tip": "El volumen es el espacio que hay adentro y se mide en unidades cúbicas. El cartón de afuera es la superficie, el borde de la tapa es un largo y el peso depende de con qué se llene.",
    "revisada": true,
-   "id": "mate6-oa19-1"
+   "id": "mate6-oa19-1",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 19",
@@ -7601,7 +7684,12 @@
    "correcta": 0,
    "tip": "El volumen usa las tres direcciones: arista por arista por arista. Multiplicar una cara por seis da la superficie de afuera, y sumar o multiplicar aristas entrega una medida de largo.",
    "revisada": true,
-   "id": "mate6-oa19-3"
+   "id": "mate6-oa19-3",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 19",
@@ -7699,7 +7787,12 @@
    "correcta": 3,
    "tip": "El volumen cuenta cuántos cubitos de una unidad caben adentro: en cada capa entran largo por ancho, y hay tantas capas como diga la altura. De ahí sale la multiplicación de las tres medidas.",
    "revisada": true,
-   "id": "mate6-oa19-10"
+   "id": "mate6-oa19-10",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 19",
@@ -7727,7 +7820,12 @@
    "correcta": 1,
    "tip": "La base ocupa 6 por 4, o sea 24, y hay que ver cuántas capas de esa base caben en 120: da 5. Dividir por una sola medida deja 20 o 30, que son demasiado, y los 24 son el área de la base.",
    "revisada": true,
-   "id": "mate6-oa19-12"
+   "id": "mate6-oa19-12",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 19",
@@ -7741,7 +7839,12 @@
    "correcta": 3,
    "tip": "Hay que buscar el número que multiplicado tres veces por sí mismo dé 64: 4 por 4 por 4. Los 8 salen de buscar solo dos factores iguales, que es lo que se hace con un área, y los 32 de partir 64 por la mitad.",
    "revisada": true,
-   "id": "mate6-oa19-13"
+   "id": "mate6-oa19-13",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 19",
@@ -7839,7 +7942,12 @@
    "correcta": 1,
    "tip": "Al doblar la arista de un cubo, este crece al doble de largo, de ancho y de alto a la vez: 2 por 2 por 2 son 8 y 4 por 4 por 4 son 64. Doblar la arista multiplica el volumen por ocho, no por dos.",
    "revisada": true,
-   "id": "mate6-oa19-20"
+   "id": "mate6-oa19-20",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 19",
@@ -7853,7 +7961,12 @@
    "correcta": 3,
    "tip": "Aquí creció una sola de las tres medidas, así que caben el doble de capas y el volumen se duplica. Se multiplica por ocho cuando las tres medidas se doblan a la vez, como al agrandar un cubo.",
    "revisada": true,
-   "id": "mate6-oa19-21"
+   "id": "mate6-oa19-21",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 19",
@@ -7895,7 +8008,12 @@
    "correcta": 1,
    "tip": "Sumar las medidas entrega un largo, no un espacio. Para el volumen hay que multiplicarlas: 7 por 5 son 35 y por 2 dan 70 centímetros cúbicos, que es lo que cabe dentro de esa caja.",
    "revisada": true,
-   "id": "mate6-oa19-24"
+   "id": "mate6-oa19-24",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 19",
@@ -7923,7 +8041,12 @@
    "correcta": 0,
    "tip": "El volumen es el producto de las tres medidas, y multiplicar en otro orden da lo mismo: 6 por 4 por 2 y 2 por 6 por 4 son los dos 48. Girar la caja no le agrega ni le quita espacio adentro.",
    "revisada": true,
-   "id": "mate6-oa19-26"
+   "id": "mate6-oa19-26",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 19",
@@ -7965,7 +8088,12 @@
    "correcta": 2,
    "tip": "Si una cara mide 16 centímetros cuadrados, su lado mide 4, porque 4 por 4 son 16. Esa es la arista, así que el volumen es 4 por 4 por 4, o sea 64. Los 96 son la superficie de las seis caras.",
    "revisada": true,
-   "id": "mate6-oa19-29"
+   "id": "mate6-oa19-29",
+   "visual": {
+    "kind": "solido",
+    "tipo": "prisma",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA06 OA 19",

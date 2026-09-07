@@ -1,5 +1,5 @@
 {
- "revisadas": 810,
+ "revisadas": 809,
  "preguntas": [
   {
    "oa": "MA05 OA 01",
@@ -8657,14 +8657,14 @@
    "oa": "MA05 OA 21",
    "pregunta": "Una cancha rectangular tiene 60 metros de perímetro y 20 metros de largo. ¿Cuál es su área?",
    "opciones": [
-    "600 metros cuadrados",
-    "1.200 metros cuadrados",
-    "200 metros cuadrados",
-    "800 metros cuadrados"
+    "200 metros cuadrados, porque el ancho mide 10 metros",
+    "1.200 metros cuadrados, multiplicando el perímetro por el largo",
+    "600 metros cuadrados, tomando 30 metros como ancho",
+    "800 metros cuadrados, usando 40 metros como ancho"
    ],
-   "correcta": 2,
-   "tip": "Primero el ancho: los dos largos suman 40, quedan 20 para los dos anchos y cada uno mide 10. Recién ahí el área: 20 × 10 = 200. Tomar 40 como ancho, restando el largo al perímetro, lleva a 800.",
-   "revisada": true,
+   "correcta": 0,
+   "tip": "Cada opción dice qué ancho supone, así que basta comprobar cuál cabe: los dos largos ocupan 40 metros del perímetro y quedan 20 para los dos anchos, o sea 10 cada uno. Con 20 por 10 el área es 200.",
+   "revisada": false,
    "id": "mate5-oa21-19"
   },
   {
@@ -8833,7 +8833,12 @@
    "correcta": 0,
    "tip": "El área del triángulo es base por altura dividido en 2: 10 por 6 son 60, y la mitad de 60 es 30. Quedarse en 60 es olvidar la división, y sumar la base con la altura da una longitud, no un área.",
    "revisada": true,
-   "id": "mate5-oa22-1"
+   "id": "mate5-oa22-1",
+   "visual": {
+    "kind": "figura",
+    "tipo": "triangulo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA05 OA 22",
@@ -8847,7 +8852,12 @@
    "correcta": 3,
    "tip": "Un triángulo es la mitad de un paralelogramo de la misma base y la misma altura, y por eso su fórmula lleva la división en 2. Sumar la base con la altura da una longitud, nunca una superficie.",
    "revisada": true,
-   "id": "mate5-oa22-2"
+   "id": "mate5-oa22-2",
+   "visual": {
+    "kind": "figura",
+    "tipo": "triangulo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA05 OA 22",
@@ -8861,7 +8871,12 @@
    "correcta": 1,
    "tip": "En el paralelogramo el área es base por altura, sin dividir: 9 por 4 son 36. Dividir en 2 es la fórmula del triángulo, y sumar los lados alrededor da el contorno, que se mide en centímetros.",
    "revisada": true,
-   "id": "mate5-oa22-3"
+   "id": "mate5-oa22-3",
+   "visual": {
+    "kind": "figura",
+    "tipo": "paralelogramo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA05 OA 22",
@@ -8875,7 +8890,12 @@
    "correcta": 2,
    "tip": "Se suman las dos bases (10 más 6 son 16), se multiplica por la altura (16 por 4 son 64) y recién ahí se divide en 2: quedan 32. Usar solo la base mayor deja fuera la parte donde la figura se angosta.",
    "revisada": true,
-   "id": "mate5-oa22-4"
+   "id": "mate5-oa22-4",
+   "visual": {
+    "kind": "figura",
+    "tipo": "trapecio",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA05 OA 22",
@@ -8889,7 +8909,12 @@
    "correcta": 0,
    "tip": "Las dos bases del trapecio miden distinto, así que se suman para trabajar con su promedio: por eso el producto se divide en 2. Sin esa división el resultado queda al doble del área real.",
    "revisada": true,
-   "id": "mate5-oa22-5"
+   "id": "mate5-oa22-5",
+   "visual": {
+    "kind": "figura",
+    "tipo": "trapecio",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA05 OA 22",
@@ -8917,7 +8942,12 @@
    "correcta": 3,
    "tip": "El área usa la altura, no el lado inclinado: 12 por 8 son 96 y la mitad es 48. El lado de 10 sirve para calcular el contorno. Quedarse en 96 es olvidar la división en 2 de la fórmula.",
    "revisada": true,
-   "id": "mate5-oa22-7"
+   "id": "mate5-oa22-7",
+   "visual": {
+    "kind": "figura",
+    "tipo": "triangulo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA05 OA 22",
@@ -8931,7 +8961,12 @@
    "correcta": 0,
    "tip": "El área del paralelogramo es base por altura: 8 por 4 son 32. Multiplicar la base por el lado inclinado (8 por 5) da 40, más de lo que la figura ocupa, y dividir en 2 es la fórmula del triángulo.",
    "revisada": true,
-   "id": "mate5-oa22-8"
+   "id": "mate5-oa22-8",
+   "visual": {
+    "kind": "figura",
+    "tipo": "paralelogramo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA05 OA 22",
@@ -8987,7 +9022,12 @@
    "correcta": 0,
    "tip": "14 más 8 son 22; 22 por 6 son 132; y la mitad de 132 son 66 metros cuadrados. Sin la división en 2 el resultado queda al doble, y usar solo la base mayor ignora que el terreno se angosta.",
    "revisada": true,
-   "id": "mate5-oa22-12"
+   "id": "mate5-oa22-12",
+   "visual": {
+    "kind": "figura",
+    "tipo": "trapecio",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA05 OA 22",
@@ -9001,7 +9041,12 @@
    "correcta": 0,
    "tip": "Base por altura: 15 por 8 son 120 centímetros cuadrados, sin dividir nada. La división en 2 corresponde al triángulo y al trapecio, y sumar los lados entrega el contorno de la baldosa.",
    "revisada": true,
-   "id": "mate5-oa22-13"
+   "id": "mate5-oa22-13",
+   "visual": {
+    "kind": "figura",
+    "tipo": "paralelogramo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA05 OA 22",
@@ -9085,7 +9130,12 @@
    "correcta": 3,
    "tip": "Como el área es base por altura dividido en 2, hay que deshacer esa división: 24 por 2 son 48, y 48 dividido en 8 da 6 centímetros. Dividir 24 en 8 directamente olvida la multiplicación por 2.",
    "revisada": true,
-   "id": "mate5-oa22-19"
+   "id": "mate5-oa22-19",
+   "visual": {
+    "kind": "figura",
+    "tipo": "triangulo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA05 OA 22",
@@ -9113,7 +9163,12 @@
    "correcta": 1,
    "tip": "El área es base por altura dividido en 2, así que al doblar uno de los factores el producto se dobla y el área también. Para cuadruplicarla habría que doblar la base y la altura a la vez.",
    "revisada": true,
-   "id": "mate5-oa22-21"
+   "id": "mate5-oa22-21",
+   "visual": {
+    "kind": "figura",
+    "tipo": "triangulo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA05 OA 22",
@@ -9127,7 +9182,12 @@
    "correcta": 3,
    "tip": "8 por 5 son 40, pero ese es el área del paralelogramo de esa base y esa altura; el triángulo es su mitad, o sea 20 centímetros cuadrados. Sumar la base con la altura nunca entrega un área.",
    "revisada": true,
-   "id": "mate5-oa22-22"
+   "id": "mate5-oa22-22",
+   "visual": {
+    "kind": "figura",
+    "tipo": "triangulo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA05 OA 22",
@@ -9169,7 +9229,12 @@
    "correcta": 1,
    "tip": "Se usan las dos bases y la altura: 9 más 5 son 14, por 4 son 56, y la mitad son 28. El lado inclinado de 6 sirve para el contorno, y usarlo en vez de la altura agranda el resultado.",
    "revisada": true,
-   "id": "mate5-oa22-25"
+   "id": "mate5-oa22-25",
+   "visual": {
+    "kind": "figura",
+    "tipo": "trapecio",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA05 OA 22",

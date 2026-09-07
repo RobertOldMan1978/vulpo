@@ -54,6 +54,24 @@ TIPOS = {
 }
 CUERPOS = {"cubo", "paralelepipedo", "esfera", "cono", "cilindro", "piramide"}
 
+
+def diagramas_de_lecciones():
+    """Los widgets del OTRO catalogo, el de las mini-clases (assets/js/lecciones.js).
+
+    Desde la Sesion 100 una pregunta puede pedir uno de esos dibujos con `visual.kind`
+    -- son los de geometria, con la base y la altura marcadas--. Los nombres se LEEN del
+    modulo y no se copian aca: una lista escrita a mano es la fuente de bug mas repetida
+    del proyecto, y con dos catalogos serian dos listas que mantener.
+    """
+    ruta = RAIZ / "assets" / "js" / "lecciones.js"
+    if not ruta.exists():
+        return set()
+    return set(re.findall(r"DIAGRAMAS\.([A-Za-z_][\w]*)\s*=",
+                          ruta.read_text(encoding="utf-8")))
+
+
+DIAG_LECC = diagramas_de_lecciones()
+
 # El limite del enunciado depende del nivel, y la razon NO es la edad sino el reloj:
 # 3 y 4 basico no tienen cronometro, asi que un fragmento breve cabe. Ver el §0 de
 # docs/encargo-banco.md. 5 y 6 NO van aca a proposito: llevan cronometro, asi que les
@@ -245,7 +263,20 @@ def main():
             vistos[k] = pid
 
         v = p.get("visual")
-        if v:
+        if v and v.get("kind"):
+            # Dibujo del catalogo de las mini-clases: `kind` es el widget y `tipo`, si lo
+            # lleva, es la FORMA que ese widget recibe (triangulo, cilindro). Los dos
+            # catalogos usan la palabra `tipo` para cosas distintas, asi que la separacion
+            # no es cosmetica: despachar por `tipo` mandaba un area de triangulo al widget
+            # de Pitagoras, que dibuja a=3, b=4, c=5 y su calculo (Sesion 100).
+            if v["kind"] not in DIAG_LECC:
+                errores.append("%s: visual kind '%s' no existe en lecciones.js"
+                               % (pid, v["kind"]))
+            if "tipo" in v and v["tipo"] in TIPOS:
+                avisos.append("%s: el visual lleva kind y ademas un tipo del catalogo de "
+                              "preguntas ('%s'): renderVisual lo atenderia primero"
+                              % (pid, v["tipo"]))
+        elif v:
             t = v.get("tipo")
             if t not in TIPOS:
                 errores.append("%s: visual de tipo desconocido '%s'" % (pid, t))

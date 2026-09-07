@@ -151,10 +151,12 @@ año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron co
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
 están hoy en una expedición jugable, el resto es reserva.
 
-> **Estado de aprobación (06/09/2026): 16.295 de 16.295 preguntas aprobadas (100%).** El 06/09
-> Roberto firmó por muestreo las 2.730 de 4° básico (91 OA), que eran la única parte del banco
-> sin firmar. Con eso **el banco escrito del proyecto queda completo y aprobado**, más las 130 de
-> 130 mini-clases e introducciones. Pero **cómo se aprobó cada banco no es lo mismo, y hay que
+> **Estado de aprobación (06/09/2026): 16.293 de 16.625 preguntas aprobadas, y 130 de 151
+> lecciones.** El banco creció después de la firma de 4°: la Sesión 99 escribió **330 preguntas
+> nuevas** para los 11 OA que le faltaban a Lenguaje de 8° y **21 lecciones**, y la Sesión 100
+> reescribió **2 preguntas de geometría** que exigían dos cálculos encadenados con reloj de 20 s —
+> al cambiarles el texto, la firma anterior dejó de corresponderles. **Esos 332 + 21 son todo lo
+> pendiente**, y son contenido nuevo, no una firma que se haya caído. Pero **cómo se aprobó cada banco no es lo mismo, y hay que
 > saberlo antes de decírselo a un colegio:** los 2.536 de 8° y los módulos de apoyo se revisaron
 > **pregunta por pregunta**; 3°, 4°, 5°, 6° y 7° se aprobaron **por muestreo** —8 de cada 30 por
 > objetivo, criterio de `docs/aprobacion-pedagogica.md`—. Por eso la landing dice *"aprobadas por
@@ -167,8 +169,8 @@ están hoy en una expedición jugable, el resto es reserva.
 > construye desde marzo de 2026 y se revisa sin pausa. **4° básico terminó su construcción y se
 > sumó a la landing el mismo día (06/09/2026):** banco aprobado, `4to/index.html` cableado (26
 > capítulos en 4 campañas), voz generada y verificada (12.210 clips) y los 4 villanos con arte
-> propio. Con los seis cursos, el banco completo y jugable son **16.295 preguntas** y **518
-> objetivos medidos**.
+> propio. Con los seis cursos, el banco completo y jugable son **16.625 preguntas** y **529
+> objetivos medidos** (eran 16.295 y 518 hasta que la Sesión 99 completó Lenguaje de 8°).
 
 **Herramientas dev:** tablero con clave
 (`dev/tablero.html`) y scripts (`consolidar-pool-nivel`, `aplicar-revisadas`,
@@ -382,6 +384,16 @@ supuesto cuando pide "no modificar `contenido/` ni `supabase/`".
      para apagarlo donde no corresponde. ⚠️ **La llamada a `init` va PEGADA a la declaración de
      sus datos**, nunca arriba con las otras constantes: un `const` leído antes de declararse
      mata todo el JavaScript, y esa trampa mordió cuatro veces en una semana.
+   - ⚠️ **Hay DOS catálogos de dibujos y la palabra `tipo` significa cosas distintas en cada uno.**
+     `visuales.js` son los 11 dibujos de las **preguntas** y se eligen con `visual.tipo`;
+     `lecciones.js` son los 27 widgets de las **mini-clases** y se eligen con **`visual.kind`**,
+     donde `tipo` es entonces la FORMA que ese widget recibe (`{kind:'figura',tipo:'triangulo'}`).
+     Desde la Sesión 100 una pregunta alcanza el segundo catálogo: `pintaPregunta` intenta primero
+     `renderVisual` y, si el `visual` declara `kind`, cae a `LECC.diagrama`. **La caída se pide
+     explícita y no se adivina desde `tipo`**, porque despachar por `tipo` mandaba una pregunta de
+     área de triángulo al widget de **Pitágoras**, que dibuja `a=3, b=4, c=5` y su cálculo encima
+     de un enunciado con otras cifras. La caída simétrica —de lección a `visuales.js`— existe
+     desde la Sesión 86.
 3. **Lo que difiere entre cursos va como DATO, no como `if`** — banderas con nombre, `EXTRAS`,
    `sinfin:true`. Un `if` sobre el nombre de la asignatura no dice si el nivel tiene esa
    funcionalidad, y al forkear se copia con su suposición adentro.
@@ -9386,5 +9398,137 @@ plata de Roberto gastada sin pedírselo. Es el mismo defecto que la Sesión 74 y
   preguntas** de 8° (regenerado: 151 casillas de lección). Después de eso, la **voz de las
   lecciones de 3° y 4°**: 41 clips, **US$0,14** — va después de aprobar, nunca en paralelo, y con
   autorización explícita.
+- **Pendiente de arrastre:** `docs/contenido-sensible.md` con la fila de 5° (Historia), INAPI, el
+  enlace de agenda de la landing y la reautenticación de NotebookLM.
+
+### Sesión 100 (2026-09-06) — Los dibujos de geometría llegan a las preguntas de 5° a 8°
+Roberto pidió dos cosas seguidas sobre el mismo banco. La primera: *"en algunas hay que hacer más
+de un cálculo… para los cursos grandes que tienen veinte segundos es imposible"*. La segunda, que
+salió de ahí: *"revisa de quinto a octavo las preguntas de geometría en las que se puede apoyar
+con algún tipo de imagen… los alumnos tienen poca comprensión de lectura, más difícil se les hace
+recordar qué es un cilindro"*. **Ningún texto aprobado cambió**, salvo las dos preguntas que se
+reescribieron a propósito.
+
+#### Primero, la alarma del multi-paso resultó ser mucho más chica de lo que yo mismo dije
+
+Estimé que *"el 44% de la geometría no cabe en 20 segundos"* con un supuesto de 15 caracteres por
+segundo. **Medido contra la vara que el propio proyecto ya tiene** —el límite de 120 caracteres
+del §0 de `docs/encargo-banco.md`— la geometría resultó estar **mejor** que el resto de
+Matemática: **5% sobre el límite contra 11%**. Se lo corregí a Roberto antes de que decidiera nada.
+
+De **75 candidatas** que marcó un detector, quedaron **13** al leerlas y **2 genuinas**. Roberto
+aprobó reescribir 8; **se reescribieron 2 y se explicó por qué las otras 6 no**: cuatro son
+valorizaciones que son el **contenido central** de su OA (`MA08 OA 06`, 36-51 caracteres, cálculo
+elemental) y simplificarlas habría vaciado el objetivo, que es peor que el problema.
+
+- `mate5-oa21-19` (perímetro → ancho → área) y `mate7-oa07-25` (reducir Y evaluar, donde además
+  **el segundo paso no es de su OA**). El método: **el paso intermedio se pone en las opciones**,
+  así el alumno razona sobre el valor intermedio en vez de calcularlo a ciegas, y los distractores
+  enseñan. Las dos quedan en `revisada:false`: **cambió su texto, así que la firma anterior ya no
+  les corresponde.** Ninguno de los dos cursos tiene voz pregrabada, así que no hubo clips que
+  regenerar.
+
+> **Partir una pregunta en dos era técnicamente imposible, no caro:** `pickN` baraja al azar, así
+> que la parte 2 puede salir antes que la parte 1, o sin ella. Se midió antes de descartarlo.
+
+#### El puente entre los dos catálogos de dibujos
+
+Los widgets que Roberto pedía **ya existían** —`figura` con la base y la altura marcadas, `solido`
+con el radio y la altura de un cilindro, `circulo`, `poligono`— pero vivían en el catálogo de las
+**mini-clases** (`lecciones.js`), y una pregunta solo alcanzaba el de `visuales.js`. La caída
+inversa existía desde la Sesión 86; faltaba la simétrica.
+
+`pintaPregunta` intenta `renderVisual` y, si el `visual` declara **`kind`**, cae a `LECC.diagrama`.
+Ocho líneas en `motor.js` y `diagrama` en el respaldo vacío de `LECC` de los **seis** forks —
+byte a byte idéntico, comprobado por hash.
+
+> ⚠️ **`kind` es el widget y `tipo` la forma que ese widget recibe, y confundirlos no es
+> cosmético.** Mi primera versión despachaba por `tipo`, así que `{tipo:'triangulo'}` no llegaba a
+> `figura` sino al widget de **Pitágoras**, que dibuja `a=3, b=4, c=5` y su cálculo completo
+> **encima de una pregunta de área con otras cifras**. Y `{tipo:'prisma'}` simplemente no dibujaba
+> nada. **Se vio jugando**: el conteo del primer intento decía "1 SVG, sin errores" y las dos cosas
+> eran falsas en su contenido.
+
+#### 94 preguntas con dibujo, y las guardas valen más que el número
+
+De **293 candidatas** por palabra clave quedaron **94** (36 prisma · 14 triángulo · 10 círculo ·
+9 paralelogramo · 9 trapecio · 8 cilindro · 8 polígono). El detector marca; **la lista se leyó**,
+que es lo que el detector no reemplaza. Se caen:
+
+- las que **el dibujo contestaría** —*"¿qué es una altura de un triángulo?"*, y el dibujo rotula
+  la perpendicular con la palabra «altura»—;
+- las que **contradiría** —prisma de base triangular contra un prisma recto, pentágono irregular
+  contra uno regular, triángulo obtusángulo cuya altura cae fuera—;
+- las que nombran **dos figuras** y el dibujo mostraría una sola;
+- las que **no usan ninguna medida que el dibujo marque**, donde sería adorno.
+
+**Ningún dibujo escribe una cifra:** rotula las PALABRAS «base», «altura», «radio», «diámetro».
+Por eso no puede contradecir el enunciado — y de paso los topes de `figura` (base 10, altura 6)
+quedan siendo solo proporción, que era uno de los dos riesgos abiertos. Se pasa además
+`etiqueta:""`, que apaga el pie con la fórmula —**en una pregunta de área o volumen la fórmula ES
+el método que se está midiendo**— y `cortes:false` en el polígono, que apaga la partición en n−2
+triángulos por la misma razón: es el razonamiento que la pregunta mide.
+
+**Cuatro cambios en `lecciones.js`, todos con su porqué escrito al lado:** `p.etiqueta ?? default`
+en vez de `||` (así un `""` explícito apaga el pie y omitirlo sigue trayendo el texto de la
+lección — ninguna de las 151 lecciones pasa `""`, medido); el parámetro `cortes`; y dos
+`aria-label` que **inventaban medidas** — `figura` decía *"Figura de base 8 y altura 5"* aunque
+nadie hubiera dado esas cifras, o sea que le contradecía el enunciado justo a quien no puede ver
+el dibujo.
+
+#### El defecto que solo se vio mirando, otra vez
+
+Los dibujos medían hasta **368 px de alto** y empujaban las opciones fuera de la pantalla. Topados
+en 150. Medido el costo real en 375×667 contra la misma etapa sin dibujo: la 4ª opción termina en
+**743 px sin dibujo y 845 con él** — o sea el quiz ya se desplazaba antes de este trabajo, y el
+dibujo suma ~100 px. Se dice el número en vez de afirmar que "cabe".
+
+#### Dos herramientas que había que enseñarles el segundo catálogo
+
+1. **`auditar-banco-nivel.py` daba 13/25/34/22 errores** ("visual de tipo desconocido"), porque
+   solo conocía `visuales.js`. Ahora lee los nombres de widget **del propio `lecciones.js`** —no
+   una lista escrita a mano, que es la fuente de bug más repetida del proyecto— y avisa además si
+   un `visual` lleva `kind` **y** un `tipo` del otro catálogo, que es la colisión de arriba.
+2. ⚠️ **El informe de aprobación se habría bloqueado entero.** Su `.vis` solo llamaba
+   `renderVisual`, así que los 94 dibujos salían *"(dibujo no disponible)"* y el **aviso rojo**
+   —*"NO revises con este documento"*— habría tapado los cuatro informes de Matemática. Ahora hace
+   el mismo puente que el motor.
+
+**Probado rompiendo un banco a propósito**, porque una comprobación que nunca falla no prueba
+nada: un `kind` inventado da error y un `tipo` que choca da aviso. Los **29 bancos quedan en 0
+errores** salvo el falso positivo ya conocido de `mate4-oa03-25` (Sesión 94).
+
+#### Verificación (con `scripts/cdp.mjs`, jugando)
+
+- **Los cinco widgets, con clics reales** en 5°, 6°, 7° y 8°: el widget correcto, sin números en
+  los rótulos, 156 px de alto, **cero errores de consola y cero fallos de red**. Y **mirados uno
+  por uno**, no solo contados.
+- ⚠️ **Con `lecciones.js` AUSENTE**: la pregunta con dibujo se pinta **sin él** (`dibujo:0`, hueco
+  de 0 px), las 4 opciones salen, responder avanza a la siguiente y el único fallo de red es el
+  404 deliberado. Es exactamente para eso que el respaldo lleva ahora `diagrama`.
+- **Las 151 lecciones intactas:** los cuatro widgets tocados devuelven su pie con la fórmula y su
+  triangulación como antes; solo cambió el `aria-label` de `solido`, que pasó de *"Cuerpo
+  geométrico"* a nombrar el cuerpo y lo que marca.
+- **Los seis cursos navegan** (la comprobación que la Sesión 90 dejó obligatoria), el guardado de
+  8° sigue en 777 XP y las seis claves conviven.
+- Los **94 dibujos se dibujan en los cuatro informes de aprobación**, sin aviso rojo, y las 40 y
+  54 ranuras de lección de 5° y 7° siguen montando su diagrama.
+
+> **Y un error de medición propio, el mismo de siempre:** medí *"0 diagramas de lección"* buscando
+> `.diag`, y `montarDiagrama` **le cambia la clase al nodo** (`.diag` → `.lec-diag`) justo cuando
+> el dibujo sí se montó. Es la tercera vez (Sesiones 83 y 85). **Cuando un conteo da cero, el
+> primer sospechoso es el selector, no el producto.**
+
+#### Un push, y por qué
+
+No hay proveedor/consumidor con riesgo: si `motor.js` sale antes que los forks, su guarda
+`window.LECC && LECC.diagrama` cubre el caso; si salen los forks antes, su respaldo nuevo es
+inerte hasta que alguien lo llame; y una pregunta con `kind` sobre un `motor.js` viejo
+simplemente se pinta sin dibujo. **Medido antes de decidirlo**, en vez de partir el push por
+costumbre.
+
+- **Pendiente de Roberto:** aprobar en el tablero las **21 lecciones** y las **332 preguntas**
+  pendientes (330 de Lenguaje de 8° + las 2 reescritas hoy); el banco queda en **16.293 de
+  16.625**. Después, la **voz de las lecciones de 3° y 4°**: 41 clips, **US$0,14**.
 - **Pendiente de arrastre:** `docs/contenido-sensible.md` con la fila de 5° (Historia), INAPI, el
   enlace de agenda de la landing y la reautenticación de NotebookLM.

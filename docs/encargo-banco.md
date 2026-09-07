@@ -28,10 +28,10 @@ habrían repetido gratis en cada nivel nuevo.
 |---|---|---|---|---|---|---|
 | **3° básico** | 8-9 | **No** | < 110 | máx **220** | **Sí** | **Sí**, 11 tipos |
 | **4° básico** | 9-10 | **No** | < 110 | máx **220** | **Sí** | **Sí** |
-| **5° básico** | 10-11 | Sí, 20 s | < 120 | máx **250** | No | No |
-| **6° básico** | 11-12 | Sí, 20 s | < 120 | máx **250** | No | No |
-| **7° básico** | 12-13 | Sí, 20 s | < 120 | máx **250** | No | No |
-| **8° básico** | 13-14 | Sí, 20 s | < 120 | máx **250** | No | No |
+| **5° básico** | 10-11 | Sí, 20 s | < 120 | máx **250** | No | Solo geometría |
+| **6° básico** | 11-12 | Sí, 20 s | < 120 | máx **250** | No | Solo geometría |
+| **7° básico** | 12-13 | Sí, 20 s | < 120 | máx **250** | No | Solo geometría |
+| **8° básico** | 13-14 | Sí, 20 s | < 120 | máx **250** | No | Solo geometría |
 
 Tres consecuencias que la tabla no dice en voz alta:
 
@@ -298,6 +298,30 @@ Dos reglas absolutas:
    marcada", nunca cómo se llama.
 
 Si dudas, **no pongas dibujo**. Un dibujo que induce al error es peor que ninguno.
+
+### Los DOS catálogos, y por qué no da lo mismo cuál se pide (06/09/2026)
+
+- **`assets/js/visuales.js`** son los 11 dibujos de las preguntas de 3° y 4°. Se piden con
+  **`"tipo"`**: `{"tipo":"contar","a":6,"b":7}`.
+- **`assets/js/lecciones.js`** son los 27 widgets de las mini-clases, y desde hoy una pregunta
+  también los alcanza. Se piden con **`"kind"`**: `{"kind":"figura","tipo":"triangulo"}`.
+
+⚠️ **`kind` es el widget y `tipo` es la forma que ese widget recibe.** No son sinónimos, y la
+palabra `tipo` significa cosas distintas en cada catálogo: escribir solo `"tipo":"triangulo"`
+manda la pregunta al widget de **Pitágoras**, que dibuja `a=3, b=4, c=5` y su cálculo encima de
+un enunciado con otras cifras. Se descubrió jugando, no leyendo.
+
+**De 5° a 8° el `visual` se usa solo en geometría, y siempre SIN medidas.** Los widgets rotulan
+las palabras «base», «altura», «radio» y «diámetro», nunca un número, así que el dibujo no puede
+contradecir el enunciado. Se pasa además `"etiqueta":""` —que apaga el pie con la fórmula, que en
+una pregunta de área o de volumen **es el método que se está midiendo**— y, en el polígono,
+`"cortes":false`, que apaga la partición en triángulos por la misma razón.
+
+**Cuándo NO va, aunque la pregunta nombre la figura:** si pide su nombre o contar sus lados o
+caras; si pide señalar o definir la base o la altura (el rótulo del dibujo la contesta); si la
+forma del enunciado no es la que el widget dibuja (un prisma de base triangular, un polígono
+irregular, un triángulo rectángulo); si nombra **dos** figuras y el dibujo mostraría una sola; o
+si no usa ninguna medida que el dibujo marque, porque entonces es adorno.
 
 ---
 

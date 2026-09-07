@@ -1406,7 +1406,29 @@ function pintaPregunta(){
    ? `📣 ${Q.desafio.titulo} · Pregunta ${Q.idx+1}/${Q.preguntas.length}`
    : `${MODO==='dificil'?'🔥 ':''}${N.icono} ${N.nombre} · Pregunta ${Q.idx+1}/${Q.preguntas.length}`;
  $('qText').innerHTML=FRAC.html(P.q);
- $('qVisual').innerHTML = renderVisual(P.visual);
+ /* El dibujo de apoyo de la pregunta. Hay DOS catálogos y esto los une: el de las
+    preguntas (assets/js/visuales.js, 11 dibujos, se elige con `visual.tipo`) y el de las
+    mini-clases (LECC.diagrama, 27 widgets), donde viven los de geometría con la base y la
+    altura marcadas — justo lo que una pregunta de área o de volumen necesita.
+    ⚠️ La caída se pide con `visual.kind`, EXPLÍCITO, y no adivinando desde `tipo`. Los dos
+    catálogos usan esa palabra para cosas distintas: en el de las mini-clases `figura` es el
+    widget y `tipo` es la forma (triángulo, trapecio), así que despachar por `tipo` mandaba
+    una pregunta de área al widget de Pitágoras — que dibuja `a=3, b=4, c=5` y su cálculo
+    encima de un enunciado con otras cifras. Se vio jugando, no leyendo.
+    ⚠️ Y el diagrama se monta en una caja PROPIA, no en #qVisual: montarDiagrama hace
+    `nodo.className='lec-diag'`, así que darle el contenedor del quiz le pisaría la clase a
+    un nodo que no es suyo. El estilo va en línea porque sobrevive a ese className, y el
+    tope de alto es lo que deja las 4 opciones a la vista en un teléfono de 667 px. */
+ const qv=$('qVisual');
+ qv.innerHTML = renderVisual(P.visual);
+ if(P.visual && P.visual.kind && !qv.firstChild && window.LECC && LECC.diagrama){
+  const caja=document.createElement('div');
+  caja.style.margin='6px 0 10px';
+  qv.appendChild(caja);
+  LECC.diagrama(P.visual.kind, P.visual, caja);
+  const s=caja.querySelector('svg');
+  if(s){ s.style.width='100%'; s.style.maxHeight='150px'; }
+ }
  $('qFb').textContent='';$('qFb').className='feedback';
  // Línea fija de meta: en etapa y repaso (mismo OA), no en lección/desafío/libros.
  const qm=$('qMeta');

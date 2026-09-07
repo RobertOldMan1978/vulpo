@@ -191,7 +191,9 @@ def main():
     # necesitan.
     hay_dibujos = any(p.get("visual") for p in preguntas)
     doc = doc.replace("/*RENDER*/", render_visual_js() if hay_dibujos else "")
-    hay_diagramas = any(b.get("t") == "diagrama" for l in lecciones for b in l.get("bloques", []))
+    # `lecciones.js` hace falta tambien si alguna PREGUNTA pide un dibujo de ese catalogo.
+    hay_diagramas = (any(b.get("t") == "diagrama" for l in lecciones for b in l.get("bloques", []))
+                     or any((p.get("visual") or {}).get("kind") for p in preguntas))
     doc = doc.replace("/*LECC*/", lecciones_js() if hay_diagramas else "")
 
     salida = RAIZ / "dev" / ("revision-%s.html" % carpeta)
@@ -250,9 +252,20 @@ document.querySelectorAll('.diag').forEach(d=>{
   try{ LECC.diagrama(d.dataset.k, JSON.parse(d.dataset.p), d); }catch(e){}
   if(!d.querySelector('svg')){ d.innerHTML='<i>(diagrama no disponible)</i>'; fallidos++; }
 });
+/* El mismo puente que hace el motor en pintaPregunta: se intenta el catalogo de preguntas
+   y, si la pregunta declara `kind`, se cae al de las mini-clases. Sin esto las preguntas de
+   geometria con dibujo salian "no disponible" y el aviso rojo de abajo bloqueaba el
+   documento entero -- o sea, la aprobacion. */
 document.querySelectorAll('.vis').forEach(d=>{
-  try{ d.innerHTML = renderVisual(JSON.parse(d.dataset.v)) || '<i>(dibujo no disponible)</i>'; }
-  catch(e){ d.innerHTML = '<i>(dibujo no disponible)</i>'; fallidos++; }
+  const v=JSON.parse(d.dataset.v);
+  try{ d.innerHTML = renderVisual(v); }catch(e){ d.innerHTML=''; }
+  if(!d.firstChild && v.kind){
+    const caja=document.createElement('div'); d.appendChild(caja);
+    try{ LECC.diagrama(v.kind, v, caja); }catch(e){}
+  }
+  if(!d.firstChild || !d.querySelector('svg,.q-visual')){
+    d.innerHTML='<i>(dibujo no disponible)</i>'; fallidos++;
+  }
 });
 // Un dibujo que no se dibuja NO puede pasar inadvertido: el documento se imprime y
 // nadie nota que faltan. Si falla alguno, el aviso sale arriba, en rojo y grande.

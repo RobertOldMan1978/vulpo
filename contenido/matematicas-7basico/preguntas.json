@@ -1,5 +1,5 @@
 {
- "revisadas": 570,
+ "revisadas": 569,
  "preguntas": [
   {
    "oa": "MA07 OA 01",
@@ -2859,16 +2859,16 @@
   },
   {
    "oa": "MA07 OA 07",
-   "pregunta": "Reduce 4x + 3x - 2x y luego evalúa el resultado con x = 5.",
+   "pregunta": "Al reducir 4x + 3x - 2x se obtiene 5x. ¿Qué se gana al reducir antes de reemplazar un valor?",
    "opciones": [
-    "45, sumando los tres coeficientes sin mirar el signo",
-    "25",
-    "10, reduciendo a 2x en vez de 5x",
-    "55, reemplazando la x antes de reducir y pegando las cifras"
+    "Se hace una sola multiplicación en vez de tres, y hay menos ocasiones de equivocarse",
+    "Se obtiene un resultado distinto, porque reducir cambia el valor de la expresión",
+    "Se puede sumar los coeficientes sin fijarse en los signos, que es lo más rápido",
+    "Se evita tener que conocer el valor de x, porque la expresión reducida ya no lo usa"
    ],
-   "correcta": 1,
-   "tip": "Primero se reduce: 4 + 3 - 2 = 5, o sea 5x. Después se reemplaza: 5 por 5 da 25. Reducir antes de evaluar ahorra trabajo y evita errores.",
-   "revisada": true,
+   "correcta": 0,
+   "tip": "Reducir no cambia el valor: 4x + 3x - 2x y 5x valen lo mismo para cualquier x. Lo que cambia es el trabajo, porque se reemplaza una vez en lugar de tres.",
+   "revisada": false,
    "id": "mate7-oa07-25"
   },
   {
@@ -3849,7 +3849,13 @@
    "correcta": 1,
    "tip": "Con n igual a 6: (6 - 2) por 180 da 720 grados. Los 1.080 salen de multiplicar por los 6 lados, y los 360 son la suma de los ángulos exteriores, no de los interiores.",
    "revisada": true,
-   "id": "mate7-oa10-5"
+   "id": "mate7-oa10-5",
+   "visual": {
+    "kind": "poligono",
+    "lados": 6,
+    "cortes": false,
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 10",
@@ -3863,7 +3869,13 @@
    "correcta": 0,
    "tip": "Con n igual a 8: (8 - 2) por 180 da 1.080 grados. Los 1.440 salen de multiplicar por los 8 lados; los 900 corresponden al heptágono.",
    "revisada": true,
-   "id": "mate7-oa10-6"
+   "id": "mate7-oa10-6",
+   "visual": {
+    "kind": "poligono",
+    "lados": 8,
+    "cortes": false,
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 10",
@@ -3905,7 +3917,13 @@
    "correcta": 0,
    "tip": "Primero la suma: (5 - 2) por 180 da 540 grados. Recién ahí se divide entre los 5 ángulos iguales y salen 108 grados. Quedarse en 540 es confundir la suma total con un solo ángulo.",
    "revisada": true,
-   "id": "mate7-oa10-9"
+   "id": "mate7-oa10-9",
+   "visual": {
+    "kind": "poligono",
+    "lados": 5,
+    "cortes": false,
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 10",
@@ -3933,7 +3951,13 @@
    "correcta": 0,
    "tip": "Los exteriores suman 360 grados y en un polígono regular son todos iguales: 360 dividido por 8 da 45 grados. Los 135 grados son el ángulo interior, que es su suplemento.",
    "revisada": true,
-   "id": "mate7-oa10-11"
+   "id": "mate7-oa10-11",
+   "visual": {
+    "kind": "poligono",
+    "lados": 8,
+    "cortes": false,
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 10",
@@ -4157,7 +4181,13 @@
    "correcta": 0,
    "tip": "El pentágono se parte en 3 triángulos, no en 5: (5 - 2) por 180 da 540 grados. Los 900 grados corresponden a un heptágono, que sí tiene siete lados.",
    "revisada": true,
-   "id": "mate7-oa10-27"
+   "id": "mate7-oa10-27",
+   "visual": {
+    "kind": "poligono",
+    "lados": 5,
+    "cortes": false,
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 10",
@@ -4255,7 +4285,12 @@
    "correcta": 0,
    "tip": "El perímetro es pi veces el diámetro, y pi vale aproximadamente 3,14: por eso el diámetro cabe tres veces y un poco más. El que cabe algo más de 6 veces es el radio, que mide la mitad.",
    "revisada": true,
-   "id": "mate7-oa11-4"
+   "id": "mate7-oa11-4",
+   "visual": {
+    "kind": "circulo",
+    "mostrar": "ambos",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 11",
@@ -4325,7 +4360,12 @@
    "correcta": 1,
    "tip": "Con el radio, el perímetro es 2 por pi por el radio: 2 por 3,14 por 8 da 50,24. Si solo multiplicas pi por el radio, te olvidas de que el diámetro son dos radios.",
    "revisada": true,
-   "id": "mate7-oa11-9"
+   "id": "mate7-oa11-9",
+   "visual": {
+    "kind": "circulo",
+    "mostrar": "ambos",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 11",
@@ -4339,7 +4379,12 @@
    "correcta": 2,
    "tip": "El área es pi por el radio al cuadrado: 3,14 por 100 da 314. La expresión 2 por pi por el radio entrega el perímetro, que se mide en centímetros y no en centímetros cuadrados.",
    "revisada": true,
-   "id": "mate7-oa11-10"
+   "id": "mate7-oa11-10",
+   "visual": {
+    "kind": "circulo",
+    "mostrar": "ambos",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 11",
@@ -4367,7 +4412,12 @@
    "correcta": 3,
    "tip": "3,14 por 5 al cuadrado da 78,5, que es el área. El perímetro de ese círculo es 2 por 3,14 por 5, o sea 31,4 centímetros. Mezclar las dos fórmulas es el error más frecuente de este contenido.",
    "revisada": true,
-   "id": "mate7-oa11-12"
+   "id": "mate7-oa11-12",
+   "visual": {
+    "kind": "circulo",
+    "mostrar": "ambos",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 11",
@@ -4493,7 +4543,12 @@
    "correcta": 1,
    "tip": "Si el perímetro se obtiene multiplicando el diámetro por pi, para volver atrás hay que dividir por pi: 31,4 dividido por 3,14 da 10. Dividir además por 2 entrega el radio.",
    "revisada": true,
-   "id": "mate7-oa11-21"
+   "id": "mate7-oa11-21",
+   "visual": {
+    "kind": "circulo",
+    "mostrar": "ambos",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 11",
@@ -4507,7 +4562,12 @@
    "correcta": 2,
    "tip": "En la fórmula del área el radio va elevado al cuadrado, así que al duplicarlo el área se multiplica por 2 al cuadrado, o sea por 4. El que se duplica es el perímetro.",
    "revisada": true,
-   "id": "mate7-oa11-22"
+   "id": "mate7-oa11-22",
+   "visual": {
+    "kind": "circulo",
+    "mostrar": "ambos",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 11",
@@ -4521,7 +4581,12 @@
    "correcta": 2,
    "tip": "El perímetro es 2 por pi por el radio: si el radio se duplica, el resultado se duplica. La que crece cuatro veces es el área, porque ahí el radio va al cuadrado.",
    "revisada": true,
-   "id": "mate7-oa11-23"
+   "id": "mate7-oa11-23",
+   "visual": {
+    "kind": "circulo",
+    "mostrar": "ambos",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 11",
@@ -4535,7 +4600,12 @@
    "correcta": 3,
    "tip": "El radio está elevado al cuadrado, así que triplicarlo multiplica el área por 3 al cuadrado, o sea por 9. El perímetro, en cambio, sí se triplica.",
    "revisada": true,
-   "id": "mate7-oa11-24"
+   "id": "mate7-oa11-24",
+   "visual": {
+    "kind": "circulo",
+    "mostrar": "ambos",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 11",
@@ -4591,7 +4661,12 @@
    "correcta": 2,
    "tip": "El área es pi por el radio al cuadrado: 10 al cuadrado son 100, y algo más de tres veces 100 son poco más de 300. El valor exacto usando 3,14 es 314 centímetros cuadrados.",
    "revisada": true,
-   "id": "mate7-oa11-28"
+   "id": "mate7-oa11-28",
+   "visual": {
+    "kind": "circulo",
+    "mostrar": "ambos",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 11",
@@ -4605,7 +4680,12 @@
    "correcta": 3,
    "tip": "El perímetro depende del radio de forma directa, así que se duplica. El área depende del radio al cuadrado, así que se multiplica por cuatro: 28,26 pasa a 113,04 centímetros cuadrados.",
    "revisada": true,
-   "id": "mate7-oa11-29"
+   "id": "mate7-oa11-29",
+   "visual": {
+    "kind": "circulo",
+    "mostrar": "ambos",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 11",
@@ -5053,7 +5133,12 @@
    "correcta": 1,
    "tip": "Con dos triángulos iguales se arma exactamente un paralelogramo de la misma base y la misma altura: por eso el triángulo vale la mitad. La altura no depende de la base ni tiene que ver con la cantidad de lados.",
    "revisada": true,
-   "id": "mate7-oa13-1"
+   "id": "mate7-oa13-1",
+   "visual": {
+    "kind": "figura",
+    "tipo": "triangulo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 13",
@@ -5067,7 +5152,12 @@
    "correcta": 0,
    "tip": "Área es base por altura dividido en dos: 12 por 5 es 60, y la mitad es 30. Quedarse en 60 es olvidar dividir por dos, y sumar 12 más 5 no calcula ninguna área.",
    "revisada": true,
-   "id": "mate7-oa13-2"
+   "id": "mate7-oa13-2",
+   "visual": {
+    "kind": "figura",
+    "tipo": "triangulo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 13",
@@ -5081,7 +5171,12 @@
    "correcta": 2,
    "tip": "En el paralelogramo se multiplica la base por la ALTURA, que es perpendicular a ella: 9 por 4 es 36. Usar el lado inclinado de 6 da 54 y es el error más común, porque ese lado no es perpendicular a la base.",
    "revisada": true,
-   "id": "mate7-oa13-3"
+   "id": "mate7-oa13-3",
+   "visual": {
+    "kind": "figura",
+    "tipo": "paralelogramo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 13",
@@ -5095,7 +5190,12 @@
    "correcta": 3,
    "tip": "Se promedian las bases y se multiplica por la altura: 8 más 12 es 20, la mitad es 10, y 10 por 5 es 50. Sumar las bases sin promediar da 100, el doble de lo correcto.",
    "revisada": true,
-   "id": "mate7-oa13-4"
+   "id": "mate7-oa13-4",
+   "visual": {
+    "kind": "figura",
+    "tipo": "trapecio",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 13",
@@ -5137,7 +5237,12 @@
    "correcta": 0,
    "tip": "Se despeja al revés: 24 por 2 es 48, y 48 dividido en 8 da 6. Dividir 24 en 8 y quedarse en 3 olvida que el área ya venía dividida por dos.",
    "revisada": true,
-   "id": "mate7-oa13-7"
+   "id": "mate7-oa13-7",
+   "visual": {
+    "kind": "figura",
+    "tipo": "triangulo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 13",
@@ -5151,7 +5256,12 @@
    "correcta": 1,
    "tip": "En el paralelogramo el área es base por altura, sin dividir: 48 dividido en 6 da 8. Dividir además por dos, como si fuera un triángulo, deja 4, que es la mitad de lo correcto.",
    "revisada": true,
-   "id": "mate7-oa13-8"
+   "id": "mate7-oa13-8",
+   "visual": {
+    "kind": "figura",
+    "tipo": "paralelogramo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 13",
@@ -5165,7 +5275,12 @@
    "correcta": 1,
    "tip": "El promedio de las bases es 7, y 42 dividido en 7 da 6. Si en vez de promediar se suman las bases y se divide 42 en 14, sale 3, la mitad de la altura verdadera.",
    "revisada": true,
-   "id": "mate7-oa13-9"
+   "id": "mate7-oa13-9",
+   "visual": {
+    "kind": "figura",
+    "tipo": "trapecio",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 13",
@@ -5179,7 +5294,12 @@
    "correcta": 0,
    "tip": "Mover el vértice de arriba en paralelo a la base cambia la forma del triángulo, pero no su base ni su altura, así que el área no cambia. Los lados y los ángulos no entran en la fórmula.",
    "revisada": true,
-   "id": "mate7-oa13-10"
+   "id": "mate7-oa13-10",
+   "visual": {
+    "kind": "figura",
+    "tipo": "triangulo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 13",
@@ -5221,7 +5341,12 @@
    "correcta": 1,
    "tip": "La altura está multiplicando, así que duplicarla duplica el área: 20 pasa a 40. Se cuadruplicaría solo si también se duplicara la base.",
    "revisada": true,
-   "id": "mate7-oa13-13"
+   "id": "mate7-oa13-13",
+   "visual": {
+    "kind": "figura",
+    "tipo": "triangulo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 13",
@@ -5235,7 +5360,12 @@
    "correcta": 0,
    "tip": "10 por 7 es 70, y la mitad es 35. El resultado 70 corresponde al paralelogramo que se forma con dos de esos triángulos.",
    "revisada": true,
-   "id": "mate7-oa13-14"
+   "id": "mate7-oa13-14",
+   "visual": {
+    "kind": "figura",
+    "tipo": "triangulo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 13",
@@ -5249,7 +5379,12 @@
    "correcta": 3,
    "tip": "En el paralelogramo se multiplica y no se divide: 15 por 8 es 120. Dividir por dos da 60 y es confundirlo con la fórmula del triángulo.",
    "revisada": true,
-   "id": "mate7-oa13-15"
+   "id": "mate7-oa13-15",
+   "visual": {
+    "kind": "figura",
+    "tipo": "paralelogramo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 13",
@@ -5263,7 +5398,12 @@
    "correcta": 2,
    "tip": "El promedio de 5 y 11 es 8, y 8 por 6 es 48. Multiplicar la suma 16 por la altura da 96, justo el doble, porque falta promediar.",
    "revisada": true,
-   "id": "mate7-oa13-16"
+   "id": "mate7-oa13-16",
+   "visual": {
+    "kind": "figura",
+    "tipo": "trapecio",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 13",
@@ -5277,7 +5417,12 @@
    "correcta": 3,
    "tip": "El número es 6 por 5 dividido en dos, o sea 15, y la unidad va al cuadrado porque el área mide una superficie. Escribir centímetros a secas corresponde a un largo, no a un área.",
    "revisada": true,
-   "id": "mate7-oa13-17"
+   "id": "mate7-oa13-17",
+   "visual": {
+    "kind": "figura",
+    "tipo": "triangulo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 13",
@@ -5333,7 +5478,12 @@
    "correcta": 2,
    "tip": "Solo entran la base y la altura: 10 por 4 es 40. Multiplicar 10 por el lado inclinado de 6 da 60 y sobreestima el área, porque ese lado es más largo que la altura.",
    "revisada": true,
-   "id": "mate7-oa13-21"
+   "id": "mate7-oa13-21",
+   "visual": {
+    "kind": "figura",
+    "tipo": "paralelogramo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 13",
@@ -5403,7 +5553,12 @@
    "correcta": 2,
    "tip": "La base está multiplicando, así que triplicarla triplica el área: 18 por 3 da 54. Sumarle 3 a la medida de la base no equivale a triplicarla.",
    "revisada": true,
-   "id": "mate7-oa13-26"
+   "id": "mate7-oa13-26",
+   "visual": {
+    "kind": "figura",
+    "tipo": "paralelogramo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 13",
@@ -5417,7 +5572,12 @@
    "correcta": 3,
    "tip": "Se multiplica el área por dos y se divide por la altura: 36 por 2 es 72, y 72 dividido en 9 da 8. Dividir 36 en 9 y quedarse en 4 deja la base a la mitad.",
    "revisada": true,
-   "id": "mate7-oa13-27"
+   "id": "mate7-oa13-27",
+   "visual": {
+    "kind": "figura",
+    "tipo": "triangulo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 13",
@@ -5431,7 +5591,12 @@
    "correcta": 3,
    "tip": "La altura debe corresponder a la base elegida: como los 5 son la altura sobre el lado de 12, el área es 12 por 5, o sea 60. Multiplicar los dos lados, 12 por 7, es el error clásico de usar el lado en lugar de la altura.",
    "revisada": true,
-   "id": "mate7-oa13-28"
+   "id": "mate7-oa13-28",
+   "visual": {
+    "kind": "figura",
+    "tipo": "paralelogramo",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 13",
@@ -5445,7 +5610,12 @@
    "correcta": 3,
    "tip": "El promedio de 40 y 60 es 50, y 50 por 30 da 1500. Usar la suma 100 por la altura entrega 3000, el doble del área real de la ventana.",
    "revisada": true,
-   "id": "mate7-oa13-29"
+   "id": "mate7-oa13-29",
+   "visual": {
+    "kind": "figura",
+    "tipo": "trapecio",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 13",
@@ -5459,7 +5629,12 @@
    "correcta": 0,
    "tip": "La suma de las bases está bien hecha, pero falta dividirla en dos: el promedio es 8 y el área correcta es 8 por 4, o sea 32. Por eso su 64 es exactamente el doble.",
    "revisada": true,
-   "id": "mate7-oa13-30"
+   "id": "mate7-oa13-30",
+   "visual": {
+    "kind": "figura",
+    "tipo": "trapecio",
+    "etiqueta": ""
+   }
   },
   {
    "oa": "MA07 OA 14",

@@ -228,18 +228,29 @@ DIAGRAMAS.circulo=function(p,nodo){
  }
  const t=svgEl('text',{x:cx,y:H-8,'text-anchor':'middle',fill:'#ffc93c',
   'font-family':"'Titan One',sans-serif",'font-size':14});
- t.textContent=p.etiqueta||'diámetro = 2 · radio'; svg.appendChild(t);
+ /* ⚠️ `??` y no `||`, y eso es la diferencia entre servir a una LECCIÓN y servir a una
+    PREGUNTA. En una mini-clase el pie con la fórmula es justo lo que se enseña; en una
+    pregunta de área o volumen la fórmula ES el método que se está midiendo, así que
+    dibujarla la vacía. Con `??`, pasar `etiqueta:""` apaga el pie a propósito y omitirla
+    sigue trayendo el texto de la lección. Ninguna lección del proyecto pasa "" (medido),
+    así que este cambio no mueve ni una de las 130. Igual en `poligono` y en `solido`. */
+ t.textContent=p.etiqueta??'diámetro = 2 · radio'; svg.appendChild(t);
  nodo.appendChild(svg);
 };
 
 // poligono: un poligono regular de n lados, partido en triangulos desde un vertice.
 // Es la idea que sostiene la formula (n-2)·180°, asi que el dibujo la MUESTRA en vez
 // de enunciarla. Para MA07 OA 10.
-// params: {lados=6, etiqueta}
+// params: {lados=6, etiqueta, cortes=true}
+// ⚠️ `cortes:false` dibuja SOLO el polígono, sin las diagonales. Es para las PREGUNTAS: la
+//    partición en n-2 triángulos es el razonamiento que una pregunta de suma de ángulos
+//    interiores está midiendo, así que mostrarla la contesta. En una lección es al revés
+//    —ahí la partición es lo que se enseña—, y por eso el valor por omisión no cambia.
 DIAGRAMAS.poligono=function(p,nodo){
  const n=Math.max(3,Math.min(10,p.lados??6)), R=70, cx=110, cy=88, W=220, H=196;
  const svg=svgEl('svg',{viewBox:`0 0 ${W} ${H}`,role:'img',
-  'aria-label':`Polígono de ${n} lados partido en triángulos`});
+  'aria-label':p.cortes===false?`Polígono regular de ${n} lados`
+                               :`Polígono de ${n} lados partido en triángulos`});
  const pt=[];
  for(let i=0;i<n;i++){
   const a=-Math.PI/2 + i*2*Math.PI/n;
@@ -248,13 +259,13 @@ DIAGRAMAS.poligono=function(p,nodo){
  svg.appendChild(svgEl('polygon',{points:pt.map(q=>q[0].toFixed(1)+','+q[1].toFixed(1)).join(' '),
   fill:'#8f6bff22',stroke:'#4dd8ff','stroke-width':3}));
  // Las diagonales desde el primer vertice: n-2 triangulos.
- for(let i=2;i<n-1;i++){
+ for(let i=2;i<n-1 && p.cortes!==false;i++){
   svg.appendChild(svgEl('line',{x1:pt[0][0],y1:pt[0][1],x2:pt[i][0],y2:pt[i][1],
    stroke:'#ffc93c','stroke-width':1.6,'stroke-dasharray':'4 3'}));
  }
  const t=svgEl('text',{x:cx,y:H-8,'text-anchor':'middle',fill:'#ffc93c',
   'font-family':"'Titan One',sans-serif",'font-size':14});
- t.textContent=p.etiqueta||`${n} lados → ${n-2} triángulos`; svg.appendChild(t);
+ t.textContent=p.etiqueta??`${n} lados → ${n-2} triángulos`; svg.appendChild(t);
  nodo.appendChild(svg);
 };
 
@@ -263,8 +274,15 @@ DIAGRAMAS.poligono=function(p,nodo){
 DIAGRAMAS.figura=function(p,nodo){
  const tipo=p.tipo||'triangulo', W=260, H=170, x0=30, y0=126, esc=18;
  const b=Math.max(2,Math.min(10,p.base??8)), h=Math.max(2,Math.min(6,p.altura??5));
+ /* ⚠️ El dibujo NO escribe ninguna medida: rotula la palabra "base" y la palabra "altura".
+    Por eso `b` y `h` solo dan la proporción y sus topes (10 y 6) son inofensivos. Pero la
+    descripción para lector de pantalla SÍ decía "Figura de base 8 y altura 5" aunque nadie
+    hubiera dado esas medidas, y en una pregunta con otras cifras eso le contradice el
+    enunciado justo a quien no puede ver el dibujo. Solo se nombran si el llamador las dio. */
+ const conMedidas=(p.base!=null&&p.altura!=null);
  const bw=b*esc, hh=h*esc, svg=svgEl('svg',{viewBox:`0 0 ${W} ${H}`,role:'img',
-  'aria-label':`Figura de base ${b} y altura ${h}`});
+  'aria-label':conMedidas?`Figura de base ${b} y altura ${h}`
+   :`Un ${tipo} con su base y su altura marcadas`});
  let pts, apex=x0+bw/2;
  if(tipo==='paralelogramo') pts=[[x0,y0],[x0+bw,y0],[x0+bw+22,y0-hh],[x0+22,y0-hh]];
  else if(tipo==='trapecio')  pts=[[x0,y0],[x0+bw,y0],[x0+bw-26,y0-hh],[x0+26,y0-hh]];
@@ -821,7 +839,9 @@ DIAGRAMAS.triangulo=function(p,nodo){
 //         volumen, que es de 7°/8°: en 3° el mismo dibujo sirve para caras y vertices.
 DIAGRAMAS.solido=function(p,nodo){
  const tipo=p.tipo||'prisma';
- const svg=svgEl('svg',{viewBox:'0 0 320 190',role:'img','aria-label':'Cuerpo geométrico'});
+ const svg=svgEl('svg',{viewBox:'0 0 320 190',role:'img','aria-label':
+  tipo==='cilindro'?'Cilindro con su radio y su altura marcados'
+                   :'Prisma recto con su base y su altura marcadas'});
  function tx(x,y,s,col,fs,fam,rot){const t=svgEl('text',{x,y,'text-anchor':'middle',fill:col,'font-size':fs||12});if(fam)t.setAttribute('font-family',fam);if(rot)t.setAttribute('transform',`rotate(-90 ${x} ${y})`);t.textContent=s;svg.appendChild(t);}
  if(tipo==='cilindro'){
   const cx=120,rx=50,ry=15,topY=52,h=88;
@@ -833,7 +853,7 @@ DIAGRAMAS.solido=function(p,nodo){
   svg.appendChild(svgEl('line',{x1:cx,y1:topY,x2:cx+rx,y2:topY,stroke:'#ffc93c','stroke-width':1.5}));
   tx(cx+rx/2, topY-5, 'r', '#ffc93c', 12);
   tx(cx-rx-12, topY+h/2, 'altura', '#3ee089', 12, null, true);
-  tx(234, 150, p.etiqueta||'V = π·r²·altura', '#ffc93c', 13, "'Titan One',sans-serif");
+  tx(234, 150, p.etiqueta??'V = π·r²·altura', '#ffc93c', 13, "'Titan One',sans-serif");
  } else {
   const x=78,y=72,w=96,h=84,dx=44,dy=28;
   svg.appendChild(svgEl('path',{d:`M${x},${y} L${x+dx},${y-dy} M${x},${y+h} L${x+dx},${y+h-dy} L${x+w+dx},${y+h-dy} L${x+w+dx},${y-dy}`,fill:'none',stroke:'#5a4b8f','stroke-width':1,'stroke-dasharray':'3 3'}));
@@ -842,7 +862,7 @@ DIAGRAMAS.solido=function(p,nodo){
   svg.appendChild(svgEl('rect',{x:x,y:y,width:w,height:h,fill:'#4dd8ff33',stroke:'#4dd8ff','stroke-width':2}));
   tx(x+w/2, y+h+18, 'base', '#4dd8ff', 12);
   tx(x-12, y+h/2, 'altura', '#3ee089', 12, null, true);
-  tx(234, 150, p.etiqueta||'V = base × altura', '#ffc93c', 13, "'Titan One',sans-serif");
+  tx(234, 150, p.etiqueta??'V = base × altura', '#ffc93c', 13, "'Titan One',sans-serif");
  }
  nodo.appendChild(svg);
 };
