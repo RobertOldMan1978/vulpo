@@ -1564,6 +1564,82 @@ end $$;
 -- public no se los quita. Revocar un permiso inexistente es inofensivo.
 revoke execute on function public.kimun_foto_semanal(date) from public, anon, authenticated;
 
+-- Tendencia del curso: la primera lectura de las fotos semanales. Existían desde la
+-- Sesión 36 y NINGÚN cliente las leía nunca: el panel mostraba una foto del acumulado
+-- del año y no había forma de decir "cómo le fue al curso esta semana".
+--
+-- ⚠️ Devuelve ACUMULADOS por semana, no diferencias, y el cliente resta filas vecinas.
+-- Es a propósito: así una semana sin foto —el trabajo falló, o el curso nació después—
+-- se ve como un hueco en la serie en vez de como una semana mala.
+--
+-- ⚠️ Y hay un número de estas tablas que NO sirve para comparar semanas, aunque esté
+-- guardado: `resp_1`/`ok_1`, el primer intento, queda CONGELADO por diseño (Sesión 24),
+-- así que su porcentaje es casi el mismo en dos fotos seguidas y un gráfico de eso se
+-- vería roto sin estarlo. Por eso esta función devuelve el acumulado —`respondidas` y
+-- `correctas`—, cuya diferencia entre dos fotos sí es "lo que pasó esa semana".
+--
+-- El drop va aunque hoy sea una función nueva: al ser "returns table", el día que se le
+-- agregue una columna un `create or replace` falla con "cannot change return type" y
+-- re-aplicar el archivo entero se cae (lección de la Sesión 25).
+drop function if exists public.kimun_prof_tendencia(text);
+create or replace function public.kimun_prof_tendencia(p_curso_codigo text)
+returns table(semana date, en_curso boolean, objetivos bigint,
+              respondidas bigint, correctas bigint, xp bigint)
+language plpgsql security definer set search_path=public as $$
+declare cid uuid; asigs text[]; begin
+  select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
+  if cid is null or not public.kimun_prof_acceso(cid) then raise exception 'no_autorizado'; end if;
+  -- Mismo filtro que kimun_prof_dominio: un profe de Ciencias ve la tendencia de
+  -- Ciencias, no la del curso entero.
+  asigs := public.kimun_prof_asignaturas(cid);
+  return query
+  with fotos as (
+    -- Ocho semanas: dos meses de historia. Suficiente para ver una tendencia y no
+    -- tanto como para volver ilegible una franja en el teléfono.
+    select ds.semana                   as s,
+           count(distinct ds.oa)       as obj,
+           sum(ds.respondidas)::bigint as resp,
+           sum(ds.correctas)::bigint   as ok
+      from public.dominio_semanal ds
+      join public.perfiles p on p.id = ds.perfil_id
+     where p.curso_id = cid
+       and public.kimun_oa_asignatura(ds.oa) = any(asigs)
+     group by ds.semana
+     order by ds.semana desc
+     limit 8
+  ), xps as (
+    -- El XP no se filtra por asignatura: es uno por alumno y no cuelga de ningún OA.
+    select xs.semana as s, sum(xs.xp)::bigint as xp
+      from public.xp_semanal xs
+      join public.perfiles p on p.id = xs.perfil_id
+     where p.curso_id = cid
+     group by xs.semana
+  ), hoy as (
+    -- La semana EN CURSO no tiene foto todavía —se toma el lunes—, así que se arma
+    -- leyendo `dominio` en vivo. Sin esta fila, el profesor abriría el lunes y vería
+    -- la tendencia detenida en la semana pasada, que es justo cuando menos sirve.
+    select (date_trunc('week', timezone('America/Santiago', now()))::date + 6) as s,
+           count(distinct d.oa)       as obj,
+           sum(d.respondidas)::bigint as resp,
+           sum(d.correctas)::bigint   as ok
+      from public.dominio d
+      join public.perfiles p on p.id = d.perfil_id
+     where p.curso_id = cid
+       and public.kimun_oa_asignatura(d.oa) = any(asigs)
+  ), xp_hoy as (
+    select coalesce(sum(p.xp),0)::bigint as xp
+      from public.perfiles p
+     where p.curso_id = cid and p.codigo_acceso is not null
+  )
+  select f.s, false, f.obj, f.resp, f.ok, coalesce(x.xp,0)
+    from fotos f left join xps x on x.s = f.s
+  union all
+  select h.s, true, h.obj, h.resp, h.ok, (select xp_hoy.xp from xp_hoy)
+    from hoy h
+   where h.resp is not null      -- un curso sin datos no aporta una fila en cero
+  order by 1;
+end $$;
+
 -- ------------------------------------------------------------
 -- Inscripción por enlace: las tres funciones
 -- ------------------------------------------------------------
@@ -1734,6 +1810,7 @@ grant execute on function
   public.kimun_prof_dominio_reiniciar(text)
   , public.kimun_prof_dominio_oa(text,text)
   , public.kimun_prof_participacion(text)
+  , public.kimun_prof_tendencia(text)
   , public.kimun_prof_refuerzo_lanzar(text,text,text[])
   , public.kimun_prof_refuerzo_cerrar(text)
   , public.kimun_prof_refuerzo_estado(text)

@@ -88,9 +88,11 @@ que el cupo se ajusta al grupo.
 
 Ese mismo panel trae el **mapa de dominio por objetivo de aprendizaje**: muestra, de peor a
 mejor porcentaje, qué contenidos le están costando al curso y quiénes necesitan apoyo en
-cada uno. Arriba del mapa, un bloque de **participación** dice quién jugó esta semana y
-quién no ha entrado nunca. Es una brújula para decidir qué reforzar en clase, **no sirve
-para calificar**.
+cada uno. Arriba del mapa, la **tendencia semanal** —cómo le fue al curso esta semana
+comparada con las anteriores— y un bloque de **participación** que dice quién jugó esta
+semana y quién no ha entrado nunca. Es una brújula para decidir qué reforzar en clase, **no
+sirve para calificar**. Está pensado para verse en un **computador**, que es donde lo usa un
+profesor, aunque también funciona en el teléfono.
 
 ## Cómo probarlo
 

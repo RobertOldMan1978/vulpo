@@ -79,6 +79,14 @@ export async function conducir(url, pasos, { puerto = 9333, mostrar = false } = 
   ev.movil = (ancho = 375, alto = 780) =>
     enviar('Emulation.setDeviceMetricsOverride',
            { width: ancho, height: alto, deviceScaleFactor: 2, mobile: true });
+  // Ancho de computador. Hace falta para `profesor.html`, que es la unica pantalla del
+  // proyecto pensada para un adulto en un notebook: el juego es mobile-first y se verifica
+  // con ev.movil, pero el panel crece en dos escalones (880 y 1180 px) y esas reglas no se
+  // pueden comprobar sin un viewport ancho. `mobile:false` importa: con true, Chrome aplica
+  // el viewport virtual del telefono y las media queries de escritorio no entran.
+  ev.escritorio = (ancho = 1440, alto = 900) =>
+    enviar('Emulation.setDeviceMetricsOverride',
+           { width: ancho, height: alto, deviceScaleFactor: 1, mobile: false });
   // Captura de pantalla: hay cosas que solo se comprueban mirandolas (un globo tiene que
   // PARECER un globo; ningun conteo de elementos SVG dice eso).
   ev.foto = async (ruta) => {

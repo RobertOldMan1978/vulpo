@@ -492,9 +492,12 @@ sin dependencias). Navega, espera, **hace clic y evalúa JavaScript en la págin
     node scripts/cdp.mjs about:blank <archivo-de-pasos.mjs>
 
 El archivo exporta `export default async (ev) => {...}`; `ev(expr)` evalúa una expresión en la
-página, `ev.ir(url)` navega, `ev.espera(ms)`, `ev.movil(w,h)` emula un teléfono, `ev.foto(ruta)`
-captura la pantalla, **`ev.medios(features)`** emula una preferencia del sistema, y `ev.consola` /
-`ev.fallos` traen los errores y las peticiones caídas. **Ganó su lugar en la primera corrida:**
+página, `ev.ir(url)` navega, `ev.espera(ms)`, `ev.movil(w,h)` emula un teléfono,
+**`ev.escritorio(w,h)`** un computador —hace falta para `profesor.html`, la única pantalla del
+proyecto pensada para un adulto en un notebook, y `mobile:false` importa: con `true` no entran
+sus media queries de escritorio—, `ev.foto(ruta)` captura la pantalla, **`ev.medios(features)`**
+emula una preferencia del sistema, y `ev.consola` / `ev.fallos` traen los errores y las
+peticiones caídas. **Ganó su lugar en la primera corrida:**
 delató que un cambio mío rompía todo el JavaScript de 3° (`NS` duplicado), exactamente el fallo
 silencioso que ya había costado dos sesiones.
 
@@ -1101,19 +1104,27 @@ para siempre.
 - El parámetro `p_semana` solo cambia la etiqueta de la foto, **no** reconstruye
   semanas pasadas.
 - Retención de 2 años, limpiada por el mismo trabajo.
-- Es la base del informe semanal por correo, que se diseñará aparte.
 - **✅ APLICADA Y AGENDADA. Verificada el 28/08/2026:**
   `select count(*) from cron.job where jobname='foto-semanal';` devuelve **1**. Roberto la
   aplicó el 27/08 pegando `supabase/aplicar-foto-semanal.sql` (Sesión 60), que habilita
   `pg_cron`, agenda el trabajo y **se verifica solo** devolviendo 4 filas en `ok`. Existe
   justamente para que el guard de abajo no pueda morder — y no mordió.
-- **Todavía NO hay ninguna foto tomada, y está bien.** El archivo **solo agenda**; no siembra
-  (lo de sembrar a mano es un comentario, no una sentencia). La primera la toma el trabajo el
-  **lunes 31/08/2026 a las 04:05 UTC**, etiquetada con el domingo que cierra, **30/08**.
-  > ⚠️ **No sembrarla a mano antes del lunes.** Los dos `insert` llevan `on conflict do
-  > nothing`, así que una foto sembrada hoy —viernes 28— se etiquetaría igual, con el domingo
-  > 30, y **la corrida del lunes no haría nada**: la primera semana quedaría congelada con los
-  > datos del viernes en vez de los de la semana completa. Conviene dejarla correr sola.
+- **Las fotos se vienen tomando solas desde el lunes 31/08/2026** (la primera, etiquetada con
+  el domingo 30/08). **Y desde el 07/09 por fin las LEE alguien:** el bloque de tendencia del
+  panel del profesor (`kimun_prof_tendencia`), que es la primera pantalla del proyecto que las
+  usa. Antes de eso llevaban una semana acumulándose sin que nada las mirara.
+  > ⚠️ **De estas tablas hay un número que NO sirve para comparar semanas, aunque esté
+  > guardado:** `resp_1`/`ok_1`, el primer intento, queda **congelado por diseño** (ver el mapa
+  > de dominio), así que su porcentaje es casi idéntico en dos fotos seguidas. Lo que sí se
+  > mueve, y es lo que hay que graficar, es la **diferencia de los acumulados**: `respondidas`,
+  > `correctas`, `objetivos` cubiertos y XP. Un informe que compare el primer intento entre
+  > semanas se va a ver roto sin estarlo.
+  >
+  > ⚠️ **Y un delta puede salir NEGATIVO**, que no es un error: pasa cuando el profesor usa
+  > "🔄 Reiniciar mediciones" —que vive en esa misma pantalla— o cuando se borra un alumno.
+  > Hay que decirlo ("se reiniciaron las mediciones"), no pintarlo como una semana mala.
+- **El informe semanal por correo sigue sin existir**, y ya no es lo único que puede leer estas
+  fotos: la tendencia del panel cubre el caso principal sin mandar nada a nadie.
 - El guard de `pg_cron` **falla en silencio**: si la extensión no está habilitada,
   el `raise notice` no se ve en el panel de Supabase, el pegado termina "sin
   errores" y el trabajo queda sin agendar. Por eso, después de pegar el archivo,
@@ -1749,6 +1760,33 @@ código en el mismo teléfono deja al primero como "nunca canjeó" en la siguien
 por el modelo un-dispositivo-un-vínculo. Y el mismo límite del mapa: **no es asistencia**,
 el dato lo reporta el teléfono.
 
+**Tendencia semanal (Sesión 106):** arriba de participación, la primera lectura de las fotos
+que `kimun_foto_semanal` venía tomando cada domingo desde la Sesión 36 **sin que ninguna
+pantalla las mirara**. Titular sin abrir nada (*"Esta semana · 240 respuestas · 68% de acierto
+(antes 73%)"*) y una franja con las **últimas 8 semanas**, cada una con su color según los
+mismos cortes del mapa (45 y 70). Función `kimun_prof_tendencia(curso)`, filtrada por las
+asignaturas del profesor igual que el mapa, y **su fallo no impide ver el avance**.
+
+> ⚠️ **Lo que grafica NO es el porcentaje del mapa.** El del mapa es de **primer intento** y
+> queda congelado a propósito, así que entre dos semanas da casi el mismo número. La franja
+> muestra el **acierto de lo respondido en esa semana**: la diferencia de los acumulados entre
+> dos fotos. Son dos números distintos y la pantalla lo dice, porque verlos juntos invita a
+> compararlos.
+>
+> El servidor devuelve **acumulados y el cliente resta filas vecinas**, para que una semana sin
+> foto se vea como un hueco y no como una semana mala. Tres casos que se dicen con todas sus
+> letras en vez de esconderse: **sin dos fotos** todavía no hay comparación; un delta **negativo**
+> es *"se reiniciaron las mediciones"* (el botón está en esa misma pantalla) y no una caída; y
+> bajo **10 respuestas** el porcentaje se muestra atenuado y con *"muy pocas para concluir"*,
+> porque un 100% sobre cuatro respuestas no es un 100%.
+
+**El panel está pensado para un COMPUTADOR (Sesión 106)**, que es la única pantalla de VULPO
+que no es para un niño con un teléfono: crece en dos escalones (880 px y **1.180** desde 1.240)
+y ese ancho se gasta en densidad, no en aire — los alumnos van en **columnas** (22 alumnos pasan
+de 22 filas a 8) y cada objetivo cabe **en una línea**, con el texto a la izquierda y la barra a
+la derecha, así que un mapa de 60 objetivos pasa de tres pantallas a una y media sin recortar
+ningún texto. Bajo 900 px todo vuelve a apilarse: el panel sigue siendo mobile-first.
+
 Diseño y plan: `docs/superpowers/specs/2026-08-18-mapa-dominio-oa-design.md` y
 `docs/superpowers/plans/2026-08-18-mapa-dominio-oa.md`. El cambio al primer intento:
 `docs/superpowers/specs/2026-08-18-primer-intento-design.md` y
@@ -1935,6 +1973,15 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
     que pierde se guarda** en `localStorage` bajo `<SAVE_KEY>_previo`.
   - **No necesita cola de reintentos** como `dominio`: una foto es completa e idempotente, así que
     el próximo envío que llegue lleva todo. `dominio` la necesita porque manda **eventos**.
+- **Tendencia del curso (Sesión 106):** `kimun_prof_tendencia(curso)`, la primera función que
+  lee `dominio_semanal` y `xp_semanal`. Devuelve **acumulados por semana** —las últimas 8
+  fotos más una fila `en_curso` armada con el `dominio` en vivo, porque la semana que corre
+  todavía no tiene foto y sin ella el panel se vería detenido justo el lunes—, y el cliente
+  resta filas vecinas. Filtra por `kimun_prof_asignaturas` igual que `kimun_prof_dominio`.
+  ⚠️ Lleva su `drop function if exists` aunque sea nueva: al ser `returns table`, agregarle
+  una columna algún día haría fallar el re-pegado del archivo entero.
+  ⚠️ **Caso de borde conocido:** las fotos no guardan el curso, así que un alumno que cambia
+  de curso se lleva su historia al nuevo. Agregarle la columna obligaría a migrar la tabla.
 - **Pendiente:** notificaciones push.
 
 ## Trámites pendientes (fuera del código)
@@ -10684,3 +10731,106 @@ porque la cara pública no muestra valores.
 > Se generaron con Chrome y nadie guardó el origen, así que cambiar una cifra obligaba a reescribir
 > el documento entero. Los nuevos **se guardan con su `.html` al lado**, y eso quedó escrito en
 > `docs/comercial.md` como parte del procedimiento, no como una nota suelta.
+
+### Sesión 106 (2026-09-07) — El panel del profesor se ordena, y estrena la tendencia semanal
+Roberto pidió ideas para mejorar el panel. En vez de opinar leyendo el código se montó un
+**doble de Supabase** —el panel no abre sin sesión— y se recorrió con `scripts/cdp.mjs` para
+**mirarlo**. De ahí salieron nueve observaciones, y él eligió tres más una condición:
+*"piensa que el panel lo revisará en el computador, ajusta la pantalla para optimizar"*.
+**No se tocó el juego ni el contenido:** solo `profesor.html`, `supabase/schema.sql` y
+`scripts/cdp.mjs`.
+
+#### El ancho: la única pantalla de VULPO que no es para un niño con un teléfono
+
+El panel crece en dos escalones (880 px y **1.180** desde 1.240), y ese espacio se gasta en
+**densidad y no en aire** — que es la diferencia entre ensanchar y optimizar:
+
+| | Antes | Ahora |
+|---|---|---|
+| 22 alumnos | 22 filas | **8** (tres columnas) |
+| Un objetivo del mapa | dos o tres líneas | **una**: texto a la izquierda, barra y % a la derecha |
+
+Un mapa de 60 objetivos pasa de tres pantallas a una y media **sin recortar ningún texto**.
+Bajo 900 px todo vuelve a apilarse: el panel sigue siendo mobile-first, y se verificó a 375 px,
+que es donde ya desbordó en la Sesión 26.
+
+> Para poder comprobarlo hubo que enseñarle al conductor a emular un computador
+> (**`ev.escritorio`**): arrancaba siempre en modo teléfono, así que las media queries de
+> escritorio del panel **no se podían verificar**. `mobile:false` es la parte que importa.
+
+#### Idea 1 · La jerarquía estaba invertida
+
+La tarjeta del curso —lo que el profesor viene a ver— medía ~130 px, y debajo había ~800 px de
+formularios que **se usan una vez al año**. Administración pasa a ser un solo desplegable
+plegado, y **"Crear curso" se mudó adentro**. Queda abierta mientras se usa: `accion()` repinta
+la lista tras cada acción, así que sin eso autorizar tres profesores obligaba a reabrirla tres
+veces.
+
+#### Idea 2 · Seis botones violeta idénticos, sin jerarquía
+
+*"Cerrar sesión"* pesaba exactamente lo mismo que *"Crear curso"*. Ahora hay **tres pesos**, y
+la regla es **un primario por bloque**: dorado la acción del bloque; con borde el resto; **en
+texto lo que no se puede deshacer** (*Limpiar perfiles*, *Reiniciar mediciones*) y *Cerrar
+sesión*. Y los botones dejaron de ser barras de 1.180 px.
+
+#### Idea 6 · La tendencia semanal: había un dato pagado y sin usar
+
+Las fotos de `kimun_foto_semanal` se tomaban cada domingo **desde la Sesión 36** y **ninguna
+pantalla las había leído nunca**. Ahora abren el mapa del curso: titular sin desplegar nada
+(*"Esta semana · 240 respuestas · 68% de acierto (antes 73%)"*) y una franja de las últimas 8
+semanas. Detalle en la sección del mapa de dominio, arriba.
+
+> ⚠️ **Lo que NO se grafica, y es la decisión de fondo:** el porcentaje del mapa es de **primer
+> intento** y queda congelado a propósito (Sesión 24), así que entre dos semanas da casi el
+> mismo número — un gráfico de eso **se vería roto sin estarlo**. La franja muestra la
+> diferencia de los **acumulados**, que es lo que de verdad pasó esa semana. La pista estaba
+> escrita desde la Sesión 101 y esta vez se siguió en vez de redescubrirla.
+
+**Y tres casos se dicen con todas sus letras en vez de esconderse:** sin dos fotos todavía no
+hay comparación; un delta **negativo** es *"se reiniciaron las mediciones"* —el botón está en
+esa misma pantalla— y no una caída; y bajo 10 respuestas el número va atenuado y con *"muy
+pocas para concluir"*, porque un 100% sobre cuatro respuestas no es un 100%.
+
+#### Cuatro defectos que se encontraron MIRANDO, no contando
+
+1. ⚠️ **Abrir "Ver avance" saltaba al final de la página.** `aviso('')` —que solo borra el
+   mensaje anterior— hacía `scrollIntoView` sobre un nodo vacío que vive al pie del panel, y
+   deshacía el `irArriba()` de la línea de arriba. **Estaba en producción**, y el mapa se abría
+   por el pie, con la participación y los filtros fuera de pantalla. El scroll ahora es solo
+   `if(t)`: a un mensaje vacío no hay que ir a verlo.
+2. **Con dos fotos pero sin actividad** —o justo después de *Reiniciar mediciones*— la tendencia
+   decía *"todavía sin comparación"*, o sea que le faltaba historia **al sistema**, cuando lo que
+   pasaba era otra cosa. El corte es por **cuántas fotos hay**, no por si alguna es comparable.
+3. Los `<select>` se estiraban a 1.100 px mientras el campo de al lado quedaba en 460, y
+   *"Nivel del curso"* se acomodaba **a la derecha del campo anterior**, como si lo etiquetara
+   a él (un `label` inline que envuelve su propio `select`).
+4. En el teléfono la franja arrancaba en la semana más antigua, así que **lo de esta semana
+   quedaba fuera de pantalla** hasta arrastrarla.
+
+#### El error de método de la sesión, y ya tiene nombre
+
+La primera captura mostraba **la fila del alumno vacía**: sin nombre, solo los botones. Parecía
+un defecto grave del panel. **Era el doble de Supabase:** `kimun_prof_listar` devuelve `alumno`
+y `avatar`, y yo había escrito `nombre`. Al revisarlo contra las firmas reales aparecieron
+**cinco funciones más mal simuladas** —`participacion`, `dominio_oa`, `ranking_asignatura`, y
+dos que devolvían un objeto donde el cliente espera una tabla, así que lo mandaban a la rama
+equivocada—.
+
+> **Cuando el resultado sorprende, el primer sospechoso es la prueba.** Y un doble se escribe
+> **contra las firmas del esquema**, no de memoria: si no, se verifica el doble contra sí mismo.
+
+#### Verificación
+
+Con `cdp.mjs`, a 1.440 px y a 375 px, **jugando con clics**: sin desborde en ninguno de los dos,
+**cero errores de consola y cero fallos de red**; los **seis casos** de la tendencia (sin fotos,
+una, dos, semana quieta, tras reiniciar, muy pocas respuestas) dicen la verdad; y —la
+comprobación que este proyecto exige siempre— **con la función SQL ausente el mapa se pinta
+igual**, y solo esa línea avisa. El juego sigue navegando en 8°, 3° y 5° tras tocar el conductor.
+
+- **Pendiente de Roberto:** **re-aplicar `supabase/schema.sql`**, que trae `kimun_prof_tendencia`.
+  Sin eso el panel funciona igual y la tendencia dice *"no se pudo cargar"* — degrada, no rompe.
+- **Ideas que quedaron sobre la mesa, sin hacer:** subir la participación a titular de la tarjeta
+  del curso; una franja de *"qué necesita tu atención"* al entrar; que el objetivo se pueda
+  imprimir o exportar para una reunión de departamento; y la más grande, **bajar el registro
+  visual** —Titan One, violeta saturado y fondo de cosmos en una herramienta que mira una UTP—,
+  que conviene decidir antes de tocar más CSS porque define todo lo demás.
