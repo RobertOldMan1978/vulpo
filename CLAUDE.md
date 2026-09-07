@@ -539,7 +539,7 @@ arriba del archivo, no como condiciones sueltas repartidas por el código.
 |---|---|---|---|---|---|
 | `HAY_RETO_CALCULO` | Si Matemática se juega como Reto de Cálculo. Afecta al **Duelo** (`odNMapas`, `odMapasMate`, `odPreguntasCalc`), a `detenerTimersActivos` y a la música de `scr-calc` | ✅ | ❌ | ❌ | ❌ |
 | `HAY_MINICLASES` | Si el curso tiene lecciones. Afecta al **siguiente paso al reprobar**, a `renderCampaña`, al Jefe Final (`cargarPoolMate`) y al ✕ del quiz. **Desde el 06/09 vale `true` en los SEIS**: 4° y 6° la encendieron al recibir sus lecciones de Lenguaje. ⚠️ Encenderla en un curso **sin** campaña de Matemática con `esLecciones` es inocuo —sus cuatro usos en `motor.js` están guardados por `esLecciones` o `capitulosMate`— pero **es obligatoria igual**, porque el ✕ del quiz la consulta: sin ella, salir de la práctica de una mini-clase deja al alumno tirado en la pantalla del quiz. Va **pegada a `LECC.init`** | ✅ | ✅ | ✅ | ✅ |
-| `HAY_VOCABULARIO` | Si Lenguaje abre el landing "Campaña + Vocabulario" en vez de su campaña | ✅ | ✅ | ❌ | ✅ |
+| `HAY_VOCABULARIO` | Si Lenguaje abre el landing "Campaña + Vocabulario" en vez de su campaña. **Desde el 07/09 vale `true` en los SEIS.** ⚠️ Va **siempre junto con la expedición `voc-general`**: el handler de `btnLengVocab` ya existe en todos los forks y la busca, así que encender la bandera sin agregarla da `entrarExpedicion(undefined)` — el estado latente que 7° arrastró entre las Sesiones 63 y 68 | ✅ | ✅ | ✅ | ✅ |
 | `HAY_BIBLIOTECA` | Si la pantalla principal ofrece el módulo 📖 Lectura | ✅ | ❌ | ❌ | ✅ |
 | `HAY_SINFIN` | Si Matemática ofrece el **Reto Sin Fin** de `assets/js/calculo.js`. Gobierna el nodo del mapa y la llamada `CALC.init` | ❌ | ✅ | ✅ | ✅ |
 | `HAY_DIFICIL` | Si el nivel ofrece **Modo Difícil**, y con él las insignias 🔥, la skin de Maestro y la Maestría Total. ⚠️ Se declara **pegada a `DIF_ASIGS`** y no con las demás: la consulta `revisarDificil()`, que corre en el arranque | ✅ | ✅ | ✅ | ❌ |
@@ -9999,3 +9999,85 @@ fallos de red.
 > **Y una advertencia sobre las capturas de esta feature:** para poder mirarlas se congelan **14 a
 > la vez**, un cielo que en el juego real no ocurre nunca (una cada 3–9 s, viviendo 1,3 s cada
 > una). La foto sirve para juzgar ángulos, colores y alineación del rastro, **no la densidad**.
+
+#### Tercer tramo — los SEIS cursos tienen Vocabulario
+
+Decisión de producto de Roberto: *"primero todos los cursos deben tener vocabulario"*. Faltaban
+tres —4°, 5° y 6°— y son **240 preguntas**: 4° con dos áreas y 60, 5° y 6° con tres y 90.
+
+**El alcance no se copió ni se supuso: se midió.** A 3° se le habían dado dos áreas porque su
+Lenguaje ya enseña vocabulario en el currículum. Medido, ese objetivo —*"aplicar estrategias para
+determinar el significado de palabras nuevas"*— existe en `LE03 OA 10`, `LE04 OA 10`,
+`LE05 OA 12` y `LE06 OA 12`, y **desaparece en 7° y 8°**. O sea el corte que separa a los cursos
+con área de Lenguaje de los que no cae **exactamente entre 6° y 7°**, justo donde el currículum
+deja de enseñar la estrategia. No hubo que inventar criterio: el que ya existía alcanzaba.
+Matemática entra recién en 5° porque antes su vocabulario técnico no sostiene un banco propio.
+
+**El motor ya estaba entero** —`abrirLenguaje` vive en `motor.js` y enruta con `HAY_VOCABULARIO`—,
+así que el cableado fueron dos cosas por fork: la bandera y la expedición. ⚠️ **Y van siempre
+juntas**: el handler de `btnLengVocab` ya existía en los tres y busca `voc-general`, así que
+encender la bandera sola habría dado `entrarExpedicion(undefined)` — el estado latente que 7°
+arrastró entre las Sesiones 63 y 68, advertido en el comentario del propio archivo.
+
+#### ⚠️ 4° y 6° tomaron criterios OPUESTOS con el contenido sensible
+
+El agente de 4° dejó fuera el alcohol (`CN04 OA 08`); el de 6° metió *pubertad*, *higiene
+corporal* y *droga*. Había que zanjarlo, y el criterio no es "fuera todo": **el proyecto ya tiene
+escrito que solo lo sexual/reproductivo se aparta**, y en 5° eso importa —la conquista es el eje
+de su año, no un capítulo evitable—.
+
+> **La razón es de máquina y conviene tenerla clara:** el armador marca lo sensible **por código
+> de OA** (`assets/js/sensible.js`), y los códigos `VOC-*` son **los mismos en los seis cursos**.
+> Marcar `VOC-CIEN` lo marcaría en todos, así que **no hay forma de avisar** que el vocabulario de
+> un curso concreto trae un tema delicado. Por eso salieron *pubertad* e *higiene corporal* de 6°
+> —reemplazadas por *solidificación* y *conducción*, del mismo año—: dejarlas haría que un colegio
+> que excluye ese capítulo se las encontrara igual y sin aviso, que es exactamente lo que la regla
+> del Jefe Final vino a cerrar. Ese contenido sigue completo en su capítulo de Ciencias, que es
+> donde sí se marca. Historia y drogas se quedan.
+
+Y una corrección de término: la pregunta de 6° decía *"régimen militar"*, y el `HI06 OA 08`
+oficial dice literalmente **"el régimen o dictadura militar"** — el currículum usa **los dos**, y
+el banco de Historia de 6° ya aprobado también (10 veces "dictadura", 5 "régimen militar"). Con
+un término que en Chile tiene carga, quedarse con uno solo es tomar partido; se usa el oficial
+completo.
+
+#### ⚠️ Un defecto de motor preexistente que este trabajo iba a replicar
+
+Con `ORDEN_LIBRE`, **la última etapa nacía cerrada** porque `nuevoProgreso` y `abrirOrdenLibre`
+deciden "esto es el jefe" **por posición** (`i===n-1`). Vocabulario y Lectura **no tienen jefe**:
+sus etapas son todas iguales. Así que en 5° y 6° Matemática habría nacido bloqueada, y habría que
+completar Historia para llegar — justo lo contrario de lo que `ORDEN_LIBRE` promete.
+
+**Preexistente**, no introducido aquí: ya afectaba a los vocabularios de 3°, 7° y 8° y a las dos
+lecturas desde la Sesión 101.
+
+**Medido antes de tocar el motor:** de las **150 expediciones de los seis cursos, exactamente 8
+no terminan en `oa:'BOSS'`** — los 6 vocabularios y las 2 lecturas. Todas las campañas del
+currículum sí. Con eso el arreglo es preciso: `estadoRuta` **pregunta si la última etapa ES un
+jefe** y se lo pasa a las dos funciones, con `conJefe` por omisión `true` para que ningún otro
+llamador cambie.
+
+**Verificado contra una foto tomada ANTES** —sin ella no se puede afirmar que las campañas no se
+movieron—: **142 expediciones idénticas, las 8 esperadas abiertas, ninguna más**, y `?qa=1` sin
+moverse. De paso quedan destrabadas también las dos lecturas y los vocabularios de 3°, 7° y 8°.
+
+#### Verificación
+
+Los tres bancos pasan `revisar-tanda`, `auditar-banco-nivel`, `auditar-numerico` y
+`auditar-solape-oa` en **0 errores y 0 avisos**, con sesgo de largo de 0-7 % (techo 27 %); las 60
+de 4° **se pueden responder escuchando** —la revisión extra de los cursos con voz—; 60 palabras
+distintas en 4° y **ninguna repetida con 3°**. **Jugado con clics** en los tres: JUGADOR →
+Lenguaje → el landing "Campaña + Vocabulario" (que en estos cursos no era alcanzable) → el mapa
+con sus etapas → quiz real del banco correcto (10 preguntas en 4°, 15 en 5° y 6°). Sintaxis OK en
+los seis forks, **cero errores de consola y cero fallos de red**.
+
+> **Y dos cosas que salieron de NO creerle al autorreporte de un agente.** El de 4° reportó "0
+> avisos" y había uno: corrió cada archivo por separado, y **el chequeo de casi-duplicados solo ve
+> el cruce entre archivos de la misma corrida**. Resultó falso positivo —*"materia"* contra
+> *"empatía"*, que con enunciados de tres palabras deja al detector sin señal— pero se comprobó lo
+> que el aviso pide. A los dos agentes siguientes se les pidió correr los tres archivos en un solo
+> llamado, y el de 5° cazó así una colisión real (*"ecuación"* contra *"evacuación"*).
+
+**Error propio repetido, y van tres en el día:** dos aserciones de conteo mal calibradas
+(`METEOROS`, `--meteoro`, `conJefe`), siempre por olvidar que **el comentario también nombra la
+variable**. Las tres abortaron antes de escribir, que es para lo que están.

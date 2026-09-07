@@ -46,6 +46,34 @@ preguntan por la forma del código. Antes había un conjunto escrito a mano
 | **Lectura** | Comprensión de un libro del colegio | uno **por libro** | el quiz normal |
 | **Reto de cálculo** | Velocidad de cálculo mental | **ninguno** | `assets/js/calculo.js` |
 
+### ⚠️ El Vocabulario NO lleva las mismas áreas en todos los cursos (07/09/2026)
+
+Está en los **seis**, pero su alcance cambia, y no por capricho:
+
+| | Áreas | Preguntas |
+|---|---|---|
+| **3°** y **4°** | Ciencias · Historia | 60 |
+| **5°** y **6°** | + Matemática | 90 |
+| **7°** | + Lenguaje | 120 |
+| **8°** | + Lecturas | 150 |
+
+**El corte lo decide el currículum, y está medido.** El objetivo de *"determinar el significado
+de palabras nuevas"* existe en `LE03 OA 10`, `LE04 OA 10`, `LE05 OA 12` y `LE06 OA 12`, y
+**desaparece en 7° y 8°**. Donde el propio Lenguaje ya enseña esa estrategia, un área `VOC-LENG`
+mediría dos veces lo mismo; donde no, el módulo no se pisa con nada. Matemática entra recién en
+5° porque antes su vocabulario técnico no sostiene un banco propio, y `VOC-LECT` solo donde hay
+módulo de Lectura con contenido detrás.
+
+> ⚠️ **Y el Vocabulario NO puede llevar contenido sensible.** El armador marca lo sensible **por
+> código de OA** (`assets/js/sensible.js`), y los códigos `VOC-*` son **compartidos entre
+> cursos**: marcar `VOC-CIEN` lo marcaría en los seis. O sea que no hay forma de avisar que el
+> vocabulario de un curso concreto trae un tema delicado. Por eso el de 6° **no define
+> "pubertad" ni "higiene corporal"** aunque sean de su temario: son de los `CN06 OA 05/06`, y
+> dejarlas ahí haría que un colegio que excluye ese capítulo se las encontrara igual y sin
+> aviso. Ese contenido vive en su capítulo de Ciencias, que es donde sí se marca. Es el mismo
+> razonamiento que sacó el contenido sexual del Jefe Final. Lo de Historia y las drogas **sí
+> entran**: la regla del proyecto saca solo lo sexual.
+
 ## Reglas que comparten
 
 1. **No entran al mapa de dominio del profesor.** `registrarOA` los excluye **por la FORMA del

@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"célula\"?",
+   "opciones": [
+    "La unidad más pequeña que forma a todos los seres vivos",
+    "Un órgano diminuto que solo tienen los animales pequeños",
+    "Una sustancia líquida que reparte el alimento por el cuerpo",
+    "Una capa delgada que recubre a los órganos por dentro"
+   ],
+   "correcta": 0,
+   "tip": "Hay seres vivos de una sola célula y otros formados por millones de ellas.",
+   "id": "voc5-cien-1"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En el cuerpo, ¿qué es un \"tejido\"?",
+   "opciones": [
+    "Un conjunto de células parecidas que cumplen la misma función",
+    "Un conjunto de órganos que trabajan juntos en una misma tarea",
+    "Una capa de piel que cubre y protege el cuerpo por fuera",
+    "Una red de conductos que llevan sangre hasta cada órgano"
+   ],
+   "correcta": 0,
+   "tip": "El tejido va entre la célula y el órgano: son células parecidas juntas.",
+   "id": "voc5-cien-2"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"órgano\", como el estómago?",
+   "opciones": [
+    "Una estructura de varios tejidos que cumple una función propia",
+    "Un grupo de células iguales que trabajan todas en lo mismo",
+    "Un conjunto de sistemas que se coordinan dentro del cuerpo",
+    "Una cavidad hueca donde el cuerpo guarda sus reservas de agua"
+   ],
+   "correcta": 0,
+   "tip": "Varios tejidos forman un órgano, y varios órganos forman un sistema.",
+   "id": "voc5-cien-3"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"digestión\"?",
+   "opciones": [
+    "El proceso que deshace el alimento en partes muy pequeñas",
+    "El paso de los nutrientes desde el intestino hacia la sangre",
+    "La eliminación de los desechos que el cuerpo ya no necesita",
+    "El transporte del alimento desde la boca hasta el estómago"
+   ],
+   "correcta": 0,
+   "tip": "Digerir es deshacer el alimento; pasarlo a la sangre ya es otra etapa.",
+   "id": "voc5-cien-4"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En el sistema digestivo, ¿qué es la \"absorción\"?",
+   "opciones": [
+    "El paso de los nutrientes desde el intestino hacia la sangre",
+    "La molienda que hacen los dientes con el alimento en la boca",
+    "La mezcla del alimento con los jugos ácidos del estómago",
+    "La salida de los desechos por la última parte del intestino"
+   ],
+   "correcta": 0,
+   "tip": "Ocurre sobre todo en el intestino delgado, una vez digerido el alimento.",
+   "id": "voc5-cien-5"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué función cumple el \"esófago\"?",
+   "opciones": [
+    "Llevar el alimento desde la boca hasta el estómago",
+    "Mezclar el alimento con jugos ácidos para deshacerlo",
+    "Absorber los nutrientes y pasarlos hacia la sangre",
+    "Guardar la bilis hasta que llegue el alimento graso"
+   ],
+   "correcta": 0,
+   "tip": "Es un tubo de paso: no digiere ni absorbe, solamente transporta.",
+   "id": "voc5-cien-6"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué aporta el \"hígado\" a la digestión?",
+   "opciones": [
+    "Produce la bilis, que ayuda a deshacer las grasas",
+    "Guarda el alimento hasta que el estómago se desocupa",
+    "Absorbe la mayor parte de los nutrientes del alimento",
+    "Empuja los desechos sólidos hacia el intestino grueso"
+   ],
+   "correcta": 0,
+   "tip": "El hígado fabrica la bilis; quien absorbe agua es el intestino grueso.",
+   "id": "voc5-cien-7"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué función cumple la \"tráquea\"?",
+   "opciones": [
+    "Conducir el aire desde la nariz hacia los bronquios",
+    "Conducir el alimento desde la boca hasta el estómago",
+    "Filtrar la sangre antes de que vuelva hacia el corazón",
+    "Repartir el oxígeno por la sangre de todo el cuerpo"
+   ],
+   "correcta": 0,
+   "tip": "La tráquea lleva aire y el esófago lleva alimento: son dos tubos distintos.",
+   "id": "voc5-cien-8"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué son los \"alvéolos\" de los pulmones?",
+   "opciones": [
+    "Sacos diminutos donde el oxígeno pasa hacia la sangre",
+    "Tubos gruesos por donde entra el aire a cada pulmón",
+    "Músculos que empujan al pulmón para que se llene de aire",
+    "Bolsas de agua que humedecen el aire antes de respirar"
+   ],
+   "correcta": 0,
+   "tip": "Ahí ocurre el intercambio: entra oxígeno y sale dióxido de carbono.",
+   "id": "voc5-cien-9"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Al respirar, ¿qué es la \"espiración\"?",
+   "opciones": [
+    "La salida del aire de los pulmones hacia el exterior",
+    "La entrada del aire desde el exterior hacia los pulmones",
+    "El paso del oxígeno desde los pulmones hacia la sangre",
+    "El descanso que hace el pulmón entre una y otra respiración"
+   ],
+   "correcta": 0,
+   "tip": "Espirar es botar el aire; inspirar es tomarlo. Se alternan sin parar.",
+   "id": "voc5-cien-10"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"arteria\"?",
+   "opciones": [
+    "Un vaso que saca la sangre del corazón hacia el cuerpo",
+    "Un vaso que trae la sangre de vuelta hasta el corazón",
+    "Un tubo que reparte el aire desde la tráquea al pulmón",
+    "Una bolsa donde la sangre espera antes de circular"
+   ],
+   "correcta": 0,
+   "tip": "Sale del corazón con mucha fuerza: por eso tiene paredes gruesas.",
+   "id": "voc5-cien-11"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué hace una \"vena\" en el cuerpo?",
+   "opciones": [
+    "Devuelve la sangre desde el cuerpo hacia el corazón",
+    "Reparte la sangre desde el corazón hacia el cuerpo",
+    "Conduce el aire desde la nariz hacia los pulmones",
+    "Filtra la sangre para sacarle todos sus desechos"
+   ],
+   "correcta": 0,
+   "tip": "Las venas hacen el camino de vuelta, y por eso llevan menos presión.",
+   "id": "voc5-cien-12"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"nutriente\"?",
+   "opciones": [
+    "Una sustancia del alimento que el cuerpo usa para funcionar",
+    "Una sustancia que el cuerpo elimina porque no le sirve nada",
+    "Un alimento preparado para hacer crecer más rápido al cuerpo",
+    "Una vitamina que solamente se encuentra en las frutas frescas"
+   ],
+   "correcta": 0,
+   "tip": "Los nutrientes sirven para crecer, reparar el cuerpo y poder moverse.",
+   "id": "voc5-cien-13"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"microorganismo\"?",
+   "opciones": [
+    "Un ser vivo tan pequeño que solo se ve con microscopio",
+    "Un ser vivo muy pequeño que siempre provoca enfermedades",
+    "Una parte diminuta de un órgano que se ve a simple vista",
+    "Una sustancia química que se usa para limpiar las heridas"
+   ],
+   "correcta": 0,
+   "tip": "Hay microorganismos dañinos y también muchísimos beneficiosos.",
+   "id": "voc5-cien-14"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué clase de ser vivo es una \"bacteria\"?",
+   "opciones": [
+    "Un ser vivo de una sola célula, dañino o beneficioso",
+    "Un ser vivo diminuto que siempre causa una enfermedad",
+    "Un animal muy pequeño que vive dentro del cuerpo humano",
+    "Una sustancia que sueltan los hongos al descomponerse"
+   ],
+   "correcta": 0,
+   "tip": "Algunas bacterias fabrican el yogur y otras enferman: no todas son malas.",
+   "id": "voc5-cien-15"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Por qué un \"virus\" necesita otra célula?",
+   "opciones": [
+    "Porque solo puede multiplicarse dentro de una célula viva",
+    "Porque necesita alimentarse de lo que esa célula fabrica",
+    "Porque le sirve de refugio para pasar el invierno completo",
+    "Porque así logra crecer hasta alcanzar su tamaño definitivo"
+   ],
+   "correcta": 0,
+   "tip": "Fuera de una célula viva, el virus no puede reproducirse solo.",
+   "id": "voc5-cien-16"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"circuito eléctrico\"?",
+   "opciones": [
+    "Un camino cerrado por donde puede pasar la corriente",
+    "Un cable grueso que guarda electricidad para después",
+    "Un aparato que convierte el calor en luz y en sonido",
+    "Una pieza que corta el paso de la corriente al aparato"
+   ],
+   "correcta": 0,
+   "tip": "Si el camino queda abierto en algún punto, la corriente deja de circular.",
+   "id": "voc5-cien-17"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Para qué sirve el \"interruptor\" de un circuito?",
+   "opciones": [
+    "Para abrir o cerrar el paso de la corriente cuando se quiera",
+    "Para aumentar la cantidad de energía que entrega la pila",
+    "Para evitar que el cable se caliente al pasar la corriente",
+    "Para transformar la energía eléctrica en energía luminosa"
+   ],
+   "correcta": 0,
+   "tip": "Con el interruptor abierto el circuito se corta y la ampolleta se apaga.",
+   "id": "voc5-cien-18"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué aporta la \"pila\" a un circuito?",
+   "opciones": [
+    "La energía que hace circular la corriente por el camino",
+    "La luz que después va a entregar la ampolleta encendida",
+    "El corte de la corriente cuando el cable se calienta mucho",
+    "El material aislante que recubre por fuera a los cables"
+   ],
+   "correcta": 0,
+   "tip": "La pila es la fuente de energía: sin ella el circuito no funciona.",
+   "id": "voc5-cien-19"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"material conductor\"?",
+   "opciones": [
+    "Un material que deja pasar la corriente con mucha facilidad",
+    "Un material que impide por completo el paso de la corriente",
+    "Un material que se calienta apenas recibe algo de corriente",
+    "Un material que guarda la electricidad para usarla después"
+   ],
+   "correcta": 0,
+   "tip": "El cobre y el aluminio conducen; por eso los cables llevan metal adentro.",
+   "id": "voc5-cien-20"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Para qué se recubre un cable con un \"aislante\"?",
+   "opciones": [
+    "Para que la corriente no pase a quien toque el cable",
+    "Para que la corriente circule más rápido por el cable",
+    "Para que el cable se pueda doblar sin quebrarse nunca",
+    "Para que el cable conduzca mejor cuando está mojado"
+   ],
+   "correcta": 0,
+   "tip": "El plástico y la goma no conducen electricidad: por eso sirven de aislante.",
+   "id": "voc5-cien-21"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"energía lumínica\"?",
+   "opciones": [
+    "La energía que percibimos como luz, igual que en una ampolleta",
+    "La energía que percibimos como calor, igual que en una estufa",
+    "La energía que percibimos como sonido, igual que en una radio",
+    "La energía que mueve las piezas de un motor mientras funciona"
+   ],
+   "correcta": 0,
+   "tip": "Una ampolleta convierte energía eléctrica en luz y también en calor.",
+   "id": "voc5-cien-22"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué significa que un aparato \"transforme\" energía?",
+   "opciones": [
+    "Que la recibe de una forma y la entrega de otra distinta",
+    "Que la crea desde cero cada vez que alguien lo enciende",
+    "Que la guarda por dentro para poder usarla más adelante",
+    "Que la hace desaparecer una vez que terminó de usarla"
+   ],
+   "correcta": 0,
+   "tip": "La energía no se crea ni se destruye: solamente cambia de forma.",
+   "id": "voc5-cien-23"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué mide el \"consumo eléctrico\" de una casa?",
+   "opciones": [
+    "La cantidad de energía eléctrica que se usa en un tiempo",
+    "La cantidad de aparatos que hay enchufados en la casa",
+    "La fuerza con que la corriente llega hasta los enchufes",
+    "La cantidad de cables que recorren las paredes de la casa"
+   ],
+   "correcta": 0,
+   "tip": "Por eso apagar luces y aparatos sin uso hace bajar la cuenta.",
+   "id": "voc5-cien-24"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"agua dulce\"?",
+   "opciones": [
+    "El agua con muy poca sal, como la de los ríos y lagos",
+    "El agua que tiene azúcar disuelta y se puede beber",
+    "El agua del mar que está cerca de la desembocadura",
+    "El agua que ya pasó por una planta de tratamiento"
+   ],
+   "correcta": 0,
+   "tip": "Dulce no se refiere al sabor, sino a que casi no tiene sal.",
+   "id": "voc5-cien-25"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"glaciar\"?",
+   "opciones": [
+    "Una gran masa de hielo que se acumula y avanza muy lento",
+    "Una capa de nieve que se derrite apenas empieza el verano",
+    "Un lago de montaña que se congela solo durante el invierno",
+    "Un trozo de hielo que flota a la deriva en el mar abierto"
+   ],
+   "correcta": 0,
+   "tip": "Los glaciares guardan buena parte del agua dulce del planeta.",
+   "id": "voc5-cien-26"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué son las \"aguas subterráneas\"?",
+   "opciones": [
+    "El agua que queda guardada bajo la tierra, entre las rocas",
+    "El agua que corre por los túneles del alcantarillado",
+    "El agua de lluvia que se junta en los charcos del suelo",
+    "El agua salada que llena las zonas hondas del océano"
+   ],
+   "correcta": 0,
+   "tip": "Se llega a ellas con pozos, y son una reserva de agua dulce.",
+   "id": "voc5-cien-27"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"marea\"?",
+   "opciones": [
+    "La subida y bajada del nivel del mar durante el día",
+    "La ola grande que se forma cuando sopla mucho viento",
+    "El movimiento del agua que provoca un sismo en el mar",
+    "La corriente que recorre el océano llevando agua fría"
+   ],
+   "correcta": 0,
+   "tip": "La marea la produce sobre todo la atracción de la Luna.",
+   "id": "voc5-cien-28"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"corriente marina\"?",
+   "opciones": [
+    "Un flujo de agua del océano que avanza por la misma ruta",
+    "Una ola muy larga que llega a la costa cada cierto rato",
+    "El ascenso del nivel del mar que ocurre dos veces al día",
+    "El agua de un río grande justo cuando entra en el mar"
+   ],
+   "correcta": 0,
+   "tip": "La corriente de Humboldt recorre la costa de Chile con agua fría.",
+   "id": "voc5-cien-29"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"reserva hídrica\"?",
+   "opciones": [
+    "Un lugar donde se acumula agua que se puede aprovechar",
+    "Una zona de la costa donde está prohibido ir a pescar",
+    "Un depósito donde se juntan los desechos de una ciudad",
+    "Una máquina que le saca la sal al agua para poder beberla"
+   ],
+   "correcta": 0,
+   "tip": "Glaciares, lagos y aguas subterráneas son reservas hídricas de Chile.",
+   "id": "voc5-cien-30"
+  }
+ ]
+}

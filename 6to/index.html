@@ -1549,6 +1549,20 @@ const EXPEDICIONES=[
      {oa:"LE06 OA 31",nombre:"Dramatizar y contar",icono:"🎪",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Hablar y exponer",icono:"🗣️",n:15,oas:["LE06 OA 27","LE06 OA 28","LE06 OA 29","LE06 OA 30","LE06 OA 31"]},
    ]},
+ /* Vocabulario de 6°: TRES areas, mismo criterio que 5° (el LE06 OA 12 ya ensena la
+    estrategia, asi que no va area de Lenguaje). OJO: este banco NO define pubertad ni
+    higiene corporal aunque sean del temario, porque son de los CN06 OA 05/06 marcados
+    sensibles y el armador marca POR CODIGO DE OA: los VOC-* son compartidos entre cursos,
+    asi que no hay forma de marcar solo este modulo. Ese contenido vive en su capitulo de
+    Ciencias, que es donde SI se marca. Portada prestada de 8°. */
+ { id:'voc-general', asignatura:'Vocabulario', nivel:'6° Básico · Vocabulario del curso',
+   portada:'assets/portada-voc-general.png', portadaMapa:'assets/portada-voc-general.png',
+   contenido:'contenido/vocabulario-6basico/preguntas.json', activa:true,
+   etapas:[
+     {oa:"VOC-CIEN", nombre:"Palabras de Ciencias", icono:"🔬", n:15},
+     {oa:"VOC-HIST", nombre:"Palabras de Historia", icono:"📜", n:15},
+     {oa:"VOC-MATE", nombre:"Palabras de Matemática", icono:"🔢", n:15},
+   ]},
 ];
 /* 6° nace con las 4 asignaturas COMPLETAS desde el arranque (a diferencia de 5°, que
    partió solo con Matemática): su banco de 2.970 preguntas y sus 99 OA ya estaban
@@ -2454,7 +2468,7 @@ LECC.init({ rutas:['contenido/lenguaje-6basico/lecciones.json'], hayReto:HAY_RET
 // 6° no tiene banco de Vocabulario propio. En true abriria el landing "Campana +
 // Vocabulario" y la asignatura Lenguaje quedaria inalcanzable, que es lo que le paso
 // a 3° en la Sesion 61.
-const HAY_VOCABULARIO=false;
+const HAY_VOCABULARIO=true;
 const HAY_BIBLIOTECA=false;
 async function cargarJugadores(){
  const cont=$('odJugadores');cont.innerHTML='<p style="color:var(--dim);font-weight:800;font-size:13px">Cargando…</p>';

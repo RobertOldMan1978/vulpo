@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"ecosistema\"?",
+   "opciones": [
+    "Un lugar donde los seres vivos y lo no vivo se relacionan entre sí",
+    "Un grupo de animales de la misma especie que viven todos juntos en un lugar",
+    "Un terreno donde solo crecen plantas cuidadas por las personas",
+    "Una lista con los nombres de los animales de una zona"
+   ],
+   "correcta": 0,
+   "tip": "En un ecosistema conviven lo vivo y lo no vivo: el agua, las piedras y el suelo también son parte.",
+   "id": "voc4-cien-1"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"adaptación\" de un animal?",
+   "opciones": [
+    "Una característica de su cuerpo o su conducta que lo ayuda a sobrevivir",
+    "Una costumbre que aprende de las personas que lo cuidan en su casa",
+    "Un cambio que le ocurre solamente cuando ya está muy viejo",
+    "Una enfermedad que le da cuando el clima cambia de golpe"
+   ],
+   "correcta": 0,
+   "tip": "La adaptación sirve para vivir mejor en el lugar donde le tocó nacer.",
+   "id": "voc4-cien-2"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Para qué le sirve el \"camuflaje\" a un animal?",
+   "opciones": [
+    "Para confundirse con el lugar donde está y que no lo vean",
+    "Para asustar a los otros animales con un ruido muy fuerte",
+    "Para moverse mucho más rápido cuando alguien lo persigue",
+    "Para aguantar el frío gracias a su pelaje grueso"
+   ],
+   "correcta": 0,
+   "tip": "Camuflarse es parecerse al entorno: el color y la forma lo esconden.",
+   "id": "voc4-cien-3"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué hace un animal cuando entra en \"hibernación\"?",
+   "opciones": [
+    "Pasa el invierno casi dormido y gasta muy poca energía",
+    "Junta comida en su madriguera y sigue activo todo el año",
+    "Viaja a un lugar más cálido y vuelve en primavera",
+    "Cambia el color de su pelaje para que no lo vean"
+   ],
+   "correcta": 0,
+   "tip": "Hibernar es bajar el ritmo del cuerpo para aguantar el invierno; viajar a otro lugar es otra cosa.",
+   "id": "voc4-cien-4"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué muestra una \"cadena alimentaria\"?",
+   "opciones": [
+    "Quién se alimenta de quién dentro de un ecosistema",
+    "Cuántos animales de cada especie viven en ese lugar",
+    "El camino que recorre un animal para buscar agua",
+    "El orden en que nacen las crías de cada animal"
+   ],
+   "correcta": 0,
+   "tip": "La cadena muestra por dónde va pasando el alimento de un ser vivo a otro.",
+   "id": "voc4-cien-5"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En una cadena alimentaria, ¿qué es un \"productor\"?",
+   "opciones": [
+    "Un ser vivo que fabrica su alimento, como las plantas",
+    "Un animal que caza a otros animales para alimentarse",
+    "Un ser vivo que se alimenta de los restos de otros",
+    "Un animal que come plantas y también carne"
+   ],
+   "correcta": 0,
+   "tip": "Se llama productor porque produce su propio alimento con la luz del sol.",
+   "id": "voc4-cien-6"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Por qué a un animal se le llama \"consumidor\"?",
+   "opciones": [
+    "Porque no fabrica su alimento y come a otros seres vivos",
+    "Porque se alimenta del agua y de los minerales del suelo",
+    "Porque usa la luz del sol para producir su propia comida",
+    "Porque convierte los restos muertos en tierra otra vez"
+   ],
+   "correcta": 0,
+   "tip": "Consumir es comerse a otro: ningún animal fabrica su alimento.",
+   "id": "voc4-cien-7"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué hace un \"descomponedor\", como un hongo?",
+   "opciones": [
+    "Convierte los restos de seres muertos en nutrientes del suelo",
+    "Caza animales pequeños y los guarda dentro de su madriguera",
+    "Fabrica su alimento con la luz del sol, igual que las plantas",
+    "Se come las hojas verdes de los árboles del bosque"
+   ],
+   "correcta": 0,
+   "tip": "Los descomponedores devuelven al suelo los nutrientes de lo que murió.",
+   "id": "voc4-cien-8"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"veda\"?",
+   "opciones": [
+    "Un tiempo en que se prohíbe pescar o cazar una especie",
+    "Un permiso para pescar todo lo que se quiera en el mar",
+    "Un impuesto que se le cobra a quien vende pescado fresco",
+    "Una zona del mar donde solo entran los barcos grandes"
+   ],
+   "correcta": 0,
+   "tip": "La veda da un descanso a la especie para que alcance a reproducirse.",
+   "id": "voc4-cien-9"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Para qué existe un \"parque nacional\"?",
+   "opciones": [
+    "Para proteger un lugar natural con sus plantas y animales",
+    "Para juntar en un solo lugar animales traídos de otros países",
+    "Para criar animales de granja y vender su carne y su leche",
+    "Para construir casas nuevas en un terreno muy grande"
+   ],
+   "correcta": 0,
+   "tip": "Un parque nacional protege el ecosistema completo, no solo a una especie.",
+   "id": "voc4-cien-10"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"esqueleto\" del cuerpo humano?",
+   "opciones": [
+    "El conjunto de todos los huesos que sostienen el cuerpo",
+    "El conjunto de nervios que llevan los mensajes al cerebro",
+    "El conjunto de músculos que se estiran y se encogen",
+    "La piel que cubre y protege el cuerpo por fuera"
+   ],
+   "correcta": 0,
+   "tip": "El esqueleto sostiene, protege y permite el movimiento del cuerpo.",
+   "id": "voc4-cien-11"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué protege el \"cráneo\"?",
+   "opciones": [
+    "El cerebro, porque forma una caja de hueso a su alrededor",
+    "El corazón y los pulmones, que están dentro del pecho",
+    "La médula espinal, que baja por la mitad de la espalda",
+    "El estómago, que queda en la parte baja del cuerpo"
+   ],
+   "correcta": 0,
+   "tip": "El cráneo es la caja dura que rodea al cerebro; el pecho lo cuidan las costillas.",
+   "id": "voc4-cien-12"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"columna vertebral\"?",
+   "opciones": [
+    "Una fila de huesos pequeños que recorre toda la espalda",
+    "Un hueso largo y entero que va del cuello hasta la cadera",
+    "Un músculo grueso que mantiene la espalda bien derecha",
+    "Un conjunto de costillas que rodean todo el pecho"
+   ],
+   "correcta": 0,
+   "tip": "La columna no es un solo hueso: son muchas vértebras, una sobre otra.",
+   "id": "voc4-cien-13"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"articulación\", como la rodilla?",
+   "opciones": [
+    "El punto donde se unen dos huesos y permite el movimiento",
+    "La parte más dura del hueso, que aguanta todo el peso",
+    "El músculo que se encoge para levantar la pierna entera",
+    "La cuerda que une el músculo con el hueso"
+   ],
+   "correcta": 0,
+   "tip": "Sin articulaciones los huesos no podrían doblarse ni girar.",
+   "id": "voc4-cien-14"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué hace la \"médula espinal\"?",
+   "opciones": [
+    "Lleva los mensajes entre el cerebro y el resto del cuerpo",
+    "Guarda los recuerdos y las cosas que uno va aprendiendo",
+    "Sostiene la cabeza para que no se caiga hacia adelante",
+    "Reparte la sangre desde el corazón hacia las piernas"
+   ],
+   "correcta": 0,
+   "tip": "La médula espinal es el cable principal: pasa por dentro de la columna.",
+   "id": "voc4-cien-15"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"materia\"?",
+   "opciones": [
+    "Todo lo que tiene masa y ocupa un lugar en el espacio",
+    "Todo lo que se puede ver y tocar, menos los líquidos",
+    "Todo lo que está formado por seres vivos o sus restos",
+    "Todo lo que pesa mucho y cuesta levantar del suelo"
+   ],
+   "correcta": 0,
+   "tip": "El aire también es materia, aunque no se vea: tiene masa y ocupa espacio.",
+   "id": "voc4-cien-16"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué mide la \"masa\" de un objeto?",
+   "opciones": [
+    "La cantidad de materia que tiene ese objeto",
+    "El espacio que ese objeto ocupa por dentro",
+    "Lo caliente o lo frío que está el objeto",
+    "La rapidez con que el objeto puede caer"
+   ],
+   "correcta": 0,
+   "tip": "Más masa es más materia, aunque el objeto sea chico.",
+   "id": "voc4-cien-17"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"volumen\" de un objeto?",
+   "opciones": [
+    "El espacio que ese objeto ocupa",
+    "La cantidad de materia que tiene",
+    "Su temperatura en ese momento",
+    "La fuerza con que cae al suelo"
+   ],
+   "correcta": 0,
+   "tip": "Dos objetos pueden ocupar el mismo espacio y tener distinta masa.",
+   "id": "voc4-cien-18"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué quiere decir que un líquido puede \"fluir\"?",
+   "opciones": [
+    "Que puede correr y tomar la forma del recipiente",
+    "Que puede volverse sólido cuando hace mucho frío",
+    "Que puede mantener siempre su misma forma propia",
+    "Que puede desaparecer si se deja un rato al sol"
+   ],
+   "correcta": 0,
+   "tip": "Fluir es correr y acomodarse al envase: por eso el agua no tiene forma propia.",
+   "id": "voc4-cien-19"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Para qué se usa una \"balanza\"?",
+   "opciones": [
+    "Para medir la masa de un objeto",
+    "Para medir cuánto espacio ocupa",
+    "Para medir su temperatura exacta",
+    "Para medir su largo en centímetros"
+   ],
+   "correcta": 0,
+   "tip": "La balanza compara masas y las entrega en gramos o en kilos.",
+   "id": "voc4-cien-20"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué mide un \"termómetro\"?",
+   "opciones": [
+    "La temperatura de algo, en grados",
+    "La masa de algo, en gramos y kilos",
+    "El volumen de un líquido, en litros",
+    "La fuerza con que se empuja algo"
+   ],
+   "correcta": 0,
+   "tip": "El termómetro dice qué tan caliente o frío está algo.",
+   "id": "voc4-cien-21"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"fuerza de roce\"?",
+   "opciones": [
+    "La que frena a un objeto cuando se arrastra sobre algo",
+    "La que atrae a los objetos hacia el centro de la Tierra",
+    "La que hacen los imanes sobre algunos metales cercanos",
+    "La que empuja a un objeto para que salga disparado"
+   ],
+   "correcta": 0,
+   "tip": "El roce aparece entre dos superficies que se rozan y siempre frena el movimiento.",
+   "id": "voc4-cien-22"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Al soltar una piedra, ¿qué hace la \"gravedad\"?",
+   "opciones": [
+    "La atrae hacia la Tierra y la hace caer al suelo",
+    "La frena mientras va rozando contra el aire que la rodea",
+    "La empuja hacia arriba porque el aire pesa menos",
+    "La mantiene quieta hasta que alguien la mueva"
+   ],
+   "correcta": 0,
+   "tip": "La gravedad atrae todo hacia la Tierra: por eso las cosas caen.",
+   "id": "voc4-cien-23"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué hace la \"fuerza magnética\" de un imán?",
+   "opciones": [
+    "Atrae desde lejos algunos metales, como el hierro",
+    "Empuja cualquier objeto que esté a su alrededor",
+    "Calienta los metales que se le acercan demasiado",
+    "Hace más pesados a los objetos de metal cercanos"
+   ],
+   "correcta": 0,
+   "tip": "El imán actúa sin tocar, y solo sobre ciertos metales.",
+   "id": "voc4-cien-24"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"corteza\" de la Tierra?",
+   "opciones": [
+    "La capa de afuera, donde está el suelo que pisamos",
+    "La capa del medio, formada por rocas muy calientes",
+    "La parte del centro, que es la más caliente de todas",
+    "Una capa de aire que rodea el planeta por completo"
+   ],
+   "correcta": 0,
+   "tip": "La corteza es la capa más delgada, y es la única que vemos.",
+   "id": "voc4-cien-25"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Dónde está el \"manto\" de la Tierra?",
+   "opciones": [
+    "Entre la corteza y el núcleo, y es la capa más gruesa",
+    "Alrededor del planeta, mezclado con el aire que respiramos",
+    "Sobre la corteza, cubriendo los mares y los continentes",
+    "En el mismo centro del planeta, bajo todas las capas"
+   ],
+   "correcta": 0,
+   "tip": "El manto va en el medio: es la capa que más espacio ocupa.",
+   "id": "voc4-cien-26"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"núcleo\" de la Tierra?",
+   "opciones": [
+    "La capa del centro, la más caliente del planeta",
+    "La capa de afuera, donde están los continentes",
+    "La capa de agua que cubre casi todo el planeta",
+    "La capa de aire que envuelve todo el planeta"
+   ],
+   "correcta": 0,
+   "tip": "El núcleo está en el centro y es la parte más caliente de todas.",
+   "id": "voc4-cien-27"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué son las \"placas tectónicas\"?",
+   "opciones": [
+    "Trozos enormes de la corteza que se mueven muy despacio",
+    "Placas de metal que se usan para medir los temblores",
+    "Capas de tierra que se van formando al fondo de los ríos",
+    "Piedras planas que quedan después de una erupción"
+   ],
+   "correcta": 0,
+   "tip": "Cuando dos placas se rozan o chocan se producen los sismos.",
+   "id": "voc4-cien-28"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"tsunami\"?",
+   "opciones": [
+    "Olas enormes que se forman por un sismo en el mar",
+    "Un viento muy fuerte que levanta el agua de la costa",
+    "Una ola grande que aparece cada vez que sube la marea",
+    "Una lluvia tan intensa que hace crecer los ríos"
+   ],
+   "correcta": 0,
+   "tip": "El tsunami nace de un sismo bajo el mar, no del viento ni de la lluvia.",
+   "id": "voc4-cien-29"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"zona de seguridad\"?",
+   "opciones": [
+    "Un lugar marcado donde hay que reunirse en una emergencia",
+    "Un lugar cerrado donde se guardan los objetos de valor",
+    "Una sala donde se atiende a quien se siente enfermo",
+    "Un camino pintado en la calle para cruzar sin peligro"
+   ],
+   "correcta": 0,
+   "tip": "La zona de seguridad se marca antes, para saber adónde ir sin pensarlo.",
+   "id": "voc4-cien-30"
+  }
+ ]
+}

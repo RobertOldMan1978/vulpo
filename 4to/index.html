@@ -1557,6 +1557,18 @@ const EXPEDICIONES=[
      {oa:"LE04 OA 30",nombre:"Recitar con expresión",icono:"🎤",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Actuar y recitar",icono:"🎪",n:15,oas:["LE04 OA 29","LE04 OA 30"]},
    ]},
+ /* Vocabulario de 4°: DOS areas (Ciencias e Historia) como 3°, no tres como 5° y 6°.
+    El porque completo vive en contenido/vocabulario-4basico/oa.json: el LE04 OA 10 ya
+    ensena a determinar el significado de palabras nuevas, asi que un area de Lenguaje
+    mediria dos veces lo mismo; y Matematica de 4° todavia no sostiene un banco propio.
+    Portada prestada de 8°: el arte no depende del nivel. */
+ { id:'voc-general', asignatura:'Vocabulario', nivel:'4° Básico · Vocabulario del curso',
+   portada:'assets/portada-voc-general.png', portadaMapa:'assets/portada-voc-general.png',
+   contenido:'contenido/vocabulario-4basico/preguntas.json', activa:true,
+   etapas:[
+     {oa:"VOC-CIEN", nombre:"Palabras de Ciencias", icono:"🔬", n:10},
+     {oa:"VOC-HIST", nombre:"Palabras de Historia", icono:"📜", n:10},
+   ]},
 ];
 /* 4° nace con las 4 asignaturas COMPLETAS desde el arranque (mismo patrón que 6°): su
    banco de 2.730 preguntas y sus 91 OA jugables ya estaban escritos antes de crear este
@@ -2468,7 +2480,7 @@ LECC.init({ rutas:['contenido/lenguaje-4basico/lecciones.json'], hayReto:HAY_RET
 // 4° no tiene banco de Vocabulario propio. En true abriria el landing "Campana +
 // Vocabulario" y la asignatura Lenguaje quedaria inalcanzable, que es lo que le paso
 // a 3° en la Sesion 61.
-const HAY_VOCABULARIO=false;
+const HAY_VOCABULARIO=true;
 const HAY_BIBLIOTECA=false;
 async function cargarJugadores(){
  const cont=$('odJugadores');cont.innerHTML='<p style="color:var(--dim);font-weight:800;font-size:13px">Cargando…</p>';

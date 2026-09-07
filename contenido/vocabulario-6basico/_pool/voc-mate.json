@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"múltiplo\" de un número?",
+   "opciones": [
+    "El resultado de multiplicar ese número por un natural",
+    "El número por el cual se divide otro sin dejar resto",
+    "El número que queda al restar dos cantidades iguales",
+    "La cantidad de cifras que tiene ese número escrito"
+   ],
+   "correcta": 0,
+   "tip": "Los múltiplos de 4 son 4, 8, 12, 16 y así sucesivamente.",
+   "id": "voc6-mate-1"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En Matemática, ¿qué es un \"factor\" de un número?",
+   "opciones": [
+    "Un número que lo divide de manera exacta, sin resto",
+    "Un número que se obtiene al sumarlo consigo mismo",
+    "Un número mayor que él y que lo contiene entero",
+    "Un número que se le resta hasta llegar a cero"
+   ],
+   "correcta": 0,
+   "tip": "Los factores de 12 son 1, 2, 3, 4, 6 y 12.",
+   "id": "voc6-mate-2"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué caracteriza a un \"número primo\"?",
+   "opciones": [
+    "Tiene exactamente dos divisores: el 1 y él mismo",
+    "Tiene más de dos divisores naturales distintos",
+    "Termina siempre en una cifra impar cualquiera",
+    "Se puede escribir como la suma de dos iguales"
+   ],
+   "correcta": 0,
+   "tip": "El 7 lo es; el 9 no, porque además lo divide el 3.",
+   "id": "voc6-mate-3"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"número compuesto\"?",
+   "opciones": [
+    "Un número que tiene más de dos divisores naturales",
+    "Un número que solo se divide por 1 y por sí mismo",
+    "Un número formado por dos cifras o más en total",
+    "Un número que resulta de sumar dos números primos"
+   ],
+   "correcta": 0,
+   "tip": "El 12 lo es: se puede armar multiplicando otros.",
+   "id": "voc6-mate-4"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En Matemática, ¿qué es una \"razón\"?",
+   "opciones": [
+    "Una comparación entre dos cantidades por cociente",
+    "Una suma entre dos cantidades del mismo tipo",
+    "Una cantidad repartida en partes desiguales",
+    "Una diferencia entre el total y una de sus partes"
+   ],
+   "correcta": 0,
+   "tip": "'3 es a 2' compara cuántas veces cabe una en la otra.",
+   "id": "voc6-mate-5"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué expresa un \"porcentaje\"?",
+   "opciones": [
+    "Una parte tomada de un total de cien unidades",
+    "Una parte tomada de un total de mil unidades",
+    "El total que resulta de juntar todas las partes",
+    "La cantidad de veces que se repite un valor"
+   ],
+   "correcta": 0,
+   "tip": "'Por ciento' significa literalmente 'de cada cien'.",
+   "id": "voc6-mate-6"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es una \"fracción impropia\"?",
+   "opciones": [
+    "Aquella cuyo numerador es mayor o igual que el denominador",
+    "Aquella cuyo numerador es menor que su propio denominador",
+    "Aquella cuyo denominador es un número primo cualquiera",
+    "Aquella que no se puede simplificar de ninguna manera"
+   ],
+   "correcta": 0,
+   "tip": "Vale uno o más de un entero, como 7/4.",
+   "id": "voc6-mate-7"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Cómo está formado un \"número mixto\"?",
+   "opciones": [
+    "Por un número entero acompañado de una fracción propia",
+    "Por dos fracciones que se suman entre sí directamente",
+    "Por un número entero seguido de una parte decimal",
+    "Por una fracción con numerador y denominador iguales"
+   ],
+   "correcta": 0,
+   "tip": "Se puede escribir como fracción impropia, y al revés.",
+   "id": "voc6-mate-8"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué son dos \"fracciones equivalentes\"?",
+   "opciones": [
+    "Dos fracciones distintas que representan el mismo valor",
+    "Dos fracciones que tienen el mismo denominador exacto",
+    "Dos fracciones que se suman y dan un número entero",
+    "Dos fracciones que tienen el mismo numerador exacto"
+   ],
+   "correcta": 0,
+   "tip": "Se obtienen amplificando o simplificando una fracción.",
+   "id": "voc6-mate-9"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En un decimal, ¿qué lugar ocupa la \"milésima\"?",
+   "opciones": [
+    "El tercer lugar a la derecha de la coma decimal",
+    "El primer lugar a la derecha de la coma decimal",
+    "El tercer lugar a la izquierda de la coma decimal",
+    "El lugar de las unidades, justo antes de la coma"
+   ],
+   "correcta": 0,
+   "tip": "En 0,004 hay cuatro milésimas.",
+   "id": "voc6-mate-10"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En una tabla de valores, ¿qué es un \"patrón\"?",
+   "opciones": [
+    "Una regularidad que se repite entre los valores",
+    "El valor más alto que aparece en toda la tabla",
+    "La cantidad de filas que tiene esa tabla escrita",
+    "El resultado de sumar todos los valores anotados"
+   ],
+   "correcta": 0,
+   "tip": "Descubrirlo permite predecir el valor siguiente.",
+   "id": "voc6-mate-11"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es la \"regla\" de una tabla de valores?",
+   "opciones": [
+    "La expresión que relaciona cada dato con su pareja",
+    "La cantidad de datos que se anotaron en la tabla",
+    "El orden en que aparecen escritas las columnas",
+    "El promedio de todos los valores de una columna"
+   ],
+   "correcta": 0,
+   "tip": "Por ejemplo: 'cada valor de la tabla es el triple del anterior'.",
+   "id": "voc6-mate-12"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es una \"ecuación\"?",
+   "opciones": [
+    "Una igualdad en que aparece un valor desconocido",
+    "Una operación entre dos números ya conocidos",
+    "Una comparación que indica cuál valor es mayor",
+    "Una lista ordenada de resultados posibles"
+   ],
+   "correcta": 0,
+   "tip": "Resolverla es hallar el valor que hace cierta la igualdad.",
+   "id": "voc6-mate-13"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En una ecuación, ¿qué es la \"incógnita\"?",
+   "opciones": [
+    "La letra que representa el valor que se busca",
+    "El número que multiplica a la letra escrita",
+    "El signo igual que separa los dos lados",
+    "El resultado que se obtiene al final"
+   ],
+   "correcta": 0,
+   "tip": "Se despeja hasta dejarla sola en un lado de la igualdad.",
+   "id": "voc6-mate-14"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Cómo es un triángulo \"equilátero\"?",
+   "opciones": [
+    "Tiene sus tres lados de la misma medida",
+    "Tiene solo dos lados de la misma medida",
+    "Tiene sus tres lados de distinta medida",
+    "Tiene un ángulo recto y dos lados iguales"
+   ],
+   "correcta": 0,
+   "tip": "Sus tres ángulos también miden lo mismo: 60 grados.",
+   "id": "voc6-mate-15"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué caracteriza a un triángulo \"isósceles\"?",
+   "opciones": [
+    "Tiene exactamente dos lados de igual medida",
+    "Tiene sus tres lados de medidas diferentes",
+    "Tiene sus tres ángulos interiores rectos",
+    "Tiene un solo par de lados paralelos"
+   ],
+   "correcta": 0,
+   "tip": "Los ángulos opuestos a esos dos lados también son iguales.",
+   "id": "voc6-mate-16"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es la \"red\" de un cuerpo geométrico?",
+   "opciones": [
+    "La figura plana que se arma al desplegar sus caras",
+    "La suma de todas las aristas que forman el cuerpo",
+    "El espacio que ocupa el cuerpo por dentro",
+    "El conjunto de sus vértices unidos por líneas"
+   ],
+   "correcta": 0,
+   "tip": "Sirve para calcular el área de la superficie del cuerpo.",
+   "id": "voc6-mate-17"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"teselado\"?",
+   "opciones": [
+    "Un cubrimiento del plano con figuras, sin huecos",
+    "Un dibujo hecho con figuras de distinto tamaño",
+    "Una figura que se repite dentro de otra mayor",
+    "Un corte de una figura en partes desiguales"
+   ],
+   "correcta": 0,
+   "tip": "Se arma trasladando, reflejando o rotando una figura.",
+   "id": "voc6-mate-18"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Cómo es un \"ángulo agudo\"?",
+   "opciones": [
+    "Mide menos de 90 grados, como el de 45",
+    "Mide más de 90 grados, sin llegar a 180",
+    "Mide exactamente 90 grados, como una esquina",
+    "Mide 180 grados, formando una línea recta"
+   ],
+   "correcta": 0,
+   "tip": "El ángulo recto mide 90 grados; el agudo se queda corto.",
+   "id": "voc6-mate-19"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué son dos ángulos \"opuestos por el vértice\"?",
+   "opciones": [
+    "Los que quedan enfrentados al cruzarse dos rectas",
+    "Los que quedan uno al lado del otro y suman 180",
+    "Los que suman 90 grados entre los dos juntos",
+    "Los que tienen un lado en común y son iguales"
+   ],
+   "correcta": 0,
+   "tip": "Tienen la misma medida, aunque estén enfrentados.",
+   "id": "voc6-mate-20"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué son dos ángulos \"complementarios\"?",
+   "opciones": [
+    "Dos ángulos que juntos suman 90 grados",
+    "Dos ángulos que juntos suman 180 grados",
+    "Dos ángulos que miden exactamente lo mismo",
+    "Dos ángulos que se ubican dentro de un triángulo"
+   ],
+   "correcta": 0,
+   "tip": "Si uno mide 30 grados, el otro mide 60 grados.",
+   "id": "voc6-mate-21"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué se calcula al hallar la \"superficie\" de un cubo?",
+   "opciones": [
+    "La medida total de todas sus caras juntas",
+    "La medida del espacio que ocupa por dentro",
+    "La suma de los largos de todas sus aristas",
+    "La distancia entre dos vértices opuestos"
+   ],
+   "correcta": 0,
+   "tip": "Se expresa en unidades cuadradas, como centímetros cuadrados.",
+   "id": "voc6-mate-22"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué mide el \"volumen\" de un cuerpo?",
+   "opciones": [
+    "El espacio que ese cuerpo ocupa por dentro",
+    "El área que cubren todas sus caras juntas",
+    "La longitud del borde de una de sus caras",
+    "El peso total que ese cuerpo alcanza"
+   ],
+   "correcta": 0,
+   "tip": "Se expresa en unidades cúbicas, como centímetros cúbicos.",
+   "id": "voc6-mate-23"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Para qué sirve un \"transportador\"?",
+   "opciones": [
+    "Para medir la abertura de un ángulo en grados",
+    "Para trazar dos rectas perfectamente paralelas",
+    "Para medir la longitud de un segmento",
+    "Para dibujar circunferencias exactas"
+   ],
+   "correcta": 0,
+   "tip": "Su borde curvo está graduado de 0 a 180 grados.",
+   "id": "voc6-mate-24"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es una recta \"transversal\"?",
+   "opciones": [
+    "Una recta que corta a otras dos rectas paralelas",
+    "Una recta que nunca se cruza con otra del plano",
+    "Una recta que divide un ángulo en dos iguales",
+    "Una recta que pasa por el centro de un círculo"
+   ],
+   "correcta": 0,
+   "tip": "Al cortarlas forma pares de ángulos con medidas relacionadas.",
+   "id": "voc6-mate-25"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es una \"muestra aleatoria\"?",
+   "opciones": [
+    "Un grupo elegido al azar dentro de un total mayor",
+    "Un grupo elegido a propósito por sus características",
+    "El total completo de los casos que se van a estudiar",
+    "El dato que más se repite dentro de un grupo"
+   ],
+   "correcta": 0,
+   "tip": "El azar es lo que la hace comparable con otro grupo.",
+   "id": "voc6-mate-26"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué muestra un \"diagrama de tallo y hojas\"?",
+   "opciones": [
+    "Los datos ordenados separando sus cifras en dos partes",
+    "Los datos agrupados en sectores de un mismo círculo",
+    "Los datos representados por barras de distinto alto",
+    "Los datos unidos por una línea que sube y baja"
+   ],
+   "correcta": 0,
+   "tip": "El tallo lleva las decenas y las hojas, las unidades.",
+   "id": "voc6-mate-27"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Para qué sirve un \"gráfico de barra doble\"?",
+   "opciones": [
+    "Para comparar dos grupos en una misma categoría",
+    "Para mostrar cómo se reparte un total en partes",
+    "Para seguir el cambio de un dato a lo largo del tiempo",
+    "Para ordenar los datos de menor a mayor valor"
+   ],
+   "correcta": 0,
+   "tip": "Cada categoría lleva dos barras, una por grupo.",
+   "id": "voc6-mate-28"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué representa un \"gráfico circular\"?",
+   "opciones": [
+    "Cómo se reparte un total entre varias partes",
+    "Cómo cambia una cantidad durante varios años",
+    "Cómo se comparan dos grupos en cada categoría",
+    "Cómo se distribuyen los datos según su tallo"
+   ],
+   "correcta": 0,
+   "tip": "El círculo completo equivale al 100 por ciento.",
+   "id": "voc6-mate-29"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"experimento aleatorio\"?",
+   "opciones": [
+    "Uno cuyo resultado no se puede saber de antemano",
+    "Uno cuyo resultado se repite siempre de igual forma",
+    "Uno que se realiza una sola vez y no más",
+    "Uno que mide una cantidad con instrumentos"
+   ],
+   "correcta": 0,
+   "tip": "Lanzar un dado lo es; al repetirlo aparece una tendencia.",
+   "id": "voc6-mate-30"
+  }
+ ]
+}

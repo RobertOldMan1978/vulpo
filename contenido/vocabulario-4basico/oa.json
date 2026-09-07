@@ -1,0 +1,36 @@
+{
+ "asignatura": "Vocabulario",
+ "nivel": "4° básico · Todo el curso",
+ "codigo_asignatura": "VOC",
+ "nota_alcance": "DOS areas y no tres, igual que 3°. Lenguaje queda fuera porque su propio curriculum YA ensena vocabulario: el LE04 OA 10 es 'aplicar estrategias para determinar el significado de palabras nuevas', con sus 30 preguntas, asi que un area VOC-LENG mediria dos veces lo mismo. Y Matematica de 4° todavia no tiene un vocabulario tecnico que sostenga un banco propio a los 9-10 anos; entra recien en 5°. Lo que no se pisa con nada, y es el angulo del modulo, son las PALABRAS NUEVAS que traen Ciencias e Historia. Eso es distinto de la ESTRATEGIA para deducirlas, que es lo que ensena Lenguaje.",
+ "nota_codigos": "Los codigos son VOC-* igual que en los otros cursos, a proposito. Los bancos viven en archivos separados, asi que no hay colision; lo que distingue a este nivel son los ids de las preguntas (voc4-*). El guard de registrarOA excluye del mapa de dominio todo lo que no tenga forma de codigo curricular, asi que estos quedan fuera por estructura y no por una lista escrita a mano.",
+ "nota_evaluacion": "Vocabulario NO es una asignatura del curriculum ni sus areas son Objetivos de Aprendizaje del MINEDUC: es un apoyo transversal del juego. Por eso no aparece en el mapa de dominio del profesor y no debe presentarse a un colegio como cobertura curricular.",
+ "nota_fidelidad": "Las 60 palabras se eligieron leyendo los OA oficiales de las asignaturas de 4° básico, no de una lista externa. Cada una aparece de verdad en el temario del año.",
+ "unidades": [
+  {
+   "id": "V1",
+   "titulo": "Vocabulario del curso",
+   "descripcion": "Palabras clave de las asignaturas de 4° básico, definidas en lenguaje de niño.",
+   "oa": [
+    "VOC-CIEN",
+    "VOC-HIST"
+   ]
+  }
+ ],
+ "oa": [
+  {
+   "codigo": "VOC-CIEN",
+   "unidad": "V1",
+   "titulo": "Palabras de Ciencias Naturales",
+   "texto": "Vocabulario de los tres ejes de Ciencias Naturales de 4° basico: Ciencias de la vida, Ciencias fisicas y quimicas, y Ciencias de la Tierra y el Universo."
+  },
+  {
+   "codigo": "VOC-HIST",
+   "unidad": "V1",
+   "titulo": "Palabras de Historia y Geografía",
+   "texto": "Vocabulario de los tres ejes de Historia, Geografia y Cs. Sociales de 4° basico: Historia, Geografia y Formacion ciudadana."
+  }
+ ],
+ "fuente": "Objetivos de Aprendizaje de 4° básico (MINEDUC)",
+ "url_fuente": "https://www.curriculumnacional.cl/"
+}

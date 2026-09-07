@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es el \"valor posicional\" de un dígito?",
+   "opciones": [
+    "El valor que tiene según el lugar que ocupa en el número",
+    "El valor que tiene el dígito solo, sin mirar el número",
+    "La cantidad de dígitos que tiene el número completo",
+    "El lugar que ocupa ese número dentro de una lista"
+   ],
+   "correcta": 0,
+   "tip": "El 4 de 400 vale cuatrocientos y el 4 de 40 vale cuarenta.",
+   "id": "voc5-mate-1"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es la \"forma expandida\" de un número?",
+   "opciones": [
+    "Escribirlo como la suma del valor de cada uno de sus dígitos",
+    "Escribirlo con palabras en lugar de escribirlo con cifras",
+    "Escribirlo separando sus dígitos de a tres con un puntito",
+    "Escribirlo aproximado a la centena que le queda más cerca"
+   ],
+   "correcta": 0,
+   "tip": "300 + 40 + 5 es la forma expandida del número 345.",
+   "id": "voc5-mate-2"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En una multiplicación, ¿qué es el \"producto\"?",
+   "opciones": [
+    "El resultado que se obtiene al multiplicar los números",
+    "Cada uno de los números que se están multiplicando entre sí",
+    "El número por el que se repite una cantidad dada",
+    "Lo que sobra cuando la operación no queda exacta"
+   ],
+   "correcta": 0,
+   "tip": "Los que se multiplican son los factores; lo que sale es el producto.",
+   "id": "voc5-mate-3"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En una división, ¿qué indica el \"cociente\"?",
+   "opciones": [
+    "Las veces que el divisor cabe dentro del dividendo",
+    "La cantidad que se reparte entre las partes iguales",
+    "El número de partes en que se hace todo el reparto",
+    "El sobrante que queda al terminar de repartir todo"
+   ],
+   "correcta": 0,
+   "tip": "En 20 : 4 = 5 el cociente es 5, porque el 4 cabe cinco veces en 20.",
+   "id": "voc5-mate-4"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "Al dividir, ¿qué es el \"resto\"?",
+   "opciones": [
+    "La cantidad que sobra y ya no alcanza para otro reparto",
+    "La cantidad que se está repartiendo desde el comienzo",
+    "El resultado final que entrega la división completa",
+    "El número de grupos iguales que se forman al repartir"
+   ],
+   "correcta": 0,
+   "tip": "En 17 : 5 el cociente es 3 y el resto es 2: sobran dos unidades.",
+   "id": "voc5-mate-5"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es una \"fracción propia\"?",
+   "opciones": [
+    "Una fracción cuyo numerador es menor que su denominador",
+    "Una fracción cuyo numerador es mayor que su denominador",
+    "Una fracción que también se puede escribir como entero",
+    "Una fracción cuyo denominador es siempre un número par"
+   ],
+   "correcta": 0,
+   "tip": "Vale menos que un entero: 3/4 es propia y 5/4 no lo es.",
+   "id": "voc5-mate-6"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Cómo se reconoce una \"fracción impropia\"?",
+   "opciones": [
+    "Su numerador es mayor o igual que su denominador",
+    "Su numerador es siempre menor que su denominador",
+    "Su denominador es un número mayor que diez",
+    "Su numerador y su denominador son números pares"
+   ],
+   "correcta": 0,
+   "tip": "7/4 es impropia, y equivale al número mixto 1 3/4.",
+   "id": "voc5-mate-7"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"número mixto\"?",
+   "opciones": [
+    "Un número formado por un entero y una fracción propia",
+    "Un número formado por dos fracciones que se suman entre sí",
+    "Un número que se escribe con coma y una parte decimal",
+    "Un número que junta una fracción con un signo negativo"
+   ],
+   "correcta": 0,
+   "tip": "2 1/2 es un número mixto: dos enteros y un medio.",
+   "id": "voc5-mate-8"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué se hace al \"simplificar\" una fracción?",
+   "opciones": [
+    "Dividir el numerador y el denominador por un mismo número",
+    "Restar un mismo número al numerador y al denominador",
+    "Dividir el numerador por el denominador para dar un decimal",
+    "Cambiar de lugar el numerador con el denominador"
+   ],
+   "correcta": 0,
+   "tip": "Al simplificar cambia la escritura de la fracción, pero no su valor.",
+   "id": "voc5-mate-9"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué son dos \"fracciones equivalentes\"?",
+   "opciones": [
+    "Dos fracciones escritas distinto que valen exactamente lo mismo",
+    "Dos fracciones que tienen exactamente el mismo denominador",
+    "Dos fracciones cuya suma da como resultado un entero justo",
+    "Dos fracciones que quedan una al lado de la otra en la recta"
+   ],
+   "correcta": 0,
+   "tip": "1/2 y 3/6 son equivalentes: ocupan el mismo punto de la recta.",
+   "id": "voc5-mate-10"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es una \"milésima\"?",
+   "opciones": [
+    "Cada una de las mil partes iguales en que se divide una unidad",
+    "Cada una de las cien partes iguales en que se divide una unidad",
+    "Un número formado por mil unidades completas",
+    "El lugar que ocupa el tercer dígito antes de la coma"
+   ],
+   "correcta": 0,
+   "tip": "0,007 se lee siete milésimas: es el tercer lugar después de la coma.",
+   "id": "voc5-mate-11"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En matemática, ¿qué es una \"sucesión\"?",
+   "opciones": [
+    "Una serie de números ordenados que siguen una regla",
+    "Un conjunto de números escritos sin ningún orden",
+    "Una operación que se repite con los mismos números",
+    "Un grupo de números que se suman todos entre sí"
+   ],
+   "correcta": 0,
+   "tip": "2, 4, 6, 8 es una sucesión, y su regla es sumar dos cada vez.",
+   "id": "voc5-mate-12"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es una \"ecuación\"?",
+   "opciones": [
+    "Una igualdad en la que hay un valor desconocido por encontrar",
+    "Una comparación que indica cuál de dos cantidades es mayor",
+    "Una operación que combina sumas y multiplicaciones seguidas",
+    "Una regla que explica cómo continúa una serie de números"
+   ],
+   "correcta": 0,
+   "tip": "Lleva un signo igual, y hay que averiguar el número que falta.",
+   "id": "voc5-mate-13"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué indica una \"inecuación\"?",
+   "opciones": [
+    "Que un lado vale más o menos que el otro, sin ser iguales",
+    "Que los dos lados de la igualdad valen exactamente lo mismo",
+    "Que hay que restar dos cantidades para saber la diferencia",
+    "Que una serie de números va creciendo según cierta regla"
+   ],
+   "correcta": 0,
+   "tip": "En vez del signo igual lleva el de mayor que o el de menor que.",
+   "id": "voc5-mate-14"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es el \"plano cartesiano\"?",
+   "opciones": [
+    "Dos rectas numéricas cruzadas que sirven para ubicar puntos",
+    "Una cuadrícula donde se dibujan figuras del mismo tamaño",
+    "Un mapa dividido en zonas marcadas con letras y números",
+    "Una recta numérica donde se marcan los números enteros"
+   ],
+   "correcta": 0,
+   "tip": "Una recta va horizontal y la otra vertical; se cruzan en el origen.",
+   "id": "voc5-mate-15"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué indican las \"coordenadas\" de un punto?",
+   "opciones": [
+    "Su posición exacta, con un número para cada eje",
+    "La distancia entre ese punto y el borde del plano",
+    "El tamaño de la figura que se dibuja desde el punto",
+    "El orden en que ese punto se marcó en el plano"
+   ],
+   "correcta": 0,
+   "tip": "El eje horizontal se lee antes que el vertical: (3, 5) no es (5, 3).",
+   "id": "voc5-mate-16"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En un cuerpo geométrico, ¿qué es una \"arista\"?",
+   "opciones": [
+    "La línea donde se juntan dos caras del cuerpo",
+    "El punto donde se juntan tres o más caras",
+    "Cada una de las superficies planas del cuerpo",
+    "La medida del contorno de una de sus caras"
+   ],
+   "correcta": 0,
+   "tip": "Un cubo tiene doce aristas, seis caras y ocho vértices.",
+   "id": "voc5-mate-17"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué son dos rectas \"perpendiculares\"?",
+   "opciones": [
+    "Dos rectas que se cruzan formando cuatro ángulos rectos",
+    "Dos rectas que nunca se cruzan por más que se prolonguen",
+    "Dos rectas que se cruzan formando ángulos muy distintos",
+    "Dos rectas que tienen exactamente la misma longitud"
+   ],
+   "correcta": 0,
+   "tip": "Se cruzan en escuadra, como los dos bordes de una hoja de cuaderno.",
+   "id": "voc5-mate-18"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué son dos figuras \"congruentes\"?",
+   "opciones": [
+    "Dos figuras con la misma forma y el mismo tamaño",
+    "Dos figuras con la misma forma y distinto tamaño",
+    "Dos figuras que están giradas hacia el mismo lado",
+    "Dos figuras que juntas forman un cuadrado completo"
+   ],
+   "correcta": 0,
+   "tip": "Si una calza justo encima de la otra al moverla, son congruentes.",
+   "id": "voc5-mate-19"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es una \"traslación\" de una figura?",
+   "opciones": [
+    "Moverla en línea recta sin girarla ni cambiarle el tamaño",
+    "Girarla alrededor de un punto sin cambiarle el tamaño",
+    "Reflejarla como si estuviera puesta frente a un espejo",
+    "Agrandarla conservando siempre su forma original"
+   ],
+   "correcta": 0,
+   "tip": "La figura trasladada queda congruente con la figura original.",
+   "id": "voc5-mate-20"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es el \"perímetro\" de una figura?",
+   "opciones": [
+    "La medida de todo el contorno que rodea a la figura",
+    "La medida de la superficie que queda dentro de ella",
+    "La medida del lado más largo que tiene la figura",
+    "La cantidad de lados que tiene esa figura en total"
+   ],
+   "correcta": 0,
+   "tip": "Se recorre el borde y se suman las medidas de todos los lados.",
+   "id": "voc5-mate-21"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "Al calcular el \"área\", ¿qué se está midiendo?",
+   "opciones": [
+    "La superficie que la figura cubre por dentro",
+    "El contorno que rodea a la figura por fuera",
+    "La distancia entre sus dos vértices más lejanos",
+    "La cantidad de lados que forman su contorno"
+   ],
+   "correcta": 0,
+   "tip": "El área se mide en unidades cuadradas, como centímetros cuadrados.",
+   "id": "voc5-mate-22"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"milímetro\"?",
+   "opciones": [
+    "Una unidad de longitud que vale la décima parte de un centímetro",
+    "Una unidad de longitud que vale exactamente cien centímetros",
+    "Una unidad de longitud que equivale a la mitad de un centímetro",
+    "Una unidad de superficie que sirve para medir terrenos"
+   ],
+   "correcta": 0,
+   "tip": "En un centímetro caben diez milímetros, y en un metro caben mil.",
+   "id": "voc5-mate-23"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En un triángulo, ¿qué es la \"base\"?",
+   "opciones": [
+    "El lado que se elige como referencia para calcular el área",
+    "El lado más largo que tiene ese triángulo siempre",
+    "El lado que queda apoyado sobre el suelo al dibujarlo",
+    "La línea que une un vértice con el punto medio del frente"
+   ],
+   "correcta": 0,
+   "tip": "Cualquiera de los tres lados puede ser la base: uno la elige.",
+   "id": "voc5-mate-24"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Cómo se traza la \"altura\" de un triángulo?",
+   "opciones": [
+    "Perpendicular a la base, hasta el vértice de enfrente",
+    "Uniendo los dos vértices que quedan más separados",
+    "Siguiendo el lado más largo, de un vértice al otro",
+    "Uniendo los puntos medios de dos lados cualquiera"
+   ],
+   "correcta": 0,
+   "tip": "Se traza en escuadra respecto de la base, y no es un lado cualquiera.",
+   "id": "voc5-mate-25"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es el \"promedio\" de un grupo de datos?",
+   "opciones": [
+    "El resultado de sumarlos todos y dividir por su cantidad",
+    "El dato que aparece más veces repetido dentro del grupo",
+    "El dato que queda justo al centro cuando se ordenan",
+    "La diferencia que hay entre el dato mayor y el menor"
+   ],
+   "correcta": 0,
+   "tip": "El promedio reparte el total en partes iguales entre todos los datos.",
+   "id": "voc5-mate-26"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"experimento aleatorio\"?",
+   "opciones": [
+    "Uno cuyo resultado no se puede saber antes de hacerlo",
+    "Uno cuyo resultado es siempre el mismo cada vez que se repite",
+    "Uno que se repite muchas veces para comprobar una fórmula",
+    "Uno en que se mide algo con instrumentos muy precisos"
+   ],
+   "correcta": 0,
+   "tip": "Lanzar un dado es aleatorio: puede salir cualquiera de sus caras.",
+   "id": "voc5-mate-27"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"evento imposible\"?",
+   "opciones": [
+    "Uno que no puede ocurrir de ninguna manera en ese experimento",
+    "Uno que ocurre pocas veces, aunque de repente sí podría pasar",
+    "Uno que ocurre siempre, cada vez que se realiza la prueba",
+    "Uno que ocurre solo si la prueba se repite muchísimas veces"
+   ],
+   "correcta": 0,
+   "tip": "Sacar un 7 con un dado de seis caras es imposible: esa cara no existe.",
+   "id": "voc5-mate-28"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Para qué sirve un \"gráfico de línea\"?",
+   "opciones": [
+    "Para mostrar cómo cambia un dato a lo largo del tiempo",
+    "Para comparar el tamaño de varios grupos distintos",
+    "Para mostrar qué parte del total representa cada grupo",
+    "Para ordenar los datos de menor a mayor en una tabla"
+   ],
+   "correcta": 0,
+   "tip": "Une los puntos con una línea, y así se ve si el dato sube o baja.",
+   "id": "voc5-mate-29"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"diagrama de tallo y hojas\"?",
+   "opciones": [
+    "Una forma de ordenar datos separando sus dígitos en dos partes",
+    "Un dibujo que representa a un grupo repitiendo una misma figura",
+    "Un gráfico que muestra cómo se reparte un total en porciones",
+    "Un esquema que muestra todas las combinaciones posibles"
+   ],
+   "correcta": 0,
+   "tip": "El tallo lleva la decena y las hojas llevan las unidades de cada dato.",
+   "id": "voc5-mate-30"
+  }
+ ]
+}

@@ -1,0 +1,1264 @@
+{
+ "preguntas": [
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"fotosíntesis\"?",
+   "opciones": [
+    "El proceso en que la planta libera vapor de agua por sus hojas",
+    "El proceso en que la planta absorbe agua del suelo por la raíz",
+    "El proceso en que la planta se alimenta de minerales del suelo",
+    "El proceso en que la planta usa luz para fabricar su azúcar"
+   ],
+   "correcta": 3,
+   "tip": "Necesita luz, agua y dióxido de carbono, y libera oxígeno.",
+   "revisada": false,
+   "id": "voc6-cien-1"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Para qué sirve la \"clorofila\" en una planta?",
+   "opciones": [
+    "Para almacenar el azúcar que la planta fabrica durante el día",
+    "Para sostener el tallo y darle firmeza a la planta completa",
+    "Para captar la energía de la luz y que ocurra la fotosíntesis",
+    "Para transportar el agua desde la raíz hasta las hojas nuevas"
+   ],
+   "correcta": 2,
+   "tip": "Es el pigmento verde que atrapa la luz del Sol.",
+   "revisada": false,
+   "id": "voc6-cien-2"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En una cadena alimentaria, ¿qué es un \"productor\"?",
+   "opciones": [
+    "Un organismo que se alimenta de plantas y de animales pequeños",
+    "Un organismo que caza a otros animales para poder alimentarse",
+    "Un organismo que descompone los restos de otros seres vivos",
+    "Un organismo que fabrica su propio alimento usando luz solar"
+   ],
+   "correcta": 3,
+   "tip": "Las plantas y las algas están al inicio de la cadena.",
+   "revisada": false,
+   "id": "voc6-cien-3"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué caracteriza a un \"consumidor\" dentro de un ecosistema?",
+   "opciones": [
+    "Fabrica su alimento a partir del agua y la luz que recibe",
+    "Transforma los restos muertos en minerales para el suelo",
+    "Obtiene su energía comiendo a otros seres vivos del lugar",
+    "Produce el oxígeno que el resto de los seres vivos respira"
+   ],
+   "correcta": 2,
+   "tip": "No fabrica su alimento: lo obtiene de otro organismo.",
+   "revisada": false,
+   "id": "voc6-cien-4"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué papel cumple un \"descomponedor\"?",
+   "opciones": [
+    "Fabrica azúcar usando la energía que le entrega la luz solar",
+    "Se alimenta solo de plantas vivas y de sus frutos maduros",
+    "Caza a los animales más débiles de la red alimentaria",
+    "Transforma los restos de seres vivos en nutrientes del suelo"
+   ],
+   "correcta": 3,
+   "tip": "Hongos y bacterias devuelven la materia al suelo.",
+   "revisada": false,
+   "id": "voc6-cien-5"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué muestra una \"cadena alimentaria\"?",
+   "opciones": [
+    "Cómo se reparten los animales el territorio disponible",
+    "Cómo se reproducen las especies de un mismo ecosistema",
+    "Cómo cambia el clima de un lugar durante todo el año",
+    "Cómo pasa la energía de un ser vivo al que se lo come"
+   ],
+   "correcta": 3,
+   "tip": "Cada flecha indica hacia dónde va la energía.",
+   "revisada": false,
+   "id": "voc6-cien-6"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿En qué se diferencia una \"red alimentaria\" de una cadena?",
+   "opciones": [
+    "Incluye solo a los animales y deja fuera a las plantas",
+    "Ordena a los animales según su tamaño y no según su dieta",
+    "Conecta varias cadenas, porque una especie come de varias",
+    "Muestra un único camino de la energía dentro del lugar"
+   ],
+   "correcta": 2,
+   "tip": "Una red es un conjunto de cadenas entrelazadas.",
+   "revisada": false,
+   "id": "voc6-cien-7"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"ecosistema\"?",
+   "opciones": [
+    "El conjunto de animales de una misma especie en un lugar",
+    "El total de plantas que crecen en un terreno determinado",
+    "El conjunto de seres vivos de un lugar y su medio físico",
+    "El clima y el relieve que caracterizan a una zona amplia"
+   ],
+   "correcta": 2,
+   "tip": "Incluye lo vivo y lo no vivo: agua, suelo y aire.",
+   "revisada": false,
+   "id": "voc6-cien-8"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"solidificación\"?",
+   "opciones": [
+    "El cambio de un líquido a sólido cuando pierde calor",
+    "El paso de un gas a líquido cuando se enfría el aire",
+    "El cambio de un sólido a líquido cuando recibe calor",
+    "El paso de un sólido a gas sin pasar por líquido"
+   ],
+   "correcta": 0,
+   "tip": "Es lo que le pasa al agua cuando se convierte en hielo.",
+   "revisada": false,
+   "id": "voc6-cien-9"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"hormona\"?",
+   "opciones": [
+    "Una célula encargada de transportar el oxígeno por la sangre",
+    "Un órgano pequeño que se ubica en la base del cerebro humano",
+    "Una sustancia del cuerpo que regula procesos como el crecimiento",
+    "Una sustancia que el cuerpo elimina a través de la orina diaria"
+   ],
+   "correcta": 2,
+   "tip": "Viaja por la sangre y da órdenes a distintos órganos.",
+   "revisada": false,
+   "id": "voc6-cien-10"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"conducción\" del calor?",
+   "opciones": [
+    "El movimiento del aire caliente que sube y el frío que baja",
+    "El paso del calor de un cuerpo a otro a través del vacío",
+    "La pérdida de calor que ocurre al cambiar de estado",
+    "El paso del calor entre dos cuerpos que están en contacto"
+   ],
+   "correcta": 3,
+   "tip": "Por eso una cuchara de metal se calienta dentro de la sopa.",
+   "revisada": false,
+   "id": "voc6-cien-11"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En Ciencias, ¿qué es una \"droga\"?",
+   "opciones": [
+    "Un microorganismo capaz de provocar una enfermedad grave",
+    "Un nutriente que el cuerpo necesita en pequeñas cantidades",
+    "Una sustancia que el organismo fabrica para defenderse solo",
+    "Una sustancia que altera el funcionamiento del organismo"
+   ],
+   "correcta": 3,
+   "tip": "Muchas actúan sobre el sistema nervioso y generan dependencia.",
+   "revisada": false,
+   "id": "voc6-cien-12"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿A qué se llama \"energía\"?",
+   "opciones": [
+    "A la medida de lo caliente o lo frío que está un cuerpo",
+    "A la cantidad de materia que contiene un cuerpo cualquiera",
+    "A la capacidad de producir cambios o de realizar un trabajo",
+    "A la fuerza con que la Tierra atrae a todos los objetos"
+   ],
+   "correcta": 2,
+   "tip": "Sin ella nada se mueve, se calienta ni funciona.",
+   "revisada": false,
+   "id": "voc6-cien-13"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"energía lumínica\"?",
+   "opciones": [
+    "La energía que se transmite entre dos cuerpos por el calor",
+    "La energía que tiene un cuerpo por el hecho de moverse",
+    "La energía que se acumula en los alimentos que comemos",
+    "La energía que transporta la luz, como la que llega del Sol"
+   ],
+   "correcta": 3,
+   "tip": "Las plantas la aprovechan para hacer fotosíntesis.",
+   "revisada": false,
+   "id": "voc6-cien-14"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué caracteriza a un recurso energético \"renovable\"?",
+   "opciones": [
+    "Se repone en poco tiempo, como el viento o la luz solar",
+    "Se agota apenas se usa y no vuelve a estar disponible",
+    "Se puede almacenar en grandes estanques bajo el suelo",
+    "Se formó bajo tierra durante millones de años de presión"
+   ],
+   "correcta": 0,
+   "tip": "La naturaleza lo repone a un ritmo que alcanza.",
+   "revisada": false,
+   "id": "voc6-cien-15"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"combustible fósil\"?",
+   "opciones": [
+    "Un recurso mineral que se extrae del fondo del mar sin tratar",
+    "Un recurso formado por restos de organismos de hace millones de años",
+    "Un recurso que se renueva cada temporada gracias a las lluvias",
+    "Un recurso que las plantas producen mientras hacen la fotosíntesis"
+   ],
+   "correcta": 1,
+   "tip": "El carbón, el petróleo y el gas natural son fósiles.",
+   "revisada": false,
+   "id": "voc6-cien-16"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En Ciencias, ¿qué es el \"calor\"?",
+   "opciones": [
+    "La medida que indica qué tan caliente está un cuerpo",
+    "La cantidad de partículas que contiene un mismo cuerpo",
+    "El estado en que la materia deja de tener partículas",
+    "La energía que pasa de un cuerpo caliente a uno más frío"
+   ],
+   "correcta": 3,
+   "tip": "Es energía en tránsito; la temperatura es otra cosa.",
+   "revisada": false,
+   "id": "voc6-cien-17"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué mide la \"temperatura\" de un cuerpo?",
+   "opciones": [
+    "Cuánta energía en total entregó a los cuerpos vecinos",
+    "Cuántos grados perdió al ponerse en contacto con otro",
+    "Qué tan caliente o frío está, según sus partículas",
+    "Cuánta materia contiene ese cuerpo en su interior"
+   ],
+   "correcta": 2,
+   "tip": "Se mide con termómetro y se expresa en grados.",
+   "revisada": false,
+   "id": "voc6-cien-18"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"equilibrio térmico\"?",
+   "opciones": [
+    "El punto en que el agua pasa de líquida a sólida",
+    "El estado en que un cuerpo deja de conducir el calor",
+    "El momento en que un cuerpo alcanza su punto de ebullición",
+    "El momento en que dos cuerpos quedan a la misma temperatura"
+   ],
+   "correcta": 3,
+   "tip": "El calor deja de fluir cuando ya no hay diferencia.",
+   "revisada": false,
+   "id": "voc6-cien-19"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En el modelo de la materia, ¿qué es una \"partícula\"?",
+   "opciones": [
+    "Cada pedazo diminuto en movimiento que forma la materia",
+    "Cada gota de agua que se forma al enfriarse el vapor",
+    "Cada trozo visible en que se puede cortar un objeto",
+    "Cada célula que compone el cuerpo de un ser vivo"
+   ],
+   "correcta": 0,
+   "tip": "En un gas se mueven mucho más que en un sólido.",
+   "revisada": false,
+   "id": "voc6-cien-20"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué cambio de estado es la \"fusión\"?",
+   "opciones": [
+    "El paso de sólido a líquido cuando sube la temperatura",
+    "El paso de líquido a gas desde toda la masa del líquido",
+    "El paso de gas a líquido al enfriarse contra una superficie",
+    "El paso de líquido a sólido cuando baja la temperatura"
+   ],
+   "correcta": 0,
+   "tip": "El hielo que se derrite es el ejemplo típico.",
+   "revisada": false,
+   "id": "voc6-cien-21"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿En qué consiste la \"evaporación\"?",
+   "opciones": [
+    "El paso lento de líquido a gas desde la superficie libre",
+    "El paso de líquido a sólido al bajar mucho la temperatura",
+    "El paso directo de sólido a gas sin pasar por líquido",
+    "El paso rápido de gas a líquido dentro del recipiente"
+   ],
+   "correcta": 0,
+   "tip": "Ocurre sin hervir, como la ropa que se seca al sol.",
+   "revisada": false,
+   "id": "voc6-cien-22"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué ocurre en la \"condensación\"?",
+   "opciones": [
+    "Un líquido se calienta y se transforma en gas",
+    "Un líquido se enfría y se transforma en sólido duro",
+    "Un sólido se calienta hasta transformarse en líquido",
+    "Un gas se enfría y se transforma en líquido otra vez"
+   ],
+   "correcta": 3,
+   "tip": "Es lo que empaña un vidrio frío en invierno.",
+   "revisada": false,
+   "id": "voc6-cien-23"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"sublimación\"?",
+   "opciones": [
+    "El paso de líquido a gas al alcanzar el punto de hervor",
+    "El paso de sólido a líquido al recibir mucho calor",
+    "El paso directo de sólido a gas, sin ser líquido antes",
+    "El paso directo de gas a sólido al bajar la presión"
+   ],
+   "correcta": 2,
+   "tip": "Le pasa al hielo seco, que no deja charco.",
+   "revisada": false,
+   "id": "voc6-cien-24"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"atmósfera\" de la Tierra?",
+   "opciones": [
+    "El conjunto de toda el agua que existe en el planeta",
+    "La capa de gases que rodea al planeta y permite la vida",
+    "La capa de rocas sólidas que forma la corteza terrestre",
+    "La capa de suelo fértil donde crecen las plantas"
+   ],
+   "correcta": 1,
+   "tip": "Contiene el oxígeno que respiramos y filtra la radiación.",
+   "revisada": false,
+   "id": "voc6-cien-25"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué comprende la \"litósfera\"?",
+   "opciones": [
+    "La mezcla de gases que envuelve a nuestro planeta",
+    "El conjunto de todos los seres vivos del planeta",
+    "La capa rocosa y sólida más externa de la Tierra",
+    "El agua de los océanos, los ríos y los glaciares"
+   ],
+   "correcta": 2,
+   "tip": "La raíz 'lito' significa piedra.",
+   "revisada": false,
+   "id": "voc6-cien-26"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué incluye la \"hidrósfera\"?",
+   "opciones": [
+    "Todos los organismos que habitan mares y continentes",
+    "Todas las rocas y minerales de la corteza terrestre",
+    "Todos los gases que envuelven a la Tierra por completo",
+    "Toda el agua del planeta, en cualquiera de sus estados"
+   ],
+   "correcta": 3,
+   "tip": "La raíz 'hidro' significa agua: mares, ríos, hielos y vapor.",
+   "revisada": false,
+   "id": "voc6-cien-27"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En Ciencias Naturales, ¿qué es el \"suelo\"?",
+   "opciones": [
+    "La capa profunda de roca fundida del interior del planeta",
+    "La superficie cubierta de agua que rodea a los continentes",
+    "La capa superficial de la Tierra donde crecen las plantas",
+    "La capa de aire que se apoya sobre los continentes"
+   ],
+   "correcta": 2,
+   "tip": "Se forma muy lento, por desgaste de la roca y restos vivos.",
+   "revisada": false,
+   "id": "voc6-cien-28"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"humus\" del suelo?",
+   "opciones": [
+    "La capa de roca dura que se encuentra bajo la tierra",
+    "La parte mineral formada por arena y pequeñas piedras",
+    "La materia orgánica que dejan los restos de seres vivos",
+    "El agua que queda retenida entre las partículas del suelo"
+   ],
+   "correcta": 2,
+   "tip": "Le da color oscuro y nutrientes al suelo.",
+   "revisada": false,
+   "id": "voc6-cien-29"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"erosión\" del terreno?",
+   "opciones": [
+    "El desgaste y traslado del suelo por el agua o el viento",
+    "La acumulación de agua de lluvia en el interior del suelo",
+    "El proceso por el cual una roca se convierte en mineral",
+    "El movimiento brusco del terreno durante un temblor fuerte"
+   ],
+   "correcta": 0,
+   "tip": "Las actividades humanas también la aceleran.",
+   "revisada": false,
+   "id": "voc6-cien-30"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué fue la \"independencia\" de Chile?",
+   "opciones": [
+    "La guerra en que Chile amplió su territorio hacia el norte",
+    "El proceso por el cual el país dejó de depender de España",
+    "El período en que el país quedó dividido en varias naciones",
+    "El acuerdo por el cual España aceptó gobernar con criollos"
+   ],
+   "correcta": 1,
+   "tip": "Fue parte de un proceso continental, no solo chileno.",
+   "revisada": false,
+   "id": "voc6-hist-1"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué era un \"cabildo abierto\"?",
+   "opciones": [
+    "Una reunión ampliada de vecinos para decidir asuntos graves",
+    "Un mercado donde los vecinos intercambiaban sus productos",
+    "Un tribunal que juzgaba a los funcionarios del rey en América",
+    "Una asamblea de militares que elegía a su propio comandante"
+   ],
+   "correcta": 0,
+   "tip": "El del 18 de septiembre de 1810 formó la Primera Junta.",
+   "revisada": false,
+   "id": "voc6-hist-2"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué fue la \"Primera Junta Nacional de Gobierno\"?",
+   "opciones": [
+    "El grupo que asumió el gobierno de Chile en 1810",
+    "El primer Congreso elegido por votación popular en 1811",
+    "El tribunal que redactó la Constitución de 1833",
+    "El ejército que cruzó los Andes junto a San Martín"
+   ],
+   "correcta": 0,
+   "tip": "Se formó el 18 de septiembre de 1810, en nombre del rey.",
+   "revisada": false,
+   "id": "voc6-hist-3"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En la independencia, ¿quiénes eran los \"realistas\"?",
+   "opciones": [
+    "Los que exigían una separación inmediata y sin retorno",
+    "Los comerciantes que financiaban al ejército patriota",
+    "Los que defendían seguir bajo el gobierno del rey de España",
+    "Los que proponían un gobierno repartido entre las colonias"
+   ],
+   "correcta": 2,
+   "tip": "Se enfrentaron a los patriotas en Rancagua y Chacabuco.",
+   "revisada": false,
+   "id": "voc6-hist-4"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué defendían los \"liberales\" del siglo XIX en Chile?",
+   "opciones": [
+    "Mantener un gobierno fuerte y una autoridad centralizada",
+    "Devolver el territorio a la administración del rey",
+    "Ampliar las libertades y limitar el poder del Presidente",
+    "Reemplazar el Congreso por un consejo de militares"
+   ],
+   "correcta": 2,
+   "tip": "Se oponían a los conservadores en el Chile del siglo XIX.",
+   "revisada": false,
+   "id": "voc6-hist-5"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"república\"?",
+   "opciones": [
+    "Una forma de gobierno en que el poder se hereda de padre a hijo",
+    "Un territorio administrado por un país extranjero más grande",
+    "Una alianza entre varios países que comparten un mismo rey",
+    "Una forma de gobierno con autoridades elegidas por un tiempo"
+   ],
+   "correcta": 3,
+   "tip": "Organizar una fue el gran desafío de Chile después de 1818.",
+   "revisada": false,
+   "id": "voc6-hist-6"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué fue la \"colonización\" alemana del sur de Chile?",
+   "opciones": [
+    "La llegada de comerciantes que instalaron puertos en el norte",
+    "La llegada de familias europeas que poblaron el sur del país",
+    "El traslado de familias chilenas hacia la zona de la Patagonia",
+    "La expedición que incorporó Isla de Pascua al territorio"
+   ],
+   "correcta": 1,
+   "tip": "El Estado impulsó su llegada a mediados del siglo XIX.",
+   "revisada": false,
+   "id": "voc6-hist-7"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué fue la \"Ocupación de la Araucanía\"?",
+   "opciones": [
+    "La incorporación del territorio mapuche al Estado de Chile",
+    "La expulsión de los colonos europeos de la zona sur del país",
+    "La firma de un tratado que reconoció un país mapuche aparte",
+    "El traslado de la capital del país hacia el sur del Biobío"
+   ],
+   "correcta": 0,
+   "tip": "Ocurrió entre 1861 y 1883, con avance militar y fuertes.",
+   "revisada": false,
+   "id": "voc6-hist-8"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Entre qué países se libró la \"Guerra del Pacífico\"?",
+   "opciones": [
+    "Chile contra Argentina, por el límite de la cordillera",
+    "Chile contra Perú y Bolivia, entre los años 1879 y 1883",
+    "Perú contra Bolivia, por el control del desierto",
+    "Chile contra España, por el bombardeo de Valparaíso"
+   ],
+   "correcta": 1,
+   "tip": "Con ella Chile incorporó Tarapacá y Antofagasta.",
+   "revisada": false,
+   "id": "voc6-hist-9"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Por qué fue importante el \"salitre\" para Chile?",
+   "opciones": [
+    "Fue un combustible que movió los primeros ferrocarriles",
+    "Fue un metal que se usó para acuñar la moneda nacional",
+    "Fue un cultivo que alimentó a las ciudades del sur del país",
+    "Fue un mineral que se exportó y dio grandes ingresos al país"
+   ],
+   "correcta": 3,
+   "tip": "Se extraía en el norte y se usaba como fertilizante.",
+   "revisada": false,
+   "id": "voc6-hist-10"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿A qué se llamó la \"cuestión social\"?",
+   "opciones": [
+    "Al conflicto entre conservadores y liberales por la educación",
+    "A la discusión sobre quién debía gobernar tras la independencia",
+    "A los problemas de vivienda y trabajo de los obreros urbanos",
+    "Al debate por incorporar la Araucanía al territorio nacional"
+   ],
+   "correcta": 2,
+   "tip": "Surgió con el crecimiento de las ciudades salitreras.",
+   "revisada": false,
+   "id": "voc6-hist-11"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué significa la palabra \"sufragio\"?",
+   "opciones": [
+    "El deber de pagar impuestos al Estado cada año",
+    "El derecho a ser elegido para un cargo público",
+    "El derecho a votar en las elecciones de un país",
+    "El permiso para reunirse en la vía pública"
+   ],
+   "correcta": 2,
+   "tip": "En Chile las mujeres votaron en elecciones nacionales desde 1952.",
+   "revisada": false,
+   "id": "voc6-hist-12"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué fue el \"régimen o dictadura militar\" en Chile?",
+   "opciones": [
+    "El acuerdo que dividió el poder entre partidos hasta 1925",
+    "El período de gobiernos elegidos por votación entre 1932 y 1973",
+    "La etapa en que el Congreso gobernó sin un Presidente electo",
+    "El gobierno encabezado por las Fuerzas Armadas entre 1973 y 1990"
+   ],
+   "correcta": 3,
+   "tip": "La democracia se recuperó en 1990, tras el plebiscito de 1988.",
+   "revisada": false,
+   "id": "voc6-hist-13"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué significa que Chile sea un país \"tricontinental\"?",
+   "opciones": [
+    "Que participa en tratados con tres continentes vecinos",
+    "Que tiene territorio en América, Oceanía y la Antártica",
+    "Que su territorio se divide en tres zonas climáticas",
+    "Que limita con tres países distintos en su frontera este"
+   ],
+   "correcta": 1,
+   "tip": "Isla de Pascua es su territorio en Oceanía.",
+   "revisada": false,
+   "id": "voc6-hist-14"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En Chile, ¿qué es una \"región\"?",
+   "opciones": [
+    "Una agrupación de comunas que comparten un mismo alcalde",
+    "Una división político-administrativa del territorio nacional",
+    "Un territorio que elige su propia constitución y sus leyes",
+    "Una zona natural definida solo por su clima y su relieve"
+   ],
+   "correcta": 1,
+   "tip": "Cada una tiene un gobernador y una capital regional.",
+   "revisada": false,
+   "id": "voc6-hist-15"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En Geografía, ¿qué es el \"relieve\"?",
+   "opciones": [
+    "La cantidad de lluvia que cae durante un año",
+    "La forma que toma la superficie de un terreno",
+    "El tipo de vegetación que crece en un lugar",
+    "El conjunto de ríos y lagos que cruzan una zona"
+   ],
+   "correcta": 1,
+   "tip": "Cordilleras, valles y llanuras son formas del relieve.",
+   "revisada": false,
+   "id": "voc6-hist-16"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿De qué se ocupa la \"hidrografía\" de una región?",
+   "opciones": [
+    "De su población y de sus principales ciudades",
+    "De sus montañas, valles y demás relieves",
+    "De su clima y de las lluvias de cada año",
+    "De sus ríos, lagos y demás cuerpos de agua"
+   ],
+   "correcta": 3,
+   "tip": "La raíz 'hidro' significa agua.",
+   "revisada": false,
+   "id": "voc6-hist-17"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Cómo es el \"clima mediterráneo\" de Chile central?",
+   "opciones": [
+    "De lluvias abundantes durante todo el año completo",
+    "De temperaturas bajo cero durante casi todo el año",
+    "De veranos secos y calurosos e inviernos lluviosos",
+    "De sequía permanente y sin lluvias en ninguna estación"
+   ],
+   "correcta": 2,
+   "tip": "Es el clima de Santiago y de Valparaíso.",
+   "revisada": false,
+   "id": "voc6-hist-18"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es el \"altiplano\" del norte de Chile?",
+   "opciones": [
+    "Una zona de bosques húmedos al pie del volcán",
+    "Una meseta muy alta, fría y seca sobre la cordillera",
+    "Un valle profundo ubicado entre dos cadenas de montañas",
+    "Una llanura costera junto al océano Pacífico"
+   ],
+   "correcta": 1,
+   "tip": "Allí viven comunidades aimaras y pastan las llamas.",
+   "revisada": false,
+   "id": "voc6-hist-19"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué indica la \"densidad de población\" de una zona?",
+   "opciones": [
+    "Cuántas personas nacieron en esa zona durante el año",
+    "Cuántos habitantes viven en total en esa zona del país",
+    "Cuántas comunas componen esa zona del territorio",
+    "Cuántos habitantes hay por cada kilómetro cuadrado"
+   ],
+   "correcta": 3,
+   "tip": "No es el total: reparte la población por superficie.",
+   "revisada": false,
+   "id": "voc6-hist-20"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"desastre natural\"?",
+   "opciones": [
+    "Un cambio lento del clima que se nota tras muchos años",
+    "Un fenómeno de la naturaleza que ocurre sin dejar consecuencias",
+    "Una obra humana que altera el paisaje de una zona amplia",
+    "Un fenómeno natural que causa graves daños a la población"
+   ],
+   "correcta": 3,
+   "tip": "Sismos, erupciones, sequías e inundaciones son ejemplos.",
+   "revisada": false,
+   "id": "voc6-hist-21"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"sismo\"?",
+   "opciones": [
+    "Una salida de lava y gases desde el interior de un volcán",
+    "Un deslizamiento de tierra por las lluvias intensas",
+    "Un desborde de agua que cubre los terrenos más bajos",
+    "Un movimiento brusco del suelo por energía liberada abajo"
+   ],
+   "correcta": 3,
+   "tip": "Chile es uno de los países más sísmicos del mundo.",
+   "revisada": false,
+   "id": "voc6-hist-22"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es la \"democracia\"?",
+   "opciones": [
+    "Un sistema en que el pueblo elige a quienes lo gobiernan",
+    "Un sistema en que las leyes las dicta un tribunal",
+    "Un sistema en que gobierna un solo partido político",
+    "Un sistema en que el cargo de gobernante se hereda en la familia"
+   ],
+   "correcta": 0,
+   "tip": "Incluye votar, pero también respetar derechos y leyes.",
+   "revisada": false,
+   "id": "voc6-hist-23"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es la \"división de poderes\" del Estado?",
+   "opciones": [
+    "El reparto del poder entre Ejecutivo, Legislativo y Judicial",
+    "La entrega del poder total a la autoridad más votada",
+    "El turno anual entre los partidos para dictar las leyes",
+    "El reparto del territorio nacional entre todas las regiones"
+   ],
+   "correcta": 0,
+   "tip": "Ninguno de los tres puede hacer el trabajo del otro.",
+   "revisada": false,
+   "id": "voc6-hist-24"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿De qué se encarga el \"Poder Legislativo\"?",
+   "opciones": [
+    "De cambiar la Constitución cuando lo estime",
+    "De discutir y aprobar las leyes que rigen el país",
+    "De juzgar a quienes no cumplen con las leyes",
+    "De administrar el país y hacer cumplir las leyes"
+   ],
+   "correcta": 1,
+   "tip": "Lo forman la Cámara de Diputados y el Senado.",
+   "revisada": false,
+   "id": "voc6-hist-25"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿De qué se encarga un \"alcalde\" en Chile?",
+   "opciones": [
+    "De dirigir la municipalidad de una comuna",
+    "De dirigir el gobierno de todo el país",
+    "De representar a una región en el Congreso",
+    "De juzgar los delitos cometidos en la comuna"
+   ],
+   "correcta": 0,
+   "tip": "Se elige por votación junto con los concejales.",
+   "revisada": false,
+   "id": "voc6-hist-26"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué hace un \"senador\" en Chile?",
+   "opciones": [
+    "Representa a su región y participa en el Congreso",
+    "Administra los servicios públicos de su comuna",
+    "Dicta sentencias en los tribunales de su región",
+    "Encabeza el gobierno regional que le corresponde"
+   ],
+   "correcta": 0,
+   "tip": "Junto a los diputados forma el Poder Legislativo.",
+   "revisada": false,
+   "id": "voc6-hist-27"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué establece la \"Constitución\" de un país?",
+   "opciones": [
+    "El presupuesto que el Estado gasta durante todo el año",
+    "Los precios que pueden cobrar los servicios básicos",
+    "Las materias que se enseñan en escuelas y liceos",
+    "La organización política y los derechos de las personas"
+   ],
+   "correcta": 3,
+   "tip": "Es la norma más importante: las demás leyes se ajustan a ella.",
+   "revisada": false,
+   "id": "voc6-hist-28"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué son los \"derechos humanos\"?",
+   "opciones": [
+    "Los derechos que entrega cada municipio a sus vecinos",
+    "Los derechos que se ganan por trabajar durante muchos años",
+    "Los derechos que se obtienen al cumplir la mayoría de edad",
+    "Los derechos que tiene toda persona por el hecho de existir"
+   ],
+   "correcta": 3,
+   "tip": "La Declaración Universal de 1948 los reunió por escrito.",
+   "revisada": false,
+   "id": "voc6-hist-29"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En Formación Ciudadana, ¿qué es un \"deber\"?",
+   "opciones": [
+    "Una norma que solo obliga a los funcionarios públicos",
+    "Una responsabilidad que se debe cumplir con los demás",
+    "Un permiso que otorga la autoridad para una actividad",
+    "Un beneficio que el Estado entrega a cada habitante"
+   ],
+   "correcta": 1,
+   "tip": "Cada derecho trae un deber: el respeto es mutuo.",
+   "revisada": false,
+   "id": "voc6-hist-30"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"múltiplo\" de un número?",
+   "opciones": [
+    "El número por el cual se divide otro sin dejar resto",
+    "El número que queda al restar dos cantidades iguales",
+    "La cantidad de cifras que tiene ese número escrito",
+    "El resultado de multiplicar ese número por un natural"
+   ],
+   "correcta": 3,
+   "tip": "Los múltiplos de 4 son 4, 8, 12, 16 y así sucesivamente.",
+   "revisada": false,
+   "id": "voc6-mate-1"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En Matemática, ¿qué es un \"factor\" de un número?",
+   "opciones": [
+    "Un número que se le resta hasta llegar a cero",
+    "Un número mayor que él y que lo contiene entero",
+    "Un número que lo divide de manera exacta, sin resto",
+    "Un número que se obtiene al sumarlo consigo mismo"
+   ],
+   "correcta": 2,
+   "tip": "Los factores de 12 son 1, 2, 3, 4, 6 y 12.",
+   "revisada": false,
+   "id": "voc6-mate-2"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué caracteriza a un \"número primo\"?",
+   "opciones": [
+    "Tiene más de dos divisores naturales distintos",
+    "Se puede escribir como la suma de dos iguales",
+    "Tiene exactamente dos divisores: el 1 y él mismo",
+    "Termina siempre en una cifra impar cualquiera"
+   ],
+   "correcta": 2,
+   "tip": "El 7 lo es; el 9 no, porque además lo divide el 3.",
+   "revisada": false,
+   "id": "voc6-mate-3"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"número compuesto\"?",
+   "opciones": [
+    "Un número que tiene más de dos divisores naturales",
+    "Un número que solo se divide por 1 y por sí mismo",
+    "Un número que resulta de sumar dos números primos",
+    "Un número formado por dos cifras o más en total"
+   ],
+   "correcta": 0,
+   "tip": "El 12 lo es: se puede armar multiplicando otros.",
+   "revisada": false,
+   "id": "voc6-mate-4"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En Matemática, ¿qué es una \"razón\"?",
+   "opciones": [
+    "Una diferencia entre el total y una de sus partes",
+    "Una comparación entre dos cantidades por cociente",
+    "Una cantidad repartida en partes desiguales",
+    "Una suma entre dos cantidades del mismo tipo"
+   ],
+   "correcta": 1,
+   "tip": "'3 es a 2' compara cuántas veces cabe una en la otra.",
+   "revisada": false,
+   "id": "voc6-mate-5"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué expresa un \"porcentaje\"?",
+   "opciones": [
+    "El total que resulta de juntar todas las partes",
+    "Una parte tomada de un total de mil unidades",
+    "Una parte tomada de un total de cien unidades",
+    "La cantidad de veces que se repite un valor"
+   ],
+   "correcta": 2,
+   "tip": "'Por ciento' significa literalmente 'de cada cien'.",
+   "revisada": false,
+   "id": "voc6-mate-6"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es una \"fracción impropia\"?",
+   "opciones": [
+    "Aquella cuyo numerador es menor que su propio denominador",
+    "Aquella cuyo denominador es un número primo cualquiera",
+    "Aquella cuyo numerador es mayor o igual que el denominador",
+    "Aquella que no se puede simplificar de ninguna manera"
+   ],
+   "correcta": 2,
+   "tip": "Vale uno o más de un entero, como 7/4.",
+   "revisada": false,
+   "id": "voc6-mate-7"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Cómo está formado un \"número mixto\"?",
+   "opciones": [
+    "Por una fracción con numerador y denominador iguales",
+    "Por dos fracciones que se suman entre sí directamente",
+    "Por un número entero seguido de una parte decimal",
+    "Por un número entero acompañado de una fracción propia"
+   ],
+   "correcta": 3,
+   "tip": "Se puede escribir como fracción impropia, y al revés.",
+   "revisada": false,
+   "id": "voc6-mate-8"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué son dos \"fracciones equivalentes\"?",
+   "opciones": [
+    "Dos fracciones distintas que representan el mismo valor",
+    "Dos fracciones que tienen el mismo numerador exacto",
+    "Dos fracciones que tienen el mismo denominador exacto",
+    "Dos fracciones que se suman y dan un número entero"
+   ],
+   "correcta": 0,
+   "tip": "Se obtienen amplificando o simplificando una fracción.",
+   "revisada": false,
+   "id": "voc6-mate-9"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En un decimal, ¿qué lugar ocupa la \"milésima\"?",
+   "opciones": [
+    "El primer lugar a la derecha de la coma decimal",
+    "El tercer lugar a la derecha de la coma decimal",
+    "El tercer lugar a la izquierda de la coma decimal",
+    "El lugar de las unidades, justo antes de la coma"
+   ],
+   "correcta": 1,
+   "tip": "En 0,004 hay cuatro milésimas.",
+   "revisada": false,
+   "id": "voc6-mate-10"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En una tabla de valores, ¿qué es un \"patrón\"?",
+   "opciones": [
+    "La cantidad de filas que tiene esa tabla escrita",
+    "El valor más alto que aparece en toda la tabla",
+    "El resultado de sumar todos los valores anotados",
+    "Una regularidad que se repite entre los valores"
+   ],
+   "correcta": 3,
+   "tip": "Descubrirlo permite predecir el valor siguiente.",
+   "revisada": false,
+   "id": "voc6-mate-11"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es la \"regla\" de una tabla de valores?",
+   "opciones": [
+    "La cantidad de datos que se anotaron en la tabla",
+    "El promedio de todos los valores de una columna",
+    "La expresión que relaciona cada dato con su pareja",
+    "El orden en que aparecen escritas las columnas"
+   ],
+   "correcta": 2,
+   "tip": "Por ejemplo: 'cada valor de la tabla es el triple del anterior'.",
+   "revisada": false,
+   "id": "voc6-mate-12"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es una \"ecuación\"?",
+   "opciones": [
+    "Una comparación que indica cuál valor es mayor",
+    "Una lista ordenada de resultados posibles",
+    "Una igualdad en que aparece un valor desconocido",
+    "Una operación entre dos números ya conocidos"
+   ],
+   "correcta": 2,
+   "tip": "Resolverla es hallar el valor que hace cierta la igualdad.",
+   "revisada": false,
+   "id": "voc6-mate-13"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En una ecuación, ¿qué es la \"incógnita\"?",
+   "opciones": [
+    "El signo igual que separa los dos lados",
+    "La letra que representa el valor que se busca",
+    "El resultado que se obtiene al final",
+    "El número que multiplica a la letra escrita"
+   ],
+   "correcta": 1,
+   "tip": "Se despeja hasta dejarla sola en un lado de la igualdad.",
+   "revisada": false,
+   "id": "voc6-mate-14"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Cómo es un triángulo \"equilátero\"?",
+   "opciones": [
+    "Tiene un ángulo recto y dos lados iguales",
+    "Tiene sus tres lados de la misma medida",
+    "Tiene solo dos lados de la misma medida",
+    "Tiene sus tres lados de distinta medida"
+   ],
+   "correcta": 1,
+   "tip": "Sus tres ángulos también miden lo mismo: 60 grados.",
+   "revisada": false,
+   "id": "voc6-mate-15"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué caracteriza a un triángulo \"isósceles\"?",
+   "opciones": [
+    "Tiene sus tres ángulos interiores rectos",
+    "Tiene un solo par de lados paralelos",
+    "Tiene sus tres lados de medidas diferentes",
+    "Tiene exactamente dos lados de igual medida"
+   ],
+   "correcta": 3,
+   "tip": "Los ángulos opuestos a esos dos lados también son iguales.",
+   "revisada": false,
+   "id": "voc6-mate-16"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es la \"red\" de un cuerpo geométrico?",
+   "opciones": [
+    "La suma de todas las aristas que forman el cuerpo",
+    "El conjunto de sus vértices unidos por líneas",
+    "El espacio que ocupa el cuerpo por dentro",
+    "La figura plana que se arma al desplegar sus caras"
+   ],
+   "correcta": 3,
+   "tip": "Sirve para calcular el área de la superficie del cuerpo.",
+   "revisada": false,
+   "id": "voc6-mate-17"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"teselado\"?",
+   "opciones": [
+    "Un dibujo hecho con figuras de distinto tamaño",
+    "Una figura que se repite dentro de otra mayor",
+    "Un corte de una figura en partes desiguales",
+    "Un cubrimiento del plano con figuras, sin huecos"
+   ],
+   "correcta": 3,
+   "tip": "Se arma trasladando, reflejando o rotando una figura.",
+   "revisada": false,
+   "id": "voc6-mate-18"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Cómo es un \"ángulo agudo\"?",
+   "opciones": [
+    "Mide menos de 90 grados, como el de 45",
+    "Mide exactamente 90 grados, como una esquina",
+    "Mide más de 90 grados, sin llegar a 180",
+    "Mide 180 grados, formando una línea recta"
+   ],
+   "correcta": 0,
+   "tip": "El ángulo recto mide 90 grados; el agudo se queda corto.",
+   "revisada": false,
+   "id": "voc6-mate-19"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué son dos ángulos \"opuestos por el vértice\"?",
+   "opciones": [
+    "Los que suman 90 grados entre los dos juntos",
+    "Los que quedan enfrentados al cruzarse dos rectas",
+    "Los que tienen un lado en común y son iguales",
+    "Los que quedan uno al lado del otro y suman 180"
+   ],
+   "correcta": 1,
+   "tip": "Tienen la misma medida, aunque estén enfrentados.",
+   "revisada": false,
+   "id": "voc6-mate-20"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué son dos ángulos \"complementarios\"?",
+   "opciones": [
+    "Dos ángulos que miden exactamente lo mismo",
+    "Dos ángulos que juntos suman 90 grados",
+    "Dos ángulos que se ubican dentro de un triángulo",
+    "Dos ángulos que juntos suman 180 grados"
+   ],
+   "correcta": 1,
+   "tip": "Si uno mide 30 grados, el otro mide 60 grados.",
+   "revisada": false,
+   "id": "voc6-mate-21"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué se calcula al hallar la \"superficie\" de un cubo?",
+   "opciones": [
+    "La medida total de todas sus caras juntas",
+    "La suma de los largos de todas sus aristas",
+    "La medida del espacio que ocupa por dentro",
+    "La distancia entre dos vértices opuestos"
+   ],
+   "correcta": 0,
+   "tip": "Se expresa en unidades cuadradas, como centímetros cuadrados.",
+   "revisada": false,
+   "id": "voc6-mate-22"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué mide el \"volumen\" de un cuerpo?",
+   "opciones": [
+    "El espacio que ese cuerpo ocupa por dentro",
+    "El peso total que ese cuerpo alcanza",
+    "El área que cubren todas sus caras juntas",
+    "La longitud del borde de una de sus caras"
+   ],
+   "correcta": 0,
+   "tip": "Se expresa en unidades cúbicas, como centímetros cúbicos.",
+   "revisada": false,
+   "id": "voc6-mate-23"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Para qué sirve un \"transportador\"?",
+   "opciones": [
+    "Para medir la longitud de un segmento",
+    "Para dibujar circunferencias exactas",
+    "Para medir la abertura de un ángulo en grados",
+    "Para trazar dos rectas perfectamente paralelas"
+   ],
+   "correcta": 2,
+   "tip": "Su borde curvo está graduado de 0 a 180 grados.",
+   "revisada": false,
+   "id": "voc6-mate-24"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es una recta \"transversal\"?",
+   "opciones": [
+    "Una recta que pasa por el centro de un círculo",
+    "Una recta que divide un ángulo en dos iguales",
+    "Una recta que corta a otras dos rectas paralelas",
+    "Una recta que nunca se cruza con otra del plano"
+   ],
+   "correcta": 2,
+   "tip": "Al cortarlas forma pares de ángulos con medidas relacionadas.",
+   "revisada": false,
+   "id": "voc6-mate-25"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es una \"muestra aleatoria\"?",
+   "opciones": [
+    "Un grupo elegido a propósito por sus características",
+    "El dato que más se repite dentro de un grupo",
+    "Un grupo elegido al azar dentro de un total mayor",
+    "El total completo de los casos que se van a estudiar"
+   ],
+   "correcta": 2,
+   "tip": "El azar es lo que la hace comparable con otro grupo.",
+   "revisada": false,
+   "id": "voc6-mate-26"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué muestra un \"diagrama de tallo y hojas\"?",
+   "opciones": [
+    "Los datos agrupados en sectores de un mismo círculo",
+    "Los datos ordenados separando sus cifras en dos partes",
+    "Los datos representados por barras de distinto alto",
+    "Los datos unidos por una línea que sube y baja"
+   ],
+   "correcta": 1,
+   "tip": "El tallo lleva las decenas y las hojas, las unidades.",
+   "revisada": false,
+   "id": "voc6-mate-27"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Para qué sirve un \"gráfico de barra doble\"?",
+   "opciones": [
+    "Para mostrar cómo se reparte un total en partes",
+    "Para ordenar los datos de menor a mayor valor",
+    "Para seguir el cambio de un dato a lo largo del tiempo",
+    "Para comparar dos grupos en una misma categoría"
+   ],
+   "correcta": 3,
+   "tip": "Cada categoría lleva dos barras, una por grupo.",
+   "revisada": false,
+   "id": "voc6-mate-28"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué representa un \"gráfico circular\"?",
+   "opciones": [
+    "Cómo se distribuyen los datos según su tallo",
+    "Cómo se comparan dos grupos en cada categoría",
+    "Cómo se reparte un total entre varias partes",
+    "Cómo cambia una cantidad durante varios años"
+   ],
+   "correcta": 2,
+   "tip": "El círculo completo equivale al 100 por ciento.",
+   "revisada": false,
+   "id": "voc6-mate-29"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"experimento aleatorio\"?",
+   "opciones": [
+    "Uno que se realiza una sola vez y no más",
+    "Uno cuyo resultado no se puede saber de antemano",
+    "Uno que mide una cantidad con instrumentos",
+    "Uno cuyo resultado se repite siempre de igual forma"
+   ],
+   "correcta": 1,
+   "tip": "Lanzar un dado lo es; al repetirlo aparece una tendencia.",
+   "revisada": false,
+   "id": "voc6-mate-30"
+  }
+ ]
+}

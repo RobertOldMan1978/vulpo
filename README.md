@@ -56,9 +56,15 @@ midiendo donde corresponde, en las etapas del capítulo.
 > obligatorio de 7° básico— se juegan **solo en su propio capítulo** y **no entran en ningún Jefe
 > Final**, que es el que mezcla objetivos de toda la asignatura. Así un colegio que decida no
 > incluir ese capítulo no se lo encuentra en otra parte.
-Además hay un **📚 Vocabulario** (dentro de Lenguaje): ~150 palabras de todo el curso en un
-quiz de opción múltiple, y una **📖 Lectura** del colegio (biblioteca; primer libro *El diario
-de Ana Frank*) con un camino de preguntas de comprensión por tramos.
+Además hay un **📚 Vocabulario** (dentro de Lenguaje): las palabras clave del curso en un quiz
+de opción múltiple, y una **📖 Lectura** del colegio (biblioteca; primer libro *El diario de Ana
+Frank*) con un camino de preguntas de comprensión por tramos.
+
+> El Vocabulario está en **los seis cursos** desde el 07/09/2026, pero **no con las mismas
+> áreas**: 3° y 4° llevan Ciencias e Historia (60 palabras), 5° y 6° suman Matemática (90), 7°
+> suma Lenguaje (120) y 8° suma las lecturas (150). El corte lo decide el currículum: hasta 6°,
+> Lenguaje ya enseña por su cuenta a deducir el significado de una palabra nueva, así que un área
+> de Lenguaje mediría dos veces lo mismo; de 7° en adelante ese objetivo ya no está.
 También hay **Duelo 1v1** en el mismo teléfono y en línea (Supabase) —con aviso en el inicio cuando te desafían o termina tu duelo, y un **ranking de duelos del curso**—, una **tienda de
 skins** (incluidas skins deportivas ilustradas) y una **intro de bienvenida** en video que
 se ve una vez. Todo en un solo archivo `index.html`, pensado para el celular.

@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"fotosíntesis\"?",
+   "opciones": [
+    "El proceso en que la planta usa luz para fabricar su azúcar",
+    "El proceso en que la planta absorbe agua del suelo por la raíz",
+    "El proceso en que la planta libera vapor de agua por sus hojas",
+    "El proceso en que la planta se alimenta de minerales del suelo"
+   ],
+   "correcta": 0,
+   "tip": "Necesita luz, agua y dióxido de carbono, y libera oxígeno.",
+   "id": "voc6-cien-1"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Para qué sirve la \"clorofila\" en una planta?",
+   "opciones": [
+    "Para captar la energía de la luz y que ocurra la fotosíntesis",
+    "Para transportar el agua desde la raíz hasta las hojas nuevas",
+    "Para sostener el tallo y darle firmeza a la planta completa",
+    "Para almacenar el azúcar que la planta fabrica durante el día"
+   ],
+   "correcta": 0,
+   "tip": "Es el pigmento verde que atrapa la luz del Sol.",
+   "id": "voc6-cien-2"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En una cadena alimentaria, ¿qué es un \"productor\"?",
+   "opciones": [
+    "Un organismo que fabrica su propio alimento usando luz solar",
+    "Un organismo que se alimenta de plantas y de animales pequeños",
+    "Un organismo que descompone los restos de otros seres vivos",
+    "Un organismo que caza a otros animales para poder alimentarse"
+   ],
+   "correcta": 0,
+   "tip": "Las plantas y las algas están al inicio de la cadena.",
+   "id": "voc6-cien-3"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué caracteriza a un \"consumidor\" dentro de un ecosistema?",
+   "opciones": [
+    "Obtiene su energía comiendo a otros seres vivos del lugar",
+    "Fabrica su alimento a partir del agua y la luz que recibe",
+    "Transforma los restos muertos en minerales para el suelo",
+    "Produce el oxígeno que el resto de los seres vivos respira"
+   ],
+   "correcta": 0,
+   "tip": "No fabrica su alimento: lo obtiene de otro organismo.",
+   "id": "voc6-cien-4"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué papel cumple un \"descomponedor\"?",
+   "opciones": [
+    "Transforma los restos de seres vivos en nutrientes del suelo",
+    "Fabrica azúcar usando la energía que le entrega la luz solar",
+    "Se alimenta solo de plantas vivas y de sus frutos maduros",
+    "Caza a los animales más débiles de la red alimentaria"
+   ],
+   "correcta": 0,
+   "tip": "Hongos y bacterias devuelven la materia al suelo.",
+   "id": "voc6-cien-5"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué muestra una \"cadena alimentaria\"?",
+   "opciones": [
+    "Cómo pasa la energía de un ser vivo al que se lo come",
+    "Cómo se reparten los animales el territorio disponible",
+    "Cómo cambia el clima de un lugar durante todo el año",
+    "Cómo se reproducen las especies de un mismo ecosistema"
+   ],
+   "correcta": 0,
+   "tip": "Cada flecha indica hacia dónde va la energía.",
+   "id": "voc6-cien-6"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿En qué se diferencia una \"red alimentaria\" de una cadena?",
+   "opciones": [
+    "Conecta varias cadenas, porque una especie come de varias",
+    "Ordena a los animales según su tamaño y no según su dieta",
+    "Incluye solo a los animales y deja fuera a las plantas",
+    "Muestra un único camino de la energía dentro del lugar"
+   ],
+   "correcta": 0,
+   "tip": "Una red es un conjunto de cadenas entrelazadas.",
+   "id": "voc6-cien-7"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"ecosistema\"?",
+   "opciones": [
+    "El conjunto de seres vivos de un lugar y su medio físico",
+    "El conjunto de animales de una misma especie en un lugar",
+    "El clima y el relieve que caracterizan a una zona amplia",
+    "El total de plantas que crecen en un terreno determinado"
+   ],
+   "correcta": 0,
+   "tip": "Incluye lo vivo y lo no vivo: agua, suelo y aire.",
+   "id": "voc6-cien-8"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"solidificación\"?",
+   "opciones": [
+    "El cambio de un líquido a sólido cuando pierde calor",
+    "El cambio de un sólido a líquido cuando recibe calor",
+    "El paso de un gas a líquido cuando se enfría el aire",
+    "El paso de un sólido a gas sin pasar por líquido"
+   ],
+   "correcta": 0,
+   "tip": "Es lo que le pasa al agua cuando se convierte en hielo.",
+   "id": "voc6-cien-9"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"hormona\"?",
+   "opciones": [
+    "Una sustancia del cuerpo que regula procesos como el crecimiento",
+    "Una sustancia que el cuerpo elimina a través de la orina diaria",
+    "Una célula encargada de transportar el oxígeno por la sangre",
+    "Un órgano pequeño que se ubica en la base del cerebro humano"
+   ],
+   "correcta": 0,
+   "tip": "Viaja por la sangre y da órdenes a distintos órganos.",
+   "id": "voc6-cien-10"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"conducción\" del calor?",
+   "opciones": [
+    "El paso del calor entre dos cuerpos que están en contacto",
+    "El paso del calor de un cuerpo a otro a través del vacío",
+    "El movimiento del aire caliente que sube y el frío que baja",
+    "La pérdida de calor que ocurre al cambiar de estado"
+   ],
+   "correcta": 0,
+   "tip": "Por eso una cuchara de metal se calienta dentro de la sopa.",
+   "id": "voc6-cien-11"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En Ciencias, ¿qué es una \"droga\"?",
+   "opciones": [
+    "Una sustancia que altera el funcionamiento del organismo",
+    "Una sustancia que el organismo fabrica para defenderse solo",
+    "Un nutriente que el cuerpo necesita en pequeñas cantidades",
+    "Un microorganismo capaz de provocar una enfermedad grave"
+   ],
+   "correcta": 0,
+   "tip": "Muchas actúan sobre el sistema nervioso y generan dependencia.",
+   "id": "voc6-cien-12"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿A qué se llama \"energía\"?",
+   "opciones": [
+    "A la capacidad de producir cambios o de realizar un trabajo",
+    "A la cantidad de materia que contiene un cuerpo cualquiera",
+    "A la fuerza con que la Tierra atrae a todos los objetos",
+    "A la medida de lo caliente o lo frío que está un cuerpo"
+   ],
+   "correcta": 0,
+   "tip": "Sin ella nada se mueve, se calienta ni funciona.",
+   "id": "voc6-cien-13"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"energía lumínica\"?",
+   "opciones": [
+    "La energía que transporta la luz, como la que llega del Sol",
+    "La energía que se acumula en los alimentos que comemos",
+    "La energía que se transmite entre dos cuerpos por el calor",
+    "La energía que tiene un cuerpo por el hecho de moverse"
+   ],
+   "correcta": 0,
+   "tip": "Las plantas la aprovechan para hacer fotosíntesis.",
+   "id": "voc6-cien-14"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué caracteriza a un recurso energético \"renovable\"?",
+   "opciones": [
+    "Se repone en poco tiempo, como el viento o la luz solar",
+    "Se agota apenas se usa y no vuelve a estar disponible",
+    "Se formó bajo tierra durante millones de años de presión",
+    "Se puede almacenar en grandes estanques bajo el suelo"
+   ],
+   "correcta": 0,
+   "tip": "La naturaleza lo repone a un ritmo que alcanza.",
+   "id": "voc6-cien-15"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"combustible fósil\"?",
+   "opciones": [
+    "Un recurso formado por restos de organismos de hace millones de años",
+    "Un recurso que las plantas producen mientras hacen la fotosíntesis",
+    "Un recurso que se renueva cada temporada gracias a las lluvias",
+    "Un recurso mineral que se extrae del fondo del mar sin tratar"
+   ],
+   "correcta": 0,
+   "tip": "El carbón, el petróleo y el gas natural son fósiles.",
+   "id": "voc6-cien-16"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En Ciencias, ¿qué es el \"calor\"?",
+   "opciones": [
+    "La energía que pasa de un cuerpo caliente a uno más frío",
+    "La medida que indica qué tan caliente está un cuerpo",
+    "El estado en que la materia deja de tener partículas",
+    "La cantidad de partículas que contiene un mismo cuerpo"
+   ],
+   "correcta": 0,
+   "tip": "Es energía en tránsito; la temperatura es otra cosa.",
+   "id": "voc6-cien-17"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué mide la \"temperatura\" de un cuerpo?",
+   "opciones": [
+    "Qué tan caliente o frío está, según sus partículas",
+    "Cuánta energía en total entregó a los cuerpos vecinos",
+    "Cuánta materia contiene ese cuerpo en su interior",
+    "Cuántos grados perdió al ponerse en contacto con otro"
+   ],
+   "correcta": 0,
+   "tip": "Se mide con termómetro y se expresa en grados.",
+   "id": "voc6-cien-18"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"equilibrio térmico\"?",
+   "opciones": [
+    "El momento en que dos cuerpos quedan a la misma temperatura",
+    "El momento en que un cuerpo alcanza su punto de ebullición",
+    "El estado en que un cuerpo deja de conducir el calor",
+    "El punto en que el agua pasa de líquida a sólida"
+   ],
+   "correcta": 0,
+   "tip": "El calor deja de fluir cuando ya no hay diferencia.",
+   "id": "voc6-cien-19"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En el modelo de la materia, ¿qué es una \"partícula\"?",
+   "opciones": [
+    "Cada pedazo diminuto en movimiento que forma la materia",
+    "Cada gota de agua que se forma al enfriarse el vapor",
+    "Cada trozo visible en que se puede cortar un objeto",
+    "Cada célula que compone el cuerpo de un ser vivo"
+   ],
+   "correcta": 0,
+   "tip": "En un gas se mueven mucho más que en un sólido.",
+   "id": "voc6-cien-20"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué cambio de estado es la \"fusión\"?",
+   "opciones": [
+    "El paso de sólido a líquido cuando sube la temperatura",
+    "El paso de líquido a sólido cuando baja la temperatura",
+    "El paso de líquido a gas desde toda la masa del líquido",
+    "El paso de gas a líquido al enfriarse contra una superficie"
+   ],
+   "correcta": 0,
+   "tip": "El hielo que se derrite es el ejemplo típico.",
+   "id": "voc6-cien-21"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿En qué consiste la \"evaporación\"?",
+   "opciones": [
+    "El paso lento de líquido a gas desde la superficie libre",
+    "El paso rápido de gas a líquido dentro del recipiente",
+    "El paso directo de sólido a gas sin pasar por líquido",
+    "El paso de líquido a sólido al bajar mucho la temperatura"
+   ],
+   "correcta": 0,
+   "tip": "Ocurre sin hervir, como la ropa que se seca al sol.",
+   "id": "voc6-cien-22"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué ocurre en la \"condensación\"?",
+   "opciones": [
+    "Un gas se enfría y se transforma en líquido otra vez",
+    "Un líquido se calienta y se transforma en gas",
+    "Un sólido se calienta hasta transformarse en líquido",
+    "Un líquido se enfría y se transforma en sólido duro"
+   ],
+   "correcta": 0,
+   "tip": "Es lo que empaña un vidrio frío en invierno.",
+   "id": "voc6-cien-23"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"sublimación\"?",
+   "opciones": [
+    "El paso directo de sólido a gas, sin ser líquido antes",
+    "El paso directo de gas a sólido al bajar la presión",
+    "El paso de líquido a gas al alcanzar el punto de hervor",
+    "El paso de sólido a líquido al recibir mucho calor"
+   ],
+   "correcta": 0,
+   "tip": "Le pasa al hielo seco, que no deja charco.",
+   "id": "voc6-cien-24"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"atmósfera\" de la Tierra?",
+   "opciones": [
+    "La capa de gases que rodea al planeta y permite la vida",
+    "La capa de rocas sólidas que forma la corteza terrestre",
+    "El conjunto de toda el agua que existe en el planeta",
+    "La capa de suelo fértil donde crecen las plantas"
+   ],
+   "correcta": 0,
+   "tip": "Contiene el oxígeno que respiramos y filtra la radiación.",
+   "id": "voc6-cien-25"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué comprende la \"litósfera\"?",
+   "opciones": [
+    "La capa rocosa y sólida más externa de la Tierra",
+    "La mezcla de gases que envuelve a nuestro planeta",
+    "El agua de los océanos, los ríos y los glaciares",
+    "El conjunto de todos los seres vivos del planeta"
+   ],
+   "correcta": 0,
+   "tip": "La raíz 'lito' significa piedra.",
+   "id": "voc6-cien-26"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué incluye la \"hidrósfera\"?",
+   "opciones": [
+    "Toda el agua del planeta, en cualquiera de sus estados",
+    "Todos los gases que envuelven a la Tierra por completo",
+    "Todas las rocas y minerales de la corteza terrestre",
+    "Todos los organismos que habitan mares y continentes"
+   ],
+   "correcta": 0,
+   "tip": "La raíz 'hidro' significa agua: mares, ríos, hielos y vapor.",
+   "id": "voc6-cien-27"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En Ciencias Naturales, ¿qué es el \"suelo\"?",
+   "opciones": [
+    "La capa superficial de la Tierra donde crecen las plantas",
+    "La capa profunda de roca fundida del interior del planeta",
+    "La capa de aire que se apoya sobre los continentes",
+    "La superficie cubierta de agua que rodea a los continentes"
+   ],
+   "correcta": 0,
+   "tip": "Se forma muy lento, por desgaste de la roca y restos vivos.",
+   "id": "voc6-cien-28"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"humus\" del suelo?",
+   "opciones": [
+    "La materia orgánica que dejan los restos de seres vivos",
+    "La parte mineral formada por arena y pequeñas piedras",
+    "El agua que queda retenida entre las partículas del suelo",
+    "La capa de roca dura que se encuentra bajo la tierra"
+   ],
+   "correcta": 0,
+   "tip": "Le da color oscuro y nutrientes al suelo.",
+   "id": "voc6-cien-29"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"erosión\" del terreno?",
+   "opciones": [
+    "El desgaste y traslado del suelo por el agua o el viento",
+    "La acumulación de agua de lluvia en el interior del suelo",
+    "El proceso por el cual una roca se convierte en mineral",
+    "El movimiento brusco del terreno durante un temblor fuerte"
+   ],
+   "correcta": 0,
+   "tip": "Las actividades humanas también la aceleran.",
+   "id": "voc6-cien-30"
+  }
+ ]
+}

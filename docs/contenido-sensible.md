@@ -126,6 +126,18 @@ avisar) · **BAJA** (mención menor).
 | HI06 OA 05 | Ocupación de la Araucanía, Guerra del Pacífico | 🪶 ⚔️ | MEDIA-ALTA |
 | HI06 OA 08 | Quiebre y recuperación de la democracia (dictadura) | ⚔️ | ALTA |
 
+> ⚠️ **El módulo de Vocabulario no puede marcarse, y por eso no lleva contenido sexual
+> (07/09/2026).** El armador marca por **código de OA**, y los códigos `VOC-*` son los mismos en
+> los seis cursos: marcar `VOC-CIEN` lo marcaría en todos. O sea que no hay forma de avisar que
+> el vocabulario de un curso concreto trae un tema delicado. Por eso el de 6° **no define
+> "pubertad" ni "higiene corporal"** (`CN06 OA 05/06`) aunque sean de su temario — se cambiaron
+> por *solidificación* y *conducción*, del mismo año—: dejarlas haría que un colegio que excluye
+> ese capítulo se las encontrara igual y sin aviso, que es justo lo que la regla del Jefe Final
+> vino a cerrar. Lo de Historia (Araucanía, dictadura) y las drogas **sí entran** al vocabulario,
+> por el mismo criterio que las deja entrar al jefe: solo lo sexual sale. Si algún día el módulo
+> necesitara contenido marcable, habría que hacer que `sensible.js` marque **por expedición** y
+> no solo por OA.
+
 Los `CN06 OA 04/05/06` son exactamente los que la regla de arriba excluye del Jefe Final de
 Ciencias de 6°. El `OA 07` (drogas) y los dos de Historia **no** se excluyen: solo lo
 sexual/reproductivo sale del jefe, el resto del contenido sensible entra completo.

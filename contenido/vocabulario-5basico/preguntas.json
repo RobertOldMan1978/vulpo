@@ -1,0 +1,1264 @@
+{
+ "preguntas": [
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"célula\"?",
+   "opciones": [
+    "Una sustancia líquida que reparte el alimento por el cuerpo",
+    "Un órgano diminuto que solo tienen los animales pequeños",
+    "Una capa delgada que recubre a los órganos por dentro",
+    "La unidad más pequeña que forma a todos los seres vivos"
+   ],
+   "correcta": 3,
+   "tip": "Hay seres vivos de una sola célula y otros formados por millones de ellas.",
+   "revisada": false,
+   "id": "voc5-cien-1"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En el cuerpo, ¿qué es un \"tejido\"?",
+   "opciones": [
+    "Una red de conductos que llevan sangre hasta cada órgano",
+    "Una capa de piel que cubre y protege el cuerpo por fuera",
+    "Un conjunto de células parecidas que cumplen la misma función",
+    "Un conjunto de órganos que trabajan juntos en una misma tarea"
+   ],
+   "correcta": 2,
+   "tip": "El tejido va entre la célula y el órgano: son células parecidas juntas.",
+   "revisada": false,
+   "id": "voc5-cien-2"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"órgano\", como el estómago?",
+   "opciones": [
+    "Un grupo de células iguales que trabajan todas en lo mismo",
+    "Una cavidad hueca donde el cuerpo guarda sus reservas de agua",
+    "Un conjunto de sistemas que se coordinan dentro del cuerpo",
+    "Una estructura de varios tejidos que cumple una función propia"
+   ],
+   "correcta": 3,
+   "tip": "Varios tejidos forman un órgano, y varios órganos forman un sistema.",
+   "revisada": false,
+   "id": "voc5-cien-3"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"digestión\"?",
+   "opciones": [
+    "El paso de los nutrientes desde el intestino hacia la sangre",
+    "La eliminación de los desechos que el cuerpo ya no necesita",
+    "El proceso que deshace el alimento en partes muy pequeñas",
+    "El transporte del alimento desde la boca hasta el estómago"
+   ],
+   "correcta": 2,
+   "tip": "Digerir es deshacer el alimento; pasarlo a la sangre ya es otra etapa.",
+   "revisada": false,
+   "id": "voc5-cien-4"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En el sistema digestivo, ¿qué es la \"absorción\"?",
+   "opciones": [
+    "La molienda que hacen los dientes con el alimento en la boca",
+    "La mezcla del alimento con los jugos ácidos del estómago",
+    "La salida de los desechos por la última parte del intestino",
+    "El paso de los nutrientes desde el intestino hacia la sangre"
+   ],
+   "correcta": 3,
+   "tip": "Ocurre sobre todo en el intestino delgado, una vez digerido el alimento.",
+   "revisada": false,
+   "id": "voc5-cien-5"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué función cumple el \"esófago\"?",
+   "opciones": [
+    "Mezclar el alimento con jugos ácidos para deshacerlo",
+    "Guardar la bilis hasta que llegue el alimento graso",
+    "Absorber los nutrientes y pasarlos hacia la sangre",
+    "Llevar el alimento desde la boca hasta el estómago"
+   ],
+   "correcta": 3,
+   "tip": "Es un tubo de paso: no digiere ni absorbe, solamente transporta.",
+   "revisada": false,
+   "id": "voc5-cien-6"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué aporta el \"hígado\" a la digestión?",
+   "opciones": [
+    "Absorbe la mayor parte de los nutrientes del alimento",
+    "Guarda el alimento hasta que el estómago se desocupa",
+    "Produce la bilis, que ayuda a deshacer las grasas",
+    "Empuja los desechos sólidos hacia el intestino grueso"
+   ],
+   "correcta": 2,
+   "tip": "El hígado fabrica la bilis; quien absorbe agua es el intestino grueso.",
+   "revisada": false,
+   "id": "voc5-cien-7"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué función cumple la \"tráquea\"?",
+   "opciones": [
+    "Conducir el alimento desde la boca hasta el estómago",
+    "Repartir el oxígeno por la sangre de todo el cuerpo",
+    "Conducir el aire desde la nariz hacia los bronquios",
+    "Filtrar la sangre antes de que vuelva hacia el corazón"
+   ],
+   "correcta": 2,
+   "tip": "La tráquea lleva aire y el esófago lleva alimento: son dos tubos distintos.",
+   "revisada": false,
+   "id": "voc5-cien-8"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué son los \"alvéolos\" de los pulmones?",
+   "opciones": [
+    "Sacos diminutos donde el oxígeno pasa hacia la sangre",
+    "Músculos que empujan al pulmón para que se llene de aire",
+    "Tubos gruesos por donde entra el aire a cada pulmón",
+    "Bolsas de agua que humedecen el aire antes de respirar"
+   ],
+   "correcta": 0,
+   "tip": "Ahí ocurre el intercambio: entra oxígeno y sale dióxido de carbono.",
+   "revisada": false,
+   "id": "voc5-cien-9"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Al respirar, ¿qué es la \"espiración\"?",
+   "opciones": [
+    "El paso del oxígeno desde los pulmones hacia la sangre",
+    "El descanso que hace el pulmón entre una y otra respiración",
+    "La salida del aire de los pulmones hacia el exterior",
+    "La entrada del aire desde el exterior hacia los pulmones"
+   ],
+   "correcta": 2,
+   "tip": "Espirar es botar el aire; inspirar es tomarlo. Se alternan sin parar.",
+   "revisada": false,
+   "id": "voc5-cien-10"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"arteria\"?",
+   "opciones": [
+    "Un tubo que reparte el aire desde la tráquea al pulmón",
+    "Un vaso que trae la sangre de vuelta hasta el corazón",
+    "Una bolsa donde la sangre espera antes de circular",
+    "Un vaso que saca la sangre del corazón hacia el cuerpo"
+   ],
+   "correcta": 3,
+   "tip": "Sale del corazón con mucha fuerza: por eso tiene paredes gruesas.",
+   "revisada": false,
+   "id": "voc5-cien-11"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué hace una \"vena\" en el cuerpo?",
+   "opciones": [
+    "Filtra la sangre para sacarle todos sus desechos",
+    "Conduce el aire desde la nariz hacia los pulmones",
+    "Reparte la sangre desde el corazón hacia el cuerpo",
+    "Devuelve la sangre desde el cuerpo hacia el corazón"
+   ],
+   "correcta": 3,
+   "tip": "Las venas hacen el camino de vuelta, y por eso llevan menos presión.",
+   "revisada": false,
+   "id": "voc5-cien-12"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"nutriente\"?",
+   "opciones": [
+    "Una vitamina que solamente se encuentra en las frutas frescas",
+    "Una sustancia que el cuerpo elimina porque no le sirve nada",
+    "Una sustancia del alimento que el cuerpo usa para funcionar",
+    "Un alimento preparado para hacer crecer más rápido al cuerpo"
+   ],
+   "correcta": 2,
+   "tip": "Los nutrientes sirven para crecer, reparar el cuerpo y poder moverse.",
+   "revisada": false,
+   "id": "voc5-cien-13"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"microorganismo\"?",
+   "opciones": [
+    "Una parte diminuta de un órgano que se ve a simple vista",
+    "Una sustancia química que se usa para limpiar las heridas",
+    "Un ser vivo muy pequeño que siempre provoca enfermedades",
+    "Un ser vivo tan pequeño que solo se ve con microscopio"
+   ],
+   "correcta": 3,
+   "tip": "Hay microorganismos dañinos y también muchísimos beneficiosos.",
+   "revisada": false,
+   "id": "voc5-cien-14"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué clase de ser vivo es una \"bacteria\"?",
+   "opciones": [
+    "Un ser vivo de una sola célula, dañino o beneficioso",
+    "Un ser vivo diminuto que siempre causa una enfermedad",
+    "Una sustancia que sueltan los hongos al descomponerse",
+    "Un animal muy pequeño que vive dentro del cuerpo humano"
+   ],
+   "correcta": 0,
+   "tip": "Algunas bacterias fabrican el yogur y otras enferman: no todas son malas.",
+   "revisada": false,
+   "id": "voc5-cien-15"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Por qué un \"virus\" necesita otra célula?",
+   "opciones": [
+    "Porque así logra crecer hasta alcanzar su tamaño definitivo",
+    "Porque solo puede multiplicarse dentro de una célula viva",
+    "Porque le sirve de refugio para pasar el invierno completo",
+    "Porque necesita alimentarse de lo que esa célula fabrica"
+   ],
+   "correcta": 1,
+   "tip": "Fuera de una célula viva, el virus no puede reproducirse solo.",
+   "revisada": false,
+   "id": "voc5-cien-16"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"circuito eléctrico\"?",
+   "opciones": [
+    "Un cable grueso que guarda electricidad para después",
+    "Una pieza que corta el paso de la corriente al aparato",
+    "Un aparato que convierte el calor en luz y en sonido",
+    "Un camino cerrado por donde puede pasar la corriente"
+   ],
+   "correcta": 3,
+   "tip": "Si el camino queda abierto en algún punto, la corriente deja de circular.",
+   "revisada": false,
+   "id": "voc5-cien-17"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Para qué sirve el \"interruptor\" de un circuito?",
+   "opciones": [
+    "Para aumentar la cantidad de energía que entrega la pila",
+    "Para transformar la energía eléctrica en energía luminosa",
+    "Para abrir o cerrar el paso de la corriente cuando se quiera",
+    "Para evitar que el cable se caliente al pasar la corriente"
+   ],
+   "correcta": 2,
+   "tip": "Con el interruptor abierto el circuito se corta y la ampolleta se apaga.",
+   "revisada": false,
+   "id": "voc5-cien-18"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué aporta la \"pila\" a un circuito?",
+   "opciones": [
+    "El material aislante que recubre por fuera a los cables",
+    "El corte de la corriente cuando el cable se calienta mucho",
+    "La luz que después va a entregar la ampolleta encendida",
+    "La energía que hace circular la corriente por el camino"
+   ],
+   "correcta": 3,
+   "tip": "La pila es la fuente de energía: sin ella el circuito no funciona.",
+   "revisada": false,
+   "id": "voc5-cien-19"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"material conductor\"?",
+   "opciones": [
+    "Un material que deja pasar la corriente con mucha facilidad",
+    "Un material que impide por completo el paso de la corriente",
+    "Un material que se calienta apenas recibe algo de corriente",
+    "Un material que guarda la electricidad para usarla después"
+   ],
+   "correcta": 0,
+   "tip": "El cobre y el aluminio conducen; por eso los cables llevan metal adentro.",
+   "revisada": false,
+   "id": "voc5-cien-20"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Para qué se recubre un cable con un \"aislante\"?",
+   "opciones": [
+    "Para que la corriente no pase a quien toque el cable",
+    "Para que el cable se pueda doblar sin quebrarse nunca",
+    "Para que el cable conduzca mejor cuando está mojado",
+    "Para que la corriente circule más rápido por el cable"
+   ],
+   "correcta": 0,
+   "tip": "El plástico y la goma no conducen electricidad: por eso sirven de aislante.",
+   "revisada": false,
+   "id": "voc5-cien-21"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"energía lumínica\"?",
+   "opciones": [
+    "La energía que percibimos como luz, igual que en una ampolleta",
+    "La energía que mueve las piezas de un motor mientras funciona",
+    "La energía que percibimos como sonido, igual que en una radio",
+    "La energía que percibimos como calor, igual que en una estufa"
+   ],
+   "correcta": 0,
+   "tip": "Una ampolleta convierte energía eléctrica en luz y también en calor.",
+   "revisada": false,
+   "id": "voc5-cien-22"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué significa que un aparato \"transforme\" energía?",
+   "opciones": [
+    "Que la crea desde cero cada vez que alguien lo enciende",
+    "Que la hace desaparecer una vez que terminó de usarla",
+    "Que la guarda por dentro para poder usarla más adelante",
+    "Que la recibe de una forma y la entrega de otra distinta"
+   ],
+   "correcta": 3,
+   "tip": "La energía no se crea ni se destruye: solamente cambia de forma.",
+   "revisada": false,
+   "id": "voc5-cien-23"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué mide el \"consumo eléctrico\" de una casa?",
+   "opciones": [
+    "La fuerza con que la corriente llega hasta los enchufes",
+    "La cantidad de cables que recorren las paredes de la casa",
+    "La cantidad de energía eléctrica que se usa en un tiempo",
+    "La cantidad de aparatos que hay enchufados en la casa"
+   ],
+   "correcta": 2,
+   "tip": "Por eso apagar luces y aparatos sin uso hace bajar la cuenta.",
+   "revisada": false,
+   "id": "voc5-cien-24"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"agua dulce\"?",
+   "opciones": [
+    "El agua del mar que está cerca de la desembocadura",
+    "El agua con muy poca sal, como la de los ríos y lagos",
+    "El agua que tiene azúcar disuelta y se puede beber",
+    "El agua que ya pasó por una planta de tratamiento"
+   ],
+   "correcta": 1,
+   "tip": "Dulce no se refiere al sabor, sino a que casi no tiene sal.",
+   "revisada": false,
+   "id": "voc5-cien-25"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"glaciar\"?",
+   "opciones": [
+    "Una capa de nieve que se derrite apenas empieza el verano",
+    "Un trozo de hielo que flota a la deriva en el mar abierto",
+    "Una gran masa de hielo que se acumula y avanza muy lento",
+    "Un lago de montaña que se congela solo durante el invierno"
+   ],
+   "correcta": 2,
+   "tip": "Los glaciares guardan buena parte del agua dulce del planeta.",
+   "revisada": false,
+   "id": "voc5-cien-26"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué son las \"aguas subterráneas\"?",
+   "opciones": [
+    "El agua salada que llena las zonas hondas del océano",
+    "El agua de lluvia que se junta en los charcos del suelo",
+    "El agua que corre por los túneles del alcantarillado",
+    "El agua que queda guardada bajo la tierra, entre las rocas"
+   ],
+   "correcta": 3,
+   "tip": "Se llega a ellas con pozos, y son una reserva de agua dulce.",
+   "revisada": false,
+   "id": "voc5-cien-27"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"marea\"?",
+   "opciones": [
+    "La ola grande que se forma cuando sopla mucho viento",
+    "La corriente que recorre el océano llevando agua fría",
+    "La subida y bajada del nivel del mar durante el día",
+    "El movimiento del agua que provoca un sismo en el mar"
+   ],
+   "correcta": 2,
+   "tip": "La marea la produce sobre todo la atracción de la Luna.",
+   "revisada": false,
+   "id": "voc5-cien-28"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"corriente marina\"?",
+   "opciones": [
+    "El agua de un río grande justo cuando entra en el mar",
+    "Una ola muy larga que llega a la costa cada cierto rato",
+    "Un flujo de agua del océano que avanza por la misma ruta",
+    "El ascenso del nivel del mar que ocurre dos veces al día"
+   ],
+   "correcta": 2,
+   "tip": "La corriente de Humboldt recorre la costa de Chile con agua fría.",
+   "revisada": false,
+   "id": "voc5-cien-29"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"reserva hídrica\"?",
+   "opciones": [
+    "Un lugar donde se acumula agua que se puede aprovechar",
+    "Una zona de la costa donde está prohibido ir a pescar",
+    "Un depósito donde se juntan los desechos de una ciudad",
+    "Una máquina que le saca la sal al agua para poder beberla"
+   ],
+   "correcta": 0,
+   "tip": "Glaciares, lagos y aguas subterráneas son reservas hídricas de Chile.",
+   "revisada": false,
+   "id": "voc5-cien-30"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué era una \"carabela\"?",
+   "opciones": [
+    "Un instrumento para calcular la posición en alta mar",
+    "Un barco de vela pequeño y veloz usado para explorar",
+    "Un puerto fortificado desde donde partían los viajes",
+    "Un mapa que marcaba las rutas de navegación conocidas"
+   ],
+   "correcta": 1,
+   "tip": "Su tamaño y sus velas le permitían alejarse mucho de la costa.",
+   "revisada": false,
+   "id": "voc5-hist-1"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Para qué servía el \"astrolabio\"?",
+   "opciones": [
+    "Para calcular la posición del barco mirando los astros",
+    "Para calcular cuántos días de comida quedaban a bordo",
+    "Para señalar siempre el norte con una aguja imantada",
+    "Para medir la profundidad del agua bajo el casco del barco"
+   ],
+   "correcta": 0,
+   "tip": "Se orientaba con el Sol y las estrellas; el norte lo marcaba la brújula.",
+   "revisada": false,
+   "id": "voc5-hist-2"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"expedición\"?",
+   "opciones": [
+    "Un viaje organizado con un objetivo, como explorar un territorio",
+    "Un permiso que entregaba el rey para fundar una ciudad nueva",
+    "Un acuerdo entre dos reinos para repartirse las tierras lejanas",
+    "Un grupo de soldados encargado de vigilar la costa del reino"
+   ],
+   "correcta": 0,
+   "tip": "Una expedición se prepara antes: gente, barcos, comida y un destino.",
+   "revisada": false,
+   "id": "voc5-hist-3"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué fue la \"conquista\" de América?",
+   "opciones": [
+    "El primer viaje en que los europeos llegaron por azar al continente",
+    "El acuerdo por el que los pueblos indígenas aceptaron pagar tributo",
+    "El proceso en que los españoles ocuparon y dominaron el territorio",
+    "El período en que las colonias americanas se separaron de España"
+   ],
+   "correcta": 2,
+   "tip": "Ocurrió después de los viajes de descubrimiento y duró varias décadas.",
+   "revisada": false,
+   "id": "voc5-hist-4"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En una ciudad colonial, ¿qué era el \"cabildo\"?",
+   "opciones": [
+    "El edificio donde vivía el gobernador enviado por el rey",
+    "La reunión anual en que se cobraban los impuestos de la zona",
+    "El grupo de vecinos que gobernaba y administraba la ciudad",
+    "El tribunal que juzgaba los delitos cometidos en el campo"
+   ],
+   "correcta": 2,
+   "tip": "Se ocupaba de los asuntos locales: caminos, agua, precios y orden.",
+   "revisada": false,
+   "id": "voc5-hist-5"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En historia, ¿qué es una \"colonia\"?",
+   "opciones": [
+    "Un territorio que se gobierna con sus propias leyes",
+    "Un grupo de personas que emigra para trabajar afuera",
+    "Un acuerdo comercial entre dos reinos que son vecinos",
+    "Un territorio ocupado y gobernado por un país lejano"
+   ],
+   "correcta": 3,
+   "tip": "Chile fue colonia de España durante casi tres siglos.",
+   "revisada": false,
+   "id": "voc5-hist-6"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En el período colonial, ¿qué era la \"metrópoli\"?",
+   "opciones": [
+    "La ciudad más poblada que tenía cada territorio americano",
+    "El país europeo del que dependían los territorios de América",
+    "El puerto principal por donde salía el oro rumbo a Europa",
+    "El conjunto de todas las colonias que existían en América"
+   ],
+   "correcta": 1,
+   "tip": "La metrópoli decidía qué se podía producir y con quién comerciar.",
+   "revisada": false,
+   "id": "voc5-hist-7"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es el \"mestizaje\"?",
+   "opciones": [
+    "La mezcla entre pueblos distintos y entre sus costumbres",
+    "La separación de los grupos sociales según dónde vivían",
+    "El traslado de familias europeas para poblar una ciudad",
+    "La enseñanza del idioma español a los pueblos indígenas"
+   ],
+   "correcta": 0,
+   "tip": "De esa mezcla surgió buena parte de la sociedad chilena de hoy.",
+   "revisada": false,
+   "id": "voc5-hist-8"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En la Colonia, ¿qué era la \"encomienda\"?",
+   "opciones": [
+    "Un pago en oro que los españoles le entregaban al rey cada año",
+    "Un sistema en que un grupo indígena debía trabajar para un español",
+    "Un acuerdo de paz firmado entre españoles y pueblos indígenas",
+    "Un permiso para fundar una ciudad en un territorio ya explorado"
+   ],
+   "correcta": 1,
+   "tip": "A cambio de ese trabajo, el español debía protegerlos y evangelizarlos.",
+   "revisada": false,
+   "id": "voc5-hist-9"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En la Colonia, ¿qué era un \"parlamento\"?",
+   "opciones": [
+    "Un discurso público que leía el gobernador al asumir su cargo",
+    "Una asamblea de vecinos que elegía cada año a las autoridades locales",
+    "Un tribunal que resolvía los conflictos por tierras entre vecinos",
+    "Una reunión entre autoridades españolas y mapuches para acordar la paz"
+   ],
+   "correcta": 3,
+   "tip": "Se realizaban en la zona de frontera; el de Quilín es uno de los más conocidos.",
+   "revisada": false,
+   "id": "voc5-hist-10"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿En qué consistió la \"evangelización\" en América?",
+   "opciones": [
+    "En contar cuánta gente vivía en cada zona del territorio",
+    "En construir escuelas para enseñar a leer y a escribir",
+    "En enseñarles la religión católica a los pueblos indígenas",
+    "En repartir tierras entre los soldados que participaron"
+   ],
+   "correcta": 2,
+   "tip": "La realizaron sobre todo órdenes religiosas, como jesuitas y franciscanos.",
+   "revisada": false,
+   "id": "voc5-hist-11"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es el \"patrimonio\" de un país?",
+   "opciones": [
+    "La cantidad de recursos naturales que quedan sin explotar",
+    "El dinero que el Estado guarda para gastos de emergencia",
+    "El conjunto de bienes y costumbres heredados que se conservan",
+    "El territorio que un país reclama como propio ante los demás"
+   ],
+   "correcta": 2,
+   "tip": "Una iglesia colonial, una fiesta y una receta pueden ser patrimonio.",
+   "revisada": false,
+   "id": "voc5-hist-12"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En geografía, ¿qué es el \"relieve\"?",
+   "opciones": [
+    "La clase de vegetación que crece de forma natural en el suelo",
+    "La cantidad de lluvia que cae en un lugar durante todo el año",
+    "El conjunto de ríos y de lagos que hay dentro de una zona",
+    "La forma que tiene la superficie del terreno, con sus alturas"
+   ],
+   "correcta": 3,
+   "tip": "Cordilleras, valles y llanuras son formas del relieve.",
+   "revisada": false,
+   "id": "voc5-hist-13"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué son las \"precipitaciones\"?",
+   "opciones": [
+    "El caudal que llevan los ríos cuando se derrite la nieve",
+    "El agua que cae de las nubes como lluvia, nieve o granizo",
+    "El agua que se evapora desde el mar y va formando nubes",
+    "La humedad que queda en el aire después de un día caluroso"
+   ],
+   "correcta": 1,
+   "tip": "Se miden en milímetros y dicen qué tan lluviosa es una zona.",
+   "revisada": false,
+   "id": "voc5-hist-14"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué describe la \"hidrografía\" de una zona?",
+   "opciones": [
+    "Las montañas, valles y otras formas que toma el terreno",
+    "Los ríos, lagos y otros cuerpos de agua de ese territorio",
+    "Los minerales y bosques que se pueden aprovechar ahí",
+    "Las lluvias y temperaturas que se repiten año tras año"
+   ],
+   "correcta": 1,
+   "tip": "'Hidro' viene de agua: la hidrografía describe las aguas de un lugar.",
+   "revisada": false,
+   "id": "voc5-hist-15"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"recurso natural\"?",
+   "opciones": [
+    "Un espacio natural protegido donde no se permite trabajar",
+    "Un elemento de la naturaleza que las personas pueden aprovechar",
+    "Un permiso que entrega el Estado para explotar un terreno",
+    "Un producto fabricado en una industria a partir de otros materiales"
+   ],
+   "correcta": 1,
+   "tip": "El cobre, el agua, los bosques y los peces son recursos naturales.",
+   "revisada": false,
+   "id": "voc5-hist-16"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Por qué el bosque es un \"recurso renovable\"?",
+   "opciones": [
+    "Porque su uso está permitido solo con un permiso del Estado",
+    "Porque nunca se agota, aunque se corte todo lo que se quiera",
+    "Porque se puede fabricar de nuevo dentro de una industria",
+    "Porque puede reponerse si se replanta y se cuida su ritmo"
+   ],
+   "correcta": 3,
+   "tip": "Renovable no significa infinito: se agota si se usa más rápido de lo que crece.",
+   "revisada": false,
+   "id": "voc5-hist-17"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué quiere decir que el cobre sea un \"recurso no renovable\"?",
+   "opciones": [
+    "Porque solamente se encuentra en unos pocos países del mundo",
+    "Porque su precio cambia bastante de un año para el siguiente",
+    "Porque tardó millones de años en formarse y la mina se agota",
+    "Porque para sacarlo hay que usar máquinas enormes y costosas"
+   ],
+   "correcta": 2,
+   "tip": "No renovable no quiere decir escaso hoy: quiere decir que no vuelve a formarse.",
+   "revisada": false,
+   "id": "voc5-hist-18"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es el \"desarrollo sostenible\"?",
+   "opciones": [
+    "Reemplazar los recursos naturales por materiales artificiales",
+    "Usar los recursos de modo que también alcancen en el futuro",
+    "Dejar de usar por completo los recursos naturales del país",
+    "Extraer la mayor cantidad posible de recursos en poco tiempo"
+   ],
+   "correcta": 1,
+   "tip": "No se trata de dejar de usar, sino de usar sin llegar a agotar.",
+   "revisada": false,
+   "id": "voc5-hist-19"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿A qué se le llama \"riesgo natural\"?",
+   "opciones": [
+    "Un daño que ya ocurrió y dejó pérdidas en una comunidad",
+    "Un fenómeno de la naturaleza que nunca afecta a las personas",
+    "Una zona del país donde está prohibido construir viviendas",
+    "La posibilidad de que un fenómeno de la naturaleza cause daños"
+   ],
+   "correcta": 3,
+   "tip": "Sismos, inundaciones y erupciones son riesgos naturales en Chile.",
+   "revisada": false,
+   "id": "voc5-hist-20"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"evacuación\" en una emergencia?",
+   "opciones": [
+    "El aviso que dan las autoridades cuando viene una tormenta",
+    "El corte del agua y la luz mientras dura una emergencia",
+    "La revisión de un edificio para ver si resiste un temblor",
+    "La salida ordenada de las personas hacia un lugar seguro"
+   ],
+   "correcta": 3,
+   "tip": "Se ensaya antes con simulacros, para saber por dónde salir sin dudar.",
+   "revisada": false,
+   "id": "voc5-hist-21"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"derecho\" de las personas?",
+   "opciones": [
+    "Un premio que se gana cuando alguien cumple con sus tareas",
+    "Una norma que obliga a comportarse de una manera determinada",
+    "Un permiso que el Estado entrega a quienes se lo solicitan",
+    "Algo que toda persona puede exigir por el solo hecho de serlo"
+   ],
+   "correcta": 3,
+   "tip": "No depende del lugar donde naciste ni de cómo eres: los tienen todos.",
+   "revisada": false,
+   "id": "voc5-hist-22"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"deber\"?",
+   "opciones": [
+    "Una obligación que a uno le toca cumplir ante los demás",
+    "Una decisión que cada persona puede tomar libremente",
+    "Una tarea escolar que se hace en la casa por la tarde",
+    "Un beneficio que el Estado entrega a quien lo necesita"
+   ],
+   "correcta": 0,
+   "tip": "Derechos y deberes van juntos: si tengo derechos, debo respetar los ajenos.",
+   "revisada": false,
+   "id": "voc5-hist-23"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En educación cívica, ¿qué es el \"Estado\"?",
+   "opciones": [
+    "El conjunto de instituciones que organizan y gobiernan un país",
+    "El territorio que un país ocupa dentro de sus propias fronteras",
+    "El conjunto de todas las empresas que funcionan en un país",
+    "El grupo de personas que ganó la última elección presidencial"
+   ],
+   "correcta": 0,
+   "tip": "El Estado sigue existiendo aunque cambien las autoridades de turno.",
+   "revisada": false,
+   "id": "voc5-hist-24"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"ley\"?",
+   "opciones": [
+    "Una recomendación que el Estado hace para poder vivir mejor",
+    "Una norma obligatoria para todos, aprobada por las autoridades",
+    "Un acuerdo privado entre dos personas que quieren cumplirlo",
+    "Una costumbre que se sigue por tradición dentro de una comunidad"
+   ],
+   "correcta": 1,
+   "tip": "Obliga a todos por igual, incluso a quienes la aprobaron.",
+   "revisada": false,
+   "id": "voc5-hist-25"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es el \"sufragio\"?",
+   "opciones": [
+    "El derecho a votar para elegir a las autoridades del país",
+    "El derecho a presentar reclamos por escrito ante una autoridad",
+    "El derecho a reunirse con otras personas en un lugar público",
+    "El derecho a decir en público lo que uno piensa, sin castigo"
+   ],
+   "correcta": 0,
+   "tip": "Sufragar es votar: por eso a la papeleta que se deposita se le llama voto.",
+   "revisada": false,
+   "id": "voc5-hist-26"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es la \"discriminación\"?",
+   "opciones": [
+    "Tratar peor a alguien por una característica suya, sin razón justa",
+    "Elegir a la persona más adecuada para un cargo después de evaluarla",
+    "Separar a un curso grande en equipos para trabajar más cómodos",
+    "Dar apoyo adicional a quien tiene más dificultad para aprender"
+   ],
+   "correcta": 0,
+   "tip": "No es distinguir: es tratar peor por el origen, el sexo o la apariencia.",
+   "revisada": false,
+   "id": "voc5-hist-27"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es el \"voluntariado\"?",
+   "opciones": [
+    "El trabajo que una persona realiza mientras estudia una carrera",
+    "El empleo temporal que ofrece el Estado en época de emergencia",
+    "El servicio que una empresa regala para hacerse más conocida",
+    "El trabajo que alguien hace para ayudar, sin recibir un pago"
+   ],
+   "correcta": 3,
+   "tip": "Lo define que sea libre y sin sueldo, no la clase de tarea que se haga.",
+   "revisada": false,
+   "id": "voc5-hist-28"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"junta de vecinos\"?",
+   "opciones": [
+    "Una reunión que convoca la policía para informar de delitos",
+    "Un grupo de familias que comparte el gasto de un edificio",
+    "Una oficina municipal que atiende los reclamos del barrio",
+    "Una organización de un barrio para resolver sus problemas"
+   ],
+   "correcta": 3,
+   "tip": "Es una organización social, y la forman los propios vecinos.",
+   "revisada": false,
+   "id": "voc5-hist-29"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En la escuela, ¿qué es el \"plagio\"?",
+   "opciones": [
+    "Usar una fuente de internet e indicar de dónde se sacó",
+    "Presentar como propio un trabajo que hizo otra persona",
+    "Pedirle ayuda a un compañero para entender una materia",
+    "Copiar un texto en el cuaderno para estudiarlo después"
+   ],
+   "correcta": 1,
+   "tip": "Citar la fuente es lo contrario del plagio: ahí se reconoce a su autor.",
+   "revisada": false,
+   "id": "voc5-hist-30"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es el \"valor posicional\" de un dígito?",
+   "opciones": [
+    "El valor que tiene el dígito solo, sin mirar el número",
+    "La cantidad de dígitos que tiene el número completo",
+    "El lugar que ocupa ese número dentro de una lista",
+    "El valor que tiene según el lugar que ocupa en el número"
+   ],
+   "correcta": 3,
+   "tip": "El 4 de 400 vale cuatrocientos y el 4 de 40 vale cuarenta.",
+   "revisada": false,
+   "id": "voc5-mate-1"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es la \"forma expandida\" de un número?",
+   "opciones": [
+    "Escribirlo aproximado a la centena que le queda más cerca",
+    "Escribirlo separando sus dígitos de a tres con un puntito",
+    "Escribirlo como la suma del valor de cada uno de sus dígitos",
+    "Escribirlo con palabras en lugar de escribirlo con cifras"
+   ],
+   "correcta": 2,
+   "tip": "300 + 40 + 5 es la forma expandida del número 345.",
+   "revisada": false,
+   "id": "voc5-mate-2"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En una multiplicación, ¿qué es el \"producto\"?",
+   "opciones": [
+    "Cada uno de los números que se están multiplicando entre sí",
+    "Lo que sobra cuando la operación no queda exacta",
+    "El resultado que se obtiene al multiplicar los números",
+    "El número por el que se repite una cantidad dada"
+   ],
+   "correcta": 2,
+   "tip": "Los que se multiplican son los factores; lo que sale es el producto.",
+   "revisada": false,
+   "id": "voc5-mate-3"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En una división, ¿qué indica el \"cociente\"?",
+   "opciones": [
+    "Las veces que el divisor cabe dentro del dividendo",
+    "La cantidad que se reparte entre las partes iguales",
+    "El sobrante que queda al terminar de repartir todo",
+    "El número de partes en que se hace todo el reparto"
+   ],
+   "correcta": 0,
+   "tip": "En 20 : 4 = 5 el cociente es 5, porque el 4 cabe cinco veces en 20.",
+   "revisada": false,
+   "id": "voc5-mate-4"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "Al dividir, ¿qué es el \"resto\"?",
+   "opciones": [
+    "El número de grupos iguales que se forman al repartir",
+    "La cantidad que sobra y ya no alcanza para otro reparto",
+    "El resultado final que entrega la división completa",
+    "La cantidad que se está repartiendo desde el comienzo"
+   ],
+   "correcta": 1,
+   "tip": "En 17 : 5 el cociente es 3 y el resto es 2: sobran dos unidades.",
+   "revisada": false,
+   "id": "voc5-mate-5"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es una \"fracción propia\"?",
+   "opciones": [
+    "Una fracción que también se puede escribir como entero",
+    "Una fracción cuyo numerador es mayor que su denominador",
+    "Una fracción cuyo numerador es menor que su denominador",
+    "Una fracción cuyo denominador es siempre un número par"
+   ],
+   "correcta": 2,
+   "tip": "Vale menos que un entero: 3/4 es propia y 5/4 no lo es.",
+   "revisada": false,
+   "id": "voc5-mate-6"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Cómo se reconoce una \"fracción impropia\"?",
+   "opciones": [
+    "Su numerador es siempre menor que su denominador",
+    "Su denominador es un número mayor que diez",
+    "Su numerador es mayor o igual que su denominador",
+    "Su numerador y su denominador son números pares"
+   ],
+   "correcta": 2,
+   "tip": "7/4 es impropia, y equivale al número mixto 1 3/4.",
+   "revisada": false,
+   "id": "voc5-mate-7"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"número mixto\"?",
+   "opciones": [
+    "Un número que junta una fracción con un signo negativo",
+    "Un número formado por dos fracciones que se suman entre sí",
+    "Un número que se escribe con coma y una parte decimal",
+    "Un número formado por un entero y una fracción propia"
+   ],
+   "correcta": 3,
+   "tip": "2 1/2 es un número mixto: dos enteros y un medio.",
+   "revisada": false,
+   "id": "voc5-mate-8"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué se hace al \"simplificar\" una fracción?",
+   "opciones": [
+    "Dividir el numerador y el denominador por un mismo número",
+    "Cambiar de lugar el numerador con el denominador",
+    "Restar un mismo número al numerador y al denominador",
+    "Dividir el numerador por el denominador para dar un decimal"
+   ],
+   "correcta": 0,
+   "tip": "Al simplificar cambia la escritura de la fracción, pero no su valor.",
+   "revisada": false,
+   "id": "voc5-mate-9"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué son dos \"fracciones equivalentes\"?",
+   "opciones": [
+    "Dos fracciones que tienen exactamente el mismo denominador",
+    "Dos fracciones escritas distinto que valen exactamente lo mismo",
+    "Dos fracciones cuya suma da como resultado un entero justo",
+    "Dos fracciones que quedan una al lado de la otra en la recta"
+   ],
+   "correcta": 1,
+   "tip": "1/2 y 3/6 son equivalentes: ocupan el mismo punto de la recta.",
+   "revisada": false,
+   "id": "voc5-mate-10"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es una \"milésima\"?",
+   "opciones": [
+    "Un número formado por mil unidades completas",
+    "Cada una de las cien partes iguales en que se divide una unidad",
+    "El lugar que ocupa el tercer dígito antes de la coma",
+    "Cada una de las mil partes iguales en que se divide una unidad"
+   ],
+   "correcta": 3,
+   "tip": "0,007 se lee siete milésimas: es el tercer lugar después de la coma.",
+   "revisada": false,
+   "id": "voc5-mate-11"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En matemática, ¿qué es una \"sucesión\"?",
+   "opciones": [
+    "Un conjunto de números escritos sin ningún orden",
+    "Un grupo de números que se suman todos entre sí",
+    "Una serie de números ordenados que siguen una regla",
+    "Una operación que se repite con los mismos números"
+   ],
+   "correcta": 2,
+   "tip": "2, 4, 6, 8 es una sucesión, y su regla es sumar dos cada vez.",
+   "revisada": false,
+   "id": "voc5-mate-12"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es una \"ecuación\"?",
+   "opciones": [
+    "Una operación que combina sumas y multiplicaciones seguidas",
+    "Una regla que explica cómo continúa una serie de números",
+    "Una igualdad en la que hay un valor desconocido por encontrar",
+    "Una comparación que indica cuál de dos cantidades es mayor"
+   ],
+   "correcta": 2,
+   "tip": "Lleva un signo igual, y hay que averiguar el número que falta.",
+   "revisada": false,
+   "id": "voc5-mate-13"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué indica una \"inecuación\"?",
+   "opciones": [
+    "Que hay que restar dos cantidades para saber la diferencia",
+    "Que un lado vale más o menos que el otro, sin ser iguales",
+    "Que una serie de números va creciendo según cierta regla",
+    "Que los dos lados de la igualdad valen exactamente lo mismo"
+   ],
+   "correcta": 1,
+   "tip": "En vez del signo igual lleva el de mayor que o el de menor que.",
+   "revisada": false,
+   "id": "voc5-mate-14"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es el \"plano cartesiano\"?",
+   "opciones": [
+    "Una recta numérica donde se marcan los números enteros",
+    "Dos rectas numéricas cruzadas que sirven para ubicar puntos",
+    "Una cuadrícula donde se dibujan figuras del mismo tamaño",
+    "Un mapa dividido en zonas marcadas con letras y números"
+   ],
+   "correcta": 1,
+   "tip": "Una recta va horizontal y la otra vertical; se cruzan en el origen.",
+   "revisada": false,
+   "id": "voc5-mate-15"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué indican las \"coordenadas\" de un punto?",
+   "opciones": [
+    "El tamaño de la figura que se dibuja desde el punto",
+    "El orden en que ese punto se marcó en el plano",
+    "La distancia entre ese punto y el borde del plano",
+    "Su posición exacta, con un número para cada eje"
+   ],
+   "correcta": 3,
+   "tip": "El eje horizontal se lee antes que el vertical: (3, 5) no es (5, 3).",
+   "revisada": false,
+   "id": "voc5-mate-16"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En un cuerpo geométrico, ¿qué es una \"arista\"?",
+   "opciones": [
+    "El punto donde se juntan tres o más caras",
+    "La medida del contorno de una de sus caras",
+    "Cada una de las superficies planas del cuerpo",
+    "La línea donde se juntan dos caras del cuerpo"
+   ],
+   "correcta": 3,
+   "tip": "Un cubo tiene doce aristas, seis caras y ocho vértices.",
+   "revisada": false,
+   "id": "voc5-mate-17"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué son dos rectas \"perpendiculares\"?",
+   "opciones": [
+    "Dos rectas que nunca se cruzan por más que se prolonguen",
+    "Dos rectas que se cruzan formando ángulos muy distintos",
+    "Dos rectas que tienen exactamente la misma longitud",
+    "Dos rectas que se cruzan formando cuatro ángulos rectos"
+   ],
+   "correcta": 3,
+   "tip": "Se cruzan en escuadra, como los dos bordes de una hoja de cuaderno.",
+   "revisada": false,
+   "id": "voc5-mate-18"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué son dos figuras \"congruentes\"?",
+   "opciones": [
+    "Dos figuras con la misma forma y el mismo tamaño",
+    "Dos figuras que están giradas hacia el mismo lado",
+    "Dos figuras con la misma forma y distinto tamaño",
+    "Dos figuras que juntas forman un cuadrado completo"
+   ],
+   "correcta": 0,
+   "tip": "Si una calza justo encima de la otra al moverla, son congruentes.",
+   "revisada": false,
+   "id": "voc5-mate-19"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es una \"traslación\" de una figura?",
+   "opciones": [
+    "Reflejarla como si estuviera puesta frente a un espejo",
+    "Moverla en línea recta sin girarla ni cambiarle el tamaño",
+    "Agrandarla conservando siempre su forma original",
+    "Girarla alrededor de un punto sin cambiarle el tamaño"
+   ],
+   "correcta": 1,
+   "tip": "La figura trasladada queda congruente con la figura original.",
+   "revisada": false,
+   "id": "voc5-mate-20"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es el \"perímetro\" de una figura?",
+   "opciones": [
+    "La medida del lado más largo que tiene la figura",
+    "La medida de todo el contorno que rodea a la figura",
+    "La cantidad de lados que tiene esa figura en total",
+    "La medida de la superficie que queda dentro de ella"
+   ],
+   "correcta": 1,
+   "tip": "Se recorre el borde y se suman las medidas de todos los lados.",
+   "revisada": false,
+   "id": "voc5-mate-21"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "Al calcular el \"área\", ¿qué se está midiendo?",
+   "opciones": [
+    "La superficie que la figura cubre por dentro",
+    "La distancia entre sus dos vértices más lejanos",
+    "El contorno que rodea a la figura por fuera",
+    "La cantidad de lados que forman su contorno"
+   ],
+   "correcta": 0,
+   "tip": "El área se mide en unidades cuadradas, como centímetros cuadrados.",
+   "revisada": false,
+   "id": "voc5-mate-22"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"milímetro\"?",
+   "opciones": [
+    "Una unidad de longitud que vale la décima parte de un centímetro",
+    "Una unidad de superficie que sirve para medir terrenos",
+    "Una unidad de longitud que vale exactamente cien centímetros",
+    "Una unidad de longitud que equivale a la mitad de un centímetro"
+   ],
+   "correcta": 0,
+   "tip": "En un centímetro caben diez milímetros, y en un metro caben mil.",
+   "revisada": false,
+   "id": "voc5-mate-23"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "En un triángulo, ¿qué es la \"base\"?",
+   "opciones": [
+    "El lado que queda apoyado sobre el suelo al dibujarlo",
+    "La línea que une un vértice con el punto medio del frente",
+    "El lado que se elige como referencia para calcular el área",
+    "El lado más largo que tiene ese triángulo siempre"
+   ],
+   "correcta": 2,
+   "tip": "Cualquiera de los tres lados puede ser la base: uno la elige.",
+   "revisada": false,
+   "id": "voc5-mate-24"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Cómo se traza la \"altura\" de un triángulo?",
+   "opciones": [
+    "Uniendo los puntos medios de dos lados cualquiera",
+    "Siguiendo el lado más largo, de un vértice al otro",
+    "Perpendicular a la base, hasta el vértice de enfrente",
+    "Uniendo los dos vértices que quedan más separados"
+   ],
+   "correcta": 2,
+   "tip": "Se traza en escuadra respecto de la base, y no es un lado cualquiera.",
+   "revisada": false,
+   "id": "voc5-mate-25"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es el \"promedio\" de un grupo de datos?",
+   "opciones": [
+    "El dato que aparece más veces repetido dentro del grupo",
+    "La diferencia que hay entre el dato mayor y el menor",
+    "El resultado de sumarlos todos y dividir por su cantidad",
+    "El dato que queda justo al centro cuando se ordenan"
+   ],
+   "correcta": 2,
+   "tip": "El promedio reparte el total en partes iguales entre todos los datos.",
+   "revisada": false,
+   "id": "voc5-mate-26"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"experimento aleatorio\"?",
+   "opciones": [
+    "Uno cuyo resultado es siempre el mismo cada vez que se repite",
+    "Uno cuyo resultado no se puede saber antes de hacerlo",
+    "Uno que se repite muchas veces para comprobar una fórmula",
+    "Uno en que se mide algo con instrumentos muy precisos"
+   ],
+   "correcta": 1,
+   "tip": "Lanzar un dado es aleatorio: puede salir cualquiera de sus caras.",
+   "revisada": false,
+   "id": "voc5-mate-27"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"evento imposible\"?",
+   "opciones": [
+    "Uno que ocurre pocas veces, aunque de repente sí podría pasar",
+    "Uno que ocurre solo si la prueba se repite muchísimas veces",
+    "Uno que ocurre siempre, cada vez que se realiza la prueba",
+    "Uno que no puede ocurrir de ninguna manera en ese experimento"
+   ],
+   "correcta": 3,
+   "tip": "Sacar un 7 con un dado de seis caras es imposible: esa cara no existe.",
+   "revisada": false,
+   "id": "voc5-mate-28"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Para qué sirve un \"gráfico de línea\"?",
+   "opciones": [
+    "Para ordenar los datos de menor a mayor en una tabla",
+    "Para mostrar qué parte del total representa cada grupo",
+    "Para mostrar cómo cambia un dato a lo largo del tiempo",
+    "Para comparar el tamaño de varios grupos distintos"
+   ],
+   "correcta": 2,
+   "tip": "Une los puntos con una línea, y así se ve si el dato sube o baja.",
+   "revisada": false,
+   "id": "voc5-mate-29"
+  },
+  {
+   "oa": "VOC-MATE",
+   "pregunta": "¿Qué es un \"diagrama de tallo y hojas\"?",
+   "opciones": [
+    "Un gráfico que muestra cómo se reparte un total en porciones",
+    "Una forma de ordenar datos separando sus dígitos en dos partes",
+    "Un esquema que muestra todas las combinaciones posibles",
+    "Un dibujo que representa a un grupo repitiendo una misma figura"
+   ],
+   "correcta": 1,
+   "tip": "El tallo lleva la decena y las hojas llevan las unidades de cada dato.",
+   "revisada": false,
+   "id": "voc5-mate-30"
+  }
+ ]
+}

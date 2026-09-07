@@ -1034,7 +1034,12 @@ function activarExpedicion(exp){
 
 /* ── Progreso, guardado y medición por OA ─────────────────────────────────────────────────── */
 /* ================= ESTADO ================= */
-function nuevoProgreso(n){n=n||(EXPEDICION?EXPEDICION.length:5);
+/* `conJefe` distingue una campana (termina en jefe) de un modulo transversal, que NO tiene:
+   Vocabulario y las lecturas son etapas todas iguales. Sin esto su ULTIMA etapa nacia
+   cerrada aunque ORDEN_LIBRE estuviera encendido, y habia que completar la anterior para
+   llegar -justo lo que ORDEN_LIBRE viene a evitar-. Por omision vale true, o sea que quien
+   llame sin el parametro se comporta igual que siempre. */
+function nuevoProgreso(n,conJefe){n=n||(EXPEDICION?EXPEDICION.length:5);
  // En modo prueba (?solo=) la ruta nace con TODAS las etapas abiertas, jefe del
  // capítulo incluido: el invitado entra a probar cualquiera, no a avanzar en orden.
  // Con ORDEN_LIBRE —el default desde el 06/09/2026— se abren todas MENOS la del jefe,
@@ -1044,18 +1049,20 @@ function nuevoProgreso(n){n=n||(EXPEDICION?EXPEDICION.length:5);
  // ⚠️ ?qa=1 NO abre etapas y nunca las abrió: por eso la condición mira PRUEBA y no
  //    CAPS_ABIERTOS, que también vale true en QA (y ahí JEFES_ABIERTOS apaga esta rama).
  return Array.from({length:n},(_,i)=>{
-  const esJefe=(i===n-1);
+  const esJefe=(i===n-1)&&conJefe!==false;
   const abierta = PRUEBA || i===0 || (CAPS_ABIERTOS && !JEFES_ABIERTOS && !esJefe);
   return {est:abierta?"open":"lock",estrellas:0};});}
 function progAct(){return MODO==='dificil'?S.progresoDificil:S.progreso;}
 function esJefeLvl(lvl){return lvl===N_ETAPAS-1;}
 function estadoRuta(exp){
  const n=exp.etapas.length;
- if(!S.rutas[exp.id]) S.rutas[exp.id]={progreso:nuevoProgreso(n),progresoDificil:nuevoProgreso(n),dificilDesbloqueado:false};
+ // Se pregunta si la ultima etapa ES un jefe, en vez de asumirlo por su posicion.
+ const conJefe=!!(exp.etapas[n-1]&&exp.etapas[n-1].oa==='BOSS');
+ if(!S.rutas[exp.id]) S.rutas[exp.id]={progreso:nuevoProgreso(n,conJefe),progresoDificil:nuevoProgreso(n,conJefe),dificilDesbloqueado:false};
  const st=S.rutas[exp.id];
  if(!Array.isArray(st.progreso)||st.progreso.length!==n) st.progreso=reconciliarProgreso(st.progreso,n);
  if(!Array.isArray(st.progresoDificil)||st.progresoDificil.length!==n) st.progresoDificil=reconciliarProgreso(st.progresoDificil,n);
- abrirOrdenLibre(st.progreso); abrirOrdenLibre(st.progresoDificil);
+ abrirOrdenLibre(st.progreso,conJefe); abrirOrdenLibre(st.progresoDificil,conJefe);
  return st;
 }
 /* ⚠️ `nuevoProgreso` solo corre al CREAR la ruta, así que una partida guardada ANTES de
@@ -1065,9 +1072,10 @@ function estadoRuta(exp){
    No toca las 'done' (conservan sus estrellas) ni la del jefe, que sigue pidiendo
    completar el capítulo — es donde vive la meta. Idempotente: correrlo dos veces da lo
    mismo, y por eso puede vivir en estadoRuta, que se llama todo el tiempo. */
-function abrirOrdenLibre(p){
+function abrirOrdenLibre(p,conJefe){
  if(typeof ORDEN_LIBRE==='undefined'||!ORDEN_LIBRE||JEFES_ABIERTOS||!Array.isArray(p)) return p;
- for(let i=0;i<p.length-1;i++) if(p[i]&&p[i].est==='lock') p[i].est='open';
+ const hasta = conJefe===false ? p.length : p.length-1;   // sin jefe se abren TODAS
+ for(let i=0;i<hasta;i++) if(p[i]&&p[i].est==='lock') p[i].est='open';
  return p;
 }
 /* ===== Helpers de progreso de campaña ===== */

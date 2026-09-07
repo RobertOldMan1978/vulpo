@@ -1,0 +1,844 @@
+{
+ "preguntas": [
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"ecosistema\"?",
+   "opciones": [
+    "Un terreno donde solo crecen plantas cuidadas por las personas",
+    "Un grupo de animales de la misma especie que viven todos juntos en un lugar",
+    "Una lista con los nombres de los animales de una zona",
+    "Un lugar donde los seres vivos y lo no vivo se relacionan entre sí"
+   ],
+   "correcta": 3,
+   "tip": "En un ecosistema conviven lo vivo y lo no vivo: el agua, las piedras y el suelo también son parte.",
+   "revisada": false,
+   "id": "voc4-cien-1"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"adaptación\" de un animal?",
+   "opciones": [
+    "Una enfermedad que le da cuando el clima cambia de golpe",
+    "Un cambio que le ocurre solamente cuando ya está muy viejo",
+    "Una característica de su cuerpo o su conducta que lo ayuda a sobrevivir",
+    "Una costumbre que aprende de las personas que lo cuidan en su casa"
+   ],
+   "correcta": 2,
+   "tip": "La adaptación sirve para vivir mejor en el lugar donde le tocó nacer.",
+   "revisada": false,
+   "id": "voc4-cien-2"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Para qué le sirve el \"camuflaje\" a un animal?",
+   "opciones": [
+    "Para asustar a los otros animales con un ruido muy fuerte",
+    "Para aguantar el frío gracias a su pelaje grueso",
+    "Para moverse mucho más rápido cuando alguien lo persigue",
+    "Para confundirse con el lugar donde está y que no lo vean"
+   ],
+   "correcta": 3,
+   "tip": "Camuflarse es parecerse al entorno: el color y la forma lo esconden.",
+   "revisada": false,
+   "id": "voc4-cien-3"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué hace un animal cuando entra en \"hibernación\"?",
+   "opciones": [
+    "Junta comida en su madriguera y sigue activo todo el año",
+    "Viaja a un lugar más cálido y vuelve en primavera",
+    "Pasa el invierno casi dormido y gasta muy poca energía",
+    "Cambia el color de su pelaje para que no lo vean"
+   ],
+   "correcta": 2,
+   "tip": "Hibernar es bajar el ritmo del cuerpo para aguantar el invierno; viajar a otro lugar es otra cosa.",
+   "revisada": false,
+   "id": "voc4-cien-4"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué muestra una \"cadena alimentaria\"?",
+   "opciones": [
+    "Cuántos animales de cada especie viven en ese lugar",
+    "El camino que recorre un animal para buscar agua",
+    "El orden en que nacen las crías de cada animal",
+    "Quién se alimenta de quién dentro de un ecosistema"
+   ],
+   "correcta": 3,
+   "tip": "La cadena muestra por dónde va pasando el alimento de un ser vivo a otro.",
+   "revisada": false,
+   "id": "voc4-cien-5"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En una cadena alimentaria, ¿qué es un \"productor\"?",
+   "opciones": [
+    "Un animal que caza a otros animales para alimentarse",
+    "Un animal que come plantas y también carne",
+    "Un ser vivo que se alimenta de los restos de otros",
+    "Un ser vivo que fabrica su alimento, como las plantas"
+   ],
+   "correcta": 3,
+   "tip": "Se llama productor porque produce su propio alimento con la luz del sol.",
+   "revisada": false,
+   "id": "voc4-cien-6"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Por qué a un animal se le llama \"consumidor\"?",
+   "opciones": [
+    "Porque usa la luz del sol para producir su propia comida",
+    "Porque se alimenta del agua y de los minerales del suelo",
+    "Porque no fabrica su alimento y come a otros seres vivos",
+    "Porque convierte los restos muertos en tierra otra vez"
+   ],
+   "correcta": 2,
+   "tip": "Consumir es comerse a otro: ningún animal fabrica su alimento.",
+   "revisada": false,
+   "id": "voc4-cien-7"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué hace un \"descomponedor\", como un hongo?",
+   "opciones": [
+    "Caza animales pequeños y los guarda dentro de su madriguera",
+    "Se come las hojas verdes de los árboles del bosque",
+    "Convierte los restos de seres muertos en nutrientes del suelo",
+    "Fabrica su alimento con la luz del sol, igual que las plantas"
+   ],
+   "correcta": 2,
+   "tip": "Los descomponedores devuelven al suelo los nutrientes de lo que murió.",
+   "revisada": false,
+   "id": "voc4-cien-8"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"veda\"?",
+   "opciones": [
+    "Un tiempo en que se prohíbe pescar o cazar una especie",
+    "Un impuesto que se le cobra a quien vende pescado fresco",
+    "Un permiso para pescar todo lo que se quiera en el mar",
+    "Una zona del mar donde solo entran los barcos grandes"
+   ],
+   "correcta": 0,
+   "tip": "La veda da un descanso a la especie para que alcance a reproducirse.",
+   "revisada": false,
+   "id": "voc4-cien-9"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Para qué existe un \"parque nacional\"?",
+   "opciones": [
+    "Para criar animales de granja y vender su carne y su leche",
+    "Para construir casas nuevas en un terreno muy grande",
+    "Para proteger un lugar natural con sus plantas y animales",
+    "Para juntar en un solo lugar animales traídos de otros países"
+   ],
+   "correcta": 2,
+   "tip": "Un parque nacional protege el ecosistema completo, no solo a una especie.",
+   "revisada": false,
+   "id": "voc4-cien-10"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"esqueleto\" del cuerpo humano?",
+   "opciones": [
+    "El conjunto de músculos que se estiran y se encogen",
+    "El conjunto de nervios que llevan los mensajes al cerebro",
+    "La piel que cubre y protege el cuerpo por fuera",
+    "El conjunto de todos los huesos que sostienen el cuerpo"
+   ],
+   "correcta": 3,
+   "tip": "El esqueleto sostiene, protege y permite el movimiento del cuerpo.",
+   "revisada": false,
+   "id": "voc4-cien-11"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué protege el \"cráneo\"?",
+   "opciones": [
+    "El estómago, que queda en la parte baja del cuerpo",
+    "La médula espinal, que baja por la mitad de la espalda",
+    "El corazón y los pulmones, que están dentro del pecho",
+    "El cerebro, porque forma una caja de hueso a su alrededor"
+   ],
+   "correcta": 3,
+   "tip": "El cráneo es la caja dura que rodea al cerebro; el pecho lo cuidan las costillas.",
+   "revisada": false,
+   "id": "voc4-cien-12"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"columna vertebral\"?",
+   "opciones": [
+    "Un conjunto de costillas que rodean todo el pecho",
+    "Un hueso largo y entero que va del cuello hasta la cadera",
+    "Una fila de huesos pequeños que recorre toda la espalda",
+    "Un músculo grueso que mantiene la espalda bien derecha"
+   ],
+   "correcta": 2,
+   "tip": "La columna no es un solo hueso: son muchas vértebras, una sobre otra.",
+   "revisada": false,
+   "id": "voc4-cien-13"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"articulación\", como la rodilla?",
+   "opciones": [
+    "El músculo que se encoge para levantar la pierna entera",
+    "La cuerda que une el músculo con el hueso",
+    "La parte más dura del hueso, que aguanta todo el peso",
+    "El punto donde se unen dos huesos y permite el movimiento"
+   ],
+   "correcta": 3,
+   "tip": "Sin articulaciones los huesos no podrían doblarse ni girar.",
+   "revisada": false,
+   "id": "voc4-cien-14"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué hace la \"médula espinal\"?",
+   "opciones": [
+    "Lleva los mensajes entre el cerebro y el resto del cuerpo",
+    "Guarda los recuerdos y las cosas que uno va aprendiendo",
+    "Reparte la sangre desde el corazón hacia las piernas",
+    "Sostiene la cabeza para que no se caiga hacia adelante"
+   ],
+   "correcta": 0,
+   "tip": "La médula espinal es el cable principal: pasa por dentro de la columna.",
+   "revisada": false,
+   "id": "voc4-cien-15"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"materia\"?",
+   "opciones": [
+    "Todo lo que pesa mucho y cuesta levantar del suelo",
+    "Todo lo que tiene masa y ocupa un lugar en el espacio",
+    "Todo lo que está formado por seres vivos o sus restos",
+    "Todo lo que se puede ver y tocar, menos los líquidos"
+   ],
+   "correcta": 1,
+   "tip": "El aire también es materia, aunque no se vea: tiene masa y ocupa espacio.",
+   "revisada": false,
+   "id": "voc4-cien-16"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué mide la \"masa\" de un objeto?",
+   "opciones": [
+    "El espacio que ese objeto ocupa por dentro",
+    "La rapidez con que el objeto puede caer",
+    "Lo caliente o lo frío que está el objeto",
+    "La cantidad de materia que tiene ese objeto"
+   ],
+   "correcta": 3,
+   "tip": "Más masa es más materia, aunque el objeto sea chico.",
+   "revisada": false,
+   "id": "voc4-cien-17"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"volumen\" de un objeto?",
+   "opciones": [
+    "La cantidad de materia que tiene",
+    "La fuerza con que cae al suelo",
+    "El espacio que ese objeto ocupa",
+    "Su temperatura en ese momento"
+   ],
+   "correcta": 2,
+   "tip": "Dos objetos pueden ocupar el mismo espacio y tener distinta masa.",
+   "revisada": false,
+   "id": "voc4-cien-18"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué quiere decir que un líquido puede \"fluir\"?",
+   "opciones": [
+    "Que puede desaparecer si se deja un rato al sol",
+    "Que puede mantener siempre su misma forma propia",
+    "Que puede volverse sólido cuando hace mucho frío",
+    "Que puede correr y tomar la forma del recipiente"
+   ],
+   "correcta": 3,
+   "tip": "Fluir es correr y acomodarse al envase: por eso el agua no tiene forma propia.",
+   "revisada": false,
+   "id": "voc4-cien-19"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Para qué se usa una \"balanza\"?",
+   "opciones": [
+    "Para medir la masa de un objeto",
+    "Para medir cuánto espacio ocupa",
+    "Para medir su temperatura exacta",
+    "Para medir su largo en centímetros"
+   ],
+   "correcta": 0,
+   "tip": "La balanza compara masas y las entrega en gramos o en kilos.",
+   "revisada": false,
+   "id": "voc4-cien-20"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué mide un \"termómetro\"?",
+   "opciones": [
+    "La temperatura de algo, en grados",
+    "El volumen de un líquido, en litros",
+    "La fuerza con que se empuja algo",
+    "La masa de algo, en gramos y kilos"
+   ],
+   "correcta": 0,
+   "tip": "El termómetro dice qué tan caliente o frío está algo.",
+   "revisada": false,
+   "id": "voc4-cien-21"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"fuerza de roce\"?",
+   "opciones": [
+    "La que frena a un objeto cuando se arrastra sobre algo",
+    "La que empuja a un objeto para que salga disparado",
+    "La que hacen los imanes sobre algunos metales cercanos",
+    "La que atrae a los objetos hacia el centro de la Tierra"
+   ],
+   "correcta": 0,
+   "tip": "El roce aparece entre dos superficies que se rozan y siempre frena el movimiento.",
+   "revisada": false,
+   "id": "voc4-cien-22"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Al soltar una piedra, ¿qué hace la \"gravedad\"?",
+   "opciones": [
+    "La frena mientras va rozando contra el aire que la rodea",
+    "La mantiene quieta hasta que alguien la mueva",
+    "La empuja hacia arriba porque el aire pesa menos",
+    "La atrae hacia la Tierra y la hace caer al suelo"
+   ],
+   "correcta": 3,
+   "tip": "La gravedad atrae todo hacia la Tierra: por eso las cosas caen.",
+   "revisada": false,
+   "id": "voc4-cien-23"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué hace la \"fuerza magnética\" de un imán?",
+   "opciones": [
+    "Calienta los metales que se le acercan demasiado",
+    "Hace más pesados a los objetos de metal cercanos",
+    "Atrae desde lejos algunos metales, como el hierro",
+    "Empuja cualquier objeto que esté a su alrededor"
+   ],
+   "correcta": 2,
+   "tip": "El imán actúa sin tocar, y solo sobre ciertos metales.",
+   "revisada": false,
+   "id": "voc4-cien-24"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es la \"corteza\" de la Tierra?",
+   "opciones": [
+    "La parte del centro, que es la más caliente de todas",
+    "La capa de afuera, donde está el suelo que pisamos",
+    "La capa del medio, formada por rocas muy calientes",
+    "Una capa de aire que rodea el planeta por completo"
+   ],
+   "correcta": 1,
+   "tip": "La corteza es la capa más delgada, y es la única que vemos.",
+   "revisada": false,
+   "id": "voc4-cien-25"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Dónde está el \"manto\" de la Tierra?",
+   "opciones": [
+    "Alrededor del planeta, mezclado con el aire que respiramos",
+    "En el mismo centro del planeta, bajo todas las capas",
+    "Entre la corteza y el núcleo, y es la capa más gruesa",
+    "Sobre la corteza, cubriendo los mares y los continentes"
+   ],
+   "correcta": 2,
+   "tip": "El manto va en el medio: es la capa que más espacio ocupa.",
+   "revisada": false,
+   "id": "voc4-cien-26"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"núcleo\" de la Tierra?",
+   "opciones": [
+    "La capa de aire que envuelve todo el planeta",
+    "La capa de agua que cubre casi todo el planeta",
+    "La capa de afuera, donde están los continentes",
+    "La capa del centro, la más caliente del planeta"
+   ],
+   "correcta": 3,
+   "tip": "El núcleo está en el centro y es la parte más caliente de todas.",
+   "revisada": false,
+   "id": "voc4-cien-27"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué son las \"placas tectónicas\"?",
+   "opciones": [
+    "Placas de metal que se usan para medir los temblores",
+    "Piedras planas que quedan después de una erupción",
+    "Trozos enormes de la corteza que se mueven muy despacio",
+    "Capas de tierra que se van formando al fondo de los ríos"
+   ],
+   "correcta": 2,
+   "tip": "Cuando dos placas se rozan o chocan se producen los sismos.",
+   "revisada": false,
+   "id": "voc4-cien-28"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"tsunami\"?",
+   "opciones": [
+    "Una lluvia tan intensa que hace crecer los ríos",
+    "Un viento muy fuerte que levanta el agua de la costa",
+    "Olas enormes que se forman por un sismo en el mar",
+    "Una ola grande que aparece cada vez que sube la marea"
+   ],
+   "correcta": 2,
+   "tip": "El tsunami nace de un sismo bajo el mar, no del viento ni de la lluvia.",
+   "revisada": false,
+   "id": "voc4-cien-29"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es una \"zona de seguridad\"?",
+   "opciones": [
+    "Un lugar marcado donde hay que reunirse en una emergencia",
+    "Un lugar cerrado donde se guardan los objetos de valor",
+    "Una sala donde se atiende a quien se siente enfermo",
+    "Un camino pintado en la calle para cruzar sin peligro"
+   ],
+   "correcta": 0,
+   "tip": "La zona de seguridad se marca antes, para saber adónde ir sin pensarlo.",
+   "revisada": false,
+   "id": "voc4-cien-30"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Quiénes eran los \"mayas\"?",
+   "opciones": [
+    "Un pueblo que llegó desde Europa a conquistar América",
+    "Un pueblo antiguo que vivió en las selvas de América Central",
+    "Un pueblo que vive hoy en el extremo sur de Chile",
+    "Un pueblo antiguo que vivió en las islas del mar Mediterráneo"
+   ],
+   "correcta": 1,
+   "tip": "Los mayas vivieron en zonas de selva, en el sur de México y en Guatemala.",
+   "revisada": false,
+   "id": "voc4-hist-1"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Para qué usaban los mayas su \"calendario\"?",
+   "opciones": [
+    "Para saber cuándo sembrar y cuándo hacer sus fiestas",
+    "Para marcar los caminos que unían una ciudad con otra",
+    "Para escribir los nombres de todos sus reyes antiguos",
+    "Para anotar cuánto maíz guardaba cada familia del pueblo"
+   ],
+   "correcta": 0,
+   "tip": "Su calendario ordenaba el año: los cultivos y las ceremonias.",
+   "revisada": false,
+   "id": "voc4-hist-2"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué estudia la \"astronomía\"?",
+   "opciones": [
+    "Los astros del cielo, como el Sol, la Luna y las estrellas",
+    "Las costumbres y las creencias de los pueblos antiguos",
+    "Las formas del terreno, como los cerros y los valles",
+    "Las plantas y los animales que viven en cada zona"
+   ],
+   "correcta": 0,
+   "tip": "Los mayas observaban el cielo con mucha precisión, sin telescopios.",
+   "revisada": false,
+   "id": "voc4-hist-3"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué era \"Tenochtitlán\"?",
+   "opciones": [
+    "Un templo enorme donde los incas guardaban su oro",
+    "Un camino de piedra que cruzaba toda la cordillera",
+    "La gran ciudad de los aztecas, construida sobre un lago",
+    "El nombre del jefe más poderoso que tuvieron los mayas"
+   ],
+   "correcta": 2,
+   "tip": "Tenochtitlán se levantó en medio de un lago, y hoy ahí está Ciudad de México.",
+   "revisada": false,
+   "id": "voc4-hist-4"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué era una \"chinampa\" de los aztecas?",
+   "opciones": [
+    "Una casa de barro construida a la orilla de un lago",
+    "Una canoa larga que servía para pescar en el lago",
+    "Una isla artificial hecha para cultivar sobre el agua",
+    "Una vasija grande donde se guardaba el maíz seco"
+   ],
+   "correcta": 2,
+   "tip": "Con las chinampas los aztecas ganaron terreno de cultivo dentro del lago.",
+   "revisada": false,
+   "id": "voc4-hist-5"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Para qué usaban el \"cacao\" los pueblos de México?",
+   "opciones": [
+    "Para teñir de color café las telas de su ropa",
+    "Para construir los techos de las casas del pueblo",
+    "Para alimentar a los animales que criaban",
+    "Para preparar una bebida y también como moneda"
+   ],
+   "correcta": 3,
+   "tip": "El cacao valía tanto que con sus semillas se pagaba, como si fueran monedas.",
+   "revisada": false,
+   "id": "voc4-hist-6"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué era un \"quipu\" de los incas?",
+   "opciones": [
+    "Un mensajero que corría para llevar noticias muy lejos",
+    "Un conjunto de cuerdas con nudos para llevar las cuentas",
+    "Una herramienta de piedra para trabajar la tierra dura",
+    "Un dibujo en la roca que contaba una historia antigua"
+   ],
+   "correcta": 1,
+   "tip": "Los nudos del quipu guardaban números: era su forma de registrar.",
+   "revisada": false,
+   "id": "voc4-hist-7"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué hacía un \"chasqui\" en el imperio inca?",
+   "opciones": [
+    "Corría por los caminos llevando mensajes de un lugar a otro",
+    "Dirigía la construcción de los templos y de los palacios",
+    "Guardaba las cuentas del imperio anotándolas en cuerdas",
+    "Cuidaba los rebaños de llamas en los cerros más altos"
+   ],
+   "correcta": 0,
+   "tip": "Los chasquis se turnaban por tramos, así el mensaje viajaba rapidísimo.",
+   "revisada": false,
+   "id": "voc4-hist-8"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué eran los \"andenes\" que construían los incas?",
+   "opciones": [
+    "Depósitos de piedra donde guardaban la comida del año",
+    "Terrazas escalonadas en los cerros para poder cultivar",
+    "Escaleras que subían hasta la entrada de los templos",
+    "Puentes de cuerda que cruzaban los ríos de montaña"
+   ],
+   "correcta": 1,
+   "tip": "Los andenes convertían la ladera del cerro en escalones planos de cultivo.",
+   "revisada": false,
+   "id": "voc4-hist-9"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Por qué el \"maíz\" era tan importante para esos pueblos?",
+   "opciones": [
+    "Porque solo lo comían los jefes en ocasiones especiales",
+    "Porque con él fabricaban las telas de su ropa de fiesta",
+    "Porque lo usaban para construir las paredes de sus casas",
+    "Porque era su alimento principal y lo cultivaban siempre"
+   ],
+   "correcta": 3,
+   "tip": "Mayas, aztecas e incas basaban su comida diaria en el maíz.",
+   "revisada": false,
+   "id": "voc4-hist-10"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"pueblo indígena\"?",
+   "opciones": [
+    "Un grupo que se formó hace pocos años en una gran ciudad",
+    "Un pueblo que llegó desde Europa hace unos quinientos años",
+    "Un pueblo que vivía en un territorio desde mucho antes de la conquista",
+    "Un grupo de personas que se fue a vivir a otro continente"
+   ],
+   "correcta": 2,
+   "tip": "Muchos pueblos indígenas siguen vivos hoy, con su lengua y sus costumbres.",
+   "revisada": false,
+   "id": "voc4-hist-11"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"paralelo\" en un mapa?",
+   "opciones": [
+    "Una línea que señala el camino más corto entre dos puertos",
+    "Una línea vertical que va de un polo al otro del planeta",
+    "Una línea horizontal que rodea la Tierra, como el Ecuador",
+    "Una línea que marca el límite entre dos países vecinos"
+   ],
+   "correcta": 2,
+   "tip": "Los paralelos son círculos acostados: van de este a oeste.",
+   "revisada": false,
+   "id": "voc4-hist-12"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"meridiano\"?",
+   "opciones": [
+    "Una línea que separa el mar de la tierra en el mapa",
+    "Una línea que rodea la Tierra a la misma altura siempre",
+    "Una línea que marca dónde empieza cada zona de montaña",
+    "Una línea que va de norte a sur, de un polo al otro"
+   ],
+   "correcta": 3,
+   "tip": "Los meridianos van parados, de polo a polo, y cortan a los paralelos.",
+   "revisada": false,
+   "id": "voc4-hist-13"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Para qué sirven las \"coordenadas geográficas\"?",
+   "opciones": [
+    "Para medir la altura que tienen los cerros de una zona",
+    "Para ubicar con exactitud un lugar cualquiera del planeta",
+    "Para conocer el clima que hace en cada mes en un lugar",
+    "Para saber cuánta gente vive en cada país del continente"
+   ],
+   "correcta": 1,
+   "tip": "Cruzando un paralelo y un meridiano queda marcado un punto exacto.",
+   "revisada": false,
+   "id": "voc4-hist-14"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"recurso renovable\"?",
+   "opciones": [
+    "Uno que se acaba para siempre apenas se termina de usar",
+    "Uno que la naturaleza puede reponer si se usa con cuidado",
+    "Uno que fabrican las personas en fábricas y talleres",
+    "Uno que solo se encuentra bajo tierra y hay que extraer"
+   ],
+   "correcta": 1,
+   "tip": "Renovable no quiere decir infinito: si se usa de más, igual se agota.",
+   "revisada": false,
+   "id": "voc4-hist-15"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Por qué el petróleo es un \"recurso no renovable\"?",
+   "opciones": [
+    "Porque cuesta muy caro sacarlo desde el fondo del mar",
+    "Porque se demoró millones de años en formarse y se agota",
+    "Porque se encuentra solo en unos pocos países del mundo",
+    "Porque se puede volver a formar en apenas unos pocos años"
+   ],
+   "correcta": 1,
+   "tip": "Lo que tardó millones de años en formarse no alcanza a reponerse.",
+   "revisada": false,
+   "id": "voc4-hist-16"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"cordillera\"?",
+   "opciones": [
+    "Una hondonada por donde corre el agua hacia el mar",
+    "Una montaña sola y muy alta rodeada de terreno plano",
+    "Una zona plana y muy extensa entre dos ríos grandes",
+    "Una cadena larga de montañas, una al lado de la otra"
+   ],
+   "correcta": 3,
+   "tip": "Una cordillera es un conjunto de montañas seguidas, no una sola.",
+   "revisada": false,
+   "id": "voc4-hist-17"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Cómo es una \"selva\"?",
+   "opciones": [
+    "Un terreno con poca lluvia donde casi nada logra crecer",
+    "Un lugar helado donde el suelo se cubre de nieve",
+    "Un bosque muy espeso, con mucha lluvia y mucho calor",
+    "Un campo abierto con pastos bajos y pocos árboles"
+   ],
+   "correcta": 2,
+   "tip": "La selva amazónica es el ejemplo más grande de América.",
+   "revisada": false,
+   "id": "voc4-hist-18"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué caracteriza a un \"desierto\"?",
+   "opciones": [
+    "Que está cubierto de árboles altos y mucha sombra",
+    "Que casi nunca llueve y crecen muy pocas plantas",
+    "Que llueve todos los días y el suelo está siempre mojado",
+    "Que el suelo permanece congelado durante todo el año"
+   ],
+   "correcta": 1,
+   "tip": "Lo que define al desierto es la falta de lluvia, no el calor.",
+   "revisada": false,
+   "id": "voc4-hist-19"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué busca el \"desarrollo sostenible\"?",
+   "opciones": [
+    "Sacar la mayor cantidad de recursos en el menor tiempo",
+    "Dejar de usar por completo los recursos de la naturaleza",
+    "Repartir los recursos solo entre los países más grandes",
+    "Usar los recursos sin agotarlos, pensando en el futuro"
+   ],
+   "correcta": 3,
+   "tip": "Sostenible es usar hoy sin dejar sin recursos a quienes vienen después.",
+   "revisada": false,
+   "id": "voc4-hist-20"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué hace el \"Presidente\" de Chile?",
+   "opciones": [
+    "Administra una sola comuna con su equipo",
+    "Dicta las sentencias en los juicios del país",
+    "Escribe y aprueba las leyes en el Congreso",
+    "Gobierna el país y dirige a sus ministros"
+   ],
+   "correcta": 3,
+   "tip": "El Presidente encabeza el gobierno; las leyes las aprueba el Congreso.",
+   "revisada": false,
+   "id": "voc4-hist-21"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Quiénes son los \"ministros\" en el gobierno?",
+   "opciones": [
+    "Personas que las regiones eligen para hacer las leyes",
+    "Personas que dirigen las municipalidades de cada comuna",
+    "Personas que se encargan de juzgar a quien comete un delito",
+    "Personas que el Presidente nombra para dirigir un área"
+   ],
+   "correcta": 3,
+   "tip": "A los ministros no los elige la gente: los nombra el Presidente.",
+   "revisada": false,
+   "id": "voc4-hist-22"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué hace un \"diputado\"?",
+   "opciones": [
+    "Representa a su zona y discute las leyes en el Congreso",
+    "Administra el dinero y los servicios de una sola comuna",
+    "Decide si una persona es culpable o inocente en un juicio",
+    "Representa al país en las reuniones con otros gobiernos"
+   ],
+   "correcta": 0,
+   "tip": "A los diputados los elige la gente con su voto para hacer las leyes.",
+   "revisada": false,
+   "id": "voc4-hist-23"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué dirige un \"alcalde\"?",
+   "opciones": [
+    "La comuna, con su municipalidad y sus servicios",
+    "El país completo, junto con sus ministros de área",
+    "Un colegio, con sus profesores y sus estudiantes",
+    "Una región entera, con todas sus comunas juntas"
+   ],
+   "correcta": 0,
+   "tip": "El alcalde está a cargo de una comuna, y lo eligen sus vecinos.",
+   "revisada": false,
+   "id": "voc4-hist-24"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es la \"municipalidad\"?",
+   "opciones": [
+    "La institución donde se resuelven los juicios más graves",
+    "La institución que se encarga de administrar una comuna",
+    "La institución que dirige la educación de todo el país",
+    "La institución donde se discuten y se aprueban las leyes"
+   ],
+   "correcta": 1,
+   "tip": "En la municipalidad se resuelven los asuntos del barrio y de la comuna.",
+   "revisada": false,
+   "id": "voc4-hist-25"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"elección\"?",
+   "opciones": [
+    "Una votación en que las personas eligen a sus autoridades",
+    "Una lista con los nombres de todas las autoridades",
+    "Una reunión en que se conversa sobre los problemas del país",
+    "Un sorteo en que se decide al azar quién ocupará un cargo"
+   ],
+   "correcta": 0,
+   "tip": "En una elección cada voto cuenta igual, y gana quien reúne más votos.",
+   "revisada": false,
+   "id": "voc4-hist-26"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es hacer \"plagio\" en un trabajo escolar?",
+   "opciones": [
+    "Copiar lo que escribió otra persona y decir que es de uno",
+    "Entregar el trabajo después de la fecha que dio el profesor",
+    "Buscar información en varios libros y después resumirla",
+    "Pedirle ayuda a un compañero para entender la materia"
+   ],
+   "correcta": 0,
+   "tip": "Se puede usar lo que dijo otro, pero hay que decir de quién es.",
+   "revisada": false,
+   "id": "voc4-hist-27"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué significa \"discriminar\" a una persona?",
+   "opciones": [
+    "Conversar con ella aunque piense distinto sobre un tema",
+    "Ayudarla cuando necesita algo que no puede hacer sola",
+    "Elegirla para un cargo por lo bien que hizo su trabajo",
+    "Tratarla peor por cómo es, de dónde viene o cómo se ve"
+   ],
+   "correcta": 3,
+   "tip": "Discriminar es dejar fuera o tratar mal por una diferencia.",
+   "revisada": false,
+   "id": "voc4-hist-28"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es la \"empatía\"?",
+   "opciones": [
+    "Hacer lo que el otro pide aunque a uno no le guste",
+    "Contarle a todos los problemas que le pasan al otro",
+    "Estar de acuerdo con el otro para no discutir nunca",
+    "Ponerse en el lugar del otro y entender cómo se siente"
+   ],
+   "correcta": 3,
+   "tip": "Tener empatía no es estar de acuerdo: es entender al otro.",
+   "revisada": false,
+   "id": "voc4-hist-29"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"argumento\" cuando alguien opina?",
+   "opciones": [
+    "Una pregunta que se le hace a quien opina distinto de uno",
+    "Una razón que explica y sostiene lo que esa persona piensa",
+    "Un resumen corto de todo lo que se conversó en la reunión",
+    "Una pelea que se arma cuando dos personas no se entienden"
+   ],
+   "correcta": 1,
+   "tip": "Una opinión con argumento explica por qué se piensa así.",
+   "revisada": false,
+   "id": "voc4-hist-30"
+  }
+ ]
+}

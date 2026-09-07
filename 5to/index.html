@@ -1517,6 +1517,18 @@ const EXPEDICIONES=[
      {oa:"LE05 OA 28",nombre:"Exponer ante el curso",icono:"🎙️",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Escuchar y hablar",icono:"🗣️",n:15,oas:["LE05 OA 24","LE05 OA 26","LE05 OA 27","LE05 OA 28"]},
    ]},
+ /* Vocabulario de 5°: TRES areas. Lenguaje queda fuera porque el LE05 OA 12 ya ensena a
+    determinar el significado de palabras nuevas -ese objetivo existe hasta 6° y desaparece
+    en 7°, que es por lo que 7° y 8° SI llevan area de Lenguaje-. Matematica entra: a los
+    10-11 su vocabulario tecnico ya se sostiene. Portada prestada de 8°. */
+ { id:'voc-general', asignatura:'Vocabulario', nivel:'5° Básico · Vocabulario del curso',
+   portada:'assets/portada-voc-general.png', portadaMapa:'assets/portada-voc-general.png',
+   contenido:'contenido/vocabulario-5basico/preguntas.json', activa:true,
+   etapas:[
+     {oa:"VOC-CIEN", nombre:"Palabras de Ciencias", icono:"🔬", n:15},
+     {oa:"VOC-HIST", nombre:"Palabras de Historia", icono:"📜", n:15},
+     {oa:"VOC-MATE", nombre:"Palabras de Matemática", icono:"🔢", n:15},
+   ]},
 ];
 const EXTRAS = [
   /* ⚠️ Las unidades de mini-clases NO van aquí, y no se vuelven a agregar: desde la
@@ -2535,7 +2547,7 @@ LECC.init({ rutas:['contenido/matematicas-5basico/lecciones.json',
 // 5° no tiene banco de Vocabulario propio. En true abriria el landing "Campana +
 // Vocabulario" y la asignatura Lenguaje quedaria inalcanzable, que es lo que le paso
 // a 3° en la Sesion 61.
-const HAY_VOCABULARIO=false;
+const HAY_VOCABULARIO=true;
 const HAY_BIBLIOTECA=false;
 async function cargarJugadores(){
  const cont=$('odJugadores');cont.innerHTML='<p style="color:var(--dim);font-weight:800;font-size:13px">Cargando…</p>';

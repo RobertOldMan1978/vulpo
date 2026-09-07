@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué era una \"carabela\"?",
+   "opciones": [
+    "Un barco de vela pequeño y veloz usado para explorar",
+    "Un mapa que marcaba las rutas de navegación conocidas",
+    "Un instrumento para calcular la posición en alta mar",
+    "Un puerto fortificado desde donde partían los viajes"
+   ],
+   "correcta": 0,
+   "tip": "Su tamaño y sus velas le permitían alejarse mucho de la costa.",
+   "id": "voc5-hist-1"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Para qué servía el \"astrolabio\"?",
+   "opciones": [
+    "Para calcular la posición del barco mirando los astros",
+    "Para medir la profundidad del agua bajo el casco del barco",
+    "Para señalar siempre el norte con una aguja imantada",
+    "Para calcular cuántos días de comida quedaban a bordo"
+   ],
+   "correcta": 0,
+   "tip": "Se orientaba con el Sol y las estrellas; el norte lo marcaba la brújula.",
+   "id": "voc5-hist-2"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"expedición\"?",
+   "opciones": [
+    "Un viaje organizado con un objetivo, como explorar un territorio",
+    "Un permiso que entregaba el rey para fundar una ciudad nueva",
+    "Un acuerdo entre dos reinos para repartirse las tierras lejanas",
+    "Un grupo de soldados encargado de vigilar la costa del reino"
+   ],
+   "correcta": 0,
+   "tip": "Una expedición se prepara antes: gente, barcos, comida y un destino.",
+   "id": "voc5-hist-3"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué fue la \"conquista\" de América?",
+   "opciones": [
+    "El proceso en que los españoles ocuparon y dominaron el territorio",
+    "El primer viaje en que los europeos llegaron por azar al continente",
+    "El período en que las colonias americanas se separaron de España",
+    "El acuerdo por el que los pueblos indígenas aceptaron pagar tributo"
+   ],
+   "correcta": 0,
+   "tip": "Ocurrió después de los viajes de descubrimiento y duró varias décadas.",
+   "id": "voc5-hist-4"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En una ciudad colonial, ¿qué era el \"cabildo\"?",
+   "opciones": [
+    "El grupo de vecinos que gobernaba y administraba la ciudad",
+    "El edificio donde vivía el gobernador enviado por el rey",
+    "La reunión anual en que se cobraban los impuestos de la zona",
+    "El tribunal que juzgaba los delitos cometidos en el campo"
+   ],
+   "correcta": 0,
+   "tip": "Se ocupaba de los asuntos locales: caminos, agua, precios y orden.",
+   "id": "voc5-hist-5"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En historia, ¿qué es una \"colonia\"?",
+   "opciones": [
+    "Un territorio ocupado y gobernado por un país lejano",
+    "Un territorio que se gobierna con sus propias leyes",
+    "Un grupo de personas que emigra para trabajar afuera",
+    "Un acuerdo comercial entre dos reinos que son vecinos"
+   ],
+   "correcta": 0,
+   "tip": "Chile fue colonia de España durante casi tres siglos.",
+   "id": "voc5-hist-6"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En el período colonial, ¿qué era la \"metrópoli\"?",
+   "opciones": [
+    "El país europeo del que dependían los territorios de América",
+    "La ciudad más poblada que tenía cada territorio americano",
+    "El puerto principal por donde salía el oro rumbo a Europa",
+    "El conjunto de todas las colonias que existían en América"
+   ],
+   "correcta": 0,
+   "tip": "La metrópoli decidía qué se podía producir y con quién comerciar.",
+   "id": "voc5-hist-7"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es el \"mestizaje\"?",
+   "opciones": [
+    "La mezcla entre pueblos distintos y entre sus costumbres",
+    "El traslado de familias europeas para poblar una ciudad",
+    "La separación de los grupos sociales según dónde vivían",
+    "La enseñanza del idioma español a los pueblos indígenas"
+   ],
+   "correcta": 0,
+   "tip": "De esa mezcla surgió buena parte de la sociedad chilena de hoy.",
+   "id": "voc5-hist-8"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En la Colonia, ¿qué era la \"encomienda\"?",
+   "opciones": [
+    "Un sistema en que un grupo indígena debía trabajar para un español",
+    "Un pago en oro que los españoles le entregaban al rey cada año",
+    "Un permiso para fundar una ciudad en un territorio ya explorado",
+    "Un acuerdo de paz firmado entre españoles y pueblos indígenas"
+   ],
+   "correcta": 0,
+   "tip": "A cambio de ese trabajo, el español debía protegerlos y evangelizarlos.",
+   "id": "voc5-hist-9"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En la Colonia, ¿qué era un \"parlamento\"?",
+   "opciones": [
+    "Una reunión entre autoridades españolas y mapuches para acordar la paz",
+    "Una asamblea de vecinos que elegía cada año a las autoridades locales",
+    "Un tribunal que resolvía los conflictos por tierras entre vecinos",
+    "Un discurso público que leía el gobernador al asumir su cargo"
+   ],
+   "correcta": 0,
+   "tip": "Se realizaban en la zona de frontera; el de Quilín es uno de los más conocidos.",
+   "id": "voc5-hist-10"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿En qué consistió la \"evangelización\" en América?",
+   "opciones": [
+    "En enseñarles la religión católica a los pueblos indígenas",
+    "En construir escuelas para enseñar a leer y a escribir",
+    "En repartir tierras entre los soldados que participaron",
+    "En contar cuánta gente vivía en cada zona del territorio"
+   ],
+   "correcta": 0,
+   "tip": "La realizaron sobre todo órdenes religiosas, como jesuitas y franciscanos.",
+   "id": "voc5-hist-11"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es el \"patrimonio\" de un país?",
+   "opciones": [
+    "El conjunto de bienes y costumbres heredados que se conservan",
+    "El dinero que el Estado guarda para gastos de emergencia",
+    "La cantidad de recursos naturales que quedan sin explotar",
+    "El territorio que un país reclama como propio ante los demás"
+   ],
+   "correcta": 0,
+   "tip": "Una iglesia colonial, una fiesta y una receta pueden ser patrimonio.",
+   "id": "voc5-hist-12"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En geografía, ¿qué es el \"relieve\"?",
+   "opciones": [
+    "La forma que tiene la superficie del terreno, con sus alturas",
+    "La cantidad de lluvia que cae en un lugar durante todo el año",
+    "El conjunto de ríos y de lagos que hay dentro de una zona",
+    "La clase de vegetación que crece de forma natural en el suelo"
+   ],
+   "correcta": 0,
+   "tip": "Cordilleras, valles y llanuras son formas del relieve.",
+   "id": "voc5-hist-13"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué son las \"precipitaciones\"?",
+   "opciones": [
+    "El agua que cae de las nubes como lluvia, nieve o granizo",
+    "La humedad que queda en el aire después de un día caluroso",
+    "El agua que se evapora desde el mar y va formando nubes",
+    "El caudal que llevan los ríos cuando se derrite la nieve"
+   ],
+   "correcta": 0,
+   "tip": "Se miden en milímetros y dicen qué tan lluviosa es una zona.",
+   "id": "voc5-hist-14"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué describe la \"hidrografía\" de una zona?",
+   "opciones": [
+    "Los ríos, lagos y otros cuerpos de agua de ese territorio",
+    "Las montañas, valles y otras formas que toma el terreno",
+    "Las lluvias y temperaturas que se repiten año tras año",
+    "Los minerales y bosques que se pueden aprovechar ahí"
+   ],
+   "correcta": 0,
+   "tip": "'Hidro' viene de agua: la hidrografía describe las aguas de un lugar.",
+   "id": "voc5-hist-15"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"recurso natural\"?",
+   "opciones": [
+    "Un elemento de la naturaleza que las personas pueden aprovechar",
+    "Un producto fabricado en una industria a partir de otros materiales",
+    "Un espacio natural protegido donde no se permite trabajar",
+    "Un permiso que entrega el Estado para explotar un terreno"
+   ],
+   "correcta": 0,
+   "tip": "El cobre, el agua, los bosques y los peces son recursos naturales.",
+   "id": "voc5-hist-16"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Por qué el bosque es un \"recurso renovable\"?",
+   "opciones": [
+    "Porque puede reponerse si se replanta y se cuida su ritmo",
+    "Porque nunca se agota, aunque se corte todo lo que se quiera",
+    "Porque se puede fabricar de nuevo dentro de una industria",
+    "Porque su uso está permitido solo con un permiso del Estado"
+   ],
+   "correcta": 0,
+   "tip": "Renovable no significa infinito: se agota si se usa más rápido de lo que crece.",
+   "id": "voc5-hist-17"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué quiere decir que el cobre sea un \"recurso no renovable\"?",
+   "opciones": [
+    "Porque tardó millones de años en formarse y la mina se agota",
+    "Porque solamente se encuentra en unos pocos países del mundo",
+    "Porque su precio cambia bastante de un año para el siguiente",
+    "Porque para sacarlo hay que usar máquinas enormes y costosas"
+   ],
+   "correcta": 0,
+   "tip": "No renovable no quiere decir escaso hoy: quiere decir que no vuelve a formarse.",
+   "id": "voc5-hist-18"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es el \"desarrollo sostenible\"?",
+   "opciones": [
+    "Usar los recursos de modo que también alcancen en el futuro",
+    "Dejar de usar por completo los recursos naturales del país",
+    "Extraer la mayor cantidad posible de recursos en poco tiempo",
+    "Reemplazar los recursos naturales por materiales artificiales"
+   ],
+   "correcta": 0,
+   "tip": "No se trata de dejar de usar, sino de usar sin llegar a agotar.",
+   "id": "voc5-hist-19"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿A qué se le llama \"riesgo natural\"?",
+   "opciones": [
+    "La posibilidad de que un fenómeno de la naturaleza cause daños",
+    "Un daño que ya ocurrió y dejó pérdidas en una comunidad",
+    "Un fenómeno de la naturaleza que nunca afecta a las personas",
+    "Una zona del país donde está prohibido construir viviendas"
+   ],
+   "correcta": 0,
+   "tip": "Sismos, inundaciones y erupciones son riesgos naturales en Chile.",
+   "id": "voc5-hist-20"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"evacuación\" en una emergencia?",
+   "opciones": [
+    "La salida ordenada de las personas hacia un lugar seguro",
+    "El corte del agua y la luz mientras dura una emergencia",
+    "La revisión de un edificio para ver si resiste un temblor",
+    "El aviso que dan las autoridades cuando viene una tormenta"
+   ],
+   "correcta": 0,
+   "tip": "Se ensaya antes con simulacros, para saber por dónde salir sin dudar.",
+   "id": "voc5-hist-21"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"derecho\" de las personas?",
+   "opciones": [
+    "Algo que toda persona puede exigir por el solo hecho de serlo",
+    "Un premio que se gana cuando alguien cumple con sus tareas",
+    "Un permiso que el Estado entrega a quienes se lo solicitan",
+    "Una norma que obliga a comportarse de una manera determinada"
+   ],
+   "correcta": 0,
+   "tip": "No depende del lugar donde naciste ni de cómo eres: los tienen todos.",
+   "id": "voc5-hist-22"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"deber\"?",
+   "opciones": [
+    "Una obligación que a uno le toca cumplir ante los demás",
+    "Un beneficio que el Estado entrega a quien lo necesita",
+    "Una tarea escolar que se hace en la casa por la tarde",
+    "Una decisión que cada persona puede tomar libremente"
+   ],
+   "correcta": 0,
+   "tip": "Derechos y deberes van juntos: si tengo derechos, debo respetar los ajenos.",
+   "id": "voc5-hist-23"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En educación cívica, ¿qué es el \"Estado\"?",
+   "opciones": [
+    "El conjunto de instituciones que organizan y gobiernan un país",
+    "El grupo de personas que ganó la última elección presidencial",
+    "El territorio que un país ocupa dentro de sus propias fronteras",
+    "El conjunto de todas las empresas que funcionan en un país"
+   ],
+   "correcta": 0,
+   "tip": "El Estado sigue existiendo aunque cambien las autoridades de turno.",
+   "id": "voc5-hist-24"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"ley\"?",
+   "opciones": [
+    "Una norma obligatoria para todos, aprobada por las autoridades",
+    "Una costumbre que se sigue por tradición dentro de una comunidad",
+    "Un acuerdo privado entre dos personas que quieren cumplirlo",
+    "Una recomendación que el Estado hace para poder vivir mejor"
+   ],
+   "correcta": 0,
+   "tip": "Obliga a todos por igual, incluso a quienes la aprobaron.",
+   "id": "voc5-hist-25"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es el \"sufragio\"?",
+   "opciones": [
+    "El derecho a votar para elegir a las autoridades del país",
+    "El derecho a reunirse con otras personas en un lugar público",
+    "El derecho a decir en público lo que uno piensa, sin castigo",
+    "El derecho a presentar reclamos por escrito ante una autoridad"
+   ],
+   "correcta": 0,
+   "tip": "Sufragar es votar: por eso a la papeleta que se deposita se le llama voto.",
+   "id": "voc5-hist-26"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es la \"discriminación\"?",
+   "opciones": [
+    "Tratar peor a alguien por una característica suya, sin razón justa",
+    "Elegir a la persona más adecuada para un cargo después de evaluarla",
+    "Separar a un curso grande en equipos para trabajar más cómodos",
+    "Dar apoyo adicional a quien tiene más dificultad para aprender"
+   ],
+   "correcta": 0,
+   "tip": "No es distinguir: es tratar peor por el origen, el sexo o la apariencia.",
+   "id": "voc5-hist-27"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es el \"voluntariado\"?",
+   "opciones": [
+    "El trabajo que alguien hace para ayudar, sin recibir un pago",
+    "El trabajo que una persona realiza mientras estudia una carrera",
+    "El empleo temporal que ofrece el Estado en época de emergencia",
+    "El servicio que una empresa regala para hacerse más conocida"
+   ],
+   "correcta": 0,
+   "tip": "Lo define que sea libre y sin sueldo, no la clase de tarea que se haga.",
+   "id": "voc5-hist-28"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"junta de vecinos\"?",
+   "opciones": [
+    "Una organización de un barrio para resolver sus problemas",
+    "Una oficina municipal que atiende los reclamos del barrio",
+    "Una reunión que convoca la policía para informar de delitos",
+    "Un grupo de familias que comparte el gasto de un edificio"
+   ],
+   "correcta": 0,
+   "tip": "Es una organización social, y la forman los propios vecinos.",
+   "id": "voc5-hist-29"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En la escuela, ¿qué es el \"plagio\"?",
+   "opciones": [
+    "Presentar como propio un trabajo que hizo otra persona",
+    "Copiar un texto en el cuaderno para estudiarlo después",
+    "Pedirle ayuda a un compañero para entender una materia",
+    "Usar una fuente de internet e indicar de dónde se sacó"
+   ],
+   "correcta": 0,
+   "tip": "Citar la fuente es lo contrario del plagio: ahí se reconoce a su autor.",
+   "id": "voc5-hist-30"
+  }
+ ]
+}
