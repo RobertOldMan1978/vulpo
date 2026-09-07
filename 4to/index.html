@@ -84,14 +84,14 @@ body{
 .stars{position:fixed;inset:0;pointer-events:none;z-index:0}
 .stars span{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.5;animation:tw 3s infinite alternate}
 @keyframes tw{from{opacity:.15}to{opacity:.7}}
-/* Estrella fugaz. El COLOR lo pone el JS en --meteoro: cada meteoro arde del
+/* Estrella fugaz. El COLOR lo pone el JS en --meteoro y la caida en --giro y --rastro. Cada meteoro arde del
    color del elemento que lo compone. El nucleo se deja blanco porque es la parte mas
    caliente. El violeta de respaldo es el color historico, por si el JS no fijara la
    variable; hoy siempre la fija. */
 .shoot{position:fixed;z-index:0;width:3px;height:3px;border-radius:50%;pointer-events:none;
   background:#fff;box-shadow:0 0 7px 2px #fff,0 0 18px 7px var(--meteoro,#8f6bffcc);animation:shootFall 1.3s ease-in forwards}
-.shoot::after{content:"";position:absolute;left:1px;top:1px;width:78px;height:2.5px;transform-origin:left center;
-  transform:rotate(-48deg);border-radius:2px;background:linear-gradient(90deg,#ffffffee,var(--meteoro,#8f6bffcc) 34%,transparent)}
+.shoot::after{content:"";position:absolute;left:1px;top:1px;width:var(--rastro,78px);height:2.5px;transform-origin:left center;
+  transform:rotate(var(--giro,-48deg));border-radius:2px;background:linear-gradient(90deg,#ffffffee,var(--meteoro,#8f6bffcc) 34%,transparent)}
 @keyframes shootFall{0%{opacity:0;transform:translate(0,0)}12%{opacity:1}100%{opacity:0;transform:translate(var(--sx),var(--sy))}}
 @media (prefers-reduced-motion: reduce){.shoot{display:none}}
 .wrap{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:16px 16px 90px;min-height:100dvh}
@@ -2177,8 +2177,14 @@ async function startDuelo(){
   s.style.setProperty('--meteoro',c+'cc');
   s.style.left=(window.innerWidth*(0.35+Math.random()*0.6))+'px';
   s.style.top=(window.innerHeight*Math.random()*0.35)+'px';
-  const d=220+Math.random()*180;
-  s.style.setProperty('--sx',(-d)+'px');s.style.setProperty('--sy',(d*1.1)+'px');
+  /* Angulo propio de cada una. Antes el vector era SIEMPRE (-d, 1.1d) y solo cambiaba
+     el largo, asi que caian todas paralelas. El rastro tiene que girar con el mismo
+     angulo (-g) o se despega del camino, que se ve peor que el defecto original. */
+  const g=30+Math.random()*35, r=g*Math.PI/180, d=220+Math.random()*180;
+  s.style.setProperty('--sx',(-d*Math.cos(r)).toFixed(0)+'px');
+  s.style.setProperty('--sy',(d*Math.sin(r)).toFixed(0)+'px');
+  s.style.setProperty('--giro',(-g).toFixed(1)+'deg');
+  s.style.setProperty('--rastro',(58+Math.random()*40|0)+'px');
   document.body.appendChild(s);setTimeout(()=>s.remove(),1400);}
  /* Una cada 3 a 9 segundos (antes 8 a 22). Con "sin animaciones" NO se agenda ninguna:
     sin este guard la estrella se creaba igual y quedaba QUIETA y visible 1,4 s, porque

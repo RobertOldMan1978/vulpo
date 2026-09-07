@@ -9974,3 +9974,28 @@ salieron vacíos. **Cuando un conteo da cero, el primer sospechoso es la prueba,
 **Un push:** no hay proveedor y consumidor: `.shoot` no vive en ningún módulo de `assets/js/`,
 así que cada página se basta sola y el orden no importa. Medido antes de decidirlo, en vez de
 partir el push por costumbre.
+
+#### Segundo tramo — caían todas paralelas, y no era casualidad
+
+Roberto lo vio mirando: *"caen todas en el mismo ángulo, ¿puede ser variable también?"*. Y no era
+una impresión: el vector de caída era **siempre `(-d, 1.1d)`** — solo variaba la distancia, nunca
+la dirección—, así que las estrellas eran literalmente paralelas entre sí. El rastro, además,
+estaba clavado en `rotate(-48deg)`, que es justo el ángulo de ese vector fijo.
+
+Ahora cada una sortea **su ángulo (30° a 65°) y su largo de rastro (58 a 97 px)**.
+
+> ⚠️ **Lo único que podía salir mal es que el rastro se despegue del camino**, y eso se ve **peor
+> que el defecto original**: un meteoro con la cola apuntando para otro lado. El giro tuvo que
+> pasar a `var(--giro)` y derivarse del mismo ángulo, con signo cambiado —la cola apunta hacia
+> atrás—. Se verificó con **aritmética además de mirando**: en 200 sorteos, `atan2(sy,-sx)`
+> coincide con `-giro` en las 200, con un desvío máximo de **0,17°**, que es el redondeo a píxel
+> entero.
+
+**Verificado:** 36 ángulos distintos en 200 tiradas · sintaxis OK en los 7 · **0 estrellas con
+«sin animaciones»** · **JUGADOR navega en los seis** con el motor vivo · los seis forks **byte a
+byte idénticos** y la landing difiere **solo en el `z-index`** · cero errores de consola y cero
+fallos de red.
+
+> **Y una advertencia sobre las capturas de esta feature:** para poder mirarlas se congelan **14 a
+> la vez**, un cielo que en el juego real no ocurre nunca (una cada 3–9 s, viviendo 1,3 s cada
+> una). La foto sirve para juzgar ángulos, colores y alineación del rastro, **no la densidad**.
