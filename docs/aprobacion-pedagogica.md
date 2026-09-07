@@ -128,7 +128,7 @@ El modo cierra ese hueco. Una pantalla por objetivo, con **sus 8 preguntas ya el
 > corregirse o para ir directo a un objetivo puntual. El modo es un camino más rápido, no un
 > reemplazo.
 
-### Dos cuidados que ya mordieron
+### Tres cuidados que ya mordieron
 
 > **Las marcas viven en el `localStorage` del navegador, no en el repositorio.** Si exportas desde
 > el computador de la oficina, ese archivo **no trae** lo que marcaste en el de la casa. Por eso
@@ -141,22 +141,44 @@ El modo cierra ese hueco. Una pantalla por objetivo, con **sus 8 preguntas ya el
 > las copias y cuenta por id único, pero si ves el mismo enunciado en dos capítulos, no es un
 > duplicado del banco.
 
+> ⚠️ **La cola del muestreo se identifica por CARPETA + código, no por el código solo — y hasta el
+> 07/09/2026 lo hacía mal.** Dedupear por código es correcto *dentro* de una asignatura (es el caso
+> de arriba), pero **miente entre carpetas**: los módulos transversales no llevan el nivel en su
+> código, así que `VOC-CIEN` es el mismo texto en los seis cursos. La cola mostraba **una** tarjeta
+> por código, aprobarla marcaba solo la primera carpeta pendiente, y **el tablero anunciaba "¡No
+> queda nada por revisar!"** con el resto sin firmar.
+>
+> Pasó de verdad: de las 240 preguntas nuevas de Vocabulario se firmaron **90**, y el patrón exacto
+> —60 en 4°, 30 en 5°, 0 en 6°— es la huella del defecto, no de una revisión interrumpida. Es un
+> fallo **mudo**, de la misma familia que el trabajo de `pg_cron` sin agendar o el código de OA
+> ausente de un arreglo: **se ve idéntico a que esté todo hecho.**
+>
+> Medido, solo podía morder en el Vocabulario: de todos los códigos del banco, los únicos que viven
+> en más de una carpeta son los cuatro `VOC-*`. Las lecturas tienen una carpeta cada una y todo lo
+> curricular lleva el nivel adentro.
+>
+> **Cómo se comprueba que un "no queda nada" es verdad:** desmarcar a mano una pregunta en dos
+> carpetas que compartan código y ver que la cola encuentra **las dos**. Sin ese control positivo,
+> un detector roto y un banco completo dan la misma pantalla.
+
 ---
 
 ## Estado
 
+Recontado del disco el **07/09/2026**, no copiado de la versión anterior de esta tabla.
+
 | Banco | Preguntas | Aprobadas |
 |---|---|---|
-| 8° básico (4 asignaturas) | 2.314 | ✅ todas |
-| Vocabulario y Ana Frank | 222 | ✅ todas |
 | 3° básico (4 asignaturas) | 2.558 | ✅ todas |
+| 4° básico (4 asignaturas) | 2.730 | ✅ todas |
+| 5° básico (4 asignaturas) | 2.790 | ✅ todas |
+| 6° básico (4 asignaturas) | 2.970 | ✅ todas |
 | 7° básico (4 asignaturas) | 2.430 | ✅ todas |
-| Vocabulario 7° y *Cuentos de Ada* | 221 | ✅ todas |
-| Vocabulario 3° | 60 | ✅ todas |
-| **5° básico** (4 asignaturas) | **2.790** | ✅ **todas** |
-| **6° básico** (4 asignaturas) | **2.970** | ✅ **todas** |
-| **4° básico** (4 asignaturas) | **2.730** | ✅ **todas** |
-| Mini-clases e introducciones (todos los niveles) | 130 | ✅ todas |
+| 8° básico (4 asignaturas) | 2.644 | ✅ todas |
+| **Vocabulario, los seis cursos** (60 · 60 · 90 · 90 · 120 · 150) | **570** | ✅ **todas** |
+| Lectura: *Cuentos de Ada* (3°) y *Ana Frank* (8°) | 173 | ✅ todas |
+| **Total** | **16.865** | ✅ **todas** |
+| Mini-clases e introducciones (todos los niveles) | 151 | ✅ todas |
 
 > **Cerrado el 31/08/2026: 7.805 de 7.805** (los cursos anunciados hasta esa fecha: 8°, 3°, 7° y
 > sus módulos). El 30/08 se firmaron 5.048 preguntas por muestreo en una pasada y, ese mismo día,
@@ -172,9 +194,10 @@ El modo cierra ese hueco. Una pantalla por objetivo, con **sus 8 preguntas ya el
 > ⚠️ **Volvió a abrirse y se volvió a cerrar el mismo día, y eso es lo normal: el banco crece.**
 > El 06/09 quedó en 16.293 de 16.625 al sumarse contenido nuevo —las 330 que completaron Lenguaje
 > de 8° (Sesión 99) y 2 de geometría reescritas (Sesión 100), que perdieron su firma al
-> cambiarles el texto, más 21 lecciones—, y esa misma tarde Roberto firmó las 332 + 21: **16.625
-> de 16.625 y 151 de 151**. **"Cerrado" es una foto, no un estado**: cada tanda nueva vuelve a la
-> cola, y el número se mide en cada orden 66 en vez de copiarlo de aquí.
+> cambiarles el texto, más 21 lecciones—, y esa misma tarde Roberto firmó las 332 + 21. **Y volvió
+> a pasar el 07/09** con las 240 preguntas de Vocabulario de 4°, 5° y 6°, firmadas ese mismo día:
+> el banco queda en **16.865 de 16.865 y 151 de 151**. **"Cerrado" es una foto, no un estado**:
+> cada tanda nueva vuelve a la cola, y el número se mide en cada orden 66 en vez de copiarlo.
 >
 > ⚠️ **100% de cobertura no es 100% del mismo método.** 8° y los módulos de apoyo se revisaron
 > pregunta por pregunta; 3°, 4°, 5°, 6° y 7°, por muestreo de 8 de cada 30. Al decirlo afuera, la

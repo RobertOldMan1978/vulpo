@@ -2253,14 +2253,13 @@ $('btnExpBack').onclick=()=>{SND.tap();go('scr-rol');};
 $('btnMapasBack').onclick=()=>{SND.tap();go('scr-expediciones');};
 // Landing de Lenguaje
 $('btnLengCampana').onclick=()=>{SND.tap();abrirCampaña(campañaDe('Lenguaje'));};
-/* 6° NO tiene Vocabulario (HAY_VOCABULARIO=false): no hay banco propio todavia. Este
-   handler queda VIVO igual y es inofensivo, porque sin campana de Lenguaje la pantalla
-   scr-lenguaje es inalcanzable. En 7° estuvo desactivado a proposito, porque apuntaba a
-   una expedicion 'voc-general' que en este archivo no existia: entrarExpedicion(undefined)
-   revienta. Se dejo inofensivo en vez de borrar el <button>, porque quitar el boton sin
-   quitar esta linea haria que $('btnLengVocab') sea null y .onclick mataria TODO el
-   JavaScript del juego (la trampa de la Sesion 56). Vale la advertencia al reves tambien:
-   si algun dia se apaga HAY_VOCABULARIO, hay que dejar el boton y su handler en paz. */
+/* HAY_VOCABULARIO=true desde el 07/09: este curso tiene su banco propio. El handler
+   queda VIVO, y la expedicion 'voc-general' TIENE que existir en EXPEDICIONES: encender
+   la bandera sin agregarla da entrarExpedicion(undefined), que es el estado latente que
+   7° arrastro entre las Sesiones 63 y 68. Y al reves: si algun dia se apaga la bandera,
+   hay que dejar el boton y su handler EN PAZ -quitar el <button> sin quitar esta linea
+   deja $('btnLengVocab') en null, y .onclick mataria TODO el JavaScript del juego (la
+   trampa de la Sesion 56)-. */
 $('btnLengVocab').onclick=()=>{SND.tap();entrarExpedicion(EXPEDICIONES.find(e=>e.id==='voc-general'));};
 $('btnLengBack').onclick=()=>{SND.tap();go('scr-expediciones');};
 // Biblioteca

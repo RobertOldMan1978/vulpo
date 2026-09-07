@@ -210,7 +210,7 @@ def render_lecciones(lecciones, oa_por_codigo):
     return "".join(H)
 
 
-def render_asignatura(oa_data, preg_data, lecciones=()):
+def render_asignatura(oa_data, preg_data, lecciones=(), carpeta=""):
     meta = int(preg_data.get("meta_preguntas_por_oa", 8))
     preguntas = preg_data.get("preguntas", [])
 
@@ -237,7 +237,12 @@ def render_asignatura(oa_data, preg_data, lecciones=()):
 
     partes = []
     pend_preg = total_preg - total_rev
-    partes.append('<section class="asig" data-pend-preg="%d">' % pend_preg)
+    # La CARPETA va en el DOM porque el codigo de OA no alcanza para identificar un
+    # objetivo: los transversales no llevan el nivel adentro (VOC-CIEN es el mismo
+    # codigo en los seis cursos), asi que el modo muestreo tiene que distinguirlos
+    # por carpeta o solo ve el primero. Ver armarCola().
+    partes.append('<section class="asig" data-pend-preg="%d" data-carpeta="%s">'
+                  % (pend_preg, escape(carpeta)))
     partes.append(
         f'<div class="asig-head">'
         f'<div><h2><span class="a-caret">▾</span>{escape(oa_data["asignatura"])}</h2>'
@@ -360,16 +365,16 @@ def generar():
     # es medir cobertura de sus OA oficiales; aprobar un modulo transversal es revisar
     # un apoyo que no responde a ningun OA. Mezclados, el Vocabulario de 8 aparecia al
     # final -despues de Ana Frank- mientras el de 7 se ordenaba entre las de 7.
-    curric = [(oa, pg, lec) for _, oa, pg, lec in asignaturas if not es_transversal(oa)]
-    trans = [(oa, pg, lec) for _, oa, pg, lec in asignaturas if es_transversal(oa)]
-    cuerpo = chr(10).join(render_asignatura(oa, pg, lec) for oa, pg, lec in curric)
+    curric = [(car, oa, pg, lec) for car, oa, pg, lec in asignaturas if not es_transversal(oa)]
+    trans = [(car, oa, pg, lec) for car, oa, pg, lec in asignaturas if es_transversal(oa)]
+    cuerpo = chr(10).join(render_asignatura(oa, pg, lec, car) for car, oa, pg, lec in curric)
     if trans:
         cuerpo += ('<div class="grupo-tit">Módulos transversales</div>'
                    '<div class="grupo-sub">Acompañan al curso pero <b>no son cobertura'
                    ' curricular</b>: sus códigos no son Objetivos de Aprendizaje del'
                    ' MINEDUC y no entran al mapa de dominio del profesor. Se aprueban'
                    ' igual, con el mismo criterio de muestreo.</div>')
-        cuerpo += chr(10).join(render_asignatura(oa, pg, lec) for oa, pg, lec in trans)
+        cuerpo += chr(10).join(render_asignatura(oa, pg, lec, car) for car, oa, pg, lec in trans)
     if not cuerpo:
         cuerpo = '<p class="vacio">Aún no hay contenido en la carpeta <code>contenido/</code>.</p>'
     marca = datetime.now().strftime("%d-%m-%Y %H:%M")
@@ -782,17 +787,29 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
 
   // La cola son los OA con al menos una pregunta sin marcar. Un OA ya aprobado no
   // aparece, asi que 8 basico -aprobado entero- se salta solo.
+  // La clave de deduplicacion es CARPETA + CODIGO, no el codigo solo. Dedupear por
+  // codigo es correcto dentro de una asignatura -el mismo OA puede estar en dos
+  // capitulos, como los 9 de Lenguaje de 3- pero MIENTE entre carpetas: los modulos
+  // transversales no llevan el nivel en su codigo (VOC-CIEN es el mismo string en los
+  // seis cursos), asi que la cola mostraba solo el primero y daba por aprobados los
+  // otros cinco. Paso de verdad el 07/09: de las 240 preguntas nuevas de Vocabulario
+  // se firmaron 90, y el tablero anuncio "no queda nada por revisar" -el fallo MUDO,
+  // que se ve igual que si estuviera todo hecho-.
   function armarCola(){
     var vistos={}, cola=[];
     document.querySelectorAll('.oa').forEach(function(oa){
       var cod=(oa.querySelector('.oa-cod')||{}).textContent||'';
-      if(!cod || vistos[cod]) return;         // el mismo OA puede estar en dos capitulos
+      if(!cod) return;
+      var sec=oa.closest('section.asig');
+      var car=(sec&&sec.getAttribute('data-carpeta'))||'';
+      var clave=car+'|'+cod;
+      if(vistos[clave]) return;
       var ins=inputsDe(oa);
       if(!ins.length) return;
       var faltan=ins.filter(function(cb){return !cb.checked;}).length;
       if(!faltan) return;
-      vistos[cod]=1;
-      cola.push({cod:cod, nodo:oa});
+      vistos[clave]=1;
+      cola.push({cod:cod, clave:clave, nodo:oa});
     });
     return cola;
   }
@@ -813,7 +830,10 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
     var sub=(oa.closest('section.asig')||{}).querySelector ? (oa.closest('section.asig').querySelector('.sub')||{}).textContent||'' : '';
     var txt=(oa.querySelector('.oa-txt')||{}).textContent||'';
     var pqs=Array.prototype.slice.call(oa.querySelectorAll('.pq'));
-    var idx=muestraDe(it.cod, MUESTRA, pqs.length);
+    // Sembrada con la CLAVE (carpeta+codigo) y no con el codigo: si no, VOC-CIEN de
+    // 4 y de 5 sortearian las mismas ocho POSICIONES. No seria incorrecto -son
+    // preguntas distintas- pero repetir el mismo patron entre cursos es peor muestra.
+    var idx=muestraDe(it.clave||it.cod, MUESTRA, pqs.length);
 
     var h='<div class="mz-top">'
       +'<div class="mz-fila"><span class="mz-cod">'+esc(it.cod)+'</span>'
@@ -857,7 +877,7 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
   // dejaba MZ.i=2 sobre una cola de 2 y el modo anunciaba que no quedaba nada.
   function guardarPos(){ try{
     var it=MZ.cola[MZ.i];
-    localStorage.setItem(LS_POS, it? it.cod : '');
+    localStorage.setItem(LS_POS, it? (it.clave||it.cod) : '');
   }catch(e){} }
 
   function aprobarActual(){
@@ -899,7 +919,7 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
     // unico util. Empezar del final es como no tener modo.
     var g=''; try{ g=localStorage.getItem(LS_POS)||''; }catch(e){}
     MZ.i=0;
-    if(g) for(var k=0;k<MZ.cola.length;k++){ if(MZ.cola[k].cod===g){ MZ.i=k; break; } }
+    if(g) for(var k=0;k<MZ.cola.length;k++){ if((MZ.cola[k].clave||MZ.cola[k].cod)===g){ MZ.i=k; break; } }
     document.getElementById('muestreo').style.display='block';
     document.addEventListener('keydown', teclasMuestreo);
     pintarMuestreo();

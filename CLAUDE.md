@@ -151,9 +151,10 @@ año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron co
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
 están hoy en una expedición jugable, el resto es reserva.
 
-> **Estado de aprobación (06/09/2026): 16.625 de 16.625 preguntas aprobadas, y 151 de 151
-> lecciones.** El banco había crecido después de la firma de 4° —la Sesión 99 escribió **330
-> preguntas nuevas** para los 11 OA que le faltaban a Lenguaje de 8° y **21 lecciones**, y la
+> **Estado de aprobación (07/09/2026): 16.865 de 16.865 preguntas aprobadas, y 151 de 151
+> lecciones.** El banco creció otra vez el 07/09 con las **240 preguntas de Vocabulario** de 4°,
+> 5° y 6°, firmadas ese mismo día. Antes había crecido tras la firma de 4° —la Sesión 99 escribió
+> **330 preguntas nuevas** para los 11 OA que le faltaban a Lenguaje de 8° y **21 lecciones**, y la
 > Sesión 100 reescribió **2 preguntas de geometría** que exigían dos cálculos encadenados con
 > reloj de 20 s, así que su firma anterior dejó de corresponderles— y esas 332 + 21 se aprobaron
 > el mismo 06/09. ⚠️ **Pero "todo aprobado" es una FOTO, no un estado**: cada tanda nueva vuelve a
@@ -171,8 +172,11 @@ están hoy en una expedición jugable, el resto es reserva.
 > construye desde marzo de 2026 y se revisa sin pausa. **4° básico terminó su construcción y se
 > sumó a la landing el mismo día (06/09/2026):** banco aprobado, `4to/index.html` cableado (26
 > capítulos en 4 campañas), voz generada y verificada (12.210 clips) y los 4 villanos con arte
-> propio. Con los seis cursos, el banco completo y jugable son **16.625 preguntas** y **529
-> objetivos medidos** (eran 16.295 y 518 hasta que la Sesión 99 completó Lenguaje de 8°).
+> propio. Con los seis cursos, el banco completo y jugable son **16.865 preguntas** y **529
+> objetivos medidos** (eran 16.295 y 518 hasta que la Sesión 99 completó Lenguaje de 8°, y 16.625
+> hasta que el 07/09 los seis cursos tuvieron Vocabulario). ⚠️ **Los objetivos NO subieron con
+> esas 240**, y está bien: los códigos `VOC-*` no son OA del currículum, así que suman preguntas
+> pero no cobertura medida — es la misma propiedad que los define como módulo transversal.
 
 **Herramientas dev:** tablero con clave
 (`dev/tablero.html`) y scripts (`consolidar-pool-nivel`, `aplicar-revisadas`,
@@ -423,7 +427,7 @@ eso ahora lo comprueba `auditar-banco-nivel.py`, probado rompiendo un banco a pr
 > se guardan por id**, así que renombrarlas dejaría huérfanas las 7.805 firmadas. La regla —las 4
 > primeras letras de la asignatura más el dígito del nivel— es para lo que venga.
 
-#### El peso, medido hoy (06/09/2026)
+#### El peso, medido hoy (07/09/2026)
 
 > Una sola medición para todo el proyecto. Antes vivía con **cuatro cifras distintas en
 > cuatro documentos** y ninguna calzaba con el disco. Al actualizarla, actualizar también
@@ -437,16 +441,17 @@ eso ahora lo comprueba `auditar-banco-nivel.py`, probado rompiendo un banco a pr
 
 | | |
 |---|---|
-| `assets/voz/` (voz pregrabada de **3° y 4°**, 6+4 asignaturas) | **582 MB** |
+| `assets/voz/` (voz pregrabada de **3° y 4°**, 6+4 asignaturas) | **589 MB** |
 | `assets/originales/` (arte crudo, **excluido del sitio** por `_config.yml`) | 174 MB |
 | `contenido/` (los bancos completos, seis cursos) | 17,8 MB |
 | `assets/audio/` (música) | 5,0 MB |
-| **`assets/` completo** | **820 MB** |
-| **Sitio publicado** (sin `.git` ni originales) | **721 MB** |
+| **`assets/` completo** | **827 MB** |
+| **Sitio publicado** (sin `.git` ni originales) | **729 MB** |
 
 **La voz de 4° ya está generada (06/09/2026) y sumó 326 MB** (los ~254 MB estimados se quedaron
-cortos: 4° tiene más contenido por asignatura que 3°). El techo de GitHub Pages sigue siendo
-**1 GB**, y el sitio publicado queda en 721 MB — con margen, pero **ya no hay margen para una
+cortos: 4° tiene más contenido por asignatura que 3°), más **7 MB** de su Vocabulario el 07/09.
+El techo de GitHub Pages sigue siendo
+**1 GB**, y el sitio publicado queda en 729 MB — con margen, pero **ya no hay margen para una
 séptima asignatura con voz**: la regla del proyecto —voz pregrabada solo de 1° a 4°— es la única
 aritmética que cabe, no una preferencia pedagógica. Y por eso la precarga `cache-first` que
 propone el análisis de la PWA sigue siendo inviable tal cual: bajaría cientos de MB al teléfono
@@ -901,12 +906,20 @@ voz**: 7° no lleva audio pregrabado, y de 5° hacia arriba no vale la pena paga
   lanzó la voz de Ciencias junto con sus auditorías y hubo que rehacer los textos de 20
   preguntas.
 - **La voz pregrabada va por asignatura, una carpeta cada una** (`assets/voz/mat3/`,
-  `assets/voz/hist3/`, `assets/voz/cie3/`, `assets/voz/len3/` y `assets/voz/ada3/`, la del
-  libro), y el juego **carga y fusiona los manifiestos**. Los módulos transversales entran
-  por la misma puerta: su entrada en `ASIGS` filtra los nombres de etapa por el id de su
-  expedición (`caps`) en vez de por un prefijo de nivel. Separarlas
+  `assets/voz/hist3/`, `assets/voz/cie3/`, `assets/voz/len3/`, `assets/voz/ada3/` —la del
+  libro— y `assets/voz/voc3/`), y el juego **carga y fusiona los manifiestos**. Los módulos
+  transversales entran por la misma puerta: su entrada en `ASIGS` filtra los nombres de etapa
+  por el id de su expedición (`caps`) en vez de por un prefijo de nivel. Separarlas
   evita volver a pagar Azure por lo ya generado al agregar una asignatura. El generador
   recibe la asignatura como primer argumento (`python scripts/generar-voz-nivel.py hist3`).
+  > ⚠️ **Generar los clips NO es cablearlos: la carpeta nueva hay que agregarla a `VOZ_DIRS`
+  > del fork, o el juego cae a la voz del navegador SIN DECIR NADA.** Pasó con `voc4` el
+  > 07/09: los 305 clips estaban en disco, pagados y correctos, y el juego no los pedía.
+  > Es el mismo fallo mudo del clip huérfano de la Sesión 98 —ahí faltaba el clip, aquí
+  > faltaba la ruta— y el síntoma es idéntico: **suena, pero suena otra voz**. La
+  > comprobación que lo caza es una sola y va siempre después de generar: **jugar hasta esa
+  > pantalla, tocar 🔊 y mirar QUÉ archivo pide el juego** (espiando el constructor `Audio`),
+  > no que el script haya dicho "listo".
   ⚠️ **Gotcha caro:** el manifiesto se indexa por el texto **mostrado**, así que cambiar
   `normalizar-voz-nivel.py` —o sea cambiar cómo se PRONUNCIA algo— **no invalida ningún
   clip**: los viejos siguen sonando como antes, en silencio. Hay que borrarlos del
@@ -10081,3 +10094,108 @@ los seis forks, **cero errores de consola y cero fallos de red**.
 **Error propio repetido, y van tres en el día:** dos aserciones de conteo mal calibradas
 (`METEOROS`, `--meteoro`, `conJefe`), siempre por olvidar que **el comentario también nombra la
 variable**. Las tres abortaron antes de escribir, que es para lo que están.
+
+#### Cuarto tramo — el tablero decía "no queda nada" con 150 preguntas sin firmar
+
+Roberto avisó *"listo el archivo revisadas"* y el archivo traía **90 marcas de 240**: 4° entero,
+un área de 5° y nada de 6°. El patrón era demasiado sospechoso para atribuirlo a que se hubiera
+cansado, y no lo era.
+
+**`armarCola()` deduplicaba por CÓDIGO DE OA a secas.** Eso es correcto dentro de una asignatura
+—el mismo objetivo puede estar en dos capítulos, como los 9 de Lenguaje de 3°— pero **miente entre
+carpetas**: los transversales **no llevan el nivel en su código**, así que `VOC-CIEN` es
+literalmente el mismo texto en los seis cursos. La cola mostraba **tres** tarjetas, aprobarlas
+marcaba solo la primera carpeta pendiente de cada una, y el resto quedaba invisible.
+
+> **El 60/30/0 es la huella exacta del defecto, no la de una revisión interrumpida:** 4° no tiene
+> `VOC-MATE`, así que esa tercera tarjeta cayó en 5°.
+
+⚠️ **Y terminaba con el peor síntoma posible: *"¡No queda nada por revisar!"*** — el fallo mudo de
+siempre, de la familia del trabajo de `pg_cron` sin agendar y del código de OA ausente de un
+arreglo: **se ve idéntico a que esté todo hecho**. Además crecía con el proyecto: mientras solo se
+aprobaba, la cola encogía de a poco y disimulaba; el día que se agrega contenido nuevo **después**
+de haber aprobado todo, deja el modo permanentemente mudo. Es el segundo camino al mismo síntoma
+—el primero fue el clamp del índice, en la Sesión 74—.
+
+**La clave pasa a ser CARPETA + código**, con la carpeta declarada en el DOM (`data-carpeta`), y la
+semilla de la muestra también: si no, `VOC-CIEN` de 4° y de 5° sorteaban las **mismas ocho
+posiciones**. No sería incorrecto —son preguntas distintas— pero repetir el patrón entre cursos es
+peor muestra. La posición guardada de Roberto (`VOC-MATE`, un código suelto) ya no hace match, así
+que el modo **empieza del principio** en vez de romperse.
+
+**El alcance se midió, no se razonó:** de todos los códigos del banco, los únicos que viven en más
+de una carpeta son los **cuatro `VOC-*`**. Las lecturas tienen una carpeta cada una y todo lo
+curricular lleva el nivel adentro. O sea el defecto **solo podía morder en el Vocabulario**.
+
+**Verificado en el navegador, con el contraste sobre el mismo tablero:** cola vieja **3**, cola
+nueva **5**. Y recorridas las cinco desde la interfaz: cada tarjeta dice de qué curso es
+(*"Vocabulario · 6° básico"*) y cada aprobación marca **las 30 de su carpeta** —150 exactas,
+repartidas 30/30/30/30/30—.
+
+> **El control positivo, que es lo que distingue un banco completo de un detector roto.** Al
+> aplicar las 150 de Roberto, el modo vuelve a decir *"no queda nada"* — y esta vez hay que
+> **probar que es verdad**: se desmarcó a mano una pregunta en 4° y otra en 6°, las dos con el
+> mismo `VOC-CIEN`, y la cola encontró **las dos**. Con el criterio viejo habría visto una. Sin ese
+> control, las dos situaciones dan la misma pantalla. Queda escrito como procedimiento en
+> `docs/aprobacion-pedagogica.md`, no solo aquí.
+
+**El banco queda en 16.865 de 16.865 y 151 de 151.** El diff de las tres firmas fueron **61, 31,
+91 y 91 líneas**: las marcas y su contador, sin reformateo.
+
+#### La voz del Vocabulario de 4°: 305 clips, US$0,24
+
+Autorizada por Roberto. Dos cosas antes de pagar, que es donde este proyecto ya se quemó:
+
+- **Los 300 textos pasaron por el normalizador: 0 cambian.** Es prosa pura, sin números ni
+  símbolos, igual que los dos libros de lectura — así que la familia de defectos del *"enero"*, el
+  menos que desaparece y las coordenadas leídas como preposición **no puede ocurrir ahí**. No queda
+  nada que escuchar después.
+- ⚠️ **Los cuatro `caps` de 4° estaban SIN VERIFICAR.** El catálogo advertía que se habían escrito
+  por extrapolación, porque el fork no existía cuando se anotaron. Contrastados contra
+  `4to/index.html`: los cuatro correctos, incluida la duda real de Ciencias —sus preguntas son
+  `cien4-` pero su capítulo es `cie4-`, como en 5° y 6°—. La nota quedó reemplazada por el hecho
+  medido, que es lo que corresponde con una advertencia que ya se puede resolver.
+
+⚠️ **Y faltaba el cableado, que habría sido otro fallo mudo:** los clips existían pero `VOZ_DIRS`
+de 4° no incluía `voc4/`, así que el juego **habría caído a la voz del navegador sin decir nada** —
+el defecto exacto de la Sesión 98—.
+
+**Verificado jugando con clics**, no con el "listo" del script: Lenguaje → Vocabulario → mapa
+*"4° Básico · Vocabulario del curso"* con sus 2 áreas → quiz de 4 opciones (*"¿Qué mide un
+«termómetro»?"*) → el 🔊 pide `voc4/5bff98585cd53a19.mp3`, que responde **200 `audio/mpeg`,
+15.984 B**. Cobertura: los 300 textos con clip, **0 de 0 bytes** en todo `assets/voz`.
+
+#### Tres comentarios que quedaron mintiendo, y se corrigieron
+
+Los tres forks que recibieron Vocabulario decían en su código *"4° NO tiene Vocabulario
+(`HAY_VOCABULARIO=false`)"* con la bandera en `true` **dos líneas más abajo**. Reescritos **byte a
+byte iguales en los tres** (mismo hash), conservando las dos advertencias que sí valen: que la
+bandera y la expedición van juntas, y que el botón y su handler no se tocan por separado.
+
+> De paso apareció que `4to/index.html` hereda el `LIBROS` de Ana Frank del fork. **No es un bug
+> vivo** —`HAY_BIBLIOTECA=false` lo deja inerte— pero es el mismo dato heredado que sí mordió en 3°
+> (Sesión 72), y conviene saber que está ahí antes de encender esa bandera.
+
+#### Verificación y peso
+
+Los **seis cursos**: motor vivo (`__MOTOR_OK`), **JUGADOR navega** (`scr-rol` →
+`scr-expediciones`), expediciones intactas (27 · 27 · 24 · 26 · 23 · 23), `voc-general` presente en
+todos, sintaxis OK, **cero errores de consola y cero fallos de red**. La landing a 375 y 1280 px
+sin desborde y con la cifra nueva.
+
+**Peso remedido en bytes reales:** `assets/voz` **589 MB** · `assets/` **827 MB** · **sitio
+publicado 729 MB** (eran 582 / 820 / 721). Actualizado en los tres documentos donde vive esa cifra;
+la bitácora del 06/09 se dejó **intacta**, que es lo que corresponde con un registro histórico.
+
+**Y los números públicos pasaron de 16.625 a 16.865** en la landing, el `README`, `comercial.md`,
+`pendiente.md` y este archivo. ⚠️ **Los 529 objetivos NO subieron, y está bien:** los códigos
+`VOC-*` no son OA del currículum, así que el Vocabulario suma preguntas pero **no cobertura
+medida** — es la misma propiedad que lo define como transversal, y quedó escrito para que nadie lo
+"corrija" hacia arriba. La tabla de estado de `docs/aprobacion-pedagogica.md` estaba desactualizada
+en varias filas —8° seguía en 2.314 cuando son 2.644, y las lecciones en 130 cuando son 151—, así
+que se **recontó del disco** en vez de copiar la anterior.
+
+> **Errores de selector propios, otra vez cinco:** `#mapaNodos` por `#mapbox`, un `VOZ_MAP` que en
+> los cursos sin voz es `null` y no `undefined`, y el conteo de marcas del archivo exportado
+> —que es `{"revisadas":[...]}` y no una lista plana—, que me hizo medir **0 marcadas** sobre un
+> archivo que sí las traía. **Cuando un conteo da cero, el primer sospechoso es la prueba.**
