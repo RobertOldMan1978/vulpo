@@ -1,0 +1,223 @@
+{
+ "lecciones": [
+  {
+   "id": "hi5-conquista",
+   "titulo": "Antes de empezar: descubrimiento y conquista",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "siglo": "Siglos XV y XVI",
+      "epoca": "1450 – 1560",
+      "lugar": "De Europa a América, y de América a Chile"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Los reinos de Europa querían llegar a Asia por mar, y para eso salieron a explorar el Atlántico. Del otro lado no había un espacio vacío esperándolos: en América vivían millones de personas, en pueblos y ciudades que llevaban siglos organizados."
+    },
+    {
+     "t": "diagrama",
+     "kind": "tiempo",
+     "params": {
+      "desde": 1450,
+      "hasta": 1560,
+      "hitos": [
+       {
+        "a": 1492,
+        "txt": "Colón en América"
+       },
+       {
+        "a": 1521,
+        "txt": "conquista de México"
+       },
+       {
+        "a": 1541,
+        "txt": "se funda Santiago"
+       },
+       {
+        "a": 1553,
+        "txt": "muere Valdivia"
+       }
+      ],
+      "etiqueta": "De los viajes a la conquista de Chile"
+     },
+     "intro": "Entre el primer viaje y la fundación de Santiago pasan menos de cincuenta años: todo esto ocurre muy rápido."
+    },
+    {
+     "t": "texto",
+     "md": "Lo que vino después de los viajes fue una conquista: expediciones armadas, guerras y ciudades fundadas para quedarse. Los pueblos americanos no fueron el telón de fondo de esa historia. Pelearon, negociaron, se aliaron entre sí o con los recién llegados, y cada uno respondió de una manera distinta."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver los viajes de exploración y lo que hizo posible cruzar el océano, cómo fue el proceso de conquista de América y de Chile, qué cambió en los dos continentes a partir de ese contacto, y qué efectos tuvo sobre los pueblos indígenas."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "hi5-colonia",
+   "titulo": "Antes de empezar: la Colonia",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "siglo": "Siglos XVI a XVIII",
+      "epoca": "1541 – 1810",
+      "lugar": "El reino de Chile, dentro del imperio español"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Después de la conquista vienen casi trescientos años que casi no tienen batallas famosas ni fechas que todos recuerden, y que sin embargo explican buena parte del Chile de hoy. En ese tiempo Chile era una colonia del imperio español, y esa es la palabra que más conviene entender antes de empezar."
+    },
+    {
+     "t": "diagrama",
+     "kind": "tiempo",
+     "params": {
+      "desde": 1541,
+      "hasta": 1810,
+      "hitos": [
+       {
+        "a": 1541,
+        "txt": "empieza la Colonia"
+       },
+       {
+        "a": 1598,
+        "txt": "derrota de Curalaba"
+       },
+       {
+        "a": 1641,
+        "txt": "acuerdo de Quilín"
+       },
+       {
+        "a": 1810,
+        "txt": "empieza la independencia"
+       }
+      ],
+      "etiqueta": "Casi trescientos años de vida colonial"
+     },
+     "intro": "Tres siglos en una sola línea; el capítulo anterior cabía entero en cien años. Quilín, en 1641, fue una de esas grandes reuniones en que españoles y mapuches negociaban."
+    },
+    {
+     "t": "texto",
+     "md": "En esos tres siglos se formó una sociedad nueva y muy desigual, con gente de orígenes distintos conviviendo en un mismo territorio. Buena parte del trabajo no era libre: la encomienda y la esclavitud obligaban a unas personas a trabajar para otras, y eso no es un detalle del período, lo atraviesa entero. Y al sur de la frontera pasó algo aparte: ahí la Corona nunca llegó a gobernar, y hubo guerra, pero también ferias, acuerdos y gente cruzando de un lado a otro."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver cómo era la vida cotidiana y cómo se dividía la sociedad colonial, qué relación tenía Chile con España, qué lugar ocupó la Iglesia católica, cómo se relacionaron españoles y mapuches, y qué de todo eso sigue en pie hoy."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "hi5-paisajes",
+   "titulo": "Antes de empezar: Chile y sus paisajes",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "lugar": "Chile, de Arica a Punta Arenas: sus cinco zonas"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Chile mide más de cuatro mil kilómetros de norte a sur y, en promedio, menos de doscientos de ancho. Esa forma explica casi todo lo que vas a estudiar aquí: es lo que hace que en un mismo país quepan el desierto más árido del planeta y campos de hielo."
+    },
+    {
+     "t": "texto",
+     "md": "Y no es solo el clima. El relieve también se ordena en franjas de este a oeste, y no se ve igual en todas partes. Dónde vive la gente, de qué trabaja y qué peligros enfrenta dependen de esas dos cosas: el clima que le tocó y el relieve que tiene alrededor."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver las cinco grandes zonas de Chile y cómo son sus paisajes, qué recursos naturales hay en cada una y cuáles pueden agotarse, de qué manera el trabajo de las personas les da valor, y qué riesgos naturales tiene el país y cómo se prepara una comunidad frente a ellos."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "hi5-derechos",
+   "titulo": "Antes de empezar: derechos y deberes",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "epoca": "1990: Chile firma la Convención de los Derechos del Niño",
+      "lugar": "Chile, con reglas que valen en todo el mundo"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Aquí el curso cambia de tema: se deja el pasado y se pasa a cómo se organiza la vida en común. Vas a trabajar con dos palabras que se usan mucho y no significan lo mismo: derecho y deber. La pregunta de fondo del capítulo es de dónde salen los derechos de una persona y qué obligaciones traen consigo, para ella, para los demás y para el Estado."
+    },
+    {
+     "t": "texto",
+     "md": "Hay una tercera idea que suele confundirse con las otras dos: la de los logros. Un premio, una nota o el reconocimiento de los compañeros dependen en buena parte de lo que cada uno hace, aunque nunca solo de eso. Separar lo que se gana de lo que corresponde siempre es la mitad del trabajo de este capítulo."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver por qué todas las personas son sujetos de derecho, qué deberes nacen de esos derechos —los de cada persona y los del Estado— y en qué se distinguen de los logros que se consiguen con esfuerzo."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "hi5-comunidad",
+   "titulo": "Antes de empezar: vivir en comunidad",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "epoca": "1968: la primera ley de juntas de vecinos",
+      "lugar": "Tu curso, tu colegio y tu barrio"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Un problema que es de muchos no lo resuelve nadie por su cuenta. Cuando en un curso, en un colegio o en un barrio hay algo que arreglar, lo primero que aparece no es la solución: es la manera de organizarse para buscarla."
+    },
+    {
+     "t": "texto",
+     "md": "Organizarse tiene reglas y nombres propios: elegir a alguien para que represente, repartir cargos, dejar los acuerdos anotados, armar un plan y calcular cuánto va a costar. Nada de eso es papeleo: es lo que hace que un acuerdo se cumpla y no se olvide a la semana. En Chile las juntas de vecinos tienen ley propia desde 1968, y a los clubes y las agrupaciones les pasa algo parecido: para funcionar necesitan estar constituidos."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver actitudes que sostienen la convivencia de todos los días, cómo se elige una directiva de curso y qué hace cada cargo, cómo se arma un proyecto con su plan y su presupuesto, y de qué formas se organizan las personas fuera del colegio: juntas de vecinos, clubes, cooperativas, fundaciones, empresas y voluntariado."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "hi5-opinar",
+   "titulo": "Antes de empezar: opinar con fundamento",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "epoca": "2009: entra en vigencia el derecho a pedir información pública",
+      "lugar": "Chile y el mundo, a través de diarios y pantallas"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Opinar lo hace cualquiera, y además es un derecho. Este capítulo trata de otra cosa: de una diferencia que parece obvia y no lo es, la que hay entre una opinión y un argumento."
+    },
+    {
+     "t": "texto",
+     "md": "Y antes de opinar hay un paso previo: informarse. Hoy la información llega por muchas vías a la vez —un diario, la radio, un video, un mensaje reenviado—, y no todas responden igual por lo que publican. Saber de dónde salió un dato es parte del trabajo, no un paso extra. En Chile, además, desde 2009 existe el derecho a pedirle información a un organismo público."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver cómo se sostiene una opinión con razones que se puedan comprobar, cómo se comparan dos soluciones posibles para un mismo problema y cómo justificar la que se elige, y cómo informarse sobre lo que pasa en el país y en el mundo sin quedarse con lo primero que aparece."
+    }
+   ],
+   "revisada": false
+  }
+ ]
+}

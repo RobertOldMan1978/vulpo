@@ -5,62 +5,80 @@
    "titulo": "Antes de empezar: Los primeros humanos",
    "bloques": [
     {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "siglo": "Prehistoria: antes de la escritura",
+      "epoca": "Hace 300.000 años – 3300 a.C.",
+      "lugar": "De un solo continente a todo el planeta"
+     }
+    },
+    {
      "t": "texto",
-     "md": "Este capítulo cubre más tiempo que todos los demás juntos. La escritura, que es donde empieza lo que llamamos historia, aparece recién al final."
+     "md": "Este capítulo cubre más tiempo que todos los demás del año juntos. La escritura, que es donde empieza lo que llamamos historia, aparece recién al final: todo lo anterior lo conocemos por huesos, herramientas y restos de fogatas, no por documentos."
     },
     {
      "t": "diagrama",
      "kind": "tiempo",
      "params": {
       "desde": -300000,
-      "hasta": 0,
+      "hasta": -3300,
       "hitos": [
        {
         "a": -300000,
-        "txt": "primeros humanos"
+        "txt": "aparece nuestra especie"
        },
        {
         "a": -10000,
-        "txt": "agricultura"
-       },
-       {
-        "a": -3300,
-        "txt": "escritura"
+        "txt": "empieza la agricultura"
        }
       ],
-      "etiqueta": "Casi todo el dibujo es antes de la escritura"
+      "etiqueta": "Todo esto ocurre antes de la escritura"
      },
-     "intro": "Fíjate dónde caen la agricultura y la escritura: en el último tramo."
+     "intro": "La línea se corta hacia el 3300 a.C., cuando aparece la escritura. Fíjate dónde cae la agricultura: casi al final de todo ese tiempo."
     },
     {
      "t": "texto",
-     "md": "El cambio que lo ordena todo es la agricultura. Mientras hubo que seguir a los animales, no se podía vivir en un lugar fijo; cuando se pudo producir alimento, aparecieron las aldeas, y con ellas todo lo demás."
+     "md": "Nuestra especie apareció en un solo continente y desde ahí fue ocupando todos los demás. América fue la última en poblarse, y todavía se discute por dónde y cuándo entró la primera gente: cada hallazgo obliga a revisar las fechas."
     },
     {
      "t": "texto",
-     "md": "En este capítulo vas a ver el proceso de hominización, cómo la agricultura cambió la forma de vivir, y cómo el ser humano ha transformado el medio y hoy también lo daña."
+     "md": "El cambio que lo ordena todo es la agricultura. Mientras hubo que seguir a los animales no se podía vivir en un lugar fijo; cuando se pudo producir alimento aparecieron las aldeas, y con ellas la vida sedentaria y todo lo demás."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver el proceso de hominización y las teorías sobre el poblamiento de América, cómo la agricultura cambió la forma de vivir, qué hace que la gente se instale en un lugar y no en otro, y de qué manera el ser humano transforma el medio y también lo daña."
     }
    ],
-   "revisada": true
+   "revisada": false
   },
   {
    "id": "hi7-civilizaciones",
    "titulo": "Antes de empezar: Las primeras civilizaciones",
    "bloques": [
     {
-     "t": "texto",
-     "md": "Una civilización no es cualquier grupo humano. Aparece cuando hay excedente de alimento: si sobra comida, no todos tienen que producirla, y esas personas se dedican a otra cosa."
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "siglo": "Del cuarto al segundo milenio a.C.",
+      "epoca": "3500 a.C. – 1200 a.C.",
+      "lugar": "Mesopotamia, Egipto, India, China y América"
+     }
     },
     {
      "t": "texto",
-     "md": "De ahí sale casi todo lo que estudia este capítulo: el Estado que organiza, los oficios especializados, la escritura para llevar cuentas, y las ciudades."
+     "md": "Una civilización no es cualquier grupo humano. Aparece cuando hay excedente de alimento: si sobra comida, no todos tienen que producirla, y esas personas pueden dedicarse a otra cosa."
+    },
+    {
+     "t": "texto",
+     "md": "De ahí sale casi todo lo que estudia este capítulo: un Estado que organiza y cobra, oficios especializados, la escritura para llevar cuentas, y ciudades donde vive mucha gente junta y muy desigual."
     },
     {
      "t": "diagrama",
      "kind": "tiempo",
      "params": {
       "desde": -3500,
-      "hasta": -500,
+      "hasta": -1000,
       "hitos": [
        {
         "a": -3500,
@@ -77,37 +95,50 @@
        {
         "a": -1600,
         "txt": "China"
+       },
+       {
+        "a": -1200,
+        "txt": "también en América"
        }
       ],
-      "etiqueta": "Nacen lejos unas de otras, y casi al mismo tiempo"
+      "etiqueta": "Lejos unas de otras, y sin conocerse"
      },
-     "intro": "Cuatro civilizaciones, en cuatro ríos distintos, sin conocerse entre ellas."
+     "intro": "El mismo proceso se repite en continentes distintos y en siglos distintos."
     },
     {
      "t": "texto",
-     "md": "En este capítulo vas a ver cómo se formaron esos primeros Estados, qué las hacía parecidas pese a la distancia, y cómo se relaciona todo eso con los problemas ambientales de hoy."
+     "md": "En este capítulo vas a ver cómo se formaron esos primeros Estados, qué las hacía parecidas pese a la distancia y al tiempo que las separaba, y cómo se relaciona todo eso con los problemas ambientales de hoy."
     }
    ],
-   "revisada": true
+   "revisada": false
   },
   {
    "id": "hi7-grecia-roma",
    "titulo": "Antes de empezar: Grecia y Roma",
    "bloques": [
     {
-     "t": "texto",
-     "md": "El mar Mediterráneo es el protagonista de este capítulo. No separaba a los pueblos: los conectaba, porque navegar era mucho más rápido que ir por tierra."
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "siglo": "Del siglo VIII a.C. al V d.C.",
+      "epoca": "800 a.C. – 476 d.C.",
+      "lugar": "Alrededor del mar Mediterráneo"
+     }
     },
     {
      "t": "texto",
-     "md": "Por ahí circularon mercancías, pero sobre todo ideas: el alfabeto, las leyes escritas, la filosofía y la idea de que los ciudadanos decidan."
+     "md": "El mar Mediterráneo es el protagonista de este capítulo. No separaba a los pueblos: los conectaba, porque navegar era mucho más rápido y más barato que ir por tierra."
+    },
+    {
+     "t": "texto",
+     "md": "Por ahí circularon mercancías, pero sobre todo ideas: el alfabeto, las leyes escritas, la filosofía y la idea de que sean los ciudadanos quienes decidan. Grecia y Roma tampoco son dos historias sueltas: la segunda hereda de la primera y la reparte por tres continentes."
     },
     {
      "t": "diagrama",
      "kind": "tiempo",
      "params": {
       "desde": -800,
-      "hasta": 500,
+      "hasta": 550,
       "hitos": [
        {
         "a": -508,
@@ -115,11 +146,11 @@
        },
        {
         "a": -27,
-        "txt": "Imperio romano"
+        "txt": "empieza el Imperio romano"
        },
        {
         "a": 476,
-        "txt": "cae Roma"
+        "txt": "cae Roma de Occidente"
        }
       ],
       "etiqueta": "Mil trescientos años de mundo clásico"
@@ -128,22 +159,31 @@
     },
     {
      "t": "texto",
-     "md": "En este capítulo vas a ver la democracia ateniense y sus límites, la organización del Imperio romano, y por qué a esa herencia se le llama el canon clásico."
+     "md": "En este capítulo vas a ver cómo el Mediterráneo hizo posibles la polis griega y la república romana, qué era la democracia ateniense y quiénes quedaban fuera de ella, cómo Roma sostuvo un imperio enorme, y por qué a esa herencia se le llama el canon clásico."
     }
    ],
-   "revisada": true
+   "revisada": false
   },
   {
    "id": "hi7-medieval",
    "titulo": "Antes de empezar: La Edad Media",
    "bloques": [
     {
-     "t": "texto",
-     "md": "Al caer el Imperio romano de Occidente, Europa se fragmenta. Sin un poder central que proteja, la gente busca amparo en quien tenga tierra y soldados: así funciona el feudalismo."
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "siglo": "Del siglo V al XV",
+      "epoca": "476 – 1492",
+      "lugar": "Europa, y sus fronteras con Bizancio y el islam"
+     }
     },
     {
      "t": "texto",
-     "md": "Es un mundo con otra lógica: la vida se organiza alrededor de la aldea y el señor, y la religión da el marco para entenderlo todo."
+     "md": "Al fragmentarse la unidad imperial de Occidente, Europa queda sin un poder que la ordene entera. Sin autoridad central que proteja, la gente busca amparo en quien tenga tierra y soldados: esa es la lógica del feudalismo."
+    },
+    {
+     "t": "texto",
+     "md": "Es un mundo con otras reglas: la vida se organiza alrededor de la aldea y del señor, y la religión da el marco para entenderlo todo. Y no ocurre en un continente aislado: al este está el Imperio bizantino, y al sur y en la península ibérica, el mundo islámico. Con ellos hubo guerra, pero también comercio, traducciones y vecindad de siglos."
     },
     {
      "t": "diagrama",
@@ -154,78 +194,147 @@
       "hitos": [
        {
         "a": 476,
-        "txt": "cae Roma"
+        "txt": "cae Roma de Occidente"
        },
        {
         "a": 800,
-        "txt": "feudalismo"
+        "txt": "el imperio de Carlomagno"
        },
        {
-        "a": 1096,
-        "txt": "cruzadas"
+        "a": 1000,
+        "txt": "el orden feudal"
        },
        {
-        "a": 1350,
-        "txt": "renacen las ciudades"
+        "a": 1200,
+        "txt": "ciudades y universidades"
        }
       ],
       "etiqueta": "Mil años, y no todos iguales"
      },
-     "intro": "No fue un bloque quieto: desde el siglo XII las ciudades y el comercio cambian todo."
+     "intro": "No fue un bloque quieto: desde el siglo XII las ciudades y el comercio lo cambian todo."
     },
     {
      "t": "texto",
-     "md": "En este capítulo vas a ver cómo se forma la Europa medieval, sus rasgos propios, su relación con el mundo musulmán —de conflicto pero también de intercambio— y las transformaciones que abren paso a la época siguiente."
+     "md": "En este capítulo vas a ver cómo se forma la civilización europea a partir de varias tradiciones, qué rasgos tenía la sociedad medieval, cómo convivieron y chocaron la cristiandad, Bizancio y el islam, y qué transformaciones abren paso a la época siguiente."
     }
    ],
-   "revisada": true
+   "revisada": false
+  },
+  {
+   "id": "hi7-ciudadania",
+   "titulo": "Antes de empezar: Ciudadanía, de Atenas a hoy",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "siglo": "Del siglo V a.C. al siglo XXI",
+      "epoca": "508 a.C. – hoy",
+      "lugar": "Empieza en Atenas y Roma; llega a Chile"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Este capítulo no cuenta una época: sigue una pregunta a través de veinticinco siglos. La pregunta es quién manda, quién puede decidir y qué frenos tiene el que gobierna."
+    },
+    {
+     "t": "diagrama",
+     "kind": "tiempo",
+     "params": {
+      "desde": -508,
+      "hasta": 2100,
+      "hitos": [
+       {
+        "a": -508,
+        "txt": "democracia en Atenas"
+       },
+       {
+        "a": 476,
+        "txt": "se acaba el mundo antiguo"
+       },
+       {
+        "a": 1200,
+        "txt": "comunas y gremios"
+       },
+       {
+        "a": 2026,
+        "txt": "hoy"
+       }
+      ],
+      "etiqueta": "Veinticinco siglos, la misma pregunta"
+     },
+     "intro": "Mira los saltos: entre un hito y el siguiente pueden pasar setecientos años."
+    },
+    {
+     "t": "texto",
+     "md": "Atenas y Roma inventaron los primeros frenos: cargos que duran poco, leyes escritas y a la vista, autoridades que se vigilan entre sí. Y al mismo tiempo dejaron fuera a la mayor parte de la gente que vivía en ellas, así que conviene ir preguntándose, en cada época, quién contaba como ciudadano y quién no. Después la Edad Media agregó otras palabras que todavía usamos, como municipio, comuna y gremio."
+    },
+    {
+     "t": "texto",
+     "md": "Y esa Europa no se hizo sola: árabes, judíos, germanos y eslavos dejaron en ella aportes que hoy usamos sin saber de dónde vienen, desde palabras del castellano hasta la forma de escribir los números."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver con qué mecanismos Atenas y Roma limitaron el poder, qué significan hoy palabras como ciudadanía, república, municipio o gremio comparadas con lo que significaban entonces, y qué le aportaron a Europa las culturas que convivieron en ella."
+    }
+   ],
+   "revisada": false
   },
   {
    "id": "hi7-america",
    "titulo": "Antes de empezar: Civilizaciones de América",
    "bloques": [
     {
-     "t": "texto",
-     "md": "Mientras en Europa pasaba todo lo anterior, en América había civilizaciones grandes y organizadas, con ciudades, escritura, astronomía y caminos."
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "siglo": "Del siglo III al XVI",
+      "epoca": "250 – 1500",
+      "lugar": "Mesoamérica y los Andes: de México a Chile"
+     }
     },
     {
      "t": "texto",
-     "md": "Se desarrollaron sin contacto con Europa ni con Asia, así que resolvieron los mismos problemas de otra manera: los incas administraron un imperio enorme sin rueda ni caballos."
+     "md": "Mientras en Europa pasaba todo lo del capítulo anterior, en América había civilizaciones grandes y organizadas, con ciudades de decenas de miles de habitantes, calendarios muy exactos, obras de riego y caminos."
+    },
+    {
+     "t": "texto",
+     "md": "Se desarrollaron sin contacto con Europa ni con Asia, así que resolvieron los mismos problemas por caminos propios: los incas llegaron a administrar un imperio de miles de kilómetros con una red de caminos, de mensajeros y de depósitos."
     },
     {
      "t": "diagrama",
      "kind": "tiempo",
      "params": {
       "desde": 250,
-      "hasta": 1533,
+      "hasta": 1500,
       "hitos": [
        {
         "a": 250,
-        "txt": "maya clásico"
+        "txt": "esplendor de las ciudades mayas"
        },
        {
         "a": 1325,
-        "txt": "Tenochtitlán"
+        "txt": "se funda Tenochtitlan"
        },
        {
         "a": 1438,
-        "txt": "Imperio inca"
-       },
-       {
-        "a": 1533,
-        "txt": "conquista"
+        "txt": "el Tahuantinsuyo se expande"
        }
       ],
-      "etiqueta": "Siglos de desarrollo propio"
+      "etiqueta": "Los mayas son mucho más antiguos"
      },
-     "intro": "Compara estas fechas con las del capítulo de la Edad Media: son las mismas."
+     "intro": "Mira el espacio vacío del principio: entre el mundo maya y los otros dos pasan mil años."
     },
     {
      "t": "texto",
-     "md": "En este capítulo vas a ver a los mayas, los aztecas y los incas, qué los hacía distintos entre sí, y qué de esa herencia sigue vivo hoy en América Latina."
+     "md": "Y conviene decirlo desde el principio: no son culturas terminadas. Hoy hay millones de personas que se reconocen mayas, quechuas, aymaras o de otros pueblos originarios, y buena parte de lo que vas a estudiar sigue presente en la comida, las fiestas y las palabras de todos los días."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver a los mayas y a los aztecas y cómo transformaron el territorio que habitaban, cómo se organizó el Imperio inca, qué rasgos culturales tenían las tres civilizaciones y cuáles siguen vivos hoy en América Latina, y de qué formas convivieron y entraron en conflicto los pueblos entre sí."
     }
    ],
-   "revisada": true
+   "revisada": false
   }
  ]
 }

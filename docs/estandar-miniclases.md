@@ -14,8 +14,24 @@
 | Asignatura | Qué lleva | Granularidad |
 |---|---|---|
 | **Matemática** | **Mini-clase SIEMPRE**, sin excepción | una por **OA** |
-| **Ciencias** e **Historia** | Mini-clase **o** introducción, **si amerita** | mini-clase por OA · introducción por **capítulo** |
+| **Ciencias** | Mini-clase **o** introducción, **si amerita** | mini-clase por OA · introducción por **capítulo** |
+| **Historia** | **Introducción SIEMPRE**, sin excepción (07/09/2026) | una por **capítulo** · ver [`estandar-introduccion-historia.md`](estandar-introduccion-historia.md) |
 | **Lenguaje** | Introducción, o mini-clase **con `"mide": false`**. Solo si amerita | por **capítulo** |
+
+### Historia: por qué dejó de ser "si amerita" (07/09/2026)
+
+Regla de Roberto: **todos los capítulos de Historia llevan introducción**, y su primer bloque dice
+en qué siglo estamos, entre qué años pasa lo que viene y en qué lugar del planeta.
+
+El motivo es que en Historia la ubicación **no es contexto sino andamiaje**: sin sistema de
+referencia, *"la Colonia"* y *"la Independencia"* son dos nombres sueltos que un niño memoriza sin
+poder ordenar. Lo que falta no es el dato — es dónde va ese dato.
+
+⚠️ **Y el marco va como WIDGET (`kind:'marco'`), no redactado.** Escrito a mano, el día que
+alguien redacte una introducción sin él **no lo nota nadie**; como dato, se ve que falta y lo
+comprueba `scripts/revisar-marco-historia.py`. El estándar completo —incluidos los 21 capítulos
+de geografía y ciudadanía, donde el siglo y los años se omiten porque se responderían con "hoy,
+siglo XXI"— está en [`estandar-introduccion-historia.md`](estandar-introduccion-historia.md).
 
 ### Lenguaje: por qué NO podía llevar mini-clase, y qué cambió el 06/09/2026
 
@@ -72,9 +88,9 @@ sobrevivió a volver a medirlo**.
 
 | | OA | Capítulos | Hoy |
 |---|---|---|---|
-| Matemática | 62 | 15 | ✅ **62 mini-clases** (una por OA) |
-| Ciencias | 43 | 13 | ✅ **13 introducciones** (una por capítulo) |
-| Historia | 61 | 16 | ✅ **1 mini-clase + 11 introducciones** (12 de 16 capítulos) |
+| Matemática | 62 | 15 | ✅ **89 mini-clases** (una por OA, en los 4 cursos que la tienen) |
+| Ciencias | 43 | 13 | ✅ **17 introducciones** (una por capítulo) |
+| **Historia** | **123** | **33** | ✅ **1 mini-clase + 32 introducciones — LOS 33 CAPÍTULOS** (07/09) |
 | Lenguaje | 172 | 63 | ✅ **17 mini-clases + 16 introducciones** (33 de 63 capítulos) |
 
 ⚠️ **La fila de Lenguaje cuenta los SEIS cursos; las otras tres son de cuando el proyecto tenía

@@ -6,6 +6,17 @@
    "titulo": "Ubicar en el planeta",
    "bloques": [
     {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "lugar": "Todo el planeta, de polo a polo"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Este capítulo no trata de una época sino de un lugar, y ese lugar es el planeta entero. Vas a aprender a decir dónde está algo, en un mapa pequeño y también en el mundo completo."
+    },
+    {
      "t": "texto",
      "md": "Para decir dónde está algo en un mapa se usa una cuadrícula. La letra dice la columna y el número dice la fila, siempre en ese orden."
     },
@@ -61,25 +72,34 @@
      }
     }
    ],
-   "revisada": true
+   "revisada": false
   },
   {
    "id": "hi3-grecia",
    "titulo": "Antes de empezar: La antigua Grecia",
    "bloques": [
     {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "siglo": "Antes que Roma",
+      "epoca": "Hace unos 2.500 años",
+      "lugar": "El sur de Europa, junto al mar"
+     }
+    },
+    {
      "t": "texto",
-     "md": "Hace mucho tiempo, mucho antes de que existiera Chile, vivió en Europa un pueblo llamado los griegos."
+     "md": "Los griegos vivieron hace unos 2.500 años, en el sur de Europa y junto al mar. Es muchísimo antes de que Chile existiera como país."
     },
     {
      "t": "diagrama",
      "kind": "tiempo",
      "params": {
-      "desde": -800,
+      "desde": -500,
       "hasta": 2026,
       "hitos": [
        {
-        "a": -800,
+        "a": -500,
         "txt": "los griegos"
        },
        {
@@ -93,34 +113,93 @@
       ],
       "etiqueta": "Fue hace muchísimo tiempo"
      },
-     "intro": "Mira lo lejos que queda: los griegos vivieron mucho antes que todo lo demás."
+     "intro": "Mira lo lejos que queda el primer punto. Todo lo demás pasó mucho después."
     },
     {
      "t": "texto",
-     "md": "Muchas cosas que usamos hoy vienen de ellos: las olimpiadas, el teatro y la idea de votar para decidir entre todos."
+     "md": "De todos los pueblos antiguos, los griegos son de los que más cosas nos dejaron. Muchas siguen usándose hoy, aunque casi nadie se acuerda de dónde salieron."
     },
     {
      "t": "texto",
-     "md": "En este capítulo vas a ver cómo era su vida cotidiana, dónde vivían y por qué el mar fue tan importante para ellos."
+     "md": "En este capítulo vas a ver cómo era su vida de todos los días, qué nos dejaron, cómo era el lugar donde vivieron y por qué el mar fue tan importante para ellos."
     }
    ],
-   "revisada": true
+   "revisada": false
+  },
+  {
+   "id": "hi3-roma",
+   "titulo": "Antes de empezar: La antigua Roma",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "siglo": "Después de los griegos",
+      "epoca": "Hace unos 2.000 años",
+      "lugar": "Italia, junto al mar Mediterráneo"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Roma empezó siendo una sola ciudad junto a un río, en Italia. Con el tiempo se hizo tan grande que llegó a mandar en muchísimos lugares alrededor del mar."
+    },
+    {
+     "t": "diagrama",
+     "kind": "tiempo",
+     "params": {
+      "desde": -800,
+      "hasta": 500,
+      "hitos": [
+       {
+        "a": -753,
+        "txt": "nace Roma"
+       },
+       {
+        "a": -27,
+        "txt": "Roma es un imperio"
+       },
+       {
+        "a": 476,
+        "txt": "cae Roma"
+       }
+      ],
+      "etiqueta": "Roma duró más de mil años"
+     },
+     "intro": "Fíjate en lo lejos que está el primer punto del último. Roma no duró un rato, duró más de mil años."
+    },
+    {
+     "t": "texto",
+     "md": "Los romanos admiraban a los griegos y les copiaron muchas cosas, pero también inventaron las suyas. Casi todo lo que construían tenía que servirle a mucha gente a la vez."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver cómo vivían los romanos, qué necesidades tenían que resolver igual que cualquier pueblo, y en qué se parece y en qué se diferencia su vida de la tuya."
+    }
+   ],
+   "revisada": false
   },
   {
    "id": "hi3-derechos",
    "titulo": "Antes de empezar: Mis deberes y mis derechos",
    "bloques": [
     {
-     "t": "texto",
-     "md": "Un derecho es algo que te corresponde solo por ser niño o niña: que te cuiden, que te enseñen, que puedas jugar."
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "epoca": "Los derechos del niño, desde 1990",
+      "lugar": "Chile: tu casa y tu escuela"
+     }
     },
     {
      "t": "texto",
-     "md": "Un deber es lo que te toca hacer a ti. Los dos van juntos: si todos cumplen sus deberes, todos pueden usar sus derechos."
+     "md": "Los derechos de los niños no siempre estuvieron escritos en alguna parte. Chile se comprometió a cumplirlos en 1990, hace poco más de treinta años."
+    },
+    {
+     "t": "texto",
+     "md": "Un derecho es algo que te corresponde solo por ser niño o niña, como que te cuiden y que te enseñen. Un deber, en cambio, es lo que te toca hacer a ti."
     },
     {
      "t": "diagrama",
-     "intro": "Los dos van juntos.",
      "kind": "esquema",
      "params": {
       "forma": "comparar",
@@ -136,14 +215,66 @@
        }
       ],
       "etiqueta": "Si todos cumplen, todos pueden usarlos"
+     },
+     "intro": "Los dos van juntos."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver cuáles son tus derechos, qué deberes tienes en la escuela y en la casa, y qué tiene que ver la honestidad con todo esto."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "hi3-vivir-juntos",
+   "titulo": "Antes de empezar: Vivir juntos",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "epoca": "Los bomberos de Chile, desde 1851",
+      "lugar": "Chile: tu barrio y tu comuna"
      }
     },
     {
      "t": "texto",
-     "md": "En este capítulo vas a ver cuáles son tus derechos, qué deberes tienes en la escuela y en la casa, y por qué ser honesto importa incluso cuando nadie te está mirando."
+     "md": "Este capítulo no habla de una época lejana, sino del lugar donde vives hoy. Tu curso, tu barrio y tu comuna no andan solos. Detrás de cada uno hay personas que se ponen de acuerdo y se reparten el trabajo."
+    },
+    {
+     "t": "texto",
+     "md": "Algunas de esas organizaciones son muy antiguas. Los bomberos de Chile, por ejemplo, existen desde 1851, mucho antes de que nacieran tus bisabuelos."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "niveles",
+      "desc": "Los tres espacios donde uno convive: el curso, el barrio y la comuna",
+      "items": [
+       {
+        "titulo": "Tu curso",
+        "texto": "Convivir con otros"
+       },
+       {
+        "titulo": "Tu barrio",
+        "texto": "Ayudar y participar"
+       },
+       {
+        "titulo": "Tu comuna",
+        "texto": "Servicios para todos"
+       }
+      ],
+      "etiqueta": "Cada uno es más grande"
+     },
+     "intro": "Mira cómo cada caja es más ancha que la de arriba. Mientras más lejos, más gente hay con quien convivir."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver cómo se convive con quien piensa distinto, qué instituciones ayudan a tu comunidad y qué significa participar de verdad."
     }
    ],
-   "revisada": true
+   "revisada": false
   }
  ]
 }

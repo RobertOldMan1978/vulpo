@@ -1,0 +1,161 @@
+{
+ "lecciones": [
+  {
+   "id": "hi4-civilizaciones",
+   "titulo": "Antes de empezar: civilizaciones de América",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "siglo": "Siglos III al XVI",
+      "epoca": "Del año 250 al 1500, más o menos",
+      "lugar": "América, de México y Centroamérica a los Andes"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Mucho antes de que existieran los países que hoy conocemos, en América ya había pueblos que levantaban ciudades enormes y organizaban la vida de miles de personas. Tres de ellos son los que vas a conocer aquí: los mayas, los aztecas y los incas. Vivieron hace mucho tiempo. Las primeras grandes ciudades mayas ya existían hace unos mil ochocientos años, y las tres civilizaciones seguían en pie hace unos quinientos. Se repartieron entre lo que hoy es México y Centroamérica y la larga cordillera de los Andes, en América del Sur."
+    },
+    {
+     "t": "diagrama",
+     "kind": "tiempo",
+     "params": {
+      "desde": 250,
+      "hasta": 1500,
+      "hitos": [
+       {
+        "a": 250,
+        "txt": "ciudades mayas"
+       },
+       {
+        "a": 1325,
+        "txt": "nace Tenochtitlán"
+       },
+       {
+        "a": 1438,
+        "txt": "crece el imperio inca"
+       }
+      ],
+      "etiqueta": "Los mayas fueron los primeros"
+     },
+     "intro": "Fíjate en la distancia entre el primer hito y los otros dos."
+    },
+    {
+     "t": "texto",
+     "md": "Cada una vivió en un paisaje distinto, y eso cambió casi todo: lo que podían cultivar, cómo se movían de un lugar a otro y con qué materiales construían. En este capítulo vas a conocerlas una por una y, al final, vas a compararlas para ver en qué se parecían y en qué no."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "hi4-mapas",
+   "titulo": "Antes de empezar: investigar mapas y recursos",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "lugar": "El planeta entero, y América hoy"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Este capítulo no cuenta una historia antigua: te enseña a investigar, y por eso el lugar es el planeta entero. Primero vas a buscar qué queda hoy de los pueblos indígenas de América, incluso en palabras que dices todos los días sin darte cuenta. Después vas a aprender a ubicar cualquier punto de la Tierra en un mapa. Y al final vas a mirar de dónde salen de verdad las cosas que usas."
+    },
+    {
+     "t": "diagrama",
+     "kind": "globo",
+     "params": {},
+     "intro": "El planeta está cruzado por líneas que nadie puede ver, pero que están en todos los mapas."
+    },
+    {
+     "t": "texto",
+     "md": "Con esas líneas, un mapa deja de servir solo para mirar y sirve para encontrar. Aprender a usarlas es como aprender a manejar una herramienta: cuesta un poco al principio y después ya no se olvida. Lo último del capítulo es otra pregunta de investigación: la silla donde te sientas y el vaso donde tomas agua empezaron siendo algo que estaba en la naturaleza. ¿De dónde salió cada cosa, y qué pasa cuando se acaba?"
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "hi4-paisajes",
+   "titulo": "Antes de empezar: paisajes de América",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "lugar": "América entera, de Alaska a la Patagonia"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "América es un continente larguísimo. Va desde tierras heladas en el extremo norte hasta el extremo sur, muy cerca de la Antártica, y en el camino atraviesa selvas, desiertos, llanuras enormes y una cordillera que lo recorre casi entero. Por eso en un mismo continente puede estar nevando en un lugar y hacer un calor pegajoso en otro, el mismo día."
+    },
+    {
+     "t": "diagrama",
+     "kind": "zonas",
+     "params": {},
+     "intro": "Así se reparten las franjas de clima en el planeta. América las cruza todas."
+    },
+    {
+     "t": "texto",
+     "md": "Donde el paisaje cambia, cambia también la manera de vivir: qué se cultiva, con qué se construyen las casas, de qué trabaja la gente. En este capítulo vas a recorrer los paisajes de América, vas a ver qué recursos guarda cada zona y vas a compararlos con el paisaje donde vives tú."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "hi4-ciudadania",
+   "titulo": "Antes de empezar: ciudadanía y derechos",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "epoca": "Chile firmó la Convención sobre los Derechos del Niño en 1990",
+      "lugar": "Chile: tu comuna y todo el país"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Un país es mucha gente poniéndose de acuerdo. Para que eso funcione, Chile tiene autoridades que se ocupan de cosas distintas: unas de una comuna, otras de una región y otras del país entero. De cada una vale la pena preguntarse dos cosas: en qué institución trabaja y cómo llegó a ese cargo."
+    },
+    {
+     "t": "texto",
+     "md": "La otra mitad del capítulo son tus derechos. No son un favor que alguien te hace: están escritos. En 1990 Chile firmó la Convención sobre los Derechos del Niño, un acuerdo que firmaron casi todos los países del mundo. Ahí se nombran, entre otros, el derecho a estudiar, a comer, a tener una casa, a jugar y descansar, a que te atienda un médico, a decir lo que piensas y a estar protegido."
+    },
+    {
+     "t": "texto",
+     "md": "También vas a ver situaciones donde alguien tiene que decidir si dice la verdad, y otras donde alguien queda fuera del juego por ser distinto. Ninguna de las dos se resuelve votando ni firmando un papel."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "hi4-convivencia",
+   "titulo": "Antes de empezar: participar y resolver conflictos",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "lugar": "Tu curso y tu comunidad escolar"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Este capítulo pasa entero en un lugar chico: tu sala de clases. Un curso también se organiza, igual que un país, pero a su escala. Elige una directiva, reparte tareas, discute qué hacer con el recreo o con el aseo, y de vez en cuando se traba en un desacuerdo que hay que resolver."
+    },
+    {
+     "t": "texto",
+     "md": "Los desacuerdos no son el problema. Lo interesante es qué se hace con ellos, porque hay maneras que funcionan mejor que otras, y son las mismas que usan los adultos: entender primero cuál es la causa, escuchar a las dos partes, proponer soluciones y a veces votar."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver una elección de curso, una pelea por la cancha, un proyecto que alguien propone y una opinión que hay que defender con razones. Todas las situaciones les pasan a otras personas, y lo que se pide es mirar qué conviene hacer en cada una."
+    }
+   ],
+   "revisada": false
+  }
+ ]
+}

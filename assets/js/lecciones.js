@@ -651,10 +651,16 @@ DIAGRAMAS.tiempo=function(p,nodo){
  svg.appendChild(svgEl('path',{d:'M '+(x1-8)+' '+(y-5)+' L '+x1+' '+y+' L '+(x1-8)+' '+(y+5),
   fill:'none',stroke:'#5a4b8f','stroke-width':2.5}));
  /* El ano, escrito como se lee: "300.000 a.C." y no "-300000". Un numero negativo con
-    seis cifras seguidas no lo lee nadie, y menos un nino de 8 anos. */
+    seis cifras seguidas no lo lee nadie, y menos un nino de 8 anos.
+    ⚠️ Pero un ANO DE CUATRO CIFRAS NO LLEVA PUNTO: se escribe 1492, no "1.492". El punto
+    solo corresponde de cinco cifras hacia arriba, donde ya no se lee como ano sino como
+    cantidad ("hace 300.000 anos"). Es la regla ortografica del espanol, y estuvo mal en
+    produccion: 7 y 8 mostraban "1.492", "1.789" y "1.810" en todas sus lineas de tiempo.
+    No lo delata ningun conteo -el SVG se dibuja igual-: se vio MIRANDO la captura. */
  const anio=v=>{
   if(v===0) return '0';
-  const n=Math.abs(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+  const a=Math.abs(v);
+  const n=a<10000 ? String(a) : String(a).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
   return v<0 ? n+' a.C.' : n;
  };
  hitos.forEach((h,i)=>{
@@ -674,8 +680,15 @@ DIAGRAMAS.tiempo=function(p,nodo){
   // el texto se parte en dos lineas si no cabe: a 10px caben ~18 caracteres
   const txt=String(h.txt||''), corte=txt.length>18?txt.lastIndexOf(' ',18):-1;
   const lineas=corte>0?[txt.slice(0,corte),txt.slice(corte+1)]:[txt];
+  /* ⚠️ Hacia ARRIBA hay que apilar al reves, o el rotulo se lee INVERTIDO. En SVG un `y`
+     menor esta mas arriba, asi que sumar k*11 hacia arriba ponia la SEGUNDA mitad encima
+     de la primera: "Colon llega a America" se leia "America / Colon llega a". Estuvo vivo
+     en produccion en las lineas de tiempo de 7 y 8, y no lo delata ningun conteo -los dos
+     <text> existen y estan dentro del dibujo-: se ve leyendo la captura. */
+  const n=lineas.length;
   lineas.forEach((ln,k)=>{
-   const e=svgEl('text',{x:xr,y:(arriba?yl-23:yl+23)+(arriba?-k*11:k*11),'text-anchor':anc,
+   const dy=arriba ? -(n-1-k)*11 : k*11;
+   const e=svgEl('text',{x:xr,y:(arriba?yl-23:yl+23)+dy,'text-anchor':anc,
     fill:'#a99fd0','font-size':10});
    e.textContent=ln; svg.appendChild(e);
   });
@@ -683,6 +696,63 @@ DIAGRAMAS.tiempo=function(p,nodo){
  const tt=svgEl('text',{x:W/2,y:H-6,'text-anchor':'middle',fill:'#ffc93c',
   'font-family':"'Titan One',sans-serif",'font-size':14});
  tt.textContent=p.etiqueta||''; svg.appendChild(tt);
+ nodo.appendChild(svg);
+};
+
+/* marco: la ficha de ubicacion que abre TODA introduccion de Historia (regla de Roberto,
+   07/09/2026): en que siglo estamos, entre que anos pasa esto, y en que parte del planeta.
+   Lo que a un alumno le falta antes de leer un capitulo de Historia no es el dato, es el
+   sistema de referencia: sin el, "la Colonia" y "la Independencia" son dos nombres sueltos.
+
+   Va como WIDGET y no como texto redactado a proposito: escrito a mano, el dia que alguien
+   redacte una introduccion sin el marco no lo nota nadie. Como dato, se ve que falta -y lo
+   puede comprobar un script, que es lo que hace revisar-marco-historia.py-.
+
+   params: {siglo:'Siglos XV y XVI', epoca:'1492 - 1600', lugar:'America y Espana'}
+   Los tres campos son opcionales y la ficha se achica sola: en los capitulos de geografia y
+   de formacion ciudadana el siglo y el rango de anos se responderian con "hoy, siglo XXI",
+   que es relleno, asi que ahi va solo el LUGAR -que si ubica- y `epoca` se usa para lo que
+   de verdad fecha algo ("la Constitucion actual se escribio en 1980"). */
+DIAGRAMAS.marco=function(p,nodo){
+ const filas=[];
+ if(p.siglo) filas.push(['CUÁNDO', String(p.siglo)]);
+ if(p.epoca) filas.push([p.siglo?'AÑOS':'CUÁNDO', String(p.epoca)]);
+ if(p.lugar) filas.push(['DÓNDE', String(p.lugar)]);
+ if(!filas.length){nodo.textContent='';return;}
+
+ // El valor se parte en dos lineas si no cabe: a 13px caben ~34 caracteres en el ancho util.
+ const partir=t=>{
+  if(t.length<=34) return [t];
+  const c=t.lastIndexOf(' ',34);
+  return c>0 ? [t.slice(0,c), t.slice(c+1)] : [t];
+ };
+ const cuerpo=filas.map(([r,v])=>[r, partir(v)]);
+ const altoDe=ls=>ls.length>1?34:24;
+
+ const W=360, xr=14, xv=86, pad=12;
+ const H=pad*2 + cuerpo.reduce((s,f)=>s+altoDe(f[1]),0) + (cuerpo.length-1)*6;
+ const svg=svgEl('svg',{viewBox:'0 0 '+W+' '+H,role:'img',
+  'aria-label':'Marco del capítulo: '+filas.map(f=>f[0].toLowerCase()+', '+f[1]).join('; ')});
+
+ svg.appendChild(svgEl('rect',{x:1,y:1,width:W-2,height:H-2,rx:12,
+  fill:'#1d1440',stroke:'#3a2f60','stroke-width':1.5}));
+ // La banda dorada de la izquierda amarra las tres filas como una sola ficha.
+ svg.appendChild(svgEl('rect',{x:1,y:1,width:4,height:H-2,rx:2,fill:'#ffc93c'}));
+
+ let y=pad;
+ cuerpo.forEach(([rot,lineas],i)=>{
+  const alto=altoDe(lineas), cy=y+ (lineas.length>1 ? 13 : 15);
+  const r=svgEl('text',{x:xr,y:cy,fill:'#6f66a0','font-size':9.5,
+   'font-weight':'700','letter-spacing':'1.2'});
+  r.textContent=rot; svg.appendChild(r);
+  lineas.forEach((ln,k)=>{
+   const v=svgEl('text',{x:xv,y:cy+k*15,fill:'#f2eeff','font-size':13,'font-weight':'700'});
+   v.textContent=ln; svg.appendChild(v);
+  });
+  y+=alto+6;
+  if(i<cuerpo.length-1)
+   svg.appendChild(svgEl('line',{x1:xv,y1:y-4,x2:W-14,y2:y-4,stroke:'#3a2f60','stroke-width':1}));
+ });
  nodo.appendChild(svg);
 };
 

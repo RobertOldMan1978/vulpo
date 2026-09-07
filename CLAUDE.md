@@ -151,8 +151,8 @@ año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron co
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
 están hoy en una expedición jugable, el resto es reserva.
 
-> **Estado de aprobación (07/09/2026): 16.865 de 16.865 preguntas aprobadas, y 151 de 151
-> lecciones.** El banco creció otra vez el 07/09 con las **240 preguntas de Vocabulario** de 4°,
+> **Estado de aprobación (07/09/2026): 16.865 de 16.865 preguntas aprobadas, y 139 de 172
+> lecciones** —las 33 pendientes son las introducciones de Historia, escritas ese mismo día.** El banco creció otra vez el 07/09 con las **240 preguntas de Vocabulario** de 4°,
 > 5° y 6°, firmadas ese mismo día. Antes había crecido tras la firma de 4° —la Sesión 99 escribió
 > **330 preguntas nuevas** para los 11 OA que le faltaban a Lenguaje de 8° y **21 lecciones**, y la
 > Sesión 100 reescribió **2 preguntas de geometría** que exigían dos cálculos encadenados con
@@ -10199,3 +10199,116 @@ que se **recontó del disco** en vez de copiar la anterior.
 > los cursos sin voz es `null` y no `undefined`, y el conteo de marcas del archivo exportado
 > —que es `{"revisadas":[...]}` y no una lista plana—, que me hizo medir **0 marcadas** sobre un
 > archivo que sí las traía. **Cuando un conteo da cero, el primer sospechoso es la prueba.**
+
+### Sesión 103 (2026-09-07) — Todos los capítulos de Historia dicen dónde y cuándo estamos
+Encargo de Roberto: *"en las de Historia me gustaría siempre una introducción diciendo en qué siglo
+estamos, entre qué años pasa lo que vamos a hablar y en qué lugar del planeta estamos ubicados; eso
+es lo mínimo, el resto lo complementas"*, y **vale para los seis cursos**. Historia pasa de **12 a
+33 introducciones**: todos sus capítulos. **Ningún banco de preguntas se tocó.**
+
+#### La medición partió el encargo en dos, y por eso se preguntó antes de escribir
+
+De los 33 capítulos, **solo 12 son históricos**. Los otros 21 son de **geografía** (Paisajes de
+América, Chile y sus paisajes) o de **formación ciudadana** (Vivir juntos, La Constitución,
+Resolver conflictos), y ahí *"en qué siglo estamos"* se responde con *"hoy, siglo XXI"*, que no
+ubica nada.
+
+**Decisión de Roberto: el LUGAR siempre; el tiempo, cuando fecha algo de verdad** —*"la Constitución
+actual se escribió en 1980"*, *"Chile firmó la Convención de los Derechos del Niño en 1990"*—. Si no
+existe un dato así, el campo **se omite**: una ficha de dos filas es correcta y rellenarla con
+"siglo XXI" es peor que dejarla corta.
+
+Y una segunda decisión que cambió el alcance de 21 a 33: **las 12 introducciones que ya existían no
+cumplían la regla** —la de Grecia y Roma habla del Mediterráneo y del contenido, sin marco
+temporal—, así que **se rehacen**. Quedan `revisada:false`: cambió su texto, así que su firma
+anterior ya no les corresponde.
+
+#### El marco va como WIDGET, no redactado
+
+`DIAGRAMAS.marco` en el módulo compartido: una ficha con **CUÁNDO · AÑOS · DÓNDE**, banda dorada a
+la izquierda, que **se achica sola** si un campo no aplica.
+
+> ⚠️ **Redactado a mano, el día que alguien escriba una introducción sin el marco no lo nota
+> nadie** — es la clase de omisión muda que este proyecto ya pagó con el `META_OA` de 7° y con el
+> campo `visual`. Como dato, se ve que falta **y lo puede comprobar un script**.
+
+Y ese script se escribió **antes que el contenido**: `scripts/revisar-marco-historia.py` comprueba
+que los 33 capítulos tengan su introducción y que abra con el marco. Arrancó marcando 33 de 33
+pendientes y fue bajando. Estándar completo en
+[`docs/estandar-introduccion-historia.md`](docs/estandar-introduccion-historia.md).
+
+#### ⚠️ Tres defectos, y dos estaban vivos en producción
+
+**1 · La línea de tiempo escribía los años con separador de miles.** 7° y 8° mostraban **"1.492"**,
+**"1.810"**, **"1.789"** en sus 13 líneas de tiempo. **Un año no lleva punto**; solo lo lleva una
+cantidad, que es el caso para el que el widget se escribió (*"300.000 a.C."*). La regla que resuelve
+los dos: cuatro cifras sin punto, cinco o más con punto.
+
+**2 · Los rótulos de dos líneas se leían INVERTIDOS.** En SVG un `y` menor está más arriba, y el
+código sumaba hacia arriba: *"Colón llega a América"* se dibujaba como **"América / Colón llega a"**.
+También vivo en 7° y 8°.
+
+> Los dos son del widget compartido, los dos **invisibles para cualquier conteo** —los dos `<text>`
+> existen, están dentro del `viewBox` y no desbordan— y los dos se vieron **mirando la captura**. Es
+> la octava vez que este proyecto tropieza con lo mismo. **Como es presentación y no dato, 7° y 8°
+> no pierden su aprobación por esto** — mismo criterio que las fracciones apiladas.
+
+**3 · Y el tercero lo dejó pasar mi propio verificador.** En 4°, 5° y 6° el fork **no cargaba** el
+archivo de Historia en `LECC.init` —sus `lecciones.json` son nuevos y no estaban en la lista—, así
+que **el nodo 📘 no se dibujaba**: el capítulo se juega igual, sin introducción, y nadie lo nota. El
+chequeo daba **verde** porque miraba el dato y **no el camino que lo usa**.
+
+> Es el hueco clásico, y por eso quedó escrito dentro del script: **comprobar que el dato existe no
+> es comprobar que se ve.** El chequeo nuevo se probó **rompiéndolo a propósito** —quitando la ruta
+> de 5°— porque un chequeo que nunca falla no prueba nada.
+
+#### Lo que aportaron los seis agentes, que es más que redactar
+
+- **Seis fugas reales** que regalaban respuestas del banco, una de ellas **heredada de texto ya
+  aprobado** (*"importa incluso cuando nadie te está mirando"*, que es la respuesta de dos
+  preguntas de 3°).
+- **Un desajuste de fechas en 6°**: la ficha decía *1830 – 1990* y **seis preguntas de ese capítulo
+  comparan desde 1810**. Un alumno que estudiara la introducción habría respondido mal.
+- **Los dos bugs del widget** de arriba.
+- **El agente de 4° me corrigió el encargo**: le dije que las civilizaciones americanas estaban
+  marcadas como contenido sensible y `docs/contenido-sensible.md` dice explícitamente lo contrario.
+  Lo reportó en vez de obedecer.
+- **El de 8° midió la similitud de sus frases contra las de 5°** —los dos cursos cubren la
+  conquista— y bajó el máximo de 0,82 a **0,54**, para que un alumno que juegue los dos no lea lo
+  mismo dos veces.
+- **El de 5° descartó un dibujo con criterio**: no le puso el widget de zonas climáticas al capítulo
+  de paisajes de Chile porque dibuja las cinco franjas **del planeta** y a los 10 años se
+  confundirían con las cinco zonas **de Chile**.
+
+#### El contenido delicado
+
+El **`HI06 OA 08`** —el quiebre de la democracia— quedó en dos párrafos separados a propósito:
+**hechos verificables** primero (1973, el Congreso clausurado, **"el régimen o dictadura militar"**
+con los dos términos del currículum, las violaciones a los derechos humanos atribuidas a los
+informes oficiales del propio Estado, el plebiscito de 1988) y después **que existen visiones
+distintas**, sin decir cuál es la correcta. No nombra a nadie ni dice qué opción ganó el plebiscito.
+La Constitución de 1980 va como hecho, no como debate vivo.
+
+En **5°**, la conquista se nombra con el término del currículum sin suavizarla, y se dice
+explícitamente que **no había un espacio vacío**: *"en América vivían millones de personas, en
+pueblos y ciudades que llevaban siglos organizados"*.
+
+#### Verificación
+
+- **Jugando en los seis cursos**, con clics reales: el nodo 📘 sale primero en el mapa y abre con su
+  ficha. Cero errores de consola y cero fallos de red.
+- **Con un save sembrado**: el nodo nuevo **no corre el avance guardado** —las estrellas siguen en
+  sus etapas, el jefe sigue cerrado y el XP intacto—, porque se dibuja fuera del arreglo indexado.
+- `revisar-marco-historia.py` en **33 de 33**, con el único aviso esperado: `hi3-planeta` lleva
+  práctica y por lo tanto **mide**, que es a propósito (es la única mini-clase de Historia del
+  proyecto, y quitarle la práctica dejaría el `HI03 OA 06` sin medir en el panel).
+- Sintaxis OK en los seis forks. El proyecto pasa de **151 a 172 lecciones**.
+
+> **Errores de método propios, los de siempre:** el extractor del verificador contó 38 capítulos,
+> después 51 y después ninguno —acotaba los objetos con un `.*?` que cruzaba fronteras y se llevaba
+> los de Matemática; ahora corta **por balance de llaves**—; su regex encontró el **comentario HTML**
+> que documenta `LECC.init` en vez de la llamada real (el mismo falso positivo del comentario que
+> contiene `<script>`); y al verificar el arreglo de los rótulos invertidos **mi propia consulta dijo
+> que seguía roto** cuando la captura mostraba que estaba bien. **Cuando el resultado sorprende, el
+> primer sospechoso es la prueba** — y esa vez el falso positivo casi me hace deshacer un arreglo
+> correcto.

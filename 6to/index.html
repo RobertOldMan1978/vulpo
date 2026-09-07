@@ -1397,7 +1397,7 @@ const EXPEDICIONES=[
  // Los 26 OA se reparten en 6 capítulos por tema, siguiendo el orden del Programa:
  // independencia y república, Chile en el siglo XIX y XX, geografía y región propia,
  // la Constitución, derechos y participación, y ciudadanía activa.
- { id:'hist6-cap1', asignatura:'Historia', nivel:'6° Básico · Independencia y la nueva república',
+ { id:'hist6-cap1', intro:'hi6-independencia', asignatura:'Historia', nivel:'6° Básico · Independencia y la nueva república',
    portada:'assets/portada-historia.png',
    portadaMapa:'assets/portada-hist6-cap1.png',
    contenido:'contenido/historia-6basico/preguntas.json', activa:true, campaña:'hist6',
@@ -1408,7 +1408,7 @@ const EXPEDICIONES=[
      {oa:"HI06 OA 04",nombre:"Avances del siglo XIX",icono:"🔬",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Independencia y la nueva república",icono:"🗺️",n:15,oas:["HI06 OA 01","HI06 OA 02","HI06 OA 03","HI06 OA 04"]},
    ]},
- { id:'hist6-cap2', asignatura:'Historia', nivel:'6° Básico · Chile en el siglo XIX y XX',
+ { id:'hist6-cap2', intro:'hi6-siglo-xx', asignatura:'Historia', nivel:'6° Básico · Chile en el siglo XIX y XX',
    portada:'assets/portada-historia.png',
    portadaMapa:'assets/portada-hist6-cap2.png',
    contenido:'contenido/historia-6basico/preguntas.json', activa:true, campaña:'hist6',
@@ -1420,7 +1420,7 @@ const EXPEDICIONES=[
      {oa:"HI06 OA 09",nombre:"Lo que cambió y lo que sigue",icono:"🔄",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Chile en el siglo XIX y XX",icono:"🕯️",n:15,oas:["HI06 OA 05","HI06 OA 06","HI06 OA 07","HI06 OA 08","HI06 OA 09"]},
    ]},
- { id:'hist6-cap3', asignatura:'Historia', nivel:'6° Básico · Geografía de Chile y mi región',
+ { id:'hist6-cap3', intro:'hi6-geografia', asignatura:'Historia', nivel:'6° Básico · Geografía de Chile y mi región',
    portada:'assets/portada-historia.png',
    portadaMapa:'assets/portada-hist3-cap1.png',
    contenido:'contenido/historia-6basico/preguntas.json', activa:true, campaña:'hist6',
@@ -1432,7 +1432,7 @@ const EXPEDICIONES=[
      {oa:"HI06 OA 14",nombre:"Desastres naturales",icono:"🌋",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Chile y mi región",icono:"🏔️",n:15,oas:["HI06 OA 10","HI06 OA 11","HI06 OA 12","HI06 OA 13","HI06 OA 14"]},
    ]},
- { id:'hist6-cap4', asignatura:'Historia', nivel:'6° Básico · La Constitución',
+ { id:'hist6-cap4', intro:'hi6-constitucion', asignatura:'Historia', nivel:'6° Básico · La Constitución',
    portada:'assets/portada-historia.png',
    portadaMapa:'assets/portada-hist6-cap4.png',
    contenido:'contenido/historia-6basico/preguntas.json', activa:true, campaña:'hist6',
@@ -1443,7 +1443,7 @@ const EXPEDICIONES=[
      {oa:"HI06 OA 18",nombre:"Derechos y deberes",icono:"🤝",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: La Constitución",icono:"📜",n:15,oas:["HI06 OA 15","HI06 OA 16","HI06 OA 17","HI06 OA 18"]},
    ]},
- { id:'hist6-cap5', asignatura:'Historia', nivel:'6° Básico · Derechos y participación',
+ { id:'hist6-cap5', intro:'hi6-derechos', asignatura:'Historia', nivel:'6° Básico · Derechos y participación',
    portada:'assets/portada-historia.png',
    portadaMapa:'assets/portada-hist3-cap4.png',
    contenido:'contenido/historia-6basico/preguntas.json', activa:true, campaña:'hist6',
@@ -1454,7 +1454,7 @@ const EXPEDICIONES=[
      {oa:"HI06 OA 22",nombre:"Elegir con responsabilidad",icono:"🗳️",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Derechos y participación",icono:"🕊️",n:15,oas:["HI06 OA 19","HI06 OA 20","HI06 OA 21","HI06 OA 22"]},
    ]},
- { id:'hist6-cap6', asignatura:'Historia', nivel:'6° Básico · Ciudadanía activa',
+ { id:'hist6-cap6', intro:'hi6-ciudadania', asignatura:'Historia', nivel:'6° Básico · Ciudadanía activa',
    portada:'assets/portada-historia.png',
    portadaMapa:'assets/portada-hist7-cap5.png',
    contenido:'contenido/historia-6basico/preguntas.json', activa:true, campaña:'hist6',
@@ -2459,7 +2459,7 @@ const HAY_MINICLASES=true;
 /* ⚠️ La llamada va PEGADA a la bandera y a sus rutas, no arriba con las otras
    constantes: un `const` leido antes de declararse mata todo el JavaScript (zona
    muerta temporal), y esa trampa ya mordio cuatro veces en este proyecto. */
-LECC.init({ rutas:['contenido/lenguaje-6basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
+LECC.init({ rutas:['contenido/historia-6basico/lecciones.json', 'contenido/lenguaje-6basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
 /* ¿Este nivel tiene el módulo de Vocabulario, y la biblioteca de lecturas del colegio?
    Son contenido de 8°. Antes se resolvían BORRANDO líneas del fork, y ese corte dejó
    la asignatura Lenguaje inalcanzable en 3° (Sesión 61). Como banderas, las apps
