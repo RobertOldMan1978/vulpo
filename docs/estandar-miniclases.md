@@ -88,18 +88,21 @@ sobrevivió a volver a medirlo**.
 
 | | OA | Capítulos | Hoy |
 |---|---|---|---|
-| Matemática | 62 | 15 | ✅ **89 mini-clases** (una por OA, en los 4 cursos que la tienen) |
-| Ciencias | 43 | 13 | ✅ **17 introducciones** (una por capítulo) |
+| **Matemática** | **140** | **35** | ✅ **140 mini-clases — una por OA, en los SEIS cursos** (07/09) |
+| **Ciencias** | **95** | **27** | ✅ **27 introducciones — una por capítulo, los SEIS cursos** (07/09) |
 | **Historia** | **123** | **33** | ✅ **1 mini-clase + 32 introducciones — LOS 33 CAPÍTULOS** (07/09) |
 | Lenguaje | 172 | 63 | ✅ **17 mini-clases + 16 introducciones** (33 de 63 capítulos) |
 
-⚠️ **La fila de Lenguaje cuenta los SEIS cursos; las otras tres son de cuando el proyecto tenía
-tres.** Se dejan así a propósito en vez de recalcularlas de memoria: al actualizar una fila hay que
-volver a medirla contra los archivos, no estimarla.
+**Las cuatro filas cuentan ya los SEIS cursos** (recontadas del disco el 07/09/2026). Al
+actualizar una hay que volver a medirla contra los archivos, no estimarla.
 
-O sea que aplicar el criterio con la mano suelta llega a **104 mini-clases más** en Ciencias e
-Historia. Aplicado por capítulo como introducción, son **29**. La diferencia entre las dos lecturas
-es de meses, así que la granularidad se decide **antes** de escribir, no mientras se escribe.
+**Total del proyecto: 233 lecciones — 158 mini-clases y 75 introducciones.**
+
+> **Y con eso el techo dejó de ser una advertencia y pasó a ser el estado.** Matemática está
+> completa por definición: una mini-clase por cada uno de sus 140 objetivos. Ciencias está
+> completa por capítulo. Lo que sigue abierto es **Historia y Lenguaje por OA** —104 mini-clases
+> más si alguna vez se aplicara ese criterio—, y no se va a aplicar: Historia lleva introducción
+> por capítulo y Lenguaje solo donde amerita, con `mide:false`.
 
 ## La anatomía, medida sobre las 17 de 8°
 

@@ -242,6 +242,12 @@ def normalizar(texto, oa=""):
     # ("el cuadrito + 7 = 15"). El "-" solo entre digitos, para no partir palabras
     # con guion.
     t = re.sub(r"(\d)\s*[x×]\s*(\d)", r"\1 por \2", t)
+    # El "÷" faltaba y el banco de 4 basico lo usa en 36 preguntas de los MA04 OA 04 y 06:
+    # se locutaban con el SIMBOLO CRUDO, o sea el nino oia "36 ... 1" sin la operacion. Los
+    # dos puntos ya se traducian (regla de la division mas abajo) y el "×" tambien, asi que
+    # era el unico operador sin cubrir. Se dice "dividido en" y no "dividido por" porque es
+    # lo que dice un profesor chileno en la sala.
+    t = re.sub(r"(\d)\s*÷\s*(\d)", r"\1 dividido en \2", t)
     t = t.replace("+", " mas ").replace("=", " es igual a ")
     t = re.sub(r"(\d)\s*[-−]\s*(\d)", r"\1 menos \2", t)
     # Un guion CON ESPACIOS a los dos lados siempre es una resta, aunque a un lado

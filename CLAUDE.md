@@ -72,8 +72,8 @@ backend Supabase para el duelo en línea. Historia de v0 al detalle en la Bitác
   lleva mini-clase", y lo que cambió no fue la clase sino el reporte. Estándar y criterio en
   [`docs/estandar-miniclases.md`](docs/estandar-miniclases.md).
 - **Matemáticas · campaña "enseña→desafío" (Sesiones 29 y 31) + "Reto de Cálculo"
-  (Sesión 15):** ⚠️ **El camino "enseña→desafío" está en CUATRO cursos** —**89 mini-clases**:
-  26 en 3°, 27 en 5°, 19 en 7° y las 17 de 8°—, con el motor compartido en
+  (Sesión 15):** ⚠️ **El camino "enseña→desafío" está en los SEIS cursos desde el 07/09/2026**
+  —**140 mini-clases**: 26 en 3°, 27 en 4°, 27 en 5°, 24 en 6°, 19 en 7° y las 17 de 8°—, con el motor compartido en
   `assets/js/lecciones.js` y **27 diagramas interactivos**. Lo que sigue es la descripción de 8°,
   que es el que además tiene el Reto de Cálculo.
   Al entrar a Matemáticas se abre su **campaña** con las 4 unidades del año
@@ -151,8 +151,9 @@ año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron co
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
 están hoy en una expedición jugable, el resto es reserva.
 
-> **Estado de aprobación (07/09/2026): 16.865 de 16.865 preguntas aprobadas, y 172 de 172
-> lecciones**, incluidas las 33 introducciones de Historia escritas ese mismo día. El banco creció otra vez el 07/09 con las **240 preguntas de Vocabulario** de 4°,
+> **Estado de aprobación (07/09/2026): 16.865 de 16.865 preguntas aprobadas, y 172 de 233
+> lecciones** —las 61 pendientes son las 27 mini-clases de Matemática de 4°, las 24 de 6° y
+> las 10 introducciones de Ciencias, escritas ese mismo día. El banco creció otra vez el 07/09 con las **240 preguntas de Vocabulario** de 4°,
 > 5° y 6°, firmadas ese mismo día. Antes había crecido tras la firma de 4° —la Sesión 99 escribió
 > **330 preguntas nuevas** para los 11 OA que le faltaban a Lenguaje de 8° y **21 lecciones**, y la
 > Sesión 100 reescribió **2 preguntas de geometría** que exigían dos cálculos encadenados con
@@ -10347,3 +10348,96 @@ El diff fueron 5, 5, 6, 6, 6 y 5 líneas —las marcas y nada más—.
 > todo firmado, 0 de 32 secciones sin aprobar y 0 casillas sin marcar; y al **desmarcar una
 > lección a propósito**, el modo la detecta y lo dice. Sin ese paso, un detector roto y un tablero
 > completo dan la misma pantalla.
+
+### Sesión 104 (2026-09-07) — El camino "enseña → desafío" llega a los seis cursos
+Roberto: *"sigue con todo lo que puedas"*. Se cerró lo que quedaba de A44: **las 10 introducciones
+de Ciencias de 4° y 6°** y **las 51 mini-clases de Matemática de 4° y 6°**, con la conversión de sus
+dos campañas al camino *enseña→desafío*. El proyecto pasa de **172 a 233 lecciones**.
+
+| | 3° | 4° | 5° | 6° | 7° | 8° |
+|---|---|---|---|---|---|---|
+| Unidades de Matemática | 7 | **7** | 6 | **7** | 4 | 4 |
+| Mini-clases | 26 | **27** | 27 | **24** | 19 | 17 |
+
+**Y lo primero fue corregir la propia tarea: Lenguaje NO tenía trabajo pendiente.** A44 contaba sus
+13 capítulos sin lección como faltantes, y están así **por decisión, con argumento escrito** en
+`docs/veredicto-historia-lenguaje.md` —*"producción oral pura"*, *"hábito de biblioteca, no hay
+modelo que mostrar"*, *"una introducción diría «vas a escribir» y no agregaría nada"*—. Escribir
+esas 13 habría sido rellenar donde alguien ya decidió que no va nada.
+
+#### ⚠️ Cinco defectos de widget, y los cinco estaban vivos en producción
+
+Los cinco salieron de que **los agentes miran sus capturas**, y ninguno lo delata un conteo:
+
+1. **`posicional` recortaba a 999 en silencio.** `ma5-oa01` —aprobada y publicada— enseña a leer
+   **507.320** y la tabla dibujaba **999**. También mordía en `ma5-oa02` (2.400) y `ma5-oa20`. Ahora
+   la tabla **crece con el número**, hasta seis cifras, que es justo lo que enseña ese objetivo, y
+   escribe el separador de miles que la lección explica.
+2. **`balanza` dejaba fichas fuera del platillo:** cinco con `▢ + 3 = 10` y dos con `2x + 1 = 7`.
+   Vivo en 3°, 5°, 7° y 8°. Ahora se acomodan en dos filas.
+3. **`transformacion` cruzaba su pie con el eje:** *"Las dos mit|ades calzan"*. Al arreglarlo
+   aparecieron **tres líneas distintas** llegando hasta ahí —la cuadrícula, el eje vertical y el eje
+   de simetría—, y la medición fue diciendo cuál quedaba después de cada corte.
+4. **La etiqueta de `esquema` no se partía en líneas** y sobre unos 34 caracteres se salía **por los
+   dos lados**. Medido: **24 etiquetas cortadas en 8 asignaturas y 6 cursos**, la mitad en lecciones
+   aprobadas. Ahora se parte sola y el dibujo crece para alojarla.
+5. **El normalizador de voz no traducía la barra de división.** Traduce el signo de multiplicar y
+   los dos puntos, pero no ese, y el banco de 4° —que lleva voz— lo usa en **36 preguntas**: se
+   locutaban con el símbolo crudo, o sea el niño oía *"36 … 1"* sin la operación. Arreglado a
+   *"dividido en"*, que es como lo dice un profesor chileno.
+   ⚠️ **Quedan 42 clips mal locutados**: regenerarlos cuesta **US$0,04** y espera autorización.
+
+> Los cinco son **presentación y no dato**, así que las lecciones aprobadas que tocan **no pierden
+> su firma** — mismo criterio que las fracciones apiladas.
+
+#### ⚠️ Y uno que se decidió NO arreglar
+
+El agente de 6° reportó que **el propio arreglo de la balanza** dejaba las fichas de la segunda fila
+cruzando la bandeja 4 px. Medido, es cierto. **Mirado, esos 4 px son que las fichas se APOYAN en el
+platillo**, que es como se ve una balanza de verdad.
+
+No se cambió. Un número que marca algo no es un defecto: en este proyecto **un widget se aprueba
+mirando**, y eso corta para los dos lados.
+
+#### ⚠️ El defecto de la ruta de `LECC.init`, por tercera vez en el día — y esta vez fue el guard
+
+Al cablear 4°, las mini-clases **no aparecían** aunque el bloqueo sí funcionaba: faltaba la ruta en
+`LECC.init`. El script que debía agregarla no lo hizo, porque su guard buscaba la ruta **en todo el
+archivo** y el fork la nombraba en un comentario que decía *"4° NO las tiene todavía: no existe
+contenido/matematicas-4basico/lecciones.json"*.
+
+> **El HTML de este proyecto habla de sí mismo en sus comentarios**, y esa trampa ya había mordido
+> hoy dos veces —el comentario con la cadena de apertura de script y el que documenta `LECC.init`—.
+> El guard mira ahora **dentro de `rutas:[…]`**, y en 6° funcionó a la primera. El comentario, que
+> había quedado mintiendo, se corrigió.
+
+#### Lo que aportaron los ocho agentes
+
+- **Ocho choques reales con el banco**, corregidos cambiando los números de la clase y no el banco:
+  una razón amplificada daba `20:15`, que es la clave literal de una pregunta; otro ejemplo resolvía
+  `5 × 4 = 20`, idem; otro dejaba `24`, `9` y `15` juntos, que es lo que otra pregunta pide deducir.
+- **Nueve defectos de caja** vistos en capturas, todos con el conteo diciendo *"cero errores, sin
+  desborde"*.
+- **Dos probaron su propio verificador rompiendo el archivo a propósito** —tres y cinco roturas, las
+  cazó todas—, y uno reportó que su primera versión daba un falso negativo y la segunda un falso
+  positivo. Es la única forma de saber que un "0 errores" significa algo.
+- El de Ciencias de 6° **decidió dejar sin diagrama** el capítulo del cuerpo, como su equivalente de
+  7°: cualquier esquema ahí toca el contenido sensible o es decorativo, y el estándar dice que un
+  dibujo que no aporta es peor que ninguno.
+
+#### Verificación
+
+- **Jugado en 4°**: la campaña muestra sus **7 unidades con "0/4 lecciones"**, y la unidad abre con
+  **9 nodos —4 mini-clases y 5 etapas— con la etapa 1 en "🔒 Termina las lecciones"**, que es el
+  pilar del camino desde la Sesión 29.
+- Los **seis cursos** con motor vivo, JUGADOR navegando, sus cuatro campañas y `LECC` activo.
+  Sintaxis OK en los seis, **cero errores de consola y cero fallos de red**.
+- La fusión de los archivos parciales no fue concatenar: se comprobó que **los ids son únicos**, que
+  **todas traen el campo `oa`** —sin él el botón *"📘 Repasar la mini-clase"* no hace nada— y que
+  **los `fromBank` calzan exacto con el banco**, porque si no calzan la práctica sale vacía **y la
+  lección se marca completa igual, sin medir nada**.
+
+> **Errores de método propios:** un `rfind` que excluía la propia llave de apertura y devolvía el
+> objeto anterior; un selector que agarró un `<script>` en vez de la tarjeta de Matemática; y una
+> medición que dio **"0 etiquetas fuera"** porque **el servidor local se había caído** —cierto por
+> vacuidad, y solo la captura lo delató—.

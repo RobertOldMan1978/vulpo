@@ -351,35 +351,63 @@ DIAGRAMAS.bloques=function(p,nodo){
 // marca la primera columna en que se diferencian, que es como se ENSEÑA a comparar
 // (MA03 OA 03): no se comparan los numeros enteros, se busca la primera cifra distinta.
 // params: {numero=415, contra:null, etiqueta}
+/* ⚠️ Hasta el 07/09/2026 esto RECORTABA A 999 en silencio, y estaba mintiendo en produccion:
+   `ma5-oa01` le pasa 507.320 y el widget dibujaba 999 mientras el texto de la leccion
+   hablaba de 507.320 -el alumno lee una cifra y ve otra-. Tambien mordia en `ma5-oa02`
+   (2.400). Ahora la tabla CRECE con el numero, hasta 6 cifras, que es justo lo que enseña
+   el MA05 OA 01. El recorte no lo delataba ningun conteo: el SVG se dibujaba entero. */
 DIAGRAMAS.posicional=function(p,nodo){
- const a=Math.max(0,Math.min(999,p.numero??415));
- const hayB=p.contra!=null, b=hayB?Math.max(0,Math.min(999,p.contra)):0;
- const cif=v=>[Math.floor(v/100), Math.floor((v%100)/10), v%10];
+ const TOPE=999999;
+ const a=Math.max(0,Math.min(TOPE,p.numero??415));
+ const hayB=p.contra!=null, b=hayB?Math.max(0,Math.min(TOPE,p.contra)):0;
+ // Tantas columnas como cifras tenga el mayor de los dos, con un minimo de 3 para que la
+ // tabla de 3 basico -centenas, decenas, unidades- se vea igual que siempre.
+ const nc=Math.max(3, String(Math.max(a,b)).length);
+ const NOMBRES=['unidades','decenas','centenas','unidades de mil','decenas de mil','centenas de mil'];
+ const cif=v=>String(v).padStart(nc,'0').split('').map(Number);
  const A=cif(a), B=cif(b);
- let dif=-1; if(hayB) for(let i=0;i<3;i++) if(A[i]!==B[i]){dif=i;break;}
- const W=300, cw=70, x0=16, y0=16, rh=40, filas=hayB?2:1, H=y0+22+filas*rh+26;
+ let dif=-1; if(hayB) for(let i=0;i<nc;i++) if(A[i]!==B[i]){dif=i;break;}
+ // El ancho de columna se reparte, asi que 6 cifras caben sin salirse del viewBox.
+ const W=Math.max(300, 32+nc*Math.min(70, Math.floor(268/nc))+56);
+ const cw=Math.min(70, Math.floor(268/nc)), x0=16, y0=16, rh=40;
+ const filas=hayB?2:1, H=y0+26+filas*rh+26;
  const svg=svgEl('svg',{viewBox:'0 0 '+W+' '+H,role:'img',
   'aria-label':hayB?'Tabla de valor posicional con dos números':('Tabla de valor posicional del número '+a)});
- ['centenas','decenas','unidades'].forEach((nom,i)=>{
-  const t=svgEl('text',{x:x0+i*cw+(cw-4)/2,y:y0+10,'text-anchor':'middle',fill:'#a99fd0','font-size':11});
-  t.textContent=nom; svg.appendChild(t);
- });
+ // Los rotulos se parten en dos lineas cuando la columna es angosta: "unidades de mil" no
+ // cabe en 45 px de una sola linea, y cortado no dice nada.
+ // Si UNA columna necesita dos lineas, TODAS usan el tamano chico: mezclar 8,5 y 11 px en
+ // la misma fila se ve descuidado, y eso solo se nota mirando la captura.
+ const parte=nom=>(cw<66 && nom.indexOf(' ')>0)
+   ? [nom.slice(0,nom.indexOf(' ')), nom.slice(nom.indexOf(' ')+1)] : [nom];
+ const hayDos=NOMBRES.slice(0,nc).some(n=>parte(n).length>1);
+ for(let i=0;i<nc;i++){
+  const nom=NOMBRES[nc-1-i]||'', x=x0+i*cw+(cw-4)/2;
+  parte(nom).forEach((ln,k)=>{
+   const t=svgEl('text',{x:x,y:y0+2+k*10,'text-anchor':'middle',fill:'#a99fd0',
+    'font-size':hayDos?8.5:11});
+   t.textContent=ln; svg.appendChild(t);
+  });
+ }
  [A,B].slice(0,filas).forEach((fila,f)=>{
-  const y=y0+22+f*rh;
+  const y=y0+26+f*rh;
   fila.forEach((v,i)=>{
    const marcada=(i===dif);
    svg.appendChild(svgEl('rect',{x:x0+i*cw,y,width:cw-4,height:rh-6,rx:6,
     fill:marcada?'#8f6bff55':'#241a44',stroke:marcada?'#ffc93c':'#5a4b8f','stroke-width':marcada?2.5:1.5}));
    const t=svgEl('text',{x:x0+i*cw+(cw-4)/2,y:y+rh-16,'text-anchor':'middle',
-    fill:marcada?'#ffc93c':'#fff','font-family':"'Titan One',sans-serif",'font-size':19});
+    fill:marcada?'#ffc93c':'#fff','font-family':"'Titan One',sans-serif",
+    'font-size':cw<50?15:19});
    t.textContent=v; svg.appendChild(t);
   });
-  const n=svgEl('text',{x:x0+3*cw+2,y:y+rh-16,fill:'#a99fd0','font-size':13});
-  n.textContent=(f===0?a:b); svg.appendChild(n);
+  const n=svgEl('text',{x:x0+nc*cw+2,y:y+rh-16,fill:'#a99fd0','font-size':13});
+  n.textContent=(f===0?a:b).toLocaleString('es-CL'); svg.appendChild(n);
  });
  const t=svgEl('text',{x:W/2,y:H-6,'text-anchor':'middle',fill:'#ffc93c',
   'font-family':"'Titan One',sans-serif",'font-size':15});
- t.textContent=p.etiqueta||(hayB?(a>b?(a+' es mayor que '+b):(a+' es menor que '+b)):String(a));
+ // Con separador de miles: la leccion de 5 ENSEÑA a leer 507.320 por grupos de tres, asi
+ // que el dibujo no puede escribirlo pegado.
+ const fmt=v=>v.toLocaleString('es-CL');
+ t.textContent=p.etiqueta||(hayB?(a>b?(fmt(a)+' es mayor que '+fmt(b)):(fmt(a)+' es menor que '+fmt(b))):fmt(a));
  svg.appendChild(t);
  nodo.appendChild(svg);
 };
@@ -862,17 +890,35 @@ DIAGRAMAS.balanza=function(p,nodo){
  svg.appendChild(svgEl('line',{x1:44,y1:40,x2:276,y2:40,stroke:'#7a6ab0','stroke-width':4,'stroke-linecap':'round'}));
  svg.appendChild(svgEl('line',{x1:160,y1:40,x2:160,y2:120,stroke:'#7a6ab0','stroke-width':4}));
  svg.appendChild(svgEl('path',{d:'M142 120 H178 L168 134 H152 Z',fill:'#5a4b8f'}));
+ /* ⚠️ Las fichas se acomodan en DOS FILAS cuando no caben en el platillo, que mide 92 px.
+    Antes se ponían en una sola y las que sobraban quedaban FLOTANDO FUERA de la bandeja:
+    con `derU:10` -3° y 5°- se salían cinco, y con `derU:7` -7° y 8°- dos. Estaba vivo en
+    cuatro lecciones aprobadas, y no lo delata ningún conteo: los <rect> existen y el SVG
+    se dibuja entero. Se vio mirando. Es presentación y no dato, así que esas lecciones no
+    pierden su firma. */
  function plato(cxp,nx,nu){
   svg.appendChild(svgEl('line',{x1:cxp,y1:40,x2:cxp,y2:66,stroke:'#5a4b8f','stroke-width':2}));
   svg.appendChild(svgEl('rect',{x:cxp-46,y:66,width:92,height:8,rx:4,fill:'#5a4b8f'}));
-  let bx=cxp-40;
+  const ANCHO=88;                       // el platillo, menos 2 px de margen a cada lado
+  const cabenX=Math.max(1,Math.floor(ANCHO/22));
+  const cabenU=Math.max(1,Math.floor(ANCHO/17));
+  // Una fila si todo cabe; si no, se reparte en dos y las fichas suben para no tapar el fiel.
+  const dos=(nx>cabenX)||(nu>cabenU)||(nx*22+nu*17>ANCHO);
+  const x0f=cxp-ANCHO/2;
+  let bx=x0f, fila=0;
+  const salto=(ancho)=>{ if(dos && bx+ancho>x0f+ANCHO){ fila=1; bx=x0f; } };
   for(let i=0;i<nx;i++){
-   svg.appendChild(svgEl('rect',{x:bx,y:42,width:18,height:22,rx:3,fill:'#8f6bff'}));
-   const t=svgEl('text',{x:bx+9,y:58,'text-anchor':'middle',fill:'#fff','font-size':11});t.textContent='x';svg.appendChild(t);
+   salto(18);
+   const y=dos?(fila?52:30):42;
+   svg.appendChild(svgEl('rect',{x:bx,y:y,width:18,height:22,rx:3,fill:'#8f6bff'}));
+   const t=svgEl('text',{x:bx+9,y:y+16,'text-anchor':'middle',fill:'#fff','font-size':11});
+   t.textContent='x'; svg.appendChild(t);
    bx+=22;
   }
   for(let i=0;i<nu;i++){
-   svg.appendChild(svgEl('rect',{x:bx,y:50,width:14,height:14,rx:2,fill:'#4dd8ff'}));
+   salto(14);
+   const y=dos?(fila?56:38):50;
+   svg.appendChild(svgEl('rect',{x:bx,y:y,width:14,height:14,rx:2,fill:'#4dd8ff'}));
    bx+=17;
   }
  }
@@ -945,16 +991,19 @@ DIAGRAMAS.transformacion=function(p,nodo){
  const cx=160,cy=100,sc=17;
  const svg=svgEl('svg',{viewBox:'0 0 320 190',role:'img','aria-label':'Transformación en el plano'});
  for(let i=-4;i<=4;i++){const gx=cx+i*sc,gy=cy+i*sc;
-  if(gx>=8&&gx<=312)svg.appendChild(svgEl('line',{x1:gx,y1:12,x2:gx,y2:188,stroke:'#2c2350','stroke-width':1}));
+  // ⚠️ Las verticales paran en 172 y NO en 188: el pie va en y=184 y la linea lo cruzaba,
+ //    asi que se leia "Las dos mit|ades calzan". Estaba vivo en 3, 5, 7 y 8. La figura
+ //    llega como mucho a y=168 (cy 100 + 4 celdas de 17), asi que 172 no recorta nada.
+ if(gx>=8&&gx<=312)svg.appendChild(svgEl('line',{x1:gx,y1:12,x2:gx,y2:172,stroke:'#2c2350','stroke-width':1}));
   if(gy>=12&&gy<=188)svg.appendChild(svgEl('line',{x1:8,y1:gy,x2:312,y2:gy,stroke:'#2c2350','stroke-width':1}));}
  svg.appendChild(svgEl('line',{x1:8,y1:cy,x2:312,y2:cy,stroke:'#7a6ab0','stroke-width':1.5}));
- svg.appendChild(svgEl('line',{x1:cx,y1:12,x2:cx,y2:188,stroke:'#7a6ab0','stroke-width':1.5}));
+ svg.appendChild(svgEl('line',{x1:cx,y1:12,x2:cx,y2:172,stroke:'#7a6ab0','stroke-width':1.5}));  // 172, no 188: el pie va en y=184
  const S=(x,y)=>`${cx+x*sc},${cy-y*sc}`;
  let img, rotulo;
  if(tipo==='traslacion'){ const v=p.vector||[-5,0]; img=fig.map(q=>[q[0]+v[0],q[1]+v[1]]); rotulo='Traslación'; }
  else if(tipo==='rotacion'){ img=fig.map(q=>[-q[1],q[0]]); rotulo='Rotación (90°)'; }
  else { img=fig.map(q=>[-q[0],q[1]]); rotulo='Reflexión (eje y)'; }
- if(tipo==='reflexion') svg.appendChild(svgEl('line',{x1:cx,y1:12,x2:cx,y2:188,stroke:'#ffc93c','stroke-width':2,'stroke-dasharray':'5 4'}));
+ if(tipo==='reflexion') svg.appendChild(svgEl('line',{x1:cx,y1:12,x2:cx,y2:172,stroke:'#ffc93c','stroke-width':2,'stroke-dasharray':'5 4'}));
  svg.appendChild(svgEl('polygon',{points:fig.map(q=>S(q[0],q[1])).join(' '),fill:'#8f6bff66',stroke:'#8f6bff','stroke-width':2}));
  svg.appendChild(svgEl('polygon',{points:img.map(q=>S(q[0],q[1])).join(' '),fill:'#3ee08944',stroke:'#3ee089','stroke-width':2,'stroke-dasharray':'4 3'}));
  if(tipo==='traslacion'){
@@ -1054,10 +1103,29 @@ DIAGRAMAS.esquema=function(p,nodo){
    cuerpos[i].forEach((ln,k)=>tx(svg,x+bw/2,38+hT+k*13,ln,'#cfc4ee',10.5));
   });
  }
+ /* ⚠️ La etiqueta se PARTE EN DOS LINEAS cuando no cabe. Antes iba siempre en una sola y
+    sobre ~34 caracteres se salia por los DOS lados -va centrada en W/2-, asi que se leia
+    "mismos jugadores, dos comparaciones distin". Medido el 07/09: habia 24 etiquetas
+    cortadas en 8 asignaturas y 6 cursos, la mitad en lecciones ya aprobadas. No lo delata
+    ningun conteo: el <text> existe y el SVG se dibuja entero. Es presentacion y no dato,
+    asi que esas lecciones no pierden su firma. */
  if(p.etiqueta){
-  const t=svgEl('text',{x:W/2,y:H-8,'text-anchor':'middle',fill:'#ffc93c',
-   'font-family':"'Titan One',sans-serif",'font-size':14});
-  t.textContent=p.etiqueta; svg.appendChild(t);
+  const txt=String(p.etiqueta), cabe=Math.max(12, Math.floor((W-16)/7.4));
+  let lineas=[txt];
+  if(txt.length>cabe){
+   const corte=txt.lastIndexOf(' ', cabe);
+   if(corte>0) lineas=[txt.slice(0,corte), txt.slice(corte+1)];
+  }
+  // Con dos lineas el dibujo crece: si no, la segunda se sale por abajo del viewBox.
+  if(lineas.length>1){
+   const vb=svg.getAttribute('viewBox').split(' ');
+   svg.setAttribute('viewBox', vb[0]+' '+vb[1]+' '+vb[2]+' '+(+vb[3]+15));
+  }
+  lineas.forEach((ln,k)=>{
+   const t=svgEl('text',{x:W/2,y:H-8+(lineas.length>1?(k*15-1):0),'text-anchor':'middle',
+    fill:'#ffc93c','font-family':"'Titan One',sans-serif",'font-size':lineas.length>1?12.5:14});
+   t.textContent=ln; svg.appendChild(t);
+  });
  }
  nodo.appendChild(svg);
 };

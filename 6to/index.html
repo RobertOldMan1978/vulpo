@@ -1339,7 +1339,7 @@ const EXPEDICIONES=[
  // --- Campaña Ciencias (6°) ---
  // Las 3 unidades oficiales del Programa se reparten en 5 capítulos por tema: vida y
  // ecosistemas, el cuerpo, la energía, la materia y sus cambios, y la Tierra.
- { id:'cie6-cap1', asignatura:'Ciencias', nivel:'6° Básico · Ecosistemas y energía de la vida',
+ { id:'cie6-cap1', intro:'ci6-ecosistemas', asignatura:'Ciencias', nivel:'6° Básico · Ecosistemas y energía de la vida',
    portada:'assets/portada-ciencias.png',
    portadaMapa:'assets/portada-cie6-cap1.png',
    contenido:'contenido/ciencias-6basico/preguntas.json', activa:true, campaña:'cie6',
@@ -1349,7 +1349,7 @@ const EXPEDICIONES=[
      {oa:"CN06 OA 03",nombre:"Cadenas alimentarias",icono:"🍃",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Ecosistemas y energía",icono:"🧬",n:15,oas:["CN06 OA 01","CN06 OA 02","CN06 OA 03"]},
    ]},
- { id:'cie6-cap2', asignatura:'Ciencias', nivel:'6° Básico · Mi cuerpo y mi salud',
+ { id:'cie6-cap2', intro:'ci6-cuerpo', asignatura:'Ciencias', nivel:'6° Básico · Mi cuerpo y mi salud',
    portada:'assets/portada-ciencias.png',
    portadaMapa:'assets/portada-cien-cuerpo.png',
    contenido:'contenido/ciencias-6basico/preguntas.json', activa:true, campaña:'cie6',
@@ -1360,7 +1360,7 @@ const EXPEDICIONES=[
      {oa:"CN06 OA 07",nombre:"Los efectos de las drogas",icono:"🚭",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Mi cuerpo y mi salud",icono:"🧬",n:15,oas:["CN06 OA 04","CN06 OA 05","CN06 OA 06","CN06 OA 07"]},
    ]},
- { id:'cie6-cap3', asignatura:'Ciencias', nivel:'6° Básico · La energía',
+ { id:'cie6-cap3', intro:'ci6-energia', asignatura:'Ciencias', nivel:'6° Básico · La energía',
    portada:'assets/portada-ciencias.png',
    portadaMapa:'assets/portada-cien-electricidad.png',
    contenido:'contenido/ciencias-6basico/preguntas.json', activa:true, campaña:'cie6',
@@ -1371,7 +1371,7 @@ const EXPEDICIONES=[
      {oa:"CN06 OA 11",nombre:"Energías que se acaban",icono:"🔋",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: La energía",icono:"🧬",n:15,oas:["CN06 OA 08","CN06 OA 09","CN06 OA 10","CN06 OA 11"]},
    ]},
- { id:'cie6-cap4', asignatura:'Ciencias', nivel:'6° Básico · La materia y sus cambios',
+ { id:'cie6-cap4', intro:'ci6-materia', asignatura:'Ciencias', nivel:'6° Básico · La materia y sus cambios',
    portada:'assets/portada-ciencias.png',
    portadaMapa:'assets/portada-cien-materia.png',
    contenido:'contenido/ciencias-6basico/preguntas.json', activa:true, campaña:'cie6',
@@ -1382,7 +1382,7 @@ const EXPEDICIONES=[
      {oa:"CN06 OA 15",nombre:"Calentar y enfriar el agua",icono:"🧊",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: La materia y sus cambios",icono:"🧬",n:15,oas:["CN06 OA 12","CN06 OA 13","CN06 OA 14","CN06 OA 15"]},
    ]},
- { id:'cie6-cap5', asignatura:'Ciencias', nivel:'6° Básico · La Tierra y el suelo',
+ { id:'cie6-cap5', intro:'ci6-tierra', asignatura:'Ciencias', nivel:'6° Básico · La Tierra y el suelo',
    portada:'assets/portada-ciencias.png',
    portadaMapa:'assets/portada-cie6-cap5.png',
    contenido:'contenido/ciencias-6basico/preguntas.json', activa:true, campaña:'cie6',
@@ -1666,6 +1666,23 @@ const CAMPAÑAS=[
 {
   id:'mate6', asignatura:'Matemáticas', portada:'assets/portada-matematicas.png',
   intro:'De los múltiplos y las razones a los datos y las probabilidades: el año completo de Matemática de 6°.',
+  esLecciones:true,
+  capitulosMate:[
+    {id:'mate6-u1', titulo:'Números y razones', portada:'assets/portada-mate-numeros.png',
+     lecciones:['ma6-oa01','ma6-oa02','ma6-oa03','ma6-oa04']},
+    {id:'mate6-u2', titulo:'Fracciones y decimales', portada:'assets/portada-mate6-cap2.png',
+     lecciones:['ma6-oa05','ma6-oa06','ma6-oa07','ma6-oa08']},
+    {id:'mate6-u3', titulo:'Patrones y ecuaciones', portada:'assets/portada-mate-algebra.png',
+     lecciones:['ma6-oa09','ma6-oa10','ma6-oa11']},
+    {id:'mate6-u4', titulo:'Figuras geométricas', portada:'assets/portada-mate-geometria.png',
+     lecciones:['ma6-oa12','ma6-oa13','ma6-oa14']},
+    {id:'mate6-u5', titulo:'Ángulos', portada:'assets/portada-mate6-cap5.png',
+     lecciones:['ma6-oa15','ma6-oa16','ma6-oa17']},
+    {id:'mate6-u6', titulo:'Medición', portada:'assets/portada-mate6-cap6.png',
+     lecciones:['ma6-oa18','ma6-oa19','ma6-oa20','ma6-oa21']},
+    {id:'mate6-u7', titulo:'Datos y probabilidades', portada:'assets/portada-mate-datos.png',
+     lecciones:['ma6-oa22','ma6-oa23','ma6-oa24']},
+  ],
   capitulos:['mate6-cap1','mate6-cap2','mate6-cap3','mate6-cap4','mate6-cap5','mate6-cap6','mate6-cap7'],
   jefeFinal:{
     // Arte propio generado el 05/09/2026 (antes prestado del set "-3ro"). "La
@@ -2459,7 +2476,7 @@ const HAY_MINICLASES=true;
 /* ⚠️ La llamada va PEGADA a la bandera y a sus rutas, no arriba con las otras
    constantes: un `const` leido antes de declararse mata todo el JavaScript (zona
    muerta temporal), y esa trampa ya mordio cuatro veces en este proyecto. */
-LECC.init({ rutas:['contenido/historia-6basico/lecciones.json', 'contenido/lenguaje-6basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
+LECC.init({ rutas:['contenido/matematicas-6basico/lecciones.json', 'contenido/ciencias-6basico/lecciones.json', 'contenido/historia-6basico/lecciones.json', 'contenido/lenguaje-6basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
 /* ¿Este nivel tiene el módulo de Vocabulario, y la biblioteca de lecturas del colegio?
    Son contenido de 8°. Antes se resolvían BORRANDO líneas del fork, y ese corte dejó
    la asignatura Lenguaje inalcanzable en 3° (Sesión 61). Como banderas, las apps

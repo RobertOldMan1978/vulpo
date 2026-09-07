@@ -1347,7 +1347,7 @@ const EXPEDICIONES=[
  // --- Campaña Ciencias (4°) ---
  // Las 3 unidades oficiales del Programa se reparten en 5 capítulos por tema:
  // ecosistemas, el cuerpo, la materia, las fuerzas y la Tierra.
- { id:'cie4-cap1', asignatura:'Ciencias', nivel:'4° Básico · Ecosistemas de Chile',
+ { id:'cie4-cap1', intro:'ci4-ecosistemas', asignatura:'Ciencias', nivel:'4° Básico · Ecosistemas de Chile',
    portada:'assets/portada-ciencias.png',
    portadaMapa:'assets/portada-cie6-cap1.png',
    contenido:'contenido/ciencias-4basico/preguntas.json', activa:true, campaña:'cie4',
@@ -1361,7 +1361,7 @@ const EXPEDICIONES=[
  // ⚠️ El OA 08 (efectos del alcohol) es currículum oficial y se juega COMPLETO, sin
  // excluirlo de nada: es contenido factual sobre salud, no una escena de consumo.
  // Ver docs/contenido-sensible.md, sección 4° básico (categoría 🔵 Sustancias).
- { id:'cie4-cap2', asignatura:'Ciencias', nivel:'4° Básico · Mi cuerpo',
+ { id:'cie4-cap2', intro:'ci4-cuerpo', asignatura:'Ciencias', nivel:'4° Básico · Mi cuerpo',
    portada:'assets/portada-ciencias.png',
    portadaMapa:'assets/portada-cien-cuerpo.png',
    contenido:'contenido/ciencias-4basico/preguntas.json', activa:true, campaña:'cie4',
@@ -1372,7 +1372,7 @@ const EXPEDICIONES=[
      {oa:"CN04 OA 08",nombre:"Los efectos del alcohol",icono:"🚭",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Mi cuerpo",icono:"🧬",n:15,oas:["CN04 OA 05","CN04 OA 06","CN04 OA 07","CN04 OA 08"]},
    ]},
- { id:'cie4-cap3', asignatura:'Ciencias', nivel:'4° Básico · La materia',
+ { id:'cie4-cap3', intro:'ci4-materia', asignatura:'Ciencias', nivel:'4° Básico · La materia',
    portada:'assets/portada-ciencias.png',
    portadaMapa:'assets/portada-cien-materia.png',
    contenido:'contenido/ciencias-4basico/preguntas.json', activa:true, campaña:'cie4',
@@ -1382,7 +1382,7 @@ const EXPEDICIONES=[
      {oa:"CN04 OA 11",nombre:"Medir masa, volumen y temperatura",icono:"🌡️",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: La materia",icono:"🧬",n:15,oas:["CN04 OA 09","CN04 OA 10","CN04 OA 11"]},
    ]},
- { id:'cie4-cap4', asignatura:'Ciencias', nivel:'4° Básico · Fuerzas y máquinas',
+ { id:'cie4-cap4', intro:'ci4-fuerzas', asignatura:'Ciencias', nivel:'4° Básico · Fuerzas y máquinas',
    portada:'assets/portada-ciencias.png',
    portadaMapa:'assets/portada-cie7-cap2.png',
    contenido:'contenido/ciencias-4basico/preguntas.json', activa:true, campaña:'cie4',
@@ -1392,7 +1392,7 @@ const EXPEDICIONES=[
      {oa:"CN04 OA 14",nombre:"Construir con fuerzas",icono:"🔧",n:10},
      {oa:"BOSS",nombre:"⚡ JEFE: Fuerzas y máquinas",icono:"🧬",n:15,oas:["CN04 OA 12","CN04 OA 13","CN04 OA 14"]},
    ]},
- { id:'cie4-cap5', asignatura:'Ciencias', nivel:'4° Básico · La Tierra y sus riesgos',
+ { id:'cie4-cap5', intro:'ci4-tierra', asignatura:'Ciencias', nivel:'4° Básico · La Tierra y sus riesgos',
    portada:'assets/portada-ciencias.png',
    portadaMapa:'assets/portada-cie6-cap5.png',
    contenido:'contenido/ciencias-4basico/preguntas.json', activa:true, campaña:'cie4',
@@ -1672,6 +1672,23 @@ const CAMPAÑAS=[
 {
   id:'mate4', asignatura:'Matemáticas', portada:'assets/portada-matematicas.png',
   intro:'De los números hasta 10.000 a los datos y las probabilidades: el año completo de Matemática de 4°.',
+  esLecciones:true,
+  capitulosMate:[
+    {id:'mate4-u1', titulo:'Números hasta 10.000', portada:'assets/portada-mate-numeros.png',
+     lecciones:['ma4-oa01','ma4-oa02','ma4-oa03','ma4-oa04']},
+    {id:'mate4-u2', titulo:'Multiplicar y dividir', portada:'assets/portada-mat3-cap3.png',
+     lecciones:['ma4-oa05','ma4-oa06','ma4-oa07','ma4-oa08']},
+    {id:'mate4-u3', titulo:'Fracciones y decimales', portada:'assets/portada-mate6-cap2.png',
+     lecciones:['ma4-oa09','ma4-oa10','ma4-oa11','ma4-oa12']},
+    {id:'mate4-u4', titulo:'Patrones, mapas y figuras 3D', portada:'assets/portada-mate-geometria.png',
+     lecciones:['ma4-oa13','ma4-oa14','ma4-oa15','ma4-oa16']},
+    {id:'mate4-u5', titulo:'Simetría y ángulos', portada:'assets/portada-mate6-cap5.png',
+     lecciones:['ma4-oa17','ma4-oa18','ma4-oa19']},
+    {id:'mate4-u6', titulo:'Medir tiempo y longitud', portada:'assets/portada-mate6-cap6.png',
+     lecciones:['ma4-oa20','ma4-oa21','ma4-oa22','ma4-oa23']},
+    {id:'mate4-u7', titulo:'Área, volumen y datos', portada:'assets/portada-mate-datos.png',
+     lecciones:['ma4-oa24','ma4-oa25','ma4-oa26','ma4-oa27']},
+  ],
   capitulos:['mate4-cap1','mate4-cap2','mate4-cap3','mate4-cap4','mate4-cap5','mate4-cap6','mate4-cap7'],
   jefeFinal:{
     // Arte propio generado el 06/09/2026. "El Trueque" cambia el valor de cada número,
@@ -2457,20 +2474,17 @@ const HAY_SINFIN=false;
    bandera mal puesta el botón dice "📘 Repasar la mini-clase", descarga las lecciones de
    otro nivel y NO abre ninguna: el alumno toca y no pasa nada. Estaba pasando en 7°
    (Sesión 63); 3° se salvaba solo porque escribe "Matemática" en singular.
-   4° NO las tiene todavía: no existe contenido/matematicas-4basico/lecciones.json ni el
-   de las otras asignaturas. Es contenido pendiente, no un olvido — se enciende recién
-   4° las tiene desde el 06/09/2026, y SOLO en Lenguaje: seis lecciones, cuatro de
-   ellas con practica. Matematica de 4° sigue sin su camino ensena->desafio, asi que
-   aqui no hay campana con `esLecciones` — los cuatro usos de esta bandera en motor.js
-   estan guardados por `esLecciones` o `capitulosMate`, de modo que encenderla NO
-   cambia la campana ni el Jefe Final. Lo que si habilita es el ✕ del quiz: sin ella,
+   4° las tiene desde el 06/09/2026 en Lenguaje, en Ciencias e Historia desde el 07/09, y
+   desde ese mismo dia MATEMATICA tiene su camino ensena->desafio completo: 27 mini-clases,
+   una por OA, con `esLecciones:true` y `capitulosMate` en su campana. Lo que esta bandera
+   habilita ademas es el ✕ del quiz: sin ella,
    salir de la practica de una mini-clase deja al alumno tirado en la pantalla del
    quiz (el defecto que Roberto encontro el 06/09 en 3°, 5° y 7°). */
 const HAY_MINICLASES=true;
 /* ⚠️ La llamada va PEGADA a la bandera y a sus rutas, no arriba con las otras
    constantes: un `const` leido antes de declararse mata todo el JavaScript (zona
    muerta temporal), y esa trampa ya mordio cuatro veces en este proyecto. */
-LECC.init({ rutas:['contenido/historia-4basico/lecciones.json', 'contenido/lenguaje-4basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
+LECC.init({ rutas:['contenido/matematicas-4basico/lecciones.json', 'contenido/ciencias-4basico/lecciones.json', 'contenido/historia-4basico/lecciones.json', 'contenido/lenguaje-4basico/lecciones.json'], hayReto:HAY_RETO_CALCULO });
 /* ¿Este nivel tiene el módulo de Vocabulario, y la biblioteca de lecturas del colegio?
    Son contenido de 8° (y de 3° y 7° para Vocabulario). Antes se resolvían BORRANDO
    líneas del fork, y ese corte dejó la asignatura Lenguaje inalcanzable en 3° (Sesión

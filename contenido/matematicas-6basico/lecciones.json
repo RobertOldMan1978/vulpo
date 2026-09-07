@@ -1,0 +1,1439 @@
+{
+ "lecciones": [
+  {
+   "id": "ma6-oa01",
+   "oa": "MA06 OA 01",
+   "titulo": "Factores, múltiplos y números primos",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "El 4 es **factor** de 12 porque cabe justo, sin que sobre nada: 4 × 3 = 12. Visto al revés, el 12 es múltiplo de 4. Cada multiplicación exacta trae las dos palabras a la vez."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Diferencia entre un número primo y uno compuesto",
+      "items": [
+       {
+        "titulo": "Primo",
+        "texto": "Tiene solo dos factores: el 1 y él mismo."
+       },
+       {
+        "titulo": "Compuesto",
+        "texto": "Tiene más de dos factores."
+       }
+      ],
+      "etiqueta": "El 7 es primo; el 15 es compuesto"
+     },
+     "intro": "Todo depende de cuántos factores tenga el número."
+    },
+    {
+     "t": "texto",
+     "md": "Un número es **primo** cuando tiene exactamente dos factores. El 7 solo se divide por 1 y por 7. El 15, en cambio, se divide además por 3 y por 5, así que es compuesto."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Busquemos todos los factores de 20.",
+     "pasos": [
+      "Pruebo por parejas, partiendo del 1: 1 × 20 = 20.",
+      "Sigo con el 2: 2 × 10 = 20.",
+      "El 3 no cabe justo en 20, así que lo descarto.",
+      "El 4 sí cabe: 4 × 5 = 20, y ahí me detengo porque el 5 ya apareció.",
+      "Los factores de 20 son 1, 2, 4, 5, 10 y 20: seis en total."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "En un colegio una campana suena cada 4 minutos y otra cada 10. Si suenan juntas ahora, ¿cuándo vuelven a coincidir?",
+     "pasos": [
+      "Anoto los múltiplos de 4: 4, 8, 12, 16, 20, 24…",
+      "Anoto los múltiplos de 10: 10, 20, 30…",
+      "El primer número que aparece en las dos listas es el 20.",
+      "Vuelven a sonar juntas a los 20 minutos, y desde ahí cada 20 minutos otra vez."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 01",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa02",
+   "oa": "MA06 OA 02",
+   "titulo": "Números grandes: primero el planteo",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Cuando los números pasan de diez mil, la calculadora hace la cuenta. Lo que no hace es decidir qué operación va: eso lo decide quien lee el problema."
+    },
+    {
+     "t": "diagrama",
+     "kind": "posicional",
+     "params": {
+      "numero": 15600
+     },
+     "intro": "Mira cuántas cifras tiene 15.600. Saber el tamaño del resultado es lo que delata un error de tecleo."
+    },
+    {
+     "t": "texto",
+     "md": "Por eso conviene **estimar** antes de teclear. Si el problema pide repartir 15.600 entre 6, el resultado tiene que ser bastante menor que 15.600; un número mayor que el total avisa que se apretó otra tecla."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un supermercado vendió 15.600 botellas en 6 días, la misma cantidad cada día.",
+     "pasos": [
+      "Se pide repartir en partes iguales, así que la operación es una división.",
+      "Estimo antes: 15.000 repartido en 6 da algo cercano a 2.500.",
+      "En la calculadora: 15.600 ÷ 6 = 2.600.",
+      "El resultado cuadra con la estimación, así que puedo confiar en él."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Hay que llevar 5.400 sillas en camiones que cargan 250 sillas cada uno.",
+     "pasos": [
+      "La calculadora entrega 5.400 ÷ 250 = 21,6.",
+      "Un camión no se parte por la mitad, así que el resultado no puede quedar con coma.",
+      "Con 21 camiones quedan sillas afuera, porque 21 × 250 son 5.250.",
+      "Hacen falta 22 camiones: cuando el resto no cabe, se sube al entero siguiente."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 02",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa03",
+   "oa": "MA06 OA 03",
+   "titulo": "Razones: comparar dos cantidades",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una **razón** compara dos cantidades. Si en un equipo hay 4 defensas y 3 delanteros, la razón entre defensas y delanteros se escribe 4:3 y se lee «4 a 3»."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Una razón compara dos partes; una fracción compara una parte con el total",
+      "items": [
+       {
+        "titulo": "Razón 4:3",
+        "texto": "Compara una parte con la otra parte."
+       },
+       {
+        "titulo": "Fracción 4/7",
+        "texto": "Compara una parte con el total."
+       }
+      ],
+      "etiqueta": "Parte con parte o parte con todo"
+     },
+     "intro": "Con los mismos datos se pueden escribir dos cosas distintas."
+    },
+    {
+     "t": "texto",
+     "md": "El orden importa: 4:3 dice cuántos defensas hay por cada 3 delanteros, y escrito al revés diría otra cosa. Además, una razón se **amplifica** igual que una fracción, multiplicando los dos términos por el mismo número."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Escribamos las comparaciones del equipo: 4 defensas y 3 delanteros.",
+     "pasos": [
+      "Razón entre defensas y delanteros: 4:3.",
+      "Razón entre delanteros y defensas: 3:4, porque cambia cuál se nombra primero.",
+      "En total son 7 jugadores, así que los defensas son 4/7 del equipo.",
+      "La razón compara parte con parte; la fracción compara una parte con el total."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Una mezcla lleva 4 medidas de arena por cada 3 de cemento. Con 28 medidas de arena, ¿cuánto cemento va?",
+     "pasos": [
+      "La razón es 4:3 y se mantiene aunque la mezcla crezca.",
+      "De 4 a 28, la arena se multiplicó por 7.",
+      "Entonces el cemento también se multiplica por 7: 3 × 7 = 21.",
+      "Van 21 medidas de cemento, porque 28:21 es equivalente a 4:3."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 03",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa04",
+   "oa": "MA06 OA 04",
+   "titulo": "Porcentaje: partes de cada cien",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un **porcentaje** dice cuántas partes se toman de cada 100. Escribir 40% es lo mismo que decir 40 de cada 100."
+    },
+    {
+     "t": "diagrama",
+     "kind": "fracciones",
+     "params": {
+      "partes": 10,
+      "pintadas": 4,
+      "etiqueta": "4/10 = 40% = 0,4"
+     },
+     "intro": "Cuatro partes de diez son cuarenta de cada cien: la misma cantidad escrita de tres maneras."
+    },
+    {
+     "t": "texto",
+     "md": "Un porcentaje se calcula siempre sobre un total, y por eso el mismo porcentaje de dos totales distintos entrega cantidades distintas."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Calculemos porcentajes de 240 sin usar lápiz.",
+     "pasos": [
+      "El 10% es la décima parte: divido por 10 y queda 24.",
+      "El 50% es la mitad: 240 dividido en 2 da 120.",
+      "El 25% es la cuarta parte: 240 dividido en 4 da 60.",
+      "Con esos tres se arman otros: el 30% son tres veces el 10%, o sea 72."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "¿Qué porcentaje es 12 de 50?",
+     "pasos": [
+      "El porcentaje se cuenta sobre 100, así que llevo el total a 100.",
+      "De 50 a 100 hay que multiplicar por 2.",
+      "Multiplico también la parte: 12 × 2 = 24.",
+      "Entonces 12 de 50 es lo mismo que 24 de 100, o sea el 24%."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 04",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa05",
+   "oa": "MA06 OA 05",
+   "titulo": "Fracciones impropias y números mixtos",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Cuando el numerador es mayor que el denominador, la fracción vale más que un entero y se llama **impropia**. Con 8 tercios se arman enteros completos y todavía sobra un pedazo."
+    },
+    {
+     "t": "diagrama",
+     "kind": "fracciones",
+     "params": {
+      "partes": 3,
+      "pintadas": 3,
+      "etiqueta": "3/3 = 1 entero"
+     },
+     "intro": "Con 3 tercios se completa un entero. ¿Cuántos enteros se arman con 8 tercios?"
+    },
+    {
+     "t": "texto",
+     "md": "La misma cantidad se puede escribir como **número mixto**: uno o varios enteros más una fracción propia. Las dos escrituras marcan el mismo punto en la recta numérica."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Pasemos 8/3 a número mixto.",
+     "pasos": [
+      "Cada 3 tercios forman un entero.",
+      "En 8 tercios caben 2 enteros, porque 2 × 3 = 6.",
+      "Sobran 2 tercios, porque 8 − 6 = 2.",
+      "Entonces 8/3 se escribe 2 2/3, y en la recta cae entre el 2 y el 3."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora al revés: pasemos 4 2/7 a fracción impropia.",
+     "pasos": [
+      "Cada entero tiene 7 séptimos, así que 4 enteros son 28 séptimos.",
+      "Le sumo los 2 séptimos que ya estaban: 28 + 2 = 30.",
+      "Entonces 4 2/7 es igual a 30/7.",
+      "El entero se multiplica por el denominador; no se pega delante del numerador."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 05",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa06",
+   "oa": "MA06 OA 06",
+   "titulo": "Sumar y restar fracciones y números mixtos",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Dos fracciones se suman directo solo cuando están partidas en pedazos del mismo tamaño. Si los denominadores son distintos, primero hay que igualarlos."
+    },
+    {
+     "t": "diagrama",
+     "kind": "fracciones",
+     "params": {
+      "partes": 20,
+      "pintadas": 17,
+      "etiqueta": "12/20 + 5/20 = 17/20"
+     },
+     "intro": "Con los dos sumandos partidos en veinteavos, las partes se juntan sin más."
+    },
+    {
+     "t": "texto",
+     "md": "Para igualar se busca un **denominador común**: un número que sea múltiplo de los dos. Después se amplifica cada fracción, se suman los numeradores y el denominador no se toca."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Sumemos 3/5 + 1/4.",
+     "pasos": [
+      "El 20 es múltiplo de 5 y de 4, así que sirve como denominador común.",
+      "Amplifico 3/5 por 4 y queda 12/20.",
+      "Amplifico 1/4 por 5 y queda 5/20.",
+      "Sumo los numeradores: 12 + 5 = 17, y el resultado es 17/20."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Restemos los números mixtos 4 3/7 − 1 5/7.",
+     "pasos": [
+      "Los séptimos de arriba no alcanzan, porque 3/7 es menor que 5/7.",
+      "Descompongo un entero del 4: queda 3 enteros más 7/7 y 3/7, o sea 3 10/7.",
+      "Ahora sí resto: 3 − 1 = 2, y 10/7 − 5/7 = 5/7.",
+      "El resultado es 2 5/7."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 06",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa07",
+   "oa": "MA06 OA 07",
+   "titulo": "Multiplicar y dividir decimales",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Multiplicar o dividir por 10, por 100 o por 1.000 no cambia las cifras de un decimal: cambia dónde va la coma. Cada cero la corre un lugar."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Qué le pasa a la coma al multiplicar y al dividir por diez",
+      "items": [
+       {
+        "titulo": "× 10",
+        "texto": "La coma avanza un lugar: 2,6 pasa a ser 26."
+       },
+       {
+        "titulo": "÷ 10",
+        "texto": "La coma retrocede un lugar: 2,6 pasa a ser 0,26."
+       }
+      ],
+      "etiqueta": "Las mismas cifras, otro valor"
+     },
+     "intro": "Las mismas cifras, con la coma en otro lugar."
+    },
+    {
+     "t": "texto",
+     "md": "Con un número natural de una cifra la multiplicación se hace como siempre, dejando la coma de lado, y al final el resultado lleva tantos decimales como traía el número con coma."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Calculemos 0,4 × 7.",
+     "pasos": [
+      "Dejo la coma de lado y multiplico 4 × 7 = 28.",
+      "El 0,4 tiene un decimal, así que el resultado también lleva uno.",
+      "Pongo la coma y queda 2,8.",
+      "Tiene sentido: siete veces cuatro décimas no alcanzan a tres enteros."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora una división: 1,8 ÷ 6.",
+     "pasos": [
+      "Divido como si no hubiera coma: 18 ÷ 6 = 3.",
+      "Como el 1,8 tiene un decimal, el resultado también lo lleva.",
+      "El resultado es 0,3.",
+      "Lo compruebo al revés: 0,3 × 6 vuelve a dar 1,8."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 07",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa08",
+   "oa": "MA06 OA 08",
+   "titulo": "Problemas con fracciones y decimales",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "En estos problemas lo difícil no es operar: es seguir la pista de lo que entra y de lo que sale. Conviene anotar con qué se parte y después cada cambio, en orden."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 0,
+      "max": 5,
+      "paso": 1,
+      "marca": 2,
+      "signo": false,
+      "interactivo": true
+     },
+     "intro": "Antes de calcular, estima: ¿entre qué dos enteros cae 1,4 + 2,25? Arrastra la marca."
+    },
+    {
+     "t": "texto",
+     "md": "Estimar primero sirve de control: si el resultado exacto queda lejos de la estimación, hay un error en alguno de los pasos."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un bidón tenía 1,4 litros, le agregaron 2,25 y después le sacaron 0,5.",
+     "pasos": [
+      "Estimo: algo más de 1 más algo más de 2, menos medio litro, queda cerca de 3.",
+      "Sumo lo que entra: 1,4 + 2,25 = 3,65.",
+      "Resto lo que sale: 3,65 − 0,5 = 3,15.",
+      "El resultado quedó cerca de la estimación, así que cuadra."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ana leyó 2/5 de un libro y después 1/3 más. ¿Qué parte le falta?",
+     "pasos": [
+      "Primero junto lo leído: 2/5 y 1/3 tienen denominadores distintos.",
+      "El 15 es múltiplo de 5 y de 3: 2/5 son 6/15 y 1/3 son 5/15.",
+      "Juntas dan 11/15 del libro leído.",
+      "El libro entero son 15/15, así que le faltan 4/15."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 08",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa09",
+   "oa": "MA06 OA 09",
+   "titulo": "La regla escondida de una tabla",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una tabla empareja dos columnas: a cada número de la izquierda le corresponde uno de la derecha. La **regla** es lo que dice cómo se pasa de uno al otro, y tiene que servir en todas las filas, no solo en la primera."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 2,
+      "max": 30,
+      "paso": 7,
+      "signo": false,
+      "saltos": true,
+      "marca": 16,
+      "interactivo": true
+     },
+     "intro": "Estos son los valores de la columna de la derecha. Arrastra la marca: ¿de cuánto es cada salto?"
+    },
+    {
+     "t": "texto",
+     "md": "Para encontrar la regla se miran las diferencias entre valores seguidos. Si el salto es siempre el mismo, hay una multiplicación escondida: el tamaño del salto dice por cuánto se multiplica. Y si el resultado no calza justo, lo que falta o lo que sobra es un número fijo que se suma o se resta en todas las filas."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Busquemos la regla de una tabla donde al 1 le toca 9, al 2 le toca 16 y al 3 le toca 23.",
+     "pasos": [
+      "De 9 a 16 hay 7, y de 16 a 23 también hay 7: los saltos son iguales.",
+      "Ese 7 dice que la regla multiplica por 7. Pero 1 por 7 da 7, y la tabla dice 9.",
+      "Faltan 2, y ese 2 se repite en todas las filas: 2 por 7 más 2 da 16, y 3 por 7 más 2 da 23.",
+      "La regla es multiplicar por 7 y sumar 2, así que al 10 le corresponde 72."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Por qué una sola fila nunca alcanza para decidir.",
+     "pasos": [
+      "Supongamos que solo sé que al 2 le corresponde 10.",
+      "Calza multiplicar por 5, porque 2 por 5 da 10, y también calza sumar 8, porque 2 más 8 da 10.",
+      "Las dos reglas se separan en la fila del 3: una entrega 15 y la otra entrega 11.",
+      "Recién con esa segunda fila se sabe cuál de las dos sirve de verdad."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 09",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa10",
+   "oa": "MA06 OA 10",
+   "titulo": "Escribir con letras lo que se repite",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "En matemática una letra guarda un **número** que todavía no se sabe cuál es. No es la inicial de una palabra ni una unidad de medida: si la letra vale 8, hay que leer 8 en su lugar. Dentro de un mismo problema esa letra vale siempre lo mismo."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Tres expresiones escritas con la misma letra y el mismo número",
+      "items": [
+       {
+        "titulo": "n + 6",
+        "texto": "Al número se le agregan 6."
+       },
+       {
+        "titulo": "6n",
+        "texto": "El número repetido 6 veces."
+       },
+       {
+        "titulo": "n ÷ 6",
+        "texto": "El número repartido en 6 partes iguales."
+       }
+      ],
+      "etiqueta": "Cambia la operación, no la letra"
+     },
+     "intro": "La misma letra y el mismo 6, pero tres situaciones distintas."
+    },
+    {
+     "t": "texto",
+     "md": "El número escrito pegado a la letra dice cuántas veces se repite sumando, así que 6n es el número seis veces y no el número multiplicado por sí mismo. Y en la resta y en la división el orden importa: quitarle 6 al número no es lo mismo que quitarle el número a 6."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un pack trae p galletas. Ana compró 3 packs y además 5 galletas sueltas.",
+     "pasos": [
+      "Los 3 packs aportan p galletas cada uno, y eso se escribe 3p.",
+      "Las 5 sueltas se suman una sola vez, así que la expresión queda 3p + 5.",
+      "Para comprobar le doy un valor a p: si cada pack trae 8, son 24 más 5, o sea 29 galletas.",
+      "Escribir 3(p + 5) sería otra cosa: ahí las 5 sueltas irían dentro de cada pack y darían 39."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "La diferencia entre una expresión y una ecuación.",
+     "pasos": [
+      "4n es una expresión: representa un número, pero no afirma nada sobre él.",
+      "4n = 20 es una ecuación: afirma que ese número vale 20.",
+      "Una expresión se calcula para cada valor de la letra; una ecuación se resuelve y entrega un valor.",
+      "El signo igual es lo único que separa a las dos."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 10",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa11",
+   "oa": "MA06 OA 11",
+   "titulo": "Ecuaciones: la balanza que no se desnivela",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una **ecuación** afirma que los dos lados del signo igual valen exactamente lo mismo, como los dos platillos de una balanza equilibrada. Por eso todo lo que se le hace a un lado hay que hacérselo también al otro."
+    },
+    {
+     "t": "diagrama",
+     "kind": "balanza",
+     "params": {
+      "izqX": 2,
+      "izqU": 3,
+      "derX": 0,
+      "derU": 9,
+      "etiqueta": "2n + 3 = 9"
+     },
+     "intro": "Cada ficha alta es una caja de peso desconocido, y a ese peso lo llamamos n. Cada cuadrito pesa 1 kilo."
+    },
+    {
+     "t": "texto",
+     "md": "Para dejar sola la letra se hace la operación contraria a la que la acompaña: lo que está sumando se resta, lo que está restando se suma, lo que está multiplicando se divide y lo que está dividiendo se multiplica. Y siempre en los dos lados a la vez."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Resolvamos la ecuación de la balanza: 2n + 3 = 9.",
+     "pasos": [
+      "A la letra la acompaña un 3 que se suma, así que quito 3 kilos de los dos platillos.",
+      "Queda 2n = 6: dos cajas iguales frente a 6 kilos.",
+      "Las dos cajas se reparten esos 6 kilos, así que divido entre 2 y n vale 3.",
+      "Compruebo en la ecuación original: 2 por 3 da 6, y con los 3 llega a 9, igual que el otro lado."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un error repetido: dividir solo una parte de la ecuación.",
+     "pasos": [
+      "En 5n + 10 = 35, alguien divide entre 5 y escribe n + 10 = 7.",
+      "Al dividir hay que dividir la ecuación completa, así que lo correcto es n + 2 = 7, y de ahí n vale 5.",
+      "Más simple todavía es restar primero los 10, que deja 5n = 25.",
+      "Dividiendo entre 5 aparece otra vez n igual a 5, y reemplazando: 5 por 5 más 10 da 35."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 11",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa12",
+   "oa": "MA06 OA 12",
+   "titulo": "Con qué medidas se arma un triángulo",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Tres palitos cualesquiera no siempre forman un triángulo. Para que la figura cierre, los dos lados más cortos tienen que sumar **más** que el más largo: si suman menos, sus puntas no llegan a tocarse, y si suman justo lo mismo, quedan estiradas encima del tercero y sale una línea."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Dos tríos de medidas: con uno se arma un triángulo y con el otro no",
+      "items": [
+       {
+        "titulo": "5, 6 y 10 sí cierra",
+        "texto": "Los dos cortos suman 11 y pasan al de 10."
+       },
+       {
+        "titulo": "2, 4 y 7 no cierra",
+        "texto": "Los dos cortos suman 6 y no alcanzan al de 7."
+       }
+      ],
+      "etiqueta": "Los dos menores deben pasar al mayor"
+     },
+     "intro": "La misma comprobación en dos tríos de medidas."
+    },
+    {
+     "t": "texto",
+     "md": "Cuando el triángulo sí cierra, sus tres lados lo dejan completamente fijo: los ángulos salen solos y no hay nada que elegir. Los tres ángulos, en cambio, fijan la forma pero no el tamaño. Y hay dos clasificaciones que van por separado: por lados es equilátero, isósceles o escaleno; por ángulos es acutángulo, rectángulo u obtusángulo."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Revisemos si con 3, 8 y 4 centímetros se puede armar un triángulo.",
+     "pasos": [
+      "Primero ordeno: el lado mayor es el de 8 y los otros dos son 3 y 4.",
+      "Sumo los dos menores: 3 más 4 da 7.",
+      "7 es menor que 8, así que las puntas no alcanzan a juntarse y la figura no cierra.",
+      "Con 3, 8 y 6 sí cerraría, porque 3 más 6 da 9 y pasa al lado de 8."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Por qué tres lados alcanzan y tres ángulos no.",
+     "pasos": [
+      "Con lados de 4, 6 y 7 centímetros solo hay un triángulo posible: los ángulos quedan determinados.",
+      "Con ángulos de 40, 65 y 75 grados hay infinitos: uno chiquito y uno enorme tienen esos mismos ángulos.",
+      "Los ángulos dicen qué tan abierta es la figura, no qué tan grande.",
+      "Por eso, para que dos personas dibujen el mismo triángulo, hace falta al menos una medida de lado."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 12",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa13",
+   "oa": "MA06 OA 13",
+   "titulo": "La red de una caja y su área",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "La **red** de un cuerpo es ese cuerpo desarmado y estirado sobre la mesa. Desplegar una caja no agrega ni quita cartulina, así que el área de su red y la superficie de la caja armada son exactamente el mismo número."
+    },
+    {
+     "t": "diagrama",
+     "kind": "solido",
+     "params": {
+      "tipo": "prisma",
+      "etiqueta": "Tres pares de caras"
+     },
+     "intro": "Una caja tiene seis caras, y cada una tiene otra igual justo enfrente."
+    },
+    {
+     "t": "texto",
+     "md": "En un cubo las seis caras son cuadrados del mismo tamaño: se calcula una y se multiplica por 6. En una caja hay tres pares distintos, porque cada cara junta dos de las tres medidas: se calcula una de cada par, se suman las tres y se duplica el resultado."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Calculemos la red de una caja de 9, 4 y 3 centímetros.",
+     "pasos": [
+      "Las tres caras distintas son 9 por 4, 9 por 3 y 4 por 3.",
+      "Miden 36, 27 y 12 centímetros cuadrados, y juntas dan 75.",
+      "Cada una tiene su gemela enfrente, así que la red mide el doble: 150 centímetros cuadrados.",
+      "Multiplicar 9 por 4 por 3 daría 108, pero ese número dice cuánto cabe adentro y no cuánta cartulina se gasta."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora un cubo de 7 centímetros de arista.",
+     "pasos": [
+      "Cada cara es un cuadrado de 7 por 7, o sea 49 centímetros cuadrados.",
+      "Las seis caras son iguales, así que la red mide 49 por 6.",
+      "El resultado es 294 centímetros cuadrados.",
+      "Si la arista se duplicara a 14, la cara no se duplicaría: pasaría a 196, cuatro veces más, porque crece de largo y de ancho a la vez."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 13",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa14",
+   "oa": "MA06 OA 14",
+   "titulo": "Teselar: cubrir sin huecos y sin montar",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "**Teselar** es cubrir toda una superficie con copias de una figura, sin dejar ningún hueco y sin que las piezas se monten unas sobre otras. Cada punto queda tapado exactamente una vez, como en un panal de abejas o en un piso de baldosas."
+    },
+    {
+     "t": "diagrama",
+     "kind": "transformacion",
+     "params": {
+      "tipo": "traslacion",
+      "figura": [
+       [
+        1,
+        1
+       ],
+       [
+        3,
+        1
+       ],
+       [
+        3,
+        3
+       ]
+      ],
+      "vector": [
+       -4,
+       0
+      ],
+      "etiqueta": "La copia llega igual: solo cambió de lugar"
+     },
+     "intro": "La pieza se desliza sin girar ni darse vuelta: eso es una traslación."
+    },
+    {
+     "t": "texto",
+     "md": "Las copias se acomodan con tres movimientos: trasladar (deslizar), reflejar (dar vuelta como en un espejo) y rotar (girar en torno a un punto). Ninguno de los tres cambia el tamaño ni la forma, y por eso las piezas siguen calzando. Además, en cada punto donde se juntan varias esquinas, los ángulos tienen que sumar los 360 grados de la vuelta completa."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Probemos si un decágono regular, cuyas esquinas miden 144 grados, tesela por sí solo.",
+     "pasos": [
+      "Alrededor de un punto tengo que llegar a 360 grados exactos.",
+      "Con dos decágonos voy en 288 grados, así que todavía queda hueco.",
+      "Con tres llego a 432 grados, así que ya se montan unos sobre otros.",
+      "No hay una cantidad entera de decágonos que dé 360, así que solos no teselan."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Cómo se reconoce cada movimiento en un mosaico ya terminado.",
+     "pasos": [
+      "Si la pieza llegó igual y solo cambió de lugar, fue una traslación.",
+      "Si quedó como en un espejo, con lo que estaba a la derecha ahora a la izquierda, fue una reflexión.",
+      "Si giró en torno a un punto que se quedó quieto, fue una rotación.",
+      "Ninguna de las tres cambia el tamaño: si cambiara, aparecerían huecos y las piezas dejarían de calzar."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 14",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa15",
+   "oa": "MA06 OA 15",
+   "titulo": "Los ángulos y sus cinco nombres",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un ángulo mide cuánto se abren dos lados que salen de un mismo punto, llamado **vértice**. Esa abertura se mide en grados, y no depende del largo de los lados: un ángulo con lados cortos puede estar más abierto que uno con lados largos."
+    },
+    {
+     "t": "diagrama",
+     "kind": "reloj",
+     "params": {
+      "hora": 4,
+      "minutos": 0,
+      "etiqueta": "120 grados"
+     },
+     "intro": "Entre dos números seguidos del reloj hay 30 grados. Las manecillas abren cuatro de esos saltos."
+    },
+    {
+     "t": "texto",
+     "md": "Los nombres van por tramos: agudo si mide menos de 90 grados, recto si mide 90 exactos, obtuso si pasa de 90 sin llegar a 180, extendido si mide 180 justos y completo si da la vuelta entera de 360. Para construirlos, el transportador mide y marca en grados, la escuadra ya trae el ángulo recto de fábrica y el compás copia una abertura de una hoja a otra sin usar números."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Construyamos un ángulo de 115 grados con el transportador.",
+     "pasos": [
+      "Primero trazo un lado con la regla y marco su punta: ese punto es el vértice.",
+      "Apoyo el centro del transportador justo en el vértice, con su línea de base sobre el lado ya trazado.",
+      "Busco el 115 en la escala que empieza en cero sobre ese lado, y marco un punto ahí.",
+      "Uno el vértice con esa marca. Como el ángulo pasa de 90 sin llegar a 180, es obtuso."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "La vuelta completa sirve de regla para reconocer los demás.",
+     "pasos": [
+      "La vuelta entera mide 360 grados: ese es el ángulo completo.",
+      "La mitad de la vuelta son 180 grados, y ahí los dos lados forman una sola línea recta: es el extendido.",
+      "La mitad de esa mitad son 90 grados, la esquina de una hoja de cuaderno: es el recto.",
+      "Todo lo que quede por debajo de 90 es agudo, y lo que pase de 90 sin llegar a 180 es obtuso."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 15",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa16",
+   "oa": "MA06 OA 16",
+   "titulo": "Los cuatro ángulos de un cruce",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Cuando dos rectas se cortan, el punto de cruce parte cada una en dos y quedan cuatro ángulos alrededor del **vértice**. Esos cuatro no son independientes: basta conocer uno para saber cuánto miden los otros tres."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Los dos tipos de pareja que quedan al cortarse dos rectas",
+      "items": [
+       {
+        "titulo": "Opuestos por el vértice",
+        "texto": "Se miran de frente y no comparten ningún lado. Miden lo mismo."
+       },
+       {
+        "titulo": "Vecinos",
+        "texto": "Comparten un lado y se apoyan en la misma recta. Suman 180 grados."
+       }
+      ],
+      "etiqueta": "Los cuatro suman 360 grados"
+     },
+     "intro": "Las cuatro aberturas se agrupan de dos maneras distintas."
+    },
+    {
+     "t": "texto",
+     "md": "Hay además dos nombres que dependen solo de cuánto suman dos ángulos, sin importar dónde estén dibujados: son **complementarios** si suman 90 grados y suplementarios si suman 180. Por eso dos ángulos vecinos de un cruce son siempre suplementarios, nunca complementarios."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "En un cruce de dos rectas, uno de los ángulos mide 65 grados.",
+     "pasos": [
+      "El que queda enfrente es su opuesto por el vértice, así que también mide 65 grados.",
+      "Cada vecino se apoya con él en la misma recta, así que mide 180 menos 65, o sea 115 grados.",
+      "Los cuatro ángulos del cruce son entonces 65, 115, 65 y 115.",
+      "Compruebo la vuelta: 65 más 115 más 65 más 115 dan 360 grados."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "El error más repetido: confundir el complemento con el suplemento.",
+     "pasos": [
+      "El complemento de un ángulo es lo que le falta para llegar a 90 grados.",
+      "El suplemento es lo que le falta para llegar a 180 grados.",
+      "Para un ángulo de 32 grados, el complemento es 58 y el suplemento es 148.",
+      "Son dos números distintos del mismo ángulo, así que hay que fijarse bien cuál de los dos piden."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 16",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa17",
+   "oa": "MA06 OA 17",
+   "titulo": "Cuánto suman los ángulos de adentro",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "En cualquier triángulo, los tres ángulos **interiores** suman 180 grados. No importa si es grande o chico, ni si está estirado o girado: esa suma no cambia nunca. Si se recortan sus tres puntas y se juntan por el vértice, forman una línea recta."
+    },
+    {
+     "t": "diagrama",
+     "kind": "poligono",
+     "params": {
+      "lados": 4
+     },
+     "intro": "Una diagonal parte el cuadrilátero en dos triángulos."
+    },
+    {
+     "t": "texto",
+     "md": "Por eso los cuatro ángulos interiores de un cuadrilátero suman 360 grados: cada uno de esos dos triángulos aporta sus 180. Y con esa suma fija se puede calcular el ángulo que falta, sumando los conocidos y restándoselos al total."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un triángulo tiene ángulos de 47 y 68 grados. ¿Cuánto mide el tercero?",
+     "pasos": [
+      "Sumo los dos que conozco: 47 más 68 da 115.",
+      "Al total de 180 grados le resto esa suma: 180 menos 115 da 65.",
+      "El tercer ángulo mide 65 grados.",
+      "Compruebo: 47 más 68 más 65 dan justo 180."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora un cuadrilátero con tres ángulos conocidos: 85, 100 y 70 grados.",
+     "pasos": [
+      "Sumo los tres: 85 más 100 son 185, y con 70 llego a 255.",
+      "El total de un cuadrilátero es 360 grados, no 180: ahí está el error más común.",
+      "Al cuarto ángulo le quedan 360 menos 255, o sea 105 grados.",
+      "Compruebo: 85 más 100 más 70 más 105 dan 360."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 17",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa18",
+   "oa": "MA06 OA 18",
+   "titulo": "La superficie de una caja",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "La superficie de un cuerpo es todo lo que se ve por fuera: lo que habría que pintar, forrar o barnizar. Un cubo y un paralelepípedo tienen seis caras, y esas caras son iguales de a dos."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "intro": "Las seis caras de una caja se juntan en tres parejas iguales.",
+     "params": {
+      "forma": "comparar",
+      "desc": "Las tres parejas de caras de una caja",
+      "items": [
+       {
+        "titulo": "Adelante y atrás",
+        "texto": "Largo por alto, dos veces."
+       },
+       {
+        "titulo": "Los dos lados",
+        "texto": "Ancho por alto, dos veces."
+       },
+       {
+        "titulo": "Arriba y abajo",
+        "texto": "Largo por ancho, dos veces."
+       }
+      ],
+      "etiqueta": "Seis caras, iguales de a dos"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Por eso conviene calcular las tres áreas distintas, sumarlas y recién ahí multiplicar por dos. El resultado se expresa siempre en **unidades cuadradas**: centímetros cuadrados o metros cuadrados, nunca en centímetros a secas."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Una caja de 6 cm de largo, 5 cm de ancho y 3 cm de alto.",
+     "pasos": [
+      "Las caras de adelante y atrás miden 6 por 3, o sea 18 centímetros cuadrados cada una.",
+      "Los dos lados miden 5 por 3, o sea 15 cada uno.",
+      "Arriba y abajo miden 6 por 5, o sea 30 cada uno.",
+      "Sumo una de cada pareja: 18 más 15 más 30 da 63. Como van de a dos, multiplico por 2 y la superficie es 126 centímetros cuadrados."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Con un cubo es más corto, porque sus seis caras son iguales.",
+     "pasos": [
+      "Si su arista mide 7 centímetros, cada cara mide 7 por 7, o sea 49 centímetros cuadrados.",
+      "Un cubo tiene 6 caras y todas miden lo mismo.",
+      "49 por 6 da 294.",
+      "Su superficie es 294 centímetros cuadrados: basta con una cara y multiplicar por seis."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 18",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa19",
+   "oa": "MA06 OA 19",
+   "titulo": "El volumen de una caja",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "El volumen no mide lo de afuera sino lo de adentro: cuánto espacio tiene el cuerpo, o sea cuánto le cabe. Se cuenta en cubitos de una unidad de arista."
+    },
+    {
+     "t": "diagrama",
+     "kind": "solido",
+     "intro": "Una caja tiene tres medidas: el largo y el alto que ves marcados, y el ancho que se va hacia atrás.",
+     "params": {
+      "tipo": "prisma",
+      "etiqueta": "Base × altura"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "La regla se entiende por capas: el largo por el ancho dice cuántos cubitos caben en una capa, y el alto dice cuántas capas hay. El resultado se expresa en **unidades cúbicas**: centímetros cúbicos, metros cúbicos o milímetros cúbicos."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Una caja de 7 cm de largo, 4 cm de ancho y 5 cm de alto.",
+     "pasos": [
+      "La base mide 7 por 4, así que en una capa caben 28 cubitos de 1 centímetro de arista.",
+      "La caja tiene 5 centímetros de alto, o sea 5 capas iguales.",
+      "28 por 5 da 140.",
+      "Su volumen es 140 centímetros cúbicos."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un cubo tiene sus tres medidas iguales.",
+     "pasos": [
+      "Si su arista mide 6 centímetros, multiplico 6 por 6 por 6.",
+      "6 por 6 da 36, y 36 por 6 da 216.",
+      "Su volumen es 216 centímetros cúbicos.",
+      "Ojo con la unidad: si el resultado quedó anotado en centímetros cuadrados, lo que se calculó fue una superficie y no un volumen."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 19",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa20",
+   "oa": "MA06 OA 20",
+   "titulo": "Medir ángulos con el transportador",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un ángulo mide cuánto se abren dos lados que salen de un mismo punto, y se mide en **grados**. No importa el largo de esos lados ni el tamaño del dibujo: lo único que se mide es la abertura."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "intro": "Los tres pasos para medir un ángulo con el transportador.",
+     "params": {
+      "forma": "secuencia",
+      "desc": "Los tres pasos para usar el transportador",
+      "items": [
+       {
+        "titulo": "Centro en el vértice"
+       },
+       {
+        "titulo": "El cero sobre un lado"
+       },
+       {
+        "titulo": "Lee donde cruza el otro"
+       }
+      ],
+      "etiqueta": "Siempre en la escala que parte en cero"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Antes de medir conviene estimar, comparando con el ángulo recto: si la abertura es menor que una escuadra el ángulo es agudo, si calza justo es recto, y si es mayor sin llegar a ser una línea recta es obtuso. La línea recta completa es el ángulo extendido, de 180 grados."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Midamos un ángulo paso a paso.",
+     "pasos": [
+      "Apoyo el centro del transportador justo en el vértice del ángulo.",
+      "Giro el transportador hasta que uno de los lados pase por el cero.",
+      "El otro lado cruza la escala en la marca 65.",
+      "El ángulo mide 65 grados, y como es menor que 90 es un ángulo agudo."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "El error más común: el transportador trae dos escalas de números.",
+     "pasos": [
+      "Una escala crece hacia la derecha y la otra hacia la izquierda.",
+      "Hay que leer la misma escala en que el lado del ángulo quedó puesto sobre el cero.",
+      "Si el ángulo se ve más cerrado que una escuadra, no puede medir 140 grados.",
+      "Cuando el número leído no calza con lo que estimaste, casi siempre se leyó la escala equivocada."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 20",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa21",
+   "oa": "MA06 OA 21",
+   "titulo": "Ángulos entre paralelas",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Cuando una recta **transversal** cruza dos rectas paralelas se forman ocho ángulos, pero solo hay dos medidas distintas: unos son iguales entre sí y los otros completan 180 grados con ellos."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "intro": "Con dos paralelas y una transversal solo pueden pasar dos cosas.",
+     "params": {
+      "forma": "comparar",
+      "desc": "Las dos relaciones entre los ángulos que forman dos paralelas y una transversal",
+      "items": [
+       {
+        "titulo": "Son iguales",
+        "texto": "Los correspondientes y los alternos entre sí."
+       },
+       {
+        "titulo": "Suman 180 grados",
+        "texto": "Los colaterales, que van del mismo lado."
+       }
+      ],
+      "etiqueta": "Solo hay dos medidas distintas"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "En un triángulo pasa algo igual de útil: sus tres ángulos interiores siempre suman 180 grados, así que conociendo dos de ellos el tercero se calcula sin medir nada."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Una transversal cruza dos paralelas y uno de los ángulos mide 112 grados.",
+     "pasos": [
+      "Su correspondiente, en el otro cruce, mide lo mismo: 112 grados.",
+      "Su alterno interno también mide 112 grados.",
+      "Su colateral interno, en cambio, completa 180 grados con él.",
+      "180 menos 112 da 68, así que ese ángulo mide 68 grados."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora dentro de un triángulo, donde dos ángulos miden 68 y 39 grados.",
+     "pasos": [
+      "Los tres ángulos interiores suman 180 grados.",
+      "Sumo los dos conocidos: 68 más 39 da 107.",
+      "Le resto ese total a 180: 180 menos 107 da 73.",
+      "El tercer ángulo mide 73 grados."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 21",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa22",
+   "oa": "MA06 OA 22",
+   "titulo": "Comparar dos grupos de datos",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Para comparar dos grupos no basta con mirar quién tiene el dato más grande. Hay que mirar dos cosas distintas: dónde se juntan los datos y cuánto se separan entre sí."
+    },
+    {
+     "t": "diagrama",
+     "kind": "puntos",
+     "intro": "El grupo A, dato por dato. Fíjate dónde se amontonan y hasta dónde llegan.",
+     "params": {
+      "valores": [
+       4,
+       5,
+       5,
+       6,
+       6,
+       6,
+       7
+      ],
+      "min": 3,
+      "max": 8
+     }
+    },
+    {
+     "t": "texto",
+     "md": "El **rango** es la distancia entre el dato más chico y el más grande, y es la forma más simple de medir cuánto se reparten los datos. La mediana, en cambio, es el valor que queda al medio cuando se ordenan."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Grupo A: 4, 5, 5, 6, 6, 6 y 7. Grupo B: 1, 3, 5, 6, 7, 9 y 11.",
+     "pasos": [
+      "Los dos grupos tienen siete datos, y al ordenarlos el valor del medio es 6 en los dos.",
+      "O sea que tienen la misma mediana: en el centro se parecen.",
+      "Pero el rango de A es 7 menos 4, o sea 3, y el rango de B es 11 menos 1, o sea 10.",
+      "Los datos de B están mucho más repartidos: dos grupos con el mismo centro pueden ser muy distintos."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Los mismos datos caben en un diagrama de tallo y hojas cuando tienen dos cifras.",
+     "pasos": [
+      "El tallo es la cifra de las decenas y la hoja es la de las unidades.",
+      "Un tallo 1 con las hojas 4 y 7 son los datos 14 y 17.",
+      "Para saber cuántos datos tiene cada grupo se cuentan sus hojas, no sus tallos.",
+      "Y el dato mayor de un grupo es la hoja más grande de su tallo más alto."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 22",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa23",
+   "oa": "MA06 OA 23",
+   "titulo": "Qué pasa al repetir muchas veces",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un experimento al azar no se puede predecir de a uno: nadie sabe qué va a salir en el próximo lanzamiento. Lo que sí se puede es conjeturar una **tendencia**, mirando muchas repeticiones juntas."
+    },
+    {
+     "t": "diagrama",
+     "kind": "barras",
+     "intro": "Un dado equilibrado lanzado 120 veces. Ninguna cara salió la misma cantidad de veces que las otras, pero todas quedaron cerca.",
+     "params": {
+      "datos": [
+       {
+        "etiqueta": "1",
+        "valor": 18
+       },
+       {
+        "etiqueta": "2",
+        "valor": 22
+       },
+       {
+        "etiqueta": "3",
+        "valor": 19
+       },
+       {
+        "etiqueta": "4",
+        "valor": 21
+       },
+       {
+        "etiqueta": "5",
+        "valor": 20
+       },
+       {
+        "etiqueta": "6",
+        "valor": 20
+       }
+      ],
+      "desde": 0,
+      "top": 30
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Con pocas repeticiones un resultado disparejo es de lo más normal. Con muchas, los recuentos se acercan a lo esperado, aunque casi nunca calzan exactos. Y el azar no tiene memoria: lo que ya salió no cambia lo que viene."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Cuándo una conjetura se puede defender y cuándo no.",
+     "pasos": [
+      "Si lanzo un dado 15 veces y el 2 sale 5 veces, no puedo concluir nada: con tan pocos tiros eso pasa seguido.",
+      "Si lo lanzo 480 veces y el 2 sale 160, la cosa cambia.",
+      "En 480 tiros lo esperable para cada cara eran unos 80, y el 2 salió el doble.",
+      "Recién ahí se puede conjeturar que ese dado está cargado hacia el 2."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "El error de creer que el azar se pone al día.",
+     "pasos": [
+      "En una moneda equilibrada salieron seis caras seguidas.",
+      "Alguien dice que ahora el sello está más cerca, para emparejar.",
+      "La moneda no recuerda nada: en el próximo lanzamiento cara y sello tienen la misma posibilidad que al principio.",
+      "Lo que se empareja al repetir mucho es la proporción del total, no los resultados sueltos."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 23",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma6-oa24",
+   "oa": "MA06 OA 24",
+   "titulo": "Barra doble y gráfico circular",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un gráfico de **barra doble** compara dos grupos a la vez: en cada categoría hay dos barras, una por grupo, y el color dice cuál es cuál."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "intro": "Los dos gráficos de este objetivo sirven para cosas distintas.",
+     "params": {
+      "forma": "comparar",
+      "desc": "Diferencia entre un gráfico de barra doble y uno circular",
+      "items": [
+       {
+        "titulo": "Barra doble",
+        "texto": "Dos barras en cada categoría, una por grupo. Compara grupos."
+       },
+       {
+        "titulo": "Circular",
+        "texto": "El círculo entero es el 100 por ciento. Cada porción es una parte de ese total."
+       }
+      ],
+      "etiqueta": "Uno compara; el otro reparte un total"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "El gráfico circular no compara grupos: reparte un total. Todas sus porciones juntas suman el 100 por ciento, así que si las partes conocidas suman menos, lo que falta es el resto."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Libros leídos por dos grupos de un curso: en marzo, 13 el grupo A y 8 el B; en abril, 10 el A y 17 el B.",
+     "pasos": [
+      "Para saber quién leyó más en abril comparo las dos barras de abril: 17 contra 10, ganó el grupo B.",
+      "Para saber cómo cambió el grupo B comparo sus dos barras: subió de 8 a 17.",
+      "El grupo A, en cambio, bajó de 13 a 10.",
+      "Una barra doble se lee de dos maneras: entre grupos y a lo largo del tiempo."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un gráfico circular sobre qué desayuna un curso: 60 por ciento pan, 20 por ciento cereal, 15 por ciento fruta y 5 por ciento nada.",
+     "pasos": [
+      "Las cuatro porciones suman 100 por ciento, o sea el curso completo.",
+      "El pan se lleva más de la mitad del círculo: es lo más elegido.",
+      "Para saber cuántas personas son, le aplico el porcentaje al total del curso.",
+      "Si el curso tiene 20 estudiantes, el 20 por ciento que come cereal son 4 personas."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA06 OA 24",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  }
+ ]
+}

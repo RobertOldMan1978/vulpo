@@ -1,0 +1,1586 @@
+{
+ "lecciones": [
+  {
+   "id": "ma4-oa01",
+   "oa": "MA04 OA 01",
+   "titulo": "Números hasta 10.000",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "El año pasado contabas hasta mil. Este año llegamos hasta diez mil, y eso significa una cifra más: la de los miles. Un número como 6.238 se lee en dos partes, primero los miles y después lo que sobra: seis mil doscientos treinta y ocho."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 0,
+      "max": 10000,
+      "paso": 1000,
+      "marca": 7000,
+      "signo": false,
+      "interactivo": true
+     },
+     "intro": "Arrastra la marca. Cada salto de esta recta es de 1.000 en 1.000."
+    },
+    {
+     "t": "texto",
+     "md": "Cada cifra vale según el lugar que ocupa, y a eso se le llama **valor posicional**. En 6.238 el 6 está en los miles y vale 6.000, el 2 está en las centenas y vale 200, el 3 vale 30 y el 8 vale 8."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Descompongamos 6.238 según lo que vale cada cifra.",
+     "pasos": [
+      "El 6 ocupa el lugar de los miles: vale 6.000.",
+      "El 2 ocupa las centenas: vale 200.",
+      "El 3 ocupa las decenas y vale 30, y el 8 vale 8 unidades.",
+      "Entonces 6.238 = 6.000 + 200 + 30 + 8."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora comparemos 3.618 con 3.681.",
+     "pasos": [
+      "No se comparan los números enteros: se busca la primera cifra distinta, mirando de izquierda a derecha.",
+      "Los miles son iguales en los dos, y las centenas también.",
+      "En las decenas se separan: uno tiene 1 y el otro tiene 8.",
+      "Como 8 es mayor que 1, el número mayor es 3.681."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 01",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa02",
+   "oa": "MA04 OA 02",
+   "titulo": "Calcular con la cabeza",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Hay cuentas que no necesitan lápiz. Vale la pena conocer los atajos: contar hacia adelante o hacia atrás, doblar un número, sacarle la mitad, partirlo en pedazos más fáciles y usar el **doble del doble**."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "desc": "Doblar un número y volver a doblarlo",
+      "items": [
+       {
+        "titulo": "13"
+       },
+       {
+        "titulo": "doble: 26"
+       },
+       {
+        "titulo": "doble otra vez: 52"
+       }
+      ],
+      "etiqueta": "Doblar dos veces es multiplicar por 4"
+     },
+     "intro": "Se dobla una vez y después otra. Fíjate en dónde termina el número."
+    },
+    {
+     "t": "texto",
+     "md": "Descomponer sirve para sumar y para restar. Se parte uno de los dos números en decenas y unidades, y se avanza por partes: primero el salto grande y después el chico."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Sumemos 37 + 26 por partes.",
+     "pasos": [
+      "Parto el 26 en 20 y 6.",
+      "Primero 37 + 20 = 57.",
+      "Después 57 + 6 = 63.",
+      "Entonces 37 + 26 = 63, sin escribir nada."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora el mismo camino al revés: la mitad de la mitad, que sirve para dividir en 4.",
+     "pasos": [
+      "Quiero repartir 52 en 4 partes iguales.",
+      "Saco la mitad de 52, que es 26.",
+      "Saco la mitad de 26, que es 13.",
+      "A cada parte le tocan 13, que es justo el número del que partimos más arriba."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 02",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa03",
+   "oa": "MA04 OA 03",
+   "titulo": "Sumar y restar hasta 1.000",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Para sumar o restar números de tres cifras conviene mirarlos por partes: centenas con centenas, decenas con decenas y unidades con unidades. Cada cifra solo se junta con las de su mismo valor."
+    },
+    {
+     "t": "diagrama",
+     "kind": "bloques",
+     "params": {
+      "numero": 372
+     },
+     "intro": "Así se ve el 372 por dentro: bloques de cien, barras de diez y cubitos sueltos."
+    },
+    {
+     "t": "texto",
+     "md": "Cuando en una columna se pasa de 9, sobra una decena entera y hay que llevarla a la columna vecina. Eso es la **reserva**, y olvidarla es el error que más se repite en este contenido."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Sumemos 258 + 176.",
+     "pasos": [
+      "Unidades: 8 + 6 = 14. Escribo el 4 y llevo 1 decena.",
+      "Decenas: 5 + 7 son 12, más la que llevaba son 13. Escribo el 3 y llevo 1 centena.",
+      "Centenas: 2 + 1 son 3, más la que llevaba son 4.",
+      "El resultado es 434."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora una resta que obliga a pedir prestado: 500 - 236.",
+     "pasos": [
+      "En las unidades no puedo hacer 0 menos 6, así que hay que pedir prestado.",
+      "Las decenas también están en cero, así que el préstamo tiene que venir de las centenas.",
+      "El 500 se convierte en 4 centenas, 9 decenas y 10 unidades.",
+      "Ahora sí: 10 - 6 = 4, 9 - 3 = 6 y 4 - 2 = 2. El resultado es 264."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 03",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa04",
+   "oa": "MA04 OA 04",
+   "titulo": "El 0 y el 1 en la multiplicación y la división",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Hay tres reglas que no se calculan: se saben. Multiplicar por 1 deja el número igual, multiplicar por 0 siempre da 0, y dividir por 1 también deja el número igual."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Las reglas del 0 y del 1 en la multiplicación y en la división",
+      "items": [
+       {
+        "titulo": "Por 1",
+        "texto": "El número no cambia."
+       },
+       {
+        "titulo": "Por 0",
+        "texto": "Siempre da cero."
+       },
+       {
+        "titulo": "Dividir por 1",
+        "texto": "El número no cambia."
+       }
+      ],
+      "etiqueta": "Valen para cualquier número"
+     },
+     "intro": "Tres reglas que sirven igual con un número chico y con uno enorme."
+    },
+    {
+     "t": "texto",
+     "md": "La regla del 0 se entiende pensando en grupos vacíos, y la del 1 pensando en un solo grupo o en un solo repartidor. No son trucos: son lo que significan la multiplicación y la división."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "¿Por qué 5 × 0 da 0?",
+     "pasos": [
+      "5 × 0 significa cinco grupos, y cada grupo tiene cero cosas adentro.",
+      "Cinco cajas vacías siguen teniendo nada.",
+      "Por eso 5 × 0 = 0, y daría lo mismo si en vez del 5 hubiera un número enorme.",
+      "El error típico es contestar 5, porque el 5 se queda a la vista."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Y ahora 63 : 1.",
+     "pasos": [
+      "Dividir por 1 es repartir entre una sola persona.",
+      "Esa persona se lleva todo lo que había.",
+      "Entonces 63 : 1 = 63.",
+      "El error típico es contestar 1: el 1 dice en cuántas partes se reparte, no cuánto le toca a cada una."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 04",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa05",
+   "oa": "MA04 OA 05",
+   "titulo": "Multiplicar por una cifra",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Para multiplicar un número de tres cifras no hace falta sumarlo muchas veces. Se parte por su valor posicional, se multiplica cada parte por separado y al final se juntan los resultados."
+    },
+    {
+     "t": "diagrama",
+     "kind": "posicional",
+     "params": {
+      "numero": 214,
+      "etiqueta": "214 = 200 + 10 + 4"
+     },
+     "intro": "El 214 partido en sus tres partes, que es por donde empieza la multiplicación."
+    },
+    {
+     "t": "texto",
+     "md": "A repartir la multiplicación entre las partes de un número se le llama **propiedad distributiva**. Es larga de nombre y simple de usar: multiplicar por partes y sumar."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Multipliquemos 214 × 3.",
+     "pasos": [
+      "Parto el 214 en 200 + 10 + 4.",
+      "200 × 3 = 600.",
+      "10 × 3 = 30 y 4 × 3 = 12.",
+      "Junto las tres partes: 600 + 30 + 12 = 642."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Antes de calcular conviene estimar, para saber si el resultado es razonable.",
+     "pasos": [
+      "Quiero saber más o menos cuánto es 4 × 187.",
+      "Redondeo 187 a la centena más cercana, que es 200.",
+      "4 × 200 = 800, así que el resultado tiene que andar cerca de 800.",
+      "Si me diera 74 o 7.480, sabría de inmediato que me equivoqué de lugar."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 05",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa06",
+   "oa": "MA04 OA 06",
+   "titulo": "Dividir repartiendo",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Dividir es repartir en partes iguales, y también sirve para preguntar cuántas veces cabe un número dentro de otro. Las dos preguntas se responden con la misma operación."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 0,
+      "max": 24,
+      "paso": 4,
+      "marca": 24,
+      "saltos": true,
+      "signo": false,
+      "interactivo": true
+     },
+     "intro": "Cada arco es un salto de 4. Cuenta los saltos que hay desde el 0 hasta el 24."
+    },
+    {
+     "t": "texto",
+     "md": "Cuando el número que se reparte es grande, conviene partirlo en dos pedazos que se repartan fácil. Se divide cada pedazo por separado y después se juntan los dos resultados."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Dividamos 68 en 4 partes iguales.",
+     "pasos": [
+      "Parto el 68 en 40 y 28, porque los dos se reparten fácil en 4.",
+      "40 repartido en 4 da 10.",
+      "28 repartido en 4 da 7.",
+      "Junto las dos partes: 10 + 7 = 17. Entonces 68 : 4 = 17."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "¿Cómo sé que el resultado está bien?",
+     "pasos": [
+      "Multiplico el resultado por el número de partes: 17 × 4.",
+      "17 × 4 = 68, que es justo lo que había para repartir.",
+      "Si me hubiera dado otro número, la división estaría mala.",
+      "Multiplicar y dividir son operaciones contrarias, y por eso una comprueba a la otra."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 06",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa07",
+   "oa": "MA04 OA 07",
+   "titulo": "Problemas con dinero",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "En un problema con dinero lo difícil no es la cuenta, sino decidir qué hay que hacer. Juntar precios es sumar, calcular el vuelto es restar, y repetir el mismo precio varias veces es multiplicar."
+    },
+    {
+     "t": "diagrama",
+     "kind": "dinero",
+     "params": {
+      "valores": [
+       1000,
+       500,
+       100
+      ],
+      "etiqueta": "Total: $1.600"
+     },
+     "intro": "Un billete y dos monedas. Para saber cuánto hay, se suman sus valores."
+    },
+    {
+     "t": "texto",
+     "md": "El vuelto siempre es una resta: lo que entregué menos lo que costó. Y conviene revisar si el resultado tiene sentido, porque el vuelto nunca puede ser mayor que lo que se entregó."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Camila compra un pan de $480 y una leche de $790. ¿Cuánto paga?",
+     "pasos": [
+      "Hay que juntar los dos precios, así que es una suma.",
+      "480 + 790 = 1.270.",
+      "Camila paga $1.270.",
+      "Estimar ayuda: casi 500 más casi 800 son casi 1.300, y 1.270 anda por ahí."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Camila paga con un billete de $2.000. ¿Cuánto vuelto recibe?",
+     "pasos": [
+      "El vuelto es lo que entregó menos lo que costó.",
+      "2.000 - 1.270 = 730.",
+      "Recibe $730 de vuelto.",
+      "Si el resultado hubiera salido mayor que 2.000, estaría mal: nadie recibe más vuelto que lo que pagó."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 07",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa08",
+   "oa": "MA04 OA 08",
+   "titulo": "Las fracciones",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una fracción dice dos cosas. El número de abajo, el denominador, dice en cuántas partes iguales se partió el entero. El de arriba, el numerador, dice cuántas de esas partes se tomaron."
+    },
+    {
+     "t": "diagrama",
+     "kind": "fracciones",
+     "params": {
+      "partes": 8,
+      "pintadas": 5,
+      "etiqueta": "5/8"
+     },
+     "intro": "El entero está partido en 8 partes iguales y se tomaron 5."
+    },
+    {
+     "t": "texto",
+     "md": "La palabra que manda es **iguales**: si los pedazos son de distinto tamaño, eso no es una fracción. Y hay que fijarse en el tamaño, porque mientras en más partes se corta el entero, más chica queda cada parte."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "¿Cuál es mayor, 1/5 o 1/10?",
+     "pasos": [
+      "En las dos se toma una sola parte, porque arriba hay un 1.",
+      "Pero en 1/5 el entero se cortó en 5 pedazos y en 1/10 se cortó en 10.",
+      "Cortar en más pedazos deja cada pedazo más chico.",
+      "Entonces 1/5 es mayor que 1/10, aunque el 10 sea un número más grande."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora dos fracciones partidas igual: 5/12 y 11/12.",
+     "pasos": [
+      "Las dos tienen 12 abajo, así que los pedazos son del mismo tamaño.",
+      "Cuando los pedazos miden lo mismo, gana la que tiene más pedazos.",
+      "11 es más que 5, así que 11/12 es mayor que 5/12.",
+      "Con el mismo denominador basta con mirar el número de arriba."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 08",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa09",
+   "oa": "MA04 OA 09",
+   "titulo": "Juntar y sacar partes del mismo tamaño",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Dos fracciones se pueden sumar directo cuando el entero está partido en pedazos del mismo tamaño, o sea cuando tienen el mismo **denominador**. En ese caso se suman los numeradores y el denominador no se toca."
+    },
+    {
+     "t": "diagrama",
+     "kind": "fracciones",
+     "params": {
+      "partes": 8,
+      "pintadas": 4,
+      "etiqueta": "1/8 + 3/8 = 4/8"
+     },
+     "intro": "Los ocho pedazos son todos iguales, así que se juntan directo."
+    },
+    {
+     "t": "texto",
+     "md": "El denominador dice de qué tamaño es cada pedazo. Si cambiara al sumar, los pedazos cambiarían de tamaño en medio de la cuenta, y eso no puede pasar."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Diego pintó 1/8 de un muro y después pintó 3/8 más.",
+     "pasos": [
+      "Los dos denominadores son 8, así que los pedazos son del mismo tamaño.",
+      "Sumo solo los numeradores: 1 más 3 da 4.",
+      "El denominador se queda en 8.",
+      "Diego pintó 4/8 del muro."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora una resta: un tarro tenía 5/12 de pintura y se usaron 2/12.",
+     "pasos": [
+      "Otra vez los denominadores son iguales, así que resto solo los numeradores.",
+      "5 menos 2 da 3.",
+      "Quedan 3/12 de pintura.",
+      "El error típico es escribir 3/24, restando también los denominadores. Pero el tamaño de cada pedazo no cambia al restar."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 09",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa10",
+   "oa": "MA04 OA 10",
+   "titulo": "Fracciones propias y números mixtos",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una fracción es **propia** cuando el numerador es menor que el denominador. Eso quiere decir que vale menos que un entero: se tomaron menos partes de las que forman el entero completo."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Diferencia entre una fracción propia y un número mixto",
+      "items": [
+       {
+        "titulo": "Fracción propia",
+        "texto": "Vale menos de un entero, porque se toman menos partes de las que lo forman."
+       },
+       {
+        "titulo": "Número mixto",
+        "texto": "Un entero completo más una fracción propia, escritos juntos."
+       }
+      ],
+      "etiqueta": "Las dos dicen cuánto hay"
+     },
+     "intro": "Las dos formas hablan de partes de un entero, pero no dicen lo mismo."
+    },
+    {
+     "t": "texto",
+     "md": "Un **número mixto** se escribe con el entero primero y la fracción al lado. Un frasco lleno y 3/10 de otro se escribe 1 3/10: el 1 es la parte entera y 3/10 es la parte fraccionaria."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Vicente pintó 1 muro completo y 3/10 de otro muro.",
+     "pasos": [
+      "Cuento los enteros: hay 1 muro completo.",
+      "Miro lo que sobra: 3/10 de otro muro.",
+      "Escribo el entero y al lado la fracción: 1 3/10.",
+      "La parte entera es 1 y la parte fraccionaria es 3/10."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Veamos si 8/5 es una fracción propia.",
+     "pasos": [
+      "Comparo el numerador con el denominador: 8 es mayor que 5.",
+      "Entonces no es propia, porque vale más de un entero.",
+      "En cambio 3/10 sí es propia, porque 3 es menor que 10.",
+      "Si el numerador es más chico, la fracción no alcanza a completar un entero."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 10",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa11",
+   "oa": "MA04 OA 11",
+   "titulo": "Décimos y centésimos",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un número decimal escribe con una coma los pedazos que no alcanzan a formar un entero. La primera cifra después de la coma son los **décimos**: el entero partido en 10 partes iguales."
+    },
+    {
+     "t": "diagrama",
+     "kind": "fracciones",
+     "params": {
+      "partes": 10,
+      "pintadas": 4,
+      "etiqueta": "4/10 = 0,4"
+     },
+     "intro": "Cuatro partes de diez se escriben cero coma cuatro y se leen cuatro décimos."
+    },
+    {
+     "t": "texto",
+     "md": "La segunda cifra después de la coma son los **centésimos**: el entero partido en 100 partes iguales. Por eso 0,4 y 0,04 no valen lo mismo, aunque los dos usen el cuatro."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Escribamos como decimal 26 partes de 100.",
+     "pasos": [
+      "Las centésimas se escriben con dos cifras después de la coma.",
+      "26 centésimos se escriben 0,26.",
+      "En 0,26 el 2 son décimos y el 6 son centésimos.",
+      "Ojo: 26/100 no se escribe 0,026, que sería mucho menos."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Comparemos 0,5 con 0,32.",
+     "pasos": [
+      "Tener más cifras no es ser más grande.",
+      "Igualo la cantidad de cifras: 0,5 se escribe 0,50.",
+      "Ahora comparo 50 centésimos contra 32 centésimos.",
+      "50 es mayor que 32, así que 0,5 es mayor que 0,32."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 11",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa12",
+   "oa": "MA04 OA 12",
+   "titulo": "Sumar y restar decimales",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Para sumar o restar decimales hay una sola regla que importa: **la coma debajo de la coma**. Así cada cifra queda bajo la de su mismo tamaño, los décimos con los décimos y los centésimos con los centésimos."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "desc": "Los tres pasos para sumar o restar decimales",
+      "items": [
+       {
+        "titulo": "Igualar cifras"
+       },
+       {
+        "titulo": "Coma con coma"
+       },
+       {
+        "titulo": "Sumar o restar"
+       }
+      ],
+      "etiqueta": "Y la coma baja al resultado"
+     },
+     "intro": "Siempre el mismo orden, tanto para sumar como para restar."
+    },
+    {
+     "t": "texto",
+     "md": "Si a un número le falta una cifra, se le agrega un cero a la derecha. Ese cero no cambia su valor: 3,4 es lo mismo que 3,40, y así las dos filas quedan parejas."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Sumemos 3,4 más 1,25.",
+     "pasos": [
+      "Igualo las cifras: 3,4 se escribe 3,40.",
+      "Sumo los centésimos: 0 más 5 da 5.",
+      "Sumo los décimos: 4 más 2 da 6.",
+      "Sumo los enteros: 3 más 1 da 4. El resultado es 4,65."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora una resta: 7,5 menos 3,25.",
+     "pasos": [
+      "Igualo las cifras: 7,5 se escribe 7,50.",
+      "En los centésimos, 0 menos 5 no se puede, así que le pido prestado un décimo.",
+      "Ese décimo vale 10 centésimos: 10 menos 5 da 5, y en los décimos quedan 4 menos 2, que son 2.",
+      "En los enteros, 7 menos 3 da 4. El resultado es 4,25."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 12",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa13",
+   "oa": "MA04 OA 13",
+   "titulo": "La regla escondida de una tabla",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una tabla de patrones tiene dos columnas: el número que entra y el número que sale. Entre las dos hay una **regla**, que es siempre la misma operación, y descubrirla sirve para saber qué sale con cualquier número."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 0,
+      "max": 35,
+      "paso": 7,
+      "marca": 21,
+      "saltos": true,
+      "signo": false,
+      "interactivo": true
+     },
+     "intro": "Cada salto es del mismo tamaño. Arrastra la marca y fíjate de cuánto en cuánto avanza."
+    },
+    {
+     "t": "texto",
+     "md": "Para encontrar la regla se compara lo que entra con lo que sale en cada fila. Si siempre se agrega o se quita la misma cantidad, la regla es sumar o restar. Si el número que sale es el que entra repetido varias veces, la regla es multiplicar."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Una tabla dice que entra 4 y sale 11, entra 6 y sale 13, entra 9 y sale 16.",
+     "pasos": [
+      "Del 4 al 11 hay 7. Del 6 al 13 también hay 7. Y del 9 al 16, otra vez 7.",
+      "La diferencia es siempre la misma, así que la regla es sumar 7.",
+      "Si entra 20, sale 27.",
+      "Ojo: hay que revisar todas las filas, no solo la primera."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Otra tabla dice que entra 14 y sale 7, entra 20 y sale 10, entra 30 y sale 15.",
+     "pasos": [
+      "Aquí el número que sale es más chico, así que pruebo con restar.",
+      "Del 14 al 7 hay 7, pero del 20 al 10 hay 10: las diferencias cambian.",
+      "Pruebo dividiendo: 14 dividido en 2 es 7, 20 dividido en 2 es 10 y 30 dividido en 2 es 15.",
+      "La regla es dividir por 2. Y si sale 12, es porque entró 24."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 13",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa14",
+   "oa": "MA04 OA 14",
+   "titulo": "El número escondido",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una **ecuación** es una igualdad con un número escondido. Resolverla es averiguar qué número hay que poner para que los dos lados valgan lo mismo."
+    },
+    {
+     "t": "diagrama",
+     "kind": "balanza",
+     "params": {
+      "izqX": 1,
+      "izqU": 3,
+      "derU": 5,
+      "etiqueta": "▢ + 3 = 5"
+     },
+     "intro": "Los dos platillos están equilibrados. ¿Cuánto pesa la caja?"
+    },
+    {
+     "t": "texto",
+     "md": "La balanza explica el truco: lo que se le saca a un lado hay que sacárselo también al otro. Si le quito 3 a cada platillo, de un lado queda solo la caja y del otro quedan 2, así que la caja pesa 2. Por eso, para dejar solo al número escondido, se hace la operación contraria en los dos lados."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Resolvamos ▢ + 24 = 61.",
+     "pasos": [
+      "El 24 está sumando, así que hago la operación contraria y resto.",
+      "61 menos 24 da 37.",
+      "El número escondido es 37.",
+      "Compruebo: 37 más 24 da 61. Comprobar es parte de resolver."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora una desigualdad: ▢ + 30 tiene que ser menor que 70.",
+     "pasos": [
+      "Aquí no hay un solo número que sirva: hay muchos.",
+      "Busco el límite: 40 más 30 da justo 70, y 70 no es menor que 70.",
+      "Entonces el número escondido tiene que ser menor que 40.",
+      "Por ejemplo 25 sirve, porque 25 más 30 da 55, que sí es menor que 70."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 14",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa15",
+   "oa": "MA04 OA 15",
+   "titulo": "Ubicar algo en un mapa",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "En un mapa con cuadrícula, cada casilla se nombra con dos datos: la letra dice la columna y el número dice la fila. Se escriben juntos entre paréntesis, primero la letra y después el número."
+    },
+    {
+     "t": "diagrama",
+     "kind": "cuadricula",
+     "params": {
+      "cols": 5,
+      "filas": 4,
+      "marca": [
+       3,
+       4
+      ],
+      "etiqueta": "Vulpi está en la casilla (C, 4)"
+     },
+     "intro": "La letra se busca arriba y el número al costado."
+    },
+    {
+     "t": "texto",
+     "md": "Esa es la ubicación **absoluta**: sirve sola, aunque no se sepa qué hay alrededor. Un lugar también se puede describir comparándolo con otra cosa, diciendo si está a la izquierda, a la derecha, arriba o abajo. Esa es la ubicación relativa."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un quiosco está en la columna E y en la fila 2.",
+     "pasos": [
+      "Primero anoto la columna: la letra E.",
+      "Después anoto la fila: el número 2.",
+      "Se escribe (E, 2), siempre la letra primero.",
+      "Escribirlo al revés sería otra cosa y nadie lo encontraría."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Vulpi está en (C, 4) y un árbol está en (B, 4).",
+     "pasos": [
+      "Los dos tienen el mismo número, así que están en la misma fila.",
+      "La B viene antes que la C en el abecedario, así que su columna está más a la izquierda.",
+      "Entonces el árbol está a la izquierda de Vulpi.",
+      "El mismo lugar se puede decir de dos maneras: con su letra y su número, o comparándolo con otro."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 15",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa16",
+   "oa": "MA04 OA 16",
+   "titulo": "Las vistas de un cuerpo",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una **vista** es lo que se ve de un cuerpo mirándolo desde un solo lugar, como si se le sacara una foto plana. Se miran tres: desde el frente, desde un lado y desde arriba."
+    },
+    {
+     "t": "diagrama",
+     "kind": "solido",
+     "params": {
+      "tipo": "prisma",
+      "etiqueta": "Tres vistas"
+     },
+     "intro": "Imagina que le sacas una foto a este cuerpo desde tres lugares distintos."
+    },
+    {
+     "t": "texto",
+     "md": "Una vista siempre es una figura plana, nunca el cuerpo entero. Un truco que ayuda: imaginar que se apoya una hoja contra el cuerpo y se dibuja el contorno que queda marcado."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Miremos una barra de chocolate con forma de prisma de base triangular.",
+     "pasos": [
+      "Desde el frente se ve la punta: un triángulo.",
+      "Desde un lado se ve la pared larga: un rectángulo.",
+      "Desde arriba se ve el espacio que ocupa apoyada: otro rectángulo.",
+      "Un mismo cuerpo puede dar vistas distintas según desde dónde se mire."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un error que se repite mucho: responder con el cuerpo en vez de la figura.",
+     "pasos": [
+      "Alguien pregunta qué se ve desde arriba y le responden que se ve una caja.",
+      "Pero una caja es un cuerpo, y una vista es plana.",
+      "La respuesta correcta siempre es una figura de dos dimensiones.",
+      "Truco para revisar: si la respuesta no se puede dibujar en una hoja, no es una vista."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 16",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa17",
+   "oa": "MA04 OA 17",
+   "titulo": "La línea de simetría",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una figura es simétrica cuando se puede doblar por una línea y las dos mitades calzan justo, una encima de la otra. Esa línea se llama **línea de simetría**."
+    },
+    {
+     "t": "diagrama",
+     "kind": "transformacion",
+     "params": {
+      "tipo": "reflexion",
+      "figura": [
+       [
+        0,
+        0
+       ],
+       [
+        3,
+        0
+       ],
+       [
+        0,
+        3.5
+       ]
+      ],
+      "etiqueta": "Las dos mitades calzan"
+     },
+     "intro": "La mitad de la izquierda es el reflejo exacto de la mitad de la derecha."
+    },
+    {
+     "t": "texto",
+     "md": "Para probar una línea hay que doblar por ahí. Si una parte sobra o queda corrida, no es línea de simetría. Una figura puede tener varias líneas, una sola, o ninguna."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un triángulo isósceles, el que tiene dos lados iguales.",
+     "pasos": [
+      "Lo doblo por una línea vertical que pasa por la punta de arriba.",
+      "Los dos lados iguales quedan uno encima del otro: calzan.",
+      "Si lo doblo de lado a lado, en cambio, las mitades no calzan.",
+      "Entonces tiene una sola línea de simetría, la vertical."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora la letra E.",
+     "pasos": [
+      "Doblada por una línea vertical, los tres palitos no calzan con el palo largo.",
+      "Doblada de lado a lado, el palito de arriba cae justo sobre el de abajo.",
+      "El palito del medio queda encima del doblez.",
+      "Entonces la E sí tiene una línea de simetría, y es horizontal."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 17",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa18",
+   "oa": "MA04 OA 18",
+   "titulo": "Deslizar, girar y voltear",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una figura se puede mover de tres maneras sin cambiar de forma ni de tamaño. La **traslación** la desliza a otro lugar, sin girarla ni voltearla."
+    },
+    {
+     "t": "diagrama",
+     "kind": "transformacion",
+     "params": {
+      "tipo": "traslacion",
+      "vector": [
+       3,
+       1
+      ],
+      "etiqueta": "La figura se desliza"
+     },
+     "intro": "Todos los puntos de la figura se corren exactamente lo mismo."
+    },
+    {
+     "t": "texto",
+     "md": "En la **rotación** la figura gira apoyada en un punto, como la tapa de un frasco al enroscarla. Si gira igual que las agujas de un reloj se dice sentido horario, y al revés, sentido antihorario."
+    },
+    {
+     "t": "diagrama",
+     "kind": "transformacion",
+     "params": {
+      "tipo": "rotacion",
+      "etiqueta": "Un cuarto de vuelta"
+     },
+     "intro": "Aquí la figura giró un cuarto de vuelta alrededor de un punto."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Y la tercera es la reflexión. ¿Cómo saber qué movimiento fue?",
+     "pasos": [
+      "Si la figura quedó mirando igual y solo cambió de lugar, fue una traslación.",
+      "Si quedó volteada, con la derecha donde estaba la izquierda, fue una reflexión.",
+      "Si giró apoyada en un punto, fue una rotación.",
+      "En los tres casos la figura sigue midiendo exactamente lo mismo."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 18",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa19",
+   "oa": "MA04 OA 19",
+   "titulo": "Construir ángulos con el transportador",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un ángulo se mide en grados y se construye con un **transportador**. La medida no depende del largo de los lados: dos ángulos pueden verse de distinto porte y medir lo mismo."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Los tres tipos de ángulo comparados con el ángulo recto",
+      "items": [
+       {
+        "titulo": "Agudo",
+        "texto": "Mide menos de 90 grados."
+       },
+       {
+        "titulo": "Recto",
+        "texto": "Mide justo 90 grados."
+       },
+       {
+        "titulo": "Obtuso",
+        "texto": "Mide más de 90 grados."
+       }
+      ],
+      "etiqueta": "Y el llano mide 180 grados"
+     },
+     "intro": "Los tres tipos se distinguen mirando dónde queda el ángulo respecto de 90 grados."
+    },
+    {
+     "t": "texto",
+     "md": "Para construir un ángulo se traza primero un rayo. Después se pone el centro del transportador justo en el vértice, se busca la marca de los grados que se quieren y se traza el segundo rayo."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Construyamos un ángulo de 55 grados.",
+     "pasos": [
+      "Trazo un rayo y marco su extremo: ese punto es el vértice.",
+      "Apoyo el centro del transportador justo en el vértice, sobre el rayo.",
+      "Busco la marca de 55 en la escala que empieza en cero de ese lado.",
+      "Trazo el segundo rayo desde el vértice hasta esa marca.",
+      "El ángulo queda agudo, porque 55 no llega a 90."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "El transportador trae dos escalas, y hay que elegir bien.",
+     "pasos": [
+      "Al medir, el lado del ángulo cae justo donde dicen 65 y 115.",
+      "Miro la abertura del ángulo: se ve bien cerrada.",
+      "Un ángulo cerrado es agudo, así que mide menos de 90 grados.",
+      "La lectura correcta es 65 grados."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 19",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa20",
+   "oa": "MA04 OA 20",
+   "titulo": "Leer la hora",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "En un reloj de agujas, la aguja corta marca la hora y la aguja larga marca los minutos. Para la aguja larga, cada número grande vale cinco minutos."
+    },
+    {
+     "t": "diagrama",
+     "kind": "reloj",
+     "params": {
+      "hora": 5,
+      "minutos": 25,
+      "etiqueta": "5:25"
+     },
+     "intro": "La aguja corta ya pasó el 5 y la aguja larga se detuvo en el número 5."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Leamos este reloj paso a paso.",
+     "pasos": [
+      "Miro primero la aguja corta: pasó el 5 y todavía no llega al 6, así que la hora es 5.",
+      "Ahora la aguja larga: está justo en el número 5.",
+      "Cada número vale cinco minutos para esa aguja, así que cuento cinco veces cinco.",
+      "Son 25 minutos: el reloj marca las 5 y 25."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "El día tiene 24 horas, pero el reloj de agujas solo llega hasta 12, así que cada número aparece dos veces al día. Por eso hay que decir si es de la mañana, de la tarde o de la noche. Un reloj digital de **24 horas** no repite ninguno: cuenta seguido desde la cero hasta la 23."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un reloj digital marca las 21:00. ¿Qué hora es?",
+     "pasos": [
+      "El número pasa de 12, así que es después del mediodía.",
+      "Le resto 12 al número de la hora: 21 menos 12 da 9.",
+      "Los minutos no cambian, sigue siendo en punto.",
+      "Son las 9 de la noche."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 20",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa21",
+   "oa": "MA04 OA 21",
+   "titulo": "Cambiar de unidad de tiempo",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Las unidades de tiempo se encajan unas dentro de otras. Un minuto tiene 60 segundos, una hora tiene 60 minutos y un año tiene 12 meses."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "niveles",
+      "piramide": false,
+      "desc": "Las unidades de tiempo y cuántas veces cabe cada una en la anterior",
+      "items": [
+       {
+        "titulo": "1 año",
+        "texto": "12 meses"
+       },
+       {
+        "titulo": "1 mes",
+        "texto": "28, 30 o 31 días"
+       },
+       {
+        "titulo": "1 hora",
+        "texto": "60 minutos"
+       },
+       {
+        "titulo": "1 minuto",
+        "texto": "60 segundos"
+       }
+      ],
+      "etiqueta": "Los meses no duran todos lo mismo"
+     },
+     "intro": "Cada unidad se parte en unidades más chicas, y casi siempre en la misma cantidad."
+    },
+    {
+     "t": "texto",
+     "md": "Pasar de una unidad a otra se llama **convertir**. Al pasar a una unidad más chica el número crece, porque se multiplica. Al pasar a una más grande el número achica, porque se divide."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "¿Cuántos segundos hay en 4 minutos?",
+     "pasos": [
+      "El segundo es más chico que el minuto, así que el número tiene que crecer.",
+      "Cada minuto tiene 60 segundos, entonces multiplico 4 por 60.",
+      "4 × 60 = 240.",
+      "En 4 minutos hay 240 segundos."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora al revés: un puente se construyó en 50 meses.",
+     "pasos": [
+      "El año es más grande que el mes, así que el número tiene que achicar.",
+      "Busco cuántas veces cabe 12 dentro de 50: cabe 4 veces, porque 4 × 12 = 48.",
+      "Sobran 2 meses, porque 50 menos 48 da 2.",
+      "El puente se construyó en 4 años y 2 meses."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 21",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa22",
+   "oa": "MA04 OA 22",
+   "titulo": "Metros y centímetros",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un metro tiene 100 centímetros. El centímetro sirve para medir lo chico, como un lápiz o un cuaderno. El metro sirve para lo grande, como una sala o una cancha."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 0,
+      "max": 200,
+      "paso": 20,
+      "marca": 100,
+      "interactivo": true,
+      "signo": false
+     },
+     "intro": "Arrastra la marca sobre esta huincha de centímetros y fíjate dónde queda el metro."
+    },
+    {
+     "t": "texto",
+     "md": "Para pasar de metros a centímetros se multiplica por 100. Para pasar de centímetros a metros se busca cuántos cien caben, y lo que sobra son los centímetros sueltos."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Una cuerda mide 9 metros. ¿Cuántos centímetros son?",
+     "pasos": [
+      "El centímetro es más chico, así que el número tiene que crecer.",
+      "Cada metro son 100 centímetros, entonces multiplico 9 por 100.",
+      "9 × 100 = 900.",
+      "La cuerda mide 900 centímetros."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora al revés: una mesa mide 275 centímetros.",
+     "pasos": [
+      "Separo de cien en cien: en 275 caben 2 veces 100.",
+      "Esos 200 centímetros son 2 metros.",
+      "Sobran 75, porque 275 menos 200 da 75.",
+      "La mesa mide 2 metros y 75 centímetros."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 22",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa23",
+   "oa": "MA04 OA 23",
+   "titulo": "El área de un rectángulo",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "El área es la superficie que una figura cubre por dentro. Se mide en **unidades cuadradas**, o sea contando cuántos cuadraditos iguales caben adentro."
+    },
+    {
+     "t": "diagrama",
+     "kind": "cuadricula",
+     "params": {
+      "cols": 7,
+      "filas": 3,
+      "etiqueta": "7 de base y 3 de altura"
+     },
+     "intro": "Cada casilla es un cuadradito de un centímetro por lado. Cuenta cuántas hay."
+    },
+    {
+     "t": "texto",
+     "md": "Contar uno por uno toma mucho rato. Como todas las filas tienen la misma cantidad de cuadraditos, basta con multiplicar la base por la altura."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Calculemos el área del rectángulo del dibujo.",
+     "pasos": [
+      "La base tiene 7 cuadraditos y hay 3 filas.",
+      "Sumando fila por fila sería 7 más 7 más 7.",
+      "Multiplicar es más rápido: 7 × 3 = 21.",
+      "El área es 21 centímetros cuadrados."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Dos rectángulos distintos pueden tener la misma área.",
+     "pasos": [
+      "Uno mide 4 de base y 10 de altura: 4 × 10 = 40.",
+      "Otro mide 5 de base y 8 de altura: 5 × 8 = 40.",
+      "Los dos tienen 40 centímetros cuadrados, aunque se ven muy distintos.",
+      "Por eso, para una misma área, hay varios rectángulos posibles."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 23",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa24",
+   "oa": "MA04 OA 24",
+   "titulo": "El volumen se cuenta en cubos",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "El volumen es el espacio que ocupa un cuerpo. Se mide en **unidades de cubo**: se cuenta cuántos cubos iguales caben adentro."
+    },
+    {
+     "t": "diagrama",
+     "kind": "solido",
+     "params": {
+      "tipo": "prisma",
+      "etiqueta": "Volumen en cubos"
+     },
+     "intro": "Este cuerpo se puede llenar con cubos iguales, apilados en capas."
+    },
+    {
+     "t": "texto",
+     "md": "Conviene contar por capas: primero cuántos cubos hay en una sola capa, y después por cuántas capas se repite. Ojo, que también hay cubos escondidos adentro, y esos cuentan igual."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un cuerpo con una capa de 4 cubos de largo por 5 de ancho, y 2 capas de alto.",
+     "pasos": [
+      "Cuento primero una sola capa: tiene 4 cubos de largo y 5 de ancho.",
+      "En esa capa hay 20 cubos, porque 4 × 5 = 20.",
+      "El cuerpo tiene 2 capas iguales, una encima de la otra.",
+      "Entonces son 40 cubos en total, porque 20 × 2 = 40."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 24",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa25",
+   "oa": "MA04 OA 25",
+   "titulo": "Hacer una encuesta y leerla",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una **encuesta** es preguntarle lo mismo a un grupo de personas y anotar todas las respuestas. Los datos sueltos no dicen nada: primero hay que ordenarlos en una tabla o en un gráfico."
+    },
+    {
+     "t": "diagrama",
+     "kind": "barras",
+     "params": {
+      "datos": [
+       {
+        "etiqueta": "ludo",
+        "valor": 9
+       },
+       {
+        "etiqueta": "damas",
+        "valor": 7
+       },
+       {
+        "etiqueta": "ajedrez",
+        "valor": 5
+       },
+       {
+        "etiqueta": "dominó",
+        "valor": 3
+       }
+      ],
+      "desde": 0
+     },
+     "intro": "Un curso de 24 votó su juego de mesa favorito. Cada barra es una respuesta posible."
+    },
+    {
+     "t": "texto",
+     "md": "Con los datos ordenados se puede responder cuál fue el más elegido, cuántos votaron algo y cuántos contestaron en total. La suma de todas las respuestas tiene que dar justo el total de encuestados."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Leamos la encuesta del juego de mesa.",
+     "pasos": [
+      "El más elegido es el ludo, con 9 votos.",
+      "Entre damas y ajedrez suman 7 más 5, o sea 12.",
+      "Sumando las cuatro respuestas: 9 más 7 más 5 más 3 da 24.",
+      "Y 24 es justo el total del curso, así que no se perdió ningún dato."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Otro curso de 24 hizo la misma encuesta y ahí ganaron las damas.",
+     "pasos": [
+      "Los dos cursos preguntaron lo mismo y a la misma cantidad de personas.",
+      "Aun así el resultado cambió, porque son grupos distintos.",
+      "Un grupo chico no habla por todo el colegio.",
+      "Para saber qué prefiere el colegio entero hay que preguntarle a más cursos."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 25",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa26",
+   "oa": "MA04 OA 26",
+   "titulo": "Experimentos al azar",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un experimento **al azar** es uno cuyo resultado no se puede saber de antemano, como lanzar un dado. Lo que sí se puede hacer es repetirlo muchas veces y anotar qué sale en cada una."
+    },
+    {
+     "t": "diagrama",
+     "kind": "puntos",
+     "params": {
+      "valores": [
+       1,
+       1,
+       1,
+       2,
+       2,
+       3,
+       3,
+       3,
+       3,
+       4,
+       4,
+       5,
+       5,
+       5,
+       6,
+       6,
+       6,
+       6
+      ],
+      "min": 1,
+      "max": 6
+     },
+     "intro": "Un dado lanzado 18 veces. Cada punto marca una vez que salió ese número."
+    },
+    {
+     "t": "texto",
+     "md": "Tabular es contar cuántas veces salió cada resultado. La suma de todas las cuentas tiene que dar el total de repeticiones, y si no da es que se perdió o se contó de más algún dato."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Leamos el experimento del dibujo.",
+     "pasos": [
+      "El 1 salió 3 veces, el 2 salió 2 veces y el 3 salió 4 veces.",
+      "El 4 salió 2 veces, el 5 salió 3 veces y el 6 salió 4 veces.",
+      "Sumando todo: 3 más 2 más 4 más 2 más 3 más 4 da 18.",
+      "Cuadra con los 18 lanzamientos, así que la tabla está completa."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "¿Por qué no salieron todos la misma cantidad de veces?",
+     "pasos": [
+      "El dado tiene 6 caras y las 6 tienen la misma posibilidad de salir.",
+      "Con solo 18 lanzamientos, unos números salen más y otros menos.",
+      "Eso pasa por azar y no significa que el dado esté malo.",
+      "Mientras más veces se repite el experimento, más parejos suelen quedar."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 26",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma4-oa27",
+   "oa": "MA04 OA 27",
+   "titulo": "Pictogramas y gráficos con escala",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "En un **pictograma** cada dibujo puede valer más de uno. Abajo del gráfico va la clave, que dice cuánto vale cada símbolo, y sin mirarla no se entiende nada."
+    },
+    {
+     "t": "diagrama",
+     "kind": "pictograma",
+     "params": {
+      "datos": [
+       {
+        "etiqueta": "pecera A",
+        "valor": 48
+       },
+       {
+        "etiqueta": "pecera B",
+        "valor": 42
+       },
+       {
+        "etiqueta": "pecera C",
+        "valor": 30
+       }
+      ],
+      "icono": "🐟",
+      "escala": 6,
+      "etiqueta": "Cada dibujo vale 6"
+     },
+     "intro": "Cada pez dibujado vale 6 peces de verdad. Cuenta los dibujos y multiplica."
+    },
+    {
+     "t": "texto",
+     "md": "Un gráfico de barras también puede usar **escala**. Si el eje sube de tres en tres, la primera línea vale 3, la segunda vale 6 y así. Leer la barra sin mirar la escala es el error más común."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Leamos el pictograma del dibujo.",
+     "pasos": [
+      "La pecera A tiene 8 dibujos y cada uno vale 6 peces.",
+      "Multiplico: 8 × 6 = 48 peces.",
+      "La pecera C tiene 5 dibujos, o sea 30 peces, porque 5 × 6 = 30.",
+      "La A tiene 18 peces más que la C, porque 48 menos 30 da 18."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ahora un gráfico de barras cuyo eje sube de tres en tres.",
+     "pasos": [
+      "Las líneas del eje valen 3, 6, 9, 12 y 15.",
+      "La barra del jueves llega justo a la cuarta línea.",
+      "Cuento de tres en tres cuatro veces: 3, 6, 9 y 12.",
+      "Entonces la barra del jueves vale 12."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA04 OA 27",
+      "n": 10
+     }
+    }
+   ],
+   "revisada": false
+  }
+ ]
+}

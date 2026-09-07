@@ -27,7 +27,7 @@ La pantalla principal ofrece un **módulo por asignatura**. **Historia**, **Cien
 todos los OA del año, con **Jefe Final multi-fase** (barra de vida, 3 corazones) y
 **recompensas** (skin exclusiva, insignia coleccionable, corona y bono). **Matemáticas**
 tiene un **camino de aprendizaje** completo en cuatro cursos (los 17 OA de 8°, los 27 de 5°, los
-26 de 3° y los 19 de 7°: **89 mini-clases** en total): mini-clases guiadas con
+26 de 3°, los 27 de 4°, los 24 de 6° y los 19 de 7°: **140 mini-clases** en total, en los seis cursos): mini-clases guiadas con
 explicación, **diagramas interactivos** (recta, fracciones, potencias, plano cartesiano con
 función, balanza de ecuaciones, triángulo de Pitágoras, sólidos, transformaciones en el plano,
 diagrama de cajón, gráficos de barras y árbol de posibilidades) y práctica; aprender cada tema
@@ -113,8 +113,8 @@ manual antes de coronar la v1.
 
 **VULPO ya cubre de 3° a 8° básico**, los seis cursos completos con sus cuatro asignaturas,
 **anunciados y enlazados desde `vulpo.cl`**, cada uno como su propia app: 3°, 4°, 5°, 6°, 7° y
-8° básico. **El banco del proyecto son 16.865 preguntas, todas aprobadas**, y sus **172 mini-clases
-e introducciones también.** Es una foto, no un estado: cada tanda nueva vuelve a la cola de
+8° básico. **El banco del proyecto son 16.865 preguntas, todas aprobadas**, y de sus **233 mini-clases
+e introducciones hay 172 firmadas** (las 61 del 07/09 esperan su turno). Es una foto, no un estado: cada tanda nueva vuelve a la cola de
 aprobación antes de llegar a un alumno, así que el número se vuelve a medir en cada cierre.
 
 **Qué falta y en qué orden está en [`pendiente.md`](pendiente.md)**, la lista viva de tareas:

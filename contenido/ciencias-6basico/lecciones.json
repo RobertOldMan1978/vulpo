@@ -1,0 +1,178 @@
+{
+ "lecciones": [
+  {
+   "id": "ci6-ecosistemas",
+   "titulo": "Antes de empezar: Ecosistemas y energía de la vida",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Todo lo que vive necesita energía, y en un ecosistema esa energía entra por una sola puerta: los organismos que pueden aprovechar la luz del Sol. Los demás no pueden hacerlo, así que todos dependen de ellos."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "intro": "La energía entra una sola vez y avanza siempre hacia el mismo lado.",
+     "params": {
+      "forma": "secuencia",
+      "desc": "La energía pasa del Sol a quien capta su luz, y de ahí a quien se alimenta de él",
+      "items": [
+       {
+        "titulo": "El Sol"
+       },
+       {
+        "titulo": "Quien capta la luz"
+       },
+       {
+        "titulo": "Quien se lo come"
+       }
+      ],
+      "etiqueta": "Va en un solo sentido y no vuelve"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Por eso una **red alimentaria** no es una lista de quién se come a quién: es un mapa de por dónde va esa energía. Y si se toca un eslabón, se mueven los demás, incluso los que parecían lejos."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver qué necesita una planta para hacer fotosíntesis, cómo se representan las cadenas y las redes, y qué ocurre cuando la actividad humana cambia una de sus piezas."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ci6-cuerpo",
+   "titulo": "Antes de empezar: Mi cuerpo y mi salud",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Este capítulo es parte del programa de Ciencias Naturales de sexto básico y se trata con el mismo criterio que el resto: describir cómo funciona el cuerpo, con los nombres que usa la ciencia."
+    },
+    {
+     "t": "texto",
+     "md": "La pubertad es una etapa del desarrollo humano en la que el cuerpo cambia. Esos cambios son físicos y también emocionales, y no aparecen a la misma edad ni en el mismo orden en todas las personas: esa diferencia es parte de lo esperable."
+    },
+    {
+     "t": "texto",
+     "md": "Cuando el cuerpo cambia, también cambian los cuidados que necesita. Por eso el capítulo se ocupa además de la actividad física y de la higiene, explicando qué le pasa al organismo en esta etapa y no como una lista de reglas."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver las estructuras del sistema reproductor humano y la función de cada una, qué cambios trae la pubertad en mujeres y en hombres, por qué el ejercicio y la higiene importan en este período, y qué efectos tienen algunas drogas sobre el organismo."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ci6-energia",
+   "titulo": "Antes de empezar: La energía",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "La energía no se ve ni se toca, pero se nota en todo lo que cambia: algo se mueve, algo se calienta, algo se enciende, alguien crece. Donde hubo un cambio, hubo energía."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "intro": "La energía no aparece ni desaparece: pasa de una forma a otra.",
+     "params": {
+      "forma": "secuencia",
+      "desc": "La energía que estaba guardada se transforma y aparece como luz, calor o movimiento",
+      "items": [
+       {
+        "titulo": "Energía guardada"
+       },
+       {
+        "titulo": "Se transforma"
+       },
+       {
+        "titulo": "Luz, calor o movimiento"
+       }
+      ],
+      "etiqueta": "No aparece de la nada: cambia de forma"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Buena parte de la energía que usamos empezó su camino en el Sol, aunque a veces por rutas largas y poco evidentes. Rastrear ese camino hacia atrás es una de las cosas que hace este capítulo."
+    },
+    {
+     "t": "texto",
+     "md": "Vas a ver además cómo pasa la energía de una forma a otra, qué ocurre cuando un objeto caliente se junta con uno frío, y en qué se distinguen los recursos energéticos que usamos hoy."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ci6-materia",
+   "titulo": "Antes de empezar: La materia y sus cambios",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Todo lo que ocupa lugar está hecho de partículas: piezas tan pequeñas que ningún ojo alcanza a distinguirlas. Y aunque un objeto se vea completamente quieto, adentro está pasando algo."
+    },
+    {
+     "t": "diagrama",
+     "kind": "estados",
+     "params": {
+      "etiqueta": "Cambia el orden, no la materia"
+     },
+     "intro": "Mira dónde está cada partícula en los tres casos."
+    },
+    {
+     "t": "texto",
+     "md": "A esa idea la ciencia le llama **modelo de partículas**, y con ella se pueden responder cosas que de otro modo habría que memorizar: por qué un gas se puede apretar, por qué un líquido toma la forma del vaso, o por qué el hielo, el agua y el vapor son la misma sustancia."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver ese modelo con más detalle, los cambios de estado que puede tener un material, la diferencia entre calor y temperatura, y qué marca un termómetro justo mientras el agua está cambiando de estado."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ci6-tierra",
+   "titulo": "Antes de empezar: La Tierra y el suelo",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "La Tierra no es una sola cosa: se puede mirar como tres capas que se tocan y se mezclan. Las tres juntas son las que hacen posible la vida, y de las tres sale lo que el ser humano usa todos los días."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "intro": "Tres capas que se tocan, y de las tres depende la vida.",
+     "params": {
+      "forma": "niveles",
+      "piramide": false,
+      "desc": "Las tres capas de la Tierra, una sobre otra",
+      "items": [
+       {
+        "titulo": "Atmósfera",
+        "texto": "La capa de gases que rodea el planeta."
+       },
+       {
+        "titulo": "Hidrósfera",
+        "texto": "Toda el agua de la Tierra, en cualquier estado."
+       },
+       {
+        "titulo": "Litósfera",
+        "texto": "La capa de roca y el suelo que la cubre."
+       }
+      ],
+      "etiqueta": "Donde las tres se tocan aparece el suelo"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "El suelo es justamente ese punto de encuentro, y por eso es tan delgado y tan valioso: casi todo lo que comemos sale de esos pocos centímetros de la superficie."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver qué aporta cada capa y cómo se protege, de qué está hecho el suelo y qué propiedades tiene, y qué es la **erosión**: el desgaste que el viento, el agua y también las personas le hacen a la superficie de la Tierra."
+    }
+   ],
+   "revisada": false
+  }
+ ]
+}

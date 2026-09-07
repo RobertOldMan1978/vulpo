@@ -1,0 +1,196 @@
+{
+ "lecciones": [
+  {
+   "id": "ci4-ecosistemas",
+   "titulo": "Antes de empezar: los ecosistemas de Chile",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Chile tiene lugares tan distintos que cuesta creer que sean el mismo país: el desierto más seco del planeta en el norte, bosques lluviosos en el sur, el altiplano allá arriba y una costa larguísima. En cada uno viven plantas y animales diferentes, y eso no es casualidad."
+    },
+    {
+     "t": "texto",
+     "md": "A todo lo que hay en uno de esos lugares se le llama **ecosistema**: los seres vivos y también lo que no tiene vida, como el agua, el aire o las rocas. Lo importante es que no están ahí cada uno por su lado. Se necesitan y se afectan entre ellos."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "niveles",
+      "piramide": false,
+      "desc": "Los tres papeles de un ecosistema, uno debajo del otro",
+      "items": [
+       {
+        "titulo": "Productores"
+       },
+       {
+        "titulo": "Consumidores"
+       },
+       {
+        "titulo": "Descomponedores"
+       }
+      ],
+      "etiqueta": "El alimento va pasando de unos a otros"
+     },
+     "intro": "Y hay tres papeles que se repiten en cualquier ecosistema del mundo. Los vas a ver una y otra vez en este capítulo."
+    },
+    {
+     "t": "texto",
+     "md": "Con esa idea vas a mirar tres cosas más. Por qué el cuerpo de un animal del desierto es tan distinto al de uno del sur. Cómo se ordenan las cadenas de alimento en lugares reales de Chile. Y qué ocurre cuando las personas cambian un ecosistema, que tiene dos caras: el daño que se hace y también lo que se hace para cuidarlo."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ci4-cuerpo",
+   "titulo": "Antes de empezar: mi cuerpo por dentro",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Levantar un brazo parece lo más simple del mundo, y sin embargo dentro de ti acaban de trabajar juntas varias partes distintas. Ninguna de ellas podría hacerlo sola. En este capítulo vas a mirar el cuerpo por dentro para entender cómo se coordinan."
+    },
+    {
+     "t": "texto",
+     "md": "Vas a conocer tres equipos. Los huesos, que arman la estructura del cuerpo y protegen lo que está adentro. Los músculos, que son los que hacen la fuerza. Y el **sistema nervioso**, que da las órdenes y recibe todo lo que sientes."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "desc": "Esquema de tres pasos, del aviso a la decisión y al movimiento",
+      "items": [
+       {
+        "titulo": "El sentido avisa"
+       },
+       {
+        "titulo": "El cerebro decide"
+       },
+       {
+        "titulo": "El cuerpo se mueve"
+       }
+      ],
+      "etiqueta": "Tres equipos para un solo movimiento"
+     },
+     "intro": "Un movimiento cualquiera, como agacharte a recoger un lápiz, pasa siempre por estos tres momentos."
+    },
+    {
+     "t": "texto",
+     "md": "El capítulo cierra con otro tema del cuerpo: qué efectos produce en una persona el consumo excesivo de alcohol. Se explica igual que el resto, mirando qué le pasa al cuerpo por dentro."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ci4-materia",
+   "titulo": "Antes de empezar: la materia",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una piedra, el agua de un vaso y la ropa que llevas puesta no se parecen en nada, y sin embargo tienen dos cosas en común: todas tienen masa, que es la cantidad de materia que tienen, y todas ocupan un espacio. A eso se le llama **materia**, y de eso está hecho todo lo que puedes tocar."
+    },
+    {
+     "t": "diagrama",
+     "kind": "estados",
+     "params": {
+      "etiqueta": "Las mismas partículas, cada vez más sueltas"
+     },
+     "intro": "La misma materia puede presentarse de tres formas distintas, y la diferencia está en qué tan juntas y ordenadas están sus partículas."
+    },
+    {
+     "t": "texto",
+     "md": "Sólido, líquido y gas no se distinguen a simple vista, sino probando cosas: si el material fluye, si toma la forma del envase donde está, si se puede apretar hasta ocupar menos espacio. Esas son las preguntas que vas a usar para compararlos."
+    },
+    {
+     "t": "texto",
+     "md": "Y hay una parte de medir, que es la que convierte una impresión en un dato. Cuánta materia hay, que es la masa. Cuánto espacio ocupa, que es el volumen. Y qué tan caliente está, que es la temperatura. Cada una se mide con su propio instrumento y su propia unidad, y no se mezclan entre ellas."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ci4-fuerzas",
+   "titulo": "Antes de empezar: fuerzas y máquinas",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una **fuerza** es un empujón o un tirón. No se ve por ninguna parte, así que la única forma de saber que hubo una es mirar lo que le pasó a las cosas."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Esquema con tres efectos posibles de una fuerza sobre un objeto",
+      "items": [
+       {
+        "titulo": "La forma",
+        "texto": "Se dobla, se aplasta o se estira"
+       },
+       {
+        "titulo": "La rapidez",
+        "texto": "Parte, acelera o frena"
+       },
+       {
+        "titulo": "La dirección",
+        "texto": "Sigue andando, pero hacia otro lado"
+       }
+      ],
+      "etiqueta": "Tres cosas que una fuerza puede cambiar"
+     },
+     "intro": "Cuando una fuerza actúa sobre un objeto, hay tres cosas que le pueden cambiar."
+    },
+    {
+     "t": "texto",
+     "md": "Después vas a ver de dónde vienen esas fuerzas. Algunas necesitan que dos cosas se toquen, como cuando algo se arrastra por el suelo. Otras actúan a la distancia, sin tocar nada, y esas son las que más sorprenden."
+    },
+    {
+     "t": "texto",
+     "md": "Y al final el capítulo se pone a construir. Vas a mirar objetos que alguien diseñó a propósito para que una fuerza haga el trabajo pesado, y a pensar cómo resolverías tú un problema de todos los días con la misma idea."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ci4-tierra",
+   "titulo": "Antes de empezar: la Tierra y sus riesgos",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "En Chile tiembla, y eso no pasa en todas partes del mundo. La explicación no está en la superficie: empieza mucho más abajo de lo que se puede cavar."
+    },
+    {
+     "t": "texto",
+     "md": "La Tierra no es una bola maciza y pareja por dentro. Está formada por **capas**, una debajo de la otra, y cada una es distinta de las demás."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "niveles",
+      "piramide": false,
+      "desc": "Las tres capas de la Tierra, una debajo de la otra",
+      "items": [
+       {
+        "titulo": "Corteza"
+       },
+       {
+        "titulo": "Manto"
+       },
+       {
+        "titulo": "Núcleo"
+       }
+      ],
+      "etiqueta": "De la superficie hacia el centro"
+     },
+     "intro": "Este es el modelo que vas a usar durante todo el capítulo. Son tres capas, desde la que pisas hasta el centro del planeta."
+    },
+    {
+     "t": "texto",
+     "md": "La capa de más afuera no es una sola pieza: está partida en pedazos enormes que se mueven tan despacio que nadie lo nota. De ese movimiento salen los sismos, los tsunamis y las erupciones de los volcanes. Y el capítulo termina con lo que sí depende de nosotros: qué se prepara antes, en la escuela y en la casa, para que un sismo no tome a nadie desprevenido."
+    }
+   ],
+   "revisada": false
+  }
+ ]
+}
