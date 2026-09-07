@@ -870,9 +870,19 @@ function renderMapa(){
  // No se toca progAct()[0]: es solo el estado que se muestra y lo que hace clic, así que
  // ningún alumno con partida vieja pierde nada — antes de esto ya no se podía llegar aquí
  // sin haber terminado las lecciones (la tarjeta de la campaña las exigía para abrirse).
- // ⚠️ `CAPS_ABIERTOS` manda: en modo prueba y en QA las mini-clases se VEN pero no bloquean,
- // igual que las etapas — un profesor revisando contenido no puede quedar trancado.
- const leccBloqueadas = !!(LECS_EXP && LECS_EXP.length && !CAPS_ABIERTOS &&
+ // ⚠️ Mira `LECC_ABIERTAS` y NO `CAPS_ABIERTOS`, y la diferencia es de fondo: este candado
+ // no es de progresión sino PEDAGÓGICO —"aprender desbloquea el desafío", Sesión 29—, así
+ // que ORDEN_LIBRE, que abre el orden de capítulos y etapas, tiene que dejarlo en pie.
+ // Cuando las dos cosas compartían bandera, volver ORDEN_LIBRE el default las habría
+ // apagado a las dos de una sola vez, sin que nada avisara.
+ // En modo prueba y en QA sí se ven pero no bloquean: un profesor revisando contenido no
+ // puede quedar trancado.
+ // El `typeof` no es adorno: `LECC_ABIERTAS` la declara cada fork, y un navegador puede
+ // tener este motor ya cacheado y el index.html todavía viejo durante el despliegue. Sin
+ // la guarda eso sería un ReferenceError que mata el mapa entero — el fallo mudo de
+ // siempre: la pantalla se ve bien y ningún nodo responde.
+ const leccAbiertas = (typeof LECC_ABIERTAS!=='undefined') ? LECC_ABIERTAS : (QA||PRUEBA);
+ const leccBloqueadas = !!(LECS_EXP && LECS_EXP.length && !leccAbiertas &&
    !LECS_EXP.every(id=>S.mateLecciones[id]));
  EXPEDICION.forEach((n,i)=>{
   const p=progAct()[i];
@@ -1027,9 +1037,12 @@ function activarExpedicion(exp){
 function nuevoProgreso(n){n=n||(EXPEDICION?EXPEDICION.length:5);
  // En modo prueba (?solo=) la ruta nace con TODAS las etapas abiertas, jefe del
  // capítulo incluido: el invitado entra a probar cualquiera, no a avanzar en orden.
- // En modo experimental se abren todas MENOS la del jefe, que sigue pidiendo el camino.
+ // Con ORDEN_LIBRE —el default desde el 06/09/2026— se abren todas MENOS la del jefe,
+ // que sigue pidiendo el camino. Es la misma rama que usaba el modo experimental, y por
+ // eso la expresión no cambió: `CAPS_ABIERTOS && !JEFES_ABIERTOS` ya decía exactamente
+ // "todo abierto salvo los jefes".
  // ⚠️ ?qa=1 NO abre etapas y nunca las abrió: por eso la condición mira PRUEBA y no
- //    CAPS_ABIERTOS, que también vale true en QA.
+ //    CAPS_ABIERTOS, que también vale true en QA (y ahí JEFES_ABIERTOS apaga esta rama).
  return Array.from({length:n},(_,i)=>{
   const esJefe=(i===n-1);
   const abierta = PRUEBA || i===0 || (CAPS_ABIERTOS && !JEFES_ABIERTOS && !esJefe);
@@ -1042,7 +1055,20 @@ function estadoRuta(exp){
  const st=S.rutas[exp.id];
  if(!Array.isArray(st.progreso)||st.progreso.length!==n) st.progreso=reconciliarProgreso(st.progreso,n);
  if(!Array.isArray(st.progresoDificil)||st.progresoDificil.length!==n) st.progresoDificil=reconciliarProgreso(st.progresoDificil,n);
+ abrirOrdenLibre(st.progreso); abrirOrdenLibre(st.progresoDificil);
  return st;
+}
+/* ⚠️ `nuevoProgreso` solo corre al CREAR la ruta, así que una partida guardada ANTES de
+   que ORDEN_LIBRE fuera el default traería sus etapas en 'lock' y el cambio no le
+   llegaría nunca: dos alumnos verían juegos distintos según cuándo empezaron, que es
+   imposible de explicarle a un apoderado. Esto las abre al LEERLAS.
+   No toca las 'done' (conservan sus estrellas) ni la del jefe, que sigue pidiendo
+   completar el capítulo — es donde vive la meta. Idempotente: correrlo dos veces da lo
+   mismo, y por eso puede vivir en estadoRuta, que se llama todo el tiempo. */
+function abrirOrdenLibre(p){
+ if(typeof ORDEN_LIBRE==='undefined'||!ORDEN_LIBRE||JEFES_ABIERTOS||!Array.isArray(p)) return p;
+ for(let i=0;i<p.length-1;i++) if(p[i]&&p[i].est==='lock') p[i].est='open';
+ return p;
 }
 /* ===== Helpers de progreso de campaña ===== */
 // ¿el jefe (último nodo) de esta expedición está vencido en Normal?

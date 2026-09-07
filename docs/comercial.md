@@ -56,7 +56,7 @@ Tres etapas. **En la reunión no se cierra una venta: se cierra una prueba.**
 
 | Etapa | Qué pasa |
 |---|---|
-| **1. La prueba engancha** | Enlace de muestra (`?solo=` / `?m=`) o la demo pública en `vulpo.cl/8vo`. Al terminar, la pantalla de fin de demo ofrece el contacto |
+| **1. La prueba engancha** | Los enlaces de `vulpo.cl` son **muestras acotadas a una unidad** de cada curso (`?solo=`, el capítulo `DEMO_LIBRE` del nivel), no el juego completo. Para un profesor, el armador (`?armar=1`) genera enlaces a medida, con caducidad si se quiere (`?m=`). ⚠️ Una muestra **no trae tienda, logros ni ranking**: la barra inferior va oculta |
 | **2. La reunión** | 15 minutos con dirección/UTP. Se muestra la app y el panel con datos. Guion aparte |
 | **3. El cierre** | Precio, mínimo, Fundador acotado y las tres condiciones |
 
@@ -119,8 +119,9 @@ recrear escenas de violencia. En 4°, el único es `CN04 OA 08` (efectos del alc
 más leve que los anteriores pero igual conviene mencionarlo. Es currículum obligatorio y los
 bancos están escritos de forma factual, sin promover ninguna postura, pero **hay que avisarle al
 colegio antes de publicarlo** — el colegio piloto es salesiano. Ver
-[`docs/contenido-sensible.md`](contenido-sensible.md) para el detalle completo por nivel (nota:
-su tabla todavía no lista a 5°, solo 3°/4°/6°/7°/8°).
+[`docs/contenido-sensible.md`](contenido-sensible.md) para el detalle completo por nivel, que
+desde el 06/09/2026 **ya lista los seis cursos** — 5° faltaba, y por eso sus dos capítulos de la
+conquista salían **sin marca** en el armador de enlaces.
 
 ## Hacia dónde va el modelo (acordado el 27/08/2026, NO vigente)
 

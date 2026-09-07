@@ -535,11 +535,42 @@ arriba del archivo, no como condiciones sueltas repartidas por el código.
 | `EXPERIMENTAL` | **No es de nivel sino del CURSO**: lo enciende la inscripción por enlace. Se lee del disco al arrancar y lo reconcilia `sincronizarModoCurso()`. Gobierna `CAPS_ABIERTOS` | según el curso | según el curso | según el curso | según el curso |
 
 `MODO_ABIERTO` se partió en **`CAPS_ABIERTOS`** (ignora los candados entre capítulos y
-niveles: QA, modo prueba y experimental) y **`JEFES_ABIERTOS`** (ignora los de los jefes y
-el Desafío Extra: solo QA y modo prueba). Es el mismo corte que la Sesión 41 le hizo a `QA`.
+niveles) y **`JEFES_ABIERTOS`** (ignora los de los jefes y el Desafío Extra: solo QA y modo
+prueba). Es el mismo corte que la Sesión 41 le hizo a `QA`.
 ⚠️ **El Desafío Extra va con los JEFES**: `jefeFinalDesbloqueado` lo usa como precondición,
 así que si se abriera con los capítulos, el Jefe Final de una campaña **sin** Desafío Extra
 —Ciencias— se abriría solo.
+
+> ### ⚠️ El orden es LIBRE por defecto desde el 06/09/2026 (`ORDEN_LIBRE`)
+>
+> Decisión de producto de Roberto, y el motivo es la venta: **cada colegio pasa las unidades
+> en su propio orden**, así que obligar a jugar el capítulo 1 para llegar al 3 deja fuera
+> justo al alumno cuyo curso está viendo el 3. Ahora **todos los capítulos y todas sus etapas
+> nacen abiertos**; lo único que sigue pidiendo el camino son **los jefes** —el de cada
+> capítulo exige sus 4 etapas, y el Jefe Final la campaña entera—, que es donde vive la meta.
+> Se revierte poniendo esa sola constante en `false`.
+>
+> **`ORDEN_LIBRE` hace `CAPS_ABIERTOS` siempre verdadero**, así que el **modo experimental
+> del curso quedó redundante**: se conserva (el servidor y el panel lo siguen ofreciendo, y
+> el valor se sigue guardando en disco) pero ya no cambia nada de lo que se ve. Por eso
+> `sincronizarModoCurso` **dejó de recargar la página** cuando difiere: sería un parpadeo sin
+> motivo.
+>
+> ⚠️ **Y hubo que partir la bandera OTRA VEZ, porque mezclaba dos cosas distintas.**
+> `CAPS_ABIERTOS` gobernaba también dos candados que **no son de progresión sino
+> PEDAGÓGICOS**: que la mini-clase bloquee la primera etapa de su unidad, y que la lección
+> abra su nivel del Reto de Cálculo —o sea *"aprender desbloquea el desafío"*, el pilar del
+> camino de Matemática desde la Sesión 29—. Encender `ORDEN_LIBRE` sin separarlos **los
+> habría apagado a los dos de una sola vez y sin ningún aviso.** Viven ahora en
+> **`LECC_ABIERTAS`** (`QA||PRUEBA`), que es lo que consultan `leccBloqueadas` y
+> `nivelCalcDesbloqueado`. Tercera vez que este proyecto parte una bandera por el mismo
+> motivo, después de `QA` (Sesión 41) y `MODO_ABIERTO` (Sesión 73).
+>
+> ⚠️ **Las partidas guardadas ANTES del cambio no se abrían solas**: `nuevoProgreso` corre
+> únicamente al crear la ruta, así que un alumno con avance habría seguido con sus etapas
+> cerradas y dos niños verían juegos distintos según cuándo empezaron. Lo resuelve
+> **`abrirOrdenLibre`**, llamada desde `estadoRuta`: abre las etapas en `lock` al leerlas,
+> **sin tocar las `done`** (conservan sus estrellas) ni la del jefe. Es idempotente.
 
 Cada bandera va **pegada a su comentario**, que explica qué pasa si se pone mal. Una bandera cuyo
 porqué vive catorce líneas más arriba no cumple su único propósito, que es **obligar a responder
@@ -1166,12 +1197,14 @@ para siempre.
     regala un cupo; este enlace reenviado fuera del chat los regala todos hasta llenarse.
     Por eso el cupo se ajusta al grupo y no se deja holgado. **No hay revocación por
     persona**, solo cerrar el enlace.
-  - **El "modo experimental" es propiedad del CURSO, no del enlace ni del aparato**
-    (`cursos.experimental`), y lo marca el profesor al crearlo. Abre **todos los
-    capítulos** y deja **cerrados los jefes** —el de cada capítulo y el Jefe Final—, para
-    que alguien pueda recorrer el contenido sin jugarse el año en orden pero conservando
-    la meta. Que viva en el curso es lo que hace que **sobreviva a borrar los datos del
-    navegador**: al re-canjear el `ALU-` vuelve solo.
+  - ⚠️ **El "modo experimental" quedó REDUNDANTE el 06/09/2026 y ya no cambia nada.** Era
+    propiedad del CURSO (`cursos.experimental`), la marcaba el profesor al crearlo, y abría
+    **todos los capítulos** dejando **cerrados los jefes**. Eso es exactamente lo que hoy
+    hace `ORDEN_LIBRE` **para todos**, así que la bandera se conserva —el servidor y el
+    panel la siguen ofreciendo, y su valor se sigue guardando en disco por si `ORDEN_LIBRE`
+    vuelve a `false`— pero **encenderla o apagarla no se nota**. Lo que sí cambió es que
+    `sincronizarModoCurso` **dejó de recargar la página** al reconciliarla: sería un
+    parpadeo sin motivo.
   - **Cómo llega ese modo al juego, que es la parte delicada:** `CAPS_ABIERTOS` se evalúa
     al cargar el archivo y el curso llega del servidor un segundo después, así que el modo
     se **recuerda en `localStorage`** (`kimun_exper`, `kimun_exper_7mo`, `kimun_exper_3ro`)
@@ -9642,6 +9675,142 @@ Con el CLI autenticando (`notebooklm list` devuelve el "AI Brain de Roberto"), s
 decía que la landing quedó en 16.293, cierto cuando se escribió esa mañana y falso desde la tarde.
 **El AI Brain es memoria de referencia: sembrarlo con un dato caduco es peor que no actualizarlo.**
 
-- **Pendiente de arrastre:** `docs/contenido-sensible.md` sin la fila de 5° (Historia), INAPI —que
-  ahora puede registrarse a nombre de la SpA— y el enlace de agenda de la landing. **La
-  reautenticación de NotebookLM queda cerrada.**
+#### Y el contenido sensible de 5° quedó listado: el armador ya lo marca
+
+Roberto preguntó qué era ese pendiente y, al explicárselo, se arregló. **Historia de 5° declaraba
+en su `oa.json` cinco OA sensibles y nadie los había copiado** a los dos lugares donde sirven: el
+inventario (`docs/contenido-sensible.md`) y su espejo-máquina (`assets/js/sensible.js`), que es lo
+que lee el armador de enlaces. Los dos cubrían 3°, 4°, 6°, 7° y 8°.
+
+**La consecuencia era concreta y silenciosa:** al armar un enlace de muestra, `hist5-cap1`
+("Descubrimiento y conquista") y `hist5-cap2` ("La Colonia") salían **sin marca, como si fueran
+neutros** — o sea se podía repartir la conquista, la guerra de Arauco y la encomienda sin que el
+aviso que existe justamente para eso dijera nada. Pasó porque el documento nació con tres cursos:
+6° se sumó al cablear su fork y **5° se saltó, porque el suyo se cableó antes de que eso fuera
+costumbre**.
+
+Quedan `HI05 OA 02/03/04` y `OA 07` como ⚔️🪶 y el `OA 06` como 🛐, con las severidades **calcadas
+del criterio que 8° ya usaba para los mismos temas** (el `OA 04` sube a ALTA como el `HI08 OA 07`;
+el `OA 07` calza con el `HI08 OA 12`, que es literalmente la misma guerra). **Ninguno sale del
+Jefe Final**, y es deliberado: esa regla saca solo el contenido sexual, porque un jefe mezcla toda
+la asignatura; lo de Historia se acota incluyendo o no su capítulo.
+
+> ⚠️ **Y hay algo propio de 5° que conviene decir antes que a un colegio: la conquista no es *un*
+> capítulo sensible, es el EJE del año.** Se puede acotar —vive en dos capítulos— pero no se puede
+> tener Historia de 5° sin ella.
+
+**Se buscó la clase, no el caso:** un barrido comparó los `oa.json` de los 29 bancos contra los dos
+archivos. **El único hueco era 5°**, y ahora son 0.
+> ⚠️ **Pero su primera versión acusó cinco bancos**, porque leía los códigos del `oa.json` entero
+> en vez de los que **nombra la nota** — y le reporté a Roberto un falso positivo antes de afinarla:
+> `HI04 OA 01` aparece en el documento **dentro de la frase que dice que NO se marca** (las
+> civilizaciones americanas de 4° son descripción cultural, sin conquista). Un detector que no
+> distingue "listado" de "listado como excluido" es el mismo error que este archivo ya documenta
+> tres veces: **un informe que marca lo correcto se deja de leer.**
+
+**Verificado en el armador, no en el mapa de datos:** 5° pasa de **0 a 2 capítulos marcados**
+(⚔️🪶 y ⚔️🛐🪶) y 8° se queda en sus 6, porque el cambio es aditivo. Y **con `sensible.js`
+ausente** el armador sigue vivo con sus 25 capítulos y cero excepciones: el único fallo de red es
+su propio 404.
+
+#### ⚠️ Sembrar una semana de uso NO es correr el seed que ya existe
+
+Roberto pidió cargar uso simulado en el 8° de prueba (`CUR-BA04`) antes de la foto del lunes
+07/09, para poder trabajar en el informe que compara semanas. **El reflejo —correr
+`seed-CUR-BA04.sql`— habría destruido justo lo que se quería medir:** ese archivo empieza con un
+`delete from public.perfiles`, y `dominio_semanal` y `xp_semanal` cuelgan de `perfiles` con
+**`on delete cascade`**, así que se habría llevado por delante **las fotos ya tomadas**. Ese seed
+sirve para **mostrar** el panel; hacía falta uno para simular el **paso del tiempo**, que es otra
+cosa. Quedó como `seed-semana-8vo.sql`, fuera del repo con los demás.
+
+Es **incremental y no borra nada**, e idempotente por una guarda sobre `dominio.actualizado`. Y
+fabrica hacia atrás las fotos del **23/08 y 30/08** (si no existen) para que haya tendencia y no
+un simple antes/después, con dos criterios que lo hacen coherente con cómo se mueven estos datos:
+**`resp_1`/`ok_1` no se escalan** —el primer intento se congela por diseño, así que hace dos
+semanas valía lo mismo— y **lo que crece es la cobertura**, omitiendo objetivos en las semanas
+anteriores porque el alumno aún no los había visto.
+
+> **Y eso decide qué puede decir el informe, así que conviene saberlo ANTES de diseñarlo:**
+> el **porcentaje de primer intento NO se mueve entre semanas** —está congelado—, así que un
+> informe que compare ese número va a mostrar dos columnas casi iguales y parecerá roto. Lo que
+> sí se mueve, y es lo que hay que graficar: **objetivos nuevos cubiertos**, **reintentos**
+> (`respondidas − resp_1`), **XP ganado** y, la más útil, el **acierto de la semana** calculado
+> como el delta entre dos fotos: `(correctas_N − correctas_N-1) / (respondidas_N − respondidas_N-1)`.
+> Ese último número **hoy no existe en ninguna parte** y solo es calculable teniendo dos fotos —
+> que es exactamente para lo que la foto semanal se construyó en la Sesión 36.
+
+⚠️ **Hay que correrlo antes de medianoche**: la foto copia el `dominio` tal como esté a las 04:05
+UTC, así que sembrar después lo deja fuera de la semana en curso.
+
+#### El orden pasa a ser LIBRE por defecto (decisión de producto de Roberto)
+
+*"Como el juego va a estar disponible para venta y no todos los niños van al mismo colegio, algunas
+entidades pasan las asignaturas de distintas maneras, sería bueno por defecto tener todas las
+asignaturas desbloqueadas pero no los jefes."* La lectura es correcta y el caso es real: un colegio
+que está viendo la unidad 3 de Ciencias en abril no puede tener a sus alumnos obligados a jugar la
+1 y la 2 primero.
+
+**Buena parte ya estaba construida**: es exactamente el **modo experimental** de la Sesión 73, que
+hasta hoy se activaba por curso. Lo que se hizo fue volverlo el **diseño del producto**
+(`ORDEN_LIBRE`), con el detalle y las consecuencias en la sección de banderas, arriba.
+
+**Roberto tomó las dos decisiones que no se podían resolver solas:** abrir **hasta la etapa** y no
+solo hasta el capítulo —cada etapa es un OA, y es justo el caso de uso—, y **abrir también las
+partidas ya guardadas**, para que no convivan dos comportamientos según cuándo empezó cada niño.
+
+> ⚠️ **Y NO era una línea, aunque lo parecía.** `CAPS_ABIERTOS` gobernaba **cuatro cosas que no son
+> la misma**: el orden entre capítulos y entre etapas (progresión) pero también que la mini-clase
+> bloquee su primera etapa y que la lección abra su nivel del Reto (**pedagógicas**). Encender la
+> bandera tal cual **habría apagado "aprender desbloquea el desafío"** —el pilar del camino de
+> Matemática desde la Sesión 29— sin que nada avisara. Se partió en **`LECC_ABIERTAS`**: tercera
+> vez que este proyecto corta una bandera por el mismo motivo, después de `QA` (Sesión 41) y
+> `MODO_ABIERTO` (Sesión 73). **El patrón ya tiene nombre: una bandera que responde dos preguntas
+> distintas se rompe el día que una de las dos cambia de valor.**
+
+**Dos cosas se comprobaron antes de tocar nada, y las dos importaban:** `bloqueado()` **no depende**
+de estas banderas, así que abrir el orden **no regala contenido de pago**; y el **Jefe Final sigue
+exigiendo la campaña entera**, o sea la meta grande queda intacta.
+
+**Verificado contra una foto tomada ANTES** —sin ella no se puede afirmar que `?qa=1` y los enlaces
+ya repartidos no cambiaron—: en los seis cursos el progreso pasa de `o....` a **`oooo.`** y los
+capítulos de `1000000` a `1111111`, con Jefe Final y Desafío Extra **todavía cerrados**; **QA queda
+byte a byte igual** que en la foto; `?solo=` sigue abriendo todo incluido el jefe y `?rev=1` sus 3
+preguntas; y el guardado de 8° sobrevive con sus 777 XP y las claves separadas. Los candados
+pedagógicos siguen en pie: en 5° la mini-clase bloquea su etapa 1 (`loooool`) y en 8° el Reto sigue
+en `10000`. Y **se jugó de verdad**: en 7° se tocó la etapa 3 del capítulo 3 —antes inalcanzable— y
+arrancó el quiz con su pregunta real. **Cero errores de consola y cero 404.**
+
+**La migración de lo guardado** (`abrirOrdenLibre`) se probó sembrando una partida vieja:
+`dllll` → **`doool`**, conservando las 3 estrellas de lo ya jugado y dejando el jefe cerrado.
+
+#### Y los enlaces de la landing pasan a ser MUESTRAS de verdad
+
+Roberto lo señaló justo después, y el cambio de arriba lo volvía urgente: **los 8 enlaces de
+`vulpo.cl` llevaban al juego completo** (`/3ro?intro=0`), así que con el orden ya libre cualquier
+visitante tenía los seis cursos enteros abiertos. Ahora cada uno lleva `?solo=<un capítulo>`: **una
+asignatura, una expedición**.
+
+**El capítulo de cada curso es su propio `DEMO_LIBRE`**, no uno elegido aparte. Así no existen dos
+criterios de "cuál es la demo de este nivel", y el visitante ve **lo mismo antes y después** de que
+la puerta cierre el 1 de octubre.
+
+Y de paso la fila dejó de decir *"Prueba el curso que te interesa"* —con una unidad, eso promete de
+más— para decir **"Prueba una unidad del curso que te interesa"**.
+
+> ⚠️ **Lo que la muestra NO trae, y conviene saberlo antes de repartirla:** el modo prueba oculta
+> la barra inferior, así que **no hay tienda, ni logros, ni perfil, ni ranking**, que son de los
+> ganchos más fuertes para un niño. A cambio **no guarda nada** —no pisa la partida de quien ya
+> juega en ese teléfono— y **esquiva la puerta**, o sea el enlace sigue sirviendo después del 1 de
+> octubre sin tocar nada. Volver atrás es cambiar los 8 `href`.
+
+> **Y un susto propio que vale registrar: casi reporto un bug grave que no existía.** Midiendo la
+> muestra forcé `btnJugador.click()` y vi el juego completo —las 5 asignaturas, Historia con sus 7
+> nodos—, o sea el acotamiento sin funcionar. **La prueba estaba mal:** el modo prueba entra solo
+> con `arrancarModoPrueba()` y **se salta la pantalla "¿Cómo quieres entrar?"**, así que tocar
+> JUGADOR es salirse de su camino. Medido sin tocar nada: 1 capítulo, el correcto. Es la lección de
+> siempre —**cuando el resultado sorprende, el primer sospechoso es la prueba**— y esta vez lo caro
+> habría sido el falso positivo, no el falso negativo.
+
+- **Pendiente de arrastre:** INAPI —que ahora puede registrarse a nombre de la SpA— y el enlace de
+  agenda de la landing. **La reautenticación de NotebookLM y el contenido sensible de 5° quedan
+  cerrados.**

@@ -23,7 +23,7 @@ Matemática— en vez de solo revelar la respuesta. Y **antes de ver el puntaje*
 que creía con lo que pasó. Es local y privado, no se envía al profesor.
 
 La pantalla principal ofrece un **módulo por asignatura**. **Historia**, **Ciencias** y
-**Lenguaje** se juegan como **campañas con hilo conductor**: capítulos en orden que cubren
+**Lenguaje** se juegan como **campañas con hilo conductor**: capítulos que cubren
 todos los OA del año, con **Jefe Final multi-fase** (barra de vida, 3 corazones) y
 **recompensas** (skin exclusiva, insignia coleccionable, corona y bono). **Matemáticas**
 tiene un **camino de aprendizaje** completo en cuatro cursos (los 17 OA de 8°, los 27 de 5°, los
@@ -113,7 +113,7 @@ anual por nivel escolar. Nada de eso está implementado todavía.
 Los seis cursos comparten la misma puerta de acceso: desde el **1 de octubre de 2026** hace
 falta un código de alumno para jugar más allá de la demo de cada nivel.
 
-**7° básico** (`7mo/`) sigue las mismas bases que 8°: campañas por asignatura con capítulos en orden, jefe de capítulo y Jefe Final multi-fase, Modo Difícil, comodín 50/50, meta de aprendizaje y repaso al fallar. Sus cuatro asignaturas son Historia, Geografía y Ciencias Sociales (23 objetivos), Matemática (19), Ciencias Naturales (15) y Lengua y Literatura (24). No lleva lectura por voz: a los 12-13 años ya se lee de corrido. Guarda su avance y su identidad en línea aparte de los demás cursos. Suma además dos **módulos transversales**: un **Vocabulario** de 120 palabras de sus cuatro asignaturas, y un **Reto Sin Fin** de cálculo mental —operaciones generadas por código, sin banco de preguntas— dentro de Matemática. Y desde el 02/09, Matemática se juega como **camino de aprendizaje**: **19 mini-clases**, una por objetivo, con su diagrama interactivo y su práctica.
+**7° básico** (`7mo/`) sigue las mismas bases que 8°: campañas por asignatura, jefe de capítulo y Jefe Final multi-fase, Modo Difícil, comodín 50/50, meta de aprendizaje y repaso al fallar. Sus cuatro asignaturas son Historia, Geografía y Ciencias Sociales (23 objetivos), Matemática (19), Ciencias Naturales (15) y Lengua y Literatura (24). No lleva lectura por voz: a los 12-13 años ya se lee de corrido. Guarda su avance y su identidad en línea aparte de los demás cursos. Suma además dos **módulos transversales**: un **Vocabulario** de 120 palabras de sus cuatro asignaturas, y un **Reto Sin Fin** de cálculo mental —operaciones generadas por código, sin banco de preguntas— dentro de Matemática. Y desde el 02/09, Matemática se juega como **camino de aprendizaje**: **19 mini-clases**, una por objetivo, con su diagrama interactivo y su práctica.
 
 **5° básico** (`5to/`) y **6° básico** (`6to/`), con las mismas cuatro asignaturas y las mismas
 mecánicas (campañas, jefes, Modo Difícil, mini-clases e introducciones), cada uno con sus villanos

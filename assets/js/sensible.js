@@ -30,7 +30,14 @@
     "CN06 OA 07":["sustancias"],
     "HI06 OA 05":["violencia","pueblos"], "HI06 OA 08":["violencia"],
     // 4° básico
-    "CN04 OA 08":["sustancias"]
+    "CN04 OA 08":["sustancias"],
+    /* 5° básico. La conquista es el EJE del año, no un capítulo suelto: estos cinco viven
+       en hist5-cap1 ("Descubrimiento y conquista") y hist5-cap2 ("La Colonia"). Hasta el
+       06/09 5° no estaba aquí ni en el documento, así que el armador mostraba esos dos
+       capítulos sin marca — el aviso existe justamente para no repartir eso sin saberlo. */
+    "HI05 OA 02":["violencia","pueblos"], "HI05 OA 03":["violencia","pueblos"],
+    "HI05 OA 04":["violencia","pueblos"], "HI05 OA 06":["religion"],
+    "HI05 OA 07":["violencia","pueblos"]
   };
   window.SENSIBLE={
     cats:CATS, oa:OA,

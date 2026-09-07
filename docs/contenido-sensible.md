@@ -140,6 +140,36 @@ No es sexual, así que **entra completo al Jefe Final de Ciencias**, igual que `
 sensibles: son descripción cultural sin conquista ni violencia, distinto de cómo se tratan esos
 mismos pueblos en 7°/8°.
 
+### 5° básico
+| OA | Tema | Categorías | Severidad |
+|---|---|---|---|
+| HI05 OA 02 | Proceso de conquista de América y de Chile | ⚔️ 🪶 | MEDIA |
+| HI05 OA 03 | Impacto y consecuencias de la conquista | ⚔️ 🪶 | MEDIA |
+| HI05 OA 04 | Efectos de la conquista sobre los pueblos indígenas | 🪶 ⚔️ | ALTA |
+| HI05 OA 06 | La Colonia: rol de la Iglesia católica y sociedad mestiza | 🛐 | MEDIA |
+| HI05 OA 07 | Resistencia mapuche y guerra de Arauco | 🪶 ⚔️ | MEDIA-ALTA |
+
+**Es el eje del año, no un capítulo suelto**, y ahí está la diferencia con los demás cursos: en
+5° la conquista no es *un* contenido sensible sino **la mitad del programa de Historia**. Se
+concentra en dos capítulos —**`hist5-cap1` "Descubrimiento y conquista"** (OA 02, 03, 04) y
+**`hist5-cap2` "La Colonia"** (OA 06, 07)—, así que un colegio que quiera acotarlo tiene dónde,
+pero no puede tener Historia de 5° sin esto.
+
+Las severidades siguen el criterio ya usado en 8° para los mismos temas: el `OA 04` sube a ALTA
+porque mira los efectos **sobre los pueblos**, como el `HI08 OA 07`, y el `OA 07` calza con el
+`HI08 OA 12`, que es literalmente la misma guerra.
+
+⚠️ **Ninguno sale del Jefe Final, y es deliberado**: la regla de arriba saca **solo** el contenido
+sexual, porque un jefe mezcla toda la asignatura y ahí el colegio ya no puede evitarlo. Lo de
+Historia se acota incluyendo o no su capítulo, que es donde vive.
+
+**El banco ya está escrito con ese cuidado** (declarado en `contenido/historia-5basico/oa.json`):
+mide hechos, procesos y consecuencias verificables, **sin recrear escenas de violencia y sin
+presentar el trabajo forzado como un dato neutro más**, y trata a la Iglesia como actor histórico
+y no como afirmación de fe. Lo que faltaba hasta el 06/09 era el **rótulo**, no el contenido: 5°
+no estaba en este inventario ni en `assets/js/sensible.js`, así que el armador mostraba esos dos
+capítulos **sin marca, como si fueran neutros**.
+
 ## Resumen por categoría
 
 | Categoría | Nº de OA |
