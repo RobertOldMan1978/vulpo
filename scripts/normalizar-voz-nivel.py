@@ -232,7 +232,13 @@ def normalizar(texto, oa=""):
     # 4 basico): sin el "(?:\.\d{3})*" el regex cortaba en el punto y el resultado
     # sintetizado era "1.cero en uno.000" — la mitad del numero se perdia en silencio.
     # Encontrado por un agente redactor de MA04 OA 01, verificado antes de aplicarlo.
-    t = re.sub(r"\b(\d+(?:\.\d{3})*)\s+en\s+(\d+(?:\.\d{3})*)\b",
+    # ⚠️ Y exige que el numero sea EL MISMO a los dos lados, que es lo que define un conteo
+    # salteado. Sin esa condicion la regla pega en el castellano corriente —"divido 12 en
+    # 4", "cuantas veces cabe el 7 en 238", "una recta va de 0 a 1 en 4 partes iguales"— y
+    # ahi hace dano: en "Parto el 68 en 40 y 28" convertia DOS de los tres numeros de la
+    # enumeracion y dejaba "sesenta y ocho en cuarenta y 28". Medido sobre los 32 bancos y
+    # las lecciones: 76 coincidencias son conteo salteado de verdad y 24 son esto otro.
+    t = re.sub(r"\b(\d+(?:\.\d{3})*)\s+en\s+(\1)\b",
                lambda m: "%s en %s" % (_en_palabras(int(m.group(1).replace(".", ""))),
                                        _en_palabras(int(m.group(2).replace(".", "")))), t)
 
@@ -248,6 +254,15 @@ def normalizar(texto, oa=""):
     # era el unico operador sin cubrir. Se dice "dividido en" y no "dividido por" porque es
     # lo que dice un profesor chileno en la sala.
     t = re.sub(r"(\d)\s*÷\s*(\d)", r"\1 dividido en \2", t)
+    # ⚠️ Y su gemela, por el MISMO motivo que la del guion de mas abajo: exigir digitos a
+    # los dos lados deja fuera "617 ÷ ___ = 617" (la incognita), "(90 - 30) ÷ 3" (el
+    # parentesis) y "m ÷ 2" (la letra del lenguaje algebraico de 6°), y ahi la operacion
+    # DESAPARECE al locutarse. Medido sobre las 329 apariciones del simbolo en los 32
+    # bancos: 259 las cubre la regla de arriba y 68 esta; las 2 que quedan fuera son los
+    # rotulos "× y ÷" y "÷ 10" de dos diagramas, que no se locutan (textoLocutable no toma
+    # los rotulos del SVG) y que ademas viven en cursos sin voz. Un ÷ con espacios a los
+    # dos lados es siempre una division: no tiene otro uso en el castellano del banco.
+    t = re.sub(r"(?<=\S)\s+÷\s+(?=\S)", " dividido en ", t)
     t = t.replace("+", " mas ").replace("=", " es igual a ")
     t = re.sub(r"(\d)\s*[-−]\s*(\d)", r"\1 menos \2", t)
     # Un guion CON ESPACIOS a los dos lados siempre es una resta, aunque a un lado

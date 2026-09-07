@@ -442,17 +442,17 @@ eso ahora lo comprueba `auditar-banco-nivel.py`, probado rompiendo un banco a pr
 
 | | |
 |---|---|
-| `assets/voz/` (voz pregrabada de **3° y 4°**, 6+4 asignaturas) | **589 MB** |
+| `assets/voz/` (voz pregrabada de **3° y 4°**, 6+4 asignaturas) | **602 MB** |
 | `assets/originales/` (arte crudo, **excluido del sitio** por `_config.yml`) | 174 MB |
 | `contenido/` (los bancos completos, seis cursos) | 17,8 MB |
 | `assets/audio/` (música) | 5,0 MB |
-| **`assets/` completo** | **827 MB** |
-| **Sitio publicado** (sin `.git` ni originales) | **729 MB** |
+| **`assets/` completo** | **840 MB** |
+| **Sitio publicado** (sin `.git` ni originales) | **742 MB** |
 
 **La voz de 4° ya está generada (06/09/2026) y sumó 326 MB** (los ~254 MB estimados se quedaron
 cortos: 4° tiene más contenido por asignatura que 3°), más **7 MB** de su Vocabulario el 07/09.
 El techo de GitHub Pages sigue siendo
-**1 GB**, y el sitio publicado queda en 729 MB — con margen, pero **ya no hay margen para una
+**1 GB**, y el sitio publicado queda en 742 MB — con margen, pero **ya no hay margen para una
 séptima asignatura con voz**: la regla del proyecto —voz pregrabada solo de 1° a 4°— es la única
 aritmética que cabe, no una preferencia pedagógica. Y por eso la precarga `cache-first` que
 propone el análisis de la PWA sigue siendo inviable tal cual: bajaría cientos de MB al teléfono
@@ -925,6 +925,12 @@ voz**: 7° no lleva audio pregrabado, y de 5° hacia arriba no vale la pena paga
   `normalizar-voz-nivel.py` —o sea cambiar cómo se PRONUNCIA algo— **no invalida ningún
   clip**: los viejos siguen sonando como antes, en silencio. Hay que borrarlos del
   manifiesto a mano y regenerarlos.
+  ⚠️ **Y el almacén de auditoría (`dev/auditoria-voz-*.json`) tiene el MISMO defecto**, que
+  es peor porque miente en la dirección cómoda: también se indexa por el texto mostrado, así
+  que un clip regenerado conserva la transcripción del audio **que ya no existe** y la
+  auditoría siguiente lo da por bueno sin volver a escucharlo. Al regenerar un clip hay que
+  borrar sus dos entradas: la del manifiesto **y la del almacén**. Encontrado el 07/09 con
+  *"Divido 12 en 4"*, cuyo almacén afirmaba *"Divido dos en cuatro"* de un mp3 ya borrado.
 - **La identidad en línea también está separada** (Sesión 58). 3° crea su cliente de Supabase con
   `storageKey:'kimun-3ro'`, el mismo patrón que ya usaba `profesor.html`. Sin eso, 3° y 8° eran el
   **mismo usuario anónimo**: el mismo perfil, el mismo XP en el ranking y el mismo vínculo con un
@@ -10487,7 +10493,80 @@ fallos de red.**
 > `data-rev` al inicializar desde el almacén—. Las dos veces el tablero estaba bien.
 > **Cuando un conteo da raro, el primer sospechoso es la prueba.**
 
-- **Pendiente de Roberto:** **los 42 clips mal locutados** de Matemática de 4° (el signo de dividir,
-  Sesión 104): **US$0,04**, esperando autorización explícita porque gasta su cuenta de Azure.
-- **De arrastre:** INAPI —ahora a nombre de la SpA—, la facturación electrónica y la cuenta
-  corriente de la sociedad.
+
+#### Cierre de la Sesión 105 — la voz de Matemática de 4°, y dos defectos más del normalizador
+
+Roberto autorizó los 42 clips del signo de dividir. **Leerlos antes de pagar** —que es la regla, y
+existe justo para esto— destapó dos defectos más y una tanda entera sin generar. Al final fueron
+**184 clips, US$0,47**.
+
+##### ⚠️ 1 · El arreglo del signo no cubría la incógnita
+
+La regla escrita ayer exige un dígito a cada lado, así que **`617 ÷ ___ = 617` se quedaba con el
+símbolo crudo**: el niño oye *"617 el espacio en blanco es igual a 617"* y **la operación
+desaparece**. Es exactamente el defecto que ya tuvo el guion en la Sesión 56, y su arreglo —una
+segunda regla, para el signo con espacios a los dos lados— vive **dos líneas más abajo en el mismo
+archivo**.
+
+**Medido sobre las 329 apariciones del símbolo en los 32 bancos**: 259 las cubre la regla de
+dígitos, **68 esta**, y las 2 que quedan fuera son los rótulos `"× y ÷"` y `"÷ 10"` de dos
+diagramas — que `textoLocutable` no locuta y que además viven en cursos sin voz. Afectaba a cuatro
+cursos: el paréntesis de 5° (`(90 - 30) ÷ 3`), la letra del lenguaje algebraico de 6° (`m ÷ 2`) y
+el negativo de 8° (`(-36) ÷ (-9)`).
+
+##### ⚠️ 2 · La regla del conteo salteado pegaba en el castellano corriente
+
+La regla del *"de 10 en 10"* —la que evita que el sintetizador lea *"10 de ENERO de 10"*— aceptaba
+**cualquier par de números**, así que en *"Parto el 68 en 40 y 28"* convertía **dos de los tres** y
+dejaba *"sesenta y ocho en cuarenta **y 28**"*.
+
+Acotada a **el mismo número a los dos lados**, que es lo que define un conteo salteado. Medido: **76
+coincidencias legítimas contra 24** que eran castellano normal —*"divido 12 en 4"*, *"¿cuántas veces
+cabe el 7 en 238?"*, *"una recta va de 0 a 1 en 4 partes iguales"*, y hasta una fecha de Lenguaje de
+7° (*"1.260 en 2024"*)—. Solo **8 clips ya pagados** hubo que rehacer, uno de ellos de 3°.
+
+##### ⚠️ 3 · Y las 27 mini-clases de Matemática de 4° estaban MUDAS
+
+Se escribieron ayer y **su voz nunca se generó**: 134 textos sin clip en un curso que sí tiene voz,
+así que el 🔊 caía a la voz del navegador. Es el fallo mudo de la Sesión 98 y de `voc4` en la 102 —
+**suena, pero suena otra voz**. Apareció porque el recuento pedía 176 y no 42; Roberto autorizó
+cerrarlo todo.
+
+##### Verificación
+
+- **Regresión medida antes de tocar nada:** sobre los **75.895 textos** del banco, cambian **44 y
+  los 44 llevan el signo**. Cero efectos colaterales.
+- Las dos reglas nuevas **probadas con sus contraejemplos** —los casos que sí deben convertirse y
+  los que no—, porque un chequeo que nunca falla no prueba nada.
+- **Jugando**: el texto que la mini-clase de 4° muestra en pantalla resuelve, por el manifiesto
+  fusionado, a `mat4/574f3f0f1b5a1cbf.mp3` → **200 `audio/mpeg`**, 116 KB. Cobertura: **0 textos
+  locutables sin clip y 0 clips de 0 bytes** en todo `assets/voz`.
+- Los clips con operación pesan **14 KB contra 9 KB** de un número suelto, o sea la operación está
+  ahí.
+- Los seis cursos con motor vivo, JUGADOR navegando y `LECC` activo. **Cero errores y cero fallos
+  de red.**
+
+> ⚠️ **No se auditó con reconocimiento de voz, y es una decisión, no un olvido:** el transcriptor
+> **colapsa las operaciones entre números** —documentado en la Sesión 101 con "menos", que
+> desaparece entre cifras y se transcribe bien entre palabras—, así que sobre *"dividido en"* daría
+> un resultado no concluyente. Gastar ahí sería pagar por una respuesta que no sirve.
+
+##### Un gotcha nuevo, hermano del que ya estaba escrito
+
+**El almacén `dev/auditoria-voz-*.json` se indexa por el texto mostrado, igual que el manifiesto**,
+así que un clip regenerado **conserva la transcripción del audio que ya no existe** y la auditoría
+siguiente lo da por bueno sin volver a escucharlo. Miente en la dirección cómoda. Encontrado con
+*"Divido 12 en 4"*, cuyo almacén afirmaba *"Divido dos en cuatro"* de un mp3 ya borrado. Queda
+escrito junto al del manifiesto, no solo aquí.
+
+**Peso remedido:** `assets/voz` **602 MB** · `assets/` **840 MB** · **sitio publicado 742 MB**
+(eran 589 / 827 / 729).
+
+> **Errores de método propios:** `#expLista` por `#expGrid`; y sobre todo, di por defecto del
+> producto que el 🔊 no sonara al hacerle `click()` desde el conductor — **el control con 3°, donde
+> esa voz funciona desde la Sesión 86, dio exactamente lo mismo**, así que era la política de
+> autoplay del headless y no el juego. La comprobación que sí decide no pasa por el clic: tomar el
+> texto que el juego muestra, resolverlo por el manifiesto y pedir el archivo.
+
+- **Pendiente de arrastre:** INAPI —ahora a nombre de la SpA—, la facturación electrónica y la
+  cuenta corriente de la sociedad. **De contenido y código no queda nada abierto.**
