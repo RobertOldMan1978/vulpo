@@ -84,12 +84,16 @@ body{
 .stars{position:fixed;inset:0;pointer-events:none;z-index:0}
 .stars span{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.5;animation:tw 3s infinite alternate}
 @keyframes tw{from{opacity:.15}to{opacity:.7}}
-/* estrella fugaz ocasional */
+/* Estrella fugaz. El COLOR lo pone el JS en --meteoro: cada meteoro arde del
+   color del elemento que lo compone. El nucleo se deja blanco porque es la parte mas
+   caliente. El violeta de respaldo es el color historico, por si el JS no fijara la
+   variable; hoy siempre la fija. */
 .shoot{position:fixed;z-index:0;width:3px;height:3px;border-radius:50%;pointer-events:none;
-  background:#fff;box-shadow:0 0 6px 2px #fff,0 0 14px 5px #8f6bff88;animation:shootFall 1.3s ease-in forwards}
-.shoot::after{content:"";position:absolute;left:1px;top:1px;width:78px;height:2px;transform-origin:left center;
-  transform:rotate(-48deg);border-radius:2px;background:linear-gradient(90deg,#ffffffdd,#8f6bff33,transparent)}
+  background:#fff;box-shadow:0 0 7px 2px #fff,0 0 18px 7px var(--meteoro,#8f6bffcc);animation:shootFall 1.3s ease-in forwards}
+.shoot::after{content:"";position:absolute;left:1px;top:1px;width:78px;height:2.5px;transform-origin:left center;
+  transform:rotate(-48deg);border-radius:2px;background:linear-gradient(90deg,#ffffffee,var(--meteoro,#8f6bffcc) 34%,transparent)}
 @keyframes shootFall{0%{opacity:0;transform:translate(0,0)}12%{opacity:1}100%{opacity:0;transform:translate(var(--sx),var(--sy))}}
+@media (prefers-reduced-motion: reduce){.shoot{display:none}}
 .wrap{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:16px 16px 90px;min-height:100dvh}
 h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
 .screen{display:none;animation:pop .35s ease}
@@ -2165,14 +2169,25 @@ async function startDuelo(){
  const st=$('stars');for(let i=0;i<40;i++){const s=document.createElement('span');
   s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';
   s.style.animationDelay=Math.random()*3+'s';st.appendChild(s);}
- /* estrella fugaz de vez en cuando */
+ /* Los colores son los de VERDAD: un meteoro arde del color del elemento que lo
+    compone. Oxigeno/nitrogeno rojo, hierro amarillo, sodio naranjo, calcio violeta,
+    magnesio azul. Se sortea uno por estrella. */
+ const METEOROS=['#ff5a52','#ffd94a','#ff9a3c','#b06bff','#4dd8ff'];
  function estrellaFugaz(){const s=document.createElement('div');s.className='shoot';
+  const c=METEOROS[Math.random()*METEOROS.length|0];
+  s.style.setProperty('--meteoro',c+'cc');
   s.style.left=(window.innerWidth*(0.35+Math.random()*0.6))+'px';
   s.style.top=(window.innerHeight*Math.random()*0.35)+'px';
   const d=220+Math.random()*180;
   s.style.setProperty('--sx',(-d)+'px');s.style.setProperty('--sy',(d*1.1)+'px');
   document.body.appendChild(s);setTimeout(()=>s.remove(),1400);}
- (function agenda(){setTimeout(()=>{estrellaFugaz();agenda();},8000+Math.random()*14000);})();
+ /* Una cada 3 a 9 segundos (antes 8 a 22). Con "sin animaciones" NO se agenda ninguna:
+    sin este guard la estrella se creaba igual y quedaba QUIETA y visible 1,4 s, porque
+    el @media global apaga la animacion pero no el elemento (medido).
+    OJO: el guard NO puede ser un return, porque este mismo bloque arranca el juego
+    unas lineas mas abajo y salir aqui lo dejaria muerto. */
+ if(!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))
+  (function agenda(){setTimeout(()=>{estrellaFugaz();agenda();},3000+Math.random()*6000);})();
  window.estrellaFugaz=estrellaFugaz;
  if(!SIN_DISCO) cargar();    // el modo prueba y el armador no leen la partida del teléfono
  pintarInicio();

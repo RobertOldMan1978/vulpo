@@ -87,6 +87,11 @@ export async function conducir(url, pasos, { puerto = 9333, mostrar = false } = 
     (await import('node:fs')).writeFileSync(ruta, Buffer.from(r.result.data, 'base64'));
     return ruta;
   };
+  // Emular una preferencia del sistema, p. ej. ev.medios([{name:'prefers-reduced-motion',value:'no-preference'}]).
+  // Hace falta porque este mismo conductor arranca Chrome con --force-prefers-reduced-motion=reduce
+  // (para saltarse la intro en video), asi que TODO lo que se anime esta apagado por defecto y no se
+  // puede verificar sin apagar antes esa emulacion. Con [] se vuelve a lo que el navegador traiga.
+  ev.medios = (features = []) => enviar('Emulation.setEmulatedMedia', { features });
   ev.consola = consola;
   ev.fallos = fallos;      // peticiones con 4xx/5xx o que no cargaron
 

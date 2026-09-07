@@ -33,10 +33,11 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--txt);font-weight:400;
 .stars{position:fixed;inset:0;pointer-events:none;z-index:-1}
 .stars span{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.5;animation:tw 3s infinite alternate}
 @keyframes tw{from{opacity:.15}to{opacity:.7}}
+/* Estrella fugaz. El COLOR lo pone el JS en --meteoro (ver METEOROS abajo). */
 .shoot{position:fixed;z-index:-1;width:3px;height:3px;border-radius:50%;pointer-events:none;
-  background:#fff;box-shadow:0 0 6px 2px #fff,0 0 14px 5px #8f6bff88;animation:shootFall 1.3s ease-in forwards}
-.shoot::after{content:"";position:absolute;left:1px;top:1px;width:78px;height:2px;transform-origin:left center;
-  transform:rotate(-48deg);border-radius:2px;background:linear-gradient(90deg,#ffffffdd,#8f6bff33,transparent)}
+  background:#fff;box-shadow:0 0 7px 2px #fff,0 0 18px 7px var(--meteoro,#8f6bffcc);animation:shootFall 1.3s ease-in forwards}
+.shoot::after{content:"";position:absolute;left:1px;top:1px;width:78px;height:2.5px;transform-origin:left center;
+  transform:rotate(-48deg);border-radius:2px;background:linear-gradient(90deg,#ffffffee,var(--meteoro,#8f6bffcc) 34%,transparent)}
 @keyframes shootFall{0%{opacity:0;transform:translate(0,0)}12%{opacity:1}100%{opacity:0;transform:translate(var(--sx),var(--sy))}}
 @media (prefers-reduced-motion: reduce){.stars span{animation:none;opacity:.45}.shoot{display:none}}
 
@@ -372,8 +373,14 @@ footer a{color:var(--cyan)}
   }
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduce) return;
+  /* Los colores son los de VERDAD: un meteoro arde del color del elemento que lo
+     compone. Oxigeno/nitrogeno rojo, hierro amarillo, sodio naranjo, calcio violeta,
+     magnesio azul. Se sortea uno por estrella; el nucleo queda blanco. */
+  var METEOROS=['#ff5a52','#ffd94a','#ff9a3c','#b06bff','#4dd8ff'];
   function estrellaFugaz(){
     var s=document.createElement('div'); s.className='shoot';
+    var c=METEOROS[Math.random()*METEOROS.length|0];
+    s.style.setProperty('--meteoro',c+'cc');
     s.style.left=(window.innerWidth*(0.35+Math.random()*0.6))+'px';
     s.style.top=(window.innerHeight*Math.random()*0.35)+'px';
     var d=220+Math.random()*180;
@@ -382,7 +389,8 @@ footer a{color:var(--cyan)}
     document.body.appendChild(s);
     setTimeout(function(){s.remove();},1400);
   }
-  (function agenda(){setTimeout(function(){estrellaFugaz();agenda();},8000+Math.random()*14000);})();
+  /* Una cada 3 a 9 segundos (antes 8 a 22). */
+  (function agenda(){setTimeout(function(){estrellaFugaz();agenda();},3000+Math.random()*6000);})();
 })();
 </script>
 

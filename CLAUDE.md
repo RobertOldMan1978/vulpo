@@ -486,13 +486,28 @@ sin dependencias). Navega, espera, **hace clic y evalúa JavaScript en la págin
     node scripts/cdp.mjs about:blank <archivo-de-pasos.mjs>
 
 El archivo exporta `export default async (ev) => {...}`; `ev(expr)` evalúa una expresión en la
-página, `ev.ir(url)` navega, `ev.espera(ms)`, `ev.consola` y `ev.fallos`. **Ganó su lugar en la
-primera corrida:** delató que un cambio mío rompía todo el JavaScript de 3° (`NS` duplicado),
-exactamente el fallo silencioso que ya había costado dos sesiones.
+página, `ev.ir(url)` navega, `ev.espera(ms)`, `ev.movil(w,h)` emula un teléfono, `ev.foto(ruta)`
+captura la pantalla, **`ev.medios(features)`** emula una preferencia del sistema, y `ev.consola` /
+`ev.fallos` traen los errores y las peticiones caídas. **Ganó su lugar en la primera corrida:**
+delató que un cambio mío rompía todo el JavaScript de 3° (`NS` duplicado), exactamente el fallo
+silencioso que ya había costado dos sesiones.
+
+> ⚠️ **El conductor arranca Chrome con `--force-prefers-reduced-motion=reduce`** —para saltarse la
+> intro en video— así que **TODO lo que se anime está apagado por defecto y no se puede verificar
+> tal cual**. Para eso existe `ev.medios([{name:'prefers-reduced-motion',value:'no-preference'}])`
+> (Sesión 102). Y al apagarlo **vuelve a reproducirse la intro y tapa la pantalla entera**: se
+> combina con **`?intro=0`**, que existe justo para eso desde la Sesión 97.
 
 Cosas que ya sabemos y siguen valiendo: la pantalla activa es `.screen.on` (no `hidden`); el
 nodo del mapa recibe el clic en su `.orb`, no en el `div`; y las tarjetas de campaña son
 `.camp-nodo`.
+
+⚠️ **Y dos trampas del propio conductor, que hacen ver un cuelgue como un bug del producto:**
+usa el **puerto 9333 fijo**, así que una corrida que muere deja Chrome reteniéndolo y la
+siguiente se cuelga sin decir nada —se limpia matando **solo** los procesos cuya línea de
+comandos lleve `remote-debugging-port=9333`, nunca `chrome.exe` a secas, que cerraría el
+navegador de Roberto—; y **Node no suelta su salida hasta terminar**, así que una corrida
+colgada se ve idéntica a una que no alcanzó a imprimir la primera línea.
 
 ### Módulos transversales: el cálculo, las lecturas y el vocabulario van aparte
 
@@ -9877,3 +9892,85 @@ captura**, no solo contando: los dos botones apilados con la jerarquía correcta
 - **Pendiente de arrastre:** **INAPI**, que ahora puede registrarse a nombre de la SpA. **La
   reautenticación de NotebookLM, el contenido sensible de 5°, el correo propio y el enlace de
   agenda quedan cerrados.**
+
+### Sesión 102 (2026-09-07) — Los meteoros caen del color de su elemento
+Pedido de Roberto con una imagen de referencia: *"podrías aumentar un poco el flujo de estrellas
+que caen en vulpo y que sean aleatoriamente de esos colores"*. **No se tocó contenido**: ni un
+banco, ni una pregunta, ni un clip de voz. Cambian la landing y los seis cursos, más un helper en
+`scripts/cdp.mjs`.
+
+#### Lo pedido
+
+- **Más flujo:** de **una cada 8–22 s a una cada 3–9 s**, unas dos veces y media más.
+- **Color de verdad, sorteado en cada estrella.** Un meteoro arde del color del elemento que lo
+  compone, y esa es la gracia: **oxígeno/nitrógeno rojo** (`#ff5a52`), **hierro amarillo**
+  (`#ffd94a`), **sodio naranjo** (`#ff9a3c`), **calcio violeta** (`#b06bff`) y **magnesio azul**
+  (`#4dd8ff`). El **núcleo queda blanco** a propósito —es la parte más caliente— y el color va en
+  el halo y en la cola.
+- **El color lo pone el JS en una sola variable CSS `--meteoro`**, no una clase por color: así el
+  CSS es uno solo y el catálogo vive en una línea (`METEOROS`). El violeta histórico queda como
+  respaldo del `var()`, aunque hoy el JS siempre la fija.
+
+> **La primera versión quedó tímida, y solo se supo MIRANDO.** Medía perfecto —los cinco colores
+> salían en 300 sorteos— pero el blanco se comía la cola y no se parecía a la referencia. Una
+> comparación lado a lado (halo 53 % vs 80 %, cola al 47 % en el medio vs al 80 % al 34 %) la
+> resolvió en un vistazo. Es la séptima vez que este proyecto tropieza con lo mismo, y la regla ya
+> tiene nombre: **un widget se aprueba mirando, no contando.** De paso las dos variables
+> (`--halo`, `--cola`) se fundieron en una, porque quedaron con el mismo valor.
+
+#### ⚠️ Y un defecto vivo que este cambio empeoraba
+
+**Con el teléfono en «sin animaciones», la estrella se creaba igual y quedaba QUIETA y visible
+1,4 s** —un punto blanco parado en el aire—. El `@media` global de los forks
+(`*{animation:none!important}`) apaga la animación **pero no el elemento**, y la opacidad solo
+vivía en los keyframes. Medido antes de tocar nada: `display:block`, `opacity:1`,
+`animationName:none`. Pasaba cada 15 s; con el flujo nuevo pasaría cada 6.
+
+Los forks pasan a **no agendar ninguna**, más `@media (prefers-reduced-motion: reduce){.shoot{display:none}}`
+pegado a lo que guarda y no en el bloque global que vive 500 líneas más abajo. **La landing ya lo
+tenía bien** desde que se escribió.
+
+> ⚠️ **El guard NO podía ser un `return`, que era lo obvio y lo que hace la landing.** En los
+> forks ese mismo bloque **arranca el juego** unas líneas más abajo (`cargar()`, `pintarInicio()`,
+> `arrancarModoPrueba()`), así que salir ahí los habría dejado muertos a los seis. Queda escrito
+> en el código, no solo aquí.
+
+#### `scripts/cdp.mjs` gana `ev.medios(...)`
+
+El conductor arranca Chrome con `--force-prefers-reduced-motion=reduce` para saltarse la intro,
+así que **nada animado se podía verificar**: la propia herramienta apagaba lo que había que mirar.
+`ev.medios([{name:'prefers-reduced-motion',value:'no-preference'}])` lo desactiva. Y al hacerlo
+**vuelve la intro en video y tapa la pantalla**, así que se combina con `?intro=0`. Documentado
+arriba, en la sección del conductor.
+
+#### Tres errores propios, y ninguno era del producto
+
+1. **Mi primer conteo del flujo estaba mal diseñado:** contaba las estrellas vivas **en un
+   instante**, y cada una dura 1,4 s — así que un `0` no distinguía *"no se agendó ninguna"* de
+   *"ya se borró"*. Rehecho con un `MutationObserver` que las cuenta **al nacer** y guarda sus
+   tiempos, que es lo único que mide un flujo.
+2. **Ese observador clonaba cada estrella dentro de su propio callback** para poder fotografiarlas
+   — y el clon vuelve a disparar al observador: **lazo infinito**. Colgó la corrida entera, y el
+   síntoma (Node sin soltar salida) se ve igual que un fallo del producto.
+3. **Dos aserciones de conteo mal calibradas** (`METEOROS` y `--meteoro` aparecen una vez más de
+   lo que supuse, porque el comentario del CSS los nombra). **Abortaron antes de escribir**, que
+   es exactamente para lo que están.
+
+Más el de siempre: un `cd` dentro de un heredoc dejó el shell en otra carpeta y los hashes
+salieron vacíos. **Cuando un conteo da cero, el primer sospechoso es la prueba, no el producto.**
+
+#### Verificación
+
+- **Flujo real**, con el contador acumulado y la emulación apagada: en **32 s nacieron 4 en la
+  landing y 5 en 8°**, cada 6,6–7,5 s de media (mín. 4,8 · máx. 8,6, dentro del rango 3–9).
+- **Con «sin animaciones»: 0 estrellas en 14 s** en la landing y en los seis cursos.
+- **JUGADOR navega en los seis** (`scr-rol` → `scr-expediciones`) con `__MOTOR_OK` en `true` — la
+  comprobación obligatoria desde que 7° estuvo caído en producción con la consola limpia.
+- Los **5 colores salen los 5** en 300 sorteos, y el `box-shadow` computado **no cae al violeta de
+  respaldo**, o sea la variable nueva se lee de verdad.
+- Sintaxis OK en los 7 archivos, **los 6 forks byte a byte idénticos** en ambos bloques, y **cero
+  errores de consola y cero fallos de red**.
+
+**Un push:** no hay proveedor y consumidor: `.shoot` no vive en ningún módulo de `assets/js/`,
+así que cada página se basta sola y el orden no importa. Medido antes de decidirlo, en vez de
+partir el push por costumbre.
