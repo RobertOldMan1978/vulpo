@@ -196,7 +196,10 @@ Recontado del disco el **07/09/2026**, no copiado de la versión anterior de est
 > de 8° (Sesión 99) y 2 de geometría reescritas (Sesión 100), que perdieron su firma al
 > cambiarles el texto, más 21 lecciones—, y esa misma tarde Roberto firmó las 332 + 21. **Y volvió
 > a pasar el 07/09** con las 240 preguntas de Vocabulario de 4°, 5° y 6°, firmadas ese mismo día:
-> el banco queda en **16.865 de 16.865**, y las lecciones en **172 de 233**: ese mismo día se firmaron las 33 introducciones de Historia y se escribieron 61 más —las mini-clases de Matemática de 4° y 6°, más las introducciones de Ciencias de esos dos cursos—, que vuelven a la cola. **"Cerrado" es una foto, no un estado**:
+> el banco queda en **16.865 de 16.865**. Ese mismo día las lecciones abrieron y cerraron **tres
+> veces**: se firmaron las 33 introducciones de Historia (172 de 172), se escribieron 61 más —las
+> mini-clases de Matemática de 4° y 6° y las introducciones de Ciencias de esos dos cursos—, y
+> Roberto las firmó también: **233 de 233**. **"Cerrado" es una foto, no un estado**:
 > cada tanda nueva vuelve a la cola, y el número se mide en cada orden 66 en vez de copiarlo.
 >
 > ⚠️ **100% de cobertura no es 100% del mismo método.** 8° y los módulos de apoyo se revisaron

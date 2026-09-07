@@ -151,9 +151,9 @@ año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron co
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
 están hoy en una expedición jugable, el resto es reserva.
 
-> **Estado de aprobación (07/09/2026): 16.865 de 16.865 preguntas aprobadas, y 172 de 233
-> lecciones** —las 61 pendientes son las 27 mini-clases de Matemática de 4°, las 24 de 6° y
-> las 10 introducciones de Ciencias, escritas ese mismo día. El banco creció otra vez el 07/09 con las **240 preguntas de Vocabulario** de 4°,
+> **Estado de aprobación (07/09/2026): 16.865 de 16.865 preguntas aprobadas y 233 de 233
+> lecciones.** Las últimas 61 —las 27 mini-clases de Matemática de 4°, las 24 de 6° y las 10
+> introducciones de Ciencias— se escribieron y se firmaron el mismo día. El banco creció otra vez el 07/09 con las **240 preguntas de Vocabulario** de 4°,
 > 5° y 6°, firmadas ese mismo día. Antes había crecido tras la firma de 4° —la Sesión 99 escribió
 > **330 preguntas nuevas** para los 11 OA que le faltaban a Lenguaje de 8° y **21 lecciones**, y la
 > Sesión 100 reescribió **2 preguntas de geometría** que exigían dos cálculos encadenados con
@@ -10441,3 +10441,53 @@ contenido/matematicas-4basico/lecciones.json"*.
 > objeto anterior; un selector que agarró un `<script>` en vez de la tarjeta de Matemática; y una
 > medición que dio **"0 etiquetas fuera"** porque **el servidor local se había caído** —cierto por
 > vacuidad, y solo la captura lo delató—.
+
+### Sesión 105 (2026-09-07) — Las 61 lecciones quedan firmadas: 233 de 233
+Cierre corto del mismo día. Roberto bajó el `revisadas.json` y se aplicó. **No se escribió contenido
+ni se tocó el motor.**
+
+Las **61 lecciones** que la Sesión 104 dejó en la cola —las 27 mini-clases de Matemática de 4°, las
+24 de 6° y las 10 introducciones de Ciencias de esos dos cursos— quedaron aprobadas. El proyecto
+queda en **16.865 preguntas y 233 lecciones, todo firmado**.
+
+El diff fueron **61 líneas exactas** —5, 5, 27 y 24, una marca por lección y su contador—, o sea el
+formato canónico impuesto en la Sesión 85 sigue evitando que firmar dos lecciones reformatee el
+archivo entero.
+
+#### ⚠️ Verificado con control positivo, porque "0 pendientes" es justo lo que decía roto
+
+El tablero anunció *"no queda nada"* **dos veces esta semana teniendo trabajo pendiente** —la cola
+dedupeada por código y el modo de muestreo que solo recorría preguntas—, y las dos veces el síntoma
+fue idéntico al de un banco de verdad completo. Así que no basta con que el número calce:
+
+Se **desmarcó una lección de 4° a propósito**, se regeneró el tablero y se comprobó que la detecta
+(`data-rev="0"`, una sola casilla pendiente en todo el archivo); después se volvió a marcar y a
+regenerar. **Sin ese paso, un detector roto y un banco completo dan la misma pantalla.**
+
+Comprobado además que las **233 lecciones tienen su casilla** en el tablero —no solo que el conteo
+da 233— y que las 32 secciones declaran cero pendientes.
+
+#### Tres afirmaciones vivas que dejaron de ser ciertas al aplicar
+
+El callout de `CLAUDE.md`, el `README` y `docs/aprobacion-pedagogica.md` decían **"172 de 233"**,
+que era la verdad de la mañana. Corregidos los tres, conservando lo que sí vale: **es una FOTO, no
+un estado** —cada tanda nueva vuelve a la cola— y sigue sin poder decirse *"una a una"*, porque el
+100% es de cobertura y no de método. **La bitácora no se tocó**: es el registro de lo que se dijo
+entonces.
+
+#### Verificación
+
+Los **seis cursos** con motor vivo, **JUGADOR navegando** —la comprobación obligatoria desde que 7°
+estuvo caído en producción con la consola limpia— y `LECC` activo. **Cero errores de consola y cero
+fallos de red.**
+
+> **Dos errores de método propios, los de siempre:** busqué `data-pend-lec`, que **no existe** porque
+> las lecciones se cuentan **en vivo desde el DOM** (las preguntas no, porque solo se pintan al
+> desplegar su OA); y después `checked`, que **el generador nunca escribe** —lo pone el JS desde
+> `data-rev` al inicializar desde el almacén—. Las dos veces el tablero estaba bien.
+> **Cuando un conteo da raro, el primer sospechoso es la prueba.**
+
+- **Pendiente de Roberto:** **los 42 clips mal locutados** de Matemática de 4° (el signo de dividir,
+  Sesión 104): **US$0,04**, esperando autorización explícita porque gasta su cuenta de Azure.
+- **De arrastre:** INAPI —ahora a nombre de la SpA—, la facturación electrónica y la cuenta
+  corriente de la sociedad.
