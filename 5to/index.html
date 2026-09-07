@@ -1569,8 +1569,24 @@ const INSCRIBIR=(PRUEBA||ARMAR)?'':(_PARAMS.get('inscribir')||'').trim().toUpper
 let _exper=false;
 try{ _exper = !PRUEBA && !ARMAR && localStorage.getItem(EXPER_KEY)==='1'; }catch(e){}
 const EXPERIMENTAL=_exper;
-const CAPS_ABIERTOS=QA||PRUEBA||EXPERIMENTAL;
+/* ⚠️ ORDEN_LIBRE no es un modo de prueba: es el DISEÑO del producto desde el
+   06/09/2026, decisión de Roberto. VULPO se vende a familias y a colegios distintos,
+   y cada colegio pasa las unidades en su propio orden: obligar a jugar el capítulo 1
+   para llegar al 3 deja fuera justo al alumno cuyo curso está viendo el 3. Abre los
+   capítulos y sus etapas; los JEFES siguen pidiendo el camino, y ahí queda la meta
+   -el de cada capítulo exige sus 4 etapas, y el Jefe Final la campaña entera-.
+   De paso el mapa del profesor mide lo que el colegio ESTÁ pasando, no lo que el
+   juego impuso. Para volver al avance secuencial, esta sola constante en false. */
+const ORDEN_LIBRE=true;
+const CAPS_ABIERTOS=ORDEN_LIBRE||QA||PRUEBA||EXPERIMENTAL;
 const JEFES_ABIERTOS=QA||PRUEBA;
+/* ⚠️ Los candados PEDAGÓGICOS van en su propia bandera, y por eso ORDEN_LIBRE no los
+   toca: que la mini-clase abra su etapa y que la lección abra su nivel del Reto no es
+   progresión sino "aprender desbloquea el desafío" (Sesión 29). Mientras compartieron
+   CAPS_ABIERTOS, volver libre el orden los habría apagado a los dos de una sola vez y
+   sin ningún aviso. Es el mismo corte que la Sesión 41 le hizo a QA y la 73 a
+   MODO_ABIERTO: una bandera que mezcla dos preguntas distintas se parte. */
+const LECC_ABIERTAS=QA||PRUEBA;
 const EFIMERO=QA||PRUEBA;        // no mide dominio por OA ni reporta refuerzos
 const SIN_DISCO=PRUEBA||ARMAR;   // ni localStorage ni Supabase ni intro
 /* Vigencia inclusiva: un enlace con hasta=2026-09-15 sirve todo el 15 y muere el 16. */
@@ -2230,7 +2246,10 @@ async function sincronizarModoCurso(recargar){
   const real=!!(fila&&fila.experimental);
   try{ localStorage.setItem(EXPER_KEY, real?'1':'0'); }catch(e){}
   if(real===EXPERIMENTAL){ try{ sessionStorage.removeItem(EXPER_KEY+'_rc'); }catch(e){} return false; }
-  if(recargar) recargarPorModo();
+  // Con ORDEN_LIBRE el modo experimental ya no cambia nada de lo que se ve, asi que
+  // recargar la pagina por el solo seria un parpadeo sin motivo. El valor se sigue
+  // guardando en disco arriba, por si algun dia la constante vuelve a false.
+  if(recargar && !ORDEN_LIBRE) recargarPorModo();
   return true;
  }catch(e){ console.error('Modo del curso:',e.message||e); return false; }   // best-effort
 }

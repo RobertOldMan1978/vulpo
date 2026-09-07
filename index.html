@@ -152,18 +152,23 @@ footer a{color:var(--cyan)}
     un <b style="color:var(--txt)">mapa de aprendizaje objetivo por objetivo</b>.
   </p>
   <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px">
-    <a class="btn" href="/8vo?intro=0">Ver una muestra (8° básico)</a>
+    <a class="btn" href="/8vo?solo=hist-cap1">Ver una muestra (8° básico)</a>
     <a class="btn sec" href="/tutorial/">Cómo se juega</a>
     <a class="btn wa" href="https://wa.me/56976684967?text=Hola%2C%20vi%20VULPO%20y%20quiero%20saber%20m%C3%A1s%20para%20mi%20colegio." target="_blank" rel="noopener">Conversemos por WhatsApp</a>
   </div>
+  <!-- ⚠️ Cada enlace lleva `?solo=<capítulo>` y NO al juego completo: son MUESTRAS, y el
+       producto se vende. El capítulo de cada curso es el mismo que su `DEMO_LIBRE`, para
+       que no haya dos criterios de "cuál es la demo de este nivel" ni el visitante vea algo
+       distinto antes y después de que cierre la puerta el 1 de octubre. El modo muestra no
+       guarda nada, así que tampoco pisa la partida de quien ya juega en ese teléfono. -->
   <p style="margin-top:18px;font-size:14px;color:var(--dim)">
-    Prueba el curso que te interesa:
-    <a href="/3ro?intro=0">3°</a> ·
-    <a href="/4to?intro=0">4°</a> ·
-    <a href="/5to?intro=0">5°</a> ·
-    <a href="/6to?intro=0">6°</a> ·
-    <a href="/7mo?intro=0">7°</a> ·
-    <a href="/8vo?intro=0">8° básico</a>
+    Prueba una unidad del curso que te interesa:
+    <a href="/3ro?solo=mat3-cap1">3°</a> ·
+    <a href="/4to?solo=mate4-cap1">4°</a> ·
+    <a href="/5to?solo=mate5-cap1">5°</a> ·
+    <a href="/6to?solo=hist6-cap1">6°</a> ·
+    <a href="/7mo?solo=hist7-cap1">7°</a> ·
+    <a href="/8vo?solo=hist-cap1">8° básico</a>
   </p>
 </header>
 
@@ -305,7 +310,7 @@ footer a{color:var(--cyan)}
       <p class="dim" style="margin-top:12px;font-size:15px">
         Se juega desde el teléfono en casa, en vertical, y cada capítulo toma unos minutos.
       </p>
-      <a class="btn" href="/8vo?intro=0" style="margin-top:20px">Ver una muestra (8° básico)</a>
+      <a class="btn" href="/8vo?solo=hist-cap1" style="margin-top:20px">Ver una muestra (8° básico)</a>
     </div>
     <div class="tel">
       <img class="captura" src="assets/web/juego-mapa.png" alt="Mapa de una expedición de Historia dentro del juego, con etapas completadas y estrellas">
