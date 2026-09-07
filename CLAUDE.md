@@ -1263,7 +1263,7 @@ Llegada la fecha el cierre **ocurre solo**, sin desplegar nada ese día.
 - **Excepciones que nunca pasan por la puerta:** los enlaces de muestra (`?solo=`, `?m=`) y
   `?qa=1`. Están incorporadas en `bloqueado()`.
 - **Al terminar la demo** aparece `scr-demo-fin` con "Tengo un código" y el contacto
-  (vulpochile.app@gmail.com · +569 7668 4967).
+  (contacto@vulpo.cl · +569 7668 4967).
 
 > **Es un bloqueo BLANDO, y hay que saberlo antes de venderlo.** Verificado el 24/08/2026 contra
 > el sitio en vivo: **las 2.536 preguntas son descargables por cualquiera** pidiendo los archivos
@@ -3408,8 +3408,15 @@ uno de ellos ya implementado). **El juego no se tocó**: `index.html` y `profeso
   `profe-prueba@vulpo.cl`. El script vive fuera del repo.
 - **Recuperación del acceso de administrador.** El enlace de recuperación de Supabase apunta a
   `localhost:3000` (Site URL sin configurar), así que no sirve; la contraseña se fijó por SQL sobre
-  `auth.users`. **Cuenta admin: `vulpochile.app@gmail.com`.** El bloqueo suave del panel Admin del
-  juego sigue siendo `112358` (`scripts/generar-tablero.py`).
+  `auth.users`. **Usuario administrador de `profesor.html`: `vulpochile.app@gmail.com`.** El
+  bloqueo suave del panel Admin del juego sigue siendo `112358` (`scripts/generar-tablero.py`).
+  > ⚠️ **Son TRES cuentas distintas y conviene no confundirlas** (precisado el 07/09/2026): el
+  > **usuario admin del panel del profesor** es ese correo; el **proyecto de Supabase** —donde se
+  > pega el SQL— vive en la cuenta personal de Roberto; y **Azure**, la única que mueve dinero
+  > (la voz), en una tercera, corporativa. Las dos últimas **no se nombran aquí a propósito: el
+  > repositorio es público.** Importa al cambiar de correo: mover `vulpochile.app@gmail.com` a un
+  > dominio propio afecta **solo** al login del panel, y se arregla desde el propio panel de
+  > Supabase, que está en otra cuenta — así que no hay forma de quedarse afuera.
 - **Spec aprobado (sin implementar): roles por asignatura.**
   `docs/superpowers/specs/2026-08-23-roles-por-asignatura-design.md`. Un curso pasa de tener **un**
   profesor (`cursos.profesor_id`) a un **equipo**: tabla `curso_profesores` con rol (`jefe` /
@@ -9811,6 +9818,62 @@ más— para decir **"Prueba una unidad del curso que te interesa"**.
 > siempre —**cuando el resultado sorprende, el primer sospechoso es la prueba**— y esta vez lo caro
 > habría sido el falso positivo, no el falso negativo.
 
-- **Pendiente de arrastre:** INAPI —que ahora puede registrarse a nombre de la SpA— y el enlace de
-  agenda de la landing. **La reautenticación de NotebookLM y el contenido sensible de 5° quedan
-  cerrados.**
+#### VULPO estrena correo propio: `contacto@vulpo.cl`
+
+Roberto contrató **Google Workspace** sobre el dominio que ya pagaba, y con eso el proyecto deja de
+escribirle a un colegio desde un Gmail. **La cuenta personal se convirtió** en vez de crear una
+nueva, decisión correcta una vez medido el riesgo: `vulpochile.app@gmail.com` era **solo el correo
+de contacto**, no la llave de nada — Supabase, NotebookLM y GitHub viven en la cuenta personal de
+Roberto, y Azure en una tercera, corporativa. **El `@gmail.com` sigue recibiendo**, así que ningún
+enlace ya repartido se rompe.
+
+**La zona DNS quedó así**, y cada cosa en su carril sin pisarse:
+
+| | |
+|---|---|
+| 4 × `A` + `CNAME www` | GitHub Pages — **el juego** |
+| `MX` → `smtp.google.com` | el correo entra |
+| `TXT @` | verificación de Google + **SPF** |
+| `TXT google._domainkey` | **DKIM** |
+| `TXT _dmarc` | política |
+
+> ⚠️ **SPF, DKIM y DMARC no son opcionales aquí, y Google los ofrece como si lo fueran.** El canal
+> de venta de VULPO son correos a directores de colegio: sin firmar, un dominio recién estrenado
+> es carne de spam. **El DKIM es el que más se olvida** —hay que publicar la clave *y volver a la
+> consola a darle "Iniciar autenticación"*, y sin ese segundo clic Google no firma nada sin avisar,
+> el fallo mudo de siempre—. Verificado enviando de verdad: **SPF, DKIM y DMARC en PASS**, a un
+> Gmail, en 10 segundos.
+
+**El correo se cambió en 17 lugares, no en los 14 que yo había contado**: la landing y el tutorial
+tenían dos cada uno (el `mailto:` y el texto visible), y sobre todo **faltaba `assets/js/motor.js`**
+—el aviso del candado—, que no aparece si uno busca solo en páginas. Es la razón de barrer antes de
+reemplazar. La **bitácora histórica NO se tocó**: es el registro de lo que se dijo entonces.
+
+⚠️ **Lo que NO cambió es el login del panel del profesor**, que sigue siendo
+`vulpochile.app@gmail.com` con su contraseña de Supabase —no es un "entrar con Google"—, así que la
+conversión no lo afectó.
+
+**Cuidados que quedaron escritos al pasar por Cloudflare:** los 4 registros `A` van en **"Solo
+DNS"** y Cloudflare insiste en un banner con activar el proxy — **no hay que hacerlo**, es lo que
+GitHub Pages necesita para el certificado de `vulpo.cl`. Y si ofrece **Email Routing**, decir que
+no: pondría MX propios y chocarían con los de Google.
+
+#### Y el enlace de agenda, que era el pendiente más viejo de la landing
+
+Abierto desde la **Sesión 51**, cuando una revisión de persuasión pidió reemplazar el CTA de
+WhatsApp por una agenda real. Se cerró hoy porque Workspace le quita el límite de una sola
+programación de citas: **`📅 Agenda una demo de 15 minutos`** en el cierre de la landing.
+
+**Los dos canales conviven, y el reparto es deliberado:** WhatsApp arriba —en Chile es el canal
+natural de un director y pedirle una hora al primer contacto es más fricción que valor— y la
+agenda **solo en el cierre**, donde el visitante ya leyó todo. El botón de ahí decía *"Coordinemos
+una demo de 15 minutos"* y **abría un chat**: prometía una agenda y entregaba otra cosa. Ahora el
+verde dice *"Prefiero escribir por WhatsApp"*, que es lo que de verdad es.
+
+Verificado a 375 y 1280 px: sin desborde, los tres enlaces externos con `rel="noopener"` —este
+proyecto ya tuvo un XSS almacenado, y el tabnabbing es de la misma familia— y **mirando la
+captura**, no solo contando: los dos botones apilados con la jerarquía correcta.
+
+- **Pendiente de arrastre:** **INAPI**, que ahora puede registrarse a nombre de la SpA. **La
+  reautenticación de NotebookLM, el contenido sensible de 5°, el correo propio y el enlace de
+  agenda quedan cerrados.**

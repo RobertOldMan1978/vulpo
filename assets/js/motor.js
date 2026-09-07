@@ -422,7 +422,7 @@ function tieneLicencia(){ return !!S.alumno; }
 function bloqueado(){ return PUERTA && !PRUEBA && !QA && !tieneLicencia(); }
 function capAbierto(id){ return !bloqueado() || id===DEMO_LIBRE; }
 /* Mensaje único cuando se toca algo cerrado. */
-function avisoCandado(){ alert('🔒 Necesitas un código de tu profesor para abrir esta parte de VULPO.\n\n¿Eres profesor? Escríbenos a vulpochile.app@gmail.com'); }
+function avisoCandado(){ alert('🔒 Necesitas un código de tu profesor para abrir esta parte de VULPO.\n\n¿Eres profesor? Escríbenos a contacto@vulpo.cl'); }
 /* Remate de la demo: en vez del capítulo siguiente, la invitación a conseguir un código. */
 function mostrarFinDemo(){
  $('demoContacto').hidden=true;
