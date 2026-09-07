@@ -1942,11 +1942,21 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
 > **Recordar estos dos puntos CADA VEZ que se revisen los pendientes del proyecto.**
 > No son tareas de programación, pero bloquean el lanzamiento a producción.
 
-1. **Registrar la marca VULPO en INAPI.** El 2026-08-18 se verificó que estaba
-   *disponible*, pero **no está registrada**. Mientras no se inscriba, cualquiera puede
-   registrarla primero y el proyecto quedaría en el mismo problema que con KIMÜN. Clases
-   relevantes: software y educación. Conviene hacerlo con un abogado de marcas.
-   Trámite: https://www.inapi.cl/marcas
+1. 🟡 **Marca VULPO en INAPI — SOLICITUD PRESENTADA Y PAGADA (07/09/2026), en trámite.**
+   Se verificó disponible el 18/08 y quedó ingresada el 07/09, **a nombre de la SpA**, que es
+   lo que corresponde ahora que la sociedad existe.
+   > **Lo que esto ya resuelve:** en Chile la marca la gana quien la registra, y **la
+   > prioridad se cuenta desde la fecha de presentación**. O sea que el riesgo que costó el
+   > nombre KIMÜN —que un tercero la inscriba primero— **queda cubierto desde hoy**, aunque
+   > el registro todavía no esté concedido.
+   >
+   > ⚠️ **Pero todavía NO está concedida, y eso cambia lo que se puede decir:** hasta que
+   > INAPI la conceda, se dice *"marca en trámite"*, **nunca "marca registrada"** ni el
+   > símbolo ®. Falta la publicación en el Diario Oficial, el plazo de oposición de terceros
+   > y el examen de fondo, así que hay que **estar atento a las notificaciones del
+   > expediente**: una oposición o un reparo tienen plazo para contestarse y se pierden por
+   > no mirar. Ahí es donde un abogado de marcas vale lo que cuesta.
+   Trámite y estado: https://www.inapi.cl/marcas
 
 2. ✅ **Dominio propio `vulpo.cl` — CONTRATADO Y CONECTADO (Sesión 40).** El juego se sirve
    ahora en **`https://vulpo.cl`** (panel del profesor en `https://vulpo.cl/profesor.html`). DNS
@@ -10570,3 +10580,46 @@ escrito junto al del manifiesto, no solo aquí.
 
 - **Pendiente de arrastre:** INAPI —ahora a nombre de la SpA—, la facturación electrónica y la
   cuenta corriente de la sociedad. **De contenido y código no queda nada abierto.**
+
+#### Post scriptum de la Sesión 105 — los tres trámites se mueven, y la marca queda ingresada
+
+Roberto informó lo que faltaba del lado administrativo, y con eso el bloque de trámites deja de
+estar donde llevaba semanas. **No se tocó ni una línea de código, contenido ni arte.**
+
+| | Antes | Ahora |
+|---|---|---|
+| Facturación electrónica | pendiente | ✅ **habilitada** |
+| Cuenta corriente de la SpA | pendiente | 🟡 **en aprobación** |
+| Marca VULPO en INAPI | ni siquiera presentada | 🟡 **solicitud presentada y pagada** |
+
+**Antes de eso, Roberto preguntó qué tan importante era INAPI**, y la respuesta se dio **medida
+sobre el repositorio** en vez de con consejos genéricos: cuánto costaría renombrar hoy comparado
+con lo que costó KIMÜN→VULPO en la Sesión 21.
+
+> **Aquel renombre salió barato por una razón que quedó escrita: *"el nombre nunca estuvo dibujado
+> en el arte"*.** Hoy no: el logotipo trae la palabra dibujada, y además existen `vulpo.cl` con su
+> DNS y su certificado, `contacto@vulpo.cl` con SPF/DKIM/DMARC, **seis manifiestos de app
+> instalada** —un renombre obligaría a **reinstalar** en todos los teléfonos— y el material
+> comercial ya repartido. Medido en el árbol: **570 menciones en 75 archivos de texto** (fuera de
+> los clips de voz), y **`contenido/` con CERO** —los 32 bancos, las 233 lecciones y los `oa.json`
+> no la nombran ni una vez—, porque los identificadores internos siguen siendo `kimun_*` a
+> propósito desde la Sesión 21.
+
+**Y lo que esto ya resuelve, que es lo que importa:** en Chile la marca la gana quien la registra,
+y **la prioridad se cuenta desde la fecha de presentación**. O sea que el riesgo que costó el
+nombre KIMÜN —que un tercero la inscriba primero— **queda cubierto desde el 07/09**, aunque el
+registro todavía no esté concedido.
+
+> ⚠️ **Pero "en trámite" NO es "registrada", y eso gobierna lo que se le dice a un colegio.**
+> Hasta que INAPI la conceda se dice **"marca en trámite"**, nunca *"registrada"* ni el símbolo ®.
+> Es la misma disciplina que el resto de `docs/comercial.md` —no prometer lo que todavía no hay— y
+> no debilita el argumento: *"ingresada en INAPI con prioridad desde el 7 de septiembre"* ya es una
+> respuesta sólida.
+>
+> **Lo que sí queda vivo y se pierde por no mirar:** faltan la publicación, el plazo de oposición
+> de terceros y el examen de fondo, y **una oposición o un reparo tienen plazo para contestarse**.
+> Ahí es donde un abogado de marcas se paga solo, aunque el ingreso ya esté hecho.
+
+Actualizados los **tres documentos vivos** —la sección de trámites de este archivo, `pendiente.md`
+y `docs/comercial.md`—. **`docs/informe-v0.99.md` y el spec del renombre NO se tocaron**: están
+fechados y sellados con su commit, así que son foto histórica, igual que esta bitácora.

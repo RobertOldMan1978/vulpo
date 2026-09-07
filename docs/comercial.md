@@ -271,5 +271,14 @@ aceptaba y no había cómo emitir la factura, la venta se caía en el último pa
 2. **Al cotizar hay que decir si el número es neto o con IVA.** Los precios de este documento
    son **netos**, y así estaban escritos; con IVA incluido son otro número y un colegio
    compara presupuestos.
-3. **Falta la parte operativa:** habilitar la facturación electrónica y abrir la cuenta
-   corriente de la empresa. Sin eso se puede facturar en el papel y no en la práctica.
+3. **La parte operativa está casi lista:** la **facturación electrónica quedó habilitada el
+   07/09/2026** y la **cuenta corriente de la empresa está en aprobación**. Ya se puede emitir
+   la factura; falta dónde recibir el pago.
+
+**Y la marca está en trámite, no registrada (07/09/2026).** La solicitud de VULPO se presentó y
+pagó en INAPI, a nombre de la SpA, así que **la prioridad corre desde esa fecha**.
+
+> ⚠️ **Hasta que INAPI la conceda se dice "marca en trámite", nunca "marca registrada", y no se
+> usa el símbolo ®.** Es la misma regla que gobierna todo lo demás de este documento: no
+> prometer lo que todavía no hay. Un colegio que pregunte por la marca recibe la verdad —está
+> ingresada, con prioridad desde el 07/09— y eso ya es una respuesta sólida.

@@ -159,7 +159,8 @@ Esto no es un bloque del roadmap: es la lista corta de lo que hay entre hoy y un
   ⚠️ **Recuperarlo necesita internet**, que es distinto de funcionar sin conexión.
 
 **Los trámites bloquean COBRAR, no jugar:** un piloto gratuito no necesita ninguno. La **SpA
-ya está** (02/09); queda INAPI, que no bloquea el piloto pero sí el lanzamiento.
+ya está** (02/09) y su **facturación electrónica también** (07/09); queda la **cuenta corriente
+en aprobación** y la **marca en trámite** en INAPI, ninguna de las dos bloquea el piloto.
 
 ---
 
@@ -624,14 +625,19 @@ tienda y permite probar notificaciones antes de enfrentar iOS. Detalle en
 
 ## Trámites, fuera del código
 
-- **Registrar la marca VULPO en INAPI.** Verificado disponible el 18/08/2026, **no registrada**.
-  Mientras no se inscriba, cualquiera puede registrarla primero y el proyecto quedaría en el
-  mismo problema que tuvo con el nombre anterior. Clases: software y educación.
+- 🟡 **Marca VULPO en INAPI — SOLICITUD PRESENTADA Y PAGADA (07/09/2026), en trámite.**
+  Verificada disponible el 18/08, ingresada el 07/09 **a nombre de la SpA**. Con eso la
+  **prioridad se cuenta desde la fecha de presentación**, así que el riesgo que costó el
+  nombre anterior —que otro la inscriba primero— ya está cubierto.
+  ⚠️ **Todavía no está concedida:** se dice *"marca en trámite"*, **nunca "registrada"** ni ®.
+  Falta la publicación, el plazo de oposición y el examen de fondo — hay que **mirar las
+  notificaciones del expediente**, porque un reparo o una oposición tienen plazo y se pierden
+  por no contestarlos.
 - ✅ **La SpA está constituida**, con **inicio de actividades ante el SII desde el 01/09/2026**
   (primera categoría, afecta a IVA). Era el trámite que bloqueaba cobrar. ⚠️ Sus datos NO van
   en este repositorio, que es público: están en `Escritorio\VULPO - correos profesores\`.
-  **Queda la parte operativa:** habilitar la facturación electrónica y abrir la cuenta
-  corriente de la empresa — sin eso se factura en el papel y no en la práctica.
+  **La facturación electrónica quedó lista (07/09)** y la **cuenta corriente de la empresa está
+  en aprobación** — con eso se puede emitir la factura, y falta solo dónde recibir el pago.
 - ✅ **Enlace de agenda real — HECHO (07/09/2026).** El cierre de la landing lleva
   `📅 Agenda una demo de 15 minutos` a la programación de citas de Google Calendar, y WhatsApp
   queda como alternativa (*"Prefiero escribir por WhatsApp"*). Lo destrabó **Google Workspace**,
