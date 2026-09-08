@@ -11456,3 +11456,15 @@ Con el doble de Supabase y `cdp.mjs`, **mirando y no solo contando**:
   que de verdad usa las fotos. ⚠️ Con un límite que hay que decirle a un colegio antes de
   prometerlo: **la primera foto es del 30/08/2026**, así que de una unidad cerrada antes no se
   puede reconstruir nada. Para el año escolar 2027 habría el año completo desde marzo.
+
+> **Cerrado el mismo día: el esquema quedó aplicado**, y aquí la comprobación fue de **tres**
+> partes y no de una. (1) Las cinco funciones nuevas responden **400 `no_autorizado`** a una
+> sesión anónima —existen y su portero funciona— mientras `kimun_prof_plan_inventada` da **404
+> `PGRST202`**, así que el 400 no es un eco. (2) ⚠️ **La firma se comprobó de verdad**, que era
+> lo nuevo: PostgREST resuelve por NOMBRE de parámetro, así que llamar `kimun_prof_plan_fijar`
+> con sus **siete** y recibir 400 en vez de 404 prueba que la firma es la esperada — con una
+> distinta habría dado `PGRST202`, y un nombre mal escrito habría fallado en silencio el día que
+> alguien la usara. (3) `kimun_prof_dominio` y `_dominio_alumno` siguen respondiendo pese a
+> cambiar de firma —o sea que el `drop` previo hizo su trabajo y no quedaron dos versiones—, y
+> `kimun_oa_asignatura('MA06 OA 01')` sigue dando `MA06`. **Lo que no se puede comprobar sin
+> credenciales sigue siendo que devuelvan DATOS**: eso se ve abriendo el panel.
