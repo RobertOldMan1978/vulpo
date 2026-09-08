@@ -1,0 +1,8 @@
+# robots.txt de VULPO — https://vulpo.cl
+# El sitio es abierto: se permite rastrear todo salvo el tablero de desarrollo.
+
+User-agent: *
+Allow: /
+Disallow: /dev/
+
+Sitemap: https://vulpo.cl/sitemap.xml

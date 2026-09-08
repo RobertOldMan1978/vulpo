@@ -416,8 +416,9 @@ supuesto cuando pide "no modificar `contenido/` ni `supabase/`".
    con nivel adentro (`HI07`, `MA03`) es currículum y uno sin él (`VOC`, `AF`) es transversal.
    Por eso ningún script lleva una lista de carpetas escrita a mano: las listas paralelas son la
    fuente de bug más repetida del proyecto.
-5. **Nada nuevo en la raíz sin motivo.** La raíz es la landing. La PWA sumará exactamente
-   `manifest.webmanifest`, `sw.js` y `pwa.js`, y ahí se detiene.
+5. **Nada nuevo en la raíz sin motivo.** La raíz es la landing. Sus únicos vecinos legítimos son
+   las señales SEO que un buscador pide **en la raíz** —`sitemap.xml` y `robots.txt` (Sesión 115)—,
+   y la PWA sumará exactamente `manifest.webmanifest`, `sw.js` y `pwa.js`. Ahí se detiene.
 
 #### El contrato de la capa de contenido (31/08/2026)
 
@@ -12199,3 +12200,68 @@ panel: `profesor.html` **ni siquiera tiene la regla `[hidden]`**, y los forks la
 **`display` inline** al abrir (`flex`) y cerrar (`none`), que es independiente del CSS del anfitrión, con
 el porqué escrito en el código para que nadie lo devuelva a `hidden`. Verificado en el navegador: abre
 (`flex`), cierra al tocar (`none`) y reabre — cero consola. Un solo push (`qr.js` lleva respaldo vacío).
+
+### Sesión 115 (2026-09-08) — Auditoría SEO: el cimiento técnico que faltaba
+Roberto pidió una auditoría SEO de `vulpo.cl`, un reporte y una estrategia de **mínimo esfuerzo**.
+**No se tocó el juego ni el contenido.** Los cambios son señales para los buscadores en la cara
+comercial (landing, `/colegio`, `/tutorial`) y en los seis forks.
+
+**El diagnóstico, medido en el repo y no supuesto:** las bases on-page ya estaban bien —títulos,
+descripciones y Open Graph escritos con intención en las tres páginas comerciales, `lang="es"`,
+`alt` en todas las imágenes, HTTPS forzado, y el `.cl` que ya geo-orienta a Chile (la señal local
+más fuerte, gratis)—. **Lo que faltaba era la capa de cimientos técnicos**, que es justo lo de menor
+esfuerzo y mayor impacto, y ahí no había NADA: ni `sitemap.xml`, ni `robots.txt`, ni datos
+estructurados, ni `canonical`, ni Search Console.
+
+**Lo aplicado, todo verificado antes de commitear:**
+- **`sitemap.xml`** (9 URLs: landing, `/colegio`, `/tutorial` y los 6 cursos) y **`robots.txt`**
+  (`Disallow: /dev/` + apunta al sitemap). Escrito **a mano y no con `jekyll-sitemap`**: el plugin
+  arrastraría `profesor.html` y `/dev/`; con 9 URLs, controlarlo a mano es más simple y exacto.
+- **Datos estructurados JSON-LD** en la landing: un `@graph` con `EducationalOrganization` +
+  `WebSite` + `FAQPage`. Es lo que habilita la tarjeta enriquecida de marca y las FAQ directo en
+  los resultados.
+- **Sección de Preguntas Frecuentes visible** en la landing (5 preguntas: qué cubre, alineación
+  MINEDUC, datos de los alumnos, en qué se juega, cómo probarlo). ⚠️ **El `FAQPage` schema DEBE
+  reflejar texto visible** (regla de Google), por eso la FAQ va en pantalla y no solo en el schema;
+  se verificó que las 5 preguntas y respuestas calzan **palabra por palabra** entre el `<details>`
+  visible y el JSON-LD. Respeta `docs/comercial.md`: control por grep de precios en pesos, "una a
+  una", "sin internet", "registrada"/® → **cero coincidencias**.
+- **`rel=canonical` + Open Graph/Twitter completos** en las tres páginas comerciales (`og:site_name`,
+  `og:locale=es_CL`, dimensiones de imagen, tarjetas de Twitter; corregido el `og:url` de `/colegio`
+  que iba sin barra final, y agregado el de `/tutorial` que faltaba).
+- **`profesor.html` → `noindex,follow`** (es un login; `follow` deja fluir el link equity).
+- **Los 6 forks → meta description propia** (una frase por curso, idéntica salvo el número, con
+  script de anclas que preserva LF) y **título de 3° unificado** al formato de los otros cinco
+  (`VULPO · Aprende jugando — 3° Básico`; venía como `VULPO 3° — Aprende jugando`).
+
+**Decisiones que conviene no deshacer:**
+- **El `SoftwareApplication` en los forks se OMITIÓ a propósito.** Sin `offers` ni `rating` no genera
+  rich result de app, y meter `offers` pondría un precio en la cara pública —contra `comercial.md`—.
+  Los forks no son el objetivo SEO primario; con su title + description + estar en el sitemap alcanza.
+- **La estrategia competitiva NO va en el repo.** El repo es público; el reporte con el mapa de
+  palabras clave y el posicionamiento es un **Artifact privado** (compartible cuando Roberto quiera),
+  no un archivo del repo. Los arreglos técnicos (`sitemap`, `robots`, JSON-LD) **sí** van en el repo:
+  son públicos por naturaleza, se sirven a los crawlers.
+
+**La tesis del reporte:** la marca «VULPO» es trivial de ganar (palabra inventada, nadie compite).
+Lo que mueve la aguja con mínimo esfuerzo es (1) el cimiento técnico de una sola pasada —hecho hoy—
+y (2) apuntar a lo que el público **realmente** busca, que no es «VULPO»: un apoderado busca
+*"reforzamiento matemáticas 5° básico"*, una UTP *"seguimiento de cobertura curricular"*. Esa última
+es la joya de mínimo esfuerzo —poca competencia, y `/colegio` casi único ahí—.
+
+**Verificación** (con `scripts/cdp.mjs`, mirando y no solo contando): sitemap y JSON-LD **válidos**
+(parseados con Python); FAQ visible == schema verbatim; las tres páginas comerciales renderizan a
+1280 y 375 px **sin desborde, con la FAQ nueva legible e integrada, y consola limpia**; regresión de
+2 forks (`3ro` y `8vo`) **navegan con `__MOTOR_OK` y JUGADOR llega a `scr-expediciones`**, título y
+description correctos, cero errores. Y el `git diff --numstat` (post-filtro `.gitattributes`) muestra
+**solo los cambios reales, sin churn de EOL** —el CRLF en disco de este PC Windows se normaliza a LF
+en el índice, exactamente lo de la Sesión 75—.
+
+**Reporte:** Artifact `a00909d4-3a4a-4f6a-992c-63db82d330b8` — auditoría, estrategia en 3 horizontes
+(cimiento / intención / autoridad), mapa de palabras clave por audiencia, y las 4 acciones de Roberto.
+
+**Pendiente de Roberto (fuera del código, va en el reporte):** (1) **Google Search Console** —la #1—,
+verificar `vulpo.cl` por registro DNS TXT en Cloudflare y **enviar el sitemap**; (2) Bing Webmaster
+Tools (importa de GSC); (3) Perfil de Empresa de Google (Chile); (4) 2-3 backlinks. El SEO de un
+dominio de dos semanas toma meses: la marca rankea en semanas, la cola larga y el nicho UTP en 1-3
+meses, los términos anchos solo con autoridad acumulada. **Expectativa honesta, no urgencia.**

@@ -8,12 +8,21 @@
 <link rel="icon" type="image/png" href="assets/web/vulpo-logo-320.png">
 <link rel="apple-touch-icon" href="assets/web/vulpo-logo-320.png">
 <meta name="theme-color" content="#1e1747">
+<link rel="canonical" href="https://vulpo.cl/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="VULPO">
+<meta property="og:locale" content="es_CL">
 <meta property="og:title" content="VULPO · Aprende jugando">
 <meta property="og:description" content="Plataforma educativa alineada al currículum chileno: de 3° a 8° básico, con panel para el profesor.">
 <meta property="og:image" content="https://vulpo.cl/assets/web/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VULPO · Aprende jugando">
 <meta property="og:url" content="https://vulpo.cl/">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VULPO · Aprende jugando">
+<meta name="twitter:description" content="Plataforma educativa alineada al currículum chileno, de 3° a 8° básico, con panel para el profesor.">
+<meta name="twitter:image" content="https://vulpo.cl/assets/web/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Inter = registro formal para el sitio comercial (el juego conserva Nunito). Titan One
@@ -136,6 +145,16 @@ li::before{content:"\2726";position:absolute;left:0;color:var(--gold)}
 footer{padding:36px 0;text-align:center;color:var(--dim);font-size:13px;font-weight:500}
 footer a{color:var(--cyan)}
 @media (prefers-reduced-motion: reduce){*{transition:none!important}}
+/* Preguntas frecuentes (acordeón accesible). El texto de cada respuesta CALCA el del
+   FAQPage en el JSON-LD al final del body: si uno cambia, cambiar el otro. */
+.faq{background:var(--panel2);border:1px solid #ffffff1a;border-radius:12px;margin-bottom:12px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:18px 22px;font-weight:700;font-size:17px;color:var(--txt);
+  display:flex;justify-content:space-between;align-items:center;gap:14px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold);font-size:22px;font-weight:800;flex:none;line-height:1}
+.faq[open] summary::after{content:"\2013"}
+.faq summary:hover{color:var(--gold)}
+.faq .r{padding:0 22px 20px;color:var(--dim);line-height:1.65}
 </style>
 </head>
 <body>
@@ -361,6 +380,33 @@ footer a{color:var(--cyan)}
   </div>
 </section>
 
+<section class="seccion envoltura">
+  <span class="kicker">Preguntas frecuentes</span>
+  <h2>Lo que preguntan los colegios y las familias</h2>
+  <div style="max-width:760px;margin-top:22px">
+    <details class="faq">
+      <summary>¿Qué cursos y asignaturas cubre VULPO?</summary>
+      <div class="r">De 3° a 8° básico, las cuatro asignaturas de cada curso: matemática, lenguaje, ciencias e historia. Cada curso trae el año completo del currículum, no una unidad suelta.</div>
+    </details>
+    <details class="faq">
+      <summary>¿Está alineado al currículum chileno?</summary>
+      <div class="r">Sí. Las preguntas se escribieron objetivo por objetivo desde las Bases Curriculares del MINEDUC y fueron aprobadas por un grupo de profesionales apoyados con Inteligencia Artificial. El propio MINEDUC nombra a los juegos de preguntas como un apoyo válido de la evaluación formativa.</div>
+    </details>
+    <details class="faq">
+      <summary>¿Cómo cuida los datos de los alumnos?</summary>
+      <div class="r">El niño no entrega datos personales para jugar: entra con un código que le da su profesor. El informe para el apoderado se mira en el propio teléfono. El panel del profesor no calcula notas ni sirve para calificar: es una brújula para decidir qué reforzar.</div>
+    </details>
+    <details class="faq">
+      <summary>¿En qué se juega?</summary>
+      <div class="r">En el teléfono o el computador, desde el navegador, sin instalar nada. También se puede agregar a la pantalla de inicio del teléfono para abrirlo como una aplicación.</div>
+    </details>
+    <details class="faq">
+      <summary>¿Cómo lo prueba mi colegio?</summary>
+      <div class="r">Instalamos un curso de prueba sin costo. En pocas semanas el panel ya muestra el mapa de aprendizaje del curso con datos reales, y el colegio decide con evidencia. Se coordina por WhatsApp o agendando una demo de 15 minutos.</div>
+    </details>
+  </div>
+</section>
+
 <footer class="envoltura">
   <b style="color:var(--txt)">VULPO</b> · Creado por Roberto Lorca, papá y desarrollador chileno.<br>
   <a href="mailto:contacto@vulpo.cl">contacto@vulpo.cl</a>
@@ -406,6 +452,79 @@ footer a{color:var(--cyan)}
   /* Una cada 3 a 9 segundos (antes 8 a 22). */
   (function agenda(){setTimeout(function(){estrellaFugaz();agenda();},3000+Math.random()*6000);})();
 })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://vulpo.cl/#org",
+      "name": "VULPO",
+      "url": "https://vulpo.cl/",
+      "logo": "https://vulpo.cl/assets/web/vulpo-logo-320.png",
+      "image": "https://vulpo.cl/assets/web/og.png",
+      "email": "contacto@vulpo.cl",
+      "description": "Plataforma de juegos educativos alineada al currículum chileno, de 3° a 8° básico: los alumnos repasan jugando y el profesor ve, objetivo por objetivo, qué le cuesta a su curso.",
+      "areaServed": { "@type": "Country", "name": "Chile" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://vulpo.cl/#website",
+      "url": "https://vulpo.cl/",
+      "name": "VULPO",
+      "inLanguage": "es-CL",
+      "publisher": { "@id": "https://vulpo.cl/#org" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://vulpo.cl/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué cursos y asignaturas cubre VULPO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "De 3° a 8° básico, las cuatro asignaturas de cada curso: matemática, lenguaje, ciencias e historia. Cada curso trae el año completo del currículum, no una unidad suelta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Está alineado al currículum chileno?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Las preguntas se escribieron objetivo por objetivo desde las Bases Curriculares del MINEDUC y fueron aprobadas por un grupo de profesionales apoyados con Inteligencia Artificial. El propio MINEDUC nombra a los juegos de preguntas como un apoyo válido de la evaluación formativa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo cuida los datos de los alumnos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El niño no entrega datos personales para jugar: entra con un código que le da su profesor. El informe para el apoderado se mira en el propio teléfono. El panel del profesor no calcula notas ni sirve para calificar: es una brújula para decidir qué reforzar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿En qué se juega?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En el teléfono o el computador, desde el navegador, sin instalar nada. También se puede agregar a la pantalla de inicio del teléfono para abrirlo como una aplicación."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo lo prueba mi colegio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Instalamos un curso de prueba sin costo. En pocas semanas el panel ya muestra el mapa de aprendizaje del curso con datos reales, y el colegio decide con evidencia. Se coordina por WhatsApp o agendando una demo de 15 minutos."
+          }
+        }
+      ]
+    }
+  ]
+}
 </script>
 
 </body>
