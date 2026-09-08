@@ -73,7 +73,14 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--cyan);outline-offset:
   -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:0 4px 16px rgba(0,0,0,.35);transition:.15s}
 .prof-top:hover{transform:translateY(-1px);border-color:var(--violet);box-shadow:0 8px 22px rgba(0,0,0,.45)}
 .prof-top .ic{font-size:17px;line-height:1}
-@media(max-width:520px){.prof-top{padding:8px 12px;font-size:13px}}
+/* Volver a vulpo.cl, fijo arriba a la izquierda (simétrico al "Profes"). Lo pidió Roberto:
+   /colegio es una página aparte y necesitaba una salida visible al sitio principal. */
+.volver-top{position:fixed;top:14px;left:14px;z-index:50;display:inline-flex;align-items:center;gap:6px;
+  text-decoration:none;padding:9px 15px;border-radius:999px;font-weight:700;font-size:14px;
+  color:var(--txt);background:rgba(20,18,45,.82);border:1px solid #ffffff2e;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:0 4px 16px rgba(0,0,0,.35);transition:.15s}
+.volver-top:hover{transform:translateY(-1px);border-color:var(--violet);box-shadow:0 8px 22px rgba(0,0,0,.45)}
+@media(max-width:520px){.prof-top,.volver-top{padding:8px 12px;font-size:13px}}
 
 img.captura{width:100%;border-radius:var(--r);border:1px solid #ffffff26;display:block;box-shadow:0 10px 30px rgba(0,0,0,.35)}
 .marco-captura{position:relative}
@@ -115,6 +122,7 @@ footer a{color:var(--cyan)}
 
 <div class="stars" id="stars" aria-hidden="true"></div>
 
+<a class="volver-top" href="/" aria-label="Volver a vulpo.cl">← vulpo.cl</a>
 <a class="prof-top" href="/profesor.html" aria-label="Panel del profesor"><span class="ic" aria-hidden="true">🧑‍🏫</span> Profes</a>
 
 <header class="envoltura" style="padding-top:48px;padding-bottom:26px;text-align:center">

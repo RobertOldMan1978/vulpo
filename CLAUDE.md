@@ -12014,4 +12014,25 @@ de red**.
 
 ⚠️ **Deuda anotada, fuera de alcance:** las 3 capturas del panel viejo (violeta, anterior a la
 Sesión 106) siguen en la **landing raíz** y hoy chocan con el panel real. `/colegio` usa capturas
-nuevas y no depende de ellas; rehacer las de la raíz es un trabajo aparte.
+nuevas y no depende de ellas; rehacer las de la raíz es un trabajo aparte. **→ Cerrada el mismo día
+(post scriptum).**
+
+**Post scriptum de la Sesión 112 — cuatro ajustes que Roberto pidió probando en vivo:**
+
+1. ✅ **La deuda de arriba, cerrada:** las 3 capturas de la landing raíz (`panel-dominio`,
+   `-refuerzo`, `-ranking`) **recapturadas con el panel sobrio actual** (Sesión 106) y recortadas a
+   su bloque. Las viejas eran de antes de ese rediseño —violeta, Titan One— y se veían de otra época
+   junto al panel real; el contraste dentro de la landing es enorme.
+2. ⚠️ **El modo prueba (`?solo=`) no tenía salida a vulpo.cl**, lo reportó Roberto: quien abre un
+   enlace de muestra **no pasa por `scr-rol`** —donde vive el "← Volver a vulpo.cl" del inicio (Sesión
+   49)—, así que quedaba sin retorno. Un "← Volver a vulpo.cl" (`SALIR_WEB_HTML`) en el encabezado de
+   la lista, en **los 6 cursos** porque va en `motor.js`. `/` es la raíz del dominio = vulpo.cl, sea
+   cual sea el curso.
+3. **`/colegio` gana un "← vulpo.cl"** fijo arriba a la izquierda, simétrico al "Profes" de la
+   derecha (antes solo tenía "Ver el sitio completo" en el pie).
+4. **El logo "VULPO" del tutorial** llevaba a `#arriba` (ancla dentro de la página); ahora lleva a
+   `/` (vulpo.cl), que es la convención web de un logo clicable.
+
+Verificado mirando cada pantalla: el botón del modo prueba bien ubicado en los 6 cursos, el de
+`/colegio` integrado, las capturas nuevas dentro de la landing, `motor.js` por `node --check`, y cero
+errores de consola.

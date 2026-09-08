@@ -804,6 +804,11 @@ function entrarExpedicion(exp){
    varias asignaturas era una columna de veintitantas tarjetas donde no se veía dónde
    terminaba una materia y empezaba la otra. */
 let PRUEBA_GRUPO=null;          // null = nivel 1 (asignaturas); nombre = nivel 2
+/* Salida a vulpo.cl en modo prueba: quien abre un enlace de muestra no pasa por scr-rol
+   (donde vive el "← Volver a vulpo.cl" del inicio), así que sin esto queda sin retorno —lo
+   reportó Roberto probando `?solo=`—. Va en el encabezado de la lista, siempre visible. `/`
+   es la raíz del dominio = vulpo.cl, sea cual sea el curso. */
+const SALIR_WEB_HTML='<a href="/" style="display:inline-block;margin-top:14px;color:var(--cyan);font-size:14px;font-weight:600;text-decoration:none">← Volver a vulpo.cl</a>';
 
 /* Agrupa lo pedido en ?solo= por asignatura, en el orden del curso (ORDEN_ASIG). Lo que
    no es asignatura del currículum —Lectura, Vocabulario— queda al final, que es donde va
@@ -835,7 +840,7 @@ function renderListaPrueba(){
          : (PRUEBA_GRUPO ? grupos.find(o=>o.nombre===PRUEBA_GRUPO) : null);
 
  if(!g){                                        // Nivel 1: asignaturas y libros
-  $('campHead').innerHTML='<h1 style="font-size:26px">Modo prueba</h1><p>Elige por dónde empezar</p>';
+  $('campHead').innerHTML='<h1 style="font-size:26px">Modo prueba</h1><p>Elige por dónde empezar</p>'+SALIR_WEB_HTML;
   if(bc) bc.style.display='none';               // es la raíz: no hay a dónde volver
   grupos.forEach(o=>{
    const n=o.exps.length+o.extras.length;
@@ -856,7 +861,7 @@ function renderListaPrueba(){
     siendo "Modo prueba" y la asignatura va de bajada: quien abre un enlace de muestra
     tiene que saber SIEMPRE que está en una muestra, y con un solo grupo esta es la
     primera pantalla que ve. */
- $('campHead').innerHTML=`<h1 style="font-size:26px">Modo prueba</h1><p>${g.nombre}</p>`;
+ $('campHead').innerHTML=`<h1 style="font-size:26px">Modo prueba</h1><p>${g.nombre}</p>`+SALIR_WEB_HTML;
  if(bc){
   if(grupos.length<2){ bc.style.display='none'; }
   else {
