@@ -1000,7 +1000,8 @@ declare cid uuid; v int; begin
 drop function if exists public.kimun_prof_dominio(text);
 create or replace function public.kimun_prof_dominio(p_curso_codigo text)
 returns table(oa text, respondidas bigint, correctas bigint, alumnos bigint,
-              resp_1 bigint, ok_1 bigint, alumnos_1 bigint)
+              resp_1 bigint, ok_1 bigint, alumnos_1 bigint,
+              ultima timestamptz, recientes bigint)
 language plpgsql security definer set search_path=public as $$
 declare cid uuid; asigs text[]; begin
   select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
@@ -1011,7 +1012,19 @@ declare cid uuid; asigs text[]; begin
            sum(d.resp_1), sum(d.ok_1),
            -- Cuántos alumnos aportaron un primer intento: es el número que decide si el
            -- porcentaje es creíble, y no es lo mismo que cuántos hay en el curso.
-           count(distinct d.perfil_id) filter (where d.resp_1 > 0)
+           count(distinct d.perfil_id) filter (where d.resp_1 > 0),
+           /* CUÁNDO se trabajó este objetivo, que es lo que le faltaba al mapa: en
+              diciembre, un 45% de abril y un 45% de la semana pasada piden cosas muy
+              distintas y hasta ahora se veían igual.
+              ⚠️ `dominio.actualizado` es la ÚLTIMA vez que se tocó, no la primera: se
+              sobreescribe en cada respuesta, así que un objetivo de abril re-jugado en
+              noviembre diría "noviembre". Por eso van los DOS números y no solo la fecha:
+              `recientes` dice cuántos alumnos lo movieron en los últimos 30 días, y es lo
+              que distingue "el curso está en esta unidad" de "un niño repasó por su
+              cuenta" —que con `ultima` a secas se ven idénticos—. Reconstruir la primera
+              vez exige las fotos semanales, y eso es otro trabajo. */
+           max(d.actualizado),
+           count(distinct d.perfil_id) filter (where d.actualizado >= now() - interval '30 days')
     from public.dominio d
     join public.perfiles p on p.id = d.perfil_id
     where p.curso_id = cid
@@ -1029,7 +1042,8 @@ end $$;
 drop function if exists public.kimun_prof_dominio_alumno(text);
 drop function if exists public.kimun_prof_dominio_alumno(uuid);
 create or replace function public.kimun_prof_dominio_alumno(p_perfil uuid)
-returns table(oa text, respondidas int, correctas int, resp_1 int, ok_1 int)
+returns table(oa text, respondidas int, correctas int, resp_1 int, ok_1 int,
+              ultima timestamptz)
 language plpgsql security definer set search_path=public as $$
 declare cid uuid; asigs text[]; begin
   select curso_id into cid from public.perfiles where id = p_perfil;
@@ -1037,7 +1051,10 @@ declare cid uuid; asigs text[]; begin
     then raise exception 'no_autorizado'; end if;
   asigs := public.kimun_prof_asignaturas(cid);
   return query
-    select d.oa, d.respondidas, d.correctas, d.resp_1, d.ok_1 from public.dominio d
+    -- `ultima` = la última vez que este alumno tocó el objetivo. Aquí no hace falta el
+    -- acompañante `recientes` que sí lleva la vista del curso: con un solo alumno no hay
+    -- nada que distinguir entre "la clase está en esto" y "uno repasó".
+    select d.oa, d.respondidas, d.correctas, d.resp_1, d.ok_1, d.actualizado from public.dominio d
     where d.perfil_id = p_perfil
       and public.kimun_oa_asignatura(d.oa) = any(asigs)
     order by (d.ok_1::numeric / nullif(d.resp_1,0)) asc nulls last, d.oa;
@@ -1916,6 +1933,238 @@ begin
   return query select p.datos, p.actualizado from public.progreso p where p.perfil_id = mi;
 end $$;
 
+/* -- Planificación del año: fechas de inicio y término por unidad ----------------
+   Nace de un problema concreto del profesor: en diciembre, el mapa mezcla objetivos
+   que se pasaron en abril con los de la semana pasada y los muestra igual, así que
+   "45%" no dice si hay que actuar o si eso ya se reforzó hace ocho meses.
+
+   Quién las pone (decisión de Roberto, 08/09/2026): la UTP carga la planificación a
+   principio de año y el profesor de asignatura puede AJUSTARLA con una justificación,
+   porque el aula no calza con el papel. Las dos cosas son el mismo acto —declarar
+   cuándo se pasa cada unidad— así que viven en una sola tabla y una sola función.
+
+   ⚠️ NO hace falta ningún botón de "cerrar unidad". La foto ya se está tomando: cada
+   domingo desde la Sesión 36, `dominio_semanal` guarda el detalle alumno×objetivo. Con
+   la fecha de término declarada, el informe de cierre se RECONSTRUYE de esas fotos,
+   así que las fechas se pueden poner después —incluso a fin de año— y los niños pueden
+   seguir jugando sin contaminar nada. En un proyecto que ya se quemó con pasos
+   manuales que fallan en silencio (el pg_cron sin agendar), esa diferencia es grande.
+
+   ⚠️ Y el historial de cambios es visible para la UTP, POR DECISIÓN DE ROBERTO, sobre
+   una advertencia explícita: un registro de "el profesor movió la fecha y esta fue su
+   justificación" es material de evaluación docente, que es la línea roja que este
+   esquema viene esquivando desde la Sesión 24. El riesgo práctico, además del de
+   fondo: si mover una fecha se siente como confesar un atraso, los profesores dejan de
+   moverlas y los informes vuelven a estar mal fechados —justo lo que esto arregla—.
+   Queda escrito aquí para que quien lo venda sepa lo que entrega.                  */
+create table if not exists public.unidades_plan (
+  id           uuid primary key default gen_random_uuid(),
+  curso_id     uuid not null references public.cursos(id) on delete cascade,
+  asignatura   text not null,                       -- 'HI05'
+  unidad       text not null,                       -- 'U1', el id que declara el oa.json
+  -- El título al momento de fijarla. Se guarda aunque el cliente lo tenga en el oa.json,
+  -- para que el historial se pueda leer solo, sin cruzar con el repositorio.
+  titulo       text,
+  inicio       date,
+  termino      date,
+  nota         text,
+  profesor_id  uuid references public.profesores(id) on delete set null,
+  actualizado  timestamptz not null default now(),
+  unique(curso_id, asignatura, unidad)
+);
+alter table public.unidades_plan enable row level security;   -- sin políticas: por funciones
+
+/* El historial. Referencia el CURSO y no la fila del plan: así sobrevive a que alguien
+   borre una unidad de la planificación, que es justo cuando el registro importa. */
+create table if not exists public.unidades_plan_log (
+  id           uuid primary key default gen_random_uuid(),
+  curso_id     uuid not null references public.cursos(id) on delete cascade,
+  asignatura   text not null,
+  unidad       text not null,
+  titulo       text,
+  inicio_ant   date,
+  termino_ant  date,
+  inicio       date,
+  termino      date,
+  nota         text,
+  profesor_id  uuid references public.profesores(id) on delete set null,
+  creado       timestamptz not null default now()
+);
+alter table public.unidades_plan_log enable row level security;
+create index if not exists idx_unidades_plan_log_curso
+  on public.unidades_plan_log(curso_id, creado desc);
+
+-- La planificación de un curso, acotada a MIS asignaturas: un profe de Ciencias no
+-- necesita ver cuándo pasa Historia sus unidades.
+drop function if exists public.kimun_prof_plan(text);
+create or replace function public.kimun_prof_plan(p_curso_codigo text)
+returns table(asignatura text, unidad text, titulo text, inicio date, termino date,
+              nota text, fijada_por text, actualizado timestamptz, cambios bigint)
+language plpgsql security definer set search_path=public as $$
+declare cid uuid; asigs text[]; begin
+  select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
+  if cid is null or not public.kimun_prof_acceso(cid) then raise exception 'no_autorizado'; end if;
+  asigs := public.kimun_prof_asignaturas(cid);
+  return query
+    select u.asignatura, u.unidad, u.titulo, u.inicio, u.termino, u.nota,
+           coalesce(pr.nombre, pr.correo), u.actualizado,
+           -- Cuántas veces se movió. El detalle vive en el historial y solo lo abre la
+           -- UTP; aquí basta el número para saber si hay algo que mirar.
+           (select count(*) from public.unidades_plan_log l
+             where l.curso_id = u.curso_id and l.asignatura = u.asignatura
+               and l.unidad = u.unidad)
+      from public.unidades_plan u
+      left join public.profesores pr on pr.id = u.profesor_id
+     where u.curso_id = cid and u.asignatura = any(asigs)
+     order by u.asignatura, u.unidad;
+end $$;
+
+/* Fija o mueve las fechas de una unidad, y deja constancia. Una sola función para la UTP
+   y para el profesor: lo que cambia es el portero, no el acto.
+   ⚠️ La nota es OBLIGATORIA al mover una fecha que ya estaba puesta y que uno no puso
+   —que es el caso "el profesor ajusta la planificación de la UTP"—. Al ponerla por
+   primera vez, o al corregir la propia, no se exige: pedir una justificación para
+   estrenar una fecha convertiría el acto en un trámite y nadie llenaría la planificación. */
+drop function if exists public.kimun_prof_plan_fijar(text,text,text,text,date,date,text);
+create or replace function public.kimun_prof_plan_fijar(
+  p_curso_codigo text, p_asignatura text, p_unidad text, p_titulo text,
+  p_inicio date, p_termino date, p_nota text)
+returns void language plpgsql security definer set search_path=public as $$
+declare cid uuid; ant public.unidades_plan; nota text; asig text; uni text; begin
+  select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
+  if cid is null or not public.kimun_prof_acceso(cid) then raise exception 'no_autorizado'; end if;
+  asig := upper(trim(coalesce(p_asignatura,'')));
+  uni  := trim(coalesce(p_unidad,''));
+  if asig = '' or uni = '' then raise exception 'datos_incompletos'; end if;
+  -- Sobre MIS asignaturas. El admin de colegio las tiene todas, así que esta sola
+  -- comprobación cubre a la UTP y al profesor sin partir la función en dos.
+  if not (asig = any(public.kimun_prof_asignaturas(cid))) then
+    raise exception 'asignatura_ajena';
+  end if;
+  -- Una unidad no puede terminar antes de empezar. Se valida en el servidor y no solo en
+  -- el panel porque de estas fechas dependen los informes de cierre.
+  if p_inicio is not null and p_termino is not null and p_termino < p_inicio then
+    raise exception 'fechas_invertidas';
+  end if;
+
+  select * into ant from public.unidades_plan
+   where curso_id = cid and asignatura = asig and unidad = uni;
+  nota := nullif(trim(coalesce(p_nota,'')),'');
+  if ant.id is not null
+     and (ant.inicio is distinct from p_inicio or ant.termino is distinct from p_termino)
+     and ant.profesor_id is distinct from auth.uid()
+     and nota is null then
+    raise exception 'falta_justificacion';
+  end if;
+
+  insert into public.unidades_plan(curso_id, asignatura, unidad, titulo,
+                                   inicio, termino, nota, profesor_id, actualizado)
+       values (cid, asig, uni, nullif(trim(coalesce(p_titulo,'')),''),
+               p_inicio, p_termino, nota, auth.uid(), now())
+  on conflict (curso_id, asignatura, unidad) do update
+     set titulo = coalesce(excluded.titulo, public.unidades_plan.titulo),
+         inicio = excluded.inicio, termino = excluded.termino,
+         nota = excluded.nota, profesor_id = excluded.profesor_id,
+         actualizado = now();
+
+  -- El historial se escribe SIEMPRE, también la primera vez: sin la fila inicial, un
+  -- cambio posterior se leería como si la fecha hubiera salido de la nada.
+  insert into public.unidades_plan_log(curso_id, asignatura, unidad, titulo,
+      inicio_ant, termino_ant, inicio, termino, nota, profesor_id)
+    values (cid, asig, uni, nullif(trim(coalesce(p_titulo,'')),''),
+            ant.inicio, ant.termino, p_inicio, p_termino, nota, auth.uid());
+end $$;
+
+-- Borra la planificación de una unidad. Deja su rastro en el historial, que es de lo que
+-- se trata: una fecha que desaparece sin registro es peor que una equivocada.
+drop function if exists public.kimun_prof_plan_quitar(text,text,text);
+create or replace function public.kimun_prof_plan_quitar(
+  p_curso_codigo text, p_asignatura text, p_unidad text)
+returns void language plpgsql security definer set search_path=public as $$
+declare cid uuid; ant public.unidades_plan; asig text; uni text; begin
+  select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
+  if cid is null or not public.kimun_prof_acceso(cid) then raise exception 'no_autorizado'; end if;
+  asig := upper(trim(coalesce(p_asignatura,''))); uni := trim(coalesce(p_unidad,''));
+  if not (asig = any(public.kimun_prof_asignaturas(cid))) then
+    raise exception 'asignatura_ajena';
+  end if;
+  select * into ant from public.unidades_plan
+   where curso_id = cid and asignatura = asig and unidad = uni;
+  if ant.id is null then return; end if;
+  delete from public.unidades_plan where id = ant.id;
+  insert into public.unidades_plan_log(curso_id, asignatura, unidad, titulo,
+      inicio_ant, termino_ant, inicio, termino, nota, profesor_id)
+    values (cid, asig, uni, ant.titulo, ant.inicio, ant.termino, null, null,
+            'Se quitó la planificación de esta unidad', auth.uid());
+end $$;
+
+/* El historial de cambios de un curso. ⚠️ Solo la UTP y el Admin, por decisión de
+   Roberto y sobre la advertencia de arriba: es el registro de quién movió qué fecha y
+   con qué justificación. */
+drop function if exists public.kimun_prof_plan_historial(text);
+create or replace function public.kimun_prof_plan_historial(p_curso_codigo text)
+returns table(asignatura text, unidad text, titulo text,
+              inicio_ant date, termino_ant date, inicio date, termino date,
+              nota text, quien text, creado timestamptz)
+language plpgsql security definer set search_path=public as $$
+declare cid uuid; begin
+  select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
+  if cid is null or not public.kimun_prof_acceso(cid) then raise exception 'no_autorizado'; end if;
+  if not public.kimun_prof_admin_colegio() then raise exception 'no_autorizado'; end if;
+  return query
+    select l.asignatura, l.unidad, l.titulo, l.inicio_ant, l.termino_ant,
+           l.inicio, l.termino, l.nota, coalesce(pr.nombre, pr.correo), l.creado
+      from public.unidades_plan_log l
+      left join public.profesores pr on pr.id = l.profesor_id
+     where l.curso_id = cid
+     order by l.creado desc;
+end $$;
+
+/* Propuesta de fechas, leída de las FOTOS semanales: la primera semana en que un objetivo
+   aparece con primer intento es cuando el curso lo empezó a trabajar, y la última en que
+   creció es cuando lo dejó. El cliente agrupa por unidad y toma el mínimo y el máximo.
+   ⚠️ Solo funciona HACIA ADELANTE: la primera foto es del 30/08/2026, así que de una
+   unidad cerrada antes de esa fecha no hay nada que proponer y las fechas se escriben a
+   mano. Ese historial no se puede fabricar, y es justo lo que estas tablas evitan hacia
+   el futuro.
+   ⚠️ Y usa `resp_1` y no `actualizado`: el primer intento queda congelado, así que la
+   semana en que aparece es la real; `dominio.actualizado` se sobreescribe en cada
+   respuesta, y un objetivo de abril re-jugado en noviembre diría "noviembre". */
+drop function if exists public.kimun_prof_plan_sugerir(text);
+create or replace function public.kimun_prof_plan_sugerir(p_curso_codigo text)
+returns table(oa text, primera date, ultima date)
+language plpgsql security definer set search_path=public as $$
+declare cid uuid; asigs text[]; begin
+  select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
+  if cid is null or not public.kimun_prof_acceso(cid) then raise exception 'no_autorizado'; end if;
+  asigs := public.kimun_prof_asignaturas(cid);
+  return query
+    /* ⚠️ Se mira cuándo CRECIÓ el primer intento, no cuándo era mayor que cero: como
+       `resp_1` nunca baja, un `max(semana) where resp_1 > 0` devolvería SIEMPRE la semana
+       actual y toda unidad parecería seguir abierta. El delta contra la foto anterior es
+       lo que dice de verdad cuándo el curso dejó de trabajar ese objetivo. */
+    with sem as (
+      select ds.oa as o, ds.semana as s, sum(ds.resp_1) as r
+        from public.dominio_semanal ds
+        join public.perfiles p on p.id = ds.perfil_id
+       where p.curso_id = cid
+         and public.kimun_oa_asignatura(ds.oa) = any(asigs)
+       group by ds.oa, ds.semana
+    ), delta as (
+      -- coalesce(lag,0): en la primera foto en que aparece el objetivo no hay anterior,
+      -- y esa foto SÍ es actividad.
+      select sem.o, sem.s,
+             sem.r - coalesce(lag(sem.r) over (partition by sem.o order by sem.s), 0) as sube
+        from sem
+    )
+    select delta.o,
+           min(delta.s) filter (where delta.sube > 0),
+           max(delta.s) filter (where delta.sube > 0)
+      from delta
+     group by delta.o
+    having min(delta.s) filter (where delta.sube > 0) is not null;
+end $$;
+
 grant execute on function
   public.kimun_perfil(text,text), public.kimun_buscar(text), public.kimun_jugadores(),
   public.kimun_crear_duelo(text,text,jsonb,int,int), public.kimun_pendientes(),
@@ -1937,6 +2186,11 @@ grant execute on function
   , public.kimun_prof_dominio_oa(text,text)
   , public.kimun_prof_participacion(text)
   , public.kimun_prof_pulso()
+  , public.kimun_prof_plan(text)
+  , public.kimun_prof_plan_fijar(text,text,text,text,date,date,text)
+  , public.kimun_prof_plan_quitar(text,text,text)
+  , public.kimun_prof_plan_historial(text)
+  , public.kimun_prof_plan_sugerir(text)
   , public.kimun_prof_tendencia(text)
   , public.kimun_prof_refuerzo_lanzar(text,text,text[])
   , public.kimun_prof_refuerzo_cerrar(text)

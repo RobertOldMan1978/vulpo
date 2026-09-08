@@ -1838,6 +1838,49 @@ de 22 filas a 8) y cada objetivo cabe **en una línea**, con el texto a la izqui
 la derecha, así que un mapa de 60 objetivos pasa de tres pantallas a una y media sin recortar
 ningún texto. Bajo 900 px todo vuelve a apilarse: el panel sigue siendo mobile-first.
 
+### La planificación del año, y cuándo se trabajó cada objetivo (Sesión 108)
+
+Nace de un problema que Roberto puso con todas sus letras: *"no sirve mostrar avances en
+diciembre de asignaturas que se pasaron en abril"*. El mapa mezclaba los objetivos de todo el
+año y los mostraba igual, así que un 45% no decía si hay que actuar o si eso ya se reforzó hace
+ocho meses.
+
+**Dos cosas, y la primera es gratis.** Cada fila del mapa dice ahora **cuándo se trabajó**
+—*"21 jugaron este mes"* o *"sin movimiento desde junio"*— y el mapa se puede **agrupar por
+unidad**, no solo por rendimiento y asignatura. Lo segundo salió sin costo: **los 32 bancos ya
+declaran qué objetivos tiene cada unidad** en su `oa.json` (medido: ni uno queda fuera), así que
+no hace falta ninguna consulta ni ninguna lista nueva.
+
+Y encima, **la UTP declara las fechas de cada unidad** y el profesor de asignatura las ajusta
+con una justificación. Con eso el grupo de cada unidad en el mapa lleva su tramo del año
+(*"Los inicios de la modernidad (3) · 9 mar → 30 abr"*).
+
+> ⚠️ **La foto de cierre NO hay que tomarla: ya se está tomando.** `dominio_semanal` guarda el
+> detalle alumno×objetivo cada domingo desde la Sesión 36, así que el informe de cierre de una
+> unidad se **reconstruye** de esas fotos. Consecuencias, y son grandes: las fechas se pueden
+> poner **después**, incluso a fin de año; **no hay ningún botón de "cerrar unidad"** que alguien
+> pueda olvidar —en un proyecto que ya se quemó con el `pg_cron` sin agendar y el
+> `revisadas.json` sin aplicar, esa diferencia se paga sola—; y **los niños pueden seguir
+> jugando** sin contaminar el pasado.
+
+> **Y media parte del problema ya estaba resuelta sin que nadie lo supiera:** el porcentaje del
+> mapa es de **primer intento**, y `resp_1`/`ok_1` no se actualizan nunca (Sesión 24). Un
+> objetivo de abril ya mostraba el número de abril. Lo que faltaba era fecharlo y agruparlo.
+>
+> La foto sigue haciendo falta igual, por un motivo preciso: el alumno que toca ese objetivo
+> **por primera vez en noviembre** —llegó tarde, o volvió a jugarlo— crea su `resp_1` en
+> noviembre y **entra al promedio de la unidad de abril**. La foto de junio no lo incluye.
+
+**Qué NO decide "cuándo se trabajó":** `dominio.actualizado` se sobreescribe en cada respuesta,
+así que la fecha sola miente. Por eso van dos números —ver el ⚠️ de la sección de Backend—, y por
+eso la etiqueta **dice el número de alumnos y no un veredicto**: cualquier umbral de "cuántos son
+suficientes" sería inventado, y el profesor sabe cuántos son los suyos.
+
+⚠️ **9 objetivos de Lenguaje de 3° pertenecen a más de una unidad** (uno a cuatro), porque sus
+capítulos son temáticos. Se agrupan en la **primera**, para que una fila siga siendo un objetivo
+y los conteos cuadren con su encabezado; la contra asumida es que en ese banco una unidad se ve
+sin un objetivo que también le toca.
+
 ### El pulso del colegio (Sesión 107)
 
 La pantalla de **dirección y UTP**, y la única del panel que mira todos los cursos a la vez. Se
@@ -2087,6 +2130,32 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
   alumno. Una asignatura entra al promedio con `minimo` respuestas o más, y por eso se devuelve
   **`asignaturas`**: un 78% sobre dos materias y un 72% sobre cuatro no son comparables, y el
   panel tiene que poder decirlo.
+- **Planificación del año (Sesión 108):** tablas `unidades_plan` (curso + asignatura + unidad →
+  inicio, término, nota) y `unidades_plan_log` (el historial), más `kimun_prof_plan(curso)`,
+  `_plan_fijar(...)`, `_plan_quitar(...)`, `_plan_historial(curso)` y `_plan_sugerir(curso)`.
+  Existen porque en diciembre el mapa mezclaba los objetivos de abril con los de la semana
+  pasada y los mostraba igual. La UTP carga y el profe de asignatura ajusta; es el mismo acto,
+  así que es **una sola función** y lo que cambia es el portero.
+  ⚠️ **La justificación es obligatoria** al mover una fecha que ya estaba puesta **por otra
+  persona** —el caso "el profesor ajusta lo que planificó la UTP"—, y no al estrenarla: pedirla
+  siempre convertiría el acto en un trámite y nadie llenaría la planificación.
+  ⚠️ **El historial lo ve la UTP, por decisión de Roberto y sobre advertencia escrita:** es el
+  registro de quién movió qué fecha y por qué, o sea material de evaluación docente, que es la
+  línea roja que este esquema esquiva desde la Sesión 24. El riesgo práctico, además del de
+  fondo: si mover una fecha se siente como confesar un atraso, los profesores dejan de moverlas
+  y los informes vuelven a estar mal fechados — justo lo que esto arregla.
+  ⚠️ **`_plan_sugerir` mira cuándo CRECIÓ el primer intento, no cuándo era mayor que cero:**
+  como `resp_1` nunca baja, un `max(semana) where resp_1 > 0` devolvería **siempre** la semana
+  actual y toda unidad parecería seguir abierta. Y solo funciona **hacia adelante**: la primera
+  foto es del 30/08/2026.
+- **Cuándo se trabajó cada objetivo (Sesión 108):** `kimun_prof_dominio` devuelve además
+  `ultima` (`max(actualizado)`) y `recientes` (alumnos con actividad en 30 días), y
+  `kimun_prof_dominio_alumno` devuelve `ultima`. ⚠️ **Van los dos números y no solo la fecha:**
+  `dominio.actualizado` se sobreescribe en cada respuesta, así que un objetivo de abril
+  re-jugado en noviembre diría "noviembre"; `recientes` es lo que distingue *"el curso está en
+  esta unidad"* de *"un niño repasó por su cuenta"*, que con la fecha sola se ven idénticos.
+  ⚠️ Las dos **cambian de firma**, así que re-aplicar el esquema es obligatorio; su `drop
+  function` previo ya estaba.
 - **El pulso del colegio (Sesión 107):** `kimun_prof_pulso()`, una fila por curso para la vista
   de dirección/UTP: `inscritos`, `jugaron_semana` y `cobertura` —un `jsonb` con los objetivos
   DISTINTOS con actividad, desglosados por asignatura—. Portero `kimun_prof_admin_colegio()`:
@@ -11257,3 +11326,133 @@ DATOS**: eso se ve abriendo el panel.
   siguen abiertas la franja de *"qué necesita tu atención"* al entrar y la participación como
   titular de la tarjeta. Fuera del código: las notificaciones del expediente INAPI, la facturación
   electrónica y la cuenta corriente de la SpA.
+
+### Sesión 108 (2026-09-08) — Las unidades tienen fechas, y el mapa dice cuándo
+Encargo de Roberto, planteado como una pregunta de diseño: *"el profesor de asignatura necesita
+poner fechas de inicio y término a sus unidades, para que los informes tengan sentido; no sirve
+mostrar avances en diciembre de asignaturas que se pasaron en abril. El módulo puede seguir
+abierto, pero ¿cómo hacemos para guardar una foto al término de una unidad y una a final de año,
+pensando que los niños siguieron jugando?"*. **No se tocó el juego ni el contenido.**
+
+#### La respuesta a la pregunta de fondo era mejor de lo que parecía
+
+**La foto ya se está tomando.** `dominio_semanal` guarda el detalle alumno×objetivo cada domingo
+desde la Sesión 36, así que el cierre de una unidad **se reconstruye** en vez de capturarse. Eso
+elimina el problema entero: las fechas se pueden poner después —incluso a fin de año—, no hace
+falta ningún botón de "cerrar unidad" que alguien tenga que acordarse de apretar, y los niños
+pueden seguir jugando sin contaminar el pasado.
+
+**Y media parte del problema ya estaba resuelta sin que nadie lo supiera:** el porcentaje del
+mapa es de **primer intento**, y `resp_1`/`ok_1` no se actualizan nunca. Un objetivo de abril ya
+mostraba el número de abril. Lo que faltaba no era proteger el dato sino **fecharlo y agruparlo**.
+
+> La foto sigue haciendo falta igual, y por un motivo preciso que conviene tener escrito: el
+> alumno que toca ese objetivo **por primera vez en noviembre** crea su `resp_1` en noviembre y
+> **entra al promedio de la unidad de abril**. La foto de junio no lo incluye.
+
+#### Lo que Roberto decidió, y una advertencia que reafirmó
+
+Se le ofrecieron tres opciones de quién pone las fechas y eligió una mejor: **la UTP carga la
+planificación a principio de año y el profe de asignatura la ajusta con justificación.** Refleja
+cómo funciona un colegio de verdad.
+
+> ⚠️ **Se le advirtió que un registro de "el profesor movió la fecha y esta fue su
+> justificación", visible para la UTP, es un expediente de atrasos docentes** —la línea roja que
+> este archivo documenta desde la Sesión 24—, y que el costo práctico es concreto: si mover una
+> fecha se siente como confesar un atraso, los profesores dejan de moverlas y los informes
+> vuelven a estar mal fechados, que es justo lo que este trabajo viene a arreglar. Se le propuso
+> guardar solo la fecha vigente y su nota. **Eligió el historial completo visible para la UTP**,
+> y así quedó construido: es su decisión, y la advertencia queda escrita en `supabase/schema.sql`
+> —donde vive la tabla— para quien venda esto.
+
+#### Fase 1 · El mapa sabe cuándo
+
+`kimun_prof_dominio` devuelve `ultima` y `recientes`, y cada fila dice *"21 jugaron este mes"* o
+*"sin movimiento desde junio"*.
+
+> ⚠️ **Van los DOS números y no solo la fecha.** `dominio.actualizado` se sobreescribe en cada
+> respuesta, así que un objetivo de abril re-jugado en noviembre diría "noviembre"; `recientes`
+> es lo que distingue *"el curso está en esta unidad"* de *"un niño repasó por su cuenta"*, que
+> con la fecha sola se ven idénticos. Se probó con ese caso exacto sembrado en el doble.
+>
+> Y la etiqueta **dice el número y no un veredicto**: cualquier umbral de "cuántos alumnos son
+> suficientes" sería inventado, y el profesor sabe cuántos son los suyos.
+
+**Agrupar por unidad salió gratis:** los 32 bancos ya declaran `unidades[].oa` en su `oa.json` —
+medido antes de diseñar sobre una suposición: **ni un objetivo queda fuera de alguna unidad**, y
+solo Lenguaje de 7° usa la clave `capitulos_del_juego`, el dialecto ya conocido.
+
+⚠️ **Y los dos guards eran distintos**: el filtro por asignatura no sirve con una sola, pero
+**agrupar por unidad sirve justo con una** —es el caso del profe de asignatura, que es quien
+pidió esto—. Vivían bajo el mismo `if`, así que el agrupador entero desaparecía para él.
+
+⚠️ **9 objetivos de Lenguaje de 3° están en más de una unidad** (uno en cuatro), porque sus
+capítulos son temáticos. Se agrupan en la primera, para que una fila siga siendo un objetivo y
+los conteos cuadren.
+
+#### Fase 2 · Las fechas
+
+Tablas `unidades_plan` y `unidades_plan_log`, y cinco funciones. Una sola pantalla y una sola
+función de escritura para la UTP y para el profesor: **es el mismo acto, lo que cambia es el
+portero**. La justificación es obligatoria al mover una fecha que ya estaba puesta **por otra
+persona**, y no al estrenarla — pedirla siempre convertiría el acto en un trámite y nadie
+llenaría la planificación.
+
+**La propuesta automática** sale de las fotos: un clic en *"usar 30 ago → 6 sep"* en vez de
+escribir dos fechas.
+
+> ⚠️ **Un error propio, cazado antes de que llegara al servidor:** la primera versión buscaba la
+> última semana con `resp_1 > 0`, y como el primer intento **nunca baja**, eso habría devuelto
+> **siempre la semana actual** y toda unidad habría parecido seguir abierta. Lo correcto es mirar
+> cuándo **creció**, o sea el delta contra la foto anterior.
+>
+> Y solo funciona **hacia adelante**: la primera foto es del 30/08/2026, así que de una unidad
+> cerrada antes no hay nada que proponer y las fechas se escriben a mano.
+
+#### Dos defectos que solo se vieron mirando, y uno más del método
+
+- La etiqueta de "cuándo" iba al final de `.oa-texto`, que está **recortado a dos líneas**: quedó
+  fuera del recorte —presente en el DOM, **invisible**, con el conteo diciendo "14 de 14"—.
+  Movida a la zona de la medida.
+- Ya movida, en el **teléfono aplastaba la barra de progreso a CERO píxeles**, y ni el "sin
+  desborde" ni el "la etiqueta está dentro del viewport" lo delataban. Ahora baja a su línea.
+- Y el nombre de la unidad se recortaba a *"U3 · Nuevo…"* en el teléfono, que no identifica nada.
+
+> **Y una vez el fallo fue de la prueba, otra vez:** medí la etiqueta contra un `_panel-demo.html`
+> que **no había regenerado** tras cambiar `profesor.html` —el demo es una COPIA— así que estaba
+> probando la versión vieja y parecía que el arreglo no servía.
+
+#### Un riesgo de SQL atajado sin poder probarlo
+
+La primera versión de la cobertura del pulso ya había enseñado la lección, y aquí volvió a
+aplicar: hay que desconfiar de una correlación que atraviesa una tabla derivada. Además se evitó
+la trampa de la Sesión 73 —una variable de salida que se llama igual que una columna— dejando
+todas las referencias calificadas.
+
+#### Verificación
+
+Con el doble de Supabase y `cdp.mjs`, **mirando y no solo contando**:
+
+- El caso trampa distinguido: *"1 jugó este mes"* contra *"21 jugaron este mes"* y *"sin
+  movimiento desde junio"*.
+- Agrupar por unidad: 9 grupos en orden curricular, y **las filas de los grupos suman las de la
+  tabla** (14 de 14) — el conteo cuadra pese a los objetivos compartidos.
+- Las fechas planificadas aparecen en el encabezado del grupo del mapa.
+- **Los tres rechazos del servidor, con sus palabras**: justificación obligatoria al mover una
+  fecha ajena, guardado correcto con nota, y fechas invertidas.
+- El **profe de asignatura ve solo sus unidades** (Historia de 3°, 4 filas) y **no ve el botón
+  del historial**, pero **sí puede editar sus fechas** — el control positivo que hace válida la
+  prueba.
+- ⚠️ **Degradación con el esquema sin aplicar**: quitando `ultima` y `recientes` de la respuesta,
+  el mapa sale **exactamente como antes**, sin etiquetas y sin errores, y el agrupado por unidad
+  sigue funcionando porque no depende del servidor.
+- Sin regresión en el pulso del colegio, la lista, la vista por alumno ni Administración. A 1.440
+  y 375 px sin desborde, **cero errores de consola y cero fallos de red**.
+
+⚠️ **Pendiente de Roberto: re-aplicar `supabase/schema.sql`.** Cambian las firmas de
+`kimun_prof_dominio` y `_dominio_alumno`, y hay dos tablas y cinco funciones nuevas.
+
+- **Queda abierto (A55): el informe de cierre de unidad y de fin de año**, que es la fase 3 y lo
+  que de verdad usa las fotos. ⚠️ Con un límite que hay que decirle a un colegio antes de
+  prometerlo: **la primera foto es del 30/08/2026**, así que de una unidad cerrada antes no se
+  puede reconstruir nada. Para el año escolar 2027 habría el año completo desde marzo.

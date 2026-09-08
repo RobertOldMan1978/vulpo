@@ -262,6 +262,49 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
    rendimiento, y un segundo eje compitiendo con ese estorba justo lo que se viene a ver. */
 .oa-asig{color:var(--dim);font-size:10px;font-weight:600;letter-spacing:.04em;
  text-transform:uppercase;margin-right:8px;white-space:nowrap}
+/* Cuándo se trabajó. Por el mismo motivo que la etiqueta de arriba, SIN color propio: lo
+   que distingue una unidad viva de una cerrada es la palabra ("12 alumnos este mes" contra
+   "sin movimiento desde junio"), no un tercer eje de color peleando con el rendimiento.
+   ⚠️ Va en la zona de la MEDIDA y no junto al texto del objetivo: ahí el texto está
+   recortado a dos líneas, así que la etiqueta quedaba fuera del recorte —presente en el
+   DOM y **invisible**, con el conteo diciendo que estaba—. */
+.oa-cuando{color:var(--dim);font-size:11px;white-space:nowrap;text-align:right}
+.oa-cuando.ahora{color:var(--cuerpo)}
+/* ⚠️ En el TELÉFONO la etiqueta baja a su propia línea. En la misma fila que la barra, el
+   porcentaje y el detalle no cabía: dejaba la barra de progreso en CERO píxeles, y ni el
+   "sin desborde" ni el "la etiqueta está dentro del viewport" lo delataban. */
+@media (max-width:899px){
+  .oa-medida{flex-wrap:wrap}
+  .oa-cuando{flex-basis:100%;margin-top:2px}
+}
+@media (min-width:900px){ .oa-cuando{min-width:132px} }
+
+/* Planificación del año. Una fila por unidad: nombre, fechas y la acción. */
+.plan-fila{display:flex;flex-wrap:wrap;align-items:center;gap:8px;
+ padding:7px 0;border-bottom:1px solid var(--linea)}
+.plan-fila:last-child{border-bottom:0}
+.plan-nom{flex:1;min-width:0;font-size:13px;color:var(--cuerpo);
+ overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.plan-fechas{font-size:12px;color:var(--texto);min-width:150px;text-align:right}
+.plan-acc{display:flex;align-items:center;gap:6px}
+/* La justificación va bajo su fila y en toda la línea: es una frase, no un dato al margen. */
+.plan-nota{flex-basis:100%;font-size:11px;color:var(--dim);font-style:italic}
+.plan-cambios{margin-left:8px;font-size:10px;font-weight:600;letter-spacing:.04em;
+ text-transform:uppercase;color:var(--gold)}
+/* El formulario ocupa la línea entera y sus campos NO se estiran al ancho del panel. */
+.plan-form{flex-basis:100%}
+.plan-form input[type=date],.plan-form input[type=text]{max-width:280px}
+/* En el teléfono el nombre de la unidad va en su propia línea: compitiendo con las fechas
+   y el lápiz le quedaban 140 px y se leía "U3 · Nuevo…", que no identifica nada. */
+@media (max-width:759px){
+  .plan-nom{flex-basis:100%;white-space:normal;overflow:visible}
+  .plan-fechas{min-width:0;flex:1;text-align:left}
+}
+.plan-log{padding:7px 0;border-bottom:1px solid var(--linea);font-size:12px}
+.plan-log-pie{color:var(--dim);font-size:11px;margin-top:2px}
+/* Las fechas de la unidad en el mapa agrupado: dicen en qué momento del año se lee ese
+   bloque, que es de lo que se trata. Atenuadas, como el resto de las metalíneas. */
+.oa-grupo-fechas{color:var(--dim);font-weight:400;text-transform:none;letter-spacing:0}
 .oa-grupo{margin-bottom:6px}
 .oa-grupo-tit{color:var(--cuerpo);font-size:12px;font-weight:600;letter-spacing:.03em;
  text-transform:uppercase;padding:8px 0 4px;border-bottom:1px solid var(--linea)}
@@ -272,7 +315,10 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
 @media (min-width:900px){
   .oa-fila>summary{display:flex;gap:18px;align-items:center}
   .oa-fila>summary>.oa-texto{flex:1;min-width:0;margin-bottom:0}
-  .oa-fila>summary>.oa-medida{flex:0 0 340px}
+  /* 340 -> 480 px al sumarle la etiqueta de "cuándo se trabajó". El ancho sale del texto
+     del objetivo, que sigue teniendo de sobra para sus dos líneas y además se abre entero
+     al desplegar la fila. */
+  .oa-fila>summary>.oa-medida{flex:0 0 480px}
   .oa-fila[open]>summary{align-items:flex-start}
   /* La lista de alumnos en columnas: 35 alumnos en una sola columna son cuatro
      pantallas de scroll en un espacio que tiene sitio para tres. */
@@ -471,6 +517,19 @@ NIV.codigos().forEach(c => { OA_CARPETA[c] = NIV.carpeta(c); });
 const OA_TEXTO = {};        // "HI08 OA 01" -> "Analizar, apoyándose en diversas fuentes…"
 const OA_CARGADA = {};      // carpetas ya pedidas
 const OA_TOTAL = {};        // 'HI08' -> cuántos OA tiene la asignatura (de oa.json)
+/* "HI05 OA 03" -> {id:'U1', titulo:'Historia', ids:Set}. Las unidades del año ya vienen
+   declaradas en el oa.json, así que agrupar el mapa por unidad no cuesta una consulta.
+   ⚠️ 9 objetivos de Lenguaje de 3° pertenecen a MÁS DE UNA unidad (uno a cuatro), porque
+   sus capítulos son temáticos y un objetivo transversal se trabaja en varios. Se agrupan
+   en la PRIMERA —así una fila sigue siendo un objetivo y los conteos cuadran— y la fila
+   dice que está en más. */
+const OA_UNIDAD = {};
+const UNIDADES = {};        // 'HI08' -> [{id,titulo}] en el orden del oa.json
+/* Lo que la vista de avance necesita saber del curso y NO puede leer del DOM: al entrar,
+   `#lista` se reemplaza por la tabla y la tarjeta del curso deja de existir. Se llena en
+   pintarLista y sobrevive a ese reemplazo. (`nivelDeCurso` sigue leyendo el DOM porque lo
+   usan los bloques que viven DENTRO de la tarjeta, donde sí está.) */
+const CURSO_INFO = {};      // 'CUR-BA04' -> {nivel:'08', misAsig:['HI08',…]}
 
 async function cargarTextosOA(codigos){
   const carpetas = [...new Set(codigos.map(c => OA_CARPETA[String(c).slice(0,4)]).filter(Boolean))];
@@ -491,6 +550,32 @@ async function cargarTextosOA(codigos){
           vistos.add(o.codigo);
           OA_TOTAL[String(o.codigo).slice(0,4)] = vistos.size;
         }
+      });
+      /* Las unidades del año. ⚠️ Dos dialectos: Lenguaje de 7° las declara como
+         `capitulos_del_juego` porque sus capítulos NO siguen las unidades del Programa
+         —repartirían el mismo objetivo en siete—. Es el mismo caso que generar-tablero.py
+         resuelve con helpers tolerantes, y medido: los 32 bancos declaran sus unidades y
+         no queda ni un objetivo fuera de alguna.
+         El Set hace esto idempotente, igual que el contador de arriba: recargar la misma
+         carpeta no infla el "está en más de una unidad". */
+      (d.unidades || d.capitulos_del_juego || []).forEach((g, i) => {
+        const uid = g.id || g.n || '';
+        const tit = g.titulo || g.nombre || uid;
+        // El catálogo por asignatura, para poder listar las unidades que TODAVÍA no tienen
+        // actividad: son justamente las que faltan por pasar, y sin ellas la planificación
+        // solo mostraría el pasado.
+        const pre = String((g.oa||[])[0]||'').slice(0,4);
+        if(pre){
+          const lista = UNIDADES[pre] || (UNIDADES[pre] = []);
+          if(!lista.some(u => u.id === uid)) lista.push({id:uid, titulo:tit});
+        }
+        (g.oa||[]).forEach(cod => {
+          // `orden` es el índice en el archivo y no el id: "U10" ordenado como texto cae
+          // entre "U1" y "U2".
+          const u = OA_UNIDAD[cod]
+                 || (OA_UNIDAD[cod] = {id:uid, titulo:tit, orden:i, ids:new Set()});
+          u.ids.add(uid);
+        });
       });
     }catch(e){
       // Si falla, se olvida la marca: de lo contrario un corte momentáneo dejaría a esa
@@ -652,6 +737,8 @@ async function pintarLista(){
   });
   const cursos=Object.entries(porCurso);
   cursos.sort((a,b)=>ordenCursos(a[1], b[1]));   // por nivel y nombre; ver ordenCursos
+  // Lo que la vista de avance va a necesitar cuando esta lista ya no exista en el DOM.
+  cursos.forEach(([cod,c]) => { CURSO_INFO[cod] = {nivel:c.nivel||'', misAsig:c.misAsig||[]}; });
   /* La barra se arma por partes: "Contraer todo" solo tiene sentido con más de un curso,
      pero el pulso del colegio se ve igual con uno. Antes la barra entera dependía del
      conteo, así que un colegio de un solo curso se quedaba sin el botón nuevo. */
@@ -1133,23 +1220,26 @@ const ASIG_ORDEN = NIV.codigos();
 const ASIG_NOMBRE = {};
 ASIG_ORDEN.forEach(c => { ASIG_NOMBRE[c] = NIV.nombre(c); });;
 
-// Filtro por asignatura. Con una sola asignatura no filtra nada y solo ocupa pantalla,
-// así que no se dibuja.
+/* Filtro por asignatura y agrupador, que son cosas distintas: filtrar deja UNA a la vista;
+   agrupar las muestra todas, ordenadas.
+   ⚠️ Y tienen guards DISTINTOS. El filtro por asignatura no sirve con una sola —no filtra
+   nada y ocupa pantalla—, pero **agrupar por UNIDAD sirve justo con una**: es el caso del
+   profe de asignatura, que quiere ver su año por unidades. Los dos vivían bajo el mismo
+   `if`, así que el agrupador entero desaparecía para él. */
 function filtrosAsignatura(data){
   const hay = new Set(data.map(f => String(f.oa).slice(0,4)));
   const asigs = ASIG_ORDEN.filter(a => hay.has(a));
-  if(asigs.length < 2) return '';
-  /* El agrupador solo tiene sentido con varias asignaturas —o sea, para el Profesor Jefe y
-     el SuperUsuario—, así que vive dentro del mismo guard que el filtro. Y son dos cosas
-     distintas: filtrar deja UNA a la vista; agrupar las muestra todas, ordenadas. */
-  return `<div class="av-filtros">
+  const multi = asigs.length >= 2;
+  const filtro = multi ? `<div class="av-filtros">
     <button class="av-chip on" data-asig="">Todas</button>
     ${asigs.map(a=>`<button class="av-chip" data-asig="${a}">${ASIG_NOMBRE[a]}</button>`).join('')}
-  </div>
+  </div>` : '';
+  return filtro + `
   <div class="av-filtros" id="avAgrupar">
     <span style="color:var(--dim);font-size:12px;align-self:center;margin-right:2px">Agrupar por</span>
     <button class="av-chip on" data-agr="">Rendimiento</button>
-    <button class="av-chip" data-agr="1">Asignatura</button>
+    <button class="av-chip" data-agr="unidad">Unidad</button>
+    ${multi?`<button class="av-chip" data-agr="asig">Asignatura</button>`:''}
   </div>`;
 }
 
@@ -1344,6 +1434,226 @@ async function cargarParticipacion(cursoCodigo){
   }catch(e){
     if(titular) titular.textContent = 'Participación · no se pudo cargar';
   }
+}
+
+/* ===== Planificación del año: fechas de inicio y término por unidad =====
+   Nace de un problema concreto: en diciembre el mapa mezcla los objetivos que se pasaron
+   en abril con los de la semana pasada, así que un 45% no dice si hay que actuar o si eso
+   ya se reforzó hace ocho meses. Con las fechas declaradas, cada unidad se lee en su
+   momento del año.
+
+   La UTP carga la planificación a principio de año y el profesor de asignatura la AJUSTA
+   con una justificación —el aula no calza con el papel—. Es el mismo acto, así que es una
+   sola pantalla y una sola función; lo que cambia es el portero.
+
+   ⚠️ El historial de cambios lo ve la UTP, por decisión de Roberto y sobre una advertencia
+   escrita: es el registro de quién movió qué fecha y por qué, o sea material de evaluación
+   docente. Está dicho en supabase/schema.sql, donde vive la tabla. */
+
+let PLAN = {};        // 'HI08|U1' -> {inicio, termino, nota, fijada_por, cambios}
+let PLAN_SUG = {};    // 'HI08|U1' -> {inicio, termino} propuesto desde las fotos semanales
+
+const claveUnidad = (asig, uni) => asig + '|' + uni;
+
+// "12 mar" · "12 mar 2025" si fue otro año. Corta a propósito: van dos por fila.
+function fechaCortita(iso){
+  if(!iso) return '';
+  const M = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+  // Se parte a mano y no con new Date(iso): un 'YYYY-MM-DD' se interpreta como UTC y en
+  // Chile puede mostrar el día anterior. Es el mismo cuidado que la franja de tendencia.
+  const p = String(iso).slice(0,10).split('-');
+  if(p.length < 3) return '';
+  const y = +p[0], m = +p[1] - 1, d = +p[2];
+  return d + ' ' + (M[m]||'') + (y !== new Date().getFullYear() ? ' ' + y : '');
+}
+
+function bloquePlanHTML(){
+  return `<details id="planBloque" style="margin-bottom:12px;border:1px solid #ffffff22;
+            border-radius:12px;padding:8px 10px">
+    <summary style="cursor:pointer;list-style:none;color:var(--cyan);font-size:13px"
+             id="planTitular">Planificación del año · cargando…</summary>
+    <div id="planCuerpo" style="padding-top:6px"></div>
+  </details>`;
+}
+
+/* Se lanza sin await desde verAvance, como la tendencia y la participación: su fallo no
+   impide ver el mapa. Y los nodos se capturan ANTES del await, para que la respuesta
+   tardía de un curso no se escriba bajo el encabezado de otro (la carrera de la Sesión 26). */
+async function cargarPlan(cursoCodigo){
+  const titular = $('planTitular'), cuerpo = $('planCuerpo');
+  const info = CURSO_INFO[cursoCodigo] || {};
+  const asigs = (info.misAsig && info.misAsig.length ? info.misAsig
+                : NIV.deNivel(info.nivel || '')).filter(a => ASIG_NOMBRE[a]);
+  try{
+    if(!asigs.length) throw new Error('sin_asignaturas');
+    // Los oa.json de TODAS mis asignaturas, no solo las que ya tienen actividad: las
+    // unidades que faltan por pasar son justo las que hay que planificar.
+    await cargarTextosOA(asigs);
+    const [plan, sug] = await Promise.all([
+      SB.rpc('kimun_prof_plan',        {p_curso_codigo:cursoCodigo}),
+      SB.rpc('kimun_prof_plan_sugerir',{p_curso_codigo:cursoCodigo})
+    ]);
+    if(plan.error) throw plan.error;
+    PLAN = {}; PLAN_SUG = {};
+    (plan.data||[]).forEach(f => { PLAN[claveUnidad(f.asignatura, f.unidad)] = f; });
+    /* La propuesta llega por OBJETIVO y se agrupa por unidad: la primera semana en que
+       alguno empezó y la última en que alguno se movió.
+       ⚠️ Solo hay fotos desde el 30/08/2026, así que de una unidad cerrada antes no hay
+       nada que proponer. Su fallo no rompe la pantalla: se planifica a mano. */
+    if(!sug.error) (sug.data||[]).forEach(f => {
+      const u = OA_UNIDAD[f.oa]; if(!u) return;
+      const k = claveUnidad(String(f.oa).slice(0,4), u.id);
+      const s = PLAN_SUG[k] || (PLAN_SUG[k] = {inicio:null, termino:null});
+      if(f.primera && (!s.inicio  || f.primera < s.inicio))  s.inicio  = f.primera;
+      if(f.ultima  && (!s.termino || f.ultima  > s.termino)) s.termino = f.ultima;
+    });
+    pintarPlan(titular, cuerpo, cursoCodigo, asigs);
+  }catch(e){
+    if(titular) titular.textContent = 'Planificación del año · no se pudo cargar';
+  }
+}
+
+function pintarPlan(titular, cuerpo, cursoCodigo, asigs){
+  let total = 0, conFecha = 0;
+  const secciones = asigs.map(asig => {
+    const unis = UNIDADES[asig] || [];
+    if(!unis.length) return '';
+    return `<div class="oa-grupo">
+      <div class="oa-grupo-tit">${esc(ASIG_NOMBRE[asig]||asig)}</div>
+      ${unis.map(u => {
+        total++;
+        const k = claveUnidad(asig, u.id);
+        const p = PLAN[k], s = PLAN_SUG[k];
+        if(p && (p.inicio || p.termino)) conFecha++;
+        const fechas = p && (p.inicio || p.termino)
+          ? `<b>${esc(fechaCortita(p.inicio) || '?')} → ${esc(fechaCortita(p.termino) || '?')}</b>`
+          : `<span style="color:var(--dim)">sin fechas</span>`;
+        // La propuesta solo se ofrece si esa unidad no tiene fechas todavía: insistir con
+        // una sugerencia sobre una fecha ya declarada sería discutirle al profesor.
+        const sug = (!p || (!p.inicio && !p.termino)) && s && s.inicio
+          ? `<button class="btn-chip plan-sug" data-k="${esc(k)}" data-asig="${esc(asig)}"
+               data-uni="${esc(u.id)}" data-tit="${esc(u.titulo)}"
+               data-ini="${esc(s.inicio)}" data-fin="${esc(s.termino||s.inicio)}"
+               title="Fechas deducidas de cuándo el curso trabajó estos objetivos"
+               >usar ${esc(fechaCortita(s.inicio))} → ${esc(fechaCortita(s.termino||s.inicio))}</button>`
+          : '';
+        const cambios = p && Number(p.cambios) > 1
+          ? `<span class="plan-cambios">${p.cambios} cambios</span>` : '';
+        return `<div class="plan-fila" data-k="${esc(k)}">
+          <div class="plan-nom">${esc(u.id)} · ${esc(u.titulo)}${cambios}</div>
+          <div class="plan-fechas">${fechas}</div>
+          <div class="plan-acc">${sug}
+            <button class="ico plan-edit" data-asig="${esc(asig)}" data-uni="${esc(u.id)}"
+              data-tit="${esc(u.titulo)}" title="Fijar fechas" style="color:var(--gold)">✎</button>
+          </div>
+          ${p && p.nota ? `<div class="plan-nota">“${esc(p.nota)}”${
+              p.fijada_por ? ' · ' + esc(p.fijada_por) : ''}</div>` : ''}
+          <div class="plan-form" hidden></div>
+        </div>`;
+      }).join('')}
+    </div>`;
+  }).join('');
+
+  titular.textContent = `Planificación del año · ${conFecha} de ${total} unidades con fechas`;
+  cuerpo.innerHTML = secciones + `
+    <p style="color:var(--dim);font-size:11px;line-height:1.5;margin:10px 0 0;max-width:70ch">
+      Con las fechas puestas, el avance de cada unidad se lee en su momento del año: en
+      diciembre, un 45% de abril y uno de esta semana piden cosas muy distintas.
+      ${PLAN_SUG && Object.keys(PLAN_SUG).length ? '' :
+        'Todavía no hay fotos semanales para proponer fechas: se toman cada domingo, así que la propuesta aparece desde la semana que viene. '}
+      Los niños pueden seguir jugando: la foto de cierre se reconstruye de las fotos
+      semanales, no del estado de hoy.
+    </p>
+    ${window.ESADMINCOLEGIO ? `<button class="btn-chip" id="btnPlanHist"
+        style="margin-top:8px">Ver los cambios de fechas</button>
+      <div id="planHist"></div>` : ''}`;
+  conectarPlan(cursoCodigo, titular, cuerpo, asigs);
+}
+
+function conectarPlan(cursoCodigo, titular, cuerpo, asigs){
+  // Aceptar la propuesta: un clic, sin escribir dos fechas.
+  cuerpo.querySelectorAll('.plan-sug').forEach(b => b.onclick = () =>
+    guardarPlan(cursoCodigo, b.dataset.asig, b.dataset.uni, b.dataset.tit,
+                b.dataset.ini, b.dataset.fin, '', titular, cuerpo, asigs));
+
+  cuerpo.querySelectorAll('.plan-edit').forEach(b => b.onclick = () => {
+    const fila = b.closest('.plan-fila');
+    const caja = fila.querySelector('.plan-form');
+    if(!caja.hidden){ caja.hidden = true; caja.innerHTML = ''; return; }
+    const p = PLAN[fila.dataset.k] || {};
+    caja.hidden = false;
+    caja.innerHTML = `
+      <label class="campo">Empieza <input type="date" class="plan-ini" value="${esc(p.inicio||'')}"></label>
+      <label class="campo">Termina <input type="date" class="plan-fin" value="${esc(p.termino||'')}"></label>
+      <label class="campo">Por qué (si cambias una fecha que puso otra persona)
+        <input type="text" class="plan-nota-in" maxlength="200"
+          placeholder="Ej.: se corrió dos semanas por el paro" value=""></label>
+      <div class="btn-fila">
+        <button class="btn sec plan-guardar">Guardar</button>
+        ${p.inicio||p.termino ? `<button class="btn txt plan-quitar">Quitar fechas</button>` : ''}
+      </div>`;
+    caja.querySelector('.plan-guardar').onclick = () => guardarPlan(cursoCodigo,
+      b.dataset.asig, b.dataset.uni, b.dataset.tit,
+      caja.querySelector('.plan-ini').value, caja.querySelector('.plan-fin').value,
+      caja.querySelector('.plan-nota-in').value, titular, cuerpo, asigs);
+    const q = caja.querySelector('.plan-quitar');
+    if(q) q.onclick = async () => {
+      if(!confirm('¿Quitar las fechas de esta unidad?')) return;
+      try{
+        const {error} = await SB.rpc('kimun_prof_plan_quitar', {p_curso_codigo:cursoCodigo,
+          p_asignatura:b.dataset.asig, p_unidad:b.dataset.uni});
+        if(error) throw error;
+        await cargarPlan(cursoCodigo);
+      }catch(e){ aviso(errorPlan(e)); }
+    };
+  });
+
+  const bh = document.getElementById('btnPlanHist');
+  if(bh) bh.onclick = () => cargarPlanHistorial(cursoCodigo);
+}
+
+// Los errores de esta pantalla se dicen con sus palabras: "no se pudo completar la acción"
+// no le enseña a nadie que la justificación es obligatoria.
+function errorPlan(e){
+  const m = String((e && (e.message||e.error_description)) || '');
+  if(m.indexOf('falta_justificacion') >= 0)
+    return 'Esta unidad ya tenía fechas puestas por otra persona: escribe por qué la mueves.';
+  if(m.indexOf('fechas_invertidas') >= 0) return 'La fecha de término es anterior a la de inicio.';
+  if(m.indexOf('asignatura_ajena') >= 0)  return 'Solo puedes planificar tus asignaturas.';
+  return errorPanel(e);
+}
+
+async function guardarPlan(cursoCodigo, asig, uni, tit, ini, fin, nota, titular, cuerpo, asigs){
+  try{
+    const {error} = await SB.rpc('kimun_prof_plan_fijar', {
+      p_curso_codigo:cursoCodigo, p_asignatura:asig, p_unidad:uni, p_titulo:tit,
+      p_inicio: ini || null, p_termino: fin || null, p_nota: nota || null});
+    if(error) throw error;
+    aviso('Fechas guardadas', 'var(--green)');
+    await cargarPlan(cursoCodigo);
+  }catch(e){ aviso(errorPlan(e)); }
+}
+
+async function cargarPlanHistorial(cursoCodigo){
+  const caja = document.getElementById('planHist');
+  if(!caja) return;
+  caja.innerHTML = '<p style="color:var(--dim);font-size:12px">Cargando…</p>';
+  try{
+    const {data,error} = await SB.rpc('kimun_prof_plan_historial', {p_curso_codigo:cursoCodigo});
+    if(error) throw error;
+    if(!data || !data.length){
+      caja.innerHTML = '<p style="color:var(--dim);font-size:12px">Todavía no se ha movido ninguna fecha.</p>';
+      return;
+    }
+    caja.innerHTML = data.map(l => `<div class="plan-log">
+      <b>${esc(ASIG_NOMBRE[l.asignatura]||l.asignatura)} · ${esc(l.unidad)}</b>
+      ${esc(fechaCortita(l.inicio_ant))||'—'} → ${esc(fechaCortita(l.termino_ant))||'—'}
+      <span style="color:var(--dim)">pasa a</span>
+      ${esc(fechaCortita(l.inicio))||'—'} → ${esc(fechaCortita(l.termino))||'—'}
+      <div class="plan-log-pie">${esc(l.quien||'—')} · ${esc(fechaCortita(l.creado))}${
+        l.nota ? ' · “' + esc(l.nota) + '”' : ''}</div>
+    </div>`).join('');
+  }catch(e){ caja.innerHTML = '<p style="color:var(--dim);font-size:12px">'+esc(errorPlan(e))+'</p>'; }
 }
 
 /* ===== Tendencia semanal (bloque en la vista de avance) =====
@@ -1542,7 +1852,9 @@ function conectarAgrupar(alCambiar){
   if(!caja) return;                       // con una sola asignatura no se dibuja
   caja.querySelectorAll('.av-chip').forEach(chip => chip.onclick = () => {
     caja.querySelectorAll('.av-chip').forEach(o => o.classList.toggle('on', o === chip));
-    alCambiar(!!chip.dataset.agr);
+    // Pasa el VALOR ('', 'unidad' o 'asig'), no un booleano: desde que hay tres formas de
+    // agrupar, un true/false no alcanza para decir cuál.
+    alCambiar(chip.dataset.agr || '');
     irArriba();
   });
 }
@@ -1739,18 +2051,21 @@ async function verAvance(cursoCodigo, cursoNombre, gestiono){
     const titulo = cursoNombre || cursoCodigo;
     if(!data || !data.length){
       $('lista').innerHTML = cabeceraAvance(titulo, 'Avance por objetivo')
-        + bloqueParticipacionHTML() + `
+        // La planificación va también aquí, y aquí es donde MÁS sirve: un curso que
+        // todavía no juega es justo el que la UTP está preparando a principio de año.
+        + bloquePlanHTML() + bloqueParticipacionHTML() + `
         <p style="color:var(--dim);font-size:13px">
         Todavía no hay datos de avance de este curso. Aparecen cuando los alumnos juegan las campañas.</p>
         <button class="btn sec" id="btnVolverPanel">← Volver</button>`;
       $('btnVolverCab').onclick = volverAlPanel;
       $('btnVolverPanel').onclick = volverAlPanel;
       cargarParticipacion(cursoCodigo);
+      cargarPlan(cursoCodigo);
       irArriba(); aviso(''); return;
     }
     await cargarTextosOA(data.map(f => f.oa));
     $('lista').innerHTML = cabeceraAvance(titulo, 'Avance por objetivo')
-      + bloqueTendenciaHTML() + bloqueParticipacionHTML() + `
+      + bloqueTendenciaHTML() + bloquePlanHTML() + bloqueParticipacionHTML() + `
       <p style="color:var(--dim);font-size:12px;margin-bottom:10px">
         Porcentaje de acierto por objetivo, de menor a mayor. ${AVISO_NO_CALIFICA}</p>
       ${filtrosAsignatura(data)}
@@ -1769,17 +2084,21 @@ async function verAvance(cursoCodigo, cursoNombre, gestiono){
     $('btnVolverPanel').onclick = volverAlPanel;
     const bReinit=$('btnReiniciarMed'); if(bReinit) bReinit.onclick=()=>reiniciarMediciones(cursoCodigo, cursoNombre, gestiono);
     cargarTendencia(cursoCodigo);
+    cargarPlan(cursoCodigo);
     cargarParticipacion(cursoCodigo);
 
     let filtro = '';                                  // '' = todas las asignaturas
-    let agrupar = false;
+    let agrupar = '';                                 // '' | 'unidad' | 'asig'
     const pintarCuerpo = () => {
       const filas = filtro ? data.filter(f => String(f.oa).slice(0,4) === filtro) : data;
       // `multi` mira las filas QUE SE VEN, no el curso: con el filtro puesto hay una sola
       // asignatura a la vista y la etiqueta sobra.
       const multi = new Set(filas.map(f => String(f.oa).slice(0,4))).size > 1;
+      // Agrupar por asignatura se cae si solo hay una a la vista; por UNIDAD no, que es
+      // justo lo que le sirve al profe de asignatura.
+      const modo = (agrupar === 'asig' && !multi) ? '' : agrupar;
       $('avCuerpo').innerHTML = filas.length
-        ? bloquesAvance(filas, agrupar && multi, multi) : SIN_DATOS_ASIG;
+        ? bloquesAvance(filas, modo, multi) : SIN_DATOS_ASIG;
       conectarFilasOA(cursoCodigo);
     };
     conectarFiltros(a => { filtro = a; pintarCuerpo(); });
@@ -1851,6 +2170,39 @@ async function verAvanceAlumno(perfilId, alumnoNombre){
 // pesa más en el promedio del curso).
 /* `multi` = hay más de una asignatura a la vista. Solo entonces se dibuja la etiqueta:
    con el filtro puesto en Historia, poner "Historia" en las treinta filas es ruido. */
+// "junio" · "junio de 2025" si fue otro año. Una hoja de diciembre se lee en marzo.
+function mesLargo(t){
+  const M = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto',
+             'septiembre','octubre','noviembre','diciembre'];
+  const d = new Date(t);
+  return M[d.getMonth()] + (d.getFullYear() !== new Date().getFullYear()
+    ? ' de ' + d.getFullYear() : '');
+}
+
+/* Cuándo se trabajó este objetivo. Devuelve null si el servidor no manda `ultima` —el
+   esquema todavía sin aplicar—, y entonces la fila sale exactamente como antes.
+   ⚠️ Dice el NÚMERO de alumnos y no un veredicto: con la fecha a secas, un solo alumno
+   que repasó en noviembre haría ver como viva una unidad de abril, y cualquier umbral de
+   "cuántos son suficientes" sería inventado. El profesor sabe cuántos son sus alumnos. */
+function etiquetaActividad(f){
+  if(!f || !f.ultima) return null;
+  const t = new Date(f.ultima).getTime();
+  if(!isFinite(t)) return null;
+  const dias = Math.floor((Date.now() - t) / 86400000);
+  // En la ficha de UN alumno el servidor no manda `recientes`: con una sola persona no hay
+  // nada que distinguir entre "la clase está en esto" y "uno repasó por su cuenta".
+  if(f.recientes == null)
+    return {texto: dias <= 7 ? 'esta semana' : 'última vez en ' + mesLargo(t),
+            clase: dias <= 30 ? 'ahora' : ''};
+  const rec = Number(f.recientes) || 0;
+  /* "N jugaron" y no "N alumnos": al lado va el detalle, que ya dice "21 alumnos" —los que
+     aportaron un primer intento, que es OTRA cosa—, y con la misma palabra las dos cifras
+     se leen como una repetición en vez de como dos datos distintos. */
+  if(rec > 0) return {texto: rec + (rec===1 ? ' jugó' : ' jugaron') + ' este mes',
+                      clase: 'ahora'};
+  return {texto: 'sin movimiento desde ' + mesLargo(t), clase: ''};
+}
+
 function filaAvance(f, multi){
   const r1 = Number(f.resp_1)||0, o1 = Number(f.ok_1)||0;
   const total = Number(f.respondidas)||0;
@@ -1866,6 +2218,9 @@ function filaAvance(f, multi){
              : r1     ? `${r1} pregunta${r1===1?'':'s'}`
              : 'sin primer intento';
   const detalle = base + (reintentos ? ` · ${reintentos} reintento${reintentos===1?'':'s'}` : '');
+  /* CUÁNDO se trabajó, que es lo que le faltaba al mapa: en diciembre, un 45% de abril y
+     uno de la semana pasada piden cosas muy distintas y hasta ahora se veían igual. */
+  const cuando = etiquetaActividad(f);
   // El detalle se pide al abrir, no al cargar la tabla: con 50 objetivos serían 50
   // llamadas por adelantado para algo que casi nunca se mira entero.
   const idOa = String(f.oa).replace(/[^A-Za-z0-9]/g,'');
@@ -1883,6 +2238,7 @@ function filaAvance(f, multi){
         </div>
         <b style="color:${color};min-width:42px;text-align:right">${pct}%</b>
         <small style="color:var(--dim);min-width:120px;text-align:right">${detalle}</small>
+        ${cuando ? `<small class="oa-cuando ${cuando.clase}">${esc(cuando.texto)}</small>` : ''}
       </div>
     </summary>
     <div class="oa-detalle" style="padding-top:6px;color:var(--dim);font-size:12px">Cargando…</div>
@@ -1948,6 +2304,16 @@ function detalleApoyo(filas){
    "una sección por asignatura" perdería la distinción entre lo que hay que reforzar, lo
    que va bien y lo que todavía no tiene base — que es justo lo que este panel aporta.
    Así se conservan las dos lecturas: primero qué hacer, después de qué materia. */
+/* Las fechas planificadas de una unidad, para el encabezado de su grupo en el mapa. La
+   clave es la misma que usa la planificación ('HI08|U1'), así que el mapa y esa pantalla
+   no pueden discrepar. Vacío si nadie las declaró: la ausencia no estorba. */
+function fechasDeUnidad(clave){
+  const p = PLAN[clave];
+  if(!p || (!p.inicio && !p.termino)) return '';
+  return ` <span class="oa-grupo-fechas">${esc(fechaCortita(p.inicio)||'?')} → ${
+    esc(fechaCortita(p.termino)||'?')}</span>`;
+}
+
 function bloquesAvance(data, agrupar, multi){
   const conBase = data.filter(f => (Number(f.alumnos_1)||0) >= 10);
   const sinBase = data.filter(f => (Number(f.alumnos_1)||0) <  10);
@@ -1965,8 +2331,43 @@ function bloquesAvance(data, agrupar, multi){
         ${g[a].map(f => filaAvance(f, false)).join('')}
       </div>`).join('');
   };
-  const cuerpo = filas => agrupar ? porAsignatura(filas)
-                                  : filas.map(f => filaAvance(f, multi)).join('');
+  /* Por UNIDAD, que es como el profesor piensa su año: "la unidad 2 la pasé en junio".
+     Sale gratis porque el oa.json de cada banco ya declara qué objetivos tiene cada unidad
+     —medido: los 32 bancos, sin un solo objetivo fuera de alguna—.
+     ⚠️ 9 objetivos de Lenguaje de 3° están en MÁS de una unidad (uno en cuatro), porque
+     sus capítulos son temáticos y un objetivo transversal se trabaja en varios. Se agrupan
+     en la PRIMERA, para que una fila siga siendo un objetivo y los conteos del bloque
+     cuadren con su encabezado. La contra, asumida: en ese banco una unidad se ve sin un
+     objetivo que también le toca. `OA_UNIDAD[oa].ids` guarda todas por si hace falta. */
+  const porUnidad = filas => {
+    const g = {};
+    filas.forEach(f => {
+      const u = OA_UNIDAD[f.oa];
+      const asig = String(f.oa).slice(0,4);
+      const k = u ? asig + '|' + u.id : '_sin';
+      if(!g[k]) g[k] = {
+        asig, orden: u ? u.orden : 99,
+        tit: u ? u.titulo : 'Sin unidad declarada', filas: []
+      };
+      g[k].filas.push(f);
+    });
+    // Orden CURRICULAR —por asignatura y luego por unidad—, no el del servidor (de peor a
+    // mejor), que mezclaría las unidades entre sí. Un año se lee en su orden.
+    return Object.keys(g).sort((a,b) => {
+      const A = g[a], B = g[b];
+      const ia = ASIG_ORDEN.indexOf(A.asig), ib = ASIG_ORDEN.indexOf(B.asig);
+      return ia !== ib ? ia - ib : A.orden - B.orden;
+    }).map(k => `
+      <div class="oa-grupo">
+        <div class="oa-grupo-tit">${multi && ASIG_NOMBRE[g[k].asig]
+            ? esc(ASIG_NOMBRE[g[k].asig]) + ' · ' : ''}${esc(g[k].tit)}
+          <span>(${g[k].filas.length})</span>${fechasDeUnidad(k)}</div>
+        ${g[k].filas.map(f => filaAvance(f, false)).join('')}
+      </div>`).join('');
+  };
+  const cuerpo = filas => agrupar === 'asig'   ? porAsignatura(filas)
+                        : agrupar === 'unidad' ? porUnidad(filas)
+                        : filas.map(f => filaAvance(f, multi)).join('');
   const seccion = (titulo, filas, plegada) => !filas.length ? '' : `
     <details ${plegada?'':'open'} style="margin-bottom:10px">
       <summary style="color:var(--cyan);font-size:13px;cursor:pointer;padding:6px 0">

@@ -94,6 +94,11 @@ semana y quién no ha entrado nunca. Es una brújula para decidir qué reforzar 
 sirve para calificar**. Está pensado para verse en un **computador**, que es donde lo usa un
 profesor, aunque también funciona en el teléfono.
 
+Cada objetivo dice además **cuándo se trabajó** —"21 jugaron este mes" o "sin movimiento desde
+junio"—, y el mapa se puede **agrupar por unidad**, porque en diciembre un 45% de abril y uno de
+esta semana piden cosas muy distintas. La UTP declara las **fechas de cada unidad** a principio de
+año y el profesor de asignatura las ajusta cuando el aula no calza con el papel.
+
 Y para la **dirección o la UTP** hay una pantalla propia, **el pulso del colegio**: una fila por
 curso con la **cobertura del programa** —cuántos de los objetivos del año ya se trabajaron, y
 cuáles no se han tocado— y la **participación** de la semana, imprimible en una hoja para llevar
