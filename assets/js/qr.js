@@ -45,7 +45,10 @@ window.QR = (function(){
       o.style.cssText='position:fixed;inset:0;z-index:9999;background:#0b0b1aee;display:flex;'
         +'flex-direction:column;align-items:center;justify-content:center;gap:18px;cursor:pointer';
       document.body.appendChild(o);
-      o.addEventListener('click', function(){ o.hidden=true; });
+      // Cerrar toggleando el DISPLAY, no el atributo hidden: el overlay lleva display:flex
+      // INLINE, y [hidden]{display:none} (sin !important en los forks, y ausente en el panel)
+      // no le gana. Mismo gotcha del #maestroOverlay (S20), el botón Continuar (S29) y el 🔊 (S84).
+      o.addEventListener('click', function(){ o.style.display='none'; });
     }
     const lado = Math.min(window.innerWidth, window.innerHeight) - 80;
     const px = lado>520?520:(lado>160?lado:160);
@@ -53,8 +56,8 @@ window.QR = (function(){
       o.innerHTML = '<div style="background:#fff;padding:16px;border-radius:18px">'+svg(url, px)+'</div>'
         + '<p style="color:#fff;font-family:system-ui,sans-serif;font-weight:700;text-align:center;padding:0 20px">'
         + 'Escanéalo con la cámara del teléfono · toca para cerrar</p>';
-      o.hidden=false;
-    }catch(e){ o.hidden=true; }
+      o.style.display='flex';
+    }catch(e){ o.style.display='none'; }
   }
 
   return { pintar: pintar, grande: grande };

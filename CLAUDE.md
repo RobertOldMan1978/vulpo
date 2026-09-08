@@ -12188,3 +12188,14 @@ Jefe Final (no son unidades del plan; siguen con su candado normal).
 > los tres estados en una sola imagen hubo que elegir bien las fechas por unidad —cap4 y cap5 cruzan
 > U2/U3, así que con U2 en clases el "más activo" los pintaba a todos de clases; se puso **U1 clases, U2
 > terminada, U3 futura** para que cada estado tuviera su tarjeta—.
+
+**Post scriptum — el «toca para cerrar» del QR no cerraba.** Roberto lo encontró usándolo: el overlay
+del QR grande (`assets/js/qr.js`, Sesión 113) se mostraba pero no se cerraba al tocar. La causa es el
+gotcha que este archivo ya documenta **cuatro veces** (`#maestroOverlay` S20, botón Continuar S29, 🔊
+S84): el overlay lleva **`display:flex` INLINE**, y se cerraba con `o.hidden=true` — pero el `display:none`
+que aporta el atributo `hidden` viene de la hoja del navegador, y un estilo inline lo gana. Peor en el
+panel: `profesor.html` **ni siquiera tiene la regla `[hidden]`**, y los forks la tienen **sin
+`!important`**, así que en ningún lado `hidden` podía ganarle al inline. Arreglado toggleando el
+**`display` inline** al abrir (`flex`) y cerrar (`none`), que es independiente del CSS del anfitrión, con
+el porqué escrito en el código para que nadie lo devuelva a `hidden`. Verificado en el navegador: abre
+(`flex`), cierra al tocar (`none`) y reabre — cero consola. Un solo push (`qr.js` lleva respaldo vacío).
