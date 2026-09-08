@@ -11693,3 +11693,33 @@ occidentales: Ilustración e Independencia"*—, o sea que el recorte de la Sesi
 ⚠️ **Queda abierto (A56), y las dos cosas son de Roberto:** re-pegar el portero de
 `kimun_prof_resumen` —sin prisa, porque lo que corrige es la consistencia del contrato y no un
 agujero— y pegar `seed-anio-8vo.sql`.
+
+#### Post scriptum — el portero quedó re-pegado, y el cambio de estado es lo que lo prueba
+
+Roberto lo pegó el mismo día, después del commit. Medido contra producción: `kimun_prof_resumen`
+pasó de **200 `[]`** a **400 `no_autorizado`**, estable en tres llamados seguidos, y con sus dos
+controles al lado —llamarla con un parámetro inventado da **404 `PGRST202`**, o sea que su firma
+sigue siendo sin parámetros y el 400 no es un eco genérico; y `kimun_prof_listar`, su hermana
+directa, responde exactamente lo mismo, que era el patrón al que había que volver—. Las otras dos
+funciones de la sesión y `kimun_oa_asignatura('MA06 OA 01')` siguen respondiendo, así que el
+re-pegado no se llevó nada.
+
+**Con eso el backend no tiene nada pendiente**, y de A56 queda solo pegar `seed-anio-8vo.sql`.
+
+> **Y lo que este cierre confirma es el método, no el arreglo.** La medición útil no fue *"¿la
+> función responde?"* —respondía, y sin filtrar nada de más— sino **"¿responde lo MISMO que sus
+> hermanas?"**. Un 200 donde todas las demás dan 400 es la clase de defecto que no da error, no
+> tiene síntoma y no se ve leyendo el código: se ve **comparando contra producción**.
+
+⚠️ **Y de paso apareció que la tabla del registro de `docs/aplicar-schema.md` estaba PARTIDA.**
+Tenía líneas en blanco entre las filas desde el 07/09, y en Markdown una línea vacía **termina la
+tabla**: las cinco últimas —el pulso, la planificación, las tres funciones de esta sesión y el
+re-pegado— se renderizaban como **texto suelto**, no como filas. Cerradas con un script acotado a
+los blancos que quedan *entre dos filas*, para no tocar ningún otro del documento: **4 bytes de
+diferencia, y los cuatro son saltos de línea**.
+
+> Es la undécima vez que este proyecto tropieza con lo mismo, y en el documento donde más duele:
+> **el registro de aplicaciones es lo que alguien lee para saber qué está aplicado.** Nadie lo vio
+> en tres sesiones porque el contenido estaba entero y correcto — lo que fallaba era cómo se veía,
+> y eso **no lo delata ningún conteo**. Salió de mirar la estructura del archivo al agregarle una
+> fila, no de buscarlo.
