@@ -393,11 +393,21 @@ on conflict (auth_uid) do nothing;
 -- Crea/actualiza mi perfil (devuelve el perfil con su código)
 create or replace function public.kimun_perfil(p_nombre text, p_avatar text)
 returns public.perfiles language plpgsql security definer set search_path=public as $$
-declare r public.perfiles; mi uuid; begin
+declare r public.perfiles; mi uuid; nom text; av text; begin
   mi := public.kimun_yo();
+  -- Defensa en profundidad (auditoría 08/09/2026, hallazgo H2): acotar el largo del
+  -- nombre y el avatar que el cliente sube. No se RECHAZA —esta función corre en el
+  -- arranque con cualquier nombre que ponga el niño, incluso uno de una letra— sino que
+  -- se TRUNCA, que corta el abuso de layout (un nombre de 1 MB que reventaría el ranking
+  -- o el panel) sin romper ningún flujo legítimo. El mínimo real de 2 caracteres, que
+  -- identifica a un alumno para el profesor, lo exige kimun_inscribirse, no el juego
+  -- libre. El avatar es siempre un emoji (skinImg mapea por él), así que 24 no corta
+  -- ninguno; un nombre/avatar vacío o de puros espacios cae a null y NO pisa el actual.
+  nom := left(nullif(trim(coalesce(p_nombre,'')),''), 40);
+  av  := left(nullif(coalesce(p_avatar,''),''), 24);
   if mi is null then
     insert into public.perfiles(id,nombre,avatar,codigo)
-    values (auth.uid(),coalesce(p_nombre,'Jugador'),coalesce(p_avatar,'🦊'),public.kimun_gen_codigo())
+    values (auth.uid(),coalesce(nom,'Jugador'),coalesce(av,'🦊'),public.kimun_gen_codigo())
     on conflict (id) do update set nombre=excluded.nombre, avatar=excluded.avatar
     returning * into r;
     insert into public.vinculos(auth_uid,perfil_id) values (auth.uid(), r.id)
@@ -406,7 +416,7 @@ declare r public.perfiles; mi uuid; begin
     select * into r from public.perfiles where id=mi;
     -- A un alumno inscrito por el adulto no se le pisa el nombre con el del teléfono
     if r.codigo_acceso is null then
-      update public.perfiles set nombre=coalesce(p_nombre,nombre), avatar=coalesce(p_avatar,avatar)
+      update public.perfiles set nombre=coalesce(nom,nombre), avatar=coalesce(av,avatar)
       where id=mi returning * into r;
     end if;
   end if;
@@ -1829,8 +1839,12 @@ declare cid uuid; r public.perfiles; nom text; tok text; act boolean; begin
 
   -- 3. El alumno recibe su ALU- igual, aunque no lo haya escrito: es lo que le
   --    permite seguir en otro aparato o recuperar su avance si borra los datos.
+  -- El `nom` ya viene validado 2-40 (arriba). El avatar solo se acota, no se rechaza:
+  -- viene de un selector de emojis y un largo raro solo llega manipulando la API
+  -- (auditoría 08/09/2026, H2). Truncar corta el abuso sin introducir un error nuevo
+  -- que el cliente de la pantalla de inscripción no sabría manejar.
   insert into public.perfiles(id,nombre,avatar,codigo,curso_id,codigo_acceso,autoinscrito)
-  values (gen_random_uuid(), nom, coalesce(p_avatar,'🦊'),
+  values (gen_random_uuid(), nom, left(coalesce(p_avatar,'🦊'),24),
           public.kimun_gen_codigo(), cid, public.kimun_gen_codigo_alumno(), true)
   returning * into r;
   insert into public.vinculos(auth_uid,perfil_id) values (auth.uid(), r.id)

@@ -63,6 +63,15 @@ Es una app web mobile-first y se reutiliza. Ver `docs/roadmap-tecnico.md` §1.
   nada—. Registro y comprobaciones en [`docs/aplicar-schema.md`](docs/aplicar-schema.md).
   **`kimun_prof_ranking_general` también aplicada y comprobada** el mismo día, con el mismo
   par de controles (400 `no_autorizado` para la real, 404 `PGRST202` para una inventada).
+- **Auditoría de seguridad de punta a punta (08/09, Sesión 111): ninguna vulnerabilidad
+  explotable.** Probada contra producción —RLS, escalada de privilegios, fuga de datos de menores,
+  IDOR, inyección SQL, XSS almacenado, secretos, cadena de suministro—; todo resistió. Detalle
+  fuera del repo (`Escritorio\VULPO - correos profesores\`). Dos hallazgos menores, los dos ya
+  conocidos: el código ALU- sin rate limit (informativo, no urgente) y la validación de longitud
+  de nombre/avatar (H2, bajo). ⚠️ **Pendiente de Roberto: re-pegar `supabase/schema.sql`** con el
+  parche de H2 —acota nombre a 40 y avatar a 24, truncando en vez de rechazar; `create or replace`
+  sin cambio de firma, se re-pega cuando toque el esquema por otra cosa—. No hay riesgo activo: es
+  defensa en profundidad.
 - **Paridad de funcionalidad entre los seis forks: completa donde corresponde.** Los seis
   comparten el motor entero (`assets/js/`) y los seis tienen fork. Lo que difiere es **contenido,
   no código**, y va como bandera. Medido el 07/09 — **233 lecciones**, que son las mismas que

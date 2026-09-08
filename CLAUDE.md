@@ -11885,3 +11885,65 @@ fallos de red**.
   dejó.
 - De paso, **`_panel-demo.html` entró al `.gitignore`**: es el doble con el que se verifica el
   panel sin sesión, y el repositorio es público.
+
+### Sesión 111 (2026-09-08) — Auditoría de seguridad de punta a punta, y un parche de defensa en profundidad
+Roberto la pidió: probar la app en cuanto a seguridad y buscar puntos vulnerables. Las auditorías
+previas (Sesiones 39 y 51) cubrían tres cursos; desde entonces entraron **el progreso en el
+servidor, la inscripción por enlace, la planificación, el pulso del colegio y tres cursos más**, y
+todo eso estaba **sin auditar**. Se probó **contra producción** —no solo leyendo código— con la
+clave pública y una sesión anónima idéntica a la de cualquier niño que abre el juego.
+
+> ⚠️ **El informe detallado vive FUERA del repositorio**, en `Escritorio\VULPO - correos
+> profesores\VULPO - auditoria seguridad 2026-09-08.md`: enumera la superficie de ataque, y este
+> repo es público. Esta entrada registra el método y el resultado, no el mapa de ataque —igual que
+> las de las Sesiones 39 y 51.
+
+**Veredicto: ninguna vulnerabilidad explotable.** Lo que se atacó y resistió, medido en vivo:
+
+| Ataque | Resultado |
+|---|---|
+| Leer las 17 tablas directo (anónimo **y** autenticado) | `[]` en todas · RLS sellado, con control negativo (`404 PGRST205` de una tabla inexistente) al lado |
+| Escalar a admin (`prof_alta`, `_autorizar`, `_super_fijar`, `_curso_crear`, `_quitar`) | `no_autorizado` en todas |
+| Fugar nombres/códigos de menores (`jugadores`, `ranking`, `listar`, `pulso`) | solo bots · el `codigo_acceso` solo lo da `prof_listar` al Jefe, con `case when kimun_prof_es_mio` |
+| IDOR: leer/borrar/reiniciar un alumno o curso por su id | `no_autorizado`, incluso el IDOR sutil **entre profesores legítimos** (`_dominio_alumno` valida `kimun_prof_acceso` sobre el curso **y** filtra por asignatura) |
+| Inyección SQL en las 74 funciones | **cero SQL dinámico** — todo bind, un `'; drop table` se guarda como texto |
+| XSS almacenado (nombre autoinscrito → profesor con sesión, u otro niño) | todo escapado (`esc`/`escHtml`); `avatarHTML`, que puede pintar `<img>`, se usa **solo con el avatar propio** |
+| Secretos filtrados / scripts de terceros | ninguno · supabase-js **auto-hospedado con versión fija** (2.112.4) · cero CDN |
+
+El token anónimo confirma `role: authenticated, is_anonymous: true` — el rol correcto, sin
+privilegios elevados por accidente. El progreso (`kimun_progreso_subir/bajar`) resuelve identidad
+con `kimun_yo()` y **no recibe `perfil_id`**, así que subir o bajar la foto de otro es
+estructuralmente imposible; tope de 64 KB presente.
+
+**Dos hallazgos, los dos menores y ya conocidos:**
+
+- **H1 · [INFORMATIVO] El código ALU- sin rate limit.** La Sesión 39 lo llamó "impracticable";
+  medido con los números de hoy (espacio `16^8 = 4.294M`, ~8 req/s por hilo, sin bloqueo tras 30
+  intentos seguidos): con **2.000 alumnos** (colegio grande completo) secuestrar *un* perfil
+  aleatorio baja a **~8 h a 50 req/s**. Ya no es impracticable en absoluto, pero el botín es un
+  perfil de juego al azar —sin acceso al panel ni a otros niños—. **No urgente.** Si el piloto
+  crece, la mitigación proporcional es alargar el código a 12 hex (los ALU- ya repartidos siguen
+  sirviendo).
+- **H2 · [BAJO] Validación de longitud inconsistente — PARCHE PREPARADO.** `kimun_inscribirse`
+  validaba el nombre (2-40) pero no el avatar, y `kimun_perfil` no validaba ninguno. **No es XSS**
+  (todo se escapa) sino robustez: un nombre de 1 MB escrito por un anónimo con curso rompería el
+  ranking o el panel. Era el pendiente que la Sesión 51 dejó anotado, que con la inscripción
+  (Sesión 73) creció una puerta más. **Confirmado real contra producción**: hoy la función vieja
+  guarda un nombre de 200 y un avatar de 100 caracteres enteros.
+  - **La decisión de diseño que importa: se TRUNCA, no se rechaza.** `kimun_perfil` corre en el
+    arranque del juego con cualquier nombre que ponga el niño —incluso una sola letra—, así que un
+    `raise exception` ahí dejaría al niño sin poder crear su perfil. `left(...)` corta el abuso sin
+    romper jamás un flujo legítimo, y de regalo cierra un bug latente: un nombre de puros espacios
+    ya no pisa el nombre real (antes lo borraba con `coalesce`).
+  - **El tope se midió, no se inventó:** el avatar guardado es siempre un emoji (`skinImg` mapea
+    por él), el más largo entre todas las skins son ~4 unidades, así que 24 no corta ni una familia
+    con ZWJ. Nombre a 40, avatar a 24.
+  - **Sin cambio de firma** → `create or replace` puro, sin `drop` ni ventana de despliegue: se
+    re-pega cuando toque el esquema por cualquier otra cosa. ⚠️ **Pendiente de Roberto: re-pegar
+    `supabase/schema.sql`**; hasta entonces la función vieja sigue sin acotar (no hay riesgo activo,
+    es defensa en profundidad).
+
+> **Y la lección de método del proyecto se cumplió de nuevo:** un control contra producción vale
+> **solo con su contrario al lado** —`400 no_autorizado` (existe y su portero funciona) frente a
+> `404 PGRST202` (no existe)—, porque un error universal se ve igual que el portero funcionando. Es
+> la misma disciplina de la Sesión 73 y del `kimun_prof_resumen` de la 109.
