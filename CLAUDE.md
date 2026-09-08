@@ -482,6 +482,38 @@ Al agregar expediciones nuevas al arreglo `EXPEDICIONES` de `8vo/index.html`:
   Ciencias + Lenguaje + El Autómata— dejar `DIF_ASIGS` en esos 3 y otorgar cualquier insignia
   de Difícil adicional con un chequeo aparte, fuera de `asignaturasDificil()` y `esMaestro()`.
 
+### Mirar el panel del profesor sin credenciales (`scripts/panel-demo.py`)
+
+`profesor.html` **no se abre sin sesión** y es la pantalla más compleja del proyecto, así que sin
+esto no hay forma de verla. Genera `_panel-demo.html` —una copia con un **doble de Supabase**— sin
+tocar el archivo del repositorio:
+
+    python scripts/panel-demo.py
+    python -m http.server 8765          # http://localhost:8765/_panel-demo.html
+    node scripts/cdp.mjs about:blank <pasos.mjs>
+
+**Se versiona a propósito**, igual que `cdp.mjs`: vivió meses en el scratchpad de cada sesión, que
+es efímero, así que había que reescribirlo cada vez — **y un doble reescrito de memoria es justo
+el que inventa nombres de columna**. `_panel-demo.html` está en `.gitignore`.
+
+⚠️ **Los nombres de columna se copian de las firmas REALES de `supabase/schema.sql`**, nunca de
+memoria: `kimun_prof_listar` devuelve `alumno` y `avatar`, no `nombre`, y la primera versión usó
+`nombre` — el panel salía con la fila del alumno vacía y **parecía un defecto del producto**.
+
+⚠️ **El doble NO es coherente consigo mismo en un detalle**: su primer curso es de 3° y sus datos
+de dominio son de 8°, así que el bloque de planificación (que mira las asignaturas del curso) y el
+mapa (que mira los OA de los datos) pueden discrepar. Para verificar algo que cruce las dos cosas,
+abrir **`CUR-BA04`**, que es el 8° y ahí todo calza.
+
+⚠️ **PostgREST no lanza excepciones: devuelve `{data, error}`**, y el doble hace lo mismo. Si
+lanzara, el cliente se estaría probando contra un camino que en producción no existe.
+
+> **Y en este panel se aprueba MIRANDO, no contando.** La jerarquía invertida, los tres
+> desplegables de tres colores, el violeta sin contraste, la tarjeta estirada, el banner que
+> empujaba el botón de jugar fuera de pantalla y la barra de progreso aplastada a cero píxeles se
+> vieron todos en una captura — **con el conteo diciendo "sin desborde, cero errores" en los seis
+> casos**.
+
 ### Verificar en un navegador de verdad (`scripts/cdp.mjs`)
 
 Durante mucho tiempo las comprobaciones se hacían con Chrome headless y `--dump-dom`, que
