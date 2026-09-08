@@ -172,8 +172,11 @@ Esto no es un bloque del roadmap: es la lista corta de lo que hay entre hoy y un
   ⚠️ **Recuperarlo necesita internet**, que es distinto de funcionar sin conexión.
 
 **Los trámites bloquean COBRAR, no jugar:** un piloto gratuito no necesita ninguno. La **SpA
-ya está** (02/09) y su **facturación electrónica también** (07/09); queda la **cuenta corriente
-en aprobación** y la **marca en trámite** en INAPI, ninguna de las dos bloquea el piloto.
+ya está** (02/09), su **facturación electrónica también** (07/09) y la **cuenta para recibir
+pagos está lista** (08/09; sus datos, fuera del repo). **Con eso el ciclo de cobro se cierra de
+punta a punta —emitir factura y recibir el pago— y no queda ningún trámite operativo bloqueando
+la venta.** Solo la **marca sigue en trámite** en INAPI, y eso no bloquea ni el piloto ni el
+cobro.
 
 ---
 
@@ -661,8 +664,9 @@ tienda y permite probar notificaciones antes de enfrentar iOS. Detalle en
 - ✅ **La SpA está constituida**, con **inicio de actividades ante el SII desde el 01/09/2026**
   (primera categoría, afecta a IVA). Era el trámite que bloqueaba cobrar. ⚠️ Sus datos NO van
   en este repositorio, que es público: están en `Escritorio\VULPO - correos profesores\`.
-  **La facturación electrónica quedó lista (07/09)** y la **cuenta corriente de la empresa está
-  en aprobación** — con eso se puede emitir la factura, y falta solo dónde recibir el pago.
+  **La facturación electrónica quedó lista (07/09)** y la **cuenta para recibir pagos también
+  (08/09)** —sus datos en la carpeta de fuera del repo—. **Ya se puede facturar Y recibir el
+  pago: el ciclo de cobro se cierra de punta a punta, sin ningún trámite operativo pendiente.**
 - ✅ **Enlace de agenda real — HECHO (07/09/2026).** El cierre de la landing lleva
   `📅 Agenda una demo de 15 minutos` a la programación de citas de Google Calendar, y WhatsApp
   queda como alternativa (*"Prefiero escribir por WhatsApp"*). Lo destrabó **Google Workspace**,

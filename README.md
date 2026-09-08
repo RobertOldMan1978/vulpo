@@ -126,7 +126,11 @@ dentro de cada curso.
 
 La página de presentación está en **https://vulpo.cl**, y desde ahí se enlaza cada curso:
 **https://vulpo.cl/3ro**, **/4to**, **/5to**, **/6to**, **/7mo** y **https://vulpo.cl/8vo** — más
-el panel del profesor en **https://vulpo.cl/profesor.html**. Hay además un **tutorial** en **https://vulpo.cl/tutorial/**, con capturas y clips del juego real, dividido en dos secciones: para el apoderado y para el alumno. Para desarrollo local conviene un servidor
+el panel del profesor en **https://vulpo.cl/profesor.html**. Para la **dirección y la UTP** hay una
+página propia, **https://vulpo.cl/colegio**, con el argumento institucional: el pulso del colegio
+(cuánto del programa lleva cada curso), la planificación del año y lo que ve el equipo docente. Hay
+además un **tutorial** en **https://vulpo.cl/tutorial/**, con capturas y clips del juego real,
+dividido en dos secciones: para el apoderado y para el alumno. Para desarrollo local conviene un servidor
 (`python -m http.server 8765`), porque el JavaScript no funciona bien desde `file://`.
 
 **Se puede instalar en el teléfono.** Desde el menú del navegador, «Agregar a pantalla de

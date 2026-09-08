@@ -11957,3 +11957,61 @@ estructuralmente imposible; tope de 64 KB presente.
 > parche H2 dio la vuelta de tuerca: cuando la función es del juego y no del panel, se puede medir
 > el DATO (trunca a 40) y no solo la existencia** — un control más fuerte que el de las funciones
 > del panel, que sin sesión de profesor solo llegan a `no_autorizado`.
+
+### Sesión 112 (2026-09-08) — La página del colegio: `vulpo.cl/colegio` para la dirección y la UTP
+Dos hechos comerciales el mismo día. Primero, **la cuenta para recibir pagos quedó lista** (Cuenta
+Vista FAN Emprende del Banco de Chile, a nombre de la SpA; sus datos viven fuera del repo). Era el
+último trámite operativo que bloqueaba cobrar: ahora el ciclo se cierra de punta a punta —emitir la
+factura Y recibir el pago—, y **el cuello de botella deja de ser operativo y pasa a ser puramente
+comercial: repartir el enlace a un colegio**. Solo la marca sigue en trámite en INAPI, y eso no
+bloquea ni el piloto ni el cobro.
+
+Y sobre eso, el trabajo de la sesión: **la landing le hablaba bien al profesor de aula y a la
+familia, pero al que decide y paga —la dirección o la UTP— casi no.** Su herramienta, el pulso del
+colegio (Sesión 107), es el diferenciador —el MINEDUC nombra a Kahoot y Quizizz al lado de VULPO, y
+esos miden *actividad*; VULPO sabe, objetivo por objetivo, cuánto del programa del año ya se
+trabajó— y **no estaba en la cara comercial**. Se hizo con el flujo brainstorming → spec → plan →
+ejecución. Specs/planes en `docs/superpowers/{specs,plans}/2026-09-08-pagina-colegio*`.
+
+**Las decisiones de Roberto (brainstorming):** la dirección/UTP y el profesor son **lectores
+separados**; va en una **página aparte, `vulpo.cl/colegio`**, que se le manda a la UTP sin el ruido
+de "juega desde casa"; **`/colegio` profundiza y la landing raíz se mantiene** (gana un enlace, no
+se aligera — Roberto queda con dos enlaces, el general y el institucional); **registro sobrio, no
+juguetón**, el mismo giro que el panel del profesor en la Sesión 106 (Inter, fondo neutro, estrellas
+quietas sin meteoros, la marca como acento) porque le habla a un adulto con presupuesto; y **el
+pulso es el héroe**, arriba.
+
+**La página** (`colegio/index.html`), seis secciones que reutilizan el sistema de CSS de la landing
+(tokens, `.seccion`, `.mock`, `.clara`, `.cita`) con la temperatura bajada: hero tipográfico
+institucional (logo pequeño, no el logo-mascota como titular — la Sesión 51 ya aprendió que se ve
+infantil) → **el pulso** con su captura → planificación y cierre (*"en diciembre no sirve ver
+avances de abril"*) → el mapa de dominio del profesor → privacidad y no-calificación (la objeción de
+la UTP) → cómo se implementa + CTA de agenda. La landing raíz gana una tarjeta *"¿Diriges un colegio
+o la UTP? → Ver el panel de gestión"* que **navega** a `/colegio` (verificado con clic real).
+
+**Las tres capturas se generaron con el doble del panel** (`scripts/panel-demo.py` + `cdp.mjs`), del
+**panel actual sobrio** (Sesión 106) —las 3 que quedan en la landing raíz son del panel viejo
+violeta y chocarían—. El doble ya simulaba `kimun_prof_pulso` con 6 cursos y `es_admin:true`, así que
+no hubo que ajustarlo. Con "DATOS SIMULADOS" sobrepuesto en la página, no en la imagen (viaja si
+alguien la recorta).
+
+⚠️ **El defecto que solo se vio MIRANDO, décima vez en el proyecto:** las capturas del pulso y el
+cierre traían ~200 px de **negro muerto abajo** —con el conteo diciendo "sin desborde, 3 imágenes
+cargan, cero errores"—, y "DATOS SIMULADOS" flotaba en el vacío. Recortadas con PIL a la altura del
+contenido. La regla del proyecto otra vez: **una página se aprueba mirando, no contando.**
+
+**Cuidados técnicos:** `/colegio/` como carpeta con `index.html` (URL limpia sin `.html`), lo que
+obliga a **rutas absolutas** a `assets/` (`/assets/web/...`) —la contracara del `<base href="/">`—;
+imagen y metadatos **Open Graph propios** (`og-colegio.png`, el hero a 1200×630) para que el enlace
+se vea institucional al compartirlo por WhatsApp o correo; y las **reglas de `comercial.md`
+intactas**, verificadas con un grep de control: sin precios en pesos, sin ® ni "registrada", sin
+"una a una", sin "sin internet".
+
+**Verificado mirando**, a 1280 y 375 px: sin desborde, las seis secciones, las tres imágenes
+cargando, el registro sobrio logrado en las dos anchuras, el enlace de la raíz navegando de verdad,
+la OG legible, el JS de las estrellas por `node --check`, y **cero errores de consola y cero fallos
+de red**.
+
+⚠️ **Deuda anotada, fuera de alcance:** las 3 capturas del panel viejo (violeta, anterior a la
+Sesión 106) siguen en la **landing raíz** y hoy chocan con el panel real. `/colegio` usa capturas
+nuevas y no depende de ellas; rehacer las de la raíz es un trabajo aparte.

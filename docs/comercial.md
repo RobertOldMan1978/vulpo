@@ -309,9 +309,10 @@ aceptaba y no había cómo emitir la factura, la venta se caía en el último pa
 2. **Al cotizar hay que decir si el número es neto o con IVA.** Los precios de este documento
    son **netos**, y así estaban escritos; con IVA incluido son otro número y un colegio
    compara presupuestos.
-3. **La parte operativa está casi lista:** la **facturación electrónica quedó habilitada el
-   07/09/2026** y la **cuenta corriente de la empresa está en aprobación**. Ya se puede emitir
-   la factura; falta dónde recibir el pago.
+3. **La parte operativa está lista:** la **facturación electrónica quedó habilitada el
+   07/09/2026** y la **cuenta para recibir pagos el 08/09/2026** (a nombre de la SpA; sus datos
+   viven fuera del repo). **Ya se puede facturar Y recibir el pago — el ciclo de cobro se cierra
+   de punta a punta, sin trámite operativo pendiente.**
 
 **Y la marca está en trámite, no registrada (07/09/2026).** La solicitud de VULPO se presentó y
 pagó en INAPI, a nombre de la SpA, así que **la prioridad corre desde esa fecha**.

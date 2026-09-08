@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VULPO para tu colegio · El programa del año, curso por curso</title>
+<meta name="description" content="VULPO le muestra a la dirección y la UTP cuánto del programa del año lleva cada curso, objetivo por objetivo — el trabajo que hoy se persigue con planillas. Alineado a las Bases Curriculares, de 3° a 8° básico.">
+<link rel="icon" type="image/png" href="/assets/web/vulpo-logo-320.png">
+<link rel="apple-touch-icon" href="/assets/web/vulpo-logo-320.png">
+<meta name="theme-color" content="#0e1219">
+<meta property="og:type" content="website">
+<meta property="og:title" content="VULPO para tu colegio">
+<meta property="og:description" content="El programa del año, curso por curso: cuánto se ha cubierto de cada objetivo, para la dirección y la UTP.">
+<meta property="og:image" content="https://vulpo.cl/assets/web/og-colegio.png">
+<meta property="og:url" content="https://vulpo.cl/colegio">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Inter = registro formal, igual que la landing raíz y el panel del profesor. Titan One
+     reservada al nombre de marca y los números. Página SOBRIA: estrellas estáticas, sin
+     meteoros, fondo más neutro — le habla a una dirección/UTP con un presupuesto en la mano
+     (mismo giro que el panel en la Sesión 106). -->
+<link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg1:#0f1024; --bg2:#1b1740; --panel:#1e1747; --panel2:#211b4d;
+  --gold:#ffc93c; --cyan:#4dd8ff; --green:#3ee089; --pink:#ff4d8d; --violet:#8f6bff;
+  --txt:#f3f0ff; --dim:#a89fd6; --r:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--txt);font-weight:400;
+  background:linear-gradient(160deg,var(--bg1),var(--bg2));background-attachment:fixed;
+  min-height:100vh;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+/* Estrellas ESTÁTICAS y tenues: la página institucional no "juega". Sin animación, sin meteoros. */
+.stars{position:fixed;inset:0;pointer-events:none;z-index:-1}
+.stars span{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:.26}
+
+.envoltura{max-width:1080px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:'Inter',system-ui,sans-serif;line-height:1.18;letter-spacing:-.015em}
+h1{font-size:clamp(30px,5.6vw,50px);font-weight:800;color:var(--txt)}
+h2{font-size:clamp(22px,3.4vw,32px);font-weight:800;color:var(--txt);margin-bottom:14px}
+h3{font-size:18px;font-weight:700}
+p{font-weight:400}
+.dim{color:var(--dim)}
+.kicker{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--gold);opacity:.9;margin-bottom:10px}
+.seccion{padding-top:60px;padding-bottom:60px;border-top:1px solid #ffffff12}
+
+.franja{background:#ffffff08;border-top:1px solid #ffffff12;border-bottom:1px solid #ffffff12}
+.franja .in{display:flex;flex-wrap:wrap;gap:12px 30px;justify-content:center;align-items:center;
+  padding:16px 22px;max-width:1080px;margin:0 auto}
+.franja span{font-size:13px;font-weight:500;letter-spacing:.02em;color:var(--dim)}
+.franja b{color:var(--txt);font-weight:700}
+
+.tarjeta{background:var(--panel2);border:1px solid #ffffff1a;border-radius:var(--r);padding:22px;
+  transition:border-color .15s, transform .15s}
+.tarjeta:hover{border-color:#ffffff33;transform:translateY(-2px)}
+.rejilla{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;padding:14px 26px;border-radius:12px;
+  font-family:'Inter',sans-serif;font-weight:700;font-size:16px;color:#2a1400;
+  background:linear-gradient(180deg,var(--gold),#ff9d3c);box-shadow:0 4px 16px rgba(0,0,0,.35);
+  transition:transform .12s, box-shadow .12s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(0,0,0,.42)}
+.btn:active{transform:translateY(0)}
+.btn.wa{background:linear-gradient(180deg,var(--green),#1fa862);color:#04231a}
+.btn.sec{background:linear-gradient(180deg,var(--cyan),#22a8d9);color:#04222e}
+a{color:var(--cyan)}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:12px}
+.prof-top{position:fixed;top:14px;right:14px;z-index:50;display:inline-flex;align-items:center;gap:7px;
+  text-decoration:none;padding:9px 15px;border-radius:999px;font-weight:700;font-size:14px;
+  color:var(--txt);background:rgba(20,18,45,.82);border:1px solid #ffffff2e;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:0 4px 16px rgba(0,0,0,.35);transition:.15s}
+.prof-top:hover{transform:translateY(-1px);border-color:var(--violet);box-shadow:0 8px 22px rgba(0,0,0,.45)}
+.prof-top .ic{font-size:17px;line-height:1}
+@media(max-width:520px){.prof-top{padding:8px 12px;font-size:13px}}
+
+img.captura{width:100%;border-radius:var(--r);border:1px solid #ffffff26;display:block;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.marco-captura{position:relative}
+.marco-captura .simulado{position:absolute;top:10px;right:10px;
+  background:#000000b3;color:var(--gold);border:1px solid var(--gold);border-radius:999px;
+  padding:5px 12px;font-size:12px;font-weight:700;letter-spacing:.02em}
+.pie-captura{color:var(--dim);font-size:13px;font-weight:500;margin-top:8px;text-align:center}
+
+.mock{border-radius:14px;overflow:hidden;box-shadow:0 14px 36px rgba(0,0,0,.4);border:1px solid #ffffff1f}
+.mock .barra{display:flex;align-items:center;gap:7px;padding:10px 13px;background:#151233;border-bottom:1px solid #ffffff12}
+.mock .barra i{width:11px;height:11px;border-radius:50%;display:inline-block;background:#ffffff30}
+.mock .barra i:nth-child(1){background:#ff5f57}
+.mock .barra i:nth-child(2){background:#febc2e}
+.mock .barra i:nth-child(3){background:#28c840}
+.mock img.captura{border:0;border-radius:0;box-shadow:none;width:100%}
+.mock.marco-captura .simulado{top:auto;bottom:10px}
+
+.clara{background:#f5f3fb;color:#2b2450;border-top:1px solid #00000010}
+.clara h2,.clara h3{color:#1c1540}
+.clara .kicker{color:#6a4cff;opacity:1}
+.clara .dim{color:#5c5585}
+.clara .tarjeta{background:#fff;border-color:#00000012;box-shadow:0 6px 18px rgba(30,20,60,.07)}
+.clara .tarjeta:hover{border-color:#00000024}
+.clara .pie-captura{color:#6b6498}
+.clara .mock{border-color:#00000014;box-shadow:0 14px 34px rgba(30,20,60,.16)}
+.clara .mock .barra{background:#e9e6f4;border-bottom-color:#00000010}
+.cita{border-left:3px solid var(--gold);background:#ffffff0a;border-radius:0 12px 12px 0;
+  padding:16px 20px;margin-top:20px;font-size:clamp(16px,2.4vw,20px);line-height:1.5;font-style:italic}
+.cita b{font-style:normal}
+.cita .fuente{display:block;margin-top:10px;font-size:13px;font-style:normal;color:var(--dim);letter-spacing:.01em}
+.clara .cita{background:#6a4cff0d}
+.clara .cita .fuente{color:#5c5585}
+footer{padding:36px 0;text-align:center;color:var(--dim);font-size:13px;font-weight:500}
+footer a{color:var(--cyan)}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars" aria-hidden="true"></div>
+
+<a class="prof-top" href="/profesor.html" aria-label="Panel del profesor"><span class="ic" aria-hidden="true">🧑‍🏫</span> Profes</a>
+
+<header class="envoltura" style="padding-top:48px;padding-bottom:26px;text-align:center">
+  <img src="/assets/web/vulpo-logo.png" alt="VULPO"
+       style="width:min(150px,38vw);height:auto;display:block;margin:0 auto 22px">
+  <h1 style="max-width:860px;margin:0 auto">Sabe exactamente cuánto del programa<br>lleva cada curso.</h1>
+  <p class="dim" style="max-width:680px;margin:18px auto 0;font-size:clamp(16px,2.3vw,19px)">
+    VULPO no mide solo cuánto juegan tus alumnos: mide, <b style="color:var(--txt)">objetivo por
+    objetivo</b>, cuánto del programa del año ya trabajó cada curso — el trabajo que hoy la UTP
+    persigue con planillas.
+  </p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px">
+    <a class="btn" href="https://calendar.app.google/uPos9ki8Xna17JYy7">📅 Agenda una demo de 15 minutos</a>
+    <a class="btn wa" href="https://wa.me/56976684967?text=Hola%2C%20vi%20VULPO%20y%20quiero%20saber%20m%C3%A1s%20para%20mi%20colegio.">Escríbenos por WhatsApp</a>
+  </div>
+</header>
+
+<div class="franja"><div class="in">
+  <span>Alineado a las <b>Bases Curriculares</b> del MINEDUC</span>
+  <span><b>6 cursos</b> · de 3° a 8° básico</span>
+  <span><b>16.865</b> preguntas aprobadas</span>
+  <span>Prueba <b>sin costo</b></span>
+</div></div>
+
+<!-- ===== HÉROE: el pulso del colegio ===== -->
+<section class="seccion envoltura">
+  <span class="kicker">Para la dirección y la UTP</span>
+  <h2>El programa del año, curso por curso, de un vistazo.</h2>
+  <p class="dim" style="max-width:760px">
+    El Ministerio de Educación reconoce los cuestionarios interactivos —como Kahoot o Quizizz— como
+    apoyo válido de la evaluación formativa. Esos miden <b style="color:var(--txt)">actividad</b>.
+    VULPO va más allá: sabe, <b style="color:var(--txt)">objetivo por objetivo, cuánto del programa
+    del año ya trabajó cada curso</b>, y cuánto falta por tocar. Es el trabajo que hoy tu UTP
+    persigue con planillas — y se lee en una pantalla, o se imprime para el consejo.
+  </p>
+  <p class="dim" style="font-size:13px;margin-top:10px">
+    La imagen corresponde a un <b>colegio de demostración</b>: los cursos y los porcentajes son simulados.
+  </p>
+  <div class="marco-captura mock" style="margin-top:20px">
+    <div class="barra"><i></i><i></i><i></i></div>
+    <img class="captura" src="/assets/web/panel-pulso.png"
+         alt="El pulso del colegio: una fila por curso, con cuántos objetivos del año tienen actividad, desglosado por asignatura, y la participación de la semana.">
+    <span class="simulado">DATOS SIMULADOS</span>
+  </div>
+  <p class="pie-captura">Una fila por curso: cuánto del programa se ha cubierto, y quién está entrando. Imprimible en una hoja.</p>
+  <div class="rejilla" style="margin-top:26px">
+    <div class="tarjeta"><h3 style="color:var(--cyan)">Cobertura real</h3>
+      <p class="dim" style="font-size:14px;margin-top:6px">Cuántos de los objetivos del año ya se trabajaron, por curso y por asignatura. El denominador es honesto: VULPO tiene contenido para todo el programa, así que "31 de 86" significa de verdad "faltan 55 por tocar".</p></div>
+    <div class="tarjeta"><h3 style="color:var(--cyan)">Participación</h3>
+      <p class="dim" style="font-size:14px;margin-top:6px">Cuántos alumnos de cada curso entraron esta semana. De un vistazo, sin abrir curso por curso.</p></div>
+    <div class="tarjeta"><h3 style="color:var(--cyan)">Para llevar al consejo</h3>
+      <p class="dim" style="font-size:14px;margin-top:6px">La vista se imprime en una hoja, con la fecha. Sin nombres de alumnos, sin ranking de profesores: hechos, no juicios.</p></div>
+  </div>
+</section>
+
+<!-- ===== Planificación y cierre ===== -->
+<section class="seccion clara">
+ <div class="envoltura">
+  <span class="kicker">Planificación del año</span>
+  <h2>En diciembre, no sirve ver avances de lo que se pasó en abril.</h2>
+  <p class="dim" style="max-width:760px">
+    La UTP declara cuándo se pasa cada unidad. VULPO fecha cada objetivo y, cuando una unidad
+    cierra, <b style="color:#1c1540">reconstruye cómo quedó el curso en ese momento</b> — no
+    mezclado con lo que se está viendo hoy. Así el informe de fin de año dice cómo estaba cada
+    curso cuando de verdad terminó cada unidad.
+  </p>
+  <p class="dim" style="font-size:13px;margin-top:10px">
+    Imagen de un <b>colegio de demostración</b>: los datos son simulados.
+  </p>
+  <div class="marco-captura mock" style="margin-top:20px">
+    <div class="barra"><i></i><i></i><i></i></div>
+    <img class="captura" src="/assets/web/panel-cierre.png"
+         alt="Informe de cierre de una unidad: cómo estaba el curso cuando la unidad terminó, comparado con hoy.">
+    <span class="simulado">DATOS SIMULADOS</span>
+  </div>
+  <p class="pie-captura">El avance se ordena por momento del año: lo que se está pasando arriba, lo terminado al historial.</p>
+ </div>
+</section>
+
+<!-- ===== Para el profesor ===== -->
+<section class="seccion envoltura">
+  <span class="kicker">Y tu equipo docente</span>
+  <h2>El panel le dice al profesor qué reforzar, y con quién.</h2>
+  <p class="dim" style="max-width:760px">
+    El mapa de dominio ordena los objetivos de peor a mejor logro y muestra quiénes necesitan
+    apoyo en cada uno. El profesor puede lanzar un desafío de refuerzo al curso en un clic, y ve
+    quién jugó esta semana. <b style="color:var(--txt)">Es una brújula para reforzar, no una nota:
+    no sirve para calificar y no está pensado para eso.</b>
+  </p>
+  <p class="dim" style="font-size:13px;margin-top:10px">
+    Imagen de un <b>curso de demostración</b>: nombres y porcentajes simulados.
+  </p>
+  <div class="marco-captura mock" style="margin-top:20px">
+    <div class="barra"><i></i><i></i><i></i></div>
+    <img class="captura" src="/assets/web/panel-mapa.png"
+         alt="Mapa de dominio del curso: objetivos ordenados de menor a mayor logro, con cuántos alumnos respaldan cada uno.">
+    <span class="simulado">DATOS SIMULADOS</span>
+  </div>
+  <p class="pie-captura">Avance por objetivo: lo que está más flojo, primero.</p>
+</section>
+
+<!-- ===== Privacidad / no calificar ===== -->
+<section class="seccion clara">
+ <div class="envoltura">
+  <span class="kicker">Privacidad y buen uso</span>
+  <h2>Una brújula para reforzar, no una herramienta para calificar.</h2>
+  <div class="rejilla" style="margin-top:8px">
+    <div class="tarjeta"><h3>No pone notas</h3>
+      <p class="dim" style="font-size:14px;margin-top:6px">El Decreto 67 recomienda que la evaluación formativa no se califique. VULPO entrega información para reforzar, no para poner nota.</p></div>
+    <div class="tarjeta"><h3>No evalúa docentes</h3>
+      <p class="dim" style="font-size:14px;margin-top:6px">El pulso muestra cobertura y participación —hechos—, no un ranking de cursos por rendimiento. No hay tabla que ordene a los profesores.</p></div>
+    <div class="tarjeta"><h3>Datos de menores cuidados</h3>
+      <p class="dim" style="font-size:14px;margin-top:6px">El informe que ve la familia se mira en el teléfono del niño y no sale de ahí. El colegio ve avance por objetivo, no un expediente de cada alumno.</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- ===== Cómo se implementa ===== -->
+<section class="seccion envoltura">
+  <span class="kicker">Cómo se implementa</span>
+  <h2>Sin instalar nada, sin cambiar tu regla del celular en la sala.</h2>
+  <p class="dim" style="max-width:760px">
+    El colegio crea sus cursos, el profesor inscribe a sus alumnos y cada uno recibe un código
+    personal. Los alumnos juegan <b style="color:var(--txt)">desde casa, en su teléfono</b> —como
+    una tarea que sí quieren hacer— y el profesor llega a clase sabiendo qué reforzar. No hay app
+    que instalar ni computadores que comprar.
+  </p>
+</section>
+
+<!-- ===== Cierre / CTA ===== -->
+<section class="seccion envoltura" style="text-align:center">
+  <span class="kicker">Sin riesgo</span>
+  <h2 style="max-width:640px;margin:0 auto 12px">Pruébalo en tu colegio, sin costo.</h2>
+  <p class="dim" style="max-width:600px;margin:0 auto 24px">
+    Coordinemos una demostración de 15 minutos con tu equipo. Cuesta menos que una hora de
+    reforzamiento particular por alumno, y la prueba no tiene costo.
+  </p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a class="btn" href="https://calendar.app.google/uPos9ki8Xna17JYy7">📅 Agenda una demo de 15 minutos</a>
+    <a class="btn wa" href="https://wa.me/56976684967?text=Hola%2C%20vi%20VULPO%20y%20quiero%20saber%20m%C3%A1s%20para%20mi%20colegio.">Prefiero escribir por WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <p>VULPO · Plataforma educativa de 3° a 8° básico · <a href="/">Ver el sitio completo</a> · <a href="/profesor.html">Panel del profesor</a></p>
+  <p style="margin-top:8px">contacto@vulpo.cl · +569 7668 4967</p>
+</footer>
+
+<script>
+(function(){
+  var c=document.getElementById('stars');
+  var n=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches?28:44;
+  var h='';
+  for(var i=0;i<n;i++) h+='<span style="left:'+(Math.random()*100).toFixed(2)+'%;top:'+(Math.random()*100).toFixed(2)+'%"></span>';
+  c.innerHTML=h;
+})();
+</script>
+</body>
+</html>
