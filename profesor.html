@@ -160,6 +160,33 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
    arriba, y cerrarlos de a uno son seis toques. */
 .lista-barra{display:flex;justify-content:flex-end;gap:8px;margin:0 0 8px}
 
+/* La franja de "qué necesita tu atención". Va arriba de todo porque es lo que convierte
+   el panel de una lista de cursos en una herramienta que dice qué hacer.
+   Cada línea es un BOTÓN de ancho completo y no un enlace: se toca en un teléfono, y un
+   enlace de una línea entre otras tres es un blanco difícil. */
+.franja{border:1px solid var(--linea);border-radius:10px;padding:10px 12px;margin:0 0 12px;
+ background:#ffffff06}
+.franja-tit{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+ color:var(--gold);margin-bottom:6px}
+.franja-li{display:flex;align-items:center;gap:8px;width:100%;text-align:left;
+ background:none;border:0;border-top:1px solid var(--linea);padding:8px 2px;
+ color:var(--texto);font:inherit;font-size:13px;cursor:pointer}
+.franja-li:first-of-type{border-top:0}
+.franja-li:hover{color:var(--gold)}
+.franja-li:focus-visible{outline:2px solid var(--violet);outline-offset:2px;border-radius:6px}
+.franja-ico{flex:0 0 auto}
+.franja-li>span:nth-child(2){flex:1;min-width:0}   /* min-width:0 o un nombre largo estira la fila */
+.franja-ver{flex:0 0 auto;color:var(--dim);font-size:12px}
+/* Sin pendientes NO desaparece: una franja que unos días está y otros no hace dudar de si
+   cargó. Dice que está todo al día, que es información. */
+.franja-ok{color:var(--dim);font-size:12px}
+/* La franja se acota a cuatro cursos: con seis, el primer curso quedaba a 1.300 px de
+   scroll en un teléfono. El resto se dice en una línea, sin repetir la lista. */
+.franja-resto{color:var(--dim);font-size:11px;padding:6px 2px 0;border-top:1px solid var(--linea)}
+/* Bajo la mitad del curso sin entrar es lo único que se marca con color en el titular. No
+   es un umbral de rendimiento: es "más de la mitad no abrió el juego". */
+.part-baja{color:var(--gold)}
+
 /* El pulso del colegio. Tabla y no tarjetas: se lee en pantalla y se imprime, y una
    tarjeta por curso ocuparía media hoja cada una.
    ⚠️ Las cabeceras son TEXTO PLANO, sin botones ni cursor de puntero: que no se pueda
@@ -195,6 +222,32 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
 .pul-hoja{margin-bottom:12px}
 .pul-hoja b{font-size:15px}
 .solo-print{display:none}
+
+/* El informe de cierre de unidad. Se lee en pantalla y se imprime para una reunión de
+   departamento, así que hereda el mismo @media print del pulso. */
+.cie-bloque{margin:0 0 18px;break-inside:avoid}
+.cie-tit{color:var(--gold);font-weight:600;font-size:14px}
+.cie-sub{color:var(--dim);font-size:12px;margin:2px 0 8px}
+.cie-fila{padding:7px 0;border-bottom:1px solid var(--linea)}
+.cie-fila:last-child{border-bottom:0}
+.cie-texto{color:var(--cuerpo);font-size:13px;line-height:1.45;margin-bottom:4px}
+.cie-medida{display:flex;align-items:center;gap:8px}
+.cie-barra{flex:1;height:8px;background:#ffffff14;border-radius:4px;overflow:hidden;min-width:60px}
+.cie-barra>div{height:100%}
+.cie-medida b{min-width:42px;text-align:right}
+.cie-medida small{color:var(--dim);font-size:11px;white-space:nowrap}
+/* El "hoy" atenuado y a la derecha: acompaña al número del cierre, no compite con él. El
+   dato de la hoja es cómo quedó la unidad; el de hoy explica por qué difiere. */
+.cie-hoy{border-left:1px solid var(--linea);padding-left:8px}
+.cie-vacio{color:var(--dim);font-size:12px;line-height:1.5;max-width:70ch}
+/* En el teléfono la medida se parte: con el texto, la barra, el %, los alumnos y el "hoy"
+   en una sola fila, la barra quedaba aplastada a cero píxeles —el mismo defecto que la
+   etiqueta de "cuándo" produjo en el mapa, y que ningún "sin desborde" delata. */
+@media (max-width:620px){
+  .cie-medida{flex-wrap:wrap}
+  .cie-barra{flex-basis:100%;order:3;margin-top:4px}
+  .cie-hoy{border-left:0;padding-left:0}
+}
 /* La tabla de 4 columnas no cabe a 375 px —el panel ya desbordó de lado en la Sesión 26—,
    así que en el teléfono cada celda pasa a bloque y lleva su rótulo delante. */
 @media (max-width:759px){
@@ -324,6 +377,12 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
      pantallas de scroll en un espacio que tiene sitio para tres. */
   .alu-lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
    gap:0 22px;align-items:start}
+  /* El informe de cierre, igual que el mapa: objetivo y medida en una línea. Apilados, una
+     unidad de 10 objetivos ocupaba dos pantallas y la barra salía de 940 px de ancho para
+     un 33% — mucha tinta para un número que ya está escrito al lado. */
+  .cie-fila{display:flex;gap:18px;align-items:center}
+  .cie-texto{flex:1;min-width:0;margin-bottom:0}
+  .cie-medida{flex:0 0 420px}
 }
 
 /* Tendencia semanal. La franja se lee de un vistazo: cada semana su acierto, y la
@@ -370,6 +429,18 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
   .pulso thead{display:table-header-group}
   .pulso tr{break-inside:avoid}
   .pul-nom{color:#000}
+  /* El informe de cierre SÍ conserva sus tres colores semánticos —dicen si un objetivo va
+     bien, regular o mal, que es el contenido de la hoja— pero en tonos oscuros: así se
+     distinguen también en una impresión en blanco y negro, que es como sale la mayoría.
+     ⚠️ La barra se OCULTA: es un relleno de fondo, y los navegadores no imprimen fondos
+     por omisión, así que en el papel habría salido una caja vacía del mismo largo para
+     todos. En la hoja manda el número, que sí se imprime.
+     Y van en `.cie-bloque` y no en `:root` para no pisarle el `--gold:#000` al pulso, que
+     en su hoja no significa rendimiento sino "falta configurar esto". */
+  .cie-bloque{--green:#1d5e3a;--gold:#7a5a10;--pink:#8a2340}
+  .cie-barra{display:none}
+  .cie-fila,.cie-bloque{break-inside:avoid}
+  .cie-tit{color:#000}
 }
 </style>
 </head>
@@ -738,7 +809,8 @@ async function pintarLista(){
   const cursos=Object.entries(porCurso);
   cursos.sort((a,b)=>ordenCursos(a[1], b[1]));   // por nivel y nombre; ver ordenCursos
   // Lo que la vista de avance va a necesitar cuando esta lista ya no exista en el DOM.
-  cursos.forEach(([cod,c]) => { CURSO_INFO[cod] = {nivel:c.nivel||'', misAsig:c.misAsig||[]}; });
+  cursos.forEach(([cod,c]) => { CURSO_INFO[cod] =
+    {nivel:c.nivel||'', misAsig:c.misAsig||[], gestiono:!!c.gestiono, nombre:c.nombre}; });
   /* La barra se arma por partes: "Contraer todo" solo tiene sentido con más de un curso,
      pero el pulso del colegio se ve igual con uno. Antes la barra entera dependía del
      conteo, así que un colegio de un solo curso se quedaba sin el botón nuevo. */
@@ -748,7 +820,11 @@ async function pintarLista(){
     + (cursos.length > 1
         ? `<button class="btn-chip" type="button" id="btnPlegar">Contraer todo</button>` : '');
   const barra = botones ? `<div class="lista-barra">${botones}</div>` : '';
-  $('lista').innerHTML = barra + (cursos.length ? cursos.map(([cod,c])=>`
+  /* La franja de atención va ANTES de la barra de botones y de los cursos: es lo primero
+     que hay que ver al entrar. Nace vacía y la rellena cargarResumen, para no retrasar el
+     render de la lista — si la consulta tarda, los cursos ya están a la vista. */
+  $('lista').innerHTML = '<div id="franjaAtencion"></div>' + barra
+   + (cursos.length ? cursos.map(([cod,c])=>`
     <details class="curso" data-cod="${esc(cod)}">
       <summary>
         <span class="cur-chevron" aria-hidden="true">▸</span>
@@ -880,7 +956,7 @@ async function pintarLista(){
   document.querySelectorAll('details.equipo').forEach(det => det.addEventListener('toggle', () => {
     if(det.open && !det.dataset.cargado){ det.dataset.cargado='1'; cargarEquipo(det.dataset.cod, det.dataset.nivel); }
   }));
-  cargarTitularesParticipacion(cursos.map(([cod])=>cod));
+  cargarResumen(cursos.map(([cod])=>cod));
   cargarJefes(cursos.map(([cod])=>cod));
 
   if(window.ESADMINCOLEGIO){
@@ -1375,6 +1451,152 @@ async function verPulso(){
   }catch(e){ aviso(errorPanel(e)); }
 }
 
+/* ============================================================================
+   EL INFORME DE CIERRE (A55)
+
+   Responde la pregunta con la que Roberto planteó todo esto: *"no sirve mostrar avances
+   en diciembre de asignaturas que se pasaron en abril"*. El mapa muestra el estado de
+   HOY; esto muestra cómo estaba el curso cuando la unidad terminó, reconstruido de la
+   foto del domingo que la cierra.
+
+   ⚠️ La foto NO hay que tomarla: ya se está tomando. `dominio_semanal` guarda el detalle
+   alumno×objetivo cada domingo desde la Sesión 36, así que no existe ningún botón de
+   "cerrar unidad" que alguien pueda olvidar, las fechas se pueden poner después —incluso
+   a fin de año— y los niños pueden seguir jugando sin contaminar el pasado.
+
+   ⚠️ Y por eso la comparación con hoy va A LA VISTA y no escondida: es el argumento
+   entero. Un objetivo que cerró en 78% y hoy marca 61% no bajó — entraron alumnos nuevos
+   que lo tocaron por primera vez en otra unidad, y su primer intento se sumó al promedio
+   de abril. Ver los dos números juntos es lo que lo explica.
+   ============================================================================ */
+
+const FOTOS_CACHE = {};   // 'CUR-BA04|2026-05-03' -> filas de esa foto
+
+async function pedirFoto(cursoCodigo, semana){
+  const k = cursoCodigo + '|' + semana;
+  if(FOTOS_CACHE[k]) return FOTOS_CACHE[k];
+  const {data,error} = await SB.rpc('kimun_prof_dominio_foto',
+    {p_curso_codigo:cursoCodigo, p_semana:semana});
+  if(error) throw error;
+  return (FOTOS_CACHE[k] = data||[]);
+}
+
+const pctDeFila = f => {
+  const r = Number(f.resp_1)||0;
+  return r ? Math.round((Number(f.ok_1)||0)*100/r) : null;
+};
+const colorPct = p => p >= 70 ? 'var(--green)' : p >= 45 ? 'var(--gold)' : 'var(--pink)';
+
+/* Una fila del informe de cierre. Es hermana de filaAvance pero NO la reusa, por dos
+   motivos: aquí no hay desplegable —la foto no guarda el detalle por alumno que ese
+   desplegable pide— y hace falta la columna "hoy", que el mapa no tiene. Tocar filaAvance
+   para esto habría cambiado la tabla que está en producción. */
+function filaCierre(f, hoy){
+  const pct = pctDeFila(f);
+  const alumnos = Number(f.alumnos_1)||0;
+  const pHoy = hoy ? pctDeFila(hoy) : null;
+  const dif = (pct != null && pHoy != null && pHoy !== pct) ? pHoy - pct : null;
+  return `<div class="cie-fila">
+    <div class="cie-texto">${esc(OA_TEXTO[f.oa]||f.oa)}</div>
+    <div class="cie-medida">
+      <div class="cie-barra"><div style="width:${pct||0}%;background:${colorPct(pct||0)}"></div></div>
+      <b style="color:${colorPct(pct||0)}">${pct==null?'—':pct+'%'}</b>
+      <small>${alumnos} alumno${alumnos===1?'':'s'}</small>
+      ${dif != null ? `<small class="cie-hoy" title="Así se ve hoy el mismo objetivo. La diferencia casi siempre son alumnos que lo tocaron por primera vez DESPUÉS del cierre: su primer intento entra al promedio de esta unidad aunque el curso ya esté en otra.">hoy ${pHoy}%</small>` : ''}
+    </div>
+  </div>`;
+}
+
+// El bloque de UNA unidad dentro del informe: su encabezado y sus objetivos.
+function bloqueCierre(asig, uni, titulo, termino, foto, filas, mapaHoy){
+  const mios = filas.filter(f => String(f.oa).slice(0,4) === asig
+    && OA_UNIDAD[f.oa] && OA_UNIDAD[f.oa].id === uni);
+  const hoyPorOa = {};
+  (mapaHoy||[]).forEach(f => { hoyPorOa[f.oa] = f; });
+  const pcts = mios.map(pctDeFila).filter(p => p != null);
+  const prom = pcts.length ? Math.round(pcts.reduce((a,b)=>a+b,0)/pcts.length) : null;
+  const bajos = pcts.filter(p => p < 70).length;
+  return `<div class="cie-bloque">
+    <div class="cie-tit">${esc(ASIG_NOMBRE[asig]||asig)} · ${esc(uni)} ${esc(titulo)}</div>
+    <div class="cie-sub">Cerrada el ${esc(fechaCortita(termino))} · foto del domingo ${
+      esc(fechaCortita(foto))} · ${mios.length} objetivo${mios.length===1?'':'s'}${
+      prom!=null ? ' · promedio ' + prom + '%' : ''}${
+      bajos ? ' · ' + bajos + ' bajo 70%' : ''}</div>
+    ${mios.length ? mios.map(f => filaCierre(f, hoyPorOa[f.oa])).join('')
+      : `<p class="cie-vacio">Esta unidad no registra actividad en esa foto. Puede que el
+         curso la haya trabajado fuera de VULPO, o que las fechas no correspondan.</p>`}
+  </div>`;
+}
+
+// Las unidades que SE PUEDEN cerrar: con fecha de término y con una foto que la cubra.
+function unidadesCerrables(asigs){
+  const out = [];
+  (asigs||[]).forEach(asig => (UNIDADES[asig]||[]).forEach(u => {
+    const p = PLAN[claveUnidad(asig, u.id)];
+    if(!p || !p.termino) return;
+    const foto = fotoDeCierre(p.termino);
+    if(foto) out.push({asig, uni:u.id, titulo:u.titulo, termino:p.termino, foto});
+  }));
+  return out;
+}
+
+/* Una unidad, o todas las cerradas si `sola` es null. La misma vista sirve para las dos:
+   el informe de fin de año es este mismo informe con más de un bloque, y hacer dos
+   pantallas para eso habría sido escribir dos veces lo mismo. */
+async function verCierre(cursoCodigo, cursoNombre, sola){
+  aviso('Cargando…','var(--dim)');
+  try{
+    const info = CURSO_INFO[cursoCodigo] || {};
+    const asigs = (info.misAsig && info.misAsig.length ? info.misAsig
+                  : NIV.deNivel(info.nivel||'')).filter(a => ASIG_NOMBRE[a]);
+    const lista = sola ? [sola] : unidadesCerrables(asigs);
+    if(!lista.length){ aviso('Todavía no hay unidades cerradas con una foto que las cubra.'); return; }
+    await cargarTextosOA(asigs);
+
+    // Una consulta por FOTO distinta, no por unidad: varias unidades suelen cerrar el
+    // mismo domingo, y el caché evita pedir la misma foto cuatro veces.
+    const semanas = [...new Set(lista.map(u => u.foto))];
+    const fotos = {};
+    await Promise.all(semanas.map(async s => { fotos[s] = await pedirFoto(cursoCodigo, s); }));
+    // El mapa de hoy, para la columna de comparación. Su fallo no impide ver el informe:
+    // sin él, las filas salen sin el "hoy", que es un extra y no el contenido.
+    let mapaHoy = [];
+    try{
+      const r = await SB.rpc('kimun_prof_dominio',{p_curso_codigo:cursoCodigo});
+      if(!r.error) mapaHoy = r.data||[];
+    }catch(e){}
+
+    const hoyFecha = new Date();
+    const tit = sola ? 'Cómo quedó la unidad' : 'Unidades cerradas del año';
+    $('lista').innerHTML = cabeceraAvance(tit, cursoNombre)
+      + `<div class="solo-print pul-hoja">
+           <b>${esc(tit)} · ${esc(cursoNombre)}</b>
+           <div>VULPO · impreso el ${esc(fechaLarga(hoyFecha))}</div>
+           <div>${esc(YO.nombre || YO.correo)}</div>
+           <div>Cada unidad se muestra como estaba en la foto del domingo que la cierra,
+                no como está hoy.</div>
+         </div>`
+      + lista.map(u => bloqueCierre(u.asig, u.uni, u.titulo, u.termino, u.foto,
+                                    fotos[u.foto]||[], mapaHoy)).join('')
+      + `<p class="pul-nota">${AVISO_NO_CALIFICA}
+         <br>Los números son los de la foto semanal del domingo indicado, no los de hoy:
+         por eso el módulo puede seguir abierto sin que el informe cambie.
+         ${SEMANAS.length ? 'El historial de este curso empieza el '
+           + esc(fechaCortita(SEMANAS[0].semana)) + '.' : ''}</p>`
+      + `<div class="btn-fila no-print">
+           <button class="btn sec" id="btnImprimirCierre">🖨️ Imprimir</button>
+           <button class="btn txt" id="btnVolverPanel">← Volver</button>
+         </div>`;
+    // Igual que en el pulso: en el papel esta cabecera sobra porque .solo-print ya trae el
+    // título, y sin esto sale dos veces.
+    document.querySelector('.av-head').classList.add('no-print');
+    $('btnVolverCab').onclick   = volverAlPanel;
+    $('btnVolverPanel').onclick = volverAlPanel;
+    $('btnImprimirCierre').onclick = () => window.print();
+    irArriba(); aviso('');
+  }catch(e){ aviso(errorPanel(e)); }
+}
+
 // Reparte a los alumnos del curso en cuatro grupos por su última entrada. La ventana es
 // móvil (7 días hacia atrás), no "desde el lunes", para no depender de la zona horaria del
 // servidor. "Nunca canjearon" se separa de "dejaron de jugar" porque la acción es distinta:
@@ -1452,8 +1674,24 @@ async function cargarParticipacion(cursoCodigo){
 
 let PLAN = {};        // 'HI08|U1' -> {inicio, termino, nota, fijada_por, cambios}
 let PLAN_SUG = {};    // 'HI08|U1' -> {inicio, termino} propuesto desde las fotos semanales
+let SEMANAS = [];     // las fotos que existen para este curso, en orden: [{semana,objetivos,alumnos}]
 
 const claveUnidad = (asig, uni) => asig + '|' + uni;
+
+/* La foto que CIERRA una unidad: la primera tomada en la fecha de término o después.
+   ⚠️ La PRIMERA POSTERIOR y no la anterior más cercana, y la diferencia importa: si la
+   unidad terminó un martes, la foto del domingo anterior no incluye el lunes ni el martes,
+   así que le faltaría el final de la unidad. La posterior la captura entera; el costo es
+   incluir hasta seis días en que el curso ya está en otra unidad, y como el porcentaje es
+   de primer intento —y esos objetivos ya se abrieron— ese ruido es mínimo.
+   Devuelve null si no hay ninguna: la unidad terminó después de la última foto, o cerró
+   antes de que existiera el historial. Las dos cosas se dicen, no se rellenan. */
+function fotoDeCierre(termino){
+  if(!termino || !SEMANAS.length) return null;
+  const t = String(termino).slice(0,10);
+  const f = SEMANAS.find(s => String(s.semana).slice(0,10) >= t);
+  return f ? String(f.semana).slice(0,10) : null;
+}
 
 // "12 mar" · "12 mar 2025" si fue otro año. Corta a propósito: van dos por fila.
 function fechaCortita(iso){
@@ -1489,12 +1727,16 @@ async function cargarPlan(cursoCodigo){
     // Los oa.json de TODAS mis asignaturas, no solo las que ya tienen actividad: las
     // unidades que faltan por pasar son justo las que hay que planificar.
     await cargarTextosOA(asigs);
-    const [plan, sug] = await Promise.all([
+    const [plan, sug, sem] = await Promise.all([
       SB.rpc('kimun_prof_plan',        {p_curso_codigo:cursoCodigo}),
-      SB.rpc('kimun_prof_plan_sugerir',{p_curso_codigo:cursoCodigo})
+      SB.rpc('kimun_prof_plan_sugerir',{p_curso_codigo:cursoCodigo}),
+      SB.rpc('kimun_prof_semanas',     {p_curso_codigo:cursoCodigo})
     ]);
     if(plan.error) throw plan.error;
     PLAN = {}; PLAN_SUG = {};
+    // Las fotos disponibles. Su fallo no rompe nada: sin ellas no se ofrece el informe de
+    // cierre, que es exactamente lo que corresponde cuando no hay historial que leer.
+    SEMANAS = (sem.error ? [] : (sem.data||[]));
     (plan.data||[]).forEach(f => { PLAN[claveUnidad(f.asignatura, f.unidad)] = f; });
     /* La propuesta llega por OBJETIVO y se agrupa por unidad: la primera semana en que
        alguno empezó y la última en que alguno se movió.
@@ -1514,7 +1756,7 @@ async function cargarPlan(cursoCodigo){
 }
 
 function pintarPlan(titular, cuerpo, cursoCodigo, asigs){
-  let total = 0, conFecha = 0;
+  let total = 0, conFecha = 0, hayCierres = false;
   const secciones = asigs.map(asig => {
     const unis = UNIDADES[asig] || [];
     if(!unis.length) return '';
@@ -1539,10 +1781,20 @@ function pintarPlan(titular, cuerpo, cursoCodigo, asigs){
           : '';
         const cambios = p && Number(p.cambios) > 1
           ? `<span class="plan-cambios">${p.cambios} cambios</span>` : '';
+        /* El informe de cierre, solo donde de verdad hay algo que reconstruir: la unidad
+           tiene fecha de término Y existe una foto de esa fecha en adelante. Sin las dos
+           condiciones el botón prometería un informe vacío. */
+        const foto = p && p.termino ? fotoDeCierre(p.termino) : null;
+        if(foto) hayCierres = true;
+        const cierre = foto
+          ? `<button class="btn-chip plan-cierre" data-asig="${esc(asig)}" data-uni="${esc(u.id)}"
+               data-tit="${esc(u.titulo)}" data-fin="${esc(p.termino)}" data-foto="${esc(foto)}"
+               title="Cómo estaba el curso en esta unidad cuando la cerraste, reconstruido de la foto del ${esc(fechaCortita(foto))}"
+               >📸 Cómo quedó</button>` : '';
         return `<div class="plan-fila" data-k="${esc(k)}">
           <div class="plan-nom">${esc(u.id)} · ${esc(u.titulo)}${cambios}</div>
           <div class="plan-fechas">${fechas}</div>
-          <div class="plan-acc">${sug}
+          <div class="plan-acc">${sug}${cierre}
             <button class="ico plan-edit" data-asig="${esc(asig)}" data-uni="${esc(u.id)}"
               data-tit="${esc(u.titulo)}" title="Fijar fechas" style="color:var(--gold)">✎</button>
           </div>
@@ -1563,7 +1815,11 @@ function pintarPlan(titular, cuerpo, cursoCodigo, asigs){
         'Todavía no hay fotos semanales para proponer fechas: se toman cada domingo, así que la propuesta aparece desde la semana que viene. '}
       Los niños pueden seguir jugando: la foto de cierre se reconstruye de las fotos
       semanales, no del estado de hoy.
+      ${SEMANAS.length ? 'El historial empieza el ' + esc(fechaCortita(SEMANAS[0].semana))
+        + ': de una unidad cerrada antes no se puede reconstruir nada.' : ''}
     </p>
+    ${hayCierres ? `<button class="btn-chip principal" id="btnCierreAnio"
+        style="margin-top:8px">📅 Informe de las unidades cerradas</button>` : ''}
     ${window.ESADMINCOLEGIO ? `<button class="btn-chip" id="btnPlanHist"
         style="margin-top:8px">Ver los cambios de fechas</button>
       <div id="planHist"></div>` : ''}`;
@@ -1575,6 +1831,16 @@ function conectarPlan(cursoCodigo, titular, cuerpo, asigs){
   cuerpo.querySelectorAll('.plan-sug').forEach(b => b.onclick = () =>
     guardarPlan(cursoCodigo, b.dataset.asig, b.dataset.uni, b.dataset.tit,
                 b.dataset.ini, b.dataset.fin, '', titular, cuerpo, asigs));
+
+  // El informe de cierre. El nombre del curso sale de CURSO_INFO y no de la pantalla:
+  // esta vista reemplaza #lista, así que la cabecera de la que se podría leer ya no
+  // existe cuando se pinta.
+  const nomCurso = (CURSO_INFO[cursoCodigo]||{}).nombre || cursoCodigo;
+  cuerpo.querySelectorAll('.plan-cierre').forEach(b => b.onclick = () =>
+    verCierre(cursoCodigo, nomCurso, {asig:b.dataset.asig, uni:b.dataset.uni,
+      titulo:b.dataset.tit, termino:b.dataset.fin, foto:b.dataset.foto}));
+  const btnAnio = cuerpo.querySelector('#btnCierreAnio');
+  if(btnAnio) btnAnio.onclick = () => verCierre(cursoCodigo, nomCurso, null);
 
   cuerpo.querySelectorAll('.plan-edit').forEach(b => b.onclick = () => {
     const fila = b.closest('.plan-fila');
@@ -1780,11 +2046,136 @@ function bloqueTendenciaHTML(){
   </details>`;
 }
 
+/* Titular de participación y franja de atención: los dos salen de UNA consulta.
+   Antes era una llamada de participación POR CURSO —con seis cursos, seis—, y la franja
+   habría sumado otras seis. `kimun_prof_resumen()` las devuelve todas juntas.
+
+   ⚠️ Si la función no está aplicada, esto degrada al camino viejo en vez de dejar la
+   lista muda: el panel tiene que seguir sirviendo con el esquema atrasado, que es
+   doctrina del proyecto desde que un `drop function` dejó producción rota unos minutos. */
+async function cargarResumen(codigos){
+  try{
+    const {data,error} = await SB.rpc('kimun_prof_resumen');
+    if(error) throw error;
+    const filas = data||[];
+    filas.forEach(f => pintarTitularCurso(f));
+    pintarFranja(filas);
+  }catch(e){
+    cargarTitularesParticipacion(codigos);   // respaldo: el titular sin contexto
+    const fr = $('franjaAtencion'); if(fr) fr.innerHTML = '';
+  }
+}
+
+/* El titular de la tarjeta del curso. Antes decía "15/22 jugaron esta semana" y NO decía
+   si eso está bien o mal, que era justo lo que le faltaba: en marzo, con el curso recién
+   inscrito, 15 de 22 no significa lo mismo que en agosto.
+   Ahora lleva el porcentaje y la comparación con la semana pasada.
+   ⚠️ Los dos números salen de fuentes distintas —la semana en curso de `visto`, la
+   anterior del delta de XP entre dos fotos— porque la semana en curso todavía no tiene
+   foto. Se dice en el `title` en vez de esconderlo. Y el primero NO se cambia: tiene que
+   seguir siendo el mismo número que el pulso del colegio y que el bloque de
+   participación, o el panel se contradice a sí mismo. */
+function pintarTitularCurso(f){
+  const nodo = document.querySelector('.cur-part[data-cod="'+CSS.escape(f.curso_codigo)+'"]');
+  if(!nodo) return;
+  const tot = Number(f.inscritos)||0, hoy = Number(f.jugaron_semana)||0;
+  if(!tot){ nodo.textContent = 'Sin alumnos inscritos'; return; }
+  const pct = Math.round(100*hoy/tot);
+  let flecha = '', ayuda = 'De los ' + tot + ' alumnos inscritos, ' + hoy
+    + ' abrieron el juego en los últimos 7 días.';
+  if(f.hay_previa){
+    const ant = Number(f.jugaron_previa)||0;
+    flecha = hoy > ant ? ' ↑' : (hoy < ant ? ' ↓' : ' →');
+    ayuda += ' La semana pasada jugaron ' + ant + '. Este número sale de la última vez que '
+           + 'cada alumno abrió el juego; el de la semana pasada, de las fotos del domingo.';
+  }else{
+    ayuda += ' Todavía no hay una semana anterior con la que comparar.';
+  }
+  nodo.textContent = `Participación · ${hoy} de ${tot} esta semana · ${pct}%${flecha}`;
+  nodo.title = ayuda;
+  nodo.classList.toggle('part-baja', pct < 50);
+}
+
+/* La franja de "qué necesita tu atención", arriba de todo. El panel abría en una lista de
+   cursos plegados: correcta, ordenada y muda — para enterarse de algo había que abrir un
+   curso, entrar a Ver avance y leer. Esto es la diferencia entre una base de datos y una
+   herramienta.
+
+   ⚠️ NINGUNA línea nombra a un alumno. Son conteos, y al tocarlos se abre el curso, donde
+   los nombres ya se muestran con el cuidado que corresponde (alfabéticos, sin fecha
+   individual, sin orden por inactividad). La restricción vive además en la firma de
+   `kimun_prof_resumen`, que no devuelve un solo nombre.
+
+   ⚠️ Cuando no hay nada que atender, la franja LO DICE en vez de desaparecer: una franja
+   que unos días está y otros no hace dudar de si cargó. */
+const FRANJA_MAX = 4;
+function pintarFranja(filas){
+  const cont = $('franjaAtencion');
+  if(!cont) return;
+  /* ⚠️ UNA LÍNEA POR CURSO, no una por hallazgo. La primera versión ponía cada cosa en su
+     renglón y con seis cursos salieron NUEVE líneas de dos renglones: 830 px en un
+     teléfono de 780, o sea que el primer curso quedaba a 1.300 px de scroll. Se pidió ver
+     mejor y la franja tapaba justo lo que había que ver. Se vio MIRANDO la captura; el
+     conteo decía "sin desborde, cero errores".
+     Y las tres cosas de un curso se resuelven en la MISMA pantalla —el mapa, la
+     participación y el refuerzo viven los tres en Ver avance—, así que agruparlas no
+     pierde ninguna acción. */
+  const cursos = [];
+  (filas||[]).forEach(f => {
+    const tot = Number(f.inscritos)||0, hoy = Number(f.jugaron_semana)||0;
+    const fuera = tot ? tot - hoy : 0;
+    const bajos = Number(f.oa_bajos)||0, refu = Number(f.refuerzos)||0;
+    if(!fuera && !bajos && !refu && !f.sin_jefe) return;
+    const partes = [];
+    if(fuera) partes.push(fuera + (fuera===1 ? ' sin entrar' : ' sin entrar'));
+    if(bajos) partes.push(bajos + (bajos===1 ? ' objetivo bajo 70%' : ' objetivos bajo 70%'));
+    if(refu)  partes.push(refu  + (refu===1  ? ' refuerzo abierto' : ' refuerzos abiertos'));
+    if(f.sin_jefe) partes.push('sin profesor jefe');
+    cursos.push({cod:f.curso_codigo, nom:f.curso, partes, sinJefe:!!f.sin_jefe,
+      // Proporción y no número absoluto: 20 de 20 es un curso detenido y 5 de 22 es una
+      // semana normal, y en números crudos el segundo puede parecer peor.
+      urgencia: tot ? fuera/tot : 0});
+  });
+  if(!cursos.length){
+    cont.innerHTML = '<div class="franja franja-ok">✅ Nada pendiente: todos entraron esta '
+      + 'semana y no hay objetivos bajo 70% con datos suficientes.</div>';
+    return;
+  }
+  /* Orden: primero lo que falta CONFIGURAR (un curso sin jefe no es un curso que va mal,
+     es uno que no está listo), después por proporción de alumnos que no entraron. */
+  cursos.sort((a,b) => (b.sinJefe?1:0) - (a.sinJefe?1:0) || b.urgencia - a.urgencia);
+  const ver = cursos.slice(0, FRANJA_MAX), resto = cursos.length - ver.length;
+  cont.innerHTML = '<div class="franja"><div class="franja-tit">Necesita tu atención</div>'
+    + ver.map(c => '<button type="button" class="franja-li" data-cod="'+esc(c.cod)+'"'
+        + ' data-nom="'+esc(c.nom)+'">'
+        + '<span class="franja-ico">'+(c.sinJefe?'⚠️':'👥')+'</span>'
+        + '<span><b>'+esc(c.nom)+'</b> · '+esc(c.partes.join(' · '))+'</span>'
+        + '<span class="franja-ver">ver ›</span></button>').join('')
+    + (resto ? '<div class="franja-resto">y '+resto+(resto===1?' curso más':' cursos más')
+        +' con algo pendiente, más abajo.</div>' : '')
+    + '</div>';
+  /* Todas llevan a Ver avance, que es donde viven las tres cosas. Salvo el curso sin jefe:
+     eso se arregla en su tarjeta, en "Equipo del curso". */
+  cont.querySelectorAll('.franja-li').forEach(b => b.onclick = () => {
+    const cod = b.dataset.cod, info = CURSO_INFO[cod]||{};
+    const c = cursos.find(x => x.cod === cod);
+    if(c && c.sinJefe){
+      const det = document.querySelector('details.curso[data-cod="'+CSS.escape(cod)+'"]');
+      if(det){ det.open = true; det.scrollIntoView({behavior:'smooth', block:'center'}); }
+      return;
+    }
+    verAvance(cod, b.dataset.nom, !!info.gestiono);
+  });
+}
+
 // Titular de participación en la cabecera plegada de cada curso. Una consulta por curso,
 // asíncrona, para no retrasar el render de la lista. El nodo se captura ANTES del await
 // (mismo patrón defensivo que cargarParticipacion): si la lista se repinta mientras una
 // consulta está en vuelo, la referencia vieja queda huérfana en vez de escribir el titular
 // de un curso bajo la cabecera de otro.
+//
+// Queda como RESPALDO de cargarResumen, para cuando el esquema todavía no trae
+// kimun_prof_resumen. Da el número sin el contexto, que es mejor que no dar nada.
 function cargarTitularesParticipacion(codigos){
   (codigos||[]).forEach(async cod => {
     const nodo = document.querySelector('.cur-part[data-cod="'+CSS.escape(cod)+'"]');

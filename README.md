@@ -99,6 +99,17 @@ junio"—, y el mapa se puede **agrupar por unidad**, porque en diciembre un 45%
 esta semana piden cosas muy distintas. La UTP declara las **fechas de cada unidad** a principio de
 año y el profesor de asignatura las ajusta cuando el aula no calza con el papel.
 
+Con esas fechas, cada unidad ya terminada trae su **informe de cierre**: cómo quedó el curso
+**cuando la unidad se cerró**, no cómo se ve hoy. No hay que acordarse de apretar ningún botón —se
+reconstruye de las fotos que el sistema toma cada domingo—, así que los niños pueden seguir
+jugando todo el año sin que el informe cambie. Al lado de cada objetivo va también el número de
+hoy: si difieren, casi siempre son alumnos que llegaron después. Las unidades cerradas se pueden
+ver juntas e **imprimir en una hoja** para una reunión de departamento.
+
+Y al entrar, el panel abre con una franja de **qué necesita tu atención** —cuántos alumnos no
+entraron esta semana en cada curso, cuántos objetivos van bajo 70%, si quedó un refuerzo sin
+cerrar—, con un toque para ir a resolverlo. Son conteos: **ningún nombre de alumno aparece ahí**.
+
 Y para la **dirección o la UTP** hay una pantalla propia, **el pulso del colegio**: una fila por
 curso con la **cobertura del programa** —cuántos de los objetivos del año ya se trabajaron, y
 cuáles no se han tocado— y la **participación** de la semana, imprimible en una hoja para llevar

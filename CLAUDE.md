@@ -1881,6 +1881,90 @@ capítulos son temáticos. Se agrupan en la **primera**, para que una fila siga 
 y los conteos cuadren con su encabezado; la contra asumida es que en ese banco una unidad se ve
 sin un objetivo que también le toca.
 
+### El informe de cierre de unidad y de fin de año (Sesión 109)
+
+La pantalla que usa las fotos, y la que completa la respuesta a la pregunta con la que Roberto
+abrió todo esto: *"no sirve mostrar avances en diciembre de asignaturas que se pasaron en abril"*.
+El mapa muestra el estado de **hoy**; esto muestra **cómo estaba el curso cuando la unidad
+terminó**, reconstruido de la foto del domingo que la cierra.
+
+Cada unidad con fecha de término **y una foto que la cubra** gana un **📸 Cómo quedó** en el
+bloque de planificación, y abajo va **📅 Informe de las unidades cerradas** — el mismo informe con
+más de un bloque, imprimible en A4. Sin las dos condiciones el botón no aparece: prometería un
+informe vacío.
+
+> ⚠️ **La comparación con hoy va A LA VISTA, y no es un extra: es el argumento entero.** Un
+> objetivo que cerró en 78% y hoy marca 61% **no bajó** — entraron alumnos que lo tocaron por
+> primera vez en otra unidad, y su primer intento se sumó al promedio de abril. Ver los dos
+> números juntos es lo que lo explica; ver solo el de hoy es el problema original.
+
+**Una función para tres usos.** `kimun_prof_dominio_foto(curso, semana)` es `kimun_prof_dominio`
+leyendo la foto en vez del acumulado vivo, con la misma forma y el mismo filtro por asignatura,
+así que el cliente la pinta con el mismo código. Sirve para el cierre de una unidad, para el
+informe de fin de año y para cualquier *"cómo estábamos en junio"*; una función por cada uno
+habría sido tres veces el mismo SQL. Y **qué objetivos tiene cada unidad lo sabe el cliente**
+(`OA_UNIDAD`, de los `oa.json`), así que el servidor devuelve la foto entera y no recibe una
+lista de códigos: es el mismo reparto que el pulso —el servidor cuenta, el cliente cruza con el
+repositorio—.
+
+⚠️ **La foto elegida es la PRIMERA POSTERIOR al término**, no la anterior más cercana. Si la
+unidad terminó un martes, la foto del domingo anterior no incluye el lunes ni el martes, o sea le
+faltaría el final de la unidad. El costo de la posterior es incluir hasta seis días en que el
+curso ya está en otra unidad, y como el porcentaje es de primer intento —y esos objetivos ya se
+abrieron— ese ruido es mínimo.
+
+⚠️ **No devuelve `ultima` ni `recientes`, y no es un olvido:** los dos salen de
+`dominio.actualizado`, que se sobreescribe en cada respuesta, así que en una foto pasada dirían
+cuándo se tocó por última vez **hoy**. Un dato que no existe en la foto no se rellena con el de
+hoy. Por lo mismo, `alumnos` puede ser **menor** que el curso: quien abrió ese objetivo después
+del cierre no está en esa foto, y eso es la verdad de ese momento.
+
+**Y el límite hay que decírselo a un colegio antes de prometerlo:** la primera foto real es del
+**30/08/2026**, así que de una unidad cerrada antes **no se puede reconstruir nada** — ese
+historial no existe y no se puede fabricar. Por eso `kimun_prof_semanas(curso)` existe y el pie
+del informe dice desde cuándo hay historial. Para el año escolar 2027 habría el año completo
+desde marzo.
+
+**En el papel** la barra se oculta —es un relleno de fondo, y los navegadores no imprimen fondos
+por omisión, así que habría salido una caja vacía del mismo largo para todos— y los tres colores
+semánticos pasan a tonos oscuros (`#1d5e3a`, `#7a5a10`, `#8a2340`) para distinguirse también en
+blanco y negro. Van en `.cie-bloque` y no en `:root` para no pisarle al pulso su `--gold:#000`,
+que en su hoja significa "falta configurar esto" y no rendimiento.
+
+### La franja de "qué necesita tu atención" (Sesión 109)
+
+El panel abría en una lista de cursos plegados: correcta, ordenada y **muda**. Para enterarse de
+algo había que abrir un curso, entrar a Ver avance y leer. La franja va arriba de todo y dice qué
+hacer — es la diferencia entre una base de datos y una herramienta.
+
+> ⚠️ **Una línea por CURSO, no por hallazgo.** La primera versión ponía cada cosa en su renglón y
+> con seis cursos salieron **nueve líneas de dos renglones: 830 px en un teléfono de 780**, o sea
+> que el primer curso quedaba a **1.300 px de scroll**. Se pidió ver mejor y la franja tapaba
+> justo lo que había que ver — el defecto del banner de instalación (Sesión 77), otra vez. **Se
+> vio MIRANDO la captura**: el conteo decía "sin desborde, cero errores". Agrupada, el primer
+> curso queda a **489 px**.
+>
+> Y agrupar **no pierde ninguna acción**, porque el mapa, la participación y el refuerzo viven
+> los tres en la misma pantalla (Ver avance). La excepción es *"sin profesor jefe"*, que se
+> arregla en la tarjeta del curso y por eso abre esa en vez de navegar.
+
+Se acota a **cuatro cursos** y el resto se dice en una línea. El orden es: primero lo que falta
+**configurar** (un curso sin jefe no es uno que va mal, es uno que no está listo) y después por
+**proporción** de alumnos que no entraron — proporción y no número absoluto, porque 20 de 20 es
+un curso detenido y 5 de 22 una semana normal, y en números crudos el segundo parece peor.
+
+⚠️ **Ninguna línea nombra a un alumno.** Son conteos; los nombres se ven al entrar al curso, donde
+ya se muestran con el cuidado que corresponde (alfabéticos, sin fecha individual, sin orden por
+inactividad). La restricción vive además en la firma de `kimun_prof_resumen`, que no devuelve uno
+solo — la misma decisión que gobierna el pulso, y por el mismo motivo.
+
+**El titular del curso** pasa a decir *"Participación · 17 de 22 esta semana · 77% ↓"*.
+⚠️ Los dos números salen de **fuentes distintas** y se dice en el `title` en vez de esconderlo: la
+semana en curso de `perfiles.visto` y la anterior del **delta de XP entre dos fotos**, que es la
+única fuente de participación pasada que existe —`visto` guarda solo la última entrada—. Y el
+primero **no se toca**: tiene que seguir siendo el mismo número que el pulso y que el bloque de
+participación, o el panel se contradice a sí mismo.
+
 ### El pulso del colegio (Sesión 107)
 
 La pantalla de **dirección y UTP**, y la única del panel que mira todos los cursos a la vez. Se
@@ -2148,6 +2232,28 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
   como `resp_1` nunca baja, un `max(semana) where resp_1 > 0` devolvería **siempre** la semana
   actual y toda unidad parecería seguir abierta. Y solo funciona **hacia adelante**: la primera
   foto es del 30/08/2026.
+- **El informe de cierre y el resumen de cursos (Sesión 109):** tres funciones nuevas, ninguna
+  cambia una firma existente (así que aplicarlas es seguro en cualquier orden respecto al cliente).
+  **`kimun_prof_dominio_foto(curso, semana)`** es `kimun_prof_dominio` leyendo `dominio_semanal`
+  en vez del acumulado vivo, con la misma forma y el mismo filtro por asignatura: **una función
+  para tres usos** —el cierre de una unidad, el informe de fin de año y cualquier "cómo estábamos
+  en junio"—. **`kimun_prof_semanas(curso)`** dice qué fotos existen, y sobre todo **hasta dónde
+  llega el historial**: de una unidad cerrada antes de la primera foto no se puede reconstruir
+  nada, y el cliente necesita distinguir "no hay foto" de "no hubo actividad".
+  ⚠️ `_dominio_foto` **no devuelve `ultima` ni `recientes`**: los dos salen de
+  `dominio.actualizado`, que se sobreescribe, así que en una foto pasada dirían cuándo se tocó por
+  última vez **hoy**. Un dato que no existe en la foto no se rellena con el de hoy.
+  **`kimun_prof_resumen()`** devuelve una fila por curso para el titular de participación y la
+  franja de atención. ⚠️ **Nace para BAJAR el número de llamadas, no para subirlo**: la lista hacía
+  una consulta de participación *por curso* —con seis, seis— y la franja habría sumado otras seis;
+  esta las reemplaza por una. ⚠️ Y **no devuelve un solo nombre de alumno**: la franja dice "7
+  alumnos no entraron", que es un conteo. La restricción vive en la firma, igual que en
+  `kimun_prof_pulso` y por el mismo motivo.
+  ⚠️ Su `jugaron_previa` sale del **delta de XP entre las dos últimas fotos** —un alumno que ganó
+  XP entre dos domingos, jugó— porque `perfiles.visto` guarda solo la última entrada y sin eso no
+  hay participación pasada con la que comparar. Son dos criterios distintos y se dice en la
+  interfaz; el de la semana en curso sigue siendo `visto`, que es el espejo obligado de
+  `gruposParticipacion()` y del pulso.
 - **Cuándo se trabajó cada objetivo (Sesión 108):** `kimun_prof_dominio` devuelve además
   `ultima` (`max(actualizado)`) y `recientes` (alumnos con actividad en 30 días), y
   `kimun_prof_dominio_alumno` devuelve `ultima`. ⚠️ **Van los dos números y no solo la fecha:**
@@ -11468,3 +11574,122 @@ Con el doble de Supabase y `cdp.mjs`, **mirando y no solo contando**:
 > cambiar de firma —o sea que el `drop` previo hizo su trabajo y no quedaron dos versiones—, y
 > `kimun_oa_asignatura('MA06 OA 01')` sigue dando `MA06`. **Lo que no se puede comprobar sin
 > credenciales sigue siendo que devuelvan DATOS**: eso se ve abriendo el panel.
+
+### Sesión 109 (2026-09-08) — El panel dice qué hacer, y las unidades cerradas se pueden mirar
+Encargo de Roberto en tres partes: *"simula fotos desde la quincena de marzo en el curso 8vo, y
+luego haz las tres tareas pendientes… para poder mostrar al colegio qué hace VULPO"*. Quedan
+cerradas **A49** (las dos ideas que faltaban del panel) y **A55** (el informe de cierre), y el año
+simulado queda escrito para pegar. **No se tocó el juego ni el contenido.**
+
+#### El año simulado: `seed-anio-8vo.sql`
+
+Fabrica **26 fotos semanales del 15/03 al 06/09/2026** en el 8° de prueba, más su planificación.
+Vive fuera del repositorio, con su `LEEME` y su generador (`gen-seed-anio.py`) al lado — los 64
+códigos de objetivo y su reparto en unidades salen de los cuatro `oa.json`, y escribirlos a mano
+es como se cuela uno en la unidad equivocada, que es justo lo que el informe de cierre mostraría
+bajo el encabezado de otra unidad sin que nada avise.
+
+La historia que cuenta está elegida, no es ruido: la **cobertura crece de 4 a 64 objetivos**; las
+semanas del **12 y 19 de julio están en cero** porque son las vacaciones de invierno —un año
+escolar chileno sin ese hueco no se parece a uno—; **un alumno de cada nueve deja de jugar** a
+mitad de año, para que la participación tenga a quién mostrar; **U1 y U2 quedan cerradas y U3 en
+curso**, que es lo que hace demostrable A55; y **Matemática U2 tiene una fecha movida con
+justificación**, para que el historial de la UTP tenga qué mostrar.
+
+⚠️ **No se puede ejecutar desde aquí** —solo hay la clave pública— así que se verificó
+**simulando su aritmética**, y eso encontró dos cosas que habrían salido feas frente a un colegio:
+
+1. **Las correctas podían crecer más rápido que las respondidas.** Con dos ritmos independientes
+   —uno para `respondidas` y otro para `correctas`— el panel habría mostrado **más de 100% de
+   acierto**. Ahora es imposible por construcción: el calendario lleva los dos acumulados y
+   `acum_ok <= acum_r` siempre.
+2. **11.000 respuestas por alumno al año**, o sea 46 etapas por semana, que ningún niño juega.
+   Calibrado a **1.371**.
+
+Y un tercero de forma: el acierto por objetivo salía entre **57% y 77% —ni uno rojo—**, porque el
+mapa promedia los 26 alumnos y la parte del alumno se cancela; lo que decide el color de una fila
+es la **dificultad del objetivo**, que era demasiado estrecha. Ampliada, quedan **10 rojos, 28
+ámbares y 26 verdes**. Sin ese reparto el panel no tendría nada que enseñar, que es justo lo que
+hay que enseñar.
+
+> **La primera versión del propio simulador decía "OK" sobre 3 filas de 27**, porque su regex no
+> las leía todas: un chequeo que pasa **por vacuidad** es la peor clase de verificación, y por eso
+> lleva ahora un `assert` del número de filas.
+
+#### A49 · La franja y el titular
+
+Las dos salen de **una sola consulta** (`kimun_prof_resumen()`), que ⚠️ **baja el número de
+llamadas en vez de subirlo**: la lista hacía una consulta de participación por curso —con seis,
+seis— y la franja habría sumado otras seis.
+
+⚠️ **La franja se rehízo por un defecto que solo se vio MIRANDO.** La primera versión ponía una
+línea por hallazgo y salieron **nueve de dos renglones: 830 px en un teléfono de 780**, con el
+primer curso a **1.300 px de scroll** — se pidió ver mejor y la franja tapaba justo lo que había
+que ver. Es el banner de instalación de la Sesión 77 otra vez, y el conteo decía "sin desborde,
+cero errores". Agrupada por curso (4 máximo, más "y N cursos más"), el primer curso queda a
+**489 px**. Detalle y criterio de orden en su sección, arriba.
+
+#### A55 · El informe de cierre
+
+**Una función para tres usos**: `kimun_prof_dominio_foto(curso, semana)` sirve para el cierre de
+una unidad, para el informe de fin de año y para cualquier *"cómo estábamos en junio"*. La
+comparación con hoy va **a la vista** porque es el argumento entero: un objetivo que cerró en 78%
+y hoy marca 61% no bajó, entraron alumnos que lo tocaron por primera vez después. Detalle en su
+sección.
+
+#### Dos errores propios, y los dos se cazaron midiendo
+
+1. ⚠️ **Un `*/` huérfano en el CSS**, al fusionar dos comentarios del `@media print`. Es el defecto
+   de la Sesión 63 y del `/*` de la 75, cometido esta vez por mí. **El balance de llaves daba
+   196/196 y no lo delataba** —un comentario mal cerrado no cambia el conteo—: se vio **midiendo
+   el color computado de la hoja impresa**, que salía el de pantalla en vez del oscuro. Quedó un
+   guard nuevo en la comprobación de sintaxis: contar `/*` y `*/` no basta, hay que detectar
+   **marcas huérfanas o anidadas**, que es lo que rompe el CSS desde ahí sin tocar las llaves.
+2. **Tres veces medí con el selector equivocado** —radios en vez de `.av-chip[data-agr]`, y
+   `.oa-grupo` de la planificación en vez de los del mapa— y por poco reporto una regresión
+   inexistente en el agrupado por unidad. *Cuando un conteo da raro, el primer sospechoso es la
+   prueba.* Y una vez el parche a la prueba **no aplicó** por los escapes de un heredoc, así que
+   la corrida siguió midiendo lo viejo: el archivo se reescribió entero con Write.
+
+#### Verificación
+
+Con el doble de Supabase y `cdp.mjs`, **jugando con clics**: la franja con sus 4 líneas y sus dos
+caminos de clic (el curso sin jefe abre su tarjeta, el resto va a Ver avance); los titulares con
+sus tres flechas (↑ ↓ →) y el caso **sin foto anterior**, que lo dice en vez de mostrar un cero;
+el **control negativo del cierre** —una unidad que termina el 20/11, sin foto que la cubra, **no**
+ofrece el botón—; el informe de una unidad y el del año; y **la hoja impresa con la tinta medida,
+no mirada**: los tres colores semánticos distinguibles, todo sobre 4,5:1 de contraste y **cero
+fondos**. A 375 px sin desborde y con la barra en 309 px —el defecto que en el mapa la aplastó a
+cero píxeles—. Regresión: pulso, mapa, agrupados, ficha de alumno y Administración intactos, y
+**los seis cursos siguen navegando** con el motor vivo. **Cero errores de consola y cero fallos de
+red.**
+
+#### El esquema quedó aplicado, y la comprobación destapó una cuarta cosa
+
+Roberto pegó las tres funciones el mismo día. `kimun_prof_semanas` y `_dominio_foto` pasaron de
+**404 `PGRST202`** a **400 `no_autorizado`**, con el control negativo en pie y el positivo
+(`MA06 OA 01` → `MA06`, más el pulso y el plan respondiendo). ⚠️ **La firma se probó por nombre de
+parámetro**: llamar `_dominio_foto` con `p_curso`/`p_sem` en vez de `p_curso_codigo`/`p_semana`
+devuelve 404, o sea que la firma real es la esperada.
+
+> ⚠️ **Y `kimun_prof_resumen` devolvía 200 `[]` en vez de 400: le faltaba el portero.**
+> **No había fuga** —su CTE `mis` filtra por `kimun_prof_acceso`, así que un anónimo recibía la
+> lista vacía, medido— pero devolvía 200 donde **todas** las demás `kimun_prof_*` devuelven 400, y
+> `kimun_prof_listar`, que es su hermana directa y a la que esta reemplaza en parte, sí lanza. Una
+> excepción silenciosa a un patrón es lo que se cae el día que alguien se apoya en ese invariante.
+>
+> **La lección de método vale más que el arreglo:** el control no es solo *"¿responde?"* sino
+> **"¿responde lo MISMO que sus hermanas?"**. Esta función respondía, no filtraba nada de más, y
+> aun así estaba mal. Se encontró **comparándola con `kimun_prof_listar` contra producción**, no
+> leyendo el código — y solo porque el 200 llamó la atención donde se esperaba un 400.
+
+**Y se probó el escenario POST-SEED, no el del doble original:** con las 17 unidades planificadas
+que deja el seed, la planificación ofrece **8 botones de cierre** y **ninguno en U3/U4** (terminan
+en el futuro); el informe del año arma sus 8 bloques pidiendo **solo 3 fotos distintas**, porque
+varias unidades cierran el mismo domingo y el caché evita pedir la misma cuatro veces; sale en
+**~2 hojas A4**; y a 375 px el nombre más largo se ve entero —*"U3 · Nuevos principios
+occidentales: Ilustración e Independencia"*—, o sea que el recorte de la Sesión 108 no volvió.
+
+⚠️ **Queda abierto (A56), y las dos cosas son de Roberto:** re-pegar el portero de
+`kimun_prof_resumen` —sin prisa, porque lo que corrige es la consistencia del contrato y no un
+agujero— y pegar `seed-anio-8vo.sql`.

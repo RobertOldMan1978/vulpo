@@ -2165,6 +2165,196 @@ declare cid uuid; asigs text[]; begin
     having min(delta.s) filter (where delta.sube > 0) is not null;
 end $$;
 
+-- ------------------------------------------------------------
+-- El informe de cierre: el mapa TAL COMO ESTABA en una semana
+-- ------------------------------------------------------------
+
+/* Qué fotos existen para este curso. Sirve para dos cosas y las dos importan:
+   elegir la semana que cierra una unidad, y DECIR HASTA DÓNDE LLEGA EL HISTORIAL.
+   ⚠️ Eso segundo no es un adorno. Las fotos se toman desde la Sesión 36, y de una
+   unidad cerrada ANTES de la primera no se puede reconstruir nada: esa información no
+   existe y no se puede fabricar. Un informe que en ese caso mostrara los números de hoy
+   sería exactamente la mentira que este trabajo viene a evitar, así que el cliente
+   necesita poder distinguir "no hay foto" de "no hubo actividad". */
+drop function if exists public.kimun_prof_semanas(text);
+create or replace function public.kimun_prof_semanas(p_curso_codigo text)
+returns table(semana date, objetivos bigint, alumnos bigint)
+language plpgsql security definer set search_path=public as $$
+declare cid uuid; asigs text[]; begin
+  select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
+  if cid is null or not public.kimun_prof_acceso(cid) then raise exception 'no_autorizado'; end if;
+  asigs := public.kimun_prof_asignaturas(cid);
+  return query
+    select ds.semana, count(distinct ds.oa), count(distinct ds.perfil_id)
+      from public.dominio_semanal ds
+      join public.perfiles p on p.id = ds.perfil_id
+     where p.curso_id = cid
+       and public.kimun_oa_asignatura(ds.oa) = any(asigs)
+     group by ds.semana
+     order by ds.semana;
+end $$;
+
+/* El mapa de dominio de una SEMANA PASADA. Es `kimun_prof_dominio` leyendo la foto en
+   vez del acumulado vivo, con la misma forma y el mismo filtro por asignatura, así que
+   el cliente puede pintarla con el mismo código.
+
+   Una función, tres usos: el cierre de una unidad (la foto del domingo que la cierra),
+   el informe de fin de año (la última foto del año) y cualquier "cómo estábamos en
+   junio". Una función por cada uno habría sido tres veces el mismo SQL.
+
+   ⚠️ NO devuelve `ultima` ni `recientes`, y no es un olvido: los dos salen de
+   `dominio.actualizado`, que se sobreescribe en cada respuesta, así que en una foto
+   pasada dirían cuándo se tocó por última vez HOY. Un dato que no existe en la foto no
+   se rellena con el de hoy.
+
+   ⚠️ Y `alumnos` puede ser MENOR que el curso: quien abrió ese objetivo después del
+   cierre no está en esa foto. Es la verdad de ese momento, y es justamente el caso que
+   motivó todo esto —el alumno que llega tarde y contamina el promedio de abril—. */
+drop function if exists public.kimun_prof_dominio_foto(text,date);
+create or replace function public.kimun_prof_dominio_foto(p_curso_codigo text, p_semana date)
+returns table(oa text, respondidas bigint, correctas bigint, alumnos bigint,
+              resp_1 bigint, ok_1 bigint, alumnos_1 bigint)
+language plpgsql security definer set search_path=public as $$
+declare cid uuid; asigs text[]; begin
+  select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
+  if cid is null or not public.kimun_prof_acceso(cid) then raise exception 'no_autorizado'; end if;
+  asigs := public.kimun_prof_asignaturas(cid);
+  return query
+    select ds.oa, sum(ds.respondidas), sum(ds.correctas), count(distinct ds.perfil_id),
+           sum(ds.resp_1), sum(ds.ok_1),
+           count(distinct ds.perfil_id) filter (where ds.resp_1 > 0)
+      from public.dominio_semanal ds
+      join public.perfiles p on p.id = ds.perfil_id
+     where p.curso_id = cid and ds.semana = p_semana
+       and public.kimun_oa_asignatura(ds.oa) = any(asigs)
+     group by ds.oa
+     order by (sum(ds.ok_1)::numeric / nullif(sum(ds.resp_1),0)) asc nulls last, ds.oa;
+end $$;
+
+/* Resumen de TODOS mis cursos en una sola consulta. Alimenta dos cosas de la lista: el
+   titular de participación de cada curso y la franja de "qué necesita tu atención".
+
+   ⚠️ Nace para BAJAR el número de llamadas, no para subirlo. La lista ya hacía una
+   consulta de participación y una de equipo POR CURSO; con seis cursos eran doce, y la
+   franja habría sumado seis más. Esta las reemplaza por una.
+
+   ⚠️ NO devuelve un solo nombre de alumno. La franja dice "7 alumnos no entraron", que
+   es un conteo; los nombres se ven al entrar al curso, donde ya se muestran con el
+   cuidado que corresponde (alfabéticos, sin fecha individual, sin orden por inactividad).
+   Es la misma restricción que gobierna `kimun_prof_pulso`, y por el mismo motivo: vive
+   en la firma, así que no se puede deshacer desde el cliente. */
+drop function if exists public.kimun_prof_resumen();
+create or replace function public.kimun_prof_resumen()
+returns table(curso_codigo text, curso text, nivel text,
+              inscritos bigint, vinculados bigint, jugaron_semana bigint,
+              jugaron_previa bigint, hay_previa boolean,
+              oa_bajos bigint, refuerzos bigint, sin_jefe boolean,
+              puede_gestionar boolean)
+language plpgsql security definer set search_path=public as $$
+declare yo public.profesores; begin
+  /* El mismo portero que `kimun_prof_listar`, que es su hermana directa —esta reemplaza
+     las llamadas que aquella lista hacía por curso—.
+     ⚠️ Sin él NO había fuga: el CTE `mis` filtra por `kimun_prof_acceso`, así que un
+     anónimo recibía `[]`. Pero devolvía **200** donde todas las demás `kimun_prof_*`
+     devuelven 400 `no_autorizado`, y una excepción silenciosa a un patrón es lo que hace
+     que el día que alguien se apoye en ese invariante se le caiga justo aquí. Medido
+     contra producción: `kimun_prof_listar` lanza, esta no. */
+  select * into yo from public.profesores where id = auth.uid();
+  if yo.id is null then raise exception 'no_autorizado'; end if;
+  return query
+  with mis as (
+    select c.id, c.codigo, c.nombre, c.nivel,
+           public.kimun_prof_asignaturas(c.id) as asigs,
+           public.kimun_prof_es_mio(c.id)      as gestiono
+      from public.cursos c
+     where public.kimun_prof_acceso(c.id)
+  ), alu as (
+    select m.id as cid,
+           count(p.id)                                        as inscritos,
+           count(v.perfil_id)                                 as vinculados,
+           /* ⚠️ Espejo EXACTO de gruposParticipacion() en el panel y de la fila del
+              pulso: vinculado Y `visto` dentro de 7 días móviles. Los tres números
+              tienen que decir lo mismo del mismo curso; al tocar uno, tocar los otros. */
+           count(*) filter (where v.perfil_id is not null
+                              and p.visto > now() - interval '7 days')  as jugaron
+      from mis m
+      left join public.perfiles p on p.curso_id = m.id and p.codigo_acceso is not null
+      left join lateral (select 1 as perfil_id from public.vinculos vv
+                          where vv.perfil_id = p.id limit 1) v on true
+     group by m.id
+  ), fotos as (
+    /* Cuántos jugaron LA SEMANA PASADA, reconstruido de las fotos de XP: un alumno que
+       ganó XP entre dos domingos, jugó. Es la única fuente de participación pasada que
+       existe — `perfiles.visto` guarda solo la última entrada, así que sin esto no hay
+       con qué comparar y "15 de 22" se queda sin decir si está bien o mal.
+       ⚠️ Son DOS criterios distintos (`visto` para la semana en curso, delta de XP para
+       la anterior) porque la semana en curso todavía no tiene foto. Se dice en la
+       interfaz en vez de esconderlo. */
+    select x.perfil_id, x.semana, x.xp,
+           lag(x.xp) over (partition by x.perfil_id order by x.semana) as xp_ant,
+           row_number() over (partition by x.perfil_id order by x.semana desc) as rn
+      from public.xp_semanal x
+      join public.perfiles p on p.id = x.perfil_id
+      join mis m on m.id = p.curso_id
+  ), previa as (
+    select p.curso_id as cid,
+           count(*) filter (where f.xp > coalesce(f.xp_ant, 0)) as jugaron,
+           count(*) filter (where f.xp_ant is not null)         as con_base
+      from fotos f
+      join public.perfiles p on p.id = f.perfil_id
+     where f.rn = 1
+     group by p.curso_id
+  ), bajos as (
+    /* Objetivos que piden atención: bajo 70% de primer intento y con al menos 10 alumnos
+       detrás. El mínimo NO es decoración — bajo 10 alumnos son unas 60 respuestas, ±12
+       puntos de margen, y mandar al profesor a un objetivo que en realidad no tiene base
+       es la forma más rápida de que deje de mirar la franja. Mismo corte que el bloque
+       "Todavía con pocos datos" del mapa. */
+    -- ⚠️ Se cuenta sobre la subconsulta y NADA MÁS. Un join con `perfiles` aquí —para
+    -- llegar al curso, que ya viene en la subconsulta— multiplicaría cada objetivo por
+    -- el número de alumnos: 3 objetivos flojos se habrían anunciado como 78.
+    select t.curso_id as cid, count(*) as n from (
+      select p2.curso_id, d.oa,
+             sum(d.ok_1) as ok, sum(d.resp_1) as r,
+             count(distinct d.perfil_id) filter (where d.resp_1 > 0) as n_alu
+        from public.dominio d
+        join public.perfiles p2 on p2.id = d.perfil_id
+        join mis m2 on m2.id = p2.curso_id
+       where public.kimun_oa_asignatura(d.oa) = any(m2.asigs)
+       group by p2.curso_id, d.oa
+    ) t
+     where t.n_alu >= 10 and t.r > 0 and (t.ok::numeric / t.r) < 0.70
+     group by t.curso_id
+  ), refu as (
+    select d.curso_id as cid, count(*) as n
+      from public.desafios d
+      join mis m3 on m3.id = d.curso_id
+     where d.activo and d.asignatura = any(m3.asigs)
+     group by d.curso_id
+  ), jefes as (
+    select m.id as cid,
+           not exists (select 1 from public.curso_profesores cp
+                        where cp.curso_id = m.id and cp.rol = 'jefe') as sin_jefe
+      from mis m
+  )
+  select m.codigo, m.nombre, m.nivel,
+         coalesce(a.inscritos,0), coalesce(a.vinculados,0), coalesce(a.jugaron,0),
+         coalesce(pv.jugaron,0),
+         -- Sin dos fotos no hay comparación, y hay que poder decirlo en vez de mostrar
+         -- un cero que se leería como "la semana pasada no jugó nadie".
+         coalesce(pv.con_base,0) > 0,
+         coalesce(b.n,0), coalesce(r.n,0),
+         -- Quién está a cargo solo es información de quien administra el curso.
+         case when m.gestiono then j.sin_jefe else false end,
+         m.gestiono
+    from mis m
+    left join alu a    on a.cid  = m.id
+    left join previa pv on pv.cid = m.id
+    left join bajos b  on b.cid  = m.id
+    left join refu r   on r.cid  = m.id
+    left join jefes j  on j.cid  = m.id;
+end $$;
+
 grant execute on function
   public.kimun_perfil(text,text), public.kimun_buscar(text), public.kimun_jugadores(),
   public.kimun_crear_duelo(text,text,jsonb,int,int), public.kimun_pendientes(),
@@ -2191,6 +2381,9 @@ grant execute on function
   , public.kimun_prof_plan_quitar(text,text,text)
   , public.kimun_prof_plan_historial(text)
   , public.kimun_prof_plan_sugerir(text)
+  , public.kimun_prof_semanas(text)
+  , public.kimun_prof_dominio_foto(text,date)
+  , public.kimun_prof_resumen()
   , public.kimun_prof_tendencia(text)
   , public.kimun_prof_refuerzo_lanzar(text,text,text[])
   , public.kimun_prof_refuerzo_cerrar(text)

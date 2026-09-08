@@ -26,7 +26,20 @@ puede ejecutar cambios de estructura).
 
 | **2026-09-08** | **La planificación del año**: tablas `unidades_plan` y `unidades_plan_log`, más `kimun_prof_plan`, `_plan_fijar`, `_plan_quitar`, `_plan_historial` y `_plan_sugerir`. Y **`kimun_prof_dominio` y `_dominio_alumno` CAMBIAN DE FIRMA** —suman `ultima`/`recientes` y `ultima`—, así que aquí el `drop function` previo no es una precaución sino el requisito: sin él, el `create or replace` habría abortado el pegado con *"cannot change return type"* | **Sí, con tres comprobaciones y no una.** (1) Las cinco funciones nuevas responden **400 `no_autorizado`** a una sesión anónima —existen y su portero funciona— mientras `kimun_prof_plan_inventada` da **404 `PGRST202`**, o sea que el 400 no es un eco. (2) **La firma se comprobó de verdad**: PostgREST resuelve por NOMBRE de parámetro, así que llamar `kimun_prof_plan_fijar` con sus siete (`p_curso_codigo`, `p_asignatura`, `p_unidad`, `p_titulo`, `p_inicio`, `p_termino`, `p_nota`) y recibir 400 en vez de 404 prueba que la firma es la esperada — con una firma distinta habría dado PGRST202. (3) Las dos que cambiaron de firma siguen respondiendo, y `kimun_oa_asignatura('MA06 OA 01')` sigue dando `MA06`. ⚠️ Que devuelvan **DATOS** no se puede comprobar sin sesión de profesor |
 
-> **Al 08/09/2026 el backend está al día**: aplicado y comprobado lo de la planificación del año, que es lo último que tocó el esquema.
+| **2026-09-08** | **APLICADO.** Tres funciones nuevas: **`kimun_prof_resumen()`** (una fila por curso, para el titular de participación con contexto y la franja de "qué necesita tu atención" — nace para BAJAR el número de llamadas, no para subirlo: reemplaza la consulta de participación *por curso* que hacía la lista), **`kimun_prof_semanas(curso)`** (qué fotos existen, y **hasta dónde llega el historial**) y **`kimun_prof_dominio_foto(curso, semana)`** (el mapa tal como estaba en una semana pasada). Las tres son nuevas y ninguna cambia una firma existente, así que **es seguro aplicarlo en cualquier orden respecto al cliente**. ⚠️ `kimun_prof_resumen` **no devuelve un solo nombre de alumno**, y esa restricción vive en la firma por el mismo motivo que en `kimun_prof_pulso`: la franja dice "7 alumnos no entraron", que es un conteo, y los nombres se ven al entrar al curso | **Sí, y la comprobación destapó algo.** `kimun_prof_semanas` y `_dominio_foto` pasaron de **404 `PGRST202`** a **400 `no_autorizado`**, con el control negativo en pie (una función inventada sigue dando 404) y el positivo (`MA06 OA 01` → `MA06`; `kimun_prof_pulso` y `_plan` siguen respondiendo). ⚠️ **La firma se probó por nombre de parámetro**: llamar `_dominio_foto` con `p_curso`/`p_sem` en vez de `p_curso_codigo`/`p_semana` devuelve **404**, o sea que la firma real es la esperada. ⚠️ **Y `kimun_prof_resumen` devuelve 200 `[]` en vez de 400**, porque le faltaba el portero: **no hay fuga** —su CTE filtra por `kimun_prof_acceso`, así que un anónimo recibe la lista vacía, medido— pero es una **excepción silenciosa a un patrón**, y `kimun_prof_listar`, que es su hermana directa, sí lanza. **Corregido en el repositorio; falta re-pegarlo** |
+
+> **Al 08/09/2026 el backend tiene UNA cosa pendiente, y es chica:** el portero de
+> `kimun_prof_resumen`. Está corregido en `supabase/schema.sql` y **no aplicado** —medido el mismo
+> día: sigue devolviendo `200 []` donde tendría que dar `400 no_autorizado`—. Se re-pega el archivo
+> `aplicar-109.sql` (v2) o la función entera desde el esquema; es idempotente. **No hay fuga
+> mientras tanto**, así que no corre prisa: lo que corrige es la consistencia del contrato.
+>
+> Todo lo demás está aplicado y comprobado.
+>
+> ⚠️ **Y una comprobación que vale la pena repetir en cada función nueva:** el control no es solo «¿responde?» sino **¿responde lo
+> MISMO que sus hermanas?**. `kimun_prof_resumen` respondía —sin filtrar nada de más— y aun así estaba mal, porque devolvía 200
+> donde todas las demás `kimun_prof_*` devuelven 400. Se encontró comparándola con `kimun_prof_listar` contra producción, no
+> leyendo el código.
 >
 > ⚠️ **El registro tiene un hueco entre el 01/09 y el 07/09**, cuando se dieron de alta los niveles 04, 05 y 06: esas aplicaciones
 > ocurrieron —medido hoy, `MA06 OA 01` resuelve en producción— pero nadie las anotó aquí. Se deja dicho en vez de inventarles fecha,
