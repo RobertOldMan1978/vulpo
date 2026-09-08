@@ -362,6 +362,37 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
 .oa-grupo-tit{color:var(--cuerpo);font-size:12px;font-weight:600;letter-spacing:.03em;
  text-transform:uppercase;padding:8px 0 4px;border-bottom:1px solid var(--linea)}
 .oa-grupo-tit span{color:var(--dim);font-weight:400}
+/* El corte entre lo que está en curso y el historial. Va en dorado —el acento de "esto es
+   lo de ahora"— y solo aparece cuando hay algo cerrado que separar. */
+.av-corte{color:var(--gold);font-size:13px;font-weight:600;letter-spacing:.02em;
+ padding:2px 0 8px;margin-bottom:4px}
+.av-corte span{color:var(--dim);font-weight:400}
+.av-corte-sub{color:var(--dim);font-size:11px;margin:-4px 0 10px;max-width:70ch}
+/* El sello de estado de una unidad. Solo el de "en clases" lleva acento —es lo único
+   accionable de los tres— y los otros dos van atenuados, para que la mirada caiga donde
+   hay algo que hacer. Nunca en verde/ámbar/rosa: en esta pantalla eso es rendimiento. */
+.uni-sello{font-size:10px;font-weight:600;letter-spacing:.02em;text-transform:none;
+ border-radius:99px;padding:2px 7px;margin-left:6px;white-space:nowrap;
+ border:1px solid #ffffff1f;color:var(--dim)}
+.uni-clases{color:var(--gold);border-color:#d8a43a55;background:#d8a43a12}
+.av-corte-vacio{color:var(--dim);font-size:12px;margin:0 0 12px}
+/* El historial: atenuado, pero NO invisible. Es consulta y no acción, así que no compite
+   con lo de arriba — pero puede guardar la mayoría de los objetivos del año, y una línea
+   gris de 11 px al pie se lee como "perdí datos". Fondo tenue y un poco de cuerpo para
+   que se vea que hay algo ahí y se pueda tocar. */
+.av-hist{margin-top:18px;border:1px solid var(--linea);border-radius:8px;
+ background:#ffffff05;padding:2px 12px}
+.av-hist>summary{color:var(--cuerpo);font-size:13px;font-weight:600;cursor:pointer;
+ padding:10px 0;list-style:none}
+.av-hist>summary::-webkit-details-marker{display:none}   /* Safari, el de siempre */
+.av-hist>summary::before{content:'▸ ';color:var(--dim)}
+.av-hist[open]>summary::before{content:'▾ '}
+.av-hist>summary span{color:var(--dim);opacity:.75}
+.av-hist-nota{color:var(--dim);font-size:11px;margin:2px 0 12px;max-width:70ch}
+.hist-asig{margin-bottom:14px}
+.hist-asig-tit{color:var(--cuerpo);font-size:12px;font-weight:700;letter-spacing:.05em;
+ text-transform:uppercase;padding:6px 0 2px;opacity:.85}
+.hist-asig-tit span{color:var(--dim);font-weight:400;letter-spacing:0}
 /* En un computador el objetivo y su medida caben en la MISMA línea, y eso es lo que
    acorta el scroll de verdad: un mapa de 60 objetivos pasa de tres pantallas a una y
    media sin recortar ni un texto. En el teléfono siguen apilados. */
@@ -850,7 +881,8 @@ async function pintarLista(){
                   ${c.gestiono?`<button class="ico xp" data-cod="${esc(a.codigo_acceso)}" data-xp="${esc(a.xp)}"
                           title="Fijar XP" style="color:var(--gold)">✎</button>`:''}
                   <button class="ico avalum" data-pid="${esc(a.pid)}"
-                          data-nom="${esc(a.alumno)}" title="Ver avance">📊</button>
+                          data-nom="${esc(a.alumno)}" data-curso="${esc(cod)}"
+                          title="Ver avance">📊</button>
                   ${c.gestiono?`<button class="ico ico-del del" data-cod="${esc(a.codigo_acceso)}"
                           title="Eliminar alumno">✕</button>`:''}
                 </div>
@@ -1072,7 +1104,7 @@ function conectarAcciones(){
   document.querySelectorAll('.avance').forEach(
     b=>b.onclick=()=>verAvance(b.dataset.cod, b.dataset.nom, b.dataset.gestiono==='1'));
   document.querySelectorAll('.avalum').forEach(
-    b=>b.onclick=()=>verAvanceAlumno(b.dataset.pid, b.dataset.nom));
+    b=>b.onclick=()=>verAvanceAlumno(b.dataset.pid, b.dataset.nom, b.dataset.curso));
 }
 
 /* ===== Enlace de inscripción del curso (jefe/admin) =====
@@ -1675,8 +1707,87 @@ async function cargarParticipacion(cursoCodigo){
 let PLAN = {};        // 'HI08|U1' -> {inicio, termino, nota, fijada_por, cambios}
 let PLAN_SUG = {};    // 'HI08|U1' -> {inicio, termino} propuesto desde las fotos semanales
 let SEMANAS = [];     // las fotos que existen para este curso, en orden: [{semana,objetivos,alumnos}]
+/* ⚠️ DE QUÉ CURSO es lo que hay en PLAN, y no es una comodidad: la ficha de un alumno
+   también lo consulta, y a ella se llega desde cualquier curso. Sin esta marca, abrir un
+   alumno de 3° después de haber mirado el avance de 8° le aplicaría las fechas de 8° y
+   mandaría al historial las unidades equivocadas — el cruce de identidad que la Sesión 26
+   ya pagó con la participación. Vale `null` mientras no haya plan cargado, y con eso el
+   corte abiertas/cerradas simplemente no se aplica. */
+let PLAN_CURSO = null;
 
 const claveUnidad = (asig, uni) => asig + '|' + uni;
+
+/* Trae la planificación de un curso a PLAN. Aparte de `cargarPlan` porque esta la necesitan
+   DOS pantallas —el avance del curso y la ficha de un alumno— y la segunda no tiene bloque
+   de planificación que pintar, ni sugerencias que pedir, ni fotos que listar: pedirle esas
+   dos consultas de más sería pagarlas para nada. */
+async function traerPlan(cursoCodigo){
+  const {data, error} = await SB.rpc('kimun_prof_plan', {p_curso_codigo:cursoCodigo});
+  if(error) throw error;
+  fijarPlan(cursoCodigo, data);
+  return data||[];
+}
+
+/* El ÚNICO lugar que escribe PLAN y PLAN_CURSO, y por eso existe: son dos variables que
+   tienen que moverse juntas, y las llenan dos caminos distintos. Separadas, el día que
+   alguien agregue un tercero se le olvida la marca del curso y el defecto es mudo. */
+function fijarPlan(cursoCodigo, filas){
+  PLAN = {};
+  (filas||[]).forEach(f => { PLAN[claveUnidad(f.asignatura, f.unidad)] = f; });
+  PLAN_CURSO = cursoCodigo;
+}
+
+/* ===== En qué punto del año está cada unidad =====
+   Tres estados y no dos, porque "abierta" mezclaba dos cosas que piden acciones distintas:
+   la unidad que el curso está pasando ESTA SEMANA y la que empieza en dos meses. En el 8°
+   de prueba pasa hoy mismo — U3 corre del 20/07 al 25/09 y U4 arranca el 28/09—, así que
+   sin separarlas el profesor ve juntos un objetivo urgente y uno que no ha visto nadie. */
+/* ⚠️ Los iconos NO son puntos de color, y es deliberado: en este panel el verde, el ámbar
+   y el rosa significan RENDIMIENTO, así que un 🟢 junto a una unidad se leería como "esta
+   va bien" en vez de "se está pasando". La metáfora del libro no compite con nada: abierto
+   lo que se está leyendo, guardado lo que ya se leyó. */
+const ESTADO_UNIDAD = {
+  clases:  {ico:'📖', txt:'En clases ahora'},
+  futura:  {ico:'🕒', txt:'Todavía no empieza'},
+  cerrada: {ico:'📚', txt:'Terminada'}
+};
+
+/* ⚠️ SIN FECHAS devuelve '' y no un estado inventado, y esa guarda decide el caso más
+   común: la planificación es opcional y hoy casi ningún curso la tiene llena. Adivinar
+   ahí llenaría la pantalla de marcas falsas. */
+function estadoUnidad(asig, uid){
+  const p = PLAN_CURSO ? PLAN[claveUnidad(asig, uid)] : null;
+  if(!p || (!p.inicio && !p.termino)) return '';
+  const hoy = new Date().toISOString().slice(0,10);
+  if(p.termino && p.termino < hoy) return 'cerrada';
+  if(p.inicio  && p.inicio  > hoy) return 'futura';
+  return 'clases';               // empezó y no ha terminado, o solo tiene una de las dos
+}
+
+/* El estado de un OBJETIVO, que es el de su unidad.
+   ⚠️ Un objetivo que vive en VARIAS unidades —los 9 de Lenguaje de 3°, uno en cuatro— toma
+   el estado MÁS ACTIVO de todas: si alguna se está pasando es de esta semana, y si alguna
+   está por venir todavía hay algo que hacer con él. Solo es historial cuando todas
+   cerraron; mandarlo antes sería esconder trabajo pendiente. */
+function estadoDeOA(oa){
+  const u = OA_UNIDAD[oa]; if(!u) return '';
+  const asig = String(oa).slice(0,4);
+  const ids  = (u.ids && u.ids.size) ? Array.from(u.ids) : [u.id];
+  const est  = ids.map(id => estadoUnidad(asig, id)).filter(Boolean);
+  if(!est.length) return '';
+  if(est.includes('clases')) return 'clases';
+  if(est.includes('futura')) return 'futura';
+  return 'cerrada';
+}
+
+const unidadCerrada = oa => estadoDeOA(oa) === 'cerrada';
+
+// El sello de una unidad, para el encabezado de su grupo. Vacío si nadie le puso fechas.
+function selloUnidad(asig, uid){
+  const e = ESTADO_UNIDAD[estadoUnidad(asig, uid)];
+  return e ? ` <span class="uni-sello uni-${estadoUnidad(asig, uid)}">${e.ico} ${
+    esc(e.txt)}</span>` : '';
+}
 
 /* La foto que CIERRA una unidad: la primera tomada en la fecha de término o después.
    ⚠️ La PRIMERA POSTERIOR y no la anterior más cercana, y la diferencia importa: si la
@@ -1733,11 +1844,11 @@ async function cargarPlan(cursoCodigo){
       SB.rpc('kimun_prof_semanas',     {p_curso_codigo:cursoCodigo})
     ]);
     if(plan.error) throw plan.error;
-    PLAN = {}; PLAN_SUG = {};
+    PLAN_SUG = {};
     // Las fotos disponibles. Su fallo no rompe nada: sin ellas no se ofrece el informe de
     // cierre, que es exactamente lo que corresponde cuando no hay historial que leer.
     SEMANAS = (sem.error ? [] : (sem.data||[]));
-    (plan.data||[]).forEach(f => { PLAN[claveUnidad(f.asignatura, f.unidad)] = f; });
+    fijarPlan(cursoCodigo, plan.data);
     /* La propuesta llega por OBJETIVO y se agrupa por unidad: la primera semana en que
        alguno empezó y la última en que alguno se movió.
        ⚠️ Solo hay fotos desde el 30/08/2026, así que de una unidad cerrada antes no hay
@@ -1792,7 +1903,8 @@ function pintarPlan(titular, cuerpo, cursoCodigo, asigs){
                title="Cómo estaba el curso en esta unidad cuando la cerraste, reconstruido de la foto del ${esc(fechaCortita(foto))}"
                >📸 Cómo quedó</button>` : '';
         return `<div class="plan-fila" data-k="${esc(k)}">
-          <div class="plan-nom">${esc(u.id)} · ${esc(u.titulo)}${cambios}</div>
+          <div class="plan-nom">${esc(u.id)} · ${esc(u.titulo)}${
+            selloUnidad(asig, u.id)}${cambios}</div>
           <div class="plan-fechas">${fechas}</div>
           <div class="plan-acc">${sug}${cierre}
             <button class="ico plan-edit" data-asig="${esc(asig)}" data-uni="${esc(u.id)}"
@@ -2475,7 +2587,7 @@ async function verAvance(cursoCodigo, cursoNombre, gestiono){
     $('btnVolverPanel').onclick = volverAlPanel;
     const bReinit=$('btnReiniciarMed'); if(bReinit) bReinit.onclick=()=>reiniciarMediciones(cursoCodigo, cursoNombre, gestiono);
     cargarTendencia(cursoCodigo);
-    cargarPlan(cursoCodigo);
+    const planListo = cargarPlan(cursoCodigo);
     cargarParticipacion(cursoCodigo);
 
     let filtro = '';                                  // '' = todas las asignaturas
@@ -2489,12 +2601,20 @@ async function verAvance(cursoCodigo, cursoNombre, gestiono){
       // justo lo que le sirve al profe de asignatura.
       const modo = (agrupar === 'asig' && !multi) ? '' : agrupar;
       $('avCuerpo').innerHTML = filas.length
-        ? bloquesAvance(filas, modo, multi) : SIN_DATOS_ASIG;
+        ? cuerpoConHistorial(filas, modo, multi, true) : SIN_DATOS_ASIG;
       conectarFilasOA(cursoCodigo);
     };
     conectarFiltros(a => { filtro = a; pintarCuerpo(); });
     conectarAgrupar(v => { agrupar = v; pintarCuerpo(); });
     pintarCuerpo();
+    /* ⚠️ El plan llega DESPUÉS de esta primera pintada —`cargarPlan` no se espera, para no
+       dejar la pantalla en blanco mientras responde—, así que hay que repintar: sin esto,
+       el corte abiertas/cerradas no aparecería hasta que el profesor tocara un filtro.
+       La guarda es el NODO capturado y no el código del curso: si el usuario ya se fue a
+       otra vista, ese nodo salió del documento y no hay nada que repintar — el mismo
+       cuidado con el que `cargarParticipacion` evita escribir bajo el encabezado ajeno. */
+    const nodoCuerpo = $('avCuerpo');
+    planListo.then(() => { if(document.contains(nodoCuerpo)) pintarCuerpo(); });
     cargarRefuerzo(cursoCodigo, data);
     cargarRankingAsignatura(cursoCodigo, data);
     irArriba();
@@ -2502,10 +2622,22 @@ async function verAvance(cursoCodigo, cursoNombre, gestiono){
   }catch(e){ aviso(errorPanel(e)); }
 }
 
-async function verAvanceAlumno(perfilId, alumnoNombre){
+async function verAvanceAlumno(perfilId, alumnoNombre, cursoCodigo){
   aviso('Cargando…','var(--dim)');
   try{
-    const {data,error}=await SB.rpc('kimun_prof_dominio_alumno',{p_perfil:perfilId});
+    /* El plan va en el MISMO `Promise.all` que el avance, y no después: es lo que decide
+       qué unidades están cerradas, así que pedirlo aparte dejaría la primera pintada sin
+       el corte y obligaría a repintar. Aquí sí se puede esperar —son dos consultas y la
+       pantalla no muestra nada hasta que llegan—, a diferencia de la vista del curso, que
+       tiene mucho más que pintar mientras tanto.
+       ⚠️ Su fallo NO rompe la ficha: sin plan no hay historial, que es exactamente lo que
+       corresponde cuando no se sabe qué unidad terminó. */
+    const [av, plan] = await Promise.all([
+      SB.rpc('kimun_prof_dominio_alumno',{p_perfil:perfilId}),
+      cursoCodigo ? traerPlan(cursoCodigo).catch(()=>{ PLAN_CURSO = null; })
+                  : Promise.resolve()
+    ]);
+    const {data,error} = av;
     if(error) throw error;
     const titulo = alumnoNombre || 'Alumno';
     if(!data || !data.length){
@@ -2528,15 +2660,19 @@ async function verAvanceAlumno(perfilId, alumnoNombre){
     $('btnVolverPanel').onclick = volverAlPanel;
 
     let filtro = '';
+    let agrupar = '';                                 // '' | 'unidad' | 'asig'
     const pintarCuerpo = () => {
       const filas = filtro ? data.filter(f => String(f.oa).slice(0,4) === filtro) : data;
       /* ⚠️ NO `filas.map(filaAvance)`: `map` pasa el ÍNDICE como segundo argumento, así que
          `multi` valdría 0 en la primera fila y 1 en todas las demás — la etiqueta aparecería
-         desde la segunda. La ficha de un alumno mezcla asignaturas y no tiene agrupador, así
-         que aquí la etiqueta va siempre. */
+         desde la segunda. */
       const multi = new Set(filas.map(f => String(f.oa).slice(0,4))).size > 1;
+      const modo = (agrupar === 'asig' && !multi) ? '' : agrupar;
+      /* `false`: la ficha de un alumno NO lleva los tres bloques del curso —"Para reforzar"
+         y compañía salen del corte de 10 alumnos, y aquí el alumno es uno solo, así que
+         `kimun_prof_dominio_alumno` ni siquiera devuelve `alumnos_1`—. */
       $('avCuerpo').innerHTML = filas.length
-        ? filas.map(f => filaAvance(f, multi)).join('') : SIN_DATOS_ASIG;
+        ? cuerpoConHistorial(filas, modo, multi, false) : SIN_DATOS_ASIG;
       // Aquí la fila NO se despliega: esta vista es de un solo alumno, así que no hay
       // grupos que mostrar. Sin esto quedaría un desplegable con "Cargando…" para siempre.
       document.querySelectorAll('#avCuerpo .oa-fila').forEach(det => {
@@ -2549,6 +2685,11 @@ async function verAvanceAlumno(perfilId, alumnoNombre){
       });
     };
     conectarFiltros(a => { filtro = a; pintarCuerpo(); });
+    /* ⚠️ Esta línea FALTABA, y los tres botones "Agrupar por" llevaban dos sesiones
+       dibujándose aquí sin responder a nada: vienen dentro de `filtrosAsignatura`, que es
+       compartido, pero solo la vista del curso los cableaba. Un control que se dibuja y no
+       hace nada no da ningún error — se ve igual que uno que sí funciona. */
+    conectarAgrupar(v => { agrupar = v; pintarCuerpo(); });
     pintarCuerpo();
     irArriba();
     aviso('');
@@ -2697,20 +2838,26 @@ function detalleApoyo(filas){
    Así se conservan las dos lecturas: primero qué hacer, después de qué materia. */
 /* Las fechas planificadas de una unidad, para el encabezado de su grupo en el mapa. La
    clave es la misma que usa la planificación ('HI08|U1'), así que el mapa y esa pantalla
-   no pueden discrepar. Vacío si nadie las declaró: la ausencia no estorba. */
-function fechasDeUnidad(clave){
+   no pueden discrepar. Vacío si nadie las declaró: la ausencia no estorba.
+   ⚠️ `conSello` va en FALSE dentro del historial y de la sección de las futuras: ahí el
+   encabezado de la sección ya dice el estado, y repetir "📚 Terminada" en cada unidad de
+   una lista que se llama "unidades ya terminadas" es ruido. Donde sí aporta es agrupando
+   por unidad arriba y en la planificación del año, que no tienen ese encabezado. */
+function fechasDeUnidad(clave, conSello){
   const p = PLAN[clave];
   if(!p || (!p.inicio && !p.termino)) return '';
-  return ` <span class="oa-grupo-fechas">${esc(fechaCortita(p.inicio)||'?')} → ${
+  const [asig, uid] = String(clave).split('|');
+  return (conSello ? selloUnidad(asig, uid) : '')
+    + ` <span class="oa-grupo-fechas">${esc(fechaCortita(p.inicio)||'?')} → ${
     esc(fechaCortita(p.termino)||'?')}</span>`;
 }
 
-function bloquesAvance(data, agrupar, multi){
-  const conBase = data.filter(f => (Number(f.alumnos_1)||0) >= 10);
-  const sinBase = data.filter(f => (Number(f.alumnos_1)||0) <  10);
-  const pctDe = f => (Number(f.resp_1)||0) ? (Number(f.ok_1)||0)*100/(Number(f.resp_1)||1) : 0;
-  const reforzar = conBase.filter(f => pctDe(f) <  70);
-  const bien     = conBase.filter(f => pctDe(f) >= 70);
+/* El agrupado de una lista de objetivos: por asignatura, por unidad, o plano.
+   ⚠️ Vive APARTE de `bloquesAvance` porque lo usan las DOS vistas y no pueden compartir
+   esa: la del curso reparte en "Para reforzar / Van bien / Pocos datos" con el corte de
+   10 alumnos, y `kimun_prof_dominio_alumno` **no devuelve `alumnos_1`** —es un alumno—,
+   así que ahí todo caería en "pocos datos", que además va plegado. */
+function agruparFilas(data, agrupar, multi){
   // Agrupado: en el orden canónico del curso, y el orden DENTRO de cada asignatura es el
   // que ya traía el servidor (de peor a mejor), así que no se reordena nada.
   const porAsignatura = filas => {
@@ -2752,13 +2899,22 @@ function bloquesAvance(data, agrupar, multi){
       <div class="oa-grupo">
         <div class="oa-grupo-tit">${multi && ASIG_NOMBRE[g[k].asig]
             ? esc(ASIG_NOMBRE[g[k].asig]) + ' · ' : ''}${esc(g[k].tit)}
-          <span>(${g[k].filas.length})</span>${fechasDeUnidad(k)}</div>
+          <span>(${g[k].filas.length})</span>${fechasDeUnidad(k, true)}</div>
         ${g[k].filas.map(f => filaAvance(f, false)).join('')}
       </div>`).join('');
   };
-  const cuerpo = filas => agrupar === 'asig'   ? porAsignatura(filas)
-                        : agrupar === 'unidad' ? porUnidad(filas)
-                        : filas.map(f => filaAvance(f, multi)).join('');
+  return agrupar === 'asig'   ? porAsignatura(data)
+       : agrupar === 'unidad' ? porUnidad(data)
+       : data.map(f => filaAvance(f, multi)).join('');
+}
+
+function bloquesAvance(data, agrupar, multi){
+  const conBase = data.filter(f => (Number(f.alumnos_1)||0) >= 10);
+  const sinBase = data.filter(f => (Number(f.alumnos_1)||0) <  10);
+  const pctDe = f => (Number(f.resp_1)||0) ? (Number(f.ok_1)||0)*100/(Number(f.resp_1)||1) : 0;
+  const reforzar = conBase.filter(f => pctDe(f) <  70);
+  const bien     = conBase.filter(f => pctDe(f) >= 70);
+  const cuerpo = filas => agruparFilas(filas, agrupar, multi);
   const seccion = (titulo, filas, plegada) => !filas.length ? '' : `
     <details ${plegada?'':'open'} style="margin-bottom:10px">
       <summary style="color:var(--cyan);font-size:13px;cursor:pointer;padding:6px 0">
@@ -2768,6 +2924,91 @@ function bloquesAvance(data, agrupar, multi){
   return seccion('Para reforzar', reforzar, false)
        + seccion('Van bien', bien, false)
        + seccion('Todavía con pocos datos', sinBase, true);
+}
+
+/* ===== Lo que está en curso arriba, lo cerrado al historial =====
+   Responde la pregunta con la que Roberto abrió la planificación: *"no sirve mostrar
+   avances en diciembre de asignaturas que se pasaron en abril"*. El mapa mezclaba los
+   objetivos del año entero y los mostraba igual, así que un 45% no decía si hay que actuar
+   o si eso ya se cerró hace ocho meses.
+
+   ⚠️ **Sin una sola unidad cerrada la pantalla queda EXACTAMENTE como antes**, sin
+   encabezado y sin sección extra, y eso no es una comodidad: la planificación es opcional
+   y hoy casi ningún curso la tiene llena. Una feature que le cambia la pantalla a quien no
+   la usa es una feature que estorba.
+
+   ⚠️ **El historial NO lleva los tres bloques** (Para reforzar / Van bien / Pocos datos):
+   decirle "refuerza esto" sobre una unidad que ya se cerró es justo el problema que esto
+   viene a resolver. Va por asignatura, que es como se busca algo pasado. */
+function cuerpoConHistorial(data, agrupar, multi, conBloques){
+  const armar = filas => conBloques ? bloquesAvance(filas, agrupar, multi)
+                                    : agruparFilas(filas, agrupar, multi);
+  const por = {clases:[], futura:[], cerrada:[], '':[]};
+  data.forEach(f => por[estadoDeOA(f.oa)].push(f));
+  // Sin fechas no hay estado, así que esos objetivos van con lo que se está pasando: es
+  // donde el profesor los busca, y sacarlos de ahí castigaría al curso sin planificar.
+  const ahora = por.clases.concat(por['']);
+  if(!por.cerrada.length && !por.futura.length) return armar(data);   // nada que separar
+
+  const E = ESTADO_UNIDAD;
+  return `<div class="av-corte">${E.clases.ico} ${E.clases.txt} <span>(${ahora.length})</span></div>
+    <p class="av-corte-sub">Lo que el curso está pasando en estas semanas.${
+      por.futura.length ? ` Hay ${por.futura.length} objetivo${por.futura.length>1?'s':''} de
+      unidades que todavía no empiezan y ` : ' Los '}${
+      por.cerrada.length ? `${por.cerrada.length} de unidades ya terminadas` : 'ninguna terminada'
+      }, más abajo.</p>`
+    + (ahora.length ? armar(ahora) : `
+       <p class="av-corte-vacio">Ninguna unidad en clases tiene objetivos medidos todavía.</p>`)
+    /* Las que no empiezan van PLEGADAS y en su propia sección: si tienen datos es porque
+       alguien jugó adelantado, así que son información y no una tarea de esta semana. */
+    + (!por.futura.length ? '' : `
+      <details class="av-hist av-futura" style="margin-top:14px">
+        <summary>${E.futura.ico} ${E.futura.txt} <span>(${por.futura.length})</span></summary>
+        <p class="av-hist-nota">Sus unidades empiezan más adelante. Si ya hay respuestas es
+          porque algún alumno se adelantó jugando por su cuenta, no porque el curso las
+          esté viendo.</p>
+        ${agruparFilas(por.futura, 'unidad', multi)}
+      </details>`)
+    + (!por.cerrada.length ? '' : historialHTML(por.cerrada));
+}
+
+/* El historial: por ASIGNATURA, plegado y con su fecha de cierre. Plegado porque es
+   consulta y no acción — quien entra al mapa viene a decidir qué hacer esta semana—, y por
+   asignatura porque así se busca algo pasado: "¿cómo quedó Historia?". */
+function historialHTML(filas){
+  const g = {};
+  filas.forEach(f => { const a = String(f.oa).slice(0,4); (g[a]=g[a]||[]).push(f); });
+  const cuerpo = ASIG_ORDEN.filter(a => g[a]).map(a => {
+    // Dentro de la asignatura, por unidad y en orden curricular: un año se lee en su orden,
+    // no de peor a mejor, que mezclaría abril con octubre.
+    const porU = {};
+    g[a].forEach(f => {
+      const u = OA_UNIDAD[f.oa];
+      const k = u ? u.id : '_sin';
+      if(!porU[k]) porU[k] = {orden: u ? u.orden : 99,
+                              tit: u ? u.titulo : 'Sin unidad declarada',
+                              clave: claveUnidad(a, u ? u.id : ''), filas: []};
+      porU[k].filas.push(f);
+    });
+    const unidades = Object.keys(porU).sort((x,y) => porU[x].orden - porU[y].orden);
+    return `<div class="hist-asig">
+      <div class="hist-asig-tit">${esc(ASIG_NOMBRE[a]||a)} <span>(${g[a].length})</span></div>
+      ${unidades.map(k => `
+        <div class="oa-grupo">
+          <div class="oa-grupo-tit">${esc(porU[k].tit)}
+            <span>(${porU[k].filas.length})</span>${fechasDeUnidad(porU[k].clave, false)}</div>
+          ${porU[k].filas.map(f => filaAvance(f, false)).join('')}
+        </div>`).join('')}
+    </div>`;
+  }).join('');
+  return `<details class="av-hist" style="margin-top:16px">
+    <summary>📚 Historial · unidades terminadas <span>(${filas.length})</span></summary>
+    <p class="av-hist-nota">Su fecha de término ya pasó, así que este porcentaje es el
+      registro de cómo quedaron, no una tarea de esta semana. Para ver el curso <b>tal como
+      estaba al cerrar</b> una unidad —y no como está hoy— usa <b>📸 Cómo quedó</b> en la
+      planificación.</p>
+    ${cuerpo}
+  </details>`;
 }
 
 async function reiniciarMediciones(cursoCodigo, cursoNombre, gestiono){

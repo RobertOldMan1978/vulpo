@@ -36,3 +36,7 @@ dev/revision-*.html
 
 # Pruebas de pronunciación (regenerables con el script de voz)
 dev/prueba-voz/
+
+# El doble de Supabase para verificar el panel sin sesion. Se regenera con
+# scratchpad/stub-panel.py y no es parte del producto.
+_panel-demo.html

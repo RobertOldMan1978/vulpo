@@ -88,7 +88,11 @@ que el cupo se ajusta al grupo.
 
 Ese mismo panel trae el **mapa de dominio por objetivo de aprendizaje**: muestra, de peor a
 mejor porcentaje, qué contenidos le están costando al curso y quiénes necesitan apoyo en
-cada uno. Arriba del mapa, la **tendencia semanal** —cómo le fue al curso esta semana
+cada uno. Con las fechas del año puestas, el avance —del curso y de cada alumno— se ordena
+por **el momento del año**: arriba lo que se está pasando en clases, aparte lo que todavía no
+empieza, y las unidades ya terminadas en un **historial por asignatura**, cada una con su
+tramo de fechas. Así un 45% de abril no se lee igual que uno de esta semana. Arriba del mapa,
+la **tendencia semanal** —cómo le fue al curso esta semana
 comparada con las anteriores— y un bloque de **participación** que dice quién jugó esta
 semana y quién no ha entrado nunca. Es una brújula para decidir qué reforzar en clase, **no
 sirve para calificar**. Está pensado para verse en un **computador**, que es donde lo usa un

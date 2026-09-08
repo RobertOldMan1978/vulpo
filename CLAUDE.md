@@ -1881,6 +1881,64 @@ capítulos son temáticos. Se agrupan en la **primera**, para que una fila siga 
 y los conteos cuadren con su encabezado; la contra asumida es que en ese banco una unidad se ve
 sin un objetivo que también le toca.
 
+### En qué punto del año está cada unidad, y el historial (Sesión 110)
+
+Cierra lo que la Sesión 108 dejó a medias. Ahí el mapa ganó **cuándo** se trabajó cada objetivo y
+se pudo agrupar por unidad, pero seguía mostrando en la misma lista lo de abril y lo de esta
+semana. Ahora el avance —**del curso y de cada alumno**— se parte en tres, y cada unidad lleva su
+estado a la vista.
+
+| | Cuándo | Dónde se ve |
+|---|---|---|
+| 📖 **En clases ahora** | inicio pasado y término futuro | arriba, abierto — es lo accionable |
+| 🕒 **Todavía no empieza** | inicio futuro | sección propia, **plegada** |
+| 📚 **Terminada** | término pasado | **Historial**, plegado y **por asignatura** |
+
+**Tres estados y no dos, porque "abierta" mezclaba dos cosas que piden acciones distintas.** En el
+8° de prueba pasa hoy mismo: U3 corre del 20/07 al 25/09 y U4 arranca el 28/09, así que juntas
+ponían al lado un objetivo urgente y uno que no ha visto nadie.
+
+> ⚠️ **Sin planificación la pantalla queda EXACTAMENTE como antes** —sin sellos, sin secciones y
+> con las mismas filas—, y eso no es una comodidad: las fechas son opcionales y hoy casi ningún
+> curso las tiene llenas. **Una feature que le cambia la pantalla a quien no la usa es una feature
+> que estorba.** Por eso *sin fecha de término NO está cerrada*: una unidad sin planificar es una
+> que nadie declaró terminada, y darla por cerrada mandaría al historial el año entero.
+
+⚠️ **El historial NO lleva los tres bloques** (Para reforzar / Van bien / Pocos datos): decirle
+*"refuerza esto"* sobre una unidad que ya se cerró es justo el problema que esto viene a resolver.
+Va por asignatura y, dentro, por unidad en orden curricular con su tramo del año — así se busca
+algo pasado (*"¿cómo quedó Historia?"*), no de peor a mejor, que mezclaría abril con octubre.
+
+⚠️ **Un objetivo que vive en varias unidades toma el estado MÁS ACTIVO** de todas: si alguna se
+está pasando es de esta semana, y si alguna está por venir todavía hay algo que hacer con él. Solo
+es historial cuando todas cerraron. Son los 9 de Lenguaje de 3°, uno de ellos en cuatro unidades.
+
+**El sello va donde aporta y no donde repite.** En la **planificación del año** —que lista las
+unidades con sus fechas y no decía cuál corría— y en el encabezado de unidad **al agrupar por
+unidad**; dentro del historial **no**, porque su propia sección ya lo dice.
+
+> ⚠️ **Los iconos NO son puntos de color, y es deliberado:** en este panel el verde, el ámbar y el
+> rosa significan **rendimiento**, así que un 🟢 junto a una unidad se leería como *"esta va bien"*
+> en vez de *"se está pasando"*. La metáfora del libro no compite con nada. Y solo el de "en clases"
+> lleva acento dorado —es lo único accionable de los tres—, para que la mirada caiga ahí.
+
+**Y de paso se arregló un defecto que llevaba dos sesiones vivo:** los tres botones **"Agrupar
+por"** se dibujaban en la ficha del alumno **sin responder a nada**. Vienen dentro de
+`filtrosAsignatura`, que es compartido, pero solo la vista del curso llamaba a `conectarAgrupar` —
+y su cuerpo ni siquiera tenía lógica de agrupado. Un control que se dibuja y no hace nada **no da
+ningún error**: se ve igual que uno que funciona.
+
+> Para arreglarlo hubo que sacar el agrupador a **`agruparFilas`**, compartida. La ficha **no
+> puede** usar `bloquesAvance`: sus tres bloques salen del corte de 10 alumnos, y
+> `kimun_prof_dominio_alumno` **no devuelve `alumnos_1`** —es un alumno solo—, así que todo caería
+> en "pocos datos", que además va plegado.
+
+⚠️ **`PLAN_CURSO` dice de qué curso es lo que hay en `PLAN`, y no es una comodidad:** a la ficha
+de un alumno se llega desde cualquier curso, así que sin esa marca abrir un alumno de 3° después
+de mirar el avance de 8° le aplicaría las fechas de 8° — el cruce de identidad que la Sesión 26 ya
+pagó con la participación. `fijarPlan()` es **el único lugar** que escribe las dos, porque tienen
+que moverse juntas y las llenan dos caminos distintos.
+
 ### El informe de cierre de unidad y de fin de año (Sesión 109)
 
 La pantalla que usa las fotos, y la que completa la respuesta a la pregunta con la que Roberto
@@ -11723,3 +11781,75 @@ diferencia, y los cuatro son saltos de línea**.
 > en tres sesiones porque el contenido estaba entero y correcto — lo que fallaba era cómo se veía,
 > y eso **no lo delata ningún conteo**. Salió de mirar la estructura del archivo al agregarle una
 > fila, no de buscarlo.
+
+### Sesión 110 (2026-09-08) — Lo que se está pasando arriba, lo terminado al historial
+Roberto pegó el seed del año y, mirando la ficha de una alumna, puso el pedido: *"en el análisis
+de los alumnos, en primer lugar debe mostrar sus resultados de las unidades abiertas; las cerradas
+deben quedar como historial, por asignatura"*. Y al ver lo construido, la corrección que lo
+completó: *"igual debe haber un indicador de lo que está abierto o pasándose en clases y lo que ya
+está terminado"*. **No se tocó el juego ni el contenido.**
+
+#### La segunda frase no era un detalle: eran tres estados y no dos
+
+Medido en su propio 8° de prueba, con las fechas que el seed acababa de sembrar:
+
+| | | |
+|---|---|---|
+| U1, U2 | 9 mar → 30 abr · 4 may → 3 jul | **terminadas** |
+| U3 | 20 jul → 25 sep | **en clases ahora** |
+| U4, U5 | 28 sep → 27 nov | **todavía no empiezan** |
+
+O sea que mi primer corte —"Unidades en curso" contra "Historial"— **metía en la misma bolsa lo
+que el curso está pasando y lo que arranca en tres semanas**, poniendo al lado un objetivo urgente
+y uno que no ha visto nadie. Detalle de lo construido en su sección, arriba.
+
+#### Tres decisiones, y la primera es la que decide si la feature estorba
+
+1. ⚠️ **Sin planificación, la pantalla queda EXACTAMENTE como antes.** Verificado desde el
+   arranque y no vaciando el plan a mitad de camino: **0 sellos en toda la página**, sin secciones
+   nuevas y con las mismas 16 filas. Las fechas son opcionales y hoy casi ningún curso las tiene
+   llenas; una feature que le cambia la pantalla a quien no la usa es una feature que estorba.
+2. **Los iconos no son puntos de color.** Ver el ⚠️ de su sección: en este panel el verde ya
+   significa rendimiento.
+3. **El sello va donde aporta y no donde repite** — en la planificación del año y al agrupar por
+   unidad; dentro del historial no, porque su encabezado ya lo dice.
+
+#### El defecto que apareció de camino, y llevaba dos sesiones vivo
+
+Los tres botones **"Agrupar por"** se dibujaban en la ficha del alumno **sin responder a nada**:
+`verAvanceAlumno` nunca llamaba a `conectarAgrupar`. Nacieron en las Sesiones 106 y 108 y las dos
+veces se cablearon solo en la vista del curso. Medido después del arreglo: **6 grupos → 8** al
+tocar "Unidad".
+
+> Es de la familia que este archivo documenta desde el `META_OA` de 7°: **un control que se dibuja
+> y no hace nada no da ningún error**. Y no lo encontró una revisión sino el pedido de Roberto, que
+> obligaba a usar justo ese agrupador.
+
+#### Verificación (con el doble de Supabase y `cdp.mjs`)
+
+Curso y alumno con los tres estados · la **planificación con sus 17 sellos**, repartidos 8
+terminadas / 4 en clases / 5 por empezar, y solo los 4 de "en clases" con acento · el sello al
+agrupar por unidad y **cero repeticiones en el historial** · el corte respeta el filtro por
+asignatura · en la ficha el texto va **entero, sin recortar** · el pulso y el informe **📸 Cómo
+quedó** intactos · la planificación sin regresión (17 filas, 8 botones de cierre, el lápiz abre su
+formulario) · teléfono sin desborde y **0 sellos cortados** · **cero errores de consola y cero
+fallos de red**.
+
+> **Y una contradicción que resultó ser del DOBLE, no del producto:** la pantalla decía
+> *"Planificación · 0 de 4 unidades con fechas"* y a la vez *"Historial (11)"*. El primer curso del
+> doble es de 3° y sus datos de dominio son de 8°, así que el bloque de planificación miraba las
+> asignaturas del curso y el historial los OA de los datos. Abriendo el curso coherente pasó a
+> **"17 de 17"**. En producción no puede ocurrir: un curso de 3° tiene OA de 3°.
+
+> **Errores de método propios, los de siempre:** `ev.consola` es una **propiedad** y la llamé como
+> función; y una comprobación de sintaxis dio **"SINTAXIS ROTA"** porque el archivo que iba a
+> revisar nunca se escribió —`/tmp` no existe en este entorno—. *Cuando el resultado sorprende, el
+> primer sospechoso es la prueba.*
+
+- **Anotado y sin cambiar, porque es decisión de Roberto:** en el historial, una unidad cerrada el
+  30 de abril puede mostrar *"21 jugaron este mes"*. Es verdad —siguen jugándola— y explica por qué
+  el número de hoy difiere del de cierre, que es justo lo que muestra 📸 Cómo quedó; pero a la
+  vista se contradice con el encabezado. Quitarlo sería esconder un dato real, así que se dijo y se
+  dejó.
+- De paso, **`_panel-demo.html` entró al `.gitignore`**: es el doble con el que se verifica el
+  panel sin sesión, y el repositorio es público.
