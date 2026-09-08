@@ -1722,6 +1722,20 @@ de lo interpretable. Antes se atenuaban esas filas, pero atenuar y ordenar de pe
 mejor se peleaban entre sí —la posición decía "mira esto primero" y la opacidad "ignora
 esto"—, de modo que la primera fila podía ser justo la menos confiable.
 
+**De qué asignatura es cada objetivo, y agrupar (Sesión 106).** Un Profesor Jefe ve las cuatro
+asignaturas mezcladas —46 objetivos en "Para reforzar" es un caso real—, así que cada fila lleva
+una **etiqueta con su asignatura** y hay un control **"Agrupar por: Rendimiento / Asignatura"**.
+
+> ⚠️ **El agrupado NO reemplaza los tres bloques: los SUBDIVIDE.** Cambiar el corte a "una
+> sección por asignatura" perdería la distinción entre lo que hay que reforzar, lo que va bien y
+> lo que todavía no tiene base, que es justo lo que este panel aporta. Así quedan las dos
+> lecturas: primero **qué hacer**, después **de qué materia**.
+>
+> Y las dos cosas **solo aparecen con más de una asignatura A LA VISTA** —lo mira `filas`, no el
+> curso—: con el filtro puesto en Historia, repetir "Historia" en treinta filas es ruido. La
+> etiqueta va como **texto atenuado y sin color propio**, porque el color de esta tabla ya
+> significa rendimiento y un segundo eje compitiendo estorbaría lo que se viene a ver.
+
 > **Comparar objetivos entre sí es el uso menos defendible** de esta tabla: los bancos
 > de preguntas no están calibrados entre sí (los escribieron agentes distintos en tandas
 > distintas), así que parte de la brecha entre un objetivo en 45% y otro en 87% es que
@@ -2007,6 +2021,16 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
     que pierde se guarda** en `localStorage` bajo `<SAVE_KEY>_previo`.
   - **No necesita cola de reintentos** como `dominio`: una foto es completa e idempotente, así que
     el próximo envío que llegue lleva todo. `dominio` la necesita porque manda **eventos**.
+- **Ranking general del curso (Sesión 106):** `kimun_prof_ranking_general(curso, minimo)`, el
+  mismo criterio de `kimun_prof_ranking_asignatura` pero **sobre todas las asignaturas del
+  profesor a la vez**. Es para el Jefe y el SuperUsuario; a un profe de asignatura sería su
+  propia pestaña repetida, y el panel no se la muestra.
+  ⚠️ **El promedio es SIMPLE, no ponderado por respuestas**, y ahí está la decisión: "el
+  promedio de las cuatro" significa que cada una pesa igual. Sumar todos los aciertos y dividir
+  por todas las respuestas dejaría que **la asignatura que más se jugó** decidiera el número del
+  alumno. Una asignatura entra al promedio con `minimo` respuestas o más, y por eso se devuelve
+  **`asignaturas`**: un 78% sobre dos materias y un 72% sobre cuatro no son comparables, y el
+  panel tiene que poder decirlo.
 - **Tendencia del curso (Sesión 106):** `kimun_prof_tendencia(curso)`, la primera función que
   lee `dominio_semanal` y `xp_semanal`. Devuelve **acumulados por semana** —las últimas 8
   fotos más una fila `en_curso` armada con el `dominio` en vivo, porque la semana que corre
@@ -10981,3 +11005,56 @@ tema a medias es peor que no cambiarlo.
 **Con esto A49 pierde su primera idea.** Quedan las tres que dependían de ella: la franja de
 "qué necesita tu atención" al entrar, la participación como titular de la tarjeta del curso, y
 exportar el mapa para una reunión.
+
+#### Post scriptum 3 de la Sesión 106 — lo que le falta al que ve las cuatro asignaturas
+
+Roberto mandó dos capturas de su curso real y pidió dos cosas, **las dos para el Profesor Jefe y
+el SuperUsuario**: un ranking con el promedio de las cuatro asignaturas, y en el mapa un
+indicador de a qué asignatura pertenece cada observación, con la posibilidad de agruparlas.
+Dijo además lo que no había que tocar: *"para el profe de asignatura está perfecto"*.
+
+**Las dos aparecen solo si hay más de una asignatura a la vista**, así que el profe de
+asignatura no ve ni un control nuevo. Detalle en las secciones de Backend y del mapa, arriba.
+
+#### Lo que hubo que decidir, que no era el código
+
+**Cómo se promedia.** Con `sum(ok_1)/sum(resp_1)` sale el acierto global real, pero eso hace que
+**la asignatura que más se jugó** decida el número del alumno. Se eligió el **promedio simple**
+—cada materia pesa igual, que es lo que "el promedio de las cuatro" significa— y, para que el
+número no engañe, la fila dice **sobre cuántas asignaturas se calculó**.
+
+**Dónde va el agrupado.** La opción obvia —una sección por asignatura— habría reemplazado los
+tres bloques de "Para reforzar / Van bien / Pocos datos", perdiendo lo que este panel aporta.
+Subdividir dentro de cada bloque conserva las dos lecturas.
+
+#### Dos defectos, y el segundo estaba en producción
+
+1. ⚠️ La ficha de un alumno llamaba **`filas.map(filaAvance)`**, y `map` pasa el **índice** como
+   segundo argumento: con la firma nueva `filaAvance(f, multi)`, `multi` habría valido 0 en la
+   primera fila y 1 en todas las demás — la etiqueta apareciendo desde la segunda. Se atajó
+   enumerando los llamadores **antes** de cambiar la firma, no después.
+2. ⚠️ **El "Cargando…" arrastraba la página 81 px hacia abajo.** `aviso('Cargando…')` lanza un
+   `scrollIntoView` **suave** hacia un nodo que vive al pie del panel, y esa animación sigue
+   corriendo después del `irArriba()`, así que el mapa abría con la cabecera fuera de vista. Era
+   el mismo defecto que el post scriptum 1 arregló para `aviso('')`, por el otro lado: ahora los
+   mensajes de *estoy trabajando* (`var(--dim)`) no desplazan, y los errores y los éxitos sí,
+   que es para lo que ese scroll existe.
+
+> **Y el control negativo de ese arreglo falló en el primer intento**, dando 0 en los tres
+> casos. No era el producto: con el panel plegado **la página cabía entera en el viewport**, así
+> que no había a dónde desplazarse. Repetido con la lista desplegada, el "Cargando…" da 0 y el
+> error y el éxito dan 1.180. Sin ese control, "no se movió" no distingue el arreglo de un
+> scroll roto para todos.
+
+#### Verificación
+
+Con `cdp.mjs`: la pestaña General primero y activa con sus 12 filas y su "4 de 4 asignaturas";
+al cambiar a Historia vuelve el criterio de cobertura ("22/22 objetivos"); el agrupado da ocho
+grupos —cada asignatura aparece en el bloque donde tiene objetivos— **con el mismo número total
+de filas**; con el filtro puesto, cero etiquetas y cero grupos; y en la ficha de un alumno las
+seis filas llevan etiqueta, **incluida la primera**. Escritorio y teléfono sin desborde,
+sintaxis OK, **cero errores de consola y cero fallos de red**.
+
+- **Pendiente de Roberto:** **re-aplicar `supabase/schema.sql`**, que trae
+  `kimun_prof_ranking_general`. Hasta entonces la pestaña General dice que no se pudo cargar; las
+  cuatro por asignatura y el mapa funcionan igual.

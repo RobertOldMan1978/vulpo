@@ -1322,6 +1322,52 @@ declare cid uuid; begin
              p.nombre;
 end $$;
 
+-- Ranking GENERAL del curso: el mismo criterio, pero sobre todas las asignaturas del
+-- profesor a la vez. Existe para el Profesor Jefe y el SuperUsuario, que ven las cuatro;
+-- a un profe de asignatura no le aporta nada (sería su propia pestaña repetida) y el panel
+-- no se lo muestra.
+--
+-- ⚠️ El promedio es SIMPLE, no ponderado por respuestas, y esa es la decisión de fondo:
+-- "el promedio de las cuatro asignaturas" significa que cada una pesa igual. Sumar todos
+-- los aciertos y dividir por todas las respuestas dejaría que la asignatura que más se jugó
+-- —normalmente la del profesor más entusiasta— decidiera el número del alumno.
+--
+-- ⚠️ Y una asignatura entra al promedio solo si supera `p_minimo` respuestas, la misma vara
+-- del ranking por asignatura. Por eso se devuelve `asignaturas`: un 78% sobre dos materias y
+-- un 72% sobre cuatro no son comparables, y el panel tiene que poder decirlo.
+drop function if exists public.kimun_prof_ranking_general(text,int);
+create or replace function public.kimun_prof_ranking_general(
+  p_curso_codigo text, p_minimo int default 20)
+returns table(alumno text, avatar text, resp_1 bigint, pct numeric,
+              asignaturas bigint, oa_tocados bigint, suficiente boolean)
+language plpgsql security definer set search_path=public as $$
+declare cid uuid; asigs text[]; begin
+  select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
+  if cid is null or not public.kimun_prof_acceso(cid) then raise exception 'no_autorizado'; end if;
+  asigs := public.kimun_prof_asignaturas(cid);
+  return query
+  with por_asig as (
+    select p.id as pid, p.nombre as nom, p.avatar as ava,
+           sum(d.resp_1) as r, sum(d.ok_1) as o,
+           count(distinct d.oa) filter (where d.resp_1 > 0) as oas
+      from public.perfiles p
+      join public.dominio d on d.perfil_id = p.id
+     where p.curso_id = cid and p.codigo_acceso is not null
+       and public.kimun_oa_asignatura(d.oa) = any(asigs)
+     group by p.id, p.nombre, p.avatar, public.kimun_oa_asignatura(d.oa)
+  )
+  select a.nom, a.ava,
+         sum(a.r)::bigint,
+         round(avg(a.o::numeric / nullif(a.r,0) * 100) filter (where a.r >= p_minimo), 0),
+         (count(*) filter (where a.r >= p_minimo))::bigint,
+         sum(a.oas)::bigint,
+         count(*) filter (where a.r >= p_minimo) > 0
+    from por_asig a
+   group by a.pid, a.nom, a.ava
+   -- Por ordinal para no repetir las expresiones: 7 = suficiente, 4 = pct, 1 = nombre.
+   order by 7 desc, 4 desc nulls last, 1;
+end $$;
+
 -- Limpieza de perfiles de prueba. Cuenta con p_ejecutar=false y borra con true.
 create or replace function public.kimun_prof_limpiar_pruebas(p_ejecutar boolean)
 returns int language plpgsql security definer set search_path=public as $$
@@ -1820,6 +1866,7 @@ grant execute on function
   , public.kimun_prof_equipo_asignar(text,text,text,text[])
   , public.kimun_prof_equipo_quitar(text,text)
   , public.kimun_prof_ranking_asignatura(text,text,int)
+  , public.kimun_prof_ranking_general(text,int)
   , public.kimun_prof_super_fijar(text,boolean)
   , public.kimun_inscribirse(text,text,text)
   , public.kimun_prof_inscripcion_crear(text,int,boolean)

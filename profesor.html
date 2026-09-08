@@ -179,6 +179,14 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
 .oa-texto{font-size:13px;font-weight:400;color:var(--cuerpo);margin-bottom:4px;display:-webkit-box;-webkit-box-orient:vertical;
  -webkit-line-clamp:2;line-clamp:2;overflow:hidden}
 .oa-fila[open] .oa-texto{-webkit-line-clamp:unset;line-clamp:unset;overflow:visible}
+/* De qué asignatura es el objetivo. Sin color propio: el color de esta tabla ya significa
+   rendimiento, y un segundo eje compitiendo con ese estorba justo lo que se viene a ver. */
+.oa-asig{color:var(--dim);font-size:10px;font-weight:600;letter-spacing:.04em;
+ text-transform:uppercase;margin-right:8px;white-space:nowrap}
+.oa-grupo{margin-bottom:6px}
+.oa-grupo-tit{color:var(--cuerpo);font-size:12px;font-weight:600;letter-spacing:.03em;
+ text-transform:uppercase;padding:8px 0 4px;border-bottom:1px solid var(--linea)}
+.oa-grupo-tit span{color:var(--dim);font-weight:400}
 /* En un computador el objetivo y su medida caben en la MISMA línea, y eso es lo que
    acorta el scroll de verdad: un mapa de 60 objetivos pasa de tres pantallas a una y
    media sin recortar ni un texto. En el teléfono siguen apilados. */
@@ -313,11 +321,15 @@ function aviso(t,color){
   // alumnos) ocurren abajo del todo: sin esto, un error queda FUERA DE PANTALLA justo
   // cuando mas se necesita, y la pantalla parece no responder. Paso de verdad.
   //
-  // ⚠️ Solo si HAY mensaje. `aviso('')` se usa para BORRAR el aviso anterior, y varias
-  // vistas lo llaman justo despues de irArriba(): al desplazarse hacia un mensaje vacio
-  // —que vive al final del panel— deshacia ese irArriba y "Ver avance" abria el mapa por
-  // el pie, con la tendencia y los filtros fuera de pantalla. Se vio MIRANDO la captura.
-  if(t) try{ el.scrollIntoView({block:'center', behavior:'smooth'}); }catch(e){}
+  // ⚠️ Solo si HAY mensaje, y solo si NO es un "estoy trabajando". Dos motivos distintos:
+  //   * `aviso('')` borra el anterior, y varias vistas lo llaman justo después de
+  //     irArriba(): desplazarse hacia un mensaje vacío —que vive al final del panel—
+  //     deshacía ese irArriba y "Ver avance" abría el mapa por el pie.
+  //   * `aviso('Cargando…','var(--dim)')` arranca un scroll SUAVE que sigue animando
+  //     mientras irArriba() ya puso la página en cero, así que el mapa terminaba abierto
+  //     81 px más abajo. Y un "Cargando…" no hay que ir a leerlo: la pantalla ya cambió.
+  // El scrollIntoView existe para que un ERROR no quede fuera de pantalla, no para esto.
+  if(t && color !== 'var(--dim)') try{ el.scrollIntoView({block:'center', behavior:'smooth'}); }catch(e){}
 }
 function esc(t){ return String(t==null?'':t)
   .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
@@ -941,9 +953,17 @@ function filtrosAsignatura(data){
   const hay = new Set(data.map(f => String(f.oa).slice(0,4)));
   const asigs = ASIG_ORDEN.filter(a => hay.has(a));
   if(asigs.length < 2) return '';
+  /* El agrupador solo tiene sentido con varias asignaturas —o sea, para el Profesor Jefe y
+     el SuperUsuario—, así que vive dentro del mismo guard que el filtro. Y son dos cosas
+     distintas: filtrar deja UNA a la vista; agrupar las muestra todas, ordenadas. */
   return `<div class="av-filtros">
     <button class="av-chip on" data-asig="">Todas</button>
     ${asigs.map(a=>`<button class="av-chip" data-asig="${a}">${ASIG_NOMBRE[a]}</button>`).join('')}
+  </div>
+  <div class="av-filtros" id="avAgrupar">
+    <span style="color:var(--dim);font-size:12px;align-self:center;margin-right:2px">Agrupar por</span>
+    <button class="av-chip on" data-agr="">Rendimiento</button>
+    <button class="av-chip" data-agr="1">Asignatura</button>
   </div>`;
 }
 
@@ -1197,6 +1217,18 @@ function conectarFiltros(alCambiar){
   });
 }
 
+// Los chips de agrupación. Aparte de conectarFiltros porque el filtro repinta y este
+// también, pero responden a preguntas distintas: cuál miro / cómo lo ordeno.
+function conectarAgrupar(alCambiar){
+  const caja = document.getElementById('avAgrupar');
+  if(!caja) return;                       // con una sola asignatura no se dibuja
+  caja.querySelectorAll('.av-chip').forEach(chip => chip.onclick = () => {
+    caja.querySelectorAll('.av-chip').forEach(o => o.classList.toggle('on', o === chip));
+    alCambiar(!!chip.dataset.agr);
+    irArriba();
+  });
+}
+
 // Carga perezosa: cada objetivo pide sus alumnos la primera vez que se abre. Con 50
 // objetivos, pedirlos por adelantado serían 50 llamadas para algo que casi nunca se mira
 // entero. Se vuelve a cablear cada vez que el filtro repinta el cuerpo.
@@ -1305,28 +1337,36 @@ async function cargarRankingAsignatura(cursoCodigo, filasDominio){
     (filasDominio||[]).some(f => String(f.oa).slice(0,4) === a
                                  || SB_asigDe(f.oa) === a));
   if(!presentes.length){ cont.innerHTML=''; return; }
-  cont.innerHTML = `<h3 style="color:var(--cyan);font-size:15px;margin:0 0 8px">Ranking por asignatura</h3>
+  /* La pestaña "General" solo aparece con MÁS DE UNA asignatura a la vista, o sea para el
+     Profesor Jefe y el SuperUsuario. A un profe de asignatura sería su propia pestaña
+     repetida con otro nombre, y ya vio ese número. */
+  const hayGeneral = presentes.length > 1;
+  cont.innerHTML = `<h3 style="color:var(--cyan);font-size:15px;margin:0 0 8px">Ranking del curso</h3>
     <p style="color:var(--dim);font-size:12px;margin:0 0 8px">Acierto de primer intento. Necesita al menos 20 respuestas para contar; el resto queda en “aún sin datos suficientes”.</p>
     <div id="rankAsigTabs" class="av-filtros"></div>
     <div id="rankAsigCuerpo"></div>`;
   const tabs=document.getElementById('rankAsigTabs');
-  tabs.innerHTML=presentes.map((a,i)=>
-    `<button class="av-chip${i===0?' on':''}" data-asig="${a}">${ASIG_NOMBRE[a]}</button>`).join('');
+  tabs.innerHTML=(hayGeneral?`<button class="av-chip on" data-asig="">General</button>`:'')
+    + presentes.map((a,i)=>
+    `<button class="av-chip${(!hayGeneral&&i===0)?' on':''}" data-asig="${a}">${ASIG_NOMBRE[a]}</button>`).join('');
   const pintar=async (asig)=>{
     const cuerpo=document.getElementById('rankAsigCuerpo');
     cuerpo.innerHTML='<p style="color:var(--dim);font-size:12px">Cargando…</p>';
     try{
-      const {data,error}=await SB.rpc('kimun_prof_ranking_asignatura',
-        {p_curso_codigo:cursoCodigo, p_asignatura:asig, p_minimo:20});
+      const {data,error} = asig
+        ? await SB.rpc('kimun_prof_ranking_asignatura',
+            {p_curso_codigo:cursoCodigo, p_asignatura:asig, p_minimo:20})
+        : await SB.rpc('kimun_prof_ranking_general',
+            {p_curso_codigo:cursoCodigo, p_minimo:20});
       if(error) throw error;
-      cuerpo.innerHTML=rankingHTML(data||[], asig);
+      cuerpo.innerHTML=rankingHTML(data||[], asig, presentes.length);
     }catch(e){ cuerpo.innerHTML='<p style="color:var(--pink);font-size:12px">'+errorPanel(e)+'</p>'; }
   };
   tabs.querySelectorAll('.av-chip').forEach(ch=>ch.onclick=()=>{
     tabs.querySelectorAll('.av-chip').forEach(o=>o.classList.toggle('on',o===ch));
     pintar(ch.dataset.asig);
   });
-  pintar(presentes[0]);
+  pintar(hayGeneral ? '' : presentes[0]);
 }
 
 // Devuelve la asignatura de un OA en el cliente, para saber qué rankings pedir.
@@ -1337,12 +1377,19 @@ async function cargarRankingAsignatura(cursoCodigo, filasDominio){
    idea —el nivel vive dentro del código— y solo los módulos transversales van a mano. */
 function SB_asigDe(oa){ return NIV.asigDe(oa); }
 
-function rankingHTML(filas, asig){
+// `asig` vacío = el ranking general (todas las asignaturas del profesor). `nAsigs` es
+// cuántas hay a la vista, para poder decir "3 de 4" cuando un alumno no jugó todas.
+function rankingHTML(filas, asig, nAsigs){
   const total = OA_TOTAL[asig] || 0;
   const conDatos = filas.filter(f => f.suficiente);
   const sinDatos = filas.filter(f => !f.suficiente);
   const fila = f => {
-    const cob = total ? ` · ${f.oa_tocados}/${total} objetivos` : '';
+    /* En el general el respaldo NO es la cobertura de objetivos sino EN CUÁNTAS
+       ASIGNATURAS tiene evidencia: un 78% sobre dos materias y un 72% sobre cuatro no son
+       comparables, y sin ese número el ranking invita justo a compararlos. */
+    const cob = asig
+      ? (total ? ` · ${f.oa_tocados}/${total} objetivos` : '')
+      : (f.asignaturas!=null ? ` · ${f.asignaturas} de ${nAsigs} asignaturas` : '');
     return `<div style="display:flex;gap:8px;align-items:center;padding:4px 0;font-size:13px">
       <span>${esc(f.avatar||'🦊')}</span><b>${esc(f.alumno)}</b>
       <span style="margin-left:auto;color:var(--gold)">${f.pct==null?'—':f.pct+'%'}</span>
@@ -1350,8 +1397,13 @@ function rankingHTML(filas, asig){
     </div>`;
   };
   const bloqueConDatos = conDatos.length
-    ? conDatos.map(fila).join('')
-    : '<p style="color:var(--dim);font-size:12px">Nadie llega aún a 20 respuestas en esta asignatura.</p>';
+    ? (asig ? '' : `<p style="color:var(--dim);font-size:12px;margin:0 0 6px">
+         Promedio de sus asignaturas, cada una pesando igual — no el acierto total, que lo
+         decidiría la materia que más se jugó. Una asignatura entra al promedio con 20
+         respuestas o más.</p>`)
+      + conDatos.map(fila).join('')
+    : '<p style="color:var(--dim);font-size:12px">Nadie llega aún a 20 respuestas'
+      + (asig ? ' en esta asignatura.' : ' en ninguna asignatura.') + '</p>';
   const bloqueSin = sinDatos.length
     ? `<details style="margin-top:8px"><summary style="cursor:pointer;color:var(--dim);font-size:12px;list-style:none">Aún sin datos suficientes (${sinDatos.length})</summary>
          <div style="margin-top:6px">${sinDatos.map(fila).join('')}</div></details>`
@@ -1402,12 +1454,18 @@ async function verAvance(cursoCodigo, cursoNombre, gestiono){
     cargarParticipacion(cursoCodigo);
 
     let filtro = '';                                  // '' = todas las asignaturas
+    let agrupar = false;
     const pintarCuerpo = () => {
       const filas = filtro ? data.filter(f => String(f.oa).slice(0,4) === filtro) : data;
-      $('avCuerpo').innerHTML = filas.length ? bloquesAvance(filas) : SIN_DATOS_ASIG;
+      // `multi` mira las filas QUE SE VEN, no el curso: con el filtro puesto hay una sola
+      // asignatura a la vista y la etiqueta sobra.
+      const multi = new Set(filas.map(f => String(f.oa).slice(0,4))).size > 1;
+      $('avCuerpo').innerHTML = filas.length
+        ? bloquesAvance(filas, agrupar && multi, multi) : SIN_DATOS_ASIG;
       conectarFilasOA(cursoCodigo);
     };
     conectarFiltros(a => { filtro = a; pintarCuerpo(); });
+    conectarAgrupar(v => { agrupar = v; pintarCuerpo(); });
     pintarCuerpo();
     cargarRefuerzo(cursoCodigo, data);
     cargarRankingAsignatura(cursoCodigo, data);
@@ -1444,7 +1502,13 @@ async function verAvanceAlumno(perfilId, alumnoNombre){
     let filtro = '';
     const pintarCuerpo = () => {
       const filas = filtro ? data.filter(f => String(f.oa).slice(0,4) === filtro) : data;
-      $('avCuerpo').innerHTML = filas.length ? filas.map(filaAvance).join('') : SIN_DATOS_ASIG;
+      /* ⚠️ NO `filas.map(filaAvance)`: `map` pasa el ÍNDICE como segundo argumento, así que
+         `multi` valdría 0 en la primera fila y 1 en todas las demás — la etiqueta aparecería
+         desde la segunda. La ficha de un alumno mezcla asignaturas y no tiene agrupador, así
+         que aquí la etiqueta va siempre. */
+      const multi = new Set(filas.map(f => String(f.oa).slice(0,4))).size > 1;
+      $('avCuerpo').innerHTML = filas.length
+        ? filas.map(f => filaAvance(f, multi)).join('') : SIN_DATOS_ASIG;
       // Aquí la fila NO se despliega: esta vista es de un solo alumno, así que no hay
       // grupos que mostrar. Sin esto quedaría un desplegable con "Cargando…" para siempre.
       document.querySelectorAll('#avCuerpo .oa-fila').forEach(det => {
@@ -1467,7 +1531,9 @@ async function verAvanceAlumno(perfilId, alumnoNombre){
 // vez que vieron ese contenido. El acumulado con reintentos se muestra aparte, como señal
 // de cuánto costó, porque mezclarlos sesga el número (quien no entiende reintenta, y así
 // pesa más en el promedio del curso).
-function filaAvance(f){
+/* `multi` = hay más de una asignatura a la vista. Solo entonces se dibuja la etiqueta:
+   con el filtro puesto en Historia, poner "Historia" en las treinta filas es ruido. */
+function filaAvance(f, multi){
   const r1 = Number(f.resp_1)||0, o1 = Number(f.ok_1)||0;
   const total = Number(f.respondidas)||0;
   const alumnos = Number(f.alumnos_1 != null ? f.alumnos_1 : f.alumnos)||0;
@@ -1485,10 +1551,14 @@ function filaAvance(f){
   // El detalle se pide al abrir, no al cargar la tabla: con 50 objetivos serían 50
   // llamadas por adelantado para algo que casi nunca se mira entero.
   const idOa = String(f.oa).replace(/[^A-Za-z0-9]/g,'');
+  // La etiqueta va como TEXTO atenuado y no con un color por asignatura: el color de esta
+  // tabla ya significa rendimiento, y un segundo eje de color compitiendo con ese haría
+  // más difícil justo lo que la tabla existe para ver.
+  const asig = multi ? ASIG_NOMBRE[String(f.oa).slice(0,4)] : '';
   return `<details class="oa-fila" data-oa="${esc(f.oa)}" id="oa-${idOa}"
-                   style="padding:8px 0;border-bottom:1px solid #ffffff14">
+                   style="padding:8px 0;border-bottom:1px solid var(--linea)">
     <summary style="cursor:pointer;list-style:none">
-      <div class="oa-texto">${esc(OA_TEXTO[f.oa]||f.oa)}</div>
+      <div class="oa-texto">${asig?`<span class="oa-asig">${esc(asig)}</span>`:''}${esc(OA_TEXTO[f.oa]||f.oa)}</div>
       <div class="oa-medida" style="display:flex;align-items:center;gap:8px">
         <div style="flex:1;height:8px;background:#ffffff14;border-radius:4px;overflow:hidden">
           <div style="width:${pct}%;height:100%;background:${color}"></div>
@@ -1555,17 +1625,35 @@ function detalleApoyo(filas){
 // Separa por base en vez de atenuar. Ordenar de peor a mejor y a la vez atenuar las bases
 // pequeñas se peleaba: la posición decía "mira esto primero" y la opacidad decía "ignora
 // esto", de modo que la primera fila podía ser justo la menos confiable.
-function bloquesAvance(data){
+/* `agrupar` NO reemplaza los tres bloques: los SUBDIVIDE. Con 46 objetivos para reforzar
+   mezclando cuatro asignaturas no se ve de cuál es cada uno, pero cambiar el corte a
+   "una sección por asignatura" perdería la distinción entre lo que hay que reforzar, lo
+   que va bien y lo que todavía no tiene base — que es justo lo que este panel aporta.
+   Así se conservan las dos lecturas: primero qué hacer, después de qué materia. */
+function bloquesAvance(data, agrupar, multi){
   const conBase = data.filter(f => (Number(f.alumnos_1)||0) >= 10);
   const sinBase = data.filter(f => (Number(f.alumnos_1)||0) <  10);
   const pctDe = f => (Number(f.resp_1)||0) ? (Number(f.ok_1)||0)*100/(Number(f.resp_1)||1) : 0;
   const reforzar = conBase.filter(f => pctDe(f) <  70);
   const bien     = conBase.filter(f => pctDe(f) >= 70);
+  // Agrupado: en el orden canónico del curso, y el orden DENTRO de cada asignatura es el
+  // que ya traía el servidor (de peor a mejor), así que no se reordena nada.
+  const porAsignatura = filas => {
+    const g = {};
+    filas.forEach(f => { const a = String(f.oa).slice(0,4); (g[a]=g[a]||[]).push(f); });
+    return ASIG_ORDEN.filter(a => g[a]).map(a => `
+      <div class="oa-grupo">
+        <div class="oa-grupo-tit">${esc(ASIG_NOMBRE[a]||a)} <span>(${g[a].length})</span></div>
+        ${g[a].map(f => filaAvance(f, false)).join('')}
+      </div>`).join('');
+  };
+  const cuerpo = filas => agrupar ? porAsignatura(filas)
+                                  : filas.map(f => filaAvance(f, multi)).join('');
   const seccion = (titulo, filas, plegada) => !filas.length ? '' : `
     <details ${plegada?'':'open'} style="margin-bottom:10px">
       <summary style="color:var(--cyan);font-size:13px;cursor:pointer;padding:6px 0">
         ${titulo} (${filas.length})</summary>
-      ${filas.map(filaAvance).join('')}
+      ${cuerpo(filas)}
     </details>`;
   return seccion('Para reforzar', reforzar, false)
        + seccion('Van bien', bien, false)
