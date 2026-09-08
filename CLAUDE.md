@@ -1157,6 +1157,15 @@ para siempre.
   Extra y el Jefe Final. Pensado para pasarle a un grupo de alumnos un enlace de
   práctica acotado a las unidades que están viendo.
   Ejemplo: `https://vulpo.cl/8vo/?solo=hist-cap2,hist-cap3,hist-cap4`.
+  **Va en DOS NIVELES desde el 07/09** (`renderListaPrueba`), como la pantalla principal
+  del juego: primero las **asignaturas y los libros** —el libro es un grupo propio, no un
+  capítulo colgando de Lenguaje— y dentro de cada una sus capítulos. Antes era una lista
+  plana donde un enlace de varias asignaturas eran veintitantas tarjetas sin agrupar.
+  ⚠️ **Con un solo grupo se entra directo a sus capítulos**, sin el primer nivel: una
+  pantalla con una tarjeta sola es un toque de más, y así los **enlaces ya repartidos** —casi
+  todos de una asignatura, incluidos los ocho de la landing— se ven igual que antes.
+  ⚠️ Y el "← Volver" del segundo nivel **recibe su propio `onclick`**: el del fork lleva a
+  `scr-expediciones`, que es la fuga al juego completo que cerró la Sesión 41.
   Se puede **combinar con `?qa=1`** para revisar contenido acotado (manda QA: marca las
   respuestas, pero se sigue sin guardar). Ids inválidos se ignoran; si no queda ninguno
   válido, cae al juego normal.
@@ -1165,7 +1174,12 @@ para siempre.
 - **`?armar=1` — Armador de enlaces de muestra (solo Admin):** pantalla oculta que lista
   todos los capítulos activos agrupados por asignatura, con casillas, y construye el enlace
   `?solo=…` correspondiente (con `&qa=1` opcional, casilla "Mostrar las respuestas
-  correctas"). Botones Copiar y Probar. El enlace se arma con `location.origin`, así que
+  correctas"). Botones Copiar y Probar. Cada asignatura trae un botón **Todos / Ninguno**
+  que **alterna** —desmarcar una materia entera es tan frecuente como marcarla: el caso
+  típico es *"todo menos Ciencias"*—, y cada grupo vive en su propio `<div class="arm-grupo">`
+  para que ese botón sepa cuáles son sus casillas **sin depender de la posición en el DOM**.
+  ⚠️ Marcar por código **no dispara el evento `change`**, así que el enlace se recalcula a
+  mano; sin eso el armador mostraba el enlace anterior. El enlace se arma con `location.origin`, así que
   abierto desde vulpo.cl genera enlaces de vulpo.cl y en local genera locales. Se llega
   desde `profesor.html` → Administración → "🔗 Armar enlace de muestra": un **selector de nivel**
   (8° → `/8vo/`, 7° → `/7mo/`, 3° → `/3ro/`) + "Abrir armador", visible solo para `YO.es_admin`
@@ -10834,3 +10848,54 @@ igual**, y solo esa línea avisa. El juego sigue navegando en 8°, 3° y 5° tra
   imprimir o exportar para una reunión de departamento; y la más grande, **bajar el registro
   visual** —Titan One, violeta saturado y fondo de cosmos en una herramienta que mira una UTP—,
   que conviene decidir antes de tocar más CSS porque define todo lo demás.
+
+#### Post scriptum de la Sesión 106 — el armador y el modo prueba se ordenan
+
+Roberto mandó dos capturas: el armador con sus 28 casillas sueltas y el modo prueba con
+veintitantas tarjetas en una columna sin agrupar. Pidió **un botón "seleccionar todos" por
+asignatura** y que el modo prueba fuera **escalonado: las asignaturas y el libro afuera, y
+los caminos dentro de cada asignatura**.
+
+**Los dos viven en `assets/js/motor.js`, así que ningún fork se tocó** y los seis cursos lo
+heredan. Es la extracción del motor (Sesión 75) pagándose otra vez: antes eran seis ediciones
+idénticas y seis oportunidades de divergir.
+
+**El armador · Todos / Ninguno por asignatura.** **Alterna** en vez de solo marcar, porque
+desmarcar una materia entera es tan frecuente como marcarla —el caso típico es *"todo menos
+Ciencias"*— y con dos botones por asignatura la lista se llena de controles. Cada asignatura
+pasó a vivir en su propio `<div class="arm-grupo">`: así el botón sabe cuáles son **sus**
+casillas sin depender de la posición en el DOM, que es el patrón de lista paralela que este
+proyecto ya pagó varias veces.
+
+> ⚠️ **Marcar por código NO dispara el evento `change`**, así que el enlace hay que
+> recalcularlo a mano. Sin eso el armador mostraba el enlace anterior mientras las casillas ya
+> decían otra cosa — y el enlace es justo lo que se reparte.
+
+**El modo prueba · dos niveles.** Detalle en la sección de `?solo=`, arriba. Dos decisiones
+que conviene no deshacer:
+
+- **Con un solo grupo se entra directo a sus capítulos.** Una pantalla con una tarjeta sola es
+  un toque de más, y así **los enlaces ya repartidos** —casi todos de una asignatura, incluidos
+  los ocho de la landing— se ven exactamente igual que antes.
+- **El "← Volver" del segundo nivel recibe su propio `onclick`**, porque el del fork lleva a
+  `scr-expediciones`, que en modo prueba es la fuga al juego completo que cerró la Sesión 41.
+
+**Y el título sigue diciendo "Modo prueba" en los dos niveles**, con la asignatura de bajada:
+quien abre un enlace de muestra tiene que saber siempre que está en una muestra, y con un solo
+grupo el segundo nivel es la primera pantalla que ve.
+
+**Verificado jugando con clics** en 3°: el nivel 1 (*Historia 3 capítulos · Ciencias 2 ·
+Lectura Cuentos de Ada*), entrar, volver, y entrar a un capítulo y volver —que cae en **su**
+asignatura, no en el nivel 1—. Más **regresión en los seis cursos**: motor vivo, JUGADOR
+navega, y cada armador dibuja sus grupos con su botón (5 o 6 según el curso). **Cero errores
+de consola y cero fallos de red.**
+
+> **Y el error de método volvió a ser mío y no del producto:** comprobé que el enlace se
+> recalculaba buscando el id crudo (`hist3`) dentro de la URL, y el armador **codifica los ids
+> en el token `?m=`**. Decodificándolo estaban los cinco. Es el mismo tropiezo de la mañana con
+> el doble de Supabase, en el mismo día.
+
+**Lo que se dejó anotado y no hecho** está en `pendiente.md` como **A49**: las cuatro ideas del
+panel que Roberto no eligió, en el orden en que conviene tomarlas. La primera —**bajar el
+registro visual**— conviene decidirla **antes de tocar más CSS del panel**, porque define todo
+lo demás.

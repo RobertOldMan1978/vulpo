@@ -477,10 +477,20 @@ function arrancarArmador(){
  }
  const asigs=[...new Set(activas.map(e=>e.asignatura).concat(EXTRAS.filter(x=>x.disponible()).map(x=>x.asignatura)))]
    .sort((a,b)=>((ORDEN_ASIG.indexOf(a)+1)||99)-((ORDEN_ASIG.indexOf(b)+1)||99));
+ /* Cada asignatura va dentro de su propio contenedor, y no suelta bajo un <h3>. Es lo que
+    permite que su botón "Todos" sepa cuáles son SUS casillas sin depender de la posición
+    en el DOM —el patrón de lista paralela que este proyecto ya pagó varias veces—. */
  asigs.forEach(asig=>{
-  const h=document.createElement('h3');
-  h.textContent=asig; h.style.cssText='color:var(--cyan);font-size:14px;margin:14px 0 6px';
-  cont.appendChild(h);
+  const grupo=document.createElement('div'); grupo.className='arm-grupo';
+  const h=document.createElement('div');
+  h.style.cssText='display:flex;align-items:center;gap:10px;margin:14px 0 6px';
+  h.innerHTML=`<h3 style="color:var(--cyan);font-size:14px;margin:0;flex:1">${asig}</h3>`;
+  const btn=document.createElement('button');
+  btn.type='button';
+  btn.style.cssText='background:none;border:2px solid var(--violet);color:var(--cyan);'
+   +'font-family:inherit;font-weight:900;font-size:12px;padding:5px 12px;border-radius:14px;cursor:pointer';
+  h.appendChild(btn);
+  grupo.appendChild(h);
   activas.filter(e=>e.asignatura===asig).forEach(exp=>{
    const camp=exp.campaña?campañaPorId(exp.campaña):null;
    const i=camp?camp.capitulos.indexOf(exp.id):-1;
@@ -489,17 +499,39 @@ function arrancarArmador(){
    const sc=SENSIBLE.deExpedicion(exp);
    const marcas=sc.map(c=>`<span class="sens-m" style="background:${SENSIBLE.cats[c].color}33" title="${SENSIBLE.cats[c].nombre}">${SENSIBLE.cats[c].icono}</span>`).join('');
    l.innerHTML=`<input type="checkbox" value="${exp.id}"><span>${i>=0?(i+1)+'. ':''}${nombreMapa(exp)}</span>${marcas}`;
-   cont.appendChild(l);
+   grupo.appendChild(l);
   });
   // Los módulos de esta asignatura que no son expediciones (ver EXTRAS).
   EXTRAS.filter(x=>x.asignatura===asig && x.disponible()).forEach(x=>{
    const l=document.createElement('label');
    l.style.cssText='display:flex;gap:8px;align-items:center;font-size:13px;font-weight:700;padding:4px 0';
    l.innerHTML=`<input type="checkbox" value="${x.id}"><span>${x.icono} ${x.nombre}</span>`;
-   cont.appendChild(l);
+   grupo.appendChild(l);
   });
+  // Alterna en vez de solo marcar: con dos botones (marcar/desmarcar) por asignatura la
+  // lista se llena de controles, y desmarcar de a una una asignatura entera es igual de
+  // frecuente que marcarla —el caso típico es "todo menos Ciencias"—.
+  btn.onclick=()=>{
+   const cajas=[...grupo.querySelectorAll('input[type=checkbox]')];
+   const marcar=!cajas.every(c=>c.checked);
+   cajas.forEach(c=>{ c.checked=marcar; });
+   // Marcar por código NO dispara el evento `change`, así que el enlace hay que
+   // recalcularlo a mano: sin esto el armador mostraba el enlace anterior.
+   refrescarTodos(); armarUrl();
+  };
+  cont.appendChild(grupo);
  });
- cont.addEventListener('change',armarUrl);
+ // El rótulo dice qué va a pasar al tocarlo, así que se recalcula con cada cambio —
+ // también cuando se marca una casilla suelta.
+ function refrescarTodos(){
+  cont.querySelectorAll('.arm-grupo').forEach(g=>{
+   const cajas=[...g.querySelectorAll('input[type=checkbox]')];
+   const b=g.querySelector('button');
+   if(b) b.textContent = cajas.length && cajas.every(c=>c.checked) ? 'Ninguno' : 'Todos';
+  });
+ }
+ refrescarTodos();
+ cont.addEventListener('change',()=>{ refrescarTodos(); armarUrl(); });
  $('armarQA').onchange=armarUrl;
  $('armarRev').onchange=armarUrl;
  $('armarCopiar').onclick=()=>{
@@ -765,15 +797,77 @@ function entrarExpedicion(exp){
 /* Lista propia del modo prueba: dibuja EXACTAMENTE los capítulos de ?solo=, vengan de la
    asignatura que vengan. No se reutiliza la pantalla de campaña porque esa es de UNA
    asignatura y, en Matemáticas, delega en renderCampañaMate (donde el filtro no llegaba:
-   ?solo=mate-* abría la campaña entera). Reusa scr-campana para no agregar marcado. */
+   ?solo=mate-* abría la campaña entera). Reusa scr-campana para no agregar marcado.
+
+   Va en DOS NIVELES, como la pantalla principal del juego: primero las asignaturas y los
+   libros, y dentro de cada una sus capítulos. Con la lista plana anterior, un enlace de
+   varias asignaturas era una columna de veintitantas tarjetas donde no se veía dónde
+   terminaba una materia y empezaba la otra. */
+let PRUEBA_GRUPO=null;          // null = nivel 1 (asignaturas); nombre = nivel 2
+
+/* Agrupa lo pedido en ?solo= por asignatura, en el orden del curso (ORDEN_ASIG). Lo que
+   no es asignatura del currículum —Lectura, Vocabulario— queda al final, que es donde va
+   el libro: es un grupo propio del primer nivel, no un capítulo colgando de Lenguaje.
+   `sort` es estable, así que los grupos fuera de ORDEN_ASIG conservan su orden de
+   aparición en vez de barajarse. */
+function gruposPrueba(){
+ const g=[];
+ const buscar=n=>{ let x=g.find(o=>o.nombre===n);
+   if(!x){ x={nombre:n, exps:[], extras:[]}; g.push(x); } return x; };
+ SOLO.forEach(id=>{
+  const e=EXPEDICIONES.find(x=>x.id===id);
+  if(e){ buscar(e.asignatura).exps.push(e); return; }
+  const x=extraPorId(id); if(x) buscar(x.asignatura).extras.push(x);
+ });
+ const orden=(typeof ORDEN_ASIG!=='undefined')?ORDEN_ASIG:[];
+ const pos=n=>{ const i=orden.indexOf(n); return i<0?orden.length:i; };
+ return g.sort((a,b)=>pos(a.nombre)-pos(b.nombre));
+}
+
 function renderListaPrueba(){
- if($('btnCampBack')) $('btnCampBack').style.display='none';   // no hay a dónde volver
- const exps=SOLO.map(id=>EXPEDICIONES.find(e=>e.id===id)).filter(Boolean);
- const extras=SOLO.map(extraPorId).filter(Boolean);
- const asigs=[...new Set(exps.map(e=>e.asignatura).concat(extras.map(x=>x.asignatura)))];
- $('campHead').innerHTML=`<h1 style="font-size:26px">Modo prueba</h1><p>${asigs.join(' · ')}</p>`;
+ const grupos=gruposPrueba();
  const cont=$('campNodos'); cont.innerHTML='';
- exps.forEach(exp=>{
+ const bc=$('btnCampBack');
+ /* Con un solo grupo el primer nivel sería UNA tarjeta y un toque de más, así que se
+    entra directo. Eso además deja los enlaces YA REPARTIDOS —casi todos de una sola
+    asignatura, incluidos los ocho de la landing— viéndose exactamente igual que antes. */
+ const g = grupos.length<2 ? grupos[0]
+         : (PRUEBA_GRUPO ? grupos.find(o=>o.nombre===PRUEBA_GRUPO) : null);
+
+ if(!g){                                        // Nivel 1: asignaturas y libros
+  $('campHead').innerHTML='<h1 style="font-size:26px">Modo prueba</h1><p>Elige por dónde empezar</p>';
+  if(bc) bc.style.display='none';               // es la raíz: no hay a dónde volver
+  grupos.forEach(o=>{
+   const n=o.exps.length+o.extras.length;
+   // Con un solo capítulo se dice su nombre en vez de "1 capítulo", que no informa nada
+   // —el caso típico es un libro, donde el nombre ES lo que hay que leer—.
+   const sub = n===1 ? (o.exps.length?nombreMapa(o.exps[0]):o.extras[0].nombre)
+                     : n+' capítulos';
+   // La insignia lleva CUÁNTOS capítulos trae, no un emoji decorativo: es el mismo
+   // lenguaje visual que en la campaña, donde ese círculo siempre lleva un número.
+   cont.appendChild(nodoCampañaEl(String(n), o.nombre, true, false,
+     ()=>{ PRUEBA_GRUPO=o.nombre; renderListaPrueba(); }, sub,
+     ASIG_PORTADA[o.nombre]||(o.exps[0]&&o.exps[0].portada)||'', ''));
+  });
+  go('scr-campana'); return;
+ }
+
+ /* Nivel 2: los capítulos de esa asignatura, en su orden de campaña. El título sigue
+    siendo "Modo prueba" y la asignatura va de bajada: quien abre un enlace de muestra
+    tiene que saber SIEMPRE que está en una muestra, y con un solo grupo esta es la
+    primera pantalla que ve. */
+ $('campHead').innerHTML=`<h1 style="font-size:26px">Modo prueba</h1><p>${g.nombre}</p>`;
+ if(bc){
+  if(grupos.length<2){ bc.style.display='none'; }
+  else {
+   /* Se le da su propio onclick: el del fork lleva a scr-expediciones, que en modo prueba
+      es la fuga al juego completo que cerró la Sesión 41. Solo se sobrescribe aquí, y esta
+      función únicamente corre con PRUEBA activo. */
+   bc.style.display='block'; bc.textContent='← Volver';
+   bc.onclick=()=>{ SND.tap(); PRUEBA_GRUPO=null; renderListaPrueba(); };
+  }
+ }
+ g.exps.forEach(exp=>{
   const camp=exp.campaña?campañaPorId(exp.campaña):null;
   const i=camp?camp.capitulos.indexOf(exp.id):-1;
   const hecho=expedicionCompleta(exp.id);
@@ -781,7 +875,7 @@ function renderListaPrueba(){
     ()=>entrarExpedicion(exp), hecho?'Completado':'¡Jugar!',
     portadaMapa(exp), portadaFallback(exp)));
  });
- extras.forEach(x=>{
+ g.extras.forEach(x=>{
   cont.appendChild(nodoCampañaEl(x.icono, x.nombre, true, false,
     ()=>x.abrir(), '¡Jugar!', ''));
  });
