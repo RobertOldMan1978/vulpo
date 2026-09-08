@@ -94,6 +94,14 @@ semana y quién no ha entrado nunca. Es una brújula para decidir qué reforzar 
 sirve para calificar**. Está pensado para verse en un **computador**, que es donde lo usa un
 profesor, aunque también funciona en el teléfono.
 
+Y para la **dirección o la UTP** hay una pantalla propia, **el pulso del colegio**: una fila por
+curso con la **cobertura del programa** —cuántos de los objetivos del año ya se trabajaron, y
+cuáles no se han tocado— y la **participación** de la semana, imprimible en una hoja para llevar
+a un consejo. Muestra esas dos cosas y ninguna más: **no lleva porcentaje de acierto por curso ni
+se puede ordenar por columna**, porque una tabla que rankee cursos por rendimiento es un ranking
+de profesores con otro nombre. La cobertura y la participación son hechos; el acierto se mira
+dentro de cada curso.
+
 ## Cómo probarlo
 
 La página de presentación está en **https://vulpo.cl**, y desde ahí se enlaza cada curso:

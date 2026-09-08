@@ -1060,6 +1060,86 @@ declare cid uuid; begin
     order by p.nombre;   -- alfabético a propósito: por fecha sería un ranking de niños
 end $$;
 
+/* El pulso del colegio: una fila por curso, para la vista de dirección/UTP. Responde dos
+   cosas y solo dos: cuánto del PROGRAMA se ha trabajado y quién está entrando.
+
+   ⚠️ LO QUE NO DEVUELVE ES LA MITAD DEL DISEÑO: ni `correctas`, ni `respondidas`, ni
+   ningún porcentaje, ni un solo nombre de alumno. Un tablero que ordene cursos por
+   acierto es un ranking de PROFESORES con otro nombre —el riesgo que este proyecto viene
+   advirtiendo desde la Sesión 24— y una hoja impresa con nombres de menores es el papel
+   que termina en un libro de notas. Aquí la restricción vive en la FIRMA y no en el CSS
+   del cliente: un `oa_trabajados` no se convierte en ranking de rendimiento por mucho
+   que alguien insista después.
+
+   Y por eso tampoco se resuelve desde el cliente con las funciones que ya existen:
+   kimun_prof_participacion devuelve los NOMBRES, así que la pantalla que promete no
+   mostrarlos los estaría descargando igual. Una función que solo sabe contar es
+   estructuralmente incapaz de filtrar lo que no debe. */
+drop function if exists public.kimun_prof_pulso();
+create or replace function public.kimun_prof_pulso()
+returns table(curso_codigo text, curso text, nivel text,
+              inscritos bigint, jugaron_semana bigint,
+              cobertura jsonb, puede_gestionar boolean)
+language plpgsql security definer set search_path=public as $$
+begin
+  -- El portero va aquí y no solo en el botón del panel: la clave publishable es pública
+  -- por diseño, así que cualquiera puede llamar esta función desde una consola.
+  if not public.kimun_prof_admin_colegio() then raise exception 'no_autorizado'; end if;
+  return query
+    /* La cobertura se calcula en una CTE y no como subconsulta dentro del select, y no es
+       estilo: una tabla derivada anidada dentro de una subconsulta escalar no puede ver la
+       correlación con `cursos` sin LATERAL, así que aquella forma se arriesgaba a un
+       "invalid reference to FROM-clause entry". De paso esta hace UNA sola pasada por
+       `dominio` en vez de una por curso. */
+    with cob as (
+      select p.curso_id as cid, substr(d.oa,1,4) as asig, count(distinct d.oa) as n
+        from public.dominio d
+        join public.perfiles p on p.id = d.perfil_id
+        join public.cursos   k on k.id = p.curso_id
+       where k.nivel is not null
+         -- ⚠️ Solo códigos con FORMA CURRICULAR, y NO kimun_oa_asignatura: esa mapea
+         -- VOC-HIST -> HI08 y AF-T% -> LE08, y esos códigos no están en
+         -- historia-8basico/oa.json. Contarlos daría "23 de 22 objetivos" en los 8° con
+         -- filas históricas (Sesión 30). Es el mismo criterio con el que registrarOA
+         -- decide qué se mide, desde la Sesión 72.
+         and d.oa ~ '^[A-Z]{2}[0-9]{2} OA [0-9]{2}$'
+         -- Del nivel DE ESE curso, con substr y no interpolando el nivel dentro de la
+         -- regex: se valida a dos dígitos al escribirlo, pero un valor llegado por otra
+         -- vía convertiría el patrón en uno que cuenta todos los niveles.
+         and substr(d.oa,3,2) = k.nivel
+       group by 1,2
+    ), cobj as (
+      select cid, jsonb_object_agg(asig, n) as j from cob group by cid
+    )
+    select c.codigo, c.nombre, c.nivel,
+           (select count(*) from public.perfiles p where p.curso_id = c.id),
+           -- "Jugaron esta semana" con el MISMO criterio que gruposParticipacion() del
+           -- panel (PART_DIAS = 7): vinculado Y visto dentro de una ventana móvil de 7
+           -- días. El titular de la tarjeta del curso y esta fila tienen que decir el
+           -- mismo número o la herramienta pierde credibilidad en la primera reunión.
+           -- ⚠️ Es un espejo del cliente: al tocar uno, tocar el otro.
+           (select count(*) from public.perfiles p
+             where p.curso_id = c.id
+               and p.visto >= now() - interval '7 days'
+               and exists(select 1 from public.vinculos v where v.perfil_id = p.id)),
+           /* Cobertura DESGLOSADA por asignatura ({"HI03":8,"MA03":12,…}), y no un total:
+              "31 de 86" no dice qué hacer y "Ciencias 0 de 13" sí. El cliente suma las
+              partes para el total, así que las dos cifras no pueden discrepar.
+                null = el curso no tiene nivel (columna nullable a propósito desde la
+                       Sesión 73): sin nivel no hay denominador, y un 0 se leería como
+                       "no han trabajado" cuando lo que falta es un dato de configuración.
+                {}   = nivel conocido y cero actividad. Son cosas distintas. */
+           case when c.nivel is null then null::jsonb else coalesce(cobj.j, '{}'::jsonb) end,
+           -- Para poder abrir "Ver avance" desde la fila con el permiso REAL, en vez de
+           -- asumirlo en el cliente.
+           public.kimun_prof_es_mio(c.id)
+      from public.cursos c
+      left join cobj on cobj.cid = c.id
+     -- Sin filtro de cursos después del portero: Admin y SuperUsuario ya ven todos, que
+     -- es justo de lo que trata esta pantalla.
+     order by coalesce(c.nivel,'99'), c.nombre;
+end $$;
+
 -- Alumnos de un curso mío con su primer intento en UN objetivo, para saber a quiénes
 -- reforzar. Devuelve a TODOS los alumnos inscritos, también a los que no lo jugaron:
 -- "12 no lo han visto" es información, no un vacío. Ordena por nombre a propósito —un
@@ -1856,6 +1936,7 @@ grant execute on function
   public.kimun_prof_dominio_reiniciar(text)
   , public.kimun_prof_dominio_oa(text,text)
   , public.kimun_prof_participacion(text)
+  , public.kimun_prof_pulso()
   , public.kimun_prof_tendencia(text)
   , public.kimun_prof_refuerzo_lanzar(text,text,text[])
   , public.kimun_prof_refuerzo_cerrar(text)

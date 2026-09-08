@@ -123,7 +123,18 @@ code{color:var(--cyan);font-weight:500;font-size:12px;
 .alu{padding:6px 0;border-bottom:1px solid var(--linea)}
 .alu-top{display:flex;align-items:center;gap:6px}
 .alu-sub{font-size:12px;color:var(--dim);margin-top:2px}
-.prof-id{font-weight:500;color:var(--dim);font-size:13px;margin-bottom:2px}
+/* Identidad del profesor. El CORREO se muestra porque es la cuenta con la que entró
+   —hay quien administra más de una— y porque es el dato que se pide cuando algo hay que
+   arreglarle desde el servidor. Antes esta línea enumeraba además todos sus cursos con
+   su rol, que con varios se hacía larguísima y decía lejos lo que ahora dice cada curso. */
+.prof-id{margin:0 0 14px;padding-bottom:12px;border-bottom:1px solid var(--linea)}
+.pid-l1{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pid-nom{font-weight:600;font-size:15px;color:var(--texto);min-width:0;
+ overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pid-rango{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+ color:var(--cyan);border:1px solid var(--linea);border-radius:999px;padding:2px 8px}
+.pid-mail{font-size:12px;color:var(--dim);margin-top:3px;
+ overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 /* Acordeón de cursos y de alumnos */
 .curso{border:1px solid var(--linea);border-radius:10px;margin-bottom:10px;overflow:hidden;
  background:#12172080}
@@ -140,7 +151,75 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
 .cur-jefe{font-size:12px;color:var(--dim);flex-basis:100%;order:5}
 .cur-jefe.sin{color:var(--gold)}
 .cur-part{font-size:12px;color:var(--cyan);flex-basis:100%;order:6}
+/* Mi rol EN ESTE curso. Vivía enumerado en el encabezado del panel, o sea lejos del
+   curso que describe; aquí se lee junto al nombre del curso, que es donde importa. */
+.cur-rol{font-size:12px;color:var(--dim);flex-basis:100%;order:3}
+.cur-rol b{color:var(--texto);font-weight:600}
 .curso-cuerpo{padding:0 10px 10px}
+/* Contraer / expandir todo. Con seis cursos abiertos hay que desplazarse para volver
+   arriba, y cerrarlos de a uno son seis toques. */
+.lista-barra{display:flex;justify-content:flex-end;gap:8px;margin:0 0 8px}
+
+/* El pulso del colegio. Tabla y no tarjetas: se lee en pantalla y se imprime, y una
+   tarjeta por curso ocuparía media hoja cada una.
+   ⚠️ Las cabeceras son TEXTO PLANO, sin botones ni cursor de puntero: que no se pueda
+   ordenar por columna es estructural y no un handler que a alguien se le olvidó. Ordenar
+   por una columna de rendimiento sería un ranking de profesores, y por eso tampoco hay
+   ninguna columna de acierto que ordenar. No convertir esto en una tabla ordenable. */
+.pulso{width:100%;border-collapse:collapse;font-size:13px}
+/* Reparto de columnas: la cobertura lleva el desglose por asignatura y necesita el ancho;
+   sin esto quedaba apretada en dos líneas mientras sobraban 120 px de aire a su derecha.
+   ⚠️ Va dentro de la media query de escritorio: en el teléfono las celdas pasan a bloque, y
+   un 19% ahí dejaba el código del curso partido en dos ("· CUR-" / "3R09") y la
+   participación en cuatro líneas. */
+@media (min-width:760px){
+  .pulso th:nth-child(1),.pulso td:nth-child(1){width:19%}
+  .pulso th:nth-child(2),.pulso td:nth-child(2){width:52%}
+  /* La columna del botón toma solo lo que necesita (width:1% + nowrap): con un porcentaje
+     fijo quedaba tan estrecha que partía "Ver avance" en dos líneas y estiraba la fila. */
+  .pulso td:nth-child(4){width:1%;white-space:nowrap;padding-left:10px}
+}
+.pulso th{text-align:left;font-size:11px;font-weight:600;letter-spacing:.04em;
+ text-transform:uppercase;color:var(--dim);padding:0 10px 6px 0;
+ border-bottom:1px solid var(--linea);white-space:nowrap}
+.pulso td{padding:10px 10px 10px 0;border-bottom:1px solid var(--linea);vertical-align:top}
+.pulso tr:last-child td{border-bottom:0}
+.pul-nom{color:var(--gold);font-weight:600;display:block}
+/* Segunda línea de cada celda: el desglose por asignatura, el "sin empezar" y el código
+   del curso. Atenuada porque acompaña al número, no compite con él. */
+.pul-sub{display:block;color:var(--dim);font-size:12px;margin-top:2px}
+/* Lo que falta configurar o no se pudo leer. En ámbar y NO en rosa: es un dato ausente,
+   no un curso que va mal —y en esta pantalla el color no significa rendimiento. */
+.pul-falta{color:var(--gold)}
+.pul-nota{color:var(--dim);font-size:12px;line-height:1.5;margin:12px 0 0;max-width:70ch}
+.pul-hoja{margin-bottom:12px}
+.pul-hoja b{font-size:15px}
+.solo-print{display:none}
+/* La tabla de 4 columnas no cabe a 375 px —el panel ya desbordó de lado en la Sesión 26—,
+   así que en el teléfono cada celda pasa a bloque y lleva su rótulo delante. */
+@media (max-width:759px){
+  .pulso thead{display:none}
+  .pulso td,.pulso tr{display:block;width:100%}
+  .pulso tr{border-bottom:1px solid var(--linea);padding:8px 0}
+  .pulso tr:last-child{border-bottom:0}
+  .pulso td{border-bottom:0;padding:2px 0}
+  .pulso td[data-rot]:not(:first-child)::before{content:attr(data-rot);display:block;
+    font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);
+    margin-top:6px}
+}
+/* En COMPUTADOR las cuatro metalíneas del curso —rol, alumnos, jefe, participación—
+   caben en una sola: en el teléfono van apiladas porque no hay ancho, pero aquí sobra, y
+   el ancho de este panel se gasta en densidad y no en aire. Cuatro cursos cerrados pasan
+   de ocupar la pantalla entera a la mitad, que es de lo que se trata poder plegarlos. */
+@media (min-width:900px){
+  .cur-nom{flex:0 1 auto;max-width:300px}
+  .cur-rol,.cur-alu,.cur-jefe,.cur-part{flex-basis:auto;min-width:0}
+  /* Un punto entre grupo y grupo: sin él la fila se lee como una frase corrida, y varias
+     de estas metalíneas ya traen puntos adentro ("14 alumnos · 3° básico"). */
+  .cur-rol::before,.cur-alu::before,.cur-jefe::before,.cur-part::before{
+    content:'·';margin-right:8px;color:var(--dim);opacity:.55}
+  .curso>summary>.delcurso{order:9;margin-left:auto}
+}
 .alumnos{margin-top:8px;border-top:1px solid #ffffff14}
 .alumnos>summary{padding:8px 0;color:var(--cyan);font-size:13px;font-weight:500}
 .alumnos-cuerpo{padding-top:4px}
@@ -219,6 +298,33 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
 .equipo-cuerpo label{display:inline-flex;align-items:center;gap:6px}
 .equipo-cuerpo .eq-casillas{display:flex;flex-wrap:wrap;gap:4px 12px}
 .equipo-cuerpo input[type=radio],.equipo-cuerpo input[type=checkbox]{width:auto;margin:0}
+
+/* ===== Impresión =====
+   El panel es OSCURO, y una pantalla oscura impresa tal cual gasta un cartucho y sale
+   ilegible. La palanca es la misma que cambió el registro visual en la Sesión 106: casi
+   todo el color sale de estas variables, así que invertir la paleta a papel son ocho
+   líneas y no perseguir reglas. Regla para el marcado nuevo: usar las variables y nunca
+   un hex literal —los #ffffff22 que el JavaScript escribe inline desaparecen sobre
+   blanco—. Los navegadores no imprimen fondos por omisión, así que nada puede depender
+   de un relleno para leerse. */
+@media print{
+  :root{--fondo:#fff;--panel:#fff;--texto:#000;--cuerpo:#222;--dim:#555;
+        --linea:#bbb;--gold:#000;--cyan:#000;--violet:#000}
+  @page{size:A4 portrait;margin:14mm}
+  body{background:#fff;color:#000;max-width:none;padding:0;font-size:11pt}
+  body>h1,#btnSalir,#btnArriba,#panelMsg,.no-print{display:none}
+  .card{border:0;padding:0;margin:0}
+  /* La cabecera de navegación de las otras vistas sí se imprime (es lo único que dice de
+     qué curso es la hoja), pero pierde su botón de volver y deja de flotar. */
+  .av-head{position:static;border:0;padding:0;margin:0 0 4px}
+  .av-head button{display:none}
+  .solo-print{display:block}
+  /* Si algún día un colegio pasa de una página, que la cabecera se repita y que ninguna
+     fila quede partida en dos hojas. */
+  .pulso thead{display:table-header-group}
+  .pulso tr{break-inside:avoid}
+  .pul-nom{color:#000}
+}
 </style>
 </head>
 <body>
@@ -451,6 +557,19 @@ async function soyProfesor(){
   return (fila && fila.id) ? fila : null;
 }
 
+// Quién entró: nombre, rango y correo. Va en una función porque se pinta en DOS momentos
+// —al abrir el panel y en cada repintado de la lista— y tenerlo escrito dos veces es
+// exactamente como se desincronizan.
+function pintarIdentidad(){
+  const rango = YO.es_admin ? 'Administrador' : (YO.es_super ? 'SuperUsuario' : 'Profesor');
+  const nom = (YO.nombre||'').trim();
+  // Sin nombre, el correo hace de nombre: repetirlo en las dos líneas sería ruido.
+  $('profId').innerHTML =
+    '<div class="pid-l1"><span class="pid-nom">👤 ' + esc(nom || YO.correo) + '</span>'
+    + '<span class="pid-rango">' + esc(rango) + '</span></div>'
+    + (nom ? '<div class="pid-mail">' + esc(YO.correo) + '</div>' : '');
+}
+
 async function cargarPanel(){
   YO = await soyProfesor();
   if(!YO){ throw new Error('no_autorizado'); }
@@ -458,10 +577,56 @@ async function cargarPanel(){
   $('cardPanel').classList.remove('hide');
   const esAdminColegio = !!(YO.es_admin || YO.es_super);
   window.ESADMINCOLEGIO = esAdminColegio;   // usado por pintarLista y el bloque de equipo
-  const rango = YO.es_admin ? 'Administrador' : (YO.es_super ? 'SuperUsuario' : 'Profesor');
-  $('profId').textContent = '👤 ' + (YO.nombre || YO.correo) + ' — ' + rango;
+  pintarIdentidad();
   $('panelTitulo').textContent = esAdminColegio ? 'Todos los cursos' : 'Mis cursos';
   await pintarLista();
+}
+
+// Mi rol en ESTE curso, para el encabezado de su tarjeta.
+// ⚠️ Solo si tengo membresía: a un Admin/Super sin membresía `kimun_prof_asignaturas` le
+// devuelve TODAS las del nivel, así que enumerárselas no diría nada sobre su rol.
+function rolEnCurso(c){
+  if(c.miRol === 'jefe') return '<span class="cur-rol">Tú: <b>Profesor jefe</b></span>';
+  if(c.miRol === 'asignatura' && c.misAsig && c.misAsig.length)
+    return '<span class="cur-rol">Tú: <b>'
+      + esc(c.misAsig.map(a=>ASIG_NOMBRE[a]||a).join(', ')) + '</b></span>';
+  return '';
+}
+
+// Al cerrar un curso se cierra también todo lo de adentro. Sin esto, reabrirlo lo devuelve
+// con la lista de alumnos y el equipo desplegados, que es justo lo que se venía de esconder.
+function plegarDentro(det){ det.querySelectorAll('details').forEach(d=>{ d.open=false; }); }
+
+/* Orden ASCENDENTE de cursos: primero por nivel (3° antes que 8°) y dentro de cada nivel
+   por nombre. El servidor los devuelve ordenados solo por nombre, y con nombres como
+   "8A Prueba" y "5° B" el alfabético no es el orden en que un colegio los piensa. Los
+   cursos sin nivel —creados antes de que esa columna existiera— van al final, porque no
+   hay dónde ponerlos sin adivinarles el nivel a partir del nombre.
+   Vive en una función porque lo usan DOS pantallas (la lista y el pulso del colegio), y
+   dos copias del mismo criterio es como terminan discrepando. Recibe {nombre, nivel}. */
+function ordenCursos(a, b){
+  const na = a.nivel || '99', nb = b.nivel || '99';
+  return na !== nb ? na.localeCompare(nb)
+    : String(a.nombre||'').localeCompare(String(b.nombre||''), 'es',
+        {numeric:true, sensitivity:'base'});
+}
+
+/* Cuántos objetivos tiene el AÑO de un nivel: la suma de sus cuatro asignaturas. Es el
+   denominador de la cobertura, y sale de los oa.json que cargarTextosOA ya lee —el mismo
+   OA_TOTAL con el que el ranking dice "13/17 objetivos"—, no de una tabla en el servidor.
+   Cada mitad se cuenta donde vive su dato: el total en el repositorio, lo trabajado en la
+   base. Un espejo del total en SQL fallaría en silencio el día que un banco gane un OA.
+   Devuelve 0 si falta cualquiera de las cuatro, y entonces la fila dice "no disponible"
+   en vez de un denominador parcial, que se leería como un curso más adelantado de lo que va. */
+function totalOaNivel(nivel){
+  const asigs = NIV.deNivel(nivel);
+  if(!asigs.length) return 0;
+  let suma = 0;
+  for(const a of asigs){
+    if(!OA_TOTAL[a]) return 0;
+    suma += OA_TOTAL[a];
+  }
+  return suma;
 }
 
 async function pintarLista(){
@@ -475,9 +640,7 @@ async function pintarLista(){
   const admAbierto = !!(document.getElementById('admBloque')||{}).open;
   $('panelTitulo').classList.remove('hide');   // las vistas de avance lo ocultan
   $('profId').classList.remove('hide');
-  // Base del encabezado (sin cursos): se re-fija en cada render para no acumular.
-  const rango = YO.es_admin ? 'Administrador' : (YO.es_super ? 'SuperUsuario' : 'Profesor');
-  $('profId').textContent = '👤 ' + (YO.nombre || YO.correo) + ' — ' + rango;
+  pintarIdentidad();   // se re-fija en cada render para no acumular
   const {data,error}=await SB.rpc('kimun_prof_listar');
   if(error) throw error;
   const porCurso={};
@@ -488,23 +651,23 @@ async function pintarLista(){
     if(f.pid) porCurso[f.curso_codigo].alumnos.push(f);   // pid: id de perfil (siempre presente); codigo_acceso puede venir null para un profe de asignatura
   });
   const cursos=Object.entries(porCurso);
-  // Cursos en el encabezado: Admin/Super → "Todos los cursos"; Profesor → sus cursos con su rol.
-  if(window.ESADMINCOLEGIO){
-    $('profId').textContent += ' · Todos los cursos';
-  }else{
-    const trozos = cursos.map(([cod,c])=>{
-      const rol = c.miRol==='jefe' ? 'Jefe'
-        : (c.misAsig&&c.misAsig.length ? c.misAsig.map(a=>ASIG_NOMBRE[a]||a).join(', ') : '—');
-      return c.nombre+' ('+rol+')';
-    });
-    if(trozos.length) $('profId').textContent += ' · ' + trozos.join(' · ');
-  }
-  $('lista').innerHTML = (cursos.length ? cursos.map(([cod,c])=>`
+  cursos.sort((a,b)=>ordenCursos(a[1], b[1]));   // por nivel y nombre; ver ordenCursos
+  /* La barra se arma por partes: "Contraer todo" solo tiene sentido con más de un curso,
+     pero el pulso del colegio se ve igual con uno. Antes la barra entera dependía del
+     conteo, así que un colegio de un solo curso se quedaba sin el botón nuevo. */
+  const botones =
+      (window.ESADMINCOLEGIO
+        ? `<button class="btn-chip principal" type="button" id="btnPulso">🏫 El pulso del colegio</button>` : '')
+    + (cursos.length > 1
+        ? `<button class="btn-chip" type="button" id="btnPlegar">Contraer todo</button>` : '');
+  const barra = botones ? `<div class="lista-barra">${botones}</div>` : '';
+  $('lista').innerHTML = barra + (cursos.length ? cursos.map(([cod,c])=>`
     <details class="curso" data-cod="${esc(cod)}">
       <summary>
         <span class="cur-chevron" aria-hidden="true">▸</span>
         <b class="cur-nom" style="color:var(--gold)">${esc(c.nombre)}</b>
         <code>${esc(cod)}</code>
+        ${rolEnCurso(c)}
         <span class="cur-alu">${c.alumnos.length} alumno${c.alumnos.length===1?'':'s'}${
           c.nivel?' · '+esc(NIVEL_NOMBRE(c.nivel)):''}</span>
         <span class="cur-jefe" data-cod="${esc(cod)}"></span>
@@ -600,6 +763,29 @@ async function pintarLista(){
     if(aluAbiertos.has(cod)){ const a=d.querySelector('details.alumnos'); if(a) a.open=true; }
   });
   const adm=document.getElementById('admBloque'); if(adm && admAbierto) adm.open=true;
+  /* Contraer / expandir todo. Un solo botón que ALTERNA, como el Todos/Ninguno del
+     armador: dos botones para lo mismo llenan la barra de controles. Se conecta después
+     de restaurar el estado, así el rótulo nace diciendo la verdad. */
+  const btnPulso = document.getElementById('btnPulso');
+  if(btnPulso) btnPulso.onclick = () => verPulso();
+  const btnPlegar = document.getElementById('btnPlegar');
+  const refrescarPlegar = () => {
+    if(btnPlegar) btnPlegar.textContent =
+      document.querySelector('details.curso[open]') ? 'Contraer todo' : 'Expandir todo';
+  };
+  document.querySelectorAll('details.curso').forEach(d => d.addEventListener('toggle', () => {
+    if(!d.open) plegarDentro(d);
+    refrescarPlegar();
+  }));
+  if(btnPlegar) btnPlegar.onclick = () => {
+    const abrir = !document.querySelector('details.curso[open]');
+    document.querySelectorAll('details.curso').forEach(d => {
+      d.open = abrir;
+      if(!abrir) plegarDentro(d);
+    });
+    refrescarPlegar();
+  };
+  refrescarPlegar();
   // El equipo del curso se pide la primera vez que se abre su desplegable (carga perezosa).
   document.querySelectorAll('details.inscripcion').forEach(det => det.addEventListener('toggle', () => {
     if(det.open && !det.dataset.cargado){ det.dataset.cargado='1'; cargarInscripcion(det.dataset.cod, det.dataset.nivel); }
@@ -965,6 +1151,138 @@ function filtrosAsignatura(data){
     <button class="av-chip on" data-agr="">Rendimiento</button>
     <button class="av-chip" data-agr="1">Asignatura</button>
   </div>`;
+}
+
+/* ===== El pulso del colegio (vista de dirección / UTP) =====
+   La única pantalla del panel que mira TODOS los cursos a la vez. Existe porque hasta
+   ahora un SuperUsuario —la UTP o la dirección— veía lo mismo que un profesor y tenía que
+   entrar curso por curso, así que no había forma de responder "¿dónde va el programa?" ni
+   de llevarse nada a un consejo.
+
+   ⚠️ Muestra COBERTURA y PARTICIPACIÓN, y ningún porcentaje de acierto. No es una omisión
+   por falta de tiempo: un tablero que ordene cursos por rendimiento es un ranking de
+   profesores con otro nombre, y este proyecto lo tiene advertido desde la Sesión 24. La
+   cobertura es cuánto se ha trabajado del programa y la participación es quién está
+   entrando: los dos son HECHOS. El acierto es juicio, y se mira dentro de cada curso.
+   La restricción vive además en la firma de kimun_prof_pulso, que no devuelve ni
+   porcentajes ni nombres. */
+
+const PULSO_NOTA =
+  'Un objetivo cuenta como <b>trabajado</b> cuando algún alumno del curso lo jugó, no todos. '+
+  '<b>Aquí no va el porcentaje de acierto:</b> esta hoja dice cuánto se ha avanzado del '+
+  'programa y quiénes están entrando, que son hechos. El acierto se mira dentro de cada '+
+  'curso, objetivo por objetivo, y no sirve para calificar: lo reporta el teléfono del alumno.';
+
+// "7 de septiembre de 2026". La hoja impresa se lee semanas después, así que sin fecha
+// se confunde con una foto de hoy.
+function fechaLarga(d){
+  const M = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto',
+             'septiembre','octubre','noviembre','diciembre'];
+  return d.getDate() + ' de ' + M[d.getMonth()] + ' de ' + d.getFullYear();
+}
+
+// Una fila = un curso. El desglose por asignatura va en la segunda línea porque es lo que
+// vuelve accionable el número: "43 de 93" no dice qué hacer y "Ciencias 0/14" sí.
+function filaPulso(f){
+  const nivel = f.nivel ? NIVEL_NOMBRE(f.nivel) : '';
+  const ident = `<b class="pul-nom">${esc(f.curso)}</b>`
+    + `<span class="pul-sub">${nivel ? esc(nivel)+' · ' : ''}<code>${esc(f.curso_codigo)}</code></span>`;
+
+  let cob;
+  if(!f.inscritos){
+    /* Sin alumnos no hay nada que medir, y un "0 de 99 · 99 sin empezar" sería cierto y
+       aun así se leería como reproche a un curso que todavía no existe de verdad. La
+       explicación va en la celda de al lado, que dice que no hay alumnos inscritos. */
+    cob = `<span class="pul-falta">—</span>`;
+  }else if(f.cobertura == null){
+    // Sin nivel no hay denominador. Se dice qué falta y dónde se arregla, en vez de un
+    // cero que se leería como "este curso no ha trabajado".
+    cob = `<span class="pul-falta">Sin nivel asignado</span>`
+        + `<span class="pul-sub">Fíjaselo en «Equipo del curso» para ver su cobertura</span>`;
+  }else{
+    const asigs  = NIV.deNivel(f.nivel);
+    const por    = f.cobertura || {};
+    const total  = totalOaNivel(f.nivel);
+    if(!total){
+      // Un oa.json que no cargó. Mejor decirlo que mostrar un denominador parcial, que
+      // haría ver al curso más adelantado de lo que va.
+      cob = `<span class="pul-falta">Cobertura no disponible</span>`
+          + `<span class="pul-sub">No se pudo leer el temario de este nivel</span>`;
+    }else{
+      // Se acota por si un banco pierde un OA que algún alumno alcanzó a jugar: un
+      // "94 de 93" desacreditaría la hoja entera.
+      const hechos  = Math.min(asigs.reduce((s,a)=>s+(por[a]||0), 0), total);
+      const detalle = asigs.map(a =>
+        `${esc(NIV.ASIGS[a.slice(0,2)].nombre)} ${por[a]||0}/${OA_TOTAL[a]||0}`).join(' · ');
+      cob = `<b>${hechos} de ${total}</b> objetivos trabajados`
+          + `<span class="pul-sub">${total-hechos} sin empezar · ${detalle}</span>`;
+    }
+  }
+
+  const part = f.inscritos > 0
+    ? `<b>${f.jugaron_semana} de ${f.inscritos}</b> jugaron esta semana`
+    : `<span class="pul-falta">Sin alumnos inscritos</span>`;
+
+  return `<tr>
+    <td data-rot="Curso">${ident}</td>
+    <td data-rot="Cobertura del programa">${cob}</td>
+    <td data-rot="Participación">${part}</td>
+    <td class="no-print"><button class="btn-chip pul-ver" data-cod="${esc(f.curso_codigo)}"
+      data-nom="${esc(f.curso)}" data-gestiono="${f.puede_gestionar?'1':''}">Ver avance</button></td>
+  </tr>`;
+}
+
+async function verPulso(){
+  aviso('Cargando…','var(--dim)');
+  try{
+    const {data,error} = await SB.rpc('kimun_prof_pulso');
+    if(error) throw error;
+    // Mismo orden que la lista de cursos, por la misma función: dos criterios distintos
+    // para lo mismo es como terminan discrepando.
+    const filas = (data||[]).slice().sort((a,b) =>
+      ordenCursos({nombre:a.curso, nivel:a.nivel}, {nombre:b.curso, nivel:b.nivel}));
+    /* Los oa.json de las CUATRO asignaturas de cada nivel presente, no solo de las que ya
+       tienen actividad: si no, la asignatura que nadie ha jugado se queda sin denominador
+       y desaparece justo del desglose donde más importa verla en cero. */
+    await cargarTextosOA([...new Set(
+      filas.filter(f=>f.nivel).flatMap(f=>NIV.deNivel(f.nivel)))]);
+
+    const hoy = new Date();
+    $('lista').innerHTML = cabeceraAvance('El pulso del colegio',
+        filas.length + (filas.length===1 ? ' curso' : ' cursos'))
+      /* Encabezado del PAPEL, oculto en pantalla. El colegio no existe como entidad en el
+         modelo y no se inventa aquí; la hoja se titula con lo que el sistema sí sabe. */
+      + `<div class="solo-print pul-hoja">
+           <b>El pulso del colegio</b>
+           <div>VULPO · ${filas.length} curso${filas.length===1?'':'s'} · impreso el ${esc(fechaLarga(hoy))}</div>
+           <div>${esc(YO.nombre || YO.correo)}</div>
+           <div>«Esta semana» son los 7 días anteriores a la impresión.</div>
+         </div>`
+      + (filas.length ? `<table class="pulso">
+          <thead><tr><th>Curso</th><th>Cobertura del programa</th><th>Participación</th>
+            <th class="no-print"></th></tr></thead>
+          <tbody>${filas.map(f=>filaPulso(f)).join('')}</tbody>
+        </table>`
+        : `<p style="color:var(--dim);font-size:13px">Todavía no hay cursos creados.</p>`)
+      + `<p class="pul-nota">${PULSO_NOTA}</p>`
+      + `<div class="btn-fila no-print">
+           <button class="btn sec" id="btnImprimirPulso">🖨️ Imprimir</button>
+           <button class="btn txt" id="btnVolverPanel">← Volver</button>
+         </div>`;
+
+    /* En el papel esta cabecera sobra: .solo-print ya trae el título, y en la primera
+       prueba salió dos veces. Se marca aquí y no en el CSS porque `.av-head` lo comparten
+       las otras vistas, donde SÍ tiene que imprimirse: es lo único que dice de qué curso
+       es la hoja. */
+    document.querySelector('.av-head').classList.add('no-print');
+    $('btnVolverCab').onclick   = volverAlPanel;
+    $('btnVolverPanel').onclick = volverAlPanel;
+    $('btnImprimirPulso').onclick = () => window.print();
+    // El permiso lo manda el SERVIDOR (puede_gestionar), no se asume en el cliente.
+    document.querySelectorAll('.pul-ver').forEach(b => b.onclick = () =>
+      verAvance(b.dataset.cod, b.dataset.nom, !!b.dataset.gestiono));
+    irArriba(); aviso('');
+  }catch(e){ aviso(errorPanel(e)); }
 }
 
 // Reparte a los alumnos del curso en cuatro grupos por su última entrada. La ventana es

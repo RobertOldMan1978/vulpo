@@ -501,8 +501,11 @@ página, `ev.ir(url)` navega, `ev.espera(ms)`, `ev.movil(w,h)` emula un teléfon
 **`ev.escritorio(w,h)`** un computador —hace falta para `profesor.html`, la única pantalla del
 proyecto pensada para un adulto en un notebook, y `mobile:false` importa: con `true` no entran
 sus media queries de escritorio—, `ev.foto(ruta)` captura la pantalla, **`ev.medios(features)`**
-emula una preferencia del sistema, y `ev.consola` / `ev.fallos` traen los errores y las
-peticiones caídas. **Ganó su lugar en la primera corrida:**
+emula una preferencia del sistema, **`ev.impresion()`** muestra la página como la vería la
+impresora —`ev.medios` solo manda `features` y no puede cambiar el TIPO de medio, así que sin
+esto una hoja impresa no se puede mirar, que es la única forma de comprobar lo único que una hoja
+promete: que quepa, que se lea en blanco y que no salgan los botones—, y `ev.consola` /
+`ev.fallos` traen los errores y las peticiones caídas. **Ganó su lugar en la primera corrida:**
 delató que un cambio mío rompía todo el JavaScript de 3° (`NS` duplicado), exactamente el fallo
 silencioso que ya había costado dos sesiones.
 
@@ -1835,6 +1838,59 @@ de 22 filas a 8) y cada objetivo cabe **en una línea**, con el texto a la izqui
 la derecha, así que un mapa de 60 objetivos pasa de tres pantallas a una y media sin recortar
 ningún texto. Bajo 900 px todo vuelve a apilarse: el panel sigue siendo mobile-first.
 
+### El pulso del colegio (Sesión 107)
+
+La pantalla de **dirección y UTP**, y la única del panel que mira todos los cursos a la vez. Se
+llega con **🏫 El pulso del colegio**, arriba de la lista, y **solo la ve un Admin o un
+SuperUsuario**. Nació de medir un hueco: hasta ahora ese rol veía exactamente lo mismo que un
+profesor —solo que con más cursos— y tenía que entrar uno por uno, así que no había forma de
+responder *"¿dónde va el programa?"* ni de llevarse nada a un consejo. La comparación entre
+cursos estaba declarada fuera de alcance desde la Sesión 19 y nadie había vuelto sobre eso.
+
+Una fila por curso, con **dos cosas y solo dos**: la **cobertura del programa** —cuántos de los
+objetivos del año tienen actividad, desglosada por asignatura— y la **participación** de la
+semana. Ordenada por nivel y nombre, y **imprimible en una hoja**.
+
+> **La cobertura es el número diferenciador, y conviene saber por qué.** Kahoot y Quizizz —los
+> que el propio MINEDUC nombra al lado de VULPO— miden actividad. VULPO sabe, objetivo por
+> objetivo, cuántos de los del año ya se trabajaron, porque **cada etapa del juego es un OA**.
+> Eso es el trabajo de una UTP, que hoy lo persigue con planillas.
+>
+> **Y el denominador es honesto, medido antes de confiar en él:** VULPO tiene contenido para
+> todos los OA del año salvo uno de Lenguaje de 3°, así que *"31 de 86"* significa de verdad
+> "faltan 55 por tocar" y no "VULPO no los tiene". Sin esa comprobación la pantalla sería una
+> trampa: una UTP leería atraso donde habría un vacío de producto.
+
+> ⚠️ **NO muestra el porcentaje de acierto por curso, y esa es la decisión de fondo, no una
+> limitación.** Un tablero que ordene cursos por rendimiento **es un ranking de profesores con
+> otro nombre** —el riesgo que este archivo advierte desde la Sesión 24— y encima impreso.
+> **Cobertura y participación son HECHOS** (cuánto se ha trabajado, quién está entrando); el
+> acierto es juicio, y se sigue mirando dentro de cada curso. De ahí las tres ausencias
+> deliberadas, que no hay que "completar" después:
+>
+> - Ningún porcentaje de acierto por curso.
+> - **Ningún orden por columna:** las cabeceras son texto plano, sin botones. Poder ordenar es lo
+>   que convierte una tabla en un ranking.
+> - **Ningún nombre de alumno**, ni en pantalla ni en el papel.
+>
+> Tampoco hay barra de progreso: **una barra rellena es un ranking dibujado como geometría** —el
+> ojo ordena las filas aunque la tabla no lo haga— y además depende de imprimir fondos, que viene
+> apagado por omisión.
+
+**Los casos de borde se dicen, no se rellenan con ceros:** un curso **sin alumnos** muestra `—` y
+no un *"0 de 99 · 99 sin empezar"* que se leería como reproche; uno **sin nivel** dice *"Sin nivel
+asignado"* con dónde arreglarlo, porque sin nivel no hay denominador; y si un `oa.json` no carga,
+esa fila dice **"cobertura no disponible"** en vez de un denominador parcial, que haría ver al
+curso más adelantado de lo que va. Un curso donde **nadie ha jugado** sí muestra su 0: es la
+verdad y es accionable.
+
+**La impresión** (`@media print`, el primero del proyecto) invierte la paleta a papel con las
+mismas variables CSS que cambiaron el registro en la Sesión 106, oculta los botones y la
+navegación, y agrega un encabezado propio con la **fecha**. ⚠️ **No existe la entidad "Colegio"**
+en el modelo, así que la hoja **no lleva su nombre** y se titula con lo que el sistema sí sabe;
+inventarlo desde el dominio del correo se descartó porque quedaría escrito en un documento que
+circula.
+
 Diseño y plan: `docs/superpowers/specs/2026-08-18-mapa-dominio-oa-design.md` y
 `docs/superpowers/plans/2026-08-18-mapa-dominio-oa.md`. El cambio al primer intento:
 `docs/superpowers/specs/2026-08-18-primer-intento-design.md` y
@@ -2031,6 +2087,26 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
   alumno. Una asignatura entra al promedio con `minimo` respuestas o más, y por eso se devuelve
   **`asignaturas`**: un 78% sobre dos materias y un 72% sobre cuatro no son comparables, y el
   panel tiene que poder decirlo.
+- **El pulso del colegio (Sesión 107):** `kimun_prof_pulso()`, una fila por curso para la vista
+  de dirección/UTP: `inscritos`, `jugaron_semana` y `cobertura` —un `jsonb` con los objetivos
+  DISTINTOS con actividad, desglosados por asignatura—. Portero `kimun_prof_admin_colegio()`:
+  solo Admin y SuperUsuario, y va en el SQL además de esconder el botón.
+  ⚠️ **Lo que NO devuelve es la mitad del diseño:** ni `correctas`, ni `respondidas`, ni ningún
+  porcentaje, ni un solo nombre de alumno. La restricción vive en la **firma** y no en el CSS del
+  cliente, así que no se puede deshacer desde el panel. Y por eso tampoco se resuelve llamando a
+  las funciones que ya existen: **`kimun_prof_participacion` devuelve los NOMBRES**, así que la
+  pantalla que promete no mostrarlos los estaría descargando igual.
+  ⚠️ **La cobertura cuenta solo códigos con forma curricular** (`^[A-Z]{2}[0-9]{2} OA [0-9]{2}$`)
+  y **no usa `kimun_oa_asignatura`**: esa mapea `VOC-HIST`→`HI08` y `AF-T*`→`LE08`, y esos
+  códigos **no están en el `oa.json`** de su asignatura, así que contarlos daría *"23 de 22
+  objetivos"* en los 8° con filas históricas. Es el mismo criterio con que `registrarOA` decide
+  qué se mide.
+  ⚠️ **El total del año NO vive en la base**, sino en los `oa.json` del repositorio: el servidor
+  cuenta lo trabajado y el cliente cruza con `OA_TOTAL`. Cada mitad se cuenta donde vive su dato;
+  un espejo del total en SQL fallaría en silencio el día que un banco gane un OA.
+  ⚠️ `jugaron_semana` **es un espejo de `gruposParticipacion()`** del panel (vinculado **y**
+  `visto` dentro de 7 días móviles): el titular de la tarjeta del curso y la fila del pulso tienen
+  que decir el mismo número. Al tocar uno, tocar el otro.
 - **Tendencia del curso (Sesión 106):** `kimun_prof_tendencia(curso)`, la primera función que
   lee `dominio_semanal` y `xp_semanal`. Devuelve **acumulados por semana** —las últimas 8
   fotos más una fila `en_curso` armada con el `dominio` en vivo, porque la semana que corre
@@ -11058,3 +11134,126 @@ sintaxis OK, **cero errores de consola y cero fallos de red**.
 - **Pendiente de Roberto:** **re-aplicar `supabase/schema.sql`**, que trae
   `kimun_prof_ranking_general`. Hasta entonces la pestaña General dice que no se pudo cargar; las
   cuatro por asignatura y el mapa funcionan igual.
+
+> **Cerrado el mismo día: el esquema quedó aplicado.** `kimun_prof_ranking_general` responde
+> **400 `no_autorizado`** a una sesión anónima —existe y su portero funciona— mientras una
+> función inventada da **404 `PGRST202`**. Se comprobó además que el re-pegado **no se llevó lo
+> anterior**: `kimun_prof_tendencia` y `kimun_prof_ranking_asignatura` siguen respondiendo, y
+> `kimun_oa_asignatura('MA06 OA 01')` sigue dando `MA06`. **Lo que no se puede comprobar sin
+> credenciales sigue siendo que devuelva DATOS**: eso se ve abriendo el panel.
+
+### Sesión 107 (2026-09-07 y 08) — El director estrena panel: el pulso del colegio
+Dos encargos de Roberto sobre `profesor.html`. **No se tocó el juego ni el contenido**: ni un
+banco, ni una pregunta, ni un clip de voz.
+
+#### Primero, quién entra y a qué cursos
+
+*"Cuando el profe entre a su módulo debe ver su nombre, su correo y sus cursos en orden
+ascendente, y que se pueda colapsar la info de cada curso completa."* Las tres cosas:
+
+- **Nombre, rango y correo.** El encabezado era una línea que además **enumeraba todos los cursos
+  con su rol** —larguísima con varios, y describiendo cursos que estaban 300 px más abajo—. El rol
+  se mudó a la tarjeta de cada curso (*"Tú: Profesor jefe"*), que es donde se lee junto a lo que
+  describe. ⚠️ A un Admin **sin membresía** no se le muestra: ahí `kimun_prof_asignaturas` le
+  devuelve todas las del nivel y enumerárselas no diría nada sobre su rol.
+- **Orden ascendente por nivel y luego nombre.** El servidor ordena solo por `c.nombre`, así que
+  *"8A Prueba"* caía antes que *"Quinto B"*. Los cursos sin nivel van al final.
+- **Contraer / Expandir todo**, un botón que alterna —el patrón del Todos/Ninguno del armador—, y
+  **al cerrar un curso se cierra todo lo de adentro**: sin eso, reabrirlo lo devolvía con la lista
+  de alumnos y el equipo desplegados, que es justo lo que se venía de esconder.
+
+> ⚠️ **Y un defecto propio que solo se vio MIRANDO:** el chip de rol dejaba cada tarjeta cerrada
+> en **cinco líneas apiladas**, o sea que pedían ver mejor y yo engordaba cada curso. En
+> computador las cuatro metalíneas pasaron a **una sola fila** —el ancho de este panel se gasta en
+> densidad— y cuatro cursos cerrados bajaron de llenar la pantalla a media. El conteo decía "sin
+> desborde, cero errores" en las dos versiones.
+
+Casos de borde probados: profesor **sin nombre** (el correo hace de nombre y no se repite abajo) y
+**un solo curso** (sin barra de plegar).
+
+#### Después, la mejora ejecutiva: el pulso del colegio
+
+Roberto pidió *"alguna mejora ejecutiva para el módulo de maestros… algo que haga la diferencia,
+que les guste a los profesores y al director"*, y que se investigara con varios agentes. Tres
+midieron el panel, el esquema y lo comercial, y **el hallazgo ordenó todo lo demás: el director no
+tiene panel.** Un SuperUsuario ve lo mismo que un profesor con más cursos y entra uno por uno; la
+comparación entre cursos estaba fuera de alcance desde la Sesión 19. En la reunión de venta, la
+respuesta a *"¿y yo qué veo?"* era floja.
+
+La pantalla y sus decisiones están arriba, en "El pulso del colegio". Lo que conviene registrar
+aquí es **por qué se eligió cobertura y no rendimiento**, que es la parte que se puede deshacer
+sin querer: un tablero que ordene cursos por acierto es un ranking de profesores con otro nombre,
+y por eso la restricción vive en la **firma de `kimun_prof_pulso`** —que no devuelve porcentajes
+ni nombres— y no en el CSS del cliente.
+
+> **Y por eso tampoco se resolvió desde el cliente con lo que ya existía**, que era lo barato:
+> `kimun_prof_participacion` **devuelve los NOMBRES de los alumnos**, así que la pantalla que
+> promete no mostrarlos los estaría descargando igual. Una función que solo sabe contar es
+> **estructuralmente incapaz** de filtrar lo que no debe.
+
+#### Cuatro defectos, y los cuatro se vieron mirando
+
+Con el conteo diciendo "sin desborde, cero errores" en todos: el **título salía dos veces** en la
+hoja impresa (la cabecera de navegación más el encabezado del papel); las **columnas mal
+repartidas** dejaban 120 px de aire mientras la cobertura se apretaba en dos líneas; al arreglar
+eso, **el botón se partió en dos líneas** ("Ver / avance") y estiró cada fila; y en el teléfono
+los anchos en porcentaje seguían aplicando con las celdas ya en bloque, así que **partían el
+código del curso** en dos (*"· CUR-" / "3R09"*) y la participación en cuatro. Novena vez que este
+proyecto tropieza con lo mismo.
+
+#### Dos veces el fallo estaba en la PRUEBA, no en el producto
+
+- El botón de imprimir daba `inline-block` en modo impresión y parecía no ocultarse.
+  **`getComputedStyle` de un hijo de un elemento con `display:none` devuelve el display del
+  hijo**, no `none`: había que medir su caja (`getBoundingClientRect().height`), que da 0.
+- El control negativo del rol dijo *"SE VE (mal)"*. No era el panel: yo parcheaba `createClient`
+  en vivo y **`ev.ir()` recarga la página**, que se lleva por delante el override. Se rehízo
+  generando una variante del doble con `es_admin:false`, y ahí el botón no se dibuja.
+
+Y una tercera del **doble**: la coherencia de participación entre la lista y el pulso acusaba una
+discrepancia (15/22 contra 14/18) porque el `kimun_prof_participacion` simulado **ignoraba el
+curso** y devolvía siempre los mismos 22 alumnos. Arreglado el doble, los dos dicen 14 de 18.
+
+> **Esa comprobación de coherencia vale la pena mantenerla**, y no es cosmética: la participación
+> del pulso es un **espejo** de `gruposParticipacion()` escrito en SQL. Si los dos números
+> discrepan, la herramienta pierde credibilidad en la primera reunión.
+
+#### Un riesgo de SQL que se atajó sin poder probarlo
+
+La primera versión calculaba la cobertura con una **tabla derivada anidada dentro de una
+subconsulta escalar** que referenciaba `cursos` desde dos niveles arriba. PostgreSQL puede
+rechazar esa correlación sin `LATERAL` (*"invalid reference to FROM-clause entry"*), y aquí no hay
+forma de ejecutar SQL: se reescribió con una **CTE**, que además hace **una sola pasada por
+`dominio`** en vez de una por curso. De paso se evitó la trampa de la Sesión 73 —una variable de
+salida que se llama igual que una columna—: todas las referencias van calificadas.
+
+#### Verificación
+
+Con el doble de Supabase y `cdp.mjs`, **mirando las capturas y no solo contando**:
+
+- Seis cursos en orden por nivel, con su cobertura, su desglose por asignatura y su participación.
+- **Las dos restricciones duras como asertos:** el texto de la vista **no contiene `%`** y **no
+  contiene ninguno** de los 22 nombres del doble. Cero controles ordenables en las cabeceras.
+- **8° dice "62 de 80", no 65**: se sembró `VOC-HIST` en la cobertura del doble a propósito y el
+  cliente no lo suma, porque solo recorre las cuatro asignaturas del nivel.
+- Los cuatro casos de borde, y la **coherencia** de participación entre la lista y el pulso.
+- **Control negativo del rol con su control positivo al lado**: un profesor sin rango no ve el
+  botón ni Administración, **pero sigue viendo sus cursos, sus botones de avance y el de plegar**
+  —sin esa segunda mitad, un panel roto para todos se vería igual que el permiso funcionando—.
+- **Degradación**: con la función SQL ausente la vista lo dice y el panel queda intacto.
+- **La hoja impresa, con `ev.impresion()`**: un solo título, fecha, seis cursos en una página,
+  fondo blanco, sin botones. Y la **tinta medida**, no mirada a ojo: todo negro o gris a 7,46:1
+  sobre blanco (lo que parecía color en la captura era artefacto de compresión).
+- Sin regresión en "Ver avance", la vista por alumno ni Administración. A 1.440 y 375 px sin
+  desborde, **cero errores de consola y cero fallos de red**.
+
+**Esquema aplicado y comprobado el 08/09**, y el **cambio de estado es lo que lo prueba**:
+`kimun_prof_pulso` pasó de **404 `PGRST202`** a **400 `no_autorizado`**, o sea que existe **y** su
+portero rechaza; el control negativo sigue en pie (una función inventada da 404), así que el 400
+no es un eco. ⚠️ **Lo que no se puede comprobar sin credenciales sigue siendo que devuelva
+DATOS**: eso se ve abriendo el panel.
+
+- **Pendiente de arrastre:** **A49** deja de tener su punto (c) —llevarse algo a una reunión— pero
+  siguen abiertas la franja de *"qué necesita tu atención"* al entrar y la participación como
+  titular de la tarjeta. Fuera del código: las notificaciones del expediente INAPI, la facturación
+  electrónica y la cuenta corriente de la SpA.

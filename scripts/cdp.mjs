@@ -100,6 +100,12 @@ export async function conducir(url, pasos, { puerto = 9333, mostrar = false } = 
   // (para saltarse la intro en video), asi que TODO lo que se anime esta apagado por defecto y no se
   // puede verificar sin apagar antes esa emulacion. Con [] se vuelve a lo que el navegador traiga.
   ev.medios = (features = []) => enviar('Emulation.setEmulatedMedia', { features });
+  // Ver la pagina como la veria la IMPRESORA. `ev.medios` solo manda `features`, asi que no
+  // puede cambiar el TIPO de medio, y sin esto una hoja impresa no se puede mirar --que es
+  // la unica forma de comprobar lo que una hoja promete: que quepa, que se lea en blanco y
+  // que no salgan los botones. Con false se vuelve a la pantalla.
+  ev.impresion = (on = true) =>
+    enviar('Emulation.setEmulatedMedia', on ? { media: 'print' } : {});
   ev.consola = consola;
   ev.fallos = fallos;      // peticiones con 4xx/5xx o que no cargaron
 
