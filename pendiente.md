@@ -68,10 +68,10 @@ Es una app web mobile-first y se reutiliza. Ver `docs/roadmap-tecnico.md` §1.
   IDOR, inyección SQL, XSS almacenado, secretos, cadena de suministro—; todo resistió. Detalle
   fuera del repo (`Escritorio\VULPO - correos profesores\`). Dos hallazgos menores, los dos ya
   conocidos: el código ALU- sin rate limit (informativo, no urgente) y la validación de longitud
-  de nombre/avatar (H2, bajo). ⚠️ **Pendiente de Roberto: re-pegar `supabase/schema.sql`** con el
-  parche de H2 —acota nombre a 40 y avatar a 24, truncando en vez de rechazar; `create or replace`
-  sin cambio de firma, se re-pega cuando toque el esquema por otra cosa—. No hay riesgo activo: es
-  defensa en profundidad.
+  de nombre/avatar (H2, bajo). ✅ **H2 aplicado y verificado el 08/09**: `kimun_perfil` y
+  `kimun_inscribirse` truncan nombre a 40 y avatar a 24 —comprobado contra producción con datos
+  reales, que un nombre de 200 vuelve en 40 y el flujo normal queda intacto—. Con eso la única
+  acción de código de la auditoría queda cerrada.
 - **Paridad de funcionalidad entre los seis forks: completa donde corresponde.** Los seis
   comparten el motor entero (`assets/js/`) y los seis tienen fork. Lo que difiere es **contenido,
   no código**, y va como bandera. Medido el 07/09 — **233 lecciones**, que son las mismas que

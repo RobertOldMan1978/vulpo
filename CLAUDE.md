@@ -11938,12 +11938,22 @@ estructuralmente imposible; tope de 64 KB presente.
   - **El tope se midió, no se inventó:** el avatar guardado es siempre un emoji (`skinImg` mapea
     por él), el más largo entre todas las skins son ~4 unidades, así que 24 no corta ni una familia
     con ZWJ. Nombre a 40, avatar a 24.
-  - **Sin cambio de firma** → `create or replace` puro, sin `drop` ni ventana de despliegue: se
-    re-pega cuando toque el esquema por cualquier otra cosa. ⚠️ **Pendiente de Roberto: re-pegar
-    `supabase/schema.sql`**; hasta entonces la función vieja sigue sin acotar (no hay riesgo activo,
-    es defensa en profundidad).
+  - **Sin cambio de firma** → `create or replace` puro, sin `drop` ni ventana de despliegue.
+    ✅ **Aplicado y verificado el mismo día (08/09).** Y esta vez la verificación fue **de datos, no
+    de existencia** —porque `kimun_perfil` es del juego y se llama desde una sesión anónima—: un
+    nombre de 200 y un avatar de 100 caracteres vuelven **truncados a 40 y 24** (antes del parche
+    volvían enteros), un nombre normal queda intacto y enviar puros espacios ya no pisa el nombre.
+    ⚠️ **Se aplicó a la SEGUNDA, y la causa vale registrarla:** el primer pegado no traía el parche
+    porque era el **buffer viejo del editor sin recargar** —el mismo síntoma que Roberto ya había
+    reportado ("no veo el schema actualizado en este PC")—, y se detectó porque el `after` seguía
+    dando 200/100 cuando el archivo en disco y el commit `ee1a9f2a` sí lo tenían. La salida fue
+    extraer las dos funciones a un `.sql` chico (fuera del repo) para pegar sin depender de recargar
+    2.472 líneas. Registro en [`docs/aplicar-schema.md`](docs/aplicar-schema.md).
 
 > **Y la lección de método del proyecto se cumplió de nuevo:** un control contra producción vale
 > **solo con su contrario al lado** —`400 no_autorizado` (existe y su portero funciona) frente a
 > `404 PGRST202` (no existe)—, porque un error universal se ve igual que el portero funcionando. Es
-> la misma disciplina de la Sesión 73 y del `kimun_prof_resumen` de la 109.
+> la misma disciplina de la Sesión 73 y del `kimun_prof_resumen` de la 109. **Y el "después" del
+> parche H2 dio la vuelta de tuerca: cuando la función es del juego y no del panel, se puede medir
+> el DATO (trunca a 40) y no solo la existencia** — un control más fuerte que el de las funciones
+> del panel, que sin sesión de profesor solo llegan a `no_autorizado`.
