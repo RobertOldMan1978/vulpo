@@ -23,6 +23,11 @@ if(!window.NIV) window.NIV={ASIGS:{},NIVELES:[],TRANSVERSALES:{},ETIQUETA_8:{},
  carpeta:function(){return null;}, deNivel:function(){return[];},
  asigDe:function(o){return String(o||"").slice(0,4)||null;}};</script>
 <script src="assets/vendor/supabase-js-2.112.4.min.js"></script>
+<!-- QR de los enlaces de inscripción (compartido con el juego). Respaldo: un 404 deja el panel
+     sin QR pero sin tumbarlo. -->
+<script src="assets/vendor/qrcode-generator-1.4.4.min.js"></script>
+<script src="assets/js/qr.js"></script>
+<script>if(!window.QR)window.QR={pintar:function(){},grande:function(){}};</script>
 <style>
 /* Paleta del panel (Sesión 106). Los mismos SEIS nombres que el juego, con otros valores:
    casi todo el color de esta pantalla sale de estas variables —incluidos los estilos que el
@@ -1128,7 +1133,9 @@ async function cargarInscripcion(cursoCodigo, nivel){
            <label class="campo">Nivel al que lleva el enlace
              <select class="ins-nivel">${opciones}</select></label>
            <input class="ins-url" readonly>
-           <button class="btn ins-copiar">Copiar enlace</button>`
+           <button class="btn ins-copiar">Copiar enlace</button>
+           <div class="ins-qr" style="display:flex;justify-content:center;margin-top:12px"></div>
+           <button class="btn sec ins-qr-grande" type="button" style="margin-top:8px">📱 Mostrar QR grande</button>`
         :`<p style="color:var(--dim);font-size:12px;margin:6px 0">Este curso todavía no tiene enlace.</p>`)
   + `<details style="margin-top:8px">
        <summary style="cursor:pointer;color:var(--cyan);font-size:13px;font-weight:500;list-style:none">${
@@ -1149,7 +1156,15 @@ async function cargarInscripcion(cursoCodigo, nivel){
   // El enlace tiene que llevar al nivel del curso. Si el curso lo declara, se preselecciona
   // solo: mandarle a un 3o el enlace de /8vo/ es el error facil de esta pantalla.
   if(sel && nivel){ const n=NIVELES_MUESTRA.find(x=>x.nivel===nivel); if(n) sel.value=n.ruta; }
-  function pintarUrl(){ if(url&&sel&&fila) url.value=location.origin+sel.value+'?inscribir='+fila.token; }
+  function pintarUrl(){
+    if(url&&sel&&fila){
+      url.value=location.origin+sel.value+'?inscribir='+fila.token;
+      // QR del enlace de inscripción (assets/js/qr.js). Respaldo vacío: inocuo si no cargó.
+      if(window.QR) QR.pintar(caja.querySelector('.ins-qr'), url.value);
+      const g=caja.querySelector('.ins-qr-grande');
+      if(g) g.onclick=()=>QR.grande(url.value);
+    }
+  }
   pintarUrl();
   if(sel) sel.onchange=pintarUrl;
   const cop=caja.querySelector('.ins-copiar');

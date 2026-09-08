@@ -651,6 +651,18 @@ tienda y permite probar notificaciones antes de enfrentar iOS. Detalle en
 
 ---
 
+## Diseñado y en cola (spec listo, sin implementar)
+
+- **El semáforo de planificación en el juego del alumno** (Sesión 113). Con el orden libre, el niño
+  ve todo desbloqueado y no sabe qué toca esta semana; el profesor ya declara las fechas de cada
+  unidad (Sesión 108) y esto lleva ese dato al juego: **📖 en clases / 🕒 no empieza / 📚 terminada**
+  en la campaña, un resumen en el menú de asignaturas, **solo en el juego del niño**, sin volver a
+  bloquear. Backend nuevo `kimun_mi_plan()` (sin exponer el registro de justificaciones, que es de
+  UTP). **Spec aprobado**, plan por escribir cuando se implemente:
+  [`docs/superpowers/specs/2026-09-08-unidad-en-curso-alumno-design.md`](docs/superpowers/specs/2026-09-08-unidad-en-curso-alumno-design.md).
+
+---
+
 ## Trámites, fuera del código
 
 - 🟡 **Marca VULPO en INAPI — SOLICITUD PRESENTADA Y PAGADA (07/09/2026), en trámite.**

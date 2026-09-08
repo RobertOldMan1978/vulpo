@@ -55,6 +55,9 @@
   renderCampana:function(){return false;},nodoIntro:function(){return false;},nodoLecciones:function(){return false;},diagrama:function(){}};</script>
 <script src="assets/js/instalar.js"></script>
 <script>if(!window.INST)window.INST={activo:false,init:function(){},abrir:function(){}};</script>   <!-- respaldo: un 404 de visuales.js no puede matar el juego -->
+<script src="assets/vendor/qrcode-generator-1.4.4.min.js"></script>
+<script src="assets/js/qr.js"></script>
+<script>if(!window.QR)window.QR={pintar:function(){},grande:function(){}};</script>
 <!-- El motor del juego, compartido por los tres cursos. ⚠️ Va ANTES del <script> inline
      (sus funciones se izan) y NO lleva respaldo vacío: sin él no hay juego. Lo vigila la
      canaria del final del archivo. -->
@@ -865,6 +868,8 @@ body.es-maestro .badge-img{filter:drop-shadow(0 0 10px #ffc93ccc) drop-shadow(0 
       <button class="btn sec" id="armarProbar">▶ Probar</button>
       <p id="armarMsg" style="text-align:center;font-weight:800;font-size:12px;margin-top:8px;color:var(--dim)"></p>
       <p id="armarResumen" style="text-align:center;font-weight:800;font-size:12px;margin-top:6px;color:var(--cyan)"></p>
+      <div id="armarQR" style="display:flex;justify-content:center;margin-top:14px"></div>
+      <button class="btn sec" id="armarQRgrande" style="margin-top:8px">📱 Mostrar QR grande</button>
     </div>
     <div class="card" style="margin-top:14px">
       <p style="font-weight:900;font-size:13px;margin:0 0 6px">¿Qué contiene un enlace?</p>

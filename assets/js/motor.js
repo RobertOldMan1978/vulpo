@@ -461,6 +461,11 @@ function armarUrl(){
      +(rev?' · REVISIÓN de profesor (3 por etapa)':'')
      +(scat?' · incluye: '+scat:'')
    : '';
+ // QR del enlace (assets/js/qr.js): se repinta cada vez que cambia. Con respaldo vacío, esto
+ // es inocuo si el módulo no cargó.
+ if(window.QR) QR.pintar($('armarQR'), url);
+ const bqr=$('armarQRgrande');
+ if(bqr){ bqr.disabled=!url; bqr.onclick=()=>{ if(SND&&SND.tap)SND.tap(); QR.grande(url); }; }
  return url;
 }
 function arrancarArmador(){

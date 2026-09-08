@@ -372,13 +372,16 @@ supuesto cuando pide "no modificar `contenido/` ni `supabase/`".
 1. **Un cambio de una capa no toca las otras.** Agregar preguntas es `contenido/`; cambiar una
    regla del juego es motor; ninguno de los dos toca `supabase/`. Cuando un trabajo obliga a
    tocar tres capas a la vez, casi siempre está mal planteado.
-2. **Lo que se comparte entre cursos va a `assets/js/`, no se copia.** Hoy son **diez** módulos:
+2. **Lo que se comparte entre cursos va a `assets/js/`, no se copia.** Hoy son **once** módulos:
    `revision.js`, `sensible.js`, `calculo.js`, y desde el 31/08 **`visuales.js`** (los 11
    dibujos), **`voz.js`** (la lectura en voz alta), **`niveles.js`** (el catálogo de niveles,
    que solo carga el panel), **`instalar.js`** (el ofrecimiento de agregar el juego a la
    pantalla del teléfono) y **`motor.js`** (el juego entero: quiz, campañas, jefes, duelo,
    tienda, guardado); desde el 02/09, **`fracciones.js`** (las fracciones apiladas) y
-   **`lecciones.js`** (el motor de mini-clases e introducciones, con sus 27 diagramas interactivos). **Siempre con su respaldo vacío antes de usarse**, porque un 404 de
+   **`lecciones.js`** (el motor de mini-clases e introducciones, con sus 27 diagramas interactivos);
+   desde el 08/09, **`qr.js`** (el QR de los enlaces de muestra e inscripción, con Vulpi al medio —
+   lo cargan el juego y `profesor.html`, sobre `assets/vendor/qrcode-generator-1.4.4.min.js`).
+   **Siempre con su respaldo vacío antes de usarse**, porque un 404 de
    un `<script src>` mata todo el JavaScript y el síntoma engaña: la pantalla se ve bien y ningún
    botón responde. Cada uno se prueba **con el archivo ausente**, no solo presente.
    - ⚠️ **`motor.js` es la excepción: NO admite respaldo vacío, porque es el juego.** Lo que sí
@@ -12036,3 +12039,51 @@ nuevas y no depende de ellas; rehacer las de la raíz es un trabajo aparte. **�
 Verificado mirando cada pantalla: el botón del modo prueba bien ubicado en los 6 cursos, el de
 `/colegio` integrado, las capturas nuevas dentro de la landing, `motor.js` por `node --check`, y cero
 errores de consola.
+
+### Sesión 113 (2026-09-08) — El QR de los enlaces, y el semáforo de planificación queda diseñado
+Dos ideas de producto de Roberto en la misma sesión. Una se implementó entera; la otra quedó con su
+diseño cerrado, en cola. Specs/planes en `docs/superpowers/{specs,plans}/2026-09-08-qr-de-enlaces*`
+y `docs/superpowers/specs/2026-09-08-unidad-en-curso-alumno-design.md`.
+
+**El QR de los enlaces (implementado).** Idea de Roberto para las exposiciones: *"al crear una muestra
+en mi celular, generar un QR que lo lleve de inmediato a esa prueba"*. En vez de dictar una URL larga,
+muestra el QR y cada asistente lo escanea y entra a su propio teléfono. Decisiones suyas al
+brainstormear: va en **los dos enlaces** —la **muestra** (armador `?armar=1`) y la **inscripción**
+(`profesor.html`)—, con **Vulpi al medio** y un botón **"Mostrar grande"** a pantalla completa.
+
+- **Módulo compartido `assets/js/qr.js`** (el onceavo), que cargan el juego (los 6 forks) y el panel,
+  con respaldo vacío. Dibuja el QR como **SVG** —escala sin pixelarse en "grande"— a partir de la
+  matriz de `qrcode-generator` (MIT, sin deps), con el logo de Vulpi centrado. La librería se
+  **auto-hospeda** en `assets/vendor/`, como supabase-js: cero CDN en runtime (la regla de la
+  auditoría, Sesión 111).
+- ⚠️ **Vulpi al medio obliga a corrección de errores ALTA ('H')** y el logo no pasa de ~22% del lado,
+  o el QR deja de escanear. **La verificación es ESCANEARLO con el logo puesto**, no mirar que se
+  dibujó: se decodificó con **jsQR** (descargado local para el test) y dio la **URL exacta** en los
+  dos casos —`?m=…` en el armador y `?inscribir=…` en el panel—, con el logo al 22%. Un QR con logo
+  mal calibrado se dibuja bien y no funciona.
+- ⚠️ **Un cuidado de rasterizado que cambió el método de prueba:** un SVG cargado en un `<img>` NO
+  carga sus recursos externos (el `<image href>` del logo), así que rasterizarlo así decodificaría el
+  QR **sin** logo —un falso OK—. Se decodifica regenerando la matriz con la misma librería y
+  dibujándola en un `<canvas>` con el logo, donde sí carga. En la página real el SVG es inline en el
+  DOM y el logo se ve; el problema es solo del test.
+- Verificado: los dos QR decodifican su URL con logo; el overlay "Mostrar grande" con Vulpi centrado;
+  **degradación** (sin `qr.js` el armador y el panel siguen, solo sin QR, único fallo el 404);
+  **regresión** en los 6 cursos (motor vivo, JUGADOR navega); y las 3 líneas de `<script>` + el
+  `#armarQR` **idénticos en los 6 forks** (mismo hash). Un solo push: todo lleva respaldo, sin
+  dependencia dura de orden.
+  > **Errores de método propios, los del conductor:** `ev()` evalúa una **EXPRESIÓN**, así que
+  > `foo.click(); true` (dos statements) da `SyntaxError` — se usa el operador coma `(foo.click(),1)`;
+  > y **jsQR no carga de cdnjs en el Chrome headless** (sin acceso a esa CDN), así que se descarga
+  > local y se sirve desde el server de prueba, como ya se hizo con la propia librería de QR.
+
+**El semáforo de planificación en el juego del alumno (diseñado, en cola).** Nace de la tensión del
+orden libre (Sesión 101): el alumno ve todo desbloqueado y **no sabe qué toca jugar esta semana**. El
+profesor ya declara las fechas de cada unidad (Sesión 108) y el panel distingue los tres estados
+(Sesión 110); ese dato **no llega al juego**. Decisiones de Roberto: el **semáforo completo** (📖 en
+clases / 🕒 no empieza / 📚 terminada) en la campaña, un **resumen en el menú de asignaturas**, **solo
+en el juego del niño** (el informe del apoderado queda para después), y **sin volver a bloquear** —
+solo destaca—. Backend nuevo: **`kimun_mi_plan()`**, que le da al alumno las fechas de su curso **sin
+el registro de justificaciones** (material de UTP, la línea roja de la Sesión 108). Spec escrito y
+**aprobado**; su plan se escribe cuando se implemente. ⚠️ **Un spec aprobado y sin implementar es un
+estado ORDENADO** —una tarea en cola bien definida—, no un frente a medias: por eso se cerró su diseño
+antes de pasar al QR, en vez de dejar dos brainstormings a medio validar.
