@@ -10899,3 +10899,18 @@ de consola y cero fallos de red.**
 panel que Roberto no eligió, en el orden en que conviene tomarlas. La primera —**bajar el
 registro visual**— conviene decidirla **antes de tocar más CSS del panel**, porque define todo
 lo demás.
+
+> **Cerrado el mismo día: el esquema quedó aplicado.** Roberto lo pegó y se comprobó contra
+> producción **con su control negativo**, que es lo que hace que la comprobación signifique
+> algo: `kimun_prof_tendencia` responde **400 `no_autorizado`** a una sesión anónima —o sea
+> que **existe** y su portero funciona— mientras una función inventada da **404 `PGRST202`**.
+> Sin ese segundo llamado, un error universal se vería idéntico a la función aplicada. Y
+> `kimun_oa_asignatura('MA06 OA 01')` sigue devolviendo `MA06`, así que el re-pegado no rompió
+> nada de lo anterior.
+>
+> ⚠️ **Lo que NO se puede comprobar desde aquí es que devuelva DATOS**: eso exige una sesión de
+> profesor. Se ve abriendo el panel y entrando a "📊 Ver avance" de un curso.
+>
+> De paso quedó dicho en `docs/aplicar-schema.md` que su registro **tiene un hueco entre el
+> 01/09 y el 07/09** —las altas de 4°, 5° y 6° se aplicaron pero nadie las anotó—. Se deja
+> escrito en vez de inventarles fecha: la comprobación vale, el recuerdo no.
