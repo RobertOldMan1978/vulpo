@@ -1974,6 +1974,34 @@ de mirar el avance de 8° le aplicaría las fechas de 8° — el cruce de identi
 pagó con la participación. `fijarPlan()` es **el único lugar** que escribe las dos, porque tienen
 que moverse juntas y las llenan dos caminos distintos.
 
+### El semáforo de planificación en el juego del alumno (Sesión 114)
+
+Lo que el panel sabe —qué unidad está pasando el curso esta semana— por fin **llega al juego del
+niño**. Nace de la tensión del orden libre (Sesión 101): con todo desbloqueado, el alumno no sabe
+qué toca. El profesor ya declara las fechas de cada unidad (Sesión 108) y aquí eso se pinta como un
+**semáforo sobre los capítulos de la campaña** y un **renglón en el menú de asignaturas**
+("📖 Están viendo: X", solo la asignatura que tiene una unidad en clases).
+
+- **Tres estados por capítulo, con color** (del juego, no del panel): 📖 **en clases → dorado** con
+  resplandor (lo accionable), 📚 **terminada → verde**, 🕒 **futura → cyan**. ⚠️ El rojo se descartó:
+  con todo desbloqueado se leería como "bloqueado", que es falso. El estado de un capítulo es el
+  **MÁS ACTIVO** entre las unidades de sus OAs (clases > futura > terminada), igual que el panel.
+- **Solo en los capítulos**, no en el Desafío Extra ni el Jefe Final (no son unidades del plan;
+  siguen con su candado). Y **no vuelve a bloquear nada** — solo destaca.
+- **Todo en `assets/js/motor.js`, cero ediciones a los seis forks** (extiende `renderCampaña` y
+  `renderExpediciones`, que ya viven ahí). Lee **`kimun_mi_plan()`** (ver Backend) y la cruza con un
+  mapa **`assets/plan/oa-unidad.json`** (`{"HI05 OA 01":"U1"}`, 531 OA, generado por
+  `scripts/generar-oa-unidad.py` desde los 24 bancos curriculares — los transversales no entran).
+- **Carga perezosa y best-effort**, la regla de la Sesión 110: la disparan `renderCampaña`/
+  `renderExpediciones`, y **si el curso no tiene plan, o falla, la pantalla queda EXACTAMENTE como
+  hoy** —ni una marca, ni un `fetch` al mapa: el JSON se descarga *solo si* hay plan—. No hay
+  semáforo en modo prueba/QA/armador (`EFIMERO`/`SIN_DISCO`).
+- El informe del apoderado ("📊 Cómo va") **no se toca**: el semáforo es del niño (decisión de
+  Roberto, spec).
+
+Diseño y plan: `docs/superpowers/specs/2026-09-08-unidad-en-curso-alumno-design.md` y
+`docs/superpowers/plans/2026-09-08-unidad-en-curso-alumno.md`.
+
 ### El informe de cierre de unidad y de fin de año (Sesión 109)
 
 La pantalla que usa las fotos, y la que completa la respuesta a la pregunta con la que Roberto
@@ -2384,6 +2412,15 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
   una columna algún día haría fallar el re-pegado del archivo entero.
   ⚠️ **Caso de borde conocido:** las fotos no guardan el curso, así que un alumno que cambia
   de curso se lleva su historia al nuevo. Agregarle la columna obligaría a migrar la tabla.
+- **El semáforo del alumno (Sesión 114):** `kimun_mi_plan()`, la contraparte de alumno de la
+  planificación. Devuelve la planificación de SU curso —asignatura, unidad, título, inicio y
+  término— resolviendo el curso con `kimun_yo()`, sin parámetros, modelada sobre `kimun_mi_curso`.
+  El juego la cruza con `assets/plan/oa-unidad.json` para pintar el semáforo 📖/📚/🕒 en la campaña
+  (ver "El semáforo de planificación en el juego del alumno" más abajo).
+  ⚠️ **NO devuelve `nota`, `profesor_id` ni nada del log**: el registro de quién movió qué fecha es
+  material de UTP (Sesión 108), y la restricción vive en **la FIRMA**, no en el cliente, así que no
+  se puede deshacer desde el juego. Es del alumno (sesión anónima), así que va a `anon` y **no lleva
+  portero de rol**: un anon sin curso recibe `[]` (el join no da filas), no `no_autorizado`.
 - **Pendiente:** notificaciones push.
 
 ## Trámites pendientes (fuera del código)
@@ -12087,3 +12124,67 @@ el registro de justificaciones** (material de UTP, la línea roja de la Sesión 
 **aprobado**; su plan se escribe cuando se implemente. ⚠️ **Un spec aprobado y sin implementar es un
 estado ORDENADO** —una tarea en cola bien definida—, no un frente a medias: por eso se cerró su diseño
 antes de pasar al QR, en vez de dejar dos brainstormings a medio validar.
+
+### Sesión 114 (2026-09-08) — El semáforo de planificación llega al juego del alumno
+Se implementó lo que la Sesión 113 dejó diseñado: el niño (y su papá desde el mismo teléfono) ve **qué
+unidad está pasando su curso esta semana**, leyendo la planificación que el profesor ya declara. Se
+ejecutó con **subagentes** (uno por tarea, revisión entre tareas), plan en
+`docs/superpowers/plans/2026-09-08-unidad-en-curso-alumno.md`. **Cero ediciones a los seis forks:** todo
+vive en `assets/js/motor.js`, una función de lectura nueva, un generador y un JSON.
+
+**Lo construido:**
+- **`kimun_mi_plan()`** (backend): le devuelve al alumno la planificación de SU curso —asignatura,
+  unidad, título y las dos fechas— resolviendo el curso con `kimun_yo()`, sin parámetros, modelada
+  sobre `kimun_mi_curso`. ⚠️ **NO expone `nota`, `profesor_id` ni el log**: el registro de quién movió
+  qué fecha es material de UTP (línea roja de la Sesión 108), y la restricción vive en **la FIRMA**, no
+  en el cliente, así que no se puede deshacer desde el juego. Es del alumno (sesión anónima), así que va
+  a `anon` y **no tiene portero de rol** —a diferencia de las `kimun_prof_*`, un anon sin curso recibe
+  `[]`, no `no_autorizado`—.
+- **`scripts/generar-oa-unidad.py` + `assets/plan/oa-unidad.json`** (531 OA, 10 KB): el mapa
+  `{"HI05 OA 01":"U1"}` cruzando `unidades[].oa` de los 24 bancos curriculares. Los transversales
+  (`VOC-*`, `AF-*`) NO entran: su código no lleva el nivel y nunca aparecen en `unidades_plan`. Un OA
+  multi-unidad va a la **primera**, igual que el mapa de dominio del panel. El generador **aborta si no
+  ve 24 bancos** (el guard que ya mordió al tablero dos veces por dialecto de `oa.json`).
+- **motor.js**: estado (`PLAN_ESTADO` null/`'sin-plan'`/objeto), **carga perezosa** (`cargarPlan()`, la
+  disparan `renderCampaña`/`renderExpediciones`, y al terminar repintan la pantalla activa), `estadoDeFechas`
+  (igual que el panel, fechas como texto = cronológico, inclusivo), `estadoCapitulo` (el **MÁS ACTIVO**
+  entre las unidades de sus OAs: clases > futura > terminada), el semáforo en la campaña y el renglón
+  "📖 Están viendo: X" en el menú, con su CSS autoinyectado.
+
+**Best-effort, y es el caso más importante:** si el plan no carga, el curso no tiene fechas, o falla la
+red, la pantalla queda **EXACTAMENTE como hoy** —ni una marca, ni un `fetch` a `oa-unidad.json`— (la
+regla del panel, Sesión 110: una feature que le cambia la pantalla a quien no la usa, estorba). El mapa
+**solo se descarga si el curso tiene plan**. No hay semáforo en modo prueba/QA/armador (`EFIMERO`/`SIN_DISCO`).
+⚠️ `motor.js` es la única pieza sin respaldo vacío (es el juego), así que el semáforo hereda esa condición:
+sus guardas evitan cualquier error, pero no hay un no-op de reemplazo — por eso todo son declaraciones de
+función y nada en el top-level las llama (sin riesgo de zona muerta temporal).
+
+**El color, decisión de Roberto al ver la primera imagen.** El diseño original daba acento dorado solo a
+"en clases" y dejaba los otros dos en gris suave. Pero **con `ORDEN_LIBRE` todo nace desbloqueado**, así
+que sin candados el gris no distinguía "ya pasó" de "aún no" de un vistazo. Ahora cada estado tiene su
+color, **del propio juego, no del panel** (ahí verde/ámbar/rosa = rendimiento; aquí no significan eso):
+📖 **en clases → dorado** con resplandor (lo accionable, la mirada cae ahí), 📚 **terminada → verde**,
+🕒 **futura → cyan**. Se descartó el rojo a propósito: con todo desbloqueado, un rojo se leería como
+"bloqueado", que sería falso. El semáforo va **solo en los capítulos**, no en el Desafío Extra ni el
+Jefe Final (no son unidades del plan; siguen con su candado normal).
+
+**Verificado con `scripts/cdp.mjs`, jugando y MIRANDO:**
+- **Con plan:** los tres estados con su color y su etiqueta; el capítulo dorado destaca. El caso
+  **más activo** confirmado —un capítulo que cruza una unidad en clases y otra futura sale en clases—.
+- **Degradación:** con `kimun_mi_plan` devolviendo `[]` (centinela `'sin-plan'`) y con la RPC en 404
+  —el estado antes de que Roberto aplicara—, cero marcas y **ni un `fetch` al mapa**.
+- **QA / prueba / armador:** cero semáforo; `renderListaPrueba` intacto (dos grupos, sin marcas).
+- **No-regresión en los seis cursos:** JUGADOR navega, `__MOTOR_OK` true, las cuatro campañas abren, y
+  **el guardado de 8° (777 XP) sobrevive**. Cero errores de consola.
+- **375 px:** el renglón del menú envuelve dentro de su tarjeta; la etiqueta del nodo no desborda.
+- **Backend en producción** (Roberto aplicó el esquema a mitad de sesión), con sus **tres controles**:
+  positivo (`kimun_mi_plan` pasó de `404 PGRST202` a `200 []`), negativo (función inventada sigue en
+  `404`, así que el `[]` no es un eco) y **privacidad en la firma** (`?select=nota` → `400 42703 column
+  "nota" does not exist`: no la expone).
+
+> **Gotchas de método reconfirmados:** `ev()` de cdp.mjs evalúa una EXPRESIÓN, así que dos statements se
+> unen con el operador coma (`(foo.click(),1)`); el override de `SB.rpc` se re-inyecta tras cada `ev.ir`
+> (que recarga) y se fija `window.MI_PERFIL` para pasar el guard sin depender del perfil real; y para ver
+> los tres estados en una sola imagen hubo que elegir bien las fechas por unidad —cap4 y cap5 cruzan
+> U2/U3, así que con U2 en clases el "más activo" los pintaba a todos de clases; se puso **U1 clases, U2
+> terminada, U3 futura** para que cada estado tuviera su tarjeta—.

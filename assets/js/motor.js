@@ -703,6 +703,101 @@ function datoKimun(){
 function detenerTimersActivos(){ clearInterval(Q.timer); clearTimeout(Q._avanzarT); if(HAY_RETO_CALCULO){clearInterval(RC.timer); clearTimeout(RC._resolveT);} clearInterval(D.timer); CALC.detener(); }
 function campañaDe(asig){return CAMPAÑAS.find(c=>c.asignatura===asig)||null;}
 function campañaPorId(id){return CAMPAÑAS.find(c=>c.id===id)||null;}
+/* ================= SEMÁFORO DE PLANIFICACIÓN =================
+   El niño ve qué unidad está pasando su curso esta semana. Lee kimun_mi_plan() (la
+   planificación que el profesor declara) y la cruza con un mapa OA->unidad generado por
+   script. Todo es best-effort: si el plan no carga, o el curso no tiene fechas, o falla la
+   red, la pantalla queda EXACTAMENTE como hoy — una feature que le cambia la pantalla a
+   quien no la usa, estorba (misma regla del panel, Sesión 110).
+   No hay semáforo en modo prueba/armador/QA: son sesiones sin curso ni identidad. */
+let PLAN_ESTADO=null;   // null = sin cargar/reintentar · 'sin-plan' = cargado y vacío · {} = hay plan
+let OA_UNIDAD=null;     // {"HI05 OA 01":"U1"} — solo se descarga si hay plan
+let _planCargando=false;
+
+// Estado de una unidad por sus fechas, igual que el panel (Sesión 110). Fechas 'YYYY-MM-DD'
+// (así llegan de un date de Postgres), comparadas como texto = cronológico. Inclusivo: una
+// unidad que termina HOY sigue "en clases" hoy y "terminada" mañana.
+function estadoDeFechas(inicio,termino,hoy){
+ if(termino && termino < hoy) return 'terminada';
+ if(inicio  && inicio  > hoy) return 'futura';
+ if(inicio || termino)        return 'clases';
+ return '';
+}
+
+// Carga perezosa: la disparan renderCampaña y renderExpediciones. Una sola vez por sesión
+// salvo fallo de red (deja PLAN_ESTADO en null para reintentar en la próxima navegación).
+// No se llama desde el arranque del fork a propósito: así no hay ni una línea que editar en
+// los seis index.html. Cuando MI_PERFIL aún no está listo (el fork lo resuelve ~1,2 s tras
+// cargar), bail SIN marcar el intento, y el próximo render reintenta — el mismo modelo de
+// tiempo que ya usa el ranking.
+async function cargarPlan(){
+ if(PLAN_ESTADO!==null || _planCargando) return;       // ya resuelto (objeto o 'sin-plan')
+ if(EFIMERO || SIN_DISCO || !SB || !MI_PERFIL) return;  // prueba/QA/armador o sin perfil: reintenta luego
+ _planCargando=true;
+ try{
+  const {data,error}=await SB.rpc('kimun_mi_plan');
+  if(error) throw error;
+  const filas=data||[];
+  if(!filas.length){ PLAN_ESTADO='sin-plan'; return; } // sin plan: no reintentar, pantalla de hoy
+  const r=await fetch('assets/plan/oa-unidad.json');    // solo AHORA se descarga el mapa
+  if(!r.ok) throw new Error('mapa');
+  OA_UNIDAD=await r.json();
+  const est={}, hoy=hoyISO();
+  filas.forEach(f=>{ est[f.asignatura+'|'+f.unidad]=
+    {estado:estadoDeFechas(f.inicio,f.termino,hoy), titulo:f.titulo||''}; });
+  PLAN_ESTADO=est;
+  // Repinta la pantalla activa si es el menú o una campaña: la carga terminó después de
+  // dibujarla, y sin esto el semáforo no aparecería hasta la próxima navegación.
+  const on=document.querySelector('.screen.on');
+  if(on && on.id==='scr-expediciones') renderExpediciones();
+  else if(on && on.id==='scr-campana' && CAMP_ACT) renderCampaña();
+ }catch(e){ /* best-effort: PLAN_ESTADO sigue null, reintenta; nunca impide jugar */ }
+ finally{ _planCargando=false; }
+}
+
+// ¿Hay plan cargado y con filas? (ni null ni el centinela 'sin-plan')
+function hayPlan(){ return PLAN_ESTADO && typeof PLAN_ESTADO==='object'; }
+
+// Estado de un capítulo: el MÁS ACTIVO entre las unidades de sus OAs (clases > futura >
+// terminada), igual que el panel. Devuelve {estado, titulo} o null si no aplica.
+function estadoCapitulo(exp){
+ if(!hayPlan() || !OA_UNIDAD) return null;
+ const rank={clases:3,futura:2,terminada:1};
+ let best=null, bestTit='';
+ (exp.etapas||[]).forEach(et=>{
+  const oas=et.oas||(et.oa&&et.oa!=='BOSS'?[et.oa]:[]);   // BOSS mezcla OA: se usan las etapas normales
+  oas.forEach(oa=>{
+   const uni=OA_UNIDAD[oa]; if(!uni) return;
+   const asig=oa.split(' OA ')[0];                        // 'HI05 OA 01' -> 'HI05'
+   const info=PLAN_ESTADO[asig+'|'+uni];
+   if(!info || !info.estado) return;
+   if(!best || rank[info.estado]>rank[best]){ best=info.estado; bestTit=info.titulo; }
+  });
+ });
+ return best ? {estado:best, titulo:bestTit} : null;
+}
+
+// Inyecta el CSS del semáforo una sola vez. motor.js no tiene una hoja de estilo global del
+// juego (esa vive en los forks), así que el semáforo se trae la suya, como cualquier módulo.
+function _cssSemaforo(){
+ if(document.getElementById('css-semaforo')) return;
+ const st=document.createElement('style'); st.id='css-semaforo';
+ st.textContent=
+  /* Con ORDEN_LIBRE todo nace DESBLOQUEADO, así que sin candados el color ES lo que distingue
+     los tres estados de un vistazo: 📖 en clases DORADO con resplandor (es lo accionable, la
+     mirada debe caer ahí), 📚 terminada VERDE (ya lo pasaron), 🕒 futura CYAN (aún no). Son los
+     colores del juego, no los del panel (ahí verde/ámbar/rosa = rendimiento; aquí no significan
+     eso). Sin animación: es un borde, no un parpadeo (respeta prefers-reduced-motion solo). */
+  '.camp-nodo.sem-clases{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold),0 4px 18px #ffc93c33}'+
+  '.camp-nodo.sem-terminada{border-color:var(--green)}'+
+  '.camp-nodo.sem-futura{border-color:var(--cyan)}'+
+  '.cn-sem{display:block;margin-top:3px;font-size:12px;font-weight:700}'+
+  '.camp-nodo.sem-clases .cn-sem{color:var(--gold);font-weight:800}'+
+  '.camp-nodo.sem-terminada .cn-sem{color:var(--green)}'+
+  '.camp-nodo.sem-futura .cn-sem{color:var(--cyan)}'+
+  '.exp-sem{display:block;margin-top:3px;font-size:12px;color:var(--gold);font-weight:700}';
+ document.head.appendChild(st);
+}
 /* Portada del mapa/capítulo, EXPLÍCITA: sale del campo `portadaMapa` de la expedición, con
    `portada` (la de su unidad o asignatura) como respaldo.
    ⚠️ Antes 8° la armaba por CONVENCIÓN implícita (`assets/portada-<id>.png`). Eso pedía un
@@ -716,9 +811,27 @@ function portadaFallback(exp){return ASIG_PORTADA[exp.asignatura]||exp.portada||
 function nombreMapa(exp){const p=(exp.nivel||'').split('·');return p.length>1?p.slice(1).join('·').trim():(exp.nivel||exp.asignatura);}
 // Expediciones sueltas (no campaña) y activas de una asignatura
 function mapasDe(asig){return EXPEDICIONES.filter(e=>e.activa&&e.asignatura===asig&&!e.campaña);}
+// Título de una unidad EN CLASES de una asignatura (por nombre), o '' si no hay ninguna.
+// Recorre los capítulos de esa asignatura y toma el primero cuyo estado sea 'clases'.
+function unidadEnClasesDeAsignatura(asig){
+ if(!hayPlan()) return '';
+ const exps=EXPEDICIONES.filter(e=>e.activa&&e.asignatura===asig);
+ for(const exp of exps){ const s=estadoCapitulo(exp); if(s&&s.estado==='clases') return s.titulo; }
+ return '';
+}
+// Agrega el renglón "📖 Están viendo: X" a una tarjeta del menú, si su asignatura tiene una
+// unidad en clases. Un solo helper para las dos ramas (mini-clases y campaña normal).
+function agregarLineaMenu(card, asig){
+ const tit=unidadEnClasesDeAsignatura(asig); if(!tit) return;
+ _cssSemaforo();
+ const inf=card.querySelector('.exp-info'); if(!inf) return;
+ const l=document.createElement('small'); l.className='exp-sem';
+ l.textContent='📖 Están viendo: '+tit; inf.appendChild(l);
+}
 // NIVEL 1: un módulo por asignatura
 function renderExpediciones(){
  ajustarNav();
+ cargarPlan();   // perezosa: al terminar repinta el menú si sigue activo
  const g=$('expGrid');g.innerHTML='';
  ORDEN_ASIG.forEach(asig=>{
   const camp=CAMPAÑAS.find(c=>c.asignatura===asig);
@@ -737,6 +850,7 @@ function renderExpediciones(){
    card.innerHTML=`<img src="${camp.portada||ASIG_PORTADA[asig]}" alt="${asig}"><div class="exp-info"><b>${asig}</b><small>Aprende y practica · ${cap0.titulo} ${nHechas}/${cap0.lecciones.length}</small></div><span class="exp-go">▶</span>`;
    card.onclick=()=>{SND.tap(); if(bloqueado()){avisoCandado();return;} abrirCampaña(camp);};
    if(bloqueado()) card.classList.add('lock');
+   agregarLineaMenu(card, asig);
    g.appendChild(card); return;
   }
   const exps=mapasDe(asig);
@@ -753,6 +867,7 @@ function renderExpediciones(){
    if(bloqueado() && asig!=='Historia'){avisoCandado();return;}
    if(HAY_VOCABULARIO&&asig==='Lenguaje')abrirLenguaje(); else if(camp)abrirCampaña(camp); else abrirAsignatura(asig);};
   if(bloqueado() && asig!=='Historia') card.classList.add('lock');
+  agregarLineaMenu(card, asig);
   g.appendChild(card);
  });
  // Módulo Lectura (biblioteca): fuera de las asignaturas, crece con más libros.
@@ -894,6 +1009,7 @@ function renderListaPrueba(){
 function abrirCampaña(c){CAMP_ACT=c; renderCampaña(); go('scr-campana');}
 function renderCampaña(){
  const c=CAMP_ACT; if(!c)return;
+ cargarPlan();   // perezosa: al terminar repinta esta pantalla si sigue activa
  // renderCampana devuelve false si el modulo no cargo: se sigue de largo con la campana
  // normal en vez de dejar la pantalla en blanco.
  if(HAY_MINICLASES&&c.esLecciones&&LECC.renderCampana(c)) return;
@@ -904,10 +1020,12 @@ function renderCampaña(){
   const exp=EXPEDICIONES.find(e=>e.id===id);
   const abierto=capAbierto(id) && nodoCampDesbloqueado(c,i), hecho=expedicionCompleta(id);
   const titulo=(exp.nivel.split('· ')[1]||exp.nivel);
-  cont.appendChild(nodoCampañaEl(`${i+1}`, titulo, abierto, hecho,
+  const nodoCap=nodoCampañaEl(`${i+1}`, titulo, abierto, hecho,
     abierto?()=>entrarExpedicion(exp):null,
     hecho?'Completado':(abierto?'¡Jugar!':(capAbierto(id)?'🔒 Bloqueado':'🔒 Necesitas un código')),
-    portadaMapa(exp), portadaFallback(exp)));
+    portadaMapa(exp), portadaFallback(exp));
+  aplicarSemaforo(nodoCap, exp);
+  cont.appendChild(nodoCap);
  });
  // desafío extra (solo si la campaña lo define). Con la puerta cerrada no se muestra.
  if(c.desafioExtra && !bloqueado()){
@@ -948,6 +1066,18 @@ function nodoSinFin(c,cont){
   sf.onclick=()=>{SND.tap();CALC.abrir();};
   cont.appendChild(sf);
  }
+}
+// Marca un nodo de capítulo con su estado del semáforo. No toca nodoCampañaEl (así
+// renderListaPrueba, que también lo usa, queda intacto): post-procesa el nodo ya creado.
+function aplicarSemaforo(nodo, exp){
+ const s=estadoCapitulo(exp); if(!s) return;
+ _cssSemaforo();
+ nodo.classList.add('sem-'+s.estado);
+ const etq={clases:'👉 Están viendo esto en tu curso',
+            terminada:'Ya lo pasaron · repasa',
+            futura:'Aún no lo ven'}[s.estado];
+ const b=nodo.querySelector('.cn-body');
+ if(b && etq){ const l=document.createElement('small'); l.className='cn-sem'; l.textContent=etq; b.appendChild(l); }
 }
 // img/imgAlt: portada del capítulo (o villano del jefe). Sin imagen, el círculo lleva la marca.
 function nodoCampañaEl(marca,titulo,abierto,hecho,onClick,estado,img,imgAlt){

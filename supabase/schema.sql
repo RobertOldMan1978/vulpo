@@ -1884,6 +1884,26 @@ language sql security definer stable set search_path=public as $$
    where p.id = public.kimun_yo();
 $$;
 
+-- La planificación del alumno: su curso, solo lo que el juego necesita para el semáforo.
+-- Modela sobre kimun_mi_curso: resuelve el curso con kimun_yo() y no recibe parámetros,
+-- así el alumno solo puede ver EL SUYO. Sin curso, el join no da filas y el juego degrada
+-- a "sin plan".
+-- ⚠️ NO devuelve `nota`, `profesor_id` ni nada del log: el registro de quién movió qué fecha
+-- y por qué es material de evaluación docente, solo para la UTP (Sesión 108). La restricción
+-- vive en la FIRMA, no en el cliente, así que no se puede deshacer desde el juego. El alumno
+-- recibe únicamente asignatura, unidad, título y las dos fechas.
+-- El drop previo, como el resto de las "returns table" del archivo: al cambiar una columna
+-- del returns algún día, sin él el re-pegado falla con "cannot change return type".
+drop function if exists public.kimun_mi_plan();
+create or replace function public.kimun_mi_plan()
+returns table(asignatura text, unidad text, titulo text, inicio date, termino date)
+language sql security definer stable set search_path=public as $$
+  select u.asignatura, u.unidad, u.titulo, u.inicio, u.termino
+    from public.perfiles p
+    join public.unidades_plan u on u.curso_id = p.curso_id
+   where p.id = public.kimun_yo();
+$$;
+
 -- El enlace vivo de un curso mío, con cuántos de cuántos se inscribieron. Devuelve
 -- cero filas si no hay ninguno, que es distinto de fallar.
 -- El drop previo es el guardia de idempotencia que el archivo ya usa en kimun_ranking
@@ -2414,6 +2434,7 @@ grant execute on function
   , public.kimun_prof_inscripcion_crear(text,int,boolean)
   , public.kimun_prof_inscripcion_estado(text)
   , public.kimun_mi_curso()
+  , public.kimun_mi_plan()
   , public.kimun_progreso_subir(jsonb)
   , public.kimun_progreso_bajar()
   to anon, authenticated;
