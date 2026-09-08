@@ -193,6 +193,11 @@ están hoy en una expedición jugable, el resto es reserva.
 - Tipografías: **Titan One** para títulos y **Nunito** para texto.
 - Mobile-first, contenedor máximo de 480px, sin zoom del usuario.
 - Fondo con estrellas animadas y degradados radiales.
+> ⚠️ **Esto es el JUEGO, y desde la Sesión 106 las dos caras adultas NO lo siguen.** La landing
+> (Sesión 51) y **`profesor.html`** usan **Inter**, fondo neutro y color solo donde informa,
+> porque le hablan a un apoderado y a una UTP con un presupuesto en la mano. Los seis forks se
+> quedan como están: es una decisión por PÚBLICO, no una migración a medias, y el día que se
+> toque el juego hay que decidirlo aparte. Detalle del panel en "Mapa de dominio por OA".
 - **Las fracciones se dibujan APILADAS**, numerador sobre denominador, como en el cuaderno —no
   `9/10` en línea—. Lo hace `assets/js/fracciones.js` **al pintar**, y por eso hay una regla que
   vale para todo curso nuevo: **el banco escribe `n/m` y el juego lo apila; el banco NO se toca**.
@@ -1793,6 +1798,21 @@ asignaturas del profesor igual que el mapa, y **su fallo no impide ver el avance
 > es *"se reiniciaron las mediciones"* (el botón está en esa misma pantalla) y no una caída; y
 > bajo **10 respuestas** el porcentaje se muestra atenuado y con *"muy pocas para concluir"*,
 > porque un 100% sobre cuatro respuestas no es un 100%.
+
+**Y el panel dejó el registro del juego (Sesión 106).** Usa **Inter** —la misma de la landing—
+con pesos de verdad, fondo neutro (`--fondo #0e1219`, `--panel #161b26`) y **el color reducido a
+donde informa**: los tres semánticos (verde/ámbar/rosa) se conservan porque dicen si un objetivo
+va bien, regular o mal; lo que baja es la saturación de todo lo demás. El `body` pasó de peso
+**800 a 400**, que era lo que hacía que el texto de un objetivo pesara igual que su porcentaje.
+
+> **La palanca son las variables CSS**, no perseguir reglas: casi todo el color de esta pantalla
+> sale de `--gold/--cyan/--green/--pink/--violet/--dim/--panel`, **incluidos los estilos que el
+> JavaScript escribe inline** con `var(--dim)`. Cambiar el registro es cambiar ese bloque.
+>
+> ⚠️ **El violeta NO se usa como texto**: sobre el panel da 3,4:1, bajo el mínimo. Queda para
+> acciones —fondo de botón y bordes—, y por eso vale `#7460bd` y no un tono más claro: así el
+> blanco encima llega a **5,06:1**. Medido, no estimado; el texto normal da 14,2 y el atenuado
+> 5,6. Al tocar la paleta hay que volver a medirlo.
 
 **El panel está pensado para un COMPUTADOR (Sesión 106)**, que es la única pantalla de VULPO
 que no es para un niño con un teléfono: crece en dos escalones (880 px y **1.180** desde 1.240)
@@ -10914,3 +10934,50 @@ lo demás.
 > De paso quedó dicho en `docs/aplicar-schema.md` que su registro **tiene un hueco entre el
 > 01/09 y el 07/09** —las altas de 4°, 5° y 6° se aplicaron pero nadie las anotó—. Se deja
 > escrito en vez de inventarles fecha: la comprobación vale, el recuerdo no.
+
+#### Post scriptum 2 de la Sesión 106 — el panel deja el registro del juego
+
+Roberto preguntó qué quedaba del front de los profes y eligió la primera de las cuatro ideas
+anotadas en A49: **bajar el registro visual**. La decisión se tomó **mirando**, no leyendo una
+descripción: se generaron tres copias temáticas del panel con los mismos datos, el mismo ancho y
+la misma pantalla —el actual, un sobrio oscuro y uno claro— y se compararon lado a lado.
+
+> **La palanca que hizo barata la comparación:** casi todo el color del panel sale de siete
+> variables CSS, **incluidos los estilos que el JavaScript escribe inline** (`var(--dim)`). Un
+> tema es redefinir `:root` más una docena de reglas, así que las tres variantes eran el panel
+> de verdad y no una maqueta aparte — que es lo único que hace honesta la comparación.
+
+Eligió el **sobrio oscuro**, y hay un argumento que inclinó la balanza: **la landing ya usa Inter
+desde la Sesión 51**, y por el mismo motivo. Con esto las dos caras adultas del producto hablan
+igual, y el juego se queda como está: es una decisión **por público**, no una migración a medias.
+
+#### Cuatro cosas que aparecieron al implementarlo y no estaban en la maqueta
+
+1. ⚠️ **La jerarquía dentro del curso estaba invertida.** "Agregar alumno" era el botón lleno y
+   **"Ver avance del curso"** un chip gris — al revés de lo que se hace: ver el avance es
+   semanal, agregar alumnos es de marzo. Lo había puesto así yo mismo en el primer tramo de esta
+   sesión, aplicando "un primario por bloque" sin preguntarme **cuál** era el primario.
+2. **Tres desplegables en tres colores distintos** (cian, verde y violeta) para tres cosas del
+   mismo rango. Es exactamente el ruido que este registro viene a quitar.
+3. ⚠️ **El violeta como texto no llegaba al mínimo de contraste.** Ver el ⚠️ de la sección del
+   mapa, arriba: queda para acciones, y su tono se eligió midiendo.
+4. **La tarjeta de ingreso** estirada a 1.180 px era una banda casi vacía. Acotada a 560.
+
+> **Las cuatro se vieron MIRANDO la captura**, no contando: el conteo decía "sin desborde, cero
+> errores" en las cuatro. Décima vez en este proyecto.
+
+#### Verificación
+
+Escritorio (1.280 y 1.440) y teléfono (375): sin desborde en ninguno, los seis casos de la
+tendencia intactos, la sintaxis de los dos bloques de script OK, y **cero errores de consola y
+cero fallos de red**. Se comprobó además que **no quedan restos del registro anterior** —ni
+`Titan One`, ni `Nunito`, ni los tres colores viejos, ni un `font-weight:800` suelto—, porque un
+tema a medias es peor que no cambiarlo.
+
+> **Y un error de método, otra vez en la prueba y no en el producto:** el paso que medía el
+> contraste desde el navegador reventó por un escape mal puesto en el heredoc (`\d` en vez de
+> `\d`). Se midió en Python, que además deja el número escrito y repetible.
+
+**Con esto A49 pierde su primera idea.** Quedan las tres que dependían de ella: la franja de
+"qué necesita tu atención" al entrar, la participación como titular de la tarjeta del curso, y
+exportar el mapa para una reunión.

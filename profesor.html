@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>VULPO · Profesores</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&family=Titan+One&display=swap" rel="stylesheet">
+<!-- Inter, la misma de la landing (y por el mismo motivo: las dos le hablan a un adulto).
+     Titan One y Nunito salieron de aquí en la Sesión 106: son del juego, y el panel lo mira
+     una UTP con un presupuesto en la mano. El juego NO se toca. -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/kimun-180.png">
 <!-- supabase-js auto-hospedado (no desde CDN): el panel maneja la sesión del profesor, así
@@ -21,11 +24,22 @@ if(!window.NIV) window.NIV={ASIGS:{},NIVELES:[],TRANSVERSALES:{},ETIQUETA_8:{},
  asigDe:function(o){return String(o||"").slice(0,4)||null;}};</script>
 <script src="assets/vendor/supabase-js-2.112.4.min.js"></script>
 <style>
-:root{--gold:#ffc93c;--cyan:#4dd8ff;--green:#3ee089;--pink:#ff4d8d;--violet:#8f6bff;
- --dim:#a89fd6;--panel:#241d4e}
+/* Paleta del panel (Sesión 106). Los mismos SEIS nombres que el juego, con otros valores:
+   casi todo el color de esta pantalla sale de estas variables —incluidos los estilos que el
+   JavaScript escribe inline con var(--dim)—, así que el registro se cambia aquí y no
+   persiguiendo reglas. Los tres semánticos (verde/ámbar/rosa) se conservan porque son
+   INFORMACIÓN: marcan si un objetivo va bien, regular o mal. Lo que baja es la saturación
+   del resto, para que el color signifique algo en vez de estar en todas partes. */
+:root{--gold:#e0b341;--cyan:#7ba7d4;--green:#4bb583;--pink:#d4677f;--violet:#7460bd;
+ --dim:#8b93a7;--panel:#161b26;--fondo:#0e1219;--linea:#ffffff14;--texto:#e6e9ef;
+ /* Cuerpo de texto: entre --texto y --dim. Lo que se LEE (el enunciado de un objetivo)
+    no debe pesar como un titular ni desvanecerse como una nota al pie. */
+ --cuerpo:#c9cfdb}
 *{box-sizing:border-box}
-body{margin:0;background:#140f33;color:#fff;font-family:Nunito,sans-serif;font-weight:800;
- padding:16px;max-width:480px;margin:0 auto}
+/* Peso 400, no 800. El body en negrita era lo que hacía que el texto de un objetivo pesara
+   lo mismo que su porcentaje: con todo destacado, nada lo está. */
+body{margin:0;background:var(--fondo);color:var(--texto);font-family:Inter,system-ui,sans-serif;
+ font-weight:400;padding:16px;max-width:480px;margin:0 auto}
 /* El panel del profesor lo usan adultos, casi siempre en un COMPUTADOR: es la única
    pantalla de VULPO que no es para un niño con un teléfono. Por eso crece en dos
    escalones y el teléfono sigue en 480px (mobile-first, por si lo miran desde el móvil). */
@@ -45,27 +59,37 @@ body{margin:0;background:#140f33;color:#fff;font-family:Nunito,sans-serif;font-w
      campos que acompañan, así el formulario queda como una columna legible. */
   .btn{max-width:420px}
   .btn-fila .btn{max-width:none}
+  /* La tarjeta de ingreso son dos campos y dos botones: estirada a 1.180 px es una banda
+     casi vacía. El panel sí usa todo el ancho, porque ahí hay contenido que lo ocupa. */
+  #cardAuth{max-width:560px}
 }
 /* Grupo de botones en línea: para las pantallas donde conviven dos o tres acciones
    (entrar/crear cuenta, reiniciar/volver). En el teléfono se apilan solos. */
 .btn-fila{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .btn-fila .btn{width:auto;min-width:170px;margin-bottom:0;flex:0 1 auto}
-h1{font-family:'Titan One',cursive;color:var(--gold);font-size:28px;text-align:center;margin:12px 0}
-.card{background:var(--panel);border:2px solid #ffffff14;border-radius:16px;padding:16px;margin-bottom:14px}
-.card h3{margin:0 0 12px;font-size:16px;color:var(--cyan)}
-input,textarea,select{width:100%;padding:12px;border-radius:12px;border:2px solid var(--violet);
- background:#1a1440;color:#fff;font-weight:800;margin-bottom:10px;font-family:inherit}
-textarea{resize:vertical;line-height:1.4;font-weight:600}
+/* El título va a la izquierda y en tamaño de encabezado, no centrado y enorme: esto es una
+   herramienta, y su nombre no compite con el contenido. */
+h1{font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--texto);
+ text-align:left;margin:6px 0 16px}
+.card{background:var(--panel);border:1px solid var(--linea);border-radius:10px;padding:16px;margin-bottom:14px}
+/* Los rótulos de sección en versalitas y atenuados: nombran la caja, no compiten con ella. */
+.card h3{margin:0 0 12px;font-size:12px;font-weight:600;letter-spacing:.03em;
+ text-transform:uppercase;color:var(--dim)}
+input,textarea,select{width:100%;padding:11px 12px;border-radius:8px;border:1px solid #ffffff1f;
+ background:var(--fondo);color:var(--texto);font-weight:400;margin-bottom:10px;font-family:inherit}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--violet)}
+textarea{resize:vertical;line-height:1.45}
 /* Tres pesos de botón, y la diferencia NO es decorativa: antes todo era una barra
    violeta idéntica, así que "Cerrar sesión" pesaba lo mismo que "Crear curso" y el ojo
    no tenía dónde ir. La regla es UN primario por bloque; lo demás, secundario; y lo que
    no se puede deshacer, en texto —que se encuentra igual, pero no se toca sin querer—. */
-.btn{width:100%;padding:13px;border:0;border-radius:14px;background:var(--gold);color:#2a1c00;
- font-family:inherit;font-weight:900;font-size:15px;cursor:pointer;margin-bottom:8px}
-/* El padding baja 2px para compensar el borde y que las dos alturas calcen. */
-.btn.sec{background:transparent;border:2px solid var(--violet);color:var(--cyan);padding:11px}
-.btn.sec:hover{border-color:var(--cyan)}
-.btn.txt,.btn.peligro{background:none;border:0;color:var(--dim);font-size:14px;padding:10px;
+.btn{width:100%;padding:11px;border:0;border-radius:8px;background:var(--violet);color:#fff;
+ font-family:inherit;font-weight:600;font-size:14px;cursor:pointer;margin-bottom:8px}
+.btn:hover{filter:brightness(1.12)}
+/* El padding baja 1px para compensar el borde y que las dos alturas calcen. */
+.btn.sec{background:transparent;border:1px solid #ffffff26;color:var(--cuerpo);padding:10px}
+.btn.sec:hover{border-color:var(--violet);filter:none}
+.btn.txt,.btn.peligro{background:none;border:0;color:var(--dim);font-size:13px;padding:9px;
  text-decoration:underline;text-underline-offset:3px}
 .btn.peligro{color:var(--pink)}
 .btn:disabled{opacity:.5;cursor:default}
@@ -75,11 +99,12 @@ textarea{resize:vertical;line-height:1.4;font-weight:600}
    ese campo y no al suyo ("Nivel del curso" aparecía junto al nombre del curso). */
 .campo{display:block;font-size:12px;color:var(--dim);margin:8px 0 2px}
 .hide{display:none}
-code{color:var(--cyan);font-weight:900}
+code{color:var(--cyan);font-weight:500;font-size:12px;
+ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 /* Marca del alumno que se inscribio solo: su nombre NO lo escribio el profesor. Va en
    la linea de abajo, no junto al nombre: la fila de arriba es la que desbordo a 375 px
    en la Sesion 26 y no se le suma nada. */
-.ins-chip{color:var(--gold);font-weight:900}
+.ins-chip{color:var(--gold);font-weight:600}
 /* El triángulo por omisión del desplegable se oculta: la fila del mapa ya se ve
    pulsable, y en WebKit "list-style:none" por sí solo no lo quita. */
 .oa-fila>summary::-webkit-details-marker{display:none}
@@ -95,12 +120,13 @@ code{color:var(--cyan);font-weight:900}
 .cur-head{display:flex;align-items:center;gap:8px;margin-bottom:6px}
 .cur-nom,.alu-nom,.pro-nom{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;
  white-space:nowrap}
-.alu{padding:6px 0;border-bottom:1px solid #ffffff14}
+.alu{padding:6px 0;border-bottom:1px solid var(--linea)}
 .alu-top{display:flex;align-items:center;gap:6px}
 .alu-sub{font-size:12px;color:var(--dim);margin-top:2px}
-.prof-id{font-weight:900;color:var(--cyan);font-size:14px;margin-bottom:2px}
+.prof-id{font-weight:500;color:var(--dim);font-size:13px;margin-bottom:2px}
 /* Acordeón de cursos y de alumnos */
-.curso{border:1px solid #ffffff22;border-radius:12px;margin-bottom:10px;overflow:hidden}
+.curso{border:1px solid var(--linea);border-radius:10px;margin-bottom:10px;overflow:hidden;
+ background:#12172080}
 .curso>summary,.alumnos>summary{cursor:pointer;list-style:none;display:flex;
   align-items:center;gap:8px;flex-wrap:wrap}
 .curso>summary{padding:10px}
@@ -116,33 +142,41 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
 .cur-part{font-size:12px;color:var(--cyan);flex-basis:100%;order:6}
 .curso-cuerpo{padding:0 10px 10px}
 .alumnos{margin-top:8px;border-top:1px solid #ffffff14}
-.alumnos>summary{padding:8px 0;color:var(--cyan);font-size:13px;font-weight:700}
+.alumnos>summary{padding:8px 0;color:var(--cyan);font-size:13px;font-weight:500}
 .alumnos-cuerpo{padding-top:4px}
 /* Área tocable de verdad: los botones de 21×25 px se fallaban con el dedo. */
-.ico{background:none;border:0;font-family:inherit;font-weight:900;font-size:15px;
+.ico{background:none;border:0;font-family:inherit;font-weight:600;font-size:15px;
  line-height:1;cursor:pointer;padding:0;min-width:38px;height:38px;border-radius:10px;
  color:var(--cyan)}
 .ico:active{background:#ffffff1a}
 /* Borrar se aparta del resto: es lo único que no se puede deshacer. */
 .ico-del{color:var(--pink);margin-left:12px}
-.btn-chip{background:none;border:2px solid var(--violet);color:var(--cyan);
- font-family:inherit;font-weight:900;font-size:13px;padding:8px 12px;border-radius:12px;
+.btn-chip{background:none;border:1px solid #ffffff26;color:var(--cuerpo);
+ font-family:inherit;font-weight:500;font-size:13px;padding:7px 12px;border-radius:8px;
  cursor:pointer;margin-bottom:6px}
+.btn-chip:hover{border-color:var(--violet)}
+/* La acción principal de la tarjeta de un curso es VER SU AVANCE: es lo que el profesor
+   hace todas las semanas, mientras que agregar un alumno se hace en marzo. Con el mismo
+   chip gris que los demás quedaba por debajo del botón lleno de "Agregar alumno", o sea
+   la jerarquía al revés. No se hace barra completa a propósito: la tarjeta del curso es
+   una ficha, no un formulario. */
+.btn-chip.principal{border-color:var(--violet);background:#7460bd26;color:var(--texto)}
+.btn-chip.principal:hover{background:#7460bd3d}
 
 /* Encabezado pegado arriba: con 60 objetivos, saber de qué curso es la tabla y volver
    al panel exigía subir miles de píxeles. */
 .av-head{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:8px;
- background:var(--panel);padding:10px 0;margin:0 0 8px;border-bottom:1px solid #ffffff22}
-.av-head-tit{color:var(--gold);font-size:15px;display:block;overflow:hidden;
+ background:var(--panel);padding:10px 0;margin:0 0 8px;border-bottom:1px solid var(--linea)}
+.av-head-tit{color:var(--gold);font-size:15px;font-weight:600;display:block;overflow:hidden;
  text-overflow:ellipsis;white-space:nowrap}
 .av-head-sub{color:var(--dim);font-size:11px}
 .av-filtros{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
-.av-chip{background:none;border:2px solid #ffffff22;color:var(--dim);font-family:inherit;
- font-weight:900;font-size:12px;padding:7px 12px;border-radius:20px;cursor:pointer}
-.av-chip.on{border-color:var(--cyan);color:var(--cyan)}
+.av-chip{background:none;border:1px solid #ffffff1f;color:var(--dim);font-family:inherit;
+ font-weight:500;font-size:12px;padding:6px 12px;border-radius:6px;cursor:pointer}
+.av-chip.on{border-color:var(--cyan);color:var(--cyan);background:#7ba7d418}
 /* Dos líneas por objetivo: los textos del currículum llegan a 250 caracteres, y con el
    texto entero caben tres por pantalla. Al desplegar la fila se muestra completo. */
-.oa-texto{font-size:13px;margin-bottom:4px;display:-webkit-box;-webkit-box-orient:vertical;
+.oa-texto{font-size:13px;font-weight:400;color:var(--cuerpo);margin-bottom:4px;display:-webkit-box;-webkit-box-orient:vertical;
  -webkit-line-clamp:2;line-clamp:2;overflow:hidden}
 .oa-fila[open] .oa-texto{-webkit-line-clamp:unset;line-clamp:unset;overflow:visible}
 /* En un computador el objetivo y su medida caben en la MISMA línea, y eso es lo que
@@ -165,13 +199,13 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
 .tend-sem{flex:0 0 74px;text-align:center}
 .tend-barra{height:64px;display:flex;align-items:flex-end;justify-content:center}
 .tend-barra>i{display:block;width:26px;border-radius:5px 5px 0 0;min-height:3px}
-.tend-pct{font-size:13px;margin-top:4px}
+.tend-pct{font-size:13px;font-weight:600;margin-top:4px}
 .tend-fecha{font-size:10px;color:var(--dim);margin-top:1px}
 .tend-sem.ahora .tend-fecha{color:var(--cyan)}
 .tend-vacio{opacity:.45}
 #btnArriba{position:fixed;right:14px;bottom:14px;width:44px;height:44px;border-radius:50%;
- border:2px solid var(--violet);background:var(--panel);color:var(--cyan);
- font-family:inherit;font-weight:900;font-size:18px;cursor:pointer;z-index:10;opacity:.93}
+ border:1px solid #ffffff26;background:var(--panel);color:var(--cuerpo);
+ font-family:inherit;font-weight:600;font-size:18px;cursor:pointer;z-index:10;opacity:.95}
 /* Equipo del curso: el CSS global pone width:100%/display:block a los input, que
    descoloca los radios y las casillas. Estas reglas lo anulan solo dentro del equipo. */
 .equipo-cuerpo label{display:inline-flex;align-items:center;gap:6px}
@@ -466,7 +500,7 @@ async function pintarLista(){
         ${window.ESADMINCOLEGIO?`<button class="ico ico-del delcurso" data-cod="${esc(cod)}" title="Eliminar curso">🗑️</button>`:''}
       </summary>
       <div class="curso-cuerpo">
-        <button class="btn-chip avance" data-cod="${esc(cod)}" data-nom="${esc(c.nombre)}"
+        <button class="btn-chip principal avance" data-cod="${esc(cod)}" data-nom="${esc(c.nombre)}"
           data-gestiono="${c.gestiono?'1':''}">📊 Ver avance del curso</button>
         <details class="alumnos">
           <summary><span class="cur-chevron" aria-hidden="true">▸</span>👥 Alumnos (${c.alumnos.length})</summary>
@@ -487,10 +521,10 @@ async function pintarLista(){
              : '<p style="color:var(--dim);font-size:12px">Sin alumnos todavía.</p>'}
             ${c.gestiono?`<div style="margin-top:8px">
               <input class="in-alumno" data-curso="${esc(cod)}" placeholder="Nombre del alumno nuevo">
-              <button class="btn add-alumno" data-curso="${esc(cod)}">+ Agregar alumno</button>
+              <button class="btn sec add-alumno" data-curso="${esc(cod)}">+ Agregar alumno</button>
             </div>
             <details class="masivo" style="margin-top:6px">
-              <summary style="cursor:pointer;color:var(--cyan);font-size:13px;font-weight:800;list-style:none">➕ Cargar varios de una vez</summary>
+              <summary style="cursor:pointer;color:var(--cyan);font-size:13px;font-weight:500;list-style:none">➕ Cargar varios de una vez</summary>
               <p style="color:var(--dim);font-size:12px;margin:6px 0">Pega un nombre por línea (como los copias de una lista).</p>
               <textarea class="in-masivo" data-curso="${esc(cod)}" rows="5" placeholder="Ana Pérez&#10;Benjamín Soto&#10;Catalina Rivas"></textarea>
               <button class="btn sec add-masivo" data-curso="${esc(cod)}">Agregar todos</button>
@@ -498,13 +532,13 @@ async function pintarLista(){
           </div>
         </details>
         ${c.gestiono?`<details class="inscripcion" data-cod="${esc(cod)}" data-nivel="${esc(c.nivel)}" style="margin-top:6px">
-          <summary style="cursor:pointer;color:var(--green);font-size:13px;font-weight:800;list-style:none">🔗 Enlace de inscripción</summary>
+          <summary style="cursor:pointer;color:var(--cyan);font-size:13px;font-weight:500;list-style:none">🔗 Enlace de inscripción</summary>
           <div class="inscripcion-cuerpo" data-cod="${esc(cod)}">
             <p style="color:var(--dim);font-size:12px;margin:6px 0">Cargando…</p>
           </div>
         </details>`:''}
         ${c.gestiono?`<details class="equipo" data-cod="${esc(cod)}" data-nivel="${esc(c.nivel)}" style="margin-top:6px">
-          <summary style="cursor:pointer;color:var(--violet);font-size:13px;font-weight:800;list-style:none">👥 Equipo del curso</summary>
+          <summary style="cursor:pointer;color:var(--cyan);font-size:13px;font-weight:500;list-style:none">👥 Equipo del curso</summary>
           <div class="equipo-cuerpo" data-cod="${esc(cod)}">
             <p style="color:var(--dim);font-size:12px;margin:6px 0">Cargando…</p>
           </div>
@@ -516,24 +550,27 @@ async function pintarLista(){
       profesor o armar un enlace de muestra se hacen una vez al año; los cursos se miran
       todas las semanas. Desplegada, esos formularios ocupaban ~800 px bajo una tarjeta de
       curso de 130, o sea el 70% de la pantalla para lo que casi nunca se usa. */
+   /* El violeta se reserva para las ACCIONES: como texto sobre el panel no llega al mínimo
+      de contraste (3,4:1), y una línea violeta de 2 px separando la sección era ruido —lo
+      que la separa es que está plegada, no un subrayado de color—. */
    + (window.ESADMINCOLEGIO ? `<details id="admBloque" style="margin-top:16px;
-        border-top:2px solid var(--violet);padding-top:12px">
-        <summary style="cursor:pointer;list-style:none;color:var(--violet);font-size:15px;
-                 font-weight:900;padding:4px 0">
+        border-top:1px solid var(--linea);padding-top:12px">
+        <summary style="cursor:pointer;list-style:none;color:var(--texto);font-size:14px;
+                 font-weight:600;padding:4px 0">
           <span class="cur-chevron" aria-hidden="true">▸</span> ⚙️ Administración</summary>
         <div style="padding-top:10px">
-          <h3 style="font-size:14px;margin:0 0 8px">Curso nuevo</h3>
+          <h3 style="font-size:12px;margin:0 0 8px">Curso nuevo</h3>
           <input id="cursoNombre" placeholder="Nombre del curso nuevo (8° A)">
           <label class="campo">Nivel del curso
             <select id="cursoNivel">${NIVELES_MUESTRA.map(n=>`<option value="${n.nivel}">${n.nombre}</option>`).join('')}</select></label>
           <button class="btn" id="btnCurso">+ Crear curso</button>
 
-          <h3 style="font-size:14px;margin:16px 0 8px">Profesores</h3>
+          <h3 style="font-size:12px;margin:16px 0 8px">Profesores</h3>
           <input id="nuevoCorreo" type="email" placeholder="Correo del profesor nuevo">
           <button class="btn sec" id="btnAutorizar">+ Autorizar profesor</button>
           <div id="profes" style="margin:10px 0"></div>
 
-          <h3 style="font-size:14px;margin:16px 0 8px">Herramientas</h3>
+          <h3 style="font-size:12px;margin:16px 0 8px">Herramientas</h3>
           <div class="btn-fila">
             <button class="btn sec" id="btnTablero">📊 Tablero de avance</button>
             ${YO.es_admin?`<button class="btn peligro" id="btnLimpiar">🧹 Limpiar perfiles de prueba</button>`:''}
@@ -701,7 +738,7 @@ async function cargarInscripcion(cursoCodigo, nivel){
            <button class="btn ins-copiar">Copiar enlace</button>`
         :`<p style="color:var(--dim);font-size:12px;margin:6px 0">Este curso todavía no tiene enlace.</p>`)
   + `<details style="margin-top:8px">
-       <summary style="cursor:pointer;color:var(--cyan);font-size:13px;font-weight:800;list-style:none">${
+       <summary style="cursor:pointer;color:var(--cyan);font-size:13px;font-weight:500;list-style:none">${
          fila?'♻️ Crear otro enlace (cierra el de arriba)':'➕ Crear el enlace'}</summary>
        <p style="color:var(--dim);font-size:12px;margin:6px 0">
          ⚠️ El enlace <b>es</b> la credencial: quien lo reciba entra al curso hasta llenar el
