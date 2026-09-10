@@ -996,7 +996,10 @@ create or replace function public.kimun_prof_sostenedores()
 returns table(id uuid, nombre text, colegios int)
 language plpgsql security definer stable set search_path=public as $$
 declare yo public.profesores; begin
-  select * into yo from public.profesores where id = auth.uid();
+  -- pr.id (aliasado) y no `id` a secas: el returns table declara un OUT `id`, así que un
+  -- `where id=` sin calificar es ambiguo (column reference "id" is ambiguous). Misma familia
+  -- que el bug v_rol de la Sesión 73.
+  select * into yo from public.profesores pr where pr.id = auth.uid();
   if yo.id is null or not public.kimun_prof_admin_colegio() then raise exception 'no_autorizado'; end if;
   return query select s.id, s.nombre,
     (select count(*)::int from public.colegios c where c.sostenedor_id = s.id)
@@ -1008,7 +1011,8 @@ create or replace function public.kimun_prof_colegios(p_sostenedor uuid)
 returns table(id uuid, nombre text, cursos int)
 language plpgsql security definer stable set search_path=public as $$
 declare yo public.profesores; begin
-  select * into yo from public.profesores where id = auth.uid();
+  -- pr.id aliasado: mismo motivo que en kimun_prof_sostenedores (OUT `id` vs columna `id`).
+  select * into yo from public.profesores pr where pr.id = auth.uid();
   if yo.id is null or not public.kimun_prof_admin_colegio() then raise exception 'no_autorizado'; end if;
   return query select c.id, c.nombre,
     (select count(*)::int from public.cursos cu where cu.colegio_id = c.id)
