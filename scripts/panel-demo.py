@@ -199,6 +199,16 @@ STUB = r"""
       if(a.p_colegio) CURSO_COLEGIO[a.p_curso_codigo]=a.p_colegio;
       else delete CURSO_COLEGIO[a.p_curso_codigo];
       return null; },
+    kimun_prof_sostenedor_renombrar: (a)=>{ const s=SOS.find(x=>x.id===a.p_id); if(s) s.nombre=(a.p_nombre||'').trim(); return null; },
+    kimun_prof_sostenedor_borrar: (a)=>{
+      const i=SOS.findIndex(x=>x.id===a.p_id); if(i<0) return null;
+      (COLEGIOS[a.p_id]||[]).forEach(c=>{ Object.keys(CURSO_COLEGIO).forEach(k=>{ if(CURSO_COLEGIO[k]===c.id) delete CURSO_COLEGIO[k]; }); });
+      delete COLEGIOS[a.p_id]; SOS.splice(i,1); return null; },
+    kimun_prof_colegio_renombrar: (a)=>{
+      Object.values(COLEGIOS).forEach(arr=>{ const c=arr.find(x=>x.id===a.p_id); if(c){ c.nombre=(a.p_nombre||'').trim(); COL_NOMBRE[a.p_id]=c.nombre; } }); return null; },
+    kimun_prof_colegio_borrar: (a)=>{
+      Object.keys(COLEGIOS).forEach(sid=>{ COLEGIOS[sid]=COLEGIOS[sid].filter(c=>c.id!==a.p_id); });
+      Object.keys(CURSO_COLEGIO).forEach(k=>{ if(CURSO_COLEGIO[k]===a.p_id) delete CURSO_COLEGIO[k]; }); return null; },
     /* El pulso del colegio. Nombres de columna copiados de la firma REAL de
        kimun_prof_pulso (curso_codigo, curso, nivel, inscritos, jugaron_semana,
        cobertura, puede_gestionar): este archivo ya perdio una tarde por escribir

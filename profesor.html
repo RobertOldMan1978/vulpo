@@ -824,67 +824,101 @@ function totalOaNivel(nivel){
   return suma;
 }
 
-// Sostenedores y colegios (Sesión 116, Fase 1). Sección de configuración una-vez-al-año,
-// por eso vive en Administración (plegada) y no en cada tarjeta de curso —igual que "Crear
-// curso" o "Profesores"—: la superficie semanal no se ensucia con una acción anual. Muestra
-// el árbol Sostenedor ▸ Colegio y deja asignarle su colegio a cada curso. Todavía informativo
-// para los permisos: los porteros no miran colegio_id hasta la Fase 2. Su fallo no tumba el
-// resto de Administración.
-async function renderInquilinos(cursos, porCurso){
-  const cont = document.getElementById('inquilinos');
-  if(!cont) return;
-  const {data:sos, error} = await SB.rpc('kimun_prof_sostenedores');
-  if(error){ cont.innerHTML='<p style="color:var(--pink);font-size:12px">No se pudo cargar sostenedores y colegios.</p>'; return; }
-  // Los colegios de cada sostenedor (1+N llamadas). Es una pantalla de configuración, con
-  // uno o dos sostenedores: la simpleza gana al ahorro de un par de llamadas.
-  const colsPorSos = {};
-  const colegiosFlat = [];   // {id, etiqueta} de TODOS los colegios, para el selector del curso
-  for(const s of (sos||[])){
-    const {data:cols} = await SB.rpc('kimun_prof_colegios',{p_sostenedor:s.id});
-    colsPorSos[s.id] = cols||[];
-    (cols||[]).forEach(c=>colegiosFlat.push({id:c.id, etiqueta:s.nombre+' · '+c.nombre}));
-  }
-  const arbol = (sos||[]).length ? (sos||[]).map(s=>`
-      <div style="border:1px solid var(--linea);border-radius:8px;padding:8px 10px;margin:6px 0">
-        <b style="color:var(--texto)">${esc(s.nombre)}</b>
-        <span style="color:var(--dim);font-size:12px"> · ${s.colegios} colegio${s.colegios===1?'':'s'}</span>
-        <div style="margin:6px 0">${(colsPorSos[s.id]||[]).length
-          ? (colsPorSos[s.id]).map(c=>`<div style="font-size:13px;padding:2px 0">🏫 ${esc(c.nombre)}
-              <span style="color:var(--dim)">· ${c.cursos} curso${c.cursos===1?'':'s'}</span></div>`).join('')
-          : '<span style="color:var(--dim);font-size:12px">Sin colegios todavía.</span>'}</div>
-        <input class="in-colegio" data-sos="${esc(s.id)}" placeholder="Nombre del colegio nuevo" style="max-width:280px">
-        <button class="btn sec col-crear" data-sos="${esc(s.id)}">+ Crear colegio</button>
-      </div>`).join('')
-    : '<p style="color:var(--dim);font-size:12px">Aún no hay sostenedores.</p>';
-  const opciones = c => '<option value="">Sin colegio</option>' +
-    colegiosFlat.map(x=>`<option value="${esc(x.id)}"${x.id===c.colegioId?' selected':''}>${esc(x.etiqueta)}</option>`).join('');
-  const listaCursos = cursos.length ? cursos.map(([cod,c])=>`
-      <div style="display:flex;gap:8px;align-items:center;padding:3px 0;font-size:13px;flex-wrap:wrap">
-        <b style="color:var(--gold)">${esc(c.nombre)}</b> <code>${esc(cod)}</code>
-        <select class="colegio-sel" data-cod="${esc(cod)}" style="max-width:260px">${opciones(c)}</select>
-      </div>`).join('')
-    : '<p style="color:var(--dim);font-size:12px">Sin cursos.</p>';
-  cont.innerHTML = `
+// El árbol Sostenedor › Colegio › Cursos (Sesión 116). En vez de reescribir las tarjetas de
+// curso, las REPARENTA en el DOM bajo su colegio y sostenedor: así las tarjetas y todo su
+// cableado (equipo, alumnos, inscripción, ver avance) quedan intactos. Solo lo ve quien
+// administra el colegio; un Jefe / profe de asignatura ve sus cursos planos, sin envoltorio.
+// Corre DESPUÉS de renderizar y restaurar el estado desplegado, así el reparenting conserva
+// qué cursos estaban abiertos.
+function agruparArbol(sostArbol, porCurso){
+  const lista = document.getElementById('lista'); if(!lista) return;
+  const adm = document.getElementById('admBloque');
+  const arbol = document.createElement('div'); arbol.id = 'arbolInq';
+  arbol.innerHTML = `<div class="arb-crear" style="display:flex;gap:8px;flex-wrap:wrap;margin:8px 0">
     <input id="sosNombre" placeholder="Nombre del sostenedor nuevo" style="max-width:280px">
-    <button class="btn sec" id="btnSos">+ Crear sostenedor</button>
-    ${arbol}
-    <h4 style="font-size:12px;margin:12px 0 4px;color:var(--dim)">Colegio de cada curso</h4>
-    ${listaCursos}`;
-  $('btnSos').onclick=async ()=>{
-    const n=($('sosNombre').value||'').trim();
+    <button class="btn sec" id="btnSos">+ Crear sostenedor</button></div>`;
+  const cajaDeColegio = {};   // colegio_id -> div donde van sus cursos
+  (sostArbol||[]).forEach(s=>{
+    const sn = document.createElement('details');
+    sn.className = 'sos-nodo'; sn.open = true; sn.dataset.sos = s.id;
+    sn.style.cssText = 'border-top:1px solid var(--linea);padding-top:8px;margin-top:8px';
+    sn.innerHTML = `<summary style="cursor:pointer;list-style:none;font-size:14px;font-weight:600;padding:4px 0">
+        <span class="cur-chevron" aria-hidden="true">▸</span> 🏢 ${esc(s.nombre)}
+        <button class="ico sos-ren" data-sos="${esc(s.id)}" data-nom="${esc(s.nombre)}" title="Renombrar sostenedor" style="color:var(--gold)">✎</button>
+        <button class="ico ico-del sos-del" data-sos="${esc(s.id)}" title="Borrar sostenedor">🗑️</button></summary>`;
+    (s.colegios||[]).forEach(co=>{
+      const cn = document.createElement('details');
+      cn.className = 'col-nodo'; cn.open = true; cn.dataset.col = co.id;
+      cn.style.cssText = 'margin:6px 0 6px 12px';
+      cn.innerHTML = `<summary style="cursor:pointer;list-style:none;font-size:13px;font-weight:600;padding:3px 0">
+          <span class="cur-chevron" aria-hidden="true">▸</span> 🏫 ${esc(co.nombre)}
+          <span class="col-conteo" style="color:var(--dim);font-size:12px;font-weight:400"></span>
+          <button class="ico col-ren" data-col="${esc(co.id)}" data-nom="${esc(co.nombre)}" title="Renombrar colegio" style="color:var(--gold)">✎</button>
+          <button class="ico ico-del col-del" data-col="${esc(co.id)}" title="Borrar colegio">🗑️</button></summary>
+        <div class="col-cursos" style="margin-left:4px"></div>`;
+      cajaDeColegio[co.id] = cn.querySelector('.col-cursos');
+      sn.appendChild(cn);
+    });
+    const cc = document.createElement('div');
+    cc.className = 'arb-crear'; cc.style.cssText = 'display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 6px 12px';
+    cc.innerHTML = `<input class="in-colegio" data-sos="${esc(s.id)}" placeholder="Nombre del colegio nuevo" style="max-width:260px">
+      <button class="btn sec col-crear" data-sos="${esc(s.id)}">+ Crear colegio</button>`;
+    sn.appendChild(cc);
+    arbol.appendChild(sn);
+  });
+  // Caja "Sin colegio" (solo se agrega si algún curso cae ahí).
+  const sinNodo = document.createElement('details');
+  sinNodo.className = 'col-nodo'; sinNodo.open = true;
+  sinNodo.style.cssText = 'margin-top:8px;border-top:1px solid var(--linea);padding-top:8px';
+  sinNodo.innerHTML = `<summary style="cursor:pointer;list-style:none;font-size:13px;font-weight:600;padding:3px 0">
+      <span class="cur-chevron" aria-hidden="true">▸</span> 📄 Sin colegio</summary>
+    <div class="col-cursos" style="margin-left:4px"></div>`;
+  const sinCaja = sinNodo.querySelector('.col-cursos');
+  let haySin = false;
+  [...lista.querySelectorAll('details.curso')].forEach(cn=>{
+    const colId = (porCurso[cn.dataset.cod]||{}).colegioId;
+    if(colId && cajaDeColegio[colId]) cajaDeColegio[colId].appendChild(cn);
+    else { sinCaja.appendChild(cn); haySin = true; }
+  });
+  if(haySin) arbol.appendChild(sinNodo);
+  arbol.querySelectorAll('.col-nodo').forEach(cn=>{
+    const n = cn.querySelectorAll('details.curso').length;
+    const et = cn.querySelector('.col-conteo'); if(et) et.textContent = ' · '+n+' curso'+(n===1?'':'s');
+  });
+  lista.insertBefore(arbol, adm);
+  conectarArbol();
+}
+
+function conectarArbol(){
+  const bs = document.getElementById('btnSos');
+  if(bs) bs.onclick = async () => {
+    const n = (document.getElementById('sosNombre').value||'').trim();
     if(!n){ aviso('Escribe un nombre.'); return; }
     await accion(()=>SB.rpc('kimun_prof_sostenedor_crear',{p_nombre:n}), 'Sostenedor creado');
   };
-  cont.querySelectorAll('.col-crear').forEach(b=>b.onclick=async ()=>{
-    const campo=cont.querySelector('.in-colegio[data-sos="'+b.dataset.sos+'"]');
+  document.querySelectorAll('.col-crear').forEach(b=>b.onclick=async ()=>{
+    const campo=document.querySelector('.in-colegio[data-sos="'+b.dataset.sos+'"]');
     const n=(campo.value||'').trim();
     if(!n){ aviso('Escribe un nombre.'); return; }
     await accion(()=>SB.rpc('kimun_prof_colegio_crear',{p_sostenedor:b.dataset.sos, p_nombre:n}), 'Colegio creado');
   });
-  cont.querySelectorAll('.colegio-sel').forEach(sel=>sel.onchange=async ()=>{
+  // Los ✎/🗑️ viven dentro de un <summary>: stopPropagation para que tocarlos no pliegue el nodo.
+  document.querySelectorAll('.sos-ren').forEach(b=>b.onclick=async (e)=>{ e.preventDefault(); e.stopPropagation();
+    const n=(prompt('Nuevo nombre del sostenedor:', b.dataset.nom)||'').trim(); if(!n) return;
+    await accion(()=>SB.rpc('kimun_prof_sostenedor_renombrar',{p_id:b.dataset.sos, p_nombre:n}), 'Sostenedor renombrado'); });
+  document.querySelectorAll('.sos-del').forEach(b=>b.onclick=async (e)=>{ e.preventDefault(); e.stopPropagation();
+    if(!confirm('¿Borrar este sostenedor?\n\nSe borran también sus colegios; sus cursos quedan SIN colegio (no se borran).')) return;
+    await accion(()=>SB.rpc('kimun_prof_sostenedor_borrar',{p_id:b.dataset.sos}), 'Sostenedor borrado'); });
+  document.querySelectorAll('.col-ren').forEach(b=>b.onclick=async (e)=>{ e.preventDefault(); e.stopPropagation();
+    const n=(prompt('Nuevo nombre del colegio:', b.dataset.nom)||'').trim(); if(!n) return;
+    await accion(()=>SB.rpc('kimun_prof_colegio_renombrar',{p_id:b.dataset.col, p_nombre:n}), 'Colegio renombrado'); });
+  document.querySelectorAll('.col-del').forEach(b=>b.onclick=async (e)=>{ e.preventDefault(); e.stopPropagation();
+    if(!confirm('¿Borrar este colegio?\n\nSus cursos quedan SIN colegio (no se borran).')) return;
+    await accion(()=>SB.rpc('kimun_prof_colegio_borrar',{p_id:b.dataset.col}), 'Colegio borrado'); });
+  document.querySelectorAll('.colegio-sel').forEach(sel=>sel.onchange=async ()=>{
     await accion(()=>SB.rpc('kimun_prof_curso_colegio_fijar',
       {p_curso_codigo:sel.dataset.cod, p_colegio:sel.value||null}),
-      sel.value ? 'Curso asignado al colegio' : 'Curso sin colegio');
+      sel.value ? 'Curso movido de colegio' : 'Curso sin colegio');
   });
 }
 
@@ -915,6 +949,21 @@ async function pintarLista(){
   // Lo que la vista de avance va a necesitar cuando esta lista ya no exista en el DOM.
   cursos.forEach(([cod,c]) => { CURSO_INFO[cod] =
     {nivel:c.nivel||'', misAsig:c.misAsig||[], gestiono:!!c.gestiono, nombre:c.nombre}; });
+  /* Árbol Sostenedor › Colegio › Cursos (Sesión 116): quien administra el colegio ve los
+     cursos AGRUPADOS bajo su colegio y sostenedor. Se piden aquí, una vez, para agrupar; un
+     Jefe / profe de asignatura no pasa el portero y ve sus cursos planos, sin el envoltorio. */
+  let SOST_ARBOL = [];      // [{id, nombre, colegios:[{id,nombre}]}]
+  const COLS_FLAT = [];     // {id, etiqueta} de todos los colegios, para mover un curso
+  if(window.ESADMINCOLEGIO){
+    const {data:sos} = await SB.rpc('kimun_prof_sostenedores');
+    for(const s of (sos||[])){
+      const {data:cols} = await SB.rpc('kimun_prof_colegios',{p_sostenedor:s.id});
+      SOST_ARBOL.push({id:s.id, nombre:s.nombre, colegios:cols||[]});
+      (cols||[]).forEach(c=>COLS_FLAT.push({id:c.id, etiqueta:s.nombre+' · '+c.nombre}));
+    }
+  }
+  const opcionesColegio = sel => '<option value="">Sin colegio</option>' +
+    COLS_FLAT.map(x=>`<option value="${esc(x.id)}"${x.id===sel?' selected':''}>${esc(x.etiqueta)}</option>`).join('');
   /* La barra se arma por partes: "Contraer todo" solo tiene sentido con más de un curso,
      pero el pulso del colegio se ve igual con uno. Antes la barra entera dependía del
      conteo, así que un colegio de un solo curso se quedaba sin el botón nuevo. */
@@ -944,8 +993,14 @@ async function pintarLista(){
       <div class="curso-cuerpo">
         <button class="btn-chip principal avance" data-cod="${esc(cod)}" data-nom="${esc(c.nombre)}"
           data-gestiono="${c.gestiono?'1':''}">📊 Ver avance del curso</button>
+        ${c.gestiono?`<details class="equipo" data-cod="${esc(cod)}" data-nivel="${esc(c.nivel)}" style="margin-top:6px">
+          <summary style="cursor:pointer;color:var(--cyan);font-size:13px;font-weight:500;list-style:none">👥 Equipo del curso · Jefe, asignatura</summary>
+          <div class="equipo-cuerpo" data-cod="${esc(cod)}">
+            <p style="color:var(--dim);font-size:12px;margin:6px 0">Cargando…</p>
+          </div>
+        </details>`:''}
         <details class="alumnos">
-          <summary><span class="cur-chevron" aria-hidden="true">▸</span>👥 Alumnos (${c.alumnos.length})</summary>
+          <summary><span class="cur-chevron" aria-hidden="true">▸</span>🧑‍🎓 Alumnos (${c.alumnos.length})</summary>
           <div class="alumnos-cuerpo">
             ${c.alumnos.length ? '<div class="alu-lista">'+c.alumnos.map(a=>`
               <div class="alu">
@@ -980,12 +1035,9 @@ async function pintarLista(){
             <p style="color:var(--dim);font-size:12px;margin:6px 0">Cargando…</p>
           </div>
         </details>`:''}
-        ${c.gestiono?`<details class="equipo" data-cod="${esc(cod)}" data-nivel="${esc(c.nivel)}" style="margin-top:6px">
-          <summary style="cursor:pointer;color:var(--cyan);font-size:13px;font-weight:500;list-style:none">👥 Equipo del curso</summary>
-          <div class="equipo-cuerpo" data-cod="${esc(cod)}">
-            <p style="color:var(--dim);font-size:12px;margin:6px 0">Cargando…</p>
-          </div>
-        </details>`:''}
+        ${window.ESADMINCOLEGIO?`<div style="display:flex;gap:6px;align-items:center;margin-top:8px;font-size:12px;color:var(--dim)">
+          Colegio <select class="colegio-sel" data-cod="${esc(cod)}" style="max-width:230px">${opcionesColegio(c.colegioId)}</select>
+        </div>`:''}
       </div>
     </details>`).join('')
    : '<p style="color:var(--dim);font-size:13px">Aún no tienes cursos.</p>')
@@ -1012,9 +1064,6 @@ async function pintarLista(){
           <input id="nuevoCorreo" type="email" placeholder="Correo del profesor nuevo">
           <button class="btn sec" id="btnAutorizar">+ Autorizar profesor</button>
           <div id="profes" style="margin:10px 0"></div>
-
-          <h3 style="font-size:12px;margin:16px 0 8px">Sostenedores y colegios</h3>
-          <div id="inquilinos"><p style="color:var(--dim);font-size:12px">Cargando…</p></div>
 
           <h3 style="font-size:12px;margin:16px 0 8px">Herramientas</h3>
           <div class="btn-fila">
@@ -1142,9 +1191,10 @@ async function pintarLista(){
                      reg?'Profesor revocado':'Invitación cancelada');
       });
     }
-    // Los inquilinos (Sostenedor ▸ Colegio) se cargan aparte de la lista de profesores: su
-    // fallo no impide ver el resto de Administración. Usa `cursos`/`porCurso` en scope.
-    await renderInquilinos(cursos, porCurso);
+    // El árbol Sostenedor › Colegio › Cursos reparenta las tarjetas de curso ya renderizadas.
+    // Va al final: corre después del render y de restaurar el estado desplegado. SOST_ARBOL y
+    // porCurso están en scope.
+    agruparArbol(SOST_ARBOL, porCurso);
   }
 }
 

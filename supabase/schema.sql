@@ -1047,6 +1047,39 @@ declare cid uuid; begin
   update public.cursos set colegio_id = p_colegio where id = cid;
 end $$;
 
+-- Renombrar / borrar sostenedor y colegio (Sesión 116). Mismo portero admin_colegio.
+-- ⚠️ Borrar un colegio deja sus cursos en "Sin colegio" (on delete set null); borrar un
+-- sostenedor arrastra sus colegios (on delete cascade) y esos dejan sus cursos sin colegio.
+create or replace function public.kimun_prof_sostenedor_renombrar(p_id uuid, p_nombre text)
+returns void language plpgsql security definer set search_path=public as $$
+begin
+  if not public.kimun_prof_admin_colegio() then raise exception 'no_autorizado'; end if;
+  if coalesce(trim(p_nombre),'') = '' then raise exception 'nombre_vacio'; end if;
+  update public.sostenedores set nombre = trim(p_nombre) where id = p_id;
+end $$;
+
+create or replace function public.kimun_prof_sostenedor_borrar(p_id uuid)
+returns void language plpgsql security definer set search_path=public as $$
+begin
+  if not public.kimun_prof_admin_colegio() then raise exception 'no_autorizado'; end if;
+  delete from public.sostenedores where id = p_id;
+end $$;
+
+create or replace function public.kimun_prof_colegio_renombrar(p_id uuid, p_nombre text)
+returns void language plpgsql security definer set search_path=public as $$
+begin
+  if not public.kimun_prof_admin_colegio() then raise exception 'no_autorizado'; end if;
+  if coalesce(trim(p_nombre),'') = '' then raise exception 'nombre_vacio'; end if;
+  update public.colegios set nombre = trim(p_nombre) where id = p_id;
+end $$;
+
+create or replace function public.kimun_prof_colegio_borrar(p_id uuid)
+returns void language plpgsql security definer set search_path=public as $$
+begin
+  if not public.kimun_prof_admin_colegio() then raise exception 'no_autorizado'; end if;
+  delete from public.colegios where id = p_id;
+end $$;
+
 -- Elimina un curso mío y sus alumnos (arrastra los duelos de esos alumnos).
 create or replace function public.kimun_prof_curso_quitar(p_curso_codigo text)
 returns int language plpgsql security definer set search_path=public as $$
@@ -2566,6 +2599,10 @@ grant execute on function
   , public.kimun_prof_sostenedor_crear(text)
   , public.kimun_prof_colegio_crear(uuid,text)
   , public.kimun_prof_curso_colegio_fijar(text,uuid)
+  , public.kimun_prof_sostenedor_renombrar(uuid,text)
+  , public.kimun_prof_sostenedor_borrar(uuid)
+  , public.kimun_prof_colegio_renombrar(uuid,text)
+  , public.kimun_prof_colegio_borrar(uuid)
   to anon, authenticated;
 
 -- ------------------------------------------------------------

@@ -661,11 +661,14 @@ tienda y permite probar notificaciones antes de enfrentar iOS. Detalle en
   (Sesión 116). El cambio de fondo más grande del proyecto: reconstruye la autorización de VULPO, de
   roles fijos a **capacidades granulares sobre un ámbito**, y agrega dos niveles de inquilino. Se
   despliega junto, se construye en **cuatro fases**:
-  - **Fase 1 · Inquilinos — ✅ HECHA y aplicada (Sesión 116).** Tablas `sostenedores`/`colegios`,
-    `cursos.colegio_id` nullable, funciones de listar/crear/asignar y una sección en el panel
-    (Administración). Aditiva, **no toca permisos**. **Falta la migración del piloto** (Roberto, por el
-    panel: crear San Francisco de Sales + su colegio y asignar todos los cursos actuales).
+  - **Fase 1 · Inquilinos — ✅ HECHA, aplicada y migrada (Sesión 116).** Tablas `sostenedores`/`colegios`,
+    `cursos.colegio_id` nullable, funciones de listar/crear/asignar. Aditiva, **no toca permisos**.
+    Roberto creó el sostenedor (San Francisco de Sales) + su colegio y asignó los cursos desde el panel.
     Plan: [`docs/superpowers/plans/2026-09-10-fase1-inquilinos.md`](docs/superpowers/plans/2026-09-10-fase1-inquilinos.md).
+  - **Reorden del panel en árbol + renombrar/borrar — ✅ HECHO (Sesión 116).** El panel sigue la
+    jerarquía **Sostenedor › Colegio › Cursos** (con el Equipo antes que los Alumnos), y se pueden
+    **renombrar/borrar** sostenedores y colegios y **mover** un curso de colegio. `agruparArbol` reparenta
+    los nodos de curso; un Jefe/asignatura ve sus cursos planos.
   - **Fase 2 · El motor granular** — `permisos_usuario`, los porteros nuevos, los presets, y la
     migración de `es_super`/`es_operador`/`curso_profesores` → grants. **Riesgo ALTO: reescribe la
     autorización.** Absorbe el rol Operador (hoy bandera `es_operador`, Sesión 116). Se verifica con la

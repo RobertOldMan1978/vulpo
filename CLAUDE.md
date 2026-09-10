@@ -2435,8 +2435,10 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
   a Admin y Operador salvo que el que llama sea Admin). Y las tablas de inquilinos **`sostenedores`** y
   **`colegios`** + **`cursos.colegio_id` nullable** (Fase 1 del multi-inquilino), con
   `kimun_prof_sostenedores()`/`_colegios(uuid)`/`_sostenedor_crear(text)`/`_colegio_crear(uuid,text)`/
-  `_curso_colegio_fijar(text,uuid)`, gateadas por `kimun_prof_admin_colegio()`. ⚠️ **Todavía informativas
-  para los permisos:** ningún portero mira `colegio_id` hasta la Fase 2. `kimun_prof_listar` y
+  `_curso_colegio_fijar(text,uuid)`, más `kimun_prof_sostenedor_renombrar`/`_borrar` y
+  `kimun_prof_colegio_renombrar`/`_borrar`, todas gateadas por `kimun_prof_admin_colegio()`. El panel las
+  muestra como un **árbol Sostenedor › Colegio › Cursos** (Sesión 116). ⚠️ **Todavía informativas para
+  los permisos:** ningún portero mira `colegio_id` hasta la Fase 2. `kimun_prof_listar` y
   `kimun_prof_profesores` **cambiaron de firma** (con sus `drop`), así que el panel se publica antes o
   junto con el esquema. Spec: `docs/superpowers/specs/2026-09-10-multi-tenant-permisos-granular-design.md`.
 - **Pendiente:** notificaciones push.
@@ -12396,3 +12398,32 @@ la Fase 2** como un grant de plataforma. Spec:
 - **Lo que sigue:** las **Fases 2-4** —el motor granular (`permisos_usuario`, porteros nuevos, presets,
   absorber Operador), el mantenedor (la pantalla), y el cutover—, cada una con su plan. La Fase 2 es el
   bloque grande y de riesgo alto porque reescribe la autorización.
+
+**El panel se reordena en árbol Sostenedor › Colegio › Cursos, y renombrar/borrar (Sesión 116).**
+Con la Fase 1 aplicada y el piloto migrado (Roberto creó el sostenedor y su colegio desde el panel y
+asignó los cursos), pidió que la plantilla siguiera la jerarquía: **Sostenedor › Colegio › Cursos**, y
+dentro de cada curso el **Equipo con el Jefe a la cabeza → profes de asignatura → alumnos**. Se
+construyó y se decidió **publicarlo ya** y dejar el motor granular (Fase 2) para después —con un solo
+colegio, el aislamiento por colegio es **invisible**, así que el reorden entrega la vista pedida sin
+tocar la autorización—.
+- Panel: el árbol **reparenta los nodos de curso** en el DOM bajo su colegio/sostenedor (`agruparArbol`)
+  en vez de reescribir la plantilla, así las tarjetas y todo su cableado quedan intactos. Solo lo ve
+  quien administra el colegio; un Jefe / profe de asignatura ve sus cursos **planos**. El Equipo pasó a
+  ir **antes** que Alumnos; cada curso trae un selector para **mover de colegio**; los sostenedores/
+  colegios se crean, **renombran (✎) y borran (🗑️)** desde las cabeceras del árbol. La sección
+  "Sostenedores y colegios" de Administración se retiró (el árbol la reemplaza).
+- Esquema: cuatro funciones nuevas `kimun_prof_sostenedor_renombrar`/`_borrar` y `kimun_prof_colegio_
+  renombrar`/`_borrar` (portero `kimun_prof_admin_colegio`), aditivas. ⚠️ Borrar un colegio deja sus
+  cursos en "Sin colegio" (`on delete set null`); borrar un sostenedor arrastra sus colegios.
+- **Verificado mirando** (cdp.mjs, escritorio 1280 y móvil 375, con el doble): el árbol con el
+  sostenedor/colegio del piloto, el Equipo antes que Alumnos, renombrar/borrar/mover cableados, la
+  vista de profe plana sin regresión, consola limpia y sin desborde.
+- **Un bug de la primera aplicación de la Fase 1, cazado por el control:** `kimun_prof_sostenedores` y
+  `_colegios` daban `column reference id is ambiguous` (42702) —su guard `where id = auth.uid()`
+  chocaba con el OUT `id` del `returns table`—. Se aliasó la tabla (`pr.id`); es la familia del bug
+  `v_rol` de la Sesión 73. Y la primera vez que Roberto re-aplicó, el arreglo **no llegó** porque el
+  pegado del archivo completo salió del buffer viejo del editor (el gotcha de la Sesión 111): se
+  resolvió pegando un fragmento chico con solo las dos funciones.
+- **Pendiente:** el **motor granular** (Fase 2) —el aislamiento por colegio + la base del mantenedor—,
+  que hoy es invisible con un colegio y se construye cuando llegue el segundo o se quiera el mantenedor
+  de casillas. Plan: `docs/superpowers/plans/2026-09-10-fase2-permisos-granular.md`.
