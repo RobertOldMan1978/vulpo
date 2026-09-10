@@ -653,13 +653,27 @@ tienda y permite probar notificaciones antes de enfrentar iOS. Detalle en
 
 ## Diseñado y en cola (spec listo, sin implementar)
 
-- **El semáforo de planificación en el juego del alumno** (Sesión 113). Con el orden libre, el niño
-  ve todo desbloqueado y no sabe qué toca esta semana; el profesor ya declara las fechas de cada
-  unidad (Sesión 108) y esto lleva ese dato al juego: **📖 en clases / 🕒 no empieza / 📚 terminada**
-  en la campaña, un resumen en el menú de asignaturas, **solo en el juego del niño**, sin volver a
-  bloquear. Backend nuevo `kimun_mi_plan()` (sin exponer el registro de justificaciones, que es de
-  UTP). **Spec aprobado**, plan por escribir cuando se implemente:
-  [`docs/superpowers/specs/2026-09-08-unidad-en-curso-alumno-design.md`](docs/superpowers/specs/2026-09-08-unidad-en-curso-alumno-design.md).
+- ~~**El semáforo de planificación en el juego del alumno** (Sesión 113)~~ → ✅ **HECHO (Sesión 114):**
+  📖 en clases / 🕒 no empieza / 📚 terminada en la campaña, `kimun_mi_plan()` y el mapa
+  `assets/plan/oa-unidad.json`, solo en el juego del niño.
+
+- **Multi-inquilino (Sostenedor ▸ Colegio) + motor de permisos granular + mantenedor de usuarios**
+  (Sesión 116). El cambio de fondo más grande del proyecto: reconstruye la autorización de VULPO, de
+  roles fijos a **capacidades granulares sobre un ámbito**, y agrega dos niveles de inquilino. Se
+  despliega junto, se construye en **cuatro fases**:
+  - **Fase 1 · Inquilinos — ✅ HECHA y aplicada (Sesión 116).** Tablas `sostenedores`/`colegios`,
+    `cursos.colegio_id` nullable, funciones de listar/crear/asignar y una sección en el panel
+    (Administración). Aditiva, **no toca permisos**. **Falta la migración del piloto** (Roberto, por el
+    panel: crear San Francisco de Sales + su colegio y asignar todos los cursos actuales).
+    Plan: [`docs/superpowers/plans/2026-09-10-fase1-inquilinos.md`](docs/superpowers/plans/2026-09-10-fase1-inquilinos.md).
+  - **Fase 2 · El motor granular** — `permisos_usuario`, los porteros nuevos, los presets, y la
+    migración de `es_super`/`es_operador`/`curso_profesores` → grants. **Riesgo ALTO: reescribe la
+    autorización.** Absorbe el rol Operador (hoy bandera `es_operador`, Sesión 116). Se verifica con la
+    auditoría de no-escalada (estilo Sesión 111) y una foto de acceso por usuario antes/después.
+  - **Fase 3 · El mantenedor** — la pantalla (editor de casillas por capacidad, operado por
+    Admin/Operador, usuario identificado por correo), que reemplaza los toggles sueltos de hoy.
+  - **Fase 4 · Cutover** — apagar los toggles/bloques viejos; todo pasa por el mantenedor.
+  Spec: [`docs/superpowers/specs/2026-09-10-multi-tenant-permisos-granular-design.md`](docs/superpowers/specs/2026-09-10-multi-tenant-permisos-granular-design.md).
 
 ---
 

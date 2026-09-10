@@ -754,7 +754,9 @@ async function soyProfesor(){
 // —al abrir el panel y en cada repintado de la lista— y tenerlo escrito dos veces es
 // exactamente como se desincronizan.
 function pintarIdentidad(){
-  const rango = YO.es_admin ? 'Administrador' : (YO.es_super ? 'SuperUsuario' : 'Profesor');
+  const rango = YO.es_admin ? 'Administrador'
+    : YO.es_operador ? 'Operador'
+    : YO.es_super ? 'SuperUsuario' : 'Profesor';
   const nom = (YO.nombre||'').trim();
   // Sin nombre, el correo hace de nombre: repetirlo en las dos líneas sería ruido.
   $('profId').innerHTML =
@@ -768,7 +770,7 @@ async function cargarPanel(){
   if(!YO){ throw new Error('no_autorizado'); }
   $('cardAuth').classList.add('hide');
   $('cardPanel').classList.remove('hide');
-  const esAdminColegio = !!(YO.es_admin || YO.es_super);
+  const esAdminColegio = !!(YO.es_admin || YO.es_super || YO.es_operador);
   window.ESADMINCOLEGIO = esAdminColegio;   // usado por pintarLista y el bloque de equipo
   pintarIdentidad();
   $('panelTitulo').textContent = esAdminColegio ? 'Todos los cursos' : 'Mis cursos';
@@ -822,6 +824,70 @@ function totalOaNivel(nivel){
   return suma;
 }
 
+// Sostenedores y colegios (Sesión 116, Fase 1). Sección de configuración una-vez-al-año,
+// por eso vive en Administración (plegada) y no en cada tarjeta de curso —igual que "Crear
+// curso" o "Profesores"—: la superficie semanal no se ensucia con una acción anual. Muestra
+// el árbol Sostenedor ▸ Colegio y deja asignarle su colegio a cada curso. Todavía informativo
+// para los permisos: los porteros no miran colegio_id hasta la Fase 2. Su fallo no tumba el
+// resto de Administración.
+async function renderInquilinos(cursos, porCurso){
+  const cont = document.getElementById('inquilinos');
+  if(!cont) return;
+  const {data:sos, error} = await SB.rpc('kimun_prof_sostenedores');
+  if(error){ cont.innerHTML='<p style="color:var(--pink);font-size:12px">No se pudo cargar sostenedores y colegios.</p>'; return; }
+  // Los colegios de cada sostenedor (1+N llamadas). Es una pantalla de configuración, con
+  // uno o dos sostenedores: la simpleza gana al ahorro de un par de llamadas.
+  const colsPorSos = {};
+  const colegiosFlat = [];   // {id, etiqueta} de TODOS los colegios, para el selector del curso
+  for(const s of (sos||[])){
+    const {data:cols} = await SB.rpc('kimun_prof_colegios',{p_sostenedor:s.id});
+    colsPorSos[s.id] = cols||[];
+    (cols||[]).forEach(c=>colegiosFlat.push({id:c.id, etiqueta:s.nombre+' · '+c.nombre}));
+  }
+  const arbol = (sos||[]).length ? (sos||[]).map(s=>`
+      <div style="border:1px solid var(--linea);border-radius:8px;padding:8px 10px;margin:6px 0">
+        <b style="color:var(--texto)">${esc(s.nombre)}</b>
+        <span style="color:var(--dim);font-size:12px"> · ${s.colegios} colegio${s.colegios===1?'':'s'}</span>
+        <div style="margin:6px 0">${(colsPorSos[s.id]||[]).length
+          ? (colsPorSos[s.id]).map(c=>`<div style="font-size:13px;padding:2px 0">🏫 ${esc(c.nombre)}
+              <span style="color:var(--dim)">· ${c.cursos} curso${c.cursos===1?'':'s'}</span></div>`).join('')
+          : '<span style="color:var(--dim);font-size:12px">Sin colegios todavía.</span>'}</div>
+        <input class="in-colegio" data-sos="${esc(s.id)}" placeholder="Nombre del colegio nuevo" style="max-width:280px">
+        <button class="btn sec col-crear" data-sos="${esc(s.id)}">+ Crear colegio</button>
+      </div>`).join('')
+    : '<p style="color:var(--dim);font-size:12px">Aún no hay sostenedores.</p>';
+  const opciones = c => '<option value="">Sin colegio</option>' +
+    colegiosFlat.map(x=>`<option value="${esc(x.id)}"${x.id===c.colegioId?' selected':''}>${esc(x.etiqueta)}</option>`).join('');
+  const listaCursos = cursos.length ? cursos.map(([cod,c])=>`
+      <div style="display:flex;gap:8px;align-items:center;padding:3px 0;font-size:13px;flex-wrap:wrap">
+        <b style="color:var(--gold)">${esc(c.nombre)}</b> <code>${esc(cod)}</code>
+        <select class="colegio-sel" data-cod="${esc(cod)}" style="max-width:260px">${opciones(c)}</select>
+      </div>`).join('')
+    : '<p style="color:var(--dim);font-size:12px">Sin cursos.</p>';
+  cont.innerHTML = `
+    <input id="sosNombre" placeholder="Nombre del sostenedor nuevo" style="max-width:280px">
+    <button class="btn sec" id="btnSos">+ Crear sostenedor</button>
+    ${arbol}
+    <h4 style="font-size:12px;margin:12px 0 4px;color:var(--dim)">Colegio de cada curso</h4>
+    ${listaCursos}`;
+  $('btnSos').onclick=async ()=>{
+    const n=($('sosNombre').value||'').trim();
+    if(!n){ aviso('Escribe un nombre.'); return; }
+    await accion(()=>SB.rpc('kimun_prof_sostenedor_crear',{p_nombre:n}), 'Sostenedor creado');
+  };
+  cont.querySelectorAll('.col-crear').forEach(b=>b.onclick=async ()=>{
+    const campo=cont.querySelector('.in-colegio[data-sos="'+b.dataset.sos+'"]');
+    const n=(campo.value||'').trim();
+    if(!n){ aviso('Escribe un nombre.'); return; }
+    await accion(()=>SB.rpc('kimun_prof_colegio_crear',{p_sostenedor:b.dataset.sos, p_nombre:n}), 'Colegio creado');
+  });
+  cont.querySelectorAll('.colegio-sel').forEach(sel=>sel.onchange=async ()=>{
+    await accion(()=>SB.rpc('kimun_prof_curso_colegio_fijar',
+      {p_curso_codigo:sel.dataset.cod, p_colegio:sel.value||null}),
+      sel.value ? 'Curso asignado al colegio' : 'Curso sin colegio');
+  });
+}
+
 async function pintarLista(){
   // Preservar qué cursos (y su sublista de alumnos) estaban desplegados, para que al
   // re-renderizar tras una acción (p. ej. agregar alumno) el curso no se contraiga solo.
@@ -840,7 +906,8 @@ async function pintarLista(){
   (data||[]).forEach(f=>{
     porCurso[f.curso_codigo]=porCurso[f.curso_codigo]||
       {nombre:f.curso, alumnos:[], gestiono:f.puede_gestionar, miRol:f.mi_rol,
-       misAsig:f.mis_asignaturas, nivel:f.nivel||''};
+       misAsig:f.mis_asignaturas, nivel:f.nivel||'',
+       colegioId:f.colegio_id||null, colegio:f.colegio||''};
     if(f.pid) porCurso[f.curso_codigo].alumnos.push(f);   // pid: id de perfil (siempre presente); codigo_acceso puede venir null para un profe de asignatura
   });
   const cursos=Object.entries(porCurso);
@@ -946,12 +1013,15 @@ async function pintarLista(){
           <button class="btn sec" id="btnAutorizar">+ Autorizar profesor</button>
           <div id="profes" style="margin:10px 0"></div>
 
+          <h3 style="font-size:12px;margin:16px 0 8px">Sostenedores y colegios</h3>
+          <div id="inquilinos"><p style="color:var(--dim);font-size:12px">Cargando…</p></div>
+
           <h3 style="font-size:12px;margin:16px 0 8px">Herramientas</h3>
           <div class="btn-fila">
             <button class="btn sec" id="btnTablero">📊 Tablero de avance</button>
-            ${YO.es_admin?`<button class="btn peligro" id="btnLimpiar">🧹 Limpiar perfiles de prueba</button>`:''}
+            ${(YO.es_admin||YO.es_operador)?`<button class="btn peligro" id="btnLimpiar">🧹 Limpiar perfiles de prueba</button>`:''}
           </div>
-          ${YO.es_admin?`<label class="campo" style="margin-top:10px">🔗 Armar enlace de muestra</label>
+          ${(YO.es_admin||YO.es_operador)?`<label class="campo" style="margin-top:10px">🔗 Armar enlace de muestra</label>
           <select id="armarNivel">${NIVELES_MUESTRA.map(n=>`<option value="${n.ruta}">${n.nombre}</option>`).join('')}</select>
           <button class="btn sec" id="btnArmar">Abrir armador</button>`:''}
         </div>
@@ -1007,8 +1077,9 @@ async function pintarLista(){
       await accion(()=>SB.rpc('kimun_prof_autorizar',{p_correo:c}), 'Correo autorizado');
     };
     $('btnTablero').onclick=()=>{ window.location.href='dev/tablero.html'; };
-    // "Limpiar perfiles de prueba" y el armador son de plataforma: solo el Admin los ve.
-    if(YO.es_admin){
+    // "Limpiar perfiles de prueba" y el armador son herramientas operativas: las ve el Admin
+    // y el Operador (no un SuperUsuario). Solo se cablean si el botón se dibujó.
+    if(YO.es_admin || YO.es_operador){
       $('btnLimpiar').onclick=limpiarPruebas;
       $('btnArmar').onclick=()=>{ window.location.href=$('armarNivel').value+'?armar=1'; };
     }
@@ -1017,15 +1088,27 @@ async function pintarLista(){
       $('profes').innerHTML='<p style="color:var(--pink);font-size:12px">No se pudo cargar la lista de profesores.</p>';
     }else{
       $('profes').innerHTML=(profes||[]).map(p=>{
-        const rango = p.es_admin ? 'Administrador' : (p.es_super ? 'SuperUsuario' : (p.registrado?'Profesor':'sin registrar'));
-        // Solo el Admin puede cambiar el rol de SuperUsuario, y no sobre un Admin.
-        const btnSuper = (YO.es_admin && p.registrado && !p.es_admin)
+        const rango = p.es_admin ? 'Administrador'
+          : p.es_operador ? 'Operador'
+          : p.es_super ? 'SuperUsuario' : (p.registrado?'Profesor':'sin registrar');
+        // Nombrar SuperUsuario: lo hace un Admin o un Operador, nunca sobre un Admin ni un Operador.
+        const btnSuper = ((YO.es_admin || YO.es_operador) && p.registrado && !p.es_admin && !p.es_operador)
           ? `<button class="btn-chip super-toggle" data-correo="${esc(p.correo)}" data-on="${p.es_super?'0':'1'}">${p.es_super?'Quitar Super':'Hacer Super'}</button>`
+          : '';
+        // Nombrar Operador: SOLO el Admin, y nunca sobre otro Admin.
+        const btnOperador = (YO.es_admin && p.registrado && !p.es_admin)
+          ? `<button class="btn-chip operador-toggle" data-correo="${esc(p.correo)}" data-on="${p.es_operador?'0':'1'}">${p.es_operador?'Quitar Operador':'Hacer Operador'}</button>`
           : '';
         // Revocar / cancelar invitación. Nunca a mí mismo ni a un Admin desde la UI;
         // un SuperUsuario no puede revocar a otro SuperUsuario (el servidor igual lo rechaza).
         const esYo = p.correo && (p.correo.toLowerCase() === (YO.correo||'').toLowerCase());
-        const btnRevocar = (!esYo && !p.es_admin && (YO.es_admin || !p.es_super))
+        // Refleja la matriz del servidor: a un Admin/Operador solo los revoca un Admin; a un
+        // Super, un Admin u Operador; a un profe común, cualquiera que administre. El servidor manda.
+        const puedeRevocar = !esYo && !p.es_admin && (
+          p.es_operador ? YO.es_admin
+          : p.es_super  ? (YO.es_admin || YO.es_operador)
+          :               true);
+        const btnRevocar = puedeRevocar
           ? `<button class="ico ico-del prof-quitar" data-correo="${esc(p.correo)}" data-reg="${p.registrado?'1':''}"
                title="${p.registrado?'Revocar profesor':'Cancelar invitación'}">✕</button>`
           : '';
@@ -1033,7 +1116,7 @@ async function pintarLista(){
            <span class="pro-nom">${esc(p.correo)}</span>
            <span style="color:var(--dim)">${esc(rango)}</span>
            <span style="color:var(--cyan)">${p.cursos} curso${p.cursos===1?'':'s'}</span>
-           ${btnSuper}${btnRevocar}
+           ${btnOperador}${btnSuper}${btnRevocar}
          </div>`;
       }).join('');
       document.querySelectorAll('.super-toggle').forEach(b=>b.onclick=async ()=>{
@@ -1042,6 +1125,13 @@ async function pintarLista(){
                          :'¿Quitarle el rol de SuperUsuario?')) return;
         await accion(()=>SB.rpc('kimun_prof_super_fijar',{p_correo:b.dataset.correo, p_es_super:hacer}),
                      hacer?'Ahora es SuperUsuario':'Ya no es SuperUsuario');
+      });
+      document.querySelectorAll('.operador-toggle').forEach(b=>b.onclick=async ()=>{
+        const hacer=b.dataset.on==='1';
+        if(!confirm(hacer?'¿Nombrar Operador a este profesor? Podrá operar todos los cursos y gestionar SuperUsuarios, pero no tocar administradores.'
+                         :'¿Quitarle el rol de Operador?')) return;
+        await accion(()=>SB.rpc('kimun_prof_operador_fijar',{p_correo:b.dataset.correo, p_es_operador:hacer}),
+                     hacer?'Ahora es Operador':'Ya no es Operador');
       });
       document.querySelectorAll('.prof-quitar').forEach(b=>b.onclick=async ()=>{
         const reg=b.dataset.reg==='1';
@@ -1052,6 +1142,9 @@ async function pintarLista(){
                      reg?'Profesor revocado':'Invitación cancelada');
       });
     }
+    // Los inquilinos (Sostenedor ▸ Colegio) se cargan aparte de la lista de profesores: su
+    // fallo no impide ver el resto de Administración. Usa `cursos`/`porCurso` en scope.
+    await renderInquilinos(cursos, porCurso);
   }
 }
 

@@ -2428,6 +2428,17 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
   material de UTP (Sesión 108), y la restricción vive en **la FIRMA**, no en el cliente, así que no
   se puede deshacer desde el juego. Es del alumno (sesión anónima), así que va a `anon` y **no lleva
   portero de rol**: un anon sin curso recibe `[]` (el join no da filas), no `no_autorizado`.
+- **Rol Operador e inquilinos (Sesión 116):** columna `profesores.es_operador` (escalón entre Admin y
+  SuperUsuario; lo crea/quita **solo un Admin** con `kimun_prof_operador_fijar(text,boolean)`; los cuatro
+  porteros `es_mio`/`acceso`/`asignaturas`/`admin_colegio` suman `es_operador`, `super_fijar` y
+  `limpiar_pruebas` amplían a `es_admin OR es_operador`, y `quitar`/`super_fijar`/`operador_fijar` blindan
+  a Admin y Operador salvo que el que llama sea Admin). Y las tablas de inquilinos **`sostenedores`** y
+  **`colegios`** + **`cursos.colegio_id` nullable** (Fase 1 del multi-inquilino), con
+  `kimun_prof_sostenedores()`/`_colegios(uuid)`/`_sostenedor_crear(text)`/`_colegio_crear(uuid,text)`/
+  `_curso_colegio_fijar(text,uuid)`, gateadas por `kimun_prof_admin_colegio()`. ⚠️ **Todavía informativas
+  para los permisos:** ningún portero mira `colegio_id` hasta la Fase 2. `kimun_prof_listar` y
+  `kimun_prof_profesores` **cambiaron de firma** (con sus `drop`), así que el panel se publica antes o
+  junto con el esquema. Spec: `docs/superpowers/specs/2026-09-10-multi-tenant-permisos-granular-design.md`.
 - **Pendiente:** notificaciones push.
 
 ## Trámites pendientes (fuera del código)
@@ -12272,7 +12283,7 @@ Tools (importa de GSC); (3) Perfil de Empresa de Google (Chile); (4) 2-3 backlin
 dominio de dos semanas toma meses: la marca rankea en semanas, la cola larga y el nicho UTP en 1-3
 meses, los términos anchos solo con autoridad acumulada. **Expectativa honesta, no urgencia.**
 
-### Sesión 116 (2026-09-09) — Los enlaces de muestra estrenan una vitrina de skins
+### Sesión 116 (2026-09-09 y 10) — Vitrina de skins, el rol Operador y los inquilinos
 Roberto preguntó si los enlaces de prueba veían las skins y la tienda. **No las veían, y era a
 propósito:** el modo prueba oculta la barra inferior entera (Tienda, Logros, Perfil, Ranking) desde
 la Sesión 41. Pero al medirlo apareció lo que sí valía la pena decir: **las skins son de los ganchos
@@ -12315,3 +12326,73 @@ normal sigue con sus 19 botones de compra y cero "En VULPO completo"—. **Cero 
 > **Lo que la muestra sigue SIN traer, y conviene saberlo:** no hay Logros, ni Perfil, ni Ranking —solo
 > se abrió la tienda, y de solo mirar—. El escaparate es gancho, no producto: quien quiera las skins de
 > verdad tiene que jugar el VULPO completo, que es exactamente lo que se quiere.
+
+#### Continuación de la Sesión 116 (10/09) — El organigrama, el rol Operador y los inquilinos
+Roberto pidió un **análisis de organigrama** de VULPO con sus permisos y accesos, pensándose como el
+Administrador, y cómo agregar a alguien "con acceso solo a la plataforma, no a la programación". De ahí
+salieron tres cosas: el análisis, un rol nuevo, y —al crecer el pedido— el rediseño de fondo de la
+autorización. **El juego (los seis forks) no se tocó:** todo es backend (`supabase/schema.sql`) y panel
+(`profesor.html`).
+
+**El análisis (Artifact privado, FUERA del repo).** Tres agentes de exploración midieron el modelo REAL
+en el código, no en la bitácora. El hallazgo que reorientó la pregunta: **cualquier rol del panel YA es
+"solo plataforma, no programación"** —GitHub, la consola de Supabase y Azure son cuentas aparte que
+ningún rol del panel toca (Sesión 36: "son TRES cuentas distintas")—, así que lo que se decide no es
+"plataforma vs código" (resuelto por diseño) sino **cuánto poder de plataforma** dar. El documento —dos
+matrices (permisos y acceso a información), el organigrama, y el mapeo de los roles del colegio, donde
+**Director y UTP son hoy el mismo rol técnico: SuperUsuario**— vive como Artifact privado. ⚠️ **No va al
+repo, que es público:** el detalle del modelo de permisos y la estructura de cuentas no se escriben ahí.
+
+**El rol Operador (implementado).** Un escalón nuevo entre Admin y SuperUsuario: co-admin operativo que
+hace todo lo operativo en todos los cursos, **pero no puede tocar a Admins ni a otros Operadores, ni
+revocar al dueño**. Bandera `profesores.es_operador`; **solo un Admin lo crea/quita desde el panel** (a
+diferencia del Admin, que sigue siendo SQL-only).
+- La regla que hace el cambio auditable: donde el código decía `(es_admin or es_super)` (tier operativo)
+  pasa a `(... or es_operador)`; donde decía **solo** `es_admin` (tier dueño) se decidió caso a caso —
+  `super_fijar`/`limpiar_pruebas` amplían a `es_admin OR es_operador`; **crear Operadores y tocar a un
+  Admin/Operador siguen siendo `es_admin` puro**.
+- Función nueva `kimun_prof_operador_fijar(p_correo, p_es_operador)`. ⚠️ El parámetro se llama
+  `p_es_operador` y no `es_operador` a secas, para no repetir el bug `v_rol` de la Sesión 73 (una
+  variable que choca con el nombre de una columna).
+- `kimun_prof_profesores` **cambió de firma** (suma la columna `es_operador`), con su `drop function` —
+  por eso el panel se publica antes o junto con el esquema (regla `docs/aplicar-schema.md`).
+- **No-escalada:** `es_operador` solo lo escribe `operador_fijar` (portero `es_admin` puro); `es_admin`
+  solo por SQL a mano; los guards de `quitar`/`super_fijar`/`operador_fijar` blindan a Admin y Operador
+  salvo que el que llama sea Admin. **El primer Operador se crea desde el panel**, sin SQL — ese es su
+  valor frente al Admin.
+
+**Multi-inquilino + motor de permisos granular — el spec.** Al revisar la matriz, Roberto redirigió a
+algo mayor: crear la entidad Colegio de una vez, y un **mantenedor de usuarios** con permisos granulares
+por capacidad (estilo editor de casillas), operado por Admin/Operador, con el usuario identificado por
+**correo**. Se diseñó con brainstorming → spec. Decisiones: **Sostenedor ▸ Colegio** (dos niveles);
+**motor de capacidades sobre un ámbito** en reemplazo de los chequeos por rol; los **roles como presets**;
+y **cuatro fases** (se despliega junto, se construye en orden). El rol Operador de arriba **se absorbe en
+la Fase 2** como un grant de plataforma. Spec:
+`docs/superpowers/specs/2026-09-10-multi-tenant-permisos-granular-design.md`.
+
+**Fase 1 · Inquilinos (implementada).** La base aditiva y de bajo riesgo, **sin tocar permisos**. Plan:
+`docs/superpowers/plans/2026-09-10-fase1-inquilinos.md`.
+- Tablas `sostenedores` y `colegios`, columna `cursos.colegio_id` **nullable**, con RLS sin políticas.
+- 5 funciones gateadas por `kimun_prof_admin_colegio()` (Admin/Super/Operador): `kimun_prof_sostenedores()`,
+  `_colegios(uuid)`, `_sostenedor_crear(text)`, `_colegio_crear(uuid,text)`, `_curso_colegio_fijar(text,uuid)`,
+  con sus grants.
+- Sección "Sostenedores y colegios" en el panel, **dentro de ⚙️ Administración (plegada)** y no en cada
+  tarjeta de curso: es configuración de una-vez-al-año, y va donde ya viven "Crear curso" y "Profesores"
+  (arquitectura del panel, Sesión 106). Trae un selector de colegio por curso.
+- ⚠️ **Se extendió `kimun_prof_listar` con `colegio_id`/`colegio`** en vez de una función aparte, para
+  **reusar su filtro de visibilidad** en vez de duplicarlo —la lista-paralela es la fuente de bug #1 del
+  proyecto—. Degrada bien en cualquier orden de despliegue: sin el esquema, el cliente lee `undefined` →
+  "Sin colegio".
+- ⚠️ **Todavía NO aísla por colegio:** los porteros siguen ignorando `colegio_id`, así que quien tiene
+  acceso hoy ve exactamente lo mismo. El aislamiento por ámbito es la Fase 2, y ahí está el riesgo.
+- **Verificado mirando** (cdp.mjs, escritorio 1280 y móvil 375, con el doble de `panel-demo.py`): la
+  sección integrada al panel sobrio, sin desborde ni recortes; los cursos pre-asignados muestran su
+  colegio; **asignar funciona de punta a punta** —el conteo del colegio sube 2→3—; sin regresión (6
+  tarjetas de curso + 6 botones de avance intactos); consola limpia y cero fallos de red. `panel-demo.py`
+  ganó los stubs de inquilinos, con los nombres de columna copiados de las firmas reales.
+- **Pendiente de Roberto:** la **migración del piloto** (Task 4, por el panel: crear San Francisco de
+  Sales + su colegio, asignar todos los cursos actuales). Como la Fase 1 no toca permisos, el acceso es
+  idéntico por definición; basta comprobar que cada curso quedó con su colegio.
+- **Lo que sigue:** las **Fases 2-4** —el motor granular (`permisos_usuario`, porteros nuevos, presets,
+  absorber Operador), el mantenedor (la pantalla), y el cutover—, cada una con su plan. La Fase 2 es el
+  bloque grande y de riesgo alto porque reescribe la autorización.

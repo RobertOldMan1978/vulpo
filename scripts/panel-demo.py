@@ -97,6 +97,15 @@ STUB = r"""
   };
   const JUGARON = {'CUR-6N01':0, 'CUR-4T22':0};
 
+  /* Inquilinos (Sesion 116, Fase 1). Un sostenedor con un colegio, como el piloto. Dos
+     cursos ya asignados y el resto "Sin colegio": asi se ve el selector preseleccionado Y
+     el caso vacio. Las funciones _crear/_fijar MUTAN estas constantes, para que crear un
+     colegio o asignar un curso se vea de verdad al re-renderizar, no como un no-op mudo. */
+  const SOS = [{id:'sos-1', nombre:'San Francisco de Sales'}];
+  const COLEGIOS = {'sos-1':[{id:'col-1', nombre:'Colegio San Francisco de Sales'}]};
+  const CURSO_COLEGIO = {'CUR-BA04':'col-1', 'CUR-5T77':'col-1'};
+  const COL_NOMBRE = {}; Object.values(COLEGIOS).forEach(a=>a.forEach(c=>COL_NOMBRE[c.id]=c.nombre));
+
   /* Planificacion ya cargada: dos unidades con fechas para ver el caso poblado, y el resto
      sin fechas para ver el vacio. `_otro` marca la que puso OTRA persona (la UTP), que es
      la que exige justificacion para moverse. */
@@ -140,7 +149,13 @@ STUB = r"""
   ];
 
   const R = {
-    kimun_prof_yo: ()=>({id:'prof-1', correo:'roberto.lorca@vulpo.cl', nombre:'Roberto Lorca', es_admin:true, es_super:false}),
+    // Rango por ?rol=admin|operador|super|profe (por defecto admin), para poder MIRAR el
+    // panel con cada rango sin regenerar el doble. En produccion kimun_prof_yo no lee la URL.
+    kimun_prof_yo: ()=>{
+      const rol=(new URLSearchParams(location.search).get('rol')||'admin');
+      return {id:'prof-1', correo:'roberto.lorca@vulpo.cl', nombre:'Roberto Lorca',
+        es_admin: rol==='admin', es_super: rol==='super', es_operador: rol==='operador'};
+    },
     /* Cuatro cursos a proposito, y con los NOMBRES desordenados respecto al nivel: el
        servidor los devuelve ordenados solo por c.nombre, asi que "8A Prueba" cae antes
        que "Quinto B" y un curso sin nivel se cuela al medio. Es lo que el orden
@@ -154,16 +169,36 @@ STUB = r"""
           // caso de borde no se podria probar.
           filas.push({curso_codigo:cod, curso:nom, nivel:niv, puede_gestionar:gest,
             mi_rol:rol, mis_asignaturas:asig, pid:null, alumno:null, avatar:null,
-            xp:null, dificil:null, codigo_acceso:null, autoinscrito:false});
+            xp:null, dificil:null, codigo_acceso:null, autoinscrito:false,
+            colegio_id: CURSO_COLEGIO[cod]||null, colegio: CURSO_COLEGIO[cod]?COL_NOMBRE[CURSO_COLEGIO[cod]]:null});
           return;
         }
         alumnos.slice(0,n).forEach((a,i)=>filas.push({curso_codigo:cod, curso:nom, nivel:niv,
           puede_gestionar:gest, mi_rol:rol, mis_asignaturas:asig,
           pid:'p'+k+'-'+i, alumno:a, avatar:'🦊', xp:2400-i*97, dificil:0,
-          codigo_acceso: gest ? 'ALU-'+(10000+k*97+i*7) : null, autoinscrito:i%5===0}));
+          codigo_acceso: gest ? 'ALU-'+(10000+k*97+i*7) : null, autoinscrito:i%5===0,
+          colegio_id: CURSO_COLEGIO[cod]||null, colegio: CURSO_COLEGIO[cod]?COL_NOMBRE[CURSO_COLEGIO[cod]]:null}));
       });
       return filas;
     },
+    /* Inquilinos (Fase 1). Nombres de columna de las firmas reales: kimun_prof_sostenedores
+       -> (id, nombre, colegios); kimun_prof_colegios -> (id, nombre, cursos). Los _crear
+       devuelven el id nuevo y los _fijar devuelven null (void), igual que en produccion. */
+    kimun_prof_sostenedores: ()=>SOS.map(s=>({id:s.id, nombre:s.nombre,
+      colegios:(COLEGIOS[s.id]||[]).length})),
+    kimun_prof_colegios: (a)=>(COLEGIOS[(a&&a.p_sostenedor)]||[]).map(c=>({id:c.id, nombre:c.nombre,
+      cursos: CURSOS.filter(x=>CURSO_COLEGIO[x[0]]===c.id).length})),
+    kimun_prof_sostenedor_crear: (a)=>{
+      const id='sos-'+(SOS.length+1); SOS.push({id, nombre:(a.p_nombre||'').trim()});
+      COLEGIOS[id]=[]; return id; },
+    kimun_prof_colegio_crear: (a)=>{
+      const id='col-'+(Object.values(COLEGIOS).reduce((n,x)=>n+x.length,0)+1);
+      (COLEGIOS[a.p_sostenedor]=COLEGIOS[a.p_sostenedor]||[]).push({id, nombre:(a.p_nombre||'').trim()});
+      COL_NOMBRE[id]=(a.p_nombre||'').trim(); return id; },
+    kimun_prof_curso_colegio_fijar: (a)=>{
+      if(a.p_colegio) CURSO_COLEGIO[a.p_curso_codigo]=a.p_colegio;
+      else delete CURSO_COLEGIO[a.p_curso_codigo];
+      return null; },
     /* El pulso del colegio. Nombres de columna copiados de la firma REAL de
        kimun_prof_pulso (curso_codigo, curso, nivel, inscritos, jugaron_semana,
        cobertura, puede_gestionar): este archivo ya perdio una tarde por escribir
@@ -340,9 +375,10 @@ STUB = r"""
 
     kimun_prof_inscripcion_estado: ()=>[{token:'INS-7F2K9QX1', cupo:35, usados:22, experimental:true}],
     kimun_prof_profesores: ()=>[
-      {correo:'j.arteaga@desales.cl', nombre:'Jorge Arteaga', es_admin:false, es_super:false, cursos:1, registrado:true},
-      {correo:'r.perez@desales.cl', nombre:'Rossy Perez', es_admin:false, es_super:true, cursos:2, registrado:true},
-      {correo:'k.rivas@desales.cl', nombre:null, es_admin:false, es_super:false, cursos:0, registrado:false}
+      {correo:'j.arteaga@desales.cl', nombre:'Jorge Arteaga', es_admin:false, es_super:false, es_operador:false, cursos:1, registrado:true},
+      {correo:'r.perez@desales.cl', nombre:'Rossy Perez', es_admin:false, es_super:true, es_operador:false, cursos:2, registrado:true},
+      {correo:'a.diaz@desales.cl', nombre:'Ana Diaz', es_admin:false, es_super:false, es_operador:true, cursos:3, registrado:true},
+      {correo:'k.rivas@desales.cl', nombre:null, es_admin:false, es_super:false, es_operador:false, cursos:0, registrado:false}
     ]
   };
   window.supabase = { createClient: ()=>({

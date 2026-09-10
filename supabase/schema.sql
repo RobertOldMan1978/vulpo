@@ -90,6 +90,15 @@ create table if not exists public.profesores (
 -- es_admin; un Admin cuenta también como administrador del colegio.
 alter table public.profesores add column if not exists es_super boolean not null default false;
 
+-- Nivel Operador (Sesión 116): staff de plataforma / la mano derecha del dueño. Escalón
+-- nuevo entre Admin y SuperUsuario. Jerarquía completa: Admin > Operador > SuperUsuario >
+-- Profesor. El Operador hace TODO lo operativo (crea cursos, autoriza profes, nombra Jefes
+-- y SuperUsuarios, ve el pulso, limpia perfiles, arma enlaces) en todos los cursos, pero NO
+-- puede tocar a un Admin ni a otro Operador, ni crear Operadores/Admins, ni revocar al dueño.
+-- A diferencia de es_admin (que solo se otorga por SQL a mano / lista blanca), es_operador se
+-- gestiona 100% desde el panel: SOLO un Admin lo pone/quita con kimun_prof_operador_fijar.
+alter table public.profesores add column if not exists es_operador boolean not null default false;
+
 -- Lista blanca: solo estos correos pueden completar su registro.
 create table if not exists public.profesores_autorizados (
   correo       text primary key,
@@ -204,6 +213,31 @@ alter table public.cursos add column if not exists nivel text;
 -- un alumno que borra los datos del navegador y vuelve a canjear su ALU- recupera
 -- el mismo modo, en vez de caer en el juego normal sin entender por qué.
 alter table public.cursos add column if not exists experimental boolean not null default false;
+
+-- Inquilinos (Sesión 116): Sostenedor ▸ Colegio ▸ Curso. El sostenedor es el cliente
+-- comercial; el colegio, la escuela con su dirección/UTP. Ambos con RLS y sin políticas
+-- de lectura: se consultan por funciones, como el resto del esquema. Nacen aquí (Fase 1),
+-- todavía SIN tocar los permisos: los porteros siguen ignorando colegio_id, así que quien
+-- tiene acceso hoy ve exactamente lo mismo. El aislamiento por colegio llega en la Fase 2.
+create table if not exists public.sostenedores (
+  id     uuid primary key default gen_random_uuid(),
+  nombre text not null,
+  creado timestamptz not null default now()
+);
+create table if not exists public.colegios (
+  id            uuid primary key default gen_random_uuid(),
+  sostenedor_id uuid not null references public.sostenedores(id) on delete cascade,
+  nombre        text not null,
+  creado        timestamptz not null default now()
+);
+create index if not exists idx_colegios_sostenedor on public.colegios(sostenedor_id);
+alter table public.sostenedores enable row level security;
+alter table public.colegios     enable row level security;
+
+-- Nullable a propósito: durante la migración un curso puede no tener colegio todavía, y el
+-- panel lo tolera ("Sin colegio"). El cutover (Fase 4) exigirá que todos lo tengan.
+alter table public.cursos add column if not exists colegio_id uuid references public.colegios(id) on delete set null;
+create index if not exists idx_cursos_colegio on public.cursos(colegio_id);
 
 -- Los nombres que escribe el profesor vienen verificados; los que escribe un nino en
 -- un formulario publico, no. El panel los distingue con esto: sin la marca, un apodo o
@@ -825,7 +859,7 @@ declare mi_correo text; aut public.profesores_autorizados; r public.profesores; 
 create or replace function public.kimun_prof_es_mio(p_curso uuid)
 returns boolean language sql security definer stable set search_path=public as $$
   select exists(select 1 from public.profesores pr
-                where pr.id = auth.uid() and (pr.es_admin or pr.es_super))
+                where pr.id = auth.uid() and (pr.es_admin or pr.es_super or pr.es_operador))
       or exists(select 1 from public.curso_profesores cp
                 where cp.curso_id = p_curso and cp.profesor_id = auth.uid()
                   and cp.rol = 'jefe');
@@ -838,7 +872,7 @@ $$;
 create or replace function public.kimun_prof_acceso(p_curso uuid)
 returns boolean language sql security definer stable set search_path=public as $$
   select exists(select 1 from public.profesores pr
-                where pr.id = auth.uid() and (pr.es_admin or pr.es_super))
+                where pr.id = auth.uid() and (pr.es_admin or pr.es_super or pr.es_operador))
       or exists(select 1 from public.curso_profesores cp
                 where cp.curso_id = p_curso and cp.profesor_id = auth.uid()
                   and (cp.rol = 'jefe' or coalesce(array_length(cp.asignaturas,1),0) >= 1));
@@ -852,7 +886,7 @@ create or replace function public.kimun_prof_asignaturas(p_curso uuid)
 returns text[] language sql security definer stable set search_path=public as $$
   select case
     when exists(select 1 from public.profesores pr
-                where pr.id = auth.uid() and (pr.es_admin or pr.es_super))
+                where pr.id = auth.uid() and (pr.es_admin or pr.es_super or pr.es_operador))
       then public.kimun_asignaturas_todas()
     when exists(select 1 from public.curso_profesores cp
                 where cp.curso_id = p_curso and cp.profesor_id = auth.uid()
@@ -865,12 +899,12 @@ returns text[] language sql security definer stable set search_path=public as $$
 $$;
 
 -- ¿Administra el colegio? (crear/borrar curso, nombrar Jefe, autorizar y gestionar
--- profesores). Admin y SuperUsuario pasan; un Jefe NO. Crear/quitar SuperUsuarios y
--- Admins queda aparte, solo para es_admin.
+-- profesores). Admin, Operador y SuperUsuario pasan; un Jefe NO. Crear/quitar
+-- SuperUsuarios amplía a Operador; crear/quitar Operadores y Admins queda solo para es_admin.
 create or replace function public.kimun_prof_admin_colegio()
 returns boolean language sql security definer stable set search_path=public as $$
   select exists(select 1 from public.profesores pr
-                where pr.id = auth.uid() and (pr.es_admin or pr.es_super));
+                where pr.id = auth.uid() and (pr.es_admin or pr.es_super or pr.es_operador));
 $$;
 
 -- Mis cursos con sus alumnos. Un administrador ve todos, incluidos los huérfanos.
@@ -882,7 +916,7 @@ create or replace function public.kimun_prof_listar()
 returns table(curso text, curso_codigo text, alumno text, avatar text,
               codigo_acceso text, xp int, dificil int, pid uuid,
               puede_gestionar boolean, mis_asignaturas text[], mi_rol text,
-              autoinscrito boolean, nivel text)
+              autoinscrito boolean, nivel text, colegio_id uuid, colegio text)
 language plpgsql security definer set search_path=public as $$
 declare yo public.profesores; begin
   select * into yo from public.profesores where id = auth.uid();
@@ -902,10 +936,15 @@ declare yo public.profesores; begin
            (select cp.rol from public.curso_profesores cp
              where cp.curso_id = c.id and cp.profesor_id = yo.id),
            coalesce(p.autoinscrito,false),
-           c.nivel
+           c.nivel,
+           -- Colegio del curso (Fase 1). Va aquí y no en una función aparte para reusar el
+           -- filtro de visibilidad de abajo en vez de duplicarlo. Todavía informativo: los
+           -- porteros no miran colegio_id hasta la Fase 2.
+           c.colegio_id,
+           (select co.nombre from public.colegios co where co.id = c.colegio_id)
     from public.cursos c
     left join public.perfiles p on p.curso_id = c.id
-    where yo.es_admin or yo.es_super
+    where yo.es_admin or yo.es_super or yo.es_operador
        or exists(select 1 from public.curso_profesores cp
                  where cp.curso_id = c.id and cp.profesor_id = yo.id
                    and (cp.rol='jefe' or coalesce(array_length(cp.asignaturas,1),0) >= 1))
@@ -943,6 +982,65 @@ declare cid uuid; niv text; begin
   -- gente adentro es raro, y borrarles el acceso en silencio sería peor que dejar una
   -- fila incoherente que el panel muestra.
   update public.cursos set nivel = niv where id = cid;
+end $$;
+
+-- Inquilinos: listar / crear / asignar (Sesión 116, Fase 1). Gateadas por el portero de
+-- administración de hoy (kimun_prof_admin_colegio = Admin/Super/Operador). Todavía NO
+-- aíslan por colegio: quien tiene ese portero ve y crea en toda la plataforma, igual que
+-- ve todos los cursos hoy. El aislamiento por ámbito es la Fase 2.
+
+-- returns table: lleva drop aunque sea nueva, para que agregarle una columna algún día no
+-- rompa el re-pegado del archivo (misma razón que kimun_prof_listar / _tendencia).
+drop function if exists public.kimun_prof_sostenedores();
+create or replace function public.kimun_prof_sostenedores()
+returns table(id uuid, nombre text, colegios int)
+language plpgsql security definer stable set search_path=public as $$
+declare yo public.profesores; begin
+  select * into yo from public.profesores where id = auth.uid();
+  if yo.id is null or not public.kimun_prof_admin_colegio() then raise exception 'no_autorizado'; end if;
+  return query select s.id, s.nombre,
+    (select count(*)::int from public.colegios c where c.sostenedor_id = s.id)
+    from public.sostenedores s order by s.nombre;
+end $$;
+
+drop function if exists public.kimun_prof_colegios(uuid);
+create or replace function public.kimun_prof_colegios(p_sostenedor uuid)
+returns table(id uuid, nombre text, cursos int)
+language plpgsql security definer stable set search_path=public as $$
+declare yo public.profesores; begin
+  select * into yo from public.profesores where id = auth.uid();
+  if yo.id is null or not public.kimun_prof_admin_colegio() then raise exception 'no_autorizado'; end if;
+  return query select c.id, c.nombre,
+    (select count(*)::int from public.cursos cu where cu.colegio_id = c.id)
+    from public.colegios c where c.sostenedor_id = p_sostenedor order by c.nombre;
+end $$;
+
+create or replace function public.kimun_prof_sostenedor_crear(p_nombre text)
+returns uuid language plpgsql security definer set search_path=public as $$
+declare nid uuid; begin
+  if not public.kimun_prof_admin_colegio() then raise exception 'no_autorizado'; end if;
+  if coalesce(trim(p_nombre),'') = '' then raise exception 'nombre_vacio'; end if;
+  insert into public.sostenedores(nombre) values (trim(p_nombre)) returning id into nid;
+  return nid; end $$;
+
+create or replace function public.kimun_prof_colegio_crear(p_sostenedor uuid, p_nombre text)
+returns uuid language plpgsql security definer set search_path=public as $$
+declare nid uuid; begin
+  if not public.kimun_prof_admin_colegio() then raise exception 'no_autorizado'; end if;
+  if coalesce(trim(p_nombre),'') = '' then raise exception 'nombre_vacio'; end if;
+  if not exists(select 1 from public.sostenedores where id = p_sostenedor) then raise exception 'sostenedor_invalido'; end if;
+  insert into public.colegios(sostenedor_id, nombre) values (p_sostenedor, trim(p_nombre)) returning id into nid;
+  return nid; end $$;
+
+-- Asigna (o quita, con null) el colegio de un curso. Resuelve el curso por su código, igual
+-- que kimun_prof_curso_nivel. No toca nada más del curso; es aditivo.
+create or replace function public.kimun_prof_curso_colegio_fijar(p_curso_codigo text, p_colegio uuid)
+returns void language plpgsql security definer set search_path=public as $$
+declare cid uuid; begin
+  select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
+  if cid is null or not public.kimun_prof_admin_colegio() then raise exception 'no_autorizado'; end if;
+  if p_colegio is not null and not exists(select 1 from public.colegios where id = p_colegio) then raise exception 'colegio_invalido'; end if;
+  update public.cursos set colegio_id = p_colegio where id = cid;
 end $$;
 
 -- Elimina un curso mío y sus alumnos (arrastra los duelos de esos alumnos).
@@ -1212,7 +1310,7 @@ create or replace function public.kimun_prof_autorizar(p_correo text)
 returns public.profesores_autorizados language plpgsql security definer set search_path=public as $$
 declare yo public.profesores; r public.profesores_autorizados; begin
   select * into yo from public.profesores where id = auth.uid();
-  if yo.id is null or not (yo.es_admin or yo.es_super) then raise exception 'no_autorizado'; end if;
+  if yo.id is null or not (yo.es_admin or yo.es_super or yo.es_operador) then raise exception 'no_autorizado'; end if;
   if coalesce(trim(p_correo),'') !~ '^[^@[:space:]]+@[^@[:space:]]+\.[^@[:space:]]+$'
     then raise exception 'correo_invalido'; end if;
   insert into public.profesores_autorizados(correo, invitado_por)
@@ -1229,13 +1327,13 @@ declare yo public.profesores; r public.profesores_autorizados; begin
 -- Mismo guardia de idempotencia que kimun_prof_listar (es "returns table").
 drop function if exists public.kimun_prof_profesores();
 create or replace function public.kimun_prof_profesores()
-returns table(correo text, nombre text, es_admin boolean, es_super boolean, cursos int, registrado boolean)
+returns table(correo text, nombre text, es_admin boolean, es_super boolean, es_operador boolean, cursos int, registrado boolean)
 language plpgsql security definer set search_path=public as $$
 declare yo public.profesores; begin
   select * into yo from public.profesores where id = auth.uid();
-  if yo.id is null or not (yo.es_admin or yo.es_super) then raise exception 'no_autorizado'; end if;
+  if yo.id is null or not (yo.es_admin or yo.es_super or yo.es_operador) then raise exception 'no_autorizado'; end if;
   return query
-    select coalesce(a.correo, p.correo), p.nombre, coalesce(p.es_admin,false), coalesce(p.es_super,false),
+    select coalesce(a.correo, p.correo), p.nombre, coalesce(p.es_admin,false), coalesce(p.es_super,false), coalesce(p.es_operador,false),
            -- Cuenta las membresías reales (curso_profesores), no la columna deprecada
            -- cursos.profesor_id: desde la Sesión 37 los cursos nuevos nacen con
            -- profesor_id nulo, así que contar por ahí daba 0 para todo Jefe nuevo.
@@ -1256,32 +1354,52 @@ create or replace function public.kimun_prof_quitar(p_correo text)
 returns int language plpgsql security definer set search_path=public as $$
 declare yo public.profesores; obj public.profesores; n int; begin
   select * into yo from public.profesores where id = auth.uid();
-  if yo.id is null or not (yo.es_admin or yo.es_super) then raise exception 'no_autorizado'; end if;
+  if yo.id is null or not (yo.es_admin or yo.es_super or yo.es_operador) then raise exception 'no_autorizado'; end if;
   -- Un administrador no puede revocarse a sí mismo: si es el único, la
   -- plataforma quedaría sin nadie que pueda administrarla y solo se recuperaría
   -- con SQL a mano.
   if lower(trim(coalesce(p_correo,''))) = lower(yo.correo) then raise exception 'no_te_puedes_quitar'; end if;
   select * into obj from public.profesores where lower(correo) = lower(trim(coalesce(p_correo,'')));
-  -- Un SuperUsuario no puede revocar a un Admin ni a otro SuperUsuario: eso es solo del Admin.
-  if obj.id is not null and (obj.es_admin or obj.es_super) and not yo.es_admin then
-    raise exception 'no_autorizado';
+  -- A un Admin o a un Operador solo los revoca un Admin. A un SuperUsuario lo revoca un
+  -- Admin o un Operador (un Super no revoca a otro Super, igual que antes).
+  if obj.id is not null then
+    if (obj.es_admin or obj.es_operador) and not yo.es_admin then raise exception 'no_autorizado'; end if;
+    if obj.es_super and not (yo.es_admin or yo.es_operador) then raise exception 'no_autorizado'; end if;
   end if;
   delete from public.profesores where lower(correo) = lower(trim(coalesce(p_correo,'')));
   get diagnostics n = row_count;
   delete from public.profesores_autorizados where lower(correo) = lower(trim(coalesce(p_correo,'')));
   return n; end $$;
 
--- Nombra o quita un SuperUsuario. Solo el Admin (dueño de la plataforma). No toca
--- cuentas de Admin: no se degrada ni asciende un Admin por esta vía.
+-- Nombra o quita un SuperUsuario. Lo puede hacer un Admin o un Operador (dar de alta a la
+-- autoridad de un colegio es operativo). NO toca cuentas de Admin ni de Operador: a un Admin
+-- no se lo degrada/asciende por aquí, y a un Operador solo lo gestiona un Admin.
 create or replace function public.kimun_prof_super_fijar(p_correo text, p_es_super boolean)
 returns void language plpgsql security definer set search_path=public as $$
 declare yo public.profesores; obj public.profesores; begin
   select * into yo from public.profesores where id = auth.uid();
-  if yo.id is null or not yo.es_admin then raise exception 'no_autorizado'; end if;
+  if yo.id is null or not (yo.es_admin or yo.es_operador) then raise exception 'no_autorizado'; end if;
   select * into obj from public.profesores where lower(correo) = lower(trim(coalesce(p_correo,'')));
   if obj.id is null then raise exception 'profesor_invalido'; end if;
   if obj.es_admin then raise exception 'no_autorizado'; end if;  -- un Admin no se toca por aquí
+  if obj.es_operador and not yo.es_admin then raise exception 'no_autorizado'; end if;  -- a un Operador solo lo toca un Admin
   update public.profesores set es_super = coalesce(p_es_super,false)
+   where id = obj.id;
+end $$;
+
+-- Nombra o quita un Operador. SOLO el Admin (dueño de la plataforma): a diferencia del
+-- SuperUsuario, el Operador es staff de plataforma y su alta la controla únicamente el dueño.
+-- No toca cuentas de Admin. Modelada sobre kimun_prof_super_fijar; el parámetro va prefijado
+-- p_es_operador para no colisionar con la columna es_operador (el bug v_rol de la Sesión 73).
+create or replace function public.kimun_prof_operador_fijar(p_correo text, p_es_operador boolean)
+returns void language plpgsql security definer set search_path=public as $$
+declare yo public.profesores; obj public.profesores; begin
+  select * into yo from public.profesores where id = auth.uid();
+  if yo.id is null or not yo.es_admin then raise exception 'no_autorizado'; end if;   -- SOLO un Admin crea/quita Operadores
+  select * into obj from public.profesores where lower(correo) = lower(trim(coalesce(p_correo,'')));
+  if obj.id is null then raise exception 'profesor_invalido'; end if;
+  if obj.es_admin then raise exception 'no_autorizado'; end if;  -- un Admin no se toca por aquí
+  update public.profesores set es_operador = coalesce(p_es_operador,false)
    where id = obj.id;
 end $$;
 
@@ -1476,11 +1594,12 @@ declare cid uuid; asigs text[]; begin
 end $$;
 
 -- Limpieza de perfiles de prueba. Cuenta con p_ejecutar=false y borra con true.
+-- Herramienta operativa: la usa un Admin o un Operador.
 create or replace function public.kimun_prof_limpiar_pruebas(p_ejecutar boolean)
 returns int language plpgsql security definer set search_path=public as $$
 declare yo public.profesores; n int; begin
   select * into yo from public.profesores where id = auth.uid();
-  if yo.id is null or not yo.es_admin then raise exception 'no_autorizado'; end if;
+  if yo.id is null or not (yo.es_admin or yo.es_operador) then raise exception 'no_autorizado'; end if;
   if p_ejecutar then
     delete from public.perfiles where es_bot = false and codigo_acceso is null;
     get diagnostics n = row_count;
@@ -2430,6 +2549,7 @@ grant execute on function
   , public.kimun_prof_ranking_asignatura(text,text,int)
   , public.kimun_prof_ranking_general(text,int)
   , public.kimun_prof_super_fijar(text,boolean)
+  , public.kimun_prof_operador_fijar(text,boolean)
   , public.kimun_inscribirse(text,text,text)
   , public.kimun_prof_inscripcion_crear(text,int,boolean)
   , public.kimun_prof_inscripcion_estado(text)
@@ -2437,6 +2557,11 @@ grant execute on function
   , public.kimun_mi_plan()
   , public.kimun_progreso_subir(jsonb)
   , public.kimun_progreso_bajar()
+  , public.kimun_prof_sostenedores()
+  , public.kimun_prof_colegios(uuid)
+  , public.kimun_prof_sostenedor_crear(text)
+  , public.kimun_prof_colegio_crear(uuid,text)
+  , public.kimun_prof_curso_colegio_fijar(text,uuid)
   to anon, authenticated;
 
 -- ------------------------------------------------------------
