@@ -1200,6 +1200,12 @@ para siempre.
   Oculta la barra inferior (Tienda/Logros), el botón "Volver" de la campaña, el Desafío
   Extra y el Jefe Final. Pensado para pasarle a un grupo de alumnos un enlace de
   práctica acotado a las unidades que están viendo.
+  **Desde el 09/09 la lista de muestra trae un botón "🛍️ Ver las skins"** que abre la
+  tienda como **escaparate** (`VITRINA` en `motor.js`): se ven todas las skins con su precio
+  y "🔒 En VULPO completo", pero **no se compra ni se equipa nada** (sigue sin tocar el disco)
+  y el "← Volver" regresa a la lista de muestra, no al juego completo. Es gancho —las skins
+  son de lo que más engancha a un niño— sin romper la promesa del modo prueba. **No aparece
+  en `?rev=1`**: el profesor revisa contenido, no la tienda. Ver la Sesión 116.
   Ejemplo: `https://vulpo.cl/8vo/?solo=hist-cap2,hist-cap3,hist-cap4`.
   **Va en DOS NIVELES desde el 07/09** (`renderListaPrueba`), como la pantalla principal
   del juego: primero las **asignaturas y los libros** —el libro es un grupo propio, no un
@@ -12265,3 +12271,47 @@ verificar `vulpo.cl` por registro DNS TXT en Cloudflare y **enviar el sitemap**;
 Tools (importa de GSC); (3) Perfil de Empresa de Google (Chile); (4) 2-3 backlinks. El SEO de un
 dominio de dos semanas toma meses: la marca rankea en semanas, la cola larga y el nicho UTP en 1-3
 meses, los términos anchos solo con autoridad acumulada. **Expectativa honesta, no urgencia.**
+
+### Sesión 116 (2026-09-09) — Los enlaces de muestra estrenan una vitrina de skins
+Roberto preguntó si los enlaces de prueba veían las skins y la tienda. **No las veían, y era a
+propósito:** el modo prueba oculta la barra inferior entera (Tienda, Logros, Perfil, Ranking) desde
+la Sesión 41. Pero al medirlo apareció lo que sí valía la pena decir: **las skins son de los ganchos
+más fuertes para un niño** —"quiero jugar para comprarme el astronauta"— y justo eso es lo que no ve
+quien recibe la muestra para probar. Roberto eligió abrir la tienda **como escaparate**. **No se tocó
+contenido:** ni un banco, ni una pregunta, ni un clip de voz.
+
+- **Un botón "🛍️ Ver las skins"** en la lista de muestra (`renderListaPrueba`) abre la tienda con la
+  bandera **`VITRINA`**: cada skin se ve con su precio en monedas y **"🔒 En VULPO completo"**, con
+  el mismo trato premium (borde violeta, opacidad 0,7) de las skins exclusivas. **No se compra ni se
+  equipa nada** —no hay botones, así que no hay nada que tocar— y sigue sin tocar el disco. El
+  contador de monedas se oculta (mostraría 🪙 0, que se lee como algo roto).
+- **El "← Volver" de la tienda regresa a la lista de muestra**, no a `scr-mapa` ni `scr-expediciones`
+  —la fuga al juego completo que cerraron las Sesiones 41 y 42—. Se re-cablea `btnTiendaBack` dentro
+  de `abrirVitrina`, que solo corre en modo prueba, así que la tienda normal queda intacta.
+- **No aparece en `?rev=1`** (`typeof REVISION`, con guard): el profesor revisa contenido, no la
+  tienda.
+- **Todo en un solo archivo, `assets/js/motor.js`** —los seis cursos lo heredan, ni un fork se tocó—.
+  Las funciones nuevas (`agregarVitrina`, `abrirVitrina`, `VITRINA`) se llaman solo desde adentro de
+  `motor.js`, así que no hay orden de publicación especial. El botón va en los **dos** niveles de la
+  lista (nivel 1 y nivel 2), porque los enlaces de un solo capítulo —los ocho de la landing— entran
+  directo al nivel 2.
+
+⚠️ **Dos defectos que solo se vieron MIRANDO la captura, no contando** —el conteo daba "sin desborde,
+cero errores" en los dos, undécima vez en el proyecto—:
+1. **El badge fijo "Modo prueba" tapaba el título** de la tienda. Antes nunca pasaba porque
+   `scr-tienda` no se abría en modo prueba; ahora que sí, su título arranca pegado al borde y el badge
+   lo cubría. Se le da aire arriba (`paddingTop` en `abrirVitrina`).
+2. **El subtítulo decía "Gasta tus monedas en avatares nuevos."** justo donde no se puede gastar. Pasó
+   a **"Júntalas con las monedas que ganas jugando en VULPO."**, que es el gancho: jugar → ganar
+   monedas → conseguirlas.
+
+**Verificado jugando** con `scripts/cdp.mjs`, tocando los botones de verdad, en **8vo y 3ro** (por la
+capa de voz y `SIN_RELOJ`): el escaparate con 25 skins, todas con "En VULPO completo" y **0 botones de
+compra**; comprar imposible (monedas y skins quedan en 0/0); el "Volver" a `scr-campana` y nunca a
+`scr-expediciones`; el botón en nivel 1 y nivel 2; y la **regresión** —con la vitrina apagada la tienda
+normal sigue con sus 19 botones de compra y cero "En VULPO completo"—. **Cero errores de consola y cero
+404** en los dos cursos.
+
+> **Lo que la muestra sigue SIN traer, y conviene saberlo:** no hay Logros, ni Perfil, ni Ranking —solo
+> se abrió la tienda, y de solo mirar—. El escaparate es gancho, no producto: quien quiera las skins de
+> verdad tiene que jugar el VULPO completo, que es exactamente lo que se quiere.

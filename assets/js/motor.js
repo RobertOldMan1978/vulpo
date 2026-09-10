@@ -924,6 +924,7 @@ function entrarExpedicion(exp){
    varias asignaturas era una columna de veintitantas tarjetas donde no se veía dónde
    terminaba una materia y empezaba la otra. */
 let PRUEBA_GRUPO=null;          // null = nivel 1 (asignaturas); nombre = nivel 2
+let VITRINA=false;             // en modo prueba: la tienda como escaparate (se ve, no se compra ni guarda)
 /* Salida a vulpo.cl en modo prueba: quien abre un enlace de muestra no pasa por scr-rol
    (donde vive el "← Volver a vulpo.cl" del inicio), así que sin esto queda sin retorno —lo
    reportó Roberto probando `?solo=`—. Va en el encabezado de la lista, siempre visible. `/`
@@ -974,6 +975,7 @@ function renderListaPrueba(){
      ()=>{ PRUEBA_GRUPO=o.nombre; renderListaPrueba(); }, sub,
      ASIG_PORTADA[o.nombre]||(o.exps[0]&&o.exps[0].portada)||'', ''));
   });
+  agregarVitrina(cont);
   go('scr-campana'); return;
  }
 
@@ -1004,7 +1006,33 @@ function renderListaPrueba(){
   cont.appendChild(nodoCampañaEl(x.icono, x.nombre, true, false,
     ()=>x.abrir(), '¡Jugar!', ''));
  });
+ agregarVitrina(cont);
  go('scr-campana');
+}
+// En modo prueba, un acceso a la VITRINA de skins: se ven todas como gancho, pero NO se
+// compra ni se equipa nada (el modo prueba no guarda). No va en la revisión del profesor,
+// que revisa contenido y no la tienda.
+function agregarVitrina(cont){
+ if((typeof REVISION!=='undefined')&&REVISION) return;
+ const b=document.createElement('button');
+ b.className='btn sec'; b.style.margin='18px auto 0'; b.style.display='block';
+ b.textContent='🛍️ Ver las skins';
+ b.onclick=()=>{ SND.tap(); abrirVitrina(); };
+ cont.appendChild(b);
+}
+function abrirVitrina(){
+ VITRINA=true;
+ const sec=$('scr-tienda');
+ // El badge fijo "Modo prueba" taparía el título, porque la tienda arranca pegada al borde:
+ // se le da aire arriba. Y el subtítulo pasa a hablar de la vitrina, no de gastar monedas.
+ sec.style.paddingTop='40px';
+ const sub=sec.querySelector('p'); if(sub) sub.textContent='Júntalas con las monedas que ganas jugando en VULPO.';
+ // El "← Volver" de la tienda regresa a la lista de muestra, NO a scr-mapa/scr-expediciones,
+ // que serían la fuga al juego completo (Sesiones 41 y 42). Solo se re-cablea aquí, y esta
+ // función únicamente corre en modo prueba.
+ $('btnTiendaBack').onclick=()=>{ SND.tap(); VITRINA=false; renderListaPrueba(); };
+ renderTienda();
+ go('scr-tienda');
 }
 function abrirCampaña(c){CAMP_ACT=c; renderCampaña(); go('scr-campana');}
 function renderCampaña(){
@@ -1150,9 +1178,18 @@ function skinImg(av){const s=SKINS.find(k=>k.e===av&&k.img);return s?s.img:null;
 // HTML del avatar: <img> si la skin tiene imagen, o el emoji tal cual.
 function avatarHTML(av){const img=skinImg(av);return img?`<img src="${img}" alt="avatar">`:av;}
 function renderTienda(){
- $('tiendaCoins').textContent=S.monedas;
+ const coins=$('tiendaCoins');
+ if(coins){ coins.textContent=S.monedas; if(coins.parentElement) coins.parentElement.style.display=VITRINA?'none':''; }
  const g=$('tiendaGrid');g.innerHTML='';
  SKINS.forEach(sk=>{
+  if(VITRINA){                       // escaparate del modo prueba: se ve, no se compra ni guarda
+   const em=sk.img?`<img src="${sk.img}" alt="${sk.nombre||''}">`:sk.e;
+   const it=document.createElement('div');it.className='shop-item locked';
+   const precio=sk.p?`<div class="price">🪙 ${sk.p}</div>`:`<div class="price">${sk.req||'Exclusiva'}</div>`;
+   const nombreHtml=sk.nombre?`<div class="skin-name">${sk.nombre}</div>`:'';
+   it.innerHTML=`<div class="em">${em}</div>`+nombreHtml+precio+`<div class="skin-lock">🔒 En VULPO completo</div>`;
+   g.appendChild(it); return;
+  }
   const owned=S.skins.includes(sk.e), equipped=S.avatar===sk.e;
   const bloqueada=sk.bloqueada&&!owned;   // exclusiva aún no ganada
   const em=sk.img?`<img src="${sk.img}" alt="${sk.nombre||''}">`:sk.e; // imagen o emoji
