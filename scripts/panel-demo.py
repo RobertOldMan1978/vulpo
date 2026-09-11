@@ -106,6 +106,32 @@ STUB = r"""
   const CURSO_COLEGIO = {'CUR-BA04':'col-1', 'CUR-5T77':'col-1'};
   const COL_NOMBRE = {}; Object.values(COLEGIOS).forEach(a=>a.forEach(c=>COL_NOMBRE[c.id]=c.nombre));
 
+  /* Motor de permisos granular (Fase 3, el mantenedor). Las capacidades y los presets copian
+     el catalogo real (kimun_prof_capacidades_todas / kimun_prof_preset). GRANTS arranca con lo
+     que dejaria la migracion: Operador->plataforma, Super->colegio, Jefe->curso; asi el modal
+     abre con "grants actuales" poblados y se puede probar revocar y agregar. */
+  const CAPS_TODAS = ['curso.crear','curso.borrar','curso.nivel','alumno.gestionar','inscripcion.crear','dominio.reiniciar',
+    'equipo.jefe','equipo.asignatura','avance.ver','pulso.ver','plan.fijar','plan.historial','refuerzo.gestionar',
+    'profesor.autorizar','permisos.gestionar','perfiles.limpiar','enlace.armar'];
+  const SOSTEN_CAPS = ['curso.crear','curso.borrar','curso.nivel','alumno.gestionar','inscripcion.crear','dominio.reiniciar',
+    'equipo.jefe','equipo.asignatura','avance.ver','pulso.ver','plan.fijar','plan.historial','refuerzo.gestionar','profesor.autorizar'];
+  const PRESETS = { operador:CAPS_TODAS, sostenedor:SOSTEN_CAPS, super:SOSTEN_CAPS,
+    jefe:['alumno.gestionar','inscripcion.crear','dominio.reiniciar','equipo.asignatura','avance.ver','plan.fijar','refuerzo.gestionar'],
+    asignatura:['avance.ver','plan.fijar','refuerzo.gestionar'] };
+  let GRANT_SEQ = 4;
+  let GRANTS = [
+    {id:'g-1', correo:'a.diaz@desales.cl', ambito_tipo:'plataforma', ambito_id:null, capacidades:PRESETS.operador.slice(), asignaturas:[]},
+    {id:'g-2', correo:'r.perez@desales.cl', ambito_tipo:'colegio', ambito_id:'col-1', capacidades:PRESETS.super.slice(), asignaturas:[]},
+    {id:'g-3', correo:'j.arteaga@desales.cl', ambito_tipo:'curso', ambito_id:'CUR-BA04', capacidades:PRESETS.jefe.slice(), asignaturas:['HI08']}
+  ];
+  function ambitoNombre(t,id){
+    if(t==='plataforma') return 'Toda la plataforma';
+    if(t==='sostenedor'){ const s=SOS.find(x=>x.id===id); return s?s.nombre:'?'; }
+    if(t==='colegio')  return COL_NOMBRE[id]||'?';
+    if(t==='curso'){ const c=CURSOS.find(x=>x[0]===id); return c?c[1]:id; }
+    return '?';
+  }
+
   /* Planificacion ya cargada: dos unidades con fechas para ver el caso poblado, y el resto
      sin fechas para ver el vacio. `_otro` marca la que puso OTRA persona (la UTP), que es
      la que exige justificacion para moverse. */
@@ -389,7 +415,26 @@ STUB = r"""
       {correo:'r.perez@desales.cl', nombre:'Rossy Perez', es_admin:false, es_super:true, es_operador:false, cursos:2, registrado:true},
       {correo:'a.diaz@desales.cl', nombre:'Ana Diaz', es_admin:false, es_super:false, es_operador:true, cursos:3, registrado:true},
       {correo:'k.rivas@desales.cl', nombre:null, es_admin:false, es_super:false, es_operador:false, cursos:0, registrado:false}
-    ]
+    ],
+    /* Mantenedor de permisos (Fase 3). El doble no aplica la no-escalada del servidor —solo
+       devuelve datos—; los rechazos se prueban con el control RPC contra produccion. Aqui se
+       verifica el FLUJO de la UI: ver / agregar / revocar grants. */
+    kimun_prof_capacidades_todas: ()=>CAPS_TODAS.slice(),
+    kimun_prof_preset: (a)=>(PRESETS[((a&&a.p_nombre)||'').toLowerCase()]||[]).slice(),
+    kimun_prof_cursos: ()=>CURSOS.map(([cod,nom,niv])=>({id:cod, codigo:cod, nombre:nom, nivel:niv||null,
+      colegio_id:CURSO_COLEGIO[cod]||null, colegio: CURSO_COLEGIO[cod]?COL_NOMBRE[CURSO_COLEGIO[cod]]:null})),
+    kimun_prof_permisos_ver: (a)=>GRANTS.filter(g=>g.correo===(a&&a.p_correo)).map(g=>({
+      id:g.id, ambito_tipo:g.ambito_tipo, ambito_id:g.ambito_id,
+      ambito_nombre:ambitoNombre(g.ambito_tipo,g.ambito_id),
+      capacidades:g.capacidades.slice(), asignaturas:g.asignaturas.slice()})),
+    kimun_prof_permisos_fijar: (a)=>{
+      GRANTS = GRANTS.filter(g=>!(g.correo===a.p_correo && g.ambito_tipo===a.p_ambito_tipo
+        && (g.ambito_id||null)===(a.p_ambito_id||null)));
+      const caps=(a.p_capacidades||[]);
+      if(caps.length) GRANTS.push({id:'g-'+(GRANT_SEQ++), correo:a.p_correo, ambito_tipo:a.p_ambito_tipo,
+        ambito_id:a.p_ambito_id||null, capacidades:caps.slice(), asignaturas:(a.p_asignaturas||[]).slice()});
+      return null; },
+    kimun_prof_permisos_revocar: (a)=>{ GRANTS = GRANTS.filter(g=>g.id!==(a&&a.p_id)); return null; }
   };
   window.supabase = { createClient: ()=>({
     auth:{

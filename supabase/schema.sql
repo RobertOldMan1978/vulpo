@@ -1267,6 +1267,22 @@ declare yo public.profesores; begin
     from public.colegios c where c.sostenedor_id = p_sostenedor order by c.nombre;
 end $$;
 
+-- Los cursos con su UUID, para el selector de ÁMBITO del mantenedor (Fase 3): el panel
+-- trabaja con el código CUR-XXXX, pero un grant de curso guarda el UUID en permisos_usuario.
+-- returns table con OUT `id` → `pr.id` aliasado en el guard (bug id-ambiguo, 42702), y su drop.
+drop function if exists public.kimun_prof_cursos();
+create or replace function public.kimun_prof_cursos()
+returns table(id uuid, codigo text, nombre text, nivel text, colegio_id uuid, colegio text)
+language plpgsql security definer stable set search_path=public as $$
+declare yo public.profesores; begin
+  select * into yo from public.profesores pr where pr.id = auth.uid();
+  if yo.id is null or not public.kimun_prof_admin_colegio() then raise exception 'no_autorizado'; end if;
+  return query
+    select c.id, c.codigo, c.nombre, c.nivel, c.colegio_id,
+           (select co.nombre from public.colegios co where co.id = c.colegio_id)
+      from public.cursos c order by coalesce(c.nivel,'99'), c.nombre;
+end $$;
+
 create or replace function public.kimun_prof_sostenedor_crear(p_nombre text)
 returns uuid language plpgsql security definer set search_path=public as $$
 declare nid uuid; begin
@@ -2983,6 +2999,7 @@ grant execute on function
   , public.kimun_prof_permisos_revocar(uuid)
   , public.kimun_prof_capacidades_todas()
   , public.kimun_prof_preset(text)
+  , public.kimun_prof_cursos()
   to anon, authenticated;
 
 -- ------------------------------------------------------------

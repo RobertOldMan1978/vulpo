@@ -678,10 +678,16 @@ tienda y permite probar notificaciones antes de enfrentar iOS. Detalle en
     cada portero == guard viejo sin grants). Control verde (400 otorgamiento / 401 resolutores) y migración
     verificada (7 grants de curso = 7 membresías). Absorbe el rol Operador. Plan:
     [`docs/superpowers/plans/2026-09-10-fase2-permisos-granular.md`](docs/superpowers/plans/2026-09-10-fase2-permisos-granular.md).
-  - **Fase 3 · El mantenedor + la rejilla fina** — la pantalla (editor de casillas por capacidad, operado
-    por Admin/Operador, usuario identificado por correo) **sobre el backend ya verificado de la Fase 2**,
-    más las ~15 rejillas por función. Se puede verificar con el doble del panel (`panel-demo.py`). Se
-    **suma** a los toggles viejos (que se apagan en la Fase 4).
+  - **Fase 3 · El mantenedor — ✅ CONSTRUIDO y verificado con el doble (Sesión 116, 10/09).** Modal
+    "🔑 Editar permisos" en `profesor.html` (botón por profesor, Admin/Operador): ve/agrega/edita/revoca
+    grants, con selector de ámbito (plataforma/sostenedor/colegio/curso + materias), presets y casillas por
+    categoría. Helper de esquema nuevo `kimun_prof_cursos()`. Verificado desktop+móvil, admin+operador,
+    consola limpia. **Se suma** a los toggles viejos (se apagan en la Fase 4). ⚠️ Roberto re-aplica el
+    esquema (`kimun_prof_cursos`) y publica el panel.
+    - **Queda de la Fase 3: la rejilla fina por función** (~15 rejillas backend que separan
+      `dominio.reiniciar` de `alumno.gestionar`, etc.). El mantenedor **ya funciona pleno con los presets**;
+      la rejilla fina solo importa para un grant a medida que se aparta de un preset, y son ediciones ciegas
+      que solo se prueban con cuentas reales. Se hace cuando aparezca esa necesidad.
   - **Fase 4 · Cutover** — apagar los toggles/bloques viejos y la mitad legada de los porteros; todo pasa
     por el mantenedor y el grant es la única fuente de verdad.
   Spec: [`docs/superpowers/specs/2026-09-10-multi-tenant-permisos-granular-design.md`](docs/superpowers/specs/2026-09-10-multi-tenant-permisos-granular-design.md).

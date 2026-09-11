@@ -2456,6 +2456,12 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
   (separar `dominio.reiniciar` de `alumno.gestionar`, etc.) y **el mantenedor (la pantalla)** son la
   **Fase 3**; el **cutover** (apagar toggles viejos + mitad legada) es la Fase 4. Plan:
   `docs/superpowers/plans/2026-09-10-fase2-permisos-granular.md`.
+- **El mantenedor · Fase 3 (Sesión 116):** la pantalla que consume el otorgamiento (modal "🔑 Editar
+  permisos" en `profesor.html`, botón por profesor). Backend nuevo: solo **`kimun_prof_cursos()`** —los
+  UUID de curso para el selector de ámbito, porque el panel trabaja con el código `CUR-XXXX` y un grant
+  guarda el UUID—, gateado por `admin_colegio`, con `pr.id` aliasado (returns-table con OUT `id`).
+  **Coexiste** con los toggles viejos hasta la Fase 4. Verificado con el doble (`panel-demo.py`). Falta la
+  **rejilla fina por función** (Fase 3, backend, solo para grants a medida).
 - **Pendiente:** notificaciones push.
 
 ## Trámites pendientes (fuera del código)
@@ -12498,3 +12504,38 @@ resolutores → `401 permission denied`, helpers (`capacidades_todas`/`preset`) 
 - **Lo que queda:** la **Fase 3** (el mantenedor, la pantalla, sobre este backend ya verificado) y la
   **Fase 4** (cutover: apagar los toggles viejos y la mitad legada de los porteros). Plan de la Fase 2:
   `docs/superpowers/plans/2026-09-10-fase2-permisos-granular.md`.
+
+**El mantenedor de usuarios · Fase 3 (Sesión 116, 10/09).** La cara del motor de la Fase 2: la
+pantalla que edita los **grants** de un usuario (capacidades sobre un ámbito), sobre el backend ya
+verificado. Todo en `profesor.html` + `scripts/panel-demo.py` (el doble) + un helper de esquema chico.
+
+- **Entrada:** un botón **🔑 Permisos** por profesor en Administración → Profesores, para Admin/Operador,
+  sobre un profesor registrado que no sea uno mismo ni un Admin (a un Admin no se le gestionan grants:
+  salta todo por `es_admin`).
+- **El modal "🔑 Editar permisos — ‹correo›":** arriba los **grants actuales** (`kimun_prof_permisos_ver`),
+  cada uno con su ámbito, sus capacidades en texto legible, **Editar** (precarga el grant en el editor) y
+  **✕** (revocar). Abajo el **editor de un grant**: selector de **ámbito** (radios plataforma/sostenedor/
+  colegio/curso + el nodo en un `<select>` + las **materias** del curso si es ámbito curso, vacío=todas),
+  botones de **preset** (Sostenedor/Super/Jefe/Asignatura, que marcan las casillas vía `kimun_prof_preset`),
+  un master **"Acceso total"**, y las casillas por las **4 categorías** del spec §2.1 con "marcar todas"
+  por categoría. Guardar → `kimun_prof_permisos_fijar`. Todo el estado del editor vive en `MANT.sel` y
+  cada interacción re-pinta desde ahí.
+- ⚠️ **Helper de esquema nuevo `kimun_prof_cursos()`:** el panel trabaja con el **código** `CUR-XXXX`, pero
+  un grant de curso guarda el **UUID** en `permisos_usuario`, así que el selector de ámbito lo necesita.
+  `returns table` con OUT `id` → `pr.id` aliasado en el guard (el bug id-ambiguo, ya con reflejo). Gateado
+  por `admin_colegio`.
+- **El doble** (`panel-demo.py`) ganó los stubs de los 6 RPC (`permisos_ver`/`_fijar`/`_revocar`,
+  `capacidades_todas`, `preset`, `cursos`) con un estado de grants sembrado como lo dejaría la migración
+  (Operador→plataforma, Super→colegio, Jefe→curso), para que el modal abra con "grants actuales" poblados.
+- **Verificado MIRANDO** (`cdp.mjs`, la regla del proyecto): el flujo completo —ver grants → preset Jefe da
+  **7 capacidades exactas** → ámbito curso muestra **4 materias** con nombre legible → Guardar (grants
+  1→2) → Revocar (2→1) → Cerrar—, en **desktop 1280 y móvil 375**, con **admin y operador** (los dos ven el
+  🔑), registro sobrio que calza con el panel, sin desborde, **consola limpia y cero fallos de red**.
+- **Coexiste** con los toggles viejos (Hacer Super/Operador, equipo, autorizar) — el mantenedor escribe
+  GRANTS y los toggles escriben las banderas legadas, y la lectura dual los une. Apagar los toggles es la
+  Fase 4. ⚠️ Para producción hace falta re-aplicar el esquema (trae `kimun_prof_cursos`) y publicar el panel.
+- **Lo único que queda de la Fase 3:** la **rejilla fina por función** (las ~15 rejillas backend que
+  separan `dominio.reiniciar` de `alumno.gestionar`, etc.). El mantenedor **ya funciona pleno con los
+  presets** —un grant de Super/Jefe/Asignatura gatea vía los porteros—; la rejilla fina solo importa para
+  un grant a medida que se aparta de un preset, y son ediciones ciegas que solo se prueban con cuentas
+  reales. Se hará cuando aparezca esa necesidad.

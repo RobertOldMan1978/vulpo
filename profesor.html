@@ -1161,11 +1161,17 @@ async function pintarLista(){
           ? `<button class="ico ico-del prof-quitar" data-correo="${esc(p.correo)}" data-reg="${p.registrado?'1':''}"
                title="${p.registrado?'Revocar profesor':'Cancelar invitación'}">✕</button>`
           : '';
+        // Mantenedor de permisos granular (Fase 3): lo opera Admin/Operador, sobre un profesor
+        // ya registrado que no sea uno mismo ni un Admin (a un Admin no se le gestionan grants:
+        // salta todo por es_admin). El servidor igual valida la no-escalada.
+        const btnPermisos = ((YO.es_admin || YO.es_operador) && p.registrado && !esYo && !p.es_admin)
+          ? `<button class="btn-chip prof-permisos" data-correo="${esc(p.correo)}">🔑 Permisos</button>`
+          : '';
         return `<div style="display:flex;gap:8px;align-items:center;padding:4px 0;font-size:13px;flex-wrap:wrap">
            <span class="pro-nom">${esc(p.correo)}</span>
            <span style="color:var(--dim)">${esc(rango)}</span>
            <span style="color:var(--cyan)">${p.cursos} curso${p.cursos===1?'':'s'}</span>
-           ${btnOperador}${btnSuper}${btnRevocar}
+           ${btnOperador}${btnSuper}${btnPermisos}${btnRevocar}
          </div>`;
       }).join('');
       document.querySelectorAll('.super-toggle').forEach(b=>b.onclick=async ()=>{
@@ -1190,6 +1196,7 @@ async function pintarLista(){
         await accion(()=>SB.rpc('kimun_prof_quitar',{p_correo:b.dataset.correo}),
                      reg?'Profesor revocado':'Invitación cancelada');
       });
+      document.querySelectorAll('.prof-permisos').forEach(b=>b.onclick=()=>abrirMantenedor(b.dataset.correo));
     }
     // El árbol Sostenedor › Colegio › Cursos reparenta las tarjetas de curso ya renderizadas.
     // Va al final: corre después del render y de restaurar el estado desplegado. SOST_ARBOL y
@@ -3227,6 +3234,227 @@ async function limpiarPruebas(){
   const {data:{session}}=await SB.auth.getSession();
   if(session){ try{ await cargarPanel(); }catch(e){ await manejarFalloDeIngreso(e); } }
 })();
+</script>
+
+<!-- ============================================================
+     Mantenedor de permisos granular (Fase 3, Sesión 116).
+     La cara del motor de la Fase 2: un modal que edita los GRANTS de un usuario (capacidades
+     sobre un ámbito). Lo abre el 🔑 de la lista de Profesores; lo opera Admin/Operador. El
+     servidor valida la no-escalada — esto es solo la UI. Se SUMA a los toggles viejos (Hacer
+     Super/Operador, equipo): apagarlos es la Fase 4.
+     ============================================================ -->
+<style>
+#mantOverlay{position:fixed;inset:0;background:#0009;z-index:60;display:none;overflow:auto}
+#mantOverlay.on{display:block}
+.mant-modal{background:var(--panel);border:1px solid var(--linea);border-radius:12px;
+  width:calc(100% - 24px);max-width:560px;margin:24px auto;padding:18px 18px 20px}
+.mant-modal h2{margin:0;font-size:16px}
+.mant-sub{color:var(--dim);font-size:12px;margin:2px 0 14px;word-break:break-all}
+.mant-cerrar{float:right;background:none;border:0;color:var(--dim);font-size:18px;cursor:pointer;
+  font-family:inherit;line-height:1;padding:2px 6px}
+.mant-cerrar:hover{color:var(--texto)}
+.mant-modal hr{border:0;border-top:1px solid var(--linea);margin:14px 0}
+.mant-h3{font-size:13px;margin:0 0 8px}
+.mant-grant{border:1px solid var(--linea);border-radius:8px;padding:8px 10px;margin:6px 0;
+  display:flex;gap:8px;align-items:flex-start}
+.mant-grant .g-ambito{font-weight:600;font-size:13px}
+.mant-grant .g-caps{color:var(--dim);font-size:11px;margin-top:2px;line-height:1.4}
+.mant-ambito{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px}
+.mant-radio{font-size:13px;display:flex;align-items:center;gap:5px}
+.mant-radio input,.mant-cap input{width:auto;margin:0}
+.mant-nodo{margin-bottom:10px}
+.mant-nodo select{width:100%;max-width:none;padding:8px;border-radius:8px;background:var(--fondo);
+  color:var(--texto);border:1px solid var(--linea);font-family:inherit;font-size:13px}
+.mant-mats{margin-top:8px;padding:8px;border:1px dashed var(--linea);border-radius:8px}
+.mant-mats-h{font-size:11px;color:var(--dim);margin-bottom:4px}
+.mant-presets{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:10px}
+.mant-lbl{font-size:12px;color:var(--dim)}
+.mant-total{margin:2px 0 8px;font-size:14px}
+.mant-cat{border:1px solid var(--linea);border-radius:8px;padding:8px 10px;margin:8px 0}
+.mant-cat h4{margin:0 0 4px;font-size:12px;color:var(--cyan);display:flex;justify-content:space-between;align-items:center}
+.mant-catall{background:none;border:0;color:var(--violet);font-family:inherit;font-size:11px;cursor:pointer;padding:2px 4px}
+.mant-cap{display:flex;gap:8px;align-items:flex-start;padding:3px 0;font-size:13px;line-height:1.3}
+.mant-msg{font-size:12px;min-height:16px;margin:8px 0}
+</style>
+<div id="mantOverlay"><div class="mant-modal">
+  <button class="mant-cerrar" id="mantCerrar" aria-label="Cerrar">✕</button>
+  <h2>🔑 Editar permisos</h2>
+  <p class="mant-sub" id="mantCorreo"></p>
+  <div id="mantGrants"></div>
+  <hr>
+  <div id="mantEditor"></div>
+</div></div>
+<script>
+// Etiquetas legibles de cada capacidad (los códigos son estables; esto es lo que ve el humano).
+const CAP_LABEL = {
+  'curso.crear':'Crear cursos','curso.borrar':'Borrar cursos','curso.nivel':'Fijar el nivel del curso',
+  'alumno.gestionar':'Gestionar alumnos (agregar, XP, borrar)','inscripcion.crear':'Crear enlace de inscripción',
+  'dominio.reiniciar':'Reiniciar mediciones',
+  'equipo.jefe':'Nombrar/quitar Profesor Jefe','equipo.asignatura':'Agregar/editar profes de asignatura',
+  'avance.ver':'Ver el avance','pulso.ver':'Ver el pulso del colegio','plan.fijar':'Fijar fechas de las unidades',
+  'plan.historial':'Ver el historial de planificación','refuerzo.gestionar':'Lanzar/cerrar refuerzos',
+  'profesor.autorizar':'Autorizar/revocar profesores','permisos.gestionar':'Operar el mantenedor de permisos',
+  'perfiles.limpiar':'Limpiar perfiles de prueba','enlace.armar':'Armar enlaces de muestra'
+};
+// Las cuatro categorías del spec §2.1, en el orden en que se muestran.
+const CAP_CATS = [
+  ['Cursos y alumnos', ['curso.crear','curso.borrar','curso.nivel','alumno.gestionar','inscripcion.crear','dominio.reiniciar']],
+  ['Equipo', ['equipo.jefe','equipo.asignatura']],
+  ['Seguimiento', ['avance.ver','pulso.ver','plan.fijar','plan.historial','refuerzo.gestionar']],
+  ['Administración', ['profesor.autorizar','permisos.gestionar','perfiles.limpiar','enlace.armar']]
+];
+const MANT = { correo:null, caps:[], sostenedores:[], colegios:[], cursos:[], grants:[], sel:null };
+
+function mantErr(e){ try{ return errorPanel(e); }catch(_){ return (e&&e.message)||String(e); } }
+function mantAviso(t,color){ const m=$('mantMsg'); if(m){ m.textContent=t||''; m.style.color=color||'var(--pink)'; } }
+
+async function abrirMantenedor(correo){
+  MANT.correo=correo; $('mantCorreo').textContent=correo;
+  $('mantGrants').innerHTML='<p style="color:var(--dim);font-size:12px">Cargando…</p>'; $('mantEditor').innerHTML='';
+  $('mantOverlay').classList.add('on');
+  try{
+    if(!MANT.caps.length){ const {data}=await SB.rpc('kimun_prof_capacidades_todas'); MANT.caps=data||[]; }
+    const {data:sosts}=await SB.rpc('kimun_prof_sostenedores'); MANT.sostenedores=sosts||[];
+    MANT.colegios=[];
+    for(const s of MANT.sostenedores){
+      const {data:cols}=await SB.rpc('kimun_prof_colegios',{p_sostenedor:s.id});
+      (cols||[]).forEach(c=>MANT.colegios.push({id:c.id, nombre:c.nombre}));
+    }
+    const {data:cursos}=await SB.rpc('kimun_prof_cursos'); MANT.cursos=cursos||[];
+    await cargarGrants();
+    renderEditor();
+  }catch(e){ $('mantGrants').innerHTML='<p style="color:var(--pink);font-size:12px">'+esc(mantErr(e))+'</p>'; }
+}
+
+async function cargarGrants(){
+  const {data:grants,error}=await SB.rpc('kimun_prof_permisos_ver',{p_correo:MANT.correo});
+  if(error) throw error;
+  MANT.grants=grants||[]; renderGrants();
+}
+
+function renderGrants(){
+  if(!MANT.grants.length){
+    $('mantGrants').innerHTML='<p style="color:var(--dim);font-size:12px">Sin permisos asignados por el mantenedor. '+
+      'Puede tener acceso por su rol clásico (Super/Operador/equipo) mientras no se apague en el cutover.</p>';
+    return;
+  }
+  $('mantGrants').innerHTML = MANT.grants.map(g=>{
+    const mat=(g.asignaturas&&g.asignaturas.length)?' · '+g.asignaturas.map(a=>esc((window.NIV&&NIV.nombre)?NIV.nombre(a):a)).join(', '):'';
+    return `<div class="mant-grant">
+      <div style="flex:1">
+        <div class="g-ambito">${esc(g.ambito_nombre||g.ambito_tipo)}${mat}</div>
+        <div class="g-caps">${g.capacidades.length} capacidad${g.capacidades.length===1?'':'es'}: ${g.capacidades.map(c=>esc(CAP_LABEL[c]||c)).join(' · ')}</div>
+      </div>
+      <button class="btn-chip g-editar" data-id="${esc(g.id)}">Editar</button>
+      <button class="ico ico-del g-revocar" data-id="${esc(g.id)}" title="Revocar este grant">✕</button>
+    </div>`;
+  }).join('');
+  document.querySelectorAll('.g-revocar').forEach(b=>b.onclick=async ()=>{
+    if(!confirm('¿Revocar este grant? El usuario pierde estas capacidades sobre ese ámbito.')) return;
+    try{ const {error}=await SB.rpc('kimun_prof_permisos_revocar',{p_id:b.dataset.id}); if(error) throw error;
+      await cargarGrants(); mantAviso('Grant revocado','var(--green)');
+    }catch(e){ mantAviso(mantErr(e)); }
+  });
+  document.querySelectorAll('.g-editar').forEach(b=>b.onclick=()=>{
+    const g=MANT.grants.find(x=>x.id===b.dataset.id); if(g) renderEditor(g);
+  });
+}
+
+// El editor de UN grant. Si se pasa `g`, precarga su ámbito y capacidades (Editar); si no, parte
+// en un curso vacío. Todo el estado vive en MANT.sel y cada interacción re-pinta desde ahí.
+function renderEditor(g){
+  MANT.sel = {
+    tipo: g? g.ambito_tipo : 'curso',
+    id:   g? g.ambito_id : (MANT.cursos[0]?MANT.cursos[0].id:null),
+    materias: new Set((g&&g.asignaturas)||[]),
+    checked:  new Set((g&&g.capacidades)||[])
+  };
+  pintarEditor();
+}
+
+function pintarEditor(){
+  const sel=MANT.sel;
+  const tipos=[['plataforma','Plataforma'],['sostenedor','Sostenedor'],['colegio','Colegio'],['curso','Curso']];
+  const radios=tipos.map(([t,l])=>`<label class="mant-radio"><input type="radio" name="mant-ambito" value="${t}" ${sel.tipo===t?'checked':''}> ${l}</label>`).join('');
+  let nodo='';
+  if(sel.tipo==='sostenedor'){
+    nodo=`<select id="mantNodo">${MANT.sostenedores.map(s=>`<option value="${esc(s.id)}" ${sel.id===s.id?'selected':''}>${esc(s.nombre)}</option>`).join('')}</select>`;
+  }else if(sel.tipo==='colegio'){
+    nodo=`<select id="mantNodo">${MANT.colegios.map(c=>`<option value="${esc(c.id)}" ${sel.id===c.id?'selected':''}>${esc(c.nombre)}</option>`).join('')}</select>`;
+  }else if(sel.tipo==='curso'){
+    nodo=`<select id="mantNodo">${MANT.cursos.map(c=>`<option value="${esc(c.id)}" ${sel.id===c.id?'selected':''}>${esc(c.nombre)}${c.nivel?' ('+esc(c.nivel)+'°)':''}</option>`).join('')}</select>`;
+    const cur=MANT.cursos.find(c=>c.id===sel.id);
+    const mats=(cur&&cur.nivel&&window.NIV&&NIV.deNivel)?NIV.deNivel(cur.nivel):[];
+    if(mats.length){
+      nodo+=`<div class="mant-mats"><div class="mant-mats-h">Materias (vacío = todas):</div>`+
+        mats.map(m=>`<label class="mant-cap"><input type="checkbox" class="mant-mat" value="${esc(m)}" ${sel.materias.has(m)?'checked':''}> ${esc(NIV.nombre?NIV.nombre(m):m)}</label>`).join('')+`</div>`;
+    }
+  }
+  const total=MANT.caps.length && sel.checked.size===MANT.caps.length;
+  const cats=CAP_CATS.map(([nom,codes])=>{
+    const items=codes.map(c=>`<label class="mant-cap"><input type="checkbox" class="mant-cap-cb" value="${c}" ${sel.checked.has(c)?'checked':''}> ${esc(CAP_LABEL[c]||c)}</label>`).join('');
+    return `<div class="mant-cat"><h4>${esc(nom)} <button class="mant-catall" data-cat="${esc(nom)}">marcar todas</button></h4>${items}</div>`;
+  }).join('');
+  const presets=[['sostenedor','Sostenedor'],['super','Super'],['jefe','Jefe'],['asignatura','Asignatura']]
+    .map(([p,l])=>`<button class="btn-chip mant-preset" data-preset="${p}">${l}</button>`).join('');
+  $('mantEditor').innerHTML=`
+    <h3 class="mant-h3">Agregar o reemplazar un permiso</h3>
+    <div class="mant-ambito">${radios}</div>
+    <div class="mant-nodo">${nodo}</div>
+    <div class="mant-presets"><span class="mant-lbl">Aplicar rol:</span> ${presets}</div>
+    <label class="mant-cap mant-total"><input type="checkbox" id="mantTotal" ${total?'checked':''}> <b>Acceso total</b></label>
+    ${cats}
+    <div id="mantMsg" class="mant-msg"></div>
+    <button class="btn" id="mantGuardar">Guardar</button>`;
+  wireEditor();
+}
+
+function wireEditor(){
+  const sel=MANT.sel;
+  document.querySelectorAll('input[name=mant-ambito]').forEach(r=>r.onchange=()=>{
+    sel.tipo=r.value;
+    sel.id = sel.tipo==='sostenedor' ? (MANT.sostenedores[0]&&MANT.sostenedores[0].id)
+           : sel.tipo==='colegio'    ? (MANT.colegios[0]&&MANT.colegios[0].id)
+           : sel.tipo==='curso'      ? (MANT.cursos[0]&&MANT.cursos[0].id) : null;
+    sel.materias=new Set(); pintarEditor();
+  });
+  const nodo=$('mantNodo'); if(nodo) nodo.onchange=()=>{ sel.id=nodo.value; sel.materias=new Set(); pintarEditor(); };
+  document.querySelectorAll('.mant-cap-cb').forEach(cb=>cb.onchange=()=>{
+    if(cb.checked) sel.checked.add(cb.value); else sel.checked.delete(cb.value); pintarEditor();
+  });
+  document.querySelectorAll('.mant-mat').forEach(cb=>cb.onchange=()=>{
+    if(cb.checked) sel.materias.add(cb.value); else sel.materias.delete(cb.value);
+  });
+  document.querySelectorAll('.mant-catall').forEach(b=>b.onclick=()=>{
+    const cat=CAP_CATS.find(c=>c[0]===b.dataset.cat); const all=cat[1].every(c=>sel.checked.has(c));
+    cat[1].forEach(c=>all?sel.checked.delete(c):sel.checked.add(c)); pintarEditor();
+  });
+  document.querySelectorAll('.mant-preset').forEach(b=>b.onclick=async ()=>{
+    const {data:caps}=await SB.rpc('kimun_prof_preset',{p_nombre:b.dataset.preset});
+    sel.checked=new Set(caps||[]); pintarEditor();
+  });
+  const t=$('mantTotal'); if(t) t.onchange=()=>{ sel.checked = t.checked ? new Set(MANT.caps) : new Set(); pintarEditor(); };
+  $('mantGuardar').onclick=guardarGrant;
+}
+
+async function guardarGrant(){
+  const sel=MANT.sel;
+  if(sel.tipo!=='plataforma' && !sel.id){ mantAviso('Elige un ámbito.'); return; }
+  const caps=[...sel.checked];
+  const mats=sel.tipo==='curso'?[...sel.materias]:[];
+  try{
+    const {error}=await SB.rpc('kimun_prof_permisos_fijar',{
+      p_correo:MANT.correo, p_ambito_tipo:sel.tipo,
+      p_ambito_id: sel.tipo==='plataforma'?null:sel.id,
+      p_capacidades:caps, p_asignaturas:mats});
+    if(error) throw error;
+    await cargarGrants();
+    mantAviso(caps.length?'Permiso guardado':'Grant quitado (sin capacidades = revocar ese ámbito)','var(--green)');
+  }catch(e){ mantAviso(mantErr(e)); }
+}
+
+$('mantCerrar').onclick=()=>$('mantOverlay').classList.remove('on');
+$('mantOverlay').onclick=(e)=>{ if(e.target===$('mantOverlay')) $('mantOverlay').classList.remove('on'); };
 </script>
 </body>
 </html>
