@@ -1706,8 +1706,12 @@ declare yo public.profesores; obj public.profesores; n int; obj_rango text; mi_r
 -- o un SuperUsuario se hace ahora por el 🔑 mantenedor (kimun_prof_permisos_fijar), que escribe un
 -- grant de plataforma (Operador) o de colegio (Super). Sus grants salen del bloque `grant execute` y
 -- el panel dejó de dibujar sus toggles. Las columnas es_super/es_operador se conservan (datos
--- históricos) pero están muertas para authz. Si quedara una llamada vieja a estas funciones,
--- PostgREST responde 404, que es lo correcto: ya no existen.
+-- históricos) pero están muertas para authz.
+-- ⚠️ El `drop` es imprescindible: quitar la definición del archivo NO borra la función de la base
+-- (create or replace no elimina), así que sin esto seguirían vivas y llamables (con EXECUTE de
+-- PUBLIC por default). Con el drop, una llamada vieja da 404 —lo correcto: ya no existen—.
+drop function if exists public.kimun_prof_super_fijar(text,boolean);
+drop function if exists public.kimun_prof_operador_fijar(text,boolean);
 
 -- ============================================================
 -- OTORGAMIENTO — el backend del mantenedor (Sesión 116, Fase 2). Lo consume la pantalla de
