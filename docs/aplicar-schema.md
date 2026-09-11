@@ -31,18 +31,15 @@ puede ejecutar cambios de estructura).
 | **2026-09-10** | **Sesión 116 · el mantenedor (Fase 3).** Un solo helper de esquema: **`kimun_prof_cursos()`** —los UUID de curso para el selector de ámbito del mantenedor, porque el panel trabaja con el código `CUR-XXXX` y un grant de curso guarda el UUID—. Nueva, `returns table` con su `drop`, `pr.id` aliasado (OUT `id`). Gateada por `admin_colegio`. Sin cambio de firma existente | **Sí, control verde (10/09):** `kimun_prof_cursos` desde anon → **400 `no_autorizado`** (existe + gateada), una inventada → **404 `PGRST202`**, y `MA06 OA 01`→`MA06` + `permisos_ver`→400 (esquema vivo, Fase 2 intacta). El panel ya está publicado, así que el 🔑 del mantenedor funciona |
 | **2026-09-08** | S113 · **`kimun_mi_plan()`**, el semáforo del alumno: le devuelve al niño la planificación de SU curso (asignatura, unidad, título y las dos fechas) para pintar qué unidad se está pasando esta semana. ⚠️ **NO expone `nota`, `profesor_id` ni el log** —el registro de quién movió qué fecha es material de UTP (Sesión 108)—, y la restricción vive en la FIRMA, no en el cliente. Modela sobre `kimun_mi_curso` (resuelve el curso con `kimun_yo()`, sin parámetros); es del alumno, así que va a `anon` y **no tiene portero de rol**. Trae su `drop function if exists` como toda `returns table` | **Sí, con sus tres controles.** (1) POSITIVO: `kimun_mi_plan` pasó de **404 `PGRST202`** (medido antes de aplicar) a **200 `[]`** — una sesión anónima sin curso recibe vacío porque el join no da filas, NO un `no_autorizado`: es de lectura del alumno, no una `kimun_prof_*`. (2) NEGATIVO: `kimun_mi_plan_inventada` sigue dando **404 `PGRST202`** (su hint ahora sugiere `kimun_mi_plan`, o sea que está en el caché), así que el `[]` no es un eco. (3) PRIVACIDAD en la firma: `?select=nota` da **400 `42703` column "nota" does not exist** — la función no la expone. |
 | **2026-09-10** | **Sesión 116 · la rejilla fina por función (Fase 3, backend).** Cada una de las ~26 funciones deja su portero grueso y exige su **capacidad específica**: `kimun_prof_puede(<cap>, cid)` para las de curso (`curso.borrar`, `curso.nivel`, `dominio.reiniciar`, `inscripcion.crear`, `plan.fijar`, `plan.historial`, `refuerzo.gestionar`, `equipo.jefe`, `equipo.asignatura`) y el helper nuevo **`kimun_prof_puede_algun(<cap>)`** para las de nivel superior (`curso.crear`+tenencia, `profesor.autorizar`, `pulso.ver`, `perfiles.limpiar`, `equipo.jefe` de `curso_asignar`). Además `kimun_prof_listar` pasa su WHERE de visibilidad a `kimun_prof_acceso(c.id)` (grant-aware, para que un Super creado por el mantenedor vea los cursos de su colegio). **Ninguna firma cambia** (todo `create or replace` de cuerpo; `puede_algun` es nueva e interna, revocada de `public, anon, authenticated`), así que es seguro en cualquier orden respecto al cliente, y el panel **no cambia** (llama a las mismas funciones) | **Sí, control VERDE (11/09):** las 7 funciones tocadas desde anon → **400 `no_autorizado`** (existen + gateadas), el resolutor nuevo **`kimun_prof_puede_algun`** → **401 `42501`** (revocado de anon, correcto — confirma el `revoke` de la fila nueva), `kimun_prof_permisos_ver` → 400 (Fase 2 intacta), una inventada → **404 `PGRST202`** (así el 400 no es eco), `MA06 OA 01`→`MA06` (esquema vivo). ⚠️ Que la foto de acceso por rango sea **idéntica** se comprueba con una sesión real; el access-neutral está garantizado por la lectura dual + la auditoría estática portero-por-portero |
-| **2026-09-11** | **Sesión 116 · Fase 4a · `kimun_prof_mi_acceso()`.** Devuelve el acceso **EFECTIVO** del usuario logueado —rango (Administrador/Operador/SuperUsuario/Profesor) + la visibilidad del chrome de admin (`es_admin_colegio`, `limpiar`, `armar`, `gestiona_permisos` para el 🔑)— derivado de los grants y los resolutores, para que el panel pinte identidad y visibilidad desde el **grant** y no desde la bandera cruda. Descubierto en la prueba real: `roberto.lorca` con solo un grant (sin banderas) tenía acceso correcto pero el panel lo pintaba "Profesor". **Puramente aditivo**: una función nueva `returns table` con su `drop`, granted a anon/authenticated; **el legado sigue prendido**, no es el cutover. El panel (B0) la usa con degradación (si no está aplicada, cae al cálculo por bandera), así que es seguro publicar el panel antes o junto con el esquema | **⏳ A verificar al re-aplicar (11/09).** Control: `kimun_prof_mi_acceso` desde anon → **200** con `rango:Profesor` (existe; es self-query, devuelve el "sin acceso" del anónimo, sin fuga), una inventada → **404 `PGRST202`**, `MA06 OA 01`→`MA06` |
+| **2026-09-11** | **Sesión 116 · Fase 4a · `kimun_prof_mi_acceso()`.** Devuelve el acceso **EFECTIVO** del usuario logueado —rango (Administrador/Operador/SuperUsuario/Profesor) + la visibilidad del chrome de admin (`es_admin_colegio`, `limpiar`, `armar`, `gestiona_permisos` para el 🔑)— derivado de los grants y los resolutores, para que el panel pinte identidad y visibilidad desde el **grant** y no desde la bandera cruda. Descubierto en la prueba real: `roberto.lorca` con solo un grant (sin banderas) tenía acceso correcto pero el panel lo pintaba "Profesor". **Puramente aditivo**: una función nueva `returns table` con su `drop`, granted a anon/authenticated; **el legado sigue prendido**, no es el cutover. El panel (B0) la usa con degradación (si no está aplicada, cae al cálculo por bandera), así que es seguro publicar el panel antes o junto con el esquema | **Sí, control verde (11/09):** `kimun_prof_mi_acceso` desde anon → **200** con `rango:Profesor` (existe; self-query sin fuga), inventada → **404 `PGRST202`**, `MA06 OA 01`→`MA06`, `dominio_reiniciar`→400 (Fase 3 intacta) |
+| **2026-09-11** | **Sesión 116 · Fase 4b · EL CUTOVER (el flip destructivo).** Los grants pasan a ser la **única fuente de verdad**: **`kimun_prof_legado_cubre` → `select false;`** (desconecta el legado de todos los resolutores), se soltaron las ramas de bandera de `tiene_todas_asig`/`admin_colegio`, **`kimun_prof_rango(pid)`** nueva (rango por grants) alimenta `mi_acceso` y **`kimun_prof_profesores`** (devuelve `rango` en vez de `es_super`/`es_operador` — **CAMBIA DE FIRMA**, su `drop` ya está), `kimun_prof_quitar` protege por rango, **`super_fijar`/`operador_fijar` RETIRADOS** (funciones + grants), y el **"Equipo del curso" espeja grants** (`equipo_asignar`/`_quitar`/`curso_asignar` → `permisos_usuario`). ⚠️ **El re-pegado se AUTO-SANA**: la migración del final convierte bandera/membresía→grant en el mismo pegado, después del flip. ⚠️ Como cambia la firma de `kimun_prof_profesores`, **el panel se publica ANTES o junto** | **⏳ Pendiente de aplicar (11/09).** ANTES del flip correr el **diagnóstico de huérfanos** de abajo (debe dar 0 filas). Control tras aplicar: `kimun_prof_rango`→**401** (interno, revocado de anon), `super_fijar`→**404** (retirada), `kimun_prof_profesores`→400, inventada→404, `MA06`→`MA06`; y `roberto.lorca` sigue viéndose Operador con todos los cursos |
 
-> ⚠️ **Al 11/09/2026 queda UNA fila pendiente: `kimun_prof_mi_acceso` (Fase 4a).** Es **aditiva**
-> (agrega una función; no toca ninguna existente ni el legado), así que re-aplicar es seguro en
-> cualquier orden y no cambia el acceso de nadie — solo le da al panel de qué leer el rango. La
-> rejilla fina (Fase 3), el helper del mantenedor (`kimun_prof_cursos`) y las dos filas de la Fase 2
-> ya están aplicadas y con control verde. **El cutover (Fase 4b: apagar el legado + Equipo escribiendo
-> grants + quitar toggles) todavía no está escrito** — es el re-pegado destructivo, va último.
->
-> ⚠️ **El cutover (Fase 4) es OTRO re-pegado y todavía no está escrito** — no puede convivir con la
-> lectura dual en el mismo archivo, y su gate (probar el mantenedor con una cuenta real) es de
-> Roberto. Plan en `docs/superpowers/plans/2026-09-10-fase4-cutover.md`.
+> ⚠️ **Al 11/09/2026 queda UNA fila pendiente: el CUTOVER (Fase 4b).** Es el re-pegado **destructivo**
+> —apaga el legado, así que después los grants son la única verdad—. Todo lo demás (Fases 1-3 + 4a)
+> está aplicado y verde. **Antes de aplicarlo, correr el diagnóstico de huérfanos** (sección más
+> abajo): confirma que nadie con acceso legado quede sin grant. El re-pegado se auto-sana (la
+> migración del final crea los grants que falten), salvo un Super con ≠1 colegio. Plan:
+> `docs/superpowers/plans/2026-09-10-fase4-cutover.md`.
 >
 > ⚠️ **`revoke from public` NO basta en Supabase.** La Fase 2 lo aprendió: Supabase otorga EXECUTE a
 > `anon` y `authenticated` por default privileges, así que una función interna revocada solo `from
@@ -335,6 +332,40 @@ Corrido el 31/08/2026 con 3 cursos: **12 códigos**. Al agregar 4°, 5° y 6° h
 número; la lista misma se actualiza sola desde `kimun_asignaturas_todas()`, que es lo único que
 hay que editar en el servidor al dar de alta un curso.
 
+
+## Diagnóstico de huérfanos, ANTES del cutover (Fase 4b)
+
+El cutover apaga el legado, así que después **solo los grants dan acceso**. Esta consulta (solo
+lectura) lista las cuentas que hoy tienen acceso por **bandera o membresía** pero **sin grant
+equivalente** — las que quedarían bloqueadas al apagar el legado. Correrla en el SQL Editor
+**antes** de aplicar el cutover. **Debe dar 0 filas.** (`es_admin` no cuenta: sobrevive al
+cutover por el atajo.)
+
+```sql
+select p.correo, 'operador sin grant de plataforma' as motivo
+  from public.profesores p
+ where p.es_operador and not p.es_admin
+   and not exists(select 1 from public.permisos_usuario g
+                  where g.profesor_id=p.id and g.ambito_tipo='plataforma')
+union all
+select p.correo, 'super sin grant de colegio'
+  from public.profesores p
+ where p.es_super and not p.es_admin
+   and not exists(select 1 from public.permisos_usuario g
+                  where g.profesor_id=p.id and g.ambito_tipo='colegio')
+union all
+select pr.correo, 'membresia de curso sin grant'
+  from public.curso_profesores cp
+  join public.profesores pr on pr.id = cp.profesor_id
+ where not exists(select 1 from public.permisos_usuario g
+                  where g.profesor_id=cp.profesor_id and g.ambito_tipo='curso'
+                    and g.ambito_id=cp.curso_id);
+```
+
+Si devuelve filas: el re-pegado del cutover **igual las sana** (la migración del final crea sus
+grants), **salvo** un `super` cuando hay **≠1 colegio** (la migración solo adivina el colegio si
+hay uno). Para ese caso, darle su grant de colegio por el 🔑 mantenedor antes de aplicar. Tras
+aplicar el cutover, volver a correrla: debe dar **0 filas**.
 
 ## Si algo sale mal
 

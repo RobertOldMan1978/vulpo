@@ -937,44 +937,15 @@ returns text[] language sql immutable set search_path=public as $$
   end;
 $$;
 
--- LEGADO (se retira en la Fase 4). Reproduce, capacidad por capacidad, EXACTO lo que hoy
--- concede cada bandera/membresía —matcheado contra el guard real de cada función, no un
--- "super o operador" grueso—. Sin esto la foto de acceso cambiaría en los bordes: p. ej.
--- perfiles.limpiar es hoy Admin/Operador (NO Super), y curso_quitar es Admin/Super/Operador
--- (NO Jefe). p_curso puede venir null para las capacidades de nivel superior. es_admin no se
--- comprueba aquí: lo cubre kimun_prof_es_admin_raw en el resolutor.
+-- LEGADO — RETIRADO en el cutover (Fase 4b, Sesión 116). Devuelve `false`: los grants son la única
+-- fuente de verdad de la autorización. La firma se conserva porque los resolutores (puede,
+-- puede_en_colegio, puede_en_sostenedor, puede_algun, puede_ambito) todavía la llaman; con `false`
+-- todos pierden el legado automáticamente, sin tocar su cuerpo. es_admin sigue siendo el atajo
+-- (kimun_prof_es_admin_raw), la única bandera que sobrevive. La migración del final del archivo
+-- garantiza que cada Super/Operador/Jefe que era legado tenga ya su grant equivalente.
 create or replace function public.kimun_prof_legado_cubre(p_cap text, p_curso uuid)
 returns boolean language sql security definer stable set search_path=public as $$
-  select case
-    -- Tier "admin_colegio" de hoy: Super u Operador (Admin va por es_admin_raw). Sin Jefe.
-    when p_cap in ('curso.crear','curso.borrar','curso.nivel','equipo.jefe',
-                   'profesor.autorizar','pulso.ver','plan.historial')
-      then exists(select 1 from public.profesores pr
-                  where pr.id = auth.uid() and (pr.es_super or pr.es_operador))
-    -- Limpiar perfiles: hoy Operador (Admin va aparte). NO Super.
-    when p_cap = 'perfiles.limpiar'
-      then exists(select 1 from public.profesores pr where pr.id = auth.uid() and pr.es_operador)
-    -- Armar enlaces de muestra: hoy Admin/Operador en el panel. NO Super.
-    when p_cap = 'enlace.armar'
-      then exists(select 1 from public.profesores pr where pr.id = auth.uid() and pr.es_operador)
-    -- Tier "es_mio" de hoy (destructivo del curso): Super/Operador, o Jefe del curso. Sin asignatura.
-    when p_cap in ('alumno.gestionar','dominio.reiniciar','inscripcion.crear','equipo.asignatura')
-      then exists(select 1 from public.profesores pr
-                  where pr.id = auth.uid() and (pr.es_super or pr.es_operador))
-        or exists(select 1 from public.curso_profesores cp
-                  where cp.curso_id = p_curso and cp.profesor_id = auth.uid() and cp.rol = 'jefe')
-    -- Tier "acceso" de hoy (seguimiento): Super/Operador, Jefe, o profe con al menos una
-    -- asignatura en el curso. (refuerzo/plan además acotan por materia dentro de su función,
-    -- igual que hoy — eso no cambia con la capacidad.)
-    when p_cap in ('avance.ver','refuerzo.gestionar','plan.fijar')
-      then exists(select 1 from public.profesores pr
-                  where pr.id = auth.uid() and (pr.es_super or pr.es_operador))
-        or exists(select 1 from public.curso_profesores cp
-                  where cp.curso_id = p_curso and cp.profesor_id = auth.uid()
-                    and (cp.rol = 'jefe' or coalesce(array_length(cp.asignaturas,1),0) >= 1))
-    -- permisos.gestionar NO tiene legado: nace solo con el grant del preset Operador.
-    else false
-  end;
+  select false;
 $$;
 
 -- ¿Tengo `cap` sobre `p_curso` por un GRANT que cubra ese curso? (curso, o su colegio, o el
@@ -1047,11 +1018,10 @@ $$;
 -- materias de sus grants de curso / su membresía de asignatura (lo resuelve kimun_prof_asignaturas).
 create or replace function public.kimun_prof_tiene_todas_asig(p_curso uuid)
 returns boolean language sql security definer stable set search_path=public as $$
-  select exists(select 1 from public.profesores pr
-                where pr.id = auth.uid() and (pr.es_super or pr.es_operador))
-    or exists(select 1 from public.curso_profesores cp
-              where cp.curso_id = p_curso and cp.profesor_id = auth.uid() and cp.rol = 'jefe')
-    or exists(select 1 from public.permisos_usuario g
+  -- Cutover (Fase 4b): SOLO grants. Un grant que cubre el curso desde arriba con avance.ver, o un
+  -- grant de curso con avance.ver y SIN asignaturas (equivale a Jefe). Antes también miraba las
+  -- banderas es_super/es_operador y la membresía de Jefe; se retiraron con el legado.
+  select exists(select 1 from public.permisos_usuario g
               left join public.cursos c    on c.id = p_curso
               left join public.colegios co on co.id = c.colegio_id
               where g.profesor_id = auth.uid() and 'avance.ver' = any(g.capacidades)
@@ -1159,8 +1129,8 @@ $$;
 create or replace function public.kimun_prof_admin_colegio()
 returns boolean language sql security definer stable set search_path=public as $$
   select public.kimun_prof_es_admin_raw()
-    or exists(select 1 from public.profesores pr
-              where pr.id = auth.uid() and (pr.es_super or pr.es_operador))
+    -- Cutover (Fase 4b): sin la rama de bandera (es_super/es_operador). Solo Admin o un grant con
+    -- capacidades administrativas sobre plataforma/sostenedor/colegio.
     or exists(select 1 from public.permisos_usuario g
               where g.profesor_id = auth.uid()
                 and g.ambito_tipo in ('plataforma','sostenedor','colegio')
@@ -1168,34 +1138,43 @@ returns boolean language sql security definer stable set search_path=public as $
                                            'pulso.ver','equipo.jefe','permisos.gestionar']);
 $$;
 
+-- El RANGO efectivo de un profesor, derivado de sus GRANTS (no de banderas): Admin (es_admin) →
+-- Administrador; un grant de plataforma con permisos.gestionar → Operador; un grant de colegio/
+-- sostenedor con capacidades administrativas → SuperUsuario; si no, Profesor. Lo usan mi_acceso
+-- (para el logueado) y kimun_prof_profesores (para cada fila de la lista), así el panel muestra el
+-- rango real de un Operador/Super creado por el mantenedor aunque no tenga bandera. Tras el cutover
+-- las banderas ya no se leen; la migración garantiza que cada legado tenga su grant equivalente.
+create or replace function public.kimun_prof_rango(p_id uuid)
+returns text language sql security definer stable set search_path=public as $$
+  select case
+    when exists(select 1 from public.profesores pr where pr.id = p_id and pr.es_admin) then 'Administrador'
+    when exists(select 1 from public.permisos_usuario g
+                where g.profesor_id = p_id and g.ambito_tipo = 'plataforma'
+                  and 'permisos.gestionar' = any(g.capacidades)) then 'Operador'
+    when exists(select 1 from public.permisos_usuario g
+                where g.profesor_id = p_id and g.ambito_tipo in ('sostenedor','colegio')
+                  and g.capacidades && array['curso.crear','curso.borrar','profesor.autorizar',
+                                             'pulso.ver','equipo.jefe','permisos.gestionar']) then 'SuperUsuario'
+    else 'Profesor'
+  end;
+$$;
+
 -- El acceso EFECTIVO del usuario logueado, para que el panel pinte identidad y visibilidad desde
--- el GRANT y no desde la bandera cruda (Fase 4, B0). Derivado de los resolutores (que hacen lectura
--- dual), así que es correcto en las dos fases: hoy un grant O una bandera legada dan el mismo rango;
--- tras el cutover, solo el grant. El 🔑 (gestiona_permisos) incluye la bandera legada durante la
--- transición, para que un Operador que todavía no tenga grant no pierda el mantenedor. Es "returns
+-- el GRANT y no desde la bandera cruda. Tras el cutover (Fase 4b) es 100% por grant: el rango sale
+-- de kimun_prof_rango y gestiona_permisos (el 🔑) de un grant con permisos.gestionar. Es "returns
 -- table", así que lleva su drop por si algún día gana una columna.
 drop function if exists public.kimun_prof_mi_acceso();
 create or replace function public.kimun_prof_mi_acceso()
 returns table(rango text, es_admin_colegio boolean, limpiar boolean, armar boolean, gestiona_permisos boolean)
 language sql security definer stable set search_path=public as $$
   select
-    case
-      when public.kimun_prof_es_admin_raw() then 'Administrador'
-      when exists(select 1 from public.permisos_usuario g
-                  where g.profesor_id = auth.uid() and g.ambito_tipo='plataforma'
-                    and 'permisos.gestionar' = any(g.capacidades))
-           or exists(select 1 from public.profesores pr where pr.id = auth.uid() and pr.es_operador)
-        then 'Operador'
-      when public.kimun_prof_admin_colegio() then 'SuperUsuario'
-      else 'Profesor'
-    end,
+    public.kimun_prof_rango(auth.uid()),
     public.kimun_prof_admin_colegio(),
     public.kimun_prof_puede_algun('perfiles.limpiar'),
     public.kimun_prof_puede_algun('enlace.armar'),
     public.kimun_prof_es_admin_raw()
       or exists(select 1 from public.permisos_usuario g
-                where g.profesor_id = auth.uid() and 'permisos.gestionar' = any(g.capacidades))
-      or exists(select 1 from public.profesores pr where pr.id = auth.uid() and pr.es_operador);
+                where g.profesor_id = auth.uid() and 'permisos.gestionar' = any(g.capacidades));
 $$;
 
 -- Mis cursos con sus alumnos. Un administrador ve todos, incluidos los huérfanos.
@@ -1672,13 +1651,17 @@ declare yo public.profesores; r public.profesores_autorizados; begin
 -- Mismo guardia de idempotencia que kimun_prof_listar (es "returns table").
 drop function if exists public.kimun_prof_profesores();
 create or replace function public.kimun_prof_profesores()
-returns table(correo text, nombre text, es_admin boolean, es_super boolean, es_operador boolean, cursos int, registrado boolean)
+returns table(correo text, nombre text, es_admin boolean, rango text, cursos int, registrado boolean)
 language plpgsql security definer set search_path=public as $$
 declare yo public.profesores; begin
   select * into yo from public.profesores where id = auth.uid();
   if yo.id is null or not public.kimun_prof_admin_colegio() then raise exception 'no_autorizado'; end if;
   return query
-    select coalesce(a.correo, p.correo), p.nombre, coalesce(p.es_admin,false), coalesce(p.es_super,false), coalesce(p.es_operador,false),
+    select coalesce(a.correo, p.correo), p.nombre, coalesce(p.es_admin,false),
+           -- Rango EFECTIVO por grants (cutover Fase 4b): un Operador/Super creado por el mantenedor
+           -- se muestra bien aunque no tenga bandera. Un correo autorizado sin registrar (p.id null)
+           -- cae a 'Profesor' y el panel lo pinta 'sin registrar' según `registrado`.
+           public.kimun_prof_rango(p.id),
            -- Cuenta las membresías reales (curso_profesores), no la columna deprecada
            -- cursos.profesor_id: desde la Sesión 37 los cursos nuevos nacen con
            -- profesor_id nulo, así que contar por ahí daba 0 para todo Jefe nuevo.
@@ -1697,7 +1680,7 @@ end $$;
 -- reasignen con kimun_prof_curso_asignar.
 create or replace function public.kimun_prof_quitar(p_correo text)
 returns int language plpgsql security definer set search_path=public as $$
-declare yo public.profesores; obj public.profesores; n int; begin
+declare yo public.profesores; obj public.profesores; n int; obj_rango text; mi_rango text; begin
   select * into yo from public.profesores where id = auth.uid();
   if yo.id is null or not public.kimun_prof_puede_algun('profesor.autorizar') then raise exception 'no_autorizado'; end if;
   -- Un administrador no puede revocarse a sí mismo: si es el único, la
@@ -1705,48 +1688,26 @@ declare yo public.profesores; obj public.profesores; n int; begin
   -- con SQL a mano.
   if lower(trim(coalesce(p_correo,''))) = lower(yo.correo) then raise exception 'no_te_puedes_quitar'; end if;
   select * into obj from public.profesores where lower(correo) = lower(trim(coalesce(p_correo,'')));
-  -- A un Admin o a un Operador solo los revoca un Admin. A un SuperUsuario lo revoca un
-  -- Admin o un Operador (un Super no revoca a otro Super, igual que antes).
+  -- Protección por RANGO EFECTIVO (cutover Fase 4b), no por bandera: a un Admin o a un Operador
+  -- solo los revoca un Admin; a un SuperUsuario, un Admin o un Operador (un Super no revoca a otro).
   if obj.id is not null then
-    if (obj.es_admin or obj.es_operador) and not yo.es_admin then raise exception 'no_autorizado'; end if;
-    if obj.es_super and not (yo.es_admin or yo.es_operador) then raise exception 'no_autorizado'; end if;
+    obj_rango := public.kimun_prof_rango(obj.id);
+    mi_rango  := public.kimun_prof_rango(auth.uid());
+    if obj_rango in ('Administrador','Operador') and mi_rango <> 'Administrador' then raise exception 'no_autorizado'; end if;
+    if obj_rango = 'SuperUsuario' and mi_rango not in ('Administrador','Operador') then raise exception 'no_autorizado'; end if;
   end if;
   delete from public.profesores where lower(correo) = lower(trim(coalesce(p_correo,'')));
   get diagnostics n = row_count;
   delete from public.profesores_autorizados where lower(correo) = lower(trim(coalesce(p_correo,'')));
   return n; end $$;
 
--- Nombra o quita un SuperUsuario. Lo puede hacer un Admin o un Operador (dar de alta a la
--- autoridad de un colegio es operativo). NO toca cuentas de Admin ni de Operador: a un Admin
--- no se lo degrada/asciende por aquí, y a un Operador solo lo gestiona un Admin.
-create or replace function public.kimun_prof_super_fijar(p_correo text, p_es_super boolean)
-returns void language plpgsql security definer set search_path=public as $$
-declare yo public.profesores; obj public.profesores; begin
-  select * into yo from public.profesores where id = auth.uid();
-  if yo.id is null or not (yo.es_admin or yo.es_operador) then raise exception 'no_autorizado'; end if;
-  select * into obj from public.profesores where lower(correo) = lower(trim(coalesce(p_correo,'')));
-  if obj.id is null then raise exception 'profesor_invalido'; end if;
-  if obj.es_admin then raise exception 'no_autorizado'; end if;  -- un Admin no se toca por aquí
-  if obj.es_operador and not yo.es_admin then raise exception 'no_autorizado'; end if;  -- a un Operador solo lo toca un Admin
-  update public.profesores set es_super = coalesce(p_es_super,false)
-   where id = obj.id;
-end $$;
-
--- Nombra o quita un Operador. SOLO el Admin (dueño de la plataforma): a diferencia del
--- SuperUsuario, el Operador es staff de plataforma y su alta la controla únicamente el dueño.
--- No toca cuentas de Admin. Modelada sobre kimun_prof_super_fijar; el parámetro va prefijado
--- p_es_operador para no colisionar con la columna es_operador (el bug v_rol de la Sesión 73).
-create or replace function public.kimun_prof_operador_fijar(p_correo text, p_es_operador boolean)
-returns void language plpgsql security definer set search_path=public as $$
-declare yo public.profesores; obj public.profesores; begin
-  select * into yo from public.profesores where id = auth.uid();
-  if yo.id is null or not yo.es_admin then raise exception 'no_autorizado'; end if;   -- SOLO un Admin crea/quita Operadores
-  select * into obj from public.profesores where lower(correo) = lower(trim(coalesce(p_correo,'')));
-  if obj.id is null then raise exception 'profesor_invalido'; end if;
-  if obj.es_admin then raise exception 'no_autorizado'; end if;  -- un Admin no se toca por aquí
-  update public.profesores set es_operador = coalesce(p_es_operador,false)
-   where id = obj.id;
-end $$;
+-- ⚠️ RETIRADOS en el cutover (Fase 4b, Sesión 116): kimun_prof_super_fijar y kimun_prof_operador_fijar
+-- escribían las banderas es_super/es_operador, que ya no se leen para autorizar. Nombrar un Operador
+-- o un SuperUsuario se hace ahora por el 🔑 mantenedor (kimun_prof_permisos_fijar), que escribe un
+-- grant de plataforma (Operador) o de colegio (Super). Sus grants salen del bloque `grant execute` y
+-- el panel dejó de dibujar sus toggles. Las columnas es_super/es_operador se conservan (datos
+-- históricos) pero están muertas para authz. Si quedara una llamada vieja a estas funciones,
+-- PostgREST responde 404, que es lo correcto: ya no existen.
 
 -- ============================================================
 -- OTORGAMIENTO — el backend del mantenedor (Sesión 116, Fase 2). Lo consume la pantalla de
@@ -1861,18 +1822,30 @@ end $$;
 -- anterior (índice único). Admin/Super (admin_colegio), igual que nombrar Jefe.
 create or replace function public.kimun_prof_curso_asignar(p_curso_codigo text, p_correo text)
 returns public.cursos language plpgsql security definer set search_path=public as $$
-declare cid uuid; pid uuid; r public.cursos; begin
+declare cid uuid; pid uuid; r public.cursos; old_jefe uuid; begin
   if not public.kimun_prof_puede_algun('equipo.jefe') then raise exception 'no_autorizado'; end if;
   select id into cid from public.cursos where codigo = upper(trim(coalesce(p_curso_codigo,'')));
   if cid is null then raise exception 'curso_invalido'; end if;
   select id into pid from public.profesores where lower(correo) = lower(trim(coalesce(p_correo,'')));
   if pid is null then raise exception 'profesor_invalido'; end if;
-  -- Un solo Jefe por curso: baja al actual (si es otro) y sube al nuevo.
+  -- Un solo Jefe por curso: baja al actual (si es otro) y sube al nuevo, en curso_profesores Y en
+  -- grants (cutover Fase 4b: la autorización vive en permisos_usuario).
+  select profesor_id into old_jefe from public.curso_profesores
+   where curso_id = cid and rol='jefe' and profesor_id <> pid;
   update public.curso_profesores set rol='asignatura'
    where curso_id = cid and rol='jefe' and profesor_id <> pid;
+  if old_jefe is not null then
+    delete from public.permisos_usuario where profesor_id = old_jefe and ambito_tipo='curso' and ambito_id = cid;
+    insert into public.permisos_usuario(profesor_id, ambito_tipo, ambito_id, capacidades, asignaturas, creado_por)
+    values (old_jefe, 'curso', cid, public.kimun_prof_preset('asignatura'), '{}'::text[], auth.uid());
+  end if;
   insert into public.curso_profesores(curso_id, profesor_id, rol, asignaturas)
   values (cid, pid, 'jefe', '{}'::text[])
   on conflict (curso_id, profesor_id) do update set rol='jefe', asignaturas='{}'::text[];
+  -- El nuevo Jefe recibe el preset Jefe sobre el curso (uno por profe y curso).
+  delete from public.permisos_usuario where profesor_id = pid and ambito_tipo='curso' and ambito_id = cid;
+  insert into public.permisos_usuario(profesor_id, ambito_tipo, ambito_id, capacidades, asignaturas, creado_por)
+  values (pid, 'curso', cid, public.kimun_prof_preset('jefe'), '{}'::text[], auth.uid());
   select * into r from public.cursos where id = cid;
   return r; end $$;
 
@@ -1910,7 +1883,7 @@ returns void language plpgsql security definer set search_path=public as $$
 -- nadie lo viera porque plpgsql prepara cada sentencia la PRIMERA vez que la ejecuta, y
 -- esa vive dentro del `if rol='jefe'`: solo se disparaba al nombrar Profesor Jefe desde
 -- el panel, que es un camino que casi no se usa (el Jefe inicial lo puso la migracion).
-declare cid uuid; pid uuid; v_rol text; asigs text[]; niv text; begin
+declare cid uuid; pid uuid; v_rol text; asigs text[]; niv text; old_jefe uuid; begin
   select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
   if cid is null then raise exception 'no_autorizado'; end if;
   v_rol := case when p_rol = 'jefe' then 'jefe' else 'asignatura' end;
@@ -1934,14 +1907,32 @@ declare cid uuid; pid uuid; v_rol text; asigs text[]; niv text; begin
     raise exception 'asignatura_de_otro_nivel';
   end if;
   if v_rol = 'jefe' then
-    -- Solo puede haber un jefe: baja al actual (si es otro) antes de insertar.
+    -- Solo puede haber un jefe: baja al actual (si es otro) antes de insertar, y refleja esa baja
+    -- en su grant (pasa a preset Asignatura con materias vacías = sin acceso al curso).
+    select profesor_id into old_jefe from public.curso_profesores
+     where curso_id = cid and rol='jefe' and profesor_id <> pid;
     update public.curso_profesores set rol='asignatura'
      where curso_id = cid and curso_profesores.rol='jefe' and profesor_id <> pid;
+    if old_jefe is not null then
+      delete from public.permisos_usuario
+       where profesor_id = old_jefe and ambito_tipo='curso' and ambito_id = cid;
+      insert into public.permisos_usuario(profesor_id, ambito_tipo, ambito_id, capacidades, asignaturas, creado_por)
+      values (old_jefe, 'curso', cid, public.kimun_prof_preset('asignatura'), '{}'::text[], auth.uid());
+    end if;
   end if;
   insert into public.curso_profesores(curso_id, profesor_id, rol, asignaturas)
   values (cid, pid, v_rol, asigs)
   on conflict (curso_id, profesor_id) do update
     set rol = excluded.rol, asignaturas = excluded.asignaturas;
+  -- ESPEJO A GRANTS (cutover Fase 4b): el equipo se administra por acá, pero la autorización vive en
+  -- permisos_usuario. El jefe → preset Jefe (todas las materias); una asignatura → preset Asignatura
+  -- + sus materias. Reemplaza el grant de curso de este profe (uno por profe y curso).
+  delete from public.permisos_usuario
+   where profesor_id = pid and ambito_tipo='curso' and ambito_id = cid;
+  insert into public.permisos_usuario(profesor_id, ambito_tipo, ambito_id, capacidades, asignaturas, creado_por)
+  values (pid, 'curso', cid,
+          case when v_rol='jefe' then public.kimun_prof_preset('jefe') else public.kimun_prof_preset('asignatura') end,
+          asigs, auth.uid());
 end $$;
 
 -- Saca a un profesor del curso (incluido el jefe). No toca ningún dato de
@@ -1961,7 +1952,10 @@ declare cid uuid; pid uuid; rol_obj text; n int; begin
     if not public.kimun_prof_puede('equipo.asignatura', cid) then raise exception 'no_autorizado'; end if;
   end if;
   delete from public.curso_profesores where curso_id = cid and profesor_id = pid;
-  get diagnostics n = row_count; return n;
+  get diagnostics n = row_count;
+  -- Espejo a grants (Fase 4b): al sacar del equipo, se revoca su grant de curso.
+  delete from public.permisos_usuario where profesor_id = pid and ambito_tipo='curso' and ambito_id = cid;
+  return n;
 end $$;
 
 -- Ranking de un curso en UNA asignatura, por acierto de primer intento. Requiere
@@ -2096,7 +2090,8 @@ revoke execute on function
   public.kimun_prof_puede_en_sostenedor(text,uuid),
   public.kimun_prof_tiene_todas_asig(uuid),
   public.kimun_prof_puede_ambito(text,text,uuid),
-  public.kimun_prof_gestiona_ambito(text,uuid)
+  public.kimun_prof_gestiona_ambito(text,uuid),
+  public.kimun_prof_rango(uuid)
   from public, anon, authenticated;
 
 -- ------------------------------------------------------------
@@ -3017,8 +3012,6 @@ grant execute on function
   , public.kimun_prof_equipo_quitar(text,text)
   , public.kimun_prof_ranking_asignatura(text,text,int)
   , public.kimun_prof_ranking_general(text,int)
-  , public.kimun_prof_super_fijar(text,boolean)
-  , public.kimun_prof_operador_fijar(text,boolean)
   , public.kimun_inscribirse(text,text,text)
   , public.kimun_prof_inscripcion_crear(text,int,boolean)
   , public.kimun_prof_inscripcion_estado(text)

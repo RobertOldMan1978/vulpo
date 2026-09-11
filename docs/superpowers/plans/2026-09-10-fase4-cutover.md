@@ -38,6 +38,13 @@ Sin (2), el cutover se aplica a ciegas sobre la única puerta de entrada del pil
 
 ---
 
+> ✅ **CONSTRUIDO el 11/09 (falta que Roberto aplique el esquema + orden 66).** Se hizo el cutover
+> completo: Parte A (legado→false, ramas inline soltadas, `super_fijar`/`operador_fijar` retiradas),
+> B0 (ya estaba), B1 (toggles quitados), y el "Equipo del curso" con **Opción 2** (espeja grants).
+> Además `kimun_prof_rango(pid)` nueva y `kimun_prof_profesores` devuelve `rango`. Verificado con el
+> doble (rango por grant, 0 toggles, roberto.lorca sigue Operador). El handoff trae el **diagnóstico
+> de huérfanos** (`docs/aplicar-schema.md`) para correr antes del flip. Lo de abajo es el diseño.
+
 ## Parte A · Schema (`supabase/schema.sql`) — cerrada, mecánica
 
 ### Task A1: `kimun_prof_legado_cubre` → `false`

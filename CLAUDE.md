@@ -2473,9 +2473,18 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
   grants/resolutores, para que el panel pinte identidad y visibilidad desde el **grant** y no desde la
   bandera cruda. Descubierto en la prueba real (un grant-only Operador se pintaba "Profesor"). **Aditivo**
   (una función `returns table` con su `drop`; el legado sigue prendido, no es el cutover); el panel la lee
-  con degradación por bandera. ⚠️ **El cutover · Fase 4b** (apagar el legado + Equipo escribiendo grants +
-  quitar toggles) es el re-pegado destructivo y **todavía no está escrito**; plan en
-  `docs/superpowers/plans/2026-09-10-fase4-cutover.md`.
+  con degradación por bandera.
+- **Cutover · Fase 4b (Sesión 116, construido el 11/09 — falta que Roberto aplique):** los grants pasan a ser
+  la **única fuente de verdad**. `kimun_prof_legado_cubre` → `false` (desconecta el legado de todos los
+  resolutores); se soltaron las ramas de bandera inline de `tiene_todas_asig`/`admin_colegio`; **`kimun_prof_rango(pid)`**
+  nueva (rango efectivo por grants) alimenta `mi_acceso` y **`kimun_prof_profesores`** (que devuelve `rango` en
+  vez de `es_super`/`es_operador`, cambio de firma con `drop`); `kimun_prof_quitar` protege por rango;
+  `super_fijar`/`operador_fijar` retirados (staff se nombra por el 🔑); y el **"Equipo del curso" escribe grants**
+  (Opción 2: `equipo_asignar`/`_quitar`/`curso_asignar` espejan `curso_profesores`→`permisos_usuario`). El panel
+  quitó los toggles y pinta el rango por grant. ⚠️ **El re-pegado se auto-sana** (la migración del final convierte
+  bandera/membresía→grant en el mismo pegado, después del flip), salvo un Super con ≠1 colegio → el handoff trae
+  un **diagnóstico de huérfanos** para antes del flip. `es_admin` es la única bandera viva. **Con esto el motor
+  granular queda cerrado entero.**
 - **Pendiente:** notificaciones push.
 
 ## Trámites pendientes (fuera del código)
@@ -12605,3 +12614,49 @@ junto con el esquema—.
 viejos. Va **último** porque quita la red de seguridad; el re-pegado **se auto-sana** (la migración al final
 del archivo convierte cualquier bandera/membresía que quede en grant antes de terminar). Plan:
 `docs/superpowers/plans/2026-09-10-fase4-cutover.md` (con B0 marcado como hecho).
+
+**Continuación de la Sesión 116 (11/09) — el cutover (Fase 4b): los grants como única verdad.**
+Roberto pidió "terminemos con la fase 4b, vamos hasta terminar". Se apagó el legado y todo pasó a los
+grants. **El motor granular queda cerrado entero.** Solo `supabase/schema.sql` y `profesor.html`; el
+juego no se toca.
+
+**Schema — se retiró el legado.**
+- **`kimun_prof_legado_cubre` → `select false;`**. Con eso `puede`, `puede_en_colegio`, `puede_en_sostenedor`,
+  `puede_algun` y `puede_ambito` pierden el legado **automáticamente** (todos lo llaman) sin tocar su cuerpo.
+  Se soltaron además las ramas inline de bandera de **`tiene_todas_asig`** (es_super/es_operador + membresía
+  Jefe) y **`admin_colegio`** (es_super/es_operador). `es_admin` sigue siendo el atajo (la única bandera viva).
+- **`kimun_prof_rango(pid)`** (nueva): el rango efectivo de un profesor **derivado de sus grants** (Admin →
+  es_admin; grant de plataforma con `permisos.gestionar` → Operador; grant de colegio/sostenedor administrativo
+  → SuperUsuario; si no, Profesor). La usan **`mi_acceso`** (para el logueado, que dejó de mirar la bandera) y
+  **`kimun_prof_profesores`** (que **cambió de firma**: devuelve `rango` en vez de `es_super`/`es_operador`,
+  con su `drop`), así el panel muestra el rango real de un Operador/Super creado por el mantenedor.
+- **`kimun_prof_quitar`**: la protección del objeto pasa a ser por **rango efectivo** (no por bandera): a un
+  Admin/Operador solo lo revoca un Admin; a un Super, un Admin u Operador.
+- **`kimun_prof_super_fijar` y `_operador_fijar` RETIRADOS** (funciones + grants): nombrar staff se hace por el
+  🔑 mantenedor, que escribe grants. Las columnas `es_super`/`es_operador` se conservan (datos históricos) pero
+  quedan **muertas para authz**.
+- ⚠️ **El "Equipo del curso" escribe grants ahora (Opción 2).** `kimun_prof_equipo_asignar`/`_quitar` y
+  `kimun_prof_curso_asignar` conservan su vista/uniqueness sobre `curso_profesores` (roster + display) pero
+  **espejan a `permisos_usuario`**: el jefe → preset Jefe, una asignatura → preset Asignatura + materias; al
+  demote del jefe anterior su grant baja a asignatura vacía; al quitar, se revoca su grant de curso. Sin esto,
+  agregar un profe al equipo **no le daría acceso** tras el cutover (`curso_profesores` ya no se lee para authz).
+
+**Panel — de banderas a grants.** Se quitaron los toggles `super-toggle`/`operador-toggle` y sus handlers; el
+rango de cada profe sale de **`p.rango`** (grant, con "sin registrar" si no está registrado), y la matriz de
+revocar usa el **rango efectivo** del que administra (de `MI_ACCESO`). El 🔑 mantenedor **reemplaza** los
+toggles. B0 (Fase 4a) ya había hecho la identidad del logueado grant-aware.
+
+**⚠️ El auto-sanado, y por qué es seguro.** La migración del final del archivo (que convierte
+`es_operador`→grant de plataforma, `es_super`→grant de colegio, `curso_profesores`→grant de curso) **corre en
+el mismo re-pegado, DESPUÉS** de que `legado_cubre` ya vale false: como no depende de los resolutores, crea el
+grant de toda bandera/membresía **antes de terminar el pegado**, así nadie queda afuera. El único borde es un
+Super con **≠1 colegio** (la migración solo adivina el colegio si hay uno); por eso el handoff trae un
+**diagnóstico de cuentas huérfanas** para correr antes del flip.
+
+**Verificado MIRANDO con el doble** (`panel-demo.py`, `?rol=admin`): la lista de profesores muestra el rango
+por grant (a.diaz→Operador de plataforma, r.perez→SuperUsuario de colegio, j.arteaga→Profesor, k.rivas→sin
+registrar), **0 toggles**, el 🔑 en los registrados; y `?rol=grantop` (roberto.lorca) sigue Operador · Todos
+los cursos · pulso. Estructura del schema íntegra (101 funciones tras retirar 2 toggles y sumar `rango`),
+`legado_cubre`=false, cero lecturas de bandera para authz (solo la migración las lee, para convertirlas).
+Cero errores de consola. ⚠️ **Falta que Roberto aplique el esquema** (el flip) y corra el control + el
+diagnóstico; el panel se publica antes o junto (cambio de firma de `kimun_prof_profesores`).

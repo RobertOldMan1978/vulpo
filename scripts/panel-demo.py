@@ -420,11 +420,14 @@ STUB = r"""
     },
 
     kimun_prof_inscripcion_estado: ()=>[{token:'INS-7F2K9QX1', cupo:35, usados:22, experimental:true}],
+    // Tras el cutover (Fase 4b) kimun_prof_profesores devuelve el RANGO efectivo (por grants), no las
+    // banderas: a.diaz tiene grant de plataforma (Operador), r.perez de colegio (Super), j.arteaga de
+    // curso (Jefe, que en la lista de plataforma es "Profesor").
     kimun_prof_profesores: ()=>[
-      {correo:'j.arteaga@desales.cl', nombre:'Jorge Arteaga', es_admin:false, es_super:false, es_operador:false, cursos:1, registrado:true},
-      {correo:'r.perez@desales.cl', nombre:'Rossy Perez', es_admin:false, es_super:true, es_operador:false, cursos:2, registrado:true},
-      {correo:'a.diaz@desales.cl', nombre:'Ana Diaz', es_admin:false, es_super:false, es_operador:true, cursos:3, registrado:true},
-      {correo:'k.rivas@desales.cl', nombre:null, es_admin:false, es_super:false, es_operador:false, cursos:0, registrado:false}
+      {correo:'j.arteaga@desales.cl', nombre:'Jorge Arteaga', es_admin:false, rango:'Profesor', cursos:1, registrado:true},
+      {correo:'r.perez@desales.cl', nombre:'Rossy Perez', es_admin:false, rango:'SuperUsuario', cursos:2, registrado:true},
+      {correo:'a.diaz@desales.cl', nombre:'Ana Diaz', es_admin:false, rango:'Operador', cursos:3, registrado:true},
+      {correo:'k.rivas@desales.cl', nombre:null, es_admin:false, rango:'Profesor', cursos:0, registrado:false}
     ],
     /* Mantenedor de permisos (Fase 3). El doble no aplica la no-escalada del servidor —solo
        devuelve datos—; los rechazos se prueban con el control RPC contra produccion. Aqui se

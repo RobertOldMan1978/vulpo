@@ -1145,34 +1145,28 @@ async function pintarLista(){
     if(errProfes){
       $('profes').innerHTML='<p style="color:var(--pink);font-size:12px">No se pudo cargar la lista de profesores.</p>';
     }else{
+      // Rango efectivo del que administra, para la matriz de revocar (viene de mi_acceso; degrada a
+      // bandera si no está aplicada). El rango de cada profe (p.rango) ya lo deriva el servidor del
+      // grant tras el cutover (Fase 4b), así un Operador/Super por grant se muestra bien.
+      const miRango = (window.MI_ACCESO&&window.MI_ACCESO.rango)
+        || (YO.es_admin?'Administrador':YO.es_operador?'Operador':YO.es_super?'SuperUsuario':'Profesor');
       $('profes').innerHTML=(profes||[]).map(p=>{
-        const rango = p.es_admin ? 'Administrador'
-          : p.es_operador ? 'Operador'
-          : p.es_super ? 'SuperUsuario' : (p.registrado?'Profesor':'sin registrar');
-        // Nombrar SuperUsuario: lo hace un Admin o un Operador, nunca sobre un Admin ni un Operador.
-        const btnSuper = ((YO.es_admin || YO.es_operador) && p.registrado && !p.es_admin && !p.es_operador)
-          ? `<button class="btn-chip super-toggle" data-correo="${esc(p.correo)}" data-on="${p.es_super?'0':'1'}">${p.es_super?'Quitar Super':'Hacer Super'}</button>`
-          : '';
-        // Nombrar Operador: SOLO el Admin, y nunca sobre otro Admin.
-        const btnOperador = (YO.es_admin && p.registrado && !p.es_admin)
-          ? `<button class="btn-chip operador-toggle" data-correo="${esc(p.correo)}" data-on="${p.es_operador?'0':'1'}">${p.es_operador?'Quitar Operador':'Hacer Operador'}</button>`
-          : '';
-        // Revocar / cancelar invitación. Nunca a mí mismo ni a un Admin desde la UI;
-        // un SuperUsuario no puede revocar a otro SuperUsuario (el servidor igual lo rechaza).
+        const rango = !p.registrado ? 'sin registrar' : (p.rango || 'Profesor');
         const esYo = p.correo && (p.correo.toLowerCase() === (YO.correo||'').toLowerCase());
-        // Refleja la matriz del servidor: a un Admin/Operador solo los revoca un Admin; a un
+        // Matriz de revocar por RANGO efectivo: a un Admin/Operador solo los revoca un Admin; a un
         // Super, un Admin u Operador; a un profe común, cualquiera que administre. El servidor manda.
         const puedeRevocar = !esYo && !p.es_admin && (
-          p.es_operador ? YO.es_admin
-          : p.es_super  ? (YO.es_admin || YO.es_operador)
-          :               true);
+          p.rango === 'Operador'       ? miRango === 'Administrador'
+          : p.rango === 'SuperUsuario' ? (miRango === 'Administrador' || miRango === 'Operador')
+          :                              true);
         const btnRevocar = puedeRevocar
           ? `<button class="ico ico-del prof-quitar" data-correo="${esc(p.correo)}" data-reg="${p.registrado?'1':''}"
                title="${p.registrado?'Revocar profesor':'Cancelar invitación'}">✕</button>`
           : '';
-        // Mantenedor de permisos granular (Fase 3): lo opera Admin/Operador, sobre un profesor
-        // ya registrado que no sea uno mismo ni un Admin (a un Admin no se le gestionan grants:
-        // salta todo por es_admin). El servidor igual valida la no-escalada.
+        // El 🔑 mantenedor reemplaza los toggles viejos de rol (Hacer Super/Operador): nombrar un
+        // Operador o un Super se hace dándole el grant correspondiente desde acá. Lo opera quien
+        // tenga permisos.gestionar (gestiona_permisos, ya por grant), sobre un profesor registrado
+        // que no sea uno mismo ni un Admin (a un Admin no se le gestionan grants).
         const btnPermisos = (accede('gestiona_permisos', YO.es_admin || YO.es_operador) && p.registrado && !esYo && !p.es_admin)
           ? `<button class="btn-chip prof-permisos" data-correo="${esc(p.correo)}">🔑 Permisos</button>`
           : '';
@@ -1180,23 +1174,9 @@ async function pintarLista(){
            <span class="pro-nom">${esc(p.correo)}</span>
            <span style="color:var(--dim)">${esc(rango)}</span>
            <span style="color:var(--cyan)">${p.cursos} curso${p.cursos===1?'':'s'}</span>
-           ${btnOperador}${btnSuper}${btnPermisos}${btnRevocar}
+           ${btnPermisos}${btnRevocar}
          </div>`;
       }).join('');
-      document.querySelectorAll('.super-toggle').forEach(b=>b.onclick=async ()=>{
-        const hacer=b.dataset.on==='1';
-        if(!confirm(hacer?'¿Nombrar SuperUsuario a este profesor? Podrá administrar todos los cursos del colegio.'
-                         :'¿Quitarle el rol de SuperUsuario?')) return;
-        await accion(()=>SB.rpc('kimun_prof_super_fijar',{p_correo:b.dataset.correo, p_es_super:hacer}),
-                     hacer?'Ahora es SuperUsuario':'Ya no es SuperUsuario');
-      });
-      document.querySelectorAll('.operador-toggle').forEach(b=>b.onclick=async ()=>{
-        const hacer=b.dataset.on==='1';
-        if(!confirm(hacer?'¿Nombrar Operador a este profesor? Podrá operar todos los cursos y gestionar SuperUsuarios, pero no tocar administradores.'
-                         :'¿Quitarle el rol de Operador?')) return;
-        await accion(()=>SB.rpc('kimun_prof_operador_fijar',{p_correo:b.dataset.correo, p_es_operador:hacer}),
-                     hacer?'Ahora es Operador':'Ya no es Operador');
-      });
       document.querySelectorAll('.prof-quitar').forEach(b=>b.onclick=async ()=>{
         const reg=b.dataset.reg==='1';
         if(!confirm(reg
