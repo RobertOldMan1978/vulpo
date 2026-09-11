@@ -2460,8 +2460,22 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
   permisos" en `profesor.html`, botón por profesor). Backend nuevo: solo **`kimun_prof_cursos()`** —los
   UUID de curso para el selector de ámbito, porque el panel trabaja con el código `CUR-XXXX` y un grant
   guarda el UUID—, gateado por `admin_colegio`, con `pr.id` aliasado (returns-table con OUT `id`).
-  **Coexiste** con los toggles viejos hasta la Fase 4. Verificado con el doble (`panel-demo.py`). Falta la
-  **rejilla fina por función** (Fase 3, backend, solo para grants a medida).
+  **Coexiste** con los toggles viejos hasta la Fase 4. Verificado con el doble (`panel-demo.py`).
+- **Rejilla fina por función · Fase 3 (Sesión 116, aplicada y verde el 11/09):** las **26 funciones**
+  gateadas dejaron su portero grueso (`es_mio`/`acceso`/`admin_colegio`/banderas) por su **capacidad
+  específica** —`kimun_prof_puede(<cap>, cid)` o el helper nuevo **`kimun_prof_puede_algun(<cap>)`** para
+  las de nivel superior— y `kimun_prof_listar` pasó su WHERE a `kimun_prof_acceso(c.id)` (grant-aware).
+  **Access-neutral** bajo lectura dual (`legado_cubre` concede cada capacidad a exactamente quien el portero
+  grueso se la daba; auditado estático + control verde). El panel no cambia. Solo importa para grants a
+  medida que se apartan de un preset.
+- **Panel grant-aware · Fase 4a (Sesión 116, aplicada el 11/09):** función nueva **`kimun_prof_mi_acceso()`**
+  que devuelve el **acceso EFECTIVO** del logueado (rango + visibilidad del chrome de admin) derivado de los
+  grants/resolutores, para que el panel pinte identidad y visibilidad desde el **grant** y no desde la
+  bandera cruda. Descubierto en la prueba real (un grant-only Operador se pintaba "Profesor"). **Aditivo**
+  (una función `returns table` con su `drop`; el legado sigue prendido, no es el cutover); el panel la lee
+  con degradación por bandera. ⚠️ **El cutover · Fase 4b** (apagar el legado + Equipo escribiendo grants +
+  quitar toggles) es el re-pegado destructivo y **todavía no está escrito**; plan en
+  `docs/superpowers/plans/2026-09-10-fase4-cutover.md`.
 - **Pendiente:** notificaciones push.
 
 ## Trámites pendientes (fuera del código)
@@ -12534,8 +12548,60 @@ verificado. Todo en `profesor.html` + `scripts/panel-demo.py` (el doble) + un he
 - **Coexiste** con los toggles viejos (Hacer Super/Operador, equipo, autorizar) — el mantenedor escribe
   GRANTS y los toggles escriben las banderas legadas, y la lectura dual los une. Apagar los toggles es la
   Fase 4. ⚠️ Para producción hace falta re-aplicar el esquema (trae `kimun_prof_cursos`) y publicar el panel.
-- **Lo único que queda de la Fase 3:** la **rejilla fina por función** (las ~15 rejillas backend que
-  separan `dominio.reiniciar` de `alumno.gestionar`, etc.). El mantenedor **ya funciona pleno con los
-  presets** —un grant de Super/Jefe/Asignatura gatea vía los porteros—; la rejilla fina solo importa para
-  un grant a medida que se aparta de un preset, y son ediciones ciegas que solo se prueban con cuentas
-  reales. Se hará cuando aparezca esa necesidad.
+- **Lo único que quedaba de la Fase 3** —la **rejilla fina por función**— se hizo el 11/09 (ver la
+  continuación de abajo).
+
+**Continuación de la Sesión 116 (11/09) — la rejilla fina (Fase 3) y el panel grant-aware (Fase 4a).**
+Roberto pidió "dale con 3 y 4". Se cerró la rejilla fina y se arrancó la Fase 4, y la prueba real del
+mantenedor destapó una pieza que el plan no tenía.
+
+**La rejilla fina (Fase 3), aplicada y con control verde.** Las **26 funciones** gateadas dejaron su
+portero grueso por su **capacidad específica**: `kimun_prof_puede(<cap>, cid)` para las de curso
+(`curso.borrar`, `curso.nivel`, `dominio.reiniciar`, `inscripcion.crear`, `plan.fijar`, `plan.historial`,
+`refuerzo.gestionar`, `equipo.jefe`, `equipo.asignatura`) y el helper nuevo **`kimun_prof_puede_algun(<cap>)`**
+para las de nivel superior (`curso.crear`+tenencia, `profesor.autorizar`, `pulso.ver`, `perfiles.limpiar`).
+Y `kimun_prof_listar` pasó su WHERE de visibilidad a `kimun_prof_acceso(c.id)` (grant-aware) —**necesario
+para que el mantenedor funcione de verdad**: sin eso, un Super creado por el 🔑 no vería ningún curso—.
+- ⚠️ **Access-neutral hoy, verificado estáticamente portero por portero:** bajo la lectura dual,
+  `legado_cubre` ya concede cada capacidad a *exactamente* quien el portero grueso se la daba (un Jefe
+  sigue sin poder borrar el curso; un profe de asignatura sigue sin reiniciar mediciones). Solo agrega
+  precisión para grants a medida. El panel **no cambia** (llama a las mismas funciones).
+- **Control verde:** las 7 funciones tocadas desde anon → 400 `no_autorizado`; el resolutor nuevo
+  `kimun_prof_puede_algun` → **401** (revocado de anon, confirma su `revoke`); inventada → 404; `MA06`→`MA06`.
+
+**La prueba real del mantenedor, con `roberto.lorca@vulpo.cl` — el hallazgo.** Era el gate de la Fase 4
+(probar que el 🔑 crea acceso real, no solo con el doble). Al mirar la cuenta apareció que estaba como
+**Operador legado (bandera `es_operador=true`) con CERO grants**: funcionaba hoy por la lectura dual, pero
+**el cutover la habría dejado bloqueada** —sin grant que la respalde y con la bandera apagada—. El gate
+haciendo su trabajo. Se le dio el grant por el 🔑 (plataforma + Acceso total = preset Operador), se le
+quitó la bandera, y **siguió viendo los tres cursos puro por el grant** — vista previa en vivo del cutover,
+**gate pasado**.
+> ⚠️ **Pero reveló algo más:** con la bandera en false y solo el grant, el panel la pintaba **"PROFESOR"**,
+> con "Mis cursos" y sin el botón del pulso — porque el **servidor** ya la trata como Operador (le devolvió
+> los tres cursos vía el grant) mientras el **panel** calculaba el rango y la visibilidad del chrome de
+> admin leyendo las **banderas** (`YO.es_admin/es_super/es_operador`), no el grant. La acción va por grant;
+> la etiqueta iba por bandera. Sin arreglar eso, un Operador/Super creado por el mantenedor tendría acceso
+> correcto y panel recortado. Eso es más de lo que el plan de Fase 4 decía (no bastaba con quitar toggles).
+
+**Fase 4a · el panel grant-aware (hecho, aplicado, verificado).** Función nueva **`kimun_prof_mi_acceso()`**
+que devuelve el **acceso EFECTIVO** del logueado —rango + la visibilidad de `es_admin_colegio`/`limpiar`/
+`armar`/`gestiona_permisos` (el 🔑)— derivado de los grants/resolutores, **no de la bandera cruda**. El
+panel lo lee (`pintarIdentidad`, `esAdminColegio`, los botones de herramientas y el 🔑) con **degradación**:
+si no está aplicada (404), cae al cálculo por bandera de siempre —así se puede publicar el panel antes o
+junto con el esquema—.
+- ⚠️ **Es puramente aditivo:** una función `returns table` con su `drop`, granted a anon/authenticated;
+  **el legado sigue prendido, no es el cutover.** Construida sobre los resolutores (que hacen lectura dual),
+  así que es correcta en las dos fases. El 🔑 (`gestiona_permisos`) incluye la bandera legada durante la
+  transición, para que un Operador que todavía no tenga grant no pierda el mantenedor.
+- **Verificado MIRANDO con el doble** (`panel-demo.py` ganó un stub de `mi_acceso` y un `?rol=grantop` =
+  banderas false + grant Operador, el caso exacto de `roberto.lorca`): el panel lo pinta **Operador · Todos
+  los cursos · pulso · 🔑 · limpiar · armar**; `super` sale con el bloque admin pero sin las herramientas de
+  Operador; `profe` pelado. Cero errores de consola en los 5 cargues. Aplicado, control verde (`mi_acceso`
+  desde anon → 200 con `rango:Profesor`, self-query sin fuga; inventada → 404).
+
+**Lo que queda — Fase 4b, el flip destructivo (no escrito todavía).** Apagar el legado (`legado_cubre`→false
++ soltar las ramas inline de `tiene_todas_asig`/`admin_colegio`), el **"Equipo del curso" escribiendo grants**
+(Opción 2, la eligió Roberto: conserva la vista por curso, más cómoda para una UTP), y quitar los toggles
+viejos. Va **último** porque quita la red de seguridad; el re-pegado **se auto-sana** (la migración al final
+del archivo convierte cualquier bandera/membresía que quede en grant antes de terminar). Plan:
+`docs/superpowers/plans/2026-09-10-fase4-cutover.md` (con B0 marcado como hecho).

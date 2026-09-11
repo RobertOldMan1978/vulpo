@@ -182,6 +182,16 @@ STUB = r"""
       return {id:'prof-1', correo:'roberto.lorca@vulpo.cl', nombre:'Roberto Lorca',
         es_admin: rol==='admin', es_super: rol==='super', es_operador: rol==='operador'};
     },
+    // Acceso EFECTIVO (Fase 4 B0). 'grantop' es el caso de roberto.lorca: kimun_prof_yo devuelve
+    // TODAS las banderas en false, pero mi_acceso dice Operador (por grant). Si el panel lo pinta
+    // como Operador con 'grantop', prueba que lee mi_acceso y no la bandera.
+    kimun_prof_mi_acceso: ()=>{
+      const rol=(new URLSearchParams(location.search).get('rol')||'admin');
+      const op = rol==='admin' || rol==='operador' || rol==='grantop';
+      const rango = rol==='admin'?'Administrador' : op?'Operador' : rol==='super'?'SuperUsuario' : 'Profesor';
+      return [{rango, es_admin_colegio: op || rol==='super',
+               limpiar: op, armar: op, gestiona_permisos: op}];
+    },
     /* Cuatro cursos a proposito, y con los NOMBRES desordenados respecto al nivel: el
        servidor los devuelve ordenados solo por c.nombre, asi que "8A Prueba" cae antes
        que "Quinto B" y un curso sin nivel se cuela al medio. Es lo que el orden

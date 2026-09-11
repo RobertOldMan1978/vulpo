@@ -754,7 +754,8 @@ async function soyProfesor(){
 // —al abrir el panel y en cada repintado de la lista— y tenerlo escrito dos veces es
 // exactamente como se desincronizan.
 function pintarIdentidad(){
-  const rango = YO.es_admin ? 'Administrador'
+  const rango = (window.MI_ACCESO && window.MI_ACCESO.rango) ? window.MI_ACCESO.rango
+    : YO.es_admin ? 'Administrador'
     : YO.es_operador ? 'Operador'
     : YO.es_super ? 'SuperUsuario' : 'Profesor';
   const nom = (YO.nombre||'').trim();
@@ -765,17 +766,27 @@ function pintarIdentidad(){
     + (nom ? '<div class="pid-mail">' + esc(YO.correo) + '</div>' : '');
 }
 
+// El acceso EFECTIVO viene del servidor (kimun_prof_mi_acceso, Fase 4 B0): el panel pinta
+// identidad y visibilidad desde el GRANT, no desde la bandera cruda. Si la función todavía no
+// está aplicada (404), MI_ACCESO queda null y todo cae al cálculo por bandera de siempre —
+// degradación limpia, para poder publicar el panel antes o junto con el esquema.
 async function cargarPanel(){
   YO = await soyProfesor();
   if(!YO){ throw new Error('no_autorizado'); }
   $('cardAuth').classList.add('hide');
   $('cardPanel').classList.remove('hide');
-  const esAdminColegio = !!(YO.es_admin || YO.es_super || YO.es_operador);
+  try { const r = await SB.rpc('kimun_prof_mi_acceso'); window.MI_ACCESO = (r.data&&r.data[0]) || null; }
+  catch(e){ window.MI_ACCESO = null; }
+  const esAdminColegio = window.MI_ACCESO ? !!window.MI_ACCESO.es_admin_colegio
+                                          : !!(YO.es_admin || YO.es_super || YO.es_operador);
   window.ESADMINCOLEGIO = esAdminColegio;   // usado por pintarLista y el bloque de equipo
   pintarIdentidad();
   $('panelTitulo').textContent = esAdminColegio ? 'Todos los cursos' : 'Mis cursos';
   await pintarLista();
 }
+// ¿Tengo la capacidad `campo` según el acceso efectivo? Con MI_ACCESO manda el grant; sin él
+// (función no aplicada) cae al `legado` por bandera. Lo usan los botones de herramientas y el 🔑.
+function accede(campo, legado){ return window.MI_ACCESO ? !!window.MI_ACCESO[campo] : legado; }
 
 // Mi rol en ESTE curso, para el encabezado de su tarjeta.
 // ⚠️ Solo si tengo membresía: a un Admin/Super sin membresía `kimun_prof_asignaturas` le
@@ -1068,9 +1079,9 @@ async function pintarLista(){
           <h3 style="font-size:12px;margin:16px 0 8px">Herramientas</h3>
           <div class="btn-fila">
             <button class="btn sec" id="btnTablero">📊 Tablero de avance</button>
-            ${(YO.es_admin||YO.es_operador)?`<button class="btn peligro" id="btnLimpiar">🧹 Limpiar perfiles de prueba</button>`:''}
+            ${accede('limpiar', YO.es_admin||YO.es_operador)?`<button class="btn peligro" id="btnLimpiar">🧹 Limpiar perfiles de prueba</button>`:''}
           </div>
-          ${(YO.es_admin||YO.es_operador)?`<label class="campo" style="margin-top:10px">🔗 Armar enlace de muestra</label>
+          ${accede('armar', YO.es_admin||YO.es_operador)?`<label class="campo" style="margin-top:10px">🔗 Armar enlace de muestra</label>
           <select id="armarNivel">${NIVELES_MUESTRA.map(n=>`<option value="${n.ruta}">${n.nombre}</option>`).join('')}</select>
           <button class="btn sec" id="btnArmar">Abrir armador</button>`:''}
         </div>
@@ -1126,12 +1137,10 @@ async function pintarLista(){
       await accion(()=>SB.rpc('kimun_prof_autorizar',{p_correo:c}), 'Correo autorizado');
     };
     $('btnTablero').onclick=()=>{ window.location.href='dev/tablero.html'; };
-    // "Limpiar perfiles de prueba" y el armador son herramientas operativas: las ve el Admin
-    // y el Operador (no un SuperUsuario). Solo se cablean si el botón se dibujó.
-    if(YO.es_admin || YO.es_operador){
-      $('btnLimpiar').onclick=limpiarPruebas;
-      $('btnArmar').onclick=()=>{ window.location.href=$('armarNivel').value+'?armar=1'; };
-    }
+    // "Limpiar perfiles de prueba" y el armador son herramientas operativas (perfiles.limpiar /
+    // enlace.armar). Solo se cablean si su botón se dibujó, que ya lo decide `accede(...)` arriba.
+    if($('btnLimpiar')) $('btnLimpiar').onclick=limpiarPruebas;
+    if($('btnArmar')) $('btnArmar').onclick=()=>{ window.location.href=$('armarNivel').value+'?armar=1'; };
     const {data:profes,error:errProfes}=await SB.rpc('kimun_prof_profesores');
     if(errProfes){
       $('profes').innerHTML='<p style="color:var(--pink);font-size:12px">No se pudo cargar la lista de profesores.</p>';
@@ -1164,7 +1173,7 @@ async function pintarLista(){
         // Mantenedor de permisos granular (Fase 3): lo opera Admin/Operador, sobre un profesor
         // ya registrado que no sea uno mismo ni un Admin (a un Admin no se le gestionan grants:
         // salta todo por es_admin). El servidor igual valida la no-escalada.
-        const btnPermisos = ((YO.es_admin || YO.es_operador) && p.registrado && !esYo && !p.es_admin)
+        const btnPermisos = (accede('gestiona_permisos', YO.es_admin || YO.es_operador) && p.registrado && !esYo && !p.es_admin)
           ? `<button class="btn-chip prof-permisos" data-correo="${esc(p.correo)}">🔑 Permisos</button>`
           : '';
         return `<div style="display:flex;gap:8px;align-items:center;padding:4px 0;font-size:13px;flex-wrap:wrap">
