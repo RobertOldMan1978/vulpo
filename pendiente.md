@@ -669,13 +669,21 @@ tienda y permite probar notificaciones antes de enfrentar iOS. Detalle en
     jerarquía **Sostenedor › Colegio › Cursos** (con el Equipo antes que los Alumnos), y se pueden
     **renombrar/borrar** sostenedores y colegios y **mover** un curso de colegio. `agruparArbol` reparenta
     los nodos de curso; un Jefe/asignatura ve sus cursos planos.
-  - **Fase 2 · El motor granular** — `permisos_usuario`, los porteros nuevos, los presets, y la
-    migración de `es_super`/`es_operador`/`curso_profesores` → grants. **Riesgo ALTO: reescribe la
-    autorización.** Absorbe el rol Operador (hoy bandera `es_operador`, Sesión 116). Se verifica con la
-    auditoría de no-escalada (estilo Sesión 111) y una foto de acceso por usuario antes/después.
-  - **Fase 3 · El mantenedor** — la pantalla (editor de casillas por capacidad, operado por
-    Admin/Operador, usuario identificado por correo), que reemplaza los toggles sueltos de hoy.
-  - **Fase 4 · Cutover** — apagar los toggles/bloques viejos; todo pasa por el mantenedor.
+  - **Fase 2 · El motor granular — ✅ HECHA, aplicada y verificada (Sesión 116, 10/09).** Tabla
+    `permisos_usuario`, los resolutores con **lectura dual**, los 4 porteros delegando a capacidades, el
+    otorgamiento (`kimun_prof_permisos_ver`/`_fijar`/`_revocar`) con no-escalada airtight, la migración
+    banderas/membresías→grants y los presets. **Roberto eligió la Opción A**: motor completo ahora,
+    **rejilla fina por función** (separar `dominio.reiniciar` de `alumno.gestionar`, etc.) a la Fase 3,
+    donde se prueba con el mantenedor. Comportamiento **provablemente idéntico a hoy** (auditoría estática:
+    cada portero == guard viejo sin grants). Control verde (400 otorgamiento / 401 resolutores) y migración
+    verificada (7 grants de curso = 7 membresías). Absorbe el rol Operador. Plan:
+    [`docs/superpowers/plans/2026-09-10-fase2-permisos-granular.md`](docs/superpowers/plans/2026-09-10-fase2-permisos-granular.md).
+  - **Fase 3 · El mantenedor + la rejilla fina** — la pantalla (editor de casillas por capacidad, operado
+    por Admin/Operador, usuario identificado por correo) **sobre el backend ya verificado de la Fase 2**,
+    más las ~15 rejillas por función. Se puede verificar con el doble del panel (`panel-demo.py`). Se
+    **suma** a los toggles viejos (que se apagan en la Fase 4).
+  - **Fase 4 · Cutover** — apagar los toggles/bloques viejos y la mitad legada de los porteros; todo pasa
+    por el mantenedor y el grant es la única fuente de verdad.
   Spec: [`docs/superpowers/specs/2026-09-10-multi-tenant-permisos-granular-design.md`](docs/superpowers/specs/2026-09-10-multi-tenant-permisos-granular-design.md).
 
 ---

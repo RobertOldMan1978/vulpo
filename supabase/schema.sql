@@ -239,6 +239,36 @@ alter table public.colegios     enable row level security;
 alter table public.cursos add column if not exists colegio_id uuid references public.colegios(id) on delete set null;
 create index if not exists idx_cursos_colegio on public.cursos(colegio_id);
 
+-- ------------------------------------------------------------
+-- Motor de permisos granular (Sesión 116, Fase 2).
+--
+-- Cada fila es un GRANT: un usuario tiene un conjunto de CAPACIDADES sobre un NODO del árbol
+-- Sostenedor▸Colegio▸Curso (o toda la plataforma). Un grant sobre un nodo cubre todo lo que
+-- cuelga de él (avance.ver sobre un colegio deja ver todos sus cursos). Un usuario puede tener
+-- varios grants (Super del colegio A y profe de asignatura en un curso de B). RLS sin políticas:
+-- se consulta por funciones, como el resto del esquema.
+--
+-- ⚠️ TRANSICIÓN (Fases 2-3): esta tabla convive con las banderas de hoy (es_super/es_operador/
+-- curso_profesores). Los porteros hacen LECTURA DUAL —conceden si el legado O un grant conceden—,
+-- así que mientras el legado siga escrito el comportamiento es idéntico a hoy. La Fase 4 (cutover)
+-- retira la mitad legada de cada portero y deja el grant como única fuente de verdad. es_admin
+-- NUNCA entra a la lectura dual: es el atajo del dueño (es_admin? → sí) y sobrevive a la Fase 4.
+create table if not exists public.permisos_usuario (
+  id           uuid primary key default gen_random_uuid(),
+  profesor_id  uuid not null references public.profesores(id) on delete cascade,
+  ambito_tipo  text not null check (ambito_tipo in ('plataforma','sostenedor','colegio','curso')),
+  ambito_id    uuid,                             -- null solo para 'plataforma'
+  capacidades  text[] not null default '{}',
+  asignaturas  text[] not null default '{}',     -- solo aplica a ambito_tipo='curso'
+  creado       timestamptz not null default now(),
+  creado_por   uuid references public.profesores(id) on delete set null,
+  -- 'plataforma' no lleva ambito_id; el resto sí (las dos condiciones son equivalentes).
+  check ((ambito_tipo = 'plataforma') = (ambito_id is null))
+);
+create index if not exists idx_permisos_profesor on public.permisos_usuario(profesor_id);
+create index if not exists idx_permisos_ambito on public.permisos_usuario(ambito_tipo, ambito_id);
+alter table public.permisos_usuario enable row level security;
+
 -- Los nombres que escribe el profesor vienen verificados; los que escribe un nino en
 -- un formulario publico, no. El panel los distingue con esto: sin la marca, un apodo o
 -- un "asdf" se leen igual que un alumno de la lista de clase.
@@ -852,59 +882,277 @@ declare mi_correo text; aut public.profesores_autorizados; r public.profesores; 
   update public.profesores_autorizados set usado = true where lower(correo) = lower(mi_correo);
   return r; end $$;
 
--- ¿Puedo hacer lo DESTRUCTIVO en este curso? Cambió de significado con los roles
--- por asignatura (Sesión 37): antes era "admin o dueño"; ahora es "admin o
--- Profesor Jefe". Todas las funciones destructivas ya la llaman, así que heredan
--- la nueva regla sin tocar su cuerpo. Los administradores pasan siempre.
-create or replace function public.kimun_prof_es_mio(p_curso uuid)
+-- ============================================================
+-- MOTOR DE PERMISOS GRANULAR (Sesión 116, Fase 2) — los resolutores.
+--
+-- Traducen "¿puedo <capacidad> sobre <ámbito>?" a un booleano, subiendo por el árbol
+-- (curso → su colegio → su sostenedor → plataforma). Cada resolutor hace LECTURA DUAL:
+--   es_admin (atajo del dueño)  OR  un grant lo concede  OR  el LEGADO lo concedía.
+-- La mitad legada (kimun_prof_legado_cubre) reproduce EXACTO lo que hoy concede cada
+-- bandera/membresía, para que la foto de acceso sea idéntica durante la transición. La
+-- Fase 4 borra esa mitad. Van declarados en orden de dependencia: una función SQL valida
+-- sus llamadas al crearse, así que cada una nombra solo a las de arriba.
+-- ============================================================
+
+-- El atajo del dueño, aislado para no repetir el "select es_admin" por todos lados.
+create or replace function public.kimun_prof_es_admin_raw()
 returns boolean language sql security definer stable set search_path=public as $$
-  select exists(select 1 from public.profesores pr
-                where pr.id = auth.uid() and (pr.es_admin or pr.es_super or pr.es_operador))
-      or exists(select 1 from public.curso_profesores cp
-                where cp.curso_id = p_curso and cp.profesor_id = auth.uid()
-                  and cp.rol = 'jefe');
+  select exists(select 1 from public.profesores pr where pr.id = auth.uid() and pr.es_admin);
 $$;
 
--- ¿Puedo ENTRAR a este curso (verlo, leer su avance)? Admin, jefe, o profe con al
--- menos una asignatura asignada aquí. Una membresía sin asignaturas ('{}') da
--- falso a propósito: significa "todavía no le asignan materias", y se evita el
--- estado ambiguo de "entra pero no ve nada".
-create or replace function public.kimun_prof_acceso(p_curso uuid)
-returns boolean language sql security definer stable set search_path=public as $$
-  select exists(select 1 from public.profesores pr
-                where pr.id = auth.uid() and (pr.es_admin or pr.es_super or pr.es_operador))
-      or exists(select 1 from public.curso_profesores cp
-                where cp.curso_id = p_curso and cp.profesor_id = auth.uid()
-                  and (cp.rol = 'jefe' or coalesce(array_length(cp.asignaturas,1),0) >= 1));
+-- El catálogo de capacidades (las casillas del mantenedor de la Fase 3). Agregar una es
+-- agregar un código aquí y su casilla, no reescribir el motor.
+create or replace function public.kimun_prof_capacidades_todas()
+returns text[] language sql immutable set search_path=public as $$
+  select array[
+    'curso.crear','curso.borrar','curso.nivel','alumno.gestionar','inscripcion.crear','dominio.reiniciar',
+    'equipo.jefe','equipo.asignatura','avance.ver','pulso.ver','plan.fijar','plan.historial','refuerzo.gestionar',
+    'profesor.autorizar','permisos.gestionar','perfiles.limpiar','enlace.armar'];
 $$;
 
--- ¿Sobre qué asignaturas puedo actuar en este curso? Admin y jefe reciben TODAS
--- las que existen; un profe de asignatura recibe las suyas; sin membresía, vacío.
--- Al agregar un nivel o una asignatura hay que sumar su código a las dos listas de
--- abajo: si falta, ese contenido queda INVISIBLE para el Jefe, sin ningún error.
-create or replace function public.kimun_prof_asignaturas(p_curso uuid)
-returns text[] language sql security definer stable set search_path=public as $$
-  select case
-    when exists(select 1 from public.profesores pr
-                where pr.id = auth.uid() and (pr.es_admin or pr.es_super or pr.es_operador))
-      then public.kimun_asignaturas_todas()
-    when exists(select 1 from public.curso_profesores cp
-                where cp.curso_id = p_curso and cp.profesor_id = auth.uid()
-                  and cp.rol = 'jefe')
-      then public.kimun_asignaturas_todas()
-    else coalesce((select cp.asignaturas from public.curso_profesores cp
-                   where cp.curso_id = p_curso and cp.profesor_id = auth.uid()),
-                  '{}'::text[])
+-- Los presets: un "rol" es una plantilla de capacidades. La migración (abajo) y el mantenedor
+-- (Fase 3) los usan, para no escribir la lista dos veces. ⚠️ permisos.gestionar (operar el
+-- mantenedor) NO entra en ningún preset salvo Operador: los permisos los dan Admin/Operador.
+-- Super/Sostenedor NO llevan perfiles.limpiar ni enlace.armar, porque hoy esos son de
+-- Admin/Operador (perfiles.limpiar) o Admin/Operador en el panel (enlace.armar), nunca de un
+-- Super — el preset tiene que reproducir la foto de acceso de hoy.
+create or replace function public.kimun_prof_preset(p_nombre text)
+returns text[] language sql immutable set search_path=public as $$
+  select case lower(coalesce(p_nombre,''))
+    when 'operador' then public.kimun_prof_capacidades_todas()
+    when 'sostenedor' then array[
+      'curso.crear','curso.borrar','curso.nivel','alumno.gestionar','inscripcion.crear','dominio.reiniciar',
+      'equipo.jefe','equipo.asignatura','avance.ver','pulso.ver','plan.fijar','plan.historial','refuerzo.gestionar',
+      'profesor.autorizar']
+    when 'super' then array[   -- igual que Sostenedor, el ámbito (un colegio) lo pone el grant
+      'curso.crear','curso.borrar','curso.nivel','alumno.gestionar','inscripcion.crear','dominio.reiniciar',
+      'equipo.jefe','equipo.asignatura','avance.ver','pulso.ver','plan.fijar','plan.historial','refuerzo.gestionar',
+      'profesor.autorizar']
+    when 'jefe' then array[
+      'alumno.gestionar','inscripcion.crear','dominio.reiniciar','equipo.asignatura',
+      'avance.ver','plan.fijar','refuerzo.gestionar']
+    when 'asignatura' then array[
+      'avance.ver','plan.fijar','refuerzo.gestionar']
+    else '{}'::text[]
   end;
 $$;
 
--- ¿Administra el colegio? (crear/borrar curso, nombrar Jefe, autorizar y gestionar
--- profesores). Admin, Operador y SuperUsuario pasan; un Jefe NO. Crear/quitar
--- SuperUsuarios amplía a Operador; crear/quitar Operadores y Admins queda solo para es_admin.
-create or replace function public.kimun_prof_admin_colegio()
+-- LEGADO (se retira en la Fase 4). Reproduce, capacidad por capacidad, EXACTO lo que hoy
+-- concede cada bandera/membresía —matcheado contra el guard real de cada función, no un
+-- "super o operador" grueso—. Sin esto la foto de acceso cambiaría en los bordes: p. ej.
+-- perfiles.limpiar es hoy Admin/Operador (NO Super), y curso_quitar es Admin/Super/Operador
+-- (NO Jefe). p_curso puede venir null para las capacidades de nivel superior. es_admin no se
+-- comprueba aquí: lo cubre kimun_prof_es_admin_raw en el resolutor.
+create or replace function public.kimun_prof_legado_cubre(p_cap text, p_curso uuid)
+returns boolean language sql security definer stable set search_path=public as $$
+  select case
+    -- Tier "admin_colegio" de hoy: Super u Operador (Admin va por es_admin_raw). Sin Jefe.
+    when p_cap in ('curso.crear','curso.borrar','curso.nivel','equipo.jefe',
+                   'profesor.autorizar','pulso.ver','plan.historial')
+      then exists(select 1 from public.profesores pr
+                  where pr.id = auth.uid() and (pr.es_super or pr.es_operador))
+    -- Limpiar perfiles: hoy Operador (Admin va aparte). NO Super.
+    when p_cap = 'perfiles.limpiar'
+      then exists(select 1 from public.profesores pr where pr.id = auth.uid() and pr.es_operador)
+    -- Armar enlaces de muestra: hoy Admin/Operador en el panel. NO Super.
+    when p_cap = 'enlace.armar'
+      then exists(select 1 from public.profesores pr where pr.id = auth.uid() and pr.es_operador)
+    -- Tier "es_mio" de hoy (destructivo del curso): Super/Operador, o Jefe del curso. Sin asignatura.
+    when p_cap in ('alumno.gestionar','dominio.reiniciar','inscripcion.crear','equipo.asignatura')
+      then exists(select 1 from public.profesores pr
+                  where pr.id = auth.uid() and (pr.es_super or pr.es_operador))
+        or exists(select 1 from public.curso_profesores cp
+                  where cp.curso_id = p_curso and cp.profesor_id = auth.uid() and cp.rol = 'jefe')
+    -- Tier "acceso" de hoy (seguimiento): Super/Operador, Jefe, o profe con al menos una
+    -- asignatura en el curso. (refuerzo/plan además acotan por materia dentro de su función,
+    -- igual que hoy — eso no cambia con la capacidad.)
+    when p_cap in ('avance.ver','refuerzo.gestionar','plan.fijar')
+      then exists(select 1 from public.profesores pr
+                  where pr.id = auth.uid() and (pr.es_super or pr.es_operador))
+        or exists(select 1 from public.curso_profesores cp
+                  where cp.curso_id = p_curso and cp.profesor_id = auth.uid()
+                    and (cp.rol = 'jefe' or coalesce(array_length(cp.asignaturas,1),0) >= 1))
+    -- permisos.gestionar NO tiene legado: nace solo con el grant del preset Operador.
+    else false
+  end;
+$$;
+
+-- ¿Tengo `cap` sobre `p_curso` por un GRANT que cubra ese curso? (curso, o su colegio, o el
+-- sostenedor de su colegio, o plataforma). Sin legado.
+create or replace function public.kimun_prof_puede_grant(p_cap text, p_curso uuid)
+returns boolean language sql security definer stable set search_path=public as $$
+  select exists(
+    select 1
+    from public.permisos_usuario g
+    left join public.cursos c    on c.id = p_curso
+    left join public.colegios co on co.id = c.colegio_id
+    where g.profesor_id = auth.uid()
+      and p_cap = any(g.capacidades)
+      and (
+           g.ambito_tipo = 'plataforma'
+        or (g.ambito_tipo = 'sostenedor' and g.ambito_id = co.sostenedor_id)
+        or (g.ambito_tipo = 'colegio'    and g.ambito_id = c.colegio_id)
+        or (g.ambito_tipo = 'curso'      and g.ambito_id = p_curso)
+      ));
+$$;
+
+-- El portero público de capacidad sobre un curso — LECTURA DUAL.
+create or replace function public.kimun_prof_puede(p_cap text, p_curso uuid)
+returns boolean language sql security definer stable set search_path=public as $$
+  select public.kimun_prof_es_admin_raw()
+      or public.kimun_prof_puede_grant(p_cap, p_curso)
+      or public.kimun_prof_legado_cubre(p_cap, p_curso);
+$$;
+
+-- ¿Puedo `cap` en el ámbito de un COLEGIO? (grant sobre ese colegio, su sostenedor o
+-- plataforma; o el legado). Para lo de nivel superior que un colegio-Super gobierna.
+create or replace function public.kimun_prof_puede_en_colegio(p_cap text, p_colegio uuid)
+returns boolean language sql security definer stable set search_path=public as $$
+  select public.kimun_prof_es_admin_raw()
+    or exists(select 1 from public.permisos_usuario g
+              left join public.colegios co on co.id = p_colegio
+              where g.profesor_id = auth.uid() and p_cap = any(g.capacidades)
+                and (g.ambito_tipo = 'plataforma'
+                  or (g.ambito_tipo = 'sostenedor' and g.ambito_id = co.sostenedor_id)
+                  or (g.ambito_tipo = 'colegio'    and g.ambito_id = p_colegio)))
+    or public.kimun_prof_legado_cubre(p_cap, null);
+$$;
+
+-- ¿Puedo `cap` en el ámbito de un SOSTENEDOR? (grant sobre él o plataforma; o el legado).
+create or replace function public.kimun_prof_puede_en_sostenedor(p_cap text, p_sostenedor uuid)
+returns boolean language sql security definer stable set search_path=public as $$
+  select public.kimun_prof_es_admin_raw()
+    or exists(select 1 from public.permisos_usuario g
+              where g.profesor_id = auth.uid() and p_cap = any(g.capacidades)
+                and (g.ambito_tipo = 'plataforma'
+                  or (g.ambito_tipo = 'sostenedor' and g.ambito_id = p_sostenedor)))
+    or public.kimun_prof_legado_cubre(p_cap, null);
+$$;
+
+-- ¿Alcanzo TODAS las asignaturas de este curso? (como un Jefe/Super). Un grant que cubre el
+-- curso desde arriba con avance.ver, o un grant de curso con avance.ver y SIN asignaturas
+-- (equivale a Jefe), o el legado (Super/Operador o Jefe). Si no, el usuario ve solo las
+-- materias de sus grants de curso / su membresía de asignatura (lo resuelve kimun_prof_asignaturas).
+create or replace function public.kimun_prof_tiene_todas_asig(p_curso uuid)
 returns boolean language sql security definer stable set search_path=public as $$
   select exists(select 1 from public.profesores pr
-                where pr.id = auth.uid() and (pr.es_admin or pr.es_super or pr.es_operador));
+                where pr.id = auth.uid() and (pr.es_super or pr.es_operador))
+    or exists(select 1 from public.curso_profesores cp
+              where cp.curso_id = p_curso and cp.profesor_id = auth.uid() and cp.rol = 'jefe')
+    or exists(select 1 from public.permisos_usuario g
+              left join public.cursos c    on c.id = p_curso
+              left join public.colegios co on co.id = c.colegio_id
+              where g.profesor_id = auth.uid() and 'avance.ver' = any(g.capacidades)
+                and (g.ambito_tipo = 'plataforma'
+                  or (g.ambito_tipo = 'sostenedor' and g.ambito_id = co.sostenedor_id)
+                  or (g.ambito_tipo = 'colegio'    and g.ambito_id = c.colegio_id)))
+    or exists(select 1 from public.permisos_usuario g
+              where g.profesor_id = auth.uid() and g.ambito_tipo = 'curso' and g.ambito_id = p_curso
+                and 'avance.ver' = any(g.capacidades)
+                and coalesce(array_length(g.asignaturas,1),0) = 0);
+$$;
+
+-- ¿Tengo `cap` sobre un ámbito (tipo,id) cualquiera? Lo usa el otorgamiento para la
+-- no-escalada: nadie otorga una capacidad que él mismo no tiene sobre ese ámbito.
+create or replace function public.kimun_prof_puede_ambito(p_cap text, p_tipo text, p_id uuid)
+returns boolean language sql security definer stable set search_path=public as $$
+  select case p_tipo
+    when 'plataforma' then public.kimun_prof_es_admin_raw()
+      or exists(select 1 from public.permisos_usuario g
+                where g.profesor_id = auth.uid() and p_cap = any(g.capacidades) and g.ambito_tipo='plataforma')
+      or public.kimun_prof_legado_cubre(p_cap, null)
+    when 'sostenedor' then public.kimun_prof_puede_en_sostenedor(p_cap, p_id)
+    when 'colegio'    then public.kimun_prof_puede_en_colegio(p_cap, p_id)
+    when 'curso'      then public.kimun_prof_puede(p_cap, p_id)
+    else false
+  end;
+$$;
+
+-- ¿GESTIONO permisos sobre el nodo (tipo,id)? Base del mantenedor: solo se otorga/ve dentro
+-- del ámbito propio. es_admin cubre todo; si no, un grant propio de 'permisos.gestionar' cuyo
+-- ámbito esté por ENCIMA o sea IGUAL al nodo objetivo (la cobertura baja por el árbol).
+create or replace function public.kimun_prof_gestiona_ambito(p_tipo text, p_id uuid)
+returns boolean language sql security definer stable set search_path=public as $$
+  select public.kimun_prof_es_admin_raw()
+    or exists(
+      select 1 from public.permisos_usuario g
+      where g.profesor_id = auth.uid() and 'permisos.gestionar' = any(g.capacidades)
+        and (
+          g.ambito_tipo = 'plataforma'
+          or (g.ambito_tipo = 'sostenedor' and (
+                (p_tipo='sostenedor' and p_id = g.ambito_id)
+             or (p_tipo='colegio' and exists(select 1 from public.colegios co where co.id=p_id and co.sostenedor_id=g.ambito_id))
+             or (p_tipo='curso'   and exists(select 1 from public.cursos c join public.colegios co on co.id=c.colegio_id
+                                              where c.id=p_id and co.sostenedor_id=g.ambito_id))))
+          or (g.ambito_tipo = 'colegio' and (
+                (p_tipo='colegio' and p_id = g.ambito_id)
+             or (p_tipo='curso' and exists(select 1 from public.cursos c where c.id=p_id and c.colegio_id=g.ambito_id))))
+          or (g.ambito_tipo = 'curso' and p_tipo='curso' and p_id = g.ambito_id)
+        ));
+$$;
+
+-- ¿Puedo hacer lo DESTRUCTIVO en este curso? (alumnos, XP, reiniciar mediciones,
+-- inscripción, quitar). Desde la Fase 2 (Sesión 116) DELEGA en la capacidad
+-- 'alumno.gestionar' vía kimun_prof_puede, que hace lectura dual: es_admin, un grant que
+-- cubra el curso con esa capacidad, o el legado (que reproduce el "admin/super/operador o
+-- Jefe" de antes). Todas las funciones destructivas la siguen llamando, así que heredan la
+-- capacidad sin tocar su cuerpo — y el comportamiento es idéntico a hoy mientras el legado
+-- exista. ⚠️ La rejilla fina (separar dominio.reiniciar / inscripcion.crear / equipo.asignatura
+-- de alumno.gestionar) llega en la Fase 3 con el mantenedor; hoy todas exigen alumno.gestionar.
+create or replace function public.kimun_prof_es_mio(p_curso uuid)
+returns boolean language sql security definer stable set search_path=public as $$
+  select public.kimun_prof_puede('alumno.gestionar', p_curso);
+$$;
+
+-- ¿Puedo ENTRAR a este curso (verlo, leer su avance)? Desde la Fase 2 delega en la capacidad
+-- 'avance.ver' vía kimun_prof_puede (lectura dual). El legado reproduce el "admin/super/
+-- operador, Jefe, o profe con al menos una asignatura" de antes; una membresía sin
+-- asignaturas sigue dando falso, porque su rama del legado exige rol='jefe' o asignaturas>=1.
+create or replace function public.kimun_prof_acceso(p_curso uuid)
+returns boolean language sql security definer stable set search_path=public as $$
+  select public.kimun_prof_puede('avance.ver', p_curso);
+$$;
+
+-- ¿Sobre qué asignaturas puedo actuar en este curso? Desde la Fase 2: quien alcanza TODAS
+-- (Admin, o un grant/legado que da avance.ver sobre el curso completo, o Jefe) recibe todo el
+-- catálogo; si no, la UNIÓN de las materias de sus grants de curso (con avance.ver) y las de
+-- su membresía de asignatura del legado. Sin nada, vacío. Es idéntico a hoy para los roles de
+-- hoy (kimun_prof_tiene_todas_asig cubre admin/super/operador/Jefe), y suma el camino de grant.
+create or replace function public.kimun_prof_asignaturas(p_curso uuid)
+returns text[] language sql security definer stable set search_path=public as $$
+  select case
+    when public.kimun_prof_es_admin_raw() or public.kimun_prof_tiene_todas_asig(p_curso)
+      then public.kimun_asignaturas_todas()
+    else coalesce((
+      select array(
+        select distinct a from (
+          select unnest(g.asignaturas) a
+            from public.permisos_usuario g
+           where g.profesor_id = auth.uid() and g.ambito_tipo = 'curso' and g.ambito_id = p_curso
+             and 'avance.ver' = any(g.capacidades)
+          union all
+          select unnest(cp.asignaturas) a
+            from public.curso_profesores cp
+           where cp.curso_id = p_curso and cp.profesor_id = auth.uid() and cp.rol <> 'jefe'
+        ) u where a is not null)
+    ), '{}'::text[])
+  end;
+$$;
+
+-- ¿Administra ALGÚN colegio? Sirve para pintar el título "Todos los cursos" y la existencia
+-- del bloque Administración; cada ACCIÓN concreta exige su propia capacidad (esas siguen
+-- gateadas por sus porteros durante la Fase 2). Verdadero para Admin, para el legado
+-- (Super/Operador), o para un grant administrativo sobre un colegio/sostenedor/plataforma.
+create or replace function public.kimun_prof_admin_colegio()
+returns boolean language sql security definer stable set search_path=public as $$
+  select public.kimun_prof_es_admin_raw()
+    or exists(select 1 from public.profesores pr
+              where pr.id = auth.uid() and (pr.es_super or pr.es_operador))
+    or exists(select 1 from public.permisos_usuario g
+              where g.profesor_id = auth.uid()
+                and g.ambito_tipo in ('plataforma','sostenedor','colegio')
+                and g.capacidades && array['curso.crear','curso.borrar','profesor.autorizar',
+                                           'pulso.ver','equipo.jefe','permisos.gestionar']);
 $$;
 
 -- Mis cursos con sus alumnos. Un administrador ve todos, incluidos los huérfanos.
@@ -1440,6 +1688,111 @@ declare yo public.profesores; obj public.profesores; begin
    where id = obj.id;
 end $$;
 
+-- ============================================================
+-- OTORGAMIENTO — el backend del mantenedor (Sesión 116, Fase 2). Lo consume la pantalla de
+-- la Fase 3. La no-escalada, caso por caso, es el corazón de la fase:
+--   · Solo se ve/otorga/revoca DENTRO del ámbito que uno gestiona (kimun_prof_gestiona_ambito).
+--   · Nadie otorga una capacidad que él mismo no tiene sobre ese ámbito (kimun_prof_puede_ambito).
+--   · La cobertura baja por el árbol, así que 'permisos.gestionar' nunca alcanza un ámbito
+--     superior al del que otorga (queda cubierto por gestiona_ambito).
+--   · es_admin JAMÁS se toca por aquí (no es una capacidad; se escribe solo por SQL a mano).
+--   · Nadie se edita a sí mismo (no se auto-sube el alcance).
+-- Hoy, en la práctica, solo Admin y Operador gestionan (permisos.gestionar solo vive en el
+-- preset Operador). El motor ya soporta un gestor acotado a un sostenedor por si algún día
+-- un Sostenedor administra a los suyos.
+-- ============================================================
+
+-- Lista los grants de un usuario (por correo), acotado a lo que el que llama gestiona.
+drop function if exists public.kimun_prof_permisos_ver(text);
+create or replace function public.kimun_prof_permisos_ver(p_correo text)
+returns table(id uuid, ambito_tipo text, ambito_id uuid, ambito_nombre text,
+              capacidades text[], asignaturas text[])
+language plpgsql security definer set search_path=public as $$
+declare yo public.profesores; obj public.profesores; begin
+  -- pr.id aliasado y no `id` a secas: el returns table declara un OUT `id`, así que un
+  -- `where id=` sin calificar es ambiguo (column reference "id" is ambiguous, 42702). Misma
+  -- familia que el bug v_rol (Sesión 73) y los listers de inquilinos (Fase 1).
+  select * into yo from public.profesores pr where pr.id = auth.uid();
+  if yo.id is null then raise exception 'no_autorizado'; end if;
+  -- Solo quien gestiona permisos en ALGÚN ámbito abre el mantenedor.
+  if not (public.kimun_prof_es_admin_raw()
+          or exists(select 1 from public.permisos_usuario g
+                    where g.profesor_id = auth.uid() and 'permisos.gestionar' = any(g.capacidades)))
+    then raise exception 'no_autorizado'; end if;
+  select * into obj from public.profesores where lower(correo) = lower(trim(coalesce(p_correo,'')));
+  if obj.id is null then raise exception 'profesor_invalido'; end if;
+  return query
+    select g.id, g.ambito_tipo, g.ambito_id,
+           case g.ambito_tipo
+             when 'plataforma' then 'Toda la plataforma'
+             when 'sostenedor' then (select s.nombre from public.sostenedores s where s.id = g.ambito_id)
+             when 'colegio'    then (select co.nombre from public.colegios co where co.id = g.ambito_id)
+             when 'curso'      then (select c.nombre from public.cursos c where c.id = g.ambito_id)
+           end,
+           g.capacidades, g.asignaturas
+      from public.permisos_usuario g
+     where g.profesor_id = obj.id
+       and public.kimun_prof_gestiona_ambito(g.ambito_tipo, g.ambito_id)
+     order by g.ambito_tipo, 4;
+end $$;
+
+-- Crea/reemplaza el grant de (usuario, ámbito). Sin capacidades = lo revoca. La no-escalada
+-- (arriba) se comprueba entera antes de escribir.
+create or replace function public.kimun_prof_permisos_fijar(
+  p_correo text, p_ambito_tipo text, p_ambito_id uuid, p_capacidades text[], p_asignaturas text[])
+returns void language plpgsql security definer set search_path=public as $$
+declare yo public.profesores; obj public.profesores; caps text[]; c text; begin
+  select * into yo from public.profesores where id = auth.uid();
+  if yo.id is null then raise exception 'no_autorizado'; end if;
+  -- Ámbito válido: plataforma sin id; el resto con id existente.
+  if p_ambito_tipo not in ('plataforma','sostenedor','colegio','curso') then raise exception 'ambito_invalido'; end if;
+  if (p_ambito_tipo = 'plataforma') <> (p_ambito_id is null) then raise exception 'ambito_invalido'; end if;
+  if p_ambito_tipo = 'sostenedor' and not exists(select 1 from public.sostenedores where id = p_ambito_id) then raise exception 'ambito_invalido'; end if;
+  if p_ambito_tipo = 'colegio'    and not exists(select 1 from public.colegios    where id = p_ambito_id) then raise exception 'ambito_invalido'; end if;
+  if p_ambito_tipo = 'curso'      and not exists(select 1 from public.cursos      where id = p_ambito_id) then raise exception 'ambito_invalido'; end if;
+  -- El que llama GESTIONA ese ámbito (permisos.gestionar que lo cubra, o Admin).
+  if not public.kimun_prof_gestiona_ambito(p_ambito_tipo, p_ambito_id) then raise exception 'no_autorizado'; end if;
+  -- El objetivo existe, no soy yo (no me auto-edito) ni un Admin (salvo que yo sea Admin).
+  select * into obj from public.profesores where lower(correo) = lower(trim(coalesce(p_correo,'')));
+  if obj.id is null then raise exception 'profesor_invalido'; end if;
+  if obj.id = yo.id then raise exception 'no_te_puedes_editar'; end if;
+  if obj.es_admin and not yo.es_admin then raise exception 'no_autorizado'; end if;
+  -- Cada capacidad debe ser conocida y NINGUNA que el que llama no tenga sobre ese ámbito
+  -- (no se otorga lo que no se tiene — la no-escalada).
+  caps := coalesce(p_capacidades, '{}'::text[]);
+  foreach c in array caps loop
+    if not (c = any(public.kimun_prof_capacidades_todas())) then raise exception 'capacidad_invalida'; end if;
+    if not public.kimun_prof_puede_ambito(c, p_ambito_tipo, p_ambito_id) then raise exception 'no_autorizado'; end if;
+  end loop;
+  -- Reemplaza el grant de (objetivo, ese ámbito): borra el anterior y, si quedan capacidades,
+  -- inserta el nuevo. `is not distinct from` para casar el ambito_id null de plataforma.
+  delete from public.permisos_usuario
+   where profesor_id = obj.id and ambito_tipo = p_ambito_tipo
+     and ambito_id is not distinct from p_ambito_id;
+  if coalesce(array_length(caps,1),0) >= 1 then
+    insert into public.permisos_usuario(profesor_id, ambito_tipo, ambito_id, capacidades, asignaturas, creado_por)
+    values (obj.id, p_ambito_tipo, p_ambito_id, caps,
+            case when p_ambito_tipo = 'curso' then coalesce(p_asignaturas,'{}'::text[]) else '{}'::text[] end,
+            yo.id);
+  end if;
+end $$;
+
+-- Revoca un grant por id, con el mismo cerco de cobertura.
+create or replace function public.kimun_prof_permisos_revocar(p_id uuid)
+returns void language plpgsql security definer set search_path=public as $$
+declare yo public.profesores; g public.permisos_usuario; begin
+  select * into yo from public.profesores where id = auth.uid();
+  if yo.id is null then raise exception 'no_autorizado'; end if;
+  select * into g from public.permisos_usuario where id = p_id;
+  if g.id is null then return; end if;
+  if not public.kimun_prof_gestiona_ambito(g.ambito_tipo, g.ambito_id) then raise exception 'no_autorizado'; end if;
+  -- No se le tocan los grants a un Admin salvo por otro Admin (hoy es inocuo —el Admin no
+  -- necesita grants— pero cierra la puerta).
+  if not yo.es_admin and exists(select 1 from public.profesores pr where pr.id = g.profesor_id and pr.es_admin)
+    then raise exception 'no_autorizado'; end if;
+  delete from public.permisos_usuario where id = p_id;
+end $$;
+
 -- Reasigna un curso a un profesor nombrándolo Profesor Jefe. Es la contraparte de
 -- kimun_prof_quitar: sin esto, un curso huérfano no tendría forma de volver a tener
 -- jefe. Desde los roles por asignatura (Sesión 37) el acceso lo decide
@@ -1665,6 +2018,25 @@ revoke execute on function
   public.kimun_prof_acceso(uuid), public.kimun_prof_asignaturas(uuid),
   public.kimun_prof_admin_colegio()
   from public;
+
+-- Resolutores del motor granular (Sesión 116, Fase 2): security definer, corren como su dueño
+-- y solo los llaman las demás funciones del rol de profesor. Se revocan también de anon y
+-- authenticated —no solo de public—, porque Supabase otorga EXECUTE a esos roles por default
+-- privileges, así que un "from public" a secas los dejaba expuestos por RPC (devolvían false
+-- sin sesión, sin fuga, pero no tenían por qué estar en la superficie de la API). El revoke NO
+-- afecta las llamadas internas: los porteros y el otorgamiento son definer y corren como el
+-- dueño, que conserva su EXECUTE.
+revoke execute on function
+  public.kimun_prof_es_admin_raw(),
+  public.kimun_prof_legado_cubre(text,uuid),
+  public.kimun_prof_puede_grant(text,uuid),
+  public.kimun_prof_puede(text,uuid),
+  public.kimun_prof_puede_en_colegio(text,uuid),
+  public.kimun_prof_puede_en_sostenedor(text,uuid),
+  public.kimun_prof_tiene_todas_asig(uuid),
+  public.kimun_prof_puede_ambito(text,text,uuid),
+  public.kimun_prof_gestiona_ambito(text,uuid)
+  from public, anon, authenticated;
 
 -- ------------------------------------------------------------
 -- Funciones del desafío de refuerzo (Sesión 28).
@@ -2603,6 +2975,14 @@ grant execute on function
   , public.kimun_prof_sostenedor_borrar(uuid)
   , public.kimun_prof_colegio_renombrar(uuid,text)
   , public.kimun_prof_colegio_borrar(uuid)
+  -- Motor de permisos granular (Sesión 116, Fase 2): el otorgamiento (lo consume el mantenedor
+  -- de la Fase 3) y los dos helpers de solo lectura que la pantalla usa para pintar casillas y
+  -- presets. Los RESOLUTORES no van aquí: quedan revocados (arriba), los llaman las funciones.
+  , public.kimun_prof_permisos_ver(text)
+  , public.kimun_prof_permisos_fijar(text,text,uuid,text[],text[])
+  , public.kimun_prof_permisos_revocar(uuid)
+  , public.kimun_prof_capacidades_todas()
+  , public.kimun_prof_preset(text)
   to anon, authenticated;
 
 -- ------------------------------------------------------------
@@ -2671,3 +3051,46 @@ begin
   perform cron.schedule('foto-semanal', '5 4 * * 1',
                         'select public.kimun_foto_semanal()');
 end $$;
+
+-- ============================================================
+-- MIGRACIÓN Fase 2 (Sesión 116): las banderas/membresías de hoy → grants equivalentes.
+--
+-- Idempotente: cada persona+ámbito se migra UNA sola vez (el `not exists`), así re-pegar el
+-- archivo no duplica grants NI pisa lo que después edite el mantenedor (Fase 3). NO borra el
+-- legado: la lectura dual lo necesita hasta el cutover (Fase 4). es_admin NO migra (es el
+-- atajo del dueño). Como la lectura dual mantiene idéntico el acceso con o sin grants, esta
+-- migración es forward-prep para el cutover, no cambia nada hoy.
+-- ============================================================
+
+-- Operador → grant de plataforma con el preset Operador (todo lo operativo, incl. el mantenedor).
+insert into public.permisos_usuario(profesor_id, ambito_tipo, ambito_id, capacidades, asignaturas)
+select pr.id, 'plataforma', null, public.kimun_prof_preset('operador'), '{}'::text[]
+  from public.profesores pr
+ where pr.es_operador and not pr.es_admin
+   and not exists(select 1 from public.permisos_usuario g
+                  where g.profesor_id = pr.id and g.ambito_tipo = 'plataforma');
+
+-- SuperUsuario → grant de colegio con el preset Super, SOLO si hay exactamente UN colegio (el
+-- piloto): con un solo colegio "su colegio" es inequívoco. Con cero o varios no se puede
+-- adivinar a cuál pertenece un Super que hoy es global, así que se deja al mantenedor (Fase 3);
+-- la lectura dual (es_super) lo mantiene con acceso completo mientras tanto.
+insert into public.permisos_usuario(profesor_id, ambito_tipo, ambito_id, capacidades, asignaturas)
+select pr.id, 'colegio', (select id from public.colegios), public.kimun_prof_preset('super'), '{}'::text[]
+  from public.profesores pr
+ where pr.es_super and not pr.es_admin and not pr.es_operador
+   and (select count(*) from public.colegios) = 1
+   and not exists(select 1 from public.permisos_usuario g
+                  where g.profesor_id = pr.id and g.ambito_tipo = 'colegio');
+
+-- curso_profesores → grant de curso. Jefe: preset Jefe (todas las materias, asignaturas vacío).
+-- Asignatura: preset Asignatura + sus materias. El ámbito es el curso, así que es inequívoco
+-- sin importar el colegio.
+insert into public.permisos_usuario(profesor_id, ambito_tipo, ambito_id, capacidades, asignaturas)
+select cp.profesor_id, 'curso', cp.curso_id,
+       case when cp.rol = 'jefe' then public.kimun_prof_preset('jefe')
+            else public.kimun_prof_preset('asignatura') end,
+       case when cp.rol = 'jefe' then '{}'::text[] else cp.asignaturas end
+  from public.curso_profesores cp
+ where not exists(select 1 from public.permisos_usuario g
+                  where g.profesor_id = cp.profesor_id and g.ambito_tipo = 'curso'
+                    and g.ambito_id = cp.curso_id);

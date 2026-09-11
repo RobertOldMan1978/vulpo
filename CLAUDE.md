@@ -2437,10 +2437,25 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
   `kimun_prof_sostenedores()`/`_colegios(uuid)`/`_sostenedor_crear(text)`/`_colegio_crear(uuid,text)`/
   `_curso_colegio_fijar(text,uuid)`, más `kimun_prof_sostenedor_renombrar`/`_borrar` y
   `kimun_prof_colegio_renombrar`/`_borrar`, todas gateadas por `kimun_prof_admin_colegio()`. El panel las
-  muestra como un **árbol Sostenedor › Colegio › Cursos** (Sesión 116). ⚠️ **Todavía informativas para
-  los permisos:** ningún portero mira `colegio_id` hasta la Fase 2. `kimun_prof_listar` y
+  muestra como un **árbol Sostenedor › Colegio › Cursos** (Sesión 116). `kimun_prof_listar` y
   `kimun_prof_profesores` **cambiaron de firma** (con sus `drop`), así que el panel se publica antes o
   junto con el esquema. Spec: `docs/superpowers/specs/2026-09-10-multi-tenant-permisos-granular-design.md`.
+- **Motor de permisos granular · Fase 2 (Sesión 116, aplicado y verificado el 10/09):** la autorización
+  pasa de banderas de rol a **capacidades sobre un ámbito**. Tabla **`permisos_usuario`** (grants: quién,
+  qué `capacidades[]`, sobre qué nodo plataforma/sostenedor/colegio/curso, con `asignaturas[]` para el
+  ámbito curso). Los 4 porteros (`es_mio`/`acceso`/`asignaturas`/`admin_colegio`) **delegan a capacidades**
+  vía `kimun_prof_puede` con **LECTURA DUAL** —Admin, un grant que cubra el nodo, O el legado
+  (`kimun_prof_legado_cubre`, que reproduce por capacidad el guard viejo)—, así que el comportamiento es
+  **idéntico a hoy** hasta el cutover (Fase 4). Otorgamiento (`kimun_prof_permisos_ver`/`_fijar`/`_revocar`)
+  con no-escalada airtight: solo se otorga dentro del ámbito que uno gestiona y ninguna capacidad que uno
+  no tenga; `es_admin` jamás por RPC. Migración idempotente (`es_operador`→grant plataforma, `es_super`→grant
+  colegio si hay un solo colegio, `curso_profesores`→grants de curso) + presets (`kimun_prof_preset`). ⚠️
+  **Los resolutores se revocan de `public, anon, authenticated`** (no solo `public`): Supabase otorga
+  EXECUTE a esos roles por default privileges. **Aplicado y control verde** (400 otorgamiento / 401
+  resolutores); migración verificada (7 grants de curso = 7 membresías). ⚠️ **La rejilla fina por función**
+  (separar `dominio.reiniciar` de `alumno.gestionar`, etc.) y **el mantenedor (la pantalla)** son la
+  **Fase 3**; el **cutover** (apagar toggles viejos + mitad legada) es la Fase 4. Plan:
+  `docs/superpowers/plans/2026-09-10-fase2-permisos-granular.md`.
 - **Pendiente:** notificaciones push.
 
 ## Trámites pendientes (fuera del código)
@@ -12427,3 +12442,59 @@ tocar la autorización—.
 - **Pendiente:** el **motor granular** (Fase 2) —el aislamiento por colegio + la base del mantenedor—,
   que hoy es invisible con un colegio y se construye cuando llegue el segundo o se quiera el mantenedor
   de casillas. Plan: `docs/superpowers/plans/2026-09-10-fase2-permisos-granular.md`.
+
+**El motor de permisos granular · Fase 2 (Sesión 116, 10/09).** El cambio de fondo más grande del
+proyecto: la autorización pasa de banderas de rol fijas a **capacidades sobre un ámbito**. Roberto
+lo destrabó ("sigue con la fase 2") aunque haya un solo colegio, porque la lectura dual lo hace
+seguro. Todo en `supabase/schema.sql` (+450/−37 líneas, ni un archivo de cliente): el juego y el
+panel no se tocan (la pantalla del mantenedor es la Fase 3).
+
+- **Lo construido:** la tabla `permisos_usuario` (grants: quién, qué capacidades, sobre qué nodo del
+  árbol plataforma/sostenedor/colegio/curso); los **resolutores con lectura dual** (`puede`,
+  `puede_en_colegio/_en_sostenedor`, `puede_grant`, `legado_cubre`, `es_admin_raw`, `tiene_todas_asig`,
+  `puede_ambito`, `gestiona_ambito`); los **4 porteros** (`es_mio`/`acceso`/`asignaturas`/`admin_colegio`)
+  delegando a capacidades —como cada función gateada ya los llama, heredan la capacidad **sin tocar su
+  cuerpo**—; el **otorgamiento** (`kimun_prof_permisos_ver`/`_fijar`/`_revocar`) con la no-escalada
+  airtight; la **migración** idempotente (banderas/membresías → grants); y los **presets** de los 5 roles.
+- ⚠️ **La decisión (Opción A, la eligió Roberto): motor completo ahora, rejilla fina a la Fase 3.** Los
+  4 porteros dan la granularidad de 3 buckets (`alumno.gestionar`, `avance.ver`, y el bucket admin), que
+  ya implementa **exactamente** los 5 presets. Las ~15 rejillas por función (separar `dominio.reiniciar`
+  de `alumno.gestionar`, `curso.borrar` de `pulso.ver`, etc.) se cablean en la Fase 3 con el mantenedor,
+  **donde se pueden probar de punta a punta** — hacerlas ahora eran ~15 ediciones ciegas a la
+  autorización de producción que no puedo correr, por cero cambio de comportamiento hoy.
+- ⚠️ **El plan tenía un bug y lo cacé midiendo: su `legado_cubre` era demasiado grueso** (`super OR
+  operador` para todo). Contra los guards reales, eso le habría dado a un **SuperUsuario** el
+  `perfiles.limpiar` que hoy es solo Admin/Operador — un cambio silencioso de la foto de acceso. Lo hice
+  **por capacidad, matcheado a cada guard real** (perfiles.limpiar = operador; el tier admin = super|operador;
+  el tier es_mio = super|operador|jefe; el tier acceso = +asignatura).
+- **La verificación fuerte fue una auditoría estática**, porque no puedo aplicar/probar el SQL (el doble
+  del panel simula los RPC): probé, portero por portero, que **sin grants el comportamiento es idéntico
+  al guard viejo** —la garantía de foto de acceso idéntica— y que cada grant de la migración es un
+  **subconjunto** del legado, así que la unión (dual-read) = hoy.
+
+⚠️ **El control positivo/negativo contra producción cazó DOS bugs que la auditoría estática no ve** —y
+por eso el control existe—:
+1. **`kimun_prof_permisos_ver` daba `42702` "column reference id is ambiguous".** Es el bug id-ambiguo
+   de la Fase 1 **otra vez**: `returns table` con OUT `id` + un `select ... where id = auth.uid()` sin
+   calificar. Lo evité en el RETURN QUERY (todo `g.*`/`obj.id` calificado) y se me pasó en el `select
+   into yo`. Las hermanas `_fijar`/`_revocar` salieron limpias porque devuelven `void`, sin OUT `id`.
+   Arreglo: `select * into yo from public.profesores pr where pr.id = auth.uid()`.
+2. ⚠️ **Los resolutores quedaron EXPUESTOS a anon** (daban `200 false` en vez de no-encontrado). Mi
+   `revoke ... from public` no bastó: **Supabase otorga EXECUTE a `anon`/`authenticated` por default
+   privileges**, así que un `from public` a secas los deja llamables. No era fuga —devuelven `false` sin
+   sesión— pero no tenían por qué estar en la superficie de la API. Arreglo: `revoke ... from public,
+   anon, authenticated`. Queda escrito porque vale para toda función interna nueva de aquí en adelante.
+
+Los dos se corrigieron con un **fragmento chico** (no el archivo entero, para esquivar el gotcha del
+buffer viejo del editor, Sesión 111), y el control quedó **verde**: otorgamiento → `400 no_autorizado`,
+resolutores → `401 permission denied`, helpers (`capacidades_todas`/`preset`) → 200, esquema vivo
+(`MA06 OA 01`→`MA06`), inventada → 404.
+
+- **La migración quedó VERIFICADA con los números:** `select ambito_tipo, count(*) from permisos_usuario`
+  dio **`curso: 7`** y nada más. Las 7 son las 7 membresías de `curso_profesores` (medidas: `1+1+2+2+1`,
+  cuadra al milímetro). **0 plataforma / 0 colegio** porque en producción **no hay Super/Operador reales**
+  (los a.diaz/Rossy de las pruebas eran del doble, datos falsos) y el Admin no migra. `colegios = 1`, que
+  es lo que habilita la migración del Super. Foto de acceso garantizada por la lectura dual.
+- **Lo que queda:** la **Fase 3** (el mantenedor, la pantalla, sobre este backend ya verificado) y la
+  **Fase 4** (cutover: apagar los toggles viejos y la mitad legada de los porteros). Plan de la Fase 2:
+  `docs/superpowers/plans/2026-09-10-fase2-permisos-granular.md`.
