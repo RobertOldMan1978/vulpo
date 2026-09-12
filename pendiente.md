@@ -694,6 +694,30 @@ tienda y permite probar notificaciones antes de enfrentar iOS. Detalle en
 
 ---
 
+## Ganchos institucionales (12/09/2026)
+
+Un análisis externo listó áreas normativas y de gestión de un colegio chileno donde VULPO podría
+engancharse (Plan de Formación Ciudadana, PME, Convivencia, Asistencia, Inclusión, celulares 2026).
+Se midió el repo real: **la mitad ya está construida y escondida**. ⚠️ **El argumento de venta —cómo
+se posiciona cada gancho— vive FUERA del repo** (documento privado; es estrategia). Acá van solo las
+tareas de **producto** que salieron, framed como producto.
+
+| # | Tarea | Peso | Quién |
+|---|---|---|---|
+| G1 | **Lente de Formación Ciudadana en el panel.** Los **43 OA** del eje "Formación ciudadana" (**1.289 preguntas ya escritas y aprobadas**, hoy vendidas como "Historia") no tienen vista propia. Falta: una **etiqueta transversal machine-readable** de esos OA —hoy solo 7° usa `actitudinal:true`; el resto lo marca en prosa dentro de `nota_evaluacion`— + una vista/informe en `profesor.html` que junte su cobertura y dominio. **Cero contenido nuevo.** Da la evidencia del Plan de Formación Ciudadana (Ley 20.911), que la UTP pasa en orientación/consejo de curso y le cuesta evidenciar. ⚠️ Solo evidencia **conocimiento**, nunca conducta (la línea de siempre). | medio | — |
+| G2 | **Emparejar el blindaje de 8°** antes de formalizar G1. `contenido/historia-8basico/oa.json` no trae `nota_evaluacion` ni flag `actitudinal` por OA (solo un array `actitudes` transversal), a diferencia de 3°-6°. Sus `HI08 OA 17/19` son valorativos y quedan sin advertencia de medición: hueco de consistencia que una UTP destapa. Higiene chica. | chico | — |
+| G3 | **Spec de Modo Aula** (gancho: regulación de celulares 2026). Hoy VULPO no tiene modo para jugarse proyectado o en conjunto — es 1 alumno, 1 teléfono, 1 avance. Feature nueva real, **post-piloto**. Escribir el spec primero; no existe nada hoy. | — (spec) | — |
+
+**Reencuadres de discurso (van a `docs/comercial.md`, no son build):** Convivencia → evidencia de
+*conocimiento*, nunca conducta · Asistencia → *reenganche*, el panel dice literal "no es asistencia" ·
+Inclusión → *accesible* (voz, sin reloj), nunca "apoyo TEA/PIE" (no existe).
+
+> **Lo que NO se hace:** vender el pulso o el mapa de dominio como registro de conducta, control de
+> asistencia o apoyo clínico a NEE. Son las líneas rojas del proyecto (Sesión 24 y siguientes): el
+> dato lo reporta el teléfono, y en cuanto tiene consecuencias deja de medir.
+
+---
+
 ## Trámites, fuera del código
 
 - 🟡 **Marca VULPO en INAPI — SOLICITUD PRESENTADA Y PAGADA (07/09/2026), en trámite.**

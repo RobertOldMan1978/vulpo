@@ -12660,3 +12660,55 @@ los cursos · pulso. Estructura del schema íntegra (101 funciones tras retirar 
 `legado_cubre`=false, cero lecturas de bandera para authz (solo la migración las lee, para convertirlas).
 Cero errores de consola. ⚠️ **Falta que Roberto aplique el esquema** (el flip) y corra el control + el
 diagnóstico; el panel se publica antes o junto (cambio de firma de `kimun_prof_profesores`).
+
+### Sesión 117 (2026-09-12) — Los ganchos institucionales, medidos, y el respaldo de los artifacts
+Roberto pasó un análisis externo de **áreas normativas y de gestión** de un colegio chileno donde
+VULPO podría engancharse —Plan de Formación Ciudadana, PME, Convivencia, Asistencia, Inclusión,
+celulares 2026— y pidió, como jefe, tomar lo bueno, ordenarlo por lo que de verdad aporta, y ponerle
+el ojo a Formación Ciudadana. **No se tocó el juego ni el contenido:** cero código, cero preguntas.
+
+**Se midió el repo real con tres agentes en vez de creerle al análisis, y la mitad ya estaba
+construida y escondida.** El hallazgo que ordenó todo:
+
+- **Formación Ciudadana ya existe, vendida como "Historia":** el eje "Formación ciudadana" está
+  bancarizado en los seis cursos — **43 OA · 1.289 preguntas aprobadas** (180 en 3°, 240 en 4°, 300
+  en 5°, 360 en 6°, 120 en 7°, 89 en 8°): derechos del niño y DD.HH., democracia y división de
+  poderes, resolución de conflictos, participación, tolerancia. Con la doctrina de medición ya
+  escrita (*tercero con nombre, nunca la conducta del jugador*). La **Ley 20.911** obliga el Plan de
+  Formación Ciudadana, que la UTP pasa en orientación/consejo de curso y **le cuesta evidenciar** —
+  VULPO aporta exactamente esa capa cognitiva medible.
+- **PME ya está construido:** el pulso del colegio (cobertura del programa por OA, imprimible A4) +
+  el informe de cierre de unidad (antes/después) son, de hecho, instrumentos PME. Falta nombrarlos.
+- **Tres áreas obligan a reencuadre honesto**, no a feature: el panel dice literal *"no es
+  asistencia"* y *"no sirve para calificar"*, y se niega estructuralmente a rankear o medir conducta.
+  Convivencia → *conocimiento*, jamás conducta · Asistencia → *reenganche* · Inclusión → *accesible*
+  (voz, sin reloj), jamás "apoyo TEA/PIE" — de TEA/NEE hay **cero código**.
+- **Celulares 2026 / Modo Aula: NO existe nada.** Feature nueva real, post-piloto.
+
+**Decisión de Roberto (siguiente paso, sobre construir features):** un **documento privado de
+posicionamiento** que convierte los dos ganchos honestos y **ya construidos** —Formación Ciudadana y
+PME— en argumento para el piloto. El cuello de botella real no son features: es que **el piloto no ha
+partido y la puerta cierra el 1 de octubre**. El documento ataca ese cuello. Es un Artifact privado
+(registro sobrio, familia visual de `colegio/index.html`), **fuera del repo**.
+
+**El reparto público/privado, que es la disciplina de siempre con el repo público:**
+- **Estrategia → privado** (el propio documento): el argumento de venta institucional, el orden de
+  los ganchos, el posicionamiento. **No al repo.**
+- **Producto → `pendiente.md`** (framed como producto): **G1** (lente de Formación Ciudadana en el
+  panel — etiqueta transversal machine-readable de los 43 OA cívicos + vista/informe; hoy solo 7° usa
+  `actitudinal:true`, el resto en prosa; **cero contenido nuevo**), **G2** (emparejar el blindaje de
+  8° — `historia-8basico/oa.json` no trae `nota_evaluacion` ni flag por OA, a diferencia de 3°-6°) y
+  **G3** (spec de Modo Aula, post-piloto, no existe nada).
+- **Guardrails anti-sobreventa → `docs/comercial.md`** (misma familia que ya gobierna qué se promete):
+  Convivencia solo como conocimiento; participación NO es asistencia; accesible NO es "apoyo TEA/PIE".
+
+**Y se respaldaron los 15 artifacts** de las últimas sesiones en `Escritorio\VULPO - correos
+profesores\respaldo-artifacts\` (fuera del repo), copiando exacto los grandes desde los archivos de
+tool-results y reescribiendo los chicos desde el read. **Cuatro no son del juego VULPO** y quedaron
+flageados para que Roberto decida si los saca de esa carpeta: dos de **CueroMarket/SAP** (cotización a
+factura, auditoría de skills) y dos de **VulpoAsist** (el plan maestro y la especificación del libro
+de clases digital), que es otra línea de producto.
+
+- **Pendiente de arrastre:** el rework de permisos de la Sesión 116 sigue esperando que Roberto
+  **aplique el esquema del cutover** (Fase 4b) y corra el diagnóstico de huérfanos antes del flip. Y
+  fuera del código: INAPI en trámite, y que **parta el piloto** —el cuello de botella real—.

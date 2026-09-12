@@ -232,6 +232,19 @@ Funciona en cualquier celular con internet, sin instalar nada.
 - ⚠️ **El "modo experimental" abre todos los capítulos y cierra los jefes.** Sirve para que
   alguien recorra el contenido sin jugarse el año en orden. **No venderlo como el modo normal**:
   el producto es la campaña con su progresión, y así se mide el dominio por objetivo.
+- ⚠️ **Formación Ciudadana / Convivencia: evidencia de CONOCIMIENTO, nunca de conducta.** VULPO ya
+  cubre y mide el eje "Formación ciudadana" completo (43 OA, 1.289 preguntas) y sirve de insumo al
+  Plan de Formación Ciudadana (Ley 20.911) y al de Gestión de la Convivencia — pero muestra que los
+  alumnos *saben* (derechos, democracia, cómo resolver un conflicto), **no que se portan bien**. Los
+  OA actitudinales se miden por reconocimiento sobre un tercero con nombre, nunca la conducta del
+  jugador. No venderlo como registro de conducta ni libro de anotaciones.
+- ⚠️ **Participación NO es asistencia.** El panel muestra quién dejó de jugar (reenganche), y lo
+  dice literal: *"no es asistencia"*. Sirve para reenganchar a un alumno que se desconectó, no para
+  pasar lista. No ofrecerlo como control de asistencia escolar.
+- ⚠️ **Accesible, NO "apoyo TEA/PIE".** VULPO es accesible para quien aún no lee de corrido (voz
+  pregrabada en 3° y 4°, sin reloj, sin ranking, sin la presión de la nota), y eso ayuda a
+  estudiantes reales. Pero **no hay soporte específico a TEA ni a NEE** (cero código): decir
+  "accesible" es cierto; decir "apoyo a la inclusión" o "al PIE" es falso.
 
 ## Los dos correos, y cuál va en cada cosa (decisión de Roberto, 07/09/2026)
 
