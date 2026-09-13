@@ -1535,6 +1535,14 @@ const EXPEDICIONES=[
      {oa:"MA08 OA 17", nombre:"Principio multiplicativo", icono:"🎲", n:10},
      {oa:"BOSS", nombre:"⚡ JEFE: Datos y azar", icono:"🧮", n:15, oas:["MA08 OA 15","MA08 OA 16","MA08 OA 17"]},
    ]},
+ { id:'civica', asignatura:'Formación Ciudadana', nivel:'8° Básico · Formación Ciudadana',
+   portada:'assets/portada-formacion-ciudadana.png', portadaMapa:'assets/portada-formacion-ciudadana.png',
+   contenido:'contenido/historia-8basico/preguntas.json', activa:true,
+   etapas:[
+     {oa:"HI08 OA 17", nombre:"Debatir la conquista", icono:"⚖️", n:10},
+     {oa:"HI08 OA 18", nombre:"Los derechos del hombre", icono:"📜", n:10},
+     {oa:"HI08 OA 19", nombre:"Independencia y ciudadanía", icono:"🕊️", n:10},
+   ]},
 ];
 
 /* Ids de ?solo= que existen de verdad. Uno inventado se ignora en silencio; si no
@@ -2610,6 +2618,7 @@ LECC.init({ rutas:['contenido/matematicas-8basico/lecciones.json',
    comparten el mismo renderExpediciones y solo cambia el valor. */
 const HAY_VOCABULARIO=true;
 const HAY_BIBLIOTECA=true;
+const HAY_CIVICA=true;
 // Matemáticas en el duelo = los niveles del Reto de Cálculo (mismo look que el mapa).
 function odMapasMate(){return NIVELES_CALC.map((n,i)=>({id:'calc-'+n.id,asignatura:'Matemáticas',
   nombre:(i+1)+'. '+n.nombre,sub:n.sub,icono:n.icono,calc:n.id,dif:Math.min(5,RC_BASE[i]+1)}));}
@@ -2772,6 +2781,7 @@ async function revisarDesafio(){
     <button id="btnDesafio">¡Jugar ahora!</button>`;
   $('btnDesafio').onclick=()=>jugarDesafio(d);
   cont.hidden=false;
+  popupDesafio(d);   // sube el aviso a un popup con Vulpi (una vez por desafio nuevo; motor.js)
 }
 /* Aviso visible del modo QA (solo con ?qa=1). El del modo prueba se agrega aparte. */
 if(QA){const b=document.createElement('div');b.className='qa-badge';b.textContent='🧪 QA · respuestas marcadas · todo desbloqueado';document.body.appendChild(b);}

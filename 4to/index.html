@@ -1575,6 +1575,19 @@ const EXPEDICIONES=[
      {oa:"VOC-CIEN", nombre:"Palabras de Ciencias", icono:"🔬", n:10},
      {oa:"VOC-HIST", nombre:"Palabras de Historia", icono:"📜", n:10},
    ]},
+ { id:'civica', asignatura:'Formación Ciudadana', nivel:'4° Básico · Formación Ciudadana',
+   portada:'assets/portada-formacion-ciudadana.png', portadaMapa:'assets/portada-formacion-ciudadana.png',
+   contenido:'contenido/historia-4basico/preguntas.json', activa:true,
+   etapas:[
+     {oa:"HI04 OA 11", nombre:"Autoridades de Chile", icono:"🏛️", n:10},
+     {oa:"HI04 OA 12", nombre:"Mis derechos", icono:"📜", n:10},
+     {oa:"HI04 OA 13", nombre:"La honestidad", icono:"✋", n:10},
+     {oa:"HI04 OA 14", nombre:"Respeto e igualdad", icono:"🤝", n:10},
+     {oa:"HI04 OA 15", nombre:"Elegir la directiva", icono:"🗳️", n:10},
+     {oa:"HI04 OA 16", nombre:"Resolver conflictos", icono:"🕊️", n:10},
+     {oa:"HI04 OA 17", nombre:"Un proyecto en común", icono:"🌱", n:10},
+     {oa:"HI04 OA 18", nombre:"Opinar con razones", icono:"💬", n:10},
+   ]},
 ];
 /* 4° nace con las 4 asignaturas COMPLETAS desde el arranque (mismo patrón que 6°): su
    banco de 2.730 preguntas y sus 91 OA jugables ya estaban escritos antes de crear este
@@ -2501,6 +2514,7 @@ LECC.init({ rutas:['contenido/matematicas-4basico/lecciones.json', 'contenido/ci
 // a 3° en la Sesion 61.
 const HAY_VOCABULARIO=true;
 const HAY_BIBLIOTECA=false;
+const HAY_CIVICA=true;
 async function cargarJugadores(){
  const cont=$('odJugadores');cont.innerHTML='<p style="color:var(--dim);font-weight:800;font-size:13px">Cargando…</p>';
  try{
@@ -2660,6 +2674,7 @@ async function revisarDesafio(){
     <button id="btnDesafio">¡Jugar ahora!</button>`;
   $('btnDesafio').onclick=()=>jugarDesafio(d);
   cont.hidden=false;
+  popupDesafio(d);   // sube el aviso a un popup con Vulpi (una vez por desafio nuevo; motor.js)
 }
 /* Aviso visible del modo QA (solo con ?qa=1). El del modo prueba se agrega aparte. */
 if(QA){const b=document.createElement('div');b.className='qa-badge';b.textContent='🧪 QA · respuestas marcadas · todo desbloqueado';document.body.appendChild(b);}

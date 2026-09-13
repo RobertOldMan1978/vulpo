@@ -66,7 +66,10 @@ midiendo donde corresponde, en las etapas del capítulo.
 > incluir ese capítulo no se lo encuentra en otra parte.
 Además hay un **📚 Vocabulario** (dentro de Lenguaje): las palabras clave del curso en un quiz
 de opción múltiple, y una **📖 Lectura** del colegio (biblioteca; primer libro *El diario de Ana
-Frank*) con un camino de preguntas de comprensión por tramos.
+Frank*) con un camino de preguntas de comprensión por tramos. Y un módulo **🏛️ Formación
+Ciudadana** (en los seis cursos), que reúne en un camino propio los objetivos del eje de formación
+ciudadana —derechos y deberes, democracia, vida en comunidad— que ya viven dentro de Historia, para
+que un colegio pueda mostrar y evidenciar esa cobertura por separado.
 
 > El Vocabulario está en **los seis cursos** desde el 07/09/2026, pero **no con las mismas
 > áreas**: 3° y 4° llevan Ciencias e Historia (60 palabras), 5° y 6° suman Matemática (90), 7°

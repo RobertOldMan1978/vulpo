@@ -1569,6 +1569,23 @@ const EXPEDICIONES=[
      {oa:"VOC-HIST", nombre:"Palabras de Historia", icono:"📜", n:15},
      {oa:"VOC-MATE", nombre:"Palabras de Matemática", icono:"🔢", n:15},
    ]},
+ { id:'civica', asignatura:'Formación Ciudadana', nivel:'6° Básico · Formación Ciudadana',
+   portada:'assets/portada-formacion-ciudadana.png', portadaMapa:'assets/portada-formacion-ciudadana.png',
+   contenido:'contenido/historia-6basico/preguntas.json', activa:true,
+   etapas:[
+     {oa:"HI06 OA 15", nombre:"La democracia", icono:"🏛️", n:10},
+     {oa:"HI06 OA 16", nombre:"La Constitución", icono:"📖", n:10},
+     {oa:"HI06 OA 17", nombre:"Derechos de todos", icono:"📜", n:10},
+     {oa:"HI06 OA 18", nombre:"Derechos y deberes", icono:"⚖️", n:10},
+     {oa:"HI06 OA 19", nombre:"Proteger los derechos", icono:"🛡️", n:10},
+     {oa:"HI06 OA 20", nombre:"Actitudes cívicas", icono:"🤝", n:10},
+     {oa:"HI06 OA 21", nombre:"Trabajo en equipo", icono:"👥", n:10},
+     {oa:"HI06 OA 22", nombre:"Elegir la directiva", icono:"🗳️", n:10},
+     {oa:"HI06 OA 23", nombre:"Aportar a la sociedad", icono:"🌱", n:10},
+     {oa:"HI06 OA 24", nombre:"Opinar con razones", icono:"💬", n:10},
+     {oa:"HI06 OA 25", nombre:"La mejor solución", icono:"🧭", n:10},
+     {oa:"HI06 OA 26", nombre:"Informarse del mundo", icono:"🌎", n:10},
+   ]},
 ];
 /* 6° nace con las 4 asignaturas COMPLETAS desde el arranque (a diferencia de 5°, que
    partió solo con Matemática): su banco de 2.970 preguntas y sus 99 OA ya estaban
@@ -2492,6 +2509,7 @@ LECC.init({ rutas:['contenido/matematicas-6basico/lecciones.json', 'contenido/ci
 // a 3° en la Sesion 61.
 const HAY_VOCABULARIO=true;
 const HAY_BIBLIOTECA=false;
+const HAY_CIVICA=true;
 async function cargarJugadores(){
  const cont=$('odJugadores');cont.innerHTML='<p style="color:var(--dim);font-weight:800;font-size:13px">Cargando…</p>';
  try{
@@ -2651,6 +2669,7 @@ async function revisarDesafio(){
     <button id="btnDesafio">¡Jugar ahora!</button>`;
   $('btnDesafio').onclick=()=>jugarDesafio(d);
   cont.hidden=false;
+  popupDesafio(d);   // sube el aviso a un popup con Vulpi (una vez por desafio nuevo; motor.js)
 }
 /* Aviso visible del modo QA (solo con ?qa=1). El del modo prueba se agrega aparte. */
 if(QA){const b=document.createElement('div');b.className='qa-badge';b.textContent='🧪 QA · respuestas marcadas · todo desbloqueado';document.body.appendChild(b);}

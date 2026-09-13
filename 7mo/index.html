@@ -1495,6 +1495,15 @@ const EXPEDICIONES=[
      {oa:"VOC-MATE", nombre:"Palabras de Matemática", icono:"🔢", n:15},
      {oa:"VOC-LENG", nombre:"Palabras de Lenguaje", icono:"📚", n:15},
    ]},
+ { id:'civica', asignatura:'Formación Ciudadana', nivel:'7° Básico · Formación Ciudadana',
+   portada:'assets/portada-formacion-ciudadana.png', portadaMapa:'assets/portada-formacion-ciudadana.png',
+   contenido:'contenido/historia-7basico/preguntas.json', activa:true,
+   etapas:[
+     {oa:"HI07 OA 17", nombre:"El poder limitado", icono:"⚖️", n:10},
+     {oa:"HI07 OA 18", nombre:"Ciudadanía, de Atenas a hoy", icono:"🏛️", n:10},
+     {oa:"HI07 OA 19", nombre:"El valor de la diversidad", icono:"🌍", n:10},
+     {oa:"HI07 OA 20", nombre:"Convivencia entre culturas", icono:"🤝", n:10},
+   ]},
 ];
 
 /* Ids de ?solo= que existen de verdad. Uno inventado se ignora en silencio; si no
@@ -2489,6 +2498,7 @@ LECC.init({ rutas:['contenido/matematicas-7basico/lecciones.json',
    comparten el mismo renderExpediciones y solo cambia el valor. */
 const HAY_VOCABULARIO=true;
 const HAY_BIBLIOTECA=false;
+const HAY_CIVICA=true;
 async function cargarJugadores(){
  const cont=$('odJugadores');cont.innerHTML='<p style="color:var(--dim);font-weight:800;font-size:13px">Cargando…</p>';
  try{
@@ -2648,6 +2658,7 @@ async function revisarDesafio(){
     <button id="btnDesafio">¡Jugar ahora!</button>`;
   $('btnDesafio').onclick=()=>jugarDesafio(d);
   cont.hidden=false;
+  popupDesafio(d);   // sube el aviso a un popup con Vulpi (una vez por desafio nuevo; motor.js)
 }
 /* Aviso visible del modo QA (solo con ?qa=1). El del modo prueba se agrega aparte. */
 if(QA){const b=document.createElement('div');b.className='qa-badge';b.textContent='🧪 QA · respuestas marcadas · todo desbloqueado';document.body.appendChild(b);}

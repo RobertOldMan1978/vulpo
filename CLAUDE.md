@@ -2252,9 +2252,13 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
   `kimun_prof_es_mio`) y `kimun_refuerzo_activo` / `_completar` (juego, vía `kimun_yo`). Se
   mide **aparte** de `dominio`: el resultado del refuerzo va a `desafio_resultados` y **no**
   toca el primer intento del mapa. `_completar` usa `on conflict do nothing` (el primer intento
-  manda). El profesor lanza desde el bloque "Refuerzo" de la vista de avance; el alumno lo ve
-  como banner en el inicio y lo juega como una cadena de ~12 preguntas (el juego reusa el motor
-  de quiz con el flag `Q.desafio`). Ver la Bitácora, Sesión 28.
+  manda). El profesor lanza desde el bloque "Refuerzo" de la vista de avance —desde la Sesión 119
+  con un **selector manual de OA** (casillas por objetivo, agrupadas por asignatura/unidad, como el
+  armador; "⚡ Marcar los flojos" preselecciona la sugerencia automática) en vez de solo la lista
+  fija de flojos; `_lanzar` ya recibía la lista explícita, así que no cambió el backend—. El alumno
+  lo ve como banner en el inicio —y desde la Sesión 119 como **popup con Vulpi** (`popupDesafio`,
+  una vez por desafío nuevo)— y lo juega como una cadena de ~12 preguntas (el juego reusa el motor
+  de quiz con el flag `Q.desafio`). Ver la Bitácora, Sesión 28 y 119.
 - **Roles por asignatura (Sesión 37):** un curso pasa de tener un dueño único a un **equipo**.
   Tabla `curso_profesores(curso_id, profesor_id, rol, asignaturas[])` con índice único parcial
   `where rol='jefe'` (un solo Profesor Jefe por curso). `cursos.profesor_id` queda **deprecada**
@@ -12785,3 +12789,111 @@ que seguía diciendo "2 correos/hora / la recuperación necesita SMTP" —ya res
 - **Pendiente de arrastre:** el rework de permisos de la Sesión 116 sigue esperando que Roberto
   **aplique el esquema del cutover** (Fase 4b) y corra el diagnóstico de huérfanos antes del flip. Y
   fuera del código: INAPI en trámite, y que **parta el piloto** —el cuello de botella real—.
+
+### Sesión 119 (2026-09-13) — El popup con Vulpi (profe y compañero), la lente cívica y el selector de refuerzo
+Cuatro piezas que quedan juntas en el commit, ninguna toca contenido: un banco, una pregunta ni un
+clip de voz. **No cambia `supabase/schema.sql`.**
+
+#### El popup con Vulpi: primero el refuerzo del profe, después el desafío del compañero
+
+Roberto lo pidió en dos tiempos. Primero: un popup al abrir la app que anuncie el refuerzo que
+lanzó el profe, con Vulpi, y lleve directo a jugarlo. Vía AskUserQuestion eligió que aparezca **una
+vez por desafío nuevo** —el `#bannerDesafio` queda como recordatorio permanente—. Después:
+*"y si usamos la misma herramienta cuando es un compañero el que desafía"* —el mismo popup para el
+duelo 1v1 en línea (*"te desafiaron"*), no solo el refuerzo del profe—.
+
+**Todo vive en `assets/js/motor.js`; los seis forks solo reciben una línea idéntica** (el disparo
+del popup del profe en su `revisarDesafio`). El del compañero es **cero ediciones nuevas a los
+forks**: se dispara desde `pintarAvisoDuelo()`, que ya vive en el motor compartido.
+
+- **`popupVulpi(o)`**: el componente genérico —modal con Vulpi (`kimun-sorprendido.png`), título,
+  texto, un botón y la ✕—. Dos llamadores finos lo usan: **`popupDesafio(d)`** (el profe, sin cambiar
+  su comportamiento) y **`popupDuelo(des)`** (el compañero). Es literalmente "la misma herramienta".
+- **Una vez por aviso nuevo**, recordando el id en localStorage: `kimun_desafio_pop`+SUFIJO para el
+  profe (dedup por `desafio_id`), `kimun_duelo_pop`+SUFIJO para el compañero (dedup por el UUID del
+  duelo, que `kimun_duelos_avisos` ya devuelve como `d.id`). El banner de origen queda de recordatorio.
+- **Un solo modal por apertura**: si el del profe y el del duelo caen a la vez, el segundo espera
+  —no se marca visto, así que reaparece en la próxima apertura—. No se pisan ni se pierde ninguno.
+- ⚠️ **El nombre del rival va por `escHtml`**: lo escribe otra persona y este proyecto ya tuvo un XSS
+  almacenado por esta vía exacta (Sesión 51). Verificado: un `<img onerror>` sale como **texto**, el
+  `onerror` nunca dispara, y hay una sola `<img>` en la caja.
+- ⚠️ **El overlay se muestra/oculta con `display` INLINE, no con `[hidden]`**: el `display:none` del
+  atributo `hidden` lo pone la hoja del navegador y un estilo inline le gana —el gotcha del popup del
+  QR (Sesión 114) y de `#maestroOverlay` (Sesión 20)—.
+- Guard `EFIMERO || SIN_DISCO`: ausente en modo prueba/QA/armador (escribe en disco).
+
+**Verificado jugando (mirando, no contando)** con `scripts/cdp.mjs` en 8° y 3°: el popup del
+compañero aparece con Vulpi cargado (`naturalWidth>0`), "⚔️ ¡Te desafiaron! · [rival] te retó a un
+duelo. ¿Aceptas?"; con varios desafíos dice "Y N más te están esperando" y envuelve limpio sin
+desborde; al jugar llama `abrirDueloOnline`, escribe el id, cierra el popup y oculta la nav; no
+reaparece con el mismo id; el banner queda visible de recordatorio; **el popup del profe sigue igual**
+tras la refactorización; ausente en `?solo=`. Consola limpia, cero 404.
+
+> ⚠️ **Trampa de método:** el clic real a "¡Jugar!" dispara el flujo de red de `abrirDueloOnline` con
+> un perfil falso y colgó la corrida de cdp entera —Node no imprime hasta terminar, así que un cuelgue
+> se ve igual que una corrida lenta—. La salida fue **espiar `abrirDueloOnline`** (reasignar
+> `window.abrirDueloOnline`) en vez de ejecutar su flujo real. Y el `bannerVisible:false` de un primer
+> intento era una **carrera de la prueba**: el `revisarDuelos` del arranque resolvió su fetch DESPUÉS
+> de mi inyección y vació `DUELO_AVISOS` sin tocar el popup ya abierto —en una página pesada, `load`
+> no es el principio de la vida de la página—; con espera larga da `true`.
+
+#### La lente de Formación Ciudadana en el juego (Sesión 117 · G1)
+
+Los **43 OA con eje "Formación ciudadana"** —que ya viven bancarizados dentro de Historia (180 en 3°,
+240 en 4°, 300 en 5°, 360 en 6°, 120 en 7°, 89 en 8° = **1.289 preguntas aprobadas**)— salen a la
+superficie como un **módulo jugable dedicado**: una tarjeta "🏛️ Formación Ciudadana" en la pantalla
+principal, debajo de Lectura. Nace del gancho institucional de la Sesión 117: la Ley 20.911 obliga el
+Plan de Formación Ciudadana y a la UTP le cuesta evidenciarlo; VULPO aporta esa capa medible.
+
+- **Todo en `motor.js` (la tarjeta) + una expedición `id:'civica'` por fork + `HAY_CIVICA=true`** y la
+  portada `assets/portada-formacion-ciudadana.png` (con `onerror` a `portada-historia.png`).
+- ⚠️ La bandera se lee con **`typeof HAY_CIVICA!=='undefined'`**: es nueva y la consume el motor
+  compartido, así que un fork viejo cacheado durante el despliegue no la tiene y sin la guarda sería un
+  `ReferenceError` que mata el menú (misma lección que `LECC_ABIERTAS`).
+- **Reúsa el banco de Historia** (`historia-<n>basico/preguntas.json`): su avance cuenta como cobertura
+  de Historia —los OA son `HI0n`, así que `registrarOA` los mapea a Historia—. El informe cívico
+  separado (filtrar por eje) es aparte.
+- Aparece también en el armador (`?armar=1`) y en `?solo=civica`, así que se puede repartir una
+  **muestra de Formación Ciudadana** a un colegio —justo lo que pedía la Sesión 117—.
+
+**Verificado end-to-end** con cdp en 8° y 6°: la tarjeta dice "N temas", abre el mapa con **tantos orbs
+como OA** (3 en 8°, 12 en 6°) y sirve **preguntas reales** del banco cívico (HI08 OA 17, HI06 OA 15…),
+10 por etapa, 4 opciones. Un script contra los bancos confirmó que **los 43 OA existen con 29-30
+preguntas cada uno** —descartado el bug mudo de "expedición vacía que se marca completa sin medir"—.
+Cero 404, consola limpia, motor vivo en los seis.
+
+#### El selector manual de OA para lanzar un refuerzo (`profesor.html`)
+
+Hasta hoy el profesor **no elegía** qué reforzar: el bloque "Refuerzo" calculaba solo los OA flojos
+(<70% de primer intento) y lanzaba esa lista fija. Roberto pidió elegir los objetivos **a mano, con
+casillas, como el armador de muestras** —motiva la venta institucional: lanzar un refuerzo de los OA
+cívicos de una asignatura para generar evidencia, sin depender de que el dominio los marque flojos—.
+
+**Backend y flujo del alumno: cero cambios.** `kimun_prof_refuerzo_lanzar` ya recibía una lista
+explícita de OA, y `construirPreguntasDesafio` reparte preguntas sobre cualquier lista. Todo el trabajo
+es la reescritura de la rama "sin desafío activo" de `cargarRefuerzo` en `profesor.html`.
+
+- Un **`<details>` por asignatura** (colapsado), con "N bajo 70%" en el summary; dentro, las casillas de
+  OA en **orden curricular** (por unidad, con divisor), cada una con su **% de primer intento** coloreado
+  o "sin datos". Más tres controles: **"⚡ Marcar los flojos"** (preselecciona la sugerencia automática —
+  "dejar los dos"), **"Todos/Ninguno"** (alterna) y **"📣 Lanzar refuerzo (N)"**.
+- Carga los `oa.json` de **todas** las asignaturas lanzables del profesor (`CURSO_INFO.misAsig`), no solo
+  las que ya tienen actividad, para poder reforzar una unidad recién pasada.
+- ⚠️ **Marcar por código NO dispara `change`** (gotcha del armador), así que el recalc del contador y el
+  rótulo se llaman **a mano** tras "marcar flojos" y "Todos/Ninguno".
+- ⚠️ **Override obligatorio `input[type=checkbox]{width:auto}`**: el CSS global del panel fuerza
+  `width:100%` a todo input y descoloca las casillas (mismo cuidado que "Equipo del curso").
+- **Arreglo de fondo:** `OA_CARGADA` pasa a guardar la **promesa** de carga, no un booleano —dos cargas
+  concurrentes (esta y `cargarPlan`) esperan el mismo fetch en vez de que la segunda vea la marca puesta
+  y siga con los textos todavía sin cargar, dejando un grupo sin sus OA—.
+
+**Verificado con el doble** (`panel-demo.py` + cdp, escritorio y 375px): "Ver avance" → el bloque
+"Lanzar un refuerzo" con 4 grupos (Historia 22 OA, Matemática 17, Ciencias 15, Lenguaje 26); abrir
+Historia muestra las casillas por unidad con su % coloreado; "Marcar los flojos" marca exactamente 5 y
+el contador de Lanzar sube a (5); "Todos/Ninguno" alterna con su rótulo; **Lanzar llama
+`kimun_prof_refuerzo_lanzar` con `p_asignatura:"HI08"` y los 5 OA marcados** (no la sugerencia si el
+profe la cambió). Sin desborde, casillas alineadas, consola limpia.
+
+Nada quedó sin commitear tras la orden 66. **Sin pendiente nuevo de código.** Sigue el arrastre: que
+parta el piloto (puerta el 1 de octubre), el expediente INAPI, y aplicar el esquema del cutover de la
+Sesión 116 si aún no se hizo.

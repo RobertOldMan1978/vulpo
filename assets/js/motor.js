@@ -362,6 +362,78 @@ function pintarAvisoDuelo(){
   +(des.length>1?' · y '+(des.length-1)+' más':'')+'</p><button id="btnDueloIr">¡Jugar ahora!</button>';
  $('btnDueloIr').onclick=()=>{SND.init();SND.tap();$('nav').style.display='none';abrirDueloOnline();};
  cont.hidden=false;
+ popupDuelo(des);   // sube el aviso a un popup con Vulpi (una vez por desafio nuevo; misma herramienta que el profe)
+}
+
+/* ===== Popup con Vulpi (Sesion 119) =====
+   Sube un aviso de un banner discreto a un MODAL con Vulpi. Aparece UNA sola vez por aviso
+   nuevo —recuerda en localStorage el id ya mostrado— y el banner de origen queda como
+   recordatorio permanente. Dos avisos le llegan al alumno al abrir la app y usan LA MISMA
+   herramienta: el refuerzo del profe (popupDesafio) y el desafio de un COMPANERO en el duelo
+   en linea (popupDuelo) —"y si usamos la misma herramienta cuando es un companero el que
+   desafia", Roberto—. No tiene dato propio del curso: el llamador le pasa el texto y el
+   que-hacer. jugarDesafio, asigDesafioNombre, abrirDueloOnline y SUFIJO son globales.
+   ⚠️ El overlay se muestra/oculta con display INLINE, no con [hidden]: el display:none del
+   atributo hidden lo pone la hoja del navegador y un estilo inline le gana —es el gotcha del
+   popup del QR (Sesion 114)—. */
+let _popupVulpiCSS=false;
+function popupVulpi(o){
+ if(EFIMERO || SIN_DISCO) return;                   // prueba/QA/armador: no escribe en disco
+ // Un solo modal por apertura: si ya hay uno visible, el otro aviso espera —no se marca visto,
+ // asi que reaparece en la proxima apertura—. Evita que un popup pise al otro sin perder ninguno.
+ const abierto=$('popupDes');
+ if(abierto && abierto.style.display==='flex') return;
+ try{ if(localStorage.getItem(o.clave)===o.id) return; }catch(e){}   // ya se mostro ESTE aviso
+ if(!_popupVulpiCSS){
+  const st=document.createElement('style');
+  st.textContent='#popupDes{position:fixed;inset:0;z-index:9998;display:none;align-items:center;'
+   +'justify-content:center;background:#0b0730d9;padding:20px}'
+   +'#popupDes .pd-caja{max-width:330px;width:100%;background:linear-gradient(160deg,#241a52,#150e39);'
+   +'border:2px solid var(--gold);border-radius:22px;padding:24px 20px 20px;text-align:center;'
+   +'box-shadow:0 18px 50px #000a;position:relative;animation:pdPop .38s cubic-bezier(.2,.9,.3,1.4)}'
+   +'#popupDes img{width:118px;height:auto;filter:drop-shadow(0 8px 16px #0007)}'
+   +'#popupDes h3{color:var(--gold);font-size:20px;margin:6px 0}'
+   +'#popupDes p{color:#fff;font-size:14px;line-height:1.45;margin:0 0 16px}'
+   +'#popupDes .pd-jugar{width:100%;background:var(--violet);color:#fff;border:0;border-radius:14px;'
+   +'font-family:inherit;font-weight:900;font-size:17px;padding:13px 0;cursor:pointer}'
+   +'#popupDes .pd-x{position:absolute;top:8px;right:12px;background:none;border:0;color:#fff9;'
+   +'font-size:26px;line-height:1;cursor:pointer;padding:2px 6px}'
+   +'@keyframes pdPop{from{transform:scale(.82);opacity:0}to{transform:scale(1);opacity:1}}';
+  document.head.appendChild(st); _popupVulpiCSS=true;
+ }
+ let ov=$('popupDes');
+ if(!ov){ ov=document.createElement('div'); ov.id='popupDes'; document.body.appendChild(ov); }
+ ov.innerHTML='<div class="pd-caja"><button class="pd-x" aria-label="Cerrar">✕</button>'
+  +'<img src="assets/kimun-sorprendido.png" alt="Vulpi">'
+  +'<h3>'+o.titulo+'</h3>'
+  +'<p>'+o.texto+'</p>'
+  +'<button class="pd-jugar">'+o.boton+'</button></div>';
+ const cerrar=()=>{ ov.style.display='none'; try{localStorage.setItem(o.clave,o.id);}catch(e){} };
+ ov.onclick=cerrar;                                          // tocar el fondo cierra
+ ov.querySelector('.pd-caja').onclick=e=>e.stopPropagation();
+ ov.querySelector('.pd-x').onclick=cerrar;
+ ov.querySelector('.pd-jugar').onclick=()=>{ cerrar(); SND.init(); SND.tap(); o.jugar(); };
+ ov.style.display='flex';
+}
+/* El refuerzo del profe. Lo llama revisarDesafio() de cada fork, que ya trae 'd' de
+   kimun_refuerzo_activo (una sola consulta, no se duplica aca). */
+function popupDesafio(d){
+ if(!d) return;
+ popupVulpi({ clave:'kimun_desafio_pop'+SUFIJO, id:String(d.desafio_id||''),
+  titulo:'¡Tenemos un nuevo desafío!',
+  texto:'Tu profe te dejó un refuerzo de <b>'+asigDesafioNombre(d.asignatura)+'</b>. ¿Lo hacemos juntos?',
+  boton:'🎮 ¡Jugar!', jugar:()=>jugarDesafio(d) });
+}
+/* El desafio de un companero en el duelo en linea. Lo llama pintarAvisoDuelo() con los avisos
+   clase==='desafio'. escHtml: el nombre lo escribe otra persona y este proyecto ya tuvo un XSS
+   almacenado por esta via (Sesion 51), igual que el banner de arriba. */
+function popupDuelo(des){
+ if(!des || !des.length) return;
+ const otros = des.length>1 ? ' Y '+(des.length-1)+' más te están esperando.' : '';
+ popupVulpi({ clave:'kimun_duelo_pop'+SUFIJO, id:String(des[0].id||''),
+  titulo:'⚔️ ¡Te desafiaron!',
+  texto:'<b>'+escHtml(des[0].rival)+'</b> te retó a un duelo.'+otros+' ¿Aceptas?',
+  boton:'⚔️ ¡Jugar!', jugar:()=>{ $('nav').style.display='none'; abrirDueloOnline(); } });
 }
 
 /* ===== Ranking de duelos del curso (Sesion 76) =====
@@ -877,6 +949,20 @@ function renderExpediciones(){
  bib.onclick=()=>{SND.tap(); if(bloqueado()){avisoCandado();return;} abrirBiblioteca();};
  if(bloqueado()) bib.classList.add('lock');
  g.appendChild(bib);
+ }
+ // Módulo Formación Ciudadana: camino cívico dedicado, debajo de Lectura. Reúsa el banco de
+ // Historia (los OA con eje "Formación ciudadana"); es un eje de Historia, así que su avance
+ // cuenta como cobertura de Historia (el informe cívico separado, filtrar por eje, es aparte).
+ // ⚠️ typeof: bandera nueva que consume el motor compartido. Un fork viejo cacheado durante el
+ // despliegue no la tiene, y sin la guarda sería un ReferenceError que mata el menú (misma
+ // lección que LECC_ABIERTAS).
+ if(typeof HAY_CIVICA!=='undefined' && HAY_CIVICA){
+ const civ=document.createElement('div'); civ.className='exp-card';
+ const cx=EXPEDICIONES.find(e=>e.id==='civica');
+ civ.innerHTML=`<img src="assets/portada-formacion-ciudadana.png" alt="Formación Ciudadana" onerror="this.onerror=null;this.src='assets/portada-historia.png'"><div class="exp-info"><b>🏛️ Formación Ciudadana</b><small>Derechos, deberes y vida en comunidad · ${cx?cx.etapas.length:0} temas</small></div><span class="exp-go">▶</span>`;
+ civ.onclick=()=>{SND.tap(); if(bloqueado()){avisoCandado();return;} entrarExpedicion(EXPEDICIONES.find(e=>e.id==='civica'));};
+ if(bloqueado()) civ.classList.add('lock');
+ g.appendChild(civ);
  }
 }
 function abrirBiblioteca(){
