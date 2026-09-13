@@ -12897,3 +12897,48 @@ profe la cambió). Sin desborde, casillas alineadas, consola limpia.
 Nada quedó sin commitear tras la orden 66. **Sin pendiente nuevo de código.** Sigue el arrastre: que
 parta el piloto (puerta el 1 de octubre), el expediente INAPI, y aplicar el esquema del cutover de la
 Sesión 116 si aún no se hizo.
+
+### Sesión 120 (2026-09-13) — La página del colegio suma Formación Ciudadana, PME y el selector de refuerzo
+Roberto pidió actualizar **`vulpo.cl/colegio`** —la página de dirección/UTP creada en la Sesión 112—
+con las adiciones que trajeron las últimas sesiones. **No se tocó el juego, el contenido ni el
+backend:** es capa de presentación, un solo archivo (`colegio/index.html`). Vía AskUserQuestion eligió
+tres de cuatro adiciones (dejó fuera la vista de sostenedor, que a un colegio suelto no le dice nada).
+
+- **Sección nueva de Formación Ciudadana (Ley 20.911), arriba, después del héroe/pulso.** Nace del
+  gancho institucional de la Sesión 117: la Ley 20.911 obliga el Plan de Formación Ciudadana y a la UTP
+  le cuesta evidenciarlo. Tres tiles con **números verificados contra el repo, no de memoria** —un
+  script contó **43 OA cívicos y 1.289 preguntas aprobadas** en los seis bancos de Historia (eje
+  "Formación ciudadana": 180 en 3°, 240 en 4°, 300 en 5°, 360 en 6°, 120 en 7°, 89 en 8°), y
+  `HAY_CIVICA=true` en los **seis** forks, o sea módulo jugable real, no promesa—.
+  > ⚠️ **La ley se cita sin sobrevender**, que es la disciplina de `docs/comercial.md`: VULPO "aporta
+  > evidencia medible del eje", **nunca** "cumple la Ley 20.911 por ti" —el Plan tiene dimensiones
+  > actitudinales y participativas que un quiz no cubre, dicho ya en la Sesión 117—. Y la copia **no
+  > promete un informe cívico dedicado en el panel** (eso es G1, sin construir): dice "la misma
+  > cobertura por objetivo", que es lo que sí existe hoy —los OA cívicos son `HI0n` y cuentan como
+  > cobertura de Historia en el pulso y el mapa—.
+- **Marco PME:** dos líneas donde ya calzaban —la tarjeta del pulso pasó a "Para el consejo y el PME" y
+  el informe de cierre quedó nombrado como evidencia de seguimiento de cobertura para el PME—. Sin
+  sección nueva: es un gancho institucional "gratis", porque el pulso y el cierre ya son, de hecho,
+  instrumentos PME (Sesión 117).
+- **El profe elige qué reforzar:** la sección del docente pasó de "lanza un desafío en un clic" a
+  "**elige objetivo por objetivo qué reforzar** —incluida la Formación Ciudadana—" (el selector manual
+  de la Sesión 119), que engancha con lo cívico: lanzar un refuerzo para generar evidencia.
+- De paso, la **meta description y el Open Graph** ganaron "Formación Ciudadana (Ley 20.911)" para el
+  nicho de búsqueda de UTP (SEO de la Sesión 115); el `<title>` y el `canonical` **no se tocaron**
+  (estabilidad de SEO).
+
+**Reglas comerciales respetadas:** "objetivo por objetivo" y **nunca** "una a una", sin precios en
+pesos, sin "sin internet", sin "marca registrada".
+
+**Verificado MIRANDO** con `scripts/cdp.mjs` (server local, `/colegio/` por HTTP para que las rutas
+absolutas `/assets/…` resuelvan), escritorio 1280 y móvil 390: los tres tiles en una fila en escritorio
+(Titan One, mismos `top`) y apilados en móvil; la franja pasó de 4 a 5 ítems y envuelve limpia en las
+dos anchuras; la línea PME entra bien en la sección clara; **sin desborde horizontal**; las 4 imágenes
+existentes cargan —**no hizo falta captura nueva**: la sección FC usa tiles de números y no un
+pantallazo del panel, lo que además evita fabricar una vista cívica del panel que aún no existe—;
+consola y red sin errores. Se le mandó a Roberto la captura de la sección nueva antes del commit.
+
+- **Pendiente de arrastre, sin cambios:** que parta el piloto (puerta el 1 de octubre), el expediente
+  INAPI (marca en trámite, publicada en el Diario Oficial), y **G1** en `pendiente.md` (la lente cívica
+  dentro del panel del profesor, con informe filtrado por eje). De código y contenido no quedó nada
+  abierto.
