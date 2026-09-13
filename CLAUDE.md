@@ -1691,12 +1691,16 @@ Queda vinculado a ese perfil en ese aparato, y puede repetirlo en otro para juga
 desde varios equipos. Si borra los datos del navegador, vuelve a canjear el mismo
 código y recupera su lugar.
 
-**Contraseñas de profesor:** las gestiona Supabase Auth. La **recuperación por
-correo necesita SMTP configurado** en el proyecto de Supabase; sin eso, Roberto
-restablece la contraseña a mano desde el panel de Supabase. Ojo también con el
-servicio de correo integrado: permite **solo 2 correos por hora**, así que las altas
-y confirmaciones seguidas se topan con `over_email_send_rate_limit` y hay que
-esperar.
+**Contraseñas de profesor:** las gestiona Supabase Auth. **Desde el 12/09/2026 el correo sale por
+SMTP propio de Resend** (runbook en [`docs/smtp-supabase.md`](docs/smtp-supabase.md)), así que la
+**recuperación por correo y la confirmación de cuenta ya funcionan**, y **cayó el límite de 2
+correos/hora** del servicio integrado —era el que topaba las altas seguidas con
+`over_email_send_rate_limit`—. De paso quedó corregido el **Site URL** a
+`https://vulpo.cl/profesor.html` (antes apuntaba a `localhost:3000`, el bug de la Sesión 36, así que
+el enlace de confirmación no llevaba a ninguna parte). ⚠️ **La API key de Resend vive SOLO en el
+dashboard de Supabase, nunca en el repo** (que es público), como la clave de Azure. El límite de
+sign-ups anónimos se subió a **200/h por IP** para que un curso entero en el WiFi del colegio no
+tope el 429.
 
 **Sesiones separadas:** `profesor.html` usa un cliente de Supabase con su propio
 `storageKey` (`kimun-profesor`). Sin eso, que un adulto inicie sesión como profesor
@@ -2474,7 +2478,7 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
   bandera cruda. Descubierto en la prueba real (un grant-only Operador se pintaba "Profesor"). **Aditivo**
   (una función `returns table` con su `drop`; el legado sigue prendido, no es el cutover); el panel la lee
   con degradación por bandera.
-- **Cutover · Fase 4b (Sesión 116, construido el 11/09 — falta que Roberto aplique):** los grants pasan a ser
+- **Cutover · Fase 4b (Sesión 116, APLICADO y verde en producción el 11/09 — commits `7ff302ea`+`96dc7f52`; re-confirmado midiendo el 12/09):** los grants pasan a ser
   la **única fuente de verdad**. `kimun_prof_legado_cubre` → `false` (desconecta el legado de todos los
   resolutores); se soltaron las ramas de bandera inline de `tiene_todas_asig`/`admin_colegio`; **`kimun_prof_rango(pid)`**
   nueva (rango efectivo por grants) alimenta `mi_acceso` y **`kimun_prof_profesores`** (que devuelve `rango` en
@@ -2492,20 +2496,23 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
 > **Recordar estos dos puntos CADA VEZ que se revisen los pendientes del proyecto.**
 > No son tareas de programación, pero bloquean el lanzamiento a producción.
 
-1. 🟡 **Marca VULPO en INAPI — SOLICITUD PRESENTADA Y PAGADA (07/09/2026), en trámite.**
-   Se verificó disponible el 18/08 y quedó ingresada el 07/09, **a nombre de la SpA**, que es
-   lo que corresponde ahora que la sociedad existe.
+1. 🟡 **Marca VULPO en INAPI — PUBLICADA EN EL DIARIO OFICIAL, en trámite (plazo de oposición corriendo).**
+   Se verificó disponible el 18/08, se ingresó el 07/09 **a nombre de la SpA**, y ya está
+   **publicada en el Diario Oficial** (informado el 12/09): el trámite avanzó de "presentada" a
+   "publicada".
    > **Lo que esto ya resuelve:** en Chile la marca la gana quien la registra, y **la
    > prioridad se cuenta desde la fecha de presentación**. O sea que el riesgo que costó el
-   > nombre KIMÜN —que un tercero la inscriba primero— **queda cubierto desde hoy**, aunque
-   > el registro todavía no esté concedido.
+   > nombre KIMÜN —que un tercero la inscriba primero— **queda cubierto desde la presentación
+   > del 07/09**, aunque el registro todavía no esté concedido.
    >
    > ⚠️ **Pero todavía NO está concedida, y eso cambia lo que se puede decir:** hasta que
    > INAPI la conceda, se dice *"marca en trámite"*, **nunca "marca registrada"** ni el
-   > símbolo ®. Falta la publicación en el Diario Oficial, el plazo de oposición de terceros
-   > y el examen de fondo, así que hay que **estar atento a las notificaciones del
-   > expediente**: una oposición o un reparo tienen plazo para contestarse y se pierden por
-   > no mirar. Ahí es donde un abogado de marcas vale lo que cuesta.
+   > símbolo ®. Ya está publicada; ahora **corre el plazo de oposición de terceros** y después
+   > viene el examen de fondo, así que hay que **estar atento a las notificaciones del
+   > expediente MIENTRAS la ventana de oposición está abierta**: una oposición o un reparo
+   > tienen plazo para contestarse y se pierden por no mirar. La fecha exacta de publicación —de
+   > la que corre ese plazo— está en el expediente. Ahí es donde un abogado de marcas vale lo
+   > que cuesta.
    Trámite y estado: https://www.inapi.cl/marcas
 
 2. ✅ **Dominio propio `vulpo.cl` — CONTRATADO Y CONECTADO (Sesión 40).** El juego se sirve
@@ -12708,6 +12715,72 @@ tool-results y reescribiendo los chicos desde el read. **Cuatro no son del juego
 flageados para que Roberto decida si los saca de esa carpeta: dos de **CueroMarket/SAP** (cotización a
 factura, auditoría de skills) y dos de **VulpoAsist** (el plan maestro y la especificación del libro
 de clases digital), que es otra línea de producto.
+
+### Sesión 118 (2026-09-12) — El correo de Supabase por SMTP propio, y dos pendientes fantasma cazados
+Sesión de operación e higiene, sin tocar el juego ni el contenido. El trabajo grande fue montar el
+correo de autenticación por **Resend**; de paso se cerraron dos notas que arrastraban un estado falso.
+
+#### El cutover ya estaba aplicado — un pendiente fantasma
+Roberto preguntó qué era "el esquema del cutover" (Fase 4b de permisos, Sesión 116) para aplicarlo.
+**Ya estaba aplicado y verde desde el 11/09** —lo decía `docs/aplicar-schema.md`, el registro
+autoritativo— pero el CLAUDE.md, el plan de la Fase 4, la memoria y el reporte de la orden 66 de la
+Sesión 117 seguían diciendo "falta que Roberto aplique". Casi lo mando a re-pegar algo hecho, que es
+justo el error que este archivo documenta a cada rato: **un pendiente que nadie vuelve a medir se
+arrastra solo**.
+- Se **midió contra producción** con la clave pública antes de responder (el asistente no corre SQL,
+  solo lee): `super_fijar`/`operador_fijar`→**404** (retiradas), `kimun_prof_rango`→**401** (interna,
+  revocada de anon), `mi_acceso`→**200** (por grants), control `MA06 OA 01`→`MA06`, inventada→**404**.
+  Confirmado: aplicado.
+- Se corrigió el fantasma en los **docs vivos** (memoria, la línea del Backend en CLAUDE.md, el
+  encabezado del plan). La **bitácora narrativa NO se tocó** —es historia—. La regla del proyecto
+  —"aplicarlo y **mirar el número**"— es lo que evitó el viaje en vano.
+
+#### INAPI avanzó a "publicada en el Diario Oficial"
+Roberto avisó *"inapi está listo"*. Se **preguntó qué significaba exactamente** antes de tocar nada,
+porque la palabra es una afirmación legal con línea roja: la marca pasó de **presentada** (07/09) a
+**publicada en el Diario Oficial**, pero **sigue "en trámite"** —no concedida, nada de "registrada"
+ni ®—. Lo que cambia: el argumento a un colegio es más fuerte, y ahora **corre el plazo de oposición
+de terceros**, así que hay que vigilar el expediente. Actualizado en la sección Trámites de este
+archivo, `docs/comercial.md`, `pendiente.md` y la memoria.
+
+#### El correo de autenticación por SMTP propio (Resend) — el trabajo grande
+Roberto planteó el problema real del lanzamiento: al partir el piloto registrará varias cuentas en
+poco tiempo y Supabase no lo deja. Se diagnosticaron **dos límites distintos** —y el segundo pega más
+fuerte y no lo estaba contando—:
+- **Correo** (cuentas de profe): el SMTP integrado manda **2/hora** (`over_email_send_rate_limit`).
+- **Login anónimo** (alumnos en masa): **~30/hora POR IP**, y un curso entero en el WiFi del colegio
+  **comparte una sola IP**, así que el niño 31 queda afuera con un `429`.
+
+Se montó **Resend** de punta a punta, guiando a Roberto por los tres paneles:
+- **Cloudflare/DNS:** dominio `vulpo.cl` verificado por Auto configure. Los tres registros quedan
+  aislados en `send.vulpo.cl` (SPF `include:amazonses.com` + MX de rebotes) y `resend._domainkey`
+  (DKIM), así que **el SPF/MX/DKIM/DMARC de Google Workspace quedó intacto** —verificado midiendo el
+  DNS en vivo contra el resolver autoritativo de Cloudflare—. ⚠️ Se desmarcó el **click tracking**:
+  reescribe los links y rompe el enlace de confirmación (los tokens del `#fragmento` se pierden en el
+  redirect) y lo marca más fácil como phishing.
+- **Supabase → Emails → SMTP:** `smtp.resend.com:465`, user `resend`, password = API key de Resend
+  (vive solo en el dashboard, no en el repo), sender `noreply@vulpo.cl`.
+- **Rate Limits:** correo **100/h**; **anónimos 200/h por IP** (el crítico del lanzamiento).
+- ⚠️ **El Site URL estaba en `localhost:3000`** —el bug de la Sesión 36, confirmado en vivo—:
+  corregido a `https://vulpo.cl/profesor.html` + Redirect `https://vulpo.cl/**`. Sin esto el correo se
+  manda pero el enlace no lleva a ningún lado.
+
+**Probado end-to-end: el correo de confirmación llega y el enlace aterriza en el panel.** Con eso un
+profe se auto-registra y confirma solo, y la recuperación de contraseña también funciona.
+
+> ⚠️ **El correo NO cambia la autorización, y Roberto lo notó usándolo** (*"no se ve el profe pidiendo
+> acceso"*): confirmar el correo **no da acceso** —hay que autorizar al profe aparte, y no hay cola de
+> "pendiente de aprobar" por diseño de seguridad—. Para que Roberto no sea el cuello de botella, se
+> delega en la UTP (SuperUsuario/Operador vía grants). Una cola de aprobación queda anotada como
+> posible feature (cambio de código chico).
+
+Runbook nuevo: [`docs/smtp-supabase.md`](docs/smtp-supabase.md) (sin la API key, como los demás
+runbooks del proyecto). Se corrigió la nota viva "Contraseñas de profesor" de la sección de cursos,
+que seguía diciendo "2 correos/hora / la recuperación necesita SMTP" —ya resuelto—.
+
+- **Pendiente abierto:** revisar si `profesor.html` tiene la pantalla de "poner clave nueva" para el
+  flujo de recuperación (el otro correo que Resend habilitó); puede faltar una pantallita. De
+  arrastre: que **parta el piloto** (puerta el 1 de octubre) y vigilar el expediente INAPI.
 
 - **Pendiente de arrastre:** el rework de permisos de la Sesión 116 sigue esperando que Roberto
   **aplique el esquema del cutover** (Fase 4b) y corra el diagnóstico de huérfanos antes del flip. Y

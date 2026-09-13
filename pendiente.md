@@ -720,14 +720,14 @@ Inclusión → *accesible* (voz, sin reloj), nunca "apoyo TEA/PIE" (no existe).
 
 ## Trámites, fuera del código
 
-- 🟡 **Marca VULPO en INAPI — SOLICITUD PRESENTADA Y PAGADA (07/09/2026), en trámite.**
-  Verificada disponible el 18/08, ingresada el 07/09 **a nombre de la SpA**. Con eso la
-  **prioridad se cuenta desde la fecha de presentación**, así que el riesgo que costó el
-  nombre anterior —que otro la inscriba primero— ya está cubierto.
+- 🟡 **Marca VULPO en INAPI — PUBLICADA EN EL DIARIO OFICIAL, en trámite (plazo de oposición corriendo).**
+  Verificada disponible el 18/08, ingresada el 07/09 **a nombre de la SpA**, y ya **publicada
+  en el Diario Oficial** (informado el 12/09). La **prioridad se cuenta desde la presentación**,
+  así que el riesgo que costó el nombre anterior —que otro la inscriba primero— ya está cubierto.
   ⚠️ **Todavía no está concedida:** se dice *"marca en trámite"*, **nunca "registrada"** ni ®.
-  Falta la publicación, el plazo de oposición y el examen de fondo — hay que **mirar las
-  notificaciones del expediente**, porque un reparo o una oposición tienen plazo y se pierden
-  por no contestarlos.
+  Ya se publicó; ahora **corre el plazo de oposición** y después el examen de fondo — hay que
+  **mirar las notificaciones del expediente mientras la ventana está abierta**, porque un reparo
+  o una oposición tienen plazo y se pierden por no contestarlos.
 - ✅ **La SpA está constituida**, con **inicio de actividades ante el SII desde el 01/09/2026**
   (primera categoría, afecta a IVA). Era el trámite que bloqueaba cobrar. ⚠️ Sus datos NO van
   en este repositorio, que es público: están en `Escritorio\VULPO - correos profesores\`.

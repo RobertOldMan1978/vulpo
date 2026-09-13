@@ -38,7 +38,7 @@ Sin (2), el cutover se aplica a ciegas sobre la única puerta de entrada del pil
 
 ---
 
-> ✅ **CONSTRUIDO el 11/09 (falta que Roberto aplique el esquema + orden 66).** Se hizo el cutover
+> ✅ **CONSTRUIDO, APLICADO y verde el 11/09; commiteado (`7ff302ea`+`96dc7f52`). Re-confirmado midiendo el 12/09.** Se hizo el cutover
 > completo: Parte A (legado→false, ramas inline soltadas, `super_fijar`/`operador_fijar` retiradas),
 > B0 (ya estaba), B1 (toggles quitados), y el "Equipo del curso" con **Opción 2** (espeja grants).
 > Además `kimun_prof_rango(pid)` nueva y `kimun_prof_profesores` devuelve `rango`. Verificado con el
