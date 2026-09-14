@@ -35,6 +35,7 @@
 <script src="assets/js/visuales.js"></script>
 <!-- Lectura por voz, compartida. Nace dormida: solo habla tras VOZ.init(). -->
 <script src="assets/js/voz.js"></script>
+<script src="assets/js/voz-descarga.js"></script>
 <!-- Reto Sin Fin de cálculo, compartido por todos los cursos. -->
 <script src="assets/js/calculo.js"></script>
 <script>if(!window.SENSIBLE)window.SENSIBLE={cats:{},oa:{},deExpedicion:function(){return[];}};</script>
@@ -1971,6 +1972,7 @@ const VOZ_DIRS=['assets/voz/mat3/','assets/voz/hist3/','assets/voz/cie3/','asset
 // `const` leido antes de declararse lanza ReferenceError y mata TODO el JavaScript,
 // con un sintoma que engana (la pantalla se ve bien y ningun boton responde).
 VOZ.init(VOZ_DIRS);   // assets/js/voz.js
+if(window.VOZDESC) VOZDESC.init('3ro');   // app Android: baja la voz Catalina y la cachea (en la web no hace nada)
 const $=id=>document.getElementById(id);
 const XP_POR_NIVEL=100;
 
