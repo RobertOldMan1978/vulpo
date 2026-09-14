@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad · VULPO</title>
+<meta name="description" content="Qué información recoge VULPO, para qué la usa y cómo la protege. VULPO es una plataforma de juegos educativos para escolares; recogemos lo mínimo para que el juego funcione y el profesor acompañe el aprendizaje.">
+<link rel="icon" type="image/png" href="/assets/web/vulpo-logo-320.png">
+<link rel="apple-touch-icon" href="/assets/web/vulpo-logo-320.png">
+<meta name="theme-color" content="#0e1219">
+<link rel="canonical" href="https://vulpo.cl/privacidad/">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg1:#0f1024; --bg2:#1b1740; --panel:#1e1747;
+  --gold:#ffc93c; --cyan:#4dd8ff; --green:#3ee089; --violet:#8f6bff;
+  --txt:#f3f0ff; --dim:#a89fd6; --r:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--txt);font-weight:400;
+  background:linear-gradient(160deg,var(--bg1),var(--bg2));background-attachment:fixed;
+  min-height:100vh;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:var(--cyan)}
+.stars{position:fixed;inset:0;pointer-events:none;z-index:-1}
+.stars span{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:.24}
+
+.top{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;
+  padding:12px 20px;background:rgba(15,16,36,.72);backdrop-filter:blur(8px);border-bottom:1px solid #ffffff12}
+.top a.marca{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--txt);font-weight:800}
+.top a.marca img{height:26px;width:auto}
+.top a.volver{color:var(--dim);font-weight:600;font-size:14px;text-decoration:none}
+.top a.volver:hover{color:var(--txt)}
+
+.envoltura{max-width:760px;margin:0 auto;padding:96px 22px 72px}
+h1{font-size:clamp(28px,5.4vw,42px);font-weight:800;letter-spacing:-.015em;line-height:1.15}
+.fecha{color:var(--dim);font-size:14px;margin-top:8px}
+.intro{margin-top:22px;font-size:17px;color:#e7e2ff}
+h2{font-size:clamp(19px,3vw,24px);font-weight:800;letter-spacing:-.01em;margin:38px 0 10px;
+  padding-top:22px;border-top:1px solid #ffffff12}
+h2 .n{color:var(--gold);font-variant-numeric:tabular-nums;margin-right:8px}
+p{margin:10px 0}
+ul{margin:10px 0 10px 4px;padding:0;list-style:none}
+li{position:relative;padding-left:22px;margin:8px 0}
+li::before{content:"";position:absolute;left:4px;top:11px;width:7px;height:7px;border-radius:50%;background:var(--violet)}
+li.no::before{background:#ff6b6b}
+li.si::before{background:var(--green)}
+strong{color:#fff;font-weight:700}
+.caja{background:#ffffff08;border:1px solid #ffffff14;border-radius:var(--r);padding:16px 18px;margin:16px 0}
+.pie{margin-top:48px;padding-top:22px;border-top:1px solid #ffffff12;color:var(--dim);font-size:14px}
+.pie a{font-weight:600}
+</style>
+</head>
+<body>
+<div class="stars" id="stars" aria-hidden="true"></div>
+
+<header class="top">
+  <a class="marca" href="/"><img src="/assets/web/vulpo-logo-320.png" alt="VULPO" onerror="this.style.display='none'"><span>VULPO</span></a>
+  <a class="volver" href="/">← Volver a vulpo.cl</a>
+</header>
+
+<main class="envoltura">
+  <h1>Política de Privacidad</h1>
+  <p class="fecha">Última actualización: 14 de septiembre de 2026</p>
+
+  <p class="intro">VULPO es una plataforma de juegos educativos para escolares chilenos, alineada al
+    currículum del Ministerio de Educación. Esta política explica qué información recogemos, para qué la
+    usamos y cómo la protegemos. Como VULPO está pensado para que niñas y niños aprendan, recogemos
+    <strong>solo lo mínimo</strong> necesario para que el juego funcione y para que su profesor pueda
+    acompañar su aprendizaje.</p>
+
+  <h2><span class="n">1</span>Quién es responsable</h2>
+  <p>El responsable del tratamiento de los datos es <strong>VULPO</strong>, operado en Chile. Para
+    cualquier consulta sobre esta política o sobre los datos, puedes escribirnos a
+    <a href="mailto:contacto@vulpo.cl">contacto@vulpo.cl</a>.</p>
+
+  <h2><span class="n">2</span>Qué información recogemos</h2>
+  <p><strong>De los estudiantes:</strong></p>
+  <ul>
+    <li>El <strong>nombre</strong> con que juegan. Lo escribe el propio estudiante o lo asigna su
+      profesor al inscribirlo. Sirve para saludarlo y para el ranking de su curso.</li>
+    <li>Un <strong>avatar</strong> (un emoji o personaje del juego que elige).</li>
+    <li>Su <strong>avance en el juego</strong>: experiencia, monedas, insignias y personajes
+      conseguidos, capítulos completados, un resumen de cuántas respuestas acertó por objetivo de
+      aprendizaje, y las fechas en que jugó.</li>
+    <li>Un <strong>identificador anónimo del dispositivo</strong>, generado automáticamente, que sirve
+      para guardar y recuperar su avance. No está asociado a ningún dato personal fuera del juego.</li>
+    <li>El <strong>código de acceso</strong> (por ejemplo <code>ALU-XXXXXXXX</code>) que le entrega su
+      colegio y que vincula su dispositivo a su perfil.</li>
+  </ul>
+  <p>NO recogemos de los estudiantes:</p>
+  <ul>
+    <li class="no">Correo electrónico, teléfono ni dirección.</li>
+    <li class="no">Ubicación (GPS), lista de contactos, fotos ni micrófono.</li>
+    <li class="no">Datos de pago (no hay compras dentro de la aplicación).</li>
+  </ul>
+  <p><strong>De los profesores (cuentas de adulto):</strong></p>
+  <ul>
+    <li><strong>Correo electrónico y contraseña</strong>, para iniciar sesión en el panel del profesor.</li>
+    <li>Los datos de los cursos y estudiantes que administran (los mismos descritos arriba).</li>
+  </ul>
+
+  <h2><span class="n">3</span>Para qué usamos la información</h2>
+  <p>Únicamente para que el juego cumpla su función educativa:</p>
+  <ul>
+    <li>Guardar y recuperar el avance del estudiante (para que no lo pierda al cambiar de teléfono).</li>
+    <li>Mostrar el ranking del curso y los duelos entre compañeros.</li>
+    <li>Entregar al profesor un mapa de cómo va su curso, objetivo por objetivo, para decidir qué reforzar.</li>
+  </ul>
+  <p>No usamos los datos para publicidad ni para ningún otro fin comercial.</p>
+
+  <h2><span class="n">4</span>Con quién se comparte</h2>
+  <ul>
+    <li class="no"><strong>No vendemos ni cedemos</strong> los datos a terceros con fines comerciales.</li>
+    <li class="no"><strong>No mostramos publicidad</strong> dentro del juego.</li>
+    <li class="no"><strong>No usamos rastreadores ni herramientas de analítica de terceros.</strong></li>
+    <li>Los datos se almacenan en <strong>Supabase</strong>, nuestro proveedor de base de datos, cuyos
+      servidores están en Brasil. Supabase actúa solo como encargado del tratamiento, siguiendo nuestras
+      instrucciones.</li>
+    <li>La voz pregrabada del juego se descarga desde nuestro propio sitio (vulpo.cl). Esa descarga no
+      envía datos personales.</li>
+  </ul>
+
+  <h2><span class="n">5</span>Privacidad de niñas y niños</h2>
+  <div class="caja">
+    <p style="margin:0">VULPO está dirigido a escolares, y el colegio y/o el apoderado son quienes
+      autorizan su uso. Recogemos la información mínima descrita arriba, exclusivamente para la función
+      educativa. <strong>No pedimos datos de contacto del niño, no mostramos publicidad y no hay compras
+      dentro de la aplicación.</strong> El informe de avance que el niño puede ver en su teléfono ("Cómo
+      va") se calcula en el propio aparato.</p>
+  </div>
+
+  <h2><span class="n">6</span>Cuánto se conserva y cómo se elimina</h2>
+  <ul>
+    <li>Los datos se conservan mientras el estudiante use VULPO en su colegio.</li>
+    <li>El <strong>profesor puede eliminar a un estudiante</strong> desde su panel; al hacerlo se borran
+      su perfil y todos sus datos asociados (avance, mediciones y duelos).</li>
+    <li>Un <strong>apoderado puede solicitar</strong> la eliminación de los datos de su hijo o hija
+      escribiendo a su colegio o a <a href="mailto:contacto@vulpo.cl">contacto@vulpo.cl</a>.</li>
+  </ul>
+
+  <h2><span class="n">7</span>Cómo protegemos la información</h2>
+  <ul>
+    <li class="si">Toda la comunicación viaja <strong>cifrada</strong> (HTTPS/TLS).</li>
+    <li class="si">El acceso a los datos está restringido por reglas de seguridad del servidor: nadie
+      puede leer la información de otro curso o de otro alumno.</li>
+    <li class="si">Los códigos de acceso de los estudiantes no son visibles para otros usuarios.</li>
+  </ul>
+
+  <h2><span class="n">8</span>Tus derechos</h2>
+  <p>De acuerdo con la legislación chilena de protección de datos personales, puedes solicitar
+    <strong>acceder, rectificar o eliminar</strong> los datos, o pedir información sobre su tratamiento,
+    escribiendo a <a href="mailto:contacto@vulpo.cl">contacto@vulpo.cl</a>. Responderemos en un plazo
+    razonable.</p>
+
+  <h2><span class="n">9</span>Cambios a esta política</h2>
+  <p>Si actualizamos esta política, publicaremos la nueva versión en esta misma página con su fecha. Los
+    cambios importantes se comunicarán a los colegios.</p>
+
+  <h2><span class="n">10</span>Contacto</h2>
+  <p>VULPO — <a href="mailto:contacto@vulpo.cl">contacto@vulpo.cl</a></p>
+
+  <p class="pie">© 2026 VULPO · <a href="/">vulpo.cl</a> · <a href="mailto:contacto@vulpo.cl">contacto@vulpo.cl</a></p>
+</main>
+
+<script>
+(function(){
+  try{
+    var w=document.getElementById('stars'), f=document.createDocumentFragment();
+    for(var i=0;i<48;i++){var s=document.createElement('span');
+      s.style.left=(Math.random()*100)+'%';s.style.top=(Math.random()*100)+'%';f.appendChild(s);}
+    w.appendChild(f);
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
