@@ -13250,3 +13250,39 @@ decodificación es sólido.
   los 4 secretos de GitHub, `docs/android-release-aab.md`) y lanzar el workflow *App Bundle de
   Release*; después, los formularios de la consola (los llena con la guía, fuera del repo) y enviar
   a revisión.
+
+### Sesión 125 (2026-09-14) — Se abre el gate de la privacidad para Play, y las respuestas de la consola quedan listas
+Continuación directa de la Sesión 124, mismo día. Roberto: *"avancemos por el lado de la playstore,
+que falta… sigamos por google play, que sigue"*. Sesión corta de verificación y despliegue: **cero
+código nuevo, cero contenido**.
+
+- ⚠️ **El hallazgo que importaba, verificado en vivo:** `https://vulpo.cl/privacidad/` **daba 404**.
+  La política de la Sesión 124 (`c621e1d4`) vivía solo en `feature/android`, y GitHub Pages sirve
+  desde `main` — así que **la URL que Google Play EXIGE no cargaba**, y la revisión se habría caído
+  en el primer chequeo automático. Se confirmó con un fetch al sitio en vivo, no infiriéndolo del
+  árbol de git. Es la disciplina de siempre: **mirar, no suponer.**
+- **El gate, abierto con la opción quirúrgica** (la eligió Roberto sobre el merge completo):
+  cherry-pick de `c621e1d4` a `main` con `-x` (deja la procedencia registrada de cara al merge
+  futuro de `feature/android`). Quedó como **`58e7110b`** en `main` — un solo archivo,
+  `privacidad/index.html`, path nuevo, **cero riesgo para el resto del sitio**. Con eso
+  `vulpo.cl/privacidad/` queda vivo **sin soltar el resto de la Fase A a producción**. El fix del
+  restore de la Sesión 123 sigue esperando el merge completo, que es decisión aparte.
+- **El paquete de respuestas para la consola de Play** (fuera del repo, como `guia-play-console.md`,
+  entregado a Roberto por archivo): la **ficha** (nombre, descripción breve y completa, con las
+  reglas comerciales cuidadas — sin pesos, sin "una a una", sin "sin internet", sin ®); la sección
+  de **Familias** (con el argumento fuerte: el contenido sexual salió del bundle por la Opción 2);
+  la **clasificación de contenido** (⚠️ ojo con las drogas: la prevención educativa
+  `CN06 OA 07`/`CN04 OA 08` **sí sigue en la app** —solo se sacó lo sexual—, y Roberto decide cómo
+  declararla como contenido de prevención, no promoción); y el **Data safety** derivado **literal**
+  de la política publicada (nombre del alumno, correo del profe, id anónimo, actividad en la app;
+  cifrado en tránsito; eliminación por el profe/apoderado; Supabase = encargado, **no** "compartir").
+  Cada "Sí" del Data safety calza con la política, que es justo lo que Google cruza.
+- **Assets de la ficha, medido:** el ícono 512×512 ya existe (`assets/icono-512.png`); faltan el
+  **gráfico destacado 1024×500** y **≥2 capturas del juego real**, que genera Roberto.
+
+**El camino a Play, hoy:** el lado de código está **terminado** (Capacitor + build en la nube + voz
+offline + restore + Opción 2 + `.aab` firmado + política viva). Queda lo operativo de Roberto:
+upload key + 4 secretos → correr el workflow → bajar el `.aab` → llenar la consola con el paquete de
+respuestas → enviar a revisión. **Pendiente de arrastre:** el merge completo de `feature/android` →
+`main` cuando se decida soltar toda la Fase A a la web; INAPI (marca en trámite, publicada en el
+Diario Oficial); que parta el piloto (puerta el 1 de octubre).
