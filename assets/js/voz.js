@@ -70,8 +70,12 @@ let _AUDIO=null;
    llamador caiga a la voz del navegador. `alTerminar` se llama también al fallar: sin
    eso, un clip roto dejaría la cadena de lectura colgada a mitad. */
 function sonarClip(texto,alEmpezar,alTerminar){
- const arch=VOZ_MAP&&VOZ_MAP[(texto||'').trim()];
+ let arch=VOZ_MAP&&VOZ_MAP[(texto||'').trim()];
  if(!arch) return false;
+ // En la app Android la voz vive DESCARGADA en el teléfono, no en /assets/voz/. El arranque
+ // de la app fija window.VOZ_LOCAL_BASE tras bajar y cachear el paquete del curso, y aquí se
+ // reescribe la base a esa carpeta local. En la web queda sin definir y no cambia nada.
+ if(window.VOZ_LOCAL_BASE){ arch = arch.replace(/^\/?assets\/voz\//, window.VOZ_LOCAL_BASE); }
  try{
   const a=new Audio(arch);   // `arch` ya viene con su carpeta
   _AUDIO=a;

@@ -1,0 +1,51 @@
+name: App Android (Capacitor)
+
+# Compila el APK de VULPO en la nube. Se dispara A MANO (workflow_dispatch) o al empujar
+# la rama feature/android — nunca desde main, para no tocar el sitio en vivo. El android/
+# se genera aca en cada corrida (no vive en el repo).
+on:
+  workflow_dispatch:
+  push:
+    branches: [feature/android]
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Java (para Gradle/Android)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Dependencias de Capacitor
+        run: npm install
+
+      - name: Armar el webDir (www/)
+        run: python3 scripts/armar-webdir.py
+
+      - name: Agregar la plataforma Android
+        run: npx cap add android
+
+      - name: Copiar el sitio al proyecto Android
+        run: npx cap sync android
+
+      - name: Compilar el APK de depuracion
+        run: |
+          cd android
+          chmod +x ./gradlew
+          ./gradlew assembleDebug --no-daemon
+
+      - name: Subir el APK (para instalar en el telefono)
+        uses: actions/upload-artifact@v4
+        with:
+          name: vulpo-apk-debug
+          path: android/app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error

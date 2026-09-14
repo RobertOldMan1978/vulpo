@@ -51,7 +51,7 @@ ya hace (Supabase, y —si se transmite— la voz). No hay reescritura del motor
 - **Incluye:** la nueva pantalla de entrada (selector), los seis `<n>/`, `assets/js/`, el arte y el
   audio de `assets/`, y `contenido/`.
 - **Excluye:** la landing comercial raíz, `/colegio/`, `/tutorial/`, `dev/`, y `assets/voz/` (va
-  aparte, como paquetes de Play Asset Delivery — §3). La app abre en el selector, no en la página de venta.
+  aparte, descargada y cacheada por la app — §3). La app abre en el selector, no en la página de venta.
 
 ### 1. La pantalla de entrada: selector de curso
 
@@ -77,24 +77,30 @@ en la misma app no mezcla avances. El selector no necesita tocar eso.
 - **El repo no cambia su forma de servirse en la web** (`vulpo.cl` sigue igual); el empaque es un
   paso aparte que consume el sitio.
 
-### 3. La voz — decidido: empaquetar con Play Asset Delivery (siempre la mejor voz)
+### 3. La voz — decidido: la app la descarga y la guarda (offline con Catalina)
 
-Roberto decidió (2026-09-14) que la app lleve **siempre la voz Catalina, también sin internet** — el
-peso no es problema, es tamaño normal de juego.
+Roberto decidió (2026-09-14) que la app lleve **siempre la voz Catalina, también offline**, y que se
+entregue por **descarga + caché** (no por Play Asset Delivery), para poder **probarla en el teléfono
+sin esperar la cuenta de desarrollador** — con PAD, Google Play es quien entrega los paquetes, así que
+testear la voz exigiría la cuenta (A4). PAD queda como el camino de **escalamiento**, no del MVP.
 
-Como el paquete con voz supera los ~680 MB (sobre el límite de 500 MB de módulo base de Google), la
-voz va en **paquetes de Play Asset Delivery, uno por curso**, entregados **on-demand por curso**: la
-primera vez que el niño elige su curso se descarga su voz (250–326 MB, con barra de progreso, una
-sola vez) y desde ahí queda **offline para siempre con la voz buena**. La app base (~90 MB) instala
-rápido, y un niño que solo usa 3° nunca descarga los 326 MB de 4°. Mientras el paquete de un curso
-aún no está, el juego usa el respaldo de voz del navegador (ya programado), así que nunca queda mudo.
+- **Solo 3° y 4° tienen voz pregrabada** (~250 MB y ~326 MB); **5°-8° no llevan voz**, así que no
+  descargan nada.
+- La voz **no va en el módulo base** (excede los 500 MB de Google). Va en **un paquete por curso**
+  (`voz-3ro.zip`, `voz-4to.zip`) hospedado en **GitHub Releases** (assets hasta 2 GB, fuera del git,
+  URL estable) — NO en el repo (git topa en 100 MB por archivo) ni en GitHub Pages.
+- **La primera vez que el niño entra a 3° o 4°**, la app descarga su paquete de voz (con barra de
+  progreso), lo descomprime en el almacenamiento del teléfono (Capacitor Filesystem) y desde ahí queda
+  **offline para siempre con la voz buena**. Mientras se baja, el juego usa el respaldo de voz del
+  navegador (ya programado), así que nunca queda mudo.
+- El WebView sirve la voz cacheada **reescribiendo la base de ruta**: `voz.js` reescribe `/assets/voz/…`
+  a la ubicación local (`window.VOZ_LOCAL_BASE`, con `Capacitor.convertFileSrc`). Default vacío = la web
+  intacta.
 
-⚠️ **La pieza de ingeniería clave de la Fase A** es exponer los archivos del paquete de assets al
-WebView: Android los entrega vía `AssetPackManager` (API nativa), pero el juego pide la voz por URL
-(`/assets/voz/…`). El puente —interceptar esas peticiones en el WebView y servirlas desde la
-ubicación del paquete descargado, con un plugin de Capacitor— es el mayor desconocido técnico de la
-Fase A, más que las rutas. **El motor y los forks no cambian**: siguen pidiendo `/assets/voz/…`; el
-puente vive en la capa nativa.
+⚠️ **La pieza de ingeniería clave de la Fase A** es esa descarga + descompresión + servido en el
+teléfono (Capacitor Filesystem + una utilidad de zip + el reescrito de `voz.js`). Se prueba en el
+teléfono en A2/A3. Contra asumida: por ahora la descarga sale de GitHub Releases (bien para el piloto);
+para escala grande se pasa a PAD o un CDN.
 
 ### 4. El build en la nube (GitHub Actions)
 
@@ -128,9 +134,9 @@ Es el objetivo de la primera prueba de A2.
 
 ## Riesgos y decisiones abiertas
 
-1. **El puente PAD↔WebView** (§3) — decidido empaquetar la voz para tener siempre la mejor voz
-   offline; el mayor desconocido técnico de la Fase A es exponer el paquete de assets al WebView.
-   Se resuelve con un plugin de Capacitor; se prueba en teléfono en A2/A3.
+1. **La descarga + caché de la voz** (§3) — decidido: la app baja el paquete de voz del curso, lo
+   descomprime en el teléfono y lo sirve al WebView (`voz.js` reescribe la ruta). Es el mayor trabajo
+   de ingeniería de la Fase A y se prueba en teléfono en A2/A3.
 2. **Rutas bajo Capacitor** (§5) — bajo riesgo por el diseño de rutas absolutas, pero se verifica en
    teléfono en A2.
 3. **El paso de build en la nube** (§4) — tooling nuevo; acotado a Android.
@@ -139,8 +145,9 @@ Es el objetivo de la primera prueba de A2.
 
 ## Qué NO cambia
 
-- El motor (`assets/js/*.js`) y los seis forks: no se tocan por esto. Siguen pidiendo la voz en
-  `/assets/voz/…`; el puente nativo (§3) sirve esos archivos desde el paquete de assets descargado.
+- Los seis forks no se tocan por esto. `assets/js/voz.js` gana **un solo enganche** seguro
+  (`window.VOZ_LOCAL_BASE`, default vacío = la web intacta) para reescribir la ruta de la voz a la
+  carpeta cacheada en el teléfono; el resto del motor no cambia.
 - `supabase/schema.sql`: cero cambios en la Fase A.
 - La web en `vulpo.cl`: sigue sirviéndose igual.
 - El contenido: ni un banco, ni una pregunta, ni un clip.
