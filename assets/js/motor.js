@@ -1625,6 +1625,37 @@ function _tesoro(){
   _tesoroT=setTimeout(function(){ if(d) d.style.opacity='0'; }, 1700);
  }catch(e){}
 }
+/* "Salir" del menu principal (SOLO en la app): fuerza la subida de la foto, confirma que
+   el avance quedo a salvo y vuelve al selector de cursos. Reusa #salirWeb, que en la web
+   sigue siendo "Volver a vulpo.cl". Asi el alumno cierra con la certeza de que se guardo. */
+async function _salirGuardando(){
+ var ov=document.createElement('div');
+ ov.style.cssText='position:fixed;inset:0;z-index:100000;background:rgba(12,8,26,.97);display:flex;'+
+  'flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;'+
+  'font:800 18px/1.45 Nunito,system-ui,sans-serif;padding:24px';
+ ov.innerHTML='<div style="font-size:46px">💾</div><div id="_salirMsg" style="margin-top:14px">Guardando tu avance…</div>';
+ (document.body||document.documentElement).appendChild(ov);
+ try{ if(SB&&MI_PERFIL&&!EFIMERO) await _enviarFoto(); }catch(e){}
+ var m=document.getElementById('_salirMsg'); if(m) m.textContent='✅ ¡Listo! Tu avance quedó a salvo.';
+ await new Promise(function(r){ setTimeout(r,950); });
+ // Si algun dia se agrega @capacitor/app, cerrar la app de verdad; si no, volver al selector.
+ try{ var C=window.Capacitor; if(C&&C.Plugins&&C.Plugins.App&&C.Plugins.App.exitApp){ C.Plugins.App.exitApp(); return; } }catch(e){}
+ location.href='/';
+}
+(function(){
+ var C=window.Capacitor; if(!(C&&C.isNativePlatform&&C.isNativePlatform())) return;   // solo en la app
+ function montar(){
+  var b=document.getElementById('salirWeb'); if(!b) return;
+  b.textContent='🚪 Salir';
+  b.removeAttribute('href');
+  // Inline gana sobre @media(display-mode:standalone){#salirWeb{display:none}}, asi se ve en la app.
+  b.style.cssText='display:inline-block;margin-top:14px;padding:10px 22px;border-radius:12px;'+
+   'border:1.5px solid #4dd8ff;color:#4dd8ff;font:800 14px Nunito,system-ui,sans-serif;'+
+   'text-decoration:none;cursor:pointer';
+  b.onclick=function(ev){ if(ev)ev.preventDefault(); _salirGuardando(); };
+ }
+ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',montar); else montar();
+})();
 
 /* Resumen comparable de un save: sirve para decidir si hay conflicto y para
    pintarlo. "capitulos" cuenta las rutas cuyo ULTIMO nodo -el jefe- esta vencido. */
