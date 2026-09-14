@@ -13002,3 +13002,77 @@ no se mantenía sincronizado con los grants.
 - **De paso**, se sembró **actividad semanal en CUR-BA04** para la foto (`seed-semana-8vo-2026-09-13.sql`,
   fuera del repo): incremental, no borra nada (las fotos cuelgan de `perfiles` con cascade), idempotente
   por día; Roberto lo aplicó.
+
+### Sesión 122 (2026-09-14) — Rumbo a Google Play: el plan, el spec y la puerta de entrada de la app (A1)
+
+Sesión de dirección y primer código hacia el **Bloque F / Android**. Roberto preguntó por qué el
+piloto sería requisito para saltar a Google Play "si la estructura del juego ya está". Tenía razón, y
+la conversación ordenó el rumbo. **No se tocó contenido ni el motor de los seis forks; no cambia
+`supabase/schema.sql`.**
+
+#### El piloto NO es requisito técnico para Play
+
+Son dos cosas distintas encadenadas: el **piloto** sirve para **venderle a colegios** (el modelo de
+hoy, licencia por alumno, juegan en el navegador); **Google Play** es **otro canal** (una familia
+descarga la app). El juego, que es lo que ya está, alcanza para publicar.
+
+#### Cómo se salta la comisión de Google (la decisión de fondo del cobro)
+
+No se puede **vender adentro** de la app (un botón que cobre → obliga a Play Billing y su comisión, y
+la política ni deja enlazar la compra). Sí se puede **vender afuera** (web) y que la app **valide una
+licencia** — el modelo Netflix/Kindle. **Y VULPO ya funciona así:** el colegio paga por factura, el
+niño canjea su `ALU-` y se abre el juego; la app no cobra, valida. Esa arquitectura ya está construida.
+
+El plan queda en **dos fases**: **Fase A** = en Play con el modelo de hoy (gratis + `ALU-`, sin backend
+nuevo); **Fase B** = cobro directo a familias (licencia/suscripción validada en el servidor, la tarea
+E1), como actualización, sin frenar el lanzamiento. El pago web y el billing de Google quedan fuera.
+
+#### Las decisiones de producto de Roberto
+
+- ⚠️ **Una sola app, no seis** — y el peso NO es bloqueador, medido con datos: 680 MB es tamaño normal
+  de juego; Google permite **500 MB de módulo base** y hasta **4 GB por dispositivo con Play Asset
+  Delivery**; Genshin instala 254 MB y baja 40-50 GB después. El único argumento de las seis apps era
+  el peso, y se cayó.
+- **Entrada = selector de curso** (elegido sobre "la landing comercial adentro de la app").
+- **Voz siempre Catalina, también offline** — empaquetada por **Play Asset Delivery**, un paquete por
+  curso, on-demand: la primera vez que el niño entra a su curso se baja su voz (250-326 MB, una sola
+  vez) y queda offline para siempre; la app base pesa ~90 MB.
+- **Build en la nube (GitHub Actions), sin Android Studio** — Roberto no tiene el toolchain, sí un
+  teléfono Android; la nube arma el APK y él lo instala para probar. Como se dispara con `git push`,
+  sigue el espíritu "git push y (la nube) arma la app".
+- **La intro en video va al arranque de la app** (una vez por dispositivo), no dentro del curso.
+
+#### El spec y A1 (hecho)
+
+- Spec: `docs/superpowers/specs/2026-09-14-app-android-capacitor-design.md`.
+- **`app/index.html` (nuevo): la puerta de entrada de la app** — selector de curso (los seis, recuerda
+  el último con "▶ Seguir en X°", más "🎟️ Tengo un código"), con la cara del juego (Vulpi, cosmos,
+  VULPO en Titan One), y la **intro al arranque** (flag `vulpo_intro`, botón "Saltar", respaldo "▶ Toca
+  para comenzar" si el navegador bloquea el sonido; en la app nativa el WebView permitirá el autoplay
+  con sonido). Rutas absolutas (`/assets`, `/5to/`) para resolver igual desde la raíz del sitio y del
+  paquete.
+- **Verificado con `cdp.mjs`, MIRANDO** (390px): 6 tiles con sus rutas, Vulpi carga, el estado
+  "recordado", tocar un curso guarda la elección, la intro se salta bajo "menos movimiento" y forzada
+  aparece con `/assets/intro.mp4` (Saltar cierra y sella el flag). **Sin desborde, cero 404, cero
+  errores de consola.**
+- **Auditoría de rutas (la otra mitad de A1): favorable** — los seis forks usan `<base href="/">` con
+  enlaces absolutos y Supabase con URL absoluta, así que empaquetar **no pelea con las rutas** (el
+  riesgo #1). Se confirma final en el teléfono, en A2.
+
+⚠️ **Nueva carpeta `/app/` en la raíz, justificada:** es la puerta de la app (`start_url` del paquete),
+no la landing comercial. Es servible en la web en `/app/` (inofensivo).
+
+#### Lo honesto, y lo que queda
+
+- ⚠️ **El mayor desconocido técnico de la Fase A es el puente PAD↔WebView:** Android entrega los
+  paquetes de voz con una API nativa (`AssetPackManager`), pero el juego pide la voz por URL
+  (`/assets/voz/…`); hay que interceptar y servir esos archivos desde un plugin de Capacitor. Es lo que
+  se resuelve y se prueba en A2/A3, en el teléfono. El motor y los forks no cambian.
+- ⚠️ **Probar el build en la nube exige un `push`** (a una rama aparte, no `main`), porque el build vive
+  en GitHub Actions. Roza "nada se sube hasta orden 66"; la forma limpia es una rama `feature/android`
+  que se autoriza para los builds sin tocar el sitio en vivo.
+- **El roadmap paso a paso vive como artifact privado + copia en `Escritorio\VULPO - correos
+  profesores\camino-google-play.html`** (fuera del repo: es planificación y muestra el modelo de cobro).
+- **Pendiente:** A2 (proyecto Capacitor + workflow de GitHub Actions + probar en el teléfono), A3 (Play
+  Asset Delivery para la voz), A4 (cuenta de desarrollador — **Roberto ya la lanzó**), A5 (política de
+  privacidad + formulario de Familias/Datos), A6 (revisión de Google). Fase B (cobro a familias) después.

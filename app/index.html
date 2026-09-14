@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1a1033">
+<link rel="icon" href="/assets/favicon-32.png">
+<title>VULPO — Elige tu curso</title>
+<!-- Puerta de entrada de la app Android (Capacitor). En el paquete es la pantalla de
+     inicio (start_url); en la web queda servible en /app/ (inofensivo). Rutas ABSOLUTAS
+     (/assets, /5to/…) para resolver igual desde la raíz del sitio y del paquete. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titan+One&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+  :root{
+    --gold:#ffc93c; --cyan:#4dd8ff; --green:#3ee089; --pink:#ff4d8d; --violet:#8f6bff;
+    --ink:#fff; --dim:#c9bfe6;
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  html,body{height:100%}
+  body{
+    margin:0; color:var(--ink);
+    font-family:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
+    background:
+      radial-gradient(1200px 700px at 50% -10%, #3a2470 0%, rgba(58,36,112,0) 60%),
+      radial-gradient(900px 600px at 85% 110%, #4a2a6b 0%, rgba(74,42,107,0) 55%),
+      linear-gradient(180deg, #1a1033 0%, #0d0820 100%);
+    background-attachment:fixed;
+    min-height:100vh; min-height:100dvh;
+    display:flex; flex-direction:column; align-items:center;
+    padding:max(24px,env(safe-area-inset-top)) 20px calc(28px + env(safe-area-inset-bottom));
+    overflow-x:hidden;
+  }
+  .stars{position:fixed; inset:0; z-index:-1; pointer-events:none}
+  .stars i{position:absolute; width:2px; height:2px; border-radius:50%; background:#fff; opacity:.5;
+    animation:tw 3.2s ease-in-out infinite}
+  @keyframes tw{0%,100%{opacity:.22}50%{opacity:.85}}
+
+  .top{display:flex; flex-direction:column; align-items:center; margin-top:8px}
+  .vulpi{width:112px; height:112px; object-fit:contain; filter:drop-shadow(0 8px 22px rgba(0,0,0,.4));
+    animation:float 4s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+  .marca{
+    font-family:"Titan One",cursive; font-size:clamp(40px,11vw,58px); line-height:1; margin:10px 0 0;
+    letter-spacing:.02em;
+    background:linear-gradient(92deg,var(--cyan),var(--violet) 55%,var(--pink));
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+    text-shadow:0 2px 0 rgba(0,0,0,.12);
+  }
+  .lema{color:var(--dim); font-weight:700; font-size:15px; margin:8px 0 0; letter-spacing:.01em}
+
+  .seguir{
+    display:none; margin:22px 0 0; width:100%; max-width:420px;
+    background:linear-gradient(180deg,#ffd75a,#f5b71e); color:#3a2a00; text-decoration:none;
+    font-family:"Nunito"; font-weight:800; font-size:18px; text-align:center;
+    padding:15px 18px; border-radius:16px; box-shadow:0 8px 22px rgba(245,183,30,.32);
+  }
+  .seguir b{font-weight:800}
+  .seguir:active{transform:translateY(1px)}
+  .o{display:none; color:var(--dim); font-weight:700; font-size:13px; margin:16px 0 4px; letter-spacing:.06em; text-transform:uppercase}
+
+  h1.tit{font-family:"Titan One",cursive; font-weight:400; font-size:22px; margin:26px 0 4px; color:#fff}
+
+  .grid{
+    width:100%; max-width:440px; margin:16px 0 0;
+    display:grid; grid-template-columns:repeat(3,1fr); gap:12px;
+  }
+  .curso{
+    position:relative; text-decoration:none; color:#fff;
+    background:linear-gradient(180deg, rgba(143,107,255,.20), rgba(143,107,255,.07));
+    border:1.5px solid rgba(143,107,255,.45); border-radius:18px;
+    padding:18px 8px 14px; display:flex; flex-direction:column; align-items:center; gap:2px;
+    box-shadow:0 6px 16px rgba(0,0,0,.22); transition:transform .12s ease, border-color .12s ease, box-shadow .12s ease;
+  }
+  .curso .n{font-family:"Titan One",cursive; font-size:34px; line-height:1}
+  .curso .b{font-weight:700; font-size:12.5px; color:var(--dim); letter-spacing:.02em}
+  .curso:active{transform:scale(.96)}
+  @media(hover:hover){ .curso:hover{transform:translateY(-3px); border-color:var(--ac); box-shadow:0 12px 26px rgba(0,0,0,.3)} .curso:hover .n{color:var(--ac)} }
+  .curso:focus-visible{outline:3px solid var(--ac); outline-offset:2px}
+  .curso[data-n="3"]{--ac:var(--cyan)}
+  .curso[data-n="4"]{--ac:var(--green)}
+  .curso[data-n="5"]{--ac:var(--gold)}
+  .curso[data-n="6"]{--ac:var(--pink)}
+  .curso[data-n="7"]{--ac:var(--violet)}
+  .curso[data-n="8"]{--ac:var(--cyan)}
+
+  .ayuda{
+    max-width:440px; margin:26px auto 0; text-align:center; color:var(--dim);
+    font-size:13.5px; line-height:1.5;
+  }
+  .ayuda b{color:#fff; font-weight:800}
+  .codigo{color:var(--gold); font-weight:800; font-family:ui-monospace,Menlo,Consolas,monospace}
+
+  #intro{position:fixed; inset:0; z-index:100; background:#000; display:flex; align-items:center; justify-content:center; transition:opacity .5s ease}
+  #intro.saliendo{opacity:0}
+  #intro video{width:100%; height:100%; object-fit:cover}
+  .intro-skip{position:absolute; top:calc(12px + env(safe-area-inset-top)); right:14px; z-index:2;
+    background:rgba(0,0,0,.45); color:#fff; border:1px solid rgba(255,255,255,.4); border-radius:999px;
+    font-family:"Nunito",sans-serif; font-weight:700; font-size:14px; padding:8px 16px; cursor:pointer}
+  .intro-tap{position:absolute; inset:0; z-index:1; display:flex; align-items:center; justify-content:center;
+    background:rgba(0,0,0,.4); color:#fff; font-family:"Titan One",cursive; font-size:clamp(20px,6vw,26px);
+    cursor:pointer; text-align:center; padding:20px}
+
+  @media (prefers-reduced-motion:reduce){
+    .stars i,.vulpi{animation:none}
+  }
+</style>
+</head>
+<body>
+  <!-- Intro de bienvenida, una vez por dispositivo (o forzada con ?intro=1). Va arriba para cubrir
+       antes de que pinte el selector; si el JS falla, queda oculta y el selector se ve igual. -->
+  <div id="intro" hidden>
+    <video id="vid" src="/assets/intro.mp4" playsinline preload="auto"></video>
+    <button class="intro-skip" id="skip" type="button">Saltar ✕</button>
+    <div class="intro-tap" id="tap" hidden>▶ Toca para comenzar</div>
+  </div>
+  <script>
+  (function(){
+    var q=location.search;
+    var reduce=false; try{ reduce=matchMedia('(prefers-reduced-motion:reduce)').matches; }catch(e){}
+    var vista=false; try{ vista=localStorage.getItem('vulpo_intro')==='1'; }catch(e){}
+    var ver = q.indexOf('intro=1')>=0 || (q.indexOf('intro=0')<0 && !reduce && !vista);
+    if(!ver) return;
+    var intro=document.getElementById('intro'), v=document.getElementById('vid'),
+        tap=document.getElementById('tap'), skip=document.getElementById('skip');
+    intro.hidden=false;
+    function cerrar(){
+      try{ localStorage.setItem('vulpo_intro','1'); }catch(e){}
+      intro.classList.add('saliendo');
+      setTimeout(function(){ intro.hidden=true; }, 520);
+    }
+    skip.addEventListener('click', cerrar);
+    v.addEventListener('ended', cerrar);
+    v.addEventListener('error', cerrar);           // si el video falla, no bloquear
+    var p; try{ p=v.play(); }catch(e){ cerrar(); return; }
+    if(p && p.catch){ p.catch(function(){          // autoplay con sonido bloqueado (web): pedir un toque
+      tap.hidden=false;
+      tap.addEventListener('click', function(){ tap.hidden=true; try{ v.play(); }catch(e){} });
+    }); }
+  })();
+  </script>
+
+  <div class="stars" id="stars" aria-hidden="true"></div>
+
+  <div class="top">
+    <img class="vulpi" src="/assets/vulpo-mascota.png" alt="Vulpi, la mascota de VULPO"
+         onerror="this.style.display='none'">
+    <div class="marca">VULPO</div>
+    <p class="lema">Aprende jugando</p>
+  </div>
+
+  <a class="seguir" id="seguir" href="#"></a>
+  <div class="o" id="o">o elige otro</div>
+
+  <h1 class="tit" id="titElige">Elige tu curso</h1>
+
+  <nav class="grid" aria-label="Cursos">
+    <a class="curso" data-n="3" href="/3ro/"><span class="n">3°</span><span class="b">básico</span></a>
+    <a class="curso" data-n="4" href="/4to/"><span class="n">4°</span><span class="b">básico</span></a>
+    <a class="curso" data-n="5" href="/5to/"><span class="n">5°</span><span class="b">básico</span></a>
+    <a class="curso" data-n="6" href="/6to/"><span class="n">6°</span><span class="b">básico</span></a>
+    <a class="curso" data-n="7" href="/7mo/"><span class="n">7°</span><span class="b">básico</span></a>
+    <a class="curso" data-n="8" href="/8vo/"><span class="n">8°</span><span class="b">básico</span></a>
+  </nav>
+
+  <p class="ayuda">¿Tienes un código <span class="codigo">ALU-</span>? Entra a tu curso y canjéalo ahí,
+    en <b>«🎟️ Tengo un código»</b>.</p>
+
+<script>
+(function(){
+  var RUTAS={ "3":"3ro","4":"4to","5":"5to","6":"6to","7":"7mo","8":"8vo" };
+  var KEY="vulpo_curso";
+
+  // Estrellas (baratas, y quietas si el sistema pide menos movimiento).
+  try{
+    var wrap=document.getElementById("stars"), n=42, frag=document.createDocumentFragment();
+    for(var i=0;i<n;i++){
+      var s=document.createElement("i");
+      s.style.left=(Math.random()*100)+"%";
+      s.style.top=(Math.random()*100)+"%";
+      s.style.animationDelay=(Math.random()*3.2)+"s";
+      frag.appendChild(s);
+    }
+    wrap.appendChild(frag);
+  }catch(e){}
+
+  function recordar(n){ try{ localStorage.setItem(KEY,n); }catch(e){} }
+
+  // Al tocar un curso, recordarlo; la navegación la hace el href.
+  [].slice.call(document.querySelectorAll(".curso")).forEach(function(a){
+    a.addEventListener("click", function(){ recordar(a.getAttribute("data-n")); });
+  });
+
+  // Si ya eligió un curso antes, ofrecer "Seguir en X°" arriba.
+  var ult=null; try{ ult=localStorage.getItem(KEY); }catch(e){}
+  if(ult && RUTAS[ult]){
+    var b=document.getElementById("seguir");
+    b.innerHTML='▶ Seguir en <b>'+ult+'° básico</b>';
+    b.setAttribute("href","/"+RUTAS[ult]+"/");
+    b.style.display="block";
+    document.getElementById("o").style.display="block";
+    document.getElementById("titElige").style.display="none";
+    b.addEventListener("click", function(){ recordar(ult); });
+  }
+})();
+</script>
+</body>
+</html>
