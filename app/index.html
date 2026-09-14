@@ -156,13 +156,16 @@
 
   <h1 class="tit" id="titElige">Elige tu curso</h1>
 
+  <!-- Rutas con index.html EXPLÍCITO: el WebView de Capacitor no sirve el índice de una
+       carpeta (/3ro/), cae al index.html raíz (el selector) y parece que "no entra". El
+       archivo explícito resuelve igual en la web y en la app. -->
   <nav class="grid" aria-label="Cursos">
-    <a class="curso" data-n="3" href="/3ro/"><span class="n">3°</span><span class="b">básico</span></a>
-    <a class="curso" data-n="4" href="/4to/"><span class="n">4°</span><span class="b">básico</span></a>
-    <a class="curso" data-n="5" href="/5to/"><span class="n">5°</span><span class="b">básico</span></a>
-    <a class="curso" data-n="6" href="/6to/"><span class="n">6°</span><span class="b">básico</span></a>
-    <a class="curso" data-n="7" href="/7mo/"><span class="n">7°</span><span class="b">básico</span></a>
-    <a class="curso" data-n="8" href="/8vo/"><span class="n">8°</span><span class="b">básico</span></a>
+    <a class="curso" data-n="3" href="/3ro/index.html"><span class="n">3°</span><span class="b">básico</span></a>
+    <a class="curso" data-n="4" href="/4to/index.html"><span class="n">4°</span><span class="b">básico</span></a>
+    <a class="curso" data-n="5" href="/5to/index.html"><span class="n">5°</span><span class="b">básico</span></a>
+    <a class="curso" data-n="6" href="/6to/index.html"><span class="n">6°</span><span class="b">básico</span></a>
+    <a class="curso" data-n="7" href="/7mo/index.html"><span class="n">7°</span><span class="b">básico</span></a>
+    <a class="curso" data-n="8" href="/8vo/index.html"><span class="n">8°</span><span class="b">básico</span></a>
   </nav>
 
   <p class="ayuda">¿Tienes un código <span class="codigo">ALU-</span>? Entra a tu curso y canjéalo ahí,
@@ -198,7 +201,7 @@
   if(ult && RUTAS[ult]){
     var b=document.getElementById("seguir");
     b.innerHTML='▶ Seguir en <b>'+ult+'° básico</b>';
-    b.setAttribute("href","/"+RUTAS[ult]+"/");
+    b.setAttribute("href","/"+RUTAS[ult]+"/index.html");
     b.style.display="block";
     document.getElementById("o").style.display="block";
     document.getElementById("titElige").style.display="none";
