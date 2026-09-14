@@ -61,6 +61,12 @@ jobs:
       - name: Copiar el sitio al proyecto Android
         run: npx cap sync android
 
+      # El Android Gradle Plugin genera un keystore de debug AL AZAR por build (firma
+      # distinta cada vez), asi que hay que forzarlo a usar el estable de ~/.android/. Sin
+      # esto, Android rechaza actualizar la app ("conflicto de paquetes") y toca desinstalar.
+      - name: Firmar el debug con el keystore estable
+        run: python3 scripts/patch-debug-signing.py
+
       - name: Compilar el APK de depuracion
         run: |
           cd android
