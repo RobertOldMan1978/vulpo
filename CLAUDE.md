@@ -13076,3 +13076,81 @@ no la landing comercial. Es servible en la web en `/app/` (inofensivo).
 - **Pendiente:** A2 (proyecto Capacitor + workflow de GitHub Actions + probar en el teléfono), A3 (Play
   Asset Delivery para la voz), A4 (cuenta de desarrollador — **Roberto ya la lanzó**), A5 (política de
   privacidad + formulario de Familias/Datos), A6 (revisión de Google). Fase B (cobro a familias) después.
+
+### Sesión 123 (2026-09-14) — La app anda en el teléfono: restore, navegación, intro, Salir y la firma estable
+Continuación directa del rumbo Android de la Sesión 122 (Fase A). El objetivo de esta sesión fue **A2**:
+que el APK **compile en la nube, se instale y funcione en el teléfono de Roberto**, y arreglar lo que
+apareciera probándolo. **Todo vive en la rama `feature/android`** (test builds, sin merge a `main`); el
+loop es push → GitHub Actions arma el APK → se sube a la pre-release `android-prueba` (link fijo). El
+detalle del loop y sus trampas quedó en la memoria (`reference-android-build-loop`).
+
+#### El bug de fondo del Bloque D: al reinstalar+re-canjear volvía SOLO el XP
+Es lo que Roberto pidió al inicio: *"que si se reinstala la aplicación no genere nuevamente la experiencia
+y monedas… ya me la sé"*. El síntoma en el teléfono: tras reinstalar y re-canjear el `ALU-`, volvía el XP
+pero **no las monedas, ni las skins compradas, ni las campañas ya pasadas**. Se instrumentó con una barra
+de diagnóstico en pantalla (`_diag`, solo nativa) que confirmó el camino: tomaba *"sin avance local → aplico
+la foto"* y aun así solo volvía el XP.
+- **La causa, leída en el código (no adivinada):** el XP vuelve del **perfil** por otra vía (`kimun_xp`),
+  aparte de la foto; monedas/skins/campañas viven **solo en la foto**. El flujo del canje
+  (`<n>/index.html`) llama `guardar()` **antes** de `bajarProgreso()`, y en un teléfono recién reinstalado
+  ese `guardar()` sube la foto **VACÍA** local. En un dispositivo nuevo el rebote de 15 s vale 0, así que
+  esa subida corre contra la bajada y **pisa la foto buena** del servidor. Por eso volvía el XP (perfil,
+  intacto) y no el resto (foto pisada).
+- **El arreglo, entero en `assets/js/motor.js` (sin tocar los seis forks):** `bajarProgreso` cancela
+  cualquier subida pendiente al arrancar —corre en el MISMO tick síncrono que el `guardar()` del canje, así
+  que la mata ANTES de que dispare— y un guard `_bajando` suprime subidas mientras dura la restauración
+  (cubre visibilitychange y el `guardar()` post-aplicar). **Confirmado en el teléfono:** vuelven monedas,
+  skin y campañas.
+  > ⚠️ **Esto NO es solo de la app: es un bug de producción del sitio también.** Un alumno web que borra
+  > los datos del navegador y re-canjea sufre el mismo clobber. El fix vive en `motor.js` (compartido), así
+  > que cuando esto se lleve a `main` corrige la web de paso.
+
+#### Dos bugs de navegación que eran los overlays de diagnóstico
+Roberto: *"no siempre funciona el botón de la tienda"* y *"al salir te manda a la campaña de historia"*.
+Se verificó **jugando en el navegador** con `cdp.mjs` que la navegación de la tienda enruta bien en todos
+los caminos (el "Volver" siempre vuelve al origen correcto) — o sea no era la lógica compartida. Eran los
+**overlays de aviso que agregué (la barra verde `_diag` arriba y el globito del tesoro abajo) sin
+`pointer-events:none`**, así que interceptaban toques sobre los botones de abajo. Se les puso
+`pointer-events:none`. Regla: un overlay de aviso nunca debe comerse un toque.
+
+#### La UX de la app (tres pedidos de Roberto)
+- **Intro duplicado:** el selector (`app/index.html`) mostraba el intro, y el curso lo repetía. Los links
+  del selector llevan ahora `?intro=0`, que el fork respeta (salta y marca visto). Intro **una vez por
+  dispositivo**, en el arranque.
+- **"Pantallazo de reproducción feo":** era el **reproductor NATIVO del WebView** (play gigante + barra)
+  asomándose mientras el video cargaba. Ahora una **carátula** (la mascota sobre fondo oscuro) lo tapa
+  hasta que el video EMPIEZA a reproducir (evento `playing`), y ahí se descubre. El video arranca muteado
+  (autoplay limpio) y se desmutea al arrancar para la fanfarria.
+- **Aviso de guardado molesto:** estaba abajo y salía en cada subida. Ahora es una píldora chica **arriba**
+  y con **throttle** (máximo una vez cada 2 min).
+- **Botón "Salir":** en `scr-rol`, solo en la app (reusa `#salirWeb`, que en la web sigue siendo "Volver a
+  vulpo.cl"). **Pregunta** ("¿Salir de VULPO?"), y al confirmar **fuerza la subida de la foto**, confirma
+  *"tu avance quedó a salvo"* y **cierra la app de verdad** (se agregó **`@capacitor/app`** para
+  `exitApp()`; si faltara, cae a volver al selector). Verificado con cdp que llama `exitApp`.
+- Se **retiró la barra verde de diagnóstico** (`_diag` pasa a no-op): el restore quedó confirmado.
+
+#### ⚠️ La firma de debug estable — el gotcha grande, y por qué costó
+Roberto no podía **actualizar** el APK sobre el instalado: *"conflicto de paquetes"*. Es una firma
+distinta. **Primer intento:** cachear `~/.android/debug.keystore` entre corridas (el keystore se generaba
+al azar en cada build). El cache daba HIT (mismo keystore), pero **seguía el conflicto**. Se **midió** la
+firma real de dos APK comparando `unzip -p app.apk 'META-INF/CERT.RSA' | sha256sum`: **distintas**. O sea
+**el Android Gradle Plugin IGNORA `~/.android/debug.keystore`** y genera el suyo al azar cada build (usa su
+propia ruta según variables del runner).
+- **El fix definitivo:** `scripts/patch-debug-signing.py` le mete al `android/app/build.gradle` generado un
+  `signingConfig.debug` explícito apuntando al keystore estable, corrido en el workflow tras `npx cap sync`.
+- **Verificado ANTES de pedirle a Roberto otra desinstalada:** dos builds del mismo código salieron con
+  **la misma firma** (`1d0403d2…`). Recién ahí se subió el APK y Roberto confirmó *"instalada"* (una última
+  desinstalada para adoptar la firma estable; de ahí en adelante se actualiza sin desinstalar).
+  > **Lección de método:** "el cache da hit" no es "la firma es estable" — hay que **medir la firma del
+  > artefacto**, no confiar en el paso intermedio. Es la misma disciplina de "aplicarlo y mirar el número".
+
+#### Otros
+- Se agregó **`@capacitor/app`** a `package.json` (para `exitApp`); compiló sin problema en la nube.
+- Verificación siempre **jugando/midiendo con `cdp.mjs`** (la navegación de la tienda, el intro, el diálogo
+  de Salir) y comparando firmas de APK; no hay Java local, así que las firmas se comparan por el hash del
+  `META-INF/CERT.RSA`.
+- **Pendiente (sin cambios de fondo):** A5 (política de privacidad + formulario Familias/Datos), A6
+  (revisión de Google) y la subida a Play; A3 (la voz offline ya va por `assets/js/voz-descarga.js` —
+  descarga nativa de los clips desde vulpo.cl + caché con Capacitor Filesystem— en vez de Play Asset
+  Delivery). **Decisión de Roberto pendiente:** cuándo llevar `feature/android` a `main` (y con eso el fix
+  del restore a la web).
