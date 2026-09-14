@@ -13154,3 +13154,66 @@ propia ruta según variables del runner).
   descarga nativa de los clips desde vulpo.cl + caché con Capacitor Filesystem— en vez de Play Asset
   Delivery). **Decisión de Roberto pendiente:** cuándo llevar `feature/android` a `main` (y con eso el fix
   del restore a la web).
+
+### Sesión 124 (2026-09-14) — La sexualidad sale del paquete de la app (opción 2 para Google Play)
+Continuación de la Fase A hacia Google Play. La política de Familias de Play mira con lupa el
+contenido de sexualidad/reproducción del currículum de Ciencias (`CN07 OA 01/02/03` en 7° y
+`CN06 OA 04/05/06` en 6°). La guía de la consola le dejaba a Roberto tres opciones; eligió la
+**opción 2**: **ocultarlo en la versión de Play y sacarlo del bundle de la app**, dejándolo
+**entero en `vulpo.cl`** (el web no se toca). **No se escribió contenido ni se tocó el motor.**
+
+#### Todo el corte vive en el script de build, no en el repo
+`armar-webdir.py` es el que arma `www/` —el subconjunto del sitio que va dentro de la app
+Capacitor, un artefacto de build (gitignorado, lo regenera la nube en cada compilación)—. El corte
+se hace ahí, **sobre la copia en `www/`**: el motor (`assets/js/motor.js`) y los seis forks del
+repo NO se tocan, así que **`vulpo.cl` queda byte a byte igual**. Es la arquitectura más limpia
+posible —la única diferencia app/web vive en un solo lugar—, y el workflow (`android.yml`) ya
+llamaba a `armar-webdir.py`, así que apenas se commitea el corte queda automático en cada build.
+
+`SENSIBLE_FUERA` declara los dos capítulos, y al empacar cada uno:
+- **sale de su fork** —de `EXPEDICIONES` y de la lista `capitulos`—, así deja de existir en la app:
+  no se muestra ni cuenta para el Jefe Final (que se abre al 100% de la campaña, y su desbloqueo
+  lee `capitulos`).
+- **sus preguntas** (los 3 OA sexuales, 30 c/u = 90) **y su lección de introducción** se borran del
+  `preguntas.json`/`lecciones.json` empacado.
+
+| Curso | Capítulo | Fuera del bundle |
+|---|---|---|
+| 7° | `cie7-cap5` "Sexualidad y autocuidado" | CN07 OA 01/02/03 + lección `ci7-sexualidad` |
+| 6° | `cie6-cap2` "Mi cuerpo y mi salud" | CN06 OA 04/05/06 + lección `ci6-cuerpo` |
+
+#### ⚠️ La esquirla de las drogas, surfaceada y no enterrada
+`cie6-cap2` **mezcla los 3 OA sexuales con 1 de drogas** (`CN06 OA 07`), y el jefe DEL CAPÍTULO
+cruza los cuatro, así que **no se puede partir**: se oculta el capítulo entero. Consecuencia: la
+app pierde el **nodo suelto de drogas** de 6°. Pero es leve: **`CN06 OA 07` sigue en la app** dentro
+del Jefe Final de Ciencias (fase 1, "Vida y ecosistemas"), y el web lo mantiene todo. Por eso los OA
+de drogas **NO se borran del bundle** —el jefe los necesita—: solo se saca lo sexual, que es lo que
+Roberto aprobó. Se le dijo de frente (no se enterró en el corte); queda escrito en el comentario del
+código y en `docs/contenido-sensible.md`.
+
+#### El corte falla la compilación antes que empacar a medias
+Como es un artefacto de build, mejor abortar el build que subir un capítulo sensible cortado por la
+mitad. `_quitar_capitulo` ubica el objeto por **ancla exacta** (regex de `{ id:'<cap>',` hasta el
+`]},` de cierre de sus etapas) y **aborta si no calza EXACTO**: ≠1 objeto, o ≠1 entrada en
+`capitulos`, o si queda una referencia después. `_strip_contenido` **asegura que salieron 90
+preguntas** (30×3) y **exactamente 1 lección**, y recalcula el contador `revisadas` para no mentir.
+Al final, un **bloque de verificación** confirma que ningún `cap`, ningún `oa` sexual ni la
+`leccion` sobrevive en el bundle, o `SystemExit`. Lee/escribe con `newline=""` (LF/CRLF-tolerante).
+
+#### Verificado JUGANDO el bundle, no solo mirando el dato
+Se armó `www/` y se booteó `www/6to` y `www/7mo` con `cdp.mjs`: **Ciencias muestra 4 capítulos** en
+cada uno (el sexual desaparecido), el motor bootea (`__MOTOR_OK`), el Jefe Final sigue, y **cero
+texto sexual en pantalla**. Los bosses **no** preguntaban lo sexual (fuera desde la Sesión 84), así
+que sacarlo no rompe nada; el OA 07 de drogas quedó (30 preguntas) para la fase 1. **Cero errores de
+consola, cero 404.** Y el repo/web intacto: `git status` solo muestra `armar-webdir.py` y
+`contenido-sensible.md`.
+
+#### Lo que esto resuelve en la guía de la consola
+El punto ⚠️ #4 de la guía de Play Console —qué hacer con el contenido de `CN07`— **queda resuelto**:
+la app ya no incluye ese contenido, así que en el cuestionario de contenido/Familias no es una
+decisión pendiente. La opción "2. Ocultarlo en la versión de Play" de la guía es exactamente esto.
+
+- **Pendiente inmediato:** el **`.aab` de publicación firmado** (hoy la nube arma un APK de *debug*,
+  no el bundle firmado que Play exige) — el workflow `bundleRelease` + el script de firma con la
+  llave de subida (secret de GitHub, nunca en el repo) quedan como el próximo paso. Después, los
+  formularios de la consola (los llena Roberto con la guía) y enviar a revisión.
