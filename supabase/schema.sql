@@ -1668,12 +1668,16 @@ declare yo public.profesores; begin
            -- profesor_id nulo, así que contar por ahí daba 0 para todo Jefe nuevo.
            (select count(*)::int from public.curso_profesores cp where cp.profesor_id = p.id),
            (p.id is not null),
-           -- Ámbito humanizado por GRANTS (Sesión 120): para qué colegio manda un Super, si un
-           -- profe es Jefe o de asignatura y de cuáles, o "toda la plataforma" un Operador. Los
-           -- ámbitos plataforma/sostenedor/colegio salen de permisos_usuario; el detalle de curso
-           -- (rol jefe/asignatura + materias) sale del roster curso_profesores, que conserva la
-           -- etiqueta amable. Es security definer, así que lo calcula para todos los que ven la
-           -- lista —incluido un SuperUsuario que no puede llamar al mantenedor—, sin N+1.
+           -- Ámbito humanizado desde los GRANTS (`permisos_usuario`), que tras el cutover (Fase 4b)
+           -- son la ÚNICA verdad de autorización: para qué colegio manda un Super, si un profe es
+           -- Jefe o de asignatura (y de cuáles), o "toda la plataforma" un Operador. Se lee TODO de
+           -- permisos_usuario —incluido el curso—, NO del roster curso_profesores: el mantenedor 🔑
+           -- escribe solo grants y no toca el roster, así que leerlo mostraba datos viejos y no las
+           -- materias reales del grant (Sesión 121, lo cazó Roberto: un grant "Ciencias, Lenguaje"
+           -- salía como "Lenguaje" de otro curso). El rol de curso se deriva del grant: Jefe si tiene
+           -- `alumno.gestionar` (preset jefe); asignatura trae sus materias. Se omite el grant de
+           -- asignatura SIN materias (jefe degradado = sin acceso al curso). Es security definer, así
+           -- que lo calcula para todos los que ven la lista —incluido un Super que no abre el 🔑—.
            coalesce((
              select jsonb_agg(e order by ord, e->>'nombre')
              from (
@@ -1691,11 +1695,14 @@ declare yo public.profesores; begin
                  from public.permisos_usuario g
                  where g.profesor_id = p.id and g.ambito_tipo = 'colegio'
                union all
-               select 3, jsonb_build_object('nivel','curso','nombre',c.nombre,'rol',cp.rol,
-                   'asignaturas', to_jsonb(coalesce(cp.asignaturas,'{}'::text[])))
-                 from public.curso_profesores cp
-                 join public.cursos c on c.id = cp.curso_id
-                 where cp.profesor_id = p.id
+               select 3, jsonb_build_object('nivel','curso',
+                   'nombre', coalesce((select c.nombre from public.cursos c where c.id = g.ambito_id),'?'),
+                   'rol', case when 'alumno.gestionar' = any(g.capacidades) then 'jefe' else 'asignatura' end,
+                   'asignaturas', to_jsonb(coalesce(g.asignaturas,'{}'::text[])))
+                 from public.permisos_usuario g
+                 where g.profesor_id = p.id and g.ambito_tipo = 'curso'
+                   and ('alumno.gestionar' = any(g.capacidades)
+                        or coalesce(array_length(g.asignaturas,1),0) > 0)
              ) sub
            ), '[]'::jsonb)
     from public.profesores_autorizados a

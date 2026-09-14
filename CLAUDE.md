@@ -12979,3 +12979,26 @@ consistente con el panel *computer-first* (Sesión 106).
 ⚠️ **Pendiente de Roberto: re-aplicar `supabase/schema.sql`** (trae la nueva columna de
 `kimun_prof_profesores`). Mientras no lo haga, la lista sigue mostrando "N cursos" —degrada, no se
 rompe—. El resto del arrastre, sin cambios (piloto, INAPI, G1).
+
+**Post scriptum de la Sesión 121 — el ámbito de curso sale de los GRANTS, no del roster.** Roberto lo
+cazó USÁNDOLO: en su panel, profe-prueba5 salía como "8A Prueba · Lenguaje" cuando su grant (visible en
+el 🔑) era "8vo CSFS Prueba · Ciencias, Lenguaje" —otro curso y una sola materia—. La causa: mi ámbito
+de curso leía el roster `curso_profesores`, pero **el mantenedor 🔑 escribe SOLO los grants**
+(`permisos_usuario`) y no toca el roster, así que tras el cutover (Fase 4b, grants = única verdad) los
+dos divergían. Error de origen: elegí el roster por su etiqueta amable jefe/asignatura sin ver que ya
+no se mantenía sincronizado con los grants.
+- **El arreglo:** `kimun_prof_profesores` lee ahora el ámbito de curso **de `permisos_usuario`** (la
+  misma fuente que el mantenedor), derivando el rol del grant —**Jefe** si tiene `alumno.gestionar`
+  (preset jefe, con `asignaturas='{}'`); **asignatura** trae sus materias— y omitiendo el grant de
+  asignatura sin materias (jefe degradado = sin acceso al curso). Así la lista y el 🔑 leen lo mismo y
+  no pueden divergir. **Solo cambió el servidor**: el cliente ya juntaba las materias bien.
+- El doble (`scripts/panel-demo.py`) pasó a **derivar el ámbito de los grants** (como el SQL nuevo),
+  reproduciendo el caso de las dos materias; verificado con `cdp` que m.soto muestra "Ciencias,
+  Lenguaje".
+- **Roberto re-aplicó el esquema el 13/09.** Chequeo de sanidad con la clave pública OK (la función
+  responde `no_autorizado`, no se rompió el re-pegado); el contenido del fix lo confirmó él mirando el
+  panel, porque `?select` no distingue un cambio de CUERPO (solo de firma/columna). Este commit lleva
+  el repo a la par de producción, que iba adelante.
+- **De paso**, se sembró **actividad semanal en CUR-BA04** para la foto (`seed-semana-8vo-2026-09-13.sql`,
+  fuera del repo): incremental, no borra nada (las fotos cuelgan de `perfiles` con cascade), idempotente
+  por día; Roberto lo aplicó.

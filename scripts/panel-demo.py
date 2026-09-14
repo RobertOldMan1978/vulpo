@@ -118,11 +118,12 @@ STUB = r"""
   const PRESETS = { operador:CAPS_TODAS, sostenedor:SOSTEN_CAPS, super:SOSTEN_CAPS,
     jefe:['alumno.gestionar','inscripcion.crear','dominio.reiniciar','equipo.asignatura','avance.ver','plan.fijar','refuerzo.gestionar'],
     asignatura:['avance.ver','plan.fijar','refuerzo.gestionar'] };
-  let GRANT_SEQ = 4;
+  let GRANT_SEQ = 5;
   let GRANTS = [
     {id:'g-1', correo:'a.diaz@desales.cl', ambito_tipo:'plataforma', ambito_id:null, capacidades:PRESETS.operador.slice(), asignaturas:[]},
     {id:'g-2', correo:'r.perez@desales.cl', ambito_tipo:'colegio', ambito_id:'col-1', capacidades:PRESETS.super.slice(), asignaturas:[]},
-    {id:'g-3', correo:'j.arteaga@desales.cl', ambito_tipo:'curso', ambito_id:'CUR-BA04', capacidades:PRESETS.jefe.slice(), asignaturas:['HI08']}
+    {id:'g-3', correo:'j.arteaga@desales.cl', ambito_tipo:'curso', ambito_id:'CUR-BA04', capacidades:PRESETS.jefe.slice(), asignaturas:[]},
+    {id:'g-4', correo:'m.soto@desales.cl', ambito_tipo:'curso', ambito_id:'CUR-BA04', capacidades:PRESETS.asignatura.slice(), asignaturas:['CN08','LE08']}
   ];
   function ambitoNombre(t,id){
     if(t==='plataforma') return 'Toda la plataforma';
@@ -130,6 +131,24 @@ STUB = r"""
     if(t==='colegio')  return COL_NOMBRE[id]||'?';
     if(t==='curso'){ const c=CURSOS.find(x=>x[0]===id); return c?c[1]:id; }
     return '?';
+  }
+  // Espejo del ambito que arma el SQL nuevo (kimun_prof_profesores): TODO desde los GRANTS,
+  // incluido el curso, para que la lista muestre lo mismo que el mantenedor. Jefe = tiene
+  // alumno.gestionar; asignatura trae sus materias; se omite asignatura sin materias.
+  const _ORD={plataforma:0,sostenedor:1,colegio:2,curso:3};
+  function ambitoDeGrants(correo){
+    return GRANTS.filter(g=>g.correo===correo).map(g=>{
+      if(g.ambito_tipo==='plataforma') return {nivel:'plataforma',nombre:'Toda la plataforma'};
+      if(g.ambito_tipo==='sostenedor') return {nivel:'sostenedor',nombre:ambitoNombre('sostenedor',g.ambito_id)};
+      if(g.ambito_tipo==='colegio')    return {nivel:'colegio',nombre:ambitoNombre('colegio',g.ambito_id)};
+      if(g.ambito_tipo==='curso'){
+        const jefe=(g.capacidades||[]).includes('alumno.gestionar');
+        if(!jefe && !((g.asignaturas||[]).length)) return null;
+        return {nivel:'curso',nombre:ambitoNombre('curso',g.ambito_id),
+          rol:jefe?'jefe':'asignatura',asignaturas:(g.asignaturas||[]).slice()};
+      }
+      return null;
+    }).filter(Boolean).sort((a,b)=>_ORD[a.nivel]-_ORD[b.nivel]);
   }
 
   /* Planificacion ya cargada: dos unidades con fechas para ver el caso poblado, y el resto
@@ -423,17 +442,20 @@ STUB = r"""
     // Tras el cutover (Fase 4b) kimun_prof_profesores devuelve el RANGO efectivo (por grants), no las
     // banderas: a.diaz tiene grant de plataforma (Operador), r.perez de colegio (Super), j.arteaga de
     // curso (Jefe, que en la lista de plataforma es "Profesor").
+    // El ambito se DERIVA de los GRANTS (como el SQL nuevo), para que la lista coincida con el
+    // mantenedor. m.soto reproduce el caso que cazo Roberto: un grant de curso con DOS materias
+    // (Ciencias, Lenguaje), que con el codigo viejo (roster) salia con una sola.
     kimun_prof_profesores: ()=>[
       {correo:'j.arteaga@desales.cl', nombre:'Jorge Arteaga', es_admin:false, rango:'Profesor', cursos:1, registrado:true,
-        ambito:[{nivel:'curso',nombre:'8A Prueba',rol:'jefe',asignaturas:[]}]},
-      {correo:'m.soto@desales.cl', nombre:'Marta Soto', es_admin:false, rango:'Profesor', cursos:2, registrado:true,
-        ambito:[{nivel:'curso',nombre:'8A Prueba',rol:'asignatura',asignaturas:['CN08']},
-                {nivel:'curso',nombre:'3ro C',rol:'asignatura',asignaturas:['HI03']}]},
+        ambito:ambitoDeGrants('j.arteaga@desales.cl')},
+      {correo:'m.soto@desales.cl', nombre:'Marta Soto', es_admin:false, rango:'Profesor', cursos:1, registrado:true,
+        ambito:ambitoDeGrants('m.soto@desales.cl')},
       {correo:'r.perez@desales.cl', nombre:'Rossy Perez', es_admin:false, rango:'SuperUsuario', cursos:0, registrado:true,
-        ambito:[{nivel:'colegio',nombre:'Colegio San Francisco de Sales'}]},
+        ambito:ambitoDeGrants('r.perez@desales.cl')},
       {correo:'a.diaz@desales.cl', nombre:'Ana Diaz', es_admin:false, rango:'Operador', cursos:0, registrado:true,
-        ambito:[{nivel:'plataforma',nombre:'Toda la plataforma'}]},
-      {correo:'k.rivas@desales.cl', nombre:null, es_admin:false, rango:'Profesor', cursos:0, registrado:false, ambito:[]}
+        ambito:ambitoDeGrants('a.diaz@desales.cl')},
+      {correo:'k.rivas@desales.cl', nombre:null, es_admin:false, rango:'Profesor', cursos:0, registrado:false,
+        ambito:ambitoDeGrants('k.rivas@desales.cl')}
     ],
     /* Mantenedor de permisos (Fase 3). El doble no aplica la no-escalada del servidor —solo
        devuelve datos—; los rechazos se prueban con el control RPC contra produccion. Aqui se
