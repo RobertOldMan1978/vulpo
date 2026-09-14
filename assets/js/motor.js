@@ -1601,7 +1601,7 @@ function _diag(msg){
   var d=document.getElementById('_diagbar');
   if(!d){ d=document.createElement('div'); d.id='_diagbar';
    d.style.cssText='position:fixed;left:0;right:0;top:0;z-index:99999;background:rgba(0,50,25,.92);'+
-    'color:#8fffcf;font:600 11px/1.35 monospace;padding:4px 8px;white-space:pre-wrap';
+    'color:#8fffcf;font:600 11px/1.35 monospace;padding:4px 8px;white-space:pre-wrap;pointer-events:none';
    (document.body||document.documentElement).appendChild(d); }
   d.textContent=('['+new Date().toLocaleTimeString().slice(0,8)+'] '+msg+'\n'+d.textContent).slice(0,420);
  }catch(e){}
@@ -1617,7 +1617,7 @@ function _tesoro(){
    d.style.cssText='position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom));'+
     'transform:translateX(-50%);z-index:99998;background:linear-gradient(180deg,#ffd75a,#f5b71e);'+
     'color:#3a2a00;font:800 14px/1.2 Nunito,system-ui,sans-serif;padding:10px 18px;border-radius:14px;'+
-    'box-shadow:0 8px 22px rgba(245,183,30,.4);white-space:nowrap;transition:opacity .3s ease';
+    'box-shadow:0 8px 22px rgba(245,183,30,.4);white-space:nowrap;transition:opacity .3s ease;pointer-events:none';
    (document.body||document.documentElement).appendChild(d); }
   d.textContent='💾 ¡Guardé tu tesoro!';
   d.style.opacity='1';
