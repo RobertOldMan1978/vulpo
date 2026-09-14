@@ -1556,7 +1556,7 @@ function sincronizarXP(){
    reintentos que si necesita dominio: dominio manda eventos, que se pierden si
    no llegan; la foto es completa e idempotente, asi que el proximo envio que si
    llegue lleva todo. */
-let _progTimer=null, _progUlt=0, _progEnviado=null;
+let _progTimer=null, _progUlt=0, _progEnviado=null, _bajando=false;
 
 async function _enviarFoto(){
  _progTimer=null; _progUlt=Date.now();
@@ -1575,6 +1575,11 @@ function subirProgreso(ya){
     ?qa=1 en un telefono vinculado a un alumno real, completar una etapa para
     revisar contenido y que eso suba, le PISA LA PARTIDA DEL ANO. */
  if(EFIMERO) return;
+ /* ⚠️ NO subir mientras se RESTAURA (bajarProgreso en vuelo). Al canjear, el flujo
+    llama guardar() ANTES de bajarProgreso, y en un telefono recien reinstalado ese
+    guardar() sube la foto VACIA local. Sin este guard, esa subida vacia PISA la foto
+    buena del servidor y despues solo vuelve el XP (que vive en el perfil, aparte). */
+ if(_bajando) return;
  if(ya){                                      // subida INMEDIATA (al dejar la app en segundo plano)
   if(_progTimer){ clearTimeout(_progTimer); _progTimer=null; }
   _enviarFoto(); return;
@@ -1659,6 +1664,11 @@ function marcarBajado(){ try{ localStorage.setItem(claveBajado(),'1'); }catch(e)
    lleva la promesa en silencio. */
 async function bajarProgreso(xpServidor){
  if(!SB||!MI_PERFIL||EFIMERO) return false;
+ /* Cancelar la subida PENDIENTE (la de guardar() al canjear): corre en el MISMO tick
+    sincronico que este llamado, asi que la mata ANTES de que dispare y pise la foto
+    buena. Y suprimir subidas nuevas mientras dura la restauracion. */
+ if(_progTimer){ clearTimeout(_progTimer); _progTimer=null; }
+ _bajando=true;
  _diag('bajando foto (xpServ='+xpServidor+')');
  try{
   const {data,error}=await SB.rpc('kimun_progreso_bajar');
@@ -1666,7 +1676,7 @@ async function bajarProgreso(xpServidor){
   const fila=Array.isArray(data)?data[0]:data;
   if(!fila||!fila.datos){                   // servidor vacio: sube lo que hay aqui
    _diag('servidor VACIO: nada que restaurar');
-   marcarBajado(); _progEnviado=null; subirProgreso(); return false;
+   marcarBajado(); _progEnviado=null; _bajando=false; subirProgreso(); return false;
   }
   PROG_REMOTO={datos:fila.datos, fecha:fila.actualizado, xpServidor:xpServidor};
   const rRem=resumenAvance(fila.datos), rLoc=resumenAvance(payloadSave());
@@ -1678,6 +1688,7 @@ async function bajarProgreso(xpServidor){
   _diag('los dos con avance -> pregunto');
   mostrarConflictoProgreso(); return true;        // los dos con avance: preguntar
  }catch(e){ console.error('progreso:',e.message||e); _diag('ERROR bajar: '+(e.message||e)); return false; }
+ finally{ _bajando=false; }
 }
 
 function aplicarProgresoRemoto(){
