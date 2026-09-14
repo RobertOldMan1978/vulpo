@@ -96,7 +96,10 @@
   #intro{position:fixed; inset:0; z-index:100; background:#000; display:flex; align-items:center; justify-content:center; transition:opacity .5s ease}
   #intro.saliendo{opacity:0}
   #intro video{width:100%; height:100%; object-fit:cover}
-  .intro-skip{position:absolute; top:calc(12px + env(safe-area-inset-top)); right:14px; z-index:2;
+  #introCover{position:absolute; inset:0; z-index:1; background:#0d0820; display:flex; align-items:center; justify-content:center; transition:opacity .45s ease}
+  #introCover.oculto{opacity:0; pointer-events:none}
+  #introCover img{width:132px; height:132px; object-fit:contain; animation:float 4s ease-in-out infinite}
+  .intro-skip{position:absolute; top:calc(12px + env(safe-area-inset-top)); right:14px; z-index:3;
     background:rgba(0,0,0,.45); color:#fff; border:1px solid rgba(255,255,255,.4); border-radius:999px;
     font-family:"Nunito",sans-serif; font-weight:700; font-size:14px; padding:8px 16px; cursor:pointer}
   .intro-tap{position:absolute; inset:0; z-index:1; display:flex; align-items:center; justify-content:center;
@@ -113,8 +116,10 @@
        antes de que pinte el selector; si el JS falla, queda oculta y el selector se ve igual. -->
   <div id="intro" hidden>
     <video id="vid" src="/assets/intro.mp4" muted autoplay playsinline preload="auto"></video>
+    <!-- Carátula: tapa el reproductor nativo del WebView (el play gigante feo) mientras el
+         video carga; se descubre recién cuando EMPIEZA a reproducir. -->
+    <div id="introCover"><img src="/assets/vulpo-mascota.png" alt="" onerror="this.style.display='none'"></div>
     <button class="intro-skip" id="skip" type="button">Saltar ✕</button>
-    <div class="intro-tap" id="tap" hidden>▶ Toca para comenzar</div>
   </div>
   <script>
   (function(){
@@ -124,9 +129,9 @@
     var ver = q.indexOf('intro=1')>=0 || (q.indexOf('intro=0')<0 && !reduce && !vista);
     if(!ver) return;
     var intro=document.getElementById('intro'), v=document.getElementById('vid'),
-        tap=document.getElementById('tap'), skip=document.getElementById('skip');
+        cover=document.getElementById('introCover'), skip=document.getElementById('skip');
     intro.hidden=false;
-    var cerrado=false;
+    var cerrado=false, arranco=false;
     function cerrar(){
       if(cerrado) return; cerrado=true;
       try{ localStorage.setItem('vulpo_intro','1'); }catch(e){}
@@ -136,14 +141,15 @@
     skip.addEventListener('click', cerrar);
     v.addEventListener('ended', cerrar);
     v.addEventListener('error', cerrar);           // si el video falla, no bloquear
-    // Autoplay MUTEADO: arranca SIEMPRE limpio (sin el "boton de play" feo que salia cuando
-    // el WebView bloqueaba el autoplay con sonido). Ya en marcha, se intenta quitar el mute
-    // para la fanfarria; si el sistema no deja, sigue muteado pero limpio. Nunca se muestra
-    // el "Toca para comenzar".
+    // Autoplay MUTEADO: arranca SIEMPRE limpio. Cuando EMPIEZA a reproducir, se descubre el
+    // video (la carátula tapaba el reproductor nativo del WebView) y se intenta el sonido
+    // para la fanfarria; si el sistema no deja, sigue muteado pero limpio.
+    v.addEventListener('playing', function(){ arranco=true; if(cover) cover.classList.add('oculto'); try{ v.muted=false; }catch(e){} });
     v.muted = true;
     var p; try{ p=v.play(); }catch(e){ cerrar(); return; }
-    if(p && p.then){ p.then(function(){ try{ v.muted=false; }catch(e){} }).catch(cerrar); }
-    setTimeout(cerrar, 13000);                      // salvaguarda: si 'ended' no dispara, cerrar igual (~11s de video)
+    if(p && p.catch){ p.catch(function(){}); }     // si no arranca, el timeout de abajo salta el intro
+    setTimeout(function(){ if(!arranco) cerrar(); }, 4000);   // no arrancó en 4s: saltar (no dejar la carátula pegada)
+    setTimeout(cerrar, 14000);                                // salvaguarda total
   })();
   </script>
 

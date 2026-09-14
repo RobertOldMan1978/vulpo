@@ -1593,54 +1593,60 @@ function subirProgreso(ya){
 document.addEventListener('visibilitychange',function(){
  if(document.visibilityState==='hidden'){ try{ subirProgreso(true); }catch(e){} }
 });
-/* ⚠️ TEMPORAL: diagnostico del guardado en el servidor, SOLO en la app Android, para
-   depurar el restore tras reinstalar. Quitar cuando este confirmado. */
-function _diag(msg){
- try{
-  var C=window.Capacitor; if(!(C&&C.isNativePlatform&&C.isNativePlatform())) return;
-  var d=document.getElementById('_diagbar');
-  if(!d){ d=document.createElement('div'); d.id='_diagbar';
-   d.style.cssText='position:fixed;left:0;right:0;top:0;z-index:99999;background:rgba(0,50,25,.92);'+
-    'color:#8fffcf;font:600 11px/1.35 monospace;padding:4px 8px;white-space:pre-wrap;pointer-events:none';
-   (document.body||document.documentElement).appendChild(d); }
-  d.textContent=('['+new Date().toLocaleTimeString().slice(0,8)+'] '+msg+'\n'+d.textContent).slice(0,420);
- }catch(e){}
-}
-/* Aviso breve con cara de juego: al alumno le confirma que su avance quedo a salvo.
-   Solo en la app; en la web no aparece. Se va solo a los ~1,7 s. */
-let _tesoroT=null;
+/* Diagnostico del restore RETIRADO: el guardado en el servidor quedo confirmado en el
+   telefono. Se deja como no-op para no tocar las llamadas _diag(...) repartidas por el
+   codigo (bajarProgreso, aplicarProgresoRemoto, _enviarFoto). */
+function _diag(){}
+/* Aviso DISCRETO de guardado: pildora chica ARRIBA (antes iba abajo, donde molestaba) y
+   como mucho una vez cada 2 min (antes salia en cada subida). Solo en la app. */
+let _tesoroT=null, _tesoroUlt=0;
 function _tesoro(){
  try{
   var C=window.Capacitor; if(!(C&&C.isNativePlatform&&C.isNativePlatform())) return;
+  if(Date.now()-_tesoroUlt < 120000) return;   // throttle: no repetirse en cada subida
+  _tesoroUlt=Date.now();
   var d=document.getElementById('_tesorobar');
   if(!d){ d=document.createElement('div'); d.id='_tesorobar';
-   d.style.cssText='position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom));'+
-    'transform:translateX(-50%);z-index:99998;background:linear-gradient(180deg,#ffd75a,#f5b71e);'+
-    'color:#3a2a00;font:800 14px/1.2 Nunito,system-ui,sans-serif;padding:10px 18px;border-radius:14px;'+
-    'box-shadow:0 8px 22px rgba(245,183,30,.4);white-space:nowrap;transition:opacity .3s ease;pointer-events:none';
+   d.style.cssText='position:fixed;left:50%;top:calc(10px + env(safe-area-inset-top));'+
+    'transform:translateX(-50%);z-index:99998;background:rgba(20,16,40,.9);'+
+    'color:#ffd75a;font:700 12px/1.2 Nunito,system-ui,sans-serif;padding:6px 14px;border-radius:999px;'+
+    'box-shadow:0 4px 14px rgba(0,0,0,.32);white-space:nowrap;transition:opacity .35s ease;pointer-events:none';
    (document.body||document.documentElement).appendChild(d); }
-  d.textContent='💾 ¡Guardé tu tesoro!';
+  d.textContent='💾 Tesoro guardado';
   d.style.opacity='1';
   clearTimeout(_tesoroT);
-  _tesoroT=setTimeout(function(){ if(d) d.style.opacity='0'; }, 1700);
+  _tesoroT=setTimeout(function(){ if(d) d.style.opacity='0'; }, 1400);
  }catch(e){}
 }
 /* "Salir" del menu principal (SOLO en la app): fuerza la subida de la foto, confirma que
    el avance quedo a salvo y vuelve al selector de cursos. Reusa #salirWeb, que en la web
    sigue siendo "Volver a vulpo.cl". Asi el alumno cierra con la certeza de que se guardo. */
-async function _salirGuardando(){
- var ov=document.createElement('div');
+/* Pregunta antes de salir; al confirmar, guarda y CIERRA la app (via @capacitor/app). Si el
+   plugin no estuviera, cae a volver al selector de cursos. */
+function _salirGuardando(){
+ var ov=document.createElement('div'); ov.id='_salirOv';
  ov.style.cssText='position:fixed;inset:0;z-index:100000;background:rgba(12,8,26,.97);display:flex;'+
-  'flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;'+
-  'font:800 18px/1.45 Nunito,system-ui,sans-serif;padding:24px';
- ov.innerHTML='<div style="font-size:46px">💾</div><div id="_salirMsg" style="margin-top:14px">Guardando tu avance…</div>';
+  'flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:28px;'+
+  'font:700 16px/1.5 Nunito,system-ui,sans-serif';
+ ov.innerHTML=''
+  +'<div style="font-size:46px">🦊</div>'
+  +'<div style="margin-top:12px;font-weight:800;font-size:20px">¿Salir de VULPO?</div>'
+  +'<div id="_salirSub" style="margin-top:8px;color:#c9bfe6">Guardaremos tu avance antes de salir.</div>'
+  +'<div id="_salirBtns" style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">'
+  +  '<button id="_salirSi" style="background:linear-gradient(180deg,#ff8a5a,#f5651e);color:#fff;border:0;font:800 15px Nunito,system-ui,sans-serif;padding:12px 22px;border-radius:14px;cursor:pointer">Sí, salir</button>'
+  +  '<button id="_salirNo" style="background:transparent;color:#c9bfe6;border:1.5px solid #6a5f8f;font:800 15px Nunito,system-ui,sans-serif;padding:12px 22px;border-radius:14px;cursor:pointer">Seguir jugando</button>'
+  +'</div>';
  (document.body||document.documentElement).appendChild(ov);
- try{ if(SB&&MI_PERFIL&&!EFIMERO) await _enviarFoto(); }catch(e){}
- var m=document.getElementById('_salirMsg'); if(m) m.textContent='✅ ¡Listo! Tu avance quedó a salvo.';
- await new Promise(function(r){ setTimeout(r,950); });
- // Si algun dia se agrega @capacitor/app, cerrar la app de verdad; si no, volver al selector.
- try{ var C=window.Capacitor; if(C&&C.Plugins&&C.Plugins.App&&C.Plugins.App.exitApp){ C.Plugins.App.exitApp(); return; } }catch(e){}
- location.href='/';
+ document.getElementById('_salirNo').onclick=function(){ try{ ov.remove(); }catch(e){} };
+ document.getElementById('_salirSi').onclick=async function(){
+  var b=document.getElementById('_salirBtns'); if(b) b.style.display='none';
+  var sub=document.getElementById('_salirSub'); if(sub) sub.textContent='Guardando tu avance…';
+  try{ if(SB&&MI_PERFIL&&!EFIMERO) await _enviarFoto(); }catch(e){}
+  if(sub) sub.textContent='✅ ¡Listo! Tu avance quedó a salvo.';
+  await new Promise(function(r){ setTimeout(r,900); });
+  try{ var C=window.Capacitor; if(C&&C.Plugins&&C.Plugins.App&&C.Plugins.App.exitApp){ C.Plugins.App.exitApp(); return; } }catch(e){}
+  location.href='/';   // por si no esta el plugin: al menos volver al selector
+ };
 }
 (function(){
  var C=window.Capacitor; if(!(C&&C.isNativePlatform&&C.isNativePlatform())) return;   // solo en la app
