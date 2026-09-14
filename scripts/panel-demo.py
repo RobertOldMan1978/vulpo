@@ -424,10 +424,16 @@ STUB = r"""
     // banderas: a.diaz tiene grant de plataforma (Operador), r.perez de colegio (Super), j.arteaga de
     // curso (Jefe, que en la lista de plataforma es "Profesor").
     kimun_prof_profesores: ()=>[
-      {correo:'j.arteaga@desales.cl', nombre:'Jorge Arteaga', es_admin:false, rango:'Profesor', cursos:1, registrado:true},
-      {correo:'r.perez@desales.cl', nombre:'Rossy Perez', es_admin:false, rango:'SuperUsuario', cursos:2, registrado:true},
-      {correo:'a.diaz@desales.cl', nombre:'Ana Diaz', es_admin:false, rango:'Operador', cursos:3, registrado:true},
-      {correo:'k.rivas@desales.cl', nombre:null, es_admin:false, rango:'Profesor', cursos:0, registrado:false}
+      {correo:'j.arteaga@desales.cl', nombre:'Jorge Arteaga', es_admin:false, rango:'Profesor', cursos:1, registrado:true,
+        ambito:[{nivel:'curso',nombre:'8A Prueba',rol:'jefe',asignaturas:[]}]},
+      {correo:'m.soto@desales.cl', nombre:'Marta Soto', es_admin:false, rango:'Profesor', cursos:2, registrado:true,
+        ambito:[{nivel:'curso',nombre:'8A Prueba',rol:'asignatura',asignaturas:['CN08']},
+                {nivel:'curso',nombre:'3ro C',rol:'asignatura',asignaturas:['HI03']}]},
+      {correo:'r.perez@desales.cl', nombre:'Rossy Perez', es_admin:false, rango:'SuperUsuario', cursos:0, registrado:true,
+        ambito:[{nivel:'colegio',nombre:'Colegio San Francisco de Sales'}]},
+      {correo:'a.diaz@desales.cl', nombre:'Ana Diaz', es_admin:false, rango:'Operador', cursos:0, registrado:true,
+        ambito:[{nivel:'plataforma',nombre:'Toda la plataforma'}]},
+      {correo:'k.rivas@desales.cl', nombre:null, es_admin:false, rango:'Profesor', cursos:0, registrado:false, ambito:[]}
     ],
     /* Mantenedor de permisos (Fase 3). El doble no aplica la no-escalada del servidor —solo
        devuelve datos—; los rechazos se prueban con el control RPC contra produccion. Aqui se

@@ -1651,7 +1651,8 @@ declare yo public.profesores; r public.profesores_autorizados; begin
 -- Mismo guardia de idempotencia que kimun_prof_listar (es "returns table").
 drop function if exists public.kimun_prof_profesores();
 create or replace function public.kimun_prof_profesores()
-returns table(correo text, nombre text, es_admin boolean, rango text, cursos int, registrado boolean)
+returns table(correo text, nombre text, es_admin boolean, rango text, cursos int, registrado boolean,
+              ambito jsonb)
 language plpgsql security definer set search_path=public as $$
 declare yo public.profesores; begin
   select * into yo from public.profesores where id = auth.uid();
@@ -1666,7 +1667,37 @@ declare yo public.profesores; begin
            -- cursos.profesor_id: desde la Sesión 37 los cursos nuevos nacen con
            -- profesor_id nulo, así que contar por ahí daba 0 para todo Jefe nuevo.
            (select count(*)::int from public.curso_profesores cp where cp.profesor_id = p.id),
-           (p.id is not null)
+           (p.id is not null),
+           -- Ámbito humanizado por GRANTS (Sesión 120): para qué colegio manda un Super, si un
+           -- profe es Jefe o de asignatura y de cuáles, o "toda la plataforma" un Operador. Los
+           -- ámbitos plataforma/sostenedor/colegio salen de permisos_usuario; el detalle de curso
+           -- (rol jefe/asignatura + materias) sale del roster curso_profesores, que conserva la
+           -- etiqueta amable. Es security definer, así que lo calcula para todos los que ven la
+           -- lista —incluido un SuperUsuario que no puede llamar al mantenedor—, sin N+1.
+           coalesce((
+             select jsonb_agg(e order by ord, e->>'nombre')
+             from (
+               select 0 as ord, jsonb_build_object('nivel','plataforma','nombre','Toda la plataforma') as e
+                 from public.permisos_usuario g
+                 where g.profesor_id = p.id and g.ambito_tipo = 'plataforma'
+               union all
+               select 1, jsonb_build_object('nivel','sostenedor','nombre',
+                   coalesce((select s.nombre from public.sostenedores s where s.id = g.ambito_id),'?'))
+                 from public.permisos_usuario g
+                 where g.profesor_id = p.id and g.ambito_tipo = 'sostenedor'
+               union all
+               select 2, jsonb_build_object('nivel','colegio','nombre',
+                   coalesce((select co.nombre from public.colegios co where co.id = g.ambito_id),'?'))
+                 from public.permisos_usuario g
+                 where g.profesor_id = p.id and g.ambito_tipo = 'colegio'
+               union all
+               select 3, jsonb_build_object('nivel','curso','nombre',c.nombre,'rol',cp.rol,
+                   'asignaturas', to_jsonb(coalesce(cp.asignaturas,'{}'::text[])))
+                 from public.curso_profesores cp
+                 join public.cursos c on c.id = cp.curso_id
+                 where cp.profesor_id = p.id
+             ) sub
+           ), '[]'::jsonb)
     from public.profesores_autorizados a
     full outer join public.profesores p on lower(p.correo) = lower(a.correo)
     order by coalesce(a.creado, p.creado);

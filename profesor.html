@@ -300,6 +300,13 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
    una ficha, no un formulario. */
 .btn-chip.principal{border-color:var(--violet);background:#7460bd26;color:var(--texto)}
 .btn-chip.principal:hover{background:#7460bd3d}
+/* Chips de ámbito en la lista de PROFESORES (Sesión 120): para qué manda cada usuario.
+   El institucional (colegio/sostenedor/plataforma) lleva fondo violeta —violeta SOLO como
+   fondo, que como texto no llega al contraste mínimo (S106)—; el de curso va neutro. */
+.amb{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;
+ padding:2px 9px;border-radius:999px;line-height:1.6;white-space:nowrap}
+.amb-inst{border:1px solid var(--violet);background:#7460bd26;color:var(--texto)}
+.amb-curso{border:1px solid var(--linea);color:var(--cuerpo)}
 
 /* Encabezado pegado arriba: con 60 objetivos, saber de qué curso es la tabla y volver
    al panel exigía subir miles de píxeles. */
@@ -1175,6 +1182,31 @@ async function pintarLista(){
       // grant tras el cutover (Fase 4b), así un Operador/Super por grant se muestra bien.
       const miRango = (window.MI_ACCESO&&window.MI_ACCESO.rango)
         || (YO.es_admin?'Administrador':YO.es_operador?'Operador':YO.es_super?'SuperUsuario':'Profesor');
+      // Ámbito de cada usuario (Sesión 120): el colegio de un Super, Jefe/Asignatura de un profe
+      // y sus materias, "toda la plataforma" de un Operador. Degrada al conteo de cursos si el
+      // esquema con la columna `ambito` aún no se aplicó.
+      const ambitoChips = (p) => {
+        if(!Array.isArray(p.ambito))
+          return `<span style="color:var(--cyan)">${p.cursos} curso${p.cursos===1?'':'s'}</span>`;
+        if(p.es_admin) return `<span class="amb amb-inst">Toda la plataforma</span>`;
+        if(!p.ambito.length) return `<span style="color:var(--dim);font-size:12px">sin ámbito asignado</span>`;
+        return p.ambito.map(a=>{
+          if(a.nivel==='plataforma') return `<span class="amb amb-inst">Toda la plataforma</span>`;
+          if(a.nivel==='sostenedor') return `<span class="amb amb-inst">Sostenedor: ${esc(a.nombre)}</span>`;
+          if(a.nivel==='colegio')    return `<span class="amb amb-inst">🏫 ${esc(a.nombre)}</span>`;
+          if(a.nivel==='curso'){
+            // La materia va SIN el nivel (Opción B, Roberto): el nombre del curso ya lo dice,
+            // así que se quita el " N°" final que NIV.nombre agrega en 3°-7° ("Historia 3°" →
+            // "Historia"). En 8° el nombre no lleva nivel, así que no cambia.
+            const rol = a.rol==='jefe' ? 'Jefe'
+              : a.rol==='asignatura' ? ((a.asignaturas&&a.asignaturas.length)
+                  ? a.asignaturas.map(x=>(ASIG_NOMBRE[x]||x).replace(/\s+\d+°$/,'')).join(', ') : 'Asignatura')
+              : '';
+            return `<span class="amb amb-curso">${esc(a.nombre)}${rol?' · '+esc(rol):''}</span>`;
+          }
+          return '';
+        }).join('');
+      };
       $('profes').innerHTML=(profes||[]).map(p=>{
         const rango = !p.registrado ? 'sin registrar' : (p.rango || 'Profesor');
         const esYo = p.correo && (p.correo.toLowerCase() === (YO.correo||'').toLowerCase());
@@ -1198,7 +1230,7 @@ async function pintarLista(){
         return `<div style="display:flex;gap:8px;align-items:center;padding:4px 0;font-size:13px;flex-wrap:wrap">
            <span class="pro-nom">${esc(p.correo)}</span>
            <span style="color:var(--dim)">${esc(rango)}</span>
-           <span style="color:var(--cyan)">${p.cursos} curso${p.cursos===1?'':'s'}</span>
+           ${ambitoChips(p)}
            ${btnPermisos}${btnRevocar}
          </div>`;
       }).join('');

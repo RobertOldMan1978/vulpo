@@ -12942,3 +12942,40 @@ consola y red sin errores. Se le mandó a Roberto la captura de la sección nuev
   INAPI (marca en trámite, publicada en el Diario Oficial), y **G1** en `pendiente.md` (la lente cívica
   dentro del panel del profesor, con informe filtrado por eje). De código y contenido no quedó nada
   abierto.
+
+### Sesión 121 (2026-09-13) — La lista de profesores muestra el ámbito de cada uno
+Roberto lo pidió mirando el panel: la sección **PROFESORES** (Administración) mostraba solo el rango y
+un "N cursos" —"0 cursos" para un Super o un Operador, que no dice nada—. Ahora cada fila dice **para
+qué manda cada usuario**: el colegio de un SuperUsuario, si un profe es Jefe o de asignatura (y de
+cuál), y "toda la plataforma" un Operador. **No se tocó el juego ni el contenido.**
+
+**El dato ya existía, repartido en dos tablas del motor granular (Sesión 116):** los ámbitos
+plataforma/sostenedor/colegio viven en los grants (`permisos_usuario`) y el detalle de curso —rol
+jefe/asignatura + materias— en el roster `curso_profesores`, que conserva la etiqueta amable. Lo que
+faltaba era subirlo a la lista.
+
+- **`supabase/schema.sql`:** `kimun_prof_profesores` gana una columna **`ambito jsonb`** que arma el
+  detalle en **una sola consulta** (sin N+1), uniendo los grants no-curso con el roster de curso. Es
+  `security definer`, así que lo calcula **para todos los que ven la lista —incluido un SuperUsuario
+  que no puede abrir el 🔑 mantenedor** (`kimun_prof_permisos_ver` exige `permisos.gestionar`, que un
+  Super no tiene)—. Ya traía su `drop`, y como solo **agrega una columna al `returns`** —sin cambiar
+  argumentos— el orden de despliegue no es delicado y el cliente **degrada solo** al viejo "N cursos"
+  si el esquema aún no se aplicó.
+- **`profesor.html`:** los chips de ámbito (violeta **solo como fondo** para el institucional
+  —colegio/sostenedor/plataforma—, neutro para el curso; el registro sobrio de la Sesión 106) y el
+  helper que los pinta, con el fallback a "N cursos".
+- **Decisión de Roberto (Opción B), sobre un preview A/B que se le publicó como Artifact:** la materia
+  va **sin el nivel repetido** —"7°B · Historia", no "7°B · Historia 7°"—, porque el nombre del curso
+  ya dice el nivel. Es un `.replace(/\s+\d+°$/,'')` sobre lo que da `NIV.nombre` (que agrega " N°" en
+  3°-7° y no en 8°).
+
+**Verificado con el doble** (`scripts/panel-demo.py`, actualizado con `ambito` para cubrir los cinco
+casos: jefe, asignatura con materias, super-colegio, operador-plataforma, sin registrar) y
+`scripts/cdp.mjs`, escritorio y móvil, **mirando**: cada fila con su ámbito correcto —el colegio del
+Super como chip violeta, "8A Prueba · Jefe", "3ro C · Historia" (Opción B), "Toda la plataforma"—, sin
+desborde, consola y red limpias. En móvil las filas envuelven y el correo se recorta un poco más,
+consistente con el panel *computer-first* (Sesión 106).
+
+⚠️ **Pendiente de Roberto: re-aplicar `supabase/schema.sql`** (trae la nueva columna de
+`kimun_prof_profesores`). Mientras no lo haga, la lista sigue mostrando "N cursos" —degrada, no se
+rompe—. El resto del arrastre, sin cambios (piloto, INAPI, G1).
