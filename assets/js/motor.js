@@ -1558,25 +1558,67 @@ function sincronizarXP(){
    llegue lleva todo. */
 let _progTimer=null, _progUlt=0, _progEnviado=null;
 
-function subirProgreso(){
+async function _enviarFoto(){
+ _progTimer=null; _progUlt=Date.now();
+ const json=JSON.stringify(payloadSave());
+ if(json===_progEnviado) return;             // guardar() corre en CADA respuesta
+ try{
+  const {error}=await SB.rpc('kimun_progreso_subir',{p_datos:JSON.parse(json)});
+  if(error) throw error;
+  _progEnviado=json; _tesoro(); _diag('tesoro guardado en el servidor');
+ }catch(e){ console.error('progreso:',e.message||e); _diag('ERROR subir: '+(e.message||e)); }  // best-effort
+}
+function subirProgreso(ya){
  if(!SB||!MI_PERFIL) return;
  /* NO se sube en EFIMERO, y esta es una diferencia DELIBERADA con el XP.
     El XP es un numero que solo sube; la FOTO es un REEMPLAZO COMPLETO. Abrir
     ?qa=1 en un telefono vinculado a un alumno real, completar una etapa para
     revisar contenido y que eso suba, le PISA LA PARTIDA DEL ANO. */
  if(EFIMERO) return;
+ if(ya){                                      // subida INMEDIATA (al dejar la app en segundo plano)
+  if(_progTimer){ clearTimeout(_progTimer); _progTimer=null; }
+  _enviarFoto(); return;
+ }
  if(_progTimer) return;                       // ya hay un envio programado
  const espera=Math.max(0,15000-(Date.now()-_progUlt));
- _progTimer=setTimeout(async ()=>{
-  _progTimer=null; _progUlt=Date.now();
-  const json=JSON.stringify(payloadSave());
-  if(json===_progEnviado) return;             // guardar() corre en CADA respuesta
-  try{
-   const {error}=await SB.rpc('kimun_progreso_subir',{p_datos:JSON.parse(json)});
-   if(error) throw error;
-   _progEnviado=json;
-  }catch(e){ console.error('progreso:',e.message||e); }   // best-effort: no interrumpe
- }, espera);
+ _progTimer=setTimeout(_enviarFoto, espera);
+}
+/* Al dejar la app en segundo plano o cerrarla, subir la foto YA (sin esperar el rebote
+   de 15 s): asi el avance queda en el servidor aunque el alumno cierre el juego. */
+document.addEventListener('visibilitychange',function(){
+ if(document.visibilityState==='hidden'){ try{ subirProgreso(true); }catch(e){} }
+});
+/* ⚠️ TEMPORAL: diagnostico del guardado en el servidor, SOLO en la app Android, para
+   depurar el restore tras reinstalar. Quitar cuando este confirmado. */
+function _diag(msg){
+ try{
+  var C=window.Capacitor; if(!(C&&C.isNativePlatform&&C.isNativePlatform())) return;
+  var d=document.getElementById('_diagbar');
+  if(!d){ d=document.createElement('div'); d.id='_diagbar';
+   d.style.cssText='position:fixed;left:0;right:0;top:0;z-index:99999;background:rgba(0,50,25,.92);'+
+    'color:#8fffcf;font:600 11px/1.35 monospace;padding:4px 8px;white-space:pre-wrap';
+   (document.body||document.documentElement).appendChild(d); }
+  d.textContent=('['+new Date().toLocaleTimeString().slice(0,8)+'] '+msg+'\n'+d.textContent).slice(0,420);
+ }catch(e){}
+}
+/* Aviso breve con cara de juego: al alumno le confirma que su avance quedo a salvo.
+   Solo en la app; en la web no aparece. Se va solo a los ~1,7 s. */
+let _tesoroT=null;
+function _tesoro(){
+ try{
+  var C=window.Capacitor; if(!(C&&C.isNativePlatform&&C.isNativePlatform())) return;
+  var d=document.getElementById('_tesorobar');
+  if(!d){ d=document.createElement('div'); d.id='_tesorobar';
+   d.style.cssText='position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom));'+
+    'transform:translateX(-50%);z-index:99998;background:linear-gradient(180deg,#ffd75a,#f5b71e);'+
+    'color:#3a2a00;font:800 14px/1.2 Nunito,system-ui,sans-serif;padding:10px 18px;border-radius:14px;'+
+    'box-shadow:0 8px 22px rgba(245,183,30,.4);white-space:nowrap;transition:opacity .3s ease';
+   (document.body||document.documentElement).appendChild(d); }
+  d.textContent='💾 ¡Guardé tu tesoro!';
+  d.style.opacity='1';
+  clearTimeout(_tesoroT);
+  _tesoroT=setTimeout(function(){ if(d) d.style.opacity='0'; }, 1700);
+ }catch(e){}
 }
 
 /* Resumen comparable de un save: sirve para decidir si hay conflicto y para
@@ -1617,19 +1659,25 @@ function marcarBajado(){ try{ localStorage.setItem(claveBajado(),'1'); }catch(e)
    lleva la promesa en silencio. */
 async function bajarProgreso(xpServidor){
  if(!SB||!MI_PERFIL||EFIMERO) return false;
+ _diag('bajando foto (xpServ='+xpServidor+')');
  try{
   const {data,error}=await SB.rpc('kimun_progreso_bajar');
   if(error) throw error;
   const fila=Array.isArray(data)?data[0]:data;
   if(!fila||!fila.datos){                   // servidor vacio: sube lo que hay aqui
+   _diag('servidor VACIO: nada que restaurar');
    marcarBajado(); _progEnviado=null; subirProgreso(); return false;
   }
   PROG_REMOTO={datos:fila.datos, fecha:fila.actualizado, xpServidor:xpServidor};
-  if(!hayAvance(resumenAvance(payloadSave()))){   // telefono recien empezado
+  const rRem=resumenAvance(fila.datos), rLoc=resumenAvance(payloadSave());
+  _diag('foto: '+rRem.capitulos+'cap '+rRem.monedas+'mon | local: xp='+rLoc.xp+' '+rLoc.capitulos+'cap '+rLoc.monedas+'mon');
+  if(!hayAvance(rLoc)){                      // telefono recien empezado
+   _diag('sin avance local -> aplico la foto');
    aplicarProgresoRemoto(); return false;
   }
+  _diag('los dos con avance -> pregunto');
   mostrarConflictoProgreso(); return true;        // los dos con avance: preguntar
- }catch(e){ console.error('progreso:',e.message||e); return false; }
+ }catch(e){ console.error('progreso:',e.message||e); _diag('ERROR bajar: '+(e.message||e)); return false; }
 }
 
 function aplicarProgresoRemoto(){
@@ -1644,6 +1692,7 @@ function aplicarProgresoRemoto(){
  if(typeof PROG_REMOTO.xpServidor==='number') S.xp=PROG_REMOTO.xpServidor;
  marcarBajado(); PROG_REMOTO=null;
  _progEnviado=null; guardar(); refreshHud();
+ _diag('APLICADO: '+resumenAvance(payloadSave()).capitulos+'cap '+(S.monedas||0)+'mon');
 }
 
 function mostrarConflictoProgreso(){
