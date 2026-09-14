@@ -25,6 +25,30 @@ jobs:
           distribution: temurin
           java-version: '17'
 
+      # El keystore de debug se genera al azar en cada corrida, asi que cada APK queda
+      # firmado distinto y Android se niega a ACTUALIZAR uno sobre otro ("conflicto de
+      # paquetes"): habria que desinstalar cada vez y perder la voz descargada. Lo dejamos
+      # ESTABLE cacheandolo entre corridas, con las credenciales estandar de debug de
+      # Android (android / androiddebugkey) que Gradle usa por convencion. No es secreto:
+      # firma solo builds de depuracion, nunca el release de Play. La primera corrida lo
+      # crea; hay que desinstalar UNA vez para adoptar la firma nueva, y despues los APK
+      # se actualizan sin desinstalar.
+      - name: Keystore de debug estable (cache)
+        uses: actions/cache@v4
+        with:
+          path: ~/.android/debug.keystore
+          key: vulpo-debug-keystore-v1
+
+      - name: Generar el keystore de debug si falta
+        run: |
+          if [ ! -f ~/.android/debug.keystore ]; then
+            mkdir -p ~/.android
+            keytool -genkeypair -v -keystore ~/.android/debug.keystore \
+              -storepass android -alias androiddebugkey -keypass android \
+              -keyalg RSA -keysize 2048 -validity 10000 \
+              -dname "CN=Android Debug,O=Android,C=US"
+          fi
+
       - name: Dependencias de Capacitor
         run: npm install
 
