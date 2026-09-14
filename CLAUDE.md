@@ -13213,7 +13213,40 @@ El punto ⚠️ #4 de la guía de Play Console —qué hacer con el contenido de
 la app ya no incluye ese contenido, así que en el cuestionario de contenido/Familias no es una
 decisión pendiente. La opción "2. Ocultarlo en la versión de Play" de la guía es exactamente esto.
 
-- **Pendiente inmediato:** el **`.aab` de publicación firmado** (hoy la nube arma un APK de *debug*,
-  no el bundle firmado que Play exige) — el workflow `bundleRelease` + el script de firma con la
-  llave de subida (secret de GitHub, nunca en el repo) quedan como el próximo paso. Después, los
-  formularios de la consola (los llena Roberto con la guía) y enviar a revisión.
+#### El `.aab` firmado de release, armado y verificado
+Cierra el pendiente inmediato de arriba. Hoy la CI arma un APK de *debug* (`assembleDebug`,
+`android.yml`) para probar en el teléfono; Play exige un **App Bundle de release FIRMADO**
+(`bundleRelease`). Tres piezas nuevas, con un workflow **separado y solo manual** para no tocar el
+loop del APK debug:
+
+- **`.github/workflows/android-release.yml`** (Actions → *App Bundle de Release* → *Run workflow*,
+  rama `feature/android`): decodifica la upload key desde un secreto base64 a un archivo **efímero**
+  del runner, la pasa por el entorno, y arma el `.aab` firmado con `./gradlew bundleRelease`. Un
+  **guard temprano** aborta con un aviso claro si falta `ANDROID_KEYSTORE_BASE64`, en vez de un
+  error de Gradle indescifrable 200 líneas más abajo.
+- **`scripts/patch-release-signing.py`** le mete a `build.gradle` un `signingConfig.release` que lee
+  `System.getenv(...)` —**nada de literales**— y lo cablea al `buildTypes.release`, más el bump del
+  `versionCode` al número de corrida (cada `.aab` que sube a Play debe ser mayor que el anterior).
+- **`docs/android-release-aab.md`**: el runbook que Roberto hace **una sola vez** —instalar JDK,
+  `keytool` para crear la upload key, base64, cargar 4 secretos— y después cada `.aab` sale con un
+  clic.
+
+> ### ⚠️ La upload key y sus contraseñas NUNCA van al repositorio (que es PÚBLICO)
+> Viven **solo** en el PC de Roberto (el `.jks`) y como **secretos de GitHub** —en sus manos—. Ni
+> el repo, ni el workflow, ni el `.aab` las contienen: el workflow las lee de los secretos y las
+> pasa por el entorno. Modelo Play App Signing: Google guarda la clave maestra; se sube con la
+> upload key.
+
+**Verificado hasta donde se puede sin la nube** —el `bundleRelease` real y la firma con la clave
+verdadera se confirman en la primera corrida de CI—: se generó el proyecto Android local para no
+adivinar anclas, y el patch corre contra el `build.gradle` **real**: idempotente (marcador
+`VULPO_RELEASE_SIGNING`), aborta si el ancla `android {` no calza (anclado a inicio de línea, para
+no pegar dentro de `noandroid {`), Groovy con las llaves balanceadas, y la ruta sin `versionCode`
+en el entorno respetada. Los dos YAML parsean; y el `echo "$KS" | base64 -d` del workflow
+reconstruye el keystore **idéntico** (roundtrip `orig 500 · decod 500`), o sea que el paso de
+decodificación es sólido.
+
+- **Pendiente de Roberto:** correr el runbook una vez (generar la upload key con `keytool` + cargar
+  los 4 secretos de GitHub, `docs/android-release-aab.md`) y lanzar el workflow *App Bundle de
+  Release*; después, los formularios de la consola (los llena con la guía, fuera del repo) y enviar
+  a revisión.
