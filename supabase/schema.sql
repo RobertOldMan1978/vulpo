@@ -2497,6 +2497,40 @@ declare cid uuid; r public.inscripciones; begin
   returning * into r;
   return r; end $$;
 
+-- ── Modo docente (proyectar en clase, Sesión 128) ─────────────────────────────────────
+-- El profesor juega VULPO completo desde su PC para proyectar en clase, sin distribuir un
+-- código y sin ensuciar datos. El panel (profe autenticado) genera un token temporal de 6 h;
+-- el juego lo valida antes de entrar en "modo docente" (todo abierto, no guarda, no marca).
+-- Así el modo queda SOLO para profesores logueados y los links caducan solos.
+-- ⚠️ Es "blando" contra alguien determinado (el juego es estático, como toda la puerta): lo que
+--    corta es el COMPARTIR CASUAL, que es el riesgo real. No es DRM.
+create table if not exists public.docente_tokens (
+  token       uuid primary key default gen_random_uuid(),
+  profesor_id uuid not null references public.profesores(id) on delete cascade,
+  expira      timestamptz not null,
+  creado      timestamptz not null default now()
+);
+alter table public.docente_tokens enable row level security;
+-- Sin políticas, como el resto del esquema: nada se lee directo, todo pasa por funciones.
+
+-- El panel (profe autenticado) pide un token. CUALQUIER profesor autorizado puede: proyectar en
+-- clase es tarea de todo docente, no solo del admin. De paso limpia los vencidos.
+create or replace function public.kimun_prof_docente_link()
+returns uuid language plpgsql security definer set search_path=public as $$
+declare yo public.profesores; t uuid; begin
+  select * into yo from public.profesores where id = auth.uid();
+  if yo.id is null then raise exception 'no_autorizado'; end if;
+  delete from public.docente_tokens where expira < now();          -- higiene
+  insert into public.docente_tokens(profesor_id, expira)
+  values (yo.id, now() + interval '6 hours')
+  returning token into t;
+  return t; end $$;
+
+-- El juego (sesión anónima) valida el token. Devuelve SOLO sí/no: ningún dato.
+create or replace function public.kimun_docente_ok(p_token uuid)
+returns boolean language sql security definer set search_path=public as $$
+  select exists(select 1 from public.docente_tokens where token = p_token and expira > now()); $$;
+
 -- El curso de ESTE dispositivo, con su bandera experimental. La necesita el juego al
 -- arrancar para saber si abre los capítulos: el modo es propiedad del curso y no del
 -- aparato, así que un alumno que borra los datos del navegador y vuelve a canjear su
@@ -3080,6 +3114,9 @@ grant execute on function
   , public.kimun_prof_preset(text)
   , public.kimun_prof_cursos()
   , public.kimun_prof_mi_acceso()
+  -- Modo docente (Sesión 128): el panel pide el token, el juego lo valida.
+  , public.kimun_prof_docente_link()
+  , public.kimun_docente_ok(uuid)
   to anon, authenticated;
 
 -- ------------------------------------------------------------

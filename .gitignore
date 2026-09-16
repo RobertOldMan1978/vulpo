@@ -40,3 +40,12 @@ dev/prueba-voz/
 # El doble de Supabase para verificar el panel sin sesion. Se regenera con
 # scratchpad/stub-panel.py y no es parte del producto.
 _panel-demo.html
+
+# Empaque Android (Capacitor): artefactos de build, NUNCA al repo.
+# www/ lo arma scripts/armar-webdir.py; android/ lo genera la nube en cada compilacion.
+node_modules/
+www/
+android/
+.gradle/
+# Paquetes de voz para la app (se hospedan en GitHub Releases, no en el git).
+dist-voz/

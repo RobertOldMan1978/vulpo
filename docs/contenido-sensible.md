@@ -31,6 +31,29 @@ entra en los Jefes Finales es el sexual, y todo lo demás entra, en todos los cu
 Los únicos OA sensibles que quedan fuera de un jefe son los tres de sexualidad de 7°, que es
 exactamente la regla.
 
+## La app de Google Play SÍ saca la sexualidad — la única excepción a "no hay OA apagables" (14/09/2026)
+
+La regla de arriba vale para el **sitio web** (vulpo.cl), que es lo que licencia un colegio: ahí
+todo se juega completo. **La app de Google Play es la excepción**, y por un motivo distinto: la
+política de **Familias** de Play y el ojo de un colegio confesional sobre una app para niños.
+Roberto (opción 2) decidió **sacar la sexualidad de la app Y del bundle**, dejándola entera en el web.
+
+- Lo hace **`scripts/armar-webdir.py`** al armar `www/` (el paquete de la app), sobre la COPIA: el
+  motor (`assets/js/motor.js`) y los forks del repo **NO se tocan** —el corte vive entero en el
+  script de build, y `www/` está gitignorado—. Saca dos capítulos completos de `EXPEDICIONES` y de
+  la lista `capitulos` (así dejan de existir en la app: no se muestran ni cuentan para el Jefe
+  Final), y **borra sus preguntas y su lección de introducción** del `contenido/` empacado:
+  - `cie7-cap5` ("Sexualidad y autocuidado", 7°): CN07 OA 01/02/03 + lección `ci7-sexualidad`.
+  - `cie6-cap2` ("Mi cuerpo y mi salud", 6°): CN06 OA 04/05/06 + lección `ci6-cuerpo`.
+- ⚠️ **`cie6-cap2` mezcla lo sexual con las drogas** (CN06 OA 07): su jefe de capítulo cruza los
+  cuatro OA, así que no se puede partir y se saca el capítulo entero. La única esquirla: la app
+  pierde el **nodo de drogas** de 6° —pero el OA 07 SIGUE en la app dentro del **Jefe Final de
+  Ciencias** (fase 1), y el web lo mantiene todo—. Por eso los OA de drogas **no se borran** del
+  bundle: el jefe los necesita.
+- **Verificado el 14/09 jugando el bundle:** Ciencias de 6° y 7° muestran 4 capítulos (sin el
+  sexual), el motor bootea (`__MOTOR_OK`), el Jefe Final sigue, y las preguntas/lecciones sexuales
+  no están en `www/`. El repo (web) queda byte a byte igual.
+
 ## ⚠️ Regla: lo sexual NO entra en ningún Jefe Final (02/09/2026)
 
 **Decidida por Roberto**, y resuelve el problema que dejaba abierta la tarea A4.

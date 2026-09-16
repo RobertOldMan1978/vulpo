@@ -1262,6 +1262,13 @@ const _SOLO_PEDIDO=_M ? _M.ids
                       : (_PARAMS.get('solo')||'').split(',').map(s=>s.trim()).filter(Boolean);
 const VENCE=_M?_M.hasta:'';            // '' = no caduca. ?solo= nunca caduca.
 const ARMAR=_PARAMS.has('armar');      // pantalla para armar enlaces de muestra
+/* Modo docente (proyectar en clase, Sesión 128): el profe entra desde el panel con un token.
+   DOCENTE es verdadero solo si ese token YA se validó en esta pestaña (sessionStorage), así es
+   una const de carga síncrona. DOC_VALIDANDO = hay token pero falta validarlo → suprime disco
+   (SIN_DISCO, abajo) para no crear perfil basura mientras se valida, y dispara validarDocente(). */
+const DOCENTE_TOKEN=_PARAMS.get('docente')||'';
+const DOCENTE=(function(){try{return !!DOCENTE_TOKEN && sessionStorage.getItem('kimun_docente_ok')===DOCENTE_TOKEN;}catch(e){return false;}})();
+const DOC_VALIDANDO=!!DOCENTE_TOKEN && !DOCENTE;
 
 const EXPEDICIONES=[
  // --- Campaña Historia (7°) ---
@@ -1587,17 +1594,17 @@ const EXPERIMENTAL=_exper;
    De paso el mapa del profesor mide lo que el colegio ESTÁ pasando, no lo que el
    juego impuso. Para volver al avance secuencial, esta sola constante en false. */
 const ORDEN_LIBRE=true;
-const CAPS_ABIERTOS=ORDEN_LIBRE||QA||PRUEBA||EXPERIMENTAL;
-const JEFES_ABIERTOS=QA||PRUEBA;
+const CAPS_ABIERTOS=ORDEN_LIBRE||QA||PRUEBA||EXPERIMENTAL||DOCENTE;
+const JEFES_ABIERTOS=QA||PRUEBA||DOCENTE;
 /* ⚠️ Los candados PEDAGÓGICOS van en su propia bandera, y por eso ORDEN_LIBRE no los
    toca: que la mini-clase abra su etapa y que la lección abra su nivel del Reto no es
    progresión sino "aprender desbloquea el desafío" (Sesión 29). Mientras compartieron
    CAPS_ABIERTOS, volver libre el orden los habría apagado a los dos de una sola vez y
    sin ningún aviso. Es el mismo corte que la Sesión 41 le hizo a QA y la 73 a
    MODO_ABIERTO: una bandera que mezcla dos preguntas distintas se parte. */
-const LECC_ABIERTAS=QA||PRUEBA;
-const EFIMERO=QA||PRUEBA;        // no mide dominio por OA ni reporta refuerzos
-const SIN_DISCO=PRUEBA||ARMAR;   // ni localStorage ni Supabase ni intro
+const LECC_ABIERTAS=QA||PRUEBA||DOCENTE;
+const EFIMERO=QA||PRUEBA||DOCENTE;        // no mide dominio por OA ni reporta refuerzos
+const SIN_DISCO=PRUEBA||ARMAR||DOCENTE||DOC_VALIDANDO;   // ni localStorage ni Supabase ni intro (ni al validar el token docente)
 /* Vigencia inclusiva: un enlace con hasta=2026-09-15 sirve todo el 15 y muere el 16. */
 const VENCIDA=!!VENCE && hoyISO()>VENCE;
 
@@ -2135,6 +2142,8 @@ async function startDuelo(){
  if(PRUEBA) setTimeout(VENCIDA?mostrarVencida:arrancarModoPrueba,0);   // tras montar la UI
  if(ARMAR)  setTimeout(arrancarArmador,0);
  if(INSCRIBIR) setTimeout(arrancarInscripcion,0);
+ if(DOCENTE) setTimeout(arrancarModoDocente,0);              // token válido → menú completo
+ else if(DOC_VALIDANDO) setTimeout(validarDocente,0);        // hay token → validarlo y recargar
  aplicarMaestria();   // aura dorada si ya es maestro (no depende del servidor)
  // Perfil en el servidor desde el inicio (antes solo se creaba al entrar al duelo).
  // No bloquea: si falla, el juego funciona igual y se reintenta en la próxima sesión.

@@ -491,7 +491,7 @@ function extraPorId(id){ const x=EXTRAS.find(e=>e.id===id); return (x&&x.disponi
    código a mitad de sesión, la puerta se abre sin recargar la página. */
 function tieneLicencia(){ return !!S.alumno; }
 /* Excepciones incorporadas: los enlaces de muestra y ?qa=1 nunca pasan por la puerta. */
-function bloqueado(){ return PUERTA && !PRUEBA && !QA && !tieneLicencia(); }
+function bloqueado(){ return PUERTA && !PRUEBA && !QA && !(typeof DOCENTE!=='undefined'&&DOCENTE) && !tieneLicencia(); }
 function capAbierto(id){ return !bloqueado() || id===DEMO_LIBRE; }
 /* Mensaje único cuando se toca algo cerrado. */
 function avisoCandado(){ alert('🔒 Necesitas un código de tu profesor para abrir esta parte de VULPO.\n\n¿Eres profesor? Escríbenos a contacto@vulpo.cl'); }
@@ -661,6 +661,41 @@ function arrancarModoPrueba(){
  S.nombre='Invitado'; S.avatar=AVATARES[4];   // 🦊, la mascota
  $('nav').style.display='none';
  renderListaPrueba();
+}
+/* Modo docente (proyectar en clase, Sesión 128): el profe entra desde el panel con un token
+   de 6 h. Todo desbloqueado (por las banderas del fork), NO guarda (SIN_DISCO+EFIMERO), NO
+   marca (QA_MARCA sigue solo-QA), menú completo. El token se valida contra Supabase; si es
+   válido se recuerda en la pestaña (sessionStorage) y se recarga para que las banderas se
+   reevalúen con DOCENTE=true. Igual que arrancarModoPrueba pero con el menú completo. */
+function arrancarModoDocente(){
+ S.nombre='Docente'; S.avatar=AVATARES[4];   // 🦊
+ $('nav').style.display='none';
+ renderExpediciones(); go('scr-expediciones');
+}
+function _docenteOverlay(html){
+ let ov=document.getElementById('docenteOv');
+ if(!ov){ ov=document.createElement('div'); ov.id='docenteOv';
+  ov.style.cssText='position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;'+
+   'align-items:center;justify-content:center;gap:14px;text-align:center;padding:24px;'+
+   'background:#1a1033;color:#fff;font-family:inherit';
+  document.body.appendChild(ov); }
+ ov.innerHTML=html; return ov;
+}
+async function validarDocente(){
+ _docenteOverlay('<p style="font-size:17px;font-weight:800">Validando acceso docente…</p>');
+ const fin=(msg)=>_docenteOverlay('<p style="font-size:16px;max-width:320px;line-height:1.4">'+msg+'</p>'+
+   '<button onclick="location.href=location.pathname" style="padding:10px 18px;border:0;'+
+   'border-radius:10px;background:#8f6bff;color:#fff;font-weight:800;cursor:pointer">Ir al juego</button>');
+ try{
+  if(!SB) return fin('Sin conexión: no se pudo validar el acceso docente.');
+  const {data,error}=await SB.rpc('kimun_docente_ok',{p_token:DOCENTE_TOKEN});
+  if(error) throw error;
+  if(data!==true) return fin('Este acceso docente no es válido o ya venció. Pedí uno nuevo desde el panel del profesor.');
+  try{ sessionStorage.setItem('kimun_docente_ok',DOCENTE_TOKEN); }catch(e){}
+  let ok=false; try{ ok=sessionStorage.getItem('kimun_docente_ok')===DOCENTE_TOKEN; }catch(e){}
+  if(ok){ location.reload(); return; }
+  fin('Tu navegador no permite el modo docente (¿ventana privada?). Probá en una ventana normal.');
+ }catch(e){ fin('No se pudo validar el acceso docente. Intentá de nuevo.'); }
 }
 function arrancarInscripcion(){
  $('nav').style.display='none';          // la barra inferior no va encima de esta pantalla
@@ -1556,28 +1591,112 @@ function sincronizarXP(){
    reintentos que si necesita dominio: dominio manda eventos, que se pierden si
    no llegan; la foto es completa e idempotente, asi que el proximo envio que si
    llegue lleva todo. */
-let _progTimer=null, _progUlt=0, _progEnviado=null;
+let _progTimer=null, _progUlt=0, _progEnviado=null, _bajando=false;
 
-function subirProgreso(){
+async function _enviarFoto(){
+ _progTimer=null; _progUlt=Date.now();
+ const json=JSON.stringify(payloadSave());
+ if(json===_progEnviado) return;             // guardar() corre en CADA respuesta
+ try{
+  const {error}=await SB.rpc('kimun_progreso_subir',{p_datos:JSON.parse(json)});
+  if(error) throw error;
+  _progEnviado=json; _tesoro(); _diag('tesoro guardado en el servidor');
+ }catch(e){ console.error('progreso:',e.message||e); _diag('ERROR subir: '+(e.message||e)); }  // best-effort
+}
+function subirProgreso(ya){
  if(!SB||!MI_PERFIL) return;
  /* NO se sube en EFIMERO, y esta es una diferencia DELIBERADA con el XP.
     El XP es un numero que solo sube; la FOTO es un REEMPLAZO COMPLETO. Abrir
     ?qa=1 en un telefono vinculado a un alumno real, completar una etapa para
     revisar contenido y que eso suba, le PISA LA PARTIDA DEL ANO. */
  if(EFIMERO) return;
+ /* ⚠️ NO subir mientras se RESTAURA (bajarProgreso en vuelo). Al canjear, el flujo
+    llama guardar() ANTES de bajarProgreso, y en un telefono recien reinstalado ese
+    guardar() sube la foto VACIA local. Sin este guard, esa subida vacia PISA la foto
+    buena del servidor y despues solo vuelve el XP (que vive en el perfil, aparte). */
+ if(_bajando) return;
+ if(ya){                                      // subida INMEDIATA (al dejar la app en segundo plano)
+  if(_progTimer){ clearTimeout(_progTimer); _progTimer=null; }
+  _enviarFoto(); return;
+ }
  if(_progTimer) return;                       // ya hay un envio programado
  const espera=Math.max(0,15000-(Date.now()-_progUlt));
- _progTimer=setTimeout(async ()=>{
-  _progTimer=null; _progUlt=Date.now();
-  const json=JSON.stringify(payloadSave());
-  if(json===_progEnviado) return;             // guardar() corre en CADA respuesta
-  try{
-   const {error}=await SB.rpc('kimun_progreso_subir',{p_datos:JSON.parse(json)});
-   if(error) throw error;
-   _progEnviado=json;
-  }catch(e){ console.error('progreso:',e.message||e); }   // best-effort: no interrumpe
- }, espera);
+ _progTimer=setTimeout(_enviarFoto, espera);
 }
+/* Al dejar la app en segundo plano o cerrarla, subir la foto YA (sin esperar el rebote
+   de 15 s): asi el avance queda en el servidor aunque el alumno cierre el juego. */
+document.addEventListener('visibilitychange',function(){
+ if(document.visibilityState==='hidden'){ try{ subirProgreso(true); }catch(e){} }
+});
+/* Diagnostico del restore RETIRADO: el guardado en el servidor quedo confirmado en el
+   telefono. Se deja como no-op para no tocar las llamadas _diag(...) repartidas por el
+   codigo (bajarProgreso, aplicarProgresoRemoto, _enviarFoto). */
+function _diag(){}
+/* Aviso DISCRETO de guardado: pildora chica ARRIBA (antes iba abajo, donde molestaba) y
+   como mucho una vez cada 2 min (antes salia en cada subida). Solo en la app. */
+let _tesoroT=null, _tesoroUlt=0;
+function _tesoro(){
+ try{
+  var C=window.Capacitor; if(!(C&&C.isNativePlatform&&C.isNativePlatform())) return;
+  if(Date.now()-_tesoroUlt < 120000) return;   // throttle: no repetirse en cada subida
+  _tesoroUlt=Date.now();
+  var d=document.getElementById('_tesorobar');
+  if(!d){ d=document.createElement('div'); d.id='_tesorobar';
+   d.style.cssText='position:fixed;left:50%;top:calc(10px + env(safe-area-inset-top));'+
+    'transform:translateX(-50%);z-index:99998;background:rgba(20,16,40,.9);'+
+    'color:#ffd75a;font:700 12px/1.2 Nunito,system-ui,sans-serif;padding:6px 14px;border-radius:999px;'+
+    'box-shadow:0 4px 14px rgba(0,0,0,.32);white-space:nowrap;transition:opacity .35s ease;pointer-events:none';
+   (document.body||document.documentElement).appendChild(d); }
+  d.textContent='💾 Tesoro guardado';
+  d.style.opacity='1';
+  clearTimeout(_tesoroT);
+  _tesoroT=setTimeout(function(){ if(d) d.style.opacity='0'; }, 1400);
+ }catch(e){}
+}
+/* "Salir" del menu principal (SOLO en la app): fuerza la subida de la foto, confirma que
+   el avance quedo a salvo y vuelve al selector de cursos. Reusa #salirWeb, que en la web
+   sigue siendo "Volver a vulpo.cl". Asi el alumno cierra con la certeza de que se guardo. */
+/* Pregunta antes de salir; al confirmar, guarda y CIERRA la app (via @capacitor/app). Si el
+   plugin no estuviera, cae a volver al selector de cursos. */
+function _salirGuardando(){
+ var ov=document.createElement('div'); ov.id='_salirOv';
+ ov.style.cssText='position:fixed;inset:0;z-index:100000;background:rgba(12,8,26,.97);display:flex;'+
+  'flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:28px;'+
+  'font:700 16px/1.5 Nunito,system-ui,sans-serif';
+ ov.innerHTML=''
+  +'<div style="font-size:46px">🦊</div>'
+  +'<div style="margin-top:12px;font-weight:800;font-size:20px">¿Salir de VULPO?</div>'
+  +'<div id="_salirSub" style="margin-top:8px;color:#c9bfe6">Guardaremos tu avance antes de salir.</div>'
+  +'<div id="_salirBtns" style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">'
+  +  '<button id="_salirSi" style="background:linear-gradient(180deg,#ff8a5a,#f5651e);color:#fff;border:0;font:800 15px Nunito,system-ui,sans-serif;padding:12px 22px;border-radius:14px;cursor:pointer">Sí, salir</button>'
+  +  '<button id="_salirNo" style="background:transparent;color:#c9bfe6;border:1.5px solid #6a5f8f;font:800 15px Nunito,system-ui,sans-serif;padding:12px 22px;border-radius:14px;cursor:pointer">Seguir jugando</button>'
+  +'</div>';
+ (document.body||document.documentElement).appendChild(ov);
+ document.getElementById('_salirNo').onclick=function(){ try{ ov.remove(); }catch(e){} };
+ document.getElementById('_salirSi').onclick=async function(){
+  var b=document.getElementById('_salirBtns'); if(b) b.style.display='none';
+  var sub=document.getElementById('_salirSub'); if(sub) sub.textContent='Guardando tu avance…';
+  try{ if(SB&&MI_PERFIL&&!EFIMERO) await _enviarFoto(); }catch(e){}
+  if(sub) sub.textContent='✅ ¡Listo! Tu avance quedó a salvo.';
+  await new Promise(function(r){ setTimeout(r,900); });
+  try{ var C=window.Capacitor; if(C&&C.Plugins&&C.Plugins.App&&C.Plugins.App.exitApp){ C.Plugins.App.exitApp(); return; } }catch(e){}
+  location.href='/';   // por si no esta el plugin: al menos volver al selector
+ };
+}
+(function(){
+ var C=window.Capacitor; if(!(C&&C.isNativePlatform&&C.isNativePlatform())) return;   // solo en la app
+ function montar(){
+  var b=document.getElementById('salirWeb'); if(!b) return;
+  b.textContent='🚪 Salir';
+  b.removeAttribute('href');
+  // Inline gana sobre @media(display-mode:standalone){#salirWeb{display:none}}, asi se ve en la app.
+  b.style.cssText='display:inline-block;margin-top:14px;padding:10px 22px;border-radius:12px;'+
+   'border:1.5px solid #4dd8ff;color:#4dd8ff;font:800 14px Nunito,system-ui,sans-serif;'+
+   'text-decoration:none;cursor:pointer';
+  b.onclick=function(ev){ if(ev)ev.preventDefault(); _salirGuardando(); };
+ }
+ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',montar); else montar();
+})();
 
 /* Resumen comparable de un save: sirve para decidir si hay conflicto y para
    pintarlo. "capitulos" cuenta las rutas cuyo ULTIMO nodo -el jefe- esta vencido. */
@@ -1617,19 +1736,31 @@ function marcarBajado(){ try{ localStorage.setItem(claveBajado(),'1'); }catch(e)
    lleva la promesa en silencio. */
 async function bajarProgreso(xpServidor){
  if(!SB||!MI_PERFIL||EFIMERO) return false;
+ /* Cancelar la subida PENDIENTE (la de guardar() al canjear): corre en el MISMO tick
+    sincronico que este llamado, asi que la mata ANTES de que dispare y pise la foto
+    buena. Y suprimir subidas nuevas mientras dura la restauracion. */
+ if(_progTimer){ clearTimeout(_progTimer); _progTimer=null; }
+ _bajando=true;
+ _diag('bajando foto (xpServ='+xpServidor+')');
  try{
   const {data,error}=await SB.rpc('kimun_progreso_bajar');
   if(error) throw error;
   const fila=Array.isArray(data)?data[0]:data;
   if(!fila||!fila.datos){                   // servidor vacio: sube lo que hay aqui
-   marcarBajado(); _progEnviado=null; subirProgreso(); return false;
+   _diag('servidor VACIO: nada que restaurar');
+   marcarBajado(); _progEnviado=null; _bajando=false; subirProgreso(); return false;
   }
   PROG_REMOTO={datos:fila.datos, fecha:fila.actualizado, xpServidor:xpServidor};
-  if(!hayAvance(resumenAvance(payloadSave()))){   // telefono recien empezado
+  const rRem=resumenAvance(fila.datos), rLoc=resumenAvance(payloadSave());
+  _diag('foto: '+rRem.capitulos+'cap '+rRem.monedas+'mon | local: xp='+rLoc.xp+' '+rLoc.capitulos+'cap '+rLoc.monedas+'mon');
+  if(!hayAvance(rLoc)){                      // telefono recien empezado
+   _diag('sin avance local -> aplico la foto');
    aplicarProgresoRemoto(); return false;
   }
+  _diag('los dos con avance -> pregunto');
   mostrarConflictoProgreso(); return true;        // los dos con avance: preguntar
- }catch(e){ console.error('progreso:',e.message||e); return false; }
+ }catch(e){ console.error('progreso:',e.message||e); _diag('ERROR bajar: '+(e.message||e)); return false; }
+ finally{ _bajando=false; }
 }
 
 function aplicarProgresoRemoto(){
@@ -1644,6 +1775,7 @@ function aplicarProgresoRemoto(){
  if(typeof PROG_REMOTO.xpServidor==='number') S.xp=PROG_REMOTO.xpServidor;
  marcarBajado(); PROG_REMOTO=null;
  _progEnviado=null; guardar(); refreshHud();
+ _diag('APLICADO: '+resumenAvance(payloadSave()).capitulos+'cap '+(S.monedas||0)+'mon');
 }
 
 function mostrarConflictoProgreso(){

@@ -211,6 +211,8 @@ STUB = r"""
       return [{rango, es_admin_colegio: op || rol==='super',
                limpiar: op, armar: op, gestiona_permisos: op}];
     },
+    // Modo docente (Sesión 128): devuelve un token de demostración.
+    kimun_prof_docente_link: ()=>'demo-token-abc123',
     /* Cuatro cursos a proposito, y con los NOMBRES desordenados respecto al nivel: el
        servidor los devuelve ordenados solo por c.nombre, asi que "8A Prueba" cae antes
        que "Quinto B" y un curso sin nivel se cuela al medio. Es lo que el orden

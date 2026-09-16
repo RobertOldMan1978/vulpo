@@ -1,0 +1,114 @@
+name: App Bundle de Release (.aab para Google Play)
+
+# Arma el APP BUNDLE (.aab) FIRMADO que Google Play exige para publicar. Se dispara SOLO A MANO
+# (workflow_dispatch): un release se arma cuando hay algo que subir a Play, no en cada push. El
+# APK de depuracion para probar en el telefono sigue en android.yml, sin tocar.
+#
+# ⚠️ Necesita 4 SECRETOS de GitHub que pone Roberto (Settings -> Secrets and variables -> Actions).
+# La upload key y sus contrasenas NUNCA van en el repo (que es PUBLICO): viven solo como secretos,
+# en manos de Roberto. Como generarlos: docs/android-release-aab.md.
+#   ANDROID_KEYSTORE_BASE64    el keystore .jks codificado en base64
+#   ANDROID_KEYSTORE_PASSWORD  contrasena del almacen
+#   ANDROID_KEY_ALIAS          alias de la clave de subida
+#   ANDROID_KEY_PASSWORD       contrasena de la clave
+on:
+  workflow_dispatch:
+  # Tambien se dispara empujando una ETIQUETA aab-* (ej: aab-1). workflow_dispatch SOLO
+  # corre desde la rama por defecto (main), y este workflow vive en feature/android; crear
+  # la etiqueta sobre esta rama lo dispara con el codigo de la rama, sin mergear a main.
+  push:
+    tags:
+      - 'aab-*'
+
+jobs:
+  aab:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Aviso temprano y claro si faltan los secretos, en vez de un error de Gradle indescifrable
+      # 200 lineas mas abajo. (No se puede usar 'if: secrets...', asi que se chequea en un run.)
+      - name: Comprobar que estan los secretos de firma
+        env:
+          KS: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+        run: |
+          if [ -z "$KS" ]; then
+            echo "::error::Falta el secreto ANDROID_KEYSTORE_BASE64 (y probablemente los otros 3)."
+            echo "::error::Generalos siguiendo docs/android-release-aab.md y agregalos en"
+            echo "::error::Settings -> Secrets and variables -> Actions. Luego volve a lanzar esto."
+            exit 1
+          fi
+
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Java (para Gradle/Android)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Dependencias de Capacitor
+        run: npm install
+
+      - name: Armar el webDir (www/)
+        run: python3 scripts/armar-webdir.py
+
+      - name: Agregar la plataforma Android
+        run: npx cap add android
+
+      - name: Copiar el sitio al proyecto Android
+        run: npx cap sync android
+
+      # Google Play EXIGE que la app apunte al nivel de API 36 (Android 16). Capacitor 6 genera
+      # 34; se suben compileSdk y targetSdk a 36 (AGP requiere compile >= target). minSdk queda 22.
+      - name: Subir el nivel de API objetivo a 36 (requisito de Play)
+        run: python3 scripts/patch-target-sdk.py
+
+      # El icono de la app (launcher): el zorro Vulpi, legacy + adaptativo. @capacitor/assets
+      # lo genera desde resources/icon-only|foreground|background.png sobre el android/ recien
+      # creado. Sin esto, la app quedaria con el icono por defecto de Capacitor.
+      - name: Icono de la app (zorro Vulpi)
+        run: npx capacitor-assets generate --android --assetPath resources
+
+      # Decodifica la upload key desde el secreto a un archivo EFIMERO del runner. La ruta viaja
+      # por el entorno; la contrasena tambien. Nada de esto queda escrito en el repo ni en el .aab.
+      - name: Decodificar la upload key
+        env:
+          KS: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+        run: |
+          echo "$KS" | base64 -d > "$RUNNER_TEMP/upload-keystore.jks"
+          echo "keystore decodificado ($(wc -c < "$RUNNER_TEMP/upload-keystore.jks") bytes)"
+
+      # Capacitor deja el release SIN firmar; este parche le pone el signingConfig.release
+      # apuntando a la upload key (todo por entorno) y sube el versionCode al numero de corrida.
+      - name: Firmar el release con la upload key
+        # El patch solo lee VULPO_VERSION_CODE; el keystore lo evalua Gradle en el paso siguiente.
+        env:
+          VULPO_VERSION_CODE: ${{ github.run_number }}
+        run: python3 scripts/patch-release-signing.py
+
+      # Red de seguridad: asegura el SDK de Android 36 en el runner. AGP 8.2.1 lo descarga solo si
+      # falta, pero esto lo garantiza. No falla el build si ya esta o si sdkmanager no esta en PATH.
+      - name: Asegurar el SDK de Android 36
+        run: (yes | sdkmanager "platforms;android-36" "build-tools;36.0.0") >/dev/null 2>&1 || true
+
+      - name: Compilar el App Bundle firmado
+        env:
+          VULPO_KEYSTORE_FILE: ${{ runner.temp }}/upload-keystore.jks
+          VULPO_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          VULPO_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          VULPO_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          cd android
+          chmod +x ./gradlew
+          ./gradlew bundleRelease --no-daemon
+
+      - name: Subir el .aab (para cargar en Play Console)
+        uses: actions/upload-artifact@v4
+        with:
+          name: vulpo-aab-release
+          path: android/app/build/outputs/bundle/release/*.aab
+          if-no-files-found: error

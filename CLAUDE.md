@@ -1330,6 +1330,19 @@ para siempre.
     adentro (`vulpo.cl/3ro/?inscribir=INS-XXXXXXXX`). El selector del panel sale de
     `NIVELES_MUESTRA`, el mismo del armador: sumar un curso nuevo sigue siendo una línea.
 
+- **`?docente=<token>` — Modo docente (proyectar en clase, Sesión 128):** el profe entra desde
+  `profesor.html` (botón "🎮 Proyectar en clase" + selector de nivel), que pide un **token de 6 h** a
+  `kimun_prof_docente_link()` y abre `vulpo.cl/<nivel>/?docente=<token>`. El juego valida el token
+  contra `kimun_docente_ok()` y, si es válido, entra en **modo docente**: todo desbloqueado, **no
+  guarda nada** (SIN_DISCO+EFIMERO, no crea perfil), **no marca las respuestas** (es como `?qa=1` pero
+  sin marcar y sin guardar), menú completo, pasa la puerta. Es la herramienta para jugar/proyectar con
+  el curso. Gateado con token → **solo profesores logueados**, y el link **caduca en 6 h** (corta el
+  compartir casual; sigue "blando" contra alguien determinado, como toda la puerta). Vive en `motor.js`
+  (`arrancarModoDocente`/`validarDocente`) + las banderas de cada fork; `bloqueado()` lo esquiva con
+  guard `typeof`. ⚠️ La ventana de validación entra en `SIN_DISCO` (vía `DOC_VALIDANDO`) para no crear
+  un perfil basura mientras se valida. La evidencia imprimible de Formación Ciudadana (Ley 20.911) es
+  aparte, del PANEL, y quedó diferida (G1, Sesión 117).
+
 #### Modelo de acceso (la "puerta")
 
 VULPO nació **completamente abierto**. Desde la Sesión 44 existe una **puerta** que exige el
@@ -13076,3 +13089,387 @@ no la landing comercial. Es servible en la web en `/app/` (inofensivo).
 - **Pendiente:** A2 (proyecto Capacitor + workflow de GitHub Actions + probar en el teléfono), A3 (Play
   Asset Delivery para la voz), A4 (cuenta de desarrollador — **Roberto ya la lanzó**), A5 (política de
   privacidad + formulario de Familias/Datos), A6 (revisión de Google). Fase B (cobro a familias) después.
+
+### Sesión 123 (2026-09-14) — La app anda en el teléfono: restore, navegación, intro, Salir y la firma estable
+Continuación directa del rumbo Android de la Sesión 122 (Fase A). El objetivo de esta sesión fue **A2**:
+que el APK **compile en la nube, se instale y funcione en el teléfono de Roberto**, y arreglar lo que
+apareciera probándolo. **Todo vive en la rama `feature/android`** (test builds, sin merge a `main`); el
+loop es push → GitHub Actions arma el APK → se sube a la pre-release `android-prueba` (link fijo). El
+detalle del loop y sus trampas quedó en la memoria (`reference-android-build-loop`).
+
+#### El bug de fondo del Bloque D: al reinstalar+re-canjear volvía SOLO el XP
+Es lo que Roberto pidió al inicio: *"que si se reinstala la aplicación no genere nuevamente la experiencia
+y monedas… ya me la sé"*. El síntoma en el teléfono: tras reinstalar y re-canjear el `ALU-`, volvía el XP
+pero **no las monedas, ni las skins compradas, ni las campañas ya pasadas**. Se instrumentó con una barra
+de diagnóstico en pantalla (`_diag`, solo nativa) que confirmó el camino: tomaba *"sin avance local → aplico
+la foto"* y aun así solo volvía el XP.
+- **La causa, leída en el código (no adivinada):** el XP vuelve del **perfil** por otra vía (`kimun_xp`),
+  aparte de la foto; monedas/skins/campañas viven **solo en la foto**. El flujo del canje
+  (`<n>/index.html`) llama `guardar()` **antes** de `bajarProgreso()`, y en un teléfono recién reinstalado
+  ese `guardar()` sube la foto **VACÍA** local. En un dispositivo nuevo el rebote de 15 s vale 0, así que
+  esa subida corre contra la bajada y **pisa la foto buena** del servidor. Por eso volvía el XP (perfil,
+  intacto) y no el resto (foto pisada).
+- **El arreglo, entero en `assets/js/motor.js` (sin tocar los seis forks):** `bajarProgreso` cancela
+  cualquier subida pendiente al arrancar —corre en el MISMO tick síncrono que el `guardar()` del canje, así
+  que la mata ANTES de que dispare— y un guard `_bajando` suprime subidas mientras dura la restauración
+  (cubre visibilitychange y el `guardar()` post-aplicar). **Confirmado en el teléfono:** vuelven monedas,
+  skin y campañas.
+  > ⚠️ **Esto NO es solo de la app: es un bug de producción del sitio también.** Un alumno web que borra
+  > los datos del navegador y re-canjea sufre el mismo clobber. El fix vive en `motor.js` (compartido), así
+  > que cuando esto se lleve a `main` corrige la web de paso.
+
+#### Dos bugs de navegación que eran los overlays de diagnóstico
+Roberto: *"no siempre funciona el botón de la tienda"* y *"al salir te manda a la campaña de historia"*.
+Se verificó **jugando en el navegador** con `cdp.mjs` que la navegación de la tienda enruta bien en todos
+los caminos (el "Volver" siempre vuelve al origen correcto) — o sea no era la lógica compartida. Eran los
+**overlays de aviso que agregué (la barra verde `_diag` arriba y el globito del tesoro abajo) sin
+`pointer-events:none`**, así que interceptaban toques sobre los botones de abajo. Se les puso
+`pointer-events:none`. Regla: un overlay de aviso nunca debe comerse un toque.
+
+#### La UX de la app (tres pedidos de Roberto)
+- **Intro duplicado:** el selector (`app/index.html`) mostraba el intro, y el curso lo repetía. Los links
+  del selector llevan ahora `?intro=0`, que el fork respeta (salta y marca visto). Intro **una vez por
+  dispositivo**, en el arranque.
+- **"Pantallazo de reproducción feo":** era el **reproductor NATIVO del WebView** (play gigante + barra)
+  asomándose mientras el video cargaba. Ahora una **carátula** (la mascota sobre fondo oscuro) lo tapa
+  hasta que el video EMPIEZA a reproducir (evento `playing`), y ahí se descubre. El video arranca muteado
+  (autoplay limpio) y se desmutea al arrancar para la fanfarria.
+- **Aviso de guardado molesto:** estaba abajo y salía en cada subida. Ahora es una píldora chica **arriba**
+  y con **throttle** (máximo una vez cada 2 min).
+- **Botón "Salir":** en `scr-rol`, solo en la app (reusa `#salirWeb`, que en la web sigue siendo "Volver a
+  vulpo.cl"). **Pregunta** ("¿Salir de VULPO?"), y al confirmar **fuerza la subida de la foto**, confirma
+  *"tu avance quedó a salvo"* y **cierra la app de verdad** (se agregó **`@capacitor/app`** para
+  `exitApp()`; si faltara, cae a volver al selector). Verificado con cdp que llama `exitApp`.
+- Se **retiró la barra verde de diagnóstico** (`_diag` pasa a no-op): el restore quedó confirmado.
+
+#### ⚠️ La firma de debug estable — el gotcha grande, y por qué costó
+Roberto no podía **actualizar** el APK sobre el instalado: *"conflicto de paquetes"*. Es una firma
+distinta. **Primer intento:** cachear `~/.android/debug.keystore` entre corridas (el keystore se generaba
+al azar en cada build). El cache daba HIT (mismo keystore), pero **seguía el conflicto**. Se **midió** la
+firma real de dos APK comparando `unzip -p app.apk 'META-INF/CERT.RSA' | sha256sum`: **distintas**. O sea
+**el Android Gradle Plugin IGNORA `~/.android/debug.keystore`** y genera el suyo al azar cada build (usa su
+propia ruta según variables del runner).
+- **El fix definitivo:** `scripts/patch-debug-signing.py` le mete al `android/app/build.gradle` generado un
+  `signingConfig.debug` explícito apuntando al keystore estable, corrido en el workflow tras `npx cap sync`.
+- **Verificado ANTES de pedirle a Roberto otra desinstalada:** dos builds del mismo código salieron con
+  **la misma firma** (`1d0403d2…`). Recién ahí se subió el APK y Roberto confirmó *"instalada"* (una última
+  desinstalada para adoptar la firma estable; de ahí en adelante se actualiza sin desinstalar).
+  > **Lección de método:** "el cache da hit" no es "la firma es estable" — hay que **medir la firma del
+  > artefacto**, no confiar en el paso intermedio. Es la misma disciplina de "aplicarlo y mirar el número".
+
+#### Otros
+- Se agregó **`@capacitor/app`** a `package.json` (para `exitApp`); compiló sin problema en la nube.
+- Verificación siempre **jugando/midiendo con `cdp.mjs`** (la navegación de la tienda, el intro, el diálogo
+  de Salir) y comparando firmas de APK; no hay Java local, así que las firmas se comparan por el hash del
+  `META-INF/CERT.RSA`.
+- **Pendiente (sin cambios de fondo):** A5 (política de privacidad + formulario Familias/Datos), A6
+  (revisión de Google) y la subida a Play; A3 (la voz offline ya va por `assets/js/voz-descarga.js` —
+  descarga nativa de los clips desde vulpo.cl + caché con Capacitor Filesystem— en vez de Play Asset
+  Delivery). **Decisión de Roberto pendiente:** cuándo llevar `feature/android` a `main` (y con eso el fix
+  del restore a la web).
+
+### Sesión 124 (2026-09-14) — La sexualidad sale del paquete de la app (opción 2 para Google Play)
+Continuación de la Fase A hacia Google Play. La política de Familias de Play mira con lupa el
+contenido de sexualidad/reproducción del currículum de Ciencias (`CN07 OA 01/02/03` en 7° y
+`CN06 OA 04/05/06` en 6°). La guía de la consola le dejaba a Roberto tres opciones; eligió la
+**opción 2**: **ocultarlo en la versión de Play y sacarlo del bundle de la app**, dejándolo
+**entero en `vulpo.cl`** (el web no se toca). **No se escribió contenido ni se tocó el motor.**
+
+#### Todo el corte vive en el script de build, no en el repo
+`armar-webdir.py` es el que arma `www/` —el subconjunto del sitio que va dentro de la app
+Capacitor, un artefacto de build (gitignorado, lo regenera la nube en cada compilación)—. El corte
+se hace ahí, **sobre la copia en `www/`**: el motor (`assets/js/motor.js`) y los seis forks del
+repo NO se tocan, así que **`vulpo.cl` queda byte a byte igual**. Es la arquitectura más limpia
+posible —la única diferencia app/web vive en un solo lugar—, y el workflow (`android.yml`) ya
+llamaba a `armar-webdir.py`, así que apenas se commitea el corte queda automático en cada build.
+
+`SENSIBLE_FUERA` declara los dos capítulos, y al empacar cada uno:
+- **sale de su fork** —de `EXPEDICIONES` y de la lista `capitulos`—, así deja de existir en la app:
+  no se muestra ni cuenta para el Jefe Final (que se abre al 100% de la campaña, y su desbloqueo
+  lee `capitulos`).
+- **sus preguntas** (los 3 OA sexuales, 30 c/u = 90) **y su lección de introducción** se borran del
+  `preguntas.json`/`lecciones.json` empacado.
+
+| Curso | Capítulo | Fuera del bundle |
+|---|---|---|
+| 7° | `cie7-cap5` "Sexualidad y autocuidado" | CN07 OA 01/02/03 + lección `ci7-sexualidad` |
+| 6° | `cie6-cap2` "Mi cuerpo y mi salud" | CN06 OA 04/05/06 + lección `ci6-cuerpo` |
+
+#### ⚠️ La esquirla de las drogas, surfaceada y no enterrada
+`cie6-cap2` **mezcla los 3 OA sexuales con 1 de drogas** (`CN06 OA 07`), y el jefe DEL CAPÍTULO
+cruza los cuatro, así que **no se puede partir**: se oculta el capítulo entero. Consecuencia: la
+app pierde el **nodo suelto de drogas** de 6°. Pero es leve: **`CN06 OA 07` sigue en la app** dentro
+del Jefe Final de Ciencias (fase 1, "Vida y ecosistemas"), y el web lo mantiene todo. Por eso los OA
+de drogas **NO se borran del bundle** —el jefe los necesita—: solo se saca lo sexual, que es lo que
+Roberto aprobó. Se le dijo de frente (no se enterró en el corte); queda escrito en el comentario del
+código y en `docs/contenido-sensible.md`.
+
+#### El corte falla la compilación antes que empacar a medias
+Como es un artefacto de build, mejor abortar el build que subir un capítulo sensible cortado por la
+mitad. `_quitar_capitulo` ubica el objeto por **ancla exacta** (regex de `{ id:'<cap>',` hasta el
+`]},` de cierre de sus etapas) y **aborta si no calza EXACTO**: ≠1 objeto, o ≠1 entrada en
+`capitulos`, o si queda una referencia después. `_strip_contenido` **asegura que salieron 90
+preguntas** (30×3) y **exactamente 1 lección**, y recalcula el contador `revisadas` para no mentir.
+Al final, un **bloque de verificación** confirma que ningún `cap`, ningún `oa` sexual ni la
+`leccion` sobrevive en el bundle, o `SystemExit`. Lee/escribe con `newline=""` (LF/CRLF-tolerante).
+
+#### Verificado JUGANDO el bundle, no solo mirando el dato
+Se armó `www/` y se booteó `www/6to` y `www/7mo` con `cdp.mjs`: **Ciencias muestra 4 capítulos** en
+cada uno (el sexual desaparecido), el motor bootea (`__MOTOR_OK`), el Jefe Final sigue, y **cero
+texto sexual en pantalla**. Los bosses **no** preguntaban lo sexual (fuera desde la Sesión 84), así
+que sacarlo no rompe nada; el OA 07 de drogas quedó (30 preguntas) para la fase 1. **Cero errores de
+consola, cero 404.** Y el repo/web intacto: `git status` solo muestra `armar-webdir.py` y
+`contenido-sensible.md`.
+
+#### Lo que esto resuelve en la guía de la consola
+El punto ⚠️ #4 de la guía de Play Console —qué hacer con el contenido de `CN07`— **queda resuelto**:
+la app ya no incluye ese contenido, así que en el cuestionario de contenido/Familias no es una
+decisión pendiente. La opción "2. Ocultarlo en la versión de Play" de la guía es exactamente esto.
+
+#### El `.aab` firmado de release, armado y verificado
+Cierra el pendiente inmediato de arriba. Hoy la CI arma un APK de *debug* (`assembleDebug`,
+`android.yml`) para probar en el teléfono; Play exige un **App Bundle de release FIRMADO**
+(`bundleRelease`). Tres piezas nuevas, con un workflow **separado y solo manual** para no tocar el
+loop del APK debug:
+
+- **`.github/workflows/android-release.yml`** (Actions → *App Bundle de Release* → *Run workflow*,
+  rama `feature/android`): decodifica la upload key desde un secreto base64 a un archivo **efímero**
+  del runner, la pasa por el entorno, y arma el `.aab` firmado con `./gradlew bundleRelease`. Un
+  **guard temprano** aborta con un aviso claro si falta `ANDROID_KEYSTORE_BASE64`, en vez de un
+  error de Gradle indescifrable 200 líneas más abajo.
+- **`scripts/patch-release-signing.py`** le mete a `build.gradle` un `signingConfig.release` que lee
+  `System.getenv(...)` —**nada de literales**— y lo cablea al `buildTypes.release`, más el bump del
+  `versionCode` al número de corrida (cada `.aab` que sube a Play debe ser mayor que el anterior).
+- **`docs/android-release-aab.md`**: el runbook que Roberto hace **una sola vez** —instalar JDK,
+  `keytool` para crear la upload key, base64, cargar 4 secretos— y después cada `.aab` sale con un
+  clic.
+
+> ### ⚠️ La upload key y sus contraseñas NUNCA van al repositorio (que es PÚBLICO)
+> Viven **solo** en el PC de Roberto (el `.jks`) y como **secretos de GitHub** —en sus manos—. Ni
+> el repo, ni el workflow, ni el `.aab` las contienen: el workflow las lee de los secretos y las
+> pasa por el entorno. Modelo Play App Signing: Google guarda la clave maestra; se sube con la
+> upload key.
+
+**Verificado hasta donde se puede sin la nube** —el `bundleRelease` real y la firma con la clave
+verdadera se confirman en la primera corrida de CI—: se generó el proyecto Android local para no
+adivinar anclas, y el patch corre contra el `build.gradle` **real**: idempotente (marcador
+`VULPO_RELEASE_SIGNING`), aborta si el ancla `android {` no calza (anclado a inicio de línea, para
+no pegar dentro de `noandroid {`), Groovy con las llaves balanceadas, y la ruta sin `versionCode`
+en el entorno respetada. Los dos YAML parsean; y el `echo "$KS" | base64 -d` del workflow
+reconstruye el keystore **idéntico** (roundtrip `orig 500 · decod 500`), o sea que el paso de
+decodificación es sólido.
+
+- **Pendiente de Roberto:** correr el runbook una vez (generar la upload key con `keytool` + cargar
+  los 4 secretos de GitHub, `docs/android-release-aab.md`) y lanzar el workflow *App Bundle de
+  Release*; después, los formularios de la consola (los llena con la guía, fuera del repo) y enviar
+  a revisión.
+
+### Sesión 125 (2026-09-14) — Se abre el gate de la privacidad para Play, y las respuestas de la consola quedan listas
+Continuación directa de la Sesión 124, mismo día. Roberto: *"avancemos por el lado de la playstore,
+que falta… sigamos por google play, que sigue"*. Sesión corta de verificación y despliegue: **cero
+código nuevo, cero contenido**.
+
+- ⚠️ **El hallazgo que importaba, verificado en vivo:** `https://vulpo.cl/privacidad/` **daba 404**.
+  La política de la Sesión 124 (`c621e1d4`) vivía solo en `feature/android`, y GitHub Pages sirve
+  desde `main` — así que **la URL que Google Play EXIGE no cargaba**, y la revisión se habría caído
+  en el primer chequeo automático. Se confirmó con un fetch al sitio en vivo, no infiriéndolo del
+  árbol de git. Es la disciplina de siempre: **mirar, no suponer.**
+- **El gate, abierto con la opción quirúrgica** (la eligió Roberto sobre el merge completo):
+  cherry-pick de `c621e1d4` a `main` con `-x` (deja la procedencia registrada de cara al merge
+  futuro de `feature/android`). Quedó como **`58e7110b`** en `main` — un solo archivo,
+  `privacidad/index.html`, path nuevo, **cero riesgo para el resto del sitio**. Con eso
+  `vulpo.cl/privacidad/` queda vivo **sin soltar el resto de la Fase A a producción**. El fix del
+  restore de la Sesión 123 sigue esperando el merge completo, que es decisión aparte.
+- **El paquete de respuestas para la consola de Play** (fuera del repo, como `guia-play-console.md`,
+  entregado a Roberto por archivo): la **ficha** (nombre, descripción breve y completa, con las
+  reglas comerciales cuidadas — sin pesos, sin "una a una", sin "sin internet", sin ®); la sección
+  de **Familias** (con el argumento fuerte: el contenido sexual salió del bundle por la Opción 2);
+  la **clasificación de contenido** (⚠️ ojo con las drogas: la prevención educativa
+  `CN06 OA 07`/`CN04 OA 08` **sí sigue en la app** —solo se sacó lo sexual—, y Roberto decide cómo
+  declararla como contenido de prevención, no promoción); y el **Data safety** derivado **literal**
+  de la política publicada (nombre del alumno, correo del profe, id anónimo, actividad en la app;
+  cifrado en tránsito; eliminación por el profe/apoderado; Supabase = encargado, **no** "compartir").
+  Cada "Sí" del Data safety calza con la política, que es justo lo que Google cruza.
+- **Assets de la ficha, medido:** el ícono 512×512 ya existe (`assets/icono-512.png`); faltan el
+  **gráfico destacado 1024×500** y **≥2 capturas del juego real**, que genera Roberto.
+
+**El camino a Play, hoy:** el lado de código está **terminado** (Capacitor + build en la nube + voz
+offline + restore + Opción 2 + `.aab` firmado + política viva). Queda lo operativo de Roberto:
+upload key + 4 secretos → correr el workflow → bajar el `.aab` → llenar la consola con el paquete de
+respuestas → enviar a revisión. **Pendiente de arrastre:** el merge completo de `feature/android` →
+`main` cuando se decida soltar toda la Fase A a la web; INAPI (marca en trámite, publicada en el
+Diario Oficial); que parta el piloto (puerta el 1 de octubre).
+
+### Sesión 126 (2026-09-15) — El campo de eliminación de datos de Play, reforzado; Data safety en marcha
+Continuación de la Fase A, en vivo con Roberto llenando la consola de Google Play. La app ya existe
+como **borrador** (`cl.vulpo.app`, "VULPO: aprende jugando"), con la verificación de desarrollador
+Android ya lista. Se avanzó el formulario de **Seguridad de los datos (Data safety)** y se reforzó
+la política para el campo que Google mira con lupa. **Cero contenido, cero motor.**
+
+- **Data safety, pasos 1-2 completados** (guiados por el pack de respuestas): recoge datos **Sí**;
+  cifrado en tránsito **Sí** (HTTPS/TLS); métodos de creación de cuenta → **"la app no permite crear
+  cuenta"** — verificado en `scripts/armar-webdir.py` que el bundle de la app **NO incluye
+  `profesor.html`**, así que dentro de la app no hay ningún flujo de registro; el alumno solo
+  **canjea** un `ALU-` (perfil que ya creó el profe, en la web) —; login con cuentas creadas fuera
+  **Sí**, método **"Otro"** (las crea el colegio en la plataforma web); eliminación de datos **Sí**.
+  Quedó en el **paso 3 "Tipos de datos"**.
+- ⚠️ **La sección 6 de la política, reforzada, y era el punto justo.** El campo "URL de eliminación
+  de datos" del Data safety exige que la URL **muestre claramente los pasos** para pedir la
+  eliminación y **qué datos se eliminan/conservan**. La sección 6 los tenía en prosa; se reescribió
+  con **pasos numerados** (Paso 1 vía el panel del profe / Paso 2 escribiendo a `contacto@vulpo.cl`),
+  la afirmación de que la **eliminación es inmediata** (`on delete cascade`, que es lo medido) y el
+  detalle de qué se borra (perfil, avance, mediciones, duelos) y qué se conserva (nada del
+  estudiante). ⚠️ **No se inventó ningún período de retención de respaldos** — Supabase hace backups y
+  su ciclo no está medido, así que no se afirma con un número —. **Misma URL pública**
+  (`vulpo.cl/privacidad/`), así que la consola no se retoca. `id="eliminar"` agregado por si se quiere
+  el enlace directo `#eliminar` más adelante.
+- **Orden 66:** el refuerzo va a **producción** con el patrón de la Sesión 125 — commit en
+  `feature/android` (`78d04cc6`), cherry-pick a **`main`** (`e4bc5294`, con `-x`), push. La bitácora
+  se queda en `feature/android`. **Verificado en vivo: `vulpo.cl/privacidad/` responde 200 y sirve la
+  sección reforzada** (contiene "Paso 1").
+- **Pendiente inmediato:** seguir el Data safety desde el paso 3 (Tipos de datos → Uso → Vista previa),
+  marcando las 4 categorías reales — nombre, correo del profe, ID del dispositivo, actividad en la app.
+- **Pendiente de arrastre, sin cambios:** el `.aab` (upload key + 4 secretos → workflow), los assets
+  de la ficha (gráfico 1024×500 + ≥2 capturas del juego real), la prueba cerrada de 12 testers/14 días,
+  el merge completo de `feature/android` → `main`, INAPI y el piloto (puerta el 1 de octubre).
+
+### Sesión 127 (2026-09-16) — La ficha de Play, completa; los assets generados; el ícono de la app es el zorro
+Continuación en vivo con Roberto llenando la consola de Google Play (Fase A). Se completó la ficha
+entera y se generaron los recursos gráficos que faltaban. **Cero contenido del juego, cero motor.**
+
+- **La ficha de Play, terminada** (guiado por el pack de respuestas): Data safety completo (pasos
+  3-5 — nombre, correo del profe, IDs de usuario [el `ALU-`], actividad en la app, ID del
+  dispositivo; todos *"Recopilado, no compartido, no efímero, obligatorio, Funcionalidad de la
+  app"*; el correo y los IDs suman *"Gestión de cuentas"*); las declaraciones **gubernamental /
+  financiera / salud / ID de publicidad** en **No**; categoría **Educativo** + contacto
+  `contacto@vulpo.cl`; etiquetas del mundo educativo; y la **declaración de recursos de IA →
+  etiquetados** (el arte y el logo se generaron con IA — sub-declarar es lo que arriesga, no
+  declarar). ⚠️ Se limpiaron **dos factores de forma** que venían activados de más —**Google Play
+  Games on PC** (que además metía tareas obligatorias) y **Android XR**—, ajenos a una app de
+  teléfono táctil.
+- **Los assets gráficos, generados y verificados MIRANDO** (en `play-store/`, **fuera del repo**):
+  - **Gráfico destacado 1024×500**: compuesto con PIL del logo (`assets/web/vulpo-logo.png`) +
+    fondo violeta del juego + tagline. No es arte nuevo: compone assets existentes, como el `og.png`.
+  - **4 capturas 960×1800 HD del juego REAL** (campaña, quiz, tienda, mini-clase), con `cdp.mjs`
+    sembrando una partida y `ev.movil(480,900)` a deviceScaleFactor 2 (ratio 1.875 < 2:1, válido).
+    ⚠️ La mini-clase falló al primer intento porque la navegación de Matemática cambió en la Sesión
+    98 (una tarjeta por unidad → mapa); se corrigió el camino (`camp-nodo` → `#mapbox .node .orb`).
+  - **Ícono de la ficha (V1, la cara):** el zorro del logo **sin la palabra "Vulpo"**, centrado
+    sobre el durazno del ícono viejo. Se hicieron dos versiones (cara / busto) y Roberto eligió la
+    cara — se lee mejor en tamaño chico.
+- ⚠️ **El ícono de la APP instalada era el de Capacitor por defecto, y nadie lo había notado:** el
+  proyecto `android/` se genera fresco en cada build y **ningún paso ponía el ícono**. Se resuelve
+  con **`@capacitor/assets`** (la herramienta oficial): arma el launcher **legacy + adaptativo**
+  desde `resources/icon-only|foreground|background.png` (el zorro V1; el **foreground al 62%** para
+  el safe zone del adaptativo, que Android recorta a círculo/squircle). **Verificado localmente**
+  —`cap add android` + `capacitor-assets generate`, 48 archivos, el adaptativo compuesto y mirado—
+  antes de cablear el paso en **los dos workflows** (`android.yml` y `android-release.yml`),
+  después de `cap sync`. `scripts/generar-iconos-app.py` regenera los 3 fuentes si el logo cambia.
+- **Orden 66:** el cambio del ícono va a **`feature/android`** (no a `main`: es solo de la app
+  Android). Los assets de `play-store/` **no se commitean** — son de la consola, ya subidos.
+- ⚠️ **El workflow de release no se podía correr: `main` no tiene los workflows.** GitHub solo
+  permite *"Run workflow"* (workflow_dispatch) desde la rama **por defecto** (`main`), y los dos
+  workflows viven solo en `feature/android`. Para armar el `.aab` **sin mergear a main** (Roberto
+  lo posterga por no soltar toda la Fase A a la web todavía), se le agregó a `android-release.yml`
+  un disparo por **etiqueta `aab-*`**: empujar `aab-1` sobre `feature/android` lo corre con el
+  código de la rama (ícono nuevo incluido). Es orden 66 chica, no toca `main`.
+- **Roberto generó la upload key + los 4 secretos** (`docs/android-release-aab.md`, guiado en vivo):
+  el JDK se instaló pero `keytool` no estaba en el PATH de la sesión —resuelto con la ruta
+  completa—; y `[IO.File]::ReadAllBytes` con ruta relativa busca en `system32`, no en el `cd` de
+  PowerShell —resuelto con ruta absoluta—; la primera contraseña no quedó anotada, así que se
+  **rehizo la key** (era nueva, sin nada firmado en Play, cero costo). Falta correr el workflow
+  (etiqueta `aab-1`) → bajar el `.aab`.
+- ⚠️ **El primer `.aab` falló en la firma, por un bug del `patch-release-signing.py` (Sesión 124).**
+  El `versionCode` por defecto de Capacitor es **1**, y el workflow le pasa `VULPO_VERSION_CODE =
+  github.run_number`, que en la **primera corrida vale 1**: el `re.sub` reemplazaba `versionCode 1`
+  por `versionCode 1` —idéntico— y el guard `if s2 == s` lo confundía con *"no se encontró el
+  patrón"*. Se separó la verificación de existencia (`re.search`) del reemplazo. **Verificado local
+  con vc=1 y vc=2.** Es la lección del script *"verificado sin la nube"* (Sesión 124): la primera
+  corrida real lo destapó. El `.aab` se re-lanza con la etiqueta `aab-2` (versionCode 2).
+- **Pendiente inmediato:** bajar el `.aab` (corrida verde), subirlo a un canal de prueba en Play
+  Console, y **unificar el ícono del PWA web** (`assets/icono-512/-192.png`) con el zorro nuevo,
+  que Roberto dejó para después.
+- **Pendiente de arrastre:** la prueba cerrada de 12 testers/14 días, el merge completo de
+  `feature/android` → `main`, INAPI (marca publicada en el Diario Oficial, en trámite) y el piloto
+  (puerta el 1 de octubre).
+
+### Sesión 128 (2026-09-16) — VULPO en Google Play, y el modo docente para proyectar en clase
+Tres frentes: se subió el `.aab` a la prueba interna de Play, se crearon 6 códigos ALU genéricos, y
+se construyó el **modo docente** (proyectar en clase). Todo en `feature/android`.
+
+#### VULPO instalada desde Google Play (prueba interna)
+- Se bajó el `.aab` de `aab-2` y se subió a Play → **primer error de la consola: la app debe apuntar
+  al nivel de API 36 (Android 16)**, y Capacitor 6 genera 34. Es un requisito estático del manifiesto,
+  no se arregla en la consola: hay que rebuildear.
+- **`scripts/patch-target-sdk.py` (nuevo):** sube `compileSdkVersion` y `targetSdkVersion` a 36 en el
+  `android/variables.gradle` que se genera en la nube (AGP exige compile >= target); deja
+  `minSdkVersion` en 22. Agrega `android.suppressUnsupportedCompileSdk=36` a `gradle.properties` (AGP
+  8.2.1 fue probado hasta 34; contra un SDK **estable** más nuevo solo advierte y compila). Cableado en
+  los dos workflows + una red de seguridad `sdkmanager` que asegura el SDK 36 en el runner.
+- Verificado local el regex contra el `variables.gradle` de Cap 6, y **la corrida `aab-3` salió
+  verde** (versionCode 3, targetSdk 36): AGP 8.2.1 alcanzó a compilar contra API 36, **sin necesidad
+  de subir Capacitor**. Commit `70ec364c`.
+- Con el `.aab` v3 el error de Play desapareció (quedaron solo 2 advertencias inofensivas: sin testers
+  / sin desofuscación). **VULPO quedó instalada desde Play en el teléfono de Roberto** — prueba interna
+  *"Activo · Sin revisar"*, con el nombre temporal `cl.vulpo.app (unreviewed)` hasta que Google la
+  revise (no bloquea la instalación).
+- ⚠️ **Con targetSdk 36 Android dibuja borde a borde:** la última versión de Cap 6 lo compensa, pero
+  hay que verificar en el teléfono que el HUD de arriba y la barra de abajo no queden tapados.
+
+#### Los 6 códigos ALU genéricos (ALU-A000003..008)
+Para demos y proyección. **El panel solo genera códigos al azar**, así que los exactos se crean con un
+SQL (perfiles con `codigo_acceso` específico). Se crearon **sin curso** (`curso_id null`): juegan el
+juego completo pero **no aparecen en ningún ranking/panel** — cero contaminación de datos.
+⚠️ **Son GENÉRICOS y compartidos:** varios aparatos que canjean el mismo código comparten UN perfil
+(mismo XP/monedas/avance). Sirve para demos, no para 6 alumnos distintos de verdad.
+
+#### El modo docente (proyectar en clase) — la feature grande
+Roberto necesitaba que el profe juegue VULPO completo desde su PC para proyectar en clase, sin
+distribuir un código y sin ensuciar datos. Flujo brainstorming → spec → implementación, verificado
+jugando. Spec: `docs/superpowers/specs/2026-09-16-modo-docente-design.md`.
+
+- **La entrada es desde `profesor.html`** (idea de Roberto, mejor que un código suelto): botón **"🎮
+  Proyectar en clase"** + selector de nivel, **visible a cualquier profesor logueado**.
+- **Gateado con token (Opción B):** el panel genera un **token de 6 horas**; el juego lo valida contra
+  Supabase antes de entrar. Así el modo queda **solo para profesores logueados** y los links caducan.
+  > ⚠️ Es "blando" contra alguien **determinado** (el juego es estático, como toda la puerta); lo que B
+  > corta es el **compartir casual** (que un niño pase "el truco del juego gratis"), que es el riesgo
+  > real. No es DRM.
+- **Comportamiento:** todo desbloqueado, **NO guarda nada** (SIN_DISCO+EFIMERO, no crea perfil, no toca
+  XP/ranking/panel), **NO marca las respuestas** (la diferencia clave con `?qa=1` — se juega el quiz de
+  verdad), menú completo, pasa la puerta. Es como QA pero sin marcar y sin guardar.
+- **Backend** (`schema.sql`): tabla `docente_tokens` + `kimun_prof_docente_link()` (panel) +
+  `kimun_docente_ok(token)` (juego, devuelve solo sí/no). Aplicado y verificado con control
+  positivo/negativo (`kimun_docente_ok`→200 `false`, `kimun_prof_docente_link` anon→400 `no_autorizado`,
+  función inventada→404).
+- **Juego** (`motor.js` + los 6 forks **byte a byte iguales**): banderas `DOCENTE_TOKEN`/`DOCENTE`/
+  `DOC_VALIDANDO`; `bloqueado()` con guard **`typeof`** (esencial: corre para todos, un fork cacheado
+  viejo sin `DOCENTE` + motor nuevo rompería el juego de TODOS); `arrancarModoDocente()`;
+  `validarDocente()` (pantalla "Validando acceso docente…", valida, si OK recuerda en sessionStorage y
+  recarga para reevaluar las banderas, si no → mensaje + "Ir al juego").
+  > ⚠️ **El diseño que evita el perfil basura:** en la ventana de validación, `SIN_DISCO` incluye
+  > `DOC_VALIDANDO`, así que no se crea ningún perfil ni se carga el save mientras se valida el token.
+  > Verificado: el único fallo de red fue el 404 de `kimun_docente_ok` (antes de aplicar), **ninguna
+  > llamada a crear perfil**.
+- **Verificado jugando** (`cdp.mjs`): docente válido (todo abierto, `marca:false`, save en disco `null`,
+  no crea perfil, `bloqueado:false`), docente inválido (overlay de error), sin regresión (6 forks
+  navegan, consola limpia); el panel arma la URL correcta por nivel (doble + stub de la RPC).
+
+#### La conversación de seguridad, y la evidencia de Formación Ciudadana diferida
+- Al ver que el modo docente podía filtrarse, Roberto se preocupó por la seguridad general. Distinción
+  clave que se le aclaró: **la seguridad de Google Play (datos de menores) y la protección del ingreso
+  son ejes distintos** — el trabajo de Play no fue en vano. Las **3 amenazas** con su costo: compartir
+  casual (bajo → el modo docente B lo cierra), seguir usando sin pagar (medio → validar la licencia en
+  vivo contra el servidor, **revocable**), robo de contenido (alto/meses → servir el contenido desde el
+  servidor, choca con el offline). **El foso no es el secreto sino la plataforma** (panel, seguimiento,
+  actualizaciones), como Kahoot/Quizizz. Queda para una hoja de ruta de seguridad.
+- Roberto pidió guardar la actividad de Formación Ciudadana como **evidencia imprimible** (Ley 20.911).
+  Se aclaró que es una feature de **PANEL/reporte** —el panel ya mide la cobertura cívica con el juego
+  REAL de los alumnos—, distinta del modo docente efímero. **Se difirió**: primero el modo docente,
+  después la evidencia (es **G1**, Sesión 117).
+
+- **Despliegue:** el modo docente es feature web → llega a `vulpo.cl` con el **merge `feature/android →
+  main`**. El backend ya está aplicado en producción.
+- **Pendiente de arrastre:** el merge `feature/android → main`; la evidencia de Formación Ciudadana
+  (G1); la prueba cerrada de 12 testers/14 días; unificar el ícono PWA web; INAPI; el piloto (puerta
+  1/10); y verificar en el teléfono el borde a borde de la app (targetSdk 36).
