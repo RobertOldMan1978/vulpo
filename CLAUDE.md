@@ -13319,3 +13319,46 @@ la política para el campo que Google mira con lupa. **Cero contenido, cero moto
 - **Pendiente de arrastre, sin cambios:** el `.aab` (upload key + 4 secretos → workflow), los assets
   de la ficha (gráfico 1024×500 + ≥2 capturas del juego real), la prueba cerrada de 12 testers/14 días,
   el merge completo de `feature/android` → `main`, INAPI y el piloto (puerta el 1 de octubre).
+
+### Sesión 127 (2026-09-16) — La ficha de Play, completa; los assets generados; el ícono de la app es el zorro
+Continuación en vivo con Roberto llenando la consola de Google Play (Fase A). Se completó la ficha
+entera y se generaron los recursos gráficos que faltaban. **Cero contenido del juego, cero motor.**
+
+- **La ficha de Play, terminada** (guiado por el pack de respuestas): Data safety completo (pasos
+  3-5 — nombre, correo del profe, IDs de usuario [el `ALU-`], actividad en la app, ID del
+  dispositivo; todos *"Recopilado, no compartido, no efímero, obligatorio, Funcionalidad de la
+  app"*; el correo y los IDs suman *"Gestión de cuentas"*); las declaraciones **gubernamental /
+  financiera / salud / ID de publicidad** en **No**; categoría **Educativo** + contacto
+  `contacto@vulpo.cl`; etiquetas del mundo educativo; y la **declaración de recursos de IA →
+  etiquetados** (el arte y el logo se generaron con IA — sub-declarar es lo que arriesga, no
+  declarar). ⚠️ Se limpiaron **dos factores de forma** que venían activados de más —**Google Play
+  Games on PC** (que además metía tareas obligatorias) y **Android XR**—, ajenos a una app de
+  teléfono táctil.
+- **Los assets gráficos, generados y verificados MIRANDO** (en `play-store/`, **fuera del repo**):
+  - **Gráfico destacado 1024×500**: compuesto con PIL del logo (`assets/web/vulpo-logo.png`) +
+    fondo violeta del juego + tagline. No es arte nuevo: compone assets existentes, como el `og.png`.
+  - **4 capturas 960×1800 HD del juego REAL** (campaña, quiz, tienda, mini-clase), con `cdp.mjs`
+    sembrando una partida y `ev.movil(480,900)` a deviceScaleFactor 2 (ratio 1.875 < 2:1, válido).
+    ⚠️ La mini-clase falló al primer intento porque la navegación de Matemática cambió en la Sesión
+    98 (una tarjeta por unidad → mapa); se corrigió el camino (`camp-nodo` → `#mapbox .node .orb`).
+  - **Ícono de la ficha (V1, la cara):** el zorro del logo **sin la palabra "Vulpo"**, centrado
+    sobre el durazno del ícono viejo. Se hicieron dos versiones (cara / busto) y Roberto eligió la
+    cara — se lee mejor en tamaño chico.
+- ⚠️ **El ícono de la APP instalada era el de Capacitor por defecto, y nadie lo había notado:** el
+  proyecto `android/` se genera fresco en cada build y **ningún paso ponía el ícono**. Se resuelve
+  con **`@capacitor/assets`** (la herramienta oficial): arma el launcher **legacy + adaptativo**
+  desde `resources/icon-only|foreground|background.png` (el zorro V1; el **foreground al 62%** para
+  el safe zone del adaptativo, que Android recorta a círculo/squircle). **Verificado localmente**
+  —`cap add android` + `capacitor-assets generate`, 48 archivos, el adaptativo compuesto y mirado—
+  antes de cablear el paso en **los dos workflows** (`android.yml` y `android-release.yml`),
+  después de `cap sync`. `scripts/generar-iconos-app.py` regenera los 3 fuentes si el logo cambia.
+- **Orden 66:** el cambio del ícono va a **`feature/android`** (no a `main`: es solo de la app
+  Android). Los assets de `play-store/` **no se commitean** — son de la consola, ya subidos.
+- **Pendiente inmediato:** Roberto genera la upload key + los 4 secretos
+  (`docs/android-release-aab.md`, guiado en vivo — el JDK se instaló pero `keytool` no estaba en el
+  PATH de la sesión; se resolvió con la ruta completa); después corre el workflow *App Bundle de
+  Release* → el `.aab` (que **ya traerá el ícono nuevo**). Y **unificar el ícono del PWA web**
+  (`assets/icono-512/-192.png`) con el zorro nuevo, que Roberto dejó para después.
+- **Pendiente de arrastre:** la prueba cerrada de 12 testers/14 días, el merge completo de
+  `feature/android` → `main`, INAPI (marca publicada en el Diario Oficial, en trámite) y el piloto
+  (puerta el 1 de octubre).
