@@ -13286,3 +13286,36 @@ upload key + 4 secretos → correr el workflow → bajar el `.aab` → llenar la
 respuestas → enviar a revisión. **Pendiente de arrastre:** el merge completo de `feature/android` →
 `main` cuando se decida soltar toda la Fase A a la web; INAPI (marca en trámite, publicada en el
 Diario Oficial); que parta el piloto (puerta el 1 de octubre).
+
+### Sesión 126 (2026-09-15) — El campo de eliminación de datos de Play, reforzado; Data safety en marcha
+Continuación de la Fase A, en vivo con Roberto llenando la consola de Google Play. La app ya existe
+como **borrador** (`cl.vulpo.app`, "VULPO: aprende jugando"), con la verificación de desarrollador
+Android ya lista. Se avanzó el formulario de **Seguridad de los datos (Data safety)** y se reforzó
+la política para el campo que Google mira con lupa. **Cero contenido, cero motor.**
+
+- **Data safety, pasos 1-2 completados** (guiados por el pack de respuestas): recoge datos **Sí**;
+  cifrado en tránsito **Sí** (HTTPS/TLS); métodos de creación de cuenta → **"la app no permite crear
+  cuenta"** — verificado en `scripts/armar-webdir.py` que el bundle de la app **NO incluye
+  `profesor.html`**, así que dentro de la app no hay ningún flujo de registro; el alumno solo
+  **canjea** un `ALU-` (perfil que ya creó el profe, en la web) —; login con cuentas creadas fuera
+  **Sí**, método **"Otro"** (las crea el colegio en la plataforma web); eliminación de datos **Sí**.
+  Quedó en el **paso 3 "Tipos de datos"**.
+- ⚠️ **La sección 6 de la política, reforzada, y era el punto justo.** El campo "URL de eliminación
+  de datos" del Data safety exige que la URL **muestre claramente los pasos** para pedir la
+  eliminación y **qué datos se eliminan/conservan**. La sección 6 los tenía en prosa; se reescribió
+  con **pasos numerados** (Paso 1 vía el panel del profe / Paso 2 escribiendo a `contacto@vulpo.cl`),
+  la afirmación de que la **eliminación es inmediata** (`on delete cascade`, que es lo medido) y el
+  detalle de qué se borra (perfil, avance, mediciones, duelos) y qué se conserva (nada del
+  estudiante). ⚠️ **No se inventó ningún período de retención de respaldos** — Supabase hace backups y
+  su ciclo no está medido, así que no se afirma con un número —. **Misma URL pública**
+  (`vulpo.cl/privacidad/`), así que la consola no se retoca. `id="eliminar"` agregado por si se quiere
+  el enlace directo `#eliminar` más adelante.
+- **Orden 66:** el refuerzo va a **producción** con el patrón de la Sesión 125 — commit en
+  `feature/android` (`78d04cc6`), cherry-pick a **`main`** (`e4bc5294`, con `-x`), push. La bitácora
+  se queda en `feature/android`. **Verificado en vivo: `vulpo.cl/privacidad/` responde 200 y sirve la
+  sección reforzada** (contiene "Paso 1").
+- **Pendiente inmediato:** seguir el Data safety desde el paso 3 (Tipos de datos → Uso → Vista previa),
+  marcando las 4 categorías reales — nombre, correo del profe, ID del dispositivo, actividad en la app.
+- **Pendiente de arrastre, sin cambios:** el `.aab` (upload key + 4 secretos → workflow), los assets
+  de la ficha (gráfico 1024×500 + ≥2 capturas del juego real), la prueba cerrada de 12 testers/14 días,
+  el merge completo de `feature/android` → `main`, INAPI y el piloto (puerta el 1 de octubre).
