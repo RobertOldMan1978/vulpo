@@ -13470,6 +13470,56 @@ jugando. Spec: `docs/superpowers/specs/2026-09-16-modo-docente-design.md`.
 
 - **Despliegue:** el modo docente es feature web → llega a `vulpo.cl` con el **merge `feature/android →
   main`**. El backend ya está aplicado en producción.
+- **Despliegue:** el modo docente es feature web → llega a `vulpo.cl` con el **merge `feature/android →
+  main`** (hecho en la Sesión 129). El backend ya está aplicado en producción.
 - **Pendiente de arrastre:** el merge `feature/android → main`; la evidencia de Formación Ciudadana
   (G1); la prueba cerrada de 12 testers/14 días; unificar el ícono PWA web; INAPI; el piloto (puerta
   1/10); y verificar en el teléfono el borde a borde de la app (targetSdk 36).
+
+### Sesión 129 (2026-09-16) — El merge a `main`: modo docente y restore en vivo, y dos ajustes del panel
+Continuación directa de la Sesión 128, el mismo día. Se desplegó a `vulpo.cl` lo que quedó construido en
+`feature/android` y se hicieron dos ajustes al panel del profesor. **No se tocó contenido:** ni un banco,
+ni una pregunta, ni un clip de voz.
+
+#### El merge `feature/android → main` (commit `5546a971`)
+Lleva a la web el **modo docente** (feature web intencionada) y el **fix del restore del Bloque D**, que
+además corrige un **bug real de producción en la web**: un alumno que borra los datos del navegador y
+re-canjea recuperaba solo el XP, no monedas/skins/campañas. El resto de la Fase A (proyecto Capacitor,
+workflows, voz offline, iconos, `/app/`) es de la app o **inerte en el navegador**.
+
+**Análisis estático antes de mergear, favorable:** merge git **limpio, sin conflictos**; **todo lo "de la
+app" en `motor.js` está gateado a nativo** (`Capacitor.isNativePlatform()`) — el botón Salir, la píldora
+de guardado y `_diag` (que quedó `function _diag(){}`, no-op) retornan en el navegador; `voz-descarga.js`
+es **no-op en la web** (sin Capacitor su `init` retorna de inmediato) y sirve 200; `voz.js` degrada con
+`if(window.VOZ_LOCAL_BASE)` (undefined en la web); y `/app/` queda servible por URL pero **no enlazado ni
+en el sitemap** (página huérfana inofensiva).
+
+**Verificación empírica** (sirviendo el árbol actual con `cdp.mjs`, que ES la web post-merge): los **6
+forks** con `__MOTOR_OK`, JUGADOR navega, **cero errores y cero 404**; modo docente con token inválido →
+overlay de error **sin crear perfil** (SIN_DISCO confirmado limpio: `kimun_save` y la sesión quedan null);
+`profesor.html` (doble) con la barra "Proyectar en clase" y su selector de 6 niveles, sin errores. **El
+merge NO dispara builds** (`android.yml` solo corre en push a `feature/android`; el `.aab` solo con
+etiqueta `aab-*`) — y de yapa, ya en `main`, el `.aab` se puede lanzar desde el botón de Actions sin el
+truco de la etiqueta. Confirmado en el sitio en vivo tras el redespliegue (~2 min): `motor.js` con
+`arrancarModoDocente`+`_bajando`, los 6 forks 200, `profesor.html` con `btnDocente`.
+
+> ⚠️ **Lección de método:** un control de "SIN_DISCO no escribe" se contaminó al arrancar `8vo/` normal
+> ANTES del `8vo/?docente=` en el mismo origen — el boot normal dejó un `kimun_save` por defecto que la
+> navegación docente solo leyó. Se re-verificó limpio (borrar `localStorage` → navegar docente → save
+> null). **Cuando un resultado sorprende, el primer sospechoso es la prueba, no el producto.**
+
+#### Dos ajustes del panel (`profesor.html`, pedidos de Roberto viéndolo en vivo)
+- **El botón del modo docente, más vistoso:** era un `.btn-chip` gris plano y costaba ubicarlo. Pasa a ser
+  un botón **verde relleno "▶ Abrir juego"** (`.btn-docente`, `--green`, texto oscuro, sombra), que rima
+  con el aviso verde "el acceso dura 6 horas" y se lee como "ir/abrir". Excepción deliberada al registro
+  sobrio (Sesión 106), como el primario de "Ver avance".
+- **"Profesor Jefe" en la lista de PROFESORES:** cuando un Profesor es Jefe en algún curso, el cargo lo
+  dice ("Profesor Jefe") para distinguirlo de un profe de asignatura de un vistazo. ⚠️ Solo el **texto de
+  display**: el `p.rango` real (que gobierna la matriz de revocar) NO se toca — se detecta con
+  `p.ambito.some(a=>a.nivel==='curso' && a.rol==='jefe')`, la misma fuente (grants) que pinta los chips de
+  ámbito. Verificado con el doble: `j.arteaga` (Jefe) → "Profesor Jefe", `m.soto` (asignatura) →
+  "Profesor", el resto intacto; captura mirada, cero errores.
+
+- **Pendiente de arrastre:** verificar el borde a borde de la app en el teléfono (targetSdk 36); la
+  evidencia de Formación Ciudadana (G1); la prueba cerrada de 12 testers/14 días; unificar el ícono PWA
+  web; INAPI (marca en trámite, publicada en el Diario Oficial); el piloto (puerta 1/10).

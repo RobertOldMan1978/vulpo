@@ -300,6 +300,14 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
    una ficha, no un formulario. */
 .btn-chip.principal{border-color:var(--violet);background:#7460bd26;color:var(--texto)}
 .btn-chip.principal:hover{background:#7460bd3d}
+/* "Proyectar en clase" (modo docente): botón LLENO y distinto de los chips grises, para que
+   un profe lo ubique de una. Verde como el aviso de éxito ("el acceso dura 6 horas"): se lee
+   como "ir/abrir". Es una excepción deliberada al registro sobrio, como el primario de avance. */
+.btn-docente{background:var(--green);border:0;color:#0b1a12;font-family:inherit;font-weight:700;
+ font-size:13px;padding:7px 16px;border-radius:8px;cursor:pointer;white-space:nowrap;margin-bottom:6px;
+ display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 10px #4bb58340;transition:background .15s,transform .15s}
+.btn-docente:hover{background:#57c492;transform:translateY(-1px)}
+.btn-docente:disabled{opacity:.5;cursor:default;box-shadow:none;transform:none}
 /* Chips de ámbito en la lista de PROFESORES (Sesión 120): para qué manda cada usuario.
    El institucional (colegio/sostenedor/plataforma) lleva fondo violeta —violeta SOLO como
    fondo, que como texto no llega al contraste mínimo (S106)—; el de curso va neutro. */
@@ -1024,7 +1032,7 @@ async function pintarLista(){
       <select id="docenteNivel" style="width:auto;padding:5px 8px">${
         NIVELES_MUESTRA.map(n=>`<option value="${esc(n.ruta)}">${esc(n.nombre)}</option>`).join('')}</select>
     </label>
-    <button class="btn-chip" type="button" id="btnDocente">Abrir juego</button>
+    <button class="btn-docente" type="button" id="btnDocente">▶ Abrir juego</button>
   </div>`;
   /* La franja de atención va ANTES de la barra de botones y de los cursos: es lo primero
      que hay que ver al entrar. Nace vacía y la rellena cargarResumen, para no retrasar el
@@ -1236,7 +1244,12 @@ async function pintarLista(){
         }).join('');
       };
       $('profes').innerHTML=(profes||[]).map(p=>{
-        const rango = !p.registrado ? 'sin registrar' : (p.rango || 'Profesor');
+        // Si un Profesor es JEFE en algún curso, el cargo lo dice ("Profesor Jefe") para
+        // distinguirlo de un profe de asignatura de un vistazo. Solo el texto de display: el
+        // p.rango real (que usa la matriz de revocar más abajo) NO se toca.
+        const esJefeCurso = p.registrado && Array.isArray(p.ambito) && p.ambito.some(a=>a.nivel==='curso' && a.rol==='jefe');
+        const rango = !p.registrado ? 'sin registrar'
+          : ((p.rango||'Profesor')==='Profesor' && esJefeCurso ? 'Profesor Jefe' : (p.rango||'Profesor'));
         const esYo = p.correo && (p.correo.toLowerCase() === (YO.correo||'').toLowerCase());
         // Matriz de revocar por RANGO efectivo: a un Admin/Operador solo los revoca un Admin; a un
         // Super, un Admin u Operador; a un profe común, cualquiera que administre. El servidor manda.
