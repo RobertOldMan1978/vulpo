@@ -61,6 +61,10 @@ jobs:
       - name: Copiar el sitio al proyecto Android
         run: npx cap sync android
 
+      # El icono de la app (launcher): el zorro Vulpi, legacy + adaptativo. Ver android-release.yml.
+      - name: Icono de la app (zorro Vulpi)
+        run: npx capacitor-assets generate --android --assetPath resources
+
       # El Android Gradle Plugin genera un keystore de debug AL AZAR por build (firma
       # distinta cada vez), asi que hay que forzarlo a usar el estable de ~/.android/. Sin
       # esto, Android rechaza actualizar la app ("conflicto de paquetes") y toca desinstalar.

@@ -56,6 +56,12 @@ jobs:
       - name: Copiar el sitio al proyecto Android
         run: npx cap sync android
 
+      # El icono de la app (launcher): el zorro Vulpi, legacy + adaptativo. @capacitor/assets
+      # lo genera desde resources/icon-only|foreground|background.png sobre el android/ recien
+      # creado. Sin esto, la app quedaria con el icono por defecto de Capacitor.
+      - name: Icono de la app (zorro Vulpi)
+        run: npx capacitor-assets generate --android --assetPath resources
+
       # Decodifica la upload key desde el secreto a un archivo EFIMERO del runner. La ruta viaja
       # por el entorno; la contrasena tambien. Nada de esto queda escrito en el repo ni en el .aab.
       - name: Decodificar la upload key
