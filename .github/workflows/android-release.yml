@@ -62,6 +62,11 @@ jobs:
       - name: Copiar el sitio al proyecto Android
         run: npx cap sync android
 
+      # Google Play EXIGE que la app apunte al nivel de API 36 (Android 16). Capacitor 6 genera
+      # 34; se suben compileSdk y targetSdk a 36 (AGP requiere compile >= target). minSdk queda 22.
+      - name: Subir el nivel de API objetivo a 36 (requisito de Play)
+        run: python3 scripts/patch-target-sdk.py
+
       # El icono de la app (launcher): el zorro Vulpi, legacy + adaptativo. @capacitor/assets
       # lo genera desde resources/icon-only|foreground|background.png sobre el android/ recien
       # creado. Sin esto, la app quedaria con el icono por defecto de Capacitor.
@@ -84,6 +89,11 @@ jobs:
         env:
           VULPO_VERSION_CODE: ${{ github.run_number }}
         run: python3 scripts/patch-release-signing.py
+
+      # Red de seguridad: asegura el SDK de Android 36 en el runner. AGP 8.2.1 lo descarga solo si
+      # falta, pero esto lo garantiza. No falla el build si ya esta o si sdkmanager no esta en PATH.
+      - name: Asegurar el SDK de Android 36
+        run: (yes | sdkmanager "platforms;android-36" "build-tools;36.0.0") >/dev/null 2>&1 || true
 
       - name: Compilar el App Bundle firmado
         env:

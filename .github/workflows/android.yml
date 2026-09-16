@@ -61,6 +61,10 @@ jobs:
       - name: Copiar el sitio al proyecto Android
         run: npx cap sync android
 
+      # Mismo nivel de API que el release (36), para que el APK de prueba se comporte igual.
+      - name: Subir el nivel de API objetivo a 36 (requisito de Play)
+        run: python3 scripts/patch-target-sdk.py
+
       # El icono de la app (launcher): el zorro Vulpi, legacy + adaptativo. Ver android-release.yml.
       - name: Icono de la app (zorro Vulpi)
         run: npx capacitor-assets generate --android --assetPath resources
@@ -70,6 +74,10 @@ jobs:
       # esto, Android rechaza actualizar la app ("conflicto de paquetes") y toca desinstalar.
       - name: Firmar el debug con el keystore estable
         run: python3 scripts/patch-debug-signing.py
+
+      # Red de seguridad: asegura el SDK de Android 36 en el runner (ver android-release.yml).
+      - name: Asegurar el SDK de Android 36
+        run: (yes | sdkmanager "platforms;android-36" "build-tools;36.0.0") >/dev/null 2>&1 || true
 
       - name: Compilar el APK de depuracion
         run: |
