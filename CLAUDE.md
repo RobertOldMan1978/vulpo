@@ -1330,6 +1330,19 @@ para siempre.
     adentro (`vulpo.cl/3ro/?inscribir=INS-XXXXXXXX`). El selector del panel sale de
     `NIVELES_MUESTRA`, el mismo del armador: sumar un curso nuevo sigue siendo una línea.
 
+- **`?docente=<token>` — Modo docente (proyectar en clase, Sesión 128):** el profe entra desde
+  `profesor.html` (botón "🎮 Proyectar en clase" + selector de nivel), que pide un **token de 6 h** a
+  `kimun_prof_docente_link()` y abre `vulpo.cl/<nivel>/?docente=<token>`. El juego valida el token
+  contra `kimun_docente_ok()` y, si es válido, entra en **modo docente**: todo desbloqueado, **no
+  guarda nada** (SIN_DISCO+EFIMERO, no crea perfil), **no marca las respuestas** (es como `?qa=1` pero
+  sin marcar y sin guardar), menú completo, pasa la puerta. Es la herramienta para jugar/proyectar con
+  el curso. Gateado con token → **solo profesores logueados**, y el link **caduca en 6 h** (corta el
+  compartir casual; sigue "blando" contra alguien determinado, como toda la puerta). Vive en `motor.js`
+  (`arrancarModoDocente`/`validarDocente`) + las banderas de cada fork; `bloqueado()` lo esquiva con
+  guard `typeof`. ⚠️ La ventana de validación entra en `SIN_DISCO` (vía `DOC_VALIDANDO`) para no crear
+  un perfil basura mientras se valida. La evidencia imprimible de Formación Ciudadana (Ley 20.911) es
+  aparte, del PANEL, y quedó diferida (G1, Sesión 117).
+
 #### Modelo de acceso (la "puerta")
 
 VULPO nació **completamente abierto**. Desde la Sesión 44 existe una **puerta** que exige el
@@ -13379,3 +13392,84 @@ entera y se generaron los recursos gráficos que faltaban. **Cero contenido del 
 - **Pendiente de arrastre:** la prueba cerrada de 12 testers/14 días, el merge completo de
   `feature/android` → `main`, INAPI (marca publicada en el Diario Oficial, en trámite) y el piloto
   (puerta el 1 de octubre).
+
+### Sesión 128 (2026-09-16) — VULPO en Google Play, y el modo docente para proyectar en clase
+Tres frentes: se subió el `.aab` a la prueba interna de Play, se crearon 6 códigos ALU genéricos, y
+se construyó el **modo docente** (proyectar en clase). Todo en `feature/android`.
+
+#### VULPO instalada desde Google Play (prueba interna)
+- Se bajó el `.aab` de `aab-2` y se subió a Play → **primer error de la consola: la app debe apuntar
+  al nivel de API 36 (Android 16)**, y Capacitor 6 genera 34. Es un requisito estático del manifiesto,
+  no se arregla en la consola: hay que rebuildear.
+- **`scripts/patch-target-sdk.py` (nuevo):** sube `compileSdkVersion` y `targetSdkVersion` a 36 en el
+  `android/variables.gradle` que se genera en la nube (AGP exige compile >= target); deja
+  `minSdkVersion` en 22. Agrega `android.suppressUnsupportedCompileSdk=36` a `gradle.properties` (AGP
+  8.2.1 fue probado hasta 34; contra un SDK **estable** más nuevo solo advierte y compila). Cableado en
+  los dos workflows + una red de seguridad `sdkmanager` que asegura el SDK 36 en el runner.
+- Verificado local el regex contra el `variables.gradle` de Cap 6, y **la corrida `aab-3` salió
+  verde** (versionCode 3, targetSdk 36): AGP 8.2.1 alcanzó a compilar contra API 36, **sin necesidad
+  de subir Capacitor**. Commit `70ec364c`.
+- Con el `.aab` v3 el error de Play desapareció (quedaron solo 2 advertencias inofensivas: sin testers
+  / sin desofuscación). **VULPO quedó instalada desde Play en el teléfono de Roberto** — prueba interna
+  *"Activo · Sin revisar"*, con el nombre temporal `cl.vulpo.app (unreviewed)` hasta que Google la
+  revise (no bloquea la instalación).
+- ⚠️ **Con targetSdk 36 Android dibuja borde a borde:** la última versión de Cap 6 lo compensa, pero
+  hay que verificar en el teléfono que el HUD de arriba y la barra de abajo no queden tapados.
+
+#### Los 6 códigos ALU genéricos (ALU-A000003..008)
+Para demos y proyección. **El panel solo genera códigos al azar**, así que los exactos se crean con un
+SQL (perfiles con `codigo_acceso` específico). Se crearon **sin curso** (`curso_id null`): juegan el
+juego completo pero **no aparecen en ningún ranking/panel** — cero contaminación de datos.
+⚠️ **Son GENÉRICOS y compartidos:** varios aparatos que canjean el mismo código comparten UN perfil
+(mismo XP/monedas/avance). Sirve para demos, no para 6 alumnos distintos de verdad.
+
+#### El modo docente (proyectar en clase) — la feature grande
+Roberto necesitaba que el profe juegue VULPO completo desde su PC para proyectar en clase, sin
+distribuir un código y sin ensuciar datos. Flujo brainstorming → spec → implementación, verificado
+jugando. Spec: `docs/superpowers/specs/2026-09-16-modo-docente-design.md`.
+
+- **La entrada es desde `profesor.html`** (idea de Roberto, mejor que un código suelto): botón **"🎮
+  Proyectar en clase"** + selector de nivel, **visible a cualquier profesor logueado**.
+- **Gateado con token (Opción B):** el panel genera un **token de 6 horas**; el juego lo valida contra
+  Supabase antes de entrar. Así el modo queda **solo para profesores logueados** y los links caducan.
+  > ⚠️ Es "blando" contra alguien **determinado** (el juego es estático, como toda la puerta); lo que B
+  > corta es el **compartir casual** (que un niño pase "el truco del juego gratis"), que es el riesgo
+  > real. No es DRM.
+- **Comportamiento:** todo desbloqueado, **NO guarda nada** (SIN_DISCO+EFIMERO, no crea perfil, no toca
+  XP/ranking/panel), **NO marca las respuestas** (la diferencia clave con `?qa=1` — se juega el quiz de
+  verdad), menú completo, pasa la puerta. Es como QA pero sin marcar y sin guardar.
+- **Backend** (`schema.sql`): tabla `docente_tokens` + `kimun_prof_docente_link()` (panel) +
+  `kimun_docente_ok(token)` (juego, devuelve solo sí/no). Aplicado y verificado con control
+  positivo/negativo (`kimun_docente_ok`→200 `false`, `kimun_prof_docente_link` anon→400 `no_autorizado`,
+  función inventada→404).
+- **Juego** (`motor.js` + los 6 forks **byte a byte iguales**): banderas `DOCENTE_TOKEN`/`DOCENTE`/
+  `DOC_VALIDANDO`; `bloqueado()` con guard **`typeof`** (esencial: corre para todos, un fork cacheado
+  viejo sin `DOCENTE` + motor nuevo rompería el juego de TODOS); `arrancarModoDocente()`;
+  `validarDocente()` (pantalla "Validando acceso docente…", valida, si OK recuerda en sessionStorage y
+  recarga para reevaluar las banderas, si no → mensaje + "Ir al juego").
+  > ⚠️ **El diseño que evita el perfil basura:** en la ventana de validación, `SIN_DISCO` incluye
+  > `DOC_VALIDANDO`, así que no se crea ningún perfil ni se carga el save mientras se valida el token.
+  > Verificado: el único fallo de red fue el 404 de `kimun_docente_ok` (antes de aplicar), **ninguna
+  > llamada a crear perfil**.
+- **Verificado jugando** (`cdp.mjs`): docente válido (todo abierto, `marca:false`, save en disco `null`,
+  no crea perfil, `bloqueado:false`), docente inválido (overlay de error), sin regresión (6 forks
+  navegan, consola limpia); el panel arma la URL correcta por nivel (doble + stub de la RPC).
+
+#### La conversación de seguridad, y la evidencia de Formación Ciudadana diferida
+- Al ver que el modo docente podía filtrarse, Roberto se preocupó por la seguridad general. Distinción
+  clave que se le aclaró: **la seguridad de Google Play (datos de menores) y la protección del ingreso
+  son ejes distintos** — el trabajo de Play no fue en vano. Las **3 amenazas** con su costo: compartir
+  casual (bajo → el modo docente B lo cierra), seguir usando sin pagar (medio → validar la licencia en
+  vivo contra el servidor, **revocable**), robo de contenido (alto/meses → servir el contenido desde el
+  servidor, choca con el offline). **El foso no es el secreto sino la plataforma** (panel, seguimiento,
+  actualizaciones), como Kahoot/Quizizz. Queda para una hoja de ruta de seguridad.
+- Roberto pidió guardar la actividad de Formación Ciudadana como **evidencia imprimible** (Ley 20.911).
+  Se aclaró que es una feature de **PANEL/reporte** —el panel ya mide la cobertura cívica con el juego
+  REAL de los alumnos—, distinta del modo docente efímero. **Se difirió**: primero el modo docente,
+  después la evidencia (es **G1**, Sesión 117).
+
+- **Despliegue:** el modo docente es feature web → llega a `vulpo.cl` con el **merge `feature/android →
+  main`**. El backend ya está aplicado en producción.
+- **Pendiente de arrastre:** el merge `feature/android → main`; la evidencia de Formación Ciudadana
+  (G1); la prueba cerrada de 12 testers/14 días; unificar el ícono PWA web; INAPI; el piloto (puerta
+  1/10); y verificar en el teléfono el borde a borde de la app (targetSdk 36).

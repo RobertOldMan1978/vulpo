@@ -491,7 +491,7 @@ function extraPorId(id){ const x=EXTRAS.find(e=>e.id===id); return (x&&x.disponi
    código a mitad de sesión, la puerta se abre sin recargar la página. */
 function tieneLicencia(){ return !!S.alumno; }
 /* Excepciones incorporadas: los enlaces de muestra y ?qa=1 nunca pasan por la puerta. */
-function bloqueado(){ return PUERTA && !PRUEBA && !QA && !tieneLicencia(); }
+function bloqueado(){ return PUERTA && !PRUEBA && !QA && !(typeof DOCENTE!=='undefined'&&DOCENTE) && !tieneLicencia(); }
 function capAbierto(id){ return !bloqueado() || id===DEMO_LIBRE; }
 /* Mensaje único cuando se toca algo cerrado. */
 function avisoCandado(){ alert('🔒 Necesitas un código de tu profesor para abrir esta parte de VULPO.\n\n¿Eres profesor? Escríbenos a contacto@vulpo.cl'); }
@@ -661,6 +661,41 @@ function arrancarModoPrueba(){
  S.nombre='Invitado'; S.avatar=AVATARES[4];   // 🦊, la mascota
  $('nav').style.display='none';
  renderListaPrueba();
+}
+/* Modo docente (proyectar en clase, Sesión 128): el profe entra desde el panel con un token
+   de 6 h. Todo desbloqueado (por las banderas del fork), NO guarda (SIN_DISCO+EFIMERO), NO
+   marca (QA_MARCA sigue solo-QA), menú completo. El token se valida contra Supabase; si es
+   válido se recuerda en la pestaña (sessionStorage) y se recarga para que las banderas se
+   reevalúen con DOCENTE=true. Igual que arrancarModoPrueba pero con el menú completo. */
+function arrancarModoDocente(){
+ S.nombre='Docente'; S.avatar=AVATARES[4];   // 🦊
+ $('nav').style.display='none';
+ renderExpediciones(); go('scr-expediciones');
+}
+function _docenteOverlay(html){
+ let ov=document.getElementById('docenteOv');
+ if(!ov){ ov=document.createElement('div'); ov.id='docenteOv';
+  ov.style.cssText='position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;'+
+   'align-items:center;justify-content:center;gap:14px;text-align:center;padding:24px;'+
+   'background:#1a1033;color:#fff;font-family:inherit';
+  document.body.appendChild(ov); }
+ ov.innerHTML=html; return ov;
+}
+async function validarDocente(){
+ _docenteOverlay('<p style="font-size:17px;font-weight:800">Validando acceso docente…</p>');
+ const fin=(msg)=>_docenteOverlay('<p style="font-size:16px;max-width:320px;line-height:1.4">'+msg+'</p>'+
+   '<button onclick="location.href=location.pathname" style="padding:10px 18px;border:0;'+
+   'border-radius:10px;background:#8f6bff;color:#fff;font-weight:800;cursor:pointer">Ir al juego</button>');
+ try{
+  if(!SB) return fin('Sin conexión: no se pudo validar el acceso docente.');
+  const {data,error}=await SB.rpc('kimun_docente_ok',{p_token:DOCENTE_TOKEN});
+  if(error) throw error;
+  if(data!==true) return fin('Este acceso docente no es válido o ya venció. Pedí uno nuevo desde el panel del profesor.');
+  try{ sessionStorage.setItem('kimun_docente_ok',DOCENTE_TOKEN); }catch(e){}
+  let ok=false; try{ ok=sessionStorage.getItem('kimun_docente_ok')===DOCENTE_TOKEN; }catch(e){}
+  if(ok){ location.reload(); return; }
+  fin('Tu navegador no permite el modo docente (¿ventana privada?). Probá en una ventana normal.');
+ }catch(e){ fin('No se pudo validar el acceso docente. Intentá de nuevo.'); }
 }
 function arrancarInscripcion(){
  $('nav').style.display='none';          // la barra inferior no va encima de esta pantalla

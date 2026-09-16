@@ -1016,10 +1016,20 @@ async function pintarLista(){
     + (cursos.length > 1
         ? `<button class="btn-chip" type="button" id="btnPlegar">Contraer todo</button>` : '');
   const barra = botones ? `<div class="lista-barra">${botones}</div>` : '';
+  /* Proyectar en clase (modo docente): lo ve CUALQUIER profesor (no solo admin), porque
+     proyectar es tarea de todo docente. El servidor igual valida que sea profesor. */
+  const docenteBarra = `<div class="lista-barra" style="margin-top:6px;align-items:center">
+    <label style="font-size:13px;color:var(--dim);display:inline-flex;align-items:center;gap:6px;margin:0">
+      🎮 Proyectar en clase
+      <select id="docenteNivel" style="width:auto;padding:5px 8px">${
+        NIVELES_MUESTRA.map(n=>`<option value="${esc(n.ruta)}">${esc(n.nombre)}</option>`).join('')}</select>
+    </label>
+    <button class="btn-chip" type="button" id="btnDocente">Abrir juego</button>
+  </div>`;
   /* La franja de atención va ANTES de la barra de botones y de los cursos: es lo primero
      que hay que ver al entrar. Nace vacía y la rellena cargarResumen, para no retrasar el
      render de la lista — si la consulta tarda, los cursos ya están a la vista. */
-  $('lista').innerHTML = '<div id="franjaAtencion"></div>' + barra
+  $('lista').innerHTML = '<div id="franjaAtencion"></div>' + barra + docenteBarra
    + (cursos.length ? cursos.map(([cod,c])=>`
     <details class="curso" data-cod="${esc(cod)}">
       <summary>
@@ -1131,6 +1141,24 @@ async function pintarLista(){
      de restaurar el estado, así el rótulo nace diciendo la verdad. */
   const btnPulso = document.getElementById('btnPulso');
   if(btnPulso) btnPulso.onclick = () => verPulso();
+  /* Proyectar en clase: pide un token de 6 h y abre el juego en modo docente en pestaña
+     nueva. El token viaja en la URL; el juego lo valida contra Supabase antes de entrar. */
+  const btnDocente = document.getElementById('btnDocente');
+  if(btnDocente) btnDocente.onclick = async () => {
+    const sel = document.getElementById('docenteNivel');
+    const ruta = sel ? sel.value : '';
+    if(!ruta) return;
+    btnDocente.disabled = true;
+    aviso('Preparando el acceso…','var(--dim)');
+    try{
+      const {data,error}=await SB.rpc('kimun_prof_docente_link');
+      if(error||!data) throw error||new Error('sin_token');
+      aviso('Abriendo el juego en una pestaña nueva. El acceso dura 6 horas.','var(--green)');
+      window.open(location.origin+ruta+'?docente='+data, '_blank');
+    }catch(e){
+      aviso('No se pudo preparar el acceso docente. '+((e&&e.message)||''),'var(--pink)');
+    }finally{ btnDocente.disabled=false; }
+  };
   const btnPlegar = document.getElementById('btnPlegar');
   const refrescarPlegar = () => {
     if(btnPlegar) btnPlegar.textContent =
