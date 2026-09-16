@@ -125,6 +125,13 @@ se puede ordenar por columna**, porque una tabla que rankee cursos por rendimien
 de profesores con otro nombre. La cobertura y la participación son hechos; el acierto se mira
 dentro de cada curso.
 
+Y para la **Ley 20.911** —el Plan de Formación Ciudadana que cada colegio debe evidenciar— hay una
+vista propia: reúne los objetivos del eje de formación ciudadana (que ya viven dentro de Historia y
+se juegan en su camino propio) y muestra, con los datos reales del juego de los alumnos, cuánto se
+ha trabajado en cada curso y en qué fecha, imprimible con espacio para observaciones y firma. Como
+todo lo demás del panel, evidencia **conocimiento** —respondieron las preguntas—, nunca conducta ni
+valores.
+
 ## Cómo probarlo
 
 La página de presentación está en **https://vulpo.cl**, y desde ahí se enlaza cada curso:

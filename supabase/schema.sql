@@ -1589,6 +1589,85 @@ begin
      order by coalesce(c.nivel,'99'), c.nombre;
 end $$;
 
+-- ═══ Formación Ciudadana (G1) ═══
+-- La lente cívica del panel: los OA del eje "Formación ciudadana" (43 códigos HI0n, hoy
+-- contados como Historia) como evidencia del Plan de Formación Ciudadana (Ley 20.911). La
+-- vista POR CURSO (Profesor Jefe) reutiliza kimun_prof_dominio filtrada client-side; esta
+-- función es el INFORME DE COLEGIO (UTP), hermana de kimun_prof_pulso.
+--
+-- Cobertura + participación CÍVICA por curso. El cliente pasa los 43 códigos cívicos (p_oas,
+-- desde assets/plan/oa-civica.json): así la "civicidad" vive en el repo y el servidor solo
+-- cuenta lo que se le pide. ⚠️ NO devuelve % de acierto ni nombres — la restricción vive en la
+-- FIRMA (igual que kimun_prof_pulso, Sesión 107): es evidencia de QUÉ se trabajó, no un ranking
+-- de cursos por rendimiento cívico.
+drop function if exists public.kimun_prof_civica(text[]);
+create or replace function public.kimun_prof_civica(p_oas text[])
+returns table(curso_codigo text, curso text, nivel text,
+              inscritos bigint, con_actividad bigint, alumnos_civicos bigint,
+              puede_gestionar boolean)
+language plpgsql security definer set search_path=public as $$
+begin
+  if not public.kimun_prof_puede_algun('pulso.ver') then raise exception 'no_autorizado'; end if;
+  return query
+    with civ as (
+      select p.curso_id as cid,
+             count(distinct d.oa)        as con_act,
+             count(distinct d.perfil_id) as alum
+        from public.dominio d
+        join public.perfiles p on p.id = d.perfil_id
+        join public.cursos   k on k.id = p.curso_id
+       where k.nivel is not null
+         and d.oa = any(p_oas)
+         -- Del nivel DE ESE curso (mismo criterio que el pulso, Sesión 72): un curso solo
+         -- cuenta los cívicos de su propio nivel, no los de otro.
+         and substr(d.oa,3,2) = k.nivel
+       group by 1
+    )
+    select c.codigo, c.nombre, c.nivel,
+           (select count(*) from public.perfiles p where p.curso_id = c.id),
+           coalesce(civ.con_act, 0),
+           coalesce(civ.alum, 0),
+           public.kimun_prof_es_mio(c.id)
+      from public.cursos c
+      left join civ on civ.cid = c.id
+     order by coalesce(c.nivel,'99'), c.nombre;
+end $$;
+
+-- Observaciones de la evidencia cívica, GUARDADAS por curso (Roberto: se reúsan, van en el
+-- impreso). Una fila por curso; RLS sin políticas, todo por estas dos funciones. El portero
+-- es kimun_prof_acceso (el de las funciones por-curso, como kimun_prof_dominio).
+create table if not exists public.civica_obs(
+  curso_id    uuid primary key references public.cursos(id) on delete cascade,
+  texto       text,
+  actualizado timestamptz not null default now(),
+  profesor_id uuid
+);
+alter table public.civica_obs enable row level security;
+
+drop function if exists public.kimun_prof_civica_obs_ver(text);
+create or replace function public.kimun_prof_civica_obs_ver(p_curso_codigo text)
+returns text language plpgsql security definer set search_path=public as $$
+declare cid uuid; t text;
+begin
+  select id into cid from public.cursos where codigo = p_curso_codigo;
+  if cid is null or not public.kimun_prof_acceso(cid) then raise exception 'no_autorizado'; end if;
+  select texto into t from public.civica_obs where curso_id = cid;
+  return coalesce(t, '');
+end $$;
+
+drop function if exists public.kimun_prof_civica_obs_fijar(text, text);
+create or replace function public.kimun_prof_civica_obs_fijar(p_curso_codigo text, p_texto text)
+returns void language plpgsql security definer set search_path=public as $$
+declare cid uuid;
+begin
+  select id into cid from public.cursos where codigo = p_curso_codigo;
+  if cid is null or not public.kimun_prof_acceso(cid) then raise exception 'no_autorizado'; end if;
+  insert into public.civica_obs(curso_id, texto, actualizado, profesor_id)
+  values (cid, left(p_texto, 2000), now(), auth.uid())
+  on conflict (curso_id) do update
+     set texto = excluded.texto, actualizado = now(), profesor_id = auth.uid();
+end $$;
+
 -- Alumnos de un curso mío con su primer intento en UN objetivo, para saber a quiénes
 -- reforzar. Devuelve a TODOS los alumnos inscritos, también a los que no lo jugaron:
 -- "12 no lo han visto" es información, no un vacío. Ordena por nombre a propósito —un
@@ -3117,6 +3196,10 @@ grant execute on function
   -- Modo docente (Sesión 128): el panel pide el token, el juego lo valida.
   , public.kimun_prof_docente_link()
   , public.kimun_docente_ok(uuid)
+  -- Formación Ciudadana (G1): informe de colegio + observaciones por curso.
+  , public.kimun_prof_civica(text[])
+  , public.kimun_prof_civica_obs_ver(text)
+  , public.kimun_prof_civica_obs_fijar(text,text)
   to anon, authenticated;
 
 -- ------------------------------------------------------------

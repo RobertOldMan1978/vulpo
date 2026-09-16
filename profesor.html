@@ -514,6 +514,40 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
   .cie-fila,.cie-bloque{break-inside:avoid}
   .cie-tit{color:#000}
 }
+/* Formación Ciudadana (G1) — registro sobrio, tokens del panel */
+.civ-fecha{font-size:13px;color:var(--cuerpo);margin:2px 0 14px;padding:9px 12px;
+  border-left:3px solid var(--cyan);background:var(--panel);border-radius:0 8px 8px 0}
+.civ-sd{color:var(--dim);font-style:italic;font-size:12px}
+.civ-fechas{white-space:nowrap;font-size:13px}
+.civ-lista{margin:4px 0 14px}
+.civ-resumen{font-size:13px;color:var(--cuerpo);margin-bottom:10px}
+.civ-oa{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid var(--linea)}
+.civ-oa:last-child{border-bottom:0}
+.civ-cod{flex:0 0 84px;font-size:11px;color:var(--dim);font-variant-numeric:tabular-nums}
+.civ-txt{flex:1;min-width:0;font-size:13px;color:var(--cuerpo);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.civ-dom{flex:0 0 120px;display:flex;align-items:center;gap:8px;justify-content:flex-end}
+.civ-bar{width:70px;height:8px;border-radius:4px;background:#ffffff14;overflow:hidden}
+.civ-bar > i{display:block;height:100%}
+.civ-dom b{min-width:38px;text-align:right;font-size:12.5px;font-variant-numeric:tabular-nums}
+.civ-obs-wrap{margin:16px 0}
+.civ-obs-lbl{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
+.civ-obs{width:100%;min-height:70px;background:var(--fondo);border:1px solid #ffffff26;color:var(--texto);
+  font-family:inherit;font-size:13px;padding:10px 12px;border-radius:8px;resize:vertical;box-sizing:border-box}
+.civ-obs-box{border:1px solid var(--linea);border-radius:6px;min-height:56px;padding:10px 12px;color:var(--cuerpo);font-size:12.5px;white-space:pre-wrap}
+.civ-obs-col{margin-top:18px}
+.civ-obs-item{font-size:12.5px;color:var(--cuerpo);padding:4px 0}
+.civ-firma{margin-top:40px;font-size:11px;color:var(--dim)}
+.civ-firma-linea{border-top:1px solid var(--dim);width:280px;margin-left:auto;margin-bottom:6px;padding-top:40px}
+@media print{
+  /* En el papel: el texto del OA va COMPLETO (no truncado), la barra de dominio se oculta
+     (relleno de fondo, manda el número en tono oscuro), y la firma sale negra. Va DESPUÉS del
+     CSS de pantalla a propósito: mismo peso, así que en impresión decide el orden de origen. */
+  .civ-txt{white-space:normal;overflow:visible}
+  .civ-bar{display:none}
+  .civ-dom b{--green:#1d5e3a;--gold:#7a5a10;--pink:#8a2340}
+  .civ-oa,.civ-firma{break-inside:avoid}
+  .civ-firma,.civ-firma-linea{color:#000;border-top-color:#000}
+}
 </style>
 </head>
 <body>
@@ -1020,7 +1054,8 @@ async function pintarLista(){
      conteo, así que un colegio de un solo curso se quedaba sin el botón nuevo. */
   const botones =
       (window.ESADMINCOLEGIO
-        ? `<button class="btn-chip principal" type="button" id="btnPulso">🏫 El pulso del colegio</button>` : '')
+        ? `<button class="btn-chip principal" type="button" id="btnPulso">🏫 El pulso del colegio</button>`
+          + `<button class="btn-chip" type="button" id="btnCivica">🏛️ Formación Ciudadana</button>` : '')
     + (cursos.length > 1
         ? `<button class="btn-chip" type="button" id="btnPlegar">Contraer todo</button>` : '');
   const barra = botones ? `<div class="lista-barra">${botones}</div>` : '';
@@ -1149,6 +1184,8 @@ async function pintarLista(){
      de restaurar el estado, así el rótulo nace diciendo la verdad. */
   const btnPulso = document.getElementById('btnPulso');
   if(btnPulso) btnPulso.onclick = () => verPulso();
+  const btnCivica = document.getElementById('btnCivica');
+  if(btnCivica) btnCivica.onclick = () => verCivica();
   /* Proyectar en clase: pide un token de 6 h y abre el juego en modo docente en pestaña
      nueva. El token viaja en la URL; el juego lo valida contra Supabase antes de entrar. */
   const btnDocente = document.getElementById('btnDocente');
@@ -1732,6 +1769,209 @@ async function verPulso(){
     // El permiso lo manda el SERVIDOR (puede_gestionar), no se asume en el cliente.
     document.querySelectorAll('.pul-ver').forEach(b => b.onclick = () =>
       verAvance(b.dataset.cod, b.dataset.nom, !!b.dataset.gestiono));
+    irArriba(); aviso('');
+  }catch(e){ aviso(errorPanel(e)); }
+}
+
+/* ============================================================================
+   Formación Ciudadana (G1): la evidencia del Plan de Formación Ciudadana (Ley 20.911).
+   Los 43 OA del eje "Formación ciudadana" (códigos HI0n, hoy contados como Historia)
+   como su propia vista. DOS caras, las dos hermanas de verPulso e imprimibles:
+     · verCivica()        — informe de COLEGIO para la UTP (cobertura, sin acierto ni nombres).
+     · verCivicaCurso()   — evidencia POR CURSO para el Profesor Jefe (cobertura + dominio).
+   ⚠️ Mide CONOCIMIENTO cívico, nunca conducta ni valores (la línea de siempre).
+   ============================================================================ */
+
+// Los OA cívicos por nivel (assets/plan/oa-civica.json), best-effort como cargarTextosOA:
+// si el JSON no está, las vistas cívicas no aparecen y el panel queda intacto.
+const CIVICA_OA = {};          // '08' -> ['HI08 OA 17', ...]
+let CIVICA_CARGADA = null;
+function cargarCivica(){
+  if(CIVICA_CARGADA) return CIVICA_CARGADA;
+  return CIVICA_CARGADA = (async () => {
+    try{
+      const r = await fetch('assets/plan/oa-civica.json');
+      if(!r.ok) throw new Error('HTTP '+r.status);
+      const d = await r.json();
+      Object.keys(d).forEach(n => { CIVICA_OA[n] = d[n]; });
+    }catch(e){ CIVICA_CARGADA = null; }   // se reintenta la próxima vez
+  })();
+}
+const civicaTodos = () => Object.keys(CIVICA_OA).flatMap(n => CIVICA_OA[n]);
+// ¿El que mira puede ver Historia de este nivel? (Jefe/Admin: misAsig vacío = todas.)
+function veHistoria(cursoCodigo, nivel){
+  const info = CURSO_INFO[cursoCodigo] || {};
+  const asigs = (info.misAsig && info.misAsig.length) ? info.misAsig : NIV.deNivel(nivel);
+  return asigs.includes('HI'+nivel);
+}
+
+// Fechas de REALIZACIÓN cívica de un curso, desde la planificación (Sesión 108): las
+// unidades del oa.json que contienen sus OA cívicos —una en 3°-6°, varias en 7°/8°— con
+// las fechas del plan (PLAN, asig|unidad). null si esas unidades no están planificadas.
+const planMapa = rows => { const m={}; (rows||[]).forEach(r=>{ m[claveUnidad(r.asignatura,r.unidad)]=r; }); return m; };
+function fechaCivicaDe(nivel, planMap){
+  const unidades = new Set((CIVICA_OA[nivel]||[]).map(o => (OA_UNIDAD[o]||{}).id).filter(Boolean));
+  if(!unidades.size) return null;
+  const rows = [...unidades].map(u => planMap[claveUnidad('HI'+nivel, u)]).filter(r => r && r.inicio && r.termino);
+  if(!rows.length) return null;
+  return { inicio: rows.map(r=>r.inicio).sort()[0], termino: rows.map(r=>r.termino).sort().slice(-1)[0] };
+}
+function rangoFechasCorto(a, b){
+  const M=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+  const p = s => { const d=new Date(s+'T00:00:00'); return {d:d.getDate(), m:M[d.getMonth()], y:d.getFullYear()}; };
+  const x=p(a), z=p(b);
+  return (x.m===z.m && x.y===z.y) ? `${x.d} – ${z.d} ${z.m} ${z.y}`
+       : `${x.d} ${x.m} – ${z.d} ${z.m} ${z.y}`;
+}
+
+const CIVICA_NOTA = 'Mide el <b>conocimiento cívico</b> trabajado por los alumnos —cuánto del eje de '
+  + 'Formación Ciudadana se ha jugado—, <b>nunca conducta ni valores</b>. No es una calificación: el '
+  + 'acierto se mira dentro de cada curso, no aquí.';
+const CIVICA_NOTA_CURSO = 'El % es de <b>primer intento</b> (conocimiento), como el resto del mapa. Los '
+  + 'objetivos actitudinales se miden por reconocimiento sobre un tercero, <b>nunca sobre la conducta del '
+  + 'alumno</b>. No es una calificación.';
+
+// Una fila del INFORME DE COLEGIO: curso, fechas (del plan), cobertura cívica, alumnos.
+function filaCivicaColegio(f, fecha){
+  const nivel = f.nivel ? NIVEL_NOMBRE(f.nivel) : '';
+  const ident = `<b class="pul-nom">${esc(f.curso)}</b>`
+    + `<span class="pul-sub">${nivel?esc(nivel)+' · ':''}<code>${esc(f.curso_codigo)}</code></span>`;
+  const fechaTxt = fecha ? esc(rangoFechasCorto(fecha.inicio, fecha.termino))
+    : (f.nivel ? `<span class="pul-falta">sin planificar</span>` : '—');
+  let cob, part;
+  if(!f.inscritos){
+    cob = `<span class="pul-falta">—</span>`; part = `<span class="pul-falta">Sin alumnos inscritos</span>`;
+  }else if(f.nivel == null){
+    cob = `<span class="pul-falta">Sin nivel asignado</span>`; part = `<span class="pul-falta">—</span>`;
+  }else{
+    const total = (CIVICA_OA[f.nivel]||[]).length;
+    cob = total ? `<b>${Math.min(f.con_actividad, total)} de ${total}</b> objetivos`
+                : `<span class="pul-falta">Cobertura no disponible</span>`;
+    part = `<b>${f.alumnos_civicos}</b> alumno${f.alumnos_civicos===1?'':'s'}`;
+  }
+  return `<tr>
+    <td data-rot="Curso">${ident}</td>
+    <td data-rot="Fechas de realización" class="civ-fechas">${fechaTxt}</td>
+    <td data-rot="Objetivos cívicos">${cob}</td>
+    <td data-rot="Alumnos c/ actividad">${part}</td>
+  </tr>`;
+}
+
+// Una fila de la EVIDENCIA POR CURSO: un OA cívico con su dominio (o "aún sin datos").
+function filaCivica(oa, f){
+  const txt = esc(OA_TEXTO[oa] || oa), cod = esc(oa);
+  const r1 = f ? Number(f.resp_1)||0 : 0, o1 = f ? Number(f.ok_1)||0 : 0;
+  if(!r1) return `<div class="civ-oa"><span class="civ-cod">${cod}</span>`
+    + `<span class="civ-txt">${txt}</span><span class="civ-sd">aún sin datos</span></div>`;
+  const pct = Math.round(o1*100/r1);
+  const color = pct>=70?'var(--green)':pct>=45?'var(--gold)':'var(--pink)';   // los cortes del mapa
+  return `<div class="civ-oa"><span class="civ-cod">${cod}</span><span class="civ-txt">${txt}</span>`
+    + `<span class="civ-dom"><span class="civ-bar"><i style="width:${pct}%;background:${color}"></i></span>`
+    + `<b style="color:${color}">${pct}%</b></span></div>`;
+}
+
+// Informe de COLEGIO — hermano de verPulso, mismo gate (pulso.ver / ESADMINCOLEGIO).
+async function verCivica(){
+  aviso('Cargando…','var(--dim)');
+  try{
+    await cargarCivica();
+    const oas = civicaTodos();
+    if(!oas.length) throw new Error('no se pudo leer el temario cívico');
+    const {data,error} = await SB.rpc('kimun_prof_civica', {p_oas: oas});
+    if(error) throw error;
+    const filas = (data||[]).slice().sort((a,b) =>
+      ordenCursos({nombre:a.curso, nivel:a.nivel}, {nombre:b.curso, nivel:b.nivel}));
+    await cargarTextosOA(oas);   // OA_UNIDAD de todos los niveles, para mapear las fechas
+    // Fecha cívica y observaciones por curso (on-demand: esta vista se abre con un botón).
+    const fechas = {}, obs = {};
+    await Promise.all(filas.map(async f => {
+      if(f.nivel) try{ const {data:pd} = await SB.rpc('kimun_prof_plan',{p_curso_codigo:f.curso_codigo});
+        fechas[f.curso_codigo] = fechaCivicaDe(f.nivel, planMapa(pd||[])); }catch(e){}
+      try{ const {data:od} = await SB.rpc('kimun_prof_civica_obs_ver',{p_curso_codigo:f.curso_codigo});
+        if(typeof od==='string' && od.trim()) obs[f.curso_codigo] = od; }catch(e){}
+    }));
+    const hoy = new Date();
+    const obsHtml = filas.filter(f=>obs[f.curso_codigo]).map(f =>
+      `<div class="civ-obs-item"><b>${esc(f.curso)}:</b> ${esc(obs[f.curso_codigo])}</div>`).join('');
+    $('lista').innerHTML = cabeceraAvance('Formación Ciudadana', 'Evidencia · Ley 20.911')
+      + `<div class="solo-print pul-hoja">
+           <b>VULPO · Formación Ciudadana</b>
+           <div>Evidencia del Plan de Formación Ciudadana — Ley 20.911</div>
+           <div>Impreso el ${esc(fechaLarga(hoy))} · ${esc(YO.nombre || YO.correo)}</div>
+         </div>`
+      + `<p class="pul-nota">${CIVICA_NOTA}</p>`
+      + (filas.length ? `<table class="pulso">
+          <thead><tr><th>Curso</th><th>Fechas de realización</th><th>Objetivos cívicos</th>
+            <th>Alumnos c/ actividad</th></tr></thead>
+          <tbody>${filas.map(f=>filaCivicaColegio(f, fechas[f.curso_codigo])).join('')}</tbody>
+        </table>`
+        : `<p style="color:var(--dim);font-size:13px">Todavía no hay cursos creados.</p>`)
+      + (obsHtml ? `<div class="civ-obs-col"><div class="civ-obs-lbl">Observaciones por curso</div>${obsHtml}</div>` : '')
+      + `<div class="civ-firma solo-print"><div class="civ-firma-linea"></div>Nombre, cargo y firma · Fecha: ______________</div>`
+      + `<div class="btn-fila no-print">
+           <button class="btn sec" id="btnCivImp">🖨️ Imprimir para la UTP</button>
+           <button class="btn txt" id="btnVolverPanel">← Volver</button>
+         </div>`;
+    document.querySelector('.av-head').classList.add('no-print');
+    $('btnVolverCab').onclick = volverAlPanel;
+    $('btnVolverPanel').onclick = volverAlPanel;
+    $('btnCivImp').onclick = () => window.print();
+    irArriba(); aviso('');
+  }catch(e){ aviso(errorPanel(e)); }
+}
+
+// Evidencia POR CURSO — para el Profesor Jefe, imprimible. Reutiliza kimun_prof_dominio
+// (cero backend) filtrada a los OA cívicos del nivel.
+async function verCivicaCurso(cursoCodigo, nombre, nivel){
+  aviso('Cargando…','var(--dim)');
+  try{
+    await cargarCivica();
+    const civicos = CIVICA_OA[nivel] || [];
+    if(!civicos.length){   // sin oa-civica.json: no se rompe, se dice
+      $('lista').innerHTML = cabeceraAvance(nombre, 'Formación Ciudadana')
+        + `<p style="color:var(--dim);font-size:13px">No se pudo leer el temario cívico de este nivel.</p>`
+        + `<button class="btn sec" id="btnVolverPanel">← Volver al avance</button>`;
+      const volver=()=>verAvance(cursoCodigo,nombre,true);
+      $('btnVolverCab').onclick=volver; $('btnVolverPanel').onclick=volver;
+      irArriba(); aviso(''); return;
+    }
+    const {data,error} = await SB.rpc('kimun_prof_dominio',{p_curso_codigo:cursoCodigo});
+    if(error) throw error;
+    await cargarTextosOA(civicos);
+    let fecha=null; try{ const {data:pd}=await SB.rpc('kimun_prof_plan',{p_curso_codigo:cursoCodigo});
+      fecha = fechaCivicaDe(nivel, planMapa(pd||[])); }catch(e){}
+    let obsTxt=''; try{ const {data:od}=await SB.rpc('kimun_prof_civica_obs_ver',{p_curso_codigo:cursoCodigo});
+      if(typeof od==='string') obsTxt=od; }catch(e){}
+    const porOa={}; (data||[]).forEach(f=>porOa[f.oa]=f);
+    const conAct = civicos.filter(o => porOa[o] && Number(porOa[o].resp_1)).length;
+    const hoy = new Date();
+    $('lista').innerHTML = cabeceraAvance(nombre, 'Formación Ciudadana · evidencia')
+      + `<div class="solo-print pul-hoja">
+           <b>VULPO · Formación Ciudadana — ${esc(nombre)}</b>
+           <div>Evidencia del Plan de Formación Ciudadana — Ley 20.911</div>
+           <div>Impreso el ${esc(fechaLarga(hoy))} · ${esc(YO.nombre || YO.correo)}</div>
+         </div>`
+      + `<div class="civ-fecha">🗓 <b>Realización:</b> ${fecha ? esc(rangoFechasCorto(fecha.inicio,fecha.termino))
+           : `<span class="civ-sd">sin planificar — se fija en la planificación de Historia</span>`}</div>`
+      + `<p class="pul-nota">${CIVICA_NOTA_CURSO}</p>`
+      + `<div class="civ-lista"><div class="civ-resumen"><b>${conAct} de ${civicos.length}</b> objetivos cívicos con actividad</div>`
+      + civicos.map(o => filaCivica(o, porOa[o])).join('') + `</div>`
+      + `<div class="civ-obs-wrap"><div class="civ-obs-lbl no-print">Observaciones (se guardan · van en el impreso)</div>`
+      + `<div class="civ-obs-lbl solo-print">Observaciones</div>`
+      + `<textarea class="civ-obs no-print" id="civObsC" placeholder="Observaciones de la evidencia cívica de este curso…">${esc(obsTxt)}</textarea>`
+      + `<div class="civ-obs-box solo-print">${esc(obsTxt)}</div></div>`
+      + `<div class="civ-firma solo-print"><div class="civ-firma-linea"></div>Nombre, cargo y firma · Fecha: ______________</div>`
+      + `<div class="btn-fila no-print">
+           <button class="btn sec" id="btnCivImpC">🖨️ Imprimir</button>
+           <button class="btn txt" id="btnVolverPanel">← Volver al avance</button>
+         </div>`;
+    const volver = () => verAvance(cursoCodigo, nombre, true);
+    document.querySelector('.av-head').classList.add('no-print');
+    $('btnVolverCab').onclick = volver;
+    $('btnVolverPanel').onclick = volver;
+    const ta = $('civObsC');
+    if(ta) ta.onblur = () => SB.rpc('kimun_prof_civica_obs_fijar',{p_curso_codigo:cursoCodigo, p_texto:ta.value}).catch(()=>{});
+    $('btnCivImpC').onclick = () => window.print();
     irArriba(); aviso('');
   }catch(e){ aviso(errorPanel(e)); }
 }
@@ -2891,6 +3131,10 @@ async function verAvance(cursoCodigo, cursoNombre, gestiono){
       irArriba(); aviso(''); return;
     }
     await cargarTextosOA(data.map(f => f.oa));
+    // Formación Ciudadana (G1): el botón a la evidencia cívica del curso, solo si el que mira
+    // ve Historia de este nivel (un profe de otra asignatura no tiene sus OA cívicos).
+    const nivelC = (CURSO_INFO[cursoCodigo]||{}).nivel || (data[0] ? String(data[0].oa).slice(2,4) : '');
+    const verHist = veHistoria(cursoCodigo, nivelC);
     $('lista').innerHTML = cabeceraAvance(titulo, 'Avance por objetivo')
       + bloqueTendenciaHTML() + bloquePlanHTML() + bloqueParticipacionHTML() + `
       <p style="color:var(--dim);font-size:12px;margin-bottom:10px">
@@ -2905,11 +3149,13 @@ async function verAvance(cursoCodigo, cursoNombre, gestiono){
       <div id="refuerzoBloque" style="margin-top:16px;border-top:1px solid #ffffff22;padding-top:12px"></div>
       <div class="btn-fila" style="margin-top:14px">
         <button class="btn sec" id="btnVolverPanel">← Volver</button>
+        ${verHist?`<button class="btn sec" id="btnCivicaCurso">🏛️ Formación Ciudadana</button>`:''}
         ${gestiono?`<button class="btn peligro" id="btnReiniciarMed">🔄 Reiniciar mediciones</button>`:''}
       </div>`;
     $('btnVolverCab').onclick = volverAlPanel;
     $('btnVolverPanel').onclick = volverAlPanel;
     const bReinit=$('btnReiniciarMed'); if(bReinit) bReinit.onclick=()=>reiniciarMediciones(cursoCodigo, cursoNombre, gestiono);
+    const bCiv=$('btnCivicaCurso'); if(bCiv) bCiv.onclick=()=>verCivicaCurso(cursoCodigo, titulo, nivelC);
     cargarTendencia(cursoCodigo);
     const planListo = cargarPlan(cursoCodigo);
     cargarParticipacion(cursoCodigo);

@@ -13523,3 +13523,109 @@ truco de la etiqueta. Confirmado en el sitio en vivo tras el redespliegue (~2 mi
 - **Pendiente de arrastre:** verificar el borde a borde de la app en el teléfono (targetSdk 36); la
   evidencia de Formación Ciudadana (G1); la prueba cerrada de 12 testers/14 días; unificar el ícono PWA
   web; INAPI (marca en trámite, publicada en el Diario Oficial); el piloto (puerta 1/10).
+
+### Sesión 130 (2026-09-16) — La lente de Formación Ciudadana en el panel (evidencia Ley 20.911) · G1 y G2
+Cierra el gancho institucional que la Sesión 117 midió. Los **43 OA del eje "Formación ciudadana"**
+—códigos `HI0n` del currículum de Historia (3° 6 · 4° 8 · 5° 10 · 6° 12 · 7° 4 · 8° 3), **1.289 preguntas
+aprobadas**— ya se jugaban (la lente del alumno, Sesión 119) y el panel ya medía su cobertura, pero
+contaban como "Historia" y **no tenían vista propia**. La **Ley 20.911** obliga a cada colegio a tener un
+Plan de Formación Ciudadana, que la UTP pasa en orientación/consejo de curso y **le cuesta evidenciar**.
+G1 saca esos OA a la superficie en el panel como **evidencia con datos reales del juego de los alumnos**:
+un informe de colegio (para la UTP) y una vista por curso (para el Profesor Jefe). Se hizo con
+brainstorming → spec → propuesta escrita por agentes → implementación, verificado con el doble. Spec:
+`docs/superpowers/specs/2026-09-16-g1-formacion-ciudadana-panel-design.md`. **No se tocó el juego del
+alumno ni una sola pregunta:** las dos únicas ediciones de contenido son metadatos (G2, abajo).
+
+⚠️ **Evidencia CONOCIMIENTO cívico, nunca conducta ni valores** — la línea de siempre. La medición sigue
+el criterio del mapa de dominio (primer intento).
+
+#### Las dos caras, y por qué son distintas (decisiones de Roberto)
+- **Informe de colegio: SOLO cobertura, sin % de acierto por curso ni nombres.** Sigue la regla del pulso
+  (Sesión 107): un tablero que ordene cursos por rendimiento cívico es un ranking de profesores con otro
+  nombre, y encima impreso. La restricción vive en la **FIRMA de `kimun_prof_civica`** —que no devuelve
+  acierto ni nombres— y no en el CSS, así que no se deshace desde el cliente.
+- **Vista por curso: SÍ trae el dominio** (% de primer intento, colores 70/45), como el mapa ahí dentro —
+  es lo que el Profesor Jefe necesita para decidir qué reforzar.
+
+#### El dato: `assets/plan/oa-civica.json` + `scripts/generar-oa-civica.py`
+Lista machine-readable de los 43 OA cívicos por nivel, para que el cliente cruce best-effort (patrón del
+semáforo, Sesión 114). Se genera de los 6 `contenido/historia-*basico/oa.json` filtrando por
+`eje == "Formación ciudadana"` — el **único** marcador presente en los 6, que da **43/43 exacto**. Calcado
+de `generar-oa-unidad.py`, con **guard** que aborta (`SystemExit`) si no ve los 6 niveles de Historia o si
+el total ≠ 43 (el guard que ya salvó al tablero y al `oa-unidad.json`, probado rompiéndolo → exit 1).
+
+#### G2: se blinda 8° (`contenido/historia-8basico/oa.json`)
+8° era el **único** de los 6 sin `nota_evaluacion`, y sus `HI08 OA 17/19` son valorativos —se miden por
+reconocimiento, siempre sobre un tercero con nombre, nunca sobre la conducta del jugador— sin la
+advertencia que 3°-7° sí tenían. Se agrega la nota de nivel superior, entre `actitudes` y `unidades`.
+**Solo datos, JSON válido (`validar-oa-json.py` 0 errores), no toca ninguna pregunta.**
+
+#### Backend (`supabase/schema.sql`), aplicado por Roberto y verde en producción
+- **Vista por curso: CERO backend nuevo.** Reutiliza `kimun_prof_dominio`, que ya devuelve por OA el
+  primer intento; el cliente filtra a los 43 cívicos.
+- **Informe de colegio: `kimun_prof_civica(p_oas text[])`**, calcada de `kimun_prof_pulso`: portero
+  `kimun_prof_puede_algun('pulso.ver')`, el cliente pasa los 43 códigos (la "civicidad" vive en el repo,
+  el servidor solo cuenta lo que se le pide), y devuelve por curso `inscritos`, `con_actividad` (cobertura
+  cívica) y `alumnos_civicos` (participación cívica), con el mismo criterio de forma curricular +
+  `substr(d.oa,3,2)=nivel` del pulso. ⚠️ **NO devuelve acierto ni nombres.**
+- **Observaciones por curso: tabla `civica_obs`** (`curso_id` PK → `cursos` on delete cascade, RLS sin
+  políticas) + `kimun_prof_civica_obs_ver/_fijar`, portero `kimun_prof_acceso(cid)`, `_fijar` con
+  `left(p_texto,2000)` (defensa en profundidad, Sesión 111). Se guardan por curso, persisten y van en el
+  impreso; la firma es física sobre el papel.
+- **Fechas de realización: CERO backend nuevo** — se leen de `kimun_prof_plan` (Sesión 108), y el flujo
+  "modificar + nota del porqué (solo para la UTP y el registro, NO en el impreso; el impreso lleva la
+  fecha vigente)" ya lo hace `kimun_prof_plan_fijar` con su justificación obligatoria y su
+  `unidades_plan_log`.
+- **Control +/− contra producción:** las 3 funciones nuevas → **400 `no_autorizado`** (existen + portero);
+  una inventada → **404 `PGRST202`** (no es eco); `kimun_oa_asignatura('MA06 OA 01')` → `MA06` (el
+  re-pegado no se llevó nada). Grants registrados en el bloque `to anon, authenticated`.
+
+#### El punto fino que Roberto corrigió: las fechas son POR CURSO
+El mockup llevaba una sola fecha global en el encabezado del informe. Roberto lo puso con todas sus
+letras: *"las fechas debieran ir ahí no, es difícil que la unidad se les pase a 6 cursos a la vez"* —
+cada curso pasa la unidad cívica en su propia fecha. Se movieron a **por curso** (columna en el informe de
+colegio, editable en la vista por curso), reutilizando la planificación del año (Sesión 108) en vez de
+reconstruirla — que fue la solución elegante de todo el trabajo.
+- **3°-6°: limpio.** Los OA cívicos son una sola unidad (U3 en 4/5/6, U4 en 3°); su fila de plan da
+  inicio/término directos, y "modificar + nota" es editar esa unidad en la planificación.
+- **7°/8°: repartido** en varias unidades temáticas; la fecha cívica es el **rango que abarca** (min
+  inicio / max término), o `—` sin plan. El cliente sabe qué unidades vía `oa-unidad.json`.
+
+#### Frontend (`profesor.html`, ~200 líneas): el informe y la vista
+- **Informe de colegio** — hermano de `verPulso`, botón `#btnCivica` junto a `#btnPulso`, mismo gate
+  `pulso.ver`. Tabla Curso | Fechas (del plan) | Cobertura cívica (N de M) | Alumnos con actividad cívica;
+  observaciones guardadas por curso + firma en el impreso. Casos de borde **dichos, no rellenos con cero**
+  (sin alumnos → `—`, sin nivel → "Sin nivel asignado", `oa.json` no cargó → "cobertura no disponible").
+- **Vista por curso** (`#btnCivicaCurso` en la fila de botones de Ver avance) — la sección 🏛️ con los OA
+  cívicos (cobertura + dominio; "aún sin datos" donde no hay), su rango de fechas y un `<textarea>` de
+  observaciones que se guarda `onblur` (`_fijar`) y reaparece al reabrir. Botón de imprimir esa evidencia.
+- **Registro sobrio** (Sesión 106): tokens `:root`, Inter, color solo donde informa.
+
+> ⚠️ **Un bug de ORDEN DE CSS, cazado imprimiendo con `ev.impresion()`.** El `.civ-txt` de pantalla
+> llevaba `white-space:nowrap;overflow:hidden;text-overflow:ellipsis`, colocado DESPUÉS del primer
+> `@media print`, así que **ganaba en el papel** y truncaba el texto del OA en A4. Se movieron las reglas
+> cívicas de impresión a un `@media print` NUEVO al final del `<style>` (después del CSS de pantalla): en
+> el papel `white-space:normal`, `.civ-bar` oculta, y los tonos semánticos oscuros dentro del contenedor
+> (`.civ-dom b`), no en `:root`. **El orden de fuente manda: a igual especificidad, gana la última.**
+> Verificado: en el papel `txtCompleto:true`. Es la lección de la Sesión 107 (el `@media print` del pulso)
+> repitiéndose por el otro lado.
+
+#### Verificación (con `scripts/panel-demo.py` + `scripts/cdp.mjs`, MIRANDO)
+Se armó el doble con `kimun_prof_civica`, `kimun_prof_civica_obs_ver/_fijar` (dict en memoria) y datos
+cívicos en `CUR-BA04` (el 8° coherente, HI08 OA 17/18/19).
+- **Informe de colegio** (rol Admin): tabla con cobertura y participación cívica por curso, fechas del
+  plan; **asertos duros**: el texto renderizado **no contiene `%` de acierto ni ningún nombre de alumno**.
+  Casos de borde dichos.
+- **Impreso A4** (`ev.impresion()`): paleta a papel, columna de fechas, observaciones guardadas, firma;
+  sin botones ni nav; `txtCompleto:true`.
+- **Vista por curso** (Ver avance de CUR-BA04): la lente 🏛️ con dominio + fechas; escribir una observación
+  → se guarda (`_fijar`) y reaparece al reabrir.
+- **Degradación**: sin `oa-civica.json` (404) la lente no rompe (best-effort, caché por promesa); el
+  informe lo dice y el panel queda intacto.
+- **Regresión**: pulso, mapa, tendencia, plan, participación y ranking intactos; escritorio (1280) y móvil
+  (375) sin desborde; consola limpia.
+
+- **Pendiente de arrastre:** verificar el borde a borde de la app en el teléfono (targetSdk 36); la prueba
+  cerrada de 12 testers/14 días; unificar el ícono PWA web; INAPI (marca en trámite, publicada en el
+  Diario Oficial); el piloto (puerta 1/10). **Con G1 cerrada, la evidencia de Formación Ciudadana sale de
+  la lista.**

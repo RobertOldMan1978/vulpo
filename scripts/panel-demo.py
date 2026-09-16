@@ -72,7 +72,11 @@ STUB = r"""
     /* Dos objetivos de unidades que TODAVIA NO EMPIEZAN (U4 arranca el 28/09): pasa de
        verdad cuando un alumno juega adelantado, y sin ellos la seccion nunca se prueba. */
     ['MA08 OA 16','Representar datos en tablas y graficos, y evaluar su pertinencia',62,4,3],
-    ['HI08 OA 21','Caracterizar la region en que se vive y sus principales actividades',55,3,2]
+    ['HI08 OA 21','Caracterizar la region en que se vive y sus principales actividades',55,3,2],
+    /* Los tres OA civicos de 8° (eje "Formacion ciudadana"), para la lente civica por curso. */
+    ['HI08 OA 17','Contrastar posturas sobre la legitimidad de la conquista',72,20,8],
+    ['HI08 OA 18','Reconocer los derechos del hombre en la Ilustracion',84,21,5],
+    ['HI08 OA 19','Evaluar el proceso de independencia y la ciudadania',61,19,10]
   ];
   /* Los cursos del colegio simulado. NOMBRES DESORDENADOS respecto al nivel a proposito:
      el servidor ordena solo por c.nombre, asi que "8A Prueba" cae antes que "Quinto B" y
@@ -96,6 +100,11 @@ STUB = r"""
     'CUR-4T22':{}                                                     // nadie ha jugado
   };
   const JUGARON = {'CUR-6N01':0, 'CUR-4T22':0};
+  // Cobertura CIVICA por curso [OA civicos con actividad, alumnos que tocaron uno]. El cliente
+  // saca el total (M) por nivel de oa-civica.json (3°:6 4°:8 5°:10 6°:12 8°:3). Casos a la
+  // vista: 8° 3 de 3, 3° 5 de 6, 5° 6 de 10, 4° 0 de 8 (nadie jugo), 6° sin alumnos, Taller sin nivel.
+  const CIVICA = {'CUR-3R09':[5,12], 'CUR-5T77':[6,15], 'CUR-BA04':[3,20], 'CUR-6N01':[0,0], 'CUR-4T22':[0,0]};
+  const CIVICA_OBS = {};
 
   /* Inquilinos (Sesion 116, Fase 1). Un sostenedor con un colegio, como el piloto. Dos
      cursos ya asignados y el resto "Sin colegio": asi se ve el selector preseleccionado Y
@@ -280,6 +289,14 @@ STUB = r"""
       cobertura: niv ? (COBERTURA[cod]||{}) : null,
       puede_gestionar:gest
     })),
+    /* Formacion Ciudadana (G1): informe de colegio (cobertura + participacion civica por
+       curso, SIN acierto ni nombres) y observaciones guardadas por curso. */
+    kimun_prof_civica: ()=>CURSOS.map(([cod,nom,niv,gest,rol,asig,n])=>({
+      curso_codigo:cod, curso:nom, nivel:niv||null, inscritos:n,
+      con_actividad:(CIVICA[cod]||[0,0])[0], alumnos_civicos:(CIVICA[cod]||[0,0])[1],
+      puede_gestionar:gest })),
+    kimun_prof_civica_obs_ver: (a)=>CIVICA_OBS[a&&a.p_curso_codigo]||'',
+    kimun_prof_civica_obs_fijar: (a)=>{ CIVICA_OBS[a.p_curso_codigo]=(a.p_texto||'').slice(0,2000); return null; },
     /* ⚠️ Depende del CURSO que se le pide, y tiene que dar el mismo numero que
        kimun_prof_pulso: el titular de la tarjeta y la fila del pulso muestran la misma
        participacion, y si el doble se contradice a si mismo, la comprobacion de
