@@ -13366,8 +13366,16 @@ entera y se generaron los recursos gráficos que faltaban. **Cero contenido del 
   PowerShell —resuelto con ruta absoluta—; la primera contraseña no quedó anotada, así que se
   **rehizo la key** (era nueva, sin nada firmado en Play, cero costo). Falta correr el workflow
   (etiqueta `aab-1`) → bajar el `.aab`.
-- **Pendiente inmediato:** subir el `.aab` a un canal de prueba en Play Console, y **unificar el
-  ícono del PWA web** (`assets/icono-512/-192.png`) con el zorro nuevo, que Roberto dejó para después.
+- ⚠️ **El primer `.aab` falló en la firma, por un bug del `patch-release-signing.py` (Sesión 124).**
+  El `versionCode` por defecto de Capacitor es **1**, y el workflow le pasa `VULPO_VERSION_CODE =
+  github.run_number`, que en la **primera corrida vale 1**: el `re.sub` reemplazaba `versionCode 1`
+  por `versionCode 1` —idéntico— y el guard `if s2 == s` lo confundía con *"no se encontró el
+  patrón"*. Se separó la verificación de existencia (`re.search`) del reemplazo. **Verificado local
+  con vc=1 y vc=2.** Es la lección del script *"verificado sin la nube"* (Sesión 124): la primera
+  corrida real lo destapó. El `.aab` se re-lanza con la etiqueta `aab-2` (versionCode 2).
+- **Pendiente inmediato:** bajar el `.aab` (corrida verde), subirlo a un canal de prueba en Play
+  Console, y **unificar el ícono del PWA web** (`assets/icono-512/-192.png`) con el zorro nuevo,
+  que Roberto dejó para después.
 - **Pendiente de arrastre:** la prueba cerrada de 12 testers/14 días, el merge completo de
   `feature/android` → `main`, INAPI (marca publicada en el Diario Oficial, en trámite) y el piloto
   (puerta el 1 de octubre).

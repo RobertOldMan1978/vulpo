@@ -59,10 +59,12 @@ vc = os.environ.get("VULPO_VERSION_CODE", "").strip()
 if vc:
     if not vc.isdigit():
         sys.stderr.write("ERROR: VULPO_VERSION_CODE no es numerico: %r\n" % vc); sys.exit(1)
-    s2 = re.sub(r'\bversionCode\s+\d+', 'versionCode ' + vc, s, count=1)
-    if s2 == s:
+    # ⚠️ NO usar s2==s para detectar "no encontrado": si el versionCode nuevo es IGUAL al que
+    # ya esta (p.ej. run_number 1 y el default 1 de Capacitor), el reemplazo es identico y
+    # s2==s aunque el patron SI exista -> falso "no se encontro". Se verifica con re.search.
+    if not re.search(r'\bversionCode\s+\d+', s):
         sys.stderr.write("ERROR: no se encontro 'versionCode <n>' en " + g + "\n"); sys.exit(1)
-    s = s2
+    s = re.sub(r'\bversionCode\s+\d+', 'versionCode ' + vc, s, count=1)
     print("versionCode -> " + vc)
 
 open(g, "w", encoding="utf-8", newline="\n").write(s)
