@@ -13354,11 +13354,20 @@ entera y se generaron los recursos gráficos que faltaban. **Cero contenido del 
   después de `cap sync`. `scripts/generar-iconos-app.py` regenera los 3 fuentes si el logo cambia.
 - **Orden 66:** el cambio del ícono va a **`feature/android`** (no a `main`: es solo de la app
   Android). Los assets de `play-store/` **no se commitean** — son de la consola, ya subidos.
-- **Pendiente inmediato:** Roberto genera la upload key + los 4 secretos
-  (`docs/android-release-aab.md`, guiado en vivo — el JDK se instaló pero `keytool` no estaba en el
-  PATH de la sesión; se resolvió con la ruta completa); después corre el workflow *App Bundle de
-  Release* → el `.aab` (que **ya traerá el ícono nuevo**). Y **unificar el ícono del PWA web**
-  (`assets/icono-512/-192.png`) con el zorro nuevo, que Roberto dejó para después.
+- ⚠️ **El workflow de release no se podía correr: `main` no tiene los workflows.** GitHub solo
+  permite *"Run workflow"* (workflow_dispatch) desde la rama **por defecto** (`main`), y los dos
+  workflows viven solo en `feature/android`. Para armar el `.aab` **sin mergear a main** (Roberto
+  lo posterga por no soltar toda la Fase A a la web todavía), se le agregó a `android-release.yml`
+  un disparo por **etiqueta `aab-*`**: empujar `aab-1` sobre `feature/android` lo corre con el
+  código de la rama (ícono nuevo incluido). Es orden 66 chica, no toca `main`.
+- **Roberto generó la upload key + los 4 secretos** (`docs/android-release-aab.md`, guiado en vivo):
+  el JDK se instaló pero `keytool` no estaba en el PATH de la sesión —resuelto con la ruta
+  completa—; y `[IO.File]::ReadAllBytes` con ruta relativa busca en `system32`, no en el `cd` de
+  PowerShell —resuelto con ruta absoluta—; la primera contraseña no quedó anotada, así que se
+  **rehizo la key** (era nueva, sin nada firmado en Play, cero costo). Falta correr el workflow
+  (etiqueta `aab-1`) → bajar el `.aab`.
+- **Pendiente inmediato:** subir el `.aab` a un canal de prueba en Play Console, y **unificar el
+  ícono del PWA web** (`assets/icono-512/-192.png`) con el zorro nuevo, que Roberto dejó para después.
 - **Pendiente de arrastre:** la prueba cerrada de 12 testers/14 días, el merge completo de
   `feature/android` → `main`, INAPI (marca publicada en el Diario Oficial, en trámite) y el piloto
   (puerta el 1 de octubre).

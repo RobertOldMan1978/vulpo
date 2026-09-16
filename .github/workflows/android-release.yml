@@ -13,6 +13,12 @@ name: App Bundle de Release (.aab para Google Play)
 #   ANDROID_KEY_PASSWORD       contrasena de la clave
 on:
   workflow_dispatch:
+  # Tambien se dispara empujando una ETIQUETA aab-* (ej: aab-1). workflow_dispatch SOLO
+  # corre desde la rama por defecto (main), y este workflow vive en feature/android; crear
+  # la etiqueta sobre esta rama lo dispara con el codigo de la rama, sin mergear a main.
+  push:
+    tags:
+      - 'aab-*'
 
 jobs:
   aab:
