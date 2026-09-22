@@ -13629,3 +13629,54 @@ cívicos en `CUR-BA04` (el 8° coherente, HI08 OA 17/18/19).
   cerrada de 12 testers/14 días; unificar el ícono PWA web; INAPI (marca en trámite, publicada en el
   Diario Oficial); el piloto (puerta 1/10). **Con G1 cerrada, la evidencia de Formación Ciudadana sale de
   la lista.**
+
+### Sesión 131 (2026-09-21) — El borde a borde tapaba los botones, y el selector estrena Salir
+Roberto lo encontró **usándolo** en el teléfono (app instalada desde Play): tres cosas en tres capturas.
+**No se tocó contenido ni backend** —ni un banco, ni una pregunta, ni el esquema—: todo es la capa de
+presentación de los seis forks y el selector de la app.
+
+1. **Salir en el selector.** `app/index.html` (la puerta de entrada de la app) no tenía cómo cerrar la
+   app. Se agregó **"🚪 Salir"** debajo del texto del código ALU-, que aparece **solo en la app**
+   (`Capacitor.isNativePlatform()`), pide confirmación y cierra con `App.exitApp()` (via `@capacitor/app`),
+   igual que el "Salir" del juego (Sesión 123). En la web queda oculto: un sitio no se cierra. El selector
+   **no carga `motor.js`**, así que la lógica va inline; `window.Capacitor` lo inyecta el bridge nativo en
+   cada página del WebView.
+
+2. ⚠️ **La barra de abajo tapaba el último botón (Continuar, Volver al mapa) y la cabecera del quiz quedaba
+   bajo el reloj. La causa de raíz no era el botón ni la barra**, así que no se angostó ninguno de los dos
+   (que era lo que Roberto proponía). Con targetSdk 36 (Sesión 128) Android dibuja **borde a borde**, y a
+   los seis forks les faltaba **`viewport-fit=cover`** en el viewport — sin eso, `env(safe-area-inset-*)`
+   vale **0** y el juego no deja margen para las barras del sistema. El `.nav` inferior ya tenía
+   `calc(10px + env(safe-area-inset-bottom))` en su padding **en anticipación**, pero como `env()` valía 0
+   no hacía nada; y el `.wrap` (contenedor de contenido) despejaba la barra con `padding-bottom:90px`
+   **fijo**, que no crece con el inset. Arreglo, **byte a byte en los seis forks**:
+   - `viewport-fit=cover` en el viewport, para que los insets reporten.
+   - `.wrap`: `padding-top` y `padding-bottom` pasan a `calc(<base> + env(safe-area-inset-*))` → el
+     contenido despeja la barra de abajo y la cabecera despeja la barra de estado.
+   - `.sndbtn` (🎵/🔊, fijos a `top:10px`) y `.jefe-hud` (sticky `top:0`) suman `env(safe-area-inset-top)`,
+     misma causa, visible en las capturas.
+   > **El mecanismo, que aclara por qué 90px no bastaba:** el borde a borde sin `viewport-fit=cover`
+   > introduce un desajuste entre el `100dvh`/scroll y el `position:fixed;bottom:0` (la barra queda corrida
+   > respecto al contenido por la altura de la barra de gestos, ~48px), así que tapaba más de lo que el
+   > padding fijo despejaba. `viewport-fit=cover` unifica el viewport y hace que `env()` reporte de verdad:
+   > la barra sube por encima de los gestos **y** el `.wrap` crece en la misma medida.
+
+3. **"Creo que nos faltaba unas gráficas"** — preguntado, **sin respuesta aún** (Roberto pasó a la orden
+   66). Contexto para cuando se retome: **Ciencias y Lenguaje son texto puro a propósito** (los redactores
+   concluyeron que el dibujo casi siempre delataba la respuesta); Matemática e Historia sí tienen widgets
+   SVG, incluidos los diagramas de geometría en las preguntas de 5°-8° (Sesión 100). Hay que definir a qué
+   se refiere —¿diagramas en Ciencias?, ¿gráficos de datos?, ¿otra pantalla?— antes de construir.
+
+**Verificación.** En la web `env()` vale 0 (headless lo emula), así que el cambio es un **no-op** — medido
+con `cdp.mjs`: `.wrap` sigue en `padding-bottom:90px`/`padding-top:16px`, `.sndbtn` en `top:10px`,
+`__MOTOR_OK=true`, JUGADOR navega a `scr-expediciones`, consola y red limpias; y en `app/index.html` el
+Salir queda **oculto** (`hidden`), las 42 estrellas renderizan y la marca pinta. ⚠️ **El borde a borde solo
+se ve en el teléfono** (las barras del sistema no existen en headless): la confirmación visual es de
+Roberto, y **necesita una compilación nueva de la app** — la instalada desde Play no trae estos cambios
+hasta rebuildear. En `vulpo.cl` el cambio es inofensivo. Los seis forks cambiaron **8 líneas cada uno** (los
+4 edits, sin reformateo) y `app/index.html` sumó el bloque del Salir. **Sin esquema: nada que aplicar en la
+consola de Supabase esta sesión.**
+
+- **Pendiente de arrastre:** confirmar el borde a borde **en el teléfono** tras rebuildear (esta sesión lo
+  arregla, falta la prueba en device); la prueba cerrada de 12 testers/14 días; unificar el ícono PWA web;
+  INAPI (marca en trámite); el piloto (puerta 1/10); y decidir qué "gráficas" quiere Roberto.

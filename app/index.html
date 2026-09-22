@@ -93,6 +93,12 @@
   .ayuda b{color:#fff; font-weight:800}
   .codigo{color:var(--gold); font-weight:800; font-family:ui-monospace,Menlo,Consolas,monospace}
 
+  /* "Salir" SOLO en la app (Capacitor): cierra la app. En la web no se muestra (es un sitio). */
+  .salir{margin:22px auto 0; padding:11px 26px; border-radius:12px; background:none;
+    border:1.5px solid var(--cyan); color:var(--cyan); font-family:"Nunito",sans-serif;
+    font-weight:800; font-size:15px; cursor:pointer}
+  .salir:active{transform:translateY(1px)}
+
   #intro{position:fixed; inset:0; z-index:100; background:#000; display:flex; align-items:center; justify-content:center; transition:opacity .5s ease}
   #intro.saliendo{opacity:0}
   #intro video{width:100%; height:100%; object-fit:cover}
@@ -182,6 +188,8 @@
   <p class="ayuda">¿Tienes un código <span class="codigo">ALU-</span>? Entra a tu curso y canjéalo ahí,
     en <b>«🎟️ Tengo un código»</b>.</p>
 
+  <button class="salir" id="salir" type="button" hidden>🚪 Salir</button>
+
 <script>
 (function(){
   var RUTAS={ "3":"3ro","4":"4to","5":"5to","6":"6to","7":"7mo","8":"8vo" };
@@ -218,6 +226,23 @@
     document.getElementById("titElige").style.display="none";
     b.addEventListener("click", function(){ recordar(ult); });
   }
+
+  // "Salir" SOLO en la app (Capacitor): la puerta de entrada no tiene a dónde "volver",
+  // así que cierra la app (via @capacitor/app), igual que el "Salir" del juego. En la web
+  // queda oculto: un sitio no se cierra.
+  try{
+    var C=window.Capacitor;
+    if(C && C.isNativePlatform && C.isNativePlatform()){
+      var sal=document.getElementById("salir");
+      if(sal){
+        sal.hidden=false;
+        sal.addEventListener("click", function(){
+          if(!confirm("¿Salir de VULPO?")) return;
+          try{ if(C.Plugins && C.Plugins.App && C.Plugins.App.exitApp){ C.Plugins.App.exitApp(); return; } }catch(e){}
+        });
+      }
+    }
+  }catch(e){}
 })();
 </script>
 </body>
