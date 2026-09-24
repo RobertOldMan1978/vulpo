@@ -36,14 +36,15 @@ Es una app web mobile-first y se reutiliza. Ver `docs/roadmap-tecnico.md` §1.
 | 5° | 93 | 2.790 | ✅ **todas** | no lleva | villanos ✅ · portadas 20/20 (reutilizadas) | ✅ | ✅ |
 | 6° | 99 | 2.970 | ✅ **todas** | no lleva | villanos ✅ · portadas 25/25 (16 reutilizadas + 9 nuevas) | ✅ | ✅ |
 | 7° | 81 | 2.430 (+120 apoyo) | ✅ **todas** | no lleva | villanos ✅ · portadas 23/23 | ✅ | ✅ |
-| 8° | 80 | 2.644 (+222 apoyo) | ✅ **todas** | no lleva | ✅ portadas 20/20 | ✅ | ✅ |
+| 8° | 80 | 2.644 (+352 apoyo) | 130 ⏳ (libro nuevo) | no lleva | ✅ portadas 20/20 | ✅ | ✅ |
 
-- **16.865 preguntas y 233 lecciones, todas escritas y todas aprobadas.** Los seis
-  cursos llegan a un alumno con todo su contenido firmado. ⚠️ **Es una foto, no un estado**: la
-  Sesión 99 sumó 330 preguntas y 21 lecciones, la 100 reescribió 2 de geometría —al cambiarles
-  el texto, su firma anterior dejó de corresponderles— y la 102 sumó las **240 del Vocabulario**
-  de 4°, 5° y 6°. **Cada tanda nueva vuelve a la cola, y el número se vuelve a medir en cada
-  orden 66** en vez de copiarlo de aquí.
+- **16.995 preguntas escritas y 233 lecciones · 16.865 preguntas aprobadas, 130 en la cola.**
+  Las pendientes son el **segundo libro de 8°** (*Teatro escolar representable 1*, la antología de
+  Rubén Unda; 11 obras, escrito el 23/09). ⚠️ **El 100% es una foto, no un estado, y aquí está la
+  prueba**: la Sesión 99 sumó 330 preguntas y 21 lecciones, la 100 reescribió 2 de geometría —al
+  cambiarles el texto, su firma anterior dejó de corresponderles—, la 102 sumó las **240 del
+  Vocabulario** de 4°, 5° y 6°, y la 132 este libro. **Cada tanda nueva vuelve a la cola, y el
+  número se vuelve a medir en cada orden 66** en vez de copiarlo de aquí.
 - **VULPO se anuncia desde 3° a 8° básico (06/09/2026), y desde ese mismo día los SEIS cursos
   están publicados.** La landing (`index.html`) enlaza los seis cursos jugables (3°, 4°, 5°, 6°,
   7°, 8°) con los números reales: **16.865 preguntas aprobadas, 529 objetivos medidos** y 6 cursos
@@ -196,6 +197,7 @@ Para poder decir "tengo 3°, 7° y 8°". Es el hito más cercano y el de mejor r
 | ~~A5~~ | ~~Escuchar el clip de voz de **copihue**~~ ✅ **HECHO (28/08)**: Roberto eligió la pronunciación `ko.piˈwe` (IPA en `_FONEMAS`); los 2 clips regenerados y confirmados | — | — |
 | ~~A6~~ | ~~Confirmar la primera foto semanal~~ ✅ **HECHO (31/08)**: `dominio_semanal` tiene **dos** filas —`2026-08-30` (1.274), la que tomó el cron esta madrugada sellada con el domingo que cierra, y `2026-08-23` (1.270), de una corrida a mano anterior—. El historial está andando y ya no se pierde ninguna semana. Las 4 filas de diferencia son coherentes con *"0 de 26 jugaron esta semana"*: todavía no hay a quién medir | — | — |
 | ~~A9~~ | ~~**Vocabulario en 7°**~~ ✅ **HECHO (28/08)**: 120 palabras en 4 áreas (`contenido/vocabulario-7basico`), la bandera encendida y el handler restaurado. El código ya estaba en el fork: solo faltaba el dato | — | — |
+| **A58** | **Segundo libro de 8°** ✅ **ESCRITO (23/09, Sesión 132)**: *Teatro escolar representable 1*, la antología de teatro de Rubén Unda (Zig-Zag), en `contenido/lectura-teatro-escolar-1`. **11 tramos —uno por obra— y 130 preguntas**, escritas **desde el ejemplar** (a diferencia de *Cuentos de Ada*, que salió de resúmenes, así que este sí admite detalle). 8° pasa a ser el primer curso con **dos** libros, y no costó una línea de motor: la biblioteca ya recorría un catálogo. ⚠️ **Faltan las páginas 10-12 del escaneo** (el desenlace de la primera obra), así que ese tramo lleva **7 preguntas y ninguna toca el final**; se completa cuando Roberto pase esas páginas. ⏳ **Quedan las 130 por aprobar** en el tablero | ~20 min | Roberto |
 | ~~A15~~ | ~~**Primer libro de 3°**~~ ✅ **HECHO (30/08, Sesión 72)**: *Cuentos de Ada* de Pepe Pelayo, 10 tramos y 101 preguntas en `contenido/lectura-cuentos-de-ada`. La biblioteca de 3° quedó encendida. Sello editorial **confirmado: Santillana Infantil**, y la portada **se queda en la genérica de Lectura a propósito**, para no ilustrar la tapa de un libro ajeno. **Las 101 quedaron aprobadas el 30/08** (aprobación forzada de Roberto) y con voz. Cerrada | — | — |
 | ~~A16~~ | ~~**Voz de *Cuentos de Ada***~~ ✅ **HECHO (30/08)**: Roberto aprobó las 101 preguntas y se generaron los **515 clips** (12 MB, **US$0,32**) en `assets/voz/ada3/`, enganchados en `VOZ_DIRS`. Cobertura completa verificada y el clip suena en el navegador. **Ningún texto del libro cambia al pronunciarse**, así que el normalizador no lo toca. Queda opcional la auditoría por muestra con Azure STT (~US$0,06), que aquí solo sirve para los nombres propios (Ada, Yoyito, Pocho, Cary, Orco) | — | — |
 | ~~A11~~ | ~~**Reto Sin Fin de cálculo en 7°**~~ ✅ **HECHO (28/08)**: motor compartido en `assets/js/calculo.js` + `genCalc7()` con el temario de 7°. **No consume banco de preguntas**: las operaciones se generan por código, así que no suma nada a la aprobación pedagógica ni a la voz | — | — |

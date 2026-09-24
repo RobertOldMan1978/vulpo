@@ -31,6 +31,18 @@ preguntan por la forma del código. Antes había un conjunto escrito a mano
 |---|---|---|---|---|---|
 | *El diario de Ana Frank* | `lectura-anafrank` | `AF-T#` | 8° | 8 | 72 ✅ aprobadas |
 | *Cuentos de Ada* (Pepe Pelayo) | `lectura-cuentos-de-ada` | `CA-T#` | 3° | 10 | 101 ✅ aprobadas (30/08) |
+| *Teatro escolar representable 1* (sel. Rubén Unda, Zig-Zag) | `lectura-teatro-escolar-1` | `TE-T#` | 8° | 11 | 130 ⏳ en aprobación (23/09) |
+
+> **8° tiene DOS libros desde el 23/09**, y es el primer curso con más de uno: la biblioteca ya los
+> listaba en un catálogo (`LIBROS`), así que sumar el segundo no pidió ni una línea de motor — solo
+> su entrada en `EXPEDICIONES` y en ese catálogo. **Un tramo por obra**, que es lo natural en una
+> antología: las once piezas del libro, en el orden en que vienen.
+
+> ⚠️ **Y este se escribió desde el EJEMPLAR**, no desde resúmenes —al revés que *Cuentos de Ada*—,
+> así que sí admite preguntas de detalle. Con una salvedad que quedó declarada en su
+> `nota_fidelidad`: **al escaneo le faltan las páginas 10 a 12** (el desenlace de la primera obra),
+> así que ese tramo lleva **7 preguntas y ninguna toca el final** — ni el «castigo» ni la
+> «recompensa» del título. Se completa cuando lleguen esas páginas.
 
 > **Cuentos de Ada se escribió desde documentos de estudio, no desde el ejemplar**, y eso está
 > declarado en su `nota_fidelidad`. La guía de la que salió advierte que las fuentes discrepan en

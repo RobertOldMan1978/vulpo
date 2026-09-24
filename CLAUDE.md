@@ -151,8 +151,13 @@ año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron co
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
 están hoy en una expedición jugable, el resto es reserva.
 
-> **Estado de aprobación (07/09/2026): 16.865 de 16.865 preguntas aprobadas y 233 de 233
-> lecciones.** Las últimas 61 —las 27 mini-clases de Matemática de 4°, las 24 de 6° y las 10
+> **Estado de aprobación (23/09/2026): 16.865 de 16.995 preguntas aprobadas y 233 de 233
+> lecciones.** ⏳ **Las 130 pendientes son el libro nuevo de 8°** —*Teatro escolar representable 1*,
+> la antología de Rubén Unda (Zig-Zag), un tramo por cada una de sus once obras—, escritas el 23/09
+> y esperando la firma en el tablero. Es la regla de abajo cumpliéndose: el 100% dura hasta la
+> siguiente tanda.
+>
+> La foto anterior (07/09) decía 16.865 de 16.865. Las últimas 61 —las 27 mini-clases de Matemática de 4°, las 24 de 6° y las 10
 > introducciones de Ciencias— se escribieron y se firmaron el mismo día. El banco creció otra vez el 07/09 con las **240 preguntas de Vocabulario** de 4°,
 > 5° y 6°, firmadas ese mismo día. Antes había crecido tras la firma de 4° —la Sesión 99 escribió
 > **330 preguntas nuevas** para los 11 OA que le faltaban a Lenguaje de 8° y **21 lecciones**, y la
@@ -13680,3 +13685,92 @@ consola de Supabase esta sesión.**
 - **Pendiente de arrastre:** confirmar el borde a borde **en el teléfono** tras rebuildear (esta sesión lo
   arregla, falta la prueba en device); la prueba cerrada de 12 testers/14 días; unificar el ícono PWA web;
   INAPI (marca en trámite); el piloto (puerta 1/10); y decidir qué "gráficas" quiere Roberto.
+
+### Sesión 132 (2026-09-23 y 24) — 8° estrena su segundo libro: *Teatro escolar representable 1*
+Roberto pidió agregar un libro a la biblioteca de 8°: **la antología de teatro de Rubén Unda**
+(Ed. Zig-Zag, Colección Viento Joven), y adjuntó el ejemplar escaneado. **130 preguntas nuevas, un
+tramo por cada una de sus once obras.** No se tocó el motor ni ningún otro curso.
+
+#### 8° pasa a tener DOS libros, y no costó una línea de motor
+
+Es el primer curso con más de uno, y **la biblioteca ya estaba preparada**: `LIBROS` es un catálogo
+y `abrirBiblioteca` lo recorre, así que sumar el segundo fueron su entrada en `EXPEDICIONES` y una
+fila en ese catálogo. Verificado jugando: la pantalla 📖 Lectura lista los dos, el armador
+(`?armar=1`) lo ofrece solo —es una expedición, no un `EXTRA`— y `?solo=lect-teatro` abre su
+muestra. Cero errores de consola y cero 404.
+
+**Un tramo por obra**, que es lo natural en una antología de piezas independientes —a diferencia de
+Ana Frank (8 tramos por partes del diario)—: las once en el orden del libro, cada una con su ícono.
+
+#### La diferencia con *Cuentos de Ada*: este se escribió desde el EJEMPLAR
+
+El banco de *Cuentos de Ada* salió de documentos de estudio de terceros, y por eso **no pregunta
+detalle fino**: su `nota_fidelidad` lo declara. Aquí Roberto adjuntó el escaneo completo, así que
+las preguntas salen del texto y sí admiten detalle. Se mantiene lo que no cambia: **ni un parlamento
+reproducido** —derechos de autor—, citas de a lo más 8 palabras, y **la portada sigue siendo la
+genérica de Lectura**, porque ilustrar la tapa de un libro ajeno sería obra derivada (la decisión de
+la Sesión 72, que quedó escrita en el código como *"NO reemplazar"*).
+
+**2 o 3 preguntas por obra son de forma dramática** —qué indica una acotación, qué es un aparte,
+cuántos actos, qué personaje es un "tipo"—, que es lo que pide el `LE08 OA 05` (*analizar textos
+dramáticos considerando el conflicto, los personajes tipo y las características del género*).
+⚠️ Se mide **aparte**: el código `TE-T#` no lleva nivel adentro, así que `registrarOA` lo excluye
+del mapa de dominio por su forma, y a un colegio no se le presenta como "Lenguaje cubierto".
+
+#### ⚠️ Al escaneo le faltan tres páginas, y eso se dice en vez de rellenarse
+
+Las **páginas 10 a 12** del libro —el desenlace de *Castigo y recompensa*, la primera obra— no
+están: el escaneo salta de la 9 a la 13. Ese tramo lleva **7 preguntas y ninguna toca el final**, ni
+el «castigo» ni la «recompensa» del título. Queda declarado en su `nota_fidelidad` y se completa
+cuando lleguen esas páginas. **Menos preguntas antes que inventar un desenlace**, que es la regla
+del encargo y la que protege justamente al alumno que sí leyó.
+
+> De paso, el redactor encontró una **errata del propio libro** y la dejó fuera en vez de
+> resolverla a ojo: la lista de PERSONAJES de esa obra **no nombra a la Abeja**, que el narrador sí
+> incluye entre los cuatro criados. Sin las páginas que faltan no se puede zanjar, así que ninguna
+> pregunta se apoya en esa lista.
+
+#### El título tenía una errata, y estaba en el índice del libro
+
+El último redactor avisó que la obra 11 se llama **«Fablilla del secreto bien guardado»**, con ele,
+y no «Fabilla» como decía el encargo. **Se comprobó mirando la página de la obra**: dice `FABLILLA`,
+y es el título canónico de Alejandro Casona (de su *Retablo jovial*; «fablilla» es diminutivo
+arcaico de «fabla»). **La errata es del ÍNDICE del propio libro.** Corregido en los tres lugares
+donde se muestra —`libro.json`, `oa.json` y el fork— y registrado en la `nota_fidelidad`, porque
+quien compare con el índice del ejemplar va a ver la diferencia.
+
+#### El límite de sesión mató los cuatro redactores, y el disco salvó tres tandas
+
+A media tarde cayeron los cuatro a la vez (uno por filtro de contenido, tres por `429`). **Antes de
+relanzar se miró el disco**, como manda la regla de la Sesión 89: uno había alcanzado a escribir
+**las tres** tandas que le tocaban —incluida la que su propio informe daba por pendiente—.
+Relanzarlas habría sido pagar dos veces por trabajo hecho. Es la lección de la Sesión 62
+cumpliéndose otra vez, sin una coma de diferencia.
+
+> ⚠️ **Y apareció una trampa de entorno nueva que conviene tener escrita: `Read` no puede abrir un
+> PDF en este equipo** —falta `pdftoppm`, y este escaneo no trae capa de texto—. Los tres redactores
+> relanzados lo resolvieron **cada uno por su cuenta**, extrayendo con `pypdf` la imagen embebida de
+> cada página **tal cual** y leyéndola como imagen: se leen perfectamente giradas. El que murió por
+> el filtro de contenido fue justamente el que intentó **rotarlas y enderezarlas**, que es el camino
+> que no hay que tomar.
+
+#### Verificación
+
+- **Los cuatro auditores en cero**: `revisar-tanda` 0 errores en las 11 tandas, `auditar-banco-nivel`
+  0 errores (5 avisos de enunciado entre 123 y 140 caracteres, bajo el máximo duro de 250),
+  `auditar-numerico` sin opciones equivalentes, `auditar-solape-oa` sin pares sobre el umbral, y
+  `validar-oa-json` ok. Correcta repartida **18/24/30/28%** tras barajar.
+- **El sesgo de largo se corrigió como manda el estándar.** Dos tandas pasaron el 27% —una al 31% y
+  otra al 42%— y **en ninguna se tocó la respuesta correcta**: se le dio cuerpo a un distractor por
+  pregunta. Quedaron en 15% y 0%. Acortar la correcta la volvería imprecisa, que es peor que el
+  sesgo.
+- **Las 130 preguntas se leyeron contra el texto del libro**, una por una, antes de consolidar.
+- **Jugado con clics**: mapa de 11 nodos con sus títulos, quiz real con 4 opciones. El primer tramo
+  muestra *"Pregunta 1/7"* —tiene 7 y la etapa pide 8—, o sea `pickN` hace su clamp y **no hay
+  etapa vacía**, que es el fallo mudo a vigilar en un banco recién escrito.
+- Tablero regenerado: **130 casillas nuevas**, y es la única sección pendiente del proyecto.
+
+- **Pendiente de Roberto:** **aprobar las 130** en el tablero (ya salen), y pasar las **páginas 10 a
+  12** si quiere completar la primera obra. **De arrastre:** confirmar el borde a borde en el
+  teléfono, la prueba cerrada de 12 testers, el ícono PWA, INAPI, el piloto (puerta 1/10) y decidir
+  qué "gráficas" quiere.

@@ -65,8 +65,11 @@ midiendo donde corresponde, en las etapas del capítulo.
 > Final**, que es el que mezcla objetivos de toda la asignatura. Así un colegio que decida no
 > incluir ese capítulo no se lo encuentra en otra parte.
 Además hay un **📚 Vocabulario** (dentro de Lenguaje): las palabras clave del curso en un quiz
-de opción múltiple, y una **📖 Lectura** del colegio (biblioteca; primer libro *El diario de Ana
-Frank*) con un camino de preguntas de comprensión por tramos. Y un módulo **🏛️ Formación
+de opción múltiple, y una **📖 Lectura** del colegio (biblioteca; en 8° son dos libros: *El diario de Ana
+Frank* y *Teatro escolar representable 1*, la antología de Rubén Unda de Zig-Zag, con un tramo por
+cada una de sus once obras) con un camino de preguntas de comprensión por tramos. El alumno lee el
+ejemplar: el juego no reproduce el texto de los libros, y por eso su portada es la genérica de
+Lectura y no la tapa. Y un módulo **🏛️ Formación
 Ciudadana** (en los seis cursos), que reúne en un camino propio los objetivos del eje de formación
 ciudadana —derechos y deberes, democracia, vida en comunidad— que ya viven dentro de Historia, para
 que un colegio pueda mostrar y evidenciar esa cobertura por separado.

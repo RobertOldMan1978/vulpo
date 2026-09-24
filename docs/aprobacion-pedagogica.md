@@ -177,6 +177,7 @@ Recontado del disco el **07/09/2026**, no copiado de la versión anterior de est
 | 8° básico (4 asignaturas) | 2.644 | ✅ todas |
 | **Vocabulario, los seis cursos** (60 · 60 · 90 · 90 · 120 · 150) | **570** | ✅ **todas** |
 | Lectura: *Cuentos de Ada* (3°) y *Ana Frank* (8°) | 173 | ✅ todas |
+| Lectura: *Teatro escolar representable 1* (8°) | 130 | ⏳ pendientes (23/09) |
 | **Total** | **16.865** | ✅ **todas** |
 | Mini-clases e introducciones (todos los niveles) | 151 | ✅ todas |
 

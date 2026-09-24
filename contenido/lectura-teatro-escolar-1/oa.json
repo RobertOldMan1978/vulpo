@@ -1,0 +1,98 @@
+{
+ "asignatura": "Lectura · Teatro escolar representable 1",
+ "nivel": "8° básico · Comprensión lectora",
+ "codigo_asignatura": "TE",
+ "fuente": "Teatro escolar representable 1, selección de Rubén Unda, Empresa Editora Zig-Zag (Colección Viento Joven), 3ª edición, marzo de 2010. ISBN 978-956-12-1988-5.",
+ "url_fuente": "https://www.zigzag.cl",
+ "nota_fidelidad": "Preguntas de comprensión ORIGINALES; no reproducen el texto del libro. Se escribieron desde el EJEMPLAR (escaneo completo aportado por Roberto), obra por obra, y no desde resúmenes de terceros. Las once obras del libro son de autores y épocas distintos (dos anónimas, dos parábolas, y piezas de Norman Corwin, Guillermo Blanco, Susana López de Gomara, Isidora Aguirre, Eduardo Valenzuela y Alejandro Casona); cada tramo es una obra. Una sola salvedad: del escaneo faltan las páginas 10 a 12 (el desenlace de «Castigo y recompensa»), así que ese tramo lleva solo las preguntas que se sostienen con la parte disponible; se completa cuando lleguen esas páginas. ⚠️ El título de la obra 11 se escribe «Fablilla del secreto bien guardado» (con ele), como aparece en la página de la obra y como lo tituló Alejandro Casona en su «Retablo jovial»; el ÍNDICE del propio libro la escribe «Fabilla», que es una errata del índice. Se usa la forma correcta.",
+ "nota_evaluacion": "Es comprensión lectora de un libro, no cobertura curricular: NO entra al mapa de dominio del profesor y no se le presenta a un colegio como «Lenguaje cubierto». Calza con el LE08 OA 05 (analizar textos dramáticos: conflicto, personajes tipo, características del género), pero se mide aparte. Las preguntas miden si el alumno siguió cada obra y entendió por qué los personajes actúan como actúan, más unas pocas sobre el texto dramático como forma (acotaciones, apartes, actos); nunca su opinión ni su conducta.",
+ "nota_contenido": "Sin contenido sensible según docs/contenido-sensible.md. Tres cosas que conviene saber igual: «La abuela Miseria» y «El perro de Juan Jones» tienen a la Muerte y al Purgatorio como personajes y lugares de fábula, en tono humorístico; «Retablo del payasito triste» es de tema navideño (el pesebre de Belén); y en «Veraneando en Zapallar» el padre vuelve achispado por unas copas de jerez, como resorte de comedia. Las preguntas lo tratan con naturalidad, sin moralizar ni burlarse.",
+ "unidades": [
+  {
+   "id": "L1",
+   "titulo": "Teatro escolar representable 1",
+   "descripcion": "Comprensión lectora por obra (lectura del colegio). Las once obras del libro, en el orden en que aparecen, de menor a mayor complejidad.",
+   "oa": [
+    "TE-T1",
+    "TE-T2",
+    "TE-T3",
+    "TE-T4",
+    "TE-T5",
+    "TE-T6",
+    "TE-T7",
+    "TE-T8",
+    "TE-T9",
+    "TE-T10",
+    "TE-T11"
+   ]
+  }
+ ],
+ "oa": [
+  {
+   "codigo": "TE-T1",
+   "eje": "Lectura",
+   "unidad": "L1",
+   "texto": "Castigo y recompensa (Andrés Pérez Asenjo) — Una hormiga sola cría como hijos a un erizo, una araña, una tortuga y una abeja; cuando crecen la abandonan, y al caer enferma manda a la liebre a avisarles que vengan a cuidarla."
+  },
+  {
+   "codigo": "TE-T2",
+   "eje": "Lectura",
+   "unidad": "L1",
+   "texto": "Perico y el viajero (Anónimo) — Un viajero apurado pregunta cómo llegar a la estación y Perico responde a todo menos a lo que le preguntan, hasta que el tren se pierde."
+  },
+  {
+   "codigo": "TE-T3",
+   "eje": "Lectura",
+   "unidad": "L1",
+   "texto": "El perro de Juan Jones (Norman Corwin) — Juan llega al Purgatorio de los Perros a buscar a Putzy, su perro travieso, y el Colegio de Abogados Directores decide si pueden volver a estar juntos."
+  },
+  {
+   "codigo": "TE-T4",
+   "eje": "Lectura",
+   "unidad": "L1",
+   "texto": "Signos de puntuación (De una parábola de M. Toledo y Benito) — Un testamento escrito sin ningún signo de puntuación: el sobrino, el hermano, el sastre y el mendigo lo puntúan cada uno a su favor, y el maestro y el juez resuelven."
+  },
+  {
+   "codigo": "TE-T5",
+   "eje": "Lectura",
+   "unidad": "L1",
+   "texto": "Retablo del payasito triste (Guillermo Blanco) — En Belén de los Niños, el payaso Rabanito no tiene qué regalarle al Niño recién nacido, y la Pastorcita Alegre le enseña que su lágrima vale más que cualquier regalo."
+  },
+  {
+   "codigo": "TE-T6",
+   "eje": "Lectura",
+   "unidad": "L1",
+   "texto": "La abuela Miseria (Anónimo) — Una viejecita pobre le pide un favor al señor Tiempo: que nadie pueda bajar de su peral sin permiso; cuando la Muerte viene a buscarla, la deja atrapada en el árbol."
+  },
+  {
+   "codigo": "TE-T7",
+   "eje": "Lectura",
+   "unidad": "L1",
+   "texto": "El pordiosero loco (Susana López de Gomara) — Un pordiosero que dice llevar el sol en su bolsa cuenta el cuento de la princesa Glin-Glin y reparte alegría a Pepita, el Moro, el vigilante, la señora y la muchacha."
+  },
+  {
+   "codigo": "TE-T8",
+   "eje": "Lectura",
+   "unidad": "L1",
+   "texto": "El manojo de hierbas (Parábola anónima) — El Conde de los Siete Castillos, sordo y de corazón duro, come una hierba de Margarita que le sana el cuerpo pero no la maldad, y sale a buscarla por los caminos."
+  },
+  {
+   "codigo": "TE-T9",
+   "eje": "Lectura",
+   "unidad": "L1",
+   "texto": "Don Anacleto Avaro (Isidora Aguirre) — Don Anacleto hereda millones, compra el silencio del notario y pide la magia de Juan Malulo para que nadie le pida nada, hasta que Juan Bueno le da vuelta la magia."
+  },
+  {
+   "codigo": "TE-T10",
+   "eje": "Lectura",
+   "unidad": "L1",
+   "texto": "Veraneando en Zapallar (Eduardo Valenzuela) — La familia Rabadilla finge veranear en Zapallar mientras se esconde en su propio patio en Santiago, y un novio, un supuesto ladrón y un carabinero desarman la farsa."
+  },
+  {
+   "codigo": "TE-T11",
+   "eje": "Lectura",
+   "unidad": "L1",
+   "texto": "Fablilla del secreto bien guardado (Alejandro Casona) — Juanelo encuentra un tesoro y, con su padre Bruno, inventa disparates —una liebre en el río, una trucha en el bosque— para que nadie le crea a Leonela cuando lo cuente."
+  }
+ ]
+}

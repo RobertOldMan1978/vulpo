@@ -1504,6 +1504,25 @@ const EXPEDICIONES=[
      {oa:"AF-T7", nombre:"Esperanza y reflexión", icono:"✨", n:6},
      {oa:"AF-T8", nombre:"El final", icono:"🕯️", n:6},
    ]},
+ // --- Lectura del colegio (biblioteca): Teatro escolar representable 1 (Zig-Zag). OA de apoyo TE-T# ---
+ // Portada: la genérica de Lectura, y NO reemplazar por la tapa del libro — ilustrarla sería obra
+ // derivada de material con derechos (misma decisión que Cuentos de Ada, Sesión 72). n:8 por
+ // tramo; si un tramo tiene menos preguntas, pickN hace clamp y sirve las que hay.
+ { id:'lect-teatro', asignatura:'Lectura', nivel:'Teatro escolar representable 1',
+   portada:'assets/portada-lectura.png', contenido:'contenido/lectura-teatro-escolar-1/preguntas.json', activa:true,
+   etapas:[
+     {oa:"TE-T1", nombre:"Castigo y recompensa", icono:"🐜", n:8},
+     {oa:"TE-T2", nombre:"Perico y el viajero", icono:"🚌", n:8},
+     {oa:"TE-T3", nombre:"El perro de Juan Jones", icono:"🐕", n:8},
+     {oa:"TE-T4", nombre:"Signos de puntuación", icono:"✒️", n:8},
+     {oa:"TE-T5", nombre:"Retablo del payasito triste", icono:"🎪", n:8},
+     {oa:"TE-T6", nombre:"La abuela Miseria", icono:"🍐", n:8},
+     {oa:"TE-T7", nombre:"El pordiosero loco", icono:"🌟", n:8},
+     {oa:"TE-T8", nombre:"El manojo de hierbas", icono:"🌿", n:8},
+     {oa:"TE-T9", nombre:"Don Anacleto Avaro", icono:"💰", n:8},
+     {oa:"TE-T10", nombre:"Veraneando en Zapallar", icono:"🏖️", n:8},
+     {oa:"TE-T11", nombre:"Fablilla del secreto bien guardado", icono:"🐇", n:8},
+   ]},
  // --- Campaña Matemáticas (expedición · usa el banco de año completo de 603) ---
  { id:'mate-exp-numeros', asignatura:'Matemáticas', nivel:'8° Básico · Números',
    portada:'assets/portada-mate-numeros.png', contenido:'contenido/matematicas-8basico/preguntas.json', activa:true, campaña:'mate',
@@ -2407,8 +2426,11 @@ const ORDEN_ASIG=['Historia','Matemáticas','Ciencias','Lenguaje'];
 const ASIG_PORTADA={Historia:'assets/portada-historia.png',Matemáticas:'assets/portada-matematicas.png',
  Ciencias:'assets/portada-ciencias.png',Lenguaje:'assets/portada-lenguaje.png'};
 
-// Biblioteca de lecturas (hoy: El diario de Ana Frank). Cada libro = una expedición de tramos.
-const LIBROS=[{id:'lect-anafrank', titulo:'El diario de Ana Frank', autor:'Ana Frank', tramos:8}];
+// Biblioteca de lecturas. Cada libro = una expedición de tramos (un tramo por parte u obra).
+const LIBROS=[
+ {id:'lect-anafrank', titulo:'El diario de Ana Frank', autor:'Ana Frank', tramos:8},
+ {id:'lect-teatro', titulo:'Teatro escolar representable 1', autor:'Selección de Rubén Unda', tramos:11},
+];
 
 /* ===== Armador de enlaces de muestra (?armar=1) =====
    Vive aquí y no en profesor.html a propósito: el catálogo (EXPEDICIONES) ya está en este
