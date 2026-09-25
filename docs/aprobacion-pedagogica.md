@@ -177,9 +177,9 @@ Recontado del disco el **07/09/2026**, no copiado de la versión anterior de est
 | 8° básico (4 asignaturas) | 2.644 | ✅ todas |
 | **Vocabulario, los seis cursos** (60 · 60 · 90 · 90 · 120 · 150) | **570** | ✅ **todas** |
 | Lectura: *Cuentos de Ada* (3°) y *Ana Frank* (8°) | 173 | ✅ todas |
-| Lectura: *Teatro escolar representable 1* (8°) | 130 | ⏳ pendientes (23/09) |
-| **Total** | **16.865** | ✅ **todas** |
-| Mini-clases e introducciones (todos los niveles) | 151 | ✅ todas |
+| Lectura: *Teatro escolar representable 1* (8°) | 130 | ✅ todas (firmadas el 24/09) |
+| **Total** | **16.995** | ✅ **todas** |
+| Mini-clases e introducciones (todos los niveles) | 233 | ✅ todas |
 
 > **Cerrado el 31/08/2026: 7.805 de 7.805** (los cursos anunciados hasta esa fecha: 8°, 3°, 7° y
 > sus módulos). El 30/08 se firmaron 5.048 preguntas por muestreo en una pasada y, ese mismo día,
@@ -200,8 +200,10 @@ Recontado del disco el **07/09/2026**, no copiado de la versión anterior de est
 > el banco queda en **16.865 de 16.865**. Ese mismo día las lecciones abrieron y cerraron **tres
 > veces**: se firmaron las 33 introducciones de Historia (172 de 172), se escribieron 61 más —las
 > mini-clases de Matemática de 4° y 6° y las introducciones de Ciencias de esos dos cursos—, y
-> Roberto las firmó también: **233 de 233**. **"Cerrado" es una foto, no un estado**:
-> cada tanda nueva vuelve a la cola, y el número se mide en cada orden 66 en vez de copiarlo.
+> Roberto las firmó también: **233 de 233**. **Y volvió a pasar el 23/09** con las 130 del segundo
+> libro de 8° (*Teatro escolar representable 1*), que bajaron el banco a 16.865 de 16.995 hasta que
+> las firmó el **24/09**: **16.995 de 16.995**. **"Cerrado" es una foto, no un estado**: cada tanda
+> nueva vuelve a la cola, y el número se mide en cada orden 66 en vez de copiarlo.
 >
 > ⚠️ **100% de cobertura no es 100% del mismo método.** 8° y los módulos de apoyo se revisaron
 > pregunta por pregunta; 3°, 4°, 5°, 6° y 7°, por muestreo de 8 de cada 30. Al decirlo afuera, la

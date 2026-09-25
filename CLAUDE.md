@@ -151,11 +151,11 @@ año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron co
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
 están hoy en una expedición jugable, el resto es reserva.
 
-> **Estado de aprobación (23/09/2026): 16.865 de 16.995 preguntas aprobadas y 233 de 233
-> lecciones.** ⏳ **Las 130 pendientes son el libro nuevo de 8°** —*Teatro escolar representable 1*,
-> la antología de Rubén Unda (Zig-Zag), un tramo por cada una de sus once obras—, escritas el 23/09
-> y esperando la firma en el tablero. Es la regla de abajo cumpliéndose: el 100% dura hasta la
-> siguiente tanda.
+> **Estado de aprobación (24/09/2026): 16.995 de 16.995 preguntas aprobadas y 233 de 233
+> lecciones.** Las **130 del libro nuevo de 8°** —*Teatro escolar representable 1*, la antología de
+> Rubén Unda (Zig-Zag), un tramo por cada una de sus once obras— se escribieron el 23/09 y Roberto
+> las firmó el 24/09, así que el banco vuelve a estar entero. Es la regla de abajo cumpliéndose en
+> las dos direcciones: el 100% dura hasta la siguiente tanda, y vuelve cuando esa tanda se firma.
 >
 > La foto anterior (07/09) decía 16.865 de 16.865. Las últimas 61 —las 27 mini-clases de Matemática de 4°, las 24 de 6° y las 10
 > introducciones de Ciencias— se escribieron y se firmaron el mismo día. El banco creció otra vez el 07/09 con las **240 preguntas de Vocabulario** de 4°,
@@ -178,10 +178,11 @@ están hoy en una expedición jugable, el resto es reserva.
 > construye desde marzo de 2026 y se revisa sin pausa. **4° básico terminó su construcción y se
 > sumó a la landing el mismo día (06/09/2026):** banco aprobado, `4to/index.html` cableado (26
 > capítulos en 4 campañas), voz generada y verificada (12.210 clips) y los 4 villanos con arte
-> propio. Con los seis cursos, el banco completo y jugable son **16.865 preguntas** y **529
+> propio. Con los seis cursos, el banco completo y jugable son **16.995 preguntas** y **529
 > objetivos medidos** (eran 16.295 y 518 hasta que la Sesión 99 completó Lenguaje de 8°, y 16.625
 > hasta que el 07/09 los seis cursos tuvieron Vocabulario). ⚠️ **Los objetivos NO subieron con
-> esas 240**, y está bien: los códigos `VOC-*` no son OA del currículum, así que suman preguntas
+> esas 240 ni con las 130 del libro de teatro**, y está bien: los códigos `VOC-*` y `TE-T#` no son
+> OA del currículum, así que suman preguntas
 > pero no cobertura medida — es la misma propiedad que los define como módulo transversal.
 
 **Herramientas dev:** tablero con clave
@@ -13774,3 +13775,69 @@ cumpliéndose otra vez, sin una coma de diferencia.
   12** si quiere completar la primera obra. **De arrastre:** confirmar el borde a borde en el
   teléfono, la prueba cerrada de 12 testers, el ícono PWA, INAPI, el piloto (puerta 1/10) y decidir
   qué "gráficas" quiere.
+
+### Sesión 133 (2026-09-24) — Las 130 del libro quedan firmadas, y el archivo que no cruzaba de PC
+Sesión corta de cierre: aplicar la aprobación de Roberto y poner al día lo que dejó de ser cierto.
+**No se escribió contenido ni se tocó el motor:** el único cambio de datos son las 130 marcas.
+
+**El banco vuelve a estar entero: 16.995 de 16.995 y 233 de 233.** El diff del banco fueron **131
+líneas** —las 130 marcas de `false`→`true` más el contador `revisadas`, que el archivo no traía—,
+**sin reformateo**: el formato canónico impuesto en la Sesión 85 sigue evitando que firmar una tanda
+reescriba el archivo entero.
+
+#### ⚠️ El archivo no llegó, y la causa era que Roberto y la sesión estaban en PCs distintos
+
+Avisó *"listo, aprobadas y exportada revisadas en la carpeta de descargas"*, y ahí no había nada
+nuevo: el único `revisadas.json` era del **7 de septiembre**, con 17.098 marcas y **cero del libro**.
+
+> **Se verificó con el selector correcto antes de reportarlo**, que es la disciplina de siempre:
+> en vez de contar por prefijo a ojo, se cruzaron los **130 ids reales** del banco contra el
+> archivo. Dieron 0 de verdad — el banco seguía en 0 aprobadas y el tablero, en cambio, estaba bien
+> (sus 130 casillas, regeneradas la noche anterior). O sea el defecto no era del tablero ni del
+> conteo.
+
+Cuando dijo que el archivo estaba en `C:\Users\rlorc\Downloads`, apareció la causa: **ese perfil no
+existe en este equipo**. La sesión corría en **OLD-MAN-HOUSE**, usuario `Rodrigo` —el PC de casa—, y
+`rlorc` es el de la **oficina**; sin unidades de red mapeadas, esa carpeta es inalcanzable.
+
+> ⚠️ **Y lo que importa para la próxima: las marcas del tablero viven en el `localStorage` del
+> navegador donde se aprobó, así que NO viajan solas entre los dos PC.** El repositorio se sincroniza
+> por GitHub (orden 99), pero `revisadas.json` está en Descargas y no lo toca git. Quien apruebe en un
+> PC y quiera aplicar en el otro tiene que **llevarse el archivo** —OneDrive, correo, pendrive— o
+> volver a aprobar desde cero. Se le avisó antes de que se llevara la sorpresa.
+
+**El mecanismo de exportación también quedó medido**, por si vuelve a fallar: el botón arma un `Blob`
+y dispara un `<a download='revisadas.json'>`, y **`idsMarcados()` lee las casillas del DOM**, no el
+almacén — sirven igual con los OA plegados, porque plegar es CSS y no las saca del DOM. La salida de
+respaldo es reproducir esas cuatro líneas en la consola con otro nombre de archivo.
+
+#### El control positivo, porque aquí "no queda nada" ya mintió dos veces
+
+Las Sesiones 102 y 103 tuvieron el tablero anunciando que no quedaba nada con 150 y con 33 pendientes.
+Así que un conteo en cero no basta: **se desmarcó `tea-t5-3` a propósito**, se regeneró y el tablero la
+detectó (1 casilla sin marcar, 1 sección con pendientes); restaurada **byte a byte**, volvió a 0 de 33.
+Sin ese paso, un banco completo y un detector ciego dan la misma pantalla.
+
+> **Dos errores propios de ancla en el camino, los dos atajados por sus aserciones antes de escribir:**
+> busqué `"revisada": true` **después** del id y en este banco va **antes** (el `id` cierra el objeto);
+> y una ancla de `CLAUDE.md` llevaba un salto de línea de más. Es para eso que los scripts abortan.
+
+#### Lo que se puso al día, recontando del disco
+
+Las afirmaciones **vivas** que decían 16.865: el callout de estado, el `README`, la **landing** y
+**`/colegio`** (las dos caras públicas), `docs/comercial.md`, `docs/aprobacion-pedagogica.md` —donde
+además la fila de mini-clases seguía en **151** cuando son **233**— y `docs/modulos-transversales.md`.
+**La bitácora no se tocó**: sus menciones de 16.865 son ciertas para su fecha.
+
+⚠️ **Y los 529 objetivos NO suben con las 130**, igual que no subieron con el Vocabulario: los códigos
+`TE-T#` no son OA del currículum, así que suman preguntas y no cobertura medida — es la misma propiedad
+que los define como módulo transversal, y quedó escrito para que nadie lo "corrija" hacia arriba.
+
+**Verificado mirando** las dos páginas públicas en el navegador: muestran el número nuevo, sin rastro
+del viejo, sin desborde y con **cero errores de consola y cero fallos de red**.
+
+- **A58 cerrada.** Se abrió **A59** para lo único que le falta al libro: las **páginas 10 a 12** del
+  escaneo, que completarían el desenlace de la primera obra (hoy va con 7 preguntas y ninguna lo toca).
+  Es opcional y son ~5 preguntas.
+- **Pendiente de arrastre, sin cambios:** la prueba cerrada de 12 testers/14 días, el ícono PWA web,
+  INAPI (marca en trámite), el piloto (puerta 1/10) y decidir qué "gráficas" quiere Roberto.

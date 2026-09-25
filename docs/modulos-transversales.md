@@ -31,7 +31,7 @@ preguntan por la forma del código. Antes había un conjunto escrito a mano
 |---|---|---|---|---|---|
 | *El diario de Ana Frank* | `lectura-anafrank` | `AF-T#` | 8° | 8 | 72 ✅ aprobadas |
 | *Cuentos de Ada* (Pepe Pelayo) | `lectura-cuentos-de-ada` | `CA-T#` | 3° | 10 | 101 ✅ aprobadas (30/08) |
-| *Teatro escolar representable 1* (sel. Rubén Unda, Zig-Zag) | `lectura-teatro-escolar-1` | `TE-T#` | 8° | 11 | 130 ⏳ en aprobación (23/09) |
+| *Teatro escolar representable 1* (sel. Rubén Unda, Zig-Zag) | `lectura-teatro-escolar-1` | `TE-T#` | 8° | 11 | 130 ✅ aprobadas (24/09) |
 
 > **8° tiene DOS libros desde el 23/09**, y es el primer curso con más de uno: la biblioteca ya los
 > listaba en un catálogo (`LIBROS`), así que sumar el segundo no pidió ni una línea de motor — solo

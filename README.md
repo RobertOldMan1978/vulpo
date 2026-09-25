@@ -160,7 +160,7 @@ manual antes de coronar la v1.
 
 **VULPO ya cubre de 3° a 8° básico**, los seis cursos completos con sus cuatro asignaturas,
 **anunciados y enlazados desde `vulpo.cl`**, cada uno como su propia app: 3°, 4°, 5°, 6°, 7° y
-8° básico. **El banco del proyecto son 16.865 preguntas y 233 mini-clases e introducciones, todas
+8° básico. **El banco del proyecto son 16.995 preguntas y 233 mini-clases e introducciones, todas
 aprobadas.** Es una foto, no un estado: cada tanda nueva vuelve a la cola de
 aprobación antes de llegar a un alumno, así que el número se vuelve a medir en cada cierre.
 
