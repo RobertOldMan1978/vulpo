@@ -151,13 +151,14 @@ año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron co
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
 están hoy en una expedición jugable, el resto es reserva.
 
-> **Estado de aprobación (27/09/2026): 16.995 de 17.000 preguntas aprobadas y 233 de 233
+> **Estado de aprobación (28/09/2026): 17.000 de 17.000 preguntas aprobadas y 233 de 233
 > lecciones.** Las **130 del libro nuevo de 8°** —*Teatro escolar representable 1*, la antología de
 > Rubén Unda (Zig-Zag), un tramo por cada una de sus once obras— se escribieron el 23/09 y Roberto
-> las firmó el 24/09. **Las 5 que quedan en la cola son del 25/09**: el desenlace de *Castigo y
-> recompensa*, que faltaba porque al escaneo le faltan las páginas 10-12 y apareció en la edición
-> digital del mismo libro (ver la Sesión 134). Es la regla de abajo cumpliéndose en las dos
-> direcciones: el 100% dura hasta la siguiente tanda, y vuelve cuando esa tanda se firma.
+> las firmó el 24/09, y las **5 del desenlace de *Castigo y recompensa*** —que faltaba porque al
+> escaneo le faltan las páginas 10-12 y apareció en la edición digital del mismo libro— se
+> escribieron el 25/09 y las firmó el **28/09** (ver la Sesión 134). Es la regla de abajo
+> cumpliéndose en las dos direcciones: el 100% dura hasta la siguiente tanda, y vuelve cuando
+> esa tanda se firma.
 >
 > La foto anterior (07/09) decía 16.865 de 16.865. Las últimas 61 —las 27 mini-clases de Matemática de 4°, las 24 de 6° y las 10
 > introducciones de Ciencias— se escribieron y se firmaron el mismo día. El banco creció otra vez el 07/09 con las **240 preguntas de Vocabulario** de 4°,
@@ -14030,9 +14031,34 @@ Los **seis cursos** navegan con el motor vivo y las tarjetas correctas, **cero e
 cero fallos de red**; el auditor nuevo da **762 etapas, 0 errores**; sintaxis OK en el fork tocado;
 y el árbol quedó con el renombre en **2 líneas exactas**, sin churn de fines de línea.
 
-- **Pendiente de Roberto:** **aprobar las 5 preguntas del teatro** (`tea-t1-8` a `-12`) — con este
-  push, el tablero de `vulpo.cl` ya las muestra. El banco queda en **17.000 escritas y 16.995
-  aprobadas**, que es la regla de este proyecto cumpliéndose: *el 100% es una FOTO, no un estado.*
+#### Cierre (28/09) — las 5 firmadas, y el archivo que otra vez no cruzó de PC
+
+Roberto avisó *"actualizado el archivo revisadas"* y **no había ninguno nuevo**: el de Descargas
+era el del **24/09** (17.228 marcas, cero de las 5), y de hoy solo habían bajado dos comprobantes
+bancarios. Preguntado, la causa era la de siempre: **aprobó en el PC de la oficina**, y las marcas
+del tablero viven en el `localStorage` de **ese** navegador, así que **no viajan solas**. Es la
+segunda vez (la primera, la Sesión 133).
+
+**No se le hizo repetir el trabajo.** La firma ya estaba dada y lo único que falló fue el
+transporte, así que las 5 se aplicaron **por el camino oficial del script**: el diff del banco
+fueron **6 líneas** (5 marcas y el contador), sin reformateo.
+
+**El banco queda en 17.000 de 17.000 y 233 de 233**, y las cifras vivas se recontaron del disco.
+
+> ⚠️ **Verificado con control positivo**, porque *"0 pendientes"* ya mintió tres veces: se
+> desmarcó `tea-t1-10` a propósito, el tablero regenerado **la detectó**, y se restauró. Sin ese
+> paso, un banco completo y un detector ciego dan la misma pantalla.
+>
+> Al restaurarla, `open` en modo escritura falló con **`Errno 22`** —transitorio, el generador del
+> tablero reteniendo el archivo—. Se comprobó **de inmediato** la integridad del banco (JSON
+> válido, 135 preguntas) antes de reintentar: un `open` de escritura que falla puede haber
+> truncado el archivo, y eso no se descubre después.
+
+- **Un ajuste de la landing que conviene saber:** decía *"Es todo el banco: no queda contenido
+  publicado sin revisar"*, y con 5 preguntas publicadas sin firmar habría sido falsa. Se quitó esa
+  oración y **no se restauró**, aunque ahora el banco esté completo: es una frase que habría que ir
+  y volver en cada tanda, y el párrafo ya dice *"cada tanda nueva pasa por la misma aprobación
+  antes de llegar a un alumno"*, que comunica lo mismo y es cierto siempre.
 - **De arrastre, sin cambios:** la prueba cerrada de 12 testers/14 días, el ícono PWA web, INAPI
   (marca en trámite, publicada en el Diario Oficial), el piloto (la puerta cierra el 1/10) y
   decidir qué "gráficas" quiere Roberto.

@@ -178,7 +178,7 @@ Recontado del disco el **07/09/2026**, no copiado de la versión anterior de est
 | **Vocabulario, los seis cursos** (60 · 60 · 90 · 90 · 120 · 150) | **570** | ✅ **todas** |
 | Lectura: *Cuentos de Ada* (3°) y *Ana Frank* (8°) | 173 | ✅ todas |
 | Lectura: *Teatro escolar representable 1* (8°) | 135 | 130 firmadas el 24/09 · **5 en la cola** (el desenlace, escrito el 25/09) |
-| **Total** | **17.000** | **16.995 aprobadas · 5 en la cola** |
+| **Total** | **17.000** | ✅ **todas** |
 | Mini-clases e introducciones (todos los niveles) | 233 | ✅ todas |
 
 > **Cerrado el 31/08/2026: 7.805 de 7.805** (los cursos anunciados hasta esa fecha: 8°, 3°, 7° y
@@ -204,8 +204,8 @@ Recontado del disco el **07/09/2026**, no copiado de la versión anterior de est
 > libro de 8° (*Teatro escolar representable 1*), que bajaron el banco a 16.865 de 16.995 hasta que
 > las firmó el **24/09**: **16.995 de 16.995**. **Y volvió a abrirse al día siguiente**, el 25/09,
 > con las **5 del desenlace de *Castigo y recompensa*** —la primera obra de ese libro, cuyo final
-> faltaba porque al escaneo le faltan las páginas 10-12—: el banco queda hoy en **16.995 de
-> 17.000**. **"Cerrado" es una foto, no un estado**: cada tanda nueva vuelve a la cola, y el
+> faltaba porque al escaneo le faltan las páginas 10-12—, que Roberto firmó el **28/09**: el
+> banco queda en **17.000 de 17.000**. **"Cerrado" es una foto, no un estado**: cada tanda nueva vuelve a la cola, y el
 > número se mide en cada orden 66 en vez de copiarlo.
 >
 > ⚠️ **100% de cobertura no es 100% del mismo método.** 8° y los módulos de apoyo se revisaron
