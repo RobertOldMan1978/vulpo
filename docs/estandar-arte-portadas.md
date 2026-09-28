@@ -50,14 +50,42 @@ razones:
    "de guagua", mientras que un niño de 4° con arte algo más grande no se ofende. Infantilizar
    cuesta más caro que lo contrario.
 
-### ⚠️ Tres portadas de 8° están FUERA del estándar
+### ✅ Portadas de 8° fuera del estándar: eran OCHO, y ya están las OCHO
 
-`leng-literarios`, `leng-textos` y `mate-algebra` son **retratos de busto sobre fondo claro**, no
-viñetas circulares sobre violeta. Conviven desde que se generaron en lotes distintos.
+La versión original de esta sección nombraba **tres** —`leng-literarios`, `leng-textos` y
+`mate-algebra`, retratos de busto sobre fondo claro—. **La Sesión 79 las rehízo y hoy cumplen**
+✅. Pero una revisión completa de las 60 portadas (28/09, Sesión 134, mirando un mosaico de todas)
+encontró **cinco más que nunca entraron en esa lista**, así que el trabajo quedó a medias sin que
+nadie lo notara:
 
-Importa porque **son de las que se reutilizan**: dejarlas así propaga el estilo ajeno a **8
-ubicaciones** (3 de 8°, 3 de 7°, 2 de 3°). **Rehacer esas 3 arregla las 8**, y de paso deja 8°
-uniforme.
+| Portada | Ubicaciones | Qué le falta |
+|---|---|---|
+| `mate-numeros` | 6 | Sin viñeta circular; recorte de forma libre |
+| `mate-geometria` | 7 | idem |
+| `mate-datos` | 7 | idem |
+| `leng-lectura` | 7 | idem |
+| `leng-escritura` | 7 | idem |
+
+Las cinco comparten el mismo desvío: **no tienen la viñeta circular con borde dorado** (son
+recortes libres sobre transparente) y su Vulpi es el **adolescente realista con chaqueta**, no el
+de hoodie del resto. `mate-numeros` ya estaba anotada suelta en la Sesión 98 por esto mismo.
+
+> **Importaba por lo mismo que antes, y más: son las que MÁS se reutilizan** — propagaban el
+> estilo ajeno a **34 ubicaciones en los seis cursos**. **✅ Las 5 se rehicieron el 28/09** y con
+> eso las 34 quedaron arregladas de una, sin tocar una línea de código: conservan su nombre de
+> archivo, así que el reemplazo alcanza a los seis cursos solo.
+
+### ✅ Dos capítulos de 4° usaban la GENÉRICA de su asignatura
+
+`hist4-cap3` (*Paisajes de América*) apunta a `portada-historia.png` y `leng4-cap9` (*Actuar y
+recitar*) a `portada-lenguaje.png` — retratos de busto, no viñetas. Eran los **únicos dos de los
+141 capítulos de campaña sin portada propia**. **✅ Resuelto el 28/09**: tienen la suya y su
+`portadaMapa:` explícito. **Hoy los 141 tienen portada propia y ninguno usa una genérica.**
+
+> **Cómo se detecta esto sin mirar 60 archivos:** una portada del estándar se procesa con
+> `procesar-arte.py` y queda **RGBA con las esquinas transparentes** (la viñeta recortada). Las
+> genéricas son **RGB sin canal alfa**. Un barrido por `im.mode` deja los candidatos en segundos;
+> después hay que **mirar**, porque el modo no distingue una viñeta de un recorte libre.
 
 ## Convención de nombres
 

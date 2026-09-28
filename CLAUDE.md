@@ -13745,7 +13745,7 @@ consola de Supabase esta sesión.**
 
 - **Pendiente de arrastre:** confirmar el borde a borde **en el teléfono** tras rebuildear (esta sesión lo
   arregla, falta la prueba en device); la prueba cerrada de 12 testers/14 días; unificar el ícono PWA web;
-  INAPI (marca en trámite); el piloto (puerta 1/10); y decidir qué "gráficas" quiere Roberto.
+  INAPI (marca en trámite); el piloto (puerta 1/10); y y la duda de las "gráficas" **queda respondida**: eran las portadas, y están hechas.
 
 ### Sesión 132 (2026-09-23 y 24) — 8° estrena su segundo libro: *Teatro escolar representable 1*
 Roberto pidió agregar un libro a la biblioteca de 8°: **la antología de teatro de Rubén Unda**
@@ -13900,7 +13900,7 @@ del viejo, sin desborde y con **cero errores de consola y cero fallos de red**.
   escaneo, que completarían el desenlace de la primera obra (hoy va con 7 preguntas y ninguna lo toca).
   Es opcional y son ~5 preguntas.
 - **Pendiente de arrastre, sin cambios:** la prueba cerrada de 12 testers/14 días, el ícono PWA web,
-  INAPI (marca en trámite), el piloto (puerta 1/10) y decidir qué "gráficas" quiere Roberto.
+  INAPI (marca en trámite), el piloto (puerta 1/10) y y la duda de las "gráficas" **queda respondida**: eran las portadas, y están hechas.
 
 ### Sesión 134 (2026-09-25 y 27) — El desenlace que faltaba, y el rótulo que engañaba
 Dos jornadas sobre el mismo hilo: cerrar lo que quedaba del libro de teatro y responder un reporte
@@ -14118,6 +14118,63 @@ sin desborde, **cero errores de consola y cero fallos de red**. Los cuatro enlac
 `rel="noopener"` —este proyecto ya tuvo un XSS almacenado y el tabnabbing es de la misma familia— y
 las reglas comerciales intactas en las cuatro páginas.
 
+
+#### Las portadas de capítulo: eran 8 las fuera de estándar, no 3 (28/09)
+
+Roberto preguntó por *"unas gráficas"* —la duda que quedó abierta desde la Sesión 131— y resultó
+ser **los dibujos de Vulpi en los capítulos**: pidió revisar que cumplieran el estándar.
+
+**Medido sobre las 60 imágenes que usan los 141 capítulos de campaña de los seis cursos**: todas
+existen, todas 512×512, y **49 cumplían**. Dos huecos, y el segundo grande:
+
+- **Dos capítulos de 4° usaban la GENÉRICA de su asignatura** —`hist4-cap3` (*Paisajes de América*)
+  y `leng4-cap9` (*Actuar y recitar*)—, que son retratos de busto sobre fondo claro. Eran los
+  **únicos 2 de 141 sin portada propia**.
+- **Cinco portadas de 8° estaban fuera del estilo**: `mate-numeros`, `mate-geometria`, `mate-datos`,
+  `leng-lectura` y `leng-escritura` **no tienen viñeta circular** (son recortes libres) y su Vulpi
+  es el **adolescente realista con chaqueta**, no el de hoodie. Y son **las que más se reutilizan**,
+  así que contaminaban **34 ubicaciones en los seis cursos**.
+
+> ⚠️ **Y eso destapó que el trabajo del estándar había quedado a medias sin que nadie lo notara.**
+> La Sesión 78 marcó **tres** (`leng-literarios`, `leng-textos`, `mate-algebra`) y la Sesión 79 las
+> rehízo —hoy cumplen ✅—, pero **estas cinco nunca entraron en esa lista**. `mate-numeros` ya
+> estaba anotada suelta en la Sesión 98 por este mismo motivo, sin que se conectara con el resto.
+> El estándar identificó 3 y eran 8.
+
+##### Cómo se encontró, que es reusable
+
+**El modo del archivo deja los candidatos en segundos:** una portada del estándar se procesa con
+`procesar-arte.py` y queda **RGBA con las esquinas transparentes** (la viñeta recortada); las
+genéricas son **RGB sin canal alfa**. Eso destapó las dos de 4°.
+
+⚠️ **Pero el modo NO distingue una viñeta de un recorte libre**, así que las cinco de estilo solo
+aparecieron **mirando un mosaico de las 60 juntas**. Es la regla de siempre: *se aprueba mirando,
+no contando* — y aquí el conteo decía que las 60 estaban perfectas.
+
+##### Las 7 imágenes, generadas y procesadas el mismo día
+
+Roberto las generó con los prompts calibrados al estándar. Dos cuidados que pagaron:
+
+1. **Identificadas MIRANDO una por una**, no por el orden de descarga. Esta vez coincidía con el
+   de los prompts, pero en la Sesión 127 la tanda vino **invertida** y habría cableado el villano
+   equivocado.
+2. ⚠️ **El fondo se midió antes de procesar**: las 3 de Matemática venían sobre **blanco**
+   (esquinas en gris ~254) y las otras 4 sobre **violeta oscuro** (14-31, bajo el umbral por
+   defecto de 60). Dos tandas con `--fondo` distinto. Adivinar habría dejado la mitad con agujeros.
+
+> **Y después se contaron los píxeles transparentes DENTRO de cada viñeta: cero agujeros en las
+> siete**, 6.283 puntos medidos en cada una. Es la comprobación que faltó en la Sesión 96, cuando
+> el script dijo *"8 procesadas"* y las ocho tenían agujeros o fringe: **"procesadas" y "procesadas
+> sin agujeros" son afirmaciones distintas.**
+
+**Las cinco rehechas conservan su nombre de archivo**, así que arreglaron las **34 ubicaciones de
+una sola vez sin tocar código**; solo las dos nuevas necesitaron su `portadaMapa:` explícito en
+`4to/index.html` — 2 líneas.
+
+**Estado final: 141 capítulos, 141 con portada propia, 0 genéricas, 0 faltantes.** Verificado
+jugando en 3° y 4°: las portadas cargan, y en la campaña de Matemática de 3° las rehechas ya se
+integran con las propias del curso. **Cero 404 y consola limpia.**
+
 - **De arrastre, sin cambios:** la prueba cerrada de 12 testers/14 días, el ícono PWA web, INAPI
-  (marca en trámite, publicada en el Diario Oficial), el piloto (la puerta cierra el 1/10) y
-  decidir qué "gráficas" quiere Roberto.
+  (marca en trámite, publicada en el Diario Oficial) y el piloto (la puerta cierra el 1/10).
+  La duda de las "gráficas" **queda respondida**: eran las portadas de capítulo, y están hechas.
