@@ -14059,6 +14059,65 @@ fueron **6 líneas** (5 marcas y el contador), sin reformateo.
   oración y **no se restauró**, aunque ahora el banco esté completo: es una frase que habría que ir
   y volver en cada tanda, y el párrafo ya dice *"cada tanda nueva pasa por la misma aprobación
   antes de llegar a un alumno"*, que comunica lo mismo y es cierto siempre.
+
+#### El creador aparece en la web: Soluciones Informáticas VULPO (28/09)
+
+Roberto pidió acreditar a la empresa que desarrolla la plataforma. Se **revisó el sitio antes de
+escribir nada**: es **Soluciones Informáticas VULPO** (`solucionesvulpo.cl`), desarrollo de software
+a medida en Chile, con el tagline *"Entendemos el problema. Diseñamos la solución."* — ese es el
+nombre que usa en su propio encabezado y en su `og:site_name`, así que es el que se puso, sin
+inventar razón social.
+
+| Página | Qué dice |
+|---|---|
+| Landing | *Creado por Roberto Lorca, papá y desarrollador chileno* · **Un producto de Soluciones Informáticas VULPO** |
+| `/colegio` | **Desarrollado por Soluciones Informáticas VULPO** |
+| `/tutorial` | **Un producto de Soluciones Informáticas VULPO** |
+| `/privacidad` | **responsable del tratamiento de los datos** |
+
+> **El crédito personal NO se quitó, y lo decidió Roberto entre tres opciones:** sirven a públicos
+> distintos — a una familia le habla el papá que hizo el juego para sus hijos, a la dirección de un
+> colegio le habla la empresa que responde por el producto—. Por eso en `/colegio` va solo la
+> empresa. Queda escrito en `docs/comercial.md`, que ganó una sección de **respaldo**: *"¿quién
+> está detrás?"* es de las primeras cosas que pregunta una UTP.
+
+⚠️ **El cambio de peso real es el de la política de privacidad**, que decía solo *"el responsable
+es VULPO, operado en Chile"* — vago para algo que un colegio lee y a lo que apunta el Data safety
+de Google Play. Nombrar la empresa es lo que corresponde. ⚠️ **Sin RUT, domicilio ni razón social
+exacta**, que no van en un repositorio público (regla escrita en `comercial.md`).
+
+#### El logo, tratado como firma y no como un enlace más
+
+**Se descargó y se guardó en el repo** (`assets/web/soluciones-vulpo.png`, 10 KB) en vez de
+enlazarlo desde `solucionesvulpo.cl`: así no depende de que ese sitio esté arriba.
+
+> ⚠️ **Venía DESCENTRADO en su lienzo** —bbox `70,6 → 512,508`, con once columnas de alfa casi
+> invisible a la derecha—, así que se recortó **con umbral** (`alfa > 12`) y no con el `getbbox()`
+> crudo, que las conserva. Es exactamente lo que descentró a Vulpi en la firma de correo de la
+> Sesión 105.
+
+**La primera versión no quedó elegante, y se vio mirando:** el logo naranjo es muy saturado contra
+un pie deliberadamente tenue, así que **gritaba más que el nombre** y flotaba con demasiado aire a
+los lados. El tratamiento final lo vuelve una firma:
+
+- **18 px** con opacidad `.85`, que sube a 1 en hover.
+- **El nombre SIN el subrayado cian**: con ese color quedaba al mismo nivel que *"Panel del
+  profesor"*, y esto es un crédito, no una llamada a la acción. Lleva una línea tenue que se
+  enciende al pasar el mouse. El selector es `a.sv` (clase + tipo), que le gana en especificidad al
+  `footer a` de cada página.
+- **Su propia línea con aire** en la landing, cuyo pie venía todo pegado con `<br>`.
+- ⚠️ **En `/privacidad` el logo NO va**: ahí el crédito vive dentro de un párrafo legal y una marca
+  gráfica en medio se ve desprolija. El peso lo tiene el nombre.
+
+⚠️ La ruta del `<img>` va **absoluta** (`/assets/web/…`): `/colegio/`, `/tutorial/` y `/privacidad/`
+son subcarpetas. Y los atributos `width`/`height` se igualaron al CSS, para que no haya salto de
+layout al cargar.
+
+**Verificado mirando**, a 1280 y 390 px en las tres: el logo carga (96 px de origen, 18 pintados),
+sin desborde, **cero errores de consola y cero fallos de red**. Los cuatro enlaces con
+`rel="noopener"` —este proyecto ya tuvo un XSS almacenado y el tabnabbing es de la misma familia— y
+las reglas comerciales intactas en las cuatro páginas.
+
 - **De arrastre, sin cambios:** la prueba cerrada de 12 testers/14 días, el ícono PWA web, INAPI
   (marca en trámite, publicada en el Diario Oficial), el piloto (la puerta cierra el 1/10) y
   decidir qué "gráficas" quiere Roberto.

@@ -200,6 +200,23 @@ la propuesta, el guion de reunión y la landing. **Léelo antes de una reunión 
 > un término del MINEDUC (es diseño de VULPO); Kahoot/Quizizz se nombran solo en el documento de
 > 2021, no en los de docentes/directivos ni en el Decreto 67. Detalle en el fundamento, §6.
 
+## Quién está detrás (el respaldo, que una UTP sí pregunta)
+
+VULPO lo desarrolla **Soluciones Informáticas VULPO** ([solucionesvulpo.cl](https://solucionesvulpo.cl)),
+empresa chilena de desarrollo de software a medida. **Desde el 28/09/2026 se acredita en las cuatro
+caras públicas** —la landing, `/colegio`, `/tutorial` y la política de privacidad, donde además
+figura como **responsable del tratamiento de los datos**, que es lo que corresponde legalmente y lo
+que esperan un colegio y Google Play—.
+
+> **El crédito personal NO se quitó, y es deliberado:** la landing sigue diciendo *"Creado por
+> Roberto Lorca, papá y desarrollador chileno"*. Sirven a públicos distintos — a una familia le
+> habla el papá que hizo el juego para sus hijos; a la dirección de un colegio le habla la empresa
+> que responde por el producto. Por eso en `/colegio` va solo la empresa.
+
+⚠️ **El RUT, el domicilio y la razón social exacta NO van en el repositorio**, que es público:
+viven con el resto del material comercial (ver la última sección). En las páginas se usa el nombre
+que la propia empresa publica en su sitio.
+
 ## Qué se le promete a un colegio, y qué no
 
 **Sí:** 4 asignaturas por curso en 3°, 4°, 5°, 6°, 7° y 8° básico —**17.000 preguntas aprobadas**,

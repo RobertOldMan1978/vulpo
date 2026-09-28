@@ -155,6 +155,21 @@ footer a{color:var(--cyan)}
 .faq[open] summary::after{content:"\2013"}
 .faq summary:hover{color:var(--gold)}
 .faq .r{padding:0 22px 20px;color:var(--dim);line-height:1.65}
+
+/* Credito del creador: el logo de Soluciones Informaticas VULPO junto a su nombre.
+   Se trata como una FIRMA, no como un enlace mas del pie: sin el subrayado cian
+   (que lo pondria al mismo nivel que "Panel del profesor") sino con una linea
+   tenue que se enciende al pasar el mouse, y el logo a 18px con opacidad .85
+   para que no grite mas que el nombre -- es muy saturado contra un pie atenuado.
+   `a.sv` (clase+tipo) le gana en especificidad al `footer a` de cada pagina.
+   Ruta ABSOLUTA en el <img>: /colegio/ y /tutorial/ son subcarpetas. */
+a.sv{display:inline-flex;align-items:center;gap:6px;vertical-align:middle;
+     text-decoration:none;color:inherit;opacity:.85;transition:opacity .18s}
+a.sv:hover{opacity:1;text-decoration:none}
+a.sv span{border-bottom:1px solid rgba(255,255,255,.25)}
+a.sv:hover span{border-bottom-color:currentColor}
+a.sv img{width:18px;height:18px;display:block;flex:none}
+.sv-linea{margin:9px 0}
 </style>
 </head>
 <body>
@@ -408,7 +423,8 @@ footer a{color:var(--cyan)}
 </section>
 
 <footer class="envoltura">
-  <b style="color:var(--txt)">VULPO</b> · Creado por Roberto Lorca, papá y desarrollador chileno.<br>
+  <b style="color:var(--txt)">VULPO</b> · Creado por Roberto Lorca, papá y desarrollador chileno.
+  <div class="sv-linea">Un producto de <a class="sv" href="https://solucionesvulpo.cl" target="_blank" rel="noopener"><img src="/assets/web/soluciones-vulpo.png" alt="" width="18" height="18"><span>Soluciones Informáticas VULPO</span></a></div>
   <a href="mailto:contacto@vulpo.cl">contacto@vulpo.cl</a>
   ·
   <a href="/profesor.html">Panel del profesor</a>
