@@ -212,13 +212,13 @@ Funciona en cualquier celular con internet, sin instalar nada.
 **No:**
 - ❌ **No funciona sin internet.** Verificado: no hay service worker y los bancos de preguntas se
   piden con `fetch`. **Nunca prometer uso sin conexión.**
-- ⚠️ **No decir "una a una".** Hoy sí está aprobado el 100% del banco (16.995 de 16.995), pero lo
-  está *objetivo por objetivo*: 8° se revisó pregunta por pregunta, y 3°, 4°, 5°, 6° y 7° por
+- ⚠️ **No decir "una a una".** Hoy hay **16.995 preguntas aprobadas de 17.000 escritas**, y lo
+  están *objetivo por objetivo*: 8° se revisó pregunta por pregunta, y 3°, 4°, 5°, 6° y 7° por
   **muestreo** de 8 de cada 30, así que la cobertura no es el método. Y **el 100% es una foto, no
   un estado**: el banco crece, y cada tanda nueva vuelve a la cola hasta que Roberto la firma —el
   06/09 estuvo en 16.293 de 16.625 durante unas horas, el 07/09 en 16.625 de 16.865 mientras se
-  firmaba el Vocabulario nuevo, y el 23/09 en 16.865 de 16.995 con el segundo libro de 8° recién
-  escrito—. Exagerarlo se cae a la primera pregunta de
+  firmaba el Vocabulario nuevo, el 23/09 en 16.865 de 16.995 con el segundo libro de 8° recién
+  escrito, y **hoy en 16.995 de 17.000** con el desenlace que le faltaba a ese libro—. Exagerarlo se cae a la primera pregunta de
   una UTP; decirlo bien no le quita fuerza al argumento —*"cada tanda pasa por la misma aprobación
   antes de publicarse"* es la señal de rigor que un colegio busca—. **El número se vuelve a medir
   en cada orden 66**, no se copia de aquí.

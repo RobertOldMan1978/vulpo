@@ -151,11 +151,13 @@ año completo desde el currículum oficial (ver Sesión 9) y se enriquecieron co
 de mayor orden por revisión pedagógica (ver Sesión 11); solo 4-5 OA de cada uno
 están hoy en una expedición jugable, el resto es reserva.
 
-> **Estado de aprobación (24/09/2026): 16.995 de 16.995 preguntas aprobadas y 233 de 233
+> **Estado de aprobación (27/09/2026): 16.995 de 17.000 preguntas aprobadas y 233 de 233
 > lecciones.** Las **130 del libro nuevo de 8°** —*Teatro escolar representable 1*, la antología de
 > Rubén Unda (Zig-Zag), un tramo por cada una de sus once obras— se escribieron el 23/09 y Roberto
-> las firmó el 24/09, así que el banco vuelve a estar entero. Es la regla de abajo cumpliéndose en
-> las dos direcciones: el 100% dura hasta la siguiente tanda, y vuelve cuando esa tanda se firma.
+> las firmó el 24/09. **Las 5 que quedan en la cola son del 25/09**: el desenlace de *Castigo y
+> recompensa*, que faltaba porque al escaneo le faltan las páginas 10-12 y apareció en la edición
+> digital del mismo libro (ver la Sesión 134). Es la regla de abajo cumpliéndose en las dos
+> direcciones: el 100% dura hasta la siguiente tanda, y vuelve cuando esa tanda se firma.
 >
 > La foto anterior (07/09) decía 16.865 de 16.865. Las últimas 61 —las 27 mini-clases de Matemática de 4°, las 24 de 6° y las 10
 > introducciones de Ciencias— se escribieron y se firmaron el mismo día. El banco creció otra vez el 07/09 con las **240 preguntas de Vocabulario** de 4°,
@@ -178,7 +180,7 @@ están hoy en una expedición jugable, el resto es reserva.
 > construye desde marzo de 2026 y se revisa sin pausa. **4° básico terminó su construcción y se
 > sumó a la landing el mismo día (06/09/2026):** banco aprobado, `4to/index.html` cableado (26
 > capítulos en 4 campañas), voz generada y verificada (12.210 clips) y los 4 villanos con arte
-> propio. Con los seis cursos, el banco completo y jugable son **16.995 preguntas** y **529
+> propio. Con los seis cursos, el banco completo y jugable son **17.000 preguntas** y **529
 > objetivos medidos** (eran 16.295 y 518 hasta que la Sesión 99 completó Lenguaje de 8°, y 16.625
 > hasta que el 07/09 los seis cursos tuvieron Vocabulario). ⚠️ **Los objetivos NO subieron con
 > esas 240 ni con las 130 del libro de teatro**, y está bien: los códigos `VOC-*` y `TE-T#` no son
@@ -491,6 +493,42 @@ Al agregar expediciones nuevas al arreglo `EXPEDICIONES` de `8vo/index.html`:
   para cualquier campaña con `capitulos`. Para NO alterar la Maestría —definida como Historia +
   Ciencias + Lenguaje + El Autómata— dejar `DIF_ASIGS` en esos 3 y otorgar cualquier insignia
   de Difícil adicional con un chequeo aparte, fuera de `asignaturasDificil()` y `esMaestro()`.
+
+#### ⚠️ El NOMBRE de una etapa tiene que llevar el ancla de su contexto (Sesión 134)
+
+Lo encontró Roberto jugando 3°: en el capítulo **"La antigua Roma"**, la etapa 2 se llamaba
+**"Todos necesitamos lo mismo"** y servía preguntas de Roma. El contenido estaba bien —es el
+`HI03 OA 03`, que pide explicar *"cómo griegos y romanos de la Antigüedad… satisfacer las
+necesidades comunes a todos los seres humanos"*— y el cableado también. **Lo que engañaba era
+el rótulo**, que se lee como un objetivo de Formación Ciudadana.
+
+> **La causa, dicha con precisión, porque es lo que se repite:** el nombre era **fiel a su
+> objetivo, pero tomó la mitad equivocada**. Muchos OA traen dos mitades —el **contexto**
+> (época, lugar, pueblo) y el **tema** (la habilidad)— y quedarse con el tema produce un
+> nombre que funciona igual de bien en otra asignatura o en otro eje. **El niño lee el nodo,
+> no el encabezado del mapa.**
+
+La prueba es una sola pregunta: **¿el nombre ancla su contexto?** *"La democracia en Atenas"*
+y *"Ganar el derecho a votar"* (en un capítulo del siglo XX) anclan, aunque usen vocabulario
+cívico; *"Todos necesitamos lo mismo"* no nombra ni la época, ni el lugar, ni el contenido.
+
+**Lo comprueba `scripts/auditar-rotulos-etapa.py`**, que audita **las etapas cableadas en los
+seis forks** — la capa que ningún otro script miraba, porque los seis auditores
+(`revisar-tanda`, `auditar-banco-nivel`, `auditar-numerico`, `auditar-solape-oa`,
+`auditar-audible-nivel`, `validar-oa-json`) revisan **el banco, no el juego**. Trae dos
+niveles, y la diferencia importa:
+
+- **ERRORES (salida 1) — los tres son MUDOS**, no dan nada en pantalla: una etapa que declara
+  un OA **sin preguntas** en su banco (se juega vacía y **se marca superada sin medir nada**),
+  un **jefe** que nombra uno así, o un OA que **no existe** en el `oa.json` del banco.
+- **AVISOS (no cambian la salida) — se JUZGAN a mano**: el nombre usa vocabulario típico de
+  otro eje. Sobre 762 etapas marca **4, y los 4 son correctos**; por eso es aviso y no error
+  (*un informe que marca lo correcto se deja de leer*).
+
+⚠️ **Y en un curso con voz pregrabada, renombrar una etapa cuesta plata**: el manifiesto se
+indexa por el **texto mostrado**, así que el nombre nuevo queda sin clip y **cae a la voz del
+navegador sin avisar**. Hay que regenerarlo y **borrar la entrada vieja del manifiesto y del
+almacén de auditoría**, que si no siguen mintiendo (Sesiones 60 y 105).
 
 ### Mirar el panel del profesor sin credenciales (`scripts/panel-demo.py`)
 
@@ -1623,6 +1661,27 @@ tablero se abre desde el panel del administrador en `profesor.html` (botón
 "📊 Tablero de avance"), o escribiendo la dirección directamente. Sigue pidiendo su
 propia contraseña, definida en la constante `CLAVE_ADMIN` de
 `scripts/generar-tablero.py`; al cambiarla hay que volver a generar el tablero.
+
+> ### ⚠️ Hay DOS tableros, y el de internet va por detrás del disco
+>
+> `dev/tablero.html` **está en el repositorio**, así que GitHub Pages lo publica: el de
+> `vulpo.cl/dev/tablero.html` es el del **último push**, no el del disco. Mientras una tanda
+> nueva espera la orden 66, ese tablero **no tiene sus casillas** — y entonces anuncia *"N de N
+> asignaturas sin pendientes"*, que **para su banco es verdad**. Pasó el 27/09 con las 5
+> preguntas del libro de teatro: el publicado era del 24 y el del disco del 25.
+>
+> **Para aprobar se abre el archivo local** (`C:\Proyectos\kimun\dev\tablero.html`); el
+> publicado sirve para mirar desde otro equipo. Y la comprobación que zanja la duda en dos
+> segundos es la línea **"Generado el …"** que el propio tablero imprime bajo el título:
+> si no es de hoy, es el viejo.
+>
+> Es la **tercera vez** que el tablero dice que no queda nada teniendo trabajo pendiente —antes
+> fue la cola dedupeada por código (Sesión 102) y el modo de muestreo que solo recorría preguntas
+> (Sesión 103)—, y las tres veces el síntoma es idéntico al de un banco realmente completo.
+> ⚠️ Y hay un corolario que sí es de datos: **el `localStorage` es por origen**, así que las
+> marcas hechas en `vulpo.cl` y las hechas en `file://` **no se mezclan**. No importa para
+> aprobar —las casillas nacen del `data-rev` que trae el banco, y `idsMarcados()` lee el DOM— pero
+> explica por qué el contador puede verse distinto en cada uno.
 
 > Nota: esa contraseña es un **bloqueo suave** para que los niños no entren al
 > tablero, NO seguridad real (es un sitio estático; quien sepa mirar el código
@@ -13841,3 +13900,139 @@ del viejo, sin desborde y con **cero errores de consola y cero fallos de red**.
   Es opcional y son ~5 preguntas.
 - **Pendiente de arrastre, sin cambios:** la prueba cerrada de 12 testers/14 días, el ícono PWA web,
   INAPI (marca en trámite), el piloto (puerta 1/10) y decidir qué "gráficas" quiere Roberto.
+
+### Sesión 134 (2026-09-25 y 27) — El desenlace que faltaba, y el rótulo que engañaba
+Dos jornadas sobre el mismo hilo: cerrar lo que quedaba del libro de teatro y responder un reporte
+de Roberto que destapó **tres cosas más** de las que nombraba.
+
+#### El desenlace de *Castigo y recompensa*, encontrado en la edición digital (25/09)
+
+Al escaneo del libro le faltan las **páginas 10 a 12**, así que su primer tramo iba con **7
+preguntas y ninguna tocaba el final**. Roberto pidió buscarlo en internet, y apareció **de la mejor
+fuente posible: la edición digital del MISMO libro** (vista previa de Everand), no un resumen de
+terceros — se validó antes de usarla porque el planteamiento que publica **coincide literalmente**
+con el del escaneo.
+
+El desenlace: el erizo, la araña y la tortuga se excusan con su propio trabajo —el cerco, la tela,
+el lavado— y la hormiga moribunda los maldice **justo en eso** (púas en el cuerpo, no tejer nunca
+una tela buena, el cubo fijo al lomo); solo la **abeja** deja su néctar y acude, y recibe que *todo
+lo que toque se le vuelva miel*. Es una **fábula etiológica**, y eso da el mejor ítem del tramo.
+
+**5 preguntas nuevas** (`tea-t1-8` a `-12`); el tramo queda en 12, como los demás.
+
+> ⚠️ **Se agregaron sin re-consolidar, y es lo que salvó el trabajo:** `consolidar-pool-nivel.py`
+> escribe `revisada:false`, así que re-correrlo **habría borrado las 130 firmas** del 24/09.
+> Verificado que el diff del banco es **+70/−0**. El sesgo de largo se corrigió **dando cuerpo a
+> los distractores**, nunca acortando la correcta. Y queda declarado en `nota_fidelidad` que estas
+> 5 salen de la edición digital, así que conviene cotejarlas cuando aparezcan las páginas.
+
+#### «En un capítulo que era de formación aparecieron preguntas de Roma» (27/09)
+
+Lo encontró jugando 3°, y **el contenido estaba bien**: esa etapa es el `HI03 OA 03`, que pide
+explicar *"cómo griegos y romanos de la Antigüedad… satisfacer las necesidades comunes a todos los
+seres humanos"*. Medido antes de responder: el banco no tiene ni una pregunta de Roma bajo un OA
+cívico —las 5 coincidencias del primer barrido eran el regex pegando dentro de la palabra
+**b·roma**—, y jugando las 6 etapas del módulo 🏛️ y las 6 de los capítulos "Mis deberes" y "Vivir
+juntos" **sirven solo sus OA 11-16**.
+
+**Lo que engañaba era el RÓTULO**, y la causa se puede enunciar como regla porque se va a repetir:
+
+> El nombre era **fiel a su objetivo, pero tomó la mitad equivocada**. Muchos OA traen dos mitades
+> —el **contexto** (época, lugar, pueblo) y el **tema** (la habilidad)— y quedarse con el tema
+> produce un nombre que funciona igual de bien en otra asignatura o en otro eje. *"Todos
+> necesitamos lo mismo"* no nombra ni la época, ni el lugar, ni el contenido. **Y el niño lee el
+> nodo, no el encabezado del mapa.**
+
+Renombrada a **"Cómo lo resolvían en la Antigüedad"** (elección de Roberto entre tres opciones),
+con su `META_OA`. Verificado jugando: la primera pregunta que sirve es *"Hoy conseguimos agua
+abriendo la llave. En la Antigüedad había que…"*, o sea el rótulo y el contenido ya dicen lo mismo,
+y el 🍞 calza.
+
+#### La respuesta a su otra pregunta: no había ninguna regla, y ahora sí
+
+Los seis auditores (`revisar-tanda`, `auditar-banco-nivel`, `auditar-numerico`,
+`auditar-solape-oa`, `auditar-audible-nivel`, `validar-oa-json`) revisan **el banco, no el juego**:
+**ninguno había mirado nunca un nombre de etapa**. `scripts/auditar-rotulos-etapa.py` audita las
+**762 etapas cableadas en los seis forks**, con dos niveles y la diferencia importa:
+
+- **ERRORES (salida 1) — los tres son MUDOS:** una etapa que declara un OA **sin preguntas** en su
+  banco (se juega vacía y **se marca superada sin medir nada**), un **jefe** que nombra uno así, o
+  un OA que **no existe** en el `oa.json`. Hoy: **0**.
+- **AVISOS — se JUZGAN a mano:** el nombre usa vocabulario de otro eje. Hoy **4, y los 4 son
+  correctos** porque anclan su contexto (*"La democracia en Atenas"*, *"Ganar el derecho a votar"*
+  en un capítulo del siglo XX).
+
+> **Mi primer detector marcó 24 y casi todas eran correctas** —*"Vivir en Roma"*, *"Cuerpos
+> geométricos"*, *"Manos limpias"*—, porque medía "comparte palabras con el texto del MINEDUC", que
+> no es lo mismo que "dice de qué habla". Se rehízo apuntando al **cruce de ejes**, que es el
+> defecto real. Es la doctrina de siempre: *un informe que marca lo correcto se deja de leer.*
+>
+> **Probado rompiendo el fork a propósito** en sus tres controles (el rótulo viejo, un OA
+> inexistente y un OA declarado sin preguntas), y restaurado **byte a byte** (mismo md5). Un
+> chequeo que nunca falla no prueba nada.
+
+#### ⚠️ Y de paso: las 5 introducciones de Historia de 3° llevaban MUDAS desde el 07/09
+
+Al regenerar los 2 clips del rótulo renombrado —3° tiene voz pregrabada y el manifiesto se indexa
+por el **texto mostrado**, así que un nombre nuevo cae a la voz del navegador **sin avisar**—, el
+recuento dijo **18 y no 2**. Los otros **16 son las introducciones de la Sesión 103** (los marcos
+CUÁNDO/AÑOS/DÓNDE y sus párrafos), a las que **nunca se les generó la voz**. Es el fallo mudo de
+`voc4` (Sesión 102) y de las mini-clases de 4° (Sesión 105): **suena, pero suena otra voz.**
+
+#### ⚠️ Azure devolvió 401, y el diagnóstico separó las dos causas posibles
+
+El generador murió con *"Azure rechazó la clave"*. En vez de mandar a Roberto a renovarla a ciegas
+se midió, y el resultado acotó el problema a una sola cosa:
+
+| Medición | Qué descartó |
+|---|---|
+| Los **4 endpoints** dan 401, **incluida otra región** | no es el endpoint ni `brazilsouth` |
+| Archivo sano: 2 líneas, sin BOM, clave de 84 caracteres | no es un problema de lectura |
+| **No se toca desde el 25/08 23:34** | nadie lo editó por error |
+| Con esa misma clave se generaron **12.844 clips en septiembre**, el último el **07/09** | la clave era válida y dejó de serlo sola |
+
+Azure contesta *"valid key for an **active subscription**"*, y eso dejaba dos causas: la KEY 1
+regenerada, o la **suscripción caída**. ⚠️ **No era cuota**, que habría dado 429.
+
+**Era la segunda:** Roberto entró al portal, **reactivó la suscripción**, y **la misma clave volvió
+a funcionar sin tocar el archivo** (`issueToken` → 200). Nunca estuvo rotada.
+
+**18 clips generados, US$0,04.** Cobertura **2.308 de 2.308** con clip y con bytes, cero mp3 de 0
+bytes en todo `assets/voz`, y **verificado JUGANDO y espiando el constructor `Audio`** —lo único
+que dice qué archivo pide el juego, porque el "listo" del script es justamente lo que dejó pasar
+los dos fallos mudos anteriores—: la meta pide `476a66877debbe54.mp3` y la introducción de Roma
+`f6763741103c4e4b.mp3`, las dos **HTTP 200 `audio/mpeg`**, con el resaltado del karaoke corriendo.
+
+> ⚠️ **En el primer bloque de una introducción el 🔊 no aparece, y es correcto:** es la ficha
+> CUÁNDO/AÑOS/DÓNDE, un diagrama sin texto que leer, y el motor lo oculta a propósito
+> (`textoLocutable` vacío). Parece un defecto y no lo es.
+>
+> Y una basura que dejó el 401: un **mp3 de 0 bytes** fuera del manifiesto, creado por el
+> generador al morir. Borrado — este proyecto verifica justamente que no haya clips vacíos.
+
+#### ⚠️ Hay DOS tableros, y el de internet va por detrás del disco
+
+Roberto abrió el tablero y decía *"no tengo nada que aprobar"*. **No estaba roto**:
+`dev/tablero.html` **está en el repositorio**, así que GitHub Pages lo publica, y el de
+`vulpo.cl/dev/tablero.html` es el del **último push**. El suyo era del **24/09** (sin las 5
+preguntas, que estaban sin commitear) y el del disco del **25/09 06:52**, con **17.233 casillas y
+las 5 pendientes**.
+
+Es la **tercera vez** que el tablero dice que no queda nada teniendo trabajo pendiente —antes fue
+la cola dedupeada por código (Sesión 102) y el modo de muestreo que solo recorría preguntas
+(Sesión 103)—, y las tres veces **el síntoma es idéntico al de un banco realmente completo**. La
+comprobación que lo zanja en dos segundos es la línea **"Generado el …"** que el propio tablero
+imprime bajo el título. Queda escrito en `CLAUDE.md`, junto al tablero.
+
+#### Verificación y estado
+
+Los **seis cursos** navegan con el motor vivo y las tarjetas correctas, **cero errores de consola y
+cero fallos de red**; el auditor nuevo da **762 etapas, 0 errores**; sintaxis OK en el fork tocado;
+y el árbol quedó con el renombre en **2 líneas exactas**, sin churn de fines de línea.
+
+- **Pendiente de Roberto:** **aprobar las 5 preguntas del teatro** (`tea-t1-8` a `-12`) — con este
+  push, el tablero de `vulpo.cl` ya las muestra. El banco queda en **17.000 escritas y 16.995
+  aprobadas**, que es la regla de este proyecto cumpliéndose: *el 100% es una FOTO, no un estado.*
+- **De arrastre, sin cambios:** la prueba cerrada de 12 testers/14 días, el ícono PWA web, INAPI
+  (marca en trámite, publicada en el Diario Oficial), el piloto (la puerta cierra el 1/10) y
+  decidir qué "gráficas" quiere Roberto.

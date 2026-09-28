@@ -1,51 +1,167 @@
-{"preguntas": [
- {"oa": "TE-T1",
-  "pregunta": "¿Por qué la hormiga decidió criar a cuatro animalitos recién nacidos?",
-  "opciones": ["Porque vivía sola, aburrida y triste, y quería tener compañía en su casa", "Porque los encontró abandonados en el camino y le dio pena dejarlos ahí", "Porque necesitaba ayuda para juntar comida antes de que llegara el invierno", "Porque sus propios hijos se habían marchado y quiso reemplazarlos con ellos"],
-  "correcta": 0,
-  "tip": "El narrador lo dice al empezar: la hormiga no tenía hijos y vivía sola, así que recogió a esos cuatro para no seguir aburrida y triste.",
-  "revisada": false,
-  "id": "tea-t1-1"},
- {"oa": "TE-T1",
-  "pregunta": "¿A quiénes recogió y crió la hormiga como si fueran sus hijos?",
-  "opciones": ["A un erizo, una araña, una tortuga y una abeja, todos recién nacidos", "A una liebre, un erizo, una araña y una tortuga que andaban perdidos", "A cuatro hormiguitas huérfanas que encontró cerca de su hormiguero", "A un erizo y a una tortuga, los dos únicos que aceptaron quedarse"],
-  "correcta": 0,
-  "tip": "El narrador nombra a los cuatro: erizo, araña, tortuga y abeja. La liebre no es hija suya, sino la vecina que después lleva el recado.",
-  "revisada": false,
-  "id": "tea-t1-2"},
- {"oa": "TE-T1",
-  "pregunta": "¿Qué hicieron los animalitos criados por la hormiga cuando crecieron?",
-  "opciones": ["Cada uno se fue a vivir por su cuenta y dejaron sola a la hormiga", "Se quedaron en la casa, pero dejaron de ayudarla en los quehaceres", "Se pelearon entre ellos y la hormiga tuvo que echarlos de su casa", "Se llevaron a la hormiga con ellos y la cuidaron por turnos"],
-  "correcta": 0,
-  "tip": "Apenas estuvieron grandecitos se fueron cada uno por su lado y la abandonaron. Ese abandono es el que la deja sola cuando después enferma.",
-  "revisada": false,
-  "id": "tea-t1-3"},
- {"oa": "TE-T1",
-  "pregunta": "¿Qué le encarga la hormiga a la liebre cuando cae enferma?",
-  "opciones": ["Que vaya a buscar a sus hijos y les diga que vengan a cuidarla", "Que le traiga remedios y comida, porque ella ya no puede salir", "Que se quede a acompañarla en la casa hasta que ella se mejore", "Que reparta sus cosas entre los cuatro hijos cuando ella muera"],
-  "correcta": 0,
-  "tip": "La hormiga le pide dos cosas: que los llame y que les diga que vengan, porque quiere despedirse de ellos antes de morir.",
-  "revisada": false,
-  "id": "tea-t1-4"},
- {"oa": "TE-T1",
-  "pregunta": "¿Por qué la hormiga le pide ese favor justamente a la liebre?",
-  "opciones": ["Porque es su vecina y corre mucho, así que puede hallarlos pronto", "Porque la liebre sabía de memoria dónde vivía cada uno de ellos", "Porque la liebre era la única amiga que le quedaba en el campo", "Porque las otras hormigas del hormiguero se negaron a ayudarla"],
-  "correcta": 0,
-  "tip": "El narrador la presenta como «su vecina, una liebre muy corredora»: está cerca y es rápida, que es lo que una enferma necesita de un mensajero.",
-  "revisada": false,
-  "id": "tea-t1-5"},
- {"oa": "TE-T1",
-  "pregunta": "¿Qué muestra de la liebre su única respuesta a la hormiga?",
-  "opciones": ["Que acepta de inmediato, sin poner peros ni pedir nada a cambio", "Que duda, porque no tiene idea de dónde encontrar a los cuatro", "Que se demora, porque antes debe terminar sus propios asuntos", "Que se burla de la hormiga por haber criado a animales ajenos"],
-  "correcta": 0,
-  "tip": "La liebre contesta que va «en un momento» y que se lo dirá donde los encuentre. Es todo lo que alcanza a decir, y ahí ya se ve su disposición.",
-  "revisada": false,
-  "id": "tea-t1-6"},
- {"oa": "TE-T1",
-  "pregunta": "¿Qué papel cumple el Narrador al comienzo de esta obra?",
-  "opciones": ["Resume en pocas frases todo lo que pasó antes de la primera escena", "Interrumpe a los personajes para decirle al público qué debe opinar", "Lee en voz alta las acotaciones para que el público imagine el lugar", "Habla por la hormiga cuando ella está demasiado enferma para hacerlo"],
-  "correcta": 0,
-  "tip": "El Narrador cuenta de un tirón la crianza, el abandono y la vejez de la hormiga; recién después los personajes empiezan a hablar por sí mismos.",
-  "revisada": false,
-  "id": "tea-t1-7"}
-]}
+{
+ "preguntas": [
+  {
+   "oa": "TE-T1",
+   "pregunta": "¿Por qué la hormiga decidió criar a cuatro animalitos recién nacidos?",
+   "opciones": [
+    "Porque vivía sola, aburrida y triste, y quería tener compañía en su casa",
+    "Porque los encontró abandonados en el camino y le dio pena dejarlos ahí",
+    "Porque necesitaba ayuda para juntar comida antes de que llegara el invierno",
+    "Porque sus propios hijos se habían marchado y quiso reemplazarlos con ellos"
+   ],
+   "correcta": 0,
+   "tip": "El narrador lo dice al empezar: la hormiga no tenía hijos y vivía sola, así que recogió a esos cuatro para no seguir aburrida y triste.",
+   "revisada": false,
+   "id": "tea-t1-1"
+  },
+  {
+   "oa": "TE-T1",
+   "pregunta": "¿A quiénes recogió y crió la hormiga como si fueran sus hijos?",
+   "opciones": [
+    "A un erizo, una araña, una tortuga y una abeja, todos recién nacidos",
+    "A una liebre, un erizo, una araña y una tortuga que andaban perdidos",
+    "A cuatro hormiguitas huérfanas que encontró cerca de su hormiguero",
+    "A un erizo y a una tortuga, los dos únicos que aceptaron quedarse"
+   ],
+   "correcta": 0,
+   "tip": "El narrador nombra a los cuatro: erizo, araña, tortuga y abeja. La liebre no es hija suya, sino la vecina que después lleva el recado.",
+   "revisada": false,
+   "id": "tea-t1-2"
+  },
+  {
+   "oa": "TE-T1",
+   "pregunta": "¿Qué hicieron los animalitos criados por la hormiga cuando crecieron?",
+   "opciones": [
+    "Cada uno se fue a vivir por su cuenta y dejaron sola a la hormiga",
+    "Se quedaron en la casa, pero dejaron de ayudarla en los quehaceres",
+    "Se pelearon entre ellos y la hormiga tuvo que echarlos de su casa",
+    "Se llevaron a la hormiga con ellos y la cuidaron por turnos"
+   ],
+   "correcta": 0,
+   "tip": "Apenas estuvieron grandecitos se fueron cada uno por su lado y la abandonaron. Ese abandono es el que la deja sola cuando después enferma.",
+   "revisada": false,
+   "id": "tea-t1-3"
+  },
+  {
+   "oa": "TE-T1",
+   "pregunta": "¿Qué le encarga la hormiga a la liebre cuando cae enferma?",
+   "opciones": [
+    "Que vaya a buscar a sus hijos y les diga que vengan a cuidarla",
+    "Que le traiga remedios y comida, porque ella ya no puede salir",
+    "Que se quede a acompañarla en la casa hasta que ella se mejore",
+    "Que reparta sus cosas entre los cuatro hijos cuando ella muera"
+   ],
+   "correcta": 0,
+   "tip": "La hormiga le pide dos cosas: que los llame y que les diga que vengan, porque quiere despedirse de ellos antes de morir.",
+   "revisada": false,
+   "id": "tea-t1-4"
+  },
+  {
+   "oa": "TE-T1",
+   "pregunta": "¿Por qué la hormiga le pide ese favor justamente a la liebre?",
+   "opciones": [
+    "Porque es su vecina y corre mucho, así que puede hallarlos pronto",
+    "Porque la liebre sabía de memoria dónde vivía cada uno de ellos",
+    "Porque la liebre era la única amiga que le quedaba en el campo",
+    "Porque las otras hormigas del hormiguero se negaron a ayudarla"
+   ],
+   "correcta": 0,
+   "tip": "El narrador la presenta como «su vecina, una liebre muy corredora»: está cerca y es rápida, que es lo que una enferma necesita de un mensajero.",
+   "revisada": false,
+   "id": "tea-t1-5"
+  },
+  {
+   "oa": "TE-T1",
+   "pregunta": "¿Qué muestra de la liebre su única respuesta a la hormiga?",
+   "opciones": [
+    "Que acepta de inmediato, sin poner peros ni pedir nada a cambio",
+    "Que duda, porque no tiene idea de dónde encontrar a los cuatro",
+    "Que se demora, porque antes debe terminar sus propios asuntos",
+    "Que se burla de la hormiga por haber criado a animales ajenos"
+   ],
+   "correcta": 0,
+   "tip": "La liebre contesta que va «en un momento» y que se lo dirá donde los encuentre. Es todo lo que alcanza a decir, y ahí ya se ve su disposición.",
+   "revisada": false,
+   "id": "tea-t1-6"
+  },
+  {
+   "oa": "TE-T1",
+   "pregunta": "¿Qué papel cumple el Narrador al comienzo de esta obra?",
+   "opciones": [
+    "Resume en pocas frases todo lo que pasó antes de la primera escena",
+    "Interrumpe a los personajes para decirle al público qué debe opinar",
+    "Lee en voz alta las acotaciones para que el público imagine el lugar",
+    "Habla por la hormiga cuando ella está demasiado enferma para hacerlo"
+   ],
+   "correcta": 0,
+   "tip": "El Narrador cuenta de un tirón la crianza, el abandono y la vejez de la hormiga; recién después los personajes empiezan a hablar por sí mismos.",
+   "revisada": false,
+   "id": "tea-t1-7"
+  },
+  {
+   "oa": "TE-T1",
+   "pregunta": "¿Cuál de los cuatro hijos acudió al llamado de la hormiga enferma?",
+   "opciones": [
+    "La abeja, que dejó de recoger néctar y fue de inmediato a verla",
+    "El erizo, que interrumpió el cerco de espinas que estaba levantando",
+    "La araña, que dejó a medio tejer la tela en la que trabajaba",
+    "La tortuga, que abandonó la ropa que estaba lavando ese día"
+   ],
+   "correcta": 0,
+   "tip": "Los otros tres se excusaron con el trabajo que tenían entre manos. Solo la abeja dejó el suyo y fue, y por eso es la única premiada.",
+   "id": "tea-t1-8"
+  },
+  {
+   "oa": "TE-T1",
+   "pregunta": "¿Con qué excusa se negó la tortuga a visitar a su madre?",
+   "opciones": [
+    "Que estaba lavando ropa y no podía dejar el lavado a medias",
+    "Que el camino era muy largo y ella avanzaba demasiado lento",
+    "Que debía cuidar sus huevos y no podía alejarse del nido",
+    "Que ya había ido antes y la hormiga no la había recibido"
+   ],
+   "correcta": 0,
+   "tip": "Cada hijo pone por delante su propia tarea: el erizo su cerco, la araña su tela y la tortuga el lavado. De esa excusa sale después su castigo.",
+   "id": "tea-t1-9"
+  },
+  {
+   "oa": "TE-T1",
+   "pregunta": "¿Qué castigo le deseó la hormiga a la araña por no ir a verla?",
+   "opciones": [
+    "Que nunca en su vida pudiera tejer una tela buena",
+    "Que quedara atrapada para siempre en su propia tela",
+    "Que perdiera las patas con las que hilaba sus hilos",
+    "Que ningún insecto volviera a caer jamás en sus redes"
+   ],
+   "correcta": 0,
+   "tip": "El castigo cae justo sobre lo que la araña antepuso a su madre: su tejido. Por eso, dice la obra, su tela nunca queda bien hecha.",
+   "id": "tea-t1-10"
+  },
+  {
+   "oa": "TE-T1",
+   "pregunta": "¿Qué recompensa recibió la abeja por acudir al llamado de su madre?",
+   "opciones": [
+    "Que todo lo que tocara se le convirtiera en miel",
+    "Que viviera más años que cualquier otro insecto",
+    "Que heredara la casa y las provisiones de la hormiga",
+    "Que nunca le faltaran flores de donde sacar néctar"
+   ],
+   "correcta": 0,
+   "tip": "La hormiga premia a la abeja con el don de la miel. El narrador cierra la obra explicando que desde entonces las abejas nos dan miel y cera.",
+   "id": "tea-t1-11"
+  },
+  {
+   "oa": "TE-T1",
+   "pregunta": "¿Qué explican los castigos y la recompensa del final de la obra?",
+   "opciones": [
+    "Por qué esos animales son hoy como los conocemos: las púas, la tela y el caparazón",
+    "Por qué la hormiga decidió quedarse sola y nunca más volver a criar a nadie en su casa",
+    "Por qué la liebre llegó a ser el animal más veloz y servicial de todo el campo",
+    "Por qué los animales del campo dejaron de visitarse entre ellos como antes lo hacían"
+   ],
+   "correcta": 0,
+   "tip": "Es una fábula que explica un origen: cada castigo deja una marca que el animal lleva hasta hoy, y la recompensa explica de dónde viene la miel.",
+   "id": "tea-t1-12"
+  }
+ ]
+}
