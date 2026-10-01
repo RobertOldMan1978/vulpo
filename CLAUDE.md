@@ -1402,13 +1402,22 @@ código `ALU-` para jugar más allá de una demo. **Todo lo gobierna una sola co
 
 Llegada la fecha el cierre **ocurre solo**, sin desplegar nada ese día.
 
-> **ESTADO ACTUAL: `FECHA_PUERTA='2026-10-01'` en los TRES niveles.** Roberto la fijó primero en
-> 8° el 25/08/2026, en la Sesión 65 se alineó **3° y 7°** (que estaban abiertos y por lo tanto
-> eran gratis), y el **31/08/2026 la corrió de septiembre a octubre**. Una plataforma, una fecha.
-> Los tres muestran la banda que anuncia el cierre, y **el 1 de octubre de 2026 VULPO deja de ser
-> gratuito**: sin código `ALU-` solo se juega la demo de cada nivel (`hist-cap1` en 8°,
-> `hist7-cap1` en 7°, `mat3-cap1` en 3°). Para posponerlo o cancelarlo, editar esa constante en
-> cada `index.html`.
+> **ESTADO ACTUAL: LA PUERTA ESTÁ CERRADA desde el 1 de octubre de 2026, en los SEIS cursos**
+> (`FECHA_PUERTA='2026-10-01'`). Cerró sola, sin desplegar nada ese día, y se comprobó en
+> `vulpo.cl`: sin código `ALU-`, `bloqueado()` vale `true` en los seis y la banda de aviso ya no
+> se muestra (solo aparece mientras la fecha es futura). La demo de cada nivel es su
+> `DEMO_LIBRE`: `mat3-cap1`, `mate4-cap1`, `mate5-cap1`, `hist6-cap1`, `hist7-cap1` y `hist-cap1`.
+> Para reabrir o posponer, editar esa constante en cada `index.html`.
+>
+> ⚠️ **DEFECTO VIVO (01/10): en 3°, 4° y 5° la demo NO se puede abrir.** Su `DEMO_LIBRE` es de
+> Matemática, pero `renderExpediciones` deja pasar la tarjeta **por nombre** (`asig!=='Historia'`)
+> y la campaña de mini-clases (`renderCampañaMate`, en `lecciones.js`) **no sabe nada de la
+> puerta**. Resultado: Matemática con candado e Historia abierta con todos sus capítulos
+> cerrados. 6°, 7° y 8° están bien. Los enlaces de muestra no se ven afectados. Las dos salidas y
+> sus costos están en `pendiente.md` (**A64**); elegir cuál es decisión de Roberto.
+>
+> Historia: Roberto la fijó primero en 8° el 25/08/2026, en la Sesión 65 se alinearon 3° y 7°, y
+> el 31/08 la corrió de septiembre a octubre. Una plataforma, una fecha.
 >
 > **Correrla es barato y no rompe nada**, pero recordar que el **aviso previo se muestra solo
 > mientras la fecha es futura**: quien vea la banda hoy va a leer una fecha distinta de la que
@@ -1612,10 +1621,16 @@ demo se mantiene**, porque es el que lleva al contacto. Es CSS puro
 "un módulo se lleva su CSS"**, porque el navegador la aplica solo y meterla en el módulo la haría
 depender de que cargue el JavaScript.
 
-**El ícono es propio** (`assets/icono-512.png` / `-192.png`, generados con
-`scripts/generar-icono-app.py`): la cara de Vulpi al 80% sobre su fondo durazno, porque Android
-recorta a círculo y el `kimun-512.png` original pierde las puntas de las orejas. Ese original
-**no se toca**: sigue siendo el favicon y el `apple-touch-icon`.
+**El ícono es el zorro del logo, el mismo de la app de Google Play (01/10/2026).** Los tres
+archivos —`assets/icono-512.png` y `-192.png` (manifiesto, Android) e `icono-180.png`
+(`apple-touch-icon`, iPhone)— salen de **`scripts/generar-iconos-app.py`**, que es también el que
+arma los íconos de la app Android: **un solo generador**, para que no haya dos escribiendo los
+mismos archivos (el viejo `generar-icono-app.py`, que partía de la cara antigua, se retiró). En
+Android el zorro va al **62%** del lado, porque el lanzador recorta a círculo y solo garantiza el
+80% central: a ese tamaño las orejas salen enteras en el peor recorte, y al 70% ya se cortan. En
+iPhone va llenando, porque iOS solo redondea las esquinas. ⚠️ `kimun-512.png` y `kimun-180.png`
+**no se tocan**: siguen siendo el favicon de la pestaña, la cara de Vulpi dentro del juego y el
+`apple-touch-icon` de `profesor.html`.
 
 ⚠️ **Lo que no se puede verificar con `cdp.mjs`: la instalación misma.** Chrome headless no
 instala PWAs. Se prueba en un teléfono.
@@ -1671,7 +1686,7 @@ propia contraseña, definida en la constante `CLAVE_ADMIN` de
 > asignaturas sin pendientes"*, que **para su banco es verdad**. Pasó el 27/09 con las 5
 > preguntas del libro de teatro: el publicado era del 24 y el del disco del 25.
 >
-> **Para aprobar se abre el archivo local** (`C:\Proyectos\kimun\dev\tablero.html`); el
+> **Para aprobar se abre el archivo local** (`dev/tablero.html`, dentro de la carpeta del repositorio); el
 > publicado sirve para mirar desde otro equipo. Y la comprobación que zanja la duda en dos
 > segundos es la línea **"Generado el …"** que el propio tablero imprime bajo el título:
 > si no es de hoy, es el viejo.
@@ -14178,3 +14193,115 @@ integran con las propias del curso. **Cero 404 y consola limpia.**
 - **De arrastre, sin cambios:** la prueba cerrada de 12 testers/14 días, el ícono PWA web, INAPI
   (marca en trámite, publicada en el Diario Oficial) y el piloto (la puerta cierra el 1/10).
   La duda de las "gráficas" **queda respondida**: eran las portadas de capítulo, y están hechas.
+
+### Sesión 135 (2026-10-01) — El día que cerró la puerta: el ícono unificado, y la demo que no abre
+Sesión corta en el PC de casa, con el repositorio recién mudado de carpeta. Roberto pidió el estado
+del proyecto y, mientras tanto, unificar el ícono de la app web. **No se tocó contenido ni
+backend.** Lo más importante apareció al cerrar: **la puerta cerró hoy y destapó un defecto vivo.**
+
+#### El estado, medido y no copiado
+`main` igual que el remoto; **17.000 de 17.000** preguntas y **233 de 233** lecciones contadas del
+disco; el sitio en vivo respondiendo; y `feature/android` ya contenida en `main`. Tres cosas que no
+estaban escritas en ninguna parte:
+
+- **El repo se mudó de carpeta**, y cinco archivos nombraban la ruta antigua a fuego
+  (`.claude/launch.json`, la skill titanic, `auto-commit.ps1`, `capturar-tutorial.mjs` y una nota
+  de este archivo). Ya venían corregidos a rutas relativas; se commitean hoy. `auto-commit.ps1`
+  deduce su carpeta con `Split-Path -Parent $PSScriptRoot`, así funciona esté donde esté.
+- **`play-store/` estaba dentro del repo, sin versionar y sin ignorar.** La Sesión 127 dice que
+  esos recursos «no se commitean», pero nada lo impedía: un `git add -A` —que es justo lo que
+  hace el respaldo automático— los habría publicado. Entró a `.gitignore`.
+- ⚠️ **La tarea programada de las 18:00 no aparece registrada en este PC.** Si se cuenta con
+  ella aquí, hay que volver a correr `scripts/registrar-tarea.ps1` desde la carpeta nueva.
+
+#### El ícono de la app web: el zorro del logo, y un solo generador
+La app instalada desde el navegador seguía con la cara antigua de Vulpi mientras la de Google
+Play ya usaba el zorro del logo (Sesión 127). Ahora los tres archivos salen del mismo origen:
+
+| Archivo | Para qué | Cómo va el zorro |
+|---|---|---|
+| `assets/icono-512.png`, `-192.png` | manifiesto de los seis cursos (Android) | al **62%** del lado, con margen |
+| `assets/icono-180.png` (nuevo) | `apple-touch-icon` de los seis forks (iPhone) | llenando el cuadro |
+
+- **El 62% se eligió mirando, con la medida de respaldo.** El punto más lejano del zorro queda a
+  0,686 anchos de su centro, así que al 62% llega a 0,425 del lado. En una hoja comparativa de
+  cuatro tamaños contra el recorte circular del 80% —el peor caso de un ícono *maskable*—, al 62%
+  las orejas salen enteras y al 70% ya se cortan las puntas.
+- **En iPhone va llenando** porque iOS solo redondea las esquinas. ⚠️ Antes el `apple-touch-icon`
+  de los forks era `kimun-180.png`, la cara vieja: sin cambiarlo, **las familias con iPhone
+  habrían seguido con el ícono antiguo** aunque el manifiesto estuviera al día.
+- **Un solo generador.** `scripts/generar-iconos-app.py` (el de la app Android) produce ahora
+  también estos tres, y `scripts/generar-icono-app.py` —que partía de la cara antigua— se retiró.
+  Dos scripts escribiendo los mismos archivos es la trampa de siempre: el día que alguien corriera
+  el viejo, volvía el zorro anterior sin que nada avisara. Al volver a correr el generador, los
+  íconos de la app Android quedaron **byte a byte iguales** (git no los marca).
+- `kimun-512.png` y `kimun-180.png` **no se tocaron**: son el favicon, la cara de Vulpi dentro del
+  juego y el ícono de `profesor.html`. Unificar esos es otra decisión.
+
+**Verificado en el navegador, en los seis cursos:** los tres íconos responden 200 con su tamaño,
+el motor arranca, JUGADOR navega, cero errores de consola y cero fallos de red. Los seis forks
+cambian **una línea cada uno**, idéntica. ⚠️ Lo que no se puede probar aquí es la instalación
+misma; y **quien ya la tiene instalada conserva el ícono viejo** —Android lo refresca solo con el
+tiempo, en iPhone hay que quitarla y volver a agregarla—.
+
+#### ⚠️ La puerta cerró hoy, y en 3°, 4° y 5° la demo no se puede abrir
+Al hacer la orden 66 se comprobó en `vulpo.cl` que el cierre ocurrió solo, como estaba
+programado: sin código, `PUERTA` y `bloqueado()` valen `true` en los seis cursos. **Pero al tocar
+las tarjetas apareció lo que nadie había recorrido nunca, porque la puerta jamás había estado
+cerrada de verdad:**
+
+| Curso | `DEMO_LIBRE` | Tarjeta de su asignatura | ¿Hay algo que jugar? |
+|---|---|---|---|
+| 3° | `mat3-cap1` | Matemática **con candado** | ❌ |
+| 4° | `mate4-cap1` | Matemáticas **con candado** | ❌ |
+| 5° | `mate5-cap1` | Matemáticas **con candado** | ❌ |
+| 6°, 7°, 8° | su `hist…-cap1` | Historia abierta | ✅ |
+
+La causa son dos piezas que se escribieron cuando la única demo era `hist-cap1` de 8°:
+
+1. `renderExpediciones` decide qué tarjeta pasa **por nombre**: `if(bloqueado() && asig!=='Historia')`.
+   En 3°, 4° y 5° Historia abre —con **todos** sus capítulos cerrados, porque ninguno es la
+   demo— y la asignatura que sí tiene la demo queda con candado.
+2. La campaña de mini-clases (`renderCampañaMate`, en `lecciones.js`) **no consulta la puerta en
+   ningún punto**: `capAbierto` solo lo usa `renderCampaña`. Por eso su tarjeta se bloquea entera
+   en vez de por unidad.
+
+> Es el **sexto caso** del mismo defecto (Sesiones 63, 64, 69, 72, 90): *un `if` sobre el nombre
+> de la asignatura no dice si el nivel tiene esa funcionalidad*. Y el segundo punto importa para
+> el arreglo: **abrir la tarjeta sin enseñarle la puerta a esa pantalla regalaría Matemática
+> entera**, que es peor que el defecto.
+
+**Alcance, medido:** no afecta a quien tiene código, ni a los enlaces de la landing (`?solo=`
+esquiva la puerta por diseño), ni a 6°, 7° y 8°. Afecta a quien abre `vulpo.cl/3ro`, `/4to` o
+`/5to` directo y sin código: ve el juego, toca, y solo encuentra candados.
+
+**No se arregló en esta sesión, a propósito:** hay dos salidas y elegir es de producto, no de
+código. (a) Pasar la demo de esos tres cursos a su primer capítulo de Historia: tres líneas y
+cero motor, pero la demo deja de mostrar las mini-clases —el «enseña antes de preguntar», que es
+el mejor argumento— y hay que alinear los enlaces de la landing, que hoy muestran el mismo
+capítulo que la demo. (b) Que el motor abra la asignatura **de la demo** y que la campaña de
+mini-clases aplique la puerta por unidad, cerrando además el Reto, el Sin Fin y el Jefe Final:
+conserva la demo de Matemática, pero toca dos módulos compartidos y pide verificar los seis
+cursos con la puerta cerrada, con código y en modo prueba. Queda como **A64** en `pendiente.md`.
+
+> **Lección: una fecha programada es un cambio de comportamiento que nadie probó en vivo.** La
+> puerta se verificó en la Sesión 47 «poniendo la constante en la fecha de hoy», pero en 8° y
+> cuando había un solo curso. Los cinco siguientes heredaron el mecanismo, a tres se les eligió
+> una demo de otra asignatura, y **ninguna verificación volvió a cerrar la puerta y a tocar la
+> tarjeta**. Se vio el primer día, por tocarla.
+
+#### Tres trampas de método, las tres de la prueba y no del producto
+- **`avisoCandado()` usa `alert()`, y un `alert` cuelga a `cdp.mjs` sin decir nada**: la corrida
+  expira y Node no imprime ni la primera línea, igual que un cuelgue del producto. Antes de tocar
+  algo que pueda estar bajo la puerta hay que reemplazar `window.alert` por un espía. (Y aquí el
+  cuelgue **era** la pista: se colgaba justo al tocar Matemática en 3°.)
+- **El puerto 8765 de este PC lo ocupa otro servidor que no sirve esta carpeta** —devolvía 404
+  para `/3ro/`—, así que la primera verificación de los íconos falló con un `null` que parecía
+  del cambio. Se repitió en un puerto propio con `--directory .` explícito.
+- Una corrida que murió dejó el Chrome de prueba reteniendo el puerto 9333 y las dos siguientes
+  se colgaron mudas: se limpia matando **solo** los procesos con `remote-debugging-port=9333`.
+
+- **Pendiente inmediato: decidir A64** (la demo de 3°, 4° y 5°). **De arrastre:** la prueba
+  cerrada de 12 testers/14 días de Google Play, INAPI (marca en trámite, publicada en el Diario
+  Oficial, con el plazo de oposición corriendo), probar en iPhone que el aviso de instalación
+  manda a Safari, y que parta el piloto.

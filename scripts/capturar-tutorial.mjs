@@ -10,7 +10,7 @@
  * ⚠️ NO usa ?qa=1: esa banda verde saldría en todas las imágenes. En vez de eso se siembra
  * una partida con los capítulos ya abiertos, que además es lo que un apoderado ve de verdad.
  */
-const DIR = 'C:/Proyectos/kimun/assets/web/tutorial/';
+const DIR = decodeURIComponent(new URL('../assets/web/tutorial/', import.meta.url).pathname).replace(/^\/([A-Za-z]:)/, '$1');
 const TMP = 'C:/Users/Rodrigo/AppData/Local/Temp/claude/c--Proyectos-kimun/936b2d86-188e-488e-9bba-c95b184acac1/scratchpad/cuadros/';
 const B8 = 'http://localhost:8765/8vo/', B3 = 'http://localhost:8765/3ro/';
 

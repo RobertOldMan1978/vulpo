@@ -4,7 +4,7 @@
     {
       "name": "kimun",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "8765", "--directory", "C:/Proyectos/kimun"],
+      "runtimeArgs": ["-m", "http.server", "8765", "--directory", "."],
       "port": 8765,
       "autoPort": false
     }

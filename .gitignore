@@ -49,3 +49,7 @@ android/
 .gradle/
 # Paquetes de voz para la app (se hospedan en GitHub Releases, no en el git).
 dist-voz/
+
+# Recursos de la ficha de Google Play (capturas, grafico destacado, iconos de prueba).
+# Son de la consola de Play, ya subidos alla; el repo es publico y no los necesita.
+play-store/

@@ -31,8 +31,8 @@ gasta contexto y envejece mal.
 1. **Mira el estado real, no la memoria de la conversación:**
 
 ```bash
-git -C C:/Proyectos/kimun log --oneline -8
-git -C C:/Proyectos/kimun status --short
+git log --oneline -8
+git status --short
 ```
 
 2. **Revisa los pendientes** de la sección "Pendientes" de la última sesión de la bitácora en

@@ -3,7 +3,7 @@
 # Se registra como Tarea Programada de Windows (ver scripts/registrar-tarea.ps1).
 
 $ErrorActionPreference = 'Stop'
-$repo = 'C:\Proyectos\kimun'
+$repo = Split-Path -Parent $PSScriptRoot   # la carpeta del repo, este donde este
 $log  = Join-Path $repo 'scripts\auto-commit.log'
 
 function Escribir-Log($mensaje) {
