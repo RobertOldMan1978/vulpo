@@ -14305,3 +14305,30 @@ cursos con la puerta cerrada, con código y en modo prueba. Queda como **A64** e
   cerrada de 12 testers/14 días de Google Play, INAPI (marca en trámite, publicada en el Diario
   Oficial, con el plazo de oposición corriendo), probar en iPhone que el aviso de instalación
   manda a Safari, y que parta el piloto.
+
+### Sesión 136 (2026-10-02 y 03) — Dos carruseles de "desafío" en Instagram, y su runbook
+Sesión de marketing/operación. **No se tocó el juego** (ni motor, ni contenido, ni voz): los únicos
+archivos nuevos son una herramienta y un runbook.
+- **Dos publicaciones en Instagram** (cuenta **vulpo.cl**), carruseles de 4 slides en formato 4:5:
+  (1) **Álgebra de 8°** y (2) **Historia de 8°** ("El encuentro de dos mundos"), cada uno con una
+  slide de "Modo prueba" + las 3 primeras preguntas limpias, y texto de desafío que lleva a la demo.
+  La de Historia **menciona a @solucionesvulpo**. Se publicó con **Claude en Chrome** en la sesión
+  guardada de Roberto (sin manejar contraseñas), **confirmando con él antes de cada "Compartir"**
+  (es público e irreversible).
+- **Las capturas de Historia se generaron desde el navegador interno** en modo prueba (`?solo=`,
+  que salta la puerta aunque esté cerrada), congelando el temporizador y ocultando la barra de
+  tiempo, la ✕ y los botones de audio por JS, para que las preguntas salieran limpias. Las de
+  Álgebra las sacó Roberto.
+- **Herramienta nueva `scripts/armar-carrusel-ig.py`:** compone las slides (fondo violeta de la
+  marca + captura como tarjeta con esquinas redondeadas y sombra + pie "VULPO · vulpo.cl"),
+  normalizando capturas de distinto tamaño a 1080×1350. Admite recorte por imagen (`:top=`/`:bot=`).
+  Probado con las capturas reales.
+- **Runbook nuevo `docs/instagram-carrusel.md`:** el procedimiento de punta a punta (conseguir
+  capturas → componer → publicar en Chrome), la plantilla de texto y los gotchas ya pagados:
+  **8° se sirve en `/8vo/`**, `file_upload` evita el diálogo nativo de archivos, el "Continuar" del
+  quiz es **`#btnSeguir`** (no `#lecCont`), las capturas del navegador interno salen a 2×, no aplicar
+  filtro sin querer (dejar **Original**), y publicar siempre se confirma con Roberto.
+- **Honestidad del mensaje:** con la puerta cerrada (01/10), lo gratis es **la demo**, así que el
+  texto dice "prueba la demo gratis", no acceso total.
+- **Pendiente:** sin cambios en el producto. De arrastre lo mismo de la Sesión 135 (A64, la prueba
+  cerrada de Google Play, INAPI, el iPhone y el piloto).
