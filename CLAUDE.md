@@ -1409,12 +1409,13 @@ Llegada la fecha el cierre **ocurre solo**, sin desplegar nada ese día.
 > `DEMO_LIBRE`: `mat3-cap1`, `mate4-cap1`, `mate5-cap1`, `hist6-cap1`, `hist7-cap1` y `hist-cap1`.
 > Para reabrir o posponer, editar esa constante en cada `index.html`.
 >
-> ⚠️ **DEFECTO VIVO (01/10): en 3°, 4° y 5° la demo NO se puede abrir.** Su `DEMO_LIBRE` es de
-> Matemática, pero `renderExpediciones` deja pasar la tarjeta **por nombre** (`asig!=='Historia'`)
-> y la campaña de mini-clases (`renderCampañaMate`, en `lecciones.js`) **no sabe nada de la
-> puerta**. Resultado: Matemática con candado e Historia abierta con todos sus capítulos
-> cerrados. 6°, 7° y 8° están bien. Los enlaces de muestra no se ven afectados. Las dos salidas y
-> sus costos están en `pendiente.md` (**A64**); elegir cuál es decisión de Roberto.
+> ✅ **Corregido el 02/10 (A64): en 3°, 4° y 5° la demo no se podía abrir.** Su `DEMO_LIBRE` es
+> de Matemática, pero el menú dejaba pasar la tarjeta **por nombre** (`asig!=='Historia'`) y la
+> campaña de mini-clases no consultaba la puerta. Ahora el menú abre la asignatura **que contiene
+> la demo** (`asigAbierta` en `motor.js`, que lo pregunta a `CAMPAÑAS`), y `renderCampañaMate`
+> aplica `capAbierto` por unidad y oculta el Reto y el Jefe Final con la puerta cerrada, como
+> `renderCampaña`. ⚠️ **Las dos piezas van juntas:** abrir la tarjeta sin la segunda regalaría
+> Matemática entera.
 >
 > Historia: Roberto la fijó primero en 8° el 25/08/2026, en la Sesión 65 se alinearon 3° y 7°, y
 > el 31/08 la corrió de septiembre a octubre. Una plataforma, una fecha.
@@ -14306,7 +14307,55 @@ cursos con la puerta cerrada, con código y en modo prueba. Queda como **A64** e
   Oficial, con el plazo de oposición corriendo), probar en iPhone que el aviso de instalación
   manda a Safari, y que parta el piloto.
 
-### Sesión 136 (2026-10-02 y 03) — Dos carruseles de "desafío" en Instagram, y su runbook
+### Sesión 136 (2026-10-02) — La demo de 3°, 4° y 5° vuelve a abrir (A64, opción b)
+Sesión corta, el día después del cierre de la puerta. Empezó con la **orden 99**, que trajo un
+commit de Roberto desde el otro PC (`03b46903`): la política de privacidad suma el punto 8,
+*Contacto comercial a establecimientos educacionales*. Después Roberto eligió la salida **(b)**
+para A64, y quedó resuelta. **No se tocó contenido ni ningún fork:** solo los dos módulos
+compartidos `motor.js` y `lecciones.js`.
+
+#### El arreglo, en dos piezas que tienen que ir juntas
+- **`asigAbierta(asig)`, en `motor.js`:** con la puerta cerrada, el menú abre **la asignatura que
+  contiene la demo**, y eso lo pregunta a los datos (qué campaña trae `DEMO_LIBRE` entre sus
+  `capitulos`), no al nombre. Reemplaza al `asig!=='Historia'` en las dos ramas de
+  `renderExpediciones`: la de mini-clases, que antes se bloqueaba siempre, y la normal. Si no
+  encuentra la campaña cae a `'Historia'`, que es el comportamiento anterior.
+- **`renderCampañaMate`, en `lecciones.js`:** ahora consulta la puerta. Cada unidad exige
+  `capAbierto(c.capitulos[i])` y, si no lo cumple, dice «🔒 Necesitas un código». El Reto de
+  Cálculo y el Jefe Final se ocultan con la puerta cerrada, como ya hacía `renderCampaña`. El Sin
+  Fin ya estaba cubierto, porque `nodoSinFin` vive en el motor y ya lo comprobaba.
+
+> ⚠️ **La segunda pieza no es opcional.** Abrir la tarjeta sin enseñarle la puerta a esa pantalla
+> le habría regalado Matemática entera a quien llega sin código, que es peor que el defecto.
+
+La demo **conserva sus mini-clases**, que era el motivo de elegir (b): al entrar a la unidad 1, el
+mapa muestra primero sus lecciones 📘 y después las etapas, igual que con código.
+
+#### Verificación contra una foto tomada ANTES
+Antes de editar se recorrieron los seis cursos con la puerta cerrada, **sin código y con código**:
+qué tarjetas abren y qué nodos muestra cada campaña. Después se repitió y se comparó:
+
+- **Sin código:** 3°, 4° y 5° pasan de «Matemática con candado e Historia con todo cerrado» a
+  «Matemática con la unidad 1 jugable y el resto en *Necesitas un código*», sin Reto, sin Sin Fin
+  y sin Jefe Final. 6°, 7° y 8° quedan **idénticos** a la foto anterior.
+- **Con código:** los seis cursos quedan **idénticos línea por línea** (155 líneas), con el Sin
+  Fin y los Jefes Finales en su lugar.
+- **Jugado** en 3°, 4° y 5°: tocar una unidad cerrada no navega, la unidad 1 abre su mapa con las
+  mini-clases primero, y la primera mini-clase arranca. `?solo=mate5-cap3`, una unidad que no es
+  la demo, sigue esquivando la puerta.
+- Las capturas de 3° (campaña y mapa) se miraron. Sintaxis OK en los dos módulos, **cero errores
+  de consola y cero fallos de red**.
+
+**Sin orden de publicación delicado:** `lecciones.js` usa `bloqueado()` y `capAbierto()`, que el
+`motor.js` anterior ya tenía, así que cualquier combinación de versiones en caché funciona.
+
+- **Banco recontado del disco:** 17.000 de 17.000 preguntas y 233 de 233 lecciones aprobadas.
+- **De arrastre:** la prueba cerrada de 12 testers/14 días de Google Play; INAPI (marca en
+  trámite, publicada en el Diario Oficial, con el plazo de oposición corriendo); probar en iPhone
+  que el aviso de instalación manda a Safari; la tarea de respaldo de las 18:00, que no está
+  registrada en el PC de casa; y que parta el piloto.
+
+### Sesión 137 (2026-10-02 y 03) — Dos carruseles de "desafío" en Instagram, y su runbook
 Sesión de marketing/operación. **No se tocó el juego** (ni motor, ni contenido, ni voz): los únicos
 archivos nuevos son una herramienta y un runbook.
 - **Dos publicaciones en Instagram** (cuenta **vulpo.cl**), carruseles de 4 slides en formato 4:5:

@@ -1408,7 +1408,11 @@ function renderCampañaMate(c){
   const lecHecho=tot>0 && hechas===tot;
   // CAPS_ABIERTOS igual que antes: en QA, modo prueba y modo experimental las unidades van
   // todas abiertas. `proximamente` sigue mandando: una unidad sin contenido no se abre ni en QA.
-  const abierto=!cap.proximamente && (CAPS_ABIERTOS || i===0 || capMateCompleto(c.capitulosMate[i-1]));
+  // ⚠️ La PUERTA va primero: sin código, solo la unidad que contiene la demo. Esta pantalla
+  // no la consultaba en ningún punto (solo renderCampaña lo hacía), así que abrir su tarjeta
+  // del menú sin esto habría regalado Matemática entera. Ver asigAbierta en motor.js.
+  const puerta=capAbierto(c.capitulos[i]);
+  const abierto=puerta && !cap.proximamente && (CAPS_ABIERTOS || i===0 || capMateCompleto(c.capitulosMate[i-1]));
   // UNA sola tarjeta por unidad, no dos: las lecciones de la unidad y su desafío eran dos
   // nodos con la misma portada, uno detrás del otro, y se veían repetidos. Ahora la unidad
   // abre directo su expedición, y las lecciones se muestran DENTRO de ese mapa, como primeros
@@ -1421,6 +1425,7 @@ function renderCampañaMate(c){
   const hecho=exp?expedicionCompleta(exp.id):lecHecho;
   let estado;
   if(cap.proximamente) estado='🔒 Pronto';
+  else if(!puerta) estado='🔒 Necesitas un código';
   else if(!abierto) estado='🔒 Bloqueado';
   else if(hecho) estado='Completado';
   else if(!lecHecho) estado=`${hechas}/${tot} lecciones`;
@@ -1433,7 +1438,8 @@ function renderCampañaMate(c){
  // `abrirRetoCalculo` no esta definida: sin este guard el nodo aparece ofreciendo algo que
  // no se puede abrir, y el clic lanza ReferenceError. Va como bandera y no como `if` sobre
  // el nombre de la asignatura, que es el patron que ya fallo cinco veces en este proyecto.
- if(CFG.hayReto){
+ // Con la puerta cerrada no se ofrecen ni el Reto ni el Jefe Final, como en renderCampaña.
+ if(CFG.hayReto && !bloqueado()){
   const reto=document.createElement('div');
   reto.className='camp-nodo';
   reto.innerHTML='<div class="cn-marco"><div class="cn-circ">⚡</div></div><div class="cn-body"><b>Reto de Cálculo</b><small>Práctica rápida · se desbloquea al aprender</small></div>';
@@ -1442,6 +1448,7 @@ function renderCampañaMate(c){
  }
  nodoSinFin(c,cont);   // el Reto Sin Fin de los cursos que lo tienen (vive en motor.js)
  // Jefe Final "La Incógnita": ahora exige las 4 expediciones vencidas.
+ if(bloqueado()) return;
  const jfAb=jefeFinalMateDesbloqueado(c), jfHecho=campañaCompleta(c);
  cont.appendChild(nodoCampañaEl('👑','JEFE FINAL DE MATEMÁTICAS', jfAb, jfHecho,
    jfAb?()=>iniciarJefeFinal(c):null,
