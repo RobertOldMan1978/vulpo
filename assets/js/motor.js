@@ -493,6 +493,17 @@ function tieneLicencia(){ return !!S.alumno; }
 /* Excepciones incorporadas: los enlaces de muestra y ?qa=1 nunca pasan por la puerta. */
 function bloqueado(){ return PUERTA && !PRUEBA && !QA && !(typeof DOCENTE!=='undefined'&&DOCENTE) && !tieneLicencia(); }
 function capAbierto(id){ return !bloqueado() || id===DEMO_LIBRE; }
+/* ¿Esta asignatura se puede abrir con la puerta cerrada? Solo la que CONTIENE la demo, y eso
+   se pregunta a los datos —qué campaña trae DEMO_LIBRE entre sus capítulos—, no al nombre.
+   Antes decía `asig!=='Historia'`, escrito cuando la única demo era hist-cap1 de 8°: en 3°, 4°
+   y 5° la demo es de Matemática, así que el menú abría Historia (con todo cerrado) y dejaba
+   con candado justo la asignatura de la demo. Pasó desapercibido hasta el día que la puerta
+   cerró de verdad (01/10/2026). Es el sexto caso del `if` sobre el nombre de la asignatura. */
+function asigAbierta(asig){
+ if(!bloqueado()) return true;
+ const c=CAMPAÑAS.find(x=>(x.capitulos||[]).includes(DEMO_LIBRE));
+ return asig===(c?c.asignatura:'Historia');
+}
 /* Mensaje único cuando se toca algo cerrado. */
 function avisoCandado(){ alert('🔒 Necesitas un código de tu profesor para abrir esta parte de VULPO.\n\n¿Eres profesor? Escríbenos a contacto@vulpo.cl'); }
 /* Remate de la demo: en vez del capítulo siguiente, la invitación a conseguir un código. */
@@ -955,8 +966,8 @@ function renderExpediciones(){
    const nHechas=cap0.lecciones.filter(id=>S.mateLecciones[id]).length;
    const card=document.createElement('div');card.className='exp-card';
    card.innerHTML=`<img src="${camp.portada||ASIG_PORTADA[asig]}" alt="${asig}"><div class="exp-info"><b>${asig}</b><small>Aprende y practica · ${cap0.titulo} ${nHechas}/${cap0.lecciones.length}</small></div><span class="exp-go">▶</span>`;
-   card.onclick=()=>{SND.tap(); if(bloqueado()){avisoCandado();return;} abrirCampaña(camp);};
-   if(bloqueado()) card.classList.add('lock');
+   card.onclick=()=>{SND.tap(); if(!asigAbierta(asig)){avisoCandado();return;} abrirCampaña(camp);};
+   if(!asigAbierta(asig)) card.classList.add('lock');
    agregarLineaMenu(card, asig);
    g.appendChild(card); return;
   }
@@ -970,10 +981,10 @@ function renderExpediciones(){
   const subL=(HAY_VOCABULARIO&&asig==='Lenguaje')?'Campaña + Vocabulario':sub;
   card.innerHTML=`<img src="${portada}" alt="${asig}"><div class="exp-info"><b>${asig} ${done?'👑':''}</b><small>${subL}</small></div><span class="exp-go">▶</span>`;
   card.onclick=()=>{SND.tap();
-   // Historia entra siempre: dentro se decide qué capítulo está abierto (la demo).
-   if(bloqueado() && asig!=='Historia'){avisoCandado();return;}
+   // La asignatura de la demo entra siempre: dentro se decide qué capítulo está abierto.
+   if(!asigAbierta(asig)){avisoCandado();return;}
    if(HAY_VOCABULARIO&&asig==='Lenguaje')abrirLenguaje(); else if(camp)abrirCampaña(camp); else abrirAsignatura(asig);};
-  if(bloqueado() && asig!=='Historia') card.classList.add('lock');
+  if(!asigAbierta(asig)) card.classList.add('lock');
   agregarLineaMenu(card, asig);
   g.appendChild(card);
  });
