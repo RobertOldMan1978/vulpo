@@ -1,0 +1,5828 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "¿Qué cubre el cuerpo de un ave?",
+   "opciones": [
+    "Escamas",
+    "Pelo",
+    "Piel húmeda",
+    "Plumas"
+   ],
+   "correcta": 3,
+   "tip": "Las aves son los únicos animales con plumas. Las plumas las abrigan y les sirven para volar.",
+   "revisada": false,
+   "id": "cien2-oa01-1"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "El perro tiene el cuerpo cubierto de…",
+   "opciones": [
+    "piel húmeda",
+    "escamas",
+    "pelo",
+    "plumas"
+   ],
+   "correcta": 2,
+   "tip": "El pelo es propio de los mamíferos, como el perro, el gato o el pudú.",
+   "revisada": false,
+   "id": "cien2-oa01-2"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "La ranita de Darwin tiene la piel…",
+   "opciones": [
+    "cubierta de plumas",
+    "con escamas secas",
+    "cubierta de pelo",
+    "húmeda y sin escamas"
+   ],
+   "correcta": 3,
+   "tip": "Los anfibios, como la ranita de Darwin, tienen la piel desnuda y húmeda, sin pelo, plumas ni escamas.",
+   "revisada": false,
+   "id": "cien2-oa01-3"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "¿De qué está cubierta la piel de una culebra?",
+   "opciones": [
+    "De plumas",
+    "De pelo",
+    "De escamas",
+    "De piel húmeda"
+   ],
+   "correcta": 2,
+   "tip": "La culebra es un reptil, y los reptiles tienen la piel cubierta de escamas secas.",
+   "revisada": false,
+   "id": "cien2-oa01-4"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "¿Qué grupo alimenta a sus crías con leche?",
+   "opciones": [
+    "Las aves",
+    "Los reptiles",
+    "Los peces",
+    "Los mamíferos"
+   ],
+   "correcta": 3,
+   "tip": "Las hembras de los mamíferos tienen mamas, y con ellas dan leche a sus crías.",
+   "revisada": false,
+   "id": "cien2-oa01-5"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "El pudú bebé toma leche de su madre. ¿Qué es el pudú?",
+   "opciones": [
+    "Un ave",
+    "Un anfibio",
+    "Un reptil",
+    "Un mamífero"
+   ],
+   "correcta": 3,
+   "tip": "Tomar leche de la madre es propio de los mamíferos. El pudú es un pequeño ciervo de los bosques del sur de Chile.",
+   "revisada": false,
+   "id": "cien2-oa01-6"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "La ballena vive en el mar. ¿Con qué respira?",
+   "opciones": [
+    "Con aletas",
+    "Con branquias",
+    "Con pulmones",
+    "Con escamas"
+   ],
+   "correcta": 2,
+   "tip": "La ballena es un mamífero: respira aire con pulmones, por eso sube a la superficie del mar.",
+   "revisada": false,
+   "id": "cien2-oa01-7"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "¿Con qué respiran los peces?",
+   "opciones": [
+    "Con pulmones",
+    "Con aletas",
+    "Con branquias",
+    "Con escamas"
+   ],
+   "correcta": 2,
+   "tip": "Las branquias sacan el aire que está disuelto en el agua. Por eso los peces respiran bajo el agua.",
+   "revisada": false,
+   "id": "cien2-oa01-8"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "El pingüino no vuela, pero tiene plumas. ¿Qué es?",
+   "opciones": [
+    "Un ave",
+    "Un mamífero",
+    "Un pez",
+    "Un reptil"
+   ],
+   "correcta": 0,
+   "tip": "Lo que hace ave a un animal son sus plumas, no el volar. El pingüino nada con sus alas.",
+   "revisada": false,
+   "id": "cien2-oa01-9"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "El lobo marino amamanta a su cría. ¿Qué es?",
+   "opciones": [
+    "Un ave",
+    "Un anfibio",
+    "Un mamífero",
+    "Un pez"
+   ],
+   "correcta": 2,
+   "tip": "Aunque vive en el mar, el lobo marino tiene pelo, respira con pulmones y da leche a su cría.",
+   "revisada": false,
+   "id": "cien2-oa01-10"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "Una lagartija toma sol sobre una piedra. ¿En qué grupo está?",
+   "opciones": [
+    "Mamíferos",
+    "Anfibios",
+    "Peces",
+    "Reptiles"
+   ],
+   "correcta": 3,
+   "tip": "La lagartija tiene escamas secas y respira con pulmones: es un reptil. El sapo es anfibio y el pejerrey, pez.",
+   "revisada": false,
+   "id": "cien2-oa01-11"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "El sapo de rulo vive en el centro de Chile. ¿Qué es?",
+   "opciones": [
+    "Un mamífero",
+    "Un pez",
+    "Un reptil",
+    "Un anfibio"
+   ],
+   "correcta": 3,
+   "tip": "El sapo tiene la piel húmeda y sin escamas: es un anfibio, como las ranas.",
+   "revisada": false,
+   "id": "cien2-oa01-12"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "¿Cuál es un pez: el delfín, el jurel o la ballena?",
+   "opciones": [
+    "Los tres",
+    "El delfín",
+    "El jurel",
+    "La ballena"
+   ],
+   "correcta": 2,
+   "tip": "El jurel respira con branquias. El delfín, la ballena y el chungungo viven en el agua, pero son mamíferos.",
+   "revisada": false,
+   "id": "cien2-oa01-13"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "El chungungo nada en el mar y tiene pelo. ¿Qué es?",
+   "opciones": [
+    "Un anfibio",
+    "Un ave",
+    "Un pez",
+    "Un mamífero"
+   ],
+   "correcta": 3,
+   "tip": "El chungungo es una nutria de la costa de Chile. Su pelo y su leche lo hacen mamífero, aunque nade.",
+   "revisada": false,
+   "id": "cien2-oa01-14"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "Las aves no tienen dientes. ¿Con qué toman su comida?",
+   "opciones": [
+    "Con el pico",
+    "Con las alas",
+    "Con la cola",
+    "Con las plumas"
+   ],
+   "correcta": 0,
+   "tip": "Las aves toman y parten la comida con el pico. Cada pico tiene la forma de lo que esa ave come.",
+   "revisada": false,
+   "id": "cien2-oa01-15"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "La tortuga tiene caparazón y escamas. ¿Qué es?",
+   "opciones": [
+    "Un pez",
+    "Un reptil",
+    "Un mamífero",
+    "Un anfibio"
+   ],
+   "correcta": 1,
+   "tip": "La tortuga es un reptil: tiene escamas, respira con pulmones y pone huevos.",
+   "revisada": false,
+   "id": "cien2-oa01-16"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "¿Qué tienen solo los mamíferos?",
+   "opciones": [
+    "Ojos para mirar",
+    "Boca para comer",
+    "Patas para caminar",
+    "Mamas para dar leche"
+   ],
+   "correcta": 3,
+   "tip": "Muchos animales tienen ojos, patas y boca, pero solo las hembras de los mamíferos tienen mamas.",
+   "revisada": false,
+   "id": "cien2-oa01-17"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "Las plumas son una marca de…",
+   "opciones": [
+    "los peces",
+    "los reptiles",
+    "las aves",
+    "los mamíferos"
+   ],
+   "correcta": 2,
+   "tip": "Ningún otro animal tiene plumas: si un animal tiene plumas, es un ave, vuele o no.",
+   "revisada": false,
+   "id": "cien2-oa01-18"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "Un animal tiene branquias y aletas. ¿Qué es?",
+   "opciones": [
+    "Una tortuga",
+    "Un sapo",
+    "Una ballena",
+    "Un pez"
+   ],
+   "correcta": 3,
+   "tip": "Las branquias son de los peces. La ballena tiene aletas, pero respira con pulmones.",
+   "revisada": false,
+   "id": "cien2-oa01-19"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "Un sapo adulto respira con pulmones y también con su…",
+   "opciones": [
+    "piel",
+    "pelo",
+    "escamas",
+    "aletas"
+   ],
+   "correcta": 0,
+   "tip": "Los anfibios adultos respiran con pulmones y también a través de su piel delgada y húmeda.",
+   "revisada": false,
+   "id": "cien2-oa01-20"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "La piel de un anfibio necesita estar…",
+   "opciones": [
+    "húmeda",
+    "con pelo",
+    "con plumas",
+    "seca"
+   ],
+   "correcta": 0,
+   "tip": "Si la piel de un anfibio se seca, le cuesta respirar. Por eso viven cerca del agua o en lugares húmedos.",
+   "revisada": false,
+   "id": "cien2-oa01-21"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "Un animal nada en el mar y amamanta a su cría. ¿Cuál es?",
+   "opciones": [
+    "El delfín",
+    "El salmón",
+    "El jurel",
+    "El tiburón"
+   ],
+   "correcta": 0,
+   "tip": "El delfín respira con pulmones y amamanta a su cría. El tiburón, el jurel y el salmón son peces.",
+   "revisada": false,
+   "id": "cien2-oa01-22"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "Busca el ave entre estos animales.",
+   "opciones": [
+    "El murciélago",
+    "La lagartija",
+    "El sapo",
+    "El ñandú"
+   ],
+   "correcta": 3,
+   "tip": "El ñandú no vuela, pero tiene plumas y pico: es un ave. El murciélago vuela, pero es mamífero.",
+   "revisada": false,
+   "id": "cien2-oa01-23"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "¿Qué tienen en común el perro, la vaca y el pudú?",
+   "opciones": [
+    "Tienen plumas",
+    "Tienen escamas",
+    "Son mamíferos",
+    "Ponen huevos"
+   ],
+   "correcta": 2,
+   "tip": "Los tres tienen pelo y amamantan a sus crías: son mamíferos.",
+   "revisada": false,
+   "id": "cien2-oa01-24"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "¿Qué tienen en común el cóndor, la gallina y el pingüino?",
+   "opciones": [
+    "Tienen escamas",
+    "Tienen plumas",
+    "Dan leche",
+    "Tienen pelo"
+   ],
+   "correcta": 1,
+   "tip": "Los tres son aves, y todas las aves tienen plumas, vuelen o no.",
+   "revisada": false,
+   "id": "cien2-oa01-25"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "Sofía juntó un sapo, una rana y una ranita. ¿Qué grupo armó?",
+   "opciones": [
+    "Reptiles",
+    "Mamíferos",
+    "Anfibios",
+    "Peces"
+   ],
+   "correcta": 2,
+   "tip": "Sapos y ranas son anfibios: tienen la piel húmeda y sin escamas.",
+   "revisada": false,
+   "id": "cien2-oa01-26"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "Matías cree que el delfín es un pez. ¿Qué le falta saber?",
+   "opciones": [
+    "Que nada muy rápido",
+    "Que vive en el mar",
+    "Que tiene aletas",
+    "Que respira con pulmones"
+   ],
+   "correcta": 3,
+   "tip": "El delfín tiene aletas y vive en el mar como los peces, pero respira con pulmones y da leche: es mamífero.",
+   "revisada": false,
+   "id": "cien2-oa01-27"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "Benjamín cree que el murciélago es un ave. ¿Por qué no lo es?",
+   "opciones": [
+    "Vive en cuevas",
+    "Come insectos",
+    "Tiene pelo, no plumas",
+    "Vuela de noche"
+   ],
+   "correcta": 2,
+   "tip": "El murciélago vuela, pero tiene pelo y amamanta a sus crías: es un mamífero. Las aves tienen plumas.",
+   "revisada": false,
+   "id": "cien2-oa01-28"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "Las aves y los reptiles respiran con pulmones. ¿Qué los diferencia?",
+   "opciones": [
+    "Solo los reptiles caminan",
+    "Solo las aves comen",
+    "Las aves tienen plumas",
+    "Los reptiles no respiran"
+   ],
+   "correcta": 2,
+   "tip": "Las aves están cubiertas de plumas y los reptiles, de escamas. Los dos comen, respiran y caminan.",
+   "revisada": false,
+   "id": "cien2-oa01-29"
+  },
+  {
+   "oa": "CN02 OA 01",
+   "pregunta": "¿Qué le sirve a un pez para moverse en el agua?",
+   "opciones": [
+    "Sus aletas",
+    "Sus branquias",
+    "Sus plumas",
+    "Su pelo"
+   ],
+   "correcta": 0,
+   "tip": "Las aletas empujan el agua para avanzar y girar. Las branquias son para respirar, no para nadar.",
+   "revisada": false,
+   "id": "cien2-oa01-30"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "Los invertebrados son animales sin…",
+   "opciones": [
+    "ojos para mirar",
+    "columna vertebral",
+    "boca para comer",
+    "patas para caminar"
+   ],
+   "correcta": 1,
+   "tip": "Invertebrado quiere decir sin columna vertebral, el hueso de la espalda. Muchos tienen patas, ojos y boca.",
+   "revisada": false,
+   "id": "cien2-oa02-1"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "¿Cuántas patas tiene un insecto?",
+   "opciones": [
+    "Seis",
+    "Diez",
+    "Cuatro",
+    "Ocho"
+   ],
+   "correcta": 0,
+   "tip": "Todos los insectos adultos tienen seis patas, como la hormiga, la abeja o la chinita.",
+   "revisada": false,
+   "id": "cien2-oa02-2"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "Una araña camina con…",
+   "opciones": [
+    "ocho patas",
+    "seis patas",
+    "cuatro patas",
+    "diez patas"
+   ],
+   "correcta": 0,
+   "tip": "Las arañas tienen ocho patas. Por eso no son insectos, que tienen seis.",
+   "revisada": false,
+   "id": "cien2-oa02-3"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "¿A qué grupo pertenece la chinita?",
+   "opciones": [
+    "Arácnidos",
+    "Gusanos",
+    "Insectos",
+    "Crustáceos"
+   ],
+   "correcta": 2,
+   "tip": "La chinita tiene seis patas, antenas y el cuerpo en tres partes: es un insecto.",
+   "revisada": false,
+   "id": "cien2-oa02-4"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "La araña, ¿en qué grupo de animales está?",
+   "opciones": [
+    "Insectos",
+    "Crustáceos",
+    "Arácnidos",
+    "Gusanos"
+   ],
+   "correcta": 2,
+   "tip": "Los arácnidos tienen ocho patas y no tienen antenas. La araña y el alacrán son arácnidos.",
+   "revisada": false,
+   "id": "cien2-oa02-5"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "Entre la jaiba, la hormiga y la araña, ¿cuál es un crustáceo?",
+   "opciones": [
+    "La hormiga",
+    "La araña",
+    "Ninguna",
+    "La jaiba"
+   ],
+   "correcta": 3,
+   "tip": "La jaiba tiene un caparazón duro y vive en el agua: es un crustáceo, como el camarón.",
+   "revisada": false,
+   "id": "cien2-oa02-6"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "La centolla tiene caparazón duro y vive en el mar. ¿Qué es?",
+   "opciones": [
+    "Un insecto",
+    "Un crustáceo",
+    "Un arácnido",
+    "Un pez"
+   ],
+   "correcta": 1,
+   "tip": "La centolla del sur de Chile es un crustáceo: tiene un caparazón duro y muchas patas articuladas.",
+   "revisada": false,
+   "id": "cien2-oa02-7"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "Camila encontró un chanchito de tierra bajo una piedra. ¿Qué es?",
+   "opciones": [
+    "Un crustáceo",
+    "Un arácnido",
+    "Un insecto",
+    "Un gusano"
+   ],
+   "correcta": 0,
+   "tip": "Aunque viva en tierra, el chanchito de tierra es pariente del camarón: es un crustáceo, y busca lugares húmedos.",
+   "revisada": false,
+   "id": "cien2-oa02-8"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "¿Qué tiene una mosca que una araña no tiene?",
+   "opciones": [
+    "Patas",
+    "Antenas",
+    "Boca",
+    "Ojos"
+   ],
+   "correcta": 1,
+   "tip": "Los insectos, como la mosca, tienen antenas. Las arañas no tienen antenas.",
+   "revisada": false,
+   "id": "cien2-oa02-9"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "¿En cuántas partes se divide el cuerpo de un insecto?",
+   "opciones": [
+    "Cinco",
+    "Dos",
+    "Cuatro",
+    "Tres"
+   ],
+   "correcta": 3,
+   "tip": "El cuerpo de un insecto tiene tres partes: cabeza, tórax y abdomen. Las patas salen del tórax.",
+   "revisada": false,
+   "id": "cien2-oa02-10"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "¿Cuáles son las partes del cuerpo de un insecto?",
+   "opciones": [
+    "cabeza, cuello y cola",
+    "cabeza, alas y patas",
+    "cabeza, tórax y abdomen",
+    "boca, ojos y cola"
+   ],
+   "correcta": 2,
+   "tip": "La cabeza tiene ojos y antenas, el tórax tiene las patas y las alas, y el abdomen está atrás.",
+   "revisada": false,
+   "id": "cien2-oa02-11"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "¿Qué animal NO tiene columna vertebral?",
+   "opciones": [
+    "La lagartija",
+    "La culebra",
+    "La lombriz",
+    "El pejerrey"
+   ],
+   "correcta": 2,
+   "tip": "La lombriz tiene el cuerpo blando y sin columna. La culebra también es alargada, pero tiene huesos.",
+   "revisada": false,
+   "id": "cien2-oa02-12"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "La culebra no tiene patas. ¿Tiene columna vertebral?",
+   "opciones": [
+    "No, como la lombriz",
+    "No, es blanda",
+    "Solo en la cola",
+    "Sí, muy larga"
+   ],
+   "correcta": 3,
+   "tip": "Por dentro, la culebra tiene una columna vertebral muy larga, de punta a punta. Es un vertebrado, aunque no tenga patas.",
+   "revisada": false,
+   "id": "cien2-oa02-13"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "El caracol tiene cuerpo blando y caparazón. ¿Tiene columna vertebral?",
+   "opciones": [
+    "Solo cuando es grande",
+    "No, es invertebrado",
+    "Sí, dentro del cuerpo",
+    "Sí, dentro del caparazón"
+   ],
+   "correcta": 1,
+   "tip": "El caracol es un invertebrado: no tiene huesos. Su caparazón duro lo protege por fuera.",
+   "revisada": false,
+   "id": "cien2-oa02-14"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "El perro es vertebrado y la mosca no. ¿Por qué?",
+   "opciones": [
+    "Solo el perro tiene patas",
+    "Solo el perro tiene columna",
+    "Solo la mosca respira",
+    "Solo la mosca tiene ojos"
+   ],
+   "correcta": 1,
+   "tip": "El perro tiene columna vertebral y la mosca no. Los dos tienen patas, ojos y respiran.",
+   "revisada": false,
+   "id": "cien2-oa02-15"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "¿Qué protege el cuerpo blando de un caracol?",
+   "opciones": [
+    "Sus plumas",
+    "Su caparazón",
+    "Sus escamas",
+    "Su columna"
+   ],
+   "correcta": 1,
+   "tip": "El caparazón es una casa dura que el caracol lleva encima. Cuando hay peligro, se esconde adentro.",
+   "revisada": false,
+   "id": "cien2-oa02-16"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "¿Cómo es el cuerpo de una lombriz?",
+   "opciones": [
+    "Con caparazón duro",
+    "Duro y con patas",
+    "Con ocho patas",
+    "Blando y sin patas"
+   ],
+   "correcta": 3,
+   "tip": "La lombriz tiene el cuerpo blando, largo y sin patas. Se mueve estirándose y encogiéndose.",
+   "revisada": false,
+   "id": "cien2-oa02-17"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "La araña pollito tiene ocho patas y pelos. ¿Qué es?",
+   "opciones": [
+    "Un insecto",
+    "Un mamífero",
+    "Un arácnido",
+    "Un crustáceo"
+   ],
+   "correcta": 2,
+   "tip": "Tener pelitos no la hace mamífero. Sus ocho patas muestran que la araña pollito es un arácnido.",
+   "revisada": false,
+   "id": "cien2-oa02-18"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "¿Qué animal tiene alas y seis patas?",
+   "opciones": [
+    "La jaiba",
+    "La abeja",
+    "La araña",
+    "El murciélago"
+   ],
+   "correcta": 1,
+   "tip": "La abeja es un insecto: seis patas y alas. El murciélago tiene alas, pero es un mamífero.",
+   "revisada": false,
+   "id": "cien2-oa02-19"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "El ciervo volante tiene seis patas y antenas. ¿Qué es?",
+   "opciones": [
+    "Un arácnido",
+    "Un mamífero",
+    "Un crustáceo",
+    "Un insecto"
+   ],
+   "correcta": 3,
+   "tip": "El ciervo volante es un escarabajo de los bosques del sur de Chile. Aunque se llame ciervo, es un insecto.",
+   "revisada": false,
+   "id": "cien2-oa02-20"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "Diego dice que la araña es un insecto. ¿En qué se equivoca?",
+   "opciones": [
+    "Tiene el cuerpo blando",
+    "Tiene seis patas, no ocho",
+    "Tiene antenas muy largas",
+    "Tiene ocho patas, no seis"
+   ],
+   "correcta": 3,
+   "tip": "Los insectos tienen seis patas y las arañas, ocho. Por eso la araña es un arácnido.",
+   "revisada": false,
+   "id": "cien2-oa02-21"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "¿Qué tienen la jaiba y el camarón?",
+   "opciones": [
+    "Plumas en el cuerpo",
+    "Pelo en la piel",
+    "Columna vertebral",
+    "Un caparazón duro"
+   ],
+   "correcta": 3,
+   "tip": "Los crustáceos, como la jaiba y el camarón, tienen un caparazón duro que los protege. No tienen columna.",
+   "revisada": false,
+   "id": "cien2-oa02-22"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "¿Qué cubre por fuera el cuerpo de una hormiga?",
+   "opciones": [
+    "Una capa dura",
+    "Piel húmeda",
+    "Plumas",
+    "Pelo grueso"
+   ],
+   "correcta": 0,
+   "tip": "Los insectos no tienen huesos adentro: una capa dura por fuera sostiene y protege su cuerpo.",
+   "revisada": false,
+   "id": "cien2-oa02-23"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "¿Dónde vive la mayoría de los crustáceos?",
+   "opciones": [
+    "En el agua",
+    "En el desierto",
+    "Bajo la nieve",
+    "En los árboles"
+   ],
+   "correcta": 0,
+   "tip": "Casi todos los crustáceos viven en el mar, los ríos o los lagos. El chanchito de tierra es una excepción.",
+   "revisada": false,
+   "id": "cien2-oa02-24"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "En el mar, ¿qué animal tiene el cuerpo sin huesos?",
+   "opciones": [
+    "El pingüino",
+    "El pulpo",
+    "El pejerrey",
+    "El delfín"
+   ],
+   "correcta": 1,
+   "tip": "El pulpo tiene el cuerpo blando y sin huesos. El delfín, el pejerrey y el pingüino tienen columna.",
+   "revisada": false,
+   "id": "cien2-oa02-25"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "La estrella de mar no tiene columna vertebral. ¿Qué es?",
+   "opciones": [
+    "Un invertebrado",
+    "Un reptil",
+    "Un vertebrado",
+    "Un mamífero"
+   ],
+   "correcta": 0,
+   "tip": "Sin columna vertebral, la estrella de mar es un invertebrado. A pesar de su nombre, no es un pez.",
+   "revisada": false,
+   "id": "cien2-oa02-26"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "Matías dice que los invertebrados son siempre chicos. ¿Es así?",
+   "opciones": [
+    "No, hay algunos grandes",
+    "Sí, todos son chicos",
+    "Sí, caben en la mano",
+    "Solo los del mar"
+   ],
+   "correcta": 0,
+   "tip": "Muchos son pequeños, pero no todos: hay pulpos y calamares más grandes que una persona.",
+   "revisada": false,
+   "id": "cien2-oa02-27"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "La hormiga, la abeja y la mosca tienen…",
+   "opciones": [
+    "ocho patas",
+    "caparazón",
+    "columna vertebral",
+    "seis patas"
+   ],
+   "correcta": 3,
+   "tip": "Las tres son insectos, y todos los insectos tienen seis patas.",
+   "revisada": false,
+   "id": "cien2-oa02-28"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "La lombriz y la culebra son alargadas. ¿Qué las diferencia?",
+   "opciones": [
+    "La culebra no come",
+    "La lombriz tiene patas",
+    "La lombriz tiene escamas",
+    "La culebra tiene huesos"
+   ],
+   "correcta": 3,
+   "tip": "La culebra es un vertebrado: tiene columna y escamas. La lombriz no tiene huesos ni patas.",
+   "revisada": false,
+   "id": "cien2-oa02-29"
+  },
+  {
+   "oa": "CN02 OA 02",
+   "pregunta": "Al alacrán le contamos ocho patas y ninguna antena. Es un…",
+   "opciones": [
+    "reptil",
+    "arácnido",
+    "crustáceo",
+    "insecto"
+   ],
+   "correcta": 1,
+   "tip": "Las ocho patas y la falta de antenas hacen del alacrán un arácnido, igual que la araña.",
+   "revisada": false,
+   "id": "cien2-oa02-30"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "¿Cuál es el orden del ciclo de vida?",
+   "opciones": [
+    "crecer, nacer, morir, reproducirse",
+    "nacer, reproducirse, crecer, morir",
+    "nacer, morir, crecer, reproducirse",
+    "nacer, crecer, reproducirse, morir"
+   ],
+   "correcta": 3,
+   "tip": "Todo animal primero nace, después crece, luego puede tener crías y al final muere.",
+   "revisada": false,
+   "id": "cien2-oa03-1"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "¿Qué sale del huevo de una mariposa?",
+   "opciones": [
+    "Un renacuajo",
+    "Una pupa",
+    "Una oruga",
+    "Una mariposa chica"
+   ],
+   "correcta": 2,
+   "tip": "Del huevo de la mariposa sale una oruga. Recién después de transformarse será mariposa.",
+   "revisada": false,
+   "id": "cien2-oa03-2"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "¿Qué hace la oruga casi todo el día?",
+   "opciones": [
+    "Volar lejos",
+    "Nadar en el agua",
+    "Comer hojas",
+    "Poner huevos"
+   ],
+   "correcta": 2,
+   "tip": "La oruga come mucho para crecer y guardar energía. Esa energía la usará dentro de la pupa.",
+   "revisada": false,
+   "id": "cien2-oa03-3"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "Dentro de la pupa, la oruga…",
+   "opciones": [
+    "se transforma",
+    "come hojas",
+    "se queda igual",
+    "pone huevos"
+   ],
+   "correcta": 0,
+   "tip": "En la pupa, también llamada crisálida, la oruga no come: su cuerpo cambia hasta formar una mariposa.",
+   "revisada": false,
+   "id": "cien2-oa03-4"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "Una oruga ya formó su pupa. ¿Qué saldrá de ella?",
+   "opciones": [
+    "Un renacuajo",
+    "Una mariposa",
+    "Un huevo",
+    "Una oruga nueva"
+   ],
+   "correcta": 1,
+   "tip": "La mariposa pasa por huevo, oruga y pupa. De la pupa sale la mariposa adulta, con alas.",
+   "revisada": false,
+   "id": "cien2-oa03-5"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "¿Cómo se llama la cría de la rana?",
+   "opciones": [
+    "Oruga",
+    "Pollito",
+    "Renacuajo",
+    "Cachorro"
+   ],
+   "correcta": 2,
+   "tip": "La cría de la rana es el renacuajo. Al principio no se parece nada a sus padres.",
+   "revisada": false,
+   "id": "cien2-oa03-6"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "¿Dónde vive el renacuajo?",
+   "opciones": [
+    "En un nido",
+    "En tierra seca",
+    "En el agua",
+    "En un árbol"
+   ],
+   "correcta": 2,
+   "tip": "El renacuajo nada con su cola y vive en el agua, como un pez pequeño.",
+   "revisada": false,
+   "id": "cien2-oa03-7"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "¿Con qué respira el renacuajo?",
+   "opciones": [
+    "Con escamas",
+    "Con pulmones",
+    "Con plumas",
+    "Con branquias"
+   ],
+   "correcta": 3,
+   "tip": "El renacuajo respira bajo el agua con branquias. Cuando crece, aparecen los pulmones.",
+   "revisada": false,
+   "id": "cien2-oa03-8"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "¿Qué le pasa a la cola del renacuajo al crecer?",
+   "opciones": [
+    "Desaparece",
+    "Se llena de escamas",
+    "Se alarga más",
+    "Se vuelve pata"
+   ],
+   "correcta": 0,
+   "tip": "Mientras le crecen las patas, la cola se va achicando hasta desaparecer. Las patas no salen de la cola.",
+   "revisada": false,
+   "id": "cien2-oa03-9"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "¿Por qué muchas ranas ponen sus huevos en el agua?",
+   "opciones": [
+    "El agua los calienta",
+    "Sus crías viven en el agua",
+    "Así no se rompen",
+    "Los peces los cuidan"
+   ],
+   "correcta": 1,
+   "tip": "Los renacuajos necesitan el agua para vivir. Por eso muchas ranas dejan sus huevos ahí.",
+   "revisada": false,
+   "id": "cien2-oa03-10"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "El papá de la ranita de Darwin guarda a sus crías en…",
+   "opciones": [
+    "una cueva",
+    "un nido",
+    "su lomo",
+    "su garganta"
+   ],
+   "correcta": 3,
+   "tip": "El macho de la ranita de Darwin guarda a sus crías en un saco de su garganta hasta que salen como ranitas.",
+   "revisada": false,
+   "id": "cien2-oa03-11"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "¿Cómo nace un pollito?",
+   "opciones": [
+    "Del vientre de su madre",
+    "De una pupa",
+    "De un huevo",
+    "De una semilla"
+   ],
+   "correcta": 2,
+   "tip": "El pollito crece dentro del huevo y rompe la cáscara para salir. Las aves nacen de huevos.",
+   "revisada": false,
+   "id": "cien2-oa03-12"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "¿Para qué la gallina se echa sobre sus huevos?",
+   "opciones": [
+    "Para romperlos",
+    "Para enfriarlos",
+    "Para darles calor",
+    "Para esconderlos"
+   ],
+   "correcta": 2,
+   "tip": "El pollito necesita calor para crecer dentro del huevo. La gallina se lo da con su cuerpo.",
+   "revisada": false,
+   "id": "cien2-oa03-13"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "¿Cuál de estos animales nace del vientre de su madre?",
+   "opciones": [
+    "La rana",
+    "El pudú",
+    "La mariposa",
+    "El cóndor"
+   ],
+   "correcta": 1,
+   "tip": "El pudú es mamífero: crece dentro de su madre y nace de su vientre. Los otros nacen de huevos.",
+   "revisada": false,
+   "id": "cien2-oa03-14"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "Al nacer, ¿qué toma la cría del pudú?",
+   "opciones": [
+    "Semillas duras",
+    "Leche de su madre",
+    "Hojas del bosque",
+    "Insectos chicos"
+   ],
+   "correcta": 1,
+   "tip": "Como todos los mamíferos, el pudú bebé se alimenta de la leche de su madre. Más grande, comerá hojas.",
+   "revisada": false,
+   "id": "cien2-oa03-15"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "Al nacer, un cachorro de perro se parece…",
+   "opciones": [
+    "a un renacuajo",
+    "a un pollito",
+    "a una oruga",
+    "a sus padres"
+   ],
+   "correcta": 3,
+   "tip": "El cachorro nace con la forma de sus padres, solo que más chico. No cambia de forma al crecer.",
+   "revisada": false,
+   "id": "cien2-oa03-16"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "¿Qué animal cambia mucho de forma al crecer?",
+   "opciones": [
+    "El perro",
+    "El gato",
+    "El pudú",
+    "La mariposa"
+   ],
+   "correcta": 3,
+   "tip": "La mariposa pasa por oruga y pupa antes de ser adulta. El perro, el pudú y el gato solo crecen.",
+   "revisada": false,
+   "id": "cien2-oa03-17"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "¿En qué se parecen los ciclos de la rana y la mariposa?",
+   "opciones": [
+    "Nacen del vientre",
+    "Toman leche",
+    "Siempre viven en el agua",
+    "Cambian mucho de forma"
+   ],
+   "correcta": 3,
+   "tip": "La rana pasa por renacuajo y la mariposa por oruga y pupa: las dos cambian mucho de forma al crecer.",
+   "revisada": false,
+   "id": "cien2-oa03-18"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "La mariposa pone sus huevos en una hoja. ¿Por qué?",
+   "opciones": [
+    "Su oruga comerá hojas",
+    "El viento los llevará",
+    "La hoja los enfría",
+    "Así vuelan mejor"
+   ],
+   "correcta": 0,
+   "tip": "Al salir del huevo, la oruga tiene la comida al lado: las hojas de esa planta.",
+   "revisada": false,
+   "id": "cien2-oa03-19"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "La abeja pasa por larva y pupa. ¿A qué ciclo se parece?",
+   "opciones": [
+    "Al del cóndor",
+    "Al de la mariposa",
+    "Al del gato",
+    "Al del pudú"
+   ],
+   "correcta": 1,
+   "tip": "La abeja, como la mariposa, pasa por huevo, larva, pupa y adulto: cambia mucho de forma al crecer.",
+   "revisada": false,
+   "id": "cien2-oa03-20"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "¿Qué le crece primero al renacuajo?",
+   "opciones": [
+    "Unas alas",
+    "Las patas de atrás",
+    "Unas escamas",
+    "Las patas de adelante"
+   ],
+   "correcta": 1,
+   "tip": "Al renacuajo le salen primero las patas de atrás y después las de adelante.",
+   "revisada": false,
+   "id": "cien2-oa03-21"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "Al nacer, el grillo se parece a un adulto, pero sin…",
+   "opciones": [
+    "alas",
+    "cabeza",
+    "patas",
+    "ojos"
+   ],
+   "correcta": 0,
+   "tip": "El grillo nace con patas, cabeza y ojos, como un adulto chico. Las alas le salen al crecer.",
+   "revisada": false,
+   "id": "cien2-oa03-22"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "¿Quién cuida al polluelo del cóndor?",
+   "opciones": [
+    "Sus padres",
+    "Los peces del río",
+    "Nadie, se cuida solo",
+    "Otros animales"
+   ],
+   "correcta": 0,
+   "tip": "Los padres del cóndor cuidan y alimentan a su polluelo por mucho tiempo, hasta que puede volar.",
+   "revisada": false,
+   "id": "cien2-oa03-23"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "¿Dónde pone su huevo el cóndor?",
+   "opciones": [
+    "En la arena",
+    "Bajo tierra",
+    "En rocas altas",
+    "En el agua"
+   ],
+   "correcta": 2,
+   "tip": "El cóndor pone su huevo en rocas altas de la cordillera, lejos de quienes podrían comérselo.",
+   "revisada": false,
+   "id": "cien2-oa03-24"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "El pingüino de Humboldt hace su nido…",
+   "opciones": [
+    "sobre la nieve",
+    "flotando en el mar",
+    "en cuevas de la costa",
+    "en lo alto de un árbol"
+   ],
+   "correcta": 2,
+   "tip": "El pingüino de Humboldt vive en la costa de Chile y cuida sus huevos en cuevas cerca del mar.",
+   "revisada": false,
+   "id": "cien2-oa03-25"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "¿Qué etapa viene después de crecer?",
+   "opciones": [
+    "Nacer",
+    "Ser cría",
+    "Reproducirse",
+    "Ser huevo"
+   ],
+   "correcta": 2,
+   "tip": "Cuando un animal ya creció, puede reproducirse, es decir, tener sus propias crías.",
+   "revisada": false,
+   "id": "cien2-oa03-26"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "¿Qué significa reproducirse?",
+   "opciones": [
+    "Comer mucho",
+    "Tener crías",
+    "Cambiar de piel",
+    "Dormir en invierno"
+   ],
+   "correcta": 1,
+   "tip": "Reproducirse es tener crías. Así nacen animales nuevos y el ciclo de vida vuelve a empezar.",
+   "revisada": false,
+   "id": "cien2-oa03-27"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "La oruga y la mariposa son…",
+   "opciones": [
+    "animales distintos",
+    "una planta y un insecto",
+    "un insecto y un gusano",
+    "el mismo animal"
+   ],
+   "correcta": 3,
+   "tip": "La oruga es la mariposa cuando joven. Es el mismo animal en otra etapa de su ciclo de vida.",
+   "revisada": false,
+   "id": "cien2-oa03-28"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "Camila vio renacuajos en una laguna. ¿En qué se convertirán?",
+   "opciones": [
+    "En culebras",
+    "En lagartijas",
+    "En ranas",
+    "En peces"
+   ],
+   "correcta": 2,
+   "tip": "Aunque nadan como peces, los renacuajos son ranas jóvenes. Con el tiempo les salen patas.",
+   "revisada": false,
+   "id": "cien2-oa03-29"
+  },
+  {
+   "oa": "CN02 OA 03",
+   "pregunta": "¿Dónde puede vivir una rana adulta?",
+   "opciones": [
+    "Solo en tierra seca",
+    "En tierra húmeda y agua",
+    "Solo en el mar salado",
+    "Solo dentro del agua"
+   ],
+   "correcta": 1,
+   "tip": "La rana adulta respira con pulmones y puede salir del agua, pero necesita lugares húmedos cerca.",
+   "revisada": false,
+   "id": "cien2-oa03-30"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "¿Qué es el hábitat de un animal?",
+   "opciones": [
+    "La forma del cuerpo",
+    "El lugar donde vive",
+    "Su grupo de animales",
+    "La comida que come"
+   ],
+   "correcta": 1,
+   "tip": "El hábitat es el lugar donde un animal vive y encuentra agua, alimento y refugio.",
+   "revisada": false,
+   "id": "cien2-oa04-1"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "¿Cómo es el desierto de Atacama?",
+   "opciones": [
+    "Cubierto de hielo",
+    "Lluvioso todo el año",
+    "Muy húmedo y sombrío",
+    "Muy seco y soleado"
+   ],
+   "correcta": 3,
+   "tip": "En el desierto de Atacama casi nunca llueve y el Sol brilla fuerte casi todos los días.",
+   "revisada": false,
+   "id": "cien2-oa04-2"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "¿Cómo es el bosque lluvioso del sur de Chile?",
+   "opciones": [
+    "Arenoso y soleado",
+    "Seco y caluroso",
+    "Húmedo y sombrío",
+    "Sin árboles ni agua"
+   ],
+   "correcta": 2,
+   "tip": "En el sur llueve mucho y los árboles altos tapan la luz, así que el bosque es húmedo y con sombra.",
+   "revisada": false,
+   "id": "cien2-oa04-3"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "El pudú vive en el bosque del sur. ¿Qué encuentra ahí?",
+   "opciones": [
+    "Humedad y sombra",
+    "Hielo todo el año",
+    "Agua muy salada",
+    "Arena y mucho sol"
+   ],
+   "correcta": 0,
+   "tip": "El bosque del sur es húmedo y sombrío: ahí el pudú encuentra hojas para comer y lugares para esconderse.",
+   "revisada": false,
+   "id": "cien2-oa04-4"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "Una caja tiene un lado húmedo y otro seco. ¿Dónde van los chanchitos?",
+   "opciones": [
+    "Al lado húmedo",
+    "Al centro",
+    "Fuera de la caja",
+    "Al lado seco"
+   ],
+   "correcta": 0,
+   "tip": "El chanchito de tierra necesita humedad: en un lugar seco su cuerpo se reseca. Por eso vive bajo piedras y hojas.",
+   "revisada": false,
+   "id": "cien2-oa04-5"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "Sofía tapó media caja con un paño oscuro. ¿Dónde van los chanchitos?",
+   "opciones": [
+    "Encima del paño",
+    "Bajo el paño",
+    "Donde da la luz",
+    "Repartidos igual"
+   ],
+   "correcta": 1,
+   "tip": "Los chanchitos de tierra buscan lugares oscuros y húmedos, como el que deja el paño. Huyen de la luz fuerte.",
+   "revisada": false,
+   "id": "cien2-oa04-6"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "La lombriz vive bajo la tierra. ¿Qué necesita su hábitat?",
+   "opciones": [
+    "Mucho sol",
+    "Agua salada",
+    "Arena seca",
+    "Tierra húmeda"
+   ],
+   "correcta": 3,
+   "tip": "La lombriz respira por la piel, que debe estar húmeda. Por eso vive en tierra húmeda y oscura.",
+   "revisada": false,
+   "id": "cien2-oa04-7"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "La lombriz quedó sobre la vereda al sol. ¿Qué le pasa?",
+   "opciones": [
+    "Se refresca",
+    "Duerme mejor",
+    "Crece más",
+    "Se reseca"
+   ],
+   "correcta": 3,
+   "tip": "Al sol, la piel de la lombriz se seca y ya no puede respirar bien. Necesita la humedad de la tierra.",
+   "revisada": false,
+   "id": "cien2-oa04-8"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "¿Cómo es la Antártica, donde viven muchos pingüinos?",
+   "opciones": [
+    "Húmeda y caliente",
+    "Calurosa y seca",
+    "Muy fría, con hielo",
+    "Templada y verde"
+   ],
+   "correcta": 2,
+   "tip": "En la Antártica hace muchísimo frío y hay hielo todo el año. Los animales de ahí soportan ese frío.",
+   "revisada": false,
+   "id": "cien2-oa04-9"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "El lobo marino nada en agua muy fría. ¿Qué lo abriga?",
+   "opciones": [
+    "Sus escamas duras",
+    "Su piel delgada",
+    "Sus plumas finas",
+    "Su capa de grasa"
+   ],
+   "correcta": 3,
+   "tip": "Bajo la piel, el lobo marino tiene una capa gruesa de grasa que guarda el calor de su cuerpo en el agua fría.",
+   "revisada": false,
+   "id": "cien2-oa04-10"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "La chinchilla vive en la cordillera, donde hace frío. ¿Qué la abriga?",
+   "opciones": [
+    "Su caparazón duro",
+    "Sus escamas gruesas",
+    "Su pelaje muy denso",
+    "Sus plumas largas"
+   ],
+   "correcta": 2,
+   "tip": "La chinchilla tiene un pelaje tupido y suave que la protege del frío de la cordillera.",
+   "revisada": false,
+   "id": "cien2-oa04-11"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "La lagartija toma sol en la mañana. ¿Para qué?",
+   "opciones": [
+    "Para refrescarse",
+    "Para calentarse",
+    "Para cambiar de piel",
+    "Para dormir más"
+   ],
+   "correcta": 1,
+   "tip": "La lagartija no produce su propio calor como nosotros: lo toma del Sol. Por eso necesita un hábitat con sol.",
+   "revisada": false,
+   "id": "cien2-oa04-12"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "A mediodía hace mucho calor. ¿Dónde se mete la lagartija?",
+   "opciones": [
+    "Sobre la arena caliente",
+    "Bajo una piedra fresca",
+    "Dentro de un lago",
+    "Arriba de un árbol"
+   ],
+   "correcta": 1,
+   "tip": "Cuando hace demasiado calor, la lagartija busca sombra bajo una piedra para no calentarse de más.",
+   "revisada": false,
+   "id": "cien2-oa04-13"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "El murciélago duerme de día. ¿Dónde busca refugio?",
+   "opciones": [
+    "En la arena marina",
+    "En una cueva oscura",
+    "Sobre una roca soleada",
+    "En un prado soleado"
+   ],
+   "correcta": 1,
+   "tip": "El murciélago descansa de día en lugares oscuros, como cuevas o huecos de árboles, y sale de noche.",
+   "revisada": false,
+   "id": "cien2-oa04-14"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "¿Qué hábitat es más oscuro?",
+   "opciones": [
+    "La playa al mediodía",
+    "La cumbre del cerro",
+    "Un prado en verano",
+    "El fondo del mar"
+   ],
+   "correcta": 3,
+   "tip": "La luz del Sol entra al mar, pero se va perdiendo al bajar. Al fondo del mar llega muy poca luz.",
+   "revisada": false,
+   "id": "cien2-oa04-15"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "¿En qué lugar casi nunca llueve?",
+   "opciones": [
+    "En un pantano",
+    "En el desierto",
+    "En una laguna",
+    "En el bosque sureño"
+   ],
+   "correcta": 1,
+   "tip": "En el desierto casi no llueve. La laguna, el pantano y el bosque del sur tienen mucha agua.",
+   "revisada": false,
+   "id": "cien2-oa04-16"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "Un animal necesita frío todo el año. ¿Dónde puede vivir?",
+   "opciones": [
+    "En el desierto",
+    "En una playa cálida",
+    "En el hielo antártico",
+    "En un valle soleado"
+   ],
+   "correcta": 2,
+   "tip": "En la Antártica hace frío todo el año. Una playa cálida, un valle con sol y el desierto de día son calurosos.",
+   "revisada": false,
+   "id": "cien2-oa04-17"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "El flamenco vive en el altiplano. ¿Cómo son las noches allá?",
+   "opciones": [
+    "Tibias y húmedas",
+    "Frías, con heladas",
+    "Muy calurosas",
+    "Siempre templadas"
+   ],
+   "correcta": 1,
+   "tip": "El altiplano está muy alto en la cordillera. Ahí las noches son frías y el agua puede congelarse.",
+   "revisada": false,
+   "id": "cien2-oa04-18"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "¿Qué necesita siempre el hábitat de un pez?",
+   "opciones": [
+    "Hojas verdes",
+    "Arena seca",
+    "Mucha sombra",
+    "Agua limpia"
+   ],
+   "correcta": 3,
+   "tip": "El pez toma con sus branquias el oxígeno que hay en el agua. Sin agua limpia no puede vivir.",
+   "revisada": false,
+   "id": "cien2-oa04-19"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "Un pez quedó fuera del agua. ¿Qué le pasa?",
+   "opciones": [
+    "Respira mejor",
+    "Se pone más fuerte",
+    "No puede respirar",
+    "Crece más rápido"
+   ],
+   "correcta": 2,
+   "tip": "Las branquias del pez solo sirven dentro del agua. Fuera de ella se secan y el pez se ahoga.",
+   "revisada": false,
+   "id": "cien2-oa04-20"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "La ranita de Darwin vive entre musgos del bosque. ¿Cómo es ahí?",
+   "opciones": [
+    "Arenoso y seco",
+    "Seco y caluroso",
+    "Húmedo y fresco",
+    "Salado y soleado"
+   ],
+   "correcta": 2,
+   "tip": "El musgo crece donde hay humedad y sombra. Ese lugar húmedo y fresco es el que necesita la ranita.",
+   "revisada": false,
+   "id": "cien2-oa04-21"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "¿Por qué la ranita de Darwin no podría vivir en el desierto?",
+   "opciones": [
+    "Le faltaría humedad",
+    "Habría poca arena",
+    "Habría mucha sombra",
+    "Le sobraría agua"
+   ],
+   "correcta": 0,
+   "tip": "La ranita necesita un lugar húmedo, y en el desierto casi no hay agua. Ahí se secaría.",
+   "revisada": false,
+   "id": "cien2-oa04-22"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "¿En qué se parecen el bosque del sur y una laguna?",
+   "opciones": [
+    "Ambos son secos",
+    "Ambos son húmedos",
+    "Ambos son salados",
+    "Ambos son calurosos"
+   ],
+   "correcta": 1,
+   "tip": "En el bosque del sur llueve mucho y la laguna es agua: los dos son lugares húmedos.",
+   "revisada": false,
+   "id": "cien2-oa04-23"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "Comparado con el bosque del sur, el desierto es…",
+   "opciones": [
+    "más lluvioso",
+    "más sombrío",
+    "más húmedo",
+    "más seco"
+   ],
+   "correcta": 3,
+   "tip": "El bosque del sur recibe mucha lluvia y tiene sombra. El desierto casi no recibe lluvia y tiene mucho sol.",
+   "revisada": false,
+   "id": "cien2-oa04-24"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "¿Qué animal vive en el altiplano frío?",
+   "opciones": [
+    "El pudú",
+    "La jaiba",
+    "El delfín",
+    "La vicuña"
+   ],
+   "correcta": 3,
+   "tip": "La vicuña vive en el altiplano, alto y frío, y su lana fina la abriga. El delfín y la jaiba viven en el mar, y el pudú en el bosque del sur.",
+   "revisada": false,
+   "id": "cien2-oa04-25"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "¿Dónde vive el chungungo?",
+   "opciones": [
+    "En el desierto",
+    "En la cordillera",
+    "En la costa rocosa",
+    "En un bosque seco"
+   ],
+   "correcta": 2,
+   "tip": "El chungungo vive en las rocas de la costa y caza en el mar. Necesita el agua fría del océano.",
+   "revisada": false,
+   "id": "cien2-oa04-26"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "¿Qué hacen muchos animales del desierto en el día caluroso?",
+   "opciones": [
+    "Suben a la nieve",
+    "Se ocultan del sol",
+    "Corren bajo el sol",
+    "Se bañan en lagos"
+   ],
+   "correcta": 1,
+   "tip": "En el desierto el día es muy caluroso. Muchos animales pasan esas horas escondidos en cuevas o bajo piedras.",
+   "revisada": false,
+   "id": "cien2-oa04-27"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "¿Cuándo salen a buscar comida muchos animales del desierto?",
+   "opciones": [
+    "Al mediodía caluroso",
+    "En la tarde soleada",
+    "En la noche fresca",
+    "Cuando llueve fuerte"
+   ],
+   "correcta": 2,
+   "tip": "Muchos animales del desierto salen de noche, cuando ya no hace tanto calor.",
+   "revisada": false,
+   "id": "cien2-oa04-28"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "¿Qué hábitat recibe más luz del Sol?",
+   "opciones": [
+    "El bosque tupido",
+    "Bajo un tronco",
+    "Dentro de una cueva",
+    "Un prado abierto"
+   ],
+   "correcta": 3,
+   "tip": "En un prado no hay árboles ni techo que tapen el Sol, así que la luz llega directo.",
+   "revisada": false,
+   "id": "cien2-oa04-29"
+  },
+  {
+   "oa": "CN02 OA 04",
+   "pregunta": "Una laguna se secó. ¿Qué tendrán que hacer sus patos?",
+   "opciones": [
+    "Vivir sin agua",
+    "Dormir en el barro",
+    "Buscar otra laguna",
+    "Quedarse igual"
+   ],
+   "correcta": 2,
+   "tip": "El pato necesita agua para nadar y comer. Si su laguna se seca, tiene que buscar otro lugar con agua.",
+   "revisada": false,
+   "id": "cien2-oa04-30"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué significa que un animal esté en peligro de extinción?",
+   "opciones": [
+    "Vive en el zoológico",
+    "Quedan muy pocos",
+    "Es muy grande",
+    "Es muy peligroso"
+   ],
+   "correcta": 1,
+   "tip": "Un animal en peligro de extinción es uno del que quedan muy pocos y podría desaparecer. No quiere decir que sea peligroso.",
+   "revisada": false,
+   "id": "cien2-oa05-1"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué pasa cuando un tipo de animal se extingue?",
+   "opciones": [
+    "Ya no queda ninguno",
+    "Se vuelve más fuerte",
+    "Se esconde un tiempo",
+    "Se muda de país"
+   ],
+   "correcta": 0,
+   "tip": "Cuando un tipo de animal se extingue, muere el último que quedaba y ya no vuelve a existir.",
+   "revisada": false,
+   "id": "cien2-oa05-2"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Cuál de estos animales está en peligro de extinción?",
+   "opciones": [
+    "La paloma",
+    "El huemul",
+    "El gorrión",
+    "El conejo"
+   ],
+   "correcta": 1,
+   "tip": "Del huemul, un ciervo nativo de Chile, quedan muy pocos. La paloma, el gorrión y el conejo son muy abundantes.",
+   "revisada": false,
+   "id": "cien2-oa05-3"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "El huemul aparece en el escudo de Chile. ¿Cómo está hoy?",
+   "opciones": [
+    "Hay muchísimos",
+    "Ya se extinguió",
+    "Quedan muy pocos",
+    "Vive en las ciudades"
+   ],
+   "correcta": 2,
+   "tip": "El huemul todavía existe, pero quedan muy pocos. Por eso está en peligro de extinción.",
+   "revisada": false,
+   "id": "cien2-oa05-4"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Dónde vive el huemul?",
+   "opciones": [
+    "En la costa norte",
+    "En el desierto",
+    "En bosques del sur",
+    "En las ciudades"
+   ],
+   "correcta": 2,
+   "tip": "El huemul vive en bosques y montañas del sur de Chile. Si esos lugares se dañan, se queda sin hogar.",
+   "revisada": false,
+   "id": "cien2-oa05-5"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué pone en peligro a la ranita de Darwin?",
+   "opciones": [
+    "Que crezca el musgo",
+    "Que haya mucha sombra",
+    "Que corten el bosque",
+    "Que llueva en invierno"
+   ],
+   "correcta": 2,
+   "tip": "La ranita necesita el bosque húmedo. Si lo cortan, pierde su hogar. La lluvia, el musgo y la sombra son justo lo que necesita.",
+   "revisada": false,
+   "id": "cien2-oa05-6"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué es una razón de que haya pocos huemules?",
+   "opciones": [
+    "Les molesta el frío",
+    "Les quitaron su bosque",
+    "Comen demasiado pasto",
+    "Les gusta estar solos"
+   ],
+   "correcta": 1,
+   "tip": "Al cortar y quemar los bosques del sur, el huemul perdió gran parte de su hogar. También lo dañaron la caza y los perros sueltos.",
+   "revisada": false,
+   "id": "cien2-oa05-7"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "Ana pasea a su perro cerca del bosque del pudú. ¿Qué debe hacer?",
+   "opciones": [
+    "Llevar pan al pudú",
+    "Dejar que persiga",
+    "Llevarlo con correa",
+    "Soltarlo para correr"
+   ],
+   "correcta": 2,
+   "tip": "Los perros sueltos persiguen y atacan a los pudúes. Llevar al perro con correa protege a los animales del bosque.",
+   "revisada": false,
+   "id": "cien2-oa05-8"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué medida ayuda a proteger a un animal en peligro?",
+   "opciones": [
+    "Cuidar su hábitat",
+    "Cortar su bosque",
+    "Llevarlo de mascota",
+    "Encerrarlo en casa"
+   ],
+   "correcta": 0,
+   "tip": "Un animal necesita su hábitat para comer, esconderse y tener crías. Cuidar ese lugar es la mejor ayuda.",
+   "revisada": false,
+   "id": "cien2-oa05-9"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "Diego encontró un nido de ave nativa en el bosque. ¿Qué debe hacer?",
+   "opciones": [
+    "Moverlo al sol",
+    "Guardar los huevos",
+    "Llevárselo a casa",
+    "Dejarlo en su lugar"
+   ],
+   "correcta": 3,
+   "tip": "Los huevos necesitan el calor de sus padres. Si se sacan del nido, las crías no pueden nacer.",
+   "revisada": false,
+   "id": "cien2-oa05-10"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "Camila quiere un chungungo de mascota. ¿Qué es lo correcto?",
+   "opciones": [
+    "Que viva libre",
+    "Que lo compre",
+    "Que lo bañe seguido",
+    "Que viva en tina"
+   ],
+   "correcta": 0,
+   "tip": "El chungungo es un animal silvestre: necesita el mar y la costa. Sacarlo de ahí lo pone en peligro.",
+   "revisada": false,
+   "id": "cien2-oa05-11"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué es un parque nacional?",
+   "opciones": [
+    "Una plaza de juegos",
+    "Un zoológico grande",
+    "Un campo de cultivo",
+    "Un lugar protegido"
+   ],
+   "correcta": 3,
+   "tip": "Un parque nacional es un lugar donde se protege la naturaleza. Ahí los animales viven libres en su hábitat.",
+   "revisada": false,
+   "id": "cien2-oa05-12"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Cómo ayuda un parque nacional al huemul?",
+   "opciones": [
+    "Protege su hábitat",
+    "Lo saca del bosque",
+    "Lo encierra en jaulas",
+    "Le da comida diaria"
+   ],
+   "correcta": 0,
+   "tip": "En un parque nacional no se puede cortar el bosque ni cazar, así que el huemul conserva su hogar y vive libre.",
+   "revisada": false,
+   "id": "cien2-oa05-13"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "La chinchilla casi desapareció. ¿Por qué la cazaban?",
+   "opciones": [
+    "Porque comía cultivos",
+    "Porque era peligrosa",
+    "Porque hacía ruido",
+    "Por su pelaje suave"
+   ],
+   "correcta": 3,
+   "tip": "Hace muchos años se cazaron muchísimas chinchillas para usar su pelaje. Hoy está prohibido cazarlas.",
+   "revisada": false,
+   "id": "cien2-oa05-14"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué animal de la costa rocosa está en peligro?",
+   "opciones": [
+    "El chungungo",
+    "La gaviota",
+    "La paloma",
+    "La jaiba"
+   ],
+   "correcta": 0,
+   "tip": "El chungungo, una nutria marina de Chile, está en peligro. La gaviota, la jaiba y la paloma son abundantes.",
+   "revisada": false,
+   "id": "cien2-oa05-15"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué daña el hábitat del chungungo?",
+   "opciones": [
+    "Las olas del mar",
+    "Basura en la costa",
+    "Las rocas costeras",
+    "Los peces que come"
+   ],
+   "correcta": 1,
+   "tip": "El chungungo vive en la costa. La basura ensucia su hogar y puede enredarlo. Las olas, las rocas y los peces son parte de su vida.",
+   "revisada": false,
+   "id": "cien2-oa05-16"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "El picaflor de Arica está en peligro. ¿Qué lo ayuda?",
+   "opciones": [
+    "Cortar los arbustos",
+    "Plantar flores nativas",
+    "Atrapar picaflores",
+    "Quitar las flores"
+   ],
+   "correcta": 1,
+   "tip": "El picaflor de Arica se alimenta del néctar de flores. Si se plantan flores nativas, tiene más alimento y más hogar.",
+   "revisada": false,
+   "id": "cien2-oa05-17"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué hace un guardaparque?",
+   "opciones": [
+    "Caza en el bosque",
+    "Vende animales",
+    "Cuida el parque",
+    "Corta los árboles"
+   ],
+   "correcta": 2,
+   "tip": "El guardaparque cuida un parque nacional: protege a sus animales y plantas y enseña a los visitantes a cuidarlos.",
+   "revisada": false,
+   "id": "cien2-oa05-18"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "Matías vio un cartel: «No sacar animales del parque». ¿Por qué?",
+   "opciones": [
+    "Porque muerden",
+    "Para que no huelan",
+    "Porque son caros",
+    "Para protegerlos"
+   ],
+   "correcta": 3,
+   "tip": "Sacar animales de su hábitat los pone en peligro. Dejarlos en el parque los protege.",
+   "revisada": false,
+   "id": "cien2-oa05-19"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué medida ayuda a la ranita de Darwin?",
+   "opciones": [
+    "Sacar el musgo húmedo",
+    "Cuidar el bosque húmedo",
+    "Secar sus pantanos",
+    "Tenerla en un frasco"
+   ],
+   "correcta": 1,
+   "tip": "La ranita de Darwin necesita el bosque húmedo con musgo. Cuidar ese bosque es protegerla.",
+   "revisada": false,
+   "id": "cien2-oa05-20"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "Un animal nativo de Chile es uno que…",
+   "opciones": [
+    "vive aquí desde siempre",
+    "trajeron de otro país",
+    "se compra en tiendas",
+    "vive en la granja"
+   ],
+   "correcta": 0,
+   "tip": "Un animal nativo vivía en Chile antes de que llegaran las personas. No lo trajo nadie desde otro lugar.",
+   "revisada": false,
+   "id": "cien2-oa05-21"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Cuál es un animal nativo de Chile?",
+   "opciones": [
+    "El gorrión",
+    "El conejo",
+    "La vaca",
+    "El pudú"
+   ],
+   "correcta": 3,
+   "tip": "El pudú es un ciervo pequeño que vive en Chile desde siempre. El conejo, la vaca y el gorrión los trajeron personas de otros lugares.",
+   "revisada": false,
+   "id": "cien2-oa05-22"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "Javiera quiere ayudar a los animales en peligro. ¿Qué puede hacer?",
+   "opciones": [
+    "Cuidar los parques",
+    "Comprar animales nativos",
+    "Cazar con cuidado",
+    "Sacar sus huevos"
+   ],
+   "correcta": 0,
+   "tip": "Cuidar los parques y no dejar basura protege el hábitat de los animales. Comprarlos, cazarlos o sacar sus huevos los daña.",
+   "revisada": false,
+   "id": "cien2-oa05-23"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Por qué está prohibido vender loros nativos?",
+   "opciones": [
+    "Para que no desaparezcan",
+    "Porque comen semillas",
+    "Porque vuelan muy rápido",
+    "Porque hablan demasiado"
+   ],
+   "correcta": 0,
+   "tip": "Muchos loros nativos se sacaban de sus nidos para venderlos, y quedaron pocos. Prohibirlo ayuda a que no desaparezcan.",
+   "revisada": false,
+   "id": "cien2-oa05-24"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "Benjamín vio un huemul herido. ¿Qué debe hacer?",
+   "opciones": [
+    "Darle pan para comer",
+    "Tomarle fotos y seguir",
+    "Avisar a un guardaparque",
+    "Llevárselo a su casa"
+   ],
+   "correcta": 2,
+   "tip": "Un guardaparque sabe cómo ayudar a un animal herido sin dañarlo. Un niño no debe tocarlo ni llevárselo.",
+   "revisada": false,
+   "id": "cien2-oa05-25"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "El huillín vive en ríos del sur y está en peligro. ¿Qué lo daña?",
+   "opciones": [
+    "Ríos con muchos peces",
+    "Ríos contaminados",
+    "El agua corriendo",
+    "Las piedras del río"
+   ],
+   "correcta": 1,
+   "tip": "El huillín necesita ríos limpios para cazar y vivir. Si el río se contamina, pierde su hogar y su alimento.",
+   "revisada": false,
+   "id": "cien2-oa05-26"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "Tomás vio un cartel en la playa: «Zona de nidos». ¿Qué debe hacer?",
+   "opciones": [
+    "Hacer una fogata",
+    "No pisar esa zona",
+    "Buscar los huevos",
+    "Correr con su perro"
+   ],
+   "correcta": 1,
+   "tip": "En esa zona hay aves cuidando sus nidos. No pisarla protege los huevos y a las crías.",
+   "revisada": false,
+   "id": "cien2-oa05-27"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué tienen en común el huemul y la ranita de Darwin?",
+   "opciones": [
+    "Son mascotas",
+    "Están en peligro",
+    "Viven en el mar",
+    "Tienen pelaje"
+   ],
+   "correcta": 1,
+   "tip": "Los dos son animales nativos de Chile y de los dos quedan pocos: están en peligro de extinción.",
+   "revisada": false,
+   "id": "cien2-oa05-28"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "Si quedan pocos de un animal, ¿puede recuperarse?",
+   "opciones": [
+    "Sí, si lo protegemos",
+    "No, nunca jamás",
+    "Sí, solo y rápido",
+    "No, ya se extinguió"
+   ],
+   "correcta": 0,
+   "tip": "Si se cuida su hábitat y no se lo caza, un animal en peligro puede volver a tener más crías. Mientras quede alguno, hay esperanza.",
+   "revisada": false,
+   "id": "cien2-oa05-29"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "Quedan pocos gatos andinos en la cordillera. ¿Qué medida lo ayuda?",
+   "opciones": [
+    "Proteger la cordillera",
+    "Cazar lo que come",
+    "Adoptarlo de mascota",
+    "Llevarlo a la ciudad"
+   ],
+   "correcta": 0,
+   "tip": "El gato andino necesita la cordillera y los animales que caza. Proteger su hábitat es la mejor forma de ayudarlo.",
+   "revisada": false,
+   "id": "cien2-oa05-30"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Una bolsa quedó en el mar. ¿Qué le puede pasar a una tortuga?",
+   "opciones": [
+    "Comerla y enfermarse",
+    "Ponerse más fuerte",
+    "Nadar más rápido",
+    "Usarla de casa"
+   ],
+   "correcta": 0,
+   "tip": "Las tortugas pueden confundir una bolsa con comida. El plástico no se digiere y las enferma.",
+   "revisada": false,
+   "id": "cien2-oa06-1"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Una gaviota se enredó en un hilo de pescar. ¿Quién lo dejó ahí?",
+   "opciones": [
+    "Un pez grande",
+    "Una persona",
+    "Un lobo marino",
+    "Otra gaviota"
+   ],
+   "correcta": 1,
+   "tip": "Los hilos de pescar los fabrican y los usan las personas. Si quedan botados, los animales se enredan.",
+   "revisada": false,
+   "id": "cien2-oa06-2"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Una fábrica echa desechos a un río. ¿Qué les pasa a los peces?",
+   "opciones": [
+    "Se enferman o mueren",
+    "Crecen más rápido",
+    "Cambian de color",
+    "Nadan más contentos"
+   ],
+   "correcta": 0,
+   "tip": "Los desechos ensucian el agua donde viven y respiran los peces. Esa agua contaminada los enferma.",
+   "revisada": false,
+   "id": "cien2-oa06-3"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Cortaron los árboles de un bosque. ¿Qué pierden las aves?",
+   "opciones": [
+    "Su pico",
+    "Sus plumas",
+    "Sus patas",
+    "Sus nidos"
+   ],
+   "correcta": 3,
+   "tip": "Muchas aves hacen sus nidos en los árboles. Si los cortan, se quedan sin lugar para tener sus crías.",
+   "revisada": false,
+   "id": "cien2-oa06-4"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Hicieron una carretera que cruza un bosque. ¿Qué peligro trae?",
+   "opciones": [
+    "Más sombra fresca",
+    "Ríos más limpios",
+    "Animales atropellados",
+    "Más comida para todos"
+   ],
+   "correcta": 2,
+   "tip": "Los animales del bosque cruzan la carretera para moverse, y los autos pueden atropellarlos.",
+   "revisada": false,
+   "id": "cien2-oa06-5"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Un barco derramó petróleo en el mar. ¿Qué les pasa a las aves?",
+   "opciones": [
+    "Les crecen más plumas",
+    "Se ponen más rápidas",
+    "Vuelan mucho más alto",
+    "Plumas pegadas y sucias"
+   ],
+   "correcta": 3,
+   "tip": "El petróleo es pegajoso. Con las plumas pegadas, el ave no puede volar, nadar ni abrigarse.",
+   "revisada": false,
+   "id": "cien2-oa06-6"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Construyeron casas donde había una laguna. ¿Qué pasa con los patos?",
+   "opciones": [
+    "Ganan más agua",
+    "Pierden su hábitat",
+    "Tienen más comida",
+    "Ponen más huevos"
+   ],
+   "correcta": 1,
+   "tip": "Los patos vivían en la laguna. Al construir encima, se quedan sin el lugar donde nadaban y comían.",
+   "revisada": false,
+   "id": "cien2-oa06-7"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Un curso limpió la basura de una playa. ¿Cómo quedan sus animales?",
+   "opciones": [
+    "Tienen menos agua",
+    "Viven más seguros",
+    "Se quedan sin casa",
+    "Se enferman más"
+   ],
+   "correcta": 1,
+   "tip": "Sin basura, los animales de la playa no se enredan ni comen plástico. Limpiar es una forma en que las personas ayudan a los animales.",
+   "revisada": false,
+   "id": "cien2-oa06-8"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Un agricultor echa mucho veneno. ¿Qué les puede pasar a las abejas?",
+   "opciones": [
+    "Enfermarse o morir",
+    "Volar más lejos",
+    "Hacer más miel",
+    "Ponerse más fuertes"
+   ],
+   "correcta": 0,
+   "tip": "Muchos venenos para plagas también dañan a las abejas, que visitan las flores de ese campo.",
+   "revisada": false,
+   "id": "cien2-oa06-9"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Pasan camiones ruidosos junto a un bosque. ¿Qué hacen las aves?",
+   "opciones": [
+    "Construyen más nidos",
+    "Duermen más tranquilas",
+    "Se alejan del lugar",
+    "Se acercan al ruido"
+   ],
+   "correcta": 2,
+   "tip": "El ruido fuerte asusta a muchas aves y las aleja de su hábitat, aunque allí tuvieran comida.",
+   "revisada": false,
+   "id": "cien2-oa06-10"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "¿Qué actividad humana daña el hábitat de los animales?",
+   "opciones": [
+    "Limpiar la playa",
+    "Reciclar botellas",
+    "Plantar árboles",
+    "Botar basura al río"
+   ],
+   "correcta": 3,
+   "tip": "La basura ensucia el agua donde viven peces y otros animales. Plantar, limpiar y reciclar los ayudan.",
+   "revisada": false,
+   "id": "cien2-oa06-11"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "¿Qué actividad humana ayuda a los animales?",
+   "opciones": [
+    "Plantar árboles nativos",
+    "Quemar pasto seco",
+    "Botar basura al mar",
+    "Cortar árboles viejos"
+   ],
+   "correcta": 0,
+   "tip": "Los árboles nativos dan alimento y refugio a muchos animales. Cortar, botar basura y quemar dañan su hábitat.",
+   "revisada": false,
+   "id": "cien2-oa06-12"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Una familia apagó mal su fogata en el bosque. ¿Qué puede pasar?",
+   "opciones": [
+    "Llueve más",
+    "Hace frío",
+    "Nace un río",
+    "Un incendio"
+   ],
+   "correcta": 3,
+   "tip": "Una fogata mal apagada puede volver a encenderse y quemar el bosque. Muchos incendios los causan personas.",
+   "revisada": false,
+   "id": "cien2-oa06-13"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "¿Qué les pasa a los animales de un bosque que se quema?",
+   "opciones": [
+    "Encuentran más agua",
+    "Duermen más abrigados",
+    "Ganan más espacio",
+    "Pierden comida y refugio"
+   ],
+   "correcta": 3,
+   "tip": "El fuego quema las plantas que los animales comen y los lugares donde se esconden. Muchos se quedan sin hogar.",
+   "revisada": false,
+   "id": "cien2-oa06-14"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Una ciudad crece sobre un cerro con bosque. ¿Qué pierden los zorros?",
+   "opciones": [
+    "Su hábitat",
+    "Su pelaje",
+    "Su cola",
+    "Su olfato"
+   ],
+   "correcta": 0,
+   "tip": "Al construir sobre el cerro, el zorro pierde el lugar donde vivía, cazaba y tenía sus crías.",
+   "revisada": false,
+   "id": "cien2-oa06-15"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Hicieron un paso para animales bajo la carretera. ¿Para qué sirve?",
+   "opciones": [
+    "Cruzar sin peligro",
+    "Guardar los autos",
+    "Esconder la basura",
+    "Juntar agua"
+   ],
+   "correcta": 0,
+   "tip": "Por el paso, los animales cruzan al otro lado sin subir al camino, y así no los atropellan.",
+   "revisada": false,
+   "id": "cien2-oa06-16"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Un grupo puso cajas nido en los árboles de una plaza. ¿Quién las usa?",
+   "opciones": [
+    "Las lombrices",
+    "Los peces",
+    "Las aves",
+    "Los perros"
+   ],
+   "correcta": 2,
+   "tip": "Las cajas nido les dan a las aves un lugar seguro para poner sus huevos, sobre todo donde hay pocos árboles viejos.",
+   "revisada": false,
+   "id": "cien2-oa06-17"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Un río tenía basura y lo limpiaron. ¿Qué pasó después?",
+   "opciones": [
+    "El río se secó",
+    "Volvieron los peces",
+    "Se fueron los peces",
+    "Llegaron más autos"
+   ],
+   "correcta": 1,
+   "tip": "Con el agua limpia, el río vuelve a ser un buen hogar, y los peces pueden regresar.",
+   "revisada": false,
+   "id": "cien2-oa06-18"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Cazar muchos animales de un mismo tipo hace que…",
+   "opciones": [
+    "haya cada vez menos",
+    "nazcan muchos más",
+    "crezcan más grandes",
+    "vivan más tiempo"
+   ],
+   "correcta": 0,
+   "tip": "Si se cazan más animales de los que alcanzan a nacer, cada año quedan menos.",
+   "revisada": false,
+   "id": "cien2-oa06-19"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Cubrieron con cemento un jardín con pasto. ¿Quién perdió su casa?",
+   "opciones": [
+    "Las lombrices",
+    "Los peces",
+    "Las ballenas",
+    "Las gaviotas"
+   ],
+   "correcta": 0,
+   "tip": "Las lombrices viven bajo la tierra del jardín. El cemento tapa ese suelo y se quedan sin hogar.",
+   "revisada": false,
+   "id": "cien2-oa06-20"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Matías devuelve al mar los peces chicos que pesca. ¿Por qué ayuda?",
+   "opciones": [
+    "Así tienen menos frío",
+    "Así se van lejos",
+    "Así aprenden a nadar",
+    "Así pueden crecer"
+   ],
+   "correcta": 3,
+   "tip": "Un pez chico todavía no ha tenido crías. Si crece, podrá reproducirse y habrá peces en el futuro.",
+   "revisada": false,
+   "id": "cien2-oa06-21"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Quedaron redes viejas botadas en el mar. ¿Qué pasa?",
+   "opciones": [
+    "Atrapan animales",
+    "Dan sombra a peces",
+    "Se vuelven algas",
+    "Limpian el agua"
+   ],
+   "correcta": 0,
+   "tip": "Las redes botadas siguen atrapando peces, tortugas y aves, que quedan enredados y no pueden escapar.",
+   "revisada": false,
+   "id": "cien2-oa06-22"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Un tractor dejó un campo sin plantas. ¿Qué les pasa a sus insectos?",
+   "opciones": [
+    "Ganan más comida",
+    "Pierden su alimento",
+    "Encuentran más sombra",
+    "Se vuelven más grandes"
+   ],
+   "correcta": 1,
+   "tip": "Muchos insectos comen plantas o viven entre ellas. Sin plantas, se quedan sin comida ni refugio.",
+   "revisada": false,
+   "id": "cien2-oa06-23"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Unos niños ponen flores en su balcón. ¿Qué animal puede llegar?",
+   "opciones": [
+    "Un huemul",
+    "Una jaiba",
+    "Un picaflor",
+    "Un pudú"
+   ],
+   "correcta": 2,
+   "tip": "El picaflor busca el néctar de las flores. Tener flores en casa le da alimento.",
+   "revisada": false,
+   "id": "cien2-oa06-24"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "¿Qué pasa con el plástico que llega al mar?",
+   "opciones": [
+    "Se vuelve arena",
+    "Dura muchísimos años",
+    "Desaparece en un día",
+    "Se convierte en agua"
+   ],
+   "correcta": 1,
+   "tip": "El plástico tarda muchísimos años en deshacerse, y mientras tanto los animales lo comen o se enredan.",
+   "revisada": false,
+   "id": "cien2-oa06-25"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Sacaron toda el agua de un estero. ¿Qué pasa con sus peces?",
+   "opciones": [
+    "Crecen más rápido",
+    "Comen más insectos",
+    "Se quedan sin hogar",
+    "Nadan más contentos"
+   ],
+   "correcta": 2,
+   "tip": "Los peces necesitan el agua del estero para vivir. Si se la sacan toda, mueren o se quedan sin hogar.",
+   "revisada": false,
+   "id": "cien2-oa06-26"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Un niño encierra mariposas en frascos. ¿Qué les pasa?",
+   "opciones": [
+    "Se debilitan y mueren",
+    "Se ponen más bonitas",
+    "Viven más tiempo",
+    "Ponen más huevos"
+   ],
+   "correcta": 0,
+   "tip": "En un frasco la mariposa no puede volar ni buscar flores para alimentarse. Se debilita y muere.",
+   "revisada": false,
+   "id": "cien2-oa06-27"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Alguien echó detergente a un estero. ¿Cómo queda el agua?",
+   "opciones": [
+    "Limpia y fresca",
+    "Más rica en comida",
+    "Sucia y dañina",
+    "Igual que antes"
+   ],
+   "correcta": 2,
+   "tip": "El detergente no limpia un estero: lo contamina y daña a los peces, ranas e insectos que viven ahí.",
+   "revisada": false,
+   "id": "cien2-oa06-28"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Diego bota la basura en el basurero del parque. ¿Qué evita?",
+   "opciones": [
+    "Que salga el Sol",
+    "Que la coman animales",
+    "Que llueva más",
+    "Que crezca el pasto"
+   ],
+   "correcta": 1,
+   "tip": "La basura tirada en el suelo la comen o la enredan los animales del parque. En el basurero no les hace daño.",
+   "revisada": false,
+   "id": "cien2-oa06-29"
+  },
+  {
+   "oa": "CN02 OA 06",
+   "pregunta": "Soltaron conejos y se multiplicaron. ¿Qué le pasa al pasto?",
+   "opciones": [
+    "Se pone más verde",
+    "Se acaba más rápido",
+    "Crece el doble",
+    "Se vuelve más alto"
+   ],
+   "correcta": 1,
+   "tip": "Los conejos los trajeron personas. Al ser tantos, se comen el pasto que necesitan los animales nativos.",
+   "revisada": false,
+   "id": "cien2-oa06-30"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "¿En qué parte del cuerpo está el corazón?",
+   "opciones": [
+    "En el pecho",
+    "En la espalda",
+    "En la barriga",
+    "En la cabeza"
+   ],
+   "correcta": 0,
+   "tip": "El corazón está dentro del pecho, entre los dos pulmones, protegido por las costillas.",
+   "revisada": false,
+   "id": "cien2-oa07-1"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "¿Qué hace el corazón?",
+   "opciones": [
+    "Guarda la comida",
+    "Empuja la sangre",
+    "Toma el aire",
+    "Mueve los huesos"
+   ],
+   "correcta": 1,
+   "tip": "El corazón late sin parar y con cada latido empuja la sangre por todo el cuerpo.",
+   "revisada": false,
+   "id": "cien2-oa07-2"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "Martina respira hondo y se le infla el pecho. ¿Qué se llenó de aire?",
+   "opciones": [
+    "Su corazón",
+    "Su estómago",
+    "Sus pulmones",
+    "Sus costillas"
+   ],
+   "correcta": 2,
+   "tip": "Al respirar, el aire entra a los pulmones y se llenan como dos globos. Por eso el pecho sube.",
+   "revisada": false,
+   "id": "cien2-oa07-3"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "¿Para qué sirven los pulmones?",
+   "opciones": [
+    "Para caminar",
+    "Para respirar",
+    "Para comer",
+    "Para pensar"
+   ],
+   "correcta": 1,
+   "tip": "Los pulmones reciben el aire que respiramos. Sin ellos no podríamos respirar.",
+   "revisada": false,
+   "id": "cien2-oa07-4"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "¿Cuántos pulmones tiene una persona?",
+   "opciones": [
+    "Dos",
+    "Tres",
+    "Uno",
+    "Cuatro"
+   ],
+   "correcta": 0,
+   "tip": "Tenemos dos pulmones, uno a cada lado del corazón, dentro del pecho.",
+   "revisada": false,
+   "id": "cien2-oa07-5"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "Martina se toca la barriga. ¿Qué órgano tiene ahí adentro?",
+   "opciones": [
+    "El corazón",
+    "El estómago",
+    "El cráneo",
+    "Los pulmones"
+   ],
+   "correcta": 1,
+   "tip": "El estómago está en la parte de arriba de la barriga, más abajo que el corazón y los pulmones.",
+   "revisada": false,
+   "id": "cien2-oa07-6"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "¿Qué hace el estómago con la comida?",
+   "opciones": [
+    "La manda al corazón",
+    "La guarda para siempre",
+    "La convierte en aire",
+    "La va deshaciendo"
+   ],
+   "correcta": 3,
+   "tip": "El estómago mezcla la comida con unos jugos y la va deshaciendo. Después la comida sigue su camino por los intestinos.",
+   "revisada": false,
+   "id": "cien2-oa07-7"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "Todos los huesos del cuerpo juntos forman el…",
+   "opciones": [
+    "músculo",
+    "estómago",
+    "corazón",
+    "esqueleto"
+   ],
+   "correcta": 3,
+   "tip": "El esqueleto es el conjunto de todos nuestros huesos, desde la cabeza hasta los pies.",
+   "revisada": false,
+   "id": "cien2-oa07-8"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "¿Para qué nos sirve el esqueleto?",
+   "opciones": [
+    "Para tomar el aire",
+    "Para sostener el cuerpo",
+    "Para deshacer la comida",
+    "Para empujar la sangre"
+   ],
+   "correcta": 1,
+   "tip": "Los huesos son duros y firmes: sostienen el cuerpo y nos permiten estar de pie.",
+   "revisada": false,
+   "id": "cien2-oa07-9"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "¿Qué hueso protege el cerebro?",
+   "opciones": [
+    "El hueso del brazo",
+    "La columna",
+    "Las costillas",
+    "El cráneo"
+   ],
+   "correcta": 3,
+   "tip": "El cráneo es como un casco de hueso que rodea y protege el cerebro.",
+   "revisada": false,
+   "id": "cien2-oa07-10"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "¿Qué huesos protegen el corazón y los pulmones?",
+   "opciones": [
+    "Los de la pierna",
+    "El cráneo",
+    "Las costillas",
+    "Los de la mano"
+   ],
+   "correcta": 2,
+   "tip": "Las costillas forman como una jaula de hueso alrededor del corazón y los pulmones.",
+   "revisada": false,
+   "id": "cien2-oa07-11"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "Benjamín levanta su mochila. ¿Qué tira de sus huesos para moverlos?",
+   "opciones": [
+    "Sus músculos",
+    "Su sangre",
+    "Sus pulmones",
+    "Su estómago"
+   ],
+   "correcta": 0,
+   "tip": "Los músculos están pegados a los huesos y tiran de ellos. Así movemos los brazos y las piernas.",
+   "revisada": false,
+   "id": "cien2-oa07-12"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "¿Qué hacen los músculos?",
+   "opciones": [
+    "Mueven el cuerpo",
+    "Piensan por nosotros",
+    "Guardan la comida",
+    "Toman el aire"
+   ],
+   "correcta": 0,
+   "tip": "Los músculos se encogen y se estiran para movernos: caminar, saltar, sonreír o tomar un lápiz.",
+   "revisada": false,
+   "id": "cien2-oa07-13"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "El corazón también es un…",
+   "opciones": [
+    "pulmón",
+    "estómago",
+    "hueso",
+    "músculo"
+   ],
+   "correcta": 3,
+   "tip": "El corazón es un músculo muy fuerte que trabaja todo el día, sin descansar nunca.",
+   "revisada": false,
+   "id": "cien2-oa07-14"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "Sofía pone la mano en su pecho y siente golpecitos. ¿Qué siente?",
+   "opciones": [
+    "Su columna",
+    "Su cráneo",
+    "Su estómago",
+    "Su corazón"
+   ],
+   "correcta": 3,
+   "tip": "Esos golpecitos son los latidos del corazón, que está dentro del pecho.",
+   "revisada": false,
+   "id": "cien2-oa07-15"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "Al respirar, ¿qué toman los pulmones del aire?",
+   "opciones": [
+    "La comida",
+    "El agua",
+    "La sangre",
+    "El oxígeno"
+   ],
+   "correcta": 3,
+   "tip": "Los pulmones toman el oxígeno del aire y lo pasan a la sangre, que lo lleva a todo el cuerpo.",
+   "revisada": false,
+   "id": "cien2-oa07-16"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "Tomás se quebró un hueso de la pierna. ¿Qué parte del cuerpo se dañó?",
+   "opciones": [
+    "Un músculo",
+    "El estómago",
+    "Un pulmón",
+    "El esqueleto"
+   ],
+   "correcta": 3,
+   "tip": "Los huesos forman el esqueleto. Un hueso quebrado es una parte del esqueleto que se rompió.",
+   "revisada": false,
+   "id": "cien2-oa07-17"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "Diego terminó de almorzar. ¿Adónde llegó su almuerzo?",
+   "opciones": [
+    "A sus pulmones",
+    "A sus huesos",
+    "A su corazón",
+    "A su estómago"
+   ],
+   "correcta": 3,
+   "tip": "Al tragar, la comida baja por un tubo y llega al estómago, que la empieza a deshacer.",
+   "revisada": false,
+   "id": "cien2-oa07-18"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "Cuando Ana sopla un globo, ¿de dónde sale el aire?",
+   "opciones": [
+    "De su corazón",
+    "De sus huesos",
+    "De sus pulmones",
+    "De su estómago"
+   ],
+   "correcta": 2,
+   "tip": "El aire que soplamos sale de los pulmones, sube por la garganta y sale por la boca.",
+   "revisada": false,
+   "id": "cien2-oa07-19"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "¿Qué les pasa a los huesos mientras un niño crece?",
+   "opciones": [
+    "Se quedan iguales",
+    "Se vuelven blandos",
+    "Se achican",
+    "También crecen"
+   ],
+   "correcta": 3,
+   "tip": "Los huesos están vivos: crecen junto con el niño hasta que se hace adulto.",
+   "revisada": false,
+   "id": "cien2-oa07-20"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "¿Dónde tenemos músculos?",
+   "opciones": [
+    "En todo el cuerpo",
+    "Solo en los brazos",
+    "Solo en las piernas",
+    "Solo en la cara"
+   ],
+   "correcta": 0,
+   "tip": "Hay músculos en todo el cuerpo: en las piernas, los brazos, la cara y hasta en el corazón.",
+   "revisada": false,
+   "id": "cien2-oa07-21"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "Javiera sonríe. ¿Qué mueve su cara?",
+   "opciones": [
+    "Sus pulmones",
+    "Su corazón",
+    "Sus músculos",
+    "Su estómago"
+   ],
+   "correcta": 2,
+   "tip": "La cara tiene muchos músculos pequeños. Con ellos sonreímos, hablamos y cerramos los ojos.",
+   "revisada": false,
+   "id": "cien2-oa07-22"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "¿Qué partes trabajan juntas para mover el cuerpo?",
+   "opciones": [
+    "Corazón y estómago",
+    "Huesos y músculos",
+    "Cráneo y pulmones",
+    "Pulmones y estómago"
+   ],
+   "correcta": 1,
+   "tip": "Los músculos tiran de los huesos y los huesos se mueven. Juntos hacen que caminemos o saltemos.",
+   "revisada": false,
+   "id": "cien2-oa07-23"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "Pedro toca los huesitos del centro de su espalda. ¿Qué está tocando?",
+   "opciones": [
+    "Su estómago",
+    "Su cráneo",
+    "Sus costillas",
+    "Su columna"
+   ],
+   "correcta": 3,
+   "tip": "La columna está en la espalda y está hecha de muchos huesitos uno sobre otro. Sostiene el cuerpo.",
+   "revisada": false,
+   "id": "cien2-oa07-24"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "¿Qué pasa con el corazón mientras dormimos?",
+   "opciones": [
+    "Se detiene",
+    "Sigue latiendo",
+    "Late solo de día",
+    "Se va a descansar"
+   ],
+   "correcta": 1,
+   "tip": "El corazón late toda la vida, de día y de noche. Al dormir late más lento, pero nunca se detiene.",
+   "revisada": false,
+   "id": "cien2-oa07-25"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "El estómago es parte del camino de…",
+   "opciones": [
+    "el aire",
+    "los latidos",
+    "los huesos",
+    "la comida"
+   ],
+   "correcta": 3,
+   "tip": "La comida entra por la boca, baja por un tubo, pasa por el estómago y sigue por los intestinos.",
+   "revisada": false,
+   "id": "cien2-oa07-26"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "¿Qué está más abajo en el cuerpo?",
+   "opciones": [
+    "El cráneo",
+    "El corazón",
+    "Los pulmones",
+    "El estómago"
+   ],
+   "correcta": 3,
+   "tip": "El cráneo está en la cabeza, el corazón y los pulmones en el pecho, y el estómago más abajo, en la barriga.",
+   "revisada": false,
+   "id": "cien2-oa07-27"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "Matías aprieta el puño y su brazo se pone duro. ¿Qué se endureció?",
+   "opciones": [
+    "Su estómago",
+    "Su corazón",
+    "Su pulmón",
+    "Su músculo"
+   ],
+   "correcta": 3,
+   "tip": "Al apretar, el músculo se encoge y se pone duro. Al soltar, se relaja y se ablanda.",
+   "revisada": false,
+   "id": "cien2-oa07-28"
+  },
+  {
+   "oa": "CN02 OA 07",
+   "pregunta": "Camila comió mucho en su cumpleaños. ¿Qué órgano se llenó?",
+   "opciones": [
+    "Su estómago",
+    "Sus pulmones",
+    "Su columna",
+    "Su corazón"
+   ],
+   "correcta": 0,
+   "tip": "El estómago recibe la comida y se estira para guardarla un rato mientras la deshace.",
+   "revisada": false,
+   "id": "cien2-oa07-29"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "¿Qué le pasa a un músculo que se usa seguido?",
+   "opciones": [
+    "Se queda dormido",
+    "Se pone más débil",
+    "Se pone más fuerte",
+    "Se convierte en hueso"
+   ],
+   "correcta": 2,
+   "tip": "Cuando movemos los músculos seguido, se hacen más fuertes. Por eso jugar y moverse les hace bien.",
+   "revisada": false,
+   "id": "cien2-oa08-1"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "¿Qué le hace el ejercicio al corazón?",
+   "opciones": [
+    "Lo deja sin latir",
+    "Lo hace más chico",
+    "Lo deja más débil",
+    "Lo hace más fuerte"
+   ],
+   "correcta": 3,
+   "tip": "El corazón es un músculo. Cuando nos movemos seguido trabaja más y se vuelve más fuerte.",
+   "revisada": false,
+   "id": "cien2-oa08-2"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "Diego corrió en el recreo. ¿Qué le pasa a su corazón?",
+   "opciones": [
+    "Se achica",
+    "Deja de latir",
+    "Late más lento",
+    "Late más rápido"
+   ],
+   "correcta": 3,
+   "tip": "Al correr, los músculos necesitan más sangre, y el corazón late más rápido para enviarla.",
+   "revisada": false,
+   "id": "cien2-oa08-3"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "Después de correr, Ana respira rápido. ¿Por qué?",
+   "opciones": [
+    "Se le llenó el estómago",
+    "Su cuerpo pide más aire",
+    "Sus huesos crecieron",
+    "Se le enfrió la nariz"
+   ],
+   "correcta": 1,
+   "tip": "Al moverse, los músculos trabajan más y necesitan más oxígeno. Por eso respiramos más rápido.",
+   "revisada": false,
+   "id": "cien2-oa08-4"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "¿Cuál es una actividad física?",
+   "opciones": [
+    "Armar un puzle",
+    "Ver televisión",
+    "Saltar la cuerda",
+    "Pintar un dibujo"
+   ],
+   "correcta": 2,
+   "tip": "Una actividad física es cualquier juego o tarea en que movemos el cuerpo, como saltar, correr o bailar.",
+   "revisada": false,
+   "id": "cien2-oa08-5"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "Tomás quiere moverse más cada día. ¿Qué puede hacer?",
+   "opciones": [
+    "Andar en bicicleta",
+    "Jugar en la tablet",
+    "Ver más dibujos",
+    "Tomar más siestas"
+   ],
+   "correcta": 0,
+   "tip": "Andar en bicicleta mueve las piernas y hace trabajar el corazón. Se puede hacer casi todos los días.",
+   "revisada": false,
+   "id": "cien2-oa08-6"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "Camila sube por la escalera y no en ascensor. ¿Qué gana?",
+   "opciones": [
+    "Cuida sus dientes",
+    "Ejercita sus músculos",
+    "Descansa sus piernas",
+    "Ahorra sus zapatos"
+   ],
+   "correcta": 1,
+   "tip": "Subir escaleras es actividad física: las piernas y el corazón trabajan. Es una forma fácil de moverse cada día.",
+   "revisada": false,
+   "id": "cien2-oa08-7"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "¿Cada cuánto conviene hacer actividad física?",
+   "opciones": [
+    "Solo si llueve",
+    "Solo en vacaciones",
+    "Una vez al año",
+    "Todos los días"
+   ],
+   "correcta": 3,
+   "tip": "Moverse un rato todos los días es lo que más ayuda a los músculos y al corazón.",
+   "revisada": false,
+   "id": "cien2-oa08-8"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "Antes de correr, Javiera estira las piernas. ¿Para qué?",
+   "opciones": [
+    "Preparar sus músculos",
+    "Tener más sed",
+    "Cansarse más rápido",
+    "Alargar sus huesos"
+   ],
+   "correcta": 0,
+   "tip": "Estirar y moverse suave antes de un juego ayuda a preparar los músculos para el esfuerzo.",
+   "revisada": false,
+   "id": "cien2-oa08-9"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "Después de jugar, Benjamín tiene mucha sed. ¿Qué le conviene?",
+   "opciones": [
+    "Aguantar hasta mañana",
+    "Seguir sin tomar nada",
+    "Tomar agua",
+    "Correr otra vuelta"
+   ],
+   "correcta": 2,
+   "tip": "Al moverse, el cuerpo pierde agua en el sudor. Tomar agua le devuelve lo que perdió.",
+   "revisada": false,
+   "id": "cien2-oa08-10"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "Tras un día de mucho deporte, ¿qué necesita el cuerpo?",
+   "opciones": [
+    "Dejar de tomar agua",
+    "Correr toda la noche",
+    "Descansar y dormir",
+    "Quedarse sin cenar"
+   ],
+   "correcta": 2,
+   "tip": "Mientras descansamos y dormimos, los músculos se recuperan del esfuerzo del día.",
+   "revisada": false,
+   "id": "cien2-oa08-11"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "La familia de Ana quiere moverse el domingo. ¿Qué pueden hacer?",
+   "opciones": [
+    "Salir a caminar",
+    "Jugar a las cartas",
+    "Ordenar las fotos",
+    "Ver una película"
+   ],
+   "correcta": 0,
+   "tip": "Caminar juntos es actividad física para toda la familia, y se puede hacer en cualquier parte.",
+   "revisada": false,
+   "id": "cien2-oa08-12"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "¿Quién necesita hacer actividad física?",
+   "opciones": [
+    "Todas las personas",
+    "Solo los niños grandes",
+    "Solo los deportistas",
+    "Solo los adultos"
+   ],
+   "correcta": 0,
+   "tip": "Niños, adultos y abuelos necesitan moverse. A todos les ayuda a tener músculos y corazón fuertes.",
+   "revisada": false,
+   "id": "cien2-oa08-13"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "Matías tuvo un mes el brazo con yeso. ¿Cómo quedaron esos músculos?",
+   "opciones": [
+    "Más fuertes",
+    "Igual que antes",
+    "Más largos",
+    "Más débiles"
+   ],
+   "correcta": 3,
+   "tip": "Un músculo que no se mueve por mucho tiempo se debilita. Al volver a usarlo, se va fortaleciendo.",
+   "revisada": false,
+   "id": "cien2-oa08-14"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "Javiera va a andar en bicicleta. ¿Qué debe ponerse?",
+   "opciones": [
+    "Una bufanda",
+    "Unos lentes de sol",
+    "Unos guantes de lana",
+    "Un casco"
+   ],
+   "correcta": 3,
+   "tip": "El casco protege la cabeza si hay una caída. Moverse es bueno, y hacerlo seguro es mejor.",
+   "revisada": false,
+   "id": "cien2-oa08-15"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "Ana y Diego bailan en la fiesta. ¿Qué hacen por su cuerpo?",
+   "opciones": [
+    "Descansan sus músculos",
+    "Ejercitan sus músculos",
+    "Achican su corazón",
+    "Debilitan sus huesos"
+   ],
+   "correcta": 1,
+   "tip": "Bailar es una actividad física entretenida: mueve todo el cuerpo y hace trabajar el corazón.",
+   "revisada": false,
+   "id": "cien2-oa08-16"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "En el recreo, ¿qué juego hace latir más rápido el corazón?",
+   "opciones": [
+    "Correr por el patio",
+    "Jugar a las cartas",
+    "Conversar sentados",
+    "Leer una revista"
+   ],
+   "correcta": 0,
+   "tip": "Al correr, el corazón late más rápido. Así se ejercita y se vuelve más fuerte.",
+   "revisada": false,
+   "id": "cien2-oa08-17"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "Para que sus músculos crezcan fuertes, Tomás debe…",
+   "opciones": [
+    "quedarse sentado",
+    "dormir todo el día",
+    "moverse seguido",
+    "mirar a otros jugar"
+   ],
+   "correcta": 2,
+   "tip": "Los músculos se desarrollan cuando los usamos. Jugar y moverse seguido los fortalece.",
+   "revisada": false,
+   "id": "cien2-oa08-18"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "¿Qué hábito diario le hace bien al corazón?",
+   "opciones": [
+    "Ir siempre en auto",
+    "Ver tele cada día",
+    "Jugar activo cada día",
+    "Usar siempre ascensor"
+   ],
+   "correcta": 2,
+   "tip": "Moverse un rato cada día, jugando o caminando, mantiene fuerte el corazón.",
+   "revisada": false,
+   "id": "cien2-oa08-19"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "Pedro nada, Ana lee y Diego dibuja. ¿Quién hace actividad física?",
+   "opciones": [
+    "Pedro",
+    "Diego",
+    "Ninguno",
+    "Ana"
+   ],
+   "correcta": 0,
+   "tip": "Nadar mueve brazos y piernas y hace trabajar el corazón. Leer y dibujar son buenas actividades, pero quietas.",
+   "revisada": false,
+   "id": "cien2-oa08-20"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "Al correr, a Matías le duele mucho el pecho. ¿Qué debe hacer?",
+   "opciones": [
+    "Parar y avisar a un adulto",
+    "Correr más rápido",
+    "Aguantar en silencio",
+    "Seguir sin parar"
+   ],
+   "correcta": 0,
+   "tip": "Moverse no debe doler mucho. Si duele, hay que parar y avisarle a un adulto.",
+   "revisada": false,
+   "id": "cien2-oa08-21"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "Diego corrió y después descansó. ¿Qué hace su corazón?",
+   "opciones": [
+    "Late más lento otra vez",
+    "Late cada vez más rápido",
+    "Se queda sin latir",
+    "Late igual que corriendo"
+   ],
+   "correcta": 0,
+   "tip": "Al descansar, el cuerpo ya no necesita tanta sangre y el corazón vuelve a latir más lento.",
+   "revisada": false,
+   "id": "cien2-oa08-22"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "¿Qué juego ejercita los músculos de los brazos?",
+   "opciones": [
+    "Colgarse de las barras",
+    "Escuchar música",
+    "Hacer una lista",
+    "Mirar un video"
+   ],
+   "correcta": 0,
+   "tip": "Al colgarse y trepar, los brazos sostienen el peso del cuerpo, y sus músculos se fortalecen.",
+   "revisada": false,
+   "id": "cien2-oa08-23"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "Ana quiere moverse, pero llueve. ¿Qué puede hacer en casa?",
+   "opciones": [
+    "Bailar con música",
+    "Dormir una siesta",
+    "Mirar la lluvia",
+    "Jugar en el celular"
+   ],
+   "correcta": 0,
+   "tip": "Bailar en casa es actividad física. No hace falta salir para mover el cuerpo.",
+   "revisada": false,
+   "id": "cien2-oa08-24"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "¿Por qué es importante la actividad física?",
+   "opciones": [
+    "Hace crecer el pelo",
+    "Quita las ganas de comer",
+    "Fortalece músculos y corazón",
+    "Cansa y debilita el corazón"
+   ],
+   "correcta": 2,
+   "tip": "Moverse seguido hace más fuertes los músculos y el corazón, que también es un músculo.",
+   "revisada": false,
+   "id": "cien2-oa08-25"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "Sofía saltó mucho y su corazón late fuerte. ¿Es peligroso?",
+   "opciones": [
+    "Sí, el corazón se gasta",
+    "No, es por tener hambre",
+    "No, es normal al moverse",
+    "Sí, debe dejar de jugar"
+   ],
+   "correcta": 2,
+   "tip": "Es normal que el corazón lata fuerte al moverse y que se calme al descansar. Si hay dolor o mareo, se avisa a un adulto.",
+   "revisada": false,
+   "id": "cien2-oa08-26"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "Benjamín juega fútbol solo los sábados. ¿Qué le ayudaría más?",
+   "opciones": [
+    "Dejar el fútbol",
+    "Ver fútbol en la tele",
+    "Moverse también en la semana",
+    "Jugar una vez al mes"
+   ],
+   "correcta": 2,
+   "tip": "Para que los músculos y el corazón se fortalezcan, conviene moverse un rato casi todos los días, no solo un día.",
+   "revisada": false,
+   "id": "cien2-oa08-27"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "Diego pasea a su perro cada tarde. ¿Qué gana Diego?",
+   "opciones": [
+    "Hace actividad física",
+    "Descansa su corazón",
+    "Se le achican los músculos",
+    "Debilita sus piernas"
+   ],
+   "correcta": 0,
+   "tip": "Caminar todas las tardes es actividad física: las piernas y el corazón trabajan.",
+   "revisada": false,
+   "id": "cien2-oa08-28"
+  },
+  {
+   "oa": "CN02 OA 08",
+   "pregunta": "Camila usa silla de ruedas. ¿Puede hacer actividad física?",
+   "opciones": [
+    "Solo mirando a otros",
+    "No, nunca puede",
+    "Solo cuando sea adulta",
+    "Sí, de muchas formas"
+   ],
+   "correcta": 3,
+   "tip": "Hay muchos deportes y juegos para personas en silla de ruedas, como el básquetbol o el baile.",
+   "revisada": false,
+   "id": "cien2-oa08-29"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "Diego volcó su vaso de agua en la mesa. ¿Qué hizo el agua?",
+   "opciones": [
+    "Quedó con forma de vaso",
+    "Se esparció por la mesa",
+    "Se puso dura",
+    "Quedó como un montoncito"
+   ],
+   "correcta": 1,
+   "tip": "El agua escurre: no se queda en un montón, se mueve y se esparce por la superficie.",
+   "revisada": false,
+   "id": "cien2-oa09-1"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "Llueve en el cerro. ¿Hacia dónde corre el agua?",
+   "opciones": [
+    "Cerro arriba",
+    "Se queda quieta",
+    "Cerro abajo",
+    "Hacia las nubes"
+   ],
+   "correcta": 2,
+   "tip": "El agua escurre siempre hacia abajo. Por eso la lluvia baja por los cerros y forma esteros.",
+   "revisada": false,
+   "id": "cien2-oa09-2"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "¿Por qué el agua se derrama si se inclina el vaso?",
+   "opciones": [
+    "Porque es transparente",
+    "Porque está fría",
+    "Porque escurre",
+    "Porque no tiene olor"
+   ],
+   "correcta": 2,
+   "tip": "El agua escurre: si el vaso se inclina, se mueve hacia abajo y sale.",
+   "revisada": false,
+   "id": "cien2-oa09-3"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "Sofía quiere apilar agua como si fueran bloques. ¿Puede?",
+   "opciones": [
+    "Sí, si la aprieta",
+    "No, el agua escurre",
+    "Sí, si está tibia",
+    "Sí, con las manos"
+   ],
+   "correcta": 1,
+   "tip": "El agua no se puede apilar: escurre y se esparce. Para guardarla hay que ponerla en un recipiente.",
+   "revisada": false,
+   "id": "cien2-oa09-4"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "Sofía pasó agua de un vaso a un plato. ¿Qué forma tomó el agua?",
+   "opciones": [
+    "La del vaso",
+    "Forma de bolita",
+    "La del plato",
+    "Forma de cubo"
+   ],
+   "correcta": 2,
+   "tip": "El agua no tiene forma propia: toma la forma del recipiente donde está.",
+   "revisada": false,
+   "id": "cien2-oa09-5"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "¿Qué forma tiene el agua?",
+   "opciones": [
+    "La del recipiente",
+    "Siempre de gota",
+    "Siempre redonda",
+    "Siempre cuadrada"
+   ],
+   "correcta": 0,
+   "tip": "El agua se adapta a la forma del recipiente: en un vaso tiene forma de vaso, en una botella, de botella.",
+   "revisada": false,
+   "id": "cien2-oa09-6"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "Matías llenó un globo y una botella con agua. ¿Qué forma tomó el agua?",
+   "opciones": [
+    "Solo la del globo",
+    "La de cada uno",
+    "La misma en los dos",
+    "Solo la de la botella"
+   ],
+   "correcta": 1,
+   "tip": "En cada recipiente el agua toma una forma distinta: la del globo y la de la botella.",
+   "revisada": false,
+   "id": "cien2-oa09-7"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "Camila pasó agua de un vaso alto a uno ancho. ¿Cambió la cantidad?",
+   "opciones": [
+    "Sí, se perdió la mitad",
+    "Sí, hay menos agua",
+    "Sí, hay más agua",
+    "No, es la misma"
+   ],
+   "correcta": 3,
+   "tip": "Al cambiar de recipiente, el agua cambia de forma, pero sigue siendo la misma cantidad.",
+   "revisada": false,
+   "id": "cien2-oa09-8"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "Ana echó azúcar al agua y revolvió. ¿Qué pasó?",
+   "opciones": [
+    "Flotó arriba",
+    "Se fue al fondo entera",
+    "Se volvió hielo",
+    "Se disolvió"
+   ],
+   "correcta": 3,
+   "tip": "El azúcar se disuelve: se separa en pedacitos tan chicos que ya no se ven, pero sigue en el agua.",
+   "revisada": false,
+   "id": "cien2-oa09-9"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "Diego revolvió arena en un vaso con agua. ¿Dónde quedó la arena?",
+   "opciones": [
+    "Disuelta en el agua",
+    "Flotando arriba",
+    "En el fondo",
+    "Convertida en agua"
+   ],
+   "correcta": 2,
+   "tip": "La arena no se disuelve en el agua. Por eso, al dejar de revolver, se va al fondo.",
+   "revisada": false,
+   "id": "cien2-oa09-10"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "La sal se disolvió en el agua. ¿Cómo sabe Sofía que sigue ahí?",
+   "opciones": [
+    "El agua huele a sal",
+    "El vaso pesa menos",
+    "El agua quedó salada",
+    "El agua cambió de color"
+   ],
+   "correcta": 2,
+   "tip": "La sal disuelta no se ve, pero sigue en el agua. Por eso el agua queda con sabor salado.",
+   "revisada": false,
+   "id": "cien2-oa09-11"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "¿Cuál de estos se disuelve en el agua?",
+   "opciones": [
+    "La arena",
+    "Una piedra",
+    "Un clavo",
+    "La sal"
+   ],
+   "correcta": 3,
+   "tip": "La sal y el azúcar se disuelven en el agua. La arena, las piedras y los clavos no.",
+   "revisada": false,
+   "id": "cien2-oa09-12"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "En agua tibia y en agua fría, ¿dónde se disuelve antes el azúcar?",
+   "opciones": [
+    "En la fría",
+    "En la tibia",
+    "Igual en las dos",
+    "En ninguna de las dos"
+   ],
+   "correcta": 1,
+   "tip": "El azúcar se disuelve más rápido en agua tibia que en agua fría.",
+   "revisada": false,
+   "id": "cien2-oa09-13"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "¿Qué ayuda a que el azúcar se disuelva más rápido?",
+   "opciones": [
+    "Revolver con cuchara",
+    "Echarle hielo",
+    "Tapar el vaso",
+    "Dejarlo a oscuras"
+   ],
+   "correcta": 0,
+   "tip": "Al revolver, el azúcar se mezcla con más agua y se disuelve más rápido.",
+   "revisada": false,
+   "id": "cien2-oa09-14"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "¿Dónde quedó el azúcar que se disolvió en el agua?",
+   "opciones": [
+    "Repartida en el agua",
+    "Se la tragó el vaso",
+    "Se borró para siempre",
+    "Se escapó al aire"
+   ],
+   "correcta": 0,
+   "tip": "El azúcar disuelta no desaparece: queda repartida en el agua. Por eso el agua queda dulce.",
+   "revisada": false,
+   "id": "cien2-oa09-15"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "Diego puso una moneda en un vaso con agua limpia. ¿Qué vio?",
+   "opciones": [
+    "Nada, el agua la tapó",
+    "La moneda en el fondo",
+    "Solo agua blanca",
+    "Solo agua negra"
+   ],
+   "correcta": 1,
+   "tip": "El agua limpia es transparente: deja pasar la luz y podemos ver lo que hay adentro.",
+   "revisada": false,
+   "id": "cien2-oa09-16"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "¿Por qué podemos ver a través del agua limpia?",
+   "opciones": [
+    "Es salada",
+    "Está fría",
+    "No tiene olor",
+    "Es transparente"
+   ],
+   "correcta": 3,
+   "tip": "Transparente quiere decir que se puede ver a través. El agua limpia es transparente.",
+   "revisada": false,
+   "id": "cien2-oa09-17"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "Sofía mezcló agua con tierra. ¿Qué cambió?",
+   "opciones": [
+    "Dejó de escurrir",
+    "Dejó de ser transparente",
+    "Se volvió más dulce",
+    "Se volvió hielo"
+   ],
+   "correcta": 1,
+   "tip": "Con tierra, el agua se pone turbia y ya no se puede ver a través. Ya no es transparente.",
+   "revisada": false,
+   "id": "cien2-oa09-18"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "¿Qué se parece al agua limpia por ser transparente?",
+   "opciones": [
+    "Una hoja de cartón",
+    "Un ladrillo",
+    "El vidrio de una ventana",
+    "Una tabla de madera"
+   ],
+   "correcta": 2,
+   "tip": "A través del vidrio de una ventana se puede ver, igual que a través del agua limpia.",
+   "revisada": false,
+   "id": "cien2-oa09-19"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "Matías olió un vaso de agua limpia. ¿Qué olor sintió?",
+   "opciones": [
+    "Olor a flores",
+    "Olor a pan",
+    "Olor a limón",
+    "Ningún olor"
+   ],
+   "correcta": 3,
+   "tip": "El agua limpia no tiene olor. Si un agua huele a algo, es porque tiene algo mezclado.",
+   "revisada": false,
+   "id": "cien2-oa09-20"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "El agua de un vaso huele a perfume. ¿Qué puede pensar Camila?",
+   "opciones": [
+    "Tiene algo mezclado",
+    "Está muy fría",
+    "Es agua muy limpia",
+    "Está por congelarse"
+   ],
+   "correcta": 0,
+   "tip": "El agua limpia no tiene olor. Si huele a perfume, alguien le mezcló algo.",
+   "revisada": false,
+   "id": "cien2-oa09-21"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "¿Cómo es el agua limpia?",
+   "opciones": [
+    "Café y con olor",
+    "Dura y con forma",
+    "Transparente y sin olor",
+    "Blanca y con olor"
+   ],
+   "correcta": 2,
+   "tip": "El agua limpia es transparente, no tiene olor y toma la forma de su recipiente.",
+   "revisada": false,
+   "id": "cien2-oa09-22"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "Un plato con agua quedó al sol y se secó. ¿Adónde fue el agua?",
+   "opciones": [
+    "Se fue al aire",
+    "La tragó el plato",
+    "Se volvió sal",
+    "Se borró para siempre"
+   ],
+   "correcta": 0,
+   "tip": "El agua se evaporó: se transformó en vapor, que es invisible, y se fue al aire.",
+   "revisada": false,
+   "id": "cien2-oa09-23"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "La ropa mojada se seca al sol. ¿Qué le pasa al agua de la ropa?",
+   "opciones": [
+    "Se congela",
+    "Se disuelve",
+    "Se evapora",
+    "Se vuelve tela"
+   ],
+   "correcta": 2,
+   "tip": "Con el calor del sol, el agua de la ropa se evapora y se va al aire. Así la ropa se seca.",
+   "revisada": false,
+   "id": "cien2-oa09-24"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "¿Dónde se seca más rápido un charco?",
+   "opciones": [
+    "A la sombra",
+    "Al sol",
+    "Bajo la lluvia",
+    "En un día frío"
+   ],
+   "correcta": 1,
+   "tip": "Con más calor el agua se evapora más rápido. Por eso los charcos se secan antes al sol.",
+   "revisada": false,
+   "id": "cien2-oa09-25"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "Diego puso un vaso con agua en el congelador. ¿Qué pasó?",
+   "opciones": [
+    "Se evaporó",
+    "Se puso tibia",
+    "Se congeló",
+    "Se disolvió"
+   ],
+   "correcta": 2,
+   "tip": "En el congelador hace mucho frío, y con ese frío el agua se congela y se vuelve hielo.",
+   "revisada": false,
+   "id": "cien2-oa09-26"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "¿Qué necesita el agua para congelarse?",
+   "opciones": [
+    "Mucha sal",
+    "Mucho frío",
+    "Mucha luz",
+    "Mucho sol"
+   ],
+   "correcta": 1,
+   "tip": "El agua se congela cuando hace mucho frío, como en un congelador o en una noche de helada.",
+   "revisada": false,
+   "id": "cien2-oa09-27"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "En invierno, el agua del bebedero amaneció dura. ¿Por qué?",
+   "opciones": [
+    "Se evaporó con el sol",
+    "Alguien le echó sal",
+    "Se mezcló con arena",
+    "Se congeló con el frío"
+   ],
+   "correcta": 3,
+   "tip": "En las noches muy frías el agua se congela y se pone dura como hielo.",
+   "revisada": false,
+   "id": "cien2-oa09-28"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "Diego congeló agua en un molde de estrella. ¿Qué forma tiene el hielo?",
+   "opciones": [
+    "De estrella",
+    "De gota",
+    "De vaso",
+    "Redonda"
+   ],
+   "correcta": 0,
+   "tip": "El agua toma la forma del molde, y al congelarse se queda con esa forma.",
+   "revisada": false,
+   "id": "cien2-oa09-29"
+  },
+  {
+   "oa": "CN02 OA 09",
+   "pregunta": "¿Qué hace que el agua se evapore o se congele?",
+   "opciones": [
+    "Echarle azúcar",
+    "Revolverla con cuchara",
+    "Los cambios de temperatura",
+    "Taparla con un plato"
+   ],
+   "correcta": 2,
+   "tip": "Con calor el agua se evapora, y con mucho frío se congela. Lo que cambia es la temperatura.",
+   "revisada": false,
+   "id": "cien2-oa09-30"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "¿En qué estado está el agua de un cubo de hielo?",
+   "opciones": [
+    "Sólido",
+    "Líquido",
+    "No es agua",
+    "Gaseoso"
+   ],
+   "correcta": 0,
+   "tip": "El hielo es agua en estado sólido: es dura y tiene su propia forma.",
+   "revisada": false,
+   "id": "cien2-oa10-1"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "¿En qué estado está el agua que sale de la llave?",
+   "opciones": [
+    "Líquido",
+    "Sólido",
+    "Es hielo",
+    "Gaseoso"
+   ],
+   "correcta": 0,
+   "tip": "El agua de la llave escurre y moja: es agua en estado líquido.",
+   "revisada": false,
+   "id": "cien2-oa10-2"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "El vapor de agua, ¿en qué estado está?",
+   "opciones": [
+    "Sólido",
+    "Líquido",
+    "Gaseoso",
+    "Congelado"
+   ],
+   "correcta": 2,
+   "tip": "El vapor de agua es agua en estado gaseoso. Está mezclado con el aire y no se ve.",
+   "revisada": false,
+   "id": "cien2-oa10-3"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "¿Cuál de estos es agua en estado sólido?",
+   "opciones": [
+    "La nieve",
+    "La lluvia",
+    "El vapor",
+    "Un río"
+   ],
+   "correcta": 0,
+   "tip": "La nieve está hecha de cristalitos de hielo, que es agua sólida.",
+   "revisada": false,
+   "id": "cien2-oa10-4"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "Camila ve nieve, lluvia, granizo y hielo. ¿Cuál es líquido?",
+   "opciones": [
+    "La nieve",
+    "El hielo",
+    "La lluvia",
+    "El granizo"
+   ],
+   "correcta": 2,
+   "tip": "La lluvia son gotas de agua líquida. La nieve, el granizo y el hielo son agua sólida.",
+   "revisada": false,
+   "id": "cien2-oa10-5"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "¿Qué forma del agua es invisible?",
+   "opciones": [
+    "La neblina",
+    "El vapor",
+    "La nieve",
+    "El hielo"
+   ],
+   "correcta": 1,
+   "tip": "El vapor de agua no se ve. La neblina sí se ve porque está hecha de gotitas de agua.",
+   "revisada": false,
+   "id": "cien2-oa10-6"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "Diego puede tomar un hielo con la mano. ¿Por qué?",
+   "opciones": [
+    "Porque es líquido",
+    "Porque es sólido",
+    "Porque es tibio",
+    "Porque es vapor"
+   ],
+   "correcta": 1,
+   "tip": "El hielo es sólido: tiene forma propia, por eso se puede tomar sin que escurra.",
+   "revisada": false,
+   "id": "cien2-oa10-7"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "¿Qué estado del agua tiene su propia forma?",
+   "opciones": [
+    "El sólido",
+    "El gaseoso",
+    "Los tres",
+    "El líquido"
+   ],
+   "correcta": 0,
+   "tip": "Solo el agua sólida, como el hielo, mantiene su forma. El agua líquida y el vapor no la tienen.",
+   "revisada": false,
+   "id": "cien2-oa10-8"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "¿En qué se diferencian el hielo y el agua líquida?",
+   "opciones": [
+    "El hielo es invisible",
+    "El hielo no es agua",
+    "El hielo es duro",
+    "El agua líquida es dura"
+   ],
+   "correcta": 2,
+   "tip": "Los dos son agua. La diferencia es el estado: el hielo es sólido y duro, el agua líquida escurre.",
+   "revisada": false,
+   "id": "cien2-oa10-9"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "Ana dejó un hielo en un plato al sol. ¿Qué pasó?",
+   "opciones": [
+    "Siguió igual",
+    "Se puso más duro",
+    "Se derritió",
+    "Se hizo más grande"
+   ],
+   "correcta": 2,
+   "tip": "Con el calor, el hielo se derrite y pasa de sólido a líquido.",
+   "revisada": false,
+   "id": "cien2-oa10-10"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "Cuando el hielo se derrite, ¿en qué se convierte?",
+   "opciones": [
+    "En agua líquida",
+    "En granizo",
+    "En vapor de agua",
+    "En nieve"
+   ],
+   "correcta": 0,
+   "tip": "Derretirse es pasar de sólido a líquido: el hielo se vuelve agua líquida.",
+   "revisada": false,
+   "id": "cien2-oa10-11"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "¿Qué hace falta para que un hielo se derrita?",
+   "opciones": [
+    "Más frío",
+    "Calor",
+    "Un congelador",
+    "Una tapa"
+   ],
+   "correcta": 1,
+   "tip": "El hielo se derrite cuando recibe calor. Con frío, en cambio, sigue sólido.",
+   "revisada": false,
+   "id": "cien2-oa10-12"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "Un vaso helado se llenó de gotitas por fuera. ¿De dónde salieron?",
+   "opciones": [
+    "Del vapor del aire",
+    "Del vidrio del vaso",
+    "De la mesa",
+    "Del agua de adentro"
+   ],
+   "correcta": 0,
+   "tip": "El aire tiene vapor de agua. Al tocar el vaso frío, el vapor se vuelve gotitas de agua líquida.",
+   "revisada": false,
+   "id": "cien2-oa10-13"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "Después de la ducha, el espejo se empañó. ¿Qué lo empañó?",
+   "opciones": [
+    "Gotitas de agua",
+    "Polvo del baño",
+    "Humo de la ducha",
+    "Jabón en el aire"
+   ],
+   "correcta": 0,
+   "tip": "El vapor de la ducha toca el espejo frío y se convierte en gotitas de agua. No es humo.",
+   "revisada": false,
+   "id": "cien2-oa10-14"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "El vapor toca un espejo frío. ¿En qué se convierte?",
+   "opciones": [
+    "En humo",
+    "En más vapor",
+    "En hielo",
+    "En agua líquida"
+   ],
+   "correcta": 3,
+   "tip": "Al enfriarse, el vapor pasa de gas a líquido y aparecen gotitas de agua.",
+   "revisada": false,
+   "id": "cien2-oa10-15"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "El agua de una olla hirviendo se va al aire. ¿Cómo se va?",
+   "opciones": [
+    "Como vapor",
+    "Como nieve",
+    "Como hielo",
+    "Como lluvia"
+   ],
+   "correcta": 0,
+   "tip": "El agua que hierve se convierte en vapor, que es agua en estado gaseoso, y se va al aire.",
+   "revisada": false,
+   "id": "cien2-oa10-16"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "¿Qué tienen en común el hielo, el agua y el vapor?",
+   "opciones": [
+    "Se ven igual",
+    "Mojan igual",
+    "Son igual de duros",
+    "Todos son agua"
+   ],
+   "correcta": 3,
+   "tip": "El hielo, el agua líquida y el vapor son la misma agua en tres estados distintos.",
+   "revisada": false,
+   "id": "cien2-oa10-17"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "Diego congeló agua y después la derritió. ¿Qué tiene al final?",
+   "opciones": [
+    "Vapor",
+    "Agua líquida",
+    "Hielo",
+    "Nada"
+   ],
+   "correcta": 1,
+   "tip": "Primero el agua pasó a sólido y después volvió a líquido al derretirse.",
+   "revisada": false,
+   "id": "cien2-oa10-18"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "Una tetera hierve en la cocina. ¿Por dónde se reparte el vapor?",
+   "opciones": [
+    "Por el aire de la cocina",
+    "Se vuelve hielo",
+    "Se va al suelo",
+    "Se queda en la tetera"
+   ],
+   "correcta": 0,
+   "tip": "El vapor es un gas: se mezcla con el aire y se esparce por todo el lugar.",
+   "revisada": false,
+   "id": "cien2-oa10-19"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "El granizo que cae del cielo, ¿en qué estado está?",
+   "opciones": [
+    "Sólido",
+    "Líquido",
+    "Gaseoso",
+    "Es vapor"
+   ],
+   "correcta": 0,
+   "tip": "El granizo son bolitas de hielo: es agua en estado sólido.",
+   "revisada": false,
+   "id": "cien2-oa10-20"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "Matías dejó un helado de agua fuera del congelador. ¿Qué pasó?",
+   "opciones": [
+    "Se puso más frío",
+    "Se endureció",
+    "Quedó igual",
+    "Se derritió"
+   ],
+   "correcta": 3,
+   "tip": "Fuera del congelador hace más calor, así que el helado pasa de sólido a líquido.",
+   "revisada": false,
+   "id": "cien2-oa10-21"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "¿En cuál de estos casos el agua pasa de sólido a líquido?",
+   "opciones": [
+    "Un hielo derritiéndose",
+    "Un espejo empañándose",
+    "Una nube formándose",
+    "Agua congelándose"
+   ],
+   "correcta": 0,
+   "tip": "Cuando el hielo se derrite, el agua pasa de estado sólido a estado líquido.",
+   "revisada": false,
+   "id": "cien2-oa10-22"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "¿En qué caso el vapor se vuelve agua líquida?",
+   "opciones": [
+    "Un hielo derretido",
+    "Un charco secándose",
+    "Un espejo empañado",
+    "Un cubo de hielo"
+   ],
+   "correcta": 2,
+   "tip": "En el espejo empañado el vapor se enfrió y se convirtió en gotitas de agua líquida.",
+   "revisada": false,
+   "id": "cien2-oa10-23"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "Sofía llevó nieve en un balde a la cocina. ¿Qué encontró después?",
+   "opciones": [
+    "Hielo más duro",
+    "Agua líquida",
+    "Un balde vacío",
+    "Más nieve"
+   ],
+   "correcta": 1,
+   "tip": "En la cocina hace más calor que afuera, y la nieve se derrite: queda agua líquida.",
+   "revisada": false,
+   "id": "cien2-oa10-24"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "Al salir el sol, el muñeco de nieve se achicó. ¿Por qué?",
+   "opciones": [
+    "Se congeló más",
+    "Se derritió",
+    "Se hundió en la tierra",
+    "Se lo llevó el viento"
+   ],
+   "correcta": 1,
+   "tip": "El calor del sol derrite la nieve, que pasa de sólido a líquido. Por eso el muñeco se achica.",
+   "revisada": false,
+   "id": "cien2-oa10-25"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "En el aire de una pieza hay vapor de agua. ¿Se puede ver?",
+   "opciones": [
+    "Sí, como humo",
+    "Sí, como nubes",
+    "No, es invisible",
+    "Solo de noche"
+   ],
+   "correcta": 2,
+   "tip": "El vapor de agua es invisible. Lo notamos cuando se enfría y forma gotitas, como en un vidrio.",
+   "revisada": false,
+   "id": "cien2-oa10-26"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "¿En qué se diferencian el agua líquida y el vapor?",
+   "opciones": [
+    "El vapor no es agua",
+    "El vapor moja más",
+    "El vapor es duro",
+    "El vapor no se ve"
+   ],
+   "correcta": 3,
+   "tip": "Los dos son agua. El vapor es agua en estado gaseoso y no se puede ver.",
+   "revisada": false,
+   "id": "cien2-oa10-27"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "Diego congeló agua en una cubetera. ¿Cómo cambió?",
+   "opciones": [
+    "De líquido a sólido",
+    "De líquido a gas",
+    "No cambió",
+    "De sólido a líquido"
+   ],
+   "correcta": 0,
+   "tip": "El agua de la cubetera era líquida y con el frío pasó a sólida: se hizo hielo.",
+   "revisada": false,
+   "id": "cien2-oa10-28"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "Benjamín tuvo un hielo en la mano. ¿Cómo quedó su mano al rato?",
+   "opciones": [
+    "Mojada",
+    "Con hielo pegado",
+    "Seca",
+    "Caliente"
+   ],
+   "correcta": 0,
+   "tip": "El calor de la mano derrite el hielo, que pasa a agua líquida y moja la mano.",
+   "revisada": false,
+   "id": "cien2-oa10-29"
+  },
+  {
+   "oa": "CN02 OA 10",
+   "pregunta": "Un pudú bebe agua de un estero. ¿En qué estado está esa agua?",
+   "opciones": [
+    "Gaseoso",
+    "Sólido",
+    "Líquido",
+    "Ninguno"
+   ],
+   "correcta": 2,
+   "tip": "El agua del estero corre y se puede beber: está en estado líquido.",
+   "revisada": false,
+   "id": "cien2-oa10-30"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "En el ciclo del agua, ¿qué calienta el agua del mar?",
+   "opciones": [
+    "El viento",
+    "El Sol",
+    "Las nubes",
+    "La Luna"
+   ],
+   "correcta": 1,
+   "tip": "El Sol calienta el agua de mares, lagos y ríos, y así empieza el ciclo del agua.",
+   "revisada": false,
+   "id": "cien2-oa11-1"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "El sol calienta el agua del mar. ¿Qué le pasa?",
+   "opciones": [
+    "Se hunde más",
+    "Se queda quieta",
+    "Se evapora y sube",
+    "Se congela"
+   ],
+   "correcta": 2,
+   "tip": "Con el calor del sol, parte del agua se evapora: se vuelve vapor y sube al cielo.",
+   "revisada": false,
+   "id": "cien2-oa11-2"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿De qué están hechas las nubes?",
+   "opciones": [
+    "De gotitas de agua",
+    "De algodón",
+    "De humo",
+    "De polvo"
+   ],
+   "correcta": 0,
+   "tip": "Las nubes son muchísimas gotitas de agua muy chiquitas, juntas en el cielo.",
+   "revisada": false,
+   "id": "cien2-oa11-3"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "El vapor sube y se enfría en el cielo. ¿Qué se forma?",
+   "opciones": [
+    "El arcoíris",
+    "Los rayos",
+    "El viento",
+    "Las nubes"
+   ],
+   "correcta": 3,
+   "tip": "Arriba hace frío: el vapor se enfría, se vuelve gotitas y forma las nubes.",
+   "revisada": false,
+   "id": "cien2-oa11-4"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿Cuándo caen las gotitas de una nube?",
+   "opciones": [
+    "Cuando sopla el viento",
+    "Cuando sale el sol",
+    "Cuando se hacen pesadas",
+    "Cuando es de noche"
+   ],
+   "correcta": 2,
+   "tip": "Las gotitas se juntan y crecen. Cuando pesan mucho, caen como lluvia.",
+   "revisada": false,
+   "id": "cien2-oa11-5"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿Cómo vuelve el agua de las nubes a la tierra?",
+   "opciones": [
+    "Como lluvia o nieve",
+    "Como humo",
+    "Como vapor",
+    "Como viento"
+   ],
+   "correcta": 0,
+   "tip": "El agua de las nubes cae a la tierra como lluvia, o como nieve si hace mucho frío.",
+   "revisada": false,
+   "id": "cien2-oa11-6"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Llueve en la cordillera. ¿Adónde llega después esa agua?",
+   "opciones": [
+    "A los ríos y al mar",
+    "Al Sol",
+    "A las nubes enseguida",
+    "Se queda arriba"
+   ],
+   "correcta": 0,
+   "tip": "El agua de la lluvia baja por cerros y ríos hasta llegar al mar.",
+   "revisada": false,
+   "id": "cien2-oa11-7"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿Qué pasa justo después de que el agua se evapora?",
+   "opciones": [
+    "Se congela",
+    "Se forman nubes",
+    "Llega a un río",
+    "Cae como lluvia"
+   ],
+   "correcta": 1,
+   "tip": "El vapor sube, se enfría y forma nubes. Recién después puede llover.",
+   "revisada": false,
+   "id": "cien2-oa11-8"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Las nubes ya están cargadas de agua. ¿Qué viene ahora?",
+   "opciones": [
+    "Se vuelven humo",
+    "Sube el mar",
+    "Llueve",
+    "Se congela el mar"
+   ],
+   "correcta": 2,
+   "tip": "Cuando las nubes tienen muchas gotitas pesadas, el agua cae como lluvia.",
+   "revisada": false,
+   "id": "cien2-oa11-9"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿Por qué se llama ciclo del agua?",
+   "opciones": [
+    "Porque el agua es redonda",
+    "Porque pasa solo en el mar",
+    "Porque pasa una sola vez",
+    "Porque se repite siempre"
+   ],
+   "correcta": 3,
+   "tip": "Un ciclo es algo que se repite: el agua se evapora, forma nubes, llueve y vuelve a empezar.",
+   "revisada": false,
+   "id": "cien2-oa11-10"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "En verano, la nieve de la cordillera se derrite. ¿Adónde va?",
+   "opciones": [
+    "Se vuelve granizo",
+    "Baja por los ríos",
+    "Se queda arriba",
+    "Se va al Sol"
+   ],
+   "correcta": 1,
+   "tip": "La nieve derretida se vuelve agua líquida que baja por los ríos hasta el valle y el mar.",
+   "revisada": false,
+   "id": "cien2-oa11-11"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿El agua de la lluvia es agua nueva?",
+   "opciones": [
+    "Sí, la fabrican las nubes",
+    "Sí, la manda el Sol",
+    "No, es la misma agua",
+    "Sí, cae del espacio"
+   ],
+   "correcta": 2,
+   "tip": "No se fabrica agua nueva: la misma agua se evapora, forma nubes y vuelve a caer.",
+   "revisada": false,
+   "id": "cien2-oa11-12"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Un charco se secó y días después llovió. ¿Pudo ser la misma agua?",
+   "opciones": [
+    "No, se fue al espacio",
+    "No, el agua se acaba",
+    "Sí, por el ciclo del agua",
+    "No, el agua se borra"
+   ],
+   "correcta": 2,
+   "tip": "El agua del charco se evaporó y subió. En el ciclo del agua, esa agua puede volver a caer.",
+   "revisada": false,
+   "id": "cien2-oa11-13"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "El agua del río llega al mar. ¿Qué le pasa después?",
+   "opciones": [
+    "Se vuelve arena",
+    "Se queda para siempre",
+    "Se va al espacio",
+    "Se evapora otra vez"
+   ],
+   "correcta": 3,
+   "tip": "El agua del mar se vuelve a evaporar con el sol. Así el ciclo nunca se detiene.",
+   "revisada": false,
+   "id": "cien2-oa11-14"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿Por qué el agua es tan valiosa?",
+   "opciones": [
+    "Porque es transparente",
+    "Porque cae del cielo",
+    "Porque es salada",
+    "Sin agua no hay vida"
+   ],
+   "correcta": 3,
+   "tip": "Las personas, los animales y las plantas necesitan agua para vivir. Por eso hay que cuidarla.",
+   "revisada": false,
+   "id": "cien2-oa11-15"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿Qué agua pueden beber las personas?",
+   "opciones": [
+    "Agua del mar",
+    "Agua dulce y limpia",
+    "Agua de un charco",
+    "Cualquier agua"
+   ],
+   "correcta": 1,
+   "tip": "Para beber se necesita agua dulce y limpia. El agua del mar es salada y no sirve para tomar.",
+   "revisada": false,
+   "id": "cien2-oa11-16"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Casi toda el agua del planeta está en el mar. ¿Podemos beberla?",
+   "opciones": [
+    "Sí, toda sirve",
+    "Sí, si está fría",
+    "Sí, es limpia",
+    "No, es salada"
+   ],
+   "correcta": 3,
+   "tip": "El agua del mar es salada y no se puede beber. Por eso el agua dulce es tan valiosa.",
+   "revisada": false,
+   "id": "cien2-oa11-17"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿Quiénes necesitan agua para vivir?",
+   "opciones": [
+    "Personas, animales y plantas",
+    "Solo las personas",
+    "Solo los peces",
+    "Solo las plantas"
+   ],
+   "correcta": 0,
+   "tip": "Todos los seres vivos necesitan agua: las personas, los animales y las plantas.",
+   "revisada": false,
+   "id": "cien2-oa11-18"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "En partes de Chile llueve muy poco. ¿Qué hay que hacer con el agua?",
+   "opciones": [
+    "Botar la que sobra",
+    "Usarla sin pensar",
+    "Guardarla sin usar",
+    "Usar solo la necesaria"
+   ],
+   "correcta": 3,
+   "tip": "Cuando hay poca agua, hay que usarla bien: solo la necesaria y sin desperdiciarla.",
+   "revisada": false,
+   "id": "cien2-oa11-19"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Diego se lava los dientes. ¿Qué debería hacer con la llave?",
+   "opciones": [
+    "Cerrarla al cepillarse",
+    "Dejarla abierta",
+    "Cerrarla en la noche",
+    "Abrirla más fuerte"
+   ],
+   "correcta": 0,
+   "tip": "Si la llave queda abierta mientras se cepilla, se pierde mucha agua sin usarla.",
+   "revisada": false,
+   "id": "cien2-oa11-20"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Ana se demora mucho en la ducha. ¿Qué le conviene hacer?",
+   "opciones": [
+    "Abrir más el agua",
+    "Usar agua más caliente",
+    "Ducharse dos veces",
+    "Ducharse más corto"
+   ],
+   "correcta": 3,
+   "tip": "Una ducha corta gasta mucha menos agua y deja limpio igual.",
+   "revisada": false,
+   "id": "cien2-oa11-21"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Una llave del baño gotea todo el día. ¿Qué debería hacer Matías?",
+   "opciones": [
+    "Avisar para repararla",
+    "Esperar que pare sola",
+    "Abrirla más",
+    "Dejarla así"
+   ],
+   "correcta": 0,
+   "tip": "Una llave que gotea pierde mucha agua en un día. Hay que avisar para que la reparen.",
+   "revisada": false,
+   "id": "cien2-oa11-22"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Sofía lavó verduras en un bol. ¿Cómo puede aprovechar esa agua?",
+   "opciones": [
+    "Dejarla en el bol",
+    "Regar las plantas",
+    "Dejarla al sol",
+    "Botarla al desagüe"
+   ],
+   "correcta": 1,
+   "tip": "El agua de lavar verduras sirve para regar. Así se aprovecha dos veces.",
+   "revisada": false,
+   "id": "cien2-oa11-23"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿A qué hora conviene regar el jardín?",
+   "opciones": [
+    "A mediodía",
+    "Cuando llueve",
+    "Al atardecer",
+    "Todo el día"
+   ],
+   "correcta": 2,
+   "tip": "Al atardecer o temprano en la mañana el sol calienta menos, y el agua no se evapora tan rápido.",
+   "revisada": false,
+   "id": "cien2-oa11-24"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Camila quiere cuidar el río de su pueblo. ¿Qué debe evitar?",
+   "opciones": [
+    "Sacarle fotos",
+    "Mirar el río",
+    "Botar basura al río",
+    "Caminar por la orilla"
+   ],
+   "correcta": 2,
+   "tip": "La basura ensucia el agua del río y daña a los peces y a las plantas que viven ahí.",
+   "revisada": false,
+   "id": "cien2-oa11-25"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Benjamín lava el auto con su papá. ¿Qué gasta menos agua?",
+   "opciones": [
+    "Lavarlo dos veces",
+    "La manguera abierta",
+    "Mojarlo todo el rato",
+    "Usar un balde"
+   ],
+   "correcta": 3,
+   "tip": "Con un balde se usa solo el agua necesaria. La manguera abierta bota mucha agua.",
+   "revisada": false,
+   "id": "cien2-oa11-26"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿Cuál de estas acciones cuida el agua?",
+   "opciones": [
+    "Lavar la vereda con manguera",
+    "Regar a mediodía",
+    "Dejar la llave abierta",
+    "Juntar agua de lluvia"
+   ],
+   "correcta": 3,
+   "tip": "El agua de lluvia que se junta en un balde sirve después para regar o limpiar.",
+   "revisada": false,
+   "id": "cien2-oa11-27"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Javiera lava la loza con la llave abierta. ¿Qué le conviene?",
+   "opciones": [
+    "Usar más detergente",
+    "Cerrar la llave al enjabonar",
+    "Abrir más la llave",
+    "Lavar más lento"
+   ],
+   "correcta": 1,
+   "tip": "Mientras enjabona no necesita agua corriendo. Cerrar la llave ahorra mucha agua.",
+   "revisada": false,
+   "id": "cien2-oa11-28"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿Por qué no se bota aceite por el lavaplatos?",
+   "opciones": [
+    "Porque ensucia el agua",
+    "Porque enfría el agua",
+    "Porque ahorra agua",
+    "Porque limpia las cañerías"
+   ],
+   "correcta": 0,
+   "tip": "El aceite ensucia el agua y la hace difícil de limpiar. Se guarda en una botella.",
+   "revisada": false,
+   "id": "cien2-oa11-29"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Matías ve una manguera abierta que nadie usa. ¿Qué es lo mejor?",
+   "opciones": [
+    "Llevarla a otro lado",
+    "Abrirla más",
+    "Cerrar la llave",
+    "Dejarla correr"
+   ],
+   "correcta": 2,
+   "tip": "El agua que corre sin que nadie la use se desperdicia. Lo mejor es cerrar la llave.",
+   "revisada": false,
+   "id": "cien2-oa11-30"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "¿Qué cae del cielo cuando llueve?",
+   "opciones": [
+    "Granos de arena",
+    "Bolitas de hielo",
+    "Copos blancos",
+    "Gotas de agua"
+   ],
+   "correcta": 3,
+   "tip": "La lluvia son gotas de agua líquida que caen de las nubes.",
+   "revisada": false,
+   "id": "cien2-oa12-1"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "Caen bolitas duras de hielo desde las nubes. ¿Qué es?",
+   "opciones": [
+    "Nieve",
+    "Granizo",
+    "Neblina",
+    "Lluvia"
+   ],
+   "correcta": 1,
+   "tip": "El granizo son bolitas de hielo duras que caen de las nubes.",
+   "revisada": false,
+   "id": "cien2-oa12-2"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "Caen copos blancos y suaves del cielo. ¿Qué es?",
+   "opciones": [
+    "Nieve",
+    "Lluvia",
+    "Escarcha",
+    "Granizo"
+   ],
+   "correcta": 0,
+   "tip": "La nieve cae en copos blancos y suaves. Cae cuando hace mucho frío.",
+   "revisada": false,
+   "id": "cien2-oa12-3"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "¿Qué tienen en común la lluvia, el granizo y la nieve?",
+   "opciones": [
+    "Son tibios",
+    "Caen de las nubes",
+    "Son de hielo",
+    "Caen en verano"
+   ],
+   "correcta": 1,
+   "tip": "Los tres son agua que cae de las nubes. Se llaman precipitaciones.",
+   "revisada": false,
+   "id": "cien2-oa12-4"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "¿Qué es el viento?",
+   "opciones": [
+    "Agua que vuela",
+    "Aire en movimiento",
+    "Nubes que bajan",
+    "Frío del cielo"
+   ],
+   "correcta": 1,
+   "tip": "El viento es aire que se mueve. No lo vemos, pero sentimos cómo empuja.",
+   "revisada": false,
+   "id": "cien2-oa12-5"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "¿Cómo se nota que hay viento afuera?",
+   "opciones": [
+    "El cielo está azul",
+    "Hay charcos",
+    "Brilla el sol",
+    "Se mueven las hojas"
+   ],
+   "correcta": 3,
+   "tip": "El viento no se ve, pero mueve las hojas, las banderas y la ropa colgada.",
+   "revisada": false,
+   "id": "cien2-oa12-6"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "Diego quiere elevar su volantín. ¿Qué día le conviene?",
+   "opciones": [
+    "Un día con viento",
+    "Un día sin viento",
+    "Un día de granizo",
+    "Un día de lluvia"
+   ],
+   "correcta": 0,
+   "tip": "El viento empuja el volantín hacia arriba. Sin viento no se eleva.",
+   "revisada": false,
+   "id": "cien2-oa12-7"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "La ropa colgada se agita y vuela un sombrero. ¿Cómo está el viento?",
+   "opciones": [
+    "Muy fuerte",
+    "Quieto",
+    "Muy suave",
+    "No hay viento"
+   ],
+   "correcta": 0,
+   "tip": "Cuando el viento es fuerte, mueve mucho la ropa y hasta levanta cosas livianas.",
+   "revisada": false,
+   "id": "cien2-oa12-8"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "Hace mucho calor y el sol quema. ¿Qué ropa le conviene a Ana?",
+   "opciones": [
+    "Ropa liviana y gorro",
+    "Bufanda y guantes",
+    "Botas de lluvia",
+    "Chaqueta gruesa"
+   ],
+   "correcta": 0,
+   "tip": "Con temperatura alta conviene ropa liviana y un gorro que proteja del sol.",
+   "revisada": false,
+   "id": "cien2-oa12-9"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "Camila sale y siente mucho frío. ¿Cómo está la temperatura?",
+   "opciones": [
+    "Tibia",
+    "Alta",
+    "Como en verano",
+    "Baja"
+   ],
+   "correcta": 3,
+   "tip": "Cuando sentimos frío es porque la temperatura del aire está baja.",
+   "revisada": false,
+   "id": "cien2-oa12-10"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "¿Qué siente Matías en un día de temperatura alta?",
+   "opciones": [
+    "Calor",
+    "Frío",
+    "Mucho viento",
+    "Ganas de abrigarse"
+   ],
+   "correcta": 0,
+   "tip": "Una temperatura alta significa que el aire está caliente: se siente calor.",
+   "revisada": false,
+   "id": "cien2-oa12-11"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "¿En qué estación hace más calor en Chile?",
+   "opciones": [
+    "Igual todo el año",
+    "En invierno",
+    "En verano",
+    "En otoño"
+   ],
+   "correcta": 2,
+   "tip": "En verano la temperatura es más alta. En invierno es más baja.",
+   "revisada": false,
+   "id": "cien2-oa12-12"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "En la zona central de Chile, ¿cuándo llueve más?",
+   "opciones": [
+    "En verano",
+    "Nunca llueve",
+    "En invierno",
+    "En primavera"
+   ],
+   "correcta": 2,
+   "tip": "En la zona central la mayoría de las lluvias caen en invierno. En verano casi no llueve.",
+   "revisada": false,
+   "id": "cien2-oa12-15"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "¿Dónde llueve muy poco en Chile?",
+   "opciones": [
+    "En Chiloé",
+    "En el desierto del norte",
+    "En el sur",
+    "En la Patagonia"
+   ],
+   "correcta": 1,
+   "tip": "En el desierto de Atacama, en el norte, casi nunca llueve. En el sur llueve mucho.",
+   "revisada": false,
+   "id": "cien2-oa12-16"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "¿Dónde es común que nieve en invierno?",
+   "opciones": [
+    "En la playa del norte",
+    "En la costa central",
+    "En la cordillera",
+    "En el desierto"
+   ],
+   "correcta": 2,
+   "tip": "En la cordillera hace mucho frío en invierno, y por eso ahí cae nieve.",
+   "revisada": false,
+   "id": "cien2-oa12-17"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "El cielo se llenó de nubes oscuras. ¿Qué puede venir?",
+   "opciones": [
+    "Más sol",
+    "Lluvia",
+    "Un cielo azul",
+    "Un día de calor"
+   ],
+   "correcta": 1,
+   "tip": "Las nubes oscuras están cargadas de agua. Es común que después llueva.",
+   "revisada": false,
+   "id": "cien2-oa12-18"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "En otoño, ¿cómo cambia la temperatura?",
+   "opciones": [
+    "Sube mucho",
+    "Llega el verano",
+    "No cambia",
+    "Empieza a bajar"
+   ],
+   "correcta": 3,
+   "tip": "En otoño los días se van poniendo más fríos, hasta llegar al invierno.",
+   "revisada": false,
+   "id": "cien2-oa12-19"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "Después del invierno llega la primavera. ¿Cómo son los días?",
+   "opciones": [
+    "Iguales al invierno",
+    "Más tibios",
+    "Más fríos",
+    "Con nieve siempre"
+   ],
+   "correcta": 1,
+   "tip": "En primavera la temperatura empieza a subir y los días se ponen más tibios.",
+   "revisada": false,
+   "id": "cien2-oa12-20"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "Ayer llovió y hoy hay sol. ¿Qué cambió?",
+   "opciones": [
+    "La estación del año",
+    "El tiempo atmosférico",
+    "El paisaje",
+    "El mes"
+   ],
+   "correcta": 1,
+   "tip": "El tiempo atmosférico puede cambiar de un día a otro: lluvia, sol, viento o frío.",
+   "revisada": false,
+   "id": "cien2-oa12-21"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "Sofía dice que hoy está frío y nublado. ¿De qué habla?",
+   "opciones": [
+    "De su ropa",
+    "Del paisaje",
+    "De la hora",
+    "Del tiempo atmosférico"
+   ],
+   "correcta": 3,
+   "tip": "Frío, nublado, lluvioso o con viento: así se describe el tiempo atmosférico de un día.",
+   "revisada": false,
+   "id": "cien2-oa12-22"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "Ana va al colegio y está lloviendo. ¿Qué le conviene llevar?",
+   "opciones": [
+    "Gorro de sol",
+    "Bloqueador",
+    "Paraguas",
+    "Traje de baño"
+   ],
+   "correcta": 2,
+   "tip": "Con lluvia conviene un paraguas o una capa para no mojarse.",
+   "revisada": false,
+   "id": "cien2-oa12-23"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "¿Por qué el granizo puede dañar las plantas?",
+   "opciones": [
+    "Porque cae duro",
+    "Porque es salado",
+    "Porque trae arena",
+    "Porque es tibio"
+   ],
+   "correcta": 0,
+   "tip": "El granizo son bolitas de hielo duras: al caer con fuerza pueden romper hojas y frutos.",
+   "revisada": false,
+   "id": "cien2-oa12-24"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "Amaneció con hielo sobre el pasto. ¿Cómo estuvo la noche?",
+   "opciones": [
+    "Como en verano",
+    "Muy calurosa",
+    "Muy fría",
+    "Tibia"
+   ],
+   "correcta": 2,
+   "tip": "Ese hielo sobre el pasto se forma cuando la noche es muy fría.",
+   "revisada": false,
+   "id": "cien2-oa12-25"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "Para que caiga nieve, ¿cómo tiene que estar el aire?",
+   "opciones": [
+    "Muy frío",
+    "Tibio",
+    "Muy caliente",
+    "Seco y caluroso"
+   ],
+   "correcta": 0,
+   "tip": "La nieve cae cuando el aire está muy frío. Con calor, cae como lluvia.",
+   "revisada": false,
+   "id": "cien2-oa12-26"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "El viento sopla fuerte en la playa. ¿Qué puede volar?",
+   "opciones": [
+    "El agua del fondo",
+    "Los árboles",
+    "Las rocas grandes",
+    "La arena seca"
+   ],
+   "correcta": 3,
+   "tip": "El viento fuerte levanta cosas livianas, como la arena seca. Las rocas pesan demasiado.",
+   "revisada": false,
+   "id": "cien2-oa12-27"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "En el sur de Chile, ¿cómo es el tiempo en invierno?",
+   "opciones": [
+    "Siempre con sol",
+    "Tibio y sin nubes",
+    "Frío y lluvioso",
+    "Caluroso y seco"
+   ],
+   "correcta": 2,
+   "tip": "En el sur de Chile los inviernos son fríos y llueve mucho.",
+   "revisada": false,
+   "id": "cien2-oa12-28"
+  },
+  {
+   "oa": "CN02 OA 12",
+   "pregunta": "¿Cómo se llama el agua que cae de las nubes?",
+   "opciones": [
+    "Viento",
+    "Evaporación",
+    "Precipitación",
+    "Temperatura"
+   ],
+   "correcta": 2,
+   "tip": "La lluvia, el granizo y la nieve son precipitaciones: agua que cae de las nubes.",
+   "revisada": false,
+   "id": "cien2-oa12-30"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "¿Qué instrumento mide la temperatura del aire?",
+   "opciones": [
+    "La veleta",
+    "El anemómetro",
+    "El pluviómetro",
+    "El termómetro"
+   ],
+   "correcta": 3,
+   "tip": "El termómetro mide qué tan caliente o frío está el aire. Se lee en grados.",
+   "revisada": false,
+   "id": "cien2-oa13-1"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Ana quiere saber cuánta lluvia cayó anoche. ¿Qué usa?",
+   "opciones": [
+    "Un pluviómetro",
+    "Una veleta",
+    "Un termómetro",
+    "Una manga de viento"
+   ],
+   "correcta": 0,
+   "tip": "El pluviómetro es un recipiente que junta la lluvia: mientras más agua tiene, más llovió.",
+   "revisada": false,
+   "id": "cien2-oa13-2"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "¿Qué nos muestra una veleta?",
+   "opciones": [
+    "La dirección del viento",
+    "Cuánta lluvia cayó",
+    "Cuánto calor hace",
+    "La altura de las nubes"
+   ],
+   "correcta": 0,
+   "tip": "La veleta gira con el viento y así muestra su dirección. No mide la lluvia ni el calor.",
+   "revisada": false,
+   "id": "cien2-oa13-3"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Diego armó vasitos que giran con el viento. ¿Qué miden?",
+   "opciones": [
+    "Cuánta lluvia cayó",
+    "Cuánta nieve hay",
+    "Cuánto calor hace",
+    "Qué tan rápido sopla"
+   ],
+   "correcta": 3,
+   "tip": "Es un anemómetro: mientras más rápido sopla el viento, más rápido giran los vasitos.",
+   "revisada": false,
+   "id": "cien2-oa13-4"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Ana midió 28 grados el lunes y 12 el martes. ¿Qué día hizo más frío?",
+   "opciones": [
+    "Los dos igual",
+    "El lunes",
+    "El martes",
+    "No se puede saber"
+   ],
+   "correcta": 2,
+   "tip": "Menos grados en el termómetro significa más frío, y 12 es menos que 28.",
+   "revisada": false,
+   "id": "cien2-oa13-5"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Con más calor, ¿qué hace el líquido del termómetro?",
+   "opciones": [
+    "Cambia de color",
+    "Sube por el tubo",
+    "Se queda quieto",
+    "Baja por el tubo"
+   ],
+   "correcta": 1,
+   "tip": "Con el calor el líquido se agranda y sube por el tubito; con el frío baja.",
+   "revisada": false,
+   "id": "cien2-oa13-6"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "El pluviómetro de Sofía amaneció vacío. ¿Cuánto llovió de noche?",
+   "opciones": [
+    "Nada",
+    "Mucho",
+    "Un poco",
+    "Más que ayer"
+   ],
+   "correcta": 0,
+   "tip": "Si el pluviómetro no juntó agua, es porque esa noche no cayó lluvia.",
+   "revisada": false,
+   "id": "cien2-oa13-7"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Benja juntó más lluvia que Ana en su pluviómetro. ¿Dónde llovió más?",
+   "opciones": [
+    "Donde está Ana",
+    "En los dos igual",
+    "Donde está Benja",
+    "En ningún lugar"
+   ],
+   "correcta": 2,
+   "tip": "El pluviómetro que junta más agua es el del lugar donde cayó más lluvia.",
+   "revisada": false,
+   "id": "cien2-oa13-8"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "La flecha de la veleta cambió de lado. ¿Qué cambió?",
+   "opciones": [
+    "La lluvia caída",
+    "La temperatura del aire",
+    "La hora del día",
+    "La dirección del viento"
+   ],
+   "correcta": 3,
+   "tip": "La veleta solo se mueve con el viento: si cambia de lado, el viento cambió de dirección.",
+   "revisada": false,
+   "id": "cien2-oa13-9"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "¿Dónde conviene poner un pluviómetro?",
+   "opciones": [
+    "Bajo un árbol grande",
+    "Dentro de la sala",
+    "En un patio abierto",
+    "Bajo el techo"
+   ],
+   "correcta": 2,
+   "tip": "La lluvia tiene que caerle directo del cielo. Bajo un techo o un árbol no le llega bien.",
+   "revisada": false,
+   "id": "cien2-oa13-10"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Javiera quiere hacer un pluviómetro casero. ¿Qué usa?",
+   "opciones": [
+    "Una linterna",
+    "Una botella cortada",
+    "Un espejo",
+    "Un globo inflado"
+   ],
+   "correcta": 1,
+   "tip": "Una botella cortada junta la lluvia, y con una regla se ve qué tan alta quedó el agua.",
+   "revisada": false,
+   "id": "cien2-oa13-11"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "¿Para qué sirve anotar la temperatura todos los días?",
+   "opciones": [
+    "Para comparar los días",
+    "Para que llueva",
+    "Para que haga más calor",
+    "Para cambiar el tiempo"
+   ],
+   "correcta": 0,
+   "tip": "Anotar las medidas permite ver cómo cambia el tiempo de un día a otro. Medir no cambia el tiempo.",
+   "revisada": false,
+   "id": "cien2-oa13-12"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Benjamín quiere saber si hace frío para ponerse chaleco. ¿Qué usa?",
+   "opciones": [
+    "Una veleta",
+    "Un termómetro",
+    "Un pluviómetro",
+    "Un anemómetro"
+   ],
+   "correcta": 1,
+   "tip": "El termómetro dice cuántos grados hay: con pocos grados hace frío y conviene abrigarse.",
+   "revisada": false,
+   "id": "cien2-oa13-13"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "La manga de viento cuelga floja. ¿Cómo está el viento?",
+   "opciones": [
+    "Sopla muy fuerte",
+    "Casi no sopla",
+    "Sopla de lado",
+    "Sopla hacia arriba"
+   ],
+   "correcta": 1,
+   "tip": "La manga de viento se infla con el viento. Si cuelga floja, casi no hay viento.",
+   "revisada": false,
+   "id": "cien2-oa13-14"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "La manga de viento está estirada y derecha. ¿Cómo sopla el viento?",
+   "opciones": [
+    "Fuerte",
+    "Nada",
+    "Muy despacio",
+    "Hacia abajo"
+   ],
+   "correcta": 0,
+   "tip": "Cuando el viento es fuerte, llena la manga y la deja estirada como un tubo.",
+   "revisada": false,
+   "id": "cien2-oa13-15"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Los vasitos del anemómetro giran muy lento. ¿Cómo está el viento?",
+   "opciones": [
+    "Cada vez más fuerte",
+    "Muy fuerte",
+    "Suave",
+    "Como una tormenta"
+   ],
+   "correcta": 2,
+   "tip": "Los vasitos giran rápido con viento fuerte y lento con viento suave.",
+   "revisada": false,
+   "id": "cien2-oa13-16"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "¿En qué se mide la temperatura?",
+   "opciones": [
+    "En grados",
+    "En metros",
+    "En kilos",
+    "En litros"
+   ],
+   "correcta": 0,
+   "tip": "La temperatura se mide en grados. Los litros miden líquido; los metros, largo; los kilos, peso.",
+   "revisada": false,
+   "id": "cien2-oa13-17"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Ayer el termómetro marcó 5 grados. ¿Cómo estuvo el día?",
+   "opciones": [
+    "Tibio",
+    "Frío",
+    "Caluroso",
+    "Muy caluroso"
+   ],
+   "correcta": 1,
+   "tip": "Cinco grados es una temperatura baja: es un día frío, de abrigo.",
+   "revisada": false,
+   "id": "cien2-oa13-18"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Marcó 8 grados en la mañana y 20 en la tarde. ¿Qué pasó?",
+   "opciones": [
+    "La tarde fue más cálida",
+    "La mañana fue más cálida",
+    "No cambió nada",
+    "Las dos fueron iguales"
+   ],
+   "correcta": 0,
+   "tip": "Más grados es más calor: 20 es más que 8, así que la tarde estuvo más cálida.",
+   "revisada": false,
+   "id": "cien2-oa13-19"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "¿Dónde se pone el termómetro para medir el aire?",
+   "opciones": [
+    "Dentro del refrigerador",
+    "Junto a la estufa",
+    "Al sol directo",
+    "A la sombra"
+   ],
+   "correcta": 3,
+   "tip": "Al sol el termómetro se calienta él mismo y marca de más. A la sombra mide el aire.",
+   "revisada": false,
+   "id": "cien2-oa13-20"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "El pluviómetro juntó agua el lunes y nada el martes. ¿Cuándo llovió?",
+   "opciones": [
+    "Los dos días",
+    "Ningún día",
+    "El lunes",
+    "El martes"
+   ],
+   "correcta": 2,
+   "tip": "El pluviómetro junta agua solo cuando llueve. El martes quedó sin agua: no llovió.",
+   "revisada": false,
+   "id": "cien2-oa13-21"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Pedro quiere ver si hay viento para su volantín. ¿Qué mira?",
+   "opciones": [
+    "El termómetro",
+    "El reloj de la sala",
+    "El pluviómetro",
+    "La manga de viento"
+   ],
+   "correcta": 3,
+   "tip": "La manga de viento se infla y se mueve cuando hay viento: así Pedro sabe si conviene volar.",
+   "revisada": false,
+   "id": "cien2-oa13-22"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "¿Cuál sirve para medir el tiempo atmosférico?",
+   "opciones": [
+    "La balanza",
+    "El reloj",
+    "La lupa",
+    "El termómetro"
+   ],
+   "correcta": 3,
+   "tip": "El reloj mide las horas, no el tiempo atmosférico. El termómetro mide qué tan caluroso está el día.",
+   "revisada": false,
+   "id": "cien2-oa13-23"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "El termómetro de la plaza marca 30 grados. ¿Qué día es?",
+   "opciones": [
+    "Un día de helada",
+    "Un día fresco",
+    "Un día caluroso",
+    "Un día de nieve"
+   ],
+   "correcta": 2,
+   "tip": "Treinta grados es mucho calor. La nieve y las heladas llegan con muy pocos grados.",
+   "revisada": false,
+   "id": "cien2-oa13-24"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "¿Qué hace girar los vasitos del anemómetro?",
+   "opciones": [
+    "La lluvia",
+    "Un motor",
+    "El sol",
+    "El viento"
+   ],
+   "correcta": 3,
+   "tip": "Los vasitos se mueven porque el viento los empuja. Sin viento, se quedan quietos.",
+   "revisada": false,
+   "id": "cien2-oa13-25"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Camila hizo una veleta de cartón. ¿Dónde la pone?",
+   "opciones": [
+    "Detrás de un muro alto",
+    "Bajo la mesa del patio",
+    "En un lugar abierto",
+    "Dentro de un cajón"
+   ],
+   "correcta": 2,
+   "tip": "La veleta necesita que el viento le llegue libre, sin paredes ni techos que lo tapen.",
+   "revisada": false,
+   "id": "cien2-oa13-26"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Don Luis quiere saber qué tan fuerte sopla el viento. ¿Qué usa?",
+   "opciones": [
+    "Un reloj",
+    "Un anemómetro",
+    "Un pluviómetro",
+    "Un termómetro"
+   ],
+   "correcta": 1,
+   "tip": "El anemómetro mide la rapidez del viento: sus vasitos giran más rápido si sopla fuerte.",
+   "revisada": false,
+   "id": "cien2-oa13-27"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "En Arica marcó 25 grados y en Punta Arenas 6. ¿Dónde hacía más frío?",
+   "opciones": [
+    "En Arica",
+    "No se puede saber",
+    "En Punta Arenas",
+    "En las dos igual"
+   ],
+   "correcta": 2,
+   "tip": "Seis grados es menos que veinticinco, así que en Punta Arenas hacía más frío.",
+   "revisada": false,
+   "id": "cien2-oa13-28"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "¿Qué instrumento tiene una flecha que gira con el viento?",
+   "opciones": [
+    "El termómetro",
+    "El anemómetro",
+    "La veleta",
+    "El pluviómetro"
+   ],
+   "correcta": 2,
+   "tip": "La veleta tiene una flecha que el viento mueve. El anemómetro gira, pero con vasitos y sin flecha.",
+   "revisada": false,
+   "id": "cien2-oa13-29"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "¿Qué instrumento tiene un líquido que sube y baja con el calor?",
+   "opciones": [
+    "La veleta",
+    "El anemómetro",
+    "La manga de viento",
+    "El termómetro"
+   ],
+   "correcta": 3,
+   "tip": "En el termómetro de líquido, el líquido sube con el calor y baja con el frío.",
+   "revisada": false,
+   "id": "cien2-oa13-30"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "¿En qué estación es la Navidad en Chile?",
+   "opciones": [
+    "En primavera",
+    "En invierno",
+    "En verano",
+    "En otoño"
+   ],
+   "correcta": 2,
+   "tip": "En Chile el verano empieza el 21 de diciembre, unos días antes de Navidad.",
+   "revisada": false,
+   "id": "cien2-oa14-1"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "En invierno el huemul baja de los cerros altos. ¿Por qué?",
+   "opciones": [
+    "Busca agua de mar",
+    "Arriba hace calor",
+    "Quiere ver flores",
+    "Arriba hay mucha nieve"
+   ],
+   "correcta": 3,
+   "tip": "En invierno la nieve cubre los cerros altos y tapa el pasto; por eso el huemul suele bajar a lugares más bajos.",
+   "revisada": false,
+   "id": "cien2-oa14-2"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "¿Qué estación llega después del invierno?",
+   "opciones": [
+    "El otoño",
+    "El verano",
+    "Otro invierno",
+    "La primavera"
+   ],
+   "correcta": 3,
+   "tip": "Las estaciones van en orden: verano, otoño, invierno y primavera, y vuelven a empezar.",
+   "revisada": false,
+   "id": "cien2-oa14-3"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "Terminó el otoño. ¿Qué estación empieza ahora?",
+   "opciones": [
+    "La primavera",
+    "Otro otoño",
+    "El verano",
+    "El invierno"
+   ],
+   "correcta": 3,
+   "tip": "Después del otoño viene el invierno, la estación más fría del año.",
+   "revisada": false,
+   "id": "cien2-oa14-4"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "En invierno las abejas casi no salen de la colmena. ¿Por qué?",
+   "opciones": [
+    "Por el frío",
+    "Por las muchas flores",
+    "Por el calor",
+    "Por los días largos"
+   ],
+   "correcta": 0,
+   "tip": "En invierno hace frío y hay pocas flores, así que las abejas se quedan juntas dentro de la colmena.",
+   "revisada": false,
+   "id": "cien2-oa14-5"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "En primavera nacen muchos corderitos. ¿Por qué es buen momento?",
+   "opciones": [
+    "Los días se acortan",
+    "Se seca todo el campo",
+    "Viene el frío y la nieve",
+    "Viene el calor y hay pasto"
+   ],
+   "correcta": 3,
+   "tip": "En primavera el tiempo se entibia y crece el pasto: los corderitos no pasan tanto frío y tienen comida.",
+   "revisada": false,
+   "id": "cien2-oa14-6"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "Algunas aves viajan a lugares más cálidos. ¿Cuándo lo hacen?",
+   "opciones": [
+    "Cuando florecen",
+    "Cuando llega el calor",
+    "Cuando hay luna llena",
+    "Cuando llega el frío"
+   ],
+   "correcta": 3,
+   "tip": "Algunas aves se van cuando empieza el frío y vuelven cuando el clima se entibia.",
+   "revisada": false,
+   "id": "cien2-oa14-7"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "¿Qué hace el monito del monte en invierno?",
+   "opciones": [
+    "Cambia de color",
+    "Duerme mucho",
+    "Se va volando",
+    "Busca pareja"
+   ],
+   "correcta": 1,
+   "tip": "El monito del monte, un pequeño animal del sur de Chile, pasa el frío durmiendo: hiberna.",
+   "revisada": false,
+   "id": "cien2-oa14-8"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "Camila sale a la calle en invierno. ¿Qué ropa le conviene?",
+   "opciones": [
+    "Sandalias y polera",
+    "Traje de baño",
+    "Polera y short",
+    "Parka y gorro"
+   ],
+   "correcta": 3,
+   "tip": "En invierno hace frío, así que conviene ropa gruesa que abrigue.",
+   "revisada": false,
+   "id": "cien2-oa14-9"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "Diego toma más agua en verano. ¿Por qué?",
+   "opciones": [
+    "Porque llueve más",
+    "Porque hace calor",
+    "Porque hace frío",
+    "Porque hay nieve"
+   ],
+   "correcta": 1,
+   "tip": "Con el calor del verano el cuerpo transpira más y necesita más agua.",
+   "revisada": false,
+   "id": "cien2-oa14-10"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "En primavera se derrite la nieve de la cordillera. ¿Y los ríos?",
+   "opciones": [
+    "Llevan más agua",
+    "Se secan",
+    "Se congelan",
+    "Se ponen salados"
+   ],
+   "correcta": 0,
+   "tip": "La nieve derretida baja de la cordillera y llena los ríos con más agua.",
+   "revisada": false,
+   "id": "cien2-oa14-11"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "¿En qué estación hay más sandías en la feria?",
+   "opciones": [
+    "En otoño",
+    "En invierno",
+    "En primavera",
+    "En verano"
+   ],
+   "correcta": 3,
+   "tip": "Las sandías maduran con el calor, así que abundan en verano.",
+   "revisada": false,
+   "id": "cien2-oa14-12"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "En otoño, ¿cómo se ponen los días?",
+   "opciones": [
+    "Iguales que en verano",
+    "Más calurosos",
+    "Más cortos",
+    "Más largos"
+   ],
+   "correcta": 2,
+   "tip": "En otoño oscurece más temprano cada semana: los días se van acortando.",
+   "revisada": false,
+   "id": "cien2-oa14-13"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "Muchos animales tienen más pelo en invierno. ¿Para qué?",
+   "opciones": [
+    "Para abrigarse",
+    "Para verse bonitos",
+    "Para correr rápido",
+    "Para nadar mejor"
+   ],
+   "correcta": 0,
+   "tip": "Un pelaje más tupido guarda el calor del cuerpo y protege del frío.",
+   "revisada": false,
+   "id": "cien2-oa14-14"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "¿Por qué en verano hay más incendios forestales?",
+   "opciones": [
+    "Hace calor y está seco",
+    "Llueve mucho",
+    "Hay nieve en el bosque",
+    "Hace mucho frío"
+   ],
+   "correcta": 0,
+   "tip": "En verano hace calor y casi no llueve: el pasto y las ramas secas se queman con facilidad.",
+   "revisada": false,
+   "id": "cien2-oa14-15"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "¿Por qué en invierno se encienden más estufas?",
+   "opciones": [
+    "Porque hace frío",
+    "Porque hace calor",
+    "Porque los días son largos",
+    "Porque el sol quema"
+   ],
+   "correcta": 0,
+   "tip": "En invierno baja la temperatura y la gente calienta sus casas.",
+   "revisada": false,
+   "id": "cien2-oa14-16"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "Se abren las flores y vuelven las abejas. ¿Qué estación es?",
+   "opciones": [
+    "El invierno",
+    "Ninguna estación",
+    "El otoño",
+    "La primavera"
+   ],
+   "correcta": 3,
+   "tip": "En primavera el tiempo se entibia, muchas plantas florecen y las abejas salen a buscar néctar.",
+   "revisada": false,
+   "id": "cien2-oa14-17"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "¿Cuál es el orden de las estaciones?",
+   "opciones": [
+    "Verano, otoño, invierno, primavera",
+    "Otoño, verano, primavera, invierno",
+    "Invierno, verano, otoño, primavera",
+    "Verano, invierno, otoño, primavera"
+   ],
+   "correcta": 0,
+   "tip": "Después del verano viene el otoño, luego el invierno y la primavera, y el año vuelve a empezar.",
+   "revisada": false,
+   "id": "cien2-oa14-18"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "¿Cuántas estaciones tiene el año?",
+   "opciones": [
+    "Cuatro",
+    "Tres",
+    "Doce",
+    "Dos"
+   ],
+   "correcta": 0,
+   "tip": "El año tiene cuatro estaciones: verano, otoño, invierno y primavera. Doce son los meses.",
+   "revisada": false,
+   "id": "cien2-oa14-19"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "En el sur, ¿qué le puede pasar a una laguna en invierno?",
+   "opciones": [
+    "Congelarse arriba",
+    "Calentarse mucho",
+    "Secarse entera",
+    "Llenarse de flores"
+   ],
+   "correcta": 0,
+   "tip": "Con el frío del invierno, la superficie de una laguna del sur puede congelarse.",
+   "revisada": false,
+   "id": "cien2-oa14-20"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "En primavera, ¿qué hacen muchos pájaros?",
+   "opciones": [
+    "Se congelan",
+    "Se esconden bajo tierra",
+    "Se quedan dormidos",
+    "Arman sus nidos"
+   ],
+   "correcta": 3,
+   "tip": "En primavera muchas aves construyen nidos y ponen huevos, porque se acerca el calor.",
+   "revisada": false,
+   "id": "cien2-oa14-21"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "En verano, ¿por qué el perro de Matías busca la sombra?",
+   "opciones": [
+    "Para no pasar calor",
+    "Para abrigarse",
+    "Para ver mejor",
+    "Para mojarse"
+   ],
+   "correcta": 0,
+   "tip": "En verano el sol calienta mucho; a la sombra el perro se mantiene más fresco.",
+   "revisada": false,
+   "id": "cien2-oa14-22"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "Algunos árboles botan sus hojas en otoño. ¿Cuándo vuelven a salir?",
+   "opciones": [
+    "Nunca más",
+    "En invierno",
+    "En primavera",
+    "En verano"
+   ],
+   "correcta": 2,
+   "tip": "En primavera el tiempo se entibia y a esos árboles les brotan hojas nuevas.",
+   "revisada": false,
+   "id": "cien2-oa14-23"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "¿Por qué en invierno muchas plantas casi no crecen?",
+   "opciones": [
+    "Por el calor fuerte",
+    "Por los días largos",
+    "Por la falta de viento",
+    "Por el frío"
+   ],
+   "correcta": 3,
+   "tip": "En invierno hace frío y hay menos horas de sol, así que muchas plantas crecen muy poco.",
+   "revisada": false,
+   "id": "cien2-oa14-24"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "Antes de ir a la playa en verano, ¿qué se pone Javiera?",
+   "opciones": [
+    "Botas de nieve",
+    "Guantes gruesos",
+    "Bufanda de lana",
+    "Bloqueador solar"
+   ],
+   "correcta": 3,
+   "tip": "El sol de verano es fuerte; el bloqueador ayuda a proteger la piel.",
+   "revisada": false,
+   "id": "cien2-oa14-25"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "¿Qué cambia mucho de una estación a otra?",
+   "opciones": [
+    "Los días de la semana",
+    "El número de meses",
+    "La temperatura",
+    "Las horas del reloj"
+   ],
+   "correcta": 2,
+   "tip": "Con cada estación cambia el tiempo: hace más calor o más frío, y llueve más o menos.",
+   "revisada": false,
+   "id": "cien2-oa14-26"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "Si no llueve ni lo riegan en verano, ¿qué le pasa al pasto?",
+   "opciones": [
+    "Se congela",
+    "Se seca",
+    "Crece más verde",
+    "Florece más"
+   ],
+   "correcta": 1,
+   "tip": "El calor del verano seca la tierra; sin agua, el pasto se pone amarillo y seco.",
+   "revisada": false,
+   "id": "cien2-oa14-27"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "En primavera, ¿cómo van cambiando los días?",
+   "opciones": [
+    "Se alargan",
+    "Quedan iguales",
+    "Se acortan",
+    "Se vuelven fríos"
+   ],
+   "correcta": 0,
+   "tip": "En primavera cada día tiene un poco más de luz: oscurece más tarde.",
+   "revisada": false,
+   "id": "cien2-oa14-28"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "¿En qué meses es verano en Chile?",
+   "opciones": [
+    "Septiembre y octubre",
+    "Abril y mayo",
+    "Junio y julio",
+    "Enero y febrero"
+   ],
+   "correcta": 3,
+   "tip": "En Chile el verano son los meses de más calor, como enero y febrero.",
+   "revisada": false,
+   "id": "cien2-oa14-29"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "Benjamín cumple años en julio. ¿En qué estación es?",
+   "opciones": [
+    "Verano",
+    "Otoño",
+    "Invierno",
+    "Primavera"
+   ],
+   "correcta": 2,
+   "tip": "En Chile julio es invierno: los días son más fríos.",
+   "revisada": false,
+   "id": "cien2-oa14-30"
+  },
+  {
+   "oa": "CN02 OA 14",
+   "pregunta": "¿En qué estación caen las hojas y empieza el frío?",
+   "opciones": [
+    "Otoño",
+    "Invierno",
+    "Primavera",
+    "Verano"
+   ],
+   "correcta": 0,
+   "tip": "En otoño la temperatura empieza a bajar y muchos árboles botan sus hojas.",
+   "revisada": false,
+   "id": "cien2-oa14-31"
+  }
+ ]
+}

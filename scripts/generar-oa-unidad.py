@@ -40,8 +40,8 @@ def main():
                 continue
             for oa in u.get('oa', []):
                 mapa.setdefault(oa, uid)   # primera unidad gana
-    if carpetas != 24:
-        raise SystemExit('Esperaba 24 bancos curriculares (6 cursos x 4), vi %d' % carpetas)
+    if carpetas != 28:
+        raise SystemExit('Esperaba 28 bancos curriculares (7 cursos x 4), vi %d' % carpetas)
     salida = 'assets/plan/oa-unidad.json'
     os.makedirs(os.path.dirname(salida), exist_ok=True)
     with io.open(salida, 'w', encoding='utf-8', newline='\n') as w:

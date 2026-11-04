@@ -37,6 +37,7 @@ Es una app web mobile-first y se reutiliza. Ver `docs/roadmap-tecnico.md` §1.
 | 6° | 99 | 2.970 | ✅ **todas** | no lleva | villanos ✅ · portadas 25/25 (16 reutilizadas + 9 nuevas) | ✅ | ✅ |
 | 7° | 81 | 2.430 (+120 apoyo) | ✅ **todas** | no lleva | villanos ✅ · portadas 23/23 | ✅ | ✅ |
 | 8° | 80 | 2.644 (+482 apoyo) | ✅ todas | no lleva | ✅ portadas 20/20 | ✅ | ✅ |
+| **2°** (en construcción) | 82 (81 con banco) | 2.406 (+60 Vocabulario) | ⏸️ **pendiente de Roberto** (2.466 + 35 lecciones) | ⏸️ tras aprobar (~US$7-9, va a R2) | ⏸️ 17 imágenes por generar (14 portadas reutilizadas) | ✅ (05/11) | ❌ no se enlaza hasta tenerlo completo |
 
 - ⚠️ **La puerta CERRÓ el 01/10/2026 en los seis cursos**, sola, como estaba programada: medido
   en `vulpo.cl` ese día, `bloqueado()` vale `true` sin código en los seis. Al cerrarse destapó
@@ -667,6 +668,17 @@ tienda y permite probar notificaciones antes de enfrentar iOS. Detalle en
 ---
 
 ## Diseñado y en cola (spec listo, sin implementar)
+
+- 🟡 **2° básico (Sesión 139) — EN CURSO.** Spec `docs/superpowers/specs/2026-11-04-2-basico-design.md`,
+  plan `docs/superpowers/plans/2026-11-04-2-basico.md`. **Hecho:** currículum (82 OA), banco de 2.466
+  preguntas **leído pregunta por pregunta** en las 4 asignaturas (0 errores en las 5 auditorías), 35
+  lecciones, reparto en 23 capítulos **aprobado por Roberto** (05/11), y el fork `2do/index.html`
+  verificado jugando. **Pendiente, en orden:** (1) ⏸️ Roberto aprueba el banco y las lecciones en el
+  tablero; (2) ⏸️ autoriza la voz (~US$7-9) y se genera a R2 con `voz-r2.py` — hasta entonces el 🔊
+  de 2° está APAGADO (`VOZ_DIRS=[]`); (3) ⏸️ Roberto genera las 17 imágenes
+  (`docs/prompts-arte-2basico.md`) y se procesan; (4) ⏸️ aplicar `supabase/schema.sql` (trae el
+  nivel 02) **al publicar**, no antes; (5) landing a 7 cursos y `app/index.html` con 2°. Las dudas
+  menores para Roberto están anotadas pregunta por pregunta (fuera del repo).
 
 - 🟡 **La voz a Cloudflare R2 (Sesión 138) — EN CURSO.** Es el requisito para que 2° y 1° lleven
   voz sin reventar el techo de 1 GB de GitHub Pages. Plan:

@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Tomás pateó la pelota y rompió un vidrio. ¿Qué es lo honesto?",
+   "opciones": [
+    "contar que la pateó él",
+    "decir que fue otro niño",
+    "irse rápido a la sala",
+    "esperar que nadie pregunte"
+   ],
+   "correcta": 0,
+   "tip": "Contar lo que pasó, aunque cueste, ayuda a arreglarlo. Culpar a otro hace que alguien pague por algo que no hizo.",
+   "id": "hist2-oa13-1"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Amanda anotó puntos de más sin querer. ¿Qué es lo honesto?",
+   "opciones": [
+    "corregir la cuenta",
+    "seguir jugando así",
+    "no decirle a nadie",
+    "ganar y después ver"
+   ],
+   "correcta": 0,
+   "tip": "Si los puntos están mal, lo justo es arreglarlos. Así el juego es parejo para todos.",
+   "id": "hist2-oa13-2"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Vicente no hizo la tarea. ¿Qué le dice a la profesora?",
+   "opciones": [
+    "que no hizo la tarea",
+    "que la tarea se le voló",
+    "que su perro se la comió",
+    "que la dejó en el bus"
+   ],
+   "correcta": 0,
+   "tip": "Decir la verdad permite que la profesora lo ayude. Una excusa inventada es una mentira, aunque suene creíble.",
+   "id": "hist2-oa13-3"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "A Isidora la pillaron en la pinta y dijo que no. ¿Qué hizo?",
+   "opciones": [
+    "hizo trampa",
+    "jugó muy bien",
+    "fue más rápida",
+    "respetó las reglas"
+   ],
+   "correcta": 0,
+   "tip": "Si la tocaron y dice que no, no respeta las reglas del juego. Eso es hacer trampa, aunque gane.",
+   "id": "hist2-oa13-4"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Benjamín copió el dibujo de Rayén y dijo que era suyo. ¿Eso es…?",
+   "opciones": [
+    "deshonesto",
+    "un buen regalo",
+    "trabajo en equipo",
+    "ser creativo"
+   ],
+   "correcta": 0,
+   "tip": "El dibujo es de Rayén. Decir que es propio algo que hizo otra persona es engañar.",
+   "id": "hist2-oa13-5"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Florencia rayó la mesa sin querer. ¿Qué es lo honesto?",
+   "opciones": [
+    "avisar lo que pasó",
+    "taparla con un cuaderno",
+    "decir que ya estaba así",
+    "cambiarse de puesto"
+   ],
+   "correcta": 0,
+   "tip": "Un error sin querer no es malo; esconderlo sí. Avisar permite que se pueda limpiar o arreglar.",
+   "id": "hist2-oa13-6"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Martín rompió el lápiz de su hermana. Ella lo busca. ¿Qué hace?",
+   "opciones": [
+    "le cuenta que lo rompió",
+    "la ayuda a buscarlo",
+    "le dice que no lo vio",
+    "le presta otro sin decir"
+   ],
+   "correcta": 0,
+   "tip": "Ayudar a buscar algo que uno rompió es hacerle creer otra cosa. Lo honesto es contarle lo que pasó.",
+   "id": "hist2-oa13-7"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Josefina perdió en el juego de memoria. ¿Qué es lo honesto?",
+   "opciones": [
+    "aceptar que perdió",
+    "decir que no jugaba",
+    "decir que el otro hizo trampa",
+    "esconder una carta"
+   ],
+   "correcta": 0,
+   "tip": "Perder es parte del juego. Acusar trampa sin que la haya o inventar excusas no es honesto.",
+   "id": "hist2-oa13-8"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Cristóbal dijo que leyó el libro, pero no lo leyó. ¿Eso es…?",
+   "opciones": [
+    "una mentira",
+    "un resumen",
+    "una broma",
+    "una tarea"
+   ],
+   "correcta": 0,
+   "tip": "Decir que algo pasó cuando no pasó es mentir, aunque parezca algo pequeño.",
+   "id": "hist2-oa13-9"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "En el almuerzo le dieron dos postres a Antonia por error. ¿Qué hace?",
+   "opciones": [
+    "devolver el que sobra",
+    "comerse los dos",
+    "guardar uno escondido",
+    "regalar uno a un amigo"
+   ],
+   "correcta": 0,
+   "tip": "El postre de más le tocaba a otra persona. Devolverlo es lo honesto, aunque regalarlo parezca amable.",
+   "id": "hist2-oa13-10"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Yerko se equivocó en la pizarra. ¿Qué es lo honesto?",
+   "opciones": [
+    "reconocer el error",
+    "decir que estaba bien",
+    "culpar al plumón",
+    "borrar y no decir nada"
+   ],
+   "correcta": 0,
+   "tip": "Equivocarse le pasa a todos. Reconocerlo ayuda a aprender y nadie se queda con una idea errada.",
+   "id": "hist2-oa13-11"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "En las escondidas, Valentina miró mientras contaba. ¿Qué hizo?",
+   "opciones": [
+    "hizo trampa",
+    "contó más rápido",
+    "se escondió bien",
+    "inventó un juego"
+   ],
+   "correcta": 0,
+   "tip": "Quien cuenta debe tener los ojos tapados. Mirar rompe la regla y los demás pierden sin poder evitarlo.",
+   "id": "hist2-oa13-12"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Renata empujó a Diego jugando y él se cayó. ¿Qué es lo honesto?",
+   "opciones": [
+    "reconocer que fue ella",
+    "decir que se cayó solo",
+    "seguir jugando como si nada",
+    "decir que fue un tropezón"
+   ],
+   "correcta": 0,
+   "tip": "Reconocer lo que uno hizo, aunque haya sido jugando, es honesto y ayuda a que Diego se sienta mejor.",
+   "id": "hist2-oa13-13"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Joaquín se comió las galletas. Su mamá pregunta quién fue. ¿Y él?",
+   "opciones": [
+    "decir que fue él",
+    "decir que fue su hermano",
+    "decir que ya no había",
+    "no contestar nada"
+   ],
+   "correcta": 0,
+   "tip": "Hablar con la verdad es decir lo que pasó, aunque haya consecuencias. Culpar al hermano sería injusto.",
+   "id": "hist2-oa13-14"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Catalina le pide a Pía que le sople en la prueba. ¿Qué hace Pía?",
+   "opciones": [
+    "le dice que no",
+    "le sopla solo una",
+    "le muestra la hoja",
+    "le sopla bien bajito"
+   ],
+   "correcta": 0,
+   "tip": "En una prueba cada uno muestra lo que sabe. Soplar, aunque sea poco o bajito, hace que la prueba no diga la verdad.",
+   "id": "hist2-oa13-15"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Felicitaron a Elías por un dibujo que hizo Rocío. ¿Qué es lo honesto?",
+   "opciones": [
+    "decir que lo hizo Rocío",
+    "solo dar las gracias",
+    "decir que lo hicieron juntos",
+    "quedarse callado"
+   ],
+   "correcta": 0,
+   "tip": "Las felicitaciones son para quien hizo el trabajo. Decirlo es reconocer el esfuerzo de Rocío.",
+   "id": "hist2-oa13-16"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Clemente olvidó su libro en la casa. ¿Qué es lo honesto?",
+   "opciones": [
+    "decir que lo olvidó",
+    "decir que se lo robaron",
+    "decir que no le compraron",
+    "tomar uno de otro"
+   ],
+   "correcta": 0,
+   "tip": "Olvidar algo le pasa a cualquiera. Inventar un robo es una mentira que puede meter en problemas a otros.",
+   "id": "hist2-oa13-17"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Trinidad pisó la línea en el luche y nadie la vio. ¿Qué hace?",
+   "opciones": [
+    "decir que la pisó",
+    "seguir saltando igual",
+    "decir que no la tocó",
+    "culpar a la tiza"
+   ],
+   "correcta": 0,
+   "tip": "Ser honesto no depende de que alguien esté mirando. Respetar la regla vale aunque nadie la vea.",
+   "id": "hist2-oa13-18"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Bastián llegó segundo, pero en su casa dijo que ganó. ¿Qué hizo?",
+   "opciones": [
+    "no dijo la verdad",
+    "contó un chiste",
+    "se equivocó de juego",
+    "fue muy humilde"
+   ],
+   "correcta": 0,
+   "tip": "Llegar segundo es un buen resultado. Cambiar lo que pasó para quedar mejor es no decir la verdad.",
+   "id": "hist2-oa13-19"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Ema hizo un trabajo en grupo, pero puso solo su nombre. ¿Es honesto?",
+   "opciones": [
+    "no, era de todos",
+    "sí, ella lo entregó",
+    "sí, escribe más bonito",
+    "no, porque lo hizo tarde"
+   ],
+   "correcta": 0,
+   "tip": "Si trabajaron varios, el trabajo es de todos. Poner solo un nombre esconde lo que hicieron los demás.",
+   "id": "hist2-oa13-20"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Simón no entendió la tarea, pero dijo que sí. ¿Qué era lo honesto?",
+   "opciones": [
+    "decir que no entendió",
+    "copiarle a un amigo",
+    "inventar las respuestas",
+    "hacer como que sí"
+   ],
+   "correcta": 0,
+   "tip": "Decir que uno no entendió es honesto y permite pedir ayuda. Fingir solo hace que siga sin entender.",
+   "id": "hist2-oa13-21"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Maite se sentó antes de que parara la música. ¿Qué es lo honesto?",
+   "opciones": [
+    "volver a pararse",
+    "quedarse sentada",
+    "decir que no se movió",
+    "sentarse más rápido"
+   ],
+   "correcta": 0,
+   "tip": "En el juego de las sillas uno se sienta cuando la música para. Reconocer que se adelantó es jugar limpio.",
+   "id": "hist2-oa13-22"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Agustina contó un secreto y dijo que no fue ella. ¿Qué hizo?",
+   "opciones": [
+    "dijo una mentira",
+    "guardó el secreto",
+    "ayudó a su amiga",
+    "dijo la verdad"
+   ],
+   "correcta": 0,
+   "tip": "Contar el secreto ya fue un error; negar que lo hizo es además una mentira. Reconocerlo ayuda a arreglarlo.",
+   "id": "hist2-oa13-23"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Matías botó el agua de la planta y su mamá culpa al gato. ¿Y él?",
+   "opciones": [
+    "contar que fue él",
+    "dejar que culpen al gato",
+    "limpiar y no decir nada",
+    "echarle más agua"
+   ],
+   "correcta": 0,
+   "tip": "Si nadie dice la verdad, la culpa la carga alguien que no hizo nada. Contarlo es lo honesto.",
+   "id": "hist2-oa13-24"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "La profesora le puso bien una respuesta mala a Ignacio. ¿Qué hace?",
+   "opciones": [
+    "avisarle a la profesora",
+    "quedarse con el punto",
+    "borrar su respuesta",
+    "contárselo a un amigo"
+   ],
+   "correcta": 0,
+   "tip": "El punto no le corresponde. Avisar del error es honesto, aunque lo favorezca.",
+   "id": "hist2-oa13-25"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Alonso mintió varias veces y ahora no le creen. ¿Por qué pasa?",
+   "opciones": [
+    "porque mintió antes",
+    "porque habla bajito",
+    "porque es el más chico",
+    "porque llegó nuevo"
+   ],
+   "correcta": 0,
+   "tip": "La confianza se pierde cuando alguien miente seguido. Decir la verdad la ayuda a volver de a poco.",
+   "id": "hist2-oa13-26"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Tobías sacó un 2 en el dado, pero avanzó 5. ¿Eso es…?",
+   "opciones": [
+    "hacer trampa",
+    "tener suerte",
+    "jugar rápido",
+    "contar bien"
+   ],
+   "correcta": 0,
+   "tip": "El dado dice cuánto se avanza. Moverse más de lo que salió es romper la regla del juego.",
+   "id": "hist2-oa13-27"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Amparo dijo que se lavó los dientes, pero no lo hizo. ¿Qué fue?",
+   "opciones": [
+    "una mentira",
+    "un consejo",
+    "una broma",
+    "una pregunta"
+   ],
+   "correcta": 0,
+   "tip": "Aunque parezca algo chico, decir que se hizo algo que no se hizo es mentir.",
+   "id": "hist2-oa13-28"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "Aylén se equivocó, lo dijo y pidió perdón. ¿Qué hizo bien?",
+   "opciones": [
+    "reconocer su error",
+    "esconder su error",
+    "culpar a otra persona",
+    "reírse del error"
+   ],
+   "correcta": 0,
+   "tip": "Reconocer un error y pedir perdón es honesto y ayuda a arreglar lo que pasó.",
+   "id": "hist2-oa13-29"
+  },
+  {
+   "oa": "HI02 OA 13",
+   "pregunta": "La pelota que tocó Fernanda salió de la cancha. ¿Qué es lo honesto?",
+   "opciones": [
+    "decir que salió",
+    "decir que no salió",
+    "seguir corriendo",
+    "pedir otra pelota"
+   ],
+   "correcta": 0,
+   "tip": "Respetar las reglas del juego es aceptar cuando la pelota sale, aunque favorezca al otro equipo.",
+   "id": "hist2-oa13-30"
+  }
+ ]
+}

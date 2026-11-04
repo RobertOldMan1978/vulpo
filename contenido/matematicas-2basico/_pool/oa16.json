@@ -1,0 +1,414 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "Mira el dibujo. ¿Cómo se llama este cuerpo?",
+   "opciones": [
+    "Cubo",
+    "Cuadrado",
+    "Cono",
+    "Esfera"
+   ],
+   "correcta": 0,
+   "tip": "Este cuerpo tiene todas sus caras planas y cuadradas, del mismo tamaño: es un cubo.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cubo"
+   },
+   "id": "mate2-oa16-1"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "Observa este cuerpo redondo. ¿Cuál es su nombre?",
+   "opciones": [
+    "Esfera",
+    "Círculo",
+    "Cono",
+    "Cubo"
+   ],
+   "correcta": 0,
+   "tip": "Es redondo por todos lados y se puede tomar con la mano: es una esfera. El círculo es plano, como un dibujo.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "esfera"
+   },
+   "id": "mate2-oa16-2"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "¿Qué cuerpo muestra el dibujo?",
+   "opciones": [
+    "Cono",
+    "Triángulo",
+    "Esfera",
+    "Cubo"
+   ],
+   "correcta": 0,
+   "tip": "Tiene una cara plana redonda, una parte curva y una punta: es un cono. El triángulo es plano.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cono"
+   },
+   "id": "mate2-oa16-3"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "En el dibujo hay un cuerpo con forma de caja. ¿Cuál es?",
+   "opciones": [
+    "Paralelepípedo",
+    "Rectángulo",
+    "Esfera",
+    "Cono"
+   ],
+   "correcta": 0,
+   "tip": "Tiene caras planas y algunas son rectángulos más largos que altos: es un paralelepípedo.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "paralelepipedo"
+   },
+   "id": "mate2-oa16-4"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "¿A qué cuerpo se parece una naranja?",
+   "opciones": [
+    "Esfera",
+    "Cubo",
+    "Cono",
+    "Paralelepípedo"
+   ],
+   "correcta": 0,
+   "tip": "La naranja es redonda por todos lados, como una pelota: tiene forma de esfera.",
+   "id": "mate2-oa16-5"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "En el juego lanzamos un dado. ¿Qué cuerpo es?",
+   "opciones": [
+    "Cubo",
+    "Esfera",
+    "Cono",
+    "Cuadrado"
+   ],
+   "correcta": 0,
+   "tip": "El dado tiene caras cuadradas, todas iguales: tiene forma de cubo.",
+   "id": "mate2-oa16-6"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "La caja de zapatos de Diego, ¿a qué cuerpo se parece?",
+   "opciones": [
+    "Paralelepípedo",
+    "Cubo",
+    "Cono",
+    "Rectángulo"
+   ],
+   "correcta": 0,
+   "tip": "La caja de zapatos tiene caras planas rectangulares, más larga que alta: es un paralelepípedo.",
+   "id": "mate2-oa16-7"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "¿Qué cuerpo forma el gorro de un mago?",
+   "opciones": [
+    "Cono",
+    "Esfera",
+    "Cubo",
+    "Triángulo"
+   ],
+   "correcta": 0,
+   "tip": "El gorro de mago tiene una base redonda y termina en punta: tiene forma de cono.",
+   "id": "mate2-oa16-8"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "¿Qué cuerpo puede rodar hacia cualquier lado?",
+   "opciones": [
+    "Esfera",
+    "Cono",
+    "Cubo",
+    "Paralelepípedo"
+   ],
+   "correcta": 0,
+   "tip": "La esfera es curva por todos lados, así que rueda para donde la empujen.",
+   "id": "mate2-oa16-9"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "¿Cuál de estos cuerpos tiene solo caras planas?",
+   "opciones": [
+    "Cubo",
+    "Esfera",
+    "Cono",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "El cubo tiene 6 caras, todas planas. La esfera es toda curva y el cono tiene una parte curva.",
+   "id": "mate2-oa16-10"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "¿Qué cuerpo tiene una parte curva y una punta?",
+   "opciones": [
+    "Cono",
+    "Esfera",
+    "Cubo",
+    "Paralelepípedo"
+   ],
+   "correcta": 0,
+   "tip": "El cono tiene una base plana, una parte curva que lo rodea y una punta arriba.",
+   "id": "mate2-oa16-11"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "Eva apoya un cono en la arena y deja una marca. ¿Qué figura ve?",
+   "opciones": [
+    "Círculo",
+    "Triángulo",
+    "Cuadrado",
+    "Rectángulo"
+   ],
+   "correcta": 0,
+   "tip": "El cono se apoya en su cara plana, que es redonda: la marca que deja es un círculo.",
+   "id": "mate2-oa16-12"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "Luis apoya un dado sobre la plasticina. ¿Qué figura queda marcada?",
+   "opciones": [
+    "Cuadrado",
+    "Círculo",
+    "Triángulo",
+    "Rectángulo"
+   ],
+   "correcta": 0,
+   "tip": "Cada cara del dado es un cuadrado, así que la marca queda cuadrada.",
+   "id": "mate2-oa16-13"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "Ana estampa la cara grande de una caja de jugo. ¿Qué figura queda?",
+   "opciones": [
+    "Rectángulo",
+    "Cuadrado",
+    "Círculo",
+    "Triángulo"
+   ],
+   "correcta": 0,
+   "tip": "La cara más grande de la caja de jugo tiene 2 lados largos y 2 cortos: deja un rectángulo.",
+   "id": "mate2-oa16-14"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "Diego hace una bola bien redonda de plasticina. ¿Qué cuerpo formó?",
+   "opciones": [
+    "Esfera",
+    "Círculo",
+    "Cono",
+    "Cubo"
+   ],
+   "correcta": 0,
+   "tip": "Una bola redonda por todos lados es una esfera. El círculo es plano, no se puede tomar como una bola.",
+   "id": "mate2-oa16-15"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "Sofía pone 3 cubos en fila, bien pegados. ¿Qué cuerpo forman?",
+   "opciones": [
+    "Paralelepípedo",
+    "Un cubo grande",
+    "Cono",
+    "Esfera"
+   ],
+   "correcta": 0,
+   "tip": "Los 3 cubos en fila quedan más largos que altos: forman un paralelepípedo, no un cubo.",
+   "id": "mate2-oa16-16"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "¿En qué se parecen un cubo y un paralelepípedo?",
+   "opciones": [
+    "Solo tienen caras planas",
+    "Los dos ruedan",
+    "Los dos tienen punta",
+    "Tienen partes curvas"
+   ],
+   "correcta": 0,
+   "tip": "El cubo y el paralelepípedo tienen 6 caras, todas planas. Por eso no ruedan.",
+   "id": "mate2-oa16-17"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "¿Qué cambia entre un cubo y un paralelepípedo?",
+   "opciones": [
+    "Cómo son sus caras",
+    "Si ruedan o no",
+    "Si tienen punta",
+    "Si son curvos"
+   ],
+   "correcta": 0,
+   "tip": "Las caras del cubo son cuadrados iguales; el paralelepípedo tiene caras rectangulares.",
+   "id": "mate2-oa16-18"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "¿Qué tienen en común una esfera y un cono?",
+   "opciones": [
+    "Una parte curva",
+    "Muchas puntas",
+    "Solo caras planas",
+    "Seis caras"
+   ],
+   "correcta": 0,
+   "tip": "Los dos tienen una parte curva, por eso los dos pueden rodar.",
+   "id": "mate2-oa16-19"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "¿Qué cuerpo puede rodar y también tiene una cara plana?",
+   "opciones": [
+    "Cono",
+    "Esfera",
+    "Cubo",
+    "Paralelepípedo"
+   ],
+   "correcta": 0,
+   "tip": "El cono rueda por su parte curva y se para sobre su cara plana. La esfera no tiene cara plana.",
+   "id": "mate2-oa16-20"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "¿Qué objeto tiene forma de cubo?",
+   "opciones": [
+    "Un dado",
+    "Una pelota",
+    "Un gorro de mago",
+    "Una caja de zapatos"
+   ],
+   "correcta": 0,
+   "tip": "El dado tiene 6 caras cuadradas iguales: tiene forma de cubo. La caja de zapatos es más larga.",
+   "id": "mate2-oa16-21"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "Camila juega con algo con forma de esfera. ¿Qué es?",
+   "opciones": [
+    "Una bolita",
+    "Un dado",
+    "Un libro",
+    "Un embudo"
+   ],
+   "correcta": 0,
+   "tip": "La bolita es redonda por todos lados: tiene forma de esfera.",
+   "id": "mate2-oa16-22"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "Pedro come algo con forma de cono. ¿Qué es?",
+   "opciones": [
+    "Un barquillo",
+    "Una pelota",
+    "Un dado",
+    "Una caja"
+   ],
+   "correcta": 0,
+   "tip": "El barquillo de helado tiene una boca redonda y termina en punta: es un cono.",
+   "id": "mate2-oa16-23"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "Matías dice que una pelota es un círculo. ¿Qué le dirías?",
+   "opciones": [
+    "Es una esfera",
+    "Es un cono",
+    "Es un cubo",
+    "Está bien así"
+   ],
+   "correcta": 0,
+   "tip": "La pelota es un cuerpo redondo por todos lados: es una esfera. El círculo es una figura plana.",
+   "id": "mate2-oa16-24"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "Benjamín empuja un cubo sobre la mesa. ¿Qué hace el cubo?",
+   "opciones": [
+    "Se desliza",
+    "Rueda solo",
+    "Da botes",
+    "Gira en círculos"
+   ],
+   "correcta": 0,
+   "tip": "El cubo tiene caras planas, así que no rueda: se arrastra sobre una de sus caras.",
+   "id": "mate2-oa16-25"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "Tomás empuja una esfera sobre la mesa. ¿Qué hace la esfera?",
+   "opciones": [
+    "Rueda",
+    "Se desliza",
+    "Se queda quieta",
+    "Se vuelve plana"
+   ],
+   "correcta": 0,
+   "tip": "La esfera es curva por todos lados: al empujarla, rueda.",
+   "id": "mate2-oa16-26"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "Ana quiere hacer una torre alta. ¿Qué cuerpos apila mejor?",
+   "opciones": [
+    "Cubos",
+    "Esferas",
+    "Conos",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Los cubos tienen caras planas que calzan una sobre otra. Las esferas ruedan y los conos terminan en punta.",
+   "id": "mate2-oa16-27"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "¿Cuál es un cuerpo y no una figura plana?",
+   "opciones": [
+    "Cubo",
+    "Cuadrado",
+    "Círculo",
+    "Triángulo"
+   ],
+   "correcta": 0,
+   "tip": "El cubo ocupa espacio y se puede tomar con la mano. Cuadrado, círculo y triángulo son planos.",
+   "id": "mate2-oa16-28"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "¿Qué cuerpo tiene una sola punta?",
+   "opciones": [
+    "Cono",
+    "Cubo",
+    "Esfera",
+    "Paralelepípedo"
+   ],
+   "correcta": 0,
+   "tip": "El cono termina en una sola punta. El cubo y el paralelepípedo tienen muchas esquinas, y la esfera ninguna.",
+   "id": "mate2-oa16-29"
+  },
+  {
+   "oa": "MA02 OA 16",
+   "pregunta": "Mira el dibujo. ¿Puede rodar este cuerpo?",
+   "opciones": [
+    "Sí, tiene parte curva",
+    "No, es todo plano",
+    "No, tiene una punta",
+    "Sí, por sus esquinas"
+   ],
+   "correcta": 0,
+   "tip": "El cono tiene una parte curva: si se acuesta, rueda. Su punta no se lo impide.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cono"
+   },
+   "id": "mate2-oa16-30"
+  }
+ ]
+}

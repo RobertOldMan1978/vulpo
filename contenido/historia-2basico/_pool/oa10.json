@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "¿En qué zona de Chile vivían los aimaras?",
+   "opciones": [
+    "en la zona norte",
+    "en la zona centro",
+    "en la zona sur",
+    "en una isla"
+   ],
+   "correcta": 0,
+   "tip": "Los aimaras vivían en el altiplano del norte, y hoy siguen viviendo ahí y en ciudades del norte.",
+   "id": "hist2-oa10-1"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "¿Qué pueblo vivía en el desierto de Atacama?",
+   "opciones": [
+    "los atacameños",
+    "los yaganes",
+    "los picunches",
+    "los kawésqar"
+   ],
+   "correcta": 0,
+   "tip": "Los atacameños, o lickanantay, vivían en los oasis del desierto, en el norte.",
+   "id": "hist2-oa10-2"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "Los atacameños vivían cerca de lo que hoy es…",
+   "opciones": [
+    "San Pedro de Atacama",
+    "Puerto Natales",
+    "la isla de Chiloé",
+    "Concepción"
+   ],
+   "correcta": 0,
+   "tip": "San Pedro de Atacama es un oasis del desierto, en el norte; ahí vive hoy el pueblo lickanantay.",
+   "id": "hist2-oa10-3"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "Los diaguitas vivían en valles con ríos de la zona…",
+   "opciones": [
+    "norte",
+    "sur",
+    "de los canales",
+    "de Rapa Nui"
+   ],
+   "correcta": 0,
+   "tip": "Los diaguitas vivían en los valles del norte, como el del río Elqui.",
+   "id": "hist2-oa10-4"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "Sofía vive en La Serena. ¿Qué pueblo vivía ahí antes?",
+   "opciones": [
+    "los diaguitas",
+    "los selk'nam",
+    "los yaganes",
+    "los rapa nui"
+   ],
+   "correcta": 0,
+   "tip": "La Serena está en el valle del Elqui, en el norte: tierra de los diaguitas.",
+   "id": "hist2-oa10-5"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "Changos y aimaras vivían en el norte. ¿Dónde vivían los changos?",
+   "opciones": [
+    "junto al mar",
+    "en el altiplano",
+    "en la cordillera",
+    "en un oasis"
+   ],
+   "correcta": 0,
+   "tip": "Los changos vivían en la costa del norte; los aimaras, en la altura del altiplano.",
+   "id": "hist2-oa10-6"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "Los mapuche que vivían más al norte se llamaban…",
+   "opciones": [
+    "picunches",
+    "huilliches",
+    "pehuenches",
+    "selk'nam"
+   ],
+   "correcta": 0,
+   "tip": "Picunche quiere decir gente del norte. Vivían en los valles de la zona centro.",
+   "id": "hist2-oa10-7"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "Camila vive en Santiago. ¿Qué pueblo vivía ahí antes?",
+   "opciones": [
+    "los picunches",
+    "los yaganes",
+    "los aimaras",
+    "los selk'nam"
+   ],
+   "correcta": 0,
+   "tip": "Santiago está en el valle central, donde vivían los picunches.",
+   "id": "hist2-oa10-8"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "Los mapuche que vivían más al sur se llamaban…",
+   "opciones": [
+    "huilliches",
+    "picunches",
+    "atacameños",
+    "aimaras"
+   ],
+   "correcta": 0,
+   "tip": "Huilliche quiere decir gente del sur. Vivían en el sur, hasta la isla de Chiloé.",
+   "id": "hist2-oa10-9"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "¿En qué parte de Chile vivían y viven los mapuche?",
+   "opciones": [
+    "entre el centro y el sur",
+    "solo en el norte grande",
+    "en la isla Rapa Nui",
+    "en el desierto de Atacama"
+   ],
+   "correcta": 0,
+   "tip": "Los mapuche vivían en el centro y el sur de Chile; hoy viven en todo el país, también en las ciudades.",
+   "id": "hist2-oa10-10"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "Matías vive en Temuco. ¿Qué pueblo vivía y vive ahí?",
+   "opciones": [
+    "los mapuche",
+    "los diaguitas",
+    "los aimaras",
+    "los rapa nui"
+   ],
+   "correcta": 0,
+   "tip": "Temuco está en la Araucanía, en el sur, donde viven muchas comunidades mapuche.",
+   "id": "hist2-oa10-11"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "¿En qué parte del paisaje vivían los pehuenches?",
+   "opciones": [
+    "en la cordillera",
+    "en la costa",
+    "en una isla",
+    "en el desierto"
+   ],
+   "correcta": 0,
+   "tip": "Los pehuenches vivían en la cordillera de los Andes, donde crecen las araucarias.",
+   "id": "hist2-oa10-12"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "¿En qué isla grande vivían también los huilliches?",
+   "opciones": [
+    "Chiloé",
+    "Rapa Nui",
+    "Juan Fernández",
+    "Tierra del Fuego"
+   ],
+   "correcta": 0,
+   "tip": "Chiloé es una isla grande del sur, cerca del continente, donde vivían huilliches.",
+   "id": "hist2-oa10-13"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "¿Dónde vivían los chonos?",
+   "opciones": [
+    "en islas y canales del sur",
+    "en el desierto del norte",
+    "en el valle central",
+    "en el altiplano del norte"
+   ],
+   "correcta": 0,
+   "tip": "Los chonos navegaban entre las islas y los canales del sur, más abajo de Chiloé.",
+   "id": "hist2-oa10-14"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "Los kawésqar navegaban por los canales de la zona…",
+   "opciones": [
+    "sur",
+    "norte",
+    "centro",
+    "de Rapa Nui"
+   ],
+   "correcta": 0,
+   "tip": "Los kawésqar recorrían en canoa los canales y fiordos del extremo sur.",
+   "id": "hist2-oa10-15"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "¿Qué pueblo vivía en la pampa del extremo sur?",
+   "opciones": [
+    "los aonikenk",
+    "los diaguitas",
+    "los picunches",
+    "los changos"
+   ],
+   "correcta": 0,
+   "tip": "Los aonikenk vivían en las pampas de la Patagonia, en el extremo sur.",
+   "id": "hist2-oa10-16"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "Los selk'nam vivían en una isla grande llamada…",
+   "opciones": [
+    "Tierra del Fuego",
+    "Isla de Pascua",
+    "Juan Fernández",
+    "Isla Mocha"
+   ],
+   "correcta": 0,
+   "tip": "Tierra del Fuego es una isla grande del extremo sur. Allí vivían los selk'nam.",
+   "id": "hist2-oa10-17"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "Diego vive en Punta Arenas. ¿Qué pueblo vivía en esa zona?",
+   "opciones": [
+    "los aonikenk",
+    "los aimaras",
+    "los diaguitas",
+    "los picunches"
+   ],
+   "correcta": 0,
+   "tip": "Punta Arenas está en el extremo sur, en la Patagonia, tierra de los aonikenk.",
+   "id": "hist2-oa10-18"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "¿Dónde vivían los rapa nui?",
+   "opciones": [
+    "en una isla del Pacífico",
+    "en el desierto del norte",
+    "en la cordillera del sur",
+    "en el valle central"
+   ],
+   "correcta": 0,
+   "tip": "Rapa Nui es una isla en medio del océano Pacífico, muy lejos del continente.",
+   "id": "hist2-oa10-19"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "¿Qué océano rodea la isla de los rapa nui?",
+   "opciones": [
+    "el Pacífico",
+    "el Atlántico",
+    "el Índico",
+    "el Ártico"
+   ],
+   "correcta": 0,
+   "tip": "Rapa Nui está en el océano Pacífico, el mismo que baña toda la costa de Chile.",
+   "id": "hist2-oa10-20"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "¿Qué pueblo vivía más al norte?",
+   "opciones": [
+    "los aimaras",
+    "los mapuche",
+    "los selk'nam",
+    "los yaganes"
+   ],
+   "correcta": 0,
+   "tip": "Los aimaras vivían en el extremo norte; los mapuche, en el centro y el sur; los selk'nam y los yaganes, en el extremo sur.",
+   "id": "hist2-oa10-21"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "¿Qué pueblo vivía más al sur de todos?",
+   "opciones": [
+    "los yaganes",
+    "los diaguitas",
+    "los mapuche",
+    "los picunches"
+   ],
+   "correcta": 0,
+   "tip": "Los yaganes vivían en los canales cerca del cabo de Hornos, en el extremo sur de América.",
+   "id": "hist2-oa10-22"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "De norte a sur, ¿qué pueblo venía después de los diaguitas?",
+   "opciones": [
+    "los picunches",
+    "los aimaras",
+    "los atacameños",
+    "los rapa nui"
+   ],
+   "correcta": 0,
+   "tip": "Al sur de los diaguitas, en el valle central, vivían los picunches.",
+   "id": "hist2-oa10-23"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "¿Qué pueblo vivía al sur de los mapuche?",
+   "opciones": [
+    "los kawésqar",
+    "los diaguitas",
+    "los aimaras",
+    "los atacameños"
+   ],
+   "correcta": 0,
+   "tip": "Más al sur que los mapuche vivían pueblos canoeros, como los kawésqar.",
+   "id": "hist2-oa10-24"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "¿Qué pueblo vivía al norte de los diaguitas?",
+   "opciones": [
+    "los atacameños",
+    "los picunches",
+    "los mapuche",
+    "los selk'nam"
+   ],
+   "correcta": 0,
+   "tip": "Los atacameños vivían en el desierto, más al norte que los diaguitas.",
+   "id": "hist2-oa10-25"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "¿Qué pueblos vivían en el extremo sur?",
+   "opciones": [
+    "selk'nam y yaganes",
+    "aimaras y changos",
+    "diaguitas y picunches",
+    "rapa nui y aimaras"
+   ],
+   "correcta": 0,
+   "tip": "Los selk'nam y los yaganes vivían en el extremo sur; los aimaras y los diaguitas, en el norte.",
+   "id": "hist2-oa10-26"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "Aimaras, changos y diaguitas tienen algo en común. ¿Qué?",
+   "opciones": [
+    "vivían en el norte",
+    "vivían en islas",
+    "vivían en el sur",
+    "vivían en el centro"
+   ],
+   "correcta": 0,
+   "tip": "Los tres pueblos vivían en la zona norte, en lugares distintos: el altiplano, la costa y los valles.",
+   "id": "hist2-oa10-27"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "¿En qué zona vivían más pueblos canoeros?",
+   "opciones": [
+    "en la zona sur",
+    "en la zona norte",
+    "en la zona centro",
+    "en el desierto"
+   ],
+   "correcta": 0,
+   "tip": "Los chonos, los kawésqar y los yaganes navegaban en canoa por los canales del sur.",
+   "id": "hist2-oa10-28"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "Si viajas de los aimaras a los yaganes, ¿hacia dónde vas?",
+   "opciones": [
+    "hacia el sur",
+    "hacia el norte",
+    "hacia el este",
+    "hacia el oeste"
+   ],
+   "correcta": 0,
+   "tip": "Los aimaras vivían en el extremo norte y los yaganes en el extremo sur: el viaje es hacia el sur.",
+   "id": "hist2-oa10-29"
+  },
+  {
+   "oa": "HI02 OA 10",
+   "pregunta": "Rapa Nui está lejos del continente, hacia el…",
+   "opciones": [
+    "oeste",
+    "este",
+    "norte",
+    "sur"
+   ],
+   "correcta": 0,
+   "tip": "Rapa Nui está en el océano Pacífico, al oeste de Chile continental.",
+   "id": "hist2-oa10-30"
+  }
+ ]
+}

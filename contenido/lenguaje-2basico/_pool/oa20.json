@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "¿Qué palabra va con mesa: el o la?",
+   "opciones": [
+    "la",
+    "el",
+    "los",
+    "unos"
+   ],
+   "correcta": 0,
+   "tip": "Mesa es una palabra femenina y es una sola: decimos la mesa.",
+   "id": "leng2-oa20-1"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "Sol, ¿es una palabra femenina o masculina?",
+   "opciones": [
+    "Masculina: el sol",
+    "Femenina: la sol",
+    "Las dos: el o la sol",
+    "Ninguna de las dos"
+   ],
+   "correcta": 0,
+   "tip": "Decimos el sol, un sol: es una palabra masculina.",
+   "id": "leng2-oa20-2"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "¿Qué palabra es femenina?",
+   "opciones": [
+    "luna",
+    "sol",
+    "cielo",
+    "planeta"
+   ],
+   "correcta": 0,
+   "tip": "Decimos la luna, así que es femenina. El sol, el cielo y el planeta son masculinas.",
+   "id": "leng2-oa20-3"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "¿Cuál de estas cosas se nombra con el?",
+   "opciones": [
+    "zapato",
+    "camisa",
+    "bota",
+    "chaqueta"
+   ],
+   "correcta": 0,
+   "tip": "Decimos el zapato: es masculina. Camisa, bota y chaqueta van con la.",
+   "id": "leng2-oa20-4"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "¿Qué palabra acompaña bien a la falda?",
+   "opciones": [
+    "larga",
+    "largo",
+    "largos",
+    "largas"
+   ],
+   "correcta": 0,
+   "tip": "Falda es femenina y es una sola, así que la palabra que la describe también: la falda larga.",
+   "id": "leng2-oa20-5"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "¿Qué palabra nombra a varios?",
+   "opciones": [
+    "gatos",
+    "gato",
+    "gata",
+    "gatito"
+   ],
+   "correcta": 0,
+   "tip": "Gatos termina en s y nombra a más de uno: está en plural.",
+   "id": "leng2-oa20-6"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "¿Cuál nombra a una sola cosa?",
+   "opciones": [
+    "pelota",
+    "pelotas",
+    "las pelotas",
+    "unas pelotas"
+   ],
+   "correcta": 0,
+   "tip": "Pelota está en singular: es una sola. Las otras nombran varias pelotas.",
+   "id": "leng2-oa20-7"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "Había un pan y llegó otro. ¿Cómo se dice?",
+   "opciones": [
+    "dos panes",
+    "dos pan",
+    "dos panas",
+    "dos panses"
+   ],
+   "correcta": 0,
+   "tip": "Cuando son varios, la palabra cambia: un pan, dos panes.",
+   "id": "leng2-oa20-8"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "¿Cómo se dice camión cuando son varios?",
+   "opciones": [
+    "camiones",
+    "camión",
+    "camionas",
+    "camións"
+   ],
+   "correcta": 0,
+   "tip": "Camión pasa a camiones cuando son varios: se le agrega es al final.",
+   "id": "leng2-oa20-9"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "Hay una flor en el jarro. Si son tres, ¿cómo se dice?",
+   "opciones": [
+    "tres flores",
+    "tres flor",
+    "tres floras",
+    "tres flors"
+   ],
+   "correcta": 0,
+   "tip": "Una flor, tres flores: para nombrar varias se agrega es al final.",
+   "id": "leng2-oa20-10"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "¿Cuál es la pareja femenina de león?",
+   "opciones": [
+    "leona",
+    "leonera",
+    "leones",
+    "el león"
+   ],
+   "correcta": 0,
+   "tip": "La hembra del león es la leona. Leonera es el lugar donde viven y leones son varios.",
+   "id": "leng2-oa20-11"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "El papá de los pollitos es el gallo. ¿Y la mamá?",
+   "opciones": [
+    "la gallina",
+    "la galla",
+    "el gallino",
+    "la gallo"
+   ],
+   "correcta": 0,
+   "tip": "La pareja del gallo es la gallina. Algunas parejas tienen un nombre distinto, no solo otra letra al final.",
+   "id": "leng2-oa20-12"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "¿Cómo se llama la hembra del caballo?",
+   "opciones": [
+    "la yegua",
+    "la caballa",
+    "la caballo",
+    "el yeguo"
+   ],
+   "correcta": 0,
+   "tip": "La hembra del caballo se llama yegua. La caballa es un pez, no un caballo.",
+   "id": "leng2-oa20-13"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "¿Cómo se dice profesor si es una mujer?",
+   "opciones": [
+    "la profesora",
+    "la profesor",
+    "el profesora",
+    "las profesor"
+   ],
+   "correcta": 0,
+   "tip": "Si es mujer, la palabra cambia a femenina: la profesora.",
+   "id": "leng2-oa20-14"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "En el cuento de Diego dice el ratón pequeña. ¿Cuál es la forma correcta?",
+   "opciones": [
+    "el ratón pequeño",
+    "la ratón pequeña",
+    "el ratones pequeña",
+    "los ratón pequeño"
+   ],
+   "correcta": 0,
+   "tip": "Ratón es masculino, así que lo que lo describe también: el ratón pequeño.",
+   "id": "leng2-oa20-15"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "Matías escribió: unos zapato negros. ¿Qué palabra está mal?",
+   "opciones": [
+    "zapato",
+    "unos",
+    "negros",
+    "ninguna"
+   ],
+   "correcta": 0,
+   "tip": "Unos y negros nombran a varios, así que zapato también: unos zapatos negros.",
+   "id": "leng2-oa20-16"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "Camila dijo: las nubes blanco. ¿Qué palabra hay que cambiar?",
+   "opciones": [
+    "blanco por blancas",
+    "nubes por nube",
+    "las por los",
+    "blanco por blanca"
+   ],
+   "correcta": 0,
+   "tip": "Las nubes son femeninas y son varias, así que se dice las nubes blancas.",
+   "id": "leng2-oa20-17"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "¿Qué grupo de palabras suena bien?",
+   "opciones": [
+    "los niños contentos",
+    "los niños contenta",
+    "la niños contentos",
+    "los niño contentos"
+   ],
+   "correcta": 0,
+   "tip": "Las tres palabras tienen que nombrar a varios y ser masculinas: los niños contentos.",
+   "id": "leng2-oa20-18"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "¿Cuál está bien dicha?",
+   "opciones": [
+    "unas manzanas rojas",
+    "unas manzana rojas",
+    "una manzanas roja",
+    "unos manzanas rojos"
+   ],
+   "correcta": 0,
+   "tip": "Son varias manzanas y es una palabra femenina: unas manzanas rojas.",
+   "id": "leng2-oa20-19"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "Javiera tenía un globo rojo y le regalaron tres más. ¿Cómo los nombra?",
+   "opciones": [
+    "los globos rojos",
+    "los globo rojo",
+    "las globos rojas",
+    "los globos rojo"
+   ],
+   "correcta": 0,
+   "tip": "Son varios globos, así que todas las palabras van en plural: los globos rojos.",
+   "id": "leng2-oa20-20"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "Benjamín vio un pato blanco y a su pareja hembra. ¿Cómo la nombra?",
+   "opciones": [
+    "una pata blanca",
+    "un pata blanco",
+    "una pato blanca",
+    "una pata blanco"
+   ],
+   "correcta": 0,
+   "tip": "La hembra del pato es la pata. Como es femenina, todo cambia: una pata blanca.",
+   "id": "leng2-oa20-21"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "¿Con qué palabras van el, los, un y unos?",
+   "opciones": [
+    "Con las masculinas",
+    "Con las femeninas",
+    "Con las que dicen acciones",
+    "Con las que dicen cómo es algo"
+   ],
+   "correcta": 0,
+   "tip": "El, los, un y unos acompañan a palabras masculinas: el perro, unos gatos.",
+   "id": "leng2-oa20-22"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "¿Qué palabras van con nombres femeninos?",
+   "opciones": [
+    "la, las, una y unas",
+    "el, los, un y unos",
+    "la, el, un y unos",
+    "las, los, una y un"
+   ],
+   "correcta": 0,
+   "tip": "La, las, una y unas acompañan a palabras femeninas: la mesa, unas casas.",
+   "id": "leng2-oa20-23"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "¿Por qué se dice las sillas y no la sillas?",
+   "opciones": [
+    "Porque son varias sillas",
+    "Porque silla es masculina",
+    "Porque la silla es grande",
+    "Porque así suena más bonito"
+   ],
+   "correcta": 0,
+   "tip": "Sillas nombra a varias, así que el artículo también va en plural: las sillas.",
+   "id": "leng2-oa20-24"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "Matías dijo el cama. ¿Qué error cometió?",
+   "opciones": [
+    "Cama es femenina: la cama",
+    "Cama va en plural: camas",
+    "Le faltó un adjetivo",
+    "Dijo cama muy fuerte"
+   ],
+   "correcta": 0,
+   "tip": "Cama es una palabra femenina, por eso va con la: la cama.",
+   "id": "leng2-oa20-25"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "Javiera escribió: Mis abuelos tienen una huerta. Las lechugas son grandes y los tomates rojo. ¿Qué palabra está mal?",
+   "opciones": [
+    "rojo",
+    "lechugas",
+    "grandes",
+    "tomates"
+   ],
+   "correcta": 0,
+   "tip": "Los tomates son varios, así que la palabra que los describe también: los tomates rojos.",
+   "id": "leng2-oa20-26"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "¿Dónde están todas las palabras en plural?",
+   "opciones": [
+    "perros, mesas y sapos",
+    "perro, mesa y sapo",
+    "perros, mesa y sapo",
+    "perro, mesas y sapo"
+   ],
+   "correcta": 0,
+   "tip": "Perros, mesas y sapos terminan en s: las tres nombran a más de uno.",
+   "id": "leng2-oa20-27"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "Tomás tenía un tren y ahora tiene dos. ¿Cómo lo dice?",
+   "opciones": [
+    "dos trenes",
+    "dos tren",
+    "dos trens",
+    "dos trenas"
+   ],
+   "correcta": 0,
+   "tip": "Un tren, dos trenes: para nombrar varios se agrega es al final.",
+   "id": "leng2-oa20-28"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "Sofía dijo: el niño corren. ¿Cómo se arregla?",
+   "opciones": [
+    "el niño corre",
+    "el niños corre",
+    "los niño corren",
+    "la niño corre"
+   ],
+   "correcta": 0,
+   "tip": "Es un solo niño, así que la acción también va en singular: el niño corre.",
+   "id": "leng2-oa20-29"
+  },
+  {
+   "oa": "LE02 OA 20",
+   "pregunta": "¿Qué palabra es femenina y nombra a varias?",
+   "opciones": [
+    "abejas",
+    "abeja",
+    "zorros",
+    "zorro"
+   ],
+   "correcta": 0,
+   "tip": "Abejas es femenina, porque decimos la abeja, y termina en s porque son varias.",
+   "id": "leng2-oa20-30"
+  }
+ ]
+}

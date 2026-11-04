@@ -1,0 +1,277 @@
+{
+ "lecciones": [
+  {
+   "id": "le2-letras",
+   "oa": "LE02 OA 01",
+   "titulo": "Letras que cambian de sonido",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Algunas letras no suenan siempre igual. Para saber cómo se leen, hay que mirar la letra que viene justo después."
+    },
+    {
+     "t": "texto",
+     "md": "Mira la c. Si después viene la a, la o o la u, suena fuerte, como en copa. Si después viene la e o la i, suena como la s, como en ciruela."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Dos cajas: la letra c seguida de a, o, u suena fuerte; seguida de e, i suena como s",
+      "items": [
+       {
+        "titulo": "c con a, o, u",
+        "texto": "Suena fuerte, como en copa."
+       },
+       {
+        "titulo": "c con e, i",
+        "texto": "Suena como la s, como en ciruela."
+       }
+      ],
+      "etiqueta": "Manda la letra que viene después"
+     },
+     "intro": "La misma letra, dos sonidos. Lo decide la letra que viene después."
+    },
+    {
+     "t": "texto",
+     "md": "Con la g pasa lo mismo. Con la a, la o o la u suena suave, como en goma. Con la e o la i suena como la j."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "¿Y si quiero la g suave antes de la e o de la i? Mira el truco.",
+     "pasos": [
+      "Quiero leer la palabra águila, que suena con la g suave de goma.",
+      "Si la g fuera sola antes de la i, sonaría como la j.",
+      "Por eso entre la g y la i va una u, y esa u no se pronuncia.",
+      "Pero a veces la u sí tiene que sonar, como en lengüita. Entonces lleva dos puntitos encima."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "Después de la q pasa algo parecido: la u se escribe pero no se oye. En paquete y en esquina hay una u que nadie pronuncia."
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE02 OA 01",
+      "n": 10
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le2-comprender",
+   "oa": "LE02 OA 03",
+   "titulo": "Tres trucos para entender lo que lees",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Leer no es solo decir las palabras. Mientras lees puedes hacer tres cosas que te ayudan a entender mejor."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Tres cajas con tres trucos para entender: imaginar, preguntarse y acordarse",
+      "items": [
+       {
+        "titulo": "Imaginar",
+        "texto": "Ver en tu cabeza lo que dice."
+       },
+       {
+        "titulo": "Preguntarte",
+        "texto": "¿Por qué pasó eso?"
+       },
+       {
+        "titulo": "Acordarte",
+        "texto": "De algo que te pasó a ti."
+       }
+      ],
+      "etiqueta": "Tres trucos para entender"
+     },
+     "intro": "Los tres sirven para cualquier cuento."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Mira cómo los usa Antonia con una frase de un cuento.",
+     "pasos": [
+      "Antonia lee: «La ardilla se quedó quieta en la rama, con la cola esponjada.»",
+      "Imagina: ve a la ardilla arriba del árbol, sin moverse.",
+      "Se pregunta: ¿qué la habrá asustado?",
+      "Se acuerda: una vez vio una ardilla en la plaza que se quedó quieta cuando pasó un perro.",
+      "Con los tres trucos entiende que la ardilla tiene miedo y se está escondiendo."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "Y si una parte no se entiende, no sigas de largo: vuelve atrás y léela otra vez."
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE02 OA 03",
+      "n": 10
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le2-poemas",
+   "titulo": "Antes de empezar: Poemas, rimas y teatro",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Los poemas, las rimas y los trabalenguas son juegos con las palabras. Se disfrutan más dichos en voz alta, porque lo que importa es cómo suenan."
+    },
+    {
+     "t": "texto",
+     "md": "Dos palabras riman cuando terminan sonando igual, como estrella y botella. Escucha el final de cada una y vas a notar que se parecen."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Tres cajas: la rima, el trabalenguas y la adivinanza",
+      "items": [
+       {
+        "titulo": "Rima",
+        "texto": "Palabras con el mismo final."
+       },
+       {
+        "titulo": "Trabalenguas",
+        "texto": "Se te enreda la lengua al decirlo."
+       },
+       {
+        "titulo": "Adivinanza",
+        "texto": "Describe algo sin decir su nombre."
+       }
+      ],
+      "etiqueta": "Juegos con las palabras"
+     },
+     "intro": "Tres juegos con palabras que vas a conocer en este capítulo."
+    },
+    {
+     "t": "texto",
+     "md": "El teatro es otro juego: unas personas hacen como si fueran otros, un rey, un lobo o una abuela, para contar una historia frente al público."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a leer y recitar poemas, decir trabalenguas, adivinar y jugar a ser otro."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le2-informar",
+   "titulo": "Antes de empezar: Textos que informan",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "No todos los textos cuentan una historia. Algunos sirven para aprender algo, como cómo vive un animal o cómo se cuida una planta."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Dos cajas: un cuento cuenta lo que le pasa a alguien; un texto que informa enseña sobre un tema",
+      "items": [
+       {
+        "titulo": "Un cuento",
+        "texto": "Cuenta lo que le pasa a alguien."
+       },
+       {
+        "titulo": "Un texto que informa",
+        "texto": "Enseña cosas reales sobre un tema."
+       }
+      ],
+      "etiqueta": "Uno cuenta, el otro enseña"
+     },
+     "intro": "Los dos son buenos textos, pero sirven para cosas distintas."
+    },
+    {
+     "t": "texto",
+     "md": "Antes de leer, pregúntate: ¿esto me va a contar una historia, o me va a enseñar algo?"
+    },
+    {
+     "t": "texto",
+     "md": "Y hay otros textos que sirven para algo, como una carta, una nota o unas instrucciones. Cada uno tiene su forma."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a leer textos que informan, vas a escribir uno y vas a escuchar explicaciones para aprender cosas nuevas."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le2-concordancia",
+   "oa": "LE02 OA 20",
+   "titulo": "Palabras que van de la mano",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Cuando nombramos algo, muchas veces van tres palabras juntas: una chiquita que va delante, la que nombra y la que dice cómo es."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Tres cajas con las palabras la, ardilla e inquieta, y el trabajo de cada una",
+      "items": [
+       {
+        "titulo": "la",
+        "texto": "Va delante."
+       },
+       {
+        "titulo": "ardilla",
+        "texto": "Nombra."
+       },
+       {
+        "titulo": "inquieta",
+        "texto": "Dice cómo es."
+       }
+      ],
+      "etiqueta": "Tres palabras que van juntas"
+     },
+     "intro": "Mira el trabajo de cada una."
+    },
+    {
+     "t": "texto",
+     "md": "Esas tres palabras tienen que ir de la mano. Si una cambia, las otras también cambian."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Mira qué pasa cuando hay más de una.",
+     "pasos": [
+      "Hay una sola: la ardilla inquieta.",
+      "Ahora son varias: las ardillas inquietas.",
+      "Cambiaron las tres, y ahora las tres terminan con la letra ese.",
+      "Con el chancho pasa lo mismo: el chancho regalón, y si son varios, los chanchos regalones."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "Para revisar lo que escribiste, lee las tres palabras juntas. Si una habla de uno y otra habla de varios, algo no calza y hay que arreglarlo."
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE02 OA 20",
+      "n": 10
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
+  }
+ ]
+}

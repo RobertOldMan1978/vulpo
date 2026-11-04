@@ -106,6 +106,14 @@ banco real, 12 OA distintos, cero sexuales.**
 Severidad: **ALTA** (un colegio confesional casi seguro querrá revisarlo) · **MEDIA** (podría querer
 avisar) · **BAJA** (mención menor).
 
+### 2° básico
+**Sin OA sensibles** (revisado el 04/11/2026, al transcribir el currículum). Los pueblos
+originarios de Chile (`HI02 OA 01`, `02`, `10` y `11`: mapuche, aimara, rapa nui, su vida y sus
+creencias) **no se marcan**, por el mismo criterio que `HI04 OA 01-04`: son descripción cultural,
+sin conquista ni violencia. El `HI02 OA 03` nombra la religión entre los aportes españoles, como
+mención menor que tampoco se marca. ⚠️ **Es decisión de Roberto**: si quiere avisarlos igual, se
+agregan aquí y en `assets/js/sensible.js` como 🪶/🛐 BAJA.
+
 ### 3° básico
 | OA | Tema | Categorías | Severidad |
 |---|---|---|---|

@@ -37,7 +37,7 @@ import sys
 import json
 import unicodedata
 
-FORKS = ['3ro', '4to', '5to', '6to', '7mo', '8vo']
+FORKS = ['2do', '3ro', '4to', '5to', '6to', '7mo', '8vo']
 
 # Vocabulario que un lector asocia a Formacion Ciudadana. No es una lista de
 # palabras prohibidas: es el disparador del aviso, que despues se juzga.

@@ -6,7 +6,7 @@
 #
 # Que INCLUYE:
 #   - app/index.html  ->  www/index.html   (la puerta de entrada = selector de curso)
-#   - los seis cursos (3ro 4to 5to 6to 7mo 8vo)
+#   - los cursos (2do 3ro 4to 5to 6to 7mo 8vo)
 #   - assets/  MENOS  originales/  y  MENOS los .mp3 de voz/
 #   - contenido/
 # Que EXCLUYE:
@@ -19,7 +19,7 @@
 #     navegador.
 #
 # Rutas: los cursos usan <base href="/"> y enlaces absolutos (/assets, /5to/), que en el
-# WebView de Capacitor resuelven desde la raiz de www/. Por eso los seis cursos y assets/
+# WebView de Capacitor resuelven desde la raiz de www/. Por eso los cursos y assets/
 # van en la raiz de www/.
 
 import json, os, re, shutil
@@ -27,7 +27,7 @@ import json, os, re, shutil
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WWW = os.path.join(ROOT, "www")
 
-CURSOS = ["3ro", "4to", "5to", "6to", "7mo", "8vo"]
+CURSOS = ["2do", "3ro", "4to", "5to", "6to", "7mo", "8vo"]
 ASSETS_EXCLUIR = {"originales"}   # voz/ se maneja aparte (manifiestos si, mp3 no)
 
 # --- Contenido sensible que NO va en la app Android (opcion 2 de Roberto, para Google Play) ---
@@ -131,7 +131,7 @@ def main():
     # 1) el selector como index.html de la app
     shutil.copy(os.path.join(ROOT, "app", "index.html"), os.path.join(WWW, "index.html"))
 
-    # 2) los seis cursos
+    # 2) los cursos
     for c in CURSOS:
         shutil.copytree(os.path.join(ROOT, c), os.path.join(WWW, c))
 

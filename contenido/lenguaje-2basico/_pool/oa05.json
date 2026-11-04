@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "Lucía se puso su gorro azul y salió a buscar a su perro Bruno. ¿De qué color era el gorro?",
+   "opciones": [
+    "Azul",
+    "Rojo",
+    "Verde",
+    "Amarillo"
+   ],
+   "correcta": 0,
+   "tip": "El texto lo dice directamente: Lucía se puso su gorro azul.",
+   "id": "leng2-oa05-1"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "El abuelo Raúl plantó dos limoneros y un naranjo en el patio. ¿Cuántos limoneros plantó?",
+   "opciones": [
+    "Dos",
+    "Uno",
+    "Tres",
+    "Cuatro"
+   ],
+   "correcta": 0,
+   "tip": "El texto dice dos limoneros. El uno es del naranjo, que es otro árbol.",
+   "id": "leng2-oa05-2"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "Martina se tapó la cara y no quiso salir del dormitorio. Afuera tronaba fuerte. ¿Cómo se sentía?",
+   "opciones": [
+    "Asustada",
+    "Contenta",
+    "Aburrida",
+    "Enojada"
+   ],
+   "correcta": 0,
+   "tip": "Taparse la cara mientras truena muestra miedo. El texto no lo dice, pero se deduce de lo que hace.",
+   "id": "leng2-oa05-3"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "Gabriel corrió a abrazar a su papá, que llegaba de un viaje largo. ¿Cómo se sentía Gabriel?",
+   "opciones": [
+    "Feliz",
+    "Triste",
+    "Cansado",
+    "Asustado"
+   ],
+   "correcta": 0,
+   "tip": "Correr a abrazar a alguien que vuelve de un viaje muestra alegría.",
+   "id": "leng2-oa05-4"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "Ema se lavó los dientes, se puso el pijama y apagó la luz. ¿Qué hizo primero?",
+   "opciones": [
+    "Se lavó los dientes",
+    "Se puso el pijama",
+    "Apagó la luz",
+    "Se fue a dormir"
+   ],
+   "correcta": 0,
+   "tip": "Las acciones van en orden: primero se lavó los dientes, después se puso el pijama y al final apagó la luz.",
+   "id": "leng2-oa05-5"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "El pollito rompió el cascarón, salió despacio y buscó a su mamá. ¿Qué hizo al final?",
+   "opciones": [
+    "Buscó a su mamá",
+    "Rompió el cascarón",
+    "Salió despacio",
+    "Se quedó dormido"
+   ],
+   "correcta": 0,
+   "tip": "Lo último que hizo el pollito fue buscar a su mamá; romper el cascarón fue lo primero.",
+   "id": "leng2-oa05-6"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "Agustín llegó con el pelo mojado y el paraguas goteando. ¿Qué pasaba afuera?",
+   "opciones": [
+    "Llovía",
+    "Hacía sol",
+    "Era de noche",
+    "Había viento"
+   ],
+   "correcta": 0,
+   "tip": "El pelo mojado y el paraguas goteando son pistas de que estaba lloviendo, aunque el texto no lo diga.",
+   "id": "leng2-oa05-7"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "Ramón era un oso grande, de pelo café y con una oreja doblada. ¿Cómo era su oreja?",
+   "opciones": [
+    "Doblada",
+    "Muy chica",
+    "Blanca",
+    "Muy larga"
+   ],
+   "correcta": 0,
+   "tip": "El texto describe al oso: grande, de pelo café y con una oreja doblada.",
+   "id": "leng2-oa05-8"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "La bruja Pancha era bajita, flaca y usaba lentes redondos. ¿Cómo era Pancha?",
+   "opciones": [
+    "Bajita y flaca",
+    "Alta y flaca",
+    "Bajita y fuerte",
+    "Alta y fuerte"
+   ],
+   "correcta": 0,
+   "tip": "Las características físicas están en el texto: Pancha era bajita y flaca.",
+   "id": "leng2-oa05-9"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "El bosque estaba oscuro, hacía frío y solo se oía un búho. ¿Cómo era el bosque?",
+   "opciones": [
+    "Oscuro y frío",
+    "Soleado y alegre",
+    "Ruidoso y cálido",
+    "Lleno de gente"
+   ],
+   "correcta": 0,
+   "tip": "El ambiente se describe con detalles: oscuridad, frío y apenas el sonido de un búho.",
+   "id": "leng2-oa05-10"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "Había arena caliente, olas y gente con quitasoles. ¿Dónde ocurre la historia?",
+   "opciones": [
+    "En la playa",
+    "En la nieve",
+    "En la escuela",
+    "En un bosque"
+   ],
+   "correcta": 0,
+   "tip": "La arena, las olas y los quitasoles son pistas de que la historia pasa en la playa.",
+   "id": "leng2-oa05-11"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "Las estrellas brillaban y todos dormían en la casa. ¿Cuándo pasa esto?",
+   "opciones": [
+    "En la noche",
+    "En la mañana",
+    "A mediodía",
+    "En la tarde"
+   ],
+   "correcta": 0,
+   "tip": "Las estrellas brillando y todos durmiendo son pistas de que es de noche.",
+   "id": "leng2-oa05-12"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "Joaquín no comió en todo el día. En la cena se sirvió dos platos. ¿Por qué?",
+   "opciones": [
+    "Tenía hambre",
+    "No le gustaba",
+    "Estaba enfermo",
+    "Quería dormir"
+   ],
+   "correcta": 0,
+   "tip": "Quien no comió en todo el día llega con hambre: por eso se sirvió dos platos.",
+   "id": "leng2-oa05-13"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "Pía lloraba porque perdió su muñeca. Su hermano la encontró y Pía sonrió. ¿Cómo terminó Pía?",
+   "opciones": [
+    "Contenta",
+    "Triste",
+    "Enojada",
+    "Asustada"
+   ],
+   "correcta": 0,
+   "tip": "Al principio Pía estaba triste, pero al final sonrió porque apareció su muñeca.",
+   "id": "leng2-oa05-14"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "La gallina, el pato y el gato fueron al río. Solo el pato se metió al agua. ¿Quién nadó?",
+   "opciones": [
+    "El pato",
+    "La gallina",
+    "El gato",
+    "Nadie"
+   ],
+   "correcta": 0,
+   "tip": "El texto dice que solo el pato se metió al agua.",
+   "id": "leng2-oa05-15"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "Sebastián escondió la llave dentro de una bota vieja en el patio. ¿Dónde estaba la llave?",
+   "opciones": [
+    "En una bota",
+    "En una caja",
+    "Bajo la cama",
+    "En el bolsillo"
+   ],
+   "correcta": 0,
+   "tip": "El texto lo dice: la llave estaba dentro de una bota vieja.",
+   "id": "leng2-oa05-16"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "Primero el niño sembró la semilla, luego la regó y después nació una flor. ¿Qué hizo luego de sembrar?",
+   "opciones": [
+    "La regó",
+    "La cortó",
+    "La vendió",
+    "La pintó"
+   ],
+   "correcta": 0,
+   "tip": "Las palabras primero, luego y después ordenan la historia: después de sembrar, el niño regó la semilla.",
+   "id": "leng2-oa05-17"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "Bastián rompió el juguete de su amigo y no le pidió perdón. ¿Qué opinión tiene sentido?",
+   "opciones": [
+    "Estuvo mal, debió pedir perdón",
+    "Estuvo bien, ya estaba viejo",
+    "Estuvo bien, no pasó nada",
+    "Estuvo bien, era su juguete"
+   ],
+   "correcta": 0,
+   "tip": "Una opinión se apoya en lo que pasa en el texto: Bastián rompió algo ajeno y no se disculpó.",
+   "id": "leng2-oa05-18"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "Rocío le prestó su chaleco a una compañera que tenía frío. ¿Qué se puede opinar de Rocío?",
+   "opciones": [
+    "Que es generosa",
+    "Que es egoísta",
+    "Que es floja",
+    "Que es mentirosa"
+   ],
+   "correcta": 0,
+   "tip": "Prestar el propio chaleco a quien tiene frío muestra que Rocío es generosa.",
+   "id": "leng2-oa05-19"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "Ana lee que Leo se perdió en el supermercado. ¿Qué le pasó a Ana que se parece?",
+   "opciones": [
+    "Se perdió en una feria",
+    "Ganó una carrera larga",
+    "Comió helado en la playa",
+    "Plantó un árbol en casa"
+   ],
+   "correcta": 0,
+   "tip": "Relacionar el cuento con lo vivido es buscar algo parecido: perderse en un lugar lleno de gente.",
+   "id": "leng2-oa05-20"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "Felipe le dio su colación al perro de la calle, aunque él tenía hambre. ¿Cómo es Felipe?",
+   "opciones": [
+    "Bondadoso",
+    "Egoísta",
+    "Flojo",
+    "Miedoso"
+   ],
+   "correcta": 0,
+   "tip": "Felipe compartió su comida aunque él también tenía hambre: eso muestra que es bondadoso.",
+   "id": "leng2-oa05-21"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "Amanda cerró la puerta de un portazo y no quiso hablar con nadie. ¿Cómo estaba?",
+   "opciones": [
+    "Enojada",
+    "Feliz",
+    "Dormida",
+    "Tranquila"
+   ],
+   "correcta": 0,
+   "tip": "Dar un portazo y no querer hablar muestran enojo, aunque el texto no use esa palabra.",
+   "id": "leng2-oa05-22"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "El cumpleaños de la abuela Rosa fue el sábado en la tarde. ¿Qué día fue?",
+   "opciones": [
+    "El sábado",
+    "El lunes",
+    "El domingo",
+    "El viernes"
+   ],
+   "correcta": 0,
+   "tip": "El texto dice el día exacto: el sábado en la tarde.",
+   "id": "leng2-oa05-23"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "El caracol tardó todo el día en cruzar el jardín. ¿Cómo era el caracol?",
+   "opciones": [
+    "Muy lento",
+    "Muy rápido",
+    "Muy grande",
+    "Muy ruidoso"
+   ],
+   "correcta": 0,
+   "tip": "Demorarse un día entero en cruzar un jardín muestra que el caracol era muy lento.",
+   "id": "leng2-oa05-24"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "Al despertar, Mateo vio nieve. Se abrigó, salió y armó un mono. ¿Qué hizo justo después de abrigarse?",
+   "opciones": [
+    "Salió de la casa",
+    "Armó un mono de nieve",
+    "Vio la nieve afuera",
+    "Se volvió a dormir"
+   ],
+   "correcta": 0,
+   "tip": "El orden es: vio la nieve, se abrigó, salió y armó un mono. Después de abrigarse, salió.",
+   "id": "leng2-oa05-25"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "El dragón Tito tenía escamas verdes y alas pequeñas. ¿Cómo eran sus alas?",
+   "opciones": [
+    "Pequeñas",
+    "Enormes",
+    "Rojas",
+    "Rotas"
+   ],
+   "correcta": 0,
+   "tip": "El texto describe a Tito: escamas verdes y alas pequeñas.",
+   "id": "leng2-oa05-26"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "Javier recibió un perrito de regalo y no paraba de saltar. ¿Por qué saltaba?",
+   "opciones": [
+    "Estaba feliz",
+    "Tenía frío",
+    "Estaba enojado",
+    "Le dolía el pie"
+   ],
+   "correcta": 0,
+   "tip": "Saltar sin parar después de recibir un perrito muestra alegría.",
+   "id": "leng2-oa05-27"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "Había nieve en el camino y los árboles no tenían hojas. ¿En qué época pasa?",
+   "opciones": [
+    "En invierno",
+    "En verano",
+    "En primavera",
+    "Un día de calor"
+   ],
+   "correcta": 0,
+   "tip": "La nieve en el camino es una pista del invierno, la época más fría del año.",
+   "id": "leng2-oa05-28"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "Clara miró el plato vacío del gato y fue a buscar la bolsa de comida. ¿Qué iba a hacer?",
+   "opciones": [
+    "Darle comida al gato",
+    "Bañar al gato",
+    "Jugar con el gato",
+    "Botar la bolsa"
+   ],
+   "correcta": 0,
+   "tip": "El plato vacío y la bolsa de comida son pistas: Clara iba a alimentar al gato.",
+   "id": "leng2-oa05-29"
+  },
+  {
+   "oa": "LE02 OA 05",
+   "pregunta": "El zorro engañó al cuervo para quitarle el queso. ¿Por qué no estuvo bien?",
+   "opciones": [
+    "Engañó al cuervo",
+    "Comió muy rápido",
+    "Cantó muy fuerte",
+    "Se fue a dormir"
+   ],
+   "correcta": 0,
+   "tip": "Para opinar hay que fijarse en lo que hizo el personaje: el zorro mintió para quedarse con algo ajeno.",
+   "id": "leng2-oa05-30"
+  }
+ ]
+}

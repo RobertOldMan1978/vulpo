@@ -1,0 +1,418 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "¿Qué número sigue en 4, 7, 10, 13?",
+   "opciones": [
+    "16",
+    "14",
+    "15",
+    "17"
+   ],
+   "correcta": 0,
+   "tip": "Cada número es 3 más que el anterior: 13 + 3 = 16.",
+   "id": "mate2-oa12-1"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "¿Qué número sigue en 1, 5, 9, 13?",
+   "opciones": [
+    "17",
+    "14",
+    "15",
+    "18"
+   ],
+   "correcta": 0,
+   "tip": "El patrón suma 4 cada vez: 13 + 4 = 17.",
+   "id": "mate2-oa12-2"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "¿Qué número sigue en 30, 27, 24, 21?",
+   "opciones": [
+    "18",
+    "19",
+    "22",
+    "15"
+   ],
+   "correcta": 0,
+   "tip": "El patrón va bajando de 3 en 3: 21 - 3 = 18.",
+   "id": "mate2-oa12-3"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "¿Qué número sigue en 50, 46, 42, 38?",
+   "opciones": [
+    "34",
+    "35",
+    "36",
+    "30"
+   ],
+   "correcta": 0,
+   "tip": "Cada número es 4 menos que el anterior: 38 - 4 = 34.",
+   "id": "mate2-oa12-4"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "¿Qué número falta en 6, 9, ___, 15, 18?",
+   "opciones": [
+    "12",
+    "11",
+    "10",
+    "13"
+   ],
+   "correcta": 0,
+   "tip": "El patrón suma 3: después del 9 viene 9 + 3 = 12, y 12 + 3 = 15.",
+   "id": "mate2-oa12-5"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "¿Qué número falta en 40, 36, ___, 28?",
+   "opciones": [
+    "32",
+    "34",
+    "30",
+    "33"
+   ],
+   "correcta": 0,
+   "tip": "El patrón resta 4: 36 - 4 = 32, y 32 - 4 = 28.",
+   "id": "mate2-oa12-6"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "¿Qué número falta en 11, 22, ___, 44?",
+   "opciones": [
+    "33",
+    "32",
+    "34",
+    "23"
+   ],
+   "correcta": 0,
+   "tip": "El patrón suma 11: 22 + 11 = 33. Crecen juntas las decenas y las unidades.",
+   "id": "mate2-oa12-7"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "¿Cuál es la regla del patrón 2, 6, 10, 14?",
+   "opciones": [
+    "Se suma 4",
+    "Se suma 2",
+    "Se suma 6",
+    "Se resta 4"
+   ],
+   "correcta": 0,
+   "tip": "De 2 a 6 hay 4, de 6 a 10 hay 4 y de 10 a 14 también: se suma 4.",
+   "id": "mate2-oa12-8"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "¿Cuál es la regla del patrón 45, 42, 39, 36?",
+   "opciones": [
+    "Se resta 3",
+    "Se suma 3",
+    "Se resta 2",
+    "Se resta 4"
+   ],
+   "correcta": 0,
+   "tip": "Los números bajan: de 45 a 42 se quitan 3, y así cada vez.",
+   "id": "mate2-oa12-9"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "¿Cuál es la regla del patrón 7, 13, 19, 25?",
+   "opciones": [
+    "Se suma 6",
+    "Se suma 5",
+    "Se suma 7",
+    "Se suma 4"
+   ],
+   "correcta": 0,
+   "tip": "De 7 a 13 hay 6, de 13 a 19 hay 6 y de 19 a 25 también: se suma 6.",
+   "id": "mate2-oa12-10"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "El patrón es 1, 2, 3, 1, 2, 3, 1. ¿Qué número sigue?",
+   "opciones": [
+    "2",
+    "1",
+    "3",
+    "4"
+   ],
+   "correcta": 0,
+   "tip": "Se repite el grupo 1, 2, 3. Después del 1 viene el 2.",
+   "id": "mate2-oa12-11"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "El patrón es 5, 0, 5, 0, 5. ¿Qué número sigue?",
+   "opciones": [
+    "0",
+    "5",
+    "10",
+    "1"
+   ],
+   "correcta": 0,
+   "tip": "El 5 y el 0 se van turnando. Después de un 5 siempre viene un 0.",
+   "id": "mate2-oa12-12"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "El patrón es 2, 2, 4, 4, 6, 6. ¿Qué número sigue?",
+   "opciones": [
+    "8",
+    "6",
+    "7",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "Cada número aparece dos veces y luego se suma 2: después de 6, 6 viene el 8.",
+   "id": "mate2-oa12-13"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "Un número está mal en 3, 7, 11, 14, 19. ¿Cuál es?",
+   "opciones": [
+    "14",
+    "11",
+    "19",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "El patrón suma 4: 3, 7, 11, 15, 19. Donde dice 14 debía decir 15.",
+   "id": "mate2-oa12-14"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "Diego escribe 10 y luego suma 3 cada vez. ¿Qué números escribe?",
+   "opciones": [
+    "10, 13, 16, 19",
+    "10, 12, 14, 16",
+    "10, 13, 15, 18",
+    "13, 16, 19, 22"
+   ],
+   "correcta": 0,
+   "tip": "Parte en 10 y suma 3: 10, 13, 16, 19. El 10 también es parte del patrón.",
+   "id": "mate2-oa12-15"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "Camila escribe 35 y resta 3 cada vez. ¿Cuál es su tercer número?",
+   "opciones": [
+    "29",
+    "32",
+    "26",
+    "30"
+   ],
+   "correcta": 0,
+   "tip": "Sus números son 35, 32 y 29: el tercero es 29. El 35 cuenta como el primero.",
+   "id": "mate2-oa12-16"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "La recta salta de 4 en 4. ¿Qué número va en el punto dorado?",
+   "opciones": [
+    "12",
+    "10",
+    "14",
+    "13"
+   ],
+   "correcta": 0,
+   "tip": "Antes del punto está el 8 y después el 16. Saltando de 4 en 4: 8 + 4 = 12.",
+   "id": "mate2-oa12-17",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 24,
+    "paso": 4,
+    "marca": 12,
+    "oculta": true
+   }
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "La recta salta de 6 en 6. ¿Qué número va en el punto dorado?",
+   "opciones": [
+    "38",
+    "36",
+    "37",
+    "40"
+   ],
+   "correcta": 0,
+   "tip": "Antes del punto está el 32. Saltando 6 más: 32 + 6 = 38.",
+   "id": "mate2-oa12-18",
+   "visual": {
+    "tipo": "recta",
+    "desde": 20,
+    "hasta": 50,
+    "paso": 6,
+    "marca": 38,
+    "oculta": true
+   }
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "La recta salta de 3 en 3. ¿Qué número va en el punto dorado?",
+   "opciones": [
+    "45",
+    "44",
+    "46",
+    "47"
+   ],
+   "correcta": 0,
+   "tip": "Antes del punto está el 42. Saltando 3 más: 42 + 3 = 45.",
+   "id": "mate2-oa12-19",
+   "visual": {
+    "tipo": "recta",
+    "desde": 30,
+    "hasta": 60,
+    "paso": 3,
+    "marca": 45,
+    "oculta": true
+   }
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "En la tabla del 100 subes una fila desde el 57. ¿Dónde llegas?",
+   "opciones": [
+    "47",
+    "56",
+    "67",
+    "58"
+   ],
+   "correcta": 0,
+   "tip": "En la tabla del 100, la fila de arriba tiene 10 menos: 57 - 10 = 47.",
+   "id": "mate2-oa12-20"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "En la tabla del 100 vas una casilla atrás desde el 40. ¿Dónde quedas?",
+   "opciones": [
+    "39",
+    "41",
+    "30",
+    "50"
+   ],
+   "correcta": 0,
+   "tip": "Una casilla hacia atrás es 1 menos: antes del 40 está el 39.",
+   "id": "mate2-oa12-21"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "¿Qué números faltan en 8, ___, 16, ___, 24?",
+   "opciones": [
+    "12 y 20",
+    "10 y 18",
+    "12 y 22",
+    "14 y 20"
+   ],
+   "correcta": 0,
+   "tip": "El patrón suma 4: 8, 12, 16, 20, 24.",
+   "id": "mate2-oa12-22"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "¿Qué número sigue en 100, 97, 94, 91?",
+   "opciones": [
+    "88",
+    "89",
+    "90",
+    "87"
+   ],
+   "correcta": 0,
+   "tip": "El patrón resta 3: 91 - 3 = 88.",
+   "id": "mate2-oa12-23"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "¿Qué número sigue en 15, 35, 55, 75?",
+   "opciones": [
+    "95",
+    "85",
+    "76",
+    "100"
+   ],
+   "correcta": 0,
+   "tip": "El patrón suma 20, o sea dos decenas cada vez: 75 + 20 = 95.",
+   "id": "mate2-oa12-24"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "¿Qué número falta al inicio de ___, 20, 23, 26?",
+   "opciones": [
+    "17",
+    "19",
+    "14",
+    "18"
+   ],
+   "correcta": 0,
+   "tip": "El patrón suma 3, así que el número de antes es 3 menos que 20: 17.",
+   "id": "mate2-oa12-25"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "Matías escribió 5, 9, 13, 18. ¿En qué se equivocó?",
+   "opciones": [
+    "18 debía ser 17",
+    "9 debía ser 10",
+    "13 debía ser 14",
+    "5 debía ser 4"
+   ],
+   "correcta": 0,
+   "tip": "El patrón suma 4: 5, 9, 13, 17. El último debía ser 13 + 4 = 17.",
+   "id": "mate2-oa12-26"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "¿En qué patrón se suma 3?",
+   "opciones": [
+    "10, 13, 16",
+    "10, 12, 14",
+    "10, 14, 18",
+    "10, 11, 12"
+   ],
+   "correcta": 0,
+   "tip": "En 10, 13, 16 cada número es 3 más que el anterior.",
+   "id": "mate2-oa12-27"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "¿En qué patrón se resta 4?",
+   "opciones": [
+    "40, 36, 32",
+    "40, 38, 36",
+    "40, 44, 48",
+    "40, 35, 30"
+   ],
+   "correcta": 0,
+   "tip": "En 40, 36, 32 cada número es 4 menos que el anterior.",
+   "id": "mate2-oa12-28"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "El patrón suma 2 y luego 3: 1, 3, 6, 8, 11. ¿Qué sigue?",
+   "opciones": [
+    "13",
+    "14",
+    "12",
+    "16"
+   ],
+   "correcta": 0,
+   "tip": "Al 11 le toca sumar 2 otra vez: 11 + 2 = 13.",
+   "id": "mate2-oa12-29"
+  },
+  {
+   "oa": "MA02 OA 12",
+   "pregunta": "Este patrón crece cada vez más: 1, 2, 4, 7, 11. ¿Qué sigue?",
+   "opciones": [
+    "16",
+    "15",
+    "14",
+    "12"
+   ],
+   "correcta": 0,
+   "tip": "Se suma 1, luego 2, luego 3, luego 4. Ahora toca sumar 5: 11 + 5 = 16.",
+   "id": "mate2-oa12-30"
+  }
+ ]
+}

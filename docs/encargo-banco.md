@@ -26,6 +26,7 @@ habrían repetido gratis en cada nivel nuevo.
 
 | Nivel | Edad | Cronómetro | Enunciado | Con fragmento | Voz pregrabada | Campo `visual` |
 |---|---|---|---|---|---|---|
+| **2° básico** | 7-8 | **No** | < **70** | máx **160** | **Sí** | **Sí**, 11 tipos |
 | **3° básico** | 8-9 | **No** | < 110 | máx **220** | **Sí** | **Sí**, 11 tipos |
 | **4° básico** | 9-10 | **No** | < 110 | máx **220** | **Sí** | **Sí** |
 | **5° básico** | 10-11 | Sí, 20 s | < 120 | máx **250** | No | Solo geometría |
@@ -35,7 +36,10 @@ habrían repetido gratis en cada nivel nuevo.
 
 Tres consecuencias que la tabla no dice en voz alta:
 
-- **Sin cronómetro (3° y 4°) un fragmento breve sí cabe.** Es la ventaja de esos niveles; úsala.
+- **Sin cronómetro (2°, 3° y 4°) un fragmento breve sí cabe.** Es la ventaja de esos niveles; úsala.
+- **En 2° el niño (7-8 años) recién consolida la lectura y casi siempre ESCUCHA la pregunta:**
+  opciones de 1 a 4 palabras, una sola idea por enunciado, cero dobles negaciones, y nada que
+  dependa de VER la grafía (una pregunta de letras o sílabas tiene que poder resolverse oyéndola).
 - **Con cronómetro, el largo no es estética: es la restricción.** A 20 segundos, un enunciado
   largo mide velocidad de lectura y no aprendizaje.
 - **Si tu nivel no lleva `visual`, el campo no existe en ese motor y se descartaría en silencio.**

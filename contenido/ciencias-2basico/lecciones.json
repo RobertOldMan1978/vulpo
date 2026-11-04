@@ -1,0 +1,169 @@
+{
+ "lecciones": [
+  {
+   "id": "ci2-vertebrados",
+   "titulo": "Antes de empezar: El cuerpo y los vertebrados",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Por fuera ves tu piel y tu pelo. Por dentro tienes partes que no se ven y que trabajan todo el día: huesos, músculos y órganos."
+    },
+    {
+     "t": "texto",
+     "md": "Todos tus huesos juntos forman tu esqueleto. Muchos animales también tienen esqueleto, con una fila de huesos a lo largo de la espalda. Esos animales se llaman **vertebrados**, y tú eres uno de ellos."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "intro": "Los vertebrados se ordenan en cinco grupos. Para saber en cuál va un animal, se miran pistas como estas.",
+     "params": {
+      "forma": "comparar",
+      "desc": "Tres pistas para saber a qué grupo pertenece un vertebrado: su cubierta, cómo respira y cómo se alimentan sus crías",
+      "items": [
+       {
+        "titulo": "Su cubierta",
+        "texto": "¿Tiene pelo, plumas, escamas o piel húmeda?"
+       },
+       {
+        "titulo": "Cómo respira",
+        "texto": "¿Con pulmones o con branquias?"
+       },
+       {
+        "titulo": "Sus crías",
+        "texto": "¿Toman leche de su madre?"
+       }
+      ],
+      "etiqueta": "Pistas para ordenar a los vertebrados"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a ver dónde están tu corazón, tus pulmones y tu estómago, qué le pasa a tu cuerpo cuando te mueves, y cuáles son los cinco grupos: mamíferos, aves, reptiles, anfibios y peces."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ci2-invertebrados",
+   "titulo": "Antes de empezar: Invertebrados y ciclos de vida",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Los vertebrados tienen columna, una fila de huesos en la espalda. Pero la mayoría de los animales del planeta no tiene columna. Se llaman **invertebrados**."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "intro": "Con columna o sin columna: es lo primero que se mira en un animal.",
+     "params": {
+      "forma": "comparar",
+      "desc": "Animales con columna, como un gato, una trucha y tú, y animales sin columna, como un mosquito, una medusa y un chorito",
+      "items": [
+       {
+        "titulo": "Con columna",
+        "texto": "Un gato, una trucha y tú."
+       },
+       {
+        "titulo": "Sin columna",
+        "texto": "Un mosquito, una medusa y un chorito."
+       }
+      ],
+      "etiqueta": "La mayoría está en el lado sin columna"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "También vas a ver que cada animal cambia durante su vida. Algunos cambian tanto que de chicos no se parecen nada a cuando son grandes."
+    },
+    {
+     "t": "texto",
+     "md": "Y vas a ver que cada animal vive donde encuentra lo que necesita: cierta cantidad de luz, de humedad y una temperatura que le acomoda. A ese lugar se le llama hábitat."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ci2-agua",
+   "titulo": "Antes de empezar: Animales en peligro y el agua",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Este capítulo tiene dos partes. Primero vas a conocer animales de Chile que necesitan ayuda para no desaparecer, y las cosas que hacen las personas que los dañan o que los protegen."
+    },
+    {
+     "t": "texto",
+     "md": "Después vas a mirar de cerca algo que usas todos los días: el agua. Parece simple, pero puede estar de tres formas distintas. A cada forma se le llama un **estado**."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "intro": "Cuando el agua se calienta, pasa de un estado al siguiente. Cuando se enfría, vuelve hacia atrás.",
+     "params": {
+      "forma": "secuencia",
+      "desc": "Los tres estados del agua, uno tras otro: sólido, líquido y gaseoso",
+      "items": [
+       {
+        "titulo": "Sólido"
+       },
+       {
+        "titulo": "Líquido"
+       },
+       {
+        "titulo": "Gaseoso"
+       }
+      ],
+      "etiqueta": "Siempre es la misma agua"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "También vas a ver cómo se porta el agua en experimentos sencillos: cómo escurre, qué cosas se mezclan con ella y qué le pasa cuando cambia la temperatura."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ci2-tiempo",
+   "titulo": "Antes de empezar: El agua y el tiempo",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Mira por la ventana. ¿Llueve? ¿Sopla viento? ¿Hace frío o calor? Cómo está el aire en un lugar y en un día se llama **tiempo atmosférico**, y cambia de un día a otro."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "intro": "Hay tres cosas que se miran para saber cómo está el tiempo.",
+     "params": {
+      "forma": "comparar",
+      "desc": "Tres cosas del tiempo atmosférico: lo que cae del cielo, el viento y la temperatura",
+      "items": [
+       {
+        "titulo": "Lo que cae del cielo",
+        "texto": "¿Llueve, nieva o está seco?"
+       },
+       {
+        "titulo": "El viento",
+        "texto": "¿Sopla fuerte, suave o nada?"
+       },
+       {
+        "titulo": "La temperatura",
+        "texto": "¿Hace frío o calor?"
+       }
+      ],
+      "etiqueta": "Las tres se pueden medir"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "También vas a seguir un viaje que el agua hace sin parar entre el mar, el cielo y la tierra: el ciclo del agua. Y vas a ver por qué hay que cuidarla."
+    },
+    {
+     "t": "texto",
+     "md": "Al final vas a conocer los instrumentos que miden el tiempo, y cómo el tiempo va cambiando de una estación a otra a lo largo del año."
+    }
+   ],
+   "revisada": false
+  }
+ ]
+}

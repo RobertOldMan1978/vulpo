@@ -1,0 +1,418 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Cuenta de 2 en 2: 2, 4, 6, 8. ¿Qué número sigue?",
+   "opciones": [
+    "10",
+    "9",
+    "12",
+    "16"
+   ],
+   "correcta": 0,
+   "tip": "Contar de 2 en 2 es sumar 2 cada vez: 8 + 2 = 10. El 9 sale de contar de 1 en 1.",
+   "id": "mate2-oa01-1"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Sofía cuenta de 2 en 2: 11, 13, 15. ¿Qué número sigue?",
+   "opciones": [
+    "17",
+    "16",
+    "19",
+    "25"
+   ],
+   "correcta": 0,
+   "tip": "A 15 se le suman 2 y llegas a 17. Contar de 2 en 2 se salta un número cada vez.",
+   "id": "mate2-oa01-2"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Cuenta de 2 en 2 hacia atrás: 20, 18, 16. ¿Qué sigue?",
+   "opciones": [
+    "14",
+    "15",
+    "12",
+    "17"
+   ],
+   "correcta": 0,
+   "tip": "Hacia atrás se quitan 2 cada vez: 16 menos 2 es 14.",
+   "id": "mate2-oa01-3"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Camila cuenta de 5 en 5: 45, 50, 55. ¿Cuál viene ahora?",
+   "opciones": [
+    "60",
+    "56",
+    "65",
+    "70"
+   ],
+   "correcta": 0,
+   "tip": "De 5 en 5 se suma 5: 55 + 5 = 60. Los números terminan en 5 y en 0, uno y uno.",
+   "id": "mate2-oa01-4"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Cuenta de 5 en 5 hacia atrás desde 100. ¿Qué dices después de 90?",
+   "opciones": [
+    "85",
+    "80",
+    "95",
+    "89"
+   ],
+   "correcta": 0,
+   "tip": "Desde 100 hacia atrás se dice 100, 95, 90 y después 85, porque se quitan 5.",
+   "id": "mate2-oa01-5"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Cuenta de 10 en 10 desde 7: 7, 17, 27. ¿Qué número sigue?",
+   "opciones": [
+    "37",
+    "28",
+    "47",
+    "30"
+   ],
+   "correcta": 0,
+   "tip": "Al sumar 10 cambia solo la cifra de las decenas: el 7 de las unidades se queda. Sigue 37.",
+   "id": "mate2-oa01-6"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Retrocede de 10 en 10: 83, 73, 63. ¿Cuál es el próximo?",
+   "opciones": [
+    "53",
+    "62",
+    "43",
+    "50"
+   ],
+   "correcta": 0,
+   "tip": "Al quitar 10 baja una decena y el 3 de las unidades no cambia: 63 menos 10 es 53.",
+   "id": "mate2-oa01-7"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Cuenta de 100 en 100: 140, 240, 340. ¿Qué número sigue?",
+   "opciones": [
+    "440",
+    "350",
+    "540",
+    "341"
+   ],
+   "correcta": 0,
+   "tip": "Al sumar 100 solo cambia la cifra de las centenas: de 340 pasas a 440.",
+   "id": "mate2-oa01-8"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Tomás baja de 100 en 100: 760, 660, 560. ¿Qué número dice?",
+   "opciones": [
+    "460",
+    "550",
+    "360",
+    "559"
+   ],
+   "correcta": 0,
+   "tip": "Hacia atrás de 100 en 100 baja solo la cifra de las centenas: 560 menos 100 es 460.",
+   "id": "mate2-oa01-9"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Los saltos de esta recta son de 2 en 2. ¿Dónde cae la marca?",
+   "opciones": [
+    "14",
+    "7",
+    "12",
+    "16"
+   ],
+   "correcta": 0,
+   "tip": "Desde el 0, cada salto vale 2: 2, 4, 6, 8, 10, 12, 14. La marca está en el séptimo salto, o sea en 14.",
+   "id": "mate2-oa01-10",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 20,
+    "paso": 2,
+    "marca": 14,
+    "oculta": true
+   }
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Esta recta avanza de 5 en 5 desde 50. ¿Qué número tapa la marca?",
+   "opciones": [
+    "70",
+    "65",
+    "75",
+    "60"
+   ],
+   "correcta": 0,
+   "tip": "Desde 50 se cuenta 55, 60, 65, 70. La marca cae en el cuarto salto: 70.",
+   "id": "mate2-oa01-11",
+   "visual": {
+    "tipo": "recta",
+    "desde": 50,
+    "hasta": 100,
+    "paso": 5,
+    "marca": 70,
+    "oculta": true
+   }
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "De 100 en 100 desde 300. ¿Qué número esconde la marca?",
+   "opciones": [
+    "600",
+    "500",
+    "700",
+    "400"
+   ],
+   "correcta": 0,
+   "tip": "Desde 300 se cuenta 400, 500, 600. La marca está en el tercer salto: 600.",
+   "id": "mate2-oa01-12",
+   "visual": {
+    "tipo": "recta",
+    "desde": 300,
+    "hasta": 1000,
+    "paso": 100,
+    "marca": 600,
+    "oculta": true
+   }
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Diego dice: 30, 35, 40, 45. ¿De cuánto en cuánto cuenta?",
+   "opciones": [
+    "De 5 en 5",
+    "De 10 en 10",
+    "De 2 en 2",
+    "De 1 en 1"
+   ],
+   "correcta": 0,
+   "tip": "De 30 a 35 hay 5, y de 35 a 40 también: cada número es 5 más que el anterior.",
+   "id": "mate2-oa01-13"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Ana dice: 62, 64, 66, 68. ¿De cuánto en cuánto cuenta?",
+   "opciones": [
+    "De 2 en 2",
+    "De 4 en 4",
+    "De 6 en 6",
+    "De 10 en 10"
+   ],
+   "correcta": 0,
+   "tip": "De 62 a 64 hay 2 y de 64 a 66 también. Cada número es 2 más que el anterior.",
+   "id": "mate2-oa01-14"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Matías cuenta 900, 800, 700. ¿Qué hace en cada paso?",
+   "opciones": [
+    "Resta 100",
+    "Suma 100",
+    "Resta 10",
+    "Suma 10"
+   ],
+   "correcta": 0,
+   "tip": "Los números se achican y baja una centena cada vez: está restando 100.",
+   "id": "mate2-oa01-15"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Completa de 5 en 5: 125, 130, ___, 140. ¿Qué número falta?",
+   "opciones": [
+    "135",
+    "131",
+    "145",
+    "150"
+   ],
+   "correcta": 0,
+   "tip": "130 + 5 = 135, y de 135 se llega a 140 con otros 5. Así cuadra la cuenta.",
+   "id": "mate2-oa01-16"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "De 2 en 2 hacia atrás: 50, 48, ___, 44. ¿Qué número falta?",
+   "opciones": [
+    "46",
+    "47",
+    "42",
+    "45"
+   ],
+   "correcta": 0,
+   "tip": "Hacia atrás se quitan 2: 48 menos 2 es 46, y 46 menos 2 da el 44 que sigue.",
+   "id": "mate2-oa01-17"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Completa de 10 en 10: 245, 255, ___, 275. ¿Qué número falta?",
+   "opciones": [
+    "265",
+    "256",
+    "260",
+    "285"
+   ],
+   "correcta": 0,
+   "tip": "Al sumar 10 sube solo la decena y el 5 de las unidades se queda: 255, 265, 275.",
+   "id": "mate2-oa01-18"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "De 100 en 100: 85, 185, ___, 385. ¿Qué número falta?",
+   "opciones": [
+    "285",
+    "195",
+    "485",
+    "286"
+   ],
+   "correcta": 0,
+   "tip": "Se suma una centena cada vez y el 85 se queda igual: 185, 285, 385.",
+   "id": "mate2-oa01-19"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Cuenta de 2 en 2: 96, 98, ___, 102. ¿Qué número falta?",
+   "opciones": [
+    "100",
+    "99",
+    "110",
+    "101"
+   ],
+   "correcta": 0,
+   "tip": "98 + 2 = 100. Después de 100 viene 102, sumando 2 otra vez.",
+   "id": "mate2-oa01-20"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Contando de 10 en 10 se dice 970, 980, 990. ¿Qué viene?",
+   "opciones": [
+    "1000",
+    "991",
+    "9100",
+    "1090"
+   ],
+   "correcta": 0,
+   "tip": "Diez más que 990 es 1000, el número que se lee mil. El 9100 sale de pegar las cifras.",
+   "id": "mate2-oa01-21"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Vicente parte del 3 y suma 5 cada vez: 3, 8, 13. ¿Y luego?",
+   "opciones": [
+    "18",
+    "14",
+    "15",
+    "23"
+   ],
+   "correcta": 0,
+   "tip": "Sumando 5 a 13 llegas a 18. Las unidades van saltando entre el 3 y el 8.",
+   "id": "mate2-oa01-22"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Javiera cuenta de 10 en 10 desde 12. ¿Cuál número dirá?",
+   "opciones": [
+    "52",
+    "50",
+    "55",
+    "60"
+   ],
+   "correcta": 0,
+   "tip": "Desde 12 dice 22, 32, 42, 52: todos terminan en 2, porque sumar 10 no cambia las unidades.",
+   "id": "mate2-oa01-23"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Cuenta de 2 en 2 desde 0. ¿Cuál de estos números dirás?",
+   "opciones": [
+    "34",
+    "35",
+    "27",
+    "41"
+   ],
+   "correcta": 0,
+   "tip": "Desde el 0, de 2 en 2, se dicen solo números que terminan en 0, 2, 4, 6 u 8.",
+   "id": "mate2-oa01-24"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Benjamín salta de 5 en 5 desde 0. ¿En qué número cae?",
+   "opciones": [
+    "65",
+    "62",
+    "58",
+    "71"
+   ],
+   "correcta": 0,
+   "tip": "Desde el 0, de 5 en 5, se cae en números que terminan en 0 o en 5: 60, 65, 70.",
+   "id": "mate2-oa01-25"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Diego tiene 6 monedas de 10. Las cuenta de 10 en 10. ¿Cuánto junta?",
+   "opciones": [
+    "60",
+    "16",
+    "70",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Contando de 10 en 10, seis monedas son 10, 20, 30, 40, 50, 60.",
+   "id": "mate2-oa01-26"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Ana cuenta 5 monedas de 100, de 100 en 100. ¿Cuánto tiene?",
+   "opciones": [
+    "500",
+    "105",
+    "600",
+    "50"
+   ],
+   "correcta": 0,
+   "tip": "Cada moneda suma 100: 100, 200, 300, 400, 500.",
+   "id": "mate2-oa01-27"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Hay 9 pares de calcetines. Cuenta de 2 en 2. ¿Cuántos son?",
+   "opciones": [
+    "18",
+    "11",
+    "16",
+    "20"
+   ],
+   "correcta": 0,
+   "tip": "Cada par trae 2 calcetines. Contando de 2 en 2 nueve veces llegas a 18.",
+   "id": "mate2-oa01-28"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Cuenta de 5 en 5 los dedos de 7 manos. ¿Cuántos dedos son?",
+   "opciones": [
+    "35",
+    "12",
+    "30",
+    "40"
+   ],
+   "correcta": 0,
+   "tip": "Cada mano tiene 5 dedos: 5, 10, 15, 20, 25, 30, 35.",
+   "id": "mate2-oa01-29"
+  },
+  {
+   "oa": "MA02 OA 01",
+   "pregunta": "Pedro cuenta de 100 en 100 hacia atrás desde 1000. ¿Qué dice luego?",
+   "opciones": [
+    "900",
+    "999",
+    "990",
+    "800"
+   ],
+   "correcta": 0,
+   "tip": "Hacia atrás de 100 en 100 se quita una centena: 1000 menos 100 es 900.",
+   "id": "mate2-oa01-30"
+  }
+ ]
+}

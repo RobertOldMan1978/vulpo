@@ -308,17 +308,22 @@ DIAGRAMAS.figura=function(p,nodo){
 
 // bloques: los bloques multibase de 3 basico. La centena es un cuadrado con su cuadricula
 // de 10x10, la decena una barra de 10 y la unidad un cubito. Para MA03 OA 02 y OA 05.
-// params: {numero=342, etiqueta}
+// params: {numero=342, etiqueta, sinCentenas}
+// `sinCentenas:true` (2 basico, numeros hasta 99): omite la fila de las centenas y sube las
+// otras dos. Un nino de 2 todavia no conoce las centenas, y la fila vacia decia "0 centenas".
+// Sin el parametro el dibujo es el de siempre, asi que 3 basico no cambia.
 DIAGRAMAS.bloques=function(p,nodo){
- const n=Math.max(0,Math.min(999,p.numero??342));
+ const sinC=!!p.sinCentenas;
+ const n=Math.max(0,Math.min(sinC?99:999,p.numero??342));
  const c=Math.floor(n/100), d=Math.floor((n%100)/10), u=n%10;
- const W=380,H=168, xb=68;
+ const off=sinC?44:0;
+ const W=380,H=168-off, xb=68;
  const svg=svgEl('svg',{viewBox:'0 0 '+W+' '+H,role:'img',
-  'aria-label':'El número '+n+' en bloques de cien, de diez y de uno'});
+  'aria-label':'El número '+n+(sinC?' en bloques de diez y de uno':' en bloques de cien, de diez y de uno')});
  function rotulo(y,txt){const t=svgEl('text',{x:6,y:y,fill:'#a99fd0','font-size':11});
   t.textContent=txt; svg.appendChild(t);}
  // centenas: cuadrado con su cuadricula, para que se vea que son 10 filas de 10
- for(let i=0;i<c;i++){const x=xb+i*34, y=14;
+ if(!sinC)for(let i=0;i<c;i++){const x=xb+i*34, y=14;
   svg.appendChild(svgEl('rect',{x,y,width:30,height:30,rx:2,fill:'#8f6bff',opacity:.85,
    stroke:'#4dd8ff','stroke-width':1.5}));
   for(let k=1;k<10;k++){
@@ -326,24 +331,24 @@ DIAGRAMAS.bloques=function(p,nodo){
    svg.appendChild(svgEl('line',{x1:x,y1:y+k*3,x2:x+30,y2:y+k*3,stroke:'#241a44','stroke-width':.4}));
   }
  }
- rotulo(32, c+(c===1?' centena':' centenas'));
+ if(!sinC)rotulo(32, c+(c===1?' centena':' centenas'));
  // decenas: barra partida en 10
- for(let i=0;i<d;i++){const x=xb+i*14, y=58;
+ for(let i=0;i<d;i++){const x=xb+i*14, y=58-off;
   svg.appendChild(svgEl('rect',{x,y,width:9,height:30,rx:2,fill:'#4dd8ff',opacity:.9,
    stroke:'#241a44','stroke-width':1}));
   for(let k=1;k<10;k++)svg.appendChild(svgEl('line',{x1:x,y1:y+k*3,x2:x+9,y2:y+k*3,
    stroke:'#241a44','stroke-width':.4}));
  }
- rotulo(76, d+(d===1?' decena':' decenas'));
+ rotulo(76-off, d+(d===1?' decena':' decenas'));
  // unidades: cubitos sueltos
  for(let i=0;i<u;i++){
-  svg.appendChild(svgEl('rect',{x:xb+i*13,y:102,width:9,height:9,rx:2,fill:'#ffc93c',
+  svg.appendChild(svgEl('rect',{x:xb+i*13,y:102-off,width:9,height:9,rx:2,fill:'#ffc93c',
    stroke:'#241a44','stroke-width':1}));
  }
- rotulo(111, u+(u===1?' unidad':' unidades'));
+ rotulo(111-off, u+(u===1?' unidad':' unidades'));
  const t=svgEl('text',{x:W/2,y:H-14,'text-anchor':'middle',fill:'#ffc93c',
   'font-family':"'Titan One',sans-serif",'font-size':17});
- t.textContent=p.etiqueta||(c*100)+' + '+(d*10)+' + '+u+' = '+n; svg.appendChild(t);
+ t.textContent=p.etiqueta||(sinC?(d*10)+' + '+u+' = '+n:(c*100)+' + '+(d*10)+' + '+u+' = '+n); svg.appendChild(t);
  nodo.appendChild(svg);
 };
 
@@ -1447,12 +1452,14 @@ function renderCampañaMate(c){
   cont.appendChild(reto);
  }
  nodoSinFin(c,cont);   // el Reto Sin Fin de los cursos que lo tienen (vive en motor.js)
- // Jefe Final "La Incógnita": ahora exige las 4 expediciones vencidas.
+ // Jefe Final: exige TODAS las expediciones de la campaña vencidas. El número del aviso sale
+ // de c.capitulos, la misma lista que mira jefeFinalMateDesbloqueado: estaba fijo en "4"
+ // (las de 8°) y mentía en los cursos de 6 y 7 unidades.
  if(bloqueado()) return;
  const jfAb=jefeFinalMateDesbloqueado(c), jfHecho=campañaCompleta(c);
  cont.appendChild(nodoCampañaEl('👑','JEFE FINAL DE MATEMÁTICAS', jfAb, jfHecho,
    jfAb?()=>iniciarJefeFinal(c):null,
-   jfHecho?'¡Vencido!':(jfAb?'¡Al 100%! Enfréntalo':'🔒 Vence las 4 expediciones'),
+   jfHecho?'¡Vencido!':(jfAb?'¡Al 100%! Enfréntalo':'🔒 Vence las '+c.capitulos.length+' expediciones'),
    c.jefeFinal.villanoImg||''));
 }
 function jefeFinalMateDesbloqueado(c){ return JEFES_ABIERTOS || (c.capitulos.length>0 && c.capitulos.every(expedicionCompleta)); }

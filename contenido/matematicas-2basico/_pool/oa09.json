@@ -1,0 +1,406 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "¿Cuánto es 34 + 25?",
+   "opciones": [
+    "59",
+    "58",
+    "69",
+    "95"
+   ],
+   "correcta": 0,
+   "tip": "Se suman unidades con unidades (4 + 5 = 9) y decenas con decenas (3 + 2 = 5): 59.",
+   "id": "mate2-oa09-1"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "Suma 47 + 21. ¿Qué resultado da?",
+   "opciones": [
+    "68",
+    "67",
+    "78",
+    "86"
+   ],
+   "correcta": 0,
+   "tip": "Unidades: 7 + 1 = 8. Decenas: 4 + 2 = 6. El resultado es 68.",
+   "id": "mate2-oa09-2"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "¿Cuánto es 58 - 23?",
+   "opciones": [
+    "35",
+    "34",
+    "81",
+    "45"
+   ],
+   "correcta": 0,
+   "tip": "Unidades: 8 - 3 = 5. Decenas: 5 - 2 = 3. Queda 35. Si da 81, se sumó en vez de restar.",
+   "id": "mate2-oa09-3"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "Resta 76 - 41. ¿Cuánto queda?",
+   "opciones": [
+    "35",
+    "45",
+    "25",
+    "117"
+   ],
+   "correcta": 0,
+   "tip": "Unidades: 6 - 1 = 5. Decenas: 7 - 4 = 3. Queda 35.",
+   "id": "mate2-oa09-4"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "¿Cuánto es 62 + 30?",
+   "opciones": [
+    "92",
+    "65",
+    "82",
+    "32"
+   ],
+   "correcta": 0,
+   "tip": "Sumar 30 es sumar 3 decenas: 6 decenas y 3 decenas son 9 decenas. 62 + 30 = 92. El 3 no va con las unidades.",
+   "id": "mate2-oa09-5"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "¿Cuánto es 89 - 50?",
+   "opciones": [
+    "39",
+    "84",
+    "49",
+    "29"
+   ],
+   "correcta": 0,
+   "tip": "Restar 50 es quitar 5 decenas: de 8 decenas quedan 3. Las unidades no cambian: 39.",
+   "id": "mate2-oa09-6"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "¿Cuánto es 55 + 44?",
+   "opciones": [
+    "99",
+    "98",
+    "100",
+    "11"
+   ],
+   "correcta": 0,
+   "tip": "Unidades: 5 + 4 = 9. Decenas: 5 + 4 = 9. El resultado es 99.",
+   "id": "mate2-oa09-7"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "¿Qué número queda al hacer 97 - 65?",
+   "opciones": [
+    "32",
+    "42",
+    "162",
+    "33"
+   ],
+   "correcta": 0,
+   "tip": "Unidades: 7 - 5 = 2. Decenas: 9 - 6 = 3. Queda 32.",
+   "id": "mate2-oa09-8"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "Al sumar 43 + 25, ¿con qué número se suma el 3?",
+   "opciones": [
+    "Con el 5",
+    "Con el 2",
+    "Con el 4",
+    "Con el 25"
+   ],
+   "correcta": 0,
+   "tip": "El 3 son las unidades de 43, y se suma con las unidades de 25, que son 5. Las decenas van con las decenas.",
+   "id": "mate2-oa09-9"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "Matías sumó 31 + 24 y le dio 73. ¿Qué hizo mal?",
+   "opciones": [
+    "Mezcló decenas y unidades",
+    "Restó en vez de sumar",
+    "Sumó una decena extra",
+    "Olvidó las unidades"
+   ],
+   "correcta": 0,
+   "tip": "31 + 24 da 55. Matías juntó el 3 con el 4 y el 1 con el 2: mezcló decenas con unidades.",
+   "id": "mate2-oa09-10"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "Sofía restó 86 - 34 y le dio 52. ¿Está bien?",
+   "opciones": [
+    "Sí, da 52",
+    "No, da 62",
+    "No, da 120",
+    "No, da 42"
+   ],
+   "correcta": 0,
+   "tip": "Unidades: 6 - 4 = 2. Decenas: 8 - 3 = 5. 86 - 34 es 52, así que Sofía lo hizo bien.",
+   "id": "mate2-oa09-11"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "Ana tenía 12 lápices y le regalaron 5. ¿Qué cálculo sirve?",
+   "opciones": [
+    "Sumar 12 + 5",
+    "Restar 12 - 5",
+    "Restar 5 - 12",
+    "Sumar 12 + 12"
+   ],
+   "correcta": 0,
+   "tip": "Le regalaron lápices: ahora tiene más. Cuando algo se agrega, se suma: 12 + 5.",
+   "id": "mate2-oa09-12"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "Había 18 globos y se reventaron 6. ¿Qué cálculo sirve?",
+   "opciones": [
+    "18 - 6",
+    "18 + 6",
+    "6 - 18",
+    "6 + 6"
+   ],
+   "correcta": 0,
+   "tip": "Si se reventaron, quedan menos: se quita 6 de 18, o sea 18 - 6. Se parte del número mayor.",
+   "id": "mate2-oa09-13"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "¿Qué palabra de un problema te dice que hay que restar?",
+   "opciones": [
+    "Quitar",
+    "Juntar",
+    "Agregar",
+    "Reunir"
+   ],
+   "correcta": 0,
+   "tip": "Quitar hace que quede menos, y eso es restar. Juntar, agregar y reunir son formas de sumar.",
+   "id": "mate2-oa09-14"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "Si en un problema se juntan dos grupos, ¿qué haces?",
+   "opciones": [
+    "Sumar",
+    "Restar",
+    "Separar",
+    "Repartir"
+   ],
+   "correcta": 0,
+   "tip": "Juntar dos grupos da un grupo más grande: se suma.",
+   "id": "mate2-oa09-15"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "En la mesa hay 25 tazas y traen 13 más. ¿Cuántas hay ahora?",
+   "opciones": [
+    "38",
+    "12",
+    "37",
+    "28"
+   ],
+   "correcta": 0,
+   "tip": "Traen más tazas, así que se suma: 25 + 13 = 38. Si da 12, se restó.",
+   "id": "mate2-oa09-16"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "Un bus lleva 47 personas y se bajan 15. ¿Cuántas quedan?",
+   "opciones": [
+    "32",
+    "62",
+    "33",
+    "22"
+   ],
+   "correcta": 0,
+   "tip": "Se bajan personas, así que se resta: 47 - 15 = 32.",
+   "id": "mate2-oa09-17"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "Diego tiene 35 láminas y Sofía 22. ¿Cuántas tienen juntos?",
+   "opciones": [
+    "57",
+    "13",
+    "47",
+    "67"
+   ],
+   "correcta": 0,
+   "tip": "Juntos es sumar: 35 + 22 = 57. Si da 13, se restó.",
+   "id": "mate2-oa09-18"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "Camila tiene 48 pesos y gasta 20. ¿Cuánto le queda?",
+   "opciones": [
+    "28 pesos",
+    "68 pesos",
+    "46 pesos",
+    "18 pesos"
+   ],
+   "correcta": 0,
+   "tip": "Gastar es restar: 48 - 20 = 28. Se quitan 2 decenas, las unidades no cambian.",
+   "id": "mate2-oa09-19"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "En un curso hay 16 niñas y 13 niños. ¿Cuántos son en total?",
+   "opciones": [
+    "29",
+    "3",
+    "28",
+    "39"
+   ],
+   "correcta": 0,
+   "tip": "En total es sumar los dos grupos: 16 + 13 = 29.",
+   "id": "mate2-oa09-20"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "Benjamín tiene 45 bolitas y Tomás 23. ¿Cuántas más tiene Benjamín?",
+   "opciones": [
+    "22",
+    "68",
+    "23",
+    "32"
+   ],
+   "correcta": 0,
+   "tip": "Para saber cuántas más, se resta: 45 - 23 = 22. Sumarlas daría el total, no la diferencia.",
+   "id": "mate2-oa09-21"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "Hay 39 sillas y 24 niños sentados. ¿Cuántas sillas sobran?",
+   "opciones": [
+    "15",
+    "63",
+    "16",
+    "25"
+   ],
+   "correcta": 0,
+   "tip": "Las sillas que sobran son las que no usan: 39 - 24 = 15.",
+   "id": "mate2-oa09-22"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "Usa 4 + 5 = 9 para calcular 40 + 50. ¿Cuánto da?",
+   "opciones": [
+    "90",
+    "9",
+    "45",
+    "900"
+   ],
+   "correcta": 0,
+   "tip": "40 son 4 decenas y 50 son 5 decenas. 4 decenas y 5 decenas son 9 decenas: 90.",
+   "id": "mate2-oa09-23"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "Sabes que 8 - 3 = 5. Entonces, ¿cuánto es 80 - 30?",
+   "opciones": [
+    "50",
+    "5",
+    "500",
+    "110"
+   ],
+   "correcta": 0,
+   "tip": "Son 8 decenas menos 3 decenas: quedan 5 decenas, o sea 50.",
+   "id": "mate2-oa09-24"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "Como 6 + 3 = 9, ¿qué resultado tiene 16 + 3?",
+   "opciones": [
+    "19",
+    "9",
+    "29",
+    "18"
+   ],
+   "correcta": 0,
+   "tip": "16 es 10 y 6. Si 6 + 3 = 9, entonces 16 + 3 es 10 y 9: 19.",
+   "id": "mate2-oa09-25"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "Luis escribió: «Tenía 30 y me dieron 10». ¿Qué cálculo es?",
+   "opciones": [
+    "30 + 10",
+    "30 - 10",
+    "10 - 30",
+    "30 + 30"
+   ],
+   "correcta": 0,
+   "tip": "Si le dieron, ahora tiene más: es una suma, 30 + 10.",
+   "id": "mate2-oa09-26"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "¿Qué problema se resuelve con 20 + 15?",
+   "opciones": [
+    "Junto 20 y 15",
+    "Tengo 20, regalo 15",
+    "De 20, pierdo 15",
+    "Reparto 20 entre 15"
+   ],
+   "correcta": 0,
+   "tip": "20 + 15 junta dos cantidades. Regalar y perder son restas.",
+   "id": "mate2-oa09-27"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "¿Qué historia calza con la resta 50 - 20?",
+   "opciones": [
+    "Tengo 50 y gasto 20",
+    "Tengo 50 y gano 20",
+    "Junto 50 y 20",
+    "Tengo 20 y gasto 50"
+   ],
+   "correcta": 0,
+   "tip": "50 - 20 parte de 50 y quita 20: gastar 20 de lo que se tiene.",
+   "id": "mate2-oa09-28"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "¿Qué suma muestra el dibujo?",
+   "opciones": [
+    "5 + 4",
+    "5 + 5",
+    "4 + 4",
+    "5 - 4"
+   ],
+   "correcta": 0,
+   "tip": "Hay un grupo de 5 manzanas y otro de 4 que se juntan: 5 + 4.",
+   "visual": {
+    "tipo": "contar",
+    "a": 5,
+    "b": 4,
+    "emoji": "🍎"
+   },
+   "id": "mate2-oa09-29"
+  },
+  {
+   "oa": "MA02 OA 09",
+   "pregunta": "El dibujo muestra una resta. ¿Cuál es?",
+   "opciones": [
+    "9 - 3",
+    "9 - 6",
+    "6 - 3",
+    "9 + 3"
+   ],
+   "correcta": 0,
+   "tip": "Hay 9 estrellas y se quitan 3: eso se escribe 9 - 3.",
+   "visual": {
+    "tipo": "contar",
+    "a": 9,
+    "b": -3,
+    "emoji": "⭐"
+   },
+   "id": "mate2-oa09-30"
+  }
+ ]
+}

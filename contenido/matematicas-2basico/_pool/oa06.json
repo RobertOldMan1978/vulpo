@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "Para sumar 8 + 5, Ana completa 10. ¿Qué cuenta hace primero?",
+   "opciones": [
+    "8 + 2",
+    "8 + 3",
+    "10 + 5",
+    "8 + 10"
+   ],
+   "correcta": 0,
+   "tip": "Al 8 le faltan 2 para llegar a 10. Los saca del 5, le quedan 3, y 10 + 3 es 13.",
+   "id": "mate2-oa06-1"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "¿Cuántos le faltan al 7 para llegar a 10?",
+   "opciones": [
+    "3",
+    "4",
+    "17",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "7 y 3 más son 10: contando 8, 9, 10 son tres pasos.",
+   "id": "mate2-oa06-2"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "Matías tiene 6 láminas. ¿Cuántas le faltan para tener 10?",
+   "opciones": [
+    "4",
+    "5",
+    "16",
+    "3"
+   ],
+   "correcta": 0,
+   "tip": "6 más 4 son 10. Saber qué le falta a cada número para llegar a 10 ayuda a sumar rápido.",
+   "id": "mate2-oa06-3"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "9 + 4 es lo mismo que 10 + 3. ¿Cuánto da?",
+   "opciones": [
+    "13",
+    "14",
+    "12",
+    "15"
+   ],
+   "correcta": 0,
+   "tip": "El 9 toma 1 del 4 y llega a 10. Le quedan 3: 10 + 3 es 13.",
+   "id": "mate2-oa06-4"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "Para calcular 7 + 6, ¿qué cuenta da lo mismo?",
+   "opciones": [
+    "10 + 3",
+    "10 + 6",
+    "7 + 10",
+    "10 + 4"
+   ],
+   "correcta": 0,
+   "tip": "El 7 toma 3 del 6 y llega a 10; del 6 quedan 3. Por eso 7 + 6 es igual a 10 + 3.",
+   "id": "mate2-oa06-5"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "¿Cuál es el doble de 7?",
+   "opciones": [
+    "14",
+    "9",
+    "12",
+    "16"
+   ],
+   "correcta": 0,
+   "tip": "El doble es sumar el número dos veces: 7 + 7 es 14.",
+   "id": "mate2-oa06-6"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "Benjamín tiene 6 lápices y su hermana otros 6. ¿Cuántos son?",
+   "opciones": [
+    "12",
+    "11",
+    "13",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "Es el doble de 6: 6 + 6 da 12.",
+   "id": "mate2-oa06-7"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "¿Cuál es la mitad de 16?",
+   "opciones": [
+    "8",
+    "6",
+    "4",
+    "32"
+   ],
+   "correcta": 0,
+   "tip": "La mitad es repartir en dos partes iguales: 8 y 8 son 16.",
+   "id": "mate2-oa06-8"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "12 bolitas se parten en dos grupos iguales. ¿Cuántas hay en cada uno?",
+   "opciones": [
+    "6",
+    "4",
+    "24",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "Si 6 + 6 es 12, la mitad de 12 es 6.",
+   "id": "mate2-oa06-9"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "Si 7 + 7 es 14, ¿cuánto es 7 + 8?",
+   "opciones": [
+    "15",
+    "14",
+    "16",
+    "13"
+   ],
+   "correcta": 0,
+   "tip": "7 + 8 tiene uno más que 7 + 7: a 14 le sumas 1 y da 15.",
+   "id": "mate2-oa06-10"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "Si 8 + 8 es 16, ¿cuánto es 8 + 7?",
+   "opciones": [
+    "15",
+    "16",
+    "17",
+    "14"
+   ],
+   "correcta": 0,
+   "tip": "8 + 7 tiene uno menos que 8 + 8: a 16 le quitas 1 y da 15.",
+   "id": "mate2-oa06-11"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "Si 5 + 5 es 10, ¿cuánto es 5 + 7?",
+   "opciones": [
+    "12",
+    "11",
+    "10",
+    "14"
+   ],
+   "correcta": 0,
+   "tip": "5 + 7 tiene dos más que 5 + 5: a 10 le sumas 2 y da 12.",
+   "id": "mate2-oa06-12"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "Si 9 + 9 es 18, ¿cuánto es 9 + 7?",
+   "opciones": [
+    "16",
+    "17",
+    "18",
+    "20"
+   ],
+   "correcta": 0,
+   "tip": "9 + 7 tiene dos menos que 9 + 9: a 18 le quitas 2 y da 16.",
+   "id": "mate2-oa06-13"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "Diego sabe que 6 + 6 es 12. ¿Cómo calcula 6 + 7?",
+   "opciones": [
+    "12 y uno más",
+    "12 y uno menos",
+    "12 y dos más",
+    "6 y uno más"
+   ],
+   "correcta": 0,
+   "tip": "7 es uno más que 6, así que 6 + 7 da uno más que 6 + 6: 13.",
+   "id": "mate2-oa06-14"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "Para sumar 8 + 6, Camila parte de 8 + 8. ¿Qué hace después?",
+   "opciones": [
+    "Le quita 2",
+    "Le suma 2",
+    "Le quita 1",
+    "Le suma 6"
+   ],
+   "correcta": 0,
+   "tip": "6 es dos menos que 8, así que a 16 le quita 2 y llega a 14.",
+   "id": "mate2-oa06-15"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "¿Qué doble ayuda a calcular 5 + 6?",
+   "opciones": [
+    "5 + 5",
+    "3 + 3",
+    "8 + 8",
+    "9 + 9"
+   ],
+   "correcta": 0,
+   "tip": "5 + 5 es 10, y como 6 es uno más que 5, 5 + 6 es 11.",
+   "id": "mate2-oa06-16"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "Si 9 + 6 es 15, ¿cuánto es 15 - 6?",
+   "opciones": [
+    "9",
+    "21",
+    "6",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "Restar deshace lo que hizo la suma: si al 9 le sumas 6 llegas a 15, y si le quitas 6 a 15 vuelves al 9.",
+   "id": "mate2-oa06-17"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "Para restar 14 - 5, Ana piensa: ¿5 más cuánto es 14?",
+   "opciones": [
+    "9",
+    "19",
+    "10",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "5 + 9 es 14, así que 14 - 5 es 9. Una resta se puede pensar como una suma.",
+   "id": "mate2-oa06-18"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "Para restar 13 - 5, Pedro baja primero al 10. ¿Cuánto quita al bajar?",
+   "opciones": [
+    "3",
+    "5",
+    "2",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "De 13 a 10 hay 3. Después quita los 2 que faltan del 5 y llega a 8.",
+   "id": "mate2-oa06-19"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "Javiera calcula 9 + 5 como 10 + 4. ¿Está bien?",
+   "opciones": [
+    "Sí, da lo mismo",
+    "No, da uno menos",
+    "No, da uno más",
+    "No, cambió el 9"
+   ],
+   "correcta": 0,
+   "tip": "El 9 toma 1 del 5 y llega a 10; del 5 quedan 4. Las dos cuentas dan 14.",
+   "id": "mate2-oa06-20"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "Sofía calcula 8 + 9 con 8 + 8 y uno más. ¿Cuánto le da?",
+   "opciones": [
+    "17",
+    "16",
+    "18",
+    "15"
+   ],
+   "correcta": 0,
+   "tip": "8 + 8 es 16, y uno más es 17. Es la estrategia de los dobles.",
+   "id": "mate2-oa06-21"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "Ana come la mitad de 18 galletas. ¿Cuántas come?",
+   "opciones": [
+    "9",
+    "8",
+    "10",
+    "36"
+   ],
+   "correcta": 0,
+   "tip": "La mitad de 18 es 9, porque 9 + 9 es 18: dos partes iguales.",
+   "id": "mate2-oa06-22"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "La mitad de 10 es 5. ¿Cuál es la mitad de 20?",
+   "opciones": [
+    "10",
+    "15",
+    "40",
+    "5"
+   ],
+   "correcta": 0,
+   "tip": "10 + 10 es 20, así que la mitad de 20 es 10.",
+   "id": "mate2-oa06-23"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "¿Qué número sumado dos veces da 14?",
+   "opciones": [
+    "7",
+    "14",
+    "28",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "7 + 7 es 14: el 7 es la mitad de 14.",
+   "id": "mate2-oa06-24"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "Para sumar 15 + 2, Ana cuenta dos más desde 15. ¿A qué llega?",
+   "opciones": [
+    "17",
+    "16",
+    "18",
+    "13"
+   ],
+   "correcta": 0,
+   "tip": "Dos más desde 15: 16, 17. Llega al 17.",
+   "id": "mate2-oa06-25"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "Matías tiene 12 bolitas y pierde 2. ¿Cuántas le quedan?",
+   "opciones": [
+    "10",
+    "14",
+    "11",
+    "9"
+   ],
+   "correcta": 0,
+   "tip": "Dos menos desde 12: 11, 10. Le quedan 10.",
+   "id": "mate2-oa06-26"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "¿Qué número es uno menos que 20?",
+   "opciones": [
+    "19",
+    "21",
+    "18",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "Uno menos es retroceder un paso: antes del 20 viene el 19.",
+   "id": "mate2-oa06-27"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "Para sumar 9 + 7, Ana le pasa 1 al 9. ¿Qué cuenta le queda?",
+   "opciones": [
+    "10 + 6",
+    "10 + 7",
+    "9 + 6",
+    "10 + 8"
+   ],
+   "correcta": 0,
+   "tip": "El 9 recibe 1 y llega a 10; al 7 le quedan 6. Así 9 + 7 es 10 + 6, o sea 16.",
+   "id": "mate2-oa06-28"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "Diego sumó 8 + 4 y le dio 12. ¿Cuánto es 12 - 4?",
+   "opciones": [
+    "8",
+    "16",
+    "4",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "Si 8 + 4 es 12, al quitarle 4 a 12 se vuelve al 8.",
+   "id": "mate2-oa06-29"
+  },
+  {
+   "oa": "MA02 OA 06",
+   "pregunta": "Ana dice que la mitad de 14 es 6. ¿Tiene razón?",
+   "opciones": [
+    "No, es 7",
+    "Sí, es 6",
+    "No, es 8",
+    "No, es 28"
+   ],
+   "correcta": 0,
+   "tip": "6 + 6 es 12, no 14. La mitad de 14 es 7, porque 7 + 7 es 14.",
+   "id": "mate2-oa06-30"
+  }
+ ]
+}

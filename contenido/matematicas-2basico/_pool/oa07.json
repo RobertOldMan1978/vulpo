@@ -1,0 +1,406 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "¿Cuántas decenas tiene el número 58?",
+   "opciones": [
+    "5",
+    "8",
+    "50",
+    "13"
+   ],
+   "correcta": 0,
+   "tip": "En 58, el 5 está en las decenas: son 5 decenas, o sea 50.",
+   "id": "mate2-oa07-1"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "En el número 73, ¿qué cifra está en las unidades?",
+   "opciones": [
+    "3",
+    "7",
+    "70",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "En 73, el 3 está en las unidades. El 7 son las decenas.",
+   "id": "mate2-oa07-2"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "¿Cuánto vale el 6 en el número 64?",
+   "opciones": [
+    "60",
+    "6",
+    "4",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "El 6 está en las decenas, así que vale 6 decenas: 60.",
+   "id": "mate2-oa07-3"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "¿Cuánto vale el 9 en el número 29?",
+   "opciones": [
+    "9",
+    "90",
+    "2",
+    "20"
+   ],
+   "correcta": 0,
+   "tip": "El 9 está en las unidades, así que vale 9. El 2 vale 20.",
+   "id": "mate2-oa07-4"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "¿Qué número tiene 8 decenas y 1 unidad?",
+   "opciones": [
+    "81",
+    "18",
+    "9",
+    "801"
+   ],
+   "correcta": 0,
+   "tip": "8 decenas son 80, y con 1 unidad más es 81.",
+   "id": "mate2-oa07-5"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "¿Qué número tiene 4 decenas y 0 unidades?",
+   "opciones": [
+    "40",
+    "4",
+    "400",
+    "41"
+   ],
+   "correcta": 0,
+   "tip": "4 decenas son 40. Con 0 unidades, el número es 40.",
+   "id": "mate2-oa07-6"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "¿Qué número tiene 6 unidades y 2 decenas?",
+   "opciones": [
+    "26",
+    "62",
+    "8",
+    "206"
+   ],
+   "correcta": 0,
+   "tip": "2 decenas son 20, y 6 unidades más dan 26. Las decenas se escriben primero.",
+   "id": "mate2-oa07-7"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "En el número 95, ¿qué cifra está en las decenas?",
+   "opciones": [
+    "9",
+    "5",
+    "90",
+    "14"
+   ],
+   "correcta": 0,
+   "tip": "En 95, la cifra de la izquierda, el 9, es la de las decenas.",
+   "id": "mate2-oa07-8"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "En el número 17, ¿qué cifra está en las unidades?",
+   "opciones": [
+    "7",
+    "1",
+    "10",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "En 17, el 7 está en las unidades y el 1 en las decenas.",
+   "id": "mate2-oa07-9"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "Cada grupo tiene 10 estrellas. ¿Cuántas decenas hay?",
+   "opciones": [
+    "3",
+    "30",
+    "10",
+    "13"
+   ],
+   "correcta": 0,
+   "tip": "Cada grupo de 10 es una decena. Hay 3 grupos: 3 decenas, o sea 30 estrellas.",
+   "id": "mate2-oa07-10",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 3,
+    "porGrupo": 10,
+    "emoji": "⭐"
+   }
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "Cada grupo tiene 10 dulces. ¿Cuántos dulces hay?",
+   "opciones": [
+    "70",
+    "7",
+    "17",
+    "60"
+   ],
+   "correcta": 0,
+   "tip": "Hay 7 grupos de 10: son 7 decenas, o sea 70 dulces.",
+   "id": "mate2-oa07-11",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 7,
+    "porGrupo": 10,
+    "emoji": "🍬"
+   }
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "Ana tiene 5 cajas de 10 huevos y 4 sueltos. ¿Cuántos son?",
+   "opciones": [
+    "54",
+    "45",
+    "9",
+    "504"
+   ],
+   "correcta": 0,
+   "tip": "5 cajas de 10 son 5 decenas, 50. Con 4 sueltos son 54.",
+   "id": "mate2-oa07-12"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "¿Qué forman 10 unidades juntas?",
+   "opciones": [
+    "1 decena",
+    "10 decenas",
+    "1 unidad",
+    "100 unidades"
+   ],
+   "correcta": 0,
+   "tip": "10 unidades juntas forman 1 decena.",
+   "id": "mate2-oa07-13"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "2 decenas y 15 unidades. ¿Qué número es?",
+   "opciones": [
+    "35",
+    "215",
+    "17",
+    "25"
+   ],
+   "correcta": 0,
+   "tip": "15 unidades son 1 decena y 5 unidades. Con las otras 2 decenas: 3 decenas y 5, o sea 35.",
+   "id": "mate2-oa07-14"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "¿Qué número tiene 9 decenas y 10 unidades?",
+   "opciones": [
+    "100",
+    "910",
+    "91",
+    "19"
+   ],
+   "correcta": 0,
+   "tip": "10 unidades forman 1 decena. 9 decenas más 1 decena son 10 decenas: 100.",
+   "id": "mate2-oa07-15"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "¿En qué número el 3 vale 30?",
+   "opciones": [
+    "35",
+    "53",
+    "13",
+    "3"
+   ],
+   "correcta": 0,
+   "tip": "En 35 el 3 está en las decenas, así que vale 30. En los otros vale 3.",
+   "id": "mate2-oa07-16"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "¿En qué número el 5 vale 5?",
+   "opciones": [
+    "45",
+    "54",
+    "50",
+    "59"
+   ],
+   "correcta": 0,
+   "tip": "En 45 el 5 está en las unidades y vale 5. En los otros está en las decenas y vale 50.",
+   "id": "mate2-oa07-17"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "¿Qué número tiene más decenas?",
+   "opciones": [
+    "81",
+    "79",
+    "18",
+    "72"
+   ],
+   "correcta": 0,
+   "tip": "81 tiene 8 decenas. 79 y 72 tienen 7, y 18 tiene solo 1.",
+   "id": "mate2-oa07-18"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "Sofía dice que 47 tiene 7 decenas. ¿Qué confundió?",
+   "opciones": [
+    "Decenas con unidades",
+    "Sumó 4 más 7",
+    "Contó una decena más",
+    "Olvidó las unidades"
+   ],
+   "correcta": 0,
+   "tip": "En 47 el 7 está en las unidades. Las decenas son 4.",
+   "id": "mate2-oa07-19"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "En el número 80, ¿qué cifra está en las unidades?",
+   "opciones": [
+    "0",
+    "8",
+    "80",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "80 tiene 8 decenas y 0 unidades: el 0 está en las unidades.",
+   "id": "mate2-oa07-20"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "Matías tiene 3 decenas y le dan 1 decena más. ¿Qué número tiene?",
+   "opciones": [
+    "40",
+    "31",
+    "4",
+    "13"
+   ],
+   "correcta": 0,
+   "tip": "3 decenas y 1 decena más son 4 decenas, o sea 40.",
+   "id": "mate2-oa07-21"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "El número 62 tiene 6 decenas y también…",
+   "opciones": [
+    "2 unidades",
+    "2 decenas",
+    "20 unidades",
+    "6 unidades"
+   ],
+   "correcta": 0,
+   "tip": "En 62 el 6 son las decenas y el 2 son las unidades.",
+   "id": "mate2-oa07-22"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "¿Cuántas decenas hay en 30 unidades?",
+   "opciones": [
+    "3",
+    "30",
+    "10",
+    "300"
+   ],
+   "correcta": 0,
+   "tip": "Cada 10 unidades forman 1 decena. En 30 unidades hay 3 decenas.",
+   "id": "mate2-oa07-23"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "Un número tiene 1 decena y 9 unidades. ¿Cuál es?",
+   "opciones": [
+    "19",
+    "91",
+    "10",
+    "109"
+   ],
+   "correcta": 0,
+   "tip": "1 decena es 10, y 9 unidades más dan 19.",
+   "id": "mate2-oa07-24"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "¿Qué número es 7 decenas?",
+   "opciones": [
+    "70",
+    "7",
+    "17",
+    "700"
+   ],
+   "correcta": 0,
+   "tip": "Cada decena vale 10: 7 decenas son 70.",
+   "id": "mate2-oa07-25"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "El 8 está en las decenas y el 4 en las unidades. ¿Qué número es?",
+   "opciones": [
+    "84",
+    "48",
+    "12",
+    "804"
+   ],
+   "correcta": 0,
+   "tip": "8 decenas y 4 unidades forman 84.",
+   "id": "mate2-oa07-26"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "Javiera tiene 4 monedas de 10 y 7 de 1. ¿Cuánto tiene?",
+   "opciones": [
+    "47 pesos",
+    "74 pesos",
+    "11 pesos",
+    "407 pesos"
+   ],
+   "correcta": 0,
+   "tip": "4 monedas de 10 son 4 decenas, 40. Con 7 de 1 son 47 pesos.",
+   "id": "mate2-oa07-27"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "¿Cuántas monedas de 10 necesitas para 60 pesos?",
+   "opciones": [
+    "6",
+    "60",
+    "10",
+    "16"
+   ],
+   "correcta": 0,
+   "tip": "60 son 6 decenas, y cada moneda de 10 es una decena: 6 monedas.",
+   "id": "mate2-oa07-28"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "En el número 33, ¿cuánto vale cada 3?",
+   "opciones": [
+    "30 y 3",
+    "3 y 3",
+    "30 y 30",
+    "33 y 3"
+   ],
+   "correcta": 0,
+   "tip": "El 3 de las decenas vale 30 y el 3 de las unidades vale 3.",
+   "id": "mate2-oa07-29"
+  },
+  {
+   "oa": "MA02 OA 07",
+   "pregunta": "Un número no tiene decenas y tiene 8 unidades. ¿Cuál es?",
+   "opciones": [
+    "8",
+    "80",
+    "18",
+    "88"
+   ],
+   "correcta": 0,
+   "tip": "Sin decenas, solo quedan las 8 unidades: el número es 8.",
+   "id": "mate2-oa07-30"
+  }
+ ]
+}

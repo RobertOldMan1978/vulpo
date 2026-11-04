@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué tienen todos los animales \"vertebrados\"?",
+   "opciones": [
+    "Columna vertebral",
+    "Seis patas finas",
+    "Plumas de colores",
+    "Un caparazón duro"
+   ],
+   "correcta": 0,
+   "tip": "Vertebrado viene de vértebras, los huesos de la columna. El perro, el pez y el pájaro son vertebrados.",
+   "id": "voc2-cien-1"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Cuál de estos animales es \"invertebrado\"?",
+   "opciones": [
+    "La araña",
+    "El perro",
+    "La gallina",
+    "El jurel"
+   ],
+   "correcta": 0,
+   "tip": "La araña no tiene columna vertebral, por eso es invertebrada.",
+   "id": "voc2-cien-2"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "La ballena es un \"mamífero\". ¿Qué otro animal también lo es?",
+   "opciones": [
+    "El murciélago",
+    "El tiburón",
+    "El pingüino",
+    "La tortuga"
+   ],
+   "correcta": 0,
+   "tip": "La ballena y el murciélago son mamíferos: sus crías toman leche de su mamá.",
+   "id": "voc2-cien-3"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Cuál de estos animales es un \"reptil\"?",
+   "opciones": [
+    "La lagartija",
+    "La rana",
+    "El pingüino",
+    "La mariposa"
+   ],
+   "correcta": 0,
+   "tip": "La lagartija tiene escamas y pone huevos: es un reptil. La rana es un anfibio.",
+   "id": "voc2-cien-4"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Un \"anfibio\", como la rana, vive...",
+   "opciones": [
+    "en agua y tierra",
+    "solo en árboles",
+    "solo en desiertos",
+    "bajo la nieve"
+   ],
+   "correcta": 0,
+   "tip": "Anfibio quiere decir que vive en dos lugares: en el agua y en la tierra.",
+   "id": "voc2-cien-5"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué son las \"escamas\" de un pez?",
+   "opciones": [
+    "Placas de su piel",
+    "Huecos para respirar",
+    "Plumas de su cola",
+    "Dientes muy chicos"
+   ],
+   "correcta": 0,
+   "tip": "Las escamas son placas chiquitas que cubren y protegen la piel del pez.",
+   "id": "voc2-cien-6"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Para qué usa un pez sus \"branquias\"?",
+   "opciones": [
+    "Para respirar",
+    "Para ver de noche",
+    "Para nadar rápido",
+    "Para comer algas"
+   ],
+   "correcta": 0,
+   "tip": "Con las branquias el pez respira dentro del agua.",
+   "id": "voc2-cien-7"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué animal es un \"insecto\"?",
+   "opciones": [
+    "La mosca",
+    "La araña",
+    "El caracol",
+    "La lombriz"
+   ],
+   "correcta": 0,
+   "tip": "La mosca tiene seis patas: es un insecto. La araña tiene ocho y es un arácnido.",
+   "id": "voc2-cien-8"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "El escorpión es un \"arácnido\", como la araña. ¿Cuántas patas tiene?",
+   "opciones": [
+    "Ocho patas",
+    "Seis patas",
+    "Cuatro patas",
+    "Diez patas"
+   ],
+   "correcta": 0,
+   "tip": "Los arácnidos, como la araña y el escorpión, tienen ocho patas; los insectos tienen seis.",
+   "id": "voc2-cien-9"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "El camarón es un \"crustáceo\". ¿Qué cubre su cuerpo?",
+   "opciones": [
+    "Un caparazón duro",
+    "Pelos suaves",
+    "Plumas de colores",
+    "Escamas brillantes"
+   ],
+   "correcta": 0,
+   "tip": "Los crustáceos, como el camarón y la jaiba, tienen el cuerpo cubierto por un caparazón.",
+   "id": "voc2-cien-10"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"renacuajo\"?",
+   "opciones": [
+    "Una cría de rana",
+    "Un pez de río",
+    "Un insecto con alas",
+    "Una culebra chica"
+   ],
+   "correcta": 0,
+   "tip": "El renacuajo nace en el agua y, al crecer, se convierte en rana.",
+   "id": "voc2-cien-11"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Para qué hacen un \"nido\" las aves?",
+   "opciones": [
+    "Para cuidar sus huevos",
+    "Para guardar comida",
+    "Para cantar más fuerte",
+    "Para mirar el cielo"
+   ],
+   "correcta": 0,
+   "tip": "En el nido, las aves ponen sus huevos y cuidan a sus pollitos.",
+   "id": "voc2-cien-12"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "El \"hábitat\" del huemul es...",
+   "opciones": [
+    "el bosque del sur",
+    "el desierto del norte",
+    "el fondo del mar",
+    "la cima del volcán"
+   ],
+   "correcta": 0,
+   "tip": "El huemul vive en los bosques y montañas del sur de Chile.",
+   "id": "voc2-cien-13"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "El \"pelaje\" de un zorro es...",
+   "opciones": [
+    "todo su pelo",
+    "su larga cola",
+    "su forma de correr",
+    "el ruido que hace"
+   ],
+   "correcta": 0,
+   "tip": "El pelaje es todo el pelo que cubre al animal y lo abriga.",
+   "id": "voc2-cien-14"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"ciclo de vida\" de un animal?",
+   "opciones": [
+    "Sus etapas de vida",
+    "El lugar donde vive",
+    "Lo que come",
+    "Su forma de moverse"
+   ],
+   "correcta": 0,
+   "tip": "El ciclo de vida son sus etapas: nacer, crecer, reproducirse y morir.",
+   "id": "voc2-cien-15"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Cuando el agua se \"congela\", se vuelve...",
+   "opciones": [
+    "hielo",
+    "vapor",
+    "lluvia",
+    "barro"
+   ],
+   "correcta": 0,
+   "tip": "Con mucho frío, el agua líquida se congela y se vuelve hielo.",
+   "id": "voc2-cien-16"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"esqueleto\"?",
+   "opciones": [
+    "Todos los huesos juntos",
+    "La piel del cuerpo",
+    "La sangre del cuerpo",
+    "Los dientes juntos"
+   ],
+   "correcta": 0,
+   "tip": "El esqueleto es el conjunto de huesos que sostiene y protege el cuerpo.",
+   "id": "voc2-cien-17"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Si un lugar tiene mucha \"humedad\", está...",
+   "opciones": [
+    "con mucha agua",
+    "muy caliente",
+    "muy seco",
+    "muy oscuro"
+   ],
+   "correcta": 0,
+   "tip": "La humedad es el agua que hay en el aire y en la tierra. El bosque del sur es muy húmedo.",
+   "id": "voc2-cien-18"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Si el azúcar se \"disuelve\" en el agua...",
+   "opciones": [
+    "se mezcla con ella",
+    "flota encima",
+    "se vuelve hielo",
+    "se va al fondo"
+   ],
+   "correcta": 0,
+   "tip": "El azúcar disuelto sigue ahí, repartido en el agua, aunque ya no lo veamos.",
+   "id": "voc2-cien-19"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Si el agua de un charco se \"evapora\", ¿qué le pasa?",
+   "opciones": [
+    "Sube como vapor",
+    "Se vuelve hielo",
+    "Se pone verde",
+    "Se vuelve sal"
+   ],
+   "correcta": 0,
+   "tip": "Con el calor del sol, el agua se convierte en vapor y sube al aire.",
+   "id": "voc2-cien-20"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Que el agua \"escurra\" significa que...",
+   "opciones": [
+    "corre hacia abajo",
+    "se queda quieta",
+    "se pone dura",
+    "cambia de color"
+   ],
+   "correcta": 0,
+   "tip": "El agua escurre: corre y se mueve hacia abajo si nada la detiene.",
+   "id": "voc2-cien-21"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"granizo\"?",
+   "opciones": [
+    "Bolitas de hielo",
+    "Gotas de neblina",
+    "Viento muy fuerte",
+    "Nubes muy oscuras"
+   ],
+   "correcta": 0,
+   "tip": "El granizo son trocitos de hielo que caen de las nubes, como una lluvia dura.",
+   "id": "voc2-cien-22"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué mide un \"pluviómetro\"?",
+   "opciones": [
+    "La lluvia que cae",
+    "El calor del día",
+    "La fuerza del viento",
+    "La hora del día"
+   ],
+   "correcta": 0,
+   "tip": "El pluviómetro junta el agua de lluvia para saber cuánta cayó.",
+   "id": "voc2-cien-23"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Un \"termómetro\" sirve para saber...",
+   "opciones": [
+    "cuánto calor hace",
+    "cuánta lluvia cayó",
+    "dónde sopla el viento",
+    "qué hora es"
+   ],
+   "correcta": 0,
+   "tip": "El termómetro mide la temperatura: si hace frío o calor.",
+   "id": "voc2-cien-24"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Si la \"veleta\" gira y gira, es porque...",
+   "opciones": [
+    "sopla el viento",
+    "cae mucho granizo",
+    "hace calor",
+    "es de noche"
+   ],
+   "correcta": 0,
+   "tip": "La veleta gira con el viento y apunta hacia el lugar de donde viene.",
+   "id": "voc2-cien-25"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Algo \"sólido\", como una piedra, es algo que...",
+   "opciones": [
+    "tiene forma propia",
+    "se derrama solo",
+    "sube al aire",
+    "cambia de forma"
+   ],
+   "correcta": 0,
+   "tip": "Lo sólido tiene su propia forma y no se derrama, como el hielo o una piedra.",
+   "id": "voc2-cien-26"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "El agua en estado \"gaseoso\" es...",
+   "opciones": [
+    "el vapor",
+    "el hielo",
+    "la lluvia",
+    "la nieve"
+   ],
+   "correcta": 0,
+   "tip": "El vapor es agua en estado gaseoso: no se puede agarrar y sube al aire.",
+   "id": "voc2-cien-27"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"caparazón\" de una tortuga?",
+   "opciones": [
+    "Su cubierta dura",
+    "Su cola larga",
+    "Su nido de barro",
+    "Su comida favorita"
+   ],
+   "correcta": 0,
+   "tip": "El caparazón es la cubierta dura que protege el cuerpo de la tortuga.",
+   "id": "voc2-cien-28"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Para qué usa un insecto sus \"antenas\"?",
+   "opciones": [
+    "Para tocar y oler",
+    "Para volar alto",
+    "Para picar a otros",
+    "Para poner huevos"
+   ],
+   "correcta": 0,
+   "tip": "Las antenas le sirven al insecto para sentir lo que tiene alrededor.",
+   "id": "voc2-cien-29"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Una perra \"amamanta\" a sus cachorros. ¿Qué hace?",
+   "opciones": [
+    "Les da su leche",
+    "Les busca comida",
+    "Los limpia",
+    "Les hace un nido"
+   ],
+   "correcta": 0,
+   "tip": "Amamantar es dar leche del propio cuerpo a las crías.",
+   "id": "voc2-cien-30"
+  }
+ ]
+}

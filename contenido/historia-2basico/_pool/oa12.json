@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Martina quiere usar el lápiz de Diego. ¿Qué hace primero?",
+   "opciones": [
+    "pedírselo prestado",
+    "sacarlo sin decirle",
+    "esperar que lo suelte",
+    "tomarlo solo un ratito"
+   ],
+   "correcta": 0,
+   "tip": "El lápiz es de Diego. Pedirlo prestado es respetar lo que es de otro, aunque sea por un rato corto.",
+   "id": "hist2-oa12-1"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Un señor le abre la puerta a Rocío. ¿Qué le dice ella?",
+   "opciones": [
+    "muchas gracias",
+    "nada, solo pasa",
+    "apúrese, por favor",
+    "por fin la abrió"
+   ],
+   "correcta": 0,
+   "tip": "Dar las gracias es una forma de cortesía: le muestra al otro que notamos su ayuda.",
+   "id": "hist2-oa12-2"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Lucas va a entrar a la oficina de la directora. ¿Qué hace?",
+   "opciones": [
+    "golpea y saluda",
+    "entra sin avisar",
+    "grita su nombre",
+    "abre de un empujón"
+   ],
+   "correcta": 0,
+   "tip": "Golpear la puerta y saludar es una forma de cortesía: respeta el espacio y el trabajo de la otra persona.",
+   "id": "hist2-oa12-3"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "A Emilia le toca regar las plantas. ¿Qué es ser responsable?",
+   "opciones": [
+    "hacerlo cuando le toca",
+    "esperar que otro lo haga",
+    "hacerlo solo si la miran",
+    "dejarlo para otro mes"
+   ],
+   "correcta": 0,
+   "tip": "Un encargo es algo con lo que el curso cuenta. Si Emilia no lo hace, las plantas se secan.",
+   "id": "hist2-oa12-4"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Felipe tiene que hacer su cama. ¿Qué es ser responsable?",
+   "opciones": [
+    "hacerla él mismo",
+    "esperar a su papá",
+    "dejarla para la noche",
+    "pedírsela a su hermana"
+   ],
+   "correcta": 0,
+   "tip": "Hacer su cama es un encargo de Felipe en la casa. Cumplirlo él ayuda a toda la familia.",
+   "id": "hist2-oa12-5"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Ana prefiere el invierno y Pablo el verano. ¿Qué es lo respetuoso?",
+   "opciones": [
+    "aceptar que piensan distinto",
+    "decirle que está equivocada",
+    "dejar de hablarle",
+    "reírse de su gusto"
+   ],
+   "correcta": 0,
+   "tip": "Cada persona puede tener gustos y opiniones distintas. Aceptarlo es ser tolerante.",
+   "id": "hist2-oa12-6"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Amaro habla mapudungun con su abuela. ¿Qué es lo respetuoso?",
+   "opciones": [
+    "valorar su lengua",
+    "pedirle que no la hable",
+    "reírse de cómo suena",
+    "decir que no sirve"
+   ],
+   "correcta": 0,
+   "tip": "El mapudungun es la lengua del pueblo mapuche y muchas familias la hablan hoy. Respetar la lengua de cada familia es parte de convivir.",
+   "id": "hist2-oa12-7"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Wilson es nuevo y no entiende el juego del recreo. ¿Qué hace Josefa?",
+   "opciones": [
+    "le explica las reglas",
+    "juega sin él",
+    "le dice que no puede",
+    "se ríe de él"
+   ],
+   "correcta": 0,
+   "tip": "Explicarle el juego a quien no lo conoce es integrarlo. Así nadie queda fuera.",
+   "id": "hist2-oa12-8"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "A Tomás se le cayeron los lápices al suelo. ¿Qué hace Clara?",
+   "opciones": [
+    "lo ayuda a recogerlos",
+    "pasa por encima",
+    "se ríe del ruido",
+    "espera que los junte"
+   ],
+   "correcta": 0,
+   "tip": "Ayudar a otro cuando lo necesita es ser empático: es pensar en cómo se siente él.",
+   "id": "hist2-oa12-9"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Unos niños se ríen de los lentes de Javier. ¿Qué hace Amanda?",
+   "opciones": [
+    "no se suma a la burla",
+    "se ríe más fuerte",
+    "también le pone apodos",
+    "les cuenta a todos"
+   ],
+   "correcta": 0,
+   "tip": "Burlarse del aspecto de alguien lo hace sentir mal. No sumarse a la burla es una forma de respetarlo.",
+   "id": "hist2-oa12-10"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "A Dante le cuesta abrir su yogur. ¿Qué hace Francisca?",
+   "opciones": [
+    "lo ayuda a abrirlo",
+    "se lo quita",
+    "le dice que es débil",
+    "espera que lo bote"
+   ],
+   "correcta": 0,
+   "tip": "Ayudar con algo pequeño, sin burlarse, es una forma de empatía en el día a día.",
+   "id": "hist2-oa12-11"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Matilde quiere jugar a la pelota con Sebastián. ¿Qué hace él?",
+   "opciones": [
+    "la invita a jugar",
+    "dice que no juegan niñas",
+    "se va a jugar más lejos",
+    "le pasa la pelota rota"
+   ],
+   "correcta": 0,
+   "tip": "Los juegos son para todos. Dejar fuera a alguien por ser niña o niño es discriminar.",
+   "id": "hist2-oa12-12"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Benjamín terminó y a Laura le cuesta el ejercicio. ¿Qué hace él?",
+   "opciones": [
+    "le explica con paciencia",
+    "le hace el ejercicio",
+    "le dice que es fácil",
+    "le muestra que terminó"
+   ],
+   "correcta": 0,
+   "tip": "Explicarle ayuda a que Laura aprenda. Hacerle el ejercicio no la ayuda a entenderlo.",
+   "id": "hist2-oa12-13"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "La abuela de Fernanda llega con bolsas pesadas. ¿Qué hace Fernanda?",
+   "opciones": [
+    "la ayuda a llevarlas",
+    "sigue con su juego",
+    "la mira desde el sillón",
+    "le dice que se apure"
+   ],
+   "correcta": 0,
+   "tip": "Ayudar en la casa a quien lo necesita es ser empático y responsable con la familia.",
+   "id": "hist2-oa12-14"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Martín pisó sin querer a Elena en la fila. ¿Qué le dice?",
+   "opciones": [
+    "perdón, fue sin querer",
+    "nada, sigue caminando",
+    "que ella tenía la culpa",
+    "que no fue tan fuerte"
+   ],
+   "correcta": 0,
+   "tip": "Pedir perdón, aunque haya sido sin querer, es una forma de cortesía y de cuidar al otro.",
+   "id": "hist2-oa12-15"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Ignacio quiere pasar y Rosa tapa el pasillo. ¿Qué le dice?",
+   "opciones": [
+    "permiso, por favor",
+    "muévete rápido",
+    "sal de ahí ya",
+    "nada, la empuja"
+   ],
+   "correcta": 0,
+   "tip": "Pedir permiso con amabilidad es cortesía. Empujar o mandar a gritos no respeta a la otra persona.",
+   "id": "hist2-oa12-16"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Vicente debe darle agua al perro cada mañana. ¿Qué es responsable?",
+   "opciones": [
+    "hacerlo cada mañana",
+    "hacerlo si se acuerda",
+    "dejárselo a su mamá",
+    "hacerlo los domingos"
+   ],
+   "correcta": 0,
+   "tip": "El perro necesita agua todos los días. Cumplir el encargo siempre es lo que lo hace responsable.",
+   "id": "hist2-oa12-17"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Daniela tiene tarea para mañana. ¿Qué es ser responsable?",
+   "opciones": [
+    "hacerla a tiempo",
+    "dejarla para otro día",
+    "esperar que la olviden",
+    "hacer solo la mitad"
+   ],
+   "correcta": 0,
+   "tip": "Las tareas escolares son un deber. Hacerlas a tiempo ayuda a aprender y a cumplir con el curso.",
+   "id": "hist2-oa12-18"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Camilo y Sara quieren juegos distintos. ¿Qué es lo tolerante?",
+   "opciones": [
+    "buscar un acuerdo",
+    "imponer el suyo",
+    "irse enojado",
+    "no hablarse más"
+   ],
+   "correcta": 0,
+   "tip": "Cuando dos personas piensan distinto, conversar y buscar un acuerdo es respetar la idea del otro.",
+   "id": "hist2-oa12-19"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Antonia usa silla de ruedas. ¿Qué hace el curso en el recreo?",
+   "opciones": [
+    "buscar un juego para todos",
+    "jugar sin ella",
+    "dejarla mirar",
+    "darle las mochilas"
+   ],
+   "correcta": 0,
+   "tip": "Integrar es buscar juegos en los que todos puedan participar. Dejar a alguien solo mirando no es incluirlo.",
+   "id": "hist2-oa12-20"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "A Joaquín se le olvidó la colación. ¿Qué hace Florencia?",
+   "opciones": [
+    "le comparte un poco",
+    "se come la suya rápido",
+    "les cuenta a todos",
+    "le dice que es su culpa"
+   ],
+   "correcta": 0,
+   "tip": "Compartir con quien lo necesita es ponerse en su lugar: a cualquiera se le puede olvidar algo.",
+   "id": "hist2-oa12-21"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Rayén celebra el We Tripantu con su familia. ¿Qué es lo respetuoso?",
+   "opciones": [
+    "interesarse por su fiesta",
+    "decir que es rara",
+    "reírse de su fiesta",
+    "decir que no existe"
+   ],
+   "correcta": 0,
+   "tip": "El We Tripantu es el año nuevo mapuche, que muchas familias celebran hoy. Conocer las costumbres de otros es una forma de respetarlas.",
+   "id": "hist2-oa12-22"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Agustín abrió la mochila de Ema para sacar una goma. ¿Qué faltó?",
+   "opciones": [
+    "pedirle permiso",
+    "hacerlo más rápido",
+    "sacar dos gomas",
+    "cerrarla después"
+   ],
+   "correcta": 0,
+   "tip": "La mochila y sus cosas son de Ema. Antes de abrirla hay que pedirle permiso.",
+   "id": "hist2-oa12-23"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "La profesora le pide a Elías repartir los cuadernos. ¿Qué hace?",
+   "opciones": [
+    "los reparte con cuidado",
+    "los deja en una mesa",
+    "los da solo a sus amigos",
+    "los tira a cada puesto"
+   ],
+   "correcta": 0,
+   "tip": "Un encargo de la sala se cumple bien y para todos. Así el curso puede empezar a trabajar.",
+   "id": "hist2-oa12-24"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Al hermano de Gaspar le da miedo la oscuridad. ¿Qué hace Gaspar?",
+   "opciones": [
+    "lo acompaña un rato",
+    "le dice que es miedoso",
+    "apaga más luces",
+    "se ríe con sus amigos"
+   ],
+   "correcta": 0,
+   "tip": "Acompañar a alguien que tiene miedo es ponerse en su lugar. Burlarse lo hace sentir peor.",
+   "id": "hist2-oa12-25"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Alma quiere jugar a la ronda y Teo a la pinta. ¿Qué es justo?",
+   "opciones": [
+    "jugar a cada uno un rato",
+    "jugar solo a la ronda",
+    "pelear por el juego",
+    "no jugar a nada"
+   ],
+   "correcta": 0,
+   "tip": "Si los dos quieren algo distinto, turnarse permite que ambos jueguen a lo que les gusta.",
+   "id": "hist2-oa12-26"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Constanza es de Perú y habla con otro acento. ¿Qué es lo respetuoso?",
+   "opciones": [
+    "tratarla igual que a todos",
+    "imitar cómo habla",
+    "pedirle que hable distinto",
+    "dejarla aparte"
+   ],
+   "correcta": 0,
+   "tip": "Hablar con otro acento es parte de venir de otro lugar. Tratarla igual que a todos es no discriminar.",
+   "id": "hist2-oa12-27"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "A Celeste le encargan cuidar el pez del curso. ¿Qué es responsable?",
+   "opciones": [
+    "darle comida cada día",
+    "darle toda la comida junta",
+    "olvidarse del pez",
+    "dejarlo con poca agua"
+   ],
+   "correcta": 0,
+   "tip": "Cuidar un animal es un encargo diario. Darle toda la comida de una vez le hace mal al pez.",
+   "id": "hist2-oa12-28"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "Pilar ganó el juego y Andrés quedó triste. ¿Qué hace ella?",
+   "opciones": [
+    "lo anima un poco",
+    "celebra en su cara",
+    "le dice que perdió",
+    "se va sin hablarle"
+   ],
+   "correcta": 0,
+   "tip": "Ganar es lindo, pero pensar en cómo se siente el otro también es parte de jugar bien.",
+   "id": "hist2-oa12-29"
+  },
+  {
+   "oa": "HI02 OA 12",
+   "pregunta": "A Renata le dicen sobrenombres por ser baja. ¿Eso es…?",
+   "opciones": [
+    "una burla que duele",
+    "un apodo cariñoso",
+    "una broma normal",
+    "un juego de amigos"
+   ],
+   "correcta": 0,
+   "tip": "Un sobrenombre por el aspecto de alguien lo hace sentir mal, aunque otros se rían. Es una falta de respeto.",
+   "id": "hist2-oa12-30"
+  }
+ ]
+}

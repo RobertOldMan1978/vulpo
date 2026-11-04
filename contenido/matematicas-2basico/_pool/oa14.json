@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Ana va delante de Luis en la fila. ¿Dónde está Luis?",
+   "opciones": [
+    "Detrás de Ana",
+    "Delante de Ana",
+    "Junto a Ana",
+    "Encima de Ana"
+   ],
+   "correcta": 0,
+   "tip": "Si Ana va delante, Luis queda a su espalda: Luis está detrás de Ana.",
+   "id": "mate2-oa14-1"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "El libro rojo está sobre el libro azul. ¿Cuál está abajo?",
+   "opciones": [
+    "El libro azul",
+    "El libro rojo",
+    "Los dos libros",
+    "Ninguno de los dos"
+   ],
+   "correcta": 0,
+   "tip": "Sobre quiere decir arriba. Si el rojo está arriba, el azul queda abajo.",
+   "id": "mate2-oa14-2"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Una caja verde, sobre una roja, sobre una azul. ¿Cuál está abajo?",
+   "opciones": [
+    "La caja azul",
+    "La caja roja",
+    "La caja verde",
+    "Ninguna caja"
+   ],
+   "correcta": 0,
+   "tip": "De arriba hacia abajo van la verde, la roja y la azul. La azul sostiene a las otras.",
+   "id": "mate2-oa14-3"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Sofía está entre Diego y Camila. ¿Quién está al medio?",
+   "opciones": [
+    "Sofía",
+    "Diego",
+    "Camila",
+    "Los tres"
+   ],
+   "correcta": 0,
+   "tip": "Estar entre dos personas es quedar al medio: Diego a un lado, Camila al otro y Sofía en el centro.",
+   "id": "mate2-oa14-4"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Matías tiene un árbol a su derecha. Si se da vuelta, ¿dónde le queda?",
+   "opciones": [
+    "A su izquierda",
+    "A su derecha",
+    "Delante de él",
+    "Detrás de él"
+   ],
+   "correcta": 0,
+   "tip": "Al darse vuelta, Matías cambia de lado: lo que estaba a su derecha ahora queda a su izquierda.",
+   "id": "mate2-oa14-5"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "El pez nada en la pecera. ¿Dónde está el pez?",
+   "opciones": [
+    "Dentro de la pecera",
+    "Fuera de la pecera",
+    "Debajo de la pecera",
+    "Encima de la pecera"
+   ],
+   "correcta": 0,
+   "tip": "Nadar en la pecera es estar en el agua que hay adentro: el pez está dentro.",
+   "id": "mate2-oa14-6"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "La lámpara cuelga sobre la mesa. ¿Qué hay debajo de la lámpara?",
+   "opciones": [
+    "La mesa",
+    "El techo",
+    "La pared",
+    "La ventana"
+   ],
+   "correcta": 0,
+   "tip": "Si la lámpara está sobre la mesa, la mesa queda debajo. El techo está más arriba que la lámpara.",
+   "id": "mate2-oa14-7"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "La fila es Ana, Luis y Eva, en ese orden. ¿Quién va detrás de Luis?",
+   "opciones": [
+    "Eva",
+    "Ana",
+    "Luis",
+    "Nadie"
+   ],
+   "correcta": 0,
+   "tip": "Luis va al medio: Ana está delante de él y Eva viene detrás.",
+   "id": "mate2-oa14-8"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Luis va delante de Eva, y Eva delante de Sara. ¿Quién va al final?",
+   "opciones": [
+    "Sara",
+    "Luis",
+    "Eva",
+    "Nadie"
+   ],
+   "correcta": 0,
+   "tip": "El orden es Luis, Eva y Sara. Nadie va detrás de Sara: ella cierra la fila.",
+   "id": "mate2-oa14-9"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Pedro va detrás de Ana y delante de Tomás. ¿Quién va primero?",
+   "opciones": [
+    "Ana",
+    "Pedro",
+    "Tomás",
+    "Nadie"
+   ],
+   "correcta": 0,
+   "tip": "Ana va delante de Pedro y Pedro delante de Tomás: Ana encabeza la fila.",
+   "id": "mate2-oa14-10"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "En el mueble, la muñeca va más arriba que el auto. ¿Cuál está abajo?",
+   "opciones": [
+    "El auto",
+    "La muñeca",
+    "Los dos juntos",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Si la muñeca está más alta, el auto queda en la repisa de más abajo.",
+   "id": "mate2-oa14-11"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Ana vive en el piso 3 y Pedro en el piso 5. ¿Quién vive más arriba?",
+   "opciones": [
+    "Pedro",
+    "Ana",
+    "Los dos igual",
+    "Nadie"
+   ],
+   "correcta": 0,
+   "tip": "Los pisos se cuentan desde abajo: el piso 5 está más arriba que el piso 3.",
+   "id": "mate2-oa14-12"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Ana vive a 2 cuadras del colegio y Luis a 9. ¿Quién vive más lejos?",
+   "opciones": [
+    "Luis",
+    "Ana",
+    "Los dos igual",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Más cuadras es más camino: 9 cuadras es más lejos que 2 cuadras.",
+   "id": "mate2-oa14-13"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Ana y Luis se miran. ¿Qué mano de él está frente a la derecha de Ana?",
+   "opciones": [
+    "Su mano izquierda",
+    "Su mano derecha",
+    "Las dos manos",
+    "Ninguna mano"
+   ],
+   "correcta": 0,
+   "tip": "Cuando dos personas se miran, sus lados se cruzan: la derecha de Ana queda ante la izquierda de Luis.",
+   "id": "mate2-oa14-14"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Ana ve el oso a la derecha del conejo. ¿Y a la izquierda del oso?",
+   "opciones": [
+    "El conejo",
+    "El oso",
+    "Los dos",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Si para Ana el oso está a la derecha del conejo, entonces el conejo queda a la izquierda del oso.",
+   "id": "mate2-oa14-15"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Ana ve un auto, una pelota y un trompo en fila. ¿Qué está al medio?",
+   "opciones": [
+    "La pelota",
+    "El auto",
+    "El trompo",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "En esa fila la pelota tiene el auto a un lado y el trompo al otro: está al medio.",
+   "id": "mate2-oa14-16"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Luis está en la casa y su perro en el patio. ¿Quién está afuera?",
+   "opciones": [
+    "El perro",
+    "Luis",
+    "Los dos",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "El patio queda fuera de la casa. Luis está adentro y el perro afuera.",
+   "id": "mate2-oa14-17"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Juan y Eva miran al frente. Juan está a la izquierda de Eva. ¿Y Eva?",
+   "opciones": [
+    "Derecha de Juan",
+    "Izquierda de Juan",
+    "Detrás de Juan",
+    "Delante de Juan"
+   ],
+   "correcta": 0,
+   "tip": "Si los dos miran hacia el mismo lado y Juan está a la izquierda, Eva queda a la derecha de Juan.",
+   "id": "mate2-oa14-18"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Sara está de espaldas a la pizarra. ¿Dónde le queda la pizarra?",
+   "opciones": [
+    "Detrás de ella",
+    "Delante de ella",
+    "A su derecha",
+    "Encima de ella"
+   ],
+   "correcta": 0,
+   "tip": "Estar de espaldas a algo es tenerlo atrás: la pizarra queda detrás de Sara.",
+   "id": "mate2-oa14-19"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Tomás mira la puerta. ¿Dónde queda la puerta para Tomás?",
+   "opciones": [
+    "Delante de él",
+    "Detrás de él",
+    "A su lado",
+    "Debajo de él"
+   ],
+   "correcta": 0,
+   "tip": "Lo que una persona está mirando lo tiene delante de ella.",
+   "id": "mate2-oa14-20"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "El avión vuela sobre la casa. ¿Qué está más abajo?",
+   "opciones": [
+    "La casa",
+    "El avión",
+    "Las nubes",
+    "El cielo"
+   ],
+   "correcta": 0,
+   "tip": "Volar sobre la casa es pasar por arriba de ella: la casa queda más abajo que el avión.",
+   "id": "mate2-oa14-21"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "El tesoro está enterrado bajo la arena. ¿Dónde hay que buscarlo?",
+   "opciones": [
+    "Debajo de la arena",
+    "Encima de la arena",
+    "Junto a la arena",
+    "Lejos de la arena"
+   ],
+   "correcta": 0,
+   "tip": "Bajo quiere decir debajo: el tesoro está tapado por la arena.",
+   "id": "mate2-oa14-22"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Pedro sube el brazo para tomar un libro. ¿Dónde está el libro?",
+   "opciones": [
+    "Más arriba que Pedro",
+    "Más abajo que Pedro",
+    "Bajo sus pies",
+    "A su espalda"
+   ],
+   "correcta": 0,
+   "tip": "Si Pedro estira el brazo hacia arriba, el libro está en un lugar más alto que él.",
+   "id": "mate2-oa14-23"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Ana y Luis se paran espalda con espalda. ¿Dónde está Luis para Ana?",
+   "opciones": [
+    "Detrás de ella",
+    "Delante de ella",
+    "A su derecha",
+    "A su izquierda"
+   ],
+   "correcta": 0,
+   "tip": "Espalda con espalda, cada uno tiene al otro atrás: Luis está detrás de Ana.",
+   "id": "mate2-oa14-24"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Camila se sienta frente a Diego. ¿Dónde está Diego para ella?",
+   "opciones": [
+    "Delante de ella",
+    "Detrás de ella",
+    "A su lado",
+    "Debajo de ella"
+   ],
+   "correcta": 0,
+   "tip": "Sentarse frente a alguien es quedar cara a cara: Diego está delante de Camila.",
+   "id": "mate2-oa14-25"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Vulpi está entre el árbol y la casa. ¿Qué tiene a los lados?",
+   "opciones": [
+    "Árbol y casa",
+    "Solo el árbol",
+    "Solo la casa",
+    "Ninguna cosa"
+   ],
+   "correcta": 0,
+   "tip": "Estar entre dos cosas es tener una a cada lado: el árbol a un lado y la casa al otro.",
+   "id": "mate2-oa14-26"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "La pelota va en la caja, y la caja en el baúl. ¿Dónde está la pelota?",
+   "opciones": [
+    "Dentro del baúl",
+    "Fuera del baúl",
+    "Encima del baúl",
+    "Debajo del baúl"
+   ],
+   "correcta": 0,
+   "tip": "La pelota está en la caja y la caja está en el baúl, así que la pelota también queda dentro del baúl.",
+   "id": "mate2-oa14-27"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Javiera lanza la pelota por encima de la red. ¿Por dónde pasa?",
+   "opciones": [
+    "Sobre la red",
+    "Bajo la red",
+    "Junto a la red",
+    "Dentro de la red"
+   ],
+   "correcta": 0,
+   "tip": "Por encima quiere decir más arriba: la pelota pasa sobre la red sin tocarla.",
+   "id": "mate2-oa14-28"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Pedro guarda sus zapatos bajo la cama. ¿Qué hay sobre los zapatos?",
+   "opciones": [
+    "La cama",
+    "El suelo",
+    "La alfombra",
+    "El piso de abajo"
+   ],
+   "correcta": 0,
+   "tip": "Si los zapatos están debajo de la cama, la cama queda encima de ellos. El suelo está más abajo.",
+   "id": "mate2-oa14-29"
+  },
+  {
+   "oa": "MA02 OA 14",
+   "pregunta": "Eli va entre Sara y Tomás. Sara va adelante. ¿Quién va detrás de Eli?",
+   "opciones": [
+    "Tomás",
+    "Sara",
+    "Eli",
+    "Nadie"
+   ],
+   "correcta": 0,
+   "tip": "El orden es Sara, Eli y Tomás. Detrás de Eli queda Tomás.",
+   "id": "mate2-oa14-30"
+  }
+ ]
+}

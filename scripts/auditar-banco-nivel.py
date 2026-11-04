@@ -76,7 +76,7 @@ DIAG_LECC = diagramas_de_lecciones()
 # 3 y 4 basico no tienen cronometro, asi que un fragmento breve cabe. Ver el §0 de
 # docs/encargo-banco.md. 5 y 6 NO van aca a proposito: llevan cronometro, asi que les
 # corresponde el limite por defecto.
-LARGO = {"03": (110, 220), "04": (110, 220)}
+LARGO = {"02": (70, 160), "03": (110, 220), "04": (110, 220)}
 LARGO_POR_DEFECTO = (120, 250)
 
 

@@ -1,0 +1,407 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "¿Cuál es el mayor: 39, 52, 48 o 29?",
+   "opciones": [
+    "52",
+    "39",
+    "48",
+    "29"
+   ],
+   "correcta": 0,
+   "tip": "Se mira primero la decena: 5 decenas es más que 4, 3 o 2 decenas.",
+   "id": "mate2-oa03-1"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "¿Cuál es el menor: 61, 16, 60 o 26?",
+   "opciones": [
+    "16",
+    "61",
+    "60",
+    "26"
+   ],
+   "correcta": 0,
+   "tip": "El 16 tiene solo 1 decena; los otros tienen 2 o 6 decenas.",
+   "id": "mate2-oa03-2"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "Ordena de menor a mayor: 45, 54 y 40.",
+   "opciones": [
+    "40, 45, 54",
+    "54, 45, 40",
+    "45, 40, 54",
+    "40, 54, 45"
+   ],
+   "correcta": 0,
+   "tip": "El 40 y el 45 tienen 4 decenas; el 40 tiene menos unidades. El 54 tiene 5 decenas y va al final.",
+   "id": "mate2-oa03-3"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "Ordena de mayor a menor: 72, 27 y 70.",
+   "opciones": [
+    "72, 70, 27",
+    "27, 70, 72",
+    "70, 72, 27",
+    "72, 27, 70"
+   ],
+   "correcta": 0,
+   "tip": "El 72 y el 70 tienen 7 decenas, y el 72 tiene más unidades. El 27 tiene solo 2 decenas.",
+   "id": "mate2-oa03-4"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "Sofía tiene 50 pesos y Luis tiene 35. ¿Quién tiene más?",
+   "opciones": [
+    "Sofía",
+    "Luis",
+    "Los dos igual",
+    "Ninguno de los dos"
+   ],
+   "correcta": 0,
+   "tip": "50 tiene 5 decenas y 35 tiene 3 decenas: 50 pesos es más.",
+   "id": "mate2-oa03-5"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "¿Qué moneda vale más: la de 10 o la de 50 pesos?",
+   "opciones": [
+    "La de 50",
+    "La de 10",
+    "Valen lo mismo",
+    "Depende del tamaño"
+   ],
+   "correcta": 0,
+   "tip": "Una moneda vale lo que dice su número, no lo que mide: 50 pesos es más que 10.",
+   "id": "mate2-oa03-6"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "Tomás tiene 3 monedas de 10 y Javiera una de 50. ¿Quién tiene más?",
+   "opciones": [
+    "Javiera",
+    "Tomás",
+    "Los dos igual",
+    "El que tiene más monedas"
+   ],
+   "correcta": 0,
+   "tip": "Tres monedas de 10 son 30 pesos, y 50 es más que 30. Importa cuánto valen, no cuántas son.",
+   "id": "mate2-oa03-7"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "¿Qué número viene justo después del 59?",
+   "opciones": [
+    "60",
+    "58",
+    "50",
+    "69"
+   ],
+   "correcta": 0,
+   "tip": "Después del 59 se completa una decena más: viene el 60.",
+   "id": "mate2-oa03-8"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "¿Qué número viene justo antes del 80?",
+   "opciones": [
+    "79",
+    "81",
+    "70",
+    "89"
+   ],
+   "correcta": 0,
+   "tip": "Justo antes es uno menos: antes del 80 va el 79.",
+   "id": "mate2-oa03-9"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "¿Qué número está entre 38 y 40?",
+   "opciones": [
+    "39",
+    "37",
+    "41",
+    "48"
+   ],
+   "correcta": 0,
+   "tip": "Contando de uno en uno: 38, 39, 40. El 39 queda al medio.",
+   "id": "mate2-oa03-10"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "¿Cuál es el menor: 89, 98, 91 o 99?",
+   "opciones": [
+    "89",
+    "98",
+    "91",
+    "99"
+   ],
+   "correcta": 0,
+   "tip": "El 89 tiene 8 decenas; los otros tienen 9 decenas.",
+   "id": "mate2-oa03-11"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "Camila juntó 64 tapitas y Matías 46. ¿Quién juntó menos?",
+   "opciones": [
+    "Matías",
+    "Camila",
+    "Los dos igual",
+    "Ninguno de los dos"
+   ],
+   "correcta": 0,
+   "tip": "46 tiene 4 decenas y 64 tiene 6: Matías juntó menos.",
+   "id": "mate2-oa03-12"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "¿Cuál lista está ordenada de menor a mayor?",
+   "opciones": [
+    "12, 21, 30",
+    "21, 12, 30",
+    "30, 21, 12",
+    "12, 30, 21"
+   ],
+   "correcta": 0,
+   "tip": "Cada número tiene que ser más grande que el anterior: 12, después 21, después 30.",
+   "id": "mate2-oa03-13"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "¿Cuál lista va de mayor a menor?",
+   "opciones": [
+    "95, 59, 50",
+    "50, 59, 95",
+    "59, 95, 50",
+    "95, 50, 59"
+   ],
+   "correcta": 0,
+   "tip": "De mayor a menor cada número es más chico que el anterior: 95, 59 y al final 50.",
+   "id": "mate2-oa03-14"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "En esta recta, ¿qué número está más cerca del 50?",
+   "opciones": [
+    "48",
+    "58",
+    "40",
+    "30"
+   ],
+   "correcta": 0,
+   "tip": "Del 48 al 50 hay solo 2 pasos; del 58 hay 8 y del 40 hay 10.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 30,
+    "hasta": 70,
+    "paso": 10,
+    "marca": 50
+   },
+   "id": "mate2-oa03-15"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "En la recta, ¿cuál está más lejos del cero: 35 o 53?",
+   "opciones": [
+    "El 53",
+    "El 35",
+    "Los dos igual",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "En la recta los números crecen al alejarse del cero, y 53 es mayor que 35.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 100,
+    "paso": 10
+   },
+   "id": "mate2-oa03-16"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "¿Qué número es mayor que 70 y menor que 80?",
+   "opciones": [
+    "75",
+    "85",
+    "65",
+    "70"
+   ],
+   "correcta": 0,
+   "tip": "El 75 tiene 7 decenas y más de 0 unidades, así que queda entre el 70 y el 80.",
+   "id": "mate2-oa03-17"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "¿Cuál de estos números es mayor que 45?",
+   "opciones": [
+    "54",
+    "44",
+    "40",
+    "45"
+   ],
+   "correcta": 0,
+   "tip": "El 54 tiene 5 decenas. El 45 no sirve: es igual, no mayor.",
+   "id": "mate2-oa03-18"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "¿Cuál de estos números es menor que 30?",
+   "opciones": [
+    "29",
+    "31",
+    "30",
+    "39"
+   ],
+   "correcta": 0,
+   "tip": "El 29 tiene 2 decenas, una menos que el 30.",
+   "id": "mate2-oa03-19"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "Un jugo vale 40 pesos y Ana tiene 35. ¿Le alcanza?",
+   "opciones": [
+    "No, le falta",
+    "Sí, le alcanza",
+    "Sí, le sobra",
+    "Sí, justo"
+   ],
+   "correcta": 0,
+   "tip": "35 es menor que 40: a Ana le faltan pesos para el jugo.",
+   "id": "mate2-oa03-20"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "Un lápiz vale 60 pesos y Diego tiene 70. ¿Le alcanza?",
+   "opciones": [
+    "Sí, le alcanza",
+    "No, le falta",
+    "No, le faltan 10",
+    "No, es muy caro"
+   ],
+   "correcta": 0,
+   "tip": "70 es mayor que 60: Diego tiene más de lo que cuesta el lápiz.",
+   "id": "mate2-oa03-21"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "Hay torres de 25, 52 y 22 cubos. ¿Cuál es la más alta?",
+   "opciones": [
+    "La de 52",
+    "La de 25",
+    "La de 22",
+    "Las tres igual"
+   ],
+   "correcta": 0,
+   "tip": "La más alta es la que tiene más cubos: 52 tiene 5 decenas.",
+   "id": "mate2-oa03-22"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "Tres niños leyeron 18, 81 y 80 páginas. ¿Cuánto leyó el que más?",
+   "opciones": [
+    "81",
+    "80",
+    "18",
+    "88"
+   ],
+   "correcta": 0,
+   "tip": "El 81 y el 80 tienen 8 decenas, y el 81 tiene una unidad más.",
+   "id": "mate2-oa03-23"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "Ordena de menor a mayor: 33, 30 y 3.",
+   "opciones": [
+    "3, 30, 33",
+    "33, 30, 3",
+    "30, 3, 33",
+    "3, 33, 30"
+   ],
+   "correcta": 0,
+   "tip": "El 3 no tiene decenas, así que va primero. Entre 30 y 33, el 30 tiene menos unidades.",
+   "id": "mate2-oa03-24"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "¿Cuál es el mayor: 100, 99, 90 o 19?",
+   "opciones": [
+    "100",
+    "99",
+    "90",
+    "19"
+   ],
+   "correcta": 0,
+   "tip": "El 100 son 10 decenas, y el 99 tiene solo 9 decenas y 9 unidades.",
+   "id": "mate2-oa03-25"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "Ana dice que 9 es mayor que 10. ¿Tiene razón?",
+   "opciones": [
+    "No, 10 es mayor",
+    "Sí, 9 es mayor",
+    "Sí, son iguales",
+    "No, son iguales"
+   ],
+   "correcta": 0,
+   "tip": "El 10 ya tiene una decena completa y el 9 no tiene ninguna: el 10 es mayor.",
+   "id": "mate2-oa03-26"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "Para comparar 28 y 31, ¿qué se mira primero?",
+   "opciones": [
+    "Las decenas",
+    "Las unidades",
+    "La cifra más grande",
+    "La última cifra"
+   ],
+   "correcta": 0,
+   "tip": "Primero se comparan las decenas: 3 decenas es más que 2, aunque 8 sea más que 1.",
+   "id": "mate2-oa03-27"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "Hay 47 niñas y 47 niños en el patio. ¿De quién hay más?",
+   "opciones": [
+    "De nadie, son iguales",
+    "Hay más niñas",
+    "Hay más niños",
+    "No se puede saber"
+   ],
+   "correcta": 0,
+   "tip": "47 y 47 son el mismo número: hay la misma cantidad de niñas y de niños.",
+   "id": "mate2-oa03-28"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "¿Qué grupo de monedas junta más pesos?",
+   "opciones": [
+    "Una de 50",
+    "Cuatro de 10",
+    "Nueve de 5",
+    "Veinte de 1"
+   ],
+   "correcta": 0,
+   "tip": "Una de 50 son 50 pesos; cuatro de 10 son 40, nueve de 5 son 45 y veinte de 1 son 20.",
+   "id": "mate2-oa03-29"
+  },
+  {
+   "oa": "MA02 OA 03",
+   "pregunta": "Ordena de menor a mayor: 58, 85 y 55.",
+   "opciones": [
+    "55, 58, 85",
+    "85, 58, 55",
+    "58, 55, 85",
+    "55, 85, 58"
+   ],
+   "correcta": 0,
+   "tip": "El 55 y el 58 tienen 5 decenas, y el 55 tiene menos unidades. El 85 tiene 8 decenas.",
+   "id": "mate2-oa03-30"
+  }
+ ]
+}

@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "¿Qué frase es verdadera?",
+   "opciones": [
+    "12 > 9",
+    "12 < 9",
+    "9 > 12",
+    "12 = 9"
+   ],
+   "correcta": 0,
+   "tip": "12 es mayor que 9, y eso se escribe 12 > 9. La punta del signo apunta al número menor.",
+   "id": "mate2-oa13-1"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "¿Cuál comparación está bien escrita?",
+   "opciones": [
+    "7 < 15",
+    "7 > 15",
+    "15 < 7",
+    "7 = 15"
+   ],
+   "correcta": 0,
+   "tip": "7 es menor que 15: se escribe 7 < 15, con la punta hacia el 7.",
+   "id": "mate2-oa13-2"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "¿Qué suma es igual a 10?",
+   "opciones": [
+    "6 + 4",
+    "6 + 3",
+    "5 + 6",
+    "7 + 4"
+   ],
+   "correcta": 0,
+   "tip": "6 + 4 = 10. Las otras dan 9, 11 y 11.",
+   "id": "mate2-oa13-3"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "¿Es verdad que 8 + 2 = 9 + 1?",
+   "opciones": [
+    "Sí, ambos son 10",
+    "No, 8 + 2 es más",
+    "No, 9 + 1 es más",
+    "No, son distintos"
+   ],
+   "correcta": 0,
+   "tip": "8 + 2 = 10 y 9 + 1 = 10. Los dos lados valen lo mismo, así que el signo igual está bien.",
+   "id": "mate2-oa13-4"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "Balanza: 7 cubos a un lado y 4 al otro. ¿Cuántos faltan para igualar?",
+   "opciones": [
+    "3",
+    "11",
+    "4",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "Para que quede en equilibrio, los dos lados deben tener 7. Al de 4 le faltan 3.",
+   "id": "mate2-oa13-5"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "Para que 5 + 3 = ▢ + 4 sea verdad, ¿qué va en el cuadrito?",
+   "opciones": [
+    "4",
+    "8",
+    "12",
+    "3"
+   ],
+   "correcta": 0,
+   "tip": "El signo igual dice que los dos lados valen lo mismo. 5 + 3 = 8, y 4 + 4 = 8. No va el 8: ese es solo el lado izquierdo.",
+   "id": "mate2-oa13-6"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "Si 6 + 6 = 10 + ▢, ¿cuánto vale el cuadrito?",
+   "opciones": [
+    "2",
+    "12",
+    "22",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "6 + 6 = 12, y 10 + 2 = 12. El cuadrito vale 2 para que los dos lados sean iguales.",
+   "id": "mate2-oa13-7"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "Compara 9 + 3 con 11. ¿Qué es cierto?",
+   "opciones": [
+    "9 + 3 > 11",
+    "9 + 3 < 11",
+    "9 + 3 = 11",
+    "9 + 3 = 10"
+   ],
+   "correcta": 0,
+   "tip": "9 + 3 = 12, y 12 es mayor que 11: 9 + 3 > 11.",
+   "id": "mate2-oa13-8"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "Ana tiene 4 + 5 dulces y Luis 3 + 6. ¿Qué es cierto?",
+   "opciones": [
+    "Tienen lo mismo",
+    "Ana tiene más",
+    "Luis tiene más",
+    "Ana tiene 1 más"
+   ],
+   "correcta": 0,
+   "tip": "4 + 5 = 9 y 3 + 6 = 9. Los dos tienen 9: 4 + 5 = 3 + 6.",
+   "id": "mate2-oa13-9"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "Diego tiene 8 + 4 lápices y Sofía 15. ¿Quién tiene más?",
+   "opciones": [
+    "Sofía, por 3",
+    "Diego, por 3",
+    "Tienen igual",
+    "Sofía, por 7"
+   ],
+   "correcta": 0,
+   "tip": "8 + 4 = 12, y 15 es mayor que 12 por 3. Sofía tiene más.",
+   "id": "mate2-oa13-10"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "En 4 + 1 = 3 + 2, ¿qué dice el signo igual?",
+   "opciones": [
+    "Ambos lados valen 5",
+    "Que el resultado es 3",
+    "Que hay que sumar todo",
+    "Que 4 + 1 es mayor"
+   ],
+   "correcta": 0,
+   "tip": "El signo igual no anuncia un resultado: dice que lo de un lado vale lo mismo que lo del otro. 4 + 1 y 3 + 2 dan 5.",
+   "id": "mate2-oa13-11"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "¿Cuál es igual a 7 + 7?",
+   "opciones": [
+    "10 + 4",
+    "10 + 7",
+    "7 + 4",
+    "6 + 7"
+   ],
+   "correcta": 0,
+   "tip": "7 + 7 = 14, y 10 + 4 también da 14.",
+   "id": "mate2-oa13-12"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "Matías escribió 6 + 2 = 8 + 1. ¿Está bien?",
+   "opciones": [
+    "No, es 8 contra 9",
+    "Sí, ambos dan 8",
+    "Sí, ambos dan 9",
+    "No, falta un 6"
+   ],
+   "correcta": 0,
+   "tip": "6 + 2 = 8, pero 8 + 1 = 9. Los lados no valen lo mismo, así que el igual está mal.",
+   "id": "mate2-oa13-13"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "Una balanza tiene 5 + 4 en un lado. ¿Qué la deja en equilibrio?",
+   "opciones": [
+    "3 + 6",
+    "5 + 5",
+    "4 + 4",
+    "2 + 8"
+   ],
+   "correcta": 0,
+   "tip": "5 + 4 = 9, y 3 + 6 también da 9. Las otras dan 10, 8 y 10.",
+   "id": "mate2-oa13-14"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "Para igualar 12 bloques con 8, ¿cuántos quitas a los 12?",
+   "opciones": [
+    "4",
+    "20",
+    "12",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "Para igualar, el lado de 12 debe quedar en 8: 12 - 4 = 8. Hay que quitar 4.",
+   "id": "mate2-oa13-15"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "¿Qué suma es mayor que 15?",
+   "opciones": [
+    "9 + 8",
+    "7 + 7",
+    "10 + 5",
+    "8 + 6"
+   ],
+   "correcta": 0,
+   "tip": "9 + 8 = 17, que es mayor que 15. 10 + 5 da 15: es igual, no mayor.",
+   "id": "mate2-oa13-16"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "Benjamín busca una resta que dé menos que 6. ¿Cuál sirve?",
+   "opciones": [
+    "12 - 7",
+    "12 - 6",
+    "15 - 5",
+    "9 - 2"
+   ],
+   "correcta": 0,
+   "tip": "12 - 7 = 5, y 5 es menor que 6. 12 - 6 da justo 6: es igual, no menor.",
+   "id": "mate2-oa13-17"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "Entre 7 + 5 y 6 + 6, ¿qué frase es correcta?",
+   "opciones": [
+    "7 + 5 = 6 + 6",
+    "7 + 5 > 6 + 6",
+    "7 + 5 < 6 + 6",
+    "7 + 5 = 13"
+   ],
+   "correcta": 0,
+   "tip": "7 + 5 = 12 y 6 + 6 = 12. Valen lo mismo, así que se escribe con el signo igual.",
+   "id": "mate2-oa13-18"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "Si 10 + 4 = ▢ + 7, ¿qué número es el cuadrito?",
+   "opciones": [
+    "7",
+    "14",
+    "21",
+    "3"
+   ],
+   "correcta": 0,
+   "tip": "10 + 4 = 14, y 7 + 7 = 14. El cuadrito vale 7. El 14 es solo el lado izquierdo.",
+   "id": "mate2-oa13-19"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "¿Qué número hace verdadera la frase 12 > ▢?",
+   "opciones": [
+    "9",
+    "12",
+    "15",
+    "13"
+   ],
+   "correcta": 0,
+   "tip": "La frase dice que 12 es mayor que el cuadrito. Solo el 9 es menor que 12; el 12 sería igual.",
+   "id": "mate2-oa13-20"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "¿Con qué número queda bien 8 < ▢?",
+   "opciones": [
+    "11",
+    "8",
+    "5",
+    "2"
+   ],
+   "correcta": 0,
+   "tip": "8 < ▢ dice que el cuadrito es mayor que 8. Solo el 11 lo es; el 8 sería igual.",
+   "id": "mate2-oa13-21"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "Sofía dice que 11 > 11. ¿Tiene razón?",
+   "opciones": [
+    "No, son iguales",
+    "Sí, está bien",
+    "No, 11 es menor",
+    "Sí, 11 es mayor"
+   ],
+   "correcta": 0,
+   "tip": "Un número no es mayor que sí mismo: 11 = 11.",
+   "id": "mate2-oa13-22"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "¿Qué resta es igual a 4?",
+   "opciones": [
+    "9 - 5",
+    "9 - 4",
+    "8 - 3",
+    "7 - 4"
+   ],
+   "correcta": 0,
+   "tip": "9 - 5 = 4. Las otras dan 5, 5 y 3.",
+   "id": "mate2-oa13-23"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "En 15 = 10 + ▢, ¿qué número va en el cuadrito?",
+   "opciones": [
+    "5",
+    "25",
+    "10",
+    "15"
+   ],
+   "correcta": 0,
+   "tip": "El igual funciona hacia los dos lados: 15 vale lo mismo que 10 + 5.",
+   "id": "mate2-oa13-24"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "¿Qué comparación es verdadera?",
+   "opciones": [
+    "5 + 5 > 9",
+    "5 + 5 < 9",
+    "5 + 5 = 9",
+    "5 + 5 = 11"
+   ],
+   "correcta": 0,
+   "tip": "5 + 5 = 10, y 10 es mayor que 9: 5 + 5 > 9.",
+   "id": "mate2-oa13-25"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "Hay 6 niños y 9 sillas. ¿Qué es cierto?",
+   "opciones": [
+    "Hay más sillas",
+    "Hay más niños",
+    "Hay igual cantidad",
+    "Sobran 2 sillas"
+   ],
+   "correcta": 0,
+   "tip": "9 es mayor que 6: hay más sillas, y sobran 3.",
+   "id": "mate2-oa13-26"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "Pedro escribió 3 + 9 < 12. ¿Qué cambio lo deja bien?",
+   "opciones": [
+    "Usar el signo igual",
+    "Usar el signo mayor",
+    "Cambiar el 3 por 4",
+    "Cambiar el 9 por 10"
+   ],
+   "correcta": 0,
+   "tip": "3 + 9 = 12, así que los dos lados valen lo mismo: va el signo igual.",
+   "id": "mate2-oa13-27"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "Luis tiene 2 + 7 autitos y Ana 4 + 4. ¿Quién tiene más?",
+   "opciones": [
+    "Luis, por 1",
+    "Ana, por 1",
+    "Tienen igual",
+    "Luis, por 3"
+   ],
+   "correcta": 0,
+   "tip": "2 + 7 = 9 y 4 + 4 = 8. Luis tiene 1 más: 2 + 7 > 4 + 4.",
+   "id": "mate2-oa13-28"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "Ana tiene 10 fichas y Luis 6. ¿Cuántas le pasa Ana para quedar igual?",
+   "opciones": [
+    "2",
+    "4",
+    "3",
+    "16"
+   ],
+   "correcta": 0,
+   "tip": "Si Ana le pasa 2, los dos quedan con 8. Pasarle 4 deja a Luis con 10 y a Ana con 6: otra vez distintos.",
+   "id": "mate2-oa13-29"
+  },
+  {
+   "oa": "MA02 OA 13",
+   "pregunta": "¿Qué suma da lo mismo que 9 + 6?",
+   "opciones": [
+    "10 + 5",
+    "9 + 5",
+    "10 + 6",
+    "8 + 6"
+   ],
+   "correcta": 0,
+   "tip": "9 + 6 = 15 y 10 + 5 = 15. Las otras dan 14, 16 y 14.",
+   "id": "mate2-oa13-30"
+  }
+ ]
+}

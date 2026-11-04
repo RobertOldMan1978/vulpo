@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "¿Qué número forman 60 + 4?",
+   "opciones": [
+    "64",
+    "46",
+    "604",
+    "74"
+   ],
+   "correcta": 0,
+   "tip": "60 + 4 son 60 y 4 más: 64. No se escribe 604, eso es otro número.",
+   "id": "mate2-oa05-1"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "¿Qué número es 30 + 9?",
+   "opciones": [
+    "39",
+    "93",
+    "309",
+    "12"
+   ],
+   "correcta": 0,
+   "tip": "30 + 9 es 39. Si da 12, se sumaron solo el 3 y el 9.",
+   "id": "mate2-oa05-2"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "¿Qué número forman 50 + 20 + 5?",
+   "opciones": [
+    "75",
+    "57",
+    "70",
+    "25"
+   ],
+   "correcta": 0,
+   "tip": "50 + 20 son 70, y 70 + 5 es 75.",
+   "id": "mate2-oa05-3"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "¿Qué suma forma el número 58?",
+   "opciones": [
+    "50 + 8",
+    "5 + 8",
+    "80 + 5",
+    "50 + 80"
+   ],
+   "correcta": 0,
+   "tip": "58 es 50 y 8 más: 50 + 8. La suma 5 + 8 da solo 13.",
+   "id": "mate2-oa05-4"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "¿Qué suma forma el número 91?",
+   "opciones": [
+    "90 + 1",
+    "9 + 1",
+    "10 + 9",
+    "90 + 10"
+   ],
+   "correcta": 0,
+   "tip": "91 es 90 y 1 más: 90 + 1. La suma 90 + 10 ya da 100.",
+   "id": "mate2-oa05-5"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "35 es 30 + 5. ¿Qué otra suma también forma 35?",
+   "opciones": [
+    "20 + 15",
+    "20 + 5",
+    "30 + 15",
+    "25 + 15"
+   ],
+   "correcta": 0,
+   "tip": "Un número se arma de varias formas: 20 + 15 también da 35.",
+   "id": "mate2-oa05-6"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "¿Qué suma da 47?",
+   "opciones": [
+    "20 + 27",
+    "20 + 17",
+    "40 + 17",
+    "27 + 27"
+   ],
+   "correcta": 0,
+   "tip": "20 + 27 es 47. Las otras dan 37, 57 y 54.",
+   "id": "mate2-oa05-7"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "60 + ___ forman 67. ¿Qué número falta?",
+   "opciones": [
+    "7",
+    "6",
+    "17",
+    "70"
+   ],
+   "correcta": 0,
+   "tip": "A 60 le faltan 7 para llegar a 67: 60 + 7 = 67.",
+   "id": "mate2-oa05-8"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "___ + 9 forman 89. ¿Qué número falta?",
+   "opciones": [
+    "80",
+    "8",
+    "98",
+    "90"
+   ],
+   "correcta": 0,
+   "tip": "Para formar 89 con un 9, falta el 80: 80 + 9 = 89.",
+   "id": "mate2-oa05-9"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "20 + ___ forman 55. ¿Qué número falta?",
+   "opciones": [
+    "35",
+    "30",
+    "25",
+    "53"
+   ],
+   "correcta": 0,
+   "tip": "A 20 le faltan 35 para llegar a 55: 20 + 35 = 55.",
+   "id": "mate2-oa05-10"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "Tienes una moneda de 50 y una de 10. ¿Cuánto dinero es?",
+   "opciones": [
+    "60 pesos",
+    "51 pesos",
+    "40 pesos",
+    "15 pesos"
+   ],
+   "correcta": 0,
+   "tip": "50 + 10 = 60 pesos. Cada moneda vale lo que dice, no cuenta como 1.",
+   "id": "mate2-oa05-11"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "¿Qué monedas suman 75 pesos?",
+   "opciones": [
+    "50, 10, 10 y 5",
+    "50, 10 y 5",
+    "50, 5, 5 y 5",
+    "50, 10, 10 y 10"
+   ],
+   "correcta": 0,
+   "tip": "50 + 10 + 10 + 5 = 75. Con 50, 10 y 5 solo hay 65.",
+   "id": "mate2-oa05-12"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "Ana tiene 3 monedas de 10 y 2 de 5. ¿Cuánto tiene?",
+   "opciones": [
+    "40 pesos",
+    "35 pesos",
+    "32 pesos",
+    "50 pesos"
+   ],
+   "correcta": 0,
+   "tip": "Las de 10 suman 30 y las de 5 suman 10: 30 + 10 = 40 pesos.",
+   "id": "mate2-oa05-13"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "¿Qué par de números forma 90?",
+   "opciones": [
+    "60 y 30",
+    "60 y 20",
+    "40 y 30",
+    "30 y 30"
+   ],
+   "correcta": 0,
+   "tip": "60 + 30 = 90. Los otros pares dan 80, 70 y 60.",
+   "id": "mate2-oa05-14"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "Sofía separó 72 en 70 y 2. ¿Lo hizo bien?",
+   "opciones": [
+    "Sí, está bien",
+    "No, es 7 + 2",
+    "No, es 70 + 20",
+    "No, es 20 + 7"
+   ],
+   "correcta": 0,
+   "tip": "70 + 2 = 72, así que Sofía separó bien el número.",
+   "id": "mate2-oa05-15"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "Diego escribió 43 como 4 + 3. ¿Cuánto da su suma?",
+   "opciones": [
+    "7",
+    "43",
+    "34",
+    "12"
+   ],
+   "correcta": 0,
+   "tip": "4 + 3 da solo 7. Para formar 43 hace falta 40 + 3.",
+   "id": "mate2-oa05-16"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "¿Qué número es 10 + 10 + 10 + 6?",
+   "opciones": [
+    "36",
+    "46",
+    "63",
+    "26"
+   ],
+   "correcta": 0,
+   "tip": "Tres veces 10 son 30, y 30 + 6 es 36.",
+   "id": "mate2-oa05-17"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "¿Qué número es 40 + 40 + 2?",
+   "opciones": [
+    "82",
+    "42",
+    "80",
+    "28"
+   ],
+   "correcta": 0,
+   "tip": "40 + 40 son 80, y 80 + 2 es 82.",
+   "id": "mate2-oa05-18"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "¿Qué suma forma 26?",
+   "opciones": [
+    "10 + 16",
+    "10 + 6",
+    "16 + 16",
+    "20 + 16"
+   ],
+   "correcta": 0,
+   "tip": "10 + 16 = 26. Las otras sumas dan 16, 32 y 36.",
+   "id": "mate2-oa05-19"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "¿Cuánto es 30 + 12?",
+   "opciones": [
+    "42",
+    "32",
+    "312",
+    "52"
+   ],
+   "correcta": 0,
+   "tip": "30 + 10 son 40, y 40 + 2 son 42. No se escribe 312.",
+   "id": "mate2-oa05-20"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "Si juntas 5 y 40, ¿qué número formas?",
+   "opciones": [
+    "45",
+    "54",
+    "405",
+    "9"
+   ],
+   "correcta": 0,
+   "tip": "El orden no cambia el total: 5 + 40 es lo mismo que 40 + 5, o sea 45.",
+   "id": "mate2-oa05-21"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "¿Qué suma forma 30?",
+   "opciones": [
+    "15 + 15",
+    "15 + 5",
+    "20 + 15",
+    "13 + 15"
+   ],
+   "correcta": 0,
+   "tip": "15 + 15 = 30. Las otras dan 20, 35 y 28.",
+   "id": "mate2-oa05-22"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "90 se separa en dos partes. Una es 45. ¿Cuál es la otra?",
+   "opciones": [
+    "45",
+    "55",
+    "35",
+    "50"
+   ],
+   "correcta": 0,
+   "tip": "45 + 45 = 90, así que la otra parte también es 45.",
+   "id": "mate2-oa05-23"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "80 se separa en 50 y otra parte. ¿Cuál es?",
+   "opciones": [
+    "30",
+    "3",
+    "40",
+    "20"
+   ],
+   "correcta": 0,
+   "tip": "50 + 30 = 80, así que la otra parte es 30.",
+   "id": "mate2-oa05-24"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "¿Qué suma de tres números forma 53?",
+   "opciones": [
+    "40 + 10 + 3",
+    "40 + 1 + 3",
+    "30 + 10 + 3",
+    "50 + 10 + 3"
+   ],
+   "correcta": 0,
+   "tip": "40 + 10 son 50, y 50 + 3 es 53.",
+   "id": "mate2-oa05-25"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "Benjamín formó 20 + 20 + 9 con fichas. ¿Qué número es?",
+   "opciones": [
+    "49",
+    "29",
+    "94",
+    "40"
+   ],
+   "correcta": 0,
+   "tip": "20 + 20 son 40, y 40 + 9 es 49.",
+   "id": "mate2-oa05-26"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "Una caja tiene 80 lápices y otra tiene 8. ¿Cuántos hay?",
+   "opciones": [
+    "88",
+    "16",
+    "808",
+    "98"
+   ],
+   "correcta": 0,
+   "tip": "80 + 8 = 88. No es 808: el 8 se junta con el 80.",
+   "id": "mate2-oa05-27"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "¿Qué suma forma 100?",
+   "opciones": [
+    "75 + 25",
+    "75 + 35",
+    "70 + 25",
+    "65 + 25"
+   ],
+   "correcta": 0,
+   "tip": "75 + 25 = 100. Las otras dan 110, 95 y 90.",
+   "id": "mate2-oa05-28"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "Matías separó 56 en 50 + 6 y en 40 + 16. ¿Cuál está bien?",
+   "opciones": [
+    "Las dos",
+    "Solo 50 + 6",
+    "Solo 40 + 16",
+    "Ninguna"
+   ],
+   "correcta": 0,
+   "tip": "50 + 6 = 56 y 40 + 16 = 56. Un número se puede separar de muchas formas.",
+   "id": "mate2-oa05-29"
+  },
+  {
+   "oa": "MA02 OA 05",
+   "pregunta": "¿Qué número es 7 + 90?",
+   "opciones": [
+    "97",
+    "79",
+    "907",
+    "16"
+   ],
+   "correcta": 0,
+   "tip": "7 + 90 es lo mismo que 90 + 7, o sea 97.",
+   "id": "mate2-oa05-30"
+  }
+ ]
+}

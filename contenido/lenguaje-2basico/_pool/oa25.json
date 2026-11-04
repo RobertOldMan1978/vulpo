@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "El grupo habla de perros y Tomás cuenta de su bici. ¿Qué hizo Tomás?",
+   "opciones": [
+    "Se salió del tema",
+    "Siguió con los perros",
+    "Respetó su turno",
+    "Hizo una buena pregunta"
+   ],
+   "correcta": 0,
+   "tip": "El tema eran los perros. Hablar de la bicicleta saca la conversación de su foco.",
+   "id": "leng2-oa25-1"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Conversan sobre el cuento del zorro. ¿Qué dice Ema que sigue el tema?",
+   "opciones": [
+    "El zorro fue astuto",
+    "Mi gato duerme mucho",
+    "Mañana va a llover",
+    "Me gusta el helado"
+   ],
+   "correcta": 0,
+   "tip": "Hablar del zorro mantiene la conversación en el cuento que estaban comentando.",
+   "id": "leng2-oa25-2"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "El curso habla de la huerta. ¿Qué idea de Lía sigue el tema?",
+   "opciones": [
+    "Plantar más lechugas",
+    "Ir juntos a la piscina",
+    "Comprar un balón nuevo",
+    "Ver una película"
+   ],
+   "correcta": 0,
+   "tip": "Plantar lechugas tiene que ver con la huerta, que era el tema de la conversación.",
+   "id": "leng2-oa25-3"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "En una conversación, ¿qué es mantener el foco?",
+   "opciones": [
+    "Seguir con el mismo tema",
+    "Hablar más fuerte que todos",
+    "Hablar muy rápido",
+    "Hablar de todo un poco"
+   ],
+   "correcta": 0,
+   "tip": "Mantener el foco es no salirse del tema que el grupo está conversando.",
+   "id": "leng2-oa25-4"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Hablaban del cuento y terminaron en los juegos. ¿Qué dice Rosa?",
+   "opciones": [
+    "Volvamos al cuento",
+    "Juguemos a la pinta",
+    "Ya me aburrí de esto",
+    "Mejor me voy a jugar"
+   ],
+   "correcta": 0,
+   "tip": "Recordar el tema ayuda a que la conversación vuelva a su foco.",
+   "id": "leng2-oa25-5"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Hablan de la lluvia y Joaquín cuenta que se mojó. ¿Siguió el tema?",
+   "opciones": [
+    "Sí, habló de la lluvia",
+    "No, habló de otra cosa",
+    "No, solo hizo ruido",
+    "No, habló del sol"
+   ],
+   "correcta": 0,
+   "tip": "Mojarse con la lluvia tiene que ver con el tema, así que Joaquín siguió conversando de lo mismo.",
+   "id": "leng2-oa25-6"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "¿Qué frase de Amanda es su opinión sobre el cuento del oso?",
+   "opciones": [
+    "Creo que el oso fue amable",
+    "El oso vivía en el bosque",
+    "El cuento tiene diez páginas",
+    "Lo leímos el lunes"
+   ],
+   "correcta": 0,
+   "tip": "Una opinión dice lo que alguien piensa. Las otras frases son datos que cualquiera puede comprobar.",
+   "id": "leng2-oa25-7"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Simón opinó que el cuento fue divertido. ¿Qué lo ayuda a explicarlo?",
+   "opciones": [
+    "Contar la parte chistosa",
+    "Decir su color favorito",
+    "Decirlo mucho más fuerte",
+    "Repetirlo dos veces"
+   ],
+   "correcta": 0,
+   "tip": "Una opinión se entiende mejor cuando se dice por qué: la parte chistosa muestra qué lo hizo reír.",
+   "id": "leng2-oa25-8"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Maite no está de acuerdo con Iván. ¿Qué dice con respeto?",
+   "opciones": [
+    "Yo lo veo distinto",
+    "Eso es una tontera",
+    "Estás muy mal",
+    "Cállate, no sabes"
+   ],
+   "correcta": 0,
+   "tip": "Se puede pensar distinto sin ofender: se dice la propia idea, no se ataca la del otro.",
+   "id": "leng2-oa25-9"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Le preguntan a Agustín qué opina. ¿Qué le conviene hacer?",
+   "opciones": [
+    "Decir lo que piensa",
+    "Quedarse muy callado",
+    "Mirar hacia el techo",
+    "Taparse la cara"
+   ],
+   "correcta": 0,
+   "tip": "En una conversación cada uno aporta sus ideas cuando le preguntan.",
+   "id": "leng2-oa25-10"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Florencia tiene una idea para el mural del grupo. ¿Qué hace?",
+   "opciones": [
+    "La cuenta al grupo",
+    "Se la guarda para ella",
+    "La grita sin parar",
+    "Lo pinta todo sola"
+   ],
+   "correcta": 0,
+   "tip": "Compartir la idea con el grupo permite que todos la conozcan y la conversen.",
+   "id": "leng2-oa25-11"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Gaspar no entendió lo que contó Ema. ¿Qué le conviene hacer?",
+   "opciones": [
+    "Preguntarle a Ema",
+    "Quedarse con la duda",
+    "Cambiar de tema",
+    "Reírse de ella"
+   ],
+   "correcta": 0,
+   "tip": "Preguntar en la conversación aclara la duda y muestra que quiere entender a Ema.",
+   "id": "leng2-oa25-12"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Ema habló de un pudú y Gaspar no sabe qué es. ¿Qué pregunta?",
+   "opciones": [
+    "¿Qué es un pudú?",
+    "¿Dónde vives tú?",
+    "¿Qué hora es?",
+    "¿Quieres jugar?"
+   ],
+   "correcta": 0,
+   "tip": "La buena pregunta es la que aclara justo lo que no entendió: qué es un pudú.",
+   "id": "leng2-oa25-13"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Pía contó que fue al cerro, pero no dijo con quién. ¿Qué preguntan?",
+   "opciones": [
+    "¿Con quién fuiste?",
+    "¿Te gusta el pan?",
+    "¿Cómo te llamas?",
+    "¿Tienes un perro?"
+   ],
+   "correcta": 0,
+   "tip": "Preguntar con quién fue pide justo la información que faltaba en lo que contó Pía.",
+   "id": "leng2-oa25-14"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Lucas quiere saber cómo es el gato de Sara. ¿Qué pregunta?",
+   "opciones": [
+    "¿De qué color es?",
+    "¿Qué comiste hoy?",
+    "¿Vas al parque?",
+    "¿Cuándo es tu cumpleaños?"
+   ],
+   "correcta": 0,
+   "tip": "Preguntar por el color pide información sobre cómo es el gato, que es lo que Lucas quiere saber.",
+   "id": "leng2-oa25-15"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Sara cuenta su paseo. ¿Qué muestra que Lucas la escucha?",
+   "opciones": [
+    "La mira mientras habla",
+    "Bosteza y mira el reloj",
+    "Dibuja en su cuaderno",
+    "Habla con otro amigo"
+   ],
+   "correcta": 0,
+   "tip": "Mirar a quien habla muestra que se le presta atención.",
+   "id": "leng2-oa25-16"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Al terminar Sara, Lucas dice: \"¡Qué bonito tu paseo!\". ¿Qué muestra?",
+   "opciones": [
+    "Que puso atención",
+    "Que estaba aburrido",
+    "Que no la oyó",
+    "Que quería irse"
+   ],
+   "correcta": 0,
+   "tip": "Comentar lo que contó Sara demuestra que Lucas la escuchó con interés.",
+   "id": "leng2-oa25-17"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Mientras Ana habla, Tomás bosteza y mira la ventana. ¿Qué muestra?",
+   "opciones": [
+    "Poco interés",
+    "Mucho interés",
+    "Que la entiende",
+    "Ganas de opinar"
+   ],
+   "correcta": 0,
+   "tip": "Bostezar y mirar para otro lado muestra que no está escuchando con interés.",
+   "id": "leng2-oa25-18"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Renata terminó de contar algo. ¿Qué hace Iván para mostrar interés?",
+   "opciones": [
+    "Le pregunta más",
+    "Se va a jugar",
+    "Cambia el tema",
+    "Mira para el lado"
+   ],
+   "correcta": 0,
+   "tip": "Hacer una pregunta sobre lo que contó muestra que le interesó y quiere saber más.",
+   "id": "leng2-oa25-19"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Julián cuenta de su hermanito. ¿Qué comentario muestra que lo oyó?",
+   "opciones": [
+    "¿Cómo se llama él?",
+    "Mi mochila es roja",
+    "Tengo mucha hambre",
+    "Mañana es lunes"
+   ],
+   "correcta": 0,
+   "tip": "Preguntar por el hermanito muestra que escuchó lo que Julián contó.",
+   "id": "leng2-oa25-20"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Emilia cuenta que su abuela está enferma. ¿Qué responde Vicente?",
+   "opciones": [
+    "Ojalá se mejore",
+    "Qué aburrido eso",
+    "No me importa",
+    "Juguemos a la pelota"
+   ],
+   "correcta": 0,
+   "tip": "Desearle que se mejore muestra que Vicente entiende la preocupación de Emilia.",
+   "id": "leng2-oa25-21"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "A Tomás se le rompió su juguete favorito. ¿Qué muestra empatía?",
+   "opciones": [
+    "Qué pena, Tomás",
+    "Era muy feo igual",
+    "Cómprate otro y ya",
+    "Ja, se te rompió"
+   ],
+   "correcta": 0,
+   "tip": "Mostrar empatía es entender cómo se siente el otro, no burlarse ni quitarle importancia.",
+   "id": "leng2-oa25-22"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Antonia extraña a su amiga que se fue lejos. ¿Qué le dice Pía?",
+   "opciones": [
+    "Te entiendo, debe doler",
+    "No llores por esa tontera",
+    "Busca otra amiga ya",
+    "Eso no importa nada"
+   ],
+   "correcta": 0,
+   "tip": "Decir que la entiende muestra que Pía se pone en el lugar de Antonia.",
+   "id": "leng2-oa25-23"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Benjamín está nervioso en su primer día en el taller. ¿Qué lo ayuda?",
+   "opciones": [
+    "Te vamos a ayudar",
+    "Te va a ir pésimo",
+    "Eres muy lento",
+    "A mí no me importa"
+   ],
+   "correcta": 0,
+   "tip": "Ofrecerle ayuda muestra que el grupo entiende su nervio y lo acompaña.",
+   "id": "leng2-oa25-24"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Rocío se cayó en el recreo y llora. ¿Qué hace Diego?",
+   "opciones": [
+    "Le pregunta si está bien",
+    "Se ríe fuerte de ella",
+    "Sigue corriendo sin mirar",
+    "Le dice que exagera"
+   ],
+   "correcta": 0,
+   "tip": "Preguntarle cómo está muestra empatía: Diego piensa en lo que siente Rocío.",
+   "id": "leng2-oa25-25"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Ema está hablando y Gaspar quiere opinar. ¿Qué hace él?",
+   "opciones": [
+    "Espera que termine",
+    "Habla encima de ella",
+    "Le dice que se calle",
+    "Grita su idea fuerte"
+   ],
+   "correcta": 0,
+   "tip": "Respetar el turno es dejar terminar a quien habla antes de decir lo propio.",
+   "id": "leng2-oa25-26"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "En el grupo de Dante todos hablan a la vez. ¿Qué pasa?",
+   "opciones": [
+    "Nadie se entiende",
+    "Todos se entienden",
+    "Terminan más rápido",
+    "Se escuchan mejor"
+   ],
+   "correcta": 0,
+   "tip": "Si todos hablan al mismo tiempo, nadie puede escuchar ni entender las ideas.",
+   "id": "leng2-oa25-27"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Habla solo quien tiene el peluche. ¿Para qué sirve esa regla?",
+   "opciones": [
+    "Para hablar de a uno",
+    "Para jugar con él",
+    "Para que nadie hable",
+    "Para hablar más fuerte"
+   ],
+   "correcta": 0,
+   "tip": "Pasar un objeto ordena los turnos: habla una persona a la vez y los demás escuchan.",
+   "id": "leng2-oa25-28"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Martín ya habló muchas veces seguidas. ¿Qué le conviene hacer?",
+   "opciones": [
+    "Dejar hablar a otros",
+    "Seguir hablando más",
+    "Hablar más fuerte",
+    "Irse del grupo"
+   ],
+   "correcta": 0,
+   "tip": "Respetar turnos también es dar espacio para que los demás opinen.",
+   "id": "leng2-oa25-29"
+  },
+  {
+   "oa": "LE02 OA 25",
+   "pregunta": "Clara terminó de decir su idea. ¿Qué toca ahora?",
+   "opciones": [
+    "Que hable otro",
+    "Que ella repita",
+    "Que todos griten",
+    "Que nadie hable"
+   ],
+   "correcta": 0,
+   "tip": "Cuando alguien termina su turno, le toca hablar a otra persona del grupo.",
+   "id": "leng2-oa25-30"
+  }
+ ]
+}

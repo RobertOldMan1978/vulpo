@@ -1,0 +1,844 @@
+{
+ "preguntas": [
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué tienen todos los animales \"vertebrados\"?",
+   "opciones": [
+    "Plumas de colores",
+    "Seis patas finas",
+    "Un caparazón duro",
+    "Columna vertebral"
+   ],
+   "correcta": 3,
+   "tip": "Vertebrado viene de vértebras, los huesos de la columna. El perro, el pez y el pájaro son vertebrados.",
+   "revisada": false,
+   "id": "voc2-cien-1"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Cuál de estos animales es \"invertebrado\"?",
+   "opciones": [
+    "El jurel",
+    "La gallina",
+    "La araña",
+    "El perro"
+   ],
+   "correcta": 2,
+   "tip": "La araña no tiene columna vertebral, por eso es invertebrada.",
+   "revisada": false,
+   "id": "voc2-cien-2"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "La ballena es un \"mamífero\". ¿Qué otro animal también lo es?",
+   "opciones": [
+    "El tiburón",
+    "La tortuga",
+    "El pingüino",
+    "El murciélago"
+   ],
+   "correcta": 3,
+   "tip": "La ballena y el murciélago son mamíferos: sus crías toman leche de su mamá.",
+   "revisada": false,
+   "id": "voc2-cien-3"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Cuál de estos animales es un \"reptil\"?",
+   "opciones": [
+    "La rana",
+    "El pingüino",
+    "La lagartija",
+    "La mariposa"
+   ],
+   "correcta": 2,
+   "tip": "La lagartija tiene escamas y pone huevos: es un reptil. La rana es un anfibio.",
+   "revisada": false,
+   "id": "voc2-cien-4"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Un \"anfibio\", como la rana, vive...",
+   "opciones": [
+    "solo en árboles",
+    "solo en desiertos",
+    "bajo la nieve",
+    "en agua y tierra"
+   ],
+   "correcta": 3,
+   "tip": "Anfibio quiere decir que vive en dos lugares: en el agua y en la tierra.",
+   "revisada": false,
+   "id": "voc2-cien-5"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué son las \"escamas\" de un pez?",
+   "opciones": [
+    "Huecos para respirar",
+    "Dientes muy chicos",
+    "Plumas de su cola",
+    "Placas de su piel"
+   ],
+   "correcta": 3,
+   "tip": "Las escamas son placas chiquitas que cubren y protegen la piel del pez.",
+   "revisada": false,
+   "id": "voc2-cien-6"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Para qué usa un pez sus \"branquias\"?",
+   "opciones": [
+    "Para nadar rápido",
+    "Para ver de noche",
+    "Para respirar",
+    "Para comer algas"
+   ],
+   "correcta": 2,
+   "tip": "Con las branquias el pez respira dentro del agua.",
+   "revisada": false,
+   "id": "voc2-cien-7"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué animal es un \"insecto\"?",
+   "opciones": [
+    "La araña",
+    "La lombriz",
+    "La mosca",
+    "El caracol"
+   ],
+   "correcta": 2,
+   "tip": "La mosca tiene seis patas: es un insecto. La araña tiene ocho y es un arácnido.",
+   "revisada": false,
+   "id": "voc2-cien-8"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "El escorpión es un \"arácnido\", como la araña. ¿Cuántas patas tiene?",
+   "opciones": [
+    "Ocho patas",
+    "Cuatro patas",
+    "Seis patas",
+    "Diez patas"
+   ],
+   "correcta": 0,
+   "tip": "Los arácnidos, como la araña y el escorpión, tienen ocho patas; los insectos tienen seis.",
+   "revisada": false,
+   "id": "voc2-cien-9"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "El camarón es un \"crustáceo\". ¿Qué cubre su cuerpo?",
+   "opciones": [
+    "Plumas de colores",
+    "Escamas brillantes",
+    "Un caparazón duro",
+    "Pelos suaves"
+   ],
+   "correcta": 2,
+   "tip": "Los crustáceos, como el camarón y la jaiba, tienen el cuerpo cubierto por un caparazón.",
+   "revisada": false,
+   "id": "voc2-cien-10"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es un \"renacuajo\"?",
+   "opciones": [
+    "Un insecto con alas",
+    "Un pez de río",
+    "Una culebra chica",
+    "Una cría de rana"
+   ],
+   "correcta": 3,
+   "tip": "El renacuajo nace en el agua y, al crecer, se convierte en rana.",
+   "revisada": false,
+   "id": "voc2-cien-11"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Para qué hacen un \"nido\" las aves?",
+   "opciones": [
+    "Para mirar el cielo",
+    "Para cantar más fuerte",
+    "Para guardar comida",
+    "Para cuidar sus huevos"
+   ],
+   "correcta": 3,
+   "tip": "En el nido, las aves ponen sus huevos y cuidan a sus pollitos.",
+   "revisada": false,
+   "id": "voc2-cien-12"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "El \"hábitat\" del huemul es...",
+   "opciones": [
+    "la cima del volcán",
+    "el desierto del norte",
+    "el bosque del sur",
+    "el fondo del mar"
+   ],
+   "correcta": 2,
+   "tip": "El huemul vive en los bosques y montañas del sur de Chile.",
+   "revisada": false,
+   "id": "voc2-cien-13"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "El \"pelaje\" de un zorro es...",
+   "opciones": [
+    "su forma de correr",
+    "el ruido que hace",
+    "su larga cola",
+    "todo su pelo"
+   ],
+   "correcta": 3,
+   "tip": "El pelaje es todo el pelo que cubre al animal y lo abriga.",
+   "revisada": false,
+   "id": "voc2-cien-14"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"ciclo de vida\" de un animal?",
+   "opciones": [
+    "Sus etapas de vida",
+    "El lugar donde vive",
+    "Su forma de moverse",
+    "Lo que come"
+   ],
+   "correcta": 0,
+   "tip": "El ciclo de vida son sus etapas: nacer, crecer, reproducirse y morir.",
+   "revisada": false,
+   "id": "voc2-cien-15"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Cuando el agua se \"congela\", se vuelve...",
+   "opciones": [
+    "barro",
+    "hielo",
+    "lluvia",
+    "vapor"
+   ],
+   "correcta": 1,
+   "tip": "Con mucho frío, el agua líquida se congela y se vuelve hielo.",
+   "revisada": false,
+   "id": "voc2-cien-16"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"esqueleto\"?",
+   "opciones": [
+    "La piel del cuerpo",
+    "Los dientes juntos",
+    "La sangre del cuerpo",
+    "Todos los huesos juntos"
+   ],
+   "correcta": 3,
+   "tip": "El esqueleto es el conjunto de huesos que sostiene y protege el cuerpo.",
+   "revisada": false,
+   "id": "voc2-cien-17"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Si un lugar tiene mucha \"humedad\", está...",
+   "opciones": [
+    "muy caliente",
+    "muy oscuro",
+    "con mucha agua",
+    "muy seco"
+   ],
+   "correcta": 2,
+   "tip": "La humedad es el agua que hay en el aire y en la tierra. El bosque del sur es muy húmedo.",
+   "revisada": false,
+   "id": "voc2-cien-18"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Si el azúcar se \"disuelve\" en el agua...",
+   "opciones": [
+    "se va al fondo",
+    "se vuelve hielo",
+    "flota encima",
+    "se mezcla con ella"
+   ],
+   "correcta": 3,
+   "tip": "El azúcar disuelto sigue ahí, repartido en el agua, aunque ya no lo veamos.",
+   "revisada": false,
+   "id": "voc2-cien-19"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Si el agua de un charco se \"evapora\", ¿qué le pasa?",
+   "opciones": [
+    "Sube como vapor",
+    "Se vuelve hielo",
+    "Se pone verde",
+    "Se vuelve sal"
+   ],
+   "correcta": 0,
+   "tip": "Con el calor del sol, el agua se convierte en vapor y sube al aire.",
+   "revisada": false,
+   "id": "voc2-cien-20"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Que el agua \"escurra\" significa que...",
+   "opciones": [
+    "corre hacia abajo",
+    "se pone dura",
+    "cambia de color",
+    "se queda quieta"
+   ],
+   "correcta": 0,
+   "tip": "El agua escurre: corre y se mueve hacia abajo si nada la detiene.",
+   "revisada": false,
+   "id": "voc2-cien-21"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"granizo\"?",
+   "opciones": [
+    "Bolitas de hielo",
+    "Nubes muy oscuras",
+    "Viento muy fuerte",
+    "Gotas de neblina"
+   ],
+   "correcta": 0,
+   "tip": "El granizo son trocitos de hielo que caen de las nubes, como una lluvia dura.",
+   "revisada": false,
+   "id": "voc2-cien-22"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué mide un \"pluviómetro\"?",
+   "opciones": [
+    "El calor del día",
+    "La hora del día",
+    "La fuerza del viento",
+    "La lluvia que cae"
+   ],
+   "correcta": 3,
+   "tip": "El pluviómetro junta el agua de lluvia para saber cuánta cayó.",
+   "revisada": false,
+   "id": "voc2-cien-23"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Un \"termómetro\" sirve para saber...",
+   "opciones": [
+    "dónde sopla el viento",
+    "qué hora es",
+    "cuánto calor hace",
+    "cuánta lluvia cayó"
+   ],
+   "correcta": 2,
+   "tip": "El termómetro mide la temperatura: si hace frío o calor.",
+   "revisada": false,
+   "id": "voc2-cien-24"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Si la \"veleta\" gira y gira, es porque...",
+   "opciones": [
+    "hace calor",
+    "sopla el viento",
+    "cae mucho granizo",
+    "es de noche"
+   ],
+   "correcta": 1,
+   "tip": "La veleta gira con el viento y apunta hacia el lugar de donde viene.",
+   "revisada": false,
+   "id": "voc2-cien-25"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Algo \"sólido\", como una piedra, es algo que...",
+   "opciones": [
+    "se derrama solo",
+    "cambia de forma",
+    "tiene forma propia",
+    "sube al aire"
+   ],
+   "correcta": 2,
+   "tip": "Lo sólido tiene su propia forma y no se derrama, como el hielo o una piedra.",
+   "revisada": false,
+   "id": "voc2-cien-26"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "El agua en estado \"gaseoso\" es...",
+   "opciones": [
+    "la nieve",
+    "la lluvia",
+    "el hielo",
+    "el vapor"
+   ],
+   "correcta": 3,
+   "tip": "El vapor es agua en estado gaseoso: no se puede agarrar y sube al aire.",
+   "revisada": false,
+   "id": "voc2-cien-27"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué es el \"caparazón\" de una tortuga?",
+   "opciones": [
+    "Su cola larga",
+    "Su comida favorita",
+    "Su cubierta dura",
+    "Su nido de barro"
+   ],
+   "correcta": 2,
+   "tip": "El caparazón es la cubierta dura que protege el cuerpo de la tortuga.",
+   "revisada": false,
+   "id": "voc2-cien-28"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Para qué usa un insecto sus \"antenas\"?",
+   "opciones": [
+    "Para poner huevos",
+    "Para volar alto",
+    "Para tocar y oler",
+    "Para picar a otros"
+   ],
+   "correcta": 2,
+   "tip": "Las antenas le sirven al insecto para sentir lo que tiene alrededor.",
+   "revisada": false,
+   "id": "voc2-cien-29"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Una perra \"amamanta\" a sus cachorros. ¿Qué hace?",
+   "opciones": [
+    "Les da su leche",
+    "Les busca comida",
+    "Los limpia",
+    "Les hace un nido"
+   ],
+   "correcta": 0,
+   "tip": "Amamantar es dar leche del propio cuerpo a las crías.",
+   "revisada": false,
+   "id": "voc2-cien-30"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"pueblo originario\"?",
+   "opciones": [
+    "Turistas de otro país",
+    "Los primeros habitantes",
+    "Vecinos de otra ciudad",
+    "Gente recién llegada"
+   ],
+   "correcta": 1,
+   "tip": "Mapuche, aimara y rapa nui vivían en estas tierras antes de que llegaran los españoles.",
+   "revisada": false,
+   "id": "voc2-hist-1"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "Un pueblo que se cambia seguido de lugar es...",
+   "opciones": [
+    "nómada",
+    "agricultor",
+    "artesano",
+    "sedentario"
+   ],
+   "correcta": 0,
+   "tip": "Los pueblos nómadas cambian de lugar para buscar comida y agua; los sedentarios se quedan en uno.",
+   "revisada": false,
+   "id": "voc2-hist-2"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"canoa\"?",
+   "opciones": [
+    "Un bote angosto",
+    "Una casa de paja",
+    "Un tipo de red",
+    "Un tambor"
+   ],
+   "correcta": 0,
+   "tip": "Los yaganes y los kawésqar recorrían los canales del sur en canoa.",
+   "revisada": false,
+   "id": "voc2-hist-3"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "Sofía nació en Perú y vino a vivir a Chile. Sofía es...",
+   "opciones": [
+    "turista",
+    "alcaldesa",
+    "inmigrante",
+    "pescadora"
+   ],
+   "correcta": 2,
+   "tip": "Una persona inmigrante llega desde otro país para quedarse a vivir.",
+   "revisada": false,
+   "id": "voc2-hist-4"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "La \"costa\" es la tierra que está...",
+   "opciones": [
+    "sobre los cerros",
+    "en el desierto",
+    "junto al mar",
+    "entre montañas"
+   ],
+   "correcta": 2,
+   "tip": "La costa es la orilla de la tierra junto al mar, donde están las playas.",
+   "revisada": false,
+   "id": "voc2-hist-5"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"tradición\"?",
+   "opciones": [
+    "Regla nueva del colegio",
+    "Juego inventado hoy",
+    "Noticia del diario",
+    "Costumbre que se hereda"
+   ],
+   "correcta": 3,
+   "tip": "Una tradición se repite por muchos años y pasa de abuelos a nietos, como bailar cueca.",
+   "revisada": false,
+   "id": "voc2-hist-6"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"artesanía\"?",
+   "opciones": [
+    "Juguete de fábrica",
+    "Objeto hecho a mano",
+    "Máquina muy grande",
+    "Dibujo en el celular"
+   ],
+   "correcta": 1,
+   "tip": "La artesanía la hacen personas con sus manos, como un canasto o un tejido.",
+   "revisada": false,
+   "id": "voc2-hist-7"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "Chile \"limita\" con Perú. Eso quiere decir que...",
+   "opciones": [
+    "son vecinos",
+    "son iguales",
+    "están muy lejos",
+    "tienen la misma bandera"
+   ],
+   "correcta": 0,
+   "tip": "Limitar es estar uno al lado del otro: Perú, Bolivia y Argentina son vecinos de Chile.",
+   "revisada": false,
+   "id": "voc2-hist-8"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es la \"cosecha\"?",
+   "opciones": [
+    "Plantar semillas",
+    "Recoger lo sembrado",
+    "Vender en la feria",
+    "Regar el huerto"
+   ],
+   "correcta": 1,
+   "tip": "Cosechar es recoger las frutas y verduras cuando ya están listas.",
+   "revisada": false,
+   "id": "voc2-hist-9"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "Las ollas de Pomaire son de \"greda\". ¿Qué es la greda?",
+   "opciones": [
+    "Un tipo de vidrio",
+    "Un tipo de metal",
+    "Un tipo de madera",
+    "Un tipo de barro"
+   ],
+   "correcta": 3,
+   "tip": "La greda es un barro que, al secarse y cocerse, sirve para hacer ollas y vasijas.",
+   "revisada": false,
+   "id": "voc2-hist-10"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"puerto\"?",
+   "opciones": [
+    "Donde nacen los ríos",
+    "Donde paran los aviones",
+    "Donde llegan los barcos",
+    "Donde se guardan autos"
+   ],
+   "correcta": 2,
+   "tip": "En un puerto los barcos llegan, salen y dejan su carga, como en Valparaíso.",
+   "revisada": false,
+   "id": "voc2-hist-11"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Para qué sirve un \"telar\"?",
+   "opciones": [
+    "Para pescar peces",
+    "Para moler maíz",
+    "Para tejer mantas",
+    "Para cocinar pan"
+   ],
+   "correcta": 2,
+   "tip": "En el telar se cruzan los hilos de lana para tejer mantas y ponchos.",
+   "revisada": false,
+   "id": "voc2-hist-12"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"cordillera\"?",
+   "opciones": [
+    "Una playa con arena",
+    "Un río muy largo",
+    "Un lago muy grande",
+    "Una fila de montañas"
+   ],
+   "correcta": 3,
+   "tip": "La cordillera de los Andes recorre Chile de norte a sur.",
+   "revisada": false,
+   "id": "voc2-hist-13"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "Una graduación es una \"ceremonia\". ¿Qué es una ceremonia?",
+   "opciones": [
+    "Una tarea escolar",
+    "Un acto especial",
+    "Un trabajo diario",
+    "Un juego de mesa"
+   ],
+   "correcta": 1,
+   "tip": "Una ceremonia es un acto especial y ordenado para celebrar o recordar algo.",
+   "revisada": false,
+   "id": "voc2-hist-14"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"archipiélago\"?",
+   "opciones": [
+    "Un río con peces",
+    "Un grupo de islas",
+    "Un lago congelado",
+    "Un cerro muy alto"
+   ],
+   "correcta": 1,
+   "tip": "En el sur de Chile hay archipiélagos: muchas islas juntas.",
+   "revisada": false,
+   "id": "voc2-hist-15"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"isla\"?",
+   "opciones": [
+    "Un cerro con nieve",
+    "Tierra rodeada de agua",
+    "Un camino de campo",
+    "Agua rodeada de tierra"
+   ],
+   "correcta": 1,
+   "tip": "Una isla tiene agua por todos lados, como Rapa Nui.",
+   "revisada": false,
+   "id": "voc2-hist-16"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué puede salir de un \"volcán\"?",
+   "opciones": [
+    "Arena de playa",
+    "Agua y peces",
+    "Nieve y hielo",
+    "Lava y ceniza"
+   ],
+   "correcta": 3,
+   "tip": "Cuando un volcán despierta, puede lanzar lava, ceniza y humo.",
+   "revisada": false,
+   "id": "voc2-hist-17"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es el \"altiplano\"?",
+   "opciones": [
+    "Una playa costera",
+    "Un valle bajo",
+    "Una llanura muy alta",
+    "Un bosque lluvioso"
+   ],
+   "correcta": 2,
+   "tip": "El altiplano es una zona plana y muy alta del norte, donde viven las llamas.",
+   "revisada": false,
+   "id": "voc2-hist-18"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Cuál de estos alimentos es un \"marisco\"?",
+   "opciones": [
+    "El queso",
+    "La almeja",
+    "El trigo",
+    "La papa"
+   ],
+   "correcta": 1,
+   "tip": "Los mariscos son animales del mar que se comen, como la almeja y el choro.",
+   "revisada": false,
+   "id": "voc2-hist-19"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es un \"glaciar\"?",
+   "opciones": [
+    "Un río de lava",
+    "Un lago tibio",
+    "Un cerro de arena",
+    "Un río de hielo"
+   ],
+   "correcta": 3,
+   "tip": "Un glaciar es una enorme masa de hielo que avanza muy lento, como un río congelado.",
+   "revisada": false,
+   "id": "voc2-hist-20"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "La \"flora\" de un lugar son sus...",
+   "opciones": [
+    "casas",
+    "animales",
+    "ríos",
+    "plantas"
+   ],
+   "correcta": 3,
+   "tip": "La flora son las plantas de un lugar, como el copihue en el sur.",
+   "revisada": false,
+   "id": "voc2-hist-21"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "El puma y el cóndor son parte de la \"fauna\". ¿Qué es?",
+   "opciones": [
+    "Las plantas",
+    "Las casas",
+    "Los ríos",
+    "Los animales"
+   ],
+   "correcta": 3,
+   "tip": "La fauna son los animales que viven en un lugar.",
+   "revisada": false,
+   "id": "voc2-hist-22"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"comunidad\"?",
+   "opciones": [
+    "Personas que conviven",
+    "Un grupo de árboles",
+    "Una casa abandonada",
+    "Una persona sola"
+   ],
+   "correcta": 0,
+   "tip": "Tu curso, tu barrio y tu familia son comunidades: personas que conviven.",
+   "revisada": false,
+   "id": "voc2-hist-23"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "Hablar por \"turnos\" quiere decir...",
+   "opciones": [
+    "uno a la vez",
+    "muy despacio",
+    "sin parar",
+    "todos juntos"
+   ],
+   "correcta": 0,
+   "tip": "Hablar por turnos es esperar a que el otro termine para que todos se escuchen.",
+   "revisada": false,
+   "id": "voc2-hist-24"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En el \"paradero\", las personas...",
+   "opciones": [
+    "duermen la siesta",
+    "esperan el bus",
+    "compran pan",
+    "juegan fútbol"
+   ],
+   "correcta": 1,
+   "tip": "En el paradero esperamos el bus, y es de todos: hay que cuidarlo.",
+   "revisada": false,
+   "id": "voc2-hist-25"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "El español y el mapudungun son \"idiomas\". ¿Qué es un idioma?",
+   "opciones": [
+    "Una lengua",
+    "Un juego",
+    "Un baile",
+    "Una comida"
+   ],
+   "correcta": 0,
+   "tip": "Un idioma es una lengua: la forma de hablar de un pueblo.",
+   "revisada": false,
+   "id": "voc2-hist-26"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿De dónde sale la \"lana\" de un chaleco?",
+   "opciones": [
+    "Del pelo de ovejas",
+    "De hojas de árbol",
+    "De leche de vaca",
+    "De plumas de aves"
+   ],
+   "correcta": 0,
+   "tip": "La lana es el pelo de la oveja, la llama o la alpaca, que se hila para tejer.",
+   "revisada": false,
+   "id": "voc2-hist-27"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es actuar con \"cortesía\"?",
+   "opciones": [
+    "Gritar para hablar",
+    "No compartir nada",
+    "Llegar siempre tarde",
+    "Tratar con amabilidad"
+   ],
+   "correcta": 3,
+   "tip": "Saludar, pedir por favor y dar las gracias es actuar con cortesía.",
+   "revisada": false,
+   "id": "voc2-hist-28"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una \"vía de evacuación\"?",
+   "opciones": [
+    "Puerta siempre cerrada",
+    "Pasillo para jugar",
+    "Sala para estudiar",
+    "Camino para salir seguro"
+   ],
+   "correcta": 3,
+   "tip": "Por la vía de evacuación salimos rápido y seguros si hay una emergencia.",
+   "revisada": false,
+   "id": "voc2-hist-29"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En un \"huerto\" se...",
+   "opciones": [
+    "compran juguetes",
+    "siembran verduras",
+    "crían muchas vacas",
+    "guardan los autos"
+   ],
+   "correcta": 1,
+   "tip": "En un huerto se siembran y se cuidan verduras y frutas.",
+   "revisada": false,
+   "id": "voc2-hist-30"
+  }
+ ]
+}

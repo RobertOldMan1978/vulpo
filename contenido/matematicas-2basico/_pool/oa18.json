@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "Camila dice que son las ocho y media. ¿Qué marca el reloj digital?",
+   "opciones": [
+    "8:30",
+    "8:00",
+    "9:30",
+    "7:30"
+   ],
+   "correcta": 0,
+   "tip": "En el reloj digital, primero va la hora y después los minutos. Ocho y media es 8 horas y 30 minutos: 8:30.",
+   "id": "mate2-oa18-1"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "La tienda cierra a las 8:00 y son las 6:00. ¿Cuántas horas faltan?",
+   "opciones": [
+    "dos horas",
+    "una hora",
+    "ocho horas",
+    "seis horas"
+   ],
+   "correcta": 0,
+   "tip": "De las 6:00 a las 7:00 pasa una hora, y de las 7:00 a las 8:00 otra: faltan dos horas.",
+   "id": "mate2-oa18-2"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "El recreo empieza a las 11:00 y dura media hora. ¿Cuándo termina?",
+   "opciones": [
+    "11:30",
+    "12:00",
+    "12:30",
+    "11:00"
+   ],
+   "correcta": 0,
+   "tip": "Media hora son 30 minutos. Desde las 11:00, media hora después son las 11:30.",
+   "id": "mate2-oa18-3"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "La película empieza a las 4:00 y dura una hora. ¿Cuándo termina?",
+   "opciones": [
+    "5:00",
+    "4:30",
+    "6:00",
+    "3:00"
+   ],
+   "correcta": 0,
+   "tip": "Una hora después de las 4:00 son las 5:00. Las 4:30 sería solo media hora.",
+   "id": "mate2-oa18-4"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "Diego almuerza a la 1:00. ¿Qué hora es una hora antes?",
+   "opciones": [
+    "12:00",
+    "2:00",
+    "12:30",
+    "11:00"
+   ],
+   "correcta": 0,
+   "tip": "En el reloj, antes de la 1:00 vienen las 12:00. Una hora antes es retroceder de la 1 a las 12.",
+   "id": "mate2-oa18-5"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "Sofía se acuesta a las 9:00 y se baña media hora antes. ¿A qué hora?",
+   "opciones": [
+    "8:30",
+    "9:30",
+    "8:00",
+    "10:00"
+   ],
+   "correcta": 0,
+   "tip": "Media hora antes de las 9:00 es retroceder 30 minutos: las 8:30. Las 9:30 sería después.",
+   "id": "mate2-oa18-6"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "El bus sale a las 7:30. ¿Qué hora será media hora después?",
+   "opciones": [
+    "8:00",
+    "8:30",
+    "7:00",
+    "9:00"
+   ],
+   "correcta": 0,
+   "tip": "Dos medias horas forman una hora. Desde las 7:30, media hora más completa la hora siguiente: 8:00.",
+   "id": "mate2-oa18-7"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "¿Cuál de estas horas es la más temprano?",
+   "opciones": [
+    "6:30",
+    "7:00",
+    "7:30",
+    "8:00"
+   ],
+   "correcta": 0,
+   "tip": "Más temprano es la hora que llega primero en el día. Las 6 y media viene antes que las 7.",
+   "id": "mate2-oa18-8"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "Benjamín llegó a las 3:30 y Tomás a las 3:00. ¿Quién llegó primero?",
+   "opciones": [
+    "Tomás",
+    "Benjamín",
+    "Llegaron juntos",
+    "No se puede saber"
+   ],
+   "correcta": 0,
+   "tip": "Las 3:00 llegan antes que las 3:30. Por eso Tomás, que llegó a las 3:00, fue el primero.",
+   "id": "mate2-oa18-9"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "La clase de música va de 2:00 a 2:30. ¿Cuánto dura?",
+   "opciones": [
+    "media hora",
+    "una hora",
+    "dos horas",
+    "treinta horas"
+   ],
+   "correcta": 0,
+   "tip": "De las 2:00 a las 2:30 pasan 30 minutos, que es media hora. El 30 son minutos, no horas.",
+   "id": "mate2-oa18-10"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "El taller va desde las 3:00 hasta las 4:00. ¿Cuánto tiempo dura?",
+   "opciones": [
+    "una hora",
+    "media hora",
+    "dos horas",
+    "cuatro horas"
+   ],
+   "correcta": 0,
+   "tip": "De las 3:00 a las 4:00 el reloj avanza una hora completa.",
+   "id": "mate2-oa18-11"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "Javiera jugó desde las 5:30 hasta las 6:30. ¿Cuánto tiempo jugó?",
+   "opciones": [
+    "una hora",
+    "media hora",
+    "seis horas",
+    "dos horas"
+   ],
+   "correcta": 0,
+   "tip": "De las 5:30 a las 6:30 la hora sube en 1 y los minutos quedan iguales: pasó una hora.",
+   "id": "mate2-oa18-12"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "¿Cuántas medias horas forman una hora?",
+   "opciones": [
+    "2",
+    "1",
+    "30",
+    "4"
+   ],
+   "correcta": 0,
+   "tip": "Una hora tiene 60 minutos y media hora tiene 30. Dos medias horas juntas hacen una hora.",
+   "id": "mate2-oa18-13"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "La fiesta parte a las 3:00 y dura una hora y media. ¿Cuándo termina?",
+   "opciones": [
+    "4:30",
+    "3:30",
+    "4:00",
+    "5:30"
+   ],
+   "correcta": 0,
+   "tip": "Primero una hora: de las 3:00 a las 4:00. Después media hora más: las 4:30.",
+   "id": "mate2-oa18-14"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "Son las 5:30. ¿Qué hora será en una hora más?",
+   "opciones": [
+    "6:30",
+    "6:00",
+    "7:30",
+    "5:00"
+   ],
+   "correcta": 0,
+   "tip": "Una hora más cambia solo la hora: de 5 a 6. Los 30 minutos se quedan: 6:30.",
+   "id": "mate2-oa18-15"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "Son las 12:30 y el almuerzo es en 30 minutos. ¿A qué hora es?",
+   "opciones": [
+    "1:00",
+    "12:00",
+    "1:30",
+    "2:00"
+   ],
+   "correcta": 0,
+   "tip": "30 minutos son media hora. Media hora después de las 12:30 se completa la hora, y después de las 12 viene la 1: 1:00.",
+   "id": "mate2-oa18-16"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "Tomás debe llegar a las 4:00 y son las 3:30. ¿Cuánto le falta?",
+   "opciones": [
+    "media hora",
+    "una hora",
+    "cuatro horas",
+    "treinta horas"
+   ],
+   "correcta": 0,
+   "tip": "De las 3:30 a las 4:00 faltan 30 minutos, o sea media hora.",
+   "id": "mate2-oa18-17"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "El cumpleaños empieza a las 5:00 y ahora son las 4:00. ¿Cuánto falta?",
+   "opciones": [
+    "una hora",
+    "media hora",
+    "cinco horas",
+    "dos horas"
+   ],
+   "correcta": 0,
+   "tip": "Del 4 al 5 hay una hora. Como los dos marcan en punto, falta una hora completa.",
+   "id": "mate2-oa18-18"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "¿Qué horas van de más temprano a más tarde?",
+   "opciones": [
+    "7:00, 7:30, 8:00",
+    "7:30, 7:00, 8:00",
+    "8:00, 7:30, 7:00",
+    "7:00, 8:00, 7:30"
+   ],
+   "correcta": 0,
+   "tip": "Primero las 7 en punto, media hora después las 7 y media, y otra media hora después las 8.",
+   "id": "mate2-oa18-19"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "La once es a las 5:00 y la cena, 2 horas después. ¿A qué hora cenan?",
+   "opciones": [
+    "7:00",
+    "6:00",
+    "5:30",
+    "7:30"
+   ],
+   "correcta": 0,
+   "tip": "Dos horas después de las 5:00 hay que avanzar dos veces una hora: 6:00 y luego 7:00.",
+   "id": "mate2-oa18-20"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "El partido empezó a las 6:00 y terminó a las 7:30. ¿Cuánto duró?",
+   "opciones": [
+    "una hora y media",
+    "media hora",
+    "una hora",
+    "dos horas"
+   ],
+   "correcta": 0,
+   "tip": "De las 6:00 a las 7:00 pasa una hora, y de las 7:00 a las 7:30 media hora más.",
+   "id": "mate2-oa18-21"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "¿Qué hora queda entre las 3:00 y las 4:00?",
+   "opciones": [
+    "3:30",
+    "4:30",
+    "2:30",
+    "5:00"
+   ],
+   "correcta": 0,
+   "tip": "Justo a la mitad entre las 3 y las 4 está la media hora: las 3:30.",
+   "id": "mate2-oa18-22"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "El almacén abre a las 9:00 y Diego llegó a las 8:30. ¿Qué pasa?",
+   "opciones": [
+    "Espera media hora",
+    "Ya está abierto",
+    "Espera una hora",
+    "Llegó tarde"
+   ],
+   "correcta": 0,
+   "tip": "Las 8:30 son antes de las 9:00: el almacén todavía no abre. Le falta media hora.",
+   "id": "mate2-oa18-23"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "Son las 11:00. ¿Qué hora era hace media hora?",
+   "opciones": [
+    "10:30",
+    "11:30",
+    "10:00",
+    "12:30"
+   ],
+   "correcta": 0,
+   "tip": "Hace media hora es ir 30 minutos hacia atrás: desde las 11:00 se llega a las 10:30.",
+   "id": "mate2-oa18-24"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "El reloj digital marca 4:30. ¿Cuál es la próxima hora en punto?",
+   "opciones": [
+    "5:00",
+    "4:00",
+    "6:00",
+    "5:30"
+   ],
+   "correcta": 0,
+   "tip": "Después de las 4:30, el reloj llega a la siguiente hora en punto media hora más tarde: 5:00.",
+   "id": "mate2-oa18-25"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "La clase dura una hora y empieza a las 10:30. ¿A qué hora termina?",
+   "opciones": [
+    "11:30",
+    "11:00",
+    "12:00",
+    "10:00"
+   ],
+   "correcta": 0,
+   "tip": "Una hora después de las 10:30 sube la hora de 10 a 11 y los minutos quedan en 30: 11:30.",
+   "id": "mate2-oa18-26"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "Ana despierta a las 7:00. Su hermano, media hora más tarde. ¿Cuándo?",
+   "opciones": [
+    "7:30",
+    "8:00",
+    "6:30",
+    "8:30"
+   ],
+   "correcta": 0,
+   "tip": "Más tarde es después. Media hora después de las 7:00 son las 7:30.",
+   "id": "mate2-oa18-27"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "Ema llegó a las 10:30 y Lucas, una hora antes. ¿Cuándo llegó Lucas?",
+   "opciones": [
+    "9:30",
+    "11:30",
+    "10:00",
+    "9:00"
+   ],
+   "correcta": 0,
+   "tip": "Una hora antes cambia solo la hora: de 10 a 9. Los 30 minutos se quedan: 9:30.",
+   "id": "mate2-oa18-28"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "La micro pasa cada media hora. Pasó a las 6:00. ¿Cuándo vuelve?",
+   "opciones": [
+    "6:30",
+    "7:00",
+    "7:30",
+    "6:00"
+   ],
+   "correcta": 0,
+   "tip": "Cada media hora quiere decir cada 30 minutos. Desde las 6:00, 30 minutos después son las 6:30.",
+   "id": "mate2-oa18-29"
+  },
+  {
+   "oa": "MA02 OA 18",
+   "pregunta": "Un programa de tele va de 6:30 a 7:00. ¿Cuánto dura?",
+   "opciones": [
+    "media hora",
+    "una hora",
+    "siete horas",
+    "treinta horas"
+   ],
+   "correcta": 0,
+   "tip": "De las 6:30 a las 7:00 se completa la hora: pasan 30 minutos, o sea media hora.",
+   "id": "mate2-oa18-30"
+  }
+ ]
+}

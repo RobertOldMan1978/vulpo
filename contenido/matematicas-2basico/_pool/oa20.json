@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "¿Qué puede salir al lanzar una moneda?",
+   "opciones": [
+    "Cara o sello",
+    "Solo una cara",
+    "Del 1 al 6",
+    "Cara y sello"
+   ],
+   "correcta": 0,
+   "tip": "Una moneda tiene dos lados: en cada lanzamiento sale uno, cara o sello, nunca los dos.",
+   "id": "mate2-oa20-1"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "¿Cuántos números distintos pueden salir al lanzar un dado?",
+   "opciones": [
+    "6",
+    "1",
+    "5",
+    "12"
+   ],
+   "correcta": 0,
+   "tip": "Un dado tiene seis caras, con los números del 1 al 6. Puede salir cualquiera de ellos.",
+   "id": "mate2-oa20-2"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "Ana hizo un grupo de 5 palitos y 2 sueltos. ¿Cuántos son?",
+   "opciones": [
+    "7",
+    "2",
+    "5",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "Un grupo vale 5 y se le suman los sueltos: 5 y 2 más son 7.",
+   "id": "mate2-oa20-3"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "Ema anotó 2 grupos de 5 palitos y 4 sueltos. ¿Cuántos son?",
+   "opciones": [
+    "14",
+    "11",
+    "9",
+    "24"
+   ],
+   "correcta": 0,
+   "tip": "Dos grupos de 5 son 10, y con 4 sueltos más llegas a 14.",
+   "id": "mate2-oa20-4"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "En una tabla de conteo, ¿cómo se marca el quinto palito?",
+   "opciones": [
+    "Cruzando los cuatro",
+    "Al lado, bien derecho",
+    "Con un número cinco",
+    "Borrando los cuatro"
+   ],
+   "correcta": 0,
+   "tip": "El quinto palito se dibuja cruzado sobre los otros cuatro: así cada grupo vale 5 y se cuenta rápido.",
+   "id": "mate2-oa20-5"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "Benjamín lanzó el dado y salió 4. ¿Dónde anota su palito?",
+   "opciones": [
+    "En la fila del 4",
+    "En la fila del 1",
+    "En todas las filas",
+    "En la fila del 6"
+   ],
+   "correcta": 0,
+   "tip": "Cada resultado se anota en su propia fila: si salió 4, el palito va junto al 4.",
+   "id": "mate2-oa20-6"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "Camila lanzó una moneda 10 veces. ¿Cuántos palitos anotó en total?",
+   "opciones": [
+    "10",
+    "2",
+    "5",
+    "20"
+   ],
+   "correcta": 0,
+   "tip": "Cada lanzamiento deja un palito, salga cara o sello. Diez lanzamientos son diez palitos.",
+   "id": "mate2-oa20-7"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "La torre de cara tiene 6 bloques y la de sello 4. ¿Qué salió más?",
+   "opciones": [
+    "Cara",
+    "Sello",
+    "Salieron igual",
+    "No se sabe"
+   ],
+   "correcta": 0,
+   "tip": "Cada bloque es una vez que salió. La torre más alta muestra lo que salió más veces.",
+   "id": "mate2-oa20-8"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "Javiera puso 6 bloques en cara y 4 en sello. ¿Cuántas veces lanzó?",
+   "opciones": [
+    "10",
+    "2",
+    "6",
+    "24"
+   ],
+   "correcta": 0,
+   "tip": "Hay un bloque por cada lanzamiento, así que se juntan las dos torres: 6 y 4 son 10.",
+   "id": "mate2-oa20-9"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "¿Qué pregunta se responde lanzando un dado muchas veces?",
+   "opciones": [
+    "¿Qué número sale más?",
+    "¿De qué color es?",
+    "¿Quién trajo el dado?",
+    "¿Cuánto pesa el dado?"
+   ],
+   "correcta": 0,
+   "tip": "Para saber qué número sale más hay que lanzar muchas veces y anotar. Las otras se responden mirando o preguntando.",
+   "id": "mate2-oa20-10"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "Matías quiere saber si sale más cara o sello. ¿Qué debe hacer?",
+   "opciones": [
+    "Lanzar y anotar",
+    "Adivinar una vez",
+    "Mirar la moneda",
+    "Preguntarle a Ana"
+   ],
+   "correcta": 0,
+   "tip": "Para responder con datos hay que lanzar la moneda varias veces y anotar cada resultado.",
+   "id": "mate2-oa20-11"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "Sofía lanzó el dado 20 veces y no anotó nada. ¿Qué le pasará?",
+   "opciones": [
+    "Olvidará qué salió",
+    "Ganará el juego",
+    "Saldrá solo el 6",
+    "Tendrá su tabla"
+   ],
+   "correcta": 0,
+   "tip": "Sin anotar, los resultados se olvidan. Por eso se registran en una tabla mientras se juega.",
+   "id": "mate2-oa20-12"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "En el pictograma, cara tiene 5 ⭐ y sello tiene 3 ⭐. ¿Qué salió más?",
+   "opciones": [
+    "Cara",
+    "Sello",
+    "Las dos igual",
+    "No se puede saber"
+   ],
+   "correcta": 0,
+   "tip": "En este pictograma cada estrella es una vez que salió. Cara tiene más estrellas.",
+   "id": "mate2-oa20-13"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "Salió cara, sello, cara, cara. ¿Cuántas caras anota Tomás?",
+   "opciones": [
+    "3",
+    "1",
+    "4",
+    "2"
+   ],
+   "correcta": 0,
+   "tip": "Se cuenta solo cara: primera, tercera y cuarta vez. Son 3 caras de 4 lanzamientos.",
+   "id": "mate2-oa20-14"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "Salió sello, cara, sello, sello, cara. ¿Qué salió más veces?",
+   "opciones": [
+    "Sello",
+    "Cara",
+    "Lo mismo",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Sello salió 3 veces y cara 2 veces. Gana el que tiene más marcas.",
+   "id": "mate2-oa20-15"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "En la tabla, el 3 tiene 4 palitos y el 5 tiene 7. ¿Qué salió menos?",
+   "opciones": [
+    "El 3",
+    "El 5",
+    "Igual los dos",
+    "El 4"
+   ],
+   "correcta": 0,
+   "tip": "Menos palitos significa menos veces. El 3 tiene 4 palitos y el 5 tiene 7.",
+   "id": "mate2-oa20-16"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "En la tabla, el 1 tiene 6 palitos y el 2 también 6. ¿Qué pasó?",
+   "opciones": [
+    "Salieron igual",
+    "Ganó el 1",
+    "Ganó el 2",
+    "Salió el 6"
+   ],
+   "correcta": 0,
+   "tip": "Si dos filas tienen la misma cantidad de palitos, esos números salieron las mismas veces.",
+   "id": "mate2-oa20-17"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "¿Por qué se agrupan los palitos de a cinco?",
+   "opciones": [
+    "Para contar rápido",
+    "Para que se vea lindo",
+    "Porque el dado tiene 5",
+    "Para gastar menos"
+   ],
+   "correcta": 0,
+   "tip": "Con grupos de 5 se cuenta de cinco en cinco y es más difícil equivocarse.",
+   "id": "mate2-oa20-18"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "Un dado tiene 6 caras. ¿Cuántas filas necesita su tabla de conteo?",
+   "opciones": [
+    "6",
+    "2",
+    "1",
+    "12"
+   ],
+   "correcta": 0,
+   "tip": "La tabla lleva una fila por cada número que puede salir: del 1 al 6 son 6 filas.",
+   "id": "mate2-oa20-19"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "En la tabla, cara tiene 8 marcas y sello 5. ¿Cuántas más tiene cara?",
+   "opciones": [
+    "3",
+    "13",
+    "8",
+    "5"
+   ],
+   "correcta": 0,
+   "tip": "Para saber cuántas más, se compara restando: 8 menos 5 es 3.",
+   "id": "mate2-oa20-20"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "Florencia anota 9 palitos en la tabla de conteo. ¿Cómo quedan?",
+   "opciones": [
+    "Un 5 y 4 sueltos",
+    "Dos grupos de 5",
+    "Tres grupos de 3",
+    "Un 9 y 1 suelto"
+   ],
+   "correcta": 0,
+   "tip": "En una tabla de conteo se arman grupos de 5: con 9 marcas queda un grupo y sobran 4.",
+   "id": "mate2-oa20-21"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "Cada número del dado tiene su torre. ¿Qué muestra la más alta?",
+   "opciones": [
+    "El que más salió",
+    "El que menos salió",
+    "El último que salió",
+    "El número mayor"
+   ],
+   "correcta": 0,
+   "tip": "Cada bloque es una vez que salió ese número. La torre más alta es la que juntó más veces.",
+   "id": "mate2-oa20-22"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "Ema anotó 7 caras y 8 sellos en su tabla. ¿Cuántas veces lanzó?",
+   "opciones": [
+    "15",
+    "1",
+    "8",
+    "16"
+   ],
+   "correcta": 0,
+   "tip": "Cada marca es un lanzamiento, así que se juntan las dos: 7 y 8 son 15.",
+   "id": "mate2-oa20-23"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "El 2 tenía 3 palitos y sale otra vez. ¿Cuántos palitos tiene ahora?",
+   "opciones": [
+    "4",
+    "3",
+    "5",
+    "2"
+   ],
+   "correcta": 0,
+   "tip": "Cada vez que sale un número se le agrega un palito: 3 y uno más son 4.",
+   "id": "mate2-oa20-24"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "Antonia lanzó el dado 12 veces. ¿Cuántos palitos hay en toda su tabla?",
+   "opciones": [
+    "12",
+    "6",
+    "18",
+    "2"
+   ],
+   "correcta": 0,
+   "tip": "Un palito por lanzamiento, sin importar el número que salga. Doce lanzamientos son 12 palitos.",
+   "id": "mate2-oa20-25"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "¿Qué dato se anota cada vez que se lanza el dado?",
+   "opciones": [
+    "El número que sale",
+    "El color del dado",
+    "La hora del juego",
+    "Quién lo lanzó"
+   ],
+   "correcta": 0,
+   "tip": "En un juego de dados interesa qué número sale, para después ver cuál sale más.",
+   "id": "mate2-oa20-26"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "Lucas anotó 3 grupos de 5 palitos. ¿Cuántos lanzamientos son?",
+   "opciones": [
+    "15",
+    "8",
+    "5",
+    "35"
+   ],
+   "correcta": 0,
+   "tip": "Cada grupo vale 5: 5, 10, 15. Tres grupos de 5 son 15.",
+   "id": "mate2-oa20-27"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "¿Cuántas veces hay que lanzar el dado para ver qué número sale más?",
+   "opciones": [
+    "Muchas veces",
+    "Una sola vez",
+    "Solo dos veces",
+    "Ninguna vez"
+   ],
+   "correcta": 0,
+   "tip": "Con un lanzamiento no se sabe nada: el dado es al azar. Con muchos datos se ve cuál sale más.",
+   "id": "mate2-oa20-28"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "Cada 🍎 es una vez que salió el 6. Hay 4 🍎. ¿Cuántas veces salió?",
+   "opciones": [
+    "4",
+    "6",
+    "10",
+    "1"
+   ],
+   "correcta": 0,
+   "tip": "Aquí cada dibujo vale uno: 4 dibujos son 4 veces. El 6 es el número del dado, no la cantidad.",
+   "id": "mate2-oa20-29"
+  },
+  {
+   "oa": "MA02 OA 20",
+   "pregunta": "Torre del 5: 4 bloques. Torre del 1: 2. ¿Cuántos más tiene el 5?",
+   "opciones": [
+    "2",
+    "6",
+    "4",
+    "5"
+   ],
+   "correcta": 0,
+   "tip": "Para comparar las torres se resta: 4 bloques menos 2 bloques son 2 más.",
+   "id": "mate2-oa20-30"
+  }
+ ]
+}

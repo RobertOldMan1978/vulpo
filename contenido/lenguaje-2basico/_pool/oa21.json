@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "En guerra, la g suena como en gato. ¿Qué va entre la g y la e?",
+   "opciones": [
+    "Una u que no suena",
+    "Ninguna otra letra",
+    "Una u con dos puntitos",
+    "Una jota"
+   ],
+   "correcta": 0,
+   "tip": "Para que la g suene suave antes de la e se escribe una u que no se pronuncia: guerra, manguera, juguete.",
+   "id": "leng2-oa21-1"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "Matías escribió guitarra con g, pero le faltó una letra. ¿Cuál?",
+   "opciones": [
+    "La u después de la g",
+    "La h antes de la g",
+    "Una r más al final",
+    "La j en vez de la g"
+   ],
+   "correcta": 0,
+   "tip": "Sin la u, la g antes de la i suena como j. Para que suene como en gato se escribe una u que no se oye: guitarra.",
+   "id": "leng2-oa21-2"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "¿Qué palabra se escribe con la g, la u y la e, aunque la u no suene?",
+   "opciones": [
+    "manguera",
+    "gemelo",
+    "agua",
+    "lechuga"
+   ],
+   "correcta": 0,
+   "tip": "En manguera la g suena suave y la u queda muda. En gemelo la g suena como j, y en agua y lechuga la g va con a.",
+   "id": "leng2-oa21-3"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "En vergüenza la u sí se oye. ¿Qué lleva encima al escribirla?",
+   "opciones": [
+    "Dos puntitos",
+    "Un acento",
+    "Un solo punto",
+    "Una rayita"
+   ],
+   "correcta": 0,
+   "tip": "Cuando la u suena entre la g y la e o la i, se le ponen dos puntitos encima: vergüenza, pingüino, cigüeña.",
+   "id": "leng2-oa21-4"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "¿En qué palabra la u lleva dos puntitos al escribirla?",
+   "opciones": [
+    "agüita",
+    "guiso",
+    "juguete",
+    "hoguera"
+   ],
+   "correcta": 0,
+   "tip": "En agüita la u se pronuncia, por eso lleva dos puntitos. En guiso, juguete y hoguera la u no suena y se escribe sin ellos.",
+   "id": "leng2-oa21-5"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "Queso empieza con el sonido de la k. ¿Con qué letras se escribe?",
+   "opciones": [
+    "Con q y u",
+    "Con k sola",
+    "Con c sola",
+    "Con q sola"
+   ],
+   "correcta": 0,
+   "tip": "El sonido de k antes de la e o de la i se escribe con q y u: queso, quince, máquina. La u no se pronuncia.",
+   "id": "leng2-oa21-6"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "Diego escribió quiero con la letra k. ¿Cómo se escribe bien?",
+   "opciones": [
+    "Con la q y la u",
+    "Con la c y la u",
+    "Con la k y la u",
+    "Con la c sola"
+   ],
+   "correcta": 0,
+   "tip": "Quiero se escribe con q y u, aunque se oiga como k. La k casi no se usa en las palabras de todos los días.",
+   "id": "leng2-oa21-7"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "¿Qué letras escriben el sonido de k antes de la i?",
+   "opciones": [
+    "La q y la u",
+    "Solo la c",
+    "La g y la u",
+    "Solo la q"
+   ],
+   "correcta": 0,
+   "tip": "Antes de la e y la i, el sonido de k se escribe con q y u: quitar, quieto, mantequilla. Con la c sonaría como s.",
+   "id": "leng2-oa21-8"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "Para escribir cine, ¿qué letra va al comienzo?",
+   "opciones": [
+    "La c",
+    "La s",
+    "La z",
+    "La k"
+   ],
+   "correcta": 0,
+   "tip": "Cine se escribe con c. Antes de la e y la i, la c suena como s: cine, cielo, cena.",
+   "id": "leng2-oa21-9"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "Sofía escribió cereza con s. ¿Con qué letra empieza en verdad?",
+   "opciones": [
+    "Con c, como cielo",
+    "Con z, como zapato",
+    "Con k, como kilo",
+    "Con s, como sapo"
+   ],
+   "correcta": 0,
+   "tip": "Cereza se escribe con c, igual que cielo y cebolla. Suena como s, pero la letra es la c.",
+   "id": "leng2-oa21-10"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "Gerardo va a escribir su nombre. ¿Con qué letra lo empieza?",
+   "opciones": [
+    "Con g mayúscula",
+    "Con j mayúscula",
+    "Con g minúscula",
+    "Con j minúscula"
+   ],
+   "correcta": 0,
+   "tip": "Gerardo se escribe con g, que antes de la e suena como j. Y como es un nombre de persona, va con mayúscula.",
+   "id": "leng2-oa21-11"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "Ana escribió girasol con la letra j. ¿Qué letra debe usar?",
+   "opciones": [
+    "La g",
+    "La h",
+    "La y",
+    "La c"
+   ],
+   "correcta": 0,
+   "tip": "Girasol se escribe con g. Antes de la i, la g suena como j, y por eso a veces se confunden.",
+   "id": "leng2-oa21-12"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "Perro suena con la r fuerte en medio. ¿Cuántas r se escriben?",
+   "opciones": [
+    "Dos",
+    "Una",
+    "Tres",
+    "Ninguna"
+   ],
+   "correcta": 0,
+   "tip": "Entre dos vocales, la r fuerte se escribe doble: perro, carro, burro. Con una sola r sonaría suave, como pero.",
+   "id": "leng2-oa21-13"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "Ratón empieza con la r fuerte. ¿Cuántas r lleva al comienzo?",
+   "opciones": [
+    "Una sola",
+    "Dos",
+    "Tres",
+    "Ninguna"
+   ],
+   "correcta": 0,
+   "tip": "Al comienzo de una palabra la r siempre suena fuerte, así que basta una: ratón, rosa, rana.",
+   "id": "leng2-oa21-14"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "¿En qué palabra la r suena fuerte y se escribe doble?",
+   "opciones": [
+    "carro",
+    "caro",
+    "pera",
+    "loro"
+   ],
+   "correcta": 0,
+   "tip": "En carro la r suena fuerte entre dos vocales, por eso va doble. En caro, pera y loro la r suena suave y va una sola.",
+   "id": "leng2-oa21-15"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "Benjamín escribió Enrique con dos r. ¿Está bien?",
+   "opciones": [
+    "No, después de n va una",
+    "Sí, porque suena fuerte",
+    "No, se escribe sin r",
+    "Sí, siempre van dos"
+   ],
+   "correcta": 0,
+   "tip": "Después de la n, la r suena fuerte con una sola letra: Enrique, honra. La r doble solo va entre dos vocales.",
+   "id": "leng2-oa21-16"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "Carro y caro suenan distinto. ¿Qué cambia al escribirlos?",
+   "opciones": [
+    "Carro lleva una r más",
+    "Caro lleva una a más",
+    "Carro lleva una c más",
+    "Caro lleva una o más"
+   ],
+   "correcta": 0,
+   "tip": "Carro tiene dos r y suena fuerte; caro tiene una r y suena suave. Esa letra cambia el sonido y lo que significa.",
+   "id": "leng2-oa21-17"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "¿Qué palabra lleva una sola r, aunque la r suene fuerte?",
+   "opciones": [
+    "rosa",
+    "toro",
+    "pera",
+    "cara"
+   ],
+   "correcta": 0,
+   "tip": "En rosa la r está al comienzo: suena fuerte con una sola letra. En toro, pera y cara la r suena suave.",
+   "id": "leng2-oa21-18"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "Camila empezó su oración con letra chica. ¿Qué debe corregir?",
+   "opciones": [
+    "Poner mayúscula al inicio",
+    "Poner un punto al inicio",
+    "Borrar la primera palabra",
+    "Escribir todo en mayúscula"
+   ],
+   "correcta": 0,
+   "tip": "Toda oración empieza con mayúscula. Solo cambia la primera letra; el resto de la oración va con letra chica.",
+   "id": "leng2-oa21-19"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "Tomás escribió dos oraciones. ¿Cuál debe empezar con mayúscula?",
+   "opciones": [
+    "Las dos",
+    "Solo la primera",
+    "Solo la segunda",
+    "Ninguna de ellas"
+   ],
+   "correcta": 0,
+   "tip": "Cada oración empieza con mayúscula, también la que viene después de un punto.",
+   "id": "leng2-oa21-20"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "Ana escribió mamá canta, todo con letra chica. ¿Qué letra cambia?",
+   "opciones": [
+    "La m de mamá",
+    "La a de mamá",
+    "La c de canta",
+    "La t de canta"
+   ],
+   "correcta": 0,
+   "tip": "La primera letra de la oración va con mayúscula. Mamá es la primera palabra, así que su m va mayúscula.",
+   "id": "leng2-oa21-21"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "¿Qué palabra es un nombre propio y va con mayúscula?",
+   "opciones": [
+    "Rancagua",
+    "ciudad",
+    "plaza",
+    "cerro"
+   ],
+   "correcta": 0,
+   "tip": "Rancagua es el nombre de una ciudad, por eso va con mayúscula. Ciudad, plaza y cerro son nombres comunes.",
+   "id": "leng2-oa21-22"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "La perra de Matías se llama Luna. ¿Su nombre va con mayúscula?",
+   "opciones": [
+    "Sí, es un nombre propio",
+    "No, es de un animal",
+    "Solo si abre la oración",
+    "No, va toda en mayúscula"
+   ],
+   "correcta": 0,
+   "tip": "Luna es el nombre propio de la perra, y los nombres propios van con mayúscula, también los de las mascotas.",
+   "id": "leng2-oa21-23"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "En medio de una oración, ¿Valparaíso va con mayúscula?",
+   "opciones": [
+    "Sí, porque es un nombre",
+    "No, solo al comienzo",
+    "Solo si es corta",
+    "No, nunca lleva"
+   ],
+   "correcta": 0,
+   "tip": "Los nombres de ciudades, países y personas van con mayúscula siempre, estén donde estén en la oración.",
+   "id": "leng2-oa21-24"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "Diego escribió que su gato es gris sin cerrar la oración. ¿Qué falta?",
+   "opciones": [
+    "El punto",
+    "La coma",
+    "Los dos puntos",
+    "Un guion"
+   ],
+   "correcta": 0,
+   "tip": "Una oración que cuenta algo termina con un punto. El punto avisa que la idea se acabó.",
+   "id": "leng2-oa21-25"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "Matías escribió: Cómo te llamas. ¿Qué le falta a su pregunta?",
+   "opciones": [
+    "Los signos de pregunta",
+    "Un punto al final",
+    "Una mayúscula en te",
+    "Los de exclamación"
+   ],
+   "correcta": 0,
+   "tip": "Una pregunta escrita lleva signos de pregunta, uno que la abre al comienzo y otro que la cierra al final.",
+   "id": "leng2-oa21-26"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "¿Dónde se escribe el punto de una oración?",
+   "opciones": [
+    "Al final",
+    "Al comienzo",
+    "En la mitad",
+    "Después de cada palabra"
+   ],
+   "correcta": 0,
+   "tip": "El punto cierra la oración: va justo después de la última palabra.",
+   "id": "leng2-oa21-27"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "Benjamín escribió una pregunta. ¿Dónde van los signos de pregunta?",
+   "opciones": [
+    "Al comienzo y al final",
+    "Solo al final",
+    "Solo al comienzo",
+    "Después de cada palabra"
+   ],
+   "correcta": 0,
+   "tip": "En español la pregunta se abre y se cierra: lleva un signo al comienzo y otro al final.",
+   "id": "leng2-oa21-28"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "Camila escribe que ganó un premio, muy emocionada. ¿Qué signos usa?",
+   "opciones": [
+    "Los de exclamación",
+    "Los de pregunta",
+    "Un solo punto",
+    "Los dos puntos"
+   ],
+   "correcta": 0,
+   "tip": "Para escribir algo dicho con mucha emoción se usan los signos de exclamación, uno al comienzo y otro al final.",
+   "id": "leng2-oa21-29"
+  },
+  {
+   "oa": "LE02 OA 21",
+   "pregunta": "Tomás puso el signo de pregunta solo al final. ¿Qué le faltó?",
+   "opciones": [
+    "El signo que la abre",
+    "Una mayúscula al final",
+    "Un punto al final",
+    "Nada, está bien"
+   ],
+   "correcta": 0,
+   "tip": "Una pregunta escrita necesita dos signos: el que la abre al comienzo y el que la cierra al final.",
+   "id": "leng2-oa21-30"
+  }
+ ]
+}

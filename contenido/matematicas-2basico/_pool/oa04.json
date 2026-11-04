@@ -1,0 +1,342 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "Un puñado tiene unos 10 porotos. Ana saca 5 puñados. ¿Cuántos son?",
+   "opciones": [
+    "Unos 50",
+    "Unos 15",
+    "Unos 10",
+    "Unos 100"
+   ],
+   "correcta": 0,
+   "tip": "Cada puñado es una referencia de unos 10: cinco puñados son unos 50 porotos.",
+   "id": "mate2-oa04-1"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "En una fila caben 10 niños. Hay 4 filas casi llenas. ¿Cuántos hay?",
+   "opciones": [
+    "Unos 40",
+    "Unos 14",
+    "Unos 4",
+    "Unos 80"
+   ],
+   "correcta": 0,
+   "tip": "Cada fila tiene unos 10 niños, así que cuatro filas tienen unos 40.",
+   "id": "mate2-oa04-2"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "El frasco chico tiene 20 dulces y el grande el doble. ¿Y el grande?",
+   "opciones": [
+    "Unos 40",
+    "Unos 22",
+    "Unos 20",
+    "Unos 60"
+   ],
+   "correcta": 0,
+   "tip": "El doble de 20 es 40: el frasco grande debe tener unos 40 dulces.",
+   "id": "mate2-oa04-3"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "Media caja tiene unos 25 lápices. ¿Cuántos tiene la caja llena?",
+   "opciones": [
+    "Unos 50",
+    "Unos 25",
+    "Unos 30",
+    "Unos 100"
+   ],
+   "correcta": 0,
+   "tip": "La caja llena es dos mitades: 25 y 25 son unos 50 lápices.",
+   "id": "mate2-oa04-4"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "Una caja llena trae unos 60 clips. Está a la mitad. ¿Cuántos hay?",
+   "opciones": [
+    "Unos 30",
+    "Unos 60",
+    "Unos 50",
+    "Unos 20"
+   ],
+   "correcta": 0,
+   "tip": "La mitad de 60 es 30, porque 30 y 30 hacen 60.",
+   "id": "mate2-oa04-5"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "Un capítulo tiene unas 10 páginas. ¿Y un libro de 6 capítulos?",
+   "opciones": [
+    "Unas 60",
+    "Unas 16",
+    "Unas 10",
+    "Unas 6"
+   ],
+   "correcta": 0,
+   "tip": "Seis capítulos de unas 10 páginas son unas 60 páginas.",
+   "id": "mate2-oa04-6"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "Diego da 20 pasos hasta la puerta. La reja está al doble. ¿Cuántos?",
+   "opciones": [
+    "Unos 40 pasos",
+    "Unos 22 pasos",
+    "Unos 20 pasos",
+    "Unos 80 pasos"
+   ],
+   "correcta": 0,
+   "tip": "El doble de 20 pasos son unos 40 pasos hasta la reja.",
+   "id": "mate2-oa04-7"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "En un bus caben unos 40 niños. ¿Cuántos caben en 2 buses?",
+   "opciones": [
+    "Unos 80",
+    "Unos 42",
+    "Unos 40",
+    "Unos 60"
+   ],
+   "correcta": 0,
+   "tip": "Dos buses de unos 40 niños: 40 y 40 son unos 80.",
+   "id": "mate2-oa04-8"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "Para estimar los porotos de un frasco, ¿qué conviene contar?",
+   "opciones": [
+    "Un solo puñado",
+    "Todos, uno a uno",
+    "Nada, se inventa",
+    "Solo los de arriba"
+   ],
+   "correcta": 0,
+   "tip": "Contar un puñado da una referencia; luego se ve cuántos puñados caben en el frasco.",
+   "id": "mate2-oa04-9"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "Javiera estimó 50 bolitas y había 48. ¿Fue buena estimación?",
+   "opciones": [
+    "Sí, quedó cerca",
+    "No, no fue exacta",
+    "No, se pasó mucho",
+    "Sí, la adivinó"
+   ],
+   "correcta": 0,
+   "tip": "Estimar no es adivinar el número exacto: 50 está muy cerca de 48.",
+   "id": "mate2-oa04-10"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "Matías estimó 90 lápices y había 41. ¿Estimó bien?",
+   "opciones": [
+    "No, quedó lejos",
+    "Sí, quedó cerca",
+    "Sí, fue exacta",
+    "No, le faltaron"
+   ],
+   "correcta": 0,
+   "tip": "De 41 a 90 hay mucha distancia: Matías dijo muchos más de los que había.",
+   "id": "mate2-oa04-11"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "Un puñado tiene unos 5 dulces. Sofía saca 6 puñados. ¿Cuántos dulces?",
+   "opciones": [
+    "Unos 30",
+    "Unos 11",
+    "Unos 5",
+    "Unos 60"
+   ],
+   "correcta": 0,
+   "tip": "Seis puñados de unos 5 dulces son unos 30: 5, 10, 15, 20, 25, 30.",
+   "id": "mate2-oa04-12"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "Hay 30 bolitas y le echan un puñado de unas 10. ¿Cuántas hay?",
+   "opciones": [
+    "Unas 40",
+    "Unas 30",
+    "Unas 20",
+    "Unas 300"
+   ],
+   "correcta": 0,
+   "tip": "A las 30 bolitas se suman unas 10 más: quedan unas 40.",
+   "id": "mate2-oa04-13"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "Un canasto tenía unas 50 papas y sacaron como 20. ¿Cuántas quedan?",
+   "opciones": [
+    "Unas 30",
+    "Unas 70",
+    "Unas 50",
+    "Unas 20"
+   ],
+   "correcta": 0,
+   "tip": "Si de unas 50 se sacan unas 20, quedan unas 30 papas.",
+   "id": "mate2-oa04-14"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "Una torre de 10 cubos llega a la rodilla. Otra es el doble. ¿Cuántos?",
+   "opciones": [
+    "Unos 20 cubos",
+    "Unos 12 cubos",
+    "Unos 10 cubos",
+    "Unos 100 cubos"
+   ],
+   "correcta": 0,
+   "tip": "Si 10 cubos llegan a la rodilla, el doble de alto son unos 20 cubos.",
+   "id": "mate2-oa04-15"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "Una fila tiene 10 niños. Otra mide como 3 filas. ¿Cuántos tiene?",
+   "opciones": [
+    "Unos 30",
+    "Unos 13",
+    "Unos 10",
+    "Unos 100"
+   ],
+   "correcta": 0,
+   "tip": "Tres veces la fila de 10 niños son unos 30 niños.",
+   "id": "mate2-oa04-16"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "Una hoja tiene unas 20 palabras. ¿Cuántas hay en 5 hojas?",
+   "opciones": [
+    "Unas 100",
+    "Unas 25",
+    "Unas 20",
+    "Unas 50"
+   ],
+   "correcta": 0,
+   "tip": "Cinco hojas de unas 20 palabras: 20, 40, 60, 80, 100.",
+   "id": "mate2-oa04-17"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "Una bandeja tiene 10 galletas. Hay 9 casi llenas. ¿Cuántas galletas?",
+   "opciones": [
+    "Unas 90",
+    "Unas 19",
+    "Unas 10",
+    "Unas 9"
+   ],
+   "correcta": 0,
+   "tip": "Nueve bandejas de unas 10 galletas son unas 90 galletas.",
+   "id": "mate2-oa04-18"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "Un racimo tiene unas 20 uvas. ¿Cuántas uvas hay en 3 racimos?",
+   "opciones": [
+    "Unas 60",
+    "Unas 23",
+    "Unas 20",
+    "Unas 90"
+   ],
+   "correcta": 0,
+   "tip": "Tres racimos de unas 20 uvas: 20, 40, 60.",
+   "id": "mate2-oa04-19"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "En un balde caben unas 100 piedras. Está a la mitad. ¿Cuántas hay?",
+   "opciones": [
+    "Unas 50",
+    "Unas 100",
+    "Unas 20",
+    "Unas 98"
+   ],
+   "correcta": 0,
+   "tip": "La mitad de 100 es 50, porque 50 y 50 hacen 100.",
+   "id": "mate2-oa04-20"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "Cada rama tiene unas 10 hojas. Hay 8 ramas. ¿Cuántas hojas?",
+   "opciones": [
+    "Unas 80",
+    "Unas 18",
+    "Unas 10",
+    "Unas 8"
+   ],
+   "correcta": 0,
+   "tip": "Ocho ramas de unas 10 hojas son unas 80 hojas.",
+   "id": "mate2-oa04-21"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "Estimar una cantidad es decir…",
+   "opciones": [
+    "Un número cercano",
+    "El número exacto",
+    "Un número al azar",
+    "El número mayor"
+   ],
+   "correcta": 0,
+   "tip": "Al estimar se busca un número cercano al real, pensando con una referencia.",
+   "id": "mate2-oa04-22"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "Diego estima 30 hormigas y Ana 80. Había 34. ¿Quién estimó mejor?",
+   "opciones": [
+    "Diego",
+    "Ana",
+    "Los dos igual",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Del 30 al 34 hay muy poco; del 80 al 34 hay mucho más.",
+   "id": "mate2-oa04-23"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "Camila dijo 20 globos y Benjamín 60. Eran 55. ¿Quién se acercó más?",
+   "opciones": [
+    "Benjamín",
+    "Camila",
+    "Los dos igual",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "El 60 está a 5 del 55, y el 20 está mucho más lejos.",
+   "id": "mate2-oa04-24"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "En una mesa caben unos 6 niños. Hay 5 mesas llenas. ¿Cuántos son?",
+   "opciones": [
+    "Unos 30",
+    "Unos 11",
+    "Unos 60",
+    "Unos 6"
+   ],
+   "correcta": 0,
+   "tip": "Cinco mesas de unos 6 niños: 6, 12, 18, 24, 30.",
+   "id": "mate2-oa04-25"
+  },
+  {
+   "oa": "MA02 OA 04",
+   "pregunta": "En el patio hay unos 40 niños y llegan como 30 más. ¿Cuántos hay?",
+   "opciones": [
+    "Unos 70",
+    "Unos 10",
+    "Unos 40",
+    "Unos 34"
+   ],
+   "correcta": 0,
+   "tip": "A unos 40 niños se suman unos 30: son unos 70.",
+   "id": "mate2-oa04-26"
+  }
+ ]
+}

@@ -175,6 +175,13 @@ están hoy en una expedición jugable, el resto es reserva.
 > un grupo de profesionales, apoyados con Inteligencia Artificial, objetivo por objetivo"* y
 > **nunca** *"una a una"*.
 >
+> 🟡 **2° básico, el séptimo curso, está EN CONSTRUCCIÓN (Sesión 139, 04-05/11/2026) y NO se
+> anuncia.** Tiene banco (**2.466 preguntas + 35 lecciones**, leídas una por una por agentes y
+> **sin firmar todavía**: la foto "17.000 de 17.000" de arriba ya no es la cola completa), reparto
+> aprobado y fork `2do/index.html` jugable en `vulpo.cl/2do/` **sin enlazar**. Le faltan la firma
+> de Roberto, la voz (va directo a R2), el arte y aplicar el nivel 02 del esquema. Detalle y orden
+> en `pendiente.md`. Después viene 1° básico.
+
 > ✅ **VULPO se anuncia desde 3° a 8° básico, los SEIS cursos (06/09/2026), decisión de
 > Roberto.** La landing (`index.html`) enlaza los **seis cursos jugables** —3°, 4°, 5°, 6°, 7° y
 > 8°, cada uno con banco aprobado, fork cableado y arte propio— y dice que el proyecto se
@@ -14415,3 +14422,79 @@ y mismo tamaño = mismo clip), y `verificar` igual compara el MD5 de todos. Ahor
   **`.gitignore` ya ignora `assets/voz/**/*.mp3`**: no toca lo que git ya sigue (los 24.250 de 3° y
   4° siguen versionados), pero los clips de los cursos nuevos **nacen fuera del repo y van solo a
   R2**. Comprobado con `git check-ignore`. **Siguiente: 2° básico.**
+
+### Sesión 139 (2026-11-04 y 05) — 2° básico: currículum, banco leído entero y el fork jugable
+Roberto pidió sumar **2° y 1° básico**, en ese orden, y la noche del 04/11 dejó el trabajo en
+`/loop` (*"arma el plan y ejecútalo hasta donde puedas sin mi aprobación"*). A la mañana pidió
+**tareas más cortas y menos agentes**, para que no los pillara el límite de sesión: desde ahí se
+trabajó con **2 agentes a la vez y 2-3 archivos por agente**. Spec
+`docs/superpowers/specs/2026-11-04-2-basico-design.md`, plan
+`docs/superpowers/plans/2026-11-04-2-basico.md`. **2° no se anuncia todavía**: está jugable en
+`vulpo.cl/2do/` sin enlazar.
+
+#### Decisiones de Roberto
+**4 asignaturas completas**, **10 preguntas por etapa** con enunciados de **≤ 70 caracteres** (160
+con fragmento), **Reto Sin Fin + Vocabulario** (sin libro), camino currículum → banco → aprobación
+→ fork → voz → arte, y Google Play **después de 1°**. El reparto en **23 capítulos** lo aprobó
+tal cual el 05/11 (`docs/reparto-2basico.md`). Cuatro dudas de fondo, resueltas por él:
+**reescribir** las 15 preguntas de `MA02 OA 02` que la voz regalaba; **dejar** las de ortografía
+que muestran la palabra escrita (están hechas para el oído); **1536 (Almagro)** como llegada de los
+españoles; y **renombrar** dos villanos que se parecían a los de 3° → **La Neblina** (Historia) y
+**El Ladrón de Letras** (Lenguaje). Matemática es **El Desorden** y Ciencias **La Sequía**.
+
+#### El banco: 2.466 preguntas, y leído pregunta por pregunta
+Matemática 652 · Lenguaje 858 · Historia 480 · Ciencias 416 · Vocabulario 60, más **35 lecciones**
+(22 mini-clases de Matemática, 4 introducciones de Historia, 4 de Ciencias y 5 de Lenguaje). Las
+cinco auditorías dan **0 errores** en los cinco bancos.
+
+> **Los auditores automáticos daban 0 errores desde el primer día, y aun así la lectura completa
+> corrigió más de 130 preguntas.** Ninguna clave estaba equivocada; los defectos eran de los que un
+> script no ve: **dos opciones defendibles** («bajar por la baranda», «el sobre»), **sujetos
+> ambiguos**, ciencia que **no vale para todo Chile** (hay lagartijas que paren crías vivas, ranas
+> que no desovan en el agua, diciembre no es todo verano) y **frases que fallan al ESCUCHARLAS** —la
+> más repetida: «aprendió galopar» suena a «aprendió *a* galopar»—. Por eso la lectura completa
+> quedó en el plan como paso obligatorio de cada curso con voz, no como extra.
+
+⚠️ **Chilenismos que la voz vuelve peligrosos:** la opción **«Su concha»** del caracol se oye como
+un insulto → **«caparazón»** en Ciencias y Lenguaje. También «grifo» (en Chile es el de bomberos)
+→ «llave de agua», «se le escurrió» (= se le resbaló) y «calza». Con voz, una palabra no se juzga
+solo leyéndola: hay que preguntarse cómo suena en boca de un niño chileno.
+
+⚠️ **`auditar-solape-oa.py` sobre `_pool/*.json` no compara nada**: cada archivo es un solo OA, así
+que su «0 pares» era cierto por vacuidad. La comprobación válida es sobre el `preguntas.json`
+consolidado. Queda escrito porque engañó durante toda la escritura del banco.
+
+#### Lo que necesitó el motor y las herramientas
+- `assets/js/lecciones.js`: el widget `bloques` gana `sinCentenas` (2° no tiene centenas; sin el
+  parámetro dibuja lo mismo que antes), y el aviso del Jefe Final de Matemática decía **«Vence las
+  4 expediciones» fijo** —el número de 8°— en cursos de 6 y 7 unidades. Ahora sale de
+  `c.capitulos.length`, la misma lista que decide el desbloqueo. Verificado en 2°, 3°, 5° y 8°.
+- `scripts/auditar-banco-nivel.py`: topes de largo de 2° (70 / 160).
+- Fila `02` en `assets/js/niveles.js` y en `kimun_asignaturas_todas()` de `supabase/schema.sql`
+  (**sin aplicar todavía, a propósito**: se pega al publicar, para que el panel no ofrezca un curso
+  que no se anuncia). `generar-oa-civica.py` y `generar-oa-unidad.py` pasan a **7 cursos, 48 OA
+  cívicos y 28 bancos**; `auditar-rotulos-etapa.py`, `revisar-marco-historia.py` y
+  `armar-webdir.py` conocen 2°.
+- El `HI02 OA 13` va en la **unidad 3** del `oa.json`, igual que en el reparto: de ahí salen el
+  semáforo del alumno y la planificación del profesor.
+
+#### El fork `2do/index.html`
+Clonado de `4to/` (el más reciente con voz, sin reloj y con mini-clases), con las **81 metas** en
+lenguaje de niño y el generador **`genCalc2`** del Reto Sin Fin, verificado con **1.500
+operaciones recalculadas por otro camino, 0 errores** y con su control negativo. ⚠️ Las sumas y
+restas hasta 100 van **sin reserva**, porque `MA02 OA 09` lo dice literalmente («sin considerar
+reserva»); la reserva queda dentro del 20. **Verificado jugando con `cdp.mjs`**: JUGADOR navega,
+las 4 campañas abren, las mini-clases bloquean la etapa 1, una etapa por asignatura sin reloj y del
+OA correcto, Sin Fin, Vocabulario y Formación Ciudadana; con la puerta cerrada solo la demo
+(`mate2-cap1`); el guardado de 3° y 8° intacto; `?solo=` y `?armar=1`; **cero errores de consola y
+cero fallos de red**.
+
+⚠️ **Provisorio, a propósito:** el **🔊 está apagado** hasta generar la voz de 2° (`VOZ_DIRS=[]`:
+con la lista vacía `VOZ.init` no se activa, ni siquiera con la voz del navegador); las **9 portadas
+nuevas** apuntan a la genérica de su asignatura y los **villanos salen como emoji**, con su
+`PLACEHOLDER`, hasta que exista el arte (`docs/prompts-arte-2basico.md`: 17 imágenes).
+
+- **Pendiente de Roberto, en orden:** aprobar el banco y las lecciones en el tablero; autorizar la
+  voz (~US$7-9, va directo a R2); generar las 17 imágenes; y aplicar el esquema al publicar.
+  Después viene 1° básico. **De arrastre, sin cambios:** la app a Play y sacar los MP3 de 3° y 4°
+  del repo (los dos esperan a 1°), la prueba cerrada de Google Play e INAPI.

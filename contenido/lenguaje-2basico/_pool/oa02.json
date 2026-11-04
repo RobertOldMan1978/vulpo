@@ -1,0 +1,329 @@
+{
+ "preguntas": [
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "Al leer en voz alta, ¿qué pide un punto seguido?",
+   "opciones": [
+    "Una pausa corta y seguir",
+    "Leer con voz más fuerte",
+    "Cambiar a otra página",
+    "Dejar de leer ahí"
+   ],
+   "correcta": 0,
+   "tip": "En el punto seguido se hace una pausa breve y se sigue leyendo, porque el párrafo continúa.",
+   "id": "leng2-oa02-1"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "Al leer en voz alta, ¿qué avisa un punto aparte?",
+   "opciones": [
+    "Que empieza otro párrafo",
+    "Que la lectura terminó",
+    "Que viene una pregunta",
+    "Que hay que leer rápido"
+   ],
+   "correcta": 0,
+   "tip": "El punto aparte cierra un párrafo. Después de él, el texto sigue en un párrafo nuevo.",
+   "id": "leng2-oa02-2"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "Después de un punto seguido, ¿dónde sigue el texto?",
+   "opciones": [
+    "En el mismo párrafo",
+    "En un párrafo nuevo",
+    "En otra página",
+    "En el título"
+   ],
+   "correcta": 0,
+   "tip": "El punto seguido separa oraciones dentro del mismo párrafo: se hace una pausa y se continúa.",
+   "id": "leng2-oa02-3"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "Ana llega a un punto aparte. ¿Dónde sigue leyendo?",
+   "opciones": [
+    "En el renglón de abajo",
+    "En la misma oración",
+    "En la página anterior",
+    "En el título del cuento"
+   ],
+   "correcta": 0,
+   "tip": "Después del punto aparte el párrafo nuevo empieza en el renglón de abajo.",
+   "id": "leng2-oa02-4"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "¿Qué pausa es más larga: la del punto seguido o la del aparte?",
+   "opciones": [
+    "La del punto aparte",
+    "La del punto seguido",
+    "Las dos son iguales",
+    "Ninguna hace pausa"
+   ],
+   "correcta": 0,
+   "tip": "El punto aparte cierra un párrafo entero, por eso su pausa es más larga que la del punto seguido.",
+   "id": "leng2-oa02-5"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "Matías lee sin detenerse en ningún punto. ¿Qué le conviene hacer?",
+   "opciones": [
+    "Hacer una pausa en cada punto",
+    "Leer todavía más rápido",
+    "Saltarse algunas oraciones",
+    "Leer solo los títulos"
+   ],
+   "correcta": 0,
+   "tip": "Las pausas de los puntos separan las ideas. Sin ellas, quien escucha no sabe dónde termina cada una.",
+   "id": "leng2-oa02-6"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "Sofía para después de cada palabra que lee. ¿Cómo suena su lectura?",
+   "opciones": [
+    "Cortada y lenta",
+    "Clara y pareja",
+    "Muy alegre",
+    "Muy rápida"
+   ],
+   "correcta": 0,
+   "tip": "Si se detiene en cada palabra, la lectura se oye cortada y cuesta seguir la idea. Las pausas van en los puntos.",
+   "id": "leng2-oa02-7"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "Al leer mariposas, Benjamín dijo maripo. ¿Qué le faltó?",
+   "opciones": [
+    "Decir la palabra entera",
+    "Leer mucho más despacio",
+    "Hacer una pausa larga",
+    "Leer más fuerte"
+   ],
+   "correcta": 0,
+   "tip": "Pronunciar con precisión es decir cada palabra completa, sin comerse el final.",
+   "id": "leng2-oa02-8"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "Diego leyó mal una palabra, se dio cuenta y la leyó bien. ¿Hizo bien?",
+   "opciones": [
+    "Sí, se corrigió",
+    "No, debía seguir sin arreglarla",
+    "No, debía dejar de leer",
+    "Sí, pero debía empezar todo de nuevo"
+   ],
+   "correcta": 0,
+   "tip": "Corregirse a veces está bien: se vuelve a decir la palabra bien y se sigue leyendo.",
+   "id": "leng2-oa02-9"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "Javiera lee tan apurada que se come palabras. ¿Qué le conviene?",
+   "opciones": [
+    "Leer más tranquila",
+    "Leer todavía más apurada",
+    "Leer en silencio",
+    "Saltarse las palabras largas"
+   ],
+   "correcta": 0,
+   "tip": "Leer con fluidez no es leer rápido: es leer parejo, sin comerse palabras, para que se entienda.",
+   "id": "leng2-oa02-10"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "Benjamín se traba al leer un texto nuevo. ¿Qué le ayuda?",
+   "opciones": [
+    "Leerlo varias veces",
+    "Leerlo una sola vez",
+    "No volver a leerlo",
+    "Leerlo sin mirarlo"
+   ],
+   "correcta": 0,
+   "tip": "Cada vez que se relee un texto se conoce mejor, y la lectura sale más pareja y segura.",
+   "id": "leng2-oa02-11"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "Sofía lee parejo, sin trabarse y parando en los puntos. ¿Cómo lee?",
+   "opciones": [
+    "Con fluidez",
+    "Muy lento",
+    "Con errores",
+    "Sin pausas"
+   ],
+   "correcta": 0,
+   "tip": "Leer con fluidez es leer parejo, sin trabarse y respetando las pausas de los puntos.",
+   "id": "leng2-oa02-12"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "Ana lee «Llegó el invierno» y hay un punto seguido. ¿Qué hace?",
+   "opciones": [
+    "Una pausa corta y sigue",
+    "Deja de leer el cuento",
+    "Pasa a la otra página",
+    "Vuelve a empezar todo"
+   ],
+   "correcta": 0,
+   "tip": "En el punto seguido Ana hace una pausa breve y continúa con la oración siguiente.",
+   "id": "leng2-oa02-13"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "¿Qué signo marca el final de un párrafo, antes de cambiar de renglón?",
+   "opciones": [
+    "El punto aparte",
+    "El punto seguido",
+    "La coma",
+    "El signo de pregunta"
+   ],
+   "correcta": 0,
+   "tip": "El punto aparte cierra el párrafo; después se empieza otro en el renglón de abajo.",
+   "id": "leng2-oa02-14"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "Matías leyó dos párrafos sin ninguna pausa entre ellos. ¿Qué olvidó?",
+   "opciones": [
+    "La pausa del punto aparte",
+    "Leer el título del cuento",
+    "Pronunciar más fuerte",
+    "Leer la primera letra"
+   ],
+   "correcta": 0,
+   "tip": "Entre un párrafo y otro hay un punto aparte, que pide una pausa más larga.",
+   "id": "leng2-oa02-15"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "La profesora lee un cuento y hace una pausa larga. ¿Qué encontró?",
+   "opciones": [
+    "Un punto aparte",
+    "Una palabra larga",
+    "Un dibujo bonito",
+    "Una letra grande"
+   ],
+   "correcta": 0,
+   "tip": "La pausa larga se hace en el punto aparte, donde termina un párrafo.",
+   "id": "leng2-oa02-16"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "Javiera para un poquito y sigue en el mismo párrafo. ¿Qué encontró?",
+   "opciones": [
+    "Un punto seguido",
+    "Un punto aparte",
+    "El final del cuento",
+    "Una página en blanco"
+   ],
+   "correcta": 0,
+   "tip": "La pausa corta, sin cambiar de párrafo, la pide el punto seguido.",
+   "id": "leng2-oa02-17"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "¿Por qué hay que pronunciar bien cada palabra al leer en voz alta?",
+   "opciones": [
+    "Para que se entienda",
+    "Para terminar más rápido",
+    "Para leer más fuerte",
+    "Para no cansarse"
+   ],
+   "correcta": 0,
+   "tip": "Si una palabra se dice mal, quien escucha puede entender otra cosa.",
+   "id": "leng2-oa02-18"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "Benjamín leyó pera donde decía perro. ¿Qué pasó con la oración?",
+   "opciones": [
+    "Cambió lo que dice",
+    "Quedó igual que antes",
+    "Quedó más corta",
+    "Quedó más bonita"
+   ],
+   "correcta": 0,
+   "tip": "Pera y perro son palabras distintas. Al cambiar una, la oración dice otra cosa.",
+   "id": "leng2-oa02-19"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "Al leer en voz alta, Tomás se salta una palabra. ¿Qué puede pasar?",
+   "opciones": [
+    "Que no se entienda",
+    "Que se lea más bonito",
+    "Que el texto mejore",
+    "Nada, da lo mismo"
+   ],
+   "correcta": 0,
+   "tip": "Cada palabra aporta a la idea. Si falta una, la oración puede quedar sin sentido.",
+   "id": "leng2-oa02-20"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "Camila lee mirando bien cada palabra, sin apurarse. ¿Qué logra?",
+   "opciones": [
+    "Leer cada palabra bien",
+    "Leer sin entender",
+    "Terminar antes que todos",
+    "Saltarse las difíciles"
+   ],
+   "correcta": 0,
+   "tip": "Mirar bien cada palabra y no apurarse ayuda a pronunciarlas con precisión.",
+   "id": "leng2-oa02-21"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "Matías lee un cuento en voz alta. ¿Dónde le conviene hacer pausas?",
+   "opciones": [
+    "En los puntos",
+    "Después de cada palabra",
+    "Al final de cada renglón",
+    "Solo al terminar el cuento"
+   ],
+   "correcta": 0,
+   "tip": "Las pausas van donde hay un punto. El final de un renglón no siempre es el final de una idea.",
+   "id": "leng2-oa02-22"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "Sofía para en cada renglón aunque no haya punto. ¿Qué le conviene?",
+   "opciones": [
+    "Seguir hasta el punto",
+    "Parar todavía más",
+    "Leer un solo renglón",
+    "Saltar al otro párrafo"
+   ],
+   "correcta": 0,
+   "tip": "Una oración puede seguir en el renglón de abajo. La pausa se hace recién al llegar al punto.",
+   "id": "leng2-oa02-23"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "Tomás leyó dos oraciones pegadas, sin parar en el punto. ¿Cómo sonó?",
+   "opciones": [
+    "Como una idea enredada",
+    "Muy claro y ordenado",
+    "Como una pregunta",
+    "Como un poema"
+   ],
+   "correcta": 0,
+   "tip": "El punto separa dos ideas. Sin la pausa, las dos se mezclan y se oyen como una sola, enredada.",
+   "id": "leng2-oa02-24"
+  },
+  {
+   "oa": "LE02 OA 02",
+   "pregunta": "Camila leyó una palabra que no estaba escrita. ¿Qué le conviene?",
+   "opciones": [
+    "Leer solo lo escrito",
+    "Agregar más palabras",
+    "Leer más fuerte",
+    "Inventar el final"
+   ],
+   "correcta": 0,
+   "tip": "Leer con precisión es decir lo que está escrito, sin quitar ni agregar palabras.",
+   "id": "leng2-oa02-25"
+  }
+ ]
+}

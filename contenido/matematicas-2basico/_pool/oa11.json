@@ -1,0 +1,418 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "¿Cuánto es 4 x 2?",
+   "opciones": [
+    "8",
+    "6",
+    "10",
+    "12"
+   ],
+   "correcta": 0,
+   "tip": "4 x 2 son 4 grupos de 2: 2 + 2 + 2 + 2 = 8.",
+   "id": "mate2-oa11-1"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "¿Cuánto es 3 x 5?",
+   "opciones": [
+    "15",
+    "8",
+    "10",
+    "20"
+   ],
+   "correcta": 0,
+   "tip": "3 x 5 es sumar el 5 tres veces: 5 + 5 + 5 = 15. Si da 8, se sumó 3 + 5.",
+   "id": "mate2-oa11-2"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "¿Cuánto dan 6 veces 10?",
+   "opciones": [
+    "60",
+    "16",
+    "50",
+    "70"
+   ],
+   "correcta": 0,
+   "tip": "6 x 10 son 6 grupos de 10, o sea seis decenas: 60.",
+   "id": "mate2-oa11-3"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "7 x 2 es el doble de 7. ¿Cuánto da?",
+   "opciones": [
+    "14",
+    "9",
+    "12",
+    "16"
+   ],
+   "correcta": 0,
+   "tip": "7 x 2 es el doble de 7: 7 + 7 = 14.",
+   "id": "mate2-oa11-4"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "Si sumas el 5 ocho veces, ¿cuánto da?",
+   "opciones": [
+    "40",
+    "13",
+    "35",
+    "45"
+   ],
+   "correcta": 0,
+   "tip": "Sumar el 5 ocho veces es 8 x 5. Como 10 x 5 son 50, le quitas dos grupos de 5: quedan 40.",
+   "id": "mate2-oa11-5"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "Javiera calcula 9 x 10. ¿Qué resultado obtiene?",
+   "opciones": [
+    "90",
+    "19",
+    "80",
+    "100"
+   ],
+   "correcta": 0,
+   "tip": "9 grupos de 10 son nueve decenas: 90. Uno menos que 10 x 10.",
+   "id": "mate2-oa11-6"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "Benjamín dice que 4 x 5 es 9. ¿Qué hizo mal?",
+   "opciones": [
+    "Sumó los números",
+    "Contó un grupo menos",
+    "Contó un grupo más",
+    "Restó los números"
+   ],
+   "correcta": 0,
+   "tip": "4 + 5 da 9, pero 4 x 5 son 4 grupos de 5: 5 + 5 + 5 + 5 = 20.",
+   "id": "mate2-oa11-7"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "5 + 5 + 5 + 5 es lo mismo que…",
+   "opciones": [
+    "4 x 5",
+    "5 x 5",
+    "4 + 5",
+    "3 x 5"
+   ],
+   "correcta": 0,
+   "tip": "El 5 se suma 4 veces: son 4 grupos de 5, o sea 4 x 5.",
+   "id": "mate2-oa11-8"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "2 + 2 + 2 es lo mismo que…",
+   "opciones": [
+    "3 x 2",
+    "2 x 2",
+    "3 + 2",
+    "6 x 2"
+   ],
+   "correcta": 0,
+   "tip": "El 2 aparece 3 veces: son 3 grupos de 2, o sea 3 x 2.",
+   "id": "mate2-oa11-9"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "¿Qué suma es igual a 3 x 10?",
+   "opciones": [
+    "10 + 10 + 10",
+    "3 + 10",
+    "3 + 3 + 3 + 3",
+    "10 + 10"
+   ],
+   "correcta": 0,
+   "tip": "3 x 10 son 3 grupos de 10, así que el 10 se suma tres veces.",
+   "id": "mate2-oa11-10"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "4 x 2 se puede calcular sumando…",
+   "opciones": [
+    "2 + 2 + 2 + 2",
+    "4 + 2",
+    "4 + 4 + 4 + 4",
+    "2 + 2"
+   ],
+   "correcta": 0,
+   "tip": "4 x 2 son 4 grupos de 2, así que el 2 se suma cuatro veces.",
+   "id": "mate2-oa11-11"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "10 + 10 + 10 + 10 + 10 es lo mismo que…",
+   "opciones": [
+    "5 x 10",
+    "10 x 10",
+    "5 + 10",
+    "4 x 10"
+   ],
+   "correcta": 0,
+   "tip": "El 10 se suma 5 veces: son 5 grupos de 10, o sea 5 x 10.",
+   "id": "mate2-oa11-12"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "¿Qué multiplicación muestra el dibujo?",
+   "opciones": [
+    "3 x 5",
+    "3 + 5",
+    "5 x 5",
+    "3 x 3"
+   ],
+   "correcta": 0,
+   "tip": "Hay 3 grupos y cada uno tiene 5 estrellas: 3 grupos de 5 se escriben 3 x 5.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 3,
+    "porGrupo": 5,
+    "emoji": "⭐"
+   },
+   "id": "mate2-oa11-13"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "Mira el dibujo. ¿Qué suma muestra?",
+   "opciones": [
+    "2 + 2 + 2 + 2",
+    "4 + 2",
+    "2 + 2 + 2 + 2 + 2",
+    "4 + 4 + 4 + 4"
+   ],
+   "correcta": 0,
+   "tip": "Hay 4 grupos con 2 manzanas cada uno, así que el 2 se suma cuatro veces.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 4,
+    "porGrupo": 2,
+    "emoji": "🍎"
+   },
+   "id": "mate2-oa11-14"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "¿Con qué multiplicación sabes el total del dibujo?",
+   "opciones": [
+    "2 x 10",
+    "2 + 10",
+    "10 x 10",
+    "2 x 2"
+   ],
+   "correcta": 0,
+   "tip": "Hay 2 grupos de 10 bolitas: eso es 2 x 10.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 2,
+    "porGrupo": 10,
+    "emoji": "🔵"
+   },
+   "id": "mate2-oa11-15"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "Cuenta los grupos del dibujo. ¿Qué multiplicación es?",
+   "opciones": [
+    "5 x 2",
+    "5 + 2",
+    "2 x 2",
+    "5 x 5"
+   ],
+   "correcta": 0,
+   "tip": "Son 5 grupos y cada uno tiene 2 pelotas: 5 grupos de 2 se escriben 5 x 2.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 5,
+    "porGrupo": 2,
+    "emoji": "⚽"
+   },
+   "id": "mate2-oa11-16"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "Si 5 x 2 = 10, ¿cuánto es 6 x 2?",
+   "opciones": [
+    "12",
+    "11",
+    "16",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "6 x 2 tiene un grupo de 2 más que 5 x 2: 10 + 2 = 12.",
+   "id": "mate2-oa11-17"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "¿Cuánto es 6 x 5, si 5 x 5 = 25?",
+   "opciones": [
+    "30",
+    "26",
+    "35",
+    "25"
+   ],
+   "correcta": 0,
+   "tip": "6 x 5 tiene un grupo de 5 más que 5 x 5: 25 + 5 = 30.",
+   "id": "mate2-oa11-18"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "8 x 10 es igual a 7 x 10 más…",
+   "opciones": [
+    "10",
+    "8",
+    "1",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "De 7 grupos a 8 grupos se agrega un grupo más, y ese grupo tiene 10.",
+   "id": "mate2-oa11-19"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "Si 4 x 10 = 40, ¿cuánto es 5 x 10?",
+   "opciones": [
+    "50",
+    "41",
+    "45",
+    "60"
+   ],
+   "correcta": 0,
+   "tip": "5 x 10 tiene un grupo de 10 más que 4 x 10: 40 + 10 = 50.",
+   "id": "mate2-oa11-20"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "Diego sabe que 2 x 5 = 10. ¿Cuánto es 4 x 5?",
+   "opciones": [
+    "20",
+    "12",
+    "15",
+    "40"
+   ],
+   "correcta": 0,
+   "tip": "4 grupos de 5 son el doble de 2 grupos de 5: 10 + 10 = 20.",
+   "id": "mate2-oa11-21"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "Para calcular 7 x 2, Ana suma 5 x 2 y además…",
+   "opciones": [
+    "2 x 2",
+    "1 x 2",
+    "2 x 5",
+    "7 x 5"
+   ],
+   "correcta": 0,
+   "tip": "7 grupos de 2 son 5 grupos de 2 y 2 grupos más: 10 + 4 = 14.",
+   "id": "mate2-oa11-22"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "9 x 5 es un grupo de 5 menos que 10 x 5. ¿Cuánto es?",
+   "opciones": [
+    "45",
+    "49",
+    "40",
+    "55"
+   ],
+   "correcta": 0,
+   "tip": "9 x 5 tiene un grupo de 5 menos que 10 x 5: 50 - 5 = 45.",
+   "id": "mate2-oa11-23"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "Cada mano tiene 5 dedos. ¿Cuántos dedos hay en 3 manos?",
+   "opciones": [
+    "15",
+    "8",
+    "10",
+    "20"
+   ],
+   "correcta": 0,
+   "tip": "Son 3 grupos de 5 dedos: 3 x 5 = 15.",
+   "id": "mate2-oa11-24"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "Sofía tiene 6 pares de calcetines. ¿Cuántos calcetines son?",
+   "opciones": [
+    "12",
+    "8",
+    "6",
+    "14"
+   ],
+   "correcta": 0,
+   "tip": "Un par son 2 calcetines, así que son 6 grupos de 2: 6 x 2 = 12.",
+   "id": "mate2-oa11-25"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "Una caja trae 10 lápices. ¿Cuántos hay en 7 cajas?",
+   "opciones": [
+    "70",
+    "17",
+    "60",
+    "80"
+   ],
+   "correcta": 0,
+   "tip": "Son 7 grupos de 10 lápices: 7 x 10 = 70.",
+   "id": "mate2-oa11-26"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "Una bicicleta tiene 2 ruedas. ¿Cuántas tienen 8 bicicletas?",
+   "opciones": [
+    "16",
+    "10",
+    "18",
+    "14"
+   ],
+   "correcta": 0,
+   "tip": "Son 8 grupos de 2 ruedas: 8 x 2 = 16, el doble de 8.",
+   "id": "mate2-oa11-27"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "Camila tiene 9 monedas de 10 pesos. ¿Cuánto dinero tiene?",
+   "opciones": [
+    "90 pesos",
+    "19 pesos",
+    "80 pesos",
+    "100 pesos"
+   ],
+   "correcta": 0,
+   "tip": "Son 9 grupos de 10 pesos: 9 x 10 = 90 pesos.",
+   "id": "mate2-oa11-28"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "Hay 4 platos con 10 galletas cada uno. ¿Qué cálculo da el total?",
+   "opciones": [
+    "4 x 10",
+    "4 + 10",
+    "10 - 4",
+    "4 x 4"
+   ],
+   "correcta": 0,
+   "tip": "Son 4 grupos iguales de 10 galletas, y eso se calcula con 4 x 10.",
+   "id": "mate2-oa11-29"
+  },
+  {
+   "oa": "MA02 OA 11",
+   "pregunta": "Un paquete trae 5 dulces. ¿Cuántos traen 6 paquetes?",
+   "opciones": [
+    "30",
+    "11",
+    "25",
+    "35"
+   ],
+   "correcta": 0,
+   "tip": "Son 6 grupos de 5 dulces: 6 x 5 = 30.",
+   "id": "mate2-oa11-30"
+  }
+ ]
+}

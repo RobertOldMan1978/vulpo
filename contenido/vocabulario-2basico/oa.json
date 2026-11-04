@@ -1,0 +1,36 @@
+{
+ "asignatura": "Vocabulario",
+ "nivel": "2° básico · Todo el curso",
+ "codigo_asignatura": "VOC",
+ "nota_alcance": "DOS áreas, igual que 3° y 4°. Lenguaje queda fuera porque su propio currículum de 2° ya trabaja el vocabulario: el LE02 OA 11 (curiosidad por las palabras que desconocen y el hábito de averiguar su significado) y los LE02 OA 18 y 28 (incorporar el vocabulario nuevo al escribir y al hablar), así que un área VOC-LENG mediría dos veces lo mismo. Matemática de 2° no tiene un vocabulario técnico que sostenga un banco propio a los 7-8 años. Lo que no se pisa con nada, y es el ángulo del módulo, son las PALABRAS NUEVAS que traen Ciencias e Historia: vertebrado, branquias, pluviómetro, nómada, archipiélago, oasis.",
+ "nota_codigos": "Los códigos son VOC-* igual que en los otros cursos, a propósito. Los bancos viven en archivos separados, así que no hay colisión; lo que distingue a este nivel son los ids de las preguntas (voc2-*). El guard de registrarOA excluye del mapa de dominio todo lo que no tenga forma de código curricular, así que estos quedan fuera por estructura y no por una lista escrita a mano.",
+ "nota_evaluacion": "Vocabulario NO es una asignatura del currículum ni sus áreas son Objetivos de Aprendizaje del MINEDUC: es un apoyo transversal del juego. Por eso no aparece en el mapa de dominio del profesor y no debe presentarse a un colegio como cobertura curricular. A esta edad el niño casi siempre ESCUCHA la pregunta: los enunciados son cortos y las opciones breves, y todas se pueden responder oyéndolas.",
+ "nota_fidelidad": "Las 60 palabras se eligieron leyendo los bancos de ciencias-2basico e historia-2basico: cada una aparece de verdad en las preguntas del año. Ninguna se repite con el Vocabulario de 3° básico, y las preguntas piden el significado con una forma distinta a la de esos bancos, para no duplicarlos. Sin contenido sensible: los códigos VOC-* son compartidos entre cursos y el armador no podría marcarlo.",
+ "unidades": [
+  {
+   "id": "V1",
+   "titulo": "Vocabulario del curso",
+   "descripcion": "Palabras clave de Ciencias Naturales e Historia de 2° básico, definidas en lenguaje de niño.",
+   "oa": [
+    "VOC-CIEN",
+    "VOC-HIST"
+   ]
+  }
+ ],
+ "oa": [
+  {
+   "codigo": "VOC-CIEN",
+   "unidad": "V1",
+   "titulo": "Palabras de Ciencias Naturales",
+   "texto": "Vocabulario de Ciencias de 2°: los animales vertebrados e invertebrados y sus ciclos de vida, el hábitat, las partes del cuerpo, los estados del agua y el tiempo atmosférico con sus instrumentos."
+  },
+  {
+   "codigo": "VOC-HIST",
+   "unidad": "V1",
+   "titulo": "Palabras de Historia y Geografía",
+   "texto": "Vocabulario de Historia de 2°: los pueblos originarios, los inmigrantes y el patrimonio, los planos y los paisajes de Chile, y la convivencia y los espacios públicos."
+  }
+ ],
+ "fuente": "Objetivos de Aprendizaje de Ciencias Naturales e Historia, Geografía y Cs. Sociales de 2° básico (MINEDUC)",
+ "url_fuente": "https://www.curriculumnacional.cl/"
+}

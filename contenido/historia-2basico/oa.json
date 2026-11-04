@@ -1,0 +1,244 @@
+{
+ "asignatura": "Historia, Geografía y Ciencias Sociales",
+ "nivel": "2° básico",
+ "codigo_asignatura": "HI02",
+ "fuente": "Bases Curriculares 1° a 6° básico — MINEDUC Chile (curriculumnacional.cl); unidades según el Programa de Estudio de Segundo Año Básico de Historia, Geografía y Ciencias Sociales (MINEDUC)",
+ "url_fuente": "https://www.curriculumnacional.cl/curriculum/1o-6o-basico/historia-geografia-ciencias-sociales/2-basico",
+ "nota_fidelidad": "Los 16 textos se transcribieron el 2026-11-04 de la PÁGINA INDIVIDUAL de cada objetivo en curriculumnacional.cl (…/2-basico/hi02-oa-NN), no de la ficha de la asignatura, y se contrastaron con ella: coinciden palabra por palabra. Los OA 12 y 14 traen sub-puntos en lista; se conservan íntegros, separados por punto y coma (es el único cambio de forma, no de palabras). La numeración por eje coincide con las Bases Curriculares: Historia OA 01-05, Geografía OA 06-11 y Formación ciudadana OA 12-16. El Programa de Estudio (PDF 614/articles-18969_programa.pdf) trae una redacción algo anterior de algunos OA —por ejemplo, el OA 03 dice «tradiciones, costumbres» donde el portal dice «tradiciones, cultura»—; aquí rige siempre el texto del portal. Validar contra el PDF de las Bases antes de publicar material impreso.",
+ "nota_evaluacion": "ADVERTENCIA: los OA 12, 13, 14 y 16 son ACTITUDINALES o de acción («mostrar actitudes y realizar acciones», «mantener una conducta honesta», «conocer, proponer, aplicar y explicar […] normas», «practicar y proponer acciones»). Un quiz de opción múltiple NO puede medir la conducta de un niño: solo si RECONOCE cuál es la acción correcta. Por eso sus preguntas plantean SIEMPRE la situación de otra persona con nombre, nunca la conducta del propio jugador. El mapa de dominio le va a mostrar al profesor un porcentaje junto a «conducta honesta» o «respeto al otro», y debe leerse como reconocimiento, nunca como una nota de conducta. Además, el OA 06 pide DIBUJAR planos: el quiz solo puede medir la mitad de leerlos (puntos de referencia, posición relativa, simbología). El OA 15 sí es de conocimiento (identificar servicios e instituciones).",
+ "nota_unidades": "Los grupos de 'unidades' son las CUATRO unidades del Programa de Estudio de 2° básico (Visión global del año, pp. 50-54), que no les pone nombre: solo «Unidad 1» a «Unidad 4». Los títulos de abajo son descriptivos, tomados del «Propósito» de cada unidad. El Programa repite algunos OA en más de una unidad (12, 13, 14, 15 y 16); como una fila del juego tiene que ser un solo objetivo, en 'unidades' cada OA va en UNA sola, la que mejor le calza según el propósito de la unidad: el 13 (honestidad) en la U2, cuyo propósito la nombra; el 12 (respeto, tolerancia, empatía) en la U3; el 14 y el 15 (normas y servicios que cuidan el patrimonio) en la U4; y el 16 (espacios públicos) en la U1. El reparto completo del Programa, con sus repeticiones, queda en 'unidades_oficiales_del_programa'. El HI02 OA 13 (el Programa lo lista en las unidades 1, 2 y 3) va en la U3 para que los cuatro capítulos del juego queden con 4 etapas; reparto aprobado por Roberto el 05/11/2026.",
+ "nota_contenido_sensible": "Los OA 01, 02, 10 y 11 tratan de pueblos originarios de Chile (modos de vida precolombinos, ubicación, recursos) y el 02 compara con los pueblos que viven HOY (mapuche, aimara, rapa nui), así que tocan la categoría 🟤 Pueblos originarios de `docs/contenido-sensible.md` (culturas vivas, cosmovisión; el OA 01 incluye «creencias»). Son descripción cultural, sin conquista ni violencia —el mismo caso que los HI04 OA 01-04, que ese documento NO marca—, así que el criterio por defecto es no marcarlos; la decisión es de Roberto al cablear el nivel. Cuidados para el banco: presentar a los pueblos actuales como culturas vivas, no como algo del pasado; no estereotipar; y las creencias se describen como de ese pueblo, nunca como verdad ni como superstición. El OA 03 menciona la religión entre los aportes españoles y la sociedad mestiza: se trata como hecho cultural (🟡 leve), no como afirmación de fe. Ningún OA de 2° trae violencia, muerte, sexualidad ni sustancias.",
+ "habilidades_excluidas": {
+  "cuantas": 18,
+  "codigos": [
+   "HI02 OAH a",
+   "HI02 OAH b",
+   "HI02 OAH c",
+   "HI02 OAH d",
+   "HI02 OAH e",
+   "HI02 OAH f",
+   "HI02 OAH g",
+   "HI02 OAH h",
+   "HI02 OAH i",
+   "HI02 OAA A",
+   "HI02 OAA B",
+   "HI02 OAA C",
+   "HI02 OAA D",
+   "HI02 OAA E",
+   "HI02 OAA F",
+   "HI02 OAA G",
+   "HI02 OAA H",
+   "HI02 OAA I"
+  ],
+  "por_que": "Los 9 OA de habilidades (OAH) y los 9 de actitudes (OAA) que la ficha oficial lista para el nivel miden desempeño observable que una pantalla no ve, y sus códigos con letra no calzan con la validación del servidor (^[A-Z]{2}[0-9]{2} OA [0-9]{2}$), que los descartaría en silencio. Mismo criterio que Ciencias de 3°."
+ },
+ "unidades": [
+  {
+   "id": "U1",
+   "titulo": "Planos, mapas y paisajes de Chile",
+   "descripcion": "Planos simples del entorno, Chile y sus vecinos en mapas con los puntos cardinales, paisajes del norte, centro y sur, y el cuidado de los espacios públicos.",
+   "oa": [
+    "HI02 OA 06",
+    "HI02 OA 07",
+    "HI02 OA 08",
+    "HI02 OA 16"
+   ]
+  },
+  {
+   "id": "U2",
+   "titulo": "Los pueblos originarios de Chile",
+   "descripcion": "Modos de vida precolombinos, dónde vivían y cómo usaron los recursos de su zona, qué se mantiene hoy, y la conducta honesta.",
+   "oa": [
+    "HI02 OA 01",
+    "HI02 OA 02",
+    "HI02 OA 10",
+    "HI02 OA 11"
+   ]
+  },
+  {
+   "id": "U3",
+   "titulo": "Una sociedad mestiza y diversa",
+   "descripcion": "Aportes indígenas y españoles, la sociedad mestiza, los aportes de los inmigrantes, y el respeto, la tolerancia y la empatía.",
+   "oa": [
+    "HI02 OA 03",
+    "HI02 OA 04",
+    "HI02 OA 12",
+    "HI02 OA 13"
+   ]
+  },
+  {
+   "id": "U4",
+   "titulo": "El patrimonio cultural y natural de Chile",
+   "descripcion": "Patrimonio cultural y natural del país y de la región, las normas para cuidarlo, y los servicios e instituciones que lo protegen.",
+   "oa": [
+    "HI02 OA 05",
+    "HI02 OA 09",
+    "HI02 OA 14",
+    "HI02 OA 15"
+   ]
+  }
+ ],
+ "unidades_oficiales_del_programa": [
+  {
+   "id": "U1",
+   "titulo": "Unidad 1 del Programa",
+   "oa": [
+    "HI02 OA 06",
+    "HI02 OA 07",
+    "HI02 OA 08",
+    "HI02 OA 13",
+    "HI02 OA 14",
+    "HI02 OA 15",
+    "HI02 OA 16"
+   ]
+  },
+  {
+   "id": "U2",
+   "titulo": "Unidad 2 del Programa",
+   "oa": [
+    "HI02 OA 01",
+    "HI02 OA 02",
+    "HI02 OA 10",
+    "HI02 OA 11",
+    "HI02 OA 12",
+    "HI02 OA 13"
+   ]
+  },
+  {
+   "id": "U3",
+   "titulo": "Unidad 3 del Programa",
+   "oa": [
+    "HI02 OA 03",
+    "HI02 OA 04",
+    "HI02 OA 12",
+    "HI02 OA 13"
+   ]
+  },
+  {
+   "id": "U4",
+   "titulo": "Unidad 4 del Programa",
+   "oa": [
+    "HI02 OA 05",
+    "HI02 OA 09",
+    "HI02 OA 14",
+    "HI02 OA 15",
+    "HI02 OA 16"
+   ]
+  }
+ ],
+ "ejes": [
+  {
+   "nombre": "Historia",
+   "oa": [
+    "HI02 OA 01",
+    "HI02 OA 02",
+    "HI02 OA 03",
+    "HI02 OA 04",
+    "HI02 OA 05"
+   ]
+  },
+  {
+   "nombre": "Geografía",
+   "oa": [
+    "HI02 OA 06",
+    "HI02 OA 07",
+    "HI02 OA 08",
+    "HI02 OA 09",
+    "HI02 OA 10",
+    "HI02 OA 11"
+   ]
+  },
+  {
+   "nombre": "Formación ciudadana",
+   "oa": [
+    "HI02 OA 12",
+    "HI02 OA 13",
+    "HI02 OA 14",
+    "HI02 OA 15",
+    "HI02 OA 16"
+   ]
+  }
+ ],
+ "oa": [
+  {
+   "codigo": "HI02 OA 01",
+   "eje": "Historia",
+   "texto": "Describir los modos de vida de algunos pueblos originarios de Chile en el periodo precolombino, incluyendo ubicación geográfica, medio natural en que habitaban, vida nómada o sedentaria, roles de hombres y mujeres, herramientas y tecnología, principales actividades, vivienda, costumbres, idioma, creencias, alimentación y fiestas, entre otros."
+  },
+  {
+   "codigo": "HI02 OA 02",
+   "eje": "Historia",
+   "texto": "Comparar el modo de vida y expresiones culturales de algunos pueblos indígenas presentes en Chile actual (como mapuche, aimara o rapa nui) con respecto al periodo precolombino, identificando aspectos de su cultura que se han mantenido hasta el presente y aspectos que han cambiado."
+  },
+  {
+   "codigo": "HI02 OA 03",
+   "eje": "Historia",
+   "texto": "Distinguir los diversos aportes a la sociedad chilena proveniente de los pueblos originarios (palabras, alimentos, tradiciones, cultura, etc.) y de los españoles (idioma, religión, alimentos, cultura, etc.) y reconocer nuestra sociedad como mestiza."
+  },
+  {
+   "codigo": "HI02 OA 04",
+   "eje": "Historia",
+   "texto": "Reconocer y dar ejemplos de la influencia y aportes de inmigrantes de distintas naciones europeas, orientales, árabes y latinoamericanas a la diversidad de la sociedad chilena, a lo largo de su historia."
+  },
+  {
+   "codigo": "HI02 OA 05",
+   "eje": "Historia",
+   "texto": "Reconocer diversas expresiones del patrimonio cultural del país y de su región, tales como manifestaciones artísticas, tradiciones folclóricas, leyendas y tradiciones orales, costumbres familiares, creencias, idioma, construcciones, comidas típicas, fiestas, monumentos y sitios históricos."
+  },
+  {
+   "codigo": "HI02 OA 06",
+   "eje": "Geografía",
+   "texto": "Leer y dibujar planos simples de su entorno, utilizando puntos de referencia, categorías de posición relativa y simbología pictórica."
+  },
+  {
+   "codigo": "HI02 OA 07",
+   "eje": "Geografía",
+   "texto": "Ubicar Chile, Santiago, la propia región y su capital en el globo terráqueo o en mapas, y describir la ubicación relativa de países limítrofes y de otros países de América del Sur, utilizando los puntos cardinales."
+  },
+  {
+   "codigo": "HI02 OA 08",
+   "eje": "Geografía",
+   "texto": "Clasificar y caracterizar algunos paisajes de Chile según su ubicación en la zona norte, centro y sur del país, observando imágenes, utilizando diversas fuentes y un vocabulario geográfico adecuado (océano, río, cordillera de los Andes y de la Costa, desierto, valle, costa, volcán, archipiélago, isla, fiordo, lago, ciudad y pueblo, entre otros)."
+  },
+  {
+   "codigo": "HI02 OA 09",
+   "eje": "Geografía",
+   "texto": "Reconocer diversas expresiones del patrimonio natural de Chile y de su región, como paisajes, flora y fauna característica y parques nacionales, entre otros."
+  },
+  {
+   "codigo": "HI02 OA 10",
+   "eje": "Geografía",
+   "texto": "Ubicar en mapas las zonas habitadas por algunos pueblos originarios de Chile, distinguiendo zonas norte, centro y sur."
+  },
+  {
+   "codigo": "HI02 OA 11",
+   "eje": "Geografía",
+   "texto": "Relacionar las principales características geográficas (disponibilidad de agua, temperatura y vegetación) de las zonas habitadas por algunos pueblos originarios de Chile, con los recursos que utilizaron para satisfacer sus necesidades de alimentación, abrigo y vivienda."
+  },
+  {
+   "codigo": "HI02 OA 12",
+   "eje": "Formación ciudadana",
+   "texto": "Mostrar actitudes y realizar acciones concretas en su entorno cercano (familia, escuela y comunidad) que reflejen: respeto al otro (interactuar con cortesía, cuidar espacios comunes, respetar la propiedad de los demás, etc.); responsabilidad (ejemplos: cumplir con sus deberes escolares, asumir encargos en el hogar y dentro de la sala de clases, etc.); tolerancia (ejemplos: respetar opiniones diversas, no discriminar a otros por su aspecto o costumbres, etc.); empatía (ejemplos: integrar a los demás en sus juegos y actividades, ayudar a los otros, etc.)."
+  },
+  {
+   "codigo": "HI02 OA 13",
+   "eje": "Formación ciudadana",
+   "texto": "Mantener una conducta honesta en la vida cotidiana, en los juegos y en el trabajo escolar, hablando con la verdad, respetando las reglas de los juegos sin hacer trampa, y reconociendo sus errores y sus acciones, entre otros."
+  },
+  {
+   "codigo": "HI02 OA 14",
+   "eje": "Formación ciudadana",
+   "texto": "Conocer, proponer, aplicar y explicar la importancia de algunas normas necesarias para: cuidarse, cuidar a otros y evitar situaciones de riesgo (como seguridad vial, vías de evacuación, adaptaciones para discapacitados, zonas de silencio, etc.); organizar un ambiente propicio al aprendizaje y acogedor para todos (por ejemplo, respetar los turnos, cuidar el espacio y las pertenencias comunes y de sus pares, etc.); cuidar el patrimonio y el medioambiente."
+  },
+  {
+   "codigo": "HI02 OA 15",
+   "eje": "Formación ciudadana",
+   "texto": "Identificar la labor que cumplen en beneficio de la comunidad servicios como los medios de transporte y de comunicación y el mercado, y algunas instituciones encargadas de proteger nuestro patrimonio cultural y natural."
+  },
+  {
+   "codigo": "HI02 OA 16",
+   "eje": "Formación ciudadana",
+   "texto": "Practicar y proponer acciones para cuidar y respetar los espacios públicos dentro y fuera de la escuela (como baños, patios, salas de clase, plazas, parques, playas y calles, entre otros), reconociendo que pertenecen y benefician a todos y que, por lo tanto, su cuidado es responsabilidad de todos los miembros de la comunidad."
+  }
+ ]
+}

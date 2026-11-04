@@ -1,0 +1,219 @@
+{
+ "asignatura": "Lenguaje y Comunicación",
+ "nivel": "2° básico",
+ "codigo_asignatura": "LE02",
+ "fuente": "Bases Curriculares 1° a 6° básico (D.S. 439/2012) — MINEDUC Chile (curriculumnacional.cl)",
+ "url_fuente": "https://www.curriculumnacional.cl/curriculum/1o-6o-basico/lenguaje-comunicacion/2-basico",
+ "nota_fidelidad": "Textos transcritos el 2026-11-04 de las 30 páginas INDIVIDUALES de cada objetivo en curriculumnacional.cl (…/2-basico/le02-oa-01 a le02-oa-30), conservando íntegros los sub-puntos y separándolos con punto y coma. Se contrastaron dos veces: (1) con la ficha web de la asignatura, que en este nivel resultó IDÉNTICA a las páginas individuales en los 30 OA (no se detectó el recorte que sí tiene la ficha de 3°); y (2) con el listado único de OA del Programa de Estudio oficial de 2° básico (PDF articles-18958_programa.pdf, pp. 45-47, que se declara reproducción del D.S. 439/2012): los 30 textos coinciden palabra por palabra. Única diferencia de forma: el PDF imprime los sub-puntos como viñetas sin punto final; aquí se conserva la puntuación de la web, que cierra el último sub-punto con punto. La numeración de los ejes coincide con las Bases: Lectura OA 01-11, Escritura OA 12-21 y Comunicación oral OA 22-30. OJO: en 2° básico NO existe un OA de conciencia fonológica (ese es de 1°); lo más cercano es el OA 01 (decodificar hiatos, diptongos, grupos consonánticos y las combinaciones ce-ci, que-qui, ge-gi, gue-gui, güe-güi).",
+ "nota_evaluacion": "ADVERTENCIA — como en 3° y 4°, Lenguaje es la asignatura menos evaluable por quiz del nivel. 18 de los 30 OA son de PRODUCCIÓN o de HÁBITO, más el OA 15, excluido: lectura oral (02); hábito y disfrute (06, 08, 09, 11, 24); producción escrita (12, 13, 14, 16, 17, 18); producción oral e interacción (25, 26, 27, 28, 29, 30). Un quiz no puede medir si un niño escribe, va a la biblioteca, recita o conversa respetando turnos: solo si RECONOCE la decisión correcta. Sus preguntas plantean siempre el trabajo o la situación de un TERCERO CON NOMBRE ('Tomás escribió esto, ¿qué le falta?'), nunca la conducta del propio jugador; el mapa de dominio va a mostrar un porcentaje junto a 'desarrollar el gusto por la lectura' o 'respetando turnos', y eso se lee como nota de actitud si no se avisa. RIESGO DE AUDIBILIDAD — en 2° el niño (7-8 años) recién consolida la lectura y casi siempre ESCUCHA la pregunta con la voz pregrabada, así que una pregunta que depende de VER la grafía no se puede responder por voz (y la voz puede incluso delatar la respuesta, como pasó en 3° con la entonación de una pregunta). Riesgo ALTO: OA 01 (hiatos, diptongos, grupos consonánticos y ce-ci, que-qui, ge-gi, gue-gui, güe-güi: todo el OA es decodificar grafías, y con el seseo y ge/je del español de Chile muchas opciones suenan idénticas) y OA 21 (ortografía: las mismas combinaciones, r-rr-nr, mayúsculas, punto final y signos ¿? ¡! — las mayúsculas y la puntuación no se oyen, y la voz lee la interrogación con entonación de pregunta). Riesgo MEDIO: OA 02 (fluidez en voz alta: solo es medible el ángulo de qué pide el punto seguido y el punto aparte; pronunciar con precisión y no detenerse en cada palabra es desempeño oral), OA 17 (la parte de mayúscula, punto y ortografía; la concordancia sí se oye) y OA 07 (comprender ilustraciones y símbolos pide un dibujo que no delate la clave). La salida es la de 3°: nombrar el rasgo en el enunciado en vez de mostrarlo ('¿qué palabra lleva dos erres?', 'Ana olvidó la mayúscula al empezar: ¿cuál arreglo es correcto?') y pasar todo el banco por scripts/auditar-audible-nivel.py, que caza opciones homófonas pero NO el caso en que la respuesta depende de ver la grafía sin que las opciones suenen igual: eso hay que cazarlo leyendo. El OA 20 (género y número) y el OA 19 (artículos, sustantivos y adjetivos) son audibles y de bajo riesgo. EXCLUIDO DEL BANCO: el OA 15 (ver oa_excluidos_del_banco).",
+ "nota_unidades": "Los grupos de este archivo son los EJES oficiales de las Bases Curriculares (Lectura, Escritura, Comunicación oral), no las unidades del Programa de Estudio ni los capítulos del juego. Se agrupó así para fijar el currículum —los OA y su texto literal— antes de que exista una sola pregunta. Los capítulos del juego NO seguirán las unidades del Programa: irán POR TEMA reconocible para un niño (leer y comprender, sonidos y letras, palabras y oraciones, escribir, escuchar y hablar), como en Lenguaje de 3° y de 7°, porque el Programa reparte los mismos OA en varias unidades y un corte 1 unidad = 1 capítulo mediría el mismo objetivo varias veces. Al construir el nivel se decide ese reparto y se pasa a `capitulos_del_juego`, explicándolo aquí.",
+ "oa_excluidos_del_banco": [
+  {
+   "codigo": "LE02 OA 15",
+   "texto": "Escribir con letra clara, separando las palabras con un espacio para que puedan ser leídas por otros con facilidad.",
+   "por_que": "Es caligrafía manuscrita: escribir con letra clara y separar las palabras con un espacio. Lo que se mide es el trazo sobre el papel y no un conocimiento, así que no admite ninguna pregunta honesta de opción múltiple (y menos escuchada). Se deja FUERA del banco en vez de inventar un ítem que finja medirlo. Mismo criterio que LE03 OA 16 y LE04 OA 15, que son el mismo objetivo uno y dos años después."
+  }
+ ],
+ "unidades": [
+  {
+   "id": "U1",
+   "titulo": "Lectura",
+   "oa": [
+    "LE02 OA 01",
+    "LE02 OA 02",
+    "LE02 OA 03",
+    "LE02 OA 04",
+    "LE02 OA 05",
+    "LE02 OA 06",
+    "LE02 OA 07",
+    "LE02 OA 08",
+    "LE02 OA 09",
+    "LE02 OA 10",
+    "LE02 OA 11"
+   ]
+  },
+  {
+   "id": "U2",
+   "titulo": "Escritura",
+   "oa": [
+    "LE02 OA 12",
+    "LE02 OA 13",
+    "LE02 OA 14",
+    "LE02 OA 15",
+    "LE02 OA 16",
+    "LE02 OA 17",
+    "LE02 OA 18",
+    "LE02 OA 19",
+    "LE02 OA 20",
+    "LE02 OA 21"
+   ]
+  },
+  {
+   "id": "U3",
+   "titulo": "Comunicación oral",
+   "oa": [
+    "LE02 OA 22",
+    "LE02 OA 23",
+    "LE02 OA 24",
+    "LE02 OA 25",
+    "LE02 OA 26",
+    "LE02 OA 27",
+    "LE02 OA 28",
+    "LE02 OA 29",
+    "LE02 OA 30"
+   ]
+  }
+ ],
+ "oa": [
+  {
+   "codigo": "LE02 OA 01",
+   "eje": "Lectura",
+   "texto": "Leer textos significativos que incluyan palabras con hiatos y diptongos, con grupos consonánticos y con combinación ce-ci, que-qui, ge-gi, gue-gui, güe-güi."
+  },
+  {
+   "codigo": "LE02 OA 02",
+   "eje": "Lectura",
+   "texto": "Leer en voz alta para adquirir fluidez: pronunciando cada palabra con precisión, aunque se autocorrijan en contadas ocasiones; respetando el punto seguido y el punto aparte; sin detenerse en cada palabra."
+  },
+  {
+   "codigo": "LE02 OA 03",
+   "eje": "Lectura",
+   "texto": "Comprender textos aplicando estrategias de comprensión lectora; por ejemplo: relacionar la información del texto con sus experiencias y conocimientos; visualizar lo que describe el texto; hacer preguntas mientras se lee."
+  },
+  {
+   "codigo": "LE02 OA 04",
+   "eje": "Lectura",
+   "texto": "Leer independientemente y familiarizarse con un amplio repertorio de literatura para aumentar su conocimiento del mundo y desarrollar su imaginación; por ejemplo: poemas; cuentos folclóricos y de autor; fábulas; leyendas; otros."
+  },
+  {
+   "codigo": "LE02 OA 05",
+   "eje": "Lectura",
+   "texto": "Demostrar comprensión de las narraciones leídas: extrayendo información explícita e implícita; reconstruyendo la secuencia de las acciones en la historia; identificando y describiendo las características físicas y sentimientos de los distintos personajes; recreando, a través de distintas expresiones (dibujos, modelos tridimensionales u otras), el ambiente en el que ocurre la acción; estableciendo relaciones entre el texto y sus propias experiencias; emitiendo una opinión sobre un aspecto de la lectura."
+  },
+  {
+   "codigo": "LE02 OA 06",
+   "eje": "Lectura",
+   "texto": "Leer habitualmente y disfrutar los mejores poemas de autor y de la tradición oral adecuados a su edad."
+  },
+  {
+   "codigo": "LE02 OA 07",
+   "eje": "Lectura",
+   "texto": "Leer independientemente y comprender textos no literarios (cartas, notas, instrucciones y artículos informativos) para entretenerse y ampliar su conocimiento del mundo: extrayendo información explícita e implícita; comprendiendo la información que aportan las ilustraciones y los símbolos a un texto; formulando una opinión sobre algún aspecto de la lectura."
+  },
+  {
+   "codigo": "LE02 OA 08",
+   "eje": "Lectura",
+   "texto": "Desarrollar el gusto por la lectura, leyendo habitualmente diversos textos."
+  },
+  {
+   "codigo": "LE02 OA 09",
+   "eje": "Lectura",
+   "texto": "Asistir habitualmente a la biblioteca para encontrar información y elegir libros, cuidando el material en favor del uso común."
+  },
+  {
+   "codigo": "LE02 OA 10",
+   "eje": "Lectura",
+   "texto": "Buscar información sobre un tema en una fuente dada por el docente (página de internet, sección del diario, capítulo de un libro, etc.), para llevar a cabo una investigación."
+  },
+  {
+   "codigo": "LE02 OA 11",
+   "eje": "Lectura",
+   "texto": "Desarrollar la curiosidad por las palabras o expresiones que desconocen y adquirir el hábito de averiguar su significado."
+  },
+  {
+   "codigo": "LE02 OA 12",
+   "eje": "Escritura",
+   "texto": "Escribir frecuentemente, para desarrollar la creatividad y expresar sus ideas, textos como poemas, diarios de vida, anécdotas, cartas, recados, etc."
+  },
+  {
+   "codigo": "LE02 OA 13",
+   "eje": "Escritura",
+   "texto": "Escribir creativamente narraciones (experiencias personales, relatos de hechos, cuentos, etc.) que tengan inicio, desarrollo y desenlace."
+  },
+  {
+   "codigo": "LE02 OA 14",
+   "eje": "Escritura",
+   "texto": "Escribir artículos informativos para comunicar información sobre un tema."
+  },
+  {
+   "codigo": "LE02 OA 15",
+   "eje": "Escritura",
+   "texto": "Escribir con letra clara, separando las palabras con un espacio para que puedan ser leídas por otros con facilidad."
+  },
+  {
+   "codigo": "LE02 OA 16",
+   "eje": "Escritura",
+   "texto": "Planificar la escritura, generando ideas a partir de: observación de imágenes; conversaciones con sus pares o el docente sobre experiencias personales y otros temas."
+  },
+  {
+   "codigo": "LE02 OA 17",
+   "eje": "Escritura",
+   "texto": "Escribir, revisar y editar sus textos para satisfacer un propósito y transmitir sus ideas con claridad. Durante este proceso: organizan las ideas en oraciones que comienzan con mayúscula y terminan con punto; utilizan un vocabulario variado; mejoran la redacción del texto a partir de sugerencias de los pares y el docente; corrigen la concordancia de género y número, la ortografía y la presentación."
+  },
+  {
+   "codigo": "LE02 OA 18",
+   "eje": "Escritura",
+   "texto": "Incorporar de manera pertinente en la escritura el vocabulario nuevo extraído de textos escuchados o leídos."
+  },
+  {
+   "codigo": "LE02 OA 19",
+   "eje": "Escritura",
+   "texto": "Comprender la función de los artículos, sustantivos y adjetivos en textos orales y escritos, y reemplazarlos o combinarlos de diversas maneras para enriquecer o precisar sus producciones."
+  },
+  {
+   "codigo": "LE02 OA 20",
+   "eje": "Escritura",
+   "texto": "Identificar el género y número de las palabras para asegurar la concordancia en sus escritos."
+  },
+  {
+   "codigo": "LE02 OA 21",
+   "eje": "Escritura",
+   "texto": "Escribir correctamente para facilitar la comprensión por parte del lector, usando de manera apropiada: combinaciones ce-ci, que-qui, ge-gi, gue-gui, güe-güi; r-rr-nr; mayúsculas al iniciar una oración y al escribir sustantivos propios; punto al finalizar una oración; signos de interrogación y exclamación al inicio y final de preguntas y exclamaciones."
+  },
+  {
+   "codigo": "LE02 OA 22",
+   "eje": "Comunicación oral",
+   "texto": "Comprender y disfrutar versiones completas de obras de la literatura, narradas o leídas por un adulto, como: cuentos folclóricos y de autor; poemas; fábulas; leyendas."
+  },
+  {
+   "codigo": "LE02 OA 23",
+   "eje": "Comunicación oral",
+   "texto": "Comprender textos orales (explicaciones, instrucciones, relatos, anécdotas, etc.) para obtener información y desarrollar su curiosidad por el mundo: estableciendo conexiones con sus propias experiencias; identificando el propósito; formulando preguntas para obtener información adicional y aclarar dudas; respondiendo preguntas sobre información explícita e implícita; formulando una opinión sobre lo escuchado."
+  },
+  {
+   "codigo": "LE02 OA 24",
+   "eje": "Comunicación oral",
+   "texto": "Disfrutar de la experiencia de asistir a obras de teatro infantiles o representaciones para ampliar sus posibilidades de expresión, desarrollar su creatividad y familiarizarse con el género."
+  },
+  {
+   "codigo": "LE02 OA 25",
+   "eje": "Comunicación oral",
+   "texto": "Participar activamente en conversaciones grupales sobre textos leídos o escuchados en clases o temas de su interés: manteniendo el foco de la conversación; expresando sus ideas u opiniones; formulando preguntas para aclarar dudas; demostrando interés ante lo escuchado; mostrando empatía frente a situaciones expresadas por otros; respetando turnos."
+  },
+  {
+   "codigo": "LE02 OA 26",
+   "eje": "Comunicación oral",
+   "texto": "Interactuar de acuerdo con las convenciones sociales en diferentes situaciones: presentarse a sí mismo y a otros; saludar; preguntar; expresar opiniones, sentimientos e ideas; situaciones que requieren el uso de fórmulas de cortesía como por favor, gracias, perdón, permiso."
+  },
+  {
+   "codigo": "LE02 OA 27",
+   "eje": "Comunicación oral",
+   "texto": "Expresarse de manera coherente y articulada sobre temas de su interés: presentando información o narrando un evento relacionado con el tema; incorporando frases descriptivas que ilustren lo dicho; utilizando un vocabulario variado; pronunciando adecuadamente y usando un volumen audible; manteniendo una postura adecuada."
+  },
+  {
+   "codigo": "LE02 OA 28",
+   "eje": "Comunicación oral",
+   "texto": "Incorporar de manera pertinente en sus intervenciones orales el vocabulario nuevo extraído de textos escuchados o leídos."
+  },
+  {
+   "codigo": "LE02 OA 29",
+   "eje": "Comunicación oral",
+   "texto": "Desempeñar diferentes roles para desarrollar su lenguaje y autoestima, y aprender a trabajar en equipo."
+  },
+  {
+   "codigo": "LE02 OA 30",
+   "eje": "Comunicación oral",
+   "texto": "Recitar con entonación y expresión poemas, rimas, canciones, trabalenguas y adivinanzas para fortalecer la confianza en sí mismos, aumentar el vocabulario y desarrollar su capacidad expresiva."
+  }
+ ]
+}

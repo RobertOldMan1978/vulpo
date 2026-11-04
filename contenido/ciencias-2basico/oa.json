@@ -1,0 +1,165 @@
+{
+ "asignatura": "Ciencias Naturales",
+ "nivel": "2° básico",
+ "codigo_asignatura": "CN02",
+ "fuente": "Bases Curriculares 1° a 6° básico — MINEDUC Chile (curriculumnacional.cl); unidades del Programa de Estudio Ciencias Naturales 2° básico (MINEDUC, segunda edición 2018)",
+ "url_fuente": "https://www.curriculumnacional.cl/curriculum/1o-6o-basico/ciencias-naturales/2-basico",
+ "nota_fidelidad": "Los 14 textos se transcribieron el 2026-11-04 uno por uno desde la página individual de cada objetivo (`.../ciencias-naturales/2-basico/cn02-oa-NN`), no desde la ficha general de la asignatura, que puede devolver textos cortados a media frase que parecen completos. Se contrastaron además con la sección «Visión global del año» del PDF del Programa de Estudio (sitio oficial, segunda edición 2018), y coinciden. El portal no publica un OA 15 (`cn02-oa-15` da «Página no encontrada»): 2° básico tiene 14 OA. OJO en el OA 09: el portal lo publica como un enunciado seguido de una LISTA con viñetas («escurrir», «adaptarse a la forma del recipiente»…); aquí se aplana en una sola línea separando los ítems con punto y coma, como ya se hizo con las listas de otros `oa.json` del proyecto. Las palabras son literales; solo los separadores son nuestros. El PDF del Programa trae una variante menor del mismo OA («como la de:», sin punto final); se usó la del portal. «Distintos hábitat» (OA 04) va invariable porque así está en el texto oficial.",
+ "nota_evaluacion": "ADVERTENCIA 1 — verbos de laboratorio: los OA 02 y 10 dicen «por medio de la exploración», el OA 09 «por medio de la investigación experimental» y el OA 13 «medir… construyendo y/o usando instrumentos». Son actividades, no respuestas. El quiz mide el concepto o el resultado que esa actividad deja instalado —qué hace el agua en un recipiente, qué instrumento mide la lluvia—, planteando el experimento YA REALIZADO por un tercero, nunca lo que el niño haría o construiría. ADVERTENCIA 2 — OA con componente de conducta o de propuesta: el OA 08 pide incorporar la actividad física «en sus hábitos diarios» y los OA 05, 08 y 11 piden proponer medidas, formas o acciones de cuidado. Un quiz no puede medir si un niño hace ejercicio o cuida el agua: solo si RECONOCE la acción adecuada. Sus preguntas plantean siempre la situación de otra persona con nombre, nunca la conducta del propio jugador, y el porcentaje del mapa de dominio debe leerse así. ADVERTENCIA 3 — edad: son 7-8 años, lectores iniciales; vale el estándar de los cursos chicos de `docs/encargo-banco.md` (enunciados cortos, sin reloj). Cuidados de precisión científica en `docs/cuidados-ciencias.md`.",
+ "habilidades_excluidas": {
+  "cuantas": 11,
+  "codigos": [
+   "CN02 OAH a-e",
+   "CN02 OAA A-F"
+  ],
+  "por_que": "5 OA de habilidades de investigación (explorar, observar y predecir en forma guiada; experimentar; medir y registrar con unidades no estandarizadas; usar materiales de forma segura; comunicar) y 6 de actitud (curiosidad, rigor, cuidado del ambiente, trabajo en equipo, vida saludable, seguridad). Miden desempeño observable o disposiciones personales que una pantalla no ve, y además sus códigos con letra no calzan con la validación del servidor (^[A-Z]{2}[0-9]{2} OA [0-9]{2}$), así que el backend los descartaría EN SILENCIO. Las habilidades se ejercitan dentro de las preguntas de contenido; no se miden aparte."
+ },
+ "unidades": [
+  {
+   "id": "U1",
+   "titulo": "El cuerpo humano y los vertebrados",
+   "descripcion": "Ubicación y función de corazón, pulmones, estómago, esqueleto y músculos; la importancia de la actividad física; y la clasificación de los vertebrados en mamíferos, aves, reptiles, anfibios y peces.",
+   "oa": [
+    "CN02 OA 07",
+    "CN02 OA 08",
+    "CN02 OA 01"
+   ]
+  },
+  {
+   "id": "U2",
+   "titulo": "Invertebrados, ciclos de vida y hábitat",
+   "descripcion": "Animales sin columna vertebral (insectos, arácnidos, crustáceos), las etapas del ciclo de vida de distintos animales y las condiciones de luz, humedad y temperatura de cada hábitat.",
+   "oa": [
+    "CN02 OA 02",
+    "CN02 OA 03",
+    "CN02 OA 04"
+   ]
+  },
+  {
+   "id": "U3",
+   "titulo": "Animales en peligro y el agua",
+   "descripcion": "Animales nativos en peligro de extinción y los efectos de la actividad humana en su hábitat; características del agua y sus estados sólido, líquido y gaseoso.",
+   "oa": [
+    "CN02 OA 05",
+    "CN02 OA 06",
+    "CN02 OA 09",
+    "CN02 OA 10"
+   ]
+  },
+  {
+   "id": "U4",
+   "titulo": "El ciclo del agua y el tiempo atmosférico",
+   "descripcion": "El ciclo del agua y su cuidado; precipitaciones, viento y temperatura; los instrumentos para medirlos y la relación del tiempo atmosférico con las estaciones del año.",
+   "oa": [
+    "CN02 OA 11",
+    "CN02 OA 12",
+    "CN02 OA 13",
+    "CN02 OA 14"
+   ]
+  }
+ ],
+ "nota_unidades": "Las 4 unidades son las del Programa de Estudio oficial (sección «Visión global del año», PDF segunda edición 2018), con sus OA en el mismo orden en que el Programa los lista: la Unidad 1 parte por el cuerpo humano (OA 07 y 08) y deja los vertebrados (OA 01) al final. Cubren los 14 OA exactamente una vez cada uno, sin solapamiento, y quedan 3-3-4-4 (30, 27, 33 y 24 horas pedagógicas); las unidades 1 y 2 van en el semestre 1 y las 3 y 4 en el semestre 2. OJO: el Programa nombra las unidades solo por su número; los títulos de este archivo son descriptivos, escritos a partir del «Propósito» de cada unidad en el mismo PDF, y NO son texto oficial.",
+ "ejes": [
+  {
+   "nombre": "Ciencias de la Vida",
+   "oa": [
+    "CN02 OA 01",
+    "CN02 OA 02",
+    "CN02 OA 03",
+    "CN02 OA 04",
+    "CN02 OA 05",
+    "CN02 OA 06",
+    "CN02 OA 07",
+    "CN02 OA 08"
+   ]
+  },
+  {
+   "nombre": "Ciencias Físicas y Químicas",
+   "oa": [
+    "CN02 OA 09",
+    "CN02 OA 10",
+    "CN02 OA 11"
+   ]
+  },
+  {
+   "nombre": "Ciencias de la Tierra y el Universo",
+   "oa": [
+    "CN02 OA 12",
+    "CN02 OA 13",
+    "CN02 OA 14"
+   ]
+  }
+ ],
+ "oa": [
+  {
+   "codigo": "CN02 OA 01",
+   "eje": "Ciencias de la Vida",
+   "texto": "Observar, describir y clasificar los vertebrados en mamíferos, aves, reptiles, anfibios y peces, a partir de características como cubierta corporal, presencia de mamas y estructuras para la respiración, entre otras."
+  },
+  {
+   "codigo": "CN02 OA 02",
+   "eje": "Ciencias de la Vida",
+   "texto": "Observar, describir y clasificar, por medio de la exploración, las características de los animales sin columna vertebral, como insectos, arácnidos, crustáceos, entre otros, y compararlos con los vertebrados."
+  },
+  {
+   "codigo": "CN02 OA 03",
+   "eje": "Ciencias de la Vida",
+   "texto": "Observar y comparar las características de las etapas del ciclo de vida de distintos animales (mamíferos, aves, insectos y anfibios), relacionándolas con su hábitat."
+  },
+  {
+   "codigo": "CN02 OA 04",
+   "eje": "Ciencias de la Vida",
+   "texto": "Observar y comparar las características de distintos hábitat, identificando la luminosidad, humedad y temperatura necesarias para la supervivencia de los animales que habitan en él."
+  },
+  {
+   "codigo": "CN02 OA 05",
+   "eje": "Ciencias de la Vida",
+   "texto": "Observar e identificar algunos animales nativos que se encuentran en peligro de extinción, así como el deterioro de su hábitat, proponiendo medidas para protegerlos."
+  },
+  {
+   "codigo": "CN02 OA 06",
+   "eje": "Ciencias de la Vida",
+   "texto": "Identificar y comunicar los efectos de la actividad humana sobre los animales y su hábitat."
+  },
+  {
+   "codigo": "CN02 OA 07",
+   "eje": "Ciencias de la Vida",
+   "texto": "Identificar la ubicación y explicar la función de algunas partes del cuerpo que son fundamentales para vivir: corazón, pulmones, estómago, esqueleto y músculos."
+  },
+  {
+   "codigo": "CN02 OA 08",
+   "eje": "Ciencias de la Vida",
+   "texto": "Explicar la importancia de la actividad física para el desarrollo de los músculos y el fortalecimiento del corazón, proponiendo formas de ejercitarla e incorporarla en sus hábitos diarios."
+  },
+  {
+   "codigo": "CN02 OA 09",
+   "eje": "Ciencias Físicas y Químicas",
+   "texto": "Observar y describir, por medio de la investigación experimental, algunas características del agua, como: escurrir; adaptarse a la forma del recipiente; disolver algunos sólidos, como el azúcar y la sal; ser transparente e inodora; evaporarse y congelarse con los cambios de temperatura."
+  },
+  {
+   "codigo": "CN02 OA 10",
+   "eje": "Ciencias Físicas y Químicas",
+   "texto": "Identificar y comparar, por medio de la exploración, los estados sólido, líquido y gaseoso del agua."
+  },
+  {
+   "codigo": "CN02 OA 11",
+   "eje": "Ciencias Físicas y Químicas",
+   "texto": "Describir el ciclo del agua en la naturaleza, reconociendo que el agua es un recurso preciado y proponiendo acciones cotidianas para su cuidado."
+  },
+  {
+   "codigo": "CN02 OA 12",
+   "eje": "Ciencias de la Tierra y el Universo",
+   "texto": "Reconocer y describir algunas características del tiempo atmosférico, como precipitaciones (lluvia, granizo, nieve), viento y temperatura ambiente, entre otras, y sus cambios a lo largo del año."
+  },
+  {
+   "codigo": "CN02 OA 13",
+   "eje": "Ciencias de la Tierra y el Universo",
+   "texto": "Medir algunas características del tiempo atmosférico, construyendo y/o usando algunos instrumentos tecnológicos útiles para su localidad, como termómetro, pluviómetro o veleta."
+  },
+  {
+   "codigo": "CN02 OA 14",
+   "eje": "Ciencias de la Tierra y el Universo",
+   "texto": "Describir la relación de los cambios del tiempo atmosférico con las estaciones del año y sus efectos sobre los seres vivos y el ambiente."
+  }
+ ]
+}

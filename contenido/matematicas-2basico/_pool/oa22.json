@@ -1,0 +1,482 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "Un dibujo de 🍊 vale 2 naranjas. Rosa tiene 6 dibujos. ¿Cuántas son?",
+   "opciones": [
+    "12",
+    "6",
+    "8",
+    "3"
+   ],
+   "correcta": 0,
+   "tip": "Cada dibujo vale 2, así que se cuenta de 2 en 2: 2, 4, 6, 8, 10, 12.",
+   "id": "mate2-oa22-1"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "Cada dibujo de 🎈 vale 5 globos. Hay 7 dibujos. ¿Cuántos globos son?",
+   "opciones": [
+    "35",
+    "7",
+    "12",
+    "30"
+   ],
+   "correcta": 0,
+   "tip": "Se cuenta de 5 en 5 siete veces: 5, 10, 15, 20, 25, 30, 35.",
+   "id": "mate2-oa22-2"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "Un dibujo de 🌸 vale 10 flores. Hay 5 dibujos. ¿Cuántas flores son?",
+   "opciones": [
+    "50",
+    "15",
+    "5",
+    "40"
+   ],
+   "correcta": 0,
+   "tip": "Cada dibujo vale 10: 10, 20, 30, 40, 50. No se cuentan solo los dibujos.",
+   "id": "mate2-oa22-3"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "Un dibujo de 📖 vale 2 libros. Leo leyó 10. ¿Cuántos dibujos hace?",
+   "opciones": [
+    "5",
+    "10",
+    "20",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "Hay que ver cuántos grupos de 2 caben en 10: 2, 4, 6, 8, 10 son 5 dibujos.",
+   "id": "mate2-oa22-4"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "Un dibujo de 💌 vale 5 cartas. Llegaron 25. ¿Cuántos dibujos van?",
+   "opciones": [
+    "5",
+    "25",
+    "20",
+    "30"
+   ],
+   "correcta": 0,
+   "tip": "Se cuenta de 5 en 5 hasta 25: 5, 10, 15, 20, 25. Son 5 dibujos.",
+   "id": "mate2-oa22-5"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "Un dibujo de ⚽ vale 10 pelotas. Hay 40. ¿Cuántos dibujos lleva?",
+   "opciones": [
+    "4",
+    "40",
+    "10",
+    "30"
+   ],
+   "correcta": 0,
+   "tip": "De 10 en 10 hasta 40: 10, 20, 30, 40. Son 4 dibujos.",
+   "id": "mate2-oa22-6"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "Cada dibujo de 🥖 vale 2 panes. ¿Cuántos panes vale medio dibujo?",
+   "opciones": [
+    "1",
+    "2",
+    "4",
+    "0"
+   ],
+   "correcta": 0,
+   "tip": "Si el dibujo entero vale 2, la mitad del dibujo vale la mitad: 1 pan.",
+   "id": "mate2-oa22-7"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "Cada ⭐ vale 2 puntos. Ana tiene 5 ⭐ y Beto 3. ¿Cuántos puntos más?",
+   "opciones": [
+    "4",
+    "2",
+    "8",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "Ana tiene 2 estrellas más, y cada una vale 2: son 4 puntos más.",
+   "id": "mate2-oa22-8"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "En un pictograma, cada dibujo vale 5. ¿Cómo se cuentan los dibujos?",
+   "opciones": [
+    "De cinco en cinco",
+    "De uno en uno",
+    "De dos en dos",
+    "De diez en diez"
+   ],
+   "correcta": 0,
+   "tip": "La escala dice cuánto vale cada dibujo. Si vale 5, se cuenta 5, 10, 15 y así.",
+   "id": "mate2-oa22-9"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "Hay 8 gatos. Un dibujo de 🐾 vale 2 gatos. ¿Cuántos dibujos hace Pía?",
+   "opciones": [
+    "4",
+    "8",
+    "16",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Cada dibujo vale 2 gatos: 2, 4, 6, 8. Con 4 dibujos se completan los 8 gatos.",
+   "id": "mate2-oa22-10"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "Un dibujo de 💿 vale 10 discos. Javi tiene 3 dibujos y Coni 5. ¿Cuántos juntos?",
+   "opciones": [
+    "80",
+    "8",
+    "50",
+    "30"
+   ],
+   "correcta": 0,
+   "tip": "Entre los dos hay 8 dibujos, y cada uno vale 10: son 80 discos.",
+   "id": "mate2-oa22-11"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "En el gráfico, perros llega al 9 y gatos al 4. ¿Cuántos perros más?",
+   "opciones": [
+    "5",
+    "13",
+    "4",
+    "9"
+   ],
+   "correcta": 0,
+   "tip": "Para comparar dos barras se resta la más baja de la más alta: 9 menos 4 es 5.",
+   "id": "mate2-oa22-12"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "¿Qué juego eligieron más niños del curso?",
+   "opciones": [
+    "Volantín",
+    "Rayuela",
+    "Trompo",
+    "Emboque"
+   ],
+   "correcta": 0,
+   "tip": "El más elegido es el de la barra más alta.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Trompo",
+     "Volantín",
+     "Emboque",
+     "Rayuela"
+    ],
+    "valores": [
+     6,
+     9,
+     4,
+     7
+    ]
+   },
+   "id": "mate2-oa22-13"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "¿Qué animal del zoológico eligieron menos niños?",
+   "opciones": [
+    "Mono",
+    "Jirafa",
+    "León",
+    "Oso"
+   ],
+   "correcta": 0,
+   "tip": "El menos elegido es el de la barra más baja.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "León",
+     "Jirafa",
+     "Mono",
+     "Oso"
+    ],
+    "valores": [
+     5,
+     8,
+     3,
+     6
+    ]
+   },
+   "id": "mate2-oa22-14"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "¿Qué instrumentos empataron en votos?",
+   "opciones": [
+    "Guitarra y flauta",
+    "Piano y tambor",
+    "Guitarra y piano",
+    "Flauta y tambor"
+   ],
+   "correcta": 0,
+   "tip": "Dos barras que llegan a la misma altura tienen los mismos votos: 7 y 7.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Guitarra",
+     "Piano",
+     "Flauta",
+     "Tambor"
+    ],
+    "valores": [
+     7,
+     4,
+     7,
+     5
+    ]
+   },
+   "id": "mate2-oa22-15"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "Si todos votaron una vez, ¿cuántos niños hay en el curso?",
+   "opciones": [
+    "19",
+    "8",
+    "3",
+    "14"
+   ],
+   "correcta": 0,
+   "tip": "Cada niño está en una barra, así que se suman todas: 8, 5 y 6 dan 19.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Pan",
+     "Fruta",
+     "Yogur"
+    ],
+    "valores": [
+     8,
+     5,
+     6
+    ]
+   },
+   "id": "mate2-oa22-16"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "En el gráfico, la barra de gatos llega al 7. ¿Qué significa?",
+   "opciones": [
+    "Hay 7 gatos",
+    "Hay 1 gato",
+    "Faltan 7 gatos",
+    "Es el gato 7"
+   ],
+   "correcta": 0,
+   "tip": "La altura de la barra dice cuántos hay de esa categoría: 7 gatos.",
+   "id": "mate2-oa22-17"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "Cada dibujo de 🍬 vale 2 dulces. ¿Cuántos dibujos hay para 14 dulces?",
+   "opciones": [
+    "7",
+    "14",
+    "12",
+    "28"
+   ],
+   "correcta": 0,
+   "tip": "Se cuenta de 2 en 2 hasta 14: son 7 saltos, o sea 7 dibujos.",
+   "id": "mate2-oa22-18"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "En un pictograma con una sola escala, ¿qué muestra la fila más larga?",
+   "opciones": [
+    "Lo más elegido",
+    "Lo menos elegido",
+    "Lo anotado primero",
+    "El título del gráfico"
+   ],
+   "correcta": 0,
+   "tip": "Si todos los dibujos valen lo mismo, la fila con más dibujos es la que tiene más.",
+   "id": "mate2-oa22-19"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "En el gráfico de libros prestados, el lunes es el más bajo. ¿Qué pasó?",
+   "opciones": [
+    "Se prestaron menos",
+    "Se prestaron más",
+    "Se prestó igual",
+    "Fue el primer día"
+   ],
+   "correcta": 0,
+   "tip": "Una barra más baja quiere decir una cantidad menor que la de los otros días.",
+   "id": "mate2-oa22-20"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "Un dibujo de 🌻 vale 5 girasoles. Hay 4 dibujos. ¿Cuántos girasoles?",
+   "opciones": [
+    "20",
+    "9",
+    "4",
+    "25"
+   ],
+   "correcta": 0,
+   "tip": "Cuatro veces 5: 5, 10, 15, 20. No basta con contar los dibujos.",
+   "id": "mate2-oa22-21"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "Cada dibujo vale 10 autos. Lunes: 7 dibujos; martes: 3. ¿Cuántos autos menos?",
+   "opciones": [
+    "40",
+    "4",
+    "100",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "El martes tiene 4 dibujos menos, y cada uno vale 10: son 40 autos menos.",
+   "id": "mate2-oa22-22"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "Cada dibujo vale 2 libros. Un curso hizo 3 dibujos y otro 4. ¿Cuántos libros?",
+   "opciones": [
+    "14",
+    "7",
+    "12",
+    "16"
+   ],
+   "correcta": 0,
+   "tip": "Hay 7 dibujos en total, y cada uno vale 2: son 14 libros.",
+   "id": "mate2-oa22-23"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "Una fila de 5 dibujos de 🍪 vale 10 galletas. ¿Cuánto vale cada dibujo?",
+   "opciones": [
+    "2",
+    "5",
+    "10",
+    "50"
+   ],
+   "correcta": 0,
+   "tip": "Diez galletas repartidas en 5 dibujos: cada dibujo vale 2, porque 2, 4, 6, 8, 10.",
+   "id": "mate2-oa22-24"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "¿Qué día se vendieron más empanadas?",
+   "opciones": [
+    "Viernes",
+    "Lunes",
+    "Sábado",
+    "Jueves"
+   ],
+   "correcta": 0,
+   "tip": "El día con más ventas es el de la barra más alta.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Lunes",
+     "Jueves",
+     "Viernes",
+     "Sábado"
+    ],
+    "valores": [
+     12,
+     8,
+     15,
+     10
+    ]
+   },
+   "id": "mate2-oa22-25"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "¿Cuántas empanadas más se vendieron el viernes que el jueves?",
+   "opciones": [
+    "7",
+    "23",
+    "15",
+    "3"
+   ],
+   "correcta": 0,
+   "tip": "Se restan las dos barras: 15 menos 8 es 7.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Lunes",
+     "Jueves",
+     "Viernes",
+     "Sábado"
+    ],
+    "valores": [
+     12,
+     8,
+     15,
+     10
+    ]
+   },
+   "id": "mate2-oa22-26"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "¿Qué tienen en común un pictograma y un gráfico de barras?",
+   "opciones": [
+    "Los dos muestran datos",
+    "Los dos usan dibujos",
+    "Los dos usan barras",
+    "Los dos son tablas"
+   ],
+   "correcta": 0,
+   "tip": "Los dos ordenan datos para leerlos rápido. Uno usa dibujos y el otro barras.",
+   "id": "mate2-oa22-27"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "Cada ⭐ vale 5 votos. Azul tiene 5 ⭐. ¿Cuántos votos tiene azul?",
+   "opciones": [
+    "25",
+    "5",
+    "10",
+    "55"
+   ],
+   "correcta": 0,
+   "tip": "Cinco dibujos que valen 5 cada uno: 5, 10, 15, 20, 25.",
+   "id": "mate2-oa22-28"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "Rojo tuvo 4 votos y azul 7. ¿Qué barra dibuja más baja Diego?",
+   "opciones": [
+    "La del rojo",
+    "La del azul",
+    "Las dos iguales",
+    "Ninguna de ellas"
+   ],
+   "correcta": 0,
+   "tip": "Menos votos es una barra más baja: rojo tuvo 4 y azul 7.",
+   "id": "mate2-oa22-29"
+  },
+  {
+   "oa": "MA02 OA 22",
+   "pregunta": "Cada dibujo vale 2 votos. Amarillo tiene 6 dibujos y verde 4. ¿Cuántos votos?",
+   "opciones": [
+    "20",
+    "10",
+    "12",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "Hay 10 dibujos, y cada uno vale 2: se cuenta de 2 en 2 hasta 20.",
+   "id": "mate2-oa22-30"
+  }
+ ]
+}

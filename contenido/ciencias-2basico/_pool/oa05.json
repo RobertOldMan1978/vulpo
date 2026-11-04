@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué significa que un animal esté en peligro de extinción?",
+   "opciones": [
+    "Quedan muy pocos",
+    "Es muy peligroso",
+    "Vive en el zoológico",
+    "Es muy grande"
+   ],
+   "correcta": 0,
+   "tip": "Un animal en peligro de extinción es uno del que quedan muy pocos y podría desaparecer. No quiere decir que sea peligroso.",
+   "id": "cien2-oa05-1"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué pasa cuando un tipo de animal se extingue?",
+   "opciones": [
+    "Ya no queda ninguno",
+    "Se muda de país",
+    "Se esconde un tiempo",
+    "Se vuelve más fuerte"
+   ],
+   "correcta": 0,
+   "tip": "Cuando un tipo de animal se extingue, muere el último que quedaba y ya no vuelve a existir.",
+   "id": "cien2-oa05-2"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Cuál de estos animales está en peligro de extinción?",
+   "opciones": [
+    "El huemul",
+    "La paloma",
+    "El gorrión",
+    "El conejo"
+   ],
+   "correcta": 0,
+   "tip": "Del huemul, un ciervo nativo de Chile, quedan muy pocos. La paloma, el gorrión y el conejo son muy abundantes.",
+   "id": "cien2-oa05-3"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "El huemul aparece en el escudo de Chile. ¿Cómo está hoy?",
+   "opciones": [
+    "Quedan muy pocos",
+    "Hay muchísimos",
+    "Vive en las ciudades",
+    "Ya se extinguió"
+   ],
+   "correcta": 0,
+   "tip": "El huemul todavía existe, pero quedan muy pocos. Por eso está en peligro de extinción.",
+   "id": "cien2-oa05-4"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Dónde vive el huemul?",
+   "opciones": [
+    "En bosques del sur",
+    "En el desierto",
+    "En la costa norte",
+    "En las ciudades"
+   ],
+   "correcta": 0,
+   "tip": "El huemul vive en bosques y montañas del sur de Chile. Si esos lugares se dañan, se queda sin hogar.",
+   "id": "cien2-oa05-5"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué pone en peligro a la ranita de Darwin?",
+   "opciones": [
+    "Que corten el bosque",
+    "Que llueva en invierno",
+    "Que crezca el musgo",
+    "Que haya mucha sombra"
+   ],
+   "correcta": 0,
+   "tip": "La ranita necesita el bosque húmedo. Si lo cortan, pierde su hogar. La lluvia, el musgo y la sombra son justo lo que necesita.",
+   "id": "cien2-oa05-6"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué es una razón de que haya pocos huemules?",
+   "opciones": [
+    "Les quitaron su bosque",
+    "Comen demasiado pasto",
+    "Les gusta estar solos",
+    "Les molesta el frío"
+   ],
+   "correcta": 0,
+   "tip": "Al cortar y quemar los bosques del sur, el huemul perdió gran parte de su hogar. También lo dañaron la caza y los perros sueltos.",
+   "id": "cien2-oa05-7"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "Ana pasea a su perro cerca del bosque del pudú. ¿Qué debe hacer?",
+   "opciones": [
+    "Llevarlo con correa",
+    "Soltarlo para correr",
+    "Dejar que persiga",
+    "Llevar pan al pudú"
+   ],
+   "correcta": 0,
+   "tip": "Los perros sueltos persiguen y atacan a los pudúes. Llevar al perro con correa protege a los animales del bosque.",
+   "id": "cien2-oa05-8"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué medida ayuda a proteger a un animal en peligro?",
+   "opciones": [
+    "Cuidar su hábitat",
+    "Llevarlo de mascota",
+    "Cortar su bosque",
+    "Encerrarlo en casa"
+   ],
+   "correcta": 0,
+   "tip": "Un animal necesita su hábitat para comer, esconderse y tener crías. Cuidar ese lugar es la mejor ayuda.",
+   "id": "cien2-oa05-9"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "Diego encontró un nido de ave nativa en el bosque. ¿Qué debe hacer?",
+   "opciones": [
+    "Dejarlo en su lugar",
+    "Llevárselo a casa",
+    "Guardar los huevos",
+    "Moverlo al sol"
+   ],
+   "correcta": 0,
+   "tip": "Los huevos necesitan el calor de sus padres. Si se sacan del nido, las crías no pueden nacer.",
+   "id": "cien2-oa05-10"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "Camila quiere un chungungo de mascota. ¿Qué es lo correcto?",
+   "opciones": [
+    "Que viva libre",
+    "Que lo compre",
+    "Que lo bañe seguido",
+    "Que viva en tina"
+   ],
+   "correcta": 0,
+   "tip": "El chungungo es un animal silvestre: necesita el mar y la costa. Sacarlo de ahí lo pone en peligro.",
+   "id": "cien2-oa05-11"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué es un parque nacional?",
+   "opciones": [
+    "Un lugar protegido",
+    "Un zoológico grande",
+    "Una plaza de juegos",
+    "Un campo de cultivo"
+   ],
+   "correcta": 0,
+   "tip": "Un parque nacional es un lugar donde se protege la naturaleza. Ahí los animales viven libres en su hábitat.",
+   "id": "cien2-oa05-12"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Cómo ayuda un parque nacional al huemul?",
+   "opciones": [
+    "Protege su hábitat",
+    "Le da comida diaria",
+    "Lo encierra en jaulas",
+    "Lo saca del bosque"
+   ],
+   "correcta": 0,
+   "tip": "En un parque nacional no se puede cortar el bosque ni cazar, así que el huemul conserva su hogar y vive libre.",
+   "id": "cien2-oa05-13"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "La chinchilla casi desapareció. ¿Por qué la cazaban?",
+   "opciones": [
+    "Por su pelaje suave",
+    "Porque era peligrosa",
+    "Porque comía cultivos",
+    "Porque hacía ruido"
+   ],
+   "correcta": 0,
+   "tip": "Hace muchos años se cazaron muchísimas chinchillas para usar su pelaje. Hoy está prohibido cazarlas.",
+   "id": "cien2-oa05-14"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué animal de la costa rocosa está en peligro?",
+   "opciones": [
+    "El chungungo",
+    "La gaviota",
+    "La jaiba",
+    "La paloma"
+   ],
+   "correcta": 0,
+   "tip": "El chungungo, una nutria marina de Chile, está en peligro. La gaviota, la jaiba y la paloma son abundantes.",
+   "id": "cien2-oa05-15"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué daña el hábitat del chungungo?",
+   "opciones": [
+    "Basura en la costa",
+    "Las olas del mar",
+    "Las rocas costeras",
+    "Los peces que come"
+   ],
+   "correcta": 0,
+   "tip": "El chungungo vive en la costa. La basura ensucia su hogar y puede enredarlo. Las olas, las rocas y los peces son parte de su vida.",
+   "id": "cien2-oa05-16"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "El picaflor de Arica está en peligro. ¿Qué lo ayuda?",
+   "opciones": [
+    "Plantar flores nativas",
+    "Cortar los arbustos",
+    "Atrapar picaflores",
+    "Quitar las flores"
+   ],
+   "correcta": 0,
+   "tip": "El picaflor de Arica se alimenta del néctar de flores. Si se plantan flores nativas, tiene más alimento y más hogar.",
+   "id": "cien2-oa05-17"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué hace un guardaparque?",
+   "opciones": [
+    "Cuida el parque",
+    "Vende animales",
+    "Corta los árboles",
+    "Caza en el bosque"
+   ],
+   "correcta": 0,
+   "tip": "El guardaparque cuida un parque nacional: protege a sus animales y plantas y enseña a los visitantes a cuidarlos.",
+   "id": "cien2-oa05-18"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "Matías vio un cartel: «No sacar animales del parque». ¿Por qué?",
+   "opciones": [
+    "Para protegerlos",
+    "Porque muerden",
+    "Porque son caros",
+    "Para que no huelan"
+   ],
+   "correcta": 0,
+   "tip": "Sacar animales de su hábitat los pone en peligro. Dejarlos en el parque los protege.",
+   "id": "cien2-oa05-19"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué medida ayuda a la ranita de Darwin?",
+   "opciones": [
+    "Cuidar el bosque húmedo",
+    "Secar sus pantanos",
+    "Tenerla en un frasco",
+    "Sacar el musgo húmedo"
+   ],
+   "correcta": 0,
+   "tip": "La ranita de Darwin necesita el bosque húmedo con musgo. Cuidar ese bosque es protegerla.",
+   "id": "cien2-oa05-20"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "Un animal nativo de Chile es uno que…",
+   "opciones": [
+    "vive aquí desde siempre",
+    "trajeron de otro país",
+    "vive en la granja",
+    "se compra en tiendas"
+   ],
+   "correcta": 0,
+   "tip": "Un animal nativo vivía en Chile antes de que llegaran las personas. No lo trajo nadie desde otro lugar.",
+   "id": "cien2-oa05-21"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Cuál es un animal nativo de Chile?",
+   "opciones": [
+    "El pudú",
+    "El conejo",
+    "La vaca",
+    "El gorrión"
+   ],
+   "correcta": 0,
+   "tip": "El pudú es un ciervo pequeño que vive en Chile desde siempre. El conejo, la vaca y el gorrión los trajeron personas de otros lugares.",
+   "id": "cien2-oa05-22"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "Javiera quiere ayudar a los animales en peligro. ¿Qué puede hacer?",
+   "opciones": [
+    "Cuidar los parques",
+    "Comprar animales nativos",
+    "Sacar sus huevos",
+    "Cazar con cuidado"
+   ],
+   "correcta": 0,
+   "tip": "Cuidar los parques y no dejar basura protege el hábitat de los animales. Comprarlos, cazarlos o sacar sus huevos los daña.",
+   "id": "cien2-oa05-23"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Por qué está prohibido vender loros nativos?",
+   "opciones": [
+    "Para que no desaparezcan",
+    "Porque vuelan muy rápido",
+    "Porque hablan demasiado",
+    "Porque comen semillas"
+   ],
+   "correcta": 0,
+   "tip": "Muchos loros nativos se sacaban de sus nidos para venderlos, y quedaron pocos. Prohibirlo ayuda a que no desaparezcan.",
+   "id": "cien2-oa05-24"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "Benjamín vio un huemul herido. ¿Qué debe hacer?",
+   "opciones": [
+    "Avisar a un guardaparque",
+    "Llevárselo a su casa",
+    "Darle pan para comer",
+    "Tomarle fotos y seguir"
+   ],
+   "correcta": 0,
+   "tip": "Un guardaparque sabe cómo ayudar a un animal herido sin dañarlo. Un niño no debe tocarlo ni llevárselo.",
+   "id": "cien2-oa05-25"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "El huillín vive en ríos del sur y está en peligro. ¿Qué lo daña?",
+   "opciones": [
+    "Ríos contaminados",
+    "Ríos con muchos peces",
+    "El agua corriendo",
+    "Las piedras del río"
+   ],
+   "correcta": 0,
+   "tip": "El huillín necesita ríos limpios para cazar y vivir. Si el río se contamina, pierde su hogar y su alimento.",
+   "id": "cien2-oa05-26"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "Tomás vio un cartel en la playa: «Zona de nidos». ¿Qué debe hacer?",
+   "opciones": [
+    "No pisar esa zona",
+    "Buscar los huevos",
+    "Correr con su perro",
+    "Hacer una fogata"
+   ],
+   "correcta": 0,
+   "tip": "En esa zona hay aves cuidando sus nidos. No pisarla protege los huevos y a las crías.",
+   "id": "cien2-oa05-27"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "¿Qué tienen en común el huemul y la ranita de Darwin?",
+   "opciones": [
+    "Están en peligro",
+    "Viven en el mar",
+    "Tienen pelaje",
+    "Son mascotas"
+   ],
+   "correcta": 0,
+   "tip": "Los dos son animales nativos de Chile y de los dos quedan pocos: están en peligro de extinción.",
+   "id": "cien2-oa05-28"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "Si quedan pocos de un animal, ¿puede recuperarse?",
+   "opciones": [
+    "Sí, si lo protegemos",
+    "No, nunca jamás",
+    "Sí, solo y rápido",
+    "No, ya se extinguió"
+   ],
+   "correcta": 0,
+   "tip": "Si se cuida su hábitat y no se lo caza, un animal en peligro puede volver a tener más crías. Mientras quede alguno, hay esperanza.",
+   "id": "cien2-oa05-29"
+  },
+  {
+   "oa": "CN02 OA 05",
+   "pregunta": "Quedan pocos gatos andinos en la cordillera. ¿Qué medida lo ayuda?",
+   "opciones": [
+    "Proteger la cordillera",
+    "Adoptarlo de mascota",
+    "Cazar lo que come",
+    "Llevarlo a la ciudad"
+   ],
+   "correcta": 0,
+   "tip": "El gato andino necesita la cordillera y los animales que caza. Proteger su hábitat es la mejor forma de ayudarlo.",
+   "id": "cien2-oa05-30"
+  }
+ ]
+}

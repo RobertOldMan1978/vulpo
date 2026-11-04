@@ -1,0 +1,522 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "Cara salió 7 veces. ¿Hasta qué número sube su barra?",
+   "opciones": [
+    "Hasta el 7",
+    "Hasta el 1",
+    "Hasta el 6",
+    "Hasta el 8"
+   ],
+   "correcta": 0,
+   "tip": "La barra sube hasta la cantidad de veces que salió: 7 veces, hasta el 7.",
+   "id": "mate2-oa21-1"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "En la tabla, el 5 salió 4 veces. ¿Hasta dónde llega su barra?",
+   "opciones": [
+    "Hasta el 4",
+    "Hasta el 5",
+    "Hasta el 9",
+    "Hasta el 1"
+   ],
+   "correcta": 0,
+   "tip": "Bajo la barra va el número del dado, el 5. La altura es cuántas veces salió: 4.",
+   "id": "mate2-oa21-2"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "¿Cuántas barras tiene el gráfico de lanzar una moneda?",
+   "opciones": [
+    "2",
+    "1",
+    "6",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "Una moneda solo da cara o sello, así que el gráfico lleva dos barras.",
+   "id": "mate2-oa21-3"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "Benja registró un dado en un gráfico. ¿Qué va bajo cada barra?",
+   "opciones": [
+    "Un número del dado",
+    "Su propio nombre",
+    "El color de la barra",
+    "La fecha de hoy"
+   ],
+   "correcta": 0,
+   "tip": "Bajo cada barra se escribe lo que salió, del 1 al 6. La altura dice cuántas veces.",
+   "id": "mate2-oa21-4"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "¿Qué número salió más veces en este juego de dado?",
+   "opciones": [
+    "El 4",
+    "El 6",
+    "El 1",
+    "El 3"
+   ],
+   "correcta": 0,
+   "tip": "Se busca la barra más alta, aunque su número no sea el mayor del dado.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "valores": [
+     3,
+     5,
+     2,
+     6,
+     4,
+     1
+    ]
+   },
+   "id": "mate2-oa21-5"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "¿Qué número salió menos veces en este juego de dado?",
+   "opciones": [
+    "El 2",
+    "El 6",
+    "El 1",
+    "El 5"
+   ],
+   "correcta": 0,
+   "tip": "Se busca la barra más baja de todas. Mirar solo el número del dado no sirve.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "valores": [
+     4,
+     2,
+     5,
+     3,
+     6,
+     4
+    ]
+   },
+   "id": "mate2-oa21-6"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "Cara salió más veces que sello. ¿Cuántas de diferencia?",
+   "opciones": [
+    "3",
+    "15",
+    "9",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Para comparar dos barras se restan sus alturas: 9 menos 6 es 3.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Cara",
+     "Sello"
+    ],
+    "valores": [
+     9,
+     6
+    ]
+   },
+   "id": "mate2-oa21-7"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "Cara salió 8 veces y sello 8. ¿Cómo quedan las barras?",
+   "opciones": [
+    "Del mismo alto",
+    "Más alta la cara",
+    "Más alto el sello",
+    "Las dos vacías"
+   ],
+   "correcta": 0,
+   "tip": "Si salieron las mismas veces, las dos barras suben hasta el mismo número.",
+   "id": "mate2-oa21-8"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "Luis lanzó la moneda 10 veces y salió cara 6. ¿Hasta dónde sube sello?",
+   "opciones": [
+    "Hasta el 4",
+    "Hasta el 6",
+    "Hasta el 10",
+    "Hasta el 16"
+   ],
+   "correcta": 0,
+   "tip": "Las 10 veces se reparten entre cara y sello: 10 menos 6 son 4 sellos.",
+   "id": "mate2-oa21-9"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "El 3 no salió ninguna vez. ¿Cómo es su barra?",
+   "opciones": [
+    "No tiene altura",
+    "Es la más alta",
+    "Llega hasta el 3",
+    "Llega hasta el 1"
+   ],
+   "correcta": 0,
+   "tip": "La barra crece una vez por cada vez que sale. Si no salió nunca, no sube nada.",
+   "id": "mate2-oa21-10"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "Salió 5, 1, 5, 3, 5, 1. ¿Qué número va en la tabla para el 5?",
+   "opciones": [
+    "3",
+    "5",
+    "1",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "En la tabla se anota cuántas veces salió el 5, y salió 3 veces. El 6 es el total de lanzamientos.",
+   "id": "mate2-oa21-11"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "Cara salió 5 veces y sello 9. ¿Qué barra dibuja más alta Ana?",
+   "opciones": [
+    "La de sello",
+    "La de cara",
+    "Las dos iguales",
+    "Ninguna de las dos"
+   ],
+   "correcta": 0,
+   "tip": "La barra más alta es la del resultado que salió más veces: sello, con 9.",
+   "id": "mate2-oa21-12"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "La tabla dice que el 6 salió 5 veces. ¿Qué se escribe bajo esa barra?",
+   "opciones": [
+    "El 6",
+    "El 5",
+    "El 11",
+    "El 1"
+   ],
+   "correcta": 0,
+   "tip": "Bajo la barra va lo que salió, el 6. El 5 no se escribe abajo: es la altura de la barra.",
+   "id": "mate2-oa21-13"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "¿Cuántas veces lanzó la moneda en este juego?",
+   "opciones": [
+    "12",
+    "2",
+    "7",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "Cada lanzamiento sumó a una barra, así que se juntan las dos: 7 y 5 son 12.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Cara",
+     "Sello"
+    ],
+    "valores": [
+     7,
+     5
+    ]
+   },
+   "id": "mate2-oa21-14"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "¿Cuántas veces lanzó el dado en este juego?",
+   "opciones": [
+    "15",
+    "6",
+    "4",
+    "21"
+   ],
+   "correcta": 0,
+   "tip": "Se suman todas las barras: 2, 3, 1, 4, 2 y 3 dan 15. Hay 6 barras, pero no 6 lanzamientos.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "valores": [
+     2,
+     3,
+     1,
+     4,
+     2,
+     3
+    ]
+   },
+   "id": "mate2-oa21-15"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "¿Qué barra NO puede aparecer en el gráfico de un dado común?",
+   "opciones": [
+    "La del 7",
+    "La del 6",
+    "La del 1",
+    "La del 3"
+   ],
+   "correcta": 0,
+   "tip": "Un dado común tiene caras del 1 al 6. El 7 nunca sale, así que no tiene barra.",
+   "id": "mate2-oa21-16"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "Para dibujar el gráfico de su dado, ¿qué necesita antes Ana?",
+   "opciones": [
+    "Los resultados anotados",
+    "Un dado nuevecito",
+    "Una regla bien larga",
+    "Lápices de colores"
+   ],
+   "correcta": 0,
+   "tip": "Primero se juega y se anota en una tabla. Con esos datos se dibujan las barras.",
+   "id": "mate2-oa21-17"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "¿Qué dos números del dado salieron las mismas veces?",
+   "opciones": [
+    "El 1 y el 4",
+    "El 3 y el 6",
+    "El 2 y el 5",
+    "El 4 y el 6"
+   ],
+   "correcta": 0,
+   "tip": "Dos barras de la misma altura muestran que esos números salieron las mismas veces.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "valores": [
+     4,
+     2,
+     6,
+     4,
+     3,
+     1
+    ]
+   },
+   "id": "mate2-oa21-18"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "Isidora pintó 3 cuadros en la barra del 4. ¿Cuántas veces salió el 4?",
+   "opciones": [
+    "3",
+    "4",
+    "7",
+    "1"
+   ],
+   "correcta": 0,
+   "tip": "Cada cuadro pintado es una vez. El 4 es el número del dado, no las veces que salió.",
+   "id": "mate2-oa21-19"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "Sello tiene 6 cuadros pintados y vuelve a salir. ¿Cuántos tendrá?",
+   "opciones": [
+    "7",
+    "6",
+    "5",
+    "12"
+   ],
+   "correcta": 0,
+   "tip": "Cada vez que sale sello se pinta un cuadro más: 6 y uno más son 7.",
+   "id": "mate2-oa21-20"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "¿Qué salió más veces en este juego de moneda?",
+   "opciones": [
+    "Sello",
+    "Cara",
+    "Las dos igual",
+    "Ninguna"
+   ],
+   "correcta": 0,
+   "tip": "Se comparan las dos barras: la de sello llega más arriba.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Cara",
+     "Sello"
+    ],
+    "valores": [
+     6,
+     10
+    ]
+   },
+   "id": "mate2-oa21-21"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "¿Por qué la barra del 6 es la más alta en el gráfico de Pedro?",
+   "opciones": [
+    "Salió más veces",
+    "Es el número mayor",
+    "Salió de último",
+    "Es la última barra"
+   ],
+   "correcta": 0,
+   "tip": "La altura cuenta las veces que salió, no el valor del número. Por eso cualquier barra puede ser la más alta.",
+   "id": "mate2-oa21-22"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "Sofía lanzó el dado dos veces: salió 3 y 3. ¿Qué barra llega al 2?",
+   "opciones": [
+    "La del 3",
+    "La del 2",
+    "La del 6",
+    "La del 1"
+   ],
+   "correcta": 0,
+   "tip": "El 3 salió dos veces, así que su barra sube hasta el 2. Las demás quedan sin altura.",
+   "id": "mate2-oa21-23"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "Pía registró 20 lanzamientos de moneda. ¿Cuánto suman las dos barras?",
+   "opciones": [
+    "20",
+    "2",
+    "10",
+    "40"
+   ],
+   "correcta": 0,
+   "tip": "Cada lanzamiento está en una de las dos barras, así que juntas suman los 20.",
+   "id": "mate2-oa21-24"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "¿Dónde conviene anotar 30 lanzamientos de un dado?",
+   "opciones": [
+    "En una tabla",
+    "En la memoria",
+    "En una sola raya",
+    "Sobre el dado"
+   ],
+   "correcta": 0,
+   "tip": "Una tabla ordena los resultados por número y deja contarlos después sin olvidar ninguno.",
+   "id": "mate2-oa21-25"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "El 2 salió más veces que el 1. ¿Cuántas de diferencia?",
+   "opciones": [
+    "4",
+    "8",
+    "1",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "La barra del 2 llega a 6 y la del 1 a 2. Se restan: 6 menos 2 es 4.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "valores": [
+     2,
+     6,
+     2,
+     3,
+     4,
+     1
+    ]
+   },
+   "id": "mate2-oa21-26"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "Un gráfico de un juego tiene 6 barras. ¿Con qué se jugó?",
+   "opciones": [
+    "Con un dado",
+    "Con una moneda",
+    "Con dos monedas",
+    "Con una pelota"
+   ],
+   "correcta": 0,
+   "tip": "Seis barras son seis resultados posibles: las caras de un dado, del 1 al 6.",
+   "id": "mate2-oa21-27"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "La barra del 4 llega al 6, pero salió 3 veces. ¿Qué hace Martina?",
+   "opciones": [
+    "La baja hasta el 3",
+    "La sube hasta el 7",
+    "La deja así",
+    "La borra entera"
+   ],
+   "correcta": 0,
+   "tip": "La barra tiene que llegar justo a las veces que salió. Como salió 3 veces, se baja hasta el 3.",
+   "id": "mate2-oa21-28"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "Lanzas una moneda una vez. ¿Cuántas barras crecen en el gráfico?",
+   "opciones": [
+    "Solo una",
+    "Las dos",
+    "Ninguna",
+    "Tres barras"
+   ],
+   "correcta": 0,
+   "tip": "En cada lanzamiento sale cara o sello, uno solo: crece solo esa barra.",
+   "id": "mate2-oa21-29"
+  },
+  {
+   "oa": "MA02 OA 21",
+   "pregunta": "Sello llega al 8 y cara al 3. ¿Cuántas de diferencia?",
+   "opciones": [
+    "5",
+    "11",
+    "3",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "Se comparan las alturas restando: 8 menos 3 es 5. Sello salió 5 veces más que cara.",
+   "id": "mate2-oa21-30"
+  }
+ ]
+}

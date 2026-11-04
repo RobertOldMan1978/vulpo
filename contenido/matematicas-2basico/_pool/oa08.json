@@ -1,0 +1,342 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "¿Cuánto es 9 + 0?",
+   "opciones": [
+    "9",
+    "0",
+    "10",
+    "90"
+   ],
+   "correcta": 0,
+   "tip": "Sumar 0 es no agregar nada: el 9 queda igual.",
+   "id": "mate2-oa08-1"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "¿Cuánto es 15 - 0?",
+   "opciones": [
+    "15",
+    "0",
+    "14",
+    "16"
+   ],
+   "correcta": 0,
+   "tip": "Restar 0 es no quitar nada: el 15 queda igual.",
+   "id": "mate2-oa08-2"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "Si a 0 le sumas 34, ¿qué número da?",
+   "opciones": [
+    "34",
+    "0",
+    "35",
+    "4"
+   ],
+   "correcta": 0,
+   "tip": "Si a 0 le agregas 34, tienes 34. El 0 no suma nada.",
+   "id": "mate2-oa08-3"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "A 58 le restamos 0. ¿Qué número queda?",
+   "opciones": [
+    "58",
+    "0",
+    "57",
+    "50"
+   ],
+   "correcta": 0,
+   "tip": "Quitar 0 es no quitar nada, así que quedan los mismos 58.",
+   "id": "mate2-oa08-4"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "Ana tiene 6 dulces y le dan 0 más. ¿Cuántos tiene?",
+   "opciones": [
+    "6",
+    "0",
+    "7",
+    "5"
+   ],
+   "correcta": 0,
+   "tip": "Recibir 0 es no recibir nada: Ana sigue con sus 6 dulces.",
+   "id": "mate2-oa08-5"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "En un plato hay 8 galletas y nadie se come ninguna. ¿Cuántas quedan?",
+   "opciones": [
+    "8",
+    "0",
+    "7",
+    "9"
+   ],
+   "correcta": 0,
+   "tip": "Si no se saca ninguna, es quitar 0: quedan las 8.",
+   "id": "mate2-oa08-6"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "¿Qué le pasa a un número si le sumas 0?",
+   "opciones": [
+    "Queda igual",
+    "Aumenta en uno",
+    "Se vuelve cero",
+    "Se hace el doble"
+   ],
+   "correcta": 0,
+   "tip": "El 0 no agrega nada, por eso el número no cambia.",
+   "id": "mate2-oa08-7"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "Si a un número le quitas 0, ¿qué número queda?",
+   "opciones": [
+    "El mismo número",
+    "El número cero",
+    "Uno menos",
+    "La mitad"
+   ],
+   "correcta": 0,
+   "tip": "Quitar 0 es no quitar nada, así que queda el mismo número.",
+   "id": "mate2-oa08-8"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "¿Qué suma da 12?",
+   "opciones": [
+    "12 + 0",
+    "12 + 1",
+    "10 + 0",
+    "2 + 0"
+   ],
+   "correcta": 0,
+   "tip": "12 + 0 es 12. Las otras dan 13, 10 y 2.",
+   "id": "mate2-oa08-9"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "¿Qué resta da 20?",
+   "opciones": [
+    "20 - 0",
+    "20 - 1",
+    "2 - 0",
+    "21 - 0"
+   ],
+   "correcta": 0,
+   "tip": "20 - 0 es 20, porque no se quita nada. Las otras dan 19, 2 y 21.",
+   "id": "mate2-oa08-10"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "Matías dice que 7 + 0 es 0. ¿Tiene razón?",
+   "opciones": [
+    "No, es 7",
+    "Sí, es 0",
+    "No, es 8",
+    "No, es 70"
+   ],
+   "correcta": 0,
+   "tip": "Sumar 0 no borra el número: 7 + 0 sigue siendo 7.",
+   "id": "mate2-oa08-11"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "Sofía dice que 30 - 0 es 0. ¿Tiene razón?",
+   "opciones": [
+    "No, es 30",
+    "Sí, es 0",
+    "No, es 29",
+    "No, es 3"
+   ],
+   "correcta": 0,
+   "tip": "Quitar 0 no deja en cero: 30 - 0 sigue siendo 30.",
+   "id": "mate2-oa08-12"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "Camila dice que 0 + 5 es 5. ¿Tiene razón?",
+   "opciones": [
+    "Sí, es 5",
+    "No, es 0",
+    "No, es 6",
+    "No, es 50"
+   ],
+   "correcta": 0,
+   "tip": "Camila tiene razón: si a nada le agregas 5, tienes 5.",
+   "id": "mate2-oa08-13"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "¿Qué número sumado a 23 da 23?",
+   "opciones": [
+    "0",
+    "23",
+    "1",
+    "46"
+   ],
+   "correcta": 0,
+   "tip": "Solo el 0 deja el número igual al sumarlo. 23 + 23 daría 46.",
+   "id": "mate2-oa08-14"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "¿Qué número le quito a 41 para que quede 41?",
+   "opciones": [
+    "0",
+    "41",
+    "1",
+    "40"
+   ],
+   "correcta": 0,
+   "tip": "Si quito 0 no quito nada, y quedan los 41. Si quitara 41 quedaría 0.",
+   "id": "mate2-oa08-15"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "En una caja hay 50 lápices y se sacan 0. ¿Cuántos quedan?",
+   "opciones": [
+    "50",
+    "0",
+    "49",
+    "5"
+   ],
+   "correcta": 0,
+   "tip": "Sacar 0 lápices es no sacar ninguno: quedan los 50.",
+   "id": "mate2-oa08-16"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "Un bus lleva 27 niños y en la parada suben 0. ¿Cuántos van?",
+   "opciones": [
+    "27",
+    "0",
+    "28",
+    "20"
+   ],
+   "correcta": 0,
+   "tip": "Si suben 0 niños no sube nadie: van los mismos 27.",
+   "id": "mate2-oa08-17"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "¿Cuánto es 0 + 0?",
+   "opciones": [
+    "0",
+    "1",
+    "2",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "Nada más nada sigue siendo nada: 0 + 0 es 0.",
+   "id": "mate2-oa08-18"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "Al 100 le quitas 0. ¿Cuánto te queda?",
+   "opciones": [
+    "100",
+    "0",
+    "99",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "Restar 0 no cambia el número: 100 - 0 es 100.",
+   "id": "mate2-oa08-19"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "¿Qué cuenta deja el 16 igual?",
+   "opciones": [
+    "16 + 0",
+    "16 + 1",
+    "16 - 1",
+    "16 - 6"
+   ],
+   "correcta": 0,
+   "tip": "Sumar 0 no agrega nada, así que 16 + 0 sigue siendo 16.",
+   "id": "mate2-oa08-20"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "¿Con qué cuenta el 9 sigue siendo 9?",
+   "opciones": [
+    "9 - 0",
+    "9 - 9",
+    "9 + 1",
+    "9 - 1"
+   ],
+   "correcta": 0,
+   "tip": "Quitar 0 no quita nada. En cambio 9 - 9 deja 0.",
+   "id": "mate2-oa08-21"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "Pedro tenía 5 globos y no se le reventó ninguno. ¿Cuántos tiene?",
+   "opciones": [
+    "5",
+    "0",
+    "4",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Que no se reviente ninguno es quitar 0: Pedro sigue con 5.",
+   "id": "mate2-oa08-22"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "Diego suma 0 a un número y le da 24. ¿Qué número era?",
+   "opciones": [
+    "24",
+    "0",
+    "25",
+    "23"
+   ],
+   "correcta": 0,
+   "tip": "Sumar 0 no cambia nada, así que el número ya era 24.",
+   "id": "mate2-oa08-23"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "A Ana le quitaron 0 fichas y le quedan 10. ¿Cuántas tenía?",
+   "opciones": [
+    "10",
+    "0",
+    "11",
+    "9"
+   ],
+   "correcta": 0,
+   "tip": "Quitar 0 no cambia nada: si le quedan 10, tenía 10.",
+   "id": "mate2-oa08-24"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "¿Cuánto es 7 + 0 + 0?",
+   "opciones": [
+    "7",
+    "0",
+    "9",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "Cada 0 no agrega nada: el 7 queda igual.",
+   "id": "mate2-oa08-25"
+  },
+  {
+   "oa": "MA02 OA 08",
+   "pregunta": "¿Dan lo mismo 8 + 0 y 8 - 0?",
+   "opciones": [
+    "Sí, las dos dan 8",
+    "No, la suma da más",
+    "No, la resta da más",
+    "No, una da 0"
+   ],
+   "correcta": 0,
+   "tip": "Sumar 0 y restar 0 no cambian el número: las dos dan 8.",
+   "id": "mate2-oa08-26"
+  }
+ ]
+}

@@ -1,0 +1,410 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "Un lápiz mide 6 clips y otro mide 4 clips. ¿Cuál es más largo?",
+   "opciones": [
+    "El de 6 clips",
+    "El de 4 clips",
+    "Miden igual",
+    "No se puede saber"
+   ],
+   "correcta": 0,
+   "tip": "Con la misma unidad, el que necesita más clips es el más largo. 6 clips son más que 4.",
+   "id": "mate2-oa19-1"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "Ana mide la mesa en manos y Pedro en lápices. ¿Por qué da distinto?",
+   "opciones": [
+    "Usan unidades distintas",
+    "La mesa cambió",
+    "Uno no sabe contar",
+    "La mesa es muy larga"
+   ],
+   "correcta": 0,
+   "tip": "La mano de Ana y el lápiz de Pedro no son del mismo largo. Si cambia la unidad, cambia el número.",
+   "id": "mate2-oa19-2"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "Si mides la mesa con clips grandes, ¿usas más o menos que con chicos?",
+   "opciones": [
+    "Menos clips",
+    "Más clips",
+    "La misma cantidad",
+    "Ningún clip"
+   ],
+   "correcta": 0,
+   "tip": "Un clip grande tapa más espacio, así que se necesitan menos para cubrir el mismo largo.",
+   "id": "mate2-oa19-3"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "Matías midió su pieza: 5 pasos. ¿Y con los pasos de su papá?",
+   "opciones": [
+    "Menos de 5 pasos",
+    "Más de 5 pasos",
+    "Justo 5 pasos",
+    "10 pasos"
+   ],
+   "correcta": 0,
+   "tip": "Los pasos del papá son más largos que los de Matías, así que le alcanzan menos pasos.",
+   "id": "mate2-oa19-4"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "¿Cuál de estas medidas es igual para todas las personas?",
+   "opciones": [
+    "los centímetros",
+    "los pasos",
+    "las cuartas",
+    "los pies"
+   ],
+   "correcta": 0,
+   "tip": "Un centímetro mide igual en todas las reglas. Los pasos, las cuartas y los pies cambian según quién mida.",
+   "id": "mate2-oa19-5"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "Pedro dice que su lápiz mide 15. ¿Qué le falta decir?",
+   "opciones": [
+    "En qué unidad",
+    "De qué color es",
+    "De quién es",
+    "Qué día lo midió"
+   ],
+   "correcta": 0,
+   "tip": "Un número solo no basta: 15 centímetros y 15 clips no son lo mismo. Hay que decir la unidad.",
+   "id": "mate2-oa19-6"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "¿Con qué conviene medir el largo de un lápiz?",
+   "opciones": [
+    "con centímetros",
+    "con metros",
+    "con pasos",
+    "con brazos"
+   ],
+   "correcta": 0,
+   "tip": "Un lápiz es corto, así que conviene una unidad chica como el centímetro. Los metros son para cosas largas.",
+   "id": "mate2-oa19-7"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "¿Con qué conviene medir el largo del patio del colegio?",
+   "opciones": [
+    "con metros",
+    "con centímetros",
+    "con clips",
+    "con gomas"
+   ],
+   "correcta": 0,
+   "tip": "El patio es muy largo. Con centímetros o clips habría que contar demasiado; el metro es más cómodo.",
+   "id": "mate2-oa19-8"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "¿Cuánto mide más o menos un lápiz nuevo?",
+   "opciones": [
+    "15 cm",
+    "15 m",
+    "1 cm",
+    "150 m"
+   ],
+   "correcta": 0,
+   "tip": "Un lápiz cabe en la mano: mide como 15 centímetros. 15 metros sería más largo que una sala.",
+   "id": "mate2-oa19-9"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "¿Qué medida le queda bien al alto de una puerta?",
+   "opciones": [
+    "2 m",
+    "2 cm",
+    "20 m",
+    "20 cm"
+   ],
+   "correcta": 0,
+   "tip": "Una puerta es un poco más alta que una persona adulta: mide como 2 metros. 2 centímetros es menos que un dedo.",
+   "id": "mate2-oa19-10"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "Una goma de borrar es chica. ¿Cuánto puede medir?",
+   "opciones": [
+    "4 cm",
+    "4 m",
+    "40 cm",
+    "40 m"
+   ],
+   "correcta": 0,
+   "tip": "Una goma mide más o menos lo que el ancho de dos dedos: como 4 centímetros.",
+   "id": "mate2-oa19-11"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "¿Cuál de estas cosas mide más o menos 1 metro de largo?",
+   "opciones": [
+    "una guitarra",
+    "una hormiga",
+    "una moneda",
+    "un edificio"
+   ],
+   "correcta": 0,
+   "tip": "Un metro es como un paso largo de un adulto. Una guitarra mide más o menos eso; la hormiga y la moneda son mucho más chicas.",
+   "id": "mate2-oa19-12"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "Mira la regla. ¿Cuántos centímetros hay desde el 0 hasta la marca?",
+   "opciones": [
+    "7 cm",
+    "8 cm",
+    "6 cm",
+    "10 cm"
+   ],
+   "correcta": 0,
+   "tip": "Desde el 0 se cuentan los espacios de 1 centímetro hasta la marca: son 7.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 10,
+    "paso": 1,
+    "marca": 7,
+    "oculta": true
+   },
+   "id": "mate2-oa19-13"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "Una goma parte en el 0 de la regla y llega a la marca. ¿Cuánto mide?",
+   "opciones": [
+    "4 cm",
+    "5 cm",
+    "3 cm",
+    "6 cm"
+   ],
+   "correcta": 0,
+   "tip": "Se cuentan los espacios desde el 0 hasta la marca: 1, 2, 3, 4. La goma mide 4 centímetros.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 10,
+    "paso": 1,
+    "marca": 4,
+    "oculta": true
+   },
+   "id": "mate2-oa19-14"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "Sofía midió un lápiz desde el 2 hasta el 9 de la regla. ¿Cuánto mide?",
+   "opciones": [
+    "7 cm",
+    "9 cm",
+    "11 cm",
+    "2 cm"
+   ],
+   "correcta": 0,
+   "tip": "El lápiz no empezó en el 0. Hay que contar los espacios del 2 al 9: 9 - 2 = 7.",
+   "id": "mate2-oa19-15"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "¿En qué número de la regla se pone la punta del objeto?",
+   "opciones": [
+    "en el 0",
+    "en el 1",
+    "en el 10",
+    "en el 5"
+   ],
+   "correcta": 0,
+   "tip": "La medida parte en el 0. Si empiezas en el 1, el objeto queda medido con un centímetro de más.",
+   "id": "mate2-oa19-16"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "Una cinta mide 12 cm y otra 8 cm. ¿Cuánto miden juntas?",
+   "opciones": [
+    "20 cm",
+    "4 cm",
+    "19 cm",
+    "22 cm"
+   ],
+   "correcta": 0,
+   "tip": "Juntas se suman los dos largos: 12 + 8 = 20 centímetros.",
+   "id": "mate2-oa19-17"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "Un lápiz mide 15 cm y otro 9 cm. ¿Cuánto más largo es el de 15?",
+   "opciones": [
+    "6 cm",
+    "24 cm",
+    "5 cm",
+    "9 cm"
+   ],
+   "correcta": 0,
+   "tip": "Para saber cuánto más largo es, se resta: 15 - 9 = 6 centímetros.",
+   "id": "mate2-oa19-18"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "Diego saltó 1 m y Ana saltó 2 m. ¿Quién saltó más lejos?",
+   "opciones": [
+    "Ana",
+    "Diego",
+    "Saltaron igual",
+    "No se puede saber"
+   ],
+   "correcta": 0,
+   "tip": "Los dos midieron en metros, así que basta comparar los números: 2 metros es más que 1.",
+   "id": "mate2-oa19-19"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "Una cuerda de 20 cm se corta en 2 partes iguales. ¿Cuánto mide una?",
+   "opciones": [
+    "10 cm",
+    "20 cm",
+    "40 cm",
+    "18 cm"
+   ],
+   "correcta": 0,
+   "tip": "Dos partes iguales son dos mitades. La mitad de 20 es 10, porque 10 + 10 = 20.",
+   "id": "mate2-oa19-20"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "Tres lápices miden 10, 14 y 8 cm. ¿Cuál es el más corto?",
+   "opciones": [
+    "El de 8 cm",
+    "El de 14 cm",
+    "El de 10 cm",
+    "Miden igual"
+   ],
+   "correcta": 0,
+   "tip": "El más corto es el que mide menos centímetros. De 10, 14 y 8, el menor es 8.",
+   "id": "mate2-oa19-21"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "Javiera pone 3 lápices de 5 cm en fila. ¿Cuánto mide la fila?",
+   "opciones": [
+    "15 cm",
+    "8 cm",
+    "10 cm",
+    "20 cm"
+   ],
+   "correcta": 0,
+   "tip": "Son tres lápices de 5 centímetros: 5 + 5 + 5 = 15 centímetros.",
+   "id": "mate2-oa19-22"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "¿Qué es más largo: 1 metro o 1 centímetro?",
+   "opciones": [
+    "1 metro",
+    "1 centímetro",
+    "Miden igual",
+    "No se puede saber"
+   ],
+   "correcta": 0,
+   "tip": "Aunque los dos dicen 1, el metro es una unidad mucho más larga: en un metro caben muchos centímetros.",
+   "id": "mate2-oa19-23"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "Para medir el largo de la sala, ¿qué conviene usar?",
+   "opciones": [
+    "una huincha de metros",
+    "una regla de 10 cm",
+    "una balanza",
+    "un reloj"
+   ],
+   "correcta": 0,
+   "tip": "La huincha es larga y está marcada en metros. La regla es muy corta, y la balanza y el reloj no miden largos.",
+   "id": "mate2-oa19-24"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "Un clip mide 3 cm. ¿Cuánto miden 2 clips puestos en fila?",
+   "opciones": [
+    "6 cm",
+    "5 cm",
+    "9 cm",
+    "4 cm"
+   ],
+   "correcta": 0,
+   "tip": "Dos clips de 3 centímetros: 3 + 3 = 6 centímetros.",
+   "id": "mate2-oa19-25"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "La mesa mide 80 cm de alto y la silla 50 cm. ¿Cuánto más alta es?",
+   "opciones": [
+    "30 cm",
+    "130 cm",
+    "20 cm",
+    "50 cm"
+   ],
+   "correcta": 0,
+   "tip": "Se resta para comparar: 80 - 50 = 30 centímetros. Sumar daría el alto de las dos juntas.",
+   "id": "mate2-oa19-26"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "El quiosco está a 30 m de tu casa. Si vas y vuelves, ¿cuánto caminas?",
+   "opciones": [
+    "60 m",
+    "30 m",
+    "15 m",
+    "33 m"
+   ],
+   "correcta": 0,
+   "tip": "Ir son 30 metros y volver otros 30: 30 + 30 = 60 metros.",
+   "id": "mate2-oa19-27"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "Un gusano mide 3 cm y crece 2 cm. ¿Cuánto mide ahora?",
+   "opciones": [
+    "5 cm",
+    "1 cm",
+    "6 cm",
+    "32 cm"
+   ],
+   "correcta": 0,
+   "tip": "Si crece, su largo aumenta: 3 + 2 = 5 centímetros.",
+   "id": "mate2-oa19-28"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "Una cinta de 50 cm pierde un trozo de 20 cm. ¿Cuánto queda?",
+   "opciones": [
+    "30 cm",
+    "70 cm",
+    "20 cm",
+    "40 cm"
+   ],
+   "correcta": 0,
+   "tip": "Al cortar un trozo, el largo disminuye: 50 - 20 = 30 centímetros.",
+   "id": "mate2-oa19-29"
+  },
+  {
+   "oa": "MA02 OA 19",
+   "pregunta": "Camila midió su cuaderno: 6 gomas. ¿Qué unidad usó?",
+   "opciones": [
+    "la goma",
+    "el centímetro",
+    "el cuaderno",
+    "el metro"
+   ],
+   "correcta": 0,
+   "tip": "La unidad es lo que se repite para medir. Camila repitió una goma 6 veces, así que su unidad fue la goma.",
+   "id": "mate2-oa19-30"
+  }
+ ]
+}

@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "¿En qué continente está Chile?",
+   "opciones": [
+    "en América del Sur",
+    "en América del Norte",
+    "en Europa",
+    "en África"
+   ],
+   "correcta": 0,
+   "tip": "Chile está en América del Sur, en la orilla del océano Pacífico.",
+   "id": "hist2-oa07-1"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "¿Cuál es la capital de Chile?",
+   "opciones": [
+    "Santiago",
+    "Valparaíso",
+    "Concepción",
+    "Temuco"
+   ],
+   "correcta": 0,
+   "tip": "Santiago es la capital de Chile. Ahí trabaja la presidenta o el presidente del país.",
+   "id": "hist2-oa07-2"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "¿En qué zona de Chile está Santiago?",
+   "opciones": [
+    "en la zona central",
+    "en la zona norte",
+    "en la zona sur",
+    "en el extremo sur"
+   ],
+   "correcta": 0,
+   "tip": "Santiago está más o menos al medio del país, en la zona central.",
+   "id": "hist2-oa07-3"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "¿En qué región está la ciudad de Santiago?",
+   "opciones": [
+    "Región Metropolitana",
+    "Región de Valparaíso",
+    "Región del Biobío",
+    "Región de Antofagasta"
+   ],
+   "correcta": 0,
+   "tip": "Santiago está en la Región Metropolitana, que es la región donde está la capital del país.",
+   "id": "hist2-oa07-4"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "¿Cuántos países limitan con Chile?",
+   "opciones": [
+    "tres",
+    "dos",
+    "cuatro",
+    "cinco"
+   ],
+   "correcta": 0,
+   "tip": "Chile tiene tres países vecinos: Perú, Bolivia y Argentina.",
+   "id": "hist2-oa07-5"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "Los vecinos de Chile son Perú, Bolivia y…",
+   "opciones": [
+    "Argentina",
+    "Brasil",
+    "Ecuador",
+    "Uruguay"
+   ],
+   "correcta": 0,
+   "tip": "Argentina es el tercer vecino de Chile. Brasil, Ecuador y Uruguay están en América del Sur, pero no tocan a Chile.",
+   "id": "hist2-oa07-6"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "¿Qué país limita con Chile por el norte?",
+   "opciones": [
+    "Perú",
+    "Argentina",
+    "Ecuador",
+    "Brasil"
+   ],
+   "correcta": 0,
+   "tip": "Perú está justo al norte de Chile. Arica, la ciudad más al norte de Chile, está cerca de la frontera con Perú.",
+   "id": "hist2-oa07-7"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "¿Qué país limita con Chile por el este, a lo largo de la cordillera?",
+   "opciones": [
+    "Argentina",
+    "Perú",
+    "Uruguay",
+    "Brasil"
+   ],
+   "correcta": 0,
+   "tip": "Argentina está al este de Chile, al otro lado de la cordillera de los Andes, casi de norte a sur.",
+   "id": "hist2-oa07-8"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "¿Con qué país tiene Chile la frontera más larga?",
+   "opciones": [
+    "con Argentina",
+    "con Perú",
+    "con Bolivia",
+    "con Brasil"
+   ],
+   "correcta": 0,
+   "tip": "Argentina acompaña a Chile por el este casi todo el país, por eso es la frontera más larga.",
+   "id": "hist2-oa07-9"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "¿Cuál de estos países es vecino de Chile?",
+   "opciones": [
+    "Bolivia",
+    "Colombia",
+    "Venezuela",
+    "Paraguay"
+   ],
+   "correcta": 0,
+   "tip": "Bolivia limita con Chile en la zona norte. Colombia, Venezuela y Paraguay están en América del Sur, pero no tocan a Chile.",
+   "id": "hist2-oa07-10"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "¿Qué separa a Chile de Argentina?",
+   "opciones": [
+    "la cordillera de los Andes",
+    "el océano Pacífico",
+    "el desierto de Atacama",
+    "un río muy ancho"
+   ],
+   "correcta": 0,
+   "tip": "La cordillera de los Andes corre a lo largo de Chile y marca gran parte de la frontera con Argentina.",
+   "id": "hist2-oa07-11"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "Si navegas desde la costa de Chile hacia el oeste, ¿qué cruzas?",
+   "opciones": [
+    "el océano Pacífico",
+    "la cordillera de los Andes",
+    "el océano Atlántico",
+    "Argentina"
+   ],
+   "correcta": 0,
+   "tip": "Al oeste de Chile está el océano Pacífico. El Atlántico queda al otro lado de América del Sur.",
+   "id": "hist2-oa07-12"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "Perú está al norte de Chile. Entonces Chile está al… de Perú.",
+   "opciones": [
+    "sur",
+    "norte",
+    "este",
+    "oeste"
+   ],
+   "correcta": 0,
+   "tip": "Si Perú queda al norte de Chile, al mirar desde Perú, Chile queda hacia abajo en el mapa: al sur.",
+   "id": "hist2-oa07-13"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "Argentina está al este de Chile. ¿Dónde queda Chile respecto de ella?",
+   "opciones": [
+    "al oeste",
+    "al este",
+    "al norte",
+    "al sur"
+   ],
+   "correcta": 0,
+   "tip": "El este y el oeste son opuestos. Si Argentina está al este de Chile, Chile está al oeste de Argentina.",
+   "id": "hist2-oa07-14"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "En el mapa, ¿cómo se ve Chile?",
+   "opciones": [
+    "largo y angosto",
+    "redondo",
+    "ancho y corto",
+    "con forma de cuadrado"
+   ],
+   "correcta": 0,
+   "tip": "Chile es muy largo de norte a sur y angosto de este a oeste, como una cinta.",
+   "id": "hist2-oa07-15"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "Arica es la ciudad más al norte de Chile. ¿Qué país tiene cerca?",
+   "opciones": [
+    "Perú",
+    "Argentina",
+    "Uruguay",
+    "Paraguay"
+   ],
+   "correcta": 0,
+   "tip": "Arica está en el extremo norte, muy cerca de la frontera con Perú.",
+   "id": "hist2-oa07-16"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "Punta Arenas está en Chile, pero ¿en qué parte?",
+   "opciones": [
+    "en el extremo sur",
+    "en el extremo norte",
+    "en la zona central",
+    "junto a Bolivia"
+   ],
+   "correcta": 0,
+   "tip": "Punta Arenas es una de las ciudades más australes de Chile: está en el extremo sur.",
+   "id": "hist2-oa07-17"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "Diego vive en Arica y viaja a Santiago. ¿Hacia dónde va?",
+   "opciones": [
+    "hacia el sur",
+    "hacia el norte",
+    "hacia el este",
+    "hacia el oeste"
+   ],
+   "correcta": 0,
+   "tip": "Arica está en el norte y Santiago en el centro. Para ir del norte al centro se avanza hacia el sur.",
+   "id": "hist2-oa07-18"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "Camila viaja de Punta Arenas a Santiago. ¿Avanza al norte o al sur?",
+   "opciones": [
+    "al norte",
+    "al sur",
+    "al este",
+    "al oeste"
+   ],
+   "correcta": 0,
+   "tip": "Punta Arenas está en el extremo sur. Para llegar a Santiago, en el centro, hay que avanzar hacia el norte.",
+   "id": "hist2-oa07-19"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "Matías vive en Puerto Montt, en el sur. ¿Hacia dónde está Santiago?",
+   "opciones": [
+    "hacia el norte",
+    "hacia el sur",
+    "hacia el este",
+    "hacia el oeste"
+   ],
+   "correcta": 0,
+   "tip": "Santiago está en la zona central, más arriba en el mapa que Puerto Montt: le queda hacia el norte.",
+   "id": "hist2-oa07-20"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "¿Qué es una región de Chile?",
+   "opciones": [
+    "una parte del país",
+    "un país vecino",
+    "un continente",
+    "una sola calle"
+   ],
+   "correcta": 0,
+   "tip": "Chile se divide en regiones. Cada región es una parte del país, con sus ciudades, pueblos y paisajes.",
+   "id": "hist2-oa07-21"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "Cada región de Chile tiene una ciudad principal llamada…",
+   "opciones": [
+    "capital regional",
+    "ciudad vecina",
+    "ciudad del norte",
+    "pueblo central"
+   ],
+   "correcta": 0,
+   "tip": "Cada región tiene una capital regional, la ciudad donde están las oficinas que la administran.",
+   "id": "hist2-oa07-22"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "¿Cuál es la capital de la Región de Valparaíso?",
+   "opciones": [
+    "Valparaíso",
+    "Viña del Mar",
+    "Santiago",
+    "Rancagua"
+   ],
+   "correcta": 0,
+   "tip": "La capital de la Región de Valparaíso es la ciudad de Valparaíso. Viña del Mar es su vecina, pero no es la capital.",
+   "id": "hist2-oa07-23"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "¿De qué región es capital la ciudad de Concepción?",
+   "opciones": [
+    "del Biobío",
+    "de Ñuble",
+    "de La Araucanía",
+    "de Los Lagos"
+   ],
+   "correcta": 0,
+   "tip": "Concepción es la capital de la Región del Biobío. Ñuble es la región vecina, y su capital es Chillán.",
+   "id": "hist2-oa07-24"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "Javiera vive en Temuco, la capital de su región. ¿Qué región es?",
+   "opciones": [
+    "La Araucanía",
+    "Los Lagos",
+    "Biobío",
+    "Ñuble"
+   ],
+   "correcta": 0,
+   "tip": "Temuco es la capital de la Región de La Araucanía. Los Lagos, Biobío y Ñuble tienen otras capitales.",
+   "id": "hist2-oa07-25"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "Una familia de Calama va a la capital de su región. ¿A qué ciudad va?",
+   "opciones": [
+    "Antofagasta",
+    "Iquique",
+    "Arica",
+    "Copiapó"
+   ],
+   "correcta": 0,
+   "tip": "Calama está en la Región de Antofagasta, y su capital es la ciudad de Antofagasta. Iquique, Arica y Copiapó son capitales de otras regiones.",
+   "id": "hist2-oa07-26"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "¿Con qué parte de Chile limita Bolivia?",
+   "opciones": [
+    "con la zona norte",
+    "con la zona sur",
+    "con la zona central",
+    "con el extremo sur"
+   ],
+   "correcta": 0,
+   "tip": "Bolivia es vecina de Chile en el norte, por el lado de la cordillera. No toca la zona central ni el sur.",
+   "id": "hist2-oa07-27"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "¿Hacia dónde de Chile quedan Ecuador y Colombia?",
+   "opciones": [
+    "hacia el norte",
+    "hacia el sur",
+    "hacia el oeste",
+    "hacia el este"
+   ],
+   "correcta": 0,
+   "tip": "Ecuador y Colombia están más arriba en el mapa de América del Sur, más allá de Perú: al norte de Chile.",
+   "id": "hist2-oa07-28"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "Uruguay está al este de Argentina. ¿Y respecto de Chile?",
+   "opciones": [
+    "hacia el este",
+    "hacia el oeste",
+    "hacia el norte",
+    "hacia el sur"
+   ],
+   "correcta": 0,
+   "tip": "Argentina está al este de Chile y Uruguay está todavía más al este. Por eso Uruguay queda al este de Chile.",
+   "id": "hist2-oa07-29"
+  },
+  {
+   "oa": "HI02 OA 07",
+   "pregunta": "¿Qué es un globo terráqueo?",
+   "opciones": [
+    "una maqueta redonda de la Tierra",
+    "un mapa de una ciudad",
+    "un dibujo del cielo",
+    "una pelota para jugar"
+   ],
+   "correcta": 0,
+   "tip": "El globo terráqueo es una esfera que representa la Tierra con sus continentes y océanos. En él se puede buscar Chile.",
+   "id": "hist2-oa07-30"
+  }
+ ]
+}

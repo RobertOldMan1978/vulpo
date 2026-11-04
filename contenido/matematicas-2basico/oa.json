@@ -1,0 +1,176 @@
+{
+ "asignatura": "Matemática",
+ "nivel": "2° básico",
+ "codigo_asignatura": "MA02",
+ "fuente": "Bases Curriculares 1° a 6° básico — MINEDUC Chile (curriculumnacional.cl)",
+ "url_fuente": "https://www.curriculumnacional.cl/curriculum/1o-6o-basico/matematica/2-basico",
+ "nota_fidelidad": "Los 22 OA de conocimiento se transcribieron el 2026-11-04 desde la PÁGINA INDIVIDUAL de cada objetivo (curriculumnacional.cl/curriculum/1o-6o-basico/matematica/2-basico/ma02-oa-01 a ma02-oa-22), no desde la ficha de la asignatura, y se contrastaron con ella: en este nivel los 22 textos de la ficha coinciden con los individuales, sin recortes. Los OA con sub-puntos (OA 06, 09 y 11) se conservan íntegros, con los sub-puntos separados por punto y coma, como en 3° y 4°. En el OA 06 la página oficial trae los sub-puntos pegados sin espacio y sin punto final (\"hasta 20:completar 10;usar dobles y mitades;...\"): solo se agregaron esos espacios y el punto; ninguna palabra cambió. Las comillas de \"uno más uno menos\", \"dos más dos menos\" y \"familia de operaciones\" son del texto oficial. Quedan fuera de este archivo los 9 OA de habilidad (MA02 OAH a–i: resolver problemas, argumentar y comunicar, modelar, representar), igual que en los demás bancos de Matemática: miden desempeño, y su código con letra no pasa la validación del servidor. Validar contra el PDF del MINEDUC antes de publicar material impreso.",
+ "nota_evaluacion": "2° básico son niños de 7 y 8 años: el juego va SIN reloj y CON voz pregrabada, así que cada enunciado tiene que poder responderse escuchando, y el texto debe ser corto. Varios OA piden construir, representar o demostrar con material concreto, y un quiz no puede medir eso: solo si el niño RECONOCE la representación, la construcción o el resultado correcto. Son los OA 02, 05 y 07 (representar en forma concreta, pictórica y simbólica), 08, 09, 10, 11 y 13 (demostrar y explicar), 12 (crear y continuar patrones), 14 (representar y describir posiciones), 15 y 16 (construir figuras 2D y 3D), 20 (recolectar y registrar datos) y 21 y 22 (registrar y construir tablas, pictogramas y gráficos de barra). Sus preguntas deben plantear el trabajo ya hecho —por un tercero con nombre o en un dibujo— y preguntar cuál es correcto, nunca pedirle al niño que lo haga. El OA 03 menciona monedas nacionales y el 20 y 21 juegos con monedas y dados: sirven como contexto. El OA 14 incluye derecha e izquierda: preguntarlas respecto de un personaje del dibujo, no del propio jugador. Ningún OA queda excluido: todos admiten al menos una pregunta honesta de reconocimiento.",
+ "nota_unidades": "Los grupos de este archivo son los EJES oficiales de las Bases Curriculares, no las unidades del Programa de Estudio ni los capítulos del juego. Se agrupó así a propósito: este archivo se escribió para fijar el currículum (los OA y su texto literal) antes de que exista una sola pregunta, y el reparto en capítulos jugables se decide al construir el nivel, cuando ya se sabe cuántas preguntas admite cada objetivo. Al hacerlo, revisar si conviene seguir las unidades del Programa o agrupar por tema, y en ese caso pasar a `capitulos_del_juego`.",
+ "unidades": [
+  {
+   "id": "U1",
+   "titulo": "Números y operaciones",
+   "oa": [
+    "MA02 OA 01",
+    "MA02 OA 02",
+    "MA02 OA 03",
+    "MA02 OA 04",
+    "MA02 OA 05",
+    "MA02 OA 06",
+    "MA02 OA 07",
+    "MA02 OA 08",
+    "MA02 OA 09",
+    "MA02 OA 10",
+    "MA02 OA 11"
+   ]
+  },
+  {
+   "id": "U2",
+   "titulo": "Patrones y álgebra",
+   "oa": [
+    "MA02 OA 12",
+    "MA02 OA 13"
+   ]
+  },
+  {
+   "id": "U3",
+   "titulo": "Geometría",
+   "oa": [
+    "MA02 OA 14",
+    "MA02 OA 15",
+    "MA02 OA 16"
+   ]
+  },
+  {
+   "id": "U4",
+   "titulo": "Medición",
+   "oa": [
+    "MA02 OA 17",
+    "MA02 OA 18",
+    "MA02 OA 19"
+   ]
+  },
+  {
+   "id": "U5",
+   "titulo": "Datos y probabilidades",
+   "oa": [
+    "MA02 OA 20",
+    "MA02 OA 21",
+    "MA02 OA 22"
+   ]
+  }
+ ],
+ "oa": [
+  {
+   "codigo": "MA02 OA 01",
+   "eje": "Números y operaciones",
+   "texto": "Contar números del 0 al 1 000 de 2 en 2, de 5 en 5, de 10 en 10 y de 100 en 100, hacia adelante y hacia atrás, empezando por cualquier número menor que 1 000."
+  },
+  {
+   "codigo": "MA02 OA 02",
+   "eje": "Números y operaciones",
+   "texto": "Leer números del 0 al 100 y representarlos en forma concreta, pictórica y simbólica."
+  },
+  {
+   "codigo": "MA02 OA 03",
+   "eje": "Números y operaciones",
+   "texto": "Comparar y ordenar números del 0 al 100 de menor a mayor y viceversa, usando material concreto y monedas nacionales de manera manual y/o por medio de software educativo."
+  },
+  {
+   "codigo": "MA02 OA 04",
+   "eje": "Números y operaciones",
+   "texto": "Estimar cantidades hasta 100 en situaciones concretas, usando un referente."
+  },
+  {
+   "codigo": "MA02 OA 05",
+   "eje": "Números y operaciones",
+   "texto": "Componer y descomponer números del 0 a 100 de manera aditiva, en forma concreta, pictórica y simbólica."
+  },
+  {
+   "codigo": "MA02 OA 06",
+   "eje": "Números y operaciones",
+   "texto": "Describir y aplicar estrategias de cálculo mental para adiciones y sustracciones hasta 20: completar 10; usar dobles y mitades; \"uno más uno menos\"; \"dos más dos menos\"; usar la reversibilidad de las operaciones."
+  },
+  {
+   "codigo": "MA02 OA 07",
+   "eje": "Números y operaciones",
+   "texto": "Identificar las unidades y decenas en números del 0 al 100, representando las cantidades de acuerdo a su valor posicional, con material concreto, pictórico y simbólico."
+  },
+  {
+   "codigo": "MA02 OA 08",
+   "eje": "Números y operaciones",
+   "texto": "Demostrar y explicar de manera concreta, pictórica y simbólica el efecto de sumar y restar 0 a un número."
+  },
+  {
+   "codigo": "MA02 OA 09",
+   "eje": "Números y operaciones",
+   "texto": "Demostrar que comprende la adición y la sustracción en el ámbito del 0 al 100: usando un lenguaje cotidiano y matemático para describir acciones desde su propia experiencia; resolviendo problemas con una variedad de representaciones concretas y pictóricas, de manera manual y/o usando software educativo; registrando el proceso en forma simbólica; aplicando los resultados de las adiciones y sustracciones de los números del 0 a 20 sin realizar cálculos; aplicando el algoritmo de la adición y sustracción sin considerar reserva; creando problemas matemáticos en contextos familiares y resolviéndolos."
+  },
+  {
+   "codigo": "MA02 OA 10",
+   "eje": "Números y operaciones",
+   "texto": "Demostrar que comprende la relación entre la adición y la sustracción al usar la \"familia de operaciones\" en cálculos aritméticos y la resolución de problemas."
+  },
+  {
+   "codigo": "MA02 OA 11",
+   "eje": "Números y operaciones",
+   "texto": "Demostrar que comprende la multiplicación: usando representaciones concretas y pictóricas; expresando una multiplicación como una adición de sumandos iguales; usando la distributividad como estrategia para construir las tablas del 2, del 5 y del 10; resolviendo problemas que involucren las tablas del 2, del 5 y del 10."
+  },
+  {
+   "codigo": "MA02 OA 12",
+   "eje": "Patrones y álgebra",
+   "texto": "Crear, representar y continuar una variedad de patrones numéricos y completar los elementos faltantes, de manera manual y/o usando software educativo."
+  },
+  {
+   "codigo": "MA02 OA 13",
+   "eje": "Patrones y álgebra",
+   "texto": "Demostrar, explicar y registrar la igualdad y la desigualdad en forma concreta y pictórica del 0 al 20, usando el símbolo igual (=) y los símbolos no igual (>, <)."
+  },
+  {
+   "codigo": "MA02 OA 14",
+   "eje": "Geometría",
+   "texto": "Representar y describir la posición de objetos y personas en relación a sí mismos y a otros objetos y personas, incluyendo derecha e izquierda y usando material concreto y dibujos."
+  },
+  {
+   "codigo": "MA02 OA 15",
+   "eje": "Geometría",
+   "texto": "Describir, comparar y construir figuras 2D (triángulos, cuadrados, rectángulos y círculos) con material concreto."
+  },
+  {
+   "codigo": "MA02 OA 16",
+   "eje": "Geometría",
+   "texto": "Describir, comparar y construir figuras 3D (cubos, paralelepípedos, esferas y conos) con diversos materiales."
+  },
+  {
+   "codigo": "MA02 OA 17",
+   "eje": "Medición",
+   "texto": "Identificar días, semanas, meses y fechas en el calendario."
+  },
+  {
+   "codigo": "MA02 OA 18",
+   "eje": "Medición",
+   "texto": "Leer horas y medias horas en relojes digitales, en el contexto de la resolución de problemas."
+  },
+  {
+   "codigo": "MA02 OA 19",
+   "eje": "Medición",
+   "texto": "Determinar la longitud de objetos, usando unidades de medidas no estandarizadas y unidades estandarizadas (cm y m), en el contexto de la resolución de problemas."
+  },
+  {
+   "codigo": "MA02 OA 20",
+   "eje": "Datos y probabilidades",
+   "texto": "Recolectar y registrar datos para responder preguntas estadísticas sobre juegos con monedas y dados, usando bloques y tablas de conteo y pictogramas."
+  },
+  {
+   "codigo": "MA02 OA 21",
+   "eje": "Datos y probabilidades",
+   "texto": "Registrar en tablas y gráficos de barra simple, resultados de juegos aleatorios con dados y monedas."
+  },
+  {
+   "codigo": "MA02 OA 22",
+   "eje": "Datos y probabilidades",
+   "texto": "Construir, leer e interpretar pictogramas con escala y gráficos de barra simple."
+  }
+ ]
+}

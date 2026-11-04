@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "¿Qué es el patrimonio de un país?",
+   "opciones": [
+    "lo que heredamos",
+    "lo que compramos",
+    "lo que inventamos hoy",
+    "lo que es de uno"
+   ],
+   "correcta": 0,
+   "tip": "El patrimonio es lo que recibimos de quienes vivieron antes, como fiestas, comidas y lugares, y que cuidamos para quienes vienen después.",
+   "id": "hist2-oa05-1"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "El baile nacional de Chile es…",
+   "opciones": [
+    "la cueca",
+    "el tango",
+    "la cumbia",
+    "la salsa"
+   ],
+   "correcta": 0,
+   "tip": "La cueca es el baile nacional de Chile. Se baila con pañuelo, sobre todo en las Fiestas Patrias.",
+   "id": "hist2-oa05-2"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "¿Qué se celebra el 18 de septiembre en Chile?",
+   "opciones": [
+    "las Fiestas Patrias",
+    "la Navidad",
+    "el Año Nuevo",
+    "el Día del Niño"
+   ],
+   "correcta": 0,
+   "tip": "El 18 de septiembre son las Fiestas Patrias. Se celebran con cueca, empanadas y volantines.",
+   "id": "hist2-oa05-3"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "En las Fiestas Patrias es típico comer…",
+   "opciones": [
+    "empanadas",
+    "tallarines",
+    "hamburguesas",
+    "panqueques"
+   ],
+   "correcta": 0,
+   "tip": "Las empanadas de pino son una comida típica de septiembre. Se comen en las fondas y en las casas.",
+   "id": "hist2-oa05-4"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "¿Qué juego típico de septiembre se hace con el viento?",
+   "opciones": [
+    "el volantín",
+    "el trompo",
+    "el emboque",
+    "la rayuela"
+   ],
+   "correcta": 0,
+   "tip": "El volantín sube con el viento. El trompo, el emboque y la rayuela también son juegos típicos, pero no lo usan.",
+   "id": "hist2-oa05-5"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "El trompo, el emboque y el volantín son juegos…",
+   "opciones": [
+    "tradicionales",
+    "de computador",
+    "muy nuevos",
+    "de otro país"
+   ],
+   "correcta": 0,
+   "tip": "Son juegos que jugaban nuestros abuelos y que se siguen jugando. Por eso son parte de nuestras tradiciones.",
+   "id": "hist2-oa05-6"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "La Tirana es una gran fiesta religiosa de la zona…",
+   "opciones": [
+    "norte",
+    "sur",
+    "centro",
+    "de las islas"
+   ],
+   "correcta": 0,
+   "tip": "La fiesta de La Tirana se celebra en julio en un pueblo del desierto, en el norte, con bailes y trajes de colores.",
+   "id": "hist2-oa05-7"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "El We Tripantu es el año nuevo del pueblo…",
+   "opciones": [
+    "mapuche",
+    "rapa nui",
+    "español",
+    "chino"
+   ],
+   "correcta": 0,
+   "tip": "We Tripantu significa nueva salida del sol en mapudungun. Los mapuche lo celebran en junio, cuando los días empiezan a alargarse.",
+   "id": "hist2-oa05-8"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "La Tapati es una fiesta que se celebra en…",
+   "opciones": [
+    "Rapa Nui",
+    "Chiloé",
+    "Santiago",
+    "Arica"
+   ],
+   "correcta": 0,
+   "tip": "La Tapati Rapa Nui se celebra cada verano en la isla, con competencias, cantos y bailes del pueblo rapa nui.",
+   "id": "hist2-oa05-9"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "El curanto es una comida típica de…",
+   "opciones": [
+    "Chiloé",
+    "Arica",
+    "Antofagasta",
+    "La Serena"
+   ],
+   "correcta": 0,
+   "tip": "El curanto se cocina en un hoyo con piedras calientes: mariscos, carne y papas, tapados con hojas grandes.",
+   "id": "hist2-oa05-10"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "El mote con huesillo se toma sobre todo en…",
+   "opciones": [
+    "verano",
+    "invierno",
+    "la mañana",
+    "otoño"
+   ],
+   "correcta": 0,
+   "tip": "Es una bebida dulce y fría, con trigo mote y duraznos secos. Se toma para refrescarse cuando hace calor.",
+   "id": "hist2-oa05-11"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "En muchas familias, cuando llueve, se comen…",
+   "opciones": [
+    "sopaipillas",
+    "helados",
+    "ensaladas",
+    "sandías"
+   ],
+   "correcta": 0,
+   "tip": "Comer sopaipillas en días de lluvia es una costumbre de muchas familias chilenas, que pasa de abuelos a nietos.",
+   "id": "hist2-oa05-12"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "La familia de Javiera toma té con pan a media tarde. Eso es…",
+   "opciones": [
+    "la once",
+    "el desayuno",
+    "el almuerzo",
+    "la colación"
+   ],
+   "correcta": 0,
+   "tip": "Tomar once, con té y pan en la tarde, es una costumbre muy chilena que se hace en familia.",
+   "id": "hist2-oa05-13"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "La abuela de Diego le enseñó a hacer mermelada. Eso es…",
+   "opciones": [
+    "una costumbre familiar",
+    "una ley del país",
+    "un invento nuevo",
+    "una regla del colegio"
+   ],
+   "correcta": 0,
+   "tip": "Las recetas que pasan de una generación a otra son costumbres familiares, y también son patrimonio.",
+   "id": "hist2-oa05-14"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "El Caleuche es un barco fantasma de una leyenda de…",
+   "opciones": [
+    "Chiloé",
+    "Arica",
+    "Rapa Nui",
+    "Santiago"
+   ],
+   "correcta": 0,
+   "tip": "El Caleuche es una leyenda de Chiloé: un barco con luces que navega de noche y desaparece.",
+   "id": "hist2-oa05-15"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "¿Qué es una leyenda?",
+   "opciones": [
+    "un relato tradicional",
+    "una noticia de hoy",
+    "una receta de cocina",
+    "un aviso del diario"
+   ],
+   "correcta": 0,
+   "tip": "Una leyenda es un relato que la gente se cuenta de generación en generación, y por eso es parte del patrimonio.",
+   "id": "hist2-oa05-16"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "Según una leyenda de Chiloé, la Pincoya trae…",
+   "opciones": [
+    "mariscos y peces",
+    "nieve y frío",
+    "lluvia y viento",
+    "fuego y humo"
+   ],
+   "correcta": 0,
+   "tip": "La leyenda dice que cuando la Pincoya baila mirando al mar, llegan muchos mariscos y peces a la costa.",
+   "id": "hist2-oa05-17"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "En la Patagonia dicen que quien come calafate…",
+   "opciones": [
+    "vuelve a la Patagonia",
+    "se vuelve pájaro",
+    "nunca tiene frío",
+    "crece muy alto"
+   ],
+   "correcta": 0,
+   "tip": "El calafate es un fruto morado del sur. Un dicho de la tradición oral cuenta que quien lo come siempre regresa.",
+   "id": "hist2-oa05-18"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "Las iglesias de Chiloé son famosas por estar hechas de…",
+   "opciones": [
+    "madera",
+    "vidrio",
+    "plástico",
+    "ladrillo"
+   ],
+   "correcta": 0,
+   "tip": "Las iglesias de Chiloé son de madera, construidas por carpinteros de la isla. Varias son patrimonio de toda la humanidad.",
+   "id": "hist2-oa05-19"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "Valparaíso es famoso por sus cerros y sus…",
+   "opciones": [
+    "ascensores",
+    "rascacielos",
+    "castillos",
+    "pirámides"
+   ],
+   "correcta": 0,
+   "tip": "Los ascensores de Valparaíso suben y bajan los cerros desde hace más de cien años. Son parte del patrimonio de la ciudad.",
+   "id": "hist2-oa05-20"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "Los moái de Rapa Nui son…",
+   "opciones": [
+    "estatuas de piedra",
+    "casas de madera",
+    "barcos antiguos",
+    "árboles gigantes"
+   ],
+   "correcta": 0,
+   "tip": "Los moái son grandes figuras de piedra que tallaron los antepasados del pueblo rapa nui. Se cuidan como patrimonio.",
+   "id": "hist2-oa05-21"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "El pueblo de Pomaire es famoso por sus objetos de…",
+   "opciones": [
+    "greda",
+    "vidrio",
+    "plástico",
+    "fierro"
+   ],
+   "correcta": 0,
+   "tip": "En Pomaire, en la zona central, se hacen ollas, platos y figuras de greda, un barro que se cuece.",
+   "id": "hist2-oa05-22"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "Gabriela Mistral fue una poeta chilena que ganó…",
+   "opciones": [
+    "el Premio Nobel",
+    "la Copa América",
+    "una carrera",
+    "el Festival de Viña"
+   ],
+   "correcta": 0,
+   "tip": "Gabriela Mistral fue profesora y poeta. Ganó el Premio Nobel de Literatura, y sus poemas son parte de nuestro patrimonio.",
+   "id": "hist2-oa05-23"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "Violeta Parra recorrió Chile para juntar…",
+   "opciones": [
+    "canciones",
+    "piedras",
+    "estampillas",
+    "juguetes"
+   ],
+   "correcta": 0,
+   "tip": "Violeta Parra viajó por los campos recogiendo canciones y versos populares para que no se perdieran.",
+   "id": "hist2-oa05-24"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "El huaso, con su manta y su sombrero, es típico de la zona…",
+   "opciones": [
+    "central",
+    "norte",
+    "austral",
+    "de las islas"
+   ],
+   "correcta": 0,
+   "tip": "El huaso es el hombre de campo de la zona central. Su ropa y sus costumbres son parte de nuestras tradiciones.",
+   "id": "hist2-oa05-25"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "El Palacio de La Moneda, en Santiago, es un…",
+   "opciones": [
+    "monumento histórico",
+    "centro comercial",
+    "parque nacional",
+    "estadio"
+   ],
+   "correcta": 0,
+   "tip": "La Moneda es un edificio antiguo e importante. Por eso se protege como monumento histórico.",
+   "id": "hist2-oa05-26"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "Sofía vive en Arica y baila en el carnaval. Ese baile es patrimonio…",
+   "opciones": [
+    "cultural",
+    "natural",
+    "de nadie",
+    "extranjero"
+   ],
+   "correcta": 0,
+   "tip": "Los bailes, fiestas y comidas los hacen las personas: son patrimonio cultural. El natural son paisajes, plantas y animales.",
+   "id": "hist2-oa05-27"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "¿Cuál de estos es patrimonio cultural?",
+   "opciones": [
+    "una fiesta típica",
+    "un volcán",
+    "un bosque",
+    "un río"
+   ],
+   "correcta": 0,
+   "tip": "Una fiesta la crean las personas, por eso es patrimonio cultural. Volcanes, bosques y ríos son patrimonio natural.",
+   "id": "hist2-oa05-28"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "La cueca se baila de norte a sur. Es patrimonio…",
+   "opciones": [
+    "de todo el país",
+    "de una sola ciudad",
+    "solo de Santiago",
+    "de otro país"
+   ],
+   "correcta": 0,
+   "tip": "La cueca se baila en todas las regiones de Chile, por eso es patrimonio de todo el país.",
+   "id": "hist2-oa05-29"
+  },
+  {
+   "oa": "HI02 OA 05",
+   "pregunta": "Camila aprende de su abuelo una canción antigua. ¿Por qué importa?",
+   "opciones": [
+    "para que no se pierda",
+    "para ganar dinero",
+    "para olvidarla luego",
+    "para cambiarla entera"
+   ],
+   "correcta": 0,
+   "tip": "Cuando una canción pasa de abuelos a nietos, sigue viva. Si nadie la aprende, se pierde para siempre.",
+   "id": "hist2-oa05-30"
+  }
+ ]
+}

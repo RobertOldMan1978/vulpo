@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Si 9 + 6 = 15, ¿cuánto es 15 - 6?",
+   "opciones": [
+    "9",
+    "6",
+    "21",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "9, 6 y 15 son una familia: si 9 + 6 = 15, al quitar 6 de 15 vuelves al 9.",
+   "id": "mate2-oa10-1"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Si 13 - 5 = 8, ¿cuánto es 8 + 5?",
+   "opciones": [
+    "13",
+    "3",
+    "18",
+    "12"
+   ],
+   "correcta": 0,
+   "tip": "La suma deshace la resta: si a 13 le quitas 5 quedan 8, y a 8 le sumas 5 vuelves a 13.",
+   "id": "mate2-oa10-2"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Con 4, 7 y 11 se arma una familia. ¿Qué suma va en ella?",
+   "opciones": [
+    "4 + 7 = 11",
+    "4 + 11 = 7",
+    "7 + 11 = 4",
+    "4 + 7 = 10"
+   ],
+   "correcta": 0,
+   "tip": "En la familia, los dos números chicos suman el grande: 4 + 7 = 11.",
+   "id": "mate2-oa10-3"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "¿Cuántas operaciones tiene la familia de 3, 5 y 8?",
+   "opciones": [
+    "4",
+    "2",
+    "3",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "Son dos sumas y dos restas: 3 + 5 = 8, 5 + 3 = 8, 8 - 3 = 5 y 8 - 5 = 3.",
+   "id": "mate2-oa10-4"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Mira 6 + 8 = 14. ¿Qué resta usa los mismos números?",
+   "opciones": [
+    "14 - 8 = 6",
+    "8 - 6 = 2",
+    "14 + 6 = 20",
+    "6 - 8 = 14"
+   ],
+   "correcta": 0,
+   "tip": "Con 6, 8 y 14 la resta parte del 14: 14 - 8 = 6. 8 - 6 = 2 es cierta, pero usa el 2.",
+   "id": "mate2-oa10-5"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Matías sabe que 12 - 7 = 5. ¿Qué suma es de su familia?",
+   "opciones": [
+    "5 + 7 = 12",
+    "12 + 7 = 5",
+    "5 + 12 = 7",
+    "7 + 5 = 13"
+   ],
+   "correcta": 0,
+   "tip": "La familia de 12 - 7 = 5 tiene la suma 5 + 7 = 12: los dos chicos dan el grande.",
+   "id": "mate2-oa10-6"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Diego tenía 7 bolitas, ganó algunas y ahora tiene 15. ¿Cuántas ganó?",
+   "opciones": [
+    "8",
+    "22",
+    "7",
+    "9"
+   ],
+   "correcta": 0,
+   "tip": "7 + ? = 15 es de la familia de 15 - 7. Como 15 - 7 = 8, ganó 8.",
+   "id": "mate2-oa10-7"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "A Camila le faltan 6 stickers para tener 14. ¿Cuántos tiene?",
+   "opciones": [
+    "8",
+    "20",
+    "6",
+    "9"
+   ],
+   "correcta": 0,
+   "tip": "Lo que tiene y 6 más dan 14. Por la familia, 14 - 6 = 8.",
+   "id": "mate2-oa10-8"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "¿Qué cálculo sirve para comprobar 16 - 9 = 7?",
+   "opciones": [
+    "7 + 9",
+    "16 + 9",
+    "9 - 7",
+    "16 + 7"
+   ],
+   "correcta": 0,
+   "tip": "Si 16 - 9 = 7, entonces 7 + 9 tiene que dar 16. Esa suma lo comprueba.",
+   "id": "mate2-oa10-9"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "En la familia de 5 + 9 = 14, ¿qué va en 14 - ▢ = 5?",
+   "opciones": [
+    "9",
+    "5",
+    "14",
+    "19"
+   ],
+   "correcta": 0,
+   "tip": "Con 5, 9 y 14: si a 14 le quitas 9 quedan 5. El cuadrito vale 9.",
+   "id": "mate2-oa10-10"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Sofía sumó 8 + 9 = 17. ¿Qué resta sirve para comprobarlo?",
+   "opciones": [
+    "17 - 9 = 8",
+    "9 - 8 = 1",
+    "17 - 8 = 7",
+    "8 - 9 = 17"
+   ],
+   "correcta": 0,
+   "tip": "Si 8 + 9 = 17, al quitarle 9 a 17 vuelves al 8. 9 - 8 = 1 es cierta, pero no es de esa familia.",
+   "id": "mate2-oa10-11"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Si 30 + 20 = 50, ¿cuánto es 50 - 30?",
+   "opciones": [
+    "20",
+    "30",
+    "80",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "30, 20 y 50 son una familia: si a 50 le quitas 30, quedan 20.",
+   "id": "mate2-oa10-12"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Si 45 - 15 = 30, ¿cuánto es 30 + 15?",
+   "opciones": [
+    "45",
+    "15",
+    "60",
+    "35"
+   ],
+   "correcta": 0,
+   "tip": "La suma deshace la resta: 30 + 15 vuelve al 45.",
+   "id": "mate2-oa10-13"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "¿Con qué números se arma una familia de sumas y restas?",
+   "opciones": [
+    "3, 4 y 7",
+    "3, 4 y 8",
+    "2, 5 y 9",
+    "6, 6 y 10"
+   ],
+   "correcta": 0,
+   "tip": "Sirven cuando los dos chicos suman el grande: 3 + 4 = 7. En los otros no pasa.",
+   "id": "mate2-oa10-14"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Había 16 peces. Algunos se fueron y quedaron 9. ¿Cuántos se fueron?",
+   "opciones": [
+    "7",
+    "25",
+    "9",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "16 - ? = 9 es de la familia de 9 + 7 = 16. Se fueron 7.",
+   "id": "mate2-oa10-15"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Javiera regaló 5 lápices y le quedaron 9. ¿Cuántos tenía?",
+   "opciones": [
+    "14",
+    "4",
+    "9",
+    "13"
+   ],
+   "correcta": 0,
+   "tip": "Lo que tenía, menos 5, dio 9. Por la familia, 9 + 5 = 14.",
+   "id": "mate2-oa10-16"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Hay 17 frutas: 8 peras y el resto manzanas. ¿Cuántas manzanas?",
+   "opciones": [
+    "9",
+    "25",
+    "8",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "8 + ? = 17 se resuelve con 17 - 8 = 9.",
+   "id": "mate2-oa10-17"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Benjamín dice: si 6 + 7 = 13, entonces 13 - 7 = 6. ¿Tiene razón?",
+   "opciones": [
+    "Sí, es su familia",
+    "No, da 7",
+    "No, da 20",
+    "No, da 5"
+   ],
+   "correcta": 0,
+   "tip": "6, 7 y 13 son una familia: si a 13 le quitas 7, vuelves al 6. Benjamín tiene razón.",
+   "id": "mate2-oa10-18"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Ana escribió 9 + 4 = 13 y 13 - 9 = 5. ¿Qué está mal?",
+   "opciones": [
+    "La resta: da 4",
+    "La suma: da 14",
+    "La suma: da 12",
+    "Nada, ambas bien"
+   ],
+   "correcta": 0,
+   "tip": "Si 9 + 4 = 13, entonces 13 - 9 tiene que dar 4, no 5. La suma está bien.",
+   "id": "mate2-oa10-19"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Para saber cuánto es 15 - 8, ¿qué suma te ayuda?",
+   "opciones": [
+    "8 + 7 = 15",
+    "8 + 8 = 16",
+    "15 + 8 = 23",
+    "7 + 7 = 14"
+   ],
+   "correcta": 0,
+   "tip": "Si 8 + 7 = 15, entonces 15 - 8 = 7. Esa suma es de la misma familia.",
+   "id": "mate2-oa10-20"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "La familia de 10, 4 y 14 tiene dos restas. ¿Cuál es una?",
+   "opciones": [
+    "14 - 4 = 10",
+    "10 - 4 = 6",
+    "14 - 10 = 3",
+    "4 - 10 = 14"
+   ],
+   "correcta": 0,
+   "tip": "Las restas de esa familia parten del 14: 14 - 4 = 10 y 14 - 10 = 4.",
+   "id": "mate2-oa10-21"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Luis tiene 20 pesos. ¿Cuánto le falta para tener 35?",
+   "opciones": [
+    "15 pesos",
+    "55 pesos",
+    "20 pesos",
+    "5 pesos"
+   ],
+   "correcta": 0,
+   "tip": "20 + ? = 35 se resuelve con 35 - 20 = 15.",
+   "id": "mate2-oa10-22"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Si 24 + 13 = 37, ¿cuánto es 37 - 24?",
+   "opciones": [
+    "13",
+    "24",
+    "61",
+    "14"
+   ],
+   "correcta": 0,
+   "tip": "24, 13 y 37 son una familia: si a 37 le quitas 24, quedan 13.",
+   "id": "mate2-oa10-23"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Si 12 - 9 = 3, ¿qué número va en 9 + ▢ = 12?",
+   "opciones": [
+    "3",
+    "12",
+    "21",
+    "9"
+   ],
+   "correcta": 0,
+   "tip": "Con 9, 3 y 12: si 12 - 9 = 3, entonces 9 + 3 = 12. El cuadrito vale 3.",
+   "id": "mate2-oa10-24"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "En una familia está 18 - 10 = 8. ¿Cuál es la otra resta?",
+   "opciones": [
+    "18 - 8 = 10",
+    "10 - 8 = 2",
+    "8 - 18 = 10",
+    "18 + 8 = 26"
+   ],
+   "correcta": 0,
+   "tip": "Con 18, 10 y 8 hay dos restas: 18 - 10 = 8 y 18 - 8 = 10.",
+   "id": "mate2-oa10-25"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Tomás tenía 13 autos, perdió 4 y le quedan 9. ¿Qué suma lo prueba?",
+   "opciones": [
+    "9 + 4 = 13",
+    "13 + 4 = 17",
+    "9 + 13 = 22",
+    "4 + 4 = 8"
+   ],
+   "correcta": 0,
+   "tip": "Lo que le queda más lo que perdió da lo que tenía: 9 + 4 = 13.",
+   "id": "mate2-oa10-26"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "De 19 conchitas, 12 son blancas y el resto rosadas. ¿Cuántas rosadas?",
+   "opciones": [
+    "7",
+    "31",
+    "12",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "12 + ? = 19 se resuelve con 19 - 12 = 7.",
+   "id": "mate2-oa10-27"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Si 50 - 20 = 30, ¿qué suma es de la misma familia?",
+   "opciones": [
+    "30 + 20 = 50",
+    "50 + 20 = 70",
+    "30 + 50 = 80",
+    "20 + 20 = 40"
+   ],
+   "correcta": 0,
+   "tip": "Con 50, 20 y 30, la suma junta los dos chicos: 30 + 20 = 50. Las otras usan otros números.",
+   "id": "mate2-oa10-28"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Ignacio tenía unas fichas, ganó 6 y ahora tiene 13. ¿Cuántas tenía?",
+   "opciones": [
+    "7",
+    "19",
+    "6",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "? + 6 = 13 es de la familia de 13 - 6. Como 13 - 6 = 7, tenía 7.",
+   "id": "mate2-oa10-29"
+  },
+  {
+   "oa": "MA02 OA 10",
+   "pregunta": "Agustín dice que 4, 6 y 9 forman una familia. ¿Tiene razón?",
+   "opciones": [
+    "No, 4 + 6 da 10",
+    "Sí, 4 + 6 da 9",
+    "Sí, 9 - 6 da 4",
+    "No, 9 - 4 da 4"
+   ],
+   "correcta": 0,
+   "tip": "En una familia los dos chicos suman el grande, y 4 + 6 da 10, no 9.",
+   "id": "mate2-oa10-30"
+  }
+ ]
+}

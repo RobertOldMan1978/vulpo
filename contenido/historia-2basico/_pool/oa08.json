@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "¿En qué zona de Chile está el desierto de Atacama?",
+   "opciones": [
+    "en la zona norte",
+    "en la zona central",
+    "en la zona sur",
+    "en el extremo sur"
+   ],
+   "correcta": 0,
+   "tip": "El desierto de Atacama está en el norte de Chile. Es uno de los lugares más secos del planeta.",
+   "id": "hist2-oa08-1"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "El paisaje del norte de Chile es sobre todo…",
+   "opciones": [
+    "seco y con desierto",
+    "lluvioso y con bosques",
+    "con muchos lagos",
+    "con hielos y fiordos"
+   ],
+   "correcta": 0,
+   "tip": "En el norte llueve muy poco, por eso hay desierto, arena, cerros sin plantas y pocos ríos.",
+   "id": "hist2-oa08-2"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "¿Cómo es la lluvia en el sur de Chile?",
+   "opciones": [
+    "llueve mucho",
+    "casi nunca llueve",
+    "solo llueve un día",
+    "nunca llueve"
+   ],
+   "correcta": 0,
+   "tip": "En el sur llueve mucho durante el año. Por eso hay tantos bosques, ríos y lagos.",
+   "id": "hist2-oa08-3"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "¿Por qué en el sur de Chile hay tantos bosques?",
+   "opciones": [
+    "porque llueve mucho",
+    "porque hace mucho calor",
+    "porque hay desierto",
+    "porque no hay viento"
+   ],
+   "correcta": 0,
+   "tip": "Los árboles necesitan agua. En el sur llueve bastante, así que crecen grandes bosques.",
+   "id": "hist2-oa08-4"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "¿Por qué en el norte de Chile hay pocos ríos?",
+   "opciones": [
+    "porque llueve muy poco",
+    "porque hay mucho hielo",
+    "porque hay muchos árboles",
+    "porque está junto al mar"
+   ],
+   "correcta": 0,
+   "tip": "Los ríos se forman con lluvia y nieve. En el norte casi no llueve, así que hay pocos ríos.",
+   "id": "hist2-oa08-5"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "¿Qué dos cordilleras recorren Chile?",
+   "opciones": [
+    "de los Andes y de la Costa",
+    "de los Andes y del Sur",
+    "del Norte y de la Costa",
+    "del Desierto y del Mar"
+   ],
+   "correcta": 0,
+   "tip": "Chile tiene dos cordilleras: la de los Andes, al este y muy alta, y la de la Costa, más baja y cerca del mar.",
+   "id": "hist2-oa08-6"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "¿Cuál cordillera de Chile es la más alta?",
+   "opciones": [
+    "la de los Andes",
+    "la de la Costa",
+    "las dos son iguales",
+    "ninguna es alta"
+   ],
+   "correcta": 0,
+   "tip": "La cordillera de los Andes es mucho más alta y tiene nieve en sus cumbres. La de la Costa es más baja.",
+   "id": "hist2-oa08-7"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "En la zona central, entre las dos cordilleras, hay un gran…",
+   "opciones": [
+    "valle",
+    "desierto",
+    "fiordo",
+    "archipiélago"
+   ],
+   "correcta": 0,
+   "tip": "Entre la cordillera de la Costa y la de los Andes está el valle central, una tierra baja y plana.",
+   "id": "hist2-oa08-8"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "En el valle central se cultivan frutas y verduras porque el clima es…",
+   "opciones": [
+    "templado",
+    "muy helado",
+    "muy seco",
+    "siempre lluvioso"
+   ],
+   "correcta": 0,
+   "tip": "En la zona central el clima es templado: ni muy frío ni muy seco. Además hay ríos para regar.",
+   "id": "hist2-oa08-9"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "¿En qué zona de Chile hay fiordos y muchas islas?",
+   "opciones": [
+    "en el sur",
+    "en el norte",
+    "en el centro",
+    "en el desierto"
+   ],
+   "correcta": 0,
+   "tip": "En el sur el mar entra entre las montañas formando fiordos, y hay muchas islas y canales.",
+   "id": "hist2-oa08-10"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "Un fiordo es un brazo de mar que entra entre…",
+   "opciones": [
+    "montañas",
+    "dunas de arena",
+    "edificios",
+    "huertos"
+   ],
+   "correcta": 0,
+   "tip": "Un fiordo es mar que se mete entre montañas altas. En Chile hay muchos en el extremo sur.",
+   "id": "hist2-oa08-11"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "Un cerro alto con forma de cono, que puede echar lava, es un…",
+   "opciones": [
+    "volcán",
+    "valle",
+    "fiordo",
+    "lago"
+   ],
+   "correcta": 0,
+   "tip": "Un volcán es una montaña con un cráter por donde puede salir lava. Chile tiene muchos volcanes.",
+   "id": "hist2-oa08-12"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "¿Qué zona de Chile tiene muchos lagos y volcanes?",
+   "opciones": [
+    "la zona sur",
+    "la zona norte",
+    "el desierto",
+    "el valle central"
+   ],
+   "correcta": 0,
+   "tip": "En el sur hay muchos lagos, rodeados de bosques y con volcanes nevados cerca.",
+   "id": "hist2-oa08-13"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "Un lago es agua…",
+   "opciones": [
+    "rodeada de tierra",
+    "que corre al mar",
+    "salada del océano",
+    "que cae del cielo"
+   ],
+   "correcta": 0,
+   "tip": "Un lago es agua quieta rodeada de tierra. Un río, en cambio, corre hasta el mar.",
+   "id": "hist2-oa08-14"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "En Chile, los ríos bajan desde la cordillera hacia el…",
+   "opciones": [
+    "mar",
+    "volcán",
+    "altiplano",
+    "este"
+   ],
+   "correcta": 0,
+   "tip": "En Chile los ríos nacen en la cordillera de los Andes y corren hacia el oeste, hasta el mar.",
+   "id": "hist2-oa08-15"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "Valparaíso está junto al mar. Es una ciudad de la…",
+   "opciones": [
+    "costa",
+    "cordillera",
+    "pampa",
+    "isla"
+   ],
+   "correcta": 0,
+   "tip": "La costa es la tierra que está junto al mar. Valparaíso es un puerto de la costa.",
+   "id": "hist2-oa08-16"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "¿Dónde viven más personas, en una ciudad o en un pueblo?",
+   "opciones": [
+    "en una ciudad",
+    "en un pueblo",
+    "en los dos igual",
+    "en ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Una ciudad es mucho más grande que un pueblo: tiene más calles, casas y personas.",
+   "id": "hist2-oa08-17"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "Un lugar con pocas casas, una plaza y una iglesia pequeña es un…",
+   "opciones": [
+    "pueblo",
+    "archipiélago",
+    "valle",
+    "fiordo"
+   ],
+   "correcta": 0,
+   "tip": "Un pueblo es un lugar pequeño donde vive poca gente. Una ciudad es mucho más grande.",
+   "id": "hist2-oa08-18"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "Arena, sol fuerte y casi sin plantas. ¿De qué zona es este paisaje?",
+   "opciones": [
+    "del norte",
+    "del centro",
+    "del sur",
+    "del extremo sur"
+   ],
+   "correcta": 0,
+   "tip": "Ese paisaje es de desierto. El desierto está en la zona norte de Chile.",
+   "id": "hist2-oa08-19"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "Bosques verdes, mucha lluvia y lagos. ¿Dónde está este paisaje?",
+   "opciones": [
+    "en el sur",
+    "en el norte",
+    "en el centro",
+    "en el desierto"
+   ],
+   "correcta": 0,
+   "tip": "Los bosques, la lluvia y los lagos son típicos de la zona sur de Chile.",
+   "id": "hist2-oa08-20"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "Un valle con viñas y huertos de fruta. ¿De qué zona de Chile es?",
+   "opciones": [
+    "de la zona central",
+    "del altiplano",
+    "del extremo sur",
+    "del desierto"
+   ],
+   "correcta": 0,
+   "tip": "Los valles con viñas y frutales son típicos de la zona central, donde el clima es templado.",
+   "id": "hist2-oa08-21"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "En el extremo sur, ¿qué paisaje de hielo puede ver Benjamín?",
+   "opciones": [
+    "un glaciar",
+    "un desierto",
+    "un oasis",
+    "un salar"
+   ],
+   "correcta": 0,
+   "tip": "Un glaciar es un río de hielo. En el extremo sur de Chile hay muchos, como en los Campos de Hielo.",
+   "id": "hist2-oa08-22"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "En el sur, el mar pasa entre muchas islas formando…",
+   "opciones": [
+    "canales",
+    "dunas",
+    "valles",
+    "salares"
+   ],
+   "correcta": 0,
+   "tip": "Entre las islas del sur el mar forma pasos angostos llamados canales. Por ellos navegan los barcos.",
+   "id": "hist2-oa08-23"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "La Isla Grande de Chiloé está en la zona…",
+   "opciones": [
+    "sur",
+    "norte",
+    "central",
+    "del desierto"
+   ],
+   "correcta": 0,
+   "tip": "Chiloé es una isla grande del sur de Chile, rodeada de otras islas más pequeñas.",
+   "id": "hist2-oa08-24"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "Ana ve un cerro altísimo con nieve y cráter en la punta. ¿Qué es?",
+   "opciones": [
+    "un volcán",
+    "un valle",
+    "un fiordo",
+    "una duna"
+   ],
+   "correcta": 0,
+   "tip": "Un cerro con cráter en la punta es un volcán. Muchos volcanes de Chile tienen nieve arriba.",
+   "id": "hist2-oa08-25"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "Matías vive en Iquique, junto al mar en el norte. ¿Qué paisaje ve?",
+   "opciones": [
+    "desierto y costa",
+    "bosques y lagos",
+    "volcanes y hielos",
+    "viñas y huertos"
+   ],
+   "correcta": 0,
+   "tip": "Iquique está en la costa del norte: tiene mar por un lado y desierto por el otro.",
+   "id": "hist2-oa08-26"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "Sofía vive en Puerto Montt, en el sur. ¿Qué hay cerca?",
+   "opciones": [
+    "lagos y bosques",
+    "dunas de arena",
+    "desierto seco",
+    "salares blancos"
+   ],
+   "correcta": 0,
+   "tip": "Puerto Montt está en el sur, una zona con lagos, bosques, volcanes y mucha lluvia.",
+   "id": "hist2-oa08-27"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "En el norte, en lo alto de la cordillera, hay una meseta llamada…",
+   "opciones": [
+    "altiplano",
+    "valle central",
+    "fiordo",
+    "archipiélago"
+   ],
+   "correcta": 0,
+   "tip": "El altiplano es una meseta muy alta en la cordillera del norte. Ahí hace frío y cuesta más respirar.",
+   "id": "hist2-oa08-28"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "Santiago, con muchas calles, edificios y personas, es una…",
+   "opciones": [
+    "ciudad",
+    "isla",
+    "costa",
+    "cordillera"
+   ],
+   "correcta": 0,
+   "tip": "Santiago es la ciudad más grande de Chile: tiene muchas calles, edificios y millones de personas.",
+   "id": "hist2-oa08-29"
+  },
+  {
+   "oa": "HI02 OA 08",
+   "pregunta": "¿Qué zona de Chile tiene el clima más frío?",
+   "opciones": [
+    "el extremo sur",
+    "la zona norte",
+    "la zona central",
+    "el valle central"
+   ],
+   "correcta": 0,
+   "tip": "Mientras más al sur, más frío. En el extremo sur hay hielos, mucho viento y nieve en invierno.",
+   "id": "hist2-oa08-30"
+  }
+ ]
+}

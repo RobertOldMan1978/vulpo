@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "¿Qué día viene después del miércoles?",
+   "opciones": [
+    "jueves",
+    "martes",
+    "viernes",
+    "lunes"
+   ],
+   "correcta": 0,
+   "tip": "La semana va lunes, martes, miércoles, jueves... Justo después del miércoles viene el jueves.",
+   "id": "mate2-oa17-1"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "¿Qué día viene justo antes del lunes?",
+   "opciones": [
+    "domingo",
+    "martes",
+    "sábado",
+    "viernes"
+   ],
+   "correcta": 0,
+   "tip": "La semana termina en domingo y vuelve a empezar en lunes. Por eso antes del lunes está el domingo.",
+   "id": "mate2-oa17-2"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "Hoy es viernes. ¿Qué día será mañana?",
+   "opciones": [
+    "sábado",
+    "jueves",
+    "domingo",
+    "lunes"
+   ],
+   "correcta": 0,
+   "tip": "Mañana es el día que sigue. Después del viernes viene el sábado.",
+   "id": "mate2-oa17-3"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "Hoy es martes. ¿Qué día fue ayer?",
+   "opciones": [
+    "lunes",
+    "miércoles",
+    "domingo",
+    "jueves"
+   ],
+   "correcta": 0,
+   "tip": "Ayer es el día anterior. Antes del martes viene el lunes; el miércoles sería mañana.",
+   "id": "mate2-oa17-4"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "Hoy es jueves. ¿Qué día será pasado mañana?",
+   "opciones": [
+    "sábado",
+    "viernes",
+    "domingo",
+    "martes"
+   ],
+   "correcta": 0,
+   "tip": "Pasado mañana son dos días después: jueves, viernes, sábado.",
+   "id": "mate2-oa17-5"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "Hoy es domingo. ¿Qué día fue hace 2 días?",
+   "opciones": [
+    "viernes",
+    "sábado",
+    "martes",
+    "jueves"
+   ],
+   "correcta": 0,
+   "tip": "Hace 2 días es contar hacia atrás: domingo, sábado, viernes. El martes sería 2 días hacia adelante.",
+   "id": "mate2-oa17-6"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "¿Qué días forman el fin de semana?",
+   "opciones": [
+    "sábado y domingo",
+    "viernes y sábado",
+    "domingo y lunes",
+    "lunes y martes"
+   ],
+   "correcta": 0,
+   "tip": "El fin de semana son los dos últimos días de la semana: sábado y domingo. El viernes todavía hay clases.",
+   "id": "mate2-oa17-7"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "Ana va al colegio de lunes a viernes. ¿Cuántos días va?",
+   "opciones": [
+    "5",
+    "7",
+    "4",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Lunes, martes, miércoles, jueves y viernes: Ana va 5 días.",
+   "id": "mate2-oa17-8"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "Diego va a la piscina todos los sábados. ¿Cada cuántos días va?",
+   "opciones": [
+    "cada 7 días",
+    "cada 6 días",
+    "cada 1 día",
+    "cada 5 días"
+   ],
+   "correcta": 0,
+   "tip": "De un sábado al sábado siguiente pasa una semana completa, y una semana tiene 7 días.",
+   "id": "mate2-oa17-9"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "Faltan 7 días para el paseo. ¿Cuántas semanas faltan?",
+   "opciones": [
+    "1 semana",
+    "7 semanas",
+    "2 semanas",
+    "3 semanas"
+   ],
+   "correcta": 0,
+   "tip": "Una semana tiene 7 días. Por eso 7 días son justo 1 semana.",
+   "id": "mate2-oa17-10"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "¿Cuántos días son una semana y 2 días?",
+   "opciones": [
+    "9",
+    "3",
+    "7",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "Una semana son 7 días. Si le sumas 2 días más, son 7 + 2 = 9 días.",
+   "id": "mate2-oa17-11"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "¿Qué mes viene después de marzo?",
+   "opciones": [
+    "abril",
+    "febrero",
+    "mayo",
+    "junio"
+   ],
+   "correcta": 0,
+   "tip": "Los meses van enero, febrero, marzo, abril... Justo después de marzo viene abril.",
+   "id": "mate2-oa17-12"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "¿Qué mes viene justo antes de enero?",
+   "opciones": [
+    "diciembre",
+    "febrero",
+    "noviembre",
+    "marzo"
+   ],
+   "correcta": 0,
+   "tip": "Enero es el primer mes del año. Antes de él está diciembre, el último mes del año anterior.",
+   "id": "mate2-oa17-13"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "¿Qué mes está entre abril y junio?",
+   "opciones": [
+    "mayo",
+    "marzo",
+    "julio",
+    "agosto"
+   ],
+   "correcta": 0,
+   "tip": "Abril, mayo, junio: el mes que queda al medio es mayo.",
+   "id": "mate2-oa17-14"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "¿Cuál es el primer mes del año?",
+   "opciones": [
+    "enero",
+    "marzo",
+    "diciembre",
+    "febrero"
+   ],
+   "correcta": 0,
+   "tip": "El año empieza en enero. Marzo es cuando parten las clases, pero el año ya empezó dos meses antes.",
+   "id": "mate2-oa17-15"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "¿Con qué mes termina el año?",
+   "opciones": [
+    "diciembre",
+    "noviembre",
+    "enero",
+    "octubre"
+   ],
+   "correcta": 0,
+   "tip": "El año termina en diciembre. Después viene enero, que ya es de un año nuevo.",
+   "id": "mate2-oa17-16"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "¿Qué mes tiene menos días?",
+   "opciones": [
+    "febrero",
+    "enero",
+    "abril",
+    "junio"
+   ],
+   "correcta": 0,
+   "tip": "Febrero es el mes más corto: tiene 28 días, y a veces 29. Los demás tienen 30 o 31.",
+   "id": "mate2-oa17-17"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "Matías cumple en junio y Ema en agosto. ¿Quién cumple primero?",
+   "opciones": [
+    "Matías",
+    "Ema",
+    "Los dos juntos",
+    "No se puede saber"
+   ],
+   "correcta": 0,
+   "tip": "En el año, junio viene antes que agosto: junio, julio, agosto. Por eso Matías cumple primero.",
+   "id": "mate2-oa17-18"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "En la fecha 15 de mayo, ¿qué nos dice el 15?",
+   "opciones": [
+    "El día del mes",
+    "El mes",
+    "La semana",
+    "El año"
+   ],
+   "correcta": 0,
+   "tip": "En una fecha primero va el día y después el mes. El 15 es el día; mayo es el mes.",
+   "id": "mate2-oa17-19"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "Hoy es 10 de abril. ¿Qué fecha fue ayer?",
+   "opciones": [
+    "9 de abril",
+    "11 de abril",
+    "10 de marzo",
+    "9 de marzo"
+   ],
+   "correcta": 0,
+   "tip": "Ayer es un día antes, en el mismo mes: del 10 se baja al 9. El 11 sería mañana.",
+   "id": "mate2-oa17-20"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "Hoy es 20 de junio. ¿Qué fecha será pasado mañana?",
+   "opciones": [
+    "22 de junio",
+    "21 de junio",
+    "23 de junio",
+    "22 de julio"
+   ],
+   "correcta": 0,
+   "tip": "Pasado mañana son 2 días después: del 20 se avanza al 21 y luego al 22. Sigue siendo junio.",
+   "id": "mate2-oa17-21"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "¿Qué fecha viene después del 31 de diciembre?",
+   "opciones": [
+    "1 de enero",
+    "32 de diciembre",
+    "1 de diciembre",
+    "30 de diciembre"
+   ],
+   "correcta": 0,
+   "tip": "Diciembre termina el 31. El día siguiente empieza un mes nuevo, y también un año nuevo: 1 de enero.",
+   "id": "mate2-oa17-22"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "Hoy es lunes 5. ¿Qué número tendrá el miércoles?",
+   "opciones": [
+    "el 7",
+    "el 6",
+    "el 8",
+    "el 3"
+   ],
+   "correcta": 0,
+   "tip": "Del lunes al miércoles hay 2 días: lunes 5, martes 6, miércoles 7.",
+   "id": "mate2-oa17-23"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "El 3 de mayo es lunes. ¿Qué día es el 4 de mayo?",
+   "opciones": [
+    "martes",
+    "domingo",
+    "miércoles",
+    "lunes"
+   ],
+   "correcta": 0,
+   "tip": "El 4 viene justo después del 3, así que es el día siguiente al lunes: martes.",
+   "id": "mate2-oa17-24"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "El 12 de agosto es sábado. ¿Qué día es el 11 de agosto?",
+   "opciones": [
+    "viernes",
+    "domingo",
+    "jueves",
+    "sábado"
+   ],
+   "correcta": 0,
+   "tip": "El 11 es un día antes del 12. El día antes del sábado es el viernes.",
+   "id": "mate2-oa17-25"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "El lunes 6 de julio, ¿qué fecha es el lunes siguiente?",
+   "opciones": [
+    "13 de julio",
+    "7 de julio",
+    "12 de julio",
+    "14 de julio"
+   ],
+   "correcta": 0,
+   "tip": "De un lunes al lunes siguiente pasan 7 días: 6 + 7 = 13. El 7 sería el martes.",
+   "id": "mate2-oa17-26"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "En un calendario, ¿qué fecha queda justo debajo del 4?",
+   "opciones": [
+    "el 11",
+    "el 5",
+    "el 14",
+    "el 8"
+   ],
+   "correcta": 0,
+   "tip": "Cada fila del calendario es una semana de 7 días. Bajar una fila es sumar 7: 4 + 7 = 11.",
+   "id": "mate2-oa17-27"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "Desde el 20, subes una fila del calendario. ¿A qué fecha llegas?",
+   "opciones": [
+    "el 13",
+    "el 19",
+    "el 21",
+    "el 27"
+   ],
+   "correcta": 0,
+   "tip": "Subir una fila del calendario es volver una semana atrás: 20 - 7 = 13. El 27 está abajo.",
+   "id": "mate2-oa17-28"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "¿En qué mes son las Fiestas Patrias?",
+   "opciones": [
+    "septiembre",
+    "agosto",
+    "octubre",
+    "julio"
+   ],
+   "correcta": 0,
+   "tip": "Las Fiestas Patrias de Chile se celebran el 18 y el 19 de septiembre.",
+   "id": "mate2-oa17-29"
+  },
+  {
+   "oa": "MA02 OA 17",
+   "pregunta": "Navidad es el 25 de diciembre. Si hoy es 20, ¿cuántos días faltan?",
+   "opciones": [
+    "5",
+    "25",
+    "4",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Del 20 al 25 hay que avanzar 21, 22, 23, 24 y 25: son 5 días.",
+   "id": "mate2-oa17-30"
+  }
+ ]
+}

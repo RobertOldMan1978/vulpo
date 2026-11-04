@@ -1,0 +1,188 @@
+{
+ "lecciones": [
+  {
+   "id": "hi2-planos",
+   "titulo": "Antes de empezar: Planos, mapas y paisajes de Chile",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "lugar": "Tu sala, tu barrio y todo Chile"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Este capítulo no cuenta algo que pasó hace mucho. Es sobre los lugares: empieza muy cerca, en tu sala y en tu barrio, y termina en todo Chile."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "items": [
+       {
+        "titulo": "Tu sala"
+       },
+       {
+        "titulo": "Tu barrio"
+       },
+       {
+        "titulo": "Chile"
+       },
+       {
+        "titulo": "El planeta"
+       }
+      ],
+      "etiqueta": "De lo más cerca a lo más lejos",
+      "desc": "Cuatro lugares, del más chico al más grande: tu sala, tu barrio, Chile y el planeta"
+     },
+     "intro": "Cada lugar es más grande que el anterior. Vas a aprender a dibujarlos y a encontrarlos en un mapa."
+    },
+    {
+     "t": "texto",
+     "md": "Chile se estira muchísimo de norte a sur. Por eso tiene paisajes muy distintos en el norte, en el centro y en el sur. En este capítulo vas a leer planos, a buscar Chile en el mapa, a conocer sus paisajes y a cuidar las plazas, los patios y las calles."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "hi2-pueblos",
+   "titulo": "Antes de empezar: Los pueblos originarios de Chile",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "siglo": "Antes de los españoles, y hoy",
+      "epoca": "Desde hace miles de años hasta hoy",
+      "lugar": "Chile, de norte a sur, y la isla Rapa Nui"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Mucho antes de que Chile fuera un país, aquí ya vivían muchos pueblos. Cada uno vivía a su manera, según su lugar: el desierto, la cordillera, los bosques, las islas del sur o una isla en medio del mar."
+    },
+    {
+     "t": "diagrama",
+     "kind": "tiempo",
+     "params": {
+      "desde": -12000,
+      "hasta": 2026,
+      "hitos": [
+       {
+        "a": -12000,
+        "txt": "ya vive gente aquí"
+       },
+       {
+        "a": 1536,
+        "txt": "llegan los españoles"
+       },
+       {
+        "a": 2026,
+        "txt": "hoy"
+       }
+      ],
+      "etiqueta": "Llegaron muchísimo antes"
+     },
+     "intro": "Mira lo largo que es el camino antes de que llegaran los españoles. Todo ese tiempo, aquí ya vivían pueblos."
+    },
+    {
+     "t": "texto",
+     "md": "Esos pueblos no son solo del pasado. Hoy en Chile hay familias mapuche, aimaras, rapa nui y de otros pueblos que mantienen muchas de sus costumbres. En este capítulo vas a ver cómo vivían antes, dónde vivían, cómo usaban el agua, el clima y las plantas de su zona, y qué sigue igual hasta hoy."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "hi2-mestiza",
+   "titulo": "Antes de empezar: Una sociedad mestiza y diversa",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "siglo": "Desde hace casi 500 años",
+      "epoca": "Desde 1536 hasta hoy",
+      "lugar": "Chile, y países de todo el mundo"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Aquí ya vivían los pueblos originarios. Después llegaron los españoles, y más tarde familias de lugares lejanos y de países vecinos. Cada grupo trajo algo: palabras, comidas, fiestas y juegos."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "items": [
+       {
+        "titulo": "Pueblos originarios",
+        "texto": "ya vivían aquí"
+       },
+       {
+        "titulo": "Españoles",
+        "texto": "llegaron hace casi 500 años"
+       },
+       {
+        "titulo": "Inmigrantes",
+        "texto": "siguen llegando hasta hoy"
+       }
+      ],
+      "etiqueta": "Todos juntos forman Chile",
+      "desc": "Tres grupos que forman Chile: los pueblos originarios, los españoles y los inmigrantes"
+     },
+     "intro": "Mira de dónde viene la gente que forma Chile. Lo que comemos y lo que decimos tiene un poco de cada uno."
+    },
+    {
+     "t": "texto",
+     "md": "Vivir juntos siendo tan distintos tiene dos secretos: tratar bien a los demás y decir siempre la verdad. En este capítulo vas a descubrir qué nos dejó cada grupo, y vas a ver cómo se respeta a los otros y cómo se juega limpio."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "hi2-patrimonio",
+   "titulo": "Antes de empezar: El patrimonio de Chile",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "lugar": "Todo Chile, y también tu región"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Hay cosas que no son de una sola persona, sino de todos los chilenos. Pasan de los abuelos a los nietos, y si nadie las cuida, un día ya no estarán."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "items": [
+       {
+        "titulo": "Patrimonio cultural",
+        "texto": "lo que crearon las personas: un baile, una comida, una leyenda"
+       },
+       {
+        "titulo": "Patrimonio natural",
+        "texto": "lo que hizo la naturaleza: un bosque, un volcán, un animal"
+       }
+      ],
+      "etiqueta": "Los dos son de todos",
+      "desc": "Dos tipos de patrimonio: el cultural, que crearon las personas, y el natural, que hizo la naturaleza"
+     },
+     "intro": "El patrimonio puede ser algo que inventaron las personas o algo que nos regaló la naturaleza."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a conocer fiestas, leyendas y comidas de Chile, sus parques, plantas y animales, las normas que nos cuidan, y a las personas e instituciones que protegen todo esto."
+    }
+   ],
+   "revisada": false
+  }
+ ]
+}

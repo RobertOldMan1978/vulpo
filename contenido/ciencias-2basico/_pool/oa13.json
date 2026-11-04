@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "¿Qué instrumento mide la temperatura del aire?",
+   "opciones": [
+    "El termómetro",
+    "El pluviómetro",
+    "La veleta",
+    "El anemómetro"
+   ],
+   "correcta": 0,
+   "tip": "El termómetro mide qué tan caliente o frío está el aire. Se lee en grados.",
+   "id": "cien2-oa13-1"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Ana quiere saber cuánta lluvia cayó anoche. ¿Qué usa?",
+   "opciones": [
+    "Un pluviómetro",
+    "Un termómetro",
+    "Una veleta",
+    "Una manga de viento"
+   ],
+   "correcta": 0,
+   "tip": "El pluviómetro es un recipiente que junta la lluvia: mientras más agua tiene, más llovió.",
+   "id": "cien2-oa13-2"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "¿Qué nos muestra una veleta?",
+   "opciones": [
+    "La dirección del viento",
+    "Cuánta lluvia cayó",
+    "Cuánto calor hace",
+    "La altura de las nubes"
+   ],
+   "correcta": 0,
+   "tip": "La veleta gira con el viento y así muestra su dirección. No mide la lluvia ni el calor.",
+   "id": "cien2-oa13-3"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Diego armó vasitos que giran con el viento. ¿Qué miden?",
+   "opciones": [
+    "Qué tan rápido sopla",
+    "Cuánta lluvia cayó",
+    "Cuánto calor hace",
+    "Cuánta nieve hay"
+   ],
+   "correcta": 0,
+   "tip": "Es un anemómetro: mientras más rápido sopla el viento, más rápido giran los vasitos.",
+   "id": "cien2-oa13-4"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Ana midió 28 grados el lunes y 12 el martes. ¿Qué día hizo más frío?",
+   "opciones": [
+    "El martes",
+    "El lunes",
+    "Los dos igual",
+    "No se puede saber"
+   ],
+   "correcta": 0,
+   "tip": "Menos grados en el termómetro significa más frío, y 12 es menos que 28.",
+   "id": "cien2-oa13-5"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Con más calor, ¿qué hace el líquido del termómetro?",
+   "opciones": [
+    "Sube por el tubo",
+    "Baja por el tubo",
+    "Se queda quieto",
+    "Cambia de color"
+   ],
+   "correcta": 0,
+   "tip": "Con el calor el líquido se agranda y sube por el tubito; con el frío baja.",
+   "id": "cien2-oa13-6"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "El pluviómetro de Sofía amaneció vacío. ¿Cuánto llovió de noche?",
+   "opciones": [
+    "Nada",
+    "Mucho",
+    "Un poco",
+    "Más que ayer"
+   ],
+   "correcta": 0,
+   "tip": "Si el pluviómetro no juntó agua, es porque esa noche no cayó lluvia.",
+   "id": "cien2-oa13-7"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Benja juntó más lluvia que Ana en su pluviómetro. ¿Dónde llovió más?",
+   "opciones": [
+    "Donde está Benja",
+    "Donde está Ana",
+    "En los dos igual",
+    "En ningún lugar"
+   ],
+   "correcta": 0,
+   "tip": "El pluviómetro que junta más agua es el del lugar donde cayó más lluvia.",
+   "id": "cien2-oa13-8"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "La flecha de la veleta cambió de lado. ¿Qué cambió?",
+   "opciones": [
+    "La dirección del viento",
+    "La temperatura del aire",
+    "La lluvia caída",
+    "La hora del día"
+   ],
+   "correcta": 0,
+   "tip": "La veleta solo se mueve con el viento: si cambia de lado, el viento cambió de dirección.",
+   "id": "cien2-oa13-9"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "¿Dónde conviene poner un pluviómetro?",
+   "opciones": [
+    "En un patio abierto",
+    "Bajo un árbol grande",
+    "Dentro de la sala",
+    "Bajo el techo"
+   ],
+   "correcta": 0,
+   "tip": "La lluvia tiene que caerle directo del cielo. Bajo un techo o un árbol no le llega bien.",
+   "id": "cien2-oa13-10"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Javiera quiere hacer un pluviómetro casero. ¿Qué usa?",
+   "opciones": [
+    "Una botella cortada",
+    "Un globo inflado",
+    "Un espejo",
+    "Una linterna"
+   ],
+   "correcta": 0,
+   "tip": "Una botella cortada junta la lluvia, y con una regla se ve qué tan alta quedó el agua.",
+   "id": "cien2-oa13-11"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "¿Para qué sirve anotar la temperatura todos los días?",
+   "opciones": [
+    "Para comparar los días",
+    "Para que haga más calor",
+    "Para que llueva",
+    "Para cambiar el tiempo"
+   ],
+   "correcta": 0,
+   "tip": "Anotar las medidas permite ver cómo cambia el tiempo de un día a otro. Medir no cambia el tiempo.",
+   "id": "cien2-oa13-12"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Benjamín quiere saber si hace frío para ponerse chaleco. ¿Qué usa?",
+   "opciones": [
+    "Un termómetro",
+    "Una veleta",
+    "Un pluviómetro",
+    "Un anemómetro"
+   ],
+   "correcta": 0,
+   "tip": "El termómetro dice cuántos grados hay: con pocos grados hace frío y conviene abrigarse.",
+   "id": "cien2-oa13-13"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "La manga de viento cuelga floja. ¿Cómo está el viento?",
+   "opciones": [
+    "Casi no sopla",
+    "Sopla muy fuerte",
+    "Sopla de lado",
+    "Sopla hacia arriba"
+   ],
+   "correcta": 0,
+   "tip": "La manga de viento se infla con el viento. Si cuelga floja, casi no hay viento.",
+   "id": "cien2-oa13-14"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "La manga de viento está estirada y derecha. ¿Cómo sopla el viento?",
+   "opciones": [
+    "Fuerte",
+    "Nada",
+    "Muy despacio",
+    "Hacia abajo"
+   ],
+   "correcta": 0,
+   "tip": "Cuando el viento es fuerte, llena la manga y la deja estirada como un tubo.",
+   "id": "cien2-oa13-15"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Los vasitos del anemómetro giran muy lento. ¿Cómo está el viento?",
+   "opciones": [
+    "Suave",
+    "Muy fuerte",
+    "Como una tormenta",
+    "Cada vez más fuerte"
+   ],
+   "correcta": 0,
+   "tip": "Los vasitos giran rápido con viento fuerte y lento con viento suave.",
+   "id": "cien2-oa13-16"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "¿En qué se mide la temperatura?",
+   "opciones": [
+    "En grados",
+    "En litros",
+    "En metros",
+    "En kilos"
+   ],
+   "correcta": 0,
+   "tip": "La temperatura se mide en grados. Los litros miden líquido; los metros, largo; los kilos, peso.",
+   "id": "cien2-oa13-17"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Ayer el termómetro marcó 5 grados. ¿Cómo estuvo el día?",
+   "opciones": [
+    "Frío",
+    "Muy caluroso",
+    "Tibio",
+    "Caluroso"
+   ],
+   "correcta": 0,
+   "tip": "Cinco grados es una temperatura baja: es un día frío, de abrigo.",
+   "id": "cien2-oa13-18"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Marcó 8 grados en la mañana y 20 en la tarde. ¿Qué pasó?",
+   "opciones": [
+    "La tarde fue más cálida",
+    "La mañana fue más cálida",
+    "Las dos fueron iguales",
+    "No cambió nada"
+   ],
+   "correcta": 0,
+   "tip": "Más grados es más calor: 20 es más que 8, así que la tarde estuvo más cálida.",
+   "id": "cien2-oa13-19"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "¿Dónde se pone el termómetro para medir el aire?",
+   "opciones": [
+    "A la sombra",
+    "Al sol directo",
+    "Junto a la estufa",
+    "Dentro del refrigerador"
+   ],
+   "correcta": 0,
+   "tip": "Al sol el termómetro se calienta él mismo y marca de más. A la sombra mide el aire.",
+   "id": "cien2-oa13-20"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "El pluviómetro juntó agua el lunes y nada el martes. ¿Cuándo llovió?",
+   "opciones": [
+    "El lunes",
+    "El martes",
+    "Los dos días",
+    "Ningún día"
+   ],
+   "correcta": 0,
+   "tip": "El pluviómetro junta agua solo cuando llueve. El martes quedó sin agua: no llovió.",
+   "id": "cien2-oa13-21"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Pedro quiere ver si hay viento para su volantín. ¿Qué mira?",
+   "opciones": [
+    "La manga de viento",
+    "El termómetro",
+    "El pluviómetro",
+    "El reloj de la sala"
+   ],
+   "correcta": 0,
+   "tip": "La manga de viento se infla y se mueve cuando hay viento: así Pedro sabe si conviene volar.",
+   "id": "cien2-oa13-22"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "¿Cuál sirve para medir el tiempo atmosférico?",
+   "opciones": [
+    "El termómetro",
+    "El reloj",
+    "La balanza",
+    "La lupa"
+   ],
+   "correcta": 0,
+   "tip": "El reloj mide las horas, no el tiempo atmosférico. El termómetro mide qué tan caluroso está el día.",
+   "id": "cien2-oa13-23"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "El termómetro de la plaza marca 30 grados. ¿Qué día es?",
+   "opciones": [
+    "Un día caluroso",
+    "Un día de nieve",
+    "Un día fresco",
+    "Un día de helada"
+   ],
+   "correcta": 0,
+   "tip": "Treinta grados es mucho calor. La nieve y las heladas llegan con muy pocos grados.",
+   "id": "cien2-oa13-24"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "¿Qué hace girar los vasitos del anemómetro?",
+   "opciones": [
+    "El viento",
+    "La lluvia",
+    "El sol",
+    "Un motor"
+   ],
+   "correcta": 0,
+   "tip": "Los vasitos se mueven porque el viento los empuja. Sin viento, se quedan quietos.",
+   "id": "cien2-oa13-25"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Camila hizo una veleta de cartón. ¿Dónde la pone?",
+   "opciones": [
+    "En un lugar abierto",
+    "Dentro de un cajón",
+    "Detrás de un muro alto",
+    "Bajo la mesa del patio"
+   ],
+   "correcta": 0,
+   "tip": "La veleta necesita que el viento le llegue libre, sin paredes ni techos que lo tapen.",
+   "id": "cien2-oa13-26"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "Don Luis quiere saber qué tan fuerte sopla el viento. ¿Qué usa?",
+   "opciones": [
+    "Un anemómetro",
+    "Un termómetro",
+    "Un pluviómetro",
+    "Un reloj"
+   ],
+   "correcta": 0,
+   "tip": "El anemómetro mide la rapidez del viento: sus vasitos giran más rápido si sopla fuerte.",
+   "id": "cien2-oa13-27"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "En Arica marcó 25 grados y en Punta Arenas 6. ¿Dónde hacía más frío?",
+   "opciones": [
+    "En Punta Arenas",
+    "En Arica",
+    "En las dos igual",
+    "No se puede saber"
+   ],
+   "correcta": 0,
+   "tip": "Seis grados es menos que veinticinco, así que en Punta Arenas hacía más frío.",
+   "id": "cien2-oa13-28"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "¿Qué instrumento tiene una flecha que gira con el viento?",
+   "opciones": [
+    "La veleta",
+    "El termómetro",
+    "El pluviómetro",
+    "El anemómetro"
+   ],
+   "correcta": 0,
+   "tip": "La veleta tiene una flecha que el viento mueve. El anemómetro gira, pero con vasitos y sin flecha.",
+   "id": "cien2-oa13-29"
+  },
+  {
+   "oa": "CN02 OA 13",
+   "pregunta": "¿Qué instrumento tiene un líquido que sube y baja con el calor?",
+   "opciones": [
+    "El termómetro",
+    "La veleta",
+    "El anemómetro",
+    "La manga de viento"
+   ],
+   "correcta": 0,
+   "tip": "En el termómetro de líquido, el líquido sube con el calor y baja con el frío.",
+   "id": "cien2-oa13-30"
+  }
+ ]
+}

@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "¿Qué figura tiene 3 lados?",
+   "opciones": [
+    "Triángulo",
+    "Cuadrado",
+    "Rectángulo",
+    "Círculo"
+   ],
+   "correcta": 0,
+   "tip": "El triángulo tiene 3 lados y 3 esquinas. Tri quiere decir tres.",
+   "id": "mate2-oa15-1"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "¿Qué figura tiene un borde curvo y ninguna esquina?",
+   "opciones": [
+    "Círculo",
+    "Triángulo",
+    "Cuadrado",
+    "Rectángulo"
+   ],
+   "correcta": 0,
+   "tip": "El círculo es redondo: su borde es una sola línea curva y no forma esquinas.",
+   "id": "mate2-oa15-2"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "¿Cuántos lados tiene un cuadrado?",
+   "opciones": [
+    "4",
+    "3",
+    "5",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "El cuadrado tiene 4 lados, todos del mismo largo, y 4 esquinas.",
+   "id": "mate2-oa15-3"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "¿Cuántas esquinas tiene un triángulo?",
+   "opciones": [
+    "3",
+    "4",
+    "1",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "El triángulo tiene 3 lados, y donde se juntan los lados se forman 3 esquinas.",
+   "id": "mate2-oa15-4"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "¿Qué figura tiene 4 lados del mismo largo?",
+   "opciones": [
+    "Cuadrado",
+    "Rectángulo",
+    "Triángulo",
+    "Círculo"
+   ],
+   "correcta": 0,
+   "tip": "El cuadrado tiene sus 4 lados iguales. El rectángulo tiene 2 lados largos y 2 cortos.",
+   "id": "mate2-oa15-5"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "¿Qué figura tiene 2 lados largos y 2 lados cortos?",
+   "opciones": [
+    "Rectángulo",
+    "Cuadrado",
+    "Triángulo",
+    "Círculo"
+   ],
+   "correcta": 0,
+   "tip": "El rectángulo tiene 4 lados: 2 largos frente a frente y 2 cortos frente a frente.",
+   "id": "mate2-oa15-6"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "Matías arma una figura cerrada con 3 palitos. ¿Cuál formó?",
+   "opciones": [
+    "Triángulo",
+    "Cuadrado",
+    "Rectángulo",
+    "Círculo"
+   ],
+   "correcta": 0,
+   "tip": "Con 3 palitos se cierra una figura de 3 lados: el triángulo.",
+   "id": "mate2-oa15-7"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "¿Cuántos palitos iguales usa Ana para armar un cuadrado?",
+   "opciones": [
+    "4",
+    "3",
+    "5",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "El cuadrado tiene 4 lados, así que Ana usa un palito para cada lado: 4 palitos.",
+   "id": "mate2-oa15-8"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "En el geoplano, Sofía hace una figura de 3 esquinas. ¿Qué figura es?",
+   "opciones": [
+    "Triángulo",
+    "Cuadrado",
+    "Círculo",
+    "Rectángulo"
+   ],
+   "correcta": 0,
+   "tip": "Una figura con 3 esquinas tiene también 3 lados: es un triángulo.",
+   "id": "mate2-oa15-9"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "¿Qué figura tiene la forma de una moneda?",
+   "opciones": [
+    "Círculo",
+    "Cuadrado",
+    "Triángulo",
+    "Rectángulo"
+   ],
+   "correcta": 0,
+   "tip": "La moneda es redonda, sin esquinas: tiene forma de círculo.",
+   "id": "mate2-oa15-10"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "¿Qué figura tiene la forma de una hoja de cuaderno?",
+   "opciones": [
+    "Rectángulo",
+    "Cuadrado",
+    "Triángulo",
+    "Círculo"
+   ],
+   "correcta": 0,
+   "tip": "La hoja tiene 4 esquinas, con 2 lados largos y 2 cortos: es un rectángulo.",
+   "id": "mate2-oa15-11"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "¿Qué figura tiene la forma de un plato visto desde arriba?",
+   "opciones": [
+    "Círculo",
+    "Rectángulo",
+    "Triángulo",
+    "Cuadrado"
+   ],
+   "correcta": 0,
+   "tip": "Visto desde arriba, el borde del plato es redondo: forma un círculo.",
+   "id": "mate2-oa15-12"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "¿En qué se parecen un cuadrado y un rectángulo?",
+   "opciones": [
+    "Ambos tienen 4 esquinas",
+    "Ambos tienen 3 lados",
+    "Ambos son redondos",
+    "Ambos tienen bordes curvos"
+   ],
+   "correcta": 0,
+   "tip": "Los dos tienen 4 lados rectos y 4 esquinas. Lo que cambia es el largo de sus lados.",
+   "id": "mate2-oa15-13"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "¿Qué hace distinto a un cuadrado de un rectángulo?",
+   "opciones": [
+    "Cuánto miden sus lados",
+    "Cuántas esquinas tienen",
+    "Cuántos lados tienen",
+    "Si son curvos"
+   ],
+   "correcta": 0,
+   "tip": "Los dos tienen 4 lados y 4 esquinas. En el cuadrado los lados son iguales; en el rectángulo hay 2 largos y 2 cortos.",
+   "id": "mate2-oa15-14"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "Vulpi recorre con el dedo un círculo. ¿Cuántas esquinas toca?",
+   "opciones": [
+    "0",
+    "1",
+    "2",
+    "4"
+   ],
+   "correcta": 0,
+   "tip": "El círculo es una sola línea curva, sin puntas: tiene 0 esquinas.",
+   "id": "mate2-oa15-15"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "Camila corta un cuadrado de esquina a esquina. ¿Qué le queda?",
+   "opciones": [
+    "2 triángulos",
+    "2 cuadrados",
+    "2 círculos",
+    "2 rectángulos"
+   ],
+   "correcta": 0,
+   "tip": "El corte de esquina a esquina deja 2 piezas de 3 lados cada una: 2 triángulos.",
+   "id": "mate2-oa15-16"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "¿Qué figura puede rodar sobre su borde?",
+   "opciones": [
+    "Círculo",
+    "Cuadrado",
+    "Triángulo",
+    "Rectángulo"
+   ],
+   "correcta": 0,
+   "tip": "El círculo no tiene esquinas que lo frenen, por eso puede rodar como una rueda.",
+   "id": "mate2-oa15-17"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "Javiera usa 2 palitos largos y 2 cortos. ¿Qué figura arma?",
+   "opciones": [
+    "Rectángulo",
+    "Cuadrado",
+    "Triángulo",
+    "Círculo"
+   ],
+   "correcta": 0,
+   "tip": "Con 2 lados largos y 2 cortos, puestos frente a frente, se arma un rectángulo.",
+   "id": "mate2-oa15-18"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "¿Cuántos palitos necesita Luis para armar 2 triángulos separados?",
+   "opciones": [
+    "6",
+    "3",
+    "5",
+    "4"
+   ],
+   "correcta": 0,
+   "tip": "Cada triángulo usa 3 palitos: 3 más 3 son 6 palitos.",
+   "id": "mate2-oa15-19"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "Ana tiene 7 palitos y arma un cuadrado. ¿Cuántos palitos le sobran?",
+   "opciones": [
+    "3",
+    "4",
+    "7",
+    "11"
+   ],
+   "correcta": 0,
+   "tip": "El cuadrado usa 4 palitos: de 7 le quedan 7 menos 4, que son 3.",
+   "id": "mate2-oa15-20"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "Entre un triángulo y un cuadrado, ¿cuál tiene más lados?",
+   "opciones": [
+    "El cuadrado",
+    "El triángulo",
+    "Tienen igual",
+    "Ninguno tiene"
+   ],
+   "correcta": 0,
+   "tip": "El cuadrado tiene 4 lados y el triángulo 3: el cuadrado tiene uno más.",
+   "id": "mate2-oa15-21"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "¿Cuántos lados tienen en total un triángulo y un cuadrado?",
+   "opciones": [
+    "7",
+    "6",
+    "8",
+    "12"
+   ],
+   "correcta": 0,
+   "tip": "El triángulo tiene 3 lados y el cuadrado 4: 3 más 4 son 7.",
+   "id": "mate2-oa15-22"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "Sofía dice que un círculo tiene 4 esquinas. ¿Tiene razón?",
+   "opciones": [
+    "No, no tiene esquinas",
+    "Sí, tiene 4 esquinas",
+    "Sí, tiene 1 esquina",
+    "No, tiene 3 esquinas"
+   ],
+   "correcta": 0,
+   "tip": "El círculo es redondo y no tiene ninguna esquina. Las 4 esquinas son del cuadrado y del rectángulo.",
+   "id": "mate2-oa15-23"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "Pedro dice que el cuadrado tiene 3 lados. ¿Cuántos tiene de verdad?",
+   "opciones": [
+    "4 lados",
+    "5 lados",
+    "2 lados",
+    "6 lados"
+   ],
+   "correcta": 0,
+   "tip": "Pedro confundió el cuadrado con el triángulo: el cuadrado tiene 4 lados.",
+   "id": "mate2-oa15-24"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "Eva calca el borde de un vaso sobre el papel. ¿Qué figura dibuja?",
+   "opciones": [
+    "Círculo",
+    "Cuadrado",
+    "Triángulo",
+    "Rectángulo"
+   ],
+   "correcta": 0,
+   "tip": "La boca del vaso es redonda, así que al calcar su borde sale un círculo.",
+   "id": "mate2-oa15-25"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "Luis calca la base de una caja de fósforos. ¿Qué figura le sale?",
+   "opciones": [
+    "Rectángulo",
+    "Círculo",
+    "Triángulo",
+    "Cuadrado"
+   ],
+   "correcta": 0,
+   "tip": "La base de la caja tiene 4 esquinas, con 2 lados largos y 2 cortos: es un rectángulo.",
+   "id": "mate2-oa15-26"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "El triángulo tiene 3 esquinas. ¿Cuántas más tiene el rectángulo?",
+   "opciones": [
+    "1",
+    "2",
+    "4",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "El rectángulo tiene 4 esquinas y el triángulo 3: 4 menos 3 es 1 esquina más.",
+   "id": "mate2-oa15-27"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "¿Qué figuras tienen 4 esquinas?",
+   "opciones": [
+    "Cuadrado y rectángulo",
+    "Triángulo y círculo",
+    "Círculo y cuadrado",
+    "Triángulo y cuadrado"
+   ],
+   "correcta": 0,
+   "tip": "El cuadrado y el rectángulo tienen 4 lados y 4 esquinas. El triángulo tiene 3 y el círculo ninguna.",
+   "id": "mate2-oa15-28"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "Diego junta 2 cuadrados iguales, lado con lado. ¿Qué figura forma?",
+   "opciones": [
+    "Rectángulo",
+    "Triángulo",
+    "Círculo",
+    "Un cuadrado grande"
+   ],
+   "correcta": 0,
+   "tip": "Los dos cuadrados juntos quedan más largos que altos: forman un rectángulo.",
+   "id": "mate2-oa15-29"
+  },
+  {
+   "oa": "MA02 OA 15",
+   "pregunta": "Un cuaderno tiene forma de rectángulo. ¿Cuántas esquinas tiene?",
+   "opciones": [
+    "4",
+    "2",
+    "3",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "El rectángulo tiene 4 lados, y donde se juntan forma 4 esquinas.",
+   "id": "mate2-oa15-30"
+  }
+ ]
+}

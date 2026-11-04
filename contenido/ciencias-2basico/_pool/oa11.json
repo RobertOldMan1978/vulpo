@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "En el ciclo del agua, ¿qué calienta el agua del mar?",
+   "opciones": [
+    "El Sol",
+    "La Luna",
+    "El viento",
+    "Las nubes"
+   ],
+   "correcta": 0,
+   "tip": "El Sol calienta el agua de mares, lagos y ríos, y así empieza el ciclo del agua.",
+   "id": "cien2-oa11-1"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "El sol calienta el agua del mar. ¿Qué le pasa?",
+   "opciones": [
+    "Se evapora y sube",
+    "Se congela",
+    "Se hunde más",
+    "Se queda quieta"
+   ],
+   "correcta": 0,
+   "tip": "Con el calor del sol, parte del agua se evapora: se vuelve vapor y sube al cielo.",
+   "id": "cien2-oa11-2"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿De qué están hechas las nubes?",
+   "opciones": [
+    "De gotitas de agua",
+    "De humo",
+    "De algodón",
+    "De polvo"
+   ],
+   "correcta": 0,
+   "tip": "Las nubes son muchísimas gotitas de agua muy chiquitas, juntas en el cielo.",
+   "id": "cien2-oa11-3"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "El vapor sube y se enfría en el cielo. ¿Qué se forma?",
+   "opciones": [
+    "Las nubes",
+    "El viento",
+    "Los rayos",
+    "El arcoíris"
+   ],
+   "correcta": 0,
+   "tip": "Arriba hace frío: el vapor se enfría, se vuelve gotitas y forma las nubes.",
+   "id": "cien2-oa11-4"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿Cuándo caen las gotitas de una nube?",
+   "opciones": [
+    "Cuando se hacen pesadas",
+    "Cuando sale el sol",
+    "Cuando sopla el viento",
+    "Cuando es de noche"
+   ],
+   "correcta": 0,
+   "tip": "Las gotitas se juntan y crecen. Cuando pesan mucho, caen como lluvia.",
+   "id": "cien2-oa11-5"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿Cómo vuelve el agua de las nubes a la tierra?",
+   "opciones": [
+    "Como lluvia o nieve",
+    "Como vapor",
+    "Como humo",
+    "Como viento"
+   ],
+   "correcta": 0,
+   "tip": "El agua de las nubes cae a la tierra como lluvia, o como nieve si hace mucho frío.",
+   "id": "cien2-oa11-6"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Llueve en la cordillera. ¿Adónde llega después esa agua?",
+   "opciones": [
+    "A los ríos y al mar",
+    "A las nubes enseguida",
+    "Al Sol",
+    "Se queda arriba"
+   ],
+   "correcta": 0,
+   "tip": "El agua de la lluvia baja por cerros y ríos hasta llegar al mar.",
+   "id": "cien2-oa11-7"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿Qué pasa justo después de que el agua se evapora?",
+   "opciones": [
+    "Se forman nubes",
+    "Cae como lluvia",
+    "Llega a un río",
+    "Se congela"
+   ],
+   "correcta": 0,
+   "tip": "El vapor sube, se enfría y forma nubes. Recién después puede llover.",
+   "id": "cien2-oa11-8"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Las nubes ya están cargadas de agua. ¿Qué viene ahora?",
+   "opciones": [
+    "Llueve",
+    "Sube el mar",
+    "Se vuelven humo",
+    "Se congela el mar"
+   ],
+   "correcta": 0,
+   "tip": "Cuando las nubes tienen muchas gotitas pesadas, el agua cae como lluvia.",
+   "id": "cien2-oa11-9"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿Por qué se llama ciclo del agua?",
+   "opciones": [
+    "Porque se repite siempre",
+    "Porque pasa una sola vez",
+    "Porque pasa solo en el mar",
+    "Porque el agua es redonda"
+   ],
+   "correcta": 0,
+   "tip": "Un ciclo es algo que se repite: el agua se evapora, forma nubes, llueve y vuelve a empezar.",
+   "id": "cien2-oa11-10"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "En verano, la nieve de la cordillera se derrite. ¿Adónde va?",
+   "opciones": [
+    "Baja por los ríos",
+    "Se queda arriba",
+    "Se vuelve granizo",
+    "Se va al Sol"
+   ],
+   "correcta": 0,
+   "tip": "La nieve derretida se vuelve agua líquida que baja por los ríos hasta el valle y el mar.",
+   "id": "cien2-oa11-11"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿El agua de la lluvia es agua nueva?",
+   "opciones": [
+    "No, es la misma agua",
+    "Sí, la fabrican las nubes",
+    "Sí, la manda el Sol",
+    "Sí, cae del espacio"
+   ],
+   "correcta": 0,
+   "tip": "No se fabrica agua nueva: la misma agua se evapora, forma nubes y vuelve a caer.",
+   "id": "cien2-oa11-12"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Un charco se secó y días después llovió. ¿Pudo ser la misma agua?",
+   "opciones": [
+    "Sí, por el ciclo del agua",
+    "No, el agua se acaba",
+    "No, el agua se borra",
+    "No, se fue al espacio"
+   ],
+   "correcta": 0,
+   "tip": "El agua del charco se evaporó y subió. En el ciclo del agua, esa agua puede volver a caer.",
+   "id": "cien2-oa11-13"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "El agua del río llega al mar. ¿Qué le pasa después?",
+   "opciones": [
+    "Se evapora otra vez",
+    "Se queda para siempre",
+    "Se va al espacio",
+    "Se vuelve arena"
+   ],
+   "correcta": 0,
+   "tip": "El agua del mar se vuelve a evaporar con el sol. Así el ciclo nunca se detiene.",
+   "id": "cien2-oa11-14"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿Por qué el agua es tan valiosa?",
+   "opciones": [
+    "Sin agua no hay vida",
+    "Porque es transparente",
+    "Porque es salada",
+    "Porque cae del cielo"
+   ],
+   "correcta": 0,
+   "tip": "Las personas, los animales y las plantas necesitan agua para vivir. Por eso hay que cuidarla.",
+   "id": "cien2-oa11-15"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿Qué agua pueden beber las personas?",
+   "opciones": [
+    "Agua dulce y limpia",
+    "Agua del mar",
+    "Agua de un charco",
+    "Cualquier agua"
+   ],
+   "correcta": 0,
+   "tip": "Para beber se necesita agua dulce y limpia. El agua del mar es salada y no sirve para tomar.",
+   "id": "cien2-oa11-16"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Casi toda el agua del planeta está en el mar. ¿Podemos beberla?",
+   "opciones": [
+    "No, es salada",
+    "Sí, es limpia",
+    "Sí, si está fría",
+    "Sí, toda sirve"
+   ],
+   "correcta": 0,
+   "tip": "El agua del mar es salada y no se puede beber. Por eso el agua dulce es tan valiosa.",
+   "id": "cien2-oa11-17"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿Quiénes necesitan agua para vivir?",
+   "opciones": [
+    "Personas, animales y plantas",
+    "Solo las personas",
+    "Solo las plantas",
+    "Solo los peces"
+   ],
+   "correcta": 0,
+   "tip": "Todos los seres vivos necesitan agua: las personas, los animales y las plantas.",
+   "id": "cien2-oa11-18"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "En partes de Chile llueve muy poco. ¿Qué hay que hacer con el agua?",
+   "opciones": [
+    "Usar solo la necesaria",
+    "Guardarla sin usar",
+    "Usarla sin pensar",
+    "Botar la que sobra"
+   ],
+   "correcta": 0,
+   "tip": "Cuando hay poca agua, hay que usarla bien: solo la necesaria y sin desperdiciarla.",
+   "id": "cien2-oa11-19"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Diego se lava los dientes. ¿Qué debería hacer con la llave?",
+   "opciones": [
+    "Cerrarla al cepillarse",
+    "Dejarla abierta",
+    "Abrirla más fuerte",
+    "Cerrarla en la noche"
+   ],
+   "correcta": 0,
+   "tip": "Si la llave queda abierta mientras se cepilla, se pierde mucha agua sin usarla.",
+   "id": "cien2-oa11-20"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Ana se demora mucho en la ducha. ¿Qué le conviene hacer?",
+   "opciones": [
+    "Ducharse más corto",
+    "Abrir más el agua",
+    "Ducharse dos veces",
+    "Usar agua más caliente"
+   ],
+   "correcta": 0,
+   "tip": "Una ducha corta gasta mucha menos agua y deja limpio igual.",
+   "id": "cien2-oa11-21"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Una llave del baño gotea todo el día. ¿Qué debería hacer Matías?",
+   "opciones": [
+    "Avisar para repararla",
+    "Dejarla así",
+    "Abrirla más",
+    "Esperar que pare sola"
+   ],
+   "correcta": 0,
+   "tip": "Una llave que gotea pierde mucha agua en un día. Hay que avisar para que la reparen.",
+   "id": "cien2-oa11-22"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Sofía lavó verduras en un bol. ¿Cómo puede aprovechar esa agua?",
+   "opciones": [
+    "Regar las plantas",
+    "Botarla al desagüe",
+    "Dejarla al sol",
+    "Dejarla en el bol"
+   ],
+   "correcta": 0,
+   "tip": "El agua de lavar verduras sirve para regar. Así se aprovecha dos veces.",
+   "id": "cien2-oa11-23"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿A qué hora conviene regar el jardín?",
+   "opciones": [
+    "Al atardecer",
+    "A mediodía",
+    "Cuando llueve",
+    "Todo el día"
+   ],
+   "correcta": 0,
+   "tip": "Al atardecer o temprano en la mañana el sol calienta menos, y el agua no se evapora tan rápido.",
+   "id": "cien2-oa11-24"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Camila quiere cuidar el río de su pueblo. ¿Qué debe evitar?",
+   "opciones": [
+    "Botar basura al río",
+    "Mirar el río",
+    "Sacarle fotos",
+    "Caminar por la orilla"
+   ],
+   "correcta": 0,
+   "tip": "La basura ensucia el agua del río y daña a los peces y a las plantas que viven ahí.",
+   "id": "cien2-oa11-25"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Benjamín lava el auto con su papá. ¿Qué gasta menos agua?",
+   "opciones": [
+    "Usar un balde",
+    "La manguera abierta",
+    "Lavarlo dos veces",
+    "Mojarlo todo el rato"
+   ],
+   "correcta": 0,
+   "tip": "Con un balde se usa solo el agua necesaria. La manguera abierta bota mucha agua.",
+   "id": "cien2-oa11-26"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿Cuál de estas acciones cuida el agua?",
+   "opciones": [
+    "Juntar agua de lluvia",
+    "Dejar la llave abierta",
+    "Regar a mediodía",
+    "Lavar la vereda con manguera"
+   ],
+   "correcta": 0,
+   "tip": "El agua de lluvia que se junta en un balde sirve después para regar o limpiar.",
+   "id": "cien2-oa11-27"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Javiera lava la loza con la llave abierta. ¿Qué le conviene?",
+   "opciones": [
+    "Cerrar la llave al enjabonar",
+    "Abrir más la llave",
+    "Lavar más lento",
+    "Usar más detergente"
+   ],
+   "correcta": 0,
+   "tip": "Mientras enjabona no necesita agua corriendo. Cerrar la llave ahorra mucha agua.",
+   "id": "cien2-oa11-28"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "¿Por qué no se bota aceite por el lavaplatos?",
+   "opciones": [
+    "Porque ensucia el agua",
+    "Porque limpia las cañerías",
+    "Porque ahorra agua",
+    "Porque enfría el agua"
+   ],
+   "correcta": 0,
+   "tip": "El aceite ensucia el agua y la hace difícil de limpiar. Se guarda en una botella.",
+   "id": "cien2-oa11-29"
+  },
+  {
+   "oa": "CN02 OA 11",
+   "pregunta": "Matías ve una manguera abierta que nadie usa. ¿Qué es lo mejor?",
+   "opciones": [
+    "Cerrar la llave",
+    "Dejarla correr",
+    "Abrirla más",
+    "Llevarla a otro lado"
+   ],
+   "correcta": 0,
+   "tip": "El agua que corre sin que nadie la use se desperdicia. Lo mejor es cerrar la llave.",
+   "id": "cien2-oa11-30"
+  }
+ ]
+}
