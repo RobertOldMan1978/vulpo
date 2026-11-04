@@ -1121,50 +1121,10 @@ Dos cosas que hay que saber al hacerlo, porque las dos asustan sin motivo:
   del procedimiento, antes de subir hay que: (1) agregar a la bitácora de abajo lo
   avanzado y lo pendiente de la sesión, y (2) revisar que `CLAUDE.md` y `README.md`
   reflejen el estado real (estado, roadmap, decisiones). Recién entonces commit + push.
-- **Después del push, informar los cambios en el AI Brain (NotebookLM) de Roberto.**
-  Es parte de la orden 66: escribir un resumen breve de la sesión (lo avanzado y lo
-  pendiente) y subirlo al notebook con el CLI de `notebooklm-py`:
-  `<venv>\Scripts\notebooklm.exe source add '<ruta-del-resumen>' --notebook '19408e05-1f37-48b6-b398-644519ac019e'`.
-  ⚠️ **Desde el 31/08 ese `.exe` NO corre en el PC de casa**: lo bloquea el Control de aplicaciones de Windows (*"Una directiva de Control de aplicaciones bloqueó este archivo"*), y desde Git Bash el síntoma engaña —dice `Permission denied`—. **La salida es invocar el MÓDULO en vez del ejecutable**, que hace exactamente lo mismo y no está bloqueado:
-  `<venv>\Scripts\python.exe -m notebooklm source add '<ruta>' --notebook '<id>'`.
-  **La ruta del CLI depende del equipo** (el usuario de Windows cambia entre el PC de casa y
-  el de la oficina): venvs conocidos `C:\Users\Rodrigo\.notebooklm-venv\...` y
-  `C:\Users\rlorc\.notebooklm-venv\...`. Si no está instalado en ese PC:
-  `python -m venv ~/.notebooklm-venv && ~/.notebooklm-venv/Scripts/python.exe -m pip install "notebooklm-py[browser]"`.
-  La **autenticación** vive en `<perfil>\.notebooklm\profiles\default\storage_state.json`;
-  mientras no caduque, `source add` **no pide login** (usa las cookies, sin navegador).
-- **Si el CLI dice "Authentication expired", PRIMERO probar esto — casi nunca hace falta molestar
-  a Roberto (verificado Sesión 56):** el CLI y el navegador guardan la sesión en **dos lugares
-  distintos**. Es habitual que `storage_state.json` caduque mientras el **perfil persistente**
-  (`profiles\default\browser_profile`) sigue con sesión viva. Se comprueba abriendo ese perfil
-  **headless** en `notebooklm.google.com`: si la URL final **no** es `accounts.google.com`, hay
-  sesión. En ese caso basta `ctx.storage_state(path=...)` para **regenerar el archivo del CLI
-  desde el perfil**, y `source add` vuelve a funcionar al instante. Respaldar el archivo anterior
-  antes de sobrescribirlo.
-- **Solo si el perfil TAMPOCO tiene sesión, rehacer el login por navegador. GOTCHA verificado
-  (Sesión 52):** el Chromium empaquetado de playwright falla en este entorno con
-  `spawn UNKNOWN` (headful) o timeout (headless). **Usar el Google Chrome instalado**
-  (`channel="chrome"`, `headless=False`) para abrir la ventana; Roberto inicia sesión en Google
-  → notebooklm.google.com, y recién entonces se capturan las cookies a `storage_state.json`.
-  Con `channel="chrome"` el login interactivo **SÍ se puede lanzar desde el asistente** (se probó
-  y funcionó); lo que no funciona es `notebooklm login` (entrada interactiva en terminal) ni el
-  chromium de playwright. **Al esperar el login, NO esperar el evento `close` de la página**: la
-  pestaña inicial se cierra sola en la redirección de Google y el script termina creyendo que
-  Roberto ya entró (pasó en la Sesión 56).
-  - ⚠️ **Y desde el 06/09/2026 `channel="chrome"` YA NO BASTA: Google rechaza el login si huele
-    automatización** —*"es posible que el navegador o la aplicación no sean seguros"*, sin dejar
-    escribir la contraseña—. Hay que quitarle a Chrome las dos señales que mira primero, y con eso
-    pasa: **`ignore_default_args=["--enable-automation"]`** al lanzarlo, y un
-    **`add_init_script`** que deje `navigator.webdriver` en `undefined` (más
-    `--disable-blink-features=AutomationControlled`). No es garantía —Google mira más cosas— pero
-    es lo que funcionó.
-  - ⚠️ **Y la condición de "ya entró" es `notebook.google.com`, SIN "lm".** El flujo de Google
-    termina ahí (`notebook.google.com/?pli=1`) y no en `notebooklm.google.com`, así que un script
-    que exija el segundo **se da por vencido con la sesión ya establecida** y no guarda las
-    cookies — pasó el 06/09, y el síntoma engaña porque se ve igual que un login fallido. Cuando
-    el script se rinda, **antes de mandar a repetir el login hay que correr la comprobación del
-    perfil de arriba**: si la URL final no es `accounts.google.com`, la sesión está y solo falta
-    regenerar el archivo.
+- **El AI Brain (NotebookLM) se RETIRÓ de la orden 66 el 04/11/2026, por decisión de Roberto.**
+  Ya no se sube ningún resumen después del push: la bitácora de este archivo es el único registro.
+  El CLI `notebooklm-py` y su venv quedan instalados en el PC de casa, pero no forman parte del
+  procedimiento; no reactivarlo sin que Roberto lo pida.
 - **Respaldo automático a las 18:00:** cualquier día en que haya cambios sin
   guardar, una Tarea Programada de Windows ejecuta `scripts/auto-commit.ps1`,
   que hace commit y push solo si detecta cambios. Así no se pierde trabajo
@@ -14440,3 +14400,18 @@ y mismo tamaño = mismo clip), y `verificar` igual compara el MD5 de todos. Ahor
    después — antes de eso el generador se niega a correr. Requiere `winget install Rclone.Rclone`
    y copiar `r2-vulpo-voz.txt` a su escritorio **sin pasar por el repo**.
 5. Actualizar la tabla de peso y la regla de "voz solo hasta 4°", que deja de ser un límite.
+
+#### Cierre del 04/11 — comprobado en vivo, y dos decisiones de Roberto
+- **Verificado en `vulpo.cl`** tras el push: en 3° y 4° el 🔊 pide `https://voz.vulpo.cl/…` y llega
+  a `playing`; los seis cursos con el motor vivo, JUGADOR navega, consola y red limpias.
+- ⚠️ **El push fue rechazado al principio**: el otro PC había subido una **Sesión 137** (carruseles
+  de Instagram, 03/10) que no estaba en este disco. Se deshizo el commit local, se integró el
+  remoto y esta entrada pasó a ser la **138**. **Hacer `git fetch` antes de numerar la bitácora.**
+- **El AI Brain (NotebookLM) sale de la orden 66.** Ya no se sube ningún resumen; la regla quedó
+  reemplazada por una nota en "Regla de commits".
+- ⏸️ **La app nueva en Play se posterga hasta terminar 2° y 1°**: una sola compilación lleva los
+  cursos nuevos y el origen nuevo de la voz. Y por eso **sacar los MP3 de 3° y 4° del repo también
+  espera** —la app instalada todavía los baja de `vulpo.cl`—. Para que eso no frene a 2° y 1°, el
+  **`.gitignore` ya ignora `assets/voz/**/*.mp3`**: no toca lo que git ya sigue (los 24.250 de 3° y
+  4° siguen versionados), pero los clips de los cursos nuevos **nacen fuera del repo y van solo a
+  R2**. Comprobado con `git check-ignore`. **Siguiente: 2° básico.**

@@ -697,6 +697,8 @@ Precondición: Task 4 con `VERIFICACION OK` y Tasks 5-7 hechas. **Los MP3 siguen
 
 ### Task 9: App nueva en Google Play (Roberto + Claude)
 
+> ⏸️ **POSTERGADA por decisión de Roberto (04/11/2026) hasta terminar 2° y 1° básico**: una sola compilación de la app trae los cursos nuevos y el cambio de origen de la voz. Mientras tanto la app instalada sigue bajando la voz de `vulpo.cl/assets/voz/`, así que **la Task 10 también espera** (ver su nota).
+
 - [ ] **Step 1:** En GitHub → Actions → **App Bundle de Release** → *Run workflow* sobre `main`. Esperar el ✅.
 - [ ] **Step 2:** Bajar el `.aab` del artefacto y subirlo a la **prueba interna** en Play Console.
 - [ ] **Step 3:** En el teléfono, actualizar la app, **borrar sus datos** (para que vuelva a descargar la voz) y entrar a 3°: la barra *"Preparando la voz…"* llega a *"Voz lista"* y el 🔊 suena con Catalina.
@@ -706,6 +708,8 @@ Precondición: Task 4 con `VERIFICACION OK` y Tasks 5-7 hechas. **Los MP3 siguen
 ### Task 10: Sacar los MP3 del repositorio
 
 Precondición: Tasks 8 y 9 verificadas.
+
+> ✅ **El Step 1 (`.gitignore`) se adelantó el 04/11/2026**, al postergarse la Task 9. Un `.gitignore` no afecta a lo que git ya sigue, así que los 24.250 clips de 3° y 4° siguen en el repo y la app instalada sigue funcionando, pero los MP3 de 2° y 1° nacen fuera del repo y van solo a R2 (`voz-r2.py subir`). Lo que queda de esta tarea es el `git rm --cached` (Step 2 en adelante), **después** de la Task 9.
 
 **Files:**
 - Modify: `.gitignore`

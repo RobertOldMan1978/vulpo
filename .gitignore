@@ -53,3 +53,12 @@ dist-voz/
 # Recursos de la ficha de Google Play (capturas, grafico destacado, iconos de prueba).
 # Son de la consola de Play, ya subidos alla; el repo es publico y no los necesita.
 play-store/
+
+# La voz pregrabada vive en Cloudflare R2 desde la Sesion 138 (voz.vulpo.cl). Los
+# MANIFIESTOS si se versionan; los MP3 no. Ojo: un .gitignore NO afecta a lo que git ya
+# sigue, asi que los clips de 3 y 4 siguen en el repo (la app instalada los baja de
+# vulpo.cl) hasta la Task 10 del plan; los de cursos nuevos van SOLO a R2.
+# Ver scripts/voz-r2.py.
+assets/voz/**/*.mp3
+# La clave de R2 vive en el escritorio, pero por si alguien la copia al repo.
+r2-vulpo-voz.txt
