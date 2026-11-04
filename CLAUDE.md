@@ -14381,3 +14381,62 @@ archivos nuevos son una herramienta y un runbook.
   texto dice "prueba la demo gratis", no acceso total.
 - **Pendiente:** sin cambios en el producto. De arrastre lo mismo de la Sesión 135 (A64, la prueba
   cerrada de Google Play, INAPI, el iPhone y el piloto).
+
+### Sesión 138 (2026-11-03 y 04) — La voz se muda a Cloudflare R2 (paso 1: el juego ya la pide ahí)
+Roberto quiere sumar **2° y 1° básico**, que llevan voz pregrabada como 3° y 4°. Con ella el sitio
+publicado (742 MB) **no cabía en el techo de 1 GB de GitHub Pages**: la regla de la Sesión 63 —voz
+solo hasta 4°— era aritmética, no pedagogía. Decisión de Roberto: **mover TODA la voz a Cloudflare
+R2** antes de escribir 2°, *"que al final quede bien respaldado y que funcione igual que hoy"*.
+Spec y plan: `docs/superpowers/{specs,plans}/2026-11-03-voz-a-cloudflare-r2*`. **No se tocó
+contenido, ningún fork ni el esquema.**
+
+#### Lo montado
+- **Bucket `vulpo-voz`** con dominio propio **`voz.vulpo.cl`** (lo creó Roberto en el panel de
+  Cloudflare, guiado). Token con permiso **solo sobre ese bucket**; la clave vive en el escritorio
+  (`r2-vulpo-voz.txt`), **nunca en el repo**, y `voz-r2.py` la pasa a rclone por variables de
+  entorno del proceso hijo: no queda en ningún archivo de configuración ni en la línea de comandos.
+- **`scripts/voz-r2.py`** (nuevo): `subir`, `bajar` y `verificar` (cruza manifiestos, disco y R2,
+  y compara el MD5 de cada clip con `rclone check --one-way`). ⚠️ **Nunca borra**: usa `copy`, no
+  `sync`. Un `sync` que borra es la forma más rápida de perder el respaldo.
+- **`voz.js`** reescribe las rutas de los manifiestos a `https://voz.vulpo.cl/<asig>/<hash>.mp3`.
+  **Los manifiestos se quedan en el repo** (son chicos y el juego los pide por `fetch`).
+  `voz-descarga.js` (la app Android) baja desde ahí también.
+- ⚠️ **Y el clip que no carga ya no queda MUDO:** si R2 no responde, `sonarClip` cae a la voz del
+  navegador para ese texto, igual que un texto sin clip. Dos cuidados escritos en el código: el
+  respaldo se decide con **`playing`** y no con `play` —`play` se dispara al LLAMAR a `play()`,
+  antes del `error` de un 404, así que con él el respaldo no corría nunca (medido)—, y solo si ese
+  audio sigue vigente, porque `callarVoz()` también rechaza `play()` y sin el control mandar callar
+  haría hablar al navegador.
+- **El generador y el auditor se niegan a correr si faltan MP3 en el disco** (`exigir_clips_locales`
+  en `voz_asignaturas.py`): sin eso, en un PC recién sincronizado el generador habría **vuelto a
+  pagar Azure** por clips que ya existen en R2. Probado quitando un clip: los dos salen con 1 y el
+  mensaje *"corre voz-r2.py bajar"*, sin una sola llamada a Azure.
+
+#### ⚠️ rclone contra R2 parecía colgado, y no lo estaba
+`verificar` llevaba 25 minutos sin imprimir nada. La causa: **en R2, rclone pide la fecha y el tipo
+de cada objeto con un HEAD aparte (~5 por segundo)**, y con 24.250 clips eso es más de una hora —
+sin un solo mensaje—. `bajar` se cortó por el mismo motivo después de haber traído ya el clip.
+Arreglo: `lsjson` con `--no-modtime --no-mimetype` y `copy` con `--size-only --fast-list`.
+**Comparar solo el tamaño es seguro** porque el nombre del clip es el hash de su texto (mismo nombre
+y mismo tamaño = mismo clip), y `verificar` igual compara el MD5 de todos. Ahora `subir`, `bajar` y
+`verificar` tardan **menos de 40 segundos** cada uno. Queda escrito en el código, junto a cada flag.
+
+#### Verificación
+- **24.250 de 24.250 clips en R2**, ninguno de 0 bytes, y `rclone check`: **0 diferencias de
+  contenido** con el disco.
+- Las **11 carpetas** responden `200 audio/mpeg` desde `voz.vulpo.cl`, con el mismo tamaño que en
+  el disco y `Cache-Control: immutable` (un clip nunca cambia: un texto corregido genera otro nombre).
+- **Jugando**, espiando el constructor `Audio`: en 3° y 4° el 🔊 pide `https://voz.vulpo.cl/…` y
+  llega a `playing`. Los seis cursos con `__MOTOR_OK`, JUGADOR navega, consola limpia.
+- **Ida y vuelta del respaldo:** se quitó un clip del disco, `bajar` lo repuso y su MD5 coincide.
+
+#### Lo que sigue, en este orden
+1. **Comprobar en vivo** que `vulpo.cl` pide la voz a `voz.vulpo.cl`. ⚠️ **Los MP3 SIGUEN en el
+   repo** en este paso: si algo falla, basta revertir `voz.js`.
+2. **Compilar la app y subirla a Play** (la instalada pide a `vulpo.cl/assets/voz/`).
+3. **Sacar los MP3 del repo** (`.gitignore` + `git rm --cached`), otra orden 66.
+4. ⚠️ **En el PC de la oficina, después de ese paso:** `git pull` **borra** los MP3 de ese disco
+   (dejaron de estar versionados), así que hay que correr `python scripts/voz-r2.py bajar` justo
+   después — antes de eso el generador se niega a correr. Requiere `winget install Rclone.Rclone`
+   y copiar `r2-vulpo-voz.txt` a su escritorio **sin pasar por el repo**.
+5. Actualizar la tabla de peso y la regla de "voz solo hasta 4°", que deja de ser un límite.

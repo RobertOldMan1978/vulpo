@@ -2,9 +2,11 @@
 """
 Genera los audios de la lectura por voz de 3 basico con Azure Speech.
 
-La voz es es-CL-CatalinaNeural (chilena). Se genera UNA VEZ y los MP3 quedan
-versionados en el repo; el juego los reproduce desde archivo y cae a la voz del
-navegador si falta alguno.
+La voz es es-CL-CatalinaNeural (chilena). Se genera UNA VEZ. Desde la Sesion 138 los
+MP3 NO van al repo: viven en Cloudflare R2 (voz.vulpo.cl) y en el disco de cada PC.
+El manifiesto si se versiona. Despues de generar hay que SUBIR:
+    python scripts/voz-r2.py subir
+y en un PC recien sincronizado, BAJAR antes de generar (el script se niega si faltan).
 
 El texto se pasa antes por scripts/normalizar-voz-nivel.py, porque el sintetizador
 no sabe matematica: leeria "18 : 6" como "dieciocho dos puntos seis".
@@ -36,7 +38,7 @@ RAIZ = Path(__file__).resolve().parent.parent
 # Una carpeta de clips por asignatura. Separarlas no es cosmetico: agregar una
 # asignatura nueva NO obliga a regenerar las anteriores, y regenerar una no arriesga
 # las otras. El juego carga los manifiestos y los fusiona.
-from voz_asignaturas import ASIGS, elegir   # catalogo unico; ver ese archivo
+from voz_asignaturas import ASIGS, elegir, exigir_clips_locales   # catalogo unico
 # Sin argumento vale mat3, que es el uso historico. Con un argumento que NO sea una
 # asignatura conocida, MORIR en vez de caer a mat3: el fallback callado generaba (y
 # con --rehacer, volvia a PAGAR) la asignatura equivocada sin decir nada.
@@ -248,6 +250,10 @@ def sintetizar(texto, clave, region):
 def main():
     SALIDA.mkdir(parents=True, exist_ok=True)
     unicos = textos()
+    # Sin los MP3 en el disco, el calculo de "faltan" de abajo creeria que hay que
+    # sintetizar TODO y lo volveria a pagar (Sesion 138). Va antes de --probar y de
+    # --rehacer: no hay bandera que lo salte.
+    exigir_clips_locales(SALIDA)
 
     if "--probar" in sys.argv:
         clave, region = credenciales()
@@ -288,6 +294,8 @@ def main():
     clips = list(SALIDA.glob("*.mp3"))
     peso = sum(f.stat().st_size for f in clips)
     print("\nListo: %d clips, %.1f MB en %s" % (len(clips), peso / 1048576, SALIDA))
+    if faltan:
+        print("Ahora sube los clips nuevos a R2:  python scripts/voz-r2.py subir")
 
 
 if __name__ == "__main__":

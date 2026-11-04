@@ -1,13 +1,17 @@
 /* assets/js/voz-descarga.js — SOLO en la app Android (Capacitor). En la web no hace NADA.
 
-   Descarga la voz Catalina del curso (los clips, uno a uno, desde vulpo.cl con la
+   Descarga la voz Catalina del curso (los clips, uno a uno, desde voz.vulpo.cl —Cloudflare
+   R2 desde la Sesion 138— con la
    descarga NATIVA de Capacitor: sin CORS, sin descomprimir, sin cargar todo en memoria)
    la PRIMERA vez, la guarda en el telefono y fija window.VOZ_LOCAL_BASE para que voz.js
    la sirva local (offline). Mientras baja, el juego usa el TTS del navegador (no queda
    mudo). Si algo falla, se queda con el TTS. La lista de clips sale de VOZ_MAP (los
    manifiestos que ya van en el bundle). */
 (function(){
-  var ORIGEN = 'https://vulpo.cl/';   // los clips ya estan hospedados aca
+  // Los MP3 viven en Cloudflare R2 (Sesion 138), con la misma ruta relativa que en
+  // assets/voz/: <asig>/<hash>.mp3. Las apps instaladas antes de este cambio pedian a
+  // vulpo.cl/assets/voz/, que deja de servir los MP3 cuando salen del repo.
+  var ORIGEN = 'https://voz.vulpo.cl/';
   var CONC = 6;                        // descargas en paralelo
 
   window.VOZDESC = { init: init };
@@ -47,7 +51,7 @@
       while(i < clips.length){
         var p = clips[i++];
         try{
-          await FS.downloadFile({ url: ORIGEN + p.replace(/^\//, ''), path: base + '/' + rel(p), directory: DIR });
+          await FS.downloadFile({ url: ORIGEN + rel(p), path: base + '/' + rel(p), directory: DIR });
         }catch(e){ fallos++; }
         hechos++;
         if(hechos % 40 === 0 || hechos === n) ui('Preparando la voz… ' + Math.round(hechos / n * 100) + '%');

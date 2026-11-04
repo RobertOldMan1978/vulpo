@@ -12,7 +12,7 @@
 # Que EXCLUYE:
 #   - la landing comercial raiz, /colegio, /tutorial, /dev
 #   - assets/originales/ (arte crudo)
-#   - los .mp3 de assets/voz/  (pesan ~580 MB; la app los descarga y cachea, ver spec §3).
+#   - los .mp3 de assets/voz/  (pesan ~600 MB; viven en Cloudflare R2 desde la Sesion 138 y la app los descarga de voz.vulpo.cl y los cachea).
 #     ⚠️ Los MANIFIESTOS de voz (manifiesto.json) SI van: son chicos y el juego los necesita
 #     para saber que clip toca cada texto. voz.js reescribe la ruta del mp3 a la carpeta
 #     cacheada en el telefono (window.VOZ_LOCAL_BASE); mientras no esta, cae al TTS del

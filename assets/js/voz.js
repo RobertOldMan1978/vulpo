@@ -66,23 +66,46 @@ if(window.speechSynthesis){
    MP3 no cargan (colegio con internet malo, por ejemplo). */
 let VOZ_MAP=null;
 let _AUDIO=null;
+/* Los MP3 viven en Cloudflare R2 desde la Sesión 138, no en el sitio: con la voz de 1° y
+   2° el sitio no cabía en el techo de 1 GB de GitHub Pages. Los MANIFIESTOS siguen en
+   assets/voz/<asig>/ (el juego los pide con fetch al mismo dominio), y las rutas que
+   traen se reescriben aquí. Un <audio> reproduce desde otro dominio sin CORS.
+   Spec: docs/superpowers/specs/2026-11-03-voz-a-cloudflare-r2-design.md */
+var VOZ_ORIGEN='https://voz.vulpo.cl/';
 /* Reproduce el clip pregrabado de `texto`. Devuelve false si no existe, para que el
    llamador caiga a la voz del navegador. `alTerminar` se llama también al fallar: sin
    eso, un clip roto dejaría la cadena de lectura colgada a mitad. */
 function sonarClip(texto,alEmpezar,alTerminar){
- let arch=VOZ_MAP&&VOZ_MAP[(texto||'').trim()];
+ const t=(texto||'').trim();
+ let arch=VOZ_MAP&&VOZ_MAP[t];
  if(!arch) return false;
- // En la app Android la voz vive DESCARGADA en el teléfono, no en /assets/voz/. El arranque
- // de la app fija window.VOZ_LOCAL_BASE tras bajar y cachear el paquete del curso, y aquí se
- // reescribe la base a esa carpeta local. En la web queda sin definir y no cambia nada.
+ // En la app Android la voz vive DESCARGADA en el teléfono. El arranque de la app fija
+ // window.VOZ_LOCAL_BASE tras bajar el paquete del curso, y esa carpeta MANDA. En la web
+ // queda sin definir y la ruta apunta a R2.
  if(window.VOZ_LOCAL_BASE){ arch = arch.replace(/^\/?assets\/voz\//, window.VOZ_LOCAL_BASE); }
+ else { arch = arch.replace(/^\/?assets\/voz\//, VOZ_ORIGEN); }
  try{
   const a=new Audio(arch);   // `arch` ya viene con su carpeta
   _AUDIO=a;
+  let empezo=false, cerrado=false;
+  /* Si el clip no carga (servidor caído, internet malo del colegio), ese texto NO queda
+     mudo: lo lee la voz del navegador, igual que un texto sin clip. ⚠️ Solo si este audio
+     sigue siendo el vigente: callarVoz() lo pausa y lo suelta (_AUDIO=null), y esa pausa
+     TAMBIÉN rechaza play(). Sin el control `_AUDIO===a`, mandar callar haría hablar al
+     navegador. Y solo si no alcanzó a sonar: un corte a mitad no repite la frase. */
+  const fallar=()=>{
+   if(cerrado) return; cerrado=true;
+   if(_AUDIO===a && !empezo){ _AUDIO=null; decir(t,alEmpezar,alTerminar); }
+   else if(alTerminar) alTerminar();
+  };
+  // ⚠️ `play` se dispara apenas se LLAMA a play(), antes de que suene nada (medido: llega
+  // antes que el `error` de un 404). Lo que dice que el audio de verdad está sonando es
+  // `playing`; si se usara `play`, el respaldo no correría nunca.
   a.onplay=()=>{ if(alEmpezar) alEmpezar(); };
-  a.onended=()=>{ if(alTerminar) alTerminar(); };
-  a.onerror=()=>{ if(alTerminar) alTerminar(); };
-  a.play().catch(()=>{ if(alTerminar) alTerminar(); });
+  a.onplaying=()=>{ empezo=true; };
+  a.onended=()=>{ if(cerrado) return; cerrado=true; if(alTerminar) alTerminar(); };
+  a.onerror=fallar;
+  a.play().catch(fallar);
   return true;
  }catch(e){ return false; }
 }

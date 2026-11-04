@@ -668,6 +668,16 @@ tienda y permite probar notificaciones antes de enfrentar iOS. Detalle en
 
 ## Diseñado y en cola (spec listo, sin implementar)
 
+- 🟡 **La voz a Cloudflare R2 (Sesión 138) — EN CURSO.** Es el requisito para que 2° y 1° lleven
+  voz sin reventar el techo de 1 GB de GitHub Pages. Plan:
+  `docs/superpowers/plans/2026-11-03-voz-a-cloudflare-r2.md`. **Hecho:** los 24.250 clips en R2
+  (`voz.vulpo.cl`, MD5 idéntico al disco), `scripts/voz-r2.py` y el juego pidiéndolos ahí.
+  **Falta, en orden:** (1) comprobar en vivo; (2) compilar la app y subirla a Play; (3) sacar los
+  MP3 del repo con otra orden 66; (4) ⚠️ en el PC de la oficina, `git pull` **borra** los MP3 de
+  ese disco, así que justo después: `python scripts/voz-r2.py bajar` (con rclone instalado y
+  `r2-vulpo-voz.txt` copiado al escritorio **sin pasar por el repo**); (5) tabla de peso y regla
+  de "voz solo hasta 4°". **Después: 2° básico, y luego 1°.**
+
 - ~~**El semáforo de planificación en el juego del alumno** (Sesión 113)~~ → ✅ **HECHO (Sesión 114):**
   📖 en clases / 🕒 no empieza / 📚 terminada en la campaña, `kimun_mi_plan()` y el mapa
   `assets/plan/oa-unidad.json`, solo en el juego del niño.

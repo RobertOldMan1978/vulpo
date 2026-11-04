@@ -63,3 +63,44 @@ def elegir(argv, por_defecto="mat3"):
         sys.exit("No conozco la asignatura %s. Las que hay: %s"
                  % (", ".join(malas), ", ".join(sorted(ASIGS))))
     return pedidas[0] if pedidas else por_defecto
+
+
+def clips_faltantes(carpeta):
+    """Clips que el manifiesto de `carpeta` nombra y NO estan en el disco (o pesan 0).
+
+    Desde que los MP3 viven en Cloudflare R2 (Sesion 138) ya no viajan por git, asi que
+    en un PC recien sincronizado pueden faltar. El generador decide que sintetizar
+    mirando si el archivo existe: sin esta comprobacion, en ese PC volveria a sintetizar
+    -y a PAGAR- toda la voz. Devuelve la lista de nombres de archivo faltantes.
+    """
+    import io, json
+    from pathlib import Path
+    carpeta = Path(carpeta)
+    man = carpeta / "manifiesto.json"
+    if not man.exists():
+        return []
+    m = json.load(io.open(man, encoding="utf-8"))
+    vistos, faltan = set(), []
+    for arch in m.values():
+        if arch in vistos:
+            continue
+        vistos.add(arch)
+        f = carpeta / arch
+        if not f.exists() or f.stat().st_size == 0:
+            faltan.append(arch)
+    return faltan
+
+
+def exigir_clips_locales(carpeta):
+    """Detiene el script si al disco le faltan clips que el manifiesto dice que existen.
+
+    No hay forma de saltarse esto con una bandera, ni siquiera con --rehacer: el caso que
+    protege es justamente el de un PC que todavia no bajo la voz.
+    """
+    import sys
+    faltan = clips_faltantes(carpeta)
+    if faltan:
+        sys.exit("Faltan %d clips de %s en el disco (los MP3 viven en Cloudflare R2).\n"
+                 "Corre primero:  python scripts/voz-r2.py bajar\n"
+                 "y despues vuelve a intentarlo. Nada se genero ni se gasto."
+                 % (len(faltan), carpeta))

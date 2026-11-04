@@ -24,7 +24,7 @@ RAIZ = Path(__file__).resolve().parent.parent
 # El catalogo se IMPORTA, no se copia. Copiado a mano se desincronizo dos veces: le
 # falto "ada3" -y pedirle esa asignatura auditaba Matematica EN SILENCIO, pisando su
 # evidencia ya pagada- y despues "voc3", que quedo directamente inauditable.
-from voz_asignaturas import ASIGS, elegir
+from voz_asignaturas import ASIGS, elegir, exigir_clips_locales
 ASIG = elegir(sys.argv[1:])
 S = RAIZ / "assets" / "voz" / ASIG
 MANIFIESTO = S / "manifiesto.json"
@@ -97,7 +97,10 @@ def main():
     SALIDA.parent.mkdir(parents=True, exist_ok=True)
     hecho = json.load(io.open(SALIDA, encoding="utf-8")) if SALIDA.exists() else {}
 
+    # Transcribe los MP3 del disco: sin ellos fallaria a mitad o auditaria de menos
+    # (Sesion 138: los MP3 viven en R2 y pueden faltar en un PC recien sincronizado).
     if "--informe" not in sys.argv:
+        exigir_clips_locales(S)
         clave, region = credenciales()
         faltan = [t for t in M if t not in hecho]
         # --muestra N: auditar solo una parte. Sirve cuando el banco es textualmente
