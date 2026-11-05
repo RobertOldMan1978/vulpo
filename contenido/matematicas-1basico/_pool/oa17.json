@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "El lunes termina. ¿Qué día empieza?",
+   "opciones": [
+    "martes",
+    "domingo",
+    "miércoles",
+    "sábado"
+   ],
+   "correcta": 0,
+   "tip": "La semana va lunes, martes, miércoles… Justo después del lunes viene el martes. El domingo va antes.",
+   "id": "mate1-oa17-1"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "¿Qué día está entre el jueves y el sábado?",
+   "opciones": [
+    "viernes",
+    "miércoles",
+    "domingo",
+    "lunes"
+   ],
+   "correcta": 0,
+   "tip": "Jueves, viernes, sábado: el viernes queda al medio, entre esos dos días.",
+   "id": "mate1-oa17-2"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "Leo va al museo mañana. Hoy es jueves. ¿Qué día va?",
+   "opciones": [
+    "viernes",
+    "miércoles",
+    "sábado",
+    "martes"
+   ],
+   "correcta": 0,
+   "tip": "Mañana es el día que viene después de hoy. Después del jueves viene el viernes: ese día va Leo. El miércoles fue ayer.",
+   "id": "mate1-oa17-3"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "Hoy es sábado. ¿Qué día fue el paseo de ayer?",
+   "opciones": [
+    "viernes",
+    "domingo",
+    "jueves",
+    "lunes"
+   ],
+   "correcta": 0,
+   "tip": "Ayer es el día que pasó antes de hoy. Antes del sábado viene el viernes. El domingo es mañana.",
+   "id": "mate1-oa17-4"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "¿Cuántos días tiene una semana?",
+   "opciones": [
+    "7",
+    "5",
+    "10",
+    "12"
+   ],
+   "correcta": 0,
+   "tip": "La semana tiene siete días: lunes, martes, miércoles, jueves, viernes, sábado y domingo. Cinco son solo los días de colegio.",
+   "id": "mate1-oa17-5"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "Ana descansa el fin de semana. ¿Qué día descansa?",
+   "opciones": [
+    "el domingo",
+    "el lunes",
+    "el miércoles",
+    "el jueves"
+   ],
+   "correcta": 0,
+   "tip": "El fin de semana son el sábado y el domingo. Lunes, miércoles y jueves son días de colegio.",
+   "id": "mate1-oa17-6"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "¿Con qué día parte la semana del colegio?",
+   "opciones": [
+    "con el lunes",
+    "con el miércoles",
+    "con el viernes",
+    "con el jueves"
+   ],
+   "correcta": 0,
+   "tip": "Las clases parten el lunes y siguen hasta el viernes. El viernes es el último día de colegio de la semana.",
+   "id": "mate1-oa17-7"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "¿Cuál es el último día de colegio de la semana?",
+   "opciones": [
+    "el viernes",
+    "el lunes",
+    "el sábado",
+    "el martes"
+   ],
+   "correcta": 0,
+   "tip": "Las clases van de lunes a viernes. El sábado ya es fin de semana.",
+   "id": "mate1-oa17-8"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "Diego juega martes y jueves. ¿Qué día juega antes?",
+   "opciones": [
+    "el martes",
+    "el jueves",
+    "el lunes",
+    "el viernes"
+   ],
+   "correcta": 0,
+   "tip": "En la semana el martes llega antes que el jueves. El lunes y el viernes no son días de juego de Diego.",
+   "id": "mate1-oa17-9"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "Hoy es lunes. ¿Qué día viene dos días después?",
+   "opciones": [
+    "miércoles",
+    "martes",
+    "domingo",
+    "jueves"
+   ],
+   "correcta": 0,
+   "tip": "Un día después es martes, y dos días después, miércoles. Martes sería solo un día después.",
+   "id": "mate1-oa17-10"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "Si ayer fue sábado, ¿qué día es hoy?",
+   "opciones": [
+    "domingo",
+    "viernes",
+    "sábado",
+    "lunes"
+   ],
+   "correcta": 0,
+   "tip": "Hoy viene justo después de ayer. Después del sábado viene el domingo.",
+   "id": "mate1-oa17-11"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "Si mañana es viernes, ¿qué día es hoy?",
+   "opciones": [
+    "jueves",
+    "sábado",
+    "miércoles",
+    "viernes"
+   ],
+   "correcta": 0,
+   "tip": "Hoy va justo antes de mañana. Antes del viernes viene el jueves.",
+   "id": "mate1-oa17-12"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "Después del domingo, ¿qué día viene?",
+   "opciones": [
+    "el lunes",
+    "el sábado",
+    "el martes",
+    "el viernes"
+   ],
+   "correcta": 0,
+   "tip": "Al terminar el domingo la semana vuelve a empezar, otra vez con el lunes.",
+   "id": "mate1-oa17-13"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "¿Qué hace Sofía primero en la mañana?",
+   "opciones": [
+    "despertarse",
+    "almorzar",
+    "cenar",
+    "acostarse"
+   ],
+   "correcta": 0,
+   "tip": "Lo primero del día es despertarse. Almorzar es al mediodía, y cenar y acostarse son en la noche.",
+   "id": "mate1-oa17-14"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "¿Qué comida del día va primero?",
+   "opciones": [
+    "el desayuno",
+    "el almuerzo",
+    "la cena",
+    "el postre"
+   ],
+   "correcta": 0,
+   "tip": "En la mañana se toma el desayuno; al mediodía, el almuerzo, y en la noche, la cena.",
+   "id": "mate1-oa17-15"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "Pedro cena y después se acuesta. ¿Qué hace antes?",
+   "opciones": [
+    "cenar",
+    "acostarse",
+    "despertarse",
+    "almorzar"
+   ],
+   "correcta": 0,
+   "tip": "Primero cenó y después se acostó: lo que hizo antes fue cenar.",
+   "id": "mate1-oa17-16"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "¿Qué pasa en la noche?",
+   "opciones": [
+    "la gente duerme",
+    "se toma desayuno",
+    "se va al colegio",
+    "sale el sol"
+   ],
+   "correcta": 0,
+   "tip": "En la noche está oscuro y la gente duerme. En la mañana se toma desayuno, se va al colegio y sale el sol.",
+   "id": "mate1-oa17-17"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "¿En qué mes empiezan las clases?",
+   "opciones": [
+    "en marzo",
+    "en enero",
+    "en diciembre",
+    "en junio"
+   ],
+   "correcta": 0,
+   "tip": "En Chile el año escolar parte en marzo. Enero es mes de vacaciones de verano.",
+   "id": "mate1-oa17-18"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "¿En qué mes terminan las clases del año?",
+   "opciones": [
+    "en diciembre",
+    "en marzo",
+    "en julio",
+    "en febrero"
+   ],
+   "correcta": 0,
+   "tip": "El año escolar termina en diciembre, justo antes de las vacaciones de verano. En marzo recién empieza.",
+   "id": "mate1-oa17-19"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "Enero termina. ¿Qué mes empieza?",
+   "opciones": [
+    "febrero",
+    "marzo",
+    "diciembre",
+    "abril"
+   ],
+   "correcta": 0,
+   "tip": "Los meses van enero, febrero, marzo… Después de enero viene febrero. Diciembre va antes de enero.",
+   "id": "mate1-oa17-20"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "¿Qué mes llega antes: julio o agosto?",
+   "opciones": [
+    "julio",
+    "agosto",
+    "llegan juntos",
+    "no se sabe"
+   ],
+   "correcta": 0,
+   "tip": "Los meses van junio, julio, agosto: julio llega antes que agosto.",
+   "id": "mate1-oa17-21"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "¿Cuántos meses tiene un año?",
+   "opciones": [
+    "12",
+    "7",
+    "10",
+    "30"
+   ],
+   "correcta": 0,
+   "tip": "El año tiene doce meses, de enero a diciembre. Siete son los días de una semana.",
+   "id": "mate1-oa17-22"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "¿En qué mes es la Navidad?",
+   "opciones": [
+    "en diciembre",
+    "en enero",
+    "en noviembre",
+    "en julio"
+   ],
+   "correcta": 0,
+   "tip": "La Navidad es el 25 de diciembre, el último mes del año.",
+   "id": "mate1-oa17-23"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "¿Qué día del año es Año Nuevo?",
+   "opciones": [
+    "el 1 de enero",
+    "el 31 de enero",
+    "el 1 de marzo",
+    "el 25 de diciembre"
+   ],
+   "correcta": 0,
+   "tip": "Año Nuevo es el primer día del año: el 1 de enero. El 25 de diciembre es Navidad.",
+   "id": "mate1-oa17-24"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "En Chile, ¿en qué estación cae la Navidad?",
+   "opciones": [
+    "en verano",
+    "en invierno",
+    "en otoño",
+    "en primavera"
+   ],
+   "correcta": 0,
+   "tip": "En Chile diciembre es tiempo de calor: la Navidad cae en verano, en todo el país.",
+   "id": "mate1-oa17-25"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "¿En qué meses son las vacaciones de verano?",
+   "opciones": [
+    "enero y febrero",
+    "julio y agosto",
+    "marzo y abril",
+    "mayo y junio"
+   ],
+   "correcta": 0,
+   "tip": "Las vacaciones largas son en enero y febrero, cuando hace calor. En invierno hay otras, más cortas.",
+   "id": "mate1-oa17-26"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "¿Qué celebramos el 18 de septiembre?",
+   "opciones": [
+    "las Fiestas Patrias",
+    "la Navidad",
+    "el Año Nuevo",
+    "el inicio de clases"
+   ],
+   "correcta": 0,
+   "tip": "El 18 de septiembre son las Fiestas Patrias de Chile. La Navidad es en diciembre.",
+   "id": "mate1-oa17-27"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "¿Qué llega antes: Fiestas Patrias o Navidad?",
+   "opciones": [
+    "Fiestas Patrias",
+    "Navidad",
+    "llegan juntas",
+    "no se sabe"
+   ],
+   "correcta": 0,
+   "tip": "Septiembre va antes que diciembre, así que las Fiestas Patrias llegan antes que la Navidad.",
+   "id": "mate1-oa17-28"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "Hoy es martes 10. ¿Qué fecha es mañana?",
+   "opciones": [
+    "el 11",
+    "el 9",
+    "el 12",
+    "el 20"
+   ],
+   "correcta": 0,
+   "tip": "Cada día el número de la fecha sube en uno. Después del 10 viene el 11. El 9 fue ayer.",
+   "id": "mate1-oa17-29"
+  },
+  {
+   "oa": "MA01 OA 17",
+   "pregunta": "Ayer fue 5 de abril. ¿Qué fecha es hoy?",
+   "opciones": [
+    "6 de abril",
+    "4 de abril",
+    "6 de mayo",
+    "5 de mayo"
+   ],
+   "correcta": 0,
+   "tip": "Hoy es el día siguiente a ayer: después del 5 viene el 6, y el mes sigue siendo abril.",
+   "id": "mate1-oa17-30"
+  }
+ ]
+}

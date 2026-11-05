@@ -1,0 +1,173 @@
+{
+ "lecciones": [
+  {
+   "id": "ci1-seres-vivos",
+   "oa": "CN01 OA 07",
+   "titulo": "Antes de empezar: Mi cuerpo y los seres vivos",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Mira a tu alrededor. Hay cosas vivas. Y hay cosas que no están vivas. Un árbol está vivo. Una hormiga está viva. Y tú también. Una pelota no está viva. Una cuchara tampoco. A todo lo que está vivo le decimos **ser vivo**."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "intro": "¿Cómo sabes si algo está vivo? Hay tres preguntas que ayudan. ¿Crece? ¿Necesita cosas para seguir vivo? ¿Responde a lo que pasa a su alrededor?",
+     "params": {
+      "forma": "comparar",
+      "desc": "Tres preguntas para saber si algo está vivo: si crece, si necesita cosas para seguir vivo y si responde a lo que pasa a su alrededor",
+      "items": [
+       {
+        "titulo": "¿Crece?",
+        "texto": "Con el tiempo se hace más grande."
+       },
+       {
+        "titulo": "¿Necesita cosas?",
+        "texto": "Sin ellas no sigue vivo."
+       },
+       {
+        "titulo": "¿Responde?",
+        "texto": "Reacciona a lo que pasa cerca."
+       }
+      ],
+      "etiqueta": "Tres preguntas para un ser vivo"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Tu cuerpo también está vivo. Tiene cinco **sentidos**. Con ellos ves, oyes, hueles, sientes los sabores y tocas. Así te das cuenta de lo que pasa a tu alrededor."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a conocer tus cinco sentidos. Vas a ver cómo cuidarlos. Vas a ver qué ayuda a tu cuerpo a estar sano. Y vas a descubrir en qué se distingue un ser vivo de una cosa no viva."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ci1-animales-plantas",
+   "oa": "CN01 OA 02",
+   "titulo": "Antes de empezar: Animales y plantas de Chile",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Hay animales de muchas formas. Unos son grandes y otros, chiquitos. Un zorro tiene pelo y corre con sus patas. Una gaviota tiene plumas y vuela. Son muy distintos."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "intro": "Para comparar animales, te fijas en tres cosas. Qué cubre su cuerpo. Cómo se mueve. Y dónde vive.",
+     "params": {
+      "forma": "comparar",
+      "desc": "Tres cosas para comparar animales: qué cubre su cuerpo, cómo se mueve y dónde vive",
+      "items": [
+       {
+        "titulo": "Su cubierta",
+        "texto": "¿Pelo, plumas, escamas u otra?"
+       },
+       {
+        "titulo": "Cómo se mueve",
+        "texto": "¿Camina, vuela, nada o se arrastra?"
+       },
+       {
+        "titulo": "Dónde vive",
+        "texto": "¿En un bosque, en un río o en otro lugar?"
+       }
+      ],
+      "etiqueta": "Así se comparan los animales"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Las plantas también tienen partes. Muchas plantas tienen raíz, tallo, hojas y flores. Cada parte hace un trabajo distinto. Vas a mirar también semillas y frutos. Y vas a ordenarlos por su tamaño, su forma, su color y cómo se sienten al tocarlos."
+    },
+    {
+     "t": "texto",
+     "md": "Al final vas a conocer plantas y animales de **nuestro país**. Y vas a ver qué podemos hacer para cuidarlos."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ci1-materiales",
+   "oa": "CN01 OA 08",
+   "titulo": "Antes de empezar: Los materiales",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Piensa en una botella. La botella es un **objeto**. Es algo que usas. Pero puede estar hecha de vidrio o de plástico. Eso es su **material**. El material es aquello de lo que está hecho el objeto."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "intro": "El objeto es lo que usas. El material es de lo que está hecho. Son dos cosas distintas.",
+     "params": {
+      "forma": "comparar",
+      "desc": "El objeto es lo que usas, como una botella; el material es de lo que está hecho, como vidrio o plástico",
+      "items": [
+       {
+        "titulo": "El objeto",
+        "texto": "Lo que usas: una botella."
+       },
+       {
+        "titulo": "El material",
+        "texto": "De qué está hecho: vidrio o plástico."
+       }
+      ],
+      "etiqueta": "El mismo objeto, otro material"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Los materiales también pueden cambiar. Cambian si los aprietas. Cambian si los mojas. Cambian si los calientas. Y cambian si les da mucho sol."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a conocer de qué están hechas las cosas que usas. Vas a ver cómo cambian los materiales. Y vas a pensar qué material sirve mejor para hacer algo útil."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ci1-dia-estaciones",
+   "oa": "CN01 OA 11",
+   "titulo": "Antes de empezar: El día, la noche y las estaciones",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Fíjate en cuánta luz hay afuera cuando te levantas. Y fíjate otra vez cuando te vas a dormir. No es igual. Afuera, las cosas van cambiando durante el día."
+    },
+    {
+     "t": "texto",
+     "md": "Fíjate también en tu ropa. En unos meses del año te abrigas mucho. En otros, andas con ropa liviana. Las cosas también cambian durante el año."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "intro": "Hay cambios que vuelven a empezar, una y otra vez. A eso se le llama **ciclo**.",
+     "params": {
+      "forma": "secuencia",
+      "desc": "Un ciclo: algo empieza, cambia y vuelve a empezar, una y otra vez",
+      "items": [
+       {
+        "titulo": "Empieza"
+       },
+       {
+        "titulo": "Cambia"
+       },
+       {
+        "titulo": "Vuelve a empezar"
+       }
+      ],
+      "etiqueta": "Así es un ciclo"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a descubrir dos ciclos. Vas a ver cómo cambia el cielo. Y vas a ver qué les pasa a las plantas, a los animales y a ti con cada cambio."
+    }
+   ],
+   "revisada": false
+  }
+ ]
+}

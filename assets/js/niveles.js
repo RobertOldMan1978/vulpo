@@ -43,7 +43,8 @@ NIV.NIVELES = [
   {nivel:'05', nombre:'5° básico', ruta:'/5to/'},
   {nivel:'04', nombre:'4° básico', ruta:'/4to/'},
   {nivel:'03', nombre:'3° básico', ruta:'/3ro/'},
-  {nivel:'02', nombre:'2° básico', ruta:'/2do/'}
+  {nivel:'02', nombre:'2° básico', ruta:'/2do/'},
+  {nivel:'01', nombre:'1° básico', ruta:'/1ro/'}
 ];
 
 /* Los módulos transversales —Vocabulario, las lecturas— NO llevan el nivel en su código

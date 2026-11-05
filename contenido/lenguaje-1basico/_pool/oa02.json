@@ -1,0 +1,368 @@
+{
+ "preguntas": [
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "¿Cuántas palabras tiene la frase «el sol brilla»?",
+   "opciones": [
+    "Tres",
+    "Cuatro",
+    "Dos",
+    "Cinco"
+   ],
+   "correcta": 0,
+   "tip": "La frase tiene tres palabras: el, sol y brilla. Si cuentas cuatro, contaste golpes de voz y no palabras.",
+   "id": "leng1-oa02-1"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "¿Cuántas palabras tiene la frase «mi perro come»?",
+   "opciones": [
+    "Tres",
+    "Cinco",
+    "Dos",
+    "Cuatro"
+   ],
+   "correcta": 0,
+   "tip": "Mi, perro y come: tres palabras. Cinco son los golpes de voz, que es otra cosa.",
+   "id": "leng1-oa02-2"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "¿Cuántas palabras tiene la frase «la luna sale»?",
+   "opciones": [
+    "Tres",
+    "Dos",
+    "Cinco",
+    "Cuatro"
+   ],
+   "correcta": 0,
+   "tip": "La, luna y sale son tres palabras. La palabrita la también cuenta.",
+   "id": "leng1-oa02-3"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "¿Cuántas palabras tiene la frase «el gato duerme mucho»?",
+   "opciones": [
+    "Cuatro",
+    "Siete",
+    "Tres",
+    "Cinco"
+   ],
+   "correcta": 0,
+   "tip": "El, gato, duerme y mucho: cuatro palabras. Contar golpes de voz da más, pero eso no son palabras.",
+   "id": "leng1-oa02-4"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "¿Cuántas palabras tiene la frase «Ana come pan»?",
+   "opciones": [
+    "Tres",
+    "Cinco",
+    "Dos",
+    "Cuatro"
+   ],
+   "correcta": 0,
+   "tip": "Ana, come y pan son tres palabras. Cada una dice algo por sí sola.",
+   "id": "leng1-oa02-5"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "¿Cuántas palabras tiene la frase «Tomás salta»?",
+   "opciones": [
+    "Dos",
+    "Cuatro",
+    "Tres",
+    "Una"
+   ],
+   "correcta": 0,
+   "tip": "Tomás y salta: dos palabras. Tomás tiene dos golpes de voz, pero es una sola palabra.",
+   "id": "leng1-oa02-6"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "¿Cuántas palabras tiene la frase «la vaca da leche»?",
+   "opciones": [
+    "Cuatro",
+    "Siete",
+    "Tres",
+    "Cinco"
+   ],
+   "correcta": 0,
+   "tip": "La, vaca, da y leche: cuatro palabras. Las palabras cortas como la y da también se cuentan.",
+   "id": "leng1-oa02-7"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "¿Cuántas palabras tiene la frase «el pez nada»?",
+   "opciones": [
+    "Tres",
+    "Cuatro",
+    "Dos",
+    "Cinco"
+   ],
+   "correcta": 0,
+   "tip": "El, pez y nada son tres palabras. Nada tiene dos golpes de voz, pero es una sola palabra.",
+   "id": "leng1-oa02-8"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "¿Cuántas palabras tiene la frase «hoy llueve»?",
+   "opciones": [
+    "Dos",
+    "Tres",
+    "Una",
+    "Cuatro"
+   ],
+   "correcta": 0,
+   "tip": "Hoy y llueve: dos palabras. Llueve tiene dos golpes de voz, pero sigue siendo una palabra.",
+   "id": "leng1-oa02-9"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "¿Cuántas palabras tiene la frase «el sapo salta lejos»?",
+   "opciones": [
+    "Cuatro",
+    "Siete",
+    "Tres",
+    "Cinco"
+   ],
+   "correcta": 0,
+   "tip": "El, sapo, salta y lejos: cuatro palabras. Siete son los golpes de voz.",
+   "id": "leng1-oa02-10"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "¿Cuántas palabras tiene la frase «me gusta la sopa»?",
+   "opciones": [
+    "Cuatro",
+    "Siete",
+    "Tres",
+    "Cinco"
+   ],
+   "correcta": 0,
+   "tip": "Me, gusta, la y sopa: cuatro palabras. Me y la son cortitas, pero también cuentan.",
+   "id": "leng1-oa02-11"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "¿Cuántas palabras tiene la frase «un pato grande»?",
+   "opciones": [
+    "Tres",
+    "Cinco",
+    "Dos",
+    "Cuatro"
+   ],
+   "correcta": 0,
+   "tip": "Un, pato y grande: tres palabras. La palabrita un también se cuenta.",
+   "id": "leng1-oa02-12"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "Ana dijo «buenos días». ¿Cuántas palabras dijo?",
+   "opciones": [
+    "Dos",
+    "Cuatro",
+    "Una",
+    "Tres"
+   ],
+   "correcta": 0,
+   "tip": "Buenos y días son dos palabras. Aunque se digan seguidas, cada una se escribe aparte.",
+   "id": "leng1-oa02-13"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "¿Cuántas palabras tiene la frase «mi mamá canta muy bonito»?",
+   "opciones": [
+    "Cinco",
+    "Nueve",
+    "Cuatro",
+    "Seis"
+   ],
+   "correcta": 0,
+   "tip": "Mi, mamá, canta, muy y bonito: cinco palabras. Nueve son los golpes de voz.",
+   "id": "leng1-oa02-14"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "A la frase «el perro» le sumas «corre». ¿Cuántas palabras quedan?",
+   "opciones": [
+    "Tres",
+    "Dos",
+    "Cuatro",
+    "Cinco"
+   ],
+   "correcta": 0,
+   "tip": "El perro tiene dos palabras, y con corre son tres: el perro corre.",
+   "id": "leng1-oa02-15"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "¿Cuál de estas es una sola palabra?",
+   "opciones": [
+    "mariposa",
+    "la casa",
+    "mi sol",
+    "el pan"
+   ],
+   "correcta": 0,
+   "tip": "Mariposa es larga, pero es una sola palabra. La casa, mi sol y el pan tienen dos palabras cada una.",
+   "id": "leng1-oa02-16"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "¿Cuál de estas tiene dos palabras?",
+   "opciones": [
+    "el perro",
+    "elefante",
+    "pelota",
+    "mariposa"
+   ],
+   "correcta": 0,
+   "tip": "El perro son dos palabras: el y perro. Elefante empieza parecido, pero es una sola palabra.",
+   "id": "leng1-oa02-17"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "Escucha bien: ¿cuál es una palabra sola?",
+   "opciones": [
+    "girasol",
+    "mi sol",
+    "el sol",
+    "un sol"
+   ],
+   "correcta": 0,
+   "tip": "Girasol es una sola palabra, el nombre de una flor. Mi sol, el sol y un sol tienen dos palabras.",
+   "id": "leng1-oa02-18"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "¿Cuál de estas tiene tres palabras?",
+   "opciones": [
+    "mi perro ladra",
+    "el perro",
+    "perrito",
+    "los perros"
+   ],
+   "correcta": 0,
+   "tip": "Mi, perro y ladra son tres palabras. El perro y los perros tienen dos, y perrito es una sola.",
+   "id": "leng1-oa02-19"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "Al escribir, ¿qué va entre dos palabras?",
+   "opciones": [
+    "Un espacio",
+    "Una coma",
+    "Un punto",
+    "Un guion"
+   ],
+   "correcta": 0,
+   "tip": "Entre una palabra y otra se deja un espacio en blanco. Así se sabe dónde termina cada una.",
+   "id": "leng1-oa02-20"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "Sofía escribió todas las palabras pegadas. ¿Qué pasa?",
+   "opciones": [
+    "Cuesta entenderlo",
+    "Se lee más rápido",
+    "Queda más bonito",
+    "No pasa nada"
+   ],
+   "correcta": 0,
+   "tip": "Sin espacios no se sabe dónde termina una palabra y empieza la otra, y cuesta leer.",
+   "id": "leng1-oa02-21"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "Matías escribió «elgato», todo junto. ¿Qué le faltó?",
+   "opciones": [
+    "Un espacio",
+    "Un punto",
+    "Una mayúscula",
+    "Otra letra"
+   ],
+   "correcta": 0,
+   "tip": "El y gato son dos palabras, así que entre ellas va un espacio: el gato.",
+   "id": "leng1-oa02-22"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "¿Para qué sirve el espacio entre las palabras?",
+   "opciones": [
+    "Separar cada palabra",
+    "Adornar la hoja",
+    "Descansar la mano",
+    "Contar las letras"
+   ],
+   "correcta": 0,
+   "tip": "El espacio separa una palabra de otra, para saber dónde termina cada una al leer.",
+   "id": "leng1-oa02-23"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "Al escribir la frase «mi gato come», ¿cuántos espacios van?",
+   "opciones": [
+    "Dos",
+    "Tres",
+    "Uno",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Son tres palabras, así que van dos espacios: uno entre mi y gato, y otro entre gato y come.",
+   "id": "leng1-oa02-24"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "Al escribir la frase «Ana lee», ¿cuántos espacios van?",
+   "opciones": [
+    "Uno",
+    "Dos",
+    "Ninguno",
+    "Tres"
+   ],
+   "correcta": 0,
+   "tip": "Ana y lee son dos palabras, y entre ellas va un solo espacio.",
+   "id": "leng1-oa02-25"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "¿Cuál es la última palabra de la frase «el niño corre»?",
+   "opciones": [
+    "corre",
+    "niño",
+    "el",
+    "correr"
+   ],
+   "correcta": 0,
+   "tip": "La frase dice el, niño, corre. La que va al final es corre.",
+   "id": "leng1-oa02-26"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "¿Cuál es la primera palabra de la frase «mi tía cocina»?",
+   "opciones": [
+    "mi",
+    "tía",
+    "cocina",
+    "comida"
+   ],
+   "correcta": 0,
+   "tip": "La frase empieza con mi. Después vienen tía y cocina.",
+   "id": "leng1-oa02-27"
+  },
+  {
+   "oa": "LE01 OA 02",
+   "pregunta": "¿Qué hace que la palabra sol sea una palabra?",
+   "opciones": [
+    "Que significa algo",
+    "Que va en mayúscula",
+    "Que tiene muchas letras",
+    "Que se dibuja"
+   ],
+   "correcta": 0,
+   "tip": "Una palabra quiere decir algo. Sol nombra al sol del cielo, por eso es una palabra.",
+   "id": "leng1-oa02-28"
+  }
+ ]
+}

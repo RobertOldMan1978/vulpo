@@ -6,7 +6,7 @@
 #
 # Que INCLUYE:
 #   - app/index.html  ->  www/index.html   (la puerta de entrada = selector de curso)
-#   - los cursos (2do 3ro 4to 5to 6to 7mo 8vo)
+#   - los cursos (1ro 2do 3ro 4to 5to 6to 7mo 8vo)
 #   - assets/  MENOS  originales/  y  MENOS los .mp3 de voz/
 #   - contenido/
 # Que EXCLUYE:
@@ -27,7 +27,7 @@ import json, os, re, shutil
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WWW = os.path.join(ROOT, "www")
 
-CURSOS = ["2do", "3ro", "4to", "5to", "6to", "7mo", "8vo"]
+CURSOS = ["1ro", "2do", "3ro", "4to", "5to", "6to", "7mo", "8vo"]
 ASSETS_EXCLUIR = {"originales"}   # voz/ se maneja aparte (manifiestos si, mp3 no)
 
 # --- Contenido sensible que NO va en la app Android (opcion 2 de Roberto, para Google Play) ---

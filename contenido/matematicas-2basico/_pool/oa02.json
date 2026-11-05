@@ -28,15 +28,15 @@
   },
   {
    "oa": "MA02 OA 02",
-   "pregunta": "¿Con qué monedas pagas cuarenta y un pesos justos?",
+   "pregunta": "¿Cómo armas 41 lápices con cajas de 10?",
    "opciones": [
-    "4 de 10 y 1 de 1",
-    "1 de 10 y 4 de 1",
-    "41 de 10",
-    "5 de 10"
+    "4 cajas y 1 suelto",
+    "1 caja y 4 sueltos",
+    "41 cajas",
+    "5 cajas"
    ],
    "correcta": 0,
-   "tip": "Cuarenta pesos son 4 monedas de 10, y el uno es 1 moneda de 1.",
+   "tip": "Cuarenta lápices son 4 cajas de 10, y el uno es 1 lápiz suelto.",
    "id": "mate2-oa02-3"
   },
   {
@@ -80,15 +80,15 @@
   },
   {
    "oa": "MA02 OA 02",
-   "pregunta": "Tienes 1 moneda de 10 y 2 de 1. ¿Cuánto dinero es?",
+   "pregunta": "Tienes 1 caja de 10 lápices y 2 sueltos. ¿Cuántos son?",
    "opciones": [
-    "Doce pesos",
-    "Veintiún pesos",
-    "Tres pesos",
-    "Ciento dos pesos"
+    "Doce lápices",
+    "Veintiún lápices",
+    "Tres lápices",
+    "Ciento dos lápices"
    ],
    "correcta": 0,
-   "tip": "La moneda de 10 vale diez, y con 2 pesos más llegas a doce.",
+   "tip": "La caja trae diez, y con 2 lápices más llegas a doce.",
    "id": "mate2-oa02-7"
   },
   {
@@ -171,7 +171,7 @@
   },
   {
    "oa": "MA02 OA 02",
-   "pregunta": "Javiera tiene 5 monedas de 10 y 3 de 1. ¿Cuánto dinero tiene?",
+   "pregunta": "Javiera tiene 5 bolsas de 10 dulces y 3 sueltos. ¿Cuántos tiene?",
    "opciones": [
     "53",
     "35",
@@ -179,7 +179,7 @@
     "503"
    ],
    "correcta": 0,
-   "tip": "Las monedas de 10 son decenas y las de 1 son unidades: 50 y 3 son 53.",
+   "tip": "Las bolsas de 10 son decenas y los sueltos son unidades: 50 y 3 son 53.",
    "id": "mate2-oa02-14"
   },
   {
@@ -188,7 +188,7 @@
    "opciones": [
     "4 de 10",
     "40 de 10",
-    "4 de 1",
+    "4 de 100",
     "5 de 10"
    ],
    "correcta": 0,
@@ -349,7 +349,7 @@
   },
   {
    "oa": "MA02 OA 02",
-   "pregunta": "Una alcancía tiene 7 monedas de 10 y 4 de 1. ¿Cuánto hay?",
+   "pregunta": "Hay 7 paquetes de 10 galletas y 4 sueltas. ¿Cuántas hay?",
    "opciones": [
     "74",
     "47",
@@ -357,7 +357,7 @@
     "704"
    ],
    "correcta": 0,
-   "tip": "Siete monedas de 10 son 70 y cuatro de 1 son 4: en total 74.",
+   "tip": "Siete paquetes de 10 son 70 y cuatro sueltas son 4: en total 74.",
    "id": "mate2-oa02-26"
   },
   {

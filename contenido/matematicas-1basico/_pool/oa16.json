@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "¿Qué dura más tiempo?",
+   "opciones": [
+    "Ver una película",
+    "Estornudar",
+    "Abrir la puerta",
+    "Dar un aplauso"
+   ],
+   "correcta": 0,
+   "tip": "Una película dura mucho rato. Estornudar, abrir la puerta o aplaudir una vez se hacen en un momento.",
+   "id": "mate1-oa16-1"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "¿Qué se hace más rápido?",
+   "opciones": [
+    "Parpadear",
+    "Almorzar",
+    "Dormir la noche",
+    "Ir al colegio"
+   ],
+   "correcta": 0,
+   "tip": "Parpadear se hace en un instante. Almorzar, dormir o ir al colegio toman mucho más rato.",
+   "id": "mate1-oa16-2"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "¿Qué demora menos?",
+   "opciones": [
+    "Ponerse un calcetín",
+    "Ver una película",
+    "Dormir la siesta",
+    "Hacer un viaje"
+   ],
+   "correcta": 0,
+   "tip": "Ponerse un calcetín toma muy poco rato. Las otras cosas demoran mucho más.",
+   "id": "mate1-oa16-3"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "¿Qué dura más: un aplauso o una canción?",
+   "opciones": [
+    "Una canción",
+    "Un aplauso",
+    "Los dos igual",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Mientras suena una canción podrías aplaudir muchísimas veces: la canción dura más.",
+   "id": "mate1-oa16-4"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "¿Qué dura menos: un salto o un recreo?",
+   "opciones": [
+    "Un salto",
+    "Un recreo",
+    "Los dos igual",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Un salto termina en un momento. En un recreo alcanzas a saltar muchas veces.",
+   "id": "mate1-oa16-5"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "¿Qué demora más: tomar agua o almorzar?",
+   "opciones": [
+    "Almorzar",
+    "Tomar agua",
+    "Los dos igual",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Un vaso de agua se toma rápido. Almorzar tiene varios pasos y toma más rato.",
+   "id": "mate1-oa16-6"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "¿Qué dura menos de todo?",
+   "opciones": [
+    "Un parpadeo",
+    "Una clase",
+    "Una película",
+    "Un viaje"
+   ],
+   "correcta": 0,
+   "tip": "Un parpadeo dura un instante, mucho menos que una clase, una película o un viaje.",
+   "id": "mate1-oa16-7"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "Ana tarda 6 aplausos y Leo 9. ¿Quién tarda más?",
+   "opciones": [
+    "Leo",
+    "Ana",
+    "Los dos igual",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Si aplauden igual de rápido, quien necesita más aplausos demora más. Nueve son más que seis.",
+   "id": "mate1-oa16-8"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "Tomás tarda 8 aplausos y Pía 12. ¿Quién demora menos?",
+   "opciones": [
+    "Tomás",
+    "Pía",
+    "Los dos igual",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Es más rápido quien demora menos. Ocho aplausos son menos que doce.",
+   "id": "mate1-oa16-9"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "Ana y Leo tardan 4 saltos cada uno. ¿Cómo fue?",
+   "opciones": [
+    "Tardaron igual",
+    "Ana tardó más",
+    "Leo tardó más",
+    "Nadie tardó"
+   ],
+   "correcta": 0,
+   "tip": "Los dos necesitaron la misma cantidad de saltos: demoraron lo mismo.",
+   "id": "mate1-oa16-10"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "Para comparar con aplausos, ¿cómo se aplaude?",
+   "opciones": [
+    "Al mismo ritmo",
+    "Uno más rápido",
+    "Sin contar",
+    "Cada uno distinto"
+   ],
+   "correcta": 0,
+   "tip": "Si uno aplaude rápido y otro lento, contar aplausos no sirve para comparar. Hay que aplaudir al mismo ritmo.",
+   "id": "mate1-oa16-11"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "¿Con qué puedes medir cuánto dura algo?",
+   "opciones": [
+    "Contando aplausos",
+    "Con una regla",
+    "Con una balanza",
+    "Con un vaso"
+   ],
+   "correcta": 0,
+   "tip": "Contar aplausos mientras algo pasa mide cuánto dura. La regla mide lo largo y la balanza, lo pesado.",
+   "id": "mate1-oa16-12"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "Para algo muy corto, ¿qué conviene contar?",
+   "opciones": [
+    "Aplausos",
+    "Canciones",
+    "Películas",
+    "Noches"
+   ],
+   "correcta": 0,
+   "tip": "Un aplauso dura poquito, así que sirve para medir cosas cortas. Una canción o una noche duran demasiado.",
+   "id": "mate1-oa16-13"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "Para un viaje largo, ¿qué conviene contar?",
+   "opciones": [
+    "Canciones",
+    "Parpadeos",
+    "Aplausos",
+    "Chasquidos"
+   ],
+   "correcta": 0,
+   "tip": "En un viaje largo caben muchas canciones. Contar parpadeos o aplausos sería larguísimo y uno se perdería.",
+   "id": "mate1-oa16-14"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "Diego se baña en 2 canciones; Sofía, en 1. ¿Quién tarda más?",
+   "opciones": [
+    "Diego",
+    "Sofía",
+    "Los dos igual",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Dos canciones duran más que una: Diego demora más en bañarse.",
+   "id": "mate1-oa16-15"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "El juego dura 10 saltos y el cuento 20. ¿Qué dura más?",
+   "opciones": [
+    "El cuento",
+    "El juego",
+    "Los dos igual",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Mientras dura el cuento caben 20 saltos, y en el juego solo 10: el cuento dura más.",
+   "id": "mate1-oa16-16"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "Leo y Ana cuentan igual de rápido. Leo llega a 5 y Ana a 15. ¿Quién demoró más?",
+   "opciones": [
+    "Ana",
+    "Leo",
+    "Los dos igual",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Si cuentan al mismo ritmo, quien llega a un número más alto contó por más rato. Quince es más que cinco.",
+   "id": "mate1-oa16-17"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "La tarea dura 10 aplausos; ordenar, 3. ¿Qué dura menos?",
+   "opciones": [
+    "Ordenar",
+    "La tarea",
+    "Los dos igual",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Ordenar tardó solo 3 aplausos, menos que los 10 de la tarea: es lo más corto.",
+   "id": "mate1-oa16-18"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "La tina se llena en 20 aplausos y el vaso en 2. ¿Qué tarda más?",
+   "opciones": [
+    "Llenar la tina",
+    "Llenar el vaso",
+    "Los dos igual",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "En la tina cabe mucha más agua, y por eso tarda más: 20 aplausos contra 2.",
+   "id": "mate1-oa16-19"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "Tomás durmió 3 canciones y Pía 5. ¿Quién durmió más?",
+   "opciones": [
+    "Pía",
+    "Tomás",
+    "Los dos igual",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Cinco canciones duran más que tres: Pía durmió más rato.",
+   "id": "mate1-oa16-20"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "Leo llega a la meta en 15 aplausos y Ana en 11. ¿Quién gana?",
+   "opciones": [
+    "Ana",
+    "Leo",
+    "Los dos",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Gana quien llega en menos tiempo. Once aplausos son menos que quince: Ana llegó antes.",
+   "id": "mate1-oa16-21"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "Benja tardó 10 aplausos ayer y 7 hoy. ¿Qué día tardó menos?",
+   "opciones": [
+    "Hoy",
+    "Ayer",
+    "Los dos igual",
+    "Ningún día"
+   ],
+   "correcta": 0,
+   "tip": "Hoy necesitó 7 aplausos y ayer 10. Menos aplausos es menos tiempo: hoy fue más rápido.",
+   "id": "mate1-oa16-22"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "Sofía tardó 7 aplausos y Diego 11. ¿Cuántos más tardó Diego?",
+   "opciones": [
+    "4",
+    "18",
+    "7",
+    "11"
+   ],
+   "correcta": 0,
+   "tip": "De 7 a 11 faltan 4: Diego tardó 4 aplausos más. Dieciocho es juntar los dos números.",
+   "id": "mate1-oa16-23"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "¿Qué toma menos tiempo?",
+   "opciones": [
+    "Sonarse la nariz",
+    "Hacer la tarea",
+    "Armar un puzle",
+    "Ver una película"
+   ],
+   "correcta": 0,
+   "tip": "Sonarse la nariz se hace en un momento. Hacer la tarea, armar un puzle o ver una película toman mucho más rato.",
+   "id": "mate1-oa16-24"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "¿Qué actividad dura más?",
+   "opciones": [
+    "Un partido de fútbol",
+    "Lavarse bien la cara",
+    "Atarse un zapato",
+    "Tomar un jugo"
+   ],
+   "correcta": 0,
+   "tip": "Un partido de fútbol dura mucho rato. Lavarse la cara, atarse un zapato o tomar un jugo son cosas cortas.",
+   "id": "mate1-oa16-25"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "¿Qué dura más: lavarse los dientes o dormir?",
+   "opciones": [
+    "Dormir",
+    "Lavarse los dientes",
+    "Los dos igual",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Lavarse los dientes toma un ratito. Dormir dura toda la noche.",
+   "id": "mate1-oa16-26"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "Leo cuenta 9 saltos y Ana 9 aplausos. ¿Pueden comparar?",
+   "opciones": [
+    "No, cuentan distinto",
+    "Sí, empataron justo",
+    "Sí, ganó Leo",
+    "Sí, ganó Ana"
+   ],
+   "correcta": 0,
+   "tip": "Un salto y un aplauso no duran lo mismo, así que 9 de cada uno no se pueden comparar. Deben contar lo mismo.",
+   "id": "mate1-oa16-27"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "Ana tarda 7 aplausos y Pía menos. ¿Cuántos pudo tardar Pía?",
+   "opciones": [
+    "5",
+    "9",
+    "7",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "Si Pía tardó menos que Ana, necesitó menos de 7 aplausos. Cinco es menos que siete; nueve y diez son más.",
+   "id": "mate1-oa16-28"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "Un cuento dura 4 canciones y otro 2. ¿Cuál es más corto?",
+   "opciones": [
+    "El de 2",
+    "El de 4",
+    "Los dos igual",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Dos canciones duran menos que cuatro: el cuento de 2 canciones es el más corto.",
+   "id": "mate1-oa16-29"
+  },
+  {
+   "oa": "MA01 OA 16",
+   "pregunta": "Leo tarda 13 aplausos y Ana 8. ¿Cuántos menos tardó Ana?",
+   "opciones": [
+    "5",
+    "21",
+    "8",
+    "13"
+   ],
+   "correcta": 0,
+   "tip": "De 8 a 13 hay 5: Ana tardó 5 aplausos menos. Veintiuno es juntar los dos números.",
+   "id": "mate1-oa16-30"
+  }
+ ]
+}

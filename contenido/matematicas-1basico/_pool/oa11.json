@@ -1,0 +1,410 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "Rojo, azul, rojo, azul. ¿Qué color sigue?",
+   "opciones": [
+    "Rojo",
+    "Azul",
+    "Verde",
+    "Amarillo"
+   ],
+   "correcta": 0,
+   "tip": "Rojo y azul se turnan, uno y otro. Después del azul vuelve el rojo.",
+   "id": "mate1-oa11-1"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "Sol, luna, luna, sol, luna, luna. ¿Qué sigue?",
+   "opciones": [
+    "Sol",
+    "Luna",
+    "Nube",
+    "Lluvia"
+   ],
+   "correcta": 0,
+   "tip": "Se repite un sol y dos lunas. Ya van las dos lunas, así que vuelve el sol.",
+   "id": "mate1-oa11-2"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "Pa, pum, pa, pum. ¿Qué sonido sigue?",
+   "opciones": [
+    "Pa",
+    "Pum",
+    "Pin",
+    "Tan"
+   ],
+   "correcta": 0,
+   "tip": "Los sonidos se turnan: pa, pum, pa, pum. Después del pum vuelve el pa.",
+   "id": "mate1-oa11-3"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "Tic, tac, tac, tic, tac, tac. ¿Qué suena luego?",
+   "opciones": [
+    "Tic",
+    "Tac",
+    "Toc",
+    "Tuc"
+   ],
+   "correcta": 0,
+   "tip": "Se repite un tic y dos tac. Ya sonaron los dos tac, así que vuelve el tic.",
+   "id": "mate1-oa11-4"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "Diego aplaude, salta, aplaude, salta. ¿Y luego?",
+   "opciones": [
+    "Aplaudir",
+    "Saltar",
+    "Correr",
+    "Sentarse"
+   ],
+   "correcta": 0,
+   "tip": "Diego repite dos movimientos: aplaudir y saltar. Después de saltar le toca aplaudir.",
+   "id": "mate1-oa11-5"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "Cuadrado, círculo, cuadrado, círculo. ¿Y luego?",
+   "opciones": [
+    "Un cuadrado",
+    "Un círculo",
+    "Un triángulo",
+    "Una estrella"
+   ],
+   "correcta": 0,
+   "tip": "Cuadrado y círculo se turnan. Después del círculo vuelve el cuadrado.",
+   "id": "mate1-oa11-6"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "Gato, perro, ___, perro, gato, perro. ¿Qué falta?",
+   "opciones": [
+    "Gato",
+    "Perro",
+    "Pez",
+    "Ratón"
+   ],
+   "correcta": 0,
+   "tip": "Gato y perro se turnan. Antes del segundo perro tiene que ir un gato.",
+   "id": "mate1-oa11-7"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "Pan, pan, té, pan, pan, té. ¿Qué grupo se repite?",
+   "opciones": [
+    "Pan, pan, té",
+    "Pan, té",
+    "Solo el pan",
+    "Té, té, pan"
+   ],
+   "correcta": 0,
+   "tip": "El grupo que vuelve una y otra vez tiene dos veces pan y una vez té.",
+   "id": "mate1-oa11-8"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "Golpes: fuerte, suave, fuerte, suave. ¿Y luego?",
+   "opciones": [
+    "Fuerte",
+    "Suave",
+    "Muy suave",
+    "Más rápido"
+   ],
+   "correcta": 0,
+   "tip": "Fuerte y suave se turnan. Después de un golpe suave viene uno fuerte.",
+   "id": "mate1-oa11-9"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "Azul, verde, azul, verde, azul, azul. ¿Qué iba al final?",
+   "opciones": [
+    "Verde",
+    "Azul",
+    "Rojo",
+    "Amarillo"
+   ],
+   "correcta": 0,
+   "tip": "Azul y verde se turnan. Después de un azul debía venir un verde, no otro azul.",
+   "id": "mate1-oa11-10"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "Rojo, ___, rojo, verde, rojo, verde. ¿Qué falta?",
+   "opciones": [
+    "Verde",
+    "Rojo",
+    "Azul",
+    "Negro"
+   ],
+   "correcta": 0,
+   "tip": "Rojo y verde se turnan. Después del primer rojo tiene que venir un verde.",
+   "id": "mate1-oa11-11"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "Guau, miau, guau, miau. ¿Qué sonido sigue?",
+   "opciones": [
+    "Guau",
+    "Miau",
+    "Muu",
+    "Pío"
+   ],
+   "correcta": 0,
+   "tip": "El perro y el gato se turnan. Después del miau vuelve el guau.",
+   "id": "mate1-oa11-12"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "Luna, flor, luna, flor, luna. ¿Qué sigue?",
+   "opciones": [
+    "Flor",
+    "Luna",
+    "Sol",
+    "Nube"
+   ],
+   "correcta": 0,
+   "tip": "Luna y flor se turnan. La última fue una luna, así que sigue una flor.",
+   "id": "mate1-oa11-13"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "Pum, pam, ___, pam, pum, pam. ¿Qué sonido falta?",
+   "opciones": [
+    "Pum",
+    "Pam",
+    "Pim",
+    "Pom"
+   ],
+   "correcta": 0,
+   "tip": "Pum y pam se turnan. Entre dos pam tiene que ir un pum.",
+   "id": "mate1-oa11-14"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "¿Qué número sigue en 2, 5, 8, 11?",
+   "opciones": [
+    "14",
+    "12",
+    "13",
+    "15"
+   ],
+   "correcta": 0,
+   "tip": "Cada número es 3 más que el anterior: 11 y 3 más son 14.",
+   "id": "mate1-oa11-15"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "3, 7, 11, 15. ¿Cuál es el que sigue?",
+   "opciones": [
+    "19",
+    "16",
+    "17",
+    "20"
+   ],
+   "correcta": 0,
+   "tip": "Cada número es 4 más que el anterior: 15 y 4 más son 19.",
+   "id": "mate1-oa11-16"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "Bajan así: 20, 17, 14, 11. ¿Qué número viene?",
+   "opciones": [
+    "8",
+    "9",
+    "10",
+    "12"
+   ],
+   "correcta": 0,
+   "tip": "Los números bajan de 3 en 3: a 11 le quitas 3 y quedan 8.",
+   "id": "mate1-oa11-17"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "19, 15, 11, 7 van bajando. ¿Qué sigue?",
+   "opciones": [
+    "3",
+    "4",
+    "5",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Los números bajan de 4 en 4: a 7 le quitas 4 y quedan 3.",
+   "id": "mate1-oa11-18"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "4, 7, 4, 7, 4. ¿Qué número sigue?",
+   "opciones": [
+    "7",
+    "4",
+    "10",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "El 4 y el 7 se turnan. Después de un 4 siempre viene un 7: los números no crecen.",
+   "id": "mate1-oa11-19"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "1, 1, 2, 1, 1, 2. ¿Qué número sigue?",
+   "opciones": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "correcta": 0,
+   "tip": "Se repite el grupo 1, 1, 2. Ya terminó un grupo, así que vuelve a empezar con 1.",
+   "id": "mate1-oa11-20"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "¿Qué número falta en 4, 7, ___, 13?",
+   "opciones": [
+    "10",
+    "8",
+    "11",
+    "9"
+   ],
+   "correcta": 0,
+   "tip": "El patrón suma 3: 7 y 3 más son 10, y 10 y 3 más son 13.",
+   "id": "mate1-oa11-21"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "En 18, 14, ___, 6 hay un hueco. ¿Qué va ahí?",
+   "opciones": [
+    "10",
+    "12",
+    "8",
+    "11"
+   ],
+   "correcta": 0,
+   "tip": "El patrón resta 4: a 14 le quitas 4 y quedan 10; a 10 le quitas 4 y quedan 6.",
+   "id": "mate1-oa11-22"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "¿Cuál es la regla de 5, 8, 11, 14?",
+   "opciones": [
+    "Sumar 3",
+    "Sumar 2",
+    "Restar 3",
+    "Sumar 4"
+   ],
+   "correcta": 0,
+   "tip": "De 5 a 8 hay 3, de 8 a 11 hay 3 y de 11 a 14 también: se suma 3.",
+   "id": "mate1-oa11-23"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "16, 12, 8, 4. ¿Qué hace este patrón?",
+   "opciones": [
+    "Restar 4",
+    "Restar 3",
+    "Sumar 4",
+    "Restar 2"
+   ],
+   "correcta": 0,
+   "tip": "Los números bajan: de 16 a 12 se quitan 4, y así cada vez.",
+   "id": "mate1-oa11-24"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "El patrón 13, 10, 7, 4, ¿crece o decrece?",
+   "opciones": [
+    "Decrece",
+    "Crece",
+    "Se repite",
+    "Queda igual"
+   ],
+   "correcta": 0,
+   "tip": "Cada número es menor que el anterior: el patrón va bajando, o sea decrece.",
+   "id": "mate1-oa11-25"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "En 3, 6, 9, 11, 15, ¿qué número está mal?",
+   "opciones": [
+    "11",
+    "9",
+    "15",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "El patrón suma 3: 3, 6, 9, 12, 15. Donde dice 11 debía ir 12.",
+   "id": "mate1-oa11-26"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "Leo suma 4 cada vez: 1, 5, 9. ¿Qué escribe luego?",
+   "opciones": [
+    "13",
+    "12",
+    "14",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "Leo suma 4 cada vez: 9 y 4 más son 13.",
+   "id": "mate1-oa11-27"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "Sofía resta 3 cada vez: 19, 16, 13. ¿Y luego?",
+   "opciones": [
+    "10",
+    "11",
+    "12",
+    "9"
+   ],
+   "correcta": 0,
+   "tip": "Sofía quita 3 cada vez: a 13 le quitas 3 y quedan 10.",
+   "id": "mate1-oa11-28"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "En la recta, ¿qué número tapa el punto dorado?",
+   "opciones": [
+    "11",
+    "10",
+    "12",
+    "9"
+   ],
+   "correcta": 0,
+   "tip": "La recta salta de 3 en 3: antes del punto está el 8, y 8 y 3 más son 11.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 2,
+    "hasta": 20,
+    "paso": 3,
+    "marca": 11,
+    "oculta": true
+   },
+   "id": "mate1-oa11-29"
+  },
+  {
+   "oa": "MA01 OA 11",
+   "pregunta": "¿Qué número esconde el punto dorado?",
+   "opciones": [
+    "16",
+    "14",
+    "15",
+    "18"
+   ],
+   "correcta": 0,
+   "tip": "La recta salta de 4 en 4: antes del punto está el 12, y 12 y 4 más son 16.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 20,
+    "paso": 4,
+    "marca": 16,
+    "oculta": true
+   },
+   "id": "mate1-oa11-30"
+  }
+ ]
+}

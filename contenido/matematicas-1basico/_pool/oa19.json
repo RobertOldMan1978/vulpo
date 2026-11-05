@@ -1,0 +1,381 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "Javiera quiere saber el juego favorito del curso. ¿Qué hace?",
+   "opciones": [
+    "pregunta a todos",
+    "lo adivina",
+    "pregunta a uno",
+    "mira la pizarra"
+   ],
+   "correcta": 0,
+   "tip": "Para saber lo que piensa el curso hay que preguntarle a cada niño y anotar sus respuestas.",
+   "id": "mate1-oa19-1"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "En una votación, ¿cuántas veces vota cada niño?",
+   "opciones": [
+    "una vez",
+    "dos veces",
+    "ninguna vez",
+    "las que quiera"
+   ],
+   "correcta": 0,
+   "tip": "Cada niño vota una sola vez. Si alguien vota dos veces, los datos ya no dicen la verdad del curso.",
+   "id": "mate1-oa19-2"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "Tomás votó dos veces por perro. ¿Está bien?",
+   "opciones": [
+    "no, es una vez",
+    "sí, vale doble",
+    "sí, si le gusta",
+    "no, son tres"
+   ],
+   "correcta": 0,
+   "tip": "Cada niño vota una sola vez. El voto de más hace que perro parezca más elegido de lo que es.",
+   "id": "mate1-oa19-3"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "¿Qué se anota por cada voto en la tabla de conteo?",
+   "opciones": [
+    "un palito",
+    "una palabra",
+    "un número diez",
+    "un dibujo grande"
+   ],
+   "correcta": 0,
+   "tip": "En una tabla de conteo se hace un palito por cada voto. Al final se cuentan los palitos.",
+   "id": "mate1-oa19-4"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "Ana anotó 3 palitos. ¿Cuántos votos son?",
+   "opciones": [
+    "3",
+    "1",
+    "4",
+    "2"
+   ],
+   "correcta": 0,
+   "tip": "Cada palito es un voto. Tres palitos son tres votos.",
+   "id": "mate1-oa19-5"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "Pía tiene dos grupos de 5 palitos. ¿Cuántos votos son?",
+   "opciones": [
+    "10",
+    "5",
+    "2",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "Cada grupo tiene cinco palitos. Cinco y cinco más son diez votos.",
+   "id": "mate1-oa19-6"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "La tabla tiene 4 palitos y llega otro voto. ¿Cuántos palitos van?",
+   "opciones": [
+    "5",
+    "4",
+    "3",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Cada voto nuevo es un palito nuevo en la tabla: cuatro y uno más son cinco.",
+   "id": "mate1-oa19-7"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "Pasa un auto rojo. ¿Dónde anota Ana su palito?",
+   "opciones": [
+    "en la fila del rojo",
+    "en la fila del azul",
+    "en todas las filas",
+    "en ninguna fila"
+   ],
+   "correcta": 0,
+   "tip": "Cada palito va en la fila de lo que se vio. Pasó un auto rojo: el palito va en la fila del rojo.",
+   "id": "mate1-oa19-8"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "En la tabla, rojo tiene 5 palitos y azul 2. ¿Qué color ganó?",
+   "opciones": [
+    "rojo",
+    "azul",
+    "empataron",
+    "ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Gana el que tiene más palitos. Cinco son más que dos.",
+   "id": "mate1-oa19-9"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "En la tabla, helado tiene 4 palitos y jugo 4. ¿Qué pasó?",
+   "opciones": [
+    "empataron",
+    "ganó helado",
+    "ganó jugo",
+    "nadie votó"
+   ],
+   "correcta": 0,
+   "tip": "Los dos tienen cuatro palitos: tienen los mismos votos, así que empataron.",
+   "id": "mate1-oa19-10"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "Perro tiene 6 palitos, gato 4 y pez 2. ¿Qué tuvo menos?",
+   "opciones": [
+    "pez",
+    "perro",
+    "gato",
+    "empataron"
+   ],
+   "correcta": 0,
+   "tip": "El que tiene menos palitos es el menos elegido. Dos es el menor: pez.",
+   "id": "mate1-oa19-11"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "Pelota tiene 3 palitos y muñeca 2. ¿Cuántos votaron?",
+   "opciones": [
+    "5",
+    "3",
+    "2",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Todos los palitos juntos son todos los votos: tres y dos más son cinco.",
+   "id": "mate1-oa19-12"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "Benjamín preguntó a 10 niños. 6 eligieron fútbol. ¿Cuántos eligieron otra cosa?",
+   "opciones": [
+    "4",
+    "6",
+    "16",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "De diez niños, seis eligieron fútbol. Los que quedan son cuatro: seis y cuatro más son diez.",
+   "id": "mate1-oa19-13"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "Cada bloque es un niño que vino en bus. La torre tiene 7. ¿Cuántos niños?",
+   "opciones": [
+    "7",
+    "1",
+    "6",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "Cada bloque cuenta un niño. Siete bloques son siete niños que vinieron en bus.",
+   "id": "mate1-oa19-14"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "Para votar con bloques, ¿qué pone cada niño?",
+   "opciones": [
+    "un bloque",
+    "dos bloques",
+    "todos los bloques",
+    "ningún bloque"
+   ],
+   "correcta": 0,
+   "tip": "Un niño, un voto, un bloque. Así la torre más alta muestra lo más elegido.",
+   "id": "mate1-oa19-15"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "Torre de días con sol: 9 bloques. Con lluvia: 5. ¿Qué días fueron más?",
+   "opciones": [
+    "días con sol",
+    "días con lluvia",
+    "igual de días",
+    "no se sabe"
+   ],
+   "correcta": 0,
+   "tip": "La torre más alta tiene más bloques. Nueve son más que cinco: hubo más días con sol.",
+   "id": "mate1-oa19-16"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "Torre de sol: 9 bloques. Torre de lluvia: 5. ¿Cuántos más tiene la de sol?",
+   "opciones": [
+    "4",
+    "9",
+    "5",
+    "14"
+   ],
+   "correcta": 0,
+   "tip": "De cinco a nueve hay cuatro: cinco y cuatro más son nueve.",
+   "id": "mate1-oa19-17"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "La torre de los que vienen a pie es la más alta. ¿Qué quiere decir?",
+   "opciones": [
+    "más vienen a pie",
+    "menos vienen a pie",
+    "nadie viene a pie",
+    "vienen igual"
+   ],
+   "correcta": 0,
+   "tip": "Cada bloque es un niño. La torre más alta tiene más niños: la mayoría viene a pie.",
+   "id": "mate1-oa19-18"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "Cuatro niños votan rojo y cuatro votan verde. ¿Cómo quedan las torres?",
+   "opciones": [
+    "de igual altura",
+    "más alta la roja",
+    "más alta la verde",
+    "sin bloques"
+   ],
+   "correcta": 0,
+   "tip": "Cuatro bloques en cada torre: las dos quedan de la misma altura.",
+   "id": "mate1-oa19-19"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "Cada niño pega una cara feliz. Hay 8 caras. ¿Cuántos niños votaron?",
+   "opciones": [
+    "8",
+    "1",
+    "9",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "Cada cara es el voto de un niño. Ocho caras son ocho niños.",
+   "id": "mate1-oa19-20"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "Pasaron 7 autos blancos y 3 negros. ¿De qué color pasaron más?",
+   "opciones": [
+    "blancos",
+    "negros",
+    "igual",
+    "ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Siete son más que tres: pasaron más autos blancos.",
+   "id": "mate1-oa19-21"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "Diego olvidó anotar unos votos. ¿Cómo queda su tabla?",
+   "opciones": [
+    "le faltan datos",
+    "está perfecta",
+    "tiene de más",
+    "se ve más linda"
+   ],
+   "correcta": 0,
+   "tip": "Si no anotó todos los votos, la tabla no muestra lo que pensó el curso: le faltan datos.",
+   "id": "mate1-oa19-22"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "¿Qué puede saber el curso preguntando a cada niño?",
+   "opciones": [
+    "su fruta favorita",
+    "el peso de la luna",
+    "la edad del sol",
+    "los peces del mar"
+   ],
+   "correcta": 0,
+   "tip": "Preguntando a cada compañero se sabe qué fruta le gusta a cada uno. Lo de la luna o el sol no se sabe preguntando.",
+   "id": "mate1-oa19-23"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "Sofía anota con palitos los días que llueve. Hay 6. ¿Cuántos días llovió?",
+   "opciones": [
+    "6",
+    "5",
+    "1",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "Cada palito es un día de lluvia. Seis palitos son seis días.",
+   "id": "mate1-oa19-24"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "Matías tiene 3 palitos para gato. Votan 2 más por gato. ¿Cuántos son?",
+   "opciones": [
+    "5",
+    "3",
+    "2",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Tenía tres palitos y suma dos más: tres y dos son cinco votos.",
+   "id": "mate1-oa19-25"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "Leo hizo una torre de 6 bloques para perro y 4 para gato. ¿Qué eligieron más?",
+   "opciones": [
+    "perro",
+    "gato",
+    "los dos igual",
+    "ninguno"
+   ],
+   "correcta": 0,
+   "tip": "La torre de perro tiene más bloques: seis son más que cuatro.",
+   "id": "mate1-oa19-26"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "¿Para qué sirve una tabla de conteo?",
+   "opciones": [
+    "para anotar y contar",
+    "para pintar",
+    "para medir largos",
+    "para leer cuentos"
+   ],
+   "correcta": 0,
+   "tip": "En la tabla de conteo se anota cada dato con un palito y después se cuenta. Medir largos se hace de otra forma.",
+   "id": "mate1-oa19-27"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "Camila anota cuántos tienen mascota. ¿A quién le pregunta?",
+   "opciones": [
+    "a cada compañero",
+    "solo a ella misma",
+    "a su mascota",
+    "a nadie"
+   ],
+   "correcta": 0,
+   "tip": "Para saber cuántos del curso tienen mascota hay que preguntarle a cada compañero.",
+   "id": "mate1-oa19-28"
+  },
+  {
+   "oa": "MA01 OA 19",
+   "pregunta": "Ema hizo 5 palitos para rojo, pero eran 4 votos. ¿Qué pasó?",
+   "opciones": [
+    "anotó uno de más",
+    "anotó uno de menos",
+    "está bien",
+    "faltan 5"
+   ],
+   "correcta": 0,
+   "tip": "Si fueron cuatro votos y hay cinco palitos, sobra uno: anotó un palito de más.",
+   "id": "mate1-oa19-29"
+  }
+ ]
+}

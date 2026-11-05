@@ -1,0 +1,461 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "En el pictograma, perro tiene 5 dibujos y gato 3. ¿Cuál ganó?",
+   "opciones": [
+    "perro",
+    "gato",
+    "empataron",
+    "ninguno"
+   ],
+   "correcta": 0,
+   "tip": "En un pictograma cada dibujo es un voto. Perro tiene más dibujos: cinco son más que tres.",
+   "id": "mate1-oa20-1"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "Cada dibujo es un niño. Fútbol tiene 7 dibujos. ¿Cuántos eligieron fútbol?",
+   "opciones": [
+    "7",
+    "1",
+    "6",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "Si cada dibujo es un niño, siete dibujos son siete niños.",
+   "id": "mate1-oa20-2"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "En el pictograma, plátano tiene 4 dibujos y pera 6. ¿Cuál tiene menos?",
+   "opciones": [
+    "plátano",
+    "pera",
+    "empataron",
+    "ninguna"
+   ],
+   "correcta": 0,
+   "tip": "Tiene menos la fila con menos dibujos. Cuatro son menos que seis: plátano.",
+   "id": "mate1-oa20-3"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "En el pictograma, manzana tiene 3 dibujos y naranja 3. ¿Qué pasó?",
+   "opciones": [
+    "empataron",
+    "ganó manzana",
+    "ganó naranja",
+    "nadie votó"
+   ],
+   "correcta": 0,
+   "tip": "Las dos filas tienen tres dibujos: tienen los mismos votos y empataron.",
+   "id": "mate1-oa20-4"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "Rojo tiene 6 dibujos y azul 2. ¿Cuántos dibujos más tiene rojo?",
+   "opciones": [
+    "4",
+    "8",
+    "6",
+    "2"
+   ],
+   "correcta": 0,
+   "tip": "De dos a seis hay cuatro: dos y cuatro más son seis.",
+   "id": "mate1-oa20-5"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "Leche tiene 5 dibujos y jugo 4. ¿Cuántos niños votaron en total?",
+   "opciones": [
+    "9",
+    "5",
+    "4",
+    "1"
+   ],
+   "correcta": 0,
+   "tip": "Cada dibujo es un niño. Todos juntos: cinco y cuatro más son nueve.",
+   "id": "mate1-oa20-6"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "En un pictograma, ¿qué muestra la fila más corta?",
+   "opciones": [
+    "lo menos elegido",
+    "lo más elegido",
+    "lo que empató",
+    "el título"
+   ],
+   "correcta": 0,
+   "tip": "La fila más corta tiene menos dibujos, o sea menos votos: es lo menos elegido.",
+   "id": "mate1-oa20-7"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "Tres niños eligieron gato. ¿Cuántos dibujos de gato pone Ana?",
+   "opciones": [
+    "3",
+    "1",
+    "4",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "En este pictograma cada dibujo es un niño: tres niños, tres dibujos.",
+   "id": "mate1-oa20-8"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "¿Cómo deben ser los dibujos de un pictograma?",
+   "opciones": [
+    "del mismo tamaño",
+    "unos más grandes",
+    "todos distintos",
+    "de cualquier forma"
+   ],
+   "correcta": 0,
+   "tip": "Si los dibujos son del mismo tamaño y están parejos, el largo de cada fila muestra cuántos votos tiene.",
+   "id": "mate1-oa20-9"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "Un pictograma no tiene título. ¿Qué no se sabe?",
+   "opciones": [
+    "de qué se trata",
+    "cuántos dibujos hay",
+    "de qué color es",
+    "dónde termina"
+   ],
+   "correcta": 0,
+   "tip": "Los dibujos se pueden contar igual, pero sin título no se sabe qué pregunta responde el pictograma.",
+   "id": "mate1-oa20-10"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "Diego olvidó dibujar un voto de pez. ¿Cómo queda pez?",
+   "opciones": [
+    "con uno menos",
+    "con uno más",
+    "igual que antes",
+    "sin ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Si falta un dibujo, la fila de pez muestra un voto menos de los que hubo.",
+   "id": "mate1-oa20-11"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "Si un niño más elige gato, ¿qué hace Leo en el pictograma?",
+   "opciones": [
+    "agrega un dibujo",
+    "borra un dibujo",
+    "no hace nada",
+    "dibuja todo de nuevo"
+   ],
+   "correcta": 0,
+   "tip": "Un voto más es un dibujo más en la fila de gato.",
+   "id": "mate1-oa20-12"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "¿Qué fruta eligieron más niños?",
+   "opciones": [
+    "la uva",
+    "la pera",
+    "el kiwi",
+    "el plátano"
+   ],
+   "correcta": 0,
+   "tip": "La barra más alta es la de uva, con seis votos. El plátano tiene cinco.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "🍐",
+     "🍇",
+     "🥝",
+     "🍌"
+    ],
+    "valores": [
+     3,
+     6,
+     2,
+     5
+    ]
+   },
+   "id": "mate1-oa20-13"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "¿Cuántos niños eligieron kiwi y plátano, juntos?",
+   "opciones": [
+    "7",
+    "5",
+    "2",
+    "3"
+   ],
+   "correcta": 0,
+   "tip": "El kiwi tiene dos votos y el plátano cinco: dos y cinco más son siete.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "🍐",
+     "🍇",
+     "🥝",
+     "🍌"
+    ],
+    "valores": [
+     3,
+     6,
+     2,
+     5
+    ]
+   },
+   "id": "mate1-oa20-14"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "¿Qué mascota tuvo menos votos?",
+   "opciones": [
+    "el gato",
+    "el perro",
+    "el conejo",
+    "el pez"
+   ],
+   "correcta": 0,
+   "tip": "La barra del gato es la más baja: tuvo solo 2 votos, menos que todos los demás.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "🐶",
+     "🐱",
+     "🐰",
+     "🐟"
+    ],
+    "valores": [
+     5,
+     2,
+     6,
+     4
+    ]
+   },
+   "id": "mate1-oa20-15"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "¿Cuál es la mascota favorita del curso?",
+   "opciones": [
+    "el conejo",
+    "el perro",
+    "el gato",
+    "el pez"
+   ],
+   "correcta": 0,
+   "tip": "La barra del conejo es la más alta: tuvo 6 votos, más que todas las demás.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "🐶",
+     "🐱",
+     "🐰",
+     "🐟"
+    ],
+    "valores": [
+     5,
+     2,
+     6,
+     4
+    ]
+   },
+   "id": "mate1-oa20-16"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "¿Qué colores empataron?",
+   "opciones": [
+    "rojo y verde",
+    "azul y rojo",
+    "verde y amarillo",
+    "azul y verde"
+   ],
+   "correcta": 0,
+   "tip": "Rojo y verde tienen cuatro votos cada uno: sus barras son igual de altas.",
+   "visual": {
+    "tipo": "barras",
+    "etiquetas": [
+     "Rojo",
+     "Azul",
+     "Verde",
+     "Amarillo"
+    ],
+    "valores": [
+     4,
+     6,
+     4,
+     3
+    ],
+    "colores": [
+     "#ff4d4d",
+     "#4d8dff",
+     "#3ee089",
+     "#ffd23c"
+    ]
+   },
+   "id": "mate1-oa20-17"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "En el pictograma, cada pez es un niño. ¿Cuántos eligieron el pez?",
+   "opciones": [
+    "5",
+    "4",
+    "6",
+    "1"
+   ],
+   "correcta": 0,
+   "tip": "Se cuentan los dibujos de pez: cada uno es un niño, y son cinco.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 1,
+    "porGrupo": 5,
+    "emoji": "🐟"
+   },
+   "id": "mate1-oa20-18"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "En el pictograma, cada estrella es un día de sol. ¿Cuántos días de sol hubo?",
+   "opciones": [
+    "8",
+    "7",
+    "9",
+    "1"
+   ],
+   "correcta": 0,
+   "tip": "Se cuenta cada estrella: una, dos, tres… hasta ocho. Fueron ocho días de sol.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 1,
+    "porGrupo": 8,
+    "emoji": "⭐"
+   },
+   "id": "mate1-oa20-19"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "Pera tiene 3 dibujos y uva tiene 2 más que pera. ¿Cuántos tiene uva?",
+   "opciones": [
+    "5",
+    "1",
+    "3",
+    "2"
+   ],
+   "correcta": 0,
+   "tip": "Uva tiene los tres de pera y dos más: tres y dos son cinco.",
+   "id": "mate1-oa20-20"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "Helado tiene 8 dibujos, torta 5 y fruta 2. ¿Qué eligieron más?",
+   "opciones": [
+    "helado",
+    "torta",
+    "fruta",
+    "empataron"
+   ],
+   "correcta": 0,
+   "tip": "La fila con más dibujos es la de helado: ocho es el mayor.",
+   "id": "mate1-oa20-21"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "Helado tiene 8 dibujos y fruta 2. ¿Cuántos menos tiene fruta?",
+   "opciones": [
+    "6",
+    "10",
+    "8",
+    "2"
+   ],
+   "correcta": 0,
+   "tip": "De dos a ocho hay seis: dos y seis más son ocho.",
+   "id": "mate1-oa20-22"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "Ana dice que gato ganó porque su fila va primero. ¿Tiene razón?",
+   "opciones": [
+    "no, hay que contar",
+    "sí, va primero",
+    "sí, es más bonita",
+    "no, gana la última"
+   ],
+   "correcta": 0,
+   "tip": "Gana la fila con más dibujos, no la que está primero. Hay que contar.",
+   "id": "mate1-oa20-23"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "En el pictograma, Sofía leyó 4 cuentos y Matías 6. ¿Quién tiene la fila más larga?",
+   "opciones": [
+    "Matías",
+    "Sofía",
+    "los dos igual",
+    "ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Cada cuento leído es un dibujo. Matías leyó más, así que su fila tiene más dibujos y es más larga.",
+   "id": "mate1-oa20-24"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "Pía tiene 3 dibujos. ¿Cuántos le faltan para tener 5?",
+   "opciones": [
+    "2",
+    "8",
+    "3",
+    "5"
+   ],
+   "correcta": 0,
+   "tip": "De tres a cinco faltan dos: tres y dos más son cinco.",
+   "id": "mate1-oa20-25"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "¿Cuántos dibujos van por cada niño?",
+   "opciones": [
+    "uno",
+    "dos",
+    "cinco",
+    "diez"
+   ],
+   "correcta": 0,
+   "tip": "En un pictograma simple cada niño es un dibujo: uno por niño.",
+   "id": "mate1-oa20-26"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "Perro tiene 6 dibujos, gato 6 y pez 1. ¿Qué mascotas empataron?",
+   "opciones": [
+    "perro y gato",
+    "gato y pez",
+    "perro y pez",
+    "las tres"
+   ],
+   "correcta": 0,
+   "tip": "Perro y gato tienen seis dibujos cada uno. Pez tiene solo uno.",
+   "id": "mate1-oa20-27"
+  },
+  {
+   "oa": "MA01 OA 20",
+   "pregunta": "¿Qué responde un pictograma de frutas favoritas?",
+   "opciones": [
+    "qué fruta gusta más",
+    "cuánto pesa una fruta",
+    "cuánto cuesta la fruta",
+    "de qué color es"
+   ],
+   "correcta": 0,
+   "tip": "Un pictograma junta los votos del curso: la fila más larga dice qué fruta gusta más. No dice pesos, precios ni colores.",
+   "id": "mate1-oa20-28"
+  }
+ ]
+}

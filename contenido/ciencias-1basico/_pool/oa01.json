@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "¿Cuál de estos es un ser vivo?",
+   "opciones": [
+    "Un perro",
+    "Una piedra",
+    "Un auto",
+    "Una pelota"
+   ],
+   "correcta": 0,
+   "tip": "Un perro crece, come, respira y puede tener crías. Una piedra, un auto y una pelota no hacen nada de eso.",
+   "id": "cien1-oa01-1"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "¿Cuál de estas es una cosa no viva?",
+   "opciones": [
+    "Una mesa",
+    "Un gato",
+    "Una flor",
+    "Un pájaro"
+   ],
+   "correcta": 0,
+   "tip": "La mesa no crece ni necesita agua ni comida. El gato, la flor y el pájaro son seres vivos.",
+   "id": "cien1-oa01-2"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "Benjamín plantó un poroto. ¿Qué le pasa después?",
+   "opciones": [
+    "Va creciendo",
+    "Se queda igual",
+    "Se va achicando",
+    "Se derrite"
+   ],
+   "correcta": 0,
+   "tip": "Los seres vivos crecen. Con agua, luz y aire, el poroto se convierte en una planta cada vez más grande.",
+   "id": "cien1-oa01-3"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "¿Qué necesita un perro para vivir?",
+   "opciones": [
+    "Agua y alimento",
+    "Juguetes y ropa",
+    "Un collar nuevo",
+    "Una casa pintada"
+   ],
+   "correcta": 0,
+   "tip": "El perro necesita agua, alimento y aire. Los juguetes y el collar son lindos, pero no los necesita para vivir.",
+   "id": "cien1-oa01-4"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "Sofía cuida una planta. ¿Qué necesita la planta?",
+   "opciones": [
+    "Agua y luz",
+    "Leche y pan",
+    "Estar a oscuras",
+    "Una maceta roja"
+   ],
+   "correcta": 0,
+   "tip": "Las plantas necesitan agua, luz y aire. No comen pan ni leche como nosotros, y sin luz se ponen débiles.",
+   "id": "cien1-oa01-5"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "¿Qué hace un chanchito de tierra si lo tocan?",
+   "opciones": [
+    "Se hace bolita",
+    "Se queda igual",
+    "Se vuelve piedra",
+    "Crece de golpe"
+   ],
+   "correcta": 0,
+   "tip": "Los seres vivos responden a lo que pasa a su alrededor. Al sentir el toque, el chanchito de tierra se enrolla para protegerse.",
+   "id": "cien1-oa01-6"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "¿Cuál de estos crece?",
+   "opciones": [
+    "Un gatito",
+    "Un lápiz",
+    "Una taza",
+    "Una silla"
+   ],
+   "correcta": 0,
+   "tip": "Crecer es algo que hacen los seres vivos. El gatito será un gato grande; el lápiz, la taza y la silla siguen del mismo tamaño.",
+   "id": "cien1-oa01-7"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "¿Cuál de estas puede tener crías?",
+   "opciones": [
+    "Una gata",
+    "Una roca",
+    "Un reloj",
+    "Una nube"
+   ],
+   "correcta": 0,
+   "tip": "Los animales tienen crías: así nacen nuevos seres vivos. Una roca, un reloj y una nube no pueden tener crías.",
+   "id": "cien1-oa01-8"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "¿De dónde nacen los pollitos?",
+   "opciones": [
+    "De un huevo",
+    "De una semilla",
+    "De una piedra",
+    "De una flor"
+   ],
+   "correcta": 0,
+   "tip": "La gallina pone huevos y de ellos nacen los pollitos. Las semillas son de las plantas, no de las aves.",
+   "id": "cien1-oa01-9"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "¿De dónde puede nacer una planta nueva?",
+   "opciones": [
+    "De una semilla",
+    "De un huevo",
+    "De una piedra",
+    "De la arena"
+   ],
+   "correcta": 0,
+   "tip": "Muchas plantas forman semillas. Al sembrar una semilla y regarla, de ella nace una planta nueva.",
+   "id": "cien1-oa01-10"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "Un auto se mueve. ¿Qué es?",
+   "opciones": [
+    "Algo no vivo",
+    "Un ser vivo",
+    "Un animal",
+    "Una planta"
+   ],
+   "correcta": 0,
+   "tip": "El auto se mueve porque tiene motor, pero no crece, no come y no tiene crías. Es una cosa no viva.",
+   "id": "cien1-oa01-11"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "¿Qué necesitan todos los seres vivos?",
+   "opciones": [
+    "Agua",
+    "Ruedas",
+    "Pilas",
+    "Pintura"
+   ],
+   "correcta": 0,
+   "tip": "Plantas, animales y personas necesitan agua para vivir. Las pilas las necesitan algunos juguetes, que no están vivos.",
+   "id": "cien1-oa01-12"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "¿Qué le pasa a una planta sin agua?",
+   "opciones": [
+    "Se seca",
+    "Crece más",
+    "Da más flores",
+    "Se pone más verde"
+   ],
+   "correcta": 0,
+   "tip": "Sin agua, la planta no puede seguir viva: sus hojas se arrugan y se seca.",
+   "id": "cien1-oa01-13"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "Una planta crece junto a la ventana. ¿Hacia dónde se inclina?",
+   "opciones": [
+    "Hacia la luz",
+    "Hacia el suelo",
+    "Hacia la pared",
+    "Hacia la sombra"
+   ],
+   "correcta": 0,
+   "tip": "Las plantas responden a la luz: sus tallos se van girando hacia la ventana o hacia el sol.",
+   "id": "cien1-oa01-14"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "¿Cuál se mueve si oye un ruido fuerte?",
+   "opciones": [
+    "Un gato",
+    "Una muñeca",
+    "Una silla",
+    "Un peluche"
+   ],
+   "correcta": 0,
+   "tip": "El gato es un ser vivo y responde a los sonidos. El peluche parece un animal, pero es un juguete y no oye nada.",
+   "id": "cien1-oa01-15"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "Un peluche parece un oso. ¿Qué es?",
+   "opciones": [
+    "Un juguete",
+    "Un ser vivo",
+    "Un animal",
+    "Una cría de oso"
+   ],
+   "correcta": 0,
+   "tip": "El peluche tiene forma de oso, pero no come, no crece y no respira. Es un juguete, una cosa no viva.",
+   "id": "cien1-oa01-16"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "¿Cuál de estos se alimenta?",
+   "opciones": [
+    "Un conejo",
+    "Un robot",
+    "Una muñeca",
+    "Un auto"
+   ],
+   "correcta": 0,
+   "tip": "Los animales necesitan alimento. El robot y el auto funcionan con pilas o motor, pero no están vivos.",
+   "id": "cien1-oa01-17"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "¿Por qué ya no le queda a Matías su ropa de bebé?",
+   "opciones": [
+    "Porque él creció",
+    "Porque él se achicó",
+    "Porque es de invierno",
+    "Porque está sucia"
+   ],
+   "correcta": 0,
+   "tip": "Las personas también somos seres vivos y crecemos. Por eso la ropa de bebé nos queda chica.",
+   "id": "cien1-oa01-18"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "Una gallina pone huevos. ¿Qué nace de ellos?",
+   "opciones": [
+    "Pollitos",
+    "Gatitos",
+    "Semillas",
+    "Piedras"
+   ],
+   "correcta": 0,
+   "tip": "De los huevos de gallina nacen pollitos. Así las gallinas tienen crías.",
+   "id": "cien1-oa01-19"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "¿Qué toma un perro al respirar?",
+   "opciones": [
+    "Aire",
+    "Arena",
+    "Luz",
+    "Jugo"
+   ],
+   "correcta": 0,
+   "tip": "Al respirar, el perro y las personas toman aire. Sin aire no podrían vivir.",
+   "id": "cien1-oa01-20"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "Diego dejó su planta sin luz. ¿Cómo queda?",
+   "opciones": [
+    "Débil y amarilla",
+    "Más verde",
+    "Más grande",
+    "Con más flores"
+   ],
+   "correcta": 0,
+   "tip": "Las plantas necesitan luz. Si están mucho tiempo a oscuras, se ponen débiles y sus hojas se vuelven amarillas.",
+   "id": "cien1-oa01-21"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "¿Cuál de estos crece y tiene crías?",
+   "opciones": [
+    "Un pato",
+    "Una nube",
+    "Un río",
+    "Un globo"
+   ],
+   "correcta": 0,
+   "tip": "El pato es un ser vivo: crece y tiene crías. La nube y el globo cambian de tamaño, pero no están vivos.",
+   "id": "cien1-oa01-22"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "¿Qué sale de una semilla regada?",
+   "opciones": [
+    "Una planta",
+    "Una piedra",
+    "Un pollito",
+    "Nada, nunca"
+   ],
+   "correcta": 0,
+   "tip": "Una semilla con agua, aire y buena temperatura empieza a crecer, y de ella sale una planta.",
+   "id": "cien1-oa01-23"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "La mesa es de madera. ¿Está viva?",
+   "opciones": [
+    "No, es un mueble",
+    "Sí, es un árbol",
+    "Sí, porque crece",
+    "Sí, si la riegan"
+   ],
+   "correcta": 0,
+   "tip": "La madera viene de un árbol, pero la mesa ya no crece ni necesita agua. Es una cosa no viva.",
+   "id": "cien1-oa01-24"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "¿Qué necesitan un perro y un árbol?",
+   "opciones": [
+    "Agua",
+    "Una correa",
+    "Una maceta",
+    "Comida de perro"
+   ],
+   "correcta": 0,
+   "tip": "El perro y el árbol son seres vivos, y los dos necesitan agua. La correa y la maceta no son necesarias para vivir.",
+   "id": "cien1-oa01-25"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "Una muñeca no crece. ¿Por qué?",
+   "opciones": [
+    "No está viva",
+    "Come muy poco",
+    "Duerme mucho",
+    "Es muy chica"
+   ],
+   "correcta": 0,
+   "tip": "Solo los seres vivos crecen. La muñeca es un juguete: nunca va a crecer, coma o duerma.",
+   "id": "cien1-oa01-26"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "¿Qué hay dentro de un fruto de zapallo?",
+   "opciones": [
+    "Semillas",
+    "Huevos",
+    "Piedras",
+    "Crías"
+   ],
+   "correcta": 0,
+   "tip": "Dentro de los frutos están las semillas. De ellas pueden nacer plantas nuevas: así se reproducen las plantas.",
+   "id": "cien1-oa01-27"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "Ana riega su planta. ¿Por qué lo hace?",
+   "opciones": [
+    "Necesita agua",
+    "Está sucia",
+    "Tiene calor",
+    "Quiere bañarse"
+   ],
+   "correcta": 0,
+   "tip": "Las plantas son seres vivos y necesitan agua para vivir. Por eso hay que regarlas.",
+   "id": "cien1-oa01-28"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "¿En qué se parecen un gato y una planta?",
+   "opciones": [
+    "Los dos crecen",
+    "Los dos maúllan",
+    "Los dos tienen hojas",
+    "Los dos caminan"
+   ],
+   "correcta": 0,
+   "tip": "El gato y la planta son seres vivos: los dos crecen y necesitan agua y aire.",
+   "id": "cien1-oa01-29"
+  },
+  {
+   "oa": "CN01 OA 01",
+   "pregunta": "¿Cuál NUNCA va a crecer?",
+   "opciones": [
+    "Una piedra",
+    "Un perrito",
+    "Un árbol",
+    "Un niño"
+   ],
+   "correcta": 0,
+   "tip": "La piedra es una cosa no viva: no crece. El perrito, el árbol y el niño sí crecen, porque están vivos.",
+   "id": "cien1-oa01-30"
+  }
+ ]
+}

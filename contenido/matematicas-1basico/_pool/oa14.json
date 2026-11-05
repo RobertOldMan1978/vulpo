@@ -1,0 +1,418 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "¿A qué cuerpo se parece una lata de bebida?",
+   "opciones": [
+    "Cilindro",
+    "Cubo",
+    "Cono",
+    "Esfera"
+   ],
+   "correcta": 0,
+   "tip": "Una lata es redonda arriba y abajo, y lisa por el costado: tiene forma de cilindro.",
+   "id": "mate1-oa14-1"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "¿A qué cuerpo se parece un terrón de azúcar?",
+   "opciones": [
+    "Cubo",
+    "Esfera",
+    "Cono",
+    "Cilindro"
+   ],
+   "correcta": 0,
+   "tip": "El terrón tiene seis caras planas, todas cuadradas e iguales: es un cubo.",
+   "id": "mate1-oa14-2"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "Una pelota de fútbol, ¿qué cuerpo es?",
+   "opciones": [
+    "Esfera",
+    "Cilindro",
+    "Cubo",
+    "Círculo"
+   ],
+   "correcta": 0,
+   "tip": "La pelota es redonda por todos lados y se puede tomar con las manos: es una esfera. El círculo es plano, como un dibujo.",
+   "id": "mate1-oa14-3"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "¿A qué cuerpo se parece un gorro de fiesta?",
+   "opciones": [
+    "Cono",
+    "Cilindro",
+    "Esfera",
+    "Triángulo"
+   ],
+   "correcta": 0,
+   "tip": "El gorro de fiesta es redondo abajo y termina en una punta: es un cono. Visto de lado parece un triángulo, pero el triángulo es plano.",
+   "id": "mate1-oa14-4"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "¿A qué cuerpo se parece un ladrillo?",
+   "opciones": [
+    "Paralelepípedo",
+    "Cubo",
+    "Cilindro",
+    "Cono"
+   ],
+   "correcta": 0,
+   "tip": "El ladrillo tiene forma de caja alargada, con caras planas: es un paralelepípedo. No es un cubo, porque sus caras no son todas iguales.",
+   "id": "mate1-oa14-5"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "¿Qué objeto tiene forma de cilindro?",
+   "opciones": [
+    "Un tambor",
+    "Un dado",
+    "Una pelota",
+    "Un libro"
+   ],
+   "correcta": 0,
+   "tip": "El tambor es redondo arriba y abajo, y recto por el costado, como un cilindro.",
+   "id": "mate1-oa14-6"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "¿Qué tiene forma de esfera?",
+   "opciones": [
+    "Una burbuja",
+    "Una caja",
+    "Un embudo",
+    "Una vela"
+   ],
+   "correcta": 0,
+   "tip": "Una burbuja es redonda por todos lados, como una esfera.",
+   "id": "mate1-oa14-7"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "Mira este cuerpo. ¿A qué objeto se parece?",
+   "opciones": [
+    "Un rollo de papel",
+    "Una pelota de playa",
+    "Un dado de juego",
+    "Un gorro de fiesta"
+   ],
+   "correcta": 0,
+   "tip": "El dibujo muestra un cilindro: redondo arriba y abajo, recto por el costado. Un rollo de papel tiene esa forma.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cilindro"
+   },
+   "id": "mate1-oa14-8"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "¿Qué objeto se parece a este cuerpo?",
+   "opciones": [
+    "Un embudo",
+    "Una lata",
+    "Un dado",
+    "Una pelota"
+   ],
+   "correcta": 0,
+   "tip": "El dibujo es un cono: redondo abajo y con una punta. El embudo tiene esa forma.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cono"
+   },
+   "id": "mate1-oa14-9"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "Mira el dibujo. ¿Qué tiene esa forma?",
+   "opciones": [
+    "Un globo terráqueo",
+    "Una caja de cereal",
+    "Una lata de bebida",
+    "Un embudo de cocina"
+   ],
+   "correcta": 0,
+   "tip": "El dibujo muestra una esfera, redonda por todos lados. El globo terráqueo de la sala tiene esa forma.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "esfera"
+   },
+   "id": "mate1-oa14-10"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "¿Qué objeto tiene la forma del dibujo?",
+   "opciones": [
+    "Un dado",
+    "Una pelota",
+    "Una lata",
+    "Un embudo"
+   ],
+   "correcta": 0,
+   "tip": "El dibujo es un cubo, con caras cuadradas iguales. Un dado tiene esa forma.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cubo"
+   },
+   "id": "mate1-oa14-11"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "Leo dibuja el borde de una tapa. ¿Qué figura sale?",
+   "opciones": [
+    "Un círculo",
+    "Un cuadrado",
+    "Un triángulo",
+    "Un cilindro"
+   ],
+   "correcta": 0,
+   "tip": "La tapa es redonda, así que su borde dibuja un círculo. El cilindro es el frasco entero, no la figura plana.",
+   "id": "mate1-oa14-12"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "La cara de un dado es plana. ¿Qué figura es?",
+   "opciones": [
+    "Cuadrado",
+    "Cubo",
+    "Círculo",
+    "Triángulo"
+   ],
+   "correcta": 0,
+   "tip": "El dado entero es un cubo, pero cada una de sus caras es una figura plana: un cuadrado.",
+   "id": "mate1-oa14-13"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "Pía calca la tapa de un libro. ¿Qué figura sale?",
+   "opciones": [
+    "Rectángulo",
+    "Círculo",
+    "Triángulo",
+    "Cubo"
+   ],
+   "correcta": 0,
+   "tip": "La tapa de un libro tiene dos lados largos y dos más cortos: al calcarla sale un rectángulo.",
+   "id": "mate1-oa14-14"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "¿Qué cuerpo tiene caras con forma de cuadrado?",
+   "opciones": [
+    "Cubo",
+    "Esfera",
+    "Cono",
+    "Cilindro"
+   ],
+   "correcta": 0,
+   "tip": "El cubo tiene seis caras y todas son cuadrados. La esfera, el cono y el cilindro tienen partes redondas.",
+   "id": "mate1-oa14-15"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "¿Qué cuerpo tiene un círculo arriba y otro abajo?",
+   "opciones": [
+    "Cilindro",
+    "Cono",
+    "Esfera",
+    "Cubo"
+   ],
+   "correcta": 0,
+   "tip": "El cilindro tiene dos caras redondas, una arriba y otra abajo. El cono tiene solo una y termina en punta.",
+   "id": "mate1-oa14-16"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "Mira este cuerpo. ¿Qué figura es su base?",
+   "opciones": [
+    "Círculo",
+    "Triángulo",
+    "Cuadrado",
+    "Cono"
+   ],
+   "correcta": 0,
+   "tip": "La parte de abajo del cono es redonda: es un círculo. De lado parece un triángulo, pero esa no es su base.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cono"
+   },
+   "id": "mate1-oa14-17"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "¿Cuál es una figura plana?",
+   "opciones": [
+    "Un triángulo",
+    "Un cubo",
+    "Una esfera",
+    "Un cono"
+   ],
+   "correcta": 0,
+   "tip": "El triángulo es plano, como un dibujo en la hoja. El cubo, la esfera y el cono son cuerpos: se pueden tomar.",
+   "id": "mate1-oa14-18"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "Ana dice que una lata es un círculo. ¿Qué es?",
+   "opciones": [
+    "Un cilindro",
+    "Un cono",
+    "Un cuadrado",
+    "Una esfera"
+   ],
+   "correcta": 0,
+   "tip": "La lata es un cuerpo que se puede tomar: es un cilindro. Solo su tapa tiene forma de círculo.",
+   "id": "mate1-oa14-19"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "¿Qué figura forma una rueda de bicicleta?",
+   "opciones": [
+    "Círculo",
+    "Esfera",
+    "Cuadrado",
+    "Triángulo"
+   ],
+   "correcta": 0,
+   "tip": "La rueda es redonda y plana, sin esquinas: forma un círculo. La esfera es redonda por todos lados, como una pelota.",
+   "id": "mate1-oa14-20"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "¿Qué figura tiene un banderín de fiesta?",
+   "opciones": [
+    "Triángulo",
+    "Círculo",
+    "Cuadrado",
+    "Cono"
+   ],
+   "correcta": 0,
+   "tip": "El banderín tiene tres lados y tres puntas: es un triángulo. El cono es un cuerpo, no una figura plana.",
+   "id": "mate1-oa14-21"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "¿Qué figura tiene la puerta de la sala?",
+   "opciones": [
+    "Rectángulo",
+    "Cuadrado",
+    "Círculo",
+    "Triángulo"
+   ],
+   "correcta": 0,
+   "tip": "La puerta tiene dos lados largos y dos cortos: es un rectángulo. No es un cuadrado, porque sus lados no son iguales.",
+   "id": "mate1-oa14-22"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "¿Qué cuerpo es todo curvo, sin caras planas?",
+   "opciones": [
+    "Esfera",
+    "Cono",
+    "Cilindro",
+    "Cubo"
+   ],
+   "correcta": 0,
+   "tip": "La esfera es redonda por todos lados. El cono y el cilindro tienen además una cara plana, y el cubo es todo plano.",
+   "id": "mate1-oa14-23"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "Leo corta una naranja al medio. ¿Qué figura ve?",
+   "opciones": [
+    "Un círculo",
+    "Una esfera",
+    "Un triángulo",
+    "Un cuadrado"
+   ],
+   "correcta": 0,
+   "tip": "La naranja entera es casi una esfera, pero el corte es plano y redondo: se ve un círculo.",
+   "id": "mate1-oa14-24"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "¿Qué sombra hace una pelota en el suelo?",
+   "opciones": [
+    "Un círculo",
+    "Una esfera",
+    "Un cuadrado",
+    "Un triángulo"
+   ],
+   "correcta": 0,
+   "tip": "La sombra es plana, pegada al suelo, y es redonda: tiene forma de círculo. La pelota sí es una esfera.",
+   "id": "mate1-oa14-25"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "Camila apila rollos de papel. ¿Qué cuerpos usó?",
+   "opciones": [
+    "Cilindros",
+    "Cubos",
+    "Esferas",
+    "Conos"
+   ],
+   "correcta": 0,
+   "tip": "Cada rollo es redondo arriba y abajo, y liso por el costado: es un cilindro.",
+   "id": "mate1-oa14-26"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "Un embudo y un gorro de fiesta, ¿qué cuerpo son?",
+   "opciones": [
+    "Los dos son conos",
+    "Los dos son cubos",
+    "Los dos son esferas",
+    "Los dos son cilindros"
+   ],
+   "correcta": 0,
+   "tip": "Los dos son redondos en un extremo y terminan en punta: son conos.",
+   "id": "mate1-oa14-27"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "¿Qué figura tiene la tapa de una caja de pizza?",
+   "opciones": [
+    "Cuadrado",
+    "Círculo",
+    "Triángulo",
+    "Cubo"
+   ],
+   "correcta": 0,
+   "tip": "La pizza es redonda, pero su caja tiene la tapa con cuatro lados iguales: es un cuadrado.",
+   "id": "mate1-oa14-28"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "Mira este cuerpo. ¿Cómo se llama?",
+   "opciones": [
+    "Cilindro",
+    "Cono",
+    "Esfera",
+    "Círculo"
+   ],
+   "correcta": 0,
+   "tip": "Es redondo arriba y abajo y recto por el costado: es un cilindro. El círculo es solo una figura plana.",
+   "visual": {
+    "tipo": "cuerpo",
+    "nombre": "cilindro"
+   },
+   "id": "mate1-oa14-29"
+  },
+  {
+   "oa": "MA01 OA 14",
+   "pregunta": "Leo mira un tambor desde arriba. ¿Qué figura ve?",
+   "opciones": [
+    "Un círculo",
+    "Un cilindro",
+    "Un cuadrado",
+    "Un triángulo"
+   ],
+   "correcta": 0,
+   "tip": "Desde arriba se ve solo la cara de encima del tambor, que es redonda y plana: un círculo.",
+   "id": "mate1-oa14-30"
+  }
+ ]
+}

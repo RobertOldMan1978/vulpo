@@ -1,0 +1,418 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "¿Cuál de estos números es el mayor?",
+   "opciones": [
+    "17",
+    "12",
+    "9",
+    "15"
+   ],
+   "correcta": 0,
+   "tip": "Diecisiete es el que está más lejos del cero cuando cuentas: es el mayor.",
+   "id": "mate1-oa04-1"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "¿Cuál de estos vale menos?",
+   "opciones": [
+    "9",
+    "11",
+    "19",
+    "12"
+   ],
+   "correcta": 0,
+   "tip": "Nueve tiene una sola cifra y está antes que los otros al contar: es el menor.",
+   "id": "mate1-oa04-2"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "Ana tiene 12 lápices y Luis 15. ¿Quién tiene más?",
+   "opciones": [
+    "Luis",
+    "Ana",
+    "Tienen igual",
+    "No se sabe"
+   ],
+   "correcta": 0,
+   "tip": "Al contar, el quince viene después del doce: quince es más.",
+   "id": "mate1-oa04-3"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "Pía tiene 18 tapas y Leo 13. ¿Quién tiene menos?",
+   "opciones": [
+    "Leo",
+    "Pía",
+    "Tienen igual",
+    "No se sabe"
+   ],
+   "correcta": 0,
+   "tip": "Trece viene antes que dieciocho al contar: Leo tiene menos.",
+   "id": "mate1-oa04-4"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "¿Qué número va entre el 13 y el 15?",
+   "opciones": [
+    "14",
+    "12",
+    "16",
+    "11"
+   ],
+   "correcta": 0,
+   "tip": "Contando: trece, catorce, quince. El catorce está entre los dos.",
+   "id": "mate1-oa04-5"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "Entre el 9 y el 11 falta un número. ¿Cuál?",
+   "opciones": [
+    "10",
+    "8",
+    "12",
+    "19"
+   ],
+   "correcta": 0,
+   "tip": "Contando: nueve, diez, once. El diez está entre los dos.",
+   "id": "mate1-oa04-6"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "¿Qué número viene justo antes del 16?",
+   "opciones": [
+    "15",
+    "17",
+    "14",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Antes del dieciséis, contando hacia atrás, está el quince.",
+   "id": "mate1-oa04-7"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "Ordena de menor a mayor: 14, 7 y 10.",
+   "opciones": [
+    "7, 10, 14",
+    "14, 10, 7",
+    "10, 7, 14",
+    "7, 14, 10"
+   ],
+   "correcta": 0,
+   "tip": "El más chico es el siete, después el diez y al final el catorce.",
+   "id": "mate1-oa04-8"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "Ordena de mayor a menor: 9, 16 y 12.",
+   "opciones": [
+    "16, 12, 9",
+    "9, 12, 16",
+    "12, 16, 9",
+    "16, 9, 12"
+   ],
+   "correcta": 0,
+   "tip": "El mayor es el dieciséis, después el doce y al final el nueve.",
+   "id": "mate1-oa04-9"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "Hay torres de 11 y 17 cubos. ¿Cuál es más alta?",
+   "opciones": [
+    "La de 17",
+    "La de 11",
+    "Son iguales",
+    "No se sabe"
+   ],
+   "correcta": 0,
+   "tip": "La torre con más cubos es la más alta, y diecisiete es más que once.",
+   "id": "mate1-oa04-10"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "Paz tiene 20 dulces y Sofía 20. ¿Quién tiene más?",
+   "opciones": [
+    "Tienen igual",
+    "Paz",
+    "Sofía",
+    "No se sabe"
+   ],
+   "correcta": 0,
+   "tip": "Los dos tienen veinte dulces: tienen la misma cantidad.",
+   "id": "mate1-oa04-11"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "En la recta, ¿qué número está más cerca del 20?",
+   "opciones": [
+    "18",
+    "12",
+    "9",
+    "5"
+   ],
+   "correcta": 0,
+   "tip": "En la recta, el dieciocho queda a solo dos saltos del veinte.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 20,
+    "paso": 2
+   },
+   "id": "mate1-oa04-12"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "Busca uno mayor que 15. ¿Cuál es?",
+   "opciones": [
+    "17",
+    "12",
+    "9",
+    "14"
+   ],
+   "correcta": 0,
+   "tip": "Mayor que quince es un número que viene después del quince al contar, como el diecisiete.",
+   "id": "mate1-oa04-13"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "¿Cuál es más chico que 10?",
+   "opciones": [
+    "8",
+    "12",
+    "11",
+    "18"
+   ],
+   "correcta": 0,
+   "tip": "Menor que diez es un número que viene antes del diez al contar, como el ocho.",
+   "id": "mate1-oa04-14"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "¿Cuál es mayor, el 16 o el 6?",
+   "opciones": [
+    "El 16",
+    "El 6",
+    "Son iguales",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "El dieciséis tiene un 1 delante: es diez más seis, así que es mayor que el seis.",
+   "id": "mate1-oa04-15"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "Luis dice que 8 es mayor que 13. ¿Tiene razón?",
+   "opciones": [
+    "No, 13 es mayor",
+    "Sí, tiene razón",
+    "No, son iguales",
+    "No se puede saber"
+   ],
+   "correcta": 0,
+   "tip": "Al contar, el trece viene mucho después del ocho: el trece es mayor.",
+   "id": "mate1-oa04-16"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "Hay 14 niños y 14 sillas. ¿De qué hay más?",
+   "opciones": [
+    "Hay igual",
+    "Más niños",
+    "Más sillas",
+    "No se sabe"
+   ],
+   "correcta": 0,
+   "tip": "Catorce y catorce son la misma cantidad: cada niño tiene su silla.",
+   "id": "mate1-oa04-17"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "Hay 15 niños y 12 sillas. ¿Alcanzan las sillas?",
+   "opciones": [
+    "No alcanzan",
+    "Sí alcanzan",
+    "Sobran sillas",
+    "Hay justas"
+   ],
+   "correcta": 0,
+   "tip": "Hay más niños que sillas, porque quince es más que doce: algunos quedan de pie.",
+   "id": "mate1-oa04-18"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "¿Hay más o menos de 10 manzanas?",
+   "opciones": [
+    "Más de 10",
+    "Menos de 10",
+    "Justo 10",
+    "No se sabe"
+   ],
+   "correcta": 0,
+   "tip": "Si cuentas las manzanas llegas a doce, y doce es más que diez.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 1,
+    "porGrupo": 12,
+    "emoji": "🍎"
+   },
+   "id": "mate1-oa04-19"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "¿Son más de 10 los peces del dibujo?",
+   "opciones": [
+    "No, son menos",
+    "Sí, son más",
+    "Son justo 10",
+    "No se sabe"
+   ],
+   "correcta": 0,
+   "tip": "Hay ocho peces, y ocho es menos que diez.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 1,
+    "porGrupo": 8,
+    "emoji": "🐟"
+   },
+   "id": "mate1-oa04-20"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "Ema leyó 10 páginas y Camila 19. ¿Quién leyó más?",
+   "opciones": [
+    "Camila",
+    "Ema",
+    "Leyeron igual",
+    "No se sabe"
+   ],
+   "correcta": 0,
+   "tip": "Diecinueve es más que diez: Camila leyó más páginas.",
+   "id": "mate1-oa04-21"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "Hay 16 autos azules y 18 rojos. ¿Cuáles son más?",
+   "opciones": [
+    "Los rojos",
+    "Los azules",
+    "Son iguales",
+    "No se sabe"
+   ],
+   "correcta": 0,
+   "tip": "Dieciocho viene después del dieciséis al contar: hay más autos rojos.",
+   "id": "mate1-oa04-22"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "¿Qué número es mayor que 17 y menor que 19?",
+   "opciones": [
+    "18",
+    "16",
+    "20",
+    "17"
+   ],
+   "correcta": 0,
+   "tip": "Entre el diecisiete y el diecinueve solo cabe el dieciocho.",
+   "id": "mate1-oa04-23"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "¿Cuál lista va de menor a mayor?",
+   "opciones": [
+    "3, 8, 15",
+    "15, 8, 3",
+    "8, 3, 15",
+    "3, 15, 8"
+   ],
+   "correcta": 0,
+   "tip": "De menor a mayor se parte por el más chico: tres, después ocho y después quince.",
+   "id": "mate1-oa04-24"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "¿Cuál lista va de mayor a menor?",
+   "opciones": [
+    "20, 11, 4",
+    "4, 11, 20",
+    "11, 20, 4",
+    "20, 4, 11"
+   ],
+   "correcta": 0,
+   "tip": "De mayor a menor se parte por el más grande: veinte, después once y después cuatro.",
+   "id": "mate1-oa04-25"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "¿Qué número es menor que el 1?",
+   "opciones": [
+    "0",
+    "2",
+    "10",
+    "11"
+   ],
+   "correcta": 0,
+   "tip": "Antes del uno solo está el cero, que es cuando no hay nada.",
+   "id": "mate1-oa04-26"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "Tomás dio 20 saltos y Sofía 11. ¿Quién dio más?",
+   "opciones": [
+    "Tomás",
+    "Sofía",
+    "Dieron igual",
+    "No se sabe"
+   ],
+   "correcta": 0,
+   "tip": "Veinte viene después de once al contar: Tomás dio más saltos.",
+   "id": "mate1-oa04-27"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "En la recta, ¿cuál está más lejos del cero?",
+   "opciones": [
+    "17",
+    "7",
+    "12",
+    "3"
+   ],
+   "correcta": 0,
+   "tip": "En la recta, mientras más grande es el número, más lejos queda del cero.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 20,
+    "paso": 5
+   },
+   "id": "mate1-oa04-28"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "Iván tiene 6 globos y Ana 16. ¿Quién tiene menos?",
+   "opciones": [
+    "Iván",
+    "Ana",
+    "Tienen igual",
+    "No se sabe"
+   ],
+   "correcta": 0,
+   "tip": "Dieciséis es diez más seis: Ana tiene diez globos más que Iván.",
+   "id": "mate1-oa04-29"
+  },
+  {
+   "oa": "MA01 OA 04",
+   "pregunta": "Hay 13 niñas y 9 niños. ¿Hay más niñas o niños?",
+   "opciones": [
+    "Más niñas",
+    "Más niños",
+    "Hay igual",
+    "No se sabe"
+   ],
+   "correcta": 0,
+   "tip": "Trece es más que nueve: en el grupo hay más niñas.",
+   "id": "mate1-oa04-30"
+  }
+ ]
+}

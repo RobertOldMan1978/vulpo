@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Para qué sirve un calendario?",
+   "opciones": [
+    "para ver las fechas",
+    "para saber la hora",
+    "para medir el largo",
+    "para sumar números"
+   ],
+   "correcta": 0,
+   "tip": "El calendario muestra los días, las semanas y los meses del año. La hora se mira en el reloj.",
+   "id": "hist1-oa01-1"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "Un calendario tiene 12 hojas. ¿Qué es cada hoja?",
+   "opciones": [
+    "un mes",
+    "un día",
+    "una semana",
+    "un año entero"
+   ],
+   "correcta": 0,
+   "tip": "Cada hoja del calendario es un mes, y el año tiene 12 meses: por eso son 12 hojas.",
+   "id": "hist1-oa01-2"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "En la hoja del mes, ¿qué es cada cuadrito?",
+   "opciones": [
+    "un día",
+    "un mes",
+    "una hora",
+    "una semana"
+   ],
+   "correcta": 0,
+   "tip": "En la hoja de un mes hay un cuadrito para cada día, con su número.",
+   "id": "hist1-oa01-3"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "En el calendario, ¿qué es una fila de días?",
+   "opciones": [
+    "una semana",
+    "un mes entero",
+    "un año",
+    "una tarde"
+   ],
+   "correcta": 0,
+   "tip": "Cada fila del calendario tiene siete días, de lunes a domingo: es una semana.",
+   "id": "hist1-oa01-4"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Qué dice arriba de la hoja del calendario?",
+   "opciones": [
+    "el nombre del mes",
+    "la hora del día",
+    "el nombre del niño",
+    "el número de casa"
+   ],
+   "correcta": 0,
+   "tip": "Arriba de cada hoja va el nombre del mes, para saber qué mes estamos mirando.",
+   "id": "hist1-oa01-5"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Qué objeto nos muestra el año en que estamos?",
+   "opciones": [
+    "el calendario",
+    "el reloj",
+    "la regla",
+    "el termómetro"
+   ],
+   "correcta": 0,
+   "tip": "El calendario muestra el año en que estamos. El reloj da la hora y la regla mide el largo.",
+   "id": "hist1-oa01-6"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Cuál es el primer mes del año?",
+   "opciones": [
+    "enero",
+    "marzo",
+    "diciembre",
+    "febrero"
+   ],
+   "correcta": 0,
+   "tip": "El año empieza en enero, aunque las clases empiecen en marzo.",
+   "id": "hist1-oa01-7"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Qué mes está en la última hoja del calendario?",
+   "opciones": [
+    "diciembre",
+    "enero",
+    "noviembre",
+    "octubre"
+   ],
+   "correcta": 0,
+   "tip": "El año termina en diciembre. Después viene enero y empieza otro año.",
+   "id": "hist1-oa01-8"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "En el calendario, ¿qué mes viene después de marzo?",
+   "opciones": [
+    "abril",
+    "mayo",
+    "febrero",
+    "junio"
+   ],
+   "correcta": 0,
+   "tip": "Los meses van en orden: marzo, abril, mayo, junio…",
+   "id": "hist1-oa01-9"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Qué mes va entre junio y agosto?",
+   "opciones": [
+    "julio",
+    "mayo",
+    "septiembre",
+    "enero"
+   ],
+   "correcta": 0,
+   "tip": "El orden es junio, julio, agosto: julio queda en medio.",
+   "id": "hist1-oa01-10"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Qué hoja sigue a la de septiembre?",
+   "opciones": [
+    "octubre",
+    "agosto",
+    "noviembre",
+    "diciembre"
+   ],
+   "correcta": 0,
+   "tip": "Después de septiembre viene octubre, y después noviembre.",
+   "id": "hist1-oa01-11"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Qué mes viene justo antes de diciembre?",
+   "opciones": [
+    "noviembre",
+    "octubre",
+    "enero",
+    "septiembre"
+   ],
+   "correcta": 0,
+   "tip": "Los últimos meses del año son octubre, noviembre y diciembre.",
+   "id": "hist1-oa01-12"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "En la semana, ¿qué día va antes del jueves?",
+   "opciones": [
+    "el miércoles",
+    "el viernes",
+    "el martes",
+    "el sábado"
+   ],
+   "correcta": 0,
+   "tip": "La semana va lunes, martes, miércoles, jueves: el miércoles está justo antes.",
+   "id": "hist1-oa01-13"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Qué día viene justo después del viernes?",
+   "opciones": [
+    "el sábado",
+    "el jueves",
+    "el domingo",
+    "el lunes"
+   ],
+   "correcta": 0,
+   "tip": "Después del viernes viene el sábado, y después el domingo.",
+   "id": "hist1-oa01-14"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "Termina diciembre y llega enero. ¿Qué cambia?",
+   "opciones": [
+    "cambia el año",
+    "cambia la hora",
+    "llega el invierno",
+    "no cambia nada"
+   ],
+   "correcta": 0,
+   "tip": "Con enero empieza un año nuevo. En Chile el invierno llega a mitad de año, en junio.",
+   "id": "hist1-oa01-15"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Qué número cambia en el calendario cada año?",
+   "opciones": [
+    "el número del año",
+    "cuántos meses hay",
+    "cuántas hojas tiene",
+    "cuántos días tiene la semana"
+   ],
+   "correcta": 0,
+   "tip": "Cada año tiene su número, que va cambiando. Los meses, y las hojas, siguen siendo 12, y la semana sigue teniendo 7 días.",
+   "id": "hist1-oa01-16"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Sirve el calendario del año pasado para este año?",
+   "opciones": [
+    "no, es de otro año",
+    "sí, es igual",
+    "sí, si es bonito",
+    "solo en verano"
+   ],
+   "correcta": 0,
+   "tip": "Cada año los días caen distinto, por eso cada año se usa un calendario nuevo.",
+   "id": "hist1-oa01-17"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "Benja escribe la fecha completa. ¿Qué va al final?",
+   "opciones": [
+    "el año",
+    "la hora",
+    "su nombre",
+    "su curso"
+   ],
+   "correcta": 0,
+   "tip": "Una fecha completa dice el día, el mes y al final el año.",
+   "id": "hist1-oa01-18"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "«Lunes 4 de mayo». ¿Qué palabra es el mes?",
+   "opciones": [
+    "mayo",
+    "lunes",
+    "el cuatro",
+    "la fecha"
+   ],
+   "correcta": 0,
+   "tip": "Mayo es el mes. Lunes es el día de la semana y el 4 es el número del día.",
+   "id": "hist1-oa01-19"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "«Martes 9 de junio»: ¿qué día de la semana es?",
+   "opciones": [
+    "martes",
+    "junio",
+    "el nueve",
+    "la hoja"
+   ],
+   "correcta": 0,
+   "tip": "Martes es el día de la semana. Junio es el mes.",
+   "id": "hist1-oa01-20"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "En la fecha «martes 9 de junio», ¿qué es el 9?",
+   "opciones": [
+    "el número del día",
+    "el mes",
+    "el año",
+    "la hora"
+   ],
+   "correcta": 0,
+   "tip": "El 9 dice qué día del mes es: el noveno día de junio.",
+   "id": "hist1-oa01-21"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "Ana busca el 5 de mayo. ¿En qué hoja lo busca?",
+   "opciones": [
+    "en la de mayo",
+    "en la de marzo",
+    "en la de junio",
+    "en la primera"
+   ],
+   "correcta": 0,
+   "tip": "Cada fecha está en la hoja de su mes. La primera hoja es enero.",
+   "id": "hist1-oa01-22"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "Tres cuadritos del calendario son…",
+   "opciones": [
+    "tres días",
+    "tres meses",
+    "tres semanas",
+    "tres años"
+   ],
+   "correcta": 0,
+   "tip": "Cada cuadrito del calendario es un día, así que tres cuadritos son tres días.",
+   "id": "hist1-oa01-23"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "En marzo, Leo da vuelta la hoja del calendario. ¿Qué empieza?",
+   "opciones": [
+    "otro mes",
+    "otra hora",
+    "otro año",
+    "otro minuto"
+   ],
+   "correcta": 0,
+   "tip": "Al dar vuelta la hoja se pasa al mes siguiente.",
+   "id": "hist1-oa01-24"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "Camila anota el paseo en el calendario. ¿Para qué?",
+   "opciones": [
+    "para no olvidarlo",
+    "para saber la hora",
+    "para pintar la hoja",
+    "para ver el clima"
+   ],
+   "correcta": 0,
+   "tip": "Anotar en el calendario sirve para recordar lo que va a pasar y cuándo.",
+   "id": "hist1-oa01-25"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "En el calendario, el feriado va en rojo. ¿Qué es?",
+   "opciones": [
+    "un día de descanso",
+    "un día de prueba",
+    "un día de lluvia",
+    "un día de clases"
+   ],
+   "correcta": 0,
+   "tip": "Un feriado es un día de descanso: no hay clases y mucha gente no trabaja.",
+   "id": "hist1-oa01-26"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Cada cuánto está de cumpleaños Lucía?",
+   "opciones": [
+    "una vez al año",
+    "una vez al mes",
+    "cada semana",
+    "todos los días"
+   ],
+   "correcta": 0,
+   "tip": "El cumpleaños llega una vez al año, siempre en la misma fecha.",
+   "id": "hist1-oa01-27"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "Diego nada todos los sábados. ¿Cada cuánto va?",
+   "opciones": [
+    "una vez por semana",
+    "una vez al año",
+    "todos los días",
+    "una vez al mes"
+   ],
+   "correcta": 0,
+   "tip": "Cada semana tiene un sábado, así que Diego va una vez por semana.",
+   "id": "hist1-oa01-28"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Qué es más largo: una semana o un año?",
+   "opciones": [
+    "un año",
+    "una semana",
+    "son iguales",
+    "depende del día"
+   ],
+   "correcta": 0,
+   "tip": "Un año tiene muchas semanas: es mucho más largo que una semana.",
+   "id": "hist1-oa01-29"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Qué dura más: un mes o un día?",
+   "opciones": [
+    "un mes",
+    "un día",
+    "duran lo mismo",
+    "depende del mes"
+   ],
+   "correcta": 0,
+   "tip": "Un mes tiene muchos días, unos treinta, así que dura mucho más que un día.",
+   "id": "hist1-oa01-30"
+  }
+ ]
+}

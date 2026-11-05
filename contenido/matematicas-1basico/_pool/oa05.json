@@ -1,0 +1,464 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Sin contar uno a uno, ¿cuántas manzanas hay?",
+   "opciones": [
+    "Unas 10",
+    "Unas 20",
+    "Unas 2",
+    "Unas 50"
+   ],
+   "correcta": 0,
+   "tip": "Son doce manzanas, y doce está muy cerca de diez. Veinte sería casi el doble de las que ves.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 1,
+    "porGrupo": 12,
+    "emoji": "🍎",
+    "estimar": true
+   },
+   "id": "mate1-oa05-1"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "A ojo, ¿cuántas estrellas hay en el dibujo?",
+   "opciones": [
+    "Unas 20",
+    "Unas 10",
+    "Unas 5",
+    "Unas 50"
+   ],
+   "correcta": 0,
+   "tip": "Hay dos grupos casi de diez: eso se acerca a veinte. Diez sería solo uno de los grupos.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 2,
+    "porGrupo": 9,
+    "emoji": "⭐",
+    "estimar": true
+   },
+   "id": "mate1-oa05-2"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Un grupo tiene 5 peces. ¿Cuántos hay en total?",
+   "opciones": [
+    "Unos 15",
+    "Unos 8",
+    "Unos 5",
+    "Unos 50"
+   ],
+   "correcta": 0,
+   "tip": "Hay tres grupos como ese: cinco, diez, quince. Ocho sale de juntar el cinco con los tres grupos, y eso no es lo mismo.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 3,
+    "porGrupo": 5,
+    "emoji": "🐟",
+    "estimar": true
+   },
+   "id": "mate1-oa05-3"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Cada grupo tiene 5 globos. ¿Y todos juntos?",
+   "opciones": [
+    "Unos 20",
+    "Unos 9",
+    "Unos 5",
+    "Unos 50"
+   ],
+   "correcta": 0,
+   "tip": "Son cuatro grupos de cinco: cinco, diez, quince, veinte. Cinco son los globos de un solo grupo.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 4,
+    "porGrupo": 5,
+    "emoji": "🎈",
+    "estimar": true
+   },
+   "id": "mate1-oa05-4"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Más o menos, ¿cuántas frutillas hay?",
+   "opciones": [
+    "Unas 15",
+    "Unas 5",
+    "Unas 30",
+    "Unas 50"
+   ],
+   "correcta": 0,
+   "tip": "Son dieciséis frutillas, muy cerca de quince. Treinta sería casi el doble.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 2,
+    "porGrupo": 8,
+    "emoji": "🍓",
+    "estimar": true
+   },
+   "id": "mate1-oa05-5"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Calcula a ojo: ¿cuántas tortugas ves?",
+   "opciones": [
+    "Unas 10",
+    "Unas 20",
+    "Unas 2",
+    "Unas 50"
+   ],
+   "correcta": 0,
+   "tip": "Hay once tortugas, apenas una más que diez. Veinte sería casi el doble.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 1,
+    "porGrupo": 11,
+    "emoji": "🐢",
+    "estimar": true
+   },
+   "id": "mate1-oa05-6"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Los autos van de a 5. ¿Cuántos hay, más o menos?",
+   "opciones": [
+    "Unos 10",
+    "Unos 7",
+    "Unos 5",
+    "Unos 20"
+   ],
+   "correcta": 0,
+   "tip": "Son dos grupos de cinco autos: cinco y cinco más son diez.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 2,
+    "porGrupo": 5,
+    "emoji": "🚗",
+    "estimar": true
+   },
+   "id": "mate1-oa05-7"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Una mano llena tiene unos 5 porotos. ¿Y 2 manos?",
+   "opciones": [
+    "Unos 10",
+    "Unos 7",
+    "Unos 5",
+    "Unos 50"
+   ],
+   "correcta": 0,
+   "tip": "Dos manos llenas son cinco y otros cinco: unos diez. Siete sale de juntar el cinco con el dos, que es otra cosa.",
+   "id": "mate1-oa05-8"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Un vaso tiene unos 10 dulces. ¿Y 2 vasos?",
+   "opciones": [
+    "Unos 20",
+    "Unos 12",
+    "Unos 10",
+    "Unos 100"
+   ],
+   "correcta": 0,
+   "tip": "Dos vasos son diez y otros diez: unos veinte dulces. Doce sale de juntar el diez con el dos.",
+   "id": "mate1-oa05-9"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Medio vaso tiene unos 5 dulces. ¿Y el vaso lleno?",
+   "opciones": [
+    "Unos 10",
+    "Unos 5",
+    "Unos 2",
+    "Unos 50"
+   ],
+   "correcta": 0,
+   "tip": "Un vaso lleno son dos mitades: cinco y otros cinco, unos diez.",
+   "id": "mate1-oa05-10"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Un frasco lleno tiene 20 botones. ¿Y a la mitad?",
+   "opciones": [
+    "Unos 10",
+    "Unos 20",
+    "Unos 2",
+    "Unos 40"
+   ],
+   "correcta": 0,
+   "tip": "La mitad es una de dos partes iguales: veinte se parte en diez y diez.",
+   "id": "mate1-oa05-11"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Una fila tiene 5 niños. ¿Y 3 filas iguales?",
+   "opciones": [
+    "Unos 15",
+    "Unos 8",
+    "Unos 3",
+    "Unos 50"
+   ],
+   "correcta": 0,
+   "tip": "Tres filas de cinco: cinco, diez, quince. Ocho sale de juntar el cinco con el tres.",
+   "id": "mate1-oa05-12"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Ana dijo unas 10 tapas y eran 9. ¿Estimó bien?",
+   "opciones": [
+    "Sí, se acercó mucho",
+    "No, porque no fue exacta",
+    "No, se pasó por mucho",
+    "No, le faltaron muchas"
+   ],
+   "correcta": 0,
+   "tip": "Estimar no es adivinar el número exacto: es decir uno cercano. Diez está a solo uno del nueve.",
+   "id": "mate1-oa05-13"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Leo dijo unas 5 hojas y eran 19. ¿Estimó bien?",
+   "opciones": [
+    "No, quedó muy lejos",
+    "Sí, se acercó mucho",
+    "Sí, fue exacta",
+    "No, se pasó por mucho"
+   ],
+   "correcta": 0,
+   "tip": "Cinco está muy lejos de diecinueve. Leo no se pasó: le faltaron muchas hojas.",
+   "id": "mate1-oa05-14"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Había 18 bolitas. ¿Qué estimación fue mejor?",
+   "opciones": [
+    "Unas 20",
+    "Unas 5",
+    "Unas 50",
+    "Unas 2"
+   ],
+   "correcta": 0,
+   "tip": "Veinte está a solo dos del dieciocho. Las otras quedan mucho más lejos.",
+   "id": "mate1-oa05-15"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Una fila de 10 sillas. ¿Y una un poco más larga?",
+   "opciones": [
+    "Unas 12",
+    "Unas 5",
+    "Unas 2",
+    "Unas 50"
+   ],
+   "correcta": 0,
+   "tip": "Un poco más larga que diez quiere decir un poco más de diez sillas, como doce.",
+   "id": "mate1-oa05-16"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Una fila de 10 sillas. ¿Y una mucho más corta?",
+   "opciones": [
+    "Unas 3",
+    "Unas 12",
+    "Unas 20",
+    "Unas 15"
+   ],
+   "correcta": 0,
+   "tip": "Mucho más corta que diez quiere decir muy pocas sillas, como tres. Doce, quince y veinte son más que diez.",
+   "id": "mate1-oa05-17"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "¿Qué ayuda a estimar rápido cuántos hay?",
+   "opciones": [
+    "Contar unos pocos",
+    "Contar todos, uno a uno",
+    "Cerrar los ojos",
+    "Decir un número cualquiera"
+   ],
+   "correcta": 0,
+   "tip": "Si cuentas unos pocos, te sirven de guía para el resto. Contarlos todos uno a uno no es estimar: es contar.",
+   "id": "mate1-oa05-18"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Cuando estimas, ¿qué número dices?",
+   "opciones": [
+    "Uno cercano",
+    "Uno al azar",
+    "Siempre el diez",
+    "Siempre el más grande"
+   ],
+   "correcta": 0,
+   "tip": "Estimar es decir un número que quede cerca de la cantidad real, aunque no sea exacto.",
+   "id": "mate1-oa05-19"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Un paquete trae unas 5 galletas. ¿Y 4 paquetes?",
+   "opciones": [
+    "Unas 20",
+    "Unas 9",
+    "Unas 4",
+    "Unas 50"
+   ],
+   "correcta": 0,
+   "tip": "Cuatro paquetes de cinco: cinco, diez, quince, veinte. Nueve sale de juntar el cinco con el cuatro.",
+   "id": "mate1-oa05-20"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Diego da 10 pasos a la puerta. ¿Y a la mitad?",
+   "opciones": [
+    "Unos 5",
+    "Unos 10",
+    "Unos 20",
+    "Unos 50"
+   ],
+   "correcta": 0,
+   "tip": "La mitad del camino es la mitad de los pasos: diez se parte en cinco y cinco.",
+   "id": "mate1-oa05-21"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Hasta la reja hay el doble de 10 pasos. ¿Cuántos?",
+   "opciones": [
+    "Unos 20",
+    "Unos 12",
+    "Unos 10",
+    "Unos 5"
+   ],
+   "correcta": 0,
+   "tip": "El doble es dos veces la misma cantidad: diez y diez más son veinte.",
+   "id": "mate1-oa05-22"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "De 10 lápices sacan casi todos. ¿Cuántos quedan?",
+   "opciones": [
+    "Unos 2",
+    "Unos 10",
+    "Unos 20",
+    "Unos 12"
+   ],
+   "correcta": 0,
+   "tip": "Si sacaron casi todos, quedan muy pocos, como dos. Diez o más sería no haber sacado nada.",
+   "id": "mate1-oa05-23"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Una caja tiene 10 lápices. ¿Y casi 2 cajas?",
+   "opciones": [
+    "Unos 20",
+    "Unos 12",
+    "Unos 2",
+    "Unos 50"
+   ],
+   "correcta": 0,
+   "tip": "Dos cajas serían veinte lápices; casi dos cajas es un poco menos, cerca de veinte. Doce sale de juntar el diez con el dos.",
+   "id": "mate1-oa05-24"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Pía dijo unos 15 lápices y eran 16. ¿Le fue bien?",
+   "opciones": [
+    "Sí, quedó muy cerca",
+    "No, debía decir 16",
+    "No, quedó muy lejos",
+    "No, se pasó por mucho"
+   ],
+   "correcta": 0,
+   "tip": "Quince está a solo uno de dieciséis: es una muy buena estimación, aunque no sea exacta.",
+   "id": "mate1-oa05-25"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Javiera dijo unas 20 uvas y eran 6. ¿Le fue bien?",
+   "opciones": [
+    "No, se pasó por mucho",
+    "Sí, quedó muy cerca",
+    "No, le faltaron muchas",
+    "Sí, fue exacta"
+   ],
+   "correcta": 0,
+   "tip": "Veinte es mucho más que seis: Javiera se pasó por mucho.",
+   "id": "mate1-oa05-26"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Sin contar, ¿cuántas galletas hay, más o menos?",
+   "opciones": [
+    "Como 10",
+    "Como 20",
+    "Como 2",
+    "Como 50"
+   ],
+   "correcta": 0,
+   "tip": "Son dos grupos de seis, o sea doce galletas, muy cerca de diez.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 2,
+    "porGrupo": 6,
+    "emoji": "🍪",
+    "estimar": true
+   },
+   "id": "mate1-oa05-27"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Mira las pelotas. ¿Cuántas hay, más o menos?",
+   "opciones": [
+    "Cerca de 20",
+    "Cerca de 10",
+    "Cerca de 5",
+    "Cerca de 50"
+   ],
+   "correcta": 0,
+   "tip": "Son tres grupos de seis, dieciocho pelotas. Dieciocho está más cerca de veinte que de diez.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 3,
+    "porGrupo": 6,
+    "emoji": "⚽",
+    "estimar": true
+   },
+   "id": "mate1-oa05-28"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "A simple vista, ¿cuántas chinitas hay?",
+   "opciones": [
+    "Unas 10",
+    "Unas 2",
+    "Unas 20",
+    "Unas 50"
+   ],
+   "correcta": 0,
+   "tip": "Son nueve chinitas, muy cerca de diez. Veinte sería más del doble.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 1,
+    "porGrupo": 9,
+    "emoji": "🐞",
+    "estimar": true
+   },
+   "id": "mate1-oa05-29"
+  },
+  {
+   "oa": "MA01 OA 05",
+   "pregunta": "Una bolsa trae unos 10 dulces. ¿Y media bolsa?",
+   "opciones": [
+    "Unos 5",
+    "Unos 10",
+    "Unos 20",
+    "Unos 8"
+   ],
+   "correcta": 0,
+   "tip": "Media bolsa es la mitad: diez se parte en cinco y cinco. Ocho queda cerca de diez, no de la mitad.",
+   "id": "mate1-oa05-30"
+  }
+ ]
+}

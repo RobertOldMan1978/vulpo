@@ -1,0 +1,6248 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Para qué sirve un calendario?",
+   "opciones": [
+    "para medir el largo",
+    "para saber la hora",
+    "para sumar números",
+    "para ver las fechas"
+   ],
+   "correcta": 3,
+   "tip": "El calendario muestra los días, las semanas y los meses del año. La hora se mira en el reloj.",
+   "revisada": false,
+   "id": "hist1-oa01-1"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "Un calendario tiene 12 hojas. ¿Qué es cada hoja?",
+   "opciones": [
+    "un año entero",
+    "una semana",
+    "un mes",
+    "un día"
+   ],
+   "correcta": 2,
+   "tip": "Cada hoja del calendario es un mes, y el año tiene 12 meses: por eso son 12 hojas.",
+   "revisada": false,
+   "id": "hist1-oa01-2"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "En la hoja del mes, ¿qué es cada cuadrito?",
+   "opciones": [
+    "un mes",
+    "una semana",
+    "una hora",
+    "un día"
+   ],
+   "correcta": 3,
+   "tip": "En la hoja de un mes hay un cuadrito para cada día, con su número.",
+   "revisada": false,
+   "id": "hist1-oa01-3"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "En el calendario, ¿qué es una fila de días?",
+   "opciones": [
+    "un mes entero",
+    "un año",
+    "una semana",
+    "una tarde"
+   ],
+   "correcta": 2,
+   "tip": "Cada fila del calendario tiene siete días, de lunes a domingo: es una semana.",
+   "revisada": false,
+   "id": "hist1-oa01-4"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Qué dice arriba de la hoja del calendario?",
+   "opciones": [
+    "la hora del día",
+    "el nombre del niño",
+    "el número de casa",
+    "el nombre del mes"
+   ],
+   "correcta": 3,
+   "tip": "Arriba de cada hoja va el nombre del mes, para saber qué mes estamos mirando.",
+   "revisada": false,
+   "id": "hist1-oa01-5"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Qué objeto nos muestra el año en que estamos?",
+   "opciones": [
+    "el reloj",
+    "el termómetro",
+    "la regla",
+    "el calendario"
+   ],
+   "correcta": 3,
+   "tip": "El calendario muestra el año en que estamos. El reloj da la hora y la regla mide el largo.",
+   "revisada": false,
+   "id": "hist1-oa01-6"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Cuál es el primer mes del año?",
+   "opciones": [
+    "diciembre",
+    "marzo",
+    "enero",
+    "febrero"
+   ],
+   "correcta": 2,
+   "tip": "El año empieza en enero, aunque las clases empiecen en marzo.",
+   "revisada": false,
+   "id": "hist1-oa01-7"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Qué mes está en la última hoja del calendario?",
+   "opciones": [
+    "enero",
+    "octubre",
+    "diciembre",
+    "noviembre"
+   ],
+   "correcta": 2,
+   "tip": "El año termina en diciembre. Después viene enero y empieza otro año.",
+   "revisada": false,
+   "id": "hist1-oa01-8"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "En el calendario, ¿qué mes viene después de marzo?",
+   "opciones": [
+    "abril",
+    "febrero",
+    "mayo",
+    "junio"
+   ],
+   "correcta": 0,
+   "tip": "Los meses van en orden: marzo, abril, mayo, junio…",
+   "revisada": false,
+   "id": "hist1-oa01-9"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Qué mes va entre junio y agosto?",
+   "opciones": [
+    "septiembre",
+    "enero",
+    "julio",
+    "mayo"
+   ],
+   "correcta": 2,
+   "tip": "El orden es junio, julio, agosto: julio queda en medio.",
+   "revisada": false,
+   "id": "hist1-oa01-10"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Qué hoja sigue a la de septiembre?",
+   "opciones": [
+    "noviembre",
+    "agosto",
+    "diciembre",
+    "octubre"
+   ],
+   "correcta": 3,
+   "tip": "Después de septiembre viene octubre, y después noviembre.",
+   "revisada": false,
+   "id": "hist1-oa01-11"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Qué mes viene justo antes de diciembre?",
+   "opciones": [
+    "septiembre",
+    "enero",
+    "octubre",
+    "noviembre"
+   ],
+   "correcta": 3,
+   "tip": "Los últimos meses del año son octubre, noviembre y diciembre.",
+   "revisada": false,
+   "id": "hist1-oa01-12"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "En la semana, ¿qué día va antes del jueves?",
+   "opciones": [
+    "el sábado",
+    "el viernes",
+    "el miércoles",
+    "el martes"
+   ],
+   "correcta": 2,
+   "tip": "La semana va lunes, martes, miércoles, jueves: el miércoles está justo antes.",
+   "revisada": false,
+   "id": "hist1-oa01-13"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Qué día viene justo después del viernes?",
+   "opciones": [
+    "el domingo",
+    "el lunes",
+    "el jueves",
+    "el sábado"
+   ],
+   "correcta": 3,
+   "tip": "Después del viernes viene el sábado, y después el domingo.",
+   "revisada": false,
+   "id": "hist1-oa01-14"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "Termina diciembre y llega enero. ¿Qué cambia?",
+   "opciones": [
+    "cambia el año",
+    "cambia la hora",
+    "no cambia nada",
+    "llega el invierno"
+   ],
+   "correcta": 0,
+   "tip": "Con enero empieza un año nuevo. En Chile el invierno llega a mitad de año, en junio.",
+   "revisada": false,
+   "id": "hist1-oa01-15"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Qué número cambia en el calendario cada año?",
+   "opciones": [
+    "cuántos días tiene la semana",
+    "el número del año",
+    "cuántas hojas tiene",
+    "cuántos meses hay"
+   ],
+   "correcta": 1,
+   "tip": "Cada año tiene su número, que va cambiando. Los meses, y las hojas, siguen siendo 12, y la semana sigue teniendo 7 días.",
+   "revisada": false,
+   "id": "hist1-oa01-16"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Sirve el calendario del año pasado para este año?",
+   "opciones": [
+    "sí, es igual",
+    "solo en verano",
+    "sí, si es bonito",
+    "no, es de otro año"
+   ],
+   "correcta": 3,
+   "tip": "Cada año los días caen distinto, por eso cada año se usa un calendario nuevo.",
+   "revisada": false,
+   "id": "hist1-oa01-17"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "Benja escribe la fecha completa. ¿Qué va al final?",
+   "opciones": [
+    "la hora",
+    "su curso",
+    "el año",
+    "su nombre"
+   ],
+   "correcta": 2,
+   "tip": "Una fecha completa dice el día, el mes y al final el año.",
+   "revisada": false,
+   "id": "hist1-oa01-18"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "«Lunes 4 de mayo». ¿Qué palabra es el mes?",
+   "opciones": [
+    "la fecha",
+    "el cuatro",
+    "lunes",
+    "mayo"
+   ],
+   "correcta": 3,
+   "tip": "Mayo es el mes. Lunes es el día de la semana y el 4 es el número del día.",
+   "revisada": false,
+   "id": "hist1-oa01-19"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "«Martes 9 de junio»: ¿qué día de la semana es?",
+   "opciones": [
+    "martes",
+    "junio",
+    "el nueve",
+    "la hoja"
+   ],
+   "correcta": 0,
+   "tip": "Martes es el día de la semana. Junio es el mes.",
+   "revisada": false,
+   "id": "hist1-oa01-20"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "En la fecha «martes 9 de junio», ¿qué es el 9?",
+   "opciones": [
+    "el número del día",
+    "el año",
+    "la hora",
+    "el mes"
+   ],
+   "correcta": 0,
+   "tip": "El 9 dice qué día del mes es: el noveno día de junio.",
+   "revisada": false,
+   "id": "hist1-oa01-21"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "Ana busca el 5 de mayo. ¿En qué hoja lo busca?",
+   "opciones": [
+    "en la de mayo",
+    "en la primera",
+    "en la de junio",
+    "en la de marzo"
+   ],
+   "correcta": 0,
+   "tip": "Cada fecha está en la hoja de su mes. La primera hoja es enero.",
+   "revisada": false,
+   "id": "hist1-oa01-22"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "Tres cuadritos del calendario son…",
+   "opciones": [
+    "tres meses",
+    "tres años",
+    "tres semanas",
+    "tres días"
+   ],
+   "correcta": 3,
+   "tip": "Cada cuadrito del calendario es un día, así que tres cuadritos son tres días.",
+   "revisada": false,
+   "id": "hist1-oa01-23"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "En marzo, Leo da vuelta la hoja del calendario. ¿Qué empieza?",
+   "opciones": [
+    "otro año",
+    "otro minuto",
+    "otro mes",
+    "otra hora"
+   ],
+   "correcta": 2,
+   "tip": "Al dar vuelta la hoja se pasa al mes siguiente.",
+   "revisada": false,
+   "id": "hist1-oa01-24"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "Camila anota el paseo en el calendario. ¿Para qué?",
+   "opciones": [
+    "para pintar la hoja",
+    "para no olvidarlo",
+    "para saber la hora",
+    "para ver el clima"
+   ],
+   "correcta": 1,
+   "tip": "Anotar en el calendario sirve para recordar lo que va a pasar y cuándo.",
+   "revisada": false,
+   "id": "hist1-oa01-25"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "En el calendario, el feriado va en rojo. ¿Qué es?",
+   "opciones": [
+    "un día de prueba",
+    "un día de clases",
+    "un día de descanso",
+    "un día de lluvia"
+   ],
+   "correcta": 2,
+   "tip": "Un feriado es un día de descanso: no hay clases y mucha gente no trabaja.",
+   "revisada": false,
+   "id": "hist1-oa01-26"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Cada cuánto está de cumpleaños Lucía?",
+   "opciones": [
+    "todos los días",
+    "cada semana",
+    "una vez al mes",
+    "una vez al año"
+   ],
+   "correcta": 3,
+   "tip": "El cumpleaños llega una vez al año, siempre en la misma fecha.",
+   "revisada": false,
+   "id": "hist1-oa01-27"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "Diego nada todos los sábados. ¿Cada cuánto va?",
+   "opciones": [
+    "una vez al año",
+    "una vez al mes",
+    "una vez por semana",
+    "todos los días"
+   ],
+   "correcta": 2,
+   "tip": "Cada semana tiene un sábado, así que Diego va una vez por semana.",
+   "revisada": false,
+   "id": "hist1-oa01-28"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Qué es más largo: una semana o un año?",
+   "opciones": [
+    "depende del día",
+    "una semana",
+    "un año",
+    "son iguales"
+   ],
+   "correcta": 2,
+   "tip": "Un año tiene muchas semanas: es mucho más largo que una semana.",
+   "revisada": false,
+   "id": "hist1-oa01-29"
+  },
+  {
+   "oa": "HI01 OA 01",
+   "pregunta": "¿Qué dura más: un mes o un día?",
+   "opciones": [
+    "un mes",
+    "un día",
+    "duran lo mismo",
+    "depende del mes"
+   ],
+   "correcta": 0,
+   "tip": "Un mes tiene muchos días, unos treinta, así que dura mucho más que un día.",
+   "revisada": false,
+   "id": "hist1-oa01-30"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "El paseo fue el día antes de hoy. ¿Cuándo fue?",
+   "opciones": [
+    "hoy",
+    "ayer",
+    "pasado mañana",
+    "mañana"
+   ],
+   "correcta": 1,
+   "tip": "El día que ya pasó, justo antes de hoy, se llama ayer.",
+   "revisada": false,
+   "id": "hist1-oa02-1"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Pía cumple años el día después de hoy. ¿Cuándo?",
+   "opciones": [
+    "mañana",
+    "anteayer",
+    "hoy",
+    "ayer"
+   ],
+   "correcta": 0,
+   "tip": "El día que viene después de hoy se llama mañana.",
+   "revisada": false,
+   "id": "hist1-oa02-2"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Diego está comiendo un helado ahora. ¿Cuándo pasa?",
+   "opciones": [
+    "hoy",
+    "ayer",
+    "mañana",
+    "el año pasado"
+   ],
+   "correcta": 0,
+   "tip": "Lo que pasa ahora, en este día, pasa hoy.",
+   "revisada": false,
+   "id": "hist1-oa02-3"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "¿Qué le pasó primero a Sofía?",
+   "opciones": [
+    "caminó",
+    "aprendió a leer",
+    "nació",
+    "fue al colegio"
+   ],
+   "correcta": 2,
+   "tip": "Primero nacemos. Después, de a poco, aprendemos a caminar, a hablar y a leer.",
+   "revisada": false,
+   "id": "hist1-oa02-4"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Tomás fue bebé; hoy va al colegio. ¿Qué fue antes?",
+   "opciones": [
+    "ir al colegio",
+    "aprender a leer",
+    "ser bebé",
+    "jugar fútbol"
+   ],
+   "correcta": 2,
+   "tip": "Todos fuimos bebés antes de crecer e ir al colegio.",
+   "revisada": false,
+   "id": "hist1-oa02-5"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Benja ve la luna y las estrellas. ¿Cuándo es?",
+   "opciones": [
+    "de día",
+    "al mediodía",
+    "en la mañana",
+    "de noche"
+   ],
+   "correcta": 3,
+   "tip": "La luna y las estrellas se ven mejor de noche, cuando el cielo está oscuro.",
+   "revisada": false,
+   "id": "hist1-oa02-6"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Luis almuerza con el sol arriba. ¿Cuándo es?",
+   "opciones": [
+    "de noche",
+    "de día",
+    "a medianoche",
+    "de madrugada"
+   ],
+   "correcta": 1,
+   "tip": "El almuerzo es al mediodía, de día, cuando hay luz del sol.",
+   "revisada": false,
+   "id": "hist1-oa02-7"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Después del almuerzo y antes de la noche es…",
+   "opciones": [
+    "la tarde",
+    "la madrugada",
+    "la mañana",
+    "la medianoche"
+   ],
+   "correcta": 0,
+   "tip": "El día se ordena así: la mañana, el mediodía, la tarde y después la noche.",
+   "revisada": false,
+   "id": "hist1-oa02-8"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Con el sol recién saliendo, ¿qué parte del día es?",
+   "opciones": [
+    "la tarde",
+    "la mañana",
+    "la medianoche",
+    "la noche"
+   ],
+   "correcta": 1,
+   "tip": "Cuando el sol sale empieza la mañana.",
+   "revisada": false,
+   "id": "hist1-oa02-9"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Termina la tarde y oscurece. ¿Qué empieza?",
+   "opciones": [
+    "el almuerzo",
+    "la mañana",
+    "el mediodía",
+    "la noche"
+   ],
+   "correcta": 3,
+   "tip": "Después de la tarde, cuando se pone el sol, empieza la noche.",
+   "revisada": false,
+   "id": "hist1-oa02-10"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Este año Rosa está en primero. ¿Y el año pasado?",
+   "opciones": [
+    "en cuarto",
+    "en segundo",
+    "en kínder",
+    "en tercero"
+   ],
+   "correcta": 2,
+   "tip": "El año pasado es el que ya terminó. Antes de primero se va a kínder.",
+   "revisada": false,
+   "id": "hist1-oa02-11"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Este año Lucas va a primero. ¿Y el año próximo?",
+   "opciones": [
+    "a tercero",
+    "a kínder",
+    "a segundo",
+    "a cuarto"
+   ],
+   "correcta": 2,
+   "tip": "El año próximo es el que viene. Después de primero se pasa a segundo.",
+   "revisada": false,
+   "id": "hist1-oa02-12"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "El año pasado Ema cumplió 5. Este año cumple…",
+   "opciones": [
+    "7",
+    "5",
+    "4",
+    "6"
+   ],
+   "correcta": 3,
+   "tip": "Cada año cumplimos uno más. Si el año pasado cumplió 5, este año cumple 6.",
+   "revisada": false,
+   "id": "hist1-oa02-13"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Al año que ya terminó le decimos…",
+   "opciones": [
+    "el año nuevo",
+    "el año pasado",
+    "este año",
+    "el año próximo"
+   ],
+   "correcta": 1,
+   "tip": "El año que ya terminó es el año pasado. El que viene es el año próximo.",
+   "revisada": false,
+   "id": "hist1-oa02-14"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Al año que todavía no empieza le decimos…",
+   "opciones": [
+    "el año pasado",
+    "el año próximo",
+    "el mes pasado",
+    "este año"
+   ],
+   "correcta": 1,
+   "tip": "El año que viene después de este se llama el año próximo.",
+   "revisada": false,
+   "id": "hist1-oa02-15"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Ayer Ana fue al cine; hoy, a la playa. ¿Qué fue antes?",
+   "opciones": [
+    "dormir siesta",
+    "el cine",
+    "quedarse en casa",
+    "la playa"
+   ],
+   "correcta": 1,
+   "tip": "Ayer viene antes que hoy, así que Ana fue primero al cine.",
+   "revisada": false,
+   "id": "hist1-oa02-16"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Mañana Pedro irá al dentista. ¿Ya fue?",
+   "opciones": [
+    "sí, hace un mes",
+    "sí, ayer",
+    "sí, hoy temprano",
+    "no, todavía no"
+   ],
+   "correcta": 3,
+   "tip": "Mañana es el día que viene, así que eso todavía no ha pasado.",
+   "revisada": false,
+   "id": "hist1-oa02-17"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Joaquín se pone los calcetines. ¿Qué va después?",
+   "opciones": [
+    "el pijama",
+    "el traje de baño",
+    "los zapatos",
+    "la toalla"
+   ],
+   "correcta": 2,
+   "tip": "Al vestirse, los zapatos van después de los calcetines.",
+   "revisada": false,
+   "id": "hist1-oa02-18"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "La abuela de Iván fue niña. ¿Qué vino después?",
+   "opciones": [
+    "fue a sala cuna",
+    "creció y fue grande",
+    "fue bebé",
+    "nació"
+   ],
+   "correcta": 1,
+   "tip": "Primero se nace, se es bebé y niña, y después se crece hasta ser grande.",
+   "revisada": false,
+   "id": "hist1-oa02-19"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Tomás tiene 6 y su hermana 1. ¿Quién nació antes?",
+   "opciones": [
+    "su hermana",
+    "nacieron juntos",
+    "no se sabe",
+    "Tomás"
+   ],
+   "correcta": 3,
+   "tip": "Quien tiene más años nació antes: Tomás nació mucho antes que su hermana.",
+   "revisada": false,
+   "id": "hist1-oa02-20"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "El hermano de Leo nació antes que él. ¿Qué es Leo?",
+   "opciones": [
+    "el primero",
+    "el mayor",
+    "el abuelo",
+    "el menor"
+   ],
+   "correcta": 3,
+   "tip": "Si el hermano nació antes, el hermano es el mayor y Leo es el menor.",
+   "revisada": false,
+   "id": "hist1-oa02-21"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Hoy es el acto y ayer el ensayo. ¿Qué fue antes?",
+   "opciones": [
+    "el acto",
+    "ninguno",
+    "los dos juntos",
+    "el ensayo"
+   ],
+   "correcta": 3,
+   "tip": "Ayer viene antes que hoy, por eso el ensayo fue antes del acto.",
+   "revisada": false,
+   "id": "hist1-oa02-22"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Clara sale de paseo mañana. ¿Cuándo arma la mochila?",
+   "opciones": [
+    "hoy, antes de ir",
+    "pasado mañana",
+    "el año próximo",
+    "después del paseo"
+   ],
+   "correcta": 0,
+   "tip": "La mochila se prepara antes del paseo: hoy, que viene antes que mañana.",
+   "revisada": false,
+   "id": "hist1-oa02-23"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Simón plantó una semilla. ¿Qué pasa después?",
+   "opciones": [
+    "sale una plantita",
+    "se achica más",
+    "se hace una piedra",
+    "da frutos al otro día"
+   ],
+   "correcta": 0,
+   "tip": "Una semilla primero brota y sale una plantita. Los frutos tardan mucho más en llegar.",
+   "revisada": false,
+   "id": "hist1-oa02-24"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "«Anoche» quiere decir…",
+   "opciones": [
+    "esta tarde",
+    "ayer en la noche",
+    "mañana en la noche",
+    "hoy en la mañana"
+   ],
+   "correcta": 1,
+   "tip": "Anoche es la noche de ayer, la que ya pasó.",
+   "revisada": false,
+   "id": "hist1-oa02-25"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Fernanda ve fotos suyas de bebé. ¿Cuándo fue?",
+   "opciones": [
+    "hace mucho tiempo",
+    "hoy en la tarde",
+    "mañana",
+    "el año próximo"
+   ],
+   "correcta": 0,
+   "tip": "Cuando Fernanda era bebé fue hace mucho tiempo, antes de crecer.",
+   "revisada": false,
+   "id": "hist1-oa02-26"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Lo que todavía no pasa, ¿cuándo pasará?",
+   "opciones": [
+    "después",
+    "antes",
+    "ayer",
+    "ya pasó"
+   ],
+   "correcta": 0,
+   "tip": "Lo que todavía no pasa ocurre más adelante, después.",
+   "revisada": false,
+   "id": "hist1-oa02-27"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Es de tarde y el tío llega en la noche. ¿Ya llegó?",
+   "opciones": [
+    "sí, llegó antes",
+    "sí, llegó ayer",
+    "sí, en la mañana",
+    "no, llega después"
+   ],
+   "correcta": 3,
+   "tip": "La noche viene después de la tarde, así que el tío todavía no llega.",
+   "revisada": false,
+   "id": "hist1-oa02-28"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Gaspar cumple 7 el año próximo. ¿Ya los cumplió?",
+   "opciones": [
+    "sí, el año pasado",
+    "sí, hace un mes",
+    "sí, este año",
+    "todavía no"
+   ],
+   "correcta": 3,
+   "tip": "El año próximo es el que viene: ese cumpleaños aún no llega.",
+   "revisada": false,
+   "id": "hist1-oa02-29"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Primero Nicolás fue a kínder. ¿Adónde fue después?",
+   "opciones": [
+    "a medio mayor",
+    "a primero básico",
+    "a sala cuna",
+    "a prekínder"
+   ],
+   "correcta": 1,
+   "tip": "Después de kínder se pasa a primero básico. Prekínder y sala cuna van antes.",
+   "revisada": false,
+   "id": "hist1-oa02-30"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Sofía nació el 3 de mayo. ¿Qué dato es ese?",
+   "opciones": [
+    "su nombre",
+    "su edad",
+    "su dirección",
+    "su fecha de nacimiento"
+   ],
+   "correcta": 3,
+   "tip": "El día y el mes en que alguien nació es su fecha de nacimiento.",
+   "revisada": false,
+   "id": "hist1-oa03-1"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Camilo nació en invierno. ¿Qué nos cuenta eso?",
+   "opciones": [
+    "qué le gusta",
+    "cómo se llama",
+    "cuándo nació",
+    "dónde nació"
+   ],
+   "correcta": 2,
+   "tip": "Decir en qué época del año nació cuenta cuándo nació, no dónde.",
+   "revisada": false,
+   "id": "hist1-oa03-2"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "A Pía le encanta dibujar. ¿Qué cuenta eso de ella?",
+   "opciones": [
+    "su nombre",
+    "cuándo nació",
+    "un gusto suyo",
+    "dónde vive"
+   ],
+   "correcta": 2,
+   "tip": "Lo que a alguien le encanta hacer es uno de sus gustos.",
+   "revisada": false,
+   "id": "hist1-oa03-3"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Rocío lee todo sobre dinosaurios. ¿Qué es eso?",
+   "opciones": [
+    "un interés suyo",
+    "su apellido",
+    "su cumpleaños",
+    "su casa"
+   ],
+   "correcta": 0,
+   "tip": "Algo que nos da curiosidad y nos gusta aprender es un interés.",
+   "revisada": false,
+   "id": "hist1-oa03-4"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Luis juega siempre con Ema. ¿Qué es Ema para Luis?",
+   "opciones": [
+    "su abuela",
+    "su amiga",
+    "su profesora",
+    "su mamá"
+   ],
+   "correcta": 1,
+   "tip": "Con quien jugamos y compartimos seguido es un amigo o una amiga.",
+   "revisada": false,
+   "id": "hist1-oa03-5"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "En la lista del curso, ¿qué dato dice quién es?",
+   "opciones": [
+    "su mochila",
+    "su color favorito",
+    "su nombre",
+    "su estatura"
+   ],
+   "correcta": 2,
+   "tip": "El nombre es lo que nos identifica a cada uno en una lista.",
+   "revisada": false,
+   "id": "hist1-oa03-6"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "¿Qué dato sirve para saber el cumpleaños de Ana?",
+   "opciones": [
+    "su nombre",
+    "su ciudad",
+    "su fecha de nacimiento",
+    "su comida favorita"
+   ],
+   "correcta": 2,
+   "tip": "El cumpleaños se celebra cada año el día de la fecha de nacimiento.",
+   "revisada": false,
+   "id": "hist1-oa03-7"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Antonia cumplió 6 años. ¿Qué dato es ese?",
+   "opciones": [
+    "su barrio",
+    "su fecha de nacimiento",
+    "su apellido",
+    "su edad"
+   ],
+   "correcta": 3,
+   "tip": "Los años que alguien tiene son su edad. La fecha de nacimiento es el día en que nació.",
+   "revisada": false,
+   "id": "hist1-oa03-8"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Se llama Sofía Rojas. ¿Cuál es su apellido?",
+   "opciones": [
+    "Rojas",
+    "Pérez",
+    "Sofía",
+    "Sofía Rojas"
+   ],
+   "correcta": 0,
+   "tip": "El nombre va primero y el apellido después: Sofía es el nombre y Rojas el apellido.",
+   "revisada": false,
+   "id": "hist1-oa03-9"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Se llama Tomás Soto. ¿Cuál es su nombre?",
+   "opciones": [
+    "Soto",
+    "Tomás",
+    "Tomás Soto",
+    "Muñoz"
+   ],
+   "correcta": 1,
+   "tip": "En «Tomás Soto», Tomás es el nombre y Soto es el apellido.",
+   "revisada": false,
+   "id": "hist1-oa03-10"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Benja nació en Perú y vive en Chile. ¿Dónde nació?",
+   "opciones": [
+    "en el colegio",
+    "en Chile",
+    "en un barco",
+    "en Perú"
+   ],
+   "correcta": 3,
+   "tip": "El lugar donde alguien nació puede ser distinto del lugar donde vive ahora.",
+   "revisada": false,
+   "id": "hist1-oa03-11"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Lía nació en Talca y vive en Arica. ¿Dónde vive?",
+   "opciones": [
+    "en Talca",
+    "en un barco",
+    "en Arica",
+    "en el sur"
+   ],
+   "correcta": 2,
+   "tip": "Lía nació en una ciudad y ahora vive en otra: hoy vive en Arica.",
+   "revisada": false,
+   "id": "hist1-oa03-12"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "La abuela de Agus nació en Italia. ¿Qué nos dice?",
+   "opciones": [
+    "qué le gusta",
+    "cómo se llama",
+    "de dónde viene su abuela",
+    "cuántos años tiene"
+   ],
+   "correcta": 2,
+   "tip": "Saber dónde nacieron las personas de la familia cuenta de dónde viene esa familia.",
+   "revisada": false,
+   "id": "hist1-oa03-13"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "¿Qué dato cuenta un gusto de Nico?",
+   "opciones": [
+    "se llama Nicolás",
+    "le encanta nadar",
+    "vive en Talca",
+    "nació en marzo"
+   ],
+   "correcta": 1,
+   "tip": "Un gusto es algo que nos agrada hacer, como nadar.",
+   "revisada": false,
+   "id": "hist1-oa03-14"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "¿Qué dato cuenta dónde nació Elisa?",
+   "opciones": [
+    "es amiga de Luz",
+    "nació en Osorno",
+    "nació en marzo",
+    "le gusta bailar"
+   ],
+   "correcta": 1,
+   "tip": "Osorno es una ciudad: dice el lugar donde nació Elisa. Marzo es un mes: diría cuándo nació.",
+   "revisada": false,
+   "id": "hist1-oa03-15"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "¿Qué dato cuenta la edad de Pedro?",
+   "opciones": [
+    "le gusta leer",
+    "se llama Pedro",
+    "nació en Iquique",
+    "tiene 7 años"
+   ],
+   "correcta": 3,
+   "tip": "La edad son los años que alguien tiene.",
+   "revisada": false,
+   "id": "hist1-oa03-16"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "¿Qué dato cuenta quién es amiga de Ana?",
+   "opciones": [
+    "nació en abril",
+    "vive en Quillota",
+    "le gusta el pan",
+    "juega con Tere"
+   ],
+   "correcta": 3,
+   "tip": "Con quien Ana juega y comparte es su amiga.",
+   "revisada": false,
+   "id": "hist1-oa03-17"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "¿Qué dato cuenta cuándo nació Bruno?",
+   "opciones": [
+    "en Coquimbo",
+    "le gusta pintar",
+    "tiene un perro",
+    "el 8 de agosto"
+   ],
+   "correcta": 3,
+   "tip": "Una fecha, con su día y su mes, dice cuándo nació alguien.",
+   "revisada": false,
+   "id": "hist1-oa03-18"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Valentina y Josefa son distintas. ¿Eso está bien?",
+   "opciones": [
+    "sí, cada una es única",
+    "solo si son hermanas",
+    "no, deben ser iguales",
+    "no, tienen que cambiar"
+   ],
+   "correcta": 0,
+   "tip": "Cada persona es única: tiene su propio nombre, sus gustos y su manera de ser.",
+   "revisada": false,
+   "id": "hist1-oa03-19"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Ana y Bea son gemelas. ¿Son la misma persona?",
+   "opciones": [
+    "sí, tienen igual cara",
+    "no, cada una es única",
+    "solo en el colegio",
+    "sí, son iguales"
+   ],
+   "correcta": 1,
+   "tip": "Aunque se parezcan mucho, las gemelas son dos personas, cada una con sus gustos y su nombre.",
+   "revisada": false,
+   "id": "hist1-oa03-20"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Ana y Lía tienen gustos distintos. ¿Pueden ser amigas?",
+   "opciones": [
+    "solo si los cambian",
+    "sí, claro que pueden",
+    "solo en el recreo",
+    "no, nunca"
+   ],
+   "correcta": 1,
+   "tip": "Cada persona tiene sus propios gustos, y amigas con gustos distintos pueden pasarlo muy bien juntas.",
+   "revisada": false,
+   "id": "hist1-oa03-21"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Gabriel hace una ficha sobre él. ¿Qué escribe?",
+   "opciones": [
+    "su nombre y gustos",
+    "las sumas del dos",
+    "el clima de hoy",
+    "el menú del casino"
+   ],
+   "correcta": 0,
+   "tip": "Una ficha sobre uno mismo cuenta datos propios: el nombre, la edad, los gustos y los amigos.",
+   "revisada": false,
+   "id": "hist1-oa03-22"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Sergio quiere contar quién es. ¿Qué puede mostrar?",
+   "opciones": [
+    "una foto suya",
+    "una receta de pan",
+    "un mapa de China",
+    "una regla"
+   ],
+   "correcta": 0,
+   "tip": "Una foto de uno mismo ayuda a contar quiénes somos.",
+   "revisada": false,
+   "id": "hist1-oa03-23"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Flor y Ema cumplen años el mismo día. ¿Qué es igual?",
+   "opciones": [
+    "los gustos",
+    "la cara",
+    "su cumpleaños",
+    "el nombre"
+   ],
+   "correcta": 2,
+   "tip": "Si cumplen años el mismo día, las dos celebran su cumpleaños en la misma fecha, aunque sean dos personas distintas.",
+   "revisada": false,
+   "id": "hist1-oa03-24"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "A Mía ya no le gusta el rojo. ¿Sigue siendo Mía?",
+   "opciones": [
+    "no, debe cambiar de nombre",
+    "solo con el pelo largo",
+    "sí, los gustos cambian",
+    "no, es otra niña"
+   ],
+   "correcta": 2,
+   "tip": "Los gustos pueden cambiar al crecer, y uno sigue siendo la misma persona.",
+   "revisada": false,
+   "id": "hist1-oa03-25"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Luciano habla de sí mismo al curso. ¿Qué cuenta?",
+   "opciones": [
+    "la hora que es",
+    "el nombre del colegio",
+    "que le gusta el fútbol",
+    "la tabla del dos"
+   ],
+   "correcta": 2,
+   "tip": "Hablar de sí mismo es contar algo propio, como lo que nos gusta.",
+   "revisada": false,
+   "id": "hist1-oa03-26"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Joaquín llegó desde Haití. ¿Qué dato es ese?",
+   "opciones": [
+    "cuántos años tiene",
+    "de dónde viene",
+    "cómo se llama",
+    "qué le gusta comer"
+   ],
+   "correcta": 1,
+   "tip": "Haití es el país de donde vino Joaquín: es su lugar de procedencia.",
+   "revisada": false,
+   "id": "hist1-oa03-27"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "¿Qué dato tienen TODAS las personas?",
+   "opciones": [
+    "un perro",
+    "dos hermanos",
+    "pelo largo",
+    "un nombre"
+   ],
+   "correcta": 3,
+   "tip": "Todas las personas tienen un nombre. Mascotas, hermanos o pelo largo, algunos sí y otros no.",
+   "revisada": false,
+   "id": "hist1-oa03-28"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Rafa y su hermano, ¿tienen los mismos gustos?",
+   "opciones": [
+    "los decide otro",
+    "nunca cambian",
+    "pueden ser distintos",
+    "siempre son iguales"
+   ],
+   "correcta": 2,
+   "tip": "Aunque sean familia, cada uno puede tener gustos propios.",
+   "revisada": false,
+   "id": "hist1-oa03-29"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Paz dibuja a sus amigos. ¿Qué cuenta su dibujo?",
+   "opciones": [
+    "su fecha de nacimiento",
+    "quiénes son sus amigos",
+    "su apellido",
+    "dónde nació"
+   ],
+   "correcta": 1,
+   "tip": "Los amigos son parte de quiénes somos: el dibujo de Paz muestra con quién comparte.",
+   "revisada": false,
+   "id": "hist1-oa03-30"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "¿Quién sabe cómo era el barrio hace mucho?",
+   "opciones": [
+    "un compañero nuevo",
+    "el abuelo Lucho",
+    "la hermanita bebé",
+    "el primo de dos años"
+   ],
+   "correcta": 1,
+   "tip": "Las personas mayores vivieron esos años y los recuerdan. Un bebé o un niño chico todavía no había nacido.",
+   "revisada": false,
+   "id": "hist1-oa04-1"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "Ema quiere saber de su familia. ¿Qué hace?",
+   "opciones": [
+    "mira la tele",
+    "inventa un cuento",
+    "lo adivina sola",
+    "le pregunta a su tía"
+   ],
+   "correcta": 3,
+   "tip": "Para conocer la historia de una familia se les pregunta a los adultos que la vivieron.",
+   "revisada": false,
+   "id": "hist1-oa04-2"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "¿Para qué sirven las fotos viejas de la familia?",
+   "opciones": [
+    "para jugar a la pelota",
+    "para saber qué pasará",
+    "para recordar el pasado",
+    "para ver lo de hoy"
+   ],
+   "correcta": 2,
+   "tip": "Una foto antigua muestra cómo eran las personas y los lugares hace tiempo. Nos ayuda a recordar.",
+   "revisada": false,
+   "id": "hist1-oa04-3"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "¿Qué objeto cuenta algo del pasado de la familia?",
+   "opciones": [
+    "una foto antigua",
+    "un juguete nuevo",
+    "la boleta del pan",
+    "el diario de hoy"
+   ],
+   "correcta": 0,
+   "tip": "Lo antiguo guarda historias. Lo nuevo o de hoy todavía no cuenta nada del pasado.",
+   "revisada": false,
+   "id": "hist1-oa04-4"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "La carta de la bisabuela de Benja es…",
+   "opciones": [
+    "un recuerdo familiar",
+    "un juego del recreo",
+    "una receta nueva",
+    "una tarea del curso"
+   ],
+   "correcta": 0,
+   "tip": "Las cosas que guarda una familia, como una carta antigua, son recuerdos que cuentan su historia.",
+   "revisada": false,
+   "id": "hist1-oa04-5"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "La familia Rojas almuerza junta los domingos. Es…",
+   "opciones": [
+    "un accidente",
+    "una costumbre",
+    "una regla del colegio",
+    "un juego nuevo"
+   ],
+   "correcta": 1,
+   "tip": "Lo que una familia hace siempre, de la misma forma, es una costumbre.",
+   "revisada": false,
+   "id": "hist1-oa04-6"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "Cada Año Nuevo, la familia de Luis canta. Es…",
+   "opciones": [
+    "una noticia",
+    "un castigo",
+    "una tarea",
+    "una tradición"
+   ],
+   "correcta": 3,
+   "tip": "Algo que una familia repite cada año en una fecha especial es una tradición.",
+   "revisada": false,
+   "id": "hist1-oa04-7"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "Una receta pasa de abuela a mamá y a hija. Es…",
+   "opciones": [
+    "un invento nuevo",
+    "un juego del recreo",
+    "una tarea escolar",
+    "una tradición"
+   ],
+   "correcta": 3,
+   "tip": "Lo que se enseña de una generación a otra, como una receta, es una tradición de la familia.",
+   "revisada": false,
+   "id": "hist1-oa04-8"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "En una familia, ¿quién puede cocinar?",
+   "opciones": [
+    "solo la abuela",
+    "solo la mamá",
+    "cualquiera de la familia",
+    "solo el papá"
+   ],
+   "correcta": 2,
+   "tip": "Cocinar lo puede hacer cualquier persona de la familia. En cada casa se reparten las tareas.",
+   "revisada": false,
+   "id": "hist1-oa04-9"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "En casa de Joaquín, ¿quién puede cuidar al bebé?",
+   "opciones": [
+    "solo la mamá",
+    "solo las mujeres",
+    "solo el abuelo",
+    "cualquier adulto de la casa"
+   ],
+   "correcta": 3,
+   "tip": "Cuidar a un bebé es tarea de los adultos de la familia, sean hombres o mujeres.",
+   "revisada": false,
+   "id": "hist1-oa04-10"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "Mateo saca la basura en su casa. ¿Qué es eso?",
+   "opciones": [
+    "una fiesta familiar",
+    "un juego del recreo",
+    "su tarea en la familia",
+    "un castigo del colegio"
+   ],
+   "correcta": 2,
+   "tip": "En una familia cada uno ayuda con algo. Esas tareas son los roles de cada miembro.",
+   "revisada": false,
+   "id": "hist1-oa04-11"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "Leo vive con su abuela. ¿Es eso una familia?",
+   "opciones": [
+    "no, falta el papá",
+    "sí, es su familia",
+    "solo si son muchos",
+    "no, faltan hermanos"
+   ],
+   "correcta": 1,
+   "tip": "Hay familias de muchas formas. Una abuela y su nieto que viven juntos son una familia.",
+   "revisada": false,
+   "id": "hist1-oa04-12"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "¿Todas las familias son iguales?",
+   "opciones": [
+    "sí, todas iguales",
+    "no, cada una es distinta",
+    "solo las del curso",
+    "sí, todas son de cuatro"
+   ],
+   "correcta": 1,
+   "tip": "Las familias son distintas: unas son grandes, otras chicas, y viven con distintas personas.",
+   "revisada": false,
+   "id": "hist1-oa04-13"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "El papá de Tito vive en otra casa. ¿Es familia?",
+   "opciones": [
+    "solo los domingos",
+    "sí, es su papá",
+    "solo si vive ahí",
+    "no, ya no"
+   ],
+   "correcta": 1,
+   "tip": "Aunque vivan en casas distintas, siguen siendo familia.",
+   "revisada": false,
+   "id": "hist1-oa04-14"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "¿Qué le pregunta Rosa a su abuelo sobre el pasado?",
+   "opciones": [
+    "qué hora es ahora",
+    "qué hay de almuerzo",
+    "cuánto es dos más dos",
+    "a qué jugaba de niño"
+   ],
+   "correcta": 3,
+   "tip": "Para conocer el pasado se pregunta por cómo vivían antes: sus juegos, su escuela, su casa.",
+   "revisada": false,
+   "id": "hist1-oa04-15"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "Amanda vive con sus dos mamás. ¿Es una familia?",
+   "opciones": [
+    "solo si son muchos",
+    "sí, es su familia",
+    "no, falta el papá",
+    "no, faltan hermanos"
+   ],
+   "correcta": 1,
+   "tip": "Hay muchas formas de familia. Las personas que viven juntas, se quieren y se cuidan son una familia.",
+   "revisada": false,
+   "id": "hist1-oa04-16"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "La abuela de Eli no tenía tele. ¿Cuándo fue?",
+   "opciones": [
+    "mañana en la tarde",
+    "ahora mismo",
+    "cuando ella era niña",
+    "el año próximo"
+   ],
+   "correcta": 2,
+   "tip": "Hace muchos años no todas las casas tenían tele. La abuela de Eli lo vivió cuando era niña.",
+   "revisada": false,
+   "id": "hist1-oa04-17"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "¿Cómo supo Matías que su bisabuelo era pescador?",
+   "opciones": [
+    "lo soñó anoche",
+    "se lo contó su abuela",
+    "lo vio en la tele",
+    "lo leyó en la pizarra"
+   ],
+   "correcta": 1,
+   "tip": "Los adultos de la familia guardan los recuerdos y los cuentan a los más chicos.",
+   "revisada": false,
+   "id": "hist1-oa04-18"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "¿Qué cuenta un álbum de fotos de la familia?",
+   "opciones": [
+    "las reglas del curso",
+    "el clima de mañana",
+    "las noticias de hoy",
+    "la historia familiar"
+   ],
+   "correcta": 3,
+   "tip": "Las fotos de un álbum muestran momentos que vivió la familia: son parte de su historia.",
+   "revisada": false,
+   "id": "hist1-oa04-19"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "La mamá de Dani guarda su primer zapato. Es…",
+   "opciones": [
+    "un zapato para usar",
+    "una tarea",
+    "un recuerdo",
+    "un juguete roto"
+   ],
+   "correcta": 2,
+   "tip": "Las familias guardan cosas pequeñas para recordar momentos especiales.",
+   "revisada": false,
+   "id": "hist1-oa04-20"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "La familia de Mei celebra una fiesta china. Es…",
+   "opciones": [
+    "un juego del recreo",
+    "una tarea del colegio",
+    "una tradición familiar",
+    "una regla de la plaza"
+   ],
+   "correcta": 2,
+   "tip": "Muchas familias celebran fiestas del lugar de donde vienen. Son sus tradiciones.",
+   "revisada": false,
+   "id": "hist1-oa04-21"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "Para saber de su familia, Clara debe…",
+   "opciones": [
+    "hacer preguntas",
+    "adivinar todo",
+    "mirar la ventana",
+    "quedarse callada"
+   ],
+   "correcta": 0,
+   "tip": "Preguntando a los adultos de la familia se conoce su historia.",
+   "revisada": false,
+   "id": "hist1-oa04-22"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "Tomás tiene dos papás. ¿Son una familia?",
+   "opciones": [
+    "no, falta una mamá",
+    "sí, son su familia",
+    "solo si tiene hermanos",
+    "no, son muy pocos"
+   ],
+   "correcta": 1,
+   "tip": "Una familia puede tener una mamá, un papá, dos mamás, dos papás, abuelos o tíos: lo que importa es que se quieren y se cuidan.",
+   "revisada": false,
+   "id": "hist1-oa04-23"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "La abuela de Paz trabajó en el campo. Eso es…",
+   "opciones": [
+    "un gusto de Paz",
+    "un juego de Paz",
+    "una fiesta del colegio",
+    "parte de su historia"
+   ],
+   "correcta": 3,
+   "tip": "Lo que hicieron los abuelos cuando eran jóvenes es parte de la historia de la familia.",
+   "revisada": false,
+   "id": "hist1-oa04-24"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "La radio antigua de la abuela de Lía muestra…",
+   "opciones": [
+    "qué dan en la tele",
+    "la hora de hoy",
+    "cómo será el futuro",
+    "cómo se vivía antes"
+   ],
+   "correcta": 3,
+   "tip": "Los objetos antiguos muestran cómo vivían las personas hace muchos años.",
+   "revisada": false,
+   "id": "hist1-oa04-25"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "La tía de Eva arregla autos. ¿Puede hacerlo?",
+   "opciones": [
+    "no, solo los hombres",
+    "solo si es mamá",
+    "sí, cualquiera puede",
+    "no, es muy difícil"
+   ],
+   "correcta": 2,
+   "tip": "Hombres y mujeres pueden hacer todo tipo de trabajos. No hay tareas solo para uno.",
+   "revisada": false,
+   "id": "hist1-oa04-26"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "¿A quiénes pone Sofía en su árbol familiar?",
+   "opciones": [
+    "a sus compañeros",
+    "a sus parientes",
+    "a sus vecinos",
+    "a sus profesores"
+   ],
+   "correcta": 1,
+   "tip": "Un árbol familiar muestra a los parientes: abuelos, padres, tíos, hermanos y primos.",
+   "revisada": false,
+   "id": "hist1-oa04-27"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "¿Qué es la bisabuela de Vicente?",
+   "opciones": [
+    "la hermana de su mamá",
+    "una vecina mayor",
+    "la mamá de un abuelo",
+    "la hija de su tía"
+   ],
+   "correcta": 2,
+   "tip": "La bisabuela es la mamá de la abuela o del abuelo. Es parte de la familia de antes.",
+   "revisada": false,
+   "id": "hist1-oa04-28"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "La hermana de la mamá de Nina es su…",
+   "opciones": [
+    "vecina",
+    "prima",
+    "abuela",
+    "tía"
+   ],
+   "correcta": 3,
+   "tip": "La hermana de la mamá o del papá es la tía.",
+   "revisada": false,
+   "id": "hist1-oa04-29"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "El hijo del tío de Luis es su…",
+   "opciones": [
+    "sobrino",
+    "abuelo",
+    "primo",
+    "hermano"
+   ],
+   "correcta": 2,
+   "tip": "Los hijos de los tíos son los primos.",
+   "revisada": false,
+   "id": "hist1-oa04-30"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "¿Cuántas estrellas tiene la bandera de Chile?",
+   "opciones": [
+    "tres",
+    "una",
+    "cinco",
+    "dos"
+   ],
+   "correcta": 1,
+   "tip": "La bandera de Chile tiene una sola estrella blanca, por eso le dicen «la estrella solitaria».",
+   "revisada": false,
+   "id": "hist1-oa05-1"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "¿De qué color es la estrella de la bandera?",
+   "opciones": [
+    "blanca",
+    "amarilla",
+    "roja",
+    "azul"
+   ],
+   "correcta": 0,
+   "tip": "La estrella de la bandera es blanca y está sobre el cuadro azul.",
+   "revisada": false,
+   "id": "hist1-oa05-2"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "¿Qué colores tiene la bandera de Chile?",
+   "opciones": [
+    "verde, blanco y rojo",
+    "azul, blanco y rojo",
+    "azul, amarillo y rojo",
+    "negro, blanco y rojo"
+   ],
+   "correcta": 1,
+   "tip": "La bandera chilena es azul, blanca y roja, con una estrella blanca.",
+   "revisada": false,
+   "id": "hist1-oa05-3"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "En la bandera, ¿dónde va la estrella?",
+   "opciones": [
+    "en la franja roja",
+    "afuera de la bandera",
+    "en el cuadro azul",
+    "en la parte blanca"
+   ],
+   "correcta": 2,
+   "tip": "La estrella blanca va dentro del cuadro azul, arriba, junto al asta.",
+   "revisada": false,
+   "id": "hist1-oa05-4"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "¿Qué es el himno nacional?",
+   "opciones": [
+    "un juego antiguo",
+    "un baile típico",
+    "la canción de Chile",
+    "una comida patria"
+   ],
+   "correcta": 2,
+   "tip": "El himno nacional es la canción que representa a Chile y se canta en los actos.",
+   "revisada": false,
+   "id": "hist1-oa05-5"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "¿Cuándo se canta el himno en el colegio?",
+   "opciones": [
+    "a la hora de almuerzo",
+    "en la clase de inglés",
+    "en los actos",
+    "en el recreo"
+   ],
+   "correcta": 2,
+   "tip": "En los actos del colegio se canta el himno nacional, todos juntos y de pie.",
+   "revisada": false,
+   "id": "hist1-oa05-6"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "En el acto suena el himno. ¿Qué debe hacer Diego?",
+   "opciones": [
+    "conversa fuerte",
+    "se pone de pie",
+    "sigue jugando",
+    "se tapa los oídos"
+   ],
+   "correcta": 1,
+   "tip": "Ponerse de pie y cantarlo con respeto es la forma de honrar el himno.",
+   "revisada": false,
+   "id": "hist1-oa05-7"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "¿Para qué sirven los símbolos patrios?",
+   "opciones": [
+    "para ganar dinero",
+    "para decorar la pieza",
+    "para unir a los chilenos",
+    "para jugar en el patio"
+   ],
+   "correcta": 2,
+   "tip": "La bandera, el escudo y el himno son de todos los chilenos. Nos unen como país.",
+   "revisada": false,
+   "id": "hist1-oa05-8"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "¿Cuál es un símbolo patrio de Chile?",
+   "opciones": [
+    "la bandera",
+    "el volantín",
+    "la empanada",
+    "el trompo"
+   ],
+   "correcta": 0,
+   "tip": "Los símbolos patrios son la bandera, el escudo y el himno nacional.",
+   "revisada": false,
+   "id": "hist1-oa05-9"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "La bandera, el escudo y el himno son…",
+   "opciones": [
+    "fiestas del norte",
+    "juegos antiguos",
+    "comidas típicas",
+    "símbolos patrios"
+   ],
+   "correcta": 3,
+   "tip": "Son los tres símbolos patrios de Chile: representan al país.",
+   "revisada": false,
+   "id": "hist1-oa05-10"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "¿En qué mes son las Fiestas Patrias?",
+   "opciones": [
+    "septiembre",
+    "mayo",
+    "octubre",
+    "diciembre"
+   ],
+   "correcta": 0,
+   "tip": "Las Fiestas Patrias se celebran en septiembre, sobre todo el 18 y el 19.",
+   "revisada": false,
+   "id": "hist1-oa05-11"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "¿Qué se pone en las casas en Fiestas Patrias?",
+   "opciones": [
+    "calabazas",
+    "el árbol de Pascua",
+    "huevos pintados",
+    "la bandera"
+   ],
+   "correcta": 3,
+   "tip": "En septiembre muchas familias izan la bandera de Chile en su casa.",
+   "revisada": false,
+   "id": "hist1-oa05-12"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "¿Qué se recuerda el 21 de mayo?",
+   "opciones": [
+    "el Combate Naval de Iquique",
+    "el Día de la Madre",
+    "la llegada del Año Nuevo",
+    "el comienzo de la primavera"
+   ],
+   "correcta": 0,
+   "tip": "Cada 21 de mayo Chile recuerda el Combate Naval de Iquique.",
+   "revisada": false,
+   "id": "hist1-oa05-13"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "El Combate Naval de Iquique se recuerda el…",
+   "opciones": [
+    "25 de diciembre",
+    "18 de septiembre",
+    "1 de enero",
+    "21 de mayo"
+   ],
+   "correcta": 3,
+   "tip": "El Combate Naval de Iquique se conmemora el 21 de mayo. El 18 de septiembre son las Fiestas Patrias.",
+   "revisada": false,
+   "id": "hist1-oa05-14"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "El encuentro de dos mundos se recuerda el…",
+   "opciones": [
+    "12 de octubre",
+    "21 de mayo",
+    "1 de marzo",
+    "18 de septiembre"
+   ],
+   "correcta": 0,
+   "tip": "El 12 de octubre se recuerda el Día del Descubrimiento de dos mundos.",
+   "revisada": false,
+   "id": "hist1-oa05-15"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "¿Qué dos mundos se encontraron el 12 de octubre?",
+   "opciones": [
+    "Chile y Perú",
+    "América y Europa",
+    "África y Asia",
+    "Chile y Argentina"
+   ],
+   "correcta": 1,
+   "tip": "Ese día de 1492 llegaron a América barcos desde Europa. En América ya vivían muchos pueblos.",
+   "revisada": false,
+   "id": "hist1-oa05-16"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "¿Quiénes bailan cueca en Fiestas Patrias?",
+   "opciones": [
+    "solo los hombres",
+    "hombres y mujeres",
+    "solo las mujeres",
+    "solo los niños"
+   ],
+   "correcta": 1,
+   "tip": "En las Fiestas Patrias participan hombres, mujeres, niñas y niños.",
+   "revisada": false,
+   "id": "hist1-oa05-17"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "En el desfile del colegio, ¿quiénes desfilan?",
+   "opciones": [
+    "solo los grandes",
+    "solo los profesores",
+    "niñas y niños",
+    "solo las niñas"
+   ],
+   "correcta": 2,
+   "tip": "En los desfiles y actos participan todos: niñas y niños por igual.",
+   "revisada": false,
+   "id": "hist1-oa05-18"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "¿Qué es una fonda?",
+   "opciones": [
+    "un tipo de comida",
+    "una canción patria",
+    "un juego antiguo",
+    "un lugar de fiesta"
+   ],
+   "correcta": 3,
+   "tip": "En septiembre se arman fondas: lugares de fiesta con comida, música y baile.",
+   "revisada": false,
+   "id": "hist1-oa05-19"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "¿Qué celebra Chile en septiembre?",
+   "opciones": [
+    "el Año Nuevo",
+    "las Fiestas Patrias",
+    "el fin del verano",
+    "la Navidad"
+   ],
+   "correcta": 1,
+   "tip": "Las Fiestas Patrias recuerdan 1810, cuando Chile empezó a gobernarse solo.",
+   "revisada": false,
+   "id": "hist1-oa05-20"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "En Fiestas Patrias, ¿qué une a los chilenos?",
+   "opciones": [
+    "celebrar juntos",
+    "pelear por la comida",
+    "trabajar más",
+    "quedarse solos"
+   ],
+   "correcta": 0,
+   "tip": "Las Fiestas Patrias se celebran en todo el país. Celebrar juntos nos une.",
+   "revisada": false,
+   "id": "hist1-oa05-21"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "La familia de Ana iza la bandera. ¿Qué es izar?",
+   "opciones": [
+    "pintarla",
+    "lavarla",
+    "doblarla",
+    "subirla al mástil"
+   ],
+   "correcta": 3,
+   "tip": "Izar la bandera es subirla hasta lo alto del mástil.",
+   "revisada": false,
+   "id": "hist1-oa05-22"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "El cóndor y el huemul sostienen el…",
+   "opciones": [
+    "escudo de Chile",
+    "himno nacional",
+    "volantín",
+    "copihue"
+   ],
+   "correcta": 0,
+   "tip": "En el escudo de Chile, el cóndor y el huemul sostienen el escudo, uno a cada lado.",
+   "revisada": false,
+   "id": "hist1-oa05-23"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "¿Qué celebra Chile en las ramadas?",
+   "opciones": [
+    "las Fiestas Patrias",
+    "el Día del Niño",
+    "la Navidad",
+    "el Año Nuevo"
+   ],
+   "correcta": 0,
+   "tip": "Las ramadas se arman en septiembre para celebrar las Fiestas Patrias.",
+   "revisada": false,
+   "id": "hist1-oa05-24"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "Recordar juntos un día importante es…",
+   "opciones": [
+    "una tarea",
+    "una pelea",
+    "una conmemoración",
+    "una competencia"
+   ],
+   "correcta": 2,
+   "tip": "Una conmemoración es cuando un país recuerda junto un día importante.",
+   "revisada": false,
+   "id": "hist1-oa05-25"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "¿Qué hace el curso de Pía para el 21 de mayo?",
+   "opciones": [
+    "un paseo a la playa",
+    "un acto de recuerdo",
+    "un examen de sumas",
+    "una fiesta de disfraces"
+   ],
+   "correcta": 1,
+   "tip": "Antes del 21 de mayo, que es feriado, muchos colegios hacen un acto para recordar el Combate Naval de Iquique.",
+   "revisada": false,
+   "id": "hist1-oa05-26"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "El 21 de mayo se recuerda a Arturo Prat, un…",
+   "opciones": [
+    "cantante",
+    "marino",
+    "pintor",
+    "futbolista"
+   ],
+   "correcta": 1,
+   "tip": "Arturo Prat era un marino chileno. Se le recuerda cada 21 de mayo.",
+   "revisada": false,
+   "id": "hist1-oa05-27"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "¿Qué símbolo patrio se canta?",
+   "opciones": [
+    "la estrella",
+    "el himno",
+    "el escudo",
+    "la bandera"
+   ],
+   "correcta": 1,
+   "tip": "El himno nacional es una canción: es el único de los símbolos patrios que se canta.",
+   "revisada": false,
+   "id": "hist1-oa05-28"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "¿Cómo se trata la bandera de Chile?",
+   "opciones": [
+    "con respeto",
+    "como un mantel",
+    "como un trapo",
+    "como un disfraz"
+   ],
+   "correcta": 0,
+   "tip": "La bandera representa a todo el país. Por eso se cuida y se trata con respeto.",
+   "revisada": false,
+   "id": "hist1-oa05-29"
+  },
+  {
+   "oa": "HI01 OA 05",
+   "pregunta": "¿Dónde se celebran las Fiestas Patrias?",
+   "opciones": [
+    "en todo Chile",
+    "solo en el norte",
+    "solo en Santiago",
+    "solo en el campo"
+   ],
+   "correcta": 0,
+   "tip": "Las Fiestas Patrias se celebran de norte a sur: son de todos los chilenos.",
+   "revisada": false,
+   "id": "hist1-oa05-30"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "¿Qué fruta se cosecha en la vendimia?",
+   "opciones": [
+    "la uva",
+    "la naranja",
+    "la frutilla",
+    "la manzana"
+   ],
+   "correcta": 0,
+   "tip": "La vendimia es la cosecha de la uva. Muchos pueblos la celebran con una fiesta.",
+   "revisada": false,
+   "id": "hist1-oa06-1"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "La Fiesta de San Pedro la celebran mucho los…",
+   "opciones": [
+    "panaderos",
+    "pescadores",
+    "bomberos",
+    "mineros"
+   ],
+   "correcta": 1,
+   "tip": "En la Fiesta de San Pedro, los pescadores salen al mar con sus botes adornados.",
+   "revisada": false,
+   "id": "hist1-oa06-2"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "En la Fiesta de Cuasimodo, muchos salen en…",
+   "opciones": [
+    "bicicleta y a caballo",
+    "barcos de vela",
+    "aviones chicos",
+    "trineos de nieve"
+   ],
+   "correcta": 0,
+   "tip": "En Cuasimodo, en la zona central, mucha gente recorre las calles a caballo y en bicicleta.",
+   "revisada": false,
+   "id": "hist1-oa06-3"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "En La Tirana, los bailarines usan…",
+   "opciones": [
+    "uniformes de fútbol",
+    "trajes de baño",
+    "delantales blancos",
+    "máscaras de colores"
+   ],
+   "correcta": 3,
+   "tip": "En la Fiesta de La Tirana, grupos bailan con máscaras y trajes de muchos colores.",
+   "revisada": false,
+   "id": "hist1-oa06-4"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "En el rodeo, los huasos andan…",
+   "opciones": [
+    "en auto",
+    "a pie",
+    "a caballo",
+    "en bicicleta"
+   ],
+   "correcta": 2,
+   "tip": "En el rodeo, dos huasos a caballo trabajan en pareja.",
+   "revisada": false,
+   "id": "hist1-oa06-5"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "En las carreras a la chilena corren…",
+   "opciones": [
+    "dos perros",
+    "dos autos",
+    "dos bicicletas",
+    "dos caballos"
+   ],
+   "correcta": 3,
+   "tip": "En las carreras a la chilena compiten dos caballos en una pista recta.",
+   "revisada": false,
+   "id": "hist1-oa06-6"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "¿Dónde se hace el rodeo?",
+   "opciones": [
+    "en la piscina",
+    "en la medialuna",
+    "en el estadio de fútbol",
+    "en la cancha de tenis"
+   ],
+   "correcta": 1,
+   "tip": "El rodeo se hace en la medialuna, una arena con forma de media luna.",
+   "revisada": false,
+   "id": "hist1-oa06-7"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "¿Qué plato lleva porotos, zapallo y choclo?",
+   "opciones": [
+    "la empanada",
+    "porotos granados",
+    "el completo",
+    "el pan amasado"
+   ],
+   "correcta": 1,
+   "tip": "Los porotos granados son un plato chileno de verano con porotos, zapallo y choclo.",
+   "revisada": false,
+   "id": "hist1-oa06-8"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "¿Qué animal chileno es un ciervo muy chico?",
+   "opciones": [
+    "el pudú",
+    "el cóndor",
+    "el puma",
+    "el zorro"
+   ],
+   "correcta": 0,
+   "tip": "El pudú es uno de los ciervos más pequeños del mundo y vive en los bosques del sur.",
+   "revisada": false,
+   "id": "hist1-oa06-9"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "¿Qué animal del norte nos da lana?",
+   "opciones": [
+    "el pudú",
+    "el cóndor",
+    "la alpaca",
+    "el pingüino"
+   ],
+   "correcta": 2,
+   "tip": "La alpaca vive en el altiplano y su lana se usa para tejer ropa abrigada.",
+   "revisada": false,
+   "id": "hist1-oa06-10"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "¿Qué instrumento acompaña a la cueca?",
+   "opciones": [
+    "el saxofón",
+    "la flauta dulce",
+    "la batería",
+    "la guitarra"
+   ],
+   "correcta": 3,
+   "tip": "La cueca se toca con guitarra, y muchas veces con pandero y acordeón.",
+   "revisada": false,
+   "id": "hist1-oa06-11"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "¿Qué instrumento del norte se toca soplando?",
+   "opciones": [
+    "la zampoña",
+    "el charango",
+    "la guitarra",
+    "el tambor"
+   ],
+   "correcta": 0,
+   "tip": "La zampoña está hecha de cañas y se toca soplando. Es típica del norte.",
+   "revisada": false,
+   "id": "hist1-oa06-12"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "¿En qué juego se salta en cuadros dibujados?",
+   "opciones": [
+    "la pinta",
+    "el emboque",
+    "las bolitas",
+    "el luche"
+   ],
+   "correcta": 3,
+   "tip": "En el luche se dibujan cuadros en el suelo y se salta en un pie.",
+   "revisada": false,
+   "id": "hist1-oa06-13"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "En la carrera de sacos, los niños…",
+   "opciones": [
+    "pedalean",
+    "se arrastran",
+    "nadan",
+    "saltan"
+   ],
+   "correcta": 3,
+   "tip": "En la carrera de sacos cada niño se mete en un saco y avanza saltando.",
+   "revisada": false,
+   "id": "hist1-oa06-14"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "¿Qué juego típico usa un hoyo en el suelo?",
+   "opciones": [
+    "las bolitas",
+    "el volantín",
+    "el luche",
+    "la pinta"
+   ],
+   "correcta": 0,
+   "tip": "En las bolitas se lanzan esferas de vidrio para meterlas en un hoyo o pegarle a otra.",
+   "revisada": false,
+   "id": "hist1-oa06-15"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "¿Qué hay que hacer en el palo encebado?",
+   "opciones": [
+    "trepar hasta arriba",
+    "saltar la cuerda",
+    "lanzar una pelota",
+    "correr en círculo"
+   ],
+   "correcta": 0,
+   "tip": "El palo encebado está untado con grasa: hay que trepar hasta arriba sin resbalar.",
+   "revisada": false,
+   "id": "hist1-oa06-16"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "Una ciudad celebra el día en que la crearon. Es…",
+   "opciones": [
+    "su rodeo",
+    "su vendimia",
+    "su fundación",
+    "su carnaval"
+   ],
+   "correcta": 2,
+   "tip": "Muchos pueblos y ciudades celebran el aniversario de su fundación, el día en que se crearon.",
+   "revisada": false,
+   "id": "hist1-oa06-17"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "La empanada de pino lleva…",
+   "opciones": [
+    "queso y jamón",
+    "carne y cebolla",
+    "frutilla y crema",
+    "pescado y papas"
+   ],
+   "correcta": 1,
+   "tip": "El pino es un relleno de carne picada con cebolla, y muchas veces lleva huevo y aceituna.",
+   "revisada": false,
+   "id": "hist1-oa06-18"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "¿Con qué se hace el pebre?",
+   "opciones": [
+    "tomate, cebolla y cilantro",
+    "chocolate, leche y crema",
+    "plátano, miel y avena",
+    "manzana, azúcar y canela"
+   ],
+   "correcta": 0,
+   "tip": "El pebre es una salsa chilena de tomate, cebolla y cilantro picados.",
+   "revisada": false,
+   "id": "hist1-oa06-19"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "¿Por qué una fiesta típica une a un pueblo?",
+   "opciones": [
+    "todos celebran juntos",
+    "cada uno se va solo",
+    "nadie conversa",
+    "todos se quedan en casa"
+   ],
+   "correcta": 0,
+   "tip": "En una fiesta típica la gente se junta a celebrar algo que comparte. Eso la une.",
+   "revisada": false,
+   "id": "hist1-oa06-20"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "La vendimia se celebra donde hay…",
+   "opciones": [
+    "glaciares",
+    "minas",
+    "playas",
+    "viñas"
+   ],
+   "correcta": 3,
+   "tip": "La vendimia se hace en los lugares con viñas, que es donde crece la uva.",
+   "revisada": false,
+   "id": "hist1-oa06-21"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "En la rayuela, ¿qué se lanza?",
+   "opciones": [
+    "un tejo de metal",
+    "un volantín",
+    "una piedra grande",
+    "una pelota"
+   ],
+   "correcta": 0,
+   "tip": "En la rayuela se lanzan tejos, unos discos de metal, para que caigan cerca de una línea.",
+   "revisada": false,
+   "id": "hist1-oa06-22"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "¿Qué baile chileno se baila con pañuelo?",
+   "opciones": [
+    "el tango",
+    "la cueca",
+    "el vals",
+    "la salsa"
+   ],
+   "correcta": 1,
+   "tip": "En la cueca, la pareja baila moviendo un pañuelo en la mano.",
+   "revisada": false,
+   "id": "hist1-oa06-23"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "¿En qué juego un niño tiene los ojos tapados?",
+   "opciones": [
+    "el trompo",
+    "la pinta",
+    "la gallinita ciega",
+    "el luche"
+   ],
+   "correcta": 2,
+   "tip": "En la gallinita ciega, un niño con los ojos vendados trata de atrapar a los demás.",
+   "revisada": false,
+   "id": "hist1-oa06-24"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "¿En qué juego hay que atrapar a otro corriendo?",
+   "opciones": [
+    "el luche",
+    "la pinta",
+    "las bolitas",
+    "el emboque"
+   ],
+   "correcta": 1,
+   "tip": "En la pinta, un niño corre para tocar a otro, que pasa a ser el que pilla.",
+   "revisada": false,
+   "id": "hist1-oa06-25"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "Las comidas y juegos típicos son parte de…",
+   "opciones": [
+    "las noticias de hoy",
+    "la clase de sumas",
+    "nuestra cultura",
+    "las tareas"
+   ],
+   "correcta": 2,
+   "tip": "Las comidas, los juegos, la música y las fiestas típicas forman la cultura de un lugar.",
+   "revisada": false,
+   "id": "hist1-oa06-26"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "¿Qué flor chilena tiene forma de campana?",
+   "opciones": [
+    "el copihue",
+    "el girasol",
+    "la rosa",
+    "la margarita"
+   ],
+   "correcta": 0,
+   "tip": "El copihue es una flor chilena con forma de campana, que crece en los bosques del sur.",
+   "revisada": false,
+   "id": "hist1-oa06-27"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "¿Qué pan chileno es redondo y plano?",
+   "opciones": [
+    "la marraqueta",
+    "el completo",
+    "la hallulla",
+    "el churrasco"
+   ],
+   "correcta": 2,
+   "tip": "La hallulla es un pan redondo y plano. La marraqueta tiene otra forma.",
+   "revisada": false,
+   "id": "hist1-oa06-28"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "¿Qué instrumento pequeño de cuerdas es del norte?",
+   "opciones": [
+    "la batería",
+    "el charango",
+    "el piano",
+    "el arpa grande"
+   ],
+   "correcta": 1,
+   "tip": "El charango es una guitarra pequeña típica del norte y del altiplano.",
+   "revisada": false,
+   "id": "hist1-oa06-29"
+  },
+  {
+   "oa": "HI01 OA 06",
+   "pregunta": "La fiesta de un pueblo muestra su…",
+   "opciones": [
+    "temperatura",
+    "identidad",
+    "dirección",
+    "tamaño"
+   ],
+   "correcta": 1,
+   "tip": "Las fiestas de un pueblo muestran quiénes son y qué comparten: su identidad.",
+   "revisada": false,
+   "id": "hist1-oa06-30"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "¿Qué hacía Gabriela Mistral?",
+   "opciones": [
+    "escribía poemas",
+    "construía puentes",
+    "pintaba cuadros",
+    "jugaba fútbol"
+   ],
+   "correcta": 0,
+   "tip": "Gabriela Mistral fue una gran poeta chilena: escribía poemas.",
+   "revisada": false,
+   "id": "hist1-oa07-1"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "Además de poeta, Gabriela Mistral fue…",
+   "opciones": [
+    "enfermera",
+    "profesora",
+    "doctora",
+    "panadera"
+   ],
+   "correcta": 1,
+   "tip": "Gabriela Mistral trabajó muchos años como profesora en escuelas de Chile.",
+   "revisada": false,
+   "id": "hist1-oa07-2"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "Gabriela Mistral escribió poemas para…",
+   "opciones": [
+    "los barcos",
+    "los perros",
+    "los niños",
+    "los autos"
+   ],
+   "correcta": 2,
+   "tip": "Gabriela Mistral escribió rondas y canciones de cuna para los niños.",
+   "revisada": false,
+   "id": "hist1-oa07-3"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "Gabriela Mistral nació en el valle de…",
+   "opciones": [
+    "Maipo",
+    "Elqui",
+    "Aconcagua",
+    "Itata"
+   ],
+   "correcta": 1,
+   "tip": "Gabriela Mistral nació en Vicuña, en el valle de Elqui, al norte de Chile.",
+   "revisada": false,
+   "id": "hist1-oa07-4"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "¿Qué hacía Violeta Parra?",
+   "opciones": [
+    "cantaba canciones",
+    "vendía zapatos",
+    "atendía a enfermos",
+    "arreglaba autos"
+   ],
+   "correcta": 0,
+   "tip": "Violeta Parra fue cantante y compositora: hizo canciones muy famosas.",
+   "revisada": false,
+   "id": "hist1-oa07-5"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "Además de cantar, Violeta Parra…",
+   "opciones": [
+    "pilotaba aviones",
+    "bordaba y pintaba",
+    "cuidaba leones",
+    "corría carreras"
+   ],
+   "correcta": 1,
+   "tip": "Violeta Parra también bordaba telas con lanas de colores y pintaba cuadros.",
+   "revisada": false,
+   "id": "hist1-oa07-6"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "Pablo Neruda y Gabriela Mistral eran…",
+   "opciones": [
+    "científicos",
+    "pilotos",
+    "deportistas",
+    "poetas"
+   ],
+   "correcta": 3,
+   "tip": "Los dos fueron grandes poetas chilenos y escribieron muchos poemas.",
+   "revisada": false,
+   "id": "hist1-oa07-7"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "Pablo Neruda tenía una casa frente al…",
+   "opciones": [
+    "glaciar",
+    "volcán",
+    "desierto",
+    "mar"
+   ],
+   "correcta": 3,
+   "tip": "La casa de Pablo Neruda en Isla Negra está frente al mar, que a él le encantaba.",
+   "revisada": false,
+   "id": "hist1-oa07-8"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "Marcela Paz escribió los libros de…",
+   "opciones": [
+    "Caperucita",
+    "Papelucho",
+    "Condorito",
+    "Blancanieves"
+   ],
+   "correcta": 1,
+   "tip": "Marcela Paz es la escritora chilena que creó a Papelucho, un niño que escribe su diario.",
+   "revisada": false,
+   "id": "hist1-oa07-9"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "¿Qué hizo el padre Alberto Hurtado?",
+   "opciones": [
+    "pintó murales",
+    "escribió canciones",
+    "ganó una carrera",
+    "ayudó a los pobres"
+   ],
+   "correcta": 3,
+   "tip": "Alberto Hurtado ayudó a las personas pobres y creó el Hogar de Cristo.",
+   "revisada": false,
+   "id": "hist1-oa07-10"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "Ayudar a otros sin pedir nada es ser…",
+   "opciones": [
+    "goloso",
+    "famoso",
+    "solidario",
+    "rápido"
+   ],
+   "correcta": 2,
+   "tip": "Una persona solidaria ayuda a los demás sin esperar nada a cambio.",
+   "revisada": false,
+   "id": "hist1-oa07-11"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "Eloísa Díaz fue la primera mujer chilena…",
+   "opciones": [
+    "médica",
+    "pilota",
+    "astronauta",
+    "futbolista"
+   ],
+   "correcta": 0,
+   "tip": "Eloísa Díaz fue la primera mujer de Chile en estudiar y trabajar como médica.",
+   "revisada": false,
+   "id": "hist1-oa07-12"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "Marcelo Ríos fue el mejor del mundo en…",
+   "opciones": [
+    "tenis",
+    "básquetbol",
+    "natación",
+    "ajedrez"
+   ],
+   "correcta": 0,
+   "tip": "El chileno Marcelo Ríos llegó a ser el número uno del mundo en tenis.",
+   "revisada": false,
+   "id": "hist1-oa07-13"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "Iván Zamorano fue un famoso…",
+   "opciones": [
+    "cocinero",
+    "astronauta",
+    "cantante",
+    "futbolista"
+   ],
+   "correcta": 3,
+   "tip": "Iván Zamorano fue un futbolista chileno que hizo muchos goles.",
+   "revisada": false,
+   "id": "hist1-oa07-14"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "Christiane Endler se hizo famosa como arquera de…",
+   "opciones": [
+    "natación",
+    "atletismo",
+    "tenis",
+    "fútbol"
+   ],
+   "correcta": 3,
+   "tip": "Christiane Endler es una arquera de fútbol chilena, de las mejores del mundo.",
+   "revisada": false,
+   "id": "hist1-oa07-15"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "En 2024, Francisca Crovetto ganó medalla de…",
+   "opciones": [
+    "plata",
+    "madera",
+    "bronce",
+    "oro"
+   ],
+   "correcta": 3,
+   "tip": "En los Juegos Olímpicos de 2024, Francisca Crovetto ganó la medalla de oro en tiro.",
+   "revisada": false,
+   "id": "hist1-oa07-16"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "Kristel Köbrich es una gran…",
+   "opciones": [
+    "pintora",
+    "cantante",
+    "doctora",
+    "nadadora"
+   ],
+   "correcta": 3,
+   "tip": "Kristel Köbrich es una nadadora chilena que ha ganado muchas competencias.",
+   "revisada": false,
+   "id": "hist1-oa07-17"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "Claudio Gay estudió las plantas y…",
+   "opciones": [
+    "los edificios",
+    "las monedas",
+    "los barcos",
+    "los animales"
+   ],
+   "correcta": 3,
+   "tip": "Claudio Gay fue un científico que recorrió Chile estudiando sus plantas y animales.",
+   "revisada": false,
+   "id": "hist1-oa07-18"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "Ignacio Domeyko fue un científico que estudió…",
+   "opciones": [
+    "los bailes",
+    "las leyes",
+    "las rocas",
+    "las canciones"
+   ],
+   "correcta": 2,
+   "tip": "Ignacio Domeyko estudió las rocas y los minerales de Chile.",
+   "revisada": false,
+   "id": "hist1-oa07-19"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "María Teresa Ruiz es astrónoma. Ella estudia…",
+   "opciones": [
+    "los dinosaurios",
+    "los volcanes",
+    "las flores",
+    "las estrellas"
+   ],
+   "correcta": 3,
+   "tip": "Una astrónoma estudia las estrellas y el espacio, como María Teresa Ruiz.",
+   "revisada": false,
+   "id": "hist1-oa07-20"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "¿Qué ayudó a crear Andrés Bello?",
+   "opciones": [
+    "una universidad",
+    "un supermercado",
+    "un zoológico",
+    "un estadio"
+   ],
+   "correcta": 0,
+   "tip": "Andrés Bello ayudó a crear la Universidad de Chile y fue su primer rector.",
+   "revisada": false,
+   "id": "hist1-oa07-21"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "¿Quién fundó la ciudad de Santiago?",
+   "opciones": [
+    "Christiane Endler",
+    "Marcelo Ríos",
+    "Pedro de Valdivia",
+    "Gabriela Mistral"
+   ],
+   "correcta": 2,
+   "tip": "El español Pedro de Valdivia fundó Santiago en 1541, en tierras donde ya vivían pueblos originarios.",
+   "revisada": false,
+   "id": "hist1-oa07-22"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "Fundar una ciudad es…",
+   "opciones": [
+    "limpiarla",
+    "empezarla",
+    "venderla",
+    "pintarla"
+   ],
+   "correcta": 1,
+   "tip": "Fundar una ciudad es comenzarla: ahí parte su historia.",
+   "revisada": false,
+   "id": "hist1-oa07-23"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "Un explorador es alguien que…",
+   "opciones": [
+    "maneja una micro",
+    "atiende una tienda",
+    "cuida a los animales",
+    "busca lugares nuevos"
+   ],
+   "correcta": 3,
+   "tip": "Un explorador viaja para conocer lugares que no conocía.",
+   "revisada": false,
+   "id": "hist1-oa07-24"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "El estrecho de Magallanes lleva el nombre de…",
+   "opciones": [
+    "un futbolista",
+    "un navegante",
+    "un cantante",
+    "un pintor"
+   ],
+   "correcta": 1,
+   "tip": "Hernando de Magallanes fue un navegante que cruzó ese estrecho en barco hace mucho tiempo.",
+   "revisada": false,
+   "id": "hist1-oa07-25"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "Claudio Arrau tocaba muy bien el…",
+   "opciones": [
+    "arpa",
+    "acordeón",
+    "tambor",
+    "piano"
+   ],
+   "correcta": 3,
+   "tip": "Claudio Arrau fue un pianista chileno famoso en todo el mundo.",
+   "revisada": false,
+   "id": "hist1-oa07-26"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "¿Qué hace la Teletón?",
+   "opciones": [
+    "regala autos",
+    "vende juguetes",
+    "hace carreras",
+    "ayuda a niños"
+   ],
+   "correcta": 3,
+   "tip": "La Teletón, creada por Don Francisco, ayuda a niños y jóvenes con discapacidad.",
+   "revisada": false,
+   "id": "hist1-oa07-27"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "Elena Caffarena luchó para que las mujeres…",
+   "opciones": [
+    "tuvieran perros",
+    "cantaran fuerte",
+    "usaran zapatos",
+    "pudieran votar"
+   ],
+   "correcta": 3,
+   "tip": "Elena Caffarena luchó para que las mujeres chilenas pudieran votar.",
+   "revisada": false,
+   "id": "hist1-oa07-28"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "Roberto Matta fue un famoso…",
+   "opciones": [
+    "pintor",
+    "nadador",
+    "bombero",
+    "cartero"
+   ],
+   "correcta": 0,
+   "tip": "Roberto Matta fue un pintor chileno conocido en muchos países.",
+   "revisada": false,
+   "id": "hist1-oa07-29"
+  },
+  {
+   "oa": "HI01 OA 07",
+   "pregunta": "Juana hace pan y lo vende en su negocio. Es…",
+   "opciones": [
+    "bombera",
+    "deportista",
+    "emprendedora",
+    "astronauta"
+   ],
+   "correcta": 2,
+   "tip": "Juana es emprendedora: tuvo una idea y armó su propio negocio.",
+   "revisada": false,
+   "id": "hist1-oa07-30"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "Un mapa es un dibujo de…",
+   "opciones": [
+    "una comida",
+    "un animal",
+    "una persona",
+    "un lugar"
+   ],
+   "correcta": 3,
+   "tip": "Un mapa representa un lugar: un barrio, una ciudad o un país.",
+   "revisada": false,
+   "id": "hist1-oa08-1"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "¿Cómo ve la casa un pájaro que vuela?",
+   "opciones": [
+    "de lado",
+    "por dentro",
+    "desde abajo",
+    "desde arriba"
+   ],
+   "correcta": 3,
+   "tip": "El pájaro mira desde arriba, igual que se dibuja un plano.",
+   "revisada": false,
+   "id": "hist1-oa08-2"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "¿Quién ve la ciudad como en un plano?",
+   "opciones": [
+    "un buzo",
+    "un piloto",
+    "un minero",
+    "un dentista"
+   ],
+   "correcta": 1,
+   "tip": "El piloto vuela sobre la ciudad y la ve desde arriba, como en un plano.",
+   "revisada": false,
+   "id": "hist1-oa08-3"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "Desde arriba, una mesa redonda se ve como…",
+   "opciones": [
+    "una estrella",
+    "un triángulo",
+    "un círculo",
+    "una línea"
+   ],
+   "correcta": 2,
+   "tip": "Mirada desde arriba, una mesa redonda se ve como un círculo.",
+   "revisada": false,
+   "id": "hist1-oa08-4"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "Desde arriba, un dado se ve como…",
+   "opciones": [
+    "un cuadrado",
+    "un triángulo",
+    "un círculo",
+    "una estrella"
+   ],
+   "correcta": 0,
+   "tip": "Desde arriba solo se ve la cara de encima del dado, que es un cuadrado.",
+   "revisada": false,
+   "id": "hist1-oa08-5"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "Desde arriba, ¿qué se ve de una casa?",
+   "opciones": [
+    "el piso",
+    "el techo",
+    "la puerta",
+    "las ventanas"
+   ],
+   "correcta": 1,
+   "tip": "Desde arriba se ve el techo; la puerta y las ventanas quedan escondidas.",
+   "revisada": false,
+   "id": "hist1-oa08-6"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "Desde arriba, ¿qué se ve de una persona?",
+   "opciones": [
+    "el ombligo",
+    "las rodillas",
+    "los pies",
+    "la cabeza"
+   ],
+   "correcta": 3,
+   "tip": "Si miras a alguien desde arriba, lo que ves es su cabeza.",
+   "revisada": false,
+   "id": "hist1-oa08-7"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "Diego dibujó su pieza desde arriba. Hizo un…",
+   "opciones": [
+    "plano",
+    "cuento",
+    "paisaje",
+    "retrato"
+   ],
+   "correcta": 0,
+   "tip": "Un dibujo de un lugar visto desde arriba es un plano.",
+   "revisada": false,
+   "id": "hist1-oa08-8"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "Matías hace el plano de su pieza. Dibuja su…",
+   "opciones": [
+    "voz",
+    "ruido",
+    "cama",
+    "sombra"
+   ],
+   "correcta": 2,
+   "tip": "Un plano muestra las cosas que están quietas en un lugar, como la cama.",
+   "revisada": false,
+   "id": "hist1-oa08-9"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "Los dibujos chicos de un plano se llaman…",
+   "opciones": [
+    "sílabas",
+    "cuentos",
+    "símbolos",
+    "retratos"
+   ],
+   "correcta": 2,
+   "tip": "Los símbolos son dibujos simples que muestran qué hay en cada lugar.",
+   "revisada": false,
+   "id": "hist1-oa08-10"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "Un plano del colegio sirve para encontrar…",
+   "opciones": [
+    "las salas",
+    "el clima",
+    "la música",
+    "la hora"
+   ],
+   "correcta": 0,
+   "tip": "En el plano del colegio se ve dónde están las salas, el patio y los baños.",
+   "revisada": false,
+   "id": "hist1-oa08-11"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "El plano de la sala muestra dónde está…",
+   "opciones": [
+    "la pizarra",
+    "el día",
+    "la hora",
+    "el frío"
+   ],
+   "correcta": 0,
+   "tip": "Un plano muestra dónde están las cosas, como la pizarra o la puerta.",
+   "revisada": false,
+   "id": "hist1-oa08-12"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "En un plano, los lugares se dibujan más…",
+   "opciones": [
+    "grandes",
+    "ruidosos",
+    "pesados",
+    "pequeños"
+   ],
+   "correcta": 3,
+   "tip": "En el plano todo se dibuja más chico que en la realidad, para que quepa en el papel.",
+   "revisada": false,
+   "id": "hist1-oa08-13"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "¿Qué cabe en una mochila?",
+   "opciones": [
+    "la cordillera",
+    "Chile entero",
+    "el océano entero",
+    "el mapa de Chile"
+   ],
+   "correcta": 3,
+   "tip": "Chile es enorme, pero su mapa es un papel que cabe en una mochila.",
+   "revisada": false,
+   "id": "hist1-oa08-14"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "¿En qué se dibuja un plano?",
+   "opciones": [
+    "en el agua",
+    "en un papel",
+    "en el aire",
+    "en una nube"
+   ],
+   "correcta": 1,
+   "tip": "Los planos se dibujan en papel, o en una pantalla.",
+   "revisada": false,
+   "id": "hist1-oa08-15"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "El plano de una casa muestra sus…",
+   "opciones": [
+    "piezas",
+    "vecinos",
+    "mascotas",
+    "juguetes"
+   ],
+   "correcta": 0,
+   "tip": "El plano de una casa muestra sus piezas: cocina, baño, dormitorios.",
+   "revisada": false,
+   "id": "hist1-oa08-16"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "Para ver el barrio entero, ¿qué sirve más?",
+   "opciones": [
+    "una regla",
+    "un reloj",
+    "un plano",
+    "un lápiz"
+   ],
+   "correcta": 2,
+   "tip": "Un plano del barrio muestra sus calles y lugares de una sola vez.",
+   "revisada": false,
+   "id": "hist1-oa08-17"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "¿Qué muestra un mapa de Chile?",
+   "opciones": [
+    "solo una plaza",
+    "una sola casa",
+    "el país entero",
+    "un solo árbol"
+   ],
+   "correcta": 2,
+   "tip": "El mapa de Chile representa todo el país en un solo dibujo.",
+   "revisada": false,
+   "id": "hist1-oa08-18"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "Un mapa del mundo muestra…",
+   "opciones": [
+    "los países",
+    "solo una casa",
+    "un solo patio",
+    "una sola calle"
+   ],
+   "correcta": 0,
+   "tip": "En el mapa del mundo aparecen muchos países y océanos.",
+   "revisada": false,
+   "id": "hist1-oa08-19"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "Para un viaje largo por Chile, ¿qué sirve?",
+   "opciones": [
+    "un mapa",
+    "un calendario",
+    "un reloj",
+    "una regla"
+   ],
+   "correcta": 0,
+   "tip": "El mapa muestra los caminos y las ciudades para no perderse en el viaje.",
+   "revisada": false,
+   "id": "hist1-oa08-20"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "La familia de Pía está perdida. ¿Qué la ayuda?",
+   "opciones": [
+    "un mapa",
+    "un helado",
+    "una pelota",
+    "un paraguas"
+   ],
+   "correcta": 0,
+   "tip": "Un mapa muestra dónde estás y por dónde seguir.",
+   "revisada": false,
+   "id": "hist1-oa08-21"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "Un mapa en el teléfono sirve para…",
+   "opciones": [
+    "ubicarse",
+    "sacar fotos",
+    "jugar pelota",
+    "escuchar música"
+   ],
+   "correcta": 0,
+   "tip": "El mapa del teléfono, como uno de papel, sirve para saber dónde estás.",
+   "revisada": false,
+   "id": "hist1-oa08-22"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "¿Qué usa el pirata para hallar el tesoro?",
+   "opciones": [
+    "un mapa",
+    "un termómetro",
+    "un reloj",
+    "una regla"
+   ],
+   "correcta": 0,
+   "tip": "En los cuentos de piratas, el mapa muestra dónde está escondido el tesoro.",
+   "revisada": false,
+   "id": "hist1-oa08-23"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "Un mapa también puede mostrar…",
+   "opciones": [
+    "los sueños",
+    "los olores",
+    "los caminos",
+    "los sonidos"
+   ],
+   "correcta": 2,
+   "tip": "Los mapas muestran caminos, ríos y ciudades: cosas que tienen un lugar.",
+   "revisada": false,
+   "id": "hist1-oa08-24"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "En el plano, el árbol va junto a la casa. ¿Y de verdad?",
+   "opciones": [
+    "lejos de la casa",
+    "dentro de la casa",
+    "junto a la casa",
+    "en otra ciudad"
+   ],
+   "correcta": 2,
+   "tip": "El plano copia cómo están ordenadas las cosas: si en el plano están juntas, en la realidad también.",
+   "revisada": false,
+   "id": "hist1-oa08-26"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "Las calles en un plano se dibujan como…",
+   "opciones": [
+    "estrellas",
+    "corazones",
+    "líneas",
+    "círculos"
+   ],
+   "correcta": 2,
+   "tip": "Las calles son largas, por eso en el plano se dibujan como líneas o franjas.",
+   "revisada": false,
+   "id": "hist1-oa08-27"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "Tomás usa el plano del zoológico para hallar…",
+   "opciones": [
+    "los leones",
+    "la hora",
+    "las nubes",
+    "el sol"
+   ],
+   "correcta": 0,
+   "tip": "El plano del zoológico muestra dónde vive cada animal.",
+   "revisada": false,
+   "id": "hist1-oa08-28"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "¿Quién usa un plano para hacer una casa?",
+   "opciones": [
+    "la peluquera",
+    "la futbolista",
+    "la cantante",
+    "la arquitecta"
+   ],
+   "correcta": 3,
+   "tip": "La arquitecta dibuja el plano de la casa antes de construirla.",
+   "revisada": false,
+   "id": "hist1-oa08-29"
+  },
+  {
+   "oa": "HI01 OA 08",
+   "pregunta": "Un mapa y un plano son dos formas de…",
+   "opciones": [
+    "escribir cartas",
+    "representar lugares",
+    "cantar canciones",
+    "contar números"
+   ],
+   "correcta": 1,
+   "tip": "Un mapa y un plano son dibujos que representan lugares.",
+   "revisada": false,
+   "id": "hist1-oa08-30"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "¿Cómo se llama el país donde vivimos?",
+   "opciones": [
+    "Perú",
+    "España",
+    "Chile",
+    "México"
+   ],
+   "correcta": 2,
+   "tip": "Vivimos en Chile, un país de América del Sur.",
+   "revisada": false,
+   "id": "hist1-oa09-1"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "Chile en el mapa parece una…",
+   "opciones": [
+    "pelota",
+    "rueda",
+    "cinta larga",
+    "mesa redonda"
+   ],
+   "correcta": 2,
+   "tip": "En el mapa, Chile es largo y angosto, como una cinta.",
+   "revisada": false,
+   "id": "hist1-oa09-2"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "¿Qué gran océano baña la costa de Chile?",
+   "opciones": [
+    "el Índico",
+    "el Pacífico",
+    "el Caribe",
+    "el Ártico"
+   ],
+   "correcta": 1,
+   "tip": "Toda la costa de Chile está junto al océano Pacífico.",
+   "revisada": false,
+   "id": "hist1-oa09-3"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "¿Qué cordillera recorre Chile de punta a punta?",
+   "opciones": [
+    "de los Alpes",
+    "del Himalaya",
+    "de los Andes",
+    "de los Pirineos"
+   ],
+   "correcta": 2,
+   "tip": "La cordillera de los Andes recorre Chile de punta a punta, en el lado contrario al mar.",
+   "revisada": false,
+   "id": "hist1-oa09-4"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "Chile tiene mar a un lado. ¿Qué hay al otro?",
+   "opciones": [
+    "la cordillera",
+    "un lago grande",
+    "otro océano",
+    "una selva"
+   ],
+   "correcta": 0,
+   "tip": "Chile queda entre el océano Pacífico y la cordillera de los Andes.",
+   "revisada": false,
+   "id": "hist1-oa09-5"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "Las montañas de los Andes son…",
+   "opciones": [
+    "muy blandas",
+    "muy altas",
+    "muy bajitas",
+    "de juguete"
+   ],
+   "correcta": 1,
+   "tip": "Los Andes tienen montañas muy altas, con nieve en las cumbres.",
+   "revisada": false,
+   "id": "hist1-oa09-6"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "En la cordillera de los Andes hay muchos…",
+   "opciones": [
+    "barcos",
+    "puertos",
+    "edificios",
+    "volcanes"
+   ],
+   "correcta": 3,
+   "tip": "En la cordillera de los Andes hay muchos volcanes.",
+   "revisada": false,
+   "id": "hist1-oa09-7"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "¿Qué parte de Chile es la más alta?",
+   "opciones": [
+    "los valles",
+    "las playas",
+    "la costa",
+    "la cordillera"
+   ],
+   "correcta": 3,
+   "tip": "Lo más alto de Chile está en la cordillera de los Andes.",
+   "revisada": false,
+   "id": "hist1-oa09-8"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "Las playas de Chile están junto al…",
+   "opciones": [
+    "lago Titicaca",
+    "río Amazonas",
+    "océano Pacífico",
+    "mar Caribe"
+   ],
+   "correcta": 2,
+   "tip": "Las playas de Chile miran al océano Pacífico.",
+   "revisada": false,
+   "id": "hist1-oa09-9"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "La parte de Chile junto al mar es la…",
+   "opciones": [
+    "selva",
+    "nieve",
+    "costa",
+    "cumbre"
+   ],
+   "correcta": 2,
+   "tip": "La costa es la parte del país que está junto al mar.",
+   "revisada": false,
+   "id": "hist1-oa09-10"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "En el mapa, el mar va a la izquierda. ¿Y los Andes?",
+   "opciones": [
+    "a la izquierda",
+    "arriba del mar",
+    "dentro del mar",
+    "a la derecha"
+   ],
+   "correcta": 3,
+   "tip": "En el mapa de Chile, el mar queda a un lado y la cordillera al lado contrario.",
+   "revisada": false,
+   "id": "hist1-oa09-11"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "Al subir a la cordillera, ¿qué se ve?",
+   "opciones": [
+    "playas y olas",
+    "montañas altas",
+    "una gran selva",
+    "muchos camellos"
+   ],
+   "correcta": 1,
+   "tip": "En la cordillera de los Andes se ven montañas muy altas.",
+   "revisada": false,
+   "id": "hist1-oa09-12"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "Para ver entera la cordillera, ¿qué sirve?",
+   "opciones": [
+    "un mapa",
+    "una lupa",
+    "un reloj",
+    "un vaso"
+   ],
+   "correcta": 0,
+   "tip": "En un mapa se puede ver la cordillera entera de una sola vez.",
+   "revisada": false,
+   "id": "hist1-oa09-13"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "Rapa Nui, la Isla de Pascua, es parte de…",
+   "opciones": [
+    "Chile",
+    "Perú",
+    "Japón",
+    "España"
+   ],
+   "correcta": 0,
+   "tip": "Rapa Nui está lejos, en medio del océano Pacífico, pero es parte de Chile.",
+   "revisada": false,
+   "id": "hist1-oa09-14"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "El mapa de Chile incluye una parte de la…",
+   "opciones": [
+    "Australia",
+    "Antártica",
+    "Groenlandia",
+    "Amazonía"
+   ],
+   "correcta": 1,
+   "tip": "El mapa de Chile incluye un territorio en la Antártica, el continente helado.",
+   "revisada": false,
+   "id": "hist1-oa09-15"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "¿En qué ciudad trabaja el presidente?",
+   "opciones": [
+    "Arica",
+    "Temuco",
+    "Punta Arenas",
+    "Santiago"
+   ],
+   "correcta": 3,
+   "tip": "La capital de Chile es Santiago, y ahí trabaja el presidente.",
+   "revisada": false,
+   "id": "hist1-oa09-16"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "¿Qué es la capital de un país?",
+   "opciones": [
+    "su río principal",
+    "su ciudad principal",
+    "su playa principal",
+    "su cerro principal"
+   ],
+   "correcta": 1,
+   "tip": "La capital es la ciudad principal de un país: allí está el gobierno.",
+   "revisada": false,
+   "id": "hist1-oa09-17"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "La ciudad más grande de Chile es…",
+   "opciones": [
+    "Castro",
+    "Iquique",
+    "Santiago",
+    "Valdivia"
+   ],
+   "correcta": 2,
+   "tip": "Santiago, la capital, es la ciudad con más habitantes de Chile.",
+   "revisada": false,
+   "id": "hist1-oa09-18"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "Javiera vive en Santiago. Vive en la…",
+   "opciones": [
+    "isla",
+    "selva",
+    "playa",
+    "capital"
+   ],
+   "correcta": 3,
+   "tip": "Quien vive en Santiago vive en la capital de Chile.",
+   "revisada": false,
+   "id": "hist1-oa09-20"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "Ana vive en Talca, región del Maule. ¿Cuál es su región?",
+   "opciones": [
+    "el Maule",
+    "Chile",
+    "Talca",
+    "Santiago"
+   ],
+   "correcta": 0,
+   "tip": "Talca es la ciudad de Ana, y el Maule es su región.",
+   "revisada": false,
+   "id": "hist1-oa09-21"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "Lucas vive en Chillán, región de Ñuble. ¿Cuál es su región?",
+   "opciones": [
+    "Chillán",
+    "Talca",
+    "Ñuble",
+    "Chile"
+   ],
+   "correcta": 2,
+   "tip": "Chillán es la ciudad de Lucas, y Ñuble es su región.",
+   "revisada": false,
+   "id": "hist1-oa09-22"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "Valentina vive en Punta Arenas, región de Magallanes. ¿Su región?",
+   "opciones": [
+    "Magallanes",
+    "Punta Arenas",
+    "Aysén",
+    "Chile"
+   ],
+   "correcta": 0,
+   "tip": "Punta Arenas es la ciudad de Valentina, y Magallanes es su región.",
+   "revisada": false,
+   "id": "hist1-oa09-23"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "Tomás vive en Rancagua, región de O'Higgins. ¿Cuál es su ciudad?",
+   "opciones": [
+    "O'Higgins",
+    "Chile",
+    "Rancagua",
+    "Santiago"
+   ],
+   "correcta": 2,
+   "tip": "Rancagua es la ciudad de Tomás; O'Higgins es el nombre de su región.",
+   "revisada": false,
+   "id": "hist1-oa09-24"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "Benjamín vive en Ovalle, región de Coquimbo. ¿Cuál es su localidad?",
+   "opciones": [
+    "Chile",
+    "Ovalle",
+    "Santiago",
+    "La Serena"
+   ],
+   "correcta": 1,
+   "tip": "La localidad es el pueblo o ciudad donde uno vive: para Benjamín es Ovalle.",
+   "revisada": false,
+   "id": "hist1-oa09-25"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "Sofía vive en Valparaíso. ¿En qué país vive?",
+   "opciones": [
+    "Valparaíso",
+    "Argentina",
+    "Chile",
+    "Perú"
+   ],
+   "correcta": 2,
+   "tip": "Valparaíso es la ciudad de Sofía, y Chile es su país.",
+   "revisada": false,
+   "id": "hist1-oa09-26"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "Diego vive en Puerto Montt. Puerto Montt es una…",
+   "opciones": [
+    "isla",
+    "ciudad",
+    "montaña",
+    "región"
+   ],
+   "correcta": 1,
+   "tip": "Puerto Montt es una ciudad; su región se llama Los Lagos.",
+   "revisada": false,
+   "id": "hist1-oa09-27"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "El pueblo o ciudad donde vive alguien es su…",
+   "opciones": [
+    "región",
+    "país",
+    "planeta",
+    "localidad"
+   ],
+   "correcta": 3,
+   "tip": "La localidad es el pueblo o la ciudad donde vive una persona.",
+   "revisada": false,
+   "id": "hist1-oa09-28"
+  },
+  {
+   "oa": "HI01 OA 09",
+   "pregunta": "Una región es más grande que…",
+   "opciones": [
+    "una ciudad",
+    "Chile",
+    "América",
+    "el mundo"
+   ],
+   "correcta": 0,
+   "tip": "Una región tiene varias ciudades, pero es más chica que el país.",
+   "revisada": false,
+   "id": "hist1-oa09-29"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "¿Qué es una cordillera?",
+   "opciones": [
+    "una playa grande",
+    "un río muy largo",
+    "muchos cerros juntos",
+    "una calle con casas"
+   ],
+   "correcta": 2,
+   "tip": "Una cordillera es una fila de cerros y montañas altas, uno al lado del otro.",
+   "revisada": false,
+   "id": "hist1-oa10-1"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "¿Cómo es el agua del mar?",
+   "opciones": [
+    "salada",
+    "dulce",
+    "sin sabor",
+    "con azúcar"
+   ],
+   "correcta": 0,
+   "tip": "El agua del mar es salada; por eso no se puede tomar. El agua de los ríos y lagos es dulce.",
+   "revisada": false,
+   "id": "hist1-oa10-2"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Lucas va del pueblo a la ciudad. ¿Qué cambia?",
+   "opciones": [
+    "más edificios",
+    "más cerros",
+    "menos calles",
+    "menos autos"
+   ],
+   "correcta": 0,
+   "tip": "Una ciudad es más grande que un pueblo: tiene más calles, más autos y más edificios.",
+   "revisada": false,
+   "id": "hist1-oa10-3"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "¿Para qué sirve un camino?",
+   "opciones": [
+    "para guardar agua",
+    "para sembrar papas",
+    "para ir a otro lugar",
+    "para tomar sol"
+   ],
+   "correcta": 2,
+   "tip": "Un camino une lugares: por él se va de una casa a otra, de un pueblo a otro.",
+   "revisada": false,
+   "id": "hist1-oa10-4"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Casas, puentes y edificios son…",
+   "opciones": [
+    "construcciones",
+    "vegetación",
+    "cordilleras",
+    "desiertos"
+   ],
+   "correcta": 0,
+   "tip": "Las construcciones son todo lo que las personas levantan: casas, puentes, edificios y caminos.",
+   "revisada": false,
+   "id": "hist1-oa10-5"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "¿Quién hace las construcciones?",
+   "opciones": [
+    "el viento",
+    "los ríos",
+    "las personas",
+    "la lluvia"
+   ],
+   "correcta": 2,
+   "tip": "Las construcciones las hacen las personas. El viento y la lluvia no construyen casas.",
+   "revisada": false,
+   "id": "hist1-oa10-6"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Árboles, pasto y flores son…",
+   "opciones": [
+    "desiertos",
+    "vegetación",
+    "caminos",
+    "edificios"
+   ],
+   "correcta": 1,
+   "tip": "La vegetación son las plantas de un lugar: árboles, arbustos, pasto y flores.",
+   "revisada": false,
+   "id": "hist1-oa10-7"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "En el desierto casi nunca…",
+   "opciones": [
+    "hay sol",
+    "llueve",
+    "hay cerros",
+    "hay arena"
+   ],
+   "correcta": 1,
+   "tip": "En el desierto casi no llueve. Por eso es seco y tiene muy pocas plantas.",
+   "revisada": false,
+   "id": "hist1-oa10-8"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "¿Qué hizo la naturaleza, sin las personas?",
+   "opciones": [
+    "un cerro",
+    "una calle",
+    "un edificio",
+    "un puente"
+   ],
+   "correcta": 0,
+   "tip": "Los cerros se formaron solos, hace muchísimo tiempo. Los puentes y las calles los hacen las personas.",
+   "revisada": false,
+   "id": "hist1-oa10-9"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "¿Qué construcción sirve para cruzar un río?",
+   "opciones": [
+    "una torre",
+    "una plaza",
+    "un puente",
+    "un edificio"
+   ],
+   "correcta": 2,
+   "tip": "El puente pasa por encima del río, para cruzarlo sin mojarse.",
+   "revisada": false,
+   "id": "hist1-oa10-10"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Sofía ve olas, arena y botes. ¿Dónde está?",
+   "opciones": [
+    "en la cordillera",
+    "en el desierto",
+    "en la playa",
+    "en el bosque"
+   ],
+   "correcta": 2,
+   "tip": "Las olas y los botes son del mar; la arena junto al mar es la playa.",
+   "revisada": false,
+   "id": "hist1-oa10-11"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Ema ve tierra seca y pocas plantas. ¿Qué es?",
+   "opciones": [
+    "un desierto",
+    "un huerto",
+    "un bosque",
+    "una laguna"
+   ],
+   "correcta": 0,
+   "tip": "Un desierto es un lugar muy seco, donde casi no llueve y crecen muy pocas plantas.",
+   "revisada": false,
+   "id": "hist1-oa10-12"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "¿Dónde hay más autos y edificios?",
+   "opciones": [
+    "en el desierto",
+    "en la ciudad",
+    "en la playa",
+    "en la cordillera"
+   ],
+   "correcta": 1,
+   "tip": "En la ciudad vive mucha gente, así que hay muchos autos, calles y edificios.",
+   "revisada": false,
+   "id": "hist1-oa10-13"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "El perro está delante de la casa. ¿Dónde está la casa?",
+   "opciones": [
+    "detrás del perro",
+    "encima del perro",
+    "debajo del perro",
+    "delante del perro"
+   ],
+   "correcta": 0,
+   "tip": "Si el perro está delante de la casa, la casa queda detrás del perro.",
+   "revisada": false,
+   "id": "hist1-oa10-14"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Ana pinta el sol a la izquierda del cerro. ¿Y el cerro?",
+   "opciones": [
+    "a la derecha del sol",
+    "encima del sol",
+    "a la izquierda del sol",
+    "debajo del sol"
+   ],
+   "correcta": 0,
+   "tip": "Si el sol está a la izquierda del cerro, el cerro queda a la derecha del sol.",
+   "revisada": false,
+   "id": "hist1-oa10-15"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "El puente está entre dos cerros. ¿Qué hay a cada lado?",
+   "opciones": [
+    "el mar",
+    "una casa",
+    "un puente",
+    "un cerro"
+   ],
+   "correcta": 3,
+   "tip": "Estar entre dos cosas es tener una a cada lado. A cada lado del puente hay un cerro.",
+   "revisada": false,
+   "id": "hist1-oa10-16"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Tomás mira el mar, con el cerro detrás. ¿Ve el cerro?",
+   "opciones": [
+    "no, lo tiene atrás",
+    "sí, lo tiene arriba",
+    "sí, lo tiene delante",
+    "sí, lo tiene al lado"
+   ],
+   "correcta": 0,
+   "tip": "Lo que está detrás de nosotros queda a la espalda, y no lo vemos sin darnos vuelta.",
+   "revisada": false,
+   "id": "hist1-oa10-18"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "En el campo hay muchos…",
+   "opciones": [
+    "autos y bocinas",
+    "semáforos",
+    "edificios altos",
+    "árboles y animales"
+   ],
+   "correcta": 3,
+   "tip": "En el campo hay pocas construcciones y mucha vegetación, con animales como vacas y ovejas.",
+   "revisada": false,
+   "id": "hist1-oa10-19"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Una calle de tierra que une dos pueblos es un…",
+   "opciones": [
+    "edificio",
+    "camino",
+    "puente",
+    "desierto"
+   ],
+   "correcta": 1,
+   "tip": "Un camino lleva de un lugar a otro; puede ser de tierra o de cemento.",
+   "revisada": false,
+   "id": "hist1-oa10-20"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Luis riega el pasto y las plantas. ¿Qué cuida?",
+   "opciones": [
+    "la vegetación",
+    "la cordillera",
+    "el desierto",
+    "las construcciones"
+   ],
+   "correcta": 0,
+   "tip": "Las plantas y el pasto son la vegetación. Al regarlas, Luis las cuida.",
+   "revisada": false,
+   "id": "hist1-oa10-21"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Un lugar con agua salada y olas es…",
+   "opciones": [
+    "el mar",
+    "el lago",
+    "el río",
+    "la laguna"
+   ],
+   "correcta": 0,
+   "tip": "El mar tiene agua salada y olas. Los ríos y casi todos los lagos y lagunas tienen agua dulce.",
+   "revisada": false,
+   "id": "hist1-oa10-22"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Camila describe su barrio. ¿Qué dato sirve?",
+   "opciones": [
+    "tiene seis años",
+    "le gusta el helado",
+    "su perro es café",
+    "hay casas y una plaza"
+   ],
+   "correcta": 3,
+   "tip": "Para describir un lugar se cuenta lo que hay en él: casas, plazas, calles, árboles.",
+   "revisada": false,
+   "id": "hist1-oa10-23"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Antes había pasto; hoy hay casas. ¿Qué cambió?",
+   "opciones": [
+    "el paisaje",
+    "el mes",
+    "el mar",
+    "el idioma"
+   ],
+   "correcta": 0,
+   "tip": "Cuando las personas construyen, el paisaje cambia: donde había pasto, ahora hay casas.",
+   "revisada": false,
+   "id": "hist1-oa10-24"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Hay un árbol a la derecha de la casa. ¿Y la casa?",
+   "opciones": [
+    "a la derecha del árbol",
+    "encima del árbol",
+    "a la izquierda del árbol",
+    "debajo del árbol"
+   ],
+   "correcta": 2,
+   "tip": "Si el árbol está a la derecha de la casa, la casa queda a la izquierda del árbol.",
+   "revisada": false,
+   "id": "hist1-oa10-25"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Pablo se esconde detrás de un árbol. ¿Lo ven desde delante?",
+   "opciones": [
+    "sí, porque está arriba",
+    "no, el árbol lo tapa",
+    "sí, se ve la cara",
+    "sí, se ve entero"
+   ],
+   "correcta": 1,
+   "tip": "Quien está detrás de algo queda tapado para los que miran desde delante.",
+   "revisada": false,
+   "id": "hist1-oa10-26"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Cerca de Calama hay desierto. ¿Cómo es ahí?",
+   "opciones": [
+    "muy lluvioso",
+    "muy seco y soleado",
+    "con mucha nieve",
+    "lleno de lagos"
+   ],
+   "correcta": 1,
+   "tip": "Calama está en el norte de Chile, junto al desierto, donde casi nunca llueve.",
+   "revisada": false,
+   "id": "hist1-oa10-27"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "En Coquimbo, Joaquín ve un puerto. ¿Qué hay cerca?",
+   "opciones": [
+    "un desierto de hielo",
+    "una selva",
+    "el mar",
+    "un volcán con lava"
+   ],
+   "correcta": 2,
+   "tip": "Un puerto es un lugar en la costa donde llegan los barcos, así que siempre está junto al mar.",
+   "revisada": false,
+   "id": "hist1-oa10-28"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "En el paisaje, ¿qué está hecho por personas?",
+   "opciones": [
+    "un río",
+    "un volcán",
+    "un cerro",
+    "un edificio"
+   ],
+   "correcta": 3,
+   "tip": "El edificio lo construyeron personas. El cerro, el río y el volcán son parte de la naturaleza.",
+   "revisada": false,
+   "id": "hist1-oa10-29"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "¿Cómo se ve la cordillera desde lejos?",
+   "opciones": [
+    "como cerros altos",
+    "como una plaza",
+    "como un camino plano",
+    "como una playa"
+   ],
+   "correcta": 0,
+   "tip": "La cordillera es una fila de cerros muy altos; desde lejos se ven sus cumbres, a veces con nieve.",
+   "revisada": false,
+   "id": "hist1-oa10-30"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "La señora Rosa hace pan. ¿Qué trabajo tiene?",
+   "opciones": [
+    "panadera",
+    "carpintera",
+    "pescadora",
+    "costurera"
+   ],
+   "correcta": 0,
+   "tip": "Quien hace pan es panadero o panadera. Gracias a su trabajo hay pan en el desayuno.",
+   "revisada": false,
+   "id": "hist1-oa11-1"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "Don Luis siembra papas y lechugas. Es…",
+   "opciones": [
+    "panadero",
+    "carpintero",
+    "agricultor",
+    "peluquero"
+   ],
+   "correcta": 2,
+   "tip": "El agricultor trabaja la tierra: siembra y cosecha frutas y verduras.",
+   "revisada": false,
+   "id": "hist1-oa11-2"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "Javiera sale en su bote a buscar peces. Es…",
+   "opciones": [
+    "minera",
+    "pescadora",
+    "costurera",
+    "panadera"
+   ],
+   "correcta": 1,
+   "tip": "Quien sale al mar a sacar peces y mariscos es pescador o pescadora.",
+   "revisada": false,
+   "id": "hist1-oa11-3"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "Ana hace mesas y sillas de madera. Es…",
+   "opciones": [
+    "agricultora",
+    "peluquera",
+    "carpintera",
+    "pescadora"
+   ],
+   "correcta": 2,
+   "tip": "La carpintera trabaja la madera y hace muebles como mesas, sillas y camas.",
+   "revisada": false,
+   "id": "hist1-oa11-4"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "Pedro corta el pelo en su local. Es…",
+   "opciones": [
+    "peluquero",
+    "carpintero",
+    "panadero",
+    "pescador"
+   ],
+   "correcta": 0,
+   "tip": "El peluquero o la peluquera corta y arregla el pelo.",
+   "revisada": false,
+   "id": "hist1-oa11-5"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "La familia de Tomás ordeña vacas. ¿Qué obtiene?",
+   "opciones": [
+    "huevos",
+    "miel",
+    "lana",
+    "leche"
+   ],
+   "correcta": 3,
+   "tip": "Al ordeñar la vaca se saca leche. La lana viene de la oveja, la miel de las abejas y los huevos de la gallina.",
+   "revisada": false,
+   "id": "hist1-oa11-6"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "Doña Marta cuida abejas. ¿Qué produce?",
+   "opciones": [
+    "lana",
+    "leche",
+    "miel",
+    "pan"
+   ],
+   "correcta": 2,
+   "tip": "Las abejas hacen miel, y quien las cuida la junta para venderla o comerla.",
+   "revisada": false,
+   "id": "hist1-oa11-7"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "¿De dónde viene la lana del chaleco?",
+   "opciones": [
+    "de las ovejas",
+    "de los peces",
+    "de las gallinas",
+    "de las abejas"
+   ],
+   "correcta": 0,
+   "tip": "La lana es el pelo de la oveja: se esquila, se lava y se hila para tejer.",
+   "revisada": false,
+   "id": "hist1-oa11-8"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "La feriante vende frutas. ¿Cómo nos ayuda?",
+   "opciones": [
+    "podemos comprar comida",
+    "nos enseña a leer",
+    "nos cuida de noche",
+    "nos arregla el auto"
+   ],
+   "correcta": 0,
+   "tip": "La feriante trae frutas y verduras cerca de la casa, para que podamos comprarlas.",
+   "revisada": false,
+   "id": "hist1-oa11-9"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "Laura cocina en casa y no le pagan. ¿Es trabajo?",
+   "opciones": [
+    "solo si es en una oficina",
+    "sí, también es trabajo",
+    "solo si le pagan",
+    "no, porque es gratis"
+   ],
+   "correcta": 1,
+   "tip": "Cocinar, lavar o cuidar a otros en la casa es trabajo, aunque no se pague. Y es muy importante.",
+   "revisada": false,
+   "id": "hist1-oa11-10"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "¿Qué trabajo hace la familia sin que le paguen?",
+   "opciones": [
+    "manejar un taxi",
+    "vender en la feria",
+    "lavar la ropa de la casa",
+    "atender un almacén"
+   ],
+   "correcta": 2,
+   "tip": "Las tareas de la casa son trabajos sin sueldo, pero igual de necesarios que los pagados.",
+   "revisada": false,
+   "id": "hist1-oa11-11"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "El abuelo de Ema cuida la huerta. ¿Eso ayuda?",
+   "opciones": [
+    "solo si la vende",
+    "no, solo ensucia",
+    "no, porque es gratis",
+    "sí, da comida a la familia"
+   ],
+   "correcta": 3,
+   "tip": "Aunque no la venda, la huerta del abuelo da verduras para la familia: es un trabajo que aporta.",
+   "revisada": false,
+   "id": "hist1-oa11-12"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "¿Todos los trabajos son importantes?",
+   "opciones": [
+    "solo los de oficina",
+    "sí, todos ayudan",
+    "no, solo los que pagan",
+    "solo los de hombres"
+   ],
+   "correcta": 1,
+   "tip": "Todos los trabajos ayudan a la comunidad, los pagados y los no pagados, y los hacen hombres y mujeres.",
+   "revisada": false,
+   "id": "hist1-oa11-13"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "Don Carlos arregla la llave que gotea. Es…",
+   "opciones": [
+    "panadero",
+    "pescador",
+    "gasfíter",
+    "peluquero"
+   ],
+   "correcta": 2,
+   "tip": "El gasfíter arregla las cañerías y las llaves del agua.",
+   "revisada": false,
+   "id": "hist1-oa11-14"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "Tomás cose y arregla ropa. Es…",
+   "opciones": [
+    "panadero",
+    "carpintero",
+    "costurero",
+    "pescador"
+   ],
+   "correcta": 2,
+   "tip": "La costurera o el costurero cose y arregla la ropa con hilo y aguja o con máquina.",
+   "revisada": false,
+   "id": "hist1-oa11-15"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "¿Quién trabaja para que haya fruta en la mesa?",
+   "opciones": [
+    "el gasfíter",
+    "el peluquero",
+    "la costurera",
+    "la agricultora"
+   ],
+   "correcta": 3,
+   "tip": "La fruta la cultiva la agricultora o el agricultor en el campo.",
+   "revisada": false,
+   "id": "hist1-oa11-16"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "Para hacer una mesa, ¿qué usa el carpintero?",
+   "opciones": [
+    "harina",
+    "pescado",
+    "lana",
+    "madera"
+   ],
+   "correcta": 3,
+   "tip": "El carpintero trabaja con madera, que viene de los árboles.",
+   "revisada": false,
+   "id": "hist1-oa11-17"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "Para hacer pan, ¿qué usa la panadera?",
+   "opciones": [
+    "madera",
+    "harina",
+    "lana",
+    "arena"
+   ],
+   "correcta": 1,
+   "tip": "El pan se hace con harina, agua, sal y levadura.",
+   "revisada": false,
+   "id": "hist1-oa11-18"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "En el norte, muchas personas trabajan en la mina. ¿Qué sacan?",
+   "opciones": [
+    "manzanas",
+    "lana",
+    "pescado",
+    "cobre"
+   ],
+   "correcta": 3,
+   "tip": "En las minas del norte de Chile se saca cobre, que sirve para hacer cables y cañerías.",
+   "revisada": false,
+   "id": "hist1-oa11-19"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "En la costa, muchas familias trabajan en el mar. ¿Qué hacen?",
+   "opciones": [
+    "pescan",
+    "siembran trigo",
+    "cortan uvas",
+    "sacan cobre"
+   ],
+   "correcta": 0,
+   "tip": "Quienes viven junto al mar muchas veces trabajan pescando o sacando mariscos.",
+   "revisada": false,
+   "id": "hist1-oa11-20"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "La mamá de Sofía es ingeniera y su papá cuida la casa. ¿Trabajan los dos?",
+   "opciones": [
+    "ninguno de los dos",
+    "solo el papá",
+    "solo la mamá",
+    "sí, los dos trabajan"
+   ],
+   "correcta": 3,
+   "tip": "Cuidar la casa también es trabajo, aunque no tenga sueldo. Los dos trabajan.",
+   "revisada": false,
+   "id": "hist1-oa11-21"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "Andrés cocina en un restorán. ¿Qué trabajo tiene?",
+   "opciones": [
+    "cocinero",
+    "carpintero",
+    "minero",
+    "pescador"
+   ],
+   "correcta": 0,
+   "tip": "Quien prepara la comida en un restorán es cocinero o cocinera, y le pagan por eso.",
+   "revisada": false,
+   "id": "hist1-oa11-22"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "¿De dónde vienen los huevos?",
+   "opciones": [
+    "de las vacas",
+    "de los peces",
+    "de las ovejas",
+    "de las gallinas"
+   ],
+   "correcta": 3,
+   "tip": "Los huevos que comemos los ponen las gallinas, que se crían en el campo.",
+   "revisada": false,
+   "id": "hist1-oa11-23"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "Si no hubiera agricultores, ¿qué faltaría?",
+   "opciones": [
+    "frutas y verduras",
+    "autos",
+    "lápices",
+    "zapatos"
+   ],
+   "correcta": 0,
+   "tip": "Las frutas y verduras las cultivan los agricultores. Sin su trabajo no llegarían a la mesa.",
+   "revisada": false,
+   "id": "hist1-oa11-24"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "La abuela teje chalecos para la familia. ¿Es trabajo?",
+   "opciones": [
+    "no, porque es abuela",
+    "sí, aunque no le paguen",
+    "solo si los vende",
+    "no, es solo un juego"
+   ],
+   "correcta": 1,
+   "tip": "Tejer para la familia es un trabajo sin sueldo: abriga a todos y es valioso.",
+   "revisada": false,
+   "id": "hist1-oa11-25"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "¿Qué recibe una persona por un trabajo pagado?",
+   "opciones": [
+    "un premio",
+    "una nota",
+    "un sueldo",
+    "una medalla"
+   ],
+   "correcta": 2,
+   "tip": "El sueldo es el dinero que se recibe por trabajar. No todos los trabajos se pagan.",
+   "revisada": false,
+   "id": "hist1-oa11-26"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "¿Por qué la panadera se levanta tan temprano?",
+   "opciones": [
+    "para no ver a los clientes",
+    "porque le gusta el frío de noche",
+    "para que haya pan al desayuno",
+    "para dormir toda la tarde"
+   ],
+   "correcta": 2,
+   "tip": "El pan se hornea de madrugada para que esté listo cuando la gente toma desayuno.",
+   "revisada": false,
+   "id": "hist1-oa11-27"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "La costurera arregla el pantalón de Tomás. ¿Cómo lo ayuda?",
+   "opciones": [
+    "le enseña a nadar",
+    "se lo cambia por otro",
+    "le corta el pelo",
+    "puede volver a usarlo"
+   ],
+   "correcta": 3,
+   "tip": "Al arreglar la ropa, la costurera hace que se pueda seguir usando.",
+   "revisada": false,
+   "id": "hist1-oa11-28"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "Doña Juana vende pan en su almacén. ¿Le pagan?",
+   "opciones": [
+    "solo los niños",
+    "solo los domingos",
+    "no, nunca le pagan",
+    "sí, los que compran"
+   ],
+   "correcta": 3,
+   "tip": "Vender en un almacén es un trabajo pagado: quien compra paga por lo que lleva.",
+   "revisada": false,
+   "id": "hist1-oa11-29"
+  },
+  {
+   "oa": "HI01 OA 11",
+   "pregunta": "¿Quién puede ser panadero o carpintero?",
+   "opciones": [
+    "solo los abuelos",
+    "hombres y mujeres",
+    "solo los hombres",
+    "solo las mujeres"
+   ],
+   "correcta": 1,
+   "tip": "Cualquier persona puede hacer cualquier trabajo, sea hombre o mujer.",
+   "revisada": false,
+   "id": "hist1-oa11-30"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "Lucas vive en Brasil. ¿Qué idioma habla?",
+   "opciones": [
+    "portugués",
+    "ruso",
+    "chino",
+    "japonés"
+   ],
+   "correcta": 0,
+   "tip": "En Brasil se habla portugués, un idioma parecido al castellano que hablamos en Chile.",
+   "revisada": false,
+   "id": "hist1-oa12-1"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "Kenji vive en Japón. ¿Qué idioma habla?",
+   "opciones": [
+    "alemán",
+    "italiano",
+    "japonés",
+    "portugués"
+   ],
+   "correcta": 2,
+   "tip": "En Japón se habla japonés, y se escribe con signos distintos a nuestras letras.",
+   "revisada": false,
+   "id": "hist1-oa12-2"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En Chile hablamos castellano. ¿Y en Argentina?",
+   "opciones": [
+    "chino",
+    "portugués",
+    "francés",
+    "castellano"
+   ],
+   "correcta": 3,
+   "tip": "En Argentina, igual que en Chile, se habla castellano, aunque con otro acento.",
+   "revisada": false,
+   "id": "hist1-oa12-3"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "Giulia vive en Italia. ¿Qué idioma habla?",
+   "opciones": [
+    "alemán",
+    "italiano",
+    "chino",
+    "japonés"
+   ],
+   "correcta": 1,
+   "tip": "En Italia se habla italiano. Muchas palabras del italiano se parecen a las del castellano.",
+   "revisada": false,
+   "id": "hist1-oa12-4"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "Ana come con tenedor y Kenji con palillos. Eso es…",
+   "opciones": [
+    "otra forma de comer",
+    "un error de Kenji",
+    "algo prohibido",
+    "comer mal"
+   ],
+   "correcta": 0,
+   "tip": "En Japón muchos comen con palillos. Es una forma distinta de comer, no mejor ni peor.",
+   "revisada": false,
+   "id": "hist1-oa12-5"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En Japón, al entrar a la casa, los niños…",
+   "opciones": [
+    "aplauden tres veces",
+    "se sacan los zapatos",
+    "se ponen un gorro",
+    "entran corriendo"
+   ],
+   "correcta": 1,
+   "tip": "En Japón es costumbre sacarse los zapatos al entrar a la casa, para no ensuciar el piso.",
+   "revisada": false,
+   "id": "hist1-oa12-6"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En China, el Año Nuevo se celebra con…",
+   "opciones": [
+    "trineos en la nieve",
+    "dragones y faroles",
+    "cueca y empanadas",
+    "huevos de chocolate"
+   ],
+   "correcta": 1,
+   "tip": "En el Año Nuevo chino hay bailes con dragones de tela y faroles rojos.",
+   "revisada": false,
+   "id": "hist1-oa12-7"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En Brasil hay una fiesta con disfraces: el…",
+   "opciones": [
+    "Año Nuevo chino",
+    "Cuasimodo",
+    "rodeo",
+    "carnaval"
+   ],
+   "correcta": 3,
+   "tip": "El carnaval de Brasil es una fiesta con música, baile y disfraces que dura varios días.",
+   "revisada": false,
+   "id": "hist1-oa12-8"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En la India, en la fiesta del Holi, la gente…",
+   "opciones": [
+    "se tira polvos de colores",
+    "baila cueca en ramadas",
+    "come huevos de chocolate",
+    "hace muñecos de nieve"
+   ],
+   "correcta": 0,
+   "tip": "En el Holi, una fiesta de la India, la gente se lanza polvos de muchos colores.",
+   "revisada": false,
+   "id": "hist1-oa12-9"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En Chile, la Navidad es en verano. ¿Y en Canadá?",
+   "opciones": [
+    "suele haber nieve",
+    "no hay Navidad",
+    "hace calor de playa",
+    "es en primavera"
+   ],
+   "correcta": 0,
+   "tip": "Canadá está muy al norte: allá la Navidad llega en invierno y suele haber nieve.",
+   "revisada": false,
+   "id": "hist1-oa12-10"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "Olga vive en Rusia, donde nieva en invierno. ¿Qué usa?",
+   "opciones": [
+    "abrigo y gorro",
+    "polera y short",
+    "sandalias",
+    "traje de baño"
+   ],
+   "correcta": 0,
+   "tip": "Donde hace mucho frío, los niños se abrigan con abrigo, gorro y guantes.",
+   "revisada": false,
+   "id": "hist1-oa12-11"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En un lugar con mucho calor, los niños usan…",
+   "opciones": [
+    "gorro de lana",
+    "abrigo grueso",
+    "botas de nieve",
+    "ropa liviana"
+   ],
+   "correcta": 3,
+   "tip": "Con calor se usa ropa delgada y fresca. La ropa cambia según el clima de cada lugar.",
+   "revisada": false,
+   "id": "hist1-oa12-12"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En Italia es típico comer…",
+   "opciones": [
+    "pasta y pizza",
+    "empanadas",
+    "humitas",
+    "sopaipillas"
+   ],
+   "correcta": 0,
+   "tip": "La pasta y la pizza son comidas típicas de Italia. Hoy se comen en muchos países, también en Chile.",
+   "revisada": false,
+   "id": "hist1-oa12-13"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En México, muchas comidas llevan…",
+   "opciones": [
+    "mote con huesillo",
+    "salmón ahumado",
+    "tortillas de maíz",
+    "pan de centeno"
+   ],
+   "correcta": 2,
+   "tip": "La tortilla de maíz, delgada y redonda, está en muchas comidas de México, como los tacos.",
+   "revisada": false,
+   "id": "hist1-oa12-14"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En Japón, los niños limpian su sala de clases. Eso es…",
+   "opciones": [
+    "un castigo del profesor",
+    "un juego de video",
+    "una costumbre de allá",
+    "un error de la escuela"
+   ],
+   "correcta": 2,
+   "tip": "En las escuelas de Japón, los alumnos ayudan a limpiar su sala: es una costumbre para cuidar lo de todos.",
+   "revisada": false,
+   "id": "hist1-oa12-15"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "Lin habla chino y Diego castellano. ¿Cómo son?",
+   "opciones": [
+    "uno está equivocado",
+    "distintos, y está bien",
+    "uno habla mal",
+    "deberían ser iguales"
+   ],
+   "correcta": 1,
+   "tip": "Hablar otro idioma no es mejor ni peor: es distinto. Cada idioma sirve para conversar.",
+   "revisada": false,
+   "id": "hist1-oa12-16"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "¿Qué país queda más lejos de Chile?",
+   "opciones": [
+    "Argentina",
+    "Bolivia",
+    "Japón",
+    "Perú"
+   ],
+   "correcta": 2,
+   "tip": "Japón está al otro lado del océano. Argentina, Perú y Bolivia son vecinos de Chile.",
+   "revisada": false,
+   "id": "hist1-oa12-17"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "¿Qué país es vecino de Chile?",
+   "opciones": [
+    "Japón",
+    "Argentina",
+    "Italia",
+    "China"
+   ],
+   "correcta": 1,
+   "tip": "Argentina está junto a Chile, al otro lado de la cordillera. Japón, China e Italia quedan muy lejos.",
+   "revisada": false,
+   "id": "hist1-oa12-18"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "Para viajar de Chile a Japón, hay que cruzar…",
+   "opciones": [
+    "un río chico",
+    "una plaza",
+    "una calle",
+    "el océano"
+   ],
+   "correcta": 3,
+   "tip": "Entre Chile y Japón está el océano Pacífico, enorme. Por eso se viaja en avión.",
+   "revisada": false,
+   "id": "hist1-oa12-19"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "¿Para qué gira Ana el globo terráqueo?",
+   "opciones": [
+    "para contar los días",
+    "para buscar un país",
+    "para saber la hora",
+    "para medir el frío"
+   ],
+   "correcta": 1,
+   "tip": "El globo terráqueo es como una pelota con forma de la Tierra: sirve para ubicar países.",
+   "revisada": false,
+   "id": "hist1-oa12-20"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "¿En qué se parecen los niños de todo el mundo?",
+   "opciones": [
+    "todos hablan el mismo idioma",
+    "todos juegan y aprenden",
+    "todos usan la misma ropa",
+    "todos comen lo mismo"
+   ],
+   "correcta": 1,
+   "tip": "Los niños de todo el mundo juegan, aprenden y tienen familia, aunque hablen y vistan distinto.",
+   "revisada": false,
+   "id": "hist1-oa12-21"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "Amani vive en Kenia y saluda diciendo «jambo». ¿Qué es eso?",
+   "opciones": [
+    "un baile de su escuela",
+    "un juego de pelota",
+    "un plato de comida de Kenia",
+    "un saludo en su idioma"
+   ],
+   "correcta": 3,
+   "tip": "«Jambo» quiere decir «hola» en suajili, un idioma que se habla en Kenia.",
+   "revisada": false,
+   "id": "hist1-oa12-22"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En Japón, para saludar, muchos se…",
+   "opciones": [
+    "dan tres besos en la cara",
+    "saltan juntos dos veces",
+    "inclinan hacia adelante",
+    "aplauden con fuerza"
+   ],
+   "correcta": 2,
+   "tip": "En Japón es costumbre saludar inclinando el cuerpo hacia adelante. En Chile damos la mano o un beso.",
+   "revisada": false,
+   "id": "hist1-oa12-23"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En Japón se come mucho…",
+   "opciones": [
+    "arroz",
+    "porotos",
+    "mote",
+    "choclo"
+   ],
+   "correcta": 0,
+   "tip": "El arroz es un alimento de todos los días en Japón, como el pan en muchas casas de Chile.",
+   "revisada": false,
+   "id": "hist1-oa12-24"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En Estados Unidos, en Halloween, los niños…",
+   "opciones": [
+    "corren con dragones",
+    "bailan cueca en ramadas",
+    "se disfrazan y piden dulces",
+    "se tiran polvos de colores"
+   ],
+   "correcta": 2,
+   "tip": "En Halloween los niños se disfrazan y van de casa en casa pidiendo dulces.",
+   "revisada": false,
+   "id": "hist1-oa12-25"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "¿Qué hacen niños de casi todo el mundo?",
+   "opciones": [
+    "van a la escuela",
+    "pagan las cuentas",
+    "manejan autos",
+    "van a la oficina"
+   ],
+   "correcta": 0,
+   "tip": "En casi todos los países los niños van a la escuela a aprender, igual que en Chile.",
+   "revisada": false,
+   "id": "hist1-oa12-26"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "Diego ve niños de Japón con uniforme. ¿Y en Chile?",
+   "opciones": [
+    "solo los adultos lo usan",
+    "solo lo usan en verano",
+    "nadie usa uniforme nunca",
+    "muchos también lo usan"
+   ],
+   "correcta": 3,
+   "tip": "En Chile muchos colegios también usan uniforme: es algo que se parece entre los dos países.",
+   "revisada": false,
+   "id": "hist1-oa12-27"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "La Navidad es en verano en Australia y en…",
+   "opciones": [
+    "Rusia",
+    "Noruega",
+    "Chile",
+    "Canadá"
+   ],
+   "correcta": 2,
+   "tip": "Chile y Australia están en la mitad sur del mundo: allí diciembre es verano.",
+   "revisada": false,
+   "id": "hist1-oa12-28"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "¿Por qué niños de otros países comen distinto?",
+   "opciones": [
+    "es una regla para todo el mundo",
+    "unos comen mal y otros bien",
+    "cada lugar tiene sus alimentos",
+    "algunos no saben cocinar"
+   ],
+   "correcta": 2,
+   "tip": "Cada lugar cultiva y cocina lo que tiene cerca, por eso las comidas cambian de un país a otro.",
+   "revisada": false,
+   "id": "hist1-oa12-29"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "Lin llegó a Chile desde China en avión. ¿Por qué?",
+   "opciones": [
+    "no hay barcos",
+    "es más fácil a pie",
+    "China queda al lado",
+    "China queda muy lejos"
+   ],
+   "correcta": 3,
+   "tip": "China está muy lejos de Chile, al otro lado del océano: el avión es la forma más rápida de llegar.",
+   "revisada": false,
+   "id": "hist1-oa12-30"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Sofía cuenta algo. ¿Qué debería hacer Matías?",
+   "opciones": [
+    "escucharla atento",
+    "irse a jugar",
+    "hablarle encima",
+    "taparse los oídos"
+   ],
+   "correcta": 0,
+   "tip": "Escuchar con atención a quien habla es una forma de respetarlo: así sabe que lo que dice nos importa.",
+   "revisada": false,
+   "id": "hist1-oa13-1"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Diego recibe un regalo. ¿Qué debería decir?",
+   "opciones": [
+    "muchas gracias",
+    "que es muy poco",
+    "nada, solo lo abre",
+    "que quería otro"
+   ],
+   "correcta": 0,
+   "tip": "Dar las gracias muestra cortesía y cariño por quien pensó en nosotros.",
+   "revisada": false,
+   "id": "hist1-oa13-2"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Camila entra a la sala. ¿Qué debería hacer?",
+   "opciones": [
+    "entrar gritando",
+    "cerrar de un portazo",
+    "no mirar a nadie",
+    "saludar a todos"
+   ],
+   "correcta": 3,
+   "tip": "Saludar al llegar es una forma amable de tratar a los demás.",
+   "revisada": false,
+   "id": "hist1-oa13-3"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "La abuela de Tomás le habla. ¿Qué hace él?",
+   "opciones": [
+    "se va a su pieza",
+    "sigue con la tele",
+    "la mira y escucha",
+    "le contesta enojado"
+   ],
+   "correcta": 2,
+   "tip": "Mirar y escuchar a quien nos habla es tratarlo con respeto.",
+   "revisada": false,
+   "id": "hist1-oa13-4"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Lucas se equivoca al leer. ¿Qué hace el curso?",
+   "opciones": [
+    "grita la palabra",
+    "espera con respeto",
+    "lo imita burlón",
+    "se ríe fuerte"
+   ],
+   "correcta": 1,
+   "tip": "Todos nos equivocamos cuando aprendemos. Reírse de alguien lo hace sentir mal.",
+   "revisada": false,
+   "id": "hist1-oa13-5"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Martina le pide agua a su papá. ¿Qué le dice?",
+   "opciones": [
+    "por favor",
+    "rápido ya",
+    "ahora mismo",
+    "dámela luego"
+   ],
+   "correcta": 0,
+   "tip": "«Por favor» es una palabra amable que usamos cuando pedimos algo.",
+   "revisada": false,
+   "id": "hist1-oa13-6"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Rosa trae comida de su país. ¿Qué hace Iván?",
+   "opciones": [
+    "dice que es muy fea",
+    "se tapa la nariz",
+    "pregunta con interés",
+    "se ríe de su plato"
+   ],
+   "correcta": 2,
+   "tip": "Las comidas de otros lugares son parte de sus costumbres. Interesarse por ellas es una forma de respeto.",
+   "revisada": false,
+   "id": "hist1-oa13-7"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Flor tiene el pelo muy crespo. ¿Qué hace Pablo?",
+   "opciones": [
+    "se ríe de su pelo",
+    "le pone un apodo",
+    "no juega con ella",
+    "la trata igual"
+   ],
+   "correcta": 3,
+   "tip": "Nadie debe ser tratado distinto por su aspecto. Todos merecemos el mismo buen trato.",
+   "revisada": false,
+   "id": "hist1-oa13-8"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Andrés habla y Paz quiere hablar. ¿Qué hace Paz?",
+   "opciones": [
+    "habla más fuerte",
+    "le tapa la boca",
+    "espera su turno",
+    "se va enojada"
+   ],
+   "correcta": 2,
+   "tip": "Para conversar hay que turnarse: uno habla y el otro escucha.",
+   "revisada": false,
+   "id": "hist1-oa13-9"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Ana escucha sin interrumpir. ¿Qué muestra?",
+   "opciones": [
+    "miedo",
+    "respeto",
+    "enojo",
+    "flojera"
+   ],
+   "correcta": 1,
+   "tip": "Escuchar sin cortar al otro es una forma de respetarlo.",
+   "revisada": false,
+   "id": "hist1-oa13-10"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Joaquín se cae en el patio. ¿Qué hace Ana?",
+   "opciones": [
+    "lo ayuda a pararse",
+    "se ríe de él",
+    "sigue corriendo",
+    "lo llama torpe"
+   ],
+   "correcta": 0,
+   "tip": "Ayudar a quien lo necesita es ponerse en su lugar: así nos gustaría que nos ayudaran a nosotros.",
+   "revisada": false,
+   "id": "hist1-oa13-11"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Ema está sola en el recreo. ¿Qué hace Luis?",
+   "opciones": [
+    "pasa de largo",
+    "la invita a jugar",
+    "se ríe de ella",
+    "le quita el puesto"
+   ],
+   "correcta": 1,
+   "tip": "Invitar a quien está solo lo hace sentir parte del grupo.",
+   "revisada": false,
+   "id": "hist1-oa13-12"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Bruno no alcanza un libro alto. ¿Qué hace Sara?",
+   "opciones": [
+    "se lo esconde",
+    "se lo baja",
+    "se burla de él",
+    "se va a otra mesa"
+   ],
+   "correcta": 1,
+   "tip": "Si podemos ayudar a alguien con algo que le cuesta, lo hacemos con gusto.",
+   "revisada": false,
+   "id": "hist1-oa13-13"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Teo está triste por su perro. ¿Qué hace Inés?",
+   "opciones": [
+    "lo consuela",
+    "le hace burla",
+    "le dice exagerado",
+    "lo deja hablando solo"
+   ],
+   "correcta": 0,
+   "tip": "Acompañar a alguien triste es empatía: entender cómo se siente.",
+   "revisada": false,
+   "id": "hist1-oa13-14"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "A Amanda le cuesta leer. ¿Qué hace Leo?",
+   "opciones": [
+    "se ríe de ella",
+    "le quita el libro",
+    "la ayuda con paciencia",
+    "le dice que es lenta"
+   ],
+   "correcta": 2,
+   "tip": "A cada uno le cuestan cosas distintas. Ayudar con paciencia es mejor que burlarse.",
+   "revisada": false,
+   "id": "hist1-oa13-15"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Gael es nuevo en el curso. ¿Qué hace Pía?",
+   "opciones": [
+    "lo saluda amable",
+    "lo mira feo",
+    "le esconde la mochila",
+    "no le habla"
+   ],
+   "correcta": 0,
+   "tip": "Recibir bien a alguien nuevo lo ayuda a sentirse acogido.",
+   "revisada": false,
+   "id": "hist1-oa13-16"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Simón usa audífono para oír. ¿Qué hace Laura?",
+   "opciones": [
+    "le grita al oído",
+    "lo trata igual",
+    "se ríe del audífono",
+    "lo deja afuera"
+   ],
+   "correcta": 1,
+   "tip": "Un audífono ayuda a Simón a escuchar. Eso no cambia cómo lo tratamos: igual que a todos.",
+   "revisada": false,
+   "id": "hist1-oa13-17"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "La mamá de Aurora está enferma. ¿Qué hace Aurora?",
+   "opciones": [
+    "le lleva agua",
+    "pone música fuerte",
+    "se va a la plaza",
+    "le pide jugar"
+   ],
+   "correcta": 0,
+   "tip": "Cuando alguien de la familia está enfermo, lo cuidamos y no lo cansamos.",
+   "revisada": false,
+   "id": "hist1-oa13-18"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Dos niñas no dejan jugar a Rayén. ¿Qué hace Iker?",
+   "opciones": [
+    "se va muy lejos",
+    "tampoco la deja jugar",
+    "se ríe con ellas",
+    "la invita a su juego"
+   ],
+   "correcta": 3,
+   "tip": "Dejar a alguien fuera del juego duele. Invitarlo es ayudar a que nadie quede solo.",
+   "revisada": false,
+   "id": "hist1-oa13-19"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Leo ayuda a una niña que se cayó. ¿Cómo es Leo?",
+   "opciones": [
+    "flojo",
+    "mandón",
+    "solidario",
+    "egoísta"
+   ],
+   "correcta": 2,
+   "tip": "Ayudar a otros sin que nos lo pidan es ser solidario.",
+   "revisada": false,
+   "id": "hist1-oa13-20"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "A Diego le toca borrar la pizarra. ¿Qué hace?",
+   "opciones": [
+    "se la deja a otro",
+    "la borra mañana",
+    "se le olvida",
+    "la borra a tiempo"
+   ],
+   "correcta": 3,
+   "tip": "Cumplir un encargo cuando nos toca es ser responsable.",
+   "revisada": false,
+   "id": "hist1-oa13-21"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Sofía terminó de jugar. ¿Qué debería hacer?",
+   "opciones": [
+    "esperar a su mamá",
+    "dejarlos tirados",
+    "esconderlos bajo la cama",
+    "guardar sus juguetes"
+   ],
+   "correcta": 3,
+   "tip": "Guardar lo que usamos es cuidar nuestras cosas y nuestro espacio.",
+   "revisada": false,
+   "id": "hist1-oa13-22"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Tomás tiene un libro prestado. ¿Qué hace?",
+   "opciones": [
+    "se lo queda",
+    "lo deja en el patio",
+    "lo cuida bien",
+    "lo raya entero"
+   ],
+   "correcta": 2,
+   "tip": "Las cosas de los demás se cuidan aún más que las propias, y se devuelven sanas.",
+   "revisada": false,
+   "id": "hist1-oa13-23"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Javier come una fruta. ¿Dónde bota la cáscara?",
+   "opciones": [
+    "bajo un banco",
+    "tras un árbol",
+    "al suelo",
+    "al basurero"
+   ],
+   "correcta": 3,
+   "tip": "El patio es de todos. Botar la basura en el basurero es cuidar el espacio común.",
+   "revisada": false,
+   "id": "hist1-oa13-24"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Matías llega con su chaqueta. ¿Dónde la deja?",
+   "opciones": [
+    "en el patio",
+    "en cualquier silla",
+    "en su colgador",
+    "en el suelo"
+   ],
+   "correcta": 2,
+   "tip": "Dejar nuestras cosas en su lugar ayuda a no perderlas: es cuidar lo propio.",
+   "revisada": false,
+   "id": "hist1-oa13-25"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Ana usó las tijeras del curso. ¿Qué hace después?",
+   "opciones": [
+    "las esconde",
+    "las guarda en su lugar",
+    "las deja en el suelo",
+    "se las lleva a casa"
+   ],
+   "correcta": 1,
+   "tip": "Las cosas del curso son de todos. Guardarlas permite que otro las use después.",
+   "revisada": false,
+   "id": "hist1-oa13-26"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "A Lucas le piden poner la mesa. ¿Qué hace?",
+   "opciones": [
+    "dice que no puede",
+    "la deja a medias",
+    "la pone con cuidado",
+    "espera que otro lo haga"
+   ],
+   "correcta": 2,
+   "tip": "Ayudar en casa con un encargo es ser responsable con la familia.",
+   "revisada": false,
+   "id": "hist1-oa13-27"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Pía juega en la plaza. ¿Qué debería hacer?",
+   "opciones": [
+    "arrancar las flores",
+    "rayar los bancos",
+    "cuidar las flores",
+    "pisar el pasto nuevo"
+   ],
+   "correcta": 2,
+   "tip": "La plaza es de todos los vecinos. Cuidarla permite que todos la disfruten.",
+   "revisada": false,
+   "id": "hist1-oa13-28"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Al curso le toca ordenar. ¿Qué hace Raúl?",
+   "opciones": [
+    "se sienta a mirar",
+    "desordena más",
+    "sale al patio",
+    "ayuda a ordenar"
+   ],
+   "correcta": 3,
+   "tip": "Cuando el encargo es de todos, cada uno pone su parte.",
+   "revisada": false,
+   "id": "hist1-oa13-29"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Amaro rompió el autito de Teo. ¿Qué hace Amaro?",
+   "opciones": [
+    "se ríe del autito",
+    "lo esconde rápido",
+    "le pide perdón",
+    "culpa a otro niño"
+   ],
+   "correcta": 2,
+   "tip": "Si dañamos algo de otro, lo correcto es pedir perdón y ver cómo arreglarlo.",
+   "revisada": false,
+   "id": "hist1-oa13-30"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "Rosa quiere hablar en clase. ¿Qué hace?",
+   "opciones": [
+    "habla encima",
+    "grita su idea",
+    "se para en la silla",
+    "levanta la mano"
+   ],
+   "correcta": 3,
+   "tip": "Levantar la mano ordena los turnos: así cada uno habla y los demás escuchan.",
+   "revisada": false,
+   "id": "hist1-oa14-1"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "El curso va al comedor. ¿Cómo va Pablo?",
+   "opciones": [
+    "empuja para pasar",
+    "corre adelante",
+    "se sale de la fila",
+    "camina en la fila"
+   ],
+   "correcta": 3,
+   "tip": "Caminar en fila ordena al curso y evita choques y empujones.",
+   "revisada": false,
+   "id": "hist1-oa14-2"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "¿Por qué no se corre en el pasillo?",
+   "opciones": [
+    "para no cansarse",
+    "para ir más lento",
+    "para no ensuciar",
+    "para no chocar"
+   ],
+   "correcta": 3,
+   "tip": "En un pasillo pasa mucha gente. Si caminamos, nadie choca ni se golpea.",
+   "revisada": false,
+   "id": "hist1-oa14-3"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "Una niña usa el columpio. ¿Qué hace Juan?",
+   "opciones": [
+    "espera su turno",
+    "le grita que baje",
+    "empuja a la niña",
+    "se sube con ella"
+   ],
+   "correcta": 0,
+   "tip": "Esperar el turno cuida a todos: nadie se golpea y todos alcanzan a jugar.",
+   "revisada": false,
+   "id": "hist1-oa14-4"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "¿Para qué hay normas en la sala?",
+   "opciones": [
+    "para que mande uno",
+    "para jugar más rato",
+    "para castigar al curso",
+    "para estar bien todos"
+   ],
+   "correcta": 3,
+   "tip": "Las normas ayudan a que todos convivan bien y se sientan seguros.",
+   "revisada": false,
+   "id": "hist1-oa14-5"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "Mateo va a comer. ¿Qué hace antes?",
+   "opciones": [
+    "se peina el pelo",
+    "se lava los dientes",
+    "se pone el pijama",
+    "se lava las manos"
+   ],
+   "correcta": 3,
+   "tip": "Lavarse las manos antes de comer saca la suciedad que no vemos.",
+   "revisada": false,
+   "id": "hist1-oa14-6"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "Vicente tose en la sala. ¿Con qué se tapa?",
+   "opciones": [
+    "con la mano abierta",
+    "con el codo",
+    "con el cuaderno",
+    "con la mesa"
+   ],
+   "correcta": 1,
+   "tip": "Al toser en el codo, lo que sale no queda en la mano ni pasa a los demás.",
+   "revisada": false,
+   "id": "hist1-oa14-7"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "Hace mucho sol en el recreo. ¿Qué usa Luis?",
+   "opciones": [
+    "unas botas de agua",
+    "un chaleco grueso",
+    "una bufanda",
+    "un gorro"
+   ],
+   "correcta": 3,
+   "tip": "El gorro protege la cabeza y la cara del sol fuerte.",
+   "revisada": false,
+   "id": "hist1-oa14-8"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "La olla está caliente. ¿Qué hace Sara?",
+   "opciones": [
+    "la destapa",
+    "no la toca",
+    "la revuelve",
+    "la mueve"
+   ],
+   "correcta": 1,
+   "tip": "Una olla en la cocina encendida está muy caliente. Solo la usa un adulto.",
+   "revisada": false,
+   "id": "hist1-oa14-9"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "Diego encuentra fósforos. ¿Qué hace?",
+   "opciones": [
+    "se los da a un adulto",
+    "prende uno",
+    "juega con ellos",
+    "los guarda en el bolsillo"
+   ],
+   "correcta": 0,
+   "tip": "Los fósforos hacen fuego. Por eso se los entregamos a un adulto.",
+   "revisada": false,
+   "id": "hist1-oa14-10"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "Leo ve pastillas en la mesa. ¿Qué hace?",
+   "opciones": [
+    "juega a contarlas",
+    "se come una",
+    "se las regala a otro",
+    "avisa a un adulto"
+   ],
+   "correcta": 3,
+   "tip": "Los remedios solo los da un adulto, aunque parezcan dulces.",
+   "revisada": false,
+   "id": "hist1-oa14-11"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "Emilia lleva unas tijeras. ¿Cómo va?",
+   "opciones": [
+    "mirando hacia atrás",
+    "saltando en un pie",
+    "caminando despacio",
+    "corriendo rápido"
+   ],
+   "correcta": 2,
+   "tip": "Con tijeras se camina despacio: así nadie se corta si tropieza.",
+   "revisada": false,
+   "id": "hist1-oa14-12"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "Tomás camina hacia la escuela. ¿Por dónde va?",
+   "opciones": [
+    "por la vereda",
+    "por el medio de la calle",
+    "entre los autos",
+    "por el pasto del vecino"
+   ],
+   "correcta": 0,
+   "tip": "La vereda es el lugar de los peatones. La calle es de los autos.",
+   "revisada": false,
+   "id": "hist1-oa14-13"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "Sofía cruza la calle con su mamá. ¿Qué hace?",
+   "opciones": [
+    "le da la mano",
+    "se adelanta sola",
+    "se suelta y corre",
+    "cruza saltando"
+   ],
+   "correcta": 0,
+   "tip": "Los niños cruzan de la mano de un adulto, que mira por ellos el tránsito.",
+   "revisada": false,
+   "id": "hist1-oa14-14"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "La pelota de Benjamín cae a la calle. ¿Qué hace?",
+   "opciones": [
+    "avisa a un adulto",
+    "corre a buscarla",
+    "cruza sin mirar",
+    "la sigue por la calle"
+   ],
+   "correcta": 0,
+   "tip": "Por la calle pasan autos. Un adulto es quien recupera la pelota.",
+   "revisada": false,
+   "id": "hist1-oa14-15"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "¿Dónde juega a la pelota Martín?",
+   "opciones": [
+    "en la calle",
+    "entre los autos",
+    "en el estacionamiento",
+    "en la plaza"
+   ],
+   "correcta": 3,
+   "tip": "Se juega en lugares sin autos, como la plaza o el patio.",
+   "revisada": false,
+   "id": "hist1-oa14-16"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "Paz ve el monito verde del semáforo. ¿Qué hace?",
+   "opciones": [
+    "cruza con su papá",
+    "se sienta a esperar",
+    "cruza por otro lado",
+    "cruza corriendo sola"
+   ],
+   "correcta": 0,
+   "tip": "Con el monito verde se puede cruzar, y los niños lo hacen junto a un adulto.",
+   "revisada": false,
+   "id": "hist1-oa14-17"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "Pedro se baja del auto. ¿Hacia dónde?",
+   "opciones": [
+    "hacia la vereda",
+    "hacia el otro auto",
+    "por el lado del chofer",
+    "hacia la calle"
+   ],
+   "correcta": 0,
+   "tip": "Bajar hacia la vereda es más seguro: por el otro lado pasan autos.",
+   "revisada": false,
+   "id": "hist1-oa14-18"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "Laura viaja en bus. ¿Cómo va?",
+   "opciones": [
+    "sentada o afirmada",
+    "asomada a la ventana",
+    "parada sin afirmarse",
+    "corriendo por el pasillo"
+   ],
+   "correcta": 0,
+   "tip": "En el bus vamos sentados o bien afirmados, porque frena y se mueve.",
+   "revisada": false,
+   "id": "hist1-oa14-19"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "Antonia es chica. ¿Dónde va en el auto?",
+   "opciones": [
+    "de pie en el asiento",
+    "en las piernas de su mamá",
+    "adelante, con el chofer",
+    "en su silla de auto"
+   ],
+   "correcta": 3,
+   "tip": "La silla de auto está hecha para el tamaño de los niños chicos y los protege.",
+   "revisada": false,
+   "id": "hist1-oa14-20"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "Joaquín anda en patines. ¿Qué se pone?",
+   "opciones": [
+    "casco y rodilleras",
+    "un gorro de lana",
+    "unos guantes de lana",
+    "unos lentes de sol"
+   ],
+   "correcta": 0,
+   "tip": "El casco cuida la cabeza y las rodilleras las rodillas si se cae.",
+   "revisada": false,
+   "id": "hist1-oa14-21"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "A Clara le toca dormir. ¿Qué hace?",
+   "opciones": [
+    "se esconde",
+    "pide más tele",
+    "se va a la cama",
+    "juega con la tablet"
+   ],
+   "correcta": 2,
+   "tip": "En cada familia hay horarios. Dormir a la hora ayuda a descansar bien.",
+   "revisada": false,
+   "id": "hist1-oa14-22"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "Lía apaga la tele al comer. ¿Para qué?",
+   "opciones": [
+    "para dormir siesta",
+    "para comer rápido",
+    "para jugar después",
+    "para conversar"
+   ],
+   "correcta": 3,
+   "tip": "Comer sin tele es una norma de esa familia: les da tiempo para conversar.",
+   "revisada": false,
+   "id": "hist1-oa14-23"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "Rocío ve un líquido de limpieza. ¿Qué hace?",
+   "opciones": [
+    "lo prueba",
+    "juega con él",
+    "lo huele",
+    "no lo toca"
+   ],
+   "correcta": 3,
+   "tip": "Los productos de limpieza pueden hacer daño. Solo los usan los adultos.",
+   "revisada": false,
+   "id": "hist1-oa14-24"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "Matías no alcanza un estante. ¿Qué hace?",
+   "opciones": [
+    "se sube a una silla",
+    "salta para sacarlo",
+    "pide ayuda a un adulto",
+    "trepa por el estante"
+   ],
+   "correcta": 2,
+   "tip": "Subirse a sillas o estantes es inseguro. Mejor pedir ayuda a un adulto.",
+   "revisada": false,
+   "id": "hist1-oa14-25"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "Hace frío y llueve. ¿Qué se pone Camila?",
+   "opciones": [
+    "una polera",
+    "su parka",
+    "su traje de baño",
+    "unas sandalias"
+   ],
+   "correcta": 1,
+   "tip": "Abrigarse cuando hace frío y llueve es cuidar la salud.",
+   "revisada": false,
+   "id": "hist1-oa14-26"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "Hay simulacro en la escuela. ¿Qué hace Inés?",
+   "opciones": [
+    "sigue a la profesora",
+    "sigue pintando",
+    "se esconde en el baño",
+    "sale sola corriendo"
+   ],
+   "correcta": 0,
+   "tip": "En un simulacro, la profesora sabe el camino seguro. Por eso la seguimos.",
+   "revisada": false,
+   "id": "hist1-oa14-27"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "¿Para qué se hace fila en el tobogán?",
+   "opciones": [
+    "para ganarle a otro",
+    "para cansarse menos",
+    "para mirar el cielo",
+    "para tirarse por turno"
+   ],
+   "correcta": 3,
+   "tip": "En la fila cada uno se tira a su turno: así nadie choca abajo.",
+   "revisada": false,
+   "id": "hist1-oa14-28"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "Elisa ve un perro que no conoce. ¿Qué hace?",
+   "opciones": [
+    "lo abraza",
+    "le quita el hueso",
+    "no lo toca",
+    "le toca la cola"
+   ],
+   "correcta": 2,
+   "tip": "A un perro que no conocemos no lo tocamos sin permiso de su dueño.",
+   "revisada": false,
+   "id": "hist1-oa14-29"
+  },
+  {
+   "oa": "HI01 OA 14",
+   "pregunta": "¿Qué cuida la norma de cruzar con un adulto?",
+   "opciones": [
+    "nuestra seguridad",
+    "nuestra mochila",
+    "nuestros juguetes",
+    "nuestra ropa"
+   ],
+   "correcta": 0,
+   "tip": "Las normas de la calle existen para cuidarnos de los autos.",
+   "revisada": false,
+   "id": "hist1-oa14-30"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Qué hace la profesora en la escuela?",
+   "opciones": [
+    "apaga incendios",
+    "dirige el tránsito",
+    "enseña a los niños",
+    "cura a los niños"
+   ],
+   "correcta": 2,
+   "tip": "En la escuela, las profesoras y los profesores enseñan a leer, a contar y mucho más.",
+   "revisada": false,
+   "id": "hist1-oa15-1"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Dónde aprenden a leer los niños?",
+   "opciones": [
+    "en el banco",
+    "en la posta",
+    "en la escuela",
+    "en la comisaría"
+   ],
+   "correcta": 2,
+   "tip": "La escuela es el lugar donde los niños aprenden con sus profesores.",
+   "revisada": false,
+   "id": "hist1-oa15-2"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "Diego tiene fiebre. ¿Adónde lo llevan?",
+   "opciones": [
+    "a la municipalidad",
+    "a la posta",
+    "a la comisaría",
+    "a la escuela"
+   ],
+   "correcta": 1,
+   "tip": "En la posta y en el hospital atienden a las personas enfermas.",
+   "revisada": false,
+   "id": "hist1-oa15-3"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Quién atiende a los enfermos en el hospital?",
+   "opciones": [
+    "la alcaldesa",
+    "la bombera",
+    "la doctora",
+    "la carabinera"
+   ],
+   "correcta": 2,
+   "tip": "Doctoras y doctores trabajan en el hospital cuidando la salud de las personas.",
+   "revisada": false,
+   "id": "hist1-oa15-4"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Qué hace el enfermero en la posta?",
+   "opciones": [
+    "cuida a los enfermos",
+    "enseña a leer",
+    "recoge la basura",
+    "apaga el fuego"
+   ],
+   "correcta": 0,
+   "tip": "Enfermeros y enfermeras cuidan a los enfermos y ayudan a que se mejoren.",
+   "revisada": false,
+   "id": "hist1-oa15-5"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Dónde vacunan a los niños?",
+   "opciones": [
+    "en el cine",
+    "en la posta",
+    "en la comisaría",
+    "en la biblioteca"
+   ],
+   "correcta": 1,
+   "tip": "En la posta y en los centros de salud se ponen las vacunas que nos protegen.",
+   "revisada": false,
+   "id": "hist1-oa15-6"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Quién dirige el tránsito en una esquina?",
+   "opciones": [
+    "un profesor",
+    "una enfermera",
+    "un carabinero",
+    "una doctora"
+   ],
+   "correcta": 2,
+   "tip": "Carabineros ordena el paso de autos y personas para que nadie choque.",
+   "revisada": false,
+   "id": "hist1-oa15-7"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Qué hace Carabineros por la comunidad?",
+   "opciones": [
+    "cura a los enfermos",
+    "enseña a sumar",
+    "vende pan",
+    "cuida la seguridad"
+   ],
+   "correcta": 3,
+   "tip": "Carabineras y carabineros cuidan la seguridad de las personas en las calles.",
+   "revisada": false,
+   "id": "hist1-oa15-8"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Quiénes apagan los incendios?",
+   "opciones": [
+    "los carabineros",
+    "los profesores",
+    "los doctores",
+    "los bomberos"
+   ],
+   "correcta": 3,
+   "tip": "Las bomberas y los bomberos llegan en el carro bomba a apagar el fuego.",
+   "revisada": false,
+   "id": "hist1-oa15-9"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "Sale humo de una casa. ¿A quién se llama?",
+   "opciones": [
+    "a los bomberos",
+    "al cartero",
+    "a la profesora",
+    "a la alcaldesa"
+   ],
+   "correcta": 0,
+   "tip": "Donde hay humo puede haber fuego, y apagarlo es tarea de los bomberos.",
+   "revisada": false,
+   "id": "hist1-oa15-10"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Quién dirige la municipalidad?",
+   "opciones": [
+    "la carabinera",
+    "la directora",
+    "la alcaldesa",
+    "la doctora"
+   ],
+   "correcta": 2,
+   "tip": "La alcaldesa o el alcalde dirige la municipalidad de su comuna.",
+   "revisada": false,
+   "id": "hist1-oa15-11"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Qué hace la municipalidad en la comuna?",
+   "opciones": [
+    "cuida calles y plazas",
+    "apaga los incendios",
+    "vende ropa nueva",
+    "cura a los enfermos"
+   ],
+   "correcta": 0,
+   "tip": "La municipalidad se encarga de cuidar los lugares de todos en la comuna.",
+   "revisada": false,
+   "id": "hist1-oa15-12"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Quién se encarga de recoger la basura?",
+   "opciones": [
+    "el hospital",
+    "la escuela",
+    "los bomberos",
+    "la municipalidad"
+   ],
+   "correcta": 3,
+   "tip": "La municipalidad organiza que pasen los camiones a recoger la basura.",
+   "revisada": false,
+   "id": "hist1-oa15-13"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Quién arregla un juego roto de la plaza?",
+   "opciones": [
+    "el hospital",
+    "la municipalidad",
+    "los bomberos",
+    "la posta"
+   ],
+   "correcta": 1,
+   "tip": "Las plazas son de la comuna, y la municipalidad las cuida y las repara.",
+   "revisada": false,
+   "id": "hist1-oa15-14"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Para qué sirve la escuela?",
+   "opciones": [
+    "para guardar autos",
+    "para apagar fuegos",
+    "para curarse",
+    "para aprender"
+   ],
+   "correcta": 3,
+   "tip": "La escuela ayuda a la comunidad porque ahí los niños aprenden.",
+   "revisada": false,
+   "id": "hist1-oa15-15"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Quién limpia y ordena la escuela?",
+   "opciones": [
+    "la auxiliar de aseo",
+    "la doctora",
+    "la alcaldesa",
+    "el carabinero"
+   ],
+   "correcta": 0,
+   "tip": "Auxiliares de aseo, hombres y mujeres, mantienen limpia la escuela para todos.",
+   "revisada": false,
+   "id": "hist1-oa15-16"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Quién dirige toda la escuela?",
+   "opciones": [
+    "el bombero",
+    "el director",
+    "el enfermero",
+    "el cartero"
+   ],
+   "correcta": 1,
+   "tip": "El director o la directora organiza la escuela y a quienes trabajan en ella.",
+   "revisada": false,
+   "id": "hist1-oa15-17"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿A quién lleva la ambulancia?",
+   "opciones": [
+    "a los bomberos",
+    "a los turistas",
+    "a los alumnos",
+    "a un enfermo"
+   ],
+   "correcta": 3,
+   "tip": "La ambulancia lleva rápido a una persona enferma al hospital.",
+   "revisada": false,
+   "id": "hist1-oa15-18"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Dónde trabajan los bomberos?",
+   "opciones": [
+    "en la escuela",
+    "en la posta",
+    "en la comisaría",
+    "en el cuartel"
+   ],
+   "correcta": 3,
+   "tip": "Los bomberos esperan en su cuartel, con el carro listo para salir.",
+   "revisada": false,
+   "id": "hist1-oa15-19"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "Javiera va a hablar con Carabineros. ¿Adónde va?",
+   "opciones": [
+    "al hospital",
+    "a la biblioteca",
+    "a la comisaría",
+    "a la escuela"
+   ],
+   "correcta": 2,
+   "tip": "La comisaría es el lugar donde trabajan carabineras y carabineros.",
+   "revisada": false,
+   "id": "hist1-oa15-20"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Qué hace el hospital por la comunidad?",
+   "opciones": [
+    "da las clases",
+    "cuida la salud",
+    "guarda el dinero",
+    "vende juguetes"
+   ],
+   "correcta": 1,
+   "tip": "En el hospital trabajan para que las personas enfermas se mejoren.",
+   "revisada": false,
+   "id": "hist1-oa15-21"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Qué hace la alcaldesa?",
+   "opciones": [
+    "cura enfermos",
+    "enseña inglés",
+    "apaga el fuego",
+    "dirige la comuna"
+   ],
+   "correcta": 3,
+   "tip": "La alcaldesa o el alcalde trabaja para todos los vecinos de su comuna.",
+   "revisada": false,
+   "id": "hist1-oa15-22"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Qué es la posta?",
+   "opciones": [
+    "una tienda",
+    "un cuartel",
+    "un lugar de salud",
+    "una escuela chica"
+   ],
+   "correcta": 2,
+   "tip": "La posta es un lugar donde atienden a quienes se enferman, sobre todo en lugares pequeños.",
+   "revisada": false,
+   "id": "hist1-oa15-23"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "Un carabinero está afuera del colegio. ¿Qué hace?",
+   "opciones": [
+    "pone vacunas",
+    "ayuda a cruzar",
+    "vende helados",
+    "toma la prueba"
+   ],
+   "correcta": 1,
+   "tip": "A la salida de clases, un carabinero puede ayudar a los niños a cruzar con cuidado.",
+   "revisada": false,
+   "id": "hist1-oa15-24"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Quiénes pueden ser bomberos?",
+   "opciones": [
+    "solo los abuelos",
+    "solo las mujeres",
+    "solo los hombres",
+    "hombres y mujeres"
+   ],
+   "correcta": 3,
+   "tip": "Cualquier trabajo de la comunidad lo pueden hacer hombres y mujeres.",
+   "revisada": false,
+   "id": "hist1-oa15-25"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Para qué sirve la biblioteca de la escuela?",
+   "opciones": [
+    "para hacer deporte",
+    "para ver al doctor",
+    "para leer libros",
+    "para comer almuerzo"
+   ],
+   "correcta": 2,
+   "tip": "En la biblioteca los niños leen y piden libros prestados.",
+   "revisada": false,
+   "id": "hist1-oa15-26"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Cuál sale con escaleras y mangueras?",
+   "opciones": [
+    "el carro bomba",
+    "el camión de basura",
+    "el bus escolar",
+    "la ambulancia"
+   ],
+   "correcta": 0,
+   "tip": "El carro bomba lleva mangueras para el agua y escaleras para llegar alto.",
+   "revisada": false,
+   "id": "hist1-oa15-27"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Dónde trabajan doctoras y enfermeros?",
+   "opciones": [
+    "en la escuela",
+    "en el cuartel",
+    "en la comisaría",
+    "en el hospital"
+   ],
+   "correcta": 3,
+   "tip": "En el hospital trabajan doctoras, enfermeros y muchas personas más.",
+   "revisada": false,
+   "id": "hist1-oa15-28"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Quiénes trabajan en la escuela?",
+   "opciones": [
+    "bomberos y carabineros",
+    "doctores y enfermeras",
+    "profesores y auxiliares",
+    "alcaldes y concejales"
+   ],
+   "correcta": 2,
+   "tip": "En la escuela trabajan profesores, auxiliares y más personas que ayudan a los niños.",
+   "revisada": false,
+   "id": "hist1-oa15-29"
+  },
+  {
+   "oa": "HI01 OA 15",
+   "pregunta": "¿Para quiénes trabaja la posta?",
+   "opciones": [
+    "solo para su familia",
+    "solo para los niños",
+    "solo para los doctores",
+    "para todos los vecinos"
+   ],
+   "correcta": 3,
+   "tip": "La posta atiende a todas las personas de la comunidad que lo necesitan.",
+   "revisada": false,
+   "id": "hist1-oa15-30"
+  }
+ ]
+}

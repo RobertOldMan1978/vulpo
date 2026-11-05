@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "¿Quién sabe cómo era el barrio hace mucho?",
+   "opciones": [
+    "el abuelo Lucho",
+    "el primo de dos años",
+    "la hermanita bebé",
+    "un compañero nuevo"
+   ],
+   "correcta": 0,
+   "tip": "Las personas mayores vivieron esos años y los recuerdan. Un bebé o un niño chico todavía no había nacido.",
+   "id": "hist1-oa04-1"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "Ema quiere saber de su familia. ¿Qué hace?",
+   "opciones": [
+    "le pregunta a su tía",
+    "lo adivina sola",
+    "inventa un cuento",
+    "mira la tele"
+   ],
+   "correcta": 0,
+   "tip": "Para conocer la historia de una familia se les pregunta a los adultos que la vivieron.",
+   "id": "hist1-oa04-2"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "¿Para qué sirven las fotos viejas de la familia?",
+   "opciones": [
+    "para recordar el pasado",
+    "para saber qué pasará",
+    "para ver lo de hoy",
+    "para jugar a la pelota"
+   ],
+   "correcta": 0,
+   "tip": "Una foto antigua muestra cómo eran las personas y los lugares hace tiempo. Nos ayuda a recordar.",
+   "id": "hist1-oa04-3"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "¿Qué objeto cuenta algo del pasado de la familia?",
+   "opciones": [
+    "una foto antigua",
+    "el diario de hoy",
+    "un juguete nuevo",
+    "la boleta del pan"
+   ],
+   "correcta": 0,
+   "tip": "Lo antiguo guarda historias. Lo nuevo o de hoy todavía no cuenta nada del pasado.",
+   "id": "hist1-oa04-4"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "La carta de la bisabuela de Benja es…",
+   "opciones": [
+    "un recuerdo familiar",
+    "una tarea del curso",
+    "una receta nueva",
+    "un juego del recreo"
+   ],
+   "correcta": 0,
+   "tip": "Las cosas que guarda una familia, como una carta antigua, son recuerdos que cuentan su historia.",
+   "id": "hist1-oa04-5"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "La familia Rojas almuerza junta los domingos. Es…",
+   "opciones": [
+    "una costumbre",
+    "una regla del colegio",
+    "un accidente",
+    "un juego nuevo"
+   ],
+   "correcta": 0,
+   "tip": "Lo que una familia hace siempre, de la misma forma, es una costumbre.",
+   "id": "hist1-oa04-6"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "Cada Año Nuevo, la familia de Luis canta. Es…",
+   "opciones": [
+    "una tradición",
+    "una tarea",
+    "una noticia",
+    "un castigo"
+   ],
+   "correcta": 0,
+   "tip": "Algo que una familia repite cada año en una fecha especial es una tradición.",
+   "id": "hist1-oa04-7"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "Una receta pasa de abuela a mamá y a hija. Es…",
+   "opciones": [
+    "una tradición",
+    "un invento nuevo",
+    "una tarea escolar",
+    "un juego del recreo"
+   ],
+   "correcta": 0,
+   "tip": "Lo que se enseña de una generación a otra, como una receta, es una tradición de la familia.",
+   "id": "hist1-oa04-8"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "En una familia, ¿quién puede cocinar?",
+   "opciones": [
+    "cualquiera de la familia",
+    "solo la mamá",
+    "solo el papá",
+    "solo la abuela"
+   ],
+   "correcta": 0,
+   "tip": "Cocinar lo puede hacer cualquier persona de la familia. En cada casa se reparten las tareas.",
+   "id": "hist1-oa04-9"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "En casa de Joaquín, ¿quién puede cuidar al bebé?",
+   "opciones": [
+    "cualquier adulto de la casa",
+    "solo las mujeres",
+    "solo la mamá",
+    "solo el abuelo"
+   ],
+   "correcta": 0,
+   "tip": "Cuidar a un bebé es tarea de los adultos de la familia, sean hombres o mujeres.",
+   "id": "hist1-oa04-10"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "Mateo saca la basura en su casa. ¿Qué es eso?",
+   "opciones": [
+    "su tarea en la familia",
+    "un juego del recreo",
+    "un castigo del colegio",
+    "una fiesta familiar"
+   ],
+   "correcta": 0,
+   "tip": "En una familia cada uno ayuda con algo. Esas tareas son los roles de cada miembro.",
+   "id": "hist1-oa04-11"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "Leo vive con su abuela. ¿Es eso una familia?",
+   "opciones": [
+    "sí, es su familia",
+    "no, falta el papá",
+    "no, faltan hermanos",
+    "solo si son muchos"
+   ],
+   "correcta": 0,
+   "tip": "Hay familias de muchas formas. Una abuela y su nieto que viven juntos son una familia.",
+   "id": "hist1-oa04-12"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "¿Todas las familias son iguales?",
+   "opciones": [
+    "no, cada una es distinta",
+    "sí, todas iguales",
+    "sí, todas son de cuatro",
+    "solo las del curso"
+   ],
+   "correcta": 0,
+   "tip": "Las familias son distintas: unas son grandes, otras chicas, y viven con distintas personas.",
+   "id": "hist1-oa04-13"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "El papá de Tito vive en otra casa. ¿Es familia?",
+   "opciones": [
+    "sí, es su papá",
+    "no, ya no",
+    "solo los domingos",
+    "solo si vive ahí"
+   ],
+   "correcta": 0,
+   "tip": "Aunque vivan en casas distintas, siguen siendo familia.",
+   "id": "hist1-oa04-14"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "¿Qué le pregunta Rosa a su abuelo sobre el pasado?",
+   "opciones": [
+    "a qué jugaba de niño",
+    "qué hora es ahora",
+    "cuánto es dos más dos",
+    "qué hay de almuerzo"
+   ],
+   "correcta": 0,
+   "tip": "Para conocer el pasado se pregunta por cómo vivían antes: sus juegos, su escuela, su casa.",
+   "id": "hist1-oa04-15"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "Amanda vive con sus dos mamás. ¿Es una familia?",
+   "opciones": [
+    "sí, es su familia",
+    "no, falta el papá",
+    "no, faltan hermanos",
+    "solo si son muchos"
+   ],
+   "correcta": 0,
+   "tip": "Hay muchas formas de familia. Las personas que viven juntas, se quieren y se cuidan son una familia.",
+   "id": "hist1-oa04-16"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "La abuela de Eli no tenía tele. ¿Cuándo fue?",
+   "opciones": [
+    "cuando ella era niña",
+    "ahora mismo",
+    "el año próximo",
+    "mañana en la tarde"
+   ],
+   "correcta": 0,
+   "tip": "Hace muchos años no todas las casas tenían tele. La abuela de Eli lo vivió cuando era niña.",
+   "id": "hist1-oa04-17"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "¿Cómo supo Matías que su bisabuelo era pescador?",
+   "opciones": [
+    "se lo contó su abuela",
+    "lo vio en la tele",
+    "lo soñó anoche",
+    "lo leyó en la pizarra"
+   ],
+   "correcta": 0,
+   "tip": "Los adultos de la familia guardan los recuerdos y los cuentan a los más chicos.",
+   "id": "hist1-oa04-18"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "¿Qué cuenta un álbum de fotos de la familia?",
+   "opciones": [
+    "la historia familiar",
+    "el clima de mañana",
+    "las noticias de hoy",
+    "las reglas del curso"
+   ],
+   "correcta": 0,
+   "tip": "Las fotos de un álbum muestran momentos que vivió la familia: son parte de su historia.",
+   "id": "hist1-oa04-19"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "La mamá de Dani guarda su primer zapato. Es…",
+   "opciones": [
+    "un recuerdo",
+    "un zapato para usar",
+    "un juguete roto",
+    "una tarea"
+   ],
+   "correcta": 0,
+   "tip": "Las familias guardan cosas pequeñas para recordar momentos especiales.",
+   "id": "hist1-oa04-20"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "La familia de Mei celebra una fiesta china. Es…",
+   "opciones": [
+    "una tradición familiar",
+    "una tarea del colegio",
+    "una regla de la plaza",
+    "un juego del recreo"
+   ],
+   "correcta": 0,
+   "tip": "Muchas familias celebran fiestas del lugar de donde vienen. Son sus tradiciones.",
+   "id": "hist1-oa04-21"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "Para saber de su familia, Clara debe…",
+   "opciones": [
+    "hacer preguntas",
+    "quedarse callada",
+    "mirar la ventana",
+    "adivinar todo"
+   ],
+   "correcta": 0,
+   "tip": "Preguntando a los adultos de la familia se conoce su historia.",
+   "id": "hist1-oa04-22"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "Tomás tiene dos papás. ¿Son una familia?",
+   "opciones": [
+    "sí, son su familia",
+    "no, falta una mamá",
+    "solo si tiene hermanos",
+    "no, son muy pocos"
+   ],
+   "correcta": 0,
+   "tip": "Una familia puede tener una mamá, un papá, dos mamás, dos papás, abuelos o tíos: lo que importa es que se quieren y se cuidan.",
+   "id": "hist1-oa04-23"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "La abuela de Paz trabajó en el campo. Eso es…",
+   "opciones": [
+    "parte de su historia",
+    "un gusto de Paz",
+    "un juego de Paz",
+    "una fiesta del colegio"
+   ],
+   "correcta": 0,
+   "tip": "Lo que hicieron los abuelos cuando eran jóvenes es parte de la historia de la familia.",
+   "id": "hist1-oa04-24"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "La radio antigua de la abuela de Lía muestra…",
+   "opciones": [
+    "cómo se vivía antes",
+    "cómo será el futuro",
+    "qué dan en la tele",
+    "la hora de hoy"
+   ],
+   "correcta": 0,
+   "tip": "Los objetos antiguos muestran cómo vivían las personas hace muchos años.",
+   "id": "hist1-oa04-25"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "La tía de Eva arregla autos. ¿Puede hacerlo?",
+   "opciones": [
+    "sí, cualquiera puede",
+    "no, solo los hombres",
+    "solo si es mamá",
+    "no, es muy difícil"
+   ],
+   "correcta": 0,
+   "tip": "Hombres y mujeres pueden hacer todo tipo de trabajos. No hay tareas solo para uno.",
+   "id": "hist1-oa04-26"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "¿A quiénes pone Sofía en su árbol familiar?",
+   "opciones": [
+    "a sus parientes",
+    "a sus vecinos",
+    "a sus profesores",
+    "a sus compañeros"
+   ],
+   "correcta": 0,
+   "tip": "Un árbol familiar muestra a los parientes: abuelos, padres, tíos, hermanos y primos.",
+   "id": "hist1-oa04-27"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "¿Qué es la bisabuela de Vicente?",
+   "opciones": [
+    "la mamá de un abuelo",
+    "la hermana de su mamá",
+    "la hija de su tía",
+    "una vecina mayor"
+   ],
+   "correcta": 0,
+   "tip": "La bisabuela es la mamá de la abuela o del abuelo. Es parte de la familia de antes.",
+   "id": "hist1-oa04-28"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "La hermana de la mamá de Nina es su…",
+   "opciones": [
+    "tía",
+    "abuela",
+    "prima",
+    "vecina"
+   ],
+   "correcta": 0,
+   "tip": "La hermana de la mamá o del papá es la tía.",
+   "id": "hist1-oa04-29"
+  },
+  {
+   "oa": "HI01 OA 04",
+   "pregunta": "El hijo del tío de Luis es su…",
+   "opciones": [
+    "primo",
+    "hermano",
+    "abuelo",
+    "sobrino"
+   ],
+   "correcta": 0,
+   "tip": "Los hijos de los tíos son los primos.",
+   "id": "hist1-oa04-30"
+  }
+ ]
+}

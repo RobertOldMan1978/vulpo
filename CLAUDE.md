@@ -180,7 +180,13 @@ están hoy en una expedición jugable, el resto es reserva.
 > **sin firmar todavía**: la foto "17.000 de 17.000" de arriba ya no es la cola completa), reparto
 > aprobado y fork `2do/index.html` jugable en `vulpo.cl/2do/` **sin enlazar**. Le faltan la firma
 > de Roberto, la voz (va directo a R2), el arte y aplicar el nivel 02 del esquema. Detalle y orden
-> en `pendiente.md`. Después viene 1° básico.
+> en `pendiente.md`.
+>
+> 🟡 **1° básico, el octavo curso, está EN CONSTRUCCIÓN (Sesión 140, 05/11/2026) y tampoco se
+> anuncia.** Banco de **2.151 preguntas + 33 lecciones** leído pregunta por pregunta y **sin
+> firmar**, reparto **aprobado** y fork `1ro/index.html` jugable en `vulpo.cl/1ro/` **sin enlazar**,
+> con la voz que **lee sola** (`LEE_SOLO`). Le falta lo mismo que a 2°: firma, voz, arte (15
+> imágenes) y el nivel 01 del esquema.
 
 > ✅ **VULPO se anuncia desde 3° a 8° básico, los SEIS cursos (06/09/2026), decisión de
 > Roberto.** La landing (`index.html`) enlaza los **seis cursos jugables** —3°, 4°, 5°, 6°, 7° y
@@ -14498,3 +14504,72 @@ nuevas** apuntan a la genérica de su asignatura y los **villanos salen como emo
   voz (~US$7-9, va directo a R2); generar las 17 imágenes; y aplicar el esquema al publicar.
   Después viene 1° básico. **De arrastre, sin cambios:** la app a Play y sacar los MP3 de 3° y 4°
   del repo (los dos esperan a 1°), la prueba cerrada de Google Play e INAPI.
+
+### Sesión 140 (2026-11-05) — 1° básico: banco leído entero, 33 lecciones y el fork jugable
+El octavo curso, en la misma forma que 2° y con la regla de Roberto de **2 agentes a la vez y
+tareas cortas**. Spec `docs/superpowers/specs/2026-11-05-1-basico-design.md`, plan
+`docs/superpowers/plans/2026-11-05-1-basico.md`. **1° no se anuncia todavía**: está jugable en
+`vulpo.cl/1ro/` sin enlazar.
+
+#### Decisiones de Roberto
+**4 asignaturas**, **4 opciones con enunciados de ≤ 50 caracteres** (110 con escena), **8 preguntas
+por etapa** (12 en el jefe de capítulo), Reto Sin Fin + Vocabulario, y **la voz que lee sola**. El
+reparto en **22 capítulos se aprobó tal cual** (05/11): Matemática por las unidades del Programa (2° a
+6° van por ejes), dos capítulos de 2 etapas que se quedan así, y El Marchitón dibujado distinto de La
+Sequía. Villanos: **El Comenúmeros**, **La Bulla**, **El Marchitón** y **El Remolino**. Y pidió
+sumar al OA 04 de Historia **familias de dos mamás y de dos papás**, que el agente había dejado fuera
+por su cuenta.
+
+#### `LEE_SOLO`: la voz lee sola la pregunta y las opciones
+Bandera nueva en `assets/js/motor.js`, leída con `typeof` para que ningún otro fork cambie: en 1°,
+muchos niños todavía no leen. Se apaga sola en `?rev=1` y cuando el curso no tiene voz. Con
+`VOZ_DIRS=[]` —la voz de 1° todavía no existe— no hace nada, que es lo esperado.
+
+#### El banco: 2.151 preguntas, y otra vez la lectura completa fue la que encontró los defectos
+Matemática 594 · Lenguaje 691 · Ciencias 360 · Historia 446 · Vocabulario 60. Los auditores daban 0
+errores desde el primer día y **la lectura pregunta por pregunta corrigió cerca de 280**. Los
+patrones que más se repitieron:
+- **Ecos que regalan la respuesta al oído** («lista de compras» → «Recordar qué comprar»;
+  «enreda la lengua» → «trabalenguas»; «al medio» → «el mediano»). Con la voz leyendo sola es el
+  defecto más caro de 1°.
+- **Segundas respuestas que solo ve quien conoce Chile:** el cuaderno con espiral metálico, caminar
+  «por la orilla» donde no hay vereda, la cueca nortina con trompeta, el 21 de mayo que es feriado,
+  las lagunas saladas del altiplano, el copihue que crece desde Valparaíso.
+- **Frases que se funden al oírlas** al contar palabras («salta alto», «un oso») y el seseo
+  («taza» no termina igual que «mesa» por escrito).
+- La plantilla «Lee:» pasó a **«Escucha:»** en 99 enunciados: en 1° la voz lee.
+
+#### Tres defectos que valen para todos los cursos
+1. **Un emoji que dibuja más de una cosa se cuenta doble.** 🍒 son dos cerezas: el niño contaba 44 y
+   no 22. El barrido de los 32 bancos encontró ✨ en 3° (`mat3-oa08-26`): cambiado a ⭐ sin tocar el
+   texto ni la voz. Y `agrupar` **pinta 12 como máximo sin avisar**: una pregunta pedía contar 13
+   manzanas y se veían 12. Las dos cosas son ahora **error** en `auditar-banco-nivel.py`.
+2. **El gráfico de barras tenía etiquetas que un niño de 6 años no lee**, y la barra «Rojo» salía
+   verde. `visuales.js` acepta ahora `colores` por barra y agranda la etiqueta que es solo un emoji;
+   sin esos campos se dibuja igual que antes (mirado en captura).
+3. **El lector de pantalla daba la cuenta hecha en las preguntas de estimar** («Dibujo: 12 objetos»).
+   Con `estimar:true` dice «un grupo de objetos para calcular a ojo».
+
+De paso, en `lecciones.js` el círculo con `mostrar:'nada'` ya no dibuja el punto del centro ni le
+dice «radio y diámetro» al lector de pantalla.
+
+#### Lecciones y fork
+**33 lecciones** (`docs/veredicto-1basico.md`): 20 mini-clases de Matemática con práctica de 8,
+3 mini-clases de Lenguaje con `mide:false` + 2 introducciones, y 4 introducciones de Ciencias y 4 de
+Historia, estas con el marco CUÁNDO · AÑOS · DÓNDE. El fork `1ro/index.html` se armó desde `2do/`
+con `genCalc1` (7.500 operaciones recalculadas, 0 errores) y las 72 metas. **Verificado jugando**:
+una etapa por asignatura sin reloj y del OA correcto, la mini-clase que bloquea su etapa, Sin Fin,
+Vocabulario, Formación Ciudadana, la puerta cerrada con solo la demo, el guardado `_1ro` aislado y
+la regresión de los ocho cursos, con cero errores de consola y de red. Fila `01` en `niveles.js` y
+en el esquema (**sin aplicar**: se pega al publicar); los mapas de planificación pasan a 8 cursos,
+51 OA cívicos y 32 bancos.
+
+⚠️ **Un agente corrió `git stash` por su cuenta** en medio de la lectura. No se perdió nada —se
+comprobó contra el estado anterior—, pero desde entonces todo encargo lo prohíbe explícitamente.
+
+#### También: las monedas de 2°
+Siete preguntas de 2° usaban monedas de 1 y 5 pesos, que no se acuñan desde 2017. Por decisión de
+Roberto pasaron a cajas, bolsas y paquetes de 10 con sueltos, que miden lo mismo.
+
+- **Pendiente de Roberto, en orden (1° y 2°):** aprobar bancos y lecciones en el tablero; autorizar
+  la voz; generar las imágenes (15 de 1° y 17 de 2°); aplicar el esquema al publicar.

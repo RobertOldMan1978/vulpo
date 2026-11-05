@@ -1,0 +1,214 @@
+{
+ "asignatura": "Matemática",
+ "nivel": "1° básico",
+ "codigo_asignatura": "MA01",
+ "fuente": "Bases Curriculares 1° a 6° básico — MINEDUC Chile (curriculumnacional.cl)",
+ "url_fuente": "https://www.curriculumnacional.cl/curriculum/1o-6o-basico/matematica/1-basico",
+ "nota_fidelidad": "Los 20 OA de conocimiento se transcribieron el 2026-11-04 desde la PÁGINA INDIVIDUAL de cada objetivo (curriculumnacional.cl/curriculum/1o-6o-basico/matematica/1-basico/ma01-oa-01 a ma01-oa-20), no desde la ficha de la asignatura, y se contrastaron con ella por script: en este nivel los 20 textos de la ficha coinciden carácter por carácter con los individuales, sin recortes. La cuenta oficial es 20 (la ficha enlaza ma01-oa-01 a ma01-oa-20 y ninguno más). Tres retoques de forma, ninguno de palabras: (1) el OA 09 trae sus cinco sub-puntos en líneas aparte; se conservan íntegros, unidos tras los dos puntos y separados por punto y coma, como en 2°, 3° y 4°. (2) En el OA 07 la página oficial trae los tres sub-puntos pegados sin separador («hasta 20: conteo hacia adelante y atrás completar 10 dobles.»); se separaron con punto y coma siguiendo el Programa de Estudio, que los lista como viñetas («› conteo hacia delante y atrás › completar 10 › dobles»). Se conservó «adelante», que es como lo dicen las Bases en la web; el Programa dice «delante». (3) En el OA 11 la web muestra «(sonidos, figuras, ritmos?)»: el signo de pregunta es un carácter roto, y el Programa de Estudio (Visión global, Unidad 2, pág. 45) lo escribe «ritmos…», así que se usó el «…» del Programa. Es un puntos suspensivos ORIGINAL dentro del paréntesis, no un recorte. En la Unidad 1 del mismo Programa aparece sin él («ritmos)»), así que conviene confirmarlo contra el PDF de las Bases Curriculares antes de publicar material impreso. Las unidades salen del Programa de Estudio de Matemática 1° básico (curriculumnacional.cl/recursos/programa-estudio-matematica-1-basico, PDF articles-18976_programa.pdf, Visión global del año, págs. 44-47), leído el mismo día. Quedan fuera de este archivo los 10 OA de habilidad (MA01 OAH a–j: resolver problemas, argumentar y comunicar, modelar, representar) y los 6 de actitud (MA01 OAA A–F), igual que en los demás bancos de Matemática: miden desempeño, y su código con letra no pasa la validación del servidor.",
+ "nota_evaluacion": "1° básico son niños de 6 y 7 años, y muchos todavía NO LEEN: el juego va SIN reloj y CON voz pregrabada, así que cada pregunta tiene que poder responderse ESCUCHANDO, con un enunciado muy corto y casi siempre apoyada en un dibujo (contar objetos, una balanza, una regla de figuras). Cuidado propio de este nivel: los OA 03 y 04 piden LEER y comparar NÚMEROS ESCRITOS, y si la voz pronuncia las opciones («doce», «veintiuno») le regala la respuesta al niño que justamente está aprendiendo a reconocer el numeral; en esas preguntas el número se dice en el enunciado y las opciones son los símbolos, o al revés, pero nunca las dos cosas por voz. Lo mismo vale para el OA 02 con los ordinales escritos (1º, 10º). Varios OA piden demostrar, representar, construir o dibujar con material concreto, y un quiz no puede medir eso: solo si el niño RECONOCE la representación, el resultado o la construcción correcta. Son los OA 03, 06, 08 y 10 (representar en forma concreta, pictórica y simbólica), 09 (demostrar que comprende la adición y la sustracción; sus sub-puntos de describir con lenguaje cotidiano y de crear problemas no son preguntables tal cual), 11 (crear y continuar patrones), 12 (describir y registrar con una balanza), 13 (describir posiciones), 14 (relacionar figuras 3D y 2D con material concreto), 15 (DIBUJAR líneas: se mide solo el identificar), 19 (recolectar y registrar datos) y 20 (construir pictogramas: se mide leerlos e interpretarlos). Sus preguntas deben plantear el trabajo ya hecho —por un tercero con nombre o en un dibujo— y preguntar cuál es correcto, nunca pedirle al niño que lo haga. El OA 13 incluye derecha e izquierda y habla de la posición «en relación a sí mismos»: preguntarla siempre respecto de un personaje del dibujo, no del propio jugador, que puede tener el teléfono girado. El OA 11 incluye patrones de sonidos y ritmos: con voz pregrabada solo se pueden plantear descritos o dibujados, no tocados. El OA 05 (estimar) necesita un dibujo con un referente visible, y las opciones deben estar lo bastante separadas para que estimar sea distinto de contar. Ningún OA queda excluido: todos admiten al menos una pregunta honesta de reconocimiento escuchada.",
+ "nota_unidades": "Los grupos de 'unidades' son las CUATRO unidades del Programa de Estudio de Matemática 1° básico (Visión global del año, págs. 44-47), que no les pone nombre: solo «Unidad 1» a «Unidad 4». Los títulos de abajo son descriptivos, tomados del «Propósito» de cada unidad. El Programa repite OA entre unidades: el 01, 03, 04, 06 y 11 aparecen en la Unidad 1 y en la 2 (la 1 los trabaja hasta 10 o 50, la 2 hasta 20 o 100), y el 07, 09 y 19 en la 3 y en la 4. Como una fila del juego tiene que ser un solo objetivo, en 'unidades' cada OA va en UNA sola: el 01, 03 y 11 en la U1, cuyo propósito empieza por contar, leer y representar, y nombra los patrones de figuras, sonidos y ritmos; el 04 y el 06 en la U2, porque su ámbito es hasta 20, que es el de esa unidad; el 07 en la U3, cuyo propósito dice que el cálculo mental «es fundamental en esta unidad»; el 19 en la U3, donde se inicia la recolección de datos; y el 09 en la U4, porque su ámbito llega a 20 y la resolución de problemas es el foco de esa unidad (el sub-punto «resolviendo problemas en contextos familiares» solo aparece en la lista de la U4). Con ese reparto quedan 6, 5, 5 y 4 OA. Es una PROPUESTA del reparto, no aprobada todavía: el Programa completo, con sus repeticiones, queda en 'unidades_oficiales_del_programa'. Ojo: Matemática de 2° a 6° agrupa por EJES en 'unidades' (ver su nota_unidades); si se prefiere eso para 1°, los ejes ya están en el campo 'eje' de cada OA.",
+ "nota_contenido_sensible": "Revisados los 20 OA contra docs/contenido-sensible.md: ninguno entra en sus cinco categorías (sexualidad, violencia y muerte, religión y creencias, pueblos originarios, sustancias), igual que el resto de Matemática. Un solo cuidado de redacción: el OA 17 pide secuenciar «algunas fechas significativas»; usar fechas cívicas o del año escolar (inicio de clases, Fiestas Patrias, vacaciones, el cumpleaños de un personaje) y evitar que una fecha religiosa o una conmemoración de guerra sea la clave de la pregunta. Ningún OA necesita conversarse con el colegio antes de publicar.",
+ "oa_excluidos_del_banco": [],
+ "unidades": [
+  {
+   "id": "U1",
+   "titulo": "Contar, leer números, patrones y el tiempo",
+   "oa": [
+    "MA01 OA 01",
+    "MA01 OA 02",
+    "MA01 OA 03",
+    "MA01 OA 11",
+    "MA01 OA 16",
+    "MA01 OA 17"
+   ]
+  },
+  {
+   "id": "U2",
+   "titulo": "Números hasta 20: comparar, componer y figuras",
+   "oa": [
+    "MA01 OA 04",
+    "MA01 OA 05",
+    "MA01 OA 06",
+    "MA01 OA 08",
+    "MA01 OA 14"
+   ]
+  },
+  {
+   "id": "U3",
+   "titulo": "Sumar y restar, medir y registrar datos",
+   "oa": [
+    "MA01 OA 07",
+    "MA01 OA 10",
+    "MA01 OA 12",
+    "MA01 OA 18",
+    "MA01 OA 19"
+   ]
+  },
+  {
+   "id": "U4",
+   "titulo": "Problemas hasta 20, líneas y pictogramas",
+   "oa": [
+    "MA01 OA 09",
+    "MA01 OA 13",
+    "MA01 OA 15",
+    "MA01 OA 20"
+   ]
+  }
+ ],
+ "unidades_oficiales_del_programa": [
+  {
+   "id": "U1",
+   "titulo": "Unidad 1 (Programa de Estudio, pág. 44)",
+   "oa": [
+    "MA01 OA 01",
+    "MA01 OA 03",
+    "MA01 OA 04",
+    "MA01 OA 06",
+    "MA01 OA 11",
+    "MA01 OA 16",
+    "MA01 OA 17",
+    "MA01 OA 02"
+   ]
+  },
+  {
+   "id": "U2",
+   "titulo": "Unidad 2 (Programa de Estudio, pág. 45)",
+   "oa": [
+    "MA01 OA 01",
+    "MA01 OA 03",
+    "MA01 OA 04",
+    "MA01 OA 06",
+    "MA01 OA 11",
+    "MA01 OA 14",
+    "MA01 OA 08",
+    "MA01 OA 05"
+   ]
+  },
+  {
+   "id": "U3",
+   "titulo": "Unidad 3 (Programa de Estudio, pág. 46)",
+   "oa": [
+    "MA01 OA 09",
+    "MA01 OA 10",
+    "MA01 OA 12",
+    "MA01 OA 07",
+    "MA01 OA 18",
+    "MA01 OA 19"
+   ]
+  },
+  {
+   "id": "U4",
+   "titulo": "Unidad 4 (Programa de Estudio, pág. 47)",
+   "oa": [
+    "MA01 OA 09",
+    "MA01 OA 07",
+    "MA01 OA 15",
+    "MA01 OA 19",
+    "MA01 OA 20",
+    "MA01 OA 13"
+   ]
+  }
+ ],
+ "oa": [
+  {
+   "codigo": "MA01 OA 01",
+   "eje": "Números y operaciones",
+   "texto": "Contar números del 0 al 100 de 1 en 1, de 2 en 2, de 5 en 5 y de 10 en 10, hacia adelante y hacia atrás, empezando por cualquier número menor que 100."
+  },
+  {
+   "codigo": "MA01 OA 02",
+   "eje": "Números y operaciones",
+   "texto": "Identificar el orden de los elementos de una serie, utilizando números ordinales del primero (1º) al décimo (10º)."
+  },
+  {
+   "codigo": "MA01 OA 03",
+   "eje": "Números y operaciones",
+   "texto": "Leer números del 0 al 20 y representarlos en forma concreta, pictórica y simbólica."
+  },
+  {
+   "codigo": "MA01 OA 04",
+   "eje": "Números y operaciones",
+   "texto": "Comparar y ordenar números del 0 al 20 de menor a mayor y/o viceversa, utilizando material concreto y/o usando software educativo."
+  },
+  {
+   "codigo": "MA01 OA 05",
+   "eje": "Números y operaciones",
+   "texto": "Estimar cantidades hasta 20 en situaciones concretas, usando un referente."
+  },
+  {
+   "codigo": "MA01 OA 06",
+   "eje": "Números y operaciones",
+   "texto": "Componer y descomponer números del 0 a 20 de manera aditiva, en forma concreta, pictórica y simbólica."
+  },
+  {
+   "codigo": "MA01 OA 07",
+   "eje": "Números y operaciones",
+   "texto": "Describir y aplicar estrategias de cálculo mental para las adiciones y sustracciones hasta 20: conteo hacia adelante y atrás; completar 10; dobles."
+  },
+  {
+   "codigo": "MA01 OA 08",
+   "eje": "Números y operaciones",
+   "texto": "Determinar las unidades y decenas en números del 0 al 20, agrupando de a 10, de manera concreta, pictórica y simbólica."
+  },
+  {
+   "codigo": "MA01 OA 09",
+   "eje": "Números y operaciones",
+   "texto": "Demostrar que comprenden la adición y la sustracción de números del 0 al 20 progresivamente, de 0 a 5, de 6 a 10, de 11 a 20 con dos sumandos: usando un lenguaje cotidiano para describir acciones desde su propia experiencia; representando adiciones y sustracciones con material concreto y pictórico, de manera manual y/o usando software educativo; representando el proceso en forma simbólica; resolviendo problemas en contextos familiares; creando problemas matemáticos y resolviéndolos."
+  },
+  {
+   "codigo": "MA01 OA 10",
+   "eje": "Números y operaciones",
+   "texto": "Demostrar que la adición y la sustracción son operaciones inversas, de manera concreta, pictórica y simbólica."
+  },
+  {
+   "codigo": "MA01 OA 11",
+   "eje": "Patrones y álgebra",
+   "texto": "Reconocer, describir, crear y continuar patrones repetitivos (sonidos, figuras, ritmos…) y patrones numéricos hasta el 20, crecientes y decrecientes, usando material concreto, pictórico y simbólico, de manera manual y/o por medio de software educativo."
+  },
+  {
+   "codigo": "MA01 OA 12",
+   "eje": "Patrones y álgebra",
+   "texto": "Describir y registrar la igualdad y la desigualdad como equilibrio y desequilibrio, usando una balanza en forma concreta, pictórica y simbólica del 0 al 20, usando el símbolo igual (=)."
+  },
+  {
+   "codigo": "MA01 OA 13",
+   "eje": "Geometría",
+   "texto": "Describir la posición de objetos y personas en relación a sí mismos y a otros objetos y personas, usando un lenguaje común (como derecha e izquierda)."
+  },
+  {
+   "codigo": "MA01 OA 14",
+   "eje": "Geometría",
+   "texto": "Identificar en el entorno figuras 3D y figuras 2D y relacionarlas, usando material concreto."
+  },
+  {
+   "codigo": "MA01 OA 15",
+   "eje": "Geometría",
+   "texto": "Identificar y dibujar líneas rectas y curvas."
+  },
+  {
+   "codigo": "MA01 OA 16",
+   "eje": "Medición",
+   "texto": "Usar unidades no estandarizadas de tiempo para comparar la duración de eventos cotidianos."
+  },
+  {
+   "codigo": "MA01 OA 17",
+   "eje": "Medición",
+   "texto": "Usar un lenguaje cotidiano para secuenciar eventos en el tiempo: días de la semana, meses del año y algunas fechas significativas."
+  },
+  {
+   "codigo": "MA01 OA 18",
+   "eje": "Medición",
+   "texto": "Identificar y comparar la longitud de objetos, usando palabras como largo y corto."
+  },
+  {
+   "codigo": "MA01 OA 19",
+   "eje": "Datos y probabilidades",
+   "texto": "Recolectar y registrar datos para responder preguntas estadísticas sobre sí mismo y el entorno, usando bloques, tablas de conteo y pictogramas."
+  },
+  {
+   "codigo": "MA01 OA 20",
+   "eje": "Datos y probabilidades",
+   "texto": "Construir, leer e interpretar pictogramas."
+  }
+ ]
+}

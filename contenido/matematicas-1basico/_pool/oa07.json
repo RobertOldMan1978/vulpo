@@ -1,0 +1,401 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "Ana cuenta 3 más desde el 9. ¿A qué llega?",
+   "opciones": [
+    "12",
+    "11",
+    "13",
+    "3"
+   ],
+   "correcta": 0,
+   "tip": "Desde nueve, tres más: diez, once, doce. Se cuenta a partir del número siguiente.",
+   "id": "mate1-oa07-1"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "Sofía está en el 14 y avanza 2. ¿A qué llega?",
+   "opciones": [
+    "16",
+    "15",
+    "17",
+    "12"
+   ],
+   "correcta": 0,
+   "tip": "Desde catorce, dos más: quince, dieciséis.",
+   "id": "mate1-oa07-2"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "¿Desde qué número conviene contar en 2 + 9?",
+   "opciones": [
+    "Desde el 9",
+    "Desde el 2",
+    "Desde el 0",
+    "Desde el 11"
+   ],
+   "correcta": 0,
+   "tip": "Conviene partir del número mayor y contar el menor: desde nueve, dos más. Es más corto.",
+   "id": "mate1-oa07-3"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "Para 3 + 15, ¿desde qué número cuentas?",
+   "opciones": [
+    "Desde el 15",
+    "Desde el 3",
+    "Desde el 1",
+    "Desde el 18"
+   ],
+   "correcta": 0,
+   "tip": "Partes del quince, que es el mayor, y cuentas tres más: dieciséis, diecisiete, dieciocho.",
+   "id": "mate1-oa07-4"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "Leo cuenta 3 atrás desde el 12. ¿A qué llega?",
+   "opciones": [
+    "9",
+    "10",
+    "8",
+    "15"
+   ],
+   "correcta": 0,
+   "tip": "Hacia atrás desde doce: once, diez, nueve. Quince sería contar hacia adelante.",
+   "id": "mate1-oa07-5"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "Para 15 - 2, cuenta hacia atrás. ¿A qué llegas?",
+   "opciones": [
+    "13",
+    "14",
+    "12",
+    "17"
+   ],
+   "correcta": 0,
+   "tip": "Hacia atrás desde quince, dos números: catorce, trece.",
+   "id": "mate1-oa07-6"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "Quitas 1 al 20. ¿A qué número llegas?",
+   "opciones": [
+    "19",
+    "21",
+    "10",
+    "18"
+   ],
+   "correcta": 0,
+   "tip": "Quitar uno es dar un paso hacia atrás: antes del veinte está el diecinueve.",
+   "id": "mate1-oa07-7"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "Desde el 11, Pía baja 4. ¿A qué número llega?",
+   "opciones": [
+    "7",
+    "8",
+    "6",
+    "15"
+   ],
+   "correcta": 0,
+   "tip": "Hacia atrás desde once: diez, nueve, ocho, siete. El once no se cuenta como paso.",
+   "id": "mate1-oa07-8"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "En 9 + 4, ¿cuánto le falta al 9 para el 10?",
+   "opciones": [
+    "1",
+    "4",
+    "3",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "Al nueve le falta uno para llegar a diez. Ese uno lo saca del cuatro, y quedan tres.",
+   "id": "mate1-oa07-9"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "9 + 6 es igual que 10 + ¿cuánto?",
+   "opciones": [
+    "5",
+    "6",
+    "4",
+    "15"
+   ],
+   "correcta": 0,
+   "tip": "El nueve le pide uno al seis para llegar a diez, y al seis le quedan cinco: diez más cinco.",
+   "id": "mate1-oa07-10"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "En 8 + 7, Sofía le pasa 2 al 8. ¿Qué suma queda?",
+   "opciones": [
+    "10 + 5",
+    "10 + 7",
+    "10 + 6",
+    "8 + 5"
+   ],
+   "correcta": 0,
+   "tip": "Si el ocho recibe dos, llega a diez, y al siete le quedan cinco: diez más cinco.",
+   "id": "mate1-oa07-11"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "En 7 + 4 + 3, ¿qué dos forman 10?",
+   "opciones": [
+    "El 7 y el 3",
+    "El 7 y el 4",
+    "El 4 y el 3",
+    "Ninguno de ellos"
+   ],
+   "correcta": 0,
+   "tip": "Siete y tres forman diez. Juntarlos primero hace la cuenta más fácil: diez y cuatro más.",
+   "id": "mate1-oa07-12"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "Diego está en el 7. ¿Cuánto salta hasta el 10?",
+   "opciones": [
+    "3",
+    "10",
+    "17",
+    "4"
+   ],
+   "correcta": 0,
+   "tip": "Desde siete hasta diez hay tres saltos: ocho, nueve, diez.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 10,
+    "paso": 1,
+    "marca": 7
+   },
+   "id": "mate1-oa07-13"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "14 - 6: Leo ya quitó 4. ¿Cuánto falta quitar?",
+   "opciones": [
+    "2",
+    "6",
+    "4",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "Seis se parte en cuatro y dos. Al quitar cuatro llegó a diez; falta quitar dos y queda en ocho.",
+   "id": "mate1-oa07-14"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "6 + 6 es un doble. ¿Cuánto da?",
+   "opciones": [
+    "12",
+    "11",
+    "13",
+    "14"
+   ],
+   "correcta": 0,
+   "tip": "Es un doble: seis y seis son doce, como los huevos de una caja de una docena.",
+   "id": "mate1-oa07-15"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "¿Cuál es el doble de 8?",
+   "opciones": [
+    "16",
+    "10",
+    "18",
+    "15"
+   ],
+   "correcta": 0,
+   "tip": "El doble de ocho es ocho y ocho más: dieciséis.",
+   "id": "mate1-oa07-16"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "¿Qué doble da 10?",
+   "opciones": [
+    "5 + 5",
+    "4 + 5",
+    "10 + 10",
+    "2 + 2"
+   ],
+   "correcta": 0,
+   "tip": "Un doble es sumar el mismo número dos veces: cinco y cinco son diez.",
+   "id": "mate1-oa07-17"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "Si 4 + 4 es 8, ¿cuánto es 4 + 5?",
+   "opciones": [
+    "9",
+    "8",
+    "10",
+    "12"
+   ],
+   "correcta": 0,
+   "tip": "Cuatro más cinco es el doble de cuatro y uno más: ocho y uno, nueve.",
+   "id": "mate1-oa07-18"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "Si 3 + 3 es 6, ¿cuánto es 3 + 2?",
+   "opciones": [
+    "5",
+    "6",
+    "7",
+    "4"
+   ],
+   "correcta": 0,
+   "tip": "Tres más dos es uno menos que tres más tres: seis menos uno, cinco.",
+   "id": "mate1-oa07-19"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "¿Qué doble ayuda con 7 + 8?",
+   "opciones": [
+    "7 + 7",
+    "5 + 5",
+    "9 + 9",
+    "3 + 3"
+   ],
+   "correcta": 0,
+   "tip": "Siete más siete es catorce, y siete más ocho es uno más: quince. Los otros dobles quedan lejos.",
+   "id": "mate1-oa07-20"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "Camila ve un doble: 9 + 9. ¿Cuánto da?",
+   "opciones": [
+    "18",
+    "19",
+    "16",
+    "17"
+   ],
+   "correcta": 0,
+   "tip": "Nueve y nueve son dieciocho. Es uno de los dobles que conviene saber de memoria.",
+   "id": "mate1-oa07-21"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "Leo dice que 7 + 7 es 15. ¿Tiene razón?",
+   "opciones": [
+    "No, es 14",
+    "Sí, es 15",
+    "No, es 13",
+    "No, es 16"
+   ],
+   "correcta": 0,
+   "tip": "Siete y siete son catorce. Quince sería siete más ocho.",
+   "id": "mate1-oa07-22"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "Para 8 + 2, ¿qué conviene más?",
+   "opciones": [
+    "Contar dos más",
+    "Contar desde el uno",
+    "Quitar dos",
+    "Usar un doble"
+   ],
+   "correcta": 0,
+   "tip": "Con un número chico conviene contar desde el ocho: nueve, diez. Contar desde el uno es más largo.",
+   "id": "mate1-oa07-23"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "Diego suma 6 + 6. ¿Qué le sirve más?",
+   "opciones": [
+    "Un doble",
+    "Contar hacia atrás",
+    "Quitar seis",
+    "Contar desde el uno"
+   ],
+   "correcta": 0,
+   "tip": "Seis más seis suma dos números iguales: es un doble, y da doce.",
+   "id": "mate1-oa07-24"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "¿Cómo se calcula rápido 17 - 1?",
+   "opciones": [
+    "Contar uno atrás",
+    "Contar uno adelante",
+    "Usar un doble",
+    "Completar diez"
+   ],
+   "correcta": 0,
+   "tip": "Quitar uno es dar un paso hacia atrás: diecisiete, dieciséis.",
+   "id": "mate1-oa07-25"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "¿Cuánto es 9 + 5?",
+   "opciones": [
+    "14",
+    "13",
+    "15",
+    "4"
+   ],
+   "correcta": 0,
+   "tip": "El nueve toma uno del cinco y llega a diez; quedan cuatro: catorce. Cuatro sería nueve menos cinco, una resta.",
+   "id": "mate1-oa07-26"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "¿Qué da 18 - 2 contando hacia atrás?",
+   "opciones": [
+    "16",
+    "17",
+    "20",
+    "15"
+   ],
+   "correcta": 0,
+   "tip": "Hacia atrás desde dieciocho, dos números: diecisiete, dieciséis. Veinte sería sumar.",
+   "id": "mate1-oa07-27"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "Piensa sin usar los dedos: ¿7 + 5?",
+   "opciones": [
+    "12",
+    "11",
+    "13",
+    "2"
+   ],
+   "correcta": 0,
+   "tip": "El siete toma tres del cinco y llega a diez; quedan dos: doce.",
+   "id": "mate1-oa07-28"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "10 - 3: ¿a qué número llegas?",
+   "opciones": [
+    "7",
+    "13",
+    "6",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "Hacia atrás desde diez: nueve, ocho, siete. Trece sería sumar tres.",
+   "id": "mate1-oa07-29"
+  },
+  {
+   "oa": "MA01 OA 07",
+   "pregunta": "Pía hace 9 + 8 como 10 + 7. ¿Está bien?",
+   "opciones": [
+    "Sí, da lo mismo",
+    "No, es 10 + 8",
+    "No, es 10 + 9",
+    "No, da otra cosa"
+   ],
+   "correcta": 0,
+   "tip": "El nueve recibe uno del ocho y llega a diez; al ocho le quedan siete. Diez más siete es diecisiete, igual que nueve más ocho.",
+   "id": "mate1-oa07-30"
+  }
+ ]
+}

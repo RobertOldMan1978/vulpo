@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "El pájaro está sobre el árbol. ¿Y el árbol?",
+   "opciones": [
+    "Debajo del pájaro",
+    "Sobre el pájaro",
+    "Delante del pájaro",
+    "Detrás del pájaro"
+   ],
+   "correcta": 0,
+   "tip": "Si el pájaro está arriba, el árbol queda abajo: debajo del pájaro.",
+   "id": "mate1-oa13-1"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "Pía va detrás de Tomás. ¿Quién va delante?",
+   "opciones": [
+    "Tomás",
+    "Pía",
+    "Nadie",
+    "Los dos"
+   ],
+   "correcta": 0,
+   "tip": "Si Pía va detrás, Tomás va antes que ella: Tomás va delante.",
+   "id": "mate1-oa13-2"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "Ana pone un guante en la izquierda. ¿Y el otro?",
+   "opciones": [
+    "En la derecha",
+    "En la izquierda",
+    "En un pie",
+    "En la cabeza"
+   ],
+   "correcta": 0,
+   "tip": "Tenemos dos manos, la izquierda y la derecha. Si un guante ya está en la izquierda, el otro va en la derecha.",
+   "id": "mate1-oa13-3"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "Leo patea con el derecho. ¿Qué pie queda abajo?",
+   "opciones": [
+    "El izquierdo",
+    "El derecho",
+    "Los dos",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Para patear, Leo levanta el pie derecho. El otro, el izquierdo, se queda apoyado en el suelo.",
+   "id": "mate1-oa13-4"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "El perro está entre dos niños. ¿Dónde queda?",
+   "opciones": [
+    "Al medio",
+    "A un lado",
+    "Detrás de ellos",
+    "Encima de ellos"
+   ],
+   "correcta": 0,
+   "tip": "Estar entre dos es tener uno a cada lado: el perro queda al medio.",
+   "id": "mate1-oa13-5"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "El gato está delante del perro. ¿Y el perro?",
+   "opciones": [
+    "Detrás del gato",
+    "Delante del gato",
+    "Encima del gato",
+    "Lejos del gato"
+   ],
+   "correcta": 0,
+   "tip": "Si el gato está delante del perro, el perro queda detrás del gato.",
+   "id": "mate1-oa13-6"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "Ana vive cerca del colegio y Leo lejos. ¿Quién camina más?",
+   "opciones": [
+    "Leo",
+    "Ana",
+    "Los dos igual",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Quien vive más lejos tiene que caminar más para llegar: Leo.",
+   "id": "mate1-oa13-7"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "Pía está detrás del árbol. ¿Qué tiene delante?",
+   "opciones": [
+    "El árbol",
+    "El cielo",
+    "Su casa",
+    "Nada"
+   ],
+   "correcta": 0,
+   "tip": "Si Pía está detrás del árbol, el árbol queda delante de ella y la tapa.",
+   "id": "mate1-oa13-8"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "El gorro va en la cabeza. ¿Qué hay bajo el gorro?",
+   "opciones": [
+    "La cabeza",
+    "El gorro",
+    "El techo",
+    "El cielo"
+   ],
+   "correcta": 0,
+   "tip": "El gorro va arriba y toca la cabeza: justo debajo del gorro está la cabeza.",
+   "id": "mate1-oa13-9"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "Leo tiene la ventana a su derecha. Se da vuelta. ¿Y ahora?",
+   "opciones": [
+    "A su izquierda",
+    "A su derecha",
+    "Delante de él",
+    "Encima de él"
+   ],
+   "correcta": 0,
+   "tip": "Al darse vuelta, Leo cambia de lado: lo que tenía a la derecha queda a su izquierda.",
+   "id": "mate1-oa13-10"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "Ana y Leo miran al frente. Leo está a la derecha de Ana. ¿A qué lado de Leo está Ana?",
+   "opciones": [
+    "A la izquierda",
+    "A la derecha",
+    "Detrás",
+    "Delante"
+   ],
+   "correcta": 0,
+   "tip": "Los dos miran hacia el mismo lado. Si Leo está a la derecha de Ana, Ana queda a la izquierda de Leo.",
+   "id": "mate1-oa13-11"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "Pía guardó el lápiz en su estuche. ¿Dónde está?",
+   "opciones": [
+    "Dentro del estuche",
+    "Fuera del estuche",
+    "Sobre el estuche",
+    "Bajo el estuche"
+   ],
+   "correcta": 0,
+   "tip": "Guardar en el estuche es meter el lápiz adentro: está dentro del estuche.",
+   "id": "mate1-oa13-12"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "El gato sale de la casa. ¿Dónde está ahora?",
+   "opciones": [
+    "Fuera de la casa",
+    "Dentro de la casa",
+    "Sobre la casa",
+    "Bajo la casa"
+   ],
+   "correcta": 0,
+   "tip": "Salir es pasar de adentro hacia afuera: el gato queda fuera de la casa.",
+   "id": "mate1-oa13-13"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "La nube está bajo el avión. ¿Qué está más arriba?",
+   "opciones": [
+    "El avión",
+    "La nube",
+    "El suelo",
+    "Nada"
+   ],
+   "correcta": 0,
+   "tip": "Si la nube está debajo del avión, el avión está más arriba que la nube.",
+   "id": "mate1-oa13-14"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "Un patito sigue a su mamá. ¿Quién va delante?",
+   "opciones": [
+    "Su mamá",
+    "El patito",
+    "Nadie",
+    "Los dos"
+   ],
+   "correcta": 0,
+   "tip": "Si el patito la sigue, va detrás: su mamá va delante de él, mostrándole el camino.",
+   "id": "mate1-oa13-15"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "En su camarote, Tomás va arriba. ¿Y su hermano?",
+   "opciones": [
+    "Abajo",
+    "Arriba",
+    "Al lado",
+    "Afuera"
+   ],
+   "correcta": 0,
+   "tip": "Un camarote tiene una cama arriba y otra abajo. Si Tomás usa la de arriba, su hermano usa la de abajo.",
+   "id": "mate1-oa13-16"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "La fila es Ana, Leo y Pía. ¿Quién va al medio?",
+   "opciones": [
+    "Leo",
+    "Ana",
+    "Pía",
+    "Nadie"
+   ],
+   "correcta": 0,
+   "tip": "Leo tiene a Ana a un lado y a Pía al otro: está al medio de la fila.",
+   "id": "mate1-oa13-17"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "Sofía saluda con la izquierda. ¿Cuál queda libre?",
+   "opciones": [
+    "La derecha",
+    "La izquierda",
+    "Las dos",
+    "Ninguna"
+   ],
+   "correcta": 0,
+   "tip": "Sofía usa la mano izquierda para saludar. La otra mano, la derecha, queda libre.",
+   "id": "mate1-oa13-18"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "Ana sube la escalera. ¿Hacia dónde va?",
+   "opciones": [
+    "Hacia arriba",
+    "Hacia abajo",
+    "Hacia atrás",
+    "Hacia un lado"
+   ],
+   "correcta": 0,
+   "tip": "Subir es ir hacia arriba, escalón por escalón.",
+   "id": "mate1-oa13-19"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "Leo se tira por el tobogán. ¿Hacia dónde va?",
+   "opciones": [
+    "Hacia abajo",
+    "Hacia arriba",
+    "Hacia atrás",
+    "Hacia un lado"
+   ],
+   "correcta": 0,
+   "tip": "En el tobogán uno parte arriba y se desliza hacia abajo, hasta el suelo.",
+   "id": "mate1-oa13-20"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "El gato duerme bajo la silla. ¿Qué tiene encima?",
+   "opciones": [
+    "La silla",
+    "El suelo",
+    "Sus patas",
+    "Nada"
+   ],
+   "correcta": 0,
+   "tip": "Si el gato está debajo de la silla, la silla queda encima de él.",
+   "id": "mate1-oa13-21"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "El globo de Ana se suelta y sube. ¿Dónde queda?",
+   "opciones": [
+    "Sobre Ana",
+    "Bajo Ana",
+    "Delante de Ana",
+    "Al lado de Ana"
+   ],
+   "correcta": 0,
+   "tip": "El globo sube, así que queda más arriba que Ana: sobre ella.",
+   "id": "mate1-oa13-22"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "El pollito ya salió del huevo. ¿Dónde está?",
+   "opciones": [
+    "Fuera del huevo",
+    "Dentro del huevo",
+    "Bajo el huevo",
+    "Sobre el huevo"
+   ],
+   "correcta": 0,
+   "tip": "Salir del huevo es dejar de estar adentro: el pollito está fuera del huevo.",
+   "id": "mate1-oa13-23"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "El auto entró al garaje. ¿Dónde está?",
+   "opciones": [
+    "Dentro del garaje",
+    "Fuera del garaje",
+    "Sobre el garaje",
+    "Detrás del garaje"
+   ],
+   "correcta": 0,
+   "tip": "Entrar es pasar de afuera hacia adentro: el auto está dentro del garaje.",
+   "id": "mate1-oa13-24"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "Pía va junto a Leo; Ana, lejos. ¿Quién va cerca?",
+   "opciones": [
+    "Pía",
+    "Ana",
+    "Las dos",
+    "Ninguna"
+   ],
+   "correcta": 0,
+   "tip": "Ir junto a alguien es ir muy cerca. Ana va lejos de Leo.",
+   "id": "mate1-oa13-25"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "El cuadro cuelga sobre el sofá. ¿Qué está abajo?",
+   "opciones": [
+    "El sofá",
+    "El cuadro",
+    "El techo",
+    "Nada"
+   ],
+   "correcta": 0,
+   "tip": "Si el cuadro está sobre el sofá, el sofá queda más abajo que el cuadro.",
+   "id": "mate1-oa13-26"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "Pía está delante de Leo. ¿A quién tapa?",
+   "opciones": [
+    "A Leo",
+    "A Pía",
+    "A nadie",
+    "A los dos"
+   ],
+   "correcta": 0,
+   "tip": "Quien está delante tapa al que está detrás. Pía tapa un poco a Leo.",
+   "id": "mate1-oa13-27"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "El tren pasa bajo el puente. ¿Qué queda arriba?",
+   "opciones": [
+    "El puente",
+    "El tren",
+    "El río",
+    "Nada"
+   ],
+   "correcta": 0,
+   "tip": "Si el tren pasa por debajo, el puente queda arriba del tren.",
+   "id": "mate1-oa13-28"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "Sofía tiene un pino a cada lado. ¿Entre cuántos pinos está?",
+   "opciones": [
+    "Dos",
+    "Uno",
+    "Tres",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Un pino a un lado y otro pino al otro lado: Sofía está entre dos pinos.",
+   "id": "mate1-oa13-29"
+  },
+  {
+   "oa": "MA01 OA 13",
+   "pregunta": "Tomás va último en la fila. ¿Quién va detrás?",
+   "opciones": [
+    "Nadie",
+    "Todos",
+    "El primero",
+    "Su amigo"
+   ],
+   "correcta": 0,
+   "tip": "El último de la fila no tiene a nadie detrás: todos los demás van delante de él.",
+   "id": "mate1-oa13-30"
+  }
+ ]
+}

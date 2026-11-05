@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿De qué fruto es la semilla más grande?",
+   "opciones": [
+    "De la palta",
+    "De la uva",
+    "Del tomate",
+    "Del kiwi"
+   ],
+   "correcta": 0,
+   "tip": "La palta tiene una sola semilla, grande y redonda, que llamamos cuesco. Las del tomate y el kiwi son chiquititas.",
+   "id": "cien1-oa04-1"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Qué fruto tiene un cuesco en el centro?",
+   "opciones": [
+    "El durazno",
+    "La sandía",
+    "El tomate",
+    "La frutilla"
+   ],
+   "correcta": 0,
+   "tip": "El durazno guarda un cuesco duro en el centro, con su semilla adentro. La sandía, el tomate y la frutilla no tienen cuesco.",
+   "id": "cien1-oa04-2"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "Ana separa semillas por tamaño. ¿Dónde va la lenteja?",
+   "opciones": [
+    "Con las chicas",
+    "Con las grandes",
+    "Con las flores",
+    "Con los tallos"
+   ],
+   "correcta": 0,
+   "tip": "La lenteja es una semilla muy chica, así que va con las semillas chicas.",
+   "id": "cien1-oa04-3"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Cuál de estos frutos es redondo?",
+   "opciones": [
+    "La naranja",
+    "El plátano",
+    "El pepino",
+    "El zapallo italiano"
+   ],
+   "correcta": 0,
+   "tip": "La naranja tiene forma de pelota. El plátano, el pepino y el zapallo italiano son alargados.",
+   "id": "cien1-oa04-4"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Qué fruto es alargado?",
+   "opciones": [
+    "El plátano",
+    "La naranja",
+    "La cereza",
+    "La mandarina"
+   ],
+   "correcta": 0,
+   "tip": "El plátano es largo y curvo. La naranja, la cereza y la mandarina son redondas.",
+   "id": "cien1-oa04-5"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Qué fruto tiene la cáscara peluda?",
+   "opciones": [
+    "El kiwi",
+    "La manzana",
+    "El plátano",
+    "La uva"
+   ],
+   "correcta": 0,
+   "tip": "La cáscara del kiwi tiene pelitos cafés. La manzana, el plátano y la uva tienen la cáscara lisa.",
+   "id": "cien1-oa04-6"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Cómo se siente la cáscara de la piña?",
+   "opciones": [
+    "Áspera y dura",
+    "Lisa y blanda",
+    "Suave y peluda",
+    "Fina y mojada"
+   ],
+   "correcta": 0,
+   "tip": "La cáscara de la piña es dura y áspera, con muchas puntas. Por eso se pela con cuchillo.",
+   "id": "cien1-oa04-7"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Qué fruto tiene la cáscara lisa?",
+   "opciones": [
+    "La manzana",
+    "La piña",
+    "El kiwi",
+    "La chirimoya"
+   ],
+   "correcta": 0,
+   "tip": "La manzana tiene la cáscara lisa y brillante. La piña es áspera, el kiwi peludo y la chirimoya tiene bultitos.",
+   "id": "cien1-oa04-8"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "Matías junta frutos rojos. ¿Cuál elige?",
+   "opciones": [
+    "La frutilla",
+    "El limón",
+    "El plátano",
+    "El kiwi"
+   ],
+   "correcta": 0,
+   "tip": "La frutilla madura es roja. El limón y el plátano son amarillos, y el kiwi es café por fuera.",
+   "id": "cien1-oa04-9"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Qué tienen la frutilla, el tomate y la cereza?",
+   "opciones": [
+    "Son rojos",
+    "Son peludos",
+    "Son alargados",
+    "Son enormes"
+   ],
+   "correcta": 0,
+   "tip": "Los tres son de color rojo cuando están maduros. Ese es el criterio que los junta en un grupo.",
+   "id": "cien1-oa04-10"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿En qué se parecen la naranja y la arveja?",
+   "opciones": [
+    "Son redondas",
+    "Son rojas",
+    "Son peludas",
+    "Son ásperas"
+   ],
+   "correcta": 0,
+   "tip": "La naranja es un fruto y la arveja una semilla, pero las dos tienen forma redonda.",
+   "id": "cien1-oa04-11"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Qué tienen el limón y el plátano maduro?",
+   "opciones": [
+    "Son amarillos",
+    "Son redondos",
+    "Son peludos",
+    "Son chicos"
+   ],
+   "correcta": 0,
+   "tip": "El limón y el plátano maduro son de color amarillo, aunque tienen formas distintas.",
+   "id": "cien1-oa04-12"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Qué fruto NO cabe en una mano?",
+   "opciones": [
+    "La sandía",
+    "La uva",
+    "La cereza",
+    "La ciruela"
+   ],
+   "correcta": 0,
+   "tip": "La sandía es muy grande y pesada. La uva, la cereza y la ciruela caben en una mano.",
+   "id": "cien1-oa04-13"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Qué fruto tiene semillas muy chiquitas?",
+   "opciones": [
+    "El tomate",
+    "La palta",
+    "El mango",
+    "El durazno"
+   ],
+   "correcta": 0,
+   "tip": "El tomate tiene muchas semillas chiquititas adentro. La palta, el mango y el durazno tienen una sola, grande.",
+   "id": "cien1-oa04-14"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Qué flor es más grande?",
+   "opciones": [
+    "El girasol",
+    "La margarita",
+    "El trébol",
+    "La violeta"
+   ],
+   "correcta": 0,
+   "tip": "El girasol tiene una flor enorme, a veces del tamaño de un plato. Las otras son flores chicas.",
+   "id": "cien1-oa04-15"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿De qué color son los pétalos del girasol?",
+   "opciones": [
+    "Amarillos",
+    "Azules",
+    "Verdes",
+    "Negros"
+   ],
+   "correcta": 0,
+   "tip": "Los pétalos del girasol son amarillos y rodean un centro café donde se forman las semillas.",
+   "id": "cien1-oa04-16"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Qué flor tiene forma de campana?",
+   "opciones": [
+    "El copihue",
+    "La margarita",
+    "El girasol",
+    "El trébol"
+   ],
+   "correcta": 0,
+   "tip": "La flor del copihue cuelga y tiene forma de campana. La margarita y el girasol son planas, con pétalos en ronda.",
+   "id": "cien1-oa04-17"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Cómo se sienten los pétalos de una rosa?",
+   "opciones": [
+    "Suaves",
+    "Ásperos",
+    "Duros",
+    "Pinchudos"
+   ],
+   "correcta": 0,
+   "tip": "Los pétalos de la rosa son suaves y delicados. Lo que pincha está en el tallo de la rosa.",
+   "id": "cien1-oa04-18"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Qué tallo es duro y áspero?",
+   "opciones": [
+    "El del roble",
+    "El del tulipán",
+    "El del perejil",
+    "El del trébol"
+   ],
+   "correcta": 0,
+   "tip": "El tronco del roble es duro y su corteza se siente áspera. El tulipán, el perejil y el trébol tienen tallos blandos.",
+   "id": "cien1-oa04-19"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "El tallo del cactus está cubierto de…",
+   "opciones": [
+    "espinas",
+    "plumas",
+    "pelo suave",
+    "hojas grandes"
+   ],
+   "correcta": 0,
+   "tip": "El cactus tiene un tallo grueso y verde cubierto de espinas, que lo protegen de los animales.",
+   "id": "cien1-oa04-20"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Qué tallo se dobla fácil sin quebrarse?",
+   "opciones": [
+    "El del pasto",
+    "El de un roble",
+    "El de un peral",
+    "El de un nogal"
+   ],
+   "correcta": 0,
+   "tip": "El tallo del pasto es delgado y flexible: se dobla con el viento y vuelve a pararse. Los troncos de árbol son duros.",
+   "id": "cien1-oa04-21"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Cuál de estos frutos tiene mucho jugo?",
+   "opciones": [
+    "La naranja",
+    "La nuez",
+    "La almendra",
+    "La castaña"
+   ],
+   "correcta": 0,
+   "tip": "La naranja es jugosa por dentro. La nuez, la almendra y la castaña son secas.",
+   "id": "cien1-oa04-22"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Cuál de estas semillas es la más grande?",
+   "opciones": [
+    "Un poroto",
+    "Una lenteja",
+    "Una de tomate",
+    "Una de kiwi"
+   ],
+   "correcta": 0,
+   "tip": "El poroto es más grande que la lenteja, y las semillas del tomate y del kiwi son chiquititas.",
+   "id": "cien1-oa04-23"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "Sofía junta frutos verdes. ¿Cuál elige?",
+   "opciones": [
+    "La chirimoya",
+    "La frutilla",
+    "El plátano maduro",
+    "La naranja"
+   ],
+   "correcta": 0,
+   "tip": "La chirimoya es verde por fuera. La frutilla es roja, el plátano maduro amarillo y la naranja anaranjada.",
+   "id": "cien1-oa04-24"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Qué fruto tiene la cáscara con bultitos?",
+   "opciones": [
+    "La chirimoya",
+    "La manzana",
+    "La uva",
+    "La cereza"
+   ],
+   "correcta": 0,
+   "tip": "La chirimoya tiene la cáscara verde con muchos bultitos. La manzana, la uva y la cereza son lisas.",
+   "id": "cien1-oa04-25"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Qué semilla es plana y blanca?",
+   "opciones": [
+    "La de zapallo",
+    "La de palta",
+    "La de cereza",
+    "La de durazno"
+   ],
+   "correcta": 0,
+   "tip": "La semilla del zapallo es plana, blanca y con forma de gota. La de palta es grande y redonda.",
+   "id": "cien1-oa04-26"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Qué fruto es más grande que una naranja?",
+   "opciones": [
+    "El melón",
+    "La uva",
+    "La cereza",
+    "El arándano"
+   ],
+   "correcta": 0,
+   "tip": "El melón es más grande que una naranja. La uva, la cereza y el arándano son mucho más chicos.",
+   "id": "cien1-oa04-27"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Cuál de estos es el más chico?",
+   "opciones": [
+    "La lenteja",
+    "El poroto",
+    "La palta",
+    "El melón"
+   ],
+   "correcta": 0,
+   "tip": "La lenteja es la más chica; después vienen el poroto, la palta y, al final, el melón.",
+   "id": "cien1-oa04-28"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Cómo es la cáscara del durazno?",
+   "opciones": [
+    "Con pelusa suave",
+    "Con muchas espinas",
+    "Dura como piedra",
+    "Áspera con puntas"
+   ],
+   "correcta": 0,
+   "tip": "La cáscara del durazno tiene una pelusa muy suave, que se siente al tocarla.",
+   "id": "cien1-oa04-29"
+  },
+  {
+   "oa": "CN01 OA 04",
+   "pregunta": "¿Qué flor del jardín es blanca y amarilla?",
+   "opciones": [
+    "La margarita",
+    "La rosa roja",
+    "El copihue rojo",
+    "La violeta"
+   ],
+   "correcta": 0,
+   "tip": "La margarita común tiene pétalos blancos y un centro amarillo.",
+   "id": "cien1-oa04-30"
+  }
+ ]
+}

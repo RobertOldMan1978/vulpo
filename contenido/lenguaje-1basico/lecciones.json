@@ -1,0 +1,248 @@
+{
+ "lecciones": [
+  {
+   "id": "le1-sonidos",
+   "oa": "LE01 OA 03",
+   "titulo": "Jugar con los sonidos",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Las palabras están hechas de sonidos. Si dices una palabra despacio, escuchas sus pedacitos. Cada pedacito se llama **golpe de voz**."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Tres cajas con tres juegos de sonidos: aplaudir los golpes de voz, escuchar cómo empieza la palabra y juntar los golpes",
+      "items": [
+       {
+        "titulo": "Aplaudir",
+        "texto": "Un aplauso por cada golpe de voz."
+       },
+       {
+        "titulo": "Escuchar el comienzo",
+        "texto": "Cómo suena la palabra al empezar."
+       },
+       {
+        "titulo": "Juntar",
+        "texto": "Golpes seguidos forman la palabra."
+       }
+      ],
+      "etiqueta": "Tres juegos con los sonidos"
+     },
+     "intro": "Con los sonidos de las palabras puedes hacer tres juegos."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Mira cómo juega Vulpi con la palabra paloma.",
+     "pasos": [
+      "Vulpi dice la palabra paloma muy despacio.",
+      "Da un aplauso cada vez que suena un golpe de voz.",
+      "Cuenta los aplausos. Son tres. La palabra paloma tiene tres golpes de voz.",
+      "Ahora dice los tres golpes seguidos, sin parar. Se juntan, y vuelve a sonar la palabra paloma."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "También puedes escuchar el **primer sonido** de una palabra. Las palabras tapa y torta empiezan con el mismo sonido. Es el sonido de la te."
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE01 OA 03",
+      "n": 8
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le1-oraciones",
+   "oa": "LE01 OA 14",
+   "titulo": "Oraciones completas",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una **oración** es una idea entera. Dice quién es y qué hace."
+    },
+    {
+     "t": "diagrama",
+     "kind": "oracion",
+     "params": {
+      "sujeto": "La abeja",
+      "predicado": "busca flores",
+      "etiqueta": "Quién y qué hace"
+     },
+     "intro": "Pregunta quién y pregunta qué hace. Si las dos tienen respuesta, la oración está completa."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Mira cómo revisa Martina lo que escribió.",
+     "pasos": [
+      "Martina escribe: «La abeja.»",
+      "Se pregunta: ¿quién? La abeja. Eso sí está.",
+      "Se pregunta: ¿qué hace? Eso no lo dice. La idea quedó a medias.",
+      "Martina agrega lo que hace: «La abeja busca flores.» Ahora la oración está completa."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "Al final de una oración va un **punto**. Cuando lees en voz alta y llegas a un punto, te detienes un momento y tomas aire."
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE01 OA 14",
+      "n": 8
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le1-comprender",
+   "oa": "LE01 OA 06",
+   "titulo": "Dos trucos para entender cuentos",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Cuando te leen un cuento, puedes usar dos trucos. Los dos te ayudan a seguir la historia."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Dos cajas con dos trucos para entender un cuento: imaginar y acordarse",
+      "items": [
+       {
+        "titulo": "Imaginar",
+        "texto": "Ver en tu cabeza lo que dice."
+       },
+       {
+        "titulo": "Acordarte",
+        "texto": "De algo que te pasó a ti."
+       }
+      ],
+      "etiqueta": "Dos trucos para entender"
+     },
+     "intro": "Los dos trucos sirven para cualquier cuento."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Mira cómo los usa Agustín cuando le leen un cuento.",
+     "pasos": [
+      "Le leen: «El conejo se escondió debajo de una hoja grande, porque empezó a llover.»",
+      "Agustín imagina. Ve al conejo chiquito, tapado con la hoja.",
+      "Agustín se acuerda. Una vez él se tapó con el paraguas de su mamá cuando llovió.",
+      "Con los dos trucos entiende la historia. El conejo no quería mojarse."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "Prueba los dos trucos con el próximo cuento que escuches. Imagina lo que pasa, y piensa si a ti te pasó algo parecido."
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "LE01 OA 06",
+      "n": 8
+     },
+     "mide": false
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le1-poemas",
+   "oa": "LE01 OA 09",
+   "titulo": "Antes de empezar: Poemas, rimas y teatro",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Los poemas son juegos con las palabras. Lo que más importa es cómo suenan. Por eso se dicen en voz alta."
+    },
+    {
+     "t": "texto",
+     "md": "Dos palabras **riman** cuando terminan sonando igual. Escucha las palabras campana y ventana. Terminan igual."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Tres cajas: la rima, el trabalenguas y la adivinanza",
+      "items": [
+       {
+        "titulo": "Rima",
+        "texto": "Palabras que terminan igual."
+       },
+       {
+        "titulo": "Trabalenguas",
+        "texto": "Se te enreda la lengua al decirlo."
+       },
+       {
+        "titulo": "Adivinanza",
+        "texto": "Habla de algo sin decir su nombre."
+       }
+      ],
+      "etiqueta": "Juegos con las palabras"
+     },
+     "intro": "En este capítulo vas a conocer tres juegos con palabras."
+    },
+    {
+     "t": "texto",
+     "md": "El **teatro** es otro juego. Unas personas hacen como si fueran otros. Uno hace de rey y otro hace de lobo. Así cuentan una historia."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a escuchar poemas, decir trabalenguas, adivinar y jugar a ser otro."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "le1-informar",
+   "oa": "LE01 OA 01",
+   "titulo": "Antes de empezar: Textos que informan",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Todo lo que está escrito lo escribió alguien. Y lo escribió para decirnos algo. Eso que nos quiere decir es su **mensaje**."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Dos cajas: un cuento cuenta lo que le pasa a alguien; un texto que informa enseña cosas reales",
+      "items": [
+       {
+        "titulo": "Un cuento",
+        "texto": "Cuenta lo que le pasa a alguien."
+       },
+       {
+        "titulo": "Un texto que informa",
+        "texto": "Enseña cosas reales."
+       }
+      ],
+      "etiqueta": "Uno cuenta, el otro enseña"
+     },
+     "intro": "Un texto puede contar una historia, o puede enseñarte algo."
+    },
+    {
+     "t": "texto",
+     "md": "Antes de escuchar un texto, pregúntate: ¿para qué lo escribieron? ¿Me va a contar una historia, o me va a enseñar algo?"
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a escuchar cartas, notas e instrucciones. Y vas a escuchar explicaciones para aprender cosas nuevas."
+    }
+   ],
+   "revisada": false
+  }
+ ]
+}

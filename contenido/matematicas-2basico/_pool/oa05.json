@@ -158,15 +158,15 @@
   },
   {
    "oa": "MA02 OA 05",
-   "pregunta": "Ana tiene 3 monedas de 10 y 2 de 5. ¿Cuánto tiene?",
+   "pregunta": "Ana tiene 3 monedas de 10 y 1 de 50. ¿Cuánto tiene?",
    "opciones": [
-    "40 pesos",
+    "80 pesos",
     "35 pesos",
-    "32 pesos",
-    "50 pesos"
+    "53 pesos",
+    "60 pesos"
    ],
    "correcta": 0,
-   "tip": "Las de 10 suman 30 y las de 5 suman 10: 30 + 10 = 40 pesos.",
+   "tip": "Las de 10 suman 30 y con la de 50 son 30 + 50 = 80 pesos.",
    "id": "mate2-oa05-13"
   },
   {

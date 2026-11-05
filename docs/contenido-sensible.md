@@ -106,6 +106,16 @@ banco real, 12 OA distintos, cero sexuales.**
 Severidad: **ALTA** (un colegio confesional casi seguro querrá revisarlo) · **MEDIA** (podría querer
 avisar) · **BAJA** (mención menor).
 
+### 1° básico
+**Sin OA sensibles** (revisado el 05/11/2026, al transcribir el currículum). Cuatro menciones
+menores que **no se marcan**, por el mismo criterio de 2°: el Combate Naval de Iquique y el «Día
+del Descubrimiento de dos mundos» (`HI01 OA 05`, como efemérides), las fiestas religiosas
+(`HI01 OA 06`, como expresión cultural) y los fundadores y exploradores (`HI01 OA 07`). Cuidados de
+redacción, no de marca: familias diversas y ascendencias (`HI01 OA 03` y `04`, siempre sobre un
+tercero, nunca sobre la familia del niño), estereotipos (`HI01 OA 12`), la falta de un sentido
+(`CN01 OA 06`) y la higiene (`CN01 OA 07`: solo higiene general, sin juzgar la comida de la casa).
+⚠️ **Es decisión de Roberto** si quiere avisar alguna como BAJA.
+
 ### 2° básico
 **Sin OA sensibles** (revisado el 04/11/2026, al transcribir el currículum). Los pueblos
 originarios de Chile (`HI02 OA 01`, `02`, `10` y `11`: mapuche, aimara, rapa nui, su vida y sus

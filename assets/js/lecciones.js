@@ -210,10 +210,13 @@ DIAGRAMAS.potencias=function(p,nodo){
 // params: {radio=60, mostrar:'radio'|'diametro'|'ambos', etiqueta}
 DIAGRAMAS.circulo=function(p,nodo){
  const R=Math.max(30,Math.min(80,p.radio??60)), cx=120, cy=R+14, W=240, H=2*R+52;
- const svg=svgEl('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':'Círculo con su radio y su diámetro'});
- svg.appendChild(svgEl('circle',{cx,cy,r:R,fill:'#8f6bff22',stroke:'#4dd8ff','stroke-width':3}));
- svg.appendChild(svgEl('circle',{cx,cy,r:3.5,fill:'#ffc93c'}));
  const ver=p.mostrar||'ambos';
+ /* `mostrar:'nada'` (1°, líneas rectas y curvas) dibuja solo el borde: sin el punto del
+    centro y sin decirle al lector de pantalla un radio que no está. */
+ const desc={radio:'Círculo con su radio',diametro:'Círculo con su diámetro',ambos:'Círculo con su radio y su diámetro'}[ver]||'Un círculo: su borde es una línea curva';
+ const svg=svgEl('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':desc});
+ svg.appendChild(svgEl('circle',{cx,cy,r:R,fill:'#8f6bff22',stroke:'#4dd8ff','stroke-width':3}));
+ if(ver==='radio'||ver==='diametro'||ver==='ambos') svg.appendChild(svgEl('circle',{cx,cy,r:3.5,fill:'#ffc93c'}));
  if(ver==='diametro'||ver==='ambos'){
   svg.appendChild(svgEl('line',{x1:cx-R,y1:cy,x2:cx+R,y2:cy,stroke:'#ff4d8d','stroke-width':2.5}));
   // La etiqueta va corrida a la izquierda: centrada, la palabra choca con la linea

@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "Pedro no sabe qué es un muelle. ¿Qué debe hacer?",
+   "opciones": [
+    "Pregunta qué es",
+    "Cree que es un mueble",
+    "Se salta la palabra",
+    "Sigue sin saber"
+   ],
+   "correcta": 0,
+   "tip": "Cuando no sabemos qué es algo, lo mejor es preguntar. Adivinar por cómo suena engaña: un muelle no es un mueble, es donde llegan los botes.",
+   "id": "leng1-oa19-1"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "Camila busca qué es una chalupa. ¿Dónde mira?",
+   "opciones": [
+    "En el diccionario",
+    "En el calendario",
+    "En el libro de pintar",
+    "En la lista del súper"
+   ],
+   "correcta": 0,
+   "tip": "El diccionario explica qué significa cada palabra. Una chalupa es un bote chico.",
+   "id": "leng1-oa19-2"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "Rosa pregunta por cada palabra nueva. ¿Cómo es?",
+   "opciones": [
+    "Curiosa",
+    "Floja",
+    "Dormilona",
+    "Enojona"
+   ],
+   "correcta": 0,
+   "tip": "Ser curioso es querer saber más. Rosa quiere saber qué significa cada palabra que no conoce.",
+   "id": "leng1-oa19-3"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "Matías no sabe qué es un tucán. ¿Qué lo ayuda?",
+   "opciones": [
+    "Ver una foto",
+    "Apagar la luz",
+    "Tomar agua",
+    "Cambiar de tema"
+   ],
+   "correcta": 0,
+   "tip": "Una foto o un dibujo ayuda a entender una palabra: al ver un tucán, Matías sabe que es un pájaro de pico grande.",
+   "id": "leng1-oa19-4"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "En el cuento dice: «El pollito rompió el cascarón y salió del huevo.» ¿Qué es el cascarón?",
+   "opciones": [
+    "La cáscara del huevo",
+    "Un nido de ramas",
+    "Una pluma del pollito",
+    "Una caja de cartón"
+   ],
+   "correcta": 0,
+   "tip": "La pista es «salió del huevo»: el cascarón es la cáscara dura que cubre el huevo.",
+   "id": "leng1-oa19-5"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "En el cuento dice: «Pía tiritaba de frío en la nieve.» ¿Qué hacía Pía?",
+   "opciones": [
+    "Temblaba",
+    "Sudaba",
+    "Comía",
+    "Dormía"
+   ],
+   "correcta": 0,
+   "tip": "«De frío» es la pista: cuando tenemos mucho frío, el cuerpo tiembla. Eso es tiritar.",
+   "id": "leng1-oa19-6"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "En el cuento dice: «El conejo se escondió en su madriguera, bajo la tierra.» ¿Qué es una madriguera?",
+   "opciones": [
+    "Su cueva",
+    "Su comida",
+    "Su cola",
+    "Su mamá"
+   ],
+   "correcta": 0,
+   "tip": "«Se escondió» y «bajo la tierra» son pistas: la madriguera es la cueva donde vive el conejo.",
+   "id": "leng1-oa19-7"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "En el cuento dice: «El cachorro mordisqueaba su hueso.» ¿Qué hacía?",
+   "opciones": [
+    "Lo mordía de a poco",
+    "Lo enterraba hondo",
+    "Lo lavaba con agua",
+    "Lo pintaba de rojo"
+   ],
+   "correcta": 0,
+   "tip": "Mordisquear es dar mordiscos chiquitos, uno tras otro, como hace un perro con su hueso.",
+   "id": "leng1-oa19-8"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "En el cuento dice: «El gatito estaba sediento y tomó mucha agua.» ¿Cómo estaba?",
+   "opciones": [
+    "Con sed",
+    "Con sueño",
+    "Con frío",
+    "Con miedo"
+   ],
+   "correcta": 0,
+   "tip": "La pista es «tomó mucha agua»: estar sediento es tener mucha sed.",
+   "id": "leng1-oa19-9"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "En el cuento dice: «Empezó a lloviznar y Ana abrió su paraguas.» ¿Qué es lloviznar?",
+   "opciones": [
+    "Llover poquito",
+    "Salir el sol",
+    "Hacer calor",
+    "Soplar el viento"
+   ],
+   "correcta": 0,
+   "tip": "Lloviznar es llover poquito, con gotas finas. El paraguas es la pista de que cae agua.",
+   "id": "leng1-oa19-10"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "En el cuento dice: «La mamá zurció el calcetín roto con aguja e hilo.» ¿Qué hizo?",
+   "opciones": [
+    "Lo cosió",
+    "Lo botó",
+    "Lo lavó",
+    "Lo compró"
+   ],
+   "correcta": 0,
+   "tip": "«Roto» y «aguja e hilo» son las pistas: zurcir es coser un agujero de la ropa.",
+   "id": "leng1-oa19-11"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "En el cuento dice: «La gallina se sentó sobre sus huevos para empollarlos.» ¿Qué es empollar?",
+   "opciones": [
+    "Calentarlos",
+    "Venderlos",
+    "Pintarlos",
+    "Romperlos"
+   ],
+   "correcta": 0,
+   "tip": "La gallina se sienta sobre sus huevos para darles calor; así, después nacen los pollitos.",
+   "id": "leng1-oa19-12"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "En el cuento dice: «Ana se sentó en un banco de la plaza.» ¿Qué es un banco aquí?",
+   "opciones": [
+    "Un asiento",
+    "Un lugar con plata",
+    "Un grupo de peces",
+    "Una caja de juguetes"
+   ],
+   "correcta": 0,
+   "tip": "Banco tiene varios significados. «Se sentó» y «de la plaza» muestran que aquí es un asiento.",
+   "id": "leng1-oa19-13"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "En el cuento dice: «Papá exprimió una lima en el jugo.» ¿Qué es una lima aquí?",
+   "opciones": [
+    "Una fruta",
+    "Una herramienta",
+    "Una piedra",
+    "Una flor"
+   ],
+   "correcta": 0,
+   "tip": "Lima puede ser una herramienta, pero «exprimió» y «jugo» muestran que aquí es una fruta, parecida al limón.",
+   "id": "leng1-oa19-14"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "La abuela entró de la lluvia y dijo: «estoy hecha una sopa». ¿Qué quiso decir?",
+   "opciones": [
+    "Que está muy mojada",
+    "Que tiene mucha hambre",
+    "Que está cocinando",
+    "Que tiene mucho sueño"
+   ],
+   "correcta": 0,
+   "tip": "Es una forma de hablar: «hecha una sopa» quiere decir muy mojada, como quien viene de la lluvia.",
+   "id": "leng1-oa19-15"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "Tomás armó el puzle rapidito y dijo: «fue pan comido». ¿Qué quiso decir?",
+   "opciones": [
+    "Que fue muy fácil",
+    "Que comió pan",
+    "Que tenía hambre",
+    "Que fue muy difícil"
+   ],
+   "correcta": 0,
+   "tip": "«Pan comido» es una forma de decir que algo fue muy fácil. Tomás lo armó rapidito.",
+   "id": "leng1-oa19-16"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "Lucas dice: «me muero de hambre». ¿Qué le pasa?",
+   "opciones": [
+    "Tiene mucha hambre",
+    "Está muy enfermo",
+    "Tiene mucho sueño",
+    "Está muy enojado"
+   ],
+   "correcta": 0,
+   "tip": "Es una forma de exagerar: Lucas no se va a morir, solo quiere decir que tiene mucha hambre.",
+   "id": "leng1-oa19-17"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "Javiera no entiende una palabra. ¿Qué pista usa?",
+   "opciones": [
+    "Lo que dice la frase",
+    "El color de la hoja",
+    "El número de página",
+    "La letra más grande"
+   ],
+   "correcta": 0,
+   "tip": "Las otras palabras de la frase dan pistas de lo que significa la palabra que no conocemos.",
+   "id": "leng1-oa19-18"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "Benja no entiende y mira el dibujo. ¿Para qué?",
+   "opciones": [
+    "Para buscar una pista",
+    "Para pintarlo después",
+    "Para contar sus colores",
+    "Para dejar de leer"
+   ],
+   "correcta": 0,
+   "tip": "El dibujo muestra lo que cuenta el texto, y eso ayuda a adivinar qué significa una palabra.",
+   "id": "leng1-oa19-19"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "¿Para qué abre Sofía el diccionario?",
+   "opciones": [
+    "Para saber qué significa",
+    "Para ver qué hora es",
+    "Para hacer las sumas",
+    "Para saber el clima"
+   ],
+   "correcta": 0,
+   "tip": "El diccionario sirve para averiguar qué significan las palabras.",
+   "id": "leng1-oa19-20"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "Juan no sabe qué es una cuncuna. ¿Qué pregunta?",
+   "opciones": [
+    "¿Qué es una cuncuna?",
+    "¿Dónde está el baño?",
+    "¿Ya es el recreo?",
+    "¿Me prestas tu goma?"
+   ],
+   "correcta": 0,
+   "tip": "Para averiguar una palabra, se pregunta por ella. Una cuncuna es una oruga peluda.",
+   "id": "leng1-oa19-21"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "En el cuento dice: «Estaba tan cansado que se desplomó en el sillón.» ¿Qué hizo?",
+   "opciones": [
+    "Se dejó caer",
+    "Se puso a bailar",
+    "Se fue corriendo",
+    "Se subió de pie"
+   ],
+   "correcta": 0,
+   "tip": "«Tan cansado» es la pista: desplomarse es dejarse caer de golpe, sin fuerzas.",
+   "id": "leng1-oa19-22"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "En el cuento dice: «La niña estaba afónica y casi no podía hablar.» ¿Qué le pasaba?",
+   "opciones": [
+    "No tenía voz",
+    "No tenía hambre",
+    "No podía ver",
+    "No podía correr"
+   ],
+   "correcta": 0,
+   "tip": "«Casi no podía hablar» es la pista: estar afónica es quedarse sin voz.",
+   "id": "leng1-oa19-23"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "En el cuento dice: «El abuelo usa un bastón para no caerse.» ¿Qué es un bastón?",
+   "opciones": [
+    "Un palo para apoyarse",
+    "Un gorro de lana gruesa",
+    "Un plato de sopa caliente",
+    "Un diario de la mañana"
+   ],
+   "correcta": 0,
+   "tip": "«Para no caerse» es la pista: el bastón es un palo en el que uno se apoya al caminar.",
+   "id": "leng1-oa19-24"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "En el cuento dice: «Hicieron una fogata en la playa y se calentaron.» ¿Qué es una fogata?",
+   "opciones": [
+    "Un fuego al aire libre",
+    "Un castillo de arena",
+    "Un baño en el mar",
+    "Una pelota de playa"
+   ],
+   "correcta": 0,
+   "tip": "«Se calentaron» es la pista: una fogata es un fuego que se hace afuera.",
+   "id": "leng1-oa19-25"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "¿Qué debe hacer Clara si oye una palabra nueva?",
+   "opciones": [
+    "Averigua qué significa",
+    "Hace como si nada",
+    "Se tapa los oídos",
+    "Se pone a reír"
+   ],
+   "correcta": 0,
+   "tip": "Averiguar qué significan las palabras nuevas es un buen hábito: así cada día se entiende más.",
+   "id": "leng1-oa19-26"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "¿Quién le puede explicar a Pedro una palabra?",
+   "opciones": [
+    "Alguien que la sepa",
+    "Alguien que no la sepa",
+    "Una guagua chiquita",
+    "Nadie, hay que adivinar"
+   ],
+   "correcta": 0,
+   "tip": "Para entender una palabra conviene preguntarle a alguien que la conozca, como la profe o un adulto.",
+   "id": "leng1-oa19-27"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "Le dicen ratón de biblioteca a Ana. ¿Por qué?",
+   "opciones": [
+    "Le encanta leer",
+    "Es muy chiquita",
+    "Come mucho queso",
+    "Le gusta esconderse"
+   ],
+   "correcta": 0,
+   "tip": "«Ratón de biblioteca» es una forma de hablar: se le dice así a quien le encanta leer.",
+   "id": "leng1-oa19-28"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "Pedro tiene la cabeza en las nubes. ¿Cómo está?",
+   "opciones": [
+    "Distraído",
+    "Muy alto",
+    "Volando",
+    "Mojado"
+   ],
+   "correcta": 0,
+   "tip": "«Con la cabeza en las nubes» es una forma de hablar: quiere decir distraído, pensando en otra cosa.",
+   "id": "leng1-oa19-29"
+  },
+  {
+   "oa": "LE01 OA 19",
+   "pregunta": "En el cuento dice: «El perro estaba feliz y meneaba la cola.» ¿Qué es menear?",
+   "opciones": [
+    "Moverla de un lado a otro",
+    "Esconderla bajo el cuerpo",
+    "Mojarla en el agua",
+    "Morderla con fuerza"
+   ],
+   "correcta": 0,
+   "tip": "Menear es mover algo de un lado a otro, como hace un perro feliz con su cola.",
+   "id": "leng1-oa19-30"
+  }
+ ]
+}

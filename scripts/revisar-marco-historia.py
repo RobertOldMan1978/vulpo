@@ -20,7 +20,7 @@ import sys
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # El fork de cada curso, para leer de ahi los capitulos de Historia y su campo `intro`.
-FORKS = {'2basico': '2do', '3basico': '3ro', '4basico': '4to', '5basico': '5to',
+FORKS = {'1basico': '1ro', '2basico': '2do', '3basico': '3ro', '4basico': '4to', '5basico': '5to',
          '6basico': '6to', '7basico': '7mo', '8basico': '8vo'}
 
 

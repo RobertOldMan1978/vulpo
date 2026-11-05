@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En un «calendario» miramos...",
+   "opciones": [
+    "los días y meses",
+    "la hora exacta",
+    "el tiempo que hará",
+    "las noticias"
+   ],
+   "correcta": 0,
+   "tip": "El calendario muestra los días, las semanas y los meses del año.",
+   "id": "voc1-hist-1"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "Un «feriado» es un día...",
+   "opciones": [
+    "de descanso",
+    "de examen",
+    "muy largo",
+    "de mucho trabajo"
+   ],
+   "correcta": 0,
+   "tip": "En un feriado no hay clases ni trabajo para muchas personas. En el calendario suele ir en rojo.",
+   "id": "voc1-hist-2"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "El «apellido» es el nombre...",
+   "opciones": [
+    "de la familia",
+    "de la mascota",
+    "del colegio",
+    "de la calle"
+   ],
+   "correcta": 0,
+   "tip": "En Sofía Rojas, Sofía es el nombre y Rojas es el apellido de su familia.",
+   "id": "voc1-hist-3"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "Un «pariente» es alguien...",
+   "opciones": [
+    "de tu familia",
+    "de otro país",
+    "que no conoces",
+    "del almacén"
+   ],
+   "correcta": 0,
+   "tip": "Los parientes son las personas de tu familia, como tus tíos, primos y abuelos.",
+   "id": "voc1-hist-4"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "Una foto «antigua» es una foto...",
+   "opciones": [
+    "de hace mucho",
+    "sacada hoy",
+    "muy pequeña",
+    "de un celular"
+   ],
+   "correcta": 0,
+   "tip": "Algo antiguo es de hace mucho tiempo, como las fotos de cuando los abuelos eran niños.",
+   "id": "voc1-hist-5"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "La «bandera» de Chile tiene...",
+   "opciones": [
+    "una estrella blanca",
+    "dos estrellas rojas",
+    "un sol amarillo",
+    "un cóndor negro"
+   ],
+   "correcta": 0,
+   "tip": "La bandera de Chile es azul, blanca y roja, con una estrella blanca en el cuadro azul.",
+   "id": "voc1-hist-6"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué hacemos con el «himno» de Chile?",
+   "opciones": [
+    "Lo cantamos",
+    "Lo comemos",
+    "Lo pintamos",
+    "Lo bailamos"
+   ],
+   "correcta": 0,
+   "tip": "El himno nacional es la canción de Chile. Se canta de pie en los actos.",
+   "id": "voc1-hist-7"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es el «escudo» de un país?",
+   "opciones": [
+    "un dibujo que lo representa",
+    "una canción del país",
+    "una fiesta del país",
+    "un mapa del país"
+   ],
+   "correcta": 0,
+   "tip": "El escudo es un dibujo que representa a un país. El de Chile tiene un cóndor y un huemul.",
+   "id": "voc1-hist-8"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "«Izar» la bandera es...",
+   "opciones": [
+    "subirla",
+    "guardarla",
+    "lavarla",
+    "doblarla"
+   ],
+   "correcta": 0,
+   "tip": "Izar la bandera es subirla por el mástil hasta arriba.",
+   "id": "voc1-hist-9"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En un «desfile», las personas...",
+   "opciones": [
+    "marchan en fila",
+    "duermen la siesta",
+    "nadan juntas",
+    "comen sentadas"
+   ],
+   "correcta": 0,
+   "tip": "En un desfile las personas caminan en orden, una fila tras otra, y el resto las mira.",
+   "id": "voc1-hist-10"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es una «fonda» en septiembre?",
+   "opciones": [
+    "Un lugar de fiesta",
+    "Una sala de clases",
+    "Un barco grande",
+    "Una tienda de ropa"
+   ],
+   "correcta": 0,
+   "tip": "En Fiestas Patrias, la fonda es un lugar de fiesta con comida típica y cueca.",
+   "id": "voc1-hist-11"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "En la «vendimia» se recoge...",
+   "opciones": [
+    "la uva",
+    "el trigo",
+    "la lana",
+    "el pescado"
+   ],
+   "correcta": 0,
+   "tip": "La vendimia es cuando se recoge la uva de las viñas, y se celebra con una fiesta.",
+   "id": "voc1-hist-12"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué se hace en una «medialuna»?",
+   "opciones": [
+    "Un rodeo",
+    "Una carrera de autos",
+    "Clases de nado",
+    "Un concierto"
+   ],
+   "correcta": 0,
+   "tip": "La medialuna es el lugar con forma de media luna donde se hace el rodeo.",
+   "id": "voc1-hist-13"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "Un «huaso» anda casi siempre...",
+   "opciones": [
+    "a caballo",
+    "en bicicleta",
+    "en bote",
+    "en bus"
+   ],
+   "correcta": 0,
+   "tip": "El huaso es el hombre de campo de Chile. Usa sombrero y anda a caballo.",
+   "id": "voc1-hist-14"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "La «zampoña» se toca...",
+   "opciones": [
+    "soplando",
+    "golpeando",
+    "con un arco",
+    "con los pies"
+   ],
+   "correcta": 0,
+   "tip": "La zampoña es un instrumento del norte hecho de tubitos. Se toca soplando.",
+   "id": "voc1-hist-15"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "Pedro de Valdivia «fundó» Santiago. ¿Qué hizo?",
+   "opciones": [
+    "La empezó",
+    "La destruyó",
+    "La pintó",
+    "La vendió"
+   ],
+   "correcta": 0,
+   "tip": "Fundar una ciudad es empezarla. Pedro de Valdivia fundó Santiago hace mucho tiempo.",
+   "id": "voc1-hist-16"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué escribe una «poeta»?",
+   "opciones": [
+    "versos",
+    "recetas",
+    "noticias",
+    "cuentas de luz"
+   ],
+   "correcta": 0,
+   "tip": "Una poeta escribe versos, que forman poemas, como Gabriela Mistral.",
+   "id": "voc1-hist-17"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "Un «navegante» viaja...",
+   "opciones": [
+    "en barco",
+    "en tren",
+    "en bicicleta",
+    "a pie"
+   ],
+   "correcta": 0,
+   "tip": "Un navegante viaja por el mar en barco. El estrecho de Magallanes lleva el nombre de un navegante.",
+   "id": "voc1-hist-18"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "Juana es «emprendedora». ¿Qué hizo?",
+   "opciones": [
+    "Creó su negocio",
+    "Se cambió de casa",
+    "Ganó una carrera",
+    "Se fue de viaje"
+   ],
+   "correcta": 0,
+   "tip": "Una emprendedora empieza su propio negocio, como Juana, que hace pan y lo vende.",
+   "id": "voc1-hist-19"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "Una «astrónoma» estudia...",
+   "opciones": [
+    "las estrellas",
+    "las rocas",
+    "los peces",
+    "las mariposas"
+   ],
+   "correcta": 0,
+   "tip": "Una astrónoma estudia las estrellas y los planetas, como María Teresa Ruiz.",
+   "id": "voc1-hist-20"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Para qué sirve un «mapa»?",
+   "opciones": [
+    "Para ubicarse",
+    "Para cocinar mejor",
+    "Para nadar",
+    "Para cantar"
+   ],
+   "correcta": 0,
+   "tip": "Un mapa es un dibujo de un lugar. Sirve para saber dónde estamos y cómo llegar.",
+   "id": "voc1-hist-21"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "Un «plano» dibuja un lugar visto...",
+   "opciones": [
+    "desde arriba",
+    "desde abajo",
+    "por un costado",
+    "de noche"
+   ],
+   "correcta": 0,
+   "tip": "Un plano dibuja un lugar visto desde arriba, como lo vería un pájaro al volar.",
+   "id": "voc1-hist-22"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es la «capital» de un país?",
+   "opciones": [
+    "su ciudad principal",
+    "su ciudad más chica",
+    "un pueblo del campo",
+    "un río muy largo"
+   ],
+   "correcta": 0,
+   "tip": "La capital es la ciudad principal de un país. La capital de Chile es Santiago.",
+   "id": "voc1-hist-23"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "Tu «localidad» es...",
+   "opciones": [
+    "tu pueblo o ciudad",
+    "tu mochila",
+    "tu familia",
+    "tu sala de clases"
+   ],
+   "correcta": 0,
+   "tip": "La localidad es el pueblo o la ciudad donde vive una persona.",
+   "id": "voc1-hist-24"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es parte de la «vegetación»?",
+   "opciones": [
+    "Los árboles",
+    "Los autos",
+    "Los edificios",
+    "Las calles"
+   ],
+   "correcta": 0,
+   "tip": "La vegetación son las plantas de un lugar: árboles, pasto y flores.",
+   "id": "voc1-hist-25"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Cómo es un «desierto»?",
+   "opciones": [
+    "Muy seco",
+    "Muy verde",
+    "Lleno de nieve",
+    "Lleno de agua"
+   ],
+   "correcta": 0,
+   "tip": "En el desierto casi nunca llueve y hay muy pocas plantas.",
+   "id": "voc1-hist-26"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "Un «puente» nos ayuda a...",
+   "opciones": [
+    "cruzar un río",
+    "subir un cerro",
+    "dormir mejor",
+    "nadar en el mar"
+   ],
+   "correcta": 0,
+   "tip": "Un puente es una construcción que pasa por encima de un río o un camino.",
+   "id": "voc1-hist-27"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "Un «agricultor» trabaja...",
+   "opciones": [
+    "en el campo",
+    "en el mar",
+    "en una mina",
+    "en un avión"
+   ],
+   "correcta": 0,
+   "tip": "El agricultor siembra y cuida plantas en el campo, como papas y lechugas.",
+   "id": "voc1-hist-28"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué es la «vereda»?",
+   "opciones": [
+    "Donde se camina",
+    "Donde van los autos",
+    "Un lugar de juegos",
+    "El techo de la casa"
+   ],
+   "correcta": 0,
+   "tip": "La vereda es la parte de la calle por donde caminan las personas. Los autos van por la calle.",
+   "id": "voc1-hist-29"
+  },
+  {
+   "oa": "VOC-HIST",
+   "pregunta": "¿Qué arregla un «gasfíter»?",
+   "opciones": [
+    "Llaves que gotean",
+    "Autos chocados",
+    "Ruedas de bicicleta",
+    "Pelo largo"
+   ],
+   "correcta": 0,
+   "tip": "El gasfíter arregla las llaves y los tubos de agua de una casa.",
+   "id": "voc1-hist-30"
+  }
+ ]
+}

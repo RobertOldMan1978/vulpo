@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "¿Qué hay en una biblioteca?",
+   "opciones": [
+    "Muchos libros",
+    "Muchos juguetes",
+    "Muchas frutas",
+    "Muchos zapatos"
+   ],
+   "correcta": 0,
+   "tip": "La biblioteca es el lugar donde se guardan muchos libros para mirarlos, leerlos y llevarlos prestados.",
+   "id": "leng1-oa12-1"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "¿Qué se hace en la hora del cuento?",
+   "opciones": [
+    "Escuchar un cuento",
+    "Comer la colación",
+    "Jugar a la pelota",
+    "Dormir la siesta"
+   ],
+   "correcta": 0,
+   "tip": "En la hora del cuento alguien lee en voz alta y los demás escuchan. Así se disfruta un libro aunque todavía no se sepa leer.",
+   "id": "leng1-oa12-2"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "La bibliotecaria lee un cuento. ¿Qué hace Pedro?",
+   "opciones": [
+    "Escucha atento",
+    "Conversa con Ana",
+    "Juega con su lápiz",
+    "Mira la ventana"
+   ],
+   "correcta": 0,
+   "tip": "Cuando alguien lee en voz alta, se escucha con atención. Si Pedro conversa o juega, se pierde el cuento y molesta a los demás.",
+   "id": "leng1-oa12-3"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "¿Para qué va Tomás a la biblioteca?",
+   "opciones": [
+    "Elegir un libro",
+    "Comprar un libro",
+    "Vender sus libros",
+    "Botar sus libros"
+   ],
+   "correcta": 0,
+   "tip": "En la biblioteca se eligen libros para leer o llevar prestados. Los libros se compran en una librería, no en la biblioteca.",
+   "id": "leng1-oa12-4"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "En la biblioteca, ¿se pagan los libros?",
+   "opciones": [
+    "No, se prestan",
+    "Sí, son caros",
+    "Sí, con monedas",
+    "Solo los grandes"
+   ],
+   "correcta": 0,
+   "tip": "La biblioteca presta los libros sin cobrar: se llevan, se leen y se devuelven. Por eso todos pueden usarla.",
+   "id": "leng1-oa12-5"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "Ema quiere el libro que tiene Pedro. ¿Qué espera?",
+   "opciones": [
+    "Que Pedro lo devuelva",
+    "Que Pedro lo compre",
+    "Que Pedro lo rompa",
+    "Que Pedro lo esconda"
+   ],
+   "correcta": 0,
+   "tip": "Cuando Pedro devuelva el libro, quedará libre para que Ema lo pida. Los libros de la biblioteca van pasando de mano en mano.",
+   "id": "leng1-oa12-6"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "¿Por qué Camila habla bajito en la biblioteca?",
+   "opciones": [
+    "Para no molestar",
+    "Porque está enferma",
+    "Porque tiene sueño",
+    "Para que nadie la vea"
+   ],
+   "correcta": 0,
+   "tip": "En la biblioteca otros están leyendo o escuchando. Hablar bajito los deja concentrarse.",
+   "id": "leng1-oa12-7"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "Benja lleva galletas a la biblioteca. ¿Dónde come?",
+   "opciones": [
+    "Afuera, en el patio",
+    "Sobre los libros",
+    "Entre los estantes",
+    "En la mesa de lectura"
+   ],
+   "correcta": 0,
+   "tip": "Las migas y las manchas ensucian los libros. Por eso la colación se come afuera, no donde están los libros.",
+   "id": "leng1-oa12-8"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "¿Dónde se guardan los libros de la biblioteca?",
+   "opciones": [
+    "En los estantes",
+    "En cajas cerradas",
+    "Bajo las mesas",
+    "En el suelo"
+   ],
+   "correcta": 0,
+   "tip": "Los libros se ordenan en estantes, para que se vean y se puedan sacar. En el suelo o en cajas se pierden y se estropean.",
+   "id": "leng1-oa12-9"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "Ema ve muchos libros y no sabe cuál. ¿Qué hace?",
+   "opciones": [
+    "Hojea varios primero",
+    "Toma el más pesado",
+    "Se va sin ninguno",
+    "Elige sin mirar"
+   ],
+   "correcta": 0,
+   "tip": "Mirar algunas páginas de varios libros ayuda a encontrar uno que guste. Elegir sin mirar es dejarlo a la suerte.",
+   "id": "leng1-oa12-10"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "Lucas quiere saber de tiburones. ¿Qué busca?",
+   "opciones": [
+    "Un libro del mar",
+    "Un libro de recetas",
+    "Un libro de chistes",
+    "Un libro para pintar"
+   ],
+   "correcta": 0,
+   "tip": "Los tiburones viven en el mar, así que un libro sobre el mar le puede contar cómo son. Un recetario o un libro de chistes no.",
+   "id": "leng1-oa12-11"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "Martina explora la biblioteca. ¿Qué hace?",
+   "opciones": [
+    "Mira los estantes",
+    "Corre por los pasillos",
+    "Se esconde bajo la mesa",
+    "Grita a sus amigos"
+   ],
+   "correcta": 0,
+   "tip": "Explorar la biblioteca es recorrerla mirando qué libros hay. Así se descubren libros nuevos.",
+   "id": "leng1-oa12-12"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "¿Cada cuánto conviene ir a la biblioteca?",
+   "opciones": [
+    "Seguido, cada semana",
+    "Una sola vez",
+    "Solo en el verano",
+    "Nunca, da lo mismo"
+   ],
+   "correcta": 0,
+   "tip": "Ir seguido permite conocer más libros y encontrar nuevos favoritos. Quien va una sola vez se pierde muchos.",
+   "id": "leng1-oa12-13"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "Antonia leyó un cuento genial. ¿Qué puede hacer?",
+   "opciones": [
+    "Recomendarlo a un amigo",
+    "Esconderlo para ella",
+    "Arrancarle una hoja",
+    "Quedárselo para siempre"
+   ],
+   "correcta": 0,
+   "tip": "Contarle a otro que un libro es bueno es recomendarlo. Así el libro de la biblioteca lo disfruta más gente.",
+   "id": "leng1-oa12-14"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "Con las manos sucias, ¿qué le pasa al libro?",
+   "opciones": [
+    "Se puede manchar",
+    "Se limpia solo",
+    "Queda más bonito",
+    "No le pasa nada"
+   ],
+   "correcta": 0,
+   "tip": "La suciedad de las manos queda en las hojas. Un libro manchado se estropea para todos los que lo leen después.",
+   "id": "leng1-oa12-15"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "Sofía encuentra un libro roto. ¿A quién le avisa?",
+   "opciones": [
+    "A la bibliotecaria",
+    "A su hermano chico",
+    "A nadie, lo esconde",
+    "A su compañero"
+   ],
+   "correcta": 0,
+   "tip": "La bibliotecaria cuida los libros y sabe cómo arreglarlos. Esconder el libro roto no lo arregla.",
+   "id": "leng1-oa12-16"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "¿Qué puede hacer Ana con un libro de biblioteca?",
+   "opciones": [
+    "Llevarlo prestado",
+    "Rayarlo con plumón",
+    "Recortar sus dibujos",
+    "Regalarlo a una amiga"
+   ],
+   "correcta": 0,
+   "tip": "Los libros de la biblioteca se pueden llevar prestados a la casa. Como son de todos, no se rayan, no se recortan ni se regalan.",
+   "id": "leng1-oa12-17"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "Diego pide un libro y anotan su nombre. ¿Por qué?",
+   "opciones": [
+    "Para saber quién lo tiene",
+    "Para regalarle el libro",
+    "Para ponerle una nota",
+    "Para que no vuelva más"
+   ],
+   "correcta": 0,
+   "tip": "Si se anota quién se llevó cada libro, la biblioteca sabe dónde está y lo puede pedir de vuelta.",
+   "id": "leng1-oa12-18"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "Valentina quiere leer. ¿Dónde se sienta?",
+   "opciones": [
+    "En la mesa de lectura",
+    "Arriba del estante",
+    "En medio del pasillo",
+    "En la puerta de entrada"
+   ],
+   "correcta": 0,
+   "tip": "La biblioteca tiene mesas o rincones para leer. En el pasillo o en la puerta molesta el paso y no está tranquila.",
+   "id": "leng1-oa12-19"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "Rosa ve un libro que le encanta. ¿Qué hace?",
+   "opciones": [
+    "Lo pide prestado",
+    "Lo guarda escondido",
+    "Lo saca sin avisar",
+    "Le arranca una hoja"
+   ],
+   "correcta": 0,
+   "tip": "Para llevarse un libro se pide prestado y se anota. Sacarlo sin avisar deja a la biblioteca sin saber dónde está.",
+   "id": "leng1-oa12-20"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "En la biblioteca, ¿cómo se camina?",
+   "opciones": [
+    "Despacio",
+    "Corriendo",
+    "Saltando",
+    "Empujando"
+   ],
+   "correcta": 0,
+   "tip": "Se camina despacio para no chocar, no botar libros y no molestar a quienes leen.",
+   "id": "leng1-oa12-21"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "¿Qué hace la bibliotecaria?",
+   "opciones": [
+    "Cuida y presta libros",
+    "Escribe todos los cuentos",
+    "Vende los libros",
+    "Toma las pruebas"
+   ],
+   "correcta": 0,
+   "tip": "La bibliotecaria ordena, cuida y presta los libros. Los cuentos los escriben sus autores, no ella.",
+   "id": "leng1-oa12-22"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "¿Dónde puede Ana leer libros nuevos sin pagar?",
+   "opciones": [
+    "En la biblioteca",
+    "En la panadería",
+    "En la farmacia",
+    "En la verdulería"
+   ],
+   "correcta": 0,
+   "tip": "En la biblioteca se leen y se piden libros prestados sin pagar. En una panadería o una farmacia no se prestan libros.",
+   "id": "leng1-oa12-23"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "Rosa llega y todos están leyendo. ¿Cómo entra?",
+   "opciones": [
+    "Callada y despacio",
+    "Saludando a gritos",
+    "Corriendo a una silla",
+    "Con la música fuerte"
+   ],
+   "correcta": 0,
+   "tip": "Si los demás están leyendo, se entra callada y despacio para no cortarles la lectura.",
+   "id": "leng1-oa12-24"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "¿Sobre qué temas hay libros en la biblioteca?",
+   "opciones": [
+    "De muchos temas",
+    "Solo de cuentos",
+    "Solo para pintar",
+    "Solo para grandes"
+   ],
+   "correcta": 0,
+   "tip": "En la biblioteca hay cuentos, poemas, libros de animales, del cuerpo, de países y mucho más, para chicos y grandes.",
+   "id": "leng1-oa12-25"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "A Martín le gustó un cuento de zorros. ¿Qué pide?",
+   "opciones": [
+    "Otro cuento de zorros",
+    "Un libro de recetas",
+    "Un mapa de Chile",
+    "Un diccionario viejo"
+   ],
+   "correcta": 0,
+   "tip": "Si un cuento nos gustó, conviene buscar otros parecidos. Así se elige un libro por lo que a uno le interesa.",
+   "id": "leng1-oa12-26"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "Pedro terminó de hojear un libro. ¿Qué hace?",
+   "opciones": [
+    "Lo deja en su lugar",
+    "Lo tira en la mesa",
+    "Lo mete en un cajón",
+    "Lo deja en el suelo"
+   ],
+   "correcta": 0,
+   "tip": "Cada libro vuelve a su lugar en el estante. Si queda tirado, el siguiente niño no lo encuentra.",
+   "id": "leng1-oa12-27"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "¿Por qué la biblioteca es de todos?",
+   "opciones": [
+    "La usan todos los niños",
+    "La pagó un solo niño",
+    "Es de la bibliotecaria",
+    "Es solo de los grandes"
+   ],
+   "correcta": 0,
+   "tip": "La biblioteca del colegio la usan todos los niños. Por eso se cuida entre todos.",
+   "id": "leng1-oa12-28"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "Diego devuelve tarde su libro. ¿Qué pasa?",
+   "opciones": [
+    "Otro niño lo espera",
+    "Nadie lo nota nunca",
+    "El libro se pierde",
+    "El libro se agranda"
+   ],
+   "correcta": 0,
+   "tip": "Mientras Diego tiene el libro, otro niño que lo pidió tiene que esperar. Devolverlo a tiempo es pensar en los demás.",
+   "id": "leng1-oa12-29"
+  },
+  {
+   "oa": "LE01 OA 12",
+   "pregunta": "En la biblioteca hay cojines. ¿Para qué?",
+   "opciones": [
+    "Para leer cómodo",
+    "Para dormir la siesta",
+    "Para jugar a pelear",
+    "Para comer la colación"
+   ],
+   "correcta": 0,
+   "tip": "Un rincón con cojines invita a sentarse a leer o mirar libros tranquilo y cómodo.",
+   "id": "leng1-oa12-30"
+  }
+ ]
+}

@@ -1,0 +1,406 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "¿Cuántas decenas tiene el número 16?",
+   "opciones": [
+    "1",
+    "6",
+    "16",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "El 16 es un grupo de 10 y 6 sueltos: tiene 1 decena y 6 unidades.",
+   "id": "mate1-oa08-1"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "En el número 13, ¿cuántas unidades sueltas hay?",
+   "opciones": [
+    "3",
+    "1",
+    "13",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "El 13 es 1 decena y 3 unidades: quedan 3 sueltas fuera del grupo de 10.",
+   "id": "mate1-oa08-2"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "¿Qué número forman 1 decena y 7 unidades?",
+   "opciones": [
+    "17",
+    "71",
+    "8",
+    "107"
+   ],
+   "correcta": 0,
+   "tip": "Una decena son 10. Diez y siete más son 17.",
+   "id": "mate1-oa08-3"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "Juntas 1 decena y 2 unidades. ¿Qué número es?",
+   "opciones": [
+    "12",
+    "21",
+    "3",
+    "102"
+   ],
+   "correcta": 0,
+   "tip": "La decena vale 10 y le sumas 2 unidades: 10 y 2 son 12.",
+   "id": "mate1-oa08-4"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "Un grupo de 10 y unas sueltas. ¿Cuántas en total?",
+   "opciones": [
+    "15",
+    "5",
+    "10",
+    "105"
+   ],
+   "correcta": 0,
+   "tip": "El grupo trae 10 y quedan 5 sueltas: 10 y 5 son 15.",
+   "id": "mate1-oa08-5",
+   "visual": {
+    "tipo": "contar",
+    "a": 10,
+    "b": 5,
+    "emoji": "🍎"
+   }
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "Una torre de 10 cubos y 4 sueltos. ¿Cuántos son?",
+   "opciones": [
+    "14",
+    "41",
+    "10",
+    "4"
+   ],
+   "correcta": 0,
+   "tip": "La torre es una decena. Con 4 cubos sueltos se forma el 14.",
+   "id": "mate1-oa08-6"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "De 18 lápices, 10 van en un paquete. ¿Y sueltos?",
+   "opciones": [
+    "8",
+    "10",
+    "18",
+    "28"
+   ],
+   "correcta": 0,
+   "tip": "El paquete se lleva 10 de los 18. Quedan 8 sueltos: 18 es 1 decena y 8 unidades.",
+   "id": "mate1-oa08-7"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "¿Qué tienen igual el 13 y el 18?",
+   "opciones": [
+    "Una decena",
+    "Tres unidades",
+    "Ocho unidades",
+    "Dos decenas"
+   ],
+   "correcta": 0,
+   "tip": "Los dos tienen un grupo de 10: una decena. Lo que cambia son las unidades sueltas.",
+   "id": "mate1-oa08-8"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "Diez cubos sueltos se juntan. ¿Qué forman?",
+   "opciones": [
+    "Una decena",
+    "Diez decenas",
+    "Una unidad",
+    "Dos decenas"
+   ],
+   "correcta": 0,
+   "tip": "Diez unidades juntas forman un grupo de 10, que se llama una decena.",
+   "id": "mate1-oa08-9"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "¿Cuántas unidades se juntan en una decena?",
+   "opciones": [
+    "10",
+    "1",
+    "2",
+    "20"
+   ],
+   "correcta": 0,
+   "tip": "Una decena es un grupo de 10 unidades.",
+   "id": "mate1-oa08-10"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "Leo dice que el 15 tiene 5 decenas. ¿Tiene razón?",
+   "opciones": [
+    "No, tiene 1",
+    "Sí, tiene 5",
+    "No, tiene 15",
+    "No, tiene 0"
+   ],
+   "correcta": 0,
+   "tip": "El 15 es un grupo de 10 y 5 sueltos. El 5 son las unidades; decena hay 1.",
+   "id": "mate1-oa08-11"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "Hay 6 huevos sueltos y una caja de 10. ¿Cuántos?",
+   "opciones": [
+    "16",
+    "61",
+    "10",
+    "60"
+   ],
+   "correcta": 0,
+   "tip": "La caja llena es una decena. Diez y seis sueltos son 16 huevos.",
+   "id": "mate1-oa08-12"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "1 caja de 10 lápices y 3 sueltos. ¿Cuántos son?",
+   "opciones": [
+    "13 lápices",
+    "4 lápices",
+    "31 lápices",
+    "11 lápices"
+   ],
+   "correcta": 0,
+   "tip": "La caja de 10 es una decena y los tres sueltos son unidades: 10 y 3 son 13 lápices.",
+   "id": "mate1-oa08-13"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "Con 2 monedas de 10 pesos, ¿cuánto tienes?",
+   "opciones": [
+    "20 pesos",
+    "2 pesos",
+    "12 pesos",
+    "10 pesos"
+   ],
+   "correcta": 0,
+   "tip": "Cada moneda de 10 es una decena. Dos decenas son 20.",
+   "id": "mate1-oa08-14"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "¿Qué número tiene 0 decenas y 9 unidades?",
+   "opciones": [
+    "9",
+    "90",
+    "19",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "Sin ningún grupo de 10 y con 9 sueltos, el número es 9.",
+   "id": "mate1-oa08-15"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "El 19 es 1 decena y ¿cuántas unidades más?",
+   "opciones": [
+    "9",
+    "1",
+    "19",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "Al 19 le sacas el grupo de 10 y quedan 9 sueltos.",
+   "id": "mate1-oa08-16"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "¿Qué número muestra el dibujo?",
+   "opciones": [
+    "18",
+    "8",
+    "81",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "Hay un grupo de 10 y 8 sueltos. Diez y ocho son 18.",
+   "id": "mate1-oa08-17",
+   "visual": {
+    "tipo": "contar",
+    "a": 10,
+    "b": 8,
+    "emoji": "⭐"
+   }
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "Dos grupos de 10 y nada suelto. ¿Qué número es?",
+   "opciones": [
+    "20",
+    "2",
+    "12",
+    "200"
+   ],
+   "correcta": 0,
+   "tip": "Dos grupos de 10 son 20, y no hay nada suelto.",
+   "id": "mate1-oa08-18"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "Matías tiene 11 bolitas. ¿Cuántas decenas arma?",
+   "opciones": [
+    "1",
+    "11",
+    "2",
+    "0"
+   ],
+   "correcta": 0,
+   "tip": "Con 11 bolitas se arma un grupo de 10 y sobra 1 suelta: 1 decena.",
+   "id": "mate1-oa08-19"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "El 14 es 1 decena y 4. ¿Cómo es el 12?",
+   "opciones": [
+    "1 decena y 2",
+    "2 decenas y 1",
+    "1 decena y 4",
+    "12 decenas"
+   ],
+   "correcta": 0,
+   "tip": "El 12 tiene un grupo de 10 y 2 sueltos: 1 decena y 2 unidades.",
+   "id": "mate1-oa08-20"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "A 6 unidades les juntas 1 decena. ¿Qué número es?",
+   "opciones": [
+    "16",
+    "7",
+    "61",
+    "60"
+   ],
+   "correcta": 0,
+   "tip": "Una decena son 10. Diez y seis son 16.",
+   "id": "mate1-oa08-21"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "¿Qué número tiene 1 decena más que el 5?",
+   "opciones": [
+    "15",
+    "6",
+    "16",
+    "50"
+   ],
+   "correcta": 0,
+   "tip": "Una decena más es sumar un grupo de 10: 5 y 10 son 15.",
+   "id": "mate1-oa08-22"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "Una decena y una unidad, ¿qué número forman?",
+   "opciones": [
+    "11",
+    "2",
+    "10",
+    "20"
+   ],
+   "correcta": 0,
+   "tip": "Un grupo de 10 y uno suelto forman el 11.",
+   "id": "mate1-oa08-23"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "Camila agrupa 15 palos de a 10. ¿Cuántos sobran?",
+   "opciones": [
+    "5",
+    "1",
+    "10",
+    "15"
+   ],
+   "correcta": 0,
+   "tip": "Con 15 palos arma un grupo de 10 y le quedan 5 sueltos.",
+   "id": "mate1-oa08-24"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "En el 17, ¿qué cifra dice las decenas?",
+   "opciones": [
+    "El 1",
+    "El 7",
+    "El 0",
+    "El 10"
+   ],
+   "correcta": 0,
+   "tip": "En el 17 el 1 dice que hay un grupo de 10, y el 7 dice las unidades.",
+   "id": "mate1-oa08-25"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "En el 12, ¿qué cifra dice las unidades?",
+   "opciones": [
+    "El 2",
+    "El 1",
+    "El 12",
+    "El 0"
+   ],
+   "correcta": 0,
+   "tip": "En el 12 el 2 son las unidades sueltas, y el 1 es la decena.",
+   "id": "mate1-oa08-26"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "¿Qué número tiene más decenas?",
+   "opciones": [
+    "20",
+    "19",
+    "9",
+    "15"
+   ],
+   "correcta": 0,
+   "tip": "El 20 tiene 2 decenas. El 19 y el 15 tienen solo 1, y el 9 no tiene ninguna.",
+   "id": "mate1-oa08-27"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "Una bolsa trae 10 globos. Hay 2 bolsas. ¿Cuántos?",
+   "opciones": [
+    "20",
+    "12",
+    "2",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "Cada bolsa es una decena. Dos decenas son 20 globos.",
+   "id": "mate1-oa08-28"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "¿Cuántos grupos de 10 salen de 20 lápices?",
+   "opciones": [
+    "2",
+    "10",
+    "20",
+    "1"
+   ],
+   "correcta": 0,
+   "tip": "Del 20 salen dos grupos de 10 justos: 2 decenas.",
+   "id": "mate1-oa08-29"
+  },
+  {
+   "oa": "MA01 OA 08",
+   "pregunta": "¿Qué número es una decena justa, sin sueltos?",
+   "opciones": [
+    "10",
+    "1",
+    "0",
+    "100"
+   ],
+   "correcta": 0,
+   "tip": "Un solo grupo de 10, sin nada suelto, es el número 10.",
+   "id": "mate1-oa08-30"
+  }
+ ]
+}

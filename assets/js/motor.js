@@ -1986,6 +1986,15 @@ function pintaPregunta(){
  // Se lee `orden` (el barajado que se está mostrando), NO P.ops: si se leyera el
  // arreglo original, la voz diría "A" señalando una opción distinta a la de pantalla.
  if(be){ be.onclick=()=>leerPreguntaEnVoz(P.q, orden.map(it=>it.o), $('qOpts')); }
+ /* LEE_SOLO (solo 1° básico): la voz lee sola la pregunta y sus opciones al aparecer, porque a
+    los 6-7 años muchos niños todavía no leen y sin esto no saben qué se les pregunta. El 🔊
+    queda para repetir. Es el MISMO camino del botón, así que lee el orden barajado de pantalla.
+    Nace apagada y se pregunta con typeof: los otros cursos no la declaran, y un fork viejo en
+    caché no puede reventar. No corre en ?rev=1 (el profesor lee) ni si la voz no está activa.
+    El navegador permite el audio porque el niño ya tocó la pantalla para llegar aquí, y
+    callarVoz() la corta al responder y al cambiar de pantalla, como al tocar el botón. */
+ if(be && typeof LEE_SOLO!=='undefined' && LEE_SOLO && window.VOZ && VOZ.activo
+    && !((typeof REVISION!=='undefined') && REVISION)) be.onclick();
  REV.boton(P);   // 🚩 del modo revisión (assets/js/revision.js)
  // timer (el repaso no tiene cronómetro: es estudio, no evaluación)
  clearInterval(Q.timer);

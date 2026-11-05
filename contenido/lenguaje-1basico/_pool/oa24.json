@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "Max siempre tiene frío. ¿Qué dice su mamá?",
+   "opciones": [
+    "Max es friolento",
+    "Max es chillón",
+    "Max es valiente",
+    "Max es goloso"
+   ],
+   "correcta": 0,
+   "tip": "Friolento es quien siente frío muy fácilmente.",
+   "id": "leng1-oa24-1"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "El loro grita fuerte y agudo. ¿Qué cuenta Ana?",
+   "opciones": [
+    "Es un loro chillón",
+    "Es un loro friolento",
+    "Es un loro tímido",
+    "Es un loro dormilón"
+   ],
+   "correcta": 0,
+   "tip": "Chillón es quien grita con sonidos agudos y fuertes.",
+   "id": "leng1-oa24-2"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "Muchos pájaros vuelan juntos. ¿Qué dice Diego?",
+   "opciones": [
+    "Vi una bandada",
+    "Vi un cardumen",
+    "Vi un rebaño",
+    "Vi un enjambre"
+   ],
+   "correcta": 0,
+   "tip": "Una bandada es un grupo de aves que vuelan juntas.",
+   "id": "leng1-oa24-3"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "Javiera cuenta: «Vi un cardumen». ¿Qué vio?",
+   "opciones": [
+    "Muchos peces juntos",
+    "Muchas aves juntas",
+    "Muchas ovejas juntas",
+    "Muchas abejas juntas"
+   ],
+   "correcta": 0,
+   "tip": "Un cardumen es un grupo grande de peces que nadan juntos.",
+   "id": "leng1-oa24-4"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "En el campo, Tomás vio muchas ovejas. ¿Qué dice?",
+   "opciones": [
+    "Vi un rebaño",
+    "Vi una colmena",
+    "Vi un cardumen",
+    "Vi una bandada"
+   ],
+   "correcta": 0,
+   "tip": "Un rebaño es un grupo de ovejas o cabras que andan juntas.",
+   "id": "leng1-oa24-5"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "Pasaron muchas abejas juntas. ¿Qué cuenta Pía?",
+   "opciones": [
+    "Pasó un enjambre",
+    "Pasó un rebaño",
+    "Pasó un cardumen",
+    "Pasó una gotera"
+   ],
+   "correcta": 0,
+   "tip": "Un enjambre es un montón de abejas que vuelan juntas.",
+   "id": "leng1-oa24-6"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "Del cielo bajan bolitas de hielo. ¿Qué dice Leo?",
+   "opciones": [
+    "Cae granizo",
+    "Hay neblina",
+    "Hay brisa",
+    "Hace calor"
+   ],
+   "correcta": 0,
+   "tip": "El granizo son bolitas de hielo que caen del cielo.",
+   "id": "leng1-oa24-7"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "Sopla un viento suave y fresco. ¿Qué dice Ema?",
+   "opciones": [
+    "Corre una brisa",
+    "Cae granizo",
+    "Hay un relámpago",
+    "Hay escarcha"
+   ],
+   "correcta": 0,
+   "tip": "Una brisa es un viento suave y fresco.",
+   "id": "leng1-oa24-8"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "El pasto amaneció con hielo fino. ¿Qué dice Teo?",
+   "opciones": [
+    "Hay escarcha",
+    "Hay neblina",
+    "Hay brisa",
+    "Hay un remolino"
+   ],
+   "correcta": 0,
+   "tip": "La escarcha es una capa fina de hielo que aparece en las mañanas muy frías.",
+   "id": "leng1-oa24-9"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "¿Cuándo dice Sofía que hay neblina?",
+   "opciones": [
+    "Si no ve el cerro",
+    "Si el sol quema",
+    "Si el piso está seco",
+    "Si oye un trueno"
+   ],
+   "correcta": 0,
+   "tip": "Con neblina el aire se pone blanco y no se ve lejos.",
+   "id": "leng1-oa24-10"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "El viento hace girar las hojas. ¿Qué dice Tomás?",
+   "opciones": [
+    "Se hizo un remolino",
+    "Se hizo un arcoíris",
+    "Se hizo una gotera",
+    "Se hizo un charco"
+   ],
+   "correcta": 0,
+   "tip": "Un remolino es viento o agua que gira en círculos.",
+   "id": "leng1-oa24-11"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "En la tormenta el cielo brilló. ¿Qué dice Pía?",
+   "opciones": [
+    "Vi un relámpago",
+    "Vi una gotera",
+    "Vi una bandada",
+    "Vi un cardumen"
+   ],
+   "correcta": 0,
+   "tip": "El relámpago es la luz fuerte que aparece en el cielo durante una tormenta.",
+   "id": "leng1-oa24-12"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "Al papá de Ana le cae agua del techo. ¿Qué dice?",
+   "opciones": [
+    "Hay una gotera",
+    "Hay un cardumen",
+    "Hay un enjambre",
+    "Hay una brisa"
+   ],
+   "correcta": 0,
+   "tip": "Una gotera es un hoyito en el techo por donde cae agua.",
+   "id": "leng1-oa24-13"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "Subir el cerro le costó a Leo. ¿Cómo era?",
+   "opciones": [
+    "Empinado",
+    "Transparente",
+    "Espeso",
+    "Friolento"
+   ],
+   "correcta": 0,
+   "tip": "Un cerro empinado es muy parado y cuesta subirlo.",
+   "id": "leng1-oa24-14"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "Ema habla de su sopa. ¿Qué dice bien?",
+   "opciones": [
+    "Estaba espesa y rica",
+    "Estaba empinada y rica",
+    "Estaba chillona y rica",
+    "Estaba friolenta y rica"
+   ],
+   "correcta": 0,
+   "tip": "Una sopa espesa es una que está gruesa y corre lento en la cuchara.",
+   "id": "leng1-oa24-15"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "¿Qué cosa llama Diego transparente?",
+   "opciones": [
+    "El vidrio de la ventana",
+    "La pared de la sala",
+    "La tapa del cuaderno",
+    "La puerta de madera"
+   ],
+   "correcta": 0,
+   "tip": "Algo transparente deja ver lo que hay detrás, como el vidrio.",
+   "id": "leng1-oa24-16"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "Benja toca un tronco viejo. ¿Qué dice?",
+   "opciones": [
+    "Es rugoso",
+    "Es transparente",
+    "Es chillón",
+    "Es friolento"
+   ],
+   "correcta": 0,
+   "tip": "Rugoso es algo que tiene arrugas o bultitos al tocarlo, como un tronco.",
+   "id": "leng1-oa24-17"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "Ana saltó de cabeza a la piscina. ¿Qué cuenta?",
+   "opciones": [
+    "Me zambullí",
+    "Me tropecé",
+    "Me despeiné",
+    "Me tambaleé"
+   ],
+   "correcta": 0,
+   "tip": "Zambullirse es meterse de golpe bajo el agua.",
+   "id": "leng1-oa24-18"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "El trompo ya casi se cae. ¿Qué dice Max?",
+   "opciones": [
+    "Se está tambaleando",
+    "Se está zambullendo",
+    "Se está despeinando",
+    "Se está congelando"
+   ],
+   "correcta": 0,
+   "tip": "Tambalearse es moverse de un lado a otro como si se fuera a caer.",
+   "id": "leng1-oa24-19"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "Luz abre y cierra los ojos rápido. ¿Qué hace?",
+   "opciones": [
+    "Parpadea",
+    "Bosteza",
+    "Tararea",
+    "Estornuda"
+   ],
+   "correcta": 0,
+   "tip": "Parpadear es abrir y cerrar los ojos rápidamente.",
+   "id": "leng1-oa24-20"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "Ema canta sin decir las palabras. ¿Qué hace?",
+   "opciones": [
+    "Tararea",
+    "Parpadea",
+    "Bosteza",
+    "Tropieza"
+   ],
+   "correcta": 0,
+   "tip": "Tararear es cantar una canción con la boca, sin decir la letra.",
+   "id": "leng1-oa24-21"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "Lucas casi se cae por una piedra. ¿Qué cuenta?",
+   "opciones": [
+    "Me tropecé con ella",
+    "Me zambullí en ella",
+    "Me peiné con ella",
+    "Me senté en ella"
+   ],
+   "correcta": 0,
+   "tip": "Tropezar es chocar con algo con el pie y casi caerse.",
+   "id": "leng1-oa24-22"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "Ema se levantó con el pelo parado. ¿Qué dice?",
+   "opciones": [
+    "Estoy despeinada",
+    "Estoy peinada",
+    "Estoy empinada",
+    "Estoy transparente"
+   ],
+   "correcta": 0,
+   "tip": "Despeinada es tener el pelo desordenado, sin peinar.",
+   "id": "leng1-oa24-23"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "Pía come su helado despacito y feliz. ¿Qué dice?",
+   "opciones": [
+    "Lo estoy saboreando",
+    "Lo estoy botando",
+    "Lo estoy tarareando",
+    "Lo estoy pintando"
+   ],
+   "correcta": 0,
+   "tip": "Saborear es comer despacio para disfrutar el sabor.",
+   "id": "leng1-oa24-24"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "El collar del gato de Ema suena. ¿Qué tiene?",
+   "opciones": [
+    "Un cascabel",
+    "Un tambor",
+    "Un relámpago",
+    "Una gotera"
+   ],
+   "correcta": 0,
+   "tip": "Un cascabel es una bolita de metal que suena al moverse.",
+   "id": "leng1-oa24-25"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "El zorro volvió a su cueva. ¿Qué cuenta Tomás?",
+   "opciones": [
+    "Volvió a su guarida",
+    "Volvió a su colmena",
+    "Volvió a su pecera",
+    "Volvió a su gotera"
+   ],
+   "correcta": 0,
+   "tip": "La guarida es el refugio donde vive y se esconde un animal.",
+   "id": "leng1-oa24-26"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "¿Cuándo dice Rosa que está anocheciendo?",
+   "opciones": [
+    "Cuando se oscurece",
+    "Cuando sale el sol",
+    "A la hora de almuerzo",
+    "Cuando suena el timbre"
+   ],
+   "correcta": 0,
+   "tip": "Anochecer es cuando se va el sol y empieza la noche.",
+   "id": "leng1-oa24-27"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "Dani dijo: «La leche es transparente». ¿Qué falló?",
+   "opciones": [
+    "Usó mal la palabra",
+    "Habló muy bajito",
+    "No saludó antes",
+    "Habló muy rápido"
+   ],
+   "correcta": 0,
+   "tip": "La leche no deja ver a través de ella: no es transparente. Dani usó mal esa palabra nueva.",
+   "id": "leng1-oa24-28"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "¿Dónde usa Simón una palabra que aprendió?",
+   "opciones": [
+    "Al conversar",
+    "En ninguna parte",
+    "Solo en el cuento",
+    "Solo si grita"
+   ],
+   "correcta": 0,
+   "tip": "Las palabras nuevas de los cuentos también sirven para conversar con los demás.",
+   "id": "leng1-oa24-29"
+  },
+  {
+   "oa": "LE01 OA 24",
+   "pregunta": "Ema usa palabras nuevas al contar. ¿Qué logra?",
+   "opciones": [
+    "Contarlo mejor",
+    "Que no le entiendan",
+    "Terminar antes",
+    "Hablar más fuerte"
+   ],
+   "correcta": 0,
+   "tip": "Con palabras nuevas y precisas se cuenta mejor lo que pasó.",
+   "id": "leng1-oa24-30"
+  }
+ ]
+}

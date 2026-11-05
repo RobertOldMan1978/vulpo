@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Sofía cuenta algo. ¿Qué debería hacer Matías?",
+   "opciones": [
+    "escucharla atento",
+    "hablarle encima",
+    "irse a jugar",
+    "taparse los oídos"
+   ],
+   "correcta": 0,
+   "tip": "Escuchar con atención a quien habla es una forma de respetarlo: así sabe que lo que dice nos importa.",
+   "id": "hist1-oa13-1"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Diego recibe un regalo. ¿Qué debería decir?",
+   "opciones": [
+    "muchas gracias",
+    "que es muy poco",
+    "nada, solo lo abre",
+    "que quería otro"
+   ],
+   "correcta": 0,
+   "tip": "Dar las gracias muestra cortesía y cariño por quien pensó en nosotros.",
+   "id": "hist1-oa13-2"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Camila entra a la sala. ¿Qué debería hacer?",
+   "opciones": [
+    "saludar a todos",
+    "entrar gritando",
+    "no mirar a nadie",
+    "cerrar de un portazo"
+   ],
+   "correcta": 0,
+   "tip": "Saludar al llegar es una forma amable de tratar a los demás.",
+   "id": "hist1-oa13-3"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "La abuela de Tomás le habla. ¿Qué hace él?",
+   "opciones": [
+    "la mira y escucha",
+    "sigue con la tele",
+    "se va a su pieza",
+    "le contesta enojado"
+   ],
+   "correcta": 0,
+   "tip": "Mirar y escuchar a quien nos habla es tratarlo con respeto.",
+   "id": "hist1-oa13-4"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Lucas se equivoca al leer. ¿Qué hace el curso?",
+   "opciones": [
+    "espera con respeto",
+    "se ríe fuerte",
+    "lo imita burlón",
+    "grita la palabra"
+   ],
+   "correcta": 0,
+   "tip": "Todos nos equivocamos cuando aprendemos. Reírse de alguien lo hace sentir mal.",
+   "id": "hist1-oa13-5"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Martina le pide agua a su papá. ¿Qué le dice?",
+   "opciones": [
+    "por favor",
+    "rápido ya",
+    "ahora mismo",
+    "dámela luego"
+   ],
+   "correcta": 0,
+   "tip": "«Por favor» es una palabra amable que usamos cuando pedimos algo.",
+   "id": "hist1-oa13-6"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Rosa trae comida de su país. ¿Qué hace Iván?",
+   "opciones": [
+    "pregunta con interés",
+    "dice que es muy fea",
+    "se tapa la nariz",
+    "se ríe de su plato"
+   ],
+   "correcta": 0,
+   "tip": "Las comidas de otros lugares son parte de sus costumbres. Interesarse por ellas es una forma de respeto.",
+   "id": "hist1-oa13-7"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Flor tiene el pelo muy crespo. ¿Qué hace Pablo?",
+   "opciones": [
+    "la trata igual",
+    "le pone un apodo",
+    "se ríe de su pelo",
+    "no juega con ella"
+   ],
+   "correcta": 0,
+   "tip": "Nadie debe ser tratado distinto por su aspecto. Todos merecemos el mismo buen trato.",
+   "id": "hist1-oa13-8"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Andrés habla y Paz quiere hablar. ¿Qué hace Paz?",
+   "opciones": [
+    "espera su turno",
+    "habla más fuerte",
+    "le tapa la boca",
+    "se va enojada"
+   ],
+   "correcta": 0,
+   "tip": "Para conversar hay que turnarse: uno habla y el otro escucha.",
+   "id": "hist1-oa13-9"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Ana escucha sin interrumpir. ¿Qué muestra?",
+   "opciones": [
+    "respeto",
+    "flojera",
+    "enojo",
+    "miedo"
+   ],
+   "correcta": 0,
+   "tip": "Escuchar sin cortar al otro es una forma de respetarlo.",
+   "id": "hist1-oa13-10"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Joaquín se cae en el patio. ¿Qué hace Ana?",
+   "opciones": [
+    "lo ayuda a pararse",
+    "sigue corriendo",
+    "se ríe de él",
+    "lo llama torpe"
+   ],
+   "correcta": 0,
+   "tip": "Ayudar a quien lo necesita es ponerse en su lugar: así nos gustaría que nos ayudaran a nosotros.",
+   "id": "hist1-oa13-11"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Ema está sola en el recreo. ¿Qué hace Luis?",
+   "opciones": [
+    "la invita a jugar",
+    "pasa de largo",
+    "se ríe de ella",
+    "le quita el puesto"
+   ],
+   "correcta": 0,
+   "tip": "Invitar a quien está solo lo hace sentir parte del grupo.",
+   "id": "hist1-oa13-12"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Bruno no alcanza un libro alto. ¿Qué hace Sara?",
+   "opciones": [
+    "se lo baja",
+    "se lo esconde",
+    "se burla de él",
+    "se va a otra mesa"
+   ],
+   "correcta": 0,
+   "tip": "Si podemos ayudar a alguien con algo que le cuesta, lo hacemos con gusto.",
+   "id": "hist1-oa13-13"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Teo está triste por su perro. ¿Qué hace Inés?",
+   "opciones": [
+    "lo consuela",
+    "le hace burla",
+    "le dice exagerado",
+    "lo deja hablando solo"
+   ],
+   "correcta": 0,
+   "tip": "Acompañar a alguien triste es empatía: entender cómo se siente.",
+   "id": "hist1-oa13-14"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "A Amanda le cuesta leer. ¿Qué hace Leo?",
+   "opciones": [
+    "la ayuda con paciencia",
+    "le quita el libro",
+    "le dice que es lenta",
+    "se ríe de ella"
+   ],
+   "correcta": 0,
+   "tip": "A cada uno le cuestan cosas distintas. Ayudar con paciencia es mejor que burlarse.",
+   "id": "hist1-oa13-15"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Gael es nuevo en el curso. ¿Qué hace Pía?",
+   "opciones": [
+    "lo saluda amable",
+    "no le habla",
+    "lo mira feo",
+    "le esconde la mochila"
+   ],
+   "correcta": 0,
+   "tip": "Recibir bien a alguien nuevo lo ayuda a sentirse acogido.",
+   "id": "hist1-oa13-16"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Simón usa audífono para oír. ¿Qué hace Laura?",
+   "opciones": [
+    "lo trata igual",
+    "lo deja afuera",
+    "le grita al oído",
+    "se ríe del audífono"
+   ],
+   "correcta": 0,
+   "tip": "Un audífono ayuda a Simón a escuchar. Eso no cambia cómo lo tratamos: igual que a todos.",
+   "id": "hist1-oa13-17"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "La mamá de Aurora está enferma. ¿Qué hace Aurora?",
+   "opciones": [
+    "le lleva agua",
+    "pone música fuerte",
+    "le pide jugar",
+    "se va a la plaza"
+   ],
+   "correcta": 0,
+   "tip": "Cuando alguien de la familia está enfermo, lo cuidamos y no lo cansamos.",
+   "id": "hist1-oa13-18"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Dos niñas no dejan jugar a Rayén. ¿Qué hace Iker?",
+   "opciones": [
+    "la invita a su juego",
+    "se ríe con ellas",
+    "tampoco la deja jugar",
+    "se va muy lejos"
+   ],
+   "correcta": 0,
+   "tip": "Dejar a alguien fuera del juego duele. Invitarlo es ayudar a que nadie quede solo.",
+   "id": "hist1-oa13-19"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Leo ayuda a una niña que se cayó. ¿Cómo es Leo?",
+   "opciones": [
+    "solidario",
+    "egoísta",
+    "flojo",
+    "mandón"
+   ],
+   "correcta": 0,
+   "tip": "Ayudar a otros sin que nos lo pidan es ser solidario.",
+   "id": "hist1-oa13-20"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "A Diego le toca borrar la pizarra. ¿Qué hace?",
+   "opciones": [
+    "la borra a tiempo",
+    "se la deja a otro",
+    "se le olvida",
+    "la borra mañana"
+   ],
+   "correcta": 0,
+   "tip": "Cumplir un encargo cuando nos toca es ser responsable.",
+   "id": "hist1-oa13-21"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Sofía terminó de jugar. ¿Qué debería hacer?",
+   "opciones": [
+    "guardar sus juguetes",
+    "dejarlos tirados",
+    "esperar a su mamá",
+    "esconderlos bajo la cama"
+   ],
+   "correcta": 0,
+   "tip": "Guardar lo que usamos es cuidar nuestras cosas y nuestro espacio.",
+   "id": "hist1-oa13-22"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Tomás tiene un libro prestado. ¿Qué hace?",
+   "opciones": [
+    "lo cuida bien",
+    "lo raya entero",
+    "lo deja en el patio",
+    "se lo queda"
+   ],
+   "correcta": 0,
+   "tip": "Las cosas de los demás se cuidan aún más que las propias, y se devuelven sanas.",
+   "id": "hist1-oa13-23"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Javier come una fruta. ¿Dónde bota la cáscara?",
+   "opciones": [
+    "al basurero",
+    "bajo un banco",
+    "al suelo",
+    "tras un árbol"
+   ],
+   "correcta": 0,
+   "tip": "El patio es de todos. Botar la basura en el basurero es cuidar el espacio común.",
+   "id": "hist1-oa13-24"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Matías llega con su chaqueta. ¿Dónde la deja?",
+   "opciones": [
+    "en su colgador",
+    "en el suelo",
+    "en el patio",
+    "en cualquier silla"
+   ],
+   "correcta": 0,
+   "tip": "Dejar nuestras cosas en su lugar ayuda a no perderlas: es cuidar lo propio.",
+   "id": "hist1-oa13-25"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Ana usó las tijeras del curso. ¿Qué hace después?",
+   "opciones": [
+    "las guarda en su lugar",
+    "se las lleva a casa",
+    "las deja en el suelo",
+    "las esconde"
+   ],
+   "correcta": 0,
+   "tip": "Las cosas del curso son de todos. Guardarlas permite que otro las use después.",
+   "id": "hist1-oa13-26"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "A Lucas le piden poner la mesa. ¿Qué hace?",
+   "opciones": [
+    "la pone con cuidado",
+    "dice que no puede",
+    "espera que otro lo haga",
+    "la deja a medias"
+   ],
+   "correcta": 0,
+   "tip": "Ayudar en casa con un encargo es ser responsable con la familia.",
+   "id": "hist1-oa13-27"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Pía juega en la plaza. ¿Qué debería hacer?",
+   "opciones": [
+    "cuidar las flores",
+    "arrancar las flores",
+    "pisar el pasto nuevo",
+    "rayar los bancos"
+   ],
+   "correcta": 0,
+   "tip": "La plaza es de todos los vecinos. Cuidarla permite que todos la disfruten.",
+   "id": "hist1-oa13-28"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Al curso le toca ordenar. ¿Qué hace Raúl?",
+   "opciones": [
+    "ayuda a ordenar",
+    "se sienta a mirar",
+    "desordena más",
+    "sale al patio"
+   ],
+   "correcta": 0,
+   "tip": "Cuando el encargo es de todos, cada uno pone su parte.",
+   "id": "hist1-oa13-29"
+  },
+  {
+   "oa": "HI01 OA 13",
+   "pregunta": "Amaro rompió el autito de Teo. ¿Qué hace Amaro?",
+   "opciones": [
+    "le pide perdón",
+    "lo esconde rápido",
+    "culpa a otro niño",
+    "se ríe del autito"
+   ],
+   "correcta": 0,
+   "tip": "Si dañamos algo de otro, lo correcto es pedir perdón y ver cómo arreglarlo.",
+   "id": "hist1-oa13-30"
+  }
+ ]
+}

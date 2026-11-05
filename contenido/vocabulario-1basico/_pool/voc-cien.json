@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Un «ser vivo» es algo que...",
+   "opciones": [
+    "nace y crece",
+    "nunca cambia",
+    "se fabrica",
+    "está quieto"
+   ],
+   "correcta": 0,
+   "tip": "Los seres vivos nacen, crecen y necesitan agua y alimento, como un perro o una planta.",
+   "id": "voc1-cien-1"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Las «crías» de una gata son...",
+   "opciones": [
+    "sus gatitos",
+    "sus bigotes",
+    "sus juguetes",
+    "sus uñas"
+   ],
+   "correcta": 0,
+   "tip": "Las crías son los hijos chicos de un animal. Las crías de la gata son los gatitos.",
+   "id": "voc1-cien-2"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Para qué usa el delfín sus «aletas»?",
+   "opciones": [
+    "Para nadar",
+    "Para oler",
+    "Para comer",
+    "Para dormir"
+   ],
+   "correcta": 0,
+   "tip": "Las aletas ayudan a moverse en el agua. El delfín y los peces nadan con ellas.",
+   "id": "voc1-cien-3"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Las «plumas» cubren el cuerpo de...",
+   "opciones": [
+    "las aves",
+    "los peces",
+    "los perros",
+    "las vacas"
+   ],
+   "correcta": 0,
+   "tip": "Las aves, como la gallina y el picaflor, tienen el cuerpo cubierto de plumas.",
+   "id": "voc1-cien-4"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Una culebra «se arrastra». ¿Cómo avanza?",
+   "opciones": [
+    "Pegada al suelo",
+    "Dando saltos",
+    "Volando alto",
+    "Con cuatro patas"
+   ],
+   "correcta": 0,
+   "tip": "Arrastrarse es moverse con el cuerpo pegado al suelo, como la culebra y el caracol.",
+   "id": "voc1-cien-5"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "El huemul macho tiene «astas». ¿Dónde las lleva?",
+   "opciones": [
+    "En la cabeza",
+    "En la cola",
+    "En las patas",
+    "En la espalda"
+   ],
+   "correcta": 0,
+   "tip": "Las astas son como cuernos con ramas. El huemul macho las lleva en la cabeza.",
+   "id": "voc1-cien-6"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Una «enredadera» es una planta que...",
+   "opciones": [
+    "sube por otras",
+    "flota en el agua",
+    "vive en la arena",
+    "no tiene hojas"
+   ],
+   "correcta": 0,
+   "tip": "La enredadera trepa por los árboles o las rejas. El copihue es una enredadera.",
+   "id": "voc1-cien-7"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Dónde crece bien un «cactus»?",
+   "opciones": [
+    "Donde llueve poco",
+    "Bajo el mar",
+    "En la nieve",
+    "En un pantano"
+   ],
+   "correcta": 0,
+   "tip": "El cactus guarda agua en su tallo, por eso vive bien en lugares secos.",
+   "id": "voc1-cien-8"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Los «pétalos» son parte de...",
+   "opciones": [
+    "la flor",
+    "la raíz",
+    "el tallo",
+    "la semilla"
+   ],
+   "correcta": 0,
+   "tip": "Los pétalos son las hojitas de colores que tiene la flor.",
+   "id": "voc1-cien-9"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Cómo se sienten las «espinas» de un rosal?",
+   "opciones": [
+    "Pinchan la piel",
+    "Son muy suaves",
+    "Están mojadas",
+    "Huelen a miel"
+   ],
+   "correcta": 0,
+   "tip": "Las espinas son puntas duras y finas. Por eso hay que tomar el rosal con cuidado.",
+   "id": "voc1-cien-10"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "La «cáscara» de una naranja es...",
+   "opciones": [
+    "lo de afuera",
+    "su jugo dulce",
+    "sus semillas",
+    "su color"
+   ],
+   "correcta": 0,
+   "tip": "La cáscara cubre la fruta por fuera y la protege. Adentro está la parte que comemos.",
+   "id": "voc1-cien-11"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Cuántos «sentidos» tenemos?",
+   "opciones": [
+    "Cinco",
+    "Dos",
+    "Ocho",
+    "Catorce"
+   ],
+   "correcta": 0,
+   "tip": "Tenemos cinco sentidos: la vista, el oído, el olfato, el gusto y el tacto.",
+   "id": "voc1-cien-12"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Con el sentido del «tacto» podemos...",
+   "opciones": [
+    "tocar",
+    "mirar",
+    "oler",
+    "oír"
+   ],
+   "correcta": 0,
+   "tip": "El tacto está en la piel. Con él sentimos si algo es suave, áspero, frío o caliente.",
+   "id": "voc1-cien-13"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Usamos la «vista» para...",
+   "opciones": [
+    "mirar",
+    "probar",
+    "oír",
+    "tocar"
+   ],
+   "correcta": 0,
+   "tip": "La vista está en los ojos. Con ella vemos los colores y las formas.",
+   "id": "voc1-cien-14"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Un «hábito» es algo que hacemos...",
+   "opciones": [
+    "muy seguido",
+    "una sola vez",
+    "sin querer",
+    "al nacer"
+   ],
+   "correcta": 0,
+   "tip": "Un hábito se repite cada día. Lavarse los dientes es un buen hábito.",
+   "id": "voc1-cien-15"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿De qué nos cuida el «bloqueador»?",
+   "opciones": [
+    "Del sol fuerte",
+    "Del frío",
+    "De la lluvia",
+    "Del ruido"
+   ],
+   "correcta": 0,
+   "tip": "El bloqueador se pone en la piel y la protege del sol fuerte.",
+   "id": "voc1-cien-16"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Cuál de estos es un «material»?",
+   "opciones": [
+    "La madera",
+    "La risa",
+    "El hambre",
+    "El sueño"
+   ],
+   "correcta": 0,
+   "tip": "Un material es aquello de lo que están hechas las cosas, como la madera, el vidrio o el metal.",
+   "id": "voc1-cien-17"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Una tela «impermeable» es la que...",
+   "opciones": [
+    "no deja pasar agua",
+    "se rompe muy fácil",
+    "abriga en invierno",
+    "brilla de noche"
+   ],
+   "correcta": 0,
+   "tip": "Una tela impermeable no deja pasar el agua. Por eso sirve para las capas de lluvia.",
+   "id": "voc1-cien-18"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Un clavo se «oxidó». ¿Cómo quedó?",
+   "opciones": [
+    "Con manchas café",
+    "Brillante y limpio",
+    "Más largo",
+    "Muy blando"
+   ],
+   "correcta": 0,
+   "tip": "El metal que pasa mucho tiempo mojado se oxida: se pone café y áspero.",
+   "id": "voc1-cien-19"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Si el helado se «derrite», queda...",
+   "opciones": [
+    "líquido",
+    "más duro",
+    "congelado",
+    "más grande"
+   ],
+   "correcta": 0,
+   "tip": "Con el calor el helado se derrite: pasa de duro a líquido.",
+   "id": "voc1-cien-20"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "La lata quedó «abollada». ¿Cómo está?",
+   "opciones": [
+    "Con partes hundidas",
+    "Sin tapa",
+    "Más grande",
+    "Muy brillante"
+   ],
+   "correcta": 0,
+   "tip": "Una lata abollada tiene partes hundidas por un golpe o un apretón.",
+   "id": "voc1-cien-21"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Cuántas «estaciones» tiene el año?",
+   "opciones": [
+    "Cuatro",
+    "Dos",
+    "Siete",
+    "Doce"
+   ],
+   "correcta": 0,
+   "tip": "El año tiene cuatro estaciones: verano, otoño, invierno y primavera.",
+   "id": "voc1-cien-22"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "En «otoño», muchos árboles...",
+   "opciones": [
+    "botan sus hojas",
+    "dan flores nuevas",
+    "se quedan sin raíz",
+    "crecen más rápido"
+   ],
+   "correcta": 0,
+   "tip": "En otoño las hojas cambian de color y muchas caen al suelo.",
+   "id": "voc1-cien-23"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué pasa al «amanecer»?",
+   "opciones": [
+    "Sale el sol",
+    "Se esconde el sol",
+    "Sale la luna",
+    "Empieza a llover"
+   ],
+   "correcta": 0,
+   "tip": "Amanecer es cuando el sol aparece en la mañana y el cielo se pone claro.",
+   "id": "voc1-cien-24"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "¿Qué pasa al «atardecer»?",
+   "opciones": [
+    "Se acaba el día",
+    "Empieza el día",
+    "Es mediodía",
+    "Sale el arcoíris"
+   ],
+   "correcta": 0,
+   "tip": "El atardecer es cuando el día se acaba: el sol baja y se acerca la noche.",
+   "id": "voc1-cien-25"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Si cae «helada», en la mañana el pasto está...",
+   "opciones": [
+    "blanco y congelado",
+    "verde y tibio",
+    "lleno de flores",
+    "seco y caliente"
+   ],
+   "correcta": 0,
+   "tip": "La helada es hielo muy fino que se forma en las noches frías de invierno.",
+   "id": "voc1-cien-26"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Una fruta «madura» está...",
+   "opciones": [
+    "lista para comer",
+    "verde y muy dura",
+    "sin semillas",
+    "sin cáscara"
+   ],
+   "correcta": 0,
+   "tip": "Una fruta madura ya creció lo suficiente y está lista para comerla.",
+   "id": "voc1-cien-27"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "La «maleza» es una planta que...",
+   "opciones": [
+    "crece sin sembrarla",
+    "da frutos dulces",
+    "vive en el mar",
+    "se compra en la feria"
+   ],
+   "correcta": 0,
+   "tip": "La maleza crece sola, donde nadie la sembró, como en un jardín o una huerta.",
+   "id": "voc1-cien-28"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "Un animal «silvestre» vive...",
+   "opciones": [
+    "libre en la naturaleza",
+    "dentro de una casa",
+    "en una jaula",
+    "en un corral"
+   ],
+   "correcta": 0,
+   "tip": "Un animal silvestre vive libre, como el cóndor o el puma. No hay que darle comida.",
+   "id": "voc1-cien-29"
+  },
+  {
+   "oa": "VOC-CIEN",
+   "pregunta": "El cóndor «planea». ¿Qué hace?",
+   "opciones": [
+    "Vuela sin aletear",
+    "Camina despacio",
+    "Nada en el mar",
+    "Duerme en su nido"
+   ],
+   "correcta": 0,
+   "tip": "Planear es volar con las alas abiertas y quietas, dejándose llevar por el viento.",
+   "id": "voc1-cien-30"
+  }
+ ]
+}

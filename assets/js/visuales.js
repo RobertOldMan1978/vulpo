@@ -36,7 +36,10 @@ function textoVisual(v){
   return d;
  }
  if(T==='contar')   return `Dibujo: ${v.a} y ${v.b} objetos iguales para juntar.`;
- if(T==='agrupar')  return `Dibujo: ${v.grupos} grupos de ${v.porGrupo} objetos cada uno.`;
+ /* `estimar` (MA01 OA 05): la pregunta pide calcular A OJO, así que decir la cantidad
+    exacta le daría la cuenta hecha a quien usa lector de pantalla. */
+ if(T==='agrupar' && v.estimar) return v.grupos==1 ? 'Dibujo: un grupo de objetos para calcular a ojo.' : `Dibujo: ${v.grupos} grupos de objetos para calcular a ojo.`;
+ if(T==='agrupar')  return v.grupos==1 ? `Dibujo: ${v.porGrupo} objetos.` : `Dibujo: ${v.grupos} grupos de ${v.porGrupo} objetos cada uno.`;   // 1° cuenta un solo grupo: "1 grupos" sonaba mal
  if(T==='fraccion') return `Barra dividida en ${v.partes} partes iguales, con ${v.pintadas} pintada${v.pintadas===1?'':'s'}.`;
  if(T==='cuerpo')   return `Dibujo de un cuerpo geometrico.`;   // nombrarlo seria dar la respuesta
  if(T==='reloj')    return `Reloj de agujas.`;                  // la hora es lo que se pregunta
@@ -165,13 +168,22 @@ function renderVisual(v){
   const et=(v.etiquetas||[]).slice(0,6), va=(v.valores||[]).slice(0,6);
   if(!et.length||et.length!==va.length) return '';
   const max=Math.max.apply(null,va.concat([1]));
+  /* `colores` (opcional): un color por barra. 1° lo usa cuando la pregunta es POR el color
+     ("¿qué colores empataron?"): con todas verdes, la barra "Rojo" no era roja.
+     Una etiqueta que es solo un emoji se dibuja grande: en 1° muchos todavía no leen
+     "Pera", pero sí reconocen 🍐. Sin estos campos el dibujo sale igual que siempre. */
+  const col=Array.isArray(v.colores)?v.colores:[];
   const w=170/et.length; let r='';
   et.forEach((e,i)=>{
    const alt=Math.round(60*va[i]/max);
    const x=15+i*w;
-   r+=`<rect x="${x}" y="${75-alt}" width="${w*0.62}" height="${alt}" fill="#3ee089"/>`;
+   const fill=/^#[0-9a-fA-F]{3,6}$/.test(col[i]||'')?col[i]:'#3ee089';
+   const soloEmoji=!/[0-9A-Za-zÁÉÍÓÚÑáéíóúñ]/.test(String(e));
+   r+=`<rect x="${x}" y="${75-alt}" width="${w*0.62}" height="${alt}" fill="${fill}"/>`;
    r+=`<text x="${x+w*0.31}" y="${72-alt}" font-size="10" fill="#ffc93c" text-anchor="middle" font-weight="bold">${va[i]}</text>`;
-   r+=`<text x="${x+w*0.31}" y="90" font-size="10" fill="#cfc9ee" text-anchor="middle">${String(e).slice(0,8)}</text>`;
+   r+= soloEmoji
+     ? `<text x="${x+w*0.31}" y="94" font-size="16" text-anchor="middle">${String(e).slice(0,8)}</text>`
+     : `<text x="${x+w*0.31}" y="90" font-size="10" fill="#cfc9ee" text-anchor="middle">${String(e).slice(0,8)}</text>`;
   });
   r+=`<line x1="10" y1="75" x2="190" y2="75" stroke="#cfc9ee" stroke-width="2"/>`;
   return svgEnvoltura(r,98);

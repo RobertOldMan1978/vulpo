@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "Lucas vive en Brasil. ¿Qué idioma habla?",
+   "opciones": [
+    "portugués",
+    "japonés",
+    "chino",
+    "ruso"
+   ],
+   "correcta": 0,
+   "tip": "En Brasil se habla portugués, un idioma parecido al castellano que hablamos en Chile.",
+   "id": "hist1-oa12-1"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "Kenji vive en Japón. ¿Qué idioma habla?",
+   "opciones": [
+    "japonés",
+    "portugués",
+    "italiano",
+    "alemán"
+   ],
+   "correcta": 0,
+   "tip": "En Japón se habla japonés, y se escribe con signos distintos a nuestras letras.",
+   "id": "hist1-oa12-2"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En Chile hablamos castellano. ¿Y en Argentina?",
+   "opciones": [
+    "castellano",
+    "portugués",
+    "francés",
+    "chino"
+   ],
+   "correcta": 0,
+   "tip": "En Argentina, igual que en Chile, se habla castellano, aunque con otro acento.",
+   "id": "hist1-oa12-3"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "Giulia vive en Italia. ¿Qué idioma habla?",
+   "opciones": [
+    "italiano",
+    "japonés",
+    "alemán",
+    "chino"
+   ],
+   "correcta": 0,
+   "tip": "En Italia se habla italiano. Muchas palabras del italiano se parecen a las del castellano.",
+   "id": "hist1-oa12-4"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "Ana come con tenedor y Kenji con palillos. Eso es…",
+   "opciones": [
+    "otra forma de comer",
+    "comer mal",
+    "un error de Kenji",
+    "algo prohibido"
+   ],
+   "correcta": 0,
+   "tip": "En Japón muchos comen con palillos. Es una forma distinta de comer, no mejor ni peor.",
+   "id": "hist1-oa12-5"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En Japón, al entrar a la casa, los niños…",
+   "opciones": [
+    "se sacan los zapatos",
+    "se ponen un gorro",
+    "aplauden tres veces",
+    "entran corriendo"
+   ],
+   "correcta": 0,
+   "tip": "En Japón es costumbre sacarse los zapatos al entrar a la casa, para no ensuciar el piso.",
+   "id": "hist1-oa12-6"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En China, el Año Nuevo se celebra con…",
+   "opciones": [
+    "dragones y faroles",
+    "cueca y empanadas",
+    "trineos en la nieve",
+    "huevos de chocolate"
+   ],
+   "correcta": 0,
+   "tip": "En el Año Nuevo chino hay bailes con dragones de tela y faroles rojos.",
+   "id": "hist1-oa12-7"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En Brasil hay una fiesta con disfraces: el…",
+   "opciones": [
+    "carnaval",
+    "rodeo",
+    "Cuasimodo",
+    "Año Nuevo chino"
+   ],
+   "correcta": 0,
+   "tip": "El carnaval de Brasil es una fiesta con música, baile y disfraces que dura varios días.",
+   "id": "hist1-oa12-8"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En la India, en la fiesta del Holi, la gente…",
+   "opciones": [
+    "se tira polvos de colores",
+    "baila cueca en ramadas",
+    "hace muñecos de nieve",
+    "come huevos de chocolate"
+   ],
+   "correcta": 0,
+   "tip": "En el Holi, una fiesta de la India, la gente se lanza polvos de muchos colores.",
+   "id": "hist1-oa12-9"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En Chile, la Navidad es en verano. ¿Y en Canadá?",
+   "opciones": [
+    "suele haber nieve",
+    "hace calor de playa",
+    "es en primavera",
+    "no hay Navidad"
+   ],
+   "correcta": 0,
+   "tip": "Canadá está muy al norte: allá la Navidad llega en invierno y suele haber nieve.",
+   "id": "hist1-oa12-10"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "Olga vive en Rusia, donde nieva en invierno. ¿Qué usa?",
+   "opciones": [
+    "abrigo y gorro",
+    "traje de baño",
+    "polera y short",
+    "sandalias"
+   ],
+   "correcta": 0,
+   "tip": "Donde hace mucho frío, los niños se abrigan con abrigo, gorro y guantes.",
+   "id": "hist1-oa12-11"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En un lugar con mucho calor, los niños usan…",
+   "opciones": [
+    "ropa liviana",
+    "abrigo grueso",
+    "gorro de lana",
+    "botas de nieve"
+   ],
+   "correcta": 0,
+   "tip": "Con calor se usa ropa delgada y fresca. La ropa cambia según el clima de cada lugar.",
+   "id": "hist1-oa12-12"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En Italia es típico comer…",
+   "opciones": [
+    "pasta y pizza",
+    "empanadas",
+    "sopaipillas",
+    "humitas"
+   ],
+   "correcta": 0,
+   "tip": "La pasta y la pizza son comidas típicas de Italia. Hoy se comen en muchos países, también en Chile.",
+   "id": "hist1-oa12-13"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En México, muchas comidas llevan…",
+   "opciones": [
+    "tortillas de maíz",
+    "salmón ahumado",
+    "pan de centeno",
+    "mote con huesillo"
+   ],
+   "correcta": 0,
+   "tip": "La tortilla de maíz, delgada y redonda, está en muchas comidas de México, como los tacos.",
+   "id": "hist1-oa12-14"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En Japón, los niños limpian su sala de clases. Eso es…",
+   "opciones": [
+    "una costumbre de allá",
+    "un castigo del profesor",
+    "un error de la escuela",
+    "un juego de video"
+   ],
+   "correcta": 0,
+   "tip": "En las escuelas de Japón, los alumnos ayudan a limpiar su sala: es una costumbre para cuidar lo de todos.",
+   "id": "hist1-oa12-15"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "Lin habla chino y Diego castellano. ¿Cómo son?",
+   "opciones": [
+    "distintos, y está bien",
+    "uno habla mal",
+    "uno está equivocado",
+    "deberían ser iguales"
+   ],
+   "correcta": 0,
+   "tip": "Hablar otro idioma no es mejor ni peor: es distinto. Cada idioma sirve para conversar.",
+   "id": "hist1-oa12-16"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "¿Qué país queda más lejos de Chile?",
+   "opciones": [
+    "Japón",
+    "Argentina",
+    "Perú",
+    "Bolivia"
+   ],
+   "correcta": 0,
+   "tip": "Japón está al otro lado del océano. Argentina, Perú y Bolivia son vecinos de Chile.",
+   "id": "hist1-oa12-17"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "¿Qué país es vecino de Chile?",
+   "opciones": [
+    "Argentina",
+    "Japón",
+    "China",
+    "Italia"
+   ],
+   "correcta": 0,
+   "tip": "Argentina está junto a Chile, al otro lado de la cordillera. Japón, China e Italia quedan muy lejos.",
+   "id": "hist1-oa12-18"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "Para viajar de Chile a Japón, hay que cruzar…",
+   "opciones": [
+    "el océano",
+    "un río chico",
+    "una calle",
+    "una plaza"
+   ],
+   "correcta": 0,
+   "tip": "Entre Chile y Japón está el océano Pacífico, enorme. Por eso se viaja en avión.",
+   "id": "hist1-oa12-19"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "¿Para qué gira Ana el globo terráqueo?",
+   "opciones": [
+    "para buscar un país",
+    "para saber la hora",
+    "para medir el frío",
+    "para contar los días"
+   ],
+   "correcta": 0,
+   "tip": "El globo terráqueo es como una pelota con forma de la Tierra: sirve para ubicar países.",
+   "id": "hist1-oa12-20"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "¿En qué se parecen los niños de todo el mundo?",
+   "opciones": [
+    "todos juegan y aprenden",
+    "todos hablan el mismo idioma",
+    "todos comen lo mismo",
+    "todos usan la misma ropa"
+   ],
+   "correcta": 0,
+   "tip": "Los niños de todo el mundo juegan, aprenden y tienen familia, aunque hablen y vistan distinto.",
+   "id": "hist1-oa12-21"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "Amani vive en Kenia y saluda diciendo «jambo». ¿Qué es eso?",
+   "opciones": [
+    "un saludo en su idioma",
+    "un plato de comida de Kenia",
+    "un juego de pelota",
+    "un baile de su escuela"
+   ],
+   "correcta": 0,
+   "tip": "«Jambo» quiere decir «hola» en suajili, un idioma que se habla en Kenia.",
+   "id": "hist1-oa12-22"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En Japón, para saludar, muchos se…",
+   "opciones": [
+    "inclinan hacia adelante",
+    "dan tres besos en la cara",
+    "saltan juntos dos veces",
+    "aplauden con fuerza"
+   ],
+   "correcta": 0,
+   "tip": "En Japón es costumbre saludar inclinando el cuerpo hacia adelante. En Chile damos la mano o un beso.",
+   "id": "hist1-oa12-23"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En Japón se come mucho…",
+   "opciones": [
+    "arroz",
+    "choclo",
+    "mote",
+    "porotos"
+   ],
+   "correcta": 0,
+   "tip": "El arroz es un alimento de todos los días en Japón, como el pan en muchas casas de Chile.",
+   "id": "hist1-oa12-24"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "En Estados Unidos, en Halloween, los niños…",
+   "opciones": [
+    "se disfrazan y piden dulces",
+    "bailan cueca en ramadas",
+    "se tiran polvos de colores",
+    "corren con dragones"
+   ],
+   "correcta": 0,
+   "tip": "En Halloween los niños se disfrazan y van de casa en casa pidiendo dulces.",
+   "id": "hist1-oa12-25"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "¿Qué hacen niños de casi todo el mundo?",
+   "opciones": [
+    "van a la escuela",
+    "manejan autos",
+    "pagan las cuentas",
+    "van a la oficina"
+   ],
+   "correcta": 0,
+   "tip": "En casi todos los países los niños van a la escuela a aprender, igual que en Chile.",
+   "id": "hist1-oa12-26"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "Diego ve niños de Japón con uniforme. ¿Y en Chile?",
+   "opciones": [
+    "muchos también lo usan",
+    "nadie usa uniforme nunca",
+    "solo los adultos lo usan",
+    "solo lo usan en verano"
+   ],
+   "correcta": 0,
+   "tip": "En Chile muchos colegios también usan uniforme: es algo que se parece entre los dos países.",
+   "id": "hist1-oa12-27"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "La Navidad es en verano en Australia y en…",
+   "opciones": [
+    "Chile",
+    "Canadá",
+    "Rusia",
+    "Noruega"
+   ],
+   "correcta": 0,
+   "tip": "Chile y Australia están en la mitad sur del mundo: allí diciembre es verano.",
+   "id": "hist1-oa12-28"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "¿Por qué niños de otros países comen distinto?",
+   "opciones": [
+    "cada lugar tiene sus alimentos",
+    "unos comen mal y otros bien",
+    "algunos no saben cocinar",
+    "es una regla para todo el mundo"
+   ],
+   "correcta": 0,
+   "tip": "Cada lugar cultiva y cocina lo que tiene cerca, por eso las comidas cambian de un país a otro.",
+   "id": "hist1-oa12-29"
+  },
+  {
+   "oa": "HI01 OA 12",
+   "pregunta": "Lin llegó a Chile desde China en avión. ¿Por qué?",
+   "opciones": [
+    "China queda muy lejos",
+    "China queda al lado",
+    "no hay barcos",
+    "es más fácil a pie"
+   ],
+   "correcta": 0,
+   "tip": "China está muy lejos de Chile, al otro lado del océano: el avión es la forma más rápida de llegar.",
+   "id": "hist1-oa12-30"
+  }
+ ]
+}

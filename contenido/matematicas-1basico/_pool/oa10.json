@@ -1,0 +1,406 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Si 8 + 5 = 13, ¿cuánto es 13 - 5?",
+   "opciones": [
+    "8",
+    "5",
+    "18",
+    "3"
+   ],
+   "correcta": 0,
+   "tip": "Restar 5 deshace lo que hizo sumar 5: se vuelve al 8.",
+   "id": "mate1-oa10-1"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Como 7 + 4 = 11, ¿cuánto es 11 - 4?",
+   "opciones": [
+    "7",
+    "4",
+    "15",
+    "3"
+   ],
+   "correcta": 0,
+   "tip": "Sumar 4 y restar 4 se deshacen: del 11 se vuelve al 7.",
+   "id": "mate1-oa10-2"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Si 6 + 3 = 9, ¿cuánto es 9 - 3?",
+   "opciones": [
+    "6",
+    "3",
+    "12",
+    "9"
+   ],
+   "correcta": 0,
+   "tip": "Si al 6 le sumas 3 llegas a 9; si al 9 le quitas 3, vuelves al 6.",
+   "id": "mate1-oa10-3"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "12 - 5 da 7. Entonces, ¿cuánto da 7 + 5?",
+   "opciones": [
+    "12",
+    "2",
+    "17",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "Sumar 5 deshace lo que hizo restar 5: se vuelve al 12.",
+   "id": "mate1-oa10-4"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Con 16 - 6 = 10, ¿cuánto es 10 + 6?",
+   "opciones": [
+    "16",
+    "4",
+    "10",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Quitar 6 y agregar 6 se deshacen: del 10 se vuelve al 16.",
+   "id": "mate1-oa10-5"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Sabes que 9 + 8 = 17. ¿Cuánto es 17 - 8?",
+   "opciones": [
+    "9",
+    "8",
+    "25",
+    "1"
+   ],
+   "correcta": 0,
+   "tip": "La resta deshace la suma: si quitas los 8 que agregaste, vuelves al 9.",
+   "id": "mate1-oa10-6"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Sabes que 15 - 7 = 8. ¿Cuánto es 8 + 7?",
+   "opciones": [
+    "15",
+    "1",
+    "8",
+    "22"
+   ],
+   "correcta": 0,
+   "tip": "La suma deshace la resta: si devuelves los 7, vuelves al 15.",
+   "id": "mate1-oa10-7"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "¿Qué deshace sumar 3?",
+   "opciones": [
+    "Restar 3",
+    "Sumar 3",
+    "Restar 1",
+    "Sumar 6"
+   ],
+   "correcta": 0,
+   "tip": "Lo que sumas lo deshaces restando lo mismo.",
+   "id": "mate1-oa10-8"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "¿Qué deshace quitar 5?",
+   "opciones": [
+    "Agregar 5",
+    "Quitar 5",
+    "Agregar 1",
+    "Quitar 10"
+   ],
+   "correcta": 0,
+   "tip": "Lo que quitas lo recuperas agregando lo mismo.",
+   "id": "mate1-oa10-9"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Leo tiene 7, recibe 4 y regala 4. ¿Cuántos tiene?",
+   "opciones": [
+    "7",
+    "11",
+    "3",
+    "15"
+   ],
+   "correcta": 0,
+   "tip": "Recibir 4 y regalar 4 se deshacen: Leo vuelve a tener 7.",
+   "id": "mate1-oa10-10"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Pía suma 5 y luego resta 5. ¿Qué pasa?",
+   "opciones": [
+    "Vuelve al inicio",
+    "Sube cinco",
+    "Baja cinco",
+    "Llega a cero"
+   ],
+   "correcta": 0,
+   "tip": "Sumar y restar lo mismo se deshacen: el número queda como estaba.",
+   "id": "mate1-oa10-11"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Ana hizo 9 + 6 = 15. ¿Qué resta lo comprueba?",
+   "opciones": [
+    "15 - 6",
+    "15 + 6",
+    "9 - 6",
+    "6 - 9"
+   ],
+   "correcta": 0,
+   "tip": "Si a 15 le quitas el 6 que sumó, debe volver a 9.",
+   "id": "mate1-oa10-12"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Diego hizo 14 - 4 = 10. ¿Qué suma lo comprueba?",
+   "opciones": [
+    "10 + 4",
+    "10 - 4",
+    "14 + 4",
+    "4 + 4"
+   ],
+   "correcta": 0,
+   "tip": "Si al 10 le devuelves los 4 que quitó, debe volver a 14.",
+   "id": "mate1-oa10-13"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "¿Qué número más 4 da 11?",
+   "opciones": [
+    "7",
+    "15",
+    "4",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Para saberlo se quita el 4 al 11: 11 - 4 = 7. Y 7 + 4 = 11.",
+   "id": "mate1-oa10-14"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "A un número le sumo 6 y da 15. ¿Cuál era?",
+   "opciones": [
+    "9",
+    "21",
+    "6",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "Restar deshace la suma: 15 - 6 = 9. Y 9 + 6 = 15.",
+   "id": "mate1-oa10-15"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Le quito 3 a un número y queda 10. ¿Cuál era?",
+   "opciones": [
+    "13",
+    "7",
+    "3",
+    "12"
+   ],
+   "correcta": 0,
+   "tip": "Sumar deshace la resta: 10 + 3 = 13. Y 13 - 3 = 10.",
+   "id": "mate1-oa10-16"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Si 3 + 5 = 8, ¿qué resta da 3?",
+   "opciones": [
+    "8 - 5",
+    "8 - 3",
+    "5 - 3",
+    "8 + 5"
+   ],
+   "correcta": 0,
+   "tip": "Al 8 le quitas el 5 que se sumó y vuelves al 3.",
+   "id": "mate1-oa10-17"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Si 10 + 7 = 17, ¿qué resta da 10?",
+   "opciones": [
+    "17 - 7",
+    "17 - 10",
+    "10 - 7",
+    "17 + 7"
+   ],
+   "correcta": 0,
+   "tip": "Al 17 le quitas el 7 que se sumó y vuelves al 10.",
+   "id": "mate1-oa10-18"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Si 13 - 9 = 4, ¿qué suma da 13?",
+   "opciones": [
+    "4 + 9",
+    "4 + 13",
+    "9 - 4",
+    "13 + 9"
+   ],
+   "correcta": 0,
+   "tip": "Al 4 le devuelves los 9 que se quitaron y vuelves al 13.",
+   "id": "mate1-oa10-19"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "De 11 bolitas se pierden 3 y vuelven. ¿Cuántas?",
+   "opciones": [
+    "11",
+    "8",
+    "14",
+    "5"
+   ],
+   "correcta": 0,
+   "tip": "Perder 3 y recuperar 3 se deshacen: siguen siendo 11.",
+   "id": "mate1-oa10-20"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Se quitan 4. ¿Qué suma te devuelve a 9?",
+   "opciones": [
+    "5 + 4",
+    "9 + 4",
+    "5 - 4",
+    "4 + 4"
+   ],
+   "correcta": 0,
+   "tip": "Al quitar 4 de 9 quedan 5. Si devuelves los 4, vuelves a 9: 5 + 4 = 9.",
+   "id": "mate1-oa10-21",
+   "visual": {
+    "tipo": "contar",
+    "a": 9,
+    "b": -4,
+    "emoji": "🍎"
+   }
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Se juntan los dos grupos. ¿Qué resta los separa?",
+   "opciones": [
+    "9 - 3",
+    "9 + 3",
+    "6 - 3",
+    "3 - 9"
+   ],
+   "correcta": 0,
+   "tip": "Juntos son 9. Si quitas los 3 que se agregaron, vuelves a tener 6: 9 - 3.",
+   "id": "mate1-oa10-22",
+   "visual": {
+    "tipo": "contar",
+    "a": 6,
+    "b": 3,
+    "emoji": "⭐"
+   }
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Si 5 + 2 = 7, ¿es cierto que 7 - 2 = 5?",
+   "opciones": [
+    "Sí, es cierto",
+    "No, da 9",
+    "No, da 3",
+    "No, da 4"
+   ],
+   "correcta": 0,
+   "tip": "Restar 2 deshace sumar 2: del 7 se vuelve al 5.",
+   "id": "mate1-oa10-23"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Si 4 + 4 = 8, ¿cuánto es 8 - 4?",
+   "opciones": [
+    "4",
+    "8",
+    "12",
+    "0"
+   ],
+   "correcta": 0,
+   "tip": "Si quitas los 4 que se agregaron, vuelves al 4.",
+   "id": "mate1-oa10-24"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "12 - 3 = 9, porque 9 + 3 = 12. ¿Está bien?",
+   "opciones": [
+    "Sí, está bien",
+    "No, es 15",
+    "No, es 8",
+    "No, es 10"
+   ],
+   "correcta": 0,
+   "tip": "Una resta se revisa con la suma: si 9 + 3 = 12, entonces 12 - 3 = 9.",
+   "id": "mate1-oa10-25"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Leo sube 6 escalones y baja 6. ¿Dónde queda?",
+   "opciones": [
+    "Donde empezó",
+    "Seis más arriba",
+    "Doce más arriba",
+    "Seis más abajo"
+   ],
+   "correcta": 0,
+   "tip": "Subir 6 y bajar 6 se deshacen: Leo vuelve al mismo escalón.",
+   "id": "mate1-oa10-26"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Si 5 + 9 = 14, ¿cuánto es 14 - 5?",
+   "opciones": [
+    "9",
+    "5",
+    "19",
+    "4"
+   ],
+   "correcta": 0,
+   "tip": "Al 14 le quitas el 5 que se sumó y queda el 9.",
+   "id": "mate1-oa10-27"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Al quitar 2 de 11 quedan 9. ¿Cuánto es 9 + 2?",
+   "opciones": [
+    "11",
+    "7",
+    "13",
+    "9"
+   ],
+   "correcta": 0,
+   "tip": "Devolver los 2 que se quitaron hace volver al 11.",
+   "id": "mate1-oa10-28"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Camila hizo 18 - 8 = 10. ¿Cómo lo revisa?",
+   "opciones": [
+    "Suma 10 + 8",
+    "Resta 10 - 8",
+    "Suma 18 + 8",
+    "Suma 8 + 8"
+   ],
+   "correcta": 0,
+   "tip": "La resta se revisa con una suma: 10 + 8 debe dar 18.",
+   "id": "mate1-oa10-29"
+  },
+  {
+   "oa": "MA01 OA 10",
+   "pregunta": "Suben 7 al bus y luego bajan 7. ¿Cambió algo?",
+   "opciones": [
+    "No, queda igual",
+    "Sí, hay 7 más",
+    "Sí, hay 7 menos",
+    "Sí, hay 14 más"
+   ],
+   "correcta": 0,
+   "tip": "Subir 7 y bajar 7 se deshacen: el bus queda con los mismos.",
+   "id": "mate1-oa10-30"
+  }
+ ]
+}

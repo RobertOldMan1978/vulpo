@@ -474,15 +474,15 @@
   },
   {
    "oa": "MA02 OA 02",
-   "pregunta": "¿Con qué monedas pagas cuarenta y un pesos justos?",
+   "pregunta": "¿Cómo armas 41 lápices con cajas de 10?",
    "opciones": [
-    "4 de 10 y 1 de 1",
-    "1 de 10 y 4 de 1",
-    "41 de 10",
-    "5 de 10"
+    "4 cajas y 1 suelto",
+    "1 caja y 4 sueltos",
+    "41 cajas",
+    "5 cajas"
    ],
    "correcta": 0,
-   "tip": "Cuarenta pesos son 4 monedas de 10, y el uno es 1 moneda de 1.",
+   "tip": "Cuarenta lápices son 4 cajas de 10, y el uno es 1 lápiz suelto.",
    "revisada": false,
    "id": "mate2-oa02-3"
   },
@@ -530,15 +530,15 @@
   },
   {
    "oa": "MA02 OA 02",
-   "pregunta": "Tienes 1 moneda de 10 y 2 de 1. ¿Cuánto dinero es?",
+   "pregunta": "Tienes 1 caja de 10 lápices y 2 sueltos. ¿Cuántos son?",
    "opciones": [
-    "Veintiún pesos",
-    "Doce pesos",
-    "Tres pesos",
-    "Ciento dos pesos"
+    "Veintiún lápices",
+    "Doce lápices",
+    "Tres lápices",
+    "Ciento dos lápices"
    ],
    "correcta": 1,
-   "tip": "La moneda de 10 vale diez, y con 2 pesos más llegas a doce.",
+   "tip": "La caja trae diez, y con 2 lápices más llegas a doce.",
    "revisada": false,
    "id": "mate2-oa02-7"
   },
@@ -628,7 +628,7 @@
   },
   {
    "oa": "MA02 OA 02",
-   "pregunta": "Javiera tiene 5 monedas de 10 y 3 de 1. ¿Cuánto dinero tiene?",
+   "pregunta": "Javiera tiene 5 bolsas de 10 dulces y 3 sueltos. ¿Cuántos tiene?",
    "opciones": [
     "503",
     "53",
@@ -636,7 +636,7 @@
     "35"
    ],
    "correcta": 1,
-   "tip": "Las monedas de 10 son decenas y las de 1 son unidades: 50 y 3 son 53.",
+   "tip": "Las bolsas de 10 son decenas y los sueltos son unidades: 50 y 3 son 53.",
    "revisada": false,
    "id": "mate2-oa02-14"
   },
@@ -647,7 +647,7 @@
     "40 de 10",
     "4 de 10",
     "5 de 10",
-    "4 de 1"
+    "4 de 100"
    ],
    "correcta": 1,
    "tip": "Cuatro monedas de 10 son cuatro decenas: 40 pesos.",
@@ -818,7 +818,7 @@
   },
   {
    "oa": "MA02 OA 02",
-   "pregunta": "Una alcancía tiene 7 monedas de 10 y 4 de 1. ¿Cuánto hay?",
+   "pregunta": "Hay 7 paquetes de 10 galletas y 4 sueltas. ¿Cuántas hay?",
    "opciones": [
     "74",
     "704",
@@ -826,7 +826,7 @@
     "11"
    ],
    "correcta": 0,
-   "tip": "Siete monedas de 10 son 70 y cuatro de 1 son 4: en total 74.",
+   "tip": "Siete paquetes de 10 son 70 y cuatro sueltas son 4: en total 74.",
    "revisada": false,
    "id": "mate2-oa02-26"
   },
@@ -1853,15 +1853,15 @@
   },
   {
    "oa": "MA02 OA 05",
-   "pregunta": "Ana tiene 3 monedas de 10 y 2 de 5. ¿Cuánto tiene?",
+   "pregunta": "Ana tiene 3 monedas de 10 y 1 de 50. ¿Cuánto tiene?",
    "opciones": [
-    "40 pesos",
-    "32 pesos",
+    "80 pesos",
+    "53 pesos",
     "35 pesos",
-    "50 pesos"
+    "60 pesos"
    ],
    "correcta": 0,
-   "tip": "Las de 10 suman 30 y las de 5 suman 10: 30 + 10 = 40 pesos.",
+   "tip": "Las de 10 suman 30 y con la de 50 son 30 + 50 = 80 pesos.",
    "revisada": false,
    "id": "mate2-oa05-13"
   },
@@ -2901,15 +2901,15 @@
   },
   {
    "oa": "MA02 OA 07",
-   "pregunta": "Javiera tiene 4 monedas de 10 y 7 de 1. ¿Cuánto tiene?",
+   "pregunta": "Javiera tiene 4 bolsas de 10 bolitas y 7 sueltas. ¿Cuántas tiene?",
    "opciones": [
-    "11 pesos",
-    "47 pesos",
-    "407 pesos",
-    "74 pesos"
+    "11 bolitas",
+    "47 bolitas",
+    "407 bolitas",
+    "74 bolitas"
    ],
    "correcta": 1,
-   "tip": "4 monedas de 10 son 4 decenas, 40. Con 7 de 1 son 47 pesos.",
+   "tip": "4 bolsas de 10 son 4 decenas, 40. Con 7 sueltas son 47 bolitas.",
    "revisada": false,
    "id": "mate2-oa07-27"
   },

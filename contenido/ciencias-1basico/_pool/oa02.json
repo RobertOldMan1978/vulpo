@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Cuál de estos animales tiene plumas?",
+   "opciones": [
+    "Una gallina",
+    "Un perro",
+    "Un salmón",
+    "Una culebra"
+   ],
+   "correcta": 0,
+   "tip": "Las plumas cubren el cuerpo de las aves, como la gallina. El perro tiene pelo, y el salmón y la culebra tienen escamas.",
+   "id": "cien1-oa02-1"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Qué cubre el cuerpo de una trucha?",
+   "opciones": [
+    "Escamas",
+    "Plumas",
+    "Pelo",
+    "Lana"
+   ],
+   "correcta": 0,
+   "tip": "La trucha es un pez y su cuerpo está cubierto de escamas, que son placas chiquitas y resbalosas.",
+   "id": "cien1-oa02-2"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "Benjamín toca un animal con pelo. ¿Cuál es?",
+   "opciones": [
+    "Un conejo",
+    "Una gallina",
+    "Una lagartija",
+    "Una trucha"
+   ],
+   "correcta": 0,
+   "tip": "El conejo tiene el cuerpo cubierto de pelo suave. La gallina tiene plumas, y la lagartija y la trucha tienen escamas.",
+   "id": "cien1-oa02-3"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "Matías acaricia una oveja. ¿Qué siente?",
+   "opciones": [
+    "Lana",
+    "Plumas",
+    "Escamas",
+    "Un caparazón"
+   ],
+   "correcta": 0,
+   "tip": "La lana de la oveja es un pelo largo y rizado. Con ella se hacen chalecos y bufandas.",
+   "id": "cien1-oa02-4"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Qué lleva la tortuga sobre la espalda?",
+   "opciones": [
+    "Un caparazón",
+    "Unas plumas",
+    "Unas aletas",
+    "Pelo largo"
+   ],
+   "correcta": 0,
+   "tip": "La tortuga tiene un caparazón duro que protege su cuerpo blando. Puede esconder la cabeza y las patas adentro.",
+   "id": "cien1-oa02-5"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Qué animal tiene alas sin tener plumas?",
+   "opciones": [
+    "El murciélago",
+    "La gallina",
+    "El perro",
+    "La lagartija"
+   ],
+   "correcta": 0,
+   "tip": "El murciélago vuela con alas hechas de piel, sin plumas. Así vemos que no todo lo que vuela tiene plumas.",
+   "id": "cien1-oa02-6"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Con qué vuela un picaflor?",
+   "opciones": [
+    "Con sus alas",
+    "Con sus patas",
+    "Con su cola",
+    "Con su pico"
+   ],
+   "correcta": 0,
+   "tip": "Las alas le sirven al picaflor para volar. Las mueve tan rápido que casi no se ven.",
+   "id": "cien1-oa02-7"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Con qué nada un delfín?",
+   "opciones": [
+    "Con sus aletas",
+    "Con sus patas",
+    "Con sus alas",
+    "Con sus orejas"
+   ],
+   "correcta": 0,
+   "tip": "El delfín se mueve en el agua con sus aletas y su cola. No tiene patas para caminar.",
+   "id": "cien1-oa02-8"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Cómo se mueve una culebra?",
+   "opciones": [
+    "Se arrastra",
+    "Vuela alto",
+    "Camina con patas",
+    "Salta muy lejos"
+   ],
+   "correcta": 0,
+   "tip": "La culebra no tiene patas: avanza arrastrando el cuerpo por el suelo, doblándolo de un lado a otro.",
+   "id": "cien1-oa02-9"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Cuál de estos animales se mueve saltando?",
+   "opciones": [
+    "La rana",
+    "El caracol",
+    "La lombriz",
+    "La culebra"
+   ],
+   "correcta": 0,
+   "tip": "La rana tiene patas traseras largas y fuertes para saltar. El caracol, la lombriz y la culebra se arrastran.",
+   "id": "cien1-oa02-10"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Cómo avanza un caracol?",
+   "opciones": [
+    "Se arrastra lento",
+    "Salta muy alto",
+    "Vuela rápido",
+    "Corre ligero"
+   ],
+   "correcta": 0,
+   "tip": "El caracol no tiene patas. Se arrastra despacito sobre un pie blando y deja un rastro brillante.",
+   "id": "cien1-oa02-11"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "En la plaza, ¿qué animal puede volar?",
+   "opciones": [
+    "Un chincol",
+    "Un gato",
+    "Una vaca",
+    "Un caballo"
+   ],
+   "correcta": 0,
+   "tip": "El chincol es un pájaro y vuela con sus alas. El gato, la vaca y el caballo caminan con cuatro patas.",
+   "id": "cien1-oa02-12"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "El pingüino tiene alas. ¿Para qué las usa?",
+   "opciones": [
+    "Para nadar",
+    "Para volar",
+    "Para cavar",
+    "Para trepar"
+   ],
+   "correcta": 0,
+   "tip": "El pingüino es un ave que no vuela: usa sus alas como remos para nadar rápido en el mar.",
+   "id": "cien1-oa02-13"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Cuántas patas tiene una gallina?",
+   "opciones": [
+    "Dos",
+    "Cuatro",
+    "Seis",
+    "Ninguna"
+   ],
+   "correcta": 0,
+   "tip": "Las aves, como la gallina, caminan sobre dos patas. Sus alas están donde nosotros tenemos los brazos.",
+   "id": "cien1-oa02-14"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Qué usa un caballo para correr?",
+   "opciones": [
+    "Sus cuatro patas",
+    "Sus dos alas",
+    "Sus aletas",
+    "Su larga cola"
+   ],
+   "correcta": 0,
+   "tip": "El caballo corre con sus cuatro patas fuertes. La cola le sirve para espantar moscas, no para correr.",
+   "id": "cien1-oa02-15"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Cuál de estos animales es el más grande?",
+   "opciones": [
+    "La ballena",
+    "El perro",
+    "El gato",
+    "La gallina"
+   ],
+   "correcta": 0,
+   "tip": "La ballena es enorme, muchísimo más grande que el perro, el gato y la gallina.",
+   "id": "cien1-oa02-16"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Cuál de estos animales es el más chico?",
+   "opciones": [
+    "La hormiga",
+    "El conejo",
+    "El caballo",
+    "La oveja"
+   ],
+   "correcta": 0,
+   "tip": "La hormiga es tan chica que cabe en la punta de un dedo. El conejo, la oveja y el caballo son mucho más grandes.",
+   "id": "cien1-oa02-17"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Qué es más grande: un ratón o una vaca?",
+   "opciones": [
+    "La vaca",
+    "El ratón",
+    "Son iguales",
+    "No se sabe"
+   ],
+   "correcta": 0,
+   "tip": "La vaca es muchísimo más grande que el ratón. Un ratón cabe en una mano; una vaca no cabe ni en una pieza.",
+   "id": "cien1-oa02-18"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Quién es más grande: el gatito o su mamá?",
+   "opciones": [
+    "Su mamá",
+    "El gatito",
+    "Son iguales",
+    "No se sabe"
+   ],
+   "correcta": 0,
+   "tip": "El gatito es la cría y todavía está creciendo, así que su mamá es más grande.",
+   "id": "cien1-oa02-19"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Dónde vive un pez?",
+   "opciones": [
+    "En el agua",
+    "En un árbol",
+    "Bajo la tierra",
+    "En el desierto"
+   ],
+   "correcta": 0,
+   "tip": "Los peces viven en el agua de ríos, lagos y mares. Fuera del agua no pueden vivir.",
+   "id": "cien1-oa02-20"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Qué animal vive bajo la tierra?",
+   "opciones": [
+    "La lombriz",
+    "La gaviota",
+    "El caballo",
+    "La trucha"
+   ],
+   "correcta": 0,
+   "tip": "La lombriz cava túneles en la tierra húmeda. La gaviota vive en la costa y la trucha en el agua.",
+   "id": "cien1-oa02-21"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Dónde vive el chanchito de tierra?",
+   "opciones": [
+    "Bajo las piedras",
+    "Dentro del mar",
+    "En nidos altos",
+    "En las nubes"
+   ],
+   "correcta": 0,
+   "tip": "El chanchito de tierra busca lugares húmedos y oscuros, como debajo de piedras, troncos y hojas.",
+   "id": "cien1-oa02-22"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Qué animal vive en el mar?",
+   "opciones": [
+    "El pulpo",
+    "La vaca",
+    "La gallina",
+    "El conejo"
+   ],
+   "correcta": 0,
+   "tip": "El pulpo vive en el mar, entre las rocas del fondo. La vaca, la gallina y el conejo viven en tierra.",
+   "id": "cien1-oa02-23"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Dónde vive el pudú?",
+   "opciones": [
+    "En el bosque",
+    "En el mar",
+    "Bajo la tierra",
+    "En el desierto"
+   ],
+   "correcta": 0,
+   "tip": "El pudú es un ciervo chiquito que vive en los bosques del sur de Chile. No vive en el mar ni bajo la tierra.",
+   "id": "cien1-oa02-24"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "La ballena es enorme. ¿Dónde vive?",
+   "opciones": [
+    "En el mar",
+    "En el bosque",
+    "En un río chico",
+    "En el desierto"
+   ],
+   "correcta": 0,
+   "tip": "La ballena vive en el mar. Solo el mar tiene espacio y agua suficiente para un animal tan grande.",
+   "id": "cien1-oa02-25"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Qué tiene la gallina que el gato no tiene?",
+   "opciones": [
+    "Plumas",
+    "Bigotes",
+    "Patas",
+    "Ojos"
+   ],
+   "correcta": 0,
+   "tip": "La gallina tiene plumas y el gato no. Los dos tienen patas y ojos, y los bigotes son del gato.",
+   "id": "cien1-oa02-26"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿En qué se parecen el perro y el gato?",
+   "opciones": [
+    "Los dos tienen pelo",
+    "Los dos tienen alas",
+    "Los dos tienen aletas",
+    "Los dos ponen huevos"
+   ],
+   "correcta": 0,
+   "tip": "El perro y el gato tienen el cuerpo cubierto de pelo y caminan con cuatro patas.",
+   "id": "cien1-oa02-27"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿En qué se diferencian un pato y un perro?",
+   "opciones": [
+    "El pato tiene alas",
+    "El perro tiene plumas",
+    "El pato tiene pelo",
+    "El perro vuela"
+   ],
+   "correcta": 0,
+   "tip": "El pato tiene alas y plumas; el perro tiene pelo y cuatro patas. El perro no vuela.",
+   "id": "cien1-oa02-28"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Qué animal tiene escamas?",
+   "opciones": [
+    "La lagartija",
+    "La oveja",
+    "El gallo",
+    "El conejo"
+   ],
+   "correcta": 0,
+   "tip": "La lagartija tiene la piel cubierta de escamas secas. La oveja y el conejo tienen pelo, y el gallo plumas.",
+   "id": "cien1-oa02-29"
+  },
+  {
+   "oa": "CN01 OA 02",
+   "pregunta": "¿Qué animal camina, nada y también vuela?",
+   "opciones": [
+    "El pato",
+    "El gato",
+    "La trucha",
+    "La lombriz"
+   ],
+   "correcta": 0,
+   "tip": "El pato camina con sus patas, nada en lagunas y vuela con sus alas. Por eso puede vivir en tierra y en el agua.",
+   "id": "cien1-oa02-30"
+  }
+ ]
+}

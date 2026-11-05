@@ -26,6 +26,7 @@ habrían repetido gratis en cada nivel nuevo.
 
 | Nivel | Edad | Cronómetro | Enunciado | Con fragmento | Voz pregrabada | Campo `visual` |
 |---|---|---|---|---|---|---|
+| **1° básico** | 6-7 | **No** | < **50** | máx **110** | **Sí, y LEE SOLA** | **Sí**, 11 tipos |
 | **2° básico** | 7-8 | **No** | < **70** | máx **160** | **Sí** | **Sí**, 11 tipos |
 | **3° básico** | 8-9 | **No** | < 110 | máx **220** | **Sí** | **Sí**, 11 tipos |
 | **4° básico** | 9-10 | **No** | < 110 | máx **220** | **Sí** | **Sí** |
@@ -40,6 +41,12 @@ Tres consecuencias que la tabla no dice en voz alta:
 - **En 2° el niño (7-8 años) recién consolida la lectura y casi siempre ESCUCHA la pregunta:**
   opciones de 1 a 4 palabras, una sola idea por enunciado, cero dobles negaciones, y nada que
   dependa de VER la grafía (una pregunta de letras o sílabas tiene que poder resolverse oyéndola).
+- **En 1° (6-7 años) muchos niños TODAVÍA NO LEEN:** la voz lee sola la pregunta y las opciones,
+  así que escribes para el OÍDO. Opciones de 1 a 3 palabras o un número, una sola idea por
+  enunciado, nada que haya que recordar de una opción a otra, y las reglas de letras y sílabas de
+  2° aún más estrictas: se nombran las letras («la eme»), nunca se escribe una sílaba que delate la
+  respuesta, y en «¿qué palabra empieza / termina / rima…?» la correcta es la ÚNICA que suena como
+  se pide. Prefiere dibujos (`visual`) en Matemática: contar con emojis es lo natural a esta edad.
 - **Con cronómetro, el largo no es estética: es la restricción.** A 20 segundos, un enunciado
   largo mide velocidad de lectura y no aprendizaje.
 - **Si tu nivel no lleva `visual`, el campo no existe en ese motor y se descartaría en silencio.**

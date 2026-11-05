@@ -1,0 +1,381 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "¿Qué es una cordillera?",
+   "opciones": [
+    "muchos cerros juntos",
+    "un río muy largo",
+    "una playa grande",
+    "una calle con casas"
+   ],
+   "correcta": 0,
+   "tip": "Una cordillera es una fila de cerros y montañas altas, uno al lado del otro.",
+   "id": "hist1-oa10-1"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "¿Cómo es el agua del mar?",
+   "opciones": [
+    "salada",
+    "dulce",
+    "con azúcar",
+    "sin sabor"
+   ],
+   "correcta": 0,
+   "tip": "El agua del mar es salada; por eso no se puede tomar. El agua de los ríos y lagos es dulce.",
+   "id": "hist1-oa10-2"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Lucas va del pueblo a la ciudad. ¿Qué cambia?",
+   "opciones": [
+    "más edificios",
+    "más cerros",
+    "menos autos",
+    "menos calles"
+   ],
+   "correcta": 0,
+   "tip": "Una ciudad es más grande que un pueblo: tiene más calles, más autos y más edificios.",
+   "id": "hist1-oa10-3"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "¿Para qué sirve un camino?",
+   "opciones": [
+    "para ir a otro lugar",
+    "para guardar agua",
+    "para sembrar papas",
+    "para tomar sol"
+   ],
+   "correcta": 0,
+   "tip": "Un camino une lugares: por él se va de una casa a otra, de un pueblo a otro.",
+   "id": "hist1-oa10-4"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Casas, puentes y edificios son…",
+   "opciones": [
+    "construcciones",
+    "vegetación",
+    "cordilleras",
+    "desiertos"
+   ],
+   "correcta": 0,
+   "tip": "Las construcciones son todo lo que las personas levantan: casas, puentes, edificios y caminos.",
+   "id": "hist1-oa10-5"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "¿Quién hace las construcciones?",
+   "opciones": [
+    "las personas",
+    "el viento",
+    "la lluvia",
+    "los ríos"
+   ],
+   "correcta": 0,
+   "tip": "Las construcciones las hacen las personas. El viento y la lluvia no construyen casas.",
+   "id": "hist1-oa10-6"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Árboles, pasto y flores son…",
+   "opciones": [
+    "vegetación",
+    "edificios",
+    "caminos",
+    "desiertos"
+   ],
+   "correcta": 0,
+   "tip": "La vegetación son las plantas de un lugar: árboles, arbustos, pasto y flores.",
+   "id": "hist1-oa10-7"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "En el desierto casi nunca…",
+   "opciones": [
+    "llueve",
+    "hay sol",
+    "hay arena",
+    "hay cerros"
+   ],
+   "correcta": 0,
+   "tip": "En el desierto casi no llueve. Por eso es seco y tiene muy pocas plantas.",
+   "id": "hist1-oa10-8"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "¿Qué hizo la naturaleza, sin las personas?",
+   "opciones": [
+    "un cerro",
+    "un puente",
+    "una calle",
+    "un edificio"
+   ],
+   "correcta": 0,
+   "tip": "Los cerros se formaron solos, hace muchísimo tiempo. Los puentes y las calles los hacen las personas.",
+   "id": "hist1-oa10-9"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "¿Qué construcción sirve para cruzar un río?",
+   "opciones": [
+    "un puente",
+    "una plaza",
+    "un edificio",
+    "una torre"
+   ],
+   "correcta": 0,
+   "tip": "El puente pasa por encima del río, para cruzarlo sin mojarse.",
+   "id": "hist1-oa10-10"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Sofía ve olas, arena y botes. ¿Dónde está?",
+   "opciones": [
+    "en la playa",
+    "en el desierto",
+    "en la cordillera",
+    "en el bosque"
+   ],
+   "correcta": 0,
+   "tip": "Las olas y los botes son del mar; la arena junto al mar es la playa.",
+   "id": "hist1-oa10-11"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Ema ve tierra seca y pocas plantas. ¿Qué es?",
+   "opciones": [
+    "un desierto",
+    "un bosque",
+    "una laguna",
+    "un huerto"
+   ],
+   "correcta": 0,
+   "tip": "Un desierto es un lugar muy seco, donde casi no llueve y crecen muy pocas plantas.",
+   "id": "hist1-oa10-12"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "¿Dónde hay más autos y edificios?",
+   "opciones": [
+    "en la ciudad",
+    "en el desierto",
+    "en la cordillera",
+    "en la playa"
+   ],
+   "correcta": 0,
+   "tip": "En la ciudad vive mucha gente, así que hay muchos autos, calles y edificios.",
+   "id": "hist1-oa10-13"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "El perro está delante de la casa. ¿Dónde está la casa?",
+   "opciones": [
+    "detrás del perro",
+    "delante del perro",
+    "encima del perro",
+    "debajo del perro"
+   ],
+   "correcta": 0,
+   "tip": "Si el perro está delante de la casa, la casa queda detrás del perro.",
+   "id": "hist1-oa10-14"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Ana pinta el sol a la izquierda del cerro. ¿Y el cerro?",
+   "opciones": [
+    "a la derecha del sol",
+    "a la izquierda del sol",
+    "encima del sol",
+    "debajo del sol"
+   ],
+   "correcta": 0,
+   "tip": "Si el sol está a la izquierda del cerro, el cerro queda a la derecha del sol.",
+   "id": "hist1-oa10-15"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "El puente está entre dos cerros. ¿Qué hay a cada lado?",
+   "opciones": [
+    "un cerro",
+    "un puente",
+    "el mar",
+    "una casa"
+   ],
+   "correcta": 0,
+   "tip": "Estar entre dos cosas es tener una a cada lado. A cada lado del puente hay un cerro.",
+   "id": "hist1-oa10-16"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Tomás mira el mar, con el cerro detrás. ¿Ve el cerro?",
+   "opciones": [
+    "no, lo tiene atrás",
+    "sí, lo tiene delante",
+    "sí, lo tiene al lado",
+    "sí, lo tiene arriba"
+   ],
+   "correcta": 0,
+   "tip": "Lo que está detrás de nosotros queda a la espalda, y no lo vemos sin darnos vuelta.",
+   "id": "hist1-oa10-18"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "En el campo hay muchos…",
+   "opciones": [
+    "árboles y animales",
+    "edificios altos",
+    "autos y bocinas",
+    "semáforos"
+   ],
+   "correcta": 0,
+   "tip": "En el campo hay pocas construcciones y mucha vegetación, con animales como vacas y ovejas.",
+   "id": "hist1-oa10-19"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Una calle de tierra que une dos pueblos es un…",
+   "opciones": [
+    "camino",
+    "puente",
+    "edificio",
+    "desierto"
+   ],
+   "correcta": 0,
+   "tip": "Un camino lleva de un lugar a otro; puede ser de tierra o de cemento.",
+   "id": "hist1-oa10-20"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Luis riega el pasto y las plantas. ¿Qué cuida?",
+   "opciones": [
+    "la vegetación",
+    "las construcciones",
+    "el desierto",
+    "la cordillera"
+   ],
+   "correcta": 0,
+   "tip": "Las plantas y el pasto son la vegetación. Al regarlas, Luis las cuida.",
+   "id": "hist1-oa10-21"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Un lugar con agua salada y olas es…",
+   "opciones": [
+    "el mar",
+    "el lago",
+    "el río",
+    "la laguna"
+   ],
+   "correcta": 0,
+   "tip": "El mar tiene agua salada y olas. Los ríos y casi todos los lagos y lagunas tienen agua dulce.",
+   "id": "hist1-oa10-22"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Camila describe su barrio. ¿Qué dato sirve?",
+   "opciones": [
+    "hay casas y una plaza",
+    "le gusta el helado",
+    "tiene seis años",
+    "su perro es café"
+   ],
+   "correcta": 0,
+   "tip": "Para describir un lugar se cuenta lo que hay en él: casas, plazas, calles, árboles.",
+   "id": "hist1-oa10-23"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Antes había pasto; hoy hay casas. ¿Qué cambió?",
+   "opciones": [
+    "el paisaje",
+    "el idioma",
+    "el mes",
+    "el mar"
+   ],
+   "correcta": 0,
+   "tip": "Cuando las personas construyen, el paisaje cambia: donde había pasto, ahora hay casas.",
+   "id": "hist1-oa10-24"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Hay un árbol a la derecha de la casa. ¿Y la casa?",
+   "opciones": [
+    "a la izquierda del árbol",
+    "a la derecha del árbol",
+    "encima del árbol",
+    "debajo del árbol"
+   ],
+   "correcta": 0,
+   "tip": "Si el árbol está a la derecha de la casa, la casa queda a la izquierda del árbol.",
+   "id": "hist1-oa10-25"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Pablo se esconde detrás de un árbol. ¿Lo ven desde delante?",
+   "opciones": [
+    "no, el árbol lo tapa",
+    "sí, se ve entero",
+    "sí, se ve la cara",
+    "sí, porque está arriba"
+   ],
+   "correcta": 0,
+   "tip": "Quien está detrás de algo queda tapado para los que miran desde delante.",
+   "id": "hist1-oa10-26"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "Cerca de Calama hay desierto. ¿Cómo es ahí?",
+   "opciones": [
+    "muy seco y soleado",
+    "muy lluvioso",
+    "lleno de lagos",
+    "con mucha nieve"
+   ],
+   "correcta": 0,
+   "tip": "Calama está en el norte de Chile, junto al desierto, donde casi nunca llueve.",
+   "id": "hist1-oa10-27"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "En Coquimbo, Joaquín ve un puerto. ¿Qué hay cerca?",
+   "opciones": [
+    "el mar",
+    "un desierto de hielo",
+    "una selva",
+    "un volcán con lava"
+   ],
+   "correcta": 0,
+   "tip": "Un puerto es un lugar en la costa donde llegan los barcos, así que siempre está junto al mar.",
+   "id": "hist1-oa10-28"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "En el paisaje, ¿qué está hecho por personas?",
+   "opciones": [
+    "un edificio",
+    "un cerro",
+    "un río",
+    "un volcán"
+   ],
+   "correcta": 0,
+   "tip": "El edificio lo construyeron personas. El cerro, el río y el volcán son parte de la naturaleza.",
+   "id": "hist1-oa10-29"
+  },
+  {
+   "oa": "HI01 OA 10",
+   "pregunta": "¿Cómo se ve la cordillera desde lejos?",
+   "opciones": [
+    "como cerros altos",
+    "como una playa",
+    "como una plaza",
+    "como un camino plano"
+   ],
+   "correcta": 0,
+   "tip": "La cordillera es una fila de cerros muy altos; desde lejos se ven sus cumbres, a veces con nieve.",
+   "id": "hist1-oa10-30"
+  }
+ ]
+}

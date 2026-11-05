@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 """Genera assets/plan/oa-civica.json: {"03":["HI03 OA 11",...], "04":[...], ...}
 
-Los OA del eje "Formacion ciudadana" de cada oa.json de Historia (los 48 civicos, G1: eran 43
-con seis cursos y 2° suma HI02 OA 12-16). El campo por-OA `eje` es el UNICO marcador presente
-en los 7 cursos (la unidad "Formacion ciudadana" solo existe titulada en 4/5/6; en 2/3/7/8 esta
-repartida), y da 48/48 exacto. NO se
+Los OA del eje "Formacion ciudadana" de cada oa.json de Historia (los 51 civicos, G1: eran 43
+con seis cursos, 2° suma HI02 OA 12-16 y 1° HI01 OA 13-15). El campo por-OA `eje` es el UNICO marcador presente
+en los 8 cursos (la unidad "Formacion ciudadana" solo existe titulada en 4/5/6; en 2/3/7/8 esta
+repartida), y da 51/51 exacto. NO se
 parsean los forks (JS): el oa.json es la misma lista y es JSON.
 
 El panel lo cruza client-side: por nivel para la vista de un curso (kimun_prof_dominio filtrado)
@@ -33,10 +33,10 @@ def main():
                 if cod:
                     por_nivel.setdefault(cod[2:4], []).append(cod)   # HI03 OA 11 -> "03"
     total = sum(len(v) for v in por_nivel.values())
-    if niveles != 7:
-        raise SystemExit('Esperaba 7 oa.json de Historia, vi %d' % niveles)
-    if total != 48:
-        raise SystemExit('Esperaba 48 OA civicos (el eje "Formacion ciudadana"), vi %d' % total)
+    if niveles != 8:
+        raise SystemExit('Esperaba 8 oa.json de Historia, vi %d' % niveles)
+    if total != 51:
+        raise SystemExit('Esperaba 51 OA civicos (el eje "Formacion ciudadana"), vi %d' % total)
     for k in por_nivel:
         por_nivel[k] = sorted(por_nivel[k])
     salida = 'assets/plan/oa-civica.json'

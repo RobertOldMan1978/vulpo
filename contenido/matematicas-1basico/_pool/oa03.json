@@ -1,0 +1,502 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "¿Cuántas manzanas hay en el dibujo?",
+   "opciones": [
+    "6",
+    "5",
+    "7",
+    "4"
+   ],
+   "correcta": 0,
+   "tip": "Toca cada manzana una sola vez mientras cuentas: uno, dos… hasta seis.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 1,
+    "porGrupo": 6,
+    "emoji": "🍎"
+   },
+   "id": "mate1-oa03-1"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "Cuenta los peces. ¿Cuántos son?",
+   "opciones": [
+    "9",
+    "8",
+    "10",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Si cuentas cada pez una sola vez llegas a nueve. El seis se parece al nueve dado vuelta, pero es otro número.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 1,
+    "porGrupo": 9,
+    "emoji": "🐟"
+   },
+   "id": "mate1-oa03-2"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "¿Cuántas estrellas ves?",
+   "opciones": [
+    "12",
+    "11",
+    "13",
+    "21"
+   ],
+   "correcta": 0,
+   "tip": "Son doce estrellas. Doce se escribe con un 1 y después un 2.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 1,
+    "porGrupo": 12,
+    "emoji": "⭐"
+   },
+   "id": "mate1-oa03-3"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "¿Qué número dice cuántos globos hay?",
+   "opciones": [
+    "11",
+    "10",
+    "12",
+    "1"
+   ],
+   "correcta": 0,
+   "tip": "Hay once globos. Once se escribe con dos unos juntos: 11.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 1,
+    "porGrupo": 11,
+    "emoji": "🎈"
+   },
+   "id": "mate1-oa03-4"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "Junta los dos grupos. ¿Cuántas flores hay?",
+   "opciones": [
+    "14",
+    "7",
+    "2",
+    "41"
+   ],
+   "correcta": 0,
+   "tip": "Cada grupo tiene siete flores. Si las cuentas todas, una por una, llegas a catorce: un 1 y después un 4.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 2,
+    "porGrupo": 7,
+    "emoji": "🌸"
+   },
+   "id": "mate1-oa03-5"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "Hay pelotas en tres grupos. ¿Cuántas son?",
+   "opciones": [
+    "15",
+    "5",
+    "8",
+    "51"
+   ],
+   "correcta": 0,
+   "tip": "Tres grupos de cinco pelotas: cinco, diez, quince. Quince se escribe con un 1 y después un 5.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 3,
+    "porGrupo": 5,
+    "emoji": "⚽"
+   },
+   "id": "mate1-oa03-6"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "¿Cuántas chinitas hay entre los dos grupos?",
+   "opciones": [
+    "16",
+    "8",
+    "10",
+    "61"
+   ],
+   "correcta": 0,
+   "tip": "Ocho y ocho más: si las cuentas todas llegas a dieciséis, que se escribe 16.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 2,
+    "porGrupo": 8,
+    "emoji": "🐞"
+   },
+   "id": "mate1-oa03-7"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "Cuenta todas las frutillas. ¿Cuántas son?",
+   "opciones": [
+    "18",
+    "9",
+    "11",
+    "81"
+   ],
+   "correcta": 0,
+   "tip": "Dos grupos de nueve frutillas suman dieciocho: un 1 y después un 8.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 2,
+    "porGrupo": 9,
+    "emoji": "🍓"
+   },
+   "id": "mate1-oa03-8"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "¿Cuántos autos están estacionados?",
+   "opciones": [
+    "20",
+    "10",
+    "12",
+    "2"
+   ],
+   "correcta": 0,
+   "tip": "Cada grupo tiene diez autos, y dos veces diez es veinte. Veinte se escribe 20.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 2,
+    "porGrupo": 10,
+    "emoji": "🚗"
+   },
+   "id": "mate1-oa03-9"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "¿Cuántas tortugas hay si las cuentas todas?",
+   "opciones": [
+    "16",
+    "4",
+    "8",
+    "15"
+   ],
+   "correcta": 0,
+   "tip": "Hay cuatro grupos de cuatro tortugas. Contándolas una por una llegas a dieciséis.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 4,
+    "porGrupo": 4,
+    "emoji": "🐢"
+   },
+   "id": "mate1-oa03-10"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "¿Cuántos pasteles hay en los cuatro grupos?",
+   "opciones": [
+    "20",
+    "5",
+    "9",
+    "19"
+   ],
+   "correcta": 0,
+   "tip": "Cuatro grupos de cinco: cinco, diez, quince, veinte.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 4,
+    "porGrupo": 5,
+    "emoji": "🧁"
+   },
+   "id": "mate1-oa03-11"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "Cuenta los tres grupos. ¿Cuántos plátanos son?",
+   "opciones": [
+    "18",
+    "6",
+    "9",
+    "17"
+   ],
+   "correcta": 0,
+   "tip": "Seis, doce, dieciocho: tres grupos de seis plátanos son dieciocho.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 3,
+    "porGrupo": 6,
+    "emoji": "🍌"
+   },
+   "id": "mate1-oa03-12"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "¿Cuántos patos nadan en la laguna?",
+   "opciones": [
+    "12",
+    "6",
+    "8",
+    "21"
+   ],
+   "correcta": 0,
+   "tip": "Dos grupos de seis patos son doce. Doce se escribe con un 1 y luego un 2, no al revés.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 2,
+    "porGrupo": 6,
+    "emoji": "🦆"
+   },
+   "id": "mate1-oa03-13"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "¿Cuántos perritos ves en el dibujo?",
+   "opciones": [
+    "5",
+    "4",
+    "6",
+    "3"
+   ],
+   "correcta": 0,
+   "tip": "Cuenta tocando cada perrito una vez: son cinco, como los dedos de una mano.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 1,
+    "porGrupo": 5,
+    "emoji": "🐶"
+   },
+   "id": "mate1-oa03-14"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "El plato no tiene galletas. ¿Cuántas hay?",
+   "opciones": [
+    "0",
+    "1",
+    "10",
+    "2"
+   ],
+   "correcta": 0,
+   "tip": "Cuando no hay ninguna, el número es cero, y se escribe 0.",
+   "id": "mate1-oa03-15"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "La pecera está vacía. ¿Cuántos peces tiene?",
+   "opciones": [
+    "0",
+    "1",
+    "6",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "Vacía quiere decir que no hay ninguno. Ninguno es cero.",
+   "id": "mate1-oa03-16"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "Ana abre sus dos manos. ¿Cuántos dedos muestra?",
+   "opciones": [
+    "10",
+    "2",
+    "5",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "Cada mano tiene cinco dedos: cinco y cinco más son diez.",
+   "id": "mate1-oa03-17"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "Diego muestra una mano y dos dedos. ¿Cuánto es?",
+   "opciones": [
+    "7",
+    "5",
+    "2",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Una mano abierta son cinco dedos; con dos dedos más llegas a siete.",
+   "id": "mate1-oa03-18"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "Sofía muestra dos manos y un dedo. ¿Cuánto es?",
+   "opciones": [
+    "11",
+    "10",
+    "3",
+    "12"
+   ],
+   "correcta": 0,
+   "tip": "Dos manos son diez dedos, y un dedo más hace once.",
+   "id": "mate1-oa03-19"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "Un número tiene un 1 y después un 5. ¿Cuál es?",
+   "opciones": [
+    "15",
+    "51",
+    "6",
+    "14"
+   ],
+   "correcta": 0,
+   "tip": "Un 1 y después un 5 se lee quince. Al revés, 51, es otro número mucho mayor.",
+   "id": "mate1-oa03-20"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "Escribo un 2 y después un 0. ¿Qué número es?",
+   "opciones": [
+    "20",
+    "2",
+    "12",
+    "22"
+   ],
+   "correcta": 0,
+   "tip": "Un 2 seguido de un 0 se lee veinte. El cero no se borra: sin él quedaría solo un 2.",
+   "id": "mate1-oa03-21"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "Matías anota un 1 y luego un 8. ¿Qué número es?",
+   "opciones": [
+    "18",
+    "81",
+    "9",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "Un 1 y luego un 8 es dieciocho. No se suman: 1 más 8 sería nueve, que es otra cosa.",
+   "id": "mate1-oa03-22"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "¿Qué números usas para escribir el diecinueve?",
+   "opciones": [
+    "1 y luego 9",
+    "9 y luego 1",
+    "solo el 9",
+    "1 y luego 0"
+   ],
+   "correcta": 0,
+   "tip": "Diecinueve es diez y nueve: primero va el 1 y después el 9.",
+   "id": "mate1-oa03-23"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "Para escribir el once, ¿qué pones?",
+   "opciones": [
+    "1 y luego 1",
+    "1 y luego 0",
+    "solo el 1",
+    "1 y luego 2"
+   ],
+   "correcta": 0,
+   "tip": "Once se escribe con dos unos juntos: 11. Un 1 y un 0 forman el diez.",
+   "id": "mate1-oa03-24"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "Llega un globo más. ¿Cuántos hay ahora?",
+   "opciones": [
+    "9",
+    "8",
+    "7",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "En el dibujo hay ocho globos. Uno más que ocho es nueve.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 1,
+    "porGrupo": 8,
+    "emoji": "🎈"
+   },
+   "id": "mate1-oa03-25"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "Se va un pez. ¿Cuántos quedan?",
+   "opciones": [
+    "9",
+    "10",
+    "11",
+    "1"
+   ],
+   "correcta": 0,
+   "tip": "En el dibujo hay diez peces. Uno menos que diez es nueve.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 1,
+    "porGrupo": 10,
+    "emoji": "🐟"
+   },
+   "id": "mate1-oa03-26"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "Pongo una estrella más. ¿Cuántas habrá?",
+   "opciones": [
+    "12",
+    "11",
+    "10",
+    "13"
+   ],
+   "correcta": 0,
+   "tip": "En el dibujo hay once estrellas. Una más que once es doce.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 1,
+    "porGrupo": 11,
+    "emoji": "⭐"
+   },
+   "id": "mate1-oa03-27"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "Un cartón de 10 huevos y 3 sueltos. ¿Cuántos son?",
+   "opciones": [
+    "13",
+    "10",
+    "4",
+    "31"
+   ],
+   "correcta": 0,
+   "tip": "Diez huevos del cartón y tres sueltos son trece: un 1 por el diez y un 3 por los sueltos.",
+   "id": "mate1-oa03-28"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "10 bolitas en la bolsa y 7 sueltas. ¿Cuántas son?",
+   "opciones": [
+    "17",
+    "8",
+    "71",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "Diez en la bolsa y siete sueltas son diecisiete. Se escribe 17, no 71.",
+   "id": "mate1-oa03-29"
+  },
+  {
+   "oa": "MA01 OA 03",
+   "pregunta": "Se come una manzana. ¿Cuántas quedan?",
+   "opciones": [
+    "4",
+    "5",
+    "3",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "En el dibujo hay cinco manzanas. Una menos que cinco es cuatro.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 1,
+    "porGrupo": 5,
+    "emoji": "🍎"
+   },
+   "id": "mate1-oa03-30"
+  }
+ ]
+}

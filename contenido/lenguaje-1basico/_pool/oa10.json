@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Abuela: llegué bien al campo. Hay muchas vacas. Te quiere, Matías.» ¿Dónde está Matías?",
+   "opciones": [
+    "En el campo",
+    "En la playa",
+    "En la ciudad",
+    "En el colegio"
+   ],
+   "correcta": 0,
+   "tip": "La carta lo dice: Matías llegó al campo. Las vacas también dan una pista.",
+   "id": "leng1-oa10-1"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Querida Ana: gracias por el libro. Tu prima Rosa.» ¿Qué le regaló Ana a Rosa?",
+   "opciones": [
+    "Un libro",
+    "Un juguete",
+    "Una flor",
+    "Un dulce"
+   ],
+   "correcta": 0,
+   "tip": "Rosa le da las gracias a Ana por el libro: ese fue el regalo.",
+   "id": "leng1-oa10-2"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Tío Juan: ven el sábado a mi cumpleaños. Camila.» ¿Cuándo es la fiesta?",
+   "opciones": [
+    "El sábado",
+    "El domingo",
+    "El lunes",
+    "El viernes"
+   ],
+   "correcta": 0,
+   "tip": "La nota dice que vaya el sábado. Ese día es el cumpleaños de Camila.",
+   "id": "leng1-oa10-3"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Papá: el gato ya comió, no le des más. Sofía.» ¿Qué pide Sofía?",
+   "opciones": [
+    "No darle comida",
+    "Darle más comida",
+    "Bañar al gato",
+    "Sacar al gato"
+   ],
+   "correcta": 0,
+   "tip": "Sofía avisa que el gato ya comió y pide que no le den más. Darle más es lo contrario.",
+   "id": "leng1-oa10-4"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Diego: tu polerón quedó en mi casa. Benja.» ¿Qué olvidó Diego?",
+   "opciones": [
+    "Su polerón",
+    "Su mochila",
+    "Su pelota",
+    "Su gorro"
+   ],
+   "correcta": 0,
+   "tip": "La nota dice que el polerón de Diego quedó en la casa de Benja.",
+   "id": "leng1-oa10-5"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Mamá: fui a la plaza con Pedro. Vuelvo a las cinco. Tomás.» ¿Adónde fue Tomás?",
+   "opciones": [
+    "A la plaza",
+    "Al colegio",
+    "A la playa",
+    "Al cine"
+   ],
+   "correcta": 0,
+   "tip": "La nota lo dice: fue a la plaza con Pedro.",
+   "id": "leng1-oa10-6"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Querido Nico: te mando calcetines para el frío. Tu abuela.» ¿Qué le mandó?",
+   "opciones": [
+    "Calcetines",
+    "Un gorro",
+    "Unos guantes",
+    "Una bufanda"
+   ],
+   "correcta": 0,
+   "tip": "La abuela le cuenta a Nico que le manda calcetines. Las otras cosas también abrigan, pero no las nombra.",
+   "id": "leng1-oa10-7"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Mañana es el paseo. Traer colación y gorro. Profesora Ana.» ¿Qué hay que llevar?",
+   "opciones": [
+    "Colación y gorro",
+    "Lápiz y cuaderno",
+    "Pelota y paleta",
+    "Toalla y bloqueador"
+   ],
+   "correcta": 0,
+   "tip": "La nota de la profesora dice qué llevar al paseo: colación y gorro.",
+   "id": "leng1-oa10-8"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Para lavarte las manos: mójalas, ponles jabón y frota.» ¿Qué va primero?",
+   "opciones": [
+    "Mojarlas",
+    "Ponerles jabón",
+    "Frotarlas",
+    "Secarlas"
+   ],
+   "correcta": 0,
+   "tip": "Las instrucciones van en orden. Primero se mojan las manos, después va el jabón y al final se frota.",
+   "id": "leng1-oa10-9"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Para hacer un barco: dobla la hoja, dobla las puntas y abre.» ¿Qué se necesita?",
+   "opciones": [
+    "Una hoja",
+    "Unas tijeras",
+    "Pegamento",
+    "Una regla"
+   ],
+   "correcta": 0,
+   "tip": "Las instrucciones solo hablan de doblar una hoja. No dicen que haya que cortar ni pegar.",
+   "id": "leng1-oa10-10"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Riega la planta dos veces por semana.» ¿Cuántas veces se riega?",
+   "opciones": [
+    "Dos veces",
+    "Una vez",
+    "Tres veces",
+    "Cada día"
+   ],
+   "correcta": 0,
+   "tip": "La instrucción dice dos veces por semana: ni una vez ni todos los días.",
+   "id": "leng1-oa10-11"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Cruza la calle siempre con un adulto.» ¿Con quién se cruza?",
+   "opciones": [
+    "Con un adulto",
+    "Con un amigo",
+    "Con el perro",
+    "Con nadie"
+   ],
+   "correcta": 0,
+   "tip": "La instrucción dice que se cruza con un adulto, para cruzar seguro.",
+   "id": "leng1-oa10-12"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Para hacer jugo: corta la naranja, apriétala y sírvelo.» ¿Qué va al final?",
+   "opciones": [
+    "Servirlo",
+    "Cortarla",
+    "Apretarla",
+    "Lavarla"
+   ],
+   "correcta": 0,
+   "tip": "Primero se corta la naranja, después se aprieta y al final se sirve el jugo.",
+   "id": "leng1-oa10-13"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Para plantar un poroto: ponlo en algodón y riégalo.» ¿Dónde va el poroto?",
+   "opciones": [
+    "En algodón",
+    "En un plato",
+    "En una caja",
+    "En el horno"
+   ],
+   "correcta": 0,
+   "tip": "Las instrucciones dicen que el poroto va en algodón mojado, y así puede brotar.",
+   "id": "leng1-oa10-14"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Las abejas hacen miel con el néctar de las flores.» ¿Qué hacen las abejas?",
+   "opciones": [
+    "Miel",
+    "Leche",
+    "Pan",
+    "Queso"
+   ],
+   "correcta": 0,
+   "tip": "El artículo dice que las abejas hacen miel, con lo que sacan de las flores.",
+   "id": "leng1-oa10-15"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «El pingüino es un ave, pero no puede volar.» ¿Qué NO puede hacer?",
+   "opciones": [
+    "Volar",
+    "Nadar",
+    "Caminar",
+    "Comer"
+   ],
+   "correcta": 0,
+   "tip": "El artículo dice que el pingüino no vuela. Sí nada, camina y come.",
+   "id": "leng1-oa10-16"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Las jirafas tienen el cuello largo para comer hojas altas.» ¿Para qué es su cuello?",
+   "opciones": [
+    "Comer hojas altas",
+    "Dormir de pie",
+    "Correr más rápido",
+    "Tomar agua"
+   ],
+   "correcta": 0,
+   "tip": "El artículo explica para qué sirve el cuello largo: para alcanzar las hojas de arriba.",
+   "id": "leng1-oa10-17"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Los gatos duermen muchas horas al día.» ¿Cuánto duermen?",
+   "opciones": [
+    "Muchas horas",
+    "Pocas horas",
+    "Solo un rato",
+    "Casi nada"
+   ],
+   "correcta": 0,
+   "tip": "El artículo dice que los gatos duermen muchas horas. Por eso se les ve tanto echados.",
+   "id": "leng1-oa10-18"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «La ballena azul es el animal más grande del mundo.» ¿Cuál es el más grande?",
+   "opciones": [
+    "La ballena azul",
+    "El elefante",
+    "La jirafa",
+    "El tiburón blanco"
+   ],
+   "correcta": 0,
+   "tip": "El elefante es el más grande de la tierra, pero el artículo dice que la ballena azul es más grande todavía.",
+   "id": "leng1-oa10-19"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Muchas ranas nacen en el agua y luego saltan a la tierra.» ¿Dónde nacen?",
+   "opciones": [
+    "En el agua",
+    "En la tierra",
+    "En un árbol",
+    "En una cueva"
+   ],
+   "correcta": 0,
+   "tip": "El artículo dice que muchas ranas nacen en el agua. A la tierra llegan después.",
+   "id": "leng1-oa10-20"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Las hormigas viven juntas en un hormiguero.» ¿Dónde viven?",
+   "opciones": [
+    "En un hormiguero",
+    "En un nido",
+    "En una colmena",
+    "En una cueva"
+   ],
+   "correcta": 0,
+   "tip": "El artículo lo dice: viven en un hormiguero. La colmena es la casa de las abejas.",
+   "id": "leng1-oa10-21"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Las plantas necesitan agua para vivir.» ¿Qué pasa sin agua?",
+   "opciones": [
+    "Se secan",
+    "Crecen más",
+    "Dan más flores",
+    "Se ponen más verdes"
+   ],
+   "correcta": 0,
+   "tip": "El texto no lo dice, pero se entiende: si una planta necesita agua y no la tiene, se seca.",
+   "id": "leng1-oa10-22"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «El invierno es la estación más fría del año.» ¿Qué ropa conviene?",
+   "opciones": [
+    "Un abrigo",
+    "Un traje de baño",
+    "Unas sandalias",
+    "Una polera"
+   ],
+   "correcta": 0,
+   "tip": "Si el invierno es frío, hay que abrigarse. Eso no lo dice el texto: se deduce.",
+   "id": "leng1-oa10-23"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «El huevo de gallina se rompe si se cae.» ¿Cómo hay que llevarlo?",
+   "opciones": [
+    "Con cuidado",
+    "Tirándolo",
+    "Muy rápido",
+    "Corriendo"
+   ],
+   "correcta": 0,
+   "tip": "Si el huevo se rompe al caer, hay que llevarlo con cuidado. El texto da la pista.",
+   "id": "leng1-oa10-24"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Los osos polares viven donde hay hielo y nieve.» ¿Cómo es ese lugar?",
+   "opciones": [
+    "Muy frío",
+    "Muy caluroso",
+    "Muy lluvioso",
+    "Muy arenoso"
+   ],
+   "correcta": 0,
+   "tip": "Donde hay hielo y nieve hace mucho frío, aunque el texto no use esa palabra.",
+   "id": "leng1-oa10-25"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «El erizo de mar tiene espinas para protegerse.» ¿Para qué son las espinas?",
+   "opciones": [
+    "Para protegerse",
+    "Para nadar rápido",
+    "Para comer algas",
+    "Para verse bonito"
+   ],
+   "correcta": 0,
+   "tip": "El artículo dice que las espinas lo protegen: así nadie se lo come fácilmente.",
+   "id": "leng1-oa10-26"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Los camellos aguantan muchos días sin tomar agua.» ¿Dónde les sirve eso?",
+   "opciones": [
+    "En el desierto",
+    "En el mar",
+    "En la nieve",
+    "En un río"
+   ],
+   "correcta": 0,
+   "tip": "En el desierto casi no hay agua. Aguantar sin tomarla les sirve justo ahí.",
+   "id": "leng1-oa10-27"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "¿Cuál es una opinión sobre los perros?",
+   "opciones": [
+    "Son los más lindos",
+    "Tienen cuatro patas",
+    "Ladran",
+    "Tienen pelo"
+   ],
+   "correcta": 0,
+   "tip": "Decir que son los más lindos es lo que alguien piensa: es una opinión. Tener cuatro patas es un dato que se puede comprobar.",
+   "id": "leng1-oa10-28"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Ema leyó sobre volcanes. ¿Cuál es una opinión?",
+   "opciones": [
+    "Son muy bonitos",
+    "Echan lava",
+    "Hay en Chile",
+    "Son montañas"
+   ],
+   "correcta": 0,
+   "tip": "Que sean bonitos es lo que piensa Ema: otra persona podría pensar distinto. Lo demás son datos del artículo.",
+   "id": "leng1-oa10-29"
+  },
+  {
+   "oa": "LE01 OA 10",
+   "pregunta": "Escucha: «Las vacas dan leche, y con la leche se hace queso.» ¿De dónde sale el queso?",
+   "opciones": [
+    "De la leche",
+    "Del pasto",
+    "De la harina",
+    "Del agua"
+   ],
+   "correcta": 0,
+   "tip": "El artículo dice que el queso se hace con la leche que dan las vacas.",
+   "id": "leng1-oa10-30"
+  }
+ ]
+}

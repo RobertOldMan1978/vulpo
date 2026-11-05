@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "La ventana deja ver afuera. ¿De qué es?",
+   "opciones": [
+    "De vidrio",
+    "De madera",
+    "De cartón",
+    "De lana"
+   ],
+   "correcta": 0,
+   "tip": "El vidrio es transparente: deja pasar la luz y podemos ver a través de él. La madera y el cartón no dejan ver.",
+   "id": "cien1-oa08-1"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "El vidrio deja ver a través. ¿Cómo es?",
+   "opciones": [
+    "Transparente",
+    "Flexible",
+    "Suave",
+    "Áspero"
+   ],
+   "correcta": 0,
+   "tip": "Un material transparente deja pasar la luz y se ve lo que hay detrás, como el vidrio de una ventana.",
+   "id": "cien1-oa08-2"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "La capa de lluvia es de plástico. ¿Por qué?",
+   "opciones": [
+    "No deja pasar agua",
+    "Se ve a través",
+    "Es muy pesada",
+    "Se rompe con agua"
+   ],
+   "correcta": 0,
+   "tip": "El plástico es impermeable: el agua resbala y no lo atraviesa. Así la ropa de abajo queda seca.",
+   "id": "cien1-oa08-3"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "El elástico se estira y vuelve. ¿De qué es?",
+   "opciones": [
+    "De goma",
+    "De vidrio",
+    "De madera",
+    "De piedra"
+   ],
+   "correcta": 0,
+   "tip": "La goma es flexible: se estira o se dobla y después vuelve a su forma.",
+   "id": "cien1-oa08-4"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "¿Cuál de estos se dobla sin romperse?",
+   "opciones": [
+    "Una goma",
+    "Un vaso de vidrio",
+    "Una taza de greda",
+    "Un ladrillo"
+   ],
+   "correcta": 0,
+   "tip": "La goma es flexible, por eso se puede doblar sin que se rompa. El vidrio, la greda y el ladrillo se quiebran.",
+   "id": "cien1-oa08-5"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "La llave de la puerta es de metal. ¿Cómo es?",
+   "opciones": [
+    "Dura",
+    "Blanda",
+    "Esponjosa",
+    "Elástica"
+   ],
+   "correcta": 0,
+   "tip": "La llave es de metal duro: no se dobla con la mano y así puede abrir la chapa muchas veces.",
+   "id": "cien1-oa08-6"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "La silla es de madera. ¿De dónde sale?",
+   "opciones": [
+    "De los árboles",
+    "De las piedras",
+    "De las ovejas",
+    "Del mar"
+   ],
+   "correcta": 0,
+   "tip": "La madera sale de los troncos de los árboles. Con ella se hacen muebles, puertas y lápices.",
+   "id": "cien1-oa08-7"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "¿De dónde sale la lana?",
+   "opciones": [
+    "De las ovejas",
+    "De los árboles",
+    "De las rocas",
+    "De los peces"
+   ],
+   "correcta": 0,
+   "tip": "La lana es el pelo de las ovejas. Se les corta y se hila para tejer chalecos y bufandas.",
+   "id": "cien1-oa08-8"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "¿Por qué la bufanda es de lana?",
+   "opciones": [
+    "Abriga",
+    "Es transparente",
+    "Es impermeable",
+    "Brilla mucho"
+   ],
+   "correcta": 0,
+   "tip": "La lana es abrigadora: guarda el calor del cuerpo. Por eso se usa en bufandas, gorros y chalecos.",
+   "id": "cien1-oa08-9"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "¿Para qué se usa el papel?",
+   "opciones": [
+    "Para escribir",
+    "Para hacer ollas",
+    "Para hacer clavos",
+    "Para hacer ventanas"
+   ],
+   "correcta": 0,
+   "tip": "En el papel escribimos y dibujamos. Las ollas y los clavos son de metal, y las ventanas de vidrio.",
+   "id": "cien1-oa08-10"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "¿Por qué muchas ollas son de metal?",
+   "opciones": [
+    "Aguantan el fuego",
+    "Son transparentes",
+    "Son muy blandas",
+    "Se doblan fácil"
+   ],
+   "correcta": 0,
+   "tip": "El metal aguanta el calor del fuego sin quemarse ni derretirse. Por eso se usa para cocinar.",
+   "id": "cien1-oa08-11"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "¿Cuál de estos es de metal?",
+   "opciones": [
+    "Un clavo",
+    "Un calcetín",
+    "Un diario",
+    "Una servilleta"
+   ],
+   "correcta": 0,
+   "tip": "El clavo es de metal, duro y firme. El calcetín es de tela y el diario y la servilleta, de papel.",
+   "id": "cien1-oa08-12"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "¿Con qué material se hace un fósforo?",
+   "opciones": [
+    "Con madera",
+    "Con metal",
+    "Con goma",
+    "Con vidrio"
+   ],
+   "correcta": 0,
+   "tip": "El palito del fósforo es de madera, que sale de los árboles. El metal, la goma y el vidrio no se usan para eso.",
+   "id": "cien1-oa08-13"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "¿De qué se hacen los ladrillos?",
+   "opciones": [
+    "De greda",
+    "De lana",
+    "De papel",
+    "De vidrio"
+   ],
+   "correcta": 0,
+   "tip": "Los ladrillos se hacen con greda, que se moldea y se cuece en un horno hasta quedar dura.",
+   "id": "cien1-oa08-14"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "El lobo no botó la casa de ladrillo. ¿Por qué?",
+   "opciones": [
+    "Es firme y dura",
+    "Es muy liviana",
+    "Es muy blanda",
+    "Se dobla fácil"
+   ],
+   "correcta": 0,
+   "tip": "El ladrillo es un material duro y firme: aguanta el viento y los golpes. Por eso se usa para hacer casas.",
+   "id": "cien1-oa08-15"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "¿Con qué se seca mejor una mesa mojada?",
+   "opciones": [
+    "Un paño de tela",
+    "Una bolsa plástica",
+    "Un plato de vidrio",
+    "Una tapa de metal"
+   ],
+   "correcta": 0,
+   "tip": "La tela absorbe el agua: la chupa y la guarda. El plástico, el vidrio y el metal no absorben.",
+   "id": "cien1-oa08-16"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "¿Cuál de estos flota en el agua?",
+   "opciones": [
+    "Un corcho",
+    "Una piedra",
+    "Un clavo",
+    "Una moneda"
+   ],
+   "correcta": 0,
+   "tip": "El corcho es muy liviano y flota. La piedra, el clavo y la moneda se hunden.",
+   "id": "cien1-oa08-17"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "¿Cuál va al reciclaje de vidrio?",
+   "opciones": [
+    "Un frasco de mermelada",
+    "Una lata de bebida",
+    "Una caja de leche",
+    "Un diario viejo"
+   ],
+   "correcta": 0,
+   "tip": "El frasco de mermelada es de vidrio. La lata es de metal, la caja de leche es de cartón y el diario es de papel.",
+   "id": "cien1-oa08-18"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "¿Qué parte de la bicicleta es de goma?",
+   "opciones": [
+    "Las ruedas",
+    "El marco",
+    "La cadena",
+    "El timbre"
+   ],
+   "correcta": 0,
+   "tip": "Las ruedas tienen neumáticos de goma, que es flexible y amortigua los saltos. La cadena y el timbre son de metal.",
+   "id": "cien1-oa08-19"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "La polera es de tela. ¿Cómo se siente?",
+   "opciones": [
+    "Suave",
+    "Dura",
+    "Transparente",
+    "Áspera"
+   ],
+   "correcta": 0,
+   "tip": "La tela de algodón es suave y flexible, por eso es cómoda para vestirse.",
+   "id": "cien1-oa08-20"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "¿Por qué hay que cuidar un vaso de vidrio?",
+   "opciones": [
+    "Se puede quebrar",
+    "Se estira mucho",
+    "Se derrite al tocarlo",
+    "Se pone blando"
+   ],
+   "correcta": 0,
+   "tip": "El vidrio es frágil: si se cae o recibe un golpe, se puede quebrar en pedazos.",
+   "id": "cien1-oa08-21"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "La cuchara de metal está limpia. ¿Cómo se ve?",
+   "opciones": [
+    "Brillante",
+    "Peluda",
+    "Transparente",
+    "Esponjosa"
+   ],
+   "correcta": 0,
+   "tip": "Muchos metales limpios brillan cuando les llega la luz, como una cuchara o una olla nueva.",
+   "id": "cien1-oa08-22"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "Una mesa de madera y metal: ¿cuántos materiales?",
+   "opciones": [
+    "Dos",
+    "Uno",
+    "Tres",
+    "Cuatro"
+   ],
+   "correcta": 0,
+   "tip": "Un objeto puede tener varios materiales. Esta mesa tiene dos: madera y metal.",
+   "id": "cien1-oa08-23"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "¿De qué material es una moneda?",
+   "opciones": [
+    "De metal",
+    "De papel",
+    "De madera",
+    "De vidrio"
+   ],
+   "correcta": 0,
+   "tip": "Las monedas son de metal: duras y resistentes, por eso duran años pasando de mano en mano.",
+   "id": "cien1-oa08-24"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "Las hojas del cuaderno, ¿de qué son?",
+   "opciones": [
+    "De papel",
+    "De metal",
+    "De vidrio",
+    "De goma"
+   ],
+   "correcta": 0,
+   "tip": "Las hojas del cuaderno son de papel, que es liviano y sirve para escribir y dibujar.",
+   "id": "cien1-oa08-25"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "¿Cuál de estos es blando?",
+   "opciones": [
+    "Un cojín",
+    "Una piedra",
+    "Una olla",
+    "Un ladrillo"
+   ],
+   "correcta": 0,
+   "tip": "El cojín es blando: se hunde al apretarlo. La piedra, la olla y el ladrillo son duros.",
+   "id": "cien1-oa08-26"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "¿Qué tienen en común un clavo y una moneda?",
+   "opciones": [
+    "Son de metal",
+    "Son de madera",
+    "Son blandos",
+    "Son transparentes"
+   ],
+   "correcta": 0,
+   "tip": "El clavo y la moneda son de metal. Por eso los dos son duros y no se ven a través.",
+   "id": "cien1-oa08-27"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "¿Cuál de estos pesa menos?",
+   "opciones": [
+    "Una pluma de ave",
+    "Una piedra",
+    "Un ladrillo",
+    "Una olla"
+   ],
+   "correcta": 0,
+   "tip": "La pluma es liviana: casi no pesa. La piedra, el ladrillo y la olla son mucho más pesados.",
+   "id": "cien1-oa08-28"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "¿Qué material se corta con tijeras de colegio?",
+   "opciones": [
+    "El papel",
+    "El vidrio",
+    "La piedra",
+    "El ladrillo"
+   ],
+   "correcta": 0,
+   "tip": "El papel es delgado y blando, así que se corta fácil con tijeras. El vidrio, la piedra y el ladrillo no.",
+   "id": "cien1-oa08-29"
+  },
+  {
+   "oa": "CN01 OA 08",
+   "pregunta": "¿De qué son las cajas de zapatos?",
+   "opciones": [
+    "De cartón",
+    "De vidrio",
+    "De metal",
+    "De lana"
+   ],
+   "correcta": 0,
+   "tip": "Las cajas de zapatos son de cartón, que es firme y liviano. Se puede reciclar junto con el papel.",
+   "id": "cien1-oa08-30"
+  }
+ ]
+}

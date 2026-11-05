@@ -1,0 +1,185 @@
+{
+ "lecciones": [
+  {
+   "id": "hi1-tiempo",
+   "oa": "HI01 OA 01",
+   "titulo": "Antes de empezar: Yo y el paso del tiempo",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "epoca": "Desde que naciste hasta hoy",
+      "lugar": "Tu casa y tu sala de clases"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Este capítulo es sobre ti. Y es sobre el tiempo. Pasa muy cerca: en tu casa y en tu sala. El tiempo no se ve. Pero se nota. Los días pasan, uno detrás de otro."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "items": [
+       {
+        "titulo": "Antes"
+       },
+       {
+        "titulo": "Ahora"
+       },
+       {
+        "titulo": "Después"
+       }
+      ],
+      "etiqueta": "El tiempo siempre avanza",
+      "desc": "Tres momentos en orden: antes, ahora y después"
+     },
+     "intro": "Primero pasa una cosa. Luego pasa otra. El tiempo nunca vuelve atrás."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a usar el calendario. Vas a ordenar las cosas que pasan. Y vas a descubrir qué te hace ser tú."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "hi1-familia",
+   "oa": "HI01 OA 04",
+   "titulo": "Antes de empezar: Mi familia y mi comunidad",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "epoca": "Desde tus abuelos hasta hoy",
+      "lugar": "Tu casa, tu escuela y tu barrio"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Nadie vive solo. Vivimos con otras personas. En la casa, en la escuela y en el barrio. Hay familias grandes y familias chicas. Lo que las une es que se quieren y se cuidan."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "items": [
+       {
+        "titulo": "Tu familia"
+       },
+       {
+        "titulo": "Tu escuela"
+       },
+       {
+        "titulo": "Tu barrio"
+       }
+      ],
+      "etiqueta": "Cada vez más personas",
+      "desc": "Tres grupos, del más cercano al más grande: tu familia, tu escuela y tu barrio"
+     },
+     "intro": "Primero está tu familia. Después, tu escuela. Y alrededor, todo tu barrio."
+    },
+    {
+     "t": "texto",
+     "md": "Tu familia tiene una historia. Empezó antes de que tú nacieras. En este capítulo vas a conocer esas historias. Vas a ver quiénes trabajan en tu barrio. Y vas a conocer las normas y las personas que nos cuidan."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "hi1-chile",
+   "oa": "HI01 OA 08",
+   "titulo": "Antes de empezar: Mapas, paisajes y personas de Chile",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "lugar": "Tu barrio, tu ciudad y todo Chile"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Este capítulo es sobre los lugares. Empieza muy cerca de ti, en tu barrio. Y termina en todo Chile."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "items": [
+       {
+        "titulo": "Tu sala"
+       },
+       {
+        "titulo": "Tu barrio"
+       },
+       {
+        "titulo": "Tu ciudad o pueblo"
+       },
+       {
+        "titulo": "Chile"
+       }
+      ],
+      "etiqueta": "De lo más cerca a lo más lejos",
+      "desc": "Cuatro lugares, del más chico al más grande: tu sala, tu barrio, tu ciudad o pueblo, y Chile"
+     },
+     "intro": "Cada lugar es más grande que el anterior. Vas a aprender a encontrarlos."
+    },
+    {
+     "t": "texto",
+     "md": "Vas a leer mapas y planos. Vas a buscar Chile y mirar sus paisajes. También vas a conocer personas que hicieron mucho por Chile. Algunas vivieron hace mucho tiempo. Otras viven hoy."
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "hi1-mundo",
+   "oa": "HI01 OA 05",
+   "titulo": "Antes de empezar: Chile y los niños del mundo",
+   "bloques": [
+    {
+     "t": "diagrama",
+     "kind": "marco",
+     "params": {
+      "epoca": "Fiestas que vuelven cada año",
+      "lugar": "Chile, de norte a sur, y el mundo"
+     }
+    },
+    {
+     "t": "texto",
+     "md": "Chile tiene sus fiestas, su música, sus comidas y sus juegos. En el norte, en el centro y en el sur hay costumbres distintas. Cada año las volvemos a celebrar."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "items": [
+       {
+        "titulo": "En Chile",
+        "texto": "nuestras fiestas, comidas y juegos"
+       },
+       {
+        "titulo": "En otros países",
+        "texto": "otras fiestas, otras comidas y otros juegos"
+       }
+      ],
+      "etiqueta": "Mira cerca y mira lejos",
+      "desc": "Dos lados: las costumbres de Chile y las de otros países"
+     },
+     "intro": "Los niños de otros países también tienen sus costumbres. Algunas se parecen a las nuestras. Otras no."
+    },
+    {
+     "t": "texto",
+     "md": "En este capítulo vas a conocer los símbolos de Chile. También sus fiestas, sus comidas y sus juegos. Vas a ver cómo viven niños de otros lugares. Y vas a aprender a respetar y a ayudar a los demás."
+    }
+   ],
+   "revisada": false
+  }
+ ]
+}

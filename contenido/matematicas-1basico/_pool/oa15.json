@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "¿Qué tiene un borde recto?",
+   "opciones": [
+    "Una regla",
+    "Una pelota",
+    "Un plato",
+    "Una rueda"
+   ],
+   "correcta": 0,
+   "tip": "El borde de la regla es derecho, sin curvas: sirve justamente para trazar líneas rectas.",
+   "id": "mate1-oa15-1"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "¿Qué tiene un borde curvo?",
+   "opciones": [
+    "Un plato",
+    "Una regla",
+    "Un libro",
+    "Una puerta"
+   ],
+   "correcta": 0,
+   "tip": "El borde del plato es redondo: es una línea curva. La regla, el libro y la puerta tienen bordes rectos.",
+   "id": "mate1-oa15-2"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "¿Qué línea dibuja un arcoíris en el cielo?",
+   "opciones": [
+    "Una curva",
+    "Una recta",
+    "Con esquinas",
+    "Con puntas"
+   ],
+   "correcta": 0,
+   "tip": "El arcoíris forma un arco: una línea curva, sin esquinas.",
+   "id": "mate1-oa15-3"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "Ana une dos puntos con regla. ¿Qué línea sale?",
+   "opciones": [
+    "Una recta",
+    "Una curva",
+    "Una redonda",
+    "Con vueltas"
+   ],
+   "correcta": 0,
+   "tip": "La regla tiene el borde derecho, así que la línea que sale es recta.",
+   "id": "mate1-oa15-4"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "Leo calca el borde de una moneda. ¿Qué línea es?",
+   "opciones": [
+    "Una curva",
+    "Una recta",
+    "Con esquinas",
+    "Con puntas"
+   ],
+   "correcta": 0,
+   "tip": "La moneda es redonda, así que su borde es una línea curva.",
+   "id": "mate1-oa15-5"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "Una cuerda bien estirada, ¿qué línea forma?",
+   "opciones": [
+    "Una recta",
+    "Una curva",
+    "Con vueltas",
+    "Una redonda"
+   ],
+   "correcta": 0,
+   "tip": "Al estirar bien la cuerda, queda derecha: forma una línea recta.",
+   "id": "mate1-oa15-6"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "Una cuerda floja entre dos palos, ¿qué línea es?",
+   "opciones": [
+    "Curva",
+    "Recta",
+    "Con esquinas",
+    "Con puntas"
+   ],
+   "correcta": 0,
+   "tip": "Floja, la cuerda se cae un poco al medio y forma una línea curva.",
+   "id": "mate1-oa15-7"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "¿Qué objeto tiene todos sus bordes derechos?",
+   "opciones": [
+    "Una caja",
+    "Una pelota",
+    "Una naranja",
+    "Un aro"
+   ],
+   "correcta": 0,
+   "tip": "Los bordes de una caja son derechos. La pelota, la naranja y el aro son redondos.",
+   "id": "mate1-oa15-8"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "Un aro de hula hula, ¿qué línea tiene?",
+   "opciones": [
+    "Solo curva",
+    "Solo rectas",
+    "Rectas y curva",
+    "Ninguna"
+   ],
+   "correcta": 0,
+   "tip": "El aro es redondo por todos lados: su línea es solo curva, sin partes derechas.",
+   "id": "mate1-oa15-9"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "Una tajada de pizza, ¿qué líneas tiene?",
+   "opciones": [
+    "Rectas y curva",
+    "Solo rectas",
+    "Solo curvas",
+    "Ninguna"
+   ],
+   "correcta": 0,
+   "tip": "Los dos lados del corte son rectos y el borde de la masa es curvo: tiene líneas rectas y una curva.",
+   "id": "mate1-oa15-10"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "Leo camina derecho a la puerta. ¿Qué línea hace?",
+   "opciones": [
+    "Una recta",
+    "Una curva",
+    "Con vueltas",
+    "Una redonda"
+   ],
+   "correcta": 0,
+   "tip": "Ir derecho, sin doblar, es caminar en línea recta.",
+   "id": "mate1-oa15-11"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "Ana corre alrededor del árbol. ¿Qué línea hace?",
+   "opciones": [
+    "Una curva",
+    "Una recta",
+    "Con esquinas",
+    "Con puntas"
+   ],
+   "correcta": 0,
+   "tip": "Al dar la vuelta al árbol, Ana va doblando todo el tiempo: hace una línea curva.",
+   "id": "mate1-oa15-12"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "¿Con qué trazas mejor una línea recta?",
+   "opciones": [
+    "Con una regla",
+    "Con un plato",
+    "Con una moneda",
+    "Con un vaso"
+   ],
+   "correcta": 0,
+   "tip": "La regla tiene el borde derecho. El plato, la moneda y el vaso tienen bordes redondos: sirven para curvas.",
+   "id": "mate1-oa15-13"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "¿Qué usarías para trazar una curva?",
+   "opciones": [
+    "Un vaso",
+    "Una regla",
+    "Un libro",
+    "Una caja"
+   ],
+   "correcta": 0,
+   "tip": "El borde del vaso es redondo, así que al seguirlo sale una curva. La regla, el libro y la caja tienen bordes rectos.",
+   "id": "mate1-oa15-14"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "¿Qué camino es más corto entre dos puntos?",
+   "opciones": [
+    "El recto",
+    "El curvo",
+    "El de vueltas",
+    "Todos iguales"
+   ],
+   "correcta": 0,
+   "tip": "El camino recto va directo de un punto al otro, sin desviarse: es el más corto.",
+   "id": "mate1-oa15-15"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "Un tobogán de caracol, ¿qué línea tiene?",
+   "opciones": [
+    "Curva",
+    "Recta",
+    "Con esquinas",
+    "Ninguna"
+   ],
+   "correcta": 0,
+   "tip": "El tobogán de caracol baja dando vueltas: su línea es curva.",
+   "id": "mate1-oa15-16"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "¿Qué tiene solo líneas curvas?",
+   "opciones": [
+    "Un anillo",
+    "Una regla",
+    "Un libro",
+    "Una puerta"
+   ],
+   "correcta": 0,
+   "tip": "El anillo es redondo y no tiene partes derechas: solo líneas curvas.",
+   "id": "mate1-oa15-17"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "El borde de una mesa cuadrada, ¿qué línea es?",
+   "opciones": [
+    "Recta",
+    "Curva",
+    "Redonda",
+    "Con vueltas"
+   ],
+   "correcta": 0,
+   "tip": "Una mesa cuadrada tiene bordes derechos que se juntan en las esquinas: son líneas rectas.",
+   "id": "mate1-oa15-18"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "Sofía dibuja una ola del mar. ¿Qué línea usa?",
+   "opciones": [
+    "Curva",
+    "Recta",
+    "Con puntas",
+    "Ninguna"
+   ],
+   "correcta": 0,
+   "tip": "Una ola sube y baja suavemente, sin esquinas: es una línea curva.",
+   "id": "mate1-oa15-19"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "Un lápiz sin punta, ¿qué línea parece?",
+   "opciones": [
+    "Recta",
+    "Curva",
+    "Redonda",
+    "Con vueltas"
+   ],
+   "correcta": 0,
+   "tip": "El lápiz es largo y derecho, como una línea recta.",
+   "id": "mate1-oa15-20"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "¿Qué línea es la sonrisa de una carita feliz?",
+   "opciones": [
+    "Curva",
+    "Recta",
+    "Con esquinas",
+    "Con puntas"
+   ],
+   "correcta": 0,
+   "tip": "La sonrisa es un arco hacia arriba: una línea curva.",
+   "id": "mate1-oa15-21"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "El palo de una escoba, ¿qué línea parece?",
+   "opciones": [
+    "Recta",
+    "Curva",
+    "Redonda",
+    "Con vueltas"
+   ],
+   "correcta": 0,
+   "tip": "El palo de la escoba es largo y derecho: parece una línea recta.",
+   "id": "mate1-oa15-22"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "Pía dobla un alambre en arco. ¿Qué línea queda?",
+   "opciones": [
+    "Curva",
+    "Recta",
+    "Con esquinas",
+    "Con puntas"
+   ],
+   "correcta": 0,
+   "tip": "Al doblarlo como un arco, el alambre queda redondeado: es una línea curva.",
+   "id": "mate1-oa15-23"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "El borde de una hoja de cuaderno, ¿cómo es?",
+   "opciones": [
+    "Recto",
+    "Curvo",
+    "Redondo",
+    "Con vueltas"
+   ],
+   "correcta": 0,
+   "tip": "La hoja tiene bordes derechos que se juntan en las esquinas: son rectos.",
+   "id": "mate1-oa15-24"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "¿Qué figura está hecha solo de rectas?",
+   "opciones": [
+    "Un triángulo",
+    "Un círculo",
+    "Un arcoíris",
+    "Una moneda"
+   ],
+   "correcta": 0,
+   "tip": "El triángulo tiene tres lados derechos. El círculo, el arcoíris y la moneda tienen líneas curvas.",
+   "id": "mate1-oa15-25"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "La cadena del columpio quieto, ¿qué línea es?",
+   "opciones": [
+    "Recta",
+    "Curva",
+    "Redonda",
+    "Con vueltas"
+   ],
+   "correcta": 0,
+   "tip": "Con el columpio quieto, el peso estira la cadena hacia abajo: queda derecha, como una línea recta.",
+   "id": "mate1-oa15-26"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "Leo lanza una pelota lejos. ¿Qué camino hace?",
+   "opciones": [
+    "Una curva",
+    "Una recta",
+    "Un círculo",
+    "Con esquinas"
+   ],
+   "correcta": 0,
+   "tip": "La pelota sube y luego baja: dibuja en el aire una línea curva, como un arco.",
+   "id": "mate1-oa15-27"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "Eva dice que el plato tiene borde recto. ¿Acierta?",
+   "opciones": [
+    "No, es curvo",
+    "Sí, es recto",
+    "No, es puntudo",
+    "Sí, es derecho"
+   ],
+   "correcta": 0,
+   "tip": "El borde del plato es redondo: es una línea curva, no recta.",
+   "id": "mate1-oa15-28"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "Las rayas de un paso de cebra, ¿cómo son?",
+   "opciones": [
+    "Rectas",
+    "Curvas",
+    "Redondas",
+    "Con vueltas"
+   ],
+   "correcta": 0,
+   "tip": "Las rayas blancas del paso de cebra son franjas derechas, pintadas una al lado de otra: sus bordes son rectos.",
+   "id": "mate1-oa15-29"
+  },
+  {
+   "oa": "MA01 OA 15",
+   "pregunta": "La colita de un chanchito, ¿qué línea es?",
+   "opciones": [
+    "Curva",
+    "Recta",
+    "Con esquinas",
+    "Ninguna"
+   ],
+   "correcta": 0,
+   "tip": "La colita del chanchito está enroscada, dando vueltas: es una línea curva.",
+   "id": "mate1-oa15-30"
+  }
+ ]
+}

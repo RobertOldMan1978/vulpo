@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Diego aprieta la plasticina. ¿Qué le pasa?",
+   "opciones": [
+    "Cambia de forma",
+    "Se derrite",
+    "Se vuelve agua",
+    "Se hace vidrio"
+   ],
+   "correcta": 0,
+   "tip": "Al apretarla, la fuerza de las manos le cambia la forma a la plasticina. Sigue siendo plasticina.",
+   "id": "cien1-oa09-1"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Ana aplasta una lata vacía. ¿Cómo queda?",
+   "opciones": [
+    "Abollada",
+    "Igual que antes",
+    "Más grande",
+    "Transparente"
+   ],
+   "correcta": 0,
+   "tip": "La fuerza de Ana dobla el metal delgado de la lata y la deja abollada.",
+   "id": "cien1-oa09-2"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Matías aprieta una hoja de papel. ¿Cómo queda?",
+   "opciones": [
+    "Arrugada",
+    "Mojada",
+    "Derretida",
+    "Más larga"
+   ],
+   "correcta": 0,
+   "tip": "Al apretar el papel con fuerza, se arruga. Aunque se estire después, las marcas quedan.",
+   "id": "cien1-oa09-3"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Sofía estira un elástico y lo suelta. ¿Qué pasa?",
+   "opciones": [
+    "Vuelve a su forma",
+    "Se queda largo",
+    "Se derrite",
+    "Se pone duro"
+   ],
+   "correcta": 0,
+   "tip": "La goma del elástico es flexible: se estira con la fuerza y, al soltarla, vuelve a su forma.",
+   "id": "cien1-oa09-4"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Un vaso de vidrio cae al suelo. ¿Qué puede pasar?",
+   "opciones": [
+    "Se quiebra",
+    "Se estira",
+    "Rebota como pelota",
+    "Se derrite"
+   ],
+   "correcta": 0,
+   "tip": "El vidrio es frágil. Con el golpe del suelo se puede quebrar en pedazos.",
+   "id": "cien1-oa09-5"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Camila infla un globo. ¿Qué le pasa?",
+   "opciones": [
+    "Se agranda",
+    "Se achica",
+    "Se derrite",
+    "Se moja"
+   ],
+   "correcta": 0,
+   "tip": "El aire que sopla Camila empuja la goma del globo, que se estira y se agranda.",
+   "id": "cien1-oa09-6"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Javiera suelta una esponja apretada. ¿Qué pasa?",
+   "opciones": [
+    "Recupera su forma",
+    "Se rompe en dos",
+    "Se derrite",
+    "Queda chiquitita"
+   ],
+   "correcta": 0,
+   "tip": "La esponja se aplasta al apretarla, pero al soltarla vuelve a su forma.",
+   "id": "cien1-oa09-7"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Diego tira fuerte de una hoja de papel. ¿Qué pasa?",
+   "opciones": [
+    "Se rompe",
+    "Se estira mucho",
+    "Se derrite",
+    "Se pone dura"
+   ],
+   "correcta": 0,
+   "tip": "El papel no es elástico: si se tira con fuerza, se rompe.",
+   "id": "cien1-oa09-8"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Ana pasa el uslero sobre la masa. ¿Cómo queda?",
+   "opciones": [
+    "Más plana",
+    "Más alta",
+    "Más dura",
+    "Derretida"
+   ],
+   "correcta": 0,
+   "tip": "La fuerza del uslero aplasta la masa y la deja más plana y más ancha.",
+   "id": "cien1-oa09-9"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Diego deja chocolate al sol. ¿Qué le pasa?",
+   "opciones": [
+    "Se derrite",
+    "Se congela",
+    "Se pone más duro",
+    "Queda igual"
+   ],
+   "correcta": 0,
+   "tip": "El calor del sol derrite el chocolate y lo deja blando, casi líquido.",
+   "id": "cien1-oa09-10"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "La mantequilla se calienta. ¿Cómo queda?",
+   "opciones": [
+    "Se pone líquida",
+    "Se pone dura",
+    "Se congela",
+    "Queda igual"
+   ],
+   "correcta": 0,
+   "tip": "Con el calor, la mantequilla se derrite y se pone líquida.",
+   "id": "cien1-oa09-11"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Un huevo hierve mucho rato. ¿Cómo queda adentro?",
+   "opciones": [
+    "Duro",
+    "Líquido",
+    "Igual que crudo",
+    "Derretido"
+   ],
+   "correcta": 0,
+   "tip": "El calor cambia el huevo: lo que era líquido se pone duro. Y ese cambio ya no se puede devolver.",
+   "id": "cien1-oa09-12"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Matías tuesta pan. ¿Qué le pasa?",
+   "opciones": [
+    "Se pone crujiente",
+    "Se pone blando",
+    "Se moja",
+    "Se pone líquido"
+   ],
+   "correcta": 0,
+   "tip": "El calor de la tostadora seca el pan y lo deja dorado y crujiente.",
+   "id": "cien1-oa09-13"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Una vela está prendida. ¿Qué le pasa a la cera?",
+   "opciones": [
+    "Se derrite",
+    "Se congela",
+    "Se moja",
+    "Se hace vidrio"
+   ],
+   "correcta": 0,
+   "tip": "El calor de la llama derrite la cera de la vela. Cuando se enfría, vuelve a ponerse dura.",
+   "id": "cien1-oa09-14"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "La plasticina se calienta. ¿Cómo queda?",
+   "opciones": [
+    "Más blanda",
+    "Más dura",
+    "Congelada",
+    "Mojada"
+   ],
+   "correcta": 0,
+   "tip": "El calor ablanda la plasticina. Si se enfría, se vuelve a poner más firme.",
+   "id": "cien1-oa09-15"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "El chocolate derretido se enfría. ¿Qué pasa?",
+   "opciones": [
+    "Se endurece otra vez",
+    "Sigue líquido siempre",
+    "Se vuelve agua",
+    "Desaparece"
+   ],
+   "correcta": 0,
+   "tip": "Al enfriarse, el chocolate derretido vuelve a ponerse duro. Ese cambio sí se puede devolver.",
+   "id": "cien1-oa09-16"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "La greda se cuece en el horno. ¿Cómo queda?",
+   "opciones": [
+    "Queda dura",
+    "Queda blanda",
+    "Se vuelve líquida",
+    "Queda elástica"
+   ],
+   "correcta": 0,
+   "tip": "El calor del horno endurece la greda. Así se hacen las tazas, los maceteros y los ladrillos.",
+   "id": "cien1-oa09-17"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Una polera roja quedó meses al sol. ¿Qué le pasó?",
+   "opciones": [
+    "Perdió color",
+    "Se puso más roja",
+    "Se volvió azul",
+    "Se derritió"
+   ],
+   "correcta": 0,
+   "tip": "La luz del sol, con el tiempo, hace que la ropa de color se destiña y pierda color.",
+   "id": "cien1-oa09-18"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Un diario quedó meses al sol. ¿Cómo se puso?",
+   "opciones": [
+    "Se puso amarillo",
+    "Se puso más blanco",
+    "Quedó transparente",
+    "Se puso morado"
+   ],
+   "correcta": 0,
+   "tip": "La luz del sol cambia el papel: un diario que queda mucho tiempo al sol se pone amarillento.",
+   "id": "cien1-oa09-19"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Un dibujo pegado se destiñó. ¿Dónde estaba?",
+   "opciones": [
+    "Al sol directo",
+    "En la sombra",
+    "Dentro de un cajón",
+    "En un pasillo oscuro"
+   ],
+   "correcta": 0,
+   "tip": "La luz del sol destiñe los colores con el tiempo. A la sombra, el dibujo conserva sus colores.",
+   "id": "cien1-oa09-20"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Un juguete quedó años al sol. ¿Qué le pasó?",
+   "opciones": [
+    "Perdió color",
+    "Quedó nuevo",
+    "Se hizo más grande",
+    "Le salieron hojas"
+   ],
+   "correcta": 0,
+   "tip": "La luz del sol, con los años, destiñe el plástico y lo deja más pálido y frágil.",
+   "id": "cien1-oa09-21"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Pedro tira de un papel mojado. ¿Qué pasa?",
+   "opciones": [
+    "Se rompe fácil",
+    "No se rompe nunca",
+    "Se estira como goma",
+    "Se pone duro"
+   ],
+   "correcta": 0,
+   "tip": "El agua ablanda el papel: mojado, se rompe con muy poca fuerza.",
+   "id": "cien1-oa09-22"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Javiera moja una galleta en el té. ¿Qué pasa?",
+   "opciones": [
+    "Se ablanda",
+    "Se endurece",
+    "Se congela",
+    "Se pone crujiente"
+   ],
+   "correcta": 0,
+   "tip": "El agua del té entra en la galleta y la deja blanda. Si queda mucho rato, se deshace.",
+   "id": "cien1-oa09-23"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Sofía echa agua a la tierra seca. ¿Qué se forma?",
+   "opciones": [
+    "Barro",
+    "Arena seca",
+    "Piedra",
+    "Hielo"
+   ],
+   "correcta": 0,
+   "tip": "La tierra con agua se convierte en barro, blando y pegajoso.",
+   "id": "cien1-oa09-24"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Una esponja seca entra al agua. ¿Qué pasa?",
+   "opciones": [
+    "Se llena de agua",
+    "Se derrite",
+    "Queda seca",
+    "Se rompe"
+   ],
+   "correcta": 0,
+   "tip": "La esponja absorbe el agua: la guarda en sus hoyitos y se pone más pesada.",
+   "id": "cien1-oa09-25"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Un juguete de plástico se moja. ¿Qué le pasa?",
+   "opciones": [
+    "No cambia",
+    "Se deshace",
+    "Se ablanda",
+    "Se derrite"
+   ],
+   "correcta": 0,
+   "tip": "El plástico es impermeable: el agua no lo atraviesa ni lo cambia. Basta con secarlo.",
+   "id": "cien1-oa09-26"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Un clavo quedó días en el agua. ¿Qué le pasó?",
+   "opciones": [
+    "Se oxidó",
+    "Se ablandó",
+    "Se derritió",
+    "Se hizo transparente"
+   ],
+   "correcta": 0,
+   "tip": "El agua y el aire oxidan el hierro del clavo: se pone de color café y áspero.",
+   "id": "cien1-oa09-27"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Una caja de cartón se mojó. ¿Cómo quedó?",
+   "opciones": [
+    "Quedó blanda",
+    "Quedó más dura",
+    "Quedó transparente",
+    "Quedó brillante"
+   ],
+   "correcta": 0,
+   "tip": "El cartón absorbe el agua y se pone blando. Por eso una caja mojada se desarma fácil.",
+   "id": "cien1-oa09-28"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Benjamín moja la arena. ¿Qué puede hacer?",
+   "opciones": [
+    "Un castillo",
+    "Un vaso",
+    "Una ventana",
+    "Un globo"
+   ],
+   "correcta": 0,
+   "tip": "La arena seca se desarma, pero con un poco de agua se pega y toma forma. Así se hacen castillos.",
+   "id": "cien1-oa09-29"
+  },
+  {
+   "oa": "CN01 OA 09",
+   "pregunta": "Ana dobla mucho un palo seco. ¿Qué pasa?",
+   "opciones": [
+    "Se quiebra",
+    "Se estira",
+    "Se derrite",
+    "Se vuelve goma"
+   ],
+   "correcta": 0,
+   "tip": "Un palo seco no es flexible: si se dobla con mucha fuerza, se quiebra.",
+   "id": "cien1-oa09-30"
+  }
+ ]
+}

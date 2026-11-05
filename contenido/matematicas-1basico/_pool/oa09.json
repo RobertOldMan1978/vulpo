@@ -1,0 +1,418 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "Ana tiene 4 dulces y le dan 3. ¿Cuántos tiene?",
+   "opciones": [
+    "7",
+    "1",
+    "43",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Le agregan 3 a los 4 que tenía: 4 + 3 = 7.",
+   "id": "mate1-oa09-1"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "Hay 5 uvas y Leo se come 2. ¿Cuántas quedan?",
+   "opciones": [
+    "3",
+    "7",
+    "5",
+    "2"
+   ],
+   "correcta": 0,
+   "tip": "Comer quita uvas del plato: 5 - 2 = 3.",
+   "id": "mate1-oa09-2"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "Juegan 6 niños y llegan 3. ¿Cuántos son ahora?",
+   "opciones": [
+    "9",
+    "3",
+    "8",
+    "63"
+   ],
+   "correcta": 0,
+   "tip": "Llegar agrega niños al grupo: 6 + 3 = 9.",
+   "id": "mate1-oa09-3"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "De 9 globos se vuelan 4. ¿Cuántos quedan?",
+   "opciones": [
+    "5",
+    "13",
+    "4",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Los que se vuelan se quitan: 9 - 4 = 5.",
+   "id": "mate1-oa09-4"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "Diego tiene 8 autos y Sofía 5. ¿Cuántos juntos?",
+   "opciones": [
+    "13",
+    "3",
+    "12",
+    "85"
+   ],
+   "correcta": 0,
+   "tip": "Juntar los dos grupos es sumar: 8 + 5 = 13.",
+   "id": "mate1-oa09-5"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "Ana tiene 7 tapas, Leo 4. ¿Cuántas más tiene Ana?",
+   "opciones": [
+    "3",
+    "11",
+    "4",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "Para comparar se ve cuánto le sobra a Ana: 7 - 4 = 3.",
+   "id": "mate1-oa09-6"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "En el bus van 12 niños y suben 5. ¿Cuántos van?",
+   "opciones": [
+    "17",
+    "7",
+    "15",
+    "16"
+   ],
+   "correcta": 0,
+   "tip": "Subir agrega niños al bus: 12 + 5 = 17.",
+   "id": "mate1-oa09-7"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "Hay 15 lápices y Matías saca 3. ¿Cuántos quedan?",
+   "opciones": [
+    "12",
+    "18",
+    "13",
+    "3"
+   ],
+   "correcta": 0,
+   "tip": "Sacar quita lápices: 15 - 3 = 12.",
+   "id": "mate1-oa09-8"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "Ana tiene 11 piedras y encuentra 6. ¿Cuántas son?",
+   "opciones": [
+    "17",
+    "5",
+    "16",
+    "18"
+   ],
+   "correcta": 0,
+   "tip": "Encontrar más piedras es agregar: 11 + 6 = 17.",
+   "id": "mate1-oa09-9"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "Un árbol tiene 18 hojas y caen 7. ¿Cuántas quedan?",
+   "opciones": [
+    "11",
+    "25",
+    "12",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "Las hojas que caen se quitan del árbol: 18 - 7 = 11.",
+   "id": "mate1-oa09-10"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "Hay 14 niñas y 5 niños. ¿Cuántos son en total?",
+   "opciones": [
+    "19",
+    "9",
+    "18",
+    "20"
+   ],
+   "correcta": 0,
+   "tip": "En total es juntar niñas y niños: 14 + 5 = 19.",
+   "id": "mate1-oa09-11"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "De 20 galletas se comen 10. ¿Cuántas quedan?",
+   "opciones": [
+    "10",
+    "30",
+    "20",
+    "0"
+   ],
+   "correcta": 0,
+   "tip": "Comer quita galletas: 20 - 10 = 10.",
+   "id": "mate1-oa09-12"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "Leo tiene 13 y Pía 10. ¿Quién tiene 3 más?",
+   "opciones": [
+    "Leo",
+    "Pía",
+    "Los dos",
+    "Ninguno"
+   ],
+   "correcta": 0,
+   "tip": "13 es 3 más que 10, porque 10 + 3 = 13. Por eso Leo tiene 3 más.",
+   "id": "mate1-oa09-13"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "Hay 3 patos y llegan 3 más. ¿Cuántos hay?",
+   "opciones": [
+    "6",
+    "3",
+    "0",
+    "5"
+   ],
+   "correcta": 0,
+   "tip": "Llegar es agregar: 3 + 3 = 6.",
+   "id": "mate1-oa09-14"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "Tienes 5 manzanas y regalas 5. ¿Cuántas quedan?",
+   "opciones": [
+    "0",
+    "10",
+    "5",
+    "1"
+   ],
+   "correcta": 0,
+   "tip": "Si regalas todas las que tenías, no queda ninguna: 5 - 5 = 0.",
+   "id": "mate1-oa09-15"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "Leo tenía 9 dulces y dio 2. ¿Qué cálculo sirve?",
+   "opciones": [
+    "9 - 2",
+    "9 + 2",
+    "2 - 9",
+    "9 + 9"
+   ],
+   "correcta": 0,
+   "tip": "Regalar quita dulces: se parte del 9 y se resta 2.",
+   "id": "mate1-oa09-16"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "Llegan 4 niños a un grupo de 10. ¿Qué cálculo es?",
+   "opciones": [
+    "10 + 4",
+    "10 - 4",
+    "4 - 10",
+    "4 + 4"
+   ],
+   "correcta": 0,
+   "tip": "Llegar agrega niños al grupo: se suma 10 + 4.",
+   "id": "mate1-oa09-17"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "¿Qué cálculo sirve para juntar 6 y 7?",
+   "opciones": [
+    "6 + 7",
+    "7 - 6",
+    "6 - 7",
+    "6 + 6"
+   ],
+   "correcta": 0,
+   "tip": "Juntar dos grupos es sumar: 6 + 7.",
+   "id": "mate1-oa09-18"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "De 16 globos se revientan 6. ¿Qué cálculo sirve?",
+   "opciones": [
+    "16 - 6",
+    "16 + 6",
+    "6 - 16",
+    "6 + 6"
+   ],
+   "correcta": 0,
+   "tip": "Los que se revientan se quitan: se parte del 16 y se resta 6.",
+   "id": "mate1-oa09-19"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "¿Qué historia es una resta?",
+   "opciones": [
+    "Se comen tres uvas",
+    "Llegan tres amigos",
+    "Junto mis lápices",
+    "Me regalan dos"
+   ],
+   "correcta": 0,
+   "tip": "Comerse algo hace que haya menos: eso es restar. Llegar, juntar y regalar a uno son sumar.",
+   "id": "mate1-oa09-20"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "¿Qué historia es una suma?",
+   "opciones": [
+    "Llegan más niños",
+    "Se rompen globos",
+    "Se comen dulces",
+    "Se van los patos"
+   ],
+   "correcta": 0,
+   "tip": "Si llegan más, hay más: eso es sumar. Romperse, comerse e irse quitan.",
+   "id": "mate1-oa09-21"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "¿Qué cálculo ves en el dibujo?",
+   "opciones": [
+    "7 + 2",
+    "7 - 2",
+    "7 + 7",
+    "2 + 2"
+   ],
+   "correcta": 0,
+   "tip": "Hay un grupo de 7, el signo más y un grupo de 2: se juntan, 7 + 2.",
+   "id": "mate1-oa09-22",
+   "visual": {
+    "tipo": "contar",
+    "a": 7,
+    "b": 2,
+    "emoji": "🍓"
+   }
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "Se van 3 estrellas. ¿Cuántas quedan?",
+   "opciones": [
+    "5",
+    "11",
+    "3",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "El dibujo muestra 8 y quita 3: 8 - 3 = 5. Las de después del signo menos son las que se van.",
+   "id": "mate1-oa09-23",
+   "visual": {
+    "tipo": "contar",
+    "a": 8,
+    "b": -3,
+    "emoji": "⭐"
+   }
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "¿Cuántas manzanas hay al juntar los grupos?",
+   "opciones": [
+    "12",
+    "6",
+    "66",
+    "11"
+   ],
+   "correcta": 0,
+   "tip": "Hay 6 y 6. Juntos son 6 + 6 = 12.",
+   "id": "mate1-oa09-24",
+   "visual": {
+    "tipo": "contar",
+    "a": 6,
+    "b": 6,
+    "emoji": "🍎"
+   }
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "¿Qué resta muestra el dibujo?",
+   "opciones": [
+    "10 - 4",
+    "10 + 4",
+    "4 - 10",
+    "10 - 6"
+   ],
+   "correcta": 0,
+   "tip": "Había 10 globos y el signo menos quita 4: 10 - 4.",
+   "id": "mate1-oa09-25",
+   "visual": {
+    "tipo": "contar",
+    "a": 10,
+    "b": -4,
+    "emoji": "🎈"
+   }
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "Benjamín suma 12 + 4 y le da 8. ¿Qué hizo?",
+   "opciones": [
+    "Restó en vez de sumar",
+    "Sumó todo bien",
+    "Contó uno de más",
+    "Se le olvidó el 12"
+   ],
+   "correcta": 0,
+   "tip": "12 - 4 = 8, así que restó. Sumando, 12 + 4 = 16.",
+   "id": "mate1-oa09-26"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "Ana tenía 6 lápices y ahora 9. ¿Cuántos ganó?",
+   "opciones": [
+    "3",
+    "15",
+    "9",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Del 6 al 9 hay 3: 6 + 3 = 9.",
+   "id": "mate1-oa09-27"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "Hay 12 sillas y 8 niños. ¿Cuántas sillas sobran?",
+   "opciones": [
+    "4",
+    "20",
+    "8",
+    "5"
+   ],
+   "correcta": 0,
+   "tip": "Las sillas con niño se quitan del total: 12 - 8 = 4.",
+   "id": "mate1-oa09-28"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "Matías pega 5 de sus 15 láminas. ¿Cuántas quedan?",
+   "opciones": [
+    "10",
+    "20",
+    "5",
+    "11"
+   ],
+   "correcta": 0,
+   "tip": "Las láminas pegadas ya no están sueltas: 15 - 5 = 10.",
+   "id": "mate1-oa09-29"
+  },
+  {
+   "oa": "MA01 OA 09",
+   "pregunta": "Camila tiene 1 lápiz y le prestan 4. ¿Cuántos son?",
+   "opciones": [
+    "5",
+    "3",
+    "1",
+    "14"
+   ],
+   "correcta": 0,
+   "tip": "Le agregan 4 al lápiz que tenía: 1 + 4 = 5.",
+   "id": "mate1-oa09-30"
+  }
+ ]
+}

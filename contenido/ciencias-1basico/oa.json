@@ -1,0 +1,154 @@
+{
+ "asignatura": "Ciencias Naturales",
+ "nivel": "1° básico",
+ "codigo_asignatura": "CN01",
+ "fuente": "Bases Curriculares 1° a 6° básico — MINEDUC Chile (curriculumnacional.cl); unidades del Programa de Estudio Ciencias Naturales 1° básico (MINEDUC, segunda edición 2018)",
+ "url_fuente": "https://www.curriculumnacional.cl/curriculum/1o-6o-basico/ciencias-naturales/1-basico",
+ "nota_fidelidad": "Los 12 textos se transcribieron el 2026-11-04 uno por uno desde la página individual de cada objetivo (`.../ciencias-naturales/1-basico/cn01-oa-NN`), no desde la ficha general de la asignatura, que corta los textos largos a media frase (en esta ficha se ven cortados los OA 01, 07 y 11). Se contrastaron además con el PDF del Programa de Estudio (sitio oficial, segunda edición 2018: «Visión global del año» y la tabla de Objetivos de Aprendizaje de cada unidad), y coinciden palabra por palabra salvo una variante menor del OA 05: el Programa dice «…considerando las características observables, proponiendo medidas para su cuidado» y el portal «…, y proponiendo medidas para su cuidado»; se usó la del portal. El portal no publica un OA 13 (`cn01-oa-13` da «Página no encontrada»): 1° básico tiene 12 OA. Los OA 07 y 08 traen paréntesis con ejemplos («actividad física, aseo del cuerpo…», «goma-flexible, plástico-impermeable»): son parte del texto oficial y se conservan. Los ejes son los que la ficha de la asignatura usa para agrupar los OA.",
+ "nota_evaluacion": "ADVERTENCIA 1 — edad y voz: son 6-7 años y muchos todavía no leen; la pregunta se ESCUCHA. Vale el estándar de los cursos chicos de `docs/encargo-banco.md` (enunciados muy cortos, sin reloj, opciones que se distingan al oído). Las preguntas de observar y clasificar (OA 02, 03, 04, 08) se apoyan en ejemplos concretos y conocidos (un perro, una hoja, una goma), nunca en vocabulario que el niño tenga que leer. ADVERTENCIA 2 — verbos de laboratorio y de diseño: los OA 01 y 03 dicen «por medio de la exploración», el OA 08 «explorar», el OA 09 «observar… al aplicarles fuerza, luz, calor y agua» y el OA 10 «diseñar instrumentos tecnológicos simples». Son actividades, no respuestas. El quiz mide el concepto o el resultado que esa actividad deja instalado —qué le pasa al hielo al sol, qué material sirve para un objeto que no debe mojarse—, planteando la exploración o el objeto YA HECHO por un tercero con nombre, nunca lo que el niño haría o construiría. ADVERTENCIA 3 — OA con componente de conducta o de propuesta: el OA 07 pide «practicar hábitos de vida saludable» y los OA 05 y 06 piden proponer medidas de cuidado y de protección. Un quiz no puede medir si un niño se lava las manos o protege sus oídos: solo si RECONOCE el hábito o la medida adecuada. Sus preguntas plantean siempre la situación de otra persona con nombre, nunca la conducta del propio jugador, y el porcentaje del mapa de dominio debe leerse así. Cuidados de precisión científica en `docs/cuidados-ciencias.md`.",
+ "nota_contenido_sensible": "Revisados los 12 OA contra `docs/contenido-sensible.md`: ninguno entra en sus cinco categorías (sexualidad, violencia y muerte, religión y creencias, pueblos originarios, sustancias). Dos OA tratan el cuerpo humano y piden cuidado de redacción, sin marcarse: el OA 06 (los sentidos: ojos, oídos, nariz, lengua, piel) y el OA 07 (hábitos saludables, incluido el «aseo del cuerpo»). La higiene se pregunta en lo general y público —lavarse las manos y los dientes, bañarse, lavar los alimentos—, nunca sobre zonas íntimas; NO es la higiene en la pubertad (`CN06 OA 06`, ❤️), y conviene no acercarse a ella. La alimentación saludable se plantea sin juzgar la comida de la casa del niño (lección de 3°: evitar que lo cotidiano y barato quede como «lo malo»). En el OA 06, si una pregunta toca la falta de un sentido, se trata con respeto y sin lástima. El OA 01 dice que los seres vivos «se reproducen»: se queda en plantas y animales (semillas, crías, huevos), sin reproducción humana. Ningún OA necesita conversarse con el colegio antes de publicar.",
+ "oa_excluidos_del_banco": [],
+ "nota_exclusiones": "Ningún OA de contenido queda fuera: los 12 admiten una pregunta honesta escuchada si se miden por reconocimiento (ver `nota_evaluacion`). El más cercano al límite es el OA 10 («diseñar instrumentos tecnológicos simples»): diseñar no se puede preguntar, pero sí elegir el material adecuado para resolver un problema cotidiano planteado por un tercero, que es la mitad medible del objetivo y se apoya en el OA 08. Las habilidades (OAH) y actitudes (OAA) quedan fuera por otro motivo, ver `habilidades_excluidas`.",
+ "habilidades_excluidas": {
+  "cuantas": 10,
+  "codigos": [
+   "CN01 OAH a-d",
+   "CN01 OAA A-F"
+  ],
+  "por_que": "4 OA de habilidades de investigación (explorar y observar usando los sentidos; explorar y experimentar en forma guiada con medición no estandarizada; seguir instrucciones para usar materiales e instrumentos de forma segura; comunicar y comparar ideas en forma oral, escrita, con juegos de roles y dibujos) y 6 de actitud (curiosidad, rigor, cuidado del ambiente, trabajo en equipo, vida saludable, seguridad). Miden desempeño observable o disposiciones personales que una pantalla no ve, y además sus códigos con letra no calzan con la validación del servidor (^[A-Z]{2}[0-9]{2} OA [0-9]{2}$), así que el backend los descartaría EN SILENCIO. Las habilidades se ejercitan dentro de las preguntas de contenido; no se miden aparte."
+ },
+ "unidades": [
+  {
+   "id": "U1",
+   "titulo": "Mi cuerpo sano, mis sentidos y los seres vivos",
+   "descripcion": "Hábitos de vida saludable (actividad física, aseo del cuerpo, lavado de alimentos y alimentación), los cinco sentidos con sus órganos y cuidados, y lo que distingue a los seres vivos de las cosas no vivas.",
+   "oa": [
+    "CN01 OA 07",
+    "CN01 OA 06",
+    "CN01 OA 01"
+   ]
+  },
+  {
+   "id": "U2",
+   "titulo": "Animales y plantas de nuestro país",
+   "descripcion": "Características de los animales (tamaño, cubierta corporal, desplazamiento, hábitat), las partes de las plantas, la clasificación de semillas, frutos, flores y tallos, y plantas y animales de Chile y su cuidado.",
+   "oa": [
+    "CN01 OA 02",
+    "CN01 OA 03",
+    "CN01 OA 04",
+    "CN01 OA 05"
+   ]
+  },
+  {
+   "id": "U3",
+   "titulo": "Los materiales y sus cambios",
+   "descripcion": "Materiales de los objetos cotidianos y sus propiedades, los cambios que producen la fuerza, la luz, el calor y el agua, y el diseño de objetos simples para resolver problemas.",
+   "oa": [
+    "CN01 OA 08",
+    "CN01 OA 09",
+    "CN01 OA 10"
+   ]
+  },
+  {
+   "id": "U4",
+   "titulo": "El día, la noche y las estaciones",
+   "descripcion": "El ciclo diario a partir del Sol, la Luna y las estrellas, el ciclo de las estaciones del año y sus efectos en los seres vivos y el ambiente.",
+   "oa": [
+    "CN01 OA 11",
+    "CN01 OA 12"
+   ]
+  }
+ ],
+ "nota_unidades": "Las 4 unidades son las del Programa de Estudio oficial (sección «Visión global del año», PDF segunda edición 2018, confirmadas con la tabla de Objetivos de Aprendizaje al inicio de cada unidad), con sus OA en el mismo orden en que el Programa los lista: la Unidad 1 parte por los hábitos saludables (OA 07) y los sentidos (OA 06) y deja los seres vivos (OA 01) al final. Cubren los 12 OA exactamente una vez cada uno, sin solapamiento, y quedan 3-4-3-2 (30, 30, 30 y 24 horas pedagógicas; 38 semanas en total). OJO: el Programa nombra las unidades solo por su número; los títulos de este archivo son descriptivos, escritos a partir del «Propósito» de cada unidad en el mismo PDF, y NO son texto oficial.",
+ "ejes": [
+  {
+   "nombre": "Ciencias de la Vida",
+   "oa": [
+    "CN01 OA 01",
+    "CN01 OA 02",
+    "CN01 OA 03",
+    "CN01 OA 04",
+    "CN01 OA 05",
+    "CN01 OA 06",
+    "CN01 OA 07"
+   ]
+  },
+  {
+   "nombre": "Ciencias Físicas y Químicas",
+   "oa": [
+    "CN01 OA 08",
+    "CN01 OA 09",
+    "CN01 OA 10"
+   ]
+  },
+  {
+   "nombre": "Ciencias de la Tierra y el Universo",
+   "oa": [
+    "CN01 OA 11",
+    "CN01 OA 12"
+   ]
+  }
+ ],
+ "oa": [
+  {
+   "codigo": "CN01 OA 01",
+   "eje": "Ciencias de la Vida",
+   "texto": "Reconocer y observar, por medio de la exploración, que los seres vivos crecen, responden a estímulos del medio, se reproducen y necesitan agua, alimento y aire para vivir, comparándolos con las cosas no vivas."
+  },
+  {
+   "codigo": "CN01 OA 02",
+   "eje": "Ciencias de la Vida",
+   "texto": "Observar y comparar animales de acuerdo a características como tamaño, cubierta corporal, estructuras de desplazamiento y hábitat, entre otras."
+  },
+  {
+   "codigo": "CN01 OA 03",
+   "eje": "Ciencias de la Vida",
+   "texto": "Observar e identificar, por medio de la exploración, las estructuras principales de las plantas: hojas, flores, tallos y raíces."
+  },
+  {
+   "codigo": "CN01 OA 04",
+   "eje": "Ciencias de la Vida",
+   "texto": "Observar y clasificar semillas, frutos, flores y tallos a partir de criterios como tamaño, forma, textura y color, entre otros."
+  },
+  {
+   "codigo": "CN01 OA 05",
+   "eje": "Ciencias de la Vida",
+   "texto": "Reconocer y comparar diversas plantas y animales de nuestro país, considerando las características observables, y proponiendo medidas para su cuidado."
+  },
+  {
+   "codigo": "CN01 OA 06",
+   "eje": "Ciencias de la Vida",
+   "texto": "Identificar y describir la ubicación y la función de los sentidos proponiendo medidas para protegerlos y para prevenir situaciones de riesgo."
+  },
+  {
+   "codigo": "CN01 OA 07",
+   "eje": "Ciencias de la Vida",
+   "texto": "Describir, dar ejemplos y practicar hábitos de vida saludable para mantener el cuerpo sano y prevenir enfermedades (actividad física, aseo del cuerpo, lavado de alimentos y alimentación saludable, entre otros)."
+  },
+  {
+   "codigo": "CN01 OA 08",
+   "eje": "Ciencias Físicas y Químicas",
+   "texto": "Explorar y describir los diferentes tipos de materiales en diversos objetos, clasificándolos según sus propiedades (goma-flexible, plástico-impermeable) e identificando su uso en la vida cotidiana."
+  },
+  {
+   "codigo": "CN01 OA 09",
+   "eje": "Ciencias Físicas y Químicas",
+   "texto": "Observar y describir los cambios que se producen en los materiales al aplicarles fuerza, luz, calor y agua."
+  },
+  {
+   "codigo": "CN01 OA 10",
+   "eje": "Ciencias Físicas y Químicas",
+   "texto": "Diseñar instrumentos tecnológicos simples considerando diversos materiales y sus propiedades para resolver problemas cotidianos."
+  },
+  {
+   "codigo": "CN01 OA 11",
+   "eje": "Ciencias de la Tierra y el Universo",
+   "texto": "Describir y registrar el ciclo diario y las diferencias entre el día y la noche, a partir de la observación del Sol, la Luna, las estrellas y la luminosidad del cielo, entre otras, y sus efectos en los seres vivos y el ambiente."
+  },
+  {
+   "codigo": "CN01 OA 12",
+   "eje": "Ciencias de la Tierra y el Universo",
+   "texto": "Describir y comunicar los cambios del ciclo de las estaciones y sus efectos en los seres vivos y el ambiente."
+  }
+ ]
+}

@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "¿Con qué parte del cuerpo vemos?",
+   "opciones": [
+    "Con los ojos",
+    "Con los oídos",
+    "Con la nariz",
+    "Con la lengua"
+   ],
+   "correcta": 0,
+   "tip": "Los ojos son el órgano de la vista. Con ellos vemos colores, formas y movimientos.",
+   "id": "cien1-oa06-1"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "Ana huele el pan recién hecho. ¿Con qué?",
+   "opciones": [
+    "Con la nariz",
+    "Con la boca",
+    "Con las manos",
+    "Con los ojos"
+   ],
+   "correcta": 0,
+   "tip": "La nariz es el órgano del olfato. Con ella sentimos el olor de una flor o del pan recién hecho.",
+   "id": "cien1-oa06-2"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "¿Dónde sentimos los sabores?",
+   "opciones": [
+    "En la lengua",
+    "En los dientes",
+    "En las orejas",
+    "En las manos"
+   ],
+   "correcta": 0,
+   "tip": "La lengua es el órgano del gusto. Con ella sentimos si algo es dulce, salado o ácido.",
+   "id": "cien1-oa06-3"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "Javiera acaricia a su gato. ¿Qué sentido usa?",
+   "opciones": [
+    "El tacto",
+    "El gusto",
+    "El olfato",
+    "El oído"
+   ],
+   "correcta": 0,
+   "tip": "Al tocar sentimos si algo es suave, áspero, frío o tibio. Ese sentido es el tacto, y está en la piel.",
+   "id": "cien1-oa06-4"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "Benjamín escucha un pajarito. ¿Qué usa?",
+   "opciones": [
+    "Los oídos",
+    "Los ojos",
+    "La nariz",
+    "La lengua"
+   ],
+   "correcta": 0,
+   "tip": "Los oídos son el órgano de la audición. Con ellos oímos voces, música y el canto de los pájaros.",
+   "id": "cien1-oa06-5"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "¿Con qué siente Sofía que la manzana es dulce?",
+   "opciones": [
+    "Con la lengua",
+    "Con los ojos",
+    "Con las orejas",
+    "Con los dedos"
+   ],
+   "correcta": 0,
+   "tip": "Lo dulce, lo salado y lo ácido se sienten con la lengua, que es el órgano del gusto.",
+   "id": "cien1-oa06-6"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "Matías mira el arcoíris. ¿Qué sentido usa?",
+   "opciones": [
+    "La vista",
+    "El tacto",
+    "El olfato",
+    "El gusto"
+   ],
+   "correcta": 0,
+   "tip": "Para ver los colores del arcoíris usamos la vista, que está en los ojos.",
+   "id": "cien1-oa06-7"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "¿Para qué sirven los oídos?",
+   "opciones": [
+    "Para escuchar",
+    "Para oler",
+    "Para ver",
+    "Para saborear"
+   ],
+   "correcta": 0,
+   "tip": "Los oídos nos dejan escuchar los sonidos: una voz, una bocina o la música.",
+   "id": "cien1-oa06-8"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "¿Qué protege los ojos del sol fuerte?",
+   "opciones": [
+    "Lentes de sol",
+    "Una bufanda",
+    "Unos guantes",
+    "Un gorro de lana"
+   ],
+   "correcta": 0,
+   "tip": "Los lentes de sol protegen los ojos de la luz fuerte. Aun con ellos, nunca se mira el sol directo.",
+   "id": "cien1-oa06-9"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "¿Se puede mirar el sol directo?",
+   "opciones": [
+    "Nunca",
+    "Sí, un ratito",
+    "Sí, con lentes de sol",
+    "Sí, si es poquito"
+   ],
+   "correcta": 0,
+   "tip": "Mirar el sol directo daña los ojos, aunque sea un ratito y aunque usemos lentes de sol.",
+   "id": "cien1-oa06-10"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "¿Qué puede dañar los oídos?",
+   "opciones": [
+    "Ruidos muy fuertes",
+    "Música suave",
+    "Un susurro",
+    "El canto de un pájaro"
+   ],
+   "correcta": 0,
+   "tip": "Los sonidos muy fuertes pueden dañar los oídos. Por eso hay que alejarse de ellos o bajar el volumen.",
+   "id": "cien1-oa06-11"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "Ana siente olor a gas. ¿Qué debe hacer?",
+   "opciones": [
+    "Avisar a un adulto",
+    "Seguir jugando",
+    "Oler más de cerca",
+    "Esconderse en la pieza"
+   ],
+   "correcta": 0,
+   "tip": "El olfato nos avisa de peligros. Si huele a gas, hay que avisar de inmediato a un adulto.",
+   "id": "cien1-oa06-12"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "Tomás ve un líquido sin etiqueta. ¿Qué hace?",
+   "opciones": [
+    "Pregunta a un adulto",
+    "Lo prueba un poquito",
+    "Lo huele de cerca",
+    "Se lo toma todo"
+   ],
+   "correcta": 0,
+   "tip": "Nunca se prueba algo que no sabemos qué es. Puede ser un producto de limpieza que hace daño.",
+   "id": "cien1-oa06-13"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "Javiera ve una plancha encendida. ¿Qué hace?",
+   "opciones": [
+    "Se aleja de ella",
+    "La toca rápido",
+    "Le pone la mano",
+    "La toca con un dedo"
+   ],
+   "correcta": 0,
+   "tip": "La plancha encendida quema la piel. Para cuidar el tacto, nos alejamos de las cosas muy calientes.",
+   "id": "cien1-oa06-14"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "¿Qué ayuda a cuidar los ojos al leer?",
+   "opciones": [
+    "Buena luz",
+    "Leer a oscuras",
+    "Leer muy de cerca",
+    "Frotarse los ojos"
+   ],
+   "correcta": 0,
+   "tip": "Leer con buena luz cuida los ojos. A oscuras o muy de cerca, los ojos se cansan.",
+   "id": "cien1-oa06-15"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "Matías tiene tierra en un ojo. ¿Qué hace?",
+   "opciones": [
+    "Avisa a un adulto",
+    "Se frota fuerte",
+    "Mete el dedo",
+    "Sigue jugando"
+   ],
+   "correcta": 0,
+   "tip": "Frotarse puede dañar el ojo. Lo mejor es avisar a un adulto, que puede lavarlo con agua.",
+   "id": "cien1-oa06-16"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "¿En qué parte del cuerpo está la piel?",
+   "opciones": [
+    "En todo el cuerpo",
+    "Solo en las manos",
+    "Solo en la cara",
+    "Solo en los pies"
+   ],
+   "correcta": 0,
+   "tip": "La piel cubre todo el cuerpo. Por eso podemos sentir el tacto en las manos, la cara, los brazos y los pies.",
+   "id": "cien1-oa06-17"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "Pedro no puede ver. ¿Cómo puede leer?",
+   "opciones": [
+    "Tocando con los dedos",
+    "No puede leer nunca",
+    "Oliendo el papel",
+    "Escuchando el papel"
+   ],
+   "correcta": 0,
+   "tip": "Muchas personas que no ven leen en braille: unos puntitos en relieve que se tocan con los dedos.",
+   "id": "cien1-oa06-18"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "Ana no oye. ¿Cómo conversa con su amiga?",
+   "opciones": [
+    "Con lengua de señas",
+    "No conversa nunca",
+    "Con el olfato",
+    "Con el gusto"
+   ],
+   "correcta": 0,
+   "tip": "Muchas personas que no oyen conversan en lengua de señas, con las manos y la cara.",
+   "id": "cien1-oa06-19"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "Sin verlo, Diego sabe que el pan se quema. ¿Cómo?",
+   "opciones": [
+    "Por el olor",
+    "Por el sabor",
+    "Tocándolo",
+    "Por el color"
+   ],
+   "correcta": 0,
+   "tip": "El olfato nos avisa de lejos: el olor a quemado se siente aunque no veamos el pan.",
+   "id": "cien1-oa06-20"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "Javiera tiene picazón en el oído. ¿Qué hace?",
+   "opciones": [
+    "Avisa a un adulto",
+    "Mete un lápiz",
+    "Mete un palito",
+    "Se rasca con una llave"
+   ],
+   "correcta": 0,
+   "tip": "Meter cosas en el oído puede dañarlo por dentro. Si pica o duele, se le avisa a un adulto.",
+   "id": "cien1-oa06-21"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "Ana pasa la mano por una lija. ¿Qué siente?",
+   "opciones": [
+    "Que es áspera",
+    "Que es dulce",
+    "Que suena",
+    "Que huele"
+   ],
+   "correcta": 0,
+   "tip": "Con el tacto sentimos si algo es suave o áspero. La lija es áspera al tocarla.",
+   "id": "cien1-oa06-22"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "¿Con qué sabemos el color de una flor?",
+   "opciones": [
+    "Con la vista",
+    "Con el olfato",
+    "Con el tacto",
+    "Con el oído"
+   ],
+   "correcta": 0,
+   "tip": "Los colores se ven con los ojos. El olfato nos da el olor de la flor, pero no su color.",
+   "id": "cien1-oa06-23"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "Ana cierra los ojos y oye llover. ¿Qué usa?",
+   "opciones": [
+    "Los oídos",
+    "Los ojos",
+    "La lengua",
+    "Las manos"
+   ],
+   "correcta": 0,
+   "tip": "Aunque no veamos, los oídos nos dejan escuchar los sonidos, como el ruido de la lluvia.",
+   "id": "cien1-oa06-24"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "¿Qué protege la piel del sol?",
+   "opciones": [
+    "Bloqueador solar",
+    "Aceite de cocina",
+    "Mucho perfume",
+    "Agua con sal"
+   ],
+   "correcta": 0,
+   "tip": "El bloqueador solar ayuda a proteger la piel del sol. El aceite no protege y puede hacer que la piel se queme más.",
+   "id": "cien1-oa06-25"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "Diego mira y escucha antes de cruzar. ¿Para qué?",
+   "opciones": [
+    "Ver si vienen autos",
+    "Oler el aire",
+    "Probar la calle",
+    "Tocar los autos"
+   ],
+   "correcta": 0,
+   "tip": "La vista y el oído nos avisan si viene un auto. Así cruzamos la calle con cuidado.",
+   "id": "cien1-oa06-26"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "Camila no ve bien de lejos. ¿Qué la ayuda?",
+   "opciones": [
+    "Usar lentes",
+    "Cerrar los ojos",
+    "Taparse un ojo",
+    "Mirar más fuerte"
+   ],
+   "correcta": 0,
+   "tip": "Los lentes ayudan a ver mejor a quienes no ven bien de lejos o de cerca.",
+   "id": "cien1-oa06-27"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "¿Para qué sirve la lengua?",
+   "opciones": [
+    "Para sentir sabores",
+    "Para oír sonidos",
+    "Para ver colores",
+    "Para oler flores"
+   ],
+   "correcta": 0,
+   "tip": "La lengua es el órgano del gusto: con ella sentimos los sabores de lo que comemos.",
+   "id": "cien1-oa06-28"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "Tomás oye una bocina en la calle. ¿Qué le avisa?",
+   "opciones": [
+    "Que viene un auto",
+    "Que es de noche",
+    "Que va a llover",
+    "Que hay pan"
+   ],
+   "correcta": 0,
+   "tip": "El oído nos avisa de peligros que no vemos, como un auto que se acerca tocando la bocina.",
+   "id": "cien1-oa06-29"
+  },
+  {
+   "oa": "CN01 OA 06",
+   "pregunta": "¿Qué sentido está en la piel?",
+   "opciones": [
+    "El tacto",
+    "La vista",
+    "El oído",
+    "El gusto"
+   ],
+   "correcta": 0,
+   "tip": "La piel es el órgano del tacto. Con ella sentimos si algo está frío, caliente, suave o áspero.",
+   "id": "cien1-oa06-30"
+  }
+ ]
+}

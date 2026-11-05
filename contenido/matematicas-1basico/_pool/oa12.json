@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "Balanza: 6 cubos en cada lado. ¿Qué lado baja?",
+   "opciones": [
+    "Ninguno",
+    "El izquierdo",
+    "El derecho",
+    "Los dos"
+   ],
+   "correcta": 0,
+   "tip": "Con la misma cantidad de cubos iguales, la balanza queda en equilibrio: no baja ningún lado.",
+   "id": "mate1-oa12-1"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "Balanza con 9 cubos y 5 cubos. ¿Qué lado baja?",
+   "opciones": [
+    "El de 9",
+    "El de 5",
+    "Ninguno",
+    "Los dos"
+   ],
+   "correcta": 0,
+   "tip": "Baja el lado que pesa más. Nueve cubos son más que cinco.",
+   "id": "mate1-oa12-2"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "La balanza tiene 7 cubos y 12. ¿Qué lado sube?",
+   "opciones": [
+    "El de 7",
+    "El de 12",
+    "Ninguno",
+    "Los dos"
+   ],
+   "correcta": 0,
+   "tip": "Sube el lado más liviano. Siete cubos son menos que doce.",
+   "id": "mate1-oa12-3"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "Balanza: 8 y 5 cubos. ¿Cuántos faltan al de 5?",
+   "opciones": [
+    "3",
+    "5",
+    "13",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "El lado de 5 necesita llegar a 8: 5 y 3 más son 8. Trece es juntar todo.",
+   "id": "mate1-oa12-4"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "Para igualar 14 y 10 cubos, ¿cuántos agregas al 10?",
+   "opciones": [
+    "4",
+    "10",
+    "24",
+    "14"
+   ],
+   "correcta": 0,
+   "tip": "Para el equilibrio el lado de 10 debe llegar a 14: 10 y 4 más son 14.",
+   "id": "mate1-oa12-5"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "Para igualar 11 y 7 cubos, ¿cuántos quitas al 11?",
+   "opciones": [
+    "4",
+    "7",
+    "18",
+    "11"
+   ],
+   "correcta": 0,
+   "tip": "Para el equilibrio el lado de 11 debe quedar en 7: a 11 le quitas 4 y quedan 7.",
+   "id": "mate1-oa12-6"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "¿Qué equilibra un lado con 5 + 4 cubos?",
+   "opciones": [
+    "9 cubos",
+    "8 cubos",
+    "10 cubos",
+    "54 cubos"
+   ],
+   "correcta": 0,
+   "tip": "Cinco y cuatro cubos son nueve. Al otro lado van nueve para quedar parejos.",
+   "id": "mate1-oa12-7"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "Un lado tiene 3 + 3. ¿Qué pones al otro?",
+   "opciones": [
+    "2 + 4",
+    "3 + 4",
+    "2 + 3",
+    "6 + 3"
+   ],
+   "correcta": 0,
+   "tip": "Tres y tres son seis, y dos y cuatro también son seis: la balanza queda pareja.",
+   "id": "mate1-oa12-8"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "Un lado tiene 10 cubos. ¿Qué lo equilibra?",
+   "opciones": [
+    "7 + 3",
+    "7 + 4",
+    "6 + 3",
+    "5 + 6"
+   ],
+   "correcta": 0,
+   "tip": "Siete y tres son diez. Las otras sumas dan once, nueve y once.",
+   "id": "mate1-oa12-9"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "¿Qué quiere decir el signo igual?",
+   "opciones": [
+    "Valen lo mismo",
+    "Hay que sumar",
+    "Uno es mayor",
+    "Viene el final"
+   ],
+   "correcta": 0,
+   "tip": "El signo igual dice que lo de un lado vale lo mismo que lo del otro, como una balanza pareja.",
+   "id": "mate1-oa12-10"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "¿Es cierto que 7 + 2 = 9?",
+   "opciones": [
+    "Sí, valen igual",
+    "No, 9 es más",
+    "No, 9 es menos",
+    "No, da 10"
+   ],
+   "correcta": 0,
+   "tip": "Siete y dos son nueve. Los dos lados valen nueve, así que el signo igual está bien.",
+   "id": "mate1-oa12-11"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "Luis anotó 6 + 5 = 10. ¿Acertó?",
+   "opciones": [
+    "No, 6 + 5 es 11",
+    "Sí, está bien",
+    "No, 6 + 5 es 9",
+    "Sí, dan 10"
+   ],
+   "correcta": 0,
+   "tip": "Seis y cinco son once, no diez. Los lados no valen lo mismo: el igual está mal puesto.",
+   "id": "mate1-oa12-12"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "Leo escribió 8 = 4 + 4. ¿Está bien?",
+   "opciones": [
+    "Sí, los dos son 8",
+    "No, va al revés",
+    "No, eso da 9",
+    "No, falta un 8"
+   ],
+   "correcta": 0,
+   "tip": "El igual funciona hacia los dos lados: ocho vale lo mismo que cuatro y cuatro.",
+   "id": "mate1-oa12-13"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "Si 9 = 5 + ▢, ¿cuánto vale el cuadrito?",
+   "opciones": [
+    "4",
+    "14",
+    "5",
+    "9"
+   ],
+   "correcta": 0,
+   "tip": "Cinco y cuatro más son nueve. Catorce sale de juntar el 9 con el 5.",
+   "id": "mate1-oa12-14"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "Si 6 + ▢ = 13, ¿qué número es el cuadrito?",
+   "opciones": [
+    "7",
+    "19",
+    "6",
+    "13"
+   ],
+   "correcta": 0,
+   "tip": "Seis y siete más son trece. Diecinueve sale de juntar el 6 con el 13.",
+   "id": "mate1-oa12-15"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "Balanza: Ana pone 15 cubos y Luis 15. ¿Y?",
+   "opciones": [
+    "En equilibrio",
+    "Baja Ana",
+    "Baja Luis",
+    "Suben los dos"
+   ],
+   "correcta": 0,
+   "tip": "Los dos lados tienen quince cubos iguales: la balanza queda pareja.",
+   "id": "mate1-oa12-16"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "Balanza: Pía 4 + 4, Tomás 3 + 6. ¿Qué lado baja?",
+   "opciones": [
+    "El de Tomás",
+    "El de Pía",
+    "Ninguno",
+    "Los dos"
+   ],
+   "correcta": 0,
+   "tip": "Pía tiene ocho cubos y Tomás nueve. Baja el lado que tiene más.",
+   "id": "mate1-oa12-17"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "La balanza tiene 2 + 8 y 5 + 5. ¿Cómo queda?",
+   "opciones": [
+    "En equilibrio",
+    "Baja el 2 + 8",
+    "Baja el 5 + 5",
+    "Suben los dos"
+   ],
+   "correcta": 0,
+   "tip": "Dos y ocho son diez, y cinco y cinco también: la balanza queda en equilibrio.",
+   "id": "mate1-oa12-18"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "¿Qué suma deja pareja la balanza con 20 cubos?",
+   "opciones": [
+    "10 + 10",
+    "10 + 2",
+    "15 + 4",
+    "2 + 0"
+   ],
+   "correcta": 0,
+   "tip": "Diez y diez son veinte. Diez y dos son solo doce, aunque se parezca a cómo se escribe el veinte.",
+   "id": "mate1-oa12-19"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "Balanza pareja: quitas 1 cubo de un lado. ¿Qué pasa?",
+   "opciones": [
+    "Ese lado sube",
+    "Ese lado baja",
+    "Sigue igual",
+    "Bajan los dos"
+   ],
+   "correcta": 0,
+   "tip": "Al quitarle un cubo, ese lado queda más liviano y sube.",
+   "id": "mate1-oa12-20"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "Balanza pareja: pones 2 cubos en un lado. ¿Y ahora?",
+   "opciones": [
+    "Ese lado baja",
+    "Ese lado sube",
+    "Sigue pareja",
+    "Suben los dos"
+   ],
+   "correcta": 0,
+   "tip": "Al agregarle cubos, ese lado pesa más y baja.",
+   "id": "mate1-oa12-21"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "La balanza está pareja. ¿Qué la deja igual?",
+   "opciones": [
+    "Uno más a cada lado",
+    "Uno más a un lado",
+    "Dos más a un lado",
+    "Uno menos a un lado"
+   ],
+   "correcta": 0,
+   "tip": "Si agregas lo mismo a los dos lados, los dos siguen valiendo lo mismo.",
+   "id": "mate1-oa12-22"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "Hay 10 a un lado y 4 + 6 al otro. ¿Qué se anota?",
+   "opciones": [
+    "10 = 4 + 6",
+    "10 = 4",
+    "4 + 6 = 11",
+    "10 = 46"
+   ],
+   "correcta": 0,
+   "tip": "Cuatro y seis son diez, así que se anota 10 = 4 + 6: los dos lados valen lo mismo.",
+   "id": "mate1-oa12-23"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "Los dos lados tienen 7 cubos. ¿Cómo se anota?",
+   "opciones": [
+    "7 = 7",
+    "7 + 7",
+    "7 = 14",
+    "77"
+   ],
+   "correcta": 0,
+   "tip": "Si los dos lados tienen siete, valen lo mismo: se anota 7 = 7.",
+   "id": "mate1-oa12-24"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "Un lado tiene 3 + 5 y el otro 8. ¿Cómo se anota?",
+   "opciones": [
+    "3 + 5 = 8",
+    "3 + 5 = 9",
+    "3 = 5 + 8",
+    "8 = 35"
+   ],
+   "correcta": 0,
+   "tip": "Tres y cinco son ocho: se anota 3 + 5 = 8.",
+   "id": "mate1-oa12-25"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "En la balanza, ¿qué lado baja: 11 cubos o 6 + 6?",
+   "opciones": [
+    "El de 6 + 6",
+    "El de 11",
+    "Ninguno",
+    "Los dos"
+   ],
+   "correcta": 0,
+   "tip": "Seis y seis son doce, y doce es más que once: baja el lado de 6 + 6.",
+   "id": "mate1-oa12-26"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "En la balanza, ¿qué lado baja: 4 + 9 o 7 + 6?",
+   "opciones": [
+    "Ninguno",
+    "El de 4 + 9",
+    "El de 7 + 6",
+    "Los dos"
+   ],
+   "correcta": 0,
+   "tip": "Cuatro y nueve son trece, y siete y seis también son trece: queda en equilibrio.",
+   "id": "mate1-oa12-27"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "Diego dice que 5 + 5 = 5. ¿Tiene razón?",
+   "opciones": [
+    "No, 5 + 5 es 10",
+    "Sí, está bien",
+    "No, da 55",
+    "Sí, son cinco"
+   ],
+   "correcta": 0,
+   "tip": "Cinco y cinco son diez, no cinco. Los dos lados no valen lo mismo.",
+   "id": "mate1-oa12-28"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "Igualar la balanza: un lado tiene 18. ¿Y el otro?",
+   "opciones": [
+    "18",
+    "9",
+    "0",
+    "36"
+   ],
+   "correcta": 0,
+   "tip": "Para que quede pareja, el otro lado necesita los mismos 18 cubos. Nueve es solo la mitad.",
+   "id": "mate1-oa12-29"
+  },
+  {
+   "oa": "MA01 OA 12",
+   "pregunta": "¿Cuántos cubos sumas a 10 para igualar 10 + 1?",
+   "opciones": [
+    "1",
+    "10",
+    "11",
+    "0"
+   ],
+   "correcta": 0,
+   "tip": "Diez y uno son once. A los 10 cubos les falta 1 para llegar a 11.",
+   "id": "mate1-oa12-30"
+  }
+ ]
+}

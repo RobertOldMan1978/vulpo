@@ -1,0 +1,1147 @@
+{
+ "lecciones": [
+  {
+   "id": "ma1-oa01",
+   "oa": "MA01 OA 01",
+   "titulo": "Contar de a saltos",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Contar de a saltos es avanzar siempre lo mismo. Puedes saltar de dos en dos, de cinco en cinco o de diez en diez."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 30,
+      "max": 50,
+      "paso": 2,
+      "saltos": true,
+      "signo": false,
+      "marca": 36,
+      "interactivo": true
+     },
+     "intro": "Arrastra la marca. Cada salto avanza dos."
+    },
+    {
+     "t": "texto",
+     "md": "Puedes empezar en cualquier número. Y también puedes contar hacia atrás. Así el número se achica en cada salto."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 6,
+      "max": 96,
+      "paso": 10,
+      "saltos": true,
+      "signo": false,
+      "marca": 56,
+      "interactivo": true
+     },
+     "intro": "Aquí saltamos de diez en diez, partiendo en el seis. Mira: todos terminan en seis."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Contemos de cinco en cinco hacia atrás, desde el 95.",
+     "pasos": [
+      "Partimos en 95.",
+      "Retrocedemos cinco y llegamos a 90.",
+      "Retrocedemos cinco otra vez y llegamos a 85.",
+      "Un salto más y llegamos a 80.",
+      "La cuenta es 95, 90, 85, 80."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA01 OA 01",
+      "n": 8
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma1-oa02",
+   "oa": "MA01 OA 02",
+   "titulo": "Primero, segundo, tercero",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "En una fila, cada uno tiene su lugar. El de adelante es el **primero**. Después vienen el segundo, el tercero y el cuarto."
+    },
+    {
+     "t": "texto",
+     "md": "Siguen el quinto, el sexto, el séptimo y el octavo. Después vienen el noveno y el décimo."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 1,
+      "max": 10,
+      "paso": 1,
+      "signo": false,
+      "marca": 1,
+      "interactivo": true
+     },
+     "intro": "Cada número es un lugar de la fila. Arrastra la marca. En el uno está el primero. En el dos está el segundo. Y así hasta el diez, que es el décimo."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Nueve niños hacen una fila. Vulpi es el quinto.",
+     "pasos": [
+      "Delante de Vulpi están el primero, el segundo, el tercero y el cuarto.",
+      "Entonces delante de Vulpi hay cuatro niños.",
+      "Detrás de Vulpi están el sexto, el séptimo, el octavo y el noveno.",
+      "Entonces detrás de Vulpi también hay cuatro niños."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA01 OA 02",
+      "n": 8
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma1-oa03",
+   "oa": "MA01 OA 03",
+   "titulo": "Los números hasta el 20",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Para contar, toca cada cosa una sola vez. El último número que dices es cuántas cosas hay. Si no hay nada, el número es el **cero**."
+    },
+    {
+     "t": "texto",
+     "md": "Un número se puede decir, se puede dibujar y se puede escribir. Las tres formas dicen lo mismo."
+    },
+    {
+     "t": "diagrama",
+     "kind": "bloques",
+     "params": {
+      "numero": 14,
+      "etiqueta": "10 y 4 son 14",
+      "sinCentenas": true
+     },
+     "intro": "Mira el catorce. Es una barra de diez y cuatro cubitos sueltos."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Escribamos el número doce.",
+     "pasos": [
+      "Doce es diez y dos más.",
+      "Los diez forman una barra.",
+      "Los dos son cubitos sueltos.",
+      "El doce se escribe con un 1 y después un 2."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA01 OA 03",
+      "n": 8
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma1-oa04",
+   "oa": "MA01 OA 04",
+   "titulo": "¿Cuál es mayor?",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un número es **mayor** si tiene más. Es menor si tiene menos. Si tienen lo mismo, son iguales."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 0,
+      "max": 20,
+      "paso": 1,
+      "signo": false,
+      "marca": 11,
+      "interactivo": true
+     },
+     "intro": "Arrastra la marca lejos del cero. Mientras más lejos del cero, más grande es el número."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Vulpi tiene 8 bolitas. Pía tiene 14. ¿Quién tiene más?",
+     "pasos": [
+      "Buscamos el 8 y el 14 en la fila de números.",
+      "El 14 está más lejos del cero.",
+      "Entonces el 14 es mayor que el 8.",
+      "Pía tiene más bolitas que Vulpi."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ordenemos de menor a mayor el 19, el 2 y el 13.",
+     "pasos": [
+      "El más cerca del cero es el 2. Es el menor.",
+      "Después viene el 13.",
+      "El más lejos del cero es el 19. Es el mayor.",
+      "El orden queda así: 2, 13 y 19."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA01 OA 04",
+      "n": 8
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma1-oa05",
+   "oa": "MA01 OA 05",
+   "titulo": "Calcular a ojo",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Estimar es decir más o menos cuántos hay. Se hace sin contar uno por uno."
+    },
+    {
+     "t": "texto",
+     "md": "Para estimar, miramos un grupo que ya conocemos. Ese grupo se llama **referente**."
+    },
+    {
+     "t": "diagrama",
+     "kind": "pictograma",
+     "params": {
+      "datos": [
+       {
+        "etiqueta": "Contadas",
+        "valor": 10
+       },
+       {
+        "etiqueta": "A ojo",
+        "valor": 7
+       }
+      ],
+      "icono": "🌸",
+      "etiqueta": "Arriba hay 10 flores"
+     },
+     "intro": "Arriba hay diez flores. Ya las contamos: son el referente. La fila de abajo es más corta. Entonces tiene menos de diez."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Vulpi tiene una fila de diez bloques. Al lado hay otra fila, un poco más corta.",
+     "pasos": [
+      "La fila de diez es el referente.",
+      "La otra fila es un poco más corta.",
+      "Entonces tiene un poco menos de diez.",
+      "Vulpi dice: hay unos ocho bloques.",
+      "Después los cuenta: eran siete. ¡Quedó muy cerca!"
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "En la mesa hay dos montones de dulces. Los dos se ven iguales.",
+     "pasos": [
+      "Vulpi cuenta solo un montón: tiene unos siete.",
+      "El otro montón es igual de grande.",
+      "Siete y siete son catorce.",
+      "Vulpi estima: hay unos catorce dulces en la mesa."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA01 OA 05",
+      "n": 8
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma1-oa06",
+   "oa": "MA01 OA 06",
+   "titulo": "Armar y desarmar números",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un número se puede armar juntando dos partes. También se puede desarmar en dos partes."
+    },
+    {
+     "t": "diagrama",
+     "kind": "pictograma",
+     "params": {
+      "datos": [
+       {
+        "etiqueta": "Una parte",
+        "valor": 8
+       },
+       {
+        "etiqueta": "Otra parte",
+        "valor": 4
+       }
+      ],
+      "icono": "⭐",
+      "etiqueta": "8 + 4 = 12"
+     },
+     "intro": "Arriba hay ocho estrellas. Abajo hay cuatro. Si las juntamos, forman doce."
+    },
+    {
+     "t": "texto",
+     "md": "El mismo número se puede armar de muchas formas."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Busquemos otras formas de armar el doce.",
+     "pasos": [
+      "Doce es ocho más cuatro.",
+      "También es nueve más tres.",
+      "Y también es diez más dos.",
+      "Todas esas formas juntan doce."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Vulpi tiene 11 bolitas. Siete están en su mano. ¿Cuántas hay en su bolsillo?",
+     "pasos": [
+      "Las 11 bolitas son dos partes.",
+      "Una parte es siete.",
+      "Desde el siete seguimos contando hasta el once: ocho, nueve, diez, once.",
+      "Dimos cuatro pasos.",
+      "En el bolsillo hay cuatro bolitas."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA01 OA 06",
+      "n": 8
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma1-oa07",
+   "oa": "MA01 OA 07",
+   "titulo": "Trucos para calcular rápido",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Hay trucos para sumar sin contar con los dedos. Para sumar, parte en el número más grande. Desde ahí cuenta hacia adelante. Para restar, cuenta hacia atrás."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Sumemos tres más catorce.",
+     "pasos": [
+      "El número más grande es el 14. Partimos ahí.",
+      "Contamos tres hacia adelante: 15, 16, 17.",
+      "Llegamos al 17.",
+      "Tres más catorce es diecisiete."
+     ]
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 0,
+      "max": 20,
+      "paso": 1,
+      "signo": false,
+      "marca": 8,
+      "interactivo": true
+     },
+     "intro": "Otro truco es llegar primero al diez. Pon la marca en el 8. Avanza hasta el 10. Diste dos saltos."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Sumemos ocho más cuatro llegando al diez.",
+     "pasos": [
+      "Al 8 le faltan 2 para llegar a 10.",
+      "Del 4 tomamos esos 2. Nos quedan 2.",
+      "Ahora es diez más dos.",
+      "Diez más dos es doce."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "El último truco son los **dobles**. Un doble es sumar un número consigo mismo.",
+     "pasos": [
+      "Dos más dos es un doble. Da cuatro.",
+      "Diez más diez también es un doble. Da veinte.",
+      "Dos más uno es casi el doble de dos. Tiene uno menos.",
+      "Entonces da uno menos que cuatro: tres."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA01 OA 07",
+      "n": 8
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma1-oa08",
+   "oa": "MA01 OA 08",
+   "titulo": "Decenas y unidades",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Cuando hay muchas cosas, conviene juntarlas de a diez. Un grupo de diez se llama **decena**."
+    },
+    {
+     "t": "diagrama",
+     "kind": "bloques",
+     "params": {
+      "numero": 10,
+      "sinCentenas": true,
+      "etiqueta": "Diez cubitos son una decena"
+     },
+     "intro": "Diez cubitos juntos forman una barra. Esa barra es una decena."
+    },
+    {
+     "t": "texto",
+     "md": "Las cosas que quedan fuera del grupo son las **unidades**. Las unidades están sueltas."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Vulpi tiene 16 palitos. Los va a juntar de a diez.",
+     "pasos": [
+      "Cuenta diez palitos y los amarra. Ese grupo es una decena.",
+      "Le quedan seis palitos sueltos. Son seis unidades.",
+      "Entonces dieciséis es una decena y seis unidades.",
+      "Al escribir 16, el uno dice la decena y el seis dice las unidades."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA01 OA 08",
+      "n": 8
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma1-oa09",
+   "oa": "MA01 OA 09",
+   "titulo": "Sumar es juntar, restar es quitar",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Sumar es juntar. También es cuando llegan más. Restar es quitar. También es cuando algo se va."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Diferencia entre sumar y restar",
+      "items": [
+       {
+        "titulo": "Sumar",
+        "texto": "Juntar. Llegan más."
+       },
+       {
+        "titulo": "Restar",
+        "texto": "Quitar. Algo se va."
+       }
+      ],
+      "etiqueta": "Escucha qué pasa en la historia"
+     },
+     "intro": "Mira las dos ideas. Sumar es juntar. Restar es quitar."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "En el patio hay 6 pollitos. Llegan 5 pollitos más.",
+     "pasos": [
+      "Llegan más pollitos. Entonces sumamos.",
+      "Anotamos: seis más cinco.",
+      "Partimos en el 6 y contamos cinco más: 7, 8, 9, 10, 11.",
+      "Ahora hay 11 pollitos."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Hay 17 globos. Se revientan 4.",
+     "pasos": [
+      "Se van globos. Entonces restamos.",
+      "Anotamos: diecisiete menos cuatro.",
+      "Partimos en el 17 y contamos cuatro hacia atrás: 16, 15, 14, 13.",
+      "Quedan 13 globos."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "Escucha bien la historia. Si llegan, te dan o se juntan, es una suma. Si se comen, se pierden o se van, es una resta."
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA01 OA 09",
+      "n": 8
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma1-oa10",
+   "oa": "MA01 OA 10",
+   "titulo": "Sumar y restar se deshacen",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "La suma y la resta se deshacen. Si sumas un número y después lo restas, vuelves al inicio."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 0,
+      "max": 20,
+      "paso": 1,
+      "signo": false,
+      "marca": 6,
+      "interactivo": true
+     },
+     "intro": "Pon la marca en el 6. Avanza 7 saltos y llegas al 13. Ahora retrocede 7 saltos. Volviste al 6."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Vulpi tiene 11 bolitas. Gana 5 y después pierde 5.",
+     "pasos": [
+      "Tenía 11 bolitas.",
+      "Gana 5. Once más cinco es dieciséis.",
+      "Pierde 5. Dieciséis menos cinco es once.",
+      "Volvió a tener 11 bolitas, igual que al inicio."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "Por eso una resta se puede revisar con una suma. Y una suma se puede revisar con una resta."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Ema calculó que doce menos cuatro es ocho. Revisemos.",
+     "pasos": [
+      "Le quitó 4 al 12 y le quedaron 8.",
+      "Para revisar, devolvemos los 4.",
+      "Ocho más cuatro es doce.",
+      "Volvimos al 12. Ema tiene razón."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA01 OA 10",
+      "n": 8
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma1-oa11",
+   "oa": "MA01 OA 11",
+   "titulo": "Patrones que se repiten",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un **patrón** es algo que se repite siempre igual. Puede ser de colores, de sonidos o de números."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "desc": "Un patrón de movimientos: salto, aplauso, aplauso",
+      "items": [
+       {
+        "titulo": "Salto"
+       },
+       {
+        "titulo": "Aplauso"
+       },
+       {
+        "titulo": "Aplauso"
+       }
+      ],
+      "etiqueta": "Este grupo se repite"
+     },
+     "intro": "Mira el grupo: un salto, un aplauso y otro aplauso. Ese grupo se repite una y otra vez. Después viene otro salto."
+    },
+    {
+     "t": "texto",
+     "md": "Los números también hacen patrones. Si el número crece, el patrón es creciente. Si se achica, es decreciente."
+    },
+    {
+     "t": "diagrama",
+     "kind": "recta",
+     "params": {
+      "min": 3,
+      "max": 18,
+      "paso": 5,
+      "saltos": true,
+      "signo": false,
+      "marca": 8,
+      "interactivo": true
+     },
+     "intro": "Aquí el número crece de cinco en cinco, partiendo en el tres. Arrastra la marca y mira los saltos."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Busquemos qué sigue en 18, 15, 12.",
+     "pasos": [
+      "Del 18 al 15 el número baja tres.",
+      "Del 15 al 12 también baja tres.",
+      "La regla es restar tres. El patrón es decreciente.",
+      "Al 12 le quitamos tres y llegamos a 9."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA01 OA 11",
+      "n": 8
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma1-oa12",
+   "oa": "MA01 OA 12",
+   "titulo": "La balanza y el signo igual",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Una balanza tiene dos lados. Si los dos lados pesan lo mismo, la balanza queda pareja. Eso se llama **equilibrio**."
+    },
+    {
+     "t": "diagrama",
+     "kind": "balanza",
+     "params": {
+      "izqU": 8,
+      "derU": 8,
+      "etiqueta": "2 + 6 = 8"
+     },
+     "intro": "Esta balanza está pareja. En un lado hay dos más seis cubos. En el otro hay ocho. Los dos lados tienen ocho."
+    },
+    {
+     "t": "texto",
+     "md": "Si un lado tiene más cubos, ese lado baja. El otro lado sube. La balanza queda chueca."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Un lado tiene 12 cubos y el otro tiene 9. ¿Cómo la dejamos pareja?",
+     "pasos": [
+      "El lado de 12 tiene más. Ese lado baja.",
+      "Al 9 le faltan 3 para llegar a 12.",
+      "Ponemos 3 cubos en el lado del 9.",
+      "Ahora los dos lados tienen 12. Quedó pareja."
+     ]
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Cuando la balanza está pareja, se anota con el signo igual. El signo igual dice que los dos lados valen lo mismo.",
+     "pasos": [
+      "En un lado hay cuatro más dos cubos.",
+      "En el otro lado hay seis cubos.",
+      "Cuatro más dos es seis. Valen lo mismo.",
+      "Se anota: cuatro más dos es igual a seis."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA01 OA 12",
+      "n": 8
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma1-oa13",
+   "oa": "MA01 OA 13",
+   "titulo": "¿Dónde está?",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Para decir dónde está algo, lo comparamos con otra cosa. Usamos palabras como arriba y abajo. Delante y detrás. Dentro y fuera."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "niveles",
+      "piramide": false,
+      "desc": "Un estante con tres repisas: arriba, al medio y abajo",
+      "items": [
+       {
+        "titulo": "Arriba",
+        "texto": "Aquí está la pelota."
+       },
+       {
+        "titulo": "Al medio",
+        "texto": "Aquí está el auto."
+       },
+       {
+        "titulo": "Abajo",
+        "texto": "Aquí está el oso."
+       }
+      ],
+      "etiqueta": "Arriba, al medio y abajo"
+     },
+     "intro": "Mira este estante. La pelota está arriba. El oso está abajo. El auto está al medio, entre los dos. Si la pelota está arriba del oso, el oso está abajo de la pelota."
+    },
+    {
+     "t": "texto",
+     "md": "La derecha y la izquierda cambian según la persona. Para saber la derecha de alguien, ponte en su lugar. Mira hacia donde mira esa persona."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Vulpi mira hacia el parque. A un lado tiene un perro. Al otro lado tiene un gato.",
+     "pasos": [
+      "Vulpi levanta su mano derecha.",
+      "El perro está del mismo lado que esa mano.",
+      "Entonces el perro está a la derecha de Vulpi.",
+      "El gato está al otro lado: a la izquierda de Vulpi.",
+      "Si te pones en el lugar de Vulpi, mirando el parque, tu derecha es la misma que la suya."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA01 OA 13",
+      "n": 8
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma1-oa14",
+   "oa": "MA01 OA 14",
+   "titulo": "Cuerpos y figuras planas",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Algunas formas se pueden tomar con la mano. No son planas: tienen grosor. Se llaman **cuerpos**."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "comparar",
+      "desc": "Cuatro cuerpos: esfera, cilindro, cono y cubo",
+      "items": [
+       {
+        "titulo": "Esfera",
+        "texto": "Toda curva, como una bolita."
+       },
+       {
+        "titulo": "Cilindro",
+        "texto": "Como un tarro de pintura."
+       },
+       {
+        "titulo": "Cono",
+        "texto": "Con punta, como un barquillo."
+       },
+       {
+        "titulo": "Cubo",
+        "texto": "Caras iguales, como un bloque."
+       }
+      ],
+      "etiqueta": "Cuatro cuerpos que ves todos los días"
+     },
+     "intro": "Estos son cuatro cuerpos. La esfera es toda curva. El cilindro es como un tarro. El cono tiene una punta. El cubo tiene caras planas, todas iguales."
+    },
+    {
+     "t": "texto",
+     "md": "Hay otro cuerpo con caras planas, pero unas más largas que otras. Se llama paralelepípedo, como una caja de leche. Las formas planas, como un dibujo en el papel, se llaman figuras planas. Son el círculo, el cuadrado, el rectángulo y el triángulo."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Vulpi tiene un tarro de pintura. Veamos qué cuerpo es, y qué figura plana esconde.",
+     "pasos": [
+      "Vulpi toma el tarro con la mano. Es un cuerpo.",
+      "Por el lado es curvo. Arriba y abajo es plano y redondo.",
+      "Es un cilindro.",
+      "Vulpi lo apoya en un papel y dibuja todo su borde.",
+      "En el papel queda un círculo. El círculo es una figura plana."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA01 OA 14",
+      "n": 8
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma1-oa15",
+   "oa": "MA01 OA 15",
+   "titulo": "Líneas rectas y curvas",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Hay dos clases de líneas. Una línea **recta** va derecho, sin doblarse. Una línea curva se va doblando, como el borde de una galleta redonda."
+    },
+    {
+     "t": "diagrama",
+     "kind": "poligono",
+     "params": {
+      "lados": 5,
+      "cortes": false,
+      "etiqueta": "Bordes rectos"
+     },
+     "intro": "Pasa el dedo por el borde de esta figura. Cada lado va derecho, sin doblarse. Son líneas rectas."
+    },
+    {
+     "t": "diagrama",
+     "kind": "circulo",
+     "params": {
+      "radio": 55,
+      "mostrar": "nada",
+      "etiqueta": "Borde curvo"
+     },
+     "intro": "Ahora pasa el dedo por este borde. Se dobla todo el tiempo, y no tiene esquinas. Es una línea curva."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Miremos el borde de una ventana con un arco arriba.",
+     "pasos": [
+      "Abajo, el borde va derecho. Es una línea recta.",
+      "A los dos lados, el borde también va derecho. Son rectas.",
+      "Arriba, el borde se dobla como un arco. Es una línea curva.",
+      "Esta ventana tiene líneas rectas y también una curva.",
+      "Para dibujar una recta, apoya el lápiz en algo de borde derecho y deslízalo."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA01 OA 15",
+      "n": 8
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma1-oa16",
+   "oa": "MA01 OA 16",
+   "titulo": "¿Cuánto dura?",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Algunas cosas duran poco. Atarse los zapatos dura poco. Otras cosas duran mucho. Un paseo al campo dura mucho."
+    },
+    {
+     "t": "texto",
+     "md": "Para saber cuánto dura algo, contamos mientras pasa. Por ejemplo, contamos **aplausos**. Si hay más aplausos, duró más."
+    },
+    {
+     "t": "diagrama",
+     "kind": "pictograma",
+     "params": {
+      "datos": [
+       {
+        "etiqueta": "Vale",
+        "valor": 4
+       },
+       {
+        "etiqueta": "Nico",
+        "valor": 7
+       }
+      ],
+      "icono": "👏",
+      "escala": 1,
+      "etiqueta": "Cada 👏 es un aplauso"
+     },
+     "intro": "Vale y Nico guardan sus juguetes. Mientras guardan, alguien aplaude. Mira los aplausos de cada uno. La fila más larga demoró más."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Vale guardó sus juguetes en 4 aplausos. Nico, en 7. ¿Quién demoró más?",
+     "pasos": [
+      "Miramos los dos números: 4 y 7.",
+      "El 7 es más que el 4.",
+      "Nico necesitó más aplausos.",
+      "Nico demoró más. Vale terminó antes."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "Para comparar, todos cuentan lo mismo y al mismo ritmo. Si algo dura mucho, como una fiesta, contamos canciones en vez de aplausos."
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA01 OA 16",
+      "n": 8
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma1-oa17",
+   "oa": "MA01 OA 17",
+   "titulo": "Los días y los meses",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Los días de la semana van siempre en el mismo orden: lunes, martes, miércoles, jueves, viernes, sábado y domingo. Después del domingo, la semana vuelve a empezar."
+    },
+    {
+     "t": "diagrama",
+     "kind": "esquema",
+     "params": {
+      "forma": "secuencia",
+      "desc": "Ayer, hoy y mañana, en orden",
+      "items": [
+       {
+        "titulo": "Ayer: martes"
+       },
+       {
+        "titulo": "Hoy: miércoles"
+       },
+       {
+        "titulo": "Mañana: jueves"
+       }
+      ]
+     },
+     "intro": "Ayer es el día que ya pasó. Hoy es el día de ahora. Mañana es el día que viene."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Hoy es miércoles. ¿Qué día fue ayer? ¿Y qué día será mañana?",
+     "pasos": [
+      "Decimos los días en orden: martes, miércoles, jueves.",
+      "El día de antes del miércoles es el martes. Ayer fue martes.",
+      "El día de después del miércoles es el jueves.",
+      "Mañana será jueves."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "El año también tiene un orden. Empieza en **enero** y sigue mes por mes hasta diciembre. Algunas fechas son especiales y vuelven cada año, como tu cumpleaños."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Hoy es 20 de mayo. ¿Qué fecha será mañana?",
+     "pasos": [
+      "El número dice qué día del mes es. Hoy es el 20.",
+      "Mañana el número sube en uno. Será el 21.",
+      "El mes sigue siendo mayo.",
+      "Mañana será 21 de mayo."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA01 OA 17",
+      "n": 8
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma1-oa18",
+   "oa": "MA01 OA 18",
+   "titulo": "Largo y corto",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Algunas cosas son **largas** y otras son cortas. Una manguera es larga. Una goma de borrar es corta."
+    },
+    {
+     "t": "texto",
+     "md": "Para comparar dos cosas, las ponemos una al lado de la otra. Un extremo de cada una tiene que quedar parejo. Las dos parten del mismo lugar."
+    },
+    {
+     "t": "diagrama",
+     "kind": "pictograma",
+     "params": {
+      "datos": [
+       {
+        "etiqueta": "Lana",
+        "valor": 8
+       },
+       {
+        "etiqueta": "Cordón",
+        "valor": 5
+       }
+      ],
+      "icono": "🟧",
+      "escala": 1,
+      "etiqueta": "Las dos parten del mismo lugar"
+     },
+     "intro": "La lana y el cordón parten parejos. La lana llega más lejos: es más larga. El cordón es más corto."
+    },
+    {
+     "t": "texto",
+     "md": "Si algo está enrollado o doblado, primero lo estiramos. Recién ahí lo comparamos."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Vulpi tiene tres bufandas. ¿Cómo las ordena de la más corta a la más larga?",
+     "pasos": [
+      "Pone las tres bufandas estiradas, con un extremo parejo.",
+      "Busca la que llega menos lejos. Es la más corta y va primero.",
+      "Después pone la que sigue.",
+      "Al final pone la que llega más lejos. Es la más larga."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA01 OA 18",
+      "n": 8
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma1-oa19",
+   "oa": "MA01 OA 19",
+   "titulo": "Preguntar y anotar",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Para saber qué le gusta al curso, le preguntamos a cada niño. Cada niño vota una sola vez. Después anotamos las respuestas para no olvidarlas."
+    },
+    {
+     "t": "texto",
+     "md": "En una **tabla de conteo** hay una fila para cada respuesta. Por cada voto, dibujamos un palito en su fila. Cuando hay cuatro palitos, el quinto se dibuja cruzado encima. Así queda un grupo de cinco."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "Los niños votan su juego favorito: la escondida o saltar la cuerda. ¿Cuántos votos tiene cada juego?",
+     "pasos": [
+      "Hacemos una fila para la escondida y otra para la cuerda.",
+      "Cada niño vota, y ponemos un palito en su fila.",
+      "La escondida tiene un grupo de cinco y dos palitos más.",
+      "Contamos: cinco, seis, siete. La escondida tiene 7 votos.",
+      "La cuerda tiene 2 votos. Ganó la escondida."
+     ]
+    },
+    {
+     "t": "diagrama",
+     "kind": "pictograma",
+     "params": {
+      "datos": [
+       {
+        "etiqueta": "Escondida",
+        "valor": 7
+       },
+       {
+        "etiqueta": "Cuerda",
+        "valor": 2
+       }
+      ],
+      "icono": "🟦",
+      "escala": 1,
+      "etiqueta": "Un bloque por cada voto"
+     },
+     "intro": "También podemos poner un bloque por cada voto. Son los mismos votos de antes. La fila más larga es el juego que ganó."
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA01 OA 19",
+      "n": 8
+     }
+    }
+   ],
+   "revisada": false
+  },
+  {
+   "id": "ma1-oa20",
+   "oa": "MA01 OA 20",
+   "titulo": "Leer un pictograma",
+   "bloques": [
+    {
+     "t": "texto",
+     "md": "Un **pictograma** muestra datos con dibujos. Cada dibujo es un niño. Todos los dibujos son del mismo tamaño, y su título dice de qué se trata."
+    },
+    {
+     "t": "diagrama",
+     "kind": "pictograma",
+     "params": {
+      "datos": [
+       {
+        "etiqueta": "Autito",
+        "valor": 2
+       },
+       {
+        "etiqueta": "Pelota",
+        "valor": 7
+       },
+       {
+        "etiqueta": "Puzle",
+        "valor": 4
+       }
+      ],
+      "icono": "🙂",
+      "escala": 1,
+      "etiqueta": "Juguete favorito: cada 🙂 es un niño"
+     },
+     "intro": "Este pictograma muestra el juguete favorito del curso. Cada carita es un niño que votó."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "¿Qué juguete eligieron más niños?",
+     "pasos": [
+      "Miramos todas las filas.",
+      "Contamos las caritas de cada fila.",
+      "La pelota tiene 7 caritas. Es la fila más larga.",
+      "La pelota es el juguete favorito."
+     ]
+    },
+    {
+     "t": "texto",
+     "md": "La fila más corta es lo que eligieron menos. Aquí es el autito. Para armar un pictograma, ponemos un dibujo por cada niño."
+    },
+    {
+     "t": "ejemplo",
+     "intro": "¿Cuántos niños más eligieron la pelota que el puzle?",
+     "pasos": [
+      "El puzle tiene 4 caritas. La pelota tiene 7.",
+      "Ponemos las dos filas juntas, carita con carita.",
+      "A la pelota le sobran 3 caritas.",
+      "La pelota tiene 3 niños más que el puzle."
+     ]
+    },
+    {
+     "t": "practica",
+     "fromBank": {
+      "oa": "MA01 OA 20",
+      "n": 8
+     }
+    }
+   ],
+   "revisada": false
+  }
+ ]
+}

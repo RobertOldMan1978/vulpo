@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Sofía nació el 3 de mayo. ¿Qué dato es ese?",
+   "opciones": [
+    "su fecha de nacimiento",
+    "su nombre",
+    "su edad",
+    "su dirección"
+   ],
+   "correcta": 0,
+   "tip": "El día y el mes en que alguien nació es su fecha de nacimiento.",
+   "id": "hist1-oa03-1"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Camilo nació en invierno. ¿Qué nos cuenta eso?",
+   "opciones": [
+    "cuándo nació",
+    "dónde nació",
+    "cómo se llama",
+    "qué le gusta"
+   ],
+   "correcta": 0,
+   "tip": "Decir en qué época del año nació cuenta cuándo nació, no dónde.",
+   "id": "hist1-oa03-2"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "A Pía le encanta dibujar. ¿Qué cuenta eso de ella?",
+   "opciones": [
+    "un gusto suyo",
+    "su nombre",
+    "dónde vive",
+    "cuándo nació"
+   ],
+   "correcta": 0,
+   "tip": "Lo que a alguien le encanta hacer es uno de sus gustos.",
+   "id": "hist1-oa03-3"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Rocío lee todo sobre dinosaurios. ¿Qué es eso?",
+   "opciones": [
+    "un interés suyo",
+    "su apellido",
+    "su casa",
+    "su cumpleaños"
+   ],
+   "correcta": 0,
+   "tip": "Algo que nos da curiosidad y nos gusta aprender es un interés.",
+   "id": "hist1-oa03-4"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Luis juega siempre con Ema. ¿Qué es Ema para Luis?",
+   "opciones": [
+    "su amiga",
+    "su mamá",
+    "su profesora",
+    "su abuela"
+   ],
+   "correcta": 0,
+   "tip": "Con quien jugamos y compartimos seguido es un amigo o una amiga.",
+   "id": "hist1-oa03-5"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "En la lista del curso, ¿qué dato dice quién es?",
+   "opciones": [
+    "su nombre",
+    "su color favorito",
+    "su mochila",
+    "su estatura"
+   ],
+   "correcta": 0,
+   "tip": "El nombre es lo que nos identifica a cada uno en una lista.",
+   "id": "hist1-oa03-6"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "¿Qué dato sirve para saber el cumpleaños de Ana?",
+   "opciones": [
+    "su fecha de nacimiento",
+    "su nombre",
+    "su ciudad",
+    "su comida favorita"
+   ],
+   "correcta": 0,
+   "tip": "El cumpleaños se celebra cada año el día de la fecha de nacimiento.",
+   "id": "hist1-oa03-7"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Antonia cumplió 6 años. ¿Qué dato es ese?",
+   "opciones": [
+    "su edad",
+    "su fecha de nacimiento",
+    "su apellido",
+    "su barrio"
+   ],
+   "correcta": 0,
+   "tip": "Los años que alguien tiene son su edad. La fecha de nacimiento es el día en que nació.",
+   "id": "hist1-oa03-8"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Se llama Sofía Rojas. ¿Cuál es su apellido?",
+   "opciones": [
+    "Rojas",
+    "Sofía",
+    "Sofía Rojas",
+    "Pérez"
+   ],
+   "correcta": 0,
+   "tip": "El nombre va primero y el apellido después: Sofía es el nombre y Rojas el apellido.",
+   "id": "hist1-oa03-9"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Se llama Tomás Soto. ¿Cuál es su nombre?",
+   "opciones": [
+    "Tomás",
+    "Soto",
+    "Tomás Soto",
+    "Muñoz"
+   ],
+   "correcta": 0,
+   "tip": "En «Tomás Soto», Tomás es el nombre y Soto es el apellido.",
+   "id": "hist1-oa03-10"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Benja nació en Perú y vive en Chile. ¿Dónde nació?",
+   "opciones": [
+    "en Perú",
+    "en Chile",
+    "en el colegio",
+    "en un barco"
+   ],
+   "correcta": 0,
+   "tip": "El lugar donde alguien nació puede ser distinto del lugar donde vive ahora.",
+   "id": "hist1-oa03-11"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Lía nació en Talca y vive en Arica. ¿Dónde vive?",
+   "opciones": [
+    "en Arica",
+    "en Talca",
+    "en el sur",
+    "en un barco"
+   ],
+   "correcta": 0,
+   "tip": "Lía nació en una ciudad y ahora vive en otra: hoy vive en Arica.",
+   "id": "hist1-oa03-12"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "La abuela de Agus nació en Italia. ¿Qué nos dice?",
+   "opciones": [
+    "de dónde viene su abuela",
+    "cuántos años tiene",
+    "qué le gusta",
+    "cómo se llama"
+   ],
+   "correcta": 0,
+   "tip": "Saber dónde nacieron las personas de la familia cuenta de dónde viene esa familia.",
+   "id": "hist1-oa03-13"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "¿Qué dato cuenta un gusto de Nico?",
+   "opciones": [
+    "le encanta nadar",
+    "nació en marzo",
+    "se llama Nicolás",
+    "vive en Talca"
+   ],
+   "correcta": 0,
+   "tip": "Un gusto es algo que nos agrada hacer, como nadar.",
+   "id": "hist1-oa03-14"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "¿Qué dato cuenta dónde nació Elisa?",
+   "opciones": [
+    "nació en Osorno",
+    "nació en marzo",
+    "le gusta bailar",
+    "es amiga de Luz"
+   ],
+   "correcta": 0,
+   "tip": "Osorno es una ciudad: dice el lugar donde nació Elisa. Marzo es un mes: diría cuándo nació.",
+   "id": "hist1-oa03-15"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "¿Qué dato cuenta la edad de Pedro?",
+   "opciones": [
+    "tiene 7 años",
+    "nació en Iquique",
+    "le gusta leer",
+    "se llama Pedro"
+   ],
+   "correcta": 0,
+   "tip": "La edad son los años que alguien tiene.",
+   "id": "hist1-oa03-16"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "¿Qué dato cuenta quién es amiga de Ana?",
+   "opciones": [
+    "juega con Tere",
+    "nació en abril",
+    "le gusta el pan",
+    "vive en Quillota"
+   ],
+   "correcta": 0,
+   "tip": "Con quien Ana juega y comparte es su amiga.",
+   "id": "hist1-oa03-17"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "¿Qué dato cuenta cuándo nació Bruno?",
+   "opciones": [
+    "el 8 de agosto",
+    "en Coquimbo",
+    "le gusta pintar",
+    "tiene un perro"
+   ],
+   "correcta": 0,
+   "tip": "Una fecha, con su día y su mes, dice cuándo nació alguien.",
+   "id": "hist1-oa03-18"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Valentina y Josefa son distintas. ¿Eso está bien?",
+   "opciones": [
+    "sí, cada una es única",
+    "no, deben ser iguales",
+    "solo si son hermanas",
+    "no, tienen que cambiar"
+   ],
+   "correcta": 0,
+   "tip": "Cada persona es única: tiene su propio nombre, sus gustos y su manera de ser.",
+   "id": "hist1-oa03-19"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Ana y Bea son gemelas. ¿Son la misma persona?",
+   "opciones": [
+    "no, cada una es única",
+    "sí, son iguales",
+    "sí, tienen igual cara",
+    "solo en el colegio"
+   ],
+   "correcta": 0,
+   "tip": "Aunque se parezcan mucho, las gemelas son dos personas, cada una con sus gustos y su nombre.",
+   "id": "hist1-oa03-20"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Ana y Lía tienen gustos distintos. ¿Pueden ser amigas?",
+   "opciones": [
+    "sí, claro que pueden",
+    "no, nunca",
+    "solo si los cambian",
+    "solo en el recreo"
+   ],
+   "correcta": 0,
+   "tip": "Cada persona tiene sus propios gustos, y amigas con gustos distintos pueden pasarlo muy bien juntas.",
+   "id": "hist1-oa03-21"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Gabriel hace una ficha sobre él. ¿Qué escribe?",
+   "opciones": [
+    "su nombre y gustos",
+    "el clima de hoy",
+    "las sumas del dos",
+    "el menú del casino"
+   ],
+   "correcta": 0,
+   "tip": "Una ficha sobre uno mismo cuenta datos propios: el nombre, la edad, los gustos y los amigos.",
+   "id": "hist1-oa03-22"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Sergio quiere contar quién es. ¿Qué puede mostrar?",
+   "opciones": [
+    "una foto suya",
+    "un mapa de China",
+    "una regla",
+    "una receta de pan"
+   ],
+   "correcta": 0,
+   "tip": "Una foto de uno mismo ayuda a contar quiénes somos.",
+   "id": "hist1-oa03-23"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Flor y Ema cumplen años el mismo día. ¿Qué es igual?",
+   "opciones": [
+    "su cumpleaños",
+    "el nombre",
+    "los gustos",
+    "la cara"
+   ],
+   "correcta": 0,
+   "tip": "Si cumplen años el mismo día, las dos celebran su cumpleaños en la misma fecha, aunque sean dos personas distintas.",
+   "id": "hist1-oa03-24"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "A Mía ya no le gusta el rojo. ¿Sigue siendo Mía?",
+   "opciones": [
+    "sí, los gustos cambian",
+    "no, es otra niña",
+    "solo con el pelo largo",
+    "no, debe cambiar de nombre"
+   ],
+   "correcta": 0,
+   "tip": "Los gustos pueden cambiar al crecer, y uno sigue siendo la misma persona.",
+   "id": "hist1-oa03-25"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Luciano habla de sí mismo al curso. ¿Qué cuenta?",
+   "opciones": [
+    "que le gusta el fútbol",
+    "la hora que es",
+    "la tabla del dos",
+    "el nombre del colegio"
+   ],
+   "correcta": 0,
+   "tip": "Hablar de sí mismo es contar algo propio, como lo que nos gusta.",
+   "id": "hist1-oa03-26"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Joaquín llegó desde Haití. ¿Qué dato es ese?",
+   "opciones": [
+    "de dónde viene",
+    "cuántos años tiene",
+    "cómo se llama",
+    "qué le gusta comer"
+   ],
+   "correcta": 0,
+   "tip": "Haití es el país de donde vino Joaquín: es su lugar de procedencia.",
+   "id": "hist1-oa03-27"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "¿Qué dato tienen TODAS las personas?",
+   "opciones": [
+    "un nombre",
+    "un perro",
+    "pelo largo",
+    "dos hermanos"
+   ],
+   "correcta": 0,
+   "tip": "Todas las personas tienen un nombre. Mascotas, hermanos o pelo largo, algunos sí y otros no.",
+   "id": "hist1-oa03-28"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Rafa y su hermano, ¿tienen los mismos gustos?",
+   "opciones": [
+    "pueden ser distintos",
+    "siempre son iguales",
+    "nunca cambian",
+    "los decide otro"
+   ],
+   "correcta": 0,
+   "tip": "Aunque sean familia, cada uno puede tener gustos propios.",
+   "id": "hist1-oa03-29"
+  },
+  {
+   "oa": "HI01 OA 03",
+   "pregunta": "Paz dibuja a sus amigos. ¿Qué cuenta su dibujo?",
+   "opciones": [
+    "quiénes son sus amigos",
+    "dónde nació",
+    "su fecha de nacimiento",
+    "su apellido"
+   ],
+   "correcta": 0,
+   "tip": "Los amigos son parte de quiénes somos: el dibujo de Paz muestra con quién comparte.",
+   "id": "hist1-oa03-30"
+  }
+ ]
+}

@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "Delante de Ana hay 2 niños. ¿Qué lugar tiene?",
+   "opciones": [
+    "Tercer lugar",
+    "Segundo lugar",
+    "Cuarto lugar",
+    "Primer lugar"
+   ],
+   "correcta": 0,
+   "tip": "Si hay dos niños delante, Ana es la que viene después de ellos: la tercera.",
+   "id": "mate1-oa02-1"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "Matías llegó justo después del primero. ¿Y él?",
+   "opciones": [
+    "Segundo lugar",
+    "Primer lugar",
+    "Tercer lugar",
+    "Cuarto lugar"
+   ],
+   "correcta": 0,
+   "tip": "Justo después del primero viene el segundo.",
+   "id": "mate1-oa02-2"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "Pía llegó justo antes del cuarto. ¿Qué lugar?",
+   "opciones": [
+    "Tercer lugar",
+    "Quinto lugar",
+    "Cuarto lugar",
+    "Segundo lugar"
+   ],
+   "correcta": 0,
+   "tip": "Justo antes del cuarto lugar está el tercero.",
+   "id": "mate1-oa02-3"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "Corren 8 niños y Tomás llega último. ¿Qué lugar?",
+   "opciones": [
+    "Octavo lugar",
+    "Séptimo lugar",
+    "Noveno lugar",
+    "Primer lugar"
+   ],
+   "correcta": 0,
+   "tip": "Si son ocho y Tomás llega al final, todos llegaron antes que él: es el octavo.",
+   "id": "mate1-oa02-4"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "Camila va al final de una fila de 10. ¿Qué lugar?",
+   "opciones": [
+    "Décimo lugar",
+    "Noveno lugar",
+    "Primer lugar",
+    "Octavo lugar"
+   ],
+   "correcta": 0,
+   "tip": "Al final de una fila de diez está el décimo lugar.",
+   "id": "mate1-oa02-5"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "Nadie llegó antes que Luis. ¿En qué lugar quedó?",
+   "opciones": [
+    "Primer lugar",
+    "Segundo lugar",
+    "Tercer lugar",
+    "Décimo lugar"
+   ],
+   "correcta": 0,
+   "tip": "Si nadie llegó antes, Luis ganó: quedó en primer lugar.",
+   "id": "mate1-oa02-6"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "La semana parte el lunes. ¿Qué día es el tercero?",
+   "opciones": [
+    "Miércoles",
+    "Martes",
+    "Jueves",
+    "Lunes"
+   ],
+   "correcta": 0,
+   "tip": "Lunes es el primero, martes el segundo y miércoles el tercero.",
+   "id": "mate1-oa02-7"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "Del tercer piso, Pedro sube uno. ¿A cuál llega?",
+   "opciones": [
+    "Al cuarto piso",
+    "Al quinto piso",
+    "Al segundo piso",
+    "Al tercer piso"
+   ],
+   "correcta": 0,
+   "tip": "Subir un piso es ir al que sigue: después del tercero viene el cuarto.",
+   "id": "mate1-oa02-8"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "Ana baja un piso desde el sexto. ¿Adónde llega?",
+   "opciones": [
+    "Al quinto piso",
+    "Al séptimo piso",
+    "Al cuarto piso",
+    "Al sexto piso"
+   ],
+   "correcta": 0,
+   "tip": "Bajar un piso es ir al anterior: antes del sexto está el quinto.",
+   "id": "mate1-oa02-9"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "¿Qué lugar viene justo después del noveno?",
+   "opciones": [
+    "Décimo lugar",
+    "Octavo lugar",
+    "Séptimo lugar",
+    "Sexto lugar"
+   ],
+   "correcta": 0,
+   "tip": "Después del noveno viene el décimo, que es el último de los que aprendemos.",
+   "id": "mate1-oa02-10"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "¿Qué lugar va justo antes del sexto?",
+   "opciones": [
+    "Quinto lugar",
+    "Séptimo lugar",
+    "Cuarto lugar",
+    "Octavo lugar"
+   ],
+   "correcta": 0,
+   "tip": "Contando en orden: cuarto, quinto, sexto. Justo antes del sexto está el quinto.",
+   "id": "mate1-oa02-11"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "¿Cuántos niños van delante del cuarto de la fila?",
+   "opciones": [
+    "3",
+    "4",
+    "5",
+    "2"
+   ],
+   "correcta": 0,
+   "tip": "Delante del cuarto están el primero, el segundo y el tercero: son tres.",
+   "id": "mate1-oa02-12"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "¿Quién va delante del primero de la fila?",
+   "opciones": [
+    "Nadie",
+    "Un niño",
+    "Dos niños",
+    "Todos"
+   ],
+   "correcta": 0,
+   "tip": "El primero va adelante de todos: no tiene a nadie delante.",
+   "id": "mate1-oa02-13"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "Javiera es la séptima. ¿Cuántos van delante?",
+   "opciones": [
+    "6",
+    "7",
+    "8",
+    "5"
+   ],
+   "correcta": 0,
+   "tip": "Antes de la séptima van seis niños: del primero al sexto.",
+   "id": "mate1-oa02-14"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "El vagón de Luis sigue al segundo. ¿Cuál es?",
+   "opciones": [
+    "El tercero",
+    "El primero",
+    "El cuarto",
+    "El segundo"
+   ],
+   "correcta": 0,
+   "tip": "Justo detrás del segundo vagón va el tercero.",
+   "id": "mate1-oa02-15"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "Sofía ganó la carrera. ¿En qué lugar llegó?",
+   "opciones": [
+    "Primer lugar",
+    "Segundo lugar",
+    "Último lugar",
+    "Tercer lugar"
+   ],
+   "correcta": 0,
+   "tip": "Ganar una carrera es llegar antes que todos: el primer lugar.",
+   "id": "mate1-oa02-16"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "Benjamín llegó segundo. ¿Cuántos llegaron antes?",
+   "opciones": [
+    "1",
+    "2",
+    "0",
+    "3"
+   ],
+   "correcta": 0,
+   "tip": "Antes del segundo solo llega el primero: un niño.",
+   "id": "mate1-oa02-17"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "Son 5 niños en fila. ¿Qué lugar es el del medio?",
+   "opciones": [
+    "Tercer lugar",
+    "Segundo lugar",
+    "Cuarto lugar",
+    "Quinto lugar"
+   ],
+   "correcta": 0,
+   "tip": "Con cinco niños, el del medio tiene dos delante y dos detrás: es el tercero.",
+   "id": "mate1-oa02-18"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "Diego va justo detrás del quinto. ¿Qué lugar es?",
+   "opciones": [
+    "Sexto lugar",
+    "Cuarto lugar",
+    "Quinto lugar",
+    "Séptimo lugar"
+   ],
+   "correcta": 0,
+   "tip": "Detrás del quinto viene el sexto.",
+   "id": "mate1-oa02-19"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "Camila subió 8 escalones. ¿En cuál está parada?",
+   "opciones": [
+    "En el octavo",
+    "En el séptimo",
+    "En el noveno",
+    "En el sexto"
+   ],
+   "correcta": 0,
+   "tip": "Cada escalón que sube cuenta uno: si subió ocho, está en el octavo.",
+   "id": "mate1-oa02-20"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "Luis llegó tercero y Ana, justo después. ¿Y Ana?",
+   "opciones": [
+    "Cuarto lugar",
+    "Tercer lugar",
+    "Quinto lugar",
+    "Segundo lugar"
+   ],
+   "correcta": 0,
+   "tip": "Luis llegó tercero y Ana justo después: Ana es la cuarta.",
+   "id": "mate1-oa02-21"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "¿Qué lugar sube al escalón más alto del podio?",
+   "opciones": [
+    "Primer lugar",
+    "Segundo lugar",
+    "Tercer lugar",
+    "Último lugar"
+   ],
+   "correcta": 0,
+   "tip": "En el podio el ganador sube al escalón más alto: el del primer lugar.",
+   "id": "mate1-oa02-22"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "La fila tiene 4 niños. ¿Qué lugar es el último?",
+   "opciones": [
+    "Cuarto lugar",
+    "Tercer lugar",
+    "Quinto lugar",
+    "Primer lugar"
+   ],
+   "correcta": 0,
+   "tip": "Si son cuatro, el último de la fila es el cuarto.",
+   "id": "mate1-oa02-23"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "Ana llegó segunda y Pía antes que ella. ¿Y Pía?",
+   "opciones": [
+    "Primer lugar",
+    "Tercer lugar",
+    "Segundo lugar",
+    "Cuarto lugar"
+   ],
+   "correcta": 0,
+   "tip": "Antes de la segunda solo está la primera: Pía ganó.",
+   "id": "mate1-oa02-24"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "En una fila, ¿quién va primero?",
+   "opciones": [
+    "El de adelante",
+    "El de atrás",
+    "El del medio",
+    "El más alto"
+   ],
+   "correcta": 0,
+   "tip": "En una fila, el primero es el que va adelante de todos.",
+   "id": "mate1-oa02-25"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "Sofía es cuarta de 6 niños. ¿Cuántos van detrás?",
+   "opciones": [
+    "2",
+    "3",
+    "4",
+    "1"
+   ],
+   "correcta": 0,
+   "tip": "Detrás de la cuarta van la quinta y el sexto: son dos.",
+   "id": "mate1-oa02-26"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "Se fue el primero de la fila. ¿Y el segundo?",
+   "opciones": [
+    "Ahora es primero",
+    "Sigue segundo",
+    "Ahora es tercero",
+    "Ahora es último"
+   ],
+   "correcta": 0,
+   "tip": "Si se va el de adelante, todos avanzan un lugar: el segundo pasa a ser el primero.",
+   "id": "mate1-oa02-27"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "Una niña se pone primera. ¿Y el que era primero?",
+   "opciones": [
+    "Ahora es segundo",
+    "Sigue primero",
+    "Ahora es tercero",
+    "Ahora es último"
+   ],
+   "correcta": 0,
+   "tip": "Si alguien se pone adelante, el que era primero queda detrás de ella: pasa a ser segundo.",
+   "id": "mate1-oa02-28"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "Matías es el octavo. ¿Qué lugar va justo detrás?",
+   "opciones": [
+    "Noveno lugar",
+    "Séptimo lugar",
+    "Octavo lugar",
+    "Décimo lugar"
+   ],
+   "correcta": 0,
+   "tip": "Detrás del octavo va el noveno.",
+   "id": "mate1-oa02-29"
+  },
+  {
+   "oa": "MA01 OA 02",
+   "pregunta": "Tomás tiene 6 niños delante. ¿Qué lugar tiene?",
+   "opciones": [
+    "Séptimo lugar",
+    "Sexto lugar",
+    "Octavo lugar",
+    "Quinto lugar"
+   ],
+   "correcta": 0,
+   "tip": "Si hay seis niños delante, Tomás viene después de ellos: es el séptimo.",
+   "id": "mate1-oa02-30"
+  }
+ ]
+}

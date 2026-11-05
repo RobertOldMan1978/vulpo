@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "¿Cuál empieza con el mismo sonido que mesa?",
+   "opciones": [
+    "mano",
+    "nube",
+    "pato",
+    "luna"
+   ],
+   "correcta": 0,
+   "tip": "Mesa y mano empiezan con el mismo sonido, el de la eme. Nube empieza con el de la ene, que se parece pero es otro.",
+   "id": "leng1-oa03-1"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "¿Qué palabra suena igual que pato al comienzo?",
+   "opciones": [
+    "pelota",
+    "bota",
+    "tomate",
+    "gato"
+   ],
+   "correcta": 0,
+   "tip": "Pato y pelota parten con el mismo sonido, el de la pe. Gato rima con pato, pero rimar es sonar igual al final, no al comienzo.",
+   "id": "leng1-oa03-2"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "¿Qué palabra parte con el mismo sonido que luna?",
+   "opciones": [
+    "lápiz",
+    "nariz",
+    "ratón",
+    "dedo"
+   ],
+   "correcta": 0,
+   "tip": "Luna y lápiz parten con el sonido de la ele. Nariz parte con el de la ene y ratón con el de la erre.",
+   "id": "leng1-oa03-3"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "Escucha la palabra foca. ¿Cuál parte igual?",
+   "opciones": [
+    "foto",
+    "jugo",
+    "sopa",
+    "boca"
+   ],
+   "correcta": 0,
+   "tip": "Foca y foto parten con el sonido de la efe, que se hace soplando con los dientes sobre el labio. Boca rima con foca, pero empieza distinto.",
+   "id": "leng1-oa03-4"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "¿Cuál empieza con el mismo sonido que oso?",
+   "opciones": [
+    "ojo",
+    "uva",
+    "ala",
+    "isla"
+   ],
+   "correcta": 0,
+   "tip": "Oso y ojo empiezan con el sonido de la o, con la boca redonda. Uva empieza con la u, que se dice con la boca más cerrada.",
+   "id": "leng1-oa03-5"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "¿Cuál comienza con el mismo sonido que chaleco?",
+   "opciones": [
+    "chupete",
+    "sapo",
+    "jirafa",
+    "casa"
+   ],
+   "correcta": 0,
+   "tip": "Chaleco y chupete empiezan con el mismo sonido, el de la che. Sapo empieza con un sonido que solo sopla, sin ese golpecito.",
+   "id": "leng1-oa03-6"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "¿Qué palabra parte con el mismo sonido que rana?",
+   "opciones": [
+    "rueda",
+    "lana",
+    "dado",
+    "mano"
+   ],
+   "correcta": 0,
+   "tip": "Rana y rueda parten con el sonido fuerte de la erre. Lana rima con rana, pero parte con el sonido de la ele.",
+   "id": "leng1-oa03-7"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "¿Qué palabra empieza igual que mariposa?",
+   "opciones": [
+    "manzana",
+    "nariz",
+    "pelota",
+    "rosa"
+   ],
+   "correcta": 0,
+   "tip": "Mariposa y manzana empiezan con el mismo golpe de voz: ma. Rosa suena parecido al final, pero no al comienzo.",
+   "id": "leng1-oa03-8"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "¿Qué palabra empieza igual que sopa?",
+   "opciones": [
+    "sofá",
+    "ropa",
+    "copa",
+    "mapa"
+   ],
+   "correcta": 0,
+   "tip": "Sopa y sofá empiezan con el mismo golpe de voz: so. Ropa y copa riman con sopa, o sea suenan igual al final y no al comienzo.",
+   "id": "leng1-oa03-9"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "¿Cuál empieza con el mismo golpe de voz que casa?",
+   "opciones": [
+    "cama",
+    "taza",
+    "gato",
+    "mesa"
+   ],
+   "correcta": 0,
+   "tip": "Casa y cama empiezan con ca. Taza suena parecido a casa al final, y gato empieza con un sonido que se parece pero es otro.",
+   "id": "leng1-oa03-10"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "¿Qué palabra parte igual que pelota?",
+   "opciones": [
+    "pera",
+    "bota",
+    "tela",
+    "dedo"
+   ],
+   "correcta": 0,
+   "tip": "Pelota y pera empiezan con el mismo golpe de voz: pe. Bota termina como pelota, pero empieza con otro sonido.",
+   "id": "leng1-oa03-11"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "¿Qué palabra rima con ratón?",
+   "opciones": [
+    "camión",
+    "rana",
+    "rata",
+    "ramo"
+   ],
+   "correcta": 0,
+   "tip": "Ratón y camión terminan igual: ón. Rana, rata y ramo empiezan como ratón, pero rimar es sonar igual al final.",
+   "id": "leng1-oa03-12"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "¿Qué palabra rima con gato?",
+   "opciones": [
+    "pato",
+    "gota",
+    "gorro",
+    "sopa"
+   ],
+   "correcta": 0,
+   "tip": "Gato y pato suenan igual al final: ato. Gota y gorro empiezan como gato, pero terminan distinto.",
+   "id": "leng1-oa03-13"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "Flor y otra palabra riman. ¿Cuál es?",
+   "opciones": [
+    "tambor",
+    "foca",
+    "fila",
+    "luna"
+   ],
+   "correcta": 0,
+   "tip": "Flor y tambor terminan con el mismo sonido: or. Foca y fila empiezan como flor, pero no terminan igual.",
+   "id": "leng1-oa03-14"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "¿Cuál de estas palabras rima con mesa?",
+   "opciones": [
+    "fresa",
+    "mano",
+    "mono",
+    "mapa"
+   ],
+   "correcta": 0,
+   "tip": "Mesa y fresa terminan igual: esa. Mano, mono y mapa empiezan como mesa, pero no suenan igual al final.",
+   "id": "leng1-oa03-15"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "¿Qué palabra rima con botón?",
+   "opciones": [
+    "melón",
+    "bota",
+    "boca",
+    "bote"
+   ],
+   "correcta": 0,
+   "tip": "Botón y melón terminan con el mismo sonido: ón. Bota, boca y bote empiezan como botón, pero terminan distinto.",
+   "id": "leng1-oa03-16"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "Escucha camino. ¿Qué palabra rima con ella?",
+   "opciones": [
+    "pepino",
+    "camisa",
+    "cama",
+    "casa"
+   ],
+   "correcta": 0,
+   "tip": "Camino y pepino terminan igual: ino. Camisa, cama y casa solo se parecen a camino al comienzo.",
+   "id": "leng1-oa03-17"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "¿Qué palabra termina igual que mesa?",
+   "opciones": [
+    "rosa",
+    "meta",
+    "mano",
+    "pato"
+   ],
+   "correcta": 0,
+   "tip": "Mesa y rosa terminan con el mismo golpe de voz: sa. Meta empieza como mesa, pero termina distinto.",
+   "id": "leng1-oa03-18"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "¿Qué palabra acaba igual que pelota?",
+   "opciones": [
+    "maleta",
+    "pelo",
+    "pera",
+    "pepino"
+   ],
+   "correcta": 0,
+   "tip": "Pelota y maleta terminan con el mismo golpe de voz: ta. Pelo, pera y pepino empiezan como pelota, no terminan como ella.",
+   "id": "leng1-oa03-19"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "¿Cuántos golpes de voz tiene la palabra mariposa?",
+   "opciones": [
+    "Cuatro",
+    "Tres",
+    "Cinco",
+    "Dos"
+   ],
+   "correcta": 0,
+   "tip": "Mariposa se dice en cuatro golpes: ma, ri, po, sa. Aplaudir una vez por cada golpe ayuda a contarlos.",
+   "id": "leng1-oa03-20"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "¿Cuántos aplausos das al decir tomate?",
+   "opciones": [
+    "Tres",
+    "Dos",
+    "Cuatro",
+    "Uno"
+   ],
+   "correcta": 0,
+   "tip": "Tomate se dice to, ma, te: tres golpes de voz, o sea tres aplausos.",
+   "id": "leng1-oa03-21"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "Di helicóptero aplaudiendo. ¿Cuántos aplausos?",
+   "opciones": [
+    "Cinco",
+    "Cuatro",
+    "Seis",
+    "Tres"
+   ],
+   "correcta": 0,
+   "tip": "Helicóptero se dice he, li, cóp, te, ro: cinco golpes de voz. Es una palabra larga.",
+   "id": "leng1-oa03-22"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "¿Qué palabra tiene un solo golpe de voz?",
+   "opciones": [
+    "sol",
+    "sopa",
+    "soldado",
+    "salero"
+   ],
+   "correcta": 0,
+   "tip": "Sol se dice de una vez, con un solo golpe. Sopa tiene dos, y soldado y salero tienen tres.",
+   "id": "leng1-oa03-23"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "¿Qué palabra tiene más golpes de voz?",
+   "opciones": [
+    "elefante",
+    "caracol",
+    "tortuga",
+    "zapato"
+   ],
+   "correcta": 0,
+   "tip": "Elefante se dice e, le, fan, te: cuatro golpes. Caracol, tortuga y zapato tienen tres cada una.",
+   "id": "leng1-oa03-24"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "Si juntas ma y no, ¿qué palabra sale?",
+   "opciones": [
+    "mano",
+    "mono",
+    "mapa",
+    "nube"
+   ],
+   "correcta": 0,
+   "tip": "Primero ma y después no: ma, no, mano. Mono empieza con mo, no con ma.",
+   "id": "leng1-oa03-25"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "Si juntas lo y ro, ¿qué palabra sale?",
+   "opciones": [
+    "loro",
+    "lobo",
+    "toro",
+    "ropa"
+   ],
+   "correcta": 0,
+   "tip": "Lo y ro juntos dicen loro. Toro rima con loro, pero empieza con to.",
+   "id": "leng1-oa03-26"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "Si juntas pe, lo y ta, ¿qué palabra sale?",
+   "opciones": [
+    "pelota",
+    "paleta",
+    "pelo",
+    "maleta"
+   ],
+   "correcta": 0,
+   "tip": "Pe, lo y ta, uno tras otro, forman pelota. Pelo se queda con solo dos de los tres golpes.",
+   "id": "leng1-oa03-27"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "Si a la palabra zapato le quitas za, ¿qué queda?",
+   "opciones": [
+    "pato",
+    "zapato",
+    "gato",
+    "sapo"
+   ],
+   "correcta": 0,
+   "tip": "Zapato se dice za, pa, to. Sin el za quedan pa y to, o sea pato.",
+   "id": "leng1-oa03-28"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "Si a la palabra tomate le quitas to, ¿qué queda?",
+   "opciones": [
+    "mate",
+    "tomate",
+    "moto",
+    "mano"
+   ],
+   "correcta": 0,
+   "tip": "Tomate se dice to, ma, te. Sin el to quedan ma y te: mate.",
+   "id": "leng1-oa03-29"
+  },
+  {
+   "oa": "LE01 OA 03",
+   "pregunta": "Si a la palabra pelota le quitas ta, ¿qué queda?",
+   "opciones": [
+    "pelo",
+    "pala",
+    "pera",
+    "pelota"
+   ],
+   "correcta": 0,
+   "tip": "Pelota se dice pe, lo, ta. Si se quita el último golpe, ta, queda pelo.",
+   "id": "leng1-oa03-30"
+  }
+ ]
+}

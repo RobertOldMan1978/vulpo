@@ -1,0 +1,436 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "Cuenta de 1 en 1: 27, 28, 29. ¿Qué sigue?",
+   "opciones": [
+    "30",
+    "20",
+    "31",
+    "40"
+   ],
+   "correcta": 0,
+   "tip": "Después del veintinueve se cambia de decena: viene el treinta.",
+   "id": "mate1-oa01-1"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "Cuenta hacia atrás: 43, 42, 41. ¿Qué sigue?",
+   "opciones": [
+    "40",
+    "44",
+    "39",
+    "30"
+   ],
+   "correcta": 0,
+   "tip": "Hacia atrás cada número es uno menos: al cuarenta y uno le sigue el cuarenta.",
+   "id": "mate1-oa01-2"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "Ana salta de 2 en 2: 6, 8, 10. ¿Qué número sigue?",
+   "opciones": [
+    "12",
+    "11",
+    "14",
+    "20"
+   ],
+   "correcta": 0,
+   "tip": "De dos en dos se salta un número cada vez: después del diez viene el doce.",
+   "id": "mate1-oa01-3"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "Luis cuenta 13, 15, 17, de 2 en 2. ¿Qué dirá?",
+   "opciones": [
+    "19",
+    "18",
+    "21",
+    "20"
+   ],
+   "correcta": 0,
+   "tip": "Cada salto suma dos: diecisiete más dos es diecinueve.",
+   "id": "mate1-oa01-4"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "De 2 en 2 hacia atrás: 30, 28, 26. ¿Y luego?",
+   "opciones": [
+    "24",
+    "25",
+    "22",
+    "27"
+   ],
+   "correcta": 0,
+   "tip": "Hacia atrás de dos en dos se quitan dos cada vez: de veintiséis bajas a veinticuatro.",
+   "id": "mate1-oa01-5"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "De 5 en 5 se dice 5, 10, 15. ¿Cuál viene?",
+   "opciones": [
+    "20",
+    "16",
+    "25",
+    "30"
+   ],
+   "correcta": 0,
+   "tip": "De cinco en cinco se suma cinco: quince más cinco es veinte.",
+   "id": "mate1-oa01-6"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "Pía cuenta de 5 en 5: 35, 40, 45. ¿Y después?",
+   "opciones": [
+    "50",
+    "46",
+    "55",
+    "60"
+   ],
+   "correcta": 0,
+   "tip": "De cinco en cinco los números terminan en cinco o en cero: después del cuarenta y cinco viene el cincuenta.",
+   "id": "mate1-oa01-7"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "De 5 en 5 hacia atrás: 50, 45, 40. ¿Y luego?",
+   "opciones": [
+    "35",
+    "39",
+    "30",
+    "25"
+   ],
+   "correcta": 0,
+   "tip": "Hacia atrás de cinco en cinco se quitan cinco: de cuarenta bajas a treinta y cinco.",
+   "id": "mate1-oa01-8"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "Tomás cuenta 20, 30, 40. ¿Qué número dirá luego?",
+   "opciones": [
+    "50",
+    "41",
+    "60",
+    "45"
+   ],
+   "correcta": 0,
+   "tip": "De diez en diez cambia solo la decena: después del cuarenta viene el cincuenta.",
+   "id": "mate1-oa01-9"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "De 10 en 10 desde el 3: 3, 13, 23. ¿Y luego?",
+   "opciones": [
+    "33",
+    "24",
+    "30",
+    "43"
+   ],
+   "correcta": 0,
+   "tip": "Al sumar diez, el número de las unidades se queda igual: veintitrés más diez es treinta y tres.",
+   "id": "mate1-oa01-10"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "Camila baja de 10 en 10: 90, 80, 70. ¿Y luego?",
+   "opciones": [
+    "60",
+    "69",
+    "50",
+    "80"
+   ],
+   "correcta": 0,
+   "tip": "Hacia atrás de diez en diez se quita una decena: de setenta bajas a sesenta.",
+   "id": "mate1-oa01-11"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "De 10 en 10 hacia atrás: 75, 65, 55. ¿Y luego?",
+   "opciones": [
+    "45",
+    "54",
+    "35",
+    "50"
+   ],
+   "correcta": 0,
+   "tip": "Al quitar diez, las unidades no cambian: cincuenta y cinco menos diez es cuarenta y cinco.",
+   "id": "mate1-oa01-12"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "De 2 en 2: 4, 6, ___, 10. ¿Qué número falta?",
+   "opciones": [
+    "8",
+    "7",
+    "9",
+    "12"
+   ],
+   "correcta": 0,
+   "tip": "De seis a diez hay dos saltos de dos: seis, ocho, diez.",
+   "id": "mate1-oa01-13"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "De 5 en 5: 60, 65, ___, 75. ¿Qué número falta?",
+   "opciones": [
+    "70",
+    "66",
+    "69",
+    "80"
+   ],
+   "correcta": 0,
+   "tip": "Sesenta y cinco más cinco es setenta, y setenta más cinco es setenta y cinco.",
+   "id": "mate1-oa01-14"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "De 10 en 10: 30, 40, ___, 60. ¿Qué falta?",
+   "opciones": [
+    "50",
+    "41",
+    "45",
+    "70"
+   ],
+   "correcta": 0,
+   "tip": "Entre cuarenta y sesenta, contando de diez en diez, está el cincuenta.",
+   "id": "mate1-oa01-15"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "De 1 en 1: 88, 89, ___, 91. ¿Qué falta?",
+   "opciones": [
+    "90",
+    "80",
+    "92",
+    "100"
+   ],
+   "correcta": 0,
+   "tip": "Después del ochenta y nueve se cambia de decena: viene el noventa.",
+   "id": "mate1-oa01-16"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "Hacia atrás: 71, 70, ___, 68. ¿Qué falta?",
+   "opciones": [
+    "69",
+    "60",
+    "67",
+    "72"
+   ],
+   "correcta": 0,
+   "tip": "Antes del setenta va el sesenta y nueve: al bajar se cambia de decena.",
+   "id": "mate1-oa01-17"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "Diego dice 10, 20, 30, 40. ¿De cuánto en cuánto?",
+   "opciones": [
+    "De 10 en 10",
+    "De 1 en 1",
+    "De 5 en 5",
+    "De 2 en 2"
+   ],
+   "correcta": 0,
+   "tip": "Cada número tiene una decena más que el anterior: Diego suma diez cada vez.",
+   "id": "mate1-oa01-18"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "Ana dice 15, 20, 25, 30. ¿De cuánto en cuánto?",
+   "opciones": [
+    "De 5 en 5",
+    "De 1 en 1",
+    "De 10 en 10",
+    "De 2 en 2"
+   ],
+   "correcta": 0,
+   "tip": "De quince a veinte hay cinco, y de veinte a veinticinco también: Ana suma cinco cada vez.",
+   "id": "mate1-oa01-19"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "Pía dice 22, 24, 26, 28. ¿De cuánto en cuánto?",
+   "opciones": [
+    "De 2 en 2",
+    "De 1 en 1",
+    "De 5 en 5",
+    "De 10 en 10"
+   ],
+   "correcta": 0,
+   "tip": "Pía se salta un número cada vez: veintidós, veinticuatro… suma dos.",
+   "id": "mate1-oa01-20"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "Luis dice 9, 8, 7, 6. ¿Cómo está contando?",
+   "opciones": [
+    "Hacia atrás",
+    "Hacia adelante",
+    "De 2 en 2",
+    "De 5 en 5"
+   ],
+   "correcta": 0,
+   "tip": "Cada número que dice Luis es uno menos que el anterior: va hacia atrás de uno en uno.",
+   "id": "mate1-oa01-21"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "Cuenta de 10 en 10 los lápices. ¿Cuántos son?",
+   "opciones": [
+    "50",
+    "5",
+    "40",
+    "60"
+   ],
+   "correcta": 0,
+   "tip": "Son cinco grupos de diez: diez, veinte, treinta, cuarenta, cincuenta.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 5,
+    "porGrupo": 10,
+    "emoji": "✏️"
+   },
+   "id": "mate1-oa01-22"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "Cuenta de 5 en 5 las estrellas. ¿Cuántas son?",
+   "opciones": [
+    "30",
+    "6",
+    "25",
+    "35"
+   ],
+   "correcta": 0,
+   "tip": "Seis grupos de cinco: cinco, diez, quince, veinte, veinticinco, treinta.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 6,
+    "porGrupo": 5,
+    "emoji": "⭐"
+   },
+   "id": "mate1-oa01-23"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "Las frutillas van de a 2. ¿Cuántas hay en total?",
+   "opciones": [
+    "22",
+    "11",
+    "20",
+    "24"
+   ],
+   "correcta": 0,
+   "tip": "Hay once pares de frutillas. De dos en dos: dos, cuatro, seis… hasta veintidós.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 11,
+    "porGrupo": 2,
+    "emoji": "🍓"
+   },
+   "id": "mate1-oa01-24"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "La recta va de 2 en 2. ¿Qué número tapa la marca?",
+   "opciones": [
+    "16",
+    "15",
+    "17",
+    "18"
+   ],
+   "correcta": 0,
+   "tip": "Después del catorce, de dos en dos, viene el dieciséis.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 20,
+    "paso": 2,
+    "marca": 16,
+    "oculta": true
+   },
+   "id": "mate1-oa01-25"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "Esta recta salta de 5 en 5. ¿Cuál está escondido?",
+   "opciones": [
+    "65",
+    "61",
+    "64",
+    "75"
+   ],
+   "correcta": 0,
+   "tip": "Sesenta más cinco es sesenta y cinco: ese es el número escondido.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 50,
+    "hasta": 100,
+    "paso": 5,
+    "marca": 65,
+    "oculta": true
+   },
+   "id": "mate1-oa01-26"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "Va de 10 en 10. ¿Qué número tapa la marca?",
+   "opciones": [
+    "70",
+    "7",
+    "61",
+    "80"
+   ],
+   "correcta": 0,
+   "tip": "Después del sesenta, de diez en diez, viene el setenta.",
+   "visual": {
+    "tipo": "recta",
+    "desde": 0,
+    "hasta": 100,
+    "paso": 10,
+    "marca": 70,
+    "oculta": true
+   },
+   "id": "mate1-oa01-27"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "Javiera cuenta de 10 en 10 desde 40. ¿Cuál dirá?",
+   "opciones": [
+    "70",
+    "45",
+    "41",
+    "75"
+   ],
+   "correcta": 0,
+   "tip": "Desde cuarenta, de diez en diez: cincuenta, sesenta, setenta. Los otros no terminan en cero.",
+   "id": "mate1-oa01-28"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "Sofía cuenta de 2 en 2 desde el 0. ¿Cuál dirá?",
+   "opciones": [
+    "16",
+    "15",
+    "9",
+    "21"
+   ],
+   "correcta": 0,
+   "tip": "Contando de dos en dos desde el cero se dicen solo números pares, como el dieciséis.",
+   "id": "mate1-oa01-29"
+  },
+  {
+   "oa": "MA01 OA 01",
+   "pregunta": "Benjamín dice 62, 61, 60. ¿Qué dice luego?",
+   "opciones": [
+    "59",
+    "50",
+    "69",
+    "61"
+   ],
+   "correcta": 0,
+   "tip": "Antes del sesenta va el cincuenta y nueve: al bajar se cambia de decena.",
+   "id": "mate1-oa01-30"
+  }
+ ]
+}

@@ -1,0 +1,342 @@
+{
+ "preguntas": [
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "¿Cuál es una oración completa?",
+   "opciones": [
+    "El gato duerme",
+    "El gato en la",
+    "Duerme en la",
+    "Y el gato de"
+   ],
+   "correcta": 0,
+   "tip": "El gato duerme dice quién y qué hace: se entiende entera. Las otras se cortan antes de terminar la idea.",
+   "id": "leng1-oa14-1"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "Escucha: ¿cuál idea está entera?",
+   "opciones": [
+    "Mi papá cocina",
+    "Mi papá con la",
+    "Con la olla de",
+    "Y mi papá de"
+   ],
+   "correcta": 0,
+   "tip": "Mi papá cocina dice quién y qué hace. Las demás quedan a medias y no se sabe qué pasa.",
+   "id": "leng1-oa14-2"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "Sofía escribió: «El pájaro». ¿Qué le falta?",
+   "opciones": [
+    "Decir qué hace",
+    "Un dibujo",
+    "Una letra más",
+    "Nada, está bien"
+   ],
+   "correcta": 0,
+   "tip": "El pájaro nombra a alguien, pero no dice nada de él: falta contar qué hace.",
+   "id": "leng1-oa14-3"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "Tomás escribió: «La pelota de». ¿Cómo quedó?",
+   "opciones": [
+    "Cortada",
+    "Completa",
+    "Al revés",
+    "Muy larga"
+   ],
+   "correcta": 0,
+   "tip": "La pelota de queda cortada: no se sabe de quién es ni qué pasa con ella.",
+   "id": "leng1-oa14-4"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "Completa: «El perro ___ un hueso».",
+   "opciones": [
+    "come",
+    "mesa",
+    "azul",
+    "ayer"
+   ],
+   "correcta": 0,
+   "tip": "El perro come un hueso: con come la oración dice qué hace el perro y se entiende.",
+   "id": "leng1-oa14-5"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "Completa: «Mi mamá ___ una canción».",
+   "opciones": [
+    "canta",
+    "casa",
+    "verde",
+    "mañana"
+   ],
+   "correcta": 0,
+   "tip": "Mi mamá canta una canción. Las otras palabras no dicen qué hace la mamá.",
+   "id": "leng1-oa14-6"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "Diego quiere decir que tiene sed. ¿Qué escribe?",
+   "opciones": [
+    "Quiero tomar agua",
+    "Agua del vaso de",
+    "Tomar el vaso con",
+    "Y el agua de la"
+   ],
+   "correcta": 0,
+   "tip": "Quiero tomar agua se entiende completa. Las otras se cortan y no dicen lo que Diego necesita.",
+   "id": "leng1-oa14-7"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "Ordena: «come, perro, el». ¿Cómo queda?",
+   "opciones": [
+    "El perro come",
+    "Come perro el",
+    "Perro come el",
+    "Perro el come"
+   ],
+   "correcta": 0,
+   "tip": "Ordenadas, las palabras dicen: el perro come. En otro orden no se entienden.",
+   "id": "leng1-oa14-8"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "Ordena: «brilla, sol, el». ¿Cómo queda?",
+   "opciones": [
+    "El sol brilla",
+    "Sol el brilla",
+    "Brilla sol el",
+    "Sol brilla el"
+   ],
+   "correcta": 0,
+   "tip": "En orden queda el sol brilla, una oración que se entiende.",
+   "id": "leng1-oa14-9"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "¿Cuál frase quedó cortada?",
+   "opciones": [
+    "Ana juega con su",
+    "Ana juega en casa",
+    "Ana come mucho pan",
+    "Ana ríe con Pedro"
+   ],
+   "correcta": 0,
+   "tip": "Ana juega con su queda a medias: no se sabe con qué juega. Las otras se entienden enteras.",
+   "id": "leng1-oa14-10"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "Pedro dijo: «Mi hermano…» y se calló. ¿Qué faltó?",
+   "opciones": [
+    "Lo que hizo su hermano",
+    "El nombre de Pedro",
+    "La hora del día",
+    "Un saludo final"
+   ],
+   "correcta": 0,
+   "tip": "Pedro nombró a su hermano pero no dijo nada de él. Faltó contar qué hizo.",
+   "id": "leng1-oa14-11"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "¿Qué tiene una oración completa?",
+   "opciones": [
+    "Una idea entera",
+    "Muchas palabras",
+    "Una sola letra",
+    "Un dibujo"
+   ],
+   "correcta": 0,
+   "tip": "Una oración completa dice una idea que se entiende. Puede ser corta: no hacen falta muchas palabras.",
+   "id": "leng1-oa14-12"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "Camila cuenta cómo es su gato. ¿Qué escribe?",
+   "opciones": [
+    "Mi gato es negro",
+    "Mi gato es de la",
+    "Negro el de mi",
+    "Es mi gato con"
+   ],
+   "correcta": 0,
+   "tip": "Mi gato es negro dice todo lo que Camila quiere contar. Las otras quedan a medias.",
+   "id": "leng1-oa14-13"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "Benja escribió: «El sol». ¿Cómo la completa?",
+   "opciones": [
+    "El sol calienta",
+    "El sol de la",
+    "Sol el del",
+    "El el sol"
+   ],
+   "correcta": 0,
+   "tip": "El sol calienta dice qué hace el sol, y así se entiende la idea completa.",
+   "id": "leng1-oa14-14"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "¿Por qué Tomás escribe oraciones completas?",
+   "opciones": [
+    "Para que lo entiendan",
+    "Para usar más hojas",
+    "Para que se vea larga",
+    "Para cansar la mano"
+   ],
+   "correcta": 0,
+   "tip": "Una oración completa se entiende. Si queda cortada, quien la lee no sabe qué quiso decir Tomás.",
+   "id": "leng1-oa14-15"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "¿Se entiende la frase «El perro de mi»?",
+   "opciones": [
+    "No, quedó cortada",
+    "Sí, está completa",
+    "Sí, es muy clara",
+    "Sí, es una pregunta"
+   ],
+   "correcta": 0,
+   "tip": "El perro de mi se corta antes de terminar: no dice de quién es el perro ni qué hace.",
+   "id": "leng1-oa14-16"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "Escucha: «Mi abuela teje». ¿Cómo está la oración?",
+   "opciones": [
+    "Completa",
+    "Cortada",
+    "Desordenada",
+    "Sin sentido"
+   ],
+   "correcta": 0,
+   "tip": "Mi abuela teje dice quién y qué hace, en buen orden: está completa.",
+   "id": "leng1-oa14-17"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "¿Qué oración cuenta qué hace Lucas?",
+   "opciones": [
+    "Lucas juega fútbol",
+    "Lucas y el de la",
+    "Con Lucas en el",
+    "El amigo de Lucas"
+   ],
+   "correcta": 0,
+   "tip": "Lucas juega fútbol dice qué hace Lucas. El amigo de Lucas solo nombra a alguien, sin decir qué hace.",
+   "id": "leng1-oa14-18"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "Sofía quiere avisar que llegó. ¿Qué escribe?",
+   "opciones": [
+    "Ya llegué a casa",
+    "Ya a la casa de",
+    "Llegué a la de",
+    "A casa ya la"
+   ],
+   "correcta": 0,
+   "tip": "Ya llegué a casa da el aviso completo. Las otras quedan cortadas o desordenadas.",
+   "id": "leng1-oa14-19"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "Completa para que se entienda: «El niño come…»",
+   "opciones": [
+    "una manzana",
+    "de la mesa de",
+    "porque su mamá",
+    "con el tenedor y"
+   ],
+   "correcta": 0,
+   "tip": "El niño come una manzana cierra la idea. Las otras dejan la oración colgando.",
+   "id": "leng1-oa14-20"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "Ema dijo: «La flor es». ¿Qué le faltó decir?",
+   "opciones": [
+    "Cómo es la flor",
+    "Dónde vive Ema",
+    "Qué hora es",
+    "Quién es Ema"
+   ],
+   "correcta": 0,
+   "tip": "La flor es se queda esperando: falta contar cómo es, por ejemplo roja o bonita.",
+   "id": "leng1-oa14-21"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "¿Cuál mensaje de Diego se entiende?",
+   "opciones": [
+    "Mañana voy al colegio",
+    "Mañana voy a la casa de",
+    "Al colegio de mi",
+    "Voy con el de la"
+   ],
+   "correcta": 0,
+   "tip": "Mañana voy al colegio dice una idea completa. Las otras se cortan en la mitad.",
+   "id": "leng1-oa14-22"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "La profe lee: «El tren pasa por el». ¿Qué falta?",
+   "opciones": [
+    "El final de la idea",
+    "Una palabra al inicio",
+    "Nada, está completa",
+    "Que sea más corta"
+   ],
+   "correcta": 0,
+   "tip": "La oración se corta en el: falta decir por dónde pasa el tren, por ejemplo por el puente.",
+   "id": "leng1-oa14-23"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "¿Qué oración sirve para pedir ayuda?",
+   "opciones": [
+    "Ayúdame, por favor",
+    "Por favor la de",
+    "Ayuda con el de",
+    "La de por favor"
+   ],
+   "correcta": 0,
+   "tip": "Ayúdame, por favor es un pedido completo que se entiende. Las otras no dicen qué se pide.",
+   "id": "leng1-oa14-24"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "Ordena: «nada, pez, el». ¿Cómo queda?",
+   "opciones": [
+    "El pez nada",
+    "Pez el nada",
+    "Nada pez el",
+    "Pez nada el"
+   ],
+   "correcta": 0,
+   "tip": "Ordenadas quedan así: el pez nada. Así la oración se entiende.",
+   "id": "leng1-oa14-25"
+  },
+  {
+   "oa": "LE01 OA 14",
+   "pregunta": "Javiera escribió: «Mi casa». ¿Qué agrega?",
+   "opciones": [
+    "Algo de su casa",
+    "Una letra más",
+    "Su nombre otra vez",
+    "Otra palabra casa"
+   ],
+   "correcta": 0,
+   "tip": "Mi casa solo nombra la casa. Para que sea oración falta decir algo de ella, como mi casa es azul.",
+   "id": "leng1-oa14-26"
+  }
+ ]
+}

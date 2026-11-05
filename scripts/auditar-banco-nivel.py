@@ -76,7 +76,7 @@ DIAG_LECC = diagramas_de_lecciones()
 # 3 y 4 basico no tienen cronometro, asi que un fragmento breve cabe. Ver el §0 de
 # docs/encargo-banco.md. 5 y 6 NO van aca a proposito: llevan cronometro, asi que les
 # corresponde el limite por defecto.
-LARGO = {"02": (70, 160), "03": (110, 220), "04": (110, 220)}
+LARGO = {"01": (50, 110), "02": (70, 160), "03": (110, 220), "04": (110, 220)}
 LARGO_POR_DEFECTO = (120, 250)
 
 
@@ -286,6 +286,21 @@ def main():
                     errores.append("%s: visual '%s' sin %s" % (pid, t, ", ".join(faltan)))
                 if t == "cuerpo" and sinac(v.get("nombre", "")) not in CUERPOS:
                     avisos.append("%s: cuerpo '%s' fuera del catalogo" % (pid, v.get("nombre")))
+                # `agrupar` y `fraccion` RECORTAN en silencio sobre 12 (Math.min(12,...) en
+                # visuales.js): con porGrupo 13 se dibujaban 12 manzanas y el tip contaba 13.
+                # Lo encontro la lectura de 1° basico; el script no lo veia.
+                if t == "agrupar":
+                    for c in ("grupos", "porGrupo"):
+                        if isinstance(v.get(c), int) and v[c] > 12:
+                            errores.append("%s: agrupar con %s=%d, pero el dibujo solo pinta 12"
+                                           % (pid, c, v[c]))
+                if t == "fraccion" and isinstance(v.get("partes"), int) and v["partes"] > 12:
+                    errores.append("%s: fraccion con partes=%d, pero el dibujo solo pinta 12"
+                                   % (pid, v["partes"]))
+                # Emojis que dibujan MAS de una cosa: el nino cuenta lo que ve.
+                if t in ("agrupar", "contar") and v.get("emoji") in ("🍒", "✨", "👥", "👀", "🧦", "👯"):
+                    errores.append("%s: el emoji %s dibuja mas de una cosa y se cuenta doble"
+                                   % (pid, v["emoji"]))
 
         if es_mate:
             esperado = clave_aritmetica(p)

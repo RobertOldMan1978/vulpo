@@ -1,0 +1,394 @@
+{
+ "preguntas": [
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "El paseo fue el día antes de hoy. ¿Cuándo fue?",
+   "opciones": [
+    "ayer",
+    "mañana",
+    "hoy",
+    "pasado mañana"
+   ],
+   "correcta": 0,
+   "tip": "El día que ya pasó, justo antes de hoy, se llama ayer.",
+   "id": "hist1-oa02-1"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Pía cumple años el día después de hoy. ¿Cuándo?",
+   "opciones": [
+    "mañana",
+    "ayer",
+    "hoy",
+    "anteayer"
+   ],
+   "correcta": 0,
+   "tip": "El día que viene después de hoy se llama mañana.",
+   "id": "hist1-oa02-2"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Diego está comiendo un helado ahora. ¿Cuándo pasa?",
+   "opciones": [
+    "hoy",
+    "ayer",
+    "mañana",
+    "el año pasado"
+   ],
+   "correcta": 0,
+   "tip": "Lo que pasa ahora, en este día, pasa hoy.",
+   "id": "hist1-oa02-3"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "¿Qué le pasó primero a Sofía?",
+   "opciones": [
+    "nació",
+    "caminó",
+    "fue al colegio",
+    "aprendió a leer"
+   ],
+   "correcta": 0,
+   "tip": "Primero nacemos. Después, de a poco, aprendemos a caminar, a hablar y a leer.",
+   "id": "hist1-oa02-4"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Tomás fue bebé; hoy va al colegio. ¿Qué fue antes?",
+   "opciones": [
+    "ser bebé",
+    "ir al colegio",
+    "aprender a leer",
+    "jugar fútbol"
+   ],
+   "correcta": 0,
+   "tip": "Todos fuimos bebés antes de crecer e ir al colegio.",
+   "id": "hist1-oa02-5"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Benja ve la luna y las estrellas. ¿Cuándo es?",
+   "opciones": [
+    "de noche",
+    "de día",
+    "al mediodía",
+    "en la mañana"
+   ],
+   "correcta": 0,
+   "tip": "La luna y las estrellas se ven mejor de noche, cuando el cielo está oscuro.",
+   "id": "hist1-oa02-6"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Luis almuerza con el sol arriba. ¿Cuándo es?",
+   "opciones": [
+    "de día",
+    "de noche",
+    "a medianoche",
+    "de madrugada"
+   ],
+   "correcta": 0,
+   "tip": "El almuerzo es al mediodía, de día, cuando hay luz del sol.",
+   "id": "hist1-oa02-7"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Después del almuerzo y antes de la noche es…",
+   "opciones": [
+    "la tarde",
+    "la mañana",
+    "la madrugada",
+    "la medianoche"
+   ],
+   "correcta": 0,
+   "tip": "El día se ordena así: la mañana, el mediodía, la tarde y después la noche.",
+   "id": "hist1-oa02-8"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Con el sol recién saliendo, ¿qué parte del día es?",
+   "opciones": [
+    "la mañana",
+    "la tarde",
+    "la noche",
+    "la medianoche"
+   ],
+   "correcta": 0,
+   "tip": "Cuando el sol sale empieza la mañana.",
+   "id": "hist1-oa02-9"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Termina la tarde y oscurece. ¿Qué empieza?",
+   "opciones": [
+    "la noche",
+    "la mañana",
+    "el mediodía",
+    "el almuerzo"
+   ],
+   "correcta": 0,
+   "tip": "Después de la tarde, cuando se pone el sol, empieza la noche.",
+   "id": "hist1-oa02-10"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Este año Rosa está en primero. ¿Y el año pasado?",
+   "opciones": [
+    "en kínder",
+    "en segundo",
+    "en tercero",
+    "en cuarto"
+   ],
+   "correcta": 0,
+   "tip": "El año pasado es el que ya terminó. Antes de primero se va a kínder.",
+   "id": "hist1-oa02-11"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Este año Lucas va a primero. ¿Y el año próximo?",
+   "opciones": [
+    "a segundo",
+    "a kínder",
+    "a tercero",
+    "a cuarto"
+   ],
+   "correcta": 0,
+   "tip": "El año próximo es el que viene. Después de primero se pasa a segundo.",
+   "id": "hist1-oa02-12"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "El año pasado Ema cumplió 5. Este año cumple…",
+   "opciones": [
+    "6",
+    "5",
+    "4",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "Cada año cumplimos uno más. Si el año pasado cumplió 5, este año cumple 6.",
+   "id": "hist1-oa02-13"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Al año que ya terminó le decimos…",
+   "opciones": [
+    "el año pasado",
+    "el año próximo",
+    "este año",
+    "el año nuevo"
+   ],
+   "correcta": 0,
+   "tip": "El año que ya terminó es el año pasado. El que viene es el año próximo.",
+   "id": "hist1-oa02-14"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Al año que todavía no empieza le decimos…",
+   "opciones": [
+    "el año próximo",
+    "el año pasado",
+    "este año",
+    "el mes pasado"
+   ],
+   "correcta": 0,
+   "tip": "El año que viene después de este se llama el año próximo.",
+   "id": "hist1-oa02-15"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Ayer Ana fue al cine; hoy, a la playa. ¿Qué fue antes?",
+   "opciones": [
+    "el cine",
+    "la playa",
+    "dormir siesta",
+    "quedarse en casa"
+   ],
+   "correcta": 0,
+   "tip": "Ayer viene antes que hoy, así que Ana fue primero al cine.",
+   "id": "hist1-oa02-16"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Mañana Pedro irá al dentista. ¿Ya fue?",
+   "opciones": [
+    "no, todavía no",
+    "sí, ayer",
+    "sí, hoy temprano",
+    "sí, hace un mes"
+   ],
+   "correcta": 0,
+   "tip": "Mañana es el día que viene, así que eso todavía no ha pasado.",
+   "id": "hist1-oa02-17"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Joaquín se pone los calcetines. ¿Qué va después?",
+   "opciones": [
+    "los zapatos",
+    "el pijama",
+    "el traje de baño",
+    "la toalla"
+   ],
+   "correcta": 0,
+   "tip": "Al vestirse, los zapatos van después de los calcetines.",
+   "id": "hist1-oa02-18"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "La abuela de Iván fue niña. ¿Qué vino después?",
+   "opciones": [
+    "creció y fue grande",
+    "fue bebé",
+    "nació",
+    "fue a sala cuna"
+   ],
+   "correcta": 0,
+   "tip": "Primero se nace, se es bebé y niña, y después se crece hasta ser grande.",
+   "id": "hist1-oa02-19"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Tomás tiene 6 y su hermana 1. ¿Quién nació antes?",
+   "opciones": [
+    "Tomás",
+    "su hermana",
+    "nacieron juntos",
+    "no se sabe"
+   ],
+   "correcta": 0,
+   "tip": "Quien tiene más años nació antes: Tomás nació mucho antes que su hermana.",
+   "id": "hist1-oa02-20"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "El hermano de Leo nació antes que él. ¿Qué es Leo?",
+   "opciones": [
+    "el menor",
+    "el mayor",
+    "el abuelo",
+    "el primero"
+   ],
+   "correcta": 0,
+   "tip": "Si el hermano nació antes, el hermano es el mayor y Leo es el menor.",
+   "id": "hist1-oa02-21"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Hoy es el acto y ayer el ensayo. ¿Qué fue antes?",
+   "opciones": [
+    "el ensayo",
+    "el acto",
+    "los dos juntos",
+    "ninguno"
+   ],
+   "correcta": 0,
+   "tip": "Ayer viene antes que hoy, por eso el ensayo fue antes del acto.",
+   "id": "hist1-oa02-22"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Clara sale de paseo mañana. ¿Cuándo arma la mochila?",
+   "opciones": [
+    "hoy, antes de ir",
+    "después del paseo",
+    "el año próximo",
+    "pasado mañana"
+   ],
+   "correcta": 0,
+   "tip": "La mochila se prepara antes del paseo: hoy, que viene antes que mañana.",
+   "id": "hist1-oa02-23"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Simón plantó una semilla. ¿Qué pasa después?",
+   "opciones": [
+    "sale una plantita",
+    "da frutos al otro día",
+    "se achica más",
+    "se hace una piedra"
+   ],
+   "correcta": 0,
+   "tip": "Una semilla primero brota y sale una plantita. Los frutos tardan mucho más en llegar.",
+   "id": "hist1-oa02-24"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "«Anoche» quiere decir…",
+   "opciones": [
+    "ayer en la noche",
+    "hoy en la mañana",
+    "mañana en la noche",
+    "esta tarde"
+   ],
+   "correcta": 0,
+   "tip": "Anoche es la noche de ayer, la que ya pasó.",
+   "id": "hist1-oa02-25"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Fernanda ve fotos suyas de bebé. ¿Cuándo fue?",
+   "opciones": [
+    "hace mucho tiempo",
+    "mañana",
+    "el año próximo",
+    "hoy en la tarde"
+   ],
+   "correcta": 0,
+   "tip": "Cuando Fernanda era bebé fue hace mucho tiempo, antes de crecer.",
+   "id": "hist1-oa02-26"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Lo que todavía no pasa, ¿cuándo pasará?",
+   "opciones": [
+    "después",
+    "antes",
+    "ayer",
+    "ya pasó"
+   ],
+   "correcta": 0,
+   "tip": "Lo que todavía no pasa ocurre más adelante, después.",
+   "id": "hist1-oa02-27"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Es de tarde y el tío llega en la noche. ¿Ya llegó?",
+   "opciones": [
+    "no, llega después",
+    "sí, llegó antes",
+    "sí, llegó ayer",
+    "sí, en la mañana"
+   ],
+   "correcta": 0,
+   "tip": "La noche viene después de la tarde, así que el tío todavía no llega.",
+   "id": "hist1-oa02-28"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Gaspar cumple 7 el año próximo. ¿Ya los cumplió?",
+   "opciones": [
+    "todavía no",
+    "sí, este año",
+    "sí, el año pasado",
+    "sí, hace un mes"
+   ],
+   "correcta": 0,
+   "tip": "El año próximo es el que viene: ese cumpleaños aún no llega.",
+   "id": "hist1-oa02-29"
+  },
+  {
+   "oa": "HI01 OA 02",
+   "pregunta": "Primero Nicolás fue a kínder. ¿Adónde fue después?",
+   "opciones": [
+    "a primero básico",
+    "a prekínder",
+    "a sala cuna",
+    "a medio mayor"
+   ],
+   "correcta": 0,
+   "tip": "Después de kínder se pasa a primero básico. Prekínder y sala cuna van antes.",
+   "id": "hist1-oa02-30"
+  }
+ ]
+}

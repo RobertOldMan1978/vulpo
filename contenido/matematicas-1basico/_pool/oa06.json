@@ -1,0 +1,418 @@
+{
+ "preguntas": [
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "7 es 5 y ¿cuánto más?",
+   "opciones": [
+    "2",
+    "3",
+    "12",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "Si al cinco le juntas dos, llegas al siete: siete es cinco y dos. Doce sale de juntar el siete con el cinco.",
+   "id": "mate1-oa06-1"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "Junto al 4, ¿qué número forma 9?",
+   "opciones": [
+    "5",
+    "4",
+    "13",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Cuatro y cinco más forman nueve. Trece sale de juntar el nueve con el cuatro, y eso es otra cosa.",
+   "id": "mate1-oa06-2"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "¿Qué número forman 6 y 3?",
+   "opciones": [
+    "9",
+    "8",
+    "63",
+    "3"
+   ],
+   "correcta": 0,
+   "tip": "Seis y tres juntos son nueve. No se escriben uno al lado del otro: eso daría otro número.",
+   "id": "mate1-oa06-3"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "8 y 7 juntos, ¿qué número son?",
+   "opciones": [
+    "15",
+    "14",
+    "87",
+    "1"
+   ],
+   "correcta": 0,
+   "tip": "Ocho y siete juntos son quince. Uno es la diferencia entre ellos, no lo que forman juntos.",
+   "id": "mate1-oa06-4"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "Si juntas 4, 4 y 3, ¿cuánto tienes?",
+   "opciones": [
+    "11",
+    "10",
+    "12",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "Cuatro y cuatro son ocho, y tres más son once. Siete sale si te olvidas de uno de los cuatros.",
+   "id": "mate1-oa06-5"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "¿Qué suma forma 8?",
+   "opciones": [
+    "5 + 3",
+    "5 + 4",
+    "6 + 4",
+    "4 + 3"
+   ],
+   "correcta": 0,
+   "tip": "Cinco y tres juntos son ocho. Las otras sumas dan siete, nueve o diez.",
+   "id": "mate1-oa06-6"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "¿Con qué dos números armas 12?",
+   "opciones": [
+    "7 + 5",
+    "7 + 4",
+    "6 + 4",
+    "8 + 5"
+   ],
+   "correcta": 0,
+   "tip": "Siete y cinco juntos son doce. Las otras sumas dan once, diez o trece.",
+   "id": "mate1-oa06-7"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "¿Qué suma da 16?",
+   "opciones": [
+    "9 + 7",
+    "9 + 6",
+    "8 + 6",
+    "9 + 8"
+   ],
+   "correcta": 0,
+   "tip": "Nueve y siete juntos son dieciséis. Nueve y seis dan quince, y nueve y ocho, diecisiete.",
+   "id": "mate1-oa06-8"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "Separas 6: una parte es 2. ¿Y la otra?",
+   "opciones": [
+    "4",
+    "3",
+    "8",
+    "2"
+   ],
+   "correcta": 0,
+   "tip": "Dos y cuatro juntos forman seis. Ocho sale de juntar el seis con el dos.",
+   "id": "mate1-oa06-9"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "Separas 14: una parte es 9. ¿Y la otra?",
+   "opciones": [
+    "5",
+    "6",
+    "23",
+    "4"
+   ],
+   "correcta": 0,
+   "tip": "Nueve y cinco juntos son catorce. Veintitrés sale de sumar el catorce con el nueve.",
+   "id": "mate1-oa06-10"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "En 20 hay 15 y algo más. ¿Cuánto más?",
+   "opciones": [
+    "5",
+    "15",
+    "35",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "Quince y cinco juntos son veinte. Las dos partes no tienen que ser iguales.",
+   "id": "mate1-oa06-11"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "¿Qué número forman los dos grupos?",
+   "opciones": [
+    "8",
+    "53",
+    "2",
+    "7"
+   ],
+   "correcta": 0,
+   "tip": "Cinco manzanas y tres más son ocho. Dos es lo que tiene uno más que el otro.",
+   "visual": {
+    "tipo": "contar",
+    "a": 5,
+    "b": 3,
+    "emoji": "🍎"
+   },
+   "id": "mate1-oa06-12"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "¿Qué número forman todos los peces?",
+   "opciones": [
+    "13",
+    "94",
+    "5",
+    "12"
+   ],
+   "correcta": 0,
+   "tip": "Nueve peces y cuatro más son trece. Cinco es la diferencia entre los dos grupos.",
+   "visual": {
+    "tipo": "contar",
+    "a": 9,
+    "b": 4,
+    "emoji": "🐟"
+   },
+   "id": "mate1-oa06-13"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "Hay dos partes iguales. ¿Qué número forman?",
+   "opciones": [
+    "12",
+    "6",
+    "66",
+    "11"
+   ],
+   "correcta": 0,
+   "tip": "Seis estrellas y seis más son doce. Seis es solo una de las dos partes.",
+   "visual": {
+    "tipo": "contar",
+    "a": 6,
+    "b": 6,
+    "emoji": "⭐"
+   },
+   "id": "mate1-oa06-14"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "Ana separó 9 en 6 y 3. ¿Está bien?",
+   "opciones": [
+    "Sí, está bien",
+    "No, sobra uno",
+    "No, falta uno",
+    "No, eran 6 y 4"
+   ],
+   "correcta": 0,
+   "tip": "Seis y tres juntos son nueve: Ana lo separó bien.",
+   "id": "mate1-oa06-15"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "Leo separó 11 en 5 y 5. ¿Está bien?",
+   "opciones": [
+    "No, falta uno",
+    "Sí, está bien",
+    "No, sobra uno",
+    "No, sobran cinco"
+   ],
+   "correcta": 0,
+   "tip": "Cinco y cinco son diez, y Leo necesitaba once: le falta uno.",
+   "id": "mate1-oa06-16"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "Pía dice que 7 es 4 y 4. ¿Tiene razón?",
+   "opciones": [
+    "No, sobra uno",
+    "Sí, está bien",
+    "No, falta uno",
+    "No, faltan cuatro"
+   ],
+   "correcta": 0,
+   "tip": "Cuatro y cuatro son ocho, uno más que siete: a Pía le sobra uno.",
+   "id": "mate1-oa06-17"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "9 es 5 + 4. ¿Qué otra suma también da 9?",
+   "opciones": [
+    "6 + 3",
+    "6 + 4",
+    "4 + 4",
+    "3 + 3"
+   ],
+   "correcta": 0,
+   "tip": "Seis y tres también forman nueve. Un número se puede separar de varias maneras.",
+   "id": "mate1-oa06-18"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "13 es 7 + 6. ¿Qué otra suma da 13?",
+   "opciones": [
+    "8 + 5",
+    "8 + 6",
+    "6 + 6",
+    "5 + 4"
+   ],
+   "correcta": 0,
+   "tip": "Ocho y cinco también forman trece. Si a una parte le sumas uno, a la otra le quitas uno.",
+   "id": "mate1-oa06-19"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "Un dominó tiene 6 y 5 puntos. ¿Cuántos son?",
+   "opciones": [
+    "11",
+    "10",
+    "65",
+    "1"
+   ],
+   "correcta": 0,
+   "tip": "Seis puntos y cinco más son once. No se escriben juntos: eso sería otro número.",
+   "id": "mate1-oa06-20"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "Ana alza 8 dedos: 5 en una mano. ¿Y en la otra?",
+   "opciones": [
+    "3",
+    "5",
+    "13",
+    "4"
+   ],
+   "correcta": 0,
+   "tip": "Cinco y tres forman ocho: en la otra mano alza tres dedos.",
+   "id": "mate1-oa06-21"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "¿Cuántos le faltan al 6 para formar 9?",
+   "opciones": [
+    "3",
+    "15",
+    "2",
+    "4"
+   ],
+   "correcta": 0,
+   "tip": "Seis y tres más forman nueve. Quince sale de juntar el seis con el nueve.",
+   "id": "mate1-oa06-22"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "Para formar 17 con un 8, ¿qué número falta?",
+   "opciones": [
+    "9",
+    "8",
+    "25",
+    "10"
+   ],
+   "correcta": 0,
+   "tip": "Ocho y nueve juntos forman diecisiete. Ocho y ocho darían dieciséis.",
+   "id": "mate1-oa06-23"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "¿Qué número forman las dos filas de huevos?",
+   "opciones": [
+    "8",
+    "4",
+    "44",
+    "6"
+   ],
+   "correcta": 0,
+   "tip": "Cuatro huevos y cuatro más son ocho. Cuatro es solo una de las filas.",
+   "visual": {
+    "tipo": "agrupar",
+    "grupos": 2,
+    "porGrupo": 4,
+    "emoji": "🥚"
+   },
+   "id": "mate1-oa06-24"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "Una mano tiene 5 dedos. ¿Qué suma da 5?",
+   "opciones": [
+    "3 + 2",
+    "3 + 3",
+    "4 + 3",
+    "1 + 3"
+   ],
+   "correcta": 0,
+   "tip": "Tres y dos juntos son cinco, como los dedos de una mano.",
+   "id": "mate1-oa06-25"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "Al 7 le juntas 0. ¿Qué número queda?",
+   "opciones": [
+    "7",
+    "70",
+    "0",
+    "8"
+   ],
+   "correcta": 0,
+   "tip": "Juntar cero es no agregar nada: siete y cero siguen siendo siete.",
+   "id": "mate1-oa06-26"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "Además de 9 + 9, ¿qué suma da 18?",
+   "opciones": [
+    "11 + 7",
+    "11 + 8",
+    "9 + 8",
+    "12 + 8"
+   ],
+   "correcta": 0,
+   "tip": "Once y siete también forman dieciocho. Si una parte crece dos, la otra baja dos.",
+   "id": "mate1-oa06-27"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "¿Qué número se separa en 7 y 5?",
+   "opciones": [
+    "12",
+    "2",
+    "75",
+    "11"
+   ],
+   "correcta": 0,
+   "tip": "Siete y cinco juntos forman doce, así que doce se puede separar en siete y cinco.",
+   "id": "mate1-oa06-28"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "Matías juntó 2, 3 y 5. ¿Qué número formó?",
+   "opciones": [
+    "10",
+    "9",
+    "8",
+    "5"
+   ],
+   "correcta": 0,
+   "tip": "Dos y tres son cinco, y cinco más son diez.",
+   "id": "mate1-oa06-29"
+  },
+  {
+   "oa": "MA01 OA 06",
+   "pregunta": "15 fichas, rojas o azules: 9 son rojas. ¿Y azules?",
+   "opciones": [
+    "6",
+    "9",
+    "24",
+    "5"
+   ],
+   "correcta": 0,
+   "tip": "Nueve rojas y seis azules forman quince fichas. Veinticuatro sale de juntar el quince con el nueve.",
+   "id": "mate1-oa06-30"
+  }
+ ]
+}
