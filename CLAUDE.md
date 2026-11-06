@@ -179,14 +179,14 @@ están hoy en una expedición jugable, el resto es reserva.
 > anuncia.** Tiene banco (**2.466 preguntas + 35 lecciones**, leídas una por una por agentes y
 > **sin firmar todavía**: la foto "17.000 de 17.000" de arriba ya no es la cola completa), reparto
 > aprobado y fork `2do/index.html` jugable en `vulpo.cl/2do/` **sin enlazar**. Le faltan la firma
-> de Roberto, la voz (va directo a R2), el arte y aplicar el nivel 02 del esquema. Detalle y orden
+> de Roberto, la voz (va directo a R2) y aplicar el nivel 02 del esquema; el arte ya está (05/11). Detalle y orden
 > en `pendiente.md`.
 >
 > 🟡 **1° básico, el octavo curso, está EN CONSTRUCCIÓN (Sesión 140, 05/11/2026) y tampoco se
 > anuncia.** Banco de **2.151 preguntas + 33 lecciones** leído pregunta por pregunta y **sin
 > firmar**, reparto **aprobado** y fork `1ro/index.html` jugable en `vulpo.cl/1ro/` **sin enlazar**,
-> con la voz que **lee sola** (`LEE_SOLO`). Le falta lo mismo que a 2°: firma, voz, arte (15
-> imágenes) y el nivel 01 del esquema.
+> con la voz que **lee sola** (`LEE_SOLO`). Le falta lo mismo que a 2°: firma, voz y el nivel 01
+> del esquema (el arte ya está, 05/11).
 
 > ✅ **VULPO se anuncia desde 3° a 8° básico, los SEIS cursos (06/09/2026), decisión de
 > Roberto.** La landing (`index.html`) enlaza los **seis cursos jugables** —3°, 4°, 5°, 6°, 7° y
@@ -14572,4 +14572,62 @@ Siete preguntas de 2° usaban monedas de 1 y 5 pesos, que no se acuñan desde 20
 Roberto pasaron a cajas, bolsas y paquetes de 10 con sueltos, que miden lo mismo.
 
 - **Pendiente de Roberto, en orden (1° y 2°):** aprobar bancos y lecciones en el tablero; autorizar
-  la voz; generar las imágenes (15 de 1° y 17 de 2°); aplicar el esquema al publicar.
+  la voz; generar las imágenes (15 de 1° y 17 de 2°: **hechas en la Sesión 141**); aplicar el
+  esquema al publicar.
+
+### Sesión 141 (2026-11-05) — El arte de 1° y 2°, y el Jefe Final de Matemática que no abría
+Roberto generó las **32 imágenes** de los dos cursos de una vez: 16 portadas y 16 villanos, normal y
+derrotado. Llegaron con nombres descriptivos y en el orden de los prompts, pero **se identificaron
+mirándolas una por una** igual: el orden de descarga ya mintió en las Sesiones 96 y 127. **No se
+tocó contenido.**
+
+#### El arte, procesado y cableado
+- **Cuatro tandas según el fondo, medido antes de procesar:** portadas sobre blanco, portadas sobre
+  violeta (esquinas en gris ~37), villanos sobre oscuro, y **La Bulla, que ya venía con transparencia
+  real** (`--fondo=alfa`).
+- **La máscara circular, para las 16 portadas.** El resplandor violeta del aro es demasiado claro
+  para pasar por fondo con ningún umbral, así que `hist1-cap2` quedaba con restos pegados afuera, y
+  otras cuatro también. Como el estándar es una viñeta circular sin nada afuera, se detecta el aro
+  dorado y se deja transparente lo de fuera, con el borde suavizado: **cero píxeles fuera del aro y
+  cero agujeros dentro** en las 16.
+- ⚠️ **El Marchitón derrotado traía un rayo de sol que nacía en la esquina**, y el recorte dejaba una
+  cuña negra pegada. No se pudo separar por color —la sombra del rayo y las hojas oscuras tienen el
+  mismo tono, y un relleno por color se metió por entre las hojas y cortó el montón en línea recta—,
+  así que se borró lo que queda por encima del contorno de las hojas, medido en una grilla. Lo que
+  sobra se lee como su sombra, y no hubo que regenerarla.
+- **Cableado con un script de anclas exactas** que aborta si una no aparece una sola vez: 16
+  `portadaMapa` y 8 `jefeFinal` con `villanoImg`/`villanoImgDerrotado`. Ya no queda ningún
+  `PLACEHOLDER` de arte en 1° ni en 2°; solo el de la voz, que es lo esperado.
+- ⚠️ **La campaña de mini-clases no lee el `portadaMapa` del capítulo sino la `portada` de su
+  entrada en `capitulosMate`**, así que la unidad 2 de Matemática seguía mostrando la genérica en
+  los dos cursos aunque el capítulo ya apuntara al arte nuevo. Al cablear la portada de una unidad
+  de Matemática hay que tocar **los dos lugares**.
+
+#### ⚠️ El Jefe Final de Matemática no se podía jugar en 7 de los 8 cursos — vivo en producción
+Apareció verificando el arte: la intro del jefe de Matemática no abría. **`cargarPoolMate`, en
+`assets/js/lecciones.js`, descargaba fijo `contenido/matematicas-8basico/preguntas.json`**, copiado
+de 8° al extraer el módulo en la Sesión 83. En cualquier otro curso ningún objetivo calzaba con el
+banco, así que el jefe mostraba *"Cargando preguntas…"* y volvía a la campaña **sin abrir nunca**.
+Afectaba a **3°, 4°, 5°, 6° y 7°, que están publicados**, y nadie lo notó porque solo aparece al
+vencer todas las unidades.
+
+> Es el **séptimo caso** del mismo defecto del fork —un nombre de curso escrito en código
+> compartido—, y el segundo con esta misma función: la Sesión 65 ya la había sacado de 3° y 7° por
+> bajar el banco de otro nivel, y volvió con la extracción del módulo.
+
+**El arreglo** saca el banco de la ruta de lecciones de Matemática que declara cada curso
+(`CFG.rutas`), igual que la práctica (`preguntasDeOA`): sin ningún nombre de curso adentro.
+Comprobado que los ocho forks declaran esa ruta.
+
+#### Verificación (con `scripts/cdp.mjs`, jugando)
+- **El Jefe Final de Matemática en los ocho cursos:** antes del arreglo, siete abortaban con la
+  alerta; después, los ocho abren su intro con su villano y la primera fase sirve preguntas **de su
+  propio nivel** (`MA01` en 1°… `MA08` en 8°), con 4 opciones.
+- **El arte de 1° y 2°:** las cuatro campañas de cada curso cargan todas sus portadas, ninguna
+  genérica; los 8 jefes muestran su villano y la imagen derrotada carga.
+- **Regresión:** los ocho cursos arrancan con el motor vivo, `LECC` activo y JUGADOR navegando.
+  **Cero errores de consola y cero fallos de red.**
+
+- **Pendiente de Roberto (1° y 2°):** aprobar bancos y lecciones en el tablero, autorizar la voz y
+  aplicar el esquema al publicar. **De arrastre:** la app a Play y sacar los MP3 de 3° y 4° del repo
+  (esperan a 1°), la prueba cerrada de Google Play e INAPI.

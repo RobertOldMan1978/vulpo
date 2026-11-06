@@ -37,8 +37,8 @@ Es una app web mobile-first y se reutiliza. Ver `docs/roadmap-tecnico.md` §1.
 | 6° | 99 | 2.970 | ✅ **todas** | no lleva | villanos ✅ · portadas 25/25 (16 reutilizadas + 9 nuevas) | ✅ | ✅ |
 | 7° | 81 | 2.430 (+120 apoyo) | ✅ **todas** | no lleva | villanos ✅ · portadas 23/23 | ✅ | ✅ |
 | 8° | 80 | 2.644 (+482 apoyo) | ✅ todas | no lleva | ✅ portadas 20/20 | ✅ | ✅ |
-| **2°** (en construcción) | 82 (81 con banco) | 2.406 (+60 Vocabulario) | ⏸️ **pendiente de Roberto** (2.466 + 35 lecciones) | ⏸️ tras aprobar (~US$7-9, va a R2) | ⏸️ 17 imágenes por generar (14 portadas reutilizadas) | ✅ (05/11) | ❌ no se enlaza hasta tenerlo completo |
-| **1°** (en construcción) | 73 (72 con banco) | 2.091 (+60 Vocabulario) | ⏸️ **pendiente de Roberto** (2.151 + 33 lecciones) | ⏸️ tras aprobar (va a R2; lee sola) | ⏸️ 15 imágenes por generar (15 portadas reutilizadas) | ✅ (05/11) | ❌ no se enlaza hasta tenerlo completo |
+| **2°** (en construcción) | 82 (81 con banco) | 2.406 (+60 Vocabulario) | ⏸️ **pendiente de Roberto** (2.466 + 35 lecciones) | ⏸️ tras aprobar (~US$7-9, va a R2) | ✅ 17 imágenes (05/11): 9 portadas + 4 villanos, cableadas | ✅ (05/11) | ❌ no se enlaza hasta tenerlo completo |
+| **1°** (en construcción) | 73 (72 con banco) | 2.091 (+60 Vocabulario) | ⏸️ **pendiente de Roberto** (2.151 + 33 lecciones) | ⏸️ tras aprobar (va a R2; lee sola) | ✅ 15 imágenes (05/11): 7 portadas + 4 villanos, cableadas | ✅ (05/11) | ❌ no se enlaza hasta tenerlo completo |
 
 - ⚠️ **La puerta CERRÓ el 01/10/2026 en los seis cursos**, sola, como estaba programada: medido
   en `vulpo.cl` ese día, `bloqueado()` vale `true` sin código en los seis. Al cerrarse destapó
@@ -676,8 +676,8 @@ tienda y permite probar notificaciones antes de enfrentar iOS. Detalle en
   lecciones, reparto en 23 capítulos **aprobado por Roberto** (05/11), y el fork `2do/index.html`
   verificado jugando. **Pendiente, en orden:** (1) ⏸️ Roberto aprueba el banco y las lecciones en el
   tablero; (2) ⏸️ autoriza la voz (~US$7-9) y se genera a R2 con `voz-r2.py` — hasta entonces el 🔊
-  de 2° está APAGADO (`VOZ_DIRS=[]`); (3) ⏸️ Roberto genera las 17 imágenes
-  (`docs/prompts-arte-2basico.md`) y se procesan; (4) ⏸️ aplicar `supabase/schema.sql` (trae el
+  de 2° está APAGADO (`VOZ_DIRS=[]`); (3) ✅ las 17 imágenes, generadas, procesadas y cableadas
+  (05/11, Sesión 141); (4) ⏸️ aplicar `supabase/schema.sql` (trae el
   nivel 02) **al publicar**, no antes; (5) landing a 7 cursos y `app/index.html` con 2°. Las dudas
   menores para Roberto están anotadas pregunta por pregunta (fuera del repo).
 
@@ -687,8 +687,8 @@ tienda y permite probar notificaciones antes de enfrentar iOS. Detalle en
   auditorías), 33 lecciones (`docs/veredicto-1basico.md`), reparto en 22 capítulos **aprobado por
   Roberto** (05/11), `LEE_SOLO` en `motor.js` y el fork `1ro/index.html` verificado jugando.
   **Pendiente, en orden:** (1) ⏸️ Roberto aprueba banco y lecciones en el tablero; (2) ⏸️ autoriza la
-  voz (escuchar «O'Higgins» y «Köbrich»); (3) ⏸️ genera las 15 imágenes
-  (`docs/prompts-arte-1basico.md`); (4) ⏸️ aplicar `supabase/schema.sql` (nivel 01) **al
+  voz (escuchar «O'Higgins» y «Köbrich»); (3) ✅ las 15 imágenes, generadas, procesadas y
+  cableadas (05/11, Sesión 141); (4) ⏸️ aplicar `supabase/schema.sql` (nivel 01) **al
   publicar**; (5) landing a 8 cursos y `app/index.html` con 1° y 2°.
 
 - 🟡 **La voz a Cloudflare R2 (Sesión 138) — EN CURSO.** Es el requisito para que 2° y 1° lleven

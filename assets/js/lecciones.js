@@ -1475,9 +1475,16 @@ function capMateCompleto(cap){ if(!cap||!cap.lecciones||!cap.lecciones.length)re
 
 // Carga el banco completo de Matemáticas en el POOL global (keyed por OA), para el jefe
 // de la campaña de lecciones (Matemáticas no tiene expedición de la cual tomar el POOL).
+// ⚠️ El banco sale de la ruta de lecciones de Matemática QUE DECLARA EL CURSO (CFG.rutas),
+// igual que la práctica (preguntasDeOA). Hasta el 05/11/2026 decía fijo
+// 'contenido/matematicas-8basico/preguntas.json' —copiado de 8° al extraer el módulo—, así
+// que en los otros siete cursos ningún OA calzaba y el Jefe Final de Matemática abortaba
+// con "Cargando preguntas…" sin abrir nunca. Un nombre de curso escrito aquí es el defecto
+// del fork otra vez: la convención de nombres ES la configuración.
 async function cargarPoolMate(){
  POOL={};
- try{ const d=await (await fetch('contenido/matematicas-8basico/preguntas.json')).json();
+ const ruta=(CFG.rutas.find(r=>/\/matematicas-/.test(r))||'').replace('lecciones.json','preguntas.json');
+ try{ if(!ruta) throw 0; const d=await (await fetch(ruta)).json();
       (d.preguntas||[]).forEach(q=>{(POOL[q.oa]=POOL[q.oa]||[]).push(q);}); }catch(e){}
 }
 
