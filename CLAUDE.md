@@ -14728,6 +14728,14 @@ curso— y 1° y 2° la heredaron de 4°. En la app igual sonaban, pidiendo los 
 **sin conexión caían a la voz robótica del teléfono**. Ahora 4°, 1° y 2° la cargan y la inician como
 3°. En la web no hace nada: verificado que los cuatro arrancan y navegan sin errores.
 
+#### La app nueva: Play exige Android 7.0 como mínimo
+El App Bundle de la versión 5 se compiló bien, pero la Play Console lo rechazó: *"la protección
+automática de Play requiere que la versión del SDK sea 24 o una posterior"*. Capacitor 6 deja
+`minSdkVersion` en 22, y `scripts/patch-target-sdk.py` lo dejaba así a propósito para no excluir
+teléfonos viejos. Ahora lo sube a **24 (Android 7.0)**, y solo sube: si un Capacitor futuro trae un
+mínimo mayor, lo respeta. **Android 5 y 6 quedan fuera de la app**; en el navegador VULPO sigue
+funcionando igual.
+
 - **Lo que sigue:** la **app nueva a Play**, una sola compilación con 1° y 2° y el origen nuevo de la
   voz; después **sacar los MP3 de 3° y 4° del repo**, que esperaba esa compilación. De arrastre: la
   prueba cerrada de Google Play e INAPI.

@@ -6,8 +6,10 @@
 # Capacitor 6 genera variables.gradle con compileSdkVersion=34 y targetSdkVersion=34. Play
 # rechaza el .aab por targetSdk < 36 ("debe orientarse, al menos, al nivel 36"). El Android
 # Gradle Plugin exige compileSdk >= targetSdk, asi que se suben LOS DOS a 36.
-#   ⚠️ minSdkVersion NO se toca (queda en 22): el error de Play es solo por el OBJETIVO, y bajar
-#      el minimo dejaria telefonos viejos afuera sin necesidad.
+#   ⚠️ minSdkVersion SUBE a 24 (Android 7.0), y solo sube: Capacitor 6 lo deja en 22 y el 06/11/2026
+#      Play rechazo el .aab de la version 5 con "la proteccion automatica de Play requiere que la
+#      version del SDK sea 24 o una posterior". El 22 se habia dejado a proposito para no dejar
+#      telefonos viejos afuera, pero ya no es opcion. Android 5 y 6 (API 22-23) quedan fuera.
 #
 # El AGP de Capacitor 6 (8.2.1) fue probado hasta compileSdk 34; contra un SDK ESTABLE mas nuevo
 # solo emite una ADVERTENCIA (no un error) y compila igual. Se agrega
@@ -34,8 +36,18 @@ def subir(texto, clave):
 
 s = subir(s, "compileSdkVersion")
 s = subir(s, "targetSdkVersion")
+
+# minSdkVersion: al menos MIN_SDK. Solo sube; si un Capacitor futuro ya trae uno mayor, se respeta.
+MIN_SDK = 24
+m = re.search(r'(\bminSdkVersion\s*=\s*)(\d+)', s)
+if not m:
+    sys.stderr.write("ERROR: no se encontro 'minSdkVersion' en " + v + "\n")
+    sys.exit(1)
+min_final = max(MIN_SDK, int(m.group(2)))
+s = s[:m.start(2)] + str(min_final) + s[m.end(2):]
 open(v, "w", encoding="utf-8", newline="\n").write(s)
-print("variables.gradle: compileSdkVersion y targetSdkVersion -> " + TARGET)
+print("variables.gradle: compileSdkVersion y targetSdkVersion -> " + TARGET +
+      ", minSdkVersion -> " + str(min_final))
 
 # 2) gradle.properties: silenciar la advertencia de AGP por compileSdk mas nuevo que el probado
 p = os.path.join("android", "gradle.properties")
