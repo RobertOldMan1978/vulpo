@@ -46,6 +46,22 @@ ASIGS = {
     # y su expedicion en el juego es voc-general. El prefijo "VOC" no filtra ningun
     # META_OA y esta bien: un modulo transversal no tiene metas de aprendizaje.
     "voc4":  {"banco": "vocabulario-4basico",    "oa": "VOC",  "caps": "voc-general",     "juego": "4to"},
+    # 2 y 1 basico (06/11/2026). Sus "caps" se comprobaron contra los forks antes de
+    # agregarlos: 2do/ tiene mate2-, cie2-, hist2- y leng2-, y 1ro/ tiene mate1-, cie1-,
+    # hist1- y leng1-. Las carpetas de voz (mat2, len2...) son las que el comentario
+    # PLACEHOLDER de VOZ_DIRS de cada fork ya anunciaba.
+    # Desde la Sesion 138 sus MP3 NO viajan por git: nacen fuera del repo (.gitignore) y
+    # se suben a Cloudflare R2 con scripts/voz-r2.py.
+    "mat2":  {"banco": "matematicas-2basico",    "oa": "MA02", "caps": "mate2-",          "juego": "2do"},
+    "hist2": {"banco": "historia-2basico",       "oa": "HI02", "caps": "hist2-",          "juego": "2do"},
+    "cie2":  {"banco": "ciencias-2basico",       "oa": "CN02", "caps": "cie2-",           "juego": "2do"},
+    "len2":  {"banco": "lenguaje-2basico",       "oa": "LE02", "caps": "leng2-",          "juego": "2do"},
+    "voc2":  {"banco": "vocabulario-2basico",    "oa": "VOC",  "caps": "voc-general",     "juego": "2do"},
+    "mat1":  {"banco": "matematicas-1basico",    "oa": "MA01", "caps": "mate1-",          "juego": "1ro"},
+    "hist1": {"banco": "historia-1basico",       "oa": "HI01", "caps": "hist1-",          "juego": "1ro"},
+    "cie1":  {"banco": "ciencias-1basico",       "oa": "CN01", "caps": "cie1-",           "juego": "1ro"},
+    "len1":  {"banco": "lenguaje-1basico",       "oa": "LE01", "caps": "leng1-",          "juego": "1ro"},
+    "voc1":  {"banco": "vocabulario-1basico",    "oa": "VOC",  "caps": "voc-general",     "juego": "1ro"},
 }
 
 

@@ -96,10 +96,18 @@ vender a un colegio cuesta lo mismo pague lo que pague.
 | **5° básico** (`/5to/`) | 2.790 preguntas, 4 asignaturas | ✅ aprobado por muestreo, a la venta |
 | **4° básico** (`/4to/`) | 2.730 preguntas, 4 asignaturas, voz pregrabada + apoyo visual | ✅ aprobado por muestreo, a la venta |
 | **3° básico** (`/3ro/`) | 2.659 preguntas, 4 asignaturas + voz pregrabada + Lectura | ✅ aprobado por muestreo, a la venta |
+| **2° básico** (`/2do/`) | 2.466 preguntas, 4 asignaturas + Vocabulario + voz pregrabada | ✅ firmado (06/11/2026), a la venta |
+| **1° básico** (`/1ro/`) | 2.151 preguntas, 4 asignaturas + Vocabulario + voz que lee sola | ✅ firmado (06/11/2026), a la venta |
 
-Desde el 06/09/2026 **los seis cursos están completos, aprobados y la landing los anuncia**,
-**pero sin exagerar cómo**: dice *"aprobadas por un grupo de profesionales, apoyados con
-Inteligencia Artificial, objetivo por objetivo"* y **NO** *"una a una"*. La diferencia es real y
+Desde el 06/11/2026 **los ocho cursos (1° a 8°) están completos, aprobados y la landing los
+anuncia**, **pero sin exagerar cómo**: dice *"revisadas por profesores y distintos profesionales,
+con ayuda de la IA de VULPO, objetivo por objetivo"* y **NO** *"una a una"* (hasta el 06/11 decía
+*"aprobadas por un grupo de profesionales, apoyados con Inteligencia Artificial"*). ⚠️ **"Profesores"
+tiene que poder sostenerse** si un colegio pregunta quiénes revisaron, y **"la IA de VULPO"** son
+herramientas de IA usadas en el proceso, no un modelo propio: si alguien pregunta, se dice así. La
+landing redondea las cifras (*"más de 21 mil preguntas"*, *"más de 680 objetivos"*) para no tener
+que corregirlas en cada tanda. Cómo se hacen las preguntas lo cuentan una pregunta frecuente de la
+landing y una sección de `/colegio`. La diferencia es real y
 hay que sostenerla si un director pregunta: 8° se revisó
 **pregunta por pregunta**; 3°, 4°, 5°, 6° y 7° se aprobaron **por muestreo** —8 preguntas de cada
 30 por objetivo, y si la muestra pasa se aprueba el objetivo completo
@@ -219,9 +227,10 @@ que la propia empresa publica en su sitio.
 
 ## Qué se le promete a un colegio, y qué no
 
-**Sí:** 4 asignaturas por curso en 3°, 4°, 5°, 6°, 7° y 8° básico —**17.000 preguntas aprobadas**,
-alineadas a las Bases del MINEDUC (8° pregunta por pregunta; 3°, 4°, 5°, 6° y
-7° por muestreo de 8 por objetivo)—,
+**Sí:** 4 asignaturas por curso de 1° a 8° básico —**más de 21 mil preguntas aprobadas** (21.617 al
+06/11/2026), alineadas a las Bases del MINEDUC (8° pregunta por pregunta; 3°, 4°, 5°, 6° y
+7° por muestreo de 8 por objetivo; 1° y 2° se leyeron **pregunta por pregunta** en su construcción y Roberto los firmó **objetivo
+por objetivo** en el tablero (06/11/2026))—,
 **evaluación formativa alineada al Decreto 67/2018** (ver sección anterior), panel del profesor
 con mapa de dominio por OA, desafíos de refuerzo, ranking por curso, soporte y actualizaciones.
 Funciona en cualquier celular con internet, sin instalar nada.
@@ -229,7 +238,7 @@ Funciona en cualquier celular con internet, sin instalar nada.
 **No:**
 - ❌ **No funciona sin internet.** Verificado: no hay service worker y los bancos de preguntas se
   piden con `fetch`. **Nunca prometer uso sin conexión.**
-- ⚠️ **No decir "una a una".** Hoy sí está aprobado el 100% del banco (17.000 de 17.000), pero lo
+- ⚠️ **No decir "una a una".** Hoy sí está aprobado el 100% del banco (21.617 de 21.617 al 06/11/2026), pero lo
   están *objetivo por objetivo*: 8° se revisó pregunta por pregunta, y 3°, 4°, 5°, 6° y 7° por
   **muestreo** de 8 de cada 30, así que la cobertura no es el método. Y **el 100% es una foto, no
   un estado**: el banco crece, y cada tanda nueva vuelve a la cola hasta que Roberto la firma —el

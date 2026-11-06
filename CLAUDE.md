@@ -175,18 +175,16 @@ están hoy en una expedición jugable, el resto es reserva.
 > un grupo de profesionales, apoyados con Inteligencia Artificial, objetivo por objetivo"* y
 > **nunca** *"una a una"*.
 >
-> 🟡 **2° básico, el séptimo curso, está EN CONSTRUCCIÓN (Sesión 139, 04-05/11/2026) y NO se
-> anuncia.** Tiene banco (**2.466 preguntas + 35 lecciones**, leídas una por una por agentes y
-> **firmadas por Roberto el 06/11**), reparto aprobado, arte propio y fork `2do/index.html` jugable
-> en `vulpo.cl/2do/` **sin enlazar**. Le faltan la voz (va directo a R2) y aplicar el nivel 02 del
-> esquema. Con 1° y 2° el banco firmado es **21.617 de 21.617** (43 bancos). Detalle y orden
-> en `pendiente.md`.
->
-> 🟡 **1° básico, el octavo curso, está EN CONSTRUCCIÓN (Sesión 140, 05/11/2026) y tampoco se
-> anuncia.** Banco de **2.151 preguntas + 33 lecciones** leído pregunta por pregunta y **firmado
-> (06/11)**, reparto **aprobado**, arte propio y fork `1ro/index.html` jugable en `vulpo.cl/1ro/`
-> **sin enlazar**, con la voz que **lee sola** (`LEE_SOLO`). Le falta lo mismo que a 2°: la voz y
-> el nivel 01 del esquema.
+> ✅ **1° y 2° básico, el octavo y el séptimo curso, quedaron PUBLICADOS el 06/11/2026 (Sesiones 139
+> a 142), y desde ese día VULPO se anuncia de 1° a 8° básico, los OCHO cursos.** Cada uno tiene su
+> banco firmado por Roberto (2.466 + 35 lecciones en 2°, 2.151 + 33 en 1°), arte propio, voz
+> pregrabada en Cloudflare R2 —en 1° la voz **lee sola** la pregunta y sus opciones (`LEE_SOLO`)—, y
+> su nivel (`02`, `01`) aplicado en el esquema. El banco completo queda en **21.617 de 21.617
+> preguntas y 301 de 301 lecciones (43 bancos)**, con **682 objetivos medidos**. La landing redondea:
+> *"más de 21 mil preguntas"* y *"más de 680 objetivos"*, y dice que las preguntas fueron *"revisadas
+> por profesores y distintos profesionales, con ayuda de la IA de VULPO"* (ver `docs/comercial.md`
+> para los dos cuidados de esa frase). Lo que sigue de abajo describe la situación del 06/09, con seis
+> cursos, y se conserva como registro.
 
 > ✅ **VULPO se anuncia desde 3° a 8° básico, los SEIS cursos (06/09/2026), decisión de
 > Roberto.** La landing (`index.html`) enlaza los **seis cursos jugables** —3°, 4°, 5°, 6°, 7° y
@@ -14646,3 +14644,68 @@ Comprobado que los ocho forks declaran esa ruta.
 - **Pendiente (1° y 2°):** la voz —autorizada por Roberto el 06/11, va directo a R2— y aplicar el
   esquema al publicar. **De arrastre:** la app a Play y sacar los MP3 de 3° y 4° del repo
   (esperan a 1°), la prueba cerrada de Google Play e INAPI.
+
+### Sesión 142 (2026-11-06) — 1° y 2° básico, publicados: VULPO pasa a ocho cursos
+Después de la firma de Roberto quedaba lo que separaba a 1° y 2° de la landing: la voz, el esquema y
+el anuncio. Los tres quedaron hechos el mismo día, más una respuesta que Roberto quería tener lista:
+**¿cómo se hicieron las preguntas?**
+
+#### La voz: 18.977 clips por US$7,71, directo a R2
+- **El catálogo de voz (`scripts/voz_asignaturas.py`) suma diez asignaturas** (`mat2`, `hist2`,
+  `cie2`, `len2`, `voc2` y las cinco de 1°), con sus prefijos de capítulo **comprobados contra los
+  forks** antes de agregarlos.
+- **El recuento, que es gratis, fue lo primero:** US$4,49 para 2° y US$3,22 para 1°, menos que los
+  ~US$7-9 por curso estimados. Antes de pagar se buscó en los 18.977 textos normalizados cualquier
+  emoji o símbolo sin traducir —se leen por su nombre en inglés, el "alto voltaje jefe" de la Sesión
+  56—, **con un control positivo para saber que el detector funcionaba**: el ⚡ de prueba sí lo
+  encontró, y en el banco no había ninguno.
+- **Generado, verificado y subido:** cero textos sin clip y cero clips vacíos; `voz-r2.py verificar`
+  da **43.227 clips** en R2 con el md5 idéntico al disco. Los MP3 nacen fuera de git (Sesión 138), y
+  en el repo solo van los manifiestos.
+- **`VOZ_DIRS` de los dos forks pasó de la lista vacía a sus cinco carpetas.** Verificado **jugando y
+  espiando qué archivo pide el juego**: en 1° la pregunta se lee sola al aparecer, en 2° al tocar 🔊,
+  y los clips pedidos responden 200 `audio/mpeg` desde `voz.vulpo.cl`. ⚠️ El `fetch` de comprobación
+  desde `localhost` falla por CORS, y eso es de la prueba: un `<audio>` no tiene esa restricción, así
+  que se comprobó con curl.
+- **Roberto escuchó «O'Higgins» y «Köbrich»**, los dos nombres que la lectura dejó anotados, y suenan
+  bien.
+
+#### El esquema, pegando solo la función que cambió
+El único cambio pendiente era la fila `('02',7),('01',8)` de `kimun_asignaturas_todas()`. Se pegó
+**ese bloque solo** y no el archivo entero, por el editor que arrastra una versión vieja (Sesión
+111). Verificado con la clave pública y sus controles: `MA01`, `LE02`, `HI01` y `CN02` se reconocen,
+`MA06` y `CN08` siguen, `MA09` da `null` y una función inventada da 404. Anotado en
+`docs/aplicar-schema.md`.
+
+#### El anuncio de los ocho cursos
+- **Landing:** "de 1° a 8° básico" en título, metadatos, franja, preguntas frecuentes y datos
+  estructurados; las muestras de 1° (`mate1-cap1`) y 2° (`mate2-cap1`), que son su `DEMO_LIBRE`.
+- **Las cifras se redondean, por decisión de Roberto:** *"+21 mil preguntas revisadas"* y *"+680
+  objetivos"*, para no corregirlas en cada tanda (medidas: 21.617 y 682). Y la frase de aprobación
+  pasa a *"revisadas por profesores y distintos profesionales, con ayuda de la IA de VULPO"*.
+  ⚠️ **Se le advirtió de dos cosas, y quedaron escritas en `docs/comercial.md`:** "profesores" tiene
+  que poder sostenerse si un colegio pregunta quiénes, y "la IA de VULPO" son herramientas de IA
+  usadas en el proceso, no un modelo propio.
+- **`/colegio`:** 8 cursos y Formación Ciudadana recontada (**51 objetivos y 1.529 preguntas**, eran
+  43 y 1.289). **La app** ofrece los ocho cursos en dos filas de cuatro y **el sitemap** suma `/1ro/`
+  y `/2do/`.
+
+#### ¿Cómo se hicieron las preguntas?
+Roberto mandó la guía de EducarChile *"Crea tu propia máquina de hacer preguntas"* y preguntó si las
+hicimos así. **No, y está bien:** esa guía es para preguntas **abiertas** que abren una clase; las de
+VULPO son **cerradas**, de evaluación formativa, con una sola respuesta comprobable. Varias ideas de
+la guía sí están por otro camino (causa y efecto, evidencia, punto de vista, el "?+?=10").
+- **Pregunta frecuente nueva en la landing**, con su copia en los datos estructurados **calzando
+  palabra por palabra** (comprobado en las seis).
+- **Sección nueva en `/colegio`, "Cómo se hacen las preguntas"**: cinco pasos —objetivo oficial,
+  estándar de redacción, redacción con IA, controles automáticos, revisión humana— y una línea de
+  criterios. ⚠️ **Una frase prometía de más** ("cualquier docente puede marcar una pregunta mientras
+  juega") y se corrigió: el 🚩 vive solo en los enlaces de revisión.
+
+#### Verificación
+La landing, `/colegio` y la app, mirados a 390 y 1280 px, sin desborde; las muestras nuevas abren en
+modo prueba; cero errores de consola y de red.
+
+- **Lo que sigue:** la **app nueva a Play**, una sola compilación con 1° y 2° y el origen nuevo de la
+  voz; después **sacar los MP3 de 3° y 4° del repo**, que esperaba esa compilación. De arrastre: la
+  prueba cerrada de Google Play e INAPI.

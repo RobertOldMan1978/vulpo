@@ -158,10 +158,11 @@ sin internet — para eso haría falta un service worker, que todavía no existe
 Versión **v0.99**: completo y jugable de punta a punta, en vuelta de revisión
 manual antes de coronar la v1.
 
-**VULPO ya cubre de 3° a 8° básico**, los seis cursos completos con sus cuatro asignaturas,
-**anunciados y enlazados desde `vulpo.cl`**, cada uno como su propia app: 3°, 4°, 5°, 6°, 7° y
-8° básico. **El banco del proyecto son 17.000 preguntas y 233 mini-clases e introducciones, todas
-aprobadas.** Es una foto, no un estado: cada tanda nueva vuelve a la cola de
+**VULPO ya cubre de 1° a 8° básico**, los ocho cursos completos con sus cuatro asignaturas,
+**anunciados y enlazados desde `vulpo.cl`** desde el 06/11/2026, cada uno como su propia app: 1°,
+2°, 3°, 4°, 5°, 6°, 7° y 8° básico. **1° y 2° llevan voz pregrabada**, como 3° y 4°, y en 1° la
+voz **lee sola** la pregunta y sus opciones, porque muchos niños todavía no leen. **El banco del
+proyecto son 21.617 preguntas y 301 mini-clases e introducciones, todas aprobadas.** Es una foto, no un estado: cada tanda nueva vuelve a la cola de
 aprobación antes de llegar a un alumno, así que el número se vuelve a medir en cada cierre.
 
 **Qué falta y en qué orden está en [`pendiente.md`](pendiente.md)**, la lista viva de tareas:
@@ -171,7 +172,7 @@ organización y la programación están en
 mediano plazo: web → PWA → Capacitor → Android → iOS, y el modelo de suscripción
 anual por nivel escolar. Nada de eso está implementado todavía.
 
-Los seis cursos comparten la misma puerta de acceso: desde el **1 de octubre de 2026** hace
+Los ocho cursos comparten la misma puerta de acceso: desde el **1 de octubre de 2026** hace
 falta un código de alumno para jugar más allá de la demo de cada nivel.
 
 **7° básico** (`7mo/`) sigue las mismas bases que 8°: campañas por asignatura, jefe de capítulo y Jefe Final multi-fase, Modo Difícil, comodín 50/50, meta de aprendizaje y repaso al fallar. Sus cuatro asignaturas son Historia, Geografía y Ciencias Sociales (23 objetivos), Matemática (19), Ciencias Naturales (15) y Lengua y Literatura (24). No lleva lectura por voz: a los 12-13 años ya se lee de corrido. Guarda su avance y su identidad en línea aparte de los demás cursos. Suma además dos **módulos transversales**: un **Vocabulario** de 120 palabras de sus cuatro asignaturas, y un **Reto Sin Fin** de cálculo mental —operaciones generadas por código, sin banco de preguntas— dentro de Matemática. Y desde el 02/09, Matemática se juega como **camino de aprendizaje**: **19 mini-clases**, una por objetivo, con su diagrama interactivo y su práctica.

@@ -65,7 +65,7 @@
 
   .grid{
     width:100%; max-width:440px; margin:16px 0 0;
-    display:grid; grid-template-columns:repeat(3,1fr); gap:12px;
+    display:grid; grid-template-columns:repeat(4,1fr); gap:12px;
   }
   .curso{
     position:relative; text-decoration:none; color:#fff;
@@ -177,6 +177,8 @@
        carpeta (/3ro/), cae al index.html raíz (el selector) y parece que "no entra". El
        archivo explícito resuelve igual en la web y en la app. -->
   <nav class="grid" aria-label="Cursos">
+    <a class="curso" data-n="1" href="/1ro/index.html?intro=0"><span class="n">1°</span><span class="b">básico</span></a>
+    <a class="curso" data-n="2" href="/2do/index.html?intro=0"><span class="n">2°</span><span class="b">básico</span></a>
     <a class="curso" data-n="3" href="/3ro/index.html?intro=0"><span class="n">3°</span><span class="b">básico</span></a>
     <a class="curso" data-n="4" href="/4to/index.html?intro=0"><span class="n">4°</span><span class="b">básico</span></a>
     <a class="curso" data-n="5" href="/5to/index.html?intro=0"><span class="n">5°</span><span class="b">básico</span></a>
@@ -192,7 +194,7 @@
 
 <script>
 (function(){
-  var RUTAS={ "3":"3ro","4":"4to","5":"5to","6":"6to","7":"7mo","8":"8vo" };
+  var RUTAS={ "1":"1ro","2":"2do","3":"3ro","4":"4to","5":"5to","6":"6to","7":"7mo","8":"8vo" };
   var KEY="vulpo_curso";
 
   // Estrellas (baratas, y quietas si el sistema pide menos movimiento).

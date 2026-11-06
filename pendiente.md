@@ -37,9 +37,16 @@ Es una app web mobile-first y se reutiliza. Ver `docs/roadmap-tecnico.md` §1.
 | 6° | 99 | 2.970 | ✅ **todas** | no lleva | villanos ✅ · portadas 25/25 (16 reutilizadas + 9 nuevas) | ✅ | ✅ |
 | 7° | 81 | 2.430 (+120 apoyo) | ✅ **todas** | no lleva | villanos ✅ · portadas 23/23 | ✅ | ✅ |
 | 8° | 80 | 2.644 (+482 apoyo) | ✅ todas | no lleva | ✅ portadas 20/20 | ✅ | ✅ |
-| **2°** (en construcción) | 82 (81 con banco) | 2.406 (+60 Vocabulario) | ✅ firmado (06/11): 2.466 + 35 lecciones | ⏸️ tras aprobar (~US$7-9, va a R2) | ✅ 17 imágenes (05/11): 9 portadas + 4 villanos, cableadas | ✅ (05/11) | ❌ no se enlaza hasta tenerlo completo |
-| **1°** (en construcción) | 73 (72 con banco) | 2.091 (+60 Vocabulario) | ✅ firmado (06/11): 2.151 + 33 lecciones | ⏸️ tras aprobar (va a R2; lee sola) | ✅ 15 imágenes (05/11): 7 portadas + 4 villanos, cableadas | ✅ (05/11) | ❌ no se enlaza hasta tenerlo completo |
+| **2°** | 82 (81 con banco) | 2.406 (+60 Vocabulario) | ✅ firmado (06/11): 2.466 + 35 lecciones | ✅ 10.369 clips (06/11, en R2) | ✅ 17 imágenes (05/11): 9 portadas + 4 villanos, cableadas | ✅ (05/11) | ✅ (06/11) |
+| **1°** | 73 (72 con banco) | 2.091 (+60 Vocabulario) | ✅ firmado (06/11): 2.151 + 33 lecciones | ✅ 8.608 clips (06/11, en R2; lee sola) | ✅ 15 imágenes (05/11): 7 portadas + 4 villanos, cableadas | ✅ (05/11) | ✅ (06/11) |
 
+- ✅ **VULPO se anuncia de 1° a 8° básico desde el 06/11/2026: los OCHO cursos publicados.** 1° y 2°
+  quedaron completos: banco firmado, arte propio, voz pregrabada en R2 (18.977 clips, US$7,71) y los
+  niveles `01`/`02` aplicados en el esquema. La landing dice **"más de 21 mil preguntas"** y **"más de
+  680 objetivos"** (21.617 y 682 medidos), y estrena la pregunta frecuente **"¿Cómo se hicieron las
+  preguntas?"**; `/colegio` suma la sección **"Cómo se hacen las preguntas"** (cinco pasos). Lo que
+  sigue es la **app nueva a Play** (una sola compilación con 1° y 2°) y, después, **sacar los MP3 de
+  3° y 4° del repo**, que esperaba justo a esa compilación.
 - ⚠️ **La puerta CERRÓ el 01/10/2026 en los seis cursos**, sola, como estaba programada: medido
   en `vulpo.cl` ese día, `bloqueado()` vale `true` sin código en los seis. Al cerrarse destapó
   que 3°, 4° y 5° no dejaban abrir su demo (**A64**), **corregido el 02/10**.
@@ -670,33 +677,24 @@ tienda y permite probar notificaciones antes de enfrentar iOS. Detalle en
 
 ## Diseñado y en cola (spec listo, sin implementar)
 
-- 🟡 **2° básico (Sesión 139) — EN CURSO.** Spec `docs/superpowers/specs/2026-11-04-2-basico-design.md`,
-  plan `docs/superpowers/plans/2026-11-04-2-basico.md`. **Hecho:** currículum (82 OA), banco de 2.466
-  preguntas **leído pregunta por pregunta** en las 4 asignaturas (0 errores en las 5 auditorías), 35
-  lecciones, reparto en 23 capítulos **aprobado por Roberto** (05/11), y el fork `2do/index.html`
-  verificado jugando. **Pendiente, en orden:** (1) ✅ banco y lecciones firmados por Roberto
-  (06/11); (2) ⏸️ la voz, autorizada el 06/11 (~US$7-9) y se genera a R2 con `voz-r2.py` — hasta entonces el 🔊
-  de 2° está APAGADO (`VOZ_DIRS=[]`); (3) ✅ las 17 imágenes, generadas, procesadas y cableadas
-  (05/11, Sesión 141); (4) ⏸️ aplicar `supabase/schema.sql` (trae el
-  nivel 02) **al publicar**, no antes; (5) landing a 7 cursos y `app/index.html` con 2°. Las dudas
-  menores para Roberto están anotadas pregunta por pregunta (fuera del repo).
+- ✅ **2° básico (Sesiones 139 y 141) — PUBLICADO (06/11/2026).** Currículum (82 OA), banco de 2.466
+  preguntas leído pregunta por pregunta y **firmado** con sus 35 lecciones, reparto en 23 capítulos,
+  arte propio (17 imágenes), voz en R2 (10.369 clips) y nivel `02` aplicado en el esquema. Spec
+  `docs/superpowers/specs/2026-11-04-2-basico-design.md`. Las dudas menores que quedaron anotadas
+  pregunta por pregunta viven fuera del repo.
 
-- 🟡 **1° básico (Sesión 140) — EN CURSO.** Spec `docs/superpowers/specs/2026-11-05-1-basico-design.md`,
-  plan `docs/superpowers/plans/2026-11-05-1-basico.md`. **Hecho:** currículum (73 OA; `LE01 OA 15`
-  de caligrafía fuera), banco de 2.151 preguntas **leído pregunta por pregunta** (0 errores en las 5
-  auditorías), 33 lecciones (`docs/veredicto-1basico.md`), reparto en 22 capítulos **aprobado por
-  Roberto** (05/11), `LEE_SOLO` en `motor.js` y el fork `1ro/index.html` verificado jugando.
-  **Pendiente, en orden:** (1) ✅ banco y lecciones firmados (06/11); (2) ⏸️ la voz, autorizada el
-  06/11 (escuchar «O'Higgins» y «Köbrich»); (3) ✅ las 15 imágenes, generadas, procesadas y
-  cableadas (05/11, Sesión 141); (4) ⏸️ aplicar `supabase/schema.sql` (nivel 01) **al
-  publicar**; (5) landing a 8 cursos y `app/index.html` con 1° y 2°.
+- ✅ **1° básico (Sesiones 140 y 141) — PUBLICADO (06/11/2026).** Currículum (73 OA; `LE01 OA 15` de
+  caligrafía fuera), banco de 2.151 preguntas leído pregunta por pregunta y **firmado** con sus 33
+  lecciones, reparto en 22 capítulos, arte propio (15 imágenes), voz en R2 (8.608 clips; «O'Higgins» y
+  «Köbrich» escuchados por Roberto) que **lee sola** (`LEE_SOLO`), y nivel `01` aplicado. Spec
+  `docs/superpowers/specs/2026-11-05-1-basico-design.md`.
 
 - 🟡 **La voz a Cloudflare R2 (Sesión 138) — EN CURSO.** Es el requisito para que 2° y 1° lleven
   voz sin reventar el techo de 1 GB de GitHub Pages. Plan:
   `docs/superpowers/plans/2026-11-03-voz-a-cloudflare-r2.md`. **Hecho:** los 24.250 clips en R2
   (`voz.vulpo.cl`, MD5 idéntico al disco), `scripts/voz-r2.py` y el juego pidiéndolos ahí.
   ✅ **Comprobado en vivo** (04/11) y `.gitignore` puesto: los MP3 de 2° y 1° nacen fuera del repo y
-  van solo a R2. **Siguiente: 2° básico, luego 1°.** ⏸️ **Postergado hasta terminar 2° y 1°**
+  van solo a R2. ✅ **2° y 1° ya tienen su voz ahí (06/11).** ⏸️ **Lo que sigue, ahora que 2° y 1° están terminados**
   (decisión de Roberto): (2) compilar la app y subirla a Play —una sola compilación trae los cursos
   nuevos y el origen nuevo de la voz—; (3) sacar los MP3 de 3° y 4° del repo, que espera a la app
   porque la instalada todavía los baja de `vulpo.cl`; (4) ⚠️ en el PC de la oficina, `git pull` **borra** los MP3 de

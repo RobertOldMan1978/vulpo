@@ -165,21 +165,23 @@ El modo cierra ese hueco. Una pantalla por objetivo, con **sus 8 preguntas ya el
 
 ## Estado
 
-Recontado del disco el **07/09/2026**, no copiado de la versión anterior de esta tabla.
+Recontado del disco el **06/11/2026**, no copiado de la versión anterior de esta tabla.
 
 | Banco | Preguntas | Aprobadas |
 |---|---|---|
+| 1° básico (4 asignaturas) | 2.091 | ✅ todas (firmadas el 06/11) |
+| 2° básico (4 asignaturas) | 2.406 | ✅ todas (firmadas el 06/11) |
 | 3° básico (4 asignaturas) | 2.558 | ✅ todas |
 | 4° básico (4 asignaturas) | 2.730 | ✅ todas |
 | 5° básico (4 asignaturas) | 2.790 | ✅ todas |
 | 6° básico (4 asignaturas) | 2.970 | ✅ todas |
 | 7° básico (4 asignaturas) | 2.430 | ✅ todas |
 | 8° básico (4 asignaturas) | 2.644 | ✅ todas |
-| **Vocabulario, los seis cursos** (60 · 60 · 90 · 90 · 120 · 150) | **570** | ✅ **todas** |
+| **Vocabulario, los ocho cursos** (60 · 60 · 60 · 60 · 90 · 90 · 120 · 150) | **690** | ✅ **todas** |
 | Lectura: *Cuentos de Ada* (3°) y *Ana Frank* (8°) | 173 | ✅ todas |
-| Lectura: *Teatro escolar representable 1* (8°) | 135 | 130 firmadas el 24/09 · **5 en la cola** (el desenlace, escrito el 25/09) |
-| **Total** | **17.000** | ✅ **todas** |
-| Mini-clases e introducciones (todos los niveles) | 233 | ✅ todas |
+| Lectura: *Teatro escolar representable 1* (8°) | 135 | ✅ todas (las últimas 5, el 28/09) |
+| **Total** | **21.617** | ✅ **todas** |
+| Mini-clases e introducciones (todos los niveles) | 301 | ✅ todas |
 
 > **Cerrado el 31/08/2026: 7.805 de 7.805** (los cursos anunciados hasta esa fecha: 8°, 3°, 7° y
 > sus módulos). El 30/08 se firmaron 5.048 preguntas por muestreo en una pasada y, ese mismo día,

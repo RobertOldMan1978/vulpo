@@ -1955,12 +1955,10 @@ const SIN_RELOJ=true;
 // por banco y así agregar una asignatura nueva no obliga a regenerar (ni volver a
 // pagar) las anteriores. El mapa guarda la RUTA COMPLETA, no solo el nombre, porque
 // no hay una base única. 2° no tiene Lectura del colegio, así que no lleva carpeta de libro.
-// ⚠️ La voz de 2° TODAVÍA NO EXISTE: se genera DESPUÉS de aprobar el banco (nunca en
-// paralelo: cada texto corregido obligaría a regenerar y volver a pagar su clip). Con la
-// lista vacía VOZ.init no hace nada y el módulo queda DORMIDO (VOZ.activo=false), así que
-// no pide ningún manifiesto (cero 404) pero tampoco lee: el 🔊 no aparece hasta llenarla.
-// PLACEHOLDER: al generar la voz van mat2, len2, cie2, hist2, voc2
-const VOZ_DIRS=[];
+// La voz de 2° se generó el 06/11/2026, después de que Roberto firmara el banco. Sus MP3
+// NO viven en el repo: están en Cloudflare R2 (voz.vulpo.cl) y voz.js reescribe las rutas de
+// los manifiestos hacia allá. Aquí solo se versiona el manifiesto de cada carpeta.
+const VOZ_DIRS=['assets/voz/mat2/','assets/voz/hist2/','assets/voz/cie2/','assets/voz/len2/','assets/voz/voc2/'];
 // La llamada va PEGADA a la declaracion, no arriba con las otras constantes: un
 // `const` leido antes de declararse lanza ReferenceError y mata TODO el JavaScript,
 // con un sintoma que engana (la pantalla se ve bien y ningun boton responde).
