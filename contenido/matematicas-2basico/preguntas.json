@@ -1,4 +1,5 @@
 {
+ "revisadas": 652,
  "preguntas": [
   {
    "oa": "MA02 OA 01",
@@ -11,7 +12,7 @@
    ],
    "correcta": 3,
    "tip": "Contar de 2 en 2 es sumar 2 cada vez: 8 + 2 = 10. El 9 sale de contar de 1 en 1.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-1"
   },
   {
@@ -25,7 +26,7 @@
    ],
    "correcta": 2,
    "tip": "A 15 se le suman 2 y llegas a 17. Contar de 2 en 2 se salta un número cada vez.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-2"
   },
   {
@@ -39,7 +40,7 @@
    ],
    "correcta": 3,
    "tip": "Hacia atrás se quitan 2 cada vez: 16 menos 2 es 14.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-3"
   },
   {
@@ -53,7 +54,7 @@
    ],
    "correcta": 2,
    "tip": "De 5 en 5 se suma 5: 55 + 5 = 60. Los números terminan en 5 y en 0, uno y uno.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-4"
   },
   {
@@ -67,7 +68,7 @@
    ],
    "correcta": 3,
    "tip": "Desde 100 hacia atrás se dice 100, 95, 90 y después 85, porque se quitan 5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-5"
   },
   {
@@ -81,7 +82,7 @@
    ],
    "correcta": 3,
    "tip": "Al sumar 10 cambia solo la cifra de las decenas: el 7 de las unidades se queda. Sigue 37.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-6"
   },
   {
@@ -95,7 +96,7 @@
    ],
    "correcta": 2,
    "tip": "Al quitar 10 baja una decena y el 3 de las unidades no cambia: 63 menos 10 es 53.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-7"
   },
   {
@@ -109,7 +110,7 @@
    ],
    "correcta": 2,
    "tip": "Al sumar 100 solo cambia la cifra de las centenas: de 340 pasas a 440.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-8"
   },
   {
@@ -123,7 +124,7 @@
    ],
    "correcta": 0,
    "tip": "Hacia atrás de 100 en 100 baja solo la cifra de las centenas: 560 menos 100 es 460.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-9"
   },
   {
@@ -137,7 +138,7 @@
    ],
    "correcta": 2,
    "tip": "Desde el 0, cada salto vale 2: 2, 4, 6, 8, 10, 12, 14. La marca está en el séptimo salto, o sea en 14.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-10",
    "visual": {
     "tipo": "recta",
@@ -159,7 +160,7 @@
    ],
    "correcta": 3,
    "tip": "Desde 50 se cuenta 55, 60, 65, 70. La marca cae en el cuarto salto: 70.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-11",
    "visual": {
     "tipo": "recta",
@@ -181,7 +182,7 @@
    ],
    "correcta": 3,
    "tip": "Desde 300 se cuenta 400, 500, 600. La marca está en el tercer salto: 600.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-12",
    "visual": {
     "tipo": "recta",
@@ -203,7 +204,7 @@
    ],
    "correcta": 2,
    "tip": "De 30 a 35 hay 5, y de 35 a 40 también: cada número es 5 más que el anterior.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-13"
   },
   {
@@ -217,7 +218,7 @@
    ],
    "correcta": 3,
    "tip": "De 62 a 64 hay 2 y de 64 a 66 también. Cada número es 2 más que el anterior.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-14"
   },
   {
@@ -231,7 +232,7 @@
    ],
    "correcta": 0,
    "tip": "Los números se achican y baja una centena cada vez: está restando 100.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-15"
   },
   {
@@ -245,7 +246,7 @@
    ],
    "correcta": 1,
    "tip": "130 + 5 = 135, y de 135 se llega a 140 con otros 5. Así cuadra la cuenta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-16"
   },
   {
@@ -259,7 +260,7 @@
    ],
    "correcta": 3,
    "tip": "Hacia atrás se quitan 2: 48 menos 2 es 46, y 46 menos 2 da el 44 que sigue.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-17"
   },
   {
@@ -273,7 +274,7 @@
    ],
    "correcta": 2,
    "tip": "Al sumar 10 sube solo la decena y el 5 de las unidades se queda: 255, 265, 275.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-18"
   },
   {
@@ -287,7 +288,7 @@
    ],
    "correcta": 3,
    "tip": "Se suma una centena cada vez y el 85 se queda igual: 185, 285, 385.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-19"
   },
   {
@@ -301,7 +302,7 @@
    ],
    "correcta": 0,
    "tip": "98 + 2 = 100. Después de 100 viene 102, sumando 2 otra vez.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-20"
   },
   {
@@ -315,7 +316,7 @@
    ],
    "correcta": 0,
    "tip": "Diez más que 990 es 1000, el número que se lee mil. El 9100 sale de pegar las cifras.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-21"
   },
   {
@@ -329,7 +330,7 @@
    ],
    "correcta": 0,
    "tip": "Sumando 5 a 13 llegas a 18. Las unidades van saltando entre el 3 y el 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-22"
   },
   {
@@ -343,7 +344,7 @@
    ],
    "correcta": 3,
    "tip": "Desde 12 dice 22, 32, 42, 52: todos terminan en 2, porque sumar 10 no cambia las unidades.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-23"
   },
   {
@@ -357,7 +358,7 @@
    ],
    "correcta": 2,
    "tip": "Desde el 0, de 2 en 2, se dicen solo números que terminan en 0, 2, 4, 6 u 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-24"
   },
   {
@@ -371,7 +372,7 @@
    ],
    "correcta": 1,
    "tip": "Desde el 0, de 5 en 5, se cae en números que terminan en 0 o en 5: 60, 65, 70.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-25"
   },
   {
@@ -385,7 +386,7 @@
    ],
    "correcta": 2,
    "tip": "Contando de 10 en 10, seis monedas son 10, 20, 30, 40, 50, 60.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-26"
   },
   {
@@ -399,7 +400,7 @@
    ],
    "correcta": 3,
    "tip": "Cada moneda suma 100: 100, 200, 300, 400, 500.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-27"
   },
   {
@@ -413,7 +414,7 @@
    ],
    "correcta": 2,
    "tip": "Cada par trae 2 calcetines. Contando de 2 en 2 nueve veces llegas a 18.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-28"
   },
   {
@@ -427,7 +428,7 @@
    ],
    "correcta": 2,
    "tip": "Cada mano tiene 5 dedos: 5, 10, 15, 20, 25, 30, 35.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-29"
   },
   {
@@ -441,7 +442,7 @@
    ],
    "correcta": 0,
    "tip": "Hacia atrás de 100 en 100 se quita una centena: 1000 menos 100 es 900.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa01-30"
   },
   {
@@ -455,7 +456,7 @@
    ],
    "correcta": 1,
    "tip": "Cincuenta son 5 barras de diez, y seis son 6 cubitos sueltos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-1"
   },
   {
@@ -469,7 +470,7 @@
    ],
    "correcta": 0,
    "tip": "Sesenta son 6 decenas; el siete son las unidades sueltas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-2"
   },
   {
@@ -483,7 +484,7 @@
    ],
    "correcta": 0,
    "tip": "Cuarenta lápices son 4 cajas de 10, y el uno es 1 lápiz suelto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-3"
   },
   {
@@ -497,7 +498,7 @@
    ],
    "correcta": 2,
    "tip": "8 decenas son ochenta, y con 9 unidades más llegas a ochenta y nueve.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-4"
   },
   {
@@ -511,7 +512,7 @@
    ],
    "correcta": 2,
    "tip": "Diecinueve es diez y nueve: llenas 1 caja de diez y te quedan 9 sueltos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-5"
   },
   {
@@ -525,7 +526,7 @@
    ],
    "correcta": 3,
    "tip": "Con 10 cubitos armas 1 barra, y de los 15 te quedan 5 cubitos sueltos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-6"
   },
   {
@@ -539,7 +540,7 @@
    ],
    "correcta": 1,
    "tip": "La caja trae diez, y con 2 lápices más llegas a doce.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-7"
   },
   {
@@ -553,7 +554,7 @@
    ],
    "correcta": 0,
    "tip": "Sesenta son 6 decenas: 6 barras de diez y ningún cubito suelto.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-8"
   },
   {
@@ -567,7 +568,7 @@
    ],
    "correcta": 1,
    "tip": "Tres barras de diez son 30 y cinco cubitos son 5: juntos forman 35.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-9"
   },
   {
@@ -581,7 +582,7 @@
    ],
    "correcta": 3,
    "tip": "En el 62, el 6 dice las decenas: son 6 barras de diez y 2 cubitos sueltos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-10"
   },
   {
@@ -595,7 +596,7 @@
    ],
    "correcta": 2,
    "tip": "El 7 de las unidades dice cuántos cubitos van sueltos. El 4 son las barras de diez.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-11"
   },
   {
@@ -609,7 +610,7 @@
    ],
    "correcta": 2,
    "tip": "Ocho decenas son 80. El 0 avisa que no hay unidades sueltas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-12"
   },
   {
@@ -623,7 +624,7 @@
    ],
    "correcta": 3,
    "tip": "Las decenas se escriben primero y las unidades después: 2 y 9 forman 29.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-13"
   },
   {
@@ -637,7 +638,7 @@
    ],
    "correcta": 1,
    "tip": "Las bolsas de 10 son decenas y los sueltos son unidades: 50 y 3 son 53.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-14"
   },
   {
@@ -651,7 +652,7 @@
    ],
    "correcta": 1,
    "tip": "Cuatro monedas de 10 son cuatro decenas: 40 pesos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-15"
   },
   {
@@ -665,7 +666,7 @@
    ],
    "correcta": 1,
    "tip": "Cada rayita vale 1. Desde el 30 se cuentan seis saltos hasta la marca: 36.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-16",
    "visual": {
     "tipo": "recta",
@@ -687,7 +688,7 @@
    ],
    "correcta": 3,
    "tip": "La recta va del 50 al 60 de uno en uno, y la marca está tres saltos después del 50.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-17",
    "visual": {
     "tipo": "recta",
@@ -709,7 +710,7 @@
    ],
    "correcta": 2,
    "tip": "Hay 7 bolsas de 10 dulces: siete decenas son 70.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-18",
    "visual": {
     "tipo": "agrupar",
@@ -729,7 +730,7 @@
    ],
    "correcta": 1,
    "tip": "7 barras de diez son setenta, y el cubito suma uno: setenta y uno.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-19"
   },
   {
@@ -743,7 +744,7 @@
    ],
    "correcta": 3,
    "tip": "Noventa son 9 decenas, así que bastan 9 monedas de 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-20"
   },
   {
@@ -757,7 +758,7 @@
    ],
    "correcta": 3,
    "tip": "La bolsa trae diez, y con 6 sueltos más son dieciséis dulces.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-21"
   },
   {
@@ -771,7 +772,7 @@
    ],
    "correcta": 3,
    "tip": "Ochenta son 8 barras de diez; el cuatro va en cubitos sueltos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-22"
   },
   {
@@ -785,7 +786,7 @@
    ],
    "correcta": 0,
    "tip": "En un número de dos cifras, la primera dice las decenas: el 64 tiene 6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-23"
   },
   {
@@ -799,7 +800,7 @@
    ],
    "correcta": 0,
    "tip": "En un número de dos cifras, las unidades se escriben a la derecha: en 38 son 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-24"
   },
   {
@@ -813,7 +814,7 @@
    ],
    "correcta": 1,
    "tip": "Veinte son 2 barras de diez y cinco son 5 cubitos: Ana lo armó bien.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-25"
   },
   {
@@ -827,7 +828,7 @@
    ],
    "correcta": 0,
    "tip": "Siete paquetes de 10 son 70 y cuatro sueltas son 4: en total 74.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-26"
   },
   {
@@ -841,7 +842,7 @@
    ],
    "correcta": 0,
    "tip": "Nueve barras de diez son 90 y nueve cubitos son 9: el número es 99.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-27"
   },
   {
@@ -855,7 +856,7 @@
    ],
    "correcta": 3,
    "tip": "Diez decenas forman el 100, que se lee cien.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-28"
   },
   {
@@ -869,7 +870,7 @@
    ],
    "correcta": 3,
    "tip": "Con 10 de los 13 cubitos armas otra barra: son 4 barras y 3 cubitos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-29"
   },
   {
@@ -883,7 +884,7 @@
    ],
    "correcta": 1,
    "tip": "Veinte son 2 decenas y siete son 7 unidades sueltas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa02-30"
   },
   {
@@ -897,7 +898,7 @@
    ],
    "correcta": 3,
    "tip": "Se mira primero la decena: 5 decenas es más que 4, 3 o 2 decenas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-1"
   },
   {
@@ -911,7 +912,7 @@
    ],
    "correcta": 2,
    "tip": "El 16 tiene solo 1 decena; los otros tienen 2 o 6 decenas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-2"
   },
   {
@@ -925,7 +926,7 @@
    ],
    "correcta": 2,
    "tip": "El 40 y el 45 tienen 4 decenas; el 40 tiene menos unidades. El 54 tiene 5 decenas y va al final.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-3"
   },
   {
@@ -939,7 +940,7 @@
    ],
    "correcta": 0,
    "tip": "El 72 y el 70 tienen 7 decenas, y el 72 tiene más unidades. El 27 tiene solo 2 decenas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-4"
   },
   {
@@ -953,7 +954,7 @@
    ],
    "correcta": 1,
    "tip": "50 tiene 5 decenas y 35 tiene 3 decenas: 50 pesos es más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-5"
   },
   {
@@ -967,7 +968,7 @@
    ],
    "correcta": 2,
    "tip": "Una moneda vale lo que dice su número, no lo que mide: 50 pesos es más que 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-6"
   },
   {
@@ -981,7 +982,7 @@
    ],
    "correcta": 2,
    "tip": "Tres monedas de 10 son 30 pesos, y 50 es más que 30. Importa cuánto valen, no cuántas son.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-7"
   },
   {
@@ -995,7 +996,7 @@
    ],
    "correcta": 3,
    "tip": "Después del 59 se completa una decena más: viene el 60.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-8"
   },
   {
@@ -1009,7 +1010,7 @@
    ],
    "correcta": 0,
    "tip": "Justo antes es uno menos: antes del 80 va el 79.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-9"
   },
   {
@@ -1023,7 +1024,7 @@
    ],
    "correcta": 1,
    "tip": "Contando de uno en uno: 38, 39, 40. El 39 queda al medio.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-10"
   },
   {
@@ -1037,7 +1038,7 @@
    ],
    "correcta": 3,
    "tip": "El 89 tiene 8 decenas; los otros tienen 9 decenas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-11"
   },
   {
@@ -1051,7 +1052,7 @@
    ],
    "correcta": 2,
    "tip": "46 tiene 4 decenas y 64 tiene 6: Matías juntó menos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-12"
   },
   {
@@ -1065,7 +1066,7 @@
    ],
    "correcta": 2,
    "tip": "Cada número tiene que ser más grande que el anterior: 12, después 21, después 30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-13"
   },
   {
@@ -1079,7 +1080,7 @@
    ],
    "correcta": 1,
    "tip": "De mayor a menor cada número es más chico que el anterior: 95, 59 y al final 50.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-14"
   },
   {
@@ -1093,7 +1094,7 @@
    ],
    "correcta": 1,
    "tip": "Del 48 al 50 hay solo 2 pasos; del 58 hay 8 y del 40 hay 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-15",
    "visual": {
     "tipo": "recta",
@@ -1114,7 +1115,7 @@
    ],
    "correcta": 3,
    "tip": "En la recta los números crecen al alejarse del cero, y 53 es mayor que 35.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-16",
    "visual": {
     "tipo": "recta",
@@ -1134,7 +1135,7 @@
    ],
    "correcta": 3,
    "tip": "El 75 tiene 7 decenas y más de 0 unidades, así que queda entre el 70 y el 80.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-17"
   },
   {
@@ -1148,7 +1149,7 @@
    ],
    "correcta": 3,
    "tip": "El 54 tiene 5 decenas. El 45 no sirve: es igual, no mayor.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-18"
   },
   {
@@ -1162,7 +1163,7 @@
    ],
    "correcta": 0,
    "tip": "El 29 tiene 2 decenas, una menos que el 30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-19"
   },
   {
@@ -1176,7 +1177,7 @@
    ],
    "correcta": 1,
    "tip": "35 es menor que 40: a Ana le faltan pesos para el jugo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-20"
   },
   {
@@ -1190,7 +1191,7 @@
    ],
    "correcta": 1,
    "tip": "70 es mayor que 60: Diego tiene más de lo que cuesta el lápiz.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-21"
   },
   {
@@ -1204,7 +1205,7 @@
    ],
    "correcta": 0,
    "tip": "La más alta es la que tiene más cubos: 52 tiene 5 decenas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-22"
   },
   {
@@ -1218,7 +1219,7 @@
    ],
    "correcta": 0,
    "tip": "El 81 y el 80 tienen 8 decenas, y el 81 tiene una unidad más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-23"
   },
   {
@@ -1232,7 +1233,7 @@
    ],
    "correcta": 2,
    "tip": "El 3 no tiene decenas, así que va primero. Entre 30 y 33, el 30 tiene menos unidades.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-24"
   },
   {
@@ -1246,7 +1247,7 @@
    ],
    "correcta": 2,
    "tip": "El 100 son 10 decenas, y el 99 tiene solo 9 decenas y 9 unidades.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-25"
   },
   {
@@ -1260,7 +1261,7 @@
    ],
    "correcta": 2,
    "tip": "El 10 ya tiene una decena completa y el 9 no tiene ninguna: el 10 es mayor.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-26"
   },
   {
@@ -1274,7 +1275,7 @@
    ],
    "correcta": 1,
    "tip": "Primero se comparan las decenas: 3 decenas es más que 2, aunque 8 sea más que 1.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-27"
   },
   {
@@ -1288,7 +1289,7 @@
    ],
    "correcta": 3,
    "tip": "47 y 47 son el mismo número: hay la misma cantidad de niñas y de niños.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-28"
   },
   {
@@ -1302,7 +1303,7 @@
    ],
    "correcta": 2,
    "tip": "Una de 50 son 50 pesos; cuatro de 10 son 40, nueve de 5 son 45 y veinte de 1 son 20.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-29"
   },
   {
@@ -1316,7 +1317,7 @@
    ],
    "correcta": 1,
    "tip": "El 55 y el 58 tienen 5 decenas, y el 55 tiene menos unidades. El 85 tiene 8 decenas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa03-30"
   },
   {
@@ -1330,7 +1331,7 @@
    ],
    "correcta": 1,
    "tip": "Cada puñado es una referencia de unos 10: cinco puñados son unos 50 porotos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-1"
   },
   {
@@ -1344,7 +1345,7 @@
    ],
    "correcta": 3,
    "tip": "Cada fila tiene unos 10 niños, así que cuatro filas tienen unos 40.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-2"
   },
   {
@@ -1358,7 +1359,7 @@
    ],
    "correcta": 2,
    "tip": "El doble de 20 es 40: el frasco grande debe tener unos 40 dulces.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-3"
   },
   {
@@ -1372,7 +1373,7 @@
    ],
    "correcta": 0,
    "tip": "La caja llena es dos mitades: 25 y 25 son unos 50 lápices.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-4"
   },
   {
@@ -1386,7 +1387,7 @@
    ],
    "correcta": 0,
    "tip": "La mitad de 60 es 30, porque 30 y 30 hacen 60.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-5"
   },
   {
@@ -1400,7 +1401,7 @@
    ],
    "correcta": 1,
    "tip": "Seis capítulos de unas 10 páginas son unas 60 páginas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-6"
   },
   {
@@ -1414,7 +1415,7 @@
    ],
    "correcta": 3,
    "tip": "El doble de 20 pasos son unos 40 pasos hasta la reja.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-7"
   },
   {
@@ -1428,7 +1429,7 @@
    ],
    "correcta": 3,
    "tip": "Dos buses de unos 40 niños: 40 y 40 son unos 80.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-8"
   },
   {
@@ -1442,7 +1443,7 @@
    ],
    "correcta": 2,
    "tip": "Contar un puñado da una referencia; luego se ve cuántos puñados caben en el frasco.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-9"
   },
   {
@@ -1456,7 +1457,7 @@
    ],
    "correcta": 3,
    "tip": "Estimar no es adivinar el número exacto: 50 está muy cerca de 48.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-10"
   },
   {
@@ -1470,7 +1471,7 @@
    ],
    "correcta": 2,
    "tip": "De 41 a 90 hay mucha distancia: Matías dijo muchos más de los que había.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-11"
   },
   {
@@ -1484,7 +1485,7 @@
    ],
    "correcta": 1,
    "tip": "Seis puñados de unos 5 dulces son unos 30: 5, 10, 15, 20, 25, 30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-12"
   },
   {
@@ -1498,7 +1499,7 @@
    ],
    "correcta": 1,
    "tip": "A las 30 bolitas se suman unas 10 más: quedan unas 40.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-13"
   },
   {
@@ -1512,7 +1513,7 @@
    ],
    "correcta": 1,
    "tip": "Si de unas 50 se sacan unas 20, quedan unas 30 papas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-14"
   },
   {
@@ -1526,7 +1527,7 @@
    ],
    "correcta": 3,
    "tip": "Si 10 cubos llegan a la rodilla, el doble de alto son unos 20 cubos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-15"
   },
   {
@@ -1540,7 +1541,7 @@
    ],
    "correcta": 1,
    "tip": "Tres veces la fila de 10 niños son unos 30 niños.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-16"
   },
   {
@@ -1554,7 +1555,7 @@
    ],
    "correcta": 2,
    "tip": "Cinco hojas de unas 20 palabras: 20, 40, 60, 80, 100.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-17"
   },
   {
@@ -1568,7 +1569,7 @@
    ],
    "correcta": 1,
    "tip": "Nueve bandejas de unas 10 galletas son unas 90 galletas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-18"
   },
   {
@@ -1582,7 +1583,7 @@
    ],
    "correcta": 3,
    "tip": "Tres racimos de unas 20 uvas: 20, 40, 60.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-19"
   },
   {
@@ -1596,7 +1597,7 @@
    ],
    "correcta": 2,
    "tip": "La mitad de 100 es 50, porque 50 y 50 hacen 100.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-20"
   },
   {
@@ -1610,7 +1611,7 @@
    ],
    "correcta": 2,
    "tip": "Ocho ramas de unas 10 hojas son unas 80 hojas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-21"
   },
   {
@@ -1624,7 +1625,7 @@
    ],
    "correcta": 0,
    "tip": "Al estimar se busca un número cercano al real, pensando con una referencia.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-22"
   },
   {
@@ -1638,7 +1639,7 @@
    ],
    "correcta": 1,
    "tip": "Del 30 al 34 hay muy poco; del 80 al 34 hay mucho más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-23"
   },
   {
@@ -1652,7 +1653,7 @@
    ],
    "correcta": 3,
    "tip": "El 60 está a 5 del 55, y el 20 está mucho más lejos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-24"
   },
   {
@@ -1666,7 +1667,7 @@
    ],
    "correcta": 3,
    "tip": "Cinco mesas de unos 6 niños: 6, 12, 18, 24, 30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-25"
   },
   {
@@ -1680,7 +1681,7 @@
    ],
    "correcta": 2,
    "tip": "A unos 40 niños se suman unos 30: son unos 70.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa04-26"
   },
   {
@@ -1694,7 +1695,7 @@
    ],
    "correcta": 1,
    "tip": "60 + 4 son 60 y 4 más: 64. No se escribe 604, eso es otro número.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-1"
   },
   {
@@ -1708,7 +1709,7 @@
    ],
    "correcta": 2,
    "tip": "30 + 9 es 39. Si da 12, se sumaron solo el 3 y el 9.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-2"
   },
   {
@@ -1722,7 +1723,7 @@
    ],
    "correcta": 3,
    "tip": "50 + 20 son 70, y 70 + 5 es 75.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-3"
   },
   {
@@ -1736,7 +1737,7 @@
    ],
    "correcta": 2,
    "tip": "58 es 50 y 8 más: 50 + 8. La suma 5 + 8 da solo 13.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-4"
   },
   {
@@ -1750,7 +1751,7 @@
    ],
    "correcta": 1,
    "tip": "91 es 90 y 1 más: 90 + 1. La suma 90 + 10 ya da 100.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-5"
   },
   {
@@ -1764,7 +1765,7 @@
    ],
    "correcta": 0,
    "tip": "Un número se arma de varias formas: 20 + 15 también da 35.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-6"
   },
   {
@@ -1778,7 +1779,7 @@
    ],
    "correcta": 1,
    "tip": "20 + 27 es 47. Las otras dan 37, 57 y 54.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-7"
   },
   {
@@ -1792,7 +1793,7 @@
    ],
    "correcta": 2,
    "tip": "A 60 le faltan 7 para llegar a 67: 60 + 7 = 67.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-8"
   },
   {
@@ -1806,7 +1807,7 @@
    ],
    "correcta": 2,
    "tip": "Para formar 89 con un 9, falta el 80: 80 + 9 = 89.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-9"
   },
   {
@@ -1820,7 +1821,7 @@
    ],
    "correcta": 2,
    "tip": "A 20 le faltan 35 para llegar a 55: 20 + 35 = 55.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-10"
   },
   {
@@ -1834,7 +1835,7 @@
    ],
    "correcta": 1,
    "tip": "50 + 10 = 60 pesos. Cada moneda vale lo que dice, no cuenta como 1.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-11"
   },
   {
@@ -1848,7 +1849,7 @@
    ],
    "correcta": 2,
    "tip": "50 + 10 + 10 + 5 = 75. Con 50, 10 y 5 solo hay 65.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-12"
   },
   {
@@ -1862,7 +1863,7 @@
    ],
    "correcta": 0,
    "tip": "Las de 10 suman 30 y con la de 50 son 30 + 50 = 80 pesos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-13"
   },
   {
@@ -1876,7 +1877,7 @@
    ],
    "correcta": 3,
    "tip": "60 + 30 = 90. Los otros pares dan 80, 70 y 60.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-14"
   },
   {
@@ -1890,7 +1891,7 @@
    ],
    "correcta": 0,
    "tip": "70 + 2 = 72, así que Sofía separó bien el número.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-15"
   },
   {
@@ -1904,7 +1905,7 @@
    ],
    "correcta": 3,
    "tip": "4 + 3 da solo 7. Para formar 43 hace falta 40 + 3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-16"
   },
   {
@@ -1918,7 +1919,7 @@
    ],
    "correcta": 0,
    "tip": "Tres veces 10 son 30, y 30 + 6 es 36.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-17"
   },
   {
@@ -1932,7 +1933,7 @@
    ],
    "correcta": 3,
    "tip": "40 + 40 son 80, y 80 + 2 es 82.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-18"
   },
   {
@@ -1946,7 +1947,7 @@
    ],
    "correcta": 0,
    "tip": "10 + 16 = 26. Las otras sumas dan 16, 32 y 36.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-19"
   },
   {
@@ -1960,7 +1961,7 @@
    ],
    "correcta": 1,
    "tip": "30 + 10 son 40, y 40 + 2 son 42. No se escribe 312.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-20"
   },
   {
@@ -1974,7 +1975,7 @@
    ],
    "correcta": 1,
    "tip": "El orden no cambia el total: 5 + 40 es lo mismo que 40 + 5, o sea 45.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-21"
   },
   {
@@ -1988,7 +1989,7 @@
    ],
    "correcta": 2,
    "tip": "15 + 15 = 30. Las otras dan 20, 35 y 28.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-22"
   },
   {
@@ -2002,7 +2003,7 @@
    ],
    "correcta": 3,
    "tip": "45 + 45 = 90, así que la otra parte también es 45.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-23"
   },
   {
@@ -2016,7 +2017,7 @@
    ],
    "correcta": 1,
    "tip": "50 + 30 = 80, así que la otra parte es 30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-24"
   },
   {
@@ -2030,7 +2031,7 @@
    ],
    "correcta": 0,
    "tip": "40 + 10 son 50, y 50 + 3 es 53.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-25"
   },
   {
@@ -2044,7 +2045,7 @@
    ],
    "correcta": 3,
    "tip": "20 + 20 son 40, y 40 + 9 es 49.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-26"
   },
   {
@@ -2058,7 +2059,7 @@
    ],
    "correcta": 0,
    "tip": "80 + 8 = 88. No es 808: el 8 se junta con el 80.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-27"
   },
   {
@@ -2072,7 +2073,7 @@
    ],
    "correcta": 0,
    "tip": "75 + 25 = 100. Las otras dan 110, 95 y 90.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-28"
   },
   {
@@ -2086,7 +2087,7 @@
    ],
    "correcta": 2,
    "tip": "50 + 6 = 56 y 40 + 16 = 56. Un número se puede separar de muchas formas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-29"
   },
   {
@@ -2100,7 +2101,7 @@
    ],
    "correcta": 1,
    "tip": "7 + 90 es lo mismo que 90 + 7, o sea 97.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa05-30"
   },
   {
@@ -2114,7 +2115,7 @@
    ],
    "correcta": 1,
    "tip": "Al 8 le faltan 2 para llegar a 10. Los saca del 5, le quedan 3, y 10 + 3 es 13.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-1"
   },
   {
@@ -2128,7 +2129,7 @@
    ],
    "correcta": 1,
    "tip": "7 y 3 más son 10: contando 8, 9, 10 son tres pasos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-2"
   },
   {
@@ -2142,7 +2143,7 @@
    ],
    "correcta": 0,
    "tip": "6 más 4 son 10. Saber qué le falta a cada número para llegar a 10 ayuda a sumar rápido.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-3"
   },
   {
@@ -2156,7 +2157,7 @@
    ],
    "correcta": 0,
    "tip": "El 9 toma 1 del 4 y llega a 10. Le quedan 3: 10 + 3 es 13.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-4"
   },
   {
@@ -2170,7 +2171,7 @@
    ],
    "correcta": 0,
    "tip": "El 7 toma 3 del 6 y llega a 10; del 6 quedan 3. Por eso 7 + 6 es igual a 10 + 3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-5"
   },
   {
@@ -2184,7 +2185,7 @@
    ],
    "correcta": 1,
    "tip": "El doble es sumar el número dos veces: 7 + 7 es 14.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-6"
   },
   {
@@ -2198,7 +2199,7 @@
    ],
    "correcta": 0,
    "tip": "Es el doble de 6: 6 + 6 da 12.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-7"
   },
   {
@@ -2212,7 +2213,7 @@
    ],
    "correcta": 3,
    "tip": "La mitad es repartir en dos partes iguales: 8 y 8 son 16.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-8"
   },
   {
@@ -2226,7 +2227,7 @@
    ],
    "correcta": 2,
    "tip": "Si 6 + 6 es 12, la mitad de 12 es 6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-9"
   },
   {
@@ -2240,7 +2241,7 @@
    ],
    "correcta": 3,
    "tip": "7 + 8 tiene uno más que 7 + 7: a 14 le sumas 1 y da 15.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-10"
   },
   {
@@ -2254,7 +2255,7 @@
    ],
    "correcta": 1,
    "tip": "8 + 7 tiene uno menos que 8 + 8: a 16 le quitas 1 y da 15.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-11"
   },
   {
@@ -2268,7 +2269,7 @@
    ],
    "correcta": 1,
    "tip": "5 + 7 tiene dos más que 5 + 5: a 10 le sumas 2 y da 12.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-12"
   },
   {
@@ -2282,7 +2283,7 @@
    ],
    "correcta": 0,
    "tip": "9 + 7 tiene dos menos que 9 + 9: a 18 le quitas 2 y da 16.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-13"
   },
   {
@@ -2296,7 +2297,7 @@
    ],
    "correcta": 2,
    "tip": "7 es uno más que 6, así que 6 + 7 da uno más que 6 + 6: 13.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-14"
   },
   {
@@ -2310,7 +2311,7 @@
    ],
    "correcta": 3,
    "tip": "6 es dos menos que 8, así que a 16 le quita 2 y llega a 14.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-15"
   },
   {
@@ -2324,7 +2325,7 @@
    ],
    "correcta": 0,
    "tip": "5 + 5 es 10, y como 6 es uno más que 5, 5 + 6 es 11.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-16"
   },
   {
@@ -2338,7 +2339,7 @@
    ],
    "correcta": 3,
    "tip": "Restar deshace lo que hizo la suma: si al 9 le sumas 6 llegas a 15, y si le quitas 6 a 15 vuelves al 9.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-17"
   },
   {
@@ -2352,7 +2353,7 @@
    ],
    "correcta": 3,
    "tip": "5 + 9 es 14, así que 14 - 5 es 9. Una resta se puede pensar como una suma.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-18"
   },
   {
@@ -2366,7 +2367,7 @@
    ],
    "correcta": 0,
    "tip": "De 13 a 10 hay 3. Después quita los 2 que faltan del 5 y llega a 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-19"
   },
   {
@@ -2380,7 +2381,7 @@
    ],
    "correcta": 0,
    "tip": "El 9 toma 1 del 5 y llega a 10; del 5 quedan 4. Las dos cuentas dan 14.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-20"
   },
   {
@@ -2394,7 +2395,7 @@
    ],
    "correcta": 2,
    "tip": "8 + 8 es 16, y uno más es 17. Es la estrategia de los dobles.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-21"
   },
   {
@@ -2408,7 +2409,7 @@
    ],
    "correcta": 1,
    "tip": "La mitad de 18 es 9, porque 9 + 9 es 18: dos partes iguales.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-22"
   },
   {
@@ -2422,7 +2423,7 @@
    ],
    "correcta": 0,
    "tip": "10 + 10 es 20, así que la mitad de 20 es 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-23"
   },
   {
@@ -2436,7 +2437,7 @@
    ],
    "correcta": 0,
    "tip": "7 + 7 es 14: el 7 es la mitad de 14.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-24"
   },
   {
@@ -2450,7 +2451,7 @@
    ],
    "correcta": 3,
    "tip": "Dos más desde 15: 16, 17. Llega al 17.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-25"
   },
   {
@@ -2464,7 +2465,7 @@
    ],
    "correcta": 0,
    "tip": "Dos menos desde 12: 11, 10. Le quedan 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-26"
   },
   {
@@ -2478,7 +2479,7 @@
    ],
    "correcta": 1,
    "tip": "Uno menos es retroceder un paso: antes del 20 viene el 19.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-27"
   },
   {
@@ -2492,7 +2493,7 @@
    ],
    "correcta": 2,
    "tip": "El 9 recibe 1 y llega a 10; al 7 le quedan 6. Así 9 + 7 es 10 + 6, o sea 16.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-28"
   },
   {
@@ -2506,7 +2507,7 @@
    ],
    "correcta": 1,
    "tip": "Si 8 + 4 es 12, al quitarle 4 a 12 se vuelve al 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-29"
   },
   {
@@ -2520,7 +2521,7 @@
    ],
    "correcta": 2,
    "tip": "6 + 6 es 12, no 14. La mitad de 14 es 7, porque 7 + 7 es 14.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa06-30"
   },
   {
@@ -2534,7 +2535,7 @@
    ],
    "correcta": 0,
    "tip": "En 58, el 5 está en las decenas: son 5 decenas, o sea 50.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-1"
   },
   {
@@ -2548,7 +2549,7 @@
    ],
    "correcta": 2,
    "tip": "En 73, el 3 está en las unidades. El 7 son las decenas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-2"
   },
   {
@@ -2562,7 +2563,7 @@
    ],
    "correcta": 1,
    "tip": "El 6 está en las decenas, así que vale 6 decenas: 60.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-3"
   },
   {
@@ -2576,7 +2577,7 @@
    ],
    "correcta": 1,
    "tip": "El 9 está en las unidades, así que vale 9. El 2 vale 20.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-4"
   },
   {
@@ -2590,7 +2591,7 @@
    ],
    "correcta": 0,
    "tip": "8 decenas son 80, y con 1 unidad más es 81.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-5"
   },
   {
@@ -2604,7 +2605,7 @@
    ],
    "correcta": 1,
    "tip": "4 decenas son 40. Con 0 unidades, el número es 40.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-6"
   },
   {
@@ -2618,7 +2619,7 @@
    ],
    "correcta": 2,
    "tip": "2 decenas son 20, y 6 unidades más dan 26. Las decenas se escriben primero.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-7"
   },
   {
@@ -2632,7 +2633,7 @@
    ],
    "correcta": 1,
    "tip": "En 95, la cifra de la izquierda, el 9, es la de las decenas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-8"
   },
   {
@@ -2646,7 +2647,7 @@
    ],
    "correcta": 0,
    "tip": "En 17, el 7 está en las unidades y el 1 en las decenas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-9"
   },
   {
@@ -2660,7 +2661,7 @@
    ],
    "correcta": 1,
    "tip": "Cada grupo de 10 es una decena. Hay 3 grupos: 3 decenas, o sea 30 estrellas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-10",
    "visual": {
     "tipo": "agrupar",
@@ -2680,7 +2681,7 @@
    ],
    "correcta": 3,
    "tip": "Hay 7 grupos de 10: son 7 decenas, o sea 70 dulces.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-11",
    "visual": {
     "tipo": "agrupar",
@@ -2700,7 +2701,7 @@
    ],
    "correcta": 3,
    "tip": "5 cajas de 10 son 5 decenas, 50. Con 4 sueltos son 54.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-12"
   },
   {
@@ -2714,7 +2715,7 @@
    ],
    "correcta": 1,
    "tip": "10 unidades juntas forman 1 decena.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-13"
   },
   {
@@ -2728,7 +2729,7 @@
    ],
    "correcta": 3,
    "tip": "15 unidades son 1 decena y 5 unidades. Con las otras 2 decenas: 3 decenas y 5, o sea 35.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-14"
   },
   {
@@ -2742,7 +2743,7 @@
    ],
    "correcta": 2,
    "tip": "10 unidades forman 1 decena. 9 decenas más 1 decena son 10 decenas: 100.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-15"
   },
   {
@@ -2756,7 +2757,7 @@
    ],
    "correcta": 0,
    "tip": "En 35 el 3 está en las decenas, así que vale 30. En los otros vale 3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-16"
   },
   {
@@ -2770,7 +2771,7 @@
    ],
    "correcta": 0,
    "tip": "En 45 el 5 está en las unidades y vale 5. En los otros está en las decenas y vale 50.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-17"
   },
   {
@@ -2784,7 +2785,7 @@
    ],
    "correcta": 3,
    "tip": "81 tiene 8 decenas. 79 y 72 tienen 7, y 18 tiene solo 1.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-18"
   },
   {
@@ -2798,7 +2799,7 @@
    ],
    "correcta": 3,
    "tip": "En 47 el 7 está en las unidades. Las decenas son 4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-19"
   },
   {
@@ -2812,7 +2813,7 @@
    ],
    "correcta": 3,
    "tip": "80 tiene 8 decenas y 0 unidades: el 0 está en las unidades.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-20"
   },
   {
@@ -2826,7 +2827,7 @@
    ],
    "correcta": 3,
    "tip": "3 decenas y 1 decena más son 4 decenas, o sea 40.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-21"
   },
   {
@@ -2840,7 +2841,7 @@
    ],
    "correcta": 3,
    "tip": "En 62 el 6 son las decenas y el 2 son las unidades.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-22"
   },
   {
@@ -2854,7 +2855,7 @@
    ],
    "correcta": 2,
    "tip": "Cada 10 unidades forman 1 decena. En 30 unidades hay 3 decenas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-23"
   },
   {
@@ -2868,7 +2869,7 @@
    ],
    "correcta": 3,
    "tip": "1 decena es 10, y 9 unidades más dan 19.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-24"
   },
   {
@@ -2882,7 +2883,7 @@
    ],
    "correcta": 0,
    "tip": "Cada decena vale 10: 7 decenas son 70.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-25"
   },
   {
@@ -2896,7 +2897,7 @@
    ],
    "correcta": 2,
    "tip": "8 decenas y 4 unidades forman 84.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-26"
   },
   {
@@ -2910,7 +2911,7 @@
    ],
    "correcta": 1,
    "tip": "4 bolsas de 10 son 4 decenas, 40. Con 7 sueltas son 47 bolitas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-27"
   },
   {
@@ -2924,7 +2925,7 @@
    ],
    "correcta": 3,
    "tip": "60 son 6 decenas, y cada moneda de 10 es una decena: 6 monedas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-28"
   },
   {
@@ -2938,7 +2939,7 @@
    ],
    "correcta": 1,
    "tip": "El 3 de las decenas vale 30 y el 3 de las unidades vale 3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-29"
   },
   {
@@ -2952,7 +2953,7 @@
    ],
    "correcta": 3,
    "tip": "Sin decenas, solo quedan las 8 unidades: el número es 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa07-30"
   },
   {
@@ -2966,7 +2967,7 @@
    ],
    "correcta": 3,
    "tip": "Sumar 0 es no agregar nada: el 9 queda igual.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-1"
   },
   {
@@ -2980,7 +2981,7 @@
    ],
    "correcta": 3,
    "tip": "Restar 0 es no quitar nada: el 15 queda igual.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-2"
   },
   {
@@ -2994,7 +2995,7 @@
    ],
    "correcta": 0,
    "tip": "Si a 0 le agregas 34, tienes 34. El 0 no suma nada.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-3"
   },
   {
@@ -3008,7 +3009,7 @@
    ],
    "correcta": 2,
    "tip": "Quitar 0 es no quitar nada, así que quedan los mismos 58.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-4"
   },
   {
@@ -3022,7 +3023,7 @@
    ],
    "correcta": 3,
    "tip": "Recibir 0 es no recibir nada: Ana sigue con sus 6 dulces.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-5"
   },
   {
@@ -3036,7 +3037,7 @@
    ],
    "correcta": 3,
    "tip": "Si no se saca ninguna, es quitar 0: quedan las 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-6"
   },
   {
@@ -3050,7 +3051,7 @@
    ],
    "correcta": 1,
    "tip": "El 0 no agrega nada, por eso el número no cambia.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-7"
   },
   {
@@ -3064,7 +3065,7 @@
    ],
    "correcta": 2,
    "tip": "Quitar 0 es no quitar nada, así que queda el mismo número.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-8"
   },
   {
@@ -3078,7 +3079,7 @@
    ],
    "correcta": 0,
    "tip": "12 + 0 es 12. Las otras dan 13, 10 y 2.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-9"
   },
   {
@@ -3092,7 +3093,7 @@
    ],
    "correcta": 1,
    "tip": "20 - 0 es 20, porque no se quita nada. Las otras dan 19, 2 y 21.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-10"
   },
   {
@@ -3106,7 +3107,7 @@
    ],
    "correcta": 3,
    "tip": "Sumar 0 no borra el número: 7 + 0 sigue siendo 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-11"
   },
   {
@@ -3120,7 +3121,7 @@
    ],
    "correcta": 0,
    "tip": "Quitar 0 no deja en cero: 30 - 0 sigue siendo 30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-12"
   },
   {
@@ -3134,7 +3135,7 @@
    ],
    "correcta": 2,
    "tip": "Camila tiene razón: si a nada le agregas 5, tienes 5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-13"
   },
   {
@@ -3148,7 +3149,7 @@
    ],
    "correcta": 2,
    "tip": "Solo el 0 deja el número igual al sumarlo. 23 + 23 daría 46.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-14"
   },
   {
@@ -3162,7 +3163,7 @@
    ],
    "correcta": 0,
    "tip": "Si quito 0 no quito nada, y quedan los 41. Si quitara 41 quedaría 0.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-15"
   },
   {
@@ -3176,7 +3177,7 @@
    ],
    "correcta": 0,
    "tip": "Sacar 0 lápices es no sacar ninguno: quedan los 50.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-16"
   },
   {
@@ -3190,7 +3191,7 @@
    ],
    "correcta": 3,
    "tip": "Si suben 0 niños no sube nadie: van los mismos 27.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-17"
   },
   {
@@ -3204,7 +3205,7 @@
    ],
    "correcta": 3,
    "tip": "Nada más nada sigue siendo nada: 0 + 0 es 0.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-18"
   },
   {
@@ -3218,7 +3219,7 @@
    ],
    "correcta": 1,
    "tip": "Restar 0 no cambia el número: 100 - 0 es 100.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-19"
   },
   {
@@ -3232,7 +3233,7 @@
    ],
    "correcta": 0,
    "tip": "Sumar 0 no agrega nada, así que 16 + 0 sigue siendo 16.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-20"
   },
   {
@@ -3246,7 +3247,7 @@
    ],
    "correcta": 2,
    "tip": "Quitar 0 no quita nada. En cambio 9 - 9 deja 0.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-21"
   },
   {
@@ -3260,7 +3261,7 @@
    ],
    "correcta": 2,
    "tip": "Que no se reviente ninguno es quitar 0: Pedro sigue con 5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-22"
   },
   {
@@ -3274,7 +3275,7 @@
    ],
    "correcta": 0,
    "tip": "Sumar 0 no cambia nada, así que el número ya era 24.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-23"
   },
   {
@@ -3288,7 +3289,7 @@
    ],
    "correcta": 0,
    "tip": "Quitar 0 no cambia nada: si le quedan 10, tenía 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-24"
   },
   {
@@ -3302,7 +3303,7 @@
    ],
    "correcta": 0,
    "tip": "Cada 0 no agrega nada: el 7 queda igual.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-25"
   },
   {
@@ -3316,7 +3317,7 @@
    ],
    "correcta": 0,
    "tip": "Sumar 0 y restar 0 no cambian el número: las dos dan 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa08-26"
   },
   {
@@ -3330,7 +3331,7 @@
    ],
    "correcta": 0,
    "tip": "Se suman unidades con unidades (4 + 5 = 9) y decenas con decenas (3 + 2 = 5): 59.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-1"
   },
   {
@@ -3344,7 +3345,7 @@
    ],
    "correcta": 2,
    "tip": "Unidades: 7 + 1 = 8. Decenas: 4 + 2 = 6. El resultado es 68.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-2"
   },
   {
@@ -3358,7 +3359,7 @@
    ],
    "correcta": 2,
    "tip": "Unidades: 8 - 3 = 5. Decenas: 5 - 2 = 3. Queda 35. Si da 81, se sumó en vez de restar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-3"
   },
   {
@@ -3372,7 +3373,7 @@
    ],
    "correcta": 2,
    "tip": "Unidades: 6 - 1 = 5. Decenas: 7 - 4 = 3. Queda 35.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-4"
   },
   {
@@ -3386,7 +3387,7 @@
    ],
    "correcta": 0,
    "tip": "Sumar 30 es sumar 3 decenas: 6 decenas y 3 decenas son 9 decenas. 62 + 30 = 92. El 3 no va con las unidades.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-5"
   },
   {
@@ -3400,7 +3401,7 @@
    ],
    "correcta": 3,
    "tip": "Restar 50 es quitar 5 decenas: de 8 decenas quedan 3. Las unidades no cambian: 39.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-6"
   },
   {
@@ -3414,7 +3415,7 @@
    ],
    "correcta": 1,
    "tip": "Unidades: 5 + 4 = 9. Decenas: 5 + 4 = 9. El resultado es 99.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-7"
   },
   {
@@ -3428,7 +3429,7 @@
    ],
    "correcta": 2,
    "tip": "Unidades: 7 - 5 = 2. Decenas: 9 - 6 = 3. Queda 32.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-8"
   },
   {
@@ -3442,7 +3443,7 @@
    ],
    "correcta": 2,
    "tip": "El 3 son las unidades de 43, y se suma con las unidades de 25, que son 5. Las decenas van con las decenas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-9"
   },
   {
@@ -3456,7 +3457,7 @@
    ],
    "correcta": 1,
    "tip": "31 + 24 da 55. Matías juntó el 3 con el 4 y el 1 con el 2: mezcló decenas con unidades.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-10"
   },
   {
@@ -3470,7 +3471,7 @@
    ],
    "correcta": 2,
    "tip": "Unidades: 6 - 4 = 2. Decenas: 8 - 3 = 5. 86 - 34 es 52, así que Sofía lo hizo bien.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-11"
   },
   {
@@ -3484,7 +3485,7 @@
    ],
    "correcta": 0,
    "tip": "Le regalaron lápices: ahora tiene más. Cuando algo se agrega, se suma: 12 + 5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-12"
   },
   {
@@ -3498,7 +3499,7 @@
    ],
    "correcta": 1,
    "tip": "Si se reventaron, quedan menos: se quita 6 de 18, o sea 18 - 6. Se parte del número mayor.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-13"
   },
   {
@@ -3512,7 +3513,7 @@
    ],
    "correcta": 3,
    "tip": "Quitar hace que quede menos, y eso es restar. Juntar, agregar y reunir son formas de sumar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-14"
   },
   {
@@ -3526,7 +3527,7 @@
    ],
    "correcta": 3,
    "tip": "Juntar dos grupos da un grupo más grande: se suma.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-15"
   },
   {
@@ -3540,7 +3541,7 @@
    ],
    "correcta": 2,
    "tip": "Traen más tazas, así que se suma: 25 + 13 = 38. Si da 12, se restó.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-16"
   },
   {
@@ -3554,7 +3555,7 @@
    ],
    "correcta": 2,
    "tip": "Se bajan personas, así que se resta: 47 - 15 = 32.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-17"
   },
   {
@@ -3568,7 +3569,7 @@
    ],
    "correcta": 3,
    "tip": "Juntos es sumar: 35 + 22 = 57. Si da 13, se restó.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-18"
   },
   {
@@ -3582,7 +3583,7 @@
    ],
    "correcta": 1,
    "tip": "Gastar es restar: 48 - 20 = 28. Se quitan 2 decenas, las unidades no cambian.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-19"
   },
   {
@@ -3596,7 +3597,7 @@
    ],
    "correcta": 0,
    "tip": "En total es sumar los dos grupos: 16 + 13 = 29.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-20"
   },
   {
@@ -3610,7 +3611,7 @@
    ],
    "correcta": 0,
    "tip": "Para saber cuántas más, se resta: 45 - 23 = 22. Sumarlas daría el total, no la diferencia.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-21"
   },
   {
@@ -3624,7 +3625,7 @@
    ],
    "correcta": 1,
    "tip": "Las sillas que sobran son las que no usan: 39 - 24 = 15.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-22"
   },
   {
@@ -3638,7 +3639,7 @@
    ],
    "correcta": 3,
    "tip": "40 son 4 decenas y 50 son 5 decenas. 4 decenas y 5 decenas son 9 decenas: 90.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-23"
   },
   {
@@ -3652,7 +3653,7 @@
    ],
    "correcta": 1,
    "tip": "Son 8 decenas menos 3 decenas: quedan 5 decenas, o sea 50.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-24"
   },
   {
@@ -3666,7 +3667,7 @@
    ],
    "correcta": 2,
    "tip": "16 es 10 y 6. Si 6 + 3 = 9, entonces 16 + 3 es 10 y 9: 19.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-25"
   },
   {
@@ -3680,7 +3681,7 @@
    ],
    "correcta": 3,
    "tip": "Si le dieron, ahora tiene más: es una suma, 30 + 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-26"
   },
   {
@@ -3694,7 +3695,7 @@
    ],
    "correcta": 0,
    "tip": "20 + 15 junta dos cantidades. Regalar y perder son restas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-27"
   },
   {
@@ -3708,7 +3709,7 @@
    ],
    "correcta": 2,
    "tip": "50 - 20 parte de 50 y quita 20: gastar 20 de lo que se tiene.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-28"
   },
   {
@@ -3722,7 +3723,7 @@
    ],
    "correcta": 0,
    "tip": "Hay un grupo de 5 manzanas y otro de 4 que se juntan: 5 + 4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-29",
    "visual": {
     "tipo": "contar",
@@ -3742,7 +3743,7 @@
    ],
    "correcta": 2,
    "tip": "Hay 9 estrellas y se quitan 3: eso se escribe 9 - 3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa09-30",
    "visual": {
     "tipo": "contar",
@@ -3762,7 +3763,7 @@
    ],
    "correcta": 1,
    "tip": "9, 6 y 15 son una familia: si 9 + 6 = 15, al quitar 6 de 15 vuelves al 9.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-1"
   },
   {
@@ -3776,7 +3777,7 @@
    ],
    "correcta": 2,
    "tip": "La suma deshace la resta: si a 13 le quitas 5 quedan 8, y a 8 le sumas 5 vuelves a 13.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-2"
   },
   {
@@ -3790,7 +3791,7 @@
    ],
    "correcta": 1,
    "tip": "En la familia, los dos números chicos suman el grande: 4 + 7 = 11.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-3"
   },
   {
@@ -3804,7 +3805,7 @@
    ],
    "correcta": 3,
    "tip": "Son dos sumas y dos restas: 3 + 5 = 8, 5 + 3 = 8, 8 - 3 = 5 y 8 - 5 = 3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-4"
   },
   {
@@ -3818,7 +3819,7 @@
    ],
    "correcta": 0,
    "tip": "Con 6, 8 y 14 la resta parte del 14: 14 - 8 = 6. 8 - 6 = 2 es cierta, pero usa el 2.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-5"
   },
   {
@@ -3832,7 +3833,7 @@
    ],
    "correcta": 2,
    "tip": "La familia de 12 - 7 = 5 tiene la suma 5 + 7 = 12: los dos chicos dan el grande.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-6"
   },
   {
@@ -3846,7 +3847,7 @@
    ],
    "correcta": 0,
    "tip": "7 + ? = 15 es de la familia de 15 - 7. Como 15 - 7 = 8, ganó 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-7"
   },
   {
@@ -3860,7 +3861,7 @@
    ],
    "correcta": 0,
    "tip": "Lo que tiene y 6 más dan 14. Por la familia, 14 - 6 = 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-8"
   },
   {
@@ -3874,7 +3875,7 @@
    ],
    "correcta": 2,
    "tip": "Si 16 - 9 = 7, entonces 7 + 9 tiene que dar 16. Esa suma lo comprueba.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-9"
   },
   {
@@ -3888,7 +3889,7 @@
    ],
    "correcta": 0,
    "tip": "Con 5, 9 y 14: si a 14 le quitas 9 quedan 5. El cuadrito vale 9.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-10"
   },
   {
@@ -3902,7 +3903,7 @@
    ],
    "correcta": 2,
    "tip": "Si 8 + 9 = 17, al quitarle 9 a 17 vuelves al 8. 9 - 8 = 1 es cierta, pero no es de esa familia.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-11"
   },
   {
@@ -3916,7 +3917,7 @@
    ],
    "correcta": 1,
    "tip": "30, 20 y 50 son una familia: si a 50 le quitas 30, quedan 20.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-12"
   },
   {
@@ -3930,7 +3931,7 @@
    ],
    "correcta": 1,
    "tip": "La suma deshace la resta: 30 + 15 vuelve al 45.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-13"
   },
   {
@@ -3944,7 +3945,7 @@
    ],
    "correcta": 0,
    "tip": "Sirven cuando los dos chicos suman el grande: 3 + 4 = 7. En los otros no pasa.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-14"
   },
   {
@@ -3958,7 +3959,7 @@
    ],
    "correcta": 2,
    "tip": "16 - ? = 9 es de la familia de 9 + 7 = 16. Se fueron 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-15"
   },
   {
@@ -3972,7 +3973,7 @@
    ],
    "correcta": 2,
    "tip": "Lo que tenía, menos 5, dio 9. Por la familia, 9 + 5 = 14.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-16"
   },
   {
@@ -3986,7 +3987,7 @@
    ],
    "correcta": 0,
    "tip": "8 + ? = 17 se resuelve con 17 - 8 = 9.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-17"
   },
   {
@@ -4000,7 +4001,7 @@
    ],
    "correcta": 1,
    "tip": "6, 7 y 13 son una familia: si a 13 le quitas 7, vuelves al 6. Benjamín tiene razón.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-18"
   },
   {
@@ -4014,7 +4015,7 @@
    ],
    "correcta": 0,
    "tip": "Si 9 + 4 = 13, entonces 13 - 9 tiene que dar 4, no 5. La suma está bien.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-19"
   },
   {
@@ -4028,7 +4029,7 @@
    ],
    "correcta": 0,
    "tip": "Si 8 + 7 = 15, entonces 15 - 8 = 7. Esa suma es de la misma familia.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-20"
   },
   {
@@ -4042,7 +4043,7 @@
    ],
    "correcta": 3,
    "tip": "Las restas de esa familia parten del 14: 14 - 4 = 10 y 14 - 10 = 4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-21"
   },
   {
@@ -4056,7 +4057,7 @@
    ],
    "correcta": 0,
    "tip": "20 + ? = 35 se resuelve con 35 - 20 = 15.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-22"
   },
   {
@@ -4070,7 +4071,7 @@
    ],
    "correcta": 3,
    "tip": "24, 13 y 37 son una familia: si a 37 le quitas 24, quedan 13.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-23"
   },
   {
@@ -4084,7 +4085,7 @@
    ],
    "correcta": 1,
    "tip": "Con 9, 3 y 12: si 12 - 9 = 3, entonces 9 + 3 = 12. El cuadrito vale 3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-24"
   },
   {
@@ -4098,7 +4099,7 @@
    ],
    "correcta": 0,
    "tip": "Con 18, 10 y 8 hay dos restas: 18 - 10 = 8 y 18 - 8 = 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-25"
   },
   {
@@ -4112,7 +4113,7 @@
    ],
    "correcta": 0,
    "tip": "Lo que le queda más lo que perdió da lo que tenía: 9 + 4 = 13.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-26"
   },
   {
@@ -4126,7 +4127,7 @@
    ],
    "correcta": 3,
    "tip": "12 + ? = 19 se resuelve con 19 - 12 = 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-27"
   },
   {
@@ -4140,7 +4141,7 @@
    ],
    "correcta": 0,
    "tip": "Con 50, 20 y 30, la suma junta los dos chicos: 30 + 20 = 50. Las otras usan otros números.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-28"
   },
   {
@@ -4154,7 +4155,7 @@
    ],
    "correcta": 2,
    "tip": "? + 6 = 13 es de la familia de 13 - 6. Como 13 - 6 = 7, tenía 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-29"
   },
   {
@@ -4168,7 +4169,7 @@
    ],
    "correcta": 1,
    "tip": "En una familia los dos chicos suman el grande, y 4 + 6 da 10, no 9.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa10-30"
   },
   {
@@ -4182,7 +4183,7 @@
    ],
    "correcta": 1,
    "tip": "4 x 2 son 4 grupos de 2: 2 + 2 + 2 + 2 = 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-1"
   },
   {
@@ -4196,7 +4197,7 @@
    ],
    "correcta": 2,
    "tip": "3 x 5 es sumar el 5 tres veces: 5 + 5 + 5 = 15. Si da 8, se sumó 3 + 5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-2"
   },
   {
@@ -4210,7 +4211,7 @@
    ],
    "correcta": 3,
    "tip": "6 x 10 son 6 grupos de 10, o sea seis decenas: 60.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-3"
   },
   {
@@ -4224,7 +4225,7 @@
    ],
    "correcta": 0,
    "tip": "7 x 2 es el doble de 7: 7 + 7 = 14.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-4"
   },
   {
@@ -4238,7 +4239,7 @@
    ],
    "correcta": 0,
    "tip": "Sumar el 5 ocho veces es 8 x 5. Como 10 x 5 son 50, le quitas dos grupos de 5: quedan 40.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-5"
   },
   {
@@ -4252,7 +4253,7 @@
    ],
    "correcta": 2,
    "tip": "9 grupos de 10 son nueve decenas: 90. Uno menos que 10 x 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-6"
   },
   {
@@ -4266,7 +4267,7 @@
    ],
    "correcta": 1,
    "tip": "4 + 5 da 9, pero 4 x 5 son 4 grupos de 5: 5 + 5 + 5 + 5 = 20.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-7"
   },
   {
@@ -4280,7 +4281,7 @@
    ],
    "correcta": 2,
    "tip": "El 5 se suma 4 veces: son 4 grupos de 5, o sea 4 x 5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-8"
   },
   {
@@ -4294,7 +4295,7 @@
    ],
    "correcta": 0,
    "tip": "El 2 aparece 3 veces: son 3 grupos de 2, o sea 3 x 2.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-9"
   },
   {
@@ -4308,7 +4309,7 @@
    ],
    "correcta": 3,
    "tip": "3 x 10 son 3 grupos de 10, así que el 10 se suma tres veces.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-10"
   },
   {
@@ -4322,7 +4323,7 @@
    ],
    "correcta": 2,
    "tip": "4 x 2 son 4 grupos de 2, así que el 2 se suma cuatro veces.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-11"
   },
   {
@@ -4336,7 +4337,7 @@
    ],
    "correcta": 0,
    "tip": "El 10 se suma 5 veces: son 5 grupos de 10, o sea 5 x 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-12"
   },
   {
@@ -4350,7 +4351,7 @@
    ],
    "correcta": 0,
    "tip": "Hay 3 grupos y cada uno tiene 5 estrellas: 3 grupos de 5 se escriben 3 x 5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-13",
    "visual": {
     "tipo": "agrupar",
@@ -4370,7 +4371,7 @@
    ],
    "correcta": 1,
    "tip": "Hay 4 grupos con 2 manzanas cada uno, así que el 2 se suma cuatro veces.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-14",
    "visual": {
     "tipo": "agrupar",
@@ -4390,7 +4391,7 @@
    ],
    "correcta": 2,
    "tip": "Hay 2 grupos de 10 bolitas: eso es 2 x 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-15",
    "visual": {
     "tipo": "agrupar",
@@ -4410,7 +4411,7 @@
    ],
    "correcta": 3,
    "tip": "Son 5 grupos y cada uno tiene 2 pelotas: 5 grupos de 2 se escriben 5 x 2.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-16",
    "visual": {
     "tipo": "agrupar",
@@ -4430,7 +4431,7 @@
    ],
    "correcta": 1,
    "tip": "6 x 2 tiene un grupo de 2 más que 5 x 2: 10 + 2 = 12.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-17"
   },
   {
@@ -4444,7 +4445,7 @@
    ],
    "correcta": 2,
    "tip": "6 x 5 tiene un grupo de 5 más que 5 x 5: 25 + 5 = 30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-18"
   },
   {
@@ -4458,7 +4459,7 @@
    ],
    "correcta": 2,
    "tip": "De 7 grupos a 8 grupos se agrega un grupo más, y ese grupo tiene 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-19"
   },
   {
@@ -4472,7 +4473,7 @@
    ],
    "correcta": 3,
    "tip": "5 x 10 tiene un grupo de 10 más que 4 x 10: 40 + 10 = 50.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-20"
   },
   {
@@ -4486,7 +4487,7 @@
    ],
    "correcta": 3,
    "tip": "4 grupos de 5 son el doble de 2 grupos de 5: 10 + 10 = 20.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-21"
   },
   {
@@ -4500,7 +4501,7 @@
    ],
    "correcta": 1,
    "tip": "7 grupos de 2 son 5 grupos de 2 y 2 grupos más: 10 + 4 = 14.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-22"
   },
   {
@@ -4514,7 +4515,7 @@
    ],
    "correcta": 3,
    "tip": "9 x 5 tiene un grupo de 5 menos que 10 x 5: 50 - 5 = 45.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-23"
   },
   {
@@ -4528,7 +4529,7 @@
    ],
    "correcta": 0,
    "tip": "Son 3 grupos de 5 dedos: 3 x 5 = 15.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-24"
   },
   {
@@ -4542,7 +4543,7 @@
    ],
    "correcta": 3,
    "tip": "Un par son 2 calcetines, así que son 6 grupos de 2: 6 x 2 = 12.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-25"
   },
   {
@@ -4556,7 +4557,7 @@
    ],
    "correcta": 0,
    "tip": "Son 7 grupos de 10 lápices: 7 x 10 = 70.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-26"
   },
   {
@@ -4570,7 +4571,7 @@
    ],
    "correcta": 3,
    "tip": "Son 8 grupos de 2 ruedas: 8 x 2 = 16, el doble de 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-27"
   },
   {
@@ -4584,7 +4585,7 @@
    ],
    "correcta": 0,
    "tip": "Son 9 grupos de 10 pesos: 9 x 10 = 90 pesos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-28"
   },
   {
@@ -4598,7 +4599,7 @@
    ],
    "correcta": 1,
    "tip": "Son 4 grupos iguales de 10 galletas, y eso se calcula con 4 x 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-29"
   },
   {
@@ -4612,7 +4613,7 @@
    ],
    "correcta": 2,
    "tip": "Son 6 grupos de 5 dulces: 6 x 5 = 30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa11-30"
   },
   {
@@ -4626,7 +4627,7 @@
    ],
    "correcta": 2,
    "tip": "Cada número es 3 más que el anterior: 13 + 3 = 16.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-1"
   },
   {
@@ -4640,7 +4641,7 @@
    ],
    "correcta": 3,
    "tip": "El patrón suma 4 cada vez: 13 + 4 = 17.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-2"
   },
   {
@@ -4654,7 +4655,7 @@
    ],
    "correcta": 3,
    "tip": "El patrón va bajando de 3 en 3: 21 - 3 = 18.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-3"
   },
   {
@@ -4668,7 +4669,7 @@
    ],
    "correcta": 1,
    "tip": "Cada número es 4 menos que el anterior: 38 - 4 = 34.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-4"
   },
   {
@@ -4682,7 +4683,7 @@
    ],
    "correcta": 0,
    "tip": "El patrón suma 3: después del 9 viene 9 + 3 = 12, y 12 + 3 = 15.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-5"
   },
   {
@@ -4696,7 +4697,7 @@
    ],
    "correcta": 2,
    "tip": "El patrón resta 4: 36 - 4 = 32, y 32 - 4 = 28.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-6"
   },
   {
@@ -4710,7 +4711,7 @@
    ],
    "correcta": 3,
    "tip": "El patrón suma 11: 22 + 11 = 33. Crecen juntas las decenas y las unidades.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-7"
   },
   {
@@ -4724,7 +4725,7 @@
    ],
    "correcta": 1,
    "tip": "De 2 a 6 hay 4, de 6 a 10 hay 4 y de 10 a 14 también: se suma 4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-8"
   },
   {
@@ -4738,7 +4739,7 @@
    ],
    "correcta": 0,
    "tip": "Los números bajan: de 45 a 42 se quitan 3, y así cada vez.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-9"
   },
   {
@@ -4752,7 +4753,7 @@
    ],
    "correcta": 1,
    "tip": "De 7 a 13 hay 6, de 13 a 19 hay 6 y de 19 a 25 también: se suma 6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-10"
   },
   {
@@ -4766,7 +4767,7 @@
    ],
    "correcta": 1,
    "tip": "Se repite el grupo 1, 2, 3. Después del 1 viene el 2.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-11"
   },
   {
@@ -4780,7 +4781,7 @@
    ],
    "correcta": 3,
    "tip": "El 5 y el 0 se van turnando. Después de un 5 siempre viene un 0.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-12"
   },
   {
@@ -4794,7 +4795,7 @@
    ],
    "correcta": 0,
    "tip": "Cada número aparece dos veces y luego se suma 2: después de 6, 6 viene el 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-13"
   },
   {
@@ -4808,7 +4809,7 @@
    ],
    "correcta": 0,
    "tip": "El patrón suma 4: 3, 7, 11, 15, 19. Donde dice 14 debía decir 15.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-14"
   },
   {
@@ -4822,7 +4823,7 @@
    ],
    "correcta": 0,
    "tip": "Parte en 10 y suma 3: 10, 13, 16, 19. El 10 también es parte del patrón.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-15"
   },
   {
@@ -4836,7 +4837,7 @@
    ],
    "correcta": 3,
    "tip": "Sus números son 35, 32 y 29: el tercero es 29. El 35 cuenta como el primero.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-16"
   },
   {
@@ -4850,7 +4851,7 @@
    ],
    "correcta": 0,
    "tip": "Antes del punto está el 8 y después el 16. Saltando de 4 en 4: 8 + 4 = 12.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-17",
    "visual": {
     "tipo": "recta",
@@ -4872,7 +4873,7 @@
    ],
    "correcta": 2,
    "tip": "Antes del punto está el 32. Saltando 6 más: 32 + 6 = 38.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-18",
    "visual": {
     "tipo": "recta",
@@ -4894,7 +4895,7 @@
    ],
    "correcta": 2,
    "tip": "Antes del punto está el 42. Saltando 3 más: 42 + 3 = 45.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-19",
    "visual": {
     "tipo": "recta",
@@ -4916,7 +4917,7 @@
    ],
    "correcta": 1,
    "tip": "En la tabla del 100, la fila de arriba tiene 10 menos: 57 - 10 = 47.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-20"
   },
   {
@@ -4930,7 +4931,7 @@
    ],
    "correcta": 2,
    "tip": "Una casilla hacia atrás es 1 menos: antes del 40 está el 39.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-21"
   },
   {
@@ -4944,7 +4945,7 @@
    ],
    "correcta": 1,
    "tip": "El patrón suma 4: 8, 12, 16, 20, 24.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-22"
   },
   {
@@ -4958,7 +4959,7 @@
    ],
    "correcta": 3,
    "tip": "El patrón resta 3: 91 - 3 = 88.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-23"
   },
   {
@@ -4972,7 +4973,7 @@
    ],
    "correcta": 1,
    "tip": "El patrón suma 20, o sea dos decenas cada vez: 75 + 20 = 95.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-24"
   },
   {
@@ -4986,7 +4987,7 @@
    ],
    "correcta": 1,
    "tip": "El patrón suma 3, así que el número de antes es 3 menos que 20: 17.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-25"
   },
   {
@@ -5000,7 +5001,7 @@
    ],
    "correcta": 3,
    "tip": "El patrón suma 4: 5, 9, 13, 17. El último debía ser 13 + 4 = 17.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-26"
   },
   {
@@ -5014,7 +5015,7 @@
    ],
    "correcta": 2,
    "tip": "En 10, 13, 16 cada número es 3 más que el anterior.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-27"
   },
   {
@@ -5028,7 +5029,7 @@
    ],
    "correcta": 0,
    "tip": "En 40, 36, 32 cada número es 4 menos que el anterior.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-28"
   },
   {
@@ -5042,7 +5043,7 @@
    ],
    "correcta": 2,
    "tip": "Al 11 le toca sumar 2 otra vez: 11 + 2 = 13.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-29"
   },
   {
@@ -5056,7 +5057,7 @@
    ],
    "correcta": 0,
    "tip": "Se suma 1, luego 2, luego 3, luego 4. Ahora toca sumar 5: 11 + 5 = 16.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa12-30"
   },
   {
@@ -5070,7 +5071,7 @@
    ],
    "correcta": 3,
    "tip": "12 es mayor que 9, y eso se escribe 12 > 9. La punta del signo apunta al número menor.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-1"
   },
   {
@@ -5084,7 +5085,7 @@
    ],
    "correcta": 2,
    "tip": "7 es menor que 15: se escribe 7 < 15, con la punta hacia el 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-2"
   },
   {
@@ -5098,7 +5099,7 @@
    ],
    "correcta": 2,
    "tip": "6 + 4 = 10. Las otras dan 9, 11 y 11.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-3"
   },
   {
@@ -5112,7 +5113,7 @@
    ],
    "correcta": 3,
    "tip": "8 + 2 = 10 y 9 + 1 = 10. Los dos lados valen lo mismo, así que el signo igual está bien.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-4"
   },
   {
@@ -5126,7 +5127,7 @@
    ],
    "correcta": 0,
    "tip": "Para que quede en equilibrio, los dos lados deben tener 7. Al de 4 le faltan 3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-5"
   },
   {
@@ -5140,7 +5141,7 @@
    ],
    "correcta": 0,
    "tip": "El signo igual dice que los dos lados valen lo mismo. 5 + 3 = 8, y 4 + 4 = 8. No va el 8: ese es solo el lado izquierdo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-6"
   },
   {
@@ -5154,7 +5155,7 @@
    ],
    "correcta": 3,
    "tip": "6 + 6 = 12, y 10 + 2 = 12. El cuadrito vale 2 para que los dos lados sean iguales.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-7"
   },
   {
@@ -5168,7 +5169,7 @@
    ],
    "correcta": 2,
    "tip": "9 + 3 = 12, y 12 es mayor que 11: 9 + 3 > 11.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-8"
   },
   {
@@ -5182,7 +5183,7 @@
    ],
    "correcta": 1,
    "tip": "4 + 5 = 9 y 3 + 6 = 9. Los dos tienen 9: 4 + 5 = 3 + 6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-9"
   },
   {
@@ -5196,7 +5197,7 @@
    ],
    "correcta": 0,
    "tip": "8 + 4 = 12, y 15 es mayor que 12 por 3. Sofía tiene más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-10"
   },
   {
@@ -5210,7 +5211,7 @@
    ],
    "correcta": 2,
    "tip": "El signo igual no anuncia un resultado: dice que lo de un lado vale lo mismo que lo del otro. 4 + 1 y 3 + 2 dan 5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-11"
   },
   {
@@ -5224,7 +5225,7 @@
    ],
    "correcta": 3,
    "tip": "7 + 7 = 14, y 10 + 4 también da 14.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-12"
   },
   {
@@ -5238,7 +5239,7 @@
    ],
    "correcta": 2,
    "tip": "6 + 2 = 8, pero 8 + 1 = 9. Los lados no valen lo mismo, así que el igual está mal.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-13"
   },
   {
@@ -5252,7 +5253,7 @@
    ],
    "correcta": 1,
    "tip": "5 + 4 = 9, y 3 + 6 también da 9. Las otras dan 10, 8 y 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-14"
   },
   {
@@ -5266,7 +5267,7 @@
    ],
    "correcta": 0,
    "tip": "Para igualar, el lado de 12 debe quedar en 8: 12 - 4 = 8. Hay que quitar 4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-15"
   },
   {
@@ -5280,7 +5281,7 @@
    ],
    "correcta": 1,
    "tip": "9 + 8 = 17, que es mayor que 15. 10 + 5 da 15: es igual, no mayor.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-16"
   },
   {
@@ -5294,7 +5295,7 @@
    ],
    "correcta": 1,
    "tip": "12 - 7 = 5, y 5 es menor que 6. 12 - 6 da justo 6: es igual, no menor.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-17"
   },
   {
@@ -5308,7 +5309,7 @@
    ],
    "correcta": 0,
    "tip": "7 + 5 = 12 y 6 + 6 = 12. Valen lo mismo, así que se escribe con el signo igual.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-18"
   },
   {
@@ -5322,7 +5323,7 @@
    ],
    "correcta": 2,
    "tip": "10 + 4 = 14, y 7 + 7 = 14. El cuadrito vale 7. El 14 es solo el lado izquierdo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-19"
   },
   {
@@ -5336,7 +5337,7 @@
    ],
    "correcta": 0,
    "tip": "La frase dice que 12 es mayor que el cuadrito. Solo el 9 es menor que 12; el 12 sería igual.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-20"
   },
   {
@@ -5350,7 +5351,7 @@
    ],
    "correcta": 1,
    "tip": "8 < ▢ dice que el cuadrito es mayor que 8. Solo el 11 lo es; el 8 sería igual.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-21"
   },
   {
@@ -5364,7 +5365,7 @@
    ],
    "correcta": 0,
    "tip": "Un número no es mayor que sí mismo: 11 = 11.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-22"
   },
   {
@@ -5378,7 +5379,7 @@
    ],
    "correcta": 3,
    "tip": "9 - 5 = 4. Las otras dan 5, 5 y 3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-23"
   },
   {
@@ -5392,7 +5393,7 @@
    ],
    "correcta": 2,
    "tip": "El igual funciona hacia los dos lados: 15 vale lo mismo que 10 + 5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-24"
   },
   {
@@ -5406,7 +5407,7 @@
    ],
    "correcta": 3,
    "tip": "5 + 5 = 10, y 10 es mayor que 9: 5 + 5 > 9.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-25"
   },
   {
@@ -5420,7 +5421,7 @@
    ],
    "correcta": 3,
    "tip": "9 es mayor que 6: hay más sillas, y sobran 3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-26"
   },
   {
@@ -5434,7 +5435,7 @@
    ],
    "correcta": 2,
    "tip": "3 + 9 = 12, así que los dos lados valen lo mismo: va el signo igual.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-27"
   },
   {
@@ -5448,7 +5449,7 @@
    ],
    "correcta": 3,
    "tip": "2 + 7 = 9 y 4 + 4 = 8. Luis tiene 1 más: 2 + 7 > 4 + 4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-28"
   },
   {
@@ -5462,7 +5463,7 @@
    ],
    "correcta": 2,
    "tip": "Si Ana le pasa 2, los dos quedan con 8. Pasarle 4 deja a Luis con 10 y a Ana con 6: otra vez distintos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-29"
   },
   {
@@ -5476,7 +5477,7 @@
    ],
    "correcta": 1,
    "tip": "9 + 6 = 15 y 10 + 5 = 15. Las otras dan 14, 16 y 14.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa13-30"
   },
   {
@@ -5490,7 +5491,7 @@
    ],
    "correcta": 2,
    "tip": "Si Ana va delante, Luis queda a su espalda: Luis está detrás de Ana.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-1"
   },
   {
@@ -5504,7 +5505,7 @@
    ],
    "correcta": 2,
    "tip": "Sobre quiere decir arriba. Si el rojo está arriba, el azul queda abajo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-2"
   },
   {
@@ -5518,7 +5519,7 @@
    ],
    "correcta": 3,
    "tip": "De arriba hacia abajo van la verde, la roja y la azul. La azul sostiene a las otras.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-3"
   },
   {
@@ -5532,7 +5533,7 @@
    ],
    "correcta": 2,
    "tip": "Estar entre dos personas es quedar al medio: Diego a un lado, Camila al otro y Sofía en el centro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-4"
   },
   {
@@ -5546,7 +5547,7 @@
    ],
    "correcta": 3,
    "tip": "Al darse vuelta, Matías cambia de lado: lo que estaba a su derecha ahora queda a su izquierda.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-5"
   },
   {
@@ -5560,7 +5561,7 @@
    ],
    "correcta": 3,
    "tip": "Nadar en la pecera es estar en el agua que hay adentro: el pez está dentro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-6"
   },
   {
@@ -5574,7 +5575,7 @@
    ],
    "correcta": 3,
    "tip": "Si la lámpara está sobre la mesa, la mesa queda debajo. El techo está más arriba que la lámpara.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-7"
   },
   {
@@ -5588,7 +5589,7 @@
    ],
    "correcta": 0,
    "tip": "Luis va al medio: Ana está delante de él y Eva viene detrás.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-8"
   },
   {
@@ -5602,7 +5603,7 @@
    ],
    "correcta": 3,
    "tip": "El orden es Luis, Eva y Sara. Nadie va detrás de Sara: ella cierra la fila.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-9"
   },
   {
@@ -5616,7 +5617,7 @@
    ],
    "correcta": 3,
    "tip": "Ana va delante de Pedro y Pedro delante de Tomás: Ana encabeza la fila.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-10"
   },
   {
@@ -5630,7 +5631,7 @@
    ],
    "correcta": 1,
    "tip": "Si la muñeca está más alta, el auto queda en la repisa de más abajo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-11"
   },
   {
@@ -5644,7 +5645,7 @@
    ],
    "correcta": 3,
    "tip": "Los pisos se cuentan desde abajo: el piso 5 está más arriba que el piso 3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-12"
   },
   {
@@ -5658,7 +5659,7 @@
    ],
    "correcta": 1,
    "tip": "Más cuadras es más camino: 9 cuadras es más lejos que 2 cuadras.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-13"
   },
   {
@@ -5672,7 +5673,7 @@
    ],
    "correcta": 0,
    "tip": "Cuando dos personas se miran, sus lados se cruzan: la derecha de Ana queda ante la izquierda de Luis.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-14"
   },
   {
@@ -5686,7 +5687,7 @@
    ],
    "correcta": 3,
    "tip": "Si para Ana el oso está a la derecha del conejo, entonces el conejo queda a la izquierda del oso.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-15"
   },
   {
@@ -5700,7 +5701,7 @@
    ],
    "correcta": 2,
    "tip": "En esa fila la pelota tiene el auto a un lado y el trompo al otro: está al medio.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-16"
   },
   {
@@ -5714,7 +5715,7 @@
    ],
    "correcta": 0,
    "tip": "El patio queda fuera de la casa. Luis está adentro y el perro afuera.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-17"
   },
   {
@@ -5728,7 +5729,7 @@
    ],
    "correcta": 0,
    "tip": "Si los dos miran hacia el mismo lado y Juan está a la izquierda, Eva queda a la derecha de Juan.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-18"
   },
   {
@@ -5742,7 +5743,7 @@
    ],
    "correcta": 0,
    "tip": "Estar de espaldas a algo es tenerlo atrás: la pizarra queda detrás de Sara.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-19"
   },
   {
@@ -5756,7 +5757,7 @@
    ],
    "correcta": 3,
    "tip": "Lo que una persona está mirando lo tiene delante de ella.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-20"
   },
   {
@@ -5770,7 +5771,7 @@
    ],
    "correcta": 0,
    "tip": "Volar sobre la casa es pasar por arriba de ella: la casa queda más abajo que el avión.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-21"
   },
   {
@@ -5784,7 +5785,7 @@
    ],
    "correcta": 0,
    "tip": "Bajo quiere decir debajo: el tesoro está tapado por la arena.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-22"
   },
   {
@@ -5798,7 +5799,7 @@
    ],
    "correcta": 0,
    "tip": "Si Pedro estira el brazo hacia arriba, el libro está en un lugar más alto que él.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-23"
   },
   {
@@ -5812,7 +5813,7 @@
    ],
    "correcta": 3,
    "tip": "Espalda con espalda, cada uno tiene al otro atrás: Luis está detrás de Ana.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-24"
   },
   {
@@ -5826,7 +5827,7 @@
    ],
    "correcta": 0,
    "tip": "Sentarse frente a alguien es quedar cara a cara: Diego está delante de Camila.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-25"
   },
   {
@@ -5840,7 +5841,7 @@
    ],
    "correcta": 2,
    "tip": "Estar entre dos cosas es tener una a cada lado: el árbol a un lado y la casa al otro.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-26"
   },
   {
@@ -5854,7 +5855,7 @@
    ],
    "correcta": 3,
    "tip": "La pelota está en la caja y la caja está en el baúl, así que la pelota también queda dentro del baúl.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-27"
   },
   {
@@ -5868,7 +5869,7 @@
    ],
    "correcta": 3,
    "tip": "Por encima quiere decir más arriba: la pelota pasa sobre la red sin tocarla.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-28"
   },
   {
@@ -5882,7 +5883,7 @@
    ],
    "correcta": 2,
    "tip": "Si los zapatos están debajo de la cama, la cama queda encima de ellos. El suelo está más abajo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-29"
   },
   {
@@ -5896,7 +5897,7 @@
    ],
    "correcta": 1,
    "tip": "El orden es Sara, Eli y Tomás. Detrás de Eli queda Tomás.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa14-30"
   },
   {
@@ -5910,7 +5911,7 @@
    ],
    "correcta": 0,
    "tip": "El triángulo tiene 3 lados y 3 esquinas. Tri quiere decir tres.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-1"
   },
   {
@@ -5924,7 +5925,7 @@
    ],
    "correcta": 3,
    "tip": "El círculo es redondo: su borde es una sola línea curva y no forma esquinas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-2"
   },
   {
@@ -5938,7 +5939,7 @@
    ],
    "correcta": 2,
    "tip": "El cuadrado tiene 4 lados, todos del mismo largo, y 4 esquinas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-3"
   },
   {
@@ -5952,7 +5953,7 @@
    ],
    "correcta": 0,
    "tip": "El triángulo tiene 3 lados, y donde se juntan los lados se forman 3 esquinas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-4"
   },
   {
@@ -5966,7 +5967,7 @@
    ],
    "correcta": 2,
    "tip": "El cuadrado tiene sus 4 lados iguales. El rectángulo tiene 2 lados largos y 2 cortos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-5"
   },
   {
@@ -5980,7 +5981,7 @@
    ],
    "correcta": 2,
    "tip": "El rectángulo tiene 4 lados: 2 largos frente a frente y 2 cortos frente a frente.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-6"
   },
   {
@@ -5994,7 +5995,7 @@
    ],
    "correcta": 1,
    "tip": "Con 3 palitos se cierra una figura de 3 lados: el triángulo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-7"
   },
   {
@@ -6008,7 +6009,7 @@
    ],
    "correcta": 2,
    "tip": "El cuadrado tiene 4 lados, así que Ana usa un palito para cada lado: 4 palitos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-8"
   },
   {
@@ -6022,7 +6023,7 @@
    ],
    "correcta": 0,
    "tip": "Una figura con 3 esquinas tiene también 3 lados: es un triángulo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-9"
   },
   {
@@ -6036,7 +6037,7 @@
    ],
    "correcta": 1,
    "tip": "La moneda es redonda, sin esquinas: tiene forma de círculo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-10"
   },
   {
@@ -6050,7 +6051,7 @@
    ],
    "correcta": 2,
    "tip": "La hoja tiene 4 esquinas, con 2 lados largos y 2 cortos: es un rectángulo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-11"
   },
   {
@@ -6064,7 +6065,7 @@
    ],
    "correcta": 3,
    "tip": "Visto desde arriba, el borde del plato es redondo: forma un círculo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-12"
   },
   {
@@ -6078,7 +6079,7 @@
    ],
    "correcta": 3,
    "tip": "Los dos tienen 4 lados rectos y 4 esquinas. Lo que cambia es el largo de sus lados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-13"
   },
   {
@@ -6092,7 +6093,7 @@
    ],
    "correcta": 0,
    "tip": "Los dos tienen 4 lados y 4 esquinas. En el cuadrado los lados son iguales; en el rectángulo hay 2 largos y 2 cortos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-14"
   },
   {
@@ -6106,7 +6107,7 @@
    ],
    "correcta": 2,
    "tip": "El círculo es una sola línea curva, sin puntas: tiene 0 esquinas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-15"
   },
   {
@@ -6120,7 +6121,7 @@
    ],
    "correcta": 0,
    "tip": "El corte de esquina a esquina deja 2 piezas de 3 lados cada una: 2 triángulos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-16"
   },
   {
@@ -6134,7 +6135,7 @@
    ],
    "correcta": 3,
    "tip": "El círculo no tiene esquinas que lo frenen, por eso puede rodar como una rueda.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-17"
   },
   {
@@ -6148,7 +6149,7 @@
    ],
    "correcta": 1,
    "tip": "Con 2 lados largos y 2 cortos, puestos frente a frente, se arma un rectángulo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-18"
   },
   {
@@ -6162,7 +6163,7 @@
    ],
    "correcta": 3,
    "tip": "Cada triángulo usa 3 palitos: 3 más 3 son 6 palitos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-19"
   },
   {
@@ -6176,7 +6177,7 @@
    ],
    "correcta": 0,
    "tip": "El cuadrado usa 4 palitos: de 7 le quedan 7 menos 4, que son 3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-20"
   },
   {
@@ -6190,7 +6191,7 @@
    ],
    "correcta": 1,
    "tip": "El cuadrado tiene 4 lados y el triángulo 3: el cuadrado tiene uno más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-21"
   },
   {
@@ -6204,7 +6205,7 @@
    ],
    "correcta": 3,
    "tip": "El triángulo tiene 3 lados y el cuadrado 4: 3 más 4 son 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-22"
   },
   {
@@ -6218,7 +6219,7 @@
    ],
    "correcta": 3,
    "tip": "El círculo es redondo y no tiene ninguna esquina. Las 4 esquinas son del cuadrado y del rectángulo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-23"
   },
   {
@@ -6232,7 +6233,7 @@
    ],
    "correcta": 2,
    "tip": "Pedro confundió el cuadrado con el triángulo: el cuadrado tiene 4 lados.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-24"
   },
   {
@@ -6246,7 +6247,7 @@
    ],
    "correcta": 1,
    "tip": "La boca del vaso es redonda, así que al calcar su borde sale un círculo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-25"
   },
   {
@@ -6260,7 +6261,7 @@
    ],
    "correcta": 3,
    "tip": "La base de la caja tiene 4 esquinas, con 2 lados largos y 2 cortos: es un rectángulo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-26"
   },
   {
@@ -6274,7 +6275,7 @@
    ],
    "correcta": 2,
    "tip": "El rectángulo tiene 4 esquinas y el triángulo 3: 4 menos 3 es 1 esquina más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-27"
   },
   {
@@ -6288,7 +6289,7 @@
    ],
    "correcta": 1,
    "tip": "El cuadrado y el rectángulo tienen 4 lados y 4 esquinas. El triángulo tiene 3 y el círculo ninguna.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-28"
   },
   {
@@ -6302,7 +6303,7 @@
    ],
    "correcta": 3,
    "tip": "Los dos cuadrados juntos quedan más largos que altos: forman un rectángulo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-29"
   },
   {
@@ -6316,7 +6317,7 @@
    ],
    "correcta": 2,
    "tip": "El rectángulo tiene 4 lados, y donde se juntan forma 4 esquinas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa15-30"
   },
   {
@@ -6330,7 +6331,7 @@
    ],
    "correcta": 0,
    "tip": "Este cuerpo tiene todas sus caras planas y cuadradas, del mismo tamaño: es un cubo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-1",
    "visual": {
     "tipo": "cuerpo",
@@ -6348,7 +6349,7 @@
    ],
    "correcta": 3,
    "tip": "Es redondo por todos lados y se puede tomar con la mano: es una esfera. El círculo es plano, como un dibujo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-2",
    "visual": {
     "tipo": "cuerpo",
@@ -6366,7 +6367,7 @@
    ],
    "correcta": 2,
    "tip": "Tiene una cara plana redonda, una parte curva y una punta: es un cono. El triángulo es plano.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-3",
    "visual": {
     "tipo": "cuerpo",
@@ -6384,7 +6385,7 @@
    ],
    "correcta": 3,
    "tip": "Tiene caras planas y algunas son rectángulos más largos que altos: es un paralelepípedo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-4",
    "visual": {
     "tipo": "cuerpo",
@@ -6402,7 +6403,7 @@
    ],
    "correcta": 0,
    "tip": "La naranja es redonda por todos lados, como una pelota: tiene forma de esfera.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-5"
   },
   {
@@ -6416,7 +6417,7 @@
    ],
    "correcta": 2,
    "tip": "El dado tiene caras cuadradas, todas iguales: tiene forma de cubo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-6"
   },
   {
@@ -6430,7 +6431,7 @@
    ],
    "correcta": 3,
    "tip": "La caja de zapatos tiene caras planas rectangulares, más larga que alta: es un paralelepípedo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-7"
   },
   {
@@ -6444,7 +6445,7 @@
    ],
    "correcta": 0,
    "tip": "El gorro de mago tiene una base redonda y termina en punta: tiene forma de cono.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-8"
   },
   {
@@ -6458,7 +6459,7 @@
    ],
    "correcta": 3,
    "tip": "La esfera es curva por todos lados, así que rueda para donde la empujen.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-9"
   },
   {
@@ -6472,7 +6473,7 @@
    ],
    "correcta": 0,
    "tip": "El cubo tiene 6 caras, todas planas. La esfera es toda curva y el cono tiene una parte curva.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-10"
   },
   {
@@ -6486,7 +6487,7 @@
    ],
    "correcta": 3,
    "tip": "El cono tiene una base plana, una parte curva que lo rodea y una punta arriba.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-11"
   },
   {
@@ -6500,7 +6501,7 @@
    ],
    "correcta": 2,
    "tip": "El cono se apoya en su cara plana, que es redonda: la marca que deja es un círculo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-12"
   },
   {
@@ -6514,7 +6515,7 @@
    ],
    "correcta": 2,
    "tip": "Cada cara del dado es un cuadrado, así que la marca queda cuadrada.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-13"
   },
   {
@@ -6528,7 +6529,7 @@
    ],
    "correcta": 0,
    "tip": "La cara más grande de la caja de jugo tiene 2 lados largos y 2 cortos: deja un rectángulo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-14"
   },
   {
@@ -6542,7 +6543,7 @@
    ],
    "correcta": 2,
    "tip": "Una bola redonda por todos lados es una esfera. El círculo es plano, no se puede tomar como una bola.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-15"
   },
   {
@@ -6556,7 +6557,7 @@
    ],
    "correcta": 1,
    "tip": "Los 3 cubos en fila quedan más largos que altos: forman un paralelepípedo, no un cubo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-16"
   },
   {
@@ -6570,7 +6571,7 @@
    ],
    "correcta": 1,
    "tip": "El cubo y el paralelepípedo tienen 6 caras, todas planas. Por eso no ruedan.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-17"
   },
   {
@@ -6584,7 +6585,7 @@
    ],
    "correcta": 3,
    "tip": "Las caras del cubo son cuadrados iguales; el paralelepípedo tiene caras rectangulares.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-18"
   },
   {
@@ -6598,7 +6599,7 @@
    ],
    "correcta": 0,
    "tip": "Los dos tienen una parte curva, por eso los dos pueden rodar.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-19"
   },
   {
@@ -6612,7 +6613,7 @@
    ],
    "correcta": 0,
    "tip": "El cono rueda por su parte curva y se para sobre su cara plana. La esfera no tiene cara plana.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-20"
   },
   {
@@ -6626,7 +6627,7 @@
    ],
    "correcta": 1,
    "tip": "El dado tiene 6 caras cuadradas iguales: tiene forma de cubo. La caja de zapatos es más larga.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-21"
   },
   {
@@ -6640,7 +6641,7 @@
    ],
    "correcta": 0,
    "tip": "La bolita es redonda por todos lados: tiene forma de esfera.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-22"
   },
   {
@@ -6654,7 +6655,7 @@
    ],
    "correcta": 1,
    "tip": "El barquillo de helado tiene una boca redonda y termina en punta: es un cono.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-23"
   },
   {
@@ -6668,7 +6669,7 @@
    ],
    "correcta": 1,
    "tip": "La pelota es un cuerpo redondo por todos lados: es una esfera. El círculo es una figura plana.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-24"
   },
   {
@@ -6682,7 +6683,7 @@
    ],
    "correcta": 0,
    "tip": "El cubo tiene caras planas, así que no rueda: se arrastra sobre una de sus caras.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-25"
   },
   {
@@ -6696,7 +6697,7 @@
    ],
    "correcta": 3,
    "tip": "La esfera es curva por todos lados: al empujarla, rueda.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-26"
   },
   {
@@ -6710,7 +6711,7 @@
    ],
    "correcta": 2,
    "tip": "Los cubos tienen caras planas que calzan una sobre otra. Las esferas ruedan y los conos terminan en punta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-27"
   },
   {
@@ -6724,7 +6725,7 @@
    ],
    "correcta": 1,
    "tip": "El cubo ocupa espacio y se puede tomar con la mano. Cuadrado, círculo y triángulo son planos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-28"
   },
   {
@@ -6738,7 +6739,7 @@
    ],
    "correcta": 1,
    "tip": "El cono termina en una sola punta. El cubo y el paralelepípedo tienen muchas esquinas, y la esfera ninguna.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-29"
   },
   {
@@ -6752,7 +6753,7 @@
    ],
    "correcta": 0,
    "tip": "El cono tiene una parte curva: si se acuesta, rueda. Su punta no se lo impide.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa16-30",
    "visual": {
     "tipo": "cuerpo",
@@ -6770,7 +6771,7 @@
    ],
    "correcta": 2,
    "tip": "La semana va lunes, martes, miércoles, jueves... Justo después del miércoles viene el jueves.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-1"
   },
   {
@@ -6784,7 +6785,7 @@
    ],
    "correcta": 3,
    "tip": "La semana termina en domingo y vuelve a empezar en lunes. Por eso antes del lunes está el domingo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-2"
   },
   {
@@ -6798,7 +6799,7 @@
    ],
    "correcta": 2,
    "tip": "Mañana es el día que sigue. Después del viernes viene el sábado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-3"
   },
   {
@@ -6812,7 +6813,7 @@
    ],
    "correcta": 1,
    "tip": "Ayer es el día anterior. Antes del martes viene el lunes; el miércoles sería mañana.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-4"
   },
   {
@@ -6826,7 +6827,7 @@
    ],
    "correcta": 0,
    "tip": "Pasado mañana son dos días después: jueves, viernes, sábado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-5"
   },
   {
@@ -6840,7 +6841,7 @@
    ],
    "correcta": 0,
    "tip": "Hace 2 días es contar hacia atrás: domingo, sábado, viernes. El martes sería 2 días hacia adelante.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-6"
   },
   {
@@ -6854,7 +6855,7 @@
    ],
    "correcta": 3,
    "tip": "El fin de semana son los dos últimos días de la semana: sábado y domingo. El viernes todavía hay clases.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-7"
   },
   {
@@ -6868,7 +6869,7 @@
    ],
    "correcta": 3,
    "tip": "Lunes, martes, miércoles, jueves y viernes: Ana va 5 días.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-8"
   },
   {
@@ -6882,7 +6883,7 @@
    ],
    "correcta": 0,
    "tip": "De un sábado al sábado siguiente pasa una semana completa, y una semana tiene 7 días.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-9"
   },
   {
@@ -6896,7 +6897,7 @@
    ],
    "correcta": 1,
    "tip": "Una semana tiene 7 días. Por eso 7 días son justo 1 semana.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-10"
   },
   {
@@ -6910,7 +6911,7 @@
    ],
    "correcta": 0,
    "tip": "Una semana son 7 días. Si le sumas 2 días más, son 7 + 2 = 9 días.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-11"
   },
   {
@@ -6924,7 +6925,7 @@
    ],
    "correcta": 2,
    "tip": "Los meses van enero, febrero, marzo, abril... Justo después de marzo viene abril.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-12"
   },
   {
@@ -6938,7 +6939,7 @@
    ],
    "correcta": 0,
    "tip": "Enero es el primer mes del año. Antes de él está diciembre, el último mes del año anterior.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-13"
   },
   {
@@ -6952,7 +6953,7 @@
    ],
    "correcta": 2,
    "tip": "Abril, mayo, junio: el mes que queda al medio es mayo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-14"
   },
   {
@@ -6966,7 +6967,7 @@
    ],
    "correcta": 0,
    "tip": "El año empieza en enero. Marzo es cuando parten las clases, pero el año ya empezó dos meses antes.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-15"
   },
   {
@@ -6980,7 +6981,7 @@
    ],
    "correcta": 3,
    "tip": "El año termina en diciembre. Después viene enero, que ya es de un año nuevo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-16"
   },
   {
@@ -6994,7 +6995,7 @@
    ],
    "correcta": 2,
    "tip": "Febrero es el mes más corto: tiene 28 días, y a veces 29. Los demás tienen 30 o 31.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-17"
   },
   {
@@ -7008,7 +7009,7 @@
    ],
    "correcta": 2,
    "tip": "En el año, junio viene antes que agosto: junio, julio, agosto. Por eso Matías cumple primero.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-18"
   },
   {
@@ -7022,7 +7023,7 @@
    ],
    "correcta": 2,
    "tip": "En una fecha primero va el día y después el mes. El 15 es el día; mayo es el mes.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-19"
   },
   {
@@ -7036,7 +7037,7 @@
    ],
    "correcta": 2,
    "tip": "Ayer es un día antes, en el mismo mes: del 10 se baja al 9. El 11 sería mañana.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-20"
   },
   {
@@ -7050,7 +7051,7 @@
    ],
    "correcta": 1,
    "tip": "Pasado mañana son 2 días después: del 20 se avanza al 21 y luego al 22. Sigue siendo junio.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-21"
   },
   {
@@ -7064,7 +7065,7 @@
    ],
    "correcta": 2,
    "tip": "Diciembre termina el 31. El día siguiente empieza un mes nuevo, y también un año nuevo: 1 de enero.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-22"
   },
   {
@@ -7078,7 +7079,7 @@
    ],
    "correcta": 1,
    "tip": "Del lunes al miércoles hay 2 días: lunes 5, martes 6, miércoles 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-23"
   },
   {
@@ -7092,7 +7093,7 @@
    ],
    "correcta": 2,
    "tip": "El 4 viene justo después del 3, así que es el día siguiente al lunes: martes.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-24"
   },
   {
@@ -7106,7 +7107,7 @@
    ],
    "correcta": 1,
    "tip": "El 11 es un día antes del 12. El día antes del sábado es el viernes.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-25"
   },
   {
@@ -7120,7 +7121,7 @@
    ],
    "correcta": 0,
    "tip": "De un lunes al lunes siguiente pasan 7 días: 6 + 7 = 13. El 7 sería el martes.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-26"
   },
   {
@@ -7134,7 +7135,7 @@
    ],
    "correcta": 2,
    "tip": "Cada fila del calendario es una semana de 7 días. Bajar una fila es sumar 7: 4 + 7 = 11.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-27"
   },
   {
@@ -7148,7 +7149,7 @@
    ],
    "correcta": 1,
    "tip": "Subir una fila del calendario es volver una semana atrás: 20 - 7 = 13. El 27 está abajo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-28"
   },
   {
@@ -7162,7 +7163,7 @@
    ],
    "correcta": 0,
    "tip": "Las Fiestas Patrias de Chile se celebran el 18 y el 19 de septiembre.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-29"
   },
   {
@@ -7176,7 +7177,7 @@
    ],
    "correcta": 0,
    "tip": "Del 20 al 25 hay que avanzar 21, 22, 23, 24 y 25: son 5 días.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa17-30"
   },
   {
@@ -7190,7 +7191,7 @@
    ],
    "correcta": 2,
    "tip": "En el reloj digital, primero va la hora y después los minutos. Ocho y media es 8 horas y 30 minutos: 8:30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-1"
   },
   {
@@ -7204,7 +7205,7 @@
    ],
    "correcta": 1,
    "tip": "De las 6:00 a las 7:00 pasa una hora, y de las 7:00 a las 8:00 otra: faltan dos horas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-2"
   },
   {
@@ -7218,7 +7219,7 @@
    ],
    "correcta": 1,
    "tip": "Media hora son 30 minutos. Desde las 11:00, media hora después son las 11:30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-3"
   },
   {
@@ -7232,7 +7233,7 @@
    ],
    "correcta": 3,
    "tip": "Una hora después de las 4:00 son las 5:00. Las 4:30 sería solo media hora.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-4"
   },
   {
@@ -7246,7 +7247,7 @@
    ],
    "correcta": 0,
    "tip": "En el reloj, antes de la 1:00 vienen las 12:00. Una hora antes es retroceder de la 1 a las 12.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-5"
   },
   {
@@ -7260,7 +7261,7 @@
    ],
    "correcta": 1,
    "tip": "Media hora antes de las 9:00 es retroceder 30 minutos: las 8:30. Las 9:30 sería después.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-6"
   },
   {
@@ -7274,7 +7275,7 @@
    ],
    "correcta": 0,
    "tip": "Dos medias horas forman una hora. Desde las 7:30, media hora más completa la hora siguiente: 8:00.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-7"
   },
   {
@@ -7288,7 +7289,7 @@
    ],
    "correcta": 3,
    "tip": "Más temprano es la hora que llega primero en el día. Las 6 y media viene antes que las 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-8"
   },
   {
@@ -7302,7 +7303,7 @@
    ],
    "correcta": 0,
    "tip": "Las 3:00 llegan antes que las 3:30. Por eso Tomás, que llegó a las 3:00, fue el primero.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-9"
   },
   {
@@ -7316,7 +7317,7 @@
    ],
    "correcta": 1,
    "tip": "De las 2:00 a las 2:30 pasan 30 minutos, que es media hora. El 30 son minutos, no horas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-10"
   },
   {
@@ -7330,7 +7331,7 @@
    ],
    "correcta": 2,
    "tip": "De las 3:00 a las 4:00 el reloj avanza una hora completa.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-11"
   },
   {
@@ -7344,7 +7345,7 @@
    ],
    "correcta": 2,
    "tip": "De las 5:30 a las 6:30 la hora sube en 1 y los minutos quedan iguales: pasó una hora.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-12"
   },
   {
@@ -7358,7 +7359,7 @@
    ],
    "correcta": 2,
    "tip": "Una hora tiene 60 minutos y media hora tiene 30. Dos medias horas juntas hacen una hora.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-13"
   },
   {
@@ -7372,7 +7373,7 @@
    ],
    "correcta": 1,
    "tip": "Primero una hora: de las 3:00 a las 4:00. Después media hora más: las 4:30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-14"
   },
   {
@@ -7386,7 +7387,7 @@
    ],
    "correcta": 1,
    "tip": "Una hora más cambia solo la hora: de 5 a 6. Los 30 minutos se quedan: 6:30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-15"
   },
   {
@@ -7400,7 +7401,7 @@
    ],
    "correcta": 3,
    "tip": "30 minutos son media hora. Media hora después de las 12:30 se completa la hora, y después de las 12 viene la 1: 1:00.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-16"
   },
   {
@@ -7414,7 +7415,7 @@
    ],
    "correcta": 2,
    "tip": "De las 3:30 a las 4:00 faltan 30 minutos, o sea media hora.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-17"
   },
   {
@@ -7428,7 +7429,7 @@
    ],
    "correcta": 3,
    "tip": "Del 4 al 5 hay una hora. Como los dos marcan en punto, falta una hora completa.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-18"
   },
   {
@@ -7442,7 +7443,7 @@
    ],
    "correcta": 2,
    "tip": "Primero las 7 en punto, media hora después las 7 y media, y otra media hora después las 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-19"
   },
   {
@@ -7456,7 +7457,7 @@
    ],
    "correcta": 0,
    "tip": "Dos horas después de las 5:00 hay que avanzar dos veces una hora: 6:00 y luego 7:00.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-20"
   },
   {
@@ -7470,7 +7471,7 @@
    ],
    "correcta": 3,
    "tip": "De las 6:00 a las 7:00 pasa una hora, y de las 7:00 a las 7:30 media hora más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-21"
   },
   {
@@ -7484,7 +7485,7 @@
    ],
    "correcta": 3,
    "tip": "Justo a la mitad entre las 3 y las 4 está la media hora: las 3:30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-22"
   },
   {
@@ -7498,7 +7499,7 @@
    ],
    "correcta": 0,
    "tip": "Las 8:30 son antes de las 9:00: el almacén todavía no abre. Le falta media hora.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-23"
   },
   {
@@ -7512,7 +7513,7 @@
    ],
    "correcta": 3,
    "tip": "Hace media hora es ir 30 minutos hacia atrás: desde las 11:00 se llega a las 10:30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-24"
   },
   {
@@ -7526,7 +7527,7 @@
    ],
    "correcta": 0,
    "tip": "Después de las 4:30, el reloj llega a la siguiente hora en punto media hora más tarde: 5:00.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-25"
   },
   {
@@ -7540,7 +7541,7 @@
    ],
    "correcta": 1,
    "tip": "Una hora después de las 10:30 sube la hora de 10 a 11 y los minutos quedan en 30: 11:30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-26"
   },
   {
@@ -7554,7 +7555,7 @@
    ],
    "correcta": 2,
    "tip": "Más tarde es después. Media hora después de las 7:00 son las 7:30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-27"
   },
   {
@@ -7568,7 +7569,7 @@
    ],
    "correcta": 1,
    "tip": "Una hora antes cambia solo la hora: de 10 a 9. Los 30 minutos se quedan: 9:30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-28"
   },
   {
@@ -7582,7 +7583,7 @@
    ],
    "correcta": 0,
    "tip": "Cada media hora quiere decir cada 30 minutos. Desde las 6:00, 30 minutos después son las 6:30.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-29"
   },
   {
@@ -7596,7 +7597,7 @@
    ],
    "correcta": 3,
    "tip": "De las 6:30 a las 7:00 se completa la hora: pasan 30 minutos, o sea media hora.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa18-30"
   },
   {
@@ -7610,7 +7611,7 @@
    ],
    "correcta": 2,
    "tip": "Con la misma unidad, el que necesita más clips es el más largo. 6 clips son más que 4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-1"
   },
   {
@@ -7624,7 +7625,7 @@
    ],
    "correcta": 2,
    "tip": "La mano de Ana y el lápiz de Pedro no son del mismo largo. Si cambia la unidad, cambia el número.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-2"
   },
   {
@@ -7638,7 +7639,7 @@
    ],
    "correcta": 0,
    "tip": "Un clip grande tapa más espacio, así que se necesitan menos para cubrir el mismo largo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-3"
   },
   {
@@ -7652,7 +7653,7 @@
    ],
    "correcta": 0,
    "tip": "Los pasos del papá son más largos que los de Matías, así que le alcanzan menos pasos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-4"
   },
   {
@@ -7666,7 +7667,7 @@
    ],
    "correcta": 1,
    "tip": "Un centímetro mide igual en todas las reglas. Los pasos, las cuartas y los pies cambian según quién mida.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-5"
   },
   {
@@ -7680,7 +7681,7 @@
    ],
    "correcta": 2,
    "tip": "Un número solo no basta: 15 centímetros y 15 clips no son lo mismo. Hay que decir la unidad.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-6"
   },
   {
@@ -7694,7 +7695,7 @@
    ],
    "correcta": 3,
    "tip": "Un lápiz es corto, así que conviene una unidad chica como el centímetro. Los metros son para cosas largas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-7"
   },
   {
@@ -7708,7 +7709,7 @@
    ],
    "correcta": 3,
    "tip": "El patio es muy largo. Con centímetros o clips habría que contar demasiado; el metro es más cómodo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-8"
   },
   {
@@ -7722,7 +7723,7 @@
    ],
    "correcta": 0,
    "tip": "Un lápiz cabe en la mano: mide como 15 centímetros. 15 metros sería más largo que una sala.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-9"
   },
   {
@@ -7736,7 +7737,7 @@
    ],
    "correcta": 1,
    "tip": "Una puerta es un poco más alta que una persona adulta: mide como 2 metros. 2 centímetros es menos que un dedo.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-10"
   },
   {
@@ -7750,7 +7751,7 @@
    ],
    "correcta": 0,
    "tip": "Una goma mide más o menos lo que el ancho de dos dedos: como 4 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-11"
   },
   {
@@ -7764,7 +7765,7 @@
    ],
    "correcta": 3,
    "tip": "Un metro es como un paso largo de un adulto. Una guitarra mide más o menos eso; la hormiga y la moneda son mucho más chicas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-12"
   },
   {
@@ -7778,7 +7779,7 @@
    ],
    "correcta": 2,
    "tip": "Desde el 0 se cuentan los espacios de 1 centímetro hasta la marca: son 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-13",
    "visual": {
     "tipo": "recta",
@@ -7800,7 +7801,7 @@
    ],
    "correcta": 0,
    "tip": "Se cuentan los espacios desde el 0 hasta la marca: 1, 2, 3, 4. La goma mide 4 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-14",
    "visual": {
     "tipo": "recta",
@@ -7822,7 +7823,7 @@
    ],
    "correcta": 1,
    "tip": "El lápiz no empezó en el 0. Hay que contar los espacios del 2 al 9: 9 - 2 = 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-15"
   },
   {
@@ -7836,7 +7837,7 @@
    ],
    "correcta": 0,
    "tip": "La medida parte en el 0. Si empiezas en el 1, el objeto queda medido con un centímetro de más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-16"
   },
   {
@@ -7850,7 +7851,7 @@
    ],
    "correcta": 0,
    "tip": "Juntas se suman los dos largos: 12 + 8 = 20 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-17"
   },
   {
@@ -7864,7 +7865,7 @@
    ],
    "correcta": 3,
    "tip": "Para saber cuánto más largo es, se resta: 15 - 9 = 6 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-18"
   },
   {
@@ -7878,7 +7879,7 @@
    ],
    "correcta": 3,
    "tip": "Los dos midieron en metros, así que basta comparar los números: 2 metros es más que 1.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-19"
   },
   {
@@ -7892,7 +7893,7 @@
    ],
    "correcta": 1,
    "tip": "Dos partes iguales son dos mitades. La mitad de 20 es 10, porque 10 + 10 = 20.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-20"
   },
   {
@@ -7906,7 +7907,7 @@
    ],
    "correcta": 3,
    "tip": "El más corto es el que mide menos centímetros. De 10, 14 y 8, el menor es 8.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-21"
   },
   {
@@ -7920,7 +7921,7 @@
    ],
    "correcta": 0,
    "tip": "Son tres lápices de 5 centímetros: 5 + 5 + 5 = 15 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-22"
   },
   {
@@ -7934,7 +7935,7 @@
    ],
    "correcta": 0,
    "tip": "Aunque los dos dicen 1, el metro es una unidad mucho más larga: en un metro caben muchos centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-23"
   },
   {
@@ -7948,7 +7949,7 @@
    ],
    "correcta": 1,
    "tip": "La huincha es larga y está marcada en metros. La regla es muy corta, y la balanza y el reloj no miden largos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-24"
   },
   {
@@ -7962,7 +7963,7 @@
    ],
    "correcta": 0,
    "tip": "Dos clips de 3 centímetros: 3 + 3 = 6 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-25"
   },
   {
@@ -7976,7 +7977,7 @@
    ],
    "correcta": 1,
    "tip": "Se resta para comparar: 80 - 50 = 30 centímetros. Sumar daría el alto de las dos juntas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-26"
   },
   {
@@ -7990,7 +7991,7 @@
    ],
    "correcta": 3,
    "tip": "Ir son 30 metros y volver otros 30: 30 + 30 = 60 metros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-27"
   },
   {
@@ -8004,7 +8005,7 @@
    ],
    "correcta": 1,
    "tip": "Si crece, su largo aumenta: 3 + 2 = 5 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-28"
   },
   {
@@ -8018,7 +8019,7 @@
    ],
    "correcta": 3,
    "tip": "Al cortar un trozo, el largo disminuye: 50 - 20 = 30 centímetros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-29"
   },
   {
@@ -8032,7 +8033,7 @@
    ],
    "correcta": 3,
    "tip": "La unidad es lo que se repite para medir. Camila repitió una goma 6 veces, así que su unidad fue la goma.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa19-30"
   },
   {
@@ -8046,7 +8047,7 @@
    ],
    "correcta": 0,
    "tip": "Una moneda tiene dos lados: en cada lanzamiento sale uno, cara o sello, nunca los dos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-1"
   },
   {
@@ -8060,7 +8061,7 @@
    ],
    "correcta": 1,
    "tip": "Un dado tiene seis caras, con los números del 1 al 6. Puede salir cualquiera de ellos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-2"
   },
   {
@@ -8074,7 +8075,7 @@
    ],
    "correcta": 0,
    "tip": "Un grupo vale 5 y se le suman los sueltos: 5 y 2 más son 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-3"
   },
   {
@@ -8088,7 +8089,7 @@
    ],
    "correcta": 0,
    "tip": "Dos grupos de 5 son 10, y con 4 sueltos más llegas a 14.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-4"
   },
   {
@@ -8102,7 +8103,7 @@
    ],
    "correcta": 3,
    "tip": "El quinto palito se dibuja cruzado sobre los otros cuatro: así cada grupo vale 5 y se cuenta rápido.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-5"
   },
   {
@@ -8116,7 +8117,7 @@
    ],
    "correcta": 0,
    "tip": "Cada resultado se anota en su propia fila: si salió 4, el palito va junto al 4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-6"
   },
   {
@@ -8130,7 +8131,7 @@
    ],
    "correcta": 2,
    "tip": "Cada lanzamiento deja un palito, salga cara o sello. Diez lanzamientos son diez palitos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-7"
   },
   {
@@ -8144,7 +8145,7 @@
    ],
    "correcta": 3,
    "tip": "Cada bloque es una vez que salió. La torre más alta muestra lo que salió más veces.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-8"
   },
   {
@@ -8158,7 +8159,7 @@
    ],
    "correcta": 0,
    "tip": "Hay un bloque por cada lanzamiento, así que se juntan las dos torres: 6 y 4 son 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-9"
   },
   {
@@ -8172,7 +8173,7 @@
    ],
    "correcta": 3,
    "tip": "Para saber qué número sale más hay que lanzar muchas veces y anotar. Las otras se responden mirando o preguntando.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-10"
   },
   {
@@ -8186,7 +8187,7 @@
    ],
    "correcta": 2,
    "tip": "Para responder con datos hay que lanzar la moneda varias veces y anotar cada resultado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-11"
   },
   {
@@ -8200,7 +8201,7 @@
    ],
    "correcta": 2,
    "tip": "Sin anotar, los resultados se olvidan. Por eso se registran en una tabla mientras se juega.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-12"
   },
   {
@@ -8214,7 +8215,7 @@
    ],
    "correcta": 2,
    "tip": "En este pictograma cada estrella es una vez que salió. Cara tiene más estrellas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-13"
   },
   {
@@ -8228,7 +8229,7 @@
    ],
    "correcta": 0,
    "tip": "Se cuenta solo cara: primera, tercera y cuarta vez. Son 3 caras de 4 lanzamientos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-14"
   },
   {
@@ -8242,7 +8243,7 @@
    ],
    "correcta": 3,
    "tip": "Sello salió 3 veces y cara 2 veces. Gana el que tiene más marcas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-15"
   },
   {
@@ -8256,7 +8257,7 @@
    ],
    "correcta": 1,
    "tip": "Menos palitos significa menos veces. El 3 tiene 4 palitos y el 5 tiene 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-16"
   },
   {
@@ -8270,7 +8271,7 @@
    ],
    "correcta": 1,
    "tip": "Si dos filas tienen la misma cantidad de palitos, esos números salieron las mismas veces.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-17"
   },
   {
@@ -8284,7 +8285,7 @@
    ],
    "correcta": 1,
    "tip": "Con grupos de 5 se cuenta de cinco en cinco y es más difícil equivocarse.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-18"
   },
   {
@@ -8298,7 +8299,7 @@
    ],
    "correcta": 3,
    "tip": "La tabla lleva una fila por cada número que puede salir: del 1 al 6 son 6 filas.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-19"
   },
   {
@@ -8312,7 +8313,7 @@
    ],
    "correcta": 1,
    "tip": "Para saber cuántas más, se compara restando: 8 menos 5 es 3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-20"
   },
   {
@@ -8326,7 +8327,7 @@
    ],
    "correcta": 0,
    "tip": "En una tabla de conteo se arman grupos de 5: con 9 marcas queda un grupo y sobran 4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-21"
   },
   {
@@ -8340,7 +8341,7 @@
    ],
    "correcta": 1,
    "tip": "Cada bloque es una vez que salió ese número. La torre más alta es la que juntó más veces.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-22"
   },
   {
@@ -8354,7 +8355,7 @@
    ],
    "correcta": 3,
    "tip": "Cada marca es un lanzamiento, así que se juntan las dos: 7 y 8 son 15.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-23"
   },
   {
@@ -8368,7 +8369,7 @@
    ],
    "correcta": 0,
    "tip": "Cada vez que sale un número se le agrega un palito: 3 y uno más son 4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-24"
   },
   {
@@ -8382,7 +8383,7 @@
    ],
    "correcta": 1,
    "tip": "Un palito por lanzamiento, sin importar el número que salga. Doce lanzamientos son 12 palitos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-25"
   },
   {
@@ -8396,7 +8397,7 @@
    ],
    "correcta": 1,
    "tip": "En un juego de dados interesa qué número sale, para después ver cuál sale más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-26"
   },
   {
@@ -8410,7 +8411,7 @@
    ],
    "correcta": 0,
    "tip": "Cada grupo vale 5: 5, 10, 15. Tres grupos de 5 son 15.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-27"
   },
   {
@@ -8424,7 +8425,7 @@
    ],
    "correcta": 1,
    "tip": "Con un lanzamiento no se sabe nada: el dado es al azar. Con muchos datos se ve cuál sale más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-28"
   },
   {
@@ -8438,7 +8439,7 @@
    ],
    "correcta": 1,
    "tip": "Aquí cada dibujo vale uno: 4 dibujos son 4 veces. El 6 es el número del dado, no la cantidad.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-29"
   },
   {
@@ -8452,7 +8453,7 @@
    ],
    "correcta": 3,
    "tip": "Para comparar las torres se resta: 4 bloques menos 2 bloques son 2 más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa20-30"
   },
   {
@@ -8466,7 +8467,7 @@
    ],
    "correcta": 2,
    "tip": "La barra sube hasta la cantidad de veces que salió: 7 veces, hasta el 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-1"
   },
   {
@@ -8480,7 +8481,7 @@
    ],
    "correcta": 1,
    "tip": "Bajo la barra va el número del dado, el 5. La altura es cuántas veces salió: 4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-2"
   },
   {
@@ -8494,7 +8495,7 @@
    ],
    "correcta": 0,
    "tip": "Una moneda solo da cara o sello, así que el gráfico lleva dos barras.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-3"
   },
   {
@@ -8508,7 +8509,7 @@
    ],
    "correcta": 3,
    "tip": "Bajo cada barra se escribe lo que salió, del 1 al 6. La altura dice cuántas veces.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-4"
   },
   {
@@ -8522,7 +8523,7 @@
    ],
    "correcta": 2,
    "tip": "Se busca la barra más alta, aunque su número no sea el mayor del dado.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-5",
    "visual": {
     "tipo": "barras",
@@ -8555,7 +8556,7 @@
    ],
    "correcta": 3,
    "tip": "Se busca la barra más baja de todas. Mirar solo el número del dado no sirve.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-6",
    "visual": {
     "tipo": "barras",
@@ -8588,7 +8589,7 @@
    ],
    "correcta": 2,
    "tip": "Para comparar dos barras se restan sus alturas: 9 menos 6 es 3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-7",
    "visual": {
     "tipo": "barras",
@@ -8613,7 +8614,7 @@
    ],
    "correcta": 3,
    "tip": "Si salieron las mismas veces, las dos barras suben hasta el mismo número.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-8"
   },
   {
@@ -8627,7 +8628,7 @@
    ],
    "correcta": 3,
    "tip": "Las 10 veces se reparten entre cara y sello: 10 menos 6 son 4 sellos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-9"
   },
   {
@@ -8641,7 +8642,7 @@
    ],
    "correcta": 0,
    "tip": "La barra crece una vez por cada vez que sale. Si no salió nunca, no sube nada.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-10"
   },
   {
@@ -8655,7 +8656,7 @@
    ],
    "correcta": 3,
    "tip": "En la tabla se anota cuántas veces salió el 5, y salió 3 veces. El 6 es el total de lanzamientos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-11"
   },
   {
@@ -8669,7 +8670,7 @@
    ],
    "correcta": 1,
    "tip": "La barra más alta es la del resultado que salió más veces: sello, con 9.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-12"
   },
   {
@@ -8683,7 +8684,7 @@
    ],
    "correcta": 0,
    "tip": "Bajo la barra va lo que salió, el 6. El 5 no se escribe abajo: es la altura de la barra.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-13"
   },
   {
@@ -8697,7 +8698,7 @@
    ],
    "correcta": 3,
    "tip": "Cada lanzamiento sumó a una barra, así que se juntan las dos: 7 y 5 son 12.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-14",
    "visual": {
     "tipo": "barras",
@@ -8722,7 +8723,7 @@
    ],
    "correcta": 0,
    "tip": "Se suman todas las barras: 2, 3, 1, 4, 2 y 3 dan 15. Hay 6 barras, pero no 6 lanzamientos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-15",
    "visual": {
     "tipo": "barras",
@@ -8755,7 +8756,7 @@
    ],
    "correcta": 1,
    "tip": "Un dado común tiene caras del 1 al 6. El 7 nunca sale, así que no tiene barra.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-16"
   },
   {
@@ -8769,7 +8770,7 @@
    ],
    "correcta": 1,
    "tip": "Primero se juega y se anota en una tabla. Con esos datos se dibujan las barras.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-17"
   },
   {
@@ -8783,7 +8784,7 @@
    ],
    "correcta": 0,
    "tip": "Dos barras de la misma altura muestran que esos números salieron las mismas veces.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-18",
    "visual": {
     "tipo": "barras",
@@ -8816,7 +8817,7 @@
    ],
    "correcta": 1,
    "tip": "Cada cuadro pintado es una vez. El 4 es el número del dado, no las veces que salió.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-19"
   },
   {
@@ -8830,7 +8831,7 @@
    ],
    "correcta": 1,
    "tip": "Cada vez que sale sello se pinta un cuadro más: 6 y uno más son 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-20"
   },
   {
@@ -8844,7 +8845,7 @@
    ],
    "correcta": 2,
    "tip": "Se comparan las dos barras: la de sello llega más arriba.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-21",
    "visual": {
     "tipo": "barras",
@@ -8869,7 +8870,7 @@
    ],
    "correcta": 3,
    "tip": "La altura cuenta las veces que salió, no el valor del número. Por eso cualquier barra puede ser la más alta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-22"
   },
   {
@@ -8883,7 +8884,7 @@
    ],
    "correcta": 2,
    "tip": "El 3 salió dos veces, así que su barra sube hasta el 2. Las demás quedan sin altura.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-23"
   },
   {
@@ -8897,7 +8898,7 @@
    ],
    "correcta": 3,
    "tip": "Cada lanzamiento está en una de las dos barras, así que juntas suman los 20.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-24"
   },
   {
@@ -8911,7 +8912,7 @@
    ],
    "correcta": 2,
    "tip": "Una tabla ordena los resultados por número y deja contarlos después sin olvidar ninguno.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-25"
   },
   {
@@ -8925,7 +8926,7 @@
    ],
    "correcta": 0,
    "tip": "La barra del 2 llega a 6 y la del 1 a 2. Se restan: 6 menos 2 es 4.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-26",
    "visual": {
     "tipo": "barras",
@@ -8958,7 +8959,7 @@
    ],
    "correcta": 2,
    "tip": "Seis barras son seis resultados posibles: las caras de un dado, del 1 al 6.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-27"
   },
   {
@@ -8972,7 +8973,7 @@
    ],
    "correcta": 0,
    "tip": "La barra tiene que llegar justo a las veces que salió. Como salió 3 veces, se baja hasta el 3.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-28"
   },
   {
@@ -8986,7 +8987,7 @@
    ],
    "correcta": 2,
    "tip": "En cada lanzamiento sale cara o sello, uno solo: crece solo esa barra.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-29"
   },
   {
@@ -9000,7 +9001,7 @@
    ],
    "correcta": 0,
    "tip": "Se comparan las alturas restando: 8 menos 3 es 5. Sello salió 5 veces más que cara.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa21-30"
   },
   {
@@ -9014,7 +9015,7 @@
    ],
    "correcta": 2,
    "tip": "Cada dibujo vale 2, así que se cuenta de 2 en 2: 2, 4, 6, 8, 10, 12.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-1"
   },
   {
@@ -9028,7 +9029,7 @@
    ],
    "correcta": 3,
    "tip": "Se cuenta de 5 en 5 siete veces: 5, 10, 15, 20, 25, 30, 35.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-2"
   },
   {
@@ -9042,7 +9043,7 @@
    ],
    "correcta": 0,
    "tip": "Cada dibujo vale 10: 10, 20, 30, 40, 50. No se cuentan solo los dibujos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-3"
   },
   {
@@ -9056,7 +9057,7 @@
    ],
    "correcta": 1,
    "tip": "Hay que ver cuántos grupos de 2 caben en 10: 2, 4, 6, 8, 10 son 5 dibujos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-4"
   },
   {
@@ -9070,7 +9071,7 @@
    ],
    "correcta": 3,
    "tip": "Se cuenta de 5 en 5 hasta 25: 5, 10, 15, 20, 25. Son 5 dibujos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-5"
   },
   {
@@ -9084,7 +9085,7 @@
    ],
    "correcta": 0,
    "tip": "De 10 en 10 hasta 40: 10, 20, 30, 40. Son 4 dibujos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-6"
   },
   {
@@ -9098,7 +9099,7 @@
    ],
    "correcta": 1,
    "tip": "Si el dibujo entero vale 2, la mitad del dibujo vale la mitad: 1 pan.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-7"
   },
   {
@@ -9112,7 +9113,7 @@
    ],
    "correcta": 2,
    "tip": "Ana tiene 2 estrellas más, y cada una vale 2: son 4 puntos más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-8"
   },
   {
@@ -9126,7 +9127,7 @@
    ],
    "correcta": 0,
    "tip": "La escala dice cuánto vale cada dibujo. Si vale 5, se cuenta 5, 10, 15 y así.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-9"
   },
   {
@@ -9140,7 +9141,7 @@
    ],
    "correcta": 3,
    "tip": "Cada dibujo vale 2 gatos: 2, 4, 6, 8. Con 4 dibujos se completan los 8 gatos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-10"
   },
   {
@@ -9154,7 +9155,7 @@
    ],
    "correcta": 1,
    "tip": "Entre los dos hay 8 dibujos, y cada uno vale 10: son 80 discos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-11"
   },
   {
@@ -9168,7 +9169,7 @@
    ],
    "correcta": 2,
    "tip": "Para comparar dos barras se resta la más baja de la más alta: 9 menos 4 es 5.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-12"
   },
   {
@@ -9182,7 +9183,7 @@
    ],
    "correcta": 0,
    "tip": "El más elegido es el de la barra más alta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-13",
    "visual": {
     "tipo": "barras",
@@ -9211,7 +9212,7 @@
    ],
    "correcta": 2,
    "tip": "El menos elegido es el de la barra más baja.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-14",
    "visual": {
     "tipo": "barras",
@@ -9240,7 +9241,7 @@
    ],
    "correcta": 3,
    "tip": "Dos barras que llegan a la misma altura tienen los mismos votos: 7 y 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-15",
    "visual": {
     "tipo": "barras",
@@ -9269,7 +9270,7 @@
    ],
    "correcta": 0,
    "tip": "Cada niño está en una barra, así que se suman todas: 8, 5 y 6 dan 19.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-16",
    "visual": {
     "tipo": "barras",
@@ -9296,7 +9297,7 @@
    ],
    "correcta": 0,
    "tip": "La altura de la barra dice cuántos hay de esa categoría: 7 gatos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-17"
   },
   {
@@ -9310,7 +9311,7 @@
    ],
    "correcta": 1,
    "tip": "Se cuenta de 2 en 2 hasta 14: son 7 saltos, o sea 7 dibujos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-18"
   },
   {
@@ -9324,7 +9325,7 @@
    ],
    "correcta": 0,
    "tip": "Si todos los dibujos valen lo mismo, la fila con más dibujos es la que tiene más.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-19"
   },
   {
@@ -9338,7 +9339,7 @@
    ],
    "correcta": 0,
    "tip": "Una barra más baja quiere decir una cantidad menor que la de los otros días.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-20"
   },
   {
@@ -9352,7 +9353,7 @@
    ],
    "correcta": 0,
    "tip": "Cuatro veces 5: 5, 10, 15, 20. No basta con contar los dibujos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-21"
   },
   {
@@ -9366,7 +9367,7 @@
    ],
    "correcta": 1,
    "tip": "El martes tiene 4 dibujos menos, y cada uno vale 10: son 40 autos menos.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-22"
   },
   {
@@ -9380,7 +9381,7 @@
    ],
    "correcta": 1,
    "tip": "Hay 7 dibujos en total, y cada uno vale 2: son 14 libros.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-23"
   },
   {
@@ -9394,7 +9395,7 @@
    ],
    "correcta": 0,
    "tip": "Diez galletas repartidas en 5 dibujos: cada dibujo vale 2, porque 2, 4, 6, 8, 10.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-24"
   },
   {
@@ -9408,7 +9409,7 @@
    ],
    "correcta": 3,
    "tip": "El día con más ventas es el de la barra más alta.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-25",
    "visual": {
     "tipo": "barras",
@@ -9437,7 +9438,7 @@
    ],
    "correcta": 1,
    "tip": "Se restan las dos barras: 15 menos 8 es 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-26",
    "visual": {
     "tipo": "barras",
@@ -9466,7 +9467,7 @@
    ],
    "correcta": 3,
    "tip": "Los dos ordenan datos para leerlos rápido. Uno usa dibujos y el otro barras.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-27"
   },
   {
@@ -9480,7 +9481,7 @@
    ],
    "correcta": 0,
    "tip": "Cinco dibujos que valen 5 cada uno: 5, 10, 15, 20, 25.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-28"
   },
   {
@@ -9494,7 +9495,7 @@
    ],
    "correcta": 1,
    "tip": "Menos votos es una barra más baja: rojo tuvo 4 y azul 7.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-29"
   },
   {
@@ -9508,7 +9509,7 @@
    ],
    "correcta": 3,
    "tip": "Hay 10 dibujos, y cada uno vale 2: se cuenta de 2 en 2 hasta 20.",
-   "revisada": false,
+   "revisada": true,
    "id": "mate2-oa22-30"
   }
  ]

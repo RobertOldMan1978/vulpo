@@ -177,16 +177,16 @@ están hoy en una expedición jugable, el resto es reserva.
 >
 > 🟡 **2° básico, el séptimo curso, está EN CONSTRUCCIÓN (Sesión 139, 04-05/11/2026) y NO se
 > anuncia.** Tiene banco (**2.466 preguntas + 35 lecciones**, leídas una por una por agentes y
-> **sin firmar todavía**: la foto "17.000 de 17.000" de arriba ya no es la cola completa), reparto
-> aprobado y fork `2do/index.html` jugable en `vulpo.cl/2do/` **sin enlazar**. Le faltan la firma
-> de Roberto, la voz (va directo a R2) y aplicar el nivel 02 del esquema; el arte ya está (05/11). Detalle y orden
+> **firmadas por Roberto el 06/11**), reparto aprobado, arte propio y fork `2do/index.html` jugable
+> en `vulpo.cl/2do/` **sin enlazar**. Le faltan la voz (va directo a R2) y aplicar el nivel 02 del
+> esquema. Con 1° y 2° el banco firmado es **21.617 de 21.617** (43 bancos). Detalle y orden
 > en `pendiente.md`.
 >
 > 🟡 **1° básico, el octavo curso, está EN CONSTRUCCIÓN (Sesión 140, 05/11/2026) y tampoco se
-> anuncia.** Banco de **2.151 preguntas + 33 lecciones** leído pregunta por pregunta y **sin
-> firmar**, reparto **aprobado** y fork `1ro/index.html` jugable en `vulpo.cl/1ro/` **sin enlazar**,
-> con la voz que **lee sola** (`LEE_SOLO`). Le falta lo mismo que a 2°: firma, voz y el nivel 01
-> del esquema (el arte ya está, 05/11).
+> anuncia.** Banco de **2.151 preguntas + 33 lecciones** leído pregunta por pregunta y **firmado
+> (06/11)**, reparto **aprobado**, arte propio y fork `1ro/index.html` jugable en `vulpo.cl/1ro/`
+> **sin enlazar**, con la voz que **lee sola** (`LEE_SOLO`). Le falta lo mismo que a 2°: la voz y
+> el nivel 01 del esquema.
 
 > ✅ **VULPO se anuncia desde 3° a 8° básico, los SEIS cursos (06/09/2026), decisión de
 > Roberto.** La landing (`index.html`) enlaza los **seis cursos jugables** —3°, 4°, 5°, 6°, 7° y
@@ -14628,6 +14628,21 @@ Comprobado que los ocho forks declaran esa ruta.
 - **Regresión:** los ocho cursos arrancan con el motor vivo, `LECC` activo y JUGADOR navegando.
   **Cero errores de consola y cero fallos de red.**
 
-- **Pendiente de Roberto (1° y 2°):** aprobar bancos y lecciones en el tablero, autorizar la voz y
-  aplicar el esquema al publicar. **De arrastre:** la app a Play y sacar los MP3 de 3° y 4° del repo
+#### Cierre (06/11) — el despliegue atascado y la firma de 1° y 2°
+- ⚠️ **GitHub Pages no publicó el commit en cuatro intentos** (relanzar el paso, rearmar y pedir
+  una compilación nueva): el paso `deploy` se quedaba en `syncing_files` hasta agotar sus 10
+  minutos, con la página de estado de GitHub diciendo que todo operaba. **El sitio no se cayó**:
+  siguió sirviendo la versión anterior. El paquete pesaba **594 MB, solo 10 MB más que el del día
+  anterior**, así que no era el tamaño; unas horas después, una compilación nueva pedida con
+  `gh api -X POST repos/RobertOldMan1978/vulpo/pages/builds` salió al primer intento. Ante ese
+  síntoma, **esperar y pedir una compilación nueva**, no tocar el repositorio.
+- **Verificado en `vulpo.cl` en los ocho cursos:** el Jefe Final de Matemática abre con su villano
+  y sin la alerta, el arte nuevo carga, JUGADOR navega, cero errores.
+- **Roberto firmó 1° y 2° completos:** 2.151 + 33 lecciones y 2.466 + 35 lecciones. El diff fue de
+  marcas y contadores, sin reformateo, y el tablero se comprobó con su control positivo (desmarcar
+  una pregunta y una lección, que las detecte, y restaurar). **El banco queda en 21.617 de 21.617
+  en 43 bancos, y 301 de 301 lecciones.**
+
+- **Pendiente (1° y 2°):** la voz —autorizada por Roberto el 06/11, va directo a R2— y aplicar el
+  esquema al publicar. **De arrastre:** la app a Play y sacar los MP3 de 3° y 4° del repo
   (esperan a 1°), la prueba cerrada de Google Play e INAPI.
