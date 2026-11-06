@@ -2572,10 +2572,27 @@ $('btnODExit').onclick=()=>{SND.tap();abrirDueloOnline();};
 /* Botón de silencio */
 (function(){const b=$('sndBtn');if(!b)return;const upd=()=>b.textContent=SND.on?'🔊':'🔇';upd();
  b.onclick=()=>{SND.on=!SND.on;localStorage.setItem('kimun_sound',SND.on?'on':'off');upd();if(SND.on){SND.init();SND.tap();}};})();
-/* Botón de música (independiente de los efectos) */
+/* Botón de música (independiente de los efectos). Cada toque cambia de NIVEL: alto, medio,
+   bajo, apagado y de vuelta a alto (pedido de Roberto, 06/11/2026: la música tapaba la voz).
+   Medio vale 0.4, el volumen que la música tenía de fábrica, así que quien nunca lo tocó no
+   nota nada. Tres barritas bajo el 🎵 dicen el nivel, porque un niño no lee el title. El nivel
+   se deduce de MUSIC.vol (el más cercano), así que un volumen guardado antes también calza.
+   Mientras habla la voz, assets/js/voz.js baja la música a un cuarto DEL NIVEL ELEGIDO. */
 (function(){const b=$('musBtn');if(!b)return;
- const upd=()=>{b.textContent='🎵';b.style.opacity=MUSIC.on?'1':'.4';b.title=MUSIC.on?'Música: activada':'Música: silenciada';};upd();
- b.onclick=()=>{SND.init();MUSIC.setOn(!MUSIC.on);upd();};})();
+ const NIV=[{n:'alto',v:0.7,b:3},{n:'medio',v:0.4,b:2},{n:'bajo',v:0.15,b:1}];
+ const actual=()=>{ if(!MUSIC.on) return -1; let k=0,d=9;
+  NIV.forEach((x,i)=>{const e=Math.abs(x.v-MUSIC.vol); if(e<d){d=e;k=i;}}); return k; };
+ const upd=()=>{const k=actual(), on=k<0?0:NIV[k].b;
+  b.innerHTML='<span style="position:relative;top:-5px">🎵</span><span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:5px;display:flex;gap:2px;justify-content:center;align-items:flex-end">'+
+   [1,2,3].map(i=>'<i style="display:block;width:4px;height:'+(1+i*2)+'px;border-radius:1px;background:'+(i<=on?'var(--gold)':'#ffffff33')+'"></i>').join('')+'</span>';
+  b.style.opacity=k<0?'.4':'1';
+  b.title=k<0?'Música: apagada':'Música: volumen '+NIV[k].n; b.setAttribute('aria-label',b.title);};
+ upd();
+ b.onclick=()=>{SND.init(); const k=actual();
+  if(k<0){ MUSIC.setVol(NIV[0].v); MUSIC.setOn(true); }
+  else if(k===NIV.length-1){ MUSIC.setOn(false); }
+  else { MUSIC.setVol(NIV[k+1].v); }
+  upd();};})();
 /* Créditos */
 /* Informe para el apoderado. La pantalla la inyecta motor.js; aqui solo se cablea el
    boton del inicio. Con guard: si el enlace no esta, no se mata el arranque. */

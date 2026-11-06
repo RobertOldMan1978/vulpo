@@ -212,6 +212,34 @@ function leerSegmentosEnVoz(segmentos, elementos){
  speechSynthesis.speak(u);
 }
 
+/* MIENTRAS HABLA LA VOZ, LA MÚSICA BAJA (06/11/2026). Pedido de Roberto jugando 1°: con la voz
+   leyendo una mini-clase, la música de fondo tapaba lo que se decía, y en 1° la voz lee SOLA.
+   Se resuelve aquí y no en los ocho forks porque este módulo es el único que sabe si se está
+   hablando. En vez de engancharse a cada camino de lectura (pregunta, segmentos, texto suelto,
+   respaldo del navegador) se MIRA el estado cada 60 ms: si suena un clip o habla el navegador,
+   la música va a un cuarto de su volumen; al callar espera 0,8 s —las pausas entre la pregunta
+   y cada opción no deben hacerla subir y bajar— y vuelve. El cambio es en escalones de 0,05,
+   así que se oye como un fundido y no como un corte.
+   ⚠️ La base es MUSIC.vol, la preferencia guardada, y nunca se escribe: solo se mueve
+   MUSIC.el.volume, así que bajar la música no le cambia al niño su ajuste. MUSIC es un `const`
+   del fork y se lee con typeof: en una página sin música (el panel) esto no hace nada. */
+(function(){
+ var FACTOR=0.25, ESPERA=800, PASO=0.05, ultimaVoz=0;
+ function hablando(){
+  try{ if(_AUDIO && !_AUDIO.paused && !_AUDIO.ended) return true; }catch(e){}
+  try{ return !!(window.speechSynthesis && speechSynthesis.speaking); }catch(e){ return false; }
+ }
+ setInterval(function(){
+  if(typeof MUSIC==='undefined' || !MUSIC || !MUSIC.el) return;
+  var ahora=Date.now();
+  if(hablando()) ultimaVoz=ahora;
+  var meta=(ahora-ultimaVoz<ESPERA) ? MUSIC.vol*FACTOR : MUSIC.vol;
+  var v=MUSIC.el.volume;
+  if(Math.abs(v-meta)<=PASO) { if(v!==meta) MUSIC.el.volume=meta; }
+  else MUSIC.el.volume = v + (meta>v ? PASO : -PASO);
+ },60);
+})();
+
 /* Los 🔊 de la meta y del resultado se cablean UNA vez y leen el texto en el momento
    del clic, no al cablear: el titular del resultado lo pintan tres caminos distintos
    (etapa aprobada, reprobada y refuerzo), y así ninguno tiene que acordarse de la voz. */

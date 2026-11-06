@@ -14706,6 +14706,20 @@ la guía sí están por otro camino (causa y efecto, evidencia, punto de vista, 
 La landing, `/colegio` y la app, mirados a 390 y 1280 px, sin desborde; las muestras nuevas abren en
 modo prueba; cero errores de consola y de red.
 
+#### La música tapaba la voz: baja sola, y el 🎵 pasa a tener niveles
+Roberto lo notó jugando la mini-clase de 1°: *"la música suena muy fuerte"*. Dos cambios:
+- **La música baja mientras habla la voz** (`assets/js/voz.js`, sin tocar los forks). En vez de
+  engancharse a cada camino de lectura, un vigilante mira cada 60 ms si suena un clip o habla el
+  navegador: la música va a **un cuarto del nivel elegido** en un fundido de menos de medio segundo,
+  y al callar espera 0,8 s —para no subir y bajar entre la pregunta y cada opción— antes de volver.
+  ⚠️ Solo mueve `MUSIC.el.volume`; **la preferencia guardada (`MUSIC.vol`) nunca se escribe**.
+  Medido: 40% → 10% durante la voz → 40% al callar.
+- **El 🎵 cambia de nivel con cada toque:** medio → bajo → apagado → alto (70 / 40 / 15 %), con tres
+  barritas doradas que muestran el nivel —un niño no lee el `title`—. **Medio es el 40% de fábrica**,
+  así que quien nunca lo tocó no nota nada; el nivel se deduce del volumen guardado, así que una
+  preferencia anterior también calza. Igual en los ocho forks.
+  ⚠️ **Las barritas pisaban la nota y solo se vio mirando la captura**: el emoji sube 5 px.
+
 - **Lo que sigue:** la **app nueva a Play**, una sola compilación con 1° y 2° y el origen nuevo de la
   voz; después **sacar los MP3 de 3° y 4° del repo**, que esperaba esa compilación. De arrastre: la
   prueba cerrada de Google Play e INAPI.
