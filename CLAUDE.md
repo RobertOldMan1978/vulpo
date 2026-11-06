@@ -14720,6 +14720,14 @@ Roberto lo notó jugando la mini-clase de 1°: *"la música suena muy fuerte"*. 
   preferencia anterior también calza. Igual en los ocho forks.
   ⚠️ **Las barritas pisaban la nota y solo se vio mirando la captura**: el emoji sube 5 px.
 
+#### La voz sin conexión faltaba en 4°, y ahora llega también a 1° y 2°
+Al preparar la compilación de la app apareció que **solo 3° cargaba `assets/js/voz-descarga.js`**, la
+pieza que baja la voz al teléfono para usarla sin internet. **4° nunca la tuvo** —un descuido del
+fork, no una decisión: en la Sesión 122 Roberto decidió voz de Catalina también offline, curso por
+curso— y 1° y 2° la heredaron de 4°. En la app igual sonaban, pidiendo los clips en línea a R2, pero
+**sin conexión caían a la voz robótica del teléfono**. Ahora 4°, 1° y 2° la cargan y la inician como
+3°. En la web no hace nada: verificado que los cuatro arrancan y navegan sin errores.
+
 - **Lo que sigue:** la **app nueva a Play**, una sola compilación con 1° y 2° y el origen nuevo de la
   voz; después **sacar los MP3 de 3° y 4° del repo**, que esperaba esa compilación. De arrastre: la
   prueba cerrada de Google Play e INAPI.
