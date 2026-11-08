@@ -1695,6 +1695,7 @@ const DEMO_LIBRE='hist6-cap1';          // lo único jugable sin código, cuando
 const CAMPAÑAS=[
 {
   id:'mate6', asignatura:'Matemáticas', portada:'assets/portada-matematicas.png',
+  sinfin:true,   // ofrece el Reto Sin Fin (assets/js/calculo.js)
   intro:'De los múltiplos y las razones a los datos y las probabilidades: el año completo de Matemática de 6°.',
   esLecciones:true,
   capitulosMate:[
@@ -2484,11 +2485,116 @@ async function cargarPendientes(){
    del nivel, y genera las operaciones con genCalculo saltándose el banco propio. Estaba
    pasando de verdad en 7° (Sesión 63). */
 const HAY_RETO_CALCULO=false;
-/* ¿Este nivel tiene el Reto Sin Fin de cálculo? 6° NO lo tiene todavía: es contenido
-   pendiente, no un olvido (igual que las mini-clases, más abajo). El motor compartido
-   (assets/js/calculo.js) queda cargado con su respaldo vacío, como en 8°, que tampoco
-   llama a CALC.init porque allá el cálculo mental ya es el Reto de Cálculo completo. */
-const HAY_SINFIN=false;
+/* Operaciones del Reto Sin Fin de 6°. Del temario del año: orden de las cuatro operaciones
+   (MA06 OA02), porcentajes simples (OA04), mínimo común múltiplo (OA01), fracciones con distinto
+   denominador (OA06), decimales por y entre un natural de un dígito y por 10 o 100 (OA07) y
+   ecuaciones de primer grado (OA11).
+   ⚠️ Reglas: sin negativos, sin la letra x como incógnita (convención de 6°: se usa ▢),
+   decimales en su forma más corta, y fracciones SIEMPRE simplificadas y comparadas por VALOR:
+   con distinto denominador, `1/2` y `2/4` serían dos respuestas correctas. */
+function genCalc6(dif){
+ const ri=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+ const dec=x=>String(Math.round(x*1000)/1000).replace('.',',');
+ const mcd=(a,b)=>b?mcd(b,a%b):a;
+ const fr=(n,d)=>{ const g=mcd(n,d); n/=g; d/=g; return d===1?String(n):n+'/'+d; };
+ function armar(r, cands, rellenar){
+  const vistos=new Set([String(r)]), ops=[String(r)];
+  for(const c of cands){ const s=String(c);
+   if(!vistos.has(s)){ vistos.add(s); ops.push(s); if(ops.length===4) return {ops, ok:0}; } }
+  let i=1;
+  while(ops.length<4 && i<60){ for(const s of [rellenar(i), rellenar(-i)]){
+    const k=String(s); if(!vistos.has(k)){ vistos.add(k); ops.push(k); if(ops.length===4)break; } } i++; }
+  return {ops, ok:0};
+ }
+ const TIPOS={1:['pct','orden'], 2:['mcm','orden'], 3:['frac','pct'],
+              4:['decm','frac'], 5:['ecu','decm','frac','mcm','orden']};
+ const lista=TIPOS[Math.min(5,Math.max(1,dif))];
+ const tipo=lista[ri(0,lista.length-1)];
+
+ if(tipo==='pct'){                                    // MA06 OA04 · 10%, 25%, 50%, 20%
+  const p=[10,20,25,50][ri(0,3)], base=(100/p)*ri(2,dif<=1?9:24), r=base*p/100;
+  // confundir el porcentaje con restar, con dividir por el número del porcentaje, o correr la coma
+  const o=armar(r,[base-p,base/p,r*10,r*2].filter(v=>v>0&&Number.isInteger(v)),k=>r+k>0?r+k:r+30+k);
+  return {q:p+'% de '+base, ops:o.ops, ok:o.ok};
+ }
+ if(tipo==='orden'){                                  // MA06 OA02 · orden de las operaciones
+  const b=ri(2,9), c=ri(2,9), a=ri(10,40);
+  if(ri(0,1)===0){
+   const q=b*c, r=a-q>0?a-q:a+q, op=a-q>0?' − ':' + ';
+   const izq=op===' − '?(a-b)*c:(a+b)*c;              // resolver de izquierda a derecha
+   const o=armar(r,[izq,op===' − '?a+q:a-q,r+c].filter(v=>v>0),k=>r+k>0?r+k:r+30+k);
+   return {q:a+op+b+' × '+c, ops:o.ops, ok:o.ok};
+  }
+  const d=b*c, r=a+c;                                  // a + d ÷ b = a + c
+  const o=armar(r,[Math.round((a+d)/b)===(a+d)/b?(a+d)/b:r+b,a*c,r+1,a+d-b].filter(v=>v>0&&Number.isInteger(v)),k=>r+k);
+  return {q:a+' + '+d+' ÷ '+b, ops:o.ops, ok:o.ok};
+ }
+ if(tipo==='mcm'){                                    // MA06 OA01 · mínimo común múltiplo
+  const pares=[[2,3],[2,5],[3,4],[4,6],[3,5],[4,10],[6,8],[6,9],[2,7],[5,6],[4,5],[3,8]];
+  const [a,b]=pares[ri(0,pares.length-1)], r=a*b/mcd(a,b);
+  // el producto (común múltiplo, pero no el mínimo), la suma y el máximo común divisor
+  const o=armar(r,[a*b,a+b,mcd(a,b),r*2].filter(v=>v!==r),k=>r+k>0?r+k:r+20+k);
+  return {q:'Mínimo común múltiplo de '+a+' y '+b, ops:o.ops, ok:o.ok};
+ }
+ if(tipo==='frac'){                                   // MA06 OA06 · distinto denominador
+  const pares=[[2,4],[2,3],[3,6],[2,6],[4,8],[3,4],[2,8],[5,10],[2,5]];
+  const [d1,d2]=pares[ri(0,pares.length-1)];
+  const n1=ri(1,d1-1), n2=ri(1,d2-1);
+  const suma=ri(0,1)===0 || n1*d2<=n2*d1;
+  const num=suma?n1*d2+n2*d1:n1*d2-n2*d1, den=d1*d2;
+  const r=fr(num,den);
+  // sumar numeradores y denominadores, operar sin igualar, y la operación contraria
+  const otra=suma?(n1*d2>n2*d1?fr(n1*d2-n2*d1,den):null):fr(n1*d2+n2*d1,den);
+  const cands=[suma?fr(n1+n2,d1+d2):(n1>n2?fr(n1-n2,Math.abs(d1-d2)||d1):null), fr(num,den*2), otra, fr(num+1,den)];
+  // comparación por VALOR: dos fracciones distintas escritas no pueden valer lo mismo
+  const val=s=>{const [n,d]=String(s).split('/').map(Number); return d?n/d:n;};
+  const ops=[r], vist=[val(r)];
+  for(const c of cands){ if(c && !vist.some(v=>Math.abs(v-val(c))<1e-9)){ ops.push(c); vist.push(val(c)); if(ops.length===4)break; } }
+  for(let k=1; ops.length<4; k++){ const c=fr(num+k,den); if(!vist.some(v=>Math.abs(v-val(c))<1e-9)){ ops.push(c); vist.push(val(c)); } }
+  return {q:n1+'/'+d1+(suma?' + ':' − ')+n2+'/'+d2, ops, ok:0};
+ }
+ if(tipo==='decm'){                                   // MA06 OA07 · decimales por y entre naturales
+  const t=ri(0,2);
+  if(t===0){ const a=ri(11,49)/10, b=ri(2,9), r=Math.round(a*b*10)/10;
+   const o=armar(dec(r),[dec(r*10),dec(r/10),dec(a+b)].filter(s=>s!==dec(r)),k=>dec(Math.max(0.1,Math.round((r+k/10)*10)/10)));
+   return {q:dec(a)+' × '+b, ops:o.ops, ok:o.ok}; }
+  if(t===1){ const b=ri(2,9), r=ri(11,49)/10, a=Math.round(r*b*10)/10;
+   const o=armar(dec(r),[dec(r*10),dec(r/10),dec(a*b)].filter(s=>s!==dec(r)),k=>dec(Math.max(0.1,Math.round((r+k/10)*10)/10)));
+   return {q:dec(a)+' ÷ '+b, ops:o.ops, ok:o.ok}; }
+  const a=ri(11,999)/100, f=ri(0,1)===0?10:100, r=Math.round(a*f*100)/100;
+  const o=armar(dec(r),[dec(a*(f===10?100:10)),dec(a/f),dec(a+f)].filter(s=>s!==dec(r)),k=>dec(Math.max(0.1,Math.round((r+k)*100)/100)));
+  return {q:dec(a)+' × '+f, ops:o.ops, ok:o.ok};
+ }
+ // MA06 OA11 · ecuación de primer grado (la incógnita es ▢, nunca x)
+ if(ri(0,1)===0){
+  const a=ri(3,9), r=ri(3,12), b=a*r;
+  const o=armar(r,[b-a,b*a,r+1,b+a].filter(v=>v>0&&v!==r),k=>r+k>0?r+k:r+15+k);
+  return {q:a+' × ▢ = '+b, ops:o.ops, ok:o.ok};
+ }
+ const a=ri(15,85), r=ri(12,90), b=a+r;
+ const o=armar(r,[a+b,r+1,r-1,r+10],k=>r+k);
+ return {q:'▢ + '+a+' = '+b, ops:o.ops, ok:o.ok};
+}
+/* ¿Este nivel tiene el Reto Sin Fin de cálculo? Desde el 07/11/2026 SÍ: era el único hueco
+   de 6° junto con 6°, y el Reto no consume banco, ni aprobación, ni clips de voz.
+   El motor vive en assets/js/calculo.js y lo único propio del nivel es genCalc6().
+   ⚠️ La bandera va con su CALC.init PEGADO: un `const` leído antes de declararse mata todo el
+   JavaScript del juego (zona muerta temporal), y esa trampa ya mordió cuatro veces. Y la
+   campaña de Matemática necesita `sinfin:true`, o el Reto queda construido e invisible, como
+   le pasó a 5° desde que se publicó hasta el 07/11/2026. */
+const HAY_SINFIN=true;
+if(!window.CALC) window.CALC={activo:false,init:function(){},abrir:function(){},detener:function(){}};
+CALC.init({
+  activo: HAY_SINFIN,
+  generar: function(dif){ return genCalc6(dif); },
+  go: go,
+  volver: function(){ renderCampaña(campañaDe('Matemáticas')); go('scr-campana'); },
+  leerRecord: function(){ return (S.sinfin&&S.sinfin.record)||0; },
+  guardarRecord: function(n){ if(!S.sinfin)S.sinfin={record:0}; S.sinfin.record=n; guardar(); },
+  premiar: function(racha){ S.monedas+=racha; S.xp+=racha*4; guardar(); refreshHud(); },
+  snd: { ok:function(){SND.correct();}, mal:function(){SND.wrong();},
+         tic:function(){SND.tick();}, fin:function(){SND.lose();}, tap:function(){SND.tap();} },
+});
 /* ¿Este nivel tiene el camino de mini-clases de Matemática (su lecciones.json)?
    Gobierna el "siguiente paso al reprobar": con mini-clases se ofrece repasar la clase,
    y sin ellas hay que caer al repaso sin reloj, como las demás asignaturas. Con la

@@ -1700,6 +1700,7 @@ const DEMO_LIBRE='mate4-cap1';          // lo único jugable sin código, cuando
 const CAMPAÑAS=[
 {
   id:'mate4', asignatura:'Matemáticas', portada:'assets/portada-matematicas.png',
+  sinfin:true,   // ofrece el Reto Sin Fin (assets/js/calculo.js)
   intro:'De los números hasta 10.000 a los datos y las probabilidades: el año completo de Matemática de 4°.',
   esLecciones:true,
   capitulosMate:[
@@ -2188,11 +2189,10 @@ const SKINS=[{e:"🐲",p:160},{e:"🦄",p:200},{e:"🦖",p:240},{e:"🐙",p:140}
  {id:'kimun-historiador', e:"🎓", img:'assets/kimun-historiador.png', nombre:'Vulpi Historiador', bloqueada:true, desbloqueaCon:'hist4', req:'Vence a La Discordia'},
  {id:'kimun-escritor', e:"✍️", img:'assets/kimun-escritor.png', nombre:'Vulpi Escritor', bloqueada:true, desbloqueaCon:'leng4', req:'Vence a El Trabalenguas'},
  {id:'kimun-cientifico', e:"🔬", img:'assets/kimun-cientifico.png', nombre:'Vulpi Científico', bloqueada:true, desbloqueaCon:'cie4', req:'Vence a El Revoltijo'},
- // Skin maestra: requiere Modo Difícil, que 4° no tiene (HAY_DIFICIL=false, por edad,
- // igual que 3°). Queda bloqueada para siempre en esta tienda; se conserva por
- // consistencia con el resto de los forks y porque esMaestro() ya la protege sola
- // (devuelve false de inmediato si !HAY_DIFICIL).
- {id:'kimun-maestro', e:"🏆", img:'assets/skin-kimun-maestro.png', nombre:'Vulpi Maestro', bloqueada:true, req:'Vence los 4 jefes en Difícil'}];
+ // Skin maestra: donde no hay Modo Difícil (1° a 4°, por edad) se gana venciendo los
+ // 4 Jefes Finales; lo decide esMaestro() en motor.js (07/11/2026). Antes pedía Difícil y
+ // quedaba bloqueada para siempre en esta tienda.
+ {id:'kimun-maestro', e:"🏆", img:'assets/skin-kimun-maestro.png', nombre:'Vulpi Maestro', bloqueada:true, req:'Vence a los 4 Jefes Finales'}];
 
 /* ================= DUELO 1v1 ================= */
 const DUELO_AV=["🦁","🐉","🦊","🐺","🦄","🐲"], DUELO_ROUNDS=5;
@@ -2495,11 +2495,138 @@ async function cargarPendientes(){
    del nivel, y genera las operaciones con genCalculo saltándose el banco propio. Estaba
    pasando de verdad en 7° (Sesión 63). */
 const HAY_RETO_CALCULO=false;
-/* ¿Este nivel tiene el Reto Sin Fin de cálculo? 4° NO lo tiene todavía: es contenido
-   pendiente, no un olvido (igual que las mini-clases, más abajo). El motor compartido
-   (assets/js/calculo.js) queda cargado con su respaldo vacío, como en 8°, que tampoco
-   llama a CALC.init porque allá el cálculo mental ya es el Reto de Cálculo completo. */
-const HAY_SINFIN=false;
+/* Operaciones del Reto Sin Fin de 4°. Salen del temario del año: cálculo mental con dobles y
+   mitades (MA04 OA02), sumar y restar hasta 1 000 (OA03), multiplicar por 10 y 100 (OA02),
+   multiplicación de 2 y 3 dígitos por 1 dígito (OA05), división de 2 dígitos por 1 dígito
+   (OA06), fracciones de igual denominador (OA09), decimales con décimas (OA12) y ecuaciones de
+   un paso (OA14).
+   Devuelve {q, ops, ok}; el módulo baraja las opciones, así que aquí NO se barajan.
+   Los distractores son errores típicos, no números al azar.
+   ⚠️ Reglas de este nivel: sin negativos (son de 7°), decimales en su forma más corta (`0,5`,
+   nunca `0,50`), miles con punto (`1.200`) y fracciones siempre con el MISMO denominador que la
+   respuesta, para que dos opciones no valgan lo mismo escritas distinto. */
+function genCalc4(dif){
+ const ri=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+ const mil=n=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+ const dec=x=>String(Math.round(x*100)/100).replace('.',',');
+ /* 4 opciones DISTINTAS y ninguna igual a la clave; `rellenar` completa con vecinos.
+    Idéntica a la de 5° y 7° a propósito. */
+ function armar(r, cands, rellenar){
+  const vistos=new Set([String(r)]), ops=[String(r)];
+  for(const c of cands){ const s=String(c);
+   if(!vistos.has(s)){ vistos.add(s); ops.push(s); if(ops.length===4) return {ops, ok:0}; } }
+  let i=1;
+  while(ops.length<4 && i<60){ for(const s of [rellenar(i), rellenar(-i)]){
+    const k=String(s); if(!vistos.has(k)){ vistos.add(k); ops.push(k); if(ops.length===4)break; } } i++; }
+  return {ops, ok:0};
+ }
+ const pos=n=>n>0;   // el rellenador nunca propone 0 ni negativos
+ const TIPOS={1:['doble','suma'], 2:['suma','resta','x10'], 3:['mult','div'],
+              4:['mult3','frac','resta'], 5:['mult3','div','frac','dec','ecu']};
+ const lista=TIPOS[Math.min(5,Math.max(1,dif))];
+ const tipo=lista[ri(0,lista.length-1)];
+
+ if(tipo==='doble'){                                  // MA04 OA02 · dobles y mitades
+  if(ri(0,1)===0){
+   const a=ri(12,49), r=a*2;
+   const o=armar(r,[a+2,r+10,r-10,a*3],k=>pos(r+k)?r+k:r+60+k);
+   return {q:'El doble de '+a, ops:o.ops, ok:o.ok};
+  }
+  const r=ri(12,49), a=r*2;
+  const o=armar(r,[a,r+10,r-10,a-2],k=>pos(r+k)?r+k:r+60+k);
+  return {q:'La mitad de '+a, ops:o.ops, ok:o.ok};
+ }
+ if(tipo==='suma'){                                   // MA04 OA03 · sumar hasta 1 000
+  const a=ri(dif<=1?21:120, dif<=1?79:560), b=ri(dif<=1?12:110, dif<=1?79:430), r=a+b;
+  // sin llevar la reserva: se suman las columnas por separado y se descarta lo que se lleva
+  const sinRes=(a%10+b%10)%10 + (Math.floor(a/10)%10+Math.floor(b/10)%10)%10*10 + (Math.floor(a/100)+Math.floor(b/100))*100;
+  // ⚠️ sinRes puede dar 0 (35 + 75): se descarta, un 0 no es un error que alguien cometa
+  const o=armar(mil(r),[sinRes>0?mil(sinRes):null,mil(r+10),mil(r-10),mil(r+100)].filter(x=>x&&x!==mil(r)),k=>mil(r+k));
+  return {q:mil(a)+' + '+mil(b), ops:o.ops, ok:o.ok};
+ }
+ if(tipo==='resta'){                                  // MA04 OA03 · restar hasta 1 000
+  const b=ri(110,480), r=ri(120,490), a=b+r;          // a hasta 970: la resta nunca es negativa
+  // restar el menor del mayor en cada columna, el error clásico de la resta con canje
+  const col=(x,y)=>Math.abs(x-y);
+  const malo=col(a%10,b%10)+col(Math.floor(a/10)%10,Math.floor(b/10)%10)*10+col(Math.floor(a/100),Math.floor(b/100))*100;
+  const o=armar(mil(r),[mil(malo),mil(r+10),mil(r-10),mil(a+b)].filter(x=>x!==mil(r)),k=>mil(r+k));
+  return {q:mil(a)+' − '+mil(b), ops:o.ops, ok:o.ok};
+ }
+ if(tipo==='x10'){                                    // MA04 OA02 · por 10 y por 100
+  const a=ri(3,89), f=ri(0,1)===0?10:100, r=a*f;
+  const o=armar(mil(r),[mil(r*10),mil(r/10),mil(a+f),mil(a*(f===10?100:10))].filter(x=>x!==mil(r)),k=>mil(r+k*f));
+  return {q:a+' × '+f, ops:o.ops, ok:o.ok};
+ }
+ if(tipo==='mult'){                                   // MA04 OA05 · 2 dígitos por 1 dígito
+  const a=ri(12,49), b=ri(3,9), r=a*b;
+  // el tercero es no llevar la reserva al multiplicar las decenas
+  const sinRes=Math.floor(a/10)*b*10+((a%10)*b)%10;
+  const o=armar(r,[a*(b-1),a*(b+1),sinRes,a+b],k=>r+k);
+  return {q:a+' × '+b, ops:o.ops, ok:o.ok};
+ }
+ if(tipo==='mult3'){                                  // MA04 OA05 · 3 dígitos por 1 dígito
+  const a=ri(102,319), b=ri(2,6), r=a*b;
+  const sinRes=Math.floor(a/100)*b*100+(Math.floor(a/10)%10*b%10)*10+((a%10)*b)%10;
+  const o=armar(mil(r),[mil(a*(b-1)),mil(a*(b+1)),mil(sinRes),mil(r+100)].filter(x=>x!==mil(r)),k=>mil(r+k));
+  return {q:a+' × '+b, ops:o.ops, ok:o.ok};
+ }
+ if(tipo==='div'){                                    // MA04 OA06 · 2 dígitos entre 1 dígito, exacta
+  const b=ri(2,9), q=ri(dif<=3?3:6, Math.floor(99/b)), a=b*q;
+  const o=armar(q,[q+1,q-1,a-b,q*10].filter(pos),k=>pos(q+k)?q+k:q+20+k);
+  return {q:a+' ÷ '+b, ops:o.ops, ok:o.ok};
+ }
+ if(tipo==='frac'){                                   // MA04 OA09 · igual denominador
+  // Sin tercios: con denominador 3 solo hay tres numeradores posibles y no alcanzan las
+  // cuatro opciones (lo cazó el verificador). Los tercios siguen en el banco de 4°.
+  const d=[4,5,6,8,10,12][ri(0,5)];
+  const suma=ri(0,1)===0;
+  let x,y,n;
+  if(suma){ x=ri(1,d-2); y=ri(1,d-1-x); n=x+y; } else { x=ri(2,d-1); y=ri(1,x-1); n=x-y; }
+  // todas con denominador d: así dos opciones nunca valen lo mismo escritas distinto
+  const cands=[n+1,n-1,suma?Math.abs(x-y):x+y,n+2].filter(v=>v>0 && v!==n && v<=d);
+  const vist=new Set([n]), ops=[n+'/'+d];
+  for(const v of cands){ if(!vist.has(v)){ vist.add(v); ops.push(v+'/'+d); if(ops.length===4)break; } }
+  for(let v=1; ops.length<4 && v<=d; v++) if(!vist.has(v)){ vist.add(v); ops.push(v+'/'+d); }
+  return {q:x+'/'+d+(suma?' + ':' − ')+y+'/'+d, ops, ok:0};
+ }
+ if(tipo==='dec'){                                    // MA04 OA12 · décimas
+  const a=ri(11,89)/10; let b=ri(11,59)/10;
+  if(b===a) b=Math.round((b+0.3)*10)/10;   // iguales, la operación contraria daría 0
+  const suma=ri(0,1)===0 || a<=b;
+  const r=suma?Math.round((a+b)*10)/10:Math.round((a-b)*10)/10;
+  // olvidar la coma (x10), correr la coma (/10) y la operación contraria
+  const otra=suma?Math.round(Math.abs(a-b)*10)/10:Math.round((a+b)*10)/10;
+  const o=armar(dec(r),[dec(r*10),dec(r/10),dec(otra)].filter(s=>s!==dec(r)),k=>dec(Math.max(0.1,r+k/10)));
+  return {q:dec(a)+(suma?' + ':' − ')+dec(b), ops:o.ops, ok:o.ok};
+ }
+ // MA04 OA14 · ecuación de un paso con suma
+ const a=ri(12,58), r=ri(14,69), b=a+r;
+ const o=armar(r,[a+b,r+1,r-1,r+10],k=>r+k);
+ return {q:'▢ + '+a+' = '+b, ops:o.ops, ok:o.ok};
+}
+/* ¿Este nivel tiene el Reto Sin Fin de cálculo? Desde el 07/11/2026 SÍ: era el único hueco
+   de 4° junto con 6°, y el Reto no consume banco, ni aprobación, ni clips de voz. Va SIN RELOJ,
+   como todo {n}° (SIN_RELOJ): la tensión la da la escalera de dificultad y el récord.
+   El motor vive en assets/js/calculo.js y lo único propio del nivel es genCalc4().
+   ⚠️ La bandera va con su CALC.init PEGADO: un `const` leído antes de declararse mata todo el
+   JavaScript del juego (zona muerta temporal), y esa trampa ya mordió cuatro veces. Y la
+   campaña de Matemática necesita `sinfin:true`, o el Reto queda construido e invisible, como
+   le pasó a 5° desde que se publicó hasta el 07/11/2026. */
+const HAY_SINFIN=true;
+if(!window.CALC) window.CALC={activo:false,init:function(){},abrir:function(){},detener:function(){}};
+CALC.init({
+  activo: HAY_SINFIN,
+  sinReloj: true,
+  etiqueta: '🪜 Escalón',
+  generar: function(dif){ return genCalc4(dif); },
+  go: go,
+  volver: function(){ renderCampaña(campañaDe('Matemáticas')); go('scr-campana'); },
+  leerRecord: function(){ return (S.sinfin&&S.sinfin.record)||0; },
+  guardarRecord: function(n){ if(!S.sinfin)S.sinfin={record:0}; S.sinfin.record=n; guardar(); },
+  premiar: function(racha){ S.monedas+=racha; S.xp+=racha*4; guardar(); refreshHud(); },
+  snd: { ok:function(){SND.correct();}, mal:function(){SND.wrong();},
+         fin:function(){SND.lose();}, tap:function(){SND.tap();} },
+});
 /* ¿Este nivel tiene el camino de mini-clases de Matemática (su lecciones.json)?
    Gobierna el "siguiente paso al reprobar": con mini-clases se ofrece repasar la clase,
    y sin ellas hay que caer al repaso sin reloj, como las demás asignaturas. Con la

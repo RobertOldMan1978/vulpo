@@ -1805,7 +1805,7 @@ const CAMPAÑAS=[{
 const INSIGNIAS=[
   {id:'maestro-historia', ic:'🏅', tx:'Maestro de Historia', asignatura:'Historia'},
   {id:'maestro-ciencias', ic:'🔬', tx:'Maestro de Ciencias', asignatura:'Ciencias'},
-  {id:'maestro-calculo', ic:'🎖️', tx:'Maestro del Cálculo', asignatura:'Matemáticas'},
+  /* Sin 'maestro-calculo': la entrega El Autómata, que 3° no tiene (07/11/2026). */
   {id:'maestro-lenguaje', ic:'✍️', tx:'Maestro de las Letras', asignatura:'Lenguaje'},
   {id:'maestro-matematica', ic:'📐', tx:'Maestro de las Matemáticas', asignatura:'Matemáticas'},
   // Se gana la primera vez que se completa cualquier desafío de refuerzo del profesor.
@@ -2156,11 +2156,14 @@ const SKINS=[{e:"🐲",p:160},{e:"🦄",p:200},{e:"🦖",p:240},{e:"🐙",p:140}
  // Marcador de arte: emoji 🎓 hasta que exista assets/kimun-historiador.png.
  {id:'kimun-historiador', e:"🎓", img:'assets/kimun-historiador.png', nombre:'Vulpi Historiador', bloqueada:true, desbloqueaCon:'hist3', req:'Vence a El Olvido'},
  {id:'kimun-cientifico', e:"🔬", img:'assets/kimun-cientifico.png', nombre:'Vulpi Científico', bloqueada:true, desbloqueaCon:'cie3', req:'Vence a El Apagón'},
- {id:'kimun-calculista', e:"🧮", img:'assets/kimun-calculista.png', nombre:'Vulpi Calculista', bloqueada:true, req:'Vence a El Autómata'},
+ {id:'kimun-calculista', e:"🧮", img:'assets/kimun-calculista.png', nombre:'Vulpi Calculista', bloqueada:true, desbloqueaCon:'mat3', req:'Vence a El Número Perdido'},
  {id:'kimun-escritor', e:"🖋️", img:'assets/kimun-escritor.png', nombre:'Vulpi Escritor', bloqueada:true, desbloqueaCon:'len3', req:'Vence a El Borrón'},
- {id:'kimun-matematico', e:"📐", img:'assets/kimun-matematico.png', nombre:'Vulpi Matemático', bloqueada:true, desbloqueaCon:'mate', req:'Vence a La Incógnita'},
- // Skin maestra: se gana completando las 3 asignaturas en Modo Difícil (emoji hasta que haya arte).
- {id:'kimun-maestro', e:"🏆", img:'assets/skin-kimun-maestro.png', nombre:'Vulpi Maestro', bloqueada:true, req:'Vence los 4 jefes (3 en Difícil + El Autómata)'}];
+ /* Sin 'kimun-matematico': en 8° la entrega La Incógnita, que 3° no tiene; aquí el Jefe
+    Final de Matemática entrega la Calculista. Quedaba bloqueada para siempre (07/11/2026). */
+ // Skin maestra: donde no hay Modo Difícil (1° a 4°, por edad) se gana venciendo los
+ // 4 Jefes Finales; lo decide esMaestro() en motor.js (07/11/2026). Antes pedía Difícil y
+ // quedaba bloqueada para siempre en esta tienda.
+ {id:'kimun-maestro', e:"🏆", img:'assets/skin-kimun-maestro.png', nombre:'Vulpi Maestro', bloqueada:true, req:'Vence a los 4 Jefes Finales'}];
 
 /* ================= DUELO 1v1 ================= */
 const DUELO_AV=["🦁","🐉","🦊","🐺","🦄","🐲"], DUELO_ROUNDS=5;

@@ -20,6 +20,11 @@ on:
     tags:
       - 'aab-*'
 
+# Permisos minimos del token: solo leer el repo. Este proceso corre con la clave de firma
+# cargada (en el de release), asi que no necesita poder escribir nada mas (07/11/2026).
+permissions:
+  contents: read
+
 jobs:
   aab:
     runs-on: ubuntu-latest
@@ -51,7 +56,7 @@ jobs:
           java-version: '17'
 
       - name: Dependencias de Capacitor
-        run: npm install
+        run: npm ci   # instala EXACTO lo del package-lock.json (07/11/2026)
 
       - name: Armar el webDir (www/)
         run: python3 scripts/armar-webdir.py

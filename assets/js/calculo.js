@@ -125,11 +125,19 @@ window.CALC = (function () {
      va bien encuentra pared. */
   function dificultad() { return Math.min(5, 1 + Math.floor(R.racha / 5)); }
 
+  function pinta(t) {
+    t = String(t);
+    if (window.FRAC && FRAC.html) return FRAC.html(t);
+    return t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
   function pintar() {
     const op = cfg.generar(dificultad());
     R.actual = op;
     R.lock = false;
-    $("sfOp").textContent = op.q;
+    // Las fracciones se dibujan APILADAS, como en el resto del juego (estándar del proyecto,
+    // docs/estandar-fracciones.md). Antes iba con textContent y "2/10 + 7/10" salía en línea en
+    // 5°, 7° y ahora 4° y 6°. FRAC.html escapa antes de marcar; sin el módulo, se escapa igual.
+    $("sfOp").innerHTML = pinta(op.q);
     $("sfRacha").textContent = R.racha;
     $("sfFb").textContent = "";
     $("sfFb").className = "sf-fb";
@@ -143,7 +151,7 @@ window.CALC = (function () {
     orden.forEach(function (it, k) {
       const b = document.createElement("div");
       b.className = "opt";
-      b.innerHTML = '<span class="key">' + "ABCD"[k] + "</span>" + String(it.o);
+      b.innerHTML = '<span class="key">' + "ABCD"[k] + "</span>" + pinta(it.o);
       b.onclick = function () { responder(b, it.i === op.ok); };
       box.appendChild(b);
     });

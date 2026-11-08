@@ -1659,7 +1659,10 @@ const DEMO_LIBRE='mate5-cap1';          // lo único jugable sin código, cuando
 const CAMPAÑAS=[
 {
   id:'mate5', asignatura:'Matemáticas', portada:'assets/portada-matematicas.png',
-  intro:'Numeros, fracciones, decimales, figuras y datos: el ano completo de Matematica de 5°.',
+  // ⚠️ Sin esta marca el Reto Sin Fin de 5° estaba construido (genCalc5, CALC.init) y NO
+  // aparecía en ninguna pantalla: nodoSinFin exige c.sinfin. Encontrado el 07/11/2026.
+  sinfin:true,   // ofrece el Reto Sin Fin (assets/js/calculo.js)
+  intro:'Números, fracciones, decimales, figuras y datos: el año completo de Matemática de 5°.',
   capitulos:['mate5-cap1','mate5-cap2','mate5-cap3','mate5-cap4','mate5-cap5','mate5-cap6'],
   esLecciones:true,
   capitulosMate:[
@@ -1680,15 +1683,15 @@ const CAMPAÑAS=[
     // Arte propio generado el 05/09/2026 (antes prestado de 7°).
     villano:'El Descuadre', villanoIc:'📐', villanoImg:'assets/villano-matematicas-5to.png',
     villanoImgDerrotado:'assets/villano-matematicas-5to-derrotado.png',
-    dialogo:'Nada calza, nada cuadra, ningun numero esta donde deberia... ¿crees que puedes ordenar este desorden?',
-    derrota:'Ves? Todo vuelve a descuadrarse. Regresa cuando tus numeros calcen de verdad.',
+    dialogo:'Nada calza, nada cuadra, ningún número está donde debería... ¿crees que puedes ordenar este desorden?',
+    derrota:'¿Ves? Todo vuelve a descuadrarse. Regresa cuando tus números calcen de verdad.',
     vidasJugador:3, nPorFase:4,
     // 4 fases x 4 preguntas = 16. Las 6 unidades del mapa se agrupan en 4 para no
     // alargar el jefe: la estructura de 4 fases es la del motor en las cuatro campanas.
     fases:[
-      {nombre:'Numeros y operaciones', oas:['MA05 OA 01','MA05 OA 02','MA05 OA 03','MA05 OA 04','MA05 OA 05','MA05 OA 06']},
+      {nombre:'Números y operaciones', oas:['MA05 OA 01','MA05 OA 02','MA05 OA 03','MA05 OA 04','MA05 OA 05','MA05 OA 06']},
       {nombre:'Fracciones y decimales', oas:['MA05 OA 07','MA05 OA 08','MA05 OA 09','MA05 OA 10','MA05 OA 11','MA05 OA 12','MA05 OA 13']},
-      {nombre:'Patrones, figuras y medicion', oas:['MA05 OA 14','MA05 OA 15','MA05 OA 16','MA05 OA 17','MA05 OA 18','MA05 OA 19','MA05 OA 20','MA05 OA 21','MA05 OA 22']},
+      {nombre:'Patrones, figuras y medición', oas:['MA05 OA 14','MA05 OA 15','MA05 OA 16','MA05 OA 17','MA05 OA 18','MA05 OA 19','MA05 OA 20','MA05 OA 21','MA05 OA 22']},
       {nombre:'Datos y probabilidades', oas:['MA05 OA 23','MA05 OA 24','MA05 OA 25','MA05 OA 26','MA05 OA 27']},
     ],
   },
@@ -2123,8 +2126,8 @@ const SKINS=[{e:"🐲",p:160},{e:"🦄",p:200},{e:"🦖",p:240},{e:"🐙",p:140}
  {id:'kimun-historiador', e:"🎓", img:'assets/kimun-historiador.png', nombre:'Vulpi Historiador', bloqueada:true, desbloqueaCon:'hist5', req:'Vence a El Rumor'},
  {id:'kimun-escritor', e:"✍️", img:'assets/kimun-escritor.png', nombre:'Vulpi Escritor', bloqueada:true, desbloqueaCon:'leng5', req:'Vence a El Malentendido'},
  {id:'kimun-cientifico', e:"🔬", img:'assets/kimun-cientifico.png', nombre:'Vulpi Científico', bloqueada:true, desbloqueaCon:'cie5', req:'Vence a El Cortocircuito'},
- // Skin maestra: se gana completando las 3 asignaturas en Modo Difícil (emoji hasta que haya arte).
- {id:'kimun-maestro', e:"🏆", img:'assets/skin-kimun-maestro.png', nombre:'Vulpi Maestro', bloqueada:true, req:'Completa Matemáticas en Difícil'}];
+ // Skin maestra: se gana completando las 4 asignaturas en Modo Difícil (MAESTRIA_CALC=false).
+ {id:'kimun-maestro', e:"🏆", img:'assets/skin-kimun-maestro.png', nombre:'Vulpi Maestro', bloqueada:true, req:'Vence los 4 jefes en Difícil'}];
 
 /* ================= DUELO 1v1 ================= */
 const DUELO_AV=["🦁","🐉","🦊","🐺","🦄","🐲"], DUELO_ROUNDS=5;

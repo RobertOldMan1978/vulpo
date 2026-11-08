@@ -247,7 +247,11 @@ def normalizar(texto, oa=""):
     # El "+" y el "=" se convierten siempre: pueden venir despues de una palabra
     # ("el cuadrito + 7 = 15"). El "-" solo entre digitos, para no partir palabras
     # con guion.
-    t = re.sub(r"(\d)\s*[x×]\s*(\d)", r"\1 por \2", t)
+    # ⚠️ El segundo digito va en LOOKAHEAD (no se consume): con "(\d)\s*×\s*(\d)" una
+    # multiplicacion encadenada "2 × 2 × 2" se comia el 2 del medio en la primera coincidencia
+    # y el segundo signo quedaba CRUDO ("2 por 2 × 2"). Encontrado el 07/11/2026 revisando las
+    # pistas de 4°, que lo usan para el volumen de un cubo.
+    t = re.sub(r"(\d)\s*[x×]\s*(?=\d)", r"\1 por ", t)
     # El "÷" faltaba y el banco de 4 basico lo usa en 36 preguntas de los MA04 OA 04 y 06:
     # se locutaban con el SIMBOLO CRUDO, o sea el nino oia "36 ... 1" sin la operacion. Los
     # dos puntos ya se traducian (regla de la division mas abajo) y el "×" tambien, asi que

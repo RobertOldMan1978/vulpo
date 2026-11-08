@@ -2143,11 +2143,10 @@ const SKINS=[{e:"🐲",p:160},{e:"🦄",p:200},{e:"🦖",p:240},{e:"🐙",p:140}
  {id:'kimun-historiador', e:"🎓", img:'assets/kimun-historiador.png', nombre:'Vulpi Historiador', bloqueada:true, desbloqueaCon:'hist2', req:'Vence a La Neblina'},
  {id:'kimun-escritor', e:"✍️", img:'assets/kimun-escritor.png', nombre:'Vulpi Escritor', bloqueada:true, desbloqueaCon:'leng2', req:'Vence a El Ladrón de Letras'},
  {id:'kimun-cientifico', e:"🔬", img:'assets/kimun-cientifico.png', nombre:'Vulpi Científico', bloqueada:true, desbloqueaCon:'cie2', req:'Vence a La Sequía'},
- // Skin maestra: requiere Modo Difícil, que 2° no tiene (HAY_DIFICIL=false, por edad,
- // igual que 3° y 4°). Queda bloqueada para siempre en esta tienda; se conserva por
- // consistencia con el resto de los forks y porque esMaestro() ya la protege sola
- // (devuelve false de inmediato si !HAY_DIFICIL).
- {id:'kimun-maestro', e:"🏆", img:'assets/skin-kimun-maestro.png', nombre:'Vulpi Maestro', bloqueada:true, req:'Vence los 4 jefes en Difícil'}];
+ // Skin maestra: donde no hay Modo Difícil (1° a 4°, por edad) se gana venciendo los
+ // 4 Jefes Finales; lo decide esMaestro() en motor.js (07/11/2026). Antes pedía Difícil y
+ // quedaba bloqueada para siempre en esta tienda.
+ {id:'kimun-maestro', e:"🏆", img:'assets/skin-kimun-maestro.png', nombre:'Vulpi Maestro', bloqueada:true, req:'Vence a los 4 Jefes Finales'}];
 
 /* ================= DUELO 1v1 ================= */
 const DUELO_AV=["🦁","🐉","🦊","🐺","🦄","🐲"], DUELO_ROUNDS=5;

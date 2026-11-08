@@ -651,7 +651,7 @@ arriba del archivo, no como condiciones sueltas repartidas por el código.
 | `HAY_MINICLASES` | Si el curso tiene lecciones. Afecta al **siguiente paso al reprobar**, a `renderCampaña`, al Jefe Final (`cargarPoolMate`) y al ✕ del quiz. **Desde el 06/09 vale `true` en los SEIS**: 4° y 6° la encendieron al recibir sus lecciones de Lenguaje. ⚠️ Encenderla en un curso **sin** campaña de Matemática con `esLecciones` es inocuo —sus cuatro usos en `motor.js` están guardados por `esLecciones` o `capitulosMate`— pero **es obligatoria igual**, porque el ✕ del quiz la consulta: sin ella, salir de la práctica de una mini-clase deja al alumno tirado en la pantalla del quiz. Va **pegada a `LECC.init`** | ✅ | ✅ | ✅ | ✅ |
 | `HAY_VOCABULARIO` | Si Lenguaje abre el landing "Campaña + Vocabulario" en vez de su campaña. **Desde el 07/09 vale `true` en los SEIS.** ⚠️ Va **siempre junto con la expedición `voc-general`**: el handler de `btnLengVocab` ya existe en todos los forks y la busca, así que encender la bandera sin agregarla da `entrarExpedicion(undefined)` — el estado latente que 7° arrastró entre las Sesiones 63 y 68 | ✅ | ✅ | ✅ | ✅ |
 | `HAY_BIBLIOTECA` | Si la pantalla principal ofrece el módulo 📖 Lectura | ✅ | ❌ | ❌ | ✅ |
-| `HAY_SINFIN` | Si Matemática ofrece el **Reto Sin Fin** de `assets/js/calculo.js`. Gobierna el nodo del mapa y la llamada `CALC.init` | ❌ | ✅ | ✅ | ✅ |
+| `HAY_SINFIN` | Si Matemática ofrece el **Reto Sin Fin** de `assets/js/calculo.js`. Gobierna la llamada `CALC.init`. ⚠️ **Además la campaña necesita `sinfin:true`**, o el Reto queda construido e invisible (5° estuvo así hasta el 08/11). Desde la Sesión 144 está en **todos los cursos menos 8°**, que tiene el Reto de Cálculo completo | ❌ | ✅ | ✅ | ✅ |
 | `HAY_DIFICIL` | Si el nivel ofrece **Modo Difícil**, y con él las insignias 🔥, la skin de Maestro y la Maestría Total. ⚠️ Se declara **pegada a `DIF_ASIGS`** y no con las demás: la consulta `revisarDificil()`, que corre en el arranque | ✅ | ✅ | ✅ | ❌ |
 | `MAESTRIA_CALC` | Si el **cuarto hito** de la Maestría Total es El Autómata (el Jefe del Reto de Cálculo). En 8° la Maestría es Historia+Ciencias+Lenguaje en Difícil **más** El Autómata; donde no hay Reto son las **cuatro** asignaturas. Son el mismo número contado distinto, así que va como dato y no como dos `esMaestro()` distintos. ⚠️ También **pegada a `HAY_DIFICIL`** | ✅ | ❌ | ❌ | ❌ |
 | `SIN_RELOJ` | Quiz sin cuenta regresiva y sin selector Normal/Difícil. ⚠️ **No alcanza al Duelo**, que sí lleva reloj en los tres: es una competencia y ahí el tiempo es parte del juego | ❌ | ❌ | ❌ | ✅ |
@@ -2562,6 +2562,7 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
   bandera/membresía→grant en el mismo pegado, después del flip), salvo un Super con ≠1 colegio → el handoff trae
   un **diagnóstico de huérfanos** para antes del flip. `es_admin` es la única bandera viva. **Con esto el motor
   granular queda cerrado entero.**
+- **Aislamiento entre colegios (Sesión 144, aplicado el 08/11):** `kimun_prof_administra(tipo,id)` responde si administro un NODO concreto del árbol (plataforma > sostenedor > colegio > curso) con las capacidades de `kimun_prof_admin_colegio`. Lo usan las acciones de nivel colegio, que antes preguntaban `puede_algun` ("¿tengo este permiso en ALGÚN ámbito?") y por eso, con un segundo colegio, su UTP habría podido nombrarse Jefe de un curso ajeno, mover cursos, renombrar o borrar colegios ajenos, ver los correos de todos los profesores y revocarlos. Crear un sostenedor, borrarlo y limpiar perfiles son de la PLATAFORMA; un colegio se borra desde su sostenedor. `kimun_prof_curso_crear` suma `p_colegio` (con default: quien administra un solo colegio crea ahí; sin colegio, solo la plataforma). La lista de profesores muestra a la UTP solo a quienes tienen permisos dentro de lo suyo, o a quienes ella invitó. ⚠️ **Siete funciones internas** (`kimun_gen_codigo*`, `es_mio`, `acceso`, `asignaturas`, `admin_colegio`) estaban revocadas solo de `public`: con Supabase eso no basta y respondían por RPC.
 - **Pendiente:** notificaciones push.
 
 ## Trámites pendientes (fuera del código)
@@ -14794,3 +14795,65 @@ ranking semanal, más en qué gastar monedas, Sin Fin en 4° y 6°, accesibilida
 - **Fuera del código:** la app versión 6 sigue en prueba interna de Play; la cuenta de Play pasa a
   ser de organización (falta el DUNS). **De arrastre:** probar la app en el teléfono, sacar los MP3
   de 3° y 4° del repo, la prueba cerrada de Google Play e INAPI.
+
+### Sesión 144 (2026-11-07 y 08) — Noche de trabajo: los arreglos del análisis, y tres defectos vivos
+Roberto dijo *"decide, será noche de trabajo"*, así que se tomaron de A67 los puntos que no
+pedían una decisión de producto. **Ningún banco de preguntas cambió.**
+
+#### Aislamiento entre colegios (el punto 2 del análisis)
+Latente hoy —hay un solo colegio— pero había que cerrarlo antes del segundo. Detalle en la sección
+de Backend: `kimun_prof_administra(tipo,id)` y las acciones de nivel colegio preguntando por su nodo.
+El panel suma un **selector de colegio** al crear un curso (preelegido si hay uno solo). Se
+verificó la sintaxis con `pglast` (no hay PostgreSQL local) y el panel con el doble. ⚠️ **El primer
+fragmento traía `drop` de cuatro funciones que no cambiaban de firma**: un `drop` borra sus permisos
+y el fragmento no los volvía a dar, así que el panel habría quedado sin poder llamarlas. Se sacaron
+antes de entregarlo. Aplicado por Roberto y comprobado contra producción.
+
+#### Arreglos rápidos
+- **El tiempo agotado ya no entra al mapa del profesor** (`responder` llega con `el` en null desde el
+  temporizador). Con 20 s y enunciados de Lenguaje de 350 caracteres medía velocidad de lectura, y
+  quedaba congelado como primer intento. Para pasar la etapa sigue contando. Control positivo hecho:
+  una respuesta normal sí se mide.
+- **"Necesitas 7 de 10"** en vez de "66%", que con 8 preguntas en 1° no era verdad (hacen falta 6).
+- **Voseo** del modo docente ("Pedí", "Probá", "Intentá") a neutro.
+- **Recompensas imposibles en siete de ocho cursos**, encontradas con una auditoría en el navegador
+  que cruza lo que se ofrece contra lo que alguna campaña entrega. En 1° a 4° la **Maestría pasa a ser
+  los 4 Jefes Finales** (`esMaestro()` sin Modo Difícil) y lo que exige Difícil deja de mostrarse; en
+  3° salen una skin y una insignia que nada entregaba y la Calculista dice el jefe correcto; en 5°, 7°
+  y 8° los textos de la skin Maestro y de las skins de 8° ("Vence a Historia") estaban mal.
+- **Revokes** de siete funciones internas (ver Backend).
+- **CI de la app:** `permissions: contents: read`, `npm ci` y Capacitor con versión exacta (el lock
+  instala lo mismo que antes, comprobado).
+
+#### Tres defectos que ya estaban publicados
+1. ⚠️ **El Reto Sin Fin de 5° nunca aparecía.** Generador, motor y récord estaban; a la campaña le
+   faltaba `sinfin:true`, que es lo que mira `nodoSinFin`. Se encontró yendo a copiar el patrón de 5°.
+2. **~30 textos visibles sin tilde en 5° y 7°**, entre ellos *"el ano completo de Matemática"* en el
+   encabezado y el villano *"La Erosion"*. Se buscaron con una lista de todas las palabras acentuadas
+   de los bancos, no a ojo, y se corrigieron línea por línea para no tocar ids como `le7-poesia`.
+3. **El normalizador de voz dejaba crudo el segundo × de "2 × 2 × 2"**: la regla consumía el dígito
+   del medio. Lookahead; cambia 12 pistas y **1 clip ya grabado** de 4° (`mate4-oa24-24`).
+
+#### Juego
+- **Reto Sin Fin en 4° (sin reloj) y 6°**, con `genCalc4`/`genCalc6` del temario de cada año. Un
+  verificador independiente recalcula cada respuesta desde el enunciado: **15.000 operaciones por
+  curso, 0 errores**, con control de un generador roto a propósito. Encontró tres defectos antes de
+  publicar (un distractor 0, los tercios sin cuatro opciones, decimales iguales). Ya no queda ningún
+  curso sin Sin Fin salvo 8°, que tiene el Reto de Cálculo.
+- **Las fracciones del Sin Fin se apilan** (`calculo.js` pinta con `FRAC.html`).
+- **Accesibilidad:** opciones, tarjetas y nodos del mapa con `role=button`, foco y Enter/Espacio,
+  desde un observador en `motor.js` (vale para todas las pantallas).
+- **Racha de días** en el inicio (*"🔥 3 días seguidos jugando"*): solo se muestra, no paga. Medido
+  en 375×667: el botón JUGADOR queda entero (480–536 px).
+- **La explicación al fallar se escucha en 1° a 4°** (en 1° sola). ⚠️ **Las pistas todavía no tienen
+  clip**: suenan con la voz del navegador hasta generar **11.616 clips (~US$14)**, que espera
+  autorización. El generador ya las incluye.
+
+> ⚠️ **Trampas de método de la noche:** un heredoc de bash con mucho texto falla con *"unexpected EOF
+> while looking for matching `''"* aunque el delimitador vaya entre comillas: los scripts largos se
+> escriben a un archivo. Una ruta Windows en un string de Python normal convierte `\a` en un carácter
+> de control. Y `renderCampaña()` no recibe la campaña como argumento: lee `CAMP_ACT`.
+
+#### Pendiente de Roberto
+Autorizar la voz de las pistas; decidir "Mis errores" (choca con la decisión de la Sesión 52 de
+excluir lo fallado del repaso), un ranking semanal (necesita backend) y algo en qué gastar monedas.

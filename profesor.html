@@ -596,6 +596,8 @@ const ERRORES={
   no_te_puedes_quitar:'No puedes quitarte a ti mismo.',
   nombre_vacio:'Escribe un nombre.',
   curso_invalido:'Ese curso no existe.',
+  colegio_invalido:'Ese colegio no existe.',
+  elige_colegio:'Administras más de un colegio: elige en cuál va el curso.',
   alumno_invalido:'Ese alumno no existe.'
 };
 // Mensaje del caso más frecuente: la cuenta existe, lo que falta es la autorización.
@@ -1154,6 +1156,8 @@ async function pintarLista(){
           <input id="cursoNombre" placeholder="Nombre del curso nuevo (8° A)">
           <label class="campo">Nivel del curso
             <select id="cursoNivel">${NIVELES_MUESTRA.map(n=>`<option value="${n.nivel}">${n.nombre}</option>`).join('')}</select></label>
+          ${COLS_FLAT.length ? `<label class="campo">Colegio
+            <select id="cursoColegio">${opcionesColegio(COLS_FLAT.length===1 ? COLS_FLAT[0].id : '')}</select></label>` : ''}
           <button class="btn" id="btnCurso">+ Crear curso</button>
 
           <h3 style="font-size:12px;margin:16px 0 8px">Profesores</h3>
@@ -1336,7 +1340,11 @@ function conectarAcciones(){
     const n=($('cursoNombre').value||'').trim();
     if(!n){ aviso('Escribe un nombre.'); return; }
     const niv=($('cursoNivel')||{}).value||null;
-    await accion(()=>SB.rpc('kimun_prof_curso_crear',{p_nombre:n, p_nivel:niv}), 'Curso creado');
+    // El colegio va al servidor desde el 07/11/2026: un curso sin colegio solo lo ve la
+    // plataforma, así que la UTP que lo creaba sin elegir lo perdía de vista.
+    const col=($('cursoColegio')||{}).value||null;
+    const args={p_nombre:n, p_nivel:niv}; if(col) args.p_colegio=col;
+    await accion(()=>SB.rpc('kimun_prof_curso_crear',args), 'Curso creado');
   };
   document.querySelectorAll('.add-alumno').forEach(b=>b.onclick=async ()=>{
     const campo=document.querySelector('.in-alumno[data-curso="'+b.dataset.curso+'"]');

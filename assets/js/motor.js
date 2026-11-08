@@ -22,6 +22,42 @@
    ══════════════════════════════════════════════════════════════════════════════ */
 window.__MOTOR_OK = true;
 
+/* ── Accesibilidad de lo que se toca (07/11/2026) ─────────────────────────────────────
+   Las opciones de respuesta, las tarjetas del menú y de la campaña y los nodos del mapa son
+   `div` con onclick: con teclado no se llegaba a ellos y un lector de pantalla no los anunciaba
+   como botones. En vez de tocar cada lugar donde se crean (el quiz, el jefe, los dos duelos, el
+   Sin Fin de calculo.js, la tienda…), un observador les pone role/tabindex al aparecer, y un solo
+   escuchador hace que Enter o Espacio los toquen. Un botón o enlace de verdad no se toca. */
+(function(){
+ const SEL='.opt, .camp-nodo, .exp-card, .node .orb, .shop-item';
+ function marcar(raiz){
+  if(!raiz || !raiz.querySelectorAll) return;
+  const lista=raiz.matches && raiz.matches(SEL) ? [raiz] : [];
+  raiz.querySelectorAll(SEL).forEach(el=>lista.push(el));
+  lista.forEach(el=>{
+   if(el.tagName==='BUTTON' || el.tagName==='A' || el.hasAttribute('tabindex')) return;
+   el.setAttribute('role','button'); el.setAttribute('tabindex','0');
+  });
+ }
+ try{
+  new MutationObserver(ms=>ms.forEach(m=>m.addedNodes.forEach(n=>{ if(n.nodeType===1) marcar(n); })))
+   .observe(document.documentElement,{childList:true,subtree:true});
+ }catch(e){}
+ document.addEventListener('keydown',e=>{
+  const t=e.target;
+  if((e.key==='Enter'||e.key===' ') && t && t.getAttribute && t.getAttribute('role')==='button'
+     && t.tagName!=='BUTTON' && t.tagName!=='A'){
+   e.preventDefault(); t.click();
+  }
+ });
+ // Que se VEA dónde está el foco al navegar con teclado (no con el dedo: :focus-visible).
+ try{
+  const st=document.createElement('style');
+  st.textContent='[role="button"]:focus-visible{outline:3px solid #4dd8ff;outline-offset:3px}';
+  (document.head||document.documentElement).appendChild(st);
+ }catch(e){}
+})();
+
 /* ── Jefes Finales de campaña ─────────────────────────────────────────────────── */
 // Arma las preguntas de una fase mezclando sus OA (reusa POOL y pickN)
 function jefePreguntasFase(camp,faseIdx){
@@ -182,6 +218,11 @@ function renderJefeVictoria(){
  enviarDominio();
  go('scr-jefe-win');
  confetiVictoria();
+ // Al salir de la victoria se revisa la Maestría: vencer el ÚLTIMO Jefe Final puede ser el
+ // hito que la completa (en 1° a 4° es justo eso). Se engancha una sola vez, sin tocar el
+ // onclick que pone cada fork, y revisarMaestria() es idempotente.
+ const jb=$('jwBack');
+ if(jb && !jb.dataset.maestria){ jb.dataset.maestria='1'; jb.addEventListener('click',()=>setTimeout(revisarMaestria,300)); }
 }
 function confetiVictoria(){
  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
@@ -701,12 +742,12 @@ async function validarDocente(){
   if(!SB) return fin('Sin conexión: no se pudo validar el acceso docente.');
   const {data,error}=await SB.rpc('kimun_docente_ok',{p_token:DOCENTE_TOKEN});
   if(error) throw error;
-  if(data!==true) return fin('Este acceso docente no es válido o ya venció. Pedí uno nuevo desde el panel del profesor.');
+  if(data!==true) return fin('Este acceso docente no es válido o ya venció. Pide uno nuevo desde el panel del profesor.');
   try{ sessionStorage.setItem('kimun_docente_ok',DOCENTE_TOKEN); }catch(e){}
   let ok=false; try{ ok=sessionStorage.getItem('kimun_docente_ok')===DOCENTE_TOKEN; }catch(e){}
   if(ok){ location.reload(); return; }
-  fin('Tu navegador no permite el modo docente (¿ventana privada?). Probá en una ventana normal.');
- }catch(e){ fin('No se pudo validar el acceso docente. Intentá de nuevo.'); }
+  fin('Tu navegador no permite el modo docente (¿ventana privada?). Prueba en una ventana normal.');
+ }catch(e){ fin('No se pudo validar el acceso docente. Inténtalo de nuevo.'); }
 }
 function arrancarInscripcion(){
  $('nav').style.display='none';          // la barra inferior no va encima de esta pantalla
@@ -760,6 +801,14 @@ function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remo
 function pintarInicio(){const el=$('rolNombre'),sub=$('rolSub');if(!el)return;
  if(S.alumno){el.textContent='¡Hola, '+S.alumno+'!';el.hidden=false;if(sub)sub.hidden=true;}
  else{el.hidden=true;if(sub)sub.hidden=false;}
+ // Racha de días: solo desde 2, y solo si está viva (hoy o ayer). El nodo lo crea el motor, así
+ // que ningún fork tiene que agregarlo.
+ let rr=$('rolRacha');
+ if(!rr){ rr=document.createElement('div'); rr.id='rolRacha';
+  rr.style.cssText='color:var(--gold);font-weight:800;font-size:15px;margin:2px 0 6px;text-align:center';
+  (sub||el).insertAdjacentElement('afterend',rr); }
+ const nr=(typeof EFIMERO!=='undefined'&&EFIMERO)?0:rachaViva();
+ rr.textContent=nr>=2?('🔥 '+nr+' días seguidos jugando'):''; rr.hidden=nr<2;
  const av=$('avisoPuerta');
  if(av){
   av.hidden=!AVISO_PUERTA;
@@ -1353,6 +1402,8 @@ function renderPerfil(){
  const lg=$('logrosGrid'); lg.innerHTML='';
  Object.keys(LOGROS).forEach(k=>{
   const tengo=S.logros.has(k), L=LOGROS[k];
+  // Sin Modo Difícil, sus logros no se pueden ganar: no se muestran (la Maestría sí, ver esMaestro).
+  if(!HAY_DIFICIL && !tengo && (k==='dificil'||(k.startsWith('dif-')&&k!=='dif-maestro'))) return;
   const d=document.createElement('div'); d.className='logro'+(tengo?'':' lock');
   d.innerHTML=`<span class="l-ic">${tengo?L.ic:'🔒'}</span><span>${L.tx}</span>`;
   lg.appendChild(d);
@@ -1365,6 +1416,7 @@ function renderInsignias(){
  const cont=$('insigniasGrid'); cont.innerHTML='';
  INSIGNIAS.forEach(ins=>{
   const tengo=S.insignias.has(ins.id), activa=S.insigniaActiva===ins.id;
+  if(!HAY_DIFICIL && !tengo && ins.id.startsWith('dif-')) return;   // inalcanzables sin Modo Difícil
   const d=document.createElement('button');
   d.className='insignia'+(tengo?'':' lock')+(activa?' activa':'');
   d.innerHTML=`<span class="i-ic">${tengo?ins.ic:'🔒'}</span><span class="i-tx">${ins.tx}</span>`+
@@ -1530,7 +1582,7 @@ function payloadSave(){
   // Dos campos para el informe del apoderado. Nacen vacios en las partidas que ya
   // existen, y la pantalla lo DICE en vez de mostrar un cero que se leeria como
   // "no ha jugado nunca".
-  visto:S.visto, respondidas:S.respondidas};
+  visto:S.visto, respondidas:S.respondidas, rachaDias:S.rachaDias||null};
 }
 function guardar(){
  // Modo prueba: el avance vive solo en memoria. Se conserva el volcado a S.rutas
@@ -1551,7 +1603,7 @@ function aplicarSave(d){try{
  S.campañasCompletas=new Set(d.campañasCompletas||[]);
  S.insignias=new Set(d.insignias||[]);
  S.insigniaActiva=d.insigniaActiva||null;
- S.visto=d.visto||null; S.respondidas=d.respondidas||0;
+ S.visto=d.visto||null; S.respondidas=d.respondidas||0; S.rachaDias=d.rachaDias||null;
  if(d.calc&&Array.isArray(d.calc.etapas))S.calc=d.calc;
  if(d.mateLecciones&&typeof d.mateLecciones==='object')S.mateLecciones=d.mateLecciones;
  if(d.metasVistas&&typeof d.metasVistas==='object')S.metasVistas=d.metasVistas;
@@ -2039,8 +2091,13 @@ function responder(el,ok,P,e){
     El objetivo se sigue midiendo donde corresponde: en su etapa normal de la campaña.
     ⚠️ Y la exclusión va AQUÍ, al registrar, no en `enviarDominio`: si solo se omitiera el
     envío, lo acumulado en memoria viajaría pegado al resumen de la siguiente etapa que sí
-    mide. Es el mismo motivo por el que una etapa abandonada no se descarta. */
- if(!Q.desafio && !Q.repaso && !Q.asistidaActual && !Q.sinMedir) registrarOA(P&&P.oa, ok);
+    mide. Es el mismo motivo por el que una etapa abandonada no se descarta.
+    ⚠️ Y tampoco va la pregunta que se quedo SIN RESPONDER porque se acabo el reloj (llega
+    con `el` en null, desde el temporizador). Con 20 s y enunciados de Lenguaje de 5° a 7° que
+    con sus opciones pasan los 350 caracteres, el tiempo agotado mide velocidad de lectura y no
+    el objetivo — y como es PRIMER intento, quedaria congelado para siempre en el mapa. Para
+    pasar la etapa y las estrellas sigue contando como fallo, igual que antes (07/11/2026). */
+ if(!Q.desafio && !Q.repaso && !Q.asistidaActual && !Q.sinMedir && el) registrarOA(P&&P.oa, ok);
  document.querySelectorAll('.opt').forEach(o=>o.classList.add('off'));
  if(ok){
   Q.combo++;Q.comboMax=Math.max(Q.comboMax,Q.combo);Q.aciertos++;
@@ -2073,6 +2130,19 @@ function responder(el,ok,P,e){
   const s1=document.createElement('span');s1.innerHTML=FRAC.html(P.ops[P.ok]);
   const s2=document.createElement('span');s2.className='expl-tip';s2.innerHTML='💡 '+FRAC.html(P.tip);
   e.append(b,s1,document.createElement('br'),s2);
+  /* La explicación también se ESCUCHA en los cursos con voz (1° a 4°): es el momento de
+     aprender del error, y antes quedaba mudo justo para el niño que no lee. Lee la respuesta
+     correcta y luego la pista, con los clips pregrabados si existen (el generador las incluye
+     desde el 07/11/2026) y si no con la voz del navegador. En 1° (LEE_SOLO) suena sola, como
+     la pregunta; en el resto, al tocar el 🔊. El botón vive DENTRO de la explicación para no
+     quitarle al 🔊 de arriba su trabajo de repetir la pregunta. */
+  if(window.VOZ && VOZ.activo && P.tip){
+   const bv=document.createElement('button'); bv.type='button'; bv.className='btn-escuchar';
+   bv.textContent='🔊 Escuchar'; bv.style.marginTop='8px';
+   bv.onclick=()=>leerPreguntaEnVoz(String(P.ops[P.ok]), [P.tip], null);
+   e.append(document.createElement('br'),bv);
+   if(typeof LEE_SOLO!=='undefined' && LEE_SOLO && !((typeof REVISION!=='undefined') && REVISION)) bv.onclick();
+  }
   e.hidden=false;$('btnSeguir').hidden=false;
  }
 }
@@ -2151,7 +2221,7 @@ function mostrarResultado(){
    : esJefe ? 'fiesta'
    : (estrellas===3?'oro':estrellas===2?'plata':'bronce');
  $('resKim').src='assets/kimun-'+kimImg+'.png';
- $('resTitle').textContent=paso?(esJefe?'¡EXPEDICIÓN COMPLETA!':'¡Nivel superado!'):('¡Casi! Necesitas '+(dif?'80%':'66%')+' para pasar');
+ $('resTitle').textContent=paso?(esJefe?'¡EXPEDICIÓN COMPLETA!':'¡Nivel superado!'):('¡Casi! Necesitas '+Math.ceil(tot*(dif?0.80:0.66)-1e-9)+' de '+tot+' para pasar');
  $('resStars').innerHTML=[1,2,3].map(i=>i<=estrellas?'<span class="g">★</span>':'<span class="w">★</span>').join('');
  $('resXp').textContent='+'+Q.xpGanado;
  $('resCoins').textContent='+'+((Q.repetida?0:estrellas*10)+Q.aciertos*(Q.repetida?1:5));
@@ -2245,7 +2315,15 @@ function asignaturasDificil(){return DIF_ASIGS.filter(asignaturaDificilCompleta)
 // Maestría Total = CUATRO hitos. Cuáles son, lo declara MAESTRIA_CALC junto a HAY_DIFICIL:
 // donde hay Reto de Cálculo son 3 asignaturas en Difícil + El Autómata; donde no lo hay,
 // son las cuatro asignaturas en Difícil.
-function esMaestro(){if(!HAY_DIFICIL) return false; return hitosMaestria()>=4;}
+// ⚠️ Donde NO hay Modo Difícil (1° a 4°, por edad) la Maestría son los JEFES FINALES de todas
+// las campañas, vencidos en Normal. Antes esMaestro() devolvía false sin más, así que la skin
+// Vulpi Maestro y la celebración quedaban a la vista y bloqueadas PARA SIEMPRE en esos cursos:
+// una recompensa inalcanzable es peor que no ofrecerla (07/11/2026).
+function esMaestro(){
+ if(HAY_DIFICIL) return hitosMaestria()>=4;
+ const cs=CAMPAÑAS.filter(c=>c.jefeFinal);
+ return cs.length>0 && cs.every(c=>S.campañasCompletas.has(c.id));
+}
 function hitosMaestria(){return asignaturasDificil().length+((MAESTRIA_CALC&&S.calc&&S.calc.jefe)?1:0);}
 // Aura/halo dorados permanentes mientras se es maestro (clase en el body).
 function aplicarMaestria(){document.body.classList.toggle('es-maestro', esMaestro());}
@@ -2265,7 +2343,7 @@ function revisarMaestria(){
 // Autómata) y revisa la maestría. Idempotente. Se llama al pasar una etapa en Difícil,
 // al vencer a El Autómata y al iniciar.
 function revisarDificil(){
- if(!HAY_DIFICIL) return;
+ if(!HAY_DIFICIL){ revisarMaestria(); return; }   // sin Difícil, solo la Maestría por jefes
  const hechas=asignaturasDificil();
  const ins={Historia:'dif-historia',Ciencias:'dif-ciencias',Lenguaje:'dif-lenguaje'};
  let nuevo=false;
@@ -2321,7 +2399,24 @@ function reproducirMaestro(){
    que el dato sirve.
    Alcance: el quiz de campana y el Jefe Final, que es de lo que habla el informe. Un nino
    que solo juegue el Reto de Calculo o el duelo va a mostrar su ultima partida de campana. */
-function marcarActividad(){ S.visto=hoyISO(); S.respondidas=(S.respondidas||0)+1; }
+function marcarActividad(){ S.visto=hoyISO(); S.respondidas=(S.respondidas||0)+1; contarRacha(); }
+/* Racha de días seguidos jugando (07/11/2026): una razón para volver mañana. Cuenta el día en
+   que RESPONDE algo (por eso cuelga de marcarActividad), no el día en que abre la app. Solo se
+   MUESTRA en el inicio: no paga monedas ni XP, para no abrir otra vía de inflar el ranking
+   (la lección de la Sesión 33) y para que un niño sin internet en casa no pierda nada. */
+function contarRacha(){
+ const hoy=hoyISO(), r=S.rachaDias||{n:0,ult:null};
+ if(r.ult===hoy) { S.rachaDias=r; return; }
+ const d=new Date(hoy+'T00:00:00'); d.setDate(d.getDate()-1);
+ const ayer=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+ S.rachaDias={n: r.ult===ayer ? r.n+1 : 1, ult:hoy};
+}
+// La racha VIVA: la de hoy o la de ayer (todavía se puede seguir hoy). Si pasó más, se cortó.
+function rachaViva(){
+ const r=S.rachaDias; if(!r||!r.ult) return 0;
+ const hoy=new Date(hoyISO()+'T00:00:00'), u=new Date(r.ult+'T00:00:00');
+ return Math.round((hoy-u)/86400000)<=1 ? r.n : 0;
+}
 
 function _infFecha(iso){
  if(!iso) return null;

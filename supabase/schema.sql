@@ -1156,6 +1156,33 @@ $$;
 -- del bloque Administración; cada ACCIÓN concreta exige su propia capacidad (esas siguen
 -- gateadas por sus porteros durante la Fase 2). Verdadero para Admin, para el legado
 -- (Super/Operador), o para un grant administrativo sobre un colegio/sostenedor/plataforma.
+-- ¿ADMINISTRO este nodo del árbol? (07/11/2026). La misma lista de capacidades que
+-- kimun_prof_admin_colegio, pero preguntada sobre un nodo CONCRETO y no sobre "algún ámbito".
+-- Existe para el segundo colegio: con puede_algun, la UTP del colegio B podía nombrarse Jefe de
+-- un curso del colegio A, mover sus cursos, renombrar o borrar su colegio y ver a sus profesores.
+-- La cobertura baja por el árbol: plataforma > sostenedor > colegio > curso. Un grant de CURSO no
+-- administra nada (Jefe y asignatura no son administradores). Un curso o colegio inexistente, o
+-- un curso sin colegio, solo lo administra la plataforma.
+create or replace function public.kimun_prof_administra(p_tipo text, p_id uuid)
+returns boolean language sql security definer stable set search_path=public as $$
+  select public.kimun_prof_es_admin_raw()
+    or exists(
+      select 1 from public.permisos_usuario g
+      where g.profesor_id = auth.uid()
+        and g.capacidades && array['curso.crear','curso.borrar','profesor.autorizar','pulso.ver','equipo.jefe','permisos.gestionar']
+        and (
+          g.ambito_tipo = 'plataforma'
+          or (g.ambito_tipo = 'sostenedor' and (
+                (p_tipo='sostenedor' and p_id = g.ambito_id)
+             or (p_tipo='colegio' and exists(select 1 from public.colegios co where co.id=p_id and co.sostenedor_id=g.ambito_id))
+             or (p_tipo='curso'   and exists(select 1 from public.cursos c join public.colegios co on co.id=c.colegio_id
+                                              where c.id=p_id and co.sostenedor_id=g.ambito_id))))
+          or (g.ambito_tipo = 'colegio' and (
+                (p_tipo='colegio' and p_id = g.ambito_id)
+             or (p_tipo='curso' and exists(select 1 from public.cursos c where c.id=p_id and c.colegio_id=g.ambito_id))))
+        ));
+$$;
+
 create or replace function public.kimun_prof_admin_colegio()
 returns boolean language sql security definer stable set search_path=public as $$
   select public.kimun_prof_es_admin_raw()
@@ -1255,10 +1282,28 @@ end $$;
 -- ⚠️ Cambió de firma al sumarle el nivel (30/08/2026): sin este drop, re-aplicar el
 -- archivo dejaría DOS versiones y PostgREST elegiría por los parámetros que le lleguen.
 drop function if exists public.kimun_prof_curso_crear(text);
-create or replace function public.kimun_prof_curso_crear(p_nombre text, p_nivel text)
+-- ⚠️ Cambió de firma OTRA VEZ (07/11/2026): suma p_colegio con DEFAULT null, así que el panel que
+-- manda solo nombre y nivel sigue funcionando (PostgREST resuelve el default). Sin el drop de la
+-- firma de dos argumentos quedarían dos versiones.
+drop function if exists public.kimun_prof_curso_crear(text, text);
+create or replace function public.kimun_prof_curso_crear(p_nombre text, p_nivel text, p_colegio uuid default null)
 returns public.cursos language plpgsql security definer set search_path=public as $$
-declare r public.cursos; niv text; begin
+declare r public.cursos; niv text; col uuid; n int; begin
   if not public.kimun_prof_puede_algun('curso.crear') then raise exception 'no_autorizado'; end if;
+  -- ¿EN QUÉ colegio? (07/11/2026). Antes el curso nacía sin colegio, y un curso sin colegio solo
+  -- lo ve la plataforma: la UTP de un colegio lo creaba y lo perdía de vista. Ahora:
+  --  · con p_colegio, hay que poder crear cursos en ESE colegio;
+  --  · sin p_colegio, la plataforma lo deja sin colegio (como antes), y quien administra un solo
+  --    colegio lo crea ahí. Con más de uno hay que elegir.
+  col := p_colegio;
+  if col is not null then
+    if not exists(select 1 from public.colegios where id = col) then raise exception 'colegio_invalido'; end if;
+    if not public.kimun_prof_puede_en_colegio('curso.crear', col) then raise exception 'no_autorizado'; end if;
+  elsif not public.kimun_prof_puede_ambito('curso.crear', 'plataforma', null) then
+    select count(*)::int, (array_agg(co.id))[1] into n, col
+      from public.colegios co where public.kimun_prof_puede_en_colegio('curso.crear', co.id);
+    if n <> 1 then raise exception 'elige_colegio'; end if;
+  end if;
   if coalesce(trim(p_nombre),'') = '' then raise exception 'nombre_vacio'; end if;
   niv := nullif(trim(coalesce(p_nivel,'')),'');
   -- Dos dígitos y nada más. Se valida aquí y no solo en el panel porque de este dato
@@ -1266,8 +1311,8 @@ declare r public.cursos; niv text; begin
   if niv is not null and niv !~ '^[0-9]{2}$' then raise exception 'nivel_invalido'; end if;
   -- El curso nace SIN Jefe: quien lo crea (Admin/Super) no es Jefe de aula.
   -- profesor_id queda nulo; el Jefe se nombra después con kimun_prof_equipo_asignar.
-  insert into public.cursos(nombre, codigo, nivel)
-  values (trim(p_nombre), public.kimun_gen_codigo_curso(), niv) returning * into r;
+  insert into public.cursos(nombre, codigo, nivel, colegio_id)
+  values (trim(p_nombre), public.kimun_gen_codigo_curso(), niv, col) returning * into r;
   return r; end $$;
 
 -- Fijarle el nivel a un curso que ya existía. Sin esto, los cursos creados antes de que
@@ -1302,9 +1347,16 @@ declare yo public.profesores; begin
   -- que el bug v_rol de la Sesión 73.
   select * into yo from public.profesores pr where pr.id = auth.uid();
   if yo.id is null or not public.kimun_prof_admin_colegio() then raise exception 'no_autorizado'; end if;
+  -- Solo los sostenedores que administro, o donde administro algún colegio (07/11/2026): la
+  -- UTP de un colegio ve su rama del árbol, no a los demás clientes de VULPO.
   return query select s.id, s.nombre,
-    (select count(*)::int from public.colegios c where c.sostenedor_id = s.id)
-    from public.sostenedores s order by s.nombre;
+    (select count(*)::int from public.colegios c
+      where c.sostenedor_id = s.id and public.kimun_prof_administra('colegio', c.id))
+    from public.sostenedores s
+    where public.kimun_prof_administra('sostenedor', s.id)
+       or exists(select 1 from public.colegios c
+                  where c.sostenedor_id = s.id and public.kimun_prof_administra('colegio', c.id))
+    order by s.nombre;
 end $$;
 
 drop function if exists public.kimun_prof_colegios(uuid);
@@ -1317,7 +1369,9 @@ declare yo public.profesores; begin
   if yo.id is null or not public.kimun_prof_admin_colegio() then raise exception 'no_autorizado'; end if;
   return query select c.id, c.nombre,
     (select count(*)::int from public.cursos cu where cu.colegio_id = c.id)
-    from public.colegios c where c.sostenedor_id = p_sostenedor order by c.nombre;
+    from public.colegios c where c.sostenedor_id = p_sostenedor
+     and public.kimun_prof_administra('colegio', c.id)   -- solo los míos (07/11/2026)
+    order by c.nombre;
 end $$;
 
 -- Los cursos con su UUID, para el selector de ÁMBITO del mantenedor (Fase 3): el panel
@@ -1333,13 +1387,18 @@ declare yo public.profesores; begin
   return query
     select c.id, c.codigo, c.nombre, c.nivel, c.colegio_id,
            (select co.nombre from public.colegios co where co.id = c.colegio_id)
-      from public.cursos c order by coalesce(c.nivel,'99'), c.nombre;
+      from public.cursos c
+     where public.kimun_prof_administra('curso', c.id)   -- solo los de mi ámbito (07/11/2026)
+     order by coalesce(c.nivel,'99'), c.nombre;
 end $$;
 
+-- ⚠️ Desde el 07/11/2026 cada una pregunta sobre su NODO, no sobre "algún ámbito": un sostenedor
+-- nuevo es de la plataforma; un colegio, de su sostenedor; renombrar, de quien lo administra;
+-- borrar, del nivel de ARRIBA (la UTP no borra su propio colegio, ni un sostenedor el suyo).
 create or replace function public.kimun_prof_sostenedor_crear(p_nombre text)
 returns uuid language plpgsql security definer set search_path=public as $$
 declare nid uuid; begin
-  if not public.kimun_prof_puede_algun('curso.crear') then raise exception 'no_autorizado'; end if;
+  if not public.kimun_prof_puede_ambito('curso.crear', 'plataforma', null) then raise exception 'no_autorizado'; end if;
   if coalesce(trim(p_nombre),'') = '' then raise exception 'nombre_vacio'; end if;
   insert into public.sostenedores(nombre) values (trim(p_nombre)) returning id into nid;
   return nid; end $$;
@@ -1347,7 +1406,7 @@ declare nid uuid; begin
 create or replace function public.kimun_prof_colegio_crear(p_sostenedor uuid, p_nombre text)
 returns uuid language plpgsql security definer set search_path=public as $$
 declare nid uuid; begin
-  if not public.kimun_prof_puede_algun('curso.crear') then raise exception 'no_autorizado'; end if;
+  if not public.kimun_prof_puede_en_sostenedor('curso.crear', p_sostenedor) then raise exception 'no_autorizado'; end if;
   if coalesce(trim(p_nombre),'') = '' then raise exception 'nombre_vacio'; end if;
   if not exists(select 1 from public.sostenedores where id = p_sostenedor) then raise exception 'sostenedor_invalido'; end if;
   insert into public.colegios(sostenedor_id, nombre) values (p_sostenedor, trim(p_nombre)) returning id into nid;
@@ -1359,8 +1418,13 @@ create or replace function public.kimun_prof_curso_colegio_fijar(p_curso_codigo 
 returns void language plpgsql security definer set search_path=public as $$
 declare cid uuid; begin
   select id into cid from public.cursos where codigo = upper(trim(p_curso_codigo));
-  if cid is null or not public.kimun_prof_puede_algun('curso.crear') then raise exception 'no_autorizado'; end if;
+  -- Hay que administrar el curso DONDE ESTÁ y el colegio ADONDE VA (07/11/2026). Dejarlo sin
+  -- colegio es cosa de la plataforma: un curso sin colegio solo lo ve ella.
+  if cid is null or not public.kimun_prof_administra('curso', cid) then raise exception 'no_autorizado'; end if;
   if p_colegio is not null and not exists(select 1 from public.colegios where id = p_colegio) then raise exception 'colegio_invalido'; end if;
+  if (p_colegio is null and not public.kimun_prof_puede_ambito('curso.crear', 'plataforma', null))
+     or (p_colegio is not null and not public.kimun_prof_puede_en_colegio('curso.crear', p_colegio))
+    then raise exception 'no_autorizado'; end if;
   update public.cursos set colegio_id = p_colegio where id = cid;
 end $$;
 
@@ -1370,7 +1434,7 @@ end $$;
 create or replace function public.kimun_prof_sostenedor_renombrar(p_id uuid, p_nombre text)
 returns void language plpgsql security definer set search_path=public as $$
 begin
-  if not public.kimun_prof_puede_algun('curso.crear') then raise exception 'no_autorizado'; end if;
+  if not public.kimun_prof_puede_en_sostenedor('curso.crear', p_id) then raise exception 'no_autorizado'; end if;
   if coalesce(trim(p_nombre),'') = '' then raise exception 'nombre_vacio'; end if;
   update public.sostenedores set nombre = trim(p_nombre) where id = p_id;
 end $$;
@@ -1378,14 +1442,14 @@ end $$;
 create or replace function public.kimun_prof_sostenedor_borrar(p_id uuid)
 returns void language plpgsql security definer set search_path=public as $$
 begin
-  if not public.kimun_prof_puede_algun('curso.crear') then raise exception 'no_autorizado'; end if;
+  if not public.kimun_prof_puede_ambito('curso.crear', 'plataforma', null) then raise exception 'no_autorizado'; end if;
   delete from public.sostenedores where id = p_id;
 end $$;
 
 create or replace function public.kimun_prof_colegio_renombrar(p_id uuid, p_nombre text)
 returns void language plpgsql security definer set search_path=public as $$
 begin
-  if not public.kimun_prof_puede_algun('curso.crear') then raise exception 'no_autorizado'; end if;
+  if not public.kimun_prof_puede_en_colegio('curso.crear', p_id) then raise exception 'no_autorizado'; end if;
   if coalesce(trim(p_nombre),'') = '' then raise exception 'nombre_vacio'; end if;
   update public.colegios set nombre = trim(p_nombre) where id = p_id;
 end $$;
@@ -1393,7 +1457,8 @@ end $$;
 create or replace function public.kimun_prof_colegio_borrar(p_id uuid)
 returns void language plpgsql security definer set search_path=public as $$
 begin
-  if not public.kimun_prof_puede_algun('curso.crear') then raise exception 'no_autorizado'; end if;
+  if not public.kimun_prof_puede_en_sostenedor('curso.crear',
+       (select co.sostenedor_id from public.colegios co where co.id = p_id)) then raise exception 'no_autorizado'; end if;
   delete from public.colegios where id = p_id;
 end $$;
 
@@ -1748,7 +1813,9 @@ declare yo public.profesores; r public.profesores_autorizados; begin
     then raise exception 'correo_invalido'; end if;
   insert into public.profesores_autorizados(correo, invitado_por)
   values (lower(trim(p_correo)), yo.id)
-  on conflict (correo) do update set invitado_por = excluded.invitado_por
+  -- Conserva a quien lo invitó primero (07/11/2026): invitado_por decide qué UTP ve ese correo
+  -- antes de que tenga permisos, y re-autorizarlo desde otro colegio no se lo puede quitar.
+  on conflict (correo) do update set invitado_por = coalesce(public.profesores_autorizados.invitado_por, excluded.invitado_por)
   returning * into r;
   return r; end $$;
 
@@ -1763,9 +1830,14 @@ create or replace function public.kimun_prof_profesores()
 returns table(correo text, nombre text, es_admin boolean, rango text, cursos int, registrado boolean,
               ambito jsonb)
 language plpgsql security definer set search_path=public as $$
-declare yo public.profesores; begin
+declare yo public.profesores; v_todo boolean; begin
   select * into yo from public.profesores where id = auth.uid();
   if yo.id is null or not public.kimun_prof_admin_colegio() then raise exception 'no_autorizado'; end if;
+  -- ⚠️ Quién ve a quién (07/11/2026). La plataforma ve a todos. La UTP de un colegio ve solo a
+  -- los profesores con algún permiso DENTRO de lo que administra, más los correos que ELLA
+  -- invitó y aún no tienen permisos; y de cada uno ve solo los ámbitos que administra. Antes la
+  -- lista traía los correos de los profesores de TODOS los colegios.
+  v_todo := public.kimun_prof_administra('plataforma', null);
   return query
     select coalesce(a.correo, p.correo), p.nombre, coalesce(p.es_admin,false),
            -- Rango EFECTIVO por grants (cutover Fase 4b): un Operador/Super creado por el mantenedor
@@ -1793,16 +1865,19 @@ declare yo public.profesores; begin
                select 0 as ord, jsonb_build_object('nivel','plataforma','nombre','Toda la plataforma') as e
                  from public.permisos_usuario g
                  where g.profesor_id = p.id and g.ambito_tipo = 'plataforma'
+                   and (v_todo or public.kimun_prof_administra(g.ambito_tipo, g.ambito_id))
                union all
                select 1, jsonb_build_object('nivel','sostenedor','nombre',
                    coalesce((select s.nombre from public.sostenedores s where s.id = g.ambito_id),'?'))
                  from public.permisos_usuario g
                  where g.profesor_id = p.id and g.ambito_tipo = 'sostenedor'
+                   and (v_todo or public.kimun_prof_administra(g.ambito_tipo, g.ambito_id))
                union all
                select 2, jsonb_build_object('nivel','colegio','nombre',
                    coalesce((select co.nombre from public.colegios co where co.id = g.ambito_id),'?'))
                  from public.permisos_usuario g
                  where g.profesor_id = p.id and g.ambito_tipo = 'colegio'
+                   and (v_todo or public.kimun_prof_administra(g.ambito_tipo, g.ambito_id))
                union all
                select 3, jsonb_build_object('nivel','curso',
                    'nombre', coalesce((select c.nombre from public.cursos c where c.id = g.ambito_id),'?'),
@@ -1810,12 +1885,18 @@ declare yo public.profesores; begin
                    'asignaturas', to_jsonb(coalesce(g.asignaturas,'{}'::text[])))
                  from public.permisos_usuario g
                  where g.profesor_id = p.id and g.ambito_tipo = 'curso'
+                   and (v_todo or public.kimun_prof_administra(g.ambito_tipo, g.ambito_id))
                    and ('alumno.gestionar' = any(g.capacidades)
                         or coalesce(array_length(g.asignaturas,1),0) > 0)
              ) sub
            ), '[]'::jsonb)
     from public.profesores_autorizados a
     full outer join public.profesores p on lower(p.correo) = lower(a.correo)
+    where v_todo
+       or a.invitado_por = auth.uid()
+       or exists(select 1 from public.permisos_usuario g
+                  where g.profesor_id = p.id and g.ambito_tipo <> 'plataforma'
+                    and public.kimun_prof_administra(g.ambito_tipo, g.ambito_id))
     order by coalesce(a.creado, p.creado);
 end $$;
 
@@ -1835,6 +1916,20 @@ declare yo public.profesores; obj public.profesores; n int; obj_rango text; mi_r
   -- con SQL a mano.
   if lower(trim(coalesce(p_correo,''))) = lower(yo.correo) then raise exception 'no_te_puedes_quitar'; end if;
   select * into obj from public.profesores where lower(correo) = lower(trim(coalesce(p_correo,'')));
+  -- ⚠️ Fuera de la plataforma, solo se revoca a quien vive ENTERO dentro de lo que administro
+  -- (07/11/2026): ningún permiso fuera de mi ámbito, y que lo vea en mi lista (algún permiso
+  -- dentro, o invitado por mí). Si no, la UTP de un colegio podía dejar sin acceso a un profesor
+  -- de otro colegio. Mismo error para "no existe" y "no es tuyo".
+  if not public.kimun_prof_administra('plataforma', null) then
+    if (obj.id is not null and exists(select 1 from public.permisos_usuario g
+                                       where g.profesor_id = obj.id
+                                         and not public.kimun_prof_administra(g.ambito_tipo, g.ambito_id)))
+       or not ( exists(select 1 from public.profesores_autorizados a
+                        where lower(a.correo) = lower(trim(coalesce(p_correo,''))) and a.invitado_por = auth.uid())
+             or (obj.id is not null and exists(select 1 from public.permisos_usuario g
+                                                where g.profesor_id = obj.id)) )
+      then raise exception 'no_autorizado'; end if;
+  end if;
   -- Protección por RANGO EFECTIVO (cutover Fase 4b), no por bandera: a un Admin o a un Operador
   -- solo los revoca un Admin; a un SuperUsuario, un Admin o un Operador (un Super no revoca a otro).
   if obj.id is not null then
@@ -1974,9 +2069,11 @@ end $$;
 create or replace function public.kimun_prof_curso_asignar(p_curso_codigo text, p_correo text)
 returns public.cursos language plpgsql security definer set search_path=public as $$
 declare cid uuid; pid uuid; r public.cursos; old_jefe uuid; begin
-  if not public.kimun_prof_puede_algun('equipo.jefe') then raise exception 'no_autorizado'; end if;
   select id into cid from public.cursos where codigo = upper(trim(coalesce(p_curso_codigo,'')));
-  if cid is null then raise exception 'curso_invalido'; end if;
+  -- ⚠️ Sobre ESTE curso (07/11/2026). Con puede_algun('equipo.jefe') la UTP de cualquier colegio
+  -- podía nombrarse Jefe de un curso ajeno y así ver los nombres y códigos ALU- de sus alumnos.
+  -- Un código inexistente y un curso ajeno responden lo mismo, como en las demás funciones.
+  if cid is null or not public.kimun_prof_puede('equipo.jefe', cid) then raise exception 'no_autorizado'; end if;
   select id into pid from public.profesores where lower(correo) = lower(trim(coalesce(p_correo,'')));
   if pid is null then raise exception 'profesor_invalido'; end if;
   -- Un solo Jefe por curso: baja al actual (si es otro) y sube al nuevo, en curso_profesores Y en
@@ -2194,7 +2291,8 @@ create or replace function public.kimun_prof_limpiar_pruebas(p_ejecutar boolean)
 returns int language plpgsql security definer set search_path=public as $$
 declare yo public.profesores; n int; begin
   select * into yo from public.profesores where id = auth.uid();
-  if yo.id is null or not public.kimun_prof_puede_algun('perfiles.limpiar') then raise exception 'no_autorizado'; end if;
+  -- Borra perfiles de TODA la plataforma: es de la plataforma, no de un colegio (07/11/2026).
+  if yo.id is null or not public.kimun_prof_puede_ambito('perfiles.limpiar', 'plataforma', null) then raise exception 'no_autorizado'; end if;
   if p_ejecutar then
     delete from public.perfiles where es_bot = false and codigo_acceso is null;
     get diagnostics n = row_count;
@@ -2222,7 +2320,13 @@ revoke execute on function
   public.kimun_prof_es_mio(uuid),
   public.kimun_prof_acceso(uuid), public.kimun_prof_asignaturas(uuid),
   public.kimun_prof_admin_colegio()
-  from public;
+  from public, anon, authenticated;
+-- ⚠️ "from public" a secas NO bastaba (07/11/2026): Supabase otorga EXECUTE a anon y
+-- authenticated por default privileges, así que estas siete seguían llamables por RPC con la
+-- clave pública (kimun_gen_codigo_alumno devolvía un ALU- nuevo a quien lo pidiera). Es la
+-- misma lección de los resolutores de la Sesión 116, que este bloque no había recibido.
+-- Ninguna la llama un cliente ni una función invoker: solo funciones definer, que corren como
+-- el dueño y conservan su EXECUTE.
 
 -- Resolutores del motor granular (Sesión 116, Fase 2): security definer, corren como su dueño
 -- y solo los llaman las demás funciones del rol de profesor. Se revocan también de anon y
@@ -2243,7 +2347,8 @@ revoke execute on function
   public.kimun_prof_tiene_todas_asig(uuid),
   public.kimun_prof_puede_ambito(text,text,uuid),
   public.kimun_prof_gestiona_ambito(text,uuid),
-  public.kimun_prof_rango(uuid)
+  public.kimun_prof_rango(uuid),
+  public.kimun_prof_administra(text,uuid)
   from public, anon, authenticated;
 
 -- ------------------------------------------------------------
@@ -3167,7 +3272,7 @@ grant execute on function
   public.kimun_yo(), public.kimun_xp(int), public.kimun_dificil(int), public.kimun_ranking(), public.kimun_canjear(text),
   public.kimun_dominio(jsonb),
   public.kimun_prof_yo(), public.kimun_prof_alta(text),
-  public.kimun_prof_listar(), public.kimun_prof_curso_crear(text,text),
+  public.kimun_prof_listar(), public.kimun_prof_curso_crear(text,text,uuid),
   public.kimun_prof_curso_nivel(text,text),
   public.kimun_prof_curso_quitar(text), public.kimun_prof_alumno_agregar(text,text,text),
   public.kimun_prof_alumno_quitar(text), public.kimun_prof_xp_fijar(text,int),

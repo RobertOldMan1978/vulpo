@@ -99,6 +99,11 @@ def textos():
         pares.append((p["pregunta"], _nv.normalizar(p["pregunta"], p["oa"])))
         for o in p["opciones"]:
             pares.append((str(o), _nv.normalizar(str(o), p["oa"])))
+        # La pista (`tip`) se locuta desde el 07/11/2026: el juego la lee al fallar, junto a
+        # la respuesta correcta (motor.js, explicacion del error). Antes no tenia clip y la
+        # explicacion quedaba muda justo para el nino que no lee.
+        if p.get("tip"):
+            pares.append((p["tip"], _nv.normalizar(p["tip"], p["oa"])))
 
     # El fork del que salen META_OA y los nombres de etapa, POR ASIGNATURA y no fijo
     # en "3ro": con la ruta clavada, generar la voz de 4 basico habria leido las metas
