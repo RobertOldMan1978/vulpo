@@ -12,6 +12,15 @@ Uso:
     python scripts/voz-r2.py bajar        # baja los MP3 de R2 que falten en el disco
     python scripts/voz-r2.py verificar    # cruza manifiestos, disco y R2 (sale 1 si falta algo)
     python scripts/voz-r2.py verificar --solo-r2   # solo cruza manifiestos contra R2
+    python scripts/voz-r2.py reemplazar mat4/<hash>.mp3 [...]   # sobrescribe clips puntuales
+
+`reemplazar` existe porque `subir` compara por tamano, y hay UN caso en que eso falla: un
+clip regenerado porque cambio la PRONUNCIACION (normalizar-voz-nivel.py) y no el texto en
+pantalla. Conserva el nombre —el hash es del texto mostrado— y puede pesar lo mismo, asi que
+`subir` lo da por igual y deja el viejo en R2. `verificar` lo caza por MD5. Paso en la
+Sesion 145 con mat4/84b1fe20acc896f9.mp3 (el segundo x de "2 x 3 x 4").
+Ojo: el CDN y los navegadores pueden seguir sirviendo el audio viejo de esa URL, porque se
+publica como immutable; en Cloudflare se purga por URL (Caching > Purge Cache).
 
 NUNCA BORRA, en ningun lado y a proposito: usa `rclone copy`, no `rclone sync`. Un sync
 que borra es la forma mas rapida de perder el respaldo. Limpiar clips huerfanos es una
@@ -144,6 +153,20 @@ def bajar():
     print("Bajada terminada. Corre `python scripts/voz-r2.py verificar`.")
 
 
+def reemplazar(rutas):
+    for r in rutas:
+        r = r.replace("\\", "/").strip("/")
+        if not r.endswith(".mp3") or r.count("/") != 1:
+            sys.exit("Ruta invalida (se espera <asig>/<hash>.mp3): %s" % r)
+        if not (VOZ / r).exists() or (VOZ / r).stat().st_size == 0:
+            sys.exit("No existe en el disco, o pesa 0 bytes: %s" % r)
+        # copyto SIN --size-only: sobrescribe aunque el tamano coincida.
+        rclone("copyto", str(VOZ / r), REMOTO + "/" + r,
+               "--header-upload", CACHE,
+               "--header-upload", "Content-Type: audio/mpeg")
+        print("reemplazado en R2:", r)
+
+
 def verificar(solo_r2=False):
     esp = esperados()
     remoto = en_r2()
@@ -183,6 +206,10 @@ def main():
         subir()
     elif cmd == "bajar":
         bajar()
+    elif cmd == "reemplazar":
+        if len(pedidos) < 2:
+            sys.exit("Falta la ruta: python scripts/voz-r2.py reemplazar mat4/<hash>.mp3")
+        reemplazar(pedidos[1:])
     elif cmd == "verificar":
         verificar(solo_r2="--solo-r2" in sys.argv)
     else:

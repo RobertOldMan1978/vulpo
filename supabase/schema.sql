@@ -2558,6 +2558,26 @@ end $$;
 -- public no se los quita. Revocar un permiso inexistente es inofensivo.
 revoke execute on function public.kimun_foto_semanal(date) from public, anon, authenticated;
 
+-- Ranking SEMANAL de mi curso (Sesión 145, 08/11/2026): los XP ganados desde la última foto del
+-- lunes, para que el ranking no quede fijo todo el año y los de abajo tengan una carrera que
+-- puedan ganar. Mismas columnas que kimun_ranking más `xp_semana`, y la misma regla de quién se ve
+-- (mi curso). Un alumno sin fila en la última foto —se inscribió esta semana— cuenta todo su XP.
+-- greatest(0, ...): si el profesor BAJÓ el XP con kimun_prof_xp_fijar, la resta saldría negativa.
+-- ⚠️ Va DESPUÉS de crear xp_semanal: una función `language sql` se valida al crearse.
+drop function if exists public.kimun_ranking_semanal();
+create or replace function public.kimun_ranking_semanal()
+returns table(nombre text, avatar text, xp int, soy_yo boolean, curso text, dificil int, xp_semana int)
+language sql security definer set search_path=public as $$
+  with ult as (select max(semana) as s from public.xp_semanal)
+  select p.nombre, p.avatar, p.xp, coalesce(p.id = public.kimun_yo(), false), c.nombre, p.dificil,
+         greatest(0, p.xp - coalesce((select x.xp from public.xp_semanal x, ult
+                                       where x.perfil_id = p.id and x.semana = ult.s), 0))::int
+  from public.perfiles p
+  join public.cursos c on c.id = p.curso_id
+  where p.curso_id = (select curso_id from public.perfiles where id = public.kimun_yo())
+  order by 7 desc, p.xp desc, p.nombre; $$;
+grant execute on function public.kimun_ranking_semanal() to anon, authenticated;
+
 -- Tendencia del curso: la primera lectura de las fotos semanales. Existían desde la
 -- Sesión 36 y NINGÚN cliente las leía nunca: el panel mostraba una foto del acumulado
 -- del año y no había forma de decir "cómo le fue al curso esta semana".

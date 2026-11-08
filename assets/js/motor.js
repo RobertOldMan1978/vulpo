@@ -830,6 +830,7 @@ function comboFx(n){const c=$('combo');c.textContent='COMBO x'+n+' 🔥';
  c.classList.remove('show');void c.offsetWidth;c.classList.add('show');}
 function refreshHud(){
  $('hudAv').innerHTML=avatarHTML(S.avatar);
+ try{ $('hudAv').style.boxShadow=marcoCss(); }catch(e){}   // el marco comprado en la tienda
  $('hudName').textContent=insigniaIc()+S.nombre;
  const dentro=S.xp % XP_POR_NIVEL;
  const nuevoNivel=Math.floor(S.xp/XP_POR_NIVEL)+1;
@@ -1000,6 +1001,7 @@ function renderExpediciones(){
  ajustarNav();
  cargarPlan();   // perezosa: al terminar repinta el menú si sigue activo
  const g=$('expGrid');g.innerHTML='';
+ tarjetaErrores(g);   // "Mis errores": primera, y solo si hay algo para repasar HOY
  ORDEN_ASIG.forEach(asig=>{
   const camp=CAMPAÑAS.find(c=>c.asignatura===asig);
   /* ¿Esta asignatura se juega como camino de mini-clases? Es una propiedad de SU campaña
@@ -1358,6 +1360,45 @@ function renderModoSel(){
 function skinImg(av){const s=SKINS.find(k=>k.e===av&&k.img);return s?s.img:null;}
 // HTML del avatar: <img> si la skin tiene imagen, o el emoji tal cual.
 function avatarHTML(av){const img=skinImg(av);return img?`<img src="${img}" alt="avatar">`:av;}
+/* Marcos para el avatar (Sesión 145, 08/11/2026): algo en qué gastar las monedas cuando ya se
+   compraron todas las skins, que se completan dentro del año. Son CSS puro —no piden arte— y se
+   lucen alrededor del avatar en la barra de arriba. Viven aquí, una vez para los ocho cursos.
+   Precios por encima de casi todas las skins: son el escalón que viene DESPUÉS. */
+const MARCOS=[
+ {id:'cian',     nombre:'Marco cian',     p:300,  css:'0 0 0 3px #4dd8ff'},
+ {id:'rosa',     nombre:'Marco rosa',     p:450,  css:'0 0 0 3px #ff4d8d'},
+ {id:'verde',    nombre:'Marco esmeralda',p:600,  css:'0 0 0 3px #3ee089,0 0 10px #3ee08999'},
+ {id:'oro',      nombre:'Marco de oro',   p:900,  css:'0 0 0 3px #ffc93c,0 0 14px #ffc93c'},
+ {id:'arcoiris', nombre:'Marco arcoíris', p:1200, css:'0 0 0 2px #ff4d8d,0 0 0 4px #ffc93c,0 0 0 6px #3ee089,0 0 0 8px #4dd8ff'},
+ {id:'galaxia',  nombre:'Marco galaxia',  p:1600, css:'0 0 0 3px #8f6bff,0 0 16px #8f6bff,0 0 28px #4dd8ff'},
+];
+function marcoCss(){ const m=MARCOS.find(x=>x.id===S.marco); return m?m.css:''; }
+function renderMarcos(g){
+ if(VITRINA) return;   // el escaparate del modo prueba muestra solo las skins
+ const t=document.createElement('div');
+ t.style.cssText='grid-column:1/-1;margin:14px 0 2px;font-weight:900;color:var(--gold);text-align:center';
+ t.textContent='🖼️ Marcos para tu avatar';
+ g.appendChild(t);
+ const mios=S.marcos||[];
+ MARCOS.forEach(m=>{
+  const owned=mios.includes(m.id), equipped=S.marco===m.id;
+  const it=document.createElement('div'); it.className='shop-item'+(equipped?' equipped':'');
+  const prev=`<div class="em"><span style="display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;box-shadow:${m.css}">${avatarHTML(S.avatar)}</span></div>`;
+  const precio=owned?'<div class="price" style="color:var(--green)">Tuyo</div>':`<div class="price">🪙 ${m.p}</div>`;
+  const btn=equipped?'<button class="equip">Quitar</button>'
+           :owned?'<button class="equip">Equipar</button>'
+           :`<button class="buy"${S.monedas<m.p?' disabled':''}>Comprar 🪙${m.p}</button>`;
+  it.innerHTML=prev+`<div class="skin-name">${m.nombre}</div>`+precio+btn;
+  it.querySelector('button').onclick=()=>{
+   if(equipped){ S.marco=null; SND.tap(); }
+   else if(owned){ S.marco=m.id; SND.tap(); }
+   else{ if(S.monedas<m.p){SND.wrong();return;} S.monedas-=m.p; S.marcos=mios.concat(m.id); S.marco=m.id;
+    SND.coin(); particulas(window.innerWidth/2,window.innerHeight/3,['🪙','✨','⭐'],16); }
+   guardar(); refreshHud(); renderTienda();
+  };
+  g.appendChild(it);
+ });
+}
 function renderTienda(){
  const coins=$('tiendaCoins');
  if(coins){ coins.textContent=S.monedas; if(coins.parentElement) coins.parentElement.style.display=VITRINA?'none':''; }
@@ -1396,6 +1437,7 @@ function renderTienda(){
   };
   g.appendChild(it);
  });
+ renderMarcos(g);
 }
 /* ===== Perfil: logros e insignias ===== */
 function renderPerfil(){
@@ -1427,20 +1469,55 @@ function renderInsignias(){
 }
 function restante(expira){const ms=new Date(expira)-new Date();if(ms<=0)return 'expira pronto';
  const h=Math.floor(ms/3600000),m=Math.floor((ms%3600000)/60000);return h+'h '+m+'m';}
+/* Ranking SEMANAL o del AÑO (Sesión 145). El anual suma el XP de todo el año y deja fijos a los
+   de abajo; el semanal cuenta lo ganado desde la foto del lunes, así que cada semana es una
+   carrera nueva. Abre en el semanal. Si el servidor todavía no tiene kimun_ranking_semanal,
+   cae solo al anual y esconde las pestañas: nunca deja el ranking en blanco. */
+let RANK_MODO='semana', _rankUltM={}, _rankSinSemanal=false, _rankVisto=false;
+function pestanasRanking(){
+ const el=$('ranking'); if(!el) return;
+ let t=$('rankTabs');
+ if(!t){ t=document.createElement('div'); t.id='rankTabs';
+  t.style.cssText='display:flex;gap:6px;justify-content:center;margin:0 0 10px';
+  el.parentNode.insertBefore(t,el); }
+ t.hidden=_rankSinSemanal;
+ const chip=(m,txt)=>`<button type="button" data-m="${m}" style="border:0;border-radius:999px;padding:6px 12px;font-weight:800;font-size:12px;cursor:pointer;`+
+   (RANK_MODO===m?'background:var(--gold);color:#241a3d':'background:#ffffff14;color:var(--dim)')+`">${txt}</button>`;
+ t.innerHTML=chip('semana','📅 Esta semana')+chip('anio','🏆 Todo el año');
+ t.querySelectorAll('button').forEach(b=>b.onclick=()=>{ if(RANK_MODO===b.dataset.m) return;
+  SND.tap(); RANK_MODO=b.dataset.m; renderRanking(); });
+}
 function renderRanking(){
  const el=$('ranking');
- const cache=JSON.parse(localStorage.getItem('kimun_rank'+SUFIJO)||'null');
+ if(_rankSinSemanal) RANK_MODO='anio';
+ // Cada curso pone `_rankUlt=0` al canjear un código (y borra el caché anual): es la señal de
+ // "cambió el curso, vuelve a pedirlo ya". Aquí se respeta para las DOS pestañas, y se borra
+ // también el caché semanal, que si no mostraría el ranking del curso anterior.
+ if(typeof _rankUlt!=='undefined'){
+  // Solo DESPUÉS de la primera vez: al cargar la página también vale 0, y ahí no hay que borrar nada.
+  if(_rankUlt===0 && _rankVisto){ _rankUltM={}; try{ localStorage.removeItem('kimun_rank'+SUFIJO+'_sem'); }catch(e){} }
+  _rankVisto=true;
+  _rankUlt=Date.now();
+ }
+ pestanasRanking();
+ const sem=RANK_MODO==='semana', clave='kimun_rank'+SUFIJO+(sem?'_sem':'');
+ const cache=JSON.parse(localStorage.getItem(clave)||'null');
  if(cache) pintarRanking(cache);                       // muestra lo último mientras carga
  if(!SB||!MI_PERFIL){ if(!cache) pintarSinCurso(); return; }
- // Como máximo una consulta cada 30 s, pero solo si ya hay algo pintado:
+ // Como máximo una consulta cada 30 s por pestaña, pero solo si ya hay algo pintado:
  // sin caché la pediremos igual, para no dejar el ranking en blanco.
- if(cache && Date.now()-_rankUlt < 30000) return;
- _rankUlt=Date.now();
- SB.rpc('kimun_ranking').then(({data,error})=>{
-  if(error) throw error;
-  if(!data||!data.length){ pintarSinCurso(); localStorage.removeItem('kimun_rank'+SUFIJO); return; }
-  localStorage.setItem('kimun_rank'+SUFIJO,JSON.stringify(data));
-  pintarRanking(data);
+ if(cache && Date.now()-(_rankUltM[RANK_MODO]||0) < 30000) return;
+ _rankUltM[RANK_MODO]=Date.now();
+ SB.rpc(sem?'kimun_ranking_semanal':'kimun_ranking').then(({data,error})=>{
+  if(error){
+   // La función semanal no existe todavía en el servidor: se queda con el anual.
+   if(sem && /PGRST202|Could not find the function/.test((error.code||'')+' '+(error.message||''))){
+    _rankSinSemanal=true; RANK_MODO='anio'; renderRanking(); return; }
+   throw error;
+  }
+  if(!data||!data.length){ pintarSinCurso(); localStorage.removeItem(clave); return; }
+  localStorage.setItem(clave,JSON.stringify(data));
+  if(RANK_MODO===(sem?'semana':'anio')) pintarRanking(data);
  }).catch(e=>{
   console.error('Ranking:',e.message||e);
   if(!cache) el.innerHTML='<p style="color:var(--dim);font-weight:800;font-size:13px;text-align:center">Sin conexión. El ranking se actualizará más tarde.</p>';
@@ -1457,7 +1534,7 @@ function pintarRanking(filas){
   return `<div class="rk ${i<1?'top':''} ${r.soy_yo?'me':''}${difcls}"><div class="pos">${i+1}</div>
    <div class="em">${r.soy_yo?avatarHTML(S.avatar):escHtml(r.avatar)}</div>
    <div>${pre}${escHtml(r.nombre)}${r.soy_yo?' (tú)':''}</div>
-   <div class="pts">${escHtml(r.xp)} XP</div></div>`;}).join('');
+   <div class="pts">${escHtml(RANK_MODO==='semana'&&r.xp_semana!=null?r.xp_semana:r.xp)} XP</div></div>`;}).join('');
 }
 function pintarSinCurso(){
  $('ranking').innerHTML=
@@ -1582,7 +1659,7 @@ function payloadSave(){
   // Dos campos para el informe del apoderado. Nacen vacios en las partidas que ya
   // existen, y la pantalla lo DICE en vez de mostrar un cero que se leeria como
   // "no ha jugado nunca".
-  visto:S.visto, respondidas:S.respondidas, rachaDias:S.rachaDias||null};
+  visto:S.visto, respondidas:S.respondidas, rachaDias:S.rachaDias||null, errores:S.errores||{}, marcos:S.marcos||[], marco:S.marco||null};
 }
 function guardar(){
  // Modo prueba: el avance vive solo en memoria. Se conserva el volcado a S.rutas
@@ -1604,6 +1681,8 @@ function aplicarSave(d){try{
  S.insignias=new Set(d.insignias||[]);
  S.insigniaActiva=d.insigniaActiva||null;
  S.visto=d.visto||null; S.respondidas=d.respondidas||0; S.rachaDias=d.rachaDias||null;
+ S.errores=(d.errores&&typeof d.errores==='object')?d.errores:{};
+ S.marcos=Array.isArray(d.marcos)?d.marcos:[]; S.marco=d.marco||null;
  if(d.calc&&Array.isArray(d.calc.etapas))S.calc=d.calc;
  if(d.mateLecciones&&typeof d.mateLecciones==='object')S.mateLecciones=d.mateLecciones;
  if(d.metasVistas&&typeof d.metasVistas==='object')S.metasVistas=d.metasVistas;
@@ -1971,6 +2050,78 @@ function iniciarRepaso(lvl, vistos){
  go('scr-quiz'); pintaPregunta();
 }
 // Fin del repaso: no mide, no premia. Vuelve a la pantalla de reprobado (con REINTENTAR intacto).
+/* ── "Mis errores": repaso ESPACIADO de lo fallado (07/11/2026) ────────────────────────
+   Cada pregunta fallada en una etapa entra a una cola y vuelve a aparecer al día siguiente;
+   acertarla la aleja a 3 y luego a 7 días, y al acertarla a los 7 sale de la cola. Fallarla la
+   devuelve a mañana. Se juega desde una tarjeta del menú, sin reloj, sin medir y sin pagar, como
+   el repaso.
+   ⚠️ No contradice la regla de la Sesión 52 (el repaso al reprobar EXCLUYE lo fallado): esa evita
+   repetir de memoria la respuesta que se acaba de revelar. Aquí la pregunta vuelve un día
+   después, que es justo lo que hace útil repasarla.
+   Vive en el save (`S.errores`), así que viaja en la foto del progreso. Tope de 200 entradas,
+   para que la foto siga lejos de los 64 KB que acepta el servidor. */
+const ERR_DIAS=[1,3,7], ERR_MAX=200, ERR_RONDA=10;
+function _isoEn(dias){
+ const d=new Date(hoyISO()+'T00:00:00'); d.setDate(d.getDate()+dias);
+ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+function anotarError(P){
+ if(EFIMERO || !P || !P.id || !EXP_ACT || !EXP_ACT.contenido) return;
+ S.errores=S.errores||{};
+ delete S.errores[P.id];                       // re-insertar la deja al final (la más nueva)
+ S.errores[P.id]={c:EXP_ACT.contenido, k:0, d:_isoEn(ERR_DIAS[0])};
+ const ids=Object.keys(S.errores);
+ for(let i=0; i<ids.length-ERR_MAX; i++) delete S.errores[ids[i]];   // se van las más viejas
+}
+function reprogramarError(P, ok){
+ const e=S.errores&&P&&S.errores[P.id]; if(!e) return;
+ if(ok){ e.k++; if(e.k>=ERR_DIAS.length) delete S.errores[P.id]; else e.d=_isoEn(ERR_DIAS[e.k]); }
+ else { e.k=0; e.d=_isoEn(ERR_DIAS[0]); }
+ guardar();
+}
+function erroresParaHoy(){
+ const hoy=hoyISO();
+ return Object.keys(S.errores||{}).filter(id=>S.errores[id].d<=hoy);
+}
+function tarjetaErrores(g){
+ if(EFIMERO || (typeof SIN_DISCO!=='undefined' && SIN_DISCO)) return;
+ const n=erroresParaHoy().length; if(!n) return;
+ const card=document.createElement('div'); card.className='exp-card';
+ card.innerHTML=`<img src="assets/kimun-sorprendido.png" alt=""><div class="exp-info"><b>🔁 Repasa tus errores</b>`+
+   `<small>${Math.min(n,ERR_RONDA)} pregunta${Math.min(n,ERR_RONDA)===1?'':'s'} que fallaste antes · sin reloj</small></div><span class="exp-go">▶</span>`;
+ card.onclick=()=>{ SND.tap(); jugarErrores(); };
+ g.appendChild(card);
+}
+async function jugarErrores(){
+ const ids=erroresParaHoy().slice(0,ERR_RONDA);
+ const porBanco={}; ids.forEach(id=>{ const c=S.errores[id].c; (porBanco[c]=porBanco[c]||[]).push(id); });
+ const preguntas=[];
+ for(const c of Object.keys(porBanco)){
+  try{
+   const d=await fetch(c).then(r=>r.json());
+   const mapa={}; (d.preguntas||[]).forEach(q=>{ mapa[q.id]=q; });
+   porBanco[c].forEach(id=>{ const q=mapa[id];
+    if(q) preguntas.push({q:q.pregunta,ops:q.opciones,ok:q.correcta,tip:q.tip,oa:q.oa,visual:q.visual,id:q.id});
+    else delete S.errores[id];               // la pregunta ya no existe en el banco
+   });
+  }catch(e){}
+ }
+ if(!preguntas.length){ guardar(); renderExpediciones(); return; }
+ Q={lvl:0,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock:false,
+    preguntas:pickN(preguntas,preguntas.length), repaso:{lvl:0}, errores:true};
+ MODO='normal';
+ go('scr-quiz'); pintaPregunta();
+}
+function finErrores(){
+ clearInterval(Q.timer);
+ const ac=Q.aciertos, tot=Q.preguntas.length;
+ Q={lvl:0,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock:false};
+ guardar();
+ go('scr-expediciones'); renderExpediciones();
+ // Mismo cartel de los logros, sin anotar ningún logro.
+ try{ $('toastIc').textContent='🔁'; $('toastTx').textContent='Repaso listo: '+ac+' de '+tot+'. Las que acertaste vuelven más adelante.';
+      $('toast').classList.add('show'); setTimeout(()=>$('toast').classList.remove('show'),3200); }catch(e){}
+}
 function finRepaso(){
  clearInterval(Q.timer);
  Q={lvl:0,idx:0,aciertos:0,combo:0,comboMax:0,xpGanado:0,timer:null,t:15,lock:false};
@@ -1984,7 +2135,9 @@ function pintaPregunta(){
  const ba=$('btnAyuda');
  if(Q.comodines>0){ ba.hidden=false; ba.disabled=false; ba.textContent='💡 Ayuda ('+Q.comodines+')'; ba.onclick=usarComodin; }
  else { ba.hidden=true; }
- $('qTag').textContent = Q.repaso
+ $('qTag').textContent = Q.errores
+   ? `🔁 Tus errores · Pregunta ${Q.idx+1}/${Q.preguntas.length}`
+   : Q.repaso
    ? `🧑‍🏫 Repaso · Pregunta ${Q.idx+1}/${Q.preguntas.length}`
    : Q.leccion
    ? `📘 ${Q.leccion.titulo} · Pregunta ${Q.idx+1}/${Q.preguntas.length}`
@@ -2018,7 +2171,7 @@ function pintaPregunta(){
  $('qFb').textContent='';$('qFb').className='feedback';
  // Línea fija de meta: en etapa y repaso (mismo OA), no en lección/desafío/libros.
  const qm=$('qMeta');
- if(!Q.leccion && !Q.desafio && metaDisponible(Q.lvl)){ qm.textContent='🎯 '+metaDeEtapa(Q.lvl); qm.hidden=false; }
+ if(!Q.leccion && !Q.desafio && !Q.errores && metaDisponible(Q.lvl)){ qm.textContent='🎯 '+metaDeEtapa(Q.lvl); qm.hidden=false; }
  else { qm.hidden=true; }
  $('qExpl').hidden=true;$('btnSeguir').hidden=true;
  $('qProg').style.width=(Q.idx/Q.preguntas.length*100)+'%';
@@ -2098,6 +2251,10 @@ function responder(el,ok,P,e){
     el objetivo — y como es PRIMER intento, quedaria congelado para siempre en el mapa. Para
     pasar la etapa y las estrellas sigue contando como fallo, igual que antes (07/11/2026). */
  if(!Q.desafio && !Q.repaso && !Q.asistidaActual && !Q.sinMedir && el) registrarOA(P&&P.oa, ok);
+ // "Mis errores": lo fallado en una etapa entra a la cola del repaso espaciado; en ese repaso,
+ // acertar lo aleja (1 → 3 → 7 días) y fallar lo devuelve a mañana. Ver erroresParaHoy().
+ if(Q.errores) reprogramarError(P, ok);
+ else if(!ok && !Q.desafio && !Q.repaso && !Q.leccion) anotarError(P);
  document.querySelectorAll('.opt').forEach(o=>o.classList.add('off'));
  if(ok){
   Q.combo++;Q.comboMax=Math.max(Q.comboMax,Q.combo);Q.aciertos++;
@@ -2149,6 +2306,7 @@ function responder(el,ok,P,e){
 function avanzar(){if(!Q||!Q.preguntas)return;   // guard: evita reentrada (doble toque) tras resetear Q
   if(!$('scr-quiz').classList.contains('on'))return;   // el usuario salió del quiz: no continuar
   Q.idx++;if(Q.idx<Q.preguntas.length)pintaPregunta();
+  else if(Q.errores)finErrores();
   else if(Q.repaso)finRepaso();
   else if(Q.leccion)LECC.finPractica();
   else if(Q.desafio)terminarDesafio();else terminarNivel();}

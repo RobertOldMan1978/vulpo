@@ -2563,6 +2563,7 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
   un **diagnóstico de huérfanos** para antes del flip. `es_admin` es la única bandera viva. **Con esto el motor
   granular queda cerrado entero.**
 - **Aislamiento entre colegios (Sesión 144, aplicado el 08/11):** `kimun_prof_administra(tipo,id)` responde si administro un NODO concreto del árbol (plataforma > sostenedor > colegio > curso) con las capacidades de `kimun_prof_admin_colegio`. Lo usan las acciones de nivel colegio, que antes preguntaban `puede_algun` ("¿tengo este permiso en ALGÚN ámbito?") y por eso, con un segundo colegio, su UTP habría podido nombrarse Jefe de un curso ajeno, mover cursos, renombrar o borrar colegios ajenos, ver los correos de todos los profesores y revocarlos. Crear un sostenedor, borrarlo y limpiar perfiles son de la PLATAFORMA; un colegio se borra desde su sostenedor. `kimun_prof_curso_crear` suma `p_colegio` (con default: quien administra un solo colegio crea ahí; sin colegio, solo la plataforma). La lista de profesores muestra a la UTP solo a quienes tienen permisos dentro de lo suyo, o a quienes ella invitó. ⚠️ **Siete funciones internas** (`kimun_gen_codigo*`, `es_mio`, `acceso`, `asignaturas`, `admin_colegio`) estaban revocadas solo de `public`: con Supabase eso no basta y respondían por RPC.
+- **Ranking semanal del curso (Sesión 145, aplicado el 08/11):** `kimun_ranking_semanal()`, las mismas columnas y la misma regla de quién se ve que `kimun_ranking` (mi curso) más `xp_semana` = XP actual menos el de la última foto de `xp_semanal`, con `greatest(0,…)` porque un XP bajado por el profesor daría negativo. Quien no tiene fila en la última foto —se inscribió esta semana— cuenta todo su XP. El juego abre en "📅 Esta semana" y ofrece "🏆 Todo el año"; si la función no existe (PGRST202) cae solo al anual y esconde las pestañas. ⚠️ Va después de crear `xp_semanal` (una función `language sql` se valida al crearse).
 - **Pendiente:** notificaciones push.
 
 ## Trámites pendientes (fuera del código)
@@ -14857,3 +14858,51 @@ antes de entregarlo. Aplicado por Roberto y comprobado contra producción.
 #### Pendiente de Roberto
 Autorizar la voz de las pistas; decidir "Mis errores" (choca con la decisión de la Sesión 52 de
 excluir lo fallado del repaso), un ranking semanal (necesita backend) y algo en qué gastar monedas.
+
+### Sesión 145 (2026-11-08) — La voz de las pistas, "Mis errores", el ranking semanal y los marcos
+Roberto: *"vamos procede con 1 y 2"*, o sea los dos pendientes que dejó la Sesión 144: autorizar la
+voz de las pistas, y las tres ideas de juego que quedaban por decidir. **Ningún banco de preguntas
+cambió.**
+
+#### 1 · La voz de las pistas: generada, subida y comprobada
+- **Las 21 asignaturas con voz (1° a 4°)** tienen su clip para cada pista: el recuento da **0
+  faltan** en las 21 y no hay ningún mp3 de 0 bytes. Costo estimado ~US$14 (el generador no lo
+  anota; el número exacto está en el portal de Azure).
+- **En R2: 53.383 clips** en los manifiestos y en el bucket, con el contenido idéntico al disco.
+- **Verificado jugando y espiando el constructor `Audio`**: al fallar, 1° pide
+  `voz.vulpo.cl/mat1/…` y 4° `voz.vulpo.cl/hist4/…` —primero la respuesta correcta y después la
+  pista—, y los clips de pista responden 200.
+
+> ⚠️ **Un clip de 4° no se subió solo, y es una trampa que vale para siempre.** El de "2 × 3 × 4" se
+> regeneró porque cambió cómo se PRONUNCIA (el arreglo del segundo ×), no el texto en pantalla: el
+> nombre —hash del texto mostrado— no cambia y pesaba lo mismo, así que `subir` (que compara por
+> tamaño) lo dio por igual y dejó el viejo en R2. Lo cazó `verificar`, que compara MD5.
+> **`voz-r2.py reemplazar <asig>/<hash>.mp3`** (nuevo) sobrescribe clips puntuales; el CDN lo sirvió
+> nuevo al tiro porque no lo tenía en caché, pero si alguna vez lo tiene hay que purgar esa URL.
+
+#### 2 · Las tres ideas de juego, construidas
+Todo en `assets/js/motor.js`, una vez para los ocho cursos; **ningún fork cambió**.
+- **"Mis errores", repaso espaciado de lo fallado.** Cada pregunta fallada en una etapa entra a una
+  cola y vuelve al día siguiente; acertarla la aleja a 3 y a 7 días, y a los 7 sale; fallarla la
+  devuelve a mañana. Se juega desde una tarjeta del menú que solo aparece si hay algo para HOY, sin
+  reloj, sin medir y sin pagar. Vive en el save (`S.errores`), así que viaja en la foto del progreso,
+  con tope de 200 para no acercarse a los 64 KB.
+  ⚠️ **No contradice la regla de la Sesión 52** (el repaso al reprobar excluye lo fallado): aquella
+  evita repetir de memoria la respuesta recién revelada; aquí la pregunta vuelve un día después, que
+  es justo lo que hace útil repasarla.
+- **Ranking semanal del curso.** "📅 Esta semana" (lo ganado desde la foto del lunes) y "🏆 Todo el
+  año"; abre en el semanal, para que los de abajo tengan una carrera que puedan ganar. Backend:
+  `kimun_ranking_semanal()` (ver la sección de Backend). Si la función no existe, cae solo al anual.
+- **Marcos para el avatar**, algo en qué gastar monedas cuando ya están todas las skins: seis marcos
+  de CSS puro (300 a 1.600 🪙), que se lucen alrededor del avatar en la barra de arriba. No aparecen
+  en el escaparate del modo prueba. Verificado: comprar descuenta, equipar y quitar funcionan, el
+  marco se guarda y el más caro sale deshabilitado sin monedas.
+
+#### El esquema: aplicado por Roberto y comprobado con su caso positivo
+`kimun_ranking_semanal` pasó de **404 `PGRST202`** a **200 `[]`** con la clave pública, y la función
+inventada sigue en 404. **Caso positivo:** canjeando un `ALU-` de un curso de prueba devuelve sus 12
+alumnos, con "soy yo" solo en él y `xp_semana` en 0 (nadie de ese curso jugó desde la última foto).
+Queda un perfil anónimo de prueba que borra "🧹 Limpiar perfiles de prueba".
+
+- **De arrastre:** probar la app versión 6 en el teléfono, la cuenta de Play como organización (falta
+  el DUNS), sacar los MP3 de 3° y 4° del repo, la prueba cerrada de Google Play e INAPI.
