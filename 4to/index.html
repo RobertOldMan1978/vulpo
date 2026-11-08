@@ -2545,7 +2545,7 @@ async function iniciarDesafio(){
  if(!OD_EXP_SEL){$('odSetupErr').textContent='Elige una expedición primero.';return;}
  if(!/^KIM-[A-Z0-9]{4}$/.test(codigo)){$('odSetupErr').textContent='Código inválido (ej: KIM-AB12).';return;}
  try{const {data,error}=await SB.rpc('kimun_buscar',{p_codigo:codigo});if(error)throw error;
-  if(!data||!data.length){$('odSetupErr').textContent='No existe un jugador con ese código.';return;}
+  if(!data||!data.length){$('odSetupErr').textContent='No hay nadie de tu curso con ese código.';return;}
  }catch(e){$('odSetupErr').textContent='No se pudo validar el código.';return;}
  let pregs;
  if(OD_EXP_SEL.calc){pregs=odPreguntasCalc(OD_EXP_SEL);}

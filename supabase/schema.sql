@@ -486,11 +486,27 @@ declare r public.perfiles; mi uuid; nom text; av text; begin
   end if;
   return r; end $$;
 
--- Busca un perfil por código
+-- ¿Comparten curso estos dos perfiles? Es la regla del duelo en línea (07/11/2026): solo
+-- se busca y se reta a un bot o a un compañero del MISMO curso. Interna: se revoca de
+-- anon/authenticated al final del archivo.
+create or replace function public.kimun_mismo_curso(p_a uuid, p_b uuid)
+returns boolean language sql stable security definer set search_path=public as $$
+  select coalesce((select pa.curso_id is not null and pa.curso_id = pb.curso_id
+                     from public.perfiles pa, public.perfiles pb
+                    where pa.id = p_a and pb.id = p_b), false); $$;
+
+-- Busca un perfil por código, para retarlo a un duelo.
+-- ⚠️ ACOTADO a los bots y a los compañeros del MISMO curso (07/11/2026). Antes respondía con
+-- cualquier código, y sin sesión: como los KIM- son solo 65.536, recorrerlos entregaba el
+-- nombre de TODOS los niños de la plataforma, y con kimun_crear_duelo se les podía mandar
+-- duelos (un canal entre desconocidos y menores). Un código de otro curso responde vacío,
+-- igual que uno inexistente, para no revelar que existe.
 create or replace function public.kimun_buscar(p_codigo text)
 returns table(nombre text, avatar text)
 language sql security definer set search_path=public as $$
-  select nombre,avatar from public.perfiles where codigo=upper(p_codigo); $$;
+  select p.nombre,p.avatar from public.perfiles p
+   where p.codigo=upper(p_codigo)
+     and (p.es_bot or public.kimun_mismo_curso(p.id, public.kimun_yo())); $$;
 
 -- Lista de jugadores para desafiar (bots primero).
 -- Solo aparecen los bots y los perfiles con un vínculo activo: un alumno que el
@@ -498,9 +514,9 @@ language sql security definer set search_path=public as $$
 -- rival, porque no hay ningún dispositivo que pueda responder ese duelo.
 -- Lista de jugadores para retar en el duelo. Acotada al MISMO CURSO del que llama
 -- (más los bots de práctica), para no exponer los nombres de todos los menores de la
--- plataforma a cualquier cliente con la clave pública. A alguien de otro curso se le
--- puede retar igual escribiendo su código de amigo (KIM-). Si quien llama no tiene
--- curso, ve solo los bots.
+-- plataforma a cualquier cliente con la clave pública. Desde el 07/11/2026 tampoco se
+-- puede retar a alguien de otro curso escribiendo su código de amigo (KIM-): kimun_buscar
+-- y kimun_crear_duelo aplican la misma regla. Si quien llama no tiene curso, solo bots.
 create or replace function public.kimun_jugadores()
 returns table(nombre text,avatar text,codigo text,es_bot boolean)
 language sql security definer set search_path=public as $$
@@ -545,10 +561,21 @@ declare v uuid; mi uuid; bot public.perfiles; b_ac int; b_t int; g text; total i
   mi := public.kimun_yo();
   if mi is null then raise exception 'sin_perfil'; end if;
   select * into bot from public.perfiles where codigo=upper(p_retado_codigo);
-  if bot.id is null then raise exception 'codigo_invalido'; end if;
-  total := coalesce(jsonb_array_length(p_preguntas),8);
+  -- Solo bots o compañeros del MISMO curso (07/11/2026): ver kimun_buscar. Un código de otro
+  -- curso da el mismo error que uno inexistente, para no revelar que existe.
+  if bot.id is null or not (bot.es_bot or public.kimun_mismo_curso(bot.id, mi)) then
+    raise exception 'codigo_invalido'; end if;
+  -- Tope a lo que manda el cliente: el set de preguntas lo arma el teléfono y se le muestra
+  -- al rival, así que sin forma ni tamaño era texto libre y almacenamiento sin límite.
+  -- El juego manda 8 preguntas de ~1 KB; 20 y 32 KB dejan holgura de sobra.
+  if p_preguntas is null or jsonb_typeof(p_preguntas) <> 'array'
+     or jsonb_array_length(p_preguntas) not between 1 and 20
+     or pg_column_size(p_preguntas) > 32768 then raise exception 'datos_invalidos'; end if;
+  total := jsonb_array_length(p_preguntas);
+  if p_aciertos is null or p_aciertos not between 0 and total
+     or p_tiempo is null or p_tiempo not between 0 and 3600 then raise exception 'datos_invalidos'; end if;
   insert into public.duelos(retador_id,retado_codigo,expedicion,preguntas,retador_aciertos,retador_tiempo)
-  values (mi,upper(p_retado_codigo),p_expedicion,p_preguntas,p_aciertos,p_tiempo) returning id into v;
+  values (mi,upper(p_retado_codigo),left(p_expedicion,60),p_preguntas,p_aciertos,p_tiempo) returning id into v;
   if bot.es_bot then
     acc := 0.45 + bot.nivel*0.1;                         -- nivel 1..5 -> 0.55..0.95
     b_ac := least(total, greatest(0, round(total*acc)::int + (floor(random()*3)-1)::int));
@@ -574,7 +601,9 @@ language sql security definer set search_path=public as $$
   select d.id,p.nombre,p.avatar,d.expedicion,d.preguntas,d.expira
   from public.duelos d join public.perfiles p on p.id=d.retador_id
   where d.retado_codigo=(select codigo from public.perfiles where id=public.kimun_yo())
-    and d.estado='pendiente' and d.expira>now(); $$;
+    and d.estado='pendiente' and d.expira>now()
+    -- Defensa en profundidad (07/11/2026): un duelo de alguien de otro curso no se muestra.
+    and public.kimun_mismo_curso(d.retador_id, public.kimun_yo()); $$;
 
 -- Responder un duelo (guarda mi puntaje, marca completado, devuelve resultado + ganador)
 create or replace function public.kimun_responder(p_id uuid,p_aciertos int,p_tiempo int)
@@ -678,6 +707,7 @@ language sql security definer set search_path=public as $$
     from public.duelos d cross join yo
     join public.perfiles p on p.id = d.retador_id
    where d.retado_codigo = yo.cod and d.estado = 'pendiente' and d.expira > now()
+     and public.kimun_mismo_curso(d.retador_id, yo.pid)
   union all
   -- 2) El que yo inicie, ya respondido y sin ver. El ganador se recalcula porque
   --    kimun_responder lo decide al responder y NO lo guarda; la regla vive una sola vez,
@@ -2202,6 +2232,7 @@ revoke execute on function
 -- afecta las llamadas internas: los porteros y el otorgamiento son definer y corren como el
 -- dueño, que conserva su EXECUTE.
 revoke execute on function
+  public.kimun_mismo_curso(uuid,uuid),
   public.kimun_prof_es_admin_raw(),
   public.kimun_prof_legado_cubre(text,uuid),
   public.kimun_prof_puede_grant(text,uuid),

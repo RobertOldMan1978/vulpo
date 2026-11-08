@@ -79,7 +79,7 @@ que un colegio pueda mostrar y evidenciar esa cobertura por separado.
 > suma Lenguaje (120) y 8° suma las lecturas (150). El corte lo decide el currículum: hasta 6°,
 > Lenguaje ya enseña por su cuenta a deducir el significado de una palabra nueva, así que un área
 > de Lenguaje mediría dos veces lo mismo; de 7° en adelante ese objetivo ya no está.
-También hay **Duelo 1v1** en el mismo teléfono y en línea (Supabase) —con aviso en el inicio cuando te desafían o termina tu duelo, y un **ranking de duelos del curso**—, una **tienda de
+También hay **Duelo 1v1** en el mismo teléfono y en línea (Supabase), solo contra bots o compañeros del mismo curso —con aviso en el inicio cuando te desafían o termina tu duelo, y un **ranking de duelos del curso**—, una **tienda de
 skins** (incluidas skins deportivas ilustradas) y una **intro de bienvenida** en video que
 se ve una vez. Todo en un solo archivo `index.html`, pensado para el celular.
 

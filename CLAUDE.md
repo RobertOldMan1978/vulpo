@@ -135,7 +135,8 @@ backend Supabase para el duelo en línea. Historia de v0 al detalle en la Bitác
   opcional por archivos (`assets/audio/`, con fallback si no están); control separado
   🎵 música / 🔊 efectos, persistido.
 - **Duelo 1v1:** en el mismo teléfono y **en línea asíncrono (Supabase)** con
-  código de amigo, lista de jugadores, bots de práctica y reto de 24h. **Está en los tres
+  código de amigo, lista de jugadores, bots de práctica y reto de 24h —**solo entre compañeros
+  del mismo curso** desde la Sesión 143—. **Está en los tres
   cursos** (3° desde la Sesión 74), y cada uno saca sus preguntas de **su propia Historia**:
   el banco y los segundos por pregunta van como dato (`DUELO_BANCO`, `DUELO_SEG`).
   Desde la Sesión 76 su ciclo **cierra**: la pantalla de inicio avisa **⚔️ que te desafiaron**
@@ -2281,7 +2282,9 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
 
 - **Identidad sin contraseñas:** login anónimo → cada dispositivo es un usuario;
   perfil con `nombre`, `avatar` y **código de amigo** (`KIM-XXXX`).
-- **Duelos:** se desafía desde una **lista de jugadores** (o por código). Contra
+- **Duelos:** se desafía desde una **lista de jugadores** (o por código), y desde el 07/11/2026
+  **solo a bots o a compañeros del MISMO curso** (`kimun_mismo_curso`, Sesión 143): un código de
+  otro curso responde igual que uno inexistente. Contra
   **bots** (Vale/Nico/Fran/Diego) el resultado es **instantáneo**; contra
   **jugadores reales** es **asíncrono (24h)** y el puntaje del retador queda
   **oculto** hasta que el rival juega (funciones `SECURITY DEFINER`).
@@ -14739,3 +14742,55 @@ funcionando igual.
 - **Lo que sigue:** la **app nueva a Play**, una sola compilación con 1° y 2° y el origen nuevo de la
   voz; después **sacar los MP3 de 3° y 4° del repo**, que esperaba esa compilación. De arrastre: la
   prueba cerrada de Google Play e INAPI.
+
+### Sesión 143 (2026-11-07) — Análisis de la app, y el duelo en línea se cierra al curso
+Roberto pidió un análisis de jugabilidad y seguridad con *"un par de agentes"*. Se lanzaron dos (uno
+de juego, uno de seguridad) y se entregó una lista priorizada en la terminal, **sin página de
+reporte**, por pedido suyo. Después eligió empezar por el punto 1. **No se tocó contenido.**
+
+#### El punto 1: cualquiera podía buscar y retar a cualquier niño
+`kimun_buscar` y `kimun_crear_duelo` aceptaban **cualquier código `KIM-` de la plataforma**. Con 4
+dígitos hexadecimales son solo **65.536 códigos**, así que recorrerlos entregaba **el nombre de
+cada niño de VULPO**, y un desconocido podía retar a un niño de otro colegio y hacerle saltar el
+aviso *"te desafiaron"*. La lista de jugadores ya estaba acotada al curso desde la Sesión 39; el
+código era la puerta lateral que quedó abierta.
+
+- **`kimun_mismo_curso(p_a, p_b)`**, nueva e interna, revocada de `public, anon, authenticated`.
+  Los parámetros llevan `p_` para no repetir el choque variable/columna de la Sesión 73.
+- **`kimun_buscar` y `kimun_crear_duelo`** aceptan solo **bots o compañeros del mismo curso**. Un
+  código de otro curso da **el mismo error que uno inexistente**, para no revelar que existe.
+- **`kimun_pendientes` y `kimun_duelos_avisos`** filtran igual, por si queda un duelo de antes.
+- **Topes a lo que manda el teléfono** en `kimun_crear_duelo`: el set de preguntas lo arma el
+  cliente y se le muestra al rival, así que era texto libre sin límite. Ahora 1-20 preguntas, 32 KB,
+  aciertos entre 0 y el total, tiempo hasta 3600 s y expedición recortada a 60 caracteres.
+- En los ocho forks el mensaje pasa a *"No hay nadie de tu curso con ese código."*
+
+⚠️ **Consecuencia aceptada:** un alumno sin curso —los `ALU-A000003..008` genéricos de las
+demos— solo puede retar a bots.
+
+**Se pegó solo el fragmento con las cinco funciones**, no el archivo entero (el editor que arrastra
+una versión vieja, Sesión 111). Sin cambio de firma, así que no había orden de despliegue.
+
+#### Verificado contra producción, con su control positivo
+Con la clave pública y sesiones anónimas: los bots siguen apareciendo; dos perfiles sin curso no se
+encuentran ni se pueden retar; preguntas vacías, 21 preguntas o más aciertos que preguntas dan
+`datos_invalidos`; `kimun_mismo_curso` responde *permission denied*; y los controles de siempre
+(`MA06 OA 01` → `MA06`, función inventada → 404). **El caso positivo** se probó con dos códigos
+`ALU-` de un curso de prueba que pasó Roberto: los dos se encuentran, y retar con preguntas vacías
+llega hasta `datos_invalidos` —o sea pasó la revisión del curso **sin crear ningún duelo**, para que
+a esos alumnos no les saltara un aviso falso—. Los ocho cursos arrancan y navegan, sin errores.
+
+> Sin el caso positivo, un rechazo universal se habría visto idéntico a la regla funcionando. Y
+> canjear un `ALU-` para probar solo agrega un aparato vinculado: no toca el avance del alumno.
+> Quedaron cuatro perfiles anónimos de prueba sin curso, que borra "🧹 Limpiar perfiles de prueba".
+
+#### Lo demás del análisis queda como A67
+Antes de un segundo colegio, acotar por colegio los grants y las vistas de dirección; varios
+arreglos rápidos (voz en la explicación al fallar de 1° a 4°, recompensas imposibles en esos
+cursos, el tiempo agotado contando como fallo de primer intento, el texto "Necesitas 66%", voseo
+en el modo docente, `revoke` y permisos del CI); e ideas de juego (repaso de errores, racha diaria,
+ranking semanal, más en qué gastar monedas, Sin Fin en 4° y 6°, accesibilidad). Ver `pendiente.md`.
+
+- **Fuera del código:** la app versión 6 sigue en prueba interna de Play; la cuenta de Play pasa a
+  ser de organización (falta el DUNS). **De arrastre:** probar la app en el teléfono, sacar los MP3
+  de 3° y 4° del repo, la prueba cerrada de Google Play e INAPI.
