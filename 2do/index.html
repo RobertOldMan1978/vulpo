@@ -1951,6 +1951,14 @@ let MODO='normal';
 // ⚠️ NO alcanza al Duelo, que lleva reloj en los tres: ahí el tiempo es la competencia.
 const SIN_RELOJ=true;
 
+// LEE_SOLO (1° a 4°, todos los cursos con voz): la voz lee sola la pregunta y sus opciones
+// apenas aparecen, y al equivocarse lee sola la respuesta correcta y la explicación, sin que el
+// niño tenga que tocar 🔊. Nació en 1°, donde muchos niños todavía no leen, y el 08/11/2026
+// Roberto la extendió a los cuatro cursos con voz. La leen pintaPregunta y la corrección de
+// responder (assets/js/motor.js) con `typeof LEE_SOLO!=='undefined'`, así que 5° a 8° no la
+// declaran. El 🔊 queda para repetir.
+const LEE_SOLO=true;
+
 // Lectura en voz alta con la voz del navegador (Web Speech API), más los clips
 // pregrabados de assets/js/voz.js. Una carpeta por asignatura: los clips se generan
 // por banco y así agregar una asignatura nueva no obliga a regenerar (ni volver a

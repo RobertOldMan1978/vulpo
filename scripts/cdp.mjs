@@ -43,7 +43,7 @@ export async function conducir(url, pasos, { puerto = 9333, mostrar = false } = 
   const ws = new WebSocket(destino.webSocketDebuggerUrl);
   await new Promise((ok, mal) => { ws.onopen = ok; ws.onerror = () => mal(new Error('ws')); });
 
-  let id = 0; const esperando = new Map(); const consola = []; const fallos = [];
+  let id = 0; const esperando = new Map(); const consola = []; const fallos = []; const urls = new Map();
   ws.onmessage = (m) => {
     const msg = JSON.parse(m.data);
     if (msg.id && esperando.has(msg.id)) { esperando.get(msg.id)(msg); esperando.delete(msg.id); }
@@ -54,8 +54,10 @@ export async function conducir(url, pasos, { puerto = 9333, mostrar = false } = 
     // 404 y compania: no llegan a la consola de forma fiable, hay que mirarlos en la red.
     if (msg.method === 'Network.responseReceived' && msg.params.response.status >= 400)
       fallos.push(msg.params.response.status + ' ' + msg.params.response.url);
+    // La URL no viene en loadingFailed: se recuerda al salir la petición, para poder decir QUÉ falló.
+    if (msg.method === 'Network.requestWillBeSent') urls.set(msg.params.requestId, msg.params.request.url);
     if (msg.method === 'Network.loadingFailed' && !msg.params.canceled)
-      fallos.push('FALLO ' + (msg.params.errorText || '') + ' ' + (msg.params.type || ''));
+      fallos.push('FALLO ' + (msg.params.errorText || '') + ' ' + (msg.params.type || '') + ' ' + (urls.get(msg.params.requestId) || ''));
   };
   const enviar = (method, params = {}) =>
     new Promise((ok) => { const n = ++id; esperando.set(n, ok); ws.send(JSON.stringify({ id: n, method, params })); });

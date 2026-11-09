@@ -45,26 +45,56 @@
     clips.forEach(function(p){ asigs[rel(p).split('/')[0]] = 1; });
     for(var a in asigs){ try{ await FS.mkdir({ directory: DIR, path: base + '/' + a, recursive: true }); }catch(e){} }
 
-    var n = clips.length, hechos = 0, fallos = 0, i = 0;
+    /* La descarga SE RETOMA (Sesión 147, 08/11/2026). Un curso son ~12.000 clips y ~20 minutos:
+       si en ese rato se apaga la pantalla o el niño cambia de app, muchas descargas fallan. Antes
+       eso dejaba el curso sin la marca .ok y la vez siguiente BAJABA TODO DE NUEVO, y los que
+       faltaban sonaban con la voz robótica. Ahora: (1) lo que ya está en el teléfono no se vuelve
+       a bajar; (2) cada clip se baja a un archivo .part y recién al terminar se renombra, así que
+       un corte nunca deja un clip a medias con el nombre bueno; (3) lo que falla se reintenta dos
+       veces más; y (4) la marca .ok solo se escribe con CERO faltantes: si queda alguno, la
+       próxima apertura con internet baja solo esos. Mientras tanto voz.js los pide a R2. */
+    var n = clips.length, hechos = 0;
     ui('Preparando la voz… 0%');
-    async function worker(){
-      while(i < clips.length){
-        var p = clips[i++];
-        try{
-          await FS.downloadFile({ url: ORIGEN + rel(p), path: base + '/' + rel(p), directory: DIR });
-        }catch(e){ fallos++; }
-        hechos++;
-        if(hechos % 40 === 0 || hechos === n) ui('Preparando la voz… ' + Math.round(hechos / n * 100) + '%');
+    async function bajarUno(p){
+      var dest = base + '/' + rel(p);
+      try{ var st = await FS.stat({ directory: DIR, path: dest }); if(st && st.size > 0) return true; }catch(e){}
+      try{
+        await FS.downloadFile({ url: ORIGEN + rel(p), path: dest + '.part', directory: DIR });
+        await FS.rename({ from: dest + '.part', to: dest, directory: DIR, toDirectory: DIR });
+        return true;
+      }catch(e){
+        try{ await FS.deleteFile({ directory: DIR, path: dest + '.part' }); }catch(e2){}
+        return false;
       }
     }
-    var ws = []; for(var w = 0; w < CONC; w++) ws.push(worker());
-    await Promise.all(ws);
+    async function pasada(lista, contar){
+      var malos = [], i = 0;
+      async function worker(){
+        while(i < lista.length){
+          var p = lista[i++];
+          if(!(await bajarUno(p))) malos.push(p);
+          if(contar){ hechos++; if(hechos % 40 === 0 || hechos === n) ui('Preparando la voz… ' + Math.round(hechos / n * 100) + '%'); }
+        }
+      }
+      var ws = []; for(var w = 0; w < CONC; w++) ws.push(worker());
+      await Promise.all(ws);
+      return malos;
+    }
+    var faltan = await pasada(clips, true);
+    for(var r = 0; r < 2 && faltan.length; r++){
+      ui('Terminando la voz… faltan ' + faltan.length);
+      await new Promise(function(ok){ setTimeout(ok, 3000); });
+      faltan = await pasada(faltan, false);
+    }
 
-    if(fallos <= n * 0.05){   // toleramos <5% de fallos: el TTS cubre esos clips
+    if(!faltan.length){
       try{ await FS.writeFile({ directory: DIR, path: base + '/.ok', data: btoa('1'), recursive: true }); }catch(e){}
     }
     await fijar(C, FS, DIR, base);
-    if(fallos){ ui('Voz lista (' + fallos + ' no bajaron)'); }
+    if(faltan.length){
+      ui('Voz casi lista: faltan ' + faltan.length + '. Se completan la próxima vez que abras VULPO con internet.');
+      setTimeout(function(){ ui(null); }, 6000);
+    }
     else { ui('Voz lista'); setTimeout(function(){ ui(null); }, 1500); }
   }
 

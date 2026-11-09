@@ -14965,3 +14965,52 @@ arrancan y navegan, cero errores de consola y de red. Las pruebas crearon perfil
 - **De arrastre:** terminar la prueba de la versión 6 (voz sin internet en 2° y 4°, barras del
   sistema); después, sacar los MP3 de 3° y 4° del repo. La cuenta de Play como organización (DUNS),
   la prueba cerrada de 12 testers/14 días e INAPI.
+
+### Sesión 147 (2026-11-08) — La flecha de volver, la lectura automática en 1° a 4° y la descarga de voz que se retoma
+Roberto siguió probando la versión 6 en el teléfono: en modo avión, 1° suena perfecto con Catalina. De
+esa prueba salieron cinco pedidos y un defecto. **Ningún banco cambió.**
+
+- **El "← Volver", siempre arriba a la izquierda.** Ahora es una flecha sin texto, fija, del mismo
+  tamaño y aspecto que los botones de música y sonido de la derecha (`volverArriba()` en `motor.js`,
+  llamada desde `go()`). Es CSS sobre los botones que ya existían (`VOLVER_IDS`): el texto sigue en el
+  DOM con letra de tamaño 0, así que el lector de pantalla lo lee y el `onclick` no cambia. Un fixed
+  dentro de una pantalla oculta no se ve, así que cada flecha aparece solo con su pantalla. Con la
+  etiqueta de modo prueba arriba, la flecha baja (`body:has(.qa-badge)`), y la pantalla deja 46 px
+  arriba (`.screen:has(.btn-volver)`). ⚠️ **No entran** la ✕ del quiz ni el «← Salir» de la
+  mini-clase (ya van arriba, en su barra), ni los botones que son la acción de la pantalla (volver
+  tras ganar o perder contra un jefe).
+- **Al fallar, la pantalla baja sola hasta la corrección**, en todos los cursos. ⚠️ **No con
+  `scrollIntoView`:** la barra de abajo (Mapa · Tienda · Logros) es fixed y tapaba «Continuar». Se
+  mide su alto y se desplaza lo justo, y solo si hace falta. Se vio mirando la captura.
+- **`LEE_SOLO` en 1°, 2°, 3° y 4°:** la voz lee sola la pregunta al aparecer y, al fallar, la
+  respuesta correcta y la explicación. Era solo de 1°; es la misma constante declarada en los cuatro
+  forks con voz. Verificado espiando `leerPreguntaEnVoz`: una lectura al aparecer y otra al fallar en
+  los cuatro, ninguna en 6°.
+- ⚠️ **"En 1° no lee la respuesta correcta" no era un defecto:** la app versión 6 se compiló en
+  `8efb2c96`, **antes** de la voz al fallar (`6a358834`). En la web funciona; en la app llega con la 7.
+
+#### ⚠️ La descarga de la voz de 4° decía «2362 no bajaron»
+Medido antes de tocar nada: los 12.680 clips de 4° del manifiesto de la versión 6 están todos en R2 (el
+disco es igual a R2), y 600 bajados al azar desde el PC, de a 6 a la vez como la app, llegaron los 600.
+**El problema era la app:** 4° son ~12.700 clips y ~20 minutos, y si en ese rato se apaga la pantalla
+o se cambia de app, muchas descargas fallan. Con más de 5% de fallos no se escribía la marca `.ok`, así
+que **la vez siguiente bajaba TODO de nuevo**, y los clips que faltaban sonaban con la voz robótica
+aunque hubiera internet, porque `voz.js` los buscaba solo en el teléfono.
+
+- **`voz-descarga.js` ahora retoma:** salta lo que ya está en el teléfono (`stat` con tamaño > 0),
+  baja cada clip a `.part` y lo renombra al terminar (un corte nunca deja un clip a medias con el
+  nombre bueno), reintenta lo que falla dos veces más y escribe `.ok` **solo con cero faltantes**: si
+  queda algo, la próxima apertura con internet baja solo eso.
+- **`voz.js`: si el clip local no está, lo pide a R2** antes de caer a la voz del navegador
+  (`sonarClip` reescrita con `probar(url)` y un segundo intento). Verificado en el navegador
+  simulando `VOZ_LOCAL_BASE`: falta el local → suena desde R2; caen los dos → habla el navegador; la
+  web sigue igual. La descarga misma solo se prueba en el teléfono, con la versión 7.
+
+#### De paso
+- **`scripts/cdp.mjs` dice ahora QUÉ petición falló:** `Network.loadingFailed` no trae la URL, así que
+  se recuerda al salir la petición. Destapó que los `ERR_CONNECTION_REFUSED` de las pruebas eran del
+  `http.server` local de Python, que rechaza conexiones cuando le llegan muchas a la vez, no del juego.
+
+- **Lo que sigue:** compilar la **versión 7** de la app (lleva todo lo de las Sesiones 144-147) y
+  probar en el teléfono que 4° retoma la descarga. Si pasa, sacar los MP3 de 3° y 4° del repo. De
+  arrastre: la cuenta de Play como organización (DUNS), la prueba cerrada de 12 testers/14 días e INAPI.

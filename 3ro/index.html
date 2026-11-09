@@ -1969,6 +1969,14 @@ let MODO='normal';
 // App de 3°: sin cuenta regresiva (el reloj estresa a los niños). Ver plan 3ro-app-scaffold.
 const SIN_RELOJ=true;
 
+// LEE_SOLO (1° a 4°, todos los cursos con voz): la voz lee sola la pregunta y sus opciones
+// apenas aparecen, y al equivocarse lee sola la respuesta correcta y la explicación, sin que el
+// niño tenga que tocar 🔊. Nació en 1°, donde muchos niños todavía no leen, y el 08/11/2026
+// Roberto la extendió a los cuatro cursos con voz. La leen pintaPregunta y la corrección de
+// responder (assets/js/motor.js) con `typeof LEE_SOLO!=='undefined'`, así que 5° a 8° no la
+// declaran. El 🔊 queda para repetir.
+const LEE_SOLO=true;
+
 // Lectura en voz alta con la voz del navegador (Web Speech API). Gratis, sin archivos.
 // Fallback silencioso si no hay soporte o voz en español. Necesita gesto del usuario en móvil.
 /* Una carpeta por asignatura: los clips se generan por banco y así agregar una

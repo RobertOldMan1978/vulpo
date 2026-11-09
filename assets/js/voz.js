@@ -82,32 +82,43 @@ function sonarClip(texto,alEmpezar,alTerminar){
  // En la app Android la voz vive DESCARGADA en el teléfono. El arranque de la app fija
  // window.VOZ_LOCAL_BASE tras bajar el paquete del curso, y esa carpeta MANDA. En la web
  // queda sin definir y la ruta apunta a R2.
- if(window.VOZ_LOCAL_BASE){ arch = arch.replace(/^\/?assets\/voz\//, window.VOZ_LOCAL_BASE); }
- else { arch = arch.replace(/^\/?assets\/voz\//, VOZ_ORIGEN); }
- try{
-  const a=new Audio(arch);   // `arch` ya viene con su carpeta
+ const enR2=arch.replace(/^\/?assets\/voz\//, VOZ_ORIGEN);
+ /* App Android: si el clip LOCAL no está (la descarga del curso quedó incompleta), se pide a
+    R2 antes de caer a la voz del navegador (Sesión 147). Con internet suena Catalina igual;
+    sin internet también falla R2, y recién ahí habla el navegador. */
+ let remoto=null;
+ if(window.VOZ_LOCAL_BASE){ arch = arch.replace(/^\/?assets\/voz\//, window.VOZ_LOCAL_BASE); remoto=enR2; }
+ else { arch = enR2; }
+ let cerrado=false, avisado=false;   // avisado: alEmpezar una sola vez aunque se pruebe R2 tras el local
+ function probar(url){
+  const a=new Audio(url);   // `url` ya viene con su carpeta
   _AUDIO=a;
-  let empezo=false, cerrado=false;
+  let empezo=false;
   /* Si el clip no carga (servidor caído, internet malo del colegio), ese texto NO queda
      mudo: lo lee la voz del navegador, igual que un texto sin clip. ⚠️ Solo si este audio
      sigue siendo el vigente: callarVoz() lo pausa y lo suelta (_AUDIO=null), y esa pausa
      TAMBIÉN rechaza play(). Sin el control `_AUDIO===a`, mandar callar haría hablar al
      navegador. Y solo si no alcanzó a sonar: un corte a mitad no repite la frase. */
+  let fallo=false;
   const fallar=()=>{
-   if(cerrado) return; cerrado=true;
-   if(_AUDIO===a && !empezo){ _AUDIO=null; decir(t,alEmpezar,alTerminar); }
-   else if(alTerminar) alTerminar();
+   if(cerrado||fallo) return; fallo=true;
+   if(_AUDIO===a && !empezo){
+    _AUDIO=null;
+    if(remoto){ const r=remoto; remoto=null; probar(r); return; }
+    cerrado=true; decir(t,alEmpezar,alTerminar);
+   }
+   else { cerrado=true; if(alTerminar) alTerminar(); }
   };
   // ⚠️ `play` se dispara apenas se LLAMA a play(), antes de que suene nada (medido: llega
   // antes que el `error` de un 404). Lo que dice que el audio de verdad está sonando es
   // `playing`; si se usara `play`, el respaldo no correría nunca.
-  a.onplay=()=>{ if(alEmpezar) alEmpezar(); };
+  a.onplay=()=>{ if(alEmpezar && !avisado){ avisado=true; alEmpezar(); } };
   a.onplaying=()=>{ empezo=true; };
   a.onended=()=>{ if(cerrado) return; cerrado=true; if(alTerminar) alTerminar(); };
   a.onerror=fallar;
   a.play().catch(fallar);
-  return true;
- }catch(e){ return false; }
+ }
+ try{ probar(arch); return true; }catch(e){ return false; }
 }
 
 let _COLA_ID=0;   // declarado ANTES de usarse: con `let` al reves queda en zona muerta

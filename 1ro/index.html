@@ -1924,13 +1924,12 @@ let MODO='normal';
 // el cronómetro produce ansiedad y no foco; de 5° hacia arriba el reloj es parte del juego.
 // ⚠️ NO alcanza al Duelo, que lleva reloj en los tres: ahí el tiempo es la competencia.
 const SIN_RELOJ=true;
-// LEE_SOLO (SOLO 1°): la voz lee sola la pregunta y sus opciones apenas aparecen, sin que
-// el niño tenga que tocar 🔊. Muchos niños de 1° todavía NO leen de corrido —el curso es
-// justamente donde aprenden—, así que esperar a que descubran el botón deja la pregunta
-// muda para quien más la necesita. La lee pintaPregunta (assets/js/motor.js) con
-// `typeof LEE_SOLO!=='undefined'`, así que los otros forks no la declaran.
-// ⚠️ Mientras VOZ_DIRS esté vacía (la voz de 1° todavía no existe) VOZ.activo es false y
-// esto no hace nada: es lo esperado hasta generar la voz.
+// LEE_SOLO (1° a 4°, todos los cursos con voz): la voz lee sola la pregunta y sus opciones
+// apenas aparecen, y al equivocarse lee sola la respuesta correcta y la explicación, sin que el
+// niño tenga que tocar 🔊. Nació en 1°, donde muchos niños todavía no leen, y el 08/11/2026
+// Roberto la extendió a los cuatro cursos con voz. La leen pintaPregunta y la corrección de
+// responder (assets/js/motor.js) con `typeof LEE_SOLO!=='undefined'`, así que 5° a 8° no la
+// declaran. El 🔊 queda para repetir.
 const LEE_SOLO=true;
 
 // Lectura en voz alta con la voz del navegador (Web Speech API), más los clips

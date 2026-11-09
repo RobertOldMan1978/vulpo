@@ -790,7 +790,39 @@ function ajustarNav(){
  });
 }
 /* ================= UTIL ================= */
+/* ===== El "← Volver", siempre arriba a la izquierda (Sesión 147, 08/11/2026) =====
+   Pedido de Roberto: cada pantalla tenía su "← Volver" en otro lugar (unos arriba, la mayoría
+   al final, después de mucho scroll). Ahora es una FLECHA fija arriba a la izquierda, del mismo
+   tamaño y aspecto que los botones de música y sonido de la derecha. Es CSS sobre los botones
+   que ya existen: el texto sigue en el DOM (con letra de tamaño 0), así que el lector de
+   pantalla lo sigue leyendo, y el onclick de cada uno no cambia.
+   ⚠️ Un elemento fixed dentro de una pantalla oculta no se ve: por eso basta con marcarlos,
+   y cada flecha aparece solo con su pantalla.
+   ⚠️ NO entran: el ✕ del quiz y el "← Salir" de la mini-clase (ya van arriba, en su barra),
+   ni los botones que son la ACCIÓN de la pantalla (volver tras vencer o perder un jefe). */
+const VOLVER_IDS=['btnCanjeBack','btnExpBack','btnMapasBack','btnLengBack','btnBiblioBack','btnCampBack',
+ 'jiBack','btnMapaCamp','btnTiendaBack','btnDueloBack','btnDOBack','btnODBack','infSalir'];
+function volverArriba(){
+ if(!document.getElementById('css-volver')){
+  const st=document.createElement('style'); st.id='css-volver';
+  st.textContent=
+   '.btn-volver{position:fixed!important;top:calc(10px + env(safe-area-inset-top))!important;left:10px!important;'+
+   'z-index:46;width:42px!important;height:42px!important;min-height:0!important;padding:0!important;margin:0!important;'+
+   'border-radius:12px!important;border:1px solid #ffffff1f!important;background:#120d2ecc!important;'+
+   'backdrop-filter:blur(6px);box-shadow:none!important;font-size:0!important;line-height:40px!important;'+
+   'text-align:center;overflow:hidden;color:var(--txt)!important}'+
+   '.btn-volver::before{content:"←";content:"←" / "";font-size:22px;font-family:Nunito,sans-serif;font-weight:900}'+
+   '.btn-volver:active{transform:scale(.92)!important}'+
+   // con la etiqueta de modo prueba / QA arriba a la izquierda, la flecha baja para no quedar tapada
+   'body:has(.qa-badge) .btn-volver{top:calc(46px + env(safe-area-inset-top))!important}'+
+   // la pantalla deja lugar arriba, para que la flecha no tape su primer elemento
+   '.screen:has(.btn-volver){padding-top:46px}';
+  document.head.appendChild(st);
+ }
+ VOLVER_IDS.forEach(id=>{ const b=document.getElementById(id); if(b) b.classList.add('btn-volver'); });
+}
 function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));$(id).classList.add('on');window.scrollTo(0,0);
+ try{ volverArriba(); }catch(e){}
  var enJuego=(id==='scr-mapa'||id==='scr-quiz'||id==='scr-res');
  document.body.classList.toggle('en-dificil', enJuego && MODO==='dificil');
  if(id==='scr-rol'){pintarInicio();revisarDesafio();revisarDuelos();}
@@ -2310,8 +2342,8 @@ function pintaPregunta(){
  // Se lee `orden` (el barajado que se está mostrando), NO P.ops: si se leyera el
  // arreglo original, la voz diría "A" señalando una opción distinta a la de pantalla.
  if(be){ be.onclick=()=>leerPreguntaEnVoz(P.q, orden.map(it=>it.o), $('qOpts')); }
- /* LEE_SOLO (solo 1° básico): la voz lee sola la pregunta y sus opciones al aparecer, porque a
-    los 6-7 años muchos niños todavía no leen y sin esto no saben qué se les pregunta. El 🔊
+ /* LEE_SOLO (1° a 4°, los cursos con voz): la voz lee sola la pregunta y sus opciones al
+    aparecer. Nació en 1°, donde muchos niños todavía no leen, y se extendió a los cuatro. El 🔊
     queda para repetir. Es el MISMO camino del botón, así que lee el orden barajado de pantalla.
     Nace apagada y se pregunta con typeof: los otros cursos no la declaran, y un fork viejo en
     caché no puede reventar. No corre en ?rev=1 (el profesor lee) ni si la voz no está activa.
@@ -2409,8 +2441,8 @@ function responder(el,ok,P,e){
   /* La explicación también se ESCUCHA en los cursos con voz (1° a 4°): es el momento de
      aprender del error, y antes quedaba mudo justo para el niño que no lee. Lee la respuesta
      correcta y luego la pista, con los clips pregrabados si existen (el generador las incluye
-     desde el 07/11/2026) y si no con la voz del navegador. En 1° (LEE_SOLO) suena sola, como
-     la pregunta; en el resto, al tocar el 🔊. El botón vive DENTRO de la explicación para no
+     desde el 07/11/2026) y si no con la voz del navegador. Con LEE_SOLO (1° a 4°) suena sola,
+     como la pregunta; donde no, al tocar el 🔊. El botón vive DENTRO de la explicación para no
      quitarle al 🔊 de arriba su trabajo de repetir la pregunta. */
   if(window.VOZ && VOZ.activo && P.tip){
    const bv=document.createElement('button'); bv.type='button'; bv.className='btn-escuchar';
@@ -2420,6 +2452,16 @@ function responder(el,ok,P,e){
    if(typeof LEE_SOLO!=='undefined' && LEE_SOLO && !((typeof REVISION!=='undefined') && REVISION)) bv.onclick();
   }
   e.hidden=false;$('btnSeguir').hidden=false;
+  /* La pantalla baja sola hasta la corrección (Sesión 147): en un teléfono la explicación y el
+     botón Continuar quedaban bajo el borde, y el niño oía la corrección sin verla. Se lleva el
+     Continuar al borde de abajo, así la explicación queda justo encima. */
+  try{ const rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+   // ⚠️ No con scrollIntoView: la barra de abajo (Mapa · Tienda · Logros) es fixed y lo tapaba.
+   setTimeout(()=>{ const bs=$('btnSeguir'); if(!bs||bs.hidden) return;
+    const nav=$('nav'), nh=(nav&&getComputedStyle(nav).display!=='none')?nav.getBoundingClientRect().height:0;
+    const falta=bs.getBoundingClientRect().bottom-(innerHeight-nh-14);
+    if(falta>0) window.scrollBy({top:falta,behavior:rm?'auto':'smooth'}); },60);
+  }catch(err){}
  }
 }
 function avanzar(){if(!Q||!Q.preguntas)return;   // guard: evita reentrada (doble toque) tras resetear Q
