@@ -189,6 +189,12 @@ window.CALC = (function () {
       $("sfFb").textContent = "✓ ¡Bien!";
       $("sfFb").className = "sf-fb ok";
       snd("ok");
+      // Cada 5 aciertos sube la dificultad (hasta el nivel 5): se celebra (Sesion 150). No dice
+      // "escalon N": en 3° el contador de arriba ya se llama Escalon y cuenta aciertos.
+      // fxBanda vive en motor.js; si no esta, no pasa nada.
+      if (R.racha % 5 === 0 && R.racha <= 20 && typeof fxBanda === "function") {
+        try { fxBanda("⬆️ ¡Sube la dificultad!", "oro"); } catch (e) {}
+      }
       R.avanzar = setTimeout(pintar, 550);
     } else {
       if (el) { el.classList.remove("off"); el.classList.add("bad"); }

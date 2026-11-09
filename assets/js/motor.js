@@ -87,7 +87,8 @@ function renderJefeIntro(){
  $('nav').style.display='none';
  go('scr-jefe-intro');
 }
-function cargarFaseJefe(){JF.preguntas=jefePreguntasFase(JF.camp,JF.fase);JF.idx=0;renderJefePregunta();}
+function cargarFaseJefe(){JF.preguntas=jefePreguntasFase(JF.camp,JF.fase);JF.idx=0;renderJefePregunta();
+ try{ if(JF.fase>0) fxBanda('⚔️ FASE '+(JF.fase+1)+' · '+JF.camp.jefeFinal.fases[JF.fase].nombre); }catch(e){}}
 function pintarHudJefe(){
  const jf=JF.camp.jefeFinal;
  $('jvVillanoIc').innerHTML=jf.villanoImg?`<img src="${jf.villanoImg}" alt="">`:jf.villanoIc;
@@ -114,12 +115,13 @@ function responderJefe(el,ok){
  marcarActividad();
  registrarOA(JF.preguntas[JF.idx] && JF.preguntas[JF.idx].oa, ok);   // mapa de dominio
  document.querySelectorAll('#jfOpts .opt').forEach(o=>o.classList.add('off'));
- if(ok){ SND.hit(); JF.vida=Math.max(0,JF.vida-1);
+ if(ok){ SND.hit(); JF.vida=Math.max(0,JF.vida-1); try{ fxJefeGolpe(); }catch(e){}
   if(el){el.classList.remove('off');el.classList.add('ok');}
   const r=el?el.getBoundingClientRect():null; if(r)particulas(r.left+r.width/2,r.top,['⚔️','💥','✨']);
  } else { SND.hurt(); JF.vidas--;
   if(el){el.classList.remove('off');el.classList.add('bad');}
-  const c=document.querySelector('#jfOpts .opt[data-correcta]'); if(c)c.classList.add('ok');
+  const c=document.querySelector('#jfOpts .opt[data-correcta]'); if(c){c.classList.remove('off');c.classList.add('ok');}
+  try{ fxJefeHerida(); }catch(e){}
   document.body.classList.add('jefe-hit'); setTimeout(()=>document.body.classList.remove('jefe-hit'),260);
   if(navigator.vibrate)navigator.vibrate(140);
  }
@@ -827,6 +829,7 @@ function volverArriba(){
 }
 function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));$(id).classList.add('on');window.scrollTo(0,0);
  try{ volverArriba(); }catch(e){}
+ try{ fxGo(id); }catch(e){}
  var enJuego=(id==='scr-mapa'||id==='scr-quiz'||id==='scr-res');
  document.body.classList.toggle('en-dificil', enJuego && MODO==='dificil');
  if(id==='scr-rol'){pintarInicio();revisarDesafio();revisarDuelos();}
@@ -963,10 +966,395 @@ let _pcUltMarca=0;
 },{passive:true}));
 setInterval(()=>{ try{ if(typeof SAVE_KEY==='undefined'||!S.alumno||_efimero()) return;
  if(sesionCaducada()){ borrarSesionLocal(); location.replace(location.pathname); } }catch(e){} },60000);
+/* ===== EFECTOS: luces, brillos y movimiento (Sesión 150, 09/11/2026) =====
+   A los niños los engancha lo visual, y dos revisiones (juego y pantallas) encontraron que
+   VULPO se sentía plano justo donde más importa: el acierto, el jefe, el mapa. Todo vive aquí,
+   una vez para los ocho cursos, con su CSS inyectado (#fx-css).
+   Reglas que cumple cada efecto:
+   - solo transform/opacity/box-shadow, nada de canvas ni librerías: teléfonos modestos;
+   - se apaga con «reducir movimiento» (la regla global de los forks quita las animaciones CSS, y
+     lo que se crea desde JS —textos flotantes, burbujas— ni se crea: si no, quedaría pegado);
+   - nunca tapa la pregunta, las opciones ni la explicación, y no suena: la voz de 1° a 4° manda. */
+function fxReducido(){ try{ return matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){ return false; } }
+const FX_ACC={'Historia':'#ffb03c','Matemáticas':'#4dd8ff','Matemática':'#4dd8ff','Ciencias':'#3ee089',
+ 'Lenguaje':'#ff6fa6','Lectura':'#d39a5b','Formación':'#a98bff','Repasa':'#ff4d8d'};
+const FX_CSS=`
+/* Fondo: el degradado del body se REPETÍA en cada pantalla de scroll y dejaba una franja. */
+body{background-repeat:no-repeat;background-size:100% 100vh;background-size:100% 100lvh;background-color:var(--bg2)}
+body.en-dificil{background-repeat:no-repeat!important;background-size:100% 100lvh!important;background-color:#180912!important}
+body.en-jefe{background-repeat:no-repeat;background-size:100% 100lvh;background-color:#0a0410}
+/* Nebulosa que respira, detrás de las estrellas */
+body::before{content:"";position:fixed;inset:-10%;z-index:0;pointer-events:none;
+ background:radial-gradient(38% 28% at 18% 28%,#8f6bff2e,transparent 70%),
+  radial-gradient(34% 26% at 82% 62%,#4dd8ff1f,transparent 70%),
+  radial-gradient(30% 24% at 62% 12%,#ff4d8d18,transparent 70%);
+ animation:fxNeb 38s ease-in-out infinite alternate}
+body.en-jefe::before,body.en-dificil::before{opacity:.35}
+@keyframes fxNeb{0%{transform:scale(1) translate(0,0);opacity:.75}100%{transform:scale(1.14) translate(-2%,2%);opacity:1}}
+.stars .fx-st{position:absolute;border-radius:50%;opacity:.5;animation:tw 3.4s infinite alternate}
+/* Entrada en cascada de tarjetas, capítulos, nodos y artículos */
+.fx-in{animation:fxEntra .38s ease-out backwards;animation-delay:calc(var(--fxi,0)*45ms)}
+@keyframes fxEntra{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+/* Acierto: destello que recorre la opción, anillo verde y +XP que sube */
+.opt.ok{position:relative;overflow:hidden}
+.opt.fx-brillo::after{content:"";position:absolute;inset:0;pointer-events:none;
+ background:linear-gradient(115deg,transparent 35%,#ffffff99 50%,transparent 65%);transform:translateX(-120%);animation:fxBrillo .7s ease-out forwards}
+@keyframes fxBrillo{to{transform:translateX(120%)}}
+.opt.fx-anillo{animation:bump .35s,fxAnillo .7s ease-out}
+@keyframes fxAnillo{0%{box-shadow:0 0 0 0 #3ee089dd}100%{box-shadow:0 0 0 16px #3ee08900}}
+.fx-xp{position:fixed;z-index:60;pointer-events:none;font-family:'Titan One',cursive;font-size:22px;color:var(--gold);
+ text-shadow:0 2px 0 #7a4b00,0 0 12px #ffc93c;animation:fxXp .9s ease-out forwards;white-space:nowrap}
+@keyframes fxXp{0%{opacity:0;transform:translate(-50%,6px) scale(.7)}20%{opacity:1;transform:translate(-50%,-6px) scale(1.12)}100%{opacity:0;transform:translate(-50%,-48px) scale(1)}}
+/* Error: la correcta late para llevar la mirada, y la explicación entra desde abajo */
+.opt.fx-guia{animation:fxGuia .5s ease-in-out 2}
+@keyframes fxGuia{50%{transform:scale(1.035);box-shadow:0 0 0 4px #3ee08955,0 0 22px #3ee08988}}
+#qExpl:not([hidden]){animation:fxSube .35s ease-out}
+@keyframes fxSube{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+/* Combo: la tarjeta de la pregunta toma un aura mientras dura */
+body.fx-c3 #scr-quiz .qcard{box-shadow:0 0 0 2px #ffc93c99,0 0 22px #ffc93c55;transition:box-shadow .4s}
+body.fx-c5 #scr-quiz .qcard{animation:fxLlama 1.1s ease-in-out infinite alternate}
+@keyframes fxLlama{from{box-shadow:0 0 0 2px #ff9d3c,0 0 18px #ff7a3d88}to{box-shadow:0 0 0 3px #ffc93c,0 0 34px #ff5a3ccc}}
+/* Puntos de avance con la bandera de la meta */
+.qprog.fx-dotsbar{background:none;overflow:visible;height:auto}
+.qprog.fx-dotsbar>i{display:none}
+.fx-dots{display:flex;gap:4px;width:100%;align-items:center;padding-top:4px}
+.fx-dot{flex:1;height:10px;border-radius:6px;background:#ffffff24;position:relative;transition:background .3s}
+.fx-dot.ok{background:var(--green);box-shadow:0 0 8px #3ee08988}
+.fx-dot.bad{background:var(--pink);box-shadow:0 0 6px #ff4d8d66}
+.fx-dot.act{background:#ffffff70;animation:fxLate 1.2s ease-in-out infinite}
+@keyframes fxLate{50%{transform:scaleY(1.35);background:#ffffffaa}}
+.fx-dot.meta::after{content:"🚩";position:absolute;right:-5px;top:-16px;font-size:12px;line-height:1}
+body.en-dificil .fx-dot.ok{background:#ff8a5c}
+/* El botón de ayuda: su display:block le ganaba al atributo hidden y seguía a la vista */
+.btn-ayuda[hidden]{display:none!important}
+/* Burbuja de Vulpi y su respiración en reposo */
+.kim-buddy{animation:fxRespira 3.2s ease-in-out infinite}
+@keyframes fxRespira{50%{transform:scale(1.035)}}
+.fx-burb{position:absolute;z-index:58;pointer-events:none;background:#fff;color:#2a1c55;font-family:'Titan One',cursive;
+ font-size:15px;padding:6px 12px;border-radius:14px;box-shadow:0 6px 16px #0006;white-space:nowrap;animation:fxBurb 1.15s ease-out forwards}
+.fx-burb::after{content:"";position:absolute;left:14px;bottom:-6px;border:7px solid transparent;border-top-color:#fff;border-bottom:0}
+.fx-burb.bad{background:#ffe3ec}
+@keyframes fxBurb{0%{opacity:0;transform:scale(.6) translateY(6px)}15%{opacity:1;transform:scale(1.06)}80%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-6px)}}
+/* Jefe Final: golpe, fantasma de la barra, −1 y corazón roto */
+.hpbar{position:relative}
+.hpbar>i{position:relative;z-index:1}
+.hpbar .fx-fantasma{position:absolute;left:0;top:0;bottom:0;z-index:0;background:#ffe7c9;opacity:.85;border-radius:10px}
+.jefe-vida{position:relative}
+#jvVillanoIc{display:inline-block;transform-origin:center}
+#jvVillanoIc.fx-golpe{animation:fxGolpe .55s ease-out}
+@keyframes fxGolpe{0%{transform:scale(1)}25%{transform:scale(2.1) translateX(-4px);filter:brightness(3) drop-shadow(0 0 10px #fff)}
+ 55%{transform:scale(1.6) translateX(10px);filter:brightness(1.6)}100%{transform:scale(1);filter:none}}
+.fx-dano{position:absolute;z-index:6;right:12px;top:-4px;font-family:'Titan One',cursive;font-size:24px;color:var(--gold);
+ text-shadow:0 2px 0 #7a1020,0 0 12px #ff8f3c;pointer-events:none;animation:fxXpDano .8s ease-out forwards}
+@keyframes fxXpDano{0%{opacity:0;transform:translateY(8px) scale(.6)}25%{opacity:1;transform:scale(1.25)}100%{opacity:0;transform:translateY(-30px)}}
+.fx-roto{position:fixed;z-index:60;font-size:26px;pointer-events:none;animation:fxRoto 1s ease-in forwards}
+@keyframes fxRoto{0%{transform:scale(1.4);opacity:1}30%{transform:scale(1.2) rotate(-12deg)}100%{transform:translateY(70px) rotate(25deg);opacity:0}}
+.jefe-hearts.fx-tiembla{animation:jefeShake .3s 2}
+.fx-banda{position:fixed;left:0;right:0;top:38%;z-index:70;padding:16px 10px;text-align:center;font-family:'Titan One',cursive;
+ font-size:24px;color:#fff;background:linear-gradient(90deg,transparent,#a3102fee 18%,#d4204aee 50%,#a3102fee 82%,transparent);
+ text-shadow:0 3px 0 #4a0010,0 0 18px #ff8f3c;animation:fxBanda 1.3s ease-in-out forwards}
+@keyframes fxBanda{0%{transform:translateX(-100%)}22%,78%{transform:none}100%{transform:translateX(100%)}}
+.fx-banda.oro{background:linear-gradient(90deg,transparent,#6a3fd8ee 18%,#8f6bffee 50%,#6a3fd8ee 82%,transparent);text-shadow:0 3px 0 #2a1060,0 0 18px #ffc93c;color:#ffe9a8}
+/* Mapa: camino, "estás aquí" y el jefe que se nota */
+.route.fx-route{position:absolute;left:0;top:0;pointer-events:none;z-index:0;overflow:visible}
+.route.fx-route path{stroke-width:7}
+.fx-aqui{position:absolute;z-index:3;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-size:24px;
+ background:#1e1747;border:2px solid var(--gold);pointer-events:none;animation:fxAqui 1.6s ease-in-out infinite}
+.fx-aqui img{width:34px;height:34px;border-radius:50%;object-fit:cover}
+@keyframes fxAqui{50%{transform:translateY(-7px)}}
+.node.boss .orb{width:88px;height:88px;font-size:38px;border-color:#ff5a6e;
+ background:radial-gradient(circle at 32% 28%,#ff7a7a,#7a0f2a);box-shadow:0 0 20px #ff4d6a88,0 8px 22px #0006}
+.node.boss.open .orb{animation:fxJefeAura 1.8s ease-in-out infinite}
+@keyframes fxJefeAura{50%{box-shadow:0 0 34px #ff4d6acc,0 0 0 8px #ff4d6a22,0 8px 22px #0006}}
+.node.done .orb{position:relative;overflow:hidden}
+.node .orb::before{content:"";position:absolute;width:60%;height:34%;left:16%;top:9%;border-radius:50%;
+ background:linear-gradient(180deg,#ffffff55,transparent);pointer-events:none}
+.node .orb{position:relative}
+.stars-mini{text-shadow:0 0 8px #ffc93c88}
+/* Menú: color propio por asignatura y anillo de progreso alrededor de la portada */
+.exp-card[data-fxacc]{border-color:var(--fxacc)!important;box-shadow:0 0 18px -8px var(--fxacc)}
+.exp-card.camp-done[data-fxacc]{border-color:var(--gold)!important;box-shadow:0 0 0 2px var(--gold) inset,0 0 18px #ffc93c55}
+.fx-ring{position:relative;flex-shrink:0;width:72px;height:72px;border-radius:16px;padding:3px;
+ background:conic-gradient(var(--fxacc) calc(var(--fxp)*1%),#ffffff1c 0)}
+.fx-ring img{width:66px!important;height:66px!important;border-radius:13px!important;display:block}
+.exp-card.fx-err{animation:fxUrge 2.4s ease-in-out infinite}
+@keyframes fxUrge{50%{box-shadow:0 0 0 3px #ff4d8d55,0 0 22px #ff4d8d66}}
+.fx-badge{position:absolute;right:-6px;top:-6px;z-index:2;min-width:22px;height:22px;padding:0 6px;border-radius:11px;
+ background:var(--pink);color:#fff;font:900 12px/22px Nunito,sans-serif;text-align:center;box-shadow:0 2px 6px #0007}
+/* Resultado: estrellas que llegan con el sonido, rayos detrás de Vulpi */
+.starline .g{animation:fxEstrella .55s cubic-bezier(.2,1.6,.4,1) backwards;animation-delay:.6s}
+.starline .g:nth-child(2){animation-delay:.86s}.starline .g:nth-child(3){animation-delay:1.12s}
+@keyframes fxEstrella{0%{opacity:0;transform:scale(2.6) rotate(-40deg);filter:brightness(2.5)}100%{opacity:1;transform:none;filter:none}}
+.fx-rayos-caja{position:relative;display:inline-block}
+.fx-rayos{position:absolute;left:50%;top:50%;width:260px;height:260px;margin:-130px 0 0 -130px;z-index:-1;pointer-events:none;border-radius:50%;
+ background:repeating-conic-gradient(#ffc93c2e 0 10deg,transparent 10deg 24deg);
+ -webkit-mask:radial-gradient(circle,#000 30%,transparent 70%);mask:radial-gradient(circle,#000 30%,transparent 70%);animation:fxGira 14s linear infinite}
+@keyframes fxGira{to{transform:rotate(360deg)}}
+.levelup .box{position:relative}
+.levelup.show .box::before{content:"";position:absolute;left:50%;top:50%;width:420px;height:420px;margin:-210px 0 0 -210px;z-index:-1;border-radius:50%;
+ background:repeating-conic-gradient(#ffc93c33 0 9deg,transparent 9deg 22deg);
+ -webkit-mask:radial-gradient(circle,#000 25%,transparent 68%);mask:radial-gradient(circle,#000 25%,transparent 68%);animation:fxGira 6s linear infinite}
+/* Ranking: podio */
+.rk.p1:not(.dif){background:linear-gradient(90deg,#ffc93c33,#ffc93c0a);border-radius:12px}
+.rk.p2:not(.dif){background:linear-gradient(90deg,#d8dcff2a,#d8dcff08);border-radius:12px}
+.rk.p3:not(.dif){background:linear-gradient(90deg,#e0915a2e,#e0915a08);border-radius:12px}
+.rk .pos.fx-med{font-family:inherit;font-size:20px}
+/* Tienda: rarezas por precio */
+.shop-item{position:relative;overflow:hidden}
+.shop-item.fx-rara{border-color:#4dd8ff88}
+.shop-item.fx-epica{border-color:#a98bff;box-shadow:0 0 16px -6px #a98bff}
+.shop-item.fx-legend{border-color:var(--gold);box-shadow:0 0 18px -6px #ffc93c}
+.shop-item.fx-epica::after,.shop-item.fx-legend::after{content:"";position:absolute;inset:0;pointer-events:none;
+ background:linear-gradient(115deg,transparent 40%,#ffffff22 50%,transparent 60%);transform:translateX(-120%);animation:fxBarrido 4.5s ease-in-out infinite}
+@keyframes fxBarrido{0%,70%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+.shop-item .fx-rareza{position:absolute;left:8px;top:8px;font:900 9px/1 Nunito,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:3px 6px;border-radius:6px;background:#0005}
+.shop-item.fx-rara .fx-rareza{color:#4dd8ff}.shop-item.fx-epica .fx-rareza{color:#c6b3ff}.shop-item.fx-legend .fx-rareza{color:var(--gold)}
+.shop-item .em{filter:drop-shadow(0 6px 10px #0007)}
+/* Inicio: Vulpi salta si lo tocan */
+.logo .badge-img.fx-salta{animation:fxSalta .6s ease-out}
+@keyframes fxSalta{30%{transform:translateY(-18px) scale(1.04)}60%{transform:translateY(0) scale(.98)}}
+/* Duelo ganado: la corona cae sobre el ganador */
+.fx-corona-caja{position:relative;display:block;width:max-content;margin:18px auto 0}
+.fx-corona-caja .fx-rayos{width:190px;height:190px}
+.fx-corona{position:absolute;left:50%;top:-30px;font-size:46px;line-height:1;transform:translateX(-50%) rotate(-8deg);
+ filter:drop-shadow(0 0 12px #ffc93c) drop-shadow(0 4px 6px #0008);animation:fxCoronaCae .9s cubic-bezier(.3,1.5,.5,1) both;pointer-events:none;z-index:2}
+@keyframes fxCoronaCae{0%{transform:translate(-50%,-140px) rotate(-30deg) scale(.6);opacity:0}60%{opacity:1}
+ 80%{transform:translate(-50%,6px) rotate(4deg) scale(1.1)}100%{transform:translateX(-50%) rotate(-8deg) scale(1)}}
+.fx-corona-tx{display:block;width:max-content;margin:4px auto 0;font:900 13px/1 Nunito,sans-serif;letter-spacing:.03em;
+ color:#241a3d;background:linear-gradient(90deg,#ffe08a,#ffc93c,#ffe08a);border-radius:999px;padding:5px 12px;box-shadow:0 0 14px #ffc93c88}
+/* Perfil: las insignias como medallas, con su cinta */
+.insignia .i-ic{position:relative;width:54px;height:54px;flex-shrink:0;display:grid;place-items:center;font-size:26px;border-radius:50%;margin-top:12px;
+ background:radial-gradient(circle at 35% 30%,#fff3c4,#ffd45c 38%,#c98a12 72%,#8a5a06);
+ box-shadow:0 0 0 3px #7a4f05,0 0 0 5px #ffd45c,inset 0 -4px 8px #0004,0 6px 12px #0006}
+.insignia .i-ic::before,.insignia .i-ic::after{content:"";position:absolute;top:-17px;width:14px;height:20px;z-index:-1}
+.insignia .i-ic::before{left:12px;background:#ff4d8d;transform:skewX(14deg);clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%)}
+.insignia .i-ic::after{right:12px;background:#4dd8ff;transform:skewX(-14deg);clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%)}
+.insignia{position:relative;isolation:isolate}
+.insignia:not(.lock) .i-ic{overflow:visible}
+.insignia:not(.lock) .i-ic>span.fx-brillo{position:absolute;inset:0;border-radius:50%;overflow:hidden;pointer-events:none}
+.insignia:not(.lock) .i-ic>span.fx-brillo::after{content:"";position:absolute;inset:-20%;background:linear-gradient(115deg,transparent 42%,#ffffffaa 50%,transparent 58%);
+ transform:translateX(-120%);animation:fxBarrido 3.8s ease-in-out infinite}
+.insignia.lock .i-ic{background:radial-gradient(circle at 35% 30%,#8a8aa0,#55556a 60%,#36364a);box-shadow:0 0 0 3px #2a2a3a,0 0 0 5px #6a6a80,inset 0 -4px 8px #0004;font-size:20px}
+.insignia.lock .i-ic::before,.insignia.lock .i-ic::after{background:#5a5a70}
+.insignia.activa .i-ic{box-shadow:0 0 0 3px #7a4f05,0 0 0 5px #ffd45c,0 0 18px 4px #ffc93caa,inset 0 -4px 8px #0004}
+`;
+function fxCss(){
+ if(document.getElementById('fx-css')) return;
+ const st=document.createElement('style'); st.id='fx-css'; st.textContent=FX_CSS; document.head.appendChild(st);
+ // estrellas de colores, en tres tamaños, sobre las blancas que ya pone cada curso
+ try{ const c=document.querySelector('.stars');
+  if(c && !c.querySelector('.fx-st')){ const cols=['#4dd8ff','#ff4d8d','#ffc93c','#a98bff','#ffffff'];
+   for(let i=0;i<22;i++){ const e=document.createElement('span'); e.className='fx-st'; const t=[2,3,4][i%3];
+    e.style.cssText='left:'+(Math.random()*100)+'%;top:'+(Math.random()*100)+'%;width:'+t+'px;height:'+t+'px;background:'+cols[i%cols.length]+
+     ';box-shadow:0 0 '+(t*2)+'px '+cols[i%cols.length]+';animation-delay:'+(Math.random()*3)+'s';
+    c.appendChild(e); } } }catch(e){}
+ // Vulpi del inicio salta y suelta destellos al tocarlo
+ try{ const v=document.querySelector('#scr-rol .badge-img');
+  if(v && !v._fx){ v._fx=1; v.style.cursor='pointer';
+   v.addEventListener('click',()=>{ v.classList.remove('fx-salta'); void v.offsetWidth; v.classList.add('fx-salta');
+    try{ SND.tap(); }catch(e){} const r=v.getBoundingClientRect(); particulas(r.left+r.width/2,r.top+r.height*0.3,['✨','⭐','💫'],8); }); } }catch(e){}
+}
+function fxFlotante(cls,txt,x,y,ms){
+ if(fxReducido()) return;
+ const e=document.createElement('div'); e.className=cls; e.textContent=txt; e.style.left=x+'px'; e.style.top=y+'px';
+ document.body.appendChild(e); setTimeout(()=>e.remove(),ms||950);
+}
+function fxAcierto(el,xp){
+ fxCss();
+ el.classList.add('fx-brillo','fx-anillo');
+ if(xp>0){ const r=el.getBoundingClientRect(); fxFlotante('fx-xp','+'+xp+' XP',r.left+r.width/2,r.top-4); }
+}
+const FX_BIEN=['¡Eso!','¡Bien!','¡Genial!','¡Sí!','¡Bacán!'], FX_RACHA=['¡Imparable!','¡En racha!','¡Wow!'],
+      FX_MAL=['¡Uy, casi!','¡Tú puedes!','Mira la verde 👀'];
+function fxRegistrar(ok){
+ fxCss();
+ Q.fxRes=Q.fxRes||[]; Q.fxRes[Q.idx]=!!ok;
+ try{ const ba=$('btnAyuda'); if(ba) ba.hidden=true; }catch(e){}   // la ayuda ya no sirve: solo estorbaba
+ fxPuntos();
+ document.body.classList.toggle('fx-c3', ok && Q.combo>=3 && Q.combo<5);
+ document.body.classList.toggle('fx-c5', ok && Q.combo>=5);
+ const k=$('kimBuddy');
+ if(k && !fxReducido()){
+  const lista=ok?(Q.combo>=3?FX_RACHA:FX_BIEN):FX_MAL, r=k.getBoundingClientRect();
+  if(r.width){ const e=document.createElement('div'); e.className='fx-burb'+(ok?'':' bad');
+   e.textContent=lista[Math.floor(Math.random()*lista.length)];
+   // absolute y con el scroll sumado: si la pantalla baja sola a la corrección, la burbuja se va
+   // con Vulpi en vez de quedar flotando encima de la pregunta
+   e.style.left=(r.right-6+scrollX)+'px'; e.style.top=(r.top-10+scrollY)+'px';
+   document.body.appendChild(e); setTimeout(()=>e.remove(),1200); }
+ }
+}
+function fxPuntos(){
+ const bar=$('qProg'); if(!bar||!Q||!Q.preguntas) return;
+ const caja=bar.parentElement; if(!caja) return;
+ fxCss();
+ const n=Q.preguntas.length, res=Q.fxRes||[];
+ const conMeta=!Q.repaso && !Q.errores && !Q.leccion && !Q.desafio;
+ const meta=conMeta?Math.ceil(n*(MODO==='dificil'?0.80:0.66)-1e-9):0;
+ let d=caja.querySelector('.fx-dots');
+ if(!d){ d=document.createElement('div'); d.className='fx-dots'; caja.appendChild(d); caja.classList.add('fx-dotsbar'); }
+ let h='';
+ for(let i=0;i<n;i++){
+  const c=res[i]===true?'ok':(res[i]===false?'bad':(i===Q.idx?'act':''));
+  h+='<span class="fx-dot '+c+(meta&&i===meta-1?' meta':'')+'"></span>';
+ }
+ d.innerHTML=h;
+}
+function fxJefeGolpe(){
+ fxCss();
+ try{
+  const fill=$('jvFill'), bar=fill&&fill.parentElement; if(!bar) return;
+  let g=bar.querySelector('.fx-fantasma');
+  if(!g){ g=document.createElement('span'); g.className='fx-fantasma'; bar.insertBefore(g,fill); }
+  g.style.transition='none'; g.style.width=fill.style.width||'100%'; void g.offsetWidth;
+  setTimeout(()=>{ g.style.transition='width .6s ease'; g.style.width=Math.max(0,JF.vida/JF.vidaMax*100)+'%'; },420);
+  const ic=$('jvVillanoIc'); ic.classList.remove('fx-golpe'); void ic.offsetWidth; ic.classList.add('fx-golpe');
+  if(!fxReducido()){ const box=bar.parentElement, e=document.createElement('span'); e.className='fx-dano'; e.textContent='−1';
+   box.appendChild(e); setTimeout(()=>e.remove(),850); }
+ }catch(e){}
+}
+function fxJefeHerida(){
+ fxCss();
+ try{
+  const h=$('jvVidas'); if(!h) return;
+  h.classList.remove('fx-tiembla'); void h.offsetWidth; h.classList.add('fx-tiembla');
+  const r=h.getBoundingClientRect(), x=r.left+Math.max(0,(JF.vidas))*24+4;
+  fxFlotante('fx-roto','💔',x,r.top-4,1000);
+ }catch(e){}
+}
+function fxBanda(txt,cls){
+ if(fxReducido()) return;
+ fxCss();
+ const e=document.createElement('div'); e.className='fx-banda'+(cls?' '+cls:''); e.textContent=txt;
+ document.body.appendChild(e); setTimeout(()=>e.remove(),1350);
+}
+/* El camino del mapa: une los orbes con una senda (dorada lo jugado, punteada lo que falta) y
+   pone el avatar del niño en la etapa que le toca. El CSS (.route) estaba escrito desde la
+   primera versión y nunca se había dibujado. Va FUERA del arreglo de etapas: es solo dibujo. */
+function fxCamino(box){
+ if(!box) return; fxCss();
+ const dibujar=()=>{
+  try{
+   box.querySelectorAll('.fx-route,.fx-aqui').forEach(e=>e.remove());
+   const orbs=[...box.querySelectorAll('.node .orb')]; if(orbs.length<2) return;
+   const br=box.getBoundingClientRect(); if(!br.width) return;
+   const pts=orbs.map(o=>{ const r=o.getBoundingClientRect(); return [r.left-br.left+r.width/2, r.top-br.top+r.height/2, r]; });
+   const NS_='http://www.w3.org/2000/svg', svg=document.createElementNS(NS_,'svg');
+   svg.setAttribute('class','route fx-route'); svg.setAttribute('width',br.width); svg.setAttribute('height',box.scrollHeight);
+   let dHecho='', dFalta='';
+   for(let i=0;i<pts.length-1;i++){
+    const [x1,y1]=pts[i],[x2,y2]=pts[i+1], ym=(y1+y2)/2;
+    const seg='M'+x1+' '+y1+' C'+x1+' '+ym+','+x2+' '+ym+','+x2+' '+y2+' ';
+    if(orbs[i].closest('.node').classList.contains('done')) dHecho+=seg; else dFalta+=seg;
+   }
+   [[dFalta,''],[dHecho,'done']].forEach(([d,c])=>{ if(!d) return; const pa=document.createElementNS(NS_,'path');
+    pa.setAttribute('d',d); if(c) pa.setAttribute('class',c); svg.appendChild(pa); });
+   // AL FINAL y no al principio: .node:nth-child(even) arma el zigzag, y un hijo extra adelante lo invertiría
+   box.appendChild(svg);
+   // "Estás aquí" va en la primera ETAPA abierta, no en la introducción (que es optativa). Si las
+   // etapas están cerradas por las mini-clases, va en la primera mini-clase abierta.
+   let k=orbs.findIndex(o=>{const nd=o.closest('.node'); return nd.classList.contains('etapa')&&nd.classList.contains('open');});
+   if(k<0) k=orbs.findIndex(o=>o.closest('.node').classList.contains('open'));
+   if(k>=0){ const [x,,r]=pts[k], m=document.createElement('div'); m.className='fx-aqui';
+    m.innerHTML=avatarHTML(S.avatar); const mc=(typeof marcoCss==='function')?marcoCss():''; if(mc) m.style.boxShadow=mc;
+    m.style.left=(x+r.width/2-14)+'px'; m.style.top=(r.top-br.top-16)+'px'; box.appendChild(m); }
+  }catch(e){}
+ };
+ requestAnimationFrame(dibujar);
+ if(!box._fxRO && window.ResizeObserver){ box._fxRO=new ResizeObserver(()=>requestAnimationFrame(dibujar)); box._fxRO.observe(box); }
+}
+function fxMenu(g){
+ if(!g) return; fxCss();
+ [...g.children].forEach(card=>{
+  const b=card.querySelector('.exp-info b'); if(!b) return;
+  const t=b.textContent.replace(/^[^A-Za-zÁÉÍÓÚ]+/,'');
+  const clave=Object.keys(FX_ACC).find(k=>t.startsWith(k)) || (/Repasa/.test(t)?'Repasa':null);
+  if(!clave) return;
+  card.dataset.fxacc='1'; card.style.setProperty('--fxacc',FX_ACC[clave]);
+  const asig=(clave==='Matemáticas'||clave==='Matemática')?(ORDEN_ASIG.find(a=>a.startsWith('Matem'))||clave):clave;
+  const camp=CAMPAÑAS.find(c=>c.asignatura===asig);
+  const img=card.querySelector('img');
+  if(camp && img && camp.capitulos && camp.capitulos.length && !img.parentElement.classList.contains('fx-ring')){
+   const pct=Math.round(capsCompletos(camp)/camp.capitulos.length*100);
+   const ring=document.createElement('span'); ring.className='fx-ring'; ring.style.setProperty('--fxp',pct);
+   img.parentElement.insertBefore(ring,img); ring.appendChild(img);
+  }
+ });
+}
+function fxResultado(paso,estrellas){
+ fxCss();
+ try{
+  const k=$('resKim');
+  if(k && !k.parentElement.classList.contains('fx-rayos-caja')){
+   const caja=document.createElement('span'); caja.className='fx-rayos-caja'; k.parentElement.insertBefore(caja,k); caja.appendChild(k);
+   const r=document.createElement('span'); r.className='fx-rayos'; caja.insertBefore(r,k); }
+  const ry=k&&k.parentElement.querySelector('.fx-rayos'); if(ry) ry.style.display=paso?'':'none';
+  if(!fxReducido()){
+   [['resXp'],['resCoins']].forEach(([id])=>{ const e=$(id); if(!e) return;
+    const fin=parseInt(String(e.textContent).replace(/\D/g,''),10)||0; if(!fin) return; const t0=performance.now();
+    const paso_=(t)=>{ const f=Math.min(1,(t-t0)/900); e.textContent='+'+Math.round(fin*(1-Math.pow(1-f,3))); if(f<1) requestAnimationFrame(paso_); };
+    e.textContent='+0'; requestAnimationFrame(paso_); });
+  }
+  if(paso && estrellas===3 && typeof confetiVictoria==='function') setTimeout(confetiVictoria,1250);
+ }catch(e){}
+}
+function fxTienda(){
+ fxCss();
+ document.querySelectorAll('#tiendaGrid .shop-item').forEach(it=>{
+  if(it.querySelector('.fx-rareza')) return;
+  const btn=it.querySelector('button.buy'), pr=it.querySelector('.price');
+  const m=((btn&&btn.textContent)||(pr&&pr.textContent)||'').match(/(\d[\d.]*)/); if(!m) return;
+  const precio=parseInt(m[1].replace(/\./g,''),10); if(!precio) return;
+  const tier=precio>=900?['fx-legend','Legendaria']:precio>=500?['fx-epica','Épica']:precio>=250?['fx-rara','Rara']:null;
+  if(tier){ it.classList.add(tier[0]); const e=document.createElement('span'); e.className='fx-rareza'; e.textContent=tier[1]; it.appendChild(e); }
+  if(btn && btn.disabled){ btn.textContent='Te faltan '+(precio-(S.monedas||0))+' 🪙'; }
+  else if(btn && pr){ pr.style.display='none'; }   // el precio ya va en el botón: no repetirlo
+ });
+}
+/* Duelo ganado (local o en línea): la corona cae sobre el ícono del ganador, con rayos y confeti.
+   Lo decide el TÍTULO que el fork ya escribió antes del go(): «¡Ganaste!» o «¡Gana <nombre>!».
+   Con «reducir movimiento» la corona queda puesta, sin caer y sin confeti. */
+function fxCorona(id){
+ const ic=$(id==='scr-od-res'?'odResIc':'drIc'), ti=$(id==='scr-od-res'?'odResTitle':'drTitle'); if(!ic||!ti) return;
+ let caja=ic.parentElement.classList.contains('fx-corona-caja')?ic.parentElement:null;
+ const gano=/^¡Gana/.test((ti.textContent||'').trim());
+ if(!gano){ if(caja){ caja.querySelectorAll('.fx-corona,.fx-rayos').forEach(e=>e.remove()); }
+  const t=ic.parentElement.parentElement.querySelector('.fx-corona-tx'); if(t) t.remove(); return; }
+ if(!caja){ caja=document.createElement('span'); caja.className='fx-corona-caja'; ic.parentElement.insertBefore(caja,ic); caja.appendChild(ic); }
+ caja.querySelectorAll('.fx-corona,.fx-rayos').forEach(e=>e.remove());
+ const r=document.createElement('span'); r.className='fx-rayos'; caja.insertBefore(r,ic);
+ const c=document.createElement('span'); c.className='fx-corona'; c.textContent='👑'; c.setAttribute('aria-hidden','true');
+ if(fxReducido()) c.style.animation='none';
+ caja.appendChild(c);
+ let tx=caja.parentElement.querySelector('.fx-corona-tx');
+ if(!tx){ tx=document.createElement('div'); tx.className='fx-corona-tx'; caja.insertAdjacentElement('afterend',tx); }
+ tx.textContent='👑 ¡Campeón del duelo!';
+ if(!fxReducido() && typeof confetiVictoria==='function') setTimeout(confetiVictoria,700);
+}
+/* Las insignias del perfil son medallas: el brillo va en un span propio para no tocar el emoji. */
+function fxMedallas(){
+ document.querySelectorAll('#insigniasGrid .insignia:not(.lock) .i-ic').forEach(e=>{
+  if(!e.querySelector('.fx-brillo') && !fxReducido()){ const b=document.createElement('span'); b.className='fx-brillo'; e.appendChild(b); } });
+}
+/* Lo que pasa al mostrar cada pantalla: la barra inferior marca la verdad, el combo se apaga
+   al salir del quiz y la lista de la pantalla entra en cascada. */
+function fxGo(id){
+ fxCss();
+ const nav={'scr-tienda':'scr-tienda','scr-perfil':'perfil','scr-mapa':'scr-mapa'}[id];
+ if(nav) document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('on',b.dataset.go===nav));
+ if(id!=='scr-quiz') document.body.classList.remove('fx-c3','fx-c5');
+ if(id==='scr-od-res'||id==='scr-duelo-res'){ try{ fxCorona(id); }catch(e){} }
+ const sc=$(id); if(!sc) return;
+ [...sc.querySelectorAll('.exp-card,.camp-nodo,#mapbox .node,.shop-item')].slice(0,12).forEach((e,k)=>{
+  e.style.setProperty('--fxi',k); e.classList.remove('fx-in'); void e.offsetWidth; e.classList.add('fx-in'); });
+}
 function toast(l){if(S.logros.has(l))return;S.logros.add(l);SND.unlock();
  $('toastIc').textContent=LOGROS[l].ic;$('toastTx').textContent=LOGROS[l].tx;
  $('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2600);}
 function particulas(x,y,emojis,n=14){
+ // Con «reducir movimiento» la animación `fall` queda apagada y los emojis se quedaban
+ // QUIETOS un segundo sobre lo que el niño tocó. Mejor no crearlos.
+ if(fxReducido()) return;
  for(let i=0;i<n;i++){const p=document.createElement('span');p.className='pt';
   p.textContent=emojis[Math.floor(Math.random()*emojis.length)];
   p.style.left=x+'px';p.style.top=y+'px';
@@ -1209,6 +1597,7 @@ function renderExpediciones(){
  if(bloqueado()) civ.classList.add('lock');
  g.appendChild(civ);
  }
+ try{ fxMenu(g); }catch(e){}
 }
 function abrirBiblioteca(){
  const g=$('biblioGrid'); g.innerHTML='';
@@ -1481,7 +1870,7 @@ function renderMapa(){
   const p=progAct()[i];
   const bloq0=i===0&&leccBloqueadas;
   const est=bloq0?'lock':p.est;
-  const d=document.createElement('div');d.className='node '+est;
+  const d=document.createElement('div');d.className='node etapa '+est+(n.oa==='BOSS'?' boss':'');
   const etxt=est==='done'?'✓ Completado':(est==='open'?'▶ ¡Jugar ahora!':(bloq0?'🔒 Termina las lecciones':'🔒 Bloqueado'));
   const stars=p.estrellas?'★'.repeat(p.estrellas)+'☆'.repeat(3-p.estrellas):'';
   d.innerHTML=`<div class="orb">${est==='lock'?'🔒':n.icono}</div>
@@ -1494,6 +1883,7 @@ function renderMapa(){
  // avance ya guardado. Sin datos no pasa nada, y sin el módulo tampoco (su respaldo da false).
  if(EXP_ACT.intro) LECC.nodoIntro(EXP_ACT.intro, box);
  if(LECS_EXP) LECC.nodoLecciones(LECS_EXP, box);
+ try{ fxCamino(box); }catch(e){}
 }
 function renderModoSel(){
  const el=$('modoSel');if(!el)return;
@@ -1586,6 +1976,7 @@ function renderTienda(){
   g.appendChild(it);
  });
  renderMarcos(g);
+ try{ fxTienda(); }catch(e){}
 }
 /* ===== Perfil: logros e insignias ===== */
 function renderPerfil(){
@@ -1614,6 +2005,7 @@ function renderInsignias(){
   if(tengo) d.onclick=()=>{SND.tap();S.insigniaActiva=activa?null:ins.id; guardar(); renderInsignias(); refreshHud();};
   cont.appendChild(d);
  });
+ try{ fxCss(); fxMedallas(); }catch(e){}
 }
 function restante(expira){const ms=new Date(expira)-new Date();if(ms<=0)return 'expira pronto';
  const h=Math.floor(ms/3600000),m=Math.floor((ms%3600000)/60000);return h+'h '+m+'m';}
@@ -1679,7 +2071,8 @@ function pintarRanking(filas){
   // Evita el 🔥 duplicado: si la insignia lucida ya es 🔥, no repetir la marca.
   const pre=(marca&&ins.trim()==='🔥')?ins:(marca+ins);
   const difcls=(r.dificil>0)?(' dif d'+Math.min(4,r.dificil)):'';   // d4 = maestría total (marco dorado)
-  return `<div class="rk ${i<1?'top':''} ${r.soy_yo?'me':''}${difcls}"><div class="pos">${i+1}</div>
+  const med=['🥇','🥈','🥉'][i];   // podio (Sesión 150)
+  return `<div class="rk ${i<1?'top':''} ${r.soy_yo?'me':''}${difcls}${med?' p'+(i+1):''}"><div class="pos${med?' fx-med':''}">${med||i+1}</div>
    <div class="em">${r.soy_yo?avatarHTML(S.avatar):escHtml(r.avatar)}</div>
    <div>${pre}${escHtml(r.nombre)}${r.soy_yo?' (tú)':''}</div>
    <div class="pts">${escHtml(RANK_MODO==='semana'&&r.xp_semana!=null?r.xp_semana:r.xp)} XP</div></div>`;}).join('');
@@ -2241,9 +2634,10 @@ function erroresParaHoy(){
 function tarjetaErrores(g){
  if(EFIMERO || (typeof SIN_DISCO!=='undefined' && SIN_DISCO)) return;
  const n=erroresParaHoy().length; if(!n) return;
- const card=document.createElement('div'); card.className='exp-card';
- card.innerHTML=`<img src="assets/kimun-sorprendido.png" alt=""><div class="exp-info"><b>🔁 Repasa tus errores</b>`+
-   `<small>${Math.min(n,ERR_RONDA)} pregunta${Math.min(n,ERR_RONDA)===1?'':'s'} que fallaste antes · sin reloj</small></div><span class="exp-go">▶</span>`;
+ const card=document.createElement('div'); card.className='exp-card fx-err';
+ const nn=Math.min(n,ERR_RONDA);
+ card.innerHTML=`<span style="position:relative;flex-shrink:0;display:block"><img src="assets/kimun-sorprendido.png" alt=""><span class="fx-badge">${nn}</span></span>`+
+   `<div class="exp-info"><b>🔁 Repasa tus errores</b><small>${nn} pregunta${nn===1?'':'s'} para repasar hoy</small></div><span class="exp-go">▶</span>`;
  card.onclick=()=>{ SND.tap(); jugarErrores(); };
  g.appendChild(card);
 }
@@ -2330,6 +2724,7 @@ function pintaPregunta(){
  else { qm.hidden=true; }
  $('qExpl').hidden=true;$('btnSeguir').hidden=true;
  $('qProg').style.width=(Q.idx/Q.preguntas.length*100)+'%';
+ try{ if(Q.idx===0) Q.fxRes=[]; fxPuntos(); }catch(e){}
  callarVoz();   // corta la lectura de la pregunta anterior
  // barajar opciones
  const orden=P.ops.map((o,i)=>({o,i})).sort(()=>Math.random()-.5);
@@ -2417,6 +2812,7 @@ function responder(el,ok,P,e){
   const xpGan=Q.repaso?0:(Q.repetida?Math.max(1,Math.round(pts*0.25)):pts), coinGan=Q.repaso?0:(Q.repetida?1:5);   // repaso no paga; repeticiones pagan reducido (anti-farmeo)
   Q.xpGanado+=xpGan;S.xp+=xpGan;S.monedas+=coinGan;
   el.classList.remove('off');el.classList.add('ok');
+  try{ fxAcierto(el,xpGan); }catch(e){}
   $('qFb').textContent=Q.repaso?'✓ ¡Correcto!':`✓ ¡Correcto! +${xpGan} XP`;$('qFb').classList.add('ok');
   const r=el.getBoundingClientRect();
   particulas(r.left+r.width/2,r.top,['✨','⭐','🪙','💥']);
@@ -2431,12 +2827,15 @@ function responder(el,ok,P,e){
   SND.wrong();kimReact('triste');
   if(navigator.vibrate)navigator.vibrate(120);
  }
+ try{ fxRegistrar(ok); }catch(e){}
  refreshHud();
  if(ok){Q._avanzarT=setTimeout(avanzar,1100);}
  else{
   // Revelar la respuesta correcta y una explicación más amplia; sin apuro (botón Continuar)
   const correcta=document.querySelector('#qOpts .opt[data-correcta]');
-  if(correcta)correcta.classList.add('ok');
+  // ⚠️ remove('off'): todas las opciones quedan con .off (opacidad .45) y la correcta revelada
+  // salía APAGADA justo cuando es lo que hay que mirar.
+  if(correcta){correcta.classList.remove('off');correcta.classList.add('ok','fx-guia');}
   const e=$('qExpl');e.innerHTML='';
   const b=document.createElement('b');b.textContent='Respuesta correcta: ';
   const s1=document.createElement('span');s1.innerHTML=FRAC.html(P.ops[P.ok]);
@@ -2549,6 +2948,7 @@ function mostrarResultado(){
  $('resXp').textContent='+'+Q.xpGanado;
  $('resCoins').textContent='+'+((Q.repetida?0:estrellas*10)+Q.aciertos*(Q.repetida?1:5));
  $('resCombo').textContent='x'+Q.comboMax;
+ try{ fxResultado(paso,estrellas); }catch(e){}
  if(paso){
   $('btnNext').style.display=(Q.lvl<N_ETAPAS-1)?'block':'none';
   $('btnNext').textContent='SIGUIENTE ETAPA ➜';

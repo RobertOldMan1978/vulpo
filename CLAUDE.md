@@ -15123,5 +15123,56 @@ pública, el `README` y las herramientas del tutorial.
   rotas, los tres videos cargan, cero errores de consola y de red.
 
 - **Lo que sigue:** la **versión 10** de la app en el teléfono (repara los clips truncados de 4°) y,
-  si pasa, sacar los MP3 de 3° y 4° del repo. Queda además la revisión de **gráficas y efectos** que
-  pidió Roberto (ver abajo, si se agregó).
+  si pasa, sacar los MP3 de 3° y 4° del repo. La revisión de **gráficas y efectos** que pidió Roberto
+  quedó hecha en la Sesión 150.
+
+### Sesión 150 (2026-11-09) — Luces, efectos y celebraciones: el juego se ve vivo
+Roberto pidió, antes de dormir, mandar agentes a revisar qué mejorar en gráficas («a los niños les
+llama mucho la atención: efectos, luces»). Dos agentes revisaron el juego y propusieron una lista;
+Roberto la aprobó entera (*«me parece todo perfecto, démosle»*). **Ningún banco cambió y ningún fork
+se tocó**: todo vive en `assets/js/motor.js` (un bloque `FX` con su propio CSS, `#fx-css`), más dos
+líneas en `lecciones.js` y en `calculo.js`.
+
+- **El fondo:** nebulosa suave y estrellas de colores; y se arregló que el degradado del fondo se
+  **repetía por cada pantalla de alto** al desplazarse (`no-repeat` + `100lvh` + color de respaldo).
+- **El quiz:** al acertar, brillo y anillo en la opción y un **«+N XP» que sube**; Vulpi dice
+  «¡Genial!» en una burbuja (al lado suyo, no encima de la pregunta); la barra de progreso pasa a ser
+  **10 puntos** (verde/rosa por respuesta, con 🚩 en la meta para aprobar); con 3 y 5 aciertos
+  seguidos la tarjeta se enciende (combo). Al fallar, la correcta **destaca y late**, y el botón de
+  ayuda se oculta.
+- **El Jefe Final:** al golpearlo el villano tiembla y sale un **«−1»** con un fantasma de su imagen;
+  al perder un corazón, el corazón **se rompe y cae**; cada fase nueva entra con una **banda** que
+  cruza la pantalla.
+- **El mapa:** se dibuja por fin el **camino** entre etapas (dorado lo jugado, punteado lo que falta;
+  el CSS `.route` existía desde la primera versión y nunca se había usado), con el **avatar del niño
+  en la etapa que le toca** («estás aquí»), y el nodo del jefe se distingue. Va al final del mapa
+  para no romper el zigzag, y un `ResizeObserver` lo redibuja cuando se insertan los nodos 📘.
+- **El menú:** cada asignatura con su color y un **anillo de progreso**; «Mis errores» con insignia
+  de cuántas hay hoy; entrada en cascada de las tarjetas.
+- **El resultado:** rayos detrás de Vulpi, estrellas que caen una a una, **XP y monedas que suben
+  contando**, y confeti con 3★. **Ranking** con 🥇🥈🥉. **Tienda** con rareza por precio (Rara, Épica,
+  Legendaria) y «Te faltan N 🪙». Subir de nivel suma rayos.
+- **Dos celebraciones nuevas:** al terminar una mini-clase o introducción, una banda dorada
+  **«📘 ¡Clase completa!»**; y en el Reto Sin Fin, **«⬆️ ¡Sube la dificultad!»** cada 5 aciertos
+  (no dice «escalón N» porque en 3° el contador de arriba ya se llama Escalón y cuenta aciertos).
+- ⚠️ **Con «reducir movimiento» nada flotante se crea** (`fxReducido()`), y de paso `particulas()`
+  tampoco: el CSS global apagaba la animación pero dejaba los emojis **quietos** sobre la pantalla.
+- **Verificado jugando con `cdp.mjs` y mirando las capturas:** menú, mapa, acierto, combo, error,
+  jefe, resultado, ranking, tienda, sello de clase y Sin Fin; con «reducir movimiento», cero
+  flotantes; los **ocho cursos** arrancan y JUGADOR navega; cero errores de consola y de red.
+  Tres defectos se vieron **solo mirando** y se corrigieron: el botón de ayuda seguía visible al
+  fallar (`display` le ganaba a `hidden`), la burbuja quedaba encima de la pregunta tras el
+  desplazamiento automático, y el «estás aquí» caía en el nodo 📘 en vez de la primera etapa.
+
+- **La corona y las medallas, el mismo día** (las dos ideas que habían quedado). Al **ganar un
+  duelo** —local o en línea— cae una 👑 sobre el ícono del ganador, con rayos, confeti y la etiqueta
+  «👑 ¡Campeón del duelo!». Lo decide el **título** que el fork ya escribe antes del `go()`
+  («¡Ganaste!» / «¡Gana Ana!»), así que **ningún fork cambió**: `fxCorona()` se llama desde `fxGo()`.
+  Perder, empatar o «¡Desafío enviado!» no la muestran. Y las **insignias del perfil son medallas**:
+  disco dorado con cinta rosa y cyan, brillo que pasa en las ganadas, grises las bloqueadas y un halo
+  en la que se luce. Con «reducir movimiento» la corona queda puesta, sin caer y sin confeti.
+  Verificado jugando (los cinco resultados del duelo, el perfil y los ocho cursos), mirando las
+  capturas: la primera versión dejaba la corona corrida a la izquierda, junto a su etiqueta.
+- **Lo que sigue:** probar la **versión 10** de la app (y con ella estos efectos) en el teléfono; si
+  la voz de 4° quedó bien, sacar los MP3 de 3° y 4° del repo. De arrastre: DUNS para la cuenta de
+  organización en Play, la prueba cerrada e INAPI.

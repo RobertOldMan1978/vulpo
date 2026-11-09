@@ -1330,6 +1330,8 @@ function finPracticaLeccion(){
 function marcarLeccionCompleta(id){
  S.mateLecciones[id]=true; guardar(); refreshHud();
  SND.win(); toast('primera');
+ // Sello de fin de clase (Sesion 150). La banda vive en motor.js y es fixed: sigue visible sobre el mapa.
+ try{ if(typeof fxBanda==='function') fxBanda('📘 ¡Clase completa!','oro'); }catch(e){}
  volverAlCapituloMate();
 }
 
