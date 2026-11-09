@@ -811,7 +811,11 @@ function volverArriba(){
    'border-radius:12px!important;border:1px solid #ffffff1f!important;background:#120d2ecc!important;'+
    'backdrop-filter:blur(6px);box-shadow:none!important;font-size:0!important;line-height:40px!important;'+
    'text-align:center;overflow:hidden;color:var(--txt)!important}'+
-   '.btn-volver::before{content:"←";content:"←" / "";font-size:22px;font-family:Nunito,sans-serif;font-weight:900}'+
+   // Flecha dibujada (SVG) con el degradado dorado de VULPO, para que combine con los botones de
+   // música y sonido, que son emoji a color. Una flecha de texto se veía pobre a su lado.
+   '.btn-volver::before{content:"";display:block;width:26px;height:26px;margin:7px auto 0;'+
+   'background:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Cdefs%3E%3ClinearGradient id=%27g%27 x1=%270%27 y1=%270%27 x2=%271%27 y2=%271%27%3E%3Cstop offset=%270%27 stop-color=%27%23ffd75a%27/%3E%3Cstop offset=%271%27 stop-color=%27%23ff7a3d%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d=%27M19 12H6.5M12 5.5 5.5 12l6.5 6.5%27 fill=%27none%27 stroke=%27url(%23g)%27 stroke-width=%273.6%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E") center/contain no-repeat;'+
+   'filter:drop-shadow(0 1px 2px rgba(0,0,0,.55)) drop-shadow(0 0 6px rgba(255,170,60,.35))}'+
    '.btn-volver:active{transform:scale(.92)!important}'+
    // con la etiqueta de modo prueba / QA arriba a la izquierda, la flecha baja para no quedar tapada
    'body:has(.qa-badge) .btn-volver{top:calc(46px + env(safe-area-inset-top))!important}'+

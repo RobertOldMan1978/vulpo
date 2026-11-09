@@ -86,18 +86,23 @@
       }catch(e){ return; }
       if(!idx || !Array.isArray(idx.trozos)) return;
       for(var k = 0; k < idx.trozos.length; k++){
-        var tr = idx.trozos[k], marca = dir + '/.p-' + tr.f, tmp = dir + '/.trozo.part';
+        // marca .k- y no .p-: las .p- las pudo escribir la versión 9 dando por buenos clips truncados
+        var tr = idx.trozos[k], marca = dir + '/.k-' + tr.f, tmp = dir + '/.trozo.part';
         if(await existe(FS, DIR, marca)){
           tr.clips.forEach(function(c){ var q = asig + '/' + c[0]; if(!escritos[q]){ escritos[q] = 1; if(necesita[q]) hechos++; } });
           continue;
         }
         // Si este trozo no trae ningún clip que el juego use, o si todos los que usa YA están en
         // el teléfono (bajados por una versión anterior, uno por uno), no se baja el trozo.
+        // ⚠️ "Están" quiere decir con el TAMAÑO EXACTO que dice el índice, no con algo adentro: la
+        // versión 6 bajaba cada clip directo a su nombre, y una descarga cortada dejaba un clip
+        // TRUNCADO con el nombre bueno, que sonaba hasta la mitad y saltaba a las opciones
+        // (Roberto lo oyó en 4°, Sesión 148). Un clip de otro tamaño se reescribe desde el trozo.
         var usados = tr.clips.filter(function(c){ return necesita[asig + '/' + c[0]]; });
         if(!usados.length) continue;
         var todos = true;
         for(var u = 0; u < usados.length && todos; u++){
-          try{ var st0 = await FS.stat({ directory: DIR, path: dir + '/' + usados[u][0] }); if(!(st0 && st0.size > 0)) todos = false; }
+          try{ var st0 = await FS.stat({ directory: DIR, path: dir + '/' + usados[u][0] }); if(!(st0 && st0.size === usados[u][2])) todos = false; }
           catch(e){ todos = false; }
         }
         if(todos){
@@ -195,7 +200,7 @@
   function firmaDe(clips){
     var l = clips.map(rel).sort(), h = 5381;
     for(var i = 0; i < l.length; i++){ var t = l[i]; for(var j = 0; j < t.length; j++){ h = ((h << 5) + h + t.charCodeAt(j)) | 0; } }
-    return 'v2:' + l.length + ':' + (h >>> 0).toString(16);
+    return 'v3:' + l.length + ':' + (h >>> 0).toString(16);
   }
 
   function rel(p){ return p.replace(/^\/?assets\/voz\//, ''); }   // 'mat3/<hash>.mp3'

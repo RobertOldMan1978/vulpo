@@ -15075,3 +15075,19 @@ con la voz robótica**.
 - ⚠️ **La versión 8 se compiló sin este arreglo** (la ejecución partió de `62f3b545`, el mismo commit que la
   7, porque el arreglo todavía no estaba subido) y se descartó en Play. **El arreglo llega con la 9.**
   GitHub arma la app desde lo que está en `main`: un cambio que no pasó por la orden 66 no está en la app.
+
+#### Cierre 2 de la Sesión 148 — los clips TRUNCADOS de la versión 6, y una flecha con más gracia
+- **Roberto oyó en 4° una pregunta que se cortaba a la mitad** («…¿Con qué» y saltaba a las opciones).
+  El clip estaba completo en el disco y en R2 (45.648 bytes, idénticos): el corte era del archivo
+  guardado en el teléfono. **La versión 6 bajaba cada clip directo a su nombre**, y una descarga
+  cortada dejaba un clip **truncado con el nombre bueno**. Y el arreglo del día anterior daba por bueno
+  cualquier archivo con algo adentro, así que los habría conservado para siempre. Dos minutos después
+  se oyó completo: lo más probable es que la descarga en curso lo reescribiera.
+- **Ahora un clip «está» solo si tiene el TAMAÑO EXACTO que dice el índice del paquete**; si no, se
+  reescribe desde su trozo. Las marcas de trozo pasan de `.p-` a `.k-` y la firma de `v2` a `v3`, para
+  no confiar en lo que haya validado una versión anterior. **Verificado simulando el teléfono:** con dos
+  clips cortados a la mitad, la app bajó **un solo trozo** y los dejó completos (30.240/30.240 y
+  28.080/28.080), sin volver a bajar lo sano.
+- **La flecha de volver** pasó de un «←» de texto a una flecha dibujada en SVG con el degradado dorado
+  de VULPO y un brillo suave, para que combine con los botones de música y sonido, que son emoji a color.
+- ⚠️ **La versión 9 tampoco lleva esto:** la que repara los clips truncados es la **10**.
