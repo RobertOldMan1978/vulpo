@@ -14906,3 +14906,62 @@ Queda un perfil anónimo de prueba que borra "🧹 Limpiar perfiles de prueba".
 
 - **De arrastre:** probar la app versión 6 en el teléfono, la cuenta de Play como organización (falta
   el DUNS), sacar los MP3 de 3° y 4° del repo, la prueba cerrada de Google Play e INAPI.
+
+### Sesión 146 (2026-11-08) — El alumno entra desde la portada, y el PC compartido
+Roberto estaba probando la app versión 6 en el teléfono (la voz de 2° bajando sola, la de 3° ya
+estaba). De ahí salieron dos preguntas: cómo entra un alumno desde la web y qué pasa en un PC que
+usan varios. **Ningún banco cambió y ningún fork se tocó**: todo vive en `assets/js/motor.js` y en
+la portada.
+
+#### El botón "🎒 Alumnos" en la portada
+Junto a "Profes", arriba a la derecha de `vulpo.cl`. Abre **`/app/?intro=0`**, el selector de curso
+que ya usaba la app (8 cursos y «▶ Seguir en X°» si ya entró antes). El `?intro=0` es porque quien
+viene de la portada ya la vio. Medido a 375 px: los dos botones caben sin desborde.
+
+#### Quién está jugando, y el PC compartido
+En un PC compartido el navegador recuerda al **último** alumno que canjeó su código, y el siguiente
+que se sienta juega con su cuenta. Roberto eligió, entre tres opciones, **mostrar quién + preguntar**:
+
+- **En el inicio de cada curso:** «**ALU-••••6465 · ¿No eres tú? Cambiar de alumno**». ⚠️ El código
+  **nunca va completo** en pantalla: es la credencial, y en un PC compartido lo vería cualquiera. Los
+  4 últimos caracteres se guardan aparte (`kimun_alufin`+SUFIJO) para mostrarlos antes de que
+  conecte Supabase.
+- **En la web, una vez por curso y navegador:** «**¿Este computador es solo tuyo?**». También se le
+  pregunta a quien ya tenía su código canjeado. «Compartido» cierra la sesión **al cerrar el
+  navegador** (marca en `sessionStorage`) o **tras 2 horas sin jugar** (`PC_HORAS`). **En la app del
+  teléfono no se pregunta**: el teléfono es del niño. La línea de «¿No eres tú?» sí aparece, para
+  hermanos.
+- **Cambiar de alumno sube el avance antes de borrar nada** (dominio, XP y la foto del progreso), así
+  que cada uno lo recupera escribiendo de nuevo su código. **Sin internet no deja cambiar**: lo que no
+  alcanzó a subir se perdería.
+- **Lo que se borra:** el save del curso y sus marcas, el caché del ranking, los avisos ya vistos, el
+  modo del curso, **lo pendiente de medir** (si quedara, se mandaría a nombre del alumno siguiente) y
+  la sesión anónima de Supabase de ese curso (`SB.auth.storageKey`). **No se toca** el audio, la intro
+  vista ni el aviso de instalar.
+- **El cierre por caducidad va al principio de `cargar()`** y **recarga la página**: el cliente de
+  Supabase ya tiene la sesión vieja en memoria, y sin recargar `conectarKimun` la habría vuelto a usar
+  y el alumno anterior reaparecía. No hay bucle: borrar quita la marca de «compartido».
+
+⚠️ **"Al cerrar el navegador" incluye abrir una pestaña nueva escribiendo la dirección**:
+`sessionStorage` es por pestaña. Recargar o seguir en la misma pestaña no pide el código.
+
+⚠️ **Titan One dibuja la «í» igual que una «i»:** el botón salía «Si, es mio». Esos dos botones van
+en Nunito. Se vio **mirando la captura**, no contando.
+
+**Verificado en el navegador** (3° y 8°, que no tiene sufijo): la línea y la pregunta; con
+«compartido» recargar mantiene la sesión, `sessionStorage` vacío la cierra y 3 horas sin jugar
+también; con «es mío» cerrar el navegador no la cierra; cambiar sin conexión avisa y no borra, con
+conexión borra lo del alumno y deja la intro vista; `?qa=1` no muestra nada. Los ocho cursos
+arrancan y navegan, cero errores de consola y de red. Las pruebas crearon perfiles anónimos que borra
+«🧹 Limpiar perfiles de prueba».
+
+#### Lo demás de la sesión
+- **El ranking semanal quedó aplicado y comprobado** (ver Sesión 145) y la **app versión 6 se publicó
+  en la prueba interna de Play**: estaba en un borrador de prueba cerrada y no en la interna, y como el
+  versionCode 6 ya existía se agregó con «Añadir de la biblioteca», no subiéndolo de nuevo.
+- Se le dieron a Roberto los códigos genéricos `ALU-A000003..006` **uno por curso**: un código guarda
+  un solo avance, y el mismo código en dos cursos hace que uno pise al otro.
+
+- **De arrastre:** terminar la prueba de la versión 6 (voz sin internet en 2° y 4°, barras del
+  sistema); después, sacar los MP3 de 3° y 4° del repo. La cuenta de Play como organización (DUNS),
+  la prueba cerrada de 12 testers/14 días e INAPI.

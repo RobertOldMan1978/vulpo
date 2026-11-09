@@ -86,7 +86,8 @@ p{font-weight:400}
 a{color:var(--cyan)}
 a:focus-visible,.btn:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:12px}
 /* Acceso al panel del profesor, fijo arriba a la derecha (sin tener que bajar al pie). */
-.prof-top{position:fixed;top:14px;right:14px;z-index:50;display:inline-flex;align-items:center;gap:7px;
+.acc-top{position:fixed;top:14px;right:14px;z-index:50;display:flex;gap:8px}
+.prof-top{display:inline-flex;align-items:center;gap:7px;
   text-decoration:none;padding:9px 15px;border-radius:999px;font-weight:700;font-size:14px;
   color:var(--txt);background:rgba(30,23,71,.82);border:1px solid #ffffff2e;
   -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:0 4px 16px rgba(0,0,0,.35);transition:.15s}
@@ -176,7 +177,10 @@ a.sv img{width:18px;height:18px;display:block;flex:none}
 
 <div class="stars" id="stars" aria-hidden="true"></div>
 
-<a class="prof-top" href="/profesor.html" aria-label="Panel del profesor"><span class="ic" aria-hidden="true">🧑‍🏫</span> Profes</a>
+<nav class="acc-top" aria-label="Accesos">
+  <a class="prof-top" href="/app/?intro=0" aria-label="Entrar a jugar con tu código de alumno"><span class="ic" aria-hidden="true">🎒</span> Alumnos</a>
+  <a class="prof-top" href="/profesor.html" aria-label="Panel del profesor"><span class="ic" aria-hidden="true">🧑‍🏫</span> Profes</a>
+</nav>
 
 <header class="envoltura" style="padding-top:48px;padding-bottom:26px;text-align:center">
   <img src="assets/web/vulpo-logo.png" alt="VULPO"

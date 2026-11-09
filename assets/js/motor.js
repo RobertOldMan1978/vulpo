@@ -809,12 +809,124 @@ function pintarInicio(){const el=$('rolNombre'),sub=$('rolSub');if(!el)return;
   (sub||el).insertAdjacentElement('afterend',rr); }
  const nr=(typeof EFIMERO!=='undefined'&&EFIMERO)?0:rachaViva();
  rr.textContent=nr>=2?('🔥 '+nr+' días seguidos jugando'):''; rr.hidden=nr<2;
+ pintarQuien(); setTimeout(preguntarPC,0);
  const av=$('avisoPuerta');
  if(av){
   av.hidden=!AVISO_PUERTA;
   if(AVISO_PUERTA) $('avisoPuertaTxt').textContent=
     'Desde el '+fechaLarga(FECHA_PUERTA)+' necesitarás un código de tu profesor para seguir jugando.';
  }}
+/* ===== Quién está jugando, y el PC compartido (Sesión 146, 08/11/2026) =====
+   En un PC compartido (el del colegio, o el de la casa con hermanos) el navegador recuerda
+   al ÚLTIMO alumno que canjeó su código, y el siguiente que se sienta juega con su cuenta.
+   Tres piezas:
+   1. El inicio dice quién es: «ALU-••••6465 · ¿No eres tú? Cambiar de alumno». ⚠️ El código
+      NUNCA va completo en pantalla: es la credencial, y en un PC compartido lo vería cualquiera.
+   2. En la WEB, la primera vez que hay un alumno se pregunta si el computador es solo suyo.
+      «Compartido» cierra la sesión al cerrar el navegador o tras PC_HORAS sin jugar. En la
+      app del teléfono no se pregunta: el teléfono es del niño.
+   3. Cambiar de alumno SUBE el avance antes de borrar nada, así que nadie pierde lo suyo:
+      lo recupera escribiendo de nuevo su código (Bloque D). Sin conexión NO se cambia, porque
+      lo que no alcanzó a subir se perdería.
+   Las claves llevan SUFIJO, así que cada curso decide por su cuenta. Todo vive en funciones:
+   SUFIJO y SAVE_KEY los declara el fork DESPUÉS de cargar este archivo. */
+const PC_HORAS=2;
+function _clv(n){ return 'kimun_'+n+SUFIJO; }
+function _ls(k,v){ try{ if(v===undefined) return localStorage.getItem(k);
+ if(v===null) localStorage.removeItem(k); else localStorage.setItem(k,v); }catch(e){ return null; } }
+function esNativo(){ try{ return !!(window.Capacitor&&Capacitor.isNativePlatform&&Capacitor.isNativePlatform()); }catch(e){ return false; } }
+function _efimero(){ return (typeof EFIMERO!=='undefined'&&EFIMERO)||(typeof SIN_DISCO!=='undefined'&&SIN_DISCO); }
+function pcCompartido(){ return _ls(_clv('pc'))==='compartido'; }
+/* ¿Hay que cerrar la sesión del alumno anterior? Solo en un PC marcado como compartido:
+   si se cerró el navegador (sessionStorage vacío) o si pasaron PC_HORAS sin jugar. */
+function sesionCaducada(){
+ if(!pcCompartido()) return false;
+ let viva=false; try{ viva=sessionStorage.getItem(_clv('vivo'))==='1'; }catch(e){}
+ if(!viva) return true;
+ const u=+(_ls(_clv('ult'))||0);
+ return u>0 && Date.now()-u>PC_HORAS*3600e3;
+}
+function marcarVivo(){ try{ sessionStorage.setItem(_clv('vivo'),'1'); }catch(e){} _ls(_clv('ult'),String(Date.now())); }
+/* Borra de ESTE navegador todo lo del alumno en ESTE curso, incluida su sesión anónima de
+   Supabase. NO toca lo que no es del alumno: audio, intro vista, aviso de instalar. */
+function borrarSesionLocal(){
+ const ks=[SAVE_KEY,SAVE_KEY+'_bajado',SAVE_KEY+'_previo','kimun_rank'+SUFIJO,'kimun_rank'+SUFIJO+'_sem',
+  'kimun_desafio_pop'+SUFIJO,'kimun_duelo_pop'+SUFIJO,_clv('pc'),_clv('ult'),_clv('alufin')];
+ // ⚠️ Lo pendiente de medir también se va: si quedara, se enviaría a nombre del alumno siguiente.
+ try{ if(typeof DOM_PEND!=='undefined') ks.push(DOM_PEND); }catch(e){}
+ try{ if(typeof EXPER_KEY!=='undefined') ks.push(EXPER_KEY); }catch(e){}
+ ks.forEach(k=>_ls(k,null));
+ try{ sessionStorage.removeItem(_clv('vivo')); }catch(e){}
+ try{ const sk=(typeof SB!=='undefined'&&SB&&SB.auth)?SB.auth.storageKey:null;
+  if(sk) Object.keys(localStorage).filter(k=>k===sk||k.indexOf(sk+'-')===0).forEach(k=>localStorage.removeItem(k));
+ }catch(e){}
+}
+async function cambiarAlumno(){
+ try{ SND.tap(); }catch(e){}
+ if(_bajando){ alert('Estamos trayendo tu avance. Espera un momento y vuelve a intentarlo.'); return; }
+ if(!confirm('¿Cambiar de alumno?\n\nTu avance queda guardado. Para volver a jugar como '+(S.alumno||'tú')+
+  ', escribe de nuevo tu código ALU-.')) return;
+ try{
+  if(!SB||!MI_PERFIL) throw new Error('sin_conexion');
+  try{ await enviarDominio(); }catch(e){}
+  await SB.rpc('kimun_xp',{p_xp:S.xp});
+  const {error}=await SB.rpc('kimun_progreso_subir',{p_datos:payloadSave()});
+  if(error) throw error;
+ }catch(e){
+  alert('No hay conexión, así que tu avance no se puede guardar en internet ahora. '+
+   'Intenta cambiar de alumno cuando vuelva la conexión.');
+  return;
+ }
+ try{ await SB.auth.signOut({scope:'local'}); }catch(e){}
+ borrarSesionLocal();
+ location.replace(location.pathname);
+}
+function pintarQuien(){
+ const el=$('rolNombre'); if(!el) return;
+ let q=$('rolQuien');
+ if(!q){ q=document.createElement('div'); q.id='rolQuien';
+  q.style.cssText='text-align:center;font-size:13px;font-weight:700;color:var(--dim);margin:2px 0 6px';
+  el.insertAdjacentElement('afterend',q); }
+ if(!S.alumno||_efimero()){ q.hidden=true; return; }
+ const cod=(typeof MI_PERFIL!=='undefined'&&MI_PERFIL)?MI_PERFIL.codigo_acceso:null;
+ if(cod) _ls(_clv('alufin'),String(cod).slice(-4));
+ const fin=_ls(_clv('alufin'));
+ q.innerHTML=(fin?'<span style="font-family:ui-monospace,Menlo,Consolas,monospace">ALU-••••'+escHtml(fin)+'</span> · ':'')+
+  '<a href="#" id="lnkCambiar" style="color:var(--cyan)">¿No eres tú? Cambiar de alumno</a>';
+ q.hidden=false;
+ $('lnkCambiar').onclick=(e)=>{e.preventDefault();cambiarAlumno();};
+}
+/* La pregunta, una sola vez por curso y navegador. Se hace en el INICIO, que es donde
+   desemboca el canje (y así también se le pregunta a quien ya tenía su código canjeado). */
+let _pcPreguntado=false;
+function preguntarPC(){
+ if(_pcPreguntado||esNativo()||!S.alumno||_efimero()||_ls(_clv('pc'))) return;
+ const rol=$('scr-rol'); if(!rol||!rol.classList.contains('on')) return;
+ _pcPreguntado=true;
+ const ov=document.createElement('div');
+ ov.id='pcPregunta';
+ ov.style.cssText='position:fixed;inset:0;z-index:9000;background:rgba(8,5,25,.78);display:flex;align-items:center;justify-content:center;padding:16px';
+ ov.innerHTML='<div role="dialog" aria-modal="true" aria-labelledby="pcTit" style="max-width:360px;width:100%;background:#1e1747;border:2px solid var(--violet);border-radius:20px;padding:20px 18px;text-align:center">'+
+  '<div style="font-size:40px;line-height:1">💻</div>'+
+  '<h3 id="pcTit" style="margin:8px 0 6px">¿Este computador es solo tuyo?</h3>'+
+  '<p style="color:var(--dim);font-weight:700;font-size:14px;margin:0 0 14px">Si lo usan otras personas (en el colegio, o con tus hermanos), cerramos tu sesión al cerrar el navegador o tras '+PC_HORAS+' horas sin jugar. Así nadie juega con tu código. Tu avance siempre queda guardado.</p>'+
+  // Nunito y no Titan One: Titan One dibuja la «í» igual que una «i» y se leía «Si, es mio».
+  '<button class="btn" id="pcMio" style="font-family:Nunito,sans-serif;font-weight:900">Sí, es mío</button>'+
+  '<button class="btn sec" id="pcComp" style="font-family:Nunito,sans-serif;font-weight:900">No, es compartido</button></div>';
+ document.body.appendChild(ov);
+ const fin=(v)=>{ _ls(_clv('pc'),v); if(v==='compartido') marcarVivo(); try{SND.tap();}catch(e){} ov.remove(); };
+ ov.querySelector('#pcMio').onclick=()=>fin('mio');
+ ov.querySelector('#pcComp').onclick=()=>fin('compartido');
+}
+/* En un PC compartido: cada toque cuenta como actividad (como mucho un registro por minuto),
+   y una vez por minuto se revisa si pasaron PC_HORAS sin jugar con la página abierta. */
+let _pcUltMarca=0;
+['pointerdown','keydown'].forEach(t=>document.addEventListener(t,()=>{
+ try{ if(typeof SAVE_KEY==='undefined'||!pcCompartido()) return;
+  if(Date.now()-_pcUltMarca>60000){ _pcUltMarca=Date.now(); marcarVivo(); } }catch(e){}
+},{passive:true}));
+setInterval(()=>{ try{ if(typeof SAVE_KEY==='undefined'||!S.alumno||_efimero()) return;
+ if(sesionCaducada()){ borrarSesionLocal(); location.replace(location.pathname); } }catch(e){} },60000);
 function toast(l){if(S.logros.has(l))return;S.logros.add(l);SND.unlock();
  $('toastIc').textContent=LOGROS[l].ic;$('toastTx').textContent=LOGROS[l].tx;
  $('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2600);}
@@ -1670,7 +1782,14 @@ function guardar(){
  try{
  if(EXP_ACT) S.rutas[EXP_ACT.id]={progreso:S.progreso,progresoDificil:S.progresoDificil,dificilDesbloqueado:S.dificilDesbloqueado};
  localStorage.setItem(SAVE_KEY,JSON.stringify(payloadSave()));sincronizarXP();subirProgreso();}catch(e){}}
-function cargar(){try{const d=JSON.parse(localStorage.getItem(SAVE_KEY)||'null');if(!d)return false;
+function cargar(){
+ /* PC compartido (Sesión 146): si se cerró el navegador o pasaron PC_HORAS sin jugar, la
+    sesión del alumno anterior se cierra ANTES de leer su partida. Se recarga para que el
+    cliente de Supabase arranque sin la sesión vieja que ya tiene en memoria. Sin bucle:
+    borrarSesionLocal() quita la marca de «compartido», así que la recarga no vuelve a entrar. */
+ try{ if(sesionCaducada()){ borrarSesionLocal(); location.replace(location.pathname); return false; }
+  if(pcCompartido()) marcarVivo(); }catch(e){}
+ try{const d=JSON.parse(localStorage.getItem(SAVE_KEY)||'null');if(!d)return false;
  return aplicarSave(d);}catch(e){return false;}}
 /* Aplica un save a S, venga del DISCO o del SERVIDOR. Incluye a proposito las
    migraciones de partidas antiguas: una foto bajada tambien puede ser vieja. */
