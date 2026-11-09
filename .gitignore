@@ -62,3 +62,6 @@ play-store/
 assets/voz/**/*.mp3
 # La clave de R2 vive en el escritorio, pero por si alguien la copia al repo.
 r2-vulpo-voz.txt
+
+# Paquetes de voz para la app (Sesion 147): se arman con voz-r2.py paquetes y se suben a R2
+dev/voz-paquetes/

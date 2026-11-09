@@ -13,6 +13,17 @@ Uso:
     python scripts/voz-r2.py verificar    # cruza manifiestos, disco y R2 (sale 1 si falta algo)
     python scripts/voz-r2.py verificar --solo-r2   # solo cruza manifiestos contra R2
     python scripts/voz-r2.py reemplazar mat4/<hash>.mp3 [...]   # sobrescribe clips puntuales
+    python scripts/voz-r2.py paquetes [asig ...]   # arma y sube los paquetes para la app
+
+`paquetes` (Sesion 147) existe por la app Android: bajar ~12.700 clips sueltos de un curso
+toma unos 20 minutos y se corta si la app pasa a segundo plano. Cada asignatura se empaqueta
+en trozos de ~8 MB (los MP3 uno detras de otro, sin comprimir: ya vienen comprimidos) con un
+indice que dice donde empieza y cuanto mide cada clip. La app baja unos 40 trozos en vez de
+miles de archivos. Viven en R2 bajo paquetes/<asig>/: el indice.json (sin cache) y los
+trozos <sha>.bin, cuyo nombre es el hash de su contenido (immutable). HAY QUE VOLVER A
+CORRERLO cada vez que se generen clips nuevos de esa asignatura; si no, la app baja los
+nuevos uno por uno, que igual funciona pero mas lento. Los trozos viejos quedan en R2 sin
+usarse: este script nunca borra.
 
 `reemplazar` existe porque `subir` compara por tamano, y hay UN caso en que eso falla: un
 clip regenerado porque cambio la PRONUNCIACION (normalizar-voz-nivel.py) y no el texto en
@@ -167,6 +178,73 @@ def reemplazar(rutas):
         print("reemplazado en R2:", r)
 
 
+PAQ_LOCAL = RAIZ / "dev" / "voz-paquetes"     # en .gitignore: se arma, se sube y listo
+PAQ_TROZO = 8 * 1024 * 1024
+
+
+def paquetes(asigs):
+    import hashlib
+    todas = sorted(m.parent.name for m in VOZ.glob("*/manifiesto.json"))
+    asigs = asigs or todas
+    for a in asigs:
+        if a not in todas:
+            sys.exit("No existe assets/voz/%s/manifiesto.json" % a)
+    if PAQ_LOCAL.exists():
+        shutil.rmtree(PAQ_LOCAL)
+    total = 0
+    for a in asigs:
+        man = json.load(io.open(VOZ / a / "manifiesto.json", encoding="utf-8"))
+        clips = sorted(set(man.values()))
+        faltan = [c for c in clips if not (VOZ / a / c).exists() or (VOZ / a / c).stat().st_size == 0]
+        if faltan:
+            sys.exit("%s: faltan %d clips en el disco (corre `voz-r2.py bajar`): %s"
+                     % (a, len(faltan), faltan[:3]))
+        dest = PAQ_LOCAL / a
+        dest.mkdir(parents=True)
+        trozos, buf, lista = [], bytearray(), []
+
+        def cerrar():
+            if not lista:
+                return
+            sha = hashlib.sha256(bytes(buf)).hexdigest()[:16]
+            (dest / (sha + ".bin")).write_bytes(bytes(buf))
+            trozos.append({"f": sha + ".bin", "n": len(buf), "clips": list(lista)})
+
+        for c in clips:
+            b = (VOZ / a / c).read_bytes()
+            if buf and len(buf) + len(b) > PAQ_TROZO:
+                cerrar()
+                buf, lista = bytearray(), []
+            lista.append([c, len(buf), len(b)])
+            buf += b
+        cerrar()
+        # comprobacion: cada clip se recupera byte a byte desde su trozo
+        for t in trozos:
+            datos = (dest / t["f"]).read_bytes()
+            assert len(datos) == t["n"]
+            for nom, off, ln in t["clips"]:
+                assert datos[off:off + ln] == (VOZ / a / nom).read_bytes(), (a, nom)
+        idx = {"v": 1, "asig": a, "clips": len(clips), "trozos": trozos}
+        io.open(dest / "indice.json", "w", encoding="utf-8", newline="\n").write(
+            json.dumps(idx, ensure_ascii=False, separators=(",", ":")))
+        peso = sum(t["n"] for t in trozos)
+        total += peso
+        print("%-6s %5d clips  %3d trozos  %6.1f MB" % (a, len(clips), len(trozos), peso / 1e6))
+    print("total %.1f MB. Subiendo a R2 (paquetes/)..." % (total / 1e6), flush=True)
+    rclone("copy", str(PAQ_LOCAL), REMOTO + "/paquetes",
+           "--include", "*/*.bin",
+           "--header-upload", CACHE,
+           "--header-upload", "Content-Type: application/octet-stream",
+           "--size-only", "--transfers", "8", "--stats", "30s", "--stats-one-line")
+    # el indice va DESPUES de los trozos (nunca apunta a un trozo que aun no existe) y sin cache
+    rclone("copy", str(PAQ_LOCAL), REMOTO + "/paquetes",
+           "--include", "*/indice.json",
+           "--header-upload", "Cache-Control: no-cache",
+           "--header-upload", "Content-Type: application/json",
+           "--transfers", "8")
+    print("Paquetes subidos.")
+
+
 def verificar(solo_r2=False):
     esp = esperados()
     remoto = en_r2()
@@ -210,6 +288,8 @@ def main():
         if len(pedidos) < 2:
             sys.exit("Falta la ruta: python scripts/voz-r2.py reemplazar mat4/<hash>.mp3")
         reemplazar(pedidos[1:])
+    elif cmd == "paquetes":
+        paquetes(pedidos[1:])
     elif cmd == "verificar":
         verificar(solo_r2="--solo-r2" in sys.argv)
     else:

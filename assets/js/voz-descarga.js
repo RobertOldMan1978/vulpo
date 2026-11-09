@@ -1,12 +1,13 @@
 /* assets/js/voz-descarga.js — SOLO en la app Android (Capacitor). En la web no hace NADA.
 
-   Descarga la voz Catalina del curso (los clips, uno a uno, desde voz.vulpo.cl —Cloudflare
-   R2 desde la Sesion 138— con la
-   descarga NATIVA de Capacitor: sin CORS, sin descomprimir, sin cargar todo en memoria)
-   la PRIMERA vez, la guarda en el telefono y fija window.VOZ_LOCAL_BASE para que voz.js
-   la sirva local (offline). Mientras baja, el juego usa el TTS del navegador (no queda
-   mudo). Si algo falla, se queda con el TTS. La lista de clips sale de VOZ_MAP (los
-   manifiestos que ya van en el bundle). */
+   Descarga la voz Catalina del curso desde voz.vulpo.cl (Cloudflare R2, Sesion 138) con la
+   descarga NATIVA de Capacitor —sin CORS y sin cargar todo en memoria— la PRIMERA vez, la
+   guarda en el telefono y fija window.VOZ_LOCAL_BASE para que voz.js la sirva local
+   (offline). Desde la Sesion 147 baja primero los PAQUETES de cada asignatura (trozos de
+   ~8 MB, armados con `voz-r2.py paquetes`) y despues, uno por uno, lo que el paquete no
+   traiga; mantiene la pantalla encendida mientras baja y retoma donde quedo si se corta.
+   Mientras baja, voz.js pide a R2 lo que falte en el telefono. La lista de clips sale de
+   VOZ_MAP (los manifiestos que ya van en el bundle). */
 (function(){
   // Los MP3 viven en Cloudflare R2 (Sesion 138), con la misma ruta relativa que en
   // assets/voz/: <asig>/<hash>.mp3. Las apps instaladas antes de este cambio pedian a
@@ -54,7 +55,51 @@
        veces más; y (4) la marca .ok solo se escribe con CERO faltantes: si queda alguno, la
        próxima apertura con internet baja solo esos. Mientras tanto voz.js los pide a R2. */
     var n = clips.length, hechos = 0;
-    ui('Preparando la voz… 0%');
+    var AVISO = ' · No cierres VULPO mientras baja la voz';
+    ui('Preparando la voz… 0%' + AVISO);
+    pantalla(C, true);
+
+    /* PAQUETES (Sesión 147): cada asignatura viene en trozos de ~8 MB (voz-r2.py paquetes) con
+       un índice que dice dónde está cada clip. Unos 40 trozos en vez de 12.700 archivos: baja
+       en minutos y no en 20, y una descarga ya empezada sigue aunque la app pase un rato a
+       segundo plano. Cada trozo terminado deja su marca .p-<sha>, así que un corte retoma en el
+       trozo siguiente. Lo que el paquete no traiga (clips más nuevos que el último paquete
+       armado) lo baja después la pasada clip por clip. Si no hay paquete, se salta. */
+    var escritos = {}, necesita = {};
+    clips.forEach(function(p){ necesita[rel(p)] = 1; });   // el progreso cuenta solo los clips que este juego usa
+    async function porPaquete(asig){
+      var dir = base + '/' + asig, ind = dir + '/.indice.json', idx;
+      try{
+        await FS.downloadFile({ url: ORIGEN + 'paquetes/' + asig + '/indice.json?t=' + Date.now(), path: ind, directory: DIR });
+        idx = JSON.parse((await FS.readFile({ directory: DIR, path: ind, encoding: 'utf8' })).data);
+      }catch(e){ return; }
+      if(!idx || !Array.isArray(idx.trozos)) return;
+      for(var k = 0; k < idx.trozos.length; k++){
+        var tr = idx.trozos[k], marca = dir + '/.p-' + tr.f, tmp = dir + '/.trozo.part';
+        if(await existe(FS, DIR, marca)){
+          tr.clips.forEach(function(c){ var q = asig + '/' + c[0]; if(!escritos[q]){ escritos[q] = 1; if(necesita[q]) hechos++; } });
+          continue;
+        }
+        try{
+          await FS.downloadFile({ url: ORIGEN + 'paquetes/' + asig + '/' + tr.f, path: tmp, directory: DIR });
+          // sin encoding, readFile devuelve el archivo en base64; atob lo deja en bytes (1 char = 1 byte)
+          var bin = atob((await FS.readFile({ directory: DIR, path: tmp })).data);
+          if(bin.length !== tr.n) throw new Error('trozo incompleto');
+          for(var j = 0; j < tr.clips.length; j++){
+            var c = tr.clips[j];
+            await FS.writeFile({ directory: DIR, path: dir + '/' + c[0], data: btoa(bin.substr(c[1], c[2])) });
+            var q2 = asig + '/' + c[0]; if(!escritos[q2]){ escritos[q2] = 1; if(necesita[q2]) hechos++; }
+          }
+          bin = null;
+          await FS.writeFile({ directory: DIR, path: marca, data: btoa('1') });
+        }catch(e){ /* este trozo queda para la pasada clip por clip, o la próxima apertura */ }
+        try{ await FS.deleteFile({ directory: DIR, path: tmp }); }catch(e){}
+        ui('Preparando la voz… ' + Math.min(99, Math.round(hechos / n * 100)) + '%' + AVISO);
+      }
+    }
+    for(var a2 in asigs){ await porPaquete(a2); }
+    var sueltos = clips.filter(function(p){ return !escritos[rel(p)]; });
+
     async function bajarUno(p){
       var dest = base + '/' + rel(p);
       try{ var st = await FS.stat({ directory: DIR, path: dest }); if(st && st.size > 0) return true; }catch(e){}
@@ -73,14 +118,14 @@
         while(i < lista.length){
           var p = lista[i++];
           if(!(await bajarUno(p))) malos.push(p);
-          if(contar){ hechos++; if(hechos % 40 === 0 || hechos === n) ui('Preparando la voz… ' + Math.round(hechos / n * 100) + '%'); }
+          if(contar){ hechos++; if(hechos % 40 === 0 || hechos === n) ui('Preparando la voz… ' + Math.round(hechos / n * 100) + '%' + AVISO); }
         }
       }
       var ws = []; for(var w = 0; w < CONC; w++) ws.push(worker());
       await Promise.all(ws);
       return malos;
     }
-    var faltan = await pasada(clips, true);
+    var faltan = await pasada(sueltos, true);
     for(var r = 0; r < 2 && faltan.length; r++){
       ui('Terminando la voz… faltan ' + faltan.length);
       await new Promise(function(ok){ setTimeout(ok, 3000); });
@@ -90,6 +135,7 @@
     if(!faltan.length){
       try{ await FS.writeFile({ directory: DIR, path: base + '/.ok', data: btoa('1'), recursive: true }); }catch(e){}
     }
+    pantalla(C, false);
     await fijar(C, FS, DIR, base);
     if(faltan.length){
       ui('Voz casi lista: faltan ' + faltan.length + '. Se completan la próxima vez que abras VULPO con internet.');
@@ -97,6 +143,27 @@
     }
     else { ui('Voz lista'); setTimeout(function(){ ui(null); }, 1500); }
   }
+
+  /* Mantener la pantalla encendida mientras baja la voz (Sesión 147): con la pantalla apagada
+     Android pausa la app y la descarga se detiene. Usa el plugin KeepAwake de la app; si no
+     está (una app compilada antes), prueba la Wake Lock API del navegador. Si nada sirve, la
+     descarga igual se retoma la próxima vez. */
+  var _wl = null, _encendida = false;
+  async function pantalla(C, on){
+    _encendida = on;
+    try{
+      var K = C.Plugins && C.Plugins.KeepAwake;
+      if(K && K.keepAwake){ await (on ? K.keepAwake() : K.allowSleep()); return; }
+      if(on){ if(navigator.wakeLock && !_wl){ _wl = await navigator.wakeLock.request('screen');
+               _wl.addEventListener('release', function(){ _wl = null; }); } }
+      else if(_wl){ await _wl.release(); _wl = null; }
+    }catch(e){}
+  }
+  // la Wake Lock del navegador se suelta sola al salir de la app: se vuelve a pedir al volver
+  document.addEventListener('visibilitychange', function(){
+    var C = nativo();
+    if(C && _encendida && document.visibilityState === 'visible') pantalla(C, true);
+  });
 
   function rel(p){ return p.replace(/^\/?assets\/voz\//, ''); }   // 'mat3/<hash>.mp3'
 

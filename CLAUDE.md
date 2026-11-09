@@ -15014,3 +15014,46 @@ aunque hubiera internet, porque `voz.js` los buscaba solo en el teléfono.
 - **Lo que sigue:** compilar la **versión 7** de la app (lleva todo lo de las Sesiones 144-147) y
   probar en el teléfono que 4° retoma la descarga. Si pasa, sacar los MP3 de 3° y 4° del repo. De
   arrastre: la cuenta de Play como organización (DUNS), la prueba cerrada de 12 testers/14 días e INAPI.
+
+### Sesión 148 (2026-11-08) — La voz baja en paquetes, con la pantalla encendida, y el título de cada curso
+Roberto preguntó si la voz no podía seguir bajando en segundo plano. **Con lo que tiene la app, no:**
+la descarga la lleva el JavaScript del WebView, y Android lo pausa poco después de que la app pasa a
+segundo plano o se apaga la pantalla. Una descarga real en segundo plano pide una pieza nativa (un
+servicio en primer plano con su notificación y su permiso declarado en Play). Roberto eligió, entre
+tres opciones, **pantalla encendida + pocos archivos grandes**. **Ningún banco cambió.**
+
+#### Los paquetes de voz (`voz-r2.py paquetes`)
+- **Cada asignatura se empaqueta en trozos de ~8 MB:** los MP3 uno tras otro, sin comprimir (ya vienen
+  comprimidos), con un `indice.json` que dice en qué trozo, desde qué byte y cuánto mide cada clip.
+  Viven en R2 bajo `paquetes/<asig>/`: el índice **sin caché** y cada trozo con el **hash de su
+  contenido** como nombre (immutable). El índice se sube **después** de los trozos, así que nunca
+  apunta a uno que aún no existe. El script comprueba antes de subir que cada clip se recupera byte a
+  byte desde su trozo, y arma en `dev/voz-paquetes/` (en `.gitignore`).
+- **Las 21 asignaturas con voz: 178 trozos, 1,4 GB en R2.** Verificado desde internet: los 21 índices
+  son idénticos a los locales y una muestra de trozos devuelve los clips byte a byte. 4° pasa de 12.700
+  descargas a ~42.
+- ⚠️ **Hay que volver a correrlo cada vez que se generen clips nuevos de una asignatura.** Si se olvida
+  no se rompe nada: la app baja esos clips uno por uno. Los trozos viejos quedan en R2 sin usarse,
+  porque el script nunca borra.
+
+#### La app (`voz-descarga.js`)
+- Baja primero los paquetes de cada asignatura (los lee con `readFile` en base64, los decodifica y
+  escribe cada clip) y después, clip por clip, lo que el paquete no traiga. Cada trozo terminado deja
+  su marca `.p-<sha>`, así que un corte retoma en el trozo siguiente. Sin paquete, se lo salta.
+  El progreso cuenta solo los clips que ese juego usa: un paquete puede traer de más.
+- **La pantalla se mantiene encendida mientras baja**, con el aviso «No cierres VULPO mientras baja la
+  voz»: plugin **`@capacitor-community/keep-awake` 5.0.1** (versión exacta, compatible con Capacitor
+  6) y, si no está, la Wake Lock API del navegador.
+- **Verificado en el navegador simulando el sistema de archivos del teléfono:** 395 clips (Vocabulario
+  de 4° + 30 de Matemática) bajaron con **34 descargas** en vez de 395; con un trozo cortado sus clips
+  se completaron uno por uno; al abrir de nuevo no bajó nada. La pantalla encendida y la velocidad real
+  solo se prueban en el teléfono, con la versión 7.
+
+#### El título de cada curso
+La pantalla principal dice ahora **VULPO 1°** … **VULPO 8°** (el `<h1>` del inicio, como literal de
+HTML en cada fork). Medido en 375×667: cabe en una línea y el botón JUGADOR no se movió. El título
+se mantiene aunque el alumno haya entrado con su código.
+
+- **Lo que sigue:** compilar la **versión 7** (lleva las Sesiones 144-148) y probar en el teléfono que
+  4° baja en paquetes, con la pantalla encendida, y que retoma si se corta. Si pasa, sacar los MP3 de 3°
+  y 4° del repo. De arrastre: la cuenta de Play como organización (DUNS), la prueba cerrada e INAPI.
