@@ -7,6 +7,15 @@ desafiante y que genere comunidad entre compañeros.
 > **Estado: v0.99** — completo y jugable de punta a punta (4 asignaturas con campaña
 > y jefe final), en revisión antes de la v1.
 
+> **Hoy (noviembre de 2026):** **ocho cursos, de 1° a 8° básico**, publicados en `vulpo.cl`, con
+> más de 21 mil preguntas y 301 lecciones aprobadas. De **1° a 4°** una voz chilena grabada **lee
+> sola** cada pregunta y, al equivocarse, la respuesta correcta y su explicación. Cada pregunta
+> fallada vuelve en **«Mis errores»** (repaso a 1, 3 y 7 días), el ranking del curso tiene pestaña
+> **semanal**, hay **racha de días** y **marcos** para el avatar. El alumno entra desde la portada
+> con **«🎒 Alumnos»**, y en un computador compartido la sesión se cierra sola. La **app de
+> Android** está en prueba interna de Google Play y baja la voz al teléfono en paquetes. Lo que
+> sigue describe la historia del proyecto; el detalle al día está en `CLAUDE.md` y `pendiente.md`.
+
 ## Piloto actual
 
 **Campaña Historia — 8° básico** (los 22 OA del año, en orden).

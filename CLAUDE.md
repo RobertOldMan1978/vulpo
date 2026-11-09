@@ -15091,3 +15091,37 @@ con la voz robótica**.
 - **La flecha de volver** pasó de un «←» de texto a una flecha dibujada en SVG con el degradado dorado
   de VULPO y un brillo suave, para que combine con los botones de música y sonido, que son emoji a color.
 - ⚠️ **La versión 9 tampoco lleva esto:** la que repara los clips truncados es la **10**.
+
+### Sesión 149 (2026-11-09) — La web y el tutorial, al día con el juego de hoy
+Roberto se fue a dormir: *"actualiza la web, los textos e imágenes, guía de juego etc. Haz todo lo
+que puedas sin mi autorización"*. **Ningún banco ni el motor del juego cambiaron:** solo la cara
+pública, el `README` y las herramientas del tutorial.
+
+- **El tutorial (`/tutorial/`) decía cosas que ya no son ciertas**, y se corrigieron: que los capítulos
+  se abren en orden (están todos abiertos desde la Sesión 101, `ORDEN_LIBRE`), que hay «99 clases en
+  los tres cursos» (son 301 en ocho), que la voz es «solo de 3°» (es de 1° a 4°, y lee sola) y que
+  Lectura y Vocabulario son de «algunos cursos» (Vocabulario y Formación Ciudadana están en los ocho;
+  Lectura en 3° y 8°). Sección nueva **«Repasar»** (Mis errores y la racha); la tienda suma los
+  **marcos**; el ranking explica la pestaña **semanal** y el **duelo**; el paso a paso del alumno parte
+  por **🎒 Alumnos** y explica «¿No eres tú? Cambiar de alumno».
+- **Las 18 capturas y los 3 clips se rehicieron con el juego de hoy** (`capturar-tutorial.mjs`), con la
+  flecha de volver, el «VULPO 8°», Mis errores, la racha, los marcos y la voz de **1°** (`voz.png`, que
+  reemplaza a `voz-3ro.png`). Tres cosas que el script tenía rotas y se arreglaron: la partida sembrada
+  **no traía código de alumno** y con la puerta cerrada casi todo salía con candado; la mini-clase se
+  buscaba con el camino anterior a la Sesión 98 (ahora: tarjeta de la unidad → primer nodo del mapa); y
+  las rutas de los cuadros apuntaban a un scratchpad viejo (ahora `dev/cuadros-tutorial/`, en
+  `.gitignore`, y el servidor en el puerto 8799).
+  > ⚠️ **Dos capturas salieron mal con el script diciendo «cero errores», y se vieron MIRANDO:** la
+  > corrección no aparecía porque el clic caía en una opción que el 50/50 ya había **descartado**
+  > (clase `descartada`, no responde), y la predicción quedaba tapada por la animación de subir de
+  > nivel. Las dos quedaron corregidas en el script.
+- **La portada:** «Para la familia» suma *Lo escucha* (la voz de 1° a 4°) y *Repasa lo que le costó*
+  (Mis errores), y menciona marcos, ranking semanal, duelos y la racha; la captura del mapa es la de
+  hoy. **El `README`** suma un resumen del estado actual (ocho cursos, voz, Mis errores, app en prueba).
+- Reglas comerciales revisadas: sin precios, sin «una a una», sin prometer que funciona sin internet
+  ni que la app está publicada. Verificado en el navegador a 390 y 1280 px: sin desborde, sin imágenes
+  rotas, los tres videos cargan, cero errores de consola y de red.
+
+- **Lo que sigue:** la **versión 10** de la app en el teléfono (repara los clips truncados de 4°) y,
+  si pasa, sacar los MP3 de 3° y 4° del repo. Queda además la revisión de **gráficas y efectos** que
+  pidió Roberto (ver abajo, si se agregó).

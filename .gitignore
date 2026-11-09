@@ -65,3 +65,5 @@ r2-vulpo-voz.txt
 
 # Paquetes de voz para la app (Sesion 147): se arman con voz-r2.py paquetes y se suben a R2
 dev/voz-paquetes/
+# Cuadros de los clips del tutorial (capturar-tutorial.mjs -> armar-clips.py)
+dev/cuadros-tutorial/

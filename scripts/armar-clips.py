@@ -23,8 +23,7 @@ from pathlib import Path
 import imageio_ffmpeg
 
 RAIZ = Path(__file__).resolve().parent.parent
-CUADROS = Path(os.environ.get("LOCALAPPDATA", "")) / (
-    "Temp/claude/c--Proyectos-kimun/936b2d86-188e-488e-9bba-c95b184acac1/scratchpad/cuadros")
+CUADROS = RAIZ / "dev" / "cuadros-tutorial"   # los deja capturar-tutorial.mjs (en .gitignore)
 SALIDA = RAIZ / "assets" / "web" / "tutorial"
 FFMPEG = imageio_ffmpeg.get_ffmpeg_exe()
 
