@@ -33,13 +33,24 @@
     if(!FS || !FS.downloadFile) return;      // plugin viejo/ausente: se queda con TTS
     var DIR = 'DATA', base = 'voz/' + curso;
 
-    if(await existe(FS, DIR, base + '/.ok')){ await fijar(C, FS, DIR, base); return; }
-
     var mapa = await esperarMapa();
-    if(!mapa) return;
+    if(!mapa){ if(await existe(FS, DIR, base + '/.ok')) await fijar(C, FS, DIR, base); return; }
     var clips = Array.from(new Set(Object.values(mapa)))
                      .filter(function(p){ return /^\/?assets\/voz\//.test(p); });
     if(!clips.length) return;
+
+    /* La marca .ok guarda la FIRMA de la lista de clips que se completó (Sesión 148). Antes era
+       un '1' a secas, y pasó esto: la versión 6 completó 4° y dejó la marca; la 7 traía ~2.700
+       clips más (las explicaciones al fallar), vio la marca y no bajó nada, así que esos clips
+       sonaban con la voz robótica sin internet. Ahora, si la app trae otra lista, se baja SOLO
+       lo que falta: lo que ya está en el teléfono no se vuelve a bajar. Una marca vieja ('1')
+       nunca coincide, así que también se revisa. */
+    var firma = firmaDe(clips);
+    var okActual = null;
+    try{ okActual = atob((await FS.readFile({ directory: DIR, path: base + '/.ok' })).data); }catch(e){}
+    if(okActual === firma){ await fijar(C, FS, DIR, base); return; }
+    // mientras revisa y baja, lo que ya está en el teléfono suena local y lo demás desde R2
+    if(okActual !== null){ try{ await fijar(C, FS, DIR, base); }catch(e){} }
 
     // crear las carpetas de asignatura una vez (downloadFile no crea el padre)
     var asigs = {};
@@ -78,6 +89,21 @@
         var tr = idx.trozos[k], marca = dir + '/.p-' + tr.f, tmp = dir + '/.trozo.part';
         if(await existe(FS, DIR, marca)){
           tr.clips.forEach(function(c){ var q = asig + '/' + c[0]; if(!escritos[q]){ escritos[q] = 1; if(necesita[q]) hechos++; } });
+          continue;
+        }
+        // Si este trozo no trae ningún clip que el juego use, o si todos los que usa YA están en
+        // el teléfono (bajados por una versión anterior, uno por uno), no se baja el trozo.
+        var usados = tr.clips.filter(function(c){ return necesita[asig + '/' + c[0]]; });
+        if(!usados.length) continue;
+        var todos = true;
+        for(var u = 0; u < usados.length && todos; u++){
+          try{ var st0 = await FS.stat({ directory: DIR, path: dir + '/' + usados[u][0] }); if(!(st0 && st0.size > 0)) todos = false; }
+          catch(e){ todos = false; }
+        }
+        if(todos){
+          usados.forEach(function(c){ var q = asig + '/' + c[0]; if(!escritos[q]){ escritos[q] = 1; hechos++; } });
+          try{ await FS.writeFile({ directory: DIR, path: marca, data: btoa('1') }); }catch(e){}
+          ui('Preparando la voz… ' + Math.min(99, Math.round(hechos / n * 100)) + '%' + AVISO);
           continue;
         }
         try{
@@ -133,7 +159,7 @@
     }
 
     if(!faltan.length){
-      try{ await FS.writeFile({ directory: DIR, path: base + '/.ok', data: btoa('1'), recursive: true }); }catch(e){}
+      try{ await FS.writeFile({ directory: DIR, path: base + '/.ok', data: btoa(firma), recursive: true }); }catch(e){}
     }
     pantalla(C, false);
     await fijar(C, FS, DIR, base);
@@ -164,6 +190,13 @@
     var C = nativo();
     if(C && _encendida && document.visibilityState === 'visible') pantalla(C, true);
   });
+
+  // cuántos clips y un hash de sus nombres: cambia si la app trae otra lista de clips
+  function firmaDe(clips){
+    var l = clips.map(rel).sort(), h = 5381;
+    for(var i = 0; i < l.length; i++){ var t = l[i]; for(var j = 0; j < t.length; j++){ h = ((h << 5) + h + t.charCodeAt(j)) | 0; } }
+    return 'v2:' + l.length + ':' + (h >>> 0).toString(16);
+  }
 
   function rel(p){ return p.replace(/^\/?assets\/voz\//, ''); }   // 'mat3/<hash>.mp3'
 

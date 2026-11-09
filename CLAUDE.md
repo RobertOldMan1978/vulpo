@@ -15057,3 +15057,21 @@ se mantiene aunque el alumno haya entrado con su código.
 - **Lo que sigue:** compilar la **versión 7** (lleva las Sesiones 144-148) y probar en el teléfono que
   4° baja en paquetes, con la pantalla encendida, y que retoma si se corta. Si pasa, sacar los MP3 de 3°
   y 4° del repo. De arrastre: la cuenta de Play como organización (DUNS), la prueba cerrada e INAPI.
+
+#### Cierre de la Sesión 148 — la marca de «voz completa» guarda qué lista se completó
+Roberto actualizó a la versión 7, abrió 4° y **no bajó nada**. La causa: la versión 6 había terminado
+de bajar la voz de 4° en algún intento y dejó la marca `.ok` (un `'1'` a secas). La 7 trae ~2.700 clips
+más en 4° —las explicaciones al fallar, de la Sesión 145—, vio la marca y se dio por completa. Con
+internet suenan igual (`voz.js` los pide a R2), pero **sin internet esas explicaciones habrían salido
+con la voz robótica**.
+
+- **`.ok` guarda ahora la FIRMA de la lista** (`v2:<cantidad>:<hash de los nombres>`). Si la app trae
+  otra lista, revisa y baja **solo lo que falta**; una marca vieja nunca coincide. Mientras revisa, lo que
+  ya está en el teléfono suena local y lo demás desde R2.
+- **Un trozo no se baja** si no trae clips que el juego use, o si todos los que usa ya están en el teléfono
+  (bajados uno por uno por una versión anterior): se marca y se sigue.
+- **Verificado simulando el teléfono:** primera vez, todo en paquetes; misma lista, cero descargas; marca
+  vieja con 3 clips borrados, **un solo trozo**; lista con 5 clips nuevos, un solo trozo.
+- ⚠️ **La versión 8 se compiló sin este arreglo** (la ejecución partió de `62f3b545`, el mismo commit que la
+  7, porque el arreglo todavía no estaba subido) y se descartó en Play. **El arreglo llega con la 9.**
+  GitHub arma la app desde lo que está en `main`: un cambio que no pasó por la orden 66 no está en la app.
