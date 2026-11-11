@@ -210,6 +210,55 @@ def render_lecciones(lecciones, oa_por_codigo):
     return "".join(H)
 
 
+def render_efemerides():
+    """Las efemerides del dia (Sesion 151): una seccion propia con su casilla.
+
+    Tiene la MISMA forma que las lecciones (`.lecs` > `details.lec` > `.pq-check input
+    data-id`), asi que el guardado, el contador, "Aprobar todas", el filtro de pendientes y
+    "Exportar revisadas" funcionan sin tocar el JavaScript. Los ids (efem-11-10) no chocan con
+    ningun otro. aplicar-revisadas.py escribe la marca en contenido/efemerides/efemerides.json.
+    Se muestra la imagen al lado del texto: se aprueban las dos cosas juntas.
+    """
+    ruta = CONTENIDO / "efemerides" / "efemerides.json"
+    if not ruta.exists():
+        return ""
+    lista = cargar_json(ruta).get("efemerides", [])
+    if not lista:
+        return ""
+    meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto",
+             "septiembre", "octubre", "noviembre", "diciembre"]
+    rev = sum(1 for e in lista if e.get("revisada"))
+    H = ['<div class="grupo-tit">📅 Efemérides del día</div>',
+         '<div class="grupo-sub">El popup con Vulpi que sale la primera vez del día. '
+         '<b>Solo se muestran las aprobadas.</b> Se aprueba el texto <b>y</b> la imagen; '
+         'la fuente es donde se verificó la fecha.</div>',
+         '<section class="asig" data-pend-preg="0" data-carpeta="efemerides">',
+         '<div class="asig-head"><div><h2><span class="a-caret">▾</span>Efemérides</h2>'
+         '<div class="sub">%d días · %d aprobadas</div></div></div>' % (len(lista), rev),
+         '<div class="lecs"><div class="lecs-head"><b>📅 Un hecho por día</b>'
+         '<span class="lecs-n">%d</span>'
+         '<button class="bulk lecs-bulk">✓ Aprobar todas</button></div>' % len(lista)]
+    for e in lista:
+        m, d = e.get("fecha", "01-01").split("-")
+        dia = "%d de %s" % (int(d), meses[int(m) - 1])
+        # Abiertas: con 366 dias, abrir uno por uno para leerlo haria la revision eterna.
+        H.append('<details class="lec" data-lid="%s" open><summary>'
+                 '<span class="pq-check"><input type="checkbox" data-id="%s" data-rev="%s"></span>'
+                 '<b>%s</b><span class="lec-id">%s</span></summary>'
+                 % (escape(e["id"]), escape(e["id"]), "1" if e.get("revisada") else "0",
+                    escape(dia), escape(e.get("tema", ""))))
+        H.append('<div style="display:flex;gap:12px;align-items:center;margin:8px 0">'
+                 '<img src="../assets/%s" width="72" height="72" style="flex-shrink:0;object-fit:contain" alt="">'
+                 '<div><p style="margin:0">%s</p>'
+                 '<div class="lec-sub" style="margin-top:4px">%s · '
+                 '<a href="%s" target="_blank" rel="noopener" style="color:var(--cyan)">fuente</a></div></div></div>'
+                 % (escape(e.get("img", "")), escape(e.get("texto", "")), escape(e.get("img", "")),
+                    escape(e.get("fuente", ""))))
+        H.append("</details>")
+    H.append("</div></section>")
+    return "".join(H)
+
+
 def render_asignatura(oa_data, preg_data, lecciones=(), carpeta=""):
     meta = int(preg_data.get("meta_preguntas_por_oa", 8))
     preguntas = preg_data.get("preguntas", [])
@@ -375,6 +424,7 @@ def generar():
                    ' MINEDUC y no entran al mapa de dominio del profesor. Se aprueban'
                    ' igual, con el mismo criterio de muestreo.</div>')
         cuerpo += chr(10).join(render_asignatura(oa, pg, lec, car) for car, oa, pg, lec in trans)
+    cuerpo += render_efemerides()
     if not cuerpo:
         cuerpo = '<p class="vacio">Aún no hay contenido en la carpeta <code>contenido/</code>.</p>'
     marca = datetime.now().strftime("%d-%m-%Y %H:%M")

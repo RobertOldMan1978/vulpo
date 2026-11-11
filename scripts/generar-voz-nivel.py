@@ -45,6 +45,8 @@ from voz_asignaturas import ASIGS, elegir, exigir_clips_locales   # catalogo uni
 ASIG = elegir(sys.argv[1:])
 _CFG = ASIGS[ASIG]
 BANCO = RAIZ / "contenido" / _CFG["banco"] / "preguntas.json"
+if _CFG.get("efemerides"):
+    BANCO = RAIZ / "contenido" / "efemerides" / "efemerides.json"
 SALIDA = RAIZ / "assets" / "voz" / ASIG
 MANIFIESTO = SALIDA / "manifiesto.json"
 # La clave puede estar en varios lugares: el escritorio de Windows se llama "Desktop"
@@ -93,6 +95,16 @@ def nombre(texto):
 
 def textos():
     """Devuelve [(texto mostrado, texto a pronunciar)] sin repetir."""
+    if _CFG.get("efemerides"):
+        # Solo las APROBADAS: la voz se paga recien cuando Roberto firma el texto. El juego
+        # lee e.texto tal cual (leerEnVoz), asi que el texto mostrado ES la clave del clip.
+        vistos, out = set(), []
+        for e in json.load(io.open(BANCO, encoding="utf-8"))["efemerides"]:
+            t = (e.get("texto") or "").strip()
+            if e.get("revisada") is True and t and t not in vistos:
+                vistos.add(t)
+                out.append((t, _nv.normalizar(t)))
+        return out
     d = json.load(io.open(BANCO, encoding="utf-8"))["preguntas"]
     pares = []
     for p in d:

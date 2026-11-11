@@ -103,7 +103,8 @@ def escribir_banco(ruta, d):
     """
     # La clave de la lista cambia segun el archivo: los bancos traen "preguntas" y los
     # de mini-clases "lecciones". Todo lo demas del formato canonico es identico.
-    lista = "preguntas" if "preguntas" in d else "lecciones"
+    lista = ("preguntas" if "preguntas" in d
+             else "lecciones" if "lecciones" in d else "efemerides")
     orden = {}
     for k in CABECERA:
         if k in d and k != lista:
@@ -200,6 +201,29 @@ def main():
             print("  %-24s %4d/%4d lecciones     (+%d)" % (nombre, rev, len(lista), marcadas))
             if not seco:
                 escribir_banco(lec, dl)
+
+    # --- las efemerides del dia (Sesion 151) --------------------------------
+    # Mismo archivo exportado y mismo modo seguro. El juego solo muestra las revisada:true,
+    # asi que esta marca es lo que las publica.
+    efem = CONTENIDO / "efemerides" / "efemerides.json"
+    if efem.exists():
+        de = json.load(open(efem, encoding="utf-8"))
+        marcadas = 0
+        for e in de.get("efemerides", []):
+            huerfanos.discard(e.get("id"))
+            esta = e.get("id") in ids
+            era = bool(e.get("revisada"))
+            if esta and not era:
+                e["revisada"] = True
+                marcadas += 1
+            elif era and not esta and sincronizar:
+                e["revisada"] = False
+        de["revisadas"] = sum(1 for e in de["efemerides"] if e.get("revisada"))
+        if marcadas:
+            print("  %-24s %4d/%4d efemerides    (+%d)" % (
+                "efemerides", de["revisadas"], len(de["efemerides"]), marcadas))
+            if not seco:
+                escribir_banco(efem, de)
 
     if sin_tocar:
         print("\n  sin cambios: " + " · ".join(sin_tocar))

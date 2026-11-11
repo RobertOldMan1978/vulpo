@@ -62,6 +62,12 @@ ASIGS = {
     "cie1":  {"banco": "ciencias-1basico",       "oa": "CN01", "caps": "cie1-",           "juego": "1ro"},
     "len1":  {"banco": "lenguaje-1basico",       "oa": "LE01", "caps": "leng1-",          "juego": "1ro"},
     "voc1":  {"banco": "vocabulario-1basico",    "oa": "VOC",  "caps": "voc-general",     "juego": "1ro"},
+    # La efemeride del dia (Sesion 151): no es un banco de preguntas sino
+    # contenido/efemerides/efemerides.json, y se locuta SOLO lo aprobado (revisada:true):
+    # la voz se paga recien cuando Roberto firma el texto. La cargan los forks de 1° a 4°
+    # en VOZ_DIRS. "juego" no se usa (no hay metas ni nombres de etapa que leer).
+    "efem":  {"banco": "efemerides",             "oa": "EFEM", "caps": "",                "juego": "1ro",
+              "efemerides": True},
 }
 
 

@@ -35,6 +35,11 @@ MANIFIESTO = S / "manifiesto.json"
 SALIDA = RAIZ / "dev" / ("auditoria-voz-3ro.json" if ASIG == "mat3"
                          else "auditoria-voz-%s.json" % ASIG)
 BANCO = RAIZ / "contenido" / ASIGS[ASIG]["banco"] / "preguntas.json"
+if ASIGS[ASIG].get("efemerides"):
+    # Las efemerides no son un banco de preguntas. Mejor decirlo que reventar con un
+    # FileNotFoundError: se auditan escuchando, son pocas.
+    sys.exit("La voz de las efemerides no se audita con este script (no es un banco de "
+             "preguntas). Escucha una muestra de assets/voz/efem/.")
 CAND = [Path.home()/"OneDrive"/"Escritorio"/"azure-tts.txt",
         Path.home()/"OneDrive"/"Desktop"/"azure-tts.txt",
         Path.home()/"Escritorio"/"azure-tts.txt",

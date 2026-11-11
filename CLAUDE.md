@@ -15176,3 +15176,66 @@ líneas en `lecciones.js` y en `calculo.js`.
 - **Lo que sigue:** probar la **versión 10** de la app (y con ella estos efectos) en el teléfono; si
   la voz de 4° quedó bien, sacar los MP3 de 3° y 4° del repo. De arrastre: DUNS para la cuenta de
   organización en Play, la prueba cerrada e INAPI.
+
+### Sesión 151 (2026-11-11) — Las efemérides del día: un hecho de Chile con Vulpi al abrir el juego
+Pedido de Roberto: *"una pantalla inicial con noticias o efemérides de Chile para cada día del año,
+con imágenes de Vulpi, reciclando las que tenemos"*. Brainstorming → spec → plan → ejecución, y él
+eligió cada pieza: **un popup con Vulpi una vez al día**, **Chile de todo un poco**, **en las fechas
+delicadas va otro hecho**, **texto corto con voz** (lee sola de 1° a 4°) y **la imagen elegida por día
+de un catálogo**. Spec `docs/superpowers/specs/2026-11-11-efemerides-design.md`, plan
+`docs/superpowers/plans/2026-11-11-efemerides.md`. **Ningún banco de preguntas cambió.**
+
+#### El contenido: 366 días, cada uno con su fuente
+- **`contenido/efemerides/efemerides.json`**, formato canónico, con `id` (`efem-MM-DD`), `fecha`,
+  `texto` (≤ 130 caracteres, el año adentro, sin emoji), `img`, `tema`, `fuente` (https) y `revisada`.
+  Incluye el 29 de febrero.
+- **Escrito por agentes de a dos, un mes por tanda** (`_tandas/01.json`…`12.json`), con el estándar
+  `docs/encargo-efemerides.md`: **Chile primero** (al menos 2 de cada 3 días; quedaron ~23 de 30), cada
+  fecha verificada en la web, y cuando dos fuentes no coincidían en el día **se eligió otro hecho**.
+  Noviembre salió con poco Chile (12 de 30) y se reescribió (21).
+- ⚠️ **Las fechas delicadas llevan otro hecho y no aluden al vetado**: 11 de septiembre, 18 de octubre,
+  29 de marzo, 5 y 25 de octubre, 4 de septiembre y 27 de febrero (el 11/09, por ejemplo, va Mercedes
+  Marín del Solar). Y la regla: **nada político de 1970 en adelante**, y los terremotos solo como ciencia.
+- **El catálogo de imágenes** (`imagenes.json`): 98 recicladas, cada una con una línea de qué muestra;
+  fuera los villanos, los íconos, las caras tristes, el conquistador y el diario de Ana Frank. Se usan
+  75, ninguna más de dos veces en un mes.
+- **`scripts/validar-efemerides.py`** (errores: fechas faltantes o repetidas —exige las 366—, largo,
+  emoji, imagen fuera del catálogo, fuente, veto por fecha; avisos: posible política reciente, imagen
+  repetida en días seguidos o más de 2 veces al mes, un tema que se come el mes) y
+  **`scripts/consolidar-efemerides.py`**, que **conserva la firma solo si el texto y la imagen no
+  cambiaron**. Probado rompiéndolo: cazó los 6 errores. Hoy: **366 · 0 errores · 0 avisos**.
+
+#### El motor (todo en `assets/js/motor.js`)
+- **`revisarEfemeride()`**: reusa `popupVulpi` (ahora acepta imagen, clase y título propios, devuelve
+  `true` si se mostró y su ✕ manda callar la voz). Se dispara 2,5 s después de entrar a `scr-rol` y
+  también en `load` —en la primera carga no había `go()`—, espera a que se cierre la intro, y **tiene la
+  prioridad más baja**: si está abierto el aviso del profe o del duelo, no se marca el día y se intenta
+  en la próxima apertura. Solo muestra entradas con **`revisada:true`**.
+- ⚠️ **La marca diaria va SIN sufijo de curso** (`kimun_efem_pop` = la fecha de hoy): un niño con dos
+  cursos no la ve dos veces. No sale con `EFIMERO` ni `SIN_DISCO` (QA, muestras, armador, docente).
+- **La voz**: con `LEE_SOLO` lee el texto, y solo si el popup realmente se mostró —si no, sonaría encima
+  del aviso del profe—. `'assets/voz/efem/'` entra al final de `VOZ_DIRS` de 1° a 4° (una línea por
+  fork), con un `manifiesto.json` vacío versionado para que no haya 404.
+
+#### La aprobación y la voz, por los caminos de siempre
+- **Tablero:** sección «📅 Efemérides del día», con la misma forma que las lecciones (casilla por día,
+  miniatura, texto y fuente, «✓ Aprobar todas»). `aplicar-revisadas.py` escribe la firma en el archivo
+  de efemérides (probado: 2 firmas + el contador, sin reformateo).
+- **Voz:** asignatura `efem` en `voz_asignaturas.py`; `generar-voz-nivel.py efem` **solo locuta lo
+  aprobado**, así que hoy su recuento da 0.
+
+#### Verificación (con `cdp.mjs`, jugando)
+Aparece la primera vez del día y no al recargar; la imagen carga y la portada redonda se ve bien a
+375×667; 1° y 4° hablan, 6° no; no sale con `?qa=1` ni `?solo=`; con el desafío del profe abierto
+espera y no marca el día. El tablero dibuja las 366 casillas y «Aprobar todas» funciona. Los ocho cursos
+arrancan y navegan; **cero errores de consola y de red**.
+
+> **Publicar sin aprobar no cambia nada para un alumno**: el juego filtra por `revisada:true`, y hoy
+> son 0 de 366.
+
+- **Pendiente de Roberto (A73):** aprobar los 366 textos en el tablero y mirar las ~20 dudas anotadas
+  (Víctor Jara solo como músico; Rapa Nui 1888 «pasó a formar parte de Chile»; el terremoto de Valdivia
+  como ciencia; el título de la U en la Sudamericana; los dentistas dos veces). Después, autorizar la
+  voz: ~366 clips, ~US$0,30, y `voz-r2.py subir` + `paquetes efem` + `verificar`.
+- **De arrastre:** la versión 10 de la app en el teléfono; si pasa, sacar los MP3 de 3° y 4° del repo.
+  DUNS para la cuenta de organización, la prueba cerrada de Play e INAPI.

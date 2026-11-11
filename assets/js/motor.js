@@ -435,6 +435,8 @@ function popupVulpi(o){
    +'border:2px solid var(--gold);border-radius:22px;padding:24px 20px 20px;text-align:center;'
    +'box-shadow:0 18px 50px #000a;position:relative;animation:pdPop .38s cubic-bezier(.2,.9,.3,1.4)}'
    +'#popupDes img{width:118px;height:auto;filter:drop-shadow(0 8px 16px #0007)}'
+   +'#popupDes img.pd-efem{width:150px}'
+   +'#popupDes .pd-fecha{font-size:22px}'
    +'#popupDes h3{color:var(--gold);font-size:20px;margin:6px 0}'
    +'#popupDes p{color:#fff;font-size:14px;line-height:1.45;margin:0 0 16px}'
    +'#popupDes .pd-jugar{width:100%;background:var(--violet);color:#fff;border:0;border-radius:14px;'
@@ -447,16 +449,19 @@ function popupVulpi(o){
  let ov=$('popupDes');
  if(!ov){ ov=document.createElement('div'); ov.id='popupDes'; document.body.appendChild(ov); }
  ov.innerHTML='<div class="pd-caja"><button class="pd-x" aria-label="Cerrar">✕</button>'
-  +'<img src="assets/kimun-sorprendido.png" alt="Vulpi">'
-  +'<h3>'+o.titulo+'</h3>'
+  +'<img src="assets/'+(o.img||'kimun-sorprendido.png')+'" alt="'+(o.img?'':'Vulpi')+'"'
+  +(o.clase?' class="'+o.clase+'"':'')+'>'
+  +'<h3'+(o.claseTit?' class="'+o.claseTit+'"':'')+'>'+o.titulo+'</h3>'
   +'<p>'+o.texto+'</p>'
   +'<button class="pd-jugar">'+o.boton+'</button></div>';
- const cerrar=()=>{ ov.style.display='none'; try{localStorage.setItem(o.clave,o.id);}catch(e){} };
+ // callarVoz: la efemeride se lee sola de 1° a 4°, y cerrar el popup tiene que cortar la voz.
+ const cerrar=()=>{ ov.style.display='none'; try{localStorage.setItem(o.clave,o.id);}catch(e){} try{callarVoz();}catch(e){} };
  ov.onclick=cerrar;                                          // tocar el fondo cierra
  ov.querySelector('.pd-caja').onclick=e=>e.stopPropagation();
  ov.querySelector('.pd-x').onclick=cerrar;
  ov.querySelector('.pd-jugar').onclick=()=>{ cerrar(); SND.init(); SND.tap(); o.jugar(); };
  ov.style.display='flex';
+ return true;   // lo mostro (los return de arriba devuelven undefined: no se mostro)
 }
 /* El refuerzo del profe. Lo llama revisarDesafio() de cada fork, que ya trae 'd' de
    kimun_refuerzo_activo (una sola consulta, no se duplica aca). */
@@ -477,6 +482,51 @@ function popupDuelo(des){
   titulo:'⚔️ ¡Te desafiaron!',
   texto:'<b>'+escHtml(des[0].rival)+'</b> te retó a un duelo.'+otros+' ¿Aceptas?',
   boton:'⚔️ ¡Jugar!', jugar:()=>{ $('nav').style.display='none'; abrirDueloOnline(); } });
+}
+
+/* ===== La efemeride del dia (Sesion 151) =====
+   Un hecho de Chile por dia del ano, con una imagen que YA existe (catalogo en
+   contenido/efemerides/imagenes.json). Spec: docs/superpowers/specs/2026-11-11-efemerides-design.md.
+   - Prioridad MAS BAJA que el desafio del profe y el del duelo: go('scr-rol') la llama con un
+     setTimeout, y si hay otro popup abierto popupVulpi la hace esperar SIN marcarla vista, asi
+     que sale en la proxima apertura.
+   - La clave NO lleva SUFIJO y el id es la fecha: se ve UNA vez al dia en el aparato, entre
+     todos los cursos (un nino con 3° y 4° no la ve dos veces).
+   - Solo muestra entradas revisada:true. Un dia sin efemeride aprobada no tiene popup.
+   - El JSON se pide recien cuando corresponde mostrar, y una sola vez (_EFEM es la promesa).
+   - Mientras la intro este en pantalla (su overlay se quita del DOM al terminar) se reintenta.
+   - Con LEE_SOLO (1° a 4°) la voz la lee sola; cerrar el popup la corta. */
+const _MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+let _EFEM=null, _EFEM_INTENTOS=0;
+// ⚠️ Al abrir el juego la pantalla de inicio YA viene activa desde el HTML, asi que go('scr-rol')
+// no corre en la primera carga: sin esto la efemeride solo salia al VOLVER al inicio. Si las dos
+// vias coinciden no se duplica: popupVulpi no abre un segundo modal sobre uno visible.
+window.addEventListener('load',()=>setTimeout(()=>{
+ const rol=$('scr-rol'); if(rol && rol.classList.contains('on')) revisarEfemeride();
+},2500));
+function revisarEfemeride(){
+ if(EFIMERO || SIN_DISCO) return;                     // prueba, QA, armador, docente
+ const h=new Date(), dos=n=>String(n).padStart(2,'0');
+ const hoy=h.getFullYear()+'-'+dos(h.getMonth()+1)+'-'+dos(h.getDate());
+ try{ if(localStorage.getItem('kimun_efem_pop')===hoy) return; }catch(e){}
+ if($('introOverlay')){ if(++_EFEM_INTENTOS<20) setTimeout(revisarEfemeride,2000); return; }
+ if(!_EFEM) _EFEM=fetch('contenido/efemerides/efemerides.json')
+   .then(r=>r.ok?r.json():null).catch(()=>null);
+ _EFEM.then(d=>{
+  if(!d) return;
+  const e=(d.efemerides||[]).find(x=>x.fecha===hoy.slice(5) && x.revisada===true);
+  if(!e) return;
+  const rol=$('scr-rol'); if(!rol || !rol.classList.contains('on')) return;   // ya salio del inicio
+  // Solo se lee si ESTE popup se mostro: si el del profe estaba abierto, popupVulpi no muestra
+  // la efemeride y leerla seria hablar encima de otro aviso.
+  const mostrado=popupVulpi({ clave:'kimun_efem_pop', id:hoy,
+   titulo:'📅 Hoy, '+h.getDate()+' de '+_MESES[h.getMonth()], claseTit:'pd-fecha',
+   texto:escHtml(e.texto), img:e.img, clase:'pd-efem',
+   boton:'¡Vamos!', jugar:()=>{} });
+  if(mostrado && typeof LEE_SOLO!=='undefined' && LEE_SOLO && window.VOZ && VOZ.activo){
+   try{ leerEnVoz(e.texto); }catch(x){}
+  }
+ });
 }
 
 /* ===== Ranking de duelos del curso (Sesion 76) =====
@@ -832,7 +882,7 @@ function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remo
  try{ fxGo(id); }catch(e){}
  var enJuego=(id==='scr-mapa'||id==='scr-quiz'||id==='scr-res');
  document.body.classList.toggle('en-dificil', enJuego && MODO==='dificil');
- if(id==='scr-rol'){pintarInicio();revisarDesafio();revisarDuelos();}
+ if(id==='scr-rol'){pintarInicio();revisarDesafio();revisarDuelos();setTimeout(revisarEfemeride,2500);}
  callarVoz();   // ninguna pantalla hereda la lectura de la anterior
  REV.barra();   // modo revisión: la barra se oculta sola en su propia pantalla
  MUSIC.contexto(id);}

@@ -1,0 +1,283 @@
+{
+ "efemerides": [
+  {
+   "id": "efem-05-01",
+   "fecha": "05-01",
+   "texto": "Hoy es el Día del Trabajo. Es un buen día para agradecer a quienes trabajan para que todo funcione, en casa y en el barrio.",
+   "img": "portada-hist1-cap2.png",
+   "tema": "dia-oficial",
+   "fuente": "https://es.wikipedia.org/wiki/D%C3%ADa_Internacional_de_los_Trabajadores",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-02",
+   "fecha": "05-02",
+   "texto": "En 1911 se creó en Santiago el Museo Histórico Nacional, que guarda objetos de toda la historia de Chile.",
+   "img": "kimun-historiador.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Museo_Hist%C3%B3rico_Nacional_(Chile)",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-03",
+   "fecha": "05-03",
+   "texto": "En 1931 nació en Teno Efraín Barquero, poeta chileno que en 2008 ganó el Premio Nacional de Literatura.",
+   "img": "kimun-escritor.png",
+   "tema": "cultura",
+   "fuente": "https://es.wikipedia.org/wiki/Efra%C3%ADn_Barquero",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-04",
+   "fecha": "05-04",
+   "texto": "En 1918 nació en Santiago Nemesio Antúnez, pintor chileno que fundó el Taller 99, un famoso taller de grabado.",
+   "img": "kimun-feliz.png",
+   "tema": "cultura",
+   "fuente": "https://es.wikipedia.org/wiki/Nemesio_Ant%C3%BAnez",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-05",
+   "fecha": "05-05",
+   "texto": "Hoy es el Día Mundial de la Higiene de Manos. Lavarse las manos con agua y jabón ayuda a evitar muchas enfermedades.",
+   "img": "portada-cien-cuerpo.png",
+   "tema": "dia-oficial",
+   "fuente": "https://www.who.int/campaigns/world-hand-hygiene-day",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-06",
+   "fecha": "05-06",
+   "texto": "En 1954 el británico Roger Bannister fue el primero en correr una milla, unos mil seiscientos metros, en menos de cuatro minutos.",
+   "img": "kimun-oro.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Roger_Bannister",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-07",
+   "fecha": "05-07",
+   "texto": "En 1824 se estrenó en Viena la Novena Sinfonía de Beethoven, la que termina con la famosa Oda a la Alegría.",
+   "img": "portada-leng1-cap1.png",
+   "tema": "cultura",
+   "fuente": "https://es.wikipedia.org/wiki/Sinfon%C3%ADa_n.%C2%BA_9_(Beethoven)",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-08",
+   "fecha": "05-08",
+   "texto": "Hoy es el Día Mundial de la Cruz Roja, que se celebra en el cumpleaños de su fundador, Henry Dunant.",
+   "img": "portada-hist3-cap4.png",
+   "tema": "dia-oficial",
+   "fuente": "https://es.wikipedia.org/wiki/D%C3%ADa_Mundial_de_la_Cruz_Roja_y_de_la_Media_Luna_Roja",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-09",
+   "fecha": "05-09",
+   "texto": "En 2003 despegó la nave japonesa Hayabusa, la primera en traer a la Tierra una muestra de un asteroide.",
+   "img": "skin-kimun-astronauta.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Hayabusa_(sonda_espacial)",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-10",
+   "fecha": "05-10",
+   "texto": "En 1981 nació en San Antonio Humberto Suazo, el Chupete, que en 2006 fue elegido el goleador del mundo.",
+   "img": "skin-kimun-futbol.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Humberto_Suazo",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-11",
+   "fecha": "05-11",
+   "texto": "Hoy es el Día Nacional del Teatro, en el cumpleaños del director chileno Andrés Pérez, que nació en Punta Arenas en 1951.",
+   "img": "portada-len3-cap8.png",
+   "tema": "dia-oficial",
+   "fuente": "https://es.wikipedia.org/wiki/Andr%C3%A9s_P%C3%A9rez_(director_de_teatro)",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-12",
+   "fecha": "05-12",
+   "texto": "En 1742 se fundó la ciudad de Talca, que en sus comienzos se llamó Villa San Agustín de Talca.",
+   "img": "portada-hist-cap3.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Talca",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-13",
+   "fecha": "05-13",
+   "texto": "En 1959 se creó el Parque Nacional Torres del Paine, en la Patagonia chilena, con sus enormes torres de roca, ríos y lagos.",
+   "img": "portada-hist4-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Parque_nacional_Torres_del_Paine",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-14",
+   "fecha": "05-14",
+   "texto": "En 1919 se fundó la Universidad de Concepción, la tercera universidad más antigua de Chile.",
+   "img": "portada-hist-cap1.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Universidad_de_Concepci%C3%B3n",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-15",
+   "fecha": "05-15",
+   "texto": "En 1909 nació en Santiago Clara Solovera, la compositora chilena que creó la tonada Chile lindo.",
+   "img": "portada-hist2-cap4.png",
+   "tema": "cultura",
+   "fuente": "https://es.wikipedia.org/wiki/Clara_Solovera",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-16",
+   "fecha": "05-16",
+   "texto": "Hoy es el Día Internacional de la Luz. Se eligió porque en 1960 funcionó por primera vez un láser.",
+   "img": "portada-cie3-cap1.png",
+   "tema": "dia-oficial",
+   "fuente": "https://es.wikipedia.org/wiki/D%C3%ADa_Internacional_de_la_Luz",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-17",
+   "fecha": "05-17",
+   "texto": "En 1845 nació en Santiago Pedro Lira, pintor chileno que ayudó a crear el Museo Nacional de Bellas Artes.",
+   "img": "kimun-neutral.png",
+   "tema": "cultura",
+   "fuente": "https://es.wikipedia.org/wiki/Pedro_Lira",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-18",
+   "fecha": "05-18",
+   "texto": "Hoy es el Día Internacional de los Museos. ¿Qué museo te gustaría visitar? Hay de ciencia, de historia y de arte.",
+   "img": "kimun-historiador.png",
+   "tema": "dia-oficial",
+   "fuente": "https://es.wikipedia.org/wiki/D%C3%ADa_Internacional_de_los_Museos",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-19",
+   "fecha": "05-19",
+   "texto": "En 1904 nació en Santiago Eugenio Pereira Salas, historiador chileno que estudió la música, el teatro y los juegos de Chile.",
+   "img": "portada-leng2-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Eugenio_Pereira_Salas",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-20",
+   "fecha": "05-20",
+   "texto": "Hoy es el Día Mundial de las Abejas. Sin ellas muchas plantas no darían frutos, porque llevan el polen de flor en flor.",
+   "img": "portada-cie6-cap1.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/D%C3%ADa_Mundial_de_las_Abejas",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-21",
+   "fecha": "05-21",
+   "texto": "Hoy es el Día de las Glorias Navales. Chile recuerda a Arturo Prat y a la tripulación de la Esmeralda, en el año 1879.",
+   "img": "portada-hist-cap2.png",
+   "tema": "dia-oficial",
+   "fuente": "https://es.wikipedia.org/wiki/D%C3%ADa_de_las_Glorias_Navales",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-22",
+   "fecha": "05-22",
+   "texto": "En 1960 ocurrió cerca de Valdivia el sismo más fuerte medido en la historia, de magnitud 9,5. ¿Sabes qué hacer si tiembla?",
+   "img": "portada-cie7-cap3.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Terremoto_de_Valdivia_de_1960",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-23",
+   "fecha": "05-23",
+   "texto": "En 1794 se fundó la ciudad de Linares, en la región del Maule, por orden de Ambrosio O'Higgins.",
+   "img": "portada-hist6-cap1.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Linares_(Chile)",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-24",
+   "fecha": "05-24",
+   "texto": "En 1928 nació Cristina Calderón, la última hablante nativa del idioma yagán, del pueblo que vivía en el extremo sur de Chile.",
+   "img": "portada-hist2-cap2.png",
+   "tema": "cultura",
+   "fuente": "https://es.wikipedia.org/wiki/Cristina_Calder%C3%B3n",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-25",
+   "fecha": "05-25",
+   "texto": "En 1833 se promulgó una Constitución que rigió Chile durante 92 años, hasta 1925.",
+   "img": "portada-hist6-cap4.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Constituci%C3%B3n_Pol%C3%ADtica_de_la_Rep%C3%BAblica_de_Chile_de_1833",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-26",
+   "fecha": "05-26",
+   "texto": "En 1950 se protegió la zona de Conguillío, hoy parque nacional, con araucarias, lagos y el volcán Llaima.",
+   "img": "portada-hist2-cap4.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Parque_nacional_Conguill%C3%ADo",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-27",
+   "fecha": "05-27",
+   "texto": "En 1925 nació Adelina Gutiérrez, la primera chilena en obtener un doctorado en astrofísica. ¡Estudiaba las estrellas!",
+   "img": "portada-cie3-cap2.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Adelina_Guti%C3%A9rrez",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-28",
+   "fecha": "05-28",
+   "texto": "En 1909 nació en Angol Israel Roa, pintor chileno que ganó el Premio Nacional de Arte en 1985.",
+   "img": "kimun-feliz.png",
+   "tema": "cultura",
+   "fuente": "https://es.wikipedia.org/wiki/Israel_Roa",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-29",
+   "fecha": "05-29",
+   "texto": "En 1934 nació Lukas, dibujante nacido en Italia que retrató en sus caricaturas la vida y la historia de Valparaíso.",
+   "img": "portada-leng-textos.png",
+   "tema": "cultura",
+   "fuente": "https://es.wikipedia.org/wiki/Renzo_Pecchenino",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-30",
+   "fecha": "05-30",
+   "texto": "En 1962 comenzó en Chile el Mundial de fútbol. Ese año la selección chilena logró el tercer lugar.",
+   "img": "kimun-bronce.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Copa_Mundial_de_F%C3%BAtbol_de_1962",
+   "revisada": false
+  },
+  {
+   "id": "efem-05-31",
+   "fecha": "05-31",
+   "texto": "En 1911 se fundó oficialmente Puerto Natales, en la región de Magallanes, la puerta de entrada a Torres del Paine.",
+   "img": "portada-hist2-cap1.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Puerto_Natales",
+   "revisada": false
+  }
+ ]
+}
