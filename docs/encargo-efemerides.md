@@ -10,7 +10,7 @@ juego cada día. Una por día del año. Diseño completo en
 la voz de Catalina lo lee en voz alta, así que tiene que entenderse **escuchándolo**.
 
 - Español latino neutro, sin modismos ni voseo.
-- **Una o dos frases simples, máximo 130 caracteres.** El año va dentro del texto.
+- **Una o dos frases simples, máximo 170 caracteres** (apunta a 120-150). El año va dentro del texto.
 - Tono de dato curioso que invita a saber más, no de enciclopedia. Nada de "¿sabías que…?" en
   todas: varía el comienzo.
 - **Sin emoji, sin comillas tipográficas raras, sin abreviaturas** ("Sr.", "aprox.", "km/h"): la
@@ -34,6 +34,47 @@ universidades, récords y hallazgos (dinosaurios, momias chinchorro), días naci
 
 **Palabras de Chile:** "concientización" (no "concienciación"), "computador", "celular",
 "auto", "polera". Si dudas, la forma que usa un profesor chileno.
+
+## La regla de fondo: cada efeméride tiene que ENSEÑAR (segunda vuelta, 11/11/2026)
+
+Roberto lo dijo así: *"todos los contenidos deben ser educativos; la idea es que un niño quiera
+preguntar más sobre ese tema, o que un profesor pueda dar una pequeña clase o introducción"*.
+
+**La prueba de cada texto, las dos preguntas:**
+1. ¿Un niño, al oírlo, querría preguntar *"¿y por qué?"* o *"¿y cómo?"*?
+2. ¿Un profesor podría partir la clase con esto y hablar cinco minutos del tema?
+
+Si la respuesta a las dos es no, el texto se cambia. **No basta con "nació X, cantante"**: hay que
+decir qué hizo que valga la pena conocer, o un detalle que despierte curiosidad.
+
+**Lo que más sirve:**
+- **Fragmentos breves de literatura chilena**: un verso o una línea de un poema, cuento o novela,
+  **de a lo más 10 palabras, entre comillas, con el autor y la obra** (Gabriela Mistral, Vicente
+  Huidobro, Pablo Neruda, Violeta Parra, Andrés Bello, Baldomero Lillo, Marta Brunet, Alberto Blest
+  Gana, Manuel Rojas, Marcela Paz, Juan Emar, Pedro Prado…). La ley chilena permite citar
+  fragmentos breves con fines de enseñanza **nombrando autor y obra** (art. 71 B, Ley 17.336), así
+  que **siempre** van los dos. **La cita se copia de una fuente que la reproduzca textual** (la
+  `fuente` debe mostrar el verso exacto o la obra); jamás de memoria: un verso mal citado es peor que
+  ninguno.
+  **Una cita nunca se corta donde cambia lo que dice** ("Escriba joven sin miedo" de Bello sigue
+  "…que en Chile nadie lee"), y **cada verso va en un solo día del año**.
+- **Científicos, historiadores, exploradores, inventores y próceres chilenos**, con lo que
+  descubrieron o hicieron, no solo su nombre (Claudio Gay, Ignacio Domeyko, Juan Ignacio Molina,
+  Rodulfo Philippi, María Teresa Ruiz, Humberto Maturana, Andrés Bello, Luis Cruz Martínez…).
+- **Datos frikis verificables**: récords, rarezas de la naturaleza chilena, el porqué de un
+  nombre, un invento con una historia sorprendente. Que sea verdad y que tenga fuente.
+- Cerrar a veces con una pregunta que invite a pensar (*"¿Te imaginas…?"*, *"¿Qué harías tú?"*),
+  no en todas.
+
+**Lo que se cambia sí o sí:** días institucionales sin contenido para un niño (gremios,
+federaciones, clubes rotarios), marcas comerciales (aerolíneas, ropa, personajes de empresa),
+personas conocidas solo por ser famosas sin una obra que enseñe algo, y **títulos de UN club de
+fútbol** (los hinchas de otros se molestan; las fundaciones de clubes sí pueden quedar si se
+cuentan con un dato curioso de su ciudad).
+
+**Lo que se queda:** lo que ya pasa la prueba. Un texto bueno no se reescribe por reescribir. Si
+el hecho sirve pero el texto es plano, **se mejora el texto con un detalle que la fuente diga**
+(el mismo hecho y la misma fuente, o una fuente mejor).
 
 ## Lo que NO va (y es la parte más importante)
 

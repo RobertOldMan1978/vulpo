@@ -15239,3 +15239,29 @@ arrancan y navegan; **cero errores de consola y de red**.
   voz: ~366 clips, ~US$0,30, y `voz-r2.py subir` + `paquetes efem` + `verificar`.
 - **De arrastre:** la versión 10 de la app en el teléfono; si pasa, sacar los MP3 de 3° y 4° del repo.
   DUNS para la cuenta de organización, la prueba cerrada de Play e INAPI.
+
+#### Segunda vuelta (11/11): cada efeméride tiene que ENSEÑAR
+Roberto respondió las dudas —Víctor Jara por su **natalicio** (1932) y nada de su muerte; Rapa Nui y
+el terremoto de Valdivia se quedan; **sale el título de la U** (va el Código Civil de Bello, 1855); los
+dentistas repetidos pasan al primer hospital de Chile (1552) y a Champollion— y pidió otra cosa: *"todos
+los contenidos deben ser educativos: que un niño quiera preguntar más, o que un profesor pueda dar una
+pequeña clase"*, con fragmentos de poemas y prosa de autores chilenos, científicos, próceres y datos
+curiosos.
+
+- **193 de 366 textos cambiaron**; lo que ya pasaba la prueba se quedó. **57 llevan una cita** (Mistral,
+  Neruda, Huidobro, los Parra, Pezoa Véliz, Gonzalo Rojas, Pedro Prado, Baldomero Lillo, el Himno, frases
+  de O'Higgins, Prat y Bello), de **a lo más 10 palabras y siempre con autor y obra** —el art. 71 B de la
+  Ley 17.336 permite citar fragmentos breves para enseñar nombrándolos—, copiada de una fuente que la
+  reproduce textual (Wikisource, Memoria Chilena). Salieron las marcas, el Día del Rotario y los famosos
+  sin una obra que enseñe.
+- **El largo máximo pasa de 130 a 170**, para que quepa un verso con su contexto: medido en 375×667, el
+  popup entra entero.
+- ⚠️ **Al revisar el año completo aparecieron tres versos repetidos en distintas fechas** (el de Vicuña
+  tres veces, *Piececitos* dos, el del Himno tres) y **una cita de Bello recortada que cambiaba de
+  sentido** («Escriba joven sin miedo», que sigue «…que en Chile nadie lee»). Se dejó cada verso en un
+  solo día y la de Bello salió. La regla quedó escrita en `docs/encargo-efemerides.md`: **una cita nunca
+  se corta donde cambia lo que dice**.
+- `docs/encargo-efemerides.md` gana la sección **"La regla de fondo"**, con la prueba de las dos
+  preguntas (¿el niño preguntaría «¿y por qué?»? ¿el profe podría hablar cinco minutos?).
+- Validador: **366 · 0 errores · 0 avisos**; tablero regenerado. Siguen en `revisada:false`: el juego
+  no muestra nada hasta que Roberto apruebe.

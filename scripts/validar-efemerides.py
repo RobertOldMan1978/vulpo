@@ -16,7 +16,7 @@ from collections import Counter
 RAIZ = Path(__file__).resolve().parent.parent
 CARP = RAIZ / "contenido" / "efemerides"
 TEMAS = {"historia", "ciencia", "naturaleza", "cultura", "deporte", "dia-oficial", "mundo"}
-LARGO = 130
+LARGO = 170
 # Un emoji se locuta por su nombre en ingles ("alto voltaje", Sesion 56): en el texto, nunca.
 EMOJI = re.compile("[\U0001F300-\U0001FAFF☀-➿⬀-⯿️]")
 VETOS = {
