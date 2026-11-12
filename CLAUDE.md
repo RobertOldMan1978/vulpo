@@ -15304,3 +15304,16 @@ más: *"¿no íbamos a mostrar 3 por día?"* — por si el alumno quiere otro da
 - **Pendiente de Roberto:** aprobar los 300 datos (dudas: el rodeo, la chilena, las momias chinchorro,
   las etimologías con «se cree», la catedral de Arica y Eiffel); después autorizar la voz.
 
+#### Cierre de la Sesión 152 — los 300 datos firmados y la voz de las 666 entradas
+- **Roberto aprobó los 300 datos**: el diff fueron 300 marcas y el contador, y el tablero se
+  comprobó con su control positivo (desmarcar uno, que lo detecte, restaurar).
+- **La voz, autorizada y generada: 666 clips (366 efemérides + 300 datos), 44 MB, US$1,52**, en
+  `assets/voz/efem/`. Subidos a R2, paquetes de la app armados (`voz-r2.py paquetes efem`) y
+  `verificar`: 54.049 clips idénticos por MD5. Verificado jugando, espiando el constructor `Audio`:
+  en 3° la efeméride y cada «Otro dato» se piden a `voz.vulpo.cl/efem/` y responden 200; en 6° no
+  habla, que es lo correcto.
+- ⚠️ **Antes de pagar se leyó cómo se pronuncia cada texto, y salió un defecto:** «Kelu-1» (la
+  estrella de María Teresa Ruiz) sonaba «Kelu **menos** 1» y «sub-23», «sub menos 23». El normalizador
+  ahora lee como espacio un guion pegado entre una palabra de 2+ letras y un número; el álgebra de una
+  letra («2x-3») sigue siendo resta. Medido en los bancos con voz: no cambia ningún clip ya grabado.
+

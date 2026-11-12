@@ -280,6 +280,11 @@ def normalizar(texto, oa=""):
     # sintetiza mudo o ambiguo y "32" / "-32" suenan IGUAL — dos opciones que se
     # confunden al oido. Encontrado por auditar-audible-nivel.py en MA04 OA 14
     # ("50 − ▢ = 18", opciones 32 y -32), verificado antes de aplicarlo.
+    # Un guion PEGADO entre una palabra (2+ letras) y un numero es parte de un nombre, no una
+    # resta: "Kelu-1" (la estrella), "sub-23". Sin esto se oia "Kelu menos 1". Exige dos letras
+    # para no tocar el algebra ("2x-3", una letra sola). Medido el 11/11/2026: en los bancos con
+    # voz no aparece en ningun texto locutable (solo en ids), asi que no cambia ningun clip.
+    t = re.sub(r"(?<=[^\W\d_]{2})-(?=\d)", " ", t)
     t = re.sub(r"(?<!\d)[-−](?=\d)", " menos ", t)
     # El blanco a completar ("506 __ 560", "35, 40, ___, 50") hay que NOMBRARLO. Una
     # simple pausa no sirve: "35, 40, 50" suena a que esa es la secuencia, y el nino
