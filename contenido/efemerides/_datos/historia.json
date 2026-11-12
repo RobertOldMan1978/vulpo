@@ -1,0 +1,404 @@
+{
+ "datos": [
+  {
+   "id": "dato-historia-01",
+   "texto": "El pueblo chinchorro, en la costa del norte de Chile, preparaba momias unos dos mil años antes que los egipcios. Son las más antiguas del mundo hechas por personas.",
+   "img": "portada-hist7-cap1.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Cultura_chinchorro",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-02",
+   "texto": "Los changos, pescadores del norte de Chile, salían al mar en balsas hechas con dos cueros de lobo marino inflados como globos. ¿Te subirías a una?",
+   "img": "portada-hist2-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Changos",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-03",
+   "texto": "El curanto de Chiloé se cocina en un hoyo en la tierra: se calientan piedras con fuego y encima van mariscos, carne y papas, tapados con hojas de nalca.",
+   "img": "portada-hist2-cap3.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Curanto",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-04",
+   "texto": "El kultrún es el tambor más importante del pueblo mapuche. En su cuero lleva pintados los cuatro puntos cardinales y las cuatro estaciones del año.",
+   "img": "portada-leng1-cap1.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Kultr%C3%BAn",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-05",
+   "texto": "La ruka mapuche tiene su puerta principal mirando al este, por donde sale el sol. El fogón va al centro y el humo escapa por un agujero en el techo.",
+   "img": "portada-hist2-cap4.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Ruka",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-06",
+   "texto": "En el trafkintu, una costumbre mapuche, las familias intercambian semillas, plantas y alimentos sin usar dinero, y comparten cómo cultivarlos. ¿Qué cambiarías tú?",
+   "img": "portada-cie3-cap3.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Trafkintu",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-07",
+   "texto": "Tierra del Fuego se llama así porque los marineros de Magallanes vieron muchas fogatas en la costa. Las encendían los selk'nam y los yaganes para abrigarse del frío.",
+   "img": "portada-hist-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Isla_Grande_de_Tierra_del_Fuego",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-08",
+   "texto": "Cerca de San Pedro de Atacama está la aldea de Tulor, con más de dos mil años. Sus casas eran redondas y estaban unidas entre sí, como un panal.",
+   "img": "portada-hist7-cap6.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Aldea_de_Tulor",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-09",
+   "texto": "En un cerro de Tarapacá hay una figura humana dibujada con piedras sobre el suelo: el Gigante de Atacama. Mide 86 metros, ¡casi como una cancha de fútbol!",
+   "img": "kimun-sorprendido.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Gigante_de_Atacama",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-10",
+   "texto": "Las iglesias de madera de Chiloé se unen con tarugos, unos clavos hechos de madera. Dieciséis de ellas son Patrimonio de la Humanidad.",
+   "img": "portada-hist6-cap1.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Iglesias_de_Chilo%C3%A9",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-11",
+   "texto": "En Chiloé, cuando una familia muda su casa, los vecinos la arrastran entera con yuntas de bueyes, ¡y a veces cruzando el mar! Se llama tiradura de casa y es una minga.",
+   "img": "portada-hist1-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Minga",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-12",
+   "texto": "Los palafitos de Castro, en Chiloé, son casas de colores sobre pilotes de madera de luma, encima del agua. Se empezaron a construir a fines del siglo diecinueve.",
+   "img": "portada-hist-cap3.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Palafito",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-13",
+   "texto": "La primera bandera chilena era azul, blanca y amarilla. Se izó el 4 de julio de 1812, en una cena con el cónsul de Estados Unidos. ¿Qué celebran ellos ese día?",
+   "img": "portada-hist-cap5.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Bandera_de_Chile",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-14",
+   "texto": "El escudo de Chile lo sostienen un huemul y un cóndor, cada uno con una corona dorada. Lo diseñó el artista inglés Charles Wood y se adoptó en 1834.",
+   "img": "portada-hist2-cap4.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Escudo_de_Chile",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-15",
+   "texto": "En Rapa Nui hay más de novecientos moáis, tallados en la roca del volcán Rano Raraku. Casi todos miran hacia el interior de la isla, no hacia el mar.",
+   "img": "portada-hist2-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Mo%C3%A1i",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-16",
+   "texto": "Los chonos, navegantes del sur de Chile, inventaron la dalca: un bote de tablas cosidas con fibras de quila y sellado con raíces, hojas y corteza.",
+   "img": "portada-hist-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Dalca",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-17",
+   "texto": "La iglesia de San Francisco, en Santiago, se empezó a construir en 1575. Es el edificio más antiguo de Chile del que se conoce la fecha en que se hizo.",
+   "img": "portada-hist6-cap1.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Iglesia_de_San_Francisco_(Santiago_de_Chile)",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-18",
+   "texto": "En 1842 abrió en Santiago la Escuela Normal de Preceptores, para formar profesores. Su primer director fue el argentino Domingo Faustino Sarmiento.",
+   "img": "portada-leng6-cap7.png",
+   "tema": "historia",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-100627.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-19",
+   "texto": "Desde 1920 una ley obliga a todos los niños de Chile a ir a la escuela, y gratis. Al principio eran al menos cuatro años de primaria. ¿Cuántos llevas tú?",
+   "img": "portada-hist3-cap4.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Ley_de_Instrucci%C3%B3n_Primaria_Obligatoria",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-20",
+   "texto": "El Camino del Inca pasaba por el norte de Chile. Por él corrían los chasquis, mensajeros que se pasaban los recados de uno a otro, como en una carrera de relevos.",
+   "img": "portada-hist7-cap6.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Qhapaq_%C3%91an",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-21",
+   "texto": "Los selk'nam de Tierra del Fuego se abrigaban con una capa de piel de guanaco, con el pelo hacia afuera. Sus zapatos se hacían con la piel de las patas del mismo animal.",
+   "img": "portada-hist7-cap1.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Selk%27nam",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-22",
+   "texto": "Los yaganes navegaban en canoas de corteza con una fogata encendida al medio, ¡sobre el agua! Los niños cuidaban el fuego y las mujeres remaban.",
+   "img": "portada-hist2-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Yaganes",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-23",
+   "texto": "Los kawésqar pasaban gran parte del tiempo en canoas de corteza de unos ocho metros: eran casas flotantes. Para hacer fuego sacaban chispas de una piedra llamada pirita.",
+   "img": "portada-cie6-cap5.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Kaw%C3%A9sqar",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-24",
+   "texto": "Los diaguitas, en los valles de Atacama y Coquimbo, pintaban su cerámica con figuras en rojo, negro y blanco. Uno de sus jarros más famosos tiene forma de pato.",
+   "img": "portada-hist3-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Cultura_diaguita",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-25",
+   "texto": "Los plateros mapuche martillaban monedas de plata hasta dejarlas planas y con ellas hacían joyas, como el trarilonco, una cadena que rodea la frente.",
+   "img": "portada-hist-cap3.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Plater%C3%ADa_mapuche",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-26",
+   "texto": "La Real Universidad de San Felipe, en el Santiago colonial, empezó sus clases en 1758. Entre sus cátedras había una para aprender la lengua mapuche.",
+   "img": "portada-leng2-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Real_Universidad_de_San_Felipe",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-27",
+   "texto": "El Palacio de La Moneda se construyó para fabricar monedas: era la Casa de Moneda colonial. Lo diseñó el arquitecto Joaquín Toesca y se inauguró en 1805.",
+   "img": "portada-mate-numeros.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Palacio_de_La_Moneda",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-28",
+   "texto": "La primera estampilla de Chile salió en 1853, se imprimió en Londres y llevaba la cara de Cristóbal Colón. ¿Has mandado alguna vez una carta con estampilla?",
+   "img": "portada-leng-escritura.png",
+   "tema": "historia",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-93601.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-29",
+   "texto": "El mote con huesillo se toma en Chile desde la Colonia: trigo cocido con duraznos secos y su jugo. En 1954, en Santiago se tomaban unos veinte mil litros al día.",
+   "img": "portada-hist2-cap3.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Mote_con_huesillo",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-30",
+   "texto": "La chupalla, el sombrero de paja del huaso, debe su nombre a la achupalla, una planta del campo chileno con cuyas fibras se empezaron a tejer.",
+   "img": "portada-hist1-cap4.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Chupalla",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-31",
+   "texto": "El Fuerte Bulnes se fundó en 1843 junto al estrecho de Magallanes. Su clima era tan duro que en 1848 se fundó Punta Arenas. El fuerte de hoy se reconstruyó en 1943.",
+   "img": "portada-hist-cap5.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Fuerte_Bulnes",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-32",
+   "texto": "Los atacameños hablaban kunza, una lengua cuyo nombre significa nuestro. Sembraban en terrazas en los cerros para que el agua no arrastrara la tierra fértil.",
+   "img": "portada-cie6-cap1.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Pueblo_atacame%C3%B1o",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-33",
+   "texto": "Algunos moáis llevan en la cabeza un pukao, un cilindro de piedra roja sacada del volcán Puna Pau. ¡El más grande pesa unas once toneladas! ¿Cómo lo habrán subido?",
+   "img": "kimun-sorprendido.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Pukao",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-34",
+   "texto": "La estructura de hierro del Mercado Central de Santiago se fabricó en Glasgow, Escocia, al otro lado del mundo. El mercado se inauguró en 1872.",
+   "img": "portada-hist2-cap3.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Mercado_Central_de_Santiago",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-35",
+   "texto": "El Teatro Municipal de Santiago abrió en 1857 con una ópera de Verdi. Su gran lámpara tiene más de catorce mil cristales y mide unos cuatro metros de alto.",
+   "img": "portada-len3-cap8.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Teatro_Municipal_de_Santiago",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-36",
+   "texto": "En China, hace casi dos mil años, Cai Lun mejoró la forma de hacer papel: mezclaba con agua corteza de morera, trapos viejos y redes de pesca. ¿Qué usarías tú?",
+   "img": "portada-leng-escritura.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Cai_Lun",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-37",
+   "texto": "Una de las escrituras más antiguas nació en Mesopotamia hace más de cinco mil años. Se marcaba en tablillas de arcilla húmeda, y sus signos tienen forma de cuña.",
+   "img": "portada-hist7-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Escritura_cuneiforme",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-38",
+   "texto": "Hacia 1450, Johannes Gutenberg inventó una imprenta con letras sueltas de metal que se podían ordenar y volver a usar. Así los libros dejaron de copiarse a mano.",
+   "img": "portada-leng-lectura.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Johannes_Gutenberg",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-39",
+   "texto": "Los mayas contaban de veinte en veinte con solo tres signos: un punto vale uno, una raya vale cinco y una concha es el cero. ¿Cómo escribirías tu edad así?",
+   "img": "portada-mate-numeros.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Numeraci%C3%B3n_maya",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-40",
+   "texto": "Los aztecas usaban granos de cacao como dinero: con cuatro granos se podía comprar un conejo. ¡Las semillas del chocolate eran monedas!",
+   "img": "portada-hist7-cap6.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Cacao",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-41",
+   "texto": "En 1818 O'Higgins mandó convertir La Cañada de Santiago, que era un basural, en un paseo con cuatro filas de álamos traídos de Mendoza. De ahí viene el nombre Alameda.",
+   "img": "portada-hist2-cap1.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Avenida_Libertador_Bernardo_O%27Higgins",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-42",
+   "texto": "Castro, en Chiloé, se fundó en 1567 con el nombre de Santiago de Castro. Es la tercera ciudad más antigua de Chile que ha estado habitada sin interrupción.",
+   "img": "portada-hist1-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Castro_(Chile)",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-43",
+   "texto": "La Serena es la segunda ciudad más antigua de Chile, después de Santiago. Su nombre viene de una comarca de Extremadura, en España, la tierra de Pedro de Valdivia.",
+   "img": "portada-hist4-cap3.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/La_Serena_(Chile)",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-44",
+   "texto": "Navegar al sur pegado a la costa era lento por la corriente de Humboldt. El marino Juan Fernández se fue mar adentro y, hacia 1574, halló las islas que llevan su nombre.",
+   "img": "portada-hist3-cap1.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Archipi%C3%A9lago_Juan_Fern%C3%A1ndez",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-45",
+   "texto": "Los incas no escribían con letras: guardaban sus cuentas en quipus, cordones de colores con nudos. Los colores decían de qué se trataba y los nudos, cuántos había.",
+   "img": "portada-mat3-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Quipu",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-46",
+   "texto": "La Gran Pirámide de Guiza, en Egipto, fue el edificio más alto del mundo durante unos 3800 años. Se calcula que se hizo con más de dos millones de bloques de piedra.",
+   "img": "portada-mate-geometria.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Gran_Pir%C3%A1mide_de_Guiza",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-47",
+   "texto": "El primer sello postal del mundo fue el Penny Black, de Inglaterra, en 1840. Era negro y llevaba la cara de la reina Victoria. Chile tuvo el suyo trece años después.",
+   "img": "portada-len3-cap7.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Penny_Black",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-48",
+   "texto": "Los romanos construyeron unos cuatrocientos mil kilómetros de caminos de piedra. Cada mil pasos ponían un mojón de piedra que marcaba la distancia: una milla romana.",
+   "img": "portada-hist3-cap3.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Calzada_romana",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-49",
+   "texto": "Unos quinientos años antes que Colón, navegantes vikingos llegaron a América y armaron un pequeño poblado en la isla de Terranova, en lo que hoy es Canadá.",
+   "img": "portada-hist7-cap4.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/L%27Anse_aux_Meadows",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-50",
+   "texto": "Se dice que la Gran Muralla China se ve desde la Luna, pero es un mito: aunque mide más de veintiún mil kilómetros de largo, tiene solo unos metros de ancho.",
+   "img": "portada-hist-desafio.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Gran_Muralla_China",
+   "revisada": false
+  }
+ ]
+}

@@ -1,0 +1,404 @@
+{
+ "datos": [
+  {
+   "id": "dato-curioso-01",
+   "texto": "La palabra cancha viene del quechua kancha, que significa recinto o lugar cercado. Por eso una cancha es un espacio con límites. ¿Cuáles son los límites de tu cancha?",
+   "img": "skin-kimun-futbol.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/cancha",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-02",
+   "texto": "Chiloé es un nombre que viene del mapudungun y quiere decir isla de gaviotas. ¿Qué nombre le pondrías tú a una isla, según los animales que viven en ella?",
+   "img": "portada-hist2-cap1.png",
+   "tema": "curioso",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-545957.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-03",
+   "texto": "El ascensor Polanco es el único de Valparaíso que funciona subiendo en vertical. Para llegar a él se cruza un túnel de 150 metros dentro del cerro.",
+   "img": "portada-cie7-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Ascensor_Polanco",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-04",
+   "texto": "Robot viene del checo robota, que significa trabajo. La palabra se hizo famosa por una obra de teatro del escritor checo Karel Čapek, publicada en 1920.",
+   "img": "kimun-cientifico.png",
+   "tema": "curioso",
+   "fuente": "https://en.wikipedia.org/wiki/R.U.R.",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-05",
+   "texto": "En Chile a un bebé le decimos guagua, palabra que viene del quechua wawa. En cambio, en Cuba una guagua es un bus. ¡La misma palabra nombra cosas muy distintas!",
+   "img": "kimun-sorprendido.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/guagua",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-06",
+   "texto": "El cabo de Hornos no tiene nada que ver con un horno. En 1616 lo cruzaron dos navegantes holandeses y lo llamaron Hoorn, como una ciudad de su país.",
+   "img": "portada-hist-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://en.wikipedia.org/wiki/Cape_Horn",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-07",
+   "texto": "El sándwich de jamón con queso derretido se llama Barros Jarpa por Ernesto Barros Jarpa, primo del presidente Barros Luco, que lo pedía siempre así.",
+   "img": "portada-hist2-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://en.wikipedia.org/wiki/Barros_Jarpa_(sandwich)",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-08",
+   "texto": "Pololo es una palabra de origen mapuche. Así se llama también un escarabajo chileno, verde o café oscuro, que al volar zumba como un moscardón.",
+   "img": "portada-cie2-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/pololo",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-09",
+   "texto": "Galaxia viene de una palabra griega que significa leche. Por eso a nuestra galaxia la llamamos Vía Láctea: de noche se ve como un camino blanco en el cielo.",
+   "img": "skin-kimun-astronauta.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/galaxia",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-10",
+   "texto": "La isla de Pascua se llama así porque el holandés Jacob Roggeveen llegó a ella un domingo de Pascua de 1722, y la bautizó con el nombre de ese día.",
+   "img": "portada-hist2-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Isla_de_Pascua",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-11",
+   "texto": "Choclo viene del quechua y nombra la mazorca tierna del maíz. En México la misma mazorca se llama elote, una palabra que viene del náhuatl, la lengua de los aztecas.",
+   "img": "portada-hist-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/choclo",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-12",
+   "texto": "La catedral de San Marcos, en Arica, se atribuye a los talleres de Gustave Eiffel, el de la torre de París. Es toda de hierro, menos sus dos puertas de madera.",
+   "img": "portada-hist6-cap1.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Catedral_de_San_Marcos_de_Arica",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-13",
+   "texto": "Nadie sabe con certeza de dónde viene el nombre Chile. Una idea: del aymara, donde se acaba la tierra. Otra: que imita el canto del trile, un pájaro.",
+   "img": "portada-hist-cap5.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Chile",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-14",
+   "texto": "Lápiz viene del latín lapis, que significa piedra. Y aunque algunos lo llaman lápiz de plomo, por dentro no lleva plomo: lleva grafito, un mineral suave.",
+   "img": "portada-len3-cap4.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/l%C3%A1piz",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-15",
+   "texto": "Poroto viene del quechua purutu. A la misma semilla en México le dicen frijol y en España judía o alubia. ¡Un solo alimento con muchos nombres!",
+   "img": "portada-hist2-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/poroto",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-16",
+   "texto": "Pichilemu viene del mapudungun y quiere decir pequeño bosque. ¿Hay algún lugar cerca de tu casa con nombre en mapudungun?",
+   "img": "portada-cie6-cap1.png",
+   "tema": "curioso",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-545957.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-17",
+   "texto": "Humberstone, en el desierto de Tarapacá, era una oficina de salitre que primero se llamó La Palma. En 1934 tomó el nombre de James Humberstone, un pionero del salitre.",
+   "img": "portada-hist6-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Humberstone",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-18",
+   "texto": "Hipopótamo viene del griego y significa caballo de río. Pasa gran parte del día en el agua, y un adulto sale a respirar cada tres a cinco minutos.",
+   "img": "portada-cie2-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Hippopotamus_amphibius",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-19",
+   "texto": "Palta viene del quechua, y aguacate, como le dicen en México y España, viene del náhuatl. Es la misma fruta, nombrada en dos lenguas originarias de América.",
+   "img": "portada-cie3-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/aguacate",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-20",
+   "texto": "Magallanes llamó patagones a los habitantes del sur. Se cree que tomó el nombre de Patagón, un gigante de una novela de caballería de 1512. De ahí viene Patagonia.",
+   "img": "portada-hist4-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Patagonia",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-21",
+   "texto": "Puerto Toro, en la isla Navarino, es el pueblo más al sur del mundo si no se cuentan las bases de la Antártica. Según el censo de 2024, viven ahí 22 personas.",
+   "img": "portada-hist2-cap1.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Puerto_Toro",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-22",
+   "texto": "La papa nació en los Andes y su nombre viene del quechua. En España le dicen patata, una palabra que mezcla papa con batata, otro tubérculo.",
+   "img": "portada-hist2-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/patata",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-23",
+   "texto": "Los canarios, esos pájaros amarillos que cantan, se llaman así porque vienen de las islas Canarias. ¡El pájaro tomó el nombre de las islas, y no al revés!",
+   "img": "kimun-sorprendido.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/canario",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-24",
+   "texto": "Iquique es un nombre que viene del aymara y significaría dormidero o lugar de descanso. ¿Cómo se llamaría tu barrio si le pusieras un nombre así?",
+   "img": "portada-hist1-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-545957.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-25",
+   "texto": "La humita viene del quechua humint'a. Es choclo molido que se envuelve en chala, la hoja que cubre la mazorca. Chala también viene del quechua.",
+   "img": "portada-hist-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/humita",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-26",
+   "texto": "Hay dos explicaciones para el nombre Valparaíso: que recuerda a un pueblo de España llamado Valparaíso de Arriba, o que los soldados lo llamaron valle del paraíso.",
+   "img": "portada-hist-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Valpara%C3%ADso",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-27",
+   "texto": "Dinosaurio viene de dos palabras griegas: deinós, que significa terrible, y saurio, que significa lagarto. ¡Un dinosaurio es un lagarto terrible!",
+   "img": "portada-hist7-cap1.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/dinosaurio",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-28",
+   "texto": "Pampa viene del quechua y significa llano o llanura. Por eso llamamos pampa a una gran planicie sin árboles, como las del desierto del norte de Chile.",
+   "img": "portada-hist4-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/pampa",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-29",
+   "texto": "Villarrica se fundó en 1552 y su nombre quiere decir villa rica: los españoles buscaban oro en los lavaderos y vetas que había cerca. ¿Qué riqueza tiene tu ciudad?",
+   "img": "portada-cie7-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Villarrica_(Chile)",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-30",
+   "texto": "La torre Eiffel cambia de alto con el calor: el hierro se dilata y su punta puede subir hasta unos 18 centímetros. ¡Crece y se achica según el tiempo!",
+   "img": "portada-cien-materia.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Torre_Eiffel",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-31",
+   "texto": "Cóndor viene del quechua kuntur. Esta ave de los Andes, con las alas abiertas, supera los tres metros de punta a punta. ¿Cuánto mides tú con los brazos abiertos?",
+   "img": "portada-hist2-cap4.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/c%C3%B3ndor",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-32",
+   "texto": "Rapa Nui quiere decir Rapa grande, por otra isla de la Polinesia llamada Rapa. Otro nombre de la isla es Te Pito o te Henua: el ombligo de la Tierra.",
+   "img": "portada-hist3-cap1.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Isla_de_Pascua",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-33",
+   "texto": "El nombre del pudú, el pequeño ciervo de los bosques del sur, viene del mapudungun. Mide unos 35 centímetros de alto y sus cuernos son cortos y rectos.",
+   "img": "portada-cie2-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/pud%C3%BA",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-34",
+   "texto": "Calbuco, en la región de Los Lagos, tiene un nombre mapuche que significa aguas azules. ¿De qué color son las aguas cerca de donde vives?",
+   "img": "kimun-feliz.png",
+   "tema": "curioso",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-545957.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-35",
+   "texto": "Se cuenta que Américo Vespucio vio casas sobre el agua en la costa del Caribe y pensó en Venecia. Así nació el nombre Venezuela, que quiere decir pequeña Venecia.",
+   "img": "portada-hist4-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Venezuela",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-36",
+   "texto": "Copihue viene del mapudungun. Antes de madurar, el fruto de esta planta trepadora parece un pequeño ají, aunque su flor roja es lo que todos conocemos.",
+   "img": "portada-cie3-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/copihue",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-37",
+   "texto": "Llanquihue, el lago del sur de Chile, tiene un nombre mapuche que significa sitio escondido. ¿Por qué crees que un lago tan grande tendría ese nombre?",
+   "img": "portada-len3-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-545957.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-38",
+   "texto": "Ártico viene de la palabra griega para oso, por la constelación de la Osa Menor, que se ve en el norte. Antártico es lo contrario: lo opuesto al Ártico.",
+   "img": "kimun-neutral.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/%C3%81rtico",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-39",
+   "texto": "En Chile a un ratón también le decimos laucha, una palabra que viene del mapudungun. Así se dice igual en Argentina, Bolivia, Paraguay y Uruguay.",
+   "img": "kimun-feliz.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/laucha",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-40",
+   "texto": "Chimbarongo, en la región de O'Higgins, tiene un nombre de origen quechua que significa niebla al otro lado del río. ¿Lo dibujarías?",
+   "img": "portada-cie2-cap4.png",
+   "tema": "curioso",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-545957.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-41",
+   "texto": "Sándwich viene del inglés: lleva el nombre del cuarto conde de Sandwich, un noble inglés del siglo dieciocho. ¿Qué pondrías tú entre dos panes?",
+   "img": "portada-hist2-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/s%C3%A1ndwich",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-42",
+   "texto": "Guanaco viene del quechua wanaku. Este camélido de los Andes se parece mucho a la llama. ¿Sabrías decir en qué se diferencian?",
+   "img": "portada-hist2-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/guanaco",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-43",
+   "texto": "Los selk'nam llamaban a Tierra del Fuego Karukinka, que significa extrema tierra nuestra. ¿Qué nombre le darías tú al lugar donde vives?",
+   "img": "portada-hist3-cap1.png",
+   "tema": "curioso",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-545957.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-44",
+   "texto": "Argentina viene de argentum, que en latín significa plata. El río de la Plata se llamó así porque llevaba hacia las minas de plata de Potosí, en la actual Bolivia.",
+   "img": "kimun-plata.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Argentina",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-45",
+   "texto": "En Chile, los hongos con forma de sombrilla se llaman callampas, palabra que viene del quechua. Algunas se comen y otras son venenosas: nunca las pruebes por tu cuenta.",
+   "img": "portada-cie6-cap5.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/callampa",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-46",
+   "texto": "Maipú tiene un nombre mapuche que significa valle de tierra cultivada. ¿Qué se cultivaría en ese valle antes de que llegaran las ciudades?",
+   "img": "portada-cie3-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-545957.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-47",
+   "texto": "Astronauta une dos palabras: astro, que es una estrella o un planeta, y nauta, que es navegante. ¡Un astronauta es un navegante de los astros!",
+   "img": "skin-kimun-astronauta.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/astronauta",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-48",
+   "texto": "Chacra viene del quechua chakra y nombra una granja donde se siembra y se crían animales. Quien trabaja en una chacra es un chacarero.",
+   "img": "portada-hist1-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/chacra",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-49",
+   "texto": "Zapallo viene del quechua sapallu. En Bolivia y Uruguay, además, se usa zapallo en broma para decir cabeza. ¿Qué otras palabras usas en broma para la cabeza?",
+   "img": "portada-cie6-cap1.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/zapallo",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-50",
+   "texto": "Arica es un nombre que viene del kunza, la lengua de los atacameños, y podría significar bahía nueva. Otros creen que recuerda a un jefe llamado Ariacca.",
+   "img": "portada-hist-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-545957.html",
+   "revisada": false
+  }
+ ]
+}

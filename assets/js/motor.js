@@ -441,6 +441,10 @@ function popupVulpi(o){
    +'#popupDes p{color:#fff;font-size:14px;line-height:1.45;margin:0 0 16px}'
    +'#popupDes .pd-jugar{width:100%;background:var(--violet);color:#fff;border:0;border-radius:14px;'
    +'font-family:inherit;font-weight:900;font-size:17px;padding:13px 0;cursor:pointer}'
+   +'#popupDes .pd-otro{width:100%;margin-top:10px;background:none;border:2px solid var(--cyan);'
+   +'color:var(--cyan);border-radius:14px;font-family:inherit;font-weight:800;font-size:15px;padding:10px 0;cursor:pointer}'
+   +'#popupDes .pd-cambio img,#popupDes .pd-cambio p,#popupDes .pd-cambio h3{animation:pdIn .35s ease-out}'
+   +'@keyframes pdIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}'
    +'#popupDes .pd-x{position:absolute;top:8px;right:12px;background:none;border:0;color:#fff9;'
    +'font-size:26px;line-height:1;cursor:pointer;padding:2px 6px}'
    +'@keyframes pdPop{from{transform:scale(.82);opacity:0}to{transform:scale(1);opacity:1}}';
@@ -453,13 +457,30 @@ function popupVulpi(o){
   +(o.clase?' class="'+o.clase+'"':'')+'>'
   +'<h3'+(o.claseTit?' class="'+o.claseTit+'"':'')+'>'+o.titulo+'</h3>'
   +'<p>'+o.texto+'</p>'
-  +'<button class="pd-jugar">'+o.boton+'</button></div>';
+  +'<button class="pd-jugar">'+o.boton+'</button>'
+  +(o.otro?'<button class="pd-otro">💡 Otro dato</button>':'')+'</div>';
  // callarVoz: la efemeride se lee sola de 1° a 4°, y cerrar el popup tiene que cortar la voz.
  const cerrar=()=>{ ov.style.display='none'; try{localStorage.setItem(o.clave,o.id);}catch(e){} try{callarVoz();}catch(e){} };
  ov.onclick=cerrar;                                          // tocar el fondo cierra
  ov.querySelector('.pd-caja').onclick=e=>e.stopPropagation();
  ov.querySelector('.pd-x').onclick=cerrar;
  ov.querySelector('.pd-jugar').onclick=()=>{ cerrar(); SND.init(); SND.tap(); o.jugar(); };
+ // "Otro dato" (Sesion 152): cambia imagen, titulo y texto SIN cerrar. o.otro() devuelve el
+ // siguiente {titulo, texto, img, ultimo, leer} o null; con el ultimo (o sin mas) el boton se va.
+ const bOtro=ov.querySelector('.pd-otro');
+ if(bOtro) bOtro.onclick=()=>{
+  try{ SND.init(); SND.tap(); }catch(e){}
+  const n=o.otro();
+  if(!n){ bOtro.remove(); return; }
+  const caja=ov.querySelector('.pd-caja');
+  caja.classList.remove('pd-cambio'); void caja.offsetWidth; caja.classList.add('pd-cambio');
+  const im=caja.querySelector('img'); im.src='assets/'+(n.img||'kimun-sorprendido.png'); im.alt='';
+  caja.querySelector('h3').innerHTML=n.titulo;
+  caja.querySelector('p').innerHTML=n.texto;
+  if(n.ultimo) bOtro.remove();
+  try{ callarVoz(); }catch(e){}
+  if(n.leer){ try{ n.leer(); }catch(e){} }
+ };
  ov.style.display='flex';
  return true;   // lo mostro (los return de arriba devuelven undefined: no se mostro)
 }
@@ -497,7 +518,30 @@ function popupDuelo(des){
    - Mientras la intro este en pantalla (su overlay se quita del DOM al terminar) se reintenta.
    - Con LEE_SOLO (1° a 4°) la voz la lee sola; cerrar el popup la corta. */
 const _MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
-let _EFEM=null, _EFEM_INTENTOS=0;
+let _EFEM=null, _EFEM_INTENTOS=0, _DATOS=null;
+/* ===== "Otro dato" (Sesion 152) =====
+   Hasta 2 datos mas en el mismo popup, de un banco SIN fecha (contenido/efemerides/datos.json),
+   cada uno de un tema distinto a los ya mostrados. Spec: 2026-11-11-datos-extra-design.md.
+   Los vistos se recuerdan SIN SUFIJO (entre todos los cursos, como la marca diaria); cuando un
+   tema se acaba, ese tema vuelve a empezar. Solo se usan los revisada:true. */
+const _TEMA_DATO={cultura:'literatura',mundo:'ciencia',historia:'historia',ciencia:'ciencia',naturaleza:'naturaleza',deporte:'deporte'};
+const _TIT_DATO={literatura:'📖 Un verso, un libro',historia:'🏛️ Dato de historia',ciencia:'🔬 Dato de ciencia',
+ naturaleza:'🌿 Dato de naturaleza',deporte:'⚽ Dato de deporte',curioso:'💡 Dato curioso'};
+function _elegirDato(datos,usados){
+ const ok=datos.filter(x=>x.revisada===true && !usados.includes(x.tema));
+ if(!ok.length) return null;
+ let vistos=[]; try{ vistos=JSON.parse(localStorage.getItem('kimun_datos_vistos')||'[]'); }catch(e){}
+ if(!Array.isArray(vistos)) vistos=[];
+ const temas=[...new Set(ok.map(x=>x.tema))];
+ const tema=temas[Math.floor(Math.random()*temas.length)];
+ const del=ok.filter(x=>x.tema===tema);
+ let pool=del.filter(x=>!vistos.includes(x.id));
+ if(!pool.length){ const ids=new Set(del.map(x=>x.id)); vistos=vistos.filter(id=>!ids.has(id)); pool=del; }
+ const d=pool[Math.floor(Math.random()*pool.length)];
+ vistos.push(d.id);
+ try{ localStorage.setItem('kimun_datos_vistos',JSON.stringify(vistos)); }catch(e){}
+ return d;
+}
 // ⚠️ Al abrir el juego la pantalla de inicio YA viene activa desde el HTML, asi que go('scr-rol')
 // no corre en la primera carga: sin esto la efemeride solo salia al VOLVER al inicio. Si las dos
 // vias coinciden no se duplica: popupVulpi no abre un segundo modal sobre uno visible.
@@ -512,18 +556,31 @@ function revisarEfemeride(){
  if($('introOverlay')){ if(++_EFEM_INTENTOS<20) setTimeout(revisarEfemeride,2000); return; }
  if(!_EFEM) _EFEM=fetch('contenido/efemerides/efemerides.json')
    .then(r=>r.ok?r.json():null).catch(()=>null);
- _EFEM.then(d=>{
+ // Si el banco de datos no carga, la efemeride sale igual, sin el boton.
+ if(!_DATOS) _DATOS=fetch('contenido/efemerides/datos.json')
+   .then(r=>r.ok?r.json():null).catch(()=>null);
+ Promise.all([_EFEM,_DATOS]).then(([d,dd])=>{
   if(!d) return;
   const e=(d.efemerides||[]).find(x=>x.fecha===hoy.slice(5) && x.revisada===true);
   if(!e) return;
   const rol=$('scr-rol'); if(!rol || !rol.classList.contains('on')) return;   // ya salio del inicio
   // Solo se lee si ESTE popup se mostro: si el del profe estaba abierto, popupVulpi no muestra
   // la efemeride y leerla seria hablar encima de otro aviso.
+  const lee=typeof LEE_SOLO!=='undefined' && LEE_SOLO && window.VOZ && VOZ.activo;
+  const datos=(dd && dd.datos)||[], usados=[_TEMA_DATO[e.tema]].filter(Boolean);
+  let extra=0;
+  const hayOtro=()=>extra<2 && datos.some(x=>x.revisada===true && !usados.includes(x.tema));
+  const otro=hayOtro() ? ()=>{
+   const x=_elegirDato(datos,usados); if(!x) return null;
+   usados.push(x.tema); extra++;
+   return { titulo:_TIT_DATO[x.tema]||'💡 Otro dato', texto:escHtml(x.texto), img:x.img,
+    ultimo:!hayOtro(), leer: lee ? ()=>leerEnVoz(x.texto) : null };
+  } : null;
   const mostrado=popupVulpi({ clave:'kimun_efem_pop', id:hoy,
    titulo:'📅 Hoy, '+h.getDate()+' de '+_MESES[h.getMonth()], claseTit:'pd-fecha',
    texto:escHtml(e.texto), img:e.img, clase:'pd-efem',
-   boton:'¡Vamos!', jugar:()=>{} });
-  if(mostrado && typeof LEE_SOLO!=='undefined' && LEE_SOLO && window.VOZ && VOZ.activo){
+   boton:'¡Vamos!', jugar:()=>{}, otro });
+  if(mostrado && lee){
    try{ leerEnVoz(e.texto); }catch(x){}
   }
  });

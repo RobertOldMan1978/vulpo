@@ -15265,3 +15265,42 @@ curiosos.
   preguntas (¿el niño preguntaría «¿y por qué?»? ¿el profe podría hablar cinco minutos?).
 - Validador: **366 · 0 errores · 0 avisos**; tablero regenerado. Siguen en `revisada:false`: el juego
   no muestra nada hasta que Roberto apruebe.
+
+### Sesión 152 (2026-11-11) — Las efemérides quedan firmadas, y el popup suma «💡 Otro dato»
+Roberto aprobó **las 366 efemérides** (dijo «aprobé 360», pero el archivo exportado traía las 366 y
+confirmó que estaba perfecto). Desde este push el popup del día **ya sale** en los ocho cursos. Y pidió
+más: *"¿no íbamos a mostrar 3 por día?"* — por si el alumno quiere otro dato, de otra asignatura o tono.
+
+#### El banco de datos extra (sin fecha)
+- **`contenido/efemerides/datos.json`: 300 datos, 50 por tema** — literatura, historia, ciencia,
+  naturaleza, deporte y curioso—, escritos por seis agentes de a dos con el estándar nuevo
+  **`docs/encargo-datos.md`** (todo lo de las efemérides menos la fecha: que enseñe, citas ≤ 10 palabras
+  con autor y obra, nada sensible, fuente https). Más de dos tercios son de Chile en cada tema.
+  ⚠️ **Regla nueva: un dato no repite un hecho ni una cita de las efemérides**, y el validador lo
+  comprueba. Las citas de este proyecto van con **comilla simple** (`'Que el verso sea…'`): la
+  detección no toma el apóstrofo de O'Higgins porque va pegado a una letra.
+- **`scripts/validar-datos.py`** (ids `dato-<tema>-NN`, largo, emoji, imagen del catálogo, fuente,
+  textos repetidos, no empezar con «Hoy»; avisos: política reciente, cita repetida, imagen más de 3
+  veces en un tema) —probado rompiéndolo, cazó los 7 errores— y **`consolidar-datos.py`**, que
+  conserva la firma si el texto y la imagen no cambiaron. Hoy: **300 · 0 errores · 0 avisos**.
+
+#### El juego (`assets/js/motor.js`)
+- `popupVulpi` acepta `o.otro`: un botón **«💡 Otro dato»** que cambia imagen, título y texto **sin
+  cerrar** (con un fundido corto) y, con `LEE_SOLO`, lee el dato nuevo. **Máximo 2 extras**: después
+  el botón se va.
+- **Cada dato es de un tema distinto** a los ya mostrados; el tema de la efeméride se traduce
+  (cultura→literatura, mundo→ciencia, dia-oficial→ninguno). Dentro del tema, uno que el aparato **no
+  haya visto** (`kimun_datos_vistos`, sin sufijo); cuando un tema se acaba, vuelve a empezar.
+- **Solo los aprobados.** Sin datos aprobados —hoy— o si `datos.json` no carga, el popup es idéntico al
+  de antes, sin el botón. Verificado en el navegador: los dos datos de temas distintos, el botón que
+  desaparece, la marca diaria intacta, y los dos casos de borde; los ocho cursos navegan.
+
+#### Aprobación y voz
+- Tablero: sección **«💡 Datos curiosos»** (300 casillas, una «Aprobar todas» por tema);
+  `aplicar-revisadas.py` firma en `datos.json`.
+- La voz `efem` locuta también los datos aprobados (misma carpeta). ⚠️ **Corrección de cifra:** la voz
+  de las 366 efemérides cuesta **US$0,77**, no los ~US$0,30 que se habían estimado.
+
+- **Pendiente de Roberto:** aprobar los 300 datos (dudas: el rodeo, la chilena, las momias chinchorro,
+  las etimologías con «se cree», la catedral de Arica y Eiffel); después autorizar la voz.
+

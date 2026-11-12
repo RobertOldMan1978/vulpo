@@ -259,6 +259,56 @@ def render_efemerides():
     return "".join(H)
 
 
+def render_datos():
+    """Los datos curiosos del boton "Otro dato" (Sesion 152): misma forma que las efemerides
+    (casilla por dato con su imagen y su fuente), agrupados por tema. Ids dato-<tema>-NN.
+    aplicar-revisadas.py escribe la marca en contenido/efemerides/datos.json.
+    """
+    ruta = CONTENIDO / "efemerides" / "datos.json"
+    if not ruta.exists():
+        return ""
+    lista = cargar_json(ruta).get("datos", [])
+    if not lista:
+        return ""
+    nombres = {"literatura": "📖 Literatura", "historia": "🏛️ Historia", "ciencia": "🔬 Ciencia",
+               "naturaleza": "🌿 Naturaleza", "deporte": "⚽ Deporte", "curioso": "💡 Curiosos"}
+    rev = sum(1 for d in lista if d.get("revisada"))
+    H = ['<div class="grupo-tit">💡 Datos curiosos</div>',
+         '<div class="grupo-sub">El botón «Otro dato» del popup de la efeméride: hasta 2 más al día, '
+         'de temas distintos. <b>Solo se muestran los aprobados.</b> Se aprueba el texto <b>y</b> la '
+         'imagen; la fuente es donde se verificó el dato.</div>',
+         '<section class="asig" data-pend-preg="0" data-carpeta="efemerides-datos">',
+         '<div class="asig-head"><div><h2><span class="a-caret">▾</span>Datos curiosos</h2>'
+         '<div class="sub">%d datos · %d aprobados</div></div></div>' % (len(lista), rev)]
+    temas = []
+    for d in lista:
+        if d.get("tema") not in temas:
+            temas.append(d.get("tema"))
+    for t in temas:
+        del_tema = [d for d in lista if d.get("tema") == t]
+        H.append('<div class="lecs"><div class="lecs-head"><b>%s</b>'
+                 '<span class="lecs-n">%d</span>'
+                 '<button class="bulk lecs-bulk">✓ Aprobar todas</button></div>'
+                 % (escape(nombres.get(t, t or "?")), len(del_tema)))
+        for d in del_tema:
+            H.append('<details class="lec" data-lid="%s" open><summary>'
+                     '<span class="pq-check"><input type="checkbox" data-id="%s" data-rev="%s"></span>'
+                     '<b>%s</b><span class="lec-id">%s</span></summary>'
+                     % (escape(d["id"]), escape(d["id"]), "1" if d.get("revisada") else "0",
+                        escape(d["id"]), escape(t or "")))
+            H.append('<div style="display:flex;gap:12px;align-items:center;margin:8px 0">'
+                     '<img src="../assets/%s" width="72" height="72" style="flex-shrink:0;object-fit:contain" alt="">'
+                     '<div><p style="margin:0">%s</p>'
+                     '<div class="lec-sub" style="margin-top:4px">%s · '
+                     '<a href="%s" target="_blank" rel="noopener" style="color:var(--cyan)">fuente</a></div></div></div>'
+                     % (escape(d.get("img", "")), escape(d.get("texto", "")), escape(d.get("img", "")),
+                        escape(d.get("fuente", ""))))
+            H.append("</details>")
+        H.append("</div>")
+    H.append("</section>")
+    return "".join(H)
+
+
 def render_asignatura(oa_data, preg_data, lecciones=(), carpeta=""):
     meta = int(preg_data.get("meta_preguntas_por_oa", 8))
     preguntas = preg_data.get("preguntas", [])
@@ -425,6 +475,7 @@ def generar():
                    ' igual, con el mismo criterio de muestreo.</div>')
         cuerpo += chr(10).join(render_asignatura(oa, pg, lec, car) for car, oa, pg, lec in trans)
     cuerpo += render_efemerides()
+    cuerpo += render_datos()
     if not cuerpo:
         cuerpo = '<p class="vacio">Aún no hay contenido en la carpeta <code>contenido/</code>.</p>'
     marca = datetime.now().strftime("%d-%m-%Y %H:%M")

@@ -1,0 +1,404 @@
+{
+ "datos": [
+  {
+   "id": "dato-naturaleza-01",
+   "texto": "La rana de Darwin, del sur de Chile, mide unos tres centímetros. El papá guarda a sus renacuajos dentro de la boca, en su saco vocal, por seis a ocho semanas.",
+   "img": "portada-cie2-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Rhinoderma_darwinii",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-02",
+   "texto": "En 1834 Charles Darwin describió un zorro que vive casi solo en Chiloé. Hoy lo llamamos zorro de Darwin o zorro chilote, y es de los carnívoros más amenazados del mundo.",
+   "img": "vulpo-mascota.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Lycalopex_fulvipes",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-03",
+   "texto": "El nombre científico del copihue, Lapageria rosea, honra a Josefina, primera esposa de Napoleón, que cultivaba plantas. Sus flores las polinizan los picaflores.",
+   "img": "portada-cie6-cap1.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Lapageria_rosea",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-04",
+   "texto": "El monito del monte no es un mono: es un marsupial, como el canguro. La mamá lleva a sus crías en una bolsa y, cuando salen, las carga sobre su espalda.",
+   "img": "kimun-sorprendido.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Dromiciops_gliroides",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-05",
+   "texto": "El huemul, que aparece en el escudo de Chile junto al cóndor, es el ciervo que vive más al sur de todo el planeta. Está en peligro: ¿cómo podríamos protegerlo?",
+   "img": "portada-hist-cap5.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Hippocamelus_bisulcus",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-06",
+   "texto": "En el Parque Nacional Alerce Costero vive el Gran Abuelo, un alerce de más de tres mil seiscientos años. Un estudio de 2022 calculó que podría tener cerca de cinco mil.",
+   "img": "portada-hist1-cap1.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Fitzroya_cupressoides",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-07",
+   "texto": "La madera del alerce casi no se pudre. Por eso en el sur se usó para hacer tejuelas, las tablitas que cubren las casas, ¡y en lugares aislados sirvió de moneda!",
+   "img": "portada-hist-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Fitzroya_cupressoides",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-08",
+   "texto": "Hay araucarias macho y araucarias hembra, y solo las hembras dan piñones. En mapudungun este árbol se llama pewén, y algunas araucarias pasan los mil años de vida.",
+   "img": "portada-hist2-cap2.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Araucaria_araucana",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-09",
+   "texto": "El cóndor andino puede medir más de tres metros con las alas abiertas, pero casi no las agita: aprovecha el aire caliente que sube desde el suelo para planear.",
+   "img": "portada-hist2-cap4.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Vultur_gryphus",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-10",
+   "texto": "El Ojos del Salado, en la región de Atacama, es el volcán más alto de la Tierra: mide unos 6890 metros. En un cráter de su lado argentino está el lago más alto del mundo.",
+   "img": "portada-cie7-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Ojos_del_Salado",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-11",
+   "texto": "Al sur de Chile está el Campo de Hielo Sur, de unos 350 kilómetros de largo. Es la tercera gran extensión de hielo del planeta, después de la Antártica y Groenlandia.",
+   "img": "portada-hist4-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Campo_de_Hielo_Patagónico_Sur",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-12",
+   "texto": "Casi todos los glaciares se achican, pero el Pío XI, en la Patagonia chilena, ha avanzado. Con 64 kilómetros, es el más largo del hemisferio sur fuera de la Antártica.",
+   "img": "kimun-sorprendido.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Glaciar_Pío_XI",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-13",
+   "texto": "Frente a Chile corre la corriente de Humboldt: agua fría que sube del fondo del mar cargada de plancton. Por eso es una de las zonas con más peces del planeta.",
+   "img": "portada-hist3-cap1.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Corriente_de_Humboldt",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-14",
+   "texto": "El pingüino de Humboldt vive en la costa de Chile. Hace su nido cavando en el guano, que son los excrementos secos de las aves marinas, o en cuevas entre las rocas.",
+   "img": "portada-cie2-cap2.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Spheniscus_humboldti",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-15",
+   "texto": "El flamenco chileno come con la cabeza al revés: mete el pico dado vuelta en el agua y lo usa como un colador para atrapar camaroncitos, larvas y algas.",
+   "img": "portada-cie2-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Phoenicopterus_chilensis",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-16",
+   "texto": "De cada raíz de pelo de la chinchilla chilena salen unos 75 pelos. Por su piel tan suave casi desapareció: se la creyó extinta hasta que en 1978 la volvieron a encontrar.",
+   "img": "kimun-feliz.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Chinchilla_lanigera",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-17",
+   "texto": "La güiña, de los bosques del centro y sur de Chile, es el felino salvaje más pequeño de América: pesa entre dos y tres kilos y sube a los árboles para refugiarse.",
+   "img": "kimun-neutral.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Leopardus_guigna",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-18",
+   "texto": "En el altiplano crece la llareta, una planta que forma un cojín verde tan apretado que parece una roca. Crece lentísimo y puede vivir miles de años.",
+   "img": "portada-cie3-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Azorella_compacta",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-19",
+   "texto": "En 1946 se soltaron castores en Tierra del Fuego. Llegaron a todos sus ríos y sus represas dañan miles de hectáreas de bosque. ¿Qué es una especie invasora?",
+   "img": "portada-hist3-cap5.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.mongabay.com/2025/07/castores-invasores-tierra-del-fuego-reportaje-fotografico/",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-20",
+   "texto": "En El Tatio, a más de cuatro mil metros de altura, hay unos 80 géiseres. Allá arriba el aire pesa menos y el agua hierve a unos 86 grados, no a 100. ¿Por qué será?",
+   "img": "portada-cie7-cap2.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/El_Tatio",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-21",
+   "texto": "El chungungo es una nutria que vive en el mar de Chile. Come flotando de espaldas: pone a sus presas pequeñas sobre el pecho, como si fuera una mesa.",
+   "img": "kimun-feliz.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Lontra_felina",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-22",
+   "texto": "El picaflor de Arica es el ave más pequeña de Chile: mide unos ocho centímetros y pesa apenas dos o tres gramos. Vive en los valles de Azapa y Vitor, en el norte.",
+   "img": "portada-cie6-cap1.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Eulidia_yarrellii",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-23",
+   "texto": "El abejorro chileno, de pelo rojizo, es de los más grandes del mundo. Está en peligro porque abejorros traídos de Europa le quitan el alimento y le pasan enfermedades.",
+   "img": "portada-cie2-cap2.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Bombus_dahlbomii",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-24",
+   "texto": "El desierto de Atacama es el lugar no polar más seco de la Tierra. En algunas zonas, una lluvia que se pueda medir cae apenas una vez cada quince o cuarenta años.",
+   "img": "portada-hist4-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Desierto_de_Atacama",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-25",
+   "texto": "Cuando llueve más de lo normal, en Atacama brotan flores por todas partes: es el desierto florido. Allí se han contado más de doscientas especies de plantas nativas.",
+   "img": "portada-cie3-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Desierto_de_Atacama",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-26",
+   "texto": "La corteza del quillay, árbol del centro de Chile, hace espuma como el jabón. Los mapuche la usaban para lavarse el pelo, y hoy un extracto suyo se usa en vacunas.",
+   "img": "kimun-cientifico.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Quillaja_saponaria",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-27",
+   "texto": "El picaflor gigante, que vive en el centro de Chile, es el colibrí más grande del mundo: mide entre 21 y 24 centímetros de largo. Le gustan los arroyos de los cerros.",
+   "img": "kimun-oro.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Patagona_gigas",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-28",
+   "texto": "El carpintero negro, de los bosques del sur, es el más grande de Sudamérica. El macho tiene la cabeza roja, y con el pico abre la madera para sacar larvas.",
+   "img": "portada-cie2-cap2.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Campephilus_magellanicus",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-29",
+   "texto": "El lago Chungará, en el Parque Nacional Lauca, está a unos 4500 metros de altura, de los más altos del mundo. Sobre él se alza el volcán Parinacota, cubierto de nieve.",
+   "img": "portada-hist2-cap1.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Lago_Chungará",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-30",
+   "texto": "El lago General Carrera es el más grande de Chile y tiene 590 metros de hondo. Lo compartimos con Argentina, donde se llama lago Buenos Aires: ¡un lago con dos nombres!",
+   "img": "portada-hist2-cap1.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Lago_General_Carrera",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-31",
+   "texto": "En el cráter del volcán Villarrica hay un lago de magma que sube y baja. Los mapuche lo llaman Ruka Pillañ, que quiere decir casa del pillán, un espíritu poderoso.",
+   "img": "portada-cie7-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Volcán_Villarrica",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-32",
+   "texto": "Frente al norte de Chile, la fosa de Atacama baja más de ocho mil metros. Allí se halló un pequeño crustáceo, y lo llamaron Dulcibella camanchaca, como la niebla nortina.",
+   "img": "portada-hist-cap2.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Fosa_de_Atacama",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-33",
+   "texto": "El toromiro es un árbol que solo existía en Rapa Nui. El último silvestre vivía en el cráter Rano Kau, pero alguien guardó sus semillas y hoy crece en jardines botánicos.",
+   "img": "portada-cie3-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Sophora_toromiro",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-34",
+   "texto": "La nalca del sur de Chile puede pasar los cuatro metros y sus hojas miden más de un metro. Su tallo se come como fruta, y con sus hojas se tapa el curanto en Chiloé.",
+   "img": "portada-hist2-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Gunnera_tinctoria",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-35",
+   "texto": "El hielo de la Antártica guarda cerca del 70 por ciento del agua dulce del mundo. Si se derritiera entero, el nivel del mar subiría unos 61 metros.",
+   "img": "portada-cie2-cap4.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Antártida",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-36",
+   "texto": "La temperatura más baja medida en la Tierra fue de 89 grados bajo cero, en 1983, en la base Vostok de la Antártica. ¿Cómo se abrigarán los científicos que viven allí?",
+   "img": "kimun-sorprendido.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Antártida",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-37",
+   "texto": "Cerca de Chiloé, en el golfo de Corcovado, se juntan ballenas azules a comer. Es el animal más grande que ha existido, y su corazón puede pesar unos 600 kilos.",
+   "img": "portada-hist-cap2.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Balaenoptera_musculus",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-38",
+   "texto": "El canelo, o foye, es un árbol sagrado para el pueblo mapuche. Su nombre científico recuerda a John Winter, un marino que en 1578 tomó su corteza contra el escorbuto.",
+   "img": "portada-hist2-cap2.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Drimys_winteri",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-39",
+   "texto": "La vicuña vive en el altiplano del norte de Chile, a más de 3200 metros. Su lana es de las más finas del mundo, y por eso la cazaron tanto que casi desapareció.",
+   "img": "portada-hist4-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Vicugna_vicugna",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-40",
+   "texto": "En Chile hay cerca de dos mil volcanes, y unos noventa se consideran activos. ¿Sabes cuál es el volcán más cercano a tu casa?",
+   "img": "portada-cie7-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://radio.uchile.cl/2014/05/06/estudio-identifica-los-diez-volcanes-mas-activos-de-chile/",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-41",
+   "texto": "El picaflor de Juan Fernández solo vive en la isla Robinson Crusoe. El macho es rojo ladrillo y la hembra es verde: ¡parecen de dos especies distintas!",
+   "img": "portada-cie6-cap1.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Sephanoides_fernandensis",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-42",
+   "texto": "El zorro culpeo vive en la cordillera de los Andes, desde el norte de Chile hasta Tierra del Fuego. Es el segundo más grande de Sudamérica en la familia de los perros.",
+   "img": "vulpi.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Lycalopex_culpaeus",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-43",
+   "texto": "El degú solo vive en Chile, y vive en grupo: las familias cavan juntas sus madrigueras bajo tierra y se avisan con muchos sonidos distintos. ¿Has visto uno?",
+   "img": "portada-cie6-cap5.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Octodon_degus",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-44",
+   "texto": "El pulpo tiene tres corazones y su sangre es azul, porque lleva una sustancia con cobre. Además, dos tercios de sus neuronas están en sus ocho brazos.",
+   "img": "portada-cien-cuerpo.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Octopoda",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-45",
+   "texto": "El ajolote, un anfibio de los canales de Xochimilco, en México, puede regenerar sus patas, su cola y hasta partes de su corazón. Por eso los científicos lo estudian.",
+   "img": "portada-cie2-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Ambystoma_mexicanum",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-46",
+   "texto": "Los tardígrados, u osos de agua, miden medio milímetro y viven en el musgo. Pueden secarse casi por completo y revivir, ¡y en 2007 sobrevivieron un viaje al espacio!",
+   "img": "portada-cien-celula.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Tardigrada",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-47",
+   "texto": "El cuello de la jirafa puede medir unos dos metros, pero tiene solo siete vértebras: las mismas que tienes tú en el cuello. ¿Cómo de grande será cada una?",
+   "img": "kimun-neutral.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Giraffa_camelopardalis",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-48",
+   "texto": "El ave más pequeña del mundo es el zunzuncito de Cuba, un picaflor de unos seis centímetros que pesa menos de dos gramos. Su nido mide unos tres centímetros.",
+   "img": "kimun-feliz.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Mellisuga_helenae",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-49",
+   "texto": "El ser vivo más alto del mundo es una secuoya llamada Hyperion, en California: mide unos 115 metros. El alerce chileno, en cambio, puede pasar los 50.",
+   "img": "portada-cie1-cap4.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Sequoia_sempervirens",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-50",
+   "texto": "La estrella de mar no tiene cerebro, pero tiene un ojo simple en la punta de cada brazo. Para comer, saca su estómago por la boca y envuelve a su presa.",
+   "img": "kimun-cientifico.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Asteroidea",
+   "revisada": false
+  }
+ ]
+}

@@ -1,0 +1,2405 @@
+{
+ "revisadas": 0,
+ "datos": [
+  {
+   "id": "dato-ciencia-01",
+   "texto": "El físico chileno Carlos Espinosa inventó en 1954 el atrapanieblas: una malla que atrapa las gotitas de la niebla del norte y las junta como agua.",
+   "img": "portada-cie2-cap4.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Atrapanieblas",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-02",
+   "texto": "La rapamicina, un remedio que ayuda a quienes reciben un trasplante, la fabrica una bacteria hallada en la tierra de Rapa Nui. Por eso su nombre recuerda a la isla.",
+   "img": "portada-cien-celula.png",
+   "tema": "ciencia",
+   "fuente": "https://en.wikipedia.org/wiki/Sirolimus",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-03",
+   "texto": "En Magallanes se encontró el Stegouros, un dinosaurio acorazado descrito en 2021. Su cola terminaba en una especie de macana plana. ¿Para qué crees que la usaba?",
+   "img": "portada-cie6-cap5.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Stegouros_elengassen",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-04",
+   "texto": "Cerca de Caldera, junto a la carretera, hay más de 40 ballenas fósiles de hace unos siete millones de años. El lugar se llama Cerro Ballena.",
+   "img": "kimun-sorprendido.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Cerro_Ballena",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-05",
+   "texto": "El primer observatorio astronómico de Chile se instaló en 1849 en el cerro Santa Lucía, en Santiago. Hoy es el Observatorio Astronómico Nacional, en el cerro Calán.",
+   "img": "portada-hist-cap1.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Observatorio_Astron%C3%B3mico_Nacional_(Chile)",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-06",
+   "texto": "En 1897 se inauguró cerca de Lota la central Chivilingo, la primera hidroeléctrica de Chile. Con la fuerza del agua hacía electricidad para las minas de carbón.",
+   "img": "portada-cien-electricidad.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Central_hidroel%C3%A9ctrica_Chivilingo",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-07",
+   "texto": "Cada antena de ALMA pesa unas 115 toneladas. Para moverlas hay un camión gigante llamado Otto, con 28 ruedas, ¡y su chofer lleva oxígeno para respirar en la altura!",
+   "img": "kimun-sorprendido.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Atacama_Large_Millimeter_Array",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-08",
+   "texto": "En el cerro Pachón, en la región de Coquimbo, el observatorio Vera Rubin tiene una cámara de 3200 megapíxeles para fotografiar todo su cielo cada pocas noches.",
+   "img": "skin-kimun-astronauta.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Observatorio_Vera_C._Rubin",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-09",
+   "texto": "En el desierto de Atacama, la planta Cerro Dominador junta la luz del Sol con espejos en una torre de 252 metros. Guarda ese calor en sales y da electricidad de noche.",
+   "img": "portada-hist-desafio.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Cerro_Dominador",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-10",
+   "texto": "A 4500 metros de altura, en la región de Antofagasta, Cerro Pabellón fue en 2017 la primera planta de Sudamérica que hace electricidad con el calor de la Tierra.",
+   "img": "portada-cie7-cap3.png",
+   "tema": "ciencia",
+   "fuente": "https://www.latercera.com/noticia/enel-enap-inauguraron-la-primera-planta-geotermica-sudamerica/",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-11",
+   "texto": "El bioquímico chileno Pablo Valenzuela ayudó a crear la primera vacuna contra la hepatitis B, una infección del hígado. ¿Cómo enseña una vacuna al cuerpo a defenderse?",
+   "img": "portada-cien-cuerpo.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Pablo_Valenzuela",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-12",
+   "texto": "En 1959 el biólogo chileno Humberto Maturana participó en un estudio llamado Lo que el ojo de la rana le dice al cerebro de la rana. ¿Cómo verá el mundo una rana?",
+   "img": "portada-cie2-cap3.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Humberto_Maturana",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-13",
+   "texto": "María Teresa Ruiz fue la primera mujer en estudiar astrofísica en la Universidad de Princeton. En 1997 fue la primera en ganar el Premio Nacional de Ciencias Exactas.",
+   "img": "portada-cie3-cap2.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Ruiz",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-14",
+   "texto": "El astrónomo José Maza buscó supernovas, estrellas que explotan. Sus medidas ayudaron a descubrir que el universo se expande cada vez más rápido.",
+   "img": "portada-hist-cap1.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Jos%C3%A9_Maza_Sancho",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-15",
+   "texto": "En 1982 el biólogo Juan Carlos Castilla cerró un trozo de costa en Las Cruces para ver cómo cambia el mar si nadie saca nada. Allí estudió al loco, un caracol marino.",
+   "img": "portada-len7-cap5.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Juan_Carlos_Castilla_Zenobi",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-16",
+   "texto": "La botánica Mary Kalin Arroyo estudia cómo se reproducen las plantas y cómo cuidarlas. En 2010 ganó el Premio Nacional de Ciencias Naturales. ¿Quién poliniza las flores?",
+   "img": "portada-cie3-cap3.png",
+   "tema": "ciencia",
+   "fuente": "https://uchile.cl/presentacion/historia/grandes-figuras/premios-nacionales/ciencias/mary-therese-kalin",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-17",
+   "texto": "En 1992 el chileno Claudio Teitelboim, junto a Máximo Bañados y Jorge Zanelli, describió un agujero negro especial. Se llama BTZ, por la inicial de sus tres apellidos.",
+   "img": "kimun-calculista.png",
+   "tema": "ciencia",
+   "fuente": "https://en.wikipedia.org/wiki/BTZ_black_hole",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-18",
+   "texto": "La domeikita es un mineral de cobre que Ignacio Domeyko describió en 1845 en una mina de Coquimbo. Su nombre honra a ese sabio que estudió las piedras de Chile.",
+   "img": "portada-cien-materia.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Domeykita",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-19",
+   "texto": "En 2017 llegó al espacio el SUCHAI 1, el primer satélite construido en Chile. Es un nanosatélite, un satélite pequeñito, hecho en la Universidad de Chile.",
+   "img": "skin-kimun-astronauta.png",
+   "tema": "ciencia",
+   "fuente": "https://www.biobiochile.cl/noticias/ciencia-y-tecnologia/astronomia/2017/06/20/chile-lanzara-el-primer-satelite-construido-en-territorio-nacional-el-suchai-1.shtml",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-20",
+   "texto": "En 1922, desde la Universidad de Chile, los ingenieros Enrique Sazié y Arturo Salazar hicieron la primera transmisión de radio del país. ¿Cómo viaja la voz sin cables?",
+   "img": "portada-leng-textos.png",
+   "tema": "ciencia",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-95378.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-21",
+   "texto": "Al sur de Copiapó se halló el Arackar licanantay, un dinosaurio de cuello largo de unos seis metros. Su nombre, en lengua kunza, significa huesos de los atacameños.",
+   "img": "portada-cie6-cap5.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Arackar_licanantay",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-22",
+   "texto": "En el glaciar Tyndall, en Torres del Paine, la paleontóloga Judith Pardo ha contado más de 87 ictiosaurios: reptiles marinos de más de 131 millones de años.",
+   "img": "kimun-sorprendido.png",
+   "tema": "ciencia",
+   "fuente": "https://www.24horas.cl/conciencia-24-7/ciencia/fiona-fosil-ictiosaurio-glaciar-tyndall",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-23",
+   "texto": "La NASA probó en el desierto de Atacama un robot pensado para ir a Marte. Eligió ese lugar porque es muy seco y se parece mucho al planeta rojo. ¿Qué buscarías tú allá?",
+   "img": "portada-cie3-cap2.png",
+   "tema": "ciencia",
+   "fuente": "https://www.eldinamo.cl/tech/2013/06/30/nasa-prueba-en-el-desierto-de-atacama-proximo-robot-que-ira-a-marte/",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-24",
+   "texto": "El observatorio Cerro Tololo, en la región de Coquimbo, empezó a funcionar en 1967 a 2200 metros de altura. Su nombre significaría al borde del abismo.",
+   "img": "portada-hist7-cap2.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Observatorio_Interamericano_del_Cerro_Tololo",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-25",
+   "texto": "En el cerro Paranal, en Antofagasta, el telescopio VLT son en verdad cuatro, con espejos de 8,2 metros. Pueden juntar su luz y trabajar casi como si fueran uno solo.",
+   "img": "skin-kimun-astronauta.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Observatorio_Paranal",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-26",
+   "texto": "En Las Campanas, en Atacama, se construye el Telescopio Gigante de Magallanes: siete espejos de 8,4 metros que juntos verán como uno de más de 24 metros.",
+   "img": "portada-cie3-cap1.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Telescopio_Gigante_de_Magallanes",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-27",
+   "texto": "En el cerro Armazones, cerca de Paranal, se construye el ELT. Su espejo principal medirá 39 metros de ancho, como un ojo gigante para mirar el universo.",
+   "img": "portada-hist7-cap2.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Telescopio_Extremadamente_Grande",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-28",
+   "texto": "Desde 1998 Chile limita las luces que apuntan al cielo en Antofagasta, Atacama y Coquimbo. Así protege los cielos más limpios del hemisferio sur para los telescopios.",
+   "img": "portada-cie1-cap4.png",
+   "tema": "ciencia",
+   "fuente": "https://forbes.cl/actualidad/2024-02-20/asi-trabaja-la-brigada-de-proteccion-de-cielos-oscuros-contra-la-contaminacion-luminica-en-el-valle-del-elqui/",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-29",
+   "texto": "En 1834 el naturalista Charles Darwin subió al cerro La Campana, en la zona central de Chile. Desde arriba estudió los valles que bajan desde la costa hacia el interior.",
+   "img": "portada-hist4-cap3.png",
+   "tema": "ciencia",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-93189.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-30",
+   "texto": "El rajo de Chuquicamata, una mina de cobre cerca de Calama, mide unos cinco kilómetros de largo y uno de hondo. Es la mina de la que más tierra se ha sacado en el mundo.",
+   "img": "portada-hist6-cap2.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Chuquicamata",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-31",
+   "texto": "Frente a Chile, la placa de Nazca, el piso del océano, se mete por debajo de América del Sur. Ese choque levantó los Andes y explica los temblores y volcanes.",
+   "img": "portada-cie7-cap3.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Placa_de_Nazca",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-32",
+   "texto": "El naturalista Rodulfo Philippi dirigió el Museo Nacional de Historia Natural por 44 años. Describió más de mil seiscientas especies que hoy siguen siendo válidas.",
+   "img": "portada-cie2-cap2.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Rodulfo_Amando_Philippi",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-33",
+   "texto": "Desde 1963 el Instituto Antártico Chileno, con sede en Punta Arenas, organiza cada año expediciones de científicos a la Antártica. ¿Qué investigarías tú en el hielo?",
+   "img": "portada-hist2-cap1.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Instituto_Ant%C3%A1rtico_Chileno",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-34",
+   "texto": "Héctor Croxatto fue compañero de Pablo Neruda en el liceo de Temuco. Ya científico, en 1942 descubrió con su hermano una sustancia que regula la presión de la sangre.",
+   "img": "portada-cien-cuerpo.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/H%C3%A9ctor_Croxatto",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-35",
+   "texto": "En 1852 una línea de telégrafo unió por primera vez Santiago y Valparaíso, pasando por Casablanca. ¿Cómo viaja un mensaje por un cable?",
+   "img": "portada-hist6-cap2.png",
+   "tema": "ciencia",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-94641.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-36",
+   "texto": "El biofísico chileno Ramón Latorre estudia los canales iónicos, pequeñas puertas de las células por donde pasan partículas con carga. En 2002 ganó el Premio Nacional.",
+   "img": "kimun-cientifico.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Ram%C3%B3n_Latorre",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-37",
+   "texto": "El astrónomo chileno Mario Hamuy usó supernovas, estrellas que explotan, como faros para medir distancias en el universo. En 2015 ganó el Premio Nacional.",
+   "img": "portada-hist-cap1.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Mario_Hamuy_Wackenhut",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-38",
+   "texto": "Una persona adulta tiene 206 huesos. De niños tenemos más, porque al crecer algunos huesos se van soldando entre sí. ¿Cuántos huesos tendrá tu mano?",
+   "img": "portada-hist1-cap1.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Esqueleto_humano",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-39",
+   "texto": "Tu corazón tiene más o menos el tamaño de un puño, y aun así bombea unos siete mil litros de sangre al día. ¿Cuántas veces late en un minuto?",
+   "img": "portada-cien-cuerpo.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Coraz%C3%B3n_humano",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-40",
+   "texto": "Louis Braille, un joven francés que quedó ciego de niño, creó en 1825 un sistema de puntos en relieve para leer con los dedos. Cada letra usa hasta seis puntos.",
+   "img": "portada-leng-lectura.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Braille",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-41",
+   "texto": "En 1928 Alexander Fleming volvió de vacaciones y vio que un hongo había frenado a las bacterias de una placa. Así descubrió la penicilina, el primer antibiótico.",
+   "img": "portada-cien-celula.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Penicilina",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-42",
+   "texto": "En 1796 Edward Jenner probó la primera vacuna contra la viruela. La palabra vacuna viene de vaca, porque la sacó de una viruela que daba a esos animales.",
+   "img": "kimun-cientifico.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Edward_Jenner",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-43",
+   "texto": "La luz del Sol tarda unos ocho minutos en llegar a la Tierra. O sea, cuando miras el cielo de día, ves la luz que salió del Sol hace un ratito.",
+   "img": "portada-cie3-cap2.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Unidad_astron%C3%B3mica",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-44",
+   "texto": "Cuentan que Arquímedes vio subir el agua de su tina al meterse y entendió cómo medir una corona. Gritó eureka, que en griego quiere decir lo encontré.",
+   "img": "portada-hist3-cap2.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Principio_de_Arqu%C3%ADmedes",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-45",
+   "texto": "Marie Curie es la única persona con premios Nobel en dos ciencias distintas: física y química. Llamó polonio a un elemento que descubrió, en honor a Polonia, su país.",
+   "img": "portada-cien-materia.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Marie_Curie",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-46",
+   "texto": "En 1945 el ingeniero Percy Spencer notó que un chocolate se derretía en su bolsillo junto a una máquina de ondas. De esa sorpresa nació el horno microondas.",
+   "img": "portada-cien-electricidad.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Horno_de_microondas",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-47",
+   "texto": "El agua es de las pocas sustancias que crecen al congelarse. Por eso el hielo pesa menos que el agua del mismo tamaño y flota. ¿Lo has visto en un vaso?",
+   "img": "portada-cie2-cap4.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Hielo",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-48",
+   "texto": "Si estiraras el ADN de una sola de tus células, mediría unos dos metros. Va tan enrollado que cabe en un núcleo cien veces más chico que un milímetro.",
+   "img": "portada-cien-celula.png",
+   "tema": "ciencia",
+   "fuente": "https://www.publico.es/actualidad/meter-dos-metros-adn-0-01-milimetros.amp.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-49",
+   "texto": "En el espacio no se escucha nada, porque el sonido no viaja en el vacío. En cambio, en el agua viaja casi cinco veces más rápido que en el aire.",
+   "img": "portada-leng1-cap1.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Sonido",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-50",
+   "texto": "Isaac Newton mostró con un prisma que la luz blanca trae todos los colores. En el arcoíris, las gotas de lluvia hacen lo mismo. Se ve con el Sol a tu espalda.",
+   "img": "portada-cie3-cap1.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Arco%C3%ADris",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-01",
+   "texto": "La palabra cancha viene del quechua kancha, que significa recinto o lugar cercado. Por eso una cancha es un espacio con límites. ¿Cuáles son los límites de tu cancha?",
+   "img": "skin-kimun-futbol.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/cancha",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-02",
+   "texto": "Chiloé es un nombre que viene del mapudungun y quiere decir isla de gaviotas. ¿Qué nombre le pondrías tú a una isla, según los animales que viven en ella?",
+   "img": "portada-hist2-cap1.png",
+   "tema": "curioso",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-545957.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-03",
+   "texto": "El ascensor Polanco es el único de Valparaíso que funciona subiendo en vertical. Para llegar a él se cruza un túnel de 150 metros dentro del cerro.",
+   "img": "portada-cie7-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Ascensor_Polanco",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-04",
+   "texto": "Robot viene del checo robota, que significa trabajo. La palabra se hizo famosa por una obra de teatro del escritor checo Karel Čapek, publicada en 1920.",
+   "img": "kimun-cientifico.png",
+   "tema": "curioso",
+   "fuente": "https://en.wikipedia.org/wiki/R.U.R.",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-05",
+   "texto": "En Chile a un bebé le decimos guagua, palabra que viene del quechua wawa. En cambio, en Cuba una guagua es un bus. ¡La misma palabra nombra cosas muy distintas!",
+   "img": "kimun-sorprendido.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/guagua",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-06",
+   "texto": "El cabo de Hornos no tiene nada que ver con un horno. En 1616 lo cruzaron dos navegantes holandeses y lo llamaron Hoorn, como una ciudad de su país.",
+   "img": "portada-hist-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://en.wikipedia.org/wiki/Cape_Horn",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-07",
+   "texto": "El sándwich de jamón con queso derretido se llama Barros Jarpa por Ernesto Barros Jarpa, primo del presidente Barros Luco, que lo pedía siempre así.",
+   "img": "portada-hist2-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://en.wikipedia.org/wiki/Barros_Jarpa_(sandwich)",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-08",
+   "texto": "Pololo es una palabra de origen mapuche. Así se llama también un escarabajo chileno, verde o café oscuro, que al volar zumba como un moscardón.",
+   "img": "portada-cie2-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/pololo",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-09",
+   "texto": "Galaxia viene de una palabra griega que significa leche. Por eso a nuestra galaxia la llamamos Vía Láctea: de noche se ve como un camino blanco en el cielo.",
+   "img": "skin-kimun-astronauta.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/galaxia",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-10",
+   "texto": "La isla de Pascua se llama así porque el holandés Jacob Roggeveen llegó a ella un domingo de Pascua de 1722, y la bautizó con el nombre de ese día.",
+   "img": "portada-hist2-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Isla_de_Pascua",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-11",
+   "texto": "Choclo viene del quechua y nombra la mazorca tierna del maíz. En México la misma mazorca se llama elote, una palabra que viene del náhuatl, la lengua de los aztecas.",
+   "img": "portada-hist-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/choclo",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-12",
+   "texto": "La catedral de San Marcos, en Arica, se atribuye a los talleres de Gustave Eiffel, el de la torre de París. Es toda de hierro, menos sus dos puertas de madera.",
+   "img": "portada-hist6-cap1.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Catedral_de_San_Marcos_de_Arica",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-13",
+   "texto": "Nadie sabe con certeza de dónde viene el nombre Chile. Una idea: del aymara, donde se acaba la tierra. Otra: que imita el canto del trile, un pájaro.",
+   "img": "portada-hist-cap5.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Chile",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-14",
+   "texto": "Lápiz viene del latín lapis, que significa piedra. Y aunque algunos lo llaman lápiz de plomo, por dentro no lleva plomo: lleva grafito, un mineral suave.",
+   "img": "portada-len3-cap4.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/l%C3%A1piz",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-15",
+   "texto": "Poroto viene del quechua purutu. A la misma semilla en México le dicen frijol y en España judía o alubia. ¡Un solo alimento con muchos nombres!",
+   "img": "portada-hist2-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/poroto",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-16",
+   "texto": "Pichilemu viene del mapudungun y quiere decir pequeño bosque. ¿Hay algún lugar cerca de tu casa con nombre en mapudungun?",
+   "img": "portada-cie6-cap1.png",
+   "tema": "curioso",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-545957.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-17",
+   "texto": "Humberstone, en el desierto de Tarapacá, era una oficina de salitre que primero se llamó La Palma. En 1934 tomó el nombre de James Humberstone, un pionero del salitre.",
+   "img": "portada-hist6-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Humberstone",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-18",
+   "texto": "Hipopótamo viene del griego y significa caballo de río. Pasa gran parte del día en el agua, y un adulto sale a respirar cada tres a cinco minutos.",
+   "img": "portada-cie2-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Hippopotamus_amphibius",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-19",
+   "texto": "Palta viene del quechua, y aguacate, como le dicen en México y España, viene del náhuatl. Es la misma fruta, nombrada en dos lenguas originarias de América.",
+   "img": "portada-cie3-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/aguacate",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-20",
+   "texto": "Magallanes llamó patagones a los habitantes del sur. Se cree que tomó el nombre de Patagón, un gigante de una novela de caballería de 1512. De ahí viene Patagonia.",
+   "img": "portada-hist4-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Patagonia",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-21",
+   "texto": "Puerto Toro, en la isla Navarino, es el pueblo más al sur del mundo si no se cuentan las bases de la Antártica. Según el censo de 2024, viven ahí 22 personas.",
+   "img": "portada-hist2-cap1.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Puerto_Toro",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-22",
+   "texto": "La papa nació en los Andes y su nombre viene del quechua. En España le dicen patata, una palabra que mezcla papa con batata, otro tubérculo.",
+   "img": "portada-hist2-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/patata",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-23",
+   "texto": "Los canarios, esos pájaros amarillos que cantan, se llaman así porque vienen de las islas Canarias. ¡El pájaro tomó el nombre de las islas, y no al revés!",
+   "img": "kimun-sorprendido.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/canario",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-24",
+   "texto": "Iquique es un nombre que viene del aymara y significaría dormidero o lugar de descanso. ¿Cómo se llamaría tu barrio si le pusieras un nombre así?",
+   "img": "portada-hist1-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-545957.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-25",
+   "texto": "La humita viene del quechua humint'a. Es choclo molido que se envuelve en chala, la hoja que cubre la mazorca. Chala también viene del quechua.",
+   "img": "portada-hist-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/humita",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-26",
+   "texto": "Hay dos explicaciones para el nombre Valparaíso: que recuerda a un pueblo de España llamado Valparaíso de Arriba, o que los soldados lo llamaron valle del paraíso.",
+   "img": "portada-hist-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Valpara%C3%ADso",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-27",
+   "texto": "Dinosaurio viene de dos palabras griegas: deinós, que significa terrible, y saurio, que significa lagarto. ¡Un dinosaurio es un lagarto terrible!",
+   "img": "portada-hist7-cap1.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/dinosaurio",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-28",
+   "texto": "Pampa viene del quechua y significa llano o llanura. Por eso llamamos pampa a una gran planicie sin árboles, como las del desierto del norte de Chile.",
+   "img": "portada-hist4-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/pampa",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-29",
+   "texto": "Villarrica se fundó en 1552 y su nombre quiere decir villa rica: los españoles buscaban oro en los lavaderos y vetas que había cerca. ¿Qué riqueza tiene tu ciudad?",
+   "img": "portada-cie7-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Villarrica_(Chile)",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-30",
+   "texto": "La torre Eiffel cambia de alto con el calor: el hierro se dilata y su punta puede subir hasta unos 18 centímetros. ¡Crece y se achica según el tiempo!",
+   "img": "portada-cien-materia.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Torre_Eiffel",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-31",
+   "texto": "Cóndor viene del quechua kuntur. Esta ave de los Andes, con las alas abiertas, supera los tres metros de punta a punta. ¿Cuánto mides tú con los brazos abiertos?",
+   "img": "portada-hist2-cap4.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/c%C3%B3ndor",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-32",
+   "texto": "Rapa Nui quiere decir Rapa grande, por otra isla de la Polinesia llamada Rapa. Otro nombre de la isla es Te Pito o te Henua: el ombligo de la Tierra.",
+   "img": "portada-hist3-cap1.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Isla_de_Pascua",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-33",
+   "texto": "El nombre del pudú, el pequeño ciervo de los bosques del sur, viene del mapudungun. Mide unos 35 centímetros de alto y sus cuernos son cortos y rectos.",
+   "img": "portada-cie2-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/pud%C3%BA",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-34",
+   "texto": "Calbuco, en la región de Los Lagos, tiene un nombre mapuche que significa aguas azules. ¿De qué color son las aguas cerca de donde vives?",
+   "img": "kimun-feliz.png",
+   "tema": "curioso",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-545957.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-35",
+   "texto": "Se cuenta que Américo Vespucio vio casas sobre el agua en la costa del Caribe y pensó en Venecia. Así nació el nombre Venezuela, que quiere decir pequeña Venecia.",
+   "img": "portada-hist4-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Venezuela",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-36",
+   "texto": "Copihue viene del mapudungun. Antes de madurar, el fruto de esta planta trepadora parece un pequeño ají, aunque su flor roja es lo que todos conocemos.",
+   "img": "portada-cie3-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/copihue",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-37",
+   "texto": "Llanquihue, el lago del sur de Chile, tiene un nombre mapuche que significa sitio escondido. ¿Por qué crees que un lago tan grande tendría ese nombre?",
+   "img": "portada-len3-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-545957.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-38",
+   "texto": "Ártico viene de la palabra griega para oso, por la constelación de la Osa Menor, que se ve en el norte. Antártico es lo contrario: lo opuesto al Ártico.",
+   "img": "kimun-neutral.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/%C3%81rtico",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-39",
+   "texto": "En Chile a un ratón también le decimos laucha, una palabra que viene del mapudungun. Así se dice igual en Argentina, Bolivia, Paraguay y Uruguay.",
+   "img": "kimun-feliz.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/laucha",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-40",
+   "texto": "Chimbarongo, en la región de O'Higgins, tiene un nombre de origen quechua que significa niebla al otro lado del río. ¿Lo dibujarías?",
+   "img": "portada-cie2-cap4.png",
+   "tema": "curioso",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-545957.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-41",
+   "texto": "Sándwich viene del inglés: lleva el nombre del cuarto conde de Sandwich, un noble inglés del siglo dieciocho. ¿Qué pondrías tú entre dos panes?",
+   "img": "portada-hist2-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/s%C3%A1ndwich",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-42",
+   "texto": "Guanaco viene del quechua wanaku. Este camélido de los Andes se parece mucho a la llama. ¿Sabrías decir en qué se diferencian?",
+   "img": "portada-hist2-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/guanaco",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-43",
+   "texto": "Los selk'nam llamaban a Tierra del Fuego Karukinka, que significa extrema tierra nuestra. ¿Qué nombre le darías tú al lugar donde vives?",
+   "img": "portada-hist3-cap1.png",
+   "tema": "curioso",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-545957.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-44",
+   "texto": "Argentina viene de argentum, que en latín significa plata. El río de la Plata se llamó así porque llevaba hacia las minas de plata de Potosí, en la actual Bolivia.",
+   "img": "kimun-plata.png",
+   "tema": "curioso",
+   "fuente": "https://es.wikipedia.org/wiki/Argentina",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-45",
+   "texto": "En Chile, los hongos con forma de sombrilla se llaman callampas, palabra que viene del quechua. Algunas se comen y otras son venenosas: nunca las pruebes por tu cuenta.",
+   "img": "portada-cie6-cap5.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/callampa",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-46",
+   "texto": "Maipú tiene un nombre mapuche que significa valle de tierra cultivada. ¿Qué se cultivaría en ese valle antes de que llegaran las ciudades?",
+   "img": "portada-cie3-cap3.png",
+   "tema": "curioso",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-545957.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-47",
+   "texto": "Astronauta une dos palabras: astro, que es una estrella o un planeta, y nauta, que es navegante. ¡Un astronauta es un navegante de los astros!",
+   "img": "skin-kimun-astronauta.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/astronauta",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-48",
+   "texto": "Chacra viene del quechua chakra y nombra una granja donde se siembra y se crían animales. Quien trabaja en una chacra es un chacarero.",
+   "img": "portada-hist1-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/chacra",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-49",
+   "texto": "Zapallo viene del quechua sapallu. En Bolivia y Uruguay, además, se usa zapallo en broma para decir cabeza. ¿Qué otras palabras usas en broma para la cabeza?",
+   "img": "portada-cie6-cap1.png",
+   "tema": "curioso",
+   "fuente": "https://dle.rae.es/zapallo",
+   "revisada": false
+  },
+  {
+   "id": "dato-curioso-50",
+   "texto": "Arica es un nombre que viene del kunza, la lengua de los atacameños, y podría significar bahía nueva. Otros creen que recuerda a un jefe llamado Ariacca.",
+   "img": "portada-hist-cap2.png",
+   "tema": "curioso",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-545957.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-01",
+   "texto": "Los mapuche juegan palín, parecido al hockey, con un palo curvo llamado wiño y una bola de lana. Los españoles lo llamaron chueca, como un juego de su tierra.",
+   "img": "portada-hist2-cap2.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Pal%C3%ADn_(juego)",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-02",
+   "texto": "En la rayuela se lanza un tejo de metal de más de un kilo hacia un cajón con barro, desde unos 14 metros. Si cae justo sobre la lienza, es quemada y vale doble.",
+   "img": "portada-hist2-cap4.png",
+   "tema": "deporte",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-126977.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-03",
+   "texto": "La jugada de patear la pelota de espaldas, en el aire, se llama chilena. La prensa argentina la bautizó así en 1916, porque la hacía un jugador que venía de Chile.",
+   "img": "skin-kimun-futbol.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Chilena_(f%C3%BAtbol)",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-04",
+   "texto": "En 1796 se prohibió encumbrar volantines en las calles del centro de Santiago: al tirar uno enredado en un muro, se caían pedazos de adobe y tejas.",
+   "img": "portada-hist1-cap4.png",
+   "tema": "deporte",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-95072.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-05",
+   "texto": "El trompo es uno de los juguetes más antiguos del mundo: se han encontrado trompos de arcilla en la antigua ciudad de Troya. ¿Sabes hacerlo bailar?",
+   "img": "portada-hist1-cap4.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Trompo",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-06",
+   "texto": "En Chile el emboque es un juego tradicional, pero en Francia hizo furor hace más de cuatrocientos años: al rey Enrique III le gustaba jugarlo en sus paseos.",
+   "img": "portada-hist2-cap4.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Balero",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-07",
+   "texto": "Saltar en un pie por casillas dibujadas con tiza, en Chile se llama luche. En muchos países le dicen rayuela, igual que a otro juego chileno, el del tejo.",
+   "img": "portada-hist3-cap5.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Rayuela_(juego)",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-08",
+   "texto": "El rodeo fue declarado deporte nacional de Chile en 1962. Se corre en una cancha redonda llamada medialuna, y cada pareja de jinetes con sus caballos es una collera.",
+   "img": "portada-hist3-cap5.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Rodeo_chileno",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-09",
+   "texto": "En 1937 Anita Lizana ganó el torneo de Forest Hills, en Estados Unidos, y fue la primera tenista de América Latina en ganar un Grand Slam. ¡Fue la mejor del mundo!",
+   "img": "skin-kimun-tenis.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Anita_Lizana",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-10",
+   "texto": "Fernando González es el chileno con más medallas olímpicas: oro, plata y bronce, todas en tenis. Le decían Speedy González por lo rápido que era al entrenar de joven.",
+   "img": "kimun-oro.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Fernando_Gonz%C3%A1lez_Ciuffardi",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-11",
+   "texto": "Kristel Köbrich nadó en seis Juegos Olímpicos seguidos, de Atenas 2004 a París 2024. Su prueba, los 1500 metros, son treinta largos de una piscina olímpica.",
+   "img": "kimun-sorprendido.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Kristel_K%C3%B6brich",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-12",
+   "texto": "El gimnasta chileno Tomás González inventó un salto tan difícil que la Federación Internacional de Gimnasia le puso su apellido: el salto González.",
+   "img": "skin-kimun-superheroe.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Tom%C3%A1s_Gonz%C3%A1lez_(gimnasta)",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-13",
+   "texto": "En el triatlón se nada, se pedalea y se corre, uno tras otro. La chilena Bárbara Riveros fue campeona del mundo de triatlón de velocidad en 2011.",
+   "img": "skin-kimun-ciclismo.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/B%C3%A1rbara_Riveros",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-14",
+   "texto": "Francisca Mardones jugó tenis en silla de ruedas en dos Juegos Paralímpicos y después se pasó al lanzamiento de bala. ¡En Tokio 2020 ganó el oro con récord mundial!",
+   "img": "kimun-oro.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Francisca_Mardones",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-15",
+   "texto": "El nadador paralímpico Alberto Abarza ganó tres medallas en Tokio 2020: oro en 100 metros espalda y plata en otras dos pruebas.",
+   "img": "vulpo-mascota.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Alberto_Abarza",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-16",
+   "texto": "A la nadadora chilena Bárbara Hernández le dicen la Sirena de Hielo: nadó en la Antártica, en agua a 2 grados y sin traje de neopreno. ¿Te atreverías?",
+   "img": "kimun-sorprendido.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/B%C3%A1rbara_Hern%C3%A1ndez",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-17",
+   "texto": "En 1966 Portillo, en la cordillera de los Andes, recibió el Mundial de esquí alpino: el único que se ha hecho en el hemisferio sur. ¿Por qué se pudo esquiar en agosto?",
+   "img": "portada-hist4-cap3.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Campeonato_Mundial_de_Esqu%C3%AD_Alpino_de_1966",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-18",
+   "texto": "En 1992 el chileno Rodrigo Jordán guió al primer grupo de latinoamericanos que llegó a la cima del Everest, la montaña más alta del mundo, por su difícil cara este.",
+   "img": "portada-hist4-cap3.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Rodrigo_Jord%C3%A1n",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-19",
+   "texto": "La mascota de los Juegos Panamericanos de Santiago 2023 fue Fiu, un pajarito chileno llamado siete colores. Lo eligieron más de cincuenta mil personas.",
+   "img": "kimun-fiesta.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Fiu",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-20",
+   "texto": "En 2006, en Santiago, la selección chilena femenina de hockey patín fue campeona del mundo: le ganó 2 a 1 a España en la final, con un gol de oro.",
+   "img": "kimun-oro.png",
+   "tema": "deporte",
+   "fuente": "https://cooperativa.cl/noticias/deportes/hockey-patin/mundial-femenino/chile-lo-logro-es-el-nuevo-campeon-mundial-del-hockey-patin-femen/2006-10-07/234956.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-21",
+   "texto": "El primer Mundial de básquetbol masculino se jugó en Buenos Aires en 1950. Ganó Argentina, y Chile se quedó con el tercer lugar.",
+   "img": "skin-kimun-basquetbol.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Campeonato_Mundial_de_Baloncesto_de_1950",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-22",
+   "texto": "En 2023 Los Cóndores, la selección chilena de rugby, jugaron su primer Mundial, en Francia. Para clasificar le ganaron a Estados Unidos por un solo punto: 52 a 51.",
+   "img": "kimun-feliz.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Selecci%C3%B3n_de_rugby_de_Chile",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-23",
+   "texto": "La Roja femenina jugó su primer Mundial de fútbol en Francia 2019 y, poco después, sus primeros Juegos Olímpicos, en Tokio. ¿Conoces a alguna de sus jugadoras?",
+   "img": "skin-kimun-futbol.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Selecci%C3%B3n_femenina_de_f%C3%BAtbol_de_Chile",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-24",
+   "texto": "El palín mapuche termina cuando un equipo hace cuatro puntos sin que el otro anote: si el rival marca, se borra un punto. En 2004 fue reconocido deporte nacional.",
+   "img": "portada-hist2-cap2.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Pal%C3%ADn_(juego)",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-25",
+   "texto": "Natalia Duco ganó en 2008 el Mundial de atletismo para menores de 20 años en lanzamiento de bala. Fue la primera medalla de oro de Chile en un mundial de atletismo.",
+   "img": "kimun-feliz.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Natalia_Duco",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-26",
+   "texto": "El fútbol chileno se organizó muy temprano: su federación nació en Valparaíso en 1895 y es la segunda más antigua de toda América.",
+   "img": "portada-hist6-cap2.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Federaci%C3%B3n_de_F%C3%BAtbol_de_Chile",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-27",
+   "texto": "El vóleibol se inventó en Estados Unidos en 1895 y al principio se llamaba mintonette. Su creador buscaba un juego más tranquilo que el básquetbol para gente mayor.",
+   "img": "skin-kimun-voleibol.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Voleibol",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-28",
+   "texto": "El básquetbol lo inventó el profesor James Naismith en 1891. Como no consiguió cajas, colgó dos canastos de duraznos como aros. ¿Sabes qué significa basket en inglés?",
+   "img": "skin-kimun-basquetbol.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Baloncesto",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-29",
+   "texto": "La maratón mide 42,195 kilómetros desde los Juegos de Londres 1908: el recorrido se alargó para que la salida quedara frente al castillo real de Windsor.",
+   "img": "kimun-sorprendido.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Marat%C3%B3n",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-30",
+   "texto": "El defensa chileno Elías Figueroa fue elegido tres años seguidos, de 1974 a 1976, el mejor futbolista de Sudamérica. Le decían Don Elías.",
+   "img": "skin-kimun-futbol.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/El%C3%ADas_Figueroa",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-31",
+   "texto": "Punta de Lobos, al sur de Pichilemu, fue declarada reserva mundial de surf en 2013. En algunas épocas del año sus olas llegan a ocho o diez metros de alto.",
+   "img": "portada-hist4-cap3.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Punta_de_Lobos",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-32",
+   "texto": "Chile ha ganado medallas olímpicas en siete deportes: tenis, boxeo, tiro, equitación, atletismo, lucha y fútbol. ¿Cuál crees que será el próximo?",
+   "img": "kimun-bronce.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Chile_en_los_Juegos_Ol%C3%ADmpicos",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-33",
+   "texto": "En 1948 el médico Ludwig Guttmann organizó una competencia deportiva en un hospital inglés, Stoke Mandeville. De esa idea nacieron los Juegos Paralímpicos, en Roma 1960.",
+   "img": "vulpi.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Juegos_Paral%C3%ADmpicos",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-34",
+   "texto": "En los antiguos Juegos Olímpicos de Grecia el premio no era una medalla: el ganador recibía una corona de olivo silvestre. La prueba más antigua era una carrera.",
+   "img": "portada-hist7-cap3.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Juegos_Ol%C3%ADmpicos_antiguos",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-35",
+   "texto": "Karate significa mano vacía en japonés, y nació en las islas de Okinawa. Fue deporte olímpico una sola vez, en Tokio 2020.",
+   "img": "skin-kimun-karate.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Karate",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-36",
+   "texto": "El skate nació en California como surf de acera: los surfistas lo usaban cuando no había olas. En Tokio 2020 fue deporte olímpico por primera vez.",
+   "img": "skin-kimun-skate.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Monopat%C3%ADn",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-37",
+   "texto": "En Fiestas Patrias se juega el palo encebado: un poste de cinco o seis metros untado en grasa, con un premio arriba. ¿Cómo harías para trepar sin resbalar?",
+   "img": "portada-hist2-cap4.png",
+   "tema": "deporte",
+   "fuente": "https://www.emol.com/especiales/2009/nacional/fiestas_patrias09/ensebado.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-38",
+   "texto": "El volantín chileno se arma con un cuadrado de papel y una liviana armazón de coligüe, una caña de nuestros bosques. A los más chicos se les llama ñeclas.",
+   "img": "portada-hist1-cap4.png",
+   "tema": "deporte",
+   "fuente": "https://www.emol.com/especiales/2009/nacional/fiestas_patrias09/volantin.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-39",
+   "texto": "En 2002 los remeros chilenos Christián Yantani y Miguel Cerda fueron campeones del mundo en Sevilla, en la prueba de dos remeros sin timonel.",
+   "img": "kimun-fiesta.png",
+   "tema": "deporte",
+   "fuente": "https://en.wikipedia.org/wiki/2002_World_Rowing_Championships",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-40",
+   "texto": "Hace más de tres mil años, en México y Centroamérica, se jugaba a la pelota con una bola de caucho que se golpeaba con las caderas. ¡Podía pesar hasta cuatro kilos!",
+   "img": "portada-hist7-cap6.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Juego_de_pelota_mesoamericano",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-41",
+   "texto": "La abuela de la bicicleta es la draisiana, que inventó Karl Drais en 1817. No tenía pedales: se avanzaba empujando el suelo con los pies.",
+   "img": "skin-kimun-ciclismo.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Draisiana",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-42",
+   "texto": "En 1971 el astronauta Alan Shepard, de la misión Apolo 14, jugó golf en la Luna: lanzó dos pelotas. ¿Hasta dónde llegarían con tan poca gravedad?",
+   "img": "skin-kimun-astronauta.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Alan_Shepard",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-43",
+   "texto": "En 2023 Chile organizó por primera vez los Juegos Panamericanos: llegaron casi siete mil deportistas de 41 países. ¡El surf se compitió en Pichilemu!",
+   "img": "kimun-fiesta.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Juegos_Panamericanos_de_2023",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-44",
+   "texto": "Pierre de Coubertin dibujó los anillos olímpicos en 1913. Eligió esos cinco colores y el fondo blanco porque cada bandera participante tenía al menos uno.",
+   "img": "portada-hist3-cap1.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Anillos_ol%C3%ADmpicos",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-45",
+   "texto": "El ajedrez nació en la India con el nombre de chaturanga, que significa cuatro partes: las de un ejército antiguo, con soldados, caballos, elefantes y carros.",
+   "img": "portada-len3-cap4.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Chaturanga",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-46",
+   "texto": "En 2019 Joaquín Niemann fue el primer golfista chileno en ganar un torneo del PGA Tour. Dos años antes había sido el número uno del mundo entre los aficionados.",
+   "img": "skin-kimun-maestro.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Joaqu%C3%ADn_Niemann",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-47",
+   "texto": "La piragüista chilena María José Mailliard ha ganado once medallas en campeonatos mundiales de aguas tranquilas, tres de ellas de oro.",
+   "img": "kimun-bronce.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Mar%C3%ADa_Jos%C3%A9_Mailliard",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-48",
+   "texto": "En Chiloé los huilliches jugaban linao, parecido al rugby, con una pelota hecha de algas como el cochayuyo, envuelta en lana o cuero. ¿Te imaginas una pelota de algas?",
+   "img": "portada-hist2-cap2.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Linao",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-49",
+   "texto": "En el Campeonato Sudamericano de 1920, jugado en Viña del Mar, la selección chilena usó por primera vez camiseta roja. ¿Sabes cómo le dicen hoy?",
+   "img": "portada-hist-cap5.png",
+   "tema": "deporte",
+   "fuente": "https://es.wikipedia.org/wiki/Campeonato_Sudamericano_1920",
+   "revisada": false
+  },
+  {
+   "id": "dato-deporte-50",
+   "texto": "En Rapa Nui se practica el haka pei: bajar a toda velocidad por la ladera de un antiguo volcán sobre dos troncos de plátano. Gana quien llega más lejos sin caerse.",
+   "img": "portada-cie7-cap3.png",
+   "tema": "deporte",
+   "fuente": "https://es.ara.cat/deportes/descenso-vertiginoso-antiguo-volcan-juegas-piel-desnudo_130_4463229.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-01",
+   "texto": "El pueblo chinchorro, en la costa del norte de Chile, preparaba momias unos dos mil años antes que los egipcios. Son las más antiguas del mundo hechas por personas.",
+   "img": "portada-hist7-cap1.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Cultura_chinchorro",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-02",
+   "texto": "Los changos, pescadores del norte de Chile, salían al mar en balsas hechas con dos cueros de lobo marino inflados como globos. ¿Te subirías a una?",
+   "img": "portada-hist2-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Changos",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-03",
+   "texto": "El curanto de Chiloé se cocina en un hoyo en la tierra: se calientan piedras con fuego y encima van mariscos, carne y papas, tapados con hojas de nalca.",
+   "img": "portada-hist2-cap3.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Curanto",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-04",
+   "texto": "El kultrún es el tambor más importante del pueblo mapuche. En su cuero lleva pintados los cuatro puntos cardinales y las cuatro estaciones del año.",
+   "img": "portada-leng1-cap1.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Kultr%C3%BAn",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-05",
+   "texto": "La ruka mapuche tiene su puerta principal mirando al este, por donde sale el sol. El fogón va al centro y el humo escapa por un agujero en el techo.",
+   "img": "portada-hist2-cap4.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Ruka",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-06",
+   "texto": "En el trafkintu, una costumbre mapuche, las familias intercambian semillas, plantas y alimentos sin usar dinero, y comparten cómo cultivarlos. ¿Qué cambiarías tú?",
+   "img": "portada-cie3-cap3.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Trafkintu",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-07",
+   "texto": "Tierra del Fuego se llama así porque los marineros de Magallanes vieron muchas fogatas en la costa. Las encendían los selk'nam y los yaganes para abrigarse del frío.",
+   "img": "portada-hist-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Isla_Grande_de_Tierra_del_Fuego",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-08",
+   "texto": "Cerca de San Pedro de Atacama está la aldea de Tulor, con más de dos mil años. Sus casas eran redondas y estaban unidas entre sí, como un panal.",
+   "img": "portada-hist7-cap6.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Aldea_de_Tulor",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-09",
+   "texto": "En un cerro de Tarapacá hay una figura humana dibujada con piedras sobre el suelo: el Gigante de Atacama. Mide 86 metros, ¡casi como una cancha de fútbol!",
+   "img": "kimun-sorprendido.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Gigante_de_Atacama",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-10",
+   "texto": "Las iglesias de madera de Chiloé se unen con tarugos, unos clavos hechos de madera. Dieciséis de ellas son Patrimonio de la Humanidad.",
+   "img": "portada-hist6-cap1.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Iglesias_de_Chilo%C3%A9",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-11",
+   "texto": "En Chiloé, cuando una familia muda su casa, los vecinos la arrastran entera con yuntas de bueyes, ¡y a veces cruzando el mar! Se llama tiradura de casa y es una minga.",
+   "img": "portada-hist1-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Minga",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-12",
+   "texto": "Los palafitos de Castro, en Chiloé, son casas de colores sobre pilotes de madera de luma, encima del agua. Se empezaron a construir a fines del siglo diecinueve.",
+   "img": "portada-hist-cap3.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Palafito",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-13",
+   "texto": "La primera bandera chilena era azul, blanca y amarilla. Se izó el 4 de julio de 1812, en una cena con el cónsul de Estados Unidos. ¿Qué celebran ellos ese día?",
+   "img": "portada-hist-cap5.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Bandera_de_Chile",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-14",
+   "texto": "El escudo de Chile lo sostienen un huemul y un cóndor, cada uno con una corona dorada. Lo diseñó el artista inglés Charles Wood y se adoptó en 1834.",
+   "img": "portada-hist2-cap4.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Escudo_de_Chile",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-15",
+   "texto": "En Rapa Nui hay más de novecientos moáis, tallados en la roca del volcán Rano Raraku. Casi todos miran hacia el interior de la isla, no hacia el mar.",
+   "img": "portada-hist2-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Mo%C3%A1i",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-16",
+   "texto": "Los chonos, navegantes del sur de Chile, inventaron la dalca: un bote de tablas cosidas con fibras de quila y sellado con raíces, hojas y corteza.",
+   "img": "portada-hist-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Dalca",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-17",
+   "texto": "La iglesia de San Francisco, en Santiago, se empezó a construir en 1575. Es el edificio más antiguo de Chile del que se conoce la fecha en que se hizo.",
+   "img": "portada-hist6-cap1.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Iglesia_de_San_Francisco_(Santiago_de_Chile)",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-18",
+   "texto": "En 1842 abrió en Santiago la Escuela Normal de Preceptores, para formar profesores. Su primer director fue el argentino Domingo Faustino Sarmiento.",
+   "img": "portada-leng6-cap7.png",
+   "tema": "historia",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-100627.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-19",
+   "texto": "Desde 1920 una ley obliga a todos los niños de Chile a ir a la escuela, y gratis. Al principio eran al menos cuatro años de primaria. ¿Cuántos llevas tú?",
+   "img": "portada-hist3-cap4.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Ley_de_Instrucci%C3%B3n_Primaria_Obligatoria",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-20",
+   "texto": "El Camino del Inca pasaba por el norte de Chile. Por él corrían los chasquis, mensajeros que se pasaban los recados de uno a otro, como en una carrera de relevos.",
+   "img": "portada-hist7-cap6.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Qhapaq_%C3%91an",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-21",
+   "texto": "Los selk'nam de Tierra del Fuego se abrigaban con una capa de piel de guanaco, con el pelo hacia afuera. Sus zapatos se hacían con la piel de las patas del mismo animal.",
+   "img": "portada-hist7-cap1.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Selk%27nam",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-22",
+   "texto": "Los yaganes navegaban en canoas de corteza con una fogata encendida al medio, ¡sobre el agua! Los niños cuidaban el fuego y las mujeres remaban.",
+   "img": "portada-hist2-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Yaganes",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-23",
+   "texto": "Los kawésqar pasaban gran parte del tiempo en canoas de corteza de unos ocho metros: eran casas flotantes. Para hacer fuego sacaban chispas de una piedra llamada pirita.",
+   "img": "portada-cie6-cap5.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Kaw%C3%A9sqar",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-24",
+   "texto": "Los diaguitas, en los valles de Atacama y Coquimbo, pintaban su cerámica con figuras en rojo, negro y blanco. Uno de sus jarros más famosos tiene forma de pato.",
+   "img": "portada-hist3-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Cultura_diaguita",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-25",
+   "texto": "Los plateros mapuche martillaban monedas de plata hasta dejarlas planas y con ellas hacían joyas, como el trarilonco, una cadena que rodea la frente.",
+   "img": "portada-hist-cap3.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Plater%C3%ADa_mapuche",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-26",
+   "texto": "La Real Universidad de San Felipe, en el Santiago colonial, empezó sus clases en 1758. Entre sus cátedras había una para aprender la lengua mapuche.",
+   "img": "portada-leng2-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Real_Universidad_de_San_Felipe",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-27",
+   "texto": "El Palacio de La Moneda se construyó para fabricar monedas: era la Casa de Moneda colonial. Lo diseñó el arquitecto Joaquín Toesca y se inauguró en 1805.",
+   "img": "portada-mate-numeros.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Palacio_de_La_Moneda",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-28",
+   "texto": "La primera estampilla de Chile salió en 1853, se imprimió en Londres y llevaba la cara de Cristóbal Colón. ¿Has mandado alguna vez una carta con estampilla?",
+   "img": "portada-leng-escritura.png",
+   "tema": "historia",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-93601.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-29",
+   "texto": "El mote con huesillo se toma en Chile desde la Colonia: trigo cocido con duraznos secos y su jugo. En 1954, en Santiago se tomaban unos veinte mil litros al día.",
+   "img": "portada-hist2-cap3.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Mote_con_huesillo",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-30",
+   "texto": "La chupalla, el sombrero de paja del huaso, debe su nombre a la achupalla, una planta del campo chileno con cuyas fibras se empezaron a tejer.",
+   "img": "portada-hist1-cap4.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Chupalla",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-31",
+   "texto": "El Fuerte Bulnes se fundó en 1843 junto al estrecho de Magallanes. Su clima era tan duro que en 1848 se fundó Punta Arenas. El fuerte de hoy se reconstruyó en 1943.",
+   "img": "portada-hist-cap5.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Fuerte_Bulnes",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-32",
+   "texto": "Los atacameños hablaban kunza, una lengua cuyo nombre significa nuestro. Sembraban en terrazas en los cerros para que el agua no arrastrara la tierra fértil.",
+   "img": "portada-cie6-cap1.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Pueblo_atacame%C3%B1o",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-33",
+   "texto": "Algunos moáis llevan en la cabeza un pukao, un cilindro de piedra roja sacada del volcán Puna Pau. ¡El más grande pesa unas once toneladas! ¿Cómo lo habrán subido?",
+   "img": "kimun-sorprendido.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Pukao",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-34",
+   "texto": "La estructura de hierro del Mercado Central de Santiago se fabricó en Glasgow, Escocia, al otro lado del mundo. El mercado se inauguró en 1872.",
+   "img": "portada-hist2-cap3.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Mercado_Central_de_Santiago",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-35",
+   "texto": "El Teatro Municipal de Santiago abrió en 1857 con una ópera de Verdi. Su gran lámpara tiene más de catorce mil cristales y mide unos cuatro metros de alto.",
+   "img": "portada-len3-cap8.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Teatro_Municipal_de_Santiago",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-36",
+   "texto": "En China, hace casi dos mil años, Cai Lun mejoró la forma de hacer papel: mezclaba con agua corteza de morera, trapos viejos y redes de pesca. ¿Qué usarías tú?",
+   "img": "portada-leng-escritura.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Cai_Lun",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-37",
+   "texto": "Una de las escrituras más antiguas nació en Mesopotamia hace más de cinco mil años. Se marcaba en tablillas de arcilla húmeda, y sus signos tienen forma de cuña.",
+   "img": "portada-hist7-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Escritura_cuneiforme",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-38",
+   "texto": "Hacia 1450, Johannes Gutenberg inventó una imprenta con letras sueltas de metal que se podían ordenar y volver a usar. Así los libros dejaron de copiarse a mano.",
+   "img": "portada-leng-lectura.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Johannes_Gutenberg",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-39",
+   "texto": "Los mayas contaban de veinte en veinte con solo tres signos: un punto vale uno, una raya vale cinco y una concha es el cero. ¿Cómo escribirías tu edad así?",
+   "img": "portada-mate-numeros.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Numeraci%C3%B3n_maya",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-40",
+   "texto": "Los aztecas usaban granos de cacao como dinero: con cuatro granos se podía comprar un conejo. ¡Las semillas del chocolate eran monedas!",
+   "img": "portada-hist7-cap6.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Cacao",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-41",
+   "texto": "En 1818 O'Higgins mandó convertir La Cañada de Santiago, que era un basural, en un paseo con cuatro filas de álamos traídos de Mendoza. De ahí viene el nombre Alameda.",
+   "img": "portada-hist2-cap1.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Avenida_Libertador_Bernardo_O%27Higgins",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-42",
+   "texto": "Castro, en Chiloé, se fundó en 1567 con el nombre de Santiago de Castro. Es la tercera ciudad más antigua de Chile que ha estado habitada sin interrupción.",
+   "img": "portada-hist1-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Castro_(Chile)",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-43",
+   "texto": "La Serena es la segunda ciudad más antigua de Chile, después de Santiago. Su nombre viene de una comarca de Extremadura, en España, la tierra de Pedro de Valdivia.",
+   "img": "portada-hist4-cap3.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/La_Serena_(Chile)",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-44",
+   "texto": "Navegar al sur pegado a la costa era lento por la corriente de Humboldt. El marino Juan Fernández se fue mar adentro y, hacia 1574, halló las islas que llevan su nombre.",
+   "img": "portada-hist3-cap1.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Archipi%C3%A9lago_Juan_Fern%C3%A1ndez",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-45",
+   "texto": "Los incas no escribían con letras: guardaban sus cuentas en quipus, cordones de colores con nudos. Los colores decían de qué se trataba y los nudos, cuántos había.",
+   "img": "portada-mat3-cap2.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Quipu",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-46",
+   "texto": "La Gran Pirámide de Guiza, en Egipto, fue el edificio más alto del mundo durante unos 3800 años. Se calcula que se hizo con más de dos millones de bloques de piedra.",
+   "img": "portada-mate-geometria.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Gran_Pir%C3%A1mide_de_Guiza",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-47",
+   "texto": "El primer sello postal del mundo fue el Penny Black, de Inglaterra, en 1840. Era negro y llevaba la cara de la reina Victoria. Chile tuvo el suyo trece años después.",
+   "img": "portada-len3-cap7.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Penny_Black",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-48",
+   "texto": "Los romanos construyeron unos cuatrocientos mil kilómetros de caminos de piedra. Cada mil pasos ponían un mojón de piedra que marcaba la distancia: una milla romana.",
+   "img": "portada-hist3-cap3.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Calzada_romana",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-49",
+   "texto": "Unos quinientos años antes que Colón, navegantes vikingos llegaron a América y armaron un pequeño poblado en la isla de Terranova, en lo que hoy es Canadá.",
+   "img": "portada-hist7-cap4.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/L%27Anse_aux_Meadows",
+   "revisada": false
+  },
+  {
+   "id": "dato-historia-50",
+   "texto": "Se dice que la Gran Muralla China se ve desde la Luna, pero es un mito: aunque mide más de veintiún mil kilómetros de largo, tiene solo unos metros de ancho.",
+   "img": "portada-hist-desafio.png",
+   "tema": "historia",
+   "fuente": "https://es.wikipedia.org/wiki/Gran_Muralla_China",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-01",
+   "texto": "Gabriela Mistral se llamaba Lucila Godoy Alcayaga. Se cree que su nombre de poeta honra a dos escritores que admiraba: Gabriele D'Annunzio y Frédéric Mistral.",
+   "img": "kimun-escritor.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Gabriela_Mistral",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-02",
+   "texto": "En su libro Tala, Gabriela Mistral recordó los sueños de su infancia en un poema que empieza: 'Todas íbamos a ser reinas de cuatro reinos sobre el mar'. ¿Qué soñabas tú?",
+   "img": "skin-kimun-maestro.png",
+   "tema": "literatura",
+   "fuente": "https://sites.google.com/view/maldita-gabriela-mistral/textos/tala-1938/todas-íbamos-a-ser-reinas",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-03",
+   "texto": "Pablo Neruda se llamaba Ricardo Neftalí Reyes Basoalto. A los 16 años empezó a firmar como Neruda, para que a su papá no le molestara tener un hijo poeta.",
+   "img": "portada-leng-escritura.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Pablo_Neruda",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-04",
+   "texto": "Pablo Neruda le dedicó un poema a los pies de los niños, Al pie desde su niño, que empieza: 'El pie del niño aún no sabe que es pie'. ¿Qué crees que quiere ser?",
+   "img": "kimun-sorprendido.png",
+   "tema": "literatura",
+   "fuente": "https://www.curriculumnacional.cl/614/articles-27455_recurso_pdf.pdf",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-05",
+   "texto": "En Altazor, de 1931, Vicente Huidobro mezcló palabras para inventar otras: 'Al horitaña de la montazonte'. ¿Descubres un horizonte y una montaña escondidos?",
+   "img": "skin-kimun-mago.png",
+   "tema": "literatura",
+   "fuente": "https://www.biblioteca-antologica.org/es/wp-content/uploads/2021/05/HUIDOBRO-Altazor-1.pdf",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-06",
+   "texto": "En 1964 Violeta Parra fue la primera latinoamericana en exponer sola en el Museo del Louvre, en París. Llevó arpilleras, cuadros al óleo y esculturas de alambre.",
+   "img": "portada-hist2-cap4.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Violeta_Parra",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-07",
+   "texto": "Violeta Parra contó su propia vida en verso: en 1958 escribió sus Décimas autobiográficas, estrofas de diez versos que van desde su infancia hasta su viaje a Europa.",
+   "img": "portada-leng1-cap1.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Violeta_Parra",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-08",
+   "texto": "Nicanor Parra fue poeta y profesor de física: estudió mecánica en Estados Unidos y cosmología, el estudio del universo, en Inglaterra. En 2011 ganó el Premio Cervantes.",
+   "img": "kimun-calculista.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Nicanor_Parra",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-09",
+   "texto": "Alonso de Ercilla escribió La Araucana en el sur de Chile, durante la guerra de Arauco. Por falta de papel, muchas veces escribía sobre cuero o en pedazos de cartas.",
+   "img": "portada-hist-cap4.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/La_Araucana",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-10",
+   "texto": "En La Araucana, de 1569, Ercilla describió nuestra tierra así: 'Chile fértil provincia y señalada en la región antártica famosa'. ¿Qué quiere decir señalada?",
+   "img": "portada-hist2-cap1.png",
+   "tema": "literatura",
+   "fuente": "https://encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/araucana-la",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-11",
+   "texto": "Pedro de Oña, nacido en Angol en 1570, es considerado el primer poeta chileno. En 1596 escribió Arauco domado, un largo poema sobre la guerra de Arauco.",
+   "img": "portada-hist-cap3.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Pedro_de_O%C3%B1a",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-12",
+   "texto": "Entre 1860 y 1920, en las calles de Chile se vendían hojas con poemas en décimas y dibujos: la Lira popular. Los poetas las colgaban de cordeles y las leían en voz alta.",
+   "img": "portada-leng-textos.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Lira_popular",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-13",
+   "texto": "Una décima es una estrofa de diez versos de ocho sílabas. Se llama espinela por Vicente Espinel, el poeta español que fijó cómo riman. ¿Te animas a contar sus sílabas?",
+   "img": "kimun-escritor.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/D%C3%A9cima_espinela",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-14",
+   "texto": "En la paya chilena, dos payadores se enfrentan improvisando versos con guitarra, en décimas o cuartetas, sobre un tema que les dan. Se canta en Chile desde la Colonia.",
+   "img": "portada-len3-cap7.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Payada",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-15",
+   "texto": "Papelucho debe su nombre al esposo de Marcela Paz, a quien le decían Pepe Lucho. La autora se llamaba Esther Huneeus y publicó el primer libro de Papelucho en 1947.",
+   "img": "kimun-feliz.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Marcela_Paz",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-16",
+   "texto": "En El último grumete de la Baquedano, novela de Francisco Coloane, Alejandro Silva tiene solo quince años y se embarca escondido en un buque escuela de la Marina.",
+   "img": "portada-hist-cap2.png",
+   "tema": "literatura",
+   "fuente": "https://www.lecturalia.com/libro/38556/el-ultimo-grumete-de-la-baquedano",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-17",
+   "texto": "El Premio Nacional de Literatura se creó en 1942, y ese mismo año lo ganó Augusto d'Halmar. Su verdadero nombre era Augusto Goeminne Thomson. ¿A quién se lo darías tú?",
+   "img": "kimun-oro.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Augusto_d%27Halmar",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-18",
+   "texto": "La Biblioteca Nacional de Chile se fundó en 1813. Desde 1825, las imprentas debían dejarle copias de lo que imprimían. ¿Para qué crees que servía eso?",
+   "img": "portada-leng2-cap2.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Biblioteca_Nacional_de_Chile",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-19",
+   "texto": "En 2020 Elicura Chihuailaf fue el primer poeta mapuche en ganar el Premio Nacional de Literatura. Escribe en mapudungun y en castellano, y tradujo poemas de Neruda.",
+   "img": "portada-hist2-cap2.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Elicura_Chihuailaf",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-20",
+   "texto": "Los mapuche cuentan epew: relatos en que los animales hablan, como en las fábulas. El zorro, ngürü, es uno de sus personajes, y los epew enseñan valores como la honradez.",
+   "img": "vulpi.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Epew",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-21",
+   "texto": "El Caleuche es un barco fantasma de la mitología de Chiloé, que navega lleno de luces y música. Su nombre viene del mapudungun y significa gente transformada.",
+   "img": "portada-len7-cap2.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Caleuche",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-22",
+   "texto": "En Chiloé se cuenta que si la Pincoya baila mirando al mar, habrá muchos peces y mariscos, y si baila mirando a la tierra, escasearán. ¿Hacia dónde quieres que baile?",
+   "img": "portada-len7-cap2.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Pincoya",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-23",
+   "texto": "Una leyenda de Chiloé cuenta que la serpiente Caicai Vilu hizo subir el mar para inundarlo todo, y Trentren Vilu hizo crecer los cerros para salvar a personas y animales.",
+   "img": "portada-cie7-cap3.png",
+   "tema": "literatura",
+   "fuente": "https://en.wikipedia.org/wiki/Legend_of_Trentren_Vilu_and_Caicai_Vilu",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-24",
+   "texto": "En el desierto de Atacama se cuenta del Alicanto, un pájaro que come oro y plata. Sus alas brillan tanto que encandilan, y quien lo sigue encontraría metales preciosos.",
+   "img": "portada-hist6-cap2.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Alicanto",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-25",
+   "texto": "El Camahueto de Chiloé es un ternero mágico con un cuerno dorado en la frente, como un unicornio. Se dice que nace bajo la tierra y, tras muchos años, corre hacia el mar.",
+   "img": "kimun-sorprendido.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Camahueto",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-26",
+   "texto": "Pedro Urdemales, el pícaro de los cuentos chilenos, llegó desde España: ya aparecía allá en la Edad Media, y Miguel de Cervantes le dedicó una comedia en 1615.",
+   "img": "skin-kimun-ninja.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Pedro_Urdemales",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-27",
+   "texto": "Mampato, historieta chilena de 1968, cuenta de un niño que recibe de un extraterrestre un cinturón para viajar en el tiempo. Su gran amigo es Ogú, un cavernícola.",
+   "img": "portada-hist7-cap1.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Mampato",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-28",
+   "texto": "En Rapa Nui existe una escritura llamada rongorongo, tallada en tablillas de madera, que nadie ha logrado descifrar. Para leerla, la tablilla se da vuelta en cada línea.",
+   "img": "portada-hist7-cap2.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Rongorongo",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-29",
+   "texto": "Pablo de Rokha se llamaba Carlos Díaz Loyola, y antes firmó sus poemas como Job Díaz. Ganó el Premio Nacional de Literatura en 1965. ¿Qué nombre de escritor usarías tú?",
+   "img": "portada-leng-escritura.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Pablo_de_Rokha",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-30",
+   "texto": "En 1946 Hernán del Solar escribió para niños Mac, el microbio desconocido, y tradujo más de ochenta libros. Un crítico dijo que volvía apasionantes hasta a los microbios.",
+   "img": "portada-cien-celula.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Hern%C3%A1n_del_Solar",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-31",
+   "texto": "En 1847 Andrés Bello publicó en Santiago una Gramática de la lengua castellana, pensada para quienes hablaban español en América. ¿Para qué crees que sirve una gramática?",
+   "img": "kimun-historiador.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Gram%C3%A1tica_de_la_lengua_castellana_destinada_al_uso_de_los_americanos",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-32",
+   "texto": "Sub sole, libro de Baldomero Lillo de 1907, abre con El rapto del sol: un rey tan poderoso que mandaba en toda la Tierra quiere atrapar el sol. ¿Qué crees que le pasa?",
+   "img": "portada-cie1-cap4.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikisource.org/wiki/Sub_sole_(1907)",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-33",
+   "texto": "Nicanor Parra inventó la antipoesía: poemas escritos con palabras de todos los días, con humor e ironía. La dio a conocer en 1954, en su libro Poemas y antipoemas.",
+   "img": "portada-len3-cap4.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Antipoes%C3%ADa",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-34",
+   "texto": "Vicente Huidobro también escribió en francés. En ese idioma publicó un libro de poemas que lleva el nombre de la famosa torre de París: Tour Eiffel.",
+   "img": "portada-hist3-cap1.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Vicente_Huidobro",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-35",
+   "texto": "En Historia de una gaviota y del gato que le enseñó a volar, del chileno Luis Sepúlveda, el gato Zorbas promete cuidar un huevo de gaviota y enseñar a volar al polluelo.",
+   "img": "portada-cie6-cap1.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Historia_de_una_gaviota_y_del_gato_que_le_ense%C3%B1%C3%B3_a_volar",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-36",
+   "texto": "En 1646 el santiaguino Alonso de Ovalle publicó en Roma su Histórica relación del Reino de Chile. Contó que en muchas partes de Europa ni sabían el nombre de Chile.",
+   "img": "portada-hist-cap1.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Alonso_de_Ovalle",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-37",
+   "texto": "En Los hijos del capitán Grant, de 1868, Julio Verne hizo que sus viajeros cruzaran Sudamérica por el paralelo 37. Uno de sus capítulos se llama La travesía de Chile.",
+   "img": "portada-hist4-cap3.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Los_hijos_del_capit%C3%A1n_Grant",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-38",
+   "texto": "En Chiloé se cuenta del basilisco, mitad gallo y mitad serpiente, que nacería de un huevo puesto por un gallo. De día se escondería bajo la casa del dueño del gallinero.",
+   "img": "portada-len7-cap2.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Basilisco_chilote",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-39",
+   "texto": "Entre 1960 y 1963, Yolando Pino Saavedra publicó Cuentos folklóricos de Chile: más de cien cuentos distintos que recogió en todas las regiones del país.",
+   "img": "portada-hist1-cap2.png",
+   "tema": "literatura",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-577.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-40",
+   "texto": "En La ciudad de las bestias, de 2002, Isabel Allende cuenta la aventura de Alexander Cold, un joven de quince años que viaja a la selva del Amazonas.",
+   "img": "portada-hist7-cap6.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/La_ciudad_de_las_bestias",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-41",
+   "texto": "Uno de los cuentos más famosos en español tiene siete palabras. Es El dinosaurio, de Augusto Monterroso: 'Cuando despertó, el dinosaurio todavía estaba allí'.",
+   "img": "portada-hist7-cap1.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/El_dinosaurio",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-42",
+   "texto": "El haiku es un poema japonés de tres versos, de cinco, siete y cinco sílabas, que suele hablar de la naturaleza y las estaciones. Lo popularizó el monje Matsuo Bashō.",
+   "img": "portada-cie1-cap4.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Haiku",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-43",
+   "texto": "Los hermanos Grimm no inventaron sus cuentos: los recogieron de la tradición oral y los publicaron desde 1812. También empezaron un enorme diccionario del alemán.",
+   "img": "portada-len3-cap3.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Hermanos_Grimm",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-44",
+   "texto": "Pinocho, de Carlo Collodi, apareció primero por partes en un periódico para niños de Italia, entre 1881 y 1883. Recién después se publicó como libro.",
+   "img": "portada-leng-literarios.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Las_aventuras_de_Pinocho",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-45",
+   "texto": "Hacia 1450, Gutenberg inventó la imprenta con letras sueltas de metal. Su Biblia, terminada hacia 1455, es considerada el primer libro impreso con letras móviles.",
+   "img": "portada-hist-cap1.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Johannes_Gutenberg",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-46",
+   "texto": "En Las mil y una noches, Sherezade cuenta una historia cada noche y la deja sin terminar antes del amanecer, para que el rey quiera oír el final la noche siguiente.",
+   "img": "portada-hist7-cap2.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Las_mil_y_una_noches",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-47",
+   "texto": "Aladino y Alí Babá no estaban en las versiones árabes antiguas de Las mil y una noches: los agregó el francés Antoine Galland en el siglo dieciocho.",
+   "img": "skin-kimun-mago.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Las_mil_y_una_noches",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-48",
+   "texto": "Antoine de Saint-Exupéry, autor de El principito, era aviador y pintó él mismo sus acuarelas. Es el libro escrito en francés más traducido: a más de 250 idiomas.",
+   "img": "skin-kimun-astronauta.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/El_principito",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-49",
+   "texto": "Esopo, de la antigua Grecia, es famoso por fábulas como La liebre y la tortuga. No dejó nada escrito: sus fábulas pasaron de boca en boca durante siglos.",
+   "img": "portada-hist3-cap2.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Esopo",
+   "revisada": false
+  },
+  {
+   "id": "dato-literatura-50",
+   "texto": "Alicia en el país de las maravillas nació en 1862, en un paseo en bote por el río Támesis: Lewis Carroll, que era matemático, se la contó a la niña Alice Liddell.",
+   "img": "kimun-matematico.png",
+   "tema": "literatura",
+   "fuente": "https://es.wikipedia.org/wiki/Alicia_en_el_pa%C3%ADs_de_las_maravillas",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-01",
+   "texto": "La rana de Darwin, del sur de Chile, mide unos tres centímetros. El papá guarda a sus renacuajos dentro de la boca, en su saco vocal, por seis a ocho semanas.",
+   "img": "portada-cie2-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Rhinoderma_darwinii",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-02",
+   "texto": "En 1834 Charles Darwin describió un zorro que vive casi solo en Chiloé. Hoy lo llamamos zorro de Darwin o zorro chilote, y es de los carnívoros más amenazados del mundo.",
+   "img": "vulpo-mascota.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Lycalopex_fulvipes",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-03",
+   "texto": "El nombre científico del copihue, Lapageria rosea, honra a Josefina, primera esposa de Napoleón, que cultivaba plantas. Sus flores las polinizan los picaflores.",
+   "img": "portada-cie6-cap1.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Lapageria_rosea",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-04",
+   "texto": "El monito del monte no es un mono: es un marsupial, como el canguro. La mamá lleva a sus crías en una bolsa y, cuando salen, las carga sobre su espalda.",
+   "img": "kimun-sorprendido.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Dromiciops_gliroides",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-05",
+   "texto": "El huemul, que aparece en el escudo de Chile junto al cóndor, es el ciervo que vive más al sur de todo el planeta. Está en peligro: ¿cómo podríamos protegerlo?",
+   "img": "portada-hist-cap5.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Hippocamelus_bisulcus",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-06",
+   "texto": "En el Parque Nacional Alerce Costero vive el Gran Abuelo, un alerce de más de tres mil seiscientos años. Un estudio de 2022 calculó que podría tener cerca de cinco mil.",
+   "img": "portada-hist1-cap1.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Fitzroya_cupressoides",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-07",
+   "texto": "La madera del alerce casi no se pudre. Por eso en el sur se usó para hacer tejuelas, las tablitas que cubren las casas, ¡y en lugares aislados sirvió de moneda!",
+   "img": "portada-hist-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Fitzroya_cupressoides",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-08",
+   "texto": "Hay araucarias macho y araucarias hembra, y solo las hembras dan piñones. En mapudungun este árbol se llama pewén, y algunas araucarias pasan los mil años de vida.",
+   "img": "portada-hist2-cap2.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Araucaria_araucana",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-09",
+   "texto": "El cóndor andino puede medir más de tres metros con las alas abiertas, pero casi no las agita: aprovecha el aire caliente que sube desde el suelo para planear.",
+   "img": "portada-hist2-cap4.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Vultur_gryphus",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-10",
+   "texto": "El Ojos del Salado, en la región de Atacama, es el volcán más alto de la Tierra: mide unos 6890 metros. En un cráter de su lado argentino está el lago más alto del mundo.",
+   "img": "portada-cie7-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Ojos_del_Salado",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-11",
+   "texto": "Al sur de Chile está el Campo de Hielo Sur, de unos 350 kilómetros de largo. Es la tercera gran extensión de hielo del planeta, después de la Antártica y Groenlandia.",
+   "img": "portada-hist4-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Campo_de_Hielo_Patagónico_Sur",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-12",
+   "texto": "Casi todos los glaciares se achican, pero el Pío XI, en la Patagonia chilena, ha avanzado. Con 64 kilómetros, es el más largo del hemisferio sur fuera de la Antártica.",
+   "img": "kimun-sorprendido.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Glaciar_Pío_XI",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-13",
+   "texto": "Frente a Chile corre la corriente de Humboldt: agua fría que sube del fondo del mar cargada de plancton. Por eso es una de las zonas con más peces del planeta.",
+   "img": "portada-hist3-cap1.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Corriente_de_Humboldt",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-14",
+   "texto": "El pingüino de Humboldt vive en la costa de Chile. Hace su nido cavando en el guano, que son los excrementos secos de las aves marinas, o en cuevas entre las rocas.",
+   "img": "portada-cie2-cap2.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Spheniscus_humboldti",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-15",
+   "texto": "El flamenco chileno come con la cabeza al revés: mete el pico dado vuelta en el agua y lo usa como un colador para atrapar camaroncitos, larvas y algas.",
+   "img": "portada-cie2-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Phoenicopterus_chilensis",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-16",
+   "texto": "De cada raíz de pelo de la chinchilla chilena salen unos 75 pelos. Por su piel tan suave casi desapareció: se la creyó extinta hasta que en 1978 la volvieron a encontrar.",
+   "img": "kimun-feliz.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Chinchilla_lanigera",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-17",
+   "texto": "La güiña, de los bosques del centro y sur de Chile, es el felino salvaje más pequeño de América: pesa entre dos y tres kilos y sube a los árboles para refugiarse.",
+   "img": "kimun-neutral.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Leopardus_guigna",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-18",
+   "texto": "En el altiplano crece la llareta, una planta que forma un cojín verde tan apretado que parece una roca. Crece lentísimo y puede vivir miles de años.",
+   "img": "portada-cie3-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Azorella_compacta",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-19",
+   "texto": "En 1946 se soltaron castores en Tierra del Fuego. Llegaron a todos sus ríos y sus represas dañan miles de hectáreas de bosque. ¿Qué es una especie invasora?",
+   "img": "portada-hist3-cap5.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.mongabay.com/2025/07/castores-invasores-tierra-del-fuego-reportaje-fotografico/",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-20",
+   "texto": "En El Tatio, a más de cuatro mil metros de altura, hay unos 80 géiseres. Allá arriba el aire pesa menos y el agua hierve a unos 86 grados, no a 100. ¿Por qué será?",
+   "img": "portada-cie7-cap2.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/El_Tatio",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-21",
+   "texto": "El chungungo es una nutria que vive en el mar de Chile. Come flotando de espaldas: pone a sus presas pequeñas sobre el pecho, como si fuera una mesa.",
+   "img": "kimun-feliz.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Lontra_felina",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-22",
+   "texto": "El picaflor de Arica es el ave más pequeña de Chile: mide unos ocho centímetros y pesa apenas dos o tres gramos. Vive en los valles de Azapa y Vitor, en el norte.",
+   "img": "portada-cie6-cap1.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Eulidia_yarrellii",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-23",
+   "texto": "El abejorro chileno, de pelo rojizo, es de los más grandes del mundo. Está en peligro porque abejorros traídos de Europa le quitan el alimento y le pasan enfermedades.",
+   "img": "portada-cie2-cap2.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Bombus_dahlbomii",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-24",
+   "texto": "El desierto de Atacama es el lugar no polar más seco de la Tierra. En algunas zonas, una lluvia que se pueda medir cae apenas una vez cada quince o cuarenta años.",
+   "img": "portada-hist4-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Desierto_de_Atacama",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-25",
+   "texto": "Cuando llueve más de lo normal, en Atacama brotan flores por todas partes: es el desierto florido. Allí se han contado más de doscientas especies de plantas nativas.",
+   "img": "portada-cie3-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Desierto_de_Atacama",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-26",
+   "texto": "La corteza del quillay, árbol del centro de Chile, hace espuma como el jabón. Los mapuche la usaban para lavarse el pelo, y hoy un extracto suyo se usa en vacunas.",
+   "img": "kimun-cientifico.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Quillaja_saponaria",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-27",
+   "texto": "El picaflor gigante, que vive en el centro de Chile, es el colibrí más grande del mundo: mide entre 21 y 24 centímetros de largo. Le gustan los arroyos de los cerros.",
+   "img": "kimun-oro.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Patagona_gigas",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-28",
+   "texto": "El carpintero negro, de los bosques del sur, es el más grande de Sudamérica. El macho tiene la cabeza roja, y con el pico abre la madera para sacar larvas.",
+   "img": "portada-cie2-cap2.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Campephilus_magellanicus",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-29",
+   "texto": "El lago Chungará, en el Parque Nacional Lauca, está a unos 4500 metros de altura, de los más altos del mundo. Sobre él se alza el volcán Parinacota, cubierto de nieve.",
+   "img": "portada-hist2-cap1.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Lago_Chungará",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-30",
+   "texto": "El lago General Carrera es el más grande de Chile y tiene 590 metros de hondo. Lo compartimos con Argentina, donde se llama lago Buenos Aires: ¡un lago con dos nombres!",
+   "img": "portada-hist2-cap1.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Lago_General_Carrera",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-31",
+   "texto": "En el cráter del volcán Villarrica hay un lago de magma que sube y baja. Los mapuche lo llaman Ruka Pillañ, que quiere decir casa del pillán, un espíritu poderoso.",
+   "img": "portada-cie7-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Volcán_Villarrica",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-32",
+   "texto": "Frente al norte de Chile, la fosa de Atacama baja más de ocho mil metros. Allí se halló un pequeño crustáceo, y lo llamaron Dulcibella camanchaca, como la niebla nortina.",
+   "img": "portada-hist-cap2.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Fosa_de_Atacama",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-33",
+   "texto": "El toromiro es un árbol que solo existía en Rapa Nui. El último silvestre vivía en el cráter Rano Kau, pero alguien guardó sus semillas y hoy crece en jardines botánicos.",
+   "img": "portada-cie3-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Sophora_toromiro",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-34",
+   "texto": "La nalca del sur de Chile puede pasar los cuatro metros y sus hojas miden más de un metro. Su tallo se come como fruta, y con sus hojas se tapa el curanto en Chiloé.",
+   "img": "portada-hist2-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Gunnera_tinctoria",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-35",
+   "texto": "El hielo de la Antártica guarda cerca del 70 por ciento del agua dulce del mundo. Si se derritiera entero, el nivel del mar subiría unos 61 metros.",
+   "img": "portada-cie2-cap4.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Antártida",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-36",
+   "texto": "La temperatura más baja medida en la Tierra fue de 89 grados bajo cero, en 1983, en la base Vostok de la Antártica. ¿Cómo se abrigarán los científicos que viven allí?",
+   "img": "kimun-sorprendido.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Antártida",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-37",
+   "texto": "Cerca de Chiloé, en el golfo de Corcovado, se juntan ballenas azules a comer. Es el animal más grande que ha existido, y su corazón puede pesar unos 600 kilos.",
+   "img": "portada-hist-cap2.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Balaenoptera_musculus",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-38",
+   "texto": "El canelo, o foye, es un árbol sagrado para el pueblo mapuche. Su nombre científico recuerda a John Winter, un marino que en 1578 tomó su corteza contra el escorbuto.",
+   "img": "portada-hist2-cap2.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Drimys_winteri",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-39",
+   "texto": "La vicuña vive en el altiplano del norte de Chile, a más de 3200 metros. Su lana es de las más finas del mundo, y por eso la cazaron tanto que casi desapareció.",
+   "img": "portada-hist4-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Vicugna_vicugna",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-40",
+   "texto": "En Chile hay cerca de dos mil volcanes, y unos noventa se consideran activos. ¿Sabes cuál es el volcán más cercano a tu casa?",
+   "img": "portada-cie7-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://radio.uchile.cl/2014/05/06/estudio-identifica-los-diez-volcanes-mas-activos-de-chile/",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-41",
+   "texto": "El picaflor de Juan Fernández solo vive en la isla Robinson Crusoe. El macho es rojo ladrillo y la hembra es verde: ¡parecen de dos especies distintas!",
+   "img": "portada-cie6-cap1.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Sephanoides_fernandensis",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-42",
+   "texto": "El zorro culpeo vive en la cordillera de los Andes, desde el norte de Chile hasta Tierra del Fuego. Es el segundo más grande de Sudamérica en la familia de los perros.",
+   "img": "vulpi.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Lycalopex_culpaeus",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-43",
+   "texto": "El degú solo vive en Chile, y vive en grupo: las familias cavan juntas sus madrigueras bajo tierra y se avisan con muchos sonidos distintos. ¿Has visto uno?",
+   "img": "portada-cie6-cap5.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Octodon_degus",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-44",
+   "texto": "El pulpo tiene tres corazones y su sangre es azul, porque lleva una sustancia con cobre. Además, dos tercios de sus neuronas están en sus ocho brazos.",
+   "img": "portada-cien-cuerpo.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Octopoda",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-45",
+   "texto": "El ajolote, un anfibio de los canales de Xochimilco, en México, puede regenerar sus patas, su cola y hasta partes de su corazón. Por eso los científicos lo estudian.",
+   "img": "portada-cie2-cap3.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Ambystoma_mexicanum",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-46",
+   "texto": "Los tardígrados, u osos de agua, miden medio milímetro y viven en el musgo. Pueden secarse casi por completo y revivir, ¡y en 2007 sobrevivieron un viaje al espacio!",
+   "img": "portada-cien-celula.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Tardigrada",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-47",
+   "texto": "El cuello de la jirafa puede medir unos dos metros, pero tiene solo siete vértebras: las mismas que tienes tú en el cuello. ¿Cómo de grande será cada una?",
+   "img": "kimun-neutral.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Giraffa_camelopardalis",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-48",
+   "texto": "El ave más pequeña del mundo es el zunzuncito de Cuba, un picaflor de unos seis centímetros que pesa menos de dos gramos. Su nido mide unos tres centímetros.",
+   "img": "kimun-feliz.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Mellisuga_helenae",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-49",
+   "texto": "El ser vivo más alto del mundo es una secuoya llamada Hyperion, en California: mide unos 115 metros. El alerce chileno, en cambio, puede pasar los 50.",
+   "img": "portada-cie1-cap4.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Sequoia_sempervirens",
+   "revisada": false
+  },
+  {
+   "id": "dato-naturaleza-50",
+   "texto": "La estrella de mar no tiene cerebro, pero tiene un ojo simple en la punta de cada brazo. Para comer, saca su estómago por la boca y envuelve a su presa.",
+   "img": "kimun-cientifico.png",
+   "tema": "naturaleza",
+   "fuente": "https://es.wikipedia.org/wiki/Asteroidea",
+   "revisada": false
+  }
+ ]
+}

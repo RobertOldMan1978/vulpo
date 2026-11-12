@@ -104,7 +104,8 @@ def escribir_banco(ruta, d):
     # La clave de la lista cambia segun el archivo: los bancos traen "preguntas" y los
     # de mini-clases "lecciones". Todo lo demas del formato canonico es identico.
     lista = ("preguntas" if "preguntas" in d
-             else "lecciones" if "lecciones" in d else "efemerides")
+             else "lecciones" if "lecciones" in d
+             else "datos" if "datos" in d else "efemerides")
     orden = {}
     for k in CABECERA:
         if k in d and k != lista:
@@ -224,6 +225,27 @@ def main():
                 "efemerides", de["revisadas"], len(de["efemerides"]), marcadas))
             if not seco:
                 escribir_banco(efem, de)
+
+    # --- los datos curiosos del boton "Otro dato" (Sesion 152) -------------
+    datos = CONTENIDO / "efemerides" / "datos.json"
+    if datos.exists():
+        dd = json.load(open(datos, encoding="utf-8"))
+        marcadas = 0
+        for e in dd.get("datos", []):
+            huerfanos.discard(e.get("id"))
+            esta = e.get("id") in ids
+            era = bool(e.get("revisada"))
+            if esta and not era:
+                e["revisada"] = True
+                marcadas += 1
+            elif era and not esta and sincronizar:
+                e["revisada"] = False
+        dd["revisadas"] = sum(1 for e in dd["datos"] if e.get("revisada"))
+        if marcadas:
+            print("  %-24s %4d/%4d datos         (+%d)" % (
+                "datos curiosos", dd["revisadas"], len(dd["datos"]), marcadas))
+            if not seco:
+                escribir_banco(datos, dd)
 
     if sin_tocar:
         print("\n  sin cambios: " + " · ".join(sin_tocar))

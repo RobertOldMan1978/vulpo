@@ -1,0 +1,404 @@
+{
+ "datos": [
+  {
+   "id": "dato-ciencia-01",
+   "texto": "El físico chileno Carlos Espinosa inventó en 1954 el atrapanieblas: una malla que atrapa las gotitas de la niebla del norte y las junta como agua.",
+   "img": "portada-cie2-cap4.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Atrapanieblas",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-02",
+   "texto": "La rapamicina, un remedio que ayuda a quienes reciben un trasplante, la fabrica una bacteria hallada en la tierra de Rapa Nui. Por eso su nombre recuerda a la isla.",
+   "img": "portada-cien-celula.png",
+   "tema": "ciencia",
+   "fuente": "https://en.wikipedia.org/wiki/Sirolimus",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-03",
+   "texto": "En Magallanes se encontró el Stegouros, un dinosaurio acorazado descrito en 2021. Su cola terminaba en una especie de macana plana. ¿Para qué crees que la usaba?",
+   "img": "portada-cie6-cap5.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Stegouros_elengassen",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-04",
+   "texto": "Cerca de Caldera, junto a la carretera, hay más de 40 ballenas fósiles de hace unos siete millones de años. El lugar se llama Cerro Ballena.",
+   "img": "kimun-sorprendido.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Cerro_Ballena",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-05",
+   "texto": "El primer observatorio astronómico de Chile se instaló en 1849 en el cerro Santa Lucía, en Santiago. Hoy es el Observatorio Astronómico Nacional, en el cerro Calán.",
+   "img": "portada-hist-cap1.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Observatorio_Astron%C3%B3mico_Nacional_(Chile)",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-06",
+   "texto": "En 1897 se inauguró cerca de Lota la central Chivilingo, la primera hidroeléctrica de Chile. Con la fuerza del agua hacía electricidad para las minas de carbón.",
+   "img": "portada-cien-electricidad.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Central_hidroel%C3%A9ctrica_Chivilingo",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-07",
+   "texto": "Cada antena de ALMA pesa unas 115 toneladas. Para moverlas hay un camión gigante llamado Otto, con 28 ruedas, ¡y su chofer lleva oxígeno para respirar en la altura!",
+   "img": "kimun-sorprendido.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Atacama_Large_Millimeter_Array",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-08",
+   "texto": "En el cerro Pachón, en la región de Coquimbo, el observatorio Vera Rubin tiene una cámara de 3200 megapíxeles para fotografiar todo su cielo cada pocas noches.",
+   "img": "skin-kimun-astronauta.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Observatorio_Vera_C._Rubin",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-09",
+   "texto": "En el desierto de Atacama, la planta Cerro Dominador junta la luz del Sol con espejos en una torre de 252 metros. Guarda ese calor en sales y da electricidad de noche.",
+   "img": "portada-hist-desafio.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Cerro_Dominador",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-10",
+   "texto": "A 4500 metros de altura, en la región de Antofagasta, Cerro Pabellón fue en 2017 la primera planta de Sudamérica que hace electricidad con el calor de la Tierra.",
+   "img": "portada-cie7-cap3.png",
+   "tema": "ciencia",
+   "fuente": "https://www.latercera.com/noticia/enel-enap-inauguraron-la-primera-planta-geotermica-sudamerica/",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-11",
+   "texto": "El bioquímico chileno Pablo Valenzuela ayudó a crear la primera vacuna contra la hepatitis B, una infección del hígado. ¿Cómo enseña una vacuna al cuerpo a defenderse?",
+   "img": "portada-cien-cuerpo.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Pablo_Valenzuela",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-12",
+   "texto": "En 1959 el biólogo chileno Humberto Maturana participó en un estudio llamado Lo que el ojo de la rana le dice al cerebro de la rana. ¿Cómo verá el mundo una rana?",
+   "img": "portada-cie2-cap3.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Humberto_Maturana",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-13",
+   "texto": "María Teresa Ruiz fue la primera mujer en estudiar astrofísica en la Universidad de Princeton. En 1997 fue la primera en ganar el Premio Nacional de Ciencias Exactas.",
+   "img": "portada-cie3-cap2.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Ruiz",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-14",
+   "texto": "El astrónomo José Maza buscó supernovas, estrellas que explotan. Sus medidas ayudaron a descubrir que el universo se expande cada vez más rápido.",
+   "img": "portada-hist-cap1.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Jos%C3%A9_Maza_Sancho",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-15",
+   "texto": "En 1982 el biólogo Juan Carlos Castilla cerró un trozo de costa en Las Cruces para ver cómo cambia el mar si nadie saca nada. Allí estudió al loco, un caracol marino.",
+   "img": "portada-len7-cap5.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Juan_Carlos_Castilla_Zenobi",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-16",
+   "texto": "La botánica Mary Kalin Arroyo estudia cómo se reproducen las plantas y cómo cuidarlas. En 2010 ganó el Premio Nacional de Ciencias Naturales. ¿Quién poliniza las flores?",
+   "img": "portada-cie3-cap3.png",
+   "tema": "ciencia",
+   "fuente": "https://uchile.cl/presentacion/historia/grandes-figuras/premios-nacionales/ciencias/mary-therese-kalin",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-17",
+   "texto": "En 1992 el chileno Claudio Teitelboim, junto a Máximo Bañados y Jorge Zanelli, describió un agujero negro especial. Se llama BTZ, por la inicial de sus tres apellidos.",
+   "img": "kimun-calculista.png",
+   "tema": "ciencia",
+   "fuente": "https://en.wikipedia.org/wiki/BTZ_black_hole",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-18",
+   "texto": "La domeikita es un mineral de cobre que Ignacio Domeyko describió en 1845 en una mina de Coquimbo. Su nombre honra a ese sabio que estudió las piedras de Chile.",
+   "img": "portada-cien-materia.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Domeykita",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-19",
+   "texto": "En 2017 llegó al espacio el SUCHAI 1, el primer satélite construido en Chile. Es un nanosatélite, un satélite pequeñito, hecho en la Universidad de Chile.",
+   "img": "skin-kimun-astronauta.png",
+   "tema": "ciencia",
+   "fuente": "https://www.biobiochile.cl/noticias/ciencia-y-tecnologia/astronomia/2017/06/20/chile-lanzara-el-primer-satelite-construido-en-territorio-nacional-el-suchai-1.shtml",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-20",
+   "texto": "En 1922, desde la Universidad de Chile, los ingenieros Enrique Sazié y Arturo Salazar hicieron la primera transmisión de radio del país. ¿Cómo viaja la voz sin cables?",
+   "img": "portada-leng-textos.png",
+   "tema": "ciencia",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-95378.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-21",
+   "texto": "Al sur de Copiapó se halló el Arackar licanantay, un dinosaurio de cuello largo de unos seis metros. Su nombre, en lengua kunza, significa huesos de los atacameños.",
+   "img": "portada-cie6-cap5.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Arackar_licanantay",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-22",
+   "texto": "En el glaciar Tyndall, en Torres del Paine, la paleontóloga Judith Pardo ha contado más de 87 ictiosaurios: reptiles marinos de más de 131 millones de años.",
+   "img": "kimun-sorprendido.png",
+   "tema": "ciencia",
+   "fuente": "https://www.24horas.cl/conciencia-24-7/ciencia/fiona-fosil-ictiosaurio-glaciar-tyndall",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-23",
+   "texto": "La NASA probó en el desierto de Atacama un robot pensado para ir a Marte. Eligió ese lugar porque es muy seco y se parece mucho al planeta rojo. ¿Qué buscarías tú allá?",
+   "img": "portada-cie3-cap2.png",
+   "tema": "ciencia",
+   "fuente": "https://www.eldinamo.cl/tech/2013/06/30/nasa-prueba-en-el-desierto-de-atacama-proximo-robot-que-ira-a-marte/",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-24",
+   "texto": "El observatorio Cerro Tololo, en la región de Coquimbo, empezó a funcionar en 1967 a 2200 metros de altura. Su nombre significaría al borde del abismo.",
+   "img": "portada-hist7-cap2.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Observatorio_Interamericano_del_Cerro_Tololo",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-25",
+   "texto": "En el cerro Paranal, en Antofagasta, el telescopio VLT son en verdad cuatro, con espejos de 8,2 metros. Pueden juntar su luz y trabajar casi como si fueran uno solo.",
+   "img": "skin-kimun-astronauta.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Observatorio_Paranal",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-26",
+   "texto": "En Las Campanas, en Atacama, se construye el Telescopio Gigante de Magallanes: siete espejos de 8,4 metros que juntos verán como uno de más de 24 metros.",
+   "img": "portada-cie3-cap1.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Telescopio_Gigante_de_Magallanes",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-27",
+   "texto": "En el cerro Armazones, cerca de Paranal, se construye el ELT. Su espejo principal medirá 39 metros de ancho, como un ojo gigante para mirar el universo.",
+   "img": "portada-hist7-cap2.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Telescopio_Extremadamente_Grande",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-28",
+   "texto": "Desde 1998 Chile limita las luces que apuntan al cielo en Antofagasta, Atacama y Coquimbo. Así protege los cielos más limpios del hemisferio sur para los telescopios.",
+   "img": "portada-cie1-cap4.png",
+   "tema": "ciencia",
+   "fuente": "https://forbes.cl/actualidad/2024-02-20/asi-trabaja-la-brigada-de-proteccion-de-cielos-oscuros-contra-la-contaminacion-luminica-en-el-valle-del-elqui/",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-29",
+   "texto": "En 1834 el naturalista Charles Darwin subió al cerro La Campana, en la zona central de Chile. Desde arriba estudió los valles que bajan desde la costa hacia el interior.",
+   "img": "portada-hist4-cap3.png",
+   "tema": "ciencia",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-93189.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-30",
+   "texto": "El rajo de Chuquicamata, una mina de cobre cerca de Calama, mide unos cinco kilómetros de largo y uno de hondo. Es la mina de la que más tierra se ha sacado en el mundo.",
+   "img": "portada-hist6-cap2.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Chuquicamata",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-31",
+   "texto": "Frente a Chile, la placa de Nazca, el piso del océano, se mete por debajo de América del Sur. Ese choque levantó los Andes y explica los temblores y volcanes.",
+   "img": "portada-cie7-cap3.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Placa_de_Nazca",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-32",
+   "texto": "El naturalista Rodulfo Philippi dirigió el Museo Nacional de Historia Natural por 44 años. Describió más de mil seiscientas especies que hoy siguen siendo válidas.",
+   "img": "portada-cie2-cap2.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Rodulfo_Amando_Philippi",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-33",
+   "texto": "Desde 1963 el Instituto Antártico Chileno, con sede en Punta Arenas, organiza cada año expediciones de científicos a la Antártica. ¿Qué investigarías tú en el hielo?",
+   "img": "portada-hist2-cap1.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Instituto_Ant%C3%A1rtico_Chileno",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-34",
+   "texto": "Héctor Croxatto fue compañero de Pablo Neruda en el liceo de Temuco. Ya científico, en 1942 descubrió con su hermano una sustancia que regula la presión de la sangre.",
+   "img": "portada-cien-cuerpo.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/H%C3%A9ctor_Croxatto",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-35",
+   "texto": "En 1852 una línea de telégrafo unió por primera vez Santiago y Valparaíso, pasando por Casablanca. ¿Cómo viaja un mensaje por un cable?",
+   "img": "portada-hist6-cap2.png",
+   "tema": "ciencia",
+   "fuente": "https://www.memoriachilena.gob.cl/602/w3-article-94641.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-36",
+   "texto": "El biofísico chileno Ramón Latorre estudia los canales iónicos, pequeñas puertas de las células por donde pasan partículas con carga. En 2002 ganó el Premio Nacional.",
+   "img": "kimun-cientifico.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Ram%C3%B3n_Latorre",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-37",
+   "texto": "El astrónomo chileno Mario Hamuy usó supernovas, estrellas que explotan, como faros para medir distancias en el universo. En 2015 ganó el Premio Nacional.",
+   "img": "portada-hist-cap1.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Mario_Hamuy_Wackenhut",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-38",
+   "texto": "Una persona adulta tiene 206 huesos. De niños tenemos más, porque al crecer algunos huesos se van soldando entre sí. ¿Cuántos huesos tendrá tu mano?",
+   "img": "portada-hist1-cap1.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Esqueleto_humano",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-39",
+   "texto": "Tu corazón tiene más o menos el tamaño de un puño, y aun así bombea unos siete mil litros de sangre al día. ¿Cuántas veces late en un minuto?",
+   "img": "portada-cien-cuerpo.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Coraz%C3%B3n_humano",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-40",
+   "texto": "Louis Braille, un joven francés que quedó ciego de niño, creó en 1825 un sistema de puntos en relieve para leer con los dedos. Cada letra usa hasta seis puntos.",
+   "img": "portada-leng-lectura.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Braille",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-41",
+   "texto": "En 1928 Alexander Fleming volvió de vacaciones y vio que un hongo había frenado a las bacterias de una placa. Así descubrió la penicilina, el primer antibiótico.",
+   "img": "portada-cien-celula.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Penicilina",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-42",
+   "texto": "En 1796 Edward Jenner probó la primera vacuna contra la viruela. La palabra vacuna viene de vaca, porque la sacó de una viruela que daba a esos animales.",
+   "img": "kimun-cientifico.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Edward_Jenner",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-43",
+   "texto": "La luz del Sol tarda unos ocho minutos en llegar a la Tierra. O sea, cuando miras el cielo de día, ves la luz que salió del Sol hace un ratito.",
+   "img": "portada-cie3-cap2.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Unidad_astron%C3%B3mica",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-44",
+   "texto": "Cuentan que Arquímedes vio subir el agua de su tina al meterse y entendió cómo medir una corona. Gritó eureka, que en griego quiere decir lo encontré.",
+   "img": "portada-hist3-cap2.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Principio_de_Arqu%C3%ADmedes",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-45",
+   "texto": "Marie Curie es la única persona con premios Nobel en dos ciencias distintas: física y química. Llamó polonio a un elemento que descubrió, en honor a Polonia, su país.",
+   "img": "portada-cien-materia.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Marie_Curie",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-46",
+   "texto": "En 1945 el ingeniero Percy Spencer notó que un chocolate se derretía en su bolsillo junto a una máquina de ondas. De esa sorpresa nació el horno microondas.",
+   "img": "portada-cien-electricidad.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Horno_de_microondas",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-47",
+   "texto": "El agua es de las pocas sustancias que crecen al congelarse. Por eso el hielo pesa menos que el agua del mismo tamaño y flota. ¿Lo has visto en un vaso?",
+   "img": "portada-cie2-cap4.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Hielo",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-48",
+   "texto": "Si estiraras el ADN de una sola de tus células, mediría unos dos metros. Va tan enrollado que cabe en un núcleo cien veces más chico que un milímetro.",
+   "img": "portada-cien-celula.png",
+   "tema": "ciencia",
+   "fuente": "https://www.publico.es/actualidad/meter-dos-metros-adn-0-01-milimetros.amp.html",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-49",
+   "texto": "En el espacio no se escucha nada, porque el sonido no viaja en el vacío. En cambio, en el agua viaja casi cinco veces más rápido que en el aire.",
+   "img": "portada-leng1-cap1.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Sonido",
+   "revisada": false
+  },
+  {
+   "id": "dato-ciencia-50",
+   "texto": "Isaac Newton mostró con un prisma que la luz blanca trae todos los colores. En el arcoíris, las gotas de lluvia hacen lo mismo. Se ve con el Sol a tu espalda.",
+   "img": "portada-cie3-cap1.png",
+   "tema": "ciencia",
+   "fuente": "https://es.wikipedia.org/wiki/Arco%C3%ADris",
+   "revisada": false
+  }
+ ]
+}

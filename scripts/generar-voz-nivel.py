@@ -99,7 +99,12 @@ def textos():
         # Solo las APROBADAS: la voz se paga recien cuando Roberto firma el texto. El juego
         # lee e.texto tal cual (leerEnVoz), asi que el texto mostrado ES la clave del clip.
         vistos, out = set(), []
-        for e in json.load(io.open(BANCO, encoding="utf-8"))["efemerides"]:
+        lista = json.load(io.open(BANCO, encoding="utf-8"))["efemerides"]
+        # Los datos del boton "Otro dato" (Sesion 152) van a la misma carpeta efem/.
+        extra = BANCO.parent / "datos.json"
+        if extra.exists():
+            lista = lista + json.load(io.open(extra, encoding="utf-8"))["datos"]
+        for e in lista:
             t = (e.get("texto") or "").strip()
             if e.get("revisada") is True and t and t not in vistos:
                 vistos.add(t)
