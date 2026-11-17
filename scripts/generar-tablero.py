@@ -19,6 +19,7 @@ CONTRASENA: cambia CLAVE_ADMIN y vuelve a generar. Bloqueo suave, NO seguridad
 real (sitio estatico).
 """
 
+import hashlib
 import json
 import re
 from datetime import datetime
@@ -409,6 +410,13 @@ def render_asignatura(oa_data, preg_data, lecciones=(), carpeta=""):
                     resp = "(respuesta no disponible)"
                 qid = q.get("id", "")
                 rev = "1" if q.get("revisada") else "0"
+                # Huella del TEXTO de la pregunta. La marca que el navegador guarda al
+                # aprobar lleva esta huella, asi que si la pregunta se reescribe despues,
+                # la marca vieja deja de valer y la pregunta vuelve a salir pendiente
+                # (Sesion 153: sin esto, 231 preguntas reescritas salian ya aprobadas).
+                huella = hashlib.md5("".join(
+                    [q.get("pregunta", "")] + list(q.get("opciones", [])) + [q.get("tip", "")]
+                ).encode("utf-8")).hexdigest()[:10]
                 filas.append(
                     f'<div class="pq"><span class="pq-n">{j}.</span>'
                     f'<div class="pq-body"><div class="pq-q">{escape(q.get("pregunta",""))}</div>'
@@ -417,7 +425,7 @@ def render_asignatura(oa_data, preg_data, lecciones=(), carpeta=""):
                        if q.get("tip") else "")
                     + '</div>'
                     f'<label class="pq-check" title="Marcar como revisada">'
-                    f'<input type="checkbox" data-id="{escape(qid)}" data-rev="{rev}"></label>'
+                    f'<input type="checkbox" data-id="{escape(qid)}" data-rev="{rev}" data-v="{huella}"></label>'
                     "</div>"
                 )
             panel = f'<div class="oa-preguntas">{"".join(filas)}</div>' if filas else ""
@@ -713,6 +721,18 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
   var LS='kimun_revisadas';
   var ov={};
   try{ov=JSON.parse(localStorage.getItem(LS)||'{}');}catch(e){ov={};}
+  // Que vale para una casilla: lo que dice el banco (data-rev), salvo que este navegador
+  // guarde una marca puesta sobre ESTE MISMO texto. Una pregunta aprobada se guarda con la
+  // huella de su texto (data-v); si despues se reescribe, la huella cambia y la marca vieja
+  // ya no la aprueba. Las marcas antiguas eran solo true/false, sin huella: un true
+  // antiguo no puede aprobar una pregunta que el banco hoy da por pendiente.
+  function marcaVale(cb){
+    var s=ov[cb.dataset.id], v=cb.dataset.v||'', rev=cb.dataset.rev==='1';
+    if(s===undefined) return rev;
+    if(s===false) return false;
+    if(typeof s==='string') return s===v ? true : rev;
+    return (v && !rev) ? false : true;
+  }
   function idsMarcados(){
     var s={};
     document.querySelectorAll('.pq-check input:checked').forEach(function(cb){s[cb.dataset.id]=1;});
@@ -732,8 +752,7 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
     if(el)el.textContent='🔍 '+n+'/'+t+' marcadas';
   }
   document.querySelectorAll('.pq-check input').forEach(function(cb){
-    var id=cb.dataset.id, jsonRev=cb.dataset.rev==='1';
-    cb.checked=(id in ov)?ov[id]:jsonRev;
+    cb.checked=marcaVale(cb);
     cb.addEventListener('click',function(e){e.stopPropagation();});
     cb.addEventListener('change',function(){fijar([cb],cb.checked);});
   });
@@ -744,7 +763,7 @@ h1,h2,.disp{font-family:'Titan One',cursive;letter-spacing:.5px}
   // que necesitan stopPropagation o cada clic ademas contrae la seccion.
   function fijar(inputs, valor){
     var tocados={};
-    inputs.forEach(function(cb){ tocados[cb.dataset.id]=1; ov[cb.dataset.id]=valor; });
+    inputs.forEach(function(cb){ tocados[cb.dataset.id]=1; ov[cb.dataset.id]=valor?(cb.dataset.v||true):false; });
     // Sincronizar TODAS las casillas de esos ids, no solo las de la lista: una
     // pregunta cuyo OA esta en dos capitulos se dibuja dos veces, y dejar la copia
     // sin actualizar hace ver el OA como aprobado a medias.

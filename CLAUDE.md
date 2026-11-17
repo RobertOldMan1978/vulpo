@@ -15341,5 +15341,13 @@ más: *"¿no íbamos a mostrar 3 por día?"* — por si el alumno quiere otro da
   51 y 58 caracteres y uno en 69, sobre el máximo sugerido de 50: el auditor los marca como aviso.
 - **Las 231 quedan `revisada:false`** (cambió su texto). El banco está en **21.386 de 21.617** hasta que
   Roberto las firme; la landing dice «+21 mil preguntas revisadas», que sigue siendo cierto.
-- **Pendiente (A74):** la firma; después la voz de los textos nuevos (759 clips de 1° a 4°, ~US$0,30,
-  con autorización) y una compilación nueva de la app.
+- ⚠️ **El tablero decía "nada pendiente" con las 231 sin firmar, y era el tablero.** Cada casilla tomaba
+  primero lo que el navegador recordaba (`localStorage['kimun_revisadas']`) y solo después el banco, así
+  que las preguntas que Roberto ya había aprobado ANTES de reescribirlas salían aprobadas. Ahora cada
+  pregunta lleva la **huella de su texto** (`data-v`, md5 de pregunta + opciones + tip) y la marca se guarda
+  con esa huella: si la pregunta se reescribe, la marca vieja deja de valer. Las marcas antiguas sin huella
+  ya no pueden aprobar una pregunta que el banco da por pendiente. Probado en el navegador.
+- **Firmadas el mismo día:** el banco vuelve a **21.617 de 21.617** (control positivo hecho).
+- **La voz: 759 clips de 1° a 4° (~US$0,30)**, subidos a R2, con sus paquetes de la app y verificados
+  (54.808 clips idénticos por MD5). El clip de la pregunta de Pía responde 200 desde `voz.vulpo.cl`.
+- **Pendiente:** compilar una app nueva que traiga los textos y la voz (la 12 no los tiene).
