@@ -1,5 +1,5 @@
 {
- "revisadas": 360,
+ "revisadas": 350,
  "preguntas": [
   {
    "oa": "CN01 OA 01",
@@ -2075,16 +2075,16 @@
   },
   {
    "oa": "CN01 OA 05",
-   "pregunta": "Matías come en el cerro. ¿Qué hace con la basura?",
+   "pregunta": "Matías come en el cerro. ¿Qué debería hacer con la basura?",
    "opciones": [
-    "La lleva de vuelta",
-    "La deja en el pasto",
-    "La entierra ahí",
-    "La tira al río"
+    "Llevarla de vuelta",
+    "Dejarla en el pasto",
+    "Enterrarla ahí",
+    "Tirarla al río"
    ],
    "correcta": 0,
    "tip": "La basura ensucia y daña a plantas y animales. Lo correcto es llevarla de vuelta y botarla en un basurero.",
-   "revisada": true,
+   "revisada": false,
    "id": "cien1-oa05-29"
   },
   {
@@ -2271,30 +2271,30 @@
   },
   {
    "oa": "CN01 OA 06",
-   "pregunta": "Tomás ve un líquido sin etiqueta. ¿Qué hace?",
+   "pregunta": "Tomás ve un líquido sin etiqueta. ¿Qué debería hacer?",
    "opciones": [
-    "Lo prueba un poquito",
-    "Se lo toma todo",
-    "Lo huele de cerca",
-    "Pregunta a un adulto"
+    "Probarlo un poquito",
+    "Tomárselo todo",
+    "Olerlo de cerca",
+    "Preguntar a un adulto"
    ],
    "correcta": 3,
    "tip": "Nunca se prueba algo que no sabemos qué es. Puede ser un producto de limpieza que hace daño.",
-   "revisada": true,
+   "revisada": false,
    "id": "cien1-oa06-13"
   },
   {
    "oa": "CN01 OA 06",
-   "pregunta": "Javiera ve una plancha encendida. ¿Qué hace?",
+   "pregunta": "Javiera ve una plancha encendida. ¿Qué debería hacer?",
    "opciones": [
-    "Le pone la mano",
-    "La toca con un dedo",
-    "La toca rápido",
-    "Se aleja de ella"
+    "Ponerle la mano",
+    "Tocarla con un dedo",
+    "Tocarla rápido",
+    "Alejarse de ella"
    ],
    "correcta": 3,
    "tip": "La plancha encendida quema la piel. Para cuidar el tacto, nos alejamos de las cosas muy calientes.",
-   "revisada": true,
+   "revisada": false,
    "id": "cien1-oa06-14"
   },
   {
@@ -2313,16 +2313,16 @@
   },
   {
    "oa": "CN01 OA 06",
-   "pregunta": "Matías tiene tierra en un ojo. ¿Qué hace?",
+   "pregunta": "Matías tiene tierra en un ojo. ¿Qué debería hacer?",
    "opciones": [
-    "Avisa a un adulto",
-    "Se frota fuerte",
-    "Mete el dedo",
-    "Sigue jugando"
+    "Avisar a un adulto",
+    "Frotarse fuerte",
+    "Meter el dedo",
+    "Seguir jugando"
    ],
    "correcta": 0,
    "tip": "Frotarse puede dañar el ojo. Lo mejor es avisar a un adulto, que puede lavarlo con agua.",
-   "revisada": true,
+   "revisada": false,
    "id": "cien1-oa06-16"
   },
   {
@@ -2383,16 +2383,16 @@
   },
   {
    "oa": "CN01 OA 06",
-   "pregunta": "Javiera tiene picazón en el oído. ¿Qué hace?",
+   "pregunta": "A Javiera le pica el oído. ¿Qué debería hacer?",
    "opciones": [
-    "Se rasca con una llave",
-    "Mete un lápiz",
-    "Mete un palito",
-    "Avisa a un adulto"
+    "Rascarse con una llave",
+    "Meter un lápiz",
+    "Meter un palito",
+    "Avisar a un adulto"
    ],
    "correcta": 3,
    "tip": "Meter cosas en el oído puede dañarlo por dentro. Si pica o duele, se le avisa a un adulto.",
-   "revisada": true,
+   "revisada": false,
    "id": "cien1-oa06-21"
   },
   {
@@ -2649,16 +2649,16 @@
   },
   {
    "oa": "CN01 OA 07",
-   "pregunta": "Benjamín tocó un perro y va a comer. ¿Qué hace?",
+   "pregunta": "Benjamín tocó un perro y va a comer. ¿Qué debería hacer?",
    "opciones": [
-    "Se frota los ojos",
-    "Se chupa los dedos",
-    "Come sin lavarse",
-    "Se lava las manos"
+    "Frotarse los ojos",
+    "Chuparse los dedos",
+    "Comer sin lavarse",
+    "Lavarse las manos"
    ],
    "correcta": 3,
    "tip": "Al tocar animales, las manos quedan con suciedad y gérmenes. Se lavan antes de comer.",
-   "revisada": true,
+   "revisada": false,
    "id": "cien1-oa07-10"
   },
   {
@@ -2747,16 +2747,16 @@
   },
   {
    "oa": "CN01 OA 07",
-   "pregunta": "Tomás va a estornudar. ¿Qué hace?",
+   "pregunta": "Tomás va a estornudar. ¿Qué debería hacer?",
    "opciones": [
-    "Estornuda a la mesa",
-    "Estornuda a su amigo",
-    "Lo hace sin taparse",
-    "Se tapa con el codo"
+    "Estornudar a la mesa",
+    "Estornudar a su amigo",
+    "Hacerlo sin taparse",
+    "Taparse con el codo"
    ],
    "correcta": 3,
    "tip": "Al estornudar salen gotitas con gérmenes. Taparse con el codo ayuda a no contagiar a los demás.",
-   "revisada": true,
+   "revisada": false,
    "id": "cien1-oa07-17"
   },
   {
@@ -2817,16 +2817,16 @@
   },
   {
    "oa": "CN01 OA 07",
-   "pregunta": "A Ana se le cayó una galleta al suelo. ¿Qué hace?",
+   "pregunta": "A Ana se le cayó una galleta. ¿Qué debería hacer?",
    "opciones": [
-    "La sopla y la come",
-    "La limpia en la polera",
-    "No se la come",
-    "La come rápido"
+    "Soplarla y comerla",
+    "Limpiarla en la polera",
+    "No comérsela",
+    "Comerla rápido"
    ],
    "correcta": 2,
    "tip": "El suelo tiene tierra y gérmenes, aunque no se vean. Soplarla o comerla rápido no la limpia.",
-   "revisada": true,
+   "revisada": false,
    "id": "cien1-oa07-22"
   },
   {
@@ -2901,16 +2901,16 @@
   },
   {
    "oa": "CN01 OA 07",
-   "pregunta": "Sofía tose mucho. ¿Qué hace al toser?",
+   "pregunta": "Sofía tose mucho. ¿Qué debería hacer al toser?",
    "opciones": [
-    "Tose sobre la comida",
-    "Tose sin taparse",
-    "Tose a su amiga",
-    "Se tapa con el codo"
+    "Toser sobre la comida",
+    "Toser sin taparse",
+    "Toser a su amiga",
+    "Taparse con el codo"
    ],
    "correcta": 3,
    "tip": "Al toser salen gotitas con gérmenes. Taparse con el codo ayuda a no contagiar a otros.",
-   "revisada": true,
+   "revisada": false,
    "id": "cien1-oa07-28"
   },
   {
@@ -2929,16 +2929,16 @@
   },
   {
    "oa": "CN01 OA 07",
-   "pregunta": "Diego llega de la calle. ¿Qué hace primero?",
+   "pregunta": "Diego llega de la calle. ¿Qué debería hacer primero?",
    "opciones": [
-    "Toca la comida",
-    "Saca pan con la mano",
-    "Se lava las manos",
-    "Se chupa los dedos"
+    "Tocar la comida",
+    "Sacar pan con la mano",
+    "Lavarse las manos",
+    "Chuparse los dedos"
    ],
    "correcta": 2,
    "tip": "En la calle las manos tocan muchas cosas. Al llegar a casa, lavarlas ayuda a cuidar la salud.",
-   "revisada": true,
+   "revisada": false,
    "id": "cien1-oa07-30"
   },
   {

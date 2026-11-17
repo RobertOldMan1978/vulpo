@@ -15317,3 +15317,29 @@ más: *"¿no íbamos a mostrar 3 por día?"* — por si el alumno quiere otro da
   ahora lee como espacio un guion pegado entre una palabra de 2+ letras y un número; el álgebra de una
   letra («2x-3») sigue siendo resta. Medido en los bancos con voz: no cambia ningún clip ya grabado.
 
+
+### Sesión 153 (2026-11-12 y 16) — La versión 12 de la app, y «¿Qué debería hacer?» en 231 preguntas
+- **La voz de 4° quedó bien en el teléfono** (la versión 10 repara los clips truncados). Se compiló la
+  **versión 12** de la app con las efemérides y los datos curiosos (`android-release.yml` desde `main`;
+  el número sale del contador de corridas, por eso salta el 11). Roberto la sube a la prueba interna.
+- **Roberto lo encontró jugando 1°:** *"Gael es nuevo en el curso. ¿Qué hace Pía?"* con opciones
+  *"lo saluda amable / lo mira feo…"* suena a que describe algo que ya pasó, cuando pregunta qué es lo
+  correcto. El estándar (`docs/encargo-banco.md`) ya pedía *"¿Qué debería hacer…?"* y 358 preguntas lo
+  usaban; las otras se salieron de la regla, y además mezclaban opciones conjugadas con infinitivos
+  («pedírselo prestado» respondiendo a «¿Qué hace?»).
+- **Medido:** ~690 preguntas con «¿Qué hace/dice/hizo…?» en los bancos. Dos agentes (Lenguaje y el
+  resto) las clasificaron una por una: **231 se cambian, 221 no** —lo que hace un personaje de un cuento,
+  una función («¿Qué hace el corazón?»), un error ya cometido («¿Qué hizo mal?»), una secuencia—.
+- **El cambio:** la pregunta pasa a «¿Qué debería hacer/decir…?» (o «¿Qué podría decir?» cuando varias
+  expresiones sirven, como en vocabulario) y **las 4 opciones a infinitivo** con los pronombres pegados
+  («saludarlo con amabilidad», «dárselos a un adulto»); las que son frases dichas no se tocan. Mismo
+  orden, misma clave, mismo sentido.
+- ⚠️ **Seis acortes del agente se corrigieron a mano**: el más claro sacaba al abuelo de un enunciado
+  cuya respuesta es *"Gracias, abuelo"*. Al acortar para el límite de 1° hay que releer la clave.
+- **Controles:** 0 errores nuevos en `auditar-banco-nivel` (solo el falso positivo conocido de
+  `mate4-oa03-25`) y **0 opciones homófonas** en los 10 bancos con voz. 24 enunciados de 1° quedan entre
+  51 y 58 caracteres y uno en 69, sobre el máximo sugerido de 50: el auditor los marca como aviso.
+- **Las 231 quedan `revisada:false`** (cambió su texto). El banco está en **21.386 de 21.617** hasta que
+  Roberto las firme; la landing dice «+21 mil preguntas revisadas», que sigue siendo cierto.
+- **Pendiente (A74):** la firma; después la voz de los textos nuevos (759 clips de 1° a 4°, ~US$0,30,
+  con autorización) y una compilación nueva de la app.

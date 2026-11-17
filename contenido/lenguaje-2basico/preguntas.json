@@ -1,5 +1,5 @@
 {
- "revisadas": 858,
+ "revisadas": 810,
  "preguntas": [
   {
    "oa": "LE02 OA 01",
@@ -591,16 +591,16 @@
   },
   {
    "oa": "LE02 OA 02",
-   "pregunta": "Ana lee «Llegó el invierno» y hay un punto seguido. ¿Qué hace?",
+   "pregunta": "Ana lee «Llegó el invierno» y hay punto seguido. ¿Qué debería hacer?",
    "opciones": [
-    "Vuelve a empezar todo",
-    "Deja de leer el cuento",
-    "Pasa a la otra página",
-    "Una pausa corta y sigue"
+    "Volver a empezar todo",
+    "Dejar de leer el cuento",
+    "Pasar a la otra página",
+    "Hacer una pausa corta y seguir"
    ],
    "correcta": 3,
    "tip": "En el punto seguido Ana hace una pausa breve y continúa con la oración siguiente.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa02-13"
   },
   {
@@ -927,16 +927,16 @@
   },
   {
    "oa": "LE02 OA 03",
-   "pregunta": "Tomás no sabe por qué el niño del cuento se escondió. ¿Qué hace?",
+   "pregunta": "Tomás no sabe por qué el niño se escondió. ¿Qué debería hacer?",
    "opciones": [
-    "Cierra el libro y se va",
-    "Salta al último capítulo",
-    "Se lo pregunta y relee",
-    "Inventa otra historia"
+    "Cerrar el libro e irse",
+    "Saltar al último capítulo",
+    "Preguntárselo y releer",
+    "Inventar otra historia"
    ],
    "correcta": 2,
    "tip": "Cuando algo no se entiende, conviene preguntárselo y volver a leer: muchas veces la respuesta está en el texto.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa03-12"
   },
   {
@@ -3321,58 +3321,58 @@
   },
   {
    "oa": "LE02 OA 09",
-   "pregunta": "Ema comió pan con palta y va a hojear un libro. ¿Qué hace antes?",
+   "pregunta": "Ema comió palta y va a hojear un libro. ¿Qué debería hacer antes?",
    "opciones": [
-    "Lo lleva a la mesa",
-    "Lo apoya en el plato",
-    "Sigue comiendo pan",
-    "Se lava las manos"
+    "Llevarlo a la mesa",
+    "Apoyarlo en el plato",
+    "Seguir comiendo pan",
+    "Lavarse las manos"
    ],
    "correcta": 3,
    "tip": "Las manos con comida dejan manchas en las hojas. Lavarlas primero cuida el libro para todos.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa09-3"
   },
   {
    "oa": "LE02 OA 09",
-   "pregunta": "Matías quiere marcar la página donde quedó. ¿Qué hace?",
+   "pregunta": "Matías quiere marcar la página donde quedó. ¿Qué debería hacer?",
    "opciones": [
-    "Lo deja boca abajo",
-    "Pone un separador",
-    "Raya la página",
-    "Dobla la esquina"
+    "Dejarlo boca abajo",
+    "Poner un separador",
+    "Rayar la página",
+    "Doblar la esquina"
    ],
    "correcta": 1,
    "tip": "El separador marca la página sin dañar el libro. Doblar la hoja o dejarlo boca abajo lo estropea.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa09-4"
   },
   {
    "oa": "LE02 OA 09",
-   "pregunta": "A Camila se le cayó jugo sobre un libro prestado. ¿Qué hace?",
+   "pregunta": "A Camila se le cayó jugo sobre un libro prestado. ¿Qué debería hacer?",
    "opciones": [
-    "Lo esconde en la mochila",
-    "Arranca la hoja mojada",
-    "Avisa en la biblioteca",
-    "Lo devuelve sin decir nada"
+    "Esconderlo en la mochila",
+    "Arrancar la hoja mojada",
+    "Avisar en la biblioteca",
+    "Devolverlo sin decir nada"
    ],
    "correcta": 2,
    "tip": "Si un libro se daña hay que avisar, así se puede secar o arreglar. Esconderlo no lo arregla.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa09-5"
   },
   {
    "oa": "LE02 OA 09",
-   "pregunta": "Benjamín terminó de leer un libro prestado. ¿Qué hace?",
+   "pregunta": "Benjamín terminó de leer un libro prestado. ¿Qué debería hacer?",
    "opciones": [
-    "Se lo regala a un amigo",
-    "Lo deja en el patio",
-    "Lo devuelve a tiempo",
-    "Lo guarda en su casa"
+    "Regalárselo a un amigo",
+    "Dejarlo en el patio",
+    "Devolverlo a tiempo",
+    "Guardarlo en su casa"
    ],
    "correcta": 2,
    "tip": "Un libro prestado no es nuestro: cuando terminamos de leerlo se devuelve para que otro lo lea.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa09-6"
   },
   {
@@ -3433,16 +3433,16 @@
   },
   {
    "oa": "LE02 OA 09",
-   "pregunta": "Tomás sacó un libro del estante y no lo quiere. ¿Qué hace?",
+   "pregunta": "Tomás sacó un libro del estante y no lo quiere. ¿Qué debería hacer?",
    "opciones": [
-    "Lo tira al canasto",
-    "Lo mete en otro estante",
-    "Lo deja en cualquier mesa",
-    "Lo devuelve a su lugar"
+    "Tirarlo al canasto",
+    "Meterlo en otro estante",
+    "Dejarlo en cualquier mesa",
+    "Devolverlo a su lugar"
    ],
    "correcta": 3,
    "tip": "Si cada libro vuelve a su lugar, el próximo que lo busque lo va a encontrar.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa09-11"
   },
   {
@@ -3531,16 +3531,16 @@
   },
   {
    "oa": "LE02 OA 09",
-   "pregunta": "Sofía ve un libro tirado en el suelo de la biblioteca. ¿Qué hace?",
+   "pregunta": "Sofía ve un libro tirado en la biblioteca. ¿Qué debería hacer?",
    "opciones": [
-    "Lo recoge con cuidado",
-    "Lo deja en el suelo",
-    "Lo empuja bajo la mesa",
-    "Sigue buscando el suyo"
+    "Recogerlo con cuidado",
+    "Dejarlo en el suelo",
+    "Empujarlo bajo la mesa",
+    "Seguir buscando el suyo"
    ],
    "correcta": 0,
    "tip": "Un libro en el suelo se puede pisar o romper. Recogerlo es cuidar algo que es de todos.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa09-18"
   },
   {
@@ -3811,16 +3811,16 @@
   },
   {
    "oa": "LE02 OA 10",
-   "pregunta": "Benjamín encontró el dato que buscaba. ¿Qué hace ahora?",
+   "pregunta": "Benjamín encontró el dato que buscaba. ¿Qué debería hacer ahora?",
    "opciones": [
-    "Lo deja sin anotar",
-    "Busca un tema distinto",
-    "Lo anota en su cuaderno",
-    "Cierra el libro y se va"
+    "Dejarlo sin anotar",
+    "Buscar un tema distinto",
+    "Anotarlo en su cuaderno",
+    "Cerrar el libro e irse"
    ],
    "correcta": 2,
    "tip": "Un dato que no se anota se olvida. Escribirlo en el cuaderno permite usarlo después en la investigación.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa10-8"
   },
   {
@@ -3909,16 +3909,16 @@
   },
   {
    "oa": "LE02 OA 10",
-   "pregunta": "Diego no encontró el dato en la página que dio la profe. ¿Qué hace?",
+   "pregunta": "Diego no halló el dato donde dijo la profe. ¿Qué debería hacer?",
    "opciones": [
-    "Inventa una respuesta",
-    "Le pregunta a la profe",
-    "Deja el trabajo ahí",
-    "Copia lo de un amigo"
+    "Inventar una respuesta",
+    "Preguntarle a la profe",
+    "Dejar el trabajo ahí",
+    "Copiar lo de un amigo"
    ],
    "correcta": 1,
    "tip": "Si la fuente no trae el dato, lo honesto es preguntar. Inventar o copiar no responde de verdad la pregunta.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa10-15"
   },
   {
@@ -4105,16 +4105,16 @@
   },
   {
    "oa": "LE02 OA 10",
-   "pregunta": "Matías releyó esa parte y no halló su dato. ¿Qué hace?",
+   "pregunta": "Matías releyó esa parte y no halló su dato. ¿Qué debería hacer?",
    "opciones": [
-    "Inventa el dato",
-    "Deja la tarea sin hacer",
-    "Revisa otra parte",
-    "Copia a su amigo"
+    "Inventar el dato",
+    "Dejar la tarea sin hacer",
+    "Revisar otra parte",
+    "Copiar a su amigo"
    ],
    "correcta": 2,
    "tip": "Si el dato no está en esa parte, puede estar en otra sección de la misma fuente. Inventarlo no sirve.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa10-29"
   },
   {
@@ -4133,16 +4133,16 @@
   },
   {
    "oa": "LE02 OA 11",
-   "pregunta": "Tomás lee la palabra colosal y no la conoce. ¿Qué hace?",
+   "pregunta": "Tomás lee la palabra colosal y no la conoce. ¿Qué debería hacer?",
    "opciones": [
-    "Averigua qué significa",
-    "Deja de leer el cuento",
-    "Cambia de libro",
-    "Hace como que la sabe"
+    "Averiguar qué significa",
+    "Dejar de leer el cuento",
+    "Cambiar de libro",
+    "Hacer como que la sabe"
    ],
    "correcta": 0,
    "tip": "Cuando una palabra es nueva, lo mejor es averiguar qué significa. Colosal quiere decir enorme.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa11-1"
   },
   {
@@ -4189,16 +4189,16 @@
   },
   {
    "oa": "LE02 OA 11",
-   "pregunta": "Benjamín no entiende una palabra. ¿Qué hace primero?",
+   "pregunta": "Benjamín no entiende una palabra. ¿Qué debería hacer primero?",
    "opciones": [
-    "Cierra el libro",
-    "Lee más rápido",
-    "Relee la oración completa",
-    "Salta al final del cuento"
+    "Cerrar el libro",
+    "Leer más rápido",
+    "Releer la oración completa",
+    "Saltar al final del cuento"
    ],
    "correcta": 2,
    "tip": "Las otras palabras de la oración dan pistas. Releerla completa ayuda a descubrir el significado.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa11-5"
   },
   {
@@ -4217,16 +4217,16 @@
   },
   {
    "oa": "LE02 OA 11",
-   "pregunta": "La abuela dice: llueve a cántaros. Lucas no entiende. ¿Qué hace?",
+   "pregunta": "La abuela dice: llueve a cántaros. Lucas no entiende. ¿Qué debería hacer?",
    "opciones": [
-    "Se ríe y sigue jugando",
-    "Se queda sin entender",
-    "Busca cántaros en el cielo",
-    "Le pregunta qué quiere decir"
+    "Reírse y seguir jugando",
+    "Quedarse sin entender",
+    "Buscar cántaros en el cielo",
+    "Preguntarle qué quiere decir"
    ],
    "correcta": 3,
    "tip": "Las expresiones también se averiguan. Preguntar a quien la dijo es una buena forma de entenderla.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa11-7"
   },
   {
@@ -4245,16 +4245,16 @@
   },
   {
    "oa": "LE02 OA 11",
-   "pregunta": "Ignacio averiguó qué significa valiente. ¿Qué hace después?",
+   "pregunta": "Ignacio averiguó qué significa valiente. ¿Qué debería hacer después?",
    "opciones": [
-    "Vuelve a leer la oración",
-    "Cierra el cuento",
-    "Olvida lo que averiguó",
-    "Busca otra palabra igual"
+    "Volver a leer la oración",
+    "Cerrar el cuento",
+    "Olvidar lo que averiguó",
+    "Buscar otra palabra igual"
    ],
    "correcta": 0,
    "tip": "Después de averiguar, se vuelve a la oración: ahora se entiende lo que dice el cuento.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa11-9"
   },
   {
@@ -4371,30 +4371,30 @@
   },
   {
    "oa": "LE02 OA 11",
-   "pregunta": "Ana no entiende bisabuelo y su mamá está al lado. ¿Qué hace?",
+   "pregunta": "Ana no entiende bisabuelo y su mamá está al lado. ¿Qué debería hacer?",
    "opciones": [
-    "Se queda esperando",
-    "Deja el cuento a medias",
-    "Hace como que entiende",
-    "Le pregunta a su mamá"
+    "Quedarse esperando",
+    "Dejar el cuento a medias",
+    "Hacer como que entiende",
+    "Preguntarle a su mamá"
    ],
    "correcta": 3,
    "tip": "Preguntar a un adulto que está cerca es una forma rápida de averiguar qué significa una palabra.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa11-18"
   },
   {
    "oa": "LE02 OA 11",
-   "pregunta": "Lucas pregunta qué es muralla y su papá tampoco sabe. ¿Qué hacen?",
+   "pregunta": "Lucas y su papá no saben qué es muralla. ¿Qué deberían hacer?",
    "opciones": [
-    "Lo dejan sin saber",
-    "Lo averiguan juntos",
-    "Inventan un significado",
-    "Cambian de tema"
+    "Dejarlo sin saber",
+    "Averiguarlo juntos",
+    "Inventar un significado",
+    "Cambiar de tema"
    ],
    "correcta": 1,
    "tip": "Si nadie sabe, se busca juntos en un diccionario o en un libro. Inventar no sirve.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa11-19"
   },
   {
@@ -5673,16 +5673,16 @@
   },
   {
    "oa": "LE02 OA 14",
-   "pregunta": "Diego no sabe cuánto pesa el elefante. ¿Qué hace para su artículo?",
+   "pregunta": "Diego escribe de elefantes y no sabe su peso. ¿Qué debería hacer?",
    "opciones": [
-    "Lo deja en blanco",
-    "Escribe que es liviano",
-    "Inventa un número",
-    "Lo busca en un libro"
+    "Dejarlo en blanco",
+    "Escribir que es liviano",
+    "Inventar un número",
+    "Buscarlo en un libro"
    ],
    "correcta": 3,
    "tip": "Un artículo informativo usa datos verdaderos. Si no sabe uno, Diego lo busca en una fuente en vez de inventarlo.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa14-23"
   },
   {
@@ -5953,16 +5953,16 @@
   },
   {
    "oa": "LE02 OA 16",
-   "pregunta": "Benjamín anotó diez ideas, pero su cuento es corto. ¿Qué hace?",
+   "pregunta": "Benjamín anotó diez ideas y su cuento es corto. ¿Qué debería hacer?",
    "opciones": [
-    "Elige las mejores",
-    "Borra toda la hoja",
-    "Usa las diez juntas",
-    "Copia otra idea"
+    "Elegir las mejores",
+    "Borrar toda la hoja",
+    "Usar las diez juntas",
+    "Copiar otra idea"
    ],
    "correcta": 0,
    "tip": "No todas las ideas caben. Al planificar se eligen las que mejor sirven para el texto.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa16-13"
   },
   {
@@ -6149,7 +6149,7 @@
   },
   {
    "oa": "LE02 OA 17",
-   "pregunta": "Tomás escribió su cuento en una sola oración larguísima. ¿Qué hace?",
+   "pregunta": "Tomás escribió su cuento en una sola oración. ¿Qué debería hacer?",
    "opciones": [
     "Escribirlo con mayúsculas",
     "Separarlo en oraciones",
@@ -6158,7 +6158,7 @@
    ],
    "correcta": 1,
    "tip": "Las oraciones cortas, cada una con su mayúscula y su punto, hacen que el cuento se entienda mejor.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa17-2"
   },
   {
@@ -6177,16 +6177,16 @@
   },
   {
    "oa": "LE02 OA 17",
-   "pregunta": "Las oraciones del cuento de Diego están desordenadas. ¿Qué hace?",
+   "pregunta": "Las oraciones de Diego están desordenadas. ¿Qué debería hacer?",
    "opciones": [
-    "Las escribe en mayúscula",
-    "Borra la primera de todas",
-    "Las ordena como pasaron",
-    "Agrega más oraciones"
+    "Escribirlas en mayúscula",
+    "Borrar la primera de todas",
+    "Ordenarlas como pasaron",
+    "Agregar más oraciones"
    ],
    "correcta": 2,
    "tip": "Al revisar, las ideas se ordenan como ocurrieron: así el lector entiende qué pasó primero y qué después.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa17-4"
   },
   {
@@ -6261,16 +6261,16 @@
   },
   {
    "oa": "LE02 OA 17",
-   "pregunta": "La profesora le dice a Diego que falta el final. ¿Qué hace él?",
+   "pregunta": "La profe le dice a Diego que falta el final. ¿Qué debería hacer él?",
    "opciones": [
-    "Copia el final de otro",
-    "Borra todo el cuento",
-    "Agrega cómo termina",
-    "Le dice que no importa"
+    "Copiar el final de otro",
+    "Borrar todo el cuento",
+    "Agregar cómo termina",
+    "Decirle que no importa"
    ],
    "correcta": 2,
    "tip": "Una sugerencia sirve para mejorar el texto. Diego completa su cuento contando cómo termina.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa17-10"
   },
   {
@@ -7199,7 +7199,7 @@
   },
   {
    "oa": "LE02 OA 19",
-   "pregunta": "Tomás quiere cualquier lápiz, no uno en especial. ¿Qué dice?",
+   "pregunta": "Tomás quiere cualquier lápiz, no uno en especial. ¿Qué debería decir?",
    "opciones": [
     "Pásame mi lápiz",
     "Pásame lápiz",
@@ -7208,7 +7208,7 @@
    ],
    "correcta": 2,
    "tip": "Un se usa para algo cualquiera. El se usa para uno que ya conocemos.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa19-17"
   },
   {
@@ -9215,16 +9215,16 @@
   },
   {
    "oa": "LE02 OA 24",
-   "pregunta": "El payaso pregunta a los niños dónde está el gato. ¿Qué hacen?",
+   "pregunta": "El payaso pregunta dónde está el gato. ¿Qué deberían hacer los niños?",
    "opciones": [
-    "Le responden en voz alta",
-    "Se quedan dormidos",
-    "Se van de la sala",
-    "Suben al escenario"
+    "Responderle en voz alta",
+    "Quedarse dormidos",
+    "Irse de la sala",
+    "Subir al escenario"
    ],
    "correcta": 0,
    "tip": "En las obras para niños, a veces los actores le hablan al público. Si preguntan, se responde desde el asiento.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa24-11"
   },
   {
@@ -9509,7 +9509,7 @@
   },
   {
    "oa": "LE02 OA 25",
-   "pregunta": "Conversan sobre el cuento del zorro. ¿Qué dice Ema que sigue el tema?",
+   "pregunta": "Hablan del zorro del cuento. ¿Qué podría decir Ema que siga el tema?",
    "opciones": [
     "Mi gato duerme mucho",
     "Me gusta el helado",
@@ -9518,7 +9518,7 @@
    ],
    "correcta": 3,
    "tip": "Hablar del zorro mantiene la conversación en el cuento que estaban comentando.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa25-2"
   },
   {
@@ -9551,7 +9551,7 @@
   },
   {
    "oa": "LE02 OA 25",
-   "pregunta": "Hablaban del cuento y terminaron en los juegos. ¿Qué dice Rosa?",
+   "pregunta": "Del cuento pasaron a hablar de juegos. ¿Qué debería decir Rosa?",
    "opciones": [
     "Volvamos al cuento",
     "Mejor me voy a jugar",
@@ -9560,7 +9560,7 @@
    ],
    "correcta": 0,
    "tip": "Recordar el tema ayuda a que la conversación vuelva a su foco.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa25-5"
   },
   {
@@ -9607,7 +9607,7 @@
   },
   {
    "oa": "LE02 OA 25",
-   "pregunta": "Maite no está de acuerdo con Iván. ¿Qué dice con respeto?",
+   "pregunta": "Maite no está de acuerdo con Iván. ¿Qué podría decir con respeto?",
    "opciones": [
     "Estás muy mal",
     "Eso es una tontera",
@@ -9616,7 +9616,7 @@
    ],
    "correcta": 2,
    "tip": "Se puede pensar distinto sin ofender: se dice la propia idea, no se ataca la del otro.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa25-9"
   },
   {
@@ -9635,16 +9635,16 @@
   },
   {
    "oa": "LE02 OA 25",
-   "pregunta": "Florencia tiene una idea para el mural del grupo. ¿Qué hace?",
+   "pregunta": "Florencia tiene una idea para el mural del grupo. ¿Qué debería hacer?",
    "opciones": [
-    "Lo pinta todo sola",
-    "La grita sin parar",
-    "Se la guarda para ella",
-    "La cuenta al grupo"
+    "Pintarlo todo sola",
+    "Gritarla sin parar",
+    "Guardársela para ella",
+    "Contarla al grupo"
    ],
    "correcta": 3,
    "tip": "Compartir la idea con el grupo permite que todos la conozcan y la conversen.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa25-11"
   },
   {
@@ -9747,16 +9747,16 @@
   },
   {
    "oa": "LE02 OA 25",
-   "pregunta": "Renata terminó de contar algo. ¿Qué hace Iván para mostrar interés?",
+   "pregunta": "Renata contó algo. ¿Qué debería hacer Iván para mostrar interés?",
    "opciones": [
-    "Le pregunta más",
-    "Mira para el lado",
-    "Cambia el tema",
-    "Se va a jugar"
+    "Preguntarle más",
+    "Mirar para el lado",
+    "Cambiar el tema",
+    "Irse a jugar"
    ],
    "correcta": 0,
    "tip": "Hacer una pregunta sobre lo que contó muestra que le interesó y quiere saber más.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa25-19"
   },
   {
@@ -9831,30 +9831,30 @@
   },
   {
    "oa": "LE02 OA 25",
-   "pregunta": "Rocío se cayó en el recreo y llora. ¿Qué hace Diego?",
+   "pregunta": "Rocío se cayó en el recreo y llora. ¿Qué debería hacer Diego?",
    "opciones": [
-    "Le pregunta si está bien",
-    "Sigue corriendo sin mirar",
-    "Se ríe fuerte de ella",
-    "Le dice que exagera"
+    "Preguntarle si está bien",
+    "Seguir corriendo sin mirar",
+    "Reírse fuerte de ella",
+    "Decirle que exagera"
    ],
    "correcta": 0,
    "tip": "Preguntarle cómo está muestra empatía: Diego piensa en lo que siente Rocío.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa25-25"
   },
   {
    "oa": "LE02 OA 25",
-   "pregunta": "Ema está hablando y Gaspar quiere opinar. ¿Qué hace él?",
+   "pregunta": "Ema está hablando y Gaspar quiere opinar. ¿Qué debería hacer él?",
    "opciones": [
-    "Habla encima de ella",
-    "Espera que termine",
-    "Grita su idea fuerte",
-    "Le dice que se calle"
+    "Hablar encima de ella",
+    "Esperar que termine",
+    "Gritar su idea fuerte",
+    "Decirle que se calle"
    ],
    "correcta": 1,
    "tip": "Respetar el turno es dejar terminar a quien habla antes de decir lo propio.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa25-26"
   },
   {
@@ -9985,7 +9985,7 @@
   },
   {
    "oa": "LE02 OA 26",
-   "pregunta": "La abuela le tejió una bufanda a Pía. ¿Qué dice Pía?",
+   "pregunta": "La abuela le tejió una bufanda a Pía. ¿Qué debería decir Pía?",
    "opciones": [
     "Buenas noches a todos",
     "Permiso, voy a pasar",
@@ -9994,7 +9994,7 @@
    ],
    "correcta": 2,
    "tip": "Al recibir un regalo se dice gracias.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa26-6"
   },
   {
@@ -10069,7 +10069,7 @@
   },
   {
    "oa": "LE02 OA 26",
-   "pregunta": "Josefa llegó tarde y la clase ya empezó. ¿Qué dice al entrar?",
+   "pregunta": "Josefa llegó tarde y la clase ya empezó. ¿Qué debería decir al entrar?",
    "opciones": [
     "Ya llegué, chao",
     "Hola, ¿qué hacen?",
@@ -10078,21 +10078,21 @@
    ],
    "correcta": 2,
    "tip": "Al llegar tarde se pide disculpas a quienes ya estaban trabajando.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa26-12"
   },
   {
    "oa": "LE02 OA 26",
-   "pregunta": "Amaro le dijo algo feo a su amigo y se arrepiente. ¿Qué hace?",
+   "pregunta": "Amaro le dijo algo feo a su amigo y se arrepiente. ¿Qué debería hacer?",
    "opciones": [
-    "Le pide permiso",
-    "Hace como si nada",
-    "Le da las gracias",
-    "Le pide perdón"
+    "Pedirle permiso",
+    "Hacer como si nada",
+    "Darle las gracias",
+    "Pedirle perdón"
    ],
    "correcta": 3,
    "tip": "Pedir perdón ayuda a arreglar algo que hicimos mal.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa26-13"
   },
   {
@@ -10111,7 +10111,7 @@
   },
   {
    "oa": "LE02 OA 26",
-   "pregunta": "Nico quiere sacar leche, pero su tía está frente al refri. ¿Qué dice?",
+   "pregunta": "Nico quiere leche, pero su tía tapa el refri. ¿Qué debería decir?",
    "opciones": [
     "Permiso, tía",
     "Córrete, tía",
@@ -10120,7 +10120,7 @@
    ],
    "correcta": 0,
    "tip": "Para pasar o alcanzar algo donde está otra persona, se pide permiso.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa26-15"
   },
   {
@@ -10167,7 +10167,7 @@
   },
   {
    "oa": "LE02 OA 26",
-   "pregunta": "Matilde llega a la casa de su amiga. ¿Qué dice primero?",
+   "pregunta": "Matilde llega a la casa de su amiga. ¿Qué debería decir primero?",
    "opciones": [
     "Chao, nos vemos",
     "Hola, ¿cómo estás?",
@@ -10176,7 +10176,7 @@
    ],
    "correcta": 1,
    "tip": "Al llegar a un lugar lo primero es saludar.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa26-19"
   },
   {
@@ -10209,16 +10209,16 @@
   },
   {
    "oa": "LE02 OA 26",
-   "pregunta": "El vecino saluda a Vicente con un \"¡Hola!\". ¿Qué hace Vicente?",
+   "pregunta": "El vecino saluda a Vicente: \"¡Hola!\". ¿Qué debería hacer Vicente?",
    "opciones": [
-    "Se esconde detrás",
-    "Le saca la lengua",
-    "Le responde el saludo",
-    "Se hace el que no oye"
+    "Esconderse detrás",
+    "Sacarle la lengua",
+    "Responderle el saludo",
+    "Hacerse el que no oye"
    ],
    "correcta": 2,
    "tip": "Cuando alguien nos saluda, se le responde el saludo.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa26-22"
   },
   {
@@ -10237,7 +10237,7 @@
   },
   {
    "oa": "LE02 OA 26",
-   "pregunta": "Joaquín llega a un taller nuevo. ¿Qué dice primero de sí mismo?",
+   "pregunta": "Joaquín llega a un taller. ¿Qué debería decir primero de sí mismo?",
    "opciones": [
     "Qué comió hoy",
     "Cómo se llama",
@@ -10246,12 +10246,12 @@
    ],
    "correcta": 1,
    "tip": "Para presentarse lo primero es decir el nombre.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa26-24"
   },
   {
    "oa": "LE02 OA 26",
-   "pregunta": "Tomás presenta a su amigo Lucas a su mamá. ¿Qué dice?",
+   "pregunta": "Tomás presenta a su amigo Lucas a su mamá. ¿Qué debería decir?",
    "opciones": [
     "Mamá, él es Lucas",
     "Lucas, ándate ya",
@@ -10260,7 +10260,7 @@
    ],
    "correcta": 0,
    "tip": "Presentar a alguien es decir su nombre a la persona que no lo conoce.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa26-25"
   },
   {
@@ -10279,7 +10279,7 @@
   },
   {
    "oa": "LE02 OA 26",
-   "pregunta": "Le presentan a Rayén una niña nueva. ¿Qué dice Rayén?",
+   "pregunta": "Le presentan a Rayén una niña nueva. ¿Qué debería decir Rayén?",
    "opciones": [
     "Gracias, igual",
     "Hola, mucho gusto",
@@ -10288,7 +10288,7 @@
    ],
    "correcta": 1,
    "tip": "Al conocer a alguien se saluda y se dice mucho gusto.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa26-27"
   },
   {
@@ -10307,7 +10307,7 @@
   },
   {
    "oa": "LE02 OA 26",
-   "pregunta": "A Simón le tomaron su lápiz sin pedirlo. ¿Qué dice?",
+   "pregunta": "A Simón le tomaron su lápiz sin pedirlo. ¿Qué debería decir?",
    "opciones": [
     "Pídemelo la próxima vez",
     "¡Ladrón, devuélvemelo!",
@@ -10316,7 +10316,7 @@
    ],
    "correcta": 0,
    "tip": "Se puede decir lo que molesta sin insultar ni pelear, explicando lo que esperamos.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa26-29"
   },
   {
@@ -10783,7 +10783,7 @@
   },
   {
    "oa": "LE02 OA 28",
-   "pregunta": "Sofía aprendió «polvoriento» en un libro. ¿Qué dice bien?",
+   "pregunta": "Sofía aprendió «polvoriento» en un libro. ¿Qué podría decir?",
    "opciones": [
     "La sopa estaba polvorienta",
     "El jugo estaba polvoriento",
@@ -10792,7 +10792,7 @@
    ],
    "correcta": 2,
    "tip": "Polvoriento es lleno de polvo, como un sótano que nadie limpia. Un jugo o un río no se llenan de polvo.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa28-3"
   },
   {
@@ -10825,7 +10825,7 @@
   },
   {
    "oa": "LE02 OA 28",
-   "pregunta": "Benjamín oyó «manada» en un documental. ¿Qué dice bien?",
+   "pregunta": "Benjamín oyó «manada» en un documental. ¿Qué podría decir?",
    "opciones": [
     "Una manada de lobos",
     "Una manada de lápices",
@@ -10834,7 +10834,7 @@
    ],
    "correcta": 0,
    "tip": "Una manada es un grupo de animales que andan juntos, como los lobos. Los lápices y las casas no forman manadas.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa28-6"
   },
   {
@@ -11245,16 +11245,16 @@
   },
   {
    "oa": "LE02 OA 29",
-   "pregunta": "Cuatro amigos quieren ser el vendedor del almacén. ¿Qué hacen?",
+   "pregunta": "Cuatro amigos quieren ser el vendedor. ¿Qué deberían hacer?",
    "opciones": [
-    "Pelean por el papel",
-    "Gana el más grande",
-    "Dejan de jugar",
-    "Se turnan el papel"
+    "Pelear por el papel",
+    "Dárselo al más grande",
+    "Dejar de jugar",
+    "Turnarse el papel"
    ],
    "correcta": 3,
    "tip": "Turnarse permite que todos prueben el papel que quieren y que el juego siga siendo entretenido.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa29-6"
   },
   {
@@ -11483,16 +11483,16 @@
   },
   {
    "oa": "LE02 OA 29",
-   "pregunta": "El grupo prepara una dramatización. ¿Qué hace antes de mostrarla?",
+   "pregunta": "El grupo prepara una obra. ¿Qué debería hacer antes de mostrarla?",
    "opciones": [
-    "Ensaya junto",
-    "Come la colación",
-    "Se va a la casa",
-    "Pelea un rato"
+    "Ensayar junto",
+    "Comer la colación",
+    "Irse a la casa",
+    "Pelear un rato"
    ],
    "correcta": 0,
    "tip": "Ensayar en grupo permite que cada uno sepa cuándo le toca y que la presentación salga ordenada.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa29-23"
   },
   {
@@ -11581,16 +11581,16 @@
   },
   {
    "oa": "LE02 OA 29",
-   "pregunta": "El grupo no se pone de acuerdo con la historia del juego. ¿Qué hace?",
+   "pregunta": "El grupo no se pone de acuerdo con el juego. ¿Qué debería hacer?",
    "opciones": [
-    "Conversa y decide",
-    "Se va enojado",
-    "Grita más fuerte",
-    "Obedece al más alto"
+    "Conversar y decidir",
+    "Irse enojado",
+    "Gritar más fuerte",
+    "Obedecer al más alto"
    ],
    "correcta": 0,
    "tip": "En un equipo se conversa para llegar a un acuerdo. Así todos juegan la misma historia.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa29-30"
   },
   {
@@ -11665,16 +11665,16 @@
   },
   {
    "oa": "LE02 OA 30",
-   "pregunta": "Felipe se trabó en el trabalenguas y todos rieron con él. ¿Qué hace?",
+   "pregunta": "Felipe se trabó en un trabalenguas; rieron con él. ¿Qué debería hacer?",
    "opciones": [
-    "Se va de la sala",
-    "Nunca más lo dice",
-    "Se enoja con todos",
-    "Lo intenta otra vez"
+    "Irse de la sala",
+    "Nunca más decirlo",
+    "Enojarse con todos",
+    "Intentarlo otra vez"
    ],
    "correcta": 3,
    "tip": "Trabarse es parte del juego del trabalenguas. Volver a intentarlo es la forma de lograrlo y de ganar confianza.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa30-6"
   },
   {
@@ -11959,16 +11959,16 @@
   },
   {
    "oa": "LE02 OA 30",
-   "pregunta": "La canción repite el mismo coro varias veces. ¿Qué hace el curso?",
+   "pregunta": "La canción repite el coro varias veces. ¿Qué debería hacer el curso?",
    "opciones": [
-    "Lo canta una sola vez",
-    "Lo canta cada vez",
-    "Se lo salta siempre",
-    "Lo dice al revés"
+    "Cantarlo una sola vez",
+    "Cantarlo cada vez",
+    "Saltárselo siempre",
+    "Decirlo al revés"
    ],
    "correcta": 1,
    "tip": "El coro es la parte que vuelve en una canción. Se canta cada vez que aparece, y por eso se aprende rápido.",
-   "revisada": true,
+   "revisada": false,
    "id": "leng2-oa30-27"
   },
   {

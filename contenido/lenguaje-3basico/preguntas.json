@@ -1,5 +1,5 @@
 {
- "revisadas": 896,
+ "revisadas": 891,
  "preguntas": [
   {
    "oa": "LE03 OA 01",
@@ -3643,7 +3643,7 @@
   },
   {
    "oa": "LE03 OA 09",
-   "pregunta": "Diego terminó de buscar y tiene muchos datos anotados. ¿Qué hace ahora?",
+   "pregunta": "Diego terminó de buscar y tiene muchos datos anotados. ¿Qué debería hacer ahora?",
    "opciones": [
     "Ordenarlos y quedarse con los que responden su pregunta",
     "Escribirlos todos, aunque algunos no tengan nada que ver",
@@ -3652,7 +3652,7 @@
    ],
    "correcta": 0,
    "tip": "Investigar también es seleccionar: se guardan los datos que responden la pregunta y se dejan los demás.",
-   "revisada": true,
+   "revisada": false,
    "id": "len3-oa09-25"
   },
   {
@@ -10475,7 +10475,7 @@
   },
   {
    "oa": "LE03 OA 27",
-   "pregunta": "Matías está en la fila del casino y necesita salir. No ha chocado con nadie. ¿Qué dice?",
+   "pregunta": "Matías está en la fila del casino y necesita salir. No ha chocado con nadie. ¿Qué debería decir?",
    "opciones": [
     "Por favor, guárdame el puesto un rato",
     "Perdón, choqué contigo sin querer",
@@ -10484,7 +10484,7 @@
    ],
    "correcta": 2,
    "tip": "Permiso se usa para pasar por donde hay otras personas. Perdón se usa cuando ya hiciste algo que molestó a alguien.",
-   "revisada": true,
+   "revisada": false,
    "id": "len3-oa27-3"
   },
   {
@@ -10545,7 +10545,7 @@
   },
   {
    "oa": "LE03 OA 27",
-   "pregunta": "Ana llega a la plaza con su primo Tomás y se encuentra con Sofía, que no lo conoce. ¿Qué dice Ana?",
+   "pregunta": "Ana llega a la plaza con su primo Tomás y se encuentra con Sofía, que no lo conoce. ¿Qué debería decir Ana?",
    "opciones": [
     "Sofía, ¿te acuerdas de cómo me llamo?",
     "Tomás, ella ya sabe cómo me llamo yo",
@@ -10554,7 +10554,7 @@
    ],
    "correcta": 3,
    "tip": "Para presentar a otra persona se dice su nombre y quién es. Así las dos personas quedan sabiendo con quién hablan.",
-   "revisada": true,
+   "revisada": false,
    "id": "len3-oa27-8"
   },
   {
@@ -10825,7 +10825,7 @@
   },
   {
    "oa": "LE03 OA 27",
-   "pregunta": "Camila va llegando a su puesto y hay dos compañeros parados conversando en el pasillo. ¿Qué dice?",
+   "pregunta": "Camila va llegando a su puesto y hay dos compañeros parados conversando en el pasillo. ¿Qué debería decir?",
    "opciones": [
     "Permiso, necesito llegar a mi puesto",
     "Gracias por dejarme el pasillo libre",
@@ -10834,12 +10834,12 @@
    ],
    "correcta": 0,
    "tip": "Permiso se dice antes de pasar por donde hay gente. Gracias viene después, cuando ya te dejaron pasar.",
-   "revisada": true,
+   "revisada": false,
    "id": "len3-oa27-28"
   },
   {
    "oa": "LE03 OA 27",
-   "pregunta": "Diego le prestó su goma a Sofía y ella se la devuelve al final de la clase. ¿Qué dice Sofía?",
+   "pregunta": "Diego le prestó su goma a Sofía y ella se la devuelve al final de la clase. ¿Qué debería decir Sofía?",
    "opciones": [
     "Aquí está tu goma, perdón por haberla usado",
     "Aquí está tu goma, préstamela otra vez mañana",
@@ -10848,7 +10848,7 @@
    ],
    "correcta": 2,
    "tip": "Al devolver algo prestado se agradece. Pedir perdón por usarlo no corresponde: se lo prestaron justamente para eso.",
-   "revisada": true,
+   "revisada": false,
    "id": "len3-oa27-29"
   },
   {
