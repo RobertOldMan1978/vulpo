@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>VULPO · Profesores</title>
 <meta name="robots" content="noindex,follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,7 +37,7 @@ if(!window.NIV) window.NIV={ASIGS:{},NIVELES:[],TRANSVERSALES:{},ETIQUETA_8:{},
    INFORMACIÓN: marcan si un objetivo va bien, regular o mal. Lo que baja es la saturación
    del resto, para que el color signifique algo en vez de estar en todas partes. */
 :root{--gold:#e0b341;--cyan:#7ba7d4;--green:#4bb583;--pink:#d4677f;--violet:#7460bd;
- --dim:#8b93a7;--panel:#161b26;--fondo:#0e1219;--linea:#ffffff14;--texto:#e6e9ef;
+ --dim:#8b93a7;--panel:#161b26;--fondo:#0e1219;--linea:#ffffff14;--texto:#e6e9ef;--linea2:#ffffff26;--sutil:#ffffff0d;
  /* Cuerpo de texto: entre --texto y --dim. Lo que se LEE (el enunciado de un objetivo)
     no debe pesar como un titular ni desvanecerse como una nota al pie. */
  --cuerpo:#c9cfdb}
@@ -81,7 +81,7 @@ h1{font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--texto);
 /* Los rótulos de sección en versalitas y atenuados: nombran la caja, no compiten con ella. */
 .card h3{margin:0 0 12px;font-size:12px;font-weight:600;letter-spacing:.03em;
  text-transform:uppercase;color:var(--dim)}
-input,textarea,select{width:100%;padding:11px 12px;border-radius:8px;border:1px solid #ffffff1f;
+input,textarea,select{width:100%;padding:11px 12px;border-radius:8px;border:1px solid var(--linea2);
  background:var(--fondo);color:var(--texto);font-weight:400;margin-bottom:10px;font-family:inherit}
 input:focus,textarea:focus,select:focus{outline:none;border-color:var(--violet)}
 textarea{resize:vertical;line-height:1.45}
@@ -93,7 +93,7 @@ textarea{resize:vertical;line-height:1.45}
  font-family:inherit;font-weight:600;font-size:14px;cursor:pointer;margin-bottom:8px}
 .btn:hover{filter:brightness(1.12)}
 /* El padding baja 1px para compensar el borde y que las dos alturas calcen. */
-.btn.sec{background:transparent;border:1px solid #ffffff26;color:var(--cuerpo);padding:10px}
+.btn.sec{background:transparent;border:1px solid var(--linea2);color:var(--cuerpo);padding:10px}
 .btn.sec:hover{border-color:var(--violet);filter:none}
 .btn.txt,.btn.peligro{background:none;border:0;color:var(--dim);font-size:13px;padding:9px;
  text-decoration:underline;text-underline-offset:3px}
@@ -143,7 +143,7 @@ code{color:var(--cyan);font-weight:500;font-size:12px;
  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 /* Acordeón de cursos y de alumnos */
 .curso{border:1px solid var(--linea);border-radius:10px;margin-bottom:10px;overflow:hidden;
- background:#12172080}
+ background:var(--panel)}
 .curso>summary,.alumnos>summary{cursor:pointer;list-style:none;display:flex;
   align-items:center;gap:8px;flex-wrap:wrap}
 .curso>summary{padding:10px}
@@ -171,7 +171,7 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
    Cada línea es un BOTÓN de ancho completo y no un enlace: se toca en un teléfono, y un
    enlace de una línea entre otras tres es un blanco difícil. */
 .franja{border:1px solid var(--linea);border-radius:10px;padding:10px 12px;margin:0 0 12px;
- background:#ffffff06}
+ background:var(--sutil)}
 .franja-tit{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
  color:var(--gold);margin-bottom:6px}
 .franja-li{display:flex;align-items:center;gap:8px;width:100%;text-align:left;
@@ -238,7 +238,7 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
 .cie-fila:last-child{border-bottom:0}
 .cie-texto{color:var(--cuerpo);font-size:13px;line-height:1.45;margin-bottom:4px}
 .cie-medida{display:flex;align-items:center;gap:8px}
-.cie-barra{flex:1;height:8px;background:#ffffff14;border-radius:4px;overflow:hidden;min-width:60px}
+.cie-barra{flex:1;height:8px;background:var(--sutil);border-radius:4px;overflow:hidden;min-width:60px}
 .cie-barra>div{height:100%}
 .cie-medida b{min-width:42px;text-align:right}
 .cie-medida small{color:var(--dim);font-size:11px;white-space:nowrap}
@@ -279,17 +279,17 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
     content:'·';margin-right:8px;color:var(--dim);opacity:.55}
   .curso>summary>.delcurso{order:9;margin-left:auto}
 }
-.alumnos{margin-top:8px;border-top:1px solid #ffffff14}
+.alumnos{margin-top:8px;border-top:1px solid var(--sutil)}
 .alumnos>summary{padding:8px 0;color:var(--cyan);font-size:13px;font-weight:500}
 .alumnos-cuerpo{padding-top:4px}
 /* Área tocable de verdad: los botones de 21×25 px se fallaban con el dedo. */
 .ico{background:none;border:0;font-family:inherit;font-weight:600;font-size:15px;
  line-height:1;cursor:pointer;padding:0;min-width:38px;height:38px;border-radius:10px;
  color:var(--cyan)}
-.ico:active{background:#ffffff1a}
+.ico:active{background:var(--sutil)}
 /* Borrar se aparta del resto: es lo único que no se puede deshacer. */
 .ico-del{color:var(--pink);margin-left:12px}
-.btn-chip{background:none;border:1px solid #ffffff26;color:var(--cuerpo);
+.btn-chip{background:none;border:1px solid var(--linea2);color:var(--cuerpo);
  font-family:inherit;font-weight:500;font-size:13px;padding:7px 12px;border-radius:8px;
  cursor:pointer;margin-bottom:6px}
 .btn-chip:hover{border-color:var(--violet)}
@@ -324,7 +324,7 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
  text-overflow:ellipsis;white-space:nowrap}
 .av-head-sub{color:var(--dim);font-size:11px}
 .av-filtros{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
-.av-chip{background:none;border:1px solid #ffffff1f;color:var(--dim);font-family:inherit;
+.av-chip{background:none;border:1px solid var(--linea2);color:var(--dim);font-family:inherit;
  font-weight:500;font-size:12px;padding:6px 12px;border-radius:6px;cursor:pointer}
 .av-chip.on{border-color:var(--cyan);color:var(--cyan);background:#7ba7d418}
 /* Dos líneas por objetivo: los textos del currículum llegan a 250 caracteres, y con el
@@ -394,7 +394,7 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
    hay algo que hacer. Nunca en verde/ámbar/rosa: en esta pantalla eso es rendimiento. */
 .uni-sello{font-size:10px;font-weight:600;letter-spacing:.02em;text-transform:none;
  border-radius:99px;padding:2px 7px;margin-left:6px;white-space:nowrap;
- border:1px solid #ffffff1f;color:var(--dim)}
+ border:1px solid var(--linea2);color:var(--dim)}
 .uni-clases{color:var(--gold);border-color:#d8a43a55;background:#d8a43a12}
 .av-corte-vacio{color:var(--dim);font-size:12px;margin:0 0 12px}
 /* El historial: atenuado, pero NO invisible. Es consulta y no acción, así que no compite
@@ -402,7 +402,7 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
    gris de 11 px al pie se lee como "perdí datos". Fondo tenue y un poco de cuerpo para
    que se vea que hay algo ahí y se pueda tocar. */
 .av-hist{margin-top:18px;border:1px solid var(--linea);border-radius:8px;
- background:#ffffff05;padding:2px 12px}
+ background:var(--sutil);padding:2px 12px}
 .av-hist>summary{color:var(--cuerpo);font-size:13px;font-weight:600;cursor:pointer;
  padding:10px 0;list-style:none}
 .av-hist>summary::-webkit-details-marker{display:none}   /* Safari, el de siempre */
@@ -448,7 +448,7 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
 .tend-sem.ahora .tend-fecha{color:var(--cyan)}
 .tend-vacio{opacity:.45}
 #btnArriba{position:fixed;right:14px;bottom:14px;width:44px;height:44px;border-radius:50%;
- border:1px solid #ffffff26;background:var(--panel);color:var(--cuerpo);
+ border:1px solid var(--linea2);background:var(--panel);color:var(--cuerpo);
  font-family:inherit;font-weight:600;font-size:18px;cursor:pointer;z-index:10;opacity:.95}
 /* Equipo del curso: el CSS global pone width:100%/display:block a los input, que
    descoloca los radios y las casillas. Estas reglas lo anulan solo dentro del equipo. */
@@ -474,7 +474,7 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
 .ref-vacio{color:var(--dim);font-size:12px;margin:4px 0}
 .ref-lanzar{width:auto;margin-top:8px}
 .btn-chip:disabled{opacity:.45;cursor:default}
-.btn-chip.principal:disabled{background:none;color:var(--dim);border-color:#ffffff26}
+.btn-chip.principal:disabled{background:none;color:var(--dim);border-color:var(--linea2)}
 
 /* ===== Impresión =====
    El panel es OSCURO, y una pantalla oscura impresa tal cual gasta un cartucho y sale
@@ -526,12 +526,12 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
 .civ-cod{flex:0 0 84px;font-size:11px;color:var(--dim);font-variant-numeric:tabular-nums}
 .civ-txt{flex:1;min-width:0;font-size:13px;color:var(--cuerpo);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .civ-dom{flex:0 0 120px;display:flex;align-items:center;gap:8px;justify-content:flex-end}
-.civ-bar{width:70px;height:8px;border-radius:4px;background:#ffffff14;overflow:hidden}
+.civ-bar{width:70px;height:8px;border-radius:4px;background:var(--sutil);overflow:hidden}
 .civ-bar > i{display:block;height:100%}
 .civ-dom b{min-width:38px;text-align:right;font-size:12.5px;font-variant-numeric:tabular-nums}
 .civ-obs-wrap{margin:16px 0}
 .civ-obs-lbl{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:6px}
-.civ-obs{width:100%;min-height:70px;background:var(--fondo);border:1px solid #ffffff26;color:var(--texto);
+.civ-obs{width:100%;min-height:70px;background:var(--fondo);border:1px solid var(--linea2);color:var(--texto);
   font-family:inherit;font-size:13px;padding:10px 12px;border-radius:8px;resize:vertical;box-sizing:border-box}
 .civ-obs-box{border:1px solid var(--linea);border-radius:6px;min-height:56px;padding:10px 12px;color:var(--cuerpo);font-size:12.5px;white-space:pre-wrap}
 .civ-obs-col{margin-top:18px}
@@ -549,30 +549,75 @@ details[open]>summary>.cur-chevron{transform:rotate(90deg)}
   .civ-firma,.civ-firma-linea{color:#000;border-top-color:#000}
 }
 </style>
+<!-- Sistema de diseño CLARO y armazón con menú lateral (Sesión 154). Va DESPUÉS del <style>
+     de arriba a propósito: sus tokens ganan por orden de origen. -->
+<link rel="stylesheet" href="assets/panel/panel.css">
+<script src="assets/panel/iconos.js"></script>
+<script src="assets/panel/ui.js"></script>
+<script src="assets/panel/router.js"></script>
+<script src="assets/panel/vistas/inicio.js"></script>
+<script src="assets/panel/vistas/cursos.js"></script>
+<script src="assets/panel/vistas/curso.js"></script>
+<script src="assets/panel/vistas/alumno.js"></script>
+<script src="assets/panel/vistas/pulso.js"></script>
+<script src="assets/panel/vistas/civica.js"></script>
+<script src="assets/panel/vistas/cierre.js"></script>
+<script src="assets/panel/vistas/admin.js"></script>
+<script>/* Respaldos: si un módulo del panel no carga, el panel sigue funcionando sin él. */
+if(!window.ICO) window.ICO=function(){return'';};
+if(!window.toast) window.toast=function(t){ if(t) console.log(t); };
+if(!window.cargando) window.cargando=function(){};
+if(!window.confirmar) window.confirmar=function(o){return Promise.resolve(window.confirm((o.titulo||'')+' '+(o.texto||'')));};
+if(!window.pedirTexto) window.pedirTexto=function(o){return Promise.resolve(window.prompt(o.titulo||'',o.valor||''));};
+if(!window.vacio) window.vacio=function(i,t){return '<p style="color:var(--dim)">'+t+'</p>';};
+if(!window.esqueleto) window.esqueleto=function(){return '<p style="color:var(--dim)">Cargando…</p>';};</script>
 </head>
 <body>
 <h1>VULPO · Profesores</h1>
 
 <div class="card" id="cardAuth">
+  <div class="auth-marca"><img src="assets/vulpo-mascota.png" alt="" onerror="this.remove()">
+    <div><b>VULPO</b><span>Panel de profesores y equipo directivo</span></div></div>
   <h3 id="authTitulo">Ingresar</h3>
-  <input id="correo" type="email" placeholder="Correo" autocomplete="email">
-  <input id="clave" type="password" placeholder="Contraseña" autocomplete="current-password">
-  <input id="nombre" class="hide" placeholder="Tu nombre">
+  <label class="campo" for="correo">Correo</label>
+  <input id="correo" type="email" placeholder="nombre@colegio.cl" autocomplete="email">
+  <label class="campo" for="clave">Contraseña</label>
+  <input id="clave" type="password" autocomplete="current-password">
+  <label class="campo hide" for="nombre" id="lblNombre">Tu nombre</label>
+  <input id="nombre" class="hide" placeholder="Como te verán tus colegas">
   <div class="btn-fila">
     <button class="btn" id="btnEntrar">Entrar</button>
     <button class="btn sec" id="btnCambiar">Crear mi cuenta</button>
   </div>
-  <p class="msg" id="authMsg"></p>
+  <p class="msg" id="authMsg" role="alert"></p>
+  <div class="auth-pie"><a href="/">← Volver a vulpo.cl</a></div>
 </div>
 
-<div class="card hide" id="cardPanel">
-  <div id="profId" class="prof-id hide"></div>
-  <h3 id="panelTitulo">Mis cursos</h3>
-  <div id="lista"></div>
-  <p class="msg" id="panelMsg"></p>
-  <!-- Cerrar sesión va en texto, no como botón lleno: es de las acciones menos
-       frecuentes del panel y competía de igual a igual con "Crear curso". -->
-  <button class="btn txt" id="btnSalir">Cerrar sesión</button>
+<!-- Armazón (Sesión 154): menú lateral + barra superior + contenido. Los ids de antes
+     (#profId, #panelTitulo, #lista, #panelMsg, #btnSalir) se conservan: las vistas siguen
+     escribiendo en #lista, que ahora es el área de contenido. -->
+<div class="card hide app" id="cardPanel">
+  <aside id="side" aria-label="Menú del panel">
+    <a class="side-marca" href="#/inicio"><img src="assets/vulpo-mascota.png" alt="" onerror="this.remove()">
+      <div><b>VULPO</b><span>Panel docente</span></div></a>
+    <nav id="nav"></nav>
+    <div class="side-pie">
+      <div id="profId" class="prof-id"></div>
+      <button class="btn txt" id="btnSalir" type="button"></button>
+    </div>
+  </aside>
+  <div id="velo"></div>
+  <div id="main">
+    <header id="top">
+      <button class="b b-txt b-ico" id="btnMenu" type="button" aria-label="Abrir menú"></button>
+      <div class="top-tit"><div class="migas" id="migas"></div><h1 id="panelTitulo">Inicio</h1></div>
+      <div class="top-acc" id="topAcc"></div>
+    </header>
+    <main id="contenido">
+      <div id="lista"></div>
+      <p class="msg" id="panelMsg"></p>
+    </main>
+  </div>
 </div>
 
 <button id="btnArriba" class="hide" title="Volver arriba" aria-label="Volver arriba">↑</button>
@@ -645,8 +690,24 @@ async function manejarFalloDeIngreso(e){
   }
   aviso(traducir(e));
 }
+// Ícono dentro de un botón con texto: los botones viejos (.btn, .btn-chip) no son flex, así
+// que el SVG se alinea a mano. Si iconos.js no cargó, no dibuja nada y queda solo el texto.
+function icoTxt(n){
+  const s = window.ICO ? ICO(n) : '';
+  return s ? s.replace('<svg ', '<svg style="vertical-align:-3px;margin-right:5px" ') : '';
+}
 function aviso(t,color){
-  const el = $('cardPanel').classList.contains('hide') ? $('authMsg') : $('panelMsg');
+  /* Dentro del panel (Sesión 154) el mensaje va como AVISO FLOTANTE y el "Cargando…" como
+     la barra fina de arriba: el mensaje de una línea al pie no se veía, y había que hacer
+     scroll para descubrir que algo había fallado. En la pantalla de ingreso sigue igual. */
+  if(!$('cardPanel').classList.contains('hide')){
+    if(!t){ cargando('fin'); return; }
+    if(color === 'var(--dim)'){ cargando(true); return; }
+    cargando('fin');
+    toast(t, color === 'var(--green)' ? 'ok' : (color && color !== 'var(--pink)' ? 'info' : 'error'));
+    return;
+  }
+  const el = $('authMsg');
   el.style.color=color||'var(--pink)'; el.textContent=t;
   // El mensaje vive arriba del panel, y las acciones que lo disparan (equipo, enlace,
   // alumnos) ocurren abajo del todo: sin esto, un error queda FUERA DE PANTALLA justo
@@ -676,11 +737,8 @@ function errorPanel(e){
     : traducir(e);
 }
 
-// Vuelve al panel sin dejar la pantalla en blanco si la lista no se puede cargar.
-function volverAlPanel(){
-  irArriba();
-  pintarLista().catch(e=>aviso(errorPanel(e)));
-}
+// Vuelve a la pantalla anterior del panel (se redefine abajo, junto a las rutas).
+let volverAlPanel = function(){ ir('#/cursos'); };
 
 // Cada vista se abre desde arriba. Sin esto, el profesor que pulsa "Ver avance" desde
 // el final de una lista de 35 alumnos cae en mitad de la tabla nueva, sin saber de qué
@@ -706,7 +764,7 @@ const OA_UNIDAD = {};
 const UNIDADES = {};        // 'HI08' -> [{id,titulo}] en el orden del oa.json
 /* Lo que la vista de avance necesita saber del curso y NO puede leer del DOM: al entrar,
    `#lista` se reemplaza por la tabla y la tarjeta del curso deja de existir. Se llena en
-   pintarLista y sobrevive a ese reemplazo. (`nivelDeCurso` sigue leyendo el DOM porque lo
+   asegurarCursos y sobrevive a ese reemplazo. (`nivelDeCurso` sigue leyendo el DOM porque lo
    usan los bloques que viven DENTRO de la tarjeta, donde sí está.) */
 const CURSO_INFO = {};      // 'CUR-BA04' -> {nivel:'08', misAsig:['HI08',…]}
 
@@ -776,6 +834,7 @@ $('btnCambiar').onclick=()=>{
   $('btnEntrar').textContent  = MODO==='entrar' ? 'Entrar' : 'Crear cuenta';
   $('btnCambiar').textContent = MODO==='entrar' ? 'Crear mi cuenta' : '← Ya tengo cuenta';
   $('nombre').classList.toggle('hide', MODO==='entrar');
+  $('lblNombre').classList.toggle('hide', MODO==='entrar');
   aviso('');
 };
 
@@ -837,7 +896,7 @@ function pintarIdentidad(){
   const nom = (YO.nombre||'').trim();
   // Sin nombre, el correo hace de nombre: repetirlo en las dos líneas sería ruido.
   $('profId').innerHTML =
-    '<div class="pid-l1"><span class="pid-nom">👤 ' + esc(nom || YO.correo) + '</span>'
+    '<div class="pid-l1"><span class="pid-nom">' + esc(nom || YO.correo) + '</span>'
     + '<span class="pid-rango">' + esc(rango) + '</span></div>'
     + (nom ? '<div class="pid-mail">' + esc(YO.correo) + '</div>' : '');
 }
@@ -851,33 +910,21 @@ async function cargarPanel(){
   if(!YO){ throw new Error('no_autorizado'); }
   $('cardAuth').classList.add('hide');
   $('cardPanel').classList.remove('hide');
+  document.body.classList.add('en-app');
   try { const r = await SB.rpc('kimun_prof_mi_acceso'); window.MI_ACCESO = (r.data&&r.data[0]) || null; }
   catch(e){ window.MI_ACCESO = null; }
   const esAdminColegio = window.MI_ACCESO ? !!window.MI_ACCESO.es_admin_colegio
                                           : !!(YO.es_admin || YO.es_super || YO.es_operador);
-  window.ESADMINCOLEGIO = esAdminColegio;   // usado por pintarLista y el bloque de equipo
+  window.ESADMINCOLEGIO = esAdminColegio;   // usado por el menú, las vistas y el bloque de equipo
   pintarIdentidad();
-  $('panelTitulo').textContent = esAdminColegio ? 'Todos los cursos' : 'Mis cursos';
-  await pintarLista();
+  armarMenu();
+  iniciarRutas();
 }
 // ¿Tengo la capacidad `campo` según el acceso efectivo? Con MI_ACCESO manda el grant; sin él
 // (función no aplicada) cae al `legado` por bandera. Lo usan los botones de herramientas y el 🔑.
 function accede(campo, legado){ return window.MI_ACCESO ? !!window.MI_ACCESO[campo] : legado; }
 
-// Mi rol en ESTE curso, para el encabezado de su tarjeta.
-// ⚠️ Solo si tengo membresía: a un Admin/Super sin membresía `kimun_prof_asignaturas` le
-// devuelve TODAS las del nivel, así que enumerárselas no diría nada sobre su rol.
-function rolEnCurso(c){
-  if(c.miRol === 'jefe') return '<span class="cur-rol">Tú: <b>Profesor jefe</b></span>';
-  if(c.miRol === 'asignatura' && c.misAsig && c.misAsig.length)
-    return '<span class="cur-rol">Tú: <b>'
-      + esc(c.misAsig.map(a=>ASIG_NOMBRE[a]||a).join(', ')) + '</b></span>';
-  return '';
-}
 
-// Al cerrar un curso se cierra también todo lo de adentro. Sin esto, reabrirlo lo devuelve
-// con la lista de alumnos y el equipo desplegados, que es justo lo que se venía de esconder.
-function plegarDentro(det){ det.querySelectorAll('details').forEach(d=>{ d.open=false; }); }
 
 /* Orden ASCENDENTE de cursos: primero por nivel (3° antes que 8°) y dentro de cada nivel
    por nombre. El servidor los devuelve ordenados solo por nombre, y con nombres como
@@ -911,489 +958,9 @@ function totalOaNivel(nivel){
   return suma;
 }
 
-// El árbol Sostenedor › Colegio › Cursos (Sesión 116). En vez de reescribir las tarjetas de
-// curso, las REPARENTA en el DOM bajo su colegio y sostenedor: así las tarjetas y todo su
-// cableado (equipo, alumnos, inscripción, ver avance) quedan intactos. Solo lo ve quien
-// administra el colegio; un Jefe / profe de asignatura ve sus cursos planos, sin envoltorio.
-// Corre DESPUÉS de renderizar y restaurar el estado desplegado, así el reparenting conserva
-// qué cursos estaban abiertos.
-function agruparArbol(sostArbol, porCurso){
-  const lista = document.getElementById('lista'); if(!lista) return;
-  const adm = document.getElementById('admBloque');
-  const arbol = document.createElement('div'); arbol.id = 'arbolInq';
-  arbol.innerHTML = `<div class="arb-crear" style="display:flex;gap:8px;flex-wrap:wrap;margin:8px 0">
-    <input id="sosNombre" placeholder="Nombre del sostenedor nuevo" style="max-width:280px">
-    <button class="btn sec" id="btnSos">+ Crear sostenedor</button></div>`;
-  const cajaDeColegio = {};   // colegio_id -> div donde van sus cursos
-  (sostArbol||[]).forEach(s=>{
-    const sn = document.createElement('details');
-    sn.className = 'sos-nodo'; sn.open = true; sn.dataset.sos = s.id;
-    sn.style.cssText = 'border-top:1px solid var(--linea);padding-top:8px;margin-top:8px';
-    sn.innerHTML = `<summary style="cursor:pointer;list-style:none;font-size:14px;font-weight:600;padding:4px 0">
-        <span class="cur-chevron" aria-hidden="true">▸</span> 🏢 ${esc(s.nombre)}
-        <button class="ico sos-ren" data-sos="${esc(s.id)}" data-nom="${esc(s.nombre)}" title="Renombrar sostenedor" style="color:var(--gold)">✎</button>
-        <button class="ico ico-del sos-del" data-sos="${esc(s.id)}" title="Borrar sostenedor">🗑️</button></summary>`;
-    (s.colegios||[]).forEach(co=>{
-      const cn = document.createElement('details');
-      cn.className = 'col-nodo'; cn.open = true; cn.dataset.col = co.id;
-      cn.style.cssText = 'margin:6px 0 6px 12px';
-      cn.innerHTML = `<summary style="cursor:pointer;list-style:none;font-size:13px;font-weight:600;padding:3px 0">
-          <span class="cur-chevron" aria-hidden="true">▸</span> 🏫 ${esc(co.nombre)}
-          <span class="col-conteo" style="color:var(--dim);font-size:12px;font-weight:400"></span>
-          <button class="ico col-ren" data-col="${esc(co.id)}" data-nom="${esc(co.nombre)}" title="Renombrar colegio" style="color:var(--gold)">✎</button>
-          <button class="ico ico-del col-del" data-col="${esc(co.id)}" title="Borrar colegio">🗑️</button></summary>
-        <div class="col-cursos" style="margin-left:4px"></div>`;
-      cajaDeColegio[co.id] = cn.querySelector('.col-cursos');
-      sn.appendChild(cn);
-    });
-    const cc = document.createElement('div');
-    cc.className = 'arb-crear'; cc.style.cssText = 'display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 6px 12px';
-    cc.innerHTML = `<input class="in-colegio" data-sos="${esc(s.id)}" placeholder="Nombre del colegio nuevo" style="max-width:260px">
-      <button class="btn sec col-crear" data-sos="${esc(s.id)}">+ Crear colegio</button>`;
-    sn.appendChild(cc);
-    arbol.appendChild(sn);
-  });
-  // Caja "Sin colegio" (solo se agrega si algún curso cae ahí).
-  const sinNodo = document.createElement('details');
-  sinNodo.className = 'col-nodo'; sinNodo.open = true;
-  sinNodo.style.cssText = 'margin-top:8px;border-top:1px solid var(--linea);padding-top:8px';
-  sinNodo.innerHTML = `<summary style="cursor:pointer;list-style:none;font-size:13px;font-weight:600;padding:3px 0">
-      <span class="cur-chevron" aria-hidden="true">▸</span> 📄 Sin colegio</summary>
-    <div class="col-cursos" style="margin-left:4px"></div>`;
-  const sinCaja = sinNodo.querySelector('.col-cursos');
-  let haySin = false;
-  [...lista.querySelectorAll('details.curso')].forEach(cn=>{
-    const colId = (porCurso[cn.dataset.cod]||{}).colegioId;
-    if(colId && cajaDeColegio[colId]) cajaDeColegio[colId].appendChild(cn);
-    else { sinCaja.appendChild(cn); haySin = true; }
-  });
-  if(haySin) arbol.appendChild(sinNodo);
-  arbol.querySelectorAll('.col-nodo').forEach(cn=>{
-    const n = cn.querySelectorAll('details.curso').length;
-    const et = cn.querySelector('.col-conteo'); if(et) et.textContent = ' · '+n+' curso'+(n===1?'':'s');
-  });
-  lista.insertBefore(arbol, adm);
-  conectarArbol();
-}
 
-function conectarArbol(){
-  const bs = document.getElementById('btnSos');
-  if(bs) bs.onclick = async () => {
-    const n = (document.getElementById('sosNombre').value||'').trim();
-    if(!n){ aviso('Escribe un nombre.'); return; }
-    await accion(()=>SB.rpc('kimun_prof_sostenedor_crear',{p_nombre:n}), 'Sostenedor creado');
-  };
-  document.querySelectorAll('.col-crear').forEach(b=>b.onclick=async ()=>{
-    const campo=document.querySelector('.in-colegio[data-sos="'+b.dataset.sos+'"]');
-    const n=(campo.value||'').trim();
-    if(!n){ aviso('Escribe un nombre.'); return; }
-    await accion(()=>SB.rpc('kimun_prof_colegio_crear',{p_sostenedor:b.dataset.sos, p_nombre:n}), 'Colegio creado');
-  });
-  // Los ✎/🗑️ viven dentro de un <summary>: stopPropagation para que tocarlos no pliegue el nodo.
-  document.querySelectorAll('.sos-ren').forEach(b=>b.onclick=async (e)=>{ e.preventDefault(); e.stopPropagation();
-    const n=(prompt('Nuevo nombre del sostenedor:', b.dataset.nom)||'').trim(); if(!n) return;
-    await accion(()=>SB.rpc('kimun_prof_sostenedor_renombrar',{p_id:b.dataset.sos, p_nombre:n}), 'Sostenedor renombrado'); });
-  document.querySelectorAll('.sos-del').forEach(b=>b.onclick=async (e)=>{ e.preventDefault(); e.stopPropagation();
-    if(!confirm('¿Borrar este sostenedor?\n\nSe borran también sus colegios; sus cursos quedan SIN colegio (no se borran).')) return;
-    await accion(()=>SB.rpc('kimun_prof_sostenedor_borrar',{p_id:b.dataset.sos}), 'Sostenedor borrado'); });
-  document.querySelectorAll('.col-ren').forEach(b=>b.onclick=async (e)=>{ e.preventDefault(); e.stopPropagation();
-    const n=(prompt('Nuevo nombre del colegio:', b.dataset.nom)||'').trim(); if(!n) return;
-    await accion(()=>SB.rpc('kimun_prof_colegio_renombrar',{p_id:b.dataset.col, p_nombre:n}), 'Colegio renombrado'); });
-  document.querySelectorAll('.col-del').forEach(b=>b.onclick=async (e)=>{ e.preventDefault(); e.stopPropagation();
-    if(!confirm('¿Borrar este colegio?\n\nSus cursos quedan SIN colegio (no se borran).')) return;
-    await accion(()=>SB.rpc('kimun_prof_colegio_borrar',{p_id:b.dataset.col}), 'Colegio borrado'); });
-  document.querySelectorAll('.colegio-sel').forEach(sel=>sel.onchange=async ()=>{
-    await accion(()=>SB.rpc('kimun_prof_curso_colegio_fijar',
-      {p_curso_codigo:sel.dataset.cod, p_colegio:sel.value||null}),
-      sel.value ? 'Curso movido de colegio' : 'Curso sin colegio');
-  });
-}
 
-async function pintarLista(){
-  // Preservar qué cursos (y su sublista de alumnos) estaban desplegados, para que al
-  // re-renderizar tras una acción (p. ej. agregar alumno) el curso no se contraiga solo.
-  const abiertos=new Set([...document.querySelectorAll('details.curso[open]')].map(d=>d.dataset.cod));
-  const aluAbiertos=new Set([...document.querySelectorAll('details.curso')]
-    .filter(d=>{const a=d.querySelector('details.alumnos');return a&&a.open;}).map(d=>d.dataset.cod));
-  // Administración se pliega sola en cada repintado, y `accion()` repinta tras CADA
-  // acción: sin esto, autorizar tres profesores seguidos obliga a reabrirla tres veces.
-  const admAbierto = !!(document.getElementById('admBloque')||{}).open;
-  $('panelTitulo').classList.remove('hide');   // las vistas de avance lo ocultan
-  $('profId').classList.remove('hide');
-  pintarIdentidad();   // se re-fija en cada render para no acumular
-  const {data,error}=await SB.rpc('kimun_prof_listar');
-  if(error) throw error;
-  const porCurso={};
-  (data||[]).forEach(f=>{
-    porCurso[f.curso_codigo]=porCurso[f.curso_codigo]||
-      {nombre:f.curso, alumnos:[], gestiono:f.puede_gestionar, miRol:f.mi_rol,
-       misAsig:f.mis_asignaturas, nivel:f.nivel||'',
-       colegioId:f.colegio_id||null, colegio:f.colegio||''};
-    if(f.pid) porCurso[f.curso_codigo].alumnos.push(f);   // pid: id de perfil (siempre presente); codigo_acceso puede venir null para un profe de asignatura
-  });
-  const cursos=Object.entries(porCurso);
-  cursos.sort((a,b)=>ordenCursos(a[1], b[1]));   // por nivel y nombre; ver ordenCursos
-  // Lo que la vista de avance va a necesitar cuando esta lista ya no exista en el DOM.
-  cursos.forEach(([cod,c]) => { CURSO_INFO[cod] =
-    {nivel:c.nivel||'', misAsig:c.misAsig||[], gestiono:!!c.gestiono, nombre:c.nombre}; });
-  /* Árbol Sostenedor › Colegio › Cursos (Sesión 116): quien administra el colegio ve los
-     cursos AGRUPADOS bajo su colegio y sostenedor. Se piden aquí, una vez, para agrupar; un
-     Jefe / profe de asignatura no pasa el portero y ve sus cursos planos, sin el envoltorio. */
-  let SOST_ARBOL = [];      // [{id, nombre, colegios:[{id,nombre}]}]
-  const COLS_FLAT = [];     // {id, etiqueta} de todos los colegios, para mover un curso
-  if(window.ESADMINCOLEGIO){
-    const {data:sos} = await SB.rpc('kimun_prof_sostenedores');
-    for(const s of (sos||[])){
-      const {data:cols} = await SB.rpc('kimun_prof_colegios',{p_sostenedor:s.id});
-      SOST_ARBOL.push({id:s.id, nombre:s.nombre, colegios:cols||[]});
-      (cols||[]).forEach(c=>COLS_FLAT.push({id:c.id, etiqueta:s.nombre+' · '+c.nombre}));
-    }
-  }
-  const opcionesColegio = sel => '<option value="">Sin colegio</option>' +
-    COLS_FLAT.map(x=>`<option value="${esc(x.id)}"${x.id===sel?' selected':''}>${esc(x.etiqueta)}</option>`).join('');
-  /* La barra se arma por partes: "Contraer todo" solo tiene sentido con más de un curso,
-     pero el pulso del colegio se ve igual con uno. Antes la barra entera dependía del
-     conteo, así que un colegio de un solo curso se quedaba sin el botón nuevo. */
-  const botones =
-      (window.ESADMINCOLEGIO
-        ? `<button class="btn-chip principal" type="button" id="btnPulso">🏫 El pulso del colegio</button>`
-          + `<button class="btn-chip" type="button" id="btnCivica">🏛️ Formación Ciudadana</button>` : '')
-    + (cursos.length > 1
-        ? `<button class="btn-chip" type="button" id="btnPlegar">Contraer todo</button>` : '');
-  const barra = botones ? `<div class="lista-barra">${botones}</div>` : '';
-  /* Proyectar en clase (modo docente): lo ve CUALQUIER profesor (no solo admin), porque
-     proyectar es tarea de todo docente. El servidor igual valida que sea profesor. */
-  const docenteBarra = `<div class="lista-barra" style="margin-top:6px;align-items:center">
-    <label style="font-size:13px;color:var(--dim);display:inline-flex;align-items:center;gap:6px;margin:0">
-      🎮 Proyectar en clase
-      <select id="docenteNivel" style="width:auto;padding:5px 8px">${
-        NIVELES_MUESTRA.map(n=>`<option value="${esc(n.ruta)}">${esc(n.nombre)}</option>`).join('')}</select>
-    </label>
-    <button class="btn-docente" type="button" id="btnDocente">▶ Abrir juego</button>
-  </div>`;
-  /* La franja de atención va ANTES de la barra de botones y de los cursos: es lo primero
-     que hay que ver al entrar. Nace vacía y la rellena cargarResumen, para no retrasar el
-     render de la lista — si la consulta tarda, los cursos ya están a la vista. */
-  $('lista').innerHTML = '<div id="franjaAtencion"></div>' + barra + docenteBarra
-   + (cursos.length ? cursos.map(([cod,c])=>`
-    <details class="curso" data-cod="${esc(cod)}">
-      <summary>
-        <span class="cur-chevron" aria-hidden="true">▸</span>
-        <b class="cur-nom" style="color:var(--gold)">${esc(c.nombre)}</b>
-        <code>${esc(cod)}</code>
-        ${rolEnCurso(c)}
-        <span class="cur-alu">${c.alumnos.length} alumno${c.alumnos.length===1?'':'s'}${
-          c.nivel?' · '+esc(NIVEL_NOMBRE(c.nivel)):''}</span>
-        <span class="cur-jefe" data-cod="${esc(cod)}"></span>
-        <span class="cur-part" data-cod="${esc(cod)}">Participación · …</span>
-        ${window.ESADMINCOLEGIO?`<button class="ico ico-del delcurso" data-cod="${esc(cod)}" title="Eliminar curso">🗑️</button>`:''}
-      </summary>
-      <div class="curso-cuerpo">
-        <button class="btn-chip principal avance" data-cod="${esc(cod)}" data-nom="${esc(c.nombre)}"
-          data-gestiono="${c.gestiono?'1':''}">📊 Ver avance del curso</button>
-        ${c.gestiono?`<details class="equipo" data-cod="${esc(cod)}" data-nivel="${esc(c.nivel)}" style="margin-top:6px">
-          <summary style="cursor:pointer;color:var(--cyan);font-size:13px;font-weight:500;list-style:none">👥 Equipo del curso · Jefe, asignatura</summary>
-          <div class="equipo-cuerpo" data-cod="${esc(cod)}">
-            <p style="color:var(--dim);font-size:12px;margin:6px 0">Cargando…</p>
-          </div>
-        </details>`:''}
-        <details class="alumnos">
-          <summary><span class="cur-chevron" aria-hidden="true">▸</span>🧑‍🎓 Alumnos (${c.alumnos.length})</summary>
-          <div class="alumnos-cuerpo">
-            ${c.alumnos.length ? '<div class="alu-lista">'+c.alumnos.map(a=>`
-              <div class="alu">
-                <div class="alu-top">
-                  <span>${esc(a.avatar)}</span><b class="alu-nom">${esc(a.alumno)}</b>
-                  ${c.gestiono?`<button class="ico xp" data-cod="${esc(a.codigo_acceso)}" data-xp="${esc(a.xp)}"
-                          title="Fijar XP" style="color:var(--gold)">✎</button>`:''}
-                  <button class="ico avalum" data-pid="${esc(a.pid)}"
-                          data-nom="${esc(a.alumno)}" data-curso="${esc(cod)}"
-                          title="Ver avance">📊</button>
-                  ${c.gestiono?`<button class="ico ico-del del" data-cod="${esc(a.codigo_acceso)}"
-                          title="Eliminar alumno">✕</button>`:''}
-                </div>
-                <div class="alu-sub">${a.codigo_acceso?`<code>${esc(a.codigo_acceso)}</code> · `:''}${esc(a.xp)} XP${a.autoinscrito?` · <span class="ins-chip" title="Se inscribió por el enlace: este nombre lo escribió el alumno, no tú">se inscribió solo</span>`:''}</div>
-              </div>`).join('')+'</div>'
-             : '<p style="color:var(--dim);font-size:12px">Sin alumnos todavía.</p>'}
-            ${c.gestiono?`<div style="margin-top:8px">
-              <input class="in-alumno" data-curso="${esc(cod)}" placeholder="Nombre del alumno nuevo">
-              <button class="btn sec add-alumno" data-curso="${esc(cod)}">+ Agregar alumno</button>
-            </div>
-            <details class="masivo" style="margin-top:6px">
-              <summary style="cursor:pointer;color:var(--cyan);font-size:13px;font-weight:500;list-style:none">➕ Cargar varios de una vez</summary>
-              <p style="color:var(--dim);font-size:12px;margin:6px 0">Pega un nombre por línea (como los copias de una lista).</p>
-              <textarea class="in-masivo" data-curso="${esc(cod)}" rows="5" placeholder="Ana Pérez&#10;Benjamín Soto&#10;Catalina Rivas"></textarea>
-              <button class="btn sec add-masivo" data-curso="${esc(cod)}">Agregar todos</button>
-            </details>`:''}
-          </div>
-        </details>
-        ${c.gestiono?`<details class="inscripcion" data-cod="${esc(cod)}" data-nivel="${esc(c.nivel)}" style="margin-top:6px">
-          <summary style="cursor:pointer;color:var(--cyan);font-size:13px;font-weight:500;list-style:none">🔗 Enlace de inscripción</summary>
-          <div class="inscripcion-cuerpo" data-cod="${esc(cod)}">
-            <p style="color:var(--dim);font-size:12px;margin:6px 0">Cargando…</p>
-          </div>
-        </details>`:''}
-        ${window.ESADMINCOLEGIO?`<div style="display:flex;gap:6px;align-items:center;margin-top:8px;font-size:12px;color:var(--dim)">
-          Colegio <select class="colegio-sel" data-cod="${esc(cod)}" style="max-width:230px">${opcionesColegio(c.colegioId)}</select>
-        </div>`:''}
-      </div>
-    </details>`).join('')
-   : '<p style="color:var(--dim);font-size:13px">Aún no tienes cursos.</p>')
-   /* Administración PLEGADA, y no es un detalle de estilo. Crear un curso, autorizar a un
-      profesor o armar un enlace de muestra se hacen una vez al año; los cursos se miran
-      todas las semanas. Desplegada, esos formularios ocupaban ~800 px bajo una tarjeta de
-      curso de 130, o sea el 70% de la pantalla para lo que casi nunca se usa. */
-   /* El violeta se reserva para las ACCIONES: como texto sobre el panel no llega al mínimo
-      de contraste (3,4:1), y una línea violeta de 2 px separando la sección era ruido —lo
-      que la separa es que está plegada, no un subrayado de color—. */
-   + (window.ESADMINCOLEGIO ? `<details id="admBloque" style="margin-top:16px;
-        border-top:1px solid var(--linea);padding-top:12px">
-        <summary style="cursor:pointer;list-style:none;color:var(--texto);font-size:14px;
-                 font-weight:600;padding:4px 0">
-          <span class="cur-chevron" aria-hidden="true">▸</span> ⚙️ Administración</summary>
-        <div style="padding-top:10px">
-          <h3 style="font-size:12px;margin:0 0 8px">Curso nuevo</h3>
-          <input id="cursoNombre" placeholder="Nombre del curso nuevo (8° A)">
-          <label class="campo">Nivel del curso
-            <select id="cursoNivel">${NIVELES_MUESTRA.map(n=>`<option value="${n.nivel}">${n.nombre}</option>`).join('')}</select></label>
-          ${COLS_FLAT.length ? `<label class="campo">Colegio
-            <select id="cursoColegio">${opcionesColegio(COLS_FLAT.length===1 ? COLS_FLAT[0].id : '')}</select></label>` : ''}
-          <button class="btn" id="btnCurso">+ Crear curso</button>
 
-          <h3 style="font-size:12px;margin:16px 0 8px">Profesores</h3>
-          <input id="nuevoCorreo" type="email" placeholder="Correo del profesor nuevo">
-          <button class="btn sec" id="btnAutorizar">+ Autorizar profesor</button>
-          <div id="profes" style="margin:10px 0"></div>
-
-          <h3 style="font-size:12px;margin:16px 0 8px">Herramientas</h3>
-          <div class="btn-fila">
-            <button class="btn sec" id="btnTablero">📊 Tablero de avance</button>
-            ${accede('limpiar', YO.es_admin||YO.es_operador)?`<button class="btn peligro" id="btnLimpiar">🧹 Limpiar perfiles de prueba</button>`:''}
-          </div>
-          ${accede('armar', YO.es_admin||YO.es_operador)?`<label class="campo" style="margin-top:10px">🔗 Armar enlace de muestra</label>
-          <select id="armarNivel">${NIVELES_MUESTRA.map(n=>`<option value="${n.ruta}">${n.nombre}</option>`).join('')}</select>
-          <button class="btn sec" id="btnArmar">Abrir armador</button>`:''}
-        </div>
-      </details>` : '');
-  conectarAcciones();
-  // Restaurar el estado desplegado que había antes del re-render.
-  document.querySelectorAll('details.curso').forEach(d=>{
-    const cod=d.dataset.cod;
-    if(abiertos.has(cod)) d.open=true;
-    if(aluAbiertos.has(cod)){ const a=d.querySelector('details.alumnos'); if(a) a.open=true; }
-  });
-  const adm=document.getElementById('admBloque'); if(adm && admAbierto) adm.open=true;
-  /* Contraer / expandir todo. Un solo botón que ALTERNA, como el Todos/Ninguno del
-     armador: dos botones para lo mismo llenan la barra de controles. Se conecta después
-     de restaurar el estado, así el rótulo nace diciendo la verdad. */
-  const btnPulso = document.getElementById('btnPulso');
-  if(btnPulso) btnPulso.onclick = () => verPulso();
-  const btnCivica = document.getElementById('btnCivica');
-  if(btnCivica) btnCivica.onclick = () => verCivica();
-  /* Proyectar en clase: pide un token de 6 h y abre el juego en modo docente en pestaña
-     nueva. El token viaja en la URL; el juego lo valida contra Supabase antes de entrar. */
-  const btnDocente = document.getElementById('btnDocente');
-  if(btnDocente) btnDocente.onclick = async () => {
-    const sel = document.getElementById('docenteNivel');
-    const ruta = sel ? sel.value : '';
-    if(!ruta) return;
-    btnDocente.disabled = true;
-    aviso('Preparando el acceso…','var(--dim)');
-    try{
-      const {data,error}=await SB.rpc('kimun_prof_docente_link');
-      if(error||!data) throw error||new Error('sin_token');
-      aviso('Abriendo el juego en una pestaña nueva. El acceso dura 6 horas.','var(--green)');
-      window.open(location.origin+ruta+'?docente='+data, '_blank');
-    }catch(e){
-      aviso('No se pudo preparar el acceso docente. '+((e&&e.message)||''),'var(--pink)');
-    }finally{ btnDocente.disabled=false; }
-  };
-  const btnPlegar = document.getElementById('btnPlegar');
-  const refrescarPlegar = () => {
-    if(btnPlegar) btnPlegar.textContent =
-      document.querySelector('details.curso[open]') ? 'Contraer todo' : 'Expandir todo';
-  };
-  document.querySelectorAll('details.curso').forEach(d => d.addEventListener('toggle', () => {
-    if(!d.open) plegarDentro(d);
-    refrescarPlegar();
-  }));
-  if(btnPlegar) btnPlegar.onclick = () => {
-    const abrir = !document.querySelector('details.curso[open]');
-    document.querySelectorAll('details.curso').forEach(d => {
-      d.open = abrir;
-      if(!abrir) plegarDentro(d);
-    });
-    refrescarPlegar();
-  };
-  refrescarPlegar();
-  // El equipo del curso se pide la primera vez que se abre su desplegable (carga perezosa).
-  document.querySelectorAll('details.inscripcion').forEach(det => det.addEventListener('toggle', () => {
-    if(det.open && !det.dataset.cargado){ det.dataset.cargado='1'; cargarInscripcion(det.dataset.cod, det.dataset.nivel); }
-  }));
-  document.querySelectorAll('details.equipo').forEach(det => det.addEventListener('toggle', () => {
-    if(det.open && !det.dataset.cargado){ det.dataset.cargado='1'; cargarEquipo(det.dataset.cod, det.dataset.nivel); }
-  }));
-  cargarResumen(cursos.map(([cod])=>cod));
-  cargarJefes(cursos.map(([cod])=>cod));
-
-  if(window.ESADMINCOLEGIO){
-    // El HTML de este bloque vive en el template de arriba, dentro de <details>; aquí
-    // solo se cablea. Ojo: los botones existen aunque el desplegable esté cerrado, así
-    // que plegarlo no cambia nada del cableado.
-    $('btnAutorizar').onclick=async ()=>{
-      const c=($('nuevoCorreo').value||'').trim();
-      if(!c){ aviso('Escribe un correo.'); return; }
-      await accion(()=>SB.rpc('kimun_prof_autorizar',{p_correo:c}), 'Correo autorizado');
-    };
-    $('btnTablero').onclick=()=>{ window.location.href='dev/tablero.html'; };
-    // "Limpiar perfiles de prueba" y el armador son herramientas operativas (perfiles.limpiar /
-    // enlace.armar). Solo se cablean si su botón se dibujó, que ya lo decide `accede(...)` arriba.
-    if($('btnLimpiar')) $('btnLimpiar').onclick=limpiarPruebas;
-    if($('btnArmar')) $('btnArmar').onclick=()=>{ window.location.href=$('armarNivel').value+'?armar=1'; };
-    const {data:profes,error:errProfes}=await SB.rpc('kimun_prof_profesores');
-    if(errProfes){
-      $('profes').innerHTML='<p style="color:var(--pink);font-size:12px">No se pudo cargar la lista de profesores.</p>';
-    }else{
-      // Rango efectivo del que administra, para la matriz de revocar (viene de mi_acceso; degrada a
-      // bandera si no está aplicada). El rango de cada profe (p.rango) ya lo deriva el servidor del
-      // grant tras el cutover (Fase 4b), así un Operador/Super por grant se muestra bien.
-      const miRango = (window.MI_ACCESO&&window.MI_ACCESO.rango)
-        || (YO.es_admin?'Administrador':YO.es_operador?'Operador':YO.es_super?'SuperUsuario':'Profesor');
-      // Ámbito de cada usuario (Sesión 120): el colegio de un Super, Jefe/Asignatura de un profe
-      // y sus materias, "toda la plataforma" de un Operador. Degrada al conteo de cursos si el
-      // esquema con la columna `ambito` aún no se aplicó.
-      const ambitoChips = (p) => {
-        if(!Array.isArray(p.ambito))
-          return `<span style="color:var(--cyan)">${p.cursos} curso${p.cursos===1?'':'s'}</span>`;
-        if(p.es_admin) return `<span class="amb amb-inst">Toda la plataforma</span>`;
-        if(!p.ambito.length) return `<span style="color:var(--dim);font-size:12px">sin ámbito asignado</span>`;
-        return p.ambito.map(a=>{
-          if(a.nivel==='plataforma') return `<span class="amb amb-inst">Toda la plataforma</span>`;
-          if(a.nivel==='sostenedor') return `<span class="amb amb-inst">Sostenedor: ${esc(a.nombre)}</span>`;
-          if(a.nivel==='colegio')    return `<span class="amb amb-inst">🏫 ${esc(a.nombre)}</span>`;
-          if(a.nivel==='curso'){
-            // La materia va SIN el nivel (Opción B, Roberto): el nombre del curso ya lo dice,
-            // así que se quita el " N°" final que NIV.nombre agrega en 3°-7° ("Historia 3°" →
-            // "Historia"). En 8° el nombre no lleva nivel, así que no cambia.
-            const rol = a.rol==='jefe' ? 'Jefe'
-              : a.rol==='asignatura' ? ((a.asignaturas&&a.asignaturas.length)
-                  ? a.asignaturas.map(x=>(ASIG_NOMBRE[x]||x).replace(/\s+\d+°$/,'')).join(', ') : 'Asignatura')
-              : '';
-            return `<span class="amb amb-curso">${esc(a.nombre)}${rol?' · '+esc(rol):''}</span>`;
-          }
-          return '';
-        }).join('');
-      };
-      $('profes').innerHTML=(profes||[]).map(p=>{
-        // Si un Profesor es JEFE en algún curso, el cargo lo dice ("Profesor Jefe") para
-        // distinguirlo de un profe de asignatura de un vistazo. Solo el texto de display: el
-        // p.rango real (que usa la matriz de revocar más abajo) NO se toca.
-        const esJefeCurso = p.registrado && Array.isArray(p.ambito) && p.ambito.some(a=>a.nivel==='curso' && a.rol==='jefe');
-        const rango = !p.registrado ? 'sin registrar'
-          : ((p.rango||'Profesor')==='Profesor' && esJefeCurso ? 'Profesor Jefe' : (p.rango||'Profesor'));
-        const esYo = p.correo && (p.correo.toLowerCase() === (YO.correo||'').toLowerCase());
-        // Matriz de revocar por RANGO efectivo: a un Admin/Operador solo los revoca un Admin; a un
-        // Super, un Admin u Operador; a un profe común, cualquiera que administre. El servidor manda.
-        const puedeRevocar = !esYo && !p.es_admin && (
-          p.rango === 'Operador'       ? miRango === 'Administrador'
-          : p.rango === 'SuperUsuario' ? (miRango === 'Administrador' || miRango === 'Operador')
-          :                              true);
-        const btnRevocar = puedeRevocar
-          ? `<button class="ico ico-del prof-quitar" data-correo="${esc(p.correo)}" data-reg="${p.registrado?'1':''}"
-               title="${p.registrado?'Revocar profesor':'Cancelar invitación'}">✕</button>`
-          : '';
-        // El 🔑 mantenedor reemplaza los toggles viejos de rol (Hacer Super/Operador): nombrar un
-        // Operador o un Super se hace dándole el grant correspondiente desde acá. Lo opera quien
-        // tenga permisos.gestionar (gestiona_permisos, ya por grant), sobre un profesor registrado
-        // que no sea uno mismo ni un Admin (a un Admin no se le gestionan grants).
-        const btnPermisos = (accede('gestiona_permisos', YO.es_admin || YO.es_operador) && p.registrado && !esYo && !p.es_admin)
-          ? `<button class="btn-chip prof-permisos" data-correo="${esc(p.correo)}">🔑 Permisos</button>`
-          : '';
-        return `<div style="display:flex;gap:8px;align-items:center;padding:4px 0;font-size:13px;flex-wrap:wrap">
-           <span class="pro-nom">${esc(p.correo)}</span>
-           <span style="color:var(--dim)">${esc(rango)}</span>
-           ${ambitoChips(p)}
-           ${btnPermisos}${btnRevocar}
-         </div>`;
-      }).join('');
-      document.querySelectorAll('.prof-quitar').forEach(b=>b.onclick=async ()=>{
-        const reg=b.dataset.reg==='1';
-        if(!confirm(reg
-          ? '¿Revocar a este profesor?\n\nPierde el acceso y sale de la lista blanca; sus cursos NO se borran (quedan sin dueño hasta reasignarlos). No afecta el desempeño de los alumnos.'
-          : '¿Cancelar la invitación de este correo? Ya no podrá registrarse.')) return;
-        await accion(()=>SB.rpc('kimun_prof_quitar',{p_correo:b.dataset.correo}),
-                     reg?'Profesor revocado':'Invitación cancelada');
-      });
-      document.querySelectorAll('.prof-permisos').forEach(b=>b.onclick=()=>abrirMantenedor(b.dataset.correo));
-    }
-    // El árbol Sostenedor › Colegio › Cursos reparenta las tarjetas de curso ya renderizadas.
-    // Va al final: corre después del render y de restaurar el estado desplegado. SOST_ARBOL y
-    // porCurso están en scope.
-    agruparArbol(SOST_ARBOL, porCurso);
-  }
-}
-
-function conectarAcciones(){
-  // El botón puede no existir: solo el admin de colegio ve "+ Crear curso".
-  const bc=$('btnCurso');
-  if(bc) bc.onclick=async ()=>{
-    const n=($('cursoNombre').value||'').trim();
-    if(!n){ aviso('Escribe un nombre.'); return; }
-    const niv=($('cursoNivel')||{}).value||null;
-    // El colegio va al servidor desde el 07/11/2026: un curso sin colegio solo lo ve la
-    // plataforma, así que la UTP que lo creaba sin elegir lo perdía de vista.
-    const col=($('cursoColegio')||{}).value||null;
-    const args={p_nombre:n, p_nivel:niv}; if(col) args.p_colegio=col;
-    await accion(()=>SB.rpc('kimun_prof_curso_crear',args), 'Curso creado');
-  };
-  document.querySelectorAll('.add-alumno').forEach(b=>b.onclick=async ()=>{
-    const campo=document.querySelector('.in-alumno[data-curso="'+b.dataset.curso+'"]');
-    const n=(campo.value||'').trim();
-    if(!n){ aviso('Escribe un nombre.'); return; }
-    await accion(()=>SB.rpc('kimun_prof_alumno_agregar',
-      {p_curso_codigo:b.dataset.curso,p_nombre:n,p_avatar:'🦊'}), 'Alumno agregado');
-  });
-  // Carga masiva: un nombre por línea. Reusa la misma función, una llamada por nombre.
-  document.querySelectorAll('.add-masivo').forEach(b=>b.onclick=async ()=>{
-    const cod=b.dataset.curso;
-    const ta=document.querySelector('.in-masivo[data-curso="'+cod+'"]');
-    const nombres=(ta.value||'').split('\n').map(s=>s.trim()).filter(Boolean);
-    if(!nombres.length){ aviso('Pega al menos un nombre (uno por línea).'); return; }
-    b.disabled=true;
-    let ok=0; const fallos=[];
-    for(let i=0;i<nombres.length;i++){
-      b.textContent='Agregando… '+(i+1)+'/'+nombres.length;
-      try{ const {error}=await SB.rpc('kimun_prof_alumno_agregar',
-             {p_curso_codigo:cod,p_nombre:nombres[i],p_avatar:'🦊'});
-           if(error) throw error; ok++; }
-      catch(e){ fallos.push(nombres[i]); }
-    }
-    await pintarLista();   // conserva el curso desplegado (ver pintarLista)
-    const msg=ok+' alumno'+(ok===1?'':'s')+' agregado'+(ok===1?'':'s')
-      +(fallos.length?' · '+fallos.length+' con error: '+fallos.slice(0,4).join(', ')+(fallos.length>4?'…':''):'');
-    aviso(msg, fallos.length? undefined : 'var(--green)');
-  });
-  document.querySelectorAll('.xp').forEach(b=>b.onclick=async ()=>{
-    const v=prompt('XP de este alumno:', b.dataset.xp);
-    if(v===null) return;
-    if(!/^\d+$/.test(v.trim())){ aviso('Escribe un número entero de 0 o más.'); return; }
-    await accion(()=>SB.rpc('kimun_prof_xp_fijar',
-      {p_codigo_acceso:b.dataset.cod,p_xp:parseInt(v,10)}), 'XP actualizado a '+parseInt(v,10));
-  });
-  document.querySelectorAll('.del').forEach(b=>b.onclick=async ()=>{
-    if(!confirm('¿Eliminar a este alumno?\n\nPierde su lugar en el ranking y sus duelos. No se puede deshacer.')) return;
-    await accion(()=>SB.rpc('kimun_prof_alumno_quitar',{p_codigo_acceso:b.dataset.cod}), 'Alumno eliminado');
-  });
-  document.querySelectorAll('.delcurso').forEach(b=>b.onclick=async (ev)=>{
-    ev.stopPropagation(); ev.preventDefault();
-    if(!confirm('¿Eliminar este curso?\n\nSe borran también todos sus alumnos y sus duelos. No se puede deshacer.')) return;
-    await accion(()=>SB.rpc('kimun_prof_curso_quitar',{p_curso_codigo:b.dataset.cod}), 'Curso eliminado');
-  });
-  document.querySelectorAll('.avance').forEach(
-    b=>b.onclick=()=>verAvance(b.dataset.cod, b.dataset.nom, b.dataset.gestiono==='1'));
-  document.querySelectorAll('.avalum').forEach(
-    b=>b.onclick=()=>verAvanceAlumno(b.dataset.pid, b.dataset.nom, b.dataset.curso));
-}
 
 /* ===== Enlace de inscripción del curso (jefe/admin) =====
    Un solo enlace vivo por curso, garantizado por un índice único en la base: crear uno
@@ -1415,14 +982,14 @@ async function cargarInscripcion(cursoCodigo, nivel){
              ${fila.experimental?'modo experimental (capítulos abiertos, jefes cerrados)':'juego normal'}</p>
            <label class="campo">Nivel al que lleva el enlace
              <select class="ins-nivel">${opciones}</select></label>
-           <input class="ins-url" readonly>
+           <input class="ins-url" readonly aria-label="Enlace de inscripción">
            <button class="btn ins-copiar">Copiar enlace</button>
            <div class="ins-qr" style="display:flex;justify-content:center;margin-top:12px"></div>
-           <button class="btn sec ins-qr-grande" type="button" style="margin-top:8px">📱 Mostrar QR grande</button>`
+           <button class="btn sec ins-qr-grande" type="button" style="margin-top:8px">${icoTxt('proyectar')}Mostrar QR grande</button>`
         :`<p style="color:var(--dim);font-size:12px;margin:6px 0">Este curso todavía no tiene enlace.</p>`)
   + `<details style="margin-top:8px">
        <summary style="cursor:pointer;color:var(--cyan);font-size:13px;font-weight:500;list-style:none">${
-         fila?'♻️ Crear otro enlace (cierra el de arriba)':'➕ Crear el enlace'}</summary>
+         fila?icoTxt('reiniciar')+'Crear otro enlace (cierra el de arriba)':icoTxt('mas')+'Crear el enlace'}</summary>
        <p style="color:var(--dim);font-size:12px;margin:6px 0">
          ⚠️ El enlace <b>es</b> la credencial: quien lo reciba entra al curso hasta llenar el
          cupo. Ajústalo al grupo en vez de dejarlo holgado.</p>
@@ -1452,16 +1019,16 @@ async function cargarInscripcion(cursoCodigo, nivel){
   if(sel) sel.onchange=pintarUrl;
   const cop=caja.querySelector('.ins-copiar');
   if(cop) cop.onclick=async ()=>{
-    try{ await navigator.clipboard.writeText(url.value); aviso('Enlace copiado'); }
+    try{ await navigator.clipboard.writeText(url.value); aviso('Enlace copiado','var(--green)'); }
     // Si el navegador bloquea el portapapeles, se selecciona para copiar a mano, en vez
     // de dejar un botón que aparenta funcionar (mismo criterio que el armador).
-    catch(e){ url.focus(); url.select(); aviso('Cópialo con Ctrl+C'); }
+    catch(e){ url.focus(); url.select(); aviso('Cópialo con Ctrl+C','var(--cyan)'); }
   };
   caja.querySelector('.ins-crear').onclick=async ()=>{
     const cupo=parseInt(caja.querySelector('.ins-cupo').value,10);
     const exp=caja.querySelector('.ins-exper').checked;
     if(!(cupo>=1&&cupo<=500)){ aviso('El cupo va entre 1 y 500.'); return; }
-    if(fila && !confirm('Esto cierra el enlace actual: quien todavía no lo haya usado no podrá entrar. ¿Seguir?')) return;
+    if(fila && !await confirmar({titulo:'¿Crear otro enlace?', texto:'Esto cierra el enlace actual: quien todavía no lo haya usado no podrá entrar.', peligro:true, si:'Crear otro enlace'})) return;
     try{
       const {error}=await SB.rpc('kimun_prof_inscripcion_crear',
         {p_curso_codigo:cursoCodigo, p_cupo:cupo, p_experimental:exp});
@@ -1493,13 +1060,14 @@ async function cargarEquipo(cursoCodigo, nivel){
     // Editar solo aplica a profes de asignatura (el Jefe alcanza todas).
     const btnEditar = esJefe ? '' :
       `<button class="ico eq-editar" data-cod="${esc(cursoCodigo)}" data-correo="${esc(m.correo)}"
-        data-asig="${esc((m.asignaturas||[]).join('|'))}" title="Editar asignaturas" style="color:var(--gold)">✎</button>`;
+        data-asig="${esc((m.asignaturas||[]).join('|'))}" title="Editar asignaturas"
+        aria-label="Editar asignaturas de ${esc(m.nombre||m.correo)}" style="color:var(--gold)">${ICO('editar')||'✎'}</button>`;
     return `<div class="equipo-fila" style="display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:4px 0;font-size:13px">
       <b style="color:var(--gold)">${esJefe?'⭐ ':''}${esc(m.nombre||m.correo)}</b>
       <span style="color:var(--dim)">${esc(asigs)}</span>
       <span style="margin-left:auto"></span>
       ${btnEditar}
-      ${puedeQuitar?`<button class="ico ico-del eq-quitar" data-cod="${esc(cursoCodigo)}" data-correo="${esc(m.correo)}" title="Quitar del curso">✕</button>`:''}
+      ${puedeQuitar?`<button class="ico ico-del eq-quitar" data-cod="${esc(cursoCodigo)}" data-correo="${esc(m.correo)}" title="Quitar del curso" aria-label="Quitar a ${esc(m.nombre||m.correo)} del curso">${ICO('borrar')||'✕'}</button>`:''}
     </div>`;
   }).join('');
   // Solo las asignaturas de ESTE curso. Un curso sin nivel —creado antes de que la
@@ -1507,11 +1075,11 @@ async function cargarEquipo(cursoCodigo, nivel){
   const casillas=asigsDeNivel(nivel).map(a=>
     `<label style="font-size:12px"><input type="checkbox" class="eq-asig" value="${a}"> ${ASIG_NOMBRE[a]}</label>`).join('');
   const avisoNivel = nivel ? '' : `
-      <div style="margin:6px 0;padding:8px;border:1px dashed #ffffff33;border-radius:10px">
+      <div style="margin:6px 0;padding:8px;border:1px dashed var(--linea2);border-radius:10px">
         <p style="color:var(--gold);font-size:12px;margin:0 0 6px">
           Este curso no tiene nivel, así que se muestran las asignaturas de todos. Fíjaselo
           y quedan solo las suyas.</p>
-        <select class="eq-nivel">${NIVELES_MUESTRA.map(n=>`<option value="${n.nivel}">${n.nombre}</option>`).join('')}</select>
+        <select class="eq-nivel" aria-label="Nivel del curso">${NIVELES_MUESTRA.map(n=>`<option value="${n.nivel}">${n.nombre}</option>`).join('')}</select>
         <button class="btn sec eq-fijar-nivel">Fijar el nivel</button>
       </div>`;
   // El radio de rol solo aparece si puede nombrar Jefe; si no, se fuerza 'asignatura'.
@@ -1521,8 +1089,8 @@ async function cargarEquipo(cursoCodigo, nivel){
         <label style="font-size:12px"><input type="radio" name="eqrol-${esc(cursoCodigo)}" class="eq-rol" value="jefe"> Profesor Jefe</label>
       </div>` : '';
   caja.innerHTML=`${filas||'<p style="color:var(--dim);font-size:12px">Solo estás tú.</p>'}
-    <div style="margin-top:8px;border-top:1px solid #ffffff22;padding-top:8px">
-      <input class="eq-correo" type="email" placeholder="Correo del profesor (ya registrado)" style="width:100%">
+    <div style="margin-top:8px;border-top:1px solid var(--linea2);padding-top:8px">
+      <input class="eq-correo" type="email" placeholder="Correo del profesor (ya registrado)" aria-label="Correo del profesor (ya registrado)" style="width:100%">
       ${selectorRol}
       ${avisoNivel}
       <div class="eq-casillas" style="margin:0 0 6px">${casillas}</div>
@@ -1534,7 +1102,10 @@ async function cargarEquipo(cursoCodigo, nivel){
     try{
       const {error}=await SB.rpc('kimun_prof_curso_nivel',{p_curso_codigo:cursoCodigo, p_nivel:n});
       if(error) throw error;
-      aviso('Nivel fijado'); pintarLista();
+      // El curso se dibuja desde CURSO_INFO: sin volver a pedirla, la pantalla seguiría
+      // creyendo que el curso no tiene nivel.
+      try{ await asegurarCursos(true); }catch(_){}
+      await refrescarVista(); aviso('Nivel fijado','var(--green)');
     }catch(e){ aviso(errorPanel(e)); }
   };
   caja.querySelectorAll('.eq-quitar').forEach(b=>b.onclick=()=>equipoQuitar(b.dataset.cod, b.dataset.correo));
@@ -1576,7 +1147,7 @@ async function equipoAsignar(cursoCodigo, correo, rol, asigs){
 }
 
 async function equipoQuitar(cursoCodigo, correo){
-  if(!confirm('¿Quitar a este profesor del curso?\n\nNo se borra ningún dato de los alumnos; solo pierde el acceso a este curso.')) return;
+  if(!await confirmar({titulo:'¿Quitar a este profesor del curso?', texto:'No se borra ningún dato de los alumnos; solo pierde el acceso a este curso.', peligro:true, si:'Quitar del curso'})) return;
   try{
     const {error}=await SB.rpc('kimun_prof_equipo_quitar',{p_curso_codigo:cursoCodigo, p_correo:correo});
     if(error) throw error; aviso('Profesor quitado del curso','var(--green)');
@@ -1597,8 +1168,9 @@ const AVISO_NO_CALIFICA = 'El porcentaje es del <b>primer intento</b>: cuántos 
 // de vuelta siempre a mano. El título del panel ("Mis cursos") se oculta mientras tanto,
 // porque aquí ya no describe lo que se está mirando.
 function cabeceraAvance(titulo, sub){
-  $('panelTitulo').classList.add('hide');
-  $('profId').classList.add('hide');
+  // Con el armazón (Sesión 154) el título vive en la barra superior y la identidad en el
+  // menú lateral: ya no se ocultan. La barra de arriba dice además de qué curso es.
+  ponerTitulo(titulo, sub);
   return `<div class="av-head">
     <button class="ico" id="btnVolverCab" title="Volver">←</button>
     <div style="min-width:0">
@@ -1694,7 +1266,7 @@ function filaPulso(f){
     // Sin nivel no hay denominador. Se dice qué falta y dónde se arregla, en vez de un
     // cero que se leería como "este curso no ha trabajado".
     cob = `<span class="pul-falta">Sin nivel asignado</span>`
-        + `<span class="pul-sub">Fíjaselo en «Equipo del curso» para ver su cobertura</span>`;
+        + `<span class="pul-sub">Fíjaselo en «Ajustes» del curso para ver su cobertura</span>`;
   }else{
     const asigs  = NIV.deNivel(f.nivel);
     const por    = f.cobertura || {};
@@ -2149,7 +1721,7 @@ function gruposParticipacion(filas){
 // El bloque va plegado, con el titular en la línea visible: es el dato que hay que ver sin
 // abrir nada. Se pinta primero con "Cargando…" y se rellena aparte, para no retrasar el mapa.
 function bloqueParticipacionHTML(){
-  return `<details id="partBloque" style="margin-bottom:12px;border:1px solid #ffffff22;
+  return `<details id="partBloque" style="margin-bottom:12px;border:1px solid var(--linea2);
             border-radius:12px;padding:8px 10px">
     <summary style="cursor:pointer;list-style:none;color:var(--cyan);font-size:13px"
              id="partTitular">Participación · cargando…</summary>
@@ -2318,7 +1890,7 @@ function fechaCortita(iso){
 }
 
 function bloquePlanHTML(){
-  return `<details id="planBloque" style="margin-bottom:12px;border:1px solid #ffffff22;
+  return `<details id="planBloque" style="margin-bottom:12px;border:1px solid var(--linea2);
             border-radius:12px;padding:8px 10px">
     <summary style="cursor:pointer;list-style:none;color:var(--cyan);font-size:13px"
              id="planTitular">Planificación del año · cargando…</summary>
@@ -2402,14 +1974,15 @@ function pintarPlan(titular, cuerpo, cursoCodigo, asigs){
           ? `<button class="btn-chip plan-cierre" data-asig="${esc(asig)}" data-uni="${esc(u.id)}"
                data-tit="${esc(u.titulo)}" data-fin="${esc(p.termino)}" data-foto="${esc(foto)}"
                title="Cómo estaba el curso en esta unidad cuando la cerraste, reconstruido de la foto del ${esc(fechaCortita(foto))}"
-               >📸 Cómo quedó</button>` : '';
+               >${icoTxt('ojo')}Cómo quedó</button>` : '';
         return `<div class="plan-fila" data-k="${esc(k)}">
           <div class="plan-nom">${esc(u.id)} · ${esc(u.titulo)}${
             selloUnidad(asig, u.id)}${cambios}</div>
           <div class="plan-fechas">${fechas}</div>
           <div class="plan-acc">${sug}${cierre}
             <button class="ico plan-edit" data-asig="${esc(asig)}" data-uni="${esc(u.id)}"
-              data-tit="${esc(u.titulo)}" title="Fijar fechas" style="color:var(--gold)">✎</button>
+              data-tit="${esc(u.titulo)}" title="Fijar fechas"
+              aria-label="Fijar fechas de ${esc(u.id)} · ${esc(u.titulo)}" style="color:var(--gold)">${ICO('editar')||'✎'}</button>
           </div>
           ${p && p.nota ? `<div class="plan-nota">“${esc(p.nota)}”${
               p.fijada_por ? ' · ' + esc(p.fijada_por) : ''}</div>` : ''}
@@ -2432,7 +2005,7 @@ function pintarPlan(titular, cuerpo, cursoCodigo, asigs){
         + ': de una unidad cerrada antes no se puede reconstruir nada.' : ''}
     </p>
     ${hayCierres ? `<button class="btn-chip principal" id="btnCierreAnio"
-        style="margin-top:8px">📅 Informe de las unidades cerradas</button>` : ''}
+        style="margin-top:8px">${icoTxt('calendario')}Informe de las unidades cerradas</button>` : ''}
     ${window.ESADMINCOLEGIO ? `<button class="btn-chip" id="btnPlanHist"
         style="margin-top:8px">Ver los cambios de fechas</button>
       <div id="planHist"></div>` : ''}`;
@@ -2477,12 +2050,13 @@ function conectarPlan(cursoCodigo, titular, cuerpo, asigs){
       caja.querySelector('.plan-nota-in').value, titular, cuerpo, asigs);
     const q = caja.querySelector('.plan-quitar');
     if(q) q.onclick = async () => {
-      if(!confirm('¿Quitar las fechas de esta unidad?')) return;
+      if(!await confirmar({titulo:'¿Quitar las fechas de esta unidad?', peligro:true, si:'Quitar fechas'})) return;
       try{
         const {error} = await SB.rpc('kimun_prof_plan_quitar', {p_curso_codigo:cursoCodigo,
           p_asignatura:b.dataset.asig, p_unidad:b.dataset.uni});
         if(error) throw error;
         await cargarPlan(cursoCodigo);
+        aviso('Fechas quitadas','var(--green)');
       }catch(e){ aviso(errorPlan(e)); }
     };
   });
@@ -2620,7 +2194,7 @@ function pintarTendencia(titular, cuerpo, filas){
   cuerpo.innerHTML = `<div class="tend-franja">${sem.map(s=>`
       <div class="tend-sem${s.enCurso?' ahora':''}${s.pct!=null&&!s.firme?' tend-vacio':''}"
            title="${esc(nota(s))}">
-        <div class="tend-barra"><i style="height:${s.pct==null?0:Math.max(3,Math.round(s.pct*0.64))}px;
+        <div class="tend-barra" aria-hidden="true"><i style="height:${s.pct==null?0:Math.max(3,Math.round(s.pct*0.64))}px;
              background:${color(s)}"></i></div>
         <div class="tend-pct" style="color:${color(s)}">${s.pct==null?'—':s.pct+'%'}</div>
         <div class="tend-fecha">${s.enCurso?'en curso':esc(fechaCorta(s.semana))}</div>
@@ -2651,7 +2225,7 @@ async function cargarTendencia(cursoCodigo){
 }
 
 function bloqueTendenciaHTML(){
-  return `<details id="tendBloque" open style="margin-bottom:12px;border:1px solid #ffffff22;
+  return `<details id="tendBloque" open style="margin-bottom:12px;border:1px solid var(--linea2);
             border-radius:12px;padding:8px 10px">
     <summary style="cursor:pointer;list-style:none;color:var(--cyan);font-size:13px"
              id="tendTitular">Esta semana · cargando…</summary>
@@ -2659,151 +2233,9 @@ function bloqueTendenciaHTML(){
   </details>`;
 }
 
-/* Titular de participación y franja de atención: los dos salen de UNA consulta.
-   Antes era una llamada de participación POR CURSO —con seis cursos, seis—, y la franja
-   habría sumado otras seis. `kimun_prof_resumen()` las devuelve todas juntas.
 
-   ⚠️ Si la función no está aplicada, esto degrada al camino viejo en vez de dejar la
-   lista muda: el panel tiene que seguir sirviendo con el esquema atrasado, que es
-   doctrina del proyecto desde que un `drop function` dejó producción rota unos minutos. */
-async function cargarResumen(codigos){
-  try{
-    const {data,error} = await SB.rpc('kimun_prof_resumen');
-    if(error) throw error;
-    const filas = data||[];
-    filas.forEach(f => pintarTitularCurso(f));
-    pintarFranja(filas);
-  }catch(e){
-    cargarTitularesParticipacion(codigos);   // respaldo: el titular sin contexto
-    const fr = $('franjaAtencion'); if(fr) fr.innerHTML = '';
-  }
-}
 
-/* El titular de la tarjeta del curso. Antes decía "15/22 jugaron esta semana" y NO decía
-   si eso está bien o mal, que era justo lo que le faltaba: en marzo, con el curso recién
-   inscrito, 15 de 22 no significa lo mismo que en agosto.
-   Ahora lleva el porcentaje y la comparación con la semana pasada.
-   ⚠️ Los dos números salen de fuentes distintas —la semana en curso de `visto`, la
-   anterior del delta de XP entre dos fotos— porque la semana en curso todavía no tiene
-   foto. Se dice en el `title` en vez de esconderlo. Y el primero NO se cambia: tiene que
-   seguir siendo el mismo número que el pulso del colegio y que el bloque de
-   participación, o el panel se contradice a sí mismo. */
-function pintarTitularCurso(f){
-  const nodo = document.querySelector('.cur-part[data-cod="'+CSS.escape(f.curso_codigo)+'"]');
-  if(!nodo) return;
-  const tot = Number(f.inscritos)||0, hoy = Number(f.jugaron_semana)||0;
-  if(!tot){ nodo.textContent = 'Sin alumnos inscritos'; return; }
-  const pct = Math.round(100*hoy/tot);
-  let flecha = '', ayuda = 'De los ' + tot + ' alumnos inscritos, ' + hoy
-    + ' abrieron el juego en los últimos 7 días.';
-  if(f.hay_previa){
-    const ant = Number(f.jugaron_previa)||0;
-    flecha = hoy > ant ? ' ↑' : (hoy < ant ? ' ↓' : ' →');
-    ayuda += ' La semana pasada jugaron ' + ant + '. Este número sale de la última vez que '
-           + 'cada alumno abrió el juego; el de la semana pasada, de las fotos del domingo.';
-  }else{
-    ayuda += ' Todavía no hay una semana anterior con la que comparar.';
-  }
-  nodo.textContent = `Participación · ${hoy} de ${tot} esta semana · ${pct}%${flecha}`;
-  nodo.title = ayuda;
-  nodo.classList.toggle('part-baja', pct < 50);
-}
 
-/* La franja de "qué necesita tu atención", arriba de todo. El panel abría en una lista de
-   cursos plegados: correcta, ordenada y muda — para enterarse de algo había que abrir un
-   curso, entrar a Ver avance y leer. Esto es la diferencia entre una base de datos y una
-   herramienta.
-
-   ⚠️ NINGUNA línea nombra a un alumno. Son conteos, y al tocarlos se abre el curso, donde
-   los nombres ya se muestran con el cuidado que corresponde (alfabéticos, sin fecha
-   individual, sin orden por inactividad). La restricción vive además en la firma de
-   `kimun_prof_resumen`, que no devuelve un solo nombre.
-
-   ⚠️ Cuando no hay nada que atender, la franja LO DICE en vez de desaparecer: una franja
-   que unos días está y otros no hace dudar de si cargó. */
-const FRANJA_MAX = 4;
-function pintarFranja(filas){
-  const cont = $('franjaAtencion');
-  if(!cont) return;
-  /* ⚠️ UNA LÍNEA POR CURSO, no una por hallazgo. La primera versión ponía cada cosa en su
-     renglón y con seis cursos salieron NUEVE líneas de dos renglones: 830 px en un
-     teléfono de 780, o sea que el primer curso quedaba a 1.300 px de scroll. Se pidió ver
-     mejor y la franja tapaba justo lo que había que ver. Se vio MIRANDO la captura; el
-     conteo decía "sin desborde, cero errores".
-     Y las tres cosas de un curso se resuelven en la MISMA pantalla —el mapa, la
-     participación y el refuerzo viven los tres en Ver avance—, así que agruparlas no
-     pierde ninguna acción. */
-  const cursos = [];
-  (filas||[]).forEach(f => {
-    const tot = Number(f.inscritos)||0, hoy = Number(f.jugaron_semana)||0;
-    const fuera = tot ? tot - hoy : 0;
-    const bajos = Number(f.oa_bajos)||0, refu = Number(f.refuerzos)||0;
-    if(!fuera && !bajos && !refu && !f.sin_jefe) return;
-    const partes = [];
-    if(fuera) partes.push(fuera + (fuera===1 ? ' sin entrar' : ' sin entrar'));
-    if(bajos) partes.push(bajos + (bajos===1 ? ' objetivo bajo 70%' : ' objetivos bajo 70%'));
-    if(refu)  partes.push(refu  + (refu===1  ? ' refuerzo abierto' : ' refuerzos abiertos'));
-    if(f.sin_jefe) partes.push('sin profesor jefe');
-    cursos.push({cod:f.curso_codigo, nom:f.curso, partes, sinJefe:!!f.sin_jefe,
-      // Proporción y no número absoluto: 20 de 20 es un curso detenido y 5 de 22 es una
-      // semana normal, y en números crudos el segundo puede parecer peor.
-      urgencia: tot ? fuera/tot : 0});
-  });
-  if(!cursos.length){
-    cont.innerHTML = '<div class="franja franja-ok">✅ Nada pendiente: todos entraron esta '
-      + 'semana y no hay objetivos bajo 70% con datos suficientes.</div>';
-    return;
-  }
-  /* Orden: primero lo que falta CONFIGURAR (un curso sin jefe no es un curso que va mal,
-     es uno que no está listo), después por proporción de alumnos que no entraron. */
-  cursos.sort((a,b) => (b.sinJefe?1:0) - (a.sinJefe?1:0) || b.urgencia - a.urgencia);
-  const ver = cursos.slice(0, FRANJA_MAX), resto = cursos.length - ver.length;
-  cont.innerHTML = '<div class="franja"><div class="franja-tit">Necesita tu atención</div>'
-    + ver.map(c => '<button type="button" class="franja-li" data-cod="'+esc(c.cod)+'"'
-        + ' data-nom="'+esc(c.nom)+'">'
-        + '<span class="franja-ico">'+(c.sinJefe?'⚠️':'👥')+'</span>'
-        + '<span><b>'+esc(c.nom)+'</b> · '+esc(c.partes.join(' · '))+'</span>'
-        + '<span class="franja-ver">ver ›</span></button>').join('')
-    + (resto ? '<div class="franja-resto">y '+resto+(resto===1?' curso más':' cursos más')
-        +' con algo pendiente, más abajo.</div>' : '')
-    + '</div>';
-  /* Todas llevan a Ver avance, que es donde viven las tres cosas. Salvo el curso sin jefe:
-     eso se arregla en su tarjeta, en "Equipo del curso". */
-  cont.querySelectorAll('.franja-li').forEach(b => b.onclick = () => {
-    const cod = b.dataset.cod, info = CURSO_INFO[cod]||{};
-    const c = cursos.find(x => x.cod === cod);
-    if(c && c.sinJefe){
-      const det = document.querySelector('details.curso[data-cod="'+CSS.escape(cod)+'"]');
-      if(det){ det.open = true; det.scrollIntoView({behavior:'smooth', block:'center'}); }
-      return;
-    }
-    verAvance(cod, b.dataset.nom, !!info.gestiono);
-  });
-}
-
-// Titular de participación en la cabecera plegada de cada curso. Una consulta por curso,
-// asíncrona, para no retrasar el render de la lista. El nodo se captura ANTES del await
-// (mismo patrón defensivo que cargarParticipacion): si la lista se repinta mientras una
-// consulta está en vuelo, la referencia vieja queda huérfana en vez de escribir el titular
-// de un curso bajo la cabecera de otro.
-//
-// Queda como RESPALDO de cargarResumen, para cuando el esquema todavía no trae
-// kimun_prof_resumen. Da el número sin el contexto, que es mejor que no dar nada.
-function cargarTitularesParticipacion(codigos){
-  (codigos||[]).forEach(async cod => {
-    const nodo = document.querySelector('.cur-part[data-cod="'+CSS.escape(cod)+'"]');
-    if(!nodo) return;
-    try{
-      const {data,error} = await SB.rpc('kimun_prof_participacion',{p_curso_codigo:cod});
-      if(error) throw error;
-      const g = gruposParticipacion(data);
-      const total = (data||[]).length;
-      nodo.textContent = `Participación · ${g.semana.length}/${total} jugaron esta semana`;
-    }catch(e){
-      nodo.textContent = 'Participación no disponible';
-    }
-  });
-}
 
 // Quién está a cargo de cada curso, en su encabezado. Sale de kimun_prof_equipo, que
 // solo responde a Admin/Super/Jefe: a un profe de asignatura le da no_autorizado y la
@@ -2944,7 +2376,7 @@ function refRecalcGrupo(grupo){
   const bT=grupo.querySelector('.ref-todos');
   if(bT) bT.textContent = (cajas.length && cajas.every(c=>c.checked)) ? 'Ninguno' : 'Todos';
   const bL=grupo.querySelector('.ref-lanzar');
-  if(bL){ bL.disabled = !n; bL.textContent = '📣 Lanzar refuerzo' + (n ? ' ('+n+')' : ''); }
+  if(bL){ bL.disabled = !n; bL.innerHTML = icoTxt('refuerzo') + 'Lanzar refuerzo' + (n ? ' ('+n+')' : ''); }
 }
 
 // Bloque "Refuerzo" bajo el mapa: muestra el desafío activo (seguimiento) o, si no hay, el selector
@@ -2965,7 +2397,7 @@ async function cargarRefuerzo(cursoCodigo, filasDominio){
         acierto del curso <b>${acierto}%</b> (primer intento era <b>${pi}%</b>).</p>
       <button class="btn sec" id="refCerrar">Cerrar desafío</button>`;
     document.getElementById('refCerrar').onclick=async ()=>{
-      if(!confirm('¿Cerrar el desafío de refuerzo? Dejará de aparecerles a los alumnos.')) return;
+      if(!await confirmar({titulo:'¿Cerrar el desafío de refuerzo?', texto:'Dejará de aparecerles a los alumnos.', peligro:true, si:'Cerrar desafío'})) return;
       try{ const {error}=await SB.rpc('kimun_prof_refuerzo_cerrar',{p_curso_codigo:cursoCodigo});
            if(error) throw error; aviso('Desafío cerrado','var(--green)'); }
       catch(e){ aviso(errorPanel(e)); }
@@ -2989,19 +2421,19 @@ async function cargarRefuerzo(cursoCodigo, filasDominio){
     const nom=ASIG_NOMBRE[asig]||asig;
     const flojos=objetivosFlojos(filasDominio,asig);
     const flojosBtn = flojos.length
-      ? `<button class="btn-chip ref-flojos" data-oas="${esc(flojos.map(o=>o.oa).join('|'))}">⚡ Marcar los flojos (${flojos.length})</button>`
+      ? `<button class="btn-chip ref-flojos" data-oas="${esc(flojos.map(o=>o.oa).join('|'))}">${icoTxt('objetivo')}Marcar los flojos (${flojos.length})</button>`
       : '';
     return `<details class="ref-grupo" data-asig="${asig}">
       <summary><b>${esc(nom)}</b>${flojos.length?`<span class="ref-flojos-n">· ${flojos.length} bajo 70%</span>`:''}</summary>
       <div class="ref-cuerpo">
         <div class="ref-acciones">${flojosBtn}<button class="btn-chip ref-todos">Todos</button></div>
         <div class="ref-cajas">${refCajasHTML(asig, pct)}</div>
-        <button class="btn-chip principal ref-lanzar" disabled>📣 Lanzar refuerzo</button>
+        <button class="btn-chip principal ref-lanzar" disabled>${icoTxt('refuerzo')}Lanzar refuerzo</button>
       </div></details>`;
   }).join('');
   cont.innerHTML =
     `<h3 style="color:var(--gold);font-size:15px;margin:0 0 4px">Lanzar un refuerzo</h3>
-     <p style="color:var(--dim);font-size:12px;margin:0 0 10px;max-width:70ch">Elige a mano los objetivos a reforzar. «⚡ Marcar los flojos» preselecciona los que van bajo 70% con datos suficientes; puedes ajustarlos. Se lanza a todo el curso y se mide aparte del avance normal.</p>`
+     <p style="color:var(--dim);font-size:12px;margin:0 0 10px;max-width:70ch">Elige a mano los objetivos a reforzar. «Marcar los flojos» preselecciona los que van bajo 70% con datos suficientes; puedes ajustarlos. Se lanza a todo el curso y se mide aparte del avance normal.</p>`
     + (grupos || '<p style="color:var(--dim);font-size:12px">No hay asignaturas para reforzar en este curso.</p>');
 
   cont.querySelectorAll('.ref-grupo').forEach(grupo => {
@@ -3019,7 +2451,7 @@ async function cargarRefuerzo(cursoCodigo, filasDominio){
     grupo.querySelector('.ref-lanzar').onclick=async ()=>{
       const oas=[...cajas.querySelectorAll('input[type=checkbox]:checked')].map(c=>c.value);
       if(!oas.length) return;
-      if(!confirm(`¿Lanzar el desafío de refuerzo de ${ASIG_NOMBRE[asig]||asig} con ${oas.length} objetivo${oas.length===1?'':'s'}?\n\nLes aparecerá a todos los alumnos del curso.`)) return;
+      if(!await confirmar({titulo:`¿Lanzar el desafío de refuerzo de ${ASIG_NOMBRE[asig]||asig} con ${oas.length} objetivo${oas.length===1?'':'s'}?`, texto:'Les aparecerá a todos los alumnos del curso.', si:'Lanzar refuerzo'})) return;
       try{ const {error}=await SB.rpc('kimun_prof_refuerzo_lanzar',
         {p_curso_codigo:cursoCodigo,p_asignatura:asig,p_objetivos:oas});  // p_asignatura = código
         if(error) throw error; aviso('Desafío lanzado','var(--green)'); }
@@ -3051,9 +2483,10 @@ async function cargarRankingAsignatura(cursoCodigo, filasDominio){
     <div id="rankAsigTabs" class="av-filtros"></div>
     <div id="rankAsigCuerpo"></div>`;
   const tabs=document.getElementById('rankAsigTabs');
-  tabs.innerHTML=(hayGeneral?`<button class="av-chip on" data-asig="">General</button>`:'')
-    + presentes.map((a,i)=>
-    `<button class="av-chip${(!hayGeneral&&i===0)?' on':''}" data-asig="${a}">${ASIG_NOMBRE[a]}</button>`).join('');
+  tabs.setAttribute('role','group'); tabs.setAttribute('aria-label','Asignatura del ranking');
+  tabs.innerHTML=(hayGeneral?`<button type="button" class="av-chip on" aria-pressed="true" data-asig="">General</button>`:'')
+    + presentes.map((a,i)=>{ const on=!hayGeneral&&i===0;
+    return `<button type="button" class="av-chip${on?' on':''}" aria-pressed="${on}" data-asig="${a}">${ASIG_NOMBRE[a]}</button>`; }).join('');
   const pintar=async (asig)=>{
     const cuerpo=document.getElementById('rankAsigCuerpo');
     cuerpo.innerHTML='<p style="color:var(--dim);font-size:12px">Cargando…</p>';
@@ -3068,7 +2501,7 @@ async function cargarRankingAsignatura(cursoCodigo, filasDominio){
     }catch(e){ cuerpo.innerHTML='<p style="color:var(--pink);font-size:12px">'+errorPanel(e)+'</p>'; }
   };
   tabs.querySelectorAll('.av-chip').forEach(ch=>ch.onclick=()=>{
-    tabs.querySelectorAll('.av-chip').forEach(o=>o.classList.toggle('on',o===ch));
+    tabs.querySelectorAll('.av-chip').forEach(o=>{ o.classList.toggle('on',o===ch); o.setAttribute('aria-pressed', String(o===ch)); });
     pintar(ch.dataset.asig);
   });
   pintar(hayGeneral ? '' : presentes[0]);
@@ -3149,12 +2582,12 @@ async function verAvance(cursoCodigo, cursoNombre, gestiono){
         Porcentaje de acierto por objetivo, de menor a mayor. ${AVISO_NO_CALIFICA}</p>
       ${filtrosAsignatura(data)}
       <div id="avCuerpo"></div>
-      <div id="rankingBloque" style="margin-top:16px;border-top:1px solid #ffffff22;padding-top:12px"></div>
+      <div id="rankingBloque" style="margin-top:16px;border-top:1px solid var(--linea2);padding-top:12px"></div>
       <p style="color:var(--dim);font-size:11px;margin-top:12px">
         El camino de aprendizaje de Matemáticas sí aparece aquí cuando los alumnos juegan sus
         lecciones. El Reto de Cálculo no se mide: genera operaciones al momento, sin un objetivo
         del currículum asociado.</p>
-      <div id="refuerzoBloque" style="margin-top:16px;border-top:1px solid #ffffff22;padding-top:12px"></div>
+      <div id="refuerzoBloque" style="margin-top:16px;border-top:1px solid var(--linea2);padding-top:12px"></div>
       <div class="btn-fila" style="margin-top:14px">
         <button class="btn sec" id="btnVolverPanel">← Volver</button>
         ${verHist?`<button class="btn sec" id="btnCivicaCurso">🏛️ Formación Ciudadana</button>`:''}
@@ -3343,7 +2776,7 @@ function filaAvance(f, multi){
     <summary style="cursor:pointer;list-style:none">
       <div class="oa-texto">${asig?`<span class="oa-asig">${esc(asig)}</span>`:''}${esc(OA_TEXTO[f.oa]||f.oa)}</div>
       <div class="oa-medida" style="display:flex;align-items:center;gap:8px">
-        <div style="flex:1;height:8px;background:#ffffff14;border-radius:4px;overflow:hidden">
+        <div aria-hidden="true" style="flex:1;height:8px;background:var(--sutil);border-radius:4px;overflow:hidden">
           <div style="width:${pct}%;height:100%;background:${color}"></div>
         </div>
         <b style="color:${color};min-width:42px;text-align:right">${pct}%</b>
@@ -3380,7 +2813,7 @@ function gruposApoyo(filas){
 // grupo de refuerzo, no para comparar niños entre sí.
 function fichasAlumnos(filas){
   return filas.map(f =>
-    `<span style="display:inline-block;background:#ffffff14;border-radius:12px;
+    `<span style="display:inline-block;background:var(--sutil);border-radius:12px;
                   padding:3px 9px;margin:2px 3px 2px 0;font-size:12px">
        ${esc(f.avatar||'🦊')} ${esc(f.alumno)}</span>`).join('');
 }
@@ -3583,17 +3016,17 @@ function historialHTML(filas){
     <summary>📚 Historial · unidades terminadas <span>(${filas.length})</span></summary>
     <p class="av-hist-nota">Su fecha de término ya pasó, así que este porcentaje es el
       registro de cómo quedaron, no una tarea de esta semana. Para ver el curso <b>tal como
-      estaba al cerrar</b> una unidad —y no como está hoy— usa <b>📸 Cómo quedó</b> en la
+      estaba al cerrar</b> una unidad —y no como está hoy— usa <b>Cómo quedó</b> en la
       planificación.</p>
     ${cuerpo}
   </details>`;
 }
 
 async function reiniciarMediciones(cursoCodigo, cursoNombre, gestiono){
-  if(!confirm('¿Reiniciar las mediciones de este curso?\n\n'+
-    'Los porcentajes vuelven a cero y se empieza a medir de nuevo. Sirve al comenzar una '+
+  if(!await confirmar({titulo:'¿Reiniciar las mediciones de este curso?',
+    texto:'Los porcentajes vuelven a cero y se empieza a medir de nuevo. Sirve al comenzar una '+
     'unidad o un semestre. No se borra ningún alumno ni su XP, pero las mediciones '+
-    'anteriores no se pueden recuperar.')) return;
+    'anteriores no se pueden recuperar.', peligro:true, si:'Reiniciar mediciones'})) return;
   try{
     const {error}=await SB.rpc('kimun_prof_dominio_reiniciar',{p_curso_codigo:cursoCodigo});
     if(error) throw error;
@@ -3608,28 +3041,14 @@ async function accion(fn, exito){
   try{
     const {error}=await fn();
     if(error) throw error;
-    await pintarLista();
+    await refrescarVista();
     aviso(exito,'var(--green)');
   }catch(e){
     aviso(errorPanel(e));                   // ver el comentario de errorPanel
-    try{ await pintarLista(); }catch(_){}   // refresca para mostrar la realidad
+    try{ await refrescarVista(); }catch(_){}   // refresca para mostrar la realidad
   }
 }
 
-async function limpiarPruebas(){
-  try{
-    const {data:n,error}=await SB.rpc('kimun_prof_limpiar_pruebas',{p_ejecutar:false});
-    if(error) throw error;
-    if(!n){ aviso('No hay perfiles de prueba','var(--green)'); return; }
-    if(!confirm('Se van a borrar '+n+' perfil'+(n===1?'':'es')+' de prueba.\n\n'+
-      'Son los que se crean solos cuando alguien abre el juego y nunca escribió un código de alumno.\n\n'+
-      'También se pierden sus duelos. No se borran los alumnos inscritos ni los rivales de práctica.\n\n¿Continuar?')) return;
-    const {data:b,error:e2}=await SB.rpc('kimun_prof_limpiar_pruebas',{p_ejecutar:true});
-    if(e2) throw e2;
-    await pintarLista();
-    aviso('Se borraron '+b+' perfil'+(b===1?'':'es')+' de prueba','var(--green)');
-  }catch(e){ aviso(traducir(e)); }
-}
 
 // Volver arriba. Aparece solo cuando hay trecho que subir: una tabla de 60 objetivos
 // mide varias pantallas, y el encabezado pegado no basta para alcanzar los filtros.
@@ -3640,6 +3059,215 @@ async function limpiarPruebas(){
   btn.onclick = irArriba;
   revisar();
 })();
+
+
+/* ===================== Armazón y rutas (Sesión 154) =====================
+   El panel pasa de una página que se reescribía entera a un armazón con menú lateral y
+   rutas (#/inicio, #/cursos, #/curso/CUR-XXXX, #/pulso…). Las vistas existentes siguen
+   pintando en #lista; lo que cambia es CÓMO se llega a ellas: cada verX() de antes ahora
+   navega a su ruta, y la ruta llama a la función original. Así funcionan el botón atrás,
+   los enlaces y la recarga, sin reescribir la lógica de ninguna vista. */
+const ALUMNO_NOM = {};   // pid -> nombre, para abrir la ficha de un alumno desde un enlace
+
+function ponerTitulo(titulo, sub){
+  const h = $('panelTitulo');
+  h.innerHTML = esc(titulo || '') + (sub ? '<span class="top-sub">' + esc(sub) + '</span>' : '');
+  document.title = (titulo ? titulo + ' · ' : '') + 'VULPO · Profesores';
+}
+function ponerMigas(lista){
+  $('migas').innerHTML = (lista||[]).map(([t,h]) => h
+    ? '<a href="' + esc(h) + '">' + esc(t) + '</a><span aria-hidden="true">›</span>'
+    : '<span>' + esc(t) + '</span>').join('');
+}
+function titCursos(){ return window.ESADMINCOLEGIO ? 'Cursos' : 'Mis cursos'; }
+
+function armarMenu(){
+  const it = (h, ico, t) => '<a class="nav-it" href="' + h + '" data-ruta="' + h + '">' + ICO(ico) + '<span>' + esc(t) + '</span></a>';
+  let html = it('#/inicio', 'inicio', 'Inicio') + it('#/cursos', 'cursos', titCursos());
+  if(window.ESADMINCOLEGIO){
+    html += '<div class="nav-sec">Colegio</div>'
+      + it('#/pulso', 'pulso', 'Pulso del colegio')
+      + it('#/civica', 'civica', 'Formación Ciudadana')
+      + '<div class="nav-sec">Gestión</div>'
+      + it('#/admin', 'ajustes', 'Administración');
+  }
+  $('nav').innerHTML = html;
+  $('btnSalir').innerHTML = ICO('salir') + 'Cerrar sesión';
+  $('btnMenu').innerHTML = ICO('menu');
+  $('topAcc').innerHTML = '<button class="b b-verde" type="button" id="btnProyectar">'
+    + ICO('proyectar') + '<span>Proyectar en clase</span></button>';
+  $('btnProyectar').onclick = elegirNivelYProyectar;
+  $('btnMenu').onclick = () => $('cardPanel').classList.toggle('menu-abierto');
+  $('velo').onclick = () => $('cardPanel').classList.remove('menu-abierto');
+}
+document.addEventListener('ruta', e => {
+  const h = e.detail.hash;
+  document.querySelectorAll('#nav .nav-it').forEach(a => {
+    const r = a.dataset.ruta;
+    a.classList.toggle('on', h === r || (r === '#/cursos' && h.startsWith('#/curso/'))
+      || (r === '#/admin' && h.startsWith('#/admin/')));
+    if(a.classList.contains('on')) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+  });
+  $('cardPanel').classList.remove('menu-abierto');
+  // El mantenedor de permisos no es una ruta: si alguien navega (atrás, el menú) con él
+  // abierto, quedaba encima de la pantalla nueva.
+  const mo = $('mantOverlay'); if(mo) mo.classList.remove('on');
+  irArriba();
+});
+
+// Vuelve a pintar la pantalla actual (tras crear, borrar o editar algo).
+function refrescarVista(){ return renderRuta(); }
+
+/* La lista de cursos del profesor, sin pintarla: la necesitan las rutas que se abren
+   directo desde un enlace (#/curso/CUR-XXXX), donde la lista nunca se dibujó. `forzar`
+   la vuelve a pedir (el Inicio siempre muestra lo de ahora). */
+async function asegurarCursos(forzar){
+  if(!forzar && Object.keys(CURSO_INFO).length) return;
+  const {data, error} = await SB.rpc('kimun_prof_listar');
+  if(error) throw error;
+  // Se vacía DESPUÉS de que la consulta respondió bien: así un curso borrado desaparece,
+  // y un corte de red no deja la lista en blanco.
+  Object.keys(CURSO_INFO).forEach(k => delete CURSO_INFO[k]);
+  Object.keys(ALUMNO_NOM).forEach(k => delete ALUMNO_NOM[k]);
+  const vistos = {};
+  (data||[]).forEach(f => {
+    const cod = f.curso_codigo;
+    if(!vistos[cod]){
+      vistos[cod] = true;
+      CURSO_INFO[cod] = {nivel:f.nivel||'', misAsig:f.mis_asignaturas||[], gestiono:!!f.puede_gestionar,
+        nombre:f.curso, miRol:f.mi_rol, colegio:f.colegio||'', colegioId:f.colegio_id||null, nAlumnos:0};
+    }
+    if(f.pid){ CURSO_INFO[cod].nAlumnos++; ALUMNO_NOM[f.pid] = f.alumno; }
+  });
+}
+
+function noEncontrado(texto){
+  ponerTitulo('No encontrado'); ponerMigas([[titCursos(), '#/cursos']]);
+  $('lista').innerHTML = '<div class="sec">' + vacio('alerta', texto ||
+    'Ese curso no existe o no tienes acceso a él.',
+    '<a class="b b-sec" href="#/cursos">' + ICO('atras') + 'Volver a ' + titCursos().toLowerCase() + '</a>') + '</div>';
+}
+function soloAdminColegio(){
+  if(window.ESADMINCOLEGIO) return true;
+  ir('#/inicio', {reemplazar:true});
+  return false;
+}
+
+// Proyectar en clase (modo docente): token de 6 h y el juego en una pestaña nueva.
+async function abrirModoDocente(ruta, boton){
+  if(!ruta) return;
+  if(boton) boton.disabled = true;
+  try{
+    const {data,error}=await SB.rpc('kimun_prof_docente_link');
+    if(error||!data) throw error||new Error('sin_token');
+    toast('Abriendo el juego en una pestaña nueva. El acceso dura 6 horas.', 'ok');
+    window.open(location.origin+ruta+'?docente='+data, '_blank');
+  }catch(e){
+    toast('No se pudo preparar el acceso docente. '+((e&&e.message)||''), 'error');
+  }finally{ if(boton) boton.disabled = false; }
+}
+function elegirNivelYProyectar(){
+  const m = modal('<h2>Proyectar en clase</h2><p>Abre el juego completo en una pestaña nueva para mostrarlo al curso. '
+    + 'No guarda nada ni cuenta en el avance de nadie. El acceso dura 6 horas.</p>'
+    + '<label class="campo" for="dlgNivel">Curso</label><select id="dlgNivel" autofocus>'
+    + NIVELES_MUESTRA.map(n=>'<option value="'+esc(n.ruta)+'">'+esc(n.nombre)+'</option>').join('')
+    + '</select><div class="dlg-acc" style="margin-top:14px"><button type="button" class="b b-sec" data-v="0">Cancelar</button>'
+    + '<button type="button" class="b b-verde" data-v="1">' + ICO('jugar') + 'Abrir juego</button></div>');
+  m.dlg.querySelector('[data-v="0"]').onclick = () => m.cerrar();
+  m.dlg.querySelector('[data-v="1"]').onclick = async (ev) => {
+    const ruta = m.dlg.querySelector('#dlgNivel').value;
+    await abrirModoDocente(ruta, ev.currentTarget);
+    m.cerrar();
+  };
+}
+
+// Las vistas de antes navegan ahora por su ruta. Se guardan las originales para que la
+// ruta las llame: el resto del código (botones, franja, pulso) sigue llamando verAvance()
+// y queda conectado al historial sin tocarlo.
+const _verAvance = verAvance, _verAvanceAlumno = verAvanceAlumno, _verPulso = verPulso,
+      _verCivica = verCivica, _verCivicaCurso = verCivicaCurso;
+const enc = encodeURIComponent;
+verAvance = (cod) => ir('#/curso/' + enc(cod));
+verAvanceAlumno = (pid, nom, cod) => { if(nom) ALUMNO_NOM[pid] = nom; ir('#/curso/' + enc(cod) + '/alumno/' + enc(pid)); };
+verPulso = () => ir('#/pulso');
+verCivica = () => ir('#/civica');
+verCivicaCurso = (cod) => ir('#/curso/' + enc(cod) + '/civica');
+volverAlPanel = () => { if(hayRutaPrevia()) history.back(); else ir('#/cursos'); };
+
+/* Cada ruta usa la vista NUEVA si su archivo de assets/panel/vistas/ la registró
+   (window.VISTAS.x), y si no, la función de antes. Así cada vista se migra por separado y el
+   panel funciona en cualquier punto del camino. */
+const vista = n => (window.VISTAS && VISTAS[n] && VISTAS[n].render) ? VISTAS[n] : null;
+async function conCurso(p){
+  try{ await asegurarCursos(); }catch(e){ aviso(errorPanel(e)); return null; }
+  const i = CURSO_INFO[p.cod]; if(!i){ noEncontrado(); return null; }
+  return i;
+}
+// El informe de cierre también tiene ruta: #/curso/X/cierre (todas las cerradas) o
+// #/curso/X/cierre/HI08/U1 (una unidad).
+const _verCierre = verCierre;
+verCierre = (cod, nom, sola) => ir('#/curso/' + enc(cod) + '/cierre'
+  + (sola ? '/' + enc(sola.asig) + '/' + enc(sola.uni) : ''));
+
+ruta('#/inicio', () => vista('inicio') ? vista('inicio').render() : ir('#/cursos', {reemplazar:true}));
+ruta('#/cursos', async () => {
+  ponerTitulo(titCursos()); ponerMigas([]);
+  return vista('cursos').render();
+});
+ruta('#/curso/:cod/alumno/:pid', async p => {
+  const i = await conCurso(p); if(!i) return;
+  ponerMigas([[titCursos(), '#/cursos'], [i.nombre, '#/curso/' + enc(p.cod)]]);
+  if(vista('alumno')) return vista('alumno').render({cod:p.cod, pid:p.pid, nombre:ALUMNO_NOM[p.pid] || 'Alumno', curso:i});
+  await _verAvanceAlumno(p.pid, ALUMNO_NOM[p.pid] || 'Alumno', p.cod);
+});
+ruta('#/curso/:cod/cierre/:asig/:uni', async p => {
+  const i = await conCurso(p); if(!i) return;
+  ponerMigas([[titCursos(), '#/cursos'], [i.nombre, '#/curso/' + enc(p.cod) + '/planificacion']]);
+  if(vista('cierre')) return vista('cierre').render({cod:p.cod, curso:i, asig:p.asig, uni:p.uni});
+  await traerPlan(p.cod).catch(()=>{});
+  const u = (unidadesCerrables([p.asig]) || []).find(x => x.asig === p.asig && x.uni === p.uni);
+  await _verCierre(p.cod, i.nombre, u || {asig:p.asig, uni:p.uni});
+});
+ruta('#/curso/:cod/cierre', async p => {
+  const i = await conCurso(p); if(!i) return;
+  ponerMigas([[titCursos(), '#/cursos'], [i.nombre, '#/curso/' + enc(p.cod) + '/planificacion']]);
+  if(vista('cierre')) return vista('cierre').render({cod:p.cod, curso:i});
+  await traerPlan(p.cod).catch(()=>{});
+  await _verCierre(p.cod, i.nombre, null);
+});
+ruta('#/curso/:cod/:tab', async p => {
+  const i = await conCurso(p); if(!i) return;
+  ponerMigas([[titCursos(), '#/cursos']]);
+  if(vista('curso')) return vista('curso').render({cod:p.cod, tab:p.tab, curso:i});
+  if(p.tab === 'civica') return _verCivicaCurso(p.cod, i.nombre, i.nivel);
+  await _verAvance(p.cod, i.nombre, i.gestiono);
+});
+ruta('#/curso/:cod', async p => {
+  const i = await conCurso(p); if(!i) return;
+  ponerMigas([[titCursos(), '#/cursos']]);
+  if(vista('curso')) return vista('curso').render({cod:p.cod, tab:'avance', curso:i});
+  await _verAvance(p.cod, i.nombre, i.gestiono);
+});
+ruta('#/pulso', async () => {
+  if(!soloAdminColegio()) return; ponerMigas([]); ponerTitulo('El pulso del colegio');
+  if(vista('pulso')) return vista('pulso').render();
+  await _verPulso(); ponerTitulo('El pulso del colegio');
+});
+ruta('#/civica', async () => {
+  if(!soloAdminColegio()) return; ponerMigas([]); ponerTitulo('Formación Ciudadana');
+  if(vista('civica')) return vista('civica').render();
+  await _verCivica(); ponerTitulo('Formación Ciudadana');
+});
+ruta('#/admin/:sec', async p => {
+  if(!soloAdminColegio()) return; ponerMigas([['Administración', '#/admin']]);
+  if(vista('admin')) return vista('admin').render({sec:p.sec});
+  ir('#/admin', {reemplazar:true});
+});
+ruta('#/admin', async () => {
+  if(!soloAdminColegio()) return;
+  ponerTitulo('Administración'); ponerMigas([]);
+  return vista('admin').render({sec:''});
+});
 
 // Si ya había sesión abierta, entrar directo al panel
 (async ()=>{
@@ -3757,12 +3385,12 @@ function renderGrants(){
         <div class="g-ambito">${esc(g.ambito_nombre||g.ambito_tipo)}${mat}</div>
         <div class="g-caps">${g.capacidades.length} capacidad${g.capacidades.length===1?'':'es'}: ${g.capacidades.map(c=>esc(CAP_LABEL[c]||c)).join(' · ')}</div>
       </div>
-      <button class="btn-chip g-editar" data-id="${esc(g.id)}">Editar</button>
-      <button class="ico ico-del g-revocar" data-id="${esc(g.id)}" title="Revocar este grant">✕</button>
+      <button type="button" class="btn-chip g-editar" data-id="${esc(g.id)}" aria-label="Editar el permiso sobre ${esc(g.ambito_nombre||g.ambito_tipo)}">Editar</button>
+      <button type="button" class="ico ico-del g-revocar" data-id="${esc(g.id)}" title="Revocar este grant" aria-label="Revocar el permiso sobre ${esc(g.ambito_nombre||g.ambito_tipo)}">${ICO('borrar')||'✕'}</button>
     </div>`;
   }).join('');
   document.querySelectorAll('.g-revocar').forEach(b=>b.onclick=async ()=>{
-    if(!confirm('¿Revocar este grant? El usuario pierde estas capacidades sobre ese ámbito.')) return;
+    if(!await confirmar({titulo:'¿Revocar este grant?', texto:'El usuario pierde estas capacidades sobre ese ámbito.', peligro:true, si:'Revocar'})) return;
     try{ const {error}=await SB.rpc('kimun_prof_permisos_revocar',{p_id:b.dataset.id}); if(error) throw error;
       await cargarGrants(); mantAviso('Grant revocado','var(--green)');
     }catch(e){ mantAviso(mantErr(e)); }
@@ -3790,11 +3418,11 @@ function pintarEditor(){
   const radios=tipos.map(([t,l])=>`<label class="mant-radio"><input type="radio" name="mant-ambito" value="${t}" ${sel.tipo===t?'checked':''}> ${l}</label>`).join('');
   let nodo='';
   if(sel.tipo==='sostenedor'){
-    nodo=`<select id="mantNodo">${MANT.sostenedores.map(s=>`<option value="${esc(s.id)}" ${sel.id===s.id?'selected':''}>${esc(s.nombre)}</option>`).join('')}</select>`;
+    nodo=`<select id="mantNodo" aria-label="Sostenedor">${MANT.sostenedores.map(s=>`<option value="${esc(s.id)}" ${sel.id===s.id?'selected':''}>${esc(s.nombre)}</option>`).join('')}</select>`;
   }else if(sel.tipo==='colegio'){
-    nodo=`<select id="mantNodo">${MANT.colegios.map(c=>`<option value="${esc(c.id)}" ${sel.id===c.id?'selected':''}>${esc(c.nombre)}</option>`).join('')}</select>`;
+    nodo=`<select id="mantNodo" aria-label="Colegio">${MANT.colegios.map(c=>`<option value="${esc(c.id)}" ${sel.id===c.id?'selected':''}>${esc(c.nombre)}</option>`).join('')}</select>`;
   }else if(sel.tipo==='curso'){
-    nodo=`<select id="mantNodo">${MANT.cursos.map(c=>`<option value="${esc(c.id)}" ${sel.id===c.id?'selected':''}>${esc(c.nombre)}${c.nivel?' ('+esc(c.nivel)+'°)':''}</option>`).join('')}</select>`;
+    nodo=`<select id="mantNodo" aria-label="Curso">${MANT.cursos.map(c=>`<option value="${esc(c.id)}" ${sel.id===c.id?'selected':''}>${esc(c.nombre)}${c.nivel?' ('+esc(c.nivel)+'°)':''}</option>`).join('')}</select>`;
     const cur=MANT.cursos.find(c=>c.id===sel.id);
     const mats=(cur&&cur.nivel&&window.NIV&&NIV.deNivel)?NIV.deNivel(cur.nivel):[];
     if(mats.length){
@@ -3805,19 +3433,19 @@ function pintarEditor(){
   const total=MANT.caps.length && sel.checked.size===MANT.caps.length;
   const cats=CAP_CATS.map(([nom,codes])=>{
     const items=codes.map(c=>`<label class="mant-cap"><input type="checkbox" class="mant-cap-cb" value="${c}" ${sel.checked.has(c)?'checked':''}> ${esc(CAP_LABEL[c]||c)}</label>`).join('');
-    return `<div class="mant-cat"><h4>${esc(nom)} <button class="mant-catall" data-cat="${esc(nom)}">marcar todas</button></h4>${items}</div>`;
+    return `<div class="mant-cat"><h4>${esc(nom)} <button type="button" class="mant-catall" data-cat="${esc(nom)}" aria-label="Marcar todas: ${esc(nom)}">marcar todas</button></h4>${items}</div>`;
   }).join('');
   const presets=[['sostenedor','Sostenedor'],['super','Super'],['jefe','Jefe'],['asignatura','Asignatura']]
     .map(([p,l])=>`<button class="btn-chip mant-preset" data-preset="${p}">${l}</button>`).join('');
   $('mantEditor').innerHTML=`
     <h3 class="mant-h3">Agregar o reemplazar un permiso</h3>
-    <div class="mant-ambito">${radios}</div>
+    <div class="mant-ambito" role="radiogroup" aria-label="Ámbito del permiso">${radios}</div>
     <div class="mant-nodo">${nodo}</div>
     <div class="mant-presets"><span class="mant-lbl">Aplicar rol:</span> ${presets}</div>
     <label class="mant-cap mant-total"><input type="checkbox" id="mantTotal" ${total?'checked':''}> <b>Acceso total</b></label>
     ${cats}
-    <div id="mantMsg" class="mant-msg"></div>
-    <button class="btn" id="mantGuardar">Guardar</button>`;
+    <div id="mantMsg" class="mant-msg" role="status" aria-live="polite"></div>
+    <button class="b b-pri" id="mantGuardar" type="button">Guardar</button>`;
   wireEditor();
 }
 
@@ -3865,6 +3493,13 @@ async function guardarGrant(){
   }catch(e){ mantAviso(mantErr(e)); }
 }
 
+// Íconos y rol de ventana del mantenedor (su HTML es estático; se completa aquí).
+(function(){
+  const ov=$('mantOverlay'), m=ov && ov.querySelector('.mant-modal');
+  if(m){ m.setAttribute('role','dialog'); m.setAttribute('aria-modal','true'); m.setAttribute('aria-labelledby','mantTit'); }
+  const h=m && m.querySelector('h2'); if(h){ h.id='mantTit'; if(window.ICO) h.innerHTML=icoTxt('llave')+'Editar permisos'; }
+  if(window.ICO) $('mantCerrar').innerHTML=ICO('cerrar');
+})();
 $('mantCerrar').onclick=()=>$('mantOverlay').classList.remove('on');
 $('mantOverlay').onclick=(e)=>{ if(e.target===$('mantOverlay')) $('mantOverlay').classList.remove('on'); };
 </script>

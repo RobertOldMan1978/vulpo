@@ -1,0 +1,285 @@
+/* ============================================================================
+   Panel de profesores y administrativos · sistema de diseño CLARO (Sesión 154)
+
+   El panel lo usa un adulto en un computador del colegio, y a veces proyectado
+   en una reunión: por eso es claro, de oficina, y no el cosmos del juego.
+   Se carga DESPUÉS del <style> de profesor.html, así que estos tokens ganan a
+   los oscuros de allá por orden de origen. Casi todo el color del panel sale de
+   las variables (incluido lo que el JavaScript escribe inline con var(--…)),
+   así que el registro se decide aquí.
+
+   Los tres colores semánticos (verde / ámbar / rosa) son INFORMACIÓN: dicen si un
+   objetivo va bien, regular o mal (cortes 70 y 45). Se oscurecen para que
+   lleguen a 4,5:1 sobre blanco, pero no cambian de significado.
+   ========================================================================== */
+:root{
+  --fondo:#f3f4f7;        /* fondo de la página */
+  --panel:#ffffff;        /* tarjetas, superficies */
+  --texto:#171b26;
+  --cuerpo:#353c4b;
+  --dim:#5b6273;          /* 6,2:1 sobre blanco */
+  --linea:#e4e7ed;        /* bordes suaves */
+  --linea2:#cdd2db;       /* bordes de campos y botones */
+  --sutil:#eef0f4;        /* fondos tenues (barras vacías, chips) */
+  --violet:#5b43c4;       /* acción principal · blanco encima 7,1:1 */
+  --violet-t:#5b43c414;   /* tinte violeta */
+  --gold:#8a5a00;         /* acento "esto es lo de ahora" / falta configurar · 6:1 */
+  --cyan:#1d5b98;         /* información / enlaces · 7:1 */
+  --green:#1b7347;        /* va bien · 5,9:1 */
+  --pink:#b42b48;         /* va mal · 6,1:1 */
+  --ambar:#9a6400;
+  --sombra:0 1px 2px #10182808,0 1px 3px #1018280f;
+  --sombra-alta:0 12px 32px #10182824;
+  --radio:10px;
+  --side:248px;
+}
+
+/* ---------- Base ---------- */
+html{background:var(--fondo)}
+body{background:var(--fondo);color:var(--texto);font-size:14px;line-height:1.5;
+  -webkit-font-smoothing:antialiased}
+body.en-app{max-width:none !important;margin:0 !important;padding:0 !important}
+a{color:var(--cyan)}
+:focus-visible{outline:2px solid var(--violet);outline-offset:2px}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--violet);outline-offset:0}
+input,textarea,select{background:#fff;border:1px solid var(--linea2);color:var(--texto);font-size:14px}
+input::placeholder,textarea::placeholder{color:#8a91a1}
+code{color:var(--cuerpo);background:var(--sutil);padding:1px 6px;border-radius:5px}
+
+/* ---------- Ingreso ---------- */
+body:not(.en-app){display:block;min-height:100vh;padding:48px 16px !important;max-width:none !important}
+body:not(.en-app) > h1{display:none}
+.auth-marca{display:flex;align-items:center;gap:12px;justify-content:center;margin:0 0 22px}
+.auth-marca img{width:44px;height:44px}
+.auth-marca b{font-size:22px;letter-spacing:-.01em}
+.auth-marca span{display:block;font-size:13px;color:var(--dim);font-weight:400}
+#cardAuth{max-width:420px;margin:0 auto;padding:28px;border-radius:14px;box-shadow:var(--sombra);
+  border:1px solid var(--linea);background:var(--panel)}
+#cardAuth h3{font-size:18px;text-transform:none;letter-spacing:0;color:var(--texto);margin-bottom:16px}
+#cardAuth .campo{color:var(--cuerpo);font-weight:500;font-size:13px}
+#cardAuth .btn-fila{flex-direction:column;align-items:stretch}
+#cardAuth .btn-fila .btn{width:100%}
+.auth-pie{text-align:center;font-size:12px;color:var(--dim);margin-top:18px}
+.auth-pie a{color:var(--dim)}
+
+/* ---------- Armazón ---------- */
+#cardPanel.app{display:grid;grid-template-columns:var(--side) 1fr;min-height:100vh;
+  background:none;border:0;border-radius:0;padding:0;margin:0}
+#cardPanel.app.hide{display:none}
+#side{position:sticky;top:0;height:100vh;overflow-y:auto;background:var(--panel);
+  border-right:1px solid var(--linea);display:flex;flex-direction:column;padding:18px 12px}
+.side-marca{display:flex;align-items:center;gap:10px;padding:2px 8px 18px;text-decoration:none;color:var(--texto)}
+.side-marca img{width:34px;height:34px}
+.side-marca b{font-size:17px;letter-spacing:-.01em;display:block;line-height:1.1}
+.side-marca span{font-size:11px;color:var(--dim);letter-spacing:.02em}
+#nav{display:flex;flex-direction:column;gap:2px;flex:1}
+.nav-sec{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--dim);padding:14px 10px 6px}
+.nav-it{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;
+  color:var(--cuerpo);text-decoration:none;font-weight:500;font-size:14px}
+.nav-it svg{width:18px;height:18px;flex:0 0 auto;color:var(--dim)}
+.nav-it:hover{background:var(--sutil);color:var(--texto)}
+.nav-it.on{background:var(--violet-t);color:var(--violet);font-weight:600}
+.nav-it.on svg{color:var(--violet)}
+.side-pie{border-top:1px solid var(--linea);padding:14px 8px 0;margin-top:12px}
+#cardPanel.app #profId{margin:0 0 10px;padding:0;border:0}
+#cardPanel.app #profId.hide{display:block}
+#cardPanel.app .pid-nom{font-size:14px}
+#cardPanel.app .pid-rango{color:var(--violet);border-color:#5b43c433;background:var(--violet-t)}
+#cardPanel.app #btnSalir{display:flex;align-items:center;gap:8px;width:100%;max-width:none;
+  text-decoration:none;color:var(--dim);font-size:13px;padding:8px 2px;margin:0;justify-content:flex-start}
+#cardPanel.app #btnSalir svg{width:16px;height:16px}
+#cardPanel.app #btnSalir:hover{color:var(--pink)}
+
+#velo{display:none}   /* el velo del menú móvil no es un ítem de la grilla en escritorio */
+#main{min-width:0;display:flex;flex-direction:column;grid-column:2}
+#top{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;min-height:60px;
+  padding:10px 28px;background:#ffffffe8;backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+#btnMenu{display:none}
+.top-tit{flex:1;min-width:0}
+#cardPanel.app #panelTitulo{margin:0;font-size:18px;font-weight:700;color:var(--texto);
+  text-transform:none;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#cardPanel.app #panelTitulo.hide{display:block}
+.migas{font-size:12px;color:var(--dim);display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1px}
+.migas a{color:var(--dim);text-decoration:none}
+.migas a:hover{color:var(--violet);text-decoration:underline}
+.top-acc{display:flex;align-items:center;gap:8px}
+#contenido{padding:24px 28px 48px;width:100%;max-width:1280px}
+#cardPanel.app #lista p{max-width:78ch}
+#cardPanel.app #panelMsg{display:none}
+/* La cabecera de cada vista (curso, pulso…) ya la dice la barra superior: en pantalla se
+   oculta, en el papel se imprime porque es lo único que dice de qué curso es la hoja. */
+@media screen{ #cardPanel.app .av-head{display:none} }
+body > h1{display:none}
+.top-sub{font-size:13px;color:var(--dim);font-weight:500;margin-left:10px;letter-spacing:0}
+#btnArriba{background:var(--panel);border-color:var(--linea2);box-shadow:var(--sombra)}
+
+/* Barra de carga: reemplaza el "Cargando…" escrito al pie, que no se veía. */
+#cargando{position:fixed;top:0;left:0;right:0;height:3px;z-index:100;pointer-events:none;
+  background:linear-gradient(90deg,transparent,var(--violet),transparent);background-size:40% 100%;
+  background-repeat:no-repeat;animation:cargando 1.1s linear infinite;opacity:0;transition:opacity .2s}
+#cargando.on{opacity:1}
+@keyframes cargando{from{background-position:-40% 0}to{background-position:140% 0}}
+
+/* ---------- Componentes ---------- */
+.card{background:var(--panel);border:1px solid var(--linea);border-radius:var(--radio);box-shadow:var(--sombra)}
+.btn{background:var(--violet);color:#fff;border-radius:8px;font-size:14px}
+.btn:hover{filter:none;background:#4c36ab}
+.btn.sec{background:#fff;color:var(--texto);border-color:var(--linea2)}
+.btn.sec:hover{background:var(--sutil);border-color:var(--linea2)}
+.btn.txt{color:var(--dim)}
+.btn.peligro{color:var(--pink)}
+.btn-chip{background:#fff;border-color:var(--linea2);color:var(--texto)}
+.btn-chip:hover{background:var(--sutil);border-color:var(--linea2)}
+.btn-chip.principal{background:var(--violet);border-color:var(--violet);color:#fff}
+.btn-chip.principal:hover{background:#4c36ab}
+.btn-docente{color:#fff;box-shadow:none}
+.btn-docente:hover{background:#155e3a}
+.ico{color:var(--cyan)}
+.ico:hover{background:var(--sutil)}
+.ico-del{color:var(--pink)}
+.av-chip{background:#fff;color:var(--cuerpo)}
+.av-chip.on{border-color:var(--violet);color:var(--violet);background:var(--violet-t)}
+.curso{background:var(--panel);box-shadow:var(--sombra)}
+.franja{background:var(--panel);box-shadow:var(--sombra)}
+.franja-tit{color:var(--gold)}
+.franja-li:hover{color:var(--violet)}
+.uni-clases{color:var(--gold);border-color:#8a5a0040;background:#8a5a000f}
+.pid-rango{color:var(--cyan)}
+#mantOverlay{background:#10182866}
+
+/* Botón con ícono (nuevo) */
+.b{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:38px;padding:0 14px;
+  border-radius:8px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;border:1px solid transparent;
+  white-space:nowrap;text-decoration:none}
+.b svg{width:17px;height:17px}
+.b-pri{background:var(--violet);color:#fff}
+.b-pri:hover{background:#4c36ab}
+.b-sec{background:#fff;color:var(--texto);border-color:var(--linea2)}
+.b-sec:hover{background:var(--sutil)}
+.b-txt{background:none;color:var(--cuerpo);padding:0 8px}
+.b-txt:hover{color:var(--violet)}
+.b-peligro{background:#fff;color:var(--pink);border-color:#b42b4840}
+.b-peligro:hover{background:#b42b480d}
+.b-verde{background:var(--green);color:#fff}
+.b-verde:hover{background:#155e3a}
+.b:disabled{opacity:.5;cursor:default}
+.b-ico{width:38px;padding:0}
+
+/* Tarjetas de indicador (Inicio) */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:0 0 22px}
+.kpi{background:var(--panel);border:1px solid var(--linea);border-radius:var(--radio);padding:16px 18px;box-shadow:var(--sombra)}
+.kpi-tit{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--dim);font-weight:500}
+.kpi-tit svg{width:16px;height:16px}
+.kpi-num{font-size:28px;font-weight:700;letter-spacing:-.02em;margin-top:6px;font-variant-numeric:tabular-nums}
+.kpi-sub{font-size:12px;color:var(--dim);margin-top:2px}
+.kpi.alerta .kpi-num{color:var(--gold)}
+
+/* Sección con encabezado (tarjeta) */
+.sec{background:var(--panel);border:1px solid var(--linea);border-radius:var(--radio);box-shadow:var(--sombra);margin:0 0 18px}
+.sec-cab{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--linea)}
+.sec-cab h2{font-size:15px;font-weight:600;margin:0;flex:1}
+.sec-cab .sec-sub{font-size:12px;color:var(--dim);font-weight:400}
+.sec-cuerpo{padding:14px 18px}
+.sec-cuerpo.sin-pad{padding:0}
+
+/* Tabla */
+.tabla{width:100%;border-collapse:collapse;font-size:14px}
+.tabla th{text-align:left;font-size:12px;font-weight:600;color:var(--dim);padding:10px 18px;
+  border-bottom:1px solid var(--linea);background:#fafbfc;white-space:nowrap}
+.tabla td{padding:12px 18px;border-bottom:1px solid var(--linea);vertical-align:middle}
+.tabla tr:last-child td{border-bottom:0}
+.tabla tbody tr.fila-link{cursor:pointer}
+.tabla tbody tr.fila-link:hover{background:#fafbfd}
+.tabla .num{text-align:right;font-variant-numeric:tabular-nums}
+
+/* Insignia */
+.ins{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;padding:2px 9px;
+  border-radius:999px;background:var(--sutil);color:var(--cuerpo);white-space:nowrap}
+.ins-violeta{background:var(--violet-t);color:var(--violet)}
+.ins-verde{background:#1b734714;color:var(--green)}
+.ins-ambar{background:#9a64001a;color:var(--ambar)}
+.ins-rosa{background:#b42b4814;color:var(--pink)}
+
+/* Lista de tareas (franja de atención en Inicio) */
+.tareas{list-style:none;margin:0;padding:0}
+.tarea{display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid var(--linea);
+  cursor:pointer;width:100%;background:none;border-left:0;border-right:0;border-top:0;font:inherit;text-align:left;color:inherit}
+.tarea:last-child{border-bottom:0}
+.tarea:hover{background:#fafbfd}
+.tarea svg{width:18px;height:18px;flex:0 0 auto}
+.tarea .t-ico{color:var(--dim)}
+.tarea .t-ico.alerta{color:var(--gold)}
+.tarea .t-txt{flex:1;min-width:0}
+.tarea .t-txt b{display:block;font-weight:600}
+.tarea .t-txt span{font-size:13px;color:var(--dim)}
+.tarea .t-ir{color:var(--dim)}
+
+/* Pestañas */
+.tabs{display:flex;gap:2px;border-bottom:1px solid var(--linea);margin:0 0 18px;overflow-x:auto;overflow-y:hidden}
+.tabs{scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:10px 14px;font-weight:500;color:var(--dim);text-decoration:none;border-bottom:2px solid transparent;
+  margin-bottom:-1px;white-space:nowrap;font-size:14px;background:none;border-top:0;border-left:0;border-right:0;cursor:pointer;font-family:inherit}
+.tab:hover{color:var(--texto)}
+.tab.on{color:var(--violet);border-bottom-color:var(--violet);font-weight:600}
+
+/* Estados vacío y esqueleto */
+.vacio{text-align:center;padding:36px 18px;color:var(--dim)}
+.vacio svg{width:32px;height:32px;color:#a3a9b6;margin-bottom:8px}
+.vacio p{margin:0 auto 12px;max-width:46ch}
+.esq{background:linear-gradient(90deg,var(--sutil) 25%,#e6e9ef 50%,var(--sutil) 75%);background-size:200% 100%;
+  animation:esq 1.2s ease-in-out infinite;border-radius:6px;height:14px;margin:10px 0}
+@keyframes esq{from{background-position:200% 0}to{background-position:-200% 0}}
+
+/* Avisos flotantes */
+#toasts{position:fixed;right:20px;bottom:20px;z-index:120;display:flex;flex-direction:column;gap:8px;
+  max-width:min(420px,calc(100vw - 40px))}
+.toast{display:flex;align-items:flex-start;gap:10px;background:#1c2030;color:#fff;padding:12px 14px;
+  border-radius:10px;box-shadow:var(--sombra-alta);font-size:14px;line-height:1.4;animation:toast-in .18s ease-out}
+.toast svg{width:18px;height:18px;flex:0 0 auto;margin-top:1px}
+.toast.ok svg{color:#5dd39a}
+.toast.error{background:#7d1b30}
+.toast.error svg{color:#ffc2cd}
+.toast button{background:none;border:0;color:#ffffffb3;cursor:pointer;margin-left:auto;padding:0 0 0 6px;font-size:16px;line-height:1}
+@keyframes toast-in{from{transform:translateY(8px);opacity:0}to{transform:none;opacity:1}}
+
+/* Ventana de diálogo */
+.dlg-fondo{position:fixed;inset:0;background:#10182866;z-index:110;display:flex;align-items:center;
+  justify-content:center;padding:20px}
+.dlg{background:var(--panel);border-radius:14px;box-shadow:var(--sombra-alta);width:100%;max-width:460px;
+  padding:22px 22px 18px}
+.dlg h2{margin:0 0 8px;font-size:17px}
+.dlg p{margin:0 0 14px;color:var(--cuerpo);white-space:pre-line}
+.dlg input{margin:4px 0 14px}
+.dlg-acc{display:flex;justify-content:flex-end;gap:8px}
+
+/* ---------- Teléfono y tablet ---------- */
+@media (max-width:899px){
+  #cardPanel.app{grid-template-columns:1fr}
+  #main{grid-column:1}
+  #side{position:fixed;left:0;top:0;bottom:0;width:min(280px,85vw);z-index:90;transform:translateX(-102%);
+    transition:transform .2s ease;box-shadow:var(--sombra-alta)}
+  #cardPanel.app.menu-abierto #side{transform:none}
+  #velo{position:fixed;inset:0;background:#10182855;z-index:80;display:none}
+  #cardPanel.app.menu-abierto #velo{display:block}
+  #btnMenu{display:inline-flex}
+  #top{padding:10px 16px}
+  #contenido{padding:16px 16px 40px}
+  .top-sub{display:block;margin:0}
+  .top-acc .b span{display:none}
+  .tabla th,.tabla td{padding:10px 12px}
+}
+
+/* ---------- Impresión ---------- */
+@media print{
+  body.en-app{background:#fff}
+  #side,#top,#toasts,#cargando,#velo{display:none !important}
+  /* `.b{display:inline-flex}` y `.kpis{display:grid}` de este archivo le ganan por orden de
+     carga al `.no-print` de profesor.html: sin el !important, los botones salían en el papel. */
+  .no-print{display:none !important}
+  #cardPanel.app{display:block}
+  #contenido{padding:0;max-width:none}
+  .sec,.kpi,.card{box-shadow:none}
+  #cardPanel.app .av-head{margin:0 0 4px;padding:0}
+}

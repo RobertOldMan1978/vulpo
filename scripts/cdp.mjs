@@ -119,7 +119,9 @@ export async function conducir(url, pasos, { puerto = 9333, mostrar = false } = 
 if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   const [, , url, archivo] = process.argv;
   const mod = await import(pathToFileURL(archivo).href);
-  const r = await conducir(url, mod.default);
+  // CDP_PUERTO permite correr dos conductores a la vez (p. ej. dos agentes verificando en
+  // paralelo): con el 9333 fijo, el segundo se colgaba sin decir nada.
+  const r = await conducir(url, mod.default, { puerto: Number(process.env.CDP_PUERTO) || 9333 });
   if (r !== undefined) console.log(typeof r === 'string' ? r : JSON.stringify(r, null, 1));
   process.exit(0);
 }

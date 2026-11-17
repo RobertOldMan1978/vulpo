@@ -254,6 +254,12 @@ STUB = r"""
       colegios:(COLEGIOS[s.id]||[]).length})),
     kimun_prof_colegios: (a)=>(COLEGIOS[(a&&a.p_sostenedor)]||[]).map(c=>({id:c.id, nombre:c.nombre,
       cursos: CURSOS.filter(x=>CURSO_COLEGIO[x[0]]===c.id).length})),
+    /* Acciones de Administración (Sesión 154): sin estos, el doble devolvía null y no se podía
+       probar el flujo completo. curso_crear devuelve el código, como la función real. */
+    kimun_prof_curso_crear: ()=>({id:'cur-nuevo', nombre:'Curso nuevo', codigo:'CUR-BA04'}),
+    kimun_prof_autorizar: ()=>null,
+    kimun_prof_quitar: ()=>null,
+    kimun_prof_limpiar_pruebas: (a)=>(a&&a.p_ejecutar) ? 3 : 3,
     kimun_prof_sostenedor_crear: (a)=>{
       const id='sos-'+(SOS.length+1); SOS.push({id, nombre:(a.p_nombre||'').trim()});
       COLEGIOS[id]=[]; return id; },

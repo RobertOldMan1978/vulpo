@@ -126,9 +126,15 @@ jugando todo el año sin que el informe cambie. Al lado de cada objetivo va tamb
 hoy: si difieren, casi siempre son alumnos que llegaron después. Las unidades cerradas se pueden
 ver juntas e **imprimir en una hoja** para una reunión de departamento.
 
-Y al entrar, el panel abre con una franja de **qué necesita tu atención** —cuántos alumnos no
-entraron esta semana en cada curso, cuántos objetivos van bajo 70%, si quedó un refuerzo sin
-cerrar—, con un toque para ir a resolverlo. Son conteos: **ningún nombre de alumno aparece ahí**.
+El panel está pensado para el **computador**, como una aplicación web de oficina: menú lateral,
+estilo claro, una pantalla por curso con pestañas (Avance, Alumnos, Equipo, Planificación,
+Refuerzo, Formación Ciudadana, Inscripción y Ajustes) y direcciones propias, así que el botón atrás
+funciona y se puede enviar el enlace directo a un curso. En el celular el menú se despliega.
+
+Y al entrar, el panel abre en un **Inicio con indicadores** y una lista de **qué necesita tu
+atención** —cuántos alumnos no entraron esta semana en cada curso, cuántos objetivos van bajo 70%,
+si quedó un refuerzo sin cerrar—, con un toque para ir a resolverlo. Son conteos: **ningún nombre
+de alumno aparece ahí**.
 
 Y para la **dirección o la UTP** hay una pantalla propia, **el pulso del colegio**: una fila por
 curso con la **cobertura del programa** —cuántos de los objetivos del año ya se trabajaron, y

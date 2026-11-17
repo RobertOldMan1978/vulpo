@@ -15363,3 +15363,38 @@ más: *"¿no íbamos a mostrar 3 por día?"* — por si el alumno quiere otro da
   envío) y `AVISO_CORREO` (el destinatario va como secreto porque el repo es público). Sin ellos el paso
   se salta solo. No se usó el aviso de GitHub para todas las corridas porque es por cuenta y llegaría
   también un correo por cada publicación del sitio y cada compilación de la app.
+
+### Sesión 154 (2026-11-17) — El panel de profesores se vuelve una aplicación web de oficina
+Roberto: *"para los profesores debemos hacer algo más profesional y que lo puedan ver en la web"*.
+Eligió **menú lateral**, **estilo claro tipo oficina** y una **pantalla de Inicio con indicadores**.
+Se hizo con plan aprobado y **cuatro agentes de a dos**, cada uno en sus propios archivos.
+**Cero SQL y el juego sin tocar**: solo `profesor.html`, `assets/panel/` y dos scripts.
+
+- **El armazón (`profesor.html` + `assets/panel/`):** menú lateral fijo (en el celular, desplegable),
+  barra superior con migas de pan y «Proyectar en clase», y **rutas por hash** (`router.js`):
+  `#/inicio`, `#/cursos`, `#/curso/COD/<pestaña>`, `#/curso/COD/alumno/PID`, `#/curso/COD/cierre…`,
+  `#/pulso`, `#/civica`, `#/admin/<sección>`. Funcionan el botón atrás, los enlaces directos y la
+  recarga. Hash y no History API porque GitHub Pages no puede reescribir rutas.
+- **Sistema de diseño claro (`panel.css`):** tokens en `:root` que pisan a los oscuros por orden de
+  carga; los tres colores semánticos se oscurecieron para llegar a 4,5:1 sobre blanco. Íconos SVG de
+  Lucide pegados en `iconos.js` (sin CDN). `ui.js`: avisos flotantes, barra de carga, y
+  `confirmar()`/`pedirTexto()` con ventanas propias — **ya no queda ningún `confirm()` ni `prompt()`**.
+- **Una vista por archivo (`assets/panel/vistas/*.js`):** Inicio (KPIs + lo que necesita atención,
+  sin nombres de alumnos), Cursos (tabla con filtros por sostenedor y colegio), Curso (pestañas Avance,
+  Alumnos, Equipo, Planificación, Refuerzo, Formación Ciudadana, Inscripción y Ajustes), Alumno, Pulso,
+  Formación Ciudadana, Cierre y Administración (Profesores, Colegios, Cursos, Herramientas). Cada ruta
+  usa la vista nueva si su archivo la registró en `window.VISTAS` y si no la función vieja: así cada
+  vista se migró por separado sin dejar el panel roto entremedio.
+- **Las restricciones de siempre, verificadas con asertos:** el pulso y el informe cívico del colegio
+  sin ningún % de acierto, sin nombres y sin columnas ordenables; primer intento con cortes 45/70.
+- **Se borraron unas 400 líneas** de la pantalla vieja (`pintarLista`, el árbol, la franja) cortando
+  por balance de llaves, después de comprobar que nadie más las llamaba.
+- **Capturas nuevas** del panel claro en la portada y en `/colegio` (`assets/web/panel-*.png`).
+- **`scripts/cdp.mjs`** acepta `CDP_PUERTO` para correr dos conductores a la vez (con el 9333 fijo,
+  el segundo se colgaba en silencio); **`panel-demo.py`** suma crear curso, autorizar, revocar y
+  limpiar perfiles.
+- **Verificado:** los 5 roles del doble por las 17 rutas (el profesor no ve Pulso ni Administración
+  y es redirigido), 375 px sin desborde, el pulso impreso en una hoja sin menú ni botones, y cero
+  errores de consola y de red.
+- ⚠️ **Solo probado con el doble:** falta mirarlo con una cuenta real en `vulpo.cl/profesor.html`.
+- **Después:** instalar el panel como app (PWA) con su propio `manifest`, si Roberto lo pide.
