@@ -15350,4 +15350,10 @@ más: *"¿no íbamos a mostrar 3 por día?"* — por si el alumno quiere otro da
 - **Firmadas el mismo día:** el banco vuelve a **21.617 de 21.617** (control positivo hecho).
 - **La voz: 759 clips de 1° a 4° (~US$0,30)**, subidos a R2, con sus paquetes de la app y verificados
   (54.808 clips idénticos por MD5). El clip de la pregunta de Pía responde 200 desde `voz.vulpo.cl`.
-- **Pendiente:** compilar una app nueva que traiga los textos y la voz (la 12 no los tiene).
+- **App versión 13 compilada** desde `a98567b5`, con todo lo anterior. Roberto la sube a la prueba interna.
+- **Supabase despierto (`.github/workflows/supabase-despierto.yml`):** el plan gratuito pausa el proyecto
+  tras 7 días sin consultas a la API —ya pasó una vez— y el `pg_cron` de la foto semanal no cuenta, porque
+  corre dentro de la base. Cada 3 días (y a mano desde Actions) el trabajo hace una consulta de solo lectura
+  (`kimun_oa_asignatura('MA06 OA 01')`) con la clave publicable, leída de `8vo/index.html` para no tener dos
+  copias. **Si no responde `"MA06"`, falla y GitHub avisa por correo.** No escribe nada, así que no ensucia
+  ningún curso.

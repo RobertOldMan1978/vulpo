@@ -1,0 +1,43 @@
+# Mantiene despierto el proyecto de Supabase.
+#
+# El plan gratuito de Supabase PAUSA un proyecto tras 7 dias sin actividad en su API,
+# y ya paso una vez: con el proyecto pausado el juego no tiene ranking, ni duelos, ni
+# codigos ALU-, y el panel del profesor no entra. El trabajo de pg_cron (la foto semanal)
+# corre DENTRO de la base y no cuenta como actividad.
+#
+# Cada 3 dias hace una consulta de solo lectura (kimun_oa_asignatura), que no escribe ni
+# crea nada. Si no responde lo esperado, el trabajo FALLA y GitHub avisa por correo:
+# un aviso que llega es mejor que enterarse cuando un alumno no puede entrar.
+#
+# La clave que usa es la publicable (sb_publishable_...), la misma que va en cada
+# juego: es publica por diseno. Se lee del propio juego para no tener dos copias.
+
+name: Supabase despierto
+
+on:
+  schedule:
+    - cron: "17 12 */3 * *"   # cada 3 dias, 12:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: 8vo/index.html
+          sparse-checkout-cone-mode: false
+
+      - name: Consulta de solo lectura
+        run: |
+          URL=$(grep -o 'https://[a-z0-9]*\.supabase\.co' 8vo/index.html | head -1)
+          KEY=$(grep -o 'sb_publishable_[A-Za-z0-9_-]*' 8vo/index.html | head -1)
+          test -n "$URL" && test -n "$KEY" || { echo "No encontre la URL o la clave en 8vo/index.html"; exit 1; }
+          R=$(curl -s -m 30 -X POST "$URL/rest/v1/rpc/kimun_oa_asignatura" \
+                -H "apikey: $KEY" -H "Content-Type: application/json" \
+                -d '{"p_oa":"MA06 OA 01"}')
+          echo "Respuesta: $R"
+          test "$R" = '"MA06"' || { echo "Supabase no respondio lo esperado: puede estar pausado"; exit 1; }
