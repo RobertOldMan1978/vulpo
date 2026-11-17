@@ -32,6 +32,7 @@ jobs:
           sparse-checkout-cone-mode: false
 
       - name: Consulta de solo lectura
+        id: ping
         run: |
           URL=$(grep -o 'https://[a-z0-9]*\.supabase\.co' 8vo/index.html | head -1)
           KEY=$(grep -o 'sb_publishable_[A-Za-z0-9_-]*' 8vo/index.html | head -1)
@@ -40,4 +41,40 @@ jobs:
                 -H "apikey: $KEY" -H "Content-Type: application/json" \
                 -d '{"p_oa":"MA06 OA 01"}')
           echo "Respuesta: $R"
+          echo "respuesta=$R" >> "$GITHUB_OUTPUT"
           test "$R" = '"MA06"' || { echo "Supabase no respondio lo esperado: puede estar pausado"; exit 1; }
+
+      # Aviso por correo en CADA corrida (bien o mal), via Resend, el mismo servicio que ya
+      # manda los correos de Supabase. Necesita dos secretos del repositorio:
+      #   RESEND_API_KEY  -> una API key de Resend (solo envio)
+      #   AVISO_CORREO    -> a quien avisar (va como secreto: el repo es publico)
+      # Sin esos secretos el paso se salta solo y el trabajo no falla por eso.
+      - name: Aviso por correo
+        if: always()
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          AVISO_CORREO: ${{ secrets.AVISO_CORREO }}
+          RESULTADO: ${{ steps.ping.outcome }}
+          RESPUESTA: ${{ steps.ping.outputs.respuesta }}
+          CORRIDA: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ -z "$RESEND_API_KEY" ] || [ -z "$AVISO_CORREO" ]; then
+            echo "Sin RESEND_API_KEY o AVISO_CORREO: no se manda aviso."; exit 0
+          fi
+          if [ "$RESULTADO" = "success" ]; then
+            ASUNTO="VULPO: Supabase despierto (OK)"
+            TEXTO="La consulta de cada 3 dias respondio bien ($RESPUESTA). El proyecto sigue activo."
+          else
+            ASUNTO="VULPO: Supabase NO respondio"
+            TEXTO="La consulta fallo (respuesta: ${RESPUESTA:-ninguna}). Puede estar pausado: entra al panel de Supabase y reactivalo."
+          fi
+          TEXTO="$TEXTO
+
+          Detalle de la corrida: $CORRIDA"
+          jq -n --arg to "$AVISO_CORREO" --arg s "$ASUNTO" --arg t "$TEXTO" \
+            '{from:"VULPO <noreply@vulpo.cl>", to:[$to], subject:$s, text:$t}' > correo.json
+          C=$(curl -s -o /dev/null -w '%{http_code}' -X POST https://api.resend.com/emails \
+                -H "Authorization: Bearer $RESEND_API_KEY" -H "Content-Type: application/json" \
+                --data @correo.json)
+          echo "Resend respondio $C"
+          test "$C" = "200" || echo "::warning::No se pudo mandar el aviso por correo (HTTP $C)"

@@ -15357,3 +15357,9 @@ más: *"¿no íbamos a mostrar 3 por día?"* — por si el alumno quiere otro da
   (`kimun_oa_asignatura('MA06 OA 01')`) con la clave publicable, leída de `8vo/index.html` para no tener dos
   copias. **Si no responde `"MA06"`, falla y GitHub avisa por correo.** No escribe nada, así que no ensucia
   ningún curso.
+- **Aviso por correo en cada corrida (17/11):** el trabajo termina mandando un correo vía Resend
+  (desde `noreply@vulpo.cl`), salga bien o mal, con el resultado en el asunto y el enlace a la corrida.
+  Usa dos secretos del repositorio: `RESEND_API_KEY` (clave propia, `github-supabase-despierto`, solo
+  envío) y `AVISO_CORREO` (el destinatario va como secreto porque el repo es público). Sin ellos el paso
+  se salta solo. No se usó el aviso de GitHub para todas las corridas porque es por cuenta y llegaría
+  también un correo por cada publicación del sitio y cada compilación de la app.
