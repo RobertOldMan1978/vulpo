@@ -365,6 +365,7 @@ function odResponder(el,ok){
    refuerzo del profe): best-effort, hidden por defecto y falla en silencio. */
 let DUELO_AVISOS=[];
 async function revisarDuelos(){
+ revisarMensajes();   // mensajes del profe (Sesion 155): mismos momentos, sin tocar los forks
  const cont=$('bannerDuelo'); if(!cont) return;
  cont.hidden=true; DUELO_AVISOS=[];
  /* Con la puerta cerrada btnDuelo cae al duelo LOCAL, o sea que el duelo en linea es
@@ -426,7 +427,9 @@ function popupVulpi(o){
  // asi que reaparece en la proxima apertura—. Evita que un popup pise al otro sin perder ninguno.
  const abierto=$('popupDes');
  if(abierto && abierto.style.display==='flex') return;
- try{ if(localStorage.getItem(o.clave)===o.id) return; }catch(e){}   // ya se mostro ESTE aviso
+ // recordar:false (mensajes del profe, Sesion 155): ni se consulta ni se guarda la marca, asi que
+ // cerrar con la ✕ no lo da por visto; lo que lo da por leido es su boton, en el servidor.
+ if(o.recordar!==false){ try{ if(localStorage.getItem(o.clave)===o.id) return; }catch(e){} }   // ya se mostro ESTE aviso
  if(!_popupVulpiCSS){
   const st=document.createElement('style');
   st.textContent='#popupDes{position:fixed;inset:0;z-index:9998;display:none;align-items:center;'
@@ -460,7 +463,7 @@ function popupVulpi(o){
   +'<button class="pd-jugar">'+o.boton+'</button>'
   +(o.otro?'<button class="pd-otro">💡 Otro dato</button>':'')+'</div>';
  // callarVoz: la efemeride se lee sola de 1° a 4°, y cerrar el popup tiene que cortar la voz.
- const cerrar=()=>{ ov.style.display='none'; try{localStorage.setItem(o.clave,o.id);}catch(e){} try{callarVoz();}catch(e){} };
+ const cerrar=()=>{ ov.style.display='none'; if(o.recordar!==false){ try{localStorage.setItem(o.clave,o.id);}catch(e){} } try{callarVoz();}catch(e){} };
  ov.onclick=cerrar;                                          // tocar el fondo cierra
  ov.querySelector('.pd-caja').onclick=e=>e.stopPropagation();
  ov.querySelector('.pd-x').onclick=cerrar;
@@ -564,6 +567,8 @@ function revisarEfemeride(){
   const e=(d.efemerides||[]).find(x=>x.fecha===hoy.slice(5) && x.revisada===true);
   if(!e) return;
   const rol=$('scr-rol'); if(!rol || !rol.classList.contains('on')) return;   // ya salio del inicio
+  // El mensaje del profe va antes (Sesion 155): si todavia se esta revisando, se reintenta.
+  if(typeof _MSJ_PEND!=='undefined' && _MSJ_PEND && ++_EFEM_INTENTOS<20){ setTimeout(revisarEfemeride,1500); return; }
   // Solo se lee si ESTE popup se mostro: si el del profe estaba abierto, popupVulpi no muestra
   // la efemeride y leerla seria hablar encima de otro aviso.
   const lee=typeof LEE_SOLO!=='undefined' && LEE_SOLO && window.VOZ && VOZ.activo;
@@ -585,6 +590,110 @@ function revisarEfemeride(){
   }
  });
 }
+
+/* ===== Mensajes del profe (Sesion 155) =====
+   El profe le manda al curso, o a un alumno, uno de los mensajes FIJOS de
+   contenido/mensajes/mensajes.json. El servidor guarda solo el id (msg-NN), asi que aqui el
+   texto sale del JSON: un id que el JSON no conoce (cliente viejo en cache) no se muestra.
+   - Aparece al abrir el juego con popupVulpi, con la imagen propia del mensaje. "✓ Listo" lo
+     marca leido en el servidor (es el acuse que ve el profe) y pasa al siguiente; la ✕ lo cierra
+     SIN marcarlo, asi que vuelve a salir en la proxima apertura (recordar:false).
+   - Espera 1,2 s: el refuerzo del profe y el duelo van primero, y la efemeride (2,5 s) despues.
+     Si hay otro popup abierto, popupVulpi no lo muestra y queda para la proxima apertura.
+   - Buzon 📬 en el inicio para releer lo de los ultimos 30 dias.
+   - Lo dispara revisarDuelos(), que ya corre al arrancar, al canjear y al volver al inicio:
+     asi no hubo que tocar ningun fork.
+   Spec: docs/superpowers/specs/2026-11-18-mensajes-del-profe-design.md */
+let _MSJ_CAT=null, MSJ=[], _MSJ_INTENTOS=0;
+// Mientras se averigua si hay mensajes, la efemeride espera (revisarEfemeride lo mira): si no,
+// en una conexion lenta la efemeride ganaba la carrera y el mensaje del profe quedaba para despues.
+let _MSJ_PEND=false;
+function _catMsj(){
+ if(!_MSJ_CAT) _MSJ_CAT=fetch('contenido/mensajes/mensajes.json')
+   .then(r=>r.ok?r.json():null)
+   .then(d=>{ const m={}; ((d&&d.mensajes)||[]).forEach(x=>{ m[x.id]=x; }); return m; })
+   .catch(()=>({}));
+ return _MSJ_CAT;
+}
+async function revisarMensajes(){
+ if(EFIMERO || SIN_DISCO || !SB || !MI_PERFIL){ MSJ=[]; pintarBuzon(); return; }
+ let d=[];
+ _MSJ_PEND=true;
+ try{ const r=await SB.rpc('kimun_mis_mensajes'); if(r.error){ _MSJ_PEND=false; return; } d=r.data||[]; }catch(e){ _MSJ_PEND=false; return; }
+ const cat=await _catMsj();
+ MSJ=d.filter(x=>cat[x.msg]).map(x=>Object.assign({},x,{m:cat[x.msg]}));
+ pintarBuzon();
+ _MSJ_INTENTOS=0;
+ if(!MSJ.some(x=>!x.leido)){ _MSJ_PEND=false; return; }
+ setTimeout(()=>{ try{ popupMensaje(); }finally{ _MSJ_PEND=false; } },1200);
+}
+function popupMensaje(){
+ const x=MSJ.find(y=>!y.leido); if(!x) return;
+ const rol=$('scr-rol'); if(!rol || !rol.classList.contains('on')) return;
+ if($('introOverlay')){ if(++_MSJ_INTENTOS<20) setTimeout(popupMensaje,2000); return; }
+ const lee=typeof LEE_SOLO!=='undefined' && LEE_SOLO && window.VOZ && VOZ.activo;
+ const mostrado=popupVulpi({ clave:'kimun_msj_pop', id:x.id, recordar:false,
+  titulo:'📬 Mensaje de tu profe '+escHtml(x.profesor||''),
+  texto:escHtml(x.m.texto), img:x.m.img, clase:'pd-efem',
+  boton:'✓ Listo', jugar:()=>{ marcarMsjLeido(x); setTimeout(popupMensaje,500); } });
+ if(mostrado && lee){ try{ leerEnVoz(x.m.texto); }catch(e){} }
+}
+function marcarMsjLeido(x){
+ if(!x || x.leido) return;
+ x.leido=true;
+ pintarBuzon();
+ try{ Promise.resolve(SB.rpc('kimun_mensaje_leido',{p_mensaje:x.id})).catch(()=>{}); }catch(e){}
+}
+function pintarBuzon(){
+ let el=$('buzonMsj');
+ if(!MSJ.length){ if(el) el.hidden=true; return; }
+ if(!el){
+  const ancla=$('bannerDuelo')||$('bannerDesafio'); if(!ancla) return;
+  el=document.createElement('button'); el.id='buzonMsj'; el.type='button';
+  el.style.cssText='display:block;margin:8px auto;background:#ffffff14;border:2px solid var(--cyan);'
+   +'color:#fff;border-radius:14px;font-family:inherit;font-weight:800;font-size:15px;padding:9px 16px;cursor:pointer';
+  el.onclick=()=>{ try{SND.init();SND.tap();}catch(e){} abrirBuzon(); };
+  ancla.insertAdjacentElement('afterend',el);
+ }
+ const n=MSJ.filter(y=>!y.leido).length;
+ el.textContent='📬 Mensajes de tu profe'+(n?' ('+n+' sin leer)':'');
+ el.hidden=false;
+}
+function abrirBuzon(){
+ let ov=$('buzonOv');
+ if(!ov){
+  ov=document.createElement('div'); ov.id='buzonOv';
+  ov.style.cssText='position:fixed;inset:0;z-index:9997;background:#0b0730e6;display:flex;'
+   +'align-items:flex-start;justify-content:center;padding:64px 14px 20px;overflow-y:auto';
+  ov.onclick=e=>{ if(e.target===ov) cerrarBuzon(); };
+  document.body.appendChild(ov);
+ }
+ const items=MSJ.slice().reverse().map(x=>{
+  const f=new Date(x.creado), fecha=isNaN(f)?'':f.getDate()+' de '+_MESES[f.getMonth()];
+  return '<div style="display:flex;gap:12px;align-items:center;background:#ffffff0f;border:1px solid '
+   +(x.leido?'#ffffff22':'var(--gold)')+';border-radius:16px;padding:12px;margin:0 0 10px">'
+   +'<img src="assets/'+x.m.img+'" alt="" style="width:64px;height:64px;object-fit:contain;flex:none">'
+   +'<div style="flex:1;text-align:left"><div style="font-size:12px;color:var(--dim);font-weight:800">'
+   +'Tu profe '+escHtml(x.profesor||'')+' · '+fecha+'</div>'
+   +'<div style="color:#fff;font-weight:700;margin:2px 0 6px">'+escHtml(x.m.texto)+'</div>'
+   +(x.leido?'<span style="color:var(--green);font-weight:800;font-size:13px">✓ Leído</span>'
+     :'<button type="button" data-id="'+x.id+'" class="bz-listo" style="background:var(--violet);color:#fff;border:0;'
+      +'border-radius:10px;font-family:inherit;font-weight:900;padding:6px 14px;cursor:pointer">✓ Listo</button>')
+   +'</div></div>';
+ }).join('');
+ ov.innerHTML='<div style="max-width:380px;width:100%;position:relative">'
+  +'<button type="button" id="bzCerrar" aria-label="Cerrar" style="position:absolute;top:-4px;right:0;background:none;border:0;'
+  +'color:#fff9;font-size:28px;cursor:pointer">✕</button>'
+  +'<h3 style="color:var(--gold);text-align:center;margin:4px 0 14px">📬 Mensajes de tu profe</h3>'
+  +items+'</div>';
+ ov.querySelector('#bzCerrar').onclick=cerrarBuzon;
+ ov.querySelectorAll('.bz-listo').forEach(b=>b.onclick=()=>{
+  try{SND.tap();}catch(e){}
+  marcarMsjLeido(MSJ.find(y=>y.id===b.dataset.id)); abrirBuzon();
+ });
+ ov.style.display='flex';
+}
+function cerrarBuzon(){ const ov=$('buzonOv'); if(ov) ov.style.display='none'; }
 
 /* ===== Ranking de duelos del curso (Sesion 76) =====
    Quien ha ganado mas duelos entre los companeros. El servidor deja fuera a los bots y

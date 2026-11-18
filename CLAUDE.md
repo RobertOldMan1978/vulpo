@@ -2564,6 +2564,7 @@ Providers, y dejar activada la **confirmación de correo** para las cuentas de p
   granular queda cerrado entero.**
 - **Aislamiento entre colegios (Sesión 144, aplicado el 08/11):** `kimun_prof_administra(tipo,id)` responde si administro un NODO concreto del árbol (plataforma > sostenedor > colegio > curso) con las capacidades de `kimun_prof_admin_colegio`. Lo usan las acciones de nivel colegio, que antes preguntaban `puede_algun` ("¿tengo este permiso en ALGÚN ámbito?") y por eso, con un segundo colegio, su UTP habría podido nombrarse Jefe de un curso ajeno, mover cursos, renombrar o borrar colegios ajenos, ver los correos de todos los profesores y revocarlos. Crear un sostenedor, borrarlo y limpiar perfiles son de la PLATAFORMA; un colegio se borra desde su sostenedor. `kimun_prof_curso_crear` suma `p_colegio` (con default: quien administra un solo colegio crea ahí; sin colegio, solo la plataforma). La lista de profesores muestra a la UTP solo a quienes tienen permisos dentro de lo suyo, o a quienes ella invitó. ⚠️ **Siete funciones internas** (`kimun_gen_codigo*`, `es_mio`, `acceso`, `asignaturas`, `admin_colegio`) estaban revocadas solo de `public`: con Supabase eso no basta y respondían por RPC.
 - **Ranking semanal del curso (Sesión 145, aplicado el 08/11):** `kimun_ranking_semanal()`, las mismas columnas y la misma regla de quién se ve que `kimun_ranking` (mi curso) más `xp_semana` = XP actual menos el de la última foto de `xp_semanal`, con `greatest(0,…)` porque un XP bajado por el profesor daría negativo. Quien no tiene fila en la última foto —se inscribió esta semana— cuenta todo su XP. El juego abre en "📅 Esta semana" y ofrece "🏆 Todo el año"; si la función no existe (PGRST202) cae solo al anual y esconde las pestañas. ⚠️ Va después de crear `xp_semanal` (una función `language sql` se valida al crearse).
+- **Mensajes del profe (Sesión 155):** tablas `mensajes` (curso, alumno nullable = todo el curso, `msg` con forma `msg-NN`, profesor, fecha) y `mensajes_leidos` (el acuse), RLS sin políticas. Panel: `kimun_prof_mensaje_enviar(text,text,uuid)` (portero `kimun_prof_acceso`, rechaza `repetido` el mismo día de Chile), `kimun_prof_mensajes(text)` (90 días, «N de M») y `kimun_prof_mensaje_lectores(uuid)` (alfabético, sin fecha individual). Juego: `kimun_mis_mensajes()` (30 días, solo el primer nombre del profe) y `kimun_mensaje_leido(uuid)` (solo si el mensaje es para ese alumno). ⚠️ **El texto NO está en la base: vive en `contenido/mensajes/mensajes.json`.** Esa es la protección entera —no hay columna donde poner texto libre—, y por lo mismo **un id nunca se reutiliza ni cambia de sentido**: cambiaría lo que dicen los mensajes ya enviados. Un mensaje que cambia de sentido lleva id nuevo y el viejo pasa a `retirado:true`.
 - **Pendiente:** notificaciones push.
 
 ## Trámites pendientes (fuera del código)
@@ -15398,3 +15399,61 @@ Se hizo con plan aprobado y **cuatro agentes de a dos**, cada uno en sus propios
   errores de consola y de red.
 - ⚠️ **Solo probado con el doble:** falta mirarlo con una cuenta real en `vulpo.cl/profesor.html`.
 - **Después:** instalar el panel como app (PWA) con su propio `manifest`, si Roberto lo pide.
+
+### Sesión 155 (2026-11-18) — Mensajes del profe: avisos de una vía, con Vulpi y acuse de lectura
+Roberto: *"¿podemos programar que el profesor pueda enviar por la app un mensaje al curso o a algún
+alumno?"*. Se hizo con brainstorming → spec → plan → ejecución. Spec
+`docs/superpowers/specs/2026-11-18-mensajes-del-profe-design.md`, plan
+`docs/superpowers/plans/2026-11-18-mensajes-del-profe.md`.
+
+#### Las decisiones de Roberto
+- **Solo de ida**, con acuse: el niño toca **«✓ Listo»** y el profe ve quién lo leyó. No hay respuesta.
+- **Solo una lista de 20 mensajes fijos**, sin texto libre. Cada mensaje lleva **su imagen de Vulpi**,
+  sacada del catálogo de las efemérides (no hubo arte nuevo). Cambió el 2 y el 5, que felicitaban cosas
+  que el profe no puede saber (terminar un capítulo, vencer un jefe).
+- **Envía cualquier profe con acceso al curso**, y su primer nombre va en el aviso.
+- **Aviso con Vulpi al abrir el juego, y un buzón 📬** en el inicio para releer.
+
+#### Por qué es seguro de mostrar a un colegio y a Google Play
+El servidor guarda **solo el id** (`msg-NN`); el texto vive en `contenido/mensajes/mensajes.json`. No hay
+columna donde poner texto libre, así que ni manipulando el panel se le puede escribir otra cosa a un niño.
+No es una conversación, y el historial lo ve también la UTP. Y como los textos son fijos, **se graban con
+la voz de Catalina**: de 1° a 4° el mensaje se lee solo.
+
+#### Lo construido
+- **Contenido:** `contenido/mensajes/mensajes.json` (formato canónico) y `scripts/validar-mensajes.py`
+  (id `msg-NN` único, texto ≤ 70 sin emoji, imagen que exista y esté en el catálogo). Probado rompiéndolo.
+- **Esquema:** dos tablas y cinco funciones (ver Backend). Revisado con `pglast`, incluido el interior de
+  las cuatro funciones plpgsql. Roberto lo aplicó el mismo día pegando
+  `aplicar-mensajes-del-profe.sql` (fuera del repo). No cambia ninguna firma existente, así que el orden
+  de despliegue no importa.
+- **Panel:** pestaña **«Mensajes»** en el curso (`curso.js`): destinatario (todo el curso o un alumno; el
+  «¡Felicitaciones al curso!» se oculta para un alumno), tarjetas con imagen, vista previa, Enviar, e
+  historial con «N de M» que se abre en quién leyó y quién no. Ícono `mensaje`, y los errores `repetido`
+  y `datos_invalidos` traducidos.
+- **Juego (`motor.js`, ningún fork salvo `VOZ_DIRS`):** `revisarMensajes()` lo dispara `revisarDuelos()`
+  en su primera línea, así corre al arrancar, al canjear y al volver al inicio. `popupVulpi` acepta
+  `recordar:false`: la ✕ no da el mensaje por leído y vuelve a salir; solo «✓ Listo» lo marca, en el
+  servidor. Buzón `#buzonMsj` bajo los avisos del inicio, con su lista para releer.
+  ⚠️ **La efeméride esperaba mal:** en 1° ganó la carrera al cargar la página y tapó al mensaje del profe.
+  Ahora espera mientras se averigua si hay mensajes (`_MSJ_PEND`); probado con el servidor tardando 2 s.
+- **Voz:** asignatura `msj` en el catálogo y el generador, `assets/voz/msj/manifiesto.json` vacío y la
+  carpeta al final de `VOZ_DIRS` de 1° a 4°. **20 clips, US$0,01**, generados, en R2 y con sus paquetes para la app (`verificar`: 54.828 clips
+  idénticos por MD5).
+
+#### Verificación
+Panel con el doble a 1.440 y 375 px, mirando: enviar, toast, `repetido`, el mensaje solo-curso oculto con
+un alumno y la lista de lectores. Juego con un doble de `SB.rpc` en 1° y 6°: el aviso con su imagen,
+«Listo» pasa al siguiente y llama `kimun_mensaje_leido`, la ✕ no lo marca, el buzón cuenta bien, el
+refuerzo abierto lo hace esperar, `?qa=1` no lo muestra y en 1° se lee en voz alta. Un mensaje con un id
+que el catálogo no conoce no se muestra. El botón JUGADOR sigue entero en 375×667 con el buzón (558 px).
+Los ocho cursos navegan, cero errores de consola; el único fallo de red es el 404 esperado de
+`kimun_mis_mensajes`, que el juego ignora en silencio.
+
+**Contra producción, con la clave pública:** las tres funciones del panel y `kimun_mensaje_leido` dan 400
+`no_autorizado` a una sesión anónima, `kimun_mis_mensajes` da `[]`, una función inventada da 404 y
+`kimun_oa_asignatura` sigue respondiendo. Y jugando 1° con un mensaje simulado, el juego pide su clip a
+`voz.vulpo.cl/msj/` (200 `audio/mpeg`).
+
+- **Pendiente (A75):** la prueba de punta a punta, que necesita una sesión de profesor: mandar un mensaje
+  desde el panel a un curso de prueba y abrir el juego con un `ALU-` de ese curso.

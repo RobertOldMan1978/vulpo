@@ -1,0 +1,125 @@
+{
+ "descripcion": "Mensajes que el profe le puede mandar a su curso o a un alumno (Sesion 155). El servidor guarda solo el id: un id NUNCA se reutiliza ni cambia de sentido; si un mensaje se reescribe con otro sentido, va con un id nuevo y el viejo se marca retirado:true.",
+ "mensajes": [
+  {
+   "id": "msg-01",
+   "texto": "¡Muy buen trabajo! Me alegra mucho tu esfuerzo.",
+   "img": "kimun-oro.png",
+   "solo_curso": false
+  },
+  {
+   "id": "msg-02",
+   "texto": "¡Qué bueno verte aprender cada día!",
+   "img": "kimun-fiesta.png",
+   "solo_curso": false
+  },
+  {
+   "id": "msg-03",
+   "texto": "¡Vas muy bien! Sigue así.",
+   "img": "kimun-feliz.png",
+   "solo_curso": false
+  },
+  {
+   "id": "msg-04",
+   "texto": "Se nota que estás practicando. ¡Bien hecho!",
+   "img": "skin-kimun-superheroe.png",
+   "solo_curso": false
+  },
+  {
+   "id": "msg-05",
+   "texto": "¡Sigue explorando! Aprender es una gran aventura.",
+   "img": "skin-kimun-astronauta.png",
+   "solo_curso": false
+  },
+  {
+   "id": "msg-06",
+   "texto": "No te rindas: equivocarse también es aprender.",
+   "img": "kimun-neutral.png",
+   "solo_curso": false
+  },
+  {
+   "id": "msg-07",
+   "texto": "Si algo te costó, vuelve a intentarlo con calma.",
+   "img": "vulpo-mascota.png",
+   "solo_curso": false
+  },
+  {
+   "id": "msg-08",
+   "texto": "Confío en ti. ¡Tú puedes!",
+   "img": "skin-kimun-superheroe.png",
+   "solo_curso": false
+  },
+  {
+   "id": "msg-09",
+   "texto": "Te echamos de menos en VULPO. ¡Vuelve a jugar!",
+   "img": "vulpi.png",
+   "solo_curso": false
+  },
+  {
+   "id": "msg-10",
+   "texto": "Repasa \"Mis errores\": ahí está lo que más te ayuda.",
+   "img": "kimun-cientifico.png",
+   "solo_curso": false
+  },
+  {
+   "id": "msg-11",
+   "texto": "Juega la unidad que estamos viendo en clases.",
+   "img": "portada-hist2-cap1.png",
+   "solo_curso": false
+  },
+  {
+   "id": "msg-12",
+   "texto": "Recuerda jugar un rato esta semana.",
+   "img": "kimun-neutral.png",
+   "solo_curso": false
+  },
+  {
+   "id": "msg-13",
+   "texto": "Tienes un desafío de refuerzo esperándote.",
+   "img": "kimun-sorprendido.png",
+   "solo_curso": false
+  },
+  {
+   "id": "msg-14",
+   "texto": "Antes de la prueba, repasa la unidad en VULPO.",
+   "img": "kimun-escritor.png",
+   "solo_curso": false
+  },
+  {
+   "id": "msg-15",
+   "texto": "Mira primero la mini-clase y después juega.",
+   "img": "kimun-matematico.png",
+   "solo_curso": false
+  },
+  {
+   "id": "msg-16",
+   "texto": "Lee con calma cada pregunta antes de responder.",
+   "img": "kimun-escritor.png",
+   "solo_curso": false
+  },
+  {
+   "id": "msg-17",
+   "texto": "Mañana usaremos VULPO en clases.",
+   "img": "kimun-sorprendido.png",
+   "solo_curso": false
+  },
+  {
+   "id": "msg-18",
+   "texto": "¡Felicitaciones al curso! Avanzamos mucho juntos.",
+   "img": "kimun-fiesta.png",
+   "solo_curso": true
+  },
+  {
+   "id": "msg-19",
+   "texto": "Gracias por tu esfuerzo esta semana.",
+   "img": "kimun-feliz.png",
+   "solo_curso": false
+  },
+  {
+   "id": "msg-20",
+   "texto": "¡Que tengas un buen fin de semana!",
+   "img": "skin-kimun-skate.png",
+   "solo_curso": false
+  }
+ ]
+}

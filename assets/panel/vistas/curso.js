@@ -80,6 +80,17 @@
 .vcu-peligro{border-color:#b42b4840}
 .vcu-peligro .sec-cab h2{color:var(--pink)}
 .vcu-civ .civ-lista{margin-top:6px}
+.vcu-msj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;margin:10px 0}
+.vcu-msj-op{display:flex;gap:10px;align-items:center;border:1px solid var(--linea);border-radius:10px;padding:8px 10px;cursor:pointer;background:var(--panel);font-size:14px;line-height:1.3}
+.vcu-msj-op:hover{border-color:var(--violet)}
+.vcu-msj-op input{width:auto;margin:0;flex:none}
+.vcu-msj-op img{width:42px;height:42px;object-fit:contain;flex:none}
+.vcu-msj-op.on{border-color:var(--violet);box-shadow:0 0 0 2px var(--violet-t)}
+.vcu-msj-prev{display:flex;gap:14px;align-items:center;border:1px dashed var(--linea);border-radius:12px;padding:12px 14px;margin:6px 0 12px;max-width:520px}
+.vcu-msj-prev img{width:72px;height:72px;object-fit:contain;flex:none}
+.vcu-msj-prev b{display:block;color:var(--violet);font-size:13px;margin-bottom:2px}
+.vcu-msj-lect{padding:8px 0 4px}
+.vcu-msj-lect .chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 8px}
 .vcu-civ .civ-txt{white-space:normal;overflow:visible}
 @media (max-width:699px){
   .vcu-col-xp{display:none}
@@ -106,6 +117,7 @@
     {id:'equipo',        txt:'Equipo',              ico:'usuarioMas', ver:c => !!c.gestiono},
     {id:'planificacion', txt:'Planificación',       ico:'calendario', ver:() => true},
     {id:'refuerzo',      txt:'Refuerzo',            ico:'refuerzo',   ver:() => true},
+    {id:'mensajes',      txt:'Mensajes',            ico:'mensaje',    ver:() => true},
     {id:'civica',        txt:'Formación Ciudadana', ico:'civica',     ver:(c, cod) => veHistoria(cod, c.nivel || '')},
     {id:'inscripcion',   txt:'Inscripción',         ico:'enlace',     ver:c => !!c.gestiono},
     {id:'ajustes',       txt:'Ajustes',             ico:'ajustes',    ver:c => !!window.ESADMINCOLEGIO || (!!c.gestiono && !c.nivel)}
@@ -430,6 +442,113 @@
       };
     },
 
+    /* ===== Mensajes del profe (Sesión 155) =====
+       Uno de los mensajes FIJOS de contenido/mensajes/mensajes.json, al curso o a un alumno. El
+       servidor guarda solo el id (msg-NN): aquí no hay texto libre que escribir, y es a
+       propósito. Los nombres de quién leyó van en orden alfabético y sin fecha individual. */
+    async mensajes(panel, cod, c){
+      cargando(true);
+      let [cat, rl, rh] = await Promise.all([
+        catalogoMensajes(),
+        SB.rpc('kimun_prof_listar'),
+        SB.rpc('kimun_prof_mensajes', {p_curso_codigo:cod})
+      ]);
+      cargando('fin');
+      if(!vivo(panel)) return;
+      const alus = ((rl && rl.data) || []).filter(f => f.curso_codigo === cod && f.pid);
+      const lista = ((cat && cat.mensajes) || []).filter(m => !m.retirado);
+      const porId = {}; ((cat && cat.mensajes) || []).forEach(m => { porId[m.id] = m; });
+      if(!lista.length){
+        panel.innerHTML = '<div class="sec">' + vacio('mensaje', 'No se pudo cargar la lista de mensajes.') + '</div>';
+        return;
+      }
+      panel.innerHTML = '<div class="sec"><div class="sec-cab"><h2>Enviar un mensaje</h2>'
+        + '<span class="sec-sub">Lo verán al abrir VULPO, con Vulpi. De 1° a 4° se lee en voz alta.</span></div>'
+        + '<div class="sec-cuerpo">'
+        + '<div class="vcu-form"><div class="vcu-campo"><label class="campo" for="msjPara">Para</label>'
+        + '<select id="msjPara"><option value="">Todo el curso</option>'
+        + alus.map(a => '<option value="' + esc(a.pid) + '">' + esc(a.alumno) + '</option>').join('')
+        + '</select></div></div>'
+        + '<div class="vcu-msj-grid" id="msjGrid" role="radiogroup" aria-label="Mensaje"></div>'
+        + '<div id="msjPrev"></div>'
+        + '<button type="button" class="b b-pri" id="msjEnviar" disabled>' + ICO('mensaje') + 'Enviar mensaje</button>'
+        + '</div></div>'
+        + '<div class="sec"><div class="sec-cab"><h2>Mensajes enviados</h2>'
+        + '<span class="sec-sub">Últimos 90 días · el niño los ve por 30 días</span></div>'
+        + '<div class="sec-cuerpo sin-pad" id="msjHist"></div></div>';
+
+      let elegido = '';
+      const pintarGrid = () => {
+        const aUno = !!$('msjPara').value;
+        const ops = lista.filter(m => !(aUno && m.solo_curso));
+        if(elegido && !ops.some(m => m.id === elegido)) elegido = '';
+        $('msjGrid').innerHTML = ops.map(m =>
+          '<label class="vcu-msj-op' + (m.id === elegido ? ' on' : '') + '">'
+          + '<input type="radio" name="msjOp" value="' + esc(m.id) + '"' + (m.id === elegido ? ' checked' : '') + '>'
+          + '<img src="assets/' + esc(m.img) + '" alt="" loading="lazy"><span>' + esc(m.texto) + '</span></label>').join('');
+        $('msjGrid').querySelectorAll('input').forEach(i => i.onchange = () => { elegido = i.value; pintarGrid(); });
+        const m = porId[elegido];
+        $('msjPrev').innerHTML = m ? '<div class="vcu-msj-prev"><img src="assets/' + esc(m.img) + '" alt="">'
+          + '<div><b>Vista previa · 📬 Mensaje de tu profe</b>' + esc(m.texto) + '</div></div>' : '';
+        $('msjEnviar').disabled = !m;
+      };
+      $('msjPara').onchange = pintarGrid;
+      pintarGrid();
+
+      const pintarHist = () => {
+        const caja = $('msjHist'); if(!caja) return;
+        if(!rh || rh.error){ caja.innerHTML = vacio('alerta', errorPanel(rh && rh.error)); return; }
+        const filas = rh.data || [];
+        if(!filas.length){ caja.innerHTML = vacio('mensaje', 'Todavía no se han enviado mensajes a este curso.'); return; }
+        caja.innerHTML = '<div style="overflow-x:auto"><table class="tabla"><thead><tr><th>Fecha</th><th>Mensaje</th>'
+          + '<th>Para</th><th>Envió</th><th class="num">Leído</th></tr></thead><tbody>'
+          + filas.map(f => {
+              const m = porId[f.msg];
+              const dt = new Date(f.creado);
+              const fecha = isNaN(dt) ? '' : dt.toLocaleDateString('es-CL', {day:'2-digit', month:'2-digit'})
+                + ' ' + dt.toLocaleTimeString('es-CL', {hour:'2-digit', minute:'2-digit'});
+              return '<tr><td style="white-space:nowrap">' + esc(fecha) + '</td>'
+                + '<td>' + esc(m ? m.texto : f.msg) + '</td>'
+                + '<td>' + (f.alumno ? esc(f.alumno) : '<span class="ins ins-violeta">Todo el curso</span>') + '</td>'
+                + '<td>' + esc(f.profesor || '') + '</td>'
+                + '<td class="num"><button type="button" class="b b-txt msj-ver" data-id="' + esc(f.id) + '"'
+                + ' title="Ver quiénes lo leyeron">' + Number(f.leidos || 0) + ' de ' + Number(f.destinatarios || 0) + '</button></td></tr>'
+                + '<tr class="msj-lect-fila" data-id="' + esc(f.id) + '" hidden><td colspan="5"><div class="vcu-msj-lect"></div></td></tr>';
+            }).join('') + '</tbody></table></div>';
+        caja.querySelectorAll('.msj-ver').forEach(b => b.onclick = async () => {
+          const tr = caja.querySelector('.msj-lect-fila[data-id="' + b.dataset.id + '"]');
+          if(!tr) return;
+          if(!tr.hidden){ tr.hidden = true; return; }
+          tr.hidden = false;
+          const box = tr.querySelector('.vcu-msj-lect');
+          box.textContent = 'Cargando…';
+          const {data, error} = await SB.rpc('kimun_prof_mensaje_lectores', {p_mensaje:b.dataset.id});
+          if(error){ box.textContent = errorPanel(error); return; }
+          const si = (data || []).filter(x => x.leido), no = (data || []).filter(x => !x.leido);
+          const chips = xs => xs.length ? '<div class="chips">' + xs.map(x => '<span class="ins">' + esc(x.alumno) + '</span>').join('') + '</div>'
+            : '<p class="vcu-nota">Nadie.</p>';
+          box.innerHTML = '<b>Lo leyeron (' + si.length + ')</b>' + chips(si)
+            + '<b>Todavía no (' + no.length + ')</b>' + chips(no);
+        });
+      };
+      pintarHist();
+
+      $('msjEnviar').onclick = async () => {
+        const m = porId[elegido]; if(!m) return;
+        const pid = $('msjPara').value || null;
+        const bt = $('msjEnviar'); bt.disabled = true;
+        try{
+          const {error} = await SB.rpc('kimun_prof_mensaje_enviar', {p_curso_codigo:cod, p_msg:m.id, p_alumno:pid});
+          if(error) throw error;
+          toast(pid ? 'Mensaje enviado' : 'Mensaje enviado a todo el curso', 'ok');
+          elegido = '';
+          rh = await SB.rpc('kimun_prof_mensajes', {p_curso_codigo:cod});
+          if(!vivo(panel)) return;
+          pintarGrid(); pintarHist();
+        }catch(e){ toast(errorPanel(e), 'error'); bt.disabled = false; }
+      };
+    },
+
     /* ===== Enlace de inscripción ===== */
     async inscripcion(panel, cod, c){
       panel.innerHTML = '<div class="sec"><div class="sec-cab"><h2>Enlace de inscripción</h2>'
@@ -511,6 +630,13 @@
       };
     }
   };
+
+  // El catálogo de mensajes del profe: una sola descarga por sesión del panel.
+  function catalogoMensajes(){
+    if(!window._MSJ_CAT) window._MSJ_CAT = fetch('contenido/mensajes/mensajes.json')
+      .then(r => r.ok ? r.json() : {}).catch(() => ({}));
+    return window._MSJ_CAT;
+  }
 
   async function fijarNivel(cod, nivel){
     if(!nivel) return;

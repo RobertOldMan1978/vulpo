@@ -105,6 +105,12 @@ STUB = r"""
   // vista: 8° 3 de 3, 3° 5 de 6, 5° 6 de 10, 4° 0 de 8 (nadie jugo), 6° sin alumnos, Taller sin nivel.
   const CIVICA = {'CUR-3R09':[5,12], 'CUR-5T77':[6,15], 'CUR-BA04':[3,20], 'CUR-6N01':[0,0], 'CUR-4T22':[0,0]};
   const CIVICA_OBS = {};
+  // Mensajes del profe (Sesion 155): dos sembrados en CUR-BA04, uno al curso y uno a un alumno.
+  const MENSAJES = [
+    {id:'m-1', curso:'CUR-BA04', msg:'msg-12', alumno:null, profesor:'Roberto Lorca',
+     creado:'2026-11-16T15:20:00-03:00', leidos:14, destinatarios:22},
+    {id:'m-2', curso:'CUR-BA04', msg:'msg-07', alumno:'Diego Munoz', profesor:'Jorge Arteaga',
+     creado:'2026-11-17T10:05:00-03:00', leidos:0, destinatarios:1}];
 
   /* Inquilinos (Sesion 116, Fase 1). Un sostenedor con un colegio, como el piloto. Dos
      cursos ya asignados y el resto "Sin colegio": asi se ve el selector preseleccionado Y
@@ -301,6 +307,24 @@ STUB = r"""
       curso_codigo:cod, curso:nom, nivel:niv||null, inscritos:n,
       con_actividad:(CIVICA[cod]||[0,0])[0], alumnos_civicos:(CIVICA[cod]||[0,0])[1],
       puede_gestionar:gest })),
+    kimun_prof_mensajes: (a)=>MENSAJES.filter(m=>m.curso===a.p_curso_codigo)
+      .slice().sort((x,y)=>y.creado.localeCompare(x.creado)),
+    kimun_prof_mensaje_enviar: (a)=>{
+      if(!/^msg-[0-9]{2}$/.test(a.p_msg||'')) throw {message:'datos_invalidos'};
+      const hoy=new Date().toISOString().slice(0,10);
+      const nom=a.p_alumno ? (alumnos[Number(String(a.p_alumno).split('-')[1])]||'Alumno') : null;
+      if(MENSAJES.some(m=>m.curso===a.p_curso_codigo && m.msg===a.p_msg && m.alumno===nom && m.creado.slice(0,10)===hoy))
+        throw {message:'repetido'};
+      const id='m-'+(MENSAJES.length+1);
+      MENSAJES.push({id, curso:a.p_curso_codigo, msg:a.p_msg, alumno:nom, profesor:'Roberto Lorca',
+        creado:new Date().toISOString(), leidos:0, destinatarios: nom?1:22});
+      return id;
+    },
+    kimun_prof_mensaje_lectores: (a)=>{
+      const m=MENSAJES.find(x=>x.id===a.p_mensaje); if(!m) throw {message:'no_autorizado'};
+      const xs=m.alumno?[m.alumno]:alumnos.slice(0,m.destinatarios);
+      return xs.slice().sort().map((n,i)=>({alumno:n, leido:i<m.leidos}));
+    },
     kimun_prof_civica_obs_ver: (a)=>CIVICA_OBS[a&&a.p_curso_codigo]||'',
     kimun_prof_civica_obs_fijar: (a)=>{ CIVICA_OBS[a.p_curso_codigo]=(a.p_texto||'').slice(0,2000); return null; },
     /* ⚠️ Depende del CURSO que se le pide, y tiene que dar el mismo numero que

@@ -68,6 +68,11 @@ ASIGS = {
     # en VOZ_DIRS. "juego" no se usa (no hay metas ni nombres de etapa que leer).
     "efem":  {"banco": "efemerides",             "oa": "EFEM", "caps": "",                "juego": "1ro",
               "efemerides": True},
+    # Los mensajes del profe (Sesion 155): contenido/mensajes/mensajes.json, ~20 textos fijos.
+    # No tienen paso de aprobacion propio (los aprobo Roberto al aprobar el diseño), asi que
+    # se locutan todos. Los cargan los forks de 1° a 4° en VOZ_DIRS.
+    "msj":   {"banco": "mensajes",               "oa": "MSJ",  "caps": "",                "juego": "1ro",
+              "mensajes": True},
 }
 
 

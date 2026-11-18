@@ -3283,6 +3283,141 @@ declare yo public.profesores; begin
     left join jefes j  on j.cid  = m.id;
 end $$;
 
+-- ------------------------------------------------------------
+-- Mensajes del profe (Sesión 155)
+--
+-- El profe le manda a su curso, o a un alumno, uno de los mensajes FIJOS de
+-- contenido/mensajes/mensajes.json. El servidor guarda SOLO el id (msg-NN): el texto vive en
+-- el repositorio. Esa es la protección entera, y vive en la FIRMA: ni manipulando el panel se
+-- le puede mandar un texto libre a un niño, porque no hay columna donde ponerlo. Es de una sola
+-- vía —el niño no responde— y el acuse es tocar "✓ Listo" (mensajes_leidos).
+-- Spec: docs/superpowers/specs/2026-11-18-mensajes-del-profe-design.md
+-- ------------------------------------------------------------
+create table if not exists public.mensajes(
+  id          uuid primary key default gen_random_uuid(),
+  curso_id    uuid not null references public.cursos(id) on delete cascade,
+  -- null = todo el curso; si no, un alumno de ese curso.
+  perfil_id   uuid references public.perfiles(id) on delete cascade,
+  msg         text not null check (msg ~ '^msg-[0-9]{2}$'),
+  profesor_id uuid,
+  creado      timestamptz not null default now()
+);
+create index if not exists mensajes_curso_idx on public.mensajes(curso_id, creado desc);
+alter table public.mensajes enable row level security;
+
+create table if not exists public.mensajes_leidos(
+  mensaje_id uuid not null references public.mensajes(id) on delete cascade,
+  perfil_id  uuid not null references public.perfiles(id) on delete cascade,
+  leido      timestamptz not null default now(),
+  primary key (mensaje_id, perfil_id)
+);
+alter table public.mensajes_leidos enable row level security;
+
+-- Enviar. Puede cualquier profe con acceso al curso (decisión de Roberto). Rechaza un id con
+-- otra forma, un alumno de otro curso (mismo error que un curso ajeno, para no revelar nada) y
+-- el MISMO mensaje al MISMO destinatario el mismo día de Chile ('repetido'): un doble clic no
+-- le llena el buzón al niño.
+drop function if exists public.kimun_prof_mensaje_enviar(text,text,uuid);
+create or replace function public.kimun_prof_mensaje_enviar(p_curso_codigo text, p_msg text, p_alumno uuid default null)
+returns uuid language plpgsql security definer set search_path=public as $$
+declare cid uuid; nid uuid;
+begin
+  select c.id into cid from public.cursos c where c.codigo = upper(trim(p_curso_codigo));
+  if cid is null or not public.kimun_prof_acceso(cid) then raise exception 'no_autorizado'; end if;
+  if p_msg is null or p_msg !~ '^msg-[0-9]{2}$' then raise exception 'datos_invalidos'; end if;
+  if p_alumno is not null and not exists (
+       select 1 from public.perfiles p
+        where p.id = p_alumno and p.curso_id = cid and p.codigo_acceso is not null)
+    then raise exception 'no_autorizado'; end if;
+  if exists (
+       select 1 from public.mensajes m
+        where m.curso_id = cid and m.msg = p_msg and m.perfil_id is not distinct from p_alumno
+          and (m.creado at time zone 'America/Santiago')::date = (now() at time zone 'America/Santiago')::date)
+    then raise exception 'repetido'; end if;
+  insert into public.mensajes(curso_id, perfil_id, msg, profesor_id)
+  values (cid, p_alumno, p_msg, auth.uid()) returning id into nid;
+  return nid;
+end $$;
+
+-- El historial del curso (90 días), con cuántos lo leyeron de cuántos debían. Lo ve todo el
+-- que tiene acceso al curso, incluida la UTP. ⚠️ returns table con OUT `id`: toda columna va
+-- calificada (el bug de la Sesión 116).
+drop function if exists public.kimun_prof_mensajes(text);
+create or replace function public.kimun_prof_mensajes(p_curso_codigo text)
+returns table(id uuid, msg text, alumno text, profesor text, creado timestamptz, leidos int, destinatarios int)
+language plpgsql security definer set search_path=public as $$
+declare cid uuid;
+begin
+  select c.id into cid from public.cursos c where c.codigo = upper(trim(p_curso_codigo));
+  if cid is null or not public.kimun_prof_acceso(cid) then raise exception 'no_autorizado'; end if;
+  return query
+    select m.id, m.msg, pa.nombre, coalesce(nullif(pr.nombre, ''), 'Profesor'), m.creado,
+           (select count(*)::int from public.mensajes_leidos l
+              join public.perfiles x on x.id = l.perfil_id
+             where l.mensaje_id = m.id and x.curso_id = cid),
+           case when m.perfil_id is not null then 1
+                else (select count(*)::int from public.perfiles x
+                       where x.curso_id = cid and x.codigo_acceso is not null) end
+      from public.mensajes m
+      left join public.perfiles pa   on pa.id = m.perfil_id
+      left join public.profesores pr on pr.id = m.profesor_id
+     where m.curso_id = cid and m.creado > now() - interval '90 days'
+     order by m.creado desc;
+end $$;
+
+-- Quién leyó un mensaje y quién no, en orden alfabético y SIN fecha individual (la regla de
+-- la participación: una lista de menores ordenada por cuándo hicieron algo se lee como
+-- lista de control).
+drop function if exists public.kimun_prof_mensaje_lectores(uuid);
+create or replace function public.kimun_prof_mensaje_lectores(p_mensaje uuid)
+returns table(alumno text, leido boolean)
+language plpgsql security definer set search_path=public as $$
+declare cid uuid; pid uuid;
+begin
+  select m.curso_id, m.perfil_id into cid, pid from public.mensajes m where m.id = p_mensaje;
+  if cid is null or not public.kimun_prof_acceso(cid) then raise exception 'no_autorizado'; end if;
+  return query
+    select p.nombre,
+           exists(select 1 from public.mensajes_leidos l
+                   where l.mensaje_id = p_mensaje and l.perfil_id = p.id)
+      from public.perfiles p
+     where p.curso_id = cid and p.codigo_acceso is not null and (pid is null or p.id = pid)
+     order by p.nombre;
+end $$;
+
+-- Los mensajes del alumno (sesión anónima, vía kimun_yo): los de su curso actual y los
+-- dirigidos a él, de los últimos 30 días. Del profe va SOLO el primer nombre, nunca el correo.
+-- Un anónimo sin curso recibe [] (el join no da filas), como kimun_mi_plan.
+drop function if exists public.kimun_mis_mensajes();
+create or replace function public.kimun_mis_mensajes()
+returns table(id uuid, msg text, profesor text, creado timestamptz, leido boolean)
+language sql security definer stable set search_path=public as $$
+  select m.id, m.msg,
+         coalesce(nullif(split_part(trim(pr.nombre), ' ', 1), ''), 'tu profe'),
+         m.creado,
+         exists(select 1 from public.mensajes_leidos l where l.mensaje_id = m.id and l.perfil_id = p.id)
+    from public.perfiles p
+    join public.mensajes m on m.curso_id = p.curso_id and (m.perfil_id is null or m.perfil_id = p.id)
+    left join public.profesores pr on pr.id = m.profesor_id
+   where p.id = public.kimun_yo() and m.creado > now() - interval '30 days'
+   order by m.creado;
+$$;
+
+-- "✓ Listo". Marca SOLO si el mensaje es para este alumno (de su curso, o a él). Idempotente.
+create or replace function public.kimun_mensaje_leido(p_mensaje uuid)
+returns void language plpgsql security definer set search_path=public as $$
+declare yo uuid := public.kimun_yo();
+begin
+  if yo is null then raise exception 'no_autorizado'; end if;
+  if not exists (
+       select 1 from public.mensajes m join public.perfiles p on p.id = yo
+        where m.id = p_mensaje and m.curso_id = p.curso_id
+          and (m.perfil_id is null or m.perfil_id = yo))
+    then raise exception 'no_autorizado'; end if;
+  insert into public.mensajes_leidos(mensaje_id, perfil_id) values (p_mensaje, yo)
+  on conflict do nothing;
+end $$;
+
 grant execute on function
   public.kimun_perfil(text,text), public.kimun_buscar(text), public.kimun_jugadores(),
   public.kimun_crear_duelo(text,text,jsonb,int,int), public.kimun_pendientes(),
@@ -3356,6 +3491,12 @@ grant execute on function
   , public.kimun_prof_civica(text[])
   , public.kimun_prof_civica_obs_ver(text)
   , public.kimun_prof_civica_obs_fijar(text,text)
+  -- Mensajes del profe (Sesión 155): enviar e historial (panel), y los del alumno (juego).
+  , public.kimun_prof_mensaje_enviar(text,text,uuid)
+  , public.kimun_prof_mensajes(text)
+  , public.kimun_prof_mensaje_lectores(uuid)
+  , public.kimun_mis_mensajes()
+  , public.kimun_mensaje_leido(uuid)
   to anon, authenticated;
 
 -- ------------------------------------------------------------

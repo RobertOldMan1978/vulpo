@@ -47,6 +47,8 @@ _CFG = ASIGS[ASIG]
 BANCO = RAIZ / "contenido" / _CFG["banco"] / "preguntas.json"
 if _CFG.get("efemerides"):
     BANCO = RAIZ / "contenido" / "efemerides" / "efemerides.json"
+if _CFG.get("mensajes"):
+    BANCO = RAIZ / "contenido" / "mensajes" / "mensajes.json"
 SALIDA = RAIZ / "assets" / "voz" / ASIG
 MANIFIESTO = SALIDA / "manifiesto.json"
 # La clave puede estar en varios lugares: el escritorio de Windows se llama "Desktop"
@@ -95,6 +97,16 @@ def nombre(texto):
 
 def textos():
     """Devuelve [(texto mostrado, texto a pronunciar)] sin repetir."""
+    if _CFG.get("mensajes"):
+        # Mensajes del profe (Sesion 155): el juego lee x.m.texto tal cual (leerEnVoz), asi
+        # que el texto mostrado ES la clave del clip. Los retirados ya no se envian.
+        vistos, out = set(), []
+        for m in json.load(io.open(BANCO, encoding="utf-8"))["mensajes"]:
+            t = (m.get("texto") or "").strip()
+            if t and not m.get("retirado") and t not in vistos:
+                vistos.add(t)
+                out.append((t, _nv.normalizar(t)))
+        return out
     if _CFG.get("efemerides"):
         # Solo las APROBADAS: la voz se paga recien cuando Roberto firma el texto. El juego
         # lee e.texto tal cual (leerEnVoz), asi que el texto mostrado ES la clave del clip.
